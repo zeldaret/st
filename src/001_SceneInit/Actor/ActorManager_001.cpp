@@ -5,9 +5,37 @@
 
 extern "C" void func_ov000_020977e4();
 
-THUMB void ActorManager::Create() {}
-THUMB ActorManager::ActorManager() {}
-THUMB ActorManager::~ActorManager() {}
+THUMB ActorManager *ActorManager::Create() {
+    return new(1, 4) ActorManager();
+}
+
+THUMB ActorManager::ActorManager() {
+    this->SetInstance(this);
+    this->mUnk_20        = 0;
+    this->mUnk_21        = 0;
+    this->mUnk_22        = 0;
+    this->mUnk_23        = 0;
+    this->mUnk_32        = 0;
+    this->mActorTable    = NULL;
+    this->mActorTableEnd = NULL;
+    this->mUnk_08        = NULL;
+    this->mActorCount    = 0;
+    this->mNextActorId   = 0;
+    this->mUnk_10        = 0;
+    this->mUnk_14        = 0;
+    this->mUnk_18        = 0;
+    this->mUnk_24        = 0;
+    this->mUnk_28        = 0;
+    this->mUnk_2c        = 0;
+    this->mUnk_30        = 0;
+    this->mUnk_34        = 0;
+}
+
+// non-matching (D0 not generating?)
+THUMB ActorManager::~ActorManager() {
+    this->ClearInstance();
+}
+
 THUMB void ActorManager::func_ov001_020bafdc() {}
 THUMB void ActorManager::func_ov001_020bb018(s32 param1) {}
 THUMB void ActorManager::func_ov001_020bb414() {}

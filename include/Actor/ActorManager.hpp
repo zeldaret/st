@@ -1,25 +1,34 @@
 #pragma once
 
 #include "Actor/ActorUnk_ov000_020a8bb0.hpp"
+#include "System/SysNew.hpp"
 #include "files.h"
 #include "types.h"
 
-class ActorManager {
+class ActorManager : public SysObject {
 public:
     /* 00 */ Actor **mActorTable;
     /* 04 */ Actor **mActorTableEnd;
     /* 08 */ Actor **mUnk_08;
     /* 0c */ unk16 mActorCount;
     /* 0e */ unk16 mNextActorId;
-    /* 10 */ unk8 mUnk_10[0x14 - 0x10];
+    /* 10 */ unk8 mUnk_10;
+    /* 10 */ unk8 mUnk_11;
+    /* 10 */ unk8 mUnk_12;
+    /* 10 */ unk8 mUnk_13;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
-    /* 1c */ unk8 mUnk_1c[0x24 - 0x1c];
+    /* 1c */ unk32 mUnk_1c;
+    /* 20 */ unk8 mUnk_20;
+    /* 21 */ unk8 mUnk_21;
+    /* 22 */ unk8 mUnk_22;
+    /* 23 */ unk8 mUnk_23;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ unk32 mUnk_28;
     /* 2c */ unk32 mUnk_2c;
     /* 30 */ unk16 mUnk_30;
-    /* 32 */ unk8 mUnk_32[0x34 - 0x32];
+    /* 32 */ unk8 mUnk_32;
+    /* 33 */ unk8 mUnk_33;
     /* 34 */ unk32 mUnk_34;
     /* 38 */
 
@@ -27,7 +36,7 @@ public:
     ~ActorManager();
     static void SetInstance(ActorManager *instance);
     static void ClearInstance();
-    static void Create();
+    static ActorManager *Create();
     static void Destroy();
     void func_ov001_020bafdc();
     void func_ov001_020bb018(s32 param1);
