@@ -93,7 +93,7 @@ public:
     /* 50 */ volatile u16 mUnk_50;
     /* 52 */ u16 mUnk_52;
     /* 54 */ unk32 mUnk_54;
-    /* 58 */ ActorFlags mFlags;
+    /* 58 */ ActorFlags mFlags[1];
     /* 5c */ Actor_5c mUnk_5c;
     /* 6c */ u16 mUnk_6c; // actor user id?
     /* 6e */ u16 mUnk_6e;

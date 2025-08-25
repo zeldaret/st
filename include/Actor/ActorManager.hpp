@@ -40,7 +40,7 @@ public:
     static void Destroy();
     void func_ov001_020bafdc();
     void func_ov001_020bb018(s32 param1);
-    void func_ov001_020bb414();
+    static void func_ov001_020bb414(ActorManager *instance);
     void func_ov001_020bb488();
     void func_ov001_020bb548();
     void func_ov001_020bb630();

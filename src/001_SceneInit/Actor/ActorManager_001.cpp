@@ -1,9 +1,13 @@
 #include "Actor/ActorManager.hpp"
+#include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0cf4.hpp"
 #include "Unknown/UnkStruct_027e0d70.hpp"
+#include "flags.h"
 #include "global.h"
 
 extern "C" void func_ov000_020977e4();
+extern "C" void func_ov001_020ba59c(void *);
+extern void *data_0204999c;
 
 THUMB ActorManager *ActorManager::Create() {
     return new(1, 4) ActorManager();
@@ -36,9 +40,56 @@ THUMB ActorManager::~ActorManager() {
     this->ClearInstance();
 }
 
-THUMB void ActorManager::func_ov001_020bafdc() {}
+THUMB void ActorManager::func_ov001_020bafdc() {
+    Actor **ppActorTable = this->mActorTable;
+
+    while (ppActorTable != this->mUnk_08) {
+        Actor *pActor = *ppActorTable;
+
+        if (pActor != NULL) {
+            // alive and uninitialized?
+            if (GET_FLAG(pActor->mFlags, ActorFlag_Alive) && !GET_FLAG(pActor->mFlags, ActorFlag_4)) {
+                pActor->vfunc_1c();
+                SET_FLAG(pActor->mFlags, ActorFlag_4);
+            }
+        }
+
+        ppActorTable++;
+    }
+}
+
 THUMB void ActorManager::func_ov001_020bb018(s32 param1) {}
-THUMB void ActorManager::func_ov001_020bb414() {}
+
+// non-matching
+THUMB void ActorManager::func_ov001_020bb414(ActorManager *instance) {
+    bool bVar1;
+
+    func_ov001_020ba59c(data_0204999c);
+
+    switch (data_027e09a4->mUnk_00) {
+        case 0x03:
+        case 0x12:
+        case 0x42:
+        case 0x5A:
+        case 0x5B:
+        case 0x5D:
+        case 0x63:
+            bVar1 = true;
+            break;
+        default:
+            bVar1 = false;
+            break;
+    }
+
+    if (bVar1) {
+        instance->func_ov001_020bb844();
+    }
+
+    delete instance;
+    instance->mActorTable    = NULL;
+    instance->mActorTableEnd = NULL;
+}
+
 THUMB void ActorManager::func_ov001_020bb488() {}
 THUMB void ActorManager::func_ov001_020bb548() {}
 THUMB void ActorManager::func_ov001_020bb630() {}
