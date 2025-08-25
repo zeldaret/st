@@ -111,7 +111,7 @@ ARM void ActorRupee::func_ov031_020e9108() {
     this->mVel.x = gRandom.Next(-0xCD, 0x19B);
     this->mVel.y = gRandom.Next(0, 0x19A);
     this->mVel.z = gRandom.Next(-0xCD, 0x19B);
-    SET_FLAG(&this->mFlags, ActorFlag_Visible);
+    SET_FLAG(this->mFlags, ActorFlag_Visible);
 }
 
 ARM void ActorRupee::func_ov031_020e91a8() {
@@ -141,7 +141,7 @@ ARM void ActorRupee::func_ov031_020e9234() {
     this->mVel.x = 0;
     this->mVel.y = 0;
     this->mVel.z = 0;
-    SET_FLAG(&this->mFlags, ActorFlag_Visible);
+    SET_FLAG(this->mFlags, ActorFlag_Visible);
 }
 
 ARM void ActorRupee::func_ov031_020e9254() {
@@ -240,7 +240,7 @@ ARM void ActorRupee::func_ov031_020e9450() {
     this->mPrevPos = this->mPos;
     Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
 
-    if (!GET_FLAG(&this->mFlags, ActorFlag_5)) {
+    if (!GET_FLAG(this->mFlags, ActorFlag_5)) {
         return;
     }
 
@@ -260,7 +260,7 @@ ARM void ActorRupee::func_ov031_020e94d4() {
     this->mUnk_4a = 0;
     this->mUnk_44 = 0;
     this->mUnk_9c.func_ov000_02097bec();
-    UNSET_FLAG(&this->mFlags, ActorFlag_Visible);
+    UNSET_FLAG(this->mFlags, ActorFlag_Visible);
 }
 
 ARM void ActorRupee::func_ov031_020e951c() {
@@ -334,7 +334,7 @@ ARM void ActorRupee::func_ov031_020e9638() {
     this->mVel.x = 0;
     this->mVel.y = 0;
     this->mVel.z = 0;
-    UNSET_FLAG(&this->mFlags, ActorFlag_Visible);
+    UNSET_FLAG(this->mFlags, ActorFlag_Visible);
     this->mUnk_c4.mUnk_04 = 0;
 
     if (this->mUnk_6e == 2) {
@@ -364,7 +364,7 @@ ARM void ActorRupee::func_ov031_020e970c() {
     this->mVel.x = 0;
     this->mVel.y = 0;
     this->mVel.z = 0;
-    SET_FLAG(&this->mFlags, ActorFlag_Visible);
+    SET_FLAG(this->mFlags, ActorFlag_Visible);
     this->mUnk_4a = 1;
     this->mUnk_52 = -1;
     this->mUnk_50 = 0;
@@ -664,7 +664,7 @@ ARM void ActorRupee::func_ov031_020e9d94() {
     u32 temp_r1;
 
     if (this->func_ov031_020e9e5c()) {
-        SET_FLAG(&this->mFlags, ActorFlag_Visible);
+        SET_FLAG(this->mFlags, ActorFlag_Visible);
         return;
     }
 
@@ -689,9 +689,9 @@ ARM void ActorRupee::func_ov031_020e9d94() {
     temp_r1 = temp_r0 >> 0x1F;
 
     if ((this->mUnk_94 & 7) < 4) {
-        UNSET_FLAG(&this->mFlags, ActorFlag_Visible);
+        UNSET_FLAG(this->mFlags, ActorFlag_Visible);
     } else {
-        SET_FLAG(&this->mFlags, ActorFlag_Visible);
+        SET_FLAG(this->mFlags, ActorFlag_Visible);
     }
 
     if (this->mUnk_94 < this->mUnk_96) {

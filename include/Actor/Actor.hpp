@@ -5,6 +5,7 @@
 #include "Actor/ActorType.hpp"
 #include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
+#include "flags.h"
 #include "global.h"
 #include "nitro/math.h"
 #include "types.h"
@@ -35,38 +36,38 @@ public:
 
 typedef u32 ActorFlags;
 enum ActorFlag_ {
-    ActorFlag_Alive,
-    ActorFlag_Visible,
-    ActorFlag_2,
-    ActorFlag_Active, // stops updating if false
-    ActorFlag_4,
-    ActorFlag_5,
-    ActorFlag_6,
-    ActorFlag_7,
-    ActorFlag_Grabbed,
-    ActorFlag_9,
-    ActorFlag_Interacting, // set when player interacts with actor
-    ActorFlag_11,
-    ActorFlag_12,
-    ActorFlag_13,
-    ActorFlag_14,
-    ActorFlag_15,
-    ActorFlag_16,
-    ActorFlag_17,
-    ActorFlag_18,
-    ActorFlag_19,
-    ActorFlag_20,
-    ActorFlag_21,
-    ActorFlag_22,
-    ActorFlag_23,
-    ActorFlag_24,
-    ActorFlag_25,
-    ActorFlag_26,
-    ActorFlag_27,
-    ActorFlag_28,
-    ActorFlag_29,
-    ActorFlag_30,
-    ActorFlag_31,
+    ActorFlag_Alive       = FLAG(0, 0),
+    ActorFlag_Visible     = FLAG(0, 1),
+    ActorFlag_2           = FLAG(0, 2),
+    ActorFlag_Active      = FLAG(0, 3), // stops updating if false
+    ActorFlag_4           = FLAG(0, 4),
+    ActorFlag_5           = FLAG(0, 5),
+    ActorFlag_6           = FLAG(0, 6),
+    ActorFlag_7           = FLAG(0, 7),
+    ActorFlag_Grabbed     = FLAG(0, 8),
+    ActorFlag_9           = FLAG(0, 9),
+    ActorFlag_Interacting = FLAG(0, 10), // set when player interacts with actor
+    ActorFlag_11          = FLAG(0, 11),
+    ActorFlag_12          = FLAG(0, 12),
+    ActorFlag_13          = FLAG(0, 13),
+    ActorFlag_14          = FLAG(0, 14),
+    ActorFlag_15          = FLAG(0, 15),
+    ActorFlag_16          = FLAG(0, 16),
+    ActorFlag_17          = FLAG(0, 17),
+    ActorFlag_18          = FLAG(0, 18),
+    ActorFlag_19          = FLAG(0, 19),
+    ActorFlag_20          = FLAG(0, 20),
+    ActorFlag_21          = FLAG(0, 21),
+    ActorFlag_22          = FLAG(0, 22),
+    ActorFlag_23          = FLAG(0, 23),
+    ActorFlag_24          = FLAG(0, 24),
+    ActorFlag_25          = FLAG(0, 25),
+    ActorFlag_26          = FLAG(0, 26),
+    ActorFlag_27          = FLAG(0, 27),
+    ActorFlag_28          = FLAG(0, 28),
+    ActorFlag_29          = FLAG(0, 29),
+    ActorFlag_30          = FLAG(0, 30),
+    ActorFlag_31          = FLAG(0, 31),
 };
 
 class Actor : public SysObject {
@@ -136,6 +137,10 @@ public:
     /* 54 */
 
     unk32 func_01fff5d0(unk32 param1, unk32 param2);
+
+    void ResetFlags() {
+        *(u32 *) this->mFlags = 0;
+    }
 
     Actor();
     void func_ov000_0209848c(ActorType *param1);

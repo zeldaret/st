@@ -351,12 +351,12 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
             iVar10 = gActorManager->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
 
-            if (iVar10 == 0) {
+            if (iVar10 == NULL) {
                 return;
             }
 
             if (iVar10->func_01fff458() == ActorId_NormalShield) {
-                UNSET_FLAG(&(iVar10->mFlags), ActorFlag_Visible);
+                UNSET_FLAG(iVar10->mFlags, ActorFlag_Visible);
                 iVar10->mUnk_4a = 0;
             }
             break;
