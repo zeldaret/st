@@ -27,6 +27,10 @@ public:
     /* 34 */
 
     void func_02028cdc(Actor_5c *param1, unk32 param2);
+
+    unk32 *func_ov000_02073dc();
+    unk32 *func_ov000_02073e8();
+    ActorType *func_ov000_020974dc(u32 id);
 };
 
 typedef u32 ActorFlags;
