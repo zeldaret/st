@@ -16,7 +16,7 @@ const u8 gBombBagCapacities[UpgradeCapacity_Max] = {
 
 // SetInventoryFlag?
 ARM void ItemManager::func_ov000_020a863c(ItemFlag itemFlag) {
-    // SET_FLAG(this->mUnk_08, itemFlag);
+    SET_FLAG(this->mUnk_08, itemFlag);
 }
 
 // removeEquipmentItem
