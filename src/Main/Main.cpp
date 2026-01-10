@@ -116,7 +116,6 @@ RomBuildInfo BuildInfo = {
     "[SDK+MEI:libASR_V1.0.5-CW2.0-SDK4.0]",
 };
 
-// non-matching
 void main(void) {
-    data_02049a2c.func_02013394();
+    data_02049a2c.Run();
 }

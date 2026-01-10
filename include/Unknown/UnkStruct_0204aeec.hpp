@@ -5,8 +5,6 @@
 
 class UnkStruct_0204aeec : public SysObject {
 public:
-    /* 00 */
-
     void func_0201e698(void);
 };
 

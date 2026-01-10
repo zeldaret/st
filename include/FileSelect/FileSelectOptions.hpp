@@ -4,6 +4,7 @@
 #include "FileSelect/FileSelectMicTest.hpp"
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
+#include "global.h"
 #include "types.h"
 
 typedef u32 FSOptionsState;
@@ -74,7 +75,6 @@ public:
     /* 0FC0 */ u8 mUnk_FC0;
     /* 0FC1 */ u8 mUnk_FC1;
     /* 0FC2 */ u8 mUnk_FC2;
-    // /* 0FC3 */ UnkStruct_ov019_020d24c8_2C_24_FC3 mUnk_FC3[63];
     /* 0FC3 */ STRUCT_PAD(0xFC3, 0x103E);
     /* 103E */ unk16 mUnk_103E;
     /* 1040 */
@@ -165,9 +165,9 @@ public:
     void func_ov019_020cd788(void);
 
     // data_ov019_020d2200 vtable
-    /* 00 */ virtual ~FileSelectOptions();
-    /* 08 */ virtual void vfunc_08();
-    /* 10 */ virtual void vfunc_10();
+    /* 00 */ virtual ~FileSelectOptions() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 10 */ virtual void vfunc_10() override;
 
     static GameModeManagerBase_104 *Create(void *param1, s32 saveSlotIndex);
 };

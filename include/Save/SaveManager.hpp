@@ -8,6 +8,8 @@
 #include "global.h"
 #include "types.h"
 
+//! TODO: kinda draft state for now
+
 // probably related to the map data?
 #define NUM_UNK_BLOCKS 120
 #define SIZE_UNK_BLOCK 0x1000
@@ -16,6 +18,7 @@
 #define COUNT_DATA 2 // main data + backup (?)
 
 #define SAVE_DATA_SIZE (sizeof(SaveSlot) + sizeof(u8) * NUM_UNK_BLOCKS * SIZE_UNK_BLOCK)
+#define MAX_SAVE_SLOTS 2
 
 enum {
     SaveDataIndex_SaveInfo,

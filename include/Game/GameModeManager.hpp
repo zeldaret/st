@@ -11,12 +11,11 @@ public:
     void func_0201c00c(unk32 param1, unk32 param2, unk32 param3);
 };
 
-class GameModeManagerBase_104_04 { // UnkSubStruct10
+class GameModeManagerBase_104_04 {
 public:
     /* 00 */ void *mUnk_00;
     /* 04 */ void *mUnk_04;
 
-    // GameModeManagerBase_104_04();
     void func_020166ac(void);
     void func_020166cc(void *param1);
 };
@@ -26,7 +25,6 @@ public:
     /* 00 */ GameModeManagerBase_104_04 mUnk_00;
 
     GameModeManagerBase_104_0C_04();
-    // ~GameModeManagerBase_104_0C_04();
 };
 
 class GameModeManagerBase_104_0C {

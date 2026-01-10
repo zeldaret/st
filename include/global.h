@@ -44,6 +44,4 @@
 
 #define STRUCT_PAD(from, to) unsigned char _pad_##from[(to) - (from)]
 
-#define MAX_SAVE_SLOTS 2
-
 #endif

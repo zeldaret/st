@@ -3,6 +3,16 @@
 #include "Save/AdventureFlags.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 
+extern "C" {
+void func_020166cc(void *param1, void *param2);
+
+void func_ov000_02062e44(void *param1, void *param2);
+
+//! TODO: conflict between UnkStructSub4, UnkStructSub4_2 and UnkStructSub19
+unk32 func_ov000_020609c4(void *thisx);
+void func_ov000_0206082c(void *thisx, unk32 param1, unk32 param2);
+};
+
 // non-matching
 ARM UnkSubStruct9::UnkSubStruct9(stack_struct1 param1) :
     mSaveSlotIndex(param1.param2),

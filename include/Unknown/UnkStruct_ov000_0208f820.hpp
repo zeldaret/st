@@ -138,7 +138,7 @@ public:
         this->mItemId          = itemId;
     }
 
-    UnkStruct_ov000_0208f820_04() {};
+    UnkStruct_ov000_0208f820_04() {}
 };
 
 class UnkStruct_ov000_0208f820 : public SysObject {

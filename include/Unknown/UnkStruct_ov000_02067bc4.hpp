@@ -64,7 +64,6 @@ public:
     void func_02021c2c();
 
     UnkStruct_ov000_02067bc4 *func_ov000_02067bc4(unk32);
-    // UnkStruct_ov000_02067bc4 *func_ov000_02067bc4(unk32, unk32, unk32, unk32);
     unk8 func_ov000_02067cf8(unk32 param1, unk32 param2, UnkStruct1 *param3);
     void *func_ov000_02067bb4(unk32 param1);
     void func_ov000_02067e60(u8 param1, unk32 param2);

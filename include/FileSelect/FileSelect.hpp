@@ -14,37 +14,12 @@
 extern const unk16 data_ov019_020d1bb0[];
 extern "C" void func_ov001_020bd6a8();
 
-class UnkSubStruct5 {
-public:
-    UnkSubStruct5(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
-    ~UnkSubStruct5();
-
-    virtual void vfunc_00();
-};
-
-class UnkSubStruct6 {
-public:
-    UnkSubStruct6();
-    ~UnkSubStruct6();
-};
-
-class UnkSubStruct8 {
-public:
-    /* 00 (vtable) */
-    /* 04 */ void *ptr;
-    /* 14 */
-
-    UnkSubStruct8();
-
-    virtual void vfunc_00();
-};
-
 class UnkStructSub2 {
 public:
     UnkStructSub2();
 
-    virtual void vfunc_00();
-    virtual void vfunc_04();
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
 };
 
 class UnkStructSub4 {
@@ -95,14 +70,9 @@ class FileSelect_UnkClass2_Sub4_Base : public GameModeManagerBase_104 {
 public:
     /* 0000 (vtable) */
 
-    FileSelect_UnkClass2_Sub4_Base() {};
+    FileSelect_UnkClass2_Sub4_Base() {}
 
-    /* 00 */ virtual ~FileSelect_UnkClass2_Sub4_Base() {}
-    // /* 08 */ virtual void vfunc_08();
-    // /* 0C */ virtual void vfunc_0C();
-    // /* 10 */ virtual void vfunc_10();
-    // /* 14 */ virtual void vfunc_14();
-    // /* 18 */ virtual void vfunc_18(void);
+    /* 00 */ virtual ~FileSelect_UnkClass2_Sub4_Base() override {}
 };
 
 class FileSelectSubScreen : public FileSelect_UnkClass2_Sub4_Base {
@@ -133,10 +103,9 @@ public:
     void func_ov019_020cf73c(unk32 param1, unk32 param2);
 
     // data_ov019_020d22b8 vtable
-    /* 00 */ virtual ~FileSelectSubScreen() {}
-    /* 08 */ virtual void vfunc_08();
-    /* 10 */ virtual void vfunc_10();
-    // /* 14 */ virtual void vfunc_14();
+    /* 00 */ virtual ~FileSelectSubScreen() override {}
+    /* 08 */ virtual void vfunc_08() override;
+    /* 10 */ virtual void vfunc_10() override;
 };
 
 class FileSelectManager : public GameModeManagerBase { // 0x02262dbc
@@ -182,88 +151,7 @@ public:
     static GameModeManagerBase *Create(unk32 param1);
 };
 
-//! TODO: temp
-extern "C" {
-unk32 func_01ffb428(unk32, unk32);
-
-void func_020166cc(void *param1, void *param2);
-// void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
-//                     unk32 param8);
-void func_0201e8d4(void *param1, void *param2);
-void func_0201f2cc(void *param1);
-void func_020249d4(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-void func_020275e8();
-
-void func_ov000_02062e44(void *param1, void *param2);
-unk8 func_ov000_02070164(void *); //! TODO: turn to a class
-
-//! TODO: conflict between UnkStructSub4, UnkStructSub4_2 and UnkStructSub19
-unk32 func_ov000_020609c4(void *thisx);
-unk32 func_ov000_02060af8(void *thisx);
-void func_ov000_0206082c(void *thisx, unk32 param1, unk32 param2);
-void func_ov000_020623d8(void *param1, unk32 param2);
-
-void func_ov001_020bd6a8();
-void func_ov001_020be054();
-void func_ov001_020be0d8();
-void func_ov001_020be0ec();
-
-GameModeManagerBase_104 *func_ov003_020b6520(void *param1, void *param2);
-};
-
 // static initializers classes
-
-class UnkStruct_ov019_020d215c {
-public:
-    /* 00 */ Vec2s mUnk_00;
-    /* 04 */ Vec2s mUnk_04;
-    /* 08 */ Vec2s mUnk_08;
-    /* 0C */ Vec2s mUnk_0C;
-    /* 10 */ Vec2s mUnk_10;
-    /* 14 */
-};
-
-class UnkStruct_ov019_020d2170 {
-public:
-    /* 14 */ Vec2s_cpp mUnk_00;
-    /* 18 */ Vec2s_cpp mUnk_04;
-    /* 1C */ Vec2s_cpp mUnk_08;
-    /* 20 */ Vec2s_cpp mUnk_0C;
-    /* 24 */ Vec2s_cpp mUnk_10;
-    /* 28 */ Vec2s_cpp mUnk_14;
-    /* 2C */
-
-    static UnkStruct_ov019_020d215c data_ov019_020d215c;
-
-    UnkStruct_ov019_020d2170() {
-        data_ov019_020d215c.mUnk_04.x = 0;
-        data_ov019_020d215c.mUnk_04.y = -0x1E;
-
-        data_ov019_020d215c.mUnk_08.x = 0;
-        data_ov019_020d215c.mUnk_08.y = 0x100;
-
-        data_ov019_020d215c.mUnk_00.x = -0x100;
-        data_ov019_020d215c.mUnk_00.y = 0;
-
-        this->mUnk_14.x = 0;
-        this->mUnk_14.y = 0x100;
-
-        this->mUnk_10.x = -0x100;
-        this->mUnk_10.y = 0;
-
-        this->mUnk_0C.x = 0;
-        this->mUnk_0C.y = 100;
-
-        this->mUnk_08.x = -0x100;
-        this->mUnk_08.y = 0;
-
-        this->mUnk_04.x = 0;
-        this->mUnk_04.y = 100;
-
-        this->mUnk_00.x = -0x100;
-        this->mUnk_00.y = 0;
-    }
-};
 
 class UnkStruct_ov019_020d1d80 {
 public:
@@ -273,22 +161,6 @@ public:
         this->mUnk_00 = param1;
     }
 };
-
-class UnkStruct_ov019_020d24c0 {
-public:
-    Vec2s mUnk_00;
-    Vec2s mUnk_04;
-
-    UnkStruct_ov019_020d24c0(s16 x1, s16 y1, s16 x2, s16 y2) {
-        this->mUnk_04.x = x2;
-        this->mUnk_04.y = y2;
-
-        this->mUnk_00.x = x1;
-        this->mUnk_00.y = y1;
-    }
-};
-
-// extern UnkStruct_ov019_020d24c0 data_ov019_020d24c0;
 
 class UnkStruct_ov019_020d1e4c {
 public:
@@ -383,21 +255,3 @@ public:
 };
 
 extern const UnkStruct_ov019_020d1e70 data_ov019_020d1e70;
-
-class UnkStruct_ov019_020d2248 {
-public:
-    s16 mUnk_00;
-    Vec2s mUnk_02;
-    Vec2s mUnk_06;
-    Vec2s mUnk_0A;
-    s16 mUnk_0E;
-    Vec2s mUnk_10;
-
-    UnkStruct_ov019_020d2248(s16 x1, s16 y1, s16 x2, s16 y2) {
-        this->mUnk_10.x = x2;
-        this->mUnk_10.y = y2;
-
-        this->mUnk_02.x = x1;
-        this->mUnk_02.y = y1;
-    }
-};

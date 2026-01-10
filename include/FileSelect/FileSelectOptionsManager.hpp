@@ -34,8 +34,8 @@ public:
     unk32 func_ov019_020cc874();
 
     // data_ov019_020d2224 vtable
-    /* 00 */ virtual ~FileSelectOptionsManager();
-    /* 08 */ virtual void vfunc_08();
+    /* 00 */ virtual ~FileSelectOptionsManager() override;
+    /* 08 */ virtual void vfunc_08() override;
 
     static GameModeManagerBase_104 *Create(void *param1, s32 saveSlotIndex);
 };

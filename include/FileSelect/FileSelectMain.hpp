@@ -2,13 +2,13 @@
 
 #include "FileSelect/UnkSubStruct9.hpp"
 #include "Game/GameModeManager.hpp"
+#include "Save/SaveManager.hpp"
 #include "Unknown/UnkSystem1.hpp"
 #include "global.h"
 #include "iterator.hpp"
 #include "nitro/math.h"
 #include "types.h"
 
-class UnkSubStruct9;
 typedef Iterator<UnkSubStruct9, MAX_SAVE_SLOTS> FileSlotIterator;
 
 /*
@@ -292,8 +292,8 @@ public:
     void func_ov019_020cb268();
 
     // data_ov019_020d1ec0 vtable
-    /* 00 */ virtual ~FileSelectMain();
-    /* 08 */ virtual void vfunc_08();
-    /* 10 */ virtual void vfunc_10();
-    /* 18 */ virtual void vfunc_18(void);
+    /* 00 */ virtual ~FileSelectMain() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 18 */ virtual void vfunc_18(void) override;
 };

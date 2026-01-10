@@ -1,5 +1,6 @@
 #pragma once
 
+#include "global.h"
 #include "types.h"
 
 class UnkStruct_0204a110_Sub1 {

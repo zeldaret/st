@@ -10,6 +10,65 @@
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
+extern "C" {
+void func_ov000_02062e44(void *param1, void *param2);
+
+//! TODO: conflict between UnkStructSub4, UnkStructSub4_2 and UnkStructSub19
+void func_ov000_020623d8(void *param1, unk32 param2);
+};
+
+class UnkStruct_ov019_020d215c {
+public:
+    /* 00 */ Vec2s mUnk_00;
+    /* 04 */ Vec2s mUnk_04;
+    /* 08 */ Vec2s mUnk_08;
+    /* 0C */ Vec2s mUnk_0C;
+    /* 10 */ Vec2s mUnk_10;
+    /* 14 */
+};
+
+class UnkStruct_ov019_020d2170 {
+public:
+    /* 14 */ Vec2s_cpp mUnk_00;
+    /* 18 */ Vec2s_cpp mUnk_04;
+    /* 1C */ Vec2s_cpp mUnk_08;
+    /* 20 */ Vec2s_cpp mUnk_0C;
+    /* 24 */ Vec2s_cpp mUnk_10;
+    /* 28 */ Vec2s_cpp mUnk_14;
+    /* 2C */
+
+    static UnkStruct_ov019_020d215c data_ov019_020d215c;
+
+    UnkStruct_ov019_020d2170() {
+        data_ov019_020d215c.mUnk_04.x = 0;
+        data_ov019_020d215c.mUnk_04.y = -0x1E;
+
+        data_ov019_020d215c.mUnk_08.x = 0;
+        data_ov019_020d215c.mUnk_08.y = 0x100;
+
+        data_ov019_020d215c.mUnk_00.x = -0x100;
+        data_ov019_020d215c.mUnk_00.y = 0;
+
+        this->mUnk_14.x = 0;
+        this->mUnk_14.y = 0x100;
+
+        this->mUnk_10.x = -0x100;
+        this->mUnk_10.y = 0;
+
+        this->mUnk_0C.x = 0;
+        this->mUnk_0C.y = 100;
+
+        this->mUnk_08.x = -0x100;
+        this->mUnk_08.y = 0;
+
+        this->mUnk_04.x = 0;
+        this->mUnk_04.y = 100;
+
+        this->mUnk_00.x = -0x100;
+        this->mUnk_00.y = 0;
+    }
+};
+
 UnkStruct_ov019_020d215c UnkStruct_ov019_020d2170::data_ov019_020d215c = {
     {0, 0}, {0, 0}, {0, 0}, {-0x47, -0x01}, {0x0281, 0x00}};
 

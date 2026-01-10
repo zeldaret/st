@@ -4,6 +4,17 @@
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "regs.h"
 
+extern "C" {
+void func_0200a7b0(unk32 param1, const char *param2, const char *param3, const char *param4, unk32 param5, unk32 param6,
+                   unk32 param7, unk32 param8);
+void func_020249d4(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
+void func_020275e8();
+
+//! TODO: conflict between UnkStructSub4, UnkStructSub4_2 and UnkStructSub19
+unk32 func_ov000_020609c4(void *thisx);
+unk32 func_ov000_02060af8(void *thisx);
+};
+
 #pragma dont_reuse_strings off
 
 FileSelectOptionsManager *gpFSOptionsManager = NULL;
@@ -24,20 +35,6 @@ public:
     UnkStruct2(const char *path, unk32 param2);
     ~UnkStruct2();
     void func_020154ec(const char *param1);
-};
-
-class UnkStruct3 {
-public:
-    unk32 mUnk_00;
-    unk32 mUnk_04;
-    unk32 mUnk_08;
-
-    UnkStruct3() {};
-    UnkStruct3(const char *param1, const char *param2, const char *param3);
-    ~UnkStruct3() {};
-
-    static void func_0200a7b0(unk32 param1, const void *param2, const void *param3, const void *param4, unk32 param5,
-                              unk32 param6, unk32 param7, unk32 param8);
 };
 
 ARM FileSelectSubScreen::FileSelectSubScreen() :
@@ -165,24 +162,19 @@ ARM void FileSelectSubScreen::func_ov019_020cf73c(unk32 param1, unk32 param2) {
 
     switch (param2) {
         case 0:
-            UnkStruct3::func_0200a7b0(arg0, this->mUnk_0EF4.mUnk_00, this->mUnk_0EF4.mUnk_04, this->mUnk_0EF4.mUnk_08, 0, 0,
-                                      arg7, arg8);
+            func_0200a7b0(arg0, this->mUnk_0EF4.mUnk_00, this->mUnk_0EF4.mUnk_04, this->mUnk_0EF4.mUnk_08, 0, 0, arg7, arg8);
             break;
         case 1:
-            UnkStruct3::func_0200a7b0(arg0, this->mUnk_0F30.mUnk_00, this->mUnk_0F30.mUnk_04, this->mUnk_0F30.mUnk_08, 0, 0,
-                                      arg7, arg8);
+            func_0200a7b0(arg0, this->mUnk_0F30.mUnk_00, this->mUnk_0F30.mUnk_04, this->mUnk_0F30.mUnk_08, 0, 0, arg7, arg8);
             break;
         case 2:
-            UnkStruct3::func_0200a7b0(arg0, this->mUnk_0F6C.mUnk_00, this->mUnk_0F6C.mUnk_04, this->mUnk_0F6C.mUnk_08, 0, 0,
-                                      arg7, arg8);
+            func_0200a7b0(arg0, this->mUnk_0F6C.mUnk_00, this->mUnk_0F6C.mUnk_04, this->mUnk_0F6C.mUnk_08, 0, 0, arg7, arg8);
             break;
         case 3:
-            UnkStruct3::func_0200a7b0(arg0, this->mUnk_0FA8.mUnk_00, this->mUnk_0FA8.mUnk_04, this->mUnk_0FA8.mUnk_08, 0, 0,
-                                      arg7, arg8);
+            func_0200a7b0(arg0, this->mUnk_0FA8.mUnk_00, this->mUnk_0FA8.mUnk_04, this->mUnk_0FA8.mUnk_08, 0, 0, arg7, arg8);
             break;
         case 4:
-            UnkStruct3::func_0200a7b0(arg0, this->mUnk_0FE4.mUnk_00, this->mUnk_0FE4.mUnk_04, this->mUnk_0FE4.mUnk_08, 0, 0,
-                                      arg7, arg8);
+            func_0200a7b0(arg0, this->mUnk_0FE4.mUnk_00, this->mUnk_0FE4.mUnk_04, this->mUnk_0FE4.mUnk_08, 0, 0, arg7, arg8);
             break;
         default:
             break;
@@ -217,5 +209,3 @@ ARM void FileSelect_UnkClass7::vfunc_04() {
         data_0204af1c.func_0201aad0(&this->mUnk_0004[i], &this->mUnk_0E14[i], 1, 0);
     }
 }
-
-// ARM FileSelectSubScreen::~FileSelectSubScreen() {}

@@ -3,6 +3,8 @@
 #include "FileSelect/FileSelect.hpp"
 #include "Game/GameModeManager.hpp"
 #include "Unknown/UnkStruct_02049a2c.hpp"
+#include "Unknown/UnkStruct_02049bd4.hpp"
+#include "Unknown/UnkStruct_0204a110.hpp"
 
 class GameModeFileSelect : public GameModeBase {
 public:
@@ -27,12 +29,12 @@ public:
     void LoadContactMode(u16 saveSlotIndex);
 
     // data_ov019_020d1d8c vtable
-    /* 00 */ virtual ~GameModeFileSelect() override; // func_ov019_020c4928 & func_ov019_020c49ac
-    /* 08 */ virtual void vfunc_08(unk32 param1, unk32 param2, unk32 param3) override; // func_ov019_020c4a38
-    /* 0C */ virtual void vfunc_0C() override; // func_ov019_020c4aac
-    /* 14 */ virtual void vfunc_14() override; // func_ov019_020c4aa8
-    /* 18 */ virtual void vfunc_18() override; // func_ov019_020c4adc
-    /* 20 */ virtual void vfunc_20() override; // func_ov019_020c4ae0
+    /* 00 */ virtual ~GameModeFileSelect() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1, unk32 param2, unk32 param3) override;
+    /* 0C */ virtual void vfunc_0C() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18() override;
+    /* 20 */ virtual void vfunc_20() override;
     /* 30 */
 
     static GameModeFileSelect *Create();

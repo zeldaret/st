@@ -68,5 +68,3 @@ ARM unk32 UnkSystem1_ov019_Derived2::vfunc_1C(u32 param1, unk32 param2, unk32 pa
 end:
     return ret;
 }
-
-// ARM UnkSystem1_ov019_Derived2::~UnkSystem1_ov019_Derived2() {}

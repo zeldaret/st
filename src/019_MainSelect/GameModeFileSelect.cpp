@@ -9,6 +9,12 @@
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 
+extern "C" {
+void func_ov001_020be054();
+void func_ov001_020be0d8();
+void func_ov001_020be0ec();
+};
+
 static const UnkStruct_ov019_020d1d80 data_ov019_020d1d80(0x00020001);
 
 ARM GameModeFileSelect *GameModeFileSelect::Create() {

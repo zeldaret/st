@@ -4,11 +4,6 @@
 
 extern u8 data_ov000_020b64b0[8]; // bool?
 
-// static PTMF<SaveFile> data_ov019_020d1e2c = {SaveFile::func_ov019_020d0d50};
-// static PTMF<SaveFile> data_ov019_020d1e44 = {SaveFile::func_ov019_020d127c};
-// static PTMF<SaveFile> data_ov019_020d1e3c = {SaveFile::func_ov019_020d1108};
-// static PTMF<SaveFile> data_ov019_020d1e34 = {SaveFile::func_ov019_020d0ea8};
-
 ARM UnkSystem1_ov019_Derived1::UnkSystem1_ov019_Derived1() :
     UnkSystem1_ov019_1(0, 0) {
     this->mUnk_14 = 0;

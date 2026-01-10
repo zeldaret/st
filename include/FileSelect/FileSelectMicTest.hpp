@@ -2,6 +2,7 @@
 
 #include "FileSelect/Common.hpp"
 #include "Game/GameModeManager.hpp"
+#include "global.h"
 #include "nitro/math.h"
 #include "types.h"
 
@@ -120,8 +121,8 @@ public:
     void func_ov019_020cebcc();
 
     // data_ov019_020d2284 vtable
-    /* 00 */ virtual ~FileSelectMicTest();
-    /* 08 */ virtual void vfunc_08();
-    /* 10 */ virtual void vfunc_10();
-    /* 14 */ virtual void vfunc_14();
+    /* 00 */ virtual ~FileSelectMicTest() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14() override;
 };

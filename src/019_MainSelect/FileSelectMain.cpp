@@ -1,5 +1,6 @@
 #include "FileSelect/FileSelect.hpp"
 #include "Game/GameModeFileSelect.hpp"
+#include "Save/SaveManager.hpp"
 #include "Unknown/UnkStruct_02049a2c.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
@@ -9,6 +10,31 @@
 #include "regs.h"
 
 #pragma dont_reuse_strings off
+
+extern "C" {
+void func_020249d4(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
+
+void func_ov000_02062e44(void *param1, void *param2);
+
+//! TODO: conflict between UnkStructSub4, UnkStructSub4_2 and UnkStructSub19
+unk32 func_ov000_020609c4(void *thisx);
+unk32 func_ov000_02060af8(void *thisx);
+void func_ov000_0206082c(void *thisx, unk32 param1, unk32 param2);
+};
+
+class UnkStruct_ov019_020d24c0 {
+public:
+    Vec2s mUnk_00;
+    Vec2s mUnk_04;
+
+    UnkStruct_ov019_020d24c0(s16 x1, s16 y1, s16 x2, s16 y2) {
+        this->mUnk_04.x = x2;
+        this->mUnk_04.y = y2;
+
+        this->mUnk_00.x = x1;
+        this->mUnk_00.y = y1;
+    }
+};
 
 UnkStruct_ov019_020d24c0 data_ov019_020d24c0(-0x100, 0, 0x100, 0);
 

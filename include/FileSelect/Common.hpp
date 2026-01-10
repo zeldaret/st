@@ -93,7 +93,6 @@ public:
     /* 30 */
 
     UnkSubStruct1();
-    // ~UnkSubStruct1() {};
     void func_0201ea68(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
     u16 func_0201eaa0();
 
@@ -165,21 +164,7 @@ public:
     }
 };
 
-class UnkSubStruct13 {
-public:
-    /* 000 */ void *mUnk_000; // seems to point to data_ov000_020b4f84+0x14 (is it always the case?)
-
-    // ~UnkSubStruct13();
-};
-
-// ---
-
-class UnkSystem2_Base {
-public:
-    ~UnkSystem2_Base();
-};
-
-class UnkSystem2_UnkSubSystem1_Base { // UnkSubStruct2_Base
+class UnkSystem2_UnkSubSystem1_Base {
 public:
     /* 04 */ GameModeManagerBase_104_04 mUnk_04;
     /* 0C */ void *mUnk_0C;
@@ -196,49 +181,16 @@ public:
     /* 2E */ unk8 mUnk_2E;
     /* 2F */ unk8 mUnk_2F;
 
-    // UnkSystem2_UnkSubSystem1_Base();
+    UnkSystem2_UnkSubSystem1_Base();
 
     // data_ov000_020b1ecc vtable
-    /* 00 */ virtual ~UnkSystem2_UnkSubSystem1_Base() {}
+    /* 00 */ virtual ~UnkSystem2_UnkSubSystem1_Base();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
 };
 
-struct UnkSystem2_Derived1_InitArgs2 {
-    unk32 param1;
-    unk32 param2;
-    unk32 param3;
-    unk32 param4;
-    unk32 param5;
-    unk32 param6;
-
-    UnkSystem2_Derived1_InitArgs2(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6) {
-        this->param1 = param1;
-        this->param2 = param2;
-        this->param3 = param3;
-        this->param4 = param4;
-        this->param5 = param5;
-        this->param6 = param6;
-    }
-};
-
-struct UnkSystem2_Derived1_InitArgs1 {
-    UnkSystem2_Derived1_InitArgs2 subParams;
-    unk32 param2;
-    unk32 param3;
-    unk32 param4;
-
-    UnkSystem2_Derived1_InitArgs1(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6,
-                                  unk32 param7, unk32 param8, unk32 param9) :
-        subParams(param1, param2, param3, param4, param5, param6) {
-        this->param2 = param7;
-        this->param3 = param8;
-        this->param4 = param9;
-    }
-};
-
 // this class is related to the selectable buttons (actually more related to texture with things on top)
-class UnkSystem2_UnkSubSystem1_Derived1 : public UnkSystem2_UnkSubSystem1_Base, public UnkSystem2_Base { // UnkSubStruct2
+class UnkSystem2_UnkSubSystem1_Derived1 : public UnkSystem2_UnkSubSystem1_Base {
 public:
     /* 00 (vtable) */
     /* 30 */ void *mUnk_30; // related to the background texture draw (idle)
@@ -262,9 +214,9 @@ public:
     void func_ov000_020633c0(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
 
     // data_ov000_020b1efc vtable
-    /* 00 */ virtual ~UnkSystem2_UnkSubSystem1_Derived1() {}
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C();
+    /* 00 */ virtual ~UnkSystem2_UnkSubSystem1_Derived1() override {}
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C() override;
 };
 
 class UnkSystem2_UnkSubSystem7 {
@@ -275,7 +227,7 @@ public:
 };
 
 //! TODO: conflicts with UnkSystem2_UnkSubSystem1_Derived1? mUnk_34 type differs for some reasons
-class UnkSystem2_UnkSubSystem1_Derived2 : public UnkSystem2_UnkSubSystem1_Base, public UnkSystem2_Base {
+class UnkSystem2_UnkSubSystem1_Derived2 : public UnkSystem2_UnkSubSystem1_Base {
 public:
     /* 00 (vtable) */
     /* 30 */ void *mUnk_30; // related to the background texture draw (idle)
@@ -298,12 +250,12 @@ public:
     void func_ov000_020633c0(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
 
     // data_ov000_020b1efc vtable
-    /* 00 */ virtual ~UnkSystem2_UnkSubSystem1_Derived2() {}
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C();
+    /* 00 */ virtual ~UnkSystem2_UnkSubSystem1_Derived2() override {}
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C() override;
 };
 
-class UnkSystem2_UnkSubSystem3 { // UnkSubStruct4
+class UnkSystem2_UnkSubSystem3 {
 public:
     /* 00 */ UnkSystem2_UnkSubSystem1_Base *mUnk_00;
     /* 04 */
@@ -313,59 +265,10 @@ public:
     void func_ov000_02062f30();
 };
 
-class UnkSystem2_Derived1 : public UnkSystem2_Base {
-public:
-    /* 00 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_00;
-    /* 60 */ UnkSystem2_UnkSubSystem3 mUnk_60;
-    /* 64 */
-
-    UnkSystem2_Derived1(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6, unk32 param7,
-                        unk32 param8, unk32 param9) :
-        mUnk_00(param1, param2, param3, param4, param5, param6),
-        mUnk_60(&mUnk_00, param7, param8, param9) {}
-};
-
-class UnkSystem2_UnkSubSystem5_Base {
-public:
-    ~UnkSystem2_UnkSubSystem5_Base();
-
-    // /* 00 */ virtual void vfunc_00();
-    int vtable_pad;
-};
-
-class UnkSystem2_UnkSubSystem11 {
-public:
-    int vtable_pad;
-    /* 00 (vtable) */
-    /* 04 */ void *mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ void *mUnk_18;
-    /* 1C */ void *mUnk_1C;
-    /* 20 */
-
-    void func_ov000_02061f60();
-    ~UnkSystem2_UnkSubSystem11();
-
-    // data_ov000_020b1e9c vtable
-    // /* 00 */ virtual void vfunc_00();
-    // /* 04 */ virtual void vfunc_04();
-    // /* 08 */ virtual void vfunc_08();
-    // /* 0C */ virtual void vfunc_0C();
-};
-
-// this class seems related to drawing strings?
-class UnkSystem2_UnkSubSystem5 : public UnkSystem2_UnkSubSystem5_Base { // UnkSubStruct11
+class UnkSystem2_UnkSubSystem5_Base_10 {
 public:
     /* 000 (vtable) */
-    /* 004 */ wchar_t *mpString; // in this context it points to the player's name
-    /* 008 */ unk16 mUnk_008;
-    /* 00A */ unk16 mUnk_00A;
-    /* 00C */ void *mUnk_00C; // seems to point to mUnk_1B8
-    /* 010 */ void *mUnk_010; // vtable (data_ov000_020b20fc)
-    /* 014 */ void *mUnk_014; // seems to point to mUnk_1B8
+    /* 014 */ void *mUnk_014;
     /* 018 */ unk32 mUnk_018;
     /* 01C */ void *mUnk_01C;
     /* 020 */ unk32 mUnk_020;
@@ -383,7 +286,72 @@ public:
     /* 044 */ unk32 mUnk_044;
     /* 048 */ unk32 mUnk_048;
     /* 04C */ unk32 mUnk_04C;
-    /* 050 */ STRUCT_PAD(0x50, 0x140);
+    /* 050 */ STRUCT_PAD(0x50, 0x130);
+
+    // data_ov000_020b20fc (vtable)
+    /* 00 */ virtual ~UnkSystem2_UnkSubSystem5_Base_10();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10();
+    /* 14 */ virtual void vfunc_14();
+    /* 18 */ virtual void vfunc_18();
+    /* 1C */ virtual void vfunc_1C();
+    /* 20 */ virtual void vfunc_20();
+    /* 24 */ virtual void vfunc_24();
+    /* 28 */ virtual void vfunc_28();
+    /* 2C */ virtual void vfunc_2C();
+    /* 30 */ virtual void vfunc_30();
+    /* 34 */ virtual void vfunc_34();
+    /* 38 */ virtual void vfunc_38();
+    /* 3C */ virtual void vfunc_3C();
+    /* 40 */ virtual void vfunc_40();
+    /* 44 */ virtual void vfunc_44();
+    /* 48 */ virtual void vfunc_48();
+    /* 4C */
+};
+
+class UnkSystem2_UnkSubSystem5_Base {
+public:
+    /* 000 (vtable) */
+    /* 004 */ wchar_t *mpString; // in this context it points to the player's name
+    /* 008 */ unk16 mUnk_008;
+    /* 00A */ unk16 mUnk_00A;
+    /* 00C */ void *mUnk_00C;
+    /* 010 */ UnkSystem2_UnkSubSystem5_Base_10 mUnk_010;
+
+    ~UnkSystem2_UnkSubSystem5_Base();
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */
+};
+
+class UnkSystem2_UnkSubSystem11 {
+public:
+    /* 00 (vtable) */
+    /* 04 */ void *mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ void *mUnk_18;
+    /* 1C */ void *mUnk_1C;
+    /* 20 */
+
+    void func_ov000_02061f60();
+    ~UnkSystem2_UnkSubSystem11();
+
+    // data_ov000_020b1e9c vtable
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+};
+
+// this class seems related to drawing strings?
+class UnkSystem2_UnkSubSystem5 : public UnkSystem2_UnkSubSystem5_Base {
+public:
+    /* 000 (base) */
+    /* 130 */ STRUCT_PAD(0x130, 0x140);
     /* 140 */ unk16 mUnk_140;
     /* 142 */ unk16 mUnk_142;
     /* 144 */ unk16 mUnk_144;
@@ -394,7 +362,7 @@ public:
     /* 14E */ unk8 mUnk_14E; // 0x546
     /* 14F */ unk8 mUnk_14F; // 0x547
     /* 150 */ UnkSystem2_UnkSubSystem11 mUnk_150;
-    /* 170 */ UnkSubStruct13 mUnk_170;
+    /* 170 */ void *mUnk_170;
     /* 144 */ STRUCT_PAD(0x174, 0x238);
     /* 238 */
 
@@ -411,7 +379,8 @@ public:
     void func_0201fa70(unk32 param1);
 
     // data_0204439c vtable
-    // /* 00 */ virtual void vfunc_00();
+    /* 00 */ virtual void vfunc_00() override;
+    /* 04 */
 };
 
 class UnkSystem2_UnkSubSystem8_Base {
@@ -432,7 +401,7 @@ public:
 };
 
 // seems to be related to the animations of the ui elements
-class UnkSystem2_UnkSubSystem9 : public UnkSubStruct1 { // UnkSubStruct3
+class UnkSystem2_UnkSubSystem9 : public UnkSubStruct1 {
 public:
     /* 00 (base) */
     /* 30 */ unk32 mUnk_30;
@@ -445,16 +414,16 @@ public:
     UnkSystem2_UnkSubSystem9();
 
     // data_020442f4 vtable
-    /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
-    /* 08 */ virtual void vfunc_08();
+    /* 00 */ virtual void vfunc_00() override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
     /* 0C */
 
     //! TODO: conflict with UnkStruct_ov019_020d24c8_28_304
     void func_0201e874(unk32 param1, void *param2, void *param3, unk32 param4);
 };
 
-class UnkSystem2_UnkSubSystem8 : public UnkSystem2_UnkSubSystem8_Base { // UnkSubStruct7
+class UnkSystem2_UnkSubSystem8 : public UnkSystem2_UnkSubSystem8_Base {
 public:
     /* 00 (base) */
     /* 0C */ UnkSystem2_UnkSubSystem9 mUnk_0C;
@@ -474,22 +443,8 @@ public:
     void func_ov000_02063f64();
 
     // data_ov000_020b1f8c vtable
-    /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
-};
-
-class UnkSystem2_Derived2 : public UnkSystem2_Base {
-public:
-    /* 00 */ UnkSystem2_UnkSubSystem1_Derived2 mUnk_00;
-    /* 60 */ unk8 mUnk_60[0x38];
-    /* 98 */ UnkSystem2_UnkSubSystem8 mUnk_98;
-    /* E8 */ UnkSystem2_UnkSubSystem3 mUnk_E8;
-    /* EC */
-
-    UnkSystem2_Derived2(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6, unk32 param7,
-                        unk32 param8, unk32 param9) :
-        mUnk_00(param1, param2, param3, param4, param5, param6),
-        mUnk_E8(&mUnk_00, param7, param8, param9) {}
+    /* 00 */ virtual void vfunc_00() override;
+    /* 04 */ virtual void vfunc_04() override;
 };
 
 class UnkSystem3 {
@@ -516,9 +471,6 @@ public:
     ~UnkSystem4();
 };
 
-extern "C" void func_0200a7b0(unk32 param1, const char *param2, const char *param3, const char *param4, unk32 param5,
-                              unk32 param6, unk32 param7, unk32 param8);
-
 class UnkSystem5 {
 public:
     /* 00 */ char *mUnk_00;
@@ -530,57 +482,7 @@ public:
     /* 40 */
 
     UnkSystem5() {}
-    // UnkSystem5(const char *param1, const char *param2, const char *param3, unk32 param4, unk32 param5, unk32 param6) {
-    //     func_0200a7b0(param4, mUnk_00, mUnk_04, mUnk_08, 0, 0, param5, param6);
-    // }
     ~UnkSystem5() {}
     void func_020171e4();
     void func_02017520(const char *nscrPath, const char *ncgrPath, const char *nclrPath);
-};
-
-// ---
-
-class UnkSubStruct10 {
-public:
-    /* 00 */ void *mUnk_00;
-    /* 04 */ void *mUnk_04;
-
-    UnkSubStruct10();
-    void func_020166ac(void);
-    void func_020166cc(void *param1);
-};
-
-class UnkSubStruct14 {
-public:
-    /* 00 (vtable) */
-    /* 04 */ void *mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ void *mUnk_18;
-    /* 1C */ void *mUnk_1C;
-    /* 20 */
-
-    void func_ov000_02061f60();
-    // ~UnkSubStruct14();
-
-    // data_020443a8 vtable
-    /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C();
-};
-
-class UnkSubStruct20 : public UnkSystem2_UnkSubSystem1_Derived1 {
-public:
-    /* 060 */ unk8 mUnk_060[0x38];
-    /* 098 */ UnkSystem2_UnkSubSystem8 mUnk_098;
-    /* 0E8 */ UnkSystem2_UnkSubSystem3 mUnk_0E8;
-    /* 324 */
-
-    UnkSubStruct20(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6, unk32 param7,
-                   unk32 param8, unk32 param9) :
-        UnkSystem2_UnkSubSystem1_Derived1(param1, param2, param3, param4, param5, param6),
-        mUnk_0E8(this, param7, param8, param9) {}
 };

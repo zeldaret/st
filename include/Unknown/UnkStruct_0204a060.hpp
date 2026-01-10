@@ -1,6 +1,7 @@
 #pragma once
 
 #include "FileSelect/Common.hpp"
+#include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "types.h"
@@ -8,7 +9,7 @@
 class UnkStruct_0204a060_Base2 : public SysObject {
 public:
     /* 00 (vtable) */
-    /* 04 */ UnkSubStruct10 mUnk_04;
+    /* 04 */ GameModeManagerBase_104_04 mUnk_04;
     /* 0C */ unk8 mUnk_0C;
     /* 0D */ unk8 mUnk_0D;
     /* 0E */ unk8 mUnk_0E;
@@ -47,14 +48,14 @@ public:
     void func_0201bbcc();
 
     // data_02044108 vtable
-    /* 00 */ virtual ~UnkStruct_0204a060_Base();
-    /* 08 */ virtual bool vfunc_08(unk32 param1);
+    /* 00 */ virtual ~UnkStruct_0204a060_Base() override;
+    /* 08 */ virtual bool vfunc_08(unk32 param1) override;
     /* 0C */ virtual bool vfunc_0C(void);
     /* 10 */ virtual bool vfunc_10(void);
     /* 14 */
 };
 
-class UnkStruct_0204a060 : UnkStruct_0204a060_Base {
+class UnkStruct_0204a060 : public UnkStruct_0204a060_Base {
 public:
     /* 00 (base) */
     /* 24 */ void *callback; //! TODO: is it a PTMF?
@@ -64,8 +65,8 @@ public:
     bool func_020183d4(bool param1, void *param2, unk32 param3);
 
     // data_02044048 vtable
-    /* 00 */ virtual ~UnkStruct_0204a060();
-    /* 0C */ virtual bool vfunc_0C(void);
+    /* 00 */ virtual ~UnkStruct_0204a060() override;
+    /* 0C */ virtual bool vfunc_0C(void) override;
     /* 14 */
 };
 

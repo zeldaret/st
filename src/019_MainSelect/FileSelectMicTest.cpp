@@ -6,6 +6,31 @@
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
+extern "C" {
+unk32 func_01ffb428(unk32, unk32);
+
+void func_ov000_02062e44(void *param1, void *param2);
+unk8 func_ov000_02070164(void *); //! TODO: turn to a class
+};
+
+class UnkStruct_ov019_020d2248 {
+public:
+    s16 mUnk_00;
+    Vec2s mUnk_02;
+    Vec2s mUnk_06;
+    Vec2s mUnk_0A;
+    s16 mUnk_0E;
+    Vec2s mUnk_10;
+
+    UnkStruct_ov019_020d2248(s16 x1, s16 y1, s16 x2, s16 y2) {
+        this->mUnk_10.x = x2;
+        this->mUnk_10.y = y2;
+
+        this->mUnk_02.x = x1;
+        this->mUnk_02.y = y1;
+    }
+};
+
 static const UnkStruct_ov019_020d2248 data_ov019_020d2248(0, 0x32, 0x100, 0);
 
 static PTMF<FileSelectMicTest> data_ov019_020d225c[FSMicTestState_Max] = {
