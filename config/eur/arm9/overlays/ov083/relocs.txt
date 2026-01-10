@@ -433,7 +433,7 @@ from:0x02156c40 kind:arm_call to:0x021598ec module:overlay(83)
 from:0x02156c58 kind:load to:0x020b64fc module:overlay(0)
 from:0x02156c5c kind:load to:0x0215e364 module:overlay(83)
 from:0x02156c60 kind:load to:0x020b51b8 module:overlay(0)
-from:0x02156c64 kind:load to:0x020d8694 module:overlays(19,24)
+from:0x02156c64 kind:load to:0x020d8694 module:overlay(24)
 from:0x02156c70 kind:load to:0x0215d8f0 module:overlay(83)
 from:0x02156c74 kind:load to:0x027e09a8 module:dtcm
 from:0x02156c84 kind:load to:0x027e09bc module:dtcm

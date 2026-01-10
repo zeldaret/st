@@ -10,6 +10,9 @@
 src/Main/Main.cpp:
     .text       start:0x02000800 end:0x02000bdc
 
+src/Main/System/SysNew.cpp:
+    .text       start:0x02011e10 end:0x0201200c
+
 src/Main/System/OverlayManager.cpp:
     .text       start:0x020147fc end:0x02014944
 

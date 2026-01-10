@@ -15,10 +15,9 @@ UnkId *func_02001684(UnkId *, void *);
 void func_020011f4(void *);
 }
 extern char *data_0204372c[];
-extern UnkStruct_02011e10 *data_0204999c[4];
 
 // non-matching
-ARM void *SysNew(UnkStruct_02011e10 *param1, s32 length, s32 param3) {
+ARM void *SysNew(UnkStruct_02011e10_Sub1 *param1, s32 length, s32 param3) {
     void *newPtr = NULL;
     void *ret;
 
@@ -65,7 +64,7 @@ ARM void SysDelete(void *ptr) {
 }
 
 ARM void *func_02011f10(s32 length) {
-    return SysNew(data_0204999c[1], length, 4);
+    return SysNew(data_0204999c.mUnk_00[1], length, 4);
 }
 
 ARM void *func_02011f30(s32 length) {
@@ -78,9 +77,9 @@ ARM void *SysObject::operator new(unsigned long length, u32 id, u32 idLength) {
     char *uVar2;
     u16 line;
     char *uVar4;
-    UnkStruct_02011e10 *pUVar5;
+    UnkStruct_02011e10_Sub1 *pUVar5;
 
-    pUVar5 = data_0204999c[id];
+    pUVar5 = data_0204999c.mUnk_00[id];
     pvVar1 = SysNew(pUVar5, length, idLength);
 
     if (pvVar1 == NULL) {

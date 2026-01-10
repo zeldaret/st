@@ -9,6 +9,7 @@ extern "C" {
 #endif
 
 #define ABS(x) ((x) < 0 ? -(x) : (x))
+#define CLAMP(x, min, max) ((x) > (max) ? (max) : (x) < (min) ? (min) : (x))
 
 // Q20.12 fixed point number
 typedef s32 q20;
@@ -50,32 +51,38 @@ bool Approach(unk32 *src, unk32 dest, unk32 step);
 bool Approach_thunk(unk32 *src, unk32 dest, unk32 step);
 extern q4 gSinCosTable[];
 
-typedef struct {
+typedef struct Vec2b {
     /* 0 */ u8 x;
     /* 1 */ u8 y;
     /* 2 */
 } Vec2b;
 
-typedef struct {
+typedef struct Vec2s {
     /* 0 */ s16 x;
     /* 1 */ s16 y;
     /* 2 */
 } Vec2s;
 
-typedef struct {
+typedef struct Vec2us {
+    /* 0 */ u16 x;
+    /* 2 */ u16 y;
+    /* 4 */
+} Vec2us;
+
+typedef struct Vec2p {
     /* 0 */ q20 x;
     /* 4 */ q20 y;
     /* 8 */
 } Vec2p;
 
-typedef struct {
+typedef struct Vec3p {
     /* 0 */ q20 x;
     /* 4 */ q20 y;
     /* 8 */ q20 z;
     /* c */
 } Vec3p;
 
-typedef struct {
+typedef struct Vec4p {
     /* 00 */ q20 x;
     /* 04 */ q20 y;
     /* 08 */ q20 z;
@@ -83,20 +90,20 @@ typedef struct {
     /* 10 */
 } Vec4p;
 
-typedef struct {
+typedef struct Mat2p {
     /* 00 */ Vec2p xColumn;
     /* 08 */ Vec2p yColumn;
     /* 10 */
 } Mat2p;
 
-typedef struct {
+typedef struct Mat3p {
     /* 00 */ Vec3p xColumn;
     /* 0c */ Vec3p yColumn;
     /* 18 */ Vec3p zColumn;
     /* 24 */
 } Mat3p;
 
-typedef struct {
+typedef struct Mat4x3p {
     /* 00 */ Vec3p xColumn;
     /* 0c */ Vec3p yColumn;
     /* 18 */ Vec3p zColumn;
@@ -104,7 +111,7 @@ typedef struct {
     /* 30 */
 } Mat4x3p;
 
-typedef struct {
+typedef struct Mat4p {
     /* 00 */ Vec4p xColumn;
     /* 10 */ Vec4p yColumn;
     /* 20 */ Vec4p zColumn;

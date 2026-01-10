@@ -22,11 +22,9 @@ public:
 
 class UnkStruct_ov000_020b539c {
 public:
-    /* 00 */ unk8 mUnk_00[0x30];
+    /* 00 */ Actor_5c mUnk_00[3];
     /* 30 */ ActorType *mUnk_30;
     /* 34 */
-
-    void func_02028cdc(Actor_5c *param1, unk32 param2);
 };
 
 typedef u32 ActorFlags;

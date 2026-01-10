@@ -2,6 +2,7 @@
 
 #include "Item/Item.hpp"
 #include "System/SysNew.hpp"
+#include "global.h"
 #include "types.h"
 
 #define IS_ITEM_RESTRICTED(restrictions, itemFlag) (((restrictions) & (1 << (itemFlag))) != 0)
@@ -115,8 +116,12 @@ public:
 class TreasureManager : public ItemManager {
 public:
     /* 28 */ unk8 mUnk_28[0x3C - 0x28];
-    /* 3c */ s16 mUnk_3c[TreasureType_Max]; // treasures
-    /* 5c */
+    /* 3C */ s16 mUnk_3c[TreasureType_Max]; // treasures
+    /* 5C */ unk16 mUnk_5C;
+    /* 5E */ unk16 mUnk_5E;
+    /* 60 */ STRUCT_PAD(0x60, 0x7E);
+    /* 7E */ u16 mUnk_7E;
+    /* 80 */
 
     TreasureManager();
     ~TreasureManager();

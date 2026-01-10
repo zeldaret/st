@@ -27,7 +27,7 @@ Each overlay is tied to an index which is used to access the overlay in two diff
 `016` | RabbitCapture     | `016`   |      |
 `017` | CourseExec        | `017`   |      |
 `018` | StartUp           | `021`   |      | Exists briefly on game startup. Initializes RNG, messages, and more.
-`019` | MainSelect        | `024`   |      |
+`019` | MainSelect        | `024`   |      | File Select
 `020` | WirelessCommon    | `025`   |      |
 `021` | BattleGame        | `026`   |      |
 `022` | Download          | `027`   |      | Handles DS download play.

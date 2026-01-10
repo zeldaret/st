@@ -119,14 +119,14 @@ from:0x02183464 kind:thumb_call to:0x020b6eac module:overlay(1)
 from:0x02183470 kind:thumb_call to:0x020b6eac module:overlay(1)
 from:0x02183476 kind:thumb_call_arm to:0x02011ff4 module:main
 from:0x02183484 kind:thumb_call to:0x020b81e0 module:overlays(1,14)
-from:0x021834e4 kind:load to:0x02112a0c module:overlays(19,31)
+from:0x021834e4 kind:load to:0x02112a0c module:overlay(31)
 from:0x02183514 kind:thumb_call to:0x0201547c module:main
 from:0x02183528 kind:thumb_call to:0x0201547c module:main
 from:0x0218352e kind:thumb_call_arm to:0x02011ff4 module:main
 from:0x02183570 kind:thumb_call to:0x0205777c module:overlay(0)
 from:0x02183576 kind:thumb_call_arm to:0x02011ff4 module:main
 from:0x021835b2 kind:thumb_call to:0x020b8530 module:overlay(1)
-from:0x021835bc kind:load to:0x02112a0c module:overlays(19,31)
+from:0x021835bc kind:load to:0x02112a0c module:overlay(31)
 from:0x021835ec kind:thumb_call to:0x0201547c module:main
 from:0x02183600 kind:thumb_call to:0x0201547c module:main
 from:0x02183606 kind:thumb_call_arm to:0x02011ff4 module:main

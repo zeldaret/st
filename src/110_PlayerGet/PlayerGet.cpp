@@ -487,12 +487,8 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                 data_027e0cec->func_ov000_020a0000(this->mUnk_ec, this->mUnk_fc, uStack_f0, &VStack_fc, 1);
             }
 
-            auStack_30[0] = 0;
-            auStack_30[3] = 0;
-            auStack_30[4] = 0;
-            auStack_30[1] = 0;
-            auStack_30[2] = -1;
-            data_ov000_020b504c.func_ov000_02067cf8(ItemManager::func_ov110_02185da4(this->mUnk_54.mItemId), 0, auStack_30);
+            UnkStruct_ov000_02067bc4::UnkStruct1 auStack_30;
+            data_ov000_020b504c.func_ov000_02067cf8(ItemManager::func_ov110_02185da4(this->mUnk_54.mItemId), 0, &auStack_30);
             break;
         default:
             break;

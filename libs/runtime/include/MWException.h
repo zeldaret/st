@@ -27,6 +27,8 @@ void __end_catch(CatchInfo *catchinfo);
 
 extern DestructorChain *__global_destructor_chain;
 
+void *__register_global_object(void *object, void *destructor, DestructorChain *link);
+
 /**
  * @brief Call all static initializers
  */

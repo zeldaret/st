@@ -250,7 +250,7 @@ from:0x020b7fd8 kind:load to:0x0204a110 module:main
 from:0x020b7fdc kind:load to:0x020b5214 module:overlay(0)
 from:0x020b8012 kind:thumb_call to:0x020b85d4 module:overlay(6)
 from:0x020b801a kind:thumb_call to:0x020b7e18 module:overlay(6)
-from:0x020b8024 kind:load to:0x020b64a8 module:overlay(0)
+from:0x020b8024 kind:load to:0x020b62a8 add:0x200 module:overlay(0)
 from:0x020b8042 kind:thumb_call to:0x020b7e18 module:overlay(6)
 from:0x020b814c kind:thumb_call_arm to:0x0201ef78 module:main
 from:0x020b8156 kind:thumb_call_arm to:0x02062e44 module:overlay(0)

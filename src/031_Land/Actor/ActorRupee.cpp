@@ -24,7 +24,7 @@ ARM ActorTypeRupee *ActorTypeRupee::GetInstance() {
 }
 
 ARM Actor *ActorTypeRupee::Create() {
-    return new(2, 4) ActorRupee();
+    return new(HeapIndex_2) ActorRupee();
 }
 
 ARM ActorTypeRupee::ActorTypeRupee() :

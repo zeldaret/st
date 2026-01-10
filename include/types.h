@@ -22,4 +22,32 @@ typedef s32 unk32;
 
 #define CEIL_DIV(a, b) (((a) + (b) - 1) / (b))
 
+#ifdef __cplusplus
+template <typename T> struct PTMF {
+    typedef void (T::*PTMFCallback)();
+
+    PTMFCallback callback;
+
+    #define CALL_PTMF(cls, data, ...)           \
+        {                                       \
+            PTMF<cls> &ptr = (data);            \
+            (this->*ptr.callback)(__VA_ARGS__); \
+        }
+
+    #define STATIC_CALL_PTMF(cls, data, thisx, ...) \
+        {                                           \
+            PTMF<cls> &ptr = (data);                \
+            ((thisx)->*ptr.callback)(__VA_ARGS__);  \
+        }
+
+    #define STATIC_PTMFCALLBACK(cls, data, thisx, ...) \
+        {                                              \
+            PTMF<cls>::PTMFCallback &ptr = (data);     \
+            ((thisx)->*ptr)(__VA_ARGS__);              \
+        }
+};
+
+typedef void (*UnkCallback)(u16 param1);
+#endif
+
 #endif

@@ -1181,7 +1181,7 @@ from:0x020ca3d8 kind:arm_call to:0x02062ef8 module:overlay(0)
 from:0x020ca450 kind:arm_call to:0x020166cc module:main
 from:0x020ca464 kind:arm_call to:0x020166cc module:main
 from:0x020ca480 kind:load to:0x020d7f58 module:overlay(24)
-from:0x020ca484 kind:load to:0x020b1f8c module:overlay(0)
+from:0x020ca484 kind:load to:0x020b1f84 add:8 module:overlay(0)
 from:0x020ca488 kind:load to:0x020b1f2c module:overlay(0)
 from:0x020ca4cc kind:arm_call to:0x02063a3c module:overlay(0)
 from:0x020ca4e8 kind:arm_call to:0x02063a3c module:overlay(0)
