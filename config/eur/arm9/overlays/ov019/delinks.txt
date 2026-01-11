@@ -43,7 +43,7 @@ src/019_MainSelect/FileSelectOptions.cpp:
 src/019_MainSelect/FileSelectMicTest.cpp:
     .text       start:0x020ce820 end:0x020cf28c
     .init       start:0x020d1d3c end:0x020d1d64
-    .ctor       start:0x020d1d74 end:0x020d1d80
+    .ctor       start:0x020d1d74 end:0x020d1d7c
     .data       start:0x020d2248 end:0x020d22a0
 
 src/019_MainSelect/FileSelectSubScreen.cpp:
