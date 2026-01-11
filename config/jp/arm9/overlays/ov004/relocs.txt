@@ -93,7 +93,7 @@ from:0x020b8690 kind:arm_call to:0x020d5740 module:overlay(24)
 from:0x020b86bc kind:arm_call to:0x020d5760 module:overlay(24)
 from:0x020b86c4 kind:load to:0x027e0ce0 module:dtcm
 from:0x020b86e8 kind:load to:0x027e0ce0 module:dtcm
-from:0x020b86ec kind:load to:0x020d56fd module:overlays(19,24)
+from:0x020b86ec kind:load to:0x020d56fd module:overlay(24)
 from:0x020b8738 kind:arm_call to:0x020ab44c module:overlay(0)
 from:0x020b8754 kind:arm_call to:0x020ab44c module:overlay(0)
 from:0x020b8770 kind:arm_call to:0x020ab44c module:overlay(0)

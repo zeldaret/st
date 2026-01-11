@@ -4074,7 +4074,6 @@ data_ov000_020b6238 kind:bss addr:0x020b6238
 data_ov000_020b62a0 kind:bss addr:0x020b62a0
 data_ov000_020b62a4 kind:bss addr:0x020b62a4
 gSaveManager kind:bss addr:0x020b62a8
-data_ov000_020b64ca kind:bss addr:0x020b64ca
 data_ov000_020b64f0 kind:bss addr:0x020b64f0
 data_ov000_020b64f4 kind:bss addr:0x020b64f4
 data_ov000_020b64f8 kind:bss addr:0x020b64f8

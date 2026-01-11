@@ -842,7 +842,7 @@ from:0x0215a200 kind:arm_call to:0x0215e8b0 module:overlay(74)
 from:0x0215a20c kind:load to:0x027e0ce0 module:dtcm
 from:0x0215a210 kind:load to:0x027e09b8 module:dtcm
 from:0x0215a218 kind:load to:0x027e0d74 module:dtcm
-from:0x0215a21c kind:load to:0x020da034 module:overlays(19,24)
+from:0x0215a21c kind:load to:0x020da034 module:overlay(24)
 from:0x0215a228 kind:load to:0x027e09a8 module:dtcm
 from:0x0215a248 kind:load to:0x021593b8 module:overlay(74)
 from:0x0215a274 kind:arm_call to:0x0215e8e4 module:overlay(74)

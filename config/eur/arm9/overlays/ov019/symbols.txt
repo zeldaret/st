@@ -309,7 +309,7 @@ data_ov019_020d2120 kind:data(any) addr:0x020d2120
 data_ov019_020d212c kind:data(any) addr:0x020d212c
 data_ov019_020d213c kind:data(any) addr:0x020d213c
 data_ov019_020d2148 kind:data(any) addr:0x020d2148
-data_ov019_020d215c kind:data(any) addr:0x020d215c
+_ZN24UnkStruct_ov019_020d217019data_ov019_020d215cE kind:data(any) addr:0x020d215c
 data_ov019_020d2170 kind:data(any) addr:0x020d2170
 data_ov019_020d2188 kind:data(any) addr:0x020d2188
 data_ov019_020d21c0 kind:data(any) addr:0x020d21c0

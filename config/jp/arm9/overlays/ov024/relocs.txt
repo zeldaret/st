@@ -421,7 +421,7 @@ from:0x020c84e8 kind:arm_call to:0x01ffd3d8 module:itcm
 from:0x020c850c kind:arm_call to:0x02016644 module:main
 from:0x020c851c kind:load to:0x020da038 module:overlay(24)
 from:0x020c8520 kind:load to:0x027e09a4 module:dtcm
-from:0x020c8530 kind:load to:0x020da7f8 module:overlays(19,26)
+from:0x020c8530 kind:load to:0x020da7f8 module:overlay(26)
 from:0x020c8550 kind:load to:0x0204b690 module:main
 from:0x020c85e4 kind:arm_call to:0x020a902c module:overlay(0)
 from:0x020c8600 kind:load to:0x027e09a4 module:dtcm
