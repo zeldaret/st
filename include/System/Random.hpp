@@ -22,6 +22,8 @@ struct Random {
         }
         return (result >> 32) + min;
     }
+
+    void Init();
 };
 
 extern Random gRandom;

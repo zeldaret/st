@@ -72,7 +72,7 @@ ARM void *func_02011f30(s32 length) {
 }
 
 // non-matching
-ARM void *SysObject::operator new(unsigned long length, u32 id, u32 idLength) {
+ARM void *operator new(unsigned long length, u32 id, u32 idLength) {
     void *pvVar1;
     char *uVar2;
     u16 line;
@@ -85,16 +85,11 @@ ARM void *SysObject::operator new(unsigned long length, u32 id, u32 idLength) {
     if (pvVar1 == NULL) {
         if (id == 1) {
             func_020011f4(pUVar5);
-            uVar2 = data_0204372c[id];
-            uVar4 = "%sノメモリガタリマセン.\nサイズ=%d\nノコリ =%d";
-            line  = 183;
+            data_02049984.func_020125a4(__FILE__, 183, "%sノメモリガタリマセン.\nサイズ=%d\nノコリ =%d", data_0204372c[id],
+                                        length);
         } else if (id == 0) {
-            uVar2 = data_0204372c[id];
-            uVar4 = "%sノメモリガタリマセン.\nサイズ=%d";
-            line  = 187;
+            data_02049984.func_020125a4(__FILE__, 187, "%sノメモリガタリマセン.\nサイズ=%d", data_0204372c[id], length);
         }
-
-        data_02049984.func_020125a4(__FILE__, line, uVar4, uVar2, length);
     }
 
     return pvVar1;

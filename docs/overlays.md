@@ -8,8 +8,8 @@ Each overlay is tied to an index which is used to access the overlay in two diff
 
  ID   | Internal Name     | Index   | Slot | Description
 ------|-------------------|---------|------|-------------
-`000` | Second            | `000`   |      | Core game engine
-`001` | SceneInit         | `001`   |      |
+`000` | Second            | `000`   | `0`  | Core game engine
+`001` | SceneInit         | `001`   | `1`  |
 `002` | Collect           | `002`   |      |
 `003` | SoftKeyboard      | `003`   |      |
 `004` | Factory           | `014`   |      |
@@ -26,14 +26,14 @@ Each overlay is tied to an index which is used to access the overlay in two diff
 `015` | Shop              | `015`   |      |
 `016` | RabbitCapture     | `016`   |      |
 `017` | CourseExec        | `017`   |      |
-`018` | StartUp           | `021`   |      | Exists briefly on game startup. Initializes RNG, messages, and more.
+`018` | StartUp           | `021`   | `4`  | Exists briefly on game startup. Initializes RNG, messages, and more.
 `019` | MainSelect        | `024`   |      | File Select
 `020` | WirelessCommon    | `025`   |      |
 `021` | BattleGame        | `026`   |      |
 `022` | Download          | `027`   |      | Handles DS download play.
 `023` | Wxc               | `028`   |      |
 `024` | MainGame          | `022`   |      |
-`025` | Title             | `023`   |      |
+`025` | Title             | `023`   | `4`  | Title Screen
 `026` | Train             | `030`   |      |
 `027` | TrainForest       | `058`   |      |
 `028` | TrainSnow         | `059`   |      |

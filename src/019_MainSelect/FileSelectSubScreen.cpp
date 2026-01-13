@@ -27,16 +27,6 @@ static unk8 data_ov019_021094cc[0xDC00];
 
 const unk32 data_ov019_020d1bcc[] = {0x00010000, 0x00000002};
 
-class UnkStruct2 {
-public:
-    /* 00 */ unk8 mUnk_00[0x10];
-    /* 10 */
-
-    UnkStruct2(const char *path, unk32 param2);
-    ~UnkStruct2();
-    void func_020154ec(const char *param1);
-};
-
 ARM FileSelectSubScreen::FileSelectSubScreen() :
     mUnk_001C(0),
     mUnk_0020(0),

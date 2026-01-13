@@ -15,9 +15,12 @@ class GameModeManagerBase_104_04 {
 public:
     /* 00 */ void *mUnk_00;
     /* 04 */ void *mUnk_04;
+    /* 08 */
 
     void func_020166ac(void);
     void func_020166cc(void *param1);
+
+    GameModeManagerBase_104_04();
 };
 
 class GameModeManagerBase_104_0C_04 {

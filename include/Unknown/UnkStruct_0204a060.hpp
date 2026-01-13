@@ -6,7 +6,7 @@
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "types.h"
 
-class UnkStruct_0204a060_Base2 : public SysObject {
+class UnkStruct_0204a060_Base3 : public SysObject {
 public:
     /* 00 (vtable) */
     /* 04 */ GameModeManagerBase_104_04 mUnk_04;
@@ -14,24 +14,32 @@ public:
     /* 0D */ unk8 mUnk_0D;
     /* 0E */ unk8 mUnk_0E;
     /* 0F */ unk8 mUnk_0F;
+    /* 10 */
+
+    UnkStruct_0204a060_Base3();
+
+    // data_020440f4 vtable
+    /* 00 */ virtual ~UnkStruct_0204a060_Base3();
+    /* 08 */ virtual bool vfunc_08(unk32 param1);
+    /* 0C */
+};
+
+class UnkStruct_0204a060_Base2 : public UnkStruct_0204a060_Base3 {
+public:
+    /* 00 (vtable) */
     /* 10 */ unk16 mUnk_10;
     /* 12 */ unk16 mUnk_12;
     /* 14 */
 
     UnkStruct_0204a060_Base2();
     void func_0201ba68();
-    void func_0201bacc();
-
-    // data_020440f4 vtable
-    /* 00 */ virtual ~UnkStruct_0204a060_Base2();
-    /* 08 */ virtual bool vfunc_08(unk32 param1);
-    /* 0C */
 };
 
 class UnkStruct_0204a060_Base : public UnkStruct_0204a060_Base2 {
 public:
     /* 00 (base) */
     /* 14 */ unk32 mUnk_14;
+    // /* 14 */ unk16 mUnk_16;
     /* 18 */ unk8 mUnk_18;
     /* 19 */ unk8 mUnk_19;
     /* 1A */ unk16 mUnk_1A;
@@ -42,9 +50,8 @@ public:
     /* 24 */
 
     UnkStruct_0204a060_Base();
-    void func_0201bb38();
-    void func_0201bb84(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-    void func_0201bba4();
+    void func_0201bb84(unk32 param1, unk32 param2, unk32 param3);
+    void func_0201bba4(unk32 param1, unk32 param2);
     void func_0201bbcc();
 
     // data_02044108 vtable

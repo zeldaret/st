@@ -70,7 +70,7 @@ struct Vec2us_cpp {
     }
 };
 
-class UnkSubStruct1 {
+class UnkSubStruct1 : public SysObject {
 public:
     /* 00 (vtable) */
     /* 04 */ u16 mUnk_04;
@@ -101,6 +101,16 @@ public:
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
     /* 0C */
+
+    bool UnkCheck1() {
+        bool value = true;
+
+        if (mUnk_0A == false && mUnk_0B == false) {
+            value = false;
+        }
+
+        return value;
+    }
 
     void UnkOperations(Vec2s *pPos, bool doSetPos) {
         int iVar1;
@@ -485,4 +495,25 @@ public:
     ~UnkSystem5() {}
     void func_020171e4();
     void func_02017520(const char *nscrPath, const char *ncgrPath, const char *nclrPath);
+};
+
+class UnkStruct2 {
+public:
+    /* 00 */ unk8 pad[0x10];
+    /* 10 */
+
+    UnkStruct2(const char *path, unk32 param2);
+    ~UnkStruct2();
+    void func_020154ec(const char *param1);
+};
+
+struct UnkResult {
+    void *mUnk_00;
+    void *mUnk_04;
+    void *mUnk_08;
+    UnkSystem4 mUnk_0C;
+    UnkSystem4 mUnk_1C;
+    UnkSystem4 mUnk_2C;
+
+    UnkResult(const char *path);
 };

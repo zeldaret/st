@@ -393,8 +393,11 @@ public:
     void UnloadOverlaySetup();
 
     void LoadEquipItem(ItemFlag equipId);
+
+    void func_02014994(unk32 param1);
 };
 
 extern OverlayManager gOverlayManager;
+extern OverlayManager data_02049ba0;
 extern OverlayId data_0203e0e8[OverlayIndex_COUNT];
 extern char *data_02043c88[OverlayIndex_COUNT];

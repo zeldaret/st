@@ -362,8 +362,7 @@ public:
     /* 000 */ unk8 mUnk_004[0x204 - 0x004];
     /* 204 */ unk16 mUnk_204;
     /* 206 */ unk16 mUnk_206;
-    /* 208 */ unk8 mUnk_208;
-    /* 208 */ unk8 mUnk_209;
+    /* 208 */ unk16 mUnk_208;
     /* 20A */ u8 mUnk_20A; // bool?
     /* 20B */ unk8 mUnk_20B;
     /* 20C */ unk32 mUnk_20C;
@@ -372,7 +371,7 @@ public:
     /* 218 */ SaveFile *mpSaveFile;
     /* 21C */ unk8 mUnk_21C[0x23C - 0x21C];
     /* 23C */ PTMF<SaveFile>::PTMFCallback mUnk_23C;
-    // /* 240 */ void* mUnk_240;
+    /* 244 */ unk32 mUnk_244;
 
     bool IsUnk20A() {
         return mUnk_20A == 0;
@@ -389,6 +388,8 @@ public:
     SaveSlot *GetSaveSlots() {
         return this->mpSaveFile->mSlots;
     }
+
+    SaveManager();
 
     void func_ov000_020a0b2c(UnkCallback param1, unk32 param2);
     void func_ov000_020ba7c8(u16 saveSlotIndex);

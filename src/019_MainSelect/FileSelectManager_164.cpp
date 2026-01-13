@@ -30,7 +30,7 @@ ARM void FileSelectManager_164::vfunc_0C(unk32 param1) {
     if (param1 == 0) {
         switch (this->mUnk_0C) {
             case 0:
-                if (this->mUnk_10->func_ov019_020cb748() && !data_0204a110.mUnk_DE8->UnkCheck1()) {
+                if (this->mUnk_10->func_ov019_020cb748() && !data_0204a110.mUnk_DDC.mUnk_0C->UnkCheck1()) {
                     data_0204a088->func_ov000_02061224();
                     this->mUnk_0C = 1;
                 }
@@ -75,7 +75,7 @@ ARM void FileSelectManager_164::vfunc_1C(unk32 param1) {
     if (param1 == 0) {
         switch (this->mUnk_0C) {
             case 1:
-                if (gpFSOptionsManager->func_ov019_020cc874() != 0 && !data_0204a110.mUnk_DE8->UnkCheck1()) {
+                if (gpFSOptionsManager->func_ov019_020cc874() != 0 && !data_0204a110.mUnk_DDC.mUnk_0C->UnkCheck1()) {
                     data_0204a088->func_ov000_02061224();
                     this->mUnk_0C = 0;
                 }

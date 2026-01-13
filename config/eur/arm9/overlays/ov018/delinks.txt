@@ -3,3 +3,12 @@
     .data       start:0x020c5b20 end:0x020c5bc0 kind:data align:32
     .bss        start:0x020c5bc0 end:0x020c5c20 kind:bss align:32
 
+src/018_StartUp/GameModeStartUp.cpp:
+    complete
+    .text       start:0x020c4840 end:0x020c4e8c
+    .data       start:0x020c5b20 end:0x020c5b84
+    .bss        start:0x020c5bc0 end:0x020c5c20
+
+src/018_StartUp/StartUpInitializers.cpp:
+    .text       start:0x020c4e8c end:0x020c5b18
+    .data       start:0x020c5b84 end:0x020c5bc0

@@ -743,7 +743,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
 
             temp_r5 = data_027e0cd8->mUnk_0c->func_ov000_02080a44();
 
-            if (data_ov000_020b51b8.mUnk_10 != 0) {
+            if (data_ov000_020b51b8.mUnk_08[2] != NULL) {
                 var_r0 = 1;
             } else {
                 var_r0 = 0;
