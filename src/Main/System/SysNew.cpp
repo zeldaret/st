@@ -2,6 +2,8 @@
 #include "System/SysFault.hpp"
 #include "global.h"
 
+#pragma dont_reuse_strings off
+
 extern "C" {
 void *func_02001654(void);
 void *func_020145b0(UnkId *, s32);
@@ -101,4 +103,8 @@ ARM void SysObject::operator delete(void *ptr) {
 
 ARM void SysObject::operator delete[](void *ptr) {
     SysDelete(ptr);
+}
+
+void dummy() {
+    ::operator new(1, 1);
 }
