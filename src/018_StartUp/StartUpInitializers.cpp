@@ -18,6 +18,7 @@
 #include "Unknown/UnkStruct_ov000_020b52e8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5340.hpp"
 #include "regs.h"
+#include "versions.h"
 
 #pragma dont_reuse_strings off
 
@@ -363,6 +364,10 @@ ARM UnkStruct_ov000_020b5300::UnkStruct_ov000_020b5300() {
     this->mUnk_2C = 0;
     this->mUnk_30 = 0;
     this->mUnk_34 = 0;
+#if IS_JP
+    this->mUnk_38 = 0;
+    this->mUnk_3C = 0;
+#endif
 }
 
 ARM void UnkStruct_ov000_020b5300::func_ov018_020c583c(unk32 param1) {
