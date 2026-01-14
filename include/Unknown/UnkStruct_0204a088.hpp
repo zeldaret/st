@@ -15,10 +15,12 @@ public:
 
 class UnkStruct_0204a088 : public UnkStruct_0204a088_Base {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 00 */ unk32 mUnk_04;
-    /* 00 */ unk32 mUnk_08;
-    /* 0C */ FileSelectManager_UnkDrawBase mUnk_0C[23];
+    /* 000 */ unk32 mUnk_00;
+    /* 000 */ unk32 mUnk_04;
+    /* 000 */ unk32 mUnk_08;
+    /* 00C */ FileSelectManager_UnkDrawBase mUnk_0C[23];
+    /* 120 */ u16 mUnk_120;
+    /* 122 */ unk16 mUnk_122;
 
     void func_ov000_02061098(void);
     void func_ov000_020611dc(void *param1, unk32 param2);

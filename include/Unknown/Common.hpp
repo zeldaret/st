@@ -517,3 +517,100 @@ struct UnkResult {
 
     UnkResult(const char *path);
 };
+
+class UnkStruct_ov019_020d24c8_28_258 {
+public:
+    /* 00 */ void *mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk16 mUnk_08;
+    /* 0A */ Vec2s mPos;
+    /* 0E */ unk16 mUnk_0E;
+    /* 10 */ unk16 mUnk_10;
+    /* 12 */ unk16 mUnk_12;
+    /* 14 */ unk16 mUnk_14;
+    /* 16 */ unk16 mUnk_16;
+    /* 18 */
+
+    UnkStruct_ov019_020d24c8_28_258() {
+        this->mUnk_00 = NULL;
+        this->mUnk_04 = 0;
+        this->mPos.x  = 0;
+        this->mPos.y  = 0;
+    };
+
+    UnkStruct_ov019_020d24c8_28_258(unk32 param1, unk32 param2) :
+        mUnk_00(0),
+        mUnk_04(0) {
+        this->UnknownAction(param1, param2);
+    }
+
+    void UnknownAction(unk32 param1, unk32 param2) {
+        this->func_ov000_0205fc20(param1, param2, &this->mPos, &this->mUnk_0E);
+        this->mUnk_12 = param1;
+        this->mUnk_14 = param2;
+    }
+
+    void func_ov000_0205fc20(unk32 param1, unk32 param2, void *param3, void *param4);
+};
+
+class UnkStructSub2 {
+public:
+    UnkStructSub2();
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+};
+
+// used to draw the swords from the adventure and battle buttons
+class UnkSubStruct19 {
+public:
+    /* 00 */ void *mUnk_00;
+    /* 04 */ void *mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C; // pause the animation timer (in this context: pause the shiny animation on the sword)
+    /* 10 */ unk32 mUnk_10; // animation timer
+    /* 14 */ unk32 mUnk_14; // animation speed (also affects above timer)
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ void *mUnk_1C; // pointer to animation bank ("ABNK")
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ u8 mUnk_28; // bool?
+    /* 29 */ unk8 mUnk_29;
+    /* 2A */ unk8 mUnk_2A;
+    /* 2B */ unk8 mUnk_2B;
+    /* 2C */ UnkStructSub2 mUnk_2C;
+    /* 30 */ void *mUnk_30; // pointer to somewhere inside "CEBK"
+    /* 34 */ void *mUnk_34;
+    /* 38 */ unk32 mUnk_38;
+    /* 3C */ unk32 mUnk_3C;
+    /* 40 */ unk32 mUnk_40; // related to the width of the texture (scaling matrix?)
+    /* 44 */ unk32 mUnk_44; // related to the height of the texture
+    /* 48 */ Vec2us mUnk_48;
+    /* 4C */ unk32 mUnk_4C;
+    /* 50 */ unk32 mUnk_50;
+    /* 54 */ unk32 mUnk_54;
+    /* 58 */ unk32 mUnk_58; // another timer?
+    /* 5C */ Vec2us mUnk_5C; // position of the animated texture
+    /* 60 */ unk32 mUnk_60;
+    /* 64 */ unk32 mUnk_64;
+    /* 68 */ unk32 mUnk_68;
+    /* 6C */ unk16 mUnk_6C;
+    /* 6E */ bool mUnk_6E;
+    /* 6F */ unk8 mUnk_6F;
+    /* 70 */ unk32 mUnk_70;
+    /* 74 */ unk16 mUnk_74;
+    /* 76 */ unk16 mUnk_76;
+    /* 78 */
+
+    UnkSubStruct19();
+
+    void func_ov000_0206082c(unk32 param1, unk32 param2);
+    void func_ov000_02060950();
+    void func_ov000_020609b0();
+    void func_ov000_020609c4(void);
+    void func_ov000_02060a98();
+    void func_ov000_02060ad0();
+    unk32 func_ov000_02060af8(void);
+    void func_ov000_02060b50();
+    void func_ov000_02060b64(void);
+};

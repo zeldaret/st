@@ -12,8 +12,6 @@
 
 extern "C" {
 void func_ov000_02062e44(void *param1, void *param2);
-
-//! TODO: conflict between UnkStructSub4, UnkStructSub4_2 and UnkStructSub19
 void func_ov000_020623d8(void *param1, unk32 param2);
 };
 
@@ -211,14 +209,14 @@ ARM FileSelectOptions::~FileSelectOptions() {
 }
 
 ARM void FileSelectOptions::func_ov019_020ccd40() {
-    CALL_PTMF(FileSelectOptions, data_ov019_020d21c0[this->mState]);
+    CALL_PTMF(PTMF<FileSelectOptions>, data_ov019_020d21c0[this->mState]);
 }
 
 ARM void FileSelectOptions::vfunc_08() {
-    CALL_PTMF(FileSelectOptions, data_ov019_020d2188[this->mState]);
+    CALL_PTMF(PTMF<FileSelectOptions>, data_ov019_020d2188[this->mState]);
 }
 
-ARM void FileSelectOptions::vfunc_10() {
+ARM void FileSelectOptions::vfunc_10(unk8 *param1) {
     this->mUnk_0024.func_ov019_020ce4dc();
     this->mUnk_1108.func_ov000_02062f30();
     this->mUnk_1794.func_ov000_02062f30();
@@ -404,7 +402,8 @@ ARM void FileSelectOptions::func_ov019_020cd41c() {
 
     local_40.x = local_34.mPos.x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.x;
     local_40.y = local_34.mPos.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.y;
-    local_3c   = local_34.mPos;
+    local_3c.x = local_34.mPos.x;
+    local_3c.y = local_34.mPos.y;
     this->mUnk_1064.func_0201e874(0x0C, &local_3c, &local_40, 0);
     this->mUnk_1064.mUnk_0A = true;
     this->mUnk_1064.mUnk_0C = false;
@@ -451,7 +450,8 @@ ARM void FileSelectOptions::func_ov019_020cd614() {
 
     local_38.x = local_30.mPos.x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.x;
     local_38.y = local_30.mPos.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.y;
-    local_3c   = local_30.mPos;
+    local_3c.x = local_30.mPos.x;
+    local_3c.y = local_30.mPos.y;
 
     this->mUnk_1064.func_0201e874(0x0C, &local_38, &local_3c, 0);
     this->mUnk_1064.mUnk_0A = true;

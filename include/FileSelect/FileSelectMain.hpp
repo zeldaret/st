@@ -55,44 +55,6 @@ enum FileSelectExitMode_ {
     /* 0x03 */ FileSelectExitMode_Unk_3         = 3,
 };
 
-// used to draw the swords from the adventure and battle buttons
-class UnkSubStruct19 {
-public:
-    /* 00 */ void *mUnk_00;
-    /* 04 */ void *mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C; // pause the animation timer (in this context: pause the shiny animation on the sword)
-    /* 10 */ unk32 mUnk_10; // animation timer
-    /* 14 */ unk32 mUnk_14; // animation speed (also affects above timer)
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ void *mUnk_1C; // pointer to animation bank ("ABNK")
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ unk32 mUnk_24;
-    /* 28 */ unk32 mUnk_28;
-    /* 2C */ unk32 mUnk_2C;
-    /* 30 */ void *mUnk_30; // pointer to somewhere inside "CEBK"
-    /* 34 */ void *mUnk_34;
-    /* 38 */ unk32 mUnk_38;
-    /* 3C */ unk32 mUnk_3C;
-    /* 40 */ unk32 mUnk_40; // related to the width of the texture (scaling matrix?)
-    /* 44 */ unk32 mUnk_44; // related to the height of the texture
-    /* 48 */ Vec2us mUnk_48;
-    /* 4C */ unk32 mUnk_4C;
-    /* 50 */ unk32 mUnk_50;
-    /* 54 */ unk32 mUnk_54;
-    /* 58 */ unk32 mUnk_58; // another timer?
-    /* 5C */ Vec2us mUnk_5C; // position of the animated texture
-    /* 60 */ unk32 mUnk_60;
-    /* 64 */ unk32 mUnk_64;
-    /* 68 */ unk32 mUnk_68;
-    /* 6C */ unk32 mUnk_6C;
-    /* 70 */ unk32 mUnk_70;
-    /* 74 */ unk32 mUnk_74;
-    /* 78 */
-
-    UnkSubStruct19();
-};
-
 class FileSelectMain : public GameModeManagerBase_104 { // 022E5F70
 public:
     /* 0000 (base) */
@@ -294,6 +256,6 @@ public:
     // data_ov019_020d1ec0 vtable
     /* 00 */ virtual ~FileSelectMain() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 10 */ virtual void vfunc_10() override;
+    /* 10 */ virtual void vfunc_10(unk8 *param1) override;
     /* 18 */ virtual void vfunc_18(void) override;
 };

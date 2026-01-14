@@ -13,13 +13,7 @@
 
 extern "C" {
 void func_020249d4(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-
 void func_ov000_02062e44(void *param1, void *param2);
-
-//! TODO: conflict between UnkStructSub4, UnkStructSub4_2 and UnkStructSub19
-unk32 func_ov000_020609c4(void *thisx);
-unk32 func_ov000_02060af8(void *thisx);
-void func_ov000_0206082c(void *thisx, unk32 param1, unk32 param2);
 };
 
 class UnkStruct_ov019_020d24c0 {
@@ -240,7 +234,7 @@ ARM void FileSelectMain::func_ov019_020c6d08() {}
 ARM void FileSelectMain::func_ov019_020c6d0c() {}
 
 ARM void FileSelectMain::func_ov019_020c6d10() {
-    CALL_PTMF(FileSelectMain, data_ov019_020d1edc[this->mState]);
+    CALL_PTMF(PTMF<FileSelectMain>, data_ov019_020d1edc[this->mState]);
 }
 
 // https://decomp.me/scratch/EuA67
@@ -723,8 +717,8 @@ ARM void FileSelectMain::func_ov019_020c77b8() {
     this->func_ov019_020c6c54();
     this->func_ov019_020c6ca0();
     this->func_ov019_020c757c();
-    func_ov000_0206082c(&this->mUnk_1144, 0x8B, 0);
-    func_ov000_0206082c(&this->mUnk_155C, 0x8B, 2);
+    this->mUnk_1144.func_ov000_0206082c(0x8B, 0);
+    this->mUnk_155C.func_ov000_0206082c(0x8B, 2);
 }
 
 ARM void FileSelectMain::func_ov019_020c7804() {
@@ -758,9 +752,9 @@ ARM void FileSelectMain::func_ov019_020c7878() {
 
 ARM void FileSelectMain::func_ov019_020c78ac() {
     if (this->mExitMode == FileSelectExitMode_AdventureMode) {
-        func_ov000_0206082c(&this->mUnk_1144, 0x8B, 1);
+        this->mUnk_1144.func_ov000_0206082c(0x8B, 1);
     } else if (this->mExitMode == FileSelectExitMode_BattleMode) {
-        func_ov000_0206082c(&this->mUnk_155C, 0x8B, 3);
+        this->mUnk_155C.func_ov000_0206082c(0x8B, 3);
     }
 
     this->mUnk_0DA4.mUnk_2A = false;
@@ -1126,7 +1120,7 @@ ARM void FileSelectMain::vfunc_08() {
         this->GetUnk03E0(i).func_ov019_020cbb94();
     }
 
-    CALL_PTMF(FileSelectMain, data_ov019_020d1f94[this->mState]);
+    CALL_PTMF(PTMF<FileSelectMain>, data_ov019_020d1f94[this->mState]);
     this->mUnk_002C.UnkOperations(NULL, false);
     REG_BLDALPHA = this->mUnk_002C.func_0201eaa0() | 0x1000;
 }
@@ -1286,8 +1280,8 @@ ARM void FileSelectMain::func_ov019_020c92dc() {
     this->mUnk_18A8.UnkOperations(&this->mUnk_15D4.mPos, true);
     this->mUnk_1BC0.UnkOperations(&this->mUnk_18EC.mPos, true);
 
-    func_ov000_020609c4(&this->mUnk_1144);
-    func_ov000_020609c4(&this->mUnk_155C);
+    this->mUnk_1144.func_ov000_020609c4();
+    this->mUnk_155C.func_ov000_020609c4();
 }
 
 ARM void FileSelectMain::func_ov019_020c9b28() {
@@ -1327,8 +1321,8 @@ ARM void FileSelectMain::func_ov019_020c9c18() {
 }
 
 ARM void FileSelectMain::func_ov019_020c9c70() {
-    func_ov000_020609c4(&this->mUnk_1144);
-    func_ov000_020609c4(&this->mUnk_155C);
+    this->mUnk_1144.func_ov000_020609c4();
+    this->mUnk_155C.func_ov000_020609c4();
 
     switch (data_0204a110.func_01ff9b50()) {
         case 0x46:
@@ -1360,18 +1354,18 @@ ARM void FileSelectMain::func_ov019_020c9c70() {
 }
 
 ARM void FileSelectMain::func_ov019_020c9d88() {
-    func_ov000_020609c4(&this->mUnk_1144);
-    func_ov000_020609c4(&this->mUnk_155C);
+    this->mUnk_1144.func_ov000_020609c4();
+    this->mUnk_155C.func_ov000_020609c4();
 
     if (this->mExitMode == FileSelectExitMode_AdventureMode) {
-        if (func_ov000_02060af8(&this->mUnk_1144) != 0) {
+        if (this->mUnk_1144.func_ov000_02060af8() != 0) {
             this->SetState(FileSelectState_EnterGameMode);
             return;
         }
     }
 
     if (this->mExitMode == FileSelectExitMode_BattleMode) {
-        if (func_ov000_02060af8(&this->mUnk_155C) != 0) {
+        if (this->mUnk_155C.func_ov000_02060af8() != 0) {
             this->SetState(FileSelectState_EnterGameMode);
             return;
         }
@@ -1402,8 +1396,8 @@ ARM void FileSelectMain::func_ov019_020c9e08() {
     this->mUnk_18A8.UnkOperations(&this->mUnk_15D4.mPos, true);
     this->mUnk_1BC0.UnkOperations(&this->mUnk_18EC.mPos, true);
 
-    func_ov000_020609c4(&this->mUnk_1144);
-    func_ov000_020609c4(&this->mUnk_155C);
+    this->mUnk_1144.func_ov000_020609c4();
+    this->mUnk_155C.func_ov000_020609c4();
 
     if (this->mExitMode == FileSelectExitMode_AdventureMode && this->mUnk_00BC.mUnk_0C) {
         data_02049a2c.GetUnk00_FileSelect()->LoadAdventureMode(this->mSaveSlotIndex);
@@ -1489,8 +1483,8 @@ ARM void FileSelectMain::func_ov019_020ca940() {
     this->mUnk_18A8.UnkOperations(&this->mUnk_15D4.mPos, true);
     this->mUnk_1BC0.UnkOperations(&this->mUnk_18EC.mPos, true);
 
-    func_ov000_020609c4(&this->mUnk_1144);
-    func_ov000_020609c4(&this->mUnk_155C);
+    this->mUnk_1144.func_ov000_020609c4();
+    this->mUnk_155C.func_ov000_020609c4();
 }
 
 ARM void FileSelectMain::func_ov019_020cb180() {
@@ -1525,8 +1519,8 @@ ARM void FileSelectMain::func_ov019_020cb268() {}
 
 ARM void FileSelectMain::func_ov019_020cb26c() {}
 
-ARM void FileSelectMain::vfunc_10() {
-    CALL_PTMF(FileSelectMain, data_ov019_020d204c[this->mState]);
+ARM void FileSelectMain::vfunc_10(unk8 *param1) {
+    CALL_PTMF(PTMF<FileSelectMain>, data_ov019_020d204c[this->mState]);
 }
 
 ARM void FileSelectMain::func_ov019_020cb2a8() {

@@ -9427,7 +9427,7 @@ from:0x020b01d0 kind:arm_call to:0x020c5a74 module:overlay(18)
 from:0x020b01e0 kind:arm_call to:0x0203ce74 module:main
 from:0x020b01f4 kind:load to:0x020b52d8 module:overlay(0)
 from:0x020b01f8 kind:load to:0x020b52e8 module:overlay(0)
-from:0x020b01fc kind:load to:0x020c5aa8 module:overlays(18,25)
+from:0x020b01fc kind:load to:0x020c5aa8 module:overlay(18)
 from:0x020b0200 kind:load to:0x020b52dc module:overlay(0)
 from:0x020b021c kind:arm_call to:0x020c5814 module:overlay(18)
 from:0x020b0230 kind:load to:0x020b52fc module:overlay(0)

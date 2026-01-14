@@ -9,10 +9,6 @@ void func_0200a7b0(unk32 param1, const char *param2, const char *param3, const c
                    unk32 param7, unk32 param8);
 void func_020249d4(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
 void func_020275e8();
-
-//! TODO: conflict between UnkStructSub4, UnkStructSub4_2 and UnkStructSub19
-unk32 func_ov000_020609c4(void *thisx);
-unk32 func_ov000_02060af8(void *thisx);
 };
 
 #pragma dont_reuse_strings off
@@ -171,7 +167,7 @@ ARM void FileSelectSubScreen::func_ov019_020cf73c(unk32 param1, unk32 param2) {
     }
 }
 
-ARM void FileSelectSubScreen::vfunc_10() {
+ARM void FileSelectSubScreen::vfunc_10(unk8 *param1) {
     this->mUnk_002C.vfunc_04();
 }
 
@@ -182,11 +178,11 @@ ARM void FileSelect_UnkClass7::vfunc_00() {
     int i;
 
     for (i = 0; i < 0x1E; i++) {
-        UnkStructSub4 *pVar6 = &this->mUnk_0004[i];
+        UnkSubStruct19 *pVar6 = &this->mUnk_0004[i];
 
-        func_ov000_020609c4(pVar6);
+        pVar6->func_ov000_020609c4();
 
-        if (func_ov000_02060af8(pVar6) != 0) {
+        if (pVar6->func_ov000_02060af8() != 0) {
             pVar6->func_ov000_02060b64();
             this->mUnk_0E14[i].one = (u16) gRandom.Next(0, 256);
             this->mUnk_0E14[i].two = (u16) gRandom.Next(0, 192);

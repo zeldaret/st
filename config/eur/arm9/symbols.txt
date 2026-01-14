@@ -738,7 +738,7 @@ func_02014f54 kind:function(arm,size=0x18) addr:0x02014f54
 func_02014f6c kind:function(arm,size=0x74) addr:0x02014f6c
 func_02014fe0 kind:function(arm,size=0x8) addr:0x02014fe0
 func_02014fe8 kind:function(arm,size=0xc) addr:0x02014fe8
-func_02014ff4 kind:function(arm,size=0x14) addr:0x02014ff4
+_ZN18UnkStruct_02049be013func_02014ff4Ev kind:function(arm,size=0x14) addr:0x02014ff4
 func_02015008 kind:function(arm,size=0x28) addr:0x02015008
 func_02015030 kind:function(arm,size=0x24) addr:0x02015030
 func_02015054 kind:function(arm,size=0x2c) addr:0x02015054
@@ -825,10 +825,10 @@ func_02016620 kind:function(arm,size=0x3c) addr:0x02016620
 func_0201665c kind:function(arm,size=0x20) addr:0x0201665c
 _ZN26GameModeManagerBase_104_04C1Ev kind:function(arm,size=0xc) addr:0x0201667c
 func_02016688 kind:function(arm,size=0xc) addr:0x02016688
-func_02016694 kind:function(arm,size=0x18) addr:0x02016694
+_ZN26GameModeManagerBase_104_04D1Ev kind:function(arm,size=0x18) addr:0x02016694
 _ZN26GameModeManagerBase_104_0413func_020166acEv kind:function(arm,size=0x20) addr:0x020166ac
 _ZN26GameModeManagerBase_104_0413func_020166ccEPv kind:function(arm,size=0x28) addr:0x020166cc
-func_020166f4 kind:function(arm,size=0x2c) addr:0x020166f4
+_ZN26GameModeManagerBase_104_0413func_020166f4EPv kind:function(arm,size=0x2c) addr:0x020166f4
 func_02016720 kind:function(arm,size=0x1c) addr:0x02016720
 func_0201673c kind:function(arm,size=0x28) addr:0x0201673c
 func_02016764 kind:function(arm,size=0x34) addr:0x02016764
@@ -1064,7 +1064,7 @@ func_0201bf24 kind:function(arm,size=0x30) addr:0x0201bf24
 func_0201bf54 kind:function(arm,size=0x3c) addr:0x0201bf54
 func_0201bf90 kind:function(arm,size=0x5c) addr:0x0201bf90
 func_0201bfec kind:function(arm,size=0x20) addr:0x0201bfec
-_ZN23GameModeManagerBase_00413func_0201c00cEiii kind:function(arm,size=0x5c) addr:0x0201c00c
+_ZN23GameModeManagerBase_00413func_0201c00cEii kind:function(arm,size=0x5c) addr:0x0201c00c
 func_0201c068 kind:function(arm,size=0x3c) addr:0x0201c068
 func_0201c0a4 kind:function(arm,size=0x20) addr:0x0201c0a4
 func_0201c0c4 kind:function(arm,size=0x20) addr:0x0201c0c4
@@ -1079,10 +1079,10 @@ func_0201c2e0 kind:function(arm,size=0xc4) addr:0x0201c2e0
 func_0201c3a4 kind:function(arm,size=0xac) addr:0x0201c3a4
 _ZN23UnkStruct_0204a110_Sub5C1Ev kind:function(thumb,size=0x10) addr:0x0201c450
 func_0201c460 kind:function(thumb,size=0x34) addr:0x0201c460
-func_0201c494 kind:function(arm,size=0x14) addr:0x0201c494
+_ZN18UnkStruct_0204aeac13func_0201c494Ei kind:function(arm,size=0x14) addr:0x0201c494
 func_0201c4a8 kind:function(arm,size=0x30) addr:0x0201c4a8
-func_0201c4d8 kind:function(arm,size=0x2c) addr:0x0201c4d8
-func_0201c504 kind:function(arm,size=0x2c) addr:0x0201c504
+_ZN18UnkStruct_0204aeac13func_0201c4d8Eiii kind:function(arm,size=0x2c) addr:0x0201c4d8
+_ZN18UnkStruct_0204aeac13func_0201c504Eiiii kind:function(arm,size=0x2c) addr:0x0201c504
 func_0201c530 kind:function(arm,size=0x19c) addr:0x0201c530
 func_0201c6cc kind:function(thumb,size=0x6e) addr:0x0201c6cc
 func_0201c73c kind:function(arm,size=0x44) addr:0x0201c73c
@@ -1157,9 +1157,9 @@ func_0201ee54 kind:function(arm,size=0x14) addr:0x0201ee54
 func_0201ee68 kind:function(arm,size=0x6c) addr:0x0201ee68
 func_0201eed4 kind:function(arm,size=0xa4) addr:0x0201eed4
 func_0201ef78 kind:function(arm,size=0x24) addr:0x0201ef78
-func_0201ef9c kind:function(arm,size=0x60) addr:0x0201ef9c
-func_0201effc kind:function(arm,size=0x50) addr:0x0201effc
-func_0201f04c kind:function(arm,size=0x14) addr:0x0201f04c
+_ZN16TitleScreen_Sub3C1Ev kind:function(arm,size=0x60) addr:0x0201ef9c
+_ZN16TitleScreen_Sub313func_0201effcEiii kind:function(arm,size=0x50) addr:0x0201effc
+_ZN16TitleScreen_Sub313func_0201f04cEv kind:function(arm,size=0x14) addr:0x0201f04c
 func_0201f060 kind:function(arm,size=0x60) addr:0x0201f060
 func_0201f0c0 kind:function(arm,size=0x50) addr:0x0201f0c0
 func_0201f110 kind:function(arm,size=0x14) addr:0x0201f110
@@ -2765,7 +2765,6 @@ data_0204aed0 kind:bss addr:0x0204aed0
 data_0204aedc kind:bss addr:0x0204aedc
 data_0204aeec kind:bss addr:0x0204aeec
 data_0204aef0 kind:bss addr:0x0204aef0
-data_0204af02 kind:bss addr:0x0204af02
 data_0204af10 kind:bss addr:0x0204af10
 data_0204af18 kind:bss addr:0x0204af18
 data_0204af1c kind:bss addr:0x0204af1c

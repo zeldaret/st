@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Player/TouchControl.hpp"
 #include "System/SysNew.hpp"
 #include "nitro/math.h"
 #include "types.h"
@@ -8,7 +9,7 @@ class GameModeManagerBase_004 : public SysObject {
 public:
     void func_ov001_020bd734(unk32 *param1);
     void func_ov001_020bd784();
-    void func_0201c00c(unk32 param1, unk32 param2, unk32 param3);
+    void func_0201c00c(unk32 param1, unk32 param2);
 };
 
 class GameModeManagerBase_104_04 {
@@ -19,8 +20,10 @@ public:
 
     void func_020166ac(void);
     void func_020166cc(void *param1);
+    void func_020166f4(void *param1);
 
     GameModeManagerBase_104_04();
+    ~GameModeManagerBase_104_04();
 };
 
 class GameModeManagerBase_104_0C_04 {
@@ -41,22 +44,30 @@ public:
     /* 0C */ virtual void vfunc_0C();
 };
 
+struct GameModePTMFParam2Struct {
+    /* 00 */ unk16 mUnk_00;
+    /* 00 */ volatile u16 mButtons;
+};
+
 class GameModeManagerBase_104 : public SysObject {
 public:
     /* 00 (vtable) */
     /* 04 */ GameModeManagerBase_104_04 mUnk_04;
     /* 0C */ GameModeManagerBase_104_0C mUnk_0C;
-    /* 18 */ u32 mUnk_18;
+    /* 18 */ unk8 mUnk_18;
+    /* 19 */ unk8 mUnk_19;
+    /* 1A */ unk8 mUnk_1A;
+    /* 1B */ unk8 mUnk_1B;
     /* 1C */
 
     GameModeManagerBase_104();
 
     // data_ov000_020b1e60 vtable
     /* 00 */ virtual ~GameModeManagerBase_104();
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
-    /* 14 */ virtual void vfunc_14();
+    /* 08 */ virtual void vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl);
+    /* 0C */ virtual void vfunc_0C(unk32 param1);
+    /* 10 */ virtual void vfunc_10(unk8 *param1);
+    /* 14 */ virtual void vfunc_14(unk8 *param1);
     /* 18 */ virtual void vfunc_18(void);
 
     static GameModeManagerBase_104 *Create(void *param1, s32 saveSlotIndex);

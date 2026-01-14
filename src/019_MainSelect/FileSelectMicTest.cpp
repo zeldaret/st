@@ -84,7 +84,7 @@ ARM void FileSelectMicTest::func_ov019_020cea6c() {}
 ARM void FileSelectMicTest::func_ov019_020cea70() {}
 
 ARM void FileSelectMicTest::func_ov019_020cea74() {
-    CALL_PTMF(FileSelectMicTest, data_ov019_020d225c[this->mState]);
+    CALL_PTMF(PTMF<FileSelectMicTest>, data_ov019_020d225c[this->mState]);
 }
 
 // non-matching
@@ -177,7 +177,7 @@ ARM void FileSelectMicTest::vfunc_08() {
     data_ov000_020b51b8.func_ov000_0206c608(8, 0, 0x1000);
 }
 
-ARM void FileSelectMicTest::vfunc_10() {
+ARM void FileSelectMicTest::vfunc_10(unk8 *param1) {
     this->mUnk_270.func_ov019_020cf21c();
     data_0204af1c.func_0201aa44(&this->mUnk_258.mUnk_00, &this->mUnk_258.mPos, 0, 0);
     this->mUnk_020.func_0201f4b4(0);
@@ -189,7 +189,7 @@ ARM void FileSelectMicTest::vfunc_10() {
 
 extern u8 data_ov000_020b5340[]; // bool?
 
-ARM void FileSelectMicTest::vfunc_14() {
+ARM void FileSelectMicTest::vfunc_14(unk8 *param1) {
     if (this->mUnk_630 != 0) {
         if (data_ov000_020b5340[5] == 0) {
             this->mUnk_630 = 0;

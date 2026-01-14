@@ -1,7 +1,7 @@
 #pragma once
 
-#include "FileSelect/Common.hpp"
 #include "Game/GameModeManager.hpp"
+#include "Unknown/Common.hpp"
 #include "global.h"
 #include "nitro/math.h"
 #include "types.h"
@@ -19,41 +19,6 @@ enum FSMicTestState_ {
     /* 0x02 */ FSMicTestState_MicTestToOptions = 2,
     /* 0x03 */ FSMicTestState_OptionsIdle      = 3,
     /* 0x04 */ FSMicTestState_Max              = 4
-};
-
-class UnkStruct_ov019_020d24c8_28_258 {
-public:
-    /* 00 */ void *mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk16 mUnk_08;
-    /* 0A */ Vec2us_cpp mPos;
-    /* 0E */ unk16 mUnk_0E;
-    /* 10 */ unk16 mUnk_10;
-    /* 12 */ unk16 mUnk_12;
-    /* 14 */ unk16 mUnk_14;
-    /* 16 */ unk16 mUnk_16;
-    /* 18 */
-
-    UnkStruct_ov019_020d24c8_28_258() {
-        mUnk_00 = NULL;
-        mUnk_04 = 0;
-        mPos.x  = 0;
-        mPos.y  = 0;
-    };
-
-    UnkStruct_ov019_020d24c8_28_258(unk32 param1, unk32 param2) :
-        mUnk_00(0),
-        mUnk_04(0) {
-        this->UnknownAction(param1, param2);
-    }
-
-    void UnknownAction(unk32 param1, unk32 param2) {
-        this->func_ov000_0205fc20(param1, param2, &this->mPos, &this->mUnk_0E);
-        this->mUnk_12 = param1;
-        this->mUnk_14 = param2;
-    }
-
-    void func_ov000_0205fc20(unk32 param1, unk32 param2, void *param3, void *param4);
 };
 
 class UnkStruct_ov019_020d24c8_28_270_18 {
@@ -123,6 +88,6 @@ public:
     // data_ov019_020d2284 vtable
     /* 00 */ virtual ~FileSelectMicTest() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 10 */ virtual void vfunc_10() override;
-    /* 14 */ virtual void vfunc_14() override;
+    /* 10 */ virtual void vfunc_10(unk8 *param1) override;
+    /* 14 */ virtual void vfunc_14(unk8 *param1) override;
 };

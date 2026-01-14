@@ -1,65 +1,57 @@
-func_ov025_020c6060 kind:function(arm,size=0x64) addr:0x020c6060
-func_ov025_020c60c4 kind:function(arm,size=0x2c) addr:0x020c60c4
-func_ov025_020c60f0 kind:function(arm,size=0x34) addr:0x020c60f0
-func_ov025_020c6124 kind:function(arm,size=0x70) addr:0x020c6124
-func_ov025_020c6194 kind:function(arm,size=0x24) addr:0x020c6194
-func_ov025_020c61b8 kind:function(arm,size=0x24) addr:0x020c61b8
-func_ov025_020c61dc kind:function(arm,size=0x20) addr:0x020c61dc
-func_ov025_020c61fc kind:function(arm,size=0x24) addr:0x020c61fc
-func_ov025_020c6220 kind:function(arm,size=0x24) addr:0x020c6220
-func_ov025_020c6244 kind:function(arm,size=0x3c) addr:0x020c6244
-func_ov025_020c6280 kind:function(arm,size=0x2c) addr:0x020c6280
-func_ov025_020c62ac kind:function(arm,size=0x2c) addr:0x020c62ac
-func_ov025_020c62d8 kind:function(arm,size=0x58) addr:0x020c62d8
-func_ov025_020c6330 kind:function(arm,size=0x78) addr:0x020c6330
-func_ov025_020c63a8 kind:function(arm,size=0x34) addr:0x020c63a8
-func_ov025_020c63dc kind:function(arm,size=0x20) addr:0x020c63dc
-func_ov025_020c63fc kind:function(arm,size=0x20) addr:0x020c63fc
-func_ov025_020c641c kind:function(arm,size=0x20) addr:0x020c641c
-func_ov025_020c643c kind:function(arm,size=0x4) addr:0x020c643c
-func_ov025_020c6440 kind:function(arm,size=0x10) addr:0x020c6440
-func_ov025_020c6450 kind:function(arm,size=0x10) addr:0x020c6450
-func_ov025_020c6460 kind:function(arm,size=0x14) addr:0x020c6460
-func_ov025_020c6474 kind:function(arm,size=0x1c) addr:0x020c6474
-func_ov025_020c6490 kind:function(arm,size=0x154) addr:0x020c6490
-func_ov025_020c65e4 kind:function(arm,size=0x44) addr:0x020c65e4
-func_ov025_020c6628 kind:function(arm,size=0x4c) addr:0x020c6628
-func_ov025_020c6674 kind:function(arm,size=0x18) addr:0x020c6674
-func_ov025_020c668c kind:function(arm,size=0x24) addr:0x020c668c
-func_ov025_020c66b0 kind:function(arm,size=0x10) addr:0x020c66b0
-func_ov025_020c66c0 kind:function(arm,size=0x298) addr:0x020c66c0
-func_ov025_020c6958 kind:function(arm,size=0xc8) addr:0x020c6958
-func_ov025_020c6a20 kind:function(arm,size=0x4) addr:0x020c6a20
-func_ov025_020c6a24 kind:function(arm,size=0x3c) addr:0x020c6a24
-func_ov025_020c6a60 kind:function(arm,size=0x190) addr:0x020c6a60
-func_ov025_020c6bf0 kind:function(arm,size=0x1d4) addr:0x020c6bf0
-func_ov025_020c6dc4 kind:function(arm,size=0x40) addr:0x020c6dc4
-func_ov025_020c6e04 kind:function(arm,size=0x68) addr:0x020c6e04
-func_ov025_020c6e6c kind:function(arm,size=0x50) addr:0x020c6e6c
-func_ov025_020c6ebc kind:function(arm,size=0x2c0) addr:0x020c6ebc
-func_ov025_020c717c kind:function(arm,size=0x38) addr:0x020c717c
-func_ov025_020c71b4 kind:function(arm,size=0x38) addr:0x020c71b4
-func_ov025_020c71ec kind:function(arm,size=0x24) addr:0x020c71ec
-func_ov025_020c7210 kind:function(arm,size=0x84) addr:0x020c7210
-data_ov025_020c7294 kind:data(any) addr:0x020c7294
-__sinit_ov025_020c7298 kind:function(arm,size=0x58) addr:0x020c7298
-.p__sinit_ov025_020c7298 kind:data(word) addr:0x020c72f0
-data_ov025_020c7308 kind:data(any) addr:0x020c7308
-data_ov025_020c7338 kind:data(any) addr:0x020c7338
-data_ov025_020c7364 kind:data(any) addr:0x020c7364 ambiguous
-data_ov025_020c7380 kind:data(any) addr:0x020c7380
-data_ov025_020c738c kind:data(any) addr:0x020c738c ambiguous
-data_ov025_020c7394 kind:data(any) addr:0x020c7394 ambiguous
-data_ov025_020c7398 kind:data(any) addr:0x020c7398 ambiguous
-data_ov025_020c739c kind:data(any) addr:0x020c739c
-data_ov025_020c73a8 kind:data(any) addr:0x020c73a8 ambiguous
-data_ov025_020c73b4 kind:data(any) addr:0x020c73b4 ambiguous
-data_ov025_020c73c4 kind:data(any) addr:0x020c73c4 ambiguous
-data_ov025_020c73cc kind:data(any) addr:0x020c73cc ambiguous
-data_ov025_020c73d4 kind:data(any) addr:0x020c73d4
-data_ov025_020c73e0 kind:data(any) addr:0x020c73e0
-data_ov025_020c73ec kind:data(any) addr:0x020c73ec ambiguous
-data_ov025_020c73fc kind:data(any) addr:0x020c73fc
-data_ov025_020c7404 kind:data(any) addr:0x020c7404 ambiguous
-data_ov025_020c7410 kind:data(any) addr:0x020c7410
-data_ov025_020c7414 kind:data(any) addr:0x020c7414 ambiguous
+_ZN19GameModeTitleScreenC1Ev kind:function(arm,size=0x64) addr:0x020c6060
+_ZN19GameModeTitleScreenD1Ev kind:function(arm,size=0x2c) addr:0x020c60c4
+_ZN19GameModeTitleScreenD0Ev kind:function(arm,size=0x34) addr:0x020c60f0
+_ZN19GameModeTitleScreen8vfunc_08Eiii kind:function(arm,size=0x70) addr:0x020c6124
+_ZN19GameModeTitleScreen8vfunc_0CEv kind:function(arm,size=0x24) addr:0x020c6194
+_ZN19GameModeTitleScreen8vfunc_10Ev kind:function(arm,size=0x24) addr:0x020c61b8
+_ZN19GameModeTitleScreen8vfunc_14Ev kind:function(arm,size=0x20) addr:0x020c61dc
+_ZN19GameModeTitleScreen8vfunc_18Ev kind:function(arm,size=0x24) addr:0x020c61fc
+_ZN19GameModeTitleScreen8vfunc_1CEv kind:function(arm,size=0x24) addr:0x020c6220
+_ZN19GameModeTitleScreen8vfunc_20Ev kind:function(arm,size=0x3c) addr:0x020c6244
+_ZN18UnkStruct_027e09a419func_ov025_020c4a60Ev kind:function(arm,size=0x2c) addr:0x020c6280
+_ZN18TitleScreenManager6CreateEi kind:function(arm,size=0x2c) addr:0x020c62ac
+_ZN18TitleScreenManagerC1Ei kind:function(arm,size=0x58) addr:0x020c62d8
+_ZN18TitleScreenManager8vfunc_14Ev kind:function(arm,size=0x78) addr:0x020c6330
+_ZN18TitleScreenManager8vfunc_18Ev kind:function(arm,size=0x34) addr:0x020c63a8
+_ZN18TitleScreenManager8vfunc_24Ev kind:function(arm,size=0x20) addr:0x020c63dc
+_ZN18TitleScreenManager8vfunc_28Ei kind:function(arm,size=0x20) addr:0x020c63fc
+_ZN18TitleScreenManager8vfunc_2CEi kind:function(arm,size=0x20) addr:0x020c641c
+_ZN18TitleScreenManager8vfunc_38Ev kind:function(arm,size=0x4) addr:0x020c643c
+_ZN18TitleScreenManager19func_ov025_020c4c20Ev kind:function(arm,size=0x10) addr:0x020c6440
+_ZN18TitleScreenManager19func_ov025_020c4c30Ev kind:function(arm,size=0x10) addr:0x020c6450
+_ZN18TitleScreenManagerD1Ev kind:function(arm,size=0x14) addr:0x020c6460
+_ZN18TitleScreenManagerD0Ev kind:function(arm,size=0x1c) addr:0x020c6474
+_ZN11TitleScreenC1Ev kind:function(arm,size=0x154) addr:0x020c6490
+_ZN11TitleScreenD1Ev kind:function(arm,size=0x44) addr:0x020c65e4
+_ZN11TitleScreenD0Ev kind:function(arm,size=0x4c) addr:0x020c6628
+_ZN11TitleScreen19func_ov025_020c4e54Ev kind:function(arm,size=0x18) addr:0x020c6674
+_ZN11TitleScreen19func_ov025_020c4e6cEv kind:function(arm,size=0x24) addr:0x020c668c
+_ZN11TitleScreen19func_ov025_020c4e90Ev kind:function(arm,size=0x10) addr:0x020c66b0
+_ZN11TitleScreen19func_ov025_020c4ea0Ej kind:function(arm,size=0x298) addr:0x020c66c0
+_ZN11TitleScreen8vfunc_08EP24GameModePTMFParam2StructP12TouchControl kind:function(arm,size=0xc8) addr:0x020c6958
+_ZN11TitleScreen19func_ov025_020c5200EP24GameModePTMFParam2StructP12TouchControl kind:function(arm,size=0x4) addr:0x020c6a20
+_ZN11TitleScreen19func_ov025_020c5204EP24GameModePTMFParam2StructP12TouchControl kind:function(arm,size=0x3c) addr:0x020c6a24
+_ZN11TitleScreen19func_ov025_020c5240EP24GameModePTMFParam2StructP12TouchControl kind:function(arm,size=0x190) addr:0x020c6a60
+_ZN11TitleScreen19func_ov025_020c53d0EP24GameModePTMFParam2StructP12TouchControl kind:function(arm,size=0x1d4) addr:0x020c6bf0
+_ZN11TitleScreen19func_ov025_020c55a4EP24GameModePTMFParam2StructP12TouchControl kind:function(arm,size=0x40) addr:0x020c6dc4
+_ZN11TitleScreen19func_ov025_020c55e4EP24GameModePTMFParam2StructP12TouchControl kind:function(arm,size=0x68) addr:0x020c6e04
+_ZN11TitleScreen8vfunc_14EPc kind:function(arm,size=0x50) addr:0x020c6e6c
+_ZN11TitleScreen8vfunc_10EPc kind:function(arm,size=0x2c0) addr:0x020c6ebc
+_ZN11TitleScreen8vfunc_0CEi kind:function(arm,size=0x38) addr:0x020c717c
+_ZN11TitleScreen19func_ov025_020c592cEv kind:function(arm,size=0x38) addr:0x020c71b4
+_ZN11TitleScreen19func_ov025_020c5964Ev kind:function(arm,size=0x24) addr:0x020c71ec
+_ZN16TitleScreen_Sub28vfunc_00Ev kind:function(arm,size=0x84) addr:0x020c7210
+data_ov025_020c5a0c kind:data(any) addr:0x020c7294
+__sinit_TitleScreen.cpp kind:function(arm,size=0x58) addr:0x020c7298
+.p__sinit_TitleScreen.cpp kind:data(word) addr:0x020c72f0
+_ZTV19GameModeTitleScreen kind:data(any) addr:0x020c7300
+_ZTV18TitleScreenManager kind:data(any) addr:0x020c7330
+data_ov025_020c5ae0 kind:data(any) addr:0x020c7380
+data_ov025_020c738c kind:data(any) addr:0x020c738c
+data_ov025_020c7394 kind:data(any) addr:0x020c7394
+data_ov025_020c7398 kind:data(any) addr:0x020c7398
+data_ov025_020c5aec kind:data(any) addr:0x020c739c
+_ZTV16TitleScreen_Sub2 kind:data(any) addr:0x020c73cc
+_ZTV11TitleScreen kind:data(any) addr:0x020c73d8
+@337 kind:data(byte[18]) addr:0x020c73fc
+@338 kind:data(byte[6]) addr:0x020c7410

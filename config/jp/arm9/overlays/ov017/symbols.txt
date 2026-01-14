@@ -1,7 +1,7 @@
 func_ov017_020bce80 kind:function(arm,size=0x198) addr:0x020bce80
 func_ov017_020bd018 kind:function(arm,size=0x13c) addr:0x020bd018
 func_ov017_020bd154 kind:function(arm,size=0x60) addr:0x020bd154
-func_ov017_020bd1b4 kind:function(arm,size=0x8c) addr:0x020bd1b4
+_ZN18UnkStruct_027e09a419func_ov017_020bb994EPv kind:function(arm,size=0x8c) addr:0x020bd1b4
 func_ov017_020bd240 kind:function(arm,size=0x28) addr:0x020bd240
 func_ov017_020bd268 kind:function(arm,size=0x30) addr:0x020bd268
 func_ov017_020bd298 kind:function(arm,size=0x1c) addr:0x020bd298

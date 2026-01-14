@@ -5,3 +5,19 @@
     .data       start:0x020c5a60 end:0x020c5b80 kind:data align:32
     .bss        start:0x020c5b80 end:0x020c5b80 kind:bss align:32
 
+src/025_Title/GameModeTitleScreen.cpp:
+    complete
+    .text       start:0x020c4840 end:0x020c4a8c
+    .rodata     start:0x020c5a0c end:0x020c5a10
+    .data       start:0x020c5a60 end:0x020c5a90
+
+src/025_Title/TitleScreenManager.cpp:
+    complete
+    .text       start:0x020c4a8c end:0x020c4c70
+    .data       start:0x020c5a90 end:0x020c5ae0
+
+src/025_Title/TitleScreen.cpp:
+    .text       start:0x020c4c70 end:0x020c5a0c
+    .init       start:0x020c5a10 end:0x020c5a44
+    .ctor       start:0x020c5a44 end:0x020c5a4c
+    .data       start:0x020c5ae0 end:0x020c5b80

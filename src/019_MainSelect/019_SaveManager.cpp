@@ -29,7 +29,7 @@ const unk32 data_ov019_020d1be8[] = {
 ARM void SaveManager::func_ov019_020d086c(u16 param1) {
     func_02030d48(gSaveManager.mUnk_204);
 
-    STATIC_PTMFCALLBACK(SaveFile, gSaveManager.mUnk_23C, gSaveManager.mpSaveFile);
+    STATIC_PTMFCALLBACK(PTMF<SaveFile>, gSaveManager.mUnk_23C, gSaveManager.mpSaveFile);
     gSaveManager.mUnk_20C = func_02030cfc();
     func_02030d58(gSaveManager.mUnk_204);
 

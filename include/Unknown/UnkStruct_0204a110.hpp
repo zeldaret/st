@@ -193,10 +193,7 @@ public:
     /* DF2 */ unk8 mUnk_DF2;
     /* DF3 */ unk8 mUnk_DF3;
     /* DF4 */ unk32 mUnk_DF4;
-    /* DF8 */ unk8 mUnk_DF8;
-    /* DF9 */ unk8 mUnk_DF9;
-    /* DFA */ unk8 mUnk_DFA;
-    /* DFB */ unk8 mUnk_DFB;
+    /* DF8 */ unk32 mUnk_DF8;
     /* DFC */ unk8 mUnk_DFC;
     /* DFD */ unk8 mUnk_DFD;
     /* DFE */ unk8 mUnk_DFE;

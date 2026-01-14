@@ -14,40 +14,6 @@
 extern const unk16 data_ov019_020d1bb0[];
 extern "C" void func_ov001_020bd6a8();
 
-class UnkStructSub2 {
-public:
-    UnkStructSub2();
-
-    /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
-};
-
-class UnkStructSub4 {
-public:
-    /* 00 */ unk8 mUnk_00[0x18];
-    /* 18 */ unk32 mUnk_0018;
-    /* 1C */ unk32 mUnk_001C;
-    /* 20 */ unk32 mUnk_0020;
-    /* 20 */ unk32 mUnk_0024;
-    /* 28 */ u8 mUnk_0028; // bool?
-    /* 28 */ unk8 mUnk_0029;
-    /* 28 */ unk8 mUnk_002A;
-    /* 28 */ unk8 mUnk_002B;
-    /* 2C */ UnkStructSub2 mUnk_002C;
-    /* 30 */ STRUCT_PAD(0x30, 0x5C);
-    /* 5C */ unk16 mUnk_5C;
-    /* 5C */ unk16 mUnk_5E;
-    /* 60 */ STRUCT_PAD(0x60, 0x6E);
-    /* 6E */ unk8 mUnk_6E;
-    /* 6F */ unk8 mUnk_6F;
-    /* 70 */ unk32 mUnk_70;
-    /* 74 */ unk16 mUnk_74;
-    /* 76 */ unk16 mUnk_76;
-    /* 78 */
-
-    void func_ov000_02060b64(void);
-};
-
 // related to UnkStructSub2 but unsure how
 class FileSelect_UnkClass7 {
 public:
@@ -58,7 +24,7 @@ public:
     };
 
     /* 0000 (vtable) */
-    /* 0004 */ UnkStructSub4 mUnk_0004[30];
+    /* 0004 */ UnkSubStruct19 mUnk_0004[30];
     /* 0E14 */ Sub5 mUnk_0E14[30];
 
     // data_ov019_020d22a8 vtable
@@ -105,7 +71,7 @@ public:
     // data_ov019_020d22b8 vtable
     /* 00 */ virtual ~FileSelectSubScreen() override {}
     /* 08 */ virtual void vfunc_08() override;
-    /* 10 */ virtual void vfunc_10() override;
+    /* 10 */ virtual void vfunc_10(unk8 *param1) override;
 };
 
 class FileSelectManager : public GameModeManagerBase { // 0x02262dbc

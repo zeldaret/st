@@ -7,37 +7,6 @@
 #include "nitro/math.h"
 #include "types.h"
 
-class UnkStructSub4_2 {
-public:
-    /* 00 */ void *mUnk_00;
-    /* 04 */ void *mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 08 */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk32 mUnk_1C;
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ unk32 mUnk_24;
-    /* 28 */ u8 mUnk_28; // bool?
-    /* 29 */ unk8 mUnk_29;
-    /* 2A */ unk8 mUnk_2A;
-    /* 2B */ unk8 mUnk_2B;
-    /* 2C */ unk32 mUnk_2C;
-    /* 30 */ STRUCT_PAD(0x30, 0x5C);
-    /* 5C */ unk16 mUnk_5C;
-    /* 5E */ unk16 mUnk_5E;
-    /* 60 */ STRUCT_PAD(0x60, 0x6E);
-    /* 6E */ unk8 mUnk_6E;
-    /* 6F */ unk8 mUnk_6F;
-    /* 70 */ unk32 mUnk_70;
-    /* 74 */ unk16 mUnk_74;
-    /* 76 */ unk16 mUnk_76;
-    /* 78 */
-
-    void func_ov000_02060b64(void);
-};
-
 // file tab manager?
 class UnkSubStruct9 : public SysObject {
 public:
@@ -49,16 +18,16 @@ public:
     /* 064 */ UnkSystem2_UnkSubSystem5 mUnk_064;
     /* 29C */ UnkStruct_ov019_020d24c8_28_258 mUnk_29C; // top-left 1 and 2 icons
     /* 2B4 */ UnkStruct_ov019_020d24c8_28_258 mUnk_2B4; // static hearts (hearts before beating heart)
-    /* 2CC */ UnkStructSub4_2 mUnk_2CC;
-    /* 344 */ UnkStructSub4_2 mUnk_344;
-    /* 3BC */ UnkStructSub4_2 mUnk_3BC;
-    /* 434 */ UnkStructSub4_2 mUnk_434;
-    /* 4AC */ UnkStructSub4_2 mUnk_4AC;
-    /* 524 */ UnkStructSub4_2 mUnk_524; // forest dungeon icon
-    /* 59C */ UnkStructSub4_2 mUnk_59C; // snow dungeon icon
-    /* 614 */ UnkStructSub4_2 mUnk_614; // ocean dungeon icon
-    /* 68C */ UnkStructSub4_2 mUnk_68C; // fire dungeon icon
-    /* 704 */ UnkStructSub4_2 mUnk_704; // desert dungeon icon
+    /* 2CC */ UnkSubStruct19 mUnk_2CC;
+    /* 344 */ UnkSubStruct19 mUnk_344;
+    /* 3BC */ UnkSubStruct19 mUnk_3BC;
+    /* 434 */ UnkSubStruct19 mUnk_434;
+    /* 4AC */ UnkSubStruct19 mUnk_4AC;
+    /* 524 */ UnkSubStruct19 mUnk_524; // forest dungeon icon
+    /* 59C */ UnkSubStruct19 mUnk_59C; // snow dungeon icon
+    /* 614 */ UnkSubStruct19 mUnk_614; // ocean dungeon icon
+    /* 68C */ UnkSubStruct19 mUnk_68C; // fire dungeon icon
+    /* 704 */ UnkSubStruct19 mUnk_704; // desert dungeon icon
     /* 77C */ Vec2us mUnk_77C;
     // int pad[10];
     /* 780 */

@@ -34,7 +34,7 @@ ARM FileSelectManager::~FileSelectManager() {
 ARM void FileSelectManager::vfunc_10(unk32 param1, unk32 param2, unk32 param3) {
     void *unkPtr;
 
-    this->mUnk_004.func_0201c00c(0x25, 1, param3);
+    this->mUnk_004.func_0201c00c(0x25, 1);
 
     FileSelectMain *newSub3 = new(HeapIndex_1) FileSelectMain();
     unkPtr                  = newSub3;
