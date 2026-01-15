@@ -119,7 +119,7 @@ ARM FileSelectOptionsManager::~FileSelectOptionsManager() {
     this->mpOptions = NULL;
 }
 
-ARM void FileSelectOptionsManager::vfunc_08() {
+ARM void FileSelectOptionsManager::vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
     if (this->mUnk_20 == 0) {
         return;
     }
@@ -213,7 +213,7 @@ ARM void FileSelectOptions::func_ov019_020ccd40() {
     CALL_PTMF(PTMF<FileSelectOptions>, data_ov019_020d21c0[this->mState]);
 }
 
-ARM void FileSelectOptions::vfunc_08() {
+ARM void FileSelectOptions::vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
     CALL_PTMF(PTMF<FileSelectOptions>, data_ov019_020d2188[this->mState]);
 }
 

@@ -70,7 +70,7 @@ public:
 
     // data_ov019_020d22b8 vtable
     /* 00 */ virtual ~FileSelectSubScreen() override {}
-    /* 08 */ virtual void vfunc_08() override;
+    /* 08 */ virtual void vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) override;
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
 };
 

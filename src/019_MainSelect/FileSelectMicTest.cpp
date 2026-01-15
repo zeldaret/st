@@ -138,7 +138,7 @@ ARM void FileSelectMicTest::func_ov019_020cebcc() {
     this->mUnk_304.mUnk_0A4.func_ov000_0206415c(&local_10, 7, data_ov019_020d2248.mUnk_00, 0);
 }
 
-ARM void FileSelectMicTest::vfunc_08() {
+ARM void FileSelectMicTest::vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
     switch (this->mState) {
         case FSMicTestState_MicTestIdle:
             this->mUnk_270.func_ov019_020cf168();

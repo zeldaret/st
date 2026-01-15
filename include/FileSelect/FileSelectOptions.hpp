@@ -166,7 +166,7 @@ public:
 
     // data_ov019_020d2200 vtable
     /* 00 */ virtual ~FileSelectOptions() override;
-    /* 08 */ virtual void vfunc_08() override;
+    /* 08 */ virtual void vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) override;
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
 
     static GameModeManagerBase_104 *Create(void *param1, s32 saveSlotIndex);
