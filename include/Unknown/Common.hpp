@@ -110,6 +110,67 @@ public:
             pPos->y    = local_4c.y;
         }
     }
+
+    void UnkOperations2(Vec2s *pPos, bool doSetPos) {
+        int iVar1;
+
+        if (this->mUnk_08 != 0) {
+            iVar1         = this->mUnk_08 - this->mUnk_0D;
+            this->mUnk_08 = CLAMP2(iVar1, 0, 0xFFFF);
+        } else {
+            if (this->mUnk_0A) {
+                if (this->mUnk_04 < this->mUnk_06) {
+                    iVar1 = this->mUnk_04 + this->mUnk_0D;
+
+                    if (iVar1 > this->mUnk_06) {
+                        iVar1 = this->mUnk_06;
+                    } else if (iVar1 < 0) {
+                        iVar1 = 0;
+                    }
+
+                    this->mUnk_04 = iVar1;
+                    this->vfunc_00();
+
+                    if (this->mUnk_04 >= this->mUnk_06) {
+                        this->mUnk_10 = this->mUnk_20;
+                        this->mUnk_14 = this->mUnk_24;
+                        this->mUnk_0A = false;
+                        this->mUnk_0C = true;
+                    }
+                }
+            } else {
+                if (this->mUnk_0B && this->mUnk_04 != 0) {
+                    iVar1 = this->mUnk_04 - this->mUnk_0D;
+
+                    if (iVar1 > this->mUnk_06) {
+                        iVar1 = this->mUnk_06;
+                    } else if (iVar1 < 0) {
+                        iVar1 = 0;
+                    }
+
+                    this->mUnk_04 = iVar1;
+                    this->vfunc_04();
+
+                    if (this->mUnk_04 == 0) {
+                        this->mUnk_10 = this->mUnk_18;
+                        this->mUnk_14 = this->mUnk_1C;
+                        this->mUnk_0B = false;
+                        this->mUnk_0C = true;
+                    }
+                }
+            }
+        }
+
+        if (doSetPos) {
+            Vec2us local_4c_copy;
+            Vec2us local_4c;
+            func_0201e8d4(&local_4c_copy, this);
+            local_4c.x = local_4c_copy.y;
+            local_4c.y = local_4c_copy.x;
+            pPos->x    = local_4c.x;
+            pPos->y    = local_4c.y;
+        }
+    }
 };
 
 class UnkSystem2_UnkSubSystem1_Base {
@@ -461,7 +522,10 @@ public:
     /* 00 */ void *mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk16 mUnk_08;
-    /* 0A */ Vec2s mPos;
+    /* 0A */ union { //! TODO: figure out
+        Vec2s mPos;
+        Vec2us mPosU;
+    };
     /* 0E */ unk16 mUnk_0E;
     /* 10 */ unk16 mUnk_10;
     /* 12 */ unk16 mUnk_12;

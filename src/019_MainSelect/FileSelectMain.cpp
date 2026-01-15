@@ -298,8 +298,8 @@ ARM void FileSelectMain::func_ov019_020c6e3c() {
         unaff_r4 = 0;
         UnkStruct_ov019_020d24c8_28_258 local_3c(0x8A, 0x05);
 
-        local_40.x = local_3c.mPos.x;
-        local_40.y = local_3c.mPos.y;
+        local_40.x = local_3c.mPosU.x;
+        local_40.y = local_3c.mPosU.y;
 
         unaff_r9 = 10;
         func_ov000_02062e44(auStack_50, &this->GetUnk03E0(fileIndex).mUnk_004);
@@ -1257,9 +1257,9 @@ ARM void FileSelectMain::func_ov019_020c92dc() {
         this->GetUnk03E0(i).mUnk_004.mUnk_2A = false;
     }
 
-    this->mUnk_00BC.UnkOperations(&this->mUnk_005C.mPos, true);
+    this->mUnk_00BC.UnkOperations2(&this->mUnk_005C.mPos, true);
 
-    this->mUnk_1078.UnkOperations(&this->mUnk_0DA4.mPos, true);
+    this->mUnk_1078.UnkOperations2(&this->mUnk_0DA4.mPos, true);
     UnkStruct_ov019_020d24c8_28_258 local_30(0x8B, 0x06);
     Vec2s local_5c;
     Vec2s local_58;
@@ -1268,7 +1268,7 @@ ARM void FileSelectMain::func_ov019_020c92dc() {
     this->mUnk_1144.mUnk_5C.x = local_58.x + local_30.mPos.x - local_5c.x;
     this->mUnk_1144.mUnk_5C.y = local_58.y + local_30.mPos.y - local_5c.y;
 
-    this->mUnk_1490.UnkOperations(&this->mUnk_11BC.mPos, true);
+    this->mUnk_1490.UnkOperations2(&this->mUnk_11BC.mPos, true);
     UnkStruct_ov019_020d24c8_28_258 local_48(0x8B, 0x06);
     Vec2s local_60;
     Vec2s local_64;
@@ -1277,8 +1277,8 @@ ARM void FileSelectMain::func_ov019_020c92dc() {
     this->mUnk_1144.mUnk_5C.x = local_64.x + local_48.mPos.x - local_60.x;
     this->mUnk_1144.mUnk_5C.y = local_64.y + local_48.mPos.y - local_60.y;
 
-    this->mUnk_18A8.UnkOperations(&this->mUnk_15D4.mPos, true);
-    this->mUnk_1BC0.UnkOperations(&this->mUnk_18EC.mPos, true);
+    this->mUnk_18A8.UnkOperations2(&this->mUnk_15D4.mPos, true);
+    this->mUnk_1BC0.UnkOperations2(&this->mUnk_18EC.mPos, true);
 
     this->mUnk_1144.func_ov000_020609c4();
     this->mUnk_155C.func_ov000_020609c4();
@@ -1373,9 +1373,9 @@ ARM void FileSelectMain::func_ov019_020c9d88() {
 }
 
 ARM void FileSelectMain::func_ov019_020c9e08() {
-    this->mUnk_00BC.UnkOperations(&this->mUnk_005C.mPos, true);
+    this->mUnk_00BC.UnkOperations2(&this->mUnk_005C.mPos, true);
 
-    this->mUnk_1100.UnkOperations(&this->mUnk_0DA4.mPos, true);
+    this->mUnk_1100.UnkOperations2(&this->mUnk_0DA4.mPos, true);
     UnkStruct_ov019_020d24c8_28_258 local_30(0x8B, 0x06);
     Vec2s local_5c;
     Vec2s local_58;
@@ -1384,7 +1384,7 @@ ARM void FileSelectMain::func_ov019_020c9e08() {
     this->mUnk_1144.mUnk_5C.x = local_58.x + local_30.mPos.x - local_5c.x;
     this->mUnk_1144.mUnk_5C.y = local_58.y + local_30.mPos.y - local_5c.y;
 
-    this->mUnk_1518.UnkOperations(&this->mUnk_11BC.mPos, true);
+    this->mUnk_1518.UnkOperations2(&this->mUnk_11BC.mPos, true);
     UnkStruct_ov019_020d24c8_28_258 local_48(0x8B, 0x05);
     Vec2s local_6c;
     Vec2s local_68;
@@ -1393,8 +1393,8 @@ ARM void FileSelectMain::func_ov019_020c9e08() {
     this->mUnk_155C.mUnk_5C.x = local_68.x + local_48.mPos.x - local_6c.x;
     this->mUnk_155C.mUnk_5C.y = local_68.y + local_48.mPos.y - local_6c.y;
 
-    this->mUnk_18A8.UnkOperations(&this->mUnk_15D4.mPos, true);
-    this->mUnk_1BC0.UnkOperations(&this->mUnk_18EC.mPos, true);
+    this->mUnk_18A8.UnkOperations2(&this->mUnk_15D4.mPos, true);
+    this->mUnk_1BC0.UnkOperations2(&this->mUnk_18EC.mPos, true);
 
     this->mUnk_1144.func_ov000_020609c4();
     this->mUnk_155C.func_ov000_020609c4();
@@ -1460,9 +1460,9 @@ ARM void FileSelectMain::func_ov019_020ca940() {
         this->GetUnk03E0(i).mUnk_004.mUnk_2A = false;
     }
 
-    this->mUnk_00BC.UnkOperations(&this->mUnk_005C.mPos, true);
+    this->mUnk_00BC.UnkOperations2(&this->mUnk_005C.mPos, true);
 
-    this->mUnk_1100.UnkOperations(&this->mUnk_0DA4.mPos, true);
+    this->mUnk_1100.UnkOperations2(&this->mUnk_0DA4.mPos, true);
     UnkStruct_ov019_020d24c8_28_258 local_30(0x8B, 0x06);
     Vec2s local_5c;
     Vec2s local_58;
@@ -1471,7 +1471,7 @@ ARM void FileSelectMain::func_ov019_020ca940() {
     this->mUnk_1144.mUnk_5C.x = local_58.x + local_30.mPos.x - local_5c.x;
     this->mUnk_1144.mUnk_5C.y = local_58.y + local_30.mPos.y - local_5c.y;
 
-    this->mUnk_1518.UnkOperations(&this->mUnk_11BC.mPos, true);
+    this->mUnk_1518.UnkOperations2(&this->mUnk_11BC.mPos, true);
     UnkStruct_ov019_020d24c8_28_258 local_48(0x8B, 0x05);
     Vec2s local_6c;
     Vec2s local_68;
@@ -1480,8 +1480,8 @@ ARM void FileSelectMain::func_ov019_020ca940() {
     this->mUnk_155C.mUnk_5C.x = local_68.x + local_48.mPos.x - local_6c.x;
     this->mUnk_155C.mUnk_5C.y = local_68.y + local_48.mPos.y - local_6c.y;
 
-    this->mUnk_18A8.UnkOperations(&this->mUnk_15D4.mPos, true);
-    this->mUnk_1BC0.UnkOperations(&this->mUnk_18EC.mPos, true);
+    this->mUnk_18A8.UnkOperations2(&this->mUnk_15D4.mPos, true);
+    this->mUnk_1BC0.UnkOperations2(&this->mUnk_18EC.mPos, true);
 
     this->mUnk_1144.func_ov000_020609c4();
     this->mUnk_155C.func_ov000_020609c4();

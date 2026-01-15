@@ -10,6 +10,7 @@ extern "C" {
 
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 #define CLAMP(x, min, max) ((x) > (max) ? (max) : (x) < (min) ? (min) : (x))
+#define CLAMP2(x, min, max) ((x) > (max) ? (max) : (x) >= (min) ? (x) : (min))
 
 // Q20.12 fixed point number
 typedef s32 q20;
@@ -176,12 +177,6 @@ typedef struct Vec2b {
     /* 2 */
 } Vec2b;
 
-typedef struct Vec2s {
-    /* 0 */ s16 x;
-    /* 1 */ s16 y;
-    /* 2 */
-} Vec2s;
-
 typedef struct Vec2us {
     /* 0 */ u16 x;
     /* 2 */ u16 y;
@@ -243,6 +238,12 @@ typedef struct Mat4p {
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+typedef struct VEC2S {
+    /* 0 */ s16 x;
+    /* 1 */ s16 y;
+    /* 2 */
+} VEC2S;
 
 u32 func_01ff9f3c(s32 a, s32 b);
 s32 Atan2(s32 x, s32 y);

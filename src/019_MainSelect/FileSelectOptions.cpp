@@ -20,8 +20,8 @@ public:
     /* 00 */ Vec2s mUnk_00;
     /* 04 */ Vec2s mUnk_04;
     /* 08 */ Vec2s mUnk_08;
-    /* 0C */ Vec2s mUnk_0C;
-    /* 10 */ Vec2s mUnk_10;
+    /* 0C */ VEC2S mUnk_0C;
+    /* 10 */ VEC2S mUnk_10;
     /* 14 */
 };
 
@@ -68,7 +68,7 @@ public:
 };
 
 UnkStruct_ov019_020d215c UnkStruct_ov019_020d2170::data_ov019_020d215c = {
-    Vec2s(0, 0), Vec2s(0, 0), Vec2s(0, 0), Vec2s(-0x47, -0x0), Vec2s(0x0281, 0x00),
+    Vec2s(), Vec2s(), Vec2s(), {-0x47, -0x01}, {0x0281, 0x00},
 };
 
 static const UnkStruct_ov019_020d2170 data_ov019_020d2170;
@@ -362,10 +362,10 @@ ARM void FileSelectOptions::func_ov019_020cd16c() {
     }
 
     UnkStruct_ov019_020d24c8_28_258 local_34(0x8C, 0x00);
-    local_58.x = local_34.mPos.x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_08.x;
-    local_58.y = local_34.mPos.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_08.y;
-    local_54.y = local_34.mPos.y;
-    local_54.x = local_34.mPos.x;
+    local_58.x = local_34.mPosU.x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_08.x;
+    local_58.y = local_34.mPosU.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_08.y;
+    local_54.y = local_34.mPosU.y;
+    local_54.x = local_34.mPosU.x;
     this->mUnk_1064.func_0201e874(0x14, &local_54, &local_58, 7);
 
     this->mUnk_1064.mUnk_0A = true;
@@ -401,10 +401,10 @@ ARM void FileSelectOptions::func_ov019_020cd41c() {
     Vec2us local_3c;
     UnkStruct_ov019_020d24c8_28_258 local_34(0x8C, 0x00);
 
-    local_40.x = local_34.mPos.x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.x;
-    local_40.y = local_34.mPos.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.y;
-    local_3c.x = local_34.mPos.x;
-    local_3c.y = local_34.mPos.y;
+    local_40.x = local_34.mPosU.x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.x;
+    local_40.y = local_34.mPosU.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.y;
+    local_3c.x = local_34.mPosU.x;
+    local_3c.y = local_34.mPosU.y;
     this->mUnk_1064.func_0201e874(0x0C, &local_3c, &local_40, 0);
     this->mUnk_1064.mUnk_0A = true;
     this->mUnk_1064.mUnk_0C = false;
