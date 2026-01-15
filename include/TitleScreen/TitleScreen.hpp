@@ -219,4 +219,3 @@ public:
 };
 
 extern TitleScreenManager *data_027e0994;
-extern const unk16 data_ov025_020c5a0c[];

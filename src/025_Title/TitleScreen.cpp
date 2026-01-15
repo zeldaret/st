@@ -19,96 +19,6 @@ void func_ov000_0205be34(void *param1, unk32 param2);
 void func_ov000_0205bedc(void *param1, void *param2, void *param3, void *param4, unk32 param5, int);
 }
 
-#if IS_JP
-class UnkStruct_ov025_020c738c {
-public:
-    /* 00 */ unk16 mUnk_00;
-    /* 02 */ unk16 mUnk_02;
-    /* 04 */ unk16 mUnk_04;
-    /* 06 */ unk16 mUnk_06;
-    /* 08 */
-
-    UnkStruct_ov025_020c738c() {
-        this->mUnk_04 = 0x100;
-        this->mUnk_06 = 0x20;
-        this->mUnk_00 = 0x100;
-        this->mUnk_02 = 0x20;
-    }
-};
-
-class UnkStruct_ov025_020c7394 {
-public:
-    /* 00 */ unk16 mUnk_00;
-    /* 02 */ unk16 mUnk_02;
-    /* 04 */
-
-    UnkStruct_ov025_020c7394() {
-        this->mUnk_00 = 0x00;
-        this->mUnk_02 = 0x94;
-    }
-};
-
-class UnkStruct_ov025_020c7398 {
-public:
-    /* 00 */ unk16 mUnk_00;
-    /* 02 */ unk16 mUnk_02;
-    /* 04 */
-
-    UnkStruct_ov025_020c7398() {
-        this->mUnk_00 = 0x100;
-        this->mUnk_02 = 0x80;
-    }
-};
-
-class UnkStruct_ov025_020c5ae0 {
-public:
-    /* 00 */ u16 mUnk_00;
-    /* 02 */ u16 mUnk_02;
-    /* 04 */ unk16 mUnk_04;
-    /* 06 */ unk16 mUnk_06;
-    /* 08 */ unk16 mUnk_08;
-    /* 0A */ unk16 mUnk_0A;
-    /* 0C */
-
-    UnkStruct_ov025_020c5ae0() {
-        this->mUnk_04 = 0x00;
-        this->mUnk_06 = 0x00;
-        this->mUnk_08 = 0x00;
-        this->mUnk_0A = 0x20;
-        this->mUnk_00 = 0x100;
-        this->mUnk_02 = 0x80;
-    }
-};
-
-static const UnkStruct_ov025_020c5ae0 data_ov025_020c5ae0;
-static const UnkStruct_ov025_020c738c data_ov025_020c738c;
-static const UnkStruct_ov025_020c7394 data_ov025_020c7394;
-static const UnkStruct_ov025_020c7398 data_ov025_020c7398;
-#else
-class UnkStruct_ov025_020c5ae0 {
-public:
-    /* 00 */ u16 mUnk_00;
-    /* 02 */ u16 mUnk_02;
-    /* 04 */ unk16 mUnk_04;
-    /* 06 */ unk16 mUnk_06;
-    /* 08 */ unk16 mUnk_08;
-    /* 0A */ unk16 mUnk_0A;
-    /* 0C */
-
-    UnkStruct_ov025_020c5ae0() {}
-    UnkStruct_ov025_020c5ae0(unk16 param1, unk16 param2, unk16 param3, unk16 param4, unk16 param5, unk16 param6) {
-        this->mUnk_04 = param1;
-        this->mUnk_06 = param2;
-        this->mUnk_08 = param3;
-        this->mUnk_0A = param4;
-        this->mUnk_00 = param5;
-        this->mUnk_02 = param6;
-    }
-};
-
-static const UnkStruct_ov025_020c5ae0 data_ov025_020c5ae0(0x0000, 0x0020, 0x0100, 0x0080, 0x0100, 0x0080);
-#endif
-
 static TitleScreenPTMF<TitleScreen> data_ov025_020c5aec[TitleScreenState_Max] = {
     TitleScreen::func_ov025_020c5200, // TitleScreenState_None
     TitleScreen::func_ov025_020c5204, // TitleScreenState_IdleBeforeUI
@@ -117,6 +27,20 @@ static TitleScreenPTMF<TitleScreen> data_ov025_020c5aec[TitleScreenState_Max] = 
     TitleScreen::func_ov025_020c55a4, // TitleScreenState_IdleBeforeFileSelect
     TitleScreen::func_ov025_020c55e4, // TitleScreenState_ToFileSelect
 };
+
+#if IS_JP
+static const Vec2s data_ov025_020c5ae4(0x0000, 0x0000);
+static const Vec2s data_ov025_020c5ae8(0x0000, 0x0000);
+static const Vec2us data_ov025_020c5ae0(0x0100, 0x0080);
+static const Vec2s data_ov025_020c7398(0x0100, 0x0080);
+static const Vec2s data_ov025_020c7394(0x0000, 0x0094);
+static const Vec2s data_ov025_020c738e(0x0100, 0x0020);
+static const Vec2s data_ov025_020c738c(0x0100, 0x0020);
+#else
+static const Vec2s data_ov025_020c5ae4(0x0000, 0x0020);
+static const Vec2s data_ov025_020c5ae8(0x0100, 0x0080);
+static const Vec2us data_ov025_020c5ae0(0x0100, 0x0080);
+#endif
 
 struct UnkStruct_StackTitleScreen {
     /* 00 */ unk32 pad[5];
@@ -263,27 +187,6 @@ void TitleScreen::vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouc
 
 void TitleScreen::func_ov025_020c5200(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {}
 
-extern "C" inline void Test(TitleScreen *thisx, u16 flags) {
-    if ((flags & 1) != 0) {
-        thisx->mUnk_021 = 1;
-    }
-}
-
-extern "C" inline void Test2(TitleScreen *thisx, u16 flags, GameModePTMFParam2Struct *param1) {
-    if ((flags & 2) != 0) {
-        if (thisx->mUnk_021) {
-            goto test;
-        }
-    }
-
-    if (!(param1->mButtons & 8)) {
-        return;
-    }
-
-test:
-    thisx->func_ov025_020c4e54();
-}
-
 // https://decomp.me/scratch/6nDGM
 void TitleScreen::func_ov025_020c5204(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
     if (pTouchControl->mFlags & 1) {
@@ -419,20 +322,20 @@ void TitleScreen::vfunc_10(unk8 *param1) {
         if (param1[1] == 0 && this->mUnk_254.mUnk_6E) {
 #if IS_JP
             Vec2us pos1;
-            pos1.x = this->mUnk_23C.mPos.x + data_ov025_020c5ae0.mUnk_04;
-            pos1.y = this->mUnk_23C.mPos.y + data_ov025_020c5ae0.mUnk_06;
+            pos1.x = this->mUnk_23C.mPos.x + data_ov025_020c5ae4.x;
+            pos1.y = this->mUnk_23C.mPos.y + data_ov025_020c5ae4.y;
             data_0204af1c.func_0201aa44(&this->mUnk_23C, &pos1, 0, 0);
 
             UnkStruct_ov019_020d24c8_28_258 uStack_9c(0x59, 0x01);
             Vec2us pos2;
-            pos2.x = uStack_9c.mPos.x + data_ov025_020c5ae0.mUnk_04;
-            pos2.y = uStack_9c.mPos.y + data_ov025_020c5ae0.mUnk_06;
+            pos2.x = uStack_9c.mPos.x + data_ov025_020c5ae4.x;
+            pos2.y = uStack_9c.mPos.y + data_ov025_020c5ae4.y;
             data_0204af1c.func_0201aad0(&this->mUnk_254, &pos2, 0, 0);
 
             UnkStruct_ov019_020d24c8_28_258 uStack_b4(0x59, 0x00);
             Vec2us pos3;
-            pos3.x = uStack_b4.mPos.x + data_ov025_020c5ae0.mUnk_04;
-            pos3.y = uStack_b4.mPos.y + data_ov025_020c5ae0.mUnk_06;
+            pos3.x = uStack_b4.mPos.x + data_ov025_020c5ae4.x;
+            pos3.y = uStack_b4.mPos.y + data_ov025_020c5ae4.y;
             data_0204af1c.func_0201aad0(&this->mUnk_2CC, &pos3, 0, 0);
 #else
             data_0204af1c.func_0201aa44(&this->mUnk_23C, &this->mUnk_23C.mPos, 0, 0);
@@ -479,7 +382,6 @@ struct stack_struct {
     bool mUnk_02;
 };
 
-// https://decomp.me/scratch/nXEa8
 void TitleScreen_Sub2::vfunc_00() {
     stack_struct sp14;
     Vec2s sp10;
@@ -487,17 +389,9 @@ void TitleScreen_Sub2::vfunc_00() {
     Vec2us sp8;
 
     func_ov000_0205be34(&sp14, 0x3E);
-
     sp14.mUnk_02 = this->mUnk_10;
-
-    sp8.x = data_ov025_020c5ae0.mUnk_00;
-    sp8.y = data_ov025_020c5ae0.mUnk_02;
-
-    spC.x = data_ov025_020c5ae0.mUnk_08;
-    spC.y = data_ov025_020c5ae0.mUnk_0A;
-
-    sp10.x = data_ov025_020c5ae0.mUnk_04;
-    sp10.y = data_ov025_020c5ae0.mUnk_06;
-
+    sp8          = data_ov025_020c5ae0;
+    spC          = data_ov025_020c5ae8;
+    sp10         = data_ov025_020c5ae4;
     func_ov000_0205bedc(&sp14, &sp10, &spC, &sp8, 0, 0);
 }

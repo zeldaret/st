@@ -41,13 +41,16 @@ _ZN11TitleScreen8vfunc_0CEi kind:function(arm,size=0x38) addr:0x020c717c
 _ZN11TitleScreen19func_ov025_020c592cEv kind:function(arm,size=0x38) addr:0x020c71b4
 _ZN11TitleScreen19func_ov025_020c5964Ev kind:function(arm,size=0x24) addr:0x020c71ec
 _ZN16TitleScreen_Sub28vfunc_00Ev kind:function(arm,size=0x84) addr:0x020c7210
-data_ov025_020c5a0c kind:data(any) addr:0x020c7294
+data_ov025_020c5a0c kind:data(any) addr:0x020c7294 local
 __sinit_TitleScreen.cpp kind:function(arm,size=0x58) addr:0x020c7298
 .p__sinit_TitleScreen.cpp kind:data(word) addr:0x020c72f0
 _ZTV19GameModeTitleScreen kind:data(any) addr:0x020c7300
 _ZTV18TitleScreenManager kind:data(any) addr:0x020c7330
 data_ov025_020c5ae0 kind:data(any) addr:0x020c7380
+data_ov025_020c5ae4 kind:data(any) addr:0x020c7384
+data_ov025_020c5ae8 kind:data(any) addr:0x020c7388
 data_ov025_020c738c kind:data(any) addr:0x020c738c
+data_ov025_020c738e kind:data(any) addr:0x020c738e
 data_ov025_020c7394 kind:data(any) addr:0x020c7394
 data_ov025_020c7398 kind:data(any) addr:0x020c7398
 data_ov025_020c5aec kind:data(any) addr:0x020c739c

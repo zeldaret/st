@@ -20,8 +20,6 @@ void func_ov001_020b6520(unk32 param1);
 UnkStruct_ov000_020a782c *func_ov000_020a782c(unk32 param1);
 }
 
-const unk16 data_ov025_020c5a0c[] = {0x0016, 0x003C};
-
 ARM GameModeTitleScreen::GameModeTitleScreen() {
     func_0201659c();
     data_02049a2c.func_02013370(2);

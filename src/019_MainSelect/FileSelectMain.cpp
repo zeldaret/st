@@ -33,7 +33,7 @@ public:
 UnkStruct_ov019_020d24c0 data_ov019_020d24c0(-0x100, 0, 0x100, 0);
 
 UnkStruct_ov019_020d1e4c UnkStruct_ov019_020d1e70::data_ov019_020d1e4c = {
-    0x14, 0x14, 0x14, 0x04, 0x03, -0x47, 0x00, 0x0281, -0x47, {0x00, 0x00}, 0x0281,
+    0x14, 0x14, 0x14, 0x04, 0x03, -0x47, 0x00, 0x0281, -0x47, Vec2s(0x00, 0x00), 0x0281,
 };
 
 UnkStruct_ov019_020d1e94 UnkStruct_ov019_020d1e70::data_ov019_020d1e94 = {
@@ -1114,7 +1114,7 @@ ARM void FileSelectMain::func_ov019_020c80e8() {
 ARM void FileSelectMain::func_ov019_020c80f4() {}
 
 // non-matching
-ARM void FileSelectMain::vfunc_08() {
+ARM void FileSelectMain::vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         this->mUnk_03E8[i].func_ov000_02063f64();
         this->GetUnk03E0(i).func_ov019_020cbb94();

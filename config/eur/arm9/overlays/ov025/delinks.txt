@@ -8,12 +8,12 @@
 src/025_Title/GameModeTitleScreen.cpp:
     complete
     .text       start:0x020c4840 end:0x020c4a8c
-    .rodata     start:0x020c5a0c end:0x020c5a10
     .data       start:0x020c5a60 end:0x020c5a90
 
 src/025_Title/TitleScreenManager.cpp:
     complete
     .text       start:0x020c4a8c end:0x020c4c70
+    .rodata     start:0x020c5a0c end:0x020c5a10
     .data       start:0x020c5a90 end:0x020c5ae0
 
 src/025_Title/TitleScreen.cpp:

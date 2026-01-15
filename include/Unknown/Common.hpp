@@ -8,68 +8,6 @@
 
 extern "C" void func_0201e8d4(void *param1, void *param2);
 
-struct Vec2s_cpp {
-    /* 0 */ s16 x;
-    /* 1 */ s16 y;
-    /* 2 */
-
-    Vec2s_cpp() {};
-    Vec2s_cpp(s16 __x, s16 __y) {
-        x = __x;
-        y = __y;
-    }
-
-    void operator=(Vec2s_cpp &from) {
-        x = from.x;
-        y = from.y;
-    }
-
-    void operator+=(Vec2s_cpp &from) {
-        x = from.x + x;
-        y = from.y + y;
-    }
-
-    Vec2s_cpp &operator+(Vec2s_cpp &from) {
-        Vec2s_cpp vec(x + from.x, y + from.y);
-        return vec;
-    }
-
-    Vec2s_cpp *operator&() {
-        return this;
-    }
-};
-
-struct Vec2us_cpp {
-    /* 0 */ u16 x;
-    /* 1 */ u16 y;
-    /* 2 */
-
-    Vec2us_cpp() {};
-    Vec2us_cpp(u16 __x, u16 __y) {
-        x = __x;
-        y = __y;
-    }
-
-    void operator=(Vec2us_cpp &from) {
-        x = from.x;
-        y = from.y;
-    }
-
-    void operator+=(Vec2us_cpp &from) {
-        x += from.x;
-        y += from.y;
-    }
-
-    Vec2us_cpp &operator+(Vec2us_cpp &from) {
-        Vec2us_cpp vec(x + from.x, y + from.y);
-        return vec;
-    }
-
-    Vec2us_cpp *operator&() {
-        return this;
-    }
-};
-
 class UnkSubStruct1 : public SysObject {
 public:
     /* 00 (vtable) */

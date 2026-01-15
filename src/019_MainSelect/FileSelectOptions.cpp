@@ -27,12 +27,12 @@ public:
 
 class UnkStruct_ov019_020d2170 {
 public:
-    /* 14 */ Vec2s_cpp mUnk_00;
-    /* 18 */ Vec2s_cpp mUnk_04;
-    /* 1C */ Vec2s_cpp mUnk_08;
-    /* 20 */ Vec2s_cpp mUnk_0C;
-    /* 24 */ Vec2s_cpp mUnk_10;
-    /* 28 */ Vec2s_cpp mUnk_14;
+    /* 14 */ Vec2s mUnk_00;
+    /* 18 */ Vec2s mUnk_04;
+    /* 1C */ Vec2s mUnk_08;
+    /* 20 */ Vec2s mUnk_0C;
+    /* 24 */ Vec2s mUnk_10;
+    /* 28 */ Vec2s mUnk_14;
     /* 2C */
 
     static UnkStruct_ov019_020d215c data_ov019_020d215c;
@@ -68,7 +68,8 @@ public:
 };
 
 UnkStruct_ov019_020d215c UnkStruct_ov019_020d2170::data_ov019_020d215c = {
-    {0, 0}, {0, 0}, {0, 0}, {-0x47, -0x01}, {0x0281, 0x00}};
+    Vec2s(0, 0), Vec2s(0, 0), Vec2s(0, 0), Vec2s(-0x47, -0x0), Vec2s(0x0281, 0x00),
+};
 
 static const UnkStruct_ov019_020d2170 data_ov019_020d2170;
 
@@ -396,8 +397,8 @@ ARM void FileSelectOptions::func_ov019_020cd16c() {
 }
 
 ARM void FileSelectOptions::func_ov019_020cd41c() {
-    Vec2s_cpp local_40;
-    Vec2us_cpp local_3c;
+    Vec2s local_40;
+    Vec2us local_3c;
     UnkStruct_ov019_020d24c8_28_258 local_34(0x8C, 0x00);
 
     local_40.x = local_34.mPos.x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.x;
@@ -413,22 +414,22 @@ ARM void FileSelectOptions::func_ov019_020cd41c() {
         this->mUnk_1064.mUnk_0C = true;
     }
 
-    Vec2s_cpp local_44;
-    Vec2s_cpp local_30;
+    Vec2s local_44;
+    Vec2s local_30;
     func_ov000_02062e44(&local_44, &this->mUnk_1388);
     local_30.x = local_44.x + data_ov019_020d2170.mUnk_10.x;
     local_30.y = local_44.y + data_ov019_020d2170.mUnk_10.y;
     this->mUnk_1420.func_ov000_0206415c(&local_30, 0, 0x0C, 0);
 
-    Vec2s_cpp local_4c;
-    Vec2s_cpp local_2c;
+    Vec2s local_4c;
+    Vec2s local_2c;
     func_ov000_02062e44(&local_4c, &this->mUnk_16AC);
     local_2c.x = local_4c.x + data_ov019_020d2170.mUnk_08.x;
     local_2c.y = local_4c.y + data_ov019_020d2170.mUnk_08.y;
     this->mUnk_1744.func_ov000_0206415c(&local_2c, 0, 0x0C, 0);
 
-    Vec2s_cpp local_54;
-    Vec2s_cpp local_38;
+    Vec2s local_54;
+    Vec2s local_38;
     func_ov000_02062e44(&local_54, &this->mUnk_19D0);
     local_38.x = local_54.x + data_ov019_020d2170.mUnk_00.x;
     local_38.y = local_54.y + data_ov019_020d2170.mUnk_00.y;
@@ -440,11 +441,11 @@ ARM void FileSelectOptions::func_ov019_020cd5f8() {
 }
 
 ARM void FileSelectOptions::func_ov019_020cd614() {
-    Vec2us_cpp local_34;
-    Vec2s_cpp local_38;
-    Vec2us_cpp local_3c;
-    Vec2us_cpp local_40;
-    Vec2us_cpp local_44;
+    Vec2us local_34;
+    Vec2s local_38;
+    Vec2us local_3c;
+    Vec2us local_40;
+    Vec2us local_44;
 
     UnkStruct_ov019_020d24c8_28_258 local_30(0x8C, 0);
 
@@ -606,7 +607,7 @@ ARM void FileSelectOptions::func_ov019_020cde9c() {
 
 ARM UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManagerBase_104_0C *param1, s32 saveSlotIndex) :
     mSaveSlotIndex(saveSlotIndex),
-    mUnk_004((Vec2s) {0, 0}),
+    mUnk_004(0, 0),
     mUnk_008(0, 0),
     mUnk_020(0x8C, 1),
     mUnk_258(0x8C, 4),

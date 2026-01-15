@@ -915,7 +915,7 @@ _ZN18UnkStruct_0204a0608vfunc_0CEi kind:function(thumb,size=0x14) addr:0x0201833
 func_020183b8 kind:function(thumb,size=0x8) addr:0x02018350
 func_02018358 kind:function(thumb,size=0x14) addr:0x02018358
 _ZN18UnkStruct_0204a06013func_020183d4EbPvi kind:function(thumb,size=0x50) addr:0x0201836c
-func_020183bc kind:function(thumb,size=0x14) addr:0x020183bc
+func_02018424 kind:function(thumb,size=0x14) addr:0x020183bc
 _ZN18UnkStruct_0204a060D1Ev kind:function(arm,size=0x14) addr:0x020183d0
 _ZN18UnkStruct_0204a060D0Ev kind:function(arm,size=0x1c) addr:0x020183e4
 func_02018400 kind:function(arm,size=0x14) addr:0x02018400
@@ -2764,7 +2764,7 @@ data_0204b128 kind:bss addr:0x0204b128
 data_0204b12c kind:bss addr:0x0204b12c
 data_0204b150 kind:bss addr:0x0204b150
 data_02049bd4 kind:bss addr:0x0204b154
-data_0204b15c kind:bss addr:0x0204b15c
+data_02049be0 kind:bss addr:0x0204b15c
 gRandom kind:bss addr:0x0204b164
 data_0204b17c kind:bss addr:0x0204b17c
 data_0204b480 kind:bss addr:0x0204b480
@@ -2781,7 +2781,7 @@ data_0204b6a0 kind:bss addr:0x0204b6a0
 data_0204ba00 kind:bss addr:0x0204ba00
 data_0204c390 kind:bss addr:0x0204c390
 data_0204c410 kind:bss addr:0x0204c410
-data_0204c42c kind:bss addr:0x0204c42c
+data_0204aeac kind:bss addr:0x0204c42c
 data_0204c438 kind:bss addr:0x0204c438
 data_0204c450 kind:bss addr:0x0204c450
 data_0204c45c kind:bss addr:0x0204c45c

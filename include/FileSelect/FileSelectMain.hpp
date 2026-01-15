@@ -255,7 +255,7 @@ public:
 
     // data_ov019_020d1ec0 vtable
     /* 00 */ virtual ~FileSelectMain() override;
-    /* 08 */ virtual void vfunc_08() override;
+    /* 08 */ virtual void vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) override;
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
     /* 18 */ virtual void vfunc_18(void) override;
 };
