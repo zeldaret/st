@@ -11,8 +11,6 @@
 
 #include <string.h>
 
-#pragma dont_reuse_strings off
-
 extern "C" {
 void func_02018424();
 void func_ov000_0205be34(void *param1, unk32 param2);

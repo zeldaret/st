@@ -2,8 +2,6 @@
 #include "System/SysFault.hpp"
 #include "global.h"
 
-#pragma dont_reuse_strings off
-
 extern "C" {
 void *func_02001654(void);
 void *func_020145b0(UnkId *, s32);

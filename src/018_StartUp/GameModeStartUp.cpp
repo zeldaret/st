@@ -11,8 +11,6 @@
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "regs.h"
 
-#pragma dont_reuse_strings off
-
 extern "C" {
 void func_02013768(void *param1);
 void func_020141dc(unk16 *param1);

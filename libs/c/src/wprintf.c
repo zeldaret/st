@@ -10,8 +10,6 @@
 
 #include <wstring.h>
 
-#pragma dont_reuse_strings off
-
 #define MAX_SIG_DIG 32
 
 #define LDBL_MANT_DIG 24

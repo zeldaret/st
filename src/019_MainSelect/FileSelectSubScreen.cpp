@@ -11,8 +11,6 @@ void func_020249d4(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 p
 void func_020275e8();
 };
 
-#pragma dont_reuse_strings off
-
 FileSelectOptionsManager *gpFSOptionsManager = NULL;
 
 static unk8 data_ov019_020fb8cc[0xDC00];

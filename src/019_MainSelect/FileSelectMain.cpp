@@ -9,8 +9,6 @@
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include "regs.h"
 
-#pragma dont_reuse_strings off
-
 extern "C" {
 void func_020249d4(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
 void func_ov000_02062e44(void *param1, void *param2);

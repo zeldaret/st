@@ -20,8 +20,6 @@
 #include "regs.h"
 #include "versions.h"
 
-#pragma dont_reuse_strings off
-
 extern "C" {
 unk32 func_02014fe0();
 unk16 func_02026738();

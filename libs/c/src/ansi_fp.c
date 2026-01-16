@@ -3,8 +3,6 @@
 #include <float.h>
 #include <math.h>
 
-#pragma dont_reuse_strings off
-
 typedef unsigned long long d_int;
 #define SIGDIGLEN 32
 
