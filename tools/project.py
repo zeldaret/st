@@ -1,61 +1,40 @@
 import os
 import sys
+import json
 import subprocess
 import ninja_syntax
 
-from typing import Any, Optional, Dict, List
 from pathlib import Path
+from typing import Any, Optional, Dict, List
 from get_platform import get_platform
 
-###
-# TEMP
-# Config
-CC_FLAGS = " ".join([
-    "-O4,p",                # Optimize maximally for performance
-    "-enum int",            # Use int-sized enums
-    "-char signed",         # Char type is signed
-    "-str noreuse",         # Equivalent strings are different objects
-    "-proc arm946e",        # Target processor
-    "-gccext,on",           # Enable GCC extensions
-    "-fp soft",             # Compute float operations in software
-    "-inline noauto",       # Inline only functions marked with 'inline'
-    "-lang=c++",            # Set language to C++
-    "-Cpp_exceptions off",  # Disable C++ exceptions
-    "-RTTI off",            # Disable runtime type information
-    "-interworking",        # Enable ARM/Thumb interworking
-    "-w off",               # Disable warnings
-    "-sym on",              # Debug info, including line numbers
-    "-gccinc",              # Interpret #include "..." and #include <...> equally
-    "-nolink",              # Do not link
-    "-msgstyle gcc",        # Use GCC-like messages (some IDEs will make file names clickable)
-    "-ipa file",            # InterProcedural Analysis
-])
 
-# Passed to all modules and final arm9.o link
-LD_FLAGS = " ".join([
-    "-proc arm946e",        # Target processor
-    "-dead",                # Strip unused code
-    "-nostdlib",            # No C/C++ standard library
-    "-interworking",        # Enable ARM/Thumb interworking
-    "-map closure,unused",  # Generate map file
-    "-msgstyle gcc",        # Use GCC-like messages (some IDEs will make file names clickable)
-])
-
-current_path     = Path(__name__)
-root_path        = current_path.parent
-libs_path        = root_path / "libs"
-
-# Includes
-includes = [
-    root_path / "include"
-]
-for root, dirs, _ in os.walk(libs_path):
-    for dir in dirs:
-        if dir == "include":
-            includes.append(Path(root) / dir)
-CC_INCLUDES = " ".join(f"-i {include}" for include in includes)
-# TEMP
-###
+COMPILER_MAP = {
+    "1.2/base": "mwcc_20_72",
+    "1.2/sp2": "mwcc_20_79",
+    "1.2/sp2p3": "mwcc_20_82",
+    "1.2/sp3": "mwcc_20_84",
+    "1.2/sp4": "mwcc_20_87",
+    "2.0/base": "mwcc_30_114",
+    "2.0/sp1": "mwcc_30_123",
+    "2.0/sp1p2": "mwcc_30_126",
+    "2.0/sp1p5": "mwcc_30_131",
+    "2.0/sp1p6": "mwcc_30_133",
+    "2.0/sp1p7": "mwcc_30_134",
+    "2.0/sp2": "mwcc_30_136",
+    "2.0/sp2p2": "mwcc_30_137",
+    "2.0/sp2p3": "mwcc_30_138",
+    "2.0/sp2p4": "mwcc_30_139",
+    "dsi/1.1": "mwcc_40_1018",
+    "dsi/1.1p1": "mwcc_40_1024",
+    "dsi/1.2": "mwcc_40_1026",
+    "dsi/1.2p1": "mwcc_40_1027",
+    "dsi/1.2p2": "mwcc_40_1028",
+    "dsi/1.3": "mwcc_40_1034",
+    "dsi/1.3p1": "mwcc_40_1036",
+    "dsi/1.6sp1": "mwcc_40_1051",
+    "dsi/1.6sp2": "mwcc_40_1051",
+}
 
 Library = Dict[str, Any]
 
@@ -76,9 +55,8 @@ def is_c(name: str | Path):
     return Path(name).suffix in [".c"]
 
 class Object:
-    def __init__(self, completed_versions: List[str], name: str, **options: Any):
+    def __init__(self, name: str, **options: Any):
         self.name = name
-        self.completed_versions = completed_versions
 
         self.options: Dict[str, Any] = {
             "source": name,
@@ -87,19 +65,11 @@ class Object:
             "extra_asflags": [],
             "cflags": None,
             "extra_cflags": [],
-            # "add_to_all": None,
-            # "asm_dir": None,
-            # "extab_padding": None,
-            # "extra_clang_flags": [],
-            # "lib": None,
-            # "progress_category": None,
-            # "scratch_preset_id": None,
-            # "shift_jis": None,
-            # "src_dir": None,
+            "asm_dir": None,
+            "src_dir": None,
         }
         self.options.update(options)
 
-        # Internal
         self.src_path: Optional[Path] = None
         self.asm_path: Optional[Path] = None
         self.src_obj_path: Optional[Path] = None
@@ -108,7 +78,7 @@ class Object:
 
     def resolve(self, config: "ProjectConfig", lib: Library):
         # Use object options, then library options
-        obj = Object(self.completed_versions, self.name, **lib)
+        obj = Object(self.name, **lib)
 
         for key, value in self.options.items():
             if value is not None or key not in obj.options:
@@ -121,23 +91,18 @@ class Object:
 
         set_default("asflags", config.asflags)
         set_default("mw_version", config.mwcc_version)
-        # set_default("add_to_all", True)
-        # set_default("asm_dir", config.asm_dir)
-        # set_default("extab_padding", None)
-        # set_default("scratch_preset_id", config.scratch_preset_id)
-        # set_default("shift_jis", config.shift_jis)
-        # set_default("src_dir", config.src_dir)
+        set_default("asm_dir", config.asm_path)
+        set_default("src_dir", config.src_path)
 
         # Resolve paths
-        build_dir = config.out_path() # TODO
         obj.src_path = Path(obj.options["src_dir"]) / obj.options["source"]
         if obj.options["asm_dir"] is not None:
             path: Path = Path(obj.options["asm_dir"]) / obj.options["source"]
             obj.asm_path = path.with_suffix(".s")
         base_name = Path(self.name).with_suffix("")
-        obj.src_obj_path = build_dir / "src" / f"{base_name}.o"
-        obj.asm_obj_path = build_dir / "mod" / f"{base_name}.o"
-        obj.ctx_path = build_dir / "src" / f"{base_name}.ctx"
+        obj.src_obj_path = config.build_path / "src" / f"{base_name}.o"
+        obj.asm_obj_path = config.build_path / "mod" / f"{base_name}.o"
+        obj.ctx_path = config.build_path / "src" / f"{base_name}.ctx"
         return obj
 
 
@@ -176,10 +141,7 @@ class ProjectConfig:
 
         self.game_config = self.config_path / self.game_version
         """Root directory for dsd configs"""
-
-        if not self.game_config.is_dir():
-            print(f"Version '{self.game_version}' not recognized")
-            exit(1)
+        assert self.game_config.is_dir(), f"Version '{self.game_version}' not recognized"
 
         self.delinks_json = Optional[Any]
         """Delinks JSON data from dsd"""
@@ -204,6 +166,27 @@ class ProjectConfig:
 
         self.asflags: Optional[List[str]] = None
         """Assembler flags"""
+
+        self.cflags_base: Optional[List[str]] = None
+        """Base C flags"""
+
+        self.ldflags: Optional[List[str]] = None
+        """Base C flags"""
+
+        includes = [self.root_path / "include"]
+        for root, dirs, _ in os.walk(self.libs_path):
+            for dir in dirs:
+                if dir == "include":
+                    includes.append(Path(root) / dir)
+
+        self.includes = " ".join(f"-i {include}" for include in includes)
+        """C/C++ includes"""
+
+        self.auto_add_sources: bool = False
+        """Adds rules for files missing from the libs list (with the base cflags as the default)"""
+
+        self.warn_missing_source: bool = True
+        """Warn on missing source file"""
 
     @property
     def dsd_version(self):
@@ -248,6 +231,10 @@ class ProjectConfig:
     @property
     def build_path(self):
         return self.root_path / "build"
+
+    @property
+    def asm_path(self):
+        return self.root_path / "asm"
 
     @property
     def src_path(self):
@@ -335,34 +322,7 @@ class ProjectConfig:
         ]
 
     def get_decompme_compiler(self):
-        compiler_map = {
-            "1.2/base": "mwcc_20_72",
-            "1.2/sp2": "mwcc_20_79",
-            "1.2/sp2p3": "mwcc_20_82",
-            "1.2/sp3": "mwcc_20_84",
-            "1.2/sp4": "mwcc_20_87",
-            "2.0/base": "mwcc_30_114",
-            "2.0/sp1": "mwcc_30_123",
-            "2.0/sp1p2": "mwcc_30_126",
-            "2.0/sp1p5": "mwcc_30_131",
-            "2.0/sp1p6": "mwcc_30_133",
-            "2.0/sp1p7": "mwcc_30_134",
-            "2.0/sp2": "mwcc_30_136",
-            "2.0/sp2p2": "mwcc_30_137",
-            "2.0/sp2p3": "mwcc_30_138",
-            "2.0/sp2p4": "mwcc_30_139",
-            "dsi/1.1": "mwcc_40_1018",
-            "dsi/1.1p1": "mwcc_40_1024",
-            "dsi/1.2": "mwcc_40_1026",
-            "dsi/1.2p1": "mwcc_40_1027",
-            "dsi/1.2p2": "mwcc_40_1028",
-            "dsi/1.3": "mwcc_40_1034",
-            "dsi/1.3p1": "mwcc_40_1036",
-            "dsi/1.6sp1": "mwcc_40_1051",
-            "dsi/1.6sp2": "mwcc_40_1051",
-        }
-
-        return compiler_map[self.mwcc_version]
+        return COMPILER_MAP[self.mwcc_version]
 
     # Creates a map of object names to Object instances
     # Options are fully resolved from the library and object
@@ -389,142 +349,6 @@ class ProjectConfig:
             return False
         except FileNotFoundError:
             return False
-
-
-def create_base_rules(cfg: ProjectConfig, n: ninja_syntax.Writer):
-    n.rule(
-        name="download_tool",
-        command=f'{cfg.python_path} tools/download_tool.py $tool $tag --path $path'
-    )
-    n.newline()
-
-    if cfg.arm7_bios_path.is_file():
-        n.variable("arm7_bios_flag", f"--arm7-bios {cfg.arm7_bios_path.relative_to(cfg.root_path)}")
-    else:
-        n.variable("arm7_bios_flag", "")
-    n.newline()
-
-    n.rule(
-        name="extract",
-        command=f"{cfg.dsd_path} {cfg.dsd_flags} rom extract --rom $in --output-path $output_path $arm7_bios_flag"
-    )
-    n.newline()
-
-    n.rule(
-        name="delink",
-        command=f"{cfg.dsd_path} {cfg.dsd_flags} delink --config-path $config_path"
-    )
-    n.newline()
-
-    n.rule(
-        name="disassemble",
-        command=f"{cfg.dsd_path} {cfg.dsd_flags} dis --config-path $config_path --asm-path $output_path --ual"
-    )
-    n.newline()
-
-    # -MMD excludes all includes instead of just system includes for some reason, so use -MD instead.
-    mwcc_cmd = f'{cfg.wine_path} "{cfg.cc_path}" {CC_FLAGS} {CC_INCLUDES} $cc_flags -DVERSION=$game_version -MD -c $in -o $basedir'
-    mwcc_implicit = [str(cfg.cc_path)]
-    if cfg.platform.system != "windows":
-        transform_dep = "tools/transform_dep.py"
-        mwcc_cmd += f" && $python {transform_dep} $basefile.d $basefile.d"
-        mwcc_implicit.append(transform_dep)
-        if cfg.wine_path == cfg.default_wibo_path:
-            mwcc_implicit.append(cfg.wine_path)
-    n.rule(
-        name="mwcc",
-        command=mwcc_cmd,
-        depfile="$basefile.d",
-    )
-    n.newline()
-
-    n.rule(
-        name="lcf",
-        command=f"{cfg.dsd_path} {cfg.dsd_flags} lcf -c $config_path"
-    )
-    n.newline()
-
-    n.rule(
-        name="mwld",
-        command=f'{cfg.wine_path} "{cfg.ld_path}" {LD_FLAGS} $extra_ld_flags @$objects_file $lcf_file -o $out'
-    )
-    n.newline()
-
-    n.rule(
-        name="rom_config",
-        command=f"{cfg.dsd_path} {cfg.dsd_flags} rom config --elf $in --config $config_path"
-    )
-    n.newline()
-
-    n.rule(
-        name="rom_build",
-        command=f"{cfg.dsd_path} {cfg.dsd_flags} rom build --config $in --rom $out $arm7_bios_flag"
-    )
-    n.newline()
-
-    dsd_objdiff_args = " ".join([
-        "--scratch",                                 # Metadata for creating decomp.me scratches
-        f"--compiler {cfg.get_decompme_compiler()}", # decomp.me compiler name
-        f'--c-flags "{CC_FLAGS} -lang=c++"',         # decomp.me compiler flags
-        "--custom-make ninja",                       # Command for rebuilding files
-    ])
-    n.rule(
-        name="objdiff",
-        command=f"{cfg.dsd_path} {cfg.dsd_flags} objdiff --config-path $config_path {dsd_objdiff_args}"
-    )
-    n.newline()
-
-    n.rule(
-        name="objdiff_report",
-        command=f"{cfg.objdiff_path} report generate -o $out"
-    )
-    n.newline()
-
-    n.rule(
-        name="m2ctx",
-        command=f"{cfg.python_path} tools/m2ctx.py -f $out $in"
-    )
-    n.newline()
-
-    n.rule(
-        name="check_modules",
-        command=f"{cfg.dsd_path} {cfg.dsd_flags} check modules --config-path $config_path --fail"
-    )
-    n.newline()
-
-    n.rule(
-        name="check_symbols",
-        command=f"{cfg.dsd_path} {cfg.dsd_flags} check symbols --config-path $config_path --elf-path $elf_path --fail --max-lines 20"
-    )
-    n.newline()
-
-    n.rule(
-        name="apply",
-        command=f"{cfg.dsd_path} {cfg.dsd_flags} apply --config-path $config_path --elf-path $elf_path"
-    )
-    n.newline()
-
-    n.rule(
-        name="sha1",
-        command=f"{cfg.python_path} tools/sha1.py $in -c $sha1_file"
-    )
-    n.newline()
-
-    configure_cmdline = subprocess.list2cmdline(sys.argv[1:])
-    n.rule(
-        name="configure",
-        command=f"{cfg.python_path} tools/configure.py {configure_cmdline}",
-        generator=True
-    )
-    n.newline()
-
-    n.rule(
-        name="format_delinks",
-        command=f'{cfg.python_path} tools/format_delinks.py'
-    )
-    n.newline()
-
-    return mwcc_implicit
 
 
 def add_download_tool_builds(cfg: ProjectConfig, n: ninja_syntax.Writer, args: Any):
@@ -667,15 +491,30 @@ def add_disassemble_builds(cfg: ProjectConfig, n: ninja_syntax.Writer, args: Any
     n.newline()
 
 
-def add_mwcc_builds(cfg: ProjectConfig, n: ninja_syntax.Writer, args: Any, mwcc_implicit: list[str]):
-    for source_file in get_c_cpp_files([cfg.src_path, cfg.libs_path]):
+def add_mwcc_builds(cfg: ProjectConfig, objects: Dict[str, Object], n: ninja_syntax.Writer, args: Any, mwcc_implicit: list[str]):
+    file_map: dict[str, list[str]] = {}
+
+    for object in objects.values():
+        file_map[str(object.src_path)] = object.options["cflags"] + object.options["extra_cflags"]
+
+    if cfg.auto_add_sources:
+        for source_file in get_c_cpp_files([cfg.src_path, cfg.libs_path]):
+            if str(source_file) not in file_map:
+                file_map[str(source_file)] = cfg.cflags_base
+
+    for src_file, cc_flags in file_map.items():
+        source_file = Path(src_file)
         src_obj_path = cfg.game_build / source_file
-        cc_flags: list[str] = []
-        if is_cpp(source_file):
-            cc_flags.append("-lang=c++")
-        elif is_c(source_file):
-            cc_flags.append("-lang=c")
-        print(src_obj_path)
+
+        if cfg.warn_missing_source and not source_file.exists():
+            print(f"WARNING: path not found for `{source_file}`")
+
+        if "-lang=c++" not in cc_flags or "-lang=c" not in cc_flags:
+            if is_cpp(source_file):
+                cc_flags.append("-lang=c++")
+            elif is_c(source_file):
+                cc_flags.append("-lang=c")
+
         n.build(
             inputs=str(source_file),
             implicit=mwcc_implicit,
@@ -854,10 +693,163 @@ def add_apply_build(cfg: ProjectConfig, n: ninja_syntax.Writer, args: Any):
     n.newline()
 
 
+def create_objdiff_fixup_config(cfg: ProjectConfig, objects: Dict[str, Object]):
+    out_json = {}
+
+    for name, object in objects.items():
+        out_json[name] = {}
+
+    for name, object in objects.items():
+        out_json[name]["cflags"] = object.options["cflags"]
+        out_json[name]["extra_cflags"] = object.options["extra_cflags"]
+        out_json[name]["mw_version"] = COMPILER_MAP[object.options["mw_version"]]
+
+    cfg.build_path.mkdir(exist_ok=True)
+    out_path = cfg.build_path / "objdiff_fixup_cfg.json"
+    with out_path.open("w") as f:
+        json.dump(out_json, f, indent=2)
+
+
 def process_project(cfg: ProjectConfig, args: Any):
+    objects = cfg.objects()
+
+    create_objdiff_fixup_config(cfg, objects)
+
     with cfg.build_ninja_path.open("w") as file:
         n = ninja_syntax.Writer(file)
-        mwcc_implicit = create_base_rules(cfg, n)
+
+        n.rule(
+            name="download_tool",
+            command=f'{cfg.python_path} tools/download_tool.py $tool $tag --path $path'
+        )
+        n.newline()
+
+        if cfg.arm7_bios_path.is_file():
+            n.variable("arm7_bios_flag", f"--arm7-bios {cfg.arm7_bios_path.relative_to(cfg.root_path)}")
+        else:
+            n.variable("arm7_bios_flag", "")
+        n.newline()
+
+        n.rule(
+            name="extract",
+            command=f"{cfg.dsd_path} {cfg.dsd_flags} rom extract --rom $in --output-path $output_path $arm7_bios_flag"
+        )
+        n.newline()
+
+        n.rule(
+            name="delink",
+            command=f"{cfg.dsd_path} {cfg.dsd_flags} delink --config-path $config_path"
+        )
+        n.newline()
+
+        n.rule(
+            name="disassemble",
+            command=f"{cfg.dsd_path} {cfg.dsd_flags} dis --config-path $config_path --asm-path $output_path --ual"
+        )
+        n.newline()
+
+        # -MMD excludes all includes instead of just system includes for some reason, so use -MD instead.
+        mwcc_cmd = f'{cfg.wine_path} "{cfg.cc_path}" $cc_flags {cfg.includes} -DVERSION=$game_version -MD -c $in -o $basedir'
+        mwcc_implicit = [str(cfg.cc_path)]
+        if cfg.platform.system != "windows":
+            transform_dep = "tools/transform_dep.py"
+            mwcc_cmd += f" && $python {transform_dep} $basefile.d $basefile.d"
+            mwcc_implicit.append(transform_dep)
+            if cfg.wine_path == cfg.default_wibo_path:
+                mwcc_implicit.append(cfg.wine_path)
+        n.rule(
+            name="mwcc",
+            command=mwcc_cmd,
+            depfile="$basefile.d",
+        )
+        n.newline()
+
+        n.rule(
+            name="lcf",
+            command=f"{cfg.dsd_path} {cfg.dsd_flags} lcf -c $config_path"
+        )
+        n.newline()
+
+        n.rule(
+            name="mwld",
+            command=f'{cfg.wine_path} "{cfg.ld_path}" {' '.join(cfg.ldflags)} $extra_ld_flags @$objects_file $lcf_file -o $out'
+        )
+        n.newline()
+
+        n.rule(
+            name="rom_config",
+            command=f"{cfg.dsd_path} {cfg.dsd_flags} rom config --elf $in --config $config_path"
+        )
+        n.newline()
+
+        n.rule(
+            name="rom_build",
+            command=f"{cfg.dsd_path} {cfg.dsd_flags} rom build --config $in --rom $out $arm7_bios_flag"
+        )
+        n.newline()
+
+        cflags = " ".join(cfg.cflags_base)
+        dsd_objdiff_args = " ".join([
+            "--scratch",                                 # Metadata for creating decomp.me scratches
+            f"--compiler {cfg.get_decompme_compiler()}", # decomp.me compiler name
+            f'--c-flags "{cflags} -lang=c++"',           # decomp.me compiler flags
+            "--custom-make ninja",                       # Command for rebuilding files
+        ])
+        n.rule(
+            name="objdiff",
+            command=f"touch {cfg.dsd_path} && {cfg.dsd_path} {cfg.dsd_flags} objdiff --config-path $config_path {dsd_objdiff_args} && {cfg.python_path} tools/fix_objdiff_config.py"
+        )
+        n.newline()
+
+        n.rule(
+            name="objdiff_report",
+            command=f"{cfg.objdiff_path} report generate -o $out"
+        )
+        n.newline()
+
+        n.rule(
+            name="m2ctx",
+            command=f"{cfg.python_path} tools/m2ctx.py -f $out $in"
+        )
+        n.newline()
+
+        n.rule(
+            name="check_modules",
+            command=f"{cfg.dsd_path} {cfg.dsd_flags} check modules --config-path $config_path --fail"
+        )
+        n.newline()
+
+        n.rule(
+            name="check_symbols",
+            command=f"{cfg.dsd_path} {cfg.dsd_flags} check symbols --config-path $config_path --elf-path $elf_path --fail --max-lines 20"
+        )
+        n.newline()
+
+        n.rule(
+            name="apply",
+            command=f"{cfg.dsd_path} {cfg.dsd_flags} apply --config-path $config_path --elf-path $elf_path"
+        )
+        n.newline()
+
+        n.rule(
+            name="sha1",
+            command=f"{cfg.python_path} tools/sha1.py $in -c $sha1_file"
+        )
+        n.newline()
+
+        configure_cmdline = subprocess.list2cmdline(sys.argv[1:])
+        n.rule(
+            name="configure",
+            command=f"{cfg.python_path} tools/configure.py {configure_cmdline}",
+            generator=True
+        )
+        n.newline()
+
+        n.rule(
+            name="format_delinks",
+            command=f'{cfg.python_path} tools/format_delinks.py'
+        )
+        n.newline()
 
         add_download_tool_builds(cfg, n, args)
         add_configure_build(cfg, n, args)
@@ -866,7 +858,7 @@ def process_project(cfg: ProjectConfig, args: Any):
             add_extract_build(cfg, n, args)
             add_delink_and_lcf_builds(cfg, n, args)
             add_disassemble_builds(cfg, n, args)
-            add_mwcc_builds(cfg, n, args, mwcc_implicit)
+            add_mwcc_builds(cfg, objects, n, args, mwcc_implicit)
             add_mwld_and_rom_builds(cfg, n, args)
             add_check_builds(cfg, n, args)
             add_objdiff_builds(cfg, n, args)
