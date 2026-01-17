@@ -681,7 +681,8 @@ def add_objdiff_builds(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer)
         rule="objdiff_report",
         outputs=str(cfg.objdiff_report(version)),
         variables={
-            "dir": str(cfg.get_game_build(version))
+            "dir": str(cfg.get_game_build(version)),
+            "filename": "report.json"
         }
     )
     n.newline()
@@ -827,7 +828,7 @@ def process_project(cfg: ProjectConfig, args: Any):
 
         n.rule(
             name="objdiff_report",
-            command=f"{cfg.objdiff_path} -C $dir report generate -o $out"
+            command=f"{cfg.objdiff_path} -C $dir report generate -o $filename"
         )
         n.newline()
 
