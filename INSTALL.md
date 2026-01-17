@@ -26,7 +26,11 @@ pre-commit install
 ```
 5. Run the Ninja configure script:
 ```shell
-python tools/configure.py <eur|jp>
+python tools/configure.py
+```
+By default this will configure for any version that has a baserom in the `extract` folder (see below), to configure for one specific version:
+```shell
+python tools/configure.py [--version | -v] <eur|jp>
 ```
 6. Put one or more base ROMs in the [`/extract/`](/extract/README.md) directory of this repository.
 
