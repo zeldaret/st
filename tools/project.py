@@ -544,6 +544,9 @@ def add_mwcc_builds(cfg: ProjectConfig, version: str, objects: Dict[str, Object]
             inputs=str(source_file),
             rule="m2ctx",
             outputs=ctx_file,
+            variables={
+                "version": version.upper(),
+            },
         )
         n.newline()
 
@@ -725,7 +728,7 @@ def create_objdiff_fixup_config(cfg: ProjectConfig, objects: Dict[str, Object]):
             out_json["units"][name] = {}
 
         for name, object in objects.items():
-            out_json["units"][name]["cflags"] = object.options["cflags"]
+            out_json["units"][name]["cflags"] = object.options["cflags"] + [f"-DVERSION={version.upper()}"]
             out_json["units"][name]["extra_cflags"] = object.options["extra_cflags"]
             out_json["units"][name]["mw_version"] = COMPILER_MAP[object.options["mw_version"]]
 
@@ -834,7 +837,7 @@ def process_project(cfg: ProjectConfig, args: Any):
 
         n.rule(
             name="m2ctx",
-            command=f"{cfg.python_path} tools/m2ctx.py -f $out $in"
+            command=f"{cfg.python_path} tools/m2ctx.py -g $version -f $out $in"
         )
         n.newline()
 
