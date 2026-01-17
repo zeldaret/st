@@ -52,7 +52,7 @@ class ConfigVersion:
                 self.objdiff_json["units"][i]["base_path"] = str(base_path)
 
             if "scratch" in unit_dict:
-                ctx_path = root_path / get_cleaned_path(Path(unit_dict["scratch"]["ctx_path"]))
+                ctx_path = get_cleaned_path(Path(unit_dict["scratch"]["ctx_path"]))
                 self.objdiff_json["units"][i]["scratch"]["ctx_path"] = str(ctx_path)
 
                 entry = self.get_entry_from_name(units, self.objdiff_json["units"][i]["name"])
