@@ -26,11 +26,11 @@ jobs:
 
       - name: Build
         run: |
-          python tools/configure.py ${{ matrix.version }} -w wibo --compiler /mwccarm --no-extract
-          ninja arm9 report check
+          python tools/configure.py -v ${{ matrix.version }} -w wibo --compiler /mwccarm --no-extract
+          ninja arm9_${{ matrix.version }} report_${{ matrix.version }} check_${{ matrix.version }}
 
       - name: Upload report
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.version }}_report
-          path: build/${{ matrix.version }}/report.json
+          path: build/${{ matrix.version }}/report_${{ matrix.version }}.json

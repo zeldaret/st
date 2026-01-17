@@ -3,6 +3,7 @@
 import json
 import argparse
 import subprocess
+import glob
 
 from typing import List, Dict, Any
 from pathlib import Path
@@ -14,13 +15,32 @@ parser.add_argument('-w', type=str, default="./wibo", dest="wine", required=Fals
 parser.add_argument("--compiler", type=Path, required=False, help="Path to pre-installed compiler root directory")
 parser.add_argument("--no-extract", action="store_true", help="Skip extract step")
 parser.add_argument("--dsd", type=Path, required=False, help="Path to pre-installed dsd CLI")
-parser.add_argument('version', help='Game version')
+parser.add_argument("--version", "-v", help='Game version', required=False)
 args = parser.parse_args()
 
-config = ProjectConfig("st", args.version, args.compiler, "dsi/1.2p1", args.wine, args.dsd, Path(__file__).resolve())
+config = ProjectConfig("st", args.compiler, "dsi/1.2p1", args.wine, args.dsd, Path(__file__).resolve())
 config.dsd_tag = "v0.10.2"
 config.wibo_tag = "0.6.16"
 config.objdiff_tag = "v3.0.0-beta.6"
+
+GAME_VERSIONS = [
+    "eur",
+    "jp",
+]
+
+# Only configure versions for which a baserom file exists
+def version_exists(version: str) -> bool:
+    return glob.glob(str(Path("extract") / f"baserom_st_{version}.nds")) != []
+
+if args.version is not None:
+    config.game_versions = [args.version]
+else:
+    config.game_versions = [
+        version
+        for version in GAME_VERSIONS
+        if version_exists(version)
+    ]
+
 
 config.cflags_base = [
     "-O4,p",                # Optimize maximally for performance
@@ -113,6 +133,7 @@ config.libs = [
         "Overlay 0",
         [
             Object("000_Second/Actor/Actor.cpp"),
+            Object("000_Second/Actor/ActorManager.cpp"),
             Object("000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp"),
             Object("000_Second/Item/ItemManager.cpp"),
             Object("000_Second/Item/TreasureManager.cpp"),
@@ -214,19 +235,22 @@ config.libs = [
 
 
 def main():
-    if config.check_can_run_dsd():
-        assert config.game_version is not None
+    for version in config.game_versions:
+        config.delinks_files[version] = config.get_config_files(version, "delinks.txt")
+        config.relocs_files[version] = config.get_config_files(version, "relocs.txt")
+        config.symbols_files[version] = config.get_config_files(version, "symbols.txt")
 
-        out = subprocess.run([
-            str(config.dsd_path),
-            "--force-color",
-            "json",
-            "delinks",
-            "--config-path", config.config_path / config.game_version / "arm9" / "config.yaml"
-        ], capture_output=True, text=True)
-        assert out.returncode == 0, f"Error running dsd:\n{out.stderr.strip()}"
+        if config.check_can_run_dsd():
+            out = subprocess.run([
+                str(config.dsd_path),
+                "--force-color",
+                "json",
+                "delinks",
+                "--config-path", config.config_path / version / "arm9" / "config.yaml"
+            ], capture_output=True, text=True)
+            assert out.returncode == 0, f"Error running dsd:\n{out.stderr.strip()}"
 
-        config.delinks_json = json.loads(out.stdout)
+            config.delinks_jsons[version] = json.loads(out.stdout)
 
     process_project(config, args)
 
