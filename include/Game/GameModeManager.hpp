@@ -99,6 +99,7 @@ public:
     /* 00 (vtable) */
     /* 04 */ GameModeManagerBase_104_0C_04 mUnk_04;
 
+    //! TODO: actually vtable of GameModeManagerBase_104_0C_04?
     // data_ov000_020b1e48 vtable
     // /* 00 */ virtual ~GameModeManagerBase_104_0C();
     // /* 08 */ virtual void vfunc_08();
