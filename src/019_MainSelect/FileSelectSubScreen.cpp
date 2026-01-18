@@ -77,7 +77,7 @@ ARM FileSelectSubScreen::FileSelectSubScreen() :
     this->func_ov019_020cf73c(2, 1);
 }
 
-ARM void FileSelectSubScreen::vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
+ARM void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     this->mUnk_0024 = this->mUnk_0020;
     this->mUnk_0020 += 0x800;
 

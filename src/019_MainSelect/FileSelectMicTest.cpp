@@ -56,7 +56,7 @@ ARM FileSelectMicTest::FileSelectMicTest() :
     mUnk_304(0x05, 0x8E, 0x00, 0x01, 0x8E, 0x00),
     mUnk_3F8(0x8D, 0x01),
     mUnk_630(1) {
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_304.mUnk_044.mUnk_04.mUnk_00);
+    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_304.mUnk_044.mUnk_04);
     this->mUnk_020.func_0201f730(0x00020006);
     this->mUnk_3F8.mUnk_14E = 1;
     this->mUnk_3F8.func_0201f730(0x00020043);
@@ -138,7 +138,7 @@ ARM void FileSelectMicTest::func_ov019_020cebcc() {
     this->mUnk_304.mUnk_0A4.func_ov000_0206415c(&local_10, 7, data_ov019_020d2248.mUnk_00, 0);
 }
 
-ARM void FileSelectMicTest::vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
+ARM void FileSelectMicTest::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     switch (this->mState) {
         case FSMicTestState_MicTestIdle:
             this->mUnk_270.func_ov019_020cf168();

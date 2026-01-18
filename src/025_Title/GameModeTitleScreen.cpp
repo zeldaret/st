@@ -49,8 +49,8 @@ struct stack_struct {
     /* 14 */
 };
 
-ARM void GameModeTitleScreen::vfunc_08(unk32 param1, unk32 param2, unk32 param3) {
-    this->GameModeBase::vfunc_08(param1, param2, param3);
+ARM void GameModeTitleScreen::vfunc_08() {
+    this->GameModeBase::vfunc_08();
 
     UnkStruct_ov000_020a782c *iVar1 = func_ov000_020a782c(0);
     u8 mUnk_04                      = iVar1->mUnk_04;

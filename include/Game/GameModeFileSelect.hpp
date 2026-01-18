@@ -30,7 +30,7 @@ public:
 
     // data_ov019_020d1d8c vtable
     /* 00 */ virtual ~GameModeFileSelect() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1, unk32 param2, unk32 param3) override;
+    /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 14 */ virtual void vfunc_14() override;
     /* 18 */ virtual void vfunc_18() override;

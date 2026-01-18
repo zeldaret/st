@@ -8,7 +8,7 @@
 class FileSelectManager_UnkDrawBase : public SysObject {
 public:
     /* 00 (vtable) */
-    /* 04 */ GameModeManagerBase_104_04 mUnk_04;
+    /* 04 */ GameModeLinkListNode mUnk_04;
     /* 0C */
 
     FileSelectManager_UnkDrawBase();

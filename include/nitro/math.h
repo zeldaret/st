@@ -48,8 +48,8 @@ struct Vec2b {
 
 struct Vec2s {
     /* 0 */ s16 x;
-    /* 1 */ s16 y;
-    /* 2 */
+    /* 2 */ s16 y;
+    /* 4 */
 
     Vec2s() {}
     Vec2s(s16 X, s16 Y) {

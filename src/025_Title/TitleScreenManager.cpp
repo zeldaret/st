@@ -17,13 +17,8 @@ ARM void TitleScreenManager::vfunc_14() {
     this->mUnk_004.func_0201c00c(0x24, 1);
 
     TitleScreen *pTitleScreen = new(HeapIndex_1) TitleScreen();
-    void *pUVar2              = pTitleScreen;
-    if (pTitleScreen != NULL) {
-        pUVar2 = &pTitleScreen->mUnk_04;
-    }
-    this->mpTitleScreen = pTitleScreen;
-
-    this->mUnk_104.mUnk_04.func_020166cc(pUVar2);
+    this->mpTitleScreen       = pTitleScreen;
+    this->mUnk_104.mNode.func_020166cc(pTitleScreen->GetNode());
     pTitleScreen->vfunc_18();
 }
 
@@ -40,12 +35,12 @@ ARM void TitleScreenManager::vfunc_24() {
     this->func_02018908();
 }
 
-ARM void TitleScreenManager::vfunc_28(unk32 param1) {
+ARM void TitleScreenManager::vfunc_28(unk8 *param1) {
     this->GameModeManagerBase::vfunc_28(param1);
     this->func_02018a14(param1);
 }
 
-ARM void TitleScreenManager::vfunc_2C(unk32 param1) {
+ARM void TitleScreenManager::vfunc_2C(unk8 *param1) {
     this->func_02018984(param1);
     this->func_02018830(param1);
 }

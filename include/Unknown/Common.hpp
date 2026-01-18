@@ -175,7 +175,7 @@ public:
 
 class UnkSystem2_UnkSubSystem1_Base {
 public:
-    /* 04 */ GameModeManagerBase_104_04 mUnk_04;
+    /* 04 */ GameModeLinkList<UnkSystem2_UnkSubSystem1_Base> mUnk_04;
     /* 0C */ void *mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ Vec2s mPos; // image position (among other things)

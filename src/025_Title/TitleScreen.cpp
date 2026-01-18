@@ -12,7 +12,6 @@
 #include <string.h>
 
 extern "C" {
-void func_02018424();
 void func_ov000_0205be34(void *param1, unk32 param2);
 void func_ov000_0205bedc(void *param1, void *param2, void *param3, void *param4, unk32 param5, int);
 }
@@ -168,7 +167,7 @@ void TitleScreen::func_ov025_020c4ea0(TitleScreenState state) {
     }
 }
 
-void TitleScreen::vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
+void TitleScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     if (this->mShowUI) {
         this->mUnk_024.func_ov000_020609c4();
         this->mUnk_09C.func_ov000_020609c4();
@@ -178,29 +177,29 @@ void TitleScreen::vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouc
         this->mUnk_2CC.func_ov000_020609c4();
     }
 
-    CALL_PTMF(TitleScreenPTMF<TitleScreen>, data_ov025_020c5aec[this->mState], param1, pTouchControl);
+    CALL_PTMF(TitleScreenPTMF<TitleScreen>, data_ov025_020c5aec[this->mState], pButtons, pTouchControl);
     data_0204aeac.func_0201c4d8(0, 0x0B, 8);
     data_0204aeac.func_0201c504(1, 10, 0x10, 8);
 }
 
-void TitleScreen::func_ov025_020c5200(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {}
+void TitleScreen::func_ov025_020c5200(Input *pButtons, TouchControl *pTouchControl) {}
 
 // https://decomp.me/scratch/6nDGM
-void TitleScreen::func_ov025_020c5204(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
+void TitleScreen::func_ov025_020c5204(Input *pButtons, TouchControl *pTouchControl) {
     if (pTouchControl->mFlags & 1) {
         this->mUnk_021 = 1U;
     }
     if ((pTouchControl->mFlags & 2) && (this->mUnk_021 != 0)) {
         goto test;
     }
-    if (!(param1->mButtons & 8)) {
+    if (!(pButtons->press & 8)) {
         return;
     }
 test:
     func_ov025_020c4e54();
 }
 
-void TitleScreen::func_ov025_020c5240(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
+void TitleScreen::func_ov025_020c5240(Input *pButtons, TouchControl *pTouchControl) {
     this->mUnk_218.UnkOperations();
     this->mUnk_204.mUnk_10 = this->mUnk_218.func_0201f04c();
 
@@ -223,7 +222,7 @@ void TitleScreen::func_ov025_020c5240(GameModePTMFParam2Struct *param1, TouchCon
     this->func_ov025_020c4ea0(TitleScreenState_IdleBeforeFileSelect);
 }
 
-void TitleScreen::func_ov025_020c53d0(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
+void TitleScreen::func_ov025_020c53d0(Input *pButtons, TouchControl *pTouchControl) {
     this->mUnk_344++;
 
     if (this->mUnk_344 == 15) {
@@ -262,14 +261,14 @@ void TitleScreen::func_ov025_020c53d0(GameModePTMFParam2Struct *param1, TouchCon
     }
 }
 
-void TitleScreen::func_ov025_020c55a4(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
-    if (CHECK_TOUCH_FLAGS(pTouchControl, TouchFlag_UntouchedNow) || CHECK_BUTTON_COMBO(param1->mButtons, BTN_START)) {
+void TitleScreen::func_ov025_020c55a4(Input *pButtons, TouchControl *pTouchControl) {
+    if (CHECK_TOUCH_FLAGS(pTouchControl, TouchFlag_UntouchedNow) || CHECK_BUTTON_COMBO(pButtons->press, BTN_START)) {
         data_ov000_020b5214.func_ov000_0206db44(0x0B);
         this->func_ov025_020c4ea0(TitleScreenState_ToFileSelect);
     }
 }
 
-void TitleScreen::func_ov025_020c55e4(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
+void TitleScreen::func_ov025_020c55e4(Input *pButtons, TouchControl *pTouchControl) {
     if (this->mUnk_024.func_ov000_02060af8() == 0) {
         return;
     }
@@ -286,7 +285,7 @@ void TitleScreen::func_ov025_020c55e4(GameModePTMFParam2Struct *param1, TouchCon
         return;
     }
 
-    data_0204a060.func_020183d4(true, func_02018424, 1);
+    data_0204a060.func_020183d4(true, UnkStruct_0204a060::func_02018424, 1);
 }
 
 void TitleScreen::vfunc_14(unk8 *param1) {
@@ -348,17 +347,10 @@ void TitleScreen::vfunc_10(unk8 *param1) {
     }
 }
 
-//! TODO: fake match?
 void TitleScreen::vfunc_0C(unk32 param1) {
     if (param1 == 1 && this->mShowUI) {
         UnkStruct_027e0954 *ptr = data_027e0954;
-        void *iVar1             = &this->mUnk_204;
-
-        if (iVar1 != NULL) {
-            iVar1 = (u32 *) iVar1 + 1;
-        }
-
-        ptr->mUnk_14.func_020166f4(iVar1);
+        ptr->mUnk_14.func_020166f4(this->mUnk_204.GetNode());
     }
 }
 

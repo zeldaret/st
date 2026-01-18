@@ -11,7 +11,7 @@ public:
     /* 08 */ unk32 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
-    /* 14 */ GameModeManagerBase_104_04 mUnk_14;
+    /* 14 */ GameModeLinkListNode mUnk_14;
 
     UnkStruct_027e0954();
     ~UnkStruct_027e0954();

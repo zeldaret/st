@@ -9,8 +9,8 @@
 class UnkStruct_0204a060_Base3 : public SysObject {
 public:
     /* 00 (vtable) */
-    /* 04 */ GameModeManagerBase_104_04 mUnk_04;
-    /* 0C */ unk8 mUnk_0C;
+    /* 04 */ GameModeLinkListNode mUnk_04;
+    /* 0C */ bool mUnk_0C;
     /* 0D */ unk8 mUnk_0D;
     /* 0E */ unk8 mUnk_0E;
     /* 0F */ unk8 mUnk_0F;
@@ -39,10 +39,9 @@ class UnkStruct_0204a060_Base : public UnkStruct_0204a060_Base2 {
 public:
     /* 00 (base) */
     /* 14 */ unk32 mUnk_14;
-    // /* 14 */ unk16 mUnk_16;
     /* 18 */ unk8 mUnk_18;
     /* 19 */ unk8 mUnk_19;
-    /* 1A */ unk16 mUnk_1A;
+    /* 1A */ u16 mUnk_1A;
     /* 1C */ unk16 mUnk_1C;
     /* 1E */ unk16 mUnk_1E;
     /* 20 */ unk16 mUnk_20;
@@ -69,12 +68,16 @@ public:
 
     UnkStruct_0204a060();
 
+    void func_020183c0(void);
     bool func_020183d4(bool param1, void *param2, unk32 param3);
+    static void func_02018424(void); //! TODO: is it a PTMF?
 
     // data_02044048 vtable
     /* 00 */ virtual ~UnkStruct_0204a060() override;
     /* 0C */ virtual bool vfunc_0C(void) override;
     /* 14 */
+
+    static void func_020183b8(void);
 };
 
 extern UnkStruct_0204a060 data_0204a060;

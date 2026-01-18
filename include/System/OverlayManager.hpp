@@ -1,9 +1,10 @@
 #pragma once
 
+#include "System/SysFault.hpp"
 #include "types.h"
 
 #include <nitro/Overlay.h>
-// #include "Item/Item.hpp"
+
 typedef u32 ItemFlag;
 
 EXTERN_OVERLAY_ID(0);
@@ -394,6 +395,7 @@ public:
 
     void LoadEquipItem(ItemFlag equipId);
 
+    SysFault *func_020148d0(unk32 param1);
     void func_02014994(unk32 param1);
 };
 

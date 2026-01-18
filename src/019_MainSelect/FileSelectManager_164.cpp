@@ -50,14 +50,13 @@ ARM void FileSelectManager_164::vfunc_10() {
     data_0204999c.func_02013014();
     data_0204999c.mUnk_60 = 0xD6D8;
     data_ov000_020b50c0.func_ov000_0206a758();
-    this->mUnk_10->mUnk_04.func_020166ac();
+    GameModeLinkListNode::func_020166ac(&this->mUnk_10->mNode);
     this->mUnk_10->func_ov019_020cb664();
     data_0204a110.func_02019538(0x26, 1);
     FileSelectOptionsManager::Create(this->mUnk_18, this->mUnk_10->mSaveSlotIndex);
 
     FileSelectOptionsManager *pVar1 = gpFSOptionsManager;
-    this->mUnk_14->mUnk_04.func_020166cc(gpFSOptionsManager == NULL ? (u32 *) gpFSOptionsManager
-                                                                    : (u32 *) gpFSOptionsManager + 1);
+    this->mUnk_14->mNode.func_020166cc(pVar1->GetNode());
     pVar1->vfunc_18();
 
     data_0204999c.func_02013070();
@@ -98,7 +97,7 @@ ARM void FileSelectManager_164::vfunc_20() {
     data_0204a110.func_02019538(0x25, 1);
 
     FileSelectMain *temp_r4 = this->mUnk_10;
-    this->mUnk_14->mUnk_04.func_020166cc(temp_r4 == NULL ? temp_r4 : (FileSelectMain *) ((unk32 *) temp_r4 + 1));
+    this->mUnk_14->mNode.func_020166cc(temp_r4->GetNode());
     temp_r4->vfunc_18();
 
     this->mUnk_10->func_ov019_020cb5dc();

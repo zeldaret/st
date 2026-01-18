@@ -97,7 +97,6 @@ ARM GameModeManagerBase_104 *FileSelectOptionsManager::Create(void *param1, s32 
     return new(HeapIndex_1) FileSelectOptionsManager(param1, saveSlotIndex);
 }
 
-// non-matching
 //! TODO: move to class
 ARM FileSelectOptionsManager::FileSelectOptionsManager(void *param1, s32 saveSlotIndex) {
     this->mUnk_24   = (GameModeManagerBase_104 *) param1;
@@ -106,9 +105,9 @@ ARM FileSelectOptionsManager::FileSelectOptionsManager(void *param1, s32 saveSlo
     this->mpMicTest = new(HeapIndex_1) FileSelectMicTest();
 
     FileSelectOptions *var_r5 = new(HeapIndex_1) FileSelectOptions(saveSlotIndex);
-    this->mpOptions           = var_r5 == NULL ? var_r5 : (FileSelectOptions *) &var_r5->mUnk_04;
-    this->mUnk_24->mUnk_04.func_020166cc(&var_r5->mUnk_04);
-    this->vfunc_18();
+    this->mpOptions           = var_r5;
+    this->mUnk_24->mNode.func_020166cc(var_r5->GetNode());
+    var_r5->vfunc_18();
 }
 
 ARM FileSelectOptionsManager::~FileSelectOptionsManager() {
@@ -119,7 +118,7 @@ ARM FileSelectOptionsManager::~FileSelectOptionsManager() {
     this->mpOptions = NULL;
 }
 
-ARM void FileSelectOptionsManager::vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
+ARM void FileSelectOptionsManager::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     if (this->mUnk_20 == 0) {
         return;
     }
@@ -129,25 +128,17 @@ ARM void FileSelectOptionsManager::vfunc_08(GameModePTMFParam2Struct *param1, To
     switch (this->mUnk_1C) {
         case 0:
             FileSelectOptions *pFVar4 = this->mpOptions;
-            FileSelectOptions *pFVar2 = pFVar4;
-            if (pFVar4 != NULL) {
-                pFVar2 = (FileSelectOptions *) &pFVar4->mUnk_04;
-            }
-            this->mUnk_24->mUnk_04.func_020166cc(&pFVar2->mUnk_04);
+            this->mUnk_24->mNode.func_020166cc(pFVar4->GetNode());
             pFVar4->vfunc_18();
             this->mpOptions->func_ov019_020cde9c();
-            this->mpMicTest->mUnk_04.func_020166ac();
+            GameModeLinkListNode::func_020166ac(&this->mpMicTest->mNode);
             break;
         case 1:
             FileSelectMicTest *pFVar5 = this->mpMicTest;
-            FileSelectMicTest *pFVar3 = pFVar5;
-            if (pFVar5 != NULL) {
-                pFVar3 = (FileSelectMicTest *) &pFVar5->mUnk_04;
-            }
-            this->mUnk_24->mUnk_04.func_020166cc(&pFVar3->mUnk_04);
+            this->mUnk_24->mNode.func_020166cc(pFVar5->GetNode());
             pFVar5->vfunc_18();
             this->mpMicTest->func_ov019_020cefe4();
-            this->mpOptions->mUnk_04.func_020166ac();
+            GameModeLinkListNode::func_020166ac(&this->mpOptions->mNode);
             break;
         case 2:
             this->mpOptions->func_ov019_020ccdf4();
@@ -213,7 +204,7 @@ ARM void FileSelectOptions::func_ov019_020ccd40() {
     CALL_PTMF(PTMF<FileSelectOptions>, data_ov019_020d21c0[this->mState]);
 }
 
-ARM void FileSelectOptions::vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
+ARM void FileSelectOptions::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     CALL_PTMF(PTMF<FileSelectOptions>, data_ov019_020d2188[this->mState]);
 }
 

@@ -22,7 +22,7 @@ public:
 class UnkStruct_02049a2c {
 public:
     /* 00 */ GameModeBase *mUnk_00;
-    /* 04 */ unk32 mUnk_04;
+    /* 04 */ void *mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
@@ -37,7 +37,7 @@ public:
 
     void Run(void);
     void func_02013370(unk32 param1);
-    void func_02013724(void *param1);
+    bool func_02013724(void *param1);
 
     void func_ov018_020c48a4(unk32 param1);
     void func_ov018_020c48f8(); // loads overlay 0

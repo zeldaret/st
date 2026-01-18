@@ -24,7 +24,6 @@ extern "C" {
 unk32 func_02014fe0();
 unk16 func_02026738();
 void func_02023548();
-void func_020141dc(unk16 *param1);
 void func_020327c8(void *param1, unk32 param2);
 void func_02030d48(u16 param1);
 void func_02030d58(u16 param1);
@@ -82,7 +81,6 @@ ARM UnkStruct_ov000_020b4f84_00::~UnkStruct_ov000_020b4f84_00() {}
 ARM UnkStruct_ov000_020b504c::UnkStruct_ov000_020b504c() :
     mUnk_008(NULL),
     mUnk_030(1) {
-    func_020141dc(&this->mUnk_03A);
     Fill32(0, this->mUnk_05C, sizeof(this->mUnk_05C));
 
     this->mUnk_06F = 0;

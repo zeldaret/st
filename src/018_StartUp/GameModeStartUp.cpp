@@ -13,7 +13,6 @@
 
 extern "C" {
 void func_02013768(void *param1);
-void func_020141dc(unk16 *param1);
 void func_020261f0(unk32 param1, void *param2);
 void func_0201245c();
 void func_02027a28(void *param1, unk32 param2);
@@ -37,7 +36,6 @@ void func_0202e820();
 unk32 func_020271b0();
 unk32 func_0202e864(void *param1);
 void func_0202e8f8(void *param1);
-void func_020183b8();
 
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
@@ -150,7 +148,6 @@ ARM UnkStruct_02049b80::UnkStruct_02049b80() {
 ARM UnkStruct_02049b18_06::UnkStruct_02049b18_06() {
     unk8 auStack_18[8];
 
-    func_020141dc(&this->mUnk_00);
     func_0202e820();
 
     if (func_020271b0() != 0) {
@@ -208,7 +205,7 @@ ARM void GameModeStartUp::vfunc_0C() {
             this->mUnk_2C = SHARED_WORK_C3C;
             data_02049a2c.func_ov018_020c48f8();
         } else if (!this->mUnk_2A && (SHARED_WORK_C3C - this->mUnk_2C) >= 0x3C) {
-            this->mUnk_2A = data_0204a060.func_020183d4(false, func_020183b8, 1);
+            this->mUnk_2A = data_0204a060.func_020183d4(false, UnkStruct_0204a060::func_020183b8, 1);
 
             if (data_ov018_020c5bc0 != 0) {
                 data_0204a060.func_0201bb84(1, 0, 1);

@@ -2,6 +2,7 @@
 
 #include "Unknown/UnkStruct_02049b18.hpp"
 #include "global.h"
+#include "nitro/button.h"
 #include "types.h"
 
 class UnkStruct_0204e64c_00 {
@@ -29,8 +30,7 @@ public:
 class UnkStruct_0204e64c {
 public:
     /* 00 */ UnkStruct_0204e64c_00 mUnk_00;
-    /* 10 */ UnkStruct_02049b18_00 mUnk_10;
-    /* 14 */ unk16 mUnk_14;
+    /* 10 */ Input mButtons;
     /* 16 */ unk8 mUnk_16;
 
     UnkStruct_0204e64c();

@@ -126,7 +126,11 @@ config.libs = [
             Object("Main/Main.cpp"),
             Object("Main/System/SysNew.cpp"),
             Object("Main/System/OverlayManager.cpp"),
+            Object("Main/Game/GameModeLinkListNode.cpp"),
             Object("Main/func_02017ea4.cpp"),
+            Object("Main/Game/GameModeBase.cpp"),
+            Object("Main/UnkStruct_0204a060.cpp"),
+            Object("Main/Game/GameModeManagerBase.cpp"),
         ]
     ),
     GameLib(

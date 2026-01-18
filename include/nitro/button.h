@@ -1,5 +1,7 @@
 #pragma once
 
+#include "types.h"
+
 #define BTN_A (1 << 0) // 0x0001
 #define BTN_B (1 << 1) // 0x0002
 #define BTN_SELECT (1 << 2) // 0x0004
@@ -12,3 +14,14 @@
 #define BTN_L (1 << 9) // 0x0200
 
 #define CHECK_BUTTON_COMBO(value, btn) ((value) & (btn))
+
+struct Input {
+    /* 00 */ u16 cur;
+    /* 02 */ volatile u16 press;
+    /* 04 */ u16 release;
+    /* 06 */
+
+    Input();
+    unk32 func_02013c08(u16 param1);
+    unk32 func_02013b24(unk32 param1);
+};

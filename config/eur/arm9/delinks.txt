@@ -16,8 +16,26 @@ src/Main/System/SysNew.cpp:
 src/Main/System/OverlayManager.cpp:
     .text       start:0x020147fc end:0x02014944
 
+src/Main/Game/GameModeLinkListNode.cpp:
+    complete
+    .text       start:0x0201667c end:0x02016720
+
 src/Main/func_02017ea4.cpp:
     .text       start:0x02017ea4 end:0x02017f38
+
+src/Main/Game/GameModeBase.cpp:
+    complete
+    .text       start:0x020182e4 end:0x020183a4
+    .data       start:0x02044010 end:0x02044040
+
+src/Main/UnkStruct_0204a060.cpp:
+    complete
+    .text       start:0x020183a4 end:0x0201847c
+    .data       start:0x02044040 end:0x0204405c
+
+src/Main/Game/GameModeManagerBase.cpp:
+    .text       start:0x0201847c end:0x02018bc4
+    .data       start:0x0204405c end:0x0204409c
 
 libs/c/src/abort_exit_arm_eabi.c:
     complete

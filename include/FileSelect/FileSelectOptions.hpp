@@ -138,6 +138,14 @@ public:
     /* 1CF7 */ unk8 mUnk_1CF7;
     /* 1CF8 */
 
+    GameModeLinkListNode *GetNode() {
+        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
+        if (this != NULL) {
+            node = (GameModeLinkListNode *) ((u32 *) node + 1);
+        }
+        return node;
+    }
+
     FileSelectOptions(s32 saveSlotIndex);
     void func_ov019_020ccd40();
     void func_ov019_020ccdf4();
@@ -166,7 +174,7 @@ public:
 
     // data_ov019_020d2200 vtable
     /* 00 */ virtual ~FileSelectOptions() override;
-    /* 08 */ virtual void vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) override;
+    /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl) override;
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
 
     static GameModeManagerBase_104 *Create(void *param1, s32 saveSlotIndex);

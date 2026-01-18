@@ -74,6 +74,14 @@ public:
     /* 633 */ unk8 mUnk_633;
     /* 634 */
 
+    GameModeLinkListNode *GetNode() {
+        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
+        if (this != NULL) {
+            node = (GameModeLinkListNode *) ((u32 *) node + 1);
+        }
+        return node;
+    }
+
     FileSelectMicTest();
     void func_ov019_020cea74();
     void func_ov019_020cefe4();
@@ -87,7 +95,7 @@ public:
 
     // data_ov019_020d2284 vtable
     /* 00 */ virtual ~FileSelectMicTest() override;
-    /* 08 */ virtual void vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) override;
+    /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl) override;
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
     /* 14 */ virtual void vfunc_14(unk8 *param1) override;
 };

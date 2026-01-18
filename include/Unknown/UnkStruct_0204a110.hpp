@@ -1,9 +1,12 @@
 #pragma once
 
 #include "System/SysNew.hpp"
+#include "Unknown/Common.hpp"
 #include "Unknown/UnkMemFuncs.h"
 #include "global.h"
 #include "types.h"
+
+class GameModeManagerBase;
 
 struct UnkStruct_0204a110_Sub2_000_158 {
     u32 mUnk_00[3];
@@ -188,7 +191,7 @@ public:
     /* DAC */ STRUCT_PAD(0xDBC, 0xDC0);
     /* DC0 */ UnkStruct_0204a110_Sub7 mUnk_DC0;
     /* DDC */ UnkStruct_0204a110_Sub8 mUnk_DDC;
-    /* DEC */ unk32 mUnk_DEC;
+    /* DEC */ GameModeManagerBase *mUnk_DEC;
     /* DF0 */ unk16 mUnk_DF0;
     /* DF2 */ unk8 mUnk_DF2;
     /* DF3 */ unk8 mUnk_DF3;
@@ -204,14 +207,18 @@ public:
     /* E04 */ unk16 mUnk_E04;
 
     UnkStruct_0204a110();
+
     unk32 func_01ff9b50();
+
+    void func_02018c78(unk32 param1);
     void func_02018c90(unk32 param1);
+    void func_02018d34();
     void func_020195a0(const char *param1, unk32 param2, unk32 param3, unk32 param4);
     void func_0201967c(unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
     void func_02019538(unk32 param1, unk32 param2);
-    void func_02018c78(unk32 param1);
 
     void func_ov001_020bd514(unk32 param1, void *param2, unk32 param3, unk32 param4);
+    void func_ov001_020bd58c(void);
 
     void func_ov018_020c5300(void);
 };

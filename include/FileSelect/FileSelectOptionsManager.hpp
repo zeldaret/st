@@ -29,13 +29,21 @@ public:
     /* 2C */ FileSelectOptions *mpOptions;
     /* 30 */
 
+    GameModeLinkListNode *GetNode() {
+        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
+        if (this != NULL) {
+            node = (GameModeLinkListNode *) ((u32 *) node + 1);
+        }
+        return node;
+    }
+
     FileSelectOptionsManager(void *param1, unk32 param2);
     void func_ov019_020cc85c(unk32 param1);
     unk32 func_ov019_020cc874();
 
     // data_ov019_020d2224 vtable
     /* 00 */ virtual ~FileSelectOptionsManager() override;
-    /* 08 */ virtual void vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) override;
+    /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl) override;
 
     static GameModeManagerBase_104 *Create(void *param1, s32 saveSlotIndex);
 };

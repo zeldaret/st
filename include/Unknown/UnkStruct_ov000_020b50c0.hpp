@@ -45,6 +45,8 @@ public:
 
     void func_0200381c(const char *soundDataPath, unk32 param2, unk32 param3);
 
+    void func_ov000_02069d3c(unk32 param1);
+    void func_ov000_02069d7c(void);
     unk32 func_ov000_0206a5d8(unk32 param1);
     void func_ov000_0206a6a4(unk32 param1);
     void func_ov000_0206a758(void);

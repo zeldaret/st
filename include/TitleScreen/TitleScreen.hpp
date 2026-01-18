@@ -10,7 +10,7 @@ void GX_SetGraphicsMode(unk32 param1, unk32 param2, unk32 param3);
 void GXS_SetGraphicsMode(unk32 param1);
 }
 
-DECL_PTMF(TitleScreenPTMF, GameModePTMFParam2Struct *param1, TouchControl *pTouchControl);
+DECL_PTMF(TitleScreenPTMF, Input *pButtons, TouchControl *pTouchControl);
 
 typedef u32 TitleScreenState;
 enum TitleScreenState_ {
@@ -40,15 +40,7 @@ public:
     /* 48 */
 };
 
-class TitleScreen_Sub2_Base {
-public:
-    /* 00 */ GameModeManagerBase_104_04 mUnk_00;
-    /* 08 */
-
-    TitleScreen_Sub2_Base() {}
-};
-
-class TitleScreen_Sub2 : public TitleScreen_Sub2_Base {
+class TitleScreen_Sub2 : public GameModeLinkListNode {
 public:
     /* 00 (vtable) */
     /* 0C */ unk32 mUnk_0C;
@@ -60,6 +52,10 @@ public:
     TitleScreen_Sub2() :
         mUnk_0C(0),
         mUnk_10(false) {}
+
+    GameModeLinkListNode *GetNode() {
+        return this;
+    }
 
     // data_ov025_020c5b24 vtable
     /* 00 */ virtual void vfunc_00();
@@ -144,7 +140,7 @@ public:
     }
 };
 
-class TitleScreen : public GameModeManagerBase_104 { // 0233c6d4
+class TitleScreen : public SysObject, public GameModeManagerBase_104 { // 0233c6d4
 public:
     /* 000 (base) */
     /* 01C */ TitleScreenState mState;
@@ -164,6 +160,14 @@ public:
     /* 344 */ unk32 mUnk_344;
     /* 348 */
 
+    GameModeLinkListNode *GetNode() {
+        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
+        if (this != NULL) {
+            node = (GameModeLinkListNode *) ((u32 *) node + 1);
+        }
+        return node;
+    }
+
     TitleScreen();
 
     void func_ov025_020c4e54();
@@ -175,16 +179,16 @@ public:
     void func_ov025_020c5988();
 
     // data_ov025_020c5aec
-    void func_ov025_020c5200(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl);
-    void func_ov025_020c5204(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl);
-    void func_ov025_020c5240(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl);
-    void func_ov025_020c53d0(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl);
-    void func_ov025_020c55a4(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl);
-    void func_ov025_020c55e4(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl);
+    void func_ov025_020c5200(Input *pButtons, TouchControl *pTouchControl);
+    void func_ov025_020c5204(Input *pButtons, TouchControl *pTouchControl);
+    void func_ov025_020c5240(Input *pButtons, TouchControl *pTouchControl);
+    void func_ov025_020c53d0(Input *pButtons, TouchControl *pTouchControl);
+    void func_ov025_020c55a4(Input *pButtons, TouchControl *pTouchControl);
+    void func_ov025_020c55e4(Input *pButtons, TouchControl *pTouchControl);
 
     // data_ov025_020c5b30 vtable
     /* 00 */ virtual ~TitleScreen() override;
-    /* 08 */ virtual void vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) override;
+    /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl) override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
     /* 14 */ virtual void vfunc_14(unk8 *param1) override;
@@ -211,8 +215,8 @@ public:
     /* 14 */ virtual void vfunc_14() override;
     /* 18 */ virtual void vfunc_18() override;
     /* 24 */ virtual void vfunc_24() override;
-    /* 28 */ virtual void vfunc_28(unk32 param1) override;
-    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 28 */ virtual void vfunc_28(unk8 *param1) override;
+    /* 2C */ virtual void vfunc_2C(unk8 *param1) override;
     /* 38 */ virtual void vfunc_38() override;
 
     static TitleScreenManager *Create(unk32 param1);

@@ -14,7 +14,7 @@ public:
 
     // data_ov025_020c5a68 vtable
     /* 00 */ virtual ~GameModeTitleScreen() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1, unk32 param2, unk32 param3) override;
+    /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 10 */ virtual void vfunc_10() override;
     /* 14 */ virtual void vfunc_14() override;

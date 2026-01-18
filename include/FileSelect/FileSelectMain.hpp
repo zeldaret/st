@@ -148,6 +148,14 @@ public:
         return this->GetUnk03E0(this->mSaveSlotIndex);
     }
 
+    GameModeLinkListNode *GetNode() {
+        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
+        if (this != NULL) {
+            node = (GameModeLinkListNode *) ((u32 *) node + 1);
+        }
+        return node;
+    }
+
     FileSelectMain();
     void func_ov019_020c61dc();
     void func_ov019_020c63dc();
@@ -255,7 +263,7 @@ public:
 
     // data_ov019_020d1ec0 vtable
     /* 00 */ virtual ~FileSelectMain() override;
-    /* 08 */ virtual void vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) override;
+    /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl) override;
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
     /* 18 */ virtual void vfunc_18(void) override;
 };

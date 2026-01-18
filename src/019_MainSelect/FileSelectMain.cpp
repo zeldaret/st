@@ -215,16 +215,16 @@ ARM void FileSelectMain::func_ov019_020c6c54() {
 ARM void FileSelectMain::func_ov019_020c6c9c() {}
 
 ARM void FileSelectMain::func_ov019_020c6ca0() {
-    this->mUnk_0488.mUnk_04.func_020166ac();
-    this->mUnk_07E4.mUnk_04.func_020166ac();
-    this->mUnk_0AC4.mUnk_04.func_020166ac();
+    GameModeLinkListNode::func_020166ac(&this->mUnk_0488.mUnk_04);
+    GameModeLinkListNode::func_020166ac(&this->mUnk_07E4.mUnk_04);
+    GameModeLinkListNode::func_020166ac(&this->mUnk_0AC4.mUnk_04);
 }
 
 ARM void FileSelectMain::func_ov019_020c6cd0() {
-    this->mUnk_0DA4.mUnk_04.func_020166ac();
-    this->mUnk_11BC.mUnk_04.func_020166ac();
-    this->mUnk_15D4.mUnk_04.func_020166ac();
-    this->mUnk_18EC.mUnk_04.func_020166ac();
+    GameModeLinkListNode::func_020166ac(&this->mUnk_0DA4.mUnk_04);
+    GameModeLinkListNode::func_020166ac(&this->mUnk_11BC.mUnk_04);
+    GameModeLinkListNode::func_020166ac(&this->mUnk_15D4.mUnk_04);
+    GameModeLinkListNode::func_020166ac(&this->mUnk_18EC.mUnk_04);
 }
 
 ARM void FileSelectMain::func_ov019_020c6d08() {}
@@ -1112,7 +1112,7 @@ ARM void FileSelectMain::func_ov019_020c80e8() {
 ARM void FileSelectMain::func_ov019_020c80f4() {}
 
 // non-matching
-ARM void FileSelectMain::vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) {
+ARM void FileSelectMain::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         this->mUnk_03E8[i].func_ov000_02063f64();
         this->GetUnk03E0(i).func_ov019_020cbb94();

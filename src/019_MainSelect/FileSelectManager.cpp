@@ -32,26 +32,16 @@ ARM FileSelectManager::~FileSelectManager() {
 }
 
 ARM void FileSelectManager::vfunc_10(unk32 param1, unk32 param2, unk32 param3) {
-    void *unkPtr;
-
     this->mUnk_004.func_0201c00c(0x25, 1);
 
     FileSelectMain *newSub3 = new(HeapIndex_1) FileSelectMain();
-    unkPtr                  = newSub3;
-    if (newSub3 != NULL) {
-        unkPtr = &newSub3->mUnk_04;
-    }
-    this->mUnk_158 = newSub3;
-    this->mUnk_154->mUnk_04.func_020166cc(unkPtr);
+    this->mUnk_158          = newSub3;
+    this->mUnk_154->mNode.func_020166cc(newSub3->GetNode());
     newSub3->vfunc_18();
 
     FileSelectSubScreen *newSub4 = new(HeapIndex_1) FileSelectSubScreen();
-    unkPtr                       = newSub4;
-    if (newSub4 != NULL) {
-        unkPtr = &newSub4->mUnk_04;
-    }
-    this->mUnk_15C = newSub4;
-    this->mUnk_154->mUnk_04.func_020166cc(unkPtr);
+    this->mUnk_15C               = newSub4;
+    this->mUnk_154->mNode.func_020166cc(newSub4->GetNode());
     newSub4->vfunc_18();
 
     this->mUnk_160 = new(HeapIndex_1) FileSelectManager_160(&this->mUnk_104, this->mUnk_158);
@@ -65,7 +55,7 @@ ARM void FileSelectManager::vfunc_24() {
     this->func_0201875c();
     this->func_02018908();
 
-    if (this->mUnk_132 == 0) {
+    if (!this->mTouchControl.mTouch) {
         this->mUnk_148 = -1;
     }
 
@@ -119,12 +109,12 @@ ARM void FileSelectManager::func_ov019_020c503c() {
     }
 }
 
-ARM void FileSelectManager::vfunc_28(unk32 param1) {
+ARM void FileSelectManager::vfunc_28(unk8 *param1) {
     this->GameModeManagerBase::vfunc_28(param1);
     this->func_02018a14(param1);
 }
 
-ARM void FileSelectManager::vfunc_2C(unk32 param1) {
+ARM void FileSelectManager::vfunc_2C(unk8 *param1) {
     this->func_02018984(param1);
     this->func_02018830(param1);
 }

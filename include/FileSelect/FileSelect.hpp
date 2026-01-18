@@ -41,7 +41,7 @@ public:
     /* 00 */ virtual ~FileSelect_UnkClass2_Sub4_Base() override {}
 };
 
-class FileSelectSubScreen : public FileSelect_UnkClass2_Sub4_Base {
+class FileSelectSubScreen : public SysObject, public FileSelect_UnkClass2_Sub4_Base {
 public:
     /* 0000 (base) */
     /* 001C */ unk32 mUnk_001C;
@@ -65,12 +65,20 @@ public:
     /* 0FE4 */ UnkSystem5 mUnk_0FE4;
     /* 1020 */
 
+    GameModeLinkListNode *GetNode() {
+        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
+        if (this != NULL) {
+            node = (GameModeLinkListNode *) ((u32 *) node + 1);
+        }
+        return node;
+    }
+
     FileSelectSubScreen();
     void func_ov019_020cf73c(unk32 param1, unk32 param2);
 
     // data_ov019_020d22b8 vtable
     /* 00 */ virtual ~FileSelectSubScreen() override {}
-    /* 08 */ virtual void vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) override;
+    /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl) override;
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
 };
 
@@ -87,6 +95,7 @@ public:
 
     // clang-format off
     FileSelectManager(unk32 param1) NO_INLINE :
+        GameModeManagerBase(param1),
         mUnk_154(&this->mUnk_104),
         mUnk_158(NULL),
         mUnk_15C(NULL),
@@ -111,8 +120,8 @@ public:
     /* 08 */ virtual ~FileSelectManager() override;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2, unk32 param3) override;
     /* 24 */ virtual void vfunc_24() override;
-    /* 28 */ virtual void vfunc_28(unk32 param1) override;
-    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 28 */ virtual void vfunc_28(unk8 *param1) override;
+    /* 2C */ virtual void vfunc_2C(unk8 *param1) override;
 
     static GameModeManagerBase *Create(unk32 param1);
 };

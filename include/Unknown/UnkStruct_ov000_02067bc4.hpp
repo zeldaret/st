@@ -1,9 +1,11 @@
 #pragma once
 
+#include "Game/GameModeManager.hpp"
 #include "Item/Item.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_02049b18.hpp"
 #include "global.h"
+#include "nitro/button.h"
 #include "types.h"
 
 class UnkStruct_ov000_02067bc4_Sub1 {
@@ -89,16 +91,14 @@ public:
 class UnkStruct_ov000_020b504c {
 public:
     /* 000 */ UnkStruct_ov000_020b504c_Sub3 *mUnk_000;
-    /* 004 */ unk32 mUnk_004;
+    /* 004 */ GameModeManagerBase_004 *mUnk_004;
     /* 008 */ UnkStruct_ov000_02067bc4_Sub2 *mUnk_008;
     /* 00C */ UnkStruct_ov000_020b504c_Sub4 mUnk_00C[7];
     /* 028 */ unk32 mUnk_028;
     /* 02C */ unk32 mUnk_02C;
     /* 030 */ unk32 mUnk_030;
-    /* 034 */ UnkStruct_02049b18_00 mUnk_034;
-    /* 038 */ unk16 mUnk_038;
-    /* 03A */ unk16 mUnk_03A;
-    /* 03C */ STRUCT_PAD(0x3C, 0x5C);
+    /* 034 */ Input mButtons;
+    /* 03A */ TouchControl mTouchControl;
     /* 05C */ unk8 mUnk_05C[0x10];
     /* 06C */ unk8 mUnk_06C[2];
     /* 06E */ unk8 mUnk_06E;
