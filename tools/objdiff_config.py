@@ -57,7 +57,7 @@ class ConfigVersion:
 
                 entry = self.get_entry_from_name(units, self.objdiff_json["units"][i]["name"])
                 if entry is not None:
-                    self.objdiff_json["units"][i]["scratch"]["c_flags"] = entry.get_all_cflags()
+                    self.objdiff_json["units"][i]["scratch"]["c_flags"] = f"{entry.get_all_cflags()} -DVERSION={self.name.upper()}"
                     self.objdiff_json["units"][i]["scratch"]["compiler"] = entry.mw_version
 
     def get_entry_from_name(self, units: list[ConfigUnit], base_name: str):
