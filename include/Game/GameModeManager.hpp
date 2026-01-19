@@ -160,7 +160,7 @@ public:
     GameModeManagerBase(unk32 param1);
     void func_02018550(void);
     void func_02018554(void);
-    void func_02018634(unk32 param1);
+    void func_02018634(u16 speed);
     void *func_020186f8(unk32 param1);
     void func_02018704(void);
     void func_02018714(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);

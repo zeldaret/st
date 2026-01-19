@@ -52,9 +52,9 @@ ARM void GameModeManagerBase::vfunc_04() {
     }
 }
 
-ARM void GameModeManagerBase::func_02018634(unk32 param1) {
+ARM void GameModeManagerBase::func_02018634(u16 speed) {
     this->mButtons.func_02013b24(this->mButtons.func_02013c08(data_02049b18.mUnk_28));
-    this->mTouchControl.func_02014478(&data_02049b4c, param1);
+    this->mTouchControl.func_02014478(&data_02049b4c, speed);
 }
 
 ARM void GameModeManagerBase::vfunc_24() {
