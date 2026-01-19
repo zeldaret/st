@@ -18,7 +18,7 @@ ARM void TitleScreenManager::vfunc_14() {
 
     TitleScreen *pTitleScreen = new(HeapIndex_1) TitleScreen();
     this->mpTitleScreen       = pTitleScreen;
-    this->mUnk_104.mNode.func_020166cc(pTitleScreen->GetNode());
+    this->mUnk_104.mList.func_020166cc(pTitleScreen->GetNode());
     pTitleScreen->vfunc_18();
 }
 

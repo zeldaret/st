@@ -156,7 +156,7 @@ ARM FileSelectMain::FileSelectMain() :
     params.param1 = &this->mUnk_0C;
     this->mUnk_03E0.Init(&params);
 
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_0100.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_0100.mUnk_04);
     this->mUnk_0100.mUnk_2A = 0;
     this->mUnk_0488.mUnk_2C = 1;
     this->mUnk_07E4.mUnk_2C = 1;
@@ -188,7 +188,7 @@ ARM FileSelectMain::FileSelectMain() :
     REG_DISPCNT &= 0xFFFFE0FF;
     REG_DISPCNT |= 0x00001C00;
     func_020249d4(&REG_BLDCNT, 4, 8, 0, 0x10);
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_005C.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_005C.mUnk_04);
     this->func_ov019_020c63dc();
     this->func_ov019_020c6d10();
 }
@@ -200,16 +200,16 @@ ARM FileSelectMain::~FileSelectMain() {
 ARM void FileSelectMain::func_ov019_020c6c14() {}
 
 ARM void FileSelectMain::func_ov019_020c6c18() {
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_0488.mUnk_04);
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_07E4.mUnk_04);
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_0AC4.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_0488.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_07E4.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_0AC4.mUnk_04);
 }
 
 ARM void FileSelectMain::func_ov019_020c6c54() {
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_0DA4.mUnk_04);
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_11BC.mUnk_04);
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_15D4.mUnk_04);
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_18EC.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_0DA4.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_11BC.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_15D4.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_18EC.mUnk_04);
 }
 
 ARM void FileSelectMain::func_ov019_020c6c9c() {}

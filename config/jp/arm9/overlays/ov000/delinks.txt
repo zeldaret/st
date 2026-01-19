@@ -5,6 +5,15 @@
     .data       start:0x020b3160 end:0x020b66c0 kind:data align:32
     .bss        start:0x020b66c0 end:0x020b7d40 kind:bss align:32
 
+src/000_Second/Game/GameModeManagerBase_104_0C.cpp:
+    complete
+    .text       start:0x02063014 end:0x0206306c
+    .data       start:0x020b3640 end:0x020b3658
+
+src/000_Second/Game/GameModeManagerBase_104.cpp:
+    .text       start:0x0206306c end:0x02063268
+    .data       start:0x020b3658 end:0x020b367c
+
 src/000_Second/Actor/Actor.cpp:
     .text       start:0x02099b30 end:0x02099dfc
     .data       start:0x020b48e4 end:0x020b4948

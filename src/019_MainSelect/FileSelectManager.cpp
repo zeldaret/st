@@ -36,12 +36,12 @@ ARM void FileSelectManager::vfunc_10(unk32 param1, unk32 param2, unk32 param3) {
 
     FileSelectMain *newSub3 = new(HeapIndex_1) FileSelectMain();
     this->mUnk_158          = newSub3;
-    this->mUnk_154->mNode.func_020166cc(newSub3->GetNode());
+    this->mUnk_154->mList.func_020166cc(newSub3->GetNode());
     newSub3->vfunc_18();
 
     FileSelectSubScreen *newSub4 = new(HeapIndex_1) FileSelectSubScreen();
     this->mUnk_15C               = newSub4;
-    this->mUnk_154->mNode.func_020166cc(newSub4->GetNode());
+    this->mUnk_154->mList.func_020166cc(newSub4->GetNode());
     newSub4->vfunc_18();
 
     this->mUnk_160 = new(HeapIndex_1) FileSelectManager_160(&this->mUnk_104, this->mUnk_158);

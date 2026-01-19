@@ -1180,7 +1180,7 @@ from:0x0216173c kind:arm_call to:0x0209c9d8 module:overlay(0)
 from:0x02161750 kind:arm_call to:0x02061ae4 module:overlay(0)
 from:0x021617d4 kind:arm_call to:0x0201667c module:main
 from:0x021617fc kind:load to:0x02163aa4 module:overlay(68)
-from:0x02161800 kind:load to:0x020b1e48 module:overlay(0)
+from:0x02161800 kind:load to:0x020b1e40 add:8 module:overlay(0)
 from:0x02161810 kind:arm_call to:0x02061a8c module:overlay(0)
 from:0x02161818 kind:arm_call to:0x02061c5c module:overlay(0)
 from:0x02161830 kind:arm_call to:0x02061a8c module:overlay(0)

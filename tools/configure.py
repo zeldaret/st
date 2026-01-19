@@ -136,6 +136,8 @@ config.libs = [
     GameLib(
         "Overlay 0",
         [
+            Object("000_Second/Game/GameModeManagerBase_104_0C.cpp"),
+            Object("000_Second/Game/GameModeManagerBase_104.cpp"),
             Object("000_Second/Actor/Actor.cpp"),
             Object("000_Second/Actor/ActorManager.cpp"),
             Object("000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp"),

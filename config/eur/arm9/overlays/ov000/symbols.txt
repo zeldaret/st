@@ -492,9 +492,9 @@ func_ov000_02061a70 kind:function(arm,size=0xc) addr:0x02061a70
 func_ov000_02061a7c kind:function(arm,size=0x10) addr:0x02061a7c
 _ZN26GameModeManagerBase_104_0CD1Ev kind:function(arm,size=0x18) addr:0x02061a8c
 _ZN26GameModeManagerBase_104_0CD0Ev kind:function(arm,size=0x20) addr:0x02061aa4
-_ZN26GameModeManagerBase_104_0C19func_ov000_02061ac4Ev kind:function(arm,size=0x18) addr:0x02061ac4
-_ZN26GameModeManagerBase_104_0C8vfunc_08Ev kind:function(arm,size=0x4) addr:0x02061adc
-_ZN26GameModeManagerBase_104_0C8vfunc_0CEv kind:function(arm,size=0x4) addr:0x02061ae0
+_ZN26GameModeManagerBase_104_0CD2Ev kind:function(arm,size=0x18) addr:0x02061ac4
+_ZN26GameModeManagerBase_104_0C8vfunc_08EPv kind:function(arm,size=0x4) addr:0x02061adc
+_ZN26GameModeManagerBase_104_0C8vfunc_0CEPv kind:function(arm,size=0x4) addr:0x02061ae0
 _ZN23GameModeManagerBase_104C2Ev kind:function(arm,size=0x48) addr:0x02061ae4
 _ZN23GameModeManagerBase_104C1Ev kind:function(arm,size=0x48) addr:0x02061b2c
 _ZN23GameModeManagerBase_104D1Ev kind:function(arm,size=0x70) addr:0x02061b74
@@ -3456,9 +3456,9 @@ data_ov000_020b1e0c kind:data(any) addr:0x020b1e0c
 data_ov000_020b1e10 kind:data(any) addr:0x020b1e10
 data_ov000_020b1e20 kind:data(any) addr:0x020b1e20
 data_ov000_020b1e30 kind:data(any) addr:0x020b1e30
-data_ov000_020b1e48 kind:data(any) addr:0x020b1e48
-data_ov000_020b1e60 kind:data(any) addr:0x020b1e60
-data_ov000_020b1e84 kind:data(any) addr:0x020b1e84
+_ZTV26GameModeManagerBase_104_0C kind:data(any) addr:0x020b1e40
+_ZTV23GameModeManagerBase_104 kind:data(any) addr:0x020b1e58
+data_ov000_020b1e84 kind:data(any) addr:0x020b1e7c
 data_ov000_020b1e9c kind:data(any) addr:0x020b1e9c
 data_ov000_020b1eb4 kind:data(any) addr:0x020b1eb4
 data_ov000_020b1ecc kind:data(any) addr:0x020b1ecc

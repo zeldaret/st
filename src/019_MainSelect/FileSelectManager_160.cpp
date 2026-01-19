@@ -48,7 +48,7 @@ ARM void FileSelectManager_160::vfunc_10() {
     data_0204999c.mUnk_60 = 0xD6D8;
     data_0204a088->func_ov000_02061248();
     data_0204a110.func_02019538(0x27, 1);
-    GameModeLinkListNode::func_020166ac(&this->mUnk_10->mNode);
+    GameModeLinkListNode::func_020166ac(&this->mUnk_10->mList);
     this->mUnk_10->func_ov019_020cb664();
     this->mUnk_14 = func_ov003_020b6520(&this->mUnk_18, this->mUnk_1C);
     REG_DISPCNT &= 0xFFFFE0FF;
@@ -88,7 +88,7 @@ ARM void FileSelectManager_160::vfunc_20() {
     data_0204a110.func_02019538(0x25, 1);
 
     FileSelectMain *temp_r4 = this->mUnk_10;
-    this->mUnk_18->mNode.func_020166cc(temp_r4->GetNode());
+    this->mUnk_18->mList.func_020166cc(temp_r4->GetNode());
     temp_r4->vfunc_18();
 
     this->mUnk_10->func_ov019_020cb5dc();

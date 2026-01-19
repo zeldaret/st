@@ -9,6 +9,8 @@
 #include "types.h"
 
 class GameModeManagerBase;
+class GameModeManagerBase_104;
+class GameModeManagerBase_104_0C;
 
 class GameModeManagerBase_004 : public SysObject {
 public:
@@ -78,39 +80,31 @@ public:
     }
 };
 
-class GameModeManagerBase_104_0C_04 {
+class GameModeManagerBase_104_0C : public SysObject {
 public:
-    /* 00 */ GameModeLinkList<GameModeManagerBase_104_0C_04> mUnk_00;
+    GameModeLinkList<GameModeManagerBase_104_0C> mList;
 
-    GameModeLinkList<GameModeManagerBase_104_0C_04> *GetOrigin() {
-        return (GameModeLinkList<GameModeManagerBase_104_0C_04> *) this;
+    GameModeLinkList<GameModeManagerBase_104_0C> *GetOrigin() {
+        return (GameModeLinkList<GameModeManagerBase_104_0C> *) this;
     }
 
-    GameModeManagerBase_104_0C_04();
-
-    virtual void vfunc_00();
-    virtual void vfunc_04();
-    virtual void vfunc_08(void *param1);
-    virtual void vfunc_0C(void *param1);
-};
-
-class GameModeManagerBase_104_0C {
-public:
-    /* 00 (vtable) */
-    /* 04 */ GameModeManagerBase_104_0C_04 mUnk_04;
-
-    //! TODO: actually vtable of GameModeManagerBase_104_0C_04?
     // data_ov000_020b1e48 vtable
-    // /* 00 */ virtual ~GameModeManagerBase_104_0C();
-    // /* 08 */ virtual void vfunc_08();
-    // /* 0C */ virtual void vfunc_0C();
+    /* 00 */ virtual ~GameModeManagerBase_104_0C();
+    /* 08 */ virtual void vfunc_08(void *param1);
+    /* 0C */ virtual void vfunc_0C(void *param1);
 };
 
-class GameModeManagerBase_104 {
+class GameModeManagerBase_104_00 : public SysObject {
+public:
+    GameModeManagerBase_104_00() {}
+
+    /* 04 */ GameModeLinkList<GameModeManagerBase_104> mList;
+    /* 0C */ GameModeManagerBase_104_0C mUnk_0C;
+};
+
+class GameModeManagerBase_104 : public GameModeManagerBase_104_00 {
 public:
     /* 00 (vtable) */
-    /* 04 */ GameModeLinkList<GameModeManagerBase_104> mNode;
-    /* 0C */ GameModeManagerBase_104_0C mUnk_0C;
     /* 18 */ bool mUnk_18;
     /* 19 */ bool mUnk_19;
     /* 1A */ bool mUnk_1A;
@@ -130,8 +124,6 @@ public:
     /* 10 */ virtual void vfunc_10(unk8 *param1);
     /* 14 */ virtual void vfunc_14(unk8 *param1);
     /* 18 */ virtual void vfunc_18(void);
-
-    static GameModeManagerBase_104 *Create(void *param1, s32 saveSlotIndex);
 };
 
 class GameModeManagerBase : public SysObject {

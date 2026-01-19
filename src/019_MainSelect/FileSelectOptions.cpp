@@ -106,7 +106,7 @@ ARM FileSelectOptionsManager::FileSelectOptionsManager(void *param1, s32 saveSlo
 
     FileSelectOptions *var_r5 = new(HeapIndex_1) FileSelectOptions(saveSlotIndex);
     this->mpOptions           = var_r5;
-    this->mUnk_24->mNode.func_020166cc(var_r5->GetNode());
+    this->mUnk_24->mList.func_020166cc(var_r5->GetNode());
     var_r5->vfunc_18();
 }
 
@@ -128,17 +128,17 @@ ARM void FileSelectOptionsManager::vfunc_08(Input *pButtons, TouchControl *pTouc
     switch (this->mUnk_1C) {
         case 0:
             FileSelectOptions *pFVar4 = this->mpOptions;
-            this->mUnk_24->mNode.func_020166cc(pFVar4->GetNode());
+            this->mUnk_24->mList.func_020166cc(pFVar4->GetNode());
             pFVar4->vfunc_18();
             this->mpOptions->func_ov019_020cde9c();
-            GameModeLinkListNode::func_020166ac(&this->mpMicTest->mNode);
+            GameModeLinkListNode::func_020166ac(&this->mpMicTest->mList);
             break;
         case 1:
             FileSelectMicTest *pFVar5 = this->mpMicTest;
-            this->mUnk_24->mNode.func_020166cc(pFVar5->GetNode());
+            this->mUnk_24->mList.func_020166cc(pFVar5->GetNode());
             pFVar5->vfunc_18();
             this->mpMicTest->func_ov019_020cefe4();
-            GameModeLinkListNode::func_020166ac(&this->mpOptions->mNode);
+            GameModeLinkListNode::func_020166ac(&this->mpOptions->mList);
             break;
         case 2:
             this->mpOptions->func_ov019_020ccdf4();
@@ -179,10 +179,10 @@ ARM FileSelectOptions::FileSelectOptions(s32 saveSlotIndex) :
     mUnk_1A68(&mUnk_19D0),
     mUnk_1AB8(&mUnk_19D0, 0x8C, 0x09, 0x00020007) {
     this->mUnk_1CF5 = false;
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_10A8.mUnk_04);
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_19D0.mUnk_04);
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_1388.mUnk_04);
-    this->mUnk_0C.mUnk_04.mUnk_00.func_020166cc(&this->mUnk_16AC.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_10A8.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_19D0.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_1388.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_16AC.mUnk_04);
     this->mUnk_10A8.mUnk_2A = false;
     this->mUnk_1388.mUnk_2C = true;
     this->mUnk_16AC.mUnk_2C = true;
@@ -623,12 +623,12 @@ ARM UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManag
     this->mUnk_FC2        = pSaveSub17->mUnk_02;
     this->mUnk_103E       = pSaveSub17[1].mUnk_00;
 
-    param1->mUnk_04.mUnk_00.func_020166cc(&this->mUnk_490.mUnk_04);
-    param1->mUnk_04.mUnk_00.func_020166cc(&this->mUnk_4F0.mUnk_04);
-    param1->mUnk_04.mUnk_00.func_020166cc(&this->mUnk_9C0.mUnk_04);
-    param1->mUnk_04.mUnk_00.func_020166cc(&this->mUnk_A20.mUnk_04);
-    param1->mUnk_04.mUnk_00.func_020166cc(&this->mUnk_EF0.mUnk_04);
-    param1->mUnk_04.mUnk_00.func_020166cc(&this->mUnk_F50.mUnk_04);
+    param1->mList.func_020166cc(&this->mUnk_490.mUnk_04);
+    param1->mList.func_020166cc(&this->mUnk_4F0.mUnk_04);
+    param1->mList.func_020166cc(&this->mUnk_9C0.mUnk_04);
+    param1->mList.func_020166cc(&this->mUnk_A20.mUnk_04);
+    param1->mList.func_020166cc(&this->mUnk_EF0.mUnk_04);
+    param1->mList.func_020166cc(&this->mUnk_F50.mUnk_04);
 
     this->mUnk_490.mPosOffset.x = 0;
     this->mUnk_490.mPosOffset.y = 0;

@@ -1378,25 +1378,25 @@ from:0x02061ab8 kind:arm_call to:0x02011ff4 module:main
 from:0x02061ad0 kind:arm_call to:0x02016694 module:main
 from:0x02061af0 kind:arm_call to:0x0201667c module:main
 from:0x02061b00 kind:arm_call to:0x0201667c module:main
-from:0x02061b24 kind:load to:0x020b1e60 module:overlay(0)
-from:0x02061b28 kind:load to:0x020b1e48 module:overlay(0)
+from:0x02061b24 kind:load to:0x020b1e58 add:8 module:overlay(0)
+from:0x02061b28 kind:load to:0x020b1e40 add:8 module:overlay(0)
 from:0x02061b38 kind:arm_call to:0x0201667c module:main
 from:0x02061b48 kind:arm_call to:0x0201667c module:main
-from:0x02061b6c kind:load to:0x020b1e60 module:overlay(0)
-from:0x02061b70 kind:load to:0x020b1e48 module:overlay(0)
+from:0x02061b6c kind:load to:0x020b1e58 add:8 module:overlay(0)
+from:0x02061b70 kind:load to:0x020b1e40 add:8 module:overlay(0)
 from:0x02061bcc kind:arm_call to:0x02061a8c module:overlay(0)
 from:0x02061bd4 kind:arm_call to:0x02016694 module:main
-from:0x02061be0 kind:load to:0x020b1e60 module:overlay(0)
+from:0x02061be0 kind:load to:0x020b1e58 add:8 module:overlay(0)
 from:0x02061c3c kind:arm_call to:0x02061a8c module:overlay(0)
 from:0x02061c44 kind:arm_call to:0x02016694 module:main
 from:0x02061c4c kind:arm_call to:0x02011ff4 module:main
-from:0x02061c58 kind:load to:0x020b1e60 module:overlay(0)
+from:0x02061c58 kind:load to:0x020b1e58 add:8 module:overlay(0)
 from:0x02061cb4 kind:arm_call to:0x02061a8c module:overlay(0)
 from:0x02061cbc kind:arm_call to:0x02016694 module:main
-from:0x02061cc8 kind:load to:0x020b1e60 module:overlay(0)
+from:0x02061cc8 kind:load to:0x020b1e58 add:8 module:overlay(0)
 from:0x02061d08 kind:arm_call to:0x02028c4c module:main
 from:0x02061d18 kind:arm_call to:0x02028c4c module:main
-from:0x02061d34 kind:load to:0x020b1e84 module:overlay(0)
+from:0x02061d34 kind:load to:0x020b1e7c add:8 module:overlay(0)
 from:0x02061d48 kind:arm_call to:0x020090d4 module:main
 from:0x02061d64 kind:arm_call to:0x0200911c module:main
 from:0x02061dfc kind:arm_call to:0x02008a0c module:main
