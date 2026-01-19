@@ -55,7 +55,7 @@ ARM void FileSelectManager::vfunc_24() {
     this->func_0201875c();
     this->func_02018908();
 
-    if (!this->mTouchControl.mTouch) {
+    if (!this->mTouchControl.mState.touch) {
         this->mUnk_148 = -1;
     }
 

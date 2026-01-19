@@ -13,6 +13,9 @@ src/Main/Main.cpp:
 src/Main/System/SysNew.cpp:
     .text       start:0x02011e10 end:0x0201200c
 
+src/Main/Player/TouchControl.cpp:
+    .text       start:0x02014124 end:0x020144a0
+
 src/Main/System/OverlayManager.cpp:
     .text       start:0x020147fc end:0x02014944
 
