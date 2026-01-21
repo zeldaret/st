@@ -126,7 +126,7 @@ ARM unk32 UnkSystem1_ov019_Derived1::func_ov019_020c5540(bool param1, unk16 para
 
 ARM void UnkSystem1_ov019_Derived1::func_ov019_020c5590(unk32 param1, unk32 param2, unk32 param3) {
     data_02049bd4.mUnk_04++;
-    UnkStruct_ov000_02067bc4::UnkStruct1 auStack_20(param3);
+    UnkStruct_ov000_02067bc4::UnkStruct1 auStack_20(-1, param3);
     this->mUnk_1A = data_ov000_020b504c.func_ov000_02067cf8(param1, this->mUnk_10, &auStack_20);
     data_ov000_020b504c.func_ov000_02067bc4(this->mUnk_10)->func_02021bec(1);
     data_ov000_020b504c.func_ov000_02067bc4(this->mUnk_10)->func_02021c08();

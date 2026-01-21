@@ -14,6 +14,15 @@ src/000_Second/Game/GameModeManagerBase_104.cpp:
     .text       start:0x02061ae4 end:0x02061ce0
     .data       start:0x020b1e58 end:0x020b1e7c
 
+src/000_Second/UnkSystem1_Base.cpp:
+    .text       start:0x020667b0 end:0x02067244
+    .data       start:0x020b2070 end:0x020b209c
+
+src/000_Second/UnkSystem1_Derived1.cpp:
+    complete
+    .text       start:0x02067244 end:0x020674a8
+    .data       start:0x020b209c end:0x020b20d0
+
 src/000_Second/Actor/Actor.cpp:
     .text       start:0x02098388 end:0x02098654
     .data       start:0x020b30e4 end:0x020b3148

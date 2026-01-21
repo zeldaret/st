@@ -2,6 +2,7 @@
 
 #include "Game/GameModeManager.hpp"
 #include "Item/Item.hpp"
+#include "Message/BMG.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_02049b18.hpp"
 #include "global.h"
@@ -34,12 +35,20 @@ public:
         unk8 mUnk_0E;
         unk8 mUnk_0F;
 
-        UnkStruct1(unk32 param1) {
+        UnkStruct1(unk32 param1, unk32 param2) {
             mUnk_00 = 0;
-            mUnk_08 = -1;
+            mUnk_08 = param1;
             mUnk_0C = 0;
             mUnk_0D = 0;
             mUnk_04 = 0;
+        }
+
+        UnkStruct1(unk32 param1) {
+            mUnk_00 = 0;
+            mUnk_04 = param1;
+            mUnk_08 = param1;
+            mUnk_0C = 0;
+            mUnk_0D = 0;
         }
 
         UnkStruct1() {
@@ -71,9 +80,9 @@ typedef void (*UnkCallback2)();
 
 class UnkStruct_ov000_020b504c_Sub3 : public SysObject {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
+    /* 00 */ SectionINF1 *mUnk_00;
+    /* 04 */ BMGHeader *mUnk_04;
+    /* 08 */ BMGHeader *mUnk_08;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */
@@ -118,6 +127,8 @@ public:
     void func_ov000_0206807c(unk32 param1, void *param2);
     void func_ov000_0206807c(void *param1, void *param2);
     void func_ov000_0206807c(void *param1, unk32 param2);
+
+    unk32 func_ov000_02067f88(unk32 param1, unk32 param2);
 
     void func_ov001_020be668(void);
     void func_ov001_020be6f4(void);
