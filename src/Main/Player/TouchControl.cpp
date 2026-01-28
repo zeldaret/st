@@ -162,7 +162,7 @@ ARM void TouchControl::func_02014414(u16 speedIncrease, bool shouldIncrease) {
     }
 
     if (TouchControl::func_020143f0()) {
-        Fill16(0, (u16 *) &touchState, sizeof(TouchStateFlags));
+        MI_CpuFill16(0, (u16 *) &touchState, sizeof(TouchStateFlags));
     } else {
         TP_GetTouchStateFlags(&touchState);
     }

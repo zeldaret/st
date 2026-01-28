@@ -68,7 +68,7 @@ public:
     /* 200 */
 
     UnkStruct_0204a110_Sub3_00() {
-        Fill16(0, (u16 *) this->mUnk_000, sizeof(this->mUnk_000));
+        MI_CpuFill16(0, (u16 *) this->mUnk_000, sizeof(this->mUnk_000));
     }
 };
 

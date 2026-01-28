@@ -176,7 +176,7 @@ ARM void UnkSubStruct9::func_ov019_020cbc0c() {
 
     SaveSlot *pSlot    = gSaveManager.GetSaveSlot(this->mSaveSlotIndex);
     auStack_c0.mUnk_06 = 0;
-    Fill32(0, &auStack_c0, sizeof(auStack_c0));
+    MI_CpuFill32(0, &auStack_c0, sizeof(auStack_c0));
     auStack_c0.mUnk_05 = -1;
     auStack_c0.mUnk_06 |= 0x04;
 

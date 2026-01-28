@@ -34,7 +34,7 @@ public:
     /* 80 */
 
     SaveAdventureFlags() {
-        Fill32(0, this, sizeof(SaveAdventureFlags));
+        MI_CpuFill32(0, this, sizeof(SaveAdventureFlags));
     };
 };
 
@@ -49,7 +49,7 @@ public:
     /* 18 */
 
     SaveInventory() {
-        Fill32(0, this->mUnk_04, sizeof(mUnk_04));
+        MI_CpuFill32(0, this->mUnk_04, sizeof(mUnk_04));
         this->mUnk_12 = 0;
     };
 };
@@ -87,7 +87,7 @@ class SaveUnknown158 {
 public:
     /* 00 */ unk8 mUnk_00[0x0C];
     SaveUnknown158() {
-        Fill32(0, this, sizeof(SaveUnknown158));
+        MI_CpuFill32(0, this, sizeof(SaveUnknown158));
     };
 };
 
@@ -95,7 +95,7 @@ class SaveUnknown164 {
 public:
     /* 00 */ unk8 mUnk_00[0x20];
     SaveUnknown164() {
-        Fill32(0, this, sizeof(SaveUnknown164));
+        MI_CpuFill32(0, this, sizeof(SaveUnknown164));
     };
 };
 
@@ -125,7 +125,7 @@ public:
     /* C84 */ unk32 mUnk_00_SaveInfoSub10[4];
 
     Sub2Test2() {
-        Fill32(0, this->mUnk_00_SaveInfoSub10, 16);
+        MI_CpuFill32(0, this->mUnk_00_SaveInfoSub10, 16);
     }
 };
 
@@ -171,7 +171,7 @@ public:
         mUnk_D18 = 0;
         mUnk_D1C = 0;
         mSongs   = 0;
-        Fill32(0, this->mUnk_48_SaveUnknownD24, sizeof(this->mUnk_48_SaveUnknownD24));
+        MI_CpuFill32(0, this->mUnk_48_SaveUnknownD24, sizeof(this->mUnk_48_SaveUnknownD24));
         this->mUnk_50_SaveUnknownD24 = 0;
     }
 };

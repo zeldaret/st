@@ -22,34 +22,35 @@
 
 extern "C" {
 unk32 func_02014fe0();
-unk16 func_02026738();
-void func_02023548();
+unk16 OS_GetLockID();
+void GX_DispOn();
 void func_020327c8(void *param1, unk32 param2);
-void func_02030d48(u16 param1);
-void func_02030d58(u16 param1);
-unk32 func_020313b4(unk32 param1);
-unk32 func_020312b8(void *param1, void *param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6, unk32 param7,
-                    unk32 param8, unk32 param9);
-unk32 func_02030cfc();
+void CARD_LockBackup(u16 param1);
+void CARD_UnlockBackup(u16 param1);
+unk32 CARD_IdentifyBackup(unk32 param1);
+unk32 CARD_ReadWriteBackupAsync(void *param1, void *param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6,
+                                unk32 param7, unk32 param8, unk32 param9);
+unk32 CARD_GetResultCode();
 void func_0201bdd0();
-void func_020261f0(unk32 param1, void *param2);
-void func_02002354();
-void func_02004a00(unk32 param1);
+void OS_SetIrqFunction(unk32 param1, void *param2);
+void NNS_SndInit();
+void NNS_SndArcInit(void *param1, const char *soundDataPath, unk32 param2, unk32 param3);
+void NNS_SndArcPlayerSetup(unk32 param1);
 void func_02004d2c(unk32 param1, unk32 param2);
 void func_02001778(unk32 param1);
 void func_02003f98(unk32 param1, unk32 param2);
-void func_02002184(unk32 param1);
+void NNS_SndHeapSaveState(unk32 param1);
 void func_0202ee0c();
 void func_0202f910(unk32 param1);
 void func_0202f958(unk32 param1);
 void func_02005030(void *param1);
-void func_02002c80(void *param1);
-void func_02002b08(void *param1, unk32 param2);
-void func_0202ff34();
+void NNS_SndHandleInit(void *param1);
+void NNS_SndPlayerStopSeq(void *param1, unk32 param2);
+void RTC_Init();
 }
 
 ARM void func_ov018_020c4e8c(void) {
-    func_0202ff34();
+    RTC_Init();
     gRandom.Init();
     data_0204999c.func_ov018_020c4980();
     data_02049984.func_ov018_020c4840();
@@ -61,7 +62,7 @@ THUMB UnkStruct_0204a060::UnkStruct_0204a060() {
 
 ARM UnkStruct_ov000_020b4eec::UnkStruct_ov000_020b4eec() {
     this->mUnk_00 = 0;
-    Fill32(0, this->mUnk_04, sizeof(this->mUnk_04));
+    MI_CpuFill32(0, this->mUnk_04, sizeof(this->mUnk_04));
 }
 
 ARM UnkStruct_ov000_020b4f84::UnkStruct_ov000_020b4f84() {
@@ -81,12 +82,12 @@ ARM UnkStruct_ov000_020b4f84_00::~UnkStruct_ov000_020b4f84_00() {}
 ARM UnkStruct_ov000_020b504c::UnkStruct_ov000_020b504c() :
     mUnk_008(NULL),
     mUnk_030(1) {
-    Fill32(0, this->mUnk_05C, sizeof(this->mUnk_05C));
+    MI_CpuFill32(0, this->mUnk_05C, sizeof(this->mUnk_05C));
 
     this->mUnk_06F = 0;
     this->mUnk_000 = new(HeapIndex_0) UnkStruct_ov000_020b504c_Sub3(0x21);
 
-    Fill32(0, this->mUnk_00C, sizeof(this->mUnk_00C));
+    MI_CpuFill32(0, this->mUnk_00C, sizeof(this->mUnk_00C));
 
     this->mUnk_000->func_ov000_020676f8("regular", 0);
 
@@ -128,15 +129,15 @@ ARM SaveManager::SaveManager() {
 
     func_020327c8(this->mUnk_004, 0x1021);
 
-    this->mUnk_204 = func_02026738();
+    this->mUnk_204 = OS_GetLockID();
     int uVar8      = 1;
-    func_02030d48(this->mUnk_204);
+    CARD_LockBackup(this->mUnk_204);
 
-    if (func_020313b4(0x1402) != 0) {
+    if (CARD_IdentifyBackup(0x1402) != 0) {
         stack_struct stack[MAX_SAVE_SLOTS];
         int cVar1;
 
-        if (func_020312b8((void *) 0xF4E00, &stack[0], 0x40, 0, 0, 0, 6, 1, 0) == 1) {
+        if (CARD_ReadWriteBackupAsync((void *) 0xF4E00, &stack[0], 0x40, 0, 0, 0, 6, 1, 0) == 1) {
             if (!stack[0].UnkCheck() && !stack[1].UnkCheck()) {
                 cVar1 = 1;
             } else {
@@ -150,22 +151,22 @@ ARM SaveManager::SaveManager() {
                     stack[0].mUnk_00 = 0x0C1D2E3F;
                     stack[0].mUnk_1C = 0xF4E5D6C7;
                     stack[0].mUnk_04 = 0x1A;
-                    Fill16(0, (u16 *) stack[0].mUnk_06, 0x16);
+                    MI_CpuFill16(0, (u16 *) stack[0].mUnk_06, 0x16);
 
                     stack[1].mUnk_00 = 0x0C1D2E3F;
                     stack[1].mUnk_1C = 0xF4E5D6C7;
                     stack[1].mUnk_04 = 0x1A;
-                    Fill16(0, (u16 *) stack[1].mUnk_06, 0x16);
+                    MI_CpuFill16(0, (u16 *) stack[1].mUnk_06, 0x16);
 
                     uVar8 = 2;
-                    func_020312b8(stack, (void *) 0xF4E00, 0x40, 0, 0, 0, 7, 10, 2);
+                    CARD_ReadWriteBackupAsync(stack, (void *) 0xF4E00, 0x40, 0, 0, 0, 7, 10, 2);
                 }
             }
         }
     }
 
-    this->mUnk_20C = func_02030cfc();
-    func_02030d58(this->mUnk_204);
+    this->mUnk_20C = CARD_GetResultCode();
+    CARD_UnlockBackup(this->mUnk_204);
 
     if (this->mUnk_20C != 0) {
         this->mUnk_214 = uVar8;
@@ -193,18 +194,18 @@ ARM UnkStruct_0204a110::UnkStruct_0204a110() :
 ARM void UnkStruct_0204a110::func_ov018_020c5300() {
     func_02018c90(2);
     this->mUnk_010.func_0201c890(0x0004800, 0x00016800, 1, 1, 0);
-    func_02023548();
+    GX_DispOn();
     REG_DISPCNT_SUB |= 0x00010000;
 }
 
 ARM UnkStruct_0204e640::UnkStruct_0204e640() {
     this->mUnk_00 = 0;
     this->mUnk_04 = 0;
-    func_020261f0(2, func_0201bdd0);
+    OS_SetIrqFunction(2, func_0201bdd0);
 }
 
 ARM UnkStruct_0204af1c::UnkStruct_0204af1c() {
-    Fill16(0, (u16 *) this->mUnk_2920, sizeof(this->mUnk_2920));
+    MI_CpuFill16(0, (u16 *) this->mUnk_2920, sizeof(this->mUnk_2920));
 
     for (u32 i = 0; i < ARRAY_LEN(this->mUnk_0000); i++) {
         this->mUnk_0000[i].func_0201af10(i);
@@ -287,7 +288,7 @@ ARM UnkStruct_0204a110_Sub8::UnkStruct_0204a110_Sub8() {
 }
 
 ARM UnkStruct_02049f04::UnkStruct_02049f04() {
-    Fill32(0, this->mUnk_00, sizeof(this->mUnk_00));
+    MI_CpuFill32(0, this->mUnk_00, sizeof(this->mUnk_00));
     this->mUnk_80 = 0;
 }
 
@@ -314,22 +315,22 @@ ARM UnkStruct_ov000_020b50c0::UnkStruct_ov000_020b50c0() {
         this->mUnk_A8[i] = 0;
     }
 
-    func_02002354();
-    this->func_0200381c("SoundData/final_sound_data.sdat", data_0204999c.mUnk_24[0], 0);
+    NNS_SndInit();
+    NNS_SndArcInit(this, "SoundData/final_sound_data.sdat", data_0204999c.mUnk_24[0], 0);
 }
 
 ARM UnkStruct_ov018_020c5ac0 *UnkStruct_ov000_020b50c0::func_ov018_020c5718() {
     unk32 uVar1 = data_0204999c.mUnk_24[0];
 
     data_ov000_020b51b8.func_ov018_020c5940();
-    func_02004a00(uVar1);
+    NNS_SndArcPlayerSetup(uVar1);
     func_02004d2c(0x0C, uVar1);
     func_02001778(3);
     this->mUnk_CC = this->func_ov000_0206a5d8(0x800);
     this->mUnk_D0 = this->func_ov000_0206a5d8(0x400);
     func_02003f98(1, uVar1);
     this->mUnk_A8[1] = 1;
-    func_02002184(uVar1);
+    NNS_SndHeapSaveState(uVar1);
     data_ov000_020b5300.func_ov018_020c583c(this->mUnk_D0);
     data_ov000_020b5340.func_ov018_020c57fc();
     data_ov000_020b5340.func_ov000_0206ffc0();
@@ -398,7 +399,7 @@ ARM UnkStruct_ov000_020b51b8::UnkStruct_ov000_020b51b8() {
     this->mUnk_56 = 0x7F;
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_08); i++) {
-        func_02002c80(&this->mUnk_08[i]);
+        NNS_SndHandleInit(&this->mUnk_08[i]);
     }
 
     func_02005030(&this->mUnk_14);
@@ -428,7 +429,7 @@ ARM UnkStruct_ov000_020b5214::UnkStruct_ov000_020b5214() {
     this->mUnk_95 = 0;
     this->mUnk_98 = 0;
 
-    func_02002c80(this);
+    NNS_SndHandleInit(this);
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_70); i++) {
         this->mUnk_70[i].mUnk_00 = 0;
@@ -449,13 +450,13 @@ ARM UnkStruct_ov000_020b52e8::UnkStruct_ov000_020b52e8() :
     mUnk_10(0),
     mUnk_12(0),
     mUnk_13(0) {
-    func_02002c80(this);
+    NNS_SndHandleInit(this);
     this->mUnk_04 = 0;
     this->mUnk_08 = 0;
 }
 
 ARM UnkStruct_ov000_020b52e8::~UnkStruct_ov000_020b52e8() {
-    func_02002b08(this, 1);
+    NNS_SndPlayerStopSeq(this, 1);
 }
 
 ARM UnkStruct_ov018_020c5ac0::UnkStruct_ov018_020c5ac0() {

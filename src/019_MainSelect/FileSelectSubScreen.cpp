@@ -8,7 +8,7 @@ extern "C" {
 void func_0200a7b0(unk32 param1, const char *param2, const char *param3, const char *param4, unk32 param5, unk32 param6,
                    unk32 param7, unk32 param8);
 void func_020249d4(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-void func_020275e8();
+void DC_FlushAll();
 };
 
 FileSelectOptionsManager *gpFSOptionsManager = NULL;
@@ -42,7 +42,7 @@ ARM FileSelectSubScreen::FileSelectSubScreen() :
     this->mUnk_0EDC.func_02015460("TPD", data_ov019_020e00cc, sizeof(data_ov019_020e00cc));
     this->mUnk_0EE8.func_02015460("TPE", data_ov019_021094cc, sizeof(data_ov019_021094cc));
 
-    func_020275e8();
+    DC_FlushAll();
 
     this->mUnk_0EF4.func_02017520("TPA:Tape_a", "TPA:Tape_a", NULL);
     this->mUnk_0F30.func_02017520("TPB:Tape_b", "TPB:Tape_b", NULL);
@@ -58,7 +58,7 @@ ARM FileSelectSubScreen::FileSelectSubScreen() :
         UnkStruct2 auStack_28("Screen/Bg/Cover.bin", 1);
         auStack_28.func_020154ec("CVR");
 
-        func_020275e8();
+        DC_FlushAll();
 
         {
             // UnkSystem5 uStack_64("CVR:Cover", "CVR:Cover", "CVR:Tape", 4, 6, 1);

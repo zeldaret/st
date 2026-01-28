@@ -775,7 +775,7 @@ ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce4dc() {
 
     u8 auStack_28[8];
     auStack_28[6] = 0;
-    Fill32(0, auStack_28, 8);
+    MI_CpuFill32(0, auStack_28, 8);
     auStack_28[7] = 0xFF;
     auStack_28[6] |= 4;
     data_0204af1c.func_0201aa44(&this->mUnk_008, &this->mUnk_004, 2, auStack_28);

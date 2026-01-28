@@ -7,11 +7,11 @@
 
 extern "C" {
 unk32 func_020328c8(void *, void *, size_t);
-unk32 func_02030cfc();
-void func_02030d48(u16 param1);
-void func_02030d58(u16 param1);
-unk32 func_020312b8(void *src, uintptr_t dest, unk32 param3, unk32 param4, unk32 param5, unk32 param6, unk32 param7,
-                    unk32 param8, unk32 param9);
+unk32 CARD_GetResultCode();
+void CARD_LockBackup(u16 param1);
+void CARD_UnlockBackup(u16 param1);
+unk32 CARD_ReadWriteBackupAsync(void *src, uintptr_t dest, unk32 param3, unk32 param4, unk32 param5, unk32 param6,
+                                unk32 param7, unk32 param8, unk32 param9);
 
 bool func_ov000_020a0a90(size_t param1, void *param2, size_t param3);
 void func_ov000_020a0b58();
@@ -27,11 +27,11 @@ const unk32 data_ov019_020d1be8[] = {
 };
 
 ARM void SaveManager::func_ov019_020d086c(u16 param1) {
-    func_02030d48(gSaveManager.mUnk_204);
+    CARD_LockBackup(gSaveManager.mUnk_204);
 
     STATIC_PTMFCALLBACK(PTMF<SaveFile>, gSaveManager.mUnk_23C, gSaveManager.mpSaveFile);
-    gSaveManager.mUnk_20C = func_02030cfc();
-    func_02030d58(gSaveManager.mUnk_204);
+    gSaveManager.mUnk_20C = CARD_GetResultCode();
+    CARD_UnlockBackup(gSaveManager.mUnk_204);
 
     if (gSaveManager.mUnk_20C != 0) {
         gSaveManager.mUnk_214 = gSaveManager.mUnk_210;
@@ -80,10 +80,10 @@ ARM void SaveManager::func_ov019_020d0a04(u16 saveSlotIndex) {
 ARM void SaveManager::func_ov019_020d0a2c(u16 saveSlotIndex) {
     data_02049bd4.mUnk_04++;
     gSaveManager.mpSaveFile->mSaveSlotIndex = saveSlotIndex;
-    func_02030d48(gSaveManager.mUnk_204);
+    CARD_LockBackup(gSaveManager.mUnk_204);
     gSaveManager.mUnk_210 = 1;
     gSaveManager.mpSaveFile->func_ov019_020d1634();
-    gSaveManager.mUnk_20C = func_02030cfc();
+    gSaveManager.mUnk_20C = CARD_GetResultCode();
 
     if (gSaveManager.mUnk_20C != 0) {
         gSaveManager.mUnk_214 = gSaveManager.mUnk_210;
@@ -92,13 +92,13 @@ ARM void SaveManager::func_ov019_020d0a2c(u16 saveSlotIndex) {
 
     gSaveManager.mUnk_210 = 2;
     gSaveManager.mpSaveFile->func_ov019_020d16d0();
-    gSaveManager.mUnk_20C = func_02030cfc();
+    gSaveManager.mUnk_20C = CARD_GetResultCode();
 
     if (gSaveManager.mUnk_20C != 0) {
         gSaveManager.mUnk_214 = gSaveManager.mUnk_210;
     }
 
-    func_02030d58(gSaveManager.mUnk_204);
+    CARD_UnlockBackup(gSaveManager.mUnk_204);
     gSaveManager.mUnk_210 = 0;
     data_02049bd4.mUnk_04--;
 }
@@ -192,14 +192,14 @@ ARM void SaveFile::func_ov019_020d0d50() {
     stack[0].mUnk_00 = 0x0C1D2E3F;
     stack[0].mUnk_1C = 0xF4E5D6C7;
     stack[0].mUnk_04 = 0x1A;
-    Fill16(0, &stack[0].mUnk_06, 0x16);
+    MI_CpuFill16(0, &stack[0].mUnk_06, 0x16);
 
     stack[1].mUnk_00 = 0x0C1D2E3F;
     stack[1].mUnk_1C = 0xF4E5D6C7;
     stack[1].mUnk_04 = 0x1A;
-    Fill16(0, &stack[1].mUnk_06, 0x16);
+    MI_CpuFill16(0, &stack[1].mUnk_06, 0x16);
 
-    func_020312b8(stack, SAVE_DATA_SIZE * 2, sizeof(stack_struct) * 2, 0, 0, 0, 7, 10, 2);
+    CARD_ReadWriteBackupAsync(stack, SAVE_DATA_SIZE * 2, sizeof(stack_struct) * 2, 0, 0, 0, 7, 10, 2);
 }
 
 // https://decomp.me/scratch/gJJbb
@@ -242,7 +242,7 @@ ARM void SaveFile::func_ov019_020d13b8() {
 
 ARM void SaveSub7::func_ov019_020d1400() {
     this->mUnk_00[0].mUnk_7E = func_020328c8(&gSaveManager.mUnk_004, &this->mUnk_00, sizeof(SaveSub17) - sizeof(u16));
-    Copy256(&this->mUnk_00[0], &this->mUnk_00[1], sizeof(SaveSub17));
+    _MI_CpuCopy(&this->mUnk_00[0], &this->mUnk_00[1], sizeof(SaveSub17));
 }
 
 // non-matching
@@ -265,13 +265,13 @@ ARM void SaveFile::func_ov019_020d1434() {
 }
 ARM void SaveSub5::func_ov019_020d14c0() {
     this->mUnk_000[0].mUnk_3FE = func_020328c8(&gSaveManager.mUnk_004, &this->mUnk_000, offsetof(SaveSub15, mUnk_3FE));
-    Copy256(&this->mUnk_000[0], &this->mUnk_000[1], sizeof(SaveSub15));
+    _MI_CpuCopy(&this->mUnk_000[0], &this->mUnk_000[1], sizeof(SaveSub15));
 }
 
 ARM void SaveInfo::func_ov019_020d14fc() {
     this->mSaveInfoData[0].mUnk_DFE =
         func_020328c8(&gSaveManager.mUnk_004, &this->mSaveInfoData[0].mUnk_000, offsetof(SaveInfoData, mUnk_DFE));
-    Copy256(&this->mSaveInfoData[0], &this->mSaveInfoData[1], sizeof(SaveInfoData));
+    _MI_CpuCopy(&this->mSaveInfoData[0], &this->mSaveInfoData[1], sizeof(SaveInfoData));
 }
 
 //! TODO: weird sizeof
@@ -296,13 +296,13 @@ ARM void SaveFile::func_ov019_020d1538() {
 
 ARM void SaveSub6::func_ov019_020d15cc() {
     this->mUnk_00[0].mUnk_7E = func_020328c8(&gSaveManager.mUnk_004, &this->mUnk_00, offsetof(SaveSub16, mUnk_7E));
-    Copy256(&this->mUnk_00[0], &this->mUnk_00[1], sizeof(SaveSub16));
+    _MI_CpuCopy(&this->mUnk_00[0], &this->mUnk_00[1], sizeof(SaveSub16));
 }
 
 ARM void SaveTreasures::func_ov019_020d1600() {
     this->mTreasureData[0].mUnk_7E =
         func_020328c8(&gSaveManager.mUnk_004, &this->mTreasureData, offsetof(TreasureData, mUnk_7E));
-    Copy256(&this->mTreasureData[0], &this->mTreasureData[1], sizeof(TreasureData));
+    _MI_CpuCopy(&this->mTreasureData[0], &this->mTreasureData[1], sizeof(TreasureData));
 }
 
 // https://decomp.me/scratch/ibnQS
@@ -314,7 +314,7 @@ ARM void SaveFile::func_ov019_020d1634() {
         // if (pSlot->mSaveInfo.mSaveInfoData[0].mUnk_C84.mUnk_00[(u32) i >> 5] & (1 << (i & 0x1F))) {
         //     u32 dest = (i << 12) + sizeof(SaveSlot);
         //     u8 *src  = &this->mUnk_04E0C[i << 12];
-        //     func_020312b8(src, offset + dest, 0x1000, 0, 0, 0, 6, 1, 0);
+        //     CARD_ReadWriteBackupAsync(src, offset + dest, 0x1000, 0, 0, 0, 6, 1, 0);
         // }
     }
 }
@@ -325,15 +325,15 @@ ARM void SaveFile::func_ov019_020d16d0() {
     SaveSlot *pSub2   = &this->mSlots[this->mSaveSlotIndex];
     SaveSlot *pSub3   = &this->mSlots[saveSlotIndex];
 
-    Copy256(&pSub2->mSaveInfo, &pSub3->mSaveInfo, sizeof(SaveInfo));
-    Copy256(&pSub2->mTreasures, &pSub3->mTreasures, sizeof(SaveTreasures));
-    Copy256(&pSub2->mUnk_2600, &pSub3->mUnk_2600, sizeof(SaveSub7));
+    _MI_CpuCopy(&pSub2->mSaveInfo, &pSub3->mSaveInfo, sizeof(SaveInfo));
+    _MI_CpuCopy(&pSub2->mTreasures, &pSub3->mTreasures, sizeof(SaveTreasures));
+    _MI_CpuCopy(&pSub2->mUnk_2600, &pSub3->mUnk_2600, sizeof(SaveSub7));
 
     pSub3->mUnk_1D00.func_ov000_020a12a0();
-    Copy256(&pSub2->mUnk_1D00, &pSub3->mUnk_1D00, sizeof(SaveSub5));
+    _MI_CpuCopy(&pSub2->mUnk_1D00, &pSub3->mUnk_1D00, sizeof(SaveSub5));
 
-    Fill256(0, &pSub3->mUnk_2500, sizeof(SaveSub6));
-    Copy256(&pSub2->mUnk_2500, &pSub3->mUnk_2500, sizeof(SaveSub6));
+    _MI_CpuFill(0, &pSub3->mUnk_2500, sizeof(SaveSub6));
+    _MI_CpuCopy(&pSub2->mUnk_2500, &pSub3->mUnk_2500, sizeof(SaveSub6));
 
     this->mSaveSlotIndex = saveSlotIndex;
     this->func_ov019_020d1538();
@@ -362,7 +362,7 @@ ARM void SaveFile::func_ov019_020d1808(unk32 param1) {
     SaveSlot *pSub2 = &this->mSlots[param1];
     stack_struct2 stack1[5];
 
-    if (func_020312b8(pSub2, param1 * SAVE_DATA_SIZE, sizeof(SaveSlot), 0, 0, 0, 6, 1, 0) == 0) {
+    if (CARD_ReadWriteBackupAsync(pSub2, param1 * SAVE_DATA_SIZE, sizeof(SaveSlot), 0, 0, 0, 6, 1, 0) == 0) {
         return;
     }
 
@@ -398,7 +398,7 @@ ARM void SaveFile::func_ov019_020d1808(unk32 param1) {
 
         if (stack1[i].mUnk_00 != 0) {
             if (stack1[i].mUnk_04 == 0 || stack1[i].mUnk_00 != stack1[i * 2].mUnk_04) {
-                Copy256(puVar5, puVar5 + data_ov019_020d1bd4[i], data_ov019_020d1bd4[i]);
+                _MI_CpuCopy(puVar5, puVar5 + data_ov019_020d1bd4[i], data_ov019_020d1bd4[i]);
                 this->mUnk_04E00[param1][1].mUnk_00 |= 1 << (i & 0xFF);
             }
         } else {
@@ -407,7 +407,7 @@ ARM void SaveFile::func_ov019_020d1808(unk32 param1) {
             if (stack1[i * 2].mUnk_04 == 0) {
                 this->mUnk_04E00[param1][1].mUnk_00 |= 1 << (i & 0xFF);
             } else {
-                Copy256(puVar5 + data_ov019_020d1bd4[i], puVar5, data_ov019_020d1bd4[i]);
+                _MI_CpuCopy(puVar5 + data_ov019_020d1bd4[i], puVar5, data_ov019_020d1bd4[i]);
             }
         }
     }
@@ -418,10 +418,10 @@ ARM void SaveFile::func_ov019_020d1aac(unk32 param1, const wchar_t *param2) {
 
     awStack_28[8] = L'\0';
     wcsncpy(awStack_28, param2, LENGTH_PLAYER_NAME);
-    Copy16((u16 *) awStack_28, (u16 *) this->mSlots[param1].mSaveInfo.mSaveInfoData[0].mPlayerName,
-           sizeof(wchar_t) * (LENGTH_PLAYER_NAME + 1));
-    Copy16((u16 *) awStack_28, (u16 *) this->mSlots[param1].mUnk_1D00.mUnk_000[0].mUnk_3C4,
-           sizeof(wchar_t) * (LENGTH_PLAYER_NAME + 1));
+    MI_CpuCopy16((u16 *) awStack_28, (u16 *) this->mSlots[param1].mSaveInfo.mSaveInfoData[0].mPlayerName,
+                 sizeof(wchar_t) * (LENGTH_PLAYER_NAME + 1));
+    MI_CpuCopy16((u16 *) awStack_28, (u16 *) this->mSlots[param1].mUnk_1D00.mUnk_000[0].mUnk_3C4,
+                 sizeof(wchar_t) * (LENGTH_PLAYER_NAME + 1));
 }
 
 // https://decomp.me/scratch/34KCr
@@ -432,7 +432,7 @@ ARM void SaveFile::func_ov019_020d1b14(unk32 param1) {
     pSVar3->mSaveInfo.func_ov000_020a1028();
     pSVar3->mSaveInfo.func_ov019_020d14fc();
 
-    Fill256(0, &pSVar3->mTreasures, sizeof(SaveTreasures));
+    _MI_CpuFill(0, &pSVar3->mTreasures, sizeof(SaveTreasures));
     for (int i = 0; i < TreasureType_Max; i++) {
         pSVar3->mTreasures.mTreasureData[0].mUnk_3C[i] = TreasureType_None;
     }
@@ -441,7 +441,7 @@ ARM void SaveFile::func_ov019_020d1b14(unk32 param1) {
     this->mSlots[param1].mUnk_1D00.func_ov000_020a12a0();
     this->mSlots[param1].mUnk_1D00.func_ov019_020d14c0();
 
-    Fill256(0, &this->mSlots[param1].mUnk_2500, 0x80);
+    _MI_CpuFill(0, &this->mSlots[param1].mUnk_2500, 0x80);
     this->mSlots[param1].mUnk_2500.func_ov019_020d15cc();
 
     this->mSlots[param1].mUnk_2600.func_ov000_020a10f4();

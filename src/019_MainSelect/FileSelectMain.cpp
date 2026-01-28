@@ -1574,7 +1574,7 @@ ARM void FileSelectMain::func_ov019_020cb324() {
     }
 
     auStack_24.mUnk_06 = 0;
-    Fill32(0, &auStack_24, sizeof(auStack_24));
+    MI_CpuFill32(0, &auStack_24, sizeof(auStack_24));
     auStack_24.mUnk_05 = 0xFF;
     auStack_24.mUnk_06 |= 0x04;
 
