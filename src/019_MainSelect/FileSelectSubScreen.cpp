@@ -178,8 +178,8 @@ ARM void FileSelect_UnkClass7::vfunc_00() {
         if (this->mUnk_0004[i].func_ov000_02060af8() != 0) {
             this->mUnk_0004[i].func_ov000_02060b64();
 
-            u32 one = gRandom.Next(0, 256);
-            u32 two = gRandom.Next(0, 192);
+            u32 one = gRandom.Next32(0, 256);
+            u32 two = gRandom.Next32(0, 192);
 
             Sub5 *pSub5 = &this->mUnk_0E14[i];
             pSub5->one  = one;

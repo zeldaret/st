@@ -109,9 +109,9 @@ ARM void ActorRupee::func_ov031_020e9068() {
 ARM void ActorRupee::func_ov031_020e9108() {
     Vec3p vel;
 
-    vel.x = gRandom.Next(0, 0x19B);
-    vel.y = gRandom.Next(0, 0x19A);
-    vel.z = gRandom.Next(0, 0x19B);
+    vel.x = gRandom.Next32(0, 0x19B);
+    vel.y = gRandom.Next32(0, 0x19A);
+    vel.z = gRandom.Next32(0, 0x19B);
 
     this->mVel.x = vel.x - 0xCD;
     this->mVel.y = vel.y + 0x9A + 0x100;

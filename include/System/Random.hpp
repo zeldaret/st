@@ -25,17 +25,17 @@ struct Random {
     }
 
     /**
-     * @brief Generates a random number
+     * @brief Generates a random number as a u16
      */
-    u32 Next() {
+    u16 Next16() {
         this->UpdateRandomValue();
         return this->GetRandomValue() >> 48;
     }
 
     /**
-     * @brief Generates a random number from 0 (inclusive) to `max` (exclusive)
+     * @brief Generates a random number from 0 (inclusive) to `max` (exclusive) as a u32
      */
-    u32 Next(u64 min, u64 max) {
+    u32 Next32(u64 min, u64 max) {
         this->UpdateRandomValue();
         return (((this->GetRandomValue() >> 32) * (max - min)) >> 32) + min;
     }
