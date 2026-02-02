@@ -11,7 +11,7 @@ struct Random {
     /* 18 */
 
     /**
-     * @brief Get the seed's value
+     * @brief Gets the seed's value
      */
     u64 GetRandomValue() {
         return *(u64 *) this->mRandomValue;
@@ -25,7 +25,15 @@ struct Random {
     }
 
     /**
-     * @brief Generate a random number from 0 (inclusive) to `max` (exclusive)
+     * @brief Generates a random number
+     */
+    u32 Next() {
+        this->UpdateRandomValue();
+        return this->GetRandomValue() >> 48;
+    }
+
+    /**
+     * @brief Generates a random number from 0 (inclusive) to `max` (exclusive)
      */
     u32 Next(u64 min, u64 max) {
         this->UpdateRandomValue();
