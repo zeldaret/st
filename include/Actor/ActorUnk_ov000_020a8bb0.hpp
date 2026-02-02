@@ -114,9 +114,6 @@ public:
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
     /* 2c */ virtual void vfunc_2c(unk32 param1) override;
-    /* 40 */ virtual void vfunc_40() override;
-    /* 44 */ virtual void vfunc_44() override;
-    /* 48 */ virtual void vfunc_48() override;
     /* 4c */ virtual ~ActorUnk_ov000_020a8bb0();
     /* 54 */ virtual void vfunc_54(unk32 param1);
     /* 54 */ virtual void vfunc_58(unk32 param1) = 0;
