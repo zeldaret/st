@@ -164,18 +164,18 @@ ARM FileSelectOptions::FileSelectOptions(s32 saveSlotIndex) :
     mUnk_0020(false),
     mUnk_0024(&this->mUnk_0C, saveSlotIndex),
 
-    mUnk_10A8(0xFFFFFFFF, 0x8C, 0x01, 0x01, 0x8C, 0x01),
+    mUnk_10A8(BTN_ID_NONE, 0x8C, 0x01, 0x01, 0x8C, 0x01),
     mUnk_1108(&mUnk_10A8, 0x8C, 0x00, 0x00020010),
 
-    mUnk_1388(0x4B, 0x8C, 0x08, 0x14, 0x8C, 0x01),
+    mUnk_1388(BTN_ID_FILE_SELECT_MIC_TEST, 0x8C, 0x08, 0x14, 0x8C, 0x01),
     mUnk_1420(&mUnk_1388),
     mUnk_1470(&mUnk_1388, 0x8C, 0x07, 0x0002000B),
 
-    mUnk_16AC(0x4A, 0x8C, 0x0B, 0x12, 0x8C, 0x00),
+    mUnk_16AC(BTN_ID_FILE_SELECT_CONFIRM, 0x8C, 0x0B, 0x12, 0x8C, 0x00),
     mUnk_1744(&mUnk_16AC),
     mUnk_1794(&mUnk_16AC, 0x8C, 0x08, 0x00020008),
 
-    mUnk_19D0(0x05, 0x8C, 0x0C, 0x13, 0x8C, 0x08),
+    mUnk_19D0(BTN_ID_RETURN, 0x8C, 0x0C, 0x13, 0x8C, 0x08),
     mUnk_1A68(&mUnk_19D0),
     mUnk_1AB8(&mUnk_19D0, 0x8C, 0x09, 0x00020007) {
     this->mUnk_1CF5 = false;
@@ -187,17 +187,17 @@ ARM FileSelectOptions::FileSelectOptions(s32 saveSlotIndex) :
     this->mUnk_1388.mUnk_2C = true;
     this->mUnk_16AC.mUnk_2C = true;
     this->mUnk_19D0.mUnk_2C = true;
-    func_ov000_020623d8(this->mUnk_1474.mUnk_00C, 2);
-    func_ov000_020623d8(this->mUnk_1798.mUnk_00C, 2);
-    func_ov000_020623d8(this->mUnk_1ABC.mUnk_00C, 2);
+    func_ov000_020623d8(this->mUnk_1470.mUnk_04.mUnk_00C, 2);
+    func_ov000_020623d8(this->mUnk_1794.mUnk_04.mUnk_00C, 2);
+    func_ov000_020623d8(this->mUnk_1AB8.mUnk_04.mUnk_00C, 2);
     this->func_ov019_020ccd40();
 }
 
 ARM FileSelectOptions::~FileSelectOptions() {
-    this->mUnk_1ABC.func_0201f498();
-    this->mUnk_1798.func_0201f498();
-    this->mUnk_1474.func_0201f498();
-    this->mUnk_110C.func_0201f498();
+    this->mUnk_1AB8.mUnk_04.func_0201f498();
+    this->mUnk_1794.mUnk_04.func_0201f498();
+    this->mUnk_1470.mUnk_04.func_0201f498();
+    this->mUnk_1108.mUnk_04.func_0201f498();
 }
 
 ARM void FileSelectOptions::func_ov019_020ccd40() {
@@ -481,7 +481,7 @@ ARM void FileSelectOptions::func_ov019_020cd788() {
 
 ARM void FileSelectOptions::func_ov019_020cd7f8() {
     switch (data_0204a110.func_01ff9b50()) {
-        case 0x05:
+        case BTN_ID_RETURN:
             SaveSub17 *pSaveSub17        = gSaveManager.GetSaveSlot(this->mUnk_0024.mSaveSlotIndex)->Get2600Ptr();
             data_0204a110.mUnk_000       = pSaveSub17->mUnk_02;
             data_ov000_020b504c.mUnk_030 = pSaveSub17->mUnk_00;
@@ -489,11 +489,11 @@ ARM void FileSelectOptions::func_ov019_020cd7f8() {
             data_0204a088->func_ov000_020611fc(0);
             data_ov000_020b5214.func_ov000_0206db44(0x2E);
             break;
-        case 0x4B:
+        case BTN_ID_FILE_SELECT_MIC_TEST:
             this->func_ov019_020cde8c(FSOptionsState_OptionsToMicTest);
             data_ov000_020b5214.func_ov000_0206db44(0x2C);
             break;
-        case 0x4A:
+        case BTN_ID_FILE_SELECT_CONFIRM:
             this->func_ov019_020cde8c(FSOptionsState_SaveSettings);
             data_ov000_020b5214.func_ov000_0206db44(0x2D);
             break;
@@ -602,16 +602,16 @@ ARM UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManag
     mUnk_008(0, 0),
     mUnk_020(0x8C, 1),
     mUnk_258(0x8C, 4),
-    mUnk_490(0x4C, 0x8C, 0x03, 0x0A, 0x8C, 0x06),
-    mUnk_4F0(0x4D, 0x8C, 0x06, 0x09, 0x8C, 0x03),
+    mUnk_490(BTN_ID_FILE_SELECT_MESG_SPEED_LEFT_ARROW, 0x8C, 0x03, 0x0A, 0x8C, 0x06),
+    mUnk_4F0(BTN_ID_FILE_SELECT_MESG_SPEED_RIGHT_ARROW, 0x8C, 0x06, 0x09, 0x8C, 0x03),
     mUnk_550(0x8C, 2),
     mUnk_788(0x8C, 5),
-    mUnk_9C0(0x4E, 0x8C, 0x04, 0x0A, 0x8C, 0x07),
-    mUnk_A20(0x4F, 0x8C, 0x07, 0x09, 0x8C, 0x04),
+    mUnk_9C0(BTN_ID_FILE_SELECT_SOUND_SETTINGS_LEFT_ARROW, 0x8C, 0x04, 0x0A, 0x8C, 0x07),
+    mUnk_A20(BTN_ID_FILE_SELECT_SOUND_SETTINGS_RIGHT_ARROW, 0x8C, 0x07, 0x09, 0x8C, 0x04),
     mUnk_A80(0x8C, 6),
     mUnk_CB8(0x8C, 3),
-    mUnk_EF0(0x50, 0x8C, 0x02, 0x0A, 0x8C, 0x05),
-    mUnk_F50(0x51, 0x8C, 0x05, 0x09, 0x8C, 0x02),
+    mUnk_EF0(BTN_ID_FILE_SELECT_HANDEDNESS_LEFT_ARROW, 0x8C, 0x02, 0x0A, 0x8C, 0x05),
+    mUnk_F50(BTN_ID_FILE_SELECT_HANDEDNESS_RIGHT_ARROW, 0x8C, 0x05, 0x09, 0x8C, 0x02),
     mUnk_FB0(NULL),
     mUnk_FB4(NULL),
     mUnk_FB8(NULL),
@@ -712,24 +712,24 @@ ARM UnkStruct_ov019_020d24c8_2C_24::~UnkStruct_ov019_020d24c8_2C_24() {
 
 ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce414() {
     switch (data_0204a110.func_01ff9b50()) {
-        case 0x4C:
+        case BTN_ID_FILE_SELECT_MESG_SPEED_LEFT_ARROW:
             this->func_ov019_020ce61c(1);
             data_ov000_020b5214.func_ov000_0206db44(0x2A);
             break;
-        case 0x4D:
+        case BTN_ID_FILE_SELECT_MESG_SPEED_RIGHT_ARROW:
             this->func_ov019_020ce61c(0);
             data_ov000_020b5214.func_ov000_0206db44(0x2A);
             break;
-        case 0x4E:
+        case BTN_ID_FILE_SELECT_SOUND_SETTINGS_LEFT_ARROW:
             this->func_ov019_020ce668(1);
             data_ov000_020b5214.func_ov000_0206db44(0x2B);
             break;
-        case 0x4F:
+        case BTN_ID_FILE_SELECT_SOUND_SETTINGS_RIGHT_ARROW:
             this->func_ov019_020ce668(0);
             data_ov000_020b5214.func_ov000_0206db44(0x2B);
             break;
-        case 0x50:
-        case 0x51:
+        case BTN_ID_FILE_SELECT_HANDEDNESS_LEFT_ARROW:
+        case BTN_ID_FILE_SELECT_HANDEDNESS_RIGHT_ARROW:
             this->func_ov019_020ce6c8();
             data_ov000_020b5214.func_ov000_0206db44(0x2A);
             break;

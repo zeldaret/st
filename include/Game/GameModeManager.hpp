@@ -149,8 +149,8 @@ public:
     /* 104 */ GameModeManagerBase_104 mUnk_104;
     /* 120 */ Input mButtons;
     /* 126 */ TouchControl mTouchControl;
-    /* 148 */ unk32 mUnk_148;
-    /* 14C */ unk32 mUnk_14C;
+    /* 148 */ unk32 mNextButtonID;
+    /* 14C */ unk32 mButtonID;
     /* 150 */ bool mUnk_150;
     /* 150 */ unk8 mUnk_151;
     /* 150 */ unk8 mUnk_152;

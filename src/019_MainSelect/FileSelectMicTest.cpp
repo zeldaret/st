@@ -53,7 +53,7 @@ ARM FileSelectMicTest::FileSelectMicTest() :
     mState(FSMicTestState_OptionsIdle),
     mUnk_020(0x8D, 0x00),
     mUnk_258(0x8D, 0x00),
-    mUnk_304(0x05, 0x8E, 0x00, 0x01, 0x8E, 0x00),
+    mUnk_304(BTN_ID_RETURN, 0x8E, 0x00, 0x01, 0x8E, 0x00),
     mUnk_3F8(0x8D, 0x01),
     mUnk_630(1) {
     this->mUnk_0C.mList.func_020166cc(&this->mUnk_304.mUnk_044.mUnk_04);
@@ -142,7 +142,7 @@ ARM void FileSelectMicTest::vfunc_08(Input *pButtons, TouchControl *pTouchContro
     switch (this->mState) {
         case FSMicTestState_MicTestIdle:
             this->mUnk_270.func_ov019_020cf168();
-            if (data_0204a110.func_01ff9b50() == 5) {
+            if (data_0204a110.func_01ff9b50() == BTN_ID_RETURN) {
                 this->func_ov019_020ceff8();
                 data_ov000_020b5214.func_ov000_0206d6b4(0x2F, 2);
                 data_ov000_020b5214.func_ov000_0206db44(0x2F);

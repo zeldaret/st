@@ -127,28 +127,28 @@ ARM FileSelectMain::FileSelectMain() :
     mSaveSlotIndex(-1),
     mUnk_005C(5, 0x8E, 0, 1, 0x8E, 0),
 
-    mUnk_0100(-1, 0x89, 0, 0, 0x89, 0),
+    mUnk_0100(BTN_ID_NONE, 0x89, 0, 0, 0x89, 0),
     mUnk_0160(&mUnk_0100, 0x89, 0, 0x20012),
 
-    mUnk_0488(0x43, 0x8A, 0, 0x0D, 0x8A, 0),
+    mUnk_0488(BTN_ID_FILE_SELECT_START, 0x8A, 0, 0x0D, 0x8A, 0),
     mUnk_0520(&mUnk_0488, 0x8A, 0, 0x20016),
 
-    mUnk_07E4(0x44, 0x8A, 1, 3, 0x8A, 2),
+    mUnk_07E4(BTN_ID_FILE_SELECT_COPY, 0x8A, 1, 3, 0x8A, 2),
     mUnk_0844(&mUnk_07E4, 0x8A, 2, 0x20014),
 
-    mUnk_0AC4(0x45, 0x8A, 2, 4, 0x8A, 1),
+    mUnk_0AC4(BTN_ID_FILE_SELECT_ERASE, 0x8A, 2, 4, 0x8A, 1),
     mUnk_0B24(&mUnk_0AC4, 0x8A, 1, 0x20015),
 
-    mUnk_0DA4(0x46, 0x8B, 1, 0x0E, 0x8B, 1),
+    mUnk_0DA4(BTN_ID_FILE_SELECT_ADVENTURE, 0x8B, 1, 0x0E, 0x8B, 1),
     mUnk_0E3C(&mUnk_0DA4, 0x8B, 2, 0x20017),
 
-    mUnk_11BC(0x47, 0x8B, 0, 0x0F, 0x8B, 0),
+    mUnk_11BC(BTN_ID_FILE_SELECT_BATTLE, 0x8B, 0, 0x0F, 0x8B, 0),
     mUnk_1254(&mUnk_11BC, 0x8B, 0, 0x20018),
 
-    mUnk_15D4(0x48, 0x8B, 0, 0x10, 0x8B, 3),
+    mUnk_15D4(BTN_ID_FILE_SELECT_CONTACT_MODE, 0x8B, 0, 0x10, 0x8B, 3),
     mUnk_166C(&mUnk_15D4, 0x8B, 3, 0x20019),
 
-    mUnk_18EC(0x49, 0x8B, 3, 0x11, 0x8B, 2),
+    mUnk_18EC(BTN_ID_FILE_SELECT_OPTIONS, 0x8B, 3, 0x11, 0x8B, 2),
     mUnk_1984(&mUnk_18EC, 0x8B, 1, 0x2001A) {
 
     stack_struct1 params;
@@ -1143,11 +1143,11 @@ ARM void FileSelectMain::func_ov019_020c8454() {
 
     iVar2 = data_0204a110.func_01ff9b50();
 
-    if (iVar2 != 0x40 && iVar2 != 0x41) {
+    if (iVar2 != BTN_ID_FILE_SELECT_FILE_1 && iVar2 != BTN_ID_FILE_SELECT_FILE_2) {
         return;
     }
 
-    this->mSaveSlotIndex = data_0204a110.func_01ff9b50() - 0x40;
+    this->mSaveSlotIndex = data_0204a110.func_01ff9b50() - BTN_ID_FILE_SELECT_FILE_1;
 
     if (this->GetUnk03E0().IsPlayerNameSet()) {
         SaveSlot *pSlot              = gSaveManager.GetSaveSlot(this->mSaveSlotIndex);
@@ -1213,23 +1213,23 @@ ARM void FileSelectMain::func_ov019_020c8b48() {
 
 ARM void FileSelectMain::func_ov019_020c8b74() {
     switch (data_0204a110.func_01ff9b50()) {
-        case 0x40:
-        case 0x41:
-        case 0x43:
+        case BTN_ID_FILE_SELECT_FILE_1:
+        case BTN_ID_FILE_SELECT_FILE_2:
+        case BTN_ID_FILE_SELECT_START:
             this->SetState(FileSelectState_FileManagerToChooseMode);
             data_ov000_020b5214.func_ov000_0206db44(0x16);
             break;
-        case 0x44:
+        case BTN_ID_FILE_SELECT_COPY:
             this->SetState(FileSelectState_FileManagerToCopyErase);
             this->mUnk_1C04.mUnk_18 = 0;
             data_ov000_020b5214.func_ov000_0206db44(0x17);
             break;
-        case 0x45:
+        case BTN_ID_FILE_SELECT_ERASE:
             this->SetState(FileSelectState_FileManagerToCopyErase);
             this->mUnk_1C04.mUnk_18 = 1;
             data_ov000_020b5214.func_ov000_0206db44(0x18);
             break;
-        case 0x05:
+        case BTN_ID_RETURN:
             this->SetState(FileSelectState_FileManagerToSlotSelect);
             data_ov000_020b5214.func_ov000_0206db44(0x15);
             break;
@@ -1323,26 +1323,26 @@ ARM void FileSelectMain::func_ov019_020c9c70() {
     this->mUnk_155C.func_ov000_020609c4();
 
     switch (data_0204a110.func_01ff9b50()) {
-        case 0x46:
+        case BTN_ID_FILE_SELECT_ADVENTURE:
             this->mExitMode = FileSelectExitMode_AdventureMode;
             this->SetState(FileSelectState_ChooseModeToEnterGameMode);
             data_ov000_020b5214.func_ov000_0206db44(0x1A);
             break;
-        case 0x47:
+        case BTN_ID_FILE_SELECT_BATTLE:
             this->mExitMode = FileSelectExitMode_BattleMode;
             this->SetState(FileSelectState_ChooseModeToEnterGameMode);
             data_ov000_020b5214.func_ov000_0206db44(0x1B);
             break;
-        case 0x48:
+        case BTN_ID_FILE_SELECT_CONTACT_MODE:
             this->SetState(FileSelectState_ChooseModeToContactMode);
             data_02049a2c.GetUnk00_FileSelect()->LoadContactMode(this->mSaveSlotIndex);
             data_ov000_020b5214.func_ov000_0206db44(0x1C);
             break;
-        case 0x49:
+        case BTN_ID_FILE_SELECT_OPTIONS:
             data_0204a088->func_ov000_020611fc(0x12);
             data_ov000_020b5214.func_ov000_0206db44(0x1D);
             break;
-        case 0x05:
+        case BTN_ID_RETURN:
             this->SetState(FileSelectState_ChooseModeToFileManager);
             data_ov000_020b5214.func_ov000_0206db44(0x19);
             break;
@@ -1678,14 +1678,14 @@ ARM void FileSelectMain::SetState(FileSelectState state) {
 ARM void FileSelectMain::vfunc_18() {}
 
 ARM void FileSelectMain::func_ov019_020cb5dc() {
-    this->mUnk_0164.func_0201f9c4();
-    this->mUnk_0524.func_0201f9c4();
-    this->mUnk_0848.func_0201f9c4();
-    this->mUnk_0B28.func_0201f9c4();
-    this->mUnk_0E40.func_0201f9c4();
-    this->mUnk_1258.func_0201f9c4();
-    this->mUnk_1670.func_0201f9c4();
-    this->mUnk_1988.func_0201f9c4();
+    this->mUnk_0160.mUnk_04.func_0201f9c4();
+    this->mUnk_0520.mUnk_04.func_0201f9c4();
+    this->mUnk_0844.mUnk_04.func_0201f9c4();
+    this->mUnk_0B24.mUnk_04.func_0201f9c4();
+    this->mUnk_0E3C.mUnk_04.func_0201f9c4();
+    this->mUnk_1254.mUnk_04.func_0201f9c4();
+    this->mUnk_166C.mUnk_04.func_0201f9c4();
+    this->mUnk_1984.mUnk_04.func_0201f9c4();
 
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         this->GetUnk03E0(i).mUnk_064.func_0201f9c4();
@@ -1697,14 +1697,14 @@ ARM void FileSelectMain::func_ov019_020cb664() {
         this->GetUnk03E0(i).mUnk_064.func_0201f498();
     }
 
-    this->mUnk_1988.func_0201f498();
-    this->mUnk_1670.func_0201f498();
-    this->mUnk_1258.func_0201f498();
-    this->mUnk_0E40.func_0201f498();
-    this->mUnk_0B28.func_0201f498();
-    this->mUnk_0848.func_0201f498();
-    this->mUnk_0524.func_0201f498();
-    this->mUnk_0164.func_0201f498();
+    this->mUnk_1984.mUnk_04.func_0201f498();
+    this->mUnk_166C.mUnk_04.func_0201f498();
+    this->mUnk_1254.mUnk_04.func_0201f498();
+    this->mUnk_0E3C.mUnk_04.func_0201f498();
+    this->mUnk_0B24.mUnk_04.func_0201f498();
+    this->mUnk_0844.mUnk_04.func_0201f498();
+    this->mUnk_0520.mUnk_04.func_0201f498();
+    this->mUnk_0160.mUnk_04.func_0201f498();
 }
 
 ARM void FileSelectMain::func_ov019_020cb6e8() {

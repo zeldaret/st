@@ -56,7 +56,7 @@ ARM void FileSelectManager::vfunc_24() {
     this->func_02018908();
 
     if (!this->mTouchControl.mState.touch) {
-        this->mUnk_148 = -1;
+        this->mNextButtonID = BTN_ID_NONE;
     }
 
     this->func_ov019_020c5038();
@@ -77,11 +77,11 @@ ARM void FileSelectManager::func_ov019_020c503c() {
         u32 input = data_0204a110.func_01ff9b50();
 
         switch (input) {
-            case 0x58:
+            case BTN_ID_FILE_SELECT_NEW_FILE_RETURN:
                 data_ov003_020ba740->func_ov003_020b69d8(2);
                 data_ov000_020b5214.func_ov000_0206db44(0x13);
                 break;
-            case 0x57:
+            case BTN_ID_FILE_SELECT_NEW_FILE_CONFIRM:
                 data_ov003_020ba740->func_ov003_020b69d8(3);
 
                 UnkStruct_ov019_020d1d80 *uVar2 = (UnkStruct_ov019_020d1d80 *) &data_ov019_020d1db4;

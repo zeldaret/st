@@ -72,7 +72,6 @@ public:
     // upper "select file"
     /* 0100 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_0100;
     /* 0160 */ UnkSystem2_UnkSubSystem3 mUnk_0160;
-    /* 0164 */ UnkSystem2_UnkSubSystem5 mUnk_0164;
     /* 039C */ UnkSystem2_UnkSubSystem9 mUnk_039C;
 
     /* 03E0 */ FileSlotIterator mUnk_03E0;
@@ -82,7 +81,6 @@ public:
     /* 0488 */ UnkSystem2_UnkSubSystem1_Derived2 mUnk_0488;
     /* 04E8 */ unk8 mUnk_04E8[0x38];
     /* 0520 */ UnkSystem2_UnkSubSystem3 mUnk_0520;
-    /* 0524 */ UnkSystem2_UnkSubSystem5 mUnk_0524;
     /* 075C */ UnkSystem2_UnkSubSystem9 mUnk_075C;
 
     /* 07A0 */ UnkSystem2_UnkSubSystem9 mUnk_07A0;
@@ -90,20 +88,17 @@ public:
     // "copy" button
     /* 07E4 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_07E4;
     /* 0844 */ UnkSystem2_UnkSubSystem3 mUnk_0844;
-    /* 0848 */ UnkSystem2_UnkSubSystem5 mUnk_0848;
     /* 0A80 */ UnkSystem2_UnkSubSystem9 mUnk_0A80;
 
     // "erase" button
     /* 0AC4 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_0AC4;
     /* 0B24 */ UnkSystem2_UnkSubSystem3 mUnk_0B24;
-    /* 0B28 */ UnkSystem2_UnkSubSystem5 mUnk_0B28;
     /* 0D60 */ UnkSystem2_UnkSubSystem9 mUnk_0D60;
 
     // "adventure" button
     /* 0DA4 */ UnkSystem2_UnkSubSystem1_Derived2 mUnk_0DA4;
     /* 0E04 */ unk8 mUnk_0E04[0x38];
     /* 0E3C */ UnkSystem2_UnkSubSystem3 mUnk_0E3C;
-    /* 0E40 */ UnkSystem2_UnkSubSystem5 mUnk_0E40;
     /* 1078 */ UnkSystem2_UnkSubSystem9 mUnk_1078;
 
     // adventure mode animated sword icon
@@ -115,7 +110,6 @@ public:
     /* 11BC */ UnkSystem2_UnkSubSystem1_Derived2 mUnk_11BC;
     /* 121C */ unk8 mUnk_121C[0x38];
     /* 1254 */ UnkSystem2_UnkSubSystem3 mUnk_1254;
-    /* 1258 */ UnkSystem2_UnkSubSystem5 mUnk_1258;
     /* 1490 */ UnkSystem2_UnkSubSystem9 mUnk_1490;
 
     // battle mode animated sword icon
@@ -127,14 +121,12 @@ public:
     /* 15D4 */ UnkSystem2_UnkSubSystem1_Derived2 mUnk_15D4;
     /* 1634 */ unk8 mUnk_1634[0x38];
     /* 166C */ UnkSystem2_UnkSubSystem3 mUnk_166C;
-    /* 1670 */ UnkSystem2_UnkSubSystem5 mUnk_1670;
     /* 18A8 */ UnkSystem2_UnkSubSystem9 mUnk_18A8;
 
     // "options" button
     /* 18EC */ UnkSystem2_UnkSubSystem1_Derived2 mUnk_18EC;
     /* 194C */ unk8 mUnk_194C[0x38];
     /* 1984 */ UnkSystem2_UnkSubSystem3 mUnk_1984;
-    /* 1988 */ UnkSystem2_UnkSubSystem5 mUnk_1988;
     /* 1BC0 */ UnkSystem2_UnkSubSystem9 mUnk_1BC0;
 
     /* 1C04 */ UnkSystem1_ov019_Derived3 mUnk_1C04;

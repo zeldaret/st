@@ -12,8 +12,8 @@ THUMB GameModeManagerBase *GameModeManagerBase::Create(unk32 param1) {
 
 THUMB GameModeManagerBase::GameModeManagerBase(unk32 param1) :
     mUnk_100((void *) param1),
-    mUnk_148(-1),
-    mUnk_14C(-1),
+    mNextButtonID(BTN_ID_NONE),
+    mButtonID(BTN_ID_NONE),
     mUnk_150(false) {
     data_ov000_020b504c.mUnk_004 = &this->mUnk_004;
 }
@@ -58,7 +58,7 @@ ARM void GameModeManagerBase::func_02018634(u16 speed) {
 }
 
 ARM void GameModeManagerBase::vfunc_24() {
-    this->mUnk_14C = -1;
+    this->mButtonID = BTN_ID_NONE;
     this->mUnk_004.func_0201bf24();
 }
 
@@ -117,8 +117,8 @@ ARM void GameModeManagerBase::func_0201875c(void) {
     GameModeLinkList<GameModeManagerBase_104> *pNode;
 
     UnkStruct4 local_30;
-    local_30.a = &this->mUnk_148;
-    local_30.b = &this->mUnk_14C;
+    local_30.a = &this->mNextButtonID;
+    local_30.b = &this->mButtonID;
     local_30.c = &this->mButtons;
     local_30.d = &this->mTouchControl;
 
@@ -143,7 +143,7 @@ ARM void GameModeManagerBase::func_02018830(unk8 *param1) {
     GameModeLinkList<GameModeManagerBase_104> *pNode;
 
     UnkStruct5 local_28;
-    local_28.a = this->mUnk_148;
+    local_28.a = this->mNextButtonID;
     local_28.b = param1;
 
     for (pNode = this->mUnk_104.mList.GetPrev(); pNode != this->mUnk_104.GetOrigin(); pNode = pNode->GetNext2()) {
