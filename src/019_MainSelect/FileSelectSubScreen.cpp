@@ -171,19 +171,19 @@ ARM void FileSelectSubScreen::vfunc_10(unk8 *param1) {
 
 ARM UnkStructSub2::UnkStructSub2() {}
 
-// non-matching
 ARM void FileSelect_UnkClass7::vfunc_00() {
-    int i;
+    for (int i = 0; i < ARRAY_LEN(this->mUnk_0004); i++) {
+        this->mUnk_0004[i].func_ov000_020609c4();
 
-    for (i = 0; i < 0x1E; i++) {
-        UnkSubStruct19 *pVar6 = &this->mUnk_0004[i];
+        if (this->mUnk_0004[i].func_ov000_02060af8() != 0) {
+            this->mUnk_0004[i].func_ov000_02060b64();
 
-        pVar6->func_ov000_020609c4();
+            u32 one = gRandom.Next(0, 256);
+            u32 two = gRandom.Next(0, 192);
 
-        if (pVar6->func_ov000_02060af8() != 0) {
-            pVar6->func_ov000_02060b64();
-            this->mUnk_0E14[i].one = (u16) gRandom.Next(0, 256);
-            this->mUnk_0E14[i].two = (u16) gRandom.Next(0, 192);
+            Sub5 *pSub5 = &this->mUnk_0E14[i];
+            pSub5->one  = one;
+            pSub5->two  = two;
         }
     }
 }

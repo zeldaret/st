@@ -106,11 +106,17 @@ ARM void ActorRupee::func_ov031_020e9068() {
     }
 }
 
-// https://decomp.me/scratch/FZsEE
 ARM void ActorRupee::func_ov031_020e9108() {
-    this->mVel.x = gRandom.Next(-0xCD, 0x19B);
-    this->mVel.y = gRandom.Next(0, 0x19A);
-    this->mVel.z = gRandom.Next(-0xCD, 0x19B);
+    Vec3p vel;
+
+    vel.x = gRandom.Next(0, 0x19B);
+    vel.y = gRandom.Next(0, 0x19A);
+    vel.z = gRandom.Next(0, 0x19B);
+
+    this->mVel.x = vel.x - 0xCD;
+    this->mVel.y = vel.y + 0x9A + 0x100;
+    this->mVel.z = vel.z - 0xCD;
+
     SET_FLAG(&this->mFlags, ActorFlag_Visible);
 }
 
