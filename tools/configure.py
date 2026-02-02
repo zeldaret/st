@@ -127,6 +127,7 @@ config.libs = [
             Object("Main/System/SysNew.cpp"),
             Object("Main/Player/TouchControl.cpp"),
             Object("Main/System/OverlayManager.cpp"),
+            Object("Main/System/Random.cpp"),
             Object("Main/Game/GameModeLinkListNode.cpp"),
             Object("Main/func_02017ea4.cpp"),
             Object("Main/Game/GameModeBase.cpp"),

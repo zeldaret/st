@@ -19,6 +19,9 @@ src/Main/Player/TouchControl.cpp:
 src/Main/System/OverlayManager.cpp:
     .text       start:0x020147fc end:0x02014944
 
+src/Main/System/Random.cpp:
+    .text       start:0x02016384 end:0x02016404
+
 src/Main/Game/GameModeLinkListNode.cpp:
     complete
     .text       start:0x0201667c end:0x02016720
