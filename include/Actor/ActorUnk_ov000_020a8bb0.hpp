@@ -109,7 +109,7 @@ public:
     /* 11c */ unk32 mUnk_11c;
 
     /* 14 */ virtual void vfunc_14() override;
-    /* 18 */ virtual unk32 vfunc_18(unk32 param1) override;
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 1c */ virtual void vfunc_1c() override;
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;

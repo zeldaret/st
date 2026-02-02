@@ -46,8 +46,8 @@ ARM void Actor::func_ov000_0209848c(ActorType *param1) {
     this->mUnk_4e                 = unk_1c;
 }
 
-ARM unk32 Actor::vfunc_18(unk32 param1) {
-    return 1;
+ARM bool Actor::vfunc_18(unk32 param1) {
+    return true;
 }
 
 ARM void Actor::vfunc_1c() {}
