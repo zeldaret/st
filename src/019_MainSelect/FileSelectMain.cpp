@@ -842,8 +842,8 @@ ARM void FileSelectMain::func_ov019_020c7a44() {
     Vec2p unaff_r11;
     // Vec2p local_34;
     int fileIndex = this->mSaveSlotIndex == 0;
-    int value1;
-    int value2;
+    u16 value1;
+    u16 value2;
 
     if (this->mState == FileSelectState_SlotSelectToNewFile) {
         func_ov000_02062e44(&local_44, &this->GetUnk03E0().mUnk_004);
@@ -969,16 +969,16 @@ ARM void FileSelectMain::func_ov019_020c7d3c() {
 
 // non-matching
 ARM void FileSelectMain::func_ov019_020c7dc8() {
-    unk32 var_r8;
     unk32 var_r6;
     unk32 var_r7;
     unk32 var_r5;
+    u16 var_r8;
     unk32 var_r9;
     unk32 var_r10;
-    unk32 var_r1;
     unk32 var_r2;
-    Vec2us sp10_sp12[2]; // sp4 sp6 sp10 sp12
+    unk32 var_r1;
     Vec2p local_48; // sp8 spC
+    Vec2us sp10_sp12[2]; // sp4 sp6 sp10 sp12
 
     if (this->mState == FileSelectState_ChooseModeToContactMode) {
         UnkSystem2_UnkSubSystem1_Derived2 *pUVar5 = this->mUnk_03E8[this->mSaveSlotIndex].mUnk_04;

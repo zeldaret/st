@@ -509,7 +509,7 @@ ARM void FileSelectOptions::func_ov019_020cd8d4() {
     this->mUnk_1420.func_ov000_02063f64();
     this->mUnk_1744.func_ov000_02063f64();
     this->mUnk_1A68.func_ov000_02063f64();
-    this->mUnk_1344.UnkOperations(&this->mUnk_10A8.mPos, true);
+    this->mUnk_1344.UnkOperations2(&this->mUnk_10A8.mPos, true);
 }
 
 ARM bool FileSelectOptions::func_ov019_020cdbdc() {
