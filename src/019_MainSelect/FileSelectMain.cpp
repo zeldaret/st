@@ -30,7 +30,7 @@ public:
 
 UnkStruct_ov019_020d24c0 data_ov019_020d24c0(-0x100, 0, 0x100, 0);
 
-UnkStruct_ov019_020d1e4c UnkStruct_ov019_020d1e70::data_ov019_020d1e4c = {
+volatile UnkStruct_ov019_020d1e4c UnkStruct_ov019_020d1e70::data_ov019_020d1e4c = {
     0x14, 0x14, 0x14, 0x04, 0x03, -0x47, 0x00, 0x0281, -0x47, Vec2s(0x00, 0x00), 0x0281,
 };
 
@@ -235,10 +235,9 @@ ARM void FileSelectMain::func_ov019_020c6d10() {
     CALL_PTMF(PTMF<FileSelectMain>, data_ov019_020d1edc[this->mState]);
 }
 
-// https://decomp.me/scratch/EuA67
 ARM void FileSelectMain::func_ov019_020c6d48() {
     Vec2us auStack_2c;
-    Vec2p local_34;
+    volatile Vec2p local_34;
     int value;
 
     this->func_ov019_020c6c14();
@@ -247,8 +246,8 @@ ARM void FileSelectMain::func_ov019_020c6d48() {
         this->GetUnk03E0(i).func_ov019_020cbaec();
         func_ov000_02062e44(&auStack_2c, &this->GetUnk03E0(i).mUnk_004);
 
-        local_34.x = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_0C;
-        local_34.y = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_20;
+        local_34.x = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_20;
+        local_34.y = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_0C;
 
         if (i == 1) {
             value = 10;
@@ -256,8 +255,8 @@ ARM void FileSelectMain::func_ov019_020c6d48() {
             value = 0;
         }
 
-        this->mUnk_03E8[i].func_ov000_02064080(&auStack_2c, &local_34, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_02,
-                                               value);
+        this->mUnk_03E8[i].func_ov000_02064080(&auStack_2c, (Vec3p *) &local_34,
+                                               UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_02, value);
     }
 
     this->mUnk_039C.mUnk_0A = 1;
@@ -485,7 +484,13 @@ ARM void FileSelectMain::func_ov019_020c72a0() {
 
         UnkStruct_ov019_020d24c8_28_258 local_40(0x8A, 0x05);
         local_40.UnknownAction(0x8B, 0x04);
-        // local_5c = local_40.mPos;
+
+        local_5c.x = local_40.mPos.x;
+        local_5c.y = local_40.mPos.y;
+
+        //! TODO: fake match?
+        local_5c.x = local_40.mPos.x;
+        local_5c.y = local_40.mPos.y;
 
         this->mUnk_07A0.mUnk_0A = 1;
         this->mUnk_07A0.mUnk_0B = 0;
@@ -526,7 +531,13 @@ ARM void FileSelectMain::func_ov019_020c72a0() {
     } else if (this->mState == FileSelectState_FileManagerFromChooseMode) {
         UnkStruct_ov019_020d24c8_28_258 local_40(0x8B, 0x04);
         local_40.UnknownAction(0x8A, 0x05);
-        // local_5c = local_40.mPos;
+
+        local_5c.x = local_40.mPos.x;
+        local_5c.y = local_40.mPos.y;
+
+        //! TODO: fake match?
+        local_5c.x = local_40.mPos.x;
+        local_5c.y = local_40.mPos.y;
 
         this->mUnk_039C.mUnk_0A = 1;
         this->mUnk_039C.mUnk_0B = 0;
@@ -946,15 +957,11 @@ ARM void FileSelectMain::func_ov019_020c7d3c() {
     this->mUnk_1C04.mUnk_12 = this->mSaveSlotIndex;
 
     if (this->mUnk_1C04.mUnk_18 == 0) {
-        int value                      = this->mSaveSlotIndex == 0 ? 2 : 1;
-        UnkStruct_ov000_02067bc4 *test = data_ov000_020b504c.func_ov000_02067bc4(0);
-
-        UnkStruct_ov000_02067bc4_Sub2 *test3 = test->mUnk_008;
-        UnkStruct_ov019_020d1e4c *test5      = (UnkStruct_ov019_020d1e4c *) &UnkStruct_ov019_020d1e70::data_ov019_020d1e4c;
-
-        unk32 test2    = test5->mUnk_10;
-        test3->mUnk_54 = value;
-        data_ov000_020b504c.func_ov000_0206807c(test2, &this->mUnk_1C04);
+        int uVar5                             = this->mSaveSlotIndex == 0 ? 2 : 1;
+        UnkStruct_ov000_02067bc4_Sub2 *puVar3 = data_ov000_020b504c.func_ov000_02067bc4(0)->mUnk_008;
+        unk32 uVar2                           = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_10;
+        puVar3->mUnk_54                       = uVar5;
+        data_ov000_020b504c.func_ov000_0206807c(uVar2, &this->mUnk_1C04);
     } else if (this->mUnk_1C04.mUnk_18 == 1) {
         data_ov000_020b504c.func_ov000_0206807c(data_ov019_020d1e70.mUnk_0C, &this->mUnk_1C04);
     }
@@ -1119,7 +1126,7 @@ ARM void FileSelectMain::vfunc_08(Input *pButtons, TouchControl *pTouchControl) 
     }
 
     CALL_PTMF(PTMF<FileSelectMain>, data_ov019_020d1f94[this->mState]);
-    this->mUnk_002C.UnkOperations(NULL, false);
+    this->mUnk_002C.UnkOperations3();
     REG_BLDALPHA = this->mUnk_002C.func_0201eaa0() | 0x1000;
 }
 
@@ -1173,10 +1180,10 @@ ARM void FileSelectMain::func_ov019_020c854c() {
         this->GetUnk03E0(i).mUnk_004.mUnk_2A = false;
     }
 
-    this->mUnk_075C.UnkOperations(&this->mUnk_0488.mPos, true);
-    this->mUnk_0A80.UnkOperations(&this->mUnk_07E4.mPos, true);
-    this->mUnk_0D60.UnkOperations(&this->mUnk_0AC4.mPos, true);
-    this->mUnk_00BC.UnkOperations(&this->mUnk_005C.mPos, true);
+    this->mUnk_075C.UnkOperations2(&this->mUnk_0488.mPos, true);
+    this->mUnk_0A80.UnkOperations2(&this->mUnk_07E4.mPos, true);
+    this->mUnk_0D60.UnkOperations2(&this->mUnk_0AC4.mPos, true);
+    this->mUnk_00BC.UnkOperations2(&this->mUnk_005C.mPos, true);
 }
 
 ARM void FileSelectMain::func_ov019_020c8aac() {
@@ -1243,11 +1250,11 @@ ARM void FileSelectMain::func_ov019_020c8c4c() {
         this->GetUnk03E0(i).mUnk_004.mUnk_2A = false;
     }
 
-    this->mUnk_039C.UnkOperations(&this->mUnk_0100.mPos, true);
-    this->mUnk_07A0.UnkOperations(&this->mUnk_0488.mPos, true);
-    this->mUnk_0A80.UnkOperations(&this->mUnk_07E4.mPos, true);
-    this->mUnk_0D60.UnkOperations(&this->mUnk_0AC4.mPos, true);
-    this->mUnk_00BC.UnkOperations(&this->mUnk_005C.mPos, true);
+    this->mUnk_039C.UnkOperations2(&this->mUnk_0100.mPos, true);
+    this->mUnk_07A0.UnkOperations2(&this->mUnk_0488.mPos, true);
+    this->mUnk_0A80.UnkOperations2(&this->mUnk_07E4.mPos, true);
+    this->mUnk_0D60.UnkOperations2(&this->mUnk_0AC4.mPos, true);
+    this->mUnk_00BC.UnkOperations2(&this->mUnk_005C.mPos, true);
 }
 
 ARM void FileSelectMain::func_ov019_020c92dc() {

@@ -101,13 +101,18 @@ public:
         }
 
         if (doSetPos) {
-            Vec2us local_4c_copy;
             Vec2us local_4c;
-            func_0201e8d4(&local_4c_copy, this);
-            local_4c.x = local_4c_copy.y;
-            local_4c.y = local_4c_copy.x;
-            pPos->x    = local_4c.x;
-            pPos->y    = local_4c.y;
+            func_0201e8d4(&local_4c, this);
+
+            u16 x = local_4c.x;
+            u16 y = local_4c.y;
+
+            // necessary to flip r1 and r2
+            pPos->x = 0;
+            pPos->y = 0;
+
+            pPos->x = x;
+            pPos->y = y;
         }
     }
 
@@ -162,13 +167,68 @@ public:
         }
 
         if (doSetPos) {
-            Vec2us local_4c_copy;
             Vec2us local_4c;
-            func_0201e8d4(&local_4c_copy, this);
-            local_4c.x = local_4c_copy.y;
-            local_4c.y = local_4c_copy.x;
-            pPos->x    = local_4c.x;
-            pPos->y    = local_4c.y;
+            func_0201e8d4(&local_4c, this);
+
+            u16 x = local_4c.x;
+            u16 y = local_4c.y;
+
+            // necessary to flip r1 and r2
+            pPos->x = 0;
+            pPos->y = 0;
+
+            pPos->x = x;
+            pPos->y = y;
+        }
+    }
+
+    void UnkOperations3() {
+        int test;
+        int iVar1;
+
+        if (this->mUnk_08 != 0) {
+            iVar1         = this->mUnk_08 - this->mUnk_0D;
+            this->mUnk_08 = CLAMP(iVar1, 0, 0xFFFF);
+        } else {
+            if (this->mUnk_0A) {
+                if (this->mUnk_04 < this->mUnk_06) {
+                    iVar1 = this->mUnk_04 + this->mUnk_0D;
+
+                    if (iVar1 > this->mUnk_06) {
+                        iVar1 = this->mUnk_06;
+                    } else if (iVar1 < 0) {
+                        iVar1 = 0;
+                    }
+
+                    this->mUnk_04 = iVar1;
+                    this->vfunc_00();
+
+                    if (this->mUnk_04 >= this->mUnk_06) {
+                        this->mUnk_10 = this->mUnk_18;
+                        this->mUnk_0A = false;
+                        this->mUnk_0C = true;
+                    }
+                }
+            } else {
+                if (this->mUnk_0B && this->mUnk_04 != 0) {
+                    int iVar1 = this->mUnk_04 - this->mUnk_0D;
+
+                    if (iVar1 > this->mUnk_06) {
+                        iVar1 = this->mUnk_06;
+                    } else if (iVar1 < 0) {
+                        iVar1 = 0;
+                    }
+
+                    this->mUnk_04 = iVar1;
+                    this->vfunc_04();
+
+                    if (this->mUnk_04 == 0) {
+                        this->mUnk_10 = this->mUnk_14;
+                        this->mUnk_0B = false;
+                        this->mUnk_0C = true;
+                    }
+                }
+            }
         }
     }
 };

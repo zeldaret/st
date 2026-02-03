@@ -187,7 +187,7 @@ public:
     /* 20 */ Vec2s mUnk_20;
     /* 24 */
 
-    static UnkStruct_ov019_020d1e4c data_ov019_020d1e4c;
+    static volatile UnkStruct_ov019_020d1e4c data_ov019_020d1e4c;
     static UnkStruct_ov019_020d1e94 data_ov019_020d1e94;
 
     UnkStruct_ov019_020d1e70() {
