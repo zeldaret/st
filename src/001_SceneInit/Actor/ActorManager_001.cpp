@@ -7,7 +7,6 @@
 
 extern "C" void func_ov000_020977e4();
 extern "C" void func_ov001_020ba59c(void *);
-extern void *data_0204999c;
 
 THUMB ActorManager *ActorManager::Create() {
     return new(1, 4) ActorManager();
@@ -64,7 +63,7 @@ THUMB void ActorManager::func_ov001_020bb018(s32 param1) {}
 THUMB void ActorManager::func_ov001_020bb414(ActorManager *instance) {
     bool bVar1;
 
-    func_ov001_020ba59c(data_0204999c);
+    func_ov001_020ba59c(&data_0204999c);
 
     switch (data_027e09a4->mUnk_00) {
         case 0x03:
