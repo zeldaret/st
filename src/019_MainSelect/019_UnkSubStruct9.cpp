@@ -4,7 +4,6 @@
 #include "Unknown/UnkStruct_0204af1c.hpp"
 
 extern "C" {
-void func_020166cc(void *param1, void *param2);
 void func_020166cc(void *param1, void *param2, void *);
 void func_ov000_02062e44(void *param1, void *param2);
 };
