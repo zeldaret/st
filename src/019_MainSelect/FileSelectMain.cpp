@@ -30,7 +30,7 @@ public:
 
 UnkStruct_ov019_020d24c0 data_ov019_020d24c0(-0x100, 0, 0x100, 0);
 
-volatile UnkStruct_ov019_020d1e4c UnkStruct_ov019_020d1e70::data_ov019_020d1e4c = {
+UnkStruct_ov019_020d1e4c UnkStruct_ov019_020d1e70::data_ov019_020d1e4c = {
     0x14, 0x14, 0x14, 0x04, 0x03, -0x47, 0x00, 0x0281, -0x47, Vec2s(0x00, 0x00), 0x0281,
 };
 
