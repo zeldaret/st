@@ -5,104 +5,47 @@
 
 extern "C" {
 void func_020166cc(void *param1, void *param2);
+void func_020166cc(void *param1, void *param2, void *);
 void func_ov000_02062e44(void *param1, void *param2);
 };
 
 // non-matching
 ARM UnkSubStruct9::UnkSubStruct9(stack_struct1 param1) :
     mSaveSlotIndex(param1.param2),
-    mUnk_064(0x89, 1),
+    mUnk_064(0x89, 0x01),
     mUnk_29C(0x89, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_04[param1.param2]),
-    mUnk_2B4(0x89, 0x15) {
-    this->mUnk_2CC.mUnk_6E   = true;
-    this->mUnk_2CC.mUnk_70   = 0;
-    this->mUnk_2CC.mUnk_5C.x = 0;
-    this->mUnk_2CC.mUnk_5C.y = 0;
-    this->mUnk_2CC.mUnk_74   = 0;
-    this->mUnk_2CC.func_ov000_0206082c(0x89, 0x00);
-
-    this->mUnk_344.mUnk_6E   = true;
-    this->mUnk_344.mUnk_70   = 0;
-    this->mUnk_344.mUnk_5C.x = 0;
-    this->mUnk_344.mUnk_5C.y = 0;
-    this->mUnk_344.mUnk_74   = 0;
-    this->mUnk_344.func_ov000_0206082c(0x89, 0x03);
-
-    this->mUnk_3BC.mUnk_6E   = true;
-    this->mUnk_3BC.mUnk_70   = 0;
-    this->mUnk_3BC.mUnk_5C.x = 0;
-    this->mUnk_3BC.mUnk_5C.y = 0;
-    this->mUnk_3BC.mUnk_74   = 0;
-    this->mUnk_3BC.func_ov000_0206082c(0x89, 0x02);
-
-    this->mUnk_434.mUnk_6E   = true;
-    this->mUnk_434.mUnk_70   = 0;
-    this->mUnk_434.mUnk_5C.x = 0;
-    this->mUnk_434.mUnk_5C.y = 0;
-    this->mUnk_434.mUnk_74   = 0;
-    this->mUnk_434.func_ov000_0206082c(0x89, 0x01);
-
-    this->mUnk_4AC.mUnk_6E   = true;
-    this->mUnk_4AC.mUnk_70   = 0;
-    this->mUnk_4AC.mUnk_5C.x = 0;
-    this->mUnk_4AC.mUnk_5C.y = 0;
-    this->mUnk_4AC.mUnk_74   = 0;
-    this->mUnk_4AC.func_ov000_0206082c(0x89, 0x04);
-
-    this->mUnk_524.mUnk_6E   = true;
-    this->mUnk_524.mUnk_70   = 0;
-    this->mUnk_524.mUnk_5C.x = 0;
-    this->mUnk_524.mUnk_5C.y = 0;
-    this->mUnk_524.mUnk_74   = 0;
-    this->mUnk_524.func_ov000_0206082c(0x89, 0x05);
-
-    this->mUnk_59C.mUnk_6E   = true;
-    this->mUnk_59C.mUnk_70   = 0;
-    this->mUnk_59C.mUnk_5C.x = 0;
-    this->mUnk_59C.mUnk_5C.y = 0;
-    this->mUnk_59C.mUnk_74   = 0;
-    this->mUnk_59C.func_ov000_0206082c(0x89, 0x06);
-
-    this->mUnk_614.mUnk_6E   = true;
-    this->mUnk_614.mUnk_70   = 0;
-    this->mUnk_614.mUnk_5C.x = 0;
-    this->mUnk_614.mUnk_5C.y = 0;
-    this->mUnk_614.mUnk_74   = 0;
-    this->mUnk_614.func_ov000_0206082c(0x89, 0x07);
-
-    this->mUnk_68C.mUnk_6E   = true;
-    this->mUnk_68C.mUnk_70   = 0;
-    this->mUnk_68C.mUnk_5C.x = 0;
-    this->mUnk_68C.mUnk_5C.y = 0;
-    this->mUnk_68C.mUnk_74   = 0;
-    this->mUnk_68C.func_ov000_0206082c(0x89, 0x08);
-
-    this->mUnk_704.mUnk_6E   = true;
-    this->mUnk_704.mUnk_70   = 0;
-    this->mUnk_704.mUnk_5C.x = 0;
-    this->mUnk_704.mUnk_5C.y = 0;
-    this->mUnk_704.mUnk_74   = 0;
-    this->mUnk_704.func_ov000_0206082c(0x89, 0x09);
-
+    mUnk_2B4(0x89, 0x15),
+    mUnk_2CC(0x89, 0x00),
+    mUnk_344(0x89, 0x03),
+    mUnk_3BC(0x89, 0x02),
+    mUnk_434(0x89, 0x01),
+    mUnk_4AC(0x89, 0x04),
+    mUnk_524(0x89, 0x05),
+    mUnk_59C(0x89, 0x06),
+    mUnk_614(0x89, 0x07),
+    mUnk_68C(0x89, 0x08),
+    mUnk_704(0x89, 0x09) {
+        // Vec2s stack;
+    void *stack;
     if (this->mSaveSlotIndex == 0) {
         this->mUnk_004.func_ov000_020633c0(0x40, 0x89, 0x02, 0x1F, 0x89, 0x00);
         this->mUnk_77C.x = 0;
         this->mUnk_77C.y = 0;
     } else if (this->mSaveSlotIndex == 1) {
         this->mUnk_004.func_ov000_020633c0(0x41, 0x89, 0x01, 0x1F, 0x89, 0x01);
-        UnkStruct_ov019_020d24c8_28_258 local_40(0x89, 0x02);
-        UnkStruct_ov019_020d24c8_28_258 local_58(0x89, 0x01);
+        UnkStruct_ov019_020d24c8_28_258 local_40(0x89, 0x02);  // sp28
+        UnkStruct_ov019_020d24c8_28_258 local_58(0x89, 0x01); // sp10
 
-        Vec2p stack;
-        Vec2p stack_copy;
-        stack_copy.x     = local_58.mPos.x - local_40.mPos.x;
-        stack_copy.y     = local_58.mPos.y - local_40.mPos.y;
-        stack            = stack_copy;
-        this->mUnk_77C.x = stack.x;
-        this->mUnk_77C.y = stack.y;
+        s16 temp_r2   = local_58.mPos.x - local_40.mPos.x;
+        s16 spE       = local_58.mPos.y - local_40.mPos.y;
+        param1.param2 = temp_r2;
+
+        this->mUnk_77C.x = param1.param2;
+        this->mUnk_77C.y = spE;
     }
 
-    func_020166cc(&this->mUnk_004, &this->mUnk_004.mUnk_04);
+    stack = &this->mUnk_004;
+    func_020166cc(&this->mUnk_004.mUnk_04, &stack, param1.param1);
     this->mUnk_004.mUnk_2C = 1;
 }
 
@@ -323,8 +266,13 @@ ARM void UnkSubStruct9::func_ov019_020cbc0c() {
     }
 }
 
-// non-matching
 ARM void UnkSubStruct9::func_ov019_020cc5ac(Vec2us *param1) {
-    this->mUnk_004.mPos.x = param1->x;
-    this->mUnk_004.mPos.y = param1->y;
+    s16 x = param1->x;
+    s16 y = param1->y;
+
+    this->mUnk_004.mPos.x = 0;
+    this->mUnk_004.mPos.y = 0;
+
+    this->mUnk_004.mPos.x = x;
+    this->mUnk_004.mPos.y = y;
 }

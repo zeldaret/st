@@ -755,22 +755,6 @@ public:
     ~UnkSystem4();
 };
 
-class UnkSystem5 {
-public:
-    /* 00 */ char *mUnk_00;
-    /* 04 */ char *mUnk_04;
-    /* 08 */ char *mUnk_08;
-    /* 10 */ UnkSystem4 mUnk_0F00;
-    /* 20 */ UnkSystem4 mUnk_0F10;
-    /* 30 */ UnkSystem4 mUnk_0F20;
-    /* 40 */
-
-    UnkSystem5() {}
-    ~UnkSystem5() {}
-    void func_020171e4();
-    void func_02017520(const char *nscrPath, const char *ncgrPath, const char *nclrPath);
-};
-
 class UnkStruct2 {
 public:
     /* 00 */ unk8 pad[0x10];
@@ -789,15 +773,12 @@ struct UnkResult {
     UnkSystem4 mUnk_1C;
     UnkSystem4 mUnk_2C;
 
+    UnkResult();
     UnkResult(const char *path);
-};
+    UnkResult(const char *path, const char *param2, const char *param3);
+    ~UnkResult() {}
 
-class UnkStructSub2 {
-public:
-    UnkStructSub2();
-
-    /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
+    void func_02017520(const char *nscrPath, const char *ncgrPath, const char *nclrPath);
 };
 
 // used to draw the swords from the adventure and battle buttons
@@ -817,7 +798,7 @@ public:
     /* 29 */ unk8 mUnk_29;
     /* 2A */ unk8 mUnk_2A;
     /* 2B */ unk8 mUnk_2B;
-    /* 2C */ UnkStructSub2 mUnk_2C;
+    /* 2C */ unk32 mUnk_2C;
     /* 30 */ void *mUnk_30; // pointer to somewhere inside "CEBK"
     /* 34 */ void *mUnk_34;
     /* 38 */ unk32 mUnk_38;
@@ -842,6 +823,14 @@ public:
     /* 78 */
 
     UnkSubStruct19();
+    UnkSubStruct19(unk32 param1, unk32 param2) {
+        this->mUnk_6E   = true;
+        this->mUnk_70   = 0;
+        this->mUnk_5C.x = 0;
+        this->mUnk_5C.y = 0;
+        this->mUnk_74   = 0;
+        this->func_ov000_0206082c(param1, param2);
+    }
 
     void func_ov000_0206082c(unk32 param1, unk32 param2);
     void func_ov000_02060950();
@@ -852,4 +841,6 @@ public:
     unk32 func_ov000_02060af8(void);
     void func_ov000_02060b50();
     void func_ov000_02060b64(void);
+    unk32 func_ov000_02060c28(void);
+    void func_ov000_02060bd8(unk32 param1);
 };

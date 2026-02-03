@@ -16,7 +16,7 @@ void func_02013768(void *param1);
 void func_020261f0(unk32 param1, void *param2);
 void func_0201245c();
 void func_02027a28(void *param1, unk32 param2);
-void func_020275e8();
+void DC_FlushAll();
 void func_02013184();
 void func_020131b0();
 void func_020263bc(unk32 param1);
@@ -46,7 +46,7 @@ static u8 data_ov018_020c5bc0;
 ARM void SysFault::func_ov018_020c4840() {
     this->mUnk_05 = 0;
     func_02027a28(func_0201245c, 0);
-    func_020275e8();
+    DC_FlushAll();
     this->mUnk_00 = 0;
     this->mUnk_04 = 0;
 }

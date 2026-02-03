@@ -44,4 +44,7 @@
 
 #define STRUCT_PAD(from, to) unsigned char _pad_##from[(to) - (from)]
 
+#define SUBSCREEN_WIDTH 256
+#define SUBSCREEN_HEIGHT 192
+
 #endif

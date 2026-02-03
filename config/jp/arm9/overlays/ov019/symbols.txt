@@ -208,7 +208,7 @@ _ZN19FileSelectSubScreenC1Ev kind:function(arm,size=0x35c) addr:0x020d0aac
 _ZN19FileSelectSubScreen8vfunc_08EP5InputP12TouchControl kind:function(arm,size=0x154) addr:0x020d0e08
 _ZN19FileSelectSubScreen19func_ov019_020cf73cEii kind:function(arm,size=0x120) addr:0x020d0f5c
 _ZN19FileSelectSubScreen8vfunc_10EPc kind:function(arm,size=0x14) addr:0x020d107c
-_ZN13UnkStructSub2C1Ev kind:function(arm,size=0x18c) addr:0x020d1090
+_ZN20FileSelect_UnkClass7C1Ev kind:function(arm,size=0x18c) addr:0x020d1090
 _ZN20FileSelect_UnkClass78vfunc_00Ev kind:function(arm,size=0xd4) addr:0x020d121c
 _ZN20FileSelect_UnkClass78vfunc_04Ev kind:function(arm,size=0x58) addr:0x020d12f0
 _ZN19FileSelectSubScreenD1Ev kind:function(arm,size=0xec) addr:0x020d1348
@@ -274,7 +274,7 @@ _ZN8SaveFile19func_ov019_020d1aacEiPKw kind:function(arm,size=0x68) addr:0x020d3
 _ZN8SaveFile19func_ov019_020d1b14Ei kind:function(arm,size=0x9c) addr:0x020d3334
 data_ov019_020d1bb0 kind:data(any) addr:0x020d33d0
 data_ov019_020d1bbc kind:data(any) addr:0x020d33dc
-data_ov019_020d1bcc kind:data(any) addr:0x020d33ec
+data_ov019_020d1bcc kind:data(byte[6]) addr:0x020d33ec
 data_ov019_020d1bd4 kind:data(any) addr:0x020d33f4
 data_ov019_020d1be8 kind:data(any) addr:0x020d3408
 __sinit_GameModeFileSelect.cpp kind:function(arm,size=0x18) addr:0x020d341c

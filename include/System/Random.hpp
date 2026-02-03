@@ -40,6 +40,27 @@ struct Random {
         return (((this->GetRandomValue() >> 32) * (max - min)) >> 32) + min;
     }
 
+    u32 ConditionalNext32(u32 value) {
+        this->UpdateRandomValue();
+
+        u64 result = this->GetRandomValue() >> 32;
+
+        if (value != 0) {
+            result = (result * value) >> 32;
+        }
+
+        return result;
+    }
+
+    Vec2us &NextPos(u16 xMax, u16 yMax) {
+        Vec2us pos;
+
+        pos.x = this->Next32(0, xMax);
+        pos.y = this->Next32(0, yMax);
+
+        return pos;
+    }
+
     void Init();
 };
 

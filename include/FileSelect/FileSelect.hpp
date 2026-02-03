@@ -14,18 +14,20 @@
 extern const unk16 data_ov019_020d1bb0[];
 extern "C" void func_ov001_020bd6a8();
 
-// related to UnkStructSub2 but unsure how
+class FileSelect_UnkClass7_04 {
+public:
+    /* 000 */ UnkSubStruct19 mUnk_000[30];
+    /* E10 */ Vec2us mUnk_E10[30];
+    /* E88 */
+};
+
 class FileSelect_UnkClass7 {
 public:
-    class Sub5 {
-    public:
-        u16 one;
-        u16 two;
-    };
-
     /* 0000 (vtable) */
-    /* 0004 */ UnkSubStruct19 mUnk_0004[30];
-    /* 0E14 */ Sub5 mUnk_0E14[30];
+    /* 0004 */ FileSelect_UnkClass7_04 mUnk_004;
+    /* 0E8C */
+
+    FileSelect_UnkClass7();
 
     // data_ov019_020d22a8 vtable
     /* 00 */ virtual void vfunc_00();
@@ -51,18 +53,17 @@ public:
     /* 0028 */ unk8 mUnk_0029;
     /* 0028 */ unk8 mUnk_002A;
     /* 0028 */ unk8 mUnk_002B;
-    /* 002C */ UnkStructSub2 mUnk_002C;
-    /* 007C */ STRUCT_PAD(0x30, 0xEB8);
+    /* 002C */ FileSelect_UnkClass7 mUnk_002C;
     /* 0EB8 */ UnkSystem3 mUnk_0EB8;
     /* 0EC4 */ UnkSystem3 mUnk_0EC4;
     /* 0ED0 */ UnkSystem3 mUnk_0ED0;
     /* 0EDC */ UnkSystem3 mUnk_0EDC;
     /* 0EE8 */ UnkSystem3 mUnk_0EE8;
-    /* 0EF4 */ UnkSystem5 mUnk_0EF4;
-    /* 0F30 */ UnkSystem5 mUnk_0F30;
-    /* 0F6C */ UnkSystem5 mUnk_0F6C;
-    /* 0FA8 */ UnkSystem5 mUnk_0FA8;
-    /* 0FE4 */ UnkSystem5 mUnk_0FE4;
+    /* 0EF4 */ UnkResult mUnk_0EF4;
+    /* 0F30 */ UnkResult mUnk_0F30;
+    /* 0F6C */ UnkResult mUnk_0F6C;
+    /* 0FA8 */ UnkResult mUnk_0FA8;
+    /* 0FE4 */ UnkResult mUnk_0FE4;
     /* 1020 */
 
     GameModeLinkListNode *GetNode() {
