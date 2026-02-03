@@ -10,12 +10,19 @@
 #include "nitro/math.h"
 #include "types.h"
 
-class Actor_5c {
+class Actor_5c_Base {
 public:
     /* 00 */ Vec3p mUnk_00;
     /* 0c */ s16 mUnk_0c;
     /* 0e */ unk16 mUnk_0e; // padding?
     /* 10 */
+
+    Actor_5c_Base() {};
+};
+
+class Actor_5c : public Actor_5c_Base {
+public:
+    /* 00 (base) */
 
     Actor_5c() {};
     void func_ov000_020975f8();
@@ -23,11 +30,9 @@ public:
 
 class UnkStruct_ov000_020b539c {
 public:
-    /* 00 */ unk8 mUnk_00[0x30];
+    /* 00 */ Actor_5c_Base mUnk_00[3];
     /* 30 */ ActorType *mUnk_30;
     /* 34 */
-
-    void func_02028cdc(Actor_5c *param1, unk32 param2);
 
     unk32 *func_ov000_02073dc();
     unk32 *func_ov000_02073e8();
@@ -120,7 +125,7 @@ public:
     /* 0c */ virtual unk8 vfunc_0c();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual unk32 vfunc_18(unk32 param1);
+    /* 18 */ virtual bool vfunc_18(unk32 param1);
     /* 1c */ virtual void vfunc_1c();
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
@@ -164,8 +169,12 @@ public:
     s32 func_ov000_020985f0(void *param1);
     void func_ov000_0209862c(unk32 param1);
 
+    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c *param3, unk32 param4);
+    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c *param3);
     void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c param3);
     void func_ov000_020989e0();
+
+    unk32 func_ov000_02098a60(unk32 param1);
 
     void func_ov017_020bf5c4(Vec3p *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
 };

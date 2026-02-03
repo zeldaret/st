@@ -1,4 +1,6 @@
+#include "Unknown/UnkStruct_02049a2c.hpp"
 #include "global.h"
+#include "regs.h"
 #include "types.h"
 
 void func_0203b920(void);
@@ -13,10 +15,6 @@ void func_02000950(unk32 *);
 void func_01ffbd70(void);
 
 #define UNK_027FFF9C (*(u32 *) 0x027FFF9C)
-#define REG_IME (*(u32 *) 0x04000208)
-#define REG_VCOUNT (*(u32 *) 0x04000006)
-#define RAM_PALETTES ((u32 *) 0x05000000)
-#define RAM_OAM ((u32 *) 0x07000000)
 
 typedef void (*UnkStruct_027e0000_Callback)(void);
 struct UnkStruct_027e0000 {
@@ -44,14 +42,6 @@ struct RomBuildInfo {
     /* 3D */ char mUnk_3D[40];
 };
 extern RomBuildInfo BuildInfo;
-
-struct UnkStruct_02049a2c {
-    /* 00 */ unk8 mUnk_00[0xE8];
-    /* E8 */
-
-    void func_02013394(void);
-};
-extern UnkStruct_02049a2c *data_02049a2c;
 
 // non-matching
 ARM void Entry(void) {
@@ -126,7 +116,6 @@ RomBuildInfo BuildInfo = {
     "[SDK+MEI:libASR_V1.0.5-CW2.0-SDK4.0]",
 };
 
-// non-matching
 void main(void) {
-    data_02049a2c->func_02013394();
+    data_02049a2c.Run();
 }

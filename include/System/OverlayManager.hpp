@@ -1,9 +1,10 @@
 #pragma once
 
+#include "System/SysFault.hpp"
 #include "types.h"
 
 #include <nitro/Overlay.h>
-// #include "Item/Item.hpp"
+
 typedef u32 ItemFlag;
 
 EXTERN_OVERLAY_ID(0);
@@ -393,8 +394,12 @@ public:
     void UnloadOverlaySetup();
 
     void LoadEquipItem(ItemFlag equipId);
+
+    SysFault *func_020148d0(unk32 param1);
+    void func_02014994(unk32 param1);
 };
 
 extern OverlayManager gOverlayManager;
+extern OverlayManager data_02049ba0;
 extern OverlayId data_0203e0e8[OverlayIndex_COUNT];
 extern char *data_02043c88[OverlayIndex_COUNT];

@@ -9,6 +9,8 @@ extern "C" {
 #endif
 
 #define ABS(x) ((x) < 0 ? -(x) : (x))
+#define CLAMP(x, min, max) ((x) > (max) ? (max) : (x) < (min) ? (min) : (x))
+#define CLAMP2(x, min, max) ((x) > (max) ? (max) : (x) >= (min) ? (x) : (min))
 
 // Q20.12 fixed point number
 typedef s32 q20;
@@ -26,6 +28,222 @@ typedef s16 q4;
 #define DEG_TO_ANG(n) ((n) * 0x10000 / 360)
 #define SIN(n) (gSinCosTable[2 * ((n) >> 4)])
 #define COS(n) (gSinCosTable[2 * ((n) >> 4) + 1])
+
+#ifdef __cplusplus
+}
+#endif
+
+#ifdef __cplusplus
+struct Vec2b {
+    /* 0 */ u8 x;
+    /* 1 */ u8 y;
+    /* 2 */
+
+    Vec2b() {}
+    Vec2b(u8 X, u8 Y) {
+        x = X;
+        y = Y;
+    }
+};
+
+struct Vec2s {
+    /* 0 */ s16 x;
+    /* 2 */ s16 y;
+    /* 4 */
+
+    Vec2s() {}
+    Vec2s(s16 X, s16 Y) {
+        x = X;
+        y = Y;
+    }
+};
+
+struct Vec2us {
+    /* 0 */ u16 x;
+    /* 2 */ u16 y;
+    /* 4 */
+
+    Vec2us() {}
+    Vec2us(u16 X, u16 Y) {
+        x = X;
+        y = Y;
+    }
+};
+
+struct Vec2p {
+    /* 0 */ q20 x;
+    /* 4 */ q20 y;
+    /* 8 */
+
+    Vec2p() {}
+    Vec2p(q20 X, q20 Y) {
+        x = X;
+        y = Y;
+    }
+};
+
+struct Vec3p {
+    /* 0 */ q20 x;
+    /* 4 */ q20 y;
+    /* 8 */ q20 z;
+    /* c */
+
+    Vec3p() {}
+    Vec3p(q20 X, q20 Y, q20 Z) {
+        x = X;
+        y = Y;
+        z = Z;
+    }
+};
+
+struct Vec4p {
+    /* 00 */ q20 x;
+    /* 04 */ q20 y;
+    /* 08 */ q20 z;
+    /* 0c */ q20 w;
+    /* 10 */
+
+    Vec4p() {}
+    Vec4p(q20 X, q20 Y, q20 Z, q20 W) {
+        x = X;
+        y = Y;
+        z = Z;
+        w = W;
+    }
+};
+
+struct Mat2p {
+    /* 00 */ Vec2p xColumn;
+    /* 08 */ Vec2p yColumn;
+    /* 10 */
+
+    Mat2p() {}
+    Mat2p(Vec2p X, Vec2p Y) {
+        xColumn = X;
+        yColumn = Y;
+    }
+};
+
+struct Mat3p {
+    /* 00 */ Vec3p xColumn;
+    /* 0c */ Vec3p yColumn;
+    /* 18 */ Vec3p zColumn;
+    /* 24 */
+
+    Mat3p() {}
+    Mat3p(Vec3p X, Vec3p Y, Vec3p Z) {
+        xColumn = X;
+        yColumn = Y;
+        zColumn = Z;
+    }
+};
+
+struct Mat4x3p {
+    /* 00 */ Vec3p xColumn;
+    /* 0c */ Vec3p yColumn;
+    /* 18 */ Vec3p zColumn;
+    /* 24 */ Vec3p wColumn;
+    /* 30 */
+
+    Mat4x3p() {}
+    Mat4x3p(Vec3p X, Vec3p Y, Vec3p Z, Vec3p W) {
+        xColumn = X;
+        yColumn = Y;
+        zColumn = Z;
+        wColumn = W;
+    }
+};
+
+struct Mat4p {
+    /* 00 */ Vec4p xColumn;
+    /* 10 */ Vec4p yColumn;
+    /* 20 */ Vec4p zColumn;
+    /* 30 */ Vec4p wColumn;
+    /* 40 */
+
+    Mat4p() {}
+    Mat4p(Vec4p X, Vec4p Y, Vec4p Z, Vec4p W) {
+        xColumn = X;
+        yColumn = Y;
+        zColumn = Z;
+        wColumn = W;
+    }
+};
+#else
+extern "C" {
+typedef struct Vec2b {
+    /* 0 */ u8 x;
+    /* 1 */ u8 y;
+    /* 2 */
+} Vec2b;
+
+typedef struct Vec2us {
+    /* 0 */ u16 x;
+    /* 2 */ u16 y;
+    /* 4 */
+} Vec2us;
+
+typedef struct Vec2p {
+    /* 0 */ q20 x;
+    /* 4 */ q20 y;
+    /* 8 */
+} Vec2p;
+
+typedef struct Vec3p {
+    /* 0 */ q20 x;
+    /* 4 */ q20 y;
+    /* 8 */ q20 z;
+    /* c */
+} Vec3p;
+
+typedef struct Vec4p {
+    /* 00 */ q20 x;
+    /* 04 */ q20 y;
+    /* 08 */ q20 z;
+    /* 0c */ q20 w;
+    /* 10 */
+} Vec4p;
+
+typedef struct Mat2p {
+    /* 00 */ Vec2p xColumn;
+    /* 08 */ Vec2p yColumn;
+    /* 10 */
+} Mat2p;
+
+typedef struct Mat3p {
+    /* 00 */ Vec3p xColumn;
+    /* 0c */ Vec3p yColumn;
+    /* 18 */ Vec3p zColumn;
+    /* 24 */
+} Mat3p;
+
+typedef struct Mat4x3p {
+    /* 00 */ Vec3p xColumn;
+    /* 0c */ Vec3p yColumn;
+    /* 18 */ Vec3p zColumn;
+    /* 24 */ Vec3p wColumn;
+    /* 30 */
+} Mat4x3p;
+
+typedef struct Mat4p {
+    /* 00 */ Vec4p xColumn;
+    /* 10 */ Vec4p yColumn;
+    /* 20 */ Vec4p zColumn;
+    /* 30 */ Vec4p wColumn;
+    /* 40 */
+} Mat4p;
+}
+#endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef struct VEC2S {
+    /* 0 */ s16 x;
+    /* 1 */ s16 y;
+    /* 2 */
+} VEC2S;
 
 u32 func_01ff9f3c(s32 a, s32 b);
 s32 Atan2(s32 x, s32 y);
@@ -49,68 +267,6 @@ u32 CoRemainder(u32 a, u32 b);
 bool Approach(unk32 *src, unk32 dest, unk32 step);
 bool Approach_thunk(unk32 *src, unk32 dest, unk32 step);
 extern q4 gSinCosTable[];
-
-typedef struct {
-    /* 0 */ u8 x;
-    /* 1 */ u8 y;
-    /* 2 */
-} Vec2b;
-
-typedef struct {
-    /* 0 */ s16 x;
-    /* 1 */ s16 y;
-    /* 2 */
-} Vec2s;
-
-typedef struct {
-    /* 0 */ q20 x;
-    /* 4 */ q20 y;
-    /* 8 */
-} Vec2p;
-
-typedef struct {
-    /* 0 */ q20 x;
-    /* 4 */ q20 y;
-    /* 8 */ q20 z;
-    /* c */
-} Vec3p;
-
-typedef struct {
-    /* 00 */ q20 x;
-    /* 04 */ q20 y;
-    /* 08 */ q20 z;
-    /* 0c */ q20 w;
-    /* 10 */
-} Vec4p;
-
-typedef struct {
-    /* 00 */ Vec2p xColumn;
-    /* 08 */ Vec2p yColumn;
-    /* 10 */
-} Mat2p;
-
-typedef struct {
-    /* 00 */ Vec3p xColumn;
-    /* 0c */ Vec3p yColumn;
-    /* 18 */ Vec3p zColumn;
-    /* 24 */
-} Mat3p;
-
-typedef struct {
-    /* 00 */ Vec3p xColumn;
-    /* 0c */ Vec3p yColumn;
-    /* 18 */ Vec3p zColumn;
-    /* 24 */ Vec3p wColumn;
-    /* 30 */
-} Mat4x3p;
-
-typedef struct {
-    /* 00 */ Vec4p xColumn;
-    /* 10 */ Vec4p yColumn;
-    /* 20 */ Vec4p zColumn;
-    /* 30 */ Vec4p wColumn;
-    /* 40 */
-} Mat4p;
 
 extern const Vec3p gVec3p_ZERO;
 

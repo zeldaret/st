@@ -59,7 +59,7 @@ ARM ActorUnk_ov000_020a8bb0::ActorUnk_ov000_020a8bb0(ActorUnk_ov000_020a8bb0_a4_
 
 ARM ActorUnk_ov000_020a8bb0::~ActorUnk_ov000_020a8bb0() {}
 
-ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_18(unk32 param1) {
+ARM bool ActorUnk_ov000_020a8bb0::vfunc_18(unk32 param1) {
     if (this->mUnk_70 == 0 && this->func_ov000_020a8dd0() != 0) {
         UNSET_FLAG(this->mFlags, ActorFlag_Alive);
     }

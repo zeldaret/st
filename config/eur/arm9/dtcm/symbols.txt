@@ -61,7 +61,7 @@ data_027e0850 kind:bss addr:0x027e0850
 data_027e0854 kind:bss addr:0x027e0854
 data_027e0858 kind:bss addr:0x027e0858
 data_027e085c kind:bss addr:0x027e085c
-data_027e0860 kind:bss addr:0x027e0860
+ThreadInfo kind:bss addr:0x027e0860
 data_027e0864 kind:bss addr:0x027e0864
 data_027e0870 kind:bss addr:0x027e0870
 data_027e08f0 kind:bss addr:0x027e08f0

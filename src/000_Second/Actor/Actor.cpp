@@ -1,4 +1,5 @@
 #include "Actor/Actor.hpp"
+#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
@@ -20,7 +21,7 @@ ARM Actor::Actor() {
     this->mUnk_5c.func_ov000_020975f8();
     this->mRef.Reset();
     this->mType = NULL;
-    data_ov000_020b539c.func_02028cdc(&this->mUnk_5c, 0x30);
+    Copy256(&data_ov000_020b539c.mUnk_00, &this->mUnk_5c, sizeof(data_ov000_020b539c.mUnk_00));
     this->mPrevPos = this->mPos = this->mUnk_5c.mUnk_00;
     this->mAngle                = this->mUnk_5c.mUnk_0c;
     SET_FLAGS(this->mFlags, ActorFlag_Alive, ActorFlag_Visible, ActorFlag_Active, ActorFlag_14);
@@ -45,8 +46,8 @@ ARM void Actor::func_ov000_0209848c(ActorType *param1) {
     this->mUnk_4e                 = unk_1c;
 }
 
-ARM unk32 Actor::vfunc_18(unk32 param1) {
-    return 1;
+ARM bool Actor::vfunc_18(unk32 param1) {
+    return true;
 }
 
 ARM void Actor::vfunc_1c() {}

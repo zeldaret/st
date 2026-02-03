@@ -13,14 +13,43 @@ typedef int s32;
 typedef short s16;
 typedef char s8;
 
+typedef float f32;
+typedef double f64;
+
 typedef s8 unk8;
 typedef s16 unk16;
 typedef s32 unk32;
 
-#ifndef __cplusplus
-typedef s32 bool;
-#endif
-
 #define CEIL_DIV(a, b) (((a) + (b) - 1) / (b))
+
+#ifdef __cplusplus
+    #define DECL_PTMF(name, ...)                          \
+        template <typename T> struct name {               \
+            typedef void (T::*PTMFCallback)(__VA_ARGS__); \
+                                                          \
+            PTMFCallback callback;                        \
+        };
+
+    #define CALL_PTMF(type, data, ...)          \
+        {                                       \
+            type &ptr = (data);                 \
+            (this->*ptr.callback)(__VA_ARGS__); \
+        }
+
+    #define STATIC_CALL_PTMF(type, data, thisx, ...) \
+        {                                            \
+            type &ptr = (data);                      \
+            ((thisx)->*ptr.callback)(__VA_ARGS__);   \
+        }
+
+    #define STATIC_PTMFCALLBACK(type, data, thisx, ...) \
+        {                                               \
+            type::PTMFCallback &ptr = (data);           \
+            ((thisx)->*ptr)(__VA_ARGS__);               \
+        }
+
+DECL_PTMF(PTMF);
+typedef void (*UnkCallback)(u16 param1);
+#endif
 
 #endif

@@ -26,4 +26,25 @@
 #define SBSS_BEGIN _Pragma("section sbss begin")
 #define SBSS_END _Pragma("section sbss end")
 
+#define NO_INLINE __attribute__((never_inline))
+
+#ifdef __MWERKS__
+    #define AT_ADDRESS(xyz) : (xyz)
+    #define DECL_SECTION(x) __declspec(section x)
+    #define EXPORT __declspec(export)
+    #define WEAK __declspec(weak)
+    #define ASM asm
+#else
+    #define AT_ADDRESS(xyz)
+    #define DECL_SECTION(x)
+    #define EXPORT
+    #define WEAK
+    #define ASM
+#endif
+
+#define STRUCT_PAD(from, to) unsigned char _pad_##from[(to) - (from)]
+
+#define SUBSCREEN_WIDTH 256
+#define SUBSCREEN_HEIGHT 192
+
 #endif

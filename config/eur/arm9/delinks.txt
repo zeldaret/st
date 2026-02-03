@@ -10,13 +10,168 @@
 src/Main/Main.cpp:
     .text       start:0x02000800 end:0x02000bdc
 
+src/Main/System/SysNew.cpp:
+    .text       start:0x02011e10 end:0x0201200c
+
+src/Main/Player/TouchControl.cpp:
+    .text       start:0x02014124 end:0x020144a0
+
 src/Main/System/OverlayManager.cpp:
     .text       start:0x020147fc end:0x02014944
+
+src/Main/System/Random.cpp:
+    .text       start:0x02016384 end:0x02016404
+
+src/Main/Game/GameModeLinkListNode.cpp:
+    complete
+    .text       start:0x0201667c end:0x02016720
+
+src/Main/func_02017ea4.cpp:
+    .text       start:0x02017ea4 end:0x02017f38
+
+src/Main/Game/GameModeBase.cpp:
+    complete
+    .text       start:0x020182e4 end:0x020183a4
+    .data       start:0x02044010 end:0x02044040
+
+src/Main/UnkStruct_0204a060.cpp:
+    complete
+    .text       start:0x020183a4 end:0x0201847c
+    .data       start:0x02044040 end:0x0204405c
+
+src/Main/Game/GameModeManagerBase.cpp:
+    .text       start:0x0201847c end:0x02018bc4
+    .data       start:0x0204405c end:0x0204409c
+
+libs/c/src/abort_exit_arm_eabi.c:
+    complete
+    .text       start:0x020336e8 end:0x02033870
+    .bss        start:0x02051570 end:0x02051680
+
+libs/c/src/ansi_files.c:
+    complete
+    .text       start:0x02033870 end:0x020338d4
+    .data       start:0x020446a8 end:0x0204478c
+    .bss        start:0x020517a0 end:0x02051aa0
+
+libs/c/src/float.c:
+    complete
+    .data       start:0x0204478c end:0x02044790
+
+libs/c/src/locale.c:
+    complete
+    .data       start:0x02044790 end:0x020449ac
+
+libs/c/src/arith.c:
+    complete
+    .text       start:0x020338d4 end:0x020338ec
+
+libs/c/src/buffer_io.c:
+    complete
+    .text       start:0x020338ec end:0x0203399c
+
+libs/c/src/file_io.c:
+    complete
+    .text       start:0x0203399c end:0x02033a80
+
+libs/c/src/math_api.c:
+    complete
+    .text       start:0x02033b14 end:0x02033ba0
+
+libs/c/src/mbstring.c:
+    complete
+    .text       start:0x02033ba0 end:0x02033c90
+
+libs/c/src/mem.c:
+    complete
+    .text       start:0x02033c90 end:0x02033d7c
+
+libs/c/src/mem_funcs.c:
+    complete
+    .text       start:0x02033d7c end:0x02033e28
+
+libs/c/src/secure_error.c:
+    complete
+    .text       start:0x02033e28 end:0x02033e54
+    .bss        start:0x02051aa4 end:0x02051aa8
+
+libs/c/src/signal.c:
+    complete
+    .text       start:0x02033e54 end:0x02033f7c
+    .bss        start:0x02051aa8 end:0x02051ac4
+
+libs/c/src/string.c:
+    complete
+    .text       start:0x02033f7c end:0x020341f8
+
+libs/c/src/wmem.c:
+    complete
+    .text       start:0x020341f8 end:0x02034230
+
+libs/c/src/wprintf.c:
+    .text       start:0x02034230 end:0x0203615c
+    .data       start:0x020449ac end:0x02044a2c
+
+libs/c/src/wstring.c:
+    complete
+    .text       start:0x0203615c end:0x0203621c
+
+libs/c/src/ansi_fp.c:
+    .text       start:0x0203621c end:0x02036ba4
+    .data       start:0x02044a2c end:0x02044b00
+
+libs/c/src/extras.c:
+    complete
+    .text       start:0x02036ba4 end:0x02036bd0
+
+libs/c/src/math/e_log.c:
+    complete
+    .text       start:0x02036bd0 end:0x02037300
+    .bss        start:0x02051ac4 end:0x02051acc
+
+libs/c/src/math/e_log10.c:
+    complete
+    .text       start:0x02037300 end:0x020374d8
+    .bss        start:0x02051acc end:0x02051ad4
+
+libs/c/src/math/e_pow.c:
+    complete
+    .text       start:0x020374d8 end:0x02038660
+    .rodata     start:0x02043188 end:0x020431b8
+
+libs/c/src/math/s_ceil.c:
+    complete
+    .text       start:0x02038660 end:0x02038820
+
+libs/c/src/math/s_copysign.c:
+    complete
+    .text       start:0x02038820 end:0x02038848
+
+libs/c/src/math/s_fabs.c:
+    complete
+    .text       start:0x02038848 end:0x02038868
+
+libs/c/src/math/s_frexp.c:
+    complete
+    .text       start:0x02038868 end:0x02038928
+
+libs/c/src/math/s_ldexp.c:
+    complete
+    .text       start:0x02038928 end:0x02038b88
+
+libs/c/src/math/w_log.c:
+    complete
+    .text       start:0x02038b88 end:0x02038b94
+
+libs/c/src/math/w_log10f.c:
+    complete
+    .text       start:0x02038b94 end:0x02038ba0
+
+libs/c/src/math/w_pow.c:
+    complete
+    .text       start:0x02038ba0 end:0x02038bac
 
 libs/cpp/src/__register_global_object.c:
     complete
     .text       start:0x0203ce74 end:0x0203ce94
     .bss        start:0x02051ad4 end:0x02051ad8
-
-src/Main/func_02017ea4.cpp:
-    .text       start:0x02017ea4 end:0x02017f38

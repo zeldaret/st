@@ -19,3 +19,4 @@ build.ninja
 .ninja_deps
 /wibo
 m2c*.c
+nonmatchings/
