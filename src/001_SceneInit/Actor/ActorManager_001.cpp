@@ -21,10 +21,11 @@ unk32 func_01ffd3d8();
 }
 
 struct UnkStruct_ov000_020ab1ac {
-    u32 mUnk_00;    // +0x00
-    u32 mUnk_04;     // +0x04
-    u8 mUnk_08;     // +0x08
-    u8 padding[3];
+    /* 00 */ u32 mUnk_00;
+    /* 04 */ u32 mUnk_04;
+    /* 08 */ u8 mUnk_08;
+    /* 09 */ u8 pad[3];
+    /* 0C */
 };
 extern UnkStruct_ov000_020ab1ac data_ov000_020ab1ac[30];
 
