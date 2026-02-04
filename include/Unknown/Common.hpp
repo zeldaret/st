@@ -233,10 +233,19 @@ public:
     }
 };
 
-class UnkStruct_ov019_020d24c8_28_258 {
-public:
+struct UnkStruct_ov019_020d24c8_28_258_00 {
     /* 00 */ void *mUnk_00;
     /* 04 */ unk32 mUnk_04;
+
+    UnkStruct_ov019_020d24c8_28_258_00() {}
+    UnkStruct_ov019_020d24c8_28_258_00(void *param1, unk32 param2) :
+        mUnk_00(param1),
+        mUnk_04(param2) {}
+    void func_ov000_0205fc20(unk32 param1, unk32 param2, void *param3, void *param4);
+};
+
+class UnkStruct_ov019_020d24c8_28_258 : public UnkStruct_ov019_020d24c8_28_258_00 {
+public:
     /* 08 */ unk16 mUnk_08;
     /* 0A */ union { //! TODO: figure out
         Vec2s mPos;
@@ -257,8 +266,7 @@ public:
     };
 
     UnkStruct_ov019_020d24c8_28_258(unk32 param1, unk32 param2) :
-        mUnk_00(0),
-        mUnk_04(0) {
+        UnkStruct_ov019_020d24c8_28_258_00(NULL, 0) {
         this->UnknownAction(param1, param2);
     }
 
@@ -267,8 +275,6 @@ public:
         this->mUnk_12 = param1;
         this->mUnk_14 = param2;
     }
-
-    void func_ov000_0205fc20(unk32 param1, unk32 param2, void *param3, void *param4);
 };
 
 #define BTN_ID_NONE -1
@@ -843,4 +849,15 @@ public:
     void func_ov000_02060b64(void);
     unk32 func_ov000_02060c28(void);
     void func_ov000_02060bd8(unk32 param1);
+};
+
+struct UnkStruct_StackTitleScreen {
+    /* 00 */ unk32 pad[5];
+    /* 14 */
+
+    UnkStruct_StackTitleScreen(const char *path, unk32 param1);
+    ~UnkStruct_StackTitleScreen();
+
+    void func_ov000_02059270(unk32 param1, char *param2, unk32 param3);
+    void func_ov000_02059288(unk32 param1, char *param2, unk32 param3);
 };

@@ -34,8 +34,8 @@ public:
     /* 30 */ ActorType *mUnk_30;
     /* 34 */
 
-    unk32 *func_ov000_02073dc();
-    unk32 *func_ov000_02073e8();
+    ActorType **func_ov000_02073dc();
+    ActorType **func_ov000_02073e8();
     ActorType *func_ov000_020974dc(u32 id);
 };
 

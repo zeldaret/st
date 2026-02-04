@@ -39,15 +39,6 @@ static const Vec2s data_ov025_020c5ae8(0x0100, 0x0080);
 static const Vec2us data_ov025_020c5ae0(0x0100, 0x0080);
 #endif
 
-struct UnkStruct_StackTitleScreen {
-    /* 00 */ unk32 pad[5];
-    /* 14 */
-
-    UnkStruct_StackTitleScreen(const char *path, unk32 param1);
-    void func_ov000_02059270(unk32 param1, char *param2, unk32 param3);
-    void func_ov000_02059240();
-};
-
 TitleScreen::TitleScreen() :
     mState(TitleScreenState_None),
     mShowUI(false),
@@ -65,9 +56,10 @@ TitleScreen::TitleScreen() :
     size_t len = strlen((char *) acStack_54);
     strncpy((char *) acStack_54 + len, path, sizeof(acStack_54) - len - 1);
 
-    UnkStruct_StackTitleScreen auStack_68((char *) acStack_54, 1);
-    auStack_68.func_ov000_02059270(0x3E, "title", 0x32500000);
-    auStack_68.func_ov000_02059240();
+    {
+        UnkStruct_StackTitleScreen auStack_68((char *) acStack_54, 1);
+        auStack_68.func_ov000_02059270(0x3E, "title", 0x32500000);
+    }
 
     data_0204aeac.func_0201c494(3);
     this->mUnk_218.func_0201effc(0x0F, 1, 0x1F);

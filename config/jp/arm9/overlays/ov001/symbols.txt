@@ -177,8 +177,8 @@ _ZN12ActorManager6CreateEv kind:function(thumb,size=0x16) addr:0x020bc7ac
 _ZN12ActorManagerC1Ev kind:function(thumb,size=0x46) addr:0x020bc7c4
 _ZN12ActorManagerD1Ev kind:function(thumb,size=0x18) addr:0x020bc80c
 _ZN12ActorManager19func_ov001_020bafdcEv kind:function(thumb,size=0x3c) addr:0x020bc824
-_ZN12ActorManager19func_ov001_020bb018Ei kind:function(thumb,size=0x3fc) addr:0x020bc860
-_ZN12ActorManager19func_ov001_020bb414Ev kind:function(thumb,size=0x74) addr:0x020bcc5c
+_ZN12ActorManager19func_ov001_020bb018EP36UnkStruct_func_ov001_020bb018_param2 kind:function(thumb,size=0x3fc) addr:0x020bc860
+_ZN12ActorManager19func_ov001_020bb414EPS_ kind:function(thumb,size=0x74) addr:0x020bcc5c
 _ZN12ActorManager19func_ov001_020bb488Ev kind:function(thumb,size=0xc0) addr:0x020bccd0
 _ZN12ActorManager19func_ov001_020bb548Ev kind:function(thumb,size=0xe8) addr:0x020bcd90
 _ZN12ActorManager19func_ov001_020bb630Ev kind:function(thumb,size=0x80) addr:0x020bce78
@@ -472,7 +472,6 @@ data_ov001_020c3e14 kind:data(any) addr:0x020c3e14
 data_ov001_020c3e28 kind:data(any) addr:0x020c3e28
 data_ov001_020c3e50 kind:data(any) addr:0x020c3e50
 data_ov001_020c3e78 kind:data(any) addr:0x020c3e78
-data_ov001_020c3e7c kind:data(any) addr:0x020c3e7c
 data_ov001_020c3e82 kind:data(any) addr:0x020c3e82
 data_ov001_020c3e8c kind:data(any) addr:0x020c3e8c
 data_ov001_020c3ea0 kind:data(any) addr:0x020c3ea0

@@ -95,7 +95,7 @@ ARM void *operator new(unsigned long length, u32 id, u32 idLength) {
     return pvVar1;
 }
 
-ARM void SysObject::operator delete(void *ptr) {
+ARM void operator delete(void *ptr) {
     SysDelete(ptr);
 }
 

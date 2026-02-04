@@ -79,11 +79,11 @@ Each overlay is tied to an index which is used to access the overlay in two diff
 `068` | FldAjito          | `056`   |      |
 `069` | FldRabbit         | `057`   |      |
 `070` | Dungeon           | `031`   |      |
-`071` | Tower             | `033`   |      |
+`071` | Tower             | `033`   | `8`  |
 `072` | TowerLobby        | `034`   |      |
-`073` | BossDeago         | `040`   |      |
-`074` | BossLast1         | `041`   |      |
-`075` | BossLast2         | `042`   |      |
+`073` | BossDeago         | `040`   | `8`  |
+`074` | BossLast1         | `041`   | `8`  |
+`075` | BossLast2         | `042`   | `8`  |
 `076` | DgnLv1            | `071`   |      |
 `077` | DgnForest         | `043`   |      |
 `078` | BossForest        | `035`   |      |

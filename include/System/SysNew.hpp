@@ -27,7 +27,6 @@ enum HeapIndex_ {
 
 class SysObject {
 public:
-    static void operator delete(void *ptr);
     static void operator delete[](void *ptr);
 };
 
@@ -74,6 +73,8 @@ public:
 
     void func_02013014();
     void func_02013070();
+
+    void func_ov001_020ba588(unk32 param1, unk32 param2);
 
     void func_ov018_020c4980();
     void func_ov018_020c4a5c();

@@ -23,7 +23,7 @@ public:
     /* 2c */ unk32 mUnk_2c;
     /* 30 */ unk32 mUnk_30;
     /* 34 */ unk32 mUnk_34;
-    /* 38 */ unk8 mUnk_38;
+    /* 38 */ u8 mUnk_38;
     /* 39 */ unk8 mUnk_39;
     /* 3a */
 

@@ -47,4 +47,8 @@
 #define SUBSCREEN_WIDTH 256
 #define SUBSCREEN_HEIGHT 192
 
+#define ALIGN_PREV(X, N) ((X) & ~((N) - 1))
+#define ALIGN_NEXT(X, N) ALIGN_PREV(((X) + (N) - 1), N)
+#define ALIGN(X, N) ((X + N) & ~N)
+
 #endif
