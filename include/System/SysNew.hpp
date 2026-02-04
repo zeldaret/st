@@ -12,6 +12,7 @@ enum __UnkId {
 };
 
 typedef u32 HeapIndex;
+typedef s16 HeapIndex16;
 enum HeapIndex_ {
     HeapIndex_0   = 0,
     HeapIndex_1   = 1,

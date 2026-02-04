@@ -19,6 +19,11 @@ src/Main/Player/TouchControl.cpp:
 src/Main/System/OverlayManager.cpp:
     .text       start:0x020147fc end:0x02014944
 
+src/Main/UnkStruct_ov000_020b4f84_00_Base.cpp:
+    complete
+    .text       start:0x02015528 end:0x02015628
+    .data       start:0x02043f00 end:0x02043f1c
+
 src/Main/System/Random.cpp:
     .text       start:0x02016384 end:0x02016404
 

@@ -69,10 +69,10 @@ ARM UnkStruct_ov000_020b4f84::UnkStruct_ov000_020b4f84() {
     int *arg0     = 0;
     this->mUnk_C0 = (int) arg0 + 1;
 
-    this->func_ov000_0206667c(0, 0);
+    this->func_ov000_0206667c(FontIndex_DSZ2_msg, 0);
 
     if (func_02014fe0() == 0) {
-        this->func_ov000_0206667c(1, 0);
+        this->func_ov000_0206667c(FontIndex_LC_Font_s, 0);
     }
 }
 

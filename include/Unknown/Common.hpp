@@ -643,7 +643,7 @@ public:
     /* 14F */ unk8 mUnk_14F; // 0x547
     /* 150 */ UnkSystem2_UnkSubSystem11 mUnk_150;
     /* 170 */ void *mUnk_170;
-    /* 144 */ STRUCT_PAD(0x174, 0x238);
+    /* 144 */ STRUCT_PAD(0x174, 0x238); // +0x174: space between characters, set from BMG INF1 entry
     /* 238 */
 
     UnkSystem2_UnkSubSystem5() {}
