@@ -85,6 +85,7 @@ THUMB void ActorManager::func_ov001_020bafdc() {
     }
 }
 
+// https://decomp.me/scratch/UywfM
 THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param2 *param1) {
     u16 unk_0A = param1->mUnk_0A;
     u16 unk_08 = param1->mUnk_08;
@@ -405,7 +406,7 @@ THUMB void ActorManager::SetInstance(ActorManager *instance) {
     gActorManager = instance;
 }
 
-// non-matching (regalloc)
-THUMB void ActorManager::ClearInstance() {
+THUMB int ActorManager::ClearInstance() {
     gActorManager = NULL;
+    //! @bug: the function expects a return value (though it seems unused)
 }

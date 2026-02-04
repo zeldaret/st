@@ -45,7 +45,7 @@ public:
 
     void func_ov000_02096e44(int index);
 
-    void ClearInstance();
+    int ClearInstance();
     void func_ov001_020bafdc();
     void func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param2 *param1);
     void func_ov001_020bb488();
