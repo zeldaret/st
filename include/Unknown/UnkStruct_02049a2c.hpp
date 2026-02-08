@@ -44,7 +44,7 @@ public:
     void main(unk32 param1); // really here? got 2 params for sure
     void Run(unk32 param1);
     void func_02013370(unk32 param1);
-    bool func_02013724(void *param1);
+    bool TrySetCreateCallback(GameModeCreateCallback createCallback);
 
     void func_ov000_020576d0();
     void func_ov000_0205770c();

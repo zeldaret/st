@@ -9,7 +9,7 @@
 extern "C" void func_ov001_020be078();
 
 THUMB bool UnkStruct_0204a060::vfunc_0C(void) {
-    return data_02049a2c.func_02013724(this->createCallback);
+    return data_02049a2c.TrySetCreateCallback(this->createCallback);
 }
 
 THUMB void UnkStruct_0204a060::func_020183b8(void) {

@@ -6,6 +6,7 @@
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204e64c.hpp"
 #include "Unknown/UnkStruct_027e0208.hpp"
+#include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "regs.h"
 #include "versions.h"
 
@@ -28,7 +29,12 @@ struct SomeSaveFileStruct {
     ~SomeSaveFileStruct();
 };
 
-void UnkStruct_02049a2c::Run(unk32 param1) {
+ARM void UnkStruct_02049a2c::func_02013370(unk32 param1) {
+    data_0204a110.func_02018c78(param1);
+    data_ov000_020b50c0.mUnk_9C = param1;
+}
+
+ARM void UnkStruct_02049a2c::Run(unk32 param1) {
     this->func_ov018_020c48a4(param1);
 
     do {
@@ -154,4 +160,13 @@ void UnkStruct_02049a2c::Run(unk32 param1) {
 
         this->mFrameCounter = SHARED_WORK_C3C;
     } while (true);
+}
+
+bool UnkStruct_02049a2c::TrySetCreateCallback(GameModeCreateCallback createCallback) {
+    if (this->createCallback == NULL) {
+        this->createCallback = createCallback;
+        return true;
+    }
+
+    return false;
 }

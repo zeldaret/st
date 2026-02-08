@@ -64,7 +64,7 @@ ARM void UnkStruct_02049a2c::func_ov018_020c48a4(unk32 param1) {
     func_020234d4(1);
     func_02026ef0(&this->mUnk_1C.mUnk_04);
     func_02031e48(func_020131b0);
-    this->func_02013724(UnkStruct_02049a2c::func_ov018_020c4ba8);
+    this->TrySetCreateCallback((GameModeCreateCallback) UnkStruct_02049a2c::func_ov018_020c4ba8);
 }
 
 ARM void UnkStruct_02049a2c::func_ov018_020c48f8() {
