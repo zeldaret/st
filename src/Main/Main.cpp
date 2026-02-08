@@ -1,4 +1,4 @@
-#include "Unknown/UnkStruct_02049a2c.hpp"
+#include "Game/Game.hpp"
 #include "global.h"
 #include "regs.h"
 #include "types.h"
@@ -83,7 +83,7 @@ ARM void Entry(void) {
     func_0203b920();
     func_02011da0();
     CallStaticInitializers();
-    data_02049a2c.main(200);
+    gGame.main(200);
 }
 
 // non-matching
@@ -115,6 +115,6 @@ RomBuildInfo BuildInfo = {
     "[SDK+MEI:libASR_V1.0.5-CW2.0-SDK4.0]",
 };
 
-void UnkStruct_02049a2c::main(unk32 param1) {
+void Game::main(unk32 param1) {
     this->Run(param1);
 }

@@ -1,15 +1,15 @@
 #include "Unknown/UnkStruct_0204a060.hpp"
+#include "Game/Game.hpp"
 #include "Game/GameMode.hpp"
 #include "Game/GameModeFileSelect.hpp"
 #include "System/OverlayManager.hpp"
-#include "Unknown/UnkStruct_02049a2c.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 
 extern "C" void func_ov001_020be078();
 
 THUMB bool UnkStruct_0204a060::vfunc_0C(void) {
-    return data_02049a2c.TrySetCreateCallback(this->createCallback);
+    return gGame.TrySetCreateCallback(this->createCallback);
 }
 
 THUMB void UnkStruct_0204a060::func_020183b8(void) {

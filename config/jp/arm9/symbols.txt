@@ -651,9 +651,9 @@ func_0201328c kind:function(arm,size=0x3c) addr:0x0201328c
 func_020132c8 kind:function(arm,size=0x14) addr:0x020132c8
 func_020132dc kind:function(arm,size=0x78) addr:0x020132dc
 func_02013354 kind:function(arm,size=0x1c) addr:0x02013354
-_ZN18UnkStruct_02049a2c13func_02013370Ei kind:function(arm,size=0x24) addr:0x02013370
-_ZN18UnkStruct_02049a2c3RunEi kind:function(arm,size=0x394) addr:0x02013394
-_ZN18UnkStruct_02049a2c20TrySetCreateCallbackEPFP12GameModeBasevE kind:function(arm,size=0x18) addr:0x02013728
+_ZN4Game13func_02013370Ei kind:function(arm,size=0x24) addr:0x02013370
+_ZN4Game3RunEi kind:function(arm,size=0x394) addr:0x02013394
+_ZN4Game20TrySetCreateCallbackEPFP12GameModeBasevE kind:function(arm,size=0x18) addr:0x02013728
 func_02013740 kind:function(arm,size=0x18) addr:0x02013740
 func_02013758 kind:function(arm,size=0x14) addr:0x02013758
 _ZN18UnkStruct_02049b1813func_02013768Ev kind:function(arm,size=0x60) addr:0x0201376c
@@ -2750,7 +2750,7 @@ data_0204af48 kind:bss addr:0x0204af48
 data_0204af60 kind:bss addr:0x0204af60
 data_0204af9c kind:bss addr:0x0204af9c
 data_0204afa0 kind:bss addr:0x0204afa0
-data_02049a2c kind:bss addr:0x0204afac
+gGame kind:bss addr:0x0204afac
 data_0204b094 kind:bss addr:0x0204b094
 data_02049b18 kind:bss addr:0x0204b098
 data_0204b0aa kind:bss addr:0x0204b0aa

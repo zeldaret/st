@@ -1,8 +1,8 @@
 #pragma once
 
 #include "FileSelect/FileSelect.hpp"
+#include "Game/Game.hpp"
 #include "Game/GameModeManager.hpp"
-#include "Unknown/UnkStruct_02049a2c.hpp"
 #include "Unknown/UnkStruct_02049bd4.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 
@@ -18,7 +18,7 @@ public:
         this->mSaveSlotIndex = 0;
         data_02049bd4.func_02014cdc(2);
         data_02049bd4.mUnk_02 &= 0xFFFB;
-        data_02049a2c.func_02013370(1);
+        gGame.func_02013370(1);
         data_0204999c.mUnk_60 = 0xD6D8;
         data_ov000_020b504c.func_ov001_020be668();
         data_0204a110.func_ov001_020bd514(2, FileSelectManager::Create, 0, 1);

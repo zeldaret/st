@@ -27,7 +27,7 @@ public:
     /* 08 */ virtual void vfunc_08();
 };
 
-class UnkStruct_02049a2c {
+class Game {
 public:
     /* 00 */ GameModeBase *mpCurrentGameMode;
     /* 04 */ GameModeCreateCallback createCallback;
@@ -39,7 +39,7 @@ public:
     /* 1C */ UnkStruct_02049a2c_1C mUnk_1C;
     /* E8 */
 
-    UnkStruct_02049a2c();
+    Game();
 
     void main(unk32 param1); // really here? got 2 params for sure
     void Run(unk32 param1);
@@ -59,4 +59,4 @@ public:
     static GameModeStartUp *func_ov018_020c4ba8();
 };
 
-extern UnkStruct_02049a2c data_02049a2c;
+extern Game gGame;

@@ -1,6 +1,6 @@
+#include "Game/Game.hpp"
 #include "System/OverlayManager.hpp"
 #include "System/Random.hpp"
-#include "Unknown/UnkStruct_02049a2c.hpp"
 #include "Unknown/UnkStruct_02049b74.hpp"
 #include "Unknown/UnkStruct_02049bd4.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
@@ -29,12 +29,12 @@ struct SomeSaveFileStruct {
     ~SomeSaveFileStruct();
 };
 
-ARM void UnkStruct_02049a2c::func_02013370(unk32 param1) {
+ARM void Game::func_02013370(unk32 param1) {
     data_0204a110.func_02018c78(param1);
     data_ov000_020b50c0.mUnk_9C = param1;
 }
 
-ARM void UnkStruct_02049a2c::Run(unk32 param1) {
+ARM void Game::Run(unk32 param1) {
     this->func_ov018_020c48a4(param1);
 
     do {
@@ -162,7 +162,7 @@ ARM void UnkStruct_02049a2c::Run(unk32 param1) {
     } while (true);
 }
 
-bool UnkStruct_02049a2c::TrySetCreateCallback(GameModeCreateCallback createCallback) {
+bool Game::TrySetCreateCallback(GameModeCreateCallback createCallback) {
     if (this->createCallback == NULL) {
         this->createCallback = createCallback;
         return true;

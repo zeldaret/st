@@ -1,7 +1,7 @@
 #include "Game/GameModeFileSelect.hpp"
 #include "FileSelect/FileSelect.hpp"
+#include "Game/Game.hpp"
 #include "Save/AdventureFlags.hpp"
-#include "Unknown/UnkStruct_02049a2c.hpp"
 #include "Unknown/UnkStruct_02049bd4.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
