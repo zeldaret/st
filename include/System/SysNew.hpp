@@ -1,9 +1,14 @@
 #pragma once
 
+#include "System/SysFault.hpp"
 #include "global.h"
 #include "types.h"
 
 #include <stddef.h>
+
+#define GAME_ASSERT(cond, line, msg, ...)                                                      \
+    (!(cond) ? data_02049984.func_020125a4(__FILE__, (line), (msg), __VA_ARGS__) : ((void) 0))
+#define ASSERT(cond, msg, ...) GAME_ASSERT(cond, __LINE__, msg, __VA_ARGS__)
 
 typedef u32 UnkId;
 enum __UnkId {
