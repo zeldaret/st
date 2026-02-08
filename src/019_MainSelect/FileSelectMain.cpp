@@ -1131,7 +1131,7 @@ ARM void FileSelectMain::vfunc_08(Input *pButtons, TouchControl *pTouchControl) 
 }
 
 ARM void FileSelectMain::func_ov019_020c8290() {
-    if ((data_02049a2c.GetUnk00_FileSelect()->mUnk_04.mUnk_08 & 0xFFFF) == 0xFFFF) {
+    if ((data_02049a2c.GetGameModeFileSelect()->mUnk_04.mUnk_08 & 0xFFFF) == 0xFFFF) {
         this->SetState(FileSelectState_Init);
     }
 }
@@ -1342,7 +1342,7 @@ ARM void FileSelectMain::func_ov019_020c9c70() {
             break;
         case BTN_ID_FILE_SELECT_CONTACT_MODE:
             this->SetState(FileSelectState_ChooseModeToContactMode);
-            data_02049a2c.GetUnk00_FileSelect()->LoadContactMode(this->mSaveSlotIndex);
+            data_02049a2c.GetGameModeFileSelect()->LoadContactMode(this->mSaveSlotIndex);
             data_ov000_020b5214.func_ov000_0206db44(0x1C);
             break;
         case BTN_ID_FILE_SELECT_OPTIONS:
@@ -1405,10 +1405,10 @@ ARM void FileSelectMain::func_ov019_020c9e08() {
     this->mUnk_155C.func_ov000_020609c4();
 
     if (this->mExitMode == FileSelectExitMode_AdventureMode && this->mUnk_00BC.mUnk_0C) {
-        data_02049a2c.GetUnk00_FileSelect()->LoadAdventureMode(this->mSaveSlotIndex);
+        data_02049a2c.GetGameModeFileSelect()->LoadAdventureMode(this->mSaveSlotIndex);
         this->mExitMode = FileSelectExitMode_Unk_3;
     } else if (this->mExitMode == FileSelectExitMode_BattleMode && this->mUnk_00BC.mUnk_0C) {
-        data_02049a2c.GetUnk00_FileSelect()->LoadBattleMode(this->mSaveSlotIndex);
+        data_02049a2c.GetGameModeFileSelect()->LoadBattleMode(this->mSaveSlotIndex);
         this->mExitMode = FileSelectExitMode_Unk_3;
     }
 }

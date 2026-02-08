@@ -24,6 +24,9 @@ public:
 
     UnkStruct_02049b18();
     ~UnkStruct_02049b18();
+    void func_02013768();
+    void func_02013840(u16 param1, unk32 param2);
+    void func_020138f4(unk32 param1);
 };
 
 extern UnkStruct_02049b18 data_02049b18;

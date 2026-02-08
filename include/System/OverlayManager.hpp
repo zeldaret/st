@@ -395,7 +395,7 @@ public:
 
     void LoadEquipItem(ItemFlag equipId);
 
-    SysFault *func_020148d0(unk32 param1);
+    void func_020148d0(OverlayIndex index);
     void func_02014994(unk32 param1);
 };
 

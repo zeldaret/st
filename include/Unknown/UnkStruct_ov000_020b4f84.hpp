@@ -1,6 +1,7 @@
 #pragma once
 
 #include "System/SysNew.hpp"
+#include "nns/font.h"
 #include "types.h"
 
 enum {
@@ -32,8 +33,8 @@ public:
         mHeapIndex(param2) {}
 
     /* 00 */ virtual ~UnkStruct_ov000_020b4f84_00_Base2() {}
-    /* 08 */ virtual void *vfunc_08(unk32 param1);
-    /* 0C */ virtual void vfunc_0C(void);
+    /* 08 */ virtual void *vfunc_08(unk32 param1); // file open?
+    /* 0C */ virtual void vfunc_0C(void); // allocate?
     /* 10 */ virtual size_t vfunc_10(unk32 param1);
 };
 
@@ -58,19 +59,11 @@ public:
     unk32 func_02015534();
 };
 
-class UnkStruct_ov000_020b4f84_14 {
-public:
-    /* 00 */ void *mpFINF; // pointer to the FINF section of the FNTR file
-    /* 04 */ void *mUnk_04; // pointer to a function
-    /* 08 */
-
-    void func_020090b0(void *pFontFile);
-};
-
+// FontEntry?
 class UnkStruct_ov000_020b4f84_00 : public UnkStruct_ov000_020b4f84_00_Base {
 public:
     /* 00 (base) */
-    /* 14 */ UnkStruct_ov000_020b4f84_14 mUnk_14;
+    /* 14 */ Font_UnkStruct1 mUnk_14;
     /* 1C */ unk16 mUnk_1C;
     /* 1E */ unk16 mUnk_1E;
     /* 20 */
@@ -80,6 +73,7 @@ public:
     void func_ov000_02066610(const char *fontPath, unk32 param2, unk32 param3);
 };
 
+// FontManager?
 class UnkStruct_ov000_020b4f84 {
 public:
     /* 00 */ UnkStruct_ov000_020b4f84_00 mUnk_00[FontIndex_Max];
@@ -90,4 +84,5 @@ public:
     void func_ov000_0206667c(unk32 param1, unk32 param2);
 };
 
+// gFontManager?
 extern UnkStruct_ov000_020b4f84 data_ov000_020b4f84;

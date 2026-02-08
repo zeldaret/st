@@ -52,6 +52,7 @@ struct Random {
         return result;
     }
 
+#ifdef __MWERKS__
     Vec2us &NextPos(u16 xMax, u16 yMax) {
         Vec2us pos;
 
@@ -60,6 +61,13 @@ struct Random {
 
         return pos;
     }
+#else
+    const Vec2us &NextPos(u16 xMax, u16 yMax) {
+        const Vec2us pos = {this->Next32(0, xMax), this->Next32(0, yMax)};
+
+        return pos;
+    }
+#endif
 
     void Init();
 };

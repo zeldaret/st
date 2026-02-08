@@ -3,12 +3,12 @@
 #include "global.h"
 
 extern "C" {
-void *func_02001654(void);
+void *func_02001654(void *);
 void *func_020145b0(UnkId *, s32);
 void *func_020010c0(void);
 void *func_02001308(void);
 UnkId *func_02001488(void);
-UnkId *func_02014704(void);
+UnkId *func_02014704(void *);
 UnkId *func_020011c8(UnkId *, void *);
 UnkId *func_02014630(UnkId *, void *);
 UnkId *func_02001684(UnkId *, void *);
@@ -29,10 +29,10 @@ ARM void *SysNew(UnkStruct_02011e10_Sub1 *param1, s32 length, s32 param3) {
             newPtr = func_02001308();
             break;
         case UnkId_UNTH:
-            newPtr = func_02001654();
+            newPtr = func_02001654(param1);
             break;
         case UnkId_UNSH:
-            newPtr = func_020145b0(func_02014704(), length);
+            newPtr = func_020145b0(func_02014704(param1), length);
             break;
         default:
             break;
@@ -55,7 +55,7 @@ ARM void SysDelete(void *ptr) {
                 func_02001684(pUnkId, ptr);
                 break;
             case UnkId_UNSH:
-                func_02014630(func_02014704(), ptr);
+                func_02014630(func_02014704(ptr), ptr);
                 break;
             default:
                 break;

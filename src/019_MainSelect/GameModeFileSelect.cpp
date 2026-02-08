@@ -58,15 +58,15 @@ ARM void GameModeFileSelect::vfunc_20() {}
 ARM void GameModeFileSelect::LoadAdventureMode(u16 saveSlotIndex) {
     this->mSaveSlotIndex = saveSlotIndex;
     data_0204a060.func_020183d4(gSaveManager.GetSaveSlot(saveSlotIndex)->GetAdventureFlag(AdventureFlag_WatchedIntroCS),
-                                func_ov001_020be054, 1);
+                                (GameModeCreateCallback) func_ov001_020be054, 1);
 }
 
 ARM void GameModeFileSelect::LoadBattleMode(u16 saveSlotIndex) {
     this->mSaveSlotIndex = saveSlotIndex;
-    data_0204a060.func_020183d4(true, func_ov001_020be0ec, 1);
+    data_0204a060.func_020183d4(true, (GameModeCreateCallback) func_ov001_020be0ec, 1);
 }
 
 ARM void GameModeFileSelect::LoadContactMode(u16 saveSlotIndex) {
     this->mSaveSlotIndex = saveSlotIndex;
-    data_0204a060.func_020183d4(true, func_ov001_020be0d8, 1);
+    data_0204a060.func_020183d4(true, (GameModeCreateCallback) func_ov001_020be0d8, 1);
 }

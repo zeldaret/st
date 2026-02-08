@@ -1,10 +1,13 @@
 #pragma once
 
+#include "Game/GameMode.hpp"
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "types.h"
+
+class GameModeFileSelect;
 
 class UnkStruct_0204a060_Base3 : public SysObject {
 public:
@@ -64,13 +67,13 @@ public:
 class UnkStruct_0204a060 : public UnkStruct_0204a060_Base {
 public:
     /* 00 (base) */
-    /* 24 */ void *callback; //! TODO: is it a PTMF?
+    /* 24 */ GameModeCreateCallback createCallback;
 
     UnkStruct_0204a060();
 
     void func_020183c0(void);
-    bool func_020183d4(bool param1, void *param2, unk32 param3);
-    static void func_02018424(void); //! TODO: is it a PTMF?
+    bool func_020183d4(bool param1, GameModeCreateCallback createFunc, unk32 param3);
+    static GameModeFileSelect *func_02018424(void);
 
     // data_02044048 vtable
     /* 00 */ virtual ~UnkStruct_0204a060() override;

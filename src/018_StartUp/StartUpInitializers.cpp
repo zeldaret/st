@@ -56,7 +56,7 @@ ARM void func_ov018_020c4e8c(void) {
 }
 
 THUMB UnkStruct_0204a060::UnkStruct_0204a060() {
-    this->callback = NULL;
+    this->createCallback = NULL;
 }
 
 ARM UnkStruct_ov000_020b4eec::UnkStruct_ov000_020b4eec() {
@@ -84,7 +84,7 @@ ARM UnkStruct_ov000_020b504c::UnkStruct_ov000_020b504c() :
     Fill32(0, this->mUnk_05C, sizeof(this->mUnk_05C));
 
     this->mUnk_06F = 0;
-    this->mUnk_000 = new(HeapIndex_0) UnkStruct_ov000_020b504c_Sub3(0x21);
+    this->mUnk_000 = new(HeapIndex_Main) UnkStruct_ov000_020b504c_Sub3(0x21);
 
     Fill32(0, this->mUnk_00C, sizeof(this->mUnk_00C));
 
@@ -275,15 +275,15 @@ ARM UnkStruct_0204a110_Sub7::UnkStruct_0204a110_Sub7() {
     this->mUnk_00 = 0;
     this->mUnk_01 = 0;
     this->mUnk_0C = data_027e0120;
-    this->mUnk_04 = new(HeapIndex_0) UnkSystem2_UnkSubSystem9();
-    this->mUnk_08 = new(HeapIndex_0) UnkStruct_0204a110_Sub7_08();
+    this->mUnk_04 = new(HeapIndex_Main) UnkSystem2_UnkSubSystem9();
+    this->mUnk_08 = new(HeapIndex_Main) UnkStruct_0204a110_Sub7_08();
 }
 
 ARM UnkStruct_0204a110_Sub8::UnkStruct_0204a110_Sub8() {
     this->mUnk_00 = 1;
     this->mUnk_04 = 0;
     this->mUnk_08 = 0;
-    this->mUnk_0C = new(HeapIndex_0) UnkSystem2_UnkSubSystem9();
+    this->mUnk_0C = new(HeapIndex_Main) UnkSystem2_UnkSubSystem9();
 }
 
 ARM UnkStruct_02049f04::UnkStruct_02049f04() {

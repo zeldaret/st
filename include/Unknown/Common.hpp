@@ -4,6 +4,7 @@
 #include "System/SysNew.hpp"
 #include "global.h"
 #include "nitro/math.h"
+#include "nns/text.h"
 #include "types.h"
 
 extern "C" void func_0201e8d4(void *param1, void *param2);
@@ -566,13 +567,13 @@ public:
     /* 044 */ unk32 mUnk_044;
     /* 048 */ unk32 mUnk_048;
     /* 04C */ unk32 mUnk_04C;
-    /* 050 */ STRUCT_PAD(0x50, 0x130);
+    /* 050 */ STRUCT_PAD(0x50, 0x130); // e0
 
     // data_ov000_020b20fc (vtable)
     /* 00 */ virtual ~UnkSystem2_UnkSubSystem5_Base_10();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
+    /* 10 */ virtual void vfunc_10(void *param1);
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C();
@@ -590,35 +591,18 @@ public:
     /* 4C */
 };
 
-class UnkSystem2_UnkSubSystem5_Base {
-public:
-    /* 000 (vtable) */
-    /* 004 */ wchar_t *mpString; // in this context it points to the player's name
-    /* 008 */ unk16 mUnk_008;
-    /* 00A */ unk16 mUnk_00A;
-    /* 00C */ void *mUnk_00C;
-    /* 010 */ UnkSystem2_UnkSubSystem5_Base_10 mUnk_010;
-
-    ~UnkSystem2_UnkSubSystem5_Base();
-
-    /* 00 */ virtual void vfunc_00();
-    /* 04 */
+struct UnkSystem2_UnkSubSystem11_Base_1C {
+    u8 pad[0x10];
 };
 
-class UnkSystem2_UnkSubSystem11 {
+class UnkSystem2_UnkSubSystem11_Base {
 public:
     /* 00 (vtable) */
-    /* 04 */ void *mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ void *mUnk_18;
-    /* 1C */ void *mUnk_1C;
-    /* 20 */
+    /* 04 */ Text_UnkStruct2 mUnk_04;
+    /* 1C */ UnkSystem2_UnkSubSystem11_Base_1C mUnk_1C; // +0x24: space between characters, set from BMG INF1 entry
+    /* 2C */
 
-    void func_ov000_02061f60();
-    ~UnkSystem2_UnkSubSystem11();
+    UnkSystem2_UnkSubSystem11_Base(); // func_ov000_02061ce0
 
     // data_ov000_020b1e9c vtable
     /* 00 */ virtual void vfunc_00();
@@ -627,10 +611,31 @@ public:
     /* 0C */ virtual void vfunc_0C();
 };
 
-// this class seems related to drawing strings?
-class UnkSystem2_UnkSubSystem5 : public UnkSystem2_UnkSubSystem5_Base {
+class UnkSystem2_UnkSubSystem11 : public UnkSystem2_UnkSubSystem11_Base {
 public:
-    /* 000 (base) */
+    /* 00 (base) */
+    /* 2C */ STRUCT_PAD(0x2C, 0xE8);
+    /* E8 */
+
+    UnkSystem2_UnkSubSystem11(); // func_ov000_02061f30
+    ~UnkSystem2_UnkSubSystem11();
+    void func_ov000_02061f60();
+
+    // data_ov000_020b1e9c vtable
+    /* 00 */ virtual void vfunc_00() override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C() override;
+};
+
+class UnkSystem2_UnkSubSystem5_Base {
+public:
+    /* 000 (vtable) */
+    /* 004 */ wchar_t *mpString; // in this context it points to the player's name
+    /* 008 */ unk16 mUnk_008; // UnkSystem2_UnkSubSystem5()'s param1
+    /* 00A */ unk16 mUnk_00A; // UnkSystem2_UnkSubSystem5()'s param2
+    /* 00C */ void *mUnk_00C;
+    /* 010 */ UnkSystem2_UnkSubSystem5_Base_10 mUnk_010;
     /* 130 */ STRUCT_PAD(0x130, 0x140);
     /* 140 */ unk16 mUnk_140;
     /* 142 */ unk16 mUnk_142;
@@ -641,12 +646,21 @@ public:
     /* 14D */ unk8 mUnk_14D; // 0x545
     /* 14E */ unk8 mUnk_14E; // 0x546
     /* 14F */ unk8 mUnk_14F; // 0x547
+
+    UnkSystem2_UnkSubSystem5_Base(UnkSystem2_UnkSubSystem11 *param1, unk32 param2, unk32 param3); // func_0201f288
+    ~UnkSystem2_UnkSubSystem5_Base();
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */
+};
+
+// this class seems related to drawing strings?
+class UnkSystem2_UnkSubSystem5 : public UnkSystem2_UnkSubSystem5_Base {
+public:
+    /* 000 (base) */
     /* 150 */ UnkSystem2_UnkSubSystem11 mUnk_150;
-    /* 170 */ void *mUnk_170;
-    /* 144 */ STRUCT_PAD(0x174, 0x238); // +0x174: space between characters, set from BMG INF1 entry
     /* 238 */
 
-    UnkSystem2_UnkSubSystem5() {}
     UnkSystem2_UnkSubSystem5(unk32 param1, unk32 param2);
     ~UnkSystem2_UnkSubSystem5() {}
 

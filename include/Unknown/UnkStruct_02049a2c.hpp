@@ -2,17 +2,25 @@
 
 #include "Game/GameMode.hpp"
 #include "Game/GameModeStartUp.hpp"
+#include "Save/SaveManager.hpp"
 #include "global.h"
 #include "types.h"
+
+typedef void (*GameUnkCallback1)(void);
+typedef void (*GameUnkCallback2)(void);
+typedef unk32 (*GameUnkCallback3)(void);
 
 class GameModeFileSelect;
 
 class UnkStruct_02049a2c_1C {
 public:
     /* 00 (vtable) */
-    /* 04 */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ STRUCT_PAD(0x08, 0xCC);
+    /* CC */
 
     UnkStruct_02049a2c_1C();
+    unk32 func_02013e18(void *param1, unk32 param2);
 
     // data_020437d8 vtable
     /* 00 */ virtual ~UnkStruct_02049a2c_1C();
@@ -21,29 +29,31 @@ public:
 
 class UnkStruct_02049a2c {
 public:
-    /* 00 */ GameModeBase *mUnk_00;
-    /* 04 */ void *mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
+    /* 00 */ GameModeBase *mpCurrentGameMode;
+    /* 04 */ GameModeCreateCallback createCallback;
+    /* 08 */ GameUnkCallback1 mUnk_08; // seems related to entering and leaving houses/grottos??
+    /* 0C */ unk32 mFrameCounter;
+    /* 10 */ SaveFile *mpSaveFile;
+    /* 14 */ GameUnkCallback2 mUnk_14; // only set for wireless stuff?
+    /* 18 */ GameUnkCallback3 mUnk_18; // same as above
     /* 1C */ UnkStruct_02049a2c_1C mUnk_1C;
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ STRUCT_PAD(0x24, 0xE8);
     /* E8 */
 
     UnkStruct_02049a2c();
 
-    void Run(void);
+    void main(unk32 param1); // really here? got 2 params for sure
+    void Run(unk32 param1);
     void func_02013370(unk32 param1);
     bool func_02013724(void *param1);
+
+    void func_ov000_020576d0();
+    void func_ov000_0205770c();
 
     void func_ov018_020c48a4(unk32 param1);
     void func_ov018_020c48f8(); // loads overlay 0
 
-    GameModeFileSelect *GetUnk00_FileSelect() {
-        return (GameModeFileSelect *) this->mUnk_00;
+    GameModeFileSelect *GetGameModeFileSelect() {
+        return (GameModeFileSelect *) this->mpCurrentGameMode;
     }
 
     static GameModeStartUp *func_ov018_020c4ba8();

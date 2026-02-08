@@ -6,7 +6,6 @@
 void func_0203b920(void);
 void func_02011da0(void);
 void CallStaticInitializers(void);
-void main(void);
 
 void func_02000a78(void);
 void *func_0200093c(unk32, u32 *, unk32);
@@ -84,7 +83,7 @@ ARM void Entry(void) {
     func_0203b920();
     func_02011da0();
     CallStaticInitializers();
-    main();
+    data_02049a2c.main(200);
 }
 
 // non-matching
@@ -116,6 +115,6 @@ RomBuildInfo BuildInfo = {
     "[SDK+MEI:libASR_V1.0.5-CW2.0-SDK4.0]",
 };
 
-void main(void) {
-    data_02049a2c.Run();
+void UnkStruct_02049a2c::main(unk32 param1) {
+    this->Run(param1);
 }

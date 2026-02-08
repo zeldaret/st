@@ -111,7 +111,7 @@ def GameLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
     return {
         "lib": lib_name,
         "mw_version": "dsi/1.2p1",
-        "cflags": [*config.cflags_base, "-str reuse", "-opt nocse"],
+        "cflags": [*config.cflags_base, "-str reuse"],
         "objects": objects,
     }
 
@@ -125,6 +125,7 @@ config.libs = [
         [
             Object("Main/Main.cpp"),
             Object("Main/System/SysNew.cpp"),
+            Object("Main/Game/Game.cpp"),
             Object("Main/Player/TouchControl.cpp"),
             Object("Main/System/OverlayManager.cpp"),
             Object("Main/UnkStruct_ov000_020b4f84_00_Base.cpp"),

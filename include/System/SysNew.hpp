@@ -3,36 +3,38 @@
 #include "global.h"
 #include "types.h"
 
+#include <stddef.h>
+
 typedef u32 UnkId;
 enum __UnkId {
-    UnkId_EXPH = 'EXPH',
-    UnkId_FRMH = 'FRMH',
-    UnkId_UNTH = 'UNTH',
-    UnkId_UNSH = 'UNSH',
+    UnkId_EXPH = 'EXPH', // Expanded Heap?
+    UnkId_FRMH = 'FRMH', // Frame Heap?
+    UnkId_UNTH = 'UNTH', // Unit Heap?
+    UnkId_UNSH = 'UNSH', // Unspecified Heap?
 };
 
 typedef u32 HeapIndex;
 typedef s16 HeapIndex16;
 enum HeapIndex_ {
-    HeapIndex_0   = 0,
-    HeapIndex_1   = 1,
-    HeapIndex_2   = 2,
-    HeapIndex_3   = 3,
-    HeapIndex_4   = 4,
-    HeapIndex_5   = 5,
-    HeapIndex_6   = 6,
-    HeapIndex_7   = 7,
-    HeapIndex_8   = 8,
-    HeapIndex_Max = 9
+    HeapIndex_Main = 0, // UnkId_FRMH
+    HeapIndex_1    = 1, // UnkId_EXPH
+    HeapIndex_2    = 2, // UnkId_UNSH
+    HeapIndex_ITCM = 3, // UnkId_UNSH
+    HeapIndex_DTCM = 4, // ?
+    HeapIndex_5    = 5, // ?
+    HeapIndex_6    = 6, // ?
+    HeapIndex_7    = 7, // ?
+    HeapIndex_8    = 8, // ?
+    HeapIndex_Max  = 9
 };
 
 class SysObject {
 public:
-    static void operator delete[](void *ptr);
+    void operator delete[](void *ptr);
 };
 
-static void *operator new(unsigned long length, u32 id, u32 idLength = 4);
-static void *operator new[](unsigned long length, u32 id, u32 idLength = 4);
+void *operator new(size_t length, u32 id, u32 idLength = 4);
+void *operator new[](size_t length, u32 id, u32 idLength = 4);
 
 class UnkStruct_02011e10_Sub1 {
 public:
@@ -52,7 +54,7 @@ public:
 
 class UnkStruct_02011e10 : public SysObject {
 public:
-    /* 00 */ UnkStruct_02011e10_Sub1 *mUnk_00[HeapIndex_Max];
+    /* 00 */ UnkStruct_02011e10_Sub1 *mUnk_00[HeapIndex_Max]; // the pointer seems to match arena lo
     /* 24 */ unk32 mUnk_24[2];
     /* 28 */ STRUCT_PAD(0x2C, 0x5C);
     /* 5C */ unk32 mUnk_5C;

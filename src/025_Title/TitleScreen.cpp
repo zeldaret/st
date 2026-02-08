@@ -1,4 +1,5 @@
 #include "TitleScreen/TitleScreen.hpp"
+#include "Game/GameMode.hpp"
 #include "Unknown/UnkStruct_02049be0.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
 #include "Unknown/UnkStruct_0204aeac.hpp"
@@ -277,7 +278,7 @@ void TitleScreen::func_ov025_020c55e4(Input *pButtons, TouchControl *pTouchContr
         return;
     }
 
-    data_0204a060.func_020183d4(true, UnkStruct_0204a060::func_02018424, 1);
+    data_0204a060.func_020183d4(true, (GameModeCreateCallback) UnkStruct_0204a060::func_02018424, 1);
 }
 
 void TitleScreen::vfunc_14(unk8 *param1) {

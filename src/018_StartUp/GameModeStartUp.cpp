@@ -12,7 +12,6 @@
 #include "regs.h"
 
 extern "C" {
-void func_02013768(void *param1);
 void func_020261f0(unk32 param1, void *param2);
 void func_0201245c();
 void func_02027a28(void *param1, unk32 param2);
@@ -52,18 +51,18 @@ ARM void SysFault::func_ov018_020c4840() {
 }
 
 ARM UnkStruct_02049a2c::UnkStruct_02049a2c() :
-    mUnk_00(NULL),
-    mUnk_04(0),
-    mUnk_08(0),
-    mUnk_10(0),
-    mUnk_14(0),
-    mUnk_18(0) {}
+    mpCurrentGameMode(NULL),
+    createCallback(NULL),
+    mUnk_08(NULL),
+    mpSaveFile(NULL),
+    mUnk_14(NULL),
+    mUnk_18(NULL) {}
 
 ARM void UnkStruct_02049a2c::func_ov018_020c48a4(unk32 param1) {
     func_020261f0(1, func_02013184);
     func_020263bc(1);
     func_020234d4(1);
-    func_02026ef0(&this->mUnk_20);
+    func_02026ef0(&this->mUnk_1C.mUnk_04);
     func_02031e48(func_020131b0);
     this->func_02013724(UnkStruct_02049a2c::func_ov018_020c4ba8);
 }
@@ -80,12 +79,12 @@ ARM void UnkStruct_02049a2c::func_ov018_020c48f8() {
 ARM UnkStruct_02049b18::UnkStruct_02049b18() {
     this->mUnk_58 = 0;
     this->mUnk_5A = 0;
-    func_02013768(this);
+    this->func_02013768();
 }
 
 ARM void UnkStruct_02011e10::func_ov018_020c4980() {
-    unk32 iVar1 = func_02027818(0);
-    unk32 iVar2 = func_0202780c(0);
+    unk32 arenaLo = func_02027818(0);
+    unk32 arenaHi = func_0202780c(0);
 
     for (int i = 0; i < HeapIndex_Max; i++) {
         this->mUnk_00[i] = NULL;
@@ -95,9 +94,9 @@ ARM void UnkStruct_02011e10::func_ov018_020c4980() {
         this->mUnk_24[i] = 0;
     }
 
-    this->mUnk_00[HeapIndex_0] = func_020012e0(iVar1, iVar2 - iVar1, 2);
-    unk32 length               = func_0202d624(NULL, 0);
-    void *ptr                  = ::operator new(length, 0);
+    this->mUnk_00[HeapIndex_Main] = func_020012e0(arenaLo, arenaHi - arenaLo, 2);
+    unk32 length                  = func_0202d624(NULL, 0);
+    void *ptr                     = ::operator new(length, 0);
     func_0202d624(ptr, length);
     ptr         = ::operator new(0xBE000, 0);
     void *uVar3 = func_02001fd4(ptr, 0xBE000);
@@ -205,7 +204,7 @@ ARM void GameModeStartUp::vfunc_0C() {
             this->mUnk_2C = SHARED_WORK_C3C;
             data_02049a2c.func_ov018_020c48f8();
         } else if (!this->mUnk_2A && (SHARED_WORK_C3C - this->mUnk_2C) >= 0x3C) {
-            this->mUnk_2A = data_0204a060.func_020183d4(false, UnkStruct_0204a060::func_020183b8, 1);
+            this->mUnk_2A = data_0204a060.func_020183d4(false, (GameModeCreateCallback) UnkStruct_0204a060::func_020183b8, 1);
 
             if (data_ov018_020c5bc0 != 0) {
                 data_0204a060.func_0201bb84(1, 0, 1);
