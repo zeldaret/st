@@ -41,15 +41,14 @@ public:
 
     Game();
 
-    void main(unk32 param1); // really here? got 2 params for sure
-    void Run(unk32 param1);
+    void Run();
     void func_02013370(unk32 param1);
     bool TrySetCreateCallback(GameModeCreateCallback createCallback);
 
     void func_ov000_020576d0();
     void func_ov000_0205770c();
 
-    void func_ov018_020c48a4(unk32 param1);
+    void func_ov018_020c48a4();
     void func_ov018_020c48f8(); // loads overlay 0
 
     GameModeFileSelect *GetGameModeFileSelect() {

@@ -58,7 +58,7 @@ ARM Game::Game() :
     mUnk_14(NULL),
     mUnk_18(NULL) {}
 
-ARM void Game::func_ov018_020c48a4(unk32 param1) {
+ARM void Game::func_ov018_020c48a4() {
     func_020261f0(1, func_02013184);
     func_020263bc(1);
     func_020234d4(1);

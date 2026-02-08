@@ -1,6 +1,6 @@
 _ZN8SysFault19func_ov018_020c4840Ev kind:function(arm,size=0x30) addr:0x020c4840
 _ZN4GameC1Ev kind:function(arm,size=0x34) addr:0x020c4870
-_ZN4Game19func_ov018_020c48a4Ei kind:function(arm,size=0x54) addr:0x020c48a4
+_ZN4Game19func_ov018_020c48a4Ev kind:function(arm,size=0x54) addr:0x020c48a4
 _ZN4Game19func_ov018_020c48f8Ev kind:function(arm,size=0x58) addr:0x020c48f8
 _ZN18UnkStruct_02049b18C1Ev kind:function(arm,size=0x30) addr:0x020c4950
 _ZN18UnkStruct_02011e1019func_ov018_020c4980Ev kind:function(arm,size=0xdc) addr:0x020c4980

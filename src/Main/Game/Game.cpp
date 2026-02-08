@@ -34,8 +34,8 @@ ARM void Game::func_02013370(unk32 param1) {
     data_ov000_020b50c0.mUnk_9C = param1;
 }
 
-ARM void Game::Run(unk32 param1) {
-    this->func_ov018_020c48a4(param1);
+ARM void Game::Run() {
+    this->func_ov018_020c48a4();
 
     do {
         // initialization of the next game mode

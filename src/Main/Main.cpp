@@ -13,6 +13,8 @@ void func_020009fc(void);
 void func_02000950(unk32 *);
 void func_01ffbd70(void);
 
+void main();
+
 #define UNK_027FFF9C (*(u32 *) 0x027FFF9C)
 
 typedef void (*UnkStruct_027e0000_Callback)(void);
@@ -43,7 +45,7 @@ struct RomBuildInfo {
 extern RomBuildInfo BuildInfo;
 
 // non-matching
-ARM void Entry(void) {
+extern "C" ARM void Entry(void) {
     unk32 *puVar1;
     unk32 *puVar2;
     u32 uVar3;
@@ -83,7 +85,7 @@ ARM void Entry(void) {
     func_0203b920();
     func_02011da0();
     CallStaticInitializers();
-    gGame.main(200);
+    main();
 }
 
 // non-matching
@@ -97,9 +99,9 @@ ARM void *func_0200093c(unk32 param1, u32 *param2, unk32 param3) {
     return param2;
 }
 
-void AutoloadCallback(void) {}
+extern "C" void AutoloadCallback(void) {}
 
-void func_02000b60(void) {}
+extern "C" void func_02000b60(void) {}
 
 RomBuildInfo BuildInfo = {
     .mUnk_00 = data_0204cde0,
@@ -115,6 +117,6 @@ RomBuildInfo BuildInfo = {
     "[SDK+MEI:libASR_V1.0.5-CW2.0-SDK4.0]",
 };
 
-void Game::main(unk32 param1) {
-    this->Run(param1);
+void main() {
+    gGame.Run();
 }
