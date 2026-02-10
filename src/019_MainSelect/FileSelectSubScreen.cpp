@@ -75,9 +75,9 @@ ARM void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchCont
     this->mUnk_0024 = this->mUnk_0020;
     this->mUnk_0020 += 0x800;
 
-    REG_BG1HOFS_SUB = ROUND_Q20(this->mUnk_0020) & 0x1FF;
-    REG_BG2HOFS_SUB = (ROUND_Q20(this->mUnk_0020) + 0x100) & 0x1FF;
-    REG_BG3HOFS_SUB = (ROUND_Q20(this->mUnk_0020) / 2) & 0x1FF;
+    REG_BG1OFS_SUB = ROUND_Q20(this->mUnk_0020) & 0x1FF;
+    REG_BG2OFS_SUB = (ROUND_Q20(this->mUnk_0020) + 0x100) & 0x1FF;
+    REG_BG3OFS_SUB = (ROUND_Q20(this->mUnk_0020) / 2) & 0x1FF;
 
     if (!(ROUND_Q20(this->mUnk_0020) % 256) && (ROUND_Q20(this->mUnk_0024) % 256)) {
         switch (this->mUnk_001C) {

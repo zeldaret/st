@@ -52,7 +52,7 @@ ARM void Game::Run() {
 
                 func_020196fc();
                 data_02049b18.func_02013768();
-                this->mFrameCounter = SHARED_WORK_C3C;
+                this->mFrameCounter = REG_FRAME_COUNTER;
 
                 this->mpCurrentGameMode = this->createCallback();
                 this->createCallback    = NULL;
@@ -132,11 +132,11 @@ ARM void Game::Run() {
             }
         }
 
-        if (this->mFrameCounter + data_0204a110.mUnk_004 - (s32) SHARED_WORK_C3C > 1) {
+        if (this->mFrameCounter + data_0204a110.mUnk_004 - (s32) REG_FRAME_COUNTER > 1) {
             func_0201328c();
         }
 
-        while (this->mFrameCounter + data_0204a110.mUnk_004 - (s32) SHARED_WORK_C3C > 1) {
+        while (this->mFrameCounter + data_0204a110.mUnk_004 - (s32) REG_FRAME_COUNTER > 1) {
             func_020132c8();
         }
 
@@ -158,7 +158,7 @@ ARM void Game::Run() {
             }
         }
 
-        this->mFrameCounter = SHARED_WORK_C3C;
+        this->mFrameCounter = REG_FRAME_COUNTER;
     } while (true);
 }
 

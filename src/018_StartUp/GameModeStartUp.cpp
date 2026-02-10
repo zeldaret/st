@@ -201,9 +201,9 @@ ARM GameModeStartUp::GameModeStartUp() {
 ARM void GameModeStartUp::vfunc_0C() {
     if (this->mUnk_04.mUnk_0D == this->mUnk_04.mUnk_10) {
         if (this->mUnk_28 == 0) {
-            this->mUnk_2C = SHARED_WORK_C3C;
+            this->mUnk_2C = REG_FRAME_COUNTER;
             gGame.func_ov018_020c48f8();
-        } else if (!this->mUnk_2A && (SHARED_WORK_C3C - this->mUnk_2C) >= 0x3C) {
+        } else if (!this->mUnk_2A && (REG_FRAME_COUNTER - this->mUnk_2C) >= 0x3C) {
             this->mUnk_2A = data_0204a060.func_020183d4(false, (GameModeCreateCallback) UnkStruct_0204a060::func_020183b8, 1);
 
             if (data_ov018_020c5bc0 != 0) {

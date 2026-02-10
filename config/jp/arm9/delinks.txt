@@ -13,6 +13,9 @@ src/Main/Main.cpp:
 src/Main/System/SysNew.cpp:
     .text       start:0x02011e10 end:0x0201200c
 
+src/Main/System/SysFault.cpp:
+    .text       start:0x020127f0 end:0x02012b00
+
 src/Main/Game/Game.cpp:
     .text       start:0x02013370 end:0x02013740
 
@@ -50,6 +53,9 @@ src/Main/UnkStruct_0204a060.cpp:
 src/Main/Game/GameModeManagerBase.cpp:
     .text       start:0x02018414 end:0x02018b5c
     .data       start:0x020455a0 end:0x020455e0
+
+src/Main/func_020196fc.cpp:
+    .text       start:0x02019694 end:0x020198cc
 
 libs/c/src/abort_exit_arm_eabi.c:
     complete

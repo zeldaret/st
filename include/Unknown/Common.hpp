@@ -569,6 +569,8 @@ public:
     /* 04C */ unk32 mUnk_04C;
     /* 050 */ STRUCT_PAD(0x50, 0x130); // e0
 
+    UnkSystem2_UnkSubSystem5_Base_10();
+
     // data_ov000_020b20fc (vtable)
     /* 00 */ virtual ~UnkSystem2_UnkSubSystem5_Base_10();
     /* 08 */ virtual void vfunc_08();
