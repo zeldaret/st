@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Game/GameModeManager.hpp"
+#include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "regs.h"
 #include "types.h"
@@ -222,4 +223,4 @@ public:
     static TitleScreenManager *Create(unk32 param1);
 };
 
-extern TitleScreenManager *data_027e0994;
+extern TitleScreenManager *data_027e0994; // this seems also to be the pointer to the adventure mode manager?

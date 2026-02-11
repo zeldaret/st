@@ -12,6 +12,8 @@
 #define BTN_DDOWN (1 << 7) // 0x0080
 #define BTN_R (1 << 8) // 0x0100
 #define BTN_L (1 << 9) // 0x0200
+#define BTN_X (1 << 10) // 0x0400
+#define BTN_Y (1 << 11) // 0x0800
 
 #define CHECK_BUTTON_COMBO(value, btn) ((value) & (btn))
 
@@ -24,4 +26,5 @@ struct Input {
     Input();
     unk32 func_02013c08(u16 param1);
     unk32 func_02013b24(unk32 param1);
+    unk32 func_02013bbc();
 };

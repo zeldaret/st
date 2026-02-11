@@ -96,7 +96,7 @@ THUMB void SysFault::func_020127f0(unk32 param1) {
         switch (param1) {
             case 0:
             case 1:
-                data_02049b18.func_02013b24(data_02049b18.func_02013bbc());
+                data_02049b18.mButtons.func_02013b24(data_02049b18.mButtons.func_02013bbc());
                 u16 expected = data_0203e0c4[this->mUnk_04];
 
                 if (data_02049b18.mButtons.press & expected) {
