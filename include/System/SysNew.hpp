@@ -27,7 +27,7 @@ enum HeapIndex_ {
     HeapIndex_ITCM = 3, // UnkId_UNSH
     HeapIndex_DTCM = 4, // ?
     HeapIndex_5    = 5, // ?
-    HeapIndex_6    = 6, // ?
+    HeapIndex_6    = 6, // UnkId_FRMH
     HeapIndex_7    = 7, // ?
     HeapIndex_8    = 8, // ?
     HeapIndex_Max  = 9

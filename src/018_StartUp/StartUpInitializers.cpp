@@ -176,7 +176,7 @@ ARM UnkStruct_0204a110::UnkStruct_0204a110() :
     mUnk_000(0),
     mUnk_008(-1),
     mUnk_00C(-1),
-    mUnk_DEC(0),
+    mUnk_DEC(NULL),
     mUnk_DF2(-1),
     mUnk_DF3(-1),
     mUnk_DFC(0),
