@@ -76,7 +76,7 @@ ARM void GameModeManagerBase::vfunc_30(unk32 param1) {
     }
 }
 
-ARM void GameModeManagerBase::vfunc_34() {}
+ARM void GameModeManagerBase::vfunc_34(unk32 param1, unk32 param2) {}
 
 struct UnkStruct3 {
     unk32 mUnk_00;
