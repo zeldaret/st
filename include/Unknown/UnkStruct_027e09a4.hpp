@@ -1,6 +1,7 @@
 #pragma once
 
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_0204a060.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -25,9 +26,9 @@ enum SceneIndex {
     /*   8 */ SceneIndex_t_tutorial    = 0x08, //
     /*   9 */ SceneIndex_t_forest      = 0x09, //
     /*  10 */ SceneIndex_t_smarine     = 0x0A, //
-    /*  11 */ SceneIndex_t_smount      = 0x0B, //
-    /*  12 */ SceneIndex_t_smount2     = 0x0C, //
-    /*  13 */ SceneIndex_t_smount3     = 0x0D, //
+    /*  11 */ SceneIndex_t_smount      = 0x0B, // rocktite scene?
+    /*  12 */ SceneIndex_t_smount2     = 0x0C, // rocktite scene?
+    /*  13 */ SceneIndex_t_smount3     = 0x0D, // rocktite fire realm scene?
     /*  14 */ SceneIndex_t_minigame    = 0x0E, // goron target range minigame
     /*  15 */ SceneIndex_t_dark        = 0x0F, // Dark Realm
     /*  16 */ SceneIndex_t_eviltrain   = 0x10, // train cole fight
@@ -81,7 +82,7 @@ enum SceneIndex {
     /*  64 */ SceneIndex_f_kakushi2    = 0x40, // Disorientation Station
     /*  65 */ SceneIndex_f_kakushi3    = 0x41, // Ends of the Earth Station
     /*  66 */ SceneIndex_f_kakushi4    = 0x42, // train required?
-    /*  67 */ SceneIndex_f_pirate      = 0x43, // Carben pirate attack
+    /*  67 */ SceneIndex_f_pirate      = 0x43, // Train passenger pirate attack (including Carben)
     /*  68 */ SceneIndex_f_passenger   = 0x44, // Anjean force gem
     /*  69 */ SceneIndex_f_trnnpc      = 0x45, // Ferrus encounter
     /*  70 */ SceneIndex_tekiya00      = 0x46, // take em all on?
@@ -135,6 +136,7 @@ enum SceneIndex {
     /* 118 */ SceneIndex_battle10      = 0x76, // battle mode?
     /* 119 */ SceneIndex_battle11      = 0x77, // battle mode?
     /* 120 */ SceneIndex_battle12      = 0x78, // battle mode?
+    /* 121 */ SceneIndex_Max           = 0x79
 };
 
 struct UnkStruct_027e09a4_58_78 {
@@ -155,6 +157,47 @@ struct UnkStruct_func_01ffd400 {
     /* 1B */ u8 mUnk_1B;
 };
 
+struct UnkStruct_SceneChange1 {
+    /* 00 */ unk32 nextSceneIndex;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk16 mUnk_08;
+    /* 0A */ unk8 mUnk_0A;
+    /* 0B */ unk8 mUnk_0B;
+    /* 0C */ unk8 mUnk_0C;
+    /* 0D */ unk8 mUnk_0D;
+    /* 0E */ unk8 mUnk_0E;
+    /* 0F */ unk8 mUnk_0F;
+    /* 10 */ unk8 mUnk_10;
+    /* 11 */ unk8 mUnk_11;
+    /* 12 */ unk8 mUnk_12;
+    /* 13 */ unk8 mUnk_13;
+    /* 14 */
+
+    UnkStruct_SceneChange1() {
+        this->nextSceneIndex = SceneIndex_Max;
+        this->mUnk_04        = 0;
+        this->mUnk_08        = 0;
+        this->mUnk_0A        = 0xFF;
+        this->mUnk_0B        = 0;
+        this->mUnk_0C        = 0;
+        this->mUnk_0D        = 0;
+        this->mUnk_0E        = 0x2B;
+        this->mUnk_0F        = 0;
+        this->mUnk_10        = 0;
+    }
+};
+
+class UnkStruct_WarpUnk1 : public UnkStruct_0204a060_Base {
+public:
+    /* 00 (base) */
+    /* 24 */ STRUCT_PAD(0x24, 0x78);
+    /* 78 */ UnkStruct_SceneChange1 mUnk_78;
+    /* 8C */ unk32 mNextSceneIndex;
+    /* 90 */ STRUCT_PAD(0x90, 0xB4);
+    /* B4 */ unk32
+        mSpawnTransitionType; // the behavior of Link when entering a new scene (walk from the entrance, stay still etc)
+};
+
 class UnkStruct_027e09a4 : public SysObject {
 public:
     /* 00 */ unk32 mSceneIndex; // the scene index of the current area, this isn't saved when you save the game
@@ -173,7 +216,10 @@ public:
     /* 1F */ unk8 mSavedSpawnIndex; // changing this then saving will change your spawn location after opening the save again
                                     // (not the area)
     /* 20 */ unk32 mUnk_20;
-    /* 24 */ STRUCT_PAD(0x24, 0x60);
+    /* 24 */ STRUCT_PAD(0x24, 0x54);
+    /* 54 */ void *mUnk_54; // vtable
+    /* 58 */ UnkStruct_WarpUnk1 *mpWarpUnk1;
+    /* 5C */ unk32 mUnk_5C;
     /* 60 */ unk32 mUnk_60;
     /* 64 */ unk32 mUnk_64;
     /* 68 */

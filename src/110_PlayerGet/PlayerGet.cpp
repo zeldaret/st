@@ -660,7 +660,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                         break;
                     case ItemId_RecruitUniform2:
                     case ItemId_EngineerUniform:
-                        if (data_027e09a4->mSceneIndex == 0x2F) {
+                        if (data_027e09a4->mSceneIndex == SceneIndex_f_first) {
                             this->mUnk_28->func_ov058_02152a24();
                         }
                         break;
