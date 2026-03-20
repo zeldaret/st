@@ -79,7 +79,7 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
     if (this->func_ov031_020e9d54()) {
         this->mUnk_30 = &data_ov031_02113478;
         this->mUnk_34 = &data_ov031_02113478;
-        SET_FLAG(this->mFlags, ActorFlag_12);
+        SET_FLAG(&this->mFlags, ActorFlag_12);
     }
 
     if (this->mUnk_80 >= 0) {
@@ -87,7 +87,7 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
             return false;
         }
 
-        if (this->mUnk_6e == 0) {
+        if (this->mUnk_5c.mUnk_6e == 0) {
             this->func_ov031_020e9904(3);
         } else {
             this->func_ov031_020e9904(10);
@@ -100,42 +100,56 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
         case 0:
             this->mUnk_96 = 0x1E0;
             this->mUnk_94 = 0;
-            this->mVel.x  = 0;
-            this->mVel.y  = 0;
-            this->mVel.z  = 0;
+            {
+                Vec3p vel;
+                vel.x      = 0;
+                vel.y      = 0;
+                vel.z      = 0;
+                this->mVel = vel;
+            }
             this->func_ov031_020e9904(0);
             break;
+
         case 1:
             this->mUnk_96 = 0x1E0;
             this->mUnk_94 = 0;
-
             {
                 Vec3p vel;
 
-                vel.x = gRandom.Next32(0, 0x223);
-                vel.y = gRandom.Next32(0, 0x333);
-                vel.z = gRandom.Next32(0, 0x223);
+                q20 vx = gRandom.Next32(0, 0x223) - 0x111;
+                vel.x  = vx;
 
-                this->mVel.x = vel.x - 0x111;
-                this->mVel.y = vel.y + 0x555;
-                this->mVel.z = vel.z - 0x111;
+                q20 vy = gRandom.Next32(0, 0x333) + 0x555;
+                vel.y  = vy;
+
+                q20 vz = gRandom.Next32(0, 0x223) - 0x111;
+                vel.z  = vz;
+
+                this->mVel = vel;
             }
-
             this->func_ov031_020e9904(0);
             break;
+
         case 2:
             this->mUnk_96 = 0x1E0;
             this->mUnk_94 = 0;
-            this->mVel.x  = 0;
-            this->mVel.y  = 0x800;
-            this->mVel.z  = 0;
+            {
+                Vec3p vel;
+                vel.x      = 0;
+                vel.y      = 0x800;
+                vel.z      = 0;
+                this->mVel = vel;
+            }
             this->func_ov031_020e9904(0);
             break;
+
         case 3:
             break;
+
         case 4:
             this->func_ov031_020e9904(10);
             break;
+
         default:
             break;
     }
