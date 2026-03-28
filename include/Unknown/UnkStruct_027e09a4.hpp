@@ -158,11 +158,11 @@ struct UnkStruct_func_01ffd400 {
 };
 
 struct UnkStruct_SceneChange1 {
-    /* 00 */ unk32 nextSceneIndex;
+    /* 00 */ unk32 mNextSceneIndex;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk16 mUnk_08;
-    /* 0A */ u8 mUnk_0A;
-    /* 0B */ unk8 mUnk_0B;
+    /* 0A */ u8 mRoomIndex;
+    /* 0B */ unk8 mSpawnIndex;
     /* 0C */ unk8 mUnk_0C;
     /* 0D */ unk8 mUnk_0D;
     /* 0E */ unk8 mUnk_0E;
@@ -174,16 +174,17 @@ struct UnkStruct_SceneChange1 {
     /* 14 */
 
     UnkStruct_SceneChange1() {
-        this->nextSceneIndex = SceneIndex_Max;
-        this->mUnk_04        = 0;
-        this->mUnk_08        = 0;
-        this->mUnk_0A        = 0xFF;
-        this->mUnk_0B        = 0;
-        this->mUnk_0C        = 0;
-        this->mUnk_0D        = 0;
-        this->mUnk_0E        = 0x2B;
-        this->mUnk_0F        = 0;
-        this->mUnk_10        = 0;
+        this->mNextSceneIndex = SceneIndex_Max;
+        this->mUnk_04         = 0;
+        this->mUnk_08         = 0;
+        this->mRoomIndex      = 0xFF; // this changes when you enter a house, it's not clear if it has another purpose yet
+        this->mSpawnIndex     = 0; // changing this then saving will change your spawn location after opening the save again
+                               // (not the area)
+        this->mUnk_0C = 0;
+        this->mUnk_0D = 0;
+        this->mUnk_0E = 0x2B;
+        this->mUnk_0F = 0;
+        this->mUnk_10 = 0;
     }
 };
 
@@ -207,15 +208,8 @@ public:
     /* 0E */ unk8 mUnk_0E;
     /* 0F */ unk8 mUnk_0F;
     /* 10 */ unk32 *mUnk_10;
-    /* 14 */ unk32 mSavedSceneIndex;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk8 mUnk_1C;
-    /* 1D */ unk8 mUnk_1D;
-    /* 1E */ unk8 mSavedHouseIndex; // this changes when you enter a house, it's not clear if it has another purpose yet
-    /* 1F */ unk8 mSavedSpawnIndex; // changing this then saving will change your spawn location after opening the save again
-                                    // (not the area)
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ STRUCT_PAD(0x24, 0x54);
+    /* 14 */ UnkStruct_SceneChange1 mUnk_14;
+    /* 32 */ STRUCT_PAD(0x28, 0x54);
     /* 54 */ void *mUnk_54; // vtable
     /* 58 */ UnkStruct_WarpUnk1 *mpWarpUnk1;
     /* 5C */ unk32 mUnk_5C;

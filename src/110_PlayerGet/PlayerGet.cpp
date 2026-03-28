@@ -296,9 +296,9 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
     switch (param1->mUnk_04) {
         case 0x39:
-            *(u32 *) this->mUnk_54.mUnk_00 = param1->mUnk_10;
-            *(u32 *) this->mUnk_54.mUnk_04 = param1->mUnk_14;
-            this->mUnk_54.mUnk_08          = param1->mUnk_18;
+            *(u32 *) this->mUnk_54.mUnk_00 = param1->mUnk_10.x;
+            *(u32 *) this->mUnk_54.mUnk_04 = param1->mUnk_10.y;
+            this->mUnk_54.mUnk_08          = param1->mUnk_10.z;
             pItemManager                   = this->mUnk_28->pItemManager;
             itemId                         = param1->mUnk_1c;
 

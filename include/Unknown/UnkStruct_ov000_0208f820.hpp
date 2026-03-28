@@ -177,8 +177,8 @@ public:
 
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual ~UnkStruct_ov000_0208f820();
-    /* 0c */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1);
-    /* 10 */ virtual void vfunc_10(unk32 param1);
+    /* 0c */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) = 0;
+    /* 10 */ virtual void vfunc_10(unk32 param1)                                = 0;
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3);
     /* 1c */ virtual bool vfunc_1c(Vec3p *param1);
