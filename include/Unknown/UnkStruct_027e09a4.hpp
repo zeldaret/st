@@ -165,7 +165,7 @@ struct UnkStruct_SceneChange1 {
     /* 0B */ unk8 mSpawnIndex;
     /* 0C */ unk8 mUnk_0C;
     /* 0D */ unk8 mUnk_0D;
-    /* 0E */ unk8 mUnk_0E;
+    /* 0E */ unk8 mCutsceneIndex;
     /* 0F */ unk8 mUnk_0F;
     /* 10 */ unk8 mUnk_10;
     /* 11 */ unk8 mUnk_11;
@@ -180,11 +180,11 @@ struct UnkStruct_SceneChange1 {
         this->mRoomIndex      = 0xFF; // this changes when you enter a house, it's not clear if it has another purpose yet
         this->mSpawnIndex     = 0; // changing this then saving will change your spawn location after opening the save again
                                // (not the area)
-        this->mUnk_0C = 0;
-        this->mUnk_0D = 0;
-        this->mUnk_0E = 0x2B;
-        this->mUnk_0F = 0;
-        this->mUnk_10 = 0;
+        this->mUnk_0C        = 0;
+        this->mUnk_0D        = 0;
+        this->mCutsceneIndex = 0x2B; // array length of `data_ov000_020af780`
+        this->mUnk_0F        = 0;
+        this->mUnk_10        = 0;
     }
 };
 
