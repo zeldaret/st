@@ -7,8 +7,8 @@
 
 src/110_PlayerGet/PlayerGet.cpp:
     .text       start:0x02184a40 end:0x02185dc4
-    .rodata     start:0x02185dc4 end:0x02186190
     .init       start:0x02186190 end:0x021861bc
+    .rodata     start:0x02185dc4 end:0x02186190
     .ctor       start:0x021861bc end:0x021861c4
     .data       start:0x021861e0 end:0x02186240
     .bss        start:0x02186240 end:0x0218a1c0

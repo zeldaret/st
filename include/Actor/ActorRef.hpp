@@ -2,9 +2,10 @@
 
 #include "types.h"
 
+#define ACTOR_INDEX_MASK 0x3fff
+
 struct ActorRef {
-    /* 0 */ s16 index : 14;
-    /* 1.6 */ s8 mUnk_1_6 : 2;
+    /* 0 */ s16 index;
     /* 2 */ s16 id;
     /* 4 */
 
@@ -13,7 +14,7 @@ struct ActorRef {
     }
 
     inline bool operator==(const ActorRef &other) const {
-        return this->index == other.index && this->mUnk_1_6 == other.mUnk_1_6 && this->id == other.id;
+        return this->index == other.index && this->id == other.id;
     }
 
     inline bool operator!=(const ActorRef &other) const {

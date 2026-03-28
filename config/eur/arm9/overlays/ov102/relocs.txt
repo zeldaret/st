@@ -7,7 +7,7 @@ from:0x02182e50 kind:load to:0x027e0cec module:dtcm
 from:0x02182e80 kind:arm_call to:0x01ffd43c module:itcm
 from:0x02182f20 kind:arm_call to:0x020166f4 module:main
 from:0x02182f98 kind:load to:0x027e09bc module:dtcm
-from:0x02182f9c kind:load to:0x02112b54 module:overlays(19,31)
+from:0x02182f9c kind:load to:0x02112b54 module:overlay(31)
 from:0x02182fa0 kind:load to:0x027e0954 module:dtcm
 from:0x02182fbc kind:arm_call to:0x020dbc80 module:overlay(31)
 from:0x02182fcc kind:arm_call to:0x020db4f0 module:overlay(31)

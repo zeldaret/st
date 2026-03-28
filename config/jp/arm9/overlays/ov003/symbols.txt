@@ -1,4 +1,4 @@
-func_ov003_020b7d40 kind:function(arm,size=0x84) addr:0x020b7d40
+func_ov003_020b6520 kind:function(arm,size=0x84) addr:0x020b7d40
 func_ov003_020b7dc4 kind:function(arm,size=0x11c) addr:0x020b7dc4
 func_ov003_020b7ee0 kind:function(arm,size=0x38) addr:0x020b7ee0
 func_ov003_020b7f18 kind:function(arm,size=0x40) addr:0x020b7f18
@@ -6,7 +6,7 @@ func_ov003_020b7f58 kind:function(arm,size=0xd4) addr:0x020b7f58
 func_ov003_020b802c kind:function(arm,size=0x94) addr:0x020b802c
 func_ov003_020b80c0 kind:function(arm,size=0x98) addr:0x020b80c0
 func_ov003_020b8158 kind:function(arm,size=0xa0) addr:0x020b8158
-func_ov003_020b81f8 kind:function(arm,size=0x20) addr:0x020b81f8
+_ZN24UnkStruct_ov003_020ba74019func_ov003_020b69d8Ei kind:function(arm,size=0x20) addr:0x020b81f8
 func_ov003_020b8218 kind:function(arm,size=0x28) addr:0x020b8218
 func_ov003_020b8240 kind:function(arm,size=0x48) addr:0x020b8240
 func_ov003_020b8288 kind:function(arm,size=0x2f8) addr:0x020b8288
@@ -156,6 +156,6 @@ data_ov003_020bbec0 kind:data(any) addr:0x020bbec0
 data_ov003_020bbef8 kind:data(any) addr:0x020bbef8
 data_ov003_020bbefc kind:data(any) addr:0x020bbefc
 data_ov003_020bbf18 kind:data(any) addr:0x020bbf18
-data_ov003_020bbf60 kind:bss addr:0x020bbf60
+data_ov003_020ba740 kind:bss addr:0x020bbf60
 data_ov003_020bbf68 kind:bss addr:0x020bbf68
 data_ov003_020bbf74 kind:bss addr:0x020bbf74

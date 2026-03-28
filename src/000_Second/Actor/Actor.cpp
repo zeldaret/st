@@ -1,4 +1,5 @@
 #include "Actor/Actor.hpp"
+#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
@@ -15,17 +16,15 @@ ARM Actor::Actor() {
     this->mUnk_50 = 0;
     this->mUnk_52 = 0;
     this->mUnk_54 = 0;
-    this->mFlags  = 0;
+    this->ResetFlags();
     this->mUnk_84 = 0;
     this->mUnk_5c.func_ov000_020975f8();
-    this->mRef.index    = 0;
-    this->mRef.mUnk_1_6 = 0;
-    this->mRef.id       = 0;
-    this->mType         = NULL;
-    data_ov000_020b539c.func_02028cdc(&this->mUnk_5c, 0x30);
+    this->mRef.Reset();
+    this->mType = NULL;
+    Copy256(&data_ov000_020b539c.mUnk_00, &this->mUnk_5c, sizeof(data_ov000_020b539c.mUnk_00));
     this->mPrevPos = this->mPos = this->mUnk_5c.mUnk_00;
     this->mAngle                = this->mUnk_5c.mUnk_0c;
-    this->mFlags  = (1 << ActorFlag_Alive) | (1 << ActorFlag_Visible) | (1 << ActorFlag_Active) | (1 << ActorFlag_14);
+    SET_FLAGS(this->mFlags, ActorFlag_Alive, ActorFlag_Visible, ActorFlag_Active, ActorFlag_14);
     this->mUnk_44 = 0xFF;
     this->mUnk_46 = 0;
     this->func_ov000_0209862c(0);
@@ -47,8 +46,8 @@ ARM void Actor::func_ov000_0209848c(ActorType *param1) {
     this->mUnk_4e                 = unk_1c;
 }
 
-ARM unk32 Actor::vfunc_18(unk32 param1) {
-    return 1;
+ARM bool Actor::vfunc_18(unk32 param1) {
+    return true;
 }
 
 ARM void Actor::vfunc_1c() {}
@@ -68,9 +67,9 @@ ARM unk32 Actor::vfunc_34() {
 }
 
 ARM void Actor::func_ov000_020984d0() {
-    UNSET_FLAG(&this->mFlags, ActorFlag_Alive);
+    UNSET_FLAG(this->mFlags, ActorFlag_Alive);
 
-    if (GET_FLAG(&this->mFlags, ActorFlag_16)) {
+    if (GET_FLAG(this->mFlags, ActorFlag_16)) {
         this->func_ov000_020984f0();
     }
 }
@@ -117,12 +116,12 @@ ARM unk32 Actor::vfunc_38(unk32 param1) {
 
     var_r3 = param1 >> 16;
 
-    if (GET_FLAG(&this->mFlags, ActorFlag_Grabbed)) {
+    if (GET_FLAG(this->mFlags, ActorFlag_Grabbed)) {
         return 0;
     }
 
-    SET_FLAG(&this->mFlags, ActorFlag_Grabbed);
-    stack_c = this->mFlags;
+    SET_FLAG(this->mFlags, ActorFlag_Grabbed);
+    stack_c = this->mFlags[0];
 
     switch (stack_c) {
         case 0x100:
@@ -143,12 +142,12 @@ ARM unk32 Actor::vfunc_38(unk32 param1) {
 
 // non-matching
 ARM bool Actor::vfunc_3c(unk32 param2, Vec3p *param3) {
-    if (!GET_FLAG(&this->mFlags, ActorFlag_Grabbed)) {
+    if (!GET_FLAG(this->mFlags, ActorFlag_Grabbed)) {
         return false;
     }
 
     this->mVel = *param3;
-    UNSET_FLAG(&this->mFlags, ActorFlag_Grabbed);
+    UNSET_FLAG(this->mFlags, ActorFlag_Grabbed);
     return true;
 }
 

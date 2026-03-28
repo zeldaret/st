@@ -1,10 +1,11 @@
+#include "Game/Game.hpp"
 #include "global.h"
+#include "regs.h"
 #include "types.h"
 
 void func_0203b920(void);
 void func_02011da0(void);
 void CallStaticInitializers(void);
-void main(void);
 
 void func_02000a78(void);
 void *func_0200093c(unk32, u32 *, unk32);
@@ -12,11 +13,9 @@ void func_020009fc(void);
 void func_02000950(unk32 *);
 void func_01ffbd70(void);
 
+void main();
+
 #define UNK_027FFF9C (*(u32 *) 0x027FFF9C)
-#define REG_IME (*(u32 *) 0x04000208)
-#define REG_VCOUNT (*(u32 *) 0x04000006)
-#define RAM_PALETTES ((u32 *) 0x05000000)
-#define RAM_OAM ((u32 *) 0x07000000)
 
 typedef void (*UnkStruct_027e0000_Callback)(void);
 struct UnkStruct_027e0000 {
@@ -45,16 +44,8 @@ struct RomBuildInfo {
 };
 extern RomBuildInfo BuildInfo;
 
-struct UnkStruct_02049a2c {
-    /* 00 */ unk8 mUnk_00[0xE8];
-    /* E8 */
-
-    void func_02013394(void);
-};
-extern UnkStruct_02049a2c *data_02049a2c;
-
 // non-matching
-ARM void Entry(void) {
+extern "C" ARM void Entry(void) {
     unk32 *puVar1;
     unk32 *puVar2;
     u32 uVar3;
@@ -67,8 +58,8 @@ ARM void Entry(void) {
 
     func_02000a78();
     func_0200093c(0, (u32 *) data_027e0000, 0x4000);
-    func_0200093c(0, RAM_PALETTES, 0x400);
-    func_0200093c(0x200, RAM_OAM, 0x400);
+    func_0200093c(0, &REG_PALETTE_A, 0x400);
+    func_0200093c(0x200, &REG_OAM_A, 0x400);
     func_02000950(BuildInfo.mUnk_14);
     func_020009fc();
     puVar4 = BuildInfo.mUnk_10;
@@ -108,9 +99,9 @@ ARM void *func_0200093c(unk32 param1, u32 *param2, unk32 param3) {
     return param2;
 }
 
-void AutoloadCallback(void) {}
+extern "C" void AutoloadCallback(void) {}
 
-void func_02000b60(void) {}
+extern "C" void func_02000b60(void) {}
 
 RomBuildInfo BuildInfo = {
     .mUnk_00 = data_0204cde0,
@@ -126,7 +117,6 @@ RomBuildInfo BuildInfo = {
     "[SDK+MEI:libASR_V1.0.5-CW2.0-SDK4.0]",
 };
 
-// non-matching
-void main(void) {
-    data_02049a2c->func_02013394();
+void main() {
+    gGame.Run();
 }

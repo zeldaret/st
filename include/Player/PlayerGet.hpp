@@ -54,14 +54,14 @@ class UnkStruct_PlayerGet_8c {
 public:
     // /* 00 */ unk32 *mUnk_00;
 
-    virtual ~UnkStruct_PlayerGet_8c();
-    virtual void vfunc_08(unk32 param1); //! TODO: name symbol func_ov000_02057bf4
-    virtual void vfunc_0c(); //! TODO: name symbol func_01ffc57c
-    virtual void vfunc_10(); //! TODO: name symbol func_ov000_02057dc8
-    virtual void vfunc_14(); //! TODO: name symbol func_ov000_02057e44
-    virtual void vfunc_18(); //! TODO: name symbol func_ov000_02057ea8
-    virtual void vfunc_1c(); //! TODO: name symbol func_ov000_02057c34
-    virtual void vfunc_20(); //! TODO: name symbol func_ov000_02057d84
+    /* 00 */ virtual ~UnkStruct_PlayerGet_8c();
+    /* 08 */ virtual void vfunc_08(unk32 param1); //! TODO: name symbol func_ov000_02057bf4
+    /* 0c */ virtual void vfunc_0c(); //! TODO: name symbol func_01ffc57c
+    /* 10 */ virtual void vfunc_10(); //! TODO: name symbol func_ov000_02057dc8
+    /* 14 */ virtual void vfunc_14(); //! TODO: name symbol func_ov000_02057e44
+    /* 18 */ virtual void vfunc_18(); //! TODO: name symbol func_ov000_02057ea8
+    /* 1c */ virtual void vfunc_1c(); //! TODO: name symbol func_ov000_02057c34
+    /* 20 */ virtual void vfunc_20(); //! TODO: name symbol func_ov000_02057d84
 
     UnkStruct_PlayerGet_8c(unk32 param1);
 };

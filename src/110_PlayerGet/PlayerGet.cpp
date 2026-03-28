@@ -351,12 +351,12 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
             iVar10 = gActorManager->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
 
-            if (iVar10 == 0) {
+            if (iVar10 == NULL) {
                 return;
             }
 
             if (iVar10->func_01fff458() == ActorId_NormalShield) {
-                UNSET_FLAG(&(iVar10->mFlags), ActorFlag_Visible);
+                UNSET_FLAG(iVar10->mFlags, ActorFlag_Visible);
                 iVar10->mUnk_4a = 0;
             }
             break;
@@ -487,12 +487,8 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                 data_027e0cec->func_ov000_020a0000(this->mUnk_ec, this->mUnk_fc, uStack_f0, &VStack_fc, 1);
             }
 
-            auStack_30[0] = 0;
-            auStack_30[3] = 0;
-            auStack_30[4] = 0;
-            auStack_30[1] = 0;
-            auStack_30[2] = -1;
-            data_ov000_020b504c.func_ov000_02067cf8(ItemManager::func_ov110_02185da4(this->mUnk_54.mItemId), 0, auStack_30);
+            UnkStruct_ov000_02067bc4::UnkStruct1 auStack_30;
+            data_ov000_020b504c.func_ov000_02067cf8(ItemManager::func_ov110_02185da4(this->mUnk_54.mItemId), 0, &auStack_30);
             break;
         default:
             break;
@@ -664,7 +660,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                         break;
                     case ItemId_RecruitUniform2:
                     case ItemId_EngineerUniform:
-                        if (data_027e09a4->mUnk_00 == 0x2F) {
+                        if (data_027e09a4->mSceneIndex == SceneIndex_f_first) {
                             this->mUnk_28->func_ov058_02152a24();
                         }
                         break;
@@ -747,7 +743,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
 
             temp_r5 = data_027e0cd8->mUnk_0c->func_ov000_02080a44();
 
-            if (data_ov000_020b51b8.mUnk_10 != 0) {
+            if (data_ov000_020b51b8.mUnk_08[2] != NULL) {
                 var_r0 = 1;
             } else {
                 var_r0 = 0;

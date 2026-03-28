@@ -304,7 +304,7 @@ from:0x020b7da6 kind:thumb_call to:0x0201568c module:main
 from:0x020b7dac kind:thumb_call to:0x020154c4 module:main
 from:0x020b7dd8 kind:load to:0x020bcdec module:overlay(2)
 from:0x020b7de0 kind:load to:0x020bce10 module:overlay(2)
-from:0x020b7de4 kind:load to:0x020b1f8c module:overlay(0)
+from:0x020b7de4 kind:load to:0x020b1f84 add:8 module:overlay(0)
 from:0x020b7de8 kind:load to:0x020b8a7d module:overlay(2)
 from:0x020b7df0 kind:load to:0x020b79d5 module:overlay(2)
 from:0x020b7df4 kind:load to:0x020b8a89 module:overlay(2)
