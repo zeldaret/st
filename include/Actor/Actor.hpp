@@ -81,7 +81,7 @@ public:
     /* 04 */ Vec3p mPos;
     /* 10 */ Vec3p mPrevPos;
     /* 1c */ Vec3p mVel;
-    /* 28 */ u16 mAngle;
+    /* 28 */ s16 mAngle;
     /* 2a */ unk16 mUnk_2a;
     /* 2c */ unk32 mUnk_2c; // gravity?
     /* 30 */ Cylinder *mUnk_30;

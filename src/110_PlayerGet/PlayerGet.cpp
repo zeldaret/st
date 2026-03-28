@@ -287,7 +287,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
     ItemManager *pItemManager;
     ItemId itemId;
     ActorUnk_ov000_020a8bb0 *iVar10;
-    UnkStruct_ov000_0208f820_38 *pUnk_38;
+    Vec3p *pUnk_38;
     UnkStruct_ov000_0208f820_3c *pUnk_3c;
     char auStack_108[12];
     Vec3p VStack_fc;
@@ -336,9 +336,9 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             func_ov000_0208ba10(auStack_108, &this->mUnk_24->mUnk_25, 0);
             this->mUnk_40->mUnk_00 = 0x8000;
 
-            pUnk_38          = this->mUnk_38;
-            pUnk_38->mUnk_00 = 0;
-            pUnk_38->mUnk_08 = 0;
+            pUnk_38    = this->mUnk_38;
+            pUnk_38->x = 0;
+            pUnk_38->z = 0;
 
             pUnk_3c          = this->mUnk_3c;
             pUnk_3c->mUnk_00 = 0;

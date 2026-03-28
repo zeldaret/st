@@ -204,6 +204,13 @@ config.libs = [
             Object("110_PlayerGet/PlayerGet.cpp"),
         ]
     ),
+    GameLib(
+        "Overlay 112",
+        [
+            Object("112_PlayerSceneChange/PlayerSceneChange.cpp"),
+            Object("112_PlayerSceneChange/PlayerSceneChange2.cpp"),
+        ]
+    ),
     LibC(
         "libc",
         [

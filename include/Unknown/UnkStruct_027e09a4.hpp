@@ -161,7 +161,7 @@ struct UnkStruct_SceneChange1 {
     /* 00 */ unk32 nextSceneIndex;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk16 mUnk_08;
-    /* 0A */ unk8 mUnk_0A;
+    /* 0A */ u8 mUnk_0A;
     /* 0B */ unk8 mUnk_0B;
     /* 0C */ unk8 mUnk_0C;
     /* 0D */ unk8 mUnk_0D;
