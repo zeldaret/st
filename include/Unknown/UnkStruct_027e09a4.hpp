@@ -194,8 +194,7 @@ public:
     /* 78 */ UnkStruct_SceneChange1 mUnk_78;
     /* 8C */ unk32 mNextSceneIndex;
     /* 90 */ STRUCT_PAD(0x90, 0xB4);
-    /* B4 */ unk32
-        mSpawnTransitionType; // the behavior of Link when entering a new scene (walk from the entrance, stay still etc)
+    /* B4 */ unk32 mSpawnTransitionType; // the behavior of Link when entering a new scene
 };
 
 class UnkStruct_027e09a4 : public SysObject {
