@@ -86,6 +86,6 @@ ARM void PlayerSceneChange2::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param
     }
 }
 
-ARM void PlayerSceneChange2::vfunc_10(unk32 param1) {}
+ARM void PlayerSceneChange2::vfunc_10(unk32 param1, unk32 param2) {}
 
 ARM PlayerSceneChange2::~PlayerSceneChange2() {}

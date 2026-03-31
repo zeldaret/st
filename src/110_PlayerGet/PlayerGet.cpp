@@ -288,7 +288,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
     ItemId itemId;
     ActorUnk_ov000_020a8bb0 *iVar10;
     Vec3p *pUnk_38;
-    UnkStruct_ov000_0208f820_3c *pUnk_3c;
+    Vec3p *pUnk_3c;
     char auStack_108[12];
     Vec3p VStack_fc;
     unk32 uStack_f0[4];
@@ -340,10 +340,10 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             pUnk_38->x = 0;
             pUnk_38->z = 0;
 
-            pUnk_3c          = this->mUnk_3c;
-            pUnk_3c->mUnk_00 = 0;
-            pUnk_3c->mUnk_04 = 0;
-            pUnk_3c->mUnk_08 = 0;
+            pUnk_3c    = this->mUnk_3C;
+            pUnk_3c->x = 0;
+            pUnk_3c->y = 0;
+            pUnk_3c->z = 0;
 
             if (((*(u16 *) this->mUnk_54.mUnk_00 << 0x10) >> 0x1E) != 1) {
                 return;
@@ -497,7 +497,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
 const UnkStruct_ov110_021861ec data_ov110_021861ec = UnkStruct_ov110_021861ec(0x5E3, 0x152D, 0xCD);
 
-ARM void PlayerGet::vfunc_10(unk32 param1) {
+ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
     unk32 var_r1;
     UnkStruct_func_01fff520_ret **temp_r0_6;
     s32 temp_r5;
@@ -669,13 +669,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                 }
 
                 if (*(u16 *) this->mUnk_54.mUnk_00 == 0x1000) {
-                    UnkStruct_ov000_0208f820_04 structure;
-                    structure.mUnk_00[0] = this->mUnk_54.mUnk_00[0];
-                    structure.mUnk_00[1] = this->mUnk_54.mUnk_00[1];
-                    // structure.mUnk_08 = this->mUnk_54.mUnk_08;
-                    // structure.mItemId = this->mUnk_54.mItemId;
-
-                    if (data_027e0ce8->func_01fff498(structure) != 0) {
+                    if (data_027e0ce8->func_01fff498(this->mUnk_54.mUnk_00[0], this->mUnk_54.mUnk_00[1]) != 0) {
                         var_r5_2 = '\0';
 
                         switch (func_01fff584()) {

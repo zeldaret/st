@@ -79,6 +79,7 @@ public:
     /* 2c */ virtual void vfunc_2c();
 
     unk32 func_ov000_02080a44();
+    bool func_ov000_02080658(unk32 param1, UnkStruct_SceneChange1 *param2);
 };
 
 class UnkStruct_027e0cd8 {

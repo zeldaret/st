@@ -16,7 +16,7 @@ public:
     /* 50 */ unk32 mUnk_50;
     /* 54 */ UnkStruct_SceneChange1 mUnk_54;
     /* 68 */ unk32 mUnk_68;
-    /* 6C */ unk32 mUnk_6C;
+    /* 6C */ s32 mUnk_6C;
     /* 70 */ volatile Vec3p mUnk_70;
     /* 7C */ unk32 mUnk_7C;
     /* 80 */ volatile Vec3p mUnk_80;
@@ -24,13 +24,11 @@ public:
     /* 90 */ volatile u32 mUnk_90;
     /* 94 */ u16 mUnk_94[2];
     /* 98 */ unk32 mUnk_98;
-    /* 9C */ unk32 mUnk_9C;
-    /* A0 */ unk32 mUnk_A0;
-    /* A4 */ unk32 mUnk_A4;
+    /* 9C */ Vec3p mUnk_9C;
     /* A8 */ unk16 mUnk_A8;
     /* AA */ unk16 mUnk_AA;
-    /* AC */ unk8 mUnk_AC;
-    /* AD */ unk8 mUnk_AD;
+    /* AC */ bool mUnk_AC;
+    /* AD */ bool mUnk_AD;
     /* AE */ s16 mUnk_AE;
 
     PlayerSceneChange();
@@ -39,7 +37,7 @@ public:
 
     /* 04 */ virtual ~PlayerSceneChange() override;
     /* 0C */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
     /* 1C */ virtual bool vfunc_1c(Vec3p *param1) override;
 };
 
@@ -56,5 +54,5 @@ public:
 
     /* 04 */ virtual ~PlayerSceneChange2() override;
     /* 0C */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
 };

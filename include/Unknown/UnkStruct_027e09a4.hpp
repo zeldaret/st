@@ -14,7 +14,8 @@ naming scheme:
 - b_xxx: "B" for "Boss" -> dungeon boss area
 - f_xxx: "F" for "Field" -> normal gameplay area (also known as a "land" area)
 */
-enum SceneIndex {
+typedef u32 SceneIndex;
+enum SceneIndex_ {
     /*   0 */ SceneIndex_test_trn      = 0x00, //
     /*   1 */ SceneIndex_test_trn2     = 0x01, //
     /*   2 */ SceneIndex_test_pre      = 0x02, //
@@ -252,6 +253,10 @@ public:
     void func_ov000_020708d8(unk32 param1);
     void func_ov000_02070938(unk32 param1);
     void func_ov000_02070a4c(unk32 param1);
+    unk32 func_ov000_02070554();
+    unk16 *func_ov000_02070538();
+    bool func_ov000_02070a9c(UnkStruct_SceneChange1 *param1);
+    bool func_ov000_02072154(UnkStruct_SceneChange1 *param1, unk32 param2);
 
     void func_ov017_020bb994(void *param1);
     void func_ov017_020bb994(unk32 param1);

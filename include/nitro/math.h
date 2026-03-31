@@ -29,6 +29,9 @@ typedef s16 q4;
 #define SIN(n) (gSinCosTable[2 * ((n) >> 4)])
 #define COS(n) (gSinCosTable[2 * ((n) >> 4) + 1])
 
+#define SIN2(table, n) ((table)[2 * ((n) >> 4)])
+#define COS2(table, n) ((table)[2 * ((n) >> 4) + 1])
+
 #ifdef __cplusplus
 }
 #endif
