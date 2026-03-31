@@ -146,7 +146,10 @@ ARM bool Actor::vfunc_3c(unk32 param2, Vec3p *param3) {
         return false;
     }
 
-    this->mVel = *param3;
+    this->mVel.x = param3->x;
+    this->mVel.y = param3->y;
+    this->mVel.z = param3->z;
+
     UNSET_FLAG(this->mFlags, ActorFlag_Grabbed);
     return true;
 }

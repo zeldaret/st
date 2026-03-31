@@ -52,10 +52,12 @@ ARM void ActorRupee::func_ov031_020e8d2c(Vec3p *param1, u8 param2, unk32 param3,
     stack_struct stack;
     stack.sp2C = 0;
     stack.func_ov000_020975f8();
-    stack.sp14 = param2 & 0xFF;
-    stack.sp4  = *param1;
-    stack.sp2C = param4;
-    stack.sp30 = param3;
+    stack.sp14  = param2 & 0xFF;
+    stack.sp4.x = param1->x;
+    stack.sp4.y = param1->y;
+    stack.sp4.z = param1->z;
+    stack.sp2C  = param4;
+    stack.sp30  = param3;
     this->func_ov000_020973f4(&data_ov000_020b539c, ActorId_Rupee, (Actor_5c *) &stack, 0);
 }
 
@@ -418,7 +420,9 @@ ARM void ActorRupee::func_ov031_020e95c0() {
         return;
     }
 
-    this->mPos = temp_r0->mPos;
+    this->mPos.x = temp_r0->mPos.x;
+    this->mPos.y = temp_r0->mPos.y;
+    this->mPos.z = temp_r0->mPos.z;
 }
 
 ARM void ActorRupee::func_ov031_020e9610() {

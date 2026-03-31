@@ -52,13 +52,10 @@ union Vec2b {
     }
 };
 
-union Vec2s {
-    struct {
-        /* 0 */ s16 x;
-        /* 2 */ s16 y;
-        /* 4 */
-    };
-    s16 coords[2];
+struct Vec2s {
+    /* 0 */ s16 x;
+    /* 2 */ s16 y;
+    /* 4 */
 
     Vec2s() {}
     Vec2s(s16 X, s16 Y) {
@@ -82,13 +79,10 @@ union Vec2us {
     }
 };
 
-union Vec2p {
-    struct {
-        /* 0 */ q20 x;
-        /* 4 */ q20 y;
-        /* 8 */
-    };
-    q20 coords[2];
+struct Vec2p {
+    /* 0 */ q20 x;
+    /* 4 */ q20 y;
+    /* 8 */
 
     Vec2p() {}
     Vec2p(q20 X, q20 Y) {
