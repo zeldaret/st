@@ -15,11 +15,11 @@ ARM PlayerSceneChange::PlayerSceneChange() {
     this->mUnk_68 = this->mUnk_2c->mUnk_14C;
     this->mUnk_6C = -1;
 
-    *((Vec3p *) &this->mUnk_70) = *this->mUnk_34;
-    this->mUnk_7C               = 0;
+    this->mUnk_70.coords = this->mUnk_34->coords;
+    this->mUnk_7C        = 0;
 
-    *((Vec3p *) &this->mUnk_80) = *this->mUnk_34;
-    this->mUnk_8C               = 0;
+    this->mUnk_80.coords = this->mUnk_34->coords;
+    this->mUnk_8C        = 0;
 
     this->mUnk_90            = 0;
     *((u32 *) this->mUnk_94) = 0;

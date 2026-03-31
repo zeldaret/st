@@ -45,6 +45,11 @@ union Vec2b {
     };
     u8 coords[2];
 
+    void operator=(const Vec2b &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
+
     Vec2b() {}
     Vec2b(u8 X, u8 Y) {
         x = X;
@@ -52,10 +57,18 @@ union Vec2b {
     }
 };
 
-struct Vec2s {
-    /* 0 */ s16 x;
-    /* 2 */ s16 y;
-    /* 4 */
+union Vec2s {
+    struct {
+        /* 0 */ s16 x;
+        /* 2 */ s16 y;
+        /* 4 */
+    };
+    s16 coords[2];
+
+    void operator=(const Vec2s &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
 
     Vec2s() {}
     Vec2s(s16 X, s16 Y) {
@@ -64,13 +77,15 @@ struct Vec2s {
     }
 };
 
-union Vec2us {
-    struct {
-        /* 0 */ u16 x;
-        /* 2 */ u16 y;
-        /* 4 */
-    };
-    u16 coords[2];
+struct Vec2us {
+    /* 0 */ u16 x;
+    /* 2 */ u16 y;
+    /* 4 */
+
+    void operator=(const Vec2us &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
 
     Vec2us() {}
     Vec2us(u16 X, u16 Y) {
@@ -79,10 +94,18 @@ union Vec2us {
     }
 };
 
-struct Vec2p {
-    /* 0 */ q20 x;
-    /* 4 */ q20 y;
-    /* 8 */
+union Vec2p {
+    struct {
+        /* 0 */ q20 x;
+        /* 4 */ q20 y;
+        /* 8 */
+    };
+    q20 coords[2];
+
+    void operator=(const Vec2p &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
 
     Vec2p() {}
     Vec2p(q20 X, q20 Y) {
@@ -98,6 +121,12 @@ union Vec3p {
         q20 z;
     };
     q20 coords[3];
+
+    void operator=(const Vec3p &from) {
+        this->x = from.x;
+        this->y = from.y;
+        this->z = from.z;
+    }
 
     Vec3p() {}
     Vec3p(q20 X, q20 Y, q20 Z) {
@@ -116,6 +145,13 @@ union Vec4p {
         /* 10 */
     };
     q20 coords[4];
+
+    void operator=(const Vec4p &from) {
+        this->x = from.x;
+        this->y = from.y;
+        this->z = from.z;
+        this->w = from.w;
+    }
 
     Vec4p() {}
     Vec4p(q20 X, q20 Y, q20 Z, q20 W) {

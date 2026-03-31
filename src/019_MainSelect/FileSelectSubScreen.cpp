@@ -172,7 +172,10 @@ ARM FileSelect_UnkClass7::FileSelect_UnkClass7() {
         u16 value = gRandom.ConditionalNext32(this->mUnk_004.mUnk_000[i].func_ov000_02060c28());
         this->mUnk_004.mUnk_000[i].func_ov000_02060bd8(value);
 
-        Vec2us pos   = pRandom->NextPos(SUBSCREEN_WIDTH, SUBSCREEN_HEIGHT);
+        Vec2us pos;
+        pos.x = pRandom->Next32(0, SUBSCREEN_WIDTH);
+        pos.y = pRandom->Next32(0, SUBSCREEN_HEIGHT);
+
         Vec2us *pVec = &this->mUnk_004.mUnk_E10[i];
         *pVec        = pos;
     }
@@ -185,7 +188,10 @@ ARM void FileSelect_UnkClass7::vfunc_00() {
         if (this->mUnk_004.mUnk_000[i].func_ov000_02060af8() != 0) {
             this->mUnk_004.mUnk_000[i].func_ov000_02060b64();
 
-            Vec2us pos   = gRandom.NextPos(SUBSCREEN_WIDTH, SUBSCREEN_HEIGHT);
+            Vec2us pos;
+            pos.x = gRandom.Next32(0, SUBSCREEN_WIDTH);
+            pos.y = gRandom.Next32(0, SUBSCREEN_HEIGHT);
+
             Vec2us *pVec = &this->mUnk_004.mUnk_E10[i];
             *pVec        = pos;
         }
