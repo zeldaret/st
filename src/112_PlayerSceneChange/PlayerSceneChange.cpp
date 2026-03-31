@@ -77,6 +77,7 @@ extern unk32 data_ov000_020b3000;
 extern "C" bool func_ov000_02080998(Vec3p *);
 extern "C" void func_01ff930c(UnkStruct_ov000_0208f820_40 *, unk16, unk32);
 
+// https://decomp.me/scratch/c7PhN
 ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
     q4 *pSinCosTable = gSinCosTable;
 
@@ -457,6 +458,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
     }
 }
 
+// https://decomp.me/scratch/gX5Rb
 ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
     switch (param1) {
         case 0x3C:
@@ -550,12 +552,12 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     //     (((uVar6 + 0x800) >> 0xc) | (gSinCosTable[iVar3 * 2] >> 0x13) + (0xfffff7ff < uVar6)) * 0x100000;
                     // this->mUnk_70.z += (((uVar5 + 0x800) >> 0xc) | iVar2 << 0x14);
 
-                    s32 idx = ((var_r1_2) >> 4) << 1;
-                    q4 sin  = data_0203feb0[idx];
-                    q4 cos  = data_0203feb0[idx + 1];
+                    s32 idx   = (((s32) var_r1_2) >> 4) << 1;
+                    s32 sin16 = (s16) data_0203feb0[idx];
+                    s32 cos16 = (s16) data_0203feb0[idx + 1];
 
-                    this->mUnk_70.x += ((s32) data_0203feb0[idx] << 13) + 0x800 >> 12;
-                    this->mUnk_70.z += ((s32) data_0203feb0[idx + 1] << 13) + 0x800 >> 12;
+                    this->mUnk_70.x += (((sin16 << 13) + 0x800) >> 12);
+                    this->mUnk_70.z += (((cos16 << 13) + 0x800) >> 12);
                 }
 
                 switch (this->mUnk_68) {
