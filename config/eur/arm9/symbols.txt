@@ -2262,7 +2262,7 @@ data_0203e8c8 kind:data(any) addr:0x0203e8c8
 data_0203e90c kind:data(any) addr:0x0203e90c
 data_0203e958 kind:data(any) addr:0x0203e958
 data_0203e95e kind:data(any) addr:0x0203e95e
-data_0203e964 kind:data(any) addr:0x0203e964
+gSinCosTable kind:data(any) addr:0x0203e964
 data_0203ea64 kind:data(any) addr:0x0203ea64
 data_0203ec64 kind:data(any) addr:0x0203ec64
 data_0203ee64 kind:data(any) addr:0x0203ee64
