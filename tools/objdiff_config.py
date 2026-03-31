@@ -4,7 +4,6 @@ import json
 import copy
 
 from pathlib import Path
-from typing import Optional
 
 
 class ConfigUnit:
@@ -19,7 +18,7 @@ class ConfigUnit:
 
 
 class ConfigVersion:
-    def __init__(self, name: Optional[str], options: dict[str, str], units: list[ConfigUnit], root_path: Path):
+    def __init__(self, name: str, options: dict[str, str], units: list[ConfigUnit], root_path: Path):
         self.name = name
         self.objdiff_path = Path(options["objdiff"]).resolve()
 
@@ -32,7 +31,7 @@ class ConfigVersion:
         self.objdiff_json.pop("build_base")
 
         for i, unit_dict in enumerate(objdiff_json["units"]):
-            if "name" in unit_dict and self.name is not None:
+            if "name" in unit_dict:
                 unit_dict["name"] = f"{self.name}/{unit_dict['name']}"
 
             def get_cleaned_path(base_path: Path):
@@ -97,9 +96,8 @@ class ObjdiffConfig:
         for name, options in cfg_json["units"].items():
             units.append(ConfigUnit(name, options))
 
-        multi_version = len(cfg_json["versions"].items()) > 1
         for name, options in cfg_json["versions"].items():
-            cfg.versions.append(ConfigVersion(name if multi_version else None, options, units, cfg.root_path))
+            cfg.versions.append(ConfigVersion(name, options, units, cfg.root_path))
 
         return cfg
 
