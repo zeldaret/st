@@ -4,6 +4,8 @@
 #include "nitro/math.h"
 #include "types.h"
 
+#include "Unknown/UnkStruct_027e09a4.hpp"
+
 class UnkStruct_027e0cd8_0c {
 public:
     /* 000 (vtable) */
