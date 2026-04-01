@@ -57,13 +57,10 @@ union Vec2b {
     }
 };
 
-union Vec2s {
-    struct {
-        /* 0 */ s16 x;
-        /* 2 */ s16 y;
-        /* 4 */
-    };
-    s16 coords[2];
+struct Vec2s {
+    /* 0 */ s16 x;
+    /* 2 */ s16 y;
+    /* 4 */
 
     void operator=(const Vec2s &from) {
         this->x = from.x;
