@@ -32,7 +32,7 @@ UnkStruct_02011e10_Sub1 *func_02001098(unk32 param1, unk32 param2, unk32 param3)
 unk32 func_020011f4();
 void OS_SetArenaLo(unk32 param1, unk32 param2);
 void TP_Init();
-unk32 OS_func_0206bf34();
+unk32 OS_func_0065();
 unk32 TP_GetUserInfo(void *param1);
 void TP_SetCalibrateParam(void *param1);
 
@@ -149,7 +149,7 @@ ARM UnkStruct_02049b18_06::UnkStruct_02049b18_06() {
 
     TP_Init();
 
-    if (OS_func_0206bf34() != 0) {
+    if (OS_func_0065() != 0) {
         TP_SetCalibrateParam(NULL);
     } else if (TP_GetUserInfo(auStack_18) != 0) {
         TP_SetCalibrateParam(auStack_18);
