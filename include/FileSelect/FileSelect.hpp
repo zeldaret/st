@@ -148,7 +148,7 @@ public:
     /* 10 */ unk32 mUnk_10;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
-    /* 1C */ Vec2s mUnk_1C;
+    /* 1C */ VEC2S mUnk_1C;
     /* 20 */ volatile unk32 mUnk_20;
 };
 
