@@ -1,6 +1,6 @@
 #include "Game/GameModeTitleScreen.hpp"
+#include "Game/Game.hpp"
 #include "TitleScreen/TitleScreen.hpp"
-#include "Unknown/UnkStruct_02049a2c.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -22,7 +22,7 @@ UnkStruct_ov000_020a782c *func_ov000_020a782c(unk32 param1);
 
 ARM GameModeTitleScreen::GameModeTitleScreen() {
     func_0201659c();
-    data_02049a2c.func_02013370(2);
+    gGame.func_02013370(2);
     data_0204a110.func_ov001_020bd514(0, TitleScreenManager::Create, 0, 1);
     func_ov001_020b6520(2);
 }

@@ -175,7 +175,8 @@ public:
 class UnkStruct_0204a110 {
 public:
     /* 000 */ unk32 mUnk_000;
-    /* 004 */ unk32 mUnk_004;
+    /* 004 */ u16 mUnk_004;
+    /* 004 */ unk16 mUnk_006;
     /* 008 */ unk32 mUnk_008;
     /* 00C */ unk32 mUnk_00C;
     /* 010 */ UnkStruct_0204a110_Sub2 mUnk_010;
@@ -216,6 +217,12 @@ public:
     void func_020195a0(const char *param1, unk32 param2, unk32 param3, unk32 param4);
     void func_0201967c(unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
     void func_02019538(unk32 param1, unk32 param2);
+    unk32 func_02019300(unk32 param1);
+    void func_02019350();
+    void func_020194dc();
+    void func_02019408();
+    void func_02019454();
+    unk32 func_02019514();
 
     void func_ov001_020bd514(unk32 param1, void *param2, unk32 param3, unk32 param4);
     void func_ov001_020bd58c(void);

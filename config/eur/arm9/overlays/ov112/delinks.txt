@@ -3,3 +3,10 @@
     .data       start:0x02186500 end:0x02186560 kind:data align:32
     .bss        start:0x02186560 end:0x02186560 kind:bss align:32
 
+src/112_PlayerSceneChange/PlayerSceneChange.cpp:
+    .text       start:0x02184a40 end:0x0218600c
+    .data       start:0x02186500 end:0x02186528
+
+src/112_PlayerSceneChange/PlayerSceneChange2.cpp:
+    .text       start:0x0218600c end:0x021864e0
+    .data       start:0x02186528 end:0x02186560

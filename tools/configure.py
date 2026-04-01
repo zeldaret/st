@@ -125,13 +125,18 @@ config.libs = [
         [
             Object("Main/Main.cpp"),
             Object("Main/System/SysNew.cpp"),
+            Object("Main/System/SysFault.cpp"),
+            Object("Main/Game/Game.cpp"),
             Object("Main/Player/TouchControl.cpp"),
             Object("Main/System/OverlayManager.cpp"),
+            Object("Main/UnkStruct_ov000_020b4f84_00_Base.cpp"),
+            Object("Main/System/Random.cpp"),
             Object("Main/Game/GameModeLinkListNode.cpp"),
             Object("Main/func_02017ea4.cpp"),
             Object("Main/Game/GameModeBase.cpp"),
             Object("Main/UnkStruct_0204a060.cpp"),
             Object("Main/Game/GameModeManagerBase.cpp"),
+            Object("Main/func_020196fc.cpp"),
         ]
     ),
     GameLib(
@@ -197,6 +202,13 @@ config.libs = [
         "Overlay 110",
         [
             Object("110_PlayerGet/PlayerGet.cpp"),
+        ]
+    ),
+    GameLib(
+        "Overlay 112",
+        [
+            Object("112_PlayerSceneChange/PlayerSceneChange.cpp"),
+            Object("112_PlayerSceneChange/PlayerSceneChange2.cpp"),
         ]
     ),
     LibC(

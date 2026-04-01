@@ -5,16 +5,24 @@
 #include "Actor/ActorType.hpp"
 #include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
+#include "flags.h"
 #include "global.h"
 #include "nitro/math.h"
 #include "types.h"
 
-class Actor_5c {
+class Actor_5c_Base {
 public:
     /* 00 */ Vec3p mUnk_00;
     /* 0c */ s16 mUnk_0c;
     /* 0e */ unk16 mUnk_0e; // padding?
     /* 10 */
+
+    Actor_5c_Base() {};
+};
+
+class Actor_5c : public Actor_5c_Base {
+public:
+    /* 00 (base) */
 
     Actor_5c() {};
     void func_ov000_020975f8();
@@ -22,45 +30,49 @@ public:
 
 class UnkStruct_ov000_020b539c {
 public:
-    /* 00 */ Actor_5c mUnk_00[3];
+    /* 00 */ Actor_5c_Base mUnk_00[3];
     /* 30 */ ActorType *mUnk_30;
     /* 34 */
+
+    ActorType **func_ov000_02073dc();
+    ActorType **func_ov000_02073e8();
+    ActorType *func_ov000_020974dc(u32 id);
 };
 
 typedef u32 ActorFlags;
 enum ActorFlag_ {
-    ActorFlag_Alive,
-    ActorFlag_Visible,
-    ActorFlag_2,
-    ActorFlag_Active, // stops updating if false
-    ActorFlag_4,
-    ActorFlag_5,
-    ActorFlag_6,
-    ActorFlag_7,
-    ActorFlag_Grabbed,
-    ActorFlag_9,
-    ActorFlag_Interacting, // set when player interacts with actor
-    ActorFlag_11,
-    ActorFlag_12,
-    ActorFlag_13,
-    ActorFlag_14,
-    ActorFlag_15,
-    ActorFlag_16,
-    ActorFlag_17,
-    ActorFlag_18,
-    ActorFlag_19,
-    ActorFlag_20,
-    ActorFlag_21,
-    ActorFlag_22,
-    ActorFlag_23,
-    ActorFlag_24,
-    ActorFlag_25,
-    ActorFlag_26,
-    ActorFlag_27,
-    ActorFlag_28,
-    ActorFlag_29,
-    ActorFlag_30,
-    ActorFlag_31,
+    ActorFlag_Alive       = FLAG(0, 0),
+    ActorFlag_Visible     = FLAG(0, 1),
+    ActorFlag_2           = FLAG(0, 2),
+    ActorFlag_Active      = FLAG(0, 3), // stops updating if false
+    ActorFlag_4           = FLAG(0, 4),
+    ActorFlag_5           = FLAG(0, 5),
+    ActorFlag_6           = FLAG(0, 6),
+    ActorFlag_7           = FLAG(0, 7),
+    ActorFlag_Grabbed     = FLAG(0, 8),
+    ActorFlag_9           = FLAG(0, 9),
+    ActorFlag_Interacting = FLAG(0, 10), // set when player interacts with actor
+    ActorFlag_11          = FLAG(0, 11),
+    ActorFlag_12          = FLAG(0, 12),
+    ActorFlag_13          = FLAG(0, 13),
+    ActorFlag_14          = FLAG(0, 14),
+    ActorFlag_15          = FLAG(0, 15),
+    ActorFlag_16          = FLAG(0, 16),
+    ActorFlag_17          = FLAG(0, 17),
+    ActorFlag_18          = FLAG(0, 18),
+    ActorFlag_19          = FLAG(0, 19),
+    ActorFlag_20          = FLAG(0, 20),
+    ActorFlag_21          = FLAG(0, 21),
+    ActorFlag_22          = FLAG(0, 22),
+    ActorFlag_23          = FLAG(0, 23),
+    ActorFlag_24          = FLAG(0, 24),
+    ActorFlag_25          = FLAG(0, 25),
+    ActorFlag_26          = FLAG(0, 26),
+    ActorFlag_27          = FLAG(0, 27),
+    ActorFlag_28          = FLAG(0, 28),
+    ActorFlag_29          = FLAG(0, 29),
+    ActorFlag_30          = FLAG(0, 30),
+    ActorFlag_31          = FLAG(0, 31),
 };
 
 class Actor : public SysObject {
@@ -69,7 +81,7 @@ public:
     /* 04 */ Vec3p mPos;
     /* 10 */ Vec3p mPrevPos;
     /* 1c */ Vec3p mVel;
-    /* 28 */ u16 mAngle;
+    /* 28 */ s16 mAngle;
     /* 2a */ unk16 mUnk_2a;
     /* 2c */ unk32 mUnk_2c; // gravity?
     /* 30 */ Cylinder *mUnk_30;
@@ -87,7 +99,7 @@ public:
     /* 50 */ volatile u16 mUnk_50;
     /* 52 */ u16 mUnk_52;
     /* 54 */ unk32 mUnk_54;
-    /* 58 */ ActorFlags mFlags;
+    /* 58 */ ActorFlags mFlags[1];
     /* 5c */ Actor_5c mUnk_5c;
     /* 6c */ u16 mUnk_6c; // actor user id?
     /* 6e */ u16 mUnk_6e;
@@ -113,7 +125,7 @@ public:
     /* 0c */ virtual unk8 vfunc_0c();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual unk32 vfunc_18(unk32 param1);
+    /* 18 */ virtual bool vfunc_18(unk32 param1);
     /* 1c */ virtual void vfunc_1c();
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
@@ -130,6 +142,10 @@ public:
     /* 54 */
 
     unk32 func_01fff5d0(unk32 param1, unk32 param2);
+
+    void ResetFlags() {
+        *(u32 *) this->mFlags = 0;
+    }
 
     Actor();
     void func_ov000_0209848c(ActorType *param1);
@@ -153,8 +169,12 @@ public:
     s32 func_ov000_020985f0(void *param1);
     void func_ov000_0209862c(unk32 param1);
 
+    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c *param3, unk32 param4);
+    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c *param3);
     void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c param3);
     void func_ov000_020989e0();
+
+    unk32 func_ov000_02098a60(unk32 param1);
 
     void func_ov017_020bf5c4(Vec3p *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
 };

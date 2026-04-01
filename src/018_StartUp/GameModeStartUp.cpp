@@ -1,8 +1,8 @@
 #include "Game/GameModeStartUp.hpp"
+#include "Game/Game.hpp"
 #include "System/OverlayManager.hpp"
 #include "System/SysFault.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkStruct_02049a2c.hpp"
 #include "Unknown/UnkStruct_02049b80.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
@@ -12,7 +12,6 @@
 #include "regs.h"
 
 extern "C" {
-void func_02013768(void *param1);
 void OS_SetIrqFunction(unk32 param1, void *param2);
 void func_0201245c();
 void func_02027a28(void *param1, unk32 param2);
@@ -51,24 +50,24 @@ ARM void SysFault::func_ov018_020c4840() {
     this->mUnk_04 = 0;
 }
 
-ARM UnkStruct_02049a2c::UnkStruct_02049a2c() :
-    mUnk_00(NULL),
-    mUnk_04(0),
-    mUnk_08(0),
-    mUnk_10(0),
-    mUnk_14(0),
-    mUnk_18(0) {}
+ARM Game::Game() :
+    mpCurrentGameMode(NULL),
+    createCallback(NULL),
+    mUnk_08(NULL),
+    mpSaveFile(NULL),
+    mUnk_14(NULL),
+    mUnk_18(NULL) {}
 
-ARM void UnkStruct_02049a2c::func_ov018_020c48a4(unk32 param1) {
+ARM void Game::func_ov018_020c48a4() {
     OS_SetIrqFunction(1, func_02013184);
     OS_EnableIrqMask(1);
     GX_VBlankIntr(1);
-    OS_WakeupThreadDirect(&this->mUnk_20);
+    OS_WakeupThreadDirect(&this->mUnk_1C.mUnk_04);
     func_02031e48(func_020131b0);
-    this->func_02013724(UnkStruct_02049a2c::func_ov018_020c4ba8);
+    this->TrySetCreateCallback((GameModeCreateCallback) Game::func_ov018_020c4ba8);
 }
 
-ARM void UnkStruct_02049a2c::func_ov018_020c48f8() {
+ARM void Game::func_ov018_020c48f8() {
     if (gOverlayManager.mLoadedOverlays[OverlaySlot_Second] != OverlayIndex_Second) {
         data_02049ba0.LoadIfNotLoaded(OverlaySlot_Second, OverlayIndex_Second);
         data_0204999c.func_ov018_020c4a5c();
@@ -80,12 +79,12 @@ ARM void UnkStruct_02049a2c::func_ov018_020c48f8() {
 ARM UnkStruct_02049b18::UnkStruct_02049b18() {
     this->mUnk_58 = 0;
     this->mUnk_5A = 0;
-    func_02013768(this);
+    this->func_02013768();
 }
 
 ARM void UnkStruct_02011e10::func_ov018_020c4980() {
-    unk32 iVar1 = OS_GetArenaLo(0);
-    unk32 iVar2 = OS_GetArenaHi(0);
+    unk32 arenaLo = OS_GetArenaLo(0);
+    unk32 arenaHi = OS_GetArenaHi(0);
 
     for (int i = 0; i < HeapIndex_Max; i++) {
         this->mUnk_00[i] = NULL;
@@ -95,9 +94,9 @@ ARM void UnkStruct_02011e10::func_ov018_020c4980() {
         this->mUnk_24[i] = 0;
     }
 
-    this->mUnk_00[HeapIndex_0] = func_020012e0(iVar1, iVar2 - iVar1, 2);
-    unk32 length               = func_0202d624(NULL, 0);
-    void *ptr                  = ::operator new(length, 0);
+    this->mUnk_00[HeapIndex_Main] = func_020012e0(arenaLo, arenaHi - arenaLo, 2);
+    unk32 length                  = func_0202d624(NULL, 0);
+    void *ptr                     = ::operator new(length, 0);
     func_0202d624(ptr, length);
     ptr         = ::operator new(0xBE000, 0);
     void *uVar3 = func_02001fd4(ptr, 0xBE000);
@@ -170,7 +169,7 @@ ARM UnkStruct_0204e64c::UnkStruct_0204e64c() {
     this->mUnk_16 = 0;
 }
 
-ARM GameModeStartUp *UnkStruct_02049a2c::func_ov018_020c4ba8() {
+ARM GameModeStartUp *Game::func_ov018_020c4ba8() {
     static GameModeStartUp data_ov018_020c5bd4;
     return &data_ov018_020c5bd4;
 }
@@ -202,10 +201,10 @@ ARM GameModeStartUp::GameModeStartUp() {
 ARM void GameModeStartUp::vfunc_0C() {
     if (this->mUnk_04.mUnk_0D == this->mUnk_04.mUnk_10) {
         if (this->mUnk_28 == 0) {
-            this->mUnk_2C = SHARED_WORK_C3C;
-            data_02049a2c.func_ov018_020c48f8();
-        } else if (!this->mUnk_2A && (SHARED_WORK_C3C - this->mUnk_2C) >= 0x3C) {
-            this->mUnk_2A = data_0204a060.func_020183d4(false, UnkStruct_0204a060::func_020183b8, 1);
+            this->mUnk_2C = REG_FRAME_COUNTER;
+            gGame.func_ov018_020c48f8();
+        } else if (!this->mUnk_2A && (REG_FRAME_COUNTER - this->mUnk_2C) >= 0x3C) {
+            this->mUnk_2A = data_0204a060.func_020183d4(false, (GameModeCreateCallback) UnkStruct_0204a060::func_020183b8, 1);
 
             if (data_ov018_020c5bc0 != 0) {
                 data_0204a060.func_0201bb84(1, 0, 1);

@@ -103,7 +103,7 @@ public:
     /* 004 */ GameModeManagerBase_004 *mUnk_004;
     /* 008 */ UnkStruct_ov000_02067bc4_Sub2 *mUnk_008;
     /* 00C */ UnkStruct_ov000_020b504c_Sub4 mUnk_00C[7];
-    /* 028 */ unk32 mUnk_028;
+    /* 028 */ unk32 mUnk_028; // pointer to the subsystem that handles drawing the textboxes
     /* 02C */ unk32 mUnk_02C;
     /* 030 */ unk32 mUnk_030;
     /* 034 */ Input mButtons;

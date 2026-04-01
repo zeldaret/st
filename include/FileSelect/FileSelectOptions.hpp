@@ -108,7 +108,6 @@ public:
     // "options" string
     /* 10A8 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_10A8;
     /* 1108 */ UnkSystem2_UnkSubSystem3 mUnk_1108;
-    /* 110C */ UnkSystem2_UnkSubSystem5 mUnk_110C;
     /* 1344 */ UnkSystem2_UnkSubSystem9 mUnk_1344;
 
     // "mic test" button
@@ -116,21 +115,18 @@ public:
     /* 13E8 */ unk8 mUnk_13E8[0x38];
     /* 1420 */ UnkSystem2_UnkSubSystem8 mUnk_1420;
     /* 1470 */ UnkSystem2_UnkSubSystem3 mUnk_1470;
-    /* 1474 */ UnkSystem2_UnkSubSystem5 mUnk_1474;
 
     // "ok" button
     /* 16AC */ UnkSystem2_UnkSubSystem1_Derived2 mUnk_16AC;
     /* 170C */ unk8 mUnk_170C[0x38];
     /* 1744 */ UnkSystem2_UnkSubSystem8 mUnk_1744;
     /* 1794 */ UnkSystem2_UnkSubSystem3 mUnk_1794;
-    /* 1798 */ UnkSystem2_UnkSubSystem5 mUnk_1798;
 
     // "cancel" button
     /* 19D0 */ UnkSystem2_UnkSubSystem1_Derived2 mUnk_19D0;
     /* 1A30 */ unk8 mUnk_1A30[0x38];
     /* 1A68 */ UnkSystem2_UnkSubSystem8 mUnk_1A68;
     /* 1AB8 */ UnkSystem2_UnkSubSystem3 mUnk_1AB8;
-    /* 1ABC */ UnkSystem2_UnkSubSystem5 mUnk_1ABC;
 
     /* 1CF4 */ unk8 mUnk_1CF4;
     /* 1CF5 */ bool mUnk_1CF5;

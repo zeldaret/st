@@ -287,8 +287,8 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
     ItemManager *pItemManager;
     ItemId itemId;
     ActorUnk_ov000_020a8bb0 *iVar10;
-    UnkStruct_ov000_0208f820_38 *pUnk_38;
-    UnkStruct_ov000_0208f820_3c *pUnk_3c;
+    Vec3p *pUnk_38;
+    Vec3p *pUnk_3c;
     char auStack_108[12];
     Vec3p VStack_fc;
     unk32 uStack_f0[4];
@@ -296,9 +296,9 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
     switch (param1->mUnk_04) {
         case 0x39:
-            *(u32 *) this->mUnk_54.mUnk_00 = param1->mUnk_10;
-            *(u32 *) this->mUnk_54.mUnk_04 = param1->mUnk_14;
-            this->mUnk_54.mUnk_08          = param1->mUnk_18;
+            *(u32 *) this->mUnk_54.mUnk_00 = param1->mUnk_10.x;
+            *(u32 *) this->mUnk_54.mUnk_04 = param1->mUnk_10.y;
+            this->mUnk_54.mUnk_08          = param1->mUnk_10.z;
             pItemManager                   = this->mUnk_28->pItemManager;
             itemId                         = param1->mUnk_1c;
 
@@ -336,14 +336,14 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             func_ov000_0208ba10(auStack_108, &this->mUnk_24->mUnk_25, 0);
             this->mUnk_40->mUnk_00 = 0x8000;
 
-            pUnk_38          = this->mUnk_38;
-            pUnk_38->mUnk_00 = 0;
-            pUnk_38->mUnk_08 = 0;
+            pUnk_38    = this->mUnk_38;
+            pUnk_38->x = 0;
+            pUnk_38->z = 0;
 
-            pUnk_3c          = this->mUnk_3c;
-            pUnk_3c->mUnk_00 = 0;
-            pUnk_3c->mUnk_04 = 0;
-            pUnk_3c->mUnk_08 = 0;
+            pUnk_3c    = this->mUnk_3C;
+            pUnk_3c->x = 0;
+            pUnk_3c->y = 0;
+            pUnk_3c->z = 0;
 
             if (((*(u16 *) this->mUnk_54.mUnk_00 << 0x10) >> 0x1E) != 1) {
                 return;
@@ -351,12 +351,12 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
             iVar10 = gActorManager->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
 
-            if (iVar10 == 0) {
+            if (iVar10 == NULL) {
                 return;
             }
 
             if (iVar10->func_01fff458() == ActorId_NormalShield) {
-                UNSET_FLAG(&(iVar10->mFlags), ActorFlag_Visible);
+                UNSET_FLAG(iVar10->mFlags, ActorFlag_Visible);
                 iVar10->mUnk_4a = 0;
             }
             break;
@@ -497,7 +497,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
 const UnkStruct_ov110_021861ec data_ov110_021861ec = UnkStruct_ov110_021861ec(0x5E3, 0x152D, 0xCD);
 
-ARM void PlayerGet::vfunc_10(unk32 param1) {
+ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
     unk32 var_r1;
     UnkStruct_func_01fff520_ret **temp_r0_6;
     s32 temp_r5;
@@ -660,7 +660,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                         break;
                     case ItemId_RecruitUniform2:
                     case ItemId_EngineerUniform:
-                        if (data_027e09a4->mUnk_00 == 0x2F) {
+                        if (data_027e09a4->mSceneIndex == SceneIndex_f_first) {
                             this->mUnk_28->func_ov058_02152a24();
                         }
                         break;
@@ -669,13 +669,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                 }
 
                 if (*(u16 *) this->mUnk_54.mUnk_00 == 0x1000) {
-                    UnkStruct_ov000_0208f820_04 structure;
-                    structure.mUnk_00[0] = this->mUnk_54.mUnk_00[0];
-                    structure.mUnk_00[1] = this->mUnk_54.mUnk_00[1];
-                    // structure.mUnk_08 = this->mUnk_54.mUnk_08;
-                    // structure.mItemId = this->mUnk_54.mItemId;
-
-                    if (data_027e0ce8->func_01fff498(structure) != 0) {
+                    if (data_027e0ce8->func_01fff498(this->mUnk_54.mUnk_00[0], this->mUnk_54.mUnk_00[1]) != 0) {
                         var_r5_2 = '\0';
 
                         switch (func_01fff584()) {

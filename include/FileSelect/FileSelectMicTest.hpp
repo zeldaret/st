@@ -52,10 +52,10 @@ public:
     /* A4 */ UnkSystem2_UnkSubSystem8 mUnk_0A4;
     /* F4 */
 
-    UnkStruct_ov019_020d24c8_28_304(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6) :
-        mUnk_044(param1, param2, param3, param4, param5, param6),
+    UnkStruct_ov019_020d24c8_28_304(unk32 buttonID, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6) :
+        mUnk_044(buttonID, param2, param3, param4, param5, param6),
         mUnk_0A4(&mUnk_044) {}
-    void func_0201e874(unk32 param1, void *param2, void *param3, unk32 param4);
+    void func_0201e874(unk32 buttonID, void *param2, void *param3, unk32 param4);
 };
 
 // defines the mic test screen (0x022e9b84)

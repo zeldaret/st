@@ -1,11 +1,11 @@
 #ifndef _C_STRING_H
 #define _C_STRING_H
 
+#include <stddef.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-typedef unsigned int size_t;
 
 size_t strlen(const char *str);
 char *strcpy(char *dest, const char *src);

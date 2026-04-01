@@ -19,7 +19,13 @@ typedef signed long intptr_t;
 typedef unsigned long uintptr_t;
 typedef intptr_t ptrdiff_t;
 
+// gcc want size_t to be an unsigned int, and metrowerks want it to be an unsigned long (oh and vscode also doesn't
+// agree....................)
+#if defined(__MWERKS__) || defined(__INTELLISENSE__)
+typedef unsigned long size_t;
+#else
 typedef unsigned int size_t;
+#endif
 
 #ifndef __cplusplus
 typedef int bool;

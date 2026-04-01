@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Game/GameMode.hpp"
 #include "Player/TouchControl.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_02049b18.hpp"
@@ -149,8 +150,8 @@ public:
     /* 104 */ GameModeManagerBase_104 mUnk_104;
     /* 120 */ Input mButtons;
     /* 126 */ TouchControl mTouchControl;
-    /* 148 */ unk32 mUnk_148;
-    /* 14C */ unk32 mUnk_14C;
+    /* 148 */ unk32 mNextButtonID;
+    /* 14C */ unk32 mButtonID;
     /* 150 */ bool mUnk_150;
     /* 150 */ unk8 mUnk_151;
     /* 150 */ unk8 mUnk_152;
@@ -193,7 +194,37 @@ public:
     /* 28 */ virtual void vfunc_28(unk8 *param1);
     /* 2C */ virtual void vfunc_2C(unk8 *param1);
     /* 30 */ virtual void vfunc_30(unk32 param1);
-    /* 34 */ virtual void vfunc_34();
+    /* 34 */ virtual void vfunc_34(unk32 param1, unk32 param2);
 
     static GameModeManagerBase *Create(unk32 param1);
 };
+
+class TitleScreen;
+class MainGame;
+
+class TitleScreenManager_Base : public GameModeManagerBase {
+public:
+    /* 000 (base) */
+    /* 154 */ GameModeBase *mpGameMode;
+
+    TitleScreenManager_Base();
+
+    TitleScreen *GetTitleScreen() {
+        return (TitleScreen *) this->mpGameMode;
+    }
+
+    MainGame *GetMainGame() {
+        return (MainGame *) this->mpGameMode;
+    }
+
+    // data_ov000_020b1d14 vtable
+    /* 08 */ virtual ~TitleScreenManager_Base() override;
+    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2, unk32 param3) override;
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
+    /* 3C */ virtual void vfunc_3C();
+    /* 40 */ virtual void vfunc_40();
+    /* 44 */ virtual void vfunc_44();
+    /* 48 */
+};
+
+extern TitleScreenManager_Base *data_027e0994;

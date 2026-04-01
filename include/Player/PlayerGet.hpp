@@ -152,7 +152,7 @@ public:
 
     /* 04 */ virtual ~PlayerGet() override;
     /* 0c */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3) override;
 
     PlayerGet();

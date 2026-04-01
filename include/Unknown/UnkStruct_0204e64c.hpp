@@ -12,7 +12,7 @@ public:
     /* 06 */ unk16 mUnk_06;
     /* 08 */ unk16 mUnk_08;
     /* 0A */ unk8 mUnk_0A;
-    /* 0B */ unk8 mUnk_0B;
+    /* 0B */ u8 mUnk_0B; // bool?
     /* 0C */ unk8 mUnk_0C;
     /* 0D */ unk8 mUnk_0D;
     /* 0E */ unk8 mUnk_0E;
@@ -35,6 +35,7 @@ public:
 
     UnkStruct_0204e64c();
     ~UnkStruct_0204e64c();
+    void func_020201c4(unk32 param1);
 };
 
 extern UnkStruct_0204e64c data_0204e64c;

@@ -29,7 +29,6 @@ public:
     /* 68C */ UnkSubStruct19 mUnk_68C; // fire dungeon icon
     /* 704 */ UnkSubStruct19 mUnk_704; // desert dungeon icon
     /* 77C */ Vec2us mUnk_77C;
-    // int pad[10];
     /* 780 */
 
     struct stack_struct2 {

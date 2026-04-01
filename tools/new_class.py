@@ -8,7 +8,7 @@ INDENT = " " * 4
 
 def main():
     parser = argparse.ArgumentParser(description="Add new header")
-    parser.add_argument("--suffix", "-s", dest="suffix", help="Suffix")
+    parser.add_argument("--suffix", "-s", dest="suffix", help="Suffix", required=True)
     parser.add_argument("--pointer", "-p", dest="pointer", help="Make the symbol a pointer", action="store_true", default=False)
     parser.add_argument("--base", "-b", dest="base", help="Add a base class", action="store_true", default=False)
     args = parser.parse_args()

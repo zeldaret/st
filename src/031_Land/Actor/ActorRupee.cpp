@@ -18,6 +18,7 @@ extern "C" unk32 func_ov031_020d9834(unk32 *);
 
 extern ActorTypeRupee ActorTypeRupee::gInstance;
 extern unk32 *data_027e0d34;
+extern Cylinder data_ov031_02113478;
 
 ARM ActorTypeRupee *ActorTypeRupee::GetInstance() {
     return &ActorTypeRupee::gInstance;
@@ -35,13 +36,29 @@ ARM ActorTypeRupee::ActorTypeRupee() :
     this->mUnk_04.size  = 0x556;
 }
 
+struct stack_struct {
+    Vec3p sp4; // 4 8 c
+    unk32 pad1;
+    unk16 sp14;
+    u8 pad2[0x16];
+    unk32 sp2C;
+    unk32 sp30;
+
+    void func_ov000_020975f8();
+};
+
 // non-matching
-ARM void ActorRupee::func_ov031_020e8d2c(Vec3p *param1) {
-    Actor_5c uStack_4c;
-    uStack_4c.func_ov000_020975f8();
-    uStack_4c.mUnk_00 = *param1;
-    uStack_4c.mUnk_0c = 0;
-    this->func_ov000_020973f4(&data_ov000_020b539c, ActorId_Rupee, uStack_4c);
+ARM void ActorRupee::func_ov031_020e8d2c(Vec3p *param1, u8 param2, unk32 param3, unk32 param4) {
+    stack_struct stack;
+    stack.sp2C = 0;
+    stack.func_ov000_020975f8();
+    stack.sp14  = param2 & 0xFF;
+    stack.sp4.x = param1->x;
+    stack.sp4.y = param1->y;
+    stack.sp4.z = param1->z;
+    stack.sp2C  = param4;
+    stack.sp30  = param3;
+    this->func_ov000_020973f4(&data_ov000_020b539c, ActorId_Rupee, (Actor_5c *) &stack, 0);
 }
 
 ARM ActorRupee::ActorRupee() :
@@ -59,7 +76,88 @@ ARM ActorRupee::ActorRupee() :
     this->mUnk_40 = &this->mUnk_c4;
 }
 
-ARM unk32 ActorRupee::vfunc_18() {}
+// https://decomp.me/scratch/wunA4
+ARM bool ActorRupee::vfunc_18(unk32 param1) {
+    if (this->func_ov031_020e9d54()) {
+        this->mUnk_30 = &data_ov031_02113478;
+        this->mUnk_34 = &data_ov031_02113478;
+        SET_FLAG(this->mFlags, ActorFlag_12);
+    }
+
+    if (this->mUnk_80 >= 0) {
+        if (this->func_ov000_02098a60(0) != 0) {
+            return false;
+        }
+
+        if (this->mUnk_6e == 0) {
+            this->func_ov031_020e9904(3);
+        } else {
+            this->func_ov031_020e9904(10);
+        }
+
+        return true;
+    }
+
+    switch (this->mUnk_88) {
+        case 0:
+            this->mUnk_96 = 0x1E0;
+            this->mUnk_94 = 0;
+            {
+                Vec3p vel;
+                vel.x      = 0;
+                vel.y      = 0;
+                vel.z      = 0;
+                this->mVel = vel;
+            }
+            this->func_ov031_020e9904(0);
+            break;
+
+        case 1:
+            this->mUnk_96 = 0x1E0;
+            this->mUnk_94 = 0;
+            {
+                Vec3p vel;
+
+                q20 vx = gRandom.Next32(0, 0x223) - 0x111;
+                vel.x  = vx;
+
+                q20 vy = gRandom.Next32(0, 0x333) + 0x555;
+                vel.y  = vy;
+
+                q20 vz = gRandom.Next32(0, 0x223) - 0x111;
+                vel.z  = vz;
+
+                this->mVel = vel;
+            }
+            this->func_ov031_020e9904(0);
+            break;
+
+        case 2:
+            this->mUnk_96 = 0x1E0;
+            this->mUnk_94 = 0;
+            {
+                Vec3p vel;
+                vel.x      = 0;
+                vel.y      = 0x800;
+                vel.z      = 0;
+                this->mVel = vel;
+            }
+            this->func_ov031_020e9904(0);
+            break;
+
+        case 3:
+            break;
+
+        case 4:
+            this->func_ov031_020e9904(10);
+            break;
+
+        default:
+            break;
+    }
+
+    return true;
+}
 
 ARM void ActorRupee::func_ov031_020e8fec() {
     switch (this->mUnk_6c) {
@@ -106,12 +204,18 @@ ARM void ActorRupee::func_ov031_020e9068() {
     }
 }
 
-// https://decomp.me/scratch/FZsEE
 ARM void ActorRupee::func_ov031_020e9108() {
-    this->mVel.x = gRandom.Next(-0xCD, 0x19B);
-    this->mVel.y = gRandom.Next(0, 0x19A);
-    this->mVel.z = gRandom.Next(-0xCD, 0x19B);
-    SET_FLAG(&this->mFlags, ActorFlag_Visible);
+    Vec3p vel;
+
+    vel.x = gRandom.Next32(0, 0x19B);
+    vel.y = gRandom.Next32(0, 0x19A);
+    vel.z = gRandom.Next32(0, 0x19B);
+
+    this->mVel.x = vel.x - 0xCD;
+    this->mVel.y = vel.y + 0x9A + 0x100;
+    this->mVel.z = vel.z - 0xCD;
+
+    SET_FLAG(this->mFlags, ActorFlag_Visible);
 }
 
 ARM void ActorRupee::func_ov031_020e91a8() {
@@ -141,7 +245,7 @@ ARM void ActorRupee::func_ov031_020e9234() {
     this->mVel.x = 0;
     this->mVel.y = 0;
     this->mVel.z = 0;
-    SET_FLAG(&this->mFlags, ActorFlag_Visible);
+    SET_FLAG(this->mFlags, ActorFlag_Visible);
 }
 
 ARM void ActorRupee::func_ov031_020e9254() {
@@ -240,7 +344,7 @@ ARM void ActorRupee::func_ov031_020e9450() {
     this->mPrevPos = this->mPos;
     Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
 
-    if (!GET_FLAG(&this->mFlags, ActorFlag_5)) {
+    if (!GET_FLAG(this->mFlags, ActorFlag_5)) {
         return;
     }
 
@@ -260,7 +364,7 @@ ARM void ActorRupee::func_ov031_020e94d4() {
     this->mUnk_4a = 0;
     this->mUnk_44 = 0;
     this->mUnk_9c.func_ov000_02097bec();
-    UNSET_FLAG(&this->mFlags, ActorFlag_Visible);
+    UNSET_FLAG(this->mFlags, ActorFlag_Visible);
 }
 
 ARM void ActorRupee::func_ov031_020e951c() {
@@ -316,7 +420,9 @@ ARM void ActorRupee::func_ov031_020e95c0() {
         return;
     }
 
-    this->mPos = temp_r0->mPos;
+    this->mPos.x = temp_r0->mPos.x;
+    this->mPos.y = temp_r0->mPos.y;
+    this->mPos.z = temp_r0->mPos.z;
 }
 
 ARM void ActorRupee::func_ov031_020e9610() {
@@ -334,7 +440,7 @@ ARM void ActorRupee::func_ov031_020e9638() {
     this->mVel.x = 0;
     this->mVel.y = 0;
     this->mVel.z = 0;
-    UNSET_FLAG(&this->mFlags, ActorFlag_Visible);
+    UNSET_FLAG(this->mFlags, ActorFlag_Visible);
     this->mUnk_c4.mUnk_04 = 0;
 
     if (this->mUnk_6e == 2) {
@@ -364,7 +470,7 @@ ARM void ActorRupee::func_ov031_020e970c() {
     this->mVel.x = 0;
     this->mVel.y = 0;
     this->mVel.z = 0;
-    SET_FLAG(&this->mFlags, ActorFlag_Visible);
+    SET_FLAG(this->mFlags, ActorFlag_Visible);
     this->mUnk_4a = 1;
     this->mUnk_52 = -1;
     this->mUnk_50 = 0;
@@ -664,7 +770,7 @@ ARM void ActorRupee::func_ov031_020e9d94() {
     u32 temp_r1;
 
     if (this->func_ov031_020e9e5c()) {
-        SET_FLAG(&this->mFlags, ActorFlag_Visible);
+        SET_FLAG(this->mFlags, ActorFlag_Visible);
         return;
     }
 
@@ -689,9 +795,9 @@ ARM void ActorRupee::func_ov031_020e9d94() {
     temp_r1 = temp_r0 >> 0x1F;
 
     if ((this->mUnk_94 & 7) < 4) {
-        UNSET_FLAG(&this->mFlags, ActorFlag_Visible);
+        UNSET_FLAG(this->mFlags, ActorFlag_Visible);
     } else {
-        SET_FLAG(&this->mFlags, ActorFlag_Visible);
+        SET_FLAG(this->mFlags, ActorFlag_Visible);
     }
 
     if (this->mUnk_94 < this->mUnk_96) {
@@ -761,14 +867,14 @@ ARM Actor_c4::Actor_c4(Actor *param1) :
 }
 
 // non-matching
-ARM unk32 Actor_c4::vfunc_00(unk32 param1, unk32 param2) {
-    if (param2 != 0) {
+ARM unk32 Actor_c4::vfunc_00(Actor_c4_stack param1, unk32 param2) {
+    if (param1.param2 != 0) {
         ActorRupee *pRupee = GET_ACTOR_RUPEE(this->mUnk_20);
-        pRupee->mUnk_c0    = param2;
+        pRupee->mUnk_c0    = param1.param1;
         pRupee->func_ov031_020e9904(7);
     }
 
-    return this->func_ov031_020f62e4(param2);
+    return this->func_ov031_020f62e4(param1.param1, param1.param2);
 }
 
 ARM void Actor_c4::vfunc_04() {

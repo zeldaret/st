@@ -7,3 +7,5 @@
 
 src/001_SceneInit/Actor/ActorManager_001.cpp:
     .text       start:0x020baf64 end:0x020bb87c
+    .rodata     start:0x020c2624 end:0x020c264c
+    .data       start:0x020c2b3c end:0x020c2c70

@@ -29,15 +29,26 @@ typedef s16 q4;
 #define SIN(n) (gSinCosTable[2 * ((n) >> 4)])
 #define COS(n) (gSinCosTable[2 * ((n) >> 4) + 1])
 
+#define SIN2(table, n) ((table)[2 * ((n) >> 4)])
+#define COS2(table, n) ((table)[2 * ((n) >> 4) + 1])
+
 #ifdef __cplusplus
 }
 #endif
 
 #ifdef __cplusplus
-struct Vec2b {
-    /* 0 */ u8 x;
-    /* 1 */ u8 y;
-    /* 2 */
+union Vec2b {
+    struct {
+        /* 0 */ u8 x;
+        /* 1 */ u8 y;
+        /* 2 */
+    };
+    u8 coords[2];
+
+    void operator=(const Vec2b &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
 
     Vec2b() {}
     Vec2b(u8 X, u8 Y) {
@@ -51,6 +62,11 @@ struct Vec2s {
     /* 2 */ s16 y;
     /* 4 */
 
+    void operator=(const Vec2s &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
+
     Vec2s() {}
     Vec2s(s16 X, s16 Y) {
         x = X;
@@ -63,6 +79,11 @@ struct Vec2us {
     /* 2 */ u16 y;
     /* 4 */
 
+    void operator=(const Vec2us &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
+
     Vec2us() {}
     Vec2us(u16 X, u16 Y) {
         x = X;
@@ -70,10 +91,18 @@ struct Vec2us {
     }
 };
 
-struct Vec2p {
-    /* 0 */ q20 x;
-    /* 4 */ q20 y;
-    /* 8 */
+union Vec2p {
+    struct {
+        /* 0 */ q20 x;
+        /* 4 */ q20 y;
+        /* 8 */
+    };
+    q20 coords[2];
+
+    void operator=(const Vec2p &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
 
     Vec2p() {}
     Vec2p(q20 X, q20 Y) {
@@ -82,11 +111,19 @@ struct Vec2p {
     }
 };
 
-struct Vec3p {
-    /* 0 */ q20 x;
-    /* 4 */ q20 y;
-    /* 8 */ q20 z;
-    /* c */
+union Vec3p {
+    struct {
+        q20 x;
+        q20 y;
+        q20 z;
+    };
+    q20 coords[3];
+
+    void operator=(const Vec3p &from) {
+        this->x = from.x;
+        this->y = from.y;
+        this->z = from.z;
+    }
 
     Vec3p() {}
     Vec3p(q20 X, q20 Y, q20 Z) {
@@ -96,12 +133,22 @@ struct Vec3p {
     }
 };
 
-struct Vec4p {
-    /* 00 */ q20 x;
-    /* 04 */ q20 y;
-    /* 08 */ q20 z;
-    /* 0c */ q20 w;
-    /* 10 */
+union Vec4p {
+    struct {
+        /* 00 */ q20 x;
+        /* 04 */ q20 y;
+        /* 08 */ q20 z;
+        /* 0c */ q20 w;
+        /* 10 */
+    };
+    q20 coords[4];
+
+    void operator=(const Vec4p &from) {
+        this->x = from.x;
+        this->y = from.y;
+        this->z = from.z;
+        this->w = from.w;
+    }
 
     Vec4p() {}
     Vec4p(q20 X, q20 Y, q20 Z, q20 W) {

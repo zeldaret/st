@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Game/GameModeManager.hpp"
+#include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "regs.h"
 #include "types.h"
@@ -21,23 +22,6 @@ enum TitleScreenState_ {
     TitleScreenState_IdleBeforeFileSelect = 4,
     TitleScreenState_ToFileSelect         = 5,
     TitleScreenState_Max                  = 6
-};
-
-class TitleScreenManager_Base : public GameModeManagerBase {
-public:
-    /* 000 (base) */
-    /* 154 */
-
-    TitleScreenManager_Base();
-
-    // data_ov000_020b1d14 vtable
-    /* 08 */ virtual ~TitleScreenManager_Base() override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2, unk32 param3) override;
-    /* 38 */ virtual void vfunc_38();
-    /* 3C */ virtual void vfunc_3C();
-    /* 40 */ virtual void vfunc_40();
-    /* 44 */ virtual void vfunc_44();
-    /* 48 */
 };
 
 class TitleScreen_Sub2 : public GameModeLinkListNode {
@@ -197,11 +181,10 @@ public:
 class TitleScreenManager : public TitleScreenManager_Base {
 public:
     /* 000 (base) */
-    /* 154 */ TitleScreen *mpTitleScreen;
     /* 158 */
 
     TitleScreenManager(unk32 param1) NO_INLINE {
-        this->mpTitleScreen = NULL;
+        this->mpGameMode = NULL;
         GX_SetGraphicsMode(1, 0, 1);
         GXS_SetGraphicsMode(5);
         REG_BG3CNT_SUB = (REG_BG3CNT_SUB & 0x0043) | 0x4E14;
@@ -217,9 +200,7 @@ public:
     /* 24 */ virtual void vfunc_24() override;
     /* 28 */ virtual void vfunc_28(unk8 *param1) override;
     /* 2C */ virtual void vfunc_2C(unk8 *param1) override;
-    /* 38 */ virtual void vfunc_38() override;
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2, unk32 param3, unk32 param4) override;
 
     static TitleScreenManager *Create(unk32 param1);
 };
-
-extern TitleScreenManager *data_027e0994;
