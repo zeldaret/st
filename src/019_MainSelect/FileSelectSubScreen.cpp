@@ -8,7 +8,7 @@
 extern "C" {
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
-void func_020249d4(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
+void _G2_SetBlend(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
 void DC_FlushAll();
 };
 
@@ -49,7 +49,7 @@ ARM FileSelectSubScreen::FileSelectSubScreen() :
 
     REG_DISPCNT_SUB &= ~0x00001F00;
     REG_DISPCNT_SUB |= 0x00001F00;
-    func_020249d4(&REG_BLDCNT_SUB, 0x01, 0x1E, 0x08, 0x0A);
+    _G2_SetBlend(&REG_BLDCNT_SUB, 0x01, 0x1E, 0x08, 0x0A);
 
     {
         UnkStruct2 stack_narc("Screen/Bg/Cover.bin", 1);

@@ -10,7 +10,7 @@
 #include "regs.h"
 
 extern "C" {
-void func_020249d4(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
+void _G2_SetBlend(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
 void func_ov000_02062e44(void *param1, void *param2);
 };
 
@@ -187,7 +187,7 @@ ARM FileSelectMain::FileSelectMain() :
     // Test2 aauStack_48;
     REG_DISPCNT &= 0xFFFFE0FF;
     REG_DISPCNT |= 0x00001C00;
-    func_020249d4(&REG_BLDCNT, 4, 8, 0, 0x10);
+    _G2_SetBlend(&REG_BLDCNT, 4, 8, 0, 0x10);
     this->mUnk_0C.mList.func_020166cc(&this->mUnk_005C.mUnk_04);
     this->func_ov019_020c63dc();
     this->func_ov019_020c6d10();

@@ -9,23 +9,23 @@
 #include "global.h"
 #include "regs.h"
 
-extern "C" void func_0202851c();
+extern "C" void _OS_Panic();
 extern "C" void func_020131ec();
 extern "C" void func_02013214();
 extern "C" void func_ov020_020c86d8(void *);
 extern "C" void func_02014d38(void *, int);
 extern "C" void func_020196fc();
-extern "C" void func_02023770(int);
-extern "C" void func_02023fb0(int);
-extern "C" void func_02023f8c(int);
+extern "C" void GX_SetBankForBG(int);
+extern "C" void GX_SetBankForSubBG(int);
+extern "C" void GX_SetBankForLCDC(int);
 extern "C" void GX_SetGraphicsMode(int, int, int);
 extern "C" void GXS_SetGraphicsMode(int);
 extern "C" unk32 func_ov000_02068504(int);
 extern "C" unk32 func_020147a8();
-extern "C" void *func_020244f8();
+extern "C" void *G2S_func_0001();
 extern "C" void func_0201b278(bool, bool);
 extern "C" void func_0201b180(bool, bool);
-extern "C" void func_02025050(void *, int, int);
+extern "C" void GXS_LoadBGPltt(void *, int, int);
 extern "C" void SetBrightColor(void *, int);
 extern int data_02049bd4;
 
@@ -59,9 +59,9 @@ THUMB void SysFault::func_020127f0(unk32 param1) {
     func_02014d38(&data_02049bd4, 1);
     func_02014d38(&data_02049bd4, 3);
     func_020196fc();
-    func_02023770(2);
-    func_02023fb0(4);
-    func_02023f8c(0x100);
+    GX_SetBankForBG(2);
+    GX_SetBankForSubBG(4);
+    GX_SetBankForLCDC(0x100);
     GX_SetGraphicsMode(1, 0, 0);
     GXS_SetGraphicsMode(0);
 
@@ -138,8 +138,8 @@ THUMB void SysFault::func_020127f0(unk32 param1) {
                 // "data could not be read" error
                 struct_aStack_2d8 aStack_2d8;
 
-                func_02025050(&data_0203e0be, func_ov000_02068504(0) << 1, 6);
-                MI_CpuFill32(0, func_020244f8(), 0x800);
+                GXS_LoadBGPltt(&data_0203e0be, func_ov000_02068504(0) << 1, 6);
+                MI_CpuFill32(0, G2S_func_0001(), 0x800);
                 aStack_2d8.mUnk_20 = &data_ov000_020b4f84.mUnk_00[FontIndex_DSZ2_msg].mUnk_14;
                 aStack_2d8.func_ov000_020628e4(0, 0, 256, 192, 0, 0, 1, 0, 0);
 
@@ -158,8 +158,8 @@ THUMB void SysFault::func_020127f0(unk32 param1) {
                 // "data could not be written" error
                 struct_aStack_2d8 aStack_2d8;
 
-                func_02025050(&data_0203e0be, func_ov000_02068504(0) << 1, 6);
-                MI_CpuFill32(0, func_020244f8(), 0x800);
+                GXS_LoadBGPltt(&data_0203e0be, func_ov000_02068504(0) << 1, 6);
+                MI_CpuFill32(0, G2S_func_0001(), 0x800);
                 aStack_2d8.mUnk_20 = &data_ov000_020b4f84.mUnk_00[FontIndex_DSZ2_msg].mUnk_14;
                 aStack_2d8.func_ov000_020628e4(0, 0, 256, 192, 0, 0, 1, 0, 0);
 
@@ -202,6 +202,6 @@ THUMB void SysFault::func_020127f0(unk32 param1) {
         }
 
         this->mUnk_05 = 0;
-        func_0202851c();
+        _OS_Panic();
     }
 }

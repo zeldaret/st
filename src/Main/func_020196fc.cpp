@@ -4,21 +4,21 @@
 
 extern "C" void GX_SetGraphicsMode(int, int, int);
 extern "C" void GXS_SetGraphicsMode(int);
-extern "C" void func_02024934(void *, void *, int, int, int, int);
+extern "C" void G2_SetBGAffine(void *, void *, int, int, int, int);
 extern "C" void func_020242a0();
 extern "C" void func_020241f4();
-extern "C" void func_0202421c();
+extern "C" void GX_ResetBankForBGExtPltt();
 extern "C" void func_0202428c();
 extern "C" void func_02024208();
-extern "C" void func_02024240();
+extern "C" void GX_ResetBankForOBJExtPltt();
 extern "C" void func_020242b4();
-extern "C" void func_020242dc();
+extern "C" void GX_ResetBankForSubBGExtPltt();
 extern "C" void func_020242c8();
-extern "C" void func_02024304();
+extern "C" void GX_ResetBankForSubOBJExtPltt();
 extern "C" void func_02024264();
 extern "C" void func_02024278();
-extern "C" void func_02023f8c(int);
-extern "C" void func_020243ec();
+extern "C" void GX_SetBankForLCDC(int);
+extern "C" void GX_DisableBankForLCDC();
 extern int data_027e0120;
 
 extern "C" void func_020196fc() {
@@ -32,10 +32,10 @@ extern "C" void func_020196fc() {
     REG_BG1OFS_SUB = 0;
     REG_BG2OFS_SUB = 0;
     REG_BG3OFS_SUB = 0;
-    func_02024934(&REG_BG2PA, &data_027e0120, 0x80, 0x60, 0, 0);
-    func_02024934(&REG_BG3PA, &data_027e0120, 0x80, 0x60, 0, 0);
-    func_02024934(&REG_BG2PA_SUB, &data_027e0120, 0x80, 0x60, 0, 0);
-    func_02024934(&REG_BG3PA_SUB, &data_027e0120, 0x80, 0x60, 0, 0);
+    G2_SetBGAffine(&REG_BG2PA, &data_027e0120, 0x80, 0x60, 0, 0);
+    G2_SetBGAffine(&REG_BG3PA, &data_027e0120, 0x80, 0x60, 0, 0);
+    G2_SetBGAffine(&REG_BG2PA_SUB, &data_027e0120, 0x80, 0x60, 0, 0);
+    G2_SetBGAffine(&REG_BG3PA_SUB, &data_027e0120, 0x80, 0x60, 0, 0);
     REG_BG0CNT        = REG_BG0CNT & 0xffbf;
     REG_BG1CNT        = REG_BG1CNT & 0xffbf;
     REG_BG2CNT        = REG_BG2CNT & 0xffbf;
@@ -54,20 +54,20 @@ extern "C" void func_020196fc() {
     REG_DISPCNT_SUB &= 0xffff1fff;
     func_020242a0();
     func_020241f4();
-    func_0202421c();
+    GX_ResetBankForBGExtPltt();
     func_0202428c();
     func_02024208();
-    func_02024240();
+    GX_ResetBankForOBJExtPltt();
     func_020242b4();
-    func_020242dc();
+    GX_ResetBankForSubBGExtPltt();
     func_020242c8();
-    func_02024304();
+    GX_ResetBankForSubOBJExtPltt();
     func_02024264();
     func_02024278();
-    func_02023f8c(0x1ff);
+    GX_SetBankForLCDC(0x1ff);
 
     _MI_CpuFill(0, &REG_VRAM, 0xa4000);
-    func_020243ec();
+    GX_DisableBankForLCDC();
 
     _MI_CpuFill(0xc0, &REG_OAM_A, 0x400);
     _MI_CpuFill(0, &REG_PALETTE_A, 0x400);

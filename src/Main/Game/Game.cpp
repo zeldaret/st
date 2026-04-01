@@ -11,15 +11,15 @@
 #include "versions.h"
 
 extern "C" void func_020196fc();
-extern "C" unk32 func_02031e58();
-extern "C" void func_02031e68();
+extern "C" unk32 CARD_func_0033();
+extern "C" void CARD_func_0034();
 extern "C" void func_01ff8d38();
 extern "C" void func_020132c8();
 extern "C" void func_020132dc();
 extern "C" void func_02013354();
 extern "C" void func_0201328c();
-extern "C" int func_020280ec();
-extern "C" void func_02028100(int enabled);
+extern "C" int OS_DisableInterrupts_Irq();
+extern "C" void OS_RestoreInterrupts(int enabled);
 extern Mat3p data_027e02c4;
 
 struct SomeSaveFileStruct {
@@ -70,8 +70,8 @@ ARM void Game::Run() {
                 this->mUnk_08 = NULL;
             }
 
-            if (func_02031e58() != 0) {
-                func_02031e68();
+            if (CARD_func_0033() != 0) {
+                CARD_func_0034();
             }
 
             data_02049bd4.func_02014d98();
@@ -141,10 +141,10 @@ ARM void Game::Run() {
         }
 
         {
-            int enabled = func_020280ec();
+            int enabled = OS_DisableInterrupts_Irq();
             this->mUnk_1C.func_02013e18(func_020132dc, 0);
             REG_SWAP_BUFFERS = 3;
-            func_02028100(enabled);
+            OS_RestoreInterrupts(enabled);
         }
 
         func_020132c8();
