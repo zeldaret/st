@@ -145,7 +145,10 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                     break;
                 default:
                     if (this->mUnk_2c->mUnk_150 == 0x1000) {
-                        UnkStruct_027e0ce8_00 *temp_r0_4 = data_027e0ce8->func_01fff498(this->mUnk_2c->mUnk_150 >> 0x10, 0);
+                        UnkStruct_func_01fff498 stack;
+                        stack.ptrIndex                   = this->mUnk_2c->mUnk_150 >> 0x10;
+                        stack.valueIndex                 = 0;
+                        UnkStruct_027e0ce8_00 *temp_r0_4 = data_027e0ce8->func_01fff498(stack);
 
                         if (temp_r0_4 != NULL) {
                             temp_r0_4->func_ov000_0209d6ac((Vec3p *) &this->mUnk_70);
@@ -282,7 +285,11 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                 return;
             }
 
-            UnkStruct_027e0ce8_00 *target = data_027e0ce8->func_01fff498(this->mUnk_8C >> 16, 0);
+            UnkStruct_func_01fff498 stack;
+            stack.ptrIndex   = this->mUnk_8C >> 16;
+            stack.valueIndex = 0;
+
+            UnkStruct_027e0ce8_00 *target = data_027e0ce8->func_01fff498(stack);
             if (target != NULL && func_01fff584() == 'WPHL') {
                 func_ov034_02121de4(target);
             }

@@ -181,7 +181,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
 
     if (temp_r0_5 != 0) {
         temp_r0_5 &= 0xFFFF;
-        SET_FLAG(data_027e09b8->mUnk_14, temp_r0_5);
+        SET_FLAG(data_027e09b8->mAdventureFlags, temp_r0_5);
     }
 
     data_027e0ce0->mUnk_34->func_ov110_02185d3c(itemId);
@@ -669,7 +669,11 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                 }
 
                 if (*(u16 *) this->mUnk_54.mUnk_00 == 0x1000) {
-                    if (data_027e0ce8->func_01fff498(this->mUnk_54.mUnk_00[0], this->mUnk_54.mUnk_00[1]) != 0) {
+                    UnkStruct_func_01fff498 stack;
+                    stack.ptrIndex   = this->mUnk_54.mUnk_00[0];
+                    stack.valueIndex = this->mUnk_54.mUnk_00[1];
+
+                    if (data_027e0ce8->func_01fff498(stack) != NULL) {
                         var_r5_2 = '\0';
 
                         switch (func_01fff584()) {
@@ -694,9 +698,9 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                 }
 
                 if (this->mUnk_54.mItemId == ItemId_ForestGlyph) {
-                    this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(0x29, 0);
+                    this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(CutsceneIndex_ForestTracksRestoredFromGlyph, 0);
                 } else if (this->mUnk_54.mItemId == ItemId_FireGlyph) {
-                    this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(0x14, 0);
+                    this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(CutsceneIndex_StavenInTOSAfterFireGlyph, 0);
                 }
 
                 if (this->mUnk_72 != 0) {

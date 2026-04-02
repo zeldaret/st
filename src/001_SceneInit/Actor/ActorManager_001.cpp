@@ -347,11 +347,11 @@ THUMB bool ActorManager::func_ov001_020bb728(s32 param1) {
 
         if (param1 == data_ov001_020c2638[i]) {
             value  = data_ov001_020c2624[i] & 0x1F;
-            value2 = data_027e09b8->mUnk_14[(u32) data_ov001_020c2624[i] >> 5];
+            value2 = data_027e09b8->mAdventureFlags[(u32) data_ov001_020c2624[i] >> 5];
 
             if ((1 << value) & value2) {
                 value  = data_ov001_020c262e[i] & 0x1F;
-                value2 = data_027e09b8->mUnk_14[(u32) data_ov001_020c262e[i] >> 5];
+                value2 = data_027e09b8->mAdventureFlags[(u32) data_ov001_020c262e[i] >> 5];
 
                 if (!((1 << value) & value2)) {
                     continue;
