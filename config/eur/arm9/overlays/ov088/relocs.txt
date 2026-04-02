@@ -80,7 +80,7 @@ from:0x02165f0c kind:arm_call to:0x02165f18 module:overlay(88)
 from:0x02165f24 kind:arm_call to:0x0216f414 module:overlay(88)
 from:0x02165f38 kind:arm_call to:0x02013724 module:main
 from:0x02165f48 kind:arm_call to:0x020a782c module:overlay(0)
-from:0x02165fa0 kind:arm_call to:0x020d1a08 module:overlays(20,24)
+from:0x02165fa0 kind:arm_call to:0x020d1a08 module:overlay(24)
 from:0x02165fec kind:arm_call to:0x02070a9c module:overlay(0)
 from:0x02165ff8 kind:load to:0x02049a2c module:main
 from:0x02165ffc kind:load to:0x020be079 module:overlay(1)
