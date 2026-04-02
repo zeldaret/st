@@ -121,6 +121,12 @@ config.warn_missing_source = True
 
 config.libs = [
     GameLib(
+        "ITCM",
+        [
+            Object("ITCM/UnkStruct_027e0ce8.cpp"),
+        ]
+    ),
+    GameLib(
         "Main",
         [
             Object("Main/Main.cpp"),

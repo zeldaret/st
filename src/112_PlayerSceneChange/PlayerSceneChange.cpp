@@ -62,7 +62,6 @@ ARM s16 PlayerSceneChange::func_ov112_02184bbc(s16 param1) {
 
 extern "C" bool func_ov096_02179c14();
 extern "C" void func_ov034_02121de4(void *);
-extern "C" unk32 func_01fff584();
 extern q4 data_02040964[];
 extern q4 data_0203e964[];
 extern q4 data_02041964[];
@@ -156,7 +155,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                             if (this->mUnk_68 == 0x19) {
                                 temp_r0_4->func_ov034_02121d84();
                                 this->mUnk_8C = temp_r0_4->mUnk_38;
-                            } else if (func_01fff584() == 'DRTY') {
+                            } else if (temp_r0_4->func_01fff584() == 'DRTY') {
                                 *(u32 *) this->mUnk_94 = temp_r0_4->mUnk_38;
 
                                 switch (temp_r0_4->mUnk_CC) {
@@ -290,7 +289,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
             stack.valueIndex = 0;
 
             UnkStruct_027e0ce8_00 *target = data_027e0ce8->func_01fff498(stack);
-            if (target != NULL && func_01fff584() == 'WPHL') {
+            if (target != NULL && target->func_01fff584() == 'WPHL') {
                 func_ov034_02121de4(target);
             }
 

@@ -33,7 +33,6 @@ extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, Vec3p *);
 extern unk32 *data_027e0958;
 extern "C" void func_ov024_020d6370(unk32 *, ItemId);
 extern unk32 *data_ov024_020d86b0;
-extern "C" unk32 func_01fff584();
 extern "C" ActorId func_01fff458(void *);
 extern "C" void func_ov000_0208ba10(char *, void *, unk32);
 extern "C" unk32 func_ov000_020a4c00(ItemId itemId);
@@ -499,7 +498,7 @@ const UnkStruct_ov110_021861ec data_ov110_021861ec = UnkStruct_ov110_021861ec(0x
 
 ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
     unk32 var_r1;
-    UnkStruct_func_01fff520_ret **temp_r0_6;
+    UnkStruct_027e0ce8_00 **temp_r0_6;
     s32 temp_r5;
     bool temp_r6;
     s32 var_r0;
@@ -673,10 +672,12 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                     stack.ptrIndex   = this->mUnk_54.mUnk_00[0];
                     stack.valueIndex = this->mUnk_54.mUnk_00[1];
 
-                    if (data_027e0ce8->func_01fff498(stack) != NULL) {
+                    UnkStruct_027e0ce8_00 *ptr = data_027e0ce8->func_01fff498(stack);
+
+                    if (ptr != NULL) {
                         var_r5_2 = '\0';
 
-                        switch (func_01fff584()) {
+                        switch (ptr->func_01fff584()) {
                             case 'TRLN':
                                 var_r5_2 = 'TREN';
                                 break;
@@ -688,7 +689,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                         }
 
                         if (var_r5_2 != 0) {
-                            // data_ov000_020b34c4.mUnk_04 = var_r5_2;
+                            data_ov000_020b34c4.mUnk_04 = var_r5_2;
                             temp_r0_6 = data_027e0ce8->func_01fff520(&data_ov000_020b34c4, data_027e0ce8->mUnk_00);
                             if (temp_r0_6 == data_027e0ce8->mUnk_08) {
                                 (*temp_r0_6)->func_ov031_02103878();
