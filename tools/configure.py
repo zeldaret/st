@@ -137,6 +137,7 @@ config.libs = [
             Object("Main/UnkStruct_0204a060.cpp"),
             Object("Main/Game/GameModeManagerBase.cpp"),
             Object("Main/func_020196fc.cpp"),
+            Object("itcm.cpp"),
         ]
     ),
     GameLib(
@@ -149,6 +150,7 @@ config.libs = [
             Object("000_Second/Actor/Actor.cpp"),
             Object("000_Second/Actor/ActorManager.cpp"),
             Object("000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp"),
+            Object("000_Second/Cutscene/Cutscene.cpp"),
             Object("000_Second/Item/ItemManager.cpp"),
             Object("000_Second/Item/TreasureManager.cpp"),
         ]

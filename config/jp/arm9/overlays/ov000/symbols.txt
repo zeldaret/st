@@ -2958,9 +2958,9 @@ func_ov000_020a8f48 kind:function(arm,size=0x14) addr:0x020a8f48
 func_ov000_020a8f5c kind:function(arm,size=0x28) addr:0x020a8f5c
 func_ov000_020a8f84 kind:function(arm,size=0x4c) addr:0x020a8f84
 func_ov000_020a8fd0 kind:function(arm,size=0x5c) addr:0x020a8fd0
-func_ov000_020a782c kind:function(arm,size=0x14) addr:0x020a902c
+_Z22Cutscene_GetParamEntryi kind:function(arm,size=0x14) addr:0x020a902c
 func_ov000_020a9040 kind:function(arm,size=0x84) addr:0x020a9040
-func_ov000_020a90c4 kind:function(arm,size=0x44) addr:0x020a90c4
+_Z27Cutscene_IsAdventureFlagSeti kind:function(arm,size=0x44) addr:0x020a90c4
 func_ov000_020a9108 kind:function(arm,size=0xdc) addr:0x020a9108
 func_ov000_020a91e4 kind:function(arm,size=0x6c) addr:0x020a91e4
 func_ov000_020a9250 kind:function(arm,size=0x20) addr:0x020a9250
@@ -3274,7 +3274,7 @@ data_ov000_020b0f70 kind:data(any) addr:0x020b0f70
 data_ov000_020b0f74 kind:data(any) addr:0x020b0f74
 data_ov000_020b0f80 kind:data(any) addr:0x020b0f80
 data_ov000_020b0f8c kind:data(any) addr:0x020b0f8c
-data_ov000_020b0f90 kind:data(any) addr:0x020b0f90
+gCSParamsEntries kind:data(any) addr:0x020b0f90
 data_ov000_020b144c kind:data(any) addr:0x020b144c
 gQuiverCapacities kind:data(any) addr:0x020b1450
 gBombBagCapacities kind:data(any) addr:0x020b1453

@@ -26,6 +26,11 @@ src/000_Second/Actor/Actor.cpp:
     .text       start:0x02099b30 end:0x02099dfc
     .data       start:0x020b48e4 end:0x020b4948
 
+src/000_Second/Cutscene/Cutscene.cpp:
+    .text       start:0x020a902c end:0x020a9108
+    .data       start:0x020b63d0 end:0x020b6528
+    .rodata     start:0x020b0f90 end:0x020b144c
+
 src/000_Second/Item/ItemManager.cpp:
     complete
     .text       start:0x020a9e3c end:0x020aa2e0

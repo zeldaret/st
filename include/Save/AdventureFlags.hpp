@@ -5,6 +5,7 @@
 #include "types.h"
 
 typedef u32 AdventureFlag;
+typedef u16 AdventureFlag_Half;
 enum AdventureFlag_ {
     /* 0x000 */ AdventureFlag_Unk_000                        = FLAG(0, 0),
     /* 0x001 */ AdventureFlag_Unk_001                        = FLAG(0, 1),
@@ -160,7 +161,7 @@ enum AdventureFlag_ {
     /* 0x08F */ AdventureFlag_Unk_08F                                 = FLAG(4, 15),
     /* 0x090 */ AdventureFlag_WatchedIntroCS                          = FLAG(4, 16),
     /* 0x091 */ AdventureFlag_WatchedFirstPhantomPossessionCS         = FLAG(4, 17),
-    /* 0x092 */ AdventureFlag_WatchedFireTempleCompletedCS            = FLAG(4, 18),
+    /* 0x092 */ AdventureFlag_WatchedForestTempleCompletedCS          = FLAG(4, 18),
     /* 0x093 */ AdventureFlag_TalkedToZeldaMayscoreFirstTime          = FLAG(4, 19),
     /* 0x094 */ AdventureFlag_TalkedToZeldaPhantomPossessionFirstTime = FLAG(4, 20),
     /* 0x095 */ AdventureFlag_Unk_095                                 = FLAG(4, 21),
@@ -1070,4 +1071,5 @@ enum AdventureFlag_ {
     /* 0x3FD */ AdventureFlag_Unk_3FD = FLAG(31, 29),
     /* 0x3FE */ AdventureFlag_Unk_3FE = FLAG(31, 30),
     /* 0x3FF */ AdventureFlag_Unk_3FF = FLAG(31, 31),
+    /* 0x400 */ AdventureFlag_None    = 0x400,
 };

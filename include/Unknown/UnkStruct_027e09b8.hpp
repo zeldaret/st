@@ -5,7 +5,7 @@
 class UnkStruct_027e09b8 {
 public:
     /* 00 */ unk8 mUnk_00[0x14];
-    /* 14 */ u32 mUnk_14[1]; //! TODO
+    /* 14 */ u32 mAdventureFlags[32]; //! TODO
 
     unk32 func_01ffd420();
 

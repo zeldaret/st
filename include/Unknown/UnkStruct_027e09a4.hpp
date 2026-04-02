@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Cutscene/Cutscene.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
 #include "global.h"
@@ -164,7 +165,7 @@ struct UnkStruct_SceneChange1 {
     /* 08 */ unk16 mUnk_08;
     /* 0A */ u8 mRoomIndex;
     /* 0B */ unk8 mSpawnIndex;
-    /* 0C */ unk8 mUnk_0C;
+    /* 0C */ bool mNextIsCS;
     /* 0D */ unk8 mUnk_0D;
     /* 0E */ unk8 mCutsceneIndex;
     /* 0F */ unk8 mUnk_0F;
@@ -181,11 +182,29 @@ struct UnkStruct_SceneChange1 {
         this->mRoomIndex      = 0xFF; // this changes when you enter a house, it's not clear if it has another purpose yet
         this->mSpawnIndex     = 0; // changing this then saving will change your spawn location after opening the save again
                                // (not the area)
-        this->mUnk_0C        = 0;
+        this->mNextIsCS      = false;
         this->mUnk_0D        = 0;
-        this->mCutsceneIndex = 0x2B; // array length of `data_ov000_020af780`
+        this->mCutsceneIndex = CutsceneIndex_None;
         this->mUnk_0F        = 0;
         this->mUnk_10        = 0;
+    }
+
+    UnkStruct_SceneChange1(CutsceneParamsEntry *pEntry, bool nextIsCS) {
+        u8 sceneIndex    = pEntry->mSceneIndex;
+        u8 cutsceneIndex = pEntry->mCutsceneIndex;
+        u8 spawnIndex    = pEntry->mSpawnIndex;
+        u8 roomIndex     = pEntry->mRoomIndex;
+
+        this->mNextSceneIndex = sceneIndex;
+        this->mUnk_04         = 0;
+        this->mUnk_08         = 0;
+        this->mRoomIndex      = roomIndex;
+        this->mSpawnIndex     = spawnIndex;
+        this->mNextIsCS       = nextIsCS;
+        this->mUnk_0D         = 0;
+        this->mCutsceneIndex  = cutsceneIndex;
+        this->mUnk_0F         = 0;
+        this->mUnk_10         = 0;
     }
 };
 
@@ -206,7 +225,7 @@ public:
     /* 08 */ unk32 mUnk_08;
     /* 0C */ u8 mUnk_0C;
     /* 0D */ unk8 mUnk_0D;
-    /* 0E */ unk8 mUnk_0E;
+    /* 0E */ u8 mCutsceneIndex;
     /* 0F */ unk8 mUnk_0F;
     /* 10 */ unk32 *mUnk_10;
     /* 14 */ UnkStruct_SceneChange1 mUnk_14;
@@ -214,7 +233,7 @@ public:
     /* 54 */ void *mUnk_54; // vtable
     /* 58 */ UnkStruct_WarpUnk1 *mpWarpUnk1;
     /* 5C */ unk32 mUnk_5C;
-    /* 60 */ unk32 mUnk_60;
+    /* 60 */ unk32 mUnk_60; // related to ds download?
     /* 64 */ unk32 mUnk_64;
     /* 68 */
 
@@ -245,7 +264,7 @@ public:
 
     UnkStruct_func_01ffd400 *func_01ffd400();
 
-    unk8 func_ov000_02070bd0(unk32, unk32);
+    unk8 func_ov000_02070bd0(unk32 csIndex, unk32 param2);
     UnkStruct_027e09a4_58_78 *func_ov000_02070560();
     void func_ov000_020707a8(void *param1);
     void func_ov000_02070834(void *param1);
