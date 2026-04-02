@@ -36,14 +36,28 @@ public:
     void func_ov034_02121d84();
 };
 
+struct UnkStruct_func_01fff498 {
+    u8 ptrIndex;
+    u8 valueIndex;
+};
+
 class UnkStruct_027e0ce8 {
 public:
-    /* 00 */ UnkStruct_027e0ce8_00 *mUnk_00; // pointer to polygon list?
-    /* 04 */ UnkStruct_027e0ce8_00 *mUnk_04; // pointer to the end of that list
+    /* 00 */ UnkStruct_027e0ce8_00 **mUnk_00; // pointer to polygon list?
+    /* 04 */ UnkStruct_027e0ce8_00 **mUnk_04; // pointer to the end of that list
     /* 08 */ UnkStruct_func_01fff520_ret **mUnk_08;
+    /* 0C */ STRUCT_PAD(0x0C, 0x70);
+    /* 70 */
+
+    UnkStruct_027e0ce8(); // func_ov001_020bac58
 
     UnkStruct_func_01fff520_ret **func_01fff520(UnkStruct_ov000_020b34c4 *param1, void *);
-    UnkStruct_027e0ce8_00 *func_01fff498(unk32 param1, unk32 param2);
+    UnkStruct_027e0ce8_00 *func_01fff498(UnkStruct_func_01fff498 param1);
+
+    void SetInstance(); // func_ov001_020baf4c
+    void ClearInstance(); // func_ov001_020baf58
+
+    static UnkStruct_027e0ce8 *Create(); // func_ov001_020bac40
 };
 
 extern UnkStruct_027e0ce8 *data_027e0ce8;

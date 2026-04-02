@@ -137,7 +137,6 @@ config.libs = [
             Object("Main/UnkStruct_0204a060.cpp"),
             Object("Main/Game/GameModeManagerBase.cpp"),
             Object("Main/func_020196fc.cpp"),
-            Object("itcm.cpp"),
         ]
     ),
     GameLib(
