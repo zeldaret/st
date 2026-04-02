@@ -9,11 +9,11 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x00,
+        .mCutsceneIndex     = CutsceneIndex_TitleScreen,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x00,
+        .mNextCutsceneIndex = CutsceneIndex_TitleScreen,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x0048,
@@ -28,7 +28,7 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mSceneIndex        = SceneIndex_f_first,
         .mRoomIndex         = 0x0A,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x01,
+        .mCutsceneIndex     = CutsceneIndex_Intro,
         .mNextSceneIndex    = SceneIndex_f_first,
         .mNextRoomIndex     = 0x0A,
         .mNextSpawnIndex    = 0x00,
@@ -42,12 +42,12 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d03_01
+        // CutsceneIndex_EngineerCertificate
         .mUnk_00            = "d03_01",
         .mSceneIndex        = SceneIndex_f_hyral,
         .mRoomIndex         = 0x06,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x02,
+        .mCutsceneIndex     = CutsceneIndex_EngineerCertificate,
         .mNextSceneIndex    = SceneIndex_f_hyral,
         .mNextRoomIndex     = 0x06,
         .mNextSpawnIndex    = 0x04,
@@ -61,16 +61,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_SpiritTowerSplit
+        // CutsceneIndex_SpiritTowerSplit_01 (Rails disappearing)
         .mUnk_00            = "d04_01",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x03,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x03,
+        .mCutsceneIndex     = CutsceneIndex_SpiritTowerSplit_01,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x02,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x04,
+        .mNextCutsceneIndex = CutsceneIndex_SpiritTowerSplit_02,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x004B,
@@ -80,16 +80,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d04_02
+        // CutsceneIndex_SpiritTowerSplit_02 (Spirit Tower split)
         .mUnk_00            = "d04_02",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x02,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x04,
+        .mCutsceneIndex     = CutsceneIndex_SpiritTowerSplit_02,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x03,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x05,
+        .mNextCutsceneIndex = CutsceneIndex_SpiritTowerSplit_03,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x004C,
@@ -99,16 +99,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 0,
     },
     {
-        // CutsceneIndex_d04_03
+        // CutsceneIndex_SpiritTowerSplit_03 (Tower parts aligning)
         .mUnk_00            = "d04_03",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x03,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x05,
+        .mCutsceneIndex     = CutsceneIndex_SpiritTowerSplit_03,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x03,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x06,
+        .mNextCutsceneIndex = CutsceneIndex_SpiritTowerSplit_04,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x004D,
@@ -118,16 +118,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d04_04
+        // CutsceneIndex_SpiritTowerSplit_04 (Demon Train appearing)
         .mUnk_00            = "d04_04",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x03,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x06,
+        .mCutsceneIndex     = CutsceneIndex_SpiritTowerSplit_04,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x03,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x07,
+        .mNextCutsceneIndex = CutsceneIndex_SpiritTowerSplit_05,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x01,
         .mUnk_0E            = 0x0062,
@@ -137,12 +137,12 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d04_05
+        // CutsceneIndex_SpiritTowerSplit_05 (Zelda becoming a ghost)
         .mUnk_00            = "d04_05",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x03,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x07,
+        .mCutsceneIndex     = CutsceneIndex_SpiritTowerSplit_05,
         .mNextSceneIndex    = SceneIndex_f_hyral,
         .mNextRoomIndex     = 0x03,
         .mNextSpawnIndex    = 0x00,
@@ -156,16 +156,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d05_01
+        // CutsceneIndex_WalkingToSpiritTower
         .mUnk_00            = "d05_01",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x03,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x08,
+        .mCutsceneIndex     = CutsceneIndex_WalkingToSpiritTower,
         .mNextSceneIndex    = SceneIndex_d_main_f,
         .mNextRoomIndex     = 0x01,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x09,
+        .mNextCutsceneIndex = CutsceneIndex_FirstAnjeanMeeting,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x004E,
@@ -180,7 +180,7 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mSceneIndex        = SceneIndex_d_main_f,
         .mRoomIndex         = 0x01,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x09,
+        .mCutsceneIndex     = CutsceneIndex_FirstAnjeanMeeting,
         .mNextSceneIndex    = SceneIndex_d_main_f,
         .mNextRoomIndex     = 0x01,
         .mNextSpawnIndex    = 0x04,
@@ -199,7 +199,7 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mSceneIndex        = SceneIndex_d_main,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x02,
-        .mCutsceneIndex     = 0x0A,
+        .mCutsceneIndex     = CutsceneIndex_FirstPhantomPossession,
         .mNextSceneIndex    = SceneIndex_d_main,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x02,
@@ -213,16 +213,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_ForestTempleCompleted
+        // CutsceneIndex_ForestTempleCompleted_01 (Altar appearing in boss room)
         .mUnk_00            = "d08_01",
         .mSceneIndex        = SceneIndex_b_forest,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x0B,
+        .mCutsceneIndex     = CutsceneIndex_ForestTempleCompleted_01,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x01,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x0C,
+        .mNextCutsceneIndex = CutsceneIndex_ForestTempleCompleted_02,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x01,
         .mUnk_0E            = 0x0051,
@@ -232,16 +232,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d08_02
+        // CutsceneIndex_ForestTempleCompleted_02 (Forest Realm Spirit Tracks restoring)
         .mUnk_00            = "d08_02",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x01,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x0C,
+        .mCutsceneIndex     = CutsceneIndex_ForestTempleCompleted_02,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x02,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x0D,
+        .mNextCutsceneIndex = CutsceneIndex_ForestTempleCompleted_03,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x01,
         .mUnk_0E            = 0x0052,
@@ -251,12 +251,12 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 0,
     },
     {
-        // CutsceneIndex_d08_03
+        // CutsceneIndex_ForestTempleCompleted_03 (First part of Spirit Tower split re-attatching)
         .mUnk_00            = "d08_03",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x02,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x0D,
+        .mCutsceneIndex     = CutsceneIndex_ForestTempleCompleted_03,
         .mNextSceneIndex    = SceneIndex_b_forest,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x02,
@@ -270,16 +270,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 0,
     },
     {
-        // CutsceneIndex_BlizzardTempleCompleted
+        // CutsceneIndex_BlizzardTempleCompleted_01 (Altar appearing in boss room)
         .mUnk_00            = "d09_01",
         .mSceneIndex        = SceneIndex_b_snow,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x0E,
+        .mCutsceneIndex     = CutsceneIndex_BlizzardTempleCompleted_01,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x06,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x0F,
+        .mNextCutsceneIndex = CutsceneIndex_BlizzardTempleCompleted_02,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x01,
         .mUnk_0E            = 0x0054,
@@ -289,16 +289,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d09_02
+        // CutsceneIndex_BlizzardTempleCompleted_02 (Snow Realm Spirit Tracks restoring)
         .mUnk_00            = "d09_02",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x06,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x0F,
+        .mCutsceneIndex     = CutsceneIndex_BlizzardTempleCompleted_02,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x07,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x10,
+        .mNextCutsceneIndex = CutsceneIndex_BlizzardTempleCompleted_03,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x01,
         .mUnk_0E            = 0x0055,
@@ -308,12 +308,12 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 0,
     },
     {
-        // CutsceneIndex_d09_03
+        // CutsceneIndex_BlizzardTempleCompleted_03 (Second part of Spirit Tower split re-attatching)
         .mUnk_00            = "d09_03",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x07,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x10,
+        .mCutsceneIndex     = CutsceneIndex_BlizzardTempleCompleted_03,
         .mNextSceneIndex    = SceneIndex_b_snow,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
@@ -327,16 +327,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 0,
     },
     {
-        // CutsceneIndex_MarineTempleCompleted
+        // CutsceneIndex_MarineTempleCompleted_01 (Altar appearing in boss room)
         .mUnk_00            = "d10_01",
         .mSceneIndex        = SceneIndex_b_water,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x01,
-        .mCutsceneIndex     = 0x11,
+        .mCutsceneIndex     = CutsceneIndex_MarineTempleCompleted_01,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x04,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x12,
+        .mNextCutsceneIndex = CutsceneIndex_MarineTempleCompleted_02,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x01,
         .mUnk_0E            = 0x0056,
@@ -346,16 +346,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d10_02
+        // CutsceneIndex_MarineTempleCompleted_02 (Ocean Realm Spirit Tracks restoring)
         .mUnk_00            = "d10_02",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x04,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x12,
+        .mCutsceneIndex     = CutsceneIndex_MarineTempleCompleted_02,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x05,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x13,
+        .mNextCutsceneIndex = CutsceneIndex_MarineTempleCompleted_03,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x01,
         .mUnk_0E            = 0x0057,
@@ -365,12 +365,12 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 0,
     },
     {
-        // CutsceneIndex_d10_03
+        // CutsceneIndex_MarineTempleCompleted_03 (Third part of Spirit Tower split re-attatching)
         .mUnk_00            = "d10_03",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x05,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x13,
+        .mCutsceneIndex     = CutsceneIndex_MarineTempleCompleted_03,
         .mNextSceneIndex    = SceneIndex_b_water,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x01,
@@ -384,16 +384,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 0,
     },
     {
-        // CutsceneIndex_StavenInTOSAfterFireGlyph
+        // CutsceneIndex_StavenInTOSAfterFireGlyph_01 (Staven appearing in ToS)
         .mUnk_00            = "d11_01",
         .mSceneIndex        = SceneIndex_d_main,
         .mRoomIndex         = 0x0F,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x14,
+        .mCutsceneIndex     = CutsceneIndex_StavenInTOSAfterFireGlyph_01,
         .mNextSceneIndex    = SceneIndex_d_main_f,
         .mNextRoomIndex     = 0x01,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x15,
+        .mNextCutsceneIndex = CutsceneIndex_StavenInTOSAfterFireGlyph_02,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x0061,
@@ -403,12 +403,12 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d11_02
+        // CutsceneIndex_StavenInTOSAfterFireGlyph_02 (Zelda and Link falling inside tower's lobby)
         .mUnk_00            = "d11_02",
         .mSceneIndex        = SceneIndex_d_main_f,
         .mRoomIndex         = 0x01,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x15,
+        .mCutsceneIndex     = CutsceneIndex_StavenInTOSAfterFireGlyph_02,
         .mNextSceneIndex    = SceneIndex_d_main_f,
         .mNextRoomIndex     = 0x01,
         .mNextSpawnIndex    = 0x00,
@@ -422,16 +422,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_MountainTempleCompleted
+        // CutsceneIndex_MountainTempleCompleted_01 (Altar appearing in boss room)
         .mUnk_00            = "d12_01",
         .mSceneIndex        = SceneIndex_b_flame,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x16,
+        .mCutsceneIndex     = CutsceneIndex_MountainTempleCompleted_01,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x08,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x17,
+        .mNextCutsceneIndex = CutsceneIndex_MountainTempleCompleted_02,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x01,
         .mUnk_0E            = 0x0058,
@@ -441,16 +441,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d12_02
+        // CutsceneIndex_MountainTempleCompleted_02 (Fire Realm Spirit Tracks restoring)
         .mUnk_00            = "d12_02",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x08,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x17,
+        .mCutsceneIndex     = CutsceneIndex_MountainTempleCompleted_02,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x02,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x18,
+        .mNextCutsceneIndex = CutsceneIndex_MountainTempleCompleted_03,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x01,
         .mUnk_0E            = 0x0059,
@@ -460,12 +460,12 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 0,
     },
     {
-        // CutsceneIndex_d12_03
+        // CutsceneIndex_MountainTempleCompleted_03 (Fourth part of Spirit Tower split re-attatching)
         .mUnk_00            = "d12_03",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x09,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x18,
+        .mCutsceneIndex     = CutsceneIndex_MountainTempleCompleted_03,
         .mNextSceneIndex    = SceneIndex_b_flame,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x01,
@@ -479,12 +479,12 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 0,
     },
     {
-        // CutsceneIndex_d13_01
+        // CutsceneIndex_StavenPreBattle
         .mUnk_00            = "d13_01",
         .mSceneIndex        = SceneIndex_b_deago,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x02,
-        .mCutsceneIndex     = 0x19,
+        .mCutsceneIndex     = CutsceneIndex_StavenPreBattle,
         .mNextSceneIndex    = SceneIndex_b_deago,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
@@ -503,7 +503,7 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mSceneIndex        = SceneIndex_b_deago,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x1A,
+        .mCutsceneIndex     = CutsceneIndex_StavenPostBattle,
         .mNextSceneIndex    = SceneIndex_b_deago,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x03,
@@ -517,16 +517,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_MalladusOnTOSSummit
+        // CutsceneIndex_MalladusOnTOSSummit_01 (Malladus appearing)
         .mUnk_00            = "d15_01",
         .mSceneIndex        = SceneIndex_d_main_a,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x1B,
+        .mCutsceneIndex     = CutsceneIndex_MalladusOnTOSSummit_01,
         .mNextSceneIndex    = SceneIndex_d_main_a,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x1C,
+        .mNextCutsceneIndex = CutsceneIndex_MalladusOnTOSSummit_02,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x005B,
@@ -536,16 +536,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d15_02
+        // CutsceneIndex_MalladusOnTOSSummit_02 (Malladus and Cole leaving with the Demon Train)
         .mUnk_00            = "d15_02",
         .mSceneIndex        = SceneIndex_d_main_a,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x1C,
+        .mCutsceneIndex     = CutsceneIndex_MalladusOnTOSSummit_02,
         .mNextSceneIndex    = SceneIndex_f_passenger,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x1D,
+        .mNextCutsceneIndex = CutsceneIndex_PassengerCarAnjeanBowOfLight,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x005B,
@@ -555,12 +555,12 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d16_01
+        // CutsceneIndex_PassengerCarAnjeanBowOfLight
         .mUnk_00            = "d16_01",
         .mSceneIndex        = SceneIndex_f_passenger,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x1D,
+        .mCutsceneIndex     = CutsceneIndex_PassengerCarAnjeanBowOfLight,
         .mNextSceneIndex    = SceneIndex_f_passenger,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
@@ -579,7 +579,7 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mSceneIndex        = SceneIndex_f_passenger,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x1E,
+        .mCutsceneIndex     = CutsceneIndex_LokomoSword,
         .mNextSceneIndex    = SceneIndex_t_area2,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x07,
@@ -593,16 +593,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d18_01
+        // CutsceneIndex_PassengerCarBeforeMalladusFight
         .mUnk_00            = "d18_01",
         .mSceneIndex        = SceneIndex_f_passenger,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x1F,
+        .mCutsceneIndex     = CutsceneIndex_PassengerCarBeforeMalladusFight,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x0A,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x20,
+        .mNextCutsceneIndex = CutsceneIndex_BoardingDemonTrain,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x005C,
@@ -612,12 +612,12 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d19_01
+        // CutsceneIndex_BoardingDemonTrain
         .mUnk_00            = "d19_01",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x0A,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x20,
+        .mCutsceneIndex     = CutsceneIndex_BoardingDemonTrain,
         .mNextSceneIndex    = SceneIndex_b_last1,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
@@ -631,16 +631,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d20_01
+        // CutsceneIndex_BeforeMalladusBeast_01 (Demon Train getting destroyed)
         .mUnk_00            = "d20_01",
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x0A,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x21,
+        .mCutsceneIndex     = CutsceneIndex_BeforeMalladusBeast_01,
         .mNextSceneIndex    = SceneIndex_b_last2,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x22,
+        .mNextCutsceneIndex = CutsceneIndex_BeforeMalladusBeast_02,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x005D,
@@ -650,16 +650,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d20_02
+        // CutsceneIndex_BeforeMalladusBeast_02 (Zelda getting her body back)
         .mUnk_00            = "d20_02",
         .mSceneIndex        = SceneIndex_b_last2,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x22,
+        .mCutsceneIndex     = CutsceneIndex_BeforeMalladusBeast_02,
         .mNextSceneIndex    = SceneIndex_b_last2,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x23,
+        .mNextCutsceneIndex = CutsceneIndex_BeforeMalladusBeast_03,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x01,
         .mUnk_0E            = 0x0060,
@@ -669,12 +669,12 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d20_03
+        // CutsceneIndex_BeforeMalladusBeast_03 (Beast Malladus appearing)
         .mUnk_00            = "d20_03",
         .mSceneIndex        = SceneIndex_b_last2,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x23,
+        .mCutsceneIndex     = CutsceneIndex_BeforeMalladusBeast_03,
         .mNextSceneIndex    = SceneIndex_b_last2,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
@@ -688,16 +688,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d21_01
+        // CutsceneIndex_PreCredits
         .mUnk_00            = "d21_01",
         .mSceneIndex        = SceneIndex_b_last2,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x24,
+        .mCutsceneIndex     = CutsceneIndex_PreCredits,
         .mNextSceneIndex    = SceneIndex_f_hyral,
         .mNextRoomIndex     = 0x05,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x25,
+        .mNextCutsceneIndex = CutsceneIndex_Credits_01,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x002D,
@@ -707,16 +707,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d23_01
+        // CutsceneIndex_Credits_01 (Credits followed by first ending)
         .mUnk_00            = "d23_01",
         .mSceneIndex        = SceneIndex_f_hyral,
         .mRoomIndex         = 0x05,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x25,
+        .mCutsceneIndex     = CutsceneIndex_Credits_01,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x00,
+        .mNextCutsceneIndex = CutsceneIndex_TitleScreen,
         .mNextIsCS          = true,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x005E,
@@ -726,16 +726,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d23_02
+        // CutsceneIndex_Credits_02 (Credits followed by second ending)
         .mUnk_00            = "d23_02",
         .mSceneIndex        = SceneIndex_f_hyral,
         .mRoomIndex         = 0x05,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x26,
+        .mCutsceneIndex     = CutsceneIndex_Credits_02,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x00,
+        .mNextCutsceneIndex = CutsceneIndex_TitleScreen,
         .mNextIsCS          = true,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x005E,
@@ -745,16 +745,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 1,
     },
     {
-        // CutsceneIndex_d23_03
+        // CutsceneIndex_Credits_03 (Credits followed by third ending)
         .mUnk_00            = "d23_03",
         .mSceneIndex        = SceneIndex_f_hyral,
         .mRoomIndex         = 0x05,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x27,
+        .mCutsceneIndex     = CutsceneIndex_Credits_03,
         .mNextSceneIndex    = SceneIndex_demo_train,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x00,
+        .mNextCutsceneIndex = CutsceneIndex_TitleScreen,
         .mNextIsCS          = true,
         .mUnk_0D            = 0x00,
         .mUnk_0E            = 0x005E,
@@ -769,7 +769,7 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mSceneIndex        = SceneIndex_f_hyral,
         .mRoomIndex         = 0x05,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x28,
+        .mCutsceneIndex     = CutsceneIndex_SpiritPipes,
         .mNextSceneIndex    = SceneIndex_f_hyral,
         .mNextRoomIndex     = 0x05,
         .mNextSpawnIndex    = 0x01,
@@ -788,7 +788,7 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mSceneIndex        = SceneIndex_demo_train,
         .mRoomIndex         = 0x02,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x29,
+        .mCutsceneIndex     = CutsceneIndex_ForestTracksRestoredFromGlyph,
         .mNextSceneIndex    = SceneIndex_d_main,
         .mNextRoomIndex     = 0x02,
         .mNextSpawnIndex    = 0x01,
@@ -802,16 +802,16 @@ const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max] = {
         .mUnk_18            = 0,
     },
     {
-        // CutsceneIndex_d26_01
+        // CutsceneIndex_MalladusBeastDestroyed
         .mUnk_00            = "d26_01",
         .mSceneIndex        = SceneIndex_b_last2,
         .mRoomIndex         = 0x00,
         .mSpawnIndex        = 0x00,
-        .mCutsceneIndex     = 0x2A,
+        .mCutsceneIndex     = CutsceneIndex_MalladusBeastDestroyed,
         .mNextSceneIndex    = SceneIndex_b_last2,
         .mNextRoomIndex     = 0x00,
         .mNextSpawnIndex    = 0x00,
-        .mNextCutsceneIndex = 0x24,
+        .mNextCutsceneIndex = CutsceneIndex_PreCredits,
         .mNextIsCS          = false,
         .mUnk_0D            = 0x01,
         .mUnk_0E            = 0x0060,

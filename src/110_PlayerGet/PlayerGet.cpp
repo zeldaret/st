@@ -700,7 +700,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                 if (this->mUnk_54.mItemId == ItemId_ForestGlyph) {
                     this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(CutsceneIndex_ForestTracksRestoredFromGlyph, 0);
                 } else if (this->mUnk_54.mItemId == ItemId_FireGlyph) {
-                    this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(CutsceneIndex_StavenInTOSAfterFireGlyph, 0);
+                    this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(CutsceneIndex_StavenInTOSAfterFireGlyph_01, 0);
                 }
 
                 if (this->mUnk_72 != 0) {
