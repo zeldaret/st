@@ -291,7 +291,7 @@ from:0x020eb4b8 kind:load to:0x020ea920 module:overlay(23)
 from:0x020eb4bc kind:load to:0x020b1f2c module:overlay(0)
 from:0x020eb4c0 kind:load to:0x020eb51c module:overlay(23)
 from:0x020eb4c4 kind:load to:0x0201f678 module:main
-from:0x020eb4c8 kind:load to:0x020b1f84 add:8 module:overlay(0)
+from:0x020eb4c8 kind:load to:0x020b1f84 add:0x8 module:overlay(0)
 from:0x020eb4cc kind:load to:0x020f1884 module:overlay(23)
 from:0x020eb4d0 kind:load to:0x020f1898 module:overlay(23)
 from:0x020eb4d4 kind:load to:0x020431b8 module:main

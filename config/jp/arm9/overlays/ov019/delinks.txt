@@ -1,7 +1,7 @@
     .text       start:0x020c6060 end:0x020d33d0 kind:code align:32
     .rodata     start:0x020d33d0 end:0x020d341c kind:rodata align:4
     .init       start:0x020d341c end:0x020d3584 kind:code align:4
-    .ctor       start:0x020d3584 end:0x020d359c kind:rodata align:4
+    .ctor       start:0x020d3584 end:0x020d3598 kind:rodata align:4
     .data       start:0x020d35a0 end:0x020d3ce0 kind:data align:32
     .bss        start:0x020d3ce0 end:0x02118900 kind:bss align:32
 
@@ -42,7 +42,7 @@ src/019_MainSelect/FileSelectOptions.cpp:
 src/019_MainSelect/FileSelectMicTest.cpp:
     .text       start:0x020d0040 end:0x020d0aac
     .init       start:0x020d355c end:0x020d3584
-    .ctor       start:0x020d3594 end:0x020d359c
+    .ctor       start:0x020d3594 end:0x020d3598
     .data       start:0x020d3a68 end:0x020d3ac0
 
 src/019_MainSelect/FileSelectSubScreen.cpp:

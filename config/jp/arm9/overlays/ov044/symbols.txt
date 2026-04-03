@@ -233,7 +233,6 @@ __sinit_ov044_0212eae4 kind:function(arm,size=0x50) addr:0x0212eae4
 __sinit_ov044_0212eb34 kind:function(arm,size=0x50) addr:0x0212eb34
 .p__sinit_ov044_0212e8fc kind:data(word) addr:0x0212eb84
 .p__sinit_ov044_0212e918 kind:data(word) addr:0x0212eb88
-data_ov044_0212eb89 kind:data(any) addr:0x0212eb89 ambiguous
 .p__sinit_ov044_0212e91c kind:data(word) addr:0x0212eb8c
 .p__sinit_ov044_0212e980 kind:data(word) addr:0x0212eb90
 .p__sinit_ov044_0212e9f4 kind:data(word) addr:0x0212eb94

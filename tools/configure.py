@@ -19,9 +19,9 @@ parser.add_argument("--version", "-v", help='Game version', required=False)
 args = parser.parse_args()
 
 config = ProjectConfig("st", args.compiler, "dsi/1.2p1", args.wine, args.dsd, Path(__file__).resolve())
-config.dsd_tag = "v0.10.2"
-config.wibo_tag = "0.6.16"
-config.objdiff_tag = "v3.0.0-beta.6"
+config.dsd_tag = "v0.11.0"
+config.wibo_tag = "1.1.0"
+config.objdiff_tag = "v3.7.1"
 
 GAME_VERSIONS = [
     "eur",
