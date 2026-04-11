@@ -172,7 +172,7 @@ from:0x020db3f8 kind:load to:0x02095554 module:overlay(0)
 from:0x020db414 kind:load to:0x01ffb6e4 module:itcm
 from:0x020db428 kind:arm_call to:0x02095728 module:overlay(0)
 from:0x020db444 kind:load to:0x02095784 module:overlay(0)
-from:0x020db454 kind:load to:0x0215a594 module:overlays(65,79,82)
+from:0x020db454 kind:load to:0x0215a594 module:overlays(65,82)
 from:0x020db4f0 kind:arm_call to:0x0208eb68 module:overlay(0)
 from:0x020db50c kind:load to:0x0208ec7c module:overlay(0)
 from:0x020db51c kind:load to:0x0208f3cc module:overlay(0)

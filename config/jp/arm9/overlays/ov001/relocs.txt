@@ -441,7 +441,7 @@ from:0x020b953e kind:thumb_call to:0x020b96a8 module:overlay(1)
 from:0x020b955c kind:thumb_call_arm to:0x02083414 module:overlay(0)
 from:0x020b9568 kind:thumb_call_arm to:0x020cc828 module:overlay(24)
 from:0x020b9576 kind:thumb_call_arm to:0x020cc850 module:overlay(24)
-from:0x020b9580 kind:load to:0x021668f0 module:overlays(59,68,73,84)
+from:0x020b9580 kind:load to:0x021668f0 module:overlays(59,68,84)
 from:0x020b9598 kind:load to:0x02163428 module:overlays(62,66,84)
 from:0x020b959c kind:load to:0x027e09a4 module:dtcm
 from:0x020b95a0 kind:load to:0x020da034 module:overlay(24)
