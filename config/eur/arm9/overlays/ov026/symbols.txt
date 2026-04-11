@@ -2508,7 +2508,7 @@ __sinit_ActorUnkTVLR.cpp kind:function(arm,size=0x50) addr:0x02134ed8
 __sinit_ActorUnkTTET.cpp kind:function(arm,size=0x50) addr:0x02134f28
 __sinit_ActorUnkTRSG.cpp kind:function(arm,size=0x50) addr:0x02134f78
 __sinit_ActorUnkBDEM.cpp kind:function(arm,size=0x78) addr:0x02134fc8
-__sinit_ActorUnkWCAS.cpp kind:function(arm,size=0xb4) addr:0x02135040
+__sinit_ActorUnkTCOW_WCAS.cpp kind:function(arm,size=0xb4) addr:0x02135040
 __sinit_ActorUnkDKTR.cpp kind:function(arm,size=0x50) addr:0x021350f4
 __sinit_ov026_02135144 kind:function(arm,size=0x24) addr:0x02135144
 __sinit_ov026_02135168 kind:function(arm,size=0x4) addr:0x02135168
@@ -2565,7 +2565,7 @@ __sinit_ov026_0213516c kind:function(arm,size=0x24) addr:0x0213516c
 .p__sinit_ActorUnkTTET.cpp kind:data(word) addr:0x02135254
 .p__sinit_ActorUnkTRSG.cpp kind:data(word) addr:0x02135258
 .p__sinit_ActorUnkBDEM.cpp kind:data(word) addr:0x0213525c
-.p__sinit_ActorUnkWCAS.cpp kind:data(word) addr:0x02135260
+.p__sinit_ActorUnkTCOW_WCAS.cpp kind:data(word) addr:0x02135260
 .p__sinit_ActorUnkDKTR.cpp kind:data(word) addr:0x02135264
 .p__sinit_ov026_02135144 kind:data(word) addr:0x02135268
 .p__sinit_ov026_02135168 kind:data(word) addr:0x0213526c

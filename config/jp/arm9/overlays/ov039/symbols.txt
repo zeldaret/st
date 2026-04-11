@@ -161,12 +161,12 @@ data_ov039_0211e8e4 kind:data(any) addr:0x0211e8e4
 data_ov039_0211e8f8 kind:data(any) addr:0x0211e8f8
 data_ov039_0211e90c kind:data(any) addr:0x0211e90c
 __sinit_ActorUnkZELD.cpp kind:function(arm,size=0x50) addr:0x0211e920
-__sinit_ActorUnkSRNM.cpp kind:function(arm,size=0x148) addr:0x0211e970
+__sinit_ActorUnkSIRO_SIRS_SRNM_SRSL.cpp kind:function(arm,size=0x148) addr:0x0211e970
 __sinit_ActorUnkRMM4.cpp kind:function(arm,size=0x50) addr:0x0211eab8
 __sinit_ActorUnkZLSS.cpp kind:function(arm,size=0x50) addr:0x0211eb08
 __sinit_MapObjectUnkGTAT.cpp kind:function(arm,size=0x50) addr:0x0211eb58
 .p__sinit_ActorUnkZELD.cpp kind:data(word) addr:0x0211eba8
-.p__sinit_ActorUnkSRNM.cpp kind:data(word) addr:0x0211ebac
+.p__sinit_ActorUnkSIRO_SIRS_SRNM_SRSL.cpp kind:data(word) addr:0x0211ebac
 .p__sinit_ActorUnkRMM4.cpp kind:data(word) addr:0x0211ebb0
 .p__sinit_ActorUnkZLSS.cpp kind:data(word) addr:0x0211ebb4
 .p__sinit_MapObjectUnkGTAT.cpp kind:data(word) addr:0x0211ebb8

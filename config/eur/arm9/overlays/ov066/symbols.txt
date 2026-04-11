@@ -188,8 +188,8 @@ data_ov066_0215d8a8 kind:data(any) addr:0x0215d8a8
 data_ov066_0215d8c0 kind:data(any) addr:0x0215d8c0
 __sinit_ActorUnkVCCH.cpp kind:function(arm,size=0x50) addr:0x0215d8c8
 __sinit_ActorUnkVCFT.cpp kind:function(arm,size=0x50) addr:0x0215d918
-__sinit_ActorUnkWAWS.cpp kind:function(arm,size=0x94) addr:0x0215d968
-__sinit_ActorUnkWAWA.cpp kind:function(arm,size=0x94) addr:0x0215d9fc
+__sinit_ActorUnkWAWB_WAWS.cpp kind:function(arm,size=0x94) addr:0x0215d968
+__sinit_ActorUnkWAWA_WAWC.cpp kind:function(arm,size=0x94) addr:0x0215d9fc
 __sinit_ActorUnkRMW1.cpp kind:function(arm,size=0x50) addr:0x0215da90
 __sinit_ActorUnkRMW0.cpp kind:function(arm,size=0x50) addr:0x0215dae0
 __sinit_MapObjectUnkFSWT.cpp kind:function(arm,size=0x50) addr:0x0215db30
@@ -199,8 +199,8 @@ __sinit_MapObjectUnkHOW1.cpp kind:function(arm,size=0x50) addr:0x0215dc20
 __sinit_MapObjectUnkMTFS.cpp kind:function(arm,size=0x50) addr:0x0215dc70
 .p__sinit_ActorUnkVCCH.cpp kind:data(word) addr:0x0215dcc0
 .p__sinit_ActorUnkVCFT.cpp kind:data(word) addr:0x0215dcc4
-.p__sinit_ActorUnkWAWS.cpp kind:data(word) addr:0x0215dcc8
-.p__sinit_ActorUnkWAWA.cpp kind:data(word) addr:0x0215dccc
+.p__sinit_ActorUnkWAWB_WAWS.cpp kind:data(word) addr:0x0215dcc8
+.p__sinit_ActorUnkWAWA_WAWC.cpp kind:data(word) addr:0x0215dccc
 .p__sinit_ActorUnkRMW1.cpp kind:data(word) addr:0x0215dcd0
 .p__sinit_ActorUnkRMW0.cpp kind:data(word) addr:0x0215dcd4
 .p__sinit_MapObjectUnkFSWT.cpp kind:data(word) addr:0x0215dcd8

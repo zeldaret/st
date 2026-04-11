@@ -321,11 +321,11 @@ data_ov075_02162304 kind:data(any) addr:0x02162304
 data_ov075_02162320 kind:data(any) addr:0x02162320
 data_ov075_0216233c kind:data(any) addr:0x0216233c
 data_ov075_02162340 kind:data(any) addr:0x02162340
-__sinit_ActorUnkMRDA.cpp kind:function(arm,size=0x130) addr:0x02162358
+__sinit_ActorUnkMRDA_MRDO.cpp kind:function(arm,size=0x130) addr:0x02162358
 __sinit_ActorUnkMRD2.cpp kind:function(arm,size=0x10c) addr:0x02162488
 __sinit_ActorUnkMRDL.cpp kind:function(arm,size=0x50) addr:0x02162594
 __sinit_ActorUnkMABL.cpp kind:function(arm,size=0xa8) addr:0x021625e4
-.p__sinit_ActorUnkMRDA.cpp kind:data(word) addr:0x0216268c
+.p__sinit_ActorUnkMRDA_MRDO.cpp kind:data(word) addr:0x0216268c
 .p__sinit_ActorUnkMRD2.cpp kind:data(word) addr:0x02162690
 .p__sinit_ActorUnkMRDL.cpp kind:data(word) addr:0x02162694
 .p__sinit_ActorUnkMABL.cpp kind:data(word) addr:0x02162698

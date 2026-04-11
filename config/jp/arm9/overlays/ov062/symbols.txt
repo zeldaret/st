@@ -342,7 +342,7 @@ __sinit_ActorUnkFBCH.cpp kind:function(arm,size=0x50) addr:0x0216079c
 __sinit_ActorUnkNSHD.cpp kind:function(arm,size=0x64) addr:0x021607ec
 __sinit_ActorUnkLBCK.cpp kind:function(arm,size=0x50) addr:0x02160850
 __sinit_ActorUnkRMLF.cpp kind:function(arm,size=0x50) addr:0x021608a0
-__sinit_ActorUnkNCMB.cpp kind:function(arm,size=0x94) addr:0x021608f0
+__sinit_ActorUnkNCCB_NCMB.cpp kind:function(arm,size=0x94) addr:0x021608f0
 __sinit_ActorUnkNCWA.cpp kind:function(arm,size=0x50) addr:0x02160984
 __sinit_ActorUnkRMBC.cpp kind:function(arm,size=0x50) addr:0x021609d4
 __sinit_ActorUnkMOCT.cpp kind:function(arm,size=0x50) addr:0x02160a24
@@ -363,7 +363,7 @@ __sinit_MapObjectUnkGBDR.cpp kind:function(arm,size=0x50) addr:0x02160ca4
 .p__sinit_ActorUnkNSHD.cpp kind:data(word) addr:0x02160d0c
 .p__sinit_ActorUnkLBCK.cpp kind:data(word) addr:0x02160d10
 .p__sinit_ActorUnkRMLF.cpp kind:data(word) addr:0x02160d14
-.p__sinit_ActorUnkNCMB.cpp kind:data(word) addr:0x02160d18
+.p__sinit_ActorUnkNCCB_NCMB.cpp kind:data(word) addr:0x02160d18
 .p__sinit_ActorUnkNCWA.cpp kind:data(word) addr:0x02160d1c
 .p__sinit_ActorUnkRMBC.cpp kind:data(word) addr:0x02160d20
 .p__sinit_ActorUnkMOCT.cpp kind:data(word) addr:0x02160d24

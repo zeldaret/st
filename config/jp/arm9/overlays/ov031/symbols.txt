@@ -2075,7 +2075,7 @@ __sinit_ActorUnkITTD.cpp kind:function(arm,size=0x74) addr:0x02112ea8
 __sinit_ActorUnkSWBM.cpp kind:function(arm,size=0x74) addr:0x02112f1c
 __sinit_ActorUnkROCK.cpp kind:function(arm,size=0x50) addr:0x02112f90
 __sinit_ActorRupee.cpp kind:function(arm,size=0x98) addr:0x02112fe0
-__sinit_ActorUnkZSRS.cpp kind:function(arm,size=0x94) addr:0x02113078
+__sinit_ActorUnkZLSL_ZSRS.cpp kind:function(arm,size=0x94) addr:0x02113078
 __sinit_ActorUnkHERT.cpp kind:function(arm,size=0x6c) addr:0x0211310c
 __sinit_ActorUnkRMTG.cpp kind:function(arm,size=0x50) addr:0x02113178
 __sinit_ActorUnkSCCN.cpp kind:function(arm,size=0x50) addr:0x021131c8
@@ -2091,7 +2091,7 @@ __sinit_ActorUnkSWON.cpp kind:function(arm,size=0x50) addr:0x0211349c
 __sinit_ActorUnkNORE.cpp kind:function(arm,size=0x50) addr:0x021134ec
 __sinit_ActorUnkFLEN.cpp kind:function(arm,size=0x50) addr:0x0211353c
 __sinit_ActorUnkRLST.cpp kind:function(arm,size=0x50) addr:0x0211358c
-__sinit_ActorUnkSPAR.cpp kind:function(arm,size=0x138) addr:0x021135dc
+__sinit_ActorUnkSPAR_SPBM_SPDR_SPTR.cpp kind:function(arm,size=0x138) addr:0x021135dc
 __sinit_ActorUnkMLCK.cpp kind:function(arm,size=0x74) addr:0x02113714
 __sinit_ActorUnkCLLT.cpp kind:function(arm,size=0x50) addr:0x02113788
 __sinit_ActorUnkEFSB.cpp kind:function(arm,size=0x50) addr:0x021137d8
@@ -2139,7 +2139,7 @@ __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x021144b0
 .p__sinit_ActorUnkSWBM.cpp kind:data(word) addr:0x0211453c
 .p__sinit_ActorUnkROCK.cpp kind:data(word) addr:0x02114540
 .p__sinit_ActorRupee.cpp kind:data(word) addr:0x02114544
-.p__sinit_ActorUnkZSRS.cpp kind:data(word) addr:0x02114548
+.p__sinit_ActorUnkZLSL_ZSRS.cpp kind:data(word) addr:0x02114548
 .p__sinit_ActorUnkHERT.cpp kind:data(word) addr:0x0211454c
 .p__sinit_ActorUnkRMTG.cpp kind:data(word) addr:0x02114550
 .p__sinit_ActorUnkSCCN.cpp kind:data(word) addr:0x02114554
@@ -2155,7 +2155,7 @@ __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x021144b0
 .p__sinit_ActorUnkNORE.cpp kind:data(word) addr:0x0211457c
 .p__sinit_ActorUnkFLEN.cpp kind:data(word) addr:0x02114580
 .p__sinit_ActorUnkRLST.cpp kind:data(word) addr:0x02114584
-.p__sinit_ActorUnkSPAR.cpp kind:data(word) addr:0x02114588
+.p__sinit_ActorUnkSPAR_SPBM_SPDR_SPTR.cpp kind:data(word) addr:0x02114588
 .p__sinit_ActorUnkMLCK.cpp kind:data(word) addr:0x0211458c
 .p__sinit_ActorUnkCLLT.cpp kind:data(word) addr:0x02114590
 .p__sinit_ActorUnkEFSB.cpp kind:data(word) addr:0x02114594

@@ -243,7 +243,7 @@ data_ov067_0215c5bc kind:data(any) addr:0x0215c5bc
 data_ov067_0215c5d0 kind:data(any) addr:0x0215c5d0
 data_ov067_0215c5e0 kind:data(any) addr:0x0215c5e0
 data_ov067_0215c5f0 kind:data(any) addr:0x0215c5f0
-__sinit_ActorUnkGORM.cpp kind:function(arm,size=0x11c) addr:0x0215c600
+__sinit_ActorUnkGOCA_GOCB_GORK_GORM.cpp kind:function(arm,size=0x11c) addr:0x0215c600
 __sinit_ActorUnkGORS.cpp kind:function(arm,size=0x50) addr:0x0215c71c
 __sinit_ActorUnkRMV0.cpp kind:function(arm,size=0x50) addr:0x0215c76c
 __sinit_ActorUnkRMV1.cpp kind:function(arm,size=0x50) addr:0x0215c7bc
@@ -255,7 +255,7 @@ __sinit_MapObjectUnkDRGN.cpp kind:function(arm,size=0x50) addr:0x0215c964
 __sinit_MapObjectUnkMTIR.cpp kind:function(arm,size=0x50) addr:0x0215c9b4
 __sinit_MapObjectUnkMTOR.cpp kind:function(arm,size=0x50) addr:0x0215ca04
 __sinit_MapObjectUnkDRVT.cpp kind:function(arm,size=0x50) addr:0x0215ca54
-.p__sinit_ActorUnkGORM.cpp kind:data(word) addr:0x0215caa4
+.p__sinit_ActorUnkGOCA_GOCB_GORK_GORM.cpp kind:data(word) addr:0x0215caa4
 .p__sinit_ActorUnkGORS.cpp kind:data(word) addr:0x0215caa8
 .p__sinit_ActorUnkRMV0.cpp kind:data(word) addr:0x0215caac
 .p__sinit_ActorUnkRMV1.cpp kind:data(word) addr:0x0215cab0

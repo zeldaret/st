@@ -204,11 +204,11 @@ data_ov035_02120f6c kind:data(any) addr:0x02120f6c
 data_ov035_02120f7c kind:data(any) addr:0x02120f7c
 data_ov035_02120f8c kind:data(any) addr:0x02120f8c
 __sinit_ActorUnkFIMA.cpp kind:function(arm,size=0x50) addr:0x02120f9c
-__sinit_ActorUnkFMAS.cpp kind:function(arm,size=0xdc) addr:0x02120fec
+__sinit_ActorUnkFMAS_FMLS.cpp kind:function(arm,size=0xdc) addr:0x02120fec
 __sinit_ActorUnkFIML.cpp kind:function(arm,size=0x68) addr:0x021210c8
 __sinit_ActorUnkFIFI.cpp kind:function(arm,size=0x50) addr:0x02121130
 .p__sinit_ActorUnkFIMA.cpp kind:data(word) addr:0x02121180
-.p__sinit_ActorUnkFMAS.cpp kind:data(word) addr:0x02121184
+.p__sinit_ActorUnkFMAS_FMLS.cpp kind:data(word) addr:0x02121184
 .p__sinit_ActorUnkFIML.cpp kind:data(word) addr:0x02121188
 .p__sinit_ActorUnkFIFI.cpp kind:data(word) addr:0x0212118c
 _ZTV19data_ov035_021211a0 kind:data(any) addr:0x021211a0

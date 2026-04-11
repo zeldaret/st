@@ -152,7 +152,7 @@ __sinit_ActorUnkRMT1.cpp kind:function(arm,size=0x50) addr:0x0215bc28
 __sinit_ActorUnkRMT2.cpp kind:function(arm,size=0x50) addr:0x0215bc78
 __sinit_ActorUnkRMT3.cpp kind:function(arm,size=0x50) addr:0x0215bcc8
 __sinit_ActorUnkRMT4.cpp kind:function(arm,size=0x50) addr:0x0215bd18
-__sinit_ActorUnkCAMS.cpp kind:function(arm,size=0xd8) addr:0x0215bd68
+__sinit_ActorUnkCAMA_CAMB_CAMS.cpp kind:function(arm,size=0xd8) addr:0x0215bd68
 __sinit_ActorUnkCAWA.cpp kind:function(arm,size=0x50) addr:0x0215be40
 __sinit_ActorUnkJOLN.cpp kind:function(arm,size=0x50) addr:0x0215be90
 __sinit_ActorUnkFLCT.cpp kind:function(arm,size=0x74) addr:0x0215bee0
@@ -163,7 +163,7 @@ __sinit_MapObjectUnkDRTY.cpp kind:function(arm,size=0x74) addr:0x0215bfa4
 .p__sinit_ActorUnkRMT2.cpp kind:data(word) addr:0x0215c020
 .p__sinit_ActorUnkRMT3.cpp kind:data(word) addr:0x0215c024
 .p__sinit_ActorUnkRMT4.cpp kind:data(word) addr:0x0215c028
-.p__sinit_ActorUnkCAMS.cpp kind:data(word) addr:0x0215c02c
+.p__sinit_ActorUnkCAMA_CAMB_CAMS.cpp kind:data(word) addr:0x0215c02c
 .p__sinit_ActorUnkCAWA.cpp kind:data(word) addr:0x0215c030
 .p__sinit_ActorUnkJOLN.cpp kind:data(word) addr:0x0215c034
 .p__sinit_ActorUnkFLCT.cpp kind:data(word) addr:0x0215c038

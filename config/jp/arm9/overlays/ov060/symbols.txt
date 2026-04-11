@@ -350,8 +350,8 @@ data_ov060_02162924 kind:data(any) addr:0x02162924
 data_ov060_0216292c kind:data(any) addr:0x0216292c
 data_ov060_0216295c kind:data(any) addr:0x0216295c
 data_ov060_0216297c kind:data(any) addr:0x0216297c ambiguous
-__sinit_ActorUnkSOLD.cpp kind:function(arm,size=0xd8) addr:0x02162a1c
-__sinit_ActorUnkSOLG.cpp kind:function(arm,size=0x118) addr:0x02162af4
+__sinit_ActorUnkSOLB_SOLC_SOLD.cpp kind:function(arm,size=0xd8) addr:0x02162a1c
+__sinit_ActorUnkSOGB_SOGC_SOLG.cpp kind:function(arm,size=0x118) addr:0x02162af4
 __sinit_ActorUnkCOMM.cpp kind:function(arm,size=0x70) addr:0x02162c0c
 __sinit_ActorUnkOLDM.cpp kind:function(arm,size=0x50) addr:0x02162c7c
 __sinit_ActorUnkRMC0.cpp kind:function(arm,size=0x50) addr:0x02162ccc
@@ -368,8 +368,8 @@ __sinit_ActorUnkKIMA.cpp kind:function(arm,size=0x50) addr:0x02162fec
 __sinit_MapObjectUnkPLCT.cpp kind:function(arm,size=0x50) addr:0x0216303c
 __sinit_MapObjectUnkDFNC.cpp kind:function(arm,size=0x50) addr:0x0216308c
 __sinit_MapObjectUnkEXCT.cpp kind:function(arm,size=0x50) addr:0x021630dc
-.p__sinit_ActorUnkSOLD.cpp kind:data(word) addr:0x0216312c
-.p__sinit_ActorUnkSOLG.cpp kind:data(word) addr:0x02163130
+.p__sinit_ActorUnkSOLB_SOLC_SOLD.cpp kind:data(word) addr:0x0216312c
+.p__sinit_ActorUnkSOGB_SOGC_SOLG.cpp kind:data(word) addr:0x02163130
 .p__sinit_ActorUnkCOMM.cpp kind:data(word) addr:0x02163134
 .p__sinit_ActorUnkOLDM.cpp kind:data(word) addr:0x02163138
 .p__sinit_ActorUnkRMC0.cpp kind:data(word) addr:0x0216313c
