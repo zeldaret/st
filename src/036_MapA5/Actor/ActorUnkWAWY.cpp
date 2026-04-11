@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkWAWY.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkWAWY);
+ARM DECL_PROFILE(ActorProfileUnkWAWY);
 
 ARM Actor *ActorProfileUnkWAWY::Create() {
     return new(HeapIndex_2) ActorUnkWAWY();

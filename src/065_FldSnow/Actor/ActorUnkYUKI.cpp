@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkYUKI.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkYUKI);
+ARM DECL_PROFILE(ActorProfileUnkYUKI);
 
 ARM Actor *ActorProfileUnkYUKI::Create() {
     return new(HeapIndex_2) ActorUnkYUKI();

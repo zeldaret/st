@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkBOMB.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkBOMB);
+ARM DECL_PROFILE(ActorProfileUnkBOMB);
 
 ARM Actor *ActorProfileUnkBOMB::Create() {
     return new(HeapIndex_2) ActorUnkBOMB();

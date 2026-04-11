@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkBTIR.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkBTIR);
+ARM DECL_PROFILE(ActorProfileUnkBTIR);
 
 ARM Actor *ActorProfileUnkBTIR::Create() {
     return new(HeapIndex_2) ActorUnkBTIR();

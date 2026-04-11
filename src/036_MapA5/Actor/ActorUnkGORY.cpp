@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkGORY.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkGORY);
+ARM DECL_PROFILE(ActorProfileUnkGORY);
 
 ARM Actor *ActorProfileUnkGORY::Create() {
     return new(HeapIndex_2) ActorUnkGORY();

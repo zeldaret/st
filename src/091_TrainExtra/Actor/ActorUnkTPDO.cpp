@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkTPDO.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkTPDO);
+ARM DECL_PROFILE(ActorProfileUnkTPDO);
 
 ARM Actor *ActorProfileUnkTPDO::Create() {
     return new(HeapIndex_2) ActorUnkTPDO();

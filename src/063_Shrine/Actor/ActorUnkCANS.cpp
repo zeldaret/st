@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkCANS.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkCANS);
+ARM DECL_PROFILE(ActorProfileUnkCANS);
 
 ARM Actor *ActorProfileUnkCANS::Create() {
     return new(HeapIndex_2) ActorUnkCANS();

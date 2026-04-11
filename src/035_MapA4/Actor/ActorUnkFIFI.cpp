@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkFIFI.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkFIFI);
+ARM DECL_PROFILE(ActorProfileUnkFIFI);
 
 ARM Actor *ActorProfileUnkFIFI::Create() {
     return new(HeapIndex_2) ActorUnkFIFI();

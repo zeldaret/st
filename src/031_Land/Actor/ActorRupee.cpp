@@ -19,7 +19,7 @@ extern "C" unk32 func_ov031_020d9834(unk32 *);
 extern unk32 *data_027e0d34;
 extern Cylinder data_ov031_02113478;
 
-DECL_PROFILE(ActorProfileRupee);
+ARM DECL_PROFILE(ActorProfileRupee);
 
 ARM Actor *ActorProfileRupee::Create() {
     return new(HeapIndex_2) ActorRupee();

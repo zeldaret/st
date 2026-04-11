@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkPSBK.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkPSBK);
+ARM DECL_PROFILE(ActorProfileUnkPSBK);
 
 ARM Actor *ActorProfileUnkPSBK::Create() {
     return new(HeapIndex_2) ActorUnkPSBK();

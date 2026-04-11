@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkOFSW.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkOFSW);
+ARM DECL_PROFILE(ActorProfileUnkOFSW);
 
 ARM Actor *ActorProfileUnkOFSW::Create() {
     return new(HeapIndex_2) ActorUnkOFSW();

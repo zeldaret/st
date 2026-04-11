@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkRMSF.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkRMSF);
+ARM DECL_PROFILE(ActorProfileUnkRMSF);
 
 ARM Actor *ActorProfileUnkRMSF::Create() {
     return new(HeapIndex_2) ActorUnkRMSF();

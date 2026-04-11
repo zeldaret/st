@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkBANI.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkBANI);
+ARM DECL_PROFILE(ActorProfileUnkBANI);
 
 ARM Actor *ActorProfileUnkBANI::Create() {
     return new(HeapIndex_2) ActorUnkBANI();

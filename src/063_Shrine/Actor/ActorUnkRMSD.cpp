@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkRMSD.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkRMSD);
+ARM DECL_PROFILE(ActorProfileUnkRMSD);
 
 ARM Actor *ActorProfileUnkRMSD::Create() {
     return new(HeapIndex_2) ActorUnkRMSD();

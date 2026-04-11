@@ -6,7 +6,7 @@
 
 #if IS_JP
 
-DECL_PROFILE(ActorProfileUnkPMTT);
+ARM DECL_PROFILE(ActorProfileUnkPMTT);
 
 ARM Actor *ActorProfileUnkPMTT::Create() {
     return new(HeapIndex_2) ActorUnkPMTT();

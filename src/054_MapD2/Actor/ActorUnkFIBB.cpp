@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkFIBB.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkFIBB);
+ARM DECL_PROFILE(ActorProfileUnkFIBB);
 
 ARM Actor *ActorProfileUnkFIBB::Create() {
     return new(HeapIndex_2) ActorUnkFIBB();

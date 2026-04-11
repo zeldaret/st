@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkGOKI.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkGOKI);
+ARM DECL_PROFILE(ActorProfileUnkGOKI);
 
 ARM Actor *ActorProfileUnkGOKI::Create() {
     return new(HeapIndex_2) ActorUnkGOKI();

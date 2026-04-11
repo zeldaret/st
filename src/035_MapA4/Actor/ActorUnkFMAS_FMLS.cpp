@@ -5,7 +5,7 @@
 
 // --- Actor FMAS ---
 
-DECL_PROFILE(ActorProfileUnkFMAS);
+ARM DECL_PROFILE(ActorProfileUnkFMAS);
 
 ARM Actor *ActorProfileUnkFMAS::Create() {
     return new(HeapIndex_2) ActorUnkFMAS();
@@ -18,7 +18,7 @@ ARM ActorUnkFMAS::ActorUnkFMAS() {}
 
 // --- Actor FMLS ---
 
-DECL_PROFILE(ActorProfileUnkFMLS);
+ARM DECL_PROFILE(ActorProfileUnkFMLS);
 
 ARM Actor *ActorProfileUnkFMLS::Create() {
     return new(HeapIndex_2) ActorUnkFMLS();

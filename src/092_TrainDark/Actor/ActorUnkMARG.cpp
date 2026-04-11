@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkMARG.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkMARG);
+ARM DECL_PROFILE(ActorProfileUnkMARG);
 
 ARM Actor *ActorProfileUnkMARG::Create() {
     return new(HeapIndex_2) ActorUnkMARG();

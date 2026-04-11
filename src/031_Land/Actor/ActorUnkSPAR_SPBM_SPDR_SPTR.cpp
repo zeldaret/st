@@ -5,7 +5,7 @@
 
 // --- Actor SPAR ---
 
-DECL_PROFILE(ActorProfileUnkSPAR);
+ARM DECL_PROFILE(ActorProfileUnkSPAR);
 
 ARM Actor *ActorProfileUnkSPAR::Create() {
     return new(HeapIndex_2) ActorUnkSPAR();
@@ -18,7 +18,7 @@ ARM ActorUnkSPAR::ActorUnkSPAR() {}
 
 // --- Actor SPBM ---
 
-DECL_PROFILE(ActorProfileUnkSPBM);
+ARM DECL_PROFILE(ActorProfileUnkSPBM);
 
 ARM Actor *ActorProfileUnkSPBM::Create() {
     return new(HeapIndex_2) ActorUnkSPBM();
@@ -31,7 +31,7 @@ ARM ActorUnkSPBM::ActorUnkSPBM() {}
 
 // --- Actor SPDR ---
 
-DECL_PROFILE(ActorProfileUnkSPDR);
+ARM DECL_PROFILE(ActorProfileUnkSPDR);
 
 ARM Actor *ActorProfileUnkSPDR::Create() {
     return new(HeapIndex_2) ActorUnkSPDR();
@@ -44,7 +44,7 @@ ARM ActorUnkSPDR::ActorUnkSPDR() {}
 
 // --- Actor SPTR ---
 
-DECL_PROFILE(ActorProfileUnkSPTR);
+ARM DECL_PROFILE(ActorProfileUnkSPTR);
 
 ARM Actor *ActorProfileUnkSPTR::Create() {
     return new(HeapIndex_2) ActorUnkSPTR();

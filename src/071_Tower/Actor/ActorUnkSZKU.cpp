@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkSZKU.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkSZKU);
+ARM DECL_PROFILE(ActorProfileUnkSZKU);
 
 ARM Actor *ActorProfileUnkSZKU::Create() {
     return new(HeapIndex_2) ActorUnkSZKU();

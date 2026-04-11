@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkHYSW.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkHYSW);
+ARM DECL_PROFILE(ActorProfileUnkHYSW);
 
 ARM Actor *ActorProfileUnkHYSW::Create() {
     return new(HeapIndex_2) ActorUnkHYSW();

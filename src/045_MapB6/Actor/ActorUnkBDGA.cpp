@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkBDGA.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkBDGA);
+ARM DECL_PROFILE(ActorProfileUnkBDGA);
 
 ARM Actor *ActorProfileUnkBDGA::Create() {
     return new(HeapIndex_2) ActorUnkBDGA();

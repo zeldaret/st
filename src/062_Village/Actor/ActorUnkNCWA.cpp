@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkNCWA.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkNCWA);
+ARM DECL_PROFILE(ActorProfileUnkNCWA);
 
 ARM Actor *ActorProfileUnkNCWA::Create() {
     return new(HeapIndex_2) ActorUnkNCWA();

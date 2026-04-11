@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkMIFR.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkMIFR);
+ARM DECL_PROFILE(ActorProfileUnkMIFR);
 
 ARM Actor *ActorProfileUnkMIFR::Create() {
     return new(HeapIndex_2) ActorUnkMIFR();

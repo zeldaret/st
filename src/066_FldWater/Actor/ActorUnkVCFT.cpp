@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkVCFT.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkVCFT);
+ARM DECL_PROFILE(ActorProfileUnkVCFT);
 
 ARM Actor *ActorProfileUnkVCFT::Create() {
     return new(HeapIndex_2) ActorUnkVCFT();

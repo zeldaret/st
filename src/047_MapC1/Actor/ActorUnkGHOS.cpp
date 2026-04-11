@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkGHOS.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkGHOS);
+ARM DECL_PROFILE(ActorProfileUnkGHOS);
 
 ARM Actor *ActorProfileUnkGHOS::Create() {
     return new(HeapIndex_2) ActorUnkGHOS();

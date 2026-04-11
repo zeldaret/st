@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkCROW.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkCROW);
+ARM DECL_PROFILE(ActorProfileUnkCROW);
 
 ARM Actor *ActorProfileUnkCROW::Create() {
     return new(HeapIndex_2) ActorUnkCROW();

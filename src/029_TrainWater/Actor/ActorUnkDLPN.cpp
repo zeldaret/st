@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkDLPN.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkDLPN);
+ARM DECL_PROFILE(ActorProfileUnkDLPN);
 
 ARM Actor *ActorProfileUnkDLPN::Create() {
     return new(HeapIndex_2) ActorUnkDLPN();

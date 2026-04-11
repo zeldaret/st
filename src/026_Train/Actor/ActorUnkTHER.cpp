@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkTHER.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkTHER);
+ARM DECL_PROFILE(ActorProfileUnkTHER);
 
 ARM Actor *ActorProfileUnkTHER::Create() {
     return new(HeapIndex_2) ActorUnkTHER();

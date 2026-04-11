@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkTUTO.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkTUTO);
+ARM DECL_PROFILE(ActorProfileUnkTUTO);
 
 ARM Actor *ActorProfileUnkTUTO::Create() {
     return new(HeapIndex_2) ActorUnkTUTO();

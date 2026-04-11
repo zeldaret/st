@@ -3,9 +3,23 @@
 #include "Actor/ActorUnkSYDE_SYDL_SYDS_SYFI_SYFO_SYIL_SYIS_SYOL_SYOS_SYSL_SYSN_SYSS_SYWA_SYWL_SYWS.hpp"
 #include "System/SysNew.hpp"
 
-// --- Actor SYDE ---
+ARM DECL_PROFILE(ActorProfileUnkSYOS);
+ARM DECL_PROFILE(ActorProfileUnkSYSS);
+ARM DECL_PROFILE(ActorProfileUnkSYWS);
+ARM DECL_PROFILE(ActorProfileUnkSYIS);
+ARM DECL_PROFILE(ActorProfileUnkSYDS);
+ARM DECL_PROFILE(ActorProfileUnkSYOL);
+ARM DECL_PROFILE(ActorProfileUnkSYSL);
+ARM DECL_PROFILE(ActorProfileUnkSYWL);
+ARM DECL_PROFILE(ActorProfileUnkSYIL);
+ARM DECL_PROFILE(ActorProfileUnkSYDL);
+ARM DECL_PROFILE(ActorProfileUnkSYFO);
+ARM DECL_PROFILE(ActorProfileUnkSYSN);
+ARM DECL_PROFILE(ActorProfileUnkSYWA);
+ARM DECL_PROFILE(ActorProfileUnkSYFI);
+ARM DECL_PROFILE(ActorProfileUnkSYDE);
 
-DECL_PROFILE(ActorProfileUnkSYDE);
+// --- Actor SYDE ---
 
 ARM Actor *ActorProfileUnkSYDE::Create() {
     return new(HeapIndex_2) ActorUnkSYDE();
@@ -18,8 +32,6 @@ ARM ActorUnkSYDE::ActorUnkSYDE() {}
 
 // --- Actor SYDL ---
 
-DECL_PROFILE(ActorProfileUnkSYDL);
-
 ARM Actor *ActorProfileUnkSYDL::Create() {
     return new(HeapIndex_2) ActorUnkSYDL();
 }
@@ -30,8 +42,6 @@ ARM ActorProfileUnkSYDL::ActorProfileUnkSYDL() :
 ARM ActorUnkSYDL::ActorUnkSYDL() {}
 
 // --- Actor SYDS ---
-
-DECL_PROFILE(ActorProfileUnkSYDS);
 
 ARM Actor *ActorProfileUnkSYDS::Create() {
     return new(HeapIndex_2) ActorUnkSYDS();
@@ -44,8 +54,6 @@ ARM ActorUnkSYDS::ActorUnkSYDS() {}
 
 // --- Actor SYFI ---
 
-DECL_PROFILE(ActorProfileUnkSYFI);
-
 ARM Actor *ActorProfileUnkSYFI::Create() {
     return new(HeapIndex_2) ActorUnkSYFI();
 }
@@ -56,8 +64,6 @@ ARM ActorProfileUnkSYFI::ActorProfileUnkSYFI() :
 ARM ActorUnkSYFI::ActorUnkSYFI() {}
 
 // --- Actor SYFO ---
-
-DECL_PROFILE(ActorProfileUnkSYFO);
 
 ARM Actor *ActorProfileUnkSYFO::Create() {
     return new(HeapIndex_2) ActorUnkSYFO();
@@ -70,8 +76,6 @@ ARM ActorUnkSYFO::ActorUnkSYFO() {}
 
 // --- Actor SYIL ---
 
-DECL_PROFILE(ActorProfileUnkSYIL);
-
 ARM Actor *ActorProfileUnkSYIL::Create() {
     return new(HeapIndex_2) ActorUnkSYIL();
 }
@@ -82,8 +86,6 @@ ARM ActorProfileUnkSYIL::ActorProfileUnkSYIL() :
 ARM ActorUnkSYIL::ActorUnkSYIL() {}
 
 // --- Actor SYIS ---
-
-DECL_PROFILE(ActorProfileUnkSYIS);
 
 ARM Actor *ActorProfileUnkSYIS::Create() {
     return new(HeapIndex_2) ActorUnkSYIS();
@@ -96,8 +98,6 @@ ARM ActorUnkSYIS::ActorUnkSYIS() {}
 
 // --- Actor SYOL ---
 
-DECL_PROFILE(ActorProfileUnkSYOL);
-
 ARM Actor *ActorProfileUnkSYOL::Create() {
     return new(HeapIndex_2) ActorUnkSYOL();
 }
@@ -108,8 +108,6 @@ ARM ActorProfileUnkSYOL::ActorProfileUnkSYOL() :
 ARM ActorUnkSYOL::ActorUnkSYOL() {}
 
 // --- Actor SYOS ---
-
-DECL_PROFILE(ActorProfileUnkSYOS);
 
 ARM Actor *ActorProfileUnkSYOS::Create() {
     return new(HeapIndex_2) ActorUnkSYOS();
@@ -122,8 +120,6 @@ ARM ActorUnkSYOS::ActorUnkSYOS() {}
 
 // --- Actor SYSL ---
 
-DECL_PROFILE(ActorProfileUnkSYSL);
-
 ARM Actor *ActorProfileUnkSYSL::Create() {
     return new(HeapIndex_2) ActorUnkSYSL();
 }
@@ -134,8 +130,6 @@ ARM ActorProfileUnkSYSL::ActorProfileUnkSYSL() :
 ARM ActorUnkSYSL::ActorUnkSYSL() {}
 
 // --- Actor SYSN ---
-
-DECL_PROFILE(ActorProfileUnkSYSN);
 
 ARM Actor *ActorProfileUnkSYSN::Create() {
     return new(HeapIndex_2) ActorUnkSYSN();
@@ -148,8 +142,6 @@ ARM ActorUnkSYSN::ActorUnkSYSN() {}
 
 // --- Actor SYSS ---
 
-DECL_PROFILE(ActorProfileUnkSYSS);
-
 ARM Actor *ActorProfileUnkSYSS::Create() {
     return new(HeapIndex_2) ActorUnkSYSS();
 }
@@ -160,8 +152,6 @@ ARM ActorProfileUnkSYSS::ActorProfileUnkSYSS() :
 ARM ActorUnkSYSS::ActorUnkSYSS() {}
 
 // --- Actor SYWA ---
-
-DECL_PROFILE(ActorProfileUnkSYWA);
 
 ARM Actor *ActorProfileUnkSYWA::Create() {
     return new(HeapIndex_2) ActorUnkSYWA();
@@ -174,8 +164,6 @@ ARM ActorUnkSYWA::ActorUnkSYWA() {}
 
 // --- Actor SYWL ---
 
-DECL_PROFILE(ActorProfileUnkSYWL);
-
 ARM Actor *ActorProfileUnkSYWL::Create() {
     return new(HeapIndex_2) ActorUnkSYWL();
 }
@@ -186,8 +174,6 @@ ARM ActorProfileUnkSYWL::ActorProfileUnkSYWL() :
 ARM ActorUnkSYWL::ActorUnkSYWL() {}
 
 // --- Actor SYWS ---
-
-DECL_PROFILE(ActorProfileUnkSYWS);
 
 ARM Actor *ActorProfileUnkSYWS::Create() {
     return new(HeapIndex_2) ActorUnkSYWS();

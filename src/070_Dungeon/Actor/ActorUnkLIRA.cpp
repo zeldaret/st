@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkLIRA.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkLIRA);
+ARM DECL_PROFILE(ActorProfileUnkLIRA);
 
 ARM Actor *ActorProfileUnkLIRA::Create() {
     return new(HeapIndex_2) ActorUnkLIRA();

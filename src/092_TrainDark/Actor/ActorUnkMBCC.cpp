@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkMBCC.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkMBCC);
+ARM DECL_PROFILE(ActorProfileUnkMBCC);
 
 ARM Actor *ActorProfileUnkMBCC::Create() {
     return new(HeapIndex_2) ActorUnkMBCC();

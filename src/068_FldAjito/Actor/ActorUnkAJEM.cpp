@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkAJEM.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkAJEM);
+ARM DECL_PROFILE(ActorProfileUnkAJEM);
 
 ARM Actor *ActorProfileUnkAJEM::Create() {
     return new(HeapIndex_2) ActorUnkAJEM();

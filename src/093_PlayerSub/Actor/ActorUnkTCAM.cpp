@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkTCAM.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkTCAM);
+ARM DECL_PROFILE(ActorProfileUnkTCAM);
 
 ARM Actor *ActorProfileUnkTCAM::Create() {
     return new(HeapIndex_2) ActorUnkTCAM();

@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkNORE.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkNORE);
+ARM DECL_PROFILE(ActorProfileUnkNORE);
 
 ARM Actor *ActorProfileUnkNORE::Create() {
     return new(HeapIndex_2) ActorUnkNORE();

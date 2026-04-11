@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkKGDB.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkKGDB);
+ARM DECL_PROFILE(ActorProfileUnkKGDB);
 
 ARM Actor *ActorProfileUnkKGDB::Create() {
     return new(HeapIndex_2) ActorUnkKGDB();

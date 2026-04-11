@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkNAVI.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkNAVI);
+ARM DECL_PROFILE(ActorProfileUnkNAVI);
 
 ARM Actor *ActorProfileUnkNAVI::Create() {
     return new(HeapIndex_2) ActorUnkNAVI();

@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkWHMA.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkWHMA);
+ARM DECL_PROFILE(ActorProfileUnkWHMA);
 
 ARM Actor *ActorProfileUnkWHMA::Create() {
     return new(HeapIndex_2) ActorUnkWHMA();

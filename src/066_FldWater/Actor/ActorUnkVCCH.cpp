@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkVCCH.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkVCCH);
+ARM DECL_PROFILE(ActorProfileUnkVCCH);
 
 ARM Actor *ActorProfileUnkVCCH::Create() {
     return new(HeapIndex_2) ActorUnkVCCH();

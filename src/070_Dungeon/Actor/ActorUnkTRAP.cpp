@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkTRAP.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkTRAP);
+ARM DECL_PROFILE(ActorProfileUnkTRAP);
 
 ARM Actor *ActorProfileUnkTRAP::Create() {
     return new(HeapIndex_2) ActorUnkTRAP();

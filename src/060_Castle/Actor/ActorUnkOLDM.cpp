@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkOLDM.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkOLDM);
+ARM DECL_PROFILE(ActorProfileUnkOLDM);
 
 ARM Actor *ActorProfileUnkOLDM::Create() {
     return new(HeapIndex_2) ActorUnkOLDM();

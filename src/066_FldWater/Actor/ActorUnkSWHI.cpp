@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkSWHI.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkSWHI);
+ARM DECL_PROFILE(ActorProfileUnkSWHI);
 
 ARM Actor *ActorProfileUnkSWHI::Create() {
     return new(HeapIndex_2) ActorUnkSWHI();

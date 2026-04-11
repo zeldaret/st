@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkDSWT.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkDSWT);
+ARM DECL_PROFILE(ActorProfileUnkDSWT);
 
 ARM Actor *ActorProfileUnkDSWT::Create() {
     return new(HeapIndex_2) ActorUnkDSWT();

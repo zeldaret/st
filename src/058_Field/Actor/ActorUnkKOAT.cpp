@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkKOAT.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkKOAT);
+ARM DECL_PROFILE(ActorProfileUnkKOAT);
 
 ARM Actor *ActorProfileUnkKOAT::Create() {
     return new(HeapIndex_2) ActorUnkKOAT();

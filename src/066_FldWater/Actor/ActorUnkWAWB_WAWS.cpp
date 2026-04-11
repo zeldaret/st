@@ -5,7 +5,7 @@
 
 // --- Actor WAWB ---
 
-DECL_PROFILE(ActorProfileUnkWAWB);
+ARM DECL_PROFILE(ActorProfileUnkWAWB);
 
 ARM Actor *ActorProfileUnkWAWB::Create() {
     return new(HeapIndex_2) ActorUnkWAWB();
@@ -18,7 +18,7 @@ ARM ActorUnkWAWB::ActorUnkWAWB() {}
 
 // --- Actor WAWS ---
 
-DECL_PROFILE(ActorProfileUnkWAWS);
+ARM DECL_PROFILE(ActorProfileUnkWAWS);
 
 ARM Actor *ActorProfileUnkWAWS::Create() {
     return new(HeapIndex_2) ActorUnkWAWS();

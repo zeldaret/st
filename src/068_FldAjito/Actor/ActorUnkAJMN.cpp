@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkAJMN.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkAJMN);
+ARM DECL_PROFILE(ActorProfileUnkAJMN);
 
 ARM Actor *ActorProfileUnkAJMN::Create() {
     return new(HeapIndex_2) ActorUnkAJMN();

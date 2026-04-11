@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkSWBM.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkSWBM);
+ARM DECL_PROFILE(ActorProfileUnkSWBM);
 
 ARM Actor *ActorProfileUnkSWBM::Create() {
     return new(HeapIndex_2) ActorUnkSWBM();

@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkTFAT.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkTFAT);
+ARM DECL_PROFILE(ActorProfileUnkTFAT);
 
 ARM Actor *ActorProfileUnkTFAT::Create() {
     return new(HeapIndex_2) ActorUnkTFAT();

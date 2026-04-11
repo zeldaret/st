@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkICBS.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkICBS);
+ARM DECL_PROFILE(ActorProfileUnkICBS);
 
 ARM Actor *ActorProfileUnkICBS::Create() {
     return new(HeapIndex_2) ActorUnkICBS();

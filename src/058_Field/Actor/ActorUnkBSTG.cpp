@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkBSTG.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkBSTG);
+ARM DECL_PROFILE(ActorProfileUnkBSTG);
 
 ARM Actor *ActorProfileUnkBSTG::Create() {
     return new(HeapIndex_2) ActorUnkBSTG();

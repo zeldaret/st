@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkKMOS.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkKMOS);
+ARM DECL_PROFILE(ActorProfileUnkKMOS);
 
 ARM Actor *ActorProfileUnkKMOS::Create() {
     return new(HeapIndex_2) ActorUnkKMOS();

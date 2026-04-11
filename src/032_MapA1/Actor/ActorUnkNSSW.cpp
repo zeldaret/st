@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkNSSW.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkNSSW);
+ARM DECL_PROFILE(ActorProfileUnkNSSW);
 
 ARM Actor *ActorProfileUnkNSSW::Create() {
     return new(HeapIndex_2) ActorUnkNSSW();

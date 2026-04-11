@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkBMOC.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkBMOC);
+ARM DECL_PROFILE(ActorProfileUnkBMOC);
 
 ARM Actor *ActorProfileUnkBMOC::Create() {
     return new(HeapIndex_2) ActorUnkBMOC();

@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkTLKT.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkTLKT);
+ARM DECL_PROFILE(ActorProfileUnkTLKT);
 
 ARM Actor *ActorProfileUnkTLKT::Create() {
     return new(HeapIndex_2) ActorUnkTLKT();

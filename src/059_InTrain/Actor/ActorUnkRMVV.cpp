@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkRMVV.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkRMVV);
+ARM DECL_PROFILE(ActorProfileUnkRMVV);
 
 ARM Actor *ActorProfileUnkRMVV::Create() {
     return new(HeapIndex_2) ActorUnkRMVV();

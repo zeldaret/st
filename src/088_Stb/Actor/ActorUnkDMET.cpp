@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkDMET.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkDMET);
+ARM DECL_PROFILE(ActorProfileUnkDMET);
 
 ARM Actor *ActorProfileUnkDMET::Create() {
     return new(HeapIndex_2) ActorUnkDMET();

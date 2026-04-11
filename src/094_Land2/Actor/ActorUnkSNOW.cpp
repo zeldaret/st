@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkSNOW.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkSNOW);
+ARM DECL_PROFILE(ActorProfileUnkSNOW);
 
 ARM Actor *ActorProfileUnkSNOW::Create() {
     return new(HeapIndex_2) ActorUnkSNOW();

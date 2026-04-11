@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkLIKE.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkLIKE);
+ARM DECL_PROFILE(ActorProfileUnkLIKE);
 
 ARM Actor *ActorProfileUnkLIKE::Create() {
     return new(HeapIndex_2) ActorUnkLIKE();

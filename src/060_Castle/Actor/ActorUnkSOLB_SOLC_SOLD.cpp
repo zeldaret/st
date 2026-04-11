@@ -5,7 +5,7 @@
 
 // --- Actor SOLB ---
 
-DECL_PROFILE(ActorProfileUnkSOLB);
+ARM DECL_PROFILE(ActorProfileUnkSOLB);
 
 ARM Actor *ActorProfileUnkSOLB::Create() {
     return new(HeapIndex_2) ActorUnkSOLB();
@@ -18,7 +18,7 @@ ARM ActorUnkSOLB::ActorUnkSOLB() {}
 
 // --- Actor SOLC ---
 
-DECL_PROFILE(ActorProfileUnkSOLC);
+ARM DECL_PROFILE(ActorProfileUnkSOLC);
 
 ARM Actor *ActorProfileUnkSOLC::Create() {
     return new(HeapIndex_2) ActorUnkSOLC();
@@ -31,7 +31,7 @@ ARM ActorUnkSOLC::ActorUnkSOLC() {}
 
 // --- Actor SOLD ---
 
-DECL_PROFILE(ActorProfileUnkSOLD);
+ARM DECL_PROFILE(ActorProfileUnkSOLD);
 
 ARM Actor *ActorProfileUnkSOLD::Create() {
     return new(HeapIndex_2) ActorUnkSOLD();

@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkWWFS.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkWWFS);
+ARM DECL_PROFILE(ActorProfileUnkWWFS);
 
 ARM Actor *ActorProfileUnkWWFS::Create() {
     return new(HeapIndex_2) ActorUnkWWFS();

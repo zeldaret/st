@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkPSWB.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkPSWB);
+ARM DECL_PROFILE(ActorProfileUnkPSWB);
 
 ARM Actor *ActorProfileUnkPSWB::Create() {
     return new(HeapIndex_2) ActorUnkPSWB();

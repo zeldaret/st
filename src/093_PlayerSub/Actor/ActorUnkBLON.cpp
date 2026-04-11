@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkBLON.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkBLON);
+ARM DECL_PROFILE(ActorProfileUnkBLON);
 
 ARM Actor *ActorProfileUnkBLON::Create() {
     return new(HeapIndex_2) ActorUnkBLON();

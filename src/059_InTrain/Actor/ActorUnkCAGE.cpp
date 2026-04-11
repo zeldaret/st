@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkCAGE.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkCAGE);
+ARM DECL_PROFILE(ActorProfileUnkCAGE);
 
 ARM Actor *ActorProfileUnkCAGE::Create() {
     return new(HeapIndex_2) ActorUnkCAGE();

@@ -5,7 +5,7 @@
 
 // --- Actor YKAP ---
 
-DECL_PROFILE(ActorProfileUnkYKAP);
+ARM DECL_PROFILE(ActorProfileUnkYKAP);
 
 ARM Actor *ActorProfileUnkYKAP::Create() {
     return new(HeapIndex_2) ActorUnkYKAP();
@@ -18,7 +18,7 @@ ARM ActorUnkYKAP::ActorUnkYKAP() {}
 
 // --- Actor YKCP ---
 
-DECL_PROFILE(ActorProfileUnkYKCP);
+ARM DECL_PROFILE(ActorProfileUnkYKCP);
 
 ARM Actor *ActorProfileUnkYKCP::Create() {
     return new(HeapIndex_2) ActorUnkYKCP();
@@ -31,7 +31,7 @@ ARM ActorUnkYKCP::ActorUnkYKCP() {}
 
 // --- Actor YKEP ---
 
-DECL_PROFILE(ActorProfileUnkYKEP);
+ARM DECL_PROFILE(ActorProfileUnkYKEP);
 
 ARM Actor *ActorProfileUnkYKEP::Create() {
     return new(HeapIndex_2) ActorUnkYKEP();

@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkPLSR.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkPLSR);
+ARM DECL_PROFILE(ActorProfileUnkPLSR);
 
 ARM Actor *ActorProfileUnkPLSR::Create() {
     return new(HeapIndex_2) ActorUnkPLSR();

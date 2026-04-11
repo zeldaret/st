@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkRMC1.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkRMC1);
+ARM DECL_PROFILE(ActorProfileUnkRMC1);
 
 ARM Actor *ActorProfileUnkRMC1::Create() {
     return new(HeapIndex_2) ActorUnkRMC1();

@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkMABL.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkMABL);
+ARM DECL_PROFILE(ActorProfileUnkMABL);
 
 ARM Actor *ActorProfileUnkMABL::Create() {
     return new(HeapIndex_2) ActorUnkMABL();

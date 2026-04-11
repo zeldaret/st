@@ -5,7 +5,7 @@
 
 // --- Actor NCCB ---
 
-DECL_PROFILE(ActorProfileUnkNCCB);
+ARM DECL_PROFILE(ActorProfileUnkNCCB);
 
 ARM Actor *ActorProfileUnkNCCB::Create() {
     return new(HeapIndex_2) ActorUnkNCCB();
@@ -18,7 +18,7 @@ ARM ActorUnkNCCB::ActorUnkNCCB() {}
 
 // --- Actor NCMB ---
 
-DECL_PROFILE(ActorProfileUnkNCMB);
+ARM DECL_PROFILE(ActorProfileUnkNCMB);
 
 ARM Actor *ActorProfileUnkNCMB::Create() {
     return new(HeapIndex_2) ActorUnkNCMB();

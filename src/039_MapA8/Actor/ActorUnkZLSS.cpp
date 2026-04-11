@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkZLSS.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkZLSS);
+ARM DECL_PROFILE(ActorProfileUnkZLSS);
 
 ARM Actor *ActorProfileUnkZLSS::Create() {
     return new(HeapIndex_2) ActorUnkZLSS();

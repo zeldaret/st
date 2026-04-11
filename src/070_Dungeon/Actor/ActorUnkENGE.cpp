@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkENGE.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkENGE);
+ARM DECL_PROFILE(ActorProfileUnkENGE);
 
 ARM Actor *ActorProfileUnkENGE::Create() {
     return new(HeapIndex_2) ActorUnkENGE();

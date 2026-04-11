@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkCASL.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkCASL);
+ARM DECL_PROFILE(ActorProfileUnkCASL);
 
 ARM Actor *ActorProfileUnkCASL::Create() {
     return new(HeapIndex_2) ActorUnkCASL();

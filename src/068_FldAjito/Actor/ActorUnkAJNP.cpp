@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkAJNP.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkAJNP);
+THUMB DECL_PROFILE(ActorProfileUnkAJNP);
 
 THUMB Actor *ActorProfileUnkAJNP::Create() {
     return new(HeapIndex_2) ActorUnkAJNP();

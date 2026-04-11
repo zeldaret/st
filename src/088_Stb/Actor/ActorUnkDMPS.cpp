@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkDMPS.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkDMPS);
+ARM DECL_PROFILE(ActorProfileUnkDMPS);
 
 ARM Actor *ActorProfileUnkDMPS::Create() {
     return new(HeapIndex_2) ActorUnkDMPS();

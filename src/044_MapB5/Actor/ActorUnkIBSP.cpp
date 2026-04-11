@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkIBSP.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkIBSP);
+ARM DECL_PROFILE(ActorProfileUnkIBSP);
 
 ARM Actor *ActorProfileUnkIBSP::Create() {
     return new(HeapIndex_2) ActorUnkIBSP();

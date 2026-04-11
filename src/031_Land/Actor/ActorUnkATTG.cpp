@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkATTG.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkATTG);
+ARM DECL_PROFILE(ActorProfileUnkATTG);
 
 ARM Actor *ActorProfileUnkATTG::Create() {
     return new(HeapIndex_2) ActorUnkATTG();

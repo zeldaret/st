@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkIWTS.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkIWTS);
+ARM DECL_PROFILE(ActorProfileUnkIWTS);
 
 ARM Actor *ActorProfileUnkIWTS::Create() {
     return new(HeapIndex_2) ActorUnkIWTS();

@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkPMST.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkPMST);
+ARM DECL_PROFILE(ActorProfileUnkPMST);
 
 ARM Actor *ActorProfileUnkPMST::Create() {
     return new(HeapIndex_2) ActorUnkPMST();

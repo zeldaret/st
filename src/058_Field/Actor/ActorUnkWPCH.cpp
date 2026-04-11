@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkWPCH.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkWPCH);
+ARM DECL_PROFILE(ActorProfileUnkWPCH);
 
 ARM Actor *ActorProfileUnkWPCH::Create() {
     return new(HeapIndex_2) ActorUnkWPCH();

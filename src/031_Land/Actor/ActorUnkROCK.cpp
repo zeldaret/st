@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkROCK.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkROCK);
+ARM DECL_PROFILE(ActorProfileUnkROCK);
 
 ARM Actor *ActorProfileUnkROCK::Create() {
     return new(HeapIndex_2) ActorUnkROCK();

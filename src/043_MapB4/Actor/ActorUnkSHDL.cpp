@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkSHDL.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkSHDL);
+THUMB DECL_PROFILE(ActorProfileUnkSHDL);
 
 THUMB Actor *ActorProfileUnkSHDL::Create() {
     return new(HeapIndex_2) ActorUnkSHDL();

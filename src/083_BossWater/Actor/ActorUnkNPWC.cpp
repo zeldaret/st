@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkNPWC.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkNPWC);
+ARM DECL_PROFILE(ActorProfileUnkNPWC);
 
 ARM Actor *ActorProfileUnkNPWC::Create() {
     return new(HeapIndex_2) ActorUnkNPWC();

@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkSOLF.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkSOLF);
+ARM DECL_PROFILE(ActorProfileUnkSOLF);
 
 ARM Actor *ActorProfileUnkSOLF::Create() {
     return new(HeapIndex_2) ActorUnkSOLF();

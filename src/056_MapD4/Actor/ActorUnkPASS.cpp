@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkPASS.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkPASS);
+ARM DECL_PROFILE(ActorProfileUnkPASS);
 
 ARM Actor *ActorProfileUnkPASS::Create() {
     return new(HeapIndex_2) ActorUnkPASS();

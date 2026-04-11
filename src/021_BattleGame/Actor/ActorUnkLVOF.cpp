@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkLVOF.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkLVOF);
+ARM DECL_PROFILE(ActorProfileUnkLVOF);
 
 ARM Actor *ActorProfileUnkLVOF::Create() {
     return new(HeapIndex_2) ActorUnkLVOF();

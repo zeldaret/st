@@ -5,7 +5,7 @@
 
 // --- Actor GOCA ---
 
-DECL_PROFILE(ActorProfileUnkGOCA);
+ARM DECL_PROFILE(ActorProfileUnkGOCA);
 
 ARM Actor *ActorProfileUnkGOCA::Create() {
     return new(HeapIndex_2) ActorUnkGOCA();
@@ -18,7 +18,7 @@ ARM ActorUnkGOCA::ActorUnkGOCA() {}
 
 // --- Actor GOCB ---
 
-DECL_PROFILE(ActorProfileUnkGOCB);
+ARM DECL_PROFILE(ActorProfileUnkGOCB);
 
 ARM Actor *ActorProfileUnkGOCB::Create() {
     return new(HeapIndex_2) ActorUnkGOCB();
@@ -31,7 +31,7 @@ ARM ActorUnkGOCB::ActorUnkGOCB() {}
 
 // --- Actor GORK ---
 
-DECL_PROFILE(ActorProfileUnkGORK);
+ARM DECL_PROFILE(ActorProfileUnkGORK);
 
 ARM Actor *ActorProfileUnkGORK::Create() {
     return new(HeapIndex_2) ActorUnkGORK();
@@ -44,7 +44,7 @@ ARM ActorUnkGORK::ActorUnkGORK() {}
 
 // --- Actor GORM ---
 
-DECL_PROFILE(ActorProfileUnkGORM);
+ARM DECL_PROFILE(ActorProfileUnkGORM);
 
 ARM Actor *ActorProfileUnkGORM::Create() {
     return new(HeapIndex_2) ActorUnkGORM();

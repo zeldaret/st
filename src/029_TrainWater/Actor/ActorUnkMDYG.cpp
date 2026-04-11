@@ -3,7 +3,7 @@
 #include "Actor/ActorUnkMDYG.hpp"
 #include "System/SysNew.hpp"
 
-DECL_PROFILE(ActorProfileUnkMDYG);
+ARM DECL_PROFILE(ActorProfileUnkMDYG);
 
 ARM Actor *ActorProfileUnkMDYG::Create() {
     return new(HeapIndex_2) ActorUnkMDYG();
