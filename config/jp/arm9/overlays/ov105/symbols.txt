@@ -137,4 +137,4 @@ data_ov105_0218be6c kind:data(any) addr:0x0218be6c
 _ZTV19data_ov105_0218be7c kind:data(any) addr:0x0218be7c
 data_ov105_0218bea0 kind:bss addr:0x0218bea0
 data_ov105_0218bea4 kind:bss addr:0x0218bea4
-sActorProfileUnkITWP kind:bss addr:0x0218beb0
+_ZN15ProfileInstanceI19ActorProfileUnkITWPE8sProfileE kind:bss addr:0x0218beb0

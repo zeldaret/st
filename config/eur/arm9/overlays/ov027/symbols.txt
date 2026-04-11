@@ -367,7 +367,7 @@ data_ov027_02149690 kind:bss addr:0x02149690
 sMapObjectProfileUnkMZFE kind:bss addr:0x0214969c
 data_ov027_02149770 kind:bss addr:0x02149770
 data_ov027_02149778 kind:bss addr:0x02149778
-sActorProfileUnkTRER kind:bss addr:0x02149784
+_ZN15ProfileInstanceI19ActorProfileUnkTRERE8sProfileE kind:bss addr:0x02149784
 data_ov027_0214985c kind:bss addr:0x0214985c
 data_ov027_02149860 kind:bss addr:0x02149860
 data_ov027_02149864 kind:bss addr:0x02149864
@@ -398,4 +398,4 @@ data_ov027_02149944 kind:bss addr:0x02149944
 data_ov027_02149954 kind:bss addr:0x02149954
 data_ov027_02149964 kind:bss addr:0x02149964
 data_ov027_02149974 kind:bss addr:0x02149974
-sActorProfileUnkFKTR kind:bss addr:0x02149984
+_ZN15ProfileInstanceI19ActorProfileUnkFKTRE8sProfileE kind:bss addr:0x02149984

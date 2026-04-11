@@ -914,4 +914,4 @@ data_ov024_020da050 kind:bss addr:0x020da050
 data_ov024_020da054 kind:bss addr:0x020da054 ambiguous
 data_ov024_020da058 kind:bss addr:0x020da058
 data_ov024_020da05c kind:bss addr:0x020da05c
-sActorProfileUnkOBPC kind:bss addr:0x020da068
+_ZN15ProfileInstanceI19ActorProfileUnkOBPCE8sProfileE kind:bss addr:0x020da068

@@ -572,10 +572,10 @@ data_ov071_021673a0 kind:bss addr:0x021673a0
 data_ov071_021673ac kind:bss addr:0x021673ac
 data_ov071_021673b0 kind:bss addr:0x021673b0
 data_ov071_021673bc kind:bss addr:0x021673bc
-sActorProfileUnkSZKU kind:bss addr:0x021673c8
+_ZN15ProfileInstanceI19ActorProfileUnkSZKUE8sProfileE kind:bss addr:0x021673c8
 data_ov071_021674a0 kind:bss addr:0x021674a0
 data_ov071_021674a4 kind:bss addr:0x021674a4
-sActorProfileUnkKMSO kind:bss addr:0x021674b0
+_ZN15ProfileInstanceI19ActorProfileUnkKMSOE8sProfileE kind:bss addr:0x021674b0
 data_ov071_02167588 kind:bss addr:0x02167588
 data_ov071_0216758c kind:bss addr:0x0216758c
 sMapObjectProfileUnkRNBO kind:bss addr:0x02167598

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkCANS.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkCANS sActorProfileUnkCANS;
-
-ARM ActorProfileUnkCANS *ActorProfileUnkCANS::GetProfile() {
-    return &sActorProfileUnkCANS;
-}
+DECL_PROFILE(ActorProfileUnkCANS);
 
 ARM Actor *ActorProfileUnkCANS::Create() {
     return new(HeapIndex_2) ActorUnkCANS();

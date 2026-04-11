@@ -592,30 +592,30 @@ data_ov090_02176f80 kind:bss addr:0x02176f80
 data_ov090_02176f88 kind:bss addr:0x02176f88
 data_ov090_02176f94 kind:bss addr:0x02176f94
 data_ov090_02176fa0 kind:bss addr:0x02176fa0
-sActorProfileUnkSZRD kind:bss addr:0x02176fb4
+_ZN15ProfileInstanceI19ActorProfileUnkSZRDE8sProfileE kind:bss addr:0x02176fb4
 data_ov090_0217708c kind:bss addr:0x0217708c
 data_ov090_02177094 kind:bss addr:0x02177094
 data_ov090_021770a0 kind:bss addr:0x021770a0
-sActorProfileUnkWDBA kind:bss addr:0x021770ac
+_ZN15ProfileInstanceI19ActorProfileUnkWDBAE8sProfileE kind:bss addr:0x021770ac
 data_ov090_021770f0 kind:bss addr:0x021770f0 ambiguous
 data_ov090_02177184 kind:bss addr:0x02177184
 data_ov090_02177188 kind:bss addr:0x02177188
-sActorProfileUnkWDRD kind:bss addr:0x02177194
+_ZN15ProfileInstanceI19ActorProfileUnkWDRDE8sProfileE kind:bss addr:0x02177194
 data_ov090_02177218 kind:bss addr:0x02177218 ambiguous
 data_ov090_02177228 kind:bss addr:0x02177228 ambiguous
 data_ov090_0217726c kind:bss addr:0x0217726c
 data_ov090_02177270 kind:bss addr:0x02177270
 data_ov090_0217727c kind:bss addr:0x0217727c
-sActorProfileUnkSPID kind:bss addr:0x02177288
+_ZN15ProfileInstanceI19ActorProfileUnkSPIDE8sProfileE kind:bss addr:0x02177288
 data_ov090_02177360 kind:bss addr:0x02177360
 data_ov090_02177364 kind:bss addr:0x02177364
-sActorProfileUnkE3GL kind:bss addr:0x02177370
+_ZN15ProfileInstanceI19ActorProfileUnkE3GLE8sProfileE kind:bss addr:0x02177370
 data_ov090_021773ac kind:bss addr:0x021773ac
 data_ov090_021773b0 kind:bss addr:0x021773b0
-sActorProfileUnkE3TT kind:bss addr:0x021773bc
+_ZN15ProfileInstanceI19ActorProfileUnkE3TTE8sProfileE kind:bss addr:0x021773bc
 data_ov090_021773f8 kind:bss addr:0x021773f8
 data_ov090_021773fc kind:bss addr:0x021773fc
-sActorProfileUnkE3ST kind:bss addr:0x02177408
+_ZN15ProfileInstanceI19ActorProfileUnkE3STE8sProfileE kind:bss addr:0x02177408
 data_ov090_02177444 kind:bss addr:0x02177444
 data_ov090_02177448 kind:bss addr:0x02177448
 sMapObjectProfileUnkTWPG kind:bss addr:0x02177454

@@ -16,13 +16,10 @@ extern "C" unk32 func_ov031_0210af50(u16, unk32 *);
 extern void func_ov031_0210b0e4(u16, unk32);
 extern "C" unk32 func_ov031_020d9834(unk32 *);
 
-static ActorProfileRupee sActorProfileRupee;
 extern unk32 *data_027e0d34;
 extern Cylinder data_ov031_02113478;
 
-ARM ActorProfileRupee *ActorProfileRupee::GetProfile() {
-    return &sActorProfileRupee;
-}
+DECL_PROFILE(ActorProfileRupee);
 
 ARM Actor *ActorProfileRupee::Create() {
     return new(HeapIndex_2) ActorRupee();

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkQKSD.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkQKSD sActorProfileUnkQKSD;
-
-ARM ActorProfileUnkQKSD *ActorProfileUnkQKSD::GetProfile() {
-    return &sActorProfileUnkQKSD;
-}
+DECL_PROFILE(ActorProfileUnkQKSD);
 
 ARM Actor *ActorProfileUnkQKSD::Create() {
     return new(HeapIndex_2) ActorUnkQKSD();

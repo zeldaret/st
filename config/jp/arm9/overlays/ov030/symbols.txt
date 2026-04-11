@@ -528,7 +528,7 @@ data_ov030_02154698 kind:bss addr:0x02154698
 data_ov030_0215469c kind:bss addr:0x0215469c
 data_ov030_021546aa kind:bss addr:0x021546aa
 data_ov030_021546ac kind:bss addr:0x021546ac
-sActorProfileUnkHELA kind:bss addr:0x021546e0
+_ZN15ProfileInstanceI19ActorProfileUnkHELAE8sProfileE kind:bss addr:0x021546e0
 data_ov030_021546e4 kind:bss addr:0x021546e4
 data_ov030_02154700 kind:bss addr:0x02154700 ambiguous
 data_ov030_02154761 kind:bss addr:0x02154761 ambiguous
@@ -538,20 +538,20 @@ data_ov030_02154b74 kind:bss addr:0x02154b74 ambiguous
 data_ov030_02154be0 kind:bss addr:0x02154be0 ambiguous
 data_ov030_02154c84 kind:bss addr:0x02154c84
 data_ov030_02154c88 kind:bss addr:0x02154c88
-sActorProfileUnkHLMG kind:bss addr:0x02154c94
+_ZN15ProfileInstanceI19ActorProfileUnkHLMGE8sProfileE kind:bss addr:0x02154c94
 data_ov030_02154ca4 kind:bss addr:0x02154ca4 ambiguous
 data_ov030_02154cd0 kind:bss addr:0x02154cd0
 data_ov030_02154cd4 kind:bss addr:0x02154cd4
-sActorProfileUnkFDKY kind:bss addr:0x02154ce0
+_ZN15ProfileInstanceI19ActorProfileUnkFDKYE8sProfileE kind:bss addr:0x02154ce0
 data_ov030_02154db8 kind:bss addr:0x02154db8
 data_ov030_02154dbc kind:bss addr:0x02154dbc
-sActorProfileUnkGOVT kind:bss addr:0x02154dc8
+_ZN15ProfileInstanceI19ActorProfileUnkGOVTE8sProfileE kind:bss addr:0x02154dc8
 data_ov030_02154e04 kind:bss addr:0x02154e04
 data_ov030_02154e08 kind:bss addr:0x02154e08
-sActorProfileUnkTTFT kind:bss addr:0x02154e14
+_ZN15ProfileInstanceI19ActorProfileUnkTTFTE8sProfileE kind:bss addr:0x02154e14
 data_ov030_02154e50 kind:bss addr:0x02154e50
 data_ov030_02154e54 kind:bss addr:0x02154e54
-sActorProfileUnkSGMG kind:bss addr:0x02154e60
+_ZN15ProfileInstanceI19ActorProfileUnkSGMGE8sProfileE kind:bss addr:0x02154e60
 data_ov030_02154e6c kind:bss addr:0x02154e6c ambiguous
 data_ov030_02154e9c kind:bss addr:0x02154e9c
 data_ov030_02154ea0 kind:bss addr:0x02154ea0
@@ -585,4 +585,4 @@ data_ov030_02154f88 kind:bss addr:0x02154f88 ambiguous
 data_ov030_02154f94 kind:bss addr:0x02154f94
 data_ov030_02154fa4 kind:bss addr:0x02154fa4
 data_ov030_02154fb4 kind:bss addr:0x02154fb4
-sActorProfileUnkWKTR kind:bss addr:0x02154fc4
+_ZN15ProfileInstanceI19ActorProfileUnkWKTRE8sProfileE kind:bss addr:0x02154fc4

@@ -530,26 +530,26 @@ data_ov030_021522f8 kind:bss addr:0x021522f8
 data_ov030_021522fc kind:bss addr:0x021522fc
 data_ov030_0215230a kind:bss addr:0x0215230a
 data_ov030_0215230c kind:bss addr:0x0215230c
-sActorProfileUnkHELA kind:bss addr:0x02152340
+_ZN15ProfileInstanceI19ActorProfileUnkHELAE8sProfileE kind:bss addr:0x02152340
 data_ov030_02152418 kind:bss addr:0x02152418
 data_ov030_0215242c kind:bss addr:0x0215242c
 data_ov030_021528e4 kind:bss addr:0x021528e4
 data_ov030_021528e8 kind:bss addr:0x021528e8
-sActorProfileUnkHLMG kind:bss addr:0x021528f4
+_ZN15ProfileInstanceI19ActorProfileUnkHLMGE8sProfileE kind:bss addr:0x021528f4
 data_ov030_02152930 kind:bss addr:0x02152930
 data_ov030_02152934 kind:bss addr:0x02152934
-sActorProfileUnkFDKY kind:bss addr:0x02152940
+_ZN15ProfileInstanceI19ActorProfileUnkFDKYE8sProfileE kind:bss addr:0x02152940
 data_ov030_021529c4 kind:bss addr:0x021529c4 ambiguous
 data_ov030_02152a18 kind:bss addr:0x02152a18
 data_ov030_02152a1c kind:bss addr:0x02152a1c
 data_ov030_02152a25 kind:bss addr:0x02152a25 ambiguous
-sActorProfileUnkGOVT kind:bss addr:0x02152a28
+_ZN15ProfileInstanceI19ActorProfileUnkGOVTE8sProfileE kind:bss addr:0x02152a28
 data_ov030_02152a64 kind:bss addr:0x02152a64
 data_ov030_02152a68 kind:bss addr:0x02152a68
-sActorProfileUnkTTFT kind:bss addr:0x02152a74
+_ZN15ProfileInstanceI19ActorProfileUnkTTFTE8sProfileE kind:bss addr:0x02152a74
 data_ov030_02152ab0 kind:bss addr:0x02152ab0
 data_ov030_02152ab4 kind:bss addr:0x02152ab4
-sActorProfileUnkSGMG kind:bss addr:0x02152ac0
+_ZN15ProfileInstanceI19ActorProfileUnkSGMGE8sProfileE kind:bss addr:0x02152ac0
 data_ov030_02152afc kind:bss addr:0x02152afc
 data_ov030_02152b00 kind:bss addr:0x02152b00
 data_ov030_02152b04 kind:bss addr:0x02152b04
@@ -580,4 +580,4 @@ data_ov030_02152be4 kind:bss addr:0x02152be4
 data_ov030_02152bf4 kind:bss addr:0x02152bf4
 data_ov030_02152c04 kind:bss addr:0x02152c04
 data_ov030_02152c14 kind:bss addr:0x02152c14
-sActorProfileUnkWKTR kind:bss addr:0x02152c24
+_ZN15ProfileInstanceI19ActorProfileUnkWKTRE8sProfileE kind:bss addr:0x02152c24

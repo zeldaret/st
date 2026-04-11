@@ -319,7 +319,7 @@ data_ov033_021218c0 kind:bss addr:0x021218c0
 data_ov033_021218c4 kind:bss addr:0x021218c4
 data_ov033_02121c64 kind:bss addr:0x02121c64
 data_ov033_02121c68 kind:bss addr:0x02121c68
-sActorProfileUnkRCFO kind:bss addr:0x02121c74
+_ZN15ProfileInstanceI19ActorProfileUnkRCFOE8sProfileE kind:bss addr:0x02121c74
 data_ov033_02121cb0 kind:bss addr:0x02121cb0
 data_ov033_02121cb4 kind:bss addr:0x02121cb4
 data_ov033_02121cc0 kind:bss addr:0x02121cc0

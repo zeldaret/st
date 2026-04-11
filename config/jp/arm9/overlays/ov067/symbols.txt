@@ -340,30 +340,30 @@ data_ov067_0215f5d0 kind:bss addr:0x0215f5d0
 data_ov067_0215f5dc kind:bss addr:0x0215f5dc
 data_ov067_0215f5e8 kind:bss addr:0x0215f5e8
 data_ov067_0215f5f4 kind:bss addr:0x0215f5f4
-sActorProfileUnkGOCA kind:bss addr:0x0215f600
+_ZN15ProfileInstanceI19ActorProfileUnkGOCAE8sProfileE kind:bss addr:0x0215f600
 data_ov067_0215f664 kind:bss addr:0x0215f664 ambiguous
-sActorProfileUnkGOCB kind:bss addr:0x0215f6d8
+_ZN15ProfileInstanceI19ActorProfileUnkGOCBE8sProfileE kind:bss addr:0x0215f6d8
 data_ov067_0215f71c kind:bss addr:0x0215f71c ambiguous
 data_ov067_0215f768 kind:bss addr:0x0215f768 ambiguous
-sActorProfileUnkGORK kind:bss addr:0x0215f7b0
-sActorProfileUnkGORM kind:bss addr:0x0215f888
+_ZN15ProfileInstanceI19ActorProfileUnkGORKE8sProfileE kind:bss addr:0x0215f7b0
+_ZN15ProfileInstanceI19ActorProfileUnkGORME8sProfileE kind:bss addr:0x0215f888
 data_ov067_0215f960 kind:bss addr:0x0215f960
 data_ov067_0215f964 kind:bss addr:0x0215f964
-sActorProfileUnkGORS kind:bss addr:0x0215f970
+_ZN15ProfileInstanceI19ActorProfileUnkGORSE8sProfileE kind:bss addr:0x0215f970
 data_ov067_0215f9bc kind:bss addr:0x0215f9bc ambiguous
 data_ov067_0215fa48 kind:bss addr:0x0215fa48
 data_ov067_0215fa4c kind:bss addr:0x0215fa4c
-sActorProfileUnkRMV0 kind:bss addr:0x0215fa58
+_ZN15ProfileInstanceI19ActorProfileUnkRMV0E8sProfileE kind:bss addr:0x0215fa58
 data_ov067_0215fad8 kind:bss addr:0x0215fad8 ambiguous
 data_ov067_0215fb30 kind:bss addr:0x0215fb30
 data_ov067_0215fb34 kind:bss addr:0x0215fb34
-sActorProfileUnkRMV1 kind:bss addr:0x0215fb40
+_ZN15ProfileInstanceI19ActorProfileUnkRMV1E8sProfileE kind:bss addr:0x0215fb40
 data_ov067_0215fc18 kind:bss addr:0x0215fc18
 data_ov067_0215fc1c kind:bss addr:0x0215fc1c
-sActorProfileUnkDMFT kind:bss addr:0x0215fc28
+_ZN15ProfileInstanceI19ActorProfileUnkDMFTE8sProfileE kind:bss addr:0x0215fc28
 data_ov067_0215fc64 kind:bss addr:0x0215fc64
 data_ov067_0215fc68 kind:bss addr:0x0215fc68
-sActorProfileUnkDMGN kind:bss addr:0x0215fc74
+_ZN15ProfileInstanceI19ActorProfileUnkDMGNE8sProfileE kind:bss addr:0x0215fc74
 data_ov067_0215fcb8 kind:bss addr:0x0215fcb8
 data_ov067_0215fcbc kind:bss addr:0x0215fcbc
 sMapObjectProfileUnkBRGL kind:bss addr:0x0215fcc8

@@ -358,10 +358,10 @@ data_ov028_02149f90 kind:data(any) addr:0x02149f90
 data_ov028_02149fe0 kind:bss addr:0x02149fe0
 data_ov028_02149fe4 kind:bss addr:0x02149fe4
 data_ov028_02149ff0 kind:bss addr:0x02149ff0
-sActorProfileUnkSNMA kind:bss addr:0x02149ffc
+_ZN15ProfileInstanceI19ActorProfileUnkSNMAE8sProfileE kind:bss addr:0x02149ffc
 data_ov028_0214a0d4 kind:bss addr:0x0214a0d4
 data_ov028_0214a0d8 kind:bss addr:0x0214a0d8
-sActorProfileUnkSNMB kind:bss addr:0x0214a0e4
+_ZN15ProfileInstanceI19ActorProfileUnkSNMBE8sProfileE kind:bss addr:0x0214a0e4
 data_ov028_0214a1bc kind:bss addr:0x0214a1bc
 data_ov028_0214a1c0 kind:bss addr:0x0214a1c0
 sMapObjectProfileUnkTRSS kind:bss addr:0x0214a1cc

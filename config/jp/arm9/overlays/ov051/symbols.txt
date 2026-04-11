@@ -131,4 +131,4 @@ data_ov051_02138b90 kind:data(any) addr:0x02138b90
 data_ov051_02138ba8 kind:data(any) addr:0x02138ba8
 data_ov051_02138bc0 kind:bss addr:0x02138bc0
 data_ov051_02138bc4 kind:bss addr:0x02138bc4
-sActorProfileUnkGYAM kind:bss addr:0x02138bd0
+_ZN15ProfileInstanceI19ActorProfileUnkGYAME8sProfileE kind:bss addr:0x02138bd0

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkEVIC.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkEVIC sActorProfileUnkEVIC;
-
-ARM ActorProfileUnkEVIC *ActorProfileUnkEVIC::GetProfile() {
-    return &sActorProfileUnkEVIC;
-}
+DECL_PROFILE(ActorProfileUnkEVIC);
 
 ARM Actor *ActorProfileUnkEVIC::Create() {
     return new(HeapIndex_2) ActorUnkEVIC();

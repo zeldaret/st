@@ -251,41 +251,41 @@ data_ov065_0215afb0 kind:bss addr:0x0215afb0
 data_ov065_0215afbc kind:bss addr:0x0215afbc
 data_ov065_0215b004 kind:bss addr:0x0215b004 ambiguous
 data_ov065_0215b008 kind:bss addr:0x0215b008 ambiguous
-sActorProfileUnkYUKI kind:bss addr:0x0215b00c
+_ZN15ProfileInstanceI19ActorProfileUnkYUKIE8sProfileE kind:bss addr:0x0215b00c
 data_ov065_0215b064 kind:bss addr:0x0215b064 ambiguous
 data_ov065_0215b098 kind:bss addr:0x0215b098 ambiguous
 data_ov065_0215b0e4 kind:bss addr:0x0215b0e4
 data_ov065_0215b0e8 kind:bss addr:0x0215b0e8
-sActorProfileUnkRMS0 kind:bss addr:0x0215b0f4
+_ZN15ProfileInstanceI19ActorProfileUnkRMS0E8sProfileE kind:bss addr:0x0215b0f4
 data_ov065_0215b1b4 kind:bss addr:0x0215b1b4 ambiguous
 data_ov065_0215b1cc kind:bss addr:0x0215b1cc
 data_ov065_0215b1d0 kind:bss addr:0x0215b1d0
-sActorProfileUnkRMS1 kind:bss addr:0x0215b1dc
+_ZN15ProfileInstanceI19ActorProfileUnkRMS1E8sProfileE kind:bss addr:0x0215b1dc
 data_ov065_0215b2b4 kind:bss addr:0x0215b2b4
 data_ov065_0215b2b8 kind:bss addr:0x0215b2b8
-sActorProfileUnkRMS2 kind:bss addr:0x0215b2c4
+_ZN15ProfileInstanceI19ActorProfileUnkRMS2E8sProfileE kind:bss addr:0x0215b2c4
 data_ov065_0215b388 kind:bss addr:0x0215b388 ambiguous
 data_ov065_0215b39c kind:bss addr:0x0215b39c
 data_ov065_0215b3a0 kind:bss addr:0x0215b3a0
-sActorProfileUnkRMS3 kind:bss addr:0x0215b3ac
+_ZN15ProfileInstanceI19ActorProfileUnkRMS3E8sProfileE kind:bss addr:0x0215b3ac
 data_ov065_0215b3d4 kind:bss addr:0x0215b3d4 ambiguous
 data_ov065_0215b484 kind:bss addr:0x0215b484
 data_ov065_0215b488 kind:bss addr:0x0215b488
-sActorProfileUnkRMS4 kind:bss addr:0x0215b494
+_ZN15ProfileInstanceI19ActorProfileUnkRMS4E8sProfileE kind:bss addr:0x0215b494
 data_ov065_0215b50c kind:bss addr:0x0215b50c ambiguous
 data_ov065_0215b56c kind:bss addr:0x0215b56c
 data_ov065_0215b570 kind:bss addr:0x0215b570
-sActorProfileUnkRMS5 kind:bss addr:0x0215b57c
+_ZN15ProfileInstanceI19ActorProfileUnkRMS5E8sProfileE kind:bss addr:0x0215b57c
 data_ov065_0215b654 kind:bss addr:0x0215b654
 data_ov065_0215b658 kind:bss addr:0x0215b658
-sActorProfileUnkRMTE kind:bss addr:0x0215b664
+_ZN15ProfileInstanceI19ActorProfileUnkRMTEE8sProfileE kind:bss addr:0x0215b664
 data_ov065_0215b6ec kind:bss addr:0x0215b6ec ambiguous
 data_ov065_0215b73c kind:bss addr:0x0215b73c
 data_ov065_0215b740 kind:bss addr:0x0215b740
 data_ov065_0215b74c kind:bss addr:0x0215b74c
 data_ov065_0215b756 kind:bss addr:0x0215b756
 data_ov065_0215b75a kind:bss addr:0x0215b75a
-sActorProfileUnkYWIS kind:bss addr:0x0215b764
+_ZN15ProfileInstanceI19ActorProfileUnkYWISE8sProfileE kind:bss addr:0x0215b764
 data_ov065_0215b7a0 kind:bss addr:0x0215b7a0
 data_ov065_0215b7b0 kind:bss addr:0x0215b7b0
 sMapObjectProfileUnkTSGM kind:bss addr:0x0215b7bc

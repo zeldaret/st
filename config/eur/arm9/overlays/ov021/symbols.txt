@@ -1056,35 +1056,35 @@ data_ov021_02109098 kind:bss addr:0x02109098
 data_ov021_021090a4 kind:bss addr:0x021090a4
 data_ov021_021090b0 kind:bss addr:0x021090b0
 data_ov021_021090bc kind:bss addr:0x021090bc
-sActorProfileUnkBAPH kind:bss addr:0x021090c8
+_ZN15ProfileInstanceI19ActorProfileUnkBAPHE8sProfileE kind:bss addr:0x021090c8
 data_ov021_021091a0 kind:bss addr:0x021091a0
 data_ov021_021091a4 kind:bss addr:0x021091a4
-sActorProfileUnkBAEY kind:bss addr:0x021091b0
+_ZN15ProfileInstanceI19ActorProfileUnkBAEYE8sProfileE kind:bss addr:0x021091b0
 data_ov021_02109288 kind:bss addr:0x02109288
 data_ov021_0210928c kind:bss addr:0x0210928c
 data_ov021_02109298 kind:bss addr:0x02109298
 data_ov021_021092a4 kind:bss addr:0x021092a4
 data_ov021_021092b0 kind:bss addr:0x021092b0
-sActorProfileUnkBAFO kind:bss addr:0x021092bc
+_ZN15ProfileInstanceI19ActorProfileUnkBAFOE8sProfileE kind:bss addr:0x021092bc
 data_ov021_02109394 kind:bss addr:0x02109394
 data_ov021_02109398 kind:bss addr:0x02109398
-sActorProfileUnkBTIR kind:bss addr:0x021093a4
+_ZN15ProfileInstanceI19ActorProfileUnkBTIRE8sProfileE kind:bss addr:0x021093a4
 data_ov021_0210947c kind:bss addr:0x0210947c
 data_ov021_02109480 kind:bss addr:0x02109480
-sActorProfileUnkBFFN kind:bss addr:0x0210948c
+_ZN15ProfileInstanceI19ActorProfileUnkBFFNE8sProfileE kind:bss addr:0x0210948c
 data_ov021_021094c8 kind:bss addr:0x021094c8
 data_ov021_021094cc kind:bss addr:0x021094cc
-sActorProfileUnkBPAP kind:bss addr:0x021094d8
+_ZN15ProfileInstanceI19ActorProfileUnkBPAPE8sProfileE kind:bss addr:0x021094d8
 data_ov021_02109514 kind:bss addr:0x02109514
 data_ov021_02109518 kind:bss addr:0x02109518
-sActorProfileUnkCLZN kind:bss addr:0x02109524
+_ZN15ProfileInstanceI19ActorProfileUnkCLZNE8sProfileE kind:bss addr:0x02109524
 data_ov021_02109560 kind:bss addr:0x02109560
 data_ov021_02109564 kind:bss addr:0x02109564
-sActorProfileUnkFOFA kind:bss addr:0x02109570
+_ZN15ProfileInstanceI19ActorProfileUnkFOFAE8sProfileE kind:bss addr:0x02109570
 data_ov021_0210957c kind:bss addr:0x0210957c ambiguous
 data_ov021_021095ac kind:bss addr:0x021095ac
 data_ov021_021095b0 kind:bss addr:0x021095b0
-sActorProfileUnkLVOF kind:bss addr:0x021095bc
+_ZN15ProfileInstanceI19ActorProfileUnkLVOFE8sProfileE kind:bss addr:0x021095bc
 data_ov021_021095f8 kind:bss addr:0x021095f8 ambiguous
 data_ov021_02109600 kind:bss addr:0x02109600 ambiguous
 data_ov021_02109608 kind:bss addr:0x02109608 ambiguous
