@@ -3,19 +3,10 @@
 #include "Actor/ActorId.hpp"
 #include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
+#include "profile.hpp"
 #include "types.h"
 
 class Actor;
-
-#define DECL_PROFILE(T)                       \
-    T ProfileInstance<T>::sProfile;           \
-    T *T::GetProfile() {                      \
-        return &ProfileInstance<T>::sProfile; \
-    }
-
-template <typename T> struct ProfileInstance {
-    static T sProfile;
-};
 
 class ActorProfile : public SysObject {
 public:

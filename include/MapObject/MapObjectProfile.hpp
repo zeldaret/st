@@ -3,6 +3,7 @@
 #include "Map/MapObjectId.hpp"
 #include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
+#include "profile.hpp"
 #include "types.h"
 
 class MapObject;
