@@ -58,7 +58,7 @@ src/031_Land/Actor/ActorUnkZLSL_ZSRS.cpp:
     .text       start:0x020ea02c end:0x020ee8cc
     .init       start:0x02111308 end:0x0211139c
     .ctor       start:0x021127bc end:0x021127c0
-    .bss        start:0x02116744 end:0x021167c4
+    .bss        start:0x02116744 end:0x02116858
 
 src/031_Land/Actor/ActorHeart.cpp:
     .text       start:0x020eecf4 end:0x020ef81c

@@ -2558,7 +2558,6 @@ data_ov031_0211672c kind:bss addr:0x0211672c
 data_ov031_02116738 kind:bss addr:0x02116738
 sActorProfileUnkZLSL kind:bss addr:0x02116744
 sActorProfileUnkZSRS kind:bss addr:0x02116780
-data_ov031_021167c4 kind:bss addr:0x021167c4 ambiguous
 data_ov031_02116858 kind:bss addr:0x02116858
 data_ov031_0211685c kind:bss addr:0x0211685c
 sActorProfileHeart kind:bss addr:0x02116868
