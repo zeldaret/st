@@ -7,6 +7,16 @@
 
 class Actor;
 
+#define DECL_PROFILE(T)                       \
+    T ProfileInstance<T>::sProfile;           \
+    T *T::GetProfile() {                      \
+        return &ProfileInstance<T>::sProfile; \
+    }
+
+template <typename T> struct ProfileInstance {
+    static T sProfile;
+};
+
 class ActorProfile : public SysObject {
 public:
     /* 00 (vtable) */
@@ -57,4 +67,4 @@ public:
     /* 18 */ virtual void vfunc_18() override;
 };
 
-typedef ActorProfile *(*GetActorProfile)();
+// typedef ActorProfile *(*GetActorProfile)();
