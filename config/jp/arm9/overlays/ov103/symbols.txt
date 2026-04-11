@@ -2,8 +2,8 @@ func_ov103_021865c0 kind:function(arm,size=0x258) addr:0x021865c0
 func_ov103_02186818 kind:function(arm,size=0xac) addr:0x02186818
 func_ov103_021868c4 kind:function(arm,size=0x74) addr:0x021868c4
 func_ov103_02186938 kind:function(arm,size=0x20) addr:0x02186938
-func_ov103_02186958 kind:function(arm,size=0x50) addr:0x02186958
-func_ov103_021869a8 kind:function(arm,size=0x58) addr:0x021869a8
+_ZN19func_ov103_02186958D1Ev kind:function(arm,size=0x50) addr:0x02186958
+_ZN19func_ov103_021869a8D0Ev kind:function(arm,size=0x58) addr:0x021869a8
 func_ov103_02186a00 kind:function(arm,size=0xb4) addr:0x02186a00
 func_ov103_02186ab4 kind:function(arm,size=0x8c) addr:0x02186ab4
 func_ov103_02186b40 kind:function(arm,size=0xcc) addr:0x02186b40
@@ -12,10 +12,10 @@ func_ov103_02186f94 kind:function(arm,size=0x4d8) addr:0x02186f94
 func_ov103_0218746c kind:function(arm,size=0x14) addr:0x0218746c
 func_ov103_02187480 kind:function(arm,size=0x6c) addr:0x02187480
 func_ov103_021874ec kind:function(arm,size=0x30) addr:0x021874ec
-func_ov103_0218751c kind:function(arm,size=0x1c) addr:0x0218751c
+_ZN19func_ov103_0218751cD0Ev kind:function(arm,size=0x1c) addr:0x0218751c
 func_ov103_02187538 kind:function(arm,size=0xd8) addr:0x02187538
 func_ov103_02187610 kind:function(arm,size=0x14) addr:0x02187610
-func_ov103_02187624 kind:function(arm,size=0x28) addr:0x02187624
+_ZN19func_ov103_02187624D0Ev kind:function(arm,size=0x28) addr:0x02187624
 func_ov103_0218764c kind:function(arm,size=0xf4) addr:0x0218764c
 func_ov103_02187740 kind:function(arm,size=0x488) addr:0x02187740
 func_ov103_02187bc8 kind:function(arm,size=0xa0) addr:0x02187bc8
@@ -27,7 +27,7 @@ data_ov103_02187ce0 kind:data(any) addr:0x02187ce0
 data_ov103_02187ce4 kind:data(any) addr:0x02187ce4
 data_ov103_02187cfc kind:data(any) addr:0x02187cfc
 data_ov103_02187d08 kind:data(any) addr:0x02187d08
-data_ov103_02187d24 kind:data(any) addr:0x02187d24
+_ZTV19data_ov103_02187d1c kind:data(any) addr:0x02187d1c
 data_ov103_02187d44 kind:data(any) addr:0x02187d44
 data_ov103_0218814c kind:data(any) addr:0x0218814c
 data_ov103_02188160 kind:data(any) addr:0x02188160

@@ -1,0 +1,40 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#pragma once
+
+#include "Actor/Actor.hpp"
+#include "Actor/ActorProfile.hpp"
+#include "global.h"
+#include "types.h"
+
+class ActorUnkFIRB : public Actor {
+public:
+    /* 00 (base) */
+    /* 94 */
+
+    ActorUnkFIRB();
+
+    /* 4C */ virtual ~ActorUnkFIRB() override;
+
+    void func_ov084_0215a564(void);
+    void func_ov084_0215a59c(void);
+    void func_ov084_0215a5c0(void);
+    void func_ov084_0215a774(void);
+    void func_ov084_0215a7a8(void);
+    void func_ov084_0215a880(void);
+    void func_ov084_0215ab68(void);
+    void func_ov084_0215ab70(void);
+    void func_ov084_0215aba0(void);
+};
+
+class ActorProfileUnkFIRB : public ActorProfile_Derived1 {
+public:
+    /* 00 (base) */
+
+    ActorProfileUnkFIRB();
+    ~ActorProfileUnkFIRB();
+
+    /* 0C */ virtual Actor *Create();
+
+    static ActorProfileUnkFIRB *GetProfile();
+};

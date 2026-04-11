@@ -1,7 +1,54 @@
     .text       start:0x0211ad60 end:0x021241f4 kind:code align:32
     .rodata     start:0x021241f4 end:0x021242a8 kind:rodata align:4
     .init       start:0x021242a8 end:0x02124588 kind:code align:4
-    .ctor       start:0x02124588 end:0x021245ac kind:rodata align:4
+    .ctor       start:0x02124588 end:0x021245a8 kind:rodata align:4
     .data       start:0x021245c0 end:0x02124c20 kind:data align:32
     .bss        start:0x02124c20 end:0x02125280 kind:bss align:32
 
+src/034_MapA3/Actor/ActorUnkRMM1.cpp:
+    .text       start:0x0211ad60 end:0x0211b0c4
+    .init       start:0x021242a8 end:0x021242f8
+    .ctor       start:0x02124588 end:0x0212458c
+    .bss        start:0x02124c30 end:0x02124d08
+
+src/034_MapA3/Actor/ActorUnkBSFC.cpp:
+    .text       start:0x0211b0c4 end:0x0211bc60
+    .init       start:0x021242f8 end:0x02124348
+    .ctor       start:0x0212458c end:0x02124590
+    .bss        start:0x02124d18 end:0x02124df0
+
+src/034_MapA3/Actor/ActorUnkFCHL.cpp:
+    .text       start:0x0211bc60 end:0x0211c090
+    .init       start:0x02124348 end:0x02124398
+    .ctor       start:0x02124590 end:0x02124594
+    .bss        start:0x02124e00 end:0x02124ed8
+
+src/034_MapA3/Actor/ActorUnkTRLY.cpp:
+    .text       start:0x0211c0d8 end:0x021200bc
+    .init       start:0x02124398 end:0x02124408
+    .ctor       start:0x02124594 end:0x02124598
+    .bss        start:0x02124ee8 end:0x02124fc0
+
+src/034_MapA3/Actor/ActorUnkTRRL.cpp:
+    .text       start:0x021200bc end:0x02122b3c
+    .init       start:0x02124408 end:0x02124458
+    .ctor       start:0x02124598 end:0x0212459c
+    .bss        start:0x02124fd4 end:0x021250c8
+
+src/034_MapA3/MapObject/MapObjectUnkTRSW.cpp:
+    .text       start:0x02122b3c end:0x02123458
+    .init       start:0x02124458 end:0x021244a8
+    .ctor       start:0x0212459c end:0x021245a0
+    .bss        start:0x021250d8 end:0x021250f8
+
+src/034_MapA3/MapObject/MapObjectUnkWPHL.cpp:
+    .text       start:0x021234d8 end:0x02123c90
+    .init       start:0x021244a8 end:0x02124504
+    .ctor       start:0x021245a0 end:0x021245a4
+    .bss        start:0x021251e8 end:0x021251f8
+
+src/034_MapA3/MapObject/MapObjectUnkGELG.cpp:
+    .text       start:0x02123c90 end:0x02124190
+    .init       start:0x02124504 end:0x02124588
+    .ctor       start:0x021245a4 end:0x021245a8
+    .bss        start:0x02125218 end:0x02125238

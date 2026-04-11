@@ -1,7 +1,23 @@
     .text       start:0x0211ad60 end:0x02123964 kind:code align:32
     .rodata     start:0x02123964 end:0x021239f4 kind:rodata align:4
     .init       start:0x021239f4 end:0x02123b94 kind:code align:4
-    .ctor       start:0x02123b94 end:0x02123ba8 kind:rodata align:4
+    .ctor       start:0x02123b94 end:0x02123ba4 kind:rodata align:4
     .data       start:0x02123bc0 end:0x021245c0 kind:data align:32
     .bss        start:0x021245c0 end:0x021248c0 kind:bss align:32
 
+src/037_MapA6/Actor/ActorUnkSOLF.cpp:
+    .text       start:0x0211d1a4 end:0x021206ec
+    .init       start:0x02123a58 end:0x02123aa8
+    .ctor       start:0x02123b98 end:0x02123b9c
+    .bss        start:0x02124738 end:0x0212477c
+
+src/037_MapA6/Actor/ActorUnkSOLT.cpp:
+    .text       start:0x021206ec end:0x02122764
+    .init       start:0x02123aa8 end:0x02123af8
+    .ctor       start:0x02123b9c end:0x02123ba0
+    .bss        start:0x0212478c end:0x02124864
+
+src/037_MapA6/Actor/ActorUnkTUTO.cpp:
+    .text       start:0x02122764 end:0x02123964
+    .init       start:0x02123af8 end:0x02123b94
+    .ctor       start:0x02123ba0 end:0x02123ba4

@@ -76,11 +76,11 @@ data_ov012_020b9acc kind:data(any) addr:0x020b9acc
 data_ov012_020b9ace kind:data(any) addr:0x020b9ace
 data_ov012_020b9acf kind:data(any) addr:0x020b9acf
 __sinit_ov012_020b9b10 kind:function(thumb,size=0x74) addr:0x020b9b10
-.p__sinit_ov012_020b9b11 kind:data(word) addr:0x020b9b84
+.p__sinit_ov012_020b9b10 kind:data(word) addr:0x020b9b84
 data_ov012_020b9ba0 kind:data(any) addr:0x020b9ba0
 data_ov012_020b9bb0 kind:data(any) addr:0x020b9bb0
 data_ov012_020b9bc0 kind:data(any) addr:0x020b9bc0
-data_ov012_020b9bf0 kind:data(any) addr:0x020b9bf0
+_ZTV19data_ov012_020b9be8 kind:data(any) addr:0x020b9be8
 data_ov012_020b9c0c kind:data(any) addr:0x020b9c0c
 data_ov012_020b9c20 kind:data(any) addr:0x020b9c20
 data_ov012_020b9c24 kind:data(any) addr:0x020b9c24

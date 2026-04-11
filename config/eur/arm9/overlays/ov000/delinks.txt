@@ -1,7 +1,7 @@
     .text       start:0x02051ae0 end:0x020aa238 kind:code align:32
     .rodata     start:0x020aa238 end:0x020aff98 kind:rodata align:4
     .init       start:0x020aff98 end:0x020b18b4 kind:code align:4
-    .ctor       start:0x020b18b4 end:0x020b1944 kind:rodata align:4
+    .ctor       start:0x020b18b4 end:0x020b1940 kind:rodata align:4
     .data       start:0x020b1960 end:0x020b4ec0 kind:data align:32
     .bss        start:0x020b4ec0 end:0x020b6520 kind:bss align:32
 
@@ -25,7 +25,43 @@ src/000_Second/UnkSystem1_Derived1.cpp:
 
 src/000_Second/Actor/Actor.cpp:
     .text       start:0x02098388 end:0x02098654
-    .data       start:0x020b30e4 end:0x020b3148
+    .data       start:0x020b30e4 end:0x020b3140
+
+src/000_Second/Actor/ActorUnkSWOB.cpp:
+    .text       start:0x0209a8b8 end:0x0209aca8
+    .init       start:0x020b07e8 end:0x020b0838
+    .ctor       start:0x020b1908 end:0x020b190c
+    .bss        start:0x020b5c0c end:0x020b5c48
+
+src/000_Second/Actor/ActorUnkSWTM.cpp:
+    .text       start:0x0209aca8 end:0x0209b22c
+    .init       start:0x020b0838 end:0x020b0888
+    .ctor       start:0x020b190c end:0x020b1910
+    .bss        start:0x020b5c58 end:0x020b5c94
+
+src/000_Second/Actor/ActorUnkEVIC.cpp:
+    .text       start:0x0209bf88 end:0x0209c074
+    .init       start:0x020b0888 end:0x020b08d8
+    .ctor       start:0x020b1910 end:0x020b1914
+    .bss        start:0x020b5ca8 end:0x020b5ce4
+
+src/000_Second/Actor/ActorUnkEFIK.cpp:
+    .text       start:0x0209c074 end:0x0209c348
+    .init       start:0x020b08d8 end:0x020b0928
+    .ctor       start:0x020b1914 end:0x020b1918
+    .bss        start:0x020b5cf4 end:0x020b5d30
+
+src/000_Second/MapObject/MapObjectUnkSWST.cpp:
+    .text       start:0x0209dce0 end:0x0209e3f8
+    .init       start:0x020b0950 end:0x020b09ac
+    .ctor       start:0x020b191c end:0x020b1920
+    .bss        start:0x020b6130 end:0x020b6150
+
+src/000_Second/MapObject/MapObjectUnkBLCM.cpp:
+    .text       start:0x0209e3f8 end:0x0209e768
+    .init       start:0x020b09ac end:0x020b09fc
+    .ctor       start:0x020b1920 end:0x020b1924
+    .bss        start:0x020b6238 end:0x020b62a0
 
 src/000_Second/Cutscene/Cutscene.cpp:
     .text       start:0x020a782c end:0x020a7908

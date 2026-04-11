@@ -1,6 +1,6 @@
 func_ov089_021658a0 kind:function(arm,size=0x30) addr:0x021658a0
 func_ov089_021658d0 kind:function(arm,size=0x4) addr:0x021658d0
-func_ov089_021658d4 kind:function(arm,size=0x14) addr:0x021658d4
+_ZN19func_ov089_021658d4D0Ev kind:function(arm,size=0x14) addr:0x021658d4
 func_ov089_021658e8 kind:function(arm,size=0x4) addr:0x021658e8
 func_ov089_021658ec kind:function(arm,size=0x64) addr:0x021658ec
 func_ov089_02165950 kind:function(arm,size=0x64) addr:0x02165950

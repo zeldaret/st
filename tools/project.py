@@ -874,8 +874,8 @@ def process_project(cfg: ProjectConfig, args: Any):
         n.newline()
 
         n.rule(
-            name="format_delinks",
-            command=f"{cfg.python_path} tools/format_delinks.py"
+            name="format",
+            command=f"{cfg.dsd_path} format --config-path $config_path",
         )
         n.newline()
 
@@ -890,16 +890,47 @@ def process_project(cfg: ProjectConfig, args: Any):
 
         if cfg.check_can_run_dsd():
             defaults = []
+            cmds_map: dict[str, list] = {
+                "delink": list(),
+                "dis": list(),
+                "sha1": list(),
+                "check": list(),
+                "apply": list(),
+                "format": list(),
+            }
 
             for version in cfg.game_versions:
                 add_extract_build(cfg, version, n, args)
+
                 add_delink_and_lcf_builds(cfg, version, n)
+                cmds_map["delink"].append(f"delink_{version}")
+
                 add_disassemble_builds(cfg, version, n)
+                cmds_map["dis"].append(f"dis_{version}")
+
                 add_mwcc_builds(cfg, version, objects, n, mwcc_implicit)
+
                 add_mwld_and_rom_builds(cfg, version, n)
+                cmds_map["sha1"].append(f"sha1_{version}")
+
                 add_check_builds(cfg, version, n)
+                cmds_map["check"].append(f"check_{version}")
+
                 add_objdiff_builds(cfg, version, n)
+
                 add_apply_build(cfg, version, n)
+                cmds_map["apply"].append(f"apply_{version}")
+
+                n.build(
+                    rule="format",
+                    outputs=f"format_{version}",
+                    variables={
+                        "config_path": str(cfg.arm9_config_yaml(version)),
+                    }
+                )
+                n.newline()
+                cmds_map["format"].append(f"format_{version}")
+
                 defaults.extend([f"check_{version}", f"sha1_{version}"])
 
             n.build(
@@ -909,12 +940,15 @@ def process_project(cfg: ProjectConfig, args: Any):
             )
             n.newline()
 
-            n.build(
-                rule="format_delinks",
-                outputs="format_delinks"
-            )
-            n.newline()
+            for rule, cmds in cmds_map.items():
+                cmds.sort()
 
-            n.default(["format_delinks", "objdiff", *defaults])
+                n.build(
+                    rule="phony",
+                    outputs=rule,
+                    implicit=cmds,
+                )
+
+            n.default(["format", "objdiff", *defaults])
         else:
             n.default(["download_tools"])

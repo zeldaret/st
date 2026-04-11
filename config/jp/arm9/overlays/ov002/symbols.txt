@@ -1,6 +1,6 @@
 func_ov002_020b7d40 kind:function(thumb,size=0x14) addr:0x020b7d40
 func_ov002_020b7d54 kind:function(thumb,size=0x2) addr:0x020b7d54
-func_ov002_020b7d58 kind:function(thumb,size=0xc) addr:0x020b7d58
+_ZN19func_ov002_020b7d58D0Ev kind:function(thumb,size=0xc) addr:0x020b7d58
 func_ov002_020b7d64 kind:function(thumb,size=0x94) addr:0x020b7d64
 func_ov002_020b7df8 kind:function(thumb,size=0x14) addr:0x020b7df8
 func_ov002_020b7e0c kind:function(thumb,size=0x8) addr:0x020b7e0c
@@ -32,7 +32,7 @@ func_ov002_020b8570 kind:function(thumb,size=0x18) addr:0x020b8570
 func_ov002_020b8588 kind:function(thumb,size=0x18) addr:0x020b8588
 func_ov002_020b85a0 kind:function(thumb,size=0x70) addr:0x020b85a0
 func_ov002_020b8610 kind:function(thumb,size=0x50) addr:0x020b8610
-func_ov002_020b8660 kind:function(thumb,size=0x54) addr:0x020b8660
+_ZN19func_ov002_020b8660D0Ev kind:function(thumb,size=0x54) addr:0x020b8660
 func_ov002_020b86b4 kind:function(thumb,size=0x58) addr:0x020b86b4
 func_ov002_020b870c kind:function(thumb,size=0x26) addr:0x020b870c
 func_ov002_020b8734 kind:function(thumb,size=0xe) addr:0x020b8734
@@ -200,7 +200,7 @@ data_ov002_020be3b4 kind:data(any) addr:0x020be3b4
 data_ov002_020be3b5 kind:data(any) addr:0x020be3b5
 data_ov002_020be49c kind:data(any) addr:0x020be49c
 __sinit_ov002_020be4b0 kind:function(thumb,size=0x20) addr:0x020be4b0
-.p__sinit_ov002_020be4b1 kind:data(word) addr:0x020be4d0
+.p__sinit_ov002_020be4b0 kind:data(word) addr:0x020be4d0
 data_ov002_020be4e8 kind:data(any) addr:0x020be4e8
 data_ov002_020be500 kind:data(any) addr:0x020be500
 data_ov002_020be518 kind:data(any) addr:0x020be518
@@ -221,15 +221,15 @@ data_ov002_020be5ac kind:data(any) addr:0x020be5ac
 data_ov002_020be5b4 kind:data(any) addr:0x020be5b4
 data_ov002_020be5bc kind:data(any) addr:0x020be5bc
 data_ov002_020be5c4 kind:data(any) addr:0x020be5c4
-data_ov002_020be5d4 kind:data(any) addr:0x020be5d4
+_ZTV19data_ov002_020be5cc kind:data(any) addr:0x020be5cc
 data_ov002_020be5e4 kind:data(any) addr:0x020be5e4
 data_ov002_020be5ec kind:data(any) addr:0x020be5ec
 data_ov002_020be600 kind:data(any) addr:0x020be600
 data_ov002_020be60c kind:data(any) addr:0x020be60c
 data_ov002_020be618 kind:data(any) addr:0x020be618
 data_ov002_020be630 kind:data(any) addr:0x020be630
-data_ov002_020be648 kind:data(any) addr:0x020be648
-data_ov002_020be660 kind:data(any) addr:0x020be660
+_ZTV19data_ov002_020be640 kind:data(any) addr:0x020be640
+_ZTV19data_ov002_020be658 kind:data(any) addr:0x020be658
 data_ov002_020be670 kind:data(any) addr:0x020be670
 data_ov002_020be688 kind:data(any) addr:0x020be688
 data_ov002_020be68c kind:data(any) addr:0x020be68c

@@ -1,6 +1,22 @@
     .text       start:0x02139f20 end:0x0213f458 kind:code align:32
     .init       start:0x0213f458 end:0x0213f6b0 kind:code align:4
-    .ctor       start:0x0213f6b0 end:0x0213f6c0 kind:rodata align:4
+    .ctor       start:0x0213f6b0 end:0x0213f6bc kind:rodata align:4
     .data       start:0x0213f6c0 end:0x0213ff60 kind:data align:32
     .bss        start:0x0213ff60 end:0x02140220 kind:bss align:32
 
+src/054_MapD2/Actor/ActorUnkFBBH.cpp:
+    .text       start:0x02139fa4 end:0x0213dc5c
+    .init       start:0x0213f458 end:0x0213f588
+    .ctor       start:0x0213f6b0 end:0x0213f6b4
+    .bss        start:0x0213ff70 end:0x02140048
+
+src/054_MapD2/Actor/ActorUnkFIBB.cpp:
+    .text       start:0x0213dc5c end:0x0213f040
+    .init       start:0x0213f588 end:0x0213f660
+    .ctor       start:0x0213f6b4 end:0x0213f6b8
+    .bss        start:0x02140058 end:0x02140130
+
+src/054_MapD2/Actor/ActorUnkFBBF.cpp:
+    .text       start:0x0213f040 end:0x0213f458
+    .init       start:0x0213f660 end:0x0213f6b0
+    .ctor       start:0x0213f6b8 end:0x0213f6bc

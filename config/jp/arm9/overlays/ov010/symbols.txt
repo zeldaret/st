@@ -35,9 +35,9 @@ func_ov010_020b9c90 kind:function(thumb,size=0x1c4) addr:0x020b9c90
 func_ov010_020b9e54 kind:function(thumb,size=0xb4) addr:0x020b9e54
 func_ov010_020b9f08 kind:function(thumb,size=0x52) addr:0x020b9f08
 func_ov010_020b9f5c kind:function(thumb,size=0x38) addr:0x020b9f5c
-func_ov010_020b9f94 kind:function(thumb,size=0x3c) addr:0x020b9f94
-func_ov010_020b9fd0 kind:function(thumb,size=0x6c) addr:0x020b9fd0
-func_ov010_020ba03c kind:function(thumb,size=0x3c) addr:0x020ba03c
+_ZN19func_ov010_020b9f94D0Ev kind:function(thumb,size=0x3c) addr:0x020b9f94
+_ZN19func_ov010_020b9fd0D0Ev kind:function(thumb,size=0x6c) addr:0x020b9fd0
+_ZN19func_ov010_020ba03cD0Ev kind:function(thumb,size=0x3c) addr:0x020ba03c
 func_ov010_020ba078 kind:function(thumb,size=0x18) addr:0x020ba078
 func_ov010_020ba090 kind:function(thumb,size=0x24) addr:0x020ba090
 func_ov010_020ba0b4 kind:function(thumb,size=0x34) addr:0x020ba0b4
@@ -69,14 +69,14 @@ data_ov010_020ba56c kind:data(any) addr:0x020ba56c
 data_ov010_020ba574 kind:data(any) addr:0x020ba574
 data_ov010_020ba588 kind:data(any) addr:0x020ba588
 __sinit_ov010_020ba59c kind:function(thumb,size=0x30) addr:0x020ba59c
-.p__sinit_ov010_020ba59d kind:data(word) addr:0x020ba5cc
+.p__sinit_ov010_020ba59c kind:data(word) addr:0x020ba5cc
 data_ov010_020ba5e0 kind:data(any) addr:0x020ba5e0
-data_ov010_020ba5f0 kind:data(any) addr:0x020ba5f0
-data_ov010_020ba630 kind:data(any) addr:0x020ba630
+_ZTV19data_ov010_020ba5e8 kind:data(any) addr:0x020ba5e8
+_ZTV19data_ov010_020ba628 kind:data(any) addr:0x020ba628
 data_ov010_020ba670 kind:data(any) addr:0x020ba670
-data_ov010_020ba680 kind:data(any) addr:0x020ba680 ambiguous
-data_ov010_020ba6b0 kind:data(any) addr:0x020ba6b0
-data_ov010_020ba6e4 kind:data(any) addr:0x020ba6e4
+_ZTV19data_ov010_020ba678 kind:data(any) addr:0x020ba678 ambiguous
+_ZTV19data_ov010_020ba6a8 kind:data(any) addr:0x020ba6a8
+_ZTV19data_ov010_020ba6dc kind:data(any) addr:0x020ba6dc
 data_ov010_020ba700 kind:bss addr:0x020ba700
 data_ov010_020ba708 kind:bss addr:0x020ba708
 data_ov010_020ba714 kind:bss addr:0x020ba714

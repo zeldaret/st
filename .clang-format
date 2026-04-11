@@ -32,3 +32,5 @@ SpaceBeforeParensOptions:
 BreakBeforeBraces: Custom
 BraceWrapping:
   AfterControlStatement: Never
+
+InsertNewlineAtEOF: true

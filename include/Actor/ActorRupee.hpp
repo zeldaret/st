@@ -2,7 +2,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorManager.hpp"
-#include "Actor/ActorType.hpp"
+#include "Actor/ActorProfile.hpp"
 #include "Actor/ActorUnk_ov000_020a8bb0.hpp"
 #include "Player/PlayerGet.hpp"
 #include "types.h"
@@ -146,15 +146,13 @@ public:
     bool func_ov031_020e9e5c();
 };
 
-class ActorTypeRupee : public ActorType {
+class ActorProfileRupee : public ActorProfile {
 public:
-    static ActorTypeRupee gInstance;
-
     /* 00 (base) */
 
-    ActorTypeRupee();
+    ActorProfileRupee();
 
     /* 0c */ virtual Actor *Create();
 
-    static ActorTypeRupee *GetInstance();
+    static ActorProfileRupee *GetProfile();
 };

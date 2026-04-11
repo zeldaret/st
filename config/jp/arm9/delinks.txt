@@ -3,7 +3,7 @@
     .exceptix   start:0x0203eb2c end:0x0203ed54 kind:rodata align:4
     .init       start:0x0203ed54 end:0x0203f1d4 kind:code align:4
     .rodata     start:0x0203f1d4 end:0x0204470c kind:rodata align:4
-    .ctor       start:0x0204470c end:0x02044768 kind:rodata align:4
+    .ctor       start:0x0204470c end:0x02044764 kind:rodata align:4
     .data       start:0x02044780 end:0x02046340 kind:data align:32
     .bss        start:0x02046340 end:0x02053060 kind:bss align:32
 

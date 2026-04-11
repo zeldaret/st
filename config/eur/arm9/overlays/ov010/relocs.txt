@@ -39,7 +39,7 @@ from:0x020b6702 kind:thumb_call_arm to:0x02060804 module:overlay(0)
 from:0x020b671a kind:thumb_call_arm to:0x020a1520 module:overlay(0)
 from:0x020b6722 kind:thumb_call to:0x020b8820 module:overlay(10)
 from:0x020b6730 kind:thumb_call_arm to:0x02012fd0 module:main
-from:0x020b673c kind:load to:0x020b8dd0 module:overlay(10)
+from:0x020b673c kind:load to:0x020b8dc8 add:0x8 module:overlay(10)
 from:0x020b6740 kind:load to:0x020b65e5 module:overlay(10)
 from:0x020b6744 kind:load to:0x0206337c module:overlay(0)
 from:0x020b6748 kind:load to:0x0204999c module:main
@@ -109,11 +109,11 @@ from:0x020b7142 kind:thumb_call_arm to:0x0203d160 module:main
 from:0x020b714c kind:thumb_call_arm to:0x0206337c module:overlay(0)
 from:0x020b715e kind:thumb_call_arm to:0x0203d160 module:main
 from:0x020b7168 kind:thumb_call_arm to:0x0201e6d0 module:main
-from:0x020b71c0 kind:load to:0x020b8d90 module:overlay(10)
+from:0x020b71c0 kind:load to:0x020b8d88 add:0x8 module:overlay(10)
 from:0x020b71c4 kind:load to:0x02063070 module:overlay(0)
 from:0x020b71c8 kind:load to:0x020b71cd module:overlay(10)
 from:0x020b71d0 kind:thumb_call_arm to:0x02062ac8 module:overlay(0)
-from:0x020b71e8 kind:load to:0x020b1ee4 module:overlay(0)
+from:0x020b71e8 kind:load to:0x020b1edc add:0x8 module:overlay(0)
 from:0x020b71f2 kind:thumb_call to:0x020b6754 module:overlay(10)
 from:0x020b71f8 kind:thumb_call_arm to:0x020196b0 module:main
 from:0x020b7200 kind:thumb_call_arm to:0x020196b0 module:main
@@ -226,7 +226,7 @@ from:0x020b81d0 kind:load to:0x027e0ce0 module:dtcm
 from:0x020b81d8 kind:thumb_call to:0x020b70c4 module:overlay(10)
 from:0x020b823a kind:thumb_call to:0x020b7094 module:overlay(10)
 from:0x020b8248 kind:thumb_call to:0x020b6690 module:overlay(10)
-from:0x020b8254 kind:load to:0x020b8d50 module:overlay(10)
+from:0x020b8254 kind:load to:0x020b8d48 add:0x8 module:overlay(10)
 from:0x020b825e kind:thumb_call to:0x020b6754 module:overlay(10)
 from:0x020b8264 kind:thumb_call_arm to:0x020196b0 module:main
 from:0x020b8276 kind:thumb_call_arm to:0x02018268 module:main
@@ -290,7 +290,7 @@ from:0x020b8804 kind:load to:0x020b65e5 module:overlay(10)
 from:0x020b8814 kind:thumb_call_arm to:0x02012ff8 module:main
 from:0x020b881c kind:load to:0x0204999c module:main
 from:0x020b882a kind:thumb_call_arm to:0x02067244 module:overlay(0)
-from:0x020b8840 kind:load to:0x020b8e10 module:overlay(10)
+from:0x020b8840 kind:load to:0x020b8e08 add:0x8 module:overlay(10)
 from:0x020b8868 kind:thumb_call_arm to:0x02067cf8 module:overlay(0)
 from:0x020b8874 kind:load to:0x020b504c module:overlay(0)
 from:0x020b88a2 kind:thumb_call_arm to:0x020d9824 module:overlay(31)
@@ -307,19 +307,19 @@ from:0x020b8914 kind:load to:0x020baac0 module:overlay(10)
 from:0x020b891c kind:thumb_call_arm to:0x02061ae4 module:overlay(0)
 from:0x020b895c kind:thumb_call_arm to:0x02018aac module:main
 from:0x020b8962 kind:thumb_call to:0x020b89dc module:overlay(10)
-from:0x020b896c kind:load to:0x020b8e44 module:overlay(10)
+from:0x020b896c kind:load to:0x020b8e3c add:0x8 module:overlay(10)
 from:0x020b8970 kind:load to:0x027e0994 module:dtcm
 from:0x020b8982 kind:thumb_call_arm to:0x02018ac4 module:main
 from:0x020b898a kind:thumb_call to:0x0201ca28 module:main
 from:0x020b8990 kind:thumb_call_arm to:0x02061c5c module:overlay(0)
-from:0x020b8998 kind:load to:0x020b8e44 module:overlay(10)
+from:0x020b8998 kind:load to:0x020b8e3c add:0x8 module:overlay(10)
 from:0x020b899c kind:load to:0x027e0994 module:dtcm
 from:0x020b89a0 kind:load to:0x0204a120 module:main
 from:0x020b89b2 kind:thumb_call_arm to:0x02018ac4 module:main
 from:0x020b89ba kind:thumb_call to:0x0201ca28 module:main
 from:0x020b89c0 kind:thumb_call_arm to:0x02061c5c module:overlay(0)
 from:0x020b89c6 kind:thumb_call_arm to:0x02011ff4 module:main
-from:0x020b89d0 kind:load to:0x020b8e44 module:overlay(10)
+from:0x020b89d0 kind:load to:0x020b8e3c add:0x8 module:overlay(10)
 from:0x020b89d4 kind:load to:0x027e0994 module:dtcm
 from:0x020b89d8 kind:load to:0x0204a120 module:main
 from:0x020b8a04 kind:thumb_call_arm to:0x0205fc20 module:overlay(0)

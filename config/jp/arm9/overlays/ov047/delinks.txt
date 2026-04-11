@@ -1,7 +1,29 @@
     .text       start:0x02131ec0 end:0x02137780 kind:code align:32
     .rodata     start:0x02137780 end:0x021377d4 kind:rodata align:4
     .init       start:0x021377d4 end:0x0213792c kind:code align:4
-    .ctor       start:0x0213792c end:0x02137944 kind:rodata align:4
+    .ctor       start:0x0213792c end:0x02137940 kind:rodata align:4
     .data       start:0x02137960 end:0x02137e00 kind:data align:32
     .bss        start:0x02137e00 end:0x02137fe0 kind:bss align:32
 
+src/047_MapC1/Actor/ActorUnkGHOS.cpp:
+    .text       start:0x02132e98 end:0x02136bcc
+    .init       start:0x021377ec end:0x0213783c
+    .ctor       start:0x02137930 end:0x02137934
+    .bss        start:0x02137e10 end:0x02137e2c
+
+src/047_MapC1/Actor/ActorUnkEVCH.cpp:
+    .text       start:0x02136bcc end:0x02136eb0
+    .init       start:0x0213783c end:0x0213788c
+    .ctor       start:0x02137934 end:0x02137938
+    .bss        start:0x02137ef8 end:0x02137f34
+
+src/047_MapC1/Actor/ActorUnkFLDK.cpp:
+    .text       start:0x02136eb0 end:0x021370f8
+    .init       start:0x0213788c end:0x021378dc
+    .ctor       start:0x02137938 end:0x0213793c
+    .bss        start:0x02137f44 end:0x02137f80
+
+src/047_MapC1/Actor/ActorUnkDLTG.cpp:
+    .text       start:0x02137188 end:0x02137550
+    .init       start:0x021378dc end:0x0213792c
+    .ctor       start:0x0213793c end:0x02137940

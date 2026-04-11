@@ -70,9 +70,9 @@ __sinit_ov006_020b89ec kind:function(thumb,size=0x18) addr:0x020b89ec
 data_ov006_020b8a20 kind:data(any) addr:0x020b8a20
 data_ov006_020b8a2d kind:data(any) addr:0x020b8a2d ambiguous
 data_ov006_020b8a30 kind:data(any) addr:0x020b8a30
-data_ov006_020b8a3c kind:data(any) addr:0x020b8a3c
+_ZTV19data_ov006_020b8a34 kind:data(any) addr:0x020b8a34
+_ZTV19data_ov006_020b8a58 kind:data(any) addr:0x020b8a58
 data_ov006_020b8a59 kind:data(any) addr:0x020b8a59 ambiguous
-data_ov006_020b8a60 kind:data(any) addr:0x020b8a60
 data_ov006_020b8a7c kind:data(any) addr:0x020b8a7c
 data_ov006_020b8ae0 kind:bss addr:0x020b8ae0
 data_ov006_020b8ae4 kind:bss addr:0x020b8ae4

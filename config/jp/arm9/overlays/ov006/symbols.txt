@@ -66,13 +66,13 @@ func_ov006_020ba128 kind:function(thumb,size=0x84) addr:0x020ba128
 data_ov006_020ba1ac kind:data(any) addr:0x020ba1ac
 data_ov006_020ba1f4 kind:data(any) addr:0x020ba1f4
 __sinit_ov006_020ba23c kind:function(thumb,size=0x18) addr:0x020ba23c
-.p__sinit_ov006_020ba23d kind:data(word) addr:0x020ba254
+.p__sinit_ov006_020ba23c kind:data(word) addr:0x020ba254
 data_ov006_020ba260 kind:data(any) addr:0x020ba260
 data_ov006_020ba26d kind:data(any) addr:0x020ba26d ambiguous
 data_ov006_020ba270 kind:data(any) addr:0x020ba270
-data_ov006_020ba27c kind:data(any) addr:0x020ba27c
+_ZTV19data_ov006_020ba274 kind:data(any) addr:0x020ba274
+_ZTV19data_ov006_020ba298 kind:data(any) addr:0x020ba298
 data_ov006_020ba299 kind:data(any) addr:0x020ba299 ambiguous
-data_ov006_020ba2a0 kind:data(any) addr:0x020ba2a0
 data_ov006_020ba2bc kind:data(any) addr:0x020ba2bc
 data_ov006_020ba320 kind:bss addr:0x020ba320
 data_ov006_020ba324 kind:bss addr:0x020ba324

@@ -279,11 +279,11 @@ THUMB void ActorManager::func_ov001_020bb548() {
 }
 
 THUMB void ActorManager::func_ov001_020bb630() {
-    ActorType **piVar2 = data_ov000_020b539c.func_ov000_02073dc();
-    ActorType **piVar3 = data_ov000_020b539c.func_ov000_02073e8();
+    ActorProfile **piVar2 = data_ov000_020b539c.func_ov000_02073dc();
+    ActorProfile **piVar3 = data_ov000_020b539c.func_ov000_02073e8();
 
     while (piVar2 != piVar3) {
-        ActorType *iVar4 = *piVar2;
+        ActorProfile *iVar4 = *piVar2;
 
         if (iVar4 != NULL) {
             bool run_vfunc_08 = false;
@@ -311,11 +311,11 @@ THUMB void ActorManager::func_ov001_020bb630() {
 }
 
 THUMB void ActorManager::func_ov001_020bb6b0(s32 *param1) {
-    ActorType **piVar1 = data_ov000_020b539c.func_ov000_02073dc();
-    ActorType **piVar2 = data_ov000_020b539c.func_ov000_02073e8();
+    ActorProfile **piVar1 = data_ov000_020b539c.func_ov000_02073dc();
+    ActorProfile **piVar2 = data_ov000_020b539c.func_ov000_02073e8();
 
     while (piVar1 != piVar2) {
-        ActorType *iVar5 = *piVar1;
+        ActorProfile *iVar5 = *piVar1;
 
         if (iVar5 != NULL && iVar5->mUnk_38 == 0) {
             for (int i = 0; i < ARRAY_LEN(data_ov000_020ab1ac); i++) {
@@ -367,18 +367,18 @@ THUMB bool ActorManager::func_ov001_020bb728(s32 param1) {
 
 THUMB void ActorManager::func_ov001_020bb7b0(ZeldaObjectList *pObjList) {
     for (s32 i = 0; i < pObjList->nEntries; i++) {
-        u32 id                = pObjList->aIdList[i];
-        ActorType *pActorType = data_ov000_020b539c.func_ov000_020974dc(id);
+        u32 id                      = pObjList->aIdList[i];
+        ActorProfile *pActorProfile = data_ov000_020b539c.func_ov000_020974dc(id);
 
-        if (!this->func_ov001_020bb728(id) && pActorType != NULL) {
-            pActorType->vfunc_08();
+        if (!this->func_ov001_020bb728(id) && pActorProfile != NULL) {
+            pActorProfile->vfunc_08();
         }
     }
 }
 
 THUMB void ActorManager::func_ov001_020bb7f0() {
-    ActorType **ptr1 = data_ov000_020b539c.func_ov000_02073dc();
-    ActorType **ptr2 = data_ov000_020b539c.func_ov000_02073e8();
+    ActorProfile **ptr1 = data_ov000_020b539c.func_ov000_02073dc();
+    ActorProfile **ptr2 = data_ov000_020b539c.func_ov000_02073e8();
 
     while (ptr1 != ptr2) {
         if (*ptr1 != NULL) {
