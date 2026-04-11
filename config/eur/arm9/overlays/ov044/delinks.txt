@@ -1,7 +1,47 @@
     .text       start:0x021234c0 end:0x0212c9f4 kind:code align:32
     .rodata     start:0x0212c9f4 end:0x0212cafc kind:rodata align:4
     .init       start:0x0212cafc end:0x0212cd84 kind:code align:4
-    .ctor       start:0x0212cd84 end:0x0212cdac kind:rodata align:4
+    .ctor       start:0x0212cd84 end:0x0212cda8 kind:rodata align:4
     .data       start:0x0212cdc0 end:0x0212d580 kind:data align:32
     .bss        start:0x0212d580 end:0x0212dce0 kind:bss align:32
 
+src/044_MapB5/Actor/ActorUnkICBB.cpp:
+    .text       start:0x02125eb4 end:0x0212a440
+    .init       start:0x0212cb1c end:0x0212cb80
+    .ctor       start:0x0212cd8c end:0x0212cd90
+    .bss        start:0x0212d6e0 end:0x0212d764
+
+src/044_MapB5/Actor/ActorUnkIBBA.cpp:
+    .text       start:0x0212a440 end:0x0212b710
+    .init       start:0x0212cb80 end:0x0212cbf4
+    .ctor       start:0x0212cd90 end:0x0212cd94
+    .bss        start:0x0212d7c8 end:0x0212d804
+
+src/044_MapB5/Actor/ActorUnkIBSP.cpp:
+    .text       start:0x0212b710 end:0x0212bbd0
+    .init       start:0x0212cbf4 end:0x0212cc44
+    .ctor       start:0x0212cd94 end:0x0212cd98
+    .bss        start:0x0212d834 end:0x0212d870
+
+src/044_MapB5/Actor/ActorUnkRBL2.cpp:
+    .text       start:0x0212bd48 end:0x0212c1a8
+    .init       start:0x0212cc44 end:0x0212cc94
+    .ctor       start:0x0212cd98 end:0x0212cd9c
+    .bss        start:0x0212d880 end:0x0212d958
+
+src/044_MapB5/Actor/ActorUnkL2V1.cpp:
+    .text       start:0x0212c1a8 end:0x0212c644
+    .init       start:0x0212cc94 end:0x0212cce4
+    .ctor       start:0x0212cd9c end:0x0212cda0
+    .bss        start:0x0212da38 end:0x0212db10
+
+src/044_MapB5/Actor/ActorUnkL2V2.cpp:
+    .text       start:0x0212c644 end:0x0212c888
+    .init       start:0x0212cce4 end:0x0212cd34
+    .ctor       start:0x0212cda0 end:0x0212cda4
+    .bss        start:0x0212db20 end:0x0212dbf8
+
+src/044_MapB5/Actor/ActorUnkL2MT.cpp:
+    .text       start:0x0212c888 end:0x0212c9f4
+    .init       start:0x0212cd34 end:0x0212cd84
+    .ctor       start:0x0212cda4 end:0x0212cda8

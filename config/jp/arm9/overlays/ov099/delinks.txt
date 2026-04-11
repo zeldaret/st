@@ -1,6 +1,28 @@
     .text       start:0x02182bc0 end:0x02183c50 kind:code align:32
     .init       start:0x02183c50 end:0x02183d90 kind:code align:4
-    .ctor       start:0x02183d90 end:0x02183da4 kind:rodata align:4
+    .ctor       start:0x02183d90 end:0x02183da0 kind:rodata align:4
     .data       start:0x02183dc0 end:0x02184120 kind:data align:32
     .bss        start:0x02184120 end:0x021844c0 kind:bss align:32
 
+src/099_MapLava/Actor/ActorUnkEFWL.cpp:
+    .text       start:0x02182c34 end:0x02182fdc
+    .init       start:0x02183c50 end:0x02183ca0
+    .ctor       start:0x02183d90 end:0x02183d94
+    .bss        start:0x02184130 end:0x02184208
+
+src/099_MapLava/Actor/ActorUnkEFRL.cpp:
+    .text       start:0x02182fdc end:0x02183408
+    .init       start:0x02183ca0 end:0x02183cf0
+    .ctor       start:0x02183d94 end:0x02183d98
+    .bss        start:0x02184218 end:0x021842f0
+
+src/099_MapLava/Actor/ActorUnkVOLV.cpp:
+    .text       start:0x02183408 end:0x02183744
+    .init       start:0x02183cf0 end:0x02183d40
+    .ctor       start:0x02183d98 end:0x02183d9c
+    .bss        start:0x02184300 end:0x021843d8
+
+src/099_MapLava/Actor/ActorUnkE3LV.cpp:
+    .text       start:0x02183744 end:0x02183a34
+    .init       start:0x02183d40 end:0x02183d90
+    .ctor       start:0x02183d9c end:0x02183da0

@@ -1,7 +1,17 @@
     .text       start:0x02152c20 end:0x0215450c kind:code align:32
     .rodata     start:0x0215450c end:0x021545c0 kind:rodata align:4
     .init       start:0x021545c0 end:0x02154660 kind:code align:4
-    .ctor       start:0x02154660 end:0x0215466c kind:rodata align:4
+    .ctor       start:0x02154660 end:0x02154668 kind:rodata align:4
     .data       start:0x02154680 end:0x021548a0 kind:data align:32
     .bss        start:0x021548a0 end:0x02154a80 kind:bss align:32
 
+src/072_TowerLobby/Actor/ActorUnkRMM0.cpp:
+    .text       start:0x02152ca0 end:0x02154074
+    .init       start:0x021545c0 end:0x02154610
+    .ctor       start:0x02154660 end:0x02154664
+    .bss        start:0x021548b0 end:0x021548ec
+
+src/072_TowerLobby/Actor/ActorUnkRMM3.cpp:
+    .text       start:0x02154074 end:0x0215450c
+    .init       start:0x02154610 end:0x02154660
+    .ctor       start:0x02154664 end:0x02154668

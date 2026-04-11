@@ -2,15 +2,15 @@
 #include "Actor/ActorId.hpp"
 #include "global.h"
 
-static ActorId gActorTypeLookupTable[] = {
+static ActorId gActorProfileLookupTable[] = {
 #define DEFINE_ACTOR_TYPE(id, name) ActorId_##name,
-#include "Actor/ActorTypeTable.inl"
+#include "Actor/ActorTable.inl"
 #undef DEFINE_ACTOR_TYPE
 };
 
-// static ActorTypeGetInstance gActorTypes[] = {
-// #define DEFINE_ACTOR_TYPE(id, name) &ActorType##name::GetInstance,
-// #include "Actor/ActorTypeTable.inl"
+// static GetActorProfile gActorProfiles[] = {
+// #define DEFINE_ACTOR_TYPE(id, name) &ActorProfile##name::GetProfile,
+// #include "Actor/ActorTable.inl"
 // #undef DEFINE_ACTOR_TYPE
 // };
 

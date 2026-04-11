@@ -1,7 +1,17 @@
     .text       start:0x02139f20 end:0x0213e750 kind:code align:32
     .rodata     start:0x0213e750 end:0x0213e790 kind:rodata align:4
     .init       start:0x0213e790 end:0x0213e8a8 kind:code align:4
-    .ctor       start:0x0213e8a8 end:0x0213e8b8 kind:rodata align:4
+    .ctor       start:0x0213e8a8 end:0x0213e8b4 kind:rodata align:4
     .data       start:0x0213e8c0 end:0x0213ede0 kind:data align:32
     .bss        start:0x0213ede0 end:0x0213efc0 kind:bss align:32
 
+src/053_MapD1/Actor/ActorUnkLIKE.cpp:
+    .text       start:0x02139fdc end:0x0213ccdc
+    .init       start:0x0213e790 end:0x0213e7e0
+    .ctor       start:0x0213e8a8 end:0x0213e8ac
+    .bss        start:0x0213edf0 end:0x0213eec8
+
+src/053_MapD1/Actor/ActorUnkRAT0.cpp:
+    .text       start:0x0213ccdc end:0x0213e524
+    .init       start:0x0213e7e0 end:0x0213e890
+    .ctor       start:0x0213e8ac end:0x0213e8b0

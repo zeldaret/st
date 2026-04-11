@@ -35,7 +35,7 @@ ARM Actor::Actor() {
 ARM Actor::~Actor() {}
 
 // non-matching (equivalent)
-ARM void Actor::func_ov000_0209848c(ActorType *param1) {
+ARM void Actor::func_ov000_0209848c(ActorProfile *param1) {
     s16 unk_1c;
     Cylinder *temp_r3;
 

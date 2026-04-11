@@ -16,20 +16,20 @@ extern "C" unk32 func_ov031_0210af50(u16, unk32 *);
 extern void func_ov031_0210b0e4(u16, unk32);
 extern "C" unk32 func_ov031_020d9834(unk32 *);
 
-extern ActorTypeRupee ActorTypeRupee::gInstance;
+static ActorProfileRupee sActorProfileRupee;
 extern unk32 *data_027e0d34;
 extern Cylinder data_ov031_02113478;
 
-ARM ActorTypeRupee *ActorTypeRupee::GetInstance() {
-    return &ActorTypeRupee::gInstance;
+ARM ActorProfileRupee *ActorProfileRupee::GetProfile() {
+    return &sActorProfileRupee;
 }
 
-ARM Actor *ActorTypeRupee::Create() {
+ARM Actor *ActorProfileRupee::Create() {
     return new(HeapIndex_2) ActorRupee();
 }
 
-ARM ActorTypeRupee::ActorTypeRupee() :
-    ActorType(ActorId_Rupee) {
+ARM ActorProfileRupee::ActorProfileRupee() :
+    ActorProfile(ActorId_Rupee) {
     this->mUnk_04.pos.x = 0;
     this->mUnk_04.pos.y = 0x556;
     this->mUnk_04.pos.z = 0;
