@@ -451,4 +451,3 @@ data_ov086_02160d78 kind:bss addr:0x02160d78
 data_ov086_02160d9c kind:bss addr:0x02160d9c
 data_ov086_02160da0 kind:bss addr:0x02160da0
 sMapObjectProfileUnkDRRS kind:bss addr:0x02160dac
-data_ov086_02160e10 kind:bss addr:0x02160e10 ambiguous

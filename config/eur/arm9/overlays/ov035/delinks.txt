@@ -27,4 +27,4 @@ src/035_MapA4/Actor/ActorUnkFIFI.cpp:
     .text       start:0x0211e4a4 end:0x0211e910
     .init       start:0x02121130 end:0x02121180
     .ctor       start:0x0212118c end:0x02121190
-    .bss        start:0x02121ec4 end:0x02121ed4
+    .bss        start:0x02121ec4 end:0x02121f00

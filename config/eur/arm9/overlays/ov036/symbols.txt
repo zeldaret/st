@@ -470,4 +470,3 @@ sActorProfileUnkTEHT kind:bss addr:0x02122dd8
 data_ov036_02122e14 kind:bss addr:0x02122e14
 data_ov036_02122e18 kind:bss addr:0x02122e18
 sActorProfileUnkRMST kind:bss addr:0x02122e24
-data_ov036_02122ebc kind:bss addr:0x02122ebc ambiguous

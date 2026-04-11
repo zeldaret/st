@@ -57,4 +57,4 @@ src/077_DgnForest/MapObject/MapObjectUnkGTRK.cpp:
     .text       start:0x0215ae50 end:0x0215b0a4
     .init       start:0x0215b3b4 end:0x0215b404
     .ctor       start:0x0215b424 end:0x0215b428
-    .bss        start:0x0215c3cc end:0x0215c438
+    .bss        start:0x0215c3cc end:0x0215c4a0

@@ -676,4 +676,3 @@ data_ov090_02177d38 kind:bss addr:0x02177d38 ambiguous
 data_ov090_02177d54 kind:bss addr:0x02177d54
 data_ov090_02177d58 kind:bss addr:0x02177d58
 sMapObjectProfileUnkETNM kind:bss addr:0x02177d64
-data_ov090_02177d78 kind:bss addr:0x02177d78 ambiguous

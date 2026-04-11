@@ -272,7 +272,3 @@ data_ov061_0215ba58 kind:bss addr:0x0215ba58 ambiguous
 data_ov061_0215ba5c kind:bss addr:0x0215ba5c
 data_ov061_0215ba60 kind:bss addr:0x0215ba60
 sMapObjectProfileUnkDRTY kind:bss addr:0x0215ba6c
-data_ov061_0215ba74 kind:bss addr:0x0215ba74 ambiguous
-data_ov061_0215ba98 kind:bss addr:0x0215ba98 ambiguous
-data_ov061_0215baf8 kind:bss addr:0x0215baf8 ambiguous
-data_ov061_0215bb34 kind:bss addr:0x0215bb34 ambiguous

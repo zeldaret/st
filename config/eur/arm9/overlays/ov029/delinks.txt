@@ -117,4 +117,4 @@ src/029_TrainWater/Actor/ActorUnkPRSP.cpp:
     .text       start:0x0214d8a8 end:0x02150e90
     .init       start:0x02151610 end:0x02151694
     .ctor       start:0x021516dc end:0x021516e0
-    .bss        start:0x02153844 end:0x021538b8
+    .bss        start:0x02153844 end:0x02153920

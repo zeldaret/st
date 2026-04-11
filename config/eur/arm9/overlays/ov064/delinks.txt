@@ -51,4 +51,4 @@ src/064_FldForest/MapObject/MapObjectUnkLEVN.cpp:
     .text       start:0x0215a170 end:0x0215a2d8
     .init       start:0x0215a59c end:0x0215a5ec
     .ctor       start:0x0215a608 end:0x0215a60c
-    .bss        start:0x0215b4d0 end:0x0215b50c
+    .bss        start:0x0215b4d0 end:0x0215b520

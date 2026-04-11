@@ -123,4 +123,4 @@ src/090_TrainNormal/MapObject/MapObjectUnkETNM.cpp:
     .text       start:0x02175248 end:0x02175398
     .init       start:0x02175c0c end:0x02175c5c
     .ctor       start:0x02175ca8 end:0x02175cac
-    .bss        start:0x02177d64 end:0x02177d78
+    .bss        start:0x02177d64 end:0x02177e40

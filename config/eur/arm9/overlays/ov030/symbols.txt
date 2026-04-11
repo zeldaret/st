@@ -581,4 +581,3 @@ data_ov030_02152bf4 kind:bss addr:0x02152bf4
 data_ov030_02152c04 kind:bss addr:0x02152c04
 data_ov030_02152c14 kind:bss addr:0x02152c14
 sActorProfileUnkWKTR kind:bss addr:0x02152c24
-data_ov030_02152ca0 kind:bss addr:0x02152ca0 ambiguous

@@ -81,4 +81,4 @@ src/086_DgnDesert/MapObject/MapObjectUnkDRRS.cpp:
     .text       start:0x0215e658 end:0x0215ebe4
     .init       start:0x0215f584 end:0x0215f5d4
     .ctor       start:0x0215f604 end:0x0215f608
-    .bss        start:0x02160dac end:0x02160e10
+    .bss        start:0x02160dac end:0x02160e80

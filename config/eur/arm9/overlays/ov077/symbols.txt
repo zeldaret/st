@@ -353,5 +353,3 @@ data_ov077_0215c398 kind:bss addr:0x0215c398
 data_ov077_0215c3bc kind:bss addr:0x0215c3bc
 data_ov077_0215c3c0 kind:bss addr:0x0215c3c0
 sMapObjectProfileUnkGTRK kind:bss addr:0x0215c3cc
-data_ov077_0215c438 kind:bss addr:0x0215c438 ambiguous
-data_ov077_0215c444 kind:bss addr:0x0215c444 ambiguous

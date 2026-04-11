@@ -642,4 +642,3 @@ data_ov029_02153828 kind:bss addr:0x02153828
 data_ov029_0215382c kind:bss addr:0x0215382c
 data_ov029_02153838 kind:bss addr:0x02153838
 sActorProfileUnkPRSP kind:bss addr:0x02153844
-data_ov029_021538b8 kind:bss addr:0x021538b8 ambiguous

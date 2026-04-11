@@ -318,5 +318,3 @@ data_ov079_0215847c kind:bss addr:0x0215847c ambiguous
 data_ov079_0215854c kind:bss addr:0x0215854c
 data_ov079_02158550 kind:bss addr:0x02158550
 sMapObjectProfileUnkFSSV kind:bss addr:0x0215855c
-data_ov079_021585a0 kind:bss addr:0x021585a0 ambiguous
-data_ov079_021585e0 kind:bss addr:0x021585e0 ambiguous
