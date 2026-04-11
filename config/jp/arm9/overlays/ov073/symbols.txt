@@ -295,4 +295,3 @@ data_ov073_021667f4 kind:bss addr:0x021667f4
 data_ov073_021668c8 kind:bss addr:0x021668c8
 data_ov073_021668cc kind:bss addr:0x021668cc
 sActorProfileUnkDGPC kind:bss addr:0x021668d8
-data_ov073_021668f0 kind:bss addr:0x021668f0 ambiguous

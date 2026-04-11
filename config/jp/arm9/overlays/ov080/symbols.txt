@@ -359,4 +359,3 @@ sMapObjectProfileUnkSTSS kind:bss addr:0x0216239c
 data_ov080_02162404 kind:bss addr:0x02162404
 data_ov080_02162408 kind:bss addr:0x02162408
 sActorProfileUnkRBSN kind:bss addr:0x02162414
-data_ov080_0216243c kind:bss addr:0x0216243c ambiguous

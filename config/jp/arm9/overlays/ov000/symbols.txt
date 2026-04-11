@@ -3264,7 +3264,7 @@ data_ov000_020af548 kind:data(any) addr:0x020af548
 data_ov000_020af558 kind:data(any) addr:0x020af558
 data_ov000_020af56c kind:data(any) addr:0x020af56c
 data_ov000_020af578 kind:data(word[525]) addr:0x020af578
-data_ov000_020afdac kind:data(word[525]) addr:0x020afdac
+data_ov000_020afdac kind:data(any) addr:0x020afdac
 data_ov000_020b030a kind:data(any) addr:0x020b030a
 data_ov000_020b05e0 kind:data(word[246]) addr:0x020b05e0
 data_ov000_020b09b8 kind:data(word[246]) addr:0x020b09b8

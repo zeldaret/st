@@ -410,4 +410,3 @@ data_ov075_021655d4 kind:bss addr:0x021655d4
 data_ov075_021655dc kind:bss addr:0x021655dc
 data_ov075_021655e8 kind:bss addr:0x021655e8
 sActorProfileUnkMABL kind:bss addr:0x021655f4
-data_ov075_0216563c kind:bss addr:0x0216563c

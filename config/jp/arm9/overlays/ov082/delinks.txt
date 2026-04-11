@@ -21,4 +21,4 @@ src/082_DgnWater/Actor/ActorUnkDSWT.cpp:
     .text       start:0x021599b0 end:0x02159ad4
     .init       start:0x0215a838 end:0x0215a888
     .ctor       start:0x0215a890 end:0x0215a894
-    .bss        start:0x0215af04 end:0x0215af60
+    .bss        start:0x0215af04 end:0x0215afe0

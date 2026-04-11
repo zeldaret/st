@@ -228,5 +228,3 @@ sActorProfileUnkRBFR kind:bss addr:0x0215fdec
 data_ov078_0215fec4 kind:bss addr:0x0215fec4
 data_ov078_0215fec8 kind:bss addr:0x0215fec8
 sMapObjectProfileUnkSTSF kind:bss addr:0x0215fed4
-data_ov078_0215fef4 kind:bss addr:0x0215fef4 ambiguous
-data_ov078_0215ff08 kind:bss addr:0x0215ff08 ambiguous

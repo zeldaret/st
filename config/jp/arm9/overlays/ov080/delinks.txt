@@ -27,4 +27,4 @@ src/080_BossSnow/Actor/ActorUnkRBSN.cpp:
     .text       start:0x02160bc8 end:0x02160e50
     .init       start:0x02161534 end:0x02161584
     .ctor       start:0x02161590 end:0x02161594
-    .bss        start:0x02162414 end:0x0216243c
+    .bss        start:0x02162414 end:0x02162500

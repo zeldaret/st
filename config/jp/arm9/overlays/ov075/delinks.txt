@@ -27,4 +27,4 @@ src/075_BossLast2/Actor/ActorUnkMABL.cpp:
     .text       start:0x02160268 end:0x02162730
     .init       start:0x021645c8 end:0x02164670
     .ctor       start:0x0216467c end:0x02164680
-    .bss        start:0x021655f4 end:0x0216563c
+    .bss        start:0x021655f4 end:0x021656e0

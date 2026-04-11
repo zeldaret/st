@@ -111,13 +111,13 @@ src/026_Train/Actor/ActorUnkTHER.cpp:
     .text       start:0x021132f8 end:0x0211358c
     .init       start:0x02136d88 end:0x02136dd8
     .ctor       start:0x02137598 end:0x0213759c
-    .bss        start:0x021427b4 end:0x021427e5
+    .bss        start:0x021427b4 end:0x02142800
 
 src/026_Train/Actor/ActorUnkTRUP.cpp:
     .text       start:0x0211358c end:0x02113898
     .init       start:0x02136dd8 end:0x02136e28
     .ctor       start:0x0213759c end:0x021375a0
-    .bss        start:0x02142800 end:0x02142805
+    .bss        start:0x02142800 end:0x02142964
 
 src/026_Train/Actor/ActorUnkKLTR.cpp:
     .text       start:0x02113898 end:0x02115f94

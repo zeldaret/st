@@ -184,5 +184,3 @@ data_ov082_0215aee0 kind:bss addr:0x0215aee0 ambiguous
 data_ov082_0215aef4 kind:bss addr:0x0215aef4
 data_ov082_0215aef8 kind:bss addr:0x0215aef8
 sActorProfileUnkDSWT kind:bss addr:0x0215af04
-data_ov082_0215af60 kind:bss addr:0x0215af60 ambiguous
-data_ov082_0215afb8 kind:bss addr:0x0215afb8 ambiguous

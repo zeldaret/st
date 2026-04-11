@@ -399,4 +399,3 @@ data_ov027_0214bcf4 kind:bss addr:0x0214bcf4
 data_ov027_0214bd04 kind:bss addr:0x0214bd04
 data_ov027_0214bd14 kind:bss addr:0x0214bd14
 sActorProfileUnkFKTR kind:bss addr:0x0214bd24
-data_ov027_0214bdc8 kind:bss addr:0x0214bdc8 ambiguous

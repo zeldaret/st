@@ -222,4 +222,3 @@ data_ov064_0215d200 kind:bss addr:0x0215d200
 data_ov064_0215d204 kind:bss addr:0x0215d204
 data_ov064_0215d208 kind:bss addr:0x0215d208 ambiguous
 sMapObjectProfileUnkLEVN kind:bss addr:0x0215d210
-data_ov064_0215d24c kind:bss addr:0x0215d24c ambiguous

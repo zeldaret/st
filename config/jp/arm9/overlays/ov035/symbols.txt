@@ -273,4 +273,3 @@ sActorProfileUnkFIML kind:bss addr:0x02123b7c
 data_ov035_02123c54 kind:bss addr:0x02123c54
 data_ov035_02123c58 kind:bss addr:0x02123c58
 sActorProfileUnkFIFI kind:bss addr:0x02123c64
-data_ov035_02123c90 kind:bss addr:0x02123c90 ambiguous

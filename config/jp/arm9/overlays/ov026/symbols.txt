@@ -3092,11 +3092,9 @@ sActorProfileUnkTRCB kind:bss addr:0x02142768
 data_ov026_021427a4 kind:bss addr:0x021427a4
 data_ov026_021427a8 kind:bss addr:0x021427a8
 sActorProfileUnkTHER kind:bss addr:0x021427b4
-data_ov026_021427e5 kind:bss addr:0x021427e5 ambiguous
 data_ov026_021427f0 kind:bss addr:0x021427f0
 data_ov026_021427f4 kind:bss addr:0x021427f4
 sActorProfileUnkTRUP kind:bss addr:0x02142800
-data_ov026_02142805 kind:bss addr:0x02142805 ambiguous
 data_ov026_0214283c kind:bss addr:0x0214283c
 data_ov026_02142840 kind:bss addr:0x02142840
 data_ov026_02142844 kind:bss addr:0x02142844

@@ -81,4 +81,4 @@ src/030_TrainFlame/Actor/ActorUnkWKTR.cpp:
     .text       start:0x02150060 end:0x02152968
     .init       start:0x021532d4 end:0x02153324
     .ctor       start:0x02153354 end:0x02153358
-    .bss        start:0x02154fc4 end:0x02155058
+    .bss        start:0x02154fc4 end:0x021550a0

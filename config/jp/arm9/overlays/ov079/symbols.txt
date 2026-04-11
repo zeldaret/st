@@ -322,4 +322,3 @@ sMapObjectProfileUnkGTSN kind:bss addr:0x0215a498
 data_ov079_0215a56c kind:bss addr:0x0215a56c
 data_ov079_0215a570 kind:bss addr:0x0215a570
 sMapObjectProfileUnkFSSV kind:bss addr:0x0215a57c
-data_ov079_0215a594 kind:bss addr:0x0215a594 ambiguous
