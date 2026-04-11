@@ -21,5 +21,5 @@ ARM MapObjectUnkFSWT::MapObjectUnkFSWT() {}
 ARM void MapObjectUnkFSWT::func_ov066_0215ca5c(void) {}
 ARM void MapObjectUnkFSWT::func_ov066_0215caac(void) {}
 
-MapObjectUnkFSWT::~MapObjectUnkFSWT() {}
-MapObjectProfileUnkFSWT::~MapObjectProfileUnkFSWT() {}
+ARM MapObjectUnkFSWT::~MapObjectUnkFSWT() {}
+ARM MapObjectProfileUnkFSWT::~MapObjectProfileUnkFSWT() {}

@@ -37,5 +37,5 @@ ARM ActorProfileUnkFMLS::ActorProfileUnkFMLS() :
 
 ARM ActorUnkFMLS::ActorUnkFMLS() {}
 
-ActorProfileUnkFMAS::~ActorProfileUnkFMAS() {}
-ActorProfileUnkFMLS::~ActorProfileUnkFMLS() {}
+ARM ActorProfileUnkFMAS::~ActorProfileUnkFMAS() {}
+ARM ActorProfileUnkFMLS::~ActorProfileUnkFMLS() {}

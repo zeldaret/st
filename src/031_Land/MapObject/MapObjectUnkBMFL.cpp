@@ -29,5 +29,5 @@ ARM void MapObjectUnkBMFL::func_ov031_02102a40(void) {}
 ARM void MapObjectUnkBMFL::func_ov031_02102ad8(void) {}
 ARM void MapObjectUnkBMFL::func_ov031_02102af4(void) {}
 
-MapObjectUnkBMFL::~MapObjectUnkBMFL() {}
-MapObjectProfileUnkBMFL::~MapObjectProfileUnkBMFL() {}
+ARM MapObjectUnkBMFL::~MapObjectUnkBMFL() {}
+ARM MapObjectProfileUnkBMFL::~MapObjectProfileUnkBMFL() {}

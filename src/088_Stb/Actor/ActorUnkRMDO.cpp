@@ -25,5 +25,5 @@ ARM void ActorUnkRMDO::func_ov088_02171ae0(void) {}
 ARM void ActorUnkRMDO::func_ov088_02171af4(void) {}
 ARM void ActorUnkRMDO::func_ov088_02171af8(void) {}
 
-ActorUnkRMDO::~ActorUnkRMDO() {}
-ActorProfileUnkRMDO::~ActorProfileUnkRMDO() {}
+ARM ActorUnkRMDO::~ActorUnkRMDO() {}
+ARM ActorProfileUnkRMDO::~ActorProfileUnkRMDO() {}

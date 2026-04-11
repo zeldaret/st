@@ -47,5 +47,5 @@ ARM void ActorUnkBAFO::func_ov021_020f18d0(void) {}
 ARM void ActorUnkBAFO::func_ov021_020f18d4(void) {}
 ARM void ActorUnkBAFO::func_ov021_020f1958(void) {}
 
-ActorUnkBAFO::~ActorUnkBAFO() {}
-ActorProfileUnkBAFO::~ActorProfileUnkBAFO() {}
+ARM ActorUnkBAFO::~ActorUnkBAFO() {}
+ARM ActorProfileUnkBAFO::~ActorProfileUnkBAFO() {}

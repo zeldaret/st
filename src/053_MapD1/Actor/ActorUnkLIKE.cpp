@@ -74,5 +74,5 @@ ARM void ActorUnkLIKE::func_ov053_0213b240(void) {}
 ARM void ActorUnkLIKE::func_ov053_0213b25c(void) {}
 ARM void ActorUnkLIKE::func_ov053_0213b278(void) {}
 
-ActorUnkLIKE::~ActorUnkLIKE() {}
-ActorProfileUnkLIKE::~ActorProfileUnkLIKE() {}
+ARM ActorUnkLIKE::~ActorUnkLIKE() {}
+ARM ActorProfileUnkLIKE::~ActorProfileUnkLIKE() {}

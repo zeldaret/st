@@ -46,5 +46,5 @@ ARM void ActorUnkHERT::func_ov031_020ef774(void) {}
 ARM void ActorUnkHERT::func_ov031_020ef794(void) {}
 ARM void ActorUnkHERT::func_ov031_020ef7bc(void) {}
 
-ActorUnkHERT::~ActorUnkHERT() {}
-ActorProfileUnkHERT::~ActorProfileUnkHERT() {}
+ARM ActorUnkHERT::~ActorUnkHERT() {}
+ARM ActorProfileUnkHERT::~ActorProfileUnkHERT() {}

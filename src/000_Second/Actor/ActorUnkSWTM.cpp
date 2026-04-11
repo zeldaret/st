@@ -28,5 +28,5 @@ ARM void ActorUnkSWTM::func_ov000_0209b160(void) {}
 ARM void ActorUnkSWTM::func_ov000_0209b184(void) {}
 ARM void ActorUnkSWTM::func_ov000_0209b1d0(void) {}
 
-ActorUnkSWTM::~ActorUnkSWTM() {}
-ActorProfileUnkSWTM::~ActorProfileUnkSWTM() {}
+ARM ActorUnkSWTM::~ActorUnkSWTM() {}
+ARM ActorProfileUnkSWTM::~ActorProfileUnkSWTM() {}

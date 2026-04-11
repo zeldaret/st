@@ -48,5 +48,5 @@ ARM void ActorUnkLIRA::func_ov070_02143350(void) {}
 ARM void ActorUnkLIRA::func_ov070_021433d0(void) {}
 ARM void ActorUnkLIRA::func_ov070_02143414(void) {}
 
-ActorUnkLIRA::~ActorUnkLIRA() {}
-ActorProfileUnkLIRA::~ActorProfileUnkLIRA() {}
+ARM ActorUnkLIRA::~ActorUnkLIRA() {}
+ARM ActorProfileUnkLIRA::~ActorProfileUnkLIRA() {}

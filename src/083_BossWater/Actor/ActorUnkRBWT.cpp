@@ -37,5 +37,5 @@ ARM void ActorUnkRBWT::func_ov083_0215c144(void) {}
 ARM void ActorUnkRBWT::func_ov083_0215c154(void) {}
 ARM void ActorUnkRBWT::func_ov083_0215c15c(void) {}
 
-ActorUnkRBWT::~ActorUnkRBWT() {}
-ActorProfileUnkRBWT::~ActorProfileUnkRBWT() {}
+ARM ActorUnkRBWT::~ActorUnkRBWT() {}
+ARM ActorProfileUnkRBWT::~ActorProfileUnkRBWT() {}

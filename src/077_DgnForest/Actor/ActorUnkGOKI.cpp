@@ -45,5 +45,5 @@ ARM void ActorUnkGOKI::func_ov077_02159c3c(void) {}
 ARM void ActorUnkGOKI::func_ov077_02159cc0(void) {}
 ARM void ActorUnkGOKI::func_ov077_02159cdc(void) {}
 
-ActorUnkGOKI::~ActorUnkGOKI() {}
-ActorProfileUnkGOKI::~ActorProfileUnkGOKI() {}
+ARM ActorUnkGOKI::~ActorUnkGOKI() {}
+ARM ActorProfileUnkGOKI::~ActorProfileUnkGOKI() {}

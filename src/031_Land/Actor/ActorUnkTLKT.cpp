@@ -26,5 +26,5 @@ ARM void ActorUnkTLKT::func_ov031_020e42f0(void) {}
 ARM void ActorUnkTLKT::func_ov031_020e4320(void) {}
 ARM void ActorUnkTLKT::func_ov031_020e4514(void) {}
 
-ActorUnkTLKT::~ActorUnkTLKT() {}
-ActorProfileUnkTLKT::~ActorProfileUnkTLKT() {}
+ARM ActorUnkTLKT::~ActorUnkTLKT() {}
+ARM ActorProfileUnkTLKT::~ActorProfileUnkTLKT() {}

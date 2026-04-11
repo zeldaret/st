@@ -21,5 +21,5 @@ ARM ActorUnkRMTE::ActorUnkRMTE() {}
 ARM void ActorUnkRMTE::func_ov065_021594e0(void) {}
 ARM void ActorUnkRMTE::func_ov065_0215964c(void) {}
 
-ActorUnkRMTE::~ActorUnkRMTE() {}
-ActorProfileUnkRMTE::~ActorProfileUnkRMTE() {}
+ARM ActorUnkRMTE::~ActorUnkRMTE() {}
+ARM ActorProfileUnkRMTE::~ActorProfileUnkRMTE() {}

@@ -42,5 +42,5 @@ ARM void ActorUnkMZCT::func_ov091_02169ac8(void) {}
 ARM void ActorUnkMZCT::func_ov091_02169acc(void) {}
 ARM void ActorUnkMZCT::func_ov091_02169b90(void) {}
 
-ActorUnkMZCT::~ActorUnkMZCT() {}
-ActorProfileUnkMZCT::~ActorProfileUnkMZCT() {}
+ARM ActorUnkMZCT::~ActorUnkMZCT() {}
+ARM ActorProfileUnkMZCT::~ActorProfileUnkMZCT() {}

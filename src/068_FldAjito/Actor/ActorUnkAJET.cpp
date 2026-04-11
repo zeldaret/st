@@ -44,5 +44,5 @@ ARM void ActorUnkAJET::func_ov068_0215bca8(void) {}
 ARM void ActorUnkAJET::func_ov068_0215bd14(void) {}
 ARM void ActorUnkAJET::func_ov068_0215be6c(void) {}
 
-ActorUnkAJET::~ActorUnkAJET() {}
-ActorProfileUnkAJET::~ActorProfileUnkAJET() {}
+ARM ActorUnkAJET::~ActorUnkAJET() {}
+ARM ActorProfileUnkAJET::~ActorProfileUnkAJET() {}

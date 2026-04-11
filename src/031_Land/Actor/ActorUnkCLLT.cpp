@@ -22,5 +22,5 @@ ARM void ActorUnkCLLT::func_ov031_020fb38c(void) {}
 ARM void ActorUnkCLLT::func_ov031_020fb3c8(void) {}
 ARM void ActorUnkCLLT::func_ov031_020fb40c(void) {}
 
-ActorUnkCLLT::~ActorUnkCLLT() {}
-ActorProfileUnkCLLT::~ActorProfileUnkCLLT() {}
+ARM ActorUnkCLLT::~ActorUnkCLLT() {}
+ARM ActorProfileUnkCLLT::~ActorProfileUnkCLLT() {}

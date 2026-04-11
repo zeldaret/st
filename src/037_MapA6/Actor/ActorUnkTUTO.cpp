@@ -51,5 +51,5 @@ ARM void ActorUnkTUTO::func_ov037_02121ab0(void) {}
 ARM void ActorUnkTUTO::func_ov037_02121af0(void) {}
 ARM void ActorUnkTUTO::func_ov037_02121b2c(void) {}
 
-ActorUnkTUTO::~ActorUnkTUTO() {}
-ActorProfileUnkTUTO::~ActorProfileUnkTUTO() {}
+ARM ActorUnkTUTO::~ActorUnkTUTO() {}
+ARM ActorProfileUnkTUTO::~ActorProfileUnkTUTO() {}

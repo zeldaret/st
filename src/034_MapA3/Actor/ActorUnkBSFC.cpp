@@ -33,5 +33,5 @@ ARM void ActorUnkBSFC::func_ov034_02119d88(void) {}
 ARM void ActorUnkBSFC::func_ov034_02119d90(void) {}
 ARM void ActorUnkBSFC::func_ov034_02119e20(void) {}
 
-ActorUnkBSFC::~ActorUnkBSFC() {}
-ActorProfileUnkBSFC::~ActorProfileUnkBSFC() {}
+ARM ActorUnkBSFC::~ActorUnkBSFC() {}
+ARM ActorProfileUnkBSFC::~ActorProfileUnkBSFC() {}

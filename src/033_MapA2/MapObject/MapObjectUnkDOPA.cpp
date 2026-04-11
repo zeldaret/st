@@ -42,5 +42,5 @@ ARM void MapObjectUnkDOPA::func_ov033_0211b4c4(void) {}
 ARM void MapObjectUnkDOPA::func_ov033_0211b608(void) {}
 ARM void MapObjectUnkDOPA::func_ov033_0211b644(void) {}
 
-MapObjectUnkDOPA::~MapObjectUnkDOPA() {}
-MapObjectProfileUnkDOPA::~MapObjectProfileUnkDOPA() {}
+ARM MapObjectUnkDOPA::~MapObjectUnkDOPA() {}
+ARM MapObjectProfileUnkDOPA::~MapObjectProfileUnkDOPA() {}

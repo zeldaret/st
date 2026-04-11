@@ -24,5 +24,5 @@ ARM void MapObjectUnkTRRD::func_ov029_02143460(void) {}
 ARM void MapObjectUnkTRRD::func_ov029_02143480(void) {}
 ARM void MapObjectUnkTRRD::func_ov029_021434a0(void) {}
 
-MapObjectUnkTRRD::~MapObjectUnkTRRD() {}
-MapObjectProfileUnkTRRD::~MapObjectProfileUnkTRRD() {}
+ARM MapObjectUnkTRRD::~MapObjectUnkTRRD() {}
+ARM MapObjectProfileUnkTRRD::~MapObjectProfileUnkTRRD() {}

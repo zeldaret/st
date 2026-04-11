@@ -37,5 +37,5 @@ ARM void MapObjectUnkRPFL::func_ov071_02161730(void) {}
 ARM void MapObjectUnkRPFL::func_ov071_02161788(void) {}
 ARM void MapObjectUnkRPFL::func_ov071_02161918(void) {}
 
-MapObjectUnkRPFL::~MapObjectUnkRPFL() {}
-MapObjectProfileUnkRPFL::~MapObjectProfileUnkRPFL() {}
+ARM MapObjectUnkRPFL::~MapObjectUnkRPFL() {}
+ARM MapObjectProfileUnkRPFL::~MapObjectProfileUnkRPFL() {}

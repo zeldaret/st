@@ -20,5 +20,5 @@ ARM ActorUnkDSDS::ActorUnkDSDS() {}
 
 ARM void ActorUnkDSDS::func_ov086_021544b8(void) {}
 
-ActorUnkDSDS::~ActorUnkDSDS() {}
-ActorProfileUnkDSDS::~ActorProfileUnkDSDS() {}
+ARM ActorUnkDSDS::~ActorUnkDSDS() {}
+ARM ActorProfileUnkDSDS::~ActorProfileUnkDSDS() {}

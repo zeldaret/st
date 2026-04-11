@@ -68,5 +68,5 @@ ARM void ActorUnkOCTG::func_ov086_0215ae98(void) {}
 ARM void ActorUnkOCTG::func_ov086_0215af28(void) {}
 ARM void ActorUnkOCTG::func_ov086_0215af74(void) {}
 
-ActorUnkOCTG::~ActorUnkOCTG() {}
-ActorProfileUnkOCTG::~ActorProfileUnkOCTG() {}
+ARM ActorUnkOCTG::~ActorUnkOCTG() {}
+ARM ActorProfileUnkOCTG::~ActorProfileUnkOCTG() {}

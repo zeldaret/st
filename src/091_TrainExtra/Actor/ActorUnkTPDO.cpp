@@ -31,5 +31,5 @@ ARM void ActorUnkTPDO::func_ov091_0216e498(void) {}
 ARM void ActorUnkTPDO::func_ov091_0216e4f8(void) {}
 ARM void ActorUnkTPDO::func_ov091_0216e5f4(void) {}
 
-ActorUnkTPDO::~ActorUnkTPDO() {}
-ActorProfileUnkTPDO::~ActorProfileUnkTPDO() {}
+ARM ActorUnkTPDO::~ActorUnkTPDO() {}
+ARM ActorProfileUnkTPDO::~ActorProfileUnkTPDO() {}

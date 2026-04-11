@@ -51,5 +51,5 @@ ARM void ActorUnkMABL::func_ov075_02160704(void) {}
 ARM void ActorUnkMABL::func_ov075_02160714(void) {}
 ARM void ActorUnkMABL::func_ov075_0216071c(void) {}
 
-ActorUnkMABL::~ActorUnkMABL() {}
-ActorProfileUnkMABL::~ActorProfileUnkMABL() {}
+ARM ActorUnkMABL::~ActorUnkMABL() {}
+ARM ActorProfileUnkMABL::~ActorProfileUnkMABL() {}

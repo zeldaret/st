@@ -20,5 +20,5 @@ ARM MapObjectUnkETNM::MapObjectUnkETNM() {}
 
 ARM void MapObjectUnkETNM::func_ov090_021752cc(void) {}
 
-MapObjectUnkETNM::~MapObjectUnkETNM() {}
-MapObjectProfileUnkETNM::~MapObjectProfileUnkETNM() {}
+ARM MapObjectUnkETNM::~MapObjectUnkETNM() {}
+ARM MapObjectProfileUnkETNM::~MapObjectProfileUnkETNM() {}

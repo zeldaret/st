@@ -80,5 +80,5 @@ ARM void ActorUnkWWFS::func_ov038_0211cd30(void) {}
 ARM void ActorUnkWWFS::func_ov038_0211cd4c(void) {}
 ARM void ActorUnkWWFS::func_ov038_0211cd68(void) {}
 
-ActorUnkWWFS::~ActorUnkWWFS() {}
-ActorProfileUnkWWFS::~ActorProfileUnkWWFS() {}
+ARM ActorUnkWWFS::~ActorUnkWWFS() {}
+ARM ActorProfileUnkWWFS::~ActorProfileUnkWWFS() {}

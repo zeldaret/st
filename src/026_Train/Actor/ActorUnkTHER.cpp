@@ -23,5 +23,5 @@ ARM void ActorUnkTHER::func_ov026_021111a4(void) {}
 ARM void ActorUnkTHER::func_ov026_021111fc(void) {}
 ARM void ActorUnkTHER::func_ov026_02111280(void) {}
 
-ActorUnkTHER::~ActorUnkTHER() {}
-ActorProfileUnkTHER::~ActorProfileUnkTHER() {}
+ARM ActorUnkTHER::~ActorUnkTHER() {}
+ARM ActorProfileUnkTHER::~ActorProfileUnkTHER() {}

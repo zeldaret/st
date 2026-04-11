@@ -25,5 +25,5 @@ ARM void ActorUnkOBPC::func_ov024_020d7050(void) {}
 ARM void ActorUnkOBPC::func_ov024_020d7064(void) {}
 ARM void ActorUnkOBPC::func_ov024_020d7154(void) {}
 
-ActorUnkOBPC::~ActorUnkOBPC() {}
-ActorProfileUnkOBPC::~ActorProfileUnkOBPC() {}
+ARM ActorUnkOBPC::~ActorUnkOBPC() {}
+ARM ActorProfileUnkOBPC::~ActorProfileUnkOBPC() {}

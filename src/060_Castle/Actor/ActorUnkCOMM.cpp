@@ -39,5 +39,5 @@ ARM void ActorUnkCOMM::func_ov060_0215cdb0(void) {}
 ARM void ActorUnkCOMM::func_ov060_0215cdcc(void) {}
 ARM void ActorUnkCOMM::func_ov060_0215ce38(void) {}
 
-ActorUnkCOMM::~ActorUnkCOMM() {}
-ActorProfileUnkCOMM::~ActorProfileUnkCOMM() {}
+ARM ActorUnkCOMM::~ActorUnkCOMM() {}
+ARM ActorProfileUnkCOMM::~ActorProfileUnkCOMM() {}

@@ -120,5 +120,5 @@ ARM void ActorUnkFRBS::func_ov078_0215cb0c(void) {}
 ARM void ActorUnkFRBS::func_ov078_0215cb28(void) {}
 ARM void ActorUnkFRBS::func_ov078_0215cbe0(void) {}
 
-ActorUnkFRBS::~ActorUnkFRBS() {}
-ActorProfileUnkFRBS::~ActorProfileUnkFRBS() {}
+ARM ActorUnkFRBS::~ActorUnkFRBS() {}
+ARM ActorProfileUnkFRBS::~ActorProfileUnkFRBS() {}

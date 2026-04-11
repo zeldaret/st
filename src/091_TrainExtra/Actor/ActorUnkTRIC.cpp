@@ -39,5 +39,5 @@ ARM void ActorUnkTRIC::func_ov091_02176728(void) {}
 ARM void ActorUnkTRIC::func_ov091_021767d4(void) {}
 ARM void ActorUnkTRIC::func_ov091_02176804(void) {}
 
-ActorUnkTRIC::~ActorUnkTRIC() {}
-ActorProfileUnkTRIC::~ActorProfileUnkTRIC() {}
+ARM ActorUnkTRIC::~ActorUnkTRIC() {}
+ARM ActorProfileUnkTRIC::~ActorProfileUnkTRIC() {}

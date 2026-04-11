@@ -37,5 +37,5 @@ ARM ActorProfileUnkWAWC::ActorProfileUnkWAWC() :
 
 ARM ActorUnkWAWC::ActorUnkWAWC() {}
 
-ActorProfileUnkWAWA::~ActorProfileUnkWAWA() {}
-ActorProfileUnkWAWC::~ActorProfileUnkWAWC() {}
+ARM ActorProfileUnkWAWA::~ActorProfileUnkWAWA() {}
+ARM ActorProfileUnkWAWC::~ActorProfileUnkWAWC() {}

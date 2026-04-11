@@ -60,5 +60,5 @@ ARM void ActorUnkRCMS::func_ov055_0213d1a0(void) {}
 ARM void ActorUnkRCMS::func_ov055_0213d20c(void) {}
 ARM void ActorUnkRCMS::func_ov055_0213d228(void) {}
 
-ActorUnkRCMS::~ActorUnkRCMS() {}
-ActorProfileUnkRCMS::~ActorProfileUnkRCMS() {}
+ARM ActorUnkRCMS::~ActorUnkRCMS() {}
+ARM ActorProfileUnkRCMS::~ActorProfileUnkRCMS() {}

@@ -46,5 +46,5 @@ ARM void MapObjectUnkBAPL::func_ov021_020f5900(void) {}
 ARM void MapObjectUnkBAPL::func_ov021_020f591c(void) {}
 ARM void MapObjectUnkBAPL::func_ov021_020f59d0(void) {}
 
-MapObjectUnkBAPL::~MapObjectUnkBAPL() {}
-MapObjectProfileUnkBAPL::~MapObjectProfileUnkBAPL() {}
+ARM MapObjectUnkBAPL::~MapObjectUnkBAPL() {}
+ARM MapObjectProfileUnkBAPL::~MapObjectProfileUnkBAPL() {}

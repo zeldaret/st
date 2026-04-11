@@ -32,5 +32,5 @@ ARM void ActorUnkTGTZ::func_ov031_020f73e4(void) {}
 ARM void ActorUnkTGTZ::func_ov031_020f73f0(void) {}
 ARM void ActorUnkTGTZ::func_ov031_020f7438(void) {}
 
-ActorUnkTGTZ::~ActorUnkTGTZ() {}
-ActorProfileUnkTGTZ::~ActorProfileUnkTGTZ() {}
+ARM ActorUnkTGTZ::~ActorUnkTGTZ() {}
+ARM ActorProfileUnkTGTZ::~ActorProfileUnkTGTZ() {}

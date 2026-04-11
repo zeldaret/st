@@ -43,5 +43,5 @@ ARM void ActorUnkFRTN::func_ov050_02136118(void) {}
 ARM void ActorUnkFRTN::func_ov050_02136128(void) {}
 ARM void ActorUnkFRTN::func_ov050_021361e0(void) {}
 
-ActorUnkFRTN::~ActorUnkFRTN() {}
-ActorProfileUnkFRTN::~ActorProfileUnkFRTN() {}
+ARM ActorUnkFRTN::~ActorUnkFRTN() {}
+ARM ActorProfileUnkFRTN::~ActorProfileUnkFRTN() {}

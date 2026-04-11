@@ -22,5 +22,5 @@ ARM void ActorUnkL2MT::func_ov044_0212c954(void) {}
 ARM void ActorUnkL2MT::func_ov044_0212c974(void) {}
 ARM void ActorUnkL2MT::func_ov044_0212c978(void) {}
 
-ActorUnkL2MT::~ActorUnkL2MT() {}
-ActorProfileUnkL2MT::~ActorProfileUnkL2MT() {}
+ARM ActorUnkL2MT::~ActorUnkL2MT() {}
+ARM ActorProfileUnkL2MT::~ActorProfileUnkL2MT() {}

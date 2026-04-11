@@ -32,5 +32,5 @@ ARM void MapObjectUnkGRSS::func_ov031_02101950(void) {}
 ARM void MapObjectUnkGRSS::func_ov031_02101968(void) {}
 ARM void MapObjectUnkGRSS::func_ov031_02101978(void) {}
 
-MapObjectUnkGRSS::~MapObjectUnkGRSS() {}
-MapObjectProfileUnkGRSS::~MapObjectProfileUnkGRSS() {}
+ARM MapObjectUnkGRSS::~MapObjectUnkGRSS() {}
+ARM MapObjectProfileUnkGRSS::~MapObjectProfileUnkGRSS() {}

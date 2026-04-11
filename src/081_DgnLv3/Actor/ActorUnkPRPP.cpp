@@ -33,5 +33,5 @@ ARM void ActorUnkPRPP::func_ov081_02151f50(void) {}
 ARM void ActorUnkPRPP::func_ov081_02151f7c(void) {}
 ARM void ActorUnkPRPP::func_ov081_02151fa4(void) {}
 
-ActorUnkPRPP::~ActorUnkPRPP() {}
-ActorProfileUnkPRPP::~ActorProfileUnkPRPP() {}
+ARM ActorUnkPRPP::~ActorUnkPRPP() {}
+ARM ActorProfileUnkPRPP::~ActorProfileUnkPRPP() {}

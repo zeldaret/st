@@ -22,5 +22,5 @@ ARM void MapObjectUnkHOSO::func_ov065_02159d10(void) {}
 ARM void MapObjectUnkHOSO::func_ov065_02159d60(void) {}
 ARM void MapObjectUnkHOSO::func_ov065_02159d68(void) {}
 
-MapObjectUnkHOSO::~MapObjectUnkHOSO() {}
-MapObjectProfileUnkHOSO::~MapObjectProfileUnkHOSO() {}
+ARM MapObjectUnkHOSO::~MapObjectUnkHOSO() {}
+ARM MapObjectProfileUnkHOSO::~MapObjectProfileUnkHOSO() {}

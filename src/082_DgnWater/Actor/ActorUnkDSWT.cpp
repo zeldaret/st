@@ -20,5 +20,5 @@ ARM ActorUnkDSWT::ActorUnkDSWT() {}
 
 ARM void ActorUnkDSWT::func_ov082_02157ae8(void) {}
 
-ActorUnkDSWT::~ActorUnkDSWT() {}
-ActorProfileUnkDSWT::~ActorProfileUnkDSWT() {}
+ARM ActorUnkDSWT::~ActorUnkDSWT() {}
+ARM ActorProfileUnkDSWT::~ActorProfileUnkDSWT() {}

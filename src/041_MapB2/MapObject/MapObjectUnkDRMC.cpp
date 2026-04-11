@@ -24,5 +24,5 @@ ARM void MapObjectUnkDRMC::func_ov041_0212d08c(void) {}
 ARM void MapObjectUnkDRMC::func_ov041_0212d184(void) {}
 ARM void MapObjectUnkDRMC::func_ov041_0212d1ec(void) {}
 
-MapObjectUnkDRMC::~MapObjectUnkDRMC() {}
-MapObjectProfileUnkDRMC::~MapObjectProfileUnkDRMC() {}
+ARM MapObjectUnkDRMC::~MapObjectUnkDRMC() {}
+ARM MapObjectProfileUnkDRMC::~MapObjectProfileUnkDRMC() {}

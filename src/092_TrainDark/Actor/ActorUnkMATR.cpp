@@ -125,5 +125,5 @@ ARM void ActorUnkMATR::func_ov092_0216f4c8(void) {}
 ARM void ActorUnkMATR::func_ov092_0216f5a0(void) {}
 ARM void ActorUnkMATR::func_ov092_0216f664(void) {}
 
-ActorUnkMATR::~ActorUnkMATR() {}
-ActorProfileUnkMATR::~ActorProfileUnkMATR() {}
+ARM ActorUnkMATR::~ActorUnkMATR() {}
+ARM ActorProfileUnkMATR::~ActorProfileUnkMATR() {}

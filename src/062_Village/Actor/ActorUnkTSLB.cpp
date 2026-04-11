@@ -37,5 +37,5 @@ ARM void ActorUnkTSLB::func_ov062_0215b374(void) {}
 ARM void ActorUnkTSLB::func_ov062_0215b388(void) {}
 ARM void ActorUnkTSLB::func_ov062_0215b3a4(void) {}
 
-ActorUnkTSLB::~ActorUnkTSLB() {}
-ActorProfileUnkTSLB::~ActorProfileUnkTSLB() {}
+ARM ActorUnkTSLB::~ActorUnkTSLB() {}
+ARM ActorProfileUnkTSLB::~ActorProfileUnkTSLB() {}

@@ -23,5 +23,5 @@ ARM void ActorUnkTRUP::func_ov026_02111440(void) {}
 ARM void ActorUnkTRUP::func_ov026_02111498(void) {}
 ARM void ActorUnkTRUP::func_ov026_02111578(void) {}
 
-ActorUnkTRUP::~ActorUnkTRUP() {}
-ActorProfileUnkTRUP::~ActorProfileUnkTRUP() {}
+ARM ActorUnkTRUP::~ActorUnkTRUP() {}
+ARM ActorProfileUnkTRUP::~ActorProfileUnkTRUP() {}

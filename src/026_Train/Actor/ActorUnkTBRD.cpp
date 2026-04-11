@@ -62,5 +62,5 @@ ARM void ActorUnkTBRD::func_ov026_0211a85c(void) {}
 ARM void ActorUnkTBRD::func_ov026_0211a9d4(void) {}
 ARM void ActorUnkTBRD::func_ov026_0211a9dc(void) {}
 
-ActorUnkTBRD::~ActorUnkTBRD() {}
-ActorProfileUnkTBRD::~ActorProfileUnkTBRD() {}
+ARM ActorUnkTBRD::~ActorUnkTBRD() {}
+ARM ActorProfileUnkTBRD::~ActorProfileUnkTBRD() {}

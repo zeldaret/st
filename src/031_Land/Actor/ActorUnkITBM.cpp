@@ -41,5 +41,5 @@ ARM void ActorUnkITBM::func_ov031_020e5704(void) {}
 ARM void ActorUnkITBM::func_ov031_020e5710(void) {}
 ARM void ActorUnkITBM::func_ov031_020e572c(void) {}
 
-ActorUnkITBM::~ActorUnkITBM() {}
-ActorProfileUnkITBM::~ActorProfileUnkITBM() {}
+ARM ActorUnkITBM::~ActorUnkITBM() {}
+ARM ActorProfileUnkITBM::~ActorProfileUnkITBM() {}

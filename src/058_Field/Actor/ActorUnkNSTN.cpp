@@ -37,5 +37,5 @@ ARM void ActorUnkNSTN::func_ov058_02142c20(void) {}
 ARM void ActorUnkNSTN::func_ov058_02142c34(void) {}
 ARM void ActorUnkNSTN::func_ov058_02142d08(void) {}
 
-ActorUnkNSTN::~ActorUnkNSTN() {}
-ActorProfileUnkNSTN::~ActorProfileUnkNSTN() {}
+ARM ActorUnkNSTN::~ActorUnkNSTN() {}
+ARM ActorProfileUnkNSTN::~ActorProfileUnkNSTN() {}

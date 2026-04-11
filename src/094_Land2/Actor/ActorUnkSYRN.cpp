@@ -38,5 +38,5 @@ ARM void ActorUnkSYRN::func_ov094_0216a070(void) {}
 ARM void ActorUnkSYRN::func_ov094_0216a09c(void) {}
 ARM void ActorUnkSYRN::func_ov094_0216a0b8(void) {}
 
-ActorUnkSYRN::~ActorUnkSYRN() {}
-ActorProfileUnkSYRN::~ActorProfileUnkSYRN() {}
+ARM ActorUnkSYRN::~ActorUnkSYRN() {}
+ARM ActorProfileUnkSYRN::~ActorProfileUnkSYRN() {}

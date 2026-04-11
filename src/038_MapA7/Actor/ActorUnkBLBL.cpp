@@ -25,5 +25,5 @@ ARM void ActorUnkBLBL::func_ov038_0211eb64(void) {}
 ARM void ActorUnkBLBL::func_ov038_0211eb90(void) {}
 ARM void ActorUnkBLBL::func_ov038_0211ebbc(void) {}
 
-ActorUnkBLBL::~ActorUnkBLBL() {}
-ActorProfileUnkBLBL::~ActorProfileUnkBLBL() {}
+ARM ActorUnkBLBL::~ActorUnkBLBL() {}
+ARM ActorProfileUnkBLBL::~ActorProfileUnkBLBL() {}

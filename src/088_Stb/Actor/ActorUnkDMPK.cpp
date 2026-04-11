@@ -31,5 +31,5 @@ ARM void ActorUnkDMPK::func_ov088_021710b8(void) {}
 ARM void ActorUnkDMPK::func_ov088_0217111c(void) {}
 ARM void ActorUnkDMPK::func_ov088_0217114c(void) {}
 
-ActorUnkDMPK::~ActorUnkDMPK() {}
-ActorProfileUnkDMPK::~ActorProfileUnkDMPK() {}
+ARM ActorUnkDMPK::~ActorUnkDMPK() {}
+ARM ActorProfileUnkDMPK::~ActorProfileUnkDMPK() {}

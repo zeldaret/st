@@ -28,5 +28,5 @@ ARM void MapObjectUnkPTFL::func_ov070_0214bf5c(void) {}
 ARM void MapObjectUnkPTFL::func_ov070_0214bf6c(void) {}
 ARM void MapObjectUnkPTFL::func_ov070_0214bfbc(void) {}
 
-MapObjectUnkPTFL::~MapObjectUnkPTFL() {}
-MapObjectProfileUnkPTFL::~MapObjectProfileUnkPTFL() {}
+ARM MapObjectUnkPTFL::~MapObjectUnkPTFL() {}
+ARM MapObjectProfileUnkPTFL::~MapObjectProfileUnkPTFL() {}

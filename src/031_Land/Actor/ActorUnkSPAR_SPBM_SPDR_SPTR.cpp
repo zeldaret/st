@@ -71,7 +71,7 @@ ARM ActorProfileUnkSPTR::ActorProfileUnkSPTR() :
 
 ARM ActorUnkSPTR::ActorUnkSPTR() {}
 
-ActorProfileUnkSPAR::~ActorProfileUnkSPAR() {}
-ActorProfileUnkSPBM::~ActorProfileUnkSPBM() {}
-ActorProfileUnkSPDR::~ActorProfileUnkSPDR() {}
-ActorProfileUnkSPTR::~ActorProfileUnkSPTR() {}
+ARM ActorProfileUnkSPAR::~ActorProfileUnkSPAR() {}
+ARM ActorProfileUnkSPBM::~ActorProfileUnkSPBM() {}
+ARM ActorProfileUnkSPDR::~ActorProfileUnkSPDR() {}
+ARM ActorProfileUnkSPTR::~ActorProfileUnkSPTR() {}

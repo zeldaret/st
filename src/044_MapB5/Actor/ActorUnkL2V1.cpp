@@ -28,5 +28,5 @@ ARM void ActorUnkL2V1::func_ov044_0212c594(void) {}
 ARM void ActorUnkL2V1::func_ov044_0212c5a4(void) {}
 ARM void ActorUnkL2V1::func_ov044_0212c5f8(void) {}
 
-ActorUnkL2V1::~ActorUnkL2V1() {}
-ActorProfileUnkL2V1::~ActorProfileUnkL2V1() {}
+ARM ActorUnkL2V1::~ActorUnkL2V1() {}
+ARM ActorProfileUnkL2V1::~ActorProfileUnkL2V1() {}

@@ -70,5 +70,5 @@ ARM void ActorUnkMDYG::func_ov029_0214d750(void) {}
 ARM void ActorUnkMDYG::func_ov029_0214d768(void) {}
 ARM void ActorUnkMDYG::func_ov029_0214d7a0(void) {}
 
-ActorUnkMDYG::~ActorUnkMDYG() {}
-ActorProfileUnkMDYG::~ActorProfileUnkMDYG() {}
+ARM ActorUnkMDYG::~ActorUnkMDYG() {}
+ARM ActorProfileUnkMDYG::~ActorProfileUnkMDYG() {}

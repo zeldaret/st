@@ -76,5 +76,5 @@ ARM void ActorUnkCANS::func_ov063_0215a9b8(void) {}
 ARM void ActorUnkCANS::func_ov063_0215a9d4(void) {}
 ARM void ActorUnkCANS::func_ov063_0215aa58(void) {}
 
-ActorUnkCANS::~ActorUnkCANS() {}
-ActorProfileUnkCANS::~ActorProfileUnkCANS() {}
+ARM ActorUnkCANS::~ActorUnkCANS() {}
+ARM ActorProfileUnkCANS::~ActorProfileUnkCANS() {}

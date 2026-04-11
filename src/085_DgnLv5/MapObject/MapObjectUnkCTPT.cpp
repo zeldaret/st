@@ -32,5 +32,5 @@ ARM void MapObjectUnkCTPT::func_ov085_02153ce4(void) {}
 ARM void MapObjectUnkCTPT::func_ov085_02153d70(void) {}
 ARM void MapObjectUnkCTPT::func_ov085_02153dc4(void) {}
 
-MapObjectUnkCTPT::~MapObjectUnkCTPT() {}
-MapObjectProfileUnkCTPT::~MapObjectProfileUnkCTPT() {}
+ARM MapObjectUnkCTPT::~MapObjectUnkCTPT() {}
+ARM MapObjectProfileUnkCTPT::~MapObjectProfileUnkCTPT() {}

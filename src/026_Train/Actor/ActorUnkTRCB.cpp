@@ -35,5 +35,5 @@ ARM void ActorUnkTRCB::func_ov026_021107d0(void) {}
 ARM void ActorUnkTRCB::func_ov026_021108ec(void) {}
 ARM void ActorUnkTRCB::func_ov026_021109d4(void) {}
 
-ActorUnkTRCB::~ActorUnkTRCB() {}
-ActorProfileUnkTRCB::~ActorProfileUnkTRCB() {}
+ARM ActorUnkTRCB::~ActorUnkTRCB() {}
+ARM ActorProfileUnkTRCB::~ActorProfileUnkTRCB() {}

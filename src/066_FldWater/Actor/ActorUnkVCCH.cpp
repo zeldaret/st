@@ -43,5 +43,5 @@ ARM void ActorUnkVCCH::func_ov066_02158cec(void) {}
 ARM void ActorUnkVCCH::func_ov066_02158d18(void) {}
 ARM void ActorUnkVCCH::func_ov066_02158d34(void) {}
 
-ActorUnkVCCH::~ActorUnkVCCH() {}
-ActorProfileUnkVCCH::~ActorProfileUnkVCCH() {}
+ARM ActorUnkVCCH::~ActorUnkVCCH() {}
+ARM ActorProfileUnkVCCH::~ActorProfileUnkVCCH() {}

@@ -42,5 +42,5 @@ ARM void ActorUnkHLMG::func_ov030_0214c268(void) {}
 ARM void ActorUnkHLMG::func_ov030_0214c30c(void) {}
 ARM void ActorUnkHLMG::func_ov030_0214c31c(void) {}
 
-ActorUnkHLMG::~ActorUnkHLMG() {}
-ActorProfileUnkHLMG::~ActorProfileUnkHLMG() {}
+ARM ActorUnkHLMG::~ActorUnkHLMG() {}
+ARM ActorProfileUnkHLMG::~ActorProfileUnkHLMG() {}

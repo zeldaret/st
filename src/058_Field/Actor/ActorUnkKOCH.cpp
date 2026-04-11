@@ -39,5 +39,5 @@ ARM void ActorUnkKOCH::func_ov058_0214292c(void) {}
 ARM void ActorUnkKOCH::func_ov058_02142934(void) {}
 ARM void ActorUnkKOCH::func_ov058_02142944(void) {}
 
-ActorUnkKOCH::~ActorUnkKOCH() {}
-ActorProfileUnkKOCH::~ActorProfileUnkKOCH() {}
+ARM ActorUnkKOCH::~ActorUnkKOCH() {}
+ARM ActorProfileUnkKOCH::~ActorProfileUnkKOCH() {}

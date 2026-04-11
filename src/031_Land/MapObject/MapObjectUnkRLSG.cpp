@@ -34,5 +34,5 @@ ARM void MapObjectUnkRLSG::func_ov031_0210a964(void) {}
 ARM void MapObjectUnkRLSG::func_ov031_0210a9c0(void) {}
 ARM void MapObjectUnkRLSG::func_ov031_0210a9cc(void) {}
 
-MapObjectUnkRLSG::~MapObjectUnkRLSG() {}
-MapObjectProfileUnkRLSG::~MapObjectProfileUnkRLSG() {}
+ARM MapObjectUnkRLSG::~MapObjectUnkRLSG() {}
+ARM MapObjectProfileUnkRLSG::~MapObjectProfileUnkRLSG() {}

@@ -42,5 +42,5 @@ ARM void MapObjectUnkNPST::func_ov090_021745b0(void) {}
 ARM void MapObjectUnkNPST::func_ov090_021745e0(void) {}
 ARM void MapObjectUnkNPST::func_ov090_02174654(void) {}
 
-MapObjectUnkNPST::~MapObjectUnkNPST() {}
-MapObjectProfileUnkNPST::~MapObjectProfileUnkNPST() {}
+ARM MapObjectUnkNPST::~MapObjectUnkNPST() {}
+ARM MapObjectProfileUnkNPST::~MapObjectProfileUnkNPST() {}

@@ -48,5 +48,5 @@ ARM void ActorUnkOCTA::func_ov042_0212504c(void) {}
 ARM void ActorUnkOCTA::func_ov042_02125094(void) {}
 ARM void ActorUnkOCTA::func_ov042_02125110(void) {}
 
-ActorUnkOCTA::~ActorUnkOCTA() {}
-ActorProfileUnkOCTA::~ActorProfileUnkOCTA() {}
+ARM ActorUnkOCTA::~ActorUnkOCTA() {}
+ARM ActorProfileUnkOCTA::~ActorProfileUnkOCTA() {}

@@ -40,5 +40,5 @@ ARM void ActorUnkBAEY::func_ov021_020f0c88(void) {}
 ARM void ActorUnkBAEY::func_ov021_020f0c90(void) {}
 ARM void ActorUnkBAEY::func_ov021_020f0cac(void) {}
 
-ActorUnkBAEY::~ActorUnkBAEY() {}
-ActorProfileUnkBAEY::~ActorProfileUnkBAEY() {}
+ARM ActorUnkBAEY::~ActorUnkBAEY() {}
+ARM ActorProfileUnkBAEY::~ActorProfileUnkBAEY() {}

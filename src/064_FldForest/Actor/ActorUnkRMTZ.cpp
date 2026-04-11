@@ -22,5 +22,5 @@ ARM void ActorUnkRMTZ::func_ov064_0215958c(void) {}
 ARM void ActorUnkRMTZ::func_ov064_021595c8(void) {}
 ARM void ActorUnkRMTZ::func_ov064_02159610(void) {}
 
-ActorUnkRMTZ::~ActorUnkRMTZ() {}
-ActorProfileUnkRMTZ::~ActorProfileUnkRMTZ() {}
+ARM ActorUnkRMTZ::~ActorUnkRMTZ() {}
+ARM ActorProfileUnkRMTZ::~ActorProfileUnkRMTZ() {}

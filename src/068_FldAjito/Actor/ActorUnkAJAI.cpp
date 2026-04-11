@@ -38,5 +38,5 @@ ARM void ActorUnkAJAI::func_ov068_02159170(void) {}
 ARM void ActorUnkAJAI::func_ov068_02159180(void) {}
 ARM void ActorUnkAJAI::func_ov068_02159204(void) {}
 
-ActorUnkAJAI::~ActorUnkAJAI() {}
-ActorProfileUnkAJAI::~ActorProfileUnkAJAI() {}
+ARM ActorUnkAJAI::~ActorUnkAJAI() {}
+ARM ActorProfileUnkAJAI::~ActorProfileUnkAJAI() {}

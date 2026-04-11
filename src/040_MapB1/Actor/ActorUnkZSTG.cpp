@@ -30,5 +30,5 @@ ARM void ActorUnkZSTG::func_ov040_0212aa74(void) {}
 ARM void ActorUnkZSTG::func_ov040_0212aa78(void) {}
 ARM void ActorUnkZSTG::func_ov040_0212aaa4(void) {}
 
-ActorUnkZSTG::~ActorUnkZSTG() {}
-ActorProfileUnkZSTG::~ActorProfileUnkZSTG() {}
+ARM ActorUnkZSTG::~ActorUnkZSTG() {}
+ARM ActorProfileUnkZSTG::~ActorProfileUnkZSTG() {}

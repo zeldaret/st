@@ -51,5 +51,5 @@ ARM void ActorUnkWBN2::func_ov046_02129574(void) {}
 ARM void ActorUnkWBN2::func_ov046_021295b4(void) {}
 ARM void ActorUnkWBN2::func_ov046_021295c8(void) {}
 
-ActorUnkWBN2::~ActorUnkWBN2() {}
-ActorProfileUnkWBN2::~ActorProfileUnkWBN2() {}
+ARM ActorUnkWBN2::~ActorUnkWBN2() {}
+ARM ActorProfileUnkWBN2::~ActorProfileUnkWBN2() {}

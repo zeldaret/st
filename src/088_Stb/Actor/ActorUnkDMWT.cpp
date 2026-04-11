@@ -25,5 +25,5 @@ ARM void ActorUnkDMWT::func_ov088_02171964(void) {}
 ARM void ActorUnkDMWT::func_ov088_02171978(void) {}
 ARM void ActorUnkDMWT::func_ov088_021719c8(void) {}
 
-ActorUnkDMWT::~ActorUnkDMWT() {}
-ActorProfileUnkDMWT::~ActorProfileUnkDMWT() {}
+ARM ActorUnkDMWT::~ActorUnkDMWT() {}
+ARM ActorProfileUnkDMWT::~ActorProfileUnkDMWT() {}

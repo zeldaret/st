@@ -45,5 +45,5 @@ ARM void ActorUnkMTFB::func_ov092_021734cc(void) {}
 ARM void ActorUnkMTFB::func_ov092_02173518(void) {}
 ARM void ActorUnkMTFB::func_ov092_021735b8(void) {}
 
-ActorUnkMTFB::~ActorUnkMTFB() {}
-ActorProfileUnkMTFB::~ActorProfileUnkMTFB() {}
+ARM ActorUnkMTFB::~ActorUnkMTFB() {}
+ARM ActorProfileUnkMTFB::~ActorProfileUnkMTFB() {}

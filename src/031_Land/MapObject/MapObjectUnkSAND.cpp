@@ -34,5 +34,5 @@ ARM void MapObjectUnkSAND::func_ov031_0210b2cc(void) {}
 ARM void MapObjectUnkSAND::func_ov031_0210b32c(void) {}
 ARM void MapObjectUnkSAND::func_ov031_0210b34c(void) {}
 
-MapObjectUnkSAND::~MapObjectUnkSAND() {}
-MapObjectProfileUnkSAND::~MapObjectProfileUnkSAND() {}
+ARM MapObjectUnkSAND::~MapObjectUnkSAND() {}
+ARM MapObjectProfileUnkSAND::~MapObjectProfileUnkSAND() {}

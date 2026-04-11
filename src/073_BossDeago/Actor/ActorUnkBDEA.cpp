@@ -190,5 +190,5 @@ ARM void ActorUnkBDEA::func_ov073_021631c0(void) {}
 ARM void ActorUnkBDEA::func_ov073_021631dc(void) {}
 ARM void ActorUnkBDEA::func_ov073_021631f8(void) {}
 
-ActorUnkBDEA::~ActorUnkBDEA() {}
-ActorProfileUnkBDEA::~ActorProfileUnkBDEA() {}
+ARM ActorUnkBDEA::~ActorUnkBDEA() {}
+ARM ActorProfileUnkBDEA::~ActorProfileUnkBDEA() {}

@@ -22,5 +22,5 @@ ARM void ActorUnkWAWY::func_ov036_0211b954(void) {}
 ARM void ActorUnkWAWY::func_ov036_0211b9bc(void) {}
 ARM void ActorUnkWAWY::func_ov036_0211b9e8(void) {}
 
-ActorUnkWAWY::~ActorUnkWAWY() {}
-ActorProfileUnkWAWY::~ActorProfileUnkWAWY() {}
+ARM ActorUnkWAWY::~ActorUnkWAWY() {}
+ARM ActorProfileUnkWAWY::~ActorProfileUnkWAWY() {}

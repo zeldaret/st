@@ -61,5 +61,5 @@ ARM void ActorUnkSNMA::func_ov028_0214307c(void) {}
 ARM void ActorUnkSNMA::func_ov028_021430c4(void) {}
 ARM void ActorUnkSNMA::func_ov028_02143108(void) {}
 
-ActorUnkSNMA::~ActorUnkSNMA() {}
-ActorProfileUnkSNMA::~ActorProfileUnkSNMA() {}
+ARM ActorUnkSNMA::~ActorUnkSNMA() {}
+ARM ActorProfileUnkSNMA::~ActorProfileUnkSNMA() {}

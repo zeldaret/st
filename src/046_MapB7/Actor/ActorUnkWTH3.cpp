@@ -46,5 +46,5 @@ ARM void ActorUnkWTH3::func_ov046_0212771c(void) {}
 ARM void ActorUnkWTH3::func_ov046_02127750(void) {}
 ARM void ActorUnkWTH3::func_ov046_021277b4(void) {}
 
-ActorUnkWTH3::~ActorUnkWTH3() {}
-ActorProfileUnkWTH3::~ActorProfileUnkWTH3() {}
+ARM ActorUnkWTH3::~ActorUnkWTH3() {}
+ARM ActorProfileUnkWTH3::~ActorProfileUnkWTH3() {}

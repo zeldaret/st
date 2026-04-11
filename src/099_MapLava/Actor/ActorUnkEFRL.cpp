@@ -28,5 +28,5 @@ ARM void ActorUnkEFRL::func_ov099_02181840(void) {}
 ARM void ActorUnkEFRL::func_ov099_02181850(void) {}
 ARM void ActorUnkEFRL::func_ov099_02181858(void) {}
 
-ActorUnkEFRL::~ActorUnkEFRL() {}
-ActorProfileUnkEFRL::~ActorProfileUnkEFRL() {}
+ARM ActorUnkEFRL::~ActorUnkEFRL() {}
+ARM ActorProfileUnkEFRL::~ActorProfileUnkEFRL() {}

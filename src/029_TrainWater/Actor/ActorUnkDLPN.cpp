@@ -56,5 +56,5 @@ ARM void ActorUnkDLPN::func_ov029_02149c4c(void) {}
 ARM void ActorUnkDLPN::func_ov029_02149c70(void) {}
 ARM void ActorUnkDLPN::func_ov029_02149c9c(void) {}
 
-ActorUnkDLPN::~ActorUnkDLPN() {}
-ActorProfileUnkDLPN::~ActorProfileUnkDLPN() {}
+ARM ActorUnkDLPN::~ActorUnkDLPN() {}
+ARM ActorProfileUnkDLPN::~ActorProfileUnkDLPN() {}

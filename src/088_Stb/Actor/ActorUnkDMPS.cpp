@@ -39,5 +39,5 @@ ARM void ActorUnkDMPS::func_ov088_0216e164(void) {}
 ARM void ActorUnkDMPS::func_ov088_0216e208(void) {}
 ARM void ActorUnkDMPS::func_ov088_0216e22c(void) {}
 
-ActorUnkDMPS::~ActorUnkDMPS() {}
-ActorProfileUnkDMPS::~ActorProfileUnkDMPS() {}
+ARM ActorUnkDMPS::~ActorUnkDMPS() {}
+ARM ActorProfileUnkDMPS::~ActorProfileUnkDMPS() {}

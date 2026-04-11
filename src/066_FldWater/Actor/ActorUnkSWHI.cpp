@@ -31,5 +31,5 @@ ARM void ActorUnkSWHI::func_ov066_0215cd38(void) {}
 ARM void ActorUnkSWHI::func_ov066_0215cd50(void) {}
 ARM void ActorUnkSWHI::func_ov066_0215cd58(void) {}
 
-ActorUnkSWHI::~ActorUnkSWHI() {}
-ActorProfileUnkSWHI::~ActorProfileUnkSWHI() {}
+ARM ActorUnkSWHI::~ActorUnkSWHI() {}
+ARM ActorProfileUnkSWHI::~ActorProfileUnkSWHI() {}

@@ -52,5 +52,5 @@ ARM void ActorUnkPSBK::func_ov048_02131f44(void) {}
 ARM void ActorUnkPSBK::func_ov048_02132054(void) {}
 ARM void ActorUnkPSBK::func_ov048_021320c0(void) {}
 
-ActorUnkPSBK::~ActorUnkPSBK() {}
-ActorProfileUnkPSBK::~ActorProfileUnkPSBK() {}
+ARM ActorUnkPSBK::~ActorUnkPSBK() {}
+ARM ActorProfileUnkPSBK::~ActorProfileUnkPSBK() {}

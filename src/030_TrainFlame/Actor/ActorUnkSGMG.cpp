@@ -25,5 +25,5 @@ ARM void ActorUnkSGMG::func_ov030_0214dc30(void) {}
 ARM void ActorUnkSGMG::func_ov030_0214dc80(void) {}
 ARM void ActorUnkSGMG::func_ov030_0214dc90(void) {}
 
-ActorUnkSGMG::~ActorUnkSGMG() {}
-ActorProfileUnkSGMG::~ActorProfileUnkSGMG() {}
+ARM ActorUnkSGMG::~ActorUnkSGMG() {}
+ARM ActorProfileUnkSGMG::~ActorProfileUnkSGMG() {}

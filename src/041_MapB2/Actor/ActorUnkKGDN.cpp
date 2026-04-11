@@ -30,5 +30,5 @@ ARM void ActorUnkKGDN::func_ov041_02124a30(void) {}
 ARM void ActorUnkKGDN::func_ov041_02124a90(void) {}
 ARM void ActorUnkKGDN::func_ov041_02124ac4(void) {}
 
-ActorUnkKGDN::~ActorUnkKGDN() {}
-ActorProfileUnkKGDN::~ActorProfileUnkKGDN() {}
+ARM ActorUnkKGDN::~ActorUnkKGDN() {}
+ARM ActorProfileUnkKGDN::~ActorProfileUnkKGDN() {}

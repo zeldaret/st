@@ -21,5 +21,5 @@ ARM ActorUnkFLDK::ActorUnkFLDK() {}
 ARM void ActorUnkFLDK::func_ov047_021354a4(void) {}
 ARM void ActorUnkFLDK::func_ov047_02135570(void) {}
 
-ActorUnkFLDK::~ActorUnkFLDK() {}
-ActorProfileUnkFLDK::~ActorProfileUnkFLDK() {}
+ARM ActorUnkFLDK::~ActorUnkFLDK() {}
+ARM ActorProfileUnkFLDK::~ActorProfileUnkFLDK() {}

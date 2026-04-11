@@ -112,5 +112,5 @@ ARM void ActorUnkGYAM::func_ov051_02136c6c(void) {}
 ARM void ActorUnkGYAM::func_ov051_02136c88(void) {}
 ARM void ActorUnkGYAM::func_ov051_02136ca4(void) {}
 
-ActorUnkGYAM::~ActorUnkGYAM() {}
-ActorProfileUnkGYAM::~ActorProfileUnkGYAM() {}
+ARM ActorUnkGYAM::~ActorUnkGYAM() {}
+ARM ActorProfileUnkGYAM::~ActorProfileUnkGYAM() {}

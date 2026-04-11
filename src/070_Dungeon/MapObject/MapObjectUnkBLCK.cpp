@@ -21,5 +21,5 @@ ARM MapObjectUnkBLCK::MapObjectUnkBLCK() {}
 ARM void MapObjectUnkBLCK::func_ov070_021440ac(void) {}
 ARM void MapObjectUnkBLCK::func_ov070_02144174(void) {}
 
-MapObjectUnkBLCK::~MapObjectUnkBLCK() {}
-MapObjectProfileUnkBLCK::~MapObjectProfileUnkBLCK() {}
+ARM MapObjectUnkBLCK::~MapObjectUnkBLCK() {}
+ARM MapObjectProfileUnkBLCK::~MapObjectProfileUnkBLCK() {}

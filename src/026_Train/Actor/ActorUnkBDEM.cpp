@@ -76,5 +76,5 @@ ARM void ActorUnkBDEM::func_ov026_02127bd0(void) {}
 ARM void ActorUnkBDEM::func_ov026_02127c5c(void) {}
 ARM void ActorUnkBDEM::func_ov026_02127efc(void) {}
 
-ActorUnkBDEM::~ActorUnkBDEM() {}
-ActorProfileUnkBDEM::~ActorProfileUnkBDEM() {}
+ARM ActorUnkBDEM::~ActorUnkBDEM() {}
+ARM ActorProfileUnkBDEM::~ActorProfileUnkBDEM() {}

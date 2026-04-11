@@ -85,5 +85,5 @@ ARM void ActorUnkICBB::func_ov044_0212a3c8(void) {}
 ARM void ActorUnkICBB::func_ov044_0212a3f4(void) {}
 ARM void ActorUnkICBB::func_ov044_0212a410(void) {}
 
-ActorUnkICBB::~ActorUnkICBB() {}
-ActorProfileUnkICBB::~ActorProfileUnkICBB() {}
+ARM ActorUnkICBB::~ActorUnkICBB() {}
+ARM ActorProfileUnkICBB::~ActorProfileUnkICBB() {}

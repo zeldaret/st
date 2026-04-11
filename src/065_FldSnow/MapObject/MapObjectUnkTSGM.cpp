@@ -26,5 +26,5 @@ ARM void MapObjectUnkTSGM::func_ov065_02159ad8(void) {}
 ARM void MapObjectUnkTSGM::func_ov065_02159b20(void) {}
 ARM void MapObjectUnkTSGM::func_ov065_02159b40(void) {}
 
-MapObjectUnkTSGM::~MapObjectUnkTSGM() {}
-MapObjectProfileUnkTSGM::~MapObjectProfileUnkTSGM() {}
+ARM MapObjectUnkTSGM::~MapObjectUnkTSGM() {}
+ARM MapObjectProfileUnkTSGM::~MapObjectProfileUnkTSGM() {}

@@ -21,5 +21,5 @@ ARM MapObjectUnkMZFX::MapObjectUnkMZFX() {}
 ARM void MapObjectUnkMZFX::func_ov091_02167bfc(void) {}
 ARM void MapObjectUnkMZFX::func_ov091_02167c04(void) {}
 
-MapObjectUnkMZFX::~MapObjectUnkMZFX() {}
-MapObjectProfileUnkMZFX::~MapObjectProfileUnkMZFX() {}
+ARM MapObjectUnkMZFX::~MapObjectUnkMZFX() {}
+ARM MapObjectProfileUnkMZFX::~MapObjectProfileUnkMZFX() {}

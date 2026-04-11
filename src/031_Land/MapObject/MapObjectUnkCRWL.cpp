@@ -24,5 +24,5 @@ ARM void MapObjectUnkCRWL::func_ov031_021071dc(void) {}
 ARM void MapObjectUnkCRWL::func_ov031_02107208(void) {}
 ARM void MapObjectUnkCRWL::func_ov031_02107250(void) {}
 
-MapObjectUnkCRWL::~MapObjectUnkCRWL() {}
-MapObjectProfileUnkCRWL::~MapObjectProfileUnkCRWL() {}
+ARM MapObjectUnkCRWL::~MapObjectUnkCRWL() {}
+ARM MapObjectProfileUnkCRWL::~MapObjectProfileUnkCRWL() {}

@@ -89,5 +89,5 @@ ARM void ActorUnkSOLF::func_ov037_0211e89c(void) {}
 ARM void ActorUnkSOLF::func_ov037_0211e8c8(void) {}
 ARM void ActorUnkSOLF::func_ov037_0211e8e4(void) {}
 
-ActorUnkSOLF::~ActorUnkSOLF() {}
-ActorProfileUnkSOLF::~ActorProfileUnkSOLF() {}
+ARM ActorUnkSOLF::~ActorUnkSOLF() {}
+ARM ActorProfileUnkSOLF::~ActorProfileUnkSOLF() {}

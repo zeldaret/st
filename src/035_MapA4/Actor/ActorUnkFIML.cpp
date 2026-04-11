@@ -62,5 +62,5 @@ ARM void ActorUnkFIML::func_ov035_0211e05c(void) {}
 ARM void ActorUnkFIML::func_ov035_0211e370(void) {}
 ARM void ActorUnkFIML::func_ov035_0211e460(void) {}
 
-ActorUnkFIML::~ActorUnkFIML() {}
-ActorProfileUnkFIML::~ActorProfileUnkFIML() {}
+ARM ActorUnkFIML::~ActorUnkFIML() {}
+ARM ActorProfileUnkFIML::~ActorProfileUnkFIML() {}

@@ -20,5 +20,5 @@ ARM ActorUnkNORE::ActorUnkNORE() {}
 
 ARM void ActorUnkNORE::func_ov031_020f7f8c(void) {}
 
-ActorUnkNORE::~ActorUnkNORE() {}
-ActorProfileUnkNORE::~ActorProfileUnkNORE() {}
+ARM ActorUnkNORE::~ActorUnkNORE() {}
+ARM ActorProfileUnkNORE::~ActorProfileUnkNORE() {}

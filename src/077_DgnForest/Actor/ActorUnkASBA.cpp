@@ -32,5 +32,5 @@ ARM void ActorUnkASBA::func_ov077_021579bc(void) {}
 ARM void ActorUnkASBA::func_ov077_021579f8(void) {}
 ARM void ActorUnkASBA::func_ov077_02157a80(void) {}
 
-ActorUnkASBA::~ActorUnkASBA() {}
-ActorProfileUnkASBA::~ActorProfileUnkASBA() {}
+ARM ActorUnkASBA::~ActorUnkASBA() {}
+ARM ActorProfileUnkASBA::~ActorProfileUnkASBA() {}

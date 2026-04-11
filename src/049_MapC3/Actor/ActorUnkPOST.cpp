@@ -35,5 +35,5 @@ ARM void ActorUnkPOST::func_ov049_02135074(void) {}
 ARM void ActorUnkPOST::func_ov049_02135100(void) {}
 ARM void ActorUnkPOST::func_ov049_021351cc(void) {}
 
-ActorUnkPOST::~ActorUnkPOST() {}
-ActorProfileUnkPOST::~ActorProfileUnkPOST() {}
+ARM ActorUnkPOST::~ActorUnkPOST() {}
+ARM ActorProfileUnkPOST::~ActorProfileUnkPOST() {}

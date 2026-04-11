@@ -20,5 +20,5 @@ ARM ActorUnkDSSN::ActorUnkDSSN() {}
 
 ARM void ActorUnkDSSN::func_ov079_021559e4(void) {}
 
-ActorUnkDSSN::~ActorUnkDSSN() {}
-ActorProfileUnkDSSN::~ActorProfileUnkDSSN() {}
+ARM ActorUnkDSSN::~ActorUnkDSSN() {}
+ARM ActorProfileUnkDSSN::~ActorProfileUnkDSSN() {}

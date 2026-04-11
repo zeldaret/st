@@ -23,5 +23,5 @@ ARM void ActorUnkJOLN::func_ov061_0215906c(void) {}
 ARM void ActorUnkJOLN::func_ov061_02159078(void) {}
 ARM void ActorUnkJOLN::func_ov061_02159080(void) {}
 
-ActorUnkJOLN::~ActorUnkJOLN() {}
-ActorProfileUnkJOLN::~ActorProfileUnkJOLN() {}
+ARM ActorUnkJOLN::~ActorUnkJOLN() {}
+ARM ActorProfileUnkJOLN::~ActorProfileUnkJOLN() {}

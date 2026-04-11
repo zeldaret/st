@@ -18,5 +18,5 @@ ARM ActorProfileUnkPHTM::ActorProfileUnkPHTM() :
 
 ARM ActorUnkPHTM::ActorUnkPHTM() {}
 
-ActorUnkPHTM::~ActorUnkPHTM() {}
-ActorProfileUnkPHTM::~ActorProfileUnkPHTM() {}
+ARM ActorUnkPHTM::~ActorUnkPHTM() {}
+ARM ActorProfileUnkPHTM::~ActorProfileUnkPHTM() {}

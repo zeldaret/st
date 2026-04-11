@@ -56,5 +56,5 @@ ARM void ActorUnkPTMN::func_ov049_02136aac(void) {}
 ARM void ActorUnkPTMN::func_ov049_02136ac8(void) {}
 ARM void ActorUnkPTMN::func_ov049_02136ae4(void) {}
 
-ActorUnkPTMN::~ActorUnkPTMN() {}
-ActorProfileUnkPTMN::~ActorProfileUnkPTMN() {}
+ARM ActorUnkPTMN::~ActorUnkPTMN() {}
+ARM ActorProfileUnkPTMN::~ActorProfileUnkPTMN() {}

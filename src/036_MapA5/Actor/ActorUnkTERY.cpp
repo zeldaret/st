@@ -27,5 +27,5 @@ ARM void ActorUnkTERY::func_ov036_0211c02c(void) {}
 ARM void ActorUnkTERY::func_ov036_0211c0e4(void) {}
 ARM void ActorUnkTERY::func_ov036_0211c108(void) {}
 
-ActorUnkTERY::~ActorUnkTERY() {}
-ActorProfileUnkTERY::~ActorProfileUnkTERY() {}
+ARM ActorUnkTERY::~ActorUnkTERY() {}
+ARM ActorProfileUnkTERY::~ActorProfileUnkTERY() {}

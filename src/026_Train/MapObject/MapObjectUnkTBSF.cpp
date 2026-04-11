@@ -24,5 +24,5 @@ ARM void MapObjectUnkTBSF::func_ov026_0210a500(void) {}
 ARM void MapObjectUnkTBSF::func_ov026_0210a550(void) {}
 ARM void MapObjectUnkTBSF::func_ov026_0210a55c(void) {}
 
-MapObjectUnkTBSF::~MapObjectUnkTBSF() {}
-MapObjectProfileUnkTBSF::~MapObjectProfileUnkTBSF() {}
+ARM MapObjectUnkTBSF::~MapObjectUnkTBSF() {}
+ARM MapObjectProfileUnkTBSF::~MapObjectProfileUnkTBSF() {}

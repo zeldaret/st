@@ -32,5 +32,5 @@ ARM void MapObjectUnkTMSB::func_ov091_021684e0(void) {}
 ARM void MapObjectUnkTMSB::func_ov091_02168544(void) {}
 ARM void MapObjectUnkTMSB::func_ov091_02168574(void) {}
 
-MapObjectUnkTMSB::~MapObjectUnkTMSB() {}
-MapObjectProfileUnkTMSB::~MapObjectProfileUnkTMSB() {}
+ARM MapObjectUnkTMSB::~MapObjectUnkTMSB() {}
+ARM MapObjectProfileUnkTMSB::~MapObjectProfileUnkTMSB() {}

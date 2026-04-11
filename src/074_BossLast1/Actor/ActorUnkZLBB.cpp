@@ -34,5 +34,5 @@ ARM void ActorUnkZLBB::func_ov074_02156178(void) {}
 ARM void ActorUnkZLBB::func_ov074_02156210(void) {}
 ARM void ActorUnkZLBB::func_ov074_02156a14(void) {}
 
-ActorUnkZLBB::~ActorUnkZLBB() {}
-ActorProfileUnkZLBB::~ActorProfileUnkZLBB() {}
+ARM ActorUnkZLBB::~ActorUnkZLBB() {}
+ARM ActorProfileUnkZLBB::~ActorProfileUnkZLBB() {}

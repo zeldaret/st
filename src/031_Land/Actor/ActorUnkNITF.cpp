@@ -36,5 +36,5 @@ ARM void ActorUnkNITF::func_ov031_020f121c(void) {}
 ARM void ActorUnkNITF::func_ov031_020f1230(void) {}
 ARM void ActorUnkNITF::func_ov031_020f1308(void) {}
 
-ActorUnkNITF::~ActorUnkNITF() {}
-ActorProfileUnkNITF::~ActorProfileUnkNITF() {}
+ARM ActorUnkNITF::~ActorUnkNITF() {}
+ARM ActorProfileUnkNITF::~ActorProfileUnkNITF() {}

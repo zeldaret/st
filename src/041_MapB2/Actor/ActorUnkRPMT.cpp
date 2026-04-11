@@ -34,5 +34,5 @@ ARM void ActorUnkRPMT::func_ov041_0212b898(void) {}
 ARM void ActorUnkRPMT::func_ov041_0212b89c(void) {}
 ARM void ActorUnkRPMT::func_ov041_0212b924(void) {}
 
-ActorUnkRPMT::~ActorUnkRPMT() {}
-ActorProfileUnkRPMT::~ActorProfileUnkRPMT() {}
+ARM ActorUnkRPMT::~ActorUnkRPMT() {}
+ARM ActorProfileUnkRPMT::~ActorProfileUnkRPMT() {}

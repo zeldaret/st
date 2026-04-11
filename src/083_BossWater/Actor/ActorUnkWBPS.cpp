@@ -31,5 +31,5 @@ ARM void ActorUnkWBPS::func_ov083_0215adb8(void) {}
 ARM void ActorUnkWBPS::func_ov083_0215aed4(void) {}
 ARM void ActorUnkWBPS::func_ov083_0215af78(void) {}
 
-ActorUnkWBPS::~ActorUnkWBPS() {}
-ActorProfileUnkWBPS::~ActorProfileUnkWBPS() {}
+ARM ActorUnkWBPS::~ActorUnkWBPS() {}
+ARM ActorProfileUnkWBPS::~ActorProfileUnkWBPS() {}

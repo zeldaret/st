@@ -21,5 +21,5 @@ ARM MapObjectUnkFSFS::MapObjectUnkFSFS() {}
 ARM void MapObjectUnkFSFS::func_ov062_0215b458(void) {}
 ARM void MapObjectUnkFSFS::func_ov062_0215b4a8(void) {}
 
-MapObjectUnkFSFS::~MapObjectUnkFSFS() {}
-MapObjectProfileUnkFSFS::~MapObjectProfileUnkFSFS() {}
+ARM MapObjectUnkFSFS::~MapObjectUnkFSFS() {}
+ARM MapObjectProfileUnkFSFS::~MapObjectProfileUnkFSFS() {}

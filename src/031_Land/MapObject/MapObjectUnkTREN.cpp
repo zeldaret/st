@@ -20,5 +20,5 @@ ARM MapObjectUnkTREN::MapObjectUnkTREN() {}
 
 ARM void MapObjectUnkTREN::func_ov031_02104470(void) {}
 
-MapObjectUnkTREN::~MapObjectUnkTREN() {}
-MapObjectProfileUnkTREN::~MapObjectProfileUnkTREN() {}
+ARM MapObjectUnkTREN::~MapObjectUnkTREN() {}
+ARM MapObjectProfileUnkTREN::~MapObjectProfileUnkTREN() {}

@@ -58,5 +58,5 @@ ARM void ActorUnkSPID::func_ov090_02170e94(void) {}
 ARM void ActorUnkSPID::func_ov090_02170ee4(void) {}
 ARM void ActorUnkSPID::func_ov090_02170f30(void) {}
 
-ActorUnkSPID::~ActorUnkSPID() {}
-ActorProfileUnkSPID::~ActorProfileUnkSPID() {}
+ARM ActorUnkSPID::~ActorUnkSPID() {}
+ARM ActorProfileUnkSPID::~ActorProfileUnkSPID() {}

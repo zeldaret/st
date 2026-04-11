@@ -21,5 +21,5 @@ ARM ActorUnkAJCR::ActorUnkAJCR() {}
 ARM void ActorUnkAJCR::func_ov068_0215d7f4(void) {}
 ARM void ActorUnkAJCR::func_ov068_0215d8d8(void) {}
 
-ActorUnkAJCR::~ActorUnkAJCR() {}
-ActorProfileUnkAJCR::~ActorProfileUnkAJCR() {}
+ARM ActorUnkAJCR::~ActorUnkAJCR() {}
+ARM ActorProfileUnkAJCR::~ActorProfileUnkAJCR() {}

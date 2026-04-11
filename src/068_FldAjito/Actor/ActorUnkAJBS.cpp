@@ -49,5 +49,5 @@ ARM void ActorUnkAJBS::func_ov068_02160020(void) {}
 ARM void ActorUnkAJBS::func_ov068_021601c4(void) {}
 ARM void ActorUnkAJBS::func_ov068_02160384(void) {}
 
-ActorUnkAJBS::~ActorUnkAJBS() {}
-ActorProfileUnkAJBS::~ActorProfileUnkAJBS() {}
+ARM ActorUnkAJBS::~ActorUnkAJBS() {}
+ARM ActorProfileUnkAJBS::~ActorProfileUnkAJBS() {}

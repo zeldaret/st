@@ -42,5 +42,5 @@ ARM void ActorUnkDSBB::func_ov087_0215c1c4(void) {}
 ARM void ActorUnkDSBB::func_ov087_0215c24c(void) {}
 ARM void ActorUnkDSBB::func_ov087_0215c268(void) {}
 
-ActorUnkDSBB::~ActorUnkDSBB() {}
-ActorProfileUnkDSBB::~ActorProfileUnkDSBB() {}
+ARM ActorUnkDSBB::~ActorUnkDSBB() {}
+ARM ActorProfileUnkDSBB::~ActorProfileUnkDSBB() {}

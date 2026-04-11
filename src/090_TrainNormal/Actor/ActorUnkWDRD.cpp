@@ -51,5 +51,5 @@ ARM void ActorUnkWDRD::func_ov090_0216f0e0(void) {}
 ARM void ActorUnkWDRD::func_ov090_0216f1e4(void) {}
 ARM void ActorUnkWDRD::func_ov090_0216f200(void) {}
 
-ActorUnkWDRD::~ActorUnkWDRD() {}
-ActorProfileUnkWDRD::~ActorProfileUnkWDRD() {}
+ARM ActorUnkWDRD::~ActorUnkWDRD() {}
+ARM ActorProfileUnkWDRD::~ActorProfileUnkWDRD() {}

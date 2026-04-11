@@ -20,5 +20,5 @@ ARM ActorUnkSCCN::ActorUnkSCCN() {}
 
 ARM void ActorUnkSCCN::func_ov031_020efaa0(void) {}
 
-ActorUnkSCCN::~ActorUnkSCCN() {}
-ActorProfileUnkSCCN::~ActorProfileUnkSCCN() {}
+ARM ActorUnkSCCN::~ActorUnkSCCN() {}
+ARM ActorProfileUnkSCCN::~ActorProfileUnkSCCN() {}

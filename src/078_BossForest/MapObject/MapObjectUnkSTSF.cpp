@@ -21,5 +21,5 @@ ARM MapObjectUnkSTSF::MapObjectUnkSTSF() {}
 ARM void MapObjectUnkSTSF::func_ov078_0215d0a0(void) {}
 ARM void MapObjectUnkSTSF::func_ov078_0215d0f4(void) {}
 
-MapObjectUnkSTSF::~MapObjectUnkSTSF() {}
-MapObjectProfileUnkSTSF::~MapObjectProfileUnkSTSF() {}
+ARM MapObjectUnkSTSF::~MapObjectUnkSTSF() {}
+ARM MapObjectProfileUnkSTSF::~MapObjectProfileUnkSTSF() {}

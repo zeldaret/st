@@ -20,5 +20,5 @@ ARM MapObjectUnkHOF1::MapObjectUnkHOF1() {}
 
 ARM void MapObjectUnkHOF1::func_ov064_02159f4c(void) {}
 
-MapObjectUnkHOF1::~MapObjectUnkHOF1() {}
-MapObjectProfileUnkHOF1::~MapObjectProfileUnkHOF1() {}
+ARM MapObjectUnkHOF1::~MapObjectUnkHOF1() {}
+ARM MapObjectProfileUnkHOF1::~MapObjectProfileUnkHOF1() {}

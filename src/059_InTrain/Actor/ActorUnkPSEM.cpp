@@ -76,5 +76,5 @@ ARM void ActorUnkPSEM::func_ov059_0215c2f8(void) {}
 ARM void ActorUnkPSEM::func_ov059_0215c314(void) {}
 ARM void ActorUnkPSEM::func_ov059_0215c398(void) {}
 
-ActorUnkPSEM::~ActorUnkPSEM() {}
-ActorProfileUnkPSEM::~ActorProfileUnkPSEM() {}
+ARM ActorUnkPSEM::~ActorUnkPSEM() {}
+ARM ActorProfileUnkPSEM::~ActorProfileUnkPSEM() {}

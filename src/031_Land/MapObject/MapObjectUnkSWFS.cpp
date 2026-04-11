@@ -36,5 +36,5 @@ ARM void MapObjectUnkSWFS::func_ov031_0210d794(void) {}
 ARM void MapObjectUnkSWFS::func_ov031_0210d924(void) {}
 ARM void MapObjectUnkSWFS::func_ov031_0210d968(void) {}
 
-MapObjectUnkSWFS::~MapObjectUnkSWFS() {}
-MapObjectProfileUnkSWFS::~MapObjectProfileUnkSWFS() {}
+ARM MapObjectUnkSWFS::~MapObjectUnkSWFS() {}
+ARM MapObjectProfileUnkSWFS::~MapObjectProfileUnkSWFS() {}

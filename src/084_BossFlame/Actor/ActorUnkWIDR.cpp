@@ -60,5 +60,5 @@ ARM void ActorUnkWIDR::func_ov084_0215c578(void) {}
 ARM void ActorUnkWIDR::func_ov084_0215c594(void) {}
 ARM void ActorUnkWIDR::func_ov084_0215c5f8(void) {}
 
-ActorUnkWIDR::~ActorUnkWIDR() {}
-ActorProfileUnkWIDR::~ActorProfileUnkWIDR() {}
+ARM ActorUnkWIDR::~ActorUnkWIDR() {}
+ARM ActorProfileUnkWIDR::~ActorProfileUnkWIDR() {}

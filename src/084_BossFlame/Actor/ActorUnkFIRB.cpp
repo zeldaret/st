@@ -28,5 +28,5 @@ ARM void ActorUnkFIRB::func_ov084_0215ab68(void) {}
 ARM void ActorUnkFIRB::func_ov084_0215ab70(void) {}
 ARM void ActorUnkFIRB::func_ov084_0215aba0(void) {}
 
-ActorUnkFIRB::~ActorUnkFIRB() {}
-ActorProfileUnkFIRB::~ActorProfileUnkFIRB() {}
+ARM ActorUnkFIRB::~ActorUnkFIRB() {}
+ARM ActorProfileUnkFIRB::~ActorProfileUnkFIRB() {}

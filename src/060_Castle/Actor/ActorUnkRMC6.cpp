@@ -21,5 +21,5 @@ ARM ActorUnkRMC6::ActorUnkRMC6() {}
 ARM void ActorUnkRMC6::func_ov060_0215e104(void) {}
 ARM void ActorUnkRMC6::func_ov060_0215e108(void) {}
 
-ActorUnkRMC6::~ActorUnkRMC6() {}
-ActorProfileUnkRMC6::~ActorProfileUnkRMC6() {}
+ARM ActorUnkRMC6::~ActorUnkRMC6() {}
+ARM ActorProfileUnkRMC6::~ActorProfileUnkRMC6() {}

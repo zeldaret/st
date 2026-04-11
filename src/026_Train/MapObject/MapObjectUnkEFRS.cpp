@@ -27,5 +27,5 @@ ARM void MapObjectUnkEFRS::func_ov026_0210ec4c(void) {}
 ARM void MapObjectUnkEFRS::func_ov026_0210ec54(void) {}
 ARM void MapObjectUnkEFRS::func_ov026_0210ecb8(void) {}
 
-MapObjectUnkEFRS::~MapObjectUnkEFRS() {}
-MapObjectProfileUnkEFRS::~MapObjectProfileUnkEFRS() {}
+ARM MapObjectUnkEFRS::~MapObjectUnkEFRS() {}
+ARM MapObjectProfileUnkEFRS::~MapObjectProfileUnkEFRS() {}

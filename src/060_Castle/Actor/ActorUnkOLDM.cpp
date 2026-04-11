@@ -33,5 +33,5 @@ ARM void ActorUnkOLDM::func_ov060_0215d3ac(void) {}
 ARM void ActorUnkOLDM::func_ov060_0215d3bc(void) {}
 ARM void ActorUnkOLDM::func_ov060_0215d3c0(void) {}
 
-ActorUnkOLDM::~ActorUnkOLDM() {}
-ActorProfileUnkOLDM::~ActorProfileUnkOLDM() {}
+ARM ActorUnkOLDM::~ActorUnkOLDM() {}
+ARM ActorProfileUnkOLDM::~ActorProfileUnkOLDM() {}

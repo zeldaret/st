@@ -35,5 +35,5 @@ ARM void MapObjectUnkDRSW::func_ov031_020ff3fc(void) {}
 ARM void MapObjectUnkDRSW::func_ov031_020ff43c(void) {}
 ARM void MapObjectUnkDRSW::func_ov031_020ff468(void) {}
 
-MapObjectUnkDRSW::~MapObjectUnkDRSW() {}
-MapObjectProfileUnkDRSW::~MapObjectProfileUnkDRSW() {}
+ARM MapObjectUnkDRSW::~MapObjectUnkDRSW() {}
+ARM MapObjectProfileUnkDRSW::~MapObjectProfileUnkDRSW() {}

@@ -20,5 +20,5 @@ ARM ActorUnkE3ST::ActorUnkE3ST() {}
 
 ARM void ActorUnkE3ST::func_ov090_02171510(void) {}
 
-ActorUnkE3ST::~ActorUnkE3ST() {}
-ActorProfileUnkE3ST::~ActorProfileUnkE3ST() {}
+ARM ActorUnkE3ST::~ActorUnkE3ST() {}
+ARM ActorProfileUnkE3ST::~ActorProfileUnkE3ST() {}

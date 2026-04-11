@@ -21,5 +21,5 @@ ARM ActorUnkCLZN::ActorUnkCLZN() {}
 ARM void ActorUnkCLZN::func_ov021_020f3940(void) {}
 ARM void ActorUnkCLZN::func_ov021_020f3964(void) {}
 
-ActorUnkCLZN::~ActorUnkCLZN() {}
-ActorProfileUnkCLZN::~ActorProfileUnkCLZN() {}
+ARM ActorUnkCLZN::~ActorUnkCLZN() {}
+ARM ActorProfileUnkCLZN::~ActorProfileUnkCLZN() {}

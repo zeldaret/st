@@ -20,5 +20,5 @@ ARM ActorUnkRMTB::ActorUnkRMTB() {}
 
 ARM void ActorUnkRMTB::func_ov059_02162bf0(void) {}
 
-ActorUnkRMTB::~ActorUnkRMTB() {}
-ActorProfileUnkRMTB::~ActorProfileUnkRMTB() {}
+ARM ActorUnkRMTB::~ActorUnkRMTB() {}
+ARM ActorProfileUnkRMTB::~ActorProfileUnkRMTB() {}

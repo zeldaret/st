@@ -72,5 +72,5 @@ ARM void ActorUnkBDGA::func_ov045_021277cc(void) {}
 ARM void ActorUnkBDGA::func_ov045_021277e8(void) {}
 ARM void ActorUnkBDGA::func_ov045_02127850(void) {}
 
-ActorUnkBDGA::~ActorUnkBDGA() {}
-ActorProfileUnkBDGA::~ActorProfileUnkBDGA() {}
+ARM ActorUnkBDGA::~ActorUnkBDGA() {}
+ARM ActorProfileUnkBDGA::~ActorProfileUnkBDGA() {}

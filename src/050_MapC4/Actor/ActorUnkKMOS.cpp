@@ -75,5 +75,5 @@ ARM void ActorUnkKMOS::func_ov050_02132de8(void) {}
 ARM void ActorUnkKMOS::func_ov050_02132e04(void) {}
 ARM void ActorUnkKMOS::func_ov050_02132e54(void) {}
 
-ActorUnkKMOS::~ActorUnkKMOS() {}
-ActorProfileUnkKMOS::~ActorProfileUnkKMOS() {}
+ARM ActorUnkKMOS::~ActorUnkKMOS() {}
+ARM ActorProfileUnkKMOS::~ActorProfileUnkKMOS() {}

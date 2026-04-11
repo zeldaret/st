@@ -22,5 +22,5 @@ ARM void MapObjectUnkPLCT::func_ov060_021604ac(void) {}
 ARM void MapObjectUnkPLCT::func_ov060_021604b4(void) {}
 ARM void MapObjectUnkPLCT::func_ov060_021604b8(void) {}
 
-MapObjectUnkPLCT::~MapObjectUnkPLCT() {}
-MapObjectProfileUnkPLCT::~MapObjectProfileUnkPLCT() {}
+ARM MapObjectUnkPLCT::~MapObjectUnkPLCT() {}
+ARM MapObjectProfileUnkPLCT::~MapObjectProfileUnkPLCT() {}

@@ -21,5 +21,5 @@ ARM MapObjectUnkGTRK::MapObjectUnkGTRK() {}
 ARM void MapObjectUnkGTRK::func_ov077_0215af58(void) {}
 ARM void MapObjectUnkGTRK::func_ov077_0215b018(void) {}
 
-MapObjectUnkGTRK::~MapObjectUnkGTRK() {}
-MapObjectProfileUnkGTRK::~MapObjectProfileUnkGTRK() {}
+ARM MapObjectUnkGTRK::~MapObjectUnkGTRK() {}
+ARM MapObjectProfileUnkGTRK::~MapObjectProfileUnkGTRK() {}

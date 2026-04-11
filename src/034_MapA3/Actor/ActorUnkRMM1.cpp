@@ -24,5 +24,5 @@ ARM void ActorUnkRMM1::func_ov034_0211911c(void) {}
 ARM void ActorUnkRMM1::func_ov034_02119238(void) {}
 ARM void ActorUnkRMM1::func_ov034_02119278(void) {}
 
-ActorUnkRMM1::~ActorUnkRMM1() {}
-ActorProfileUnkRMM1::~ActorProfileUnkRMM1() {}
+ARM ActorUnkRMM1::~ActorUnkRMM1() {}
+ARM ActorProfileUnkRMM1::~ActorProfileUnkRMM1() {}

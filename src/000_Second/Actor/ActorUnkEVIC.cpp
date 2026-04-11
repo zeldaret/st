@@ -20,5 +20,5 @@ ARM ActorUnkEVIC::ActorUnkEVIC() {}
 
 ARM void ActorUnkEVIC::func_ov000_0209c014(void) {}
 
-ActorUnkEVIC::~ActorUnkEVIC() {}
-ActorProfileUnkEVIC::~ActorProfileUnkEVIC() {}
+ARM ActorUnkEVIC::~ActorUnkEVIC() {}
+ARM ActorProfileUnkEVIC::~ActorProfileUnkEVIC() {}

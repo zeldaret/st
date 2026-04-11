@@ -32,5 +32,5 @@ ARM void ActorUnkLVOF::func_ov021_020f45f8(void) {}
 ARM void ActorUnkLVOF::func_ov021_020f4624(void) {}
 ARM void ActorUnkLVOF::func_ov021_020f46c8(void) {}
 
-ActorUnkLVOF::~ActorUnkLVOF() {}
-ActorProfileUnkLVOF::~ActorProfileUnkLVOF() {}
+ARM ActorUnkLVOF::~ActorUnkLVOF() {}
+ARM ActorProfileUnkLVOF::~ActorProfileUnkLVOF() {}

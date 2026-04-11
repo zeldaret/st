@@ -20,5 +20,5 @@ ARM ActorUnkFOFA::ActorUnkFOFA() {}
 
 ARM void ActorUnkFOFA::func_ov021_020f3a34(void) {}
 
-ActorUnkFOFA::~ActorUnkFOFA() {}
-ActorProfileUnkFOFA::~ActorProfileUnkFOFA() {}
+ARM ActorUnkFOFA::~ActorUnkFOFA() {}
+ARM ActorProfileUnkFOFA::~ActorProfileUnkFOFA() {}

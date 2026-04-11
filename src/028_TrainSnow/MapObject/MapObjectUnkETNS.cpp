@@ -20,5 +20,5 @@ ARM MapObjectUnkETNS::MapObjectUnkETNS() {}
 
 ARM void MapObjectUnkETNS::func_ov028_0214568c(void) {}
 
-MapObjectUnkETNS::~MapObjectUnkETNS() {}
-MapObjectProfileUnkETNS::~MapObjectProfileUnkETNS() {}
+ARM MapObjectUnkETNS::~MapObjectUnkETNS() {}
+ARM MapObjectProfileUnkETNS::~MapObjectProfileUnkETNS() {}

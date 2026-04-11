@@ -21,5 +21,5 @@ ARM ActorUnkFIFI::ActorUnkFIFI() {}
 ARM void ActorUnkFIFI::func_ov035_0211e5d8(void) {}
 ARM void ActorUnkFIFI::func_ov035_0211e6d0(void) {}
 
-ActorUnkFIFI::~ActorUnkFIFI() {}
-ActorProfileUnkFIFI::~ActorProfileUnkFIFI() {}
+ARM ActorUnkFIFI::~ActorUnkFIFI() {}
+ARM ActorProfileUnkFIFI::~ActorProfileUnkFIFI() {}

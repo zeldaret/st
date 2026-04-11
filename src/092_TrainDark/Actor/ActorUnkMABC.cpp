@@ -29,5 +29,5 @@ ARM void ActorUnkMABC::func_ov092_02174d9c(void) {}
 ARM void ActorUnkMABC::func_ov092_02174f18(void) {}
 ARM void ActorUnkMABC::func_ov092_02175134(void) {}
 
-ActorUnkMABC::~ActorUnkMABC() {}
-ActorProfileUnkMABC::~ActorProfileUnkMABC() {}
+ARM ActorUnkMABC::~ActorUnkMABC() {}
+ARM ActorProfileUnkMABC::~ActorProfileUnkMABC() {}

@@ -33,5 +33,5 @@ ARM void ActorUnkWBEF::func_ov083_0215b58c(void) {}
 ARM void ActorUnkWBEF::func_ov083_0215b59c(void) {}
 ARM void ActorUnkWBEF::func_ov083_0215b614(void) {}
 
-ActorUnkWBEF::~ActorUnkWBEF() {}
-ActorProfileUnkWBEF::~ActorProfileUnkWBEF() {}
+ARM ActorUnkWBEF::~ActorUnkWBEF() {}
+ARM ActorProfileUnkWBEF::~ActorProfileUnkWBEF() {}

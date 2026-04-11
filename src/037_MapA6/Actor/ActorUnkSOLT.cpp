@@ -78,5 +78,5 @@ ARM void ActorUnkSOLT::func_ov037_021206d4(void) {}
 ARM void ActorUnkSOLT::func_ov037_02120834(void) {}
 ARM void ActorUnkSOLT::func_ov037_0212087c(void) {}
 
-ActorUnkSOLT::~ActorUnkSOLT() {}
-ActorProfileUnkSOLT::~ActorProfileUnkSOLT() {}
+ARM ActorUnkSOLT::~ActorUnkSOLT() {}
+ARM ActorProfileUnkSOLT::~ActorProfileUnkSOLT() {}

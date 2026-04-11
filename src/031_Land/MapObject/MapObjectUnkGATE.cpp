@@ -22,5 +22,5 @@ ARM void MapObjectUnkGATE::func_ov031_02100890(void) {}
 ARM void MapObjectUnkGATE::func_ov031_02100a28(void) {}
 ARM void MapObjectUnkGATE::func_ov031_02100a2c(void) {}
 
-MapObjectUnkGATE::~MapObjectUnkGATE() {}
-MapObjectProfileUnkGATE::~MapObjectProfileUnkGATE() {}
+ARM MapObjectUnkGATE::~MapObjectUnkGATE() {}
+ARM MapObjectProfileUnkGATE::~MapObjectProfileUnkGATE() {}

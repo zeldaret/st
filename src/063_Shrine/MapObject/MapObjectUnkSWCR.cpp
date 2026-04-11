@@ -32,5 +32,5 @@ ARM void MapObjectUnkSWCR::func_ov063_02161af4(void) {}
 ARM void MapObjectUnkSWCR::func_ov063_02161b08(void) {}
 ARM void MapObjectUnkSWCR::func_ov063_021620c0(void) {}
 
-MapObjectUnkSWCR::~MapObjectUnkSWCR() {}
-MapObjectProfileUnkSWCR::~MapObjectProfileUnkSWCR() {}
+ARM MapObjectUnkSWCR::~MapObjectUnkSWCR() {}
+ARM MapObjectProfileUnkSWCR::~MapObjectProfileUnkSWCR() {}

@@ -26,5 +26,5 @@ ARM void MapObjectUnkBLCC::func_ov031_02109c74(void) {}
 ARM void MapObjectUnkBLCC::func_ov031_02109c98(void) {}
 ARM void MapObjectUnkBLCC::func_ov031_02109e74(void) {}
 
-MapObjectUnkBLCC::~MapObjectUnkBLCC() {}
-MapObjectProfileUnkBLCC::~MapObjectProfileUnkBLCC() {}
+ARM MapObjectUnkBLCC::~MapObjectUnkBLCC() {}
+ARM MapObjectProfileUnkBLCC::~MapObjectProfileUnkBLCC() {}

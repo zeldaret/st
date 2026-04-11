@@ -91,5 +91,5 @@ ARM void ActorUnkDSBN::func_ov087_0215afd0(void) {}
 ARM void ActorUnkDSBN::func_ov087_0215afec(void) {}
 ARM void ActorUnkDSBN::func_ov087_0215b0d0(void) {}
 
-ActorUnkDSBN::~ActorUnkDSBN() {}
-ActorProfileUnkDSBN::~ActorProfileUnkDSBN() {}
+ARM ActorUnkDSBN::~ActorUnkDSBN() {}
+ARM ActorProfileUnkDSBN::~ActorProfileUnkDSBN() {}

@@ -24,5 +24,5 @@ ARM void MapObjectUnkDRTK::func_ov041_0212c9f8(void) {}
 ARM void MapObjectUnkDRTK::func_ov041_0212cdac(void) {}
 ARM void MapObjectUnkDRTK::func_ov041_0212cf0c(void) {}
 
-MapObjectUnkDRTK::~MapObjectUnkDRTK() {}
-MapObjectProfileUnkDRTK::~MapObjectProfileUnkDRTK() {}
+ARM MapObjectUnkDRTK::~MapObjectUnkDRTK() {}
+ARM MapObjectProfileUnkDRTK::~MapObjectProfileUnkDRTK() {}

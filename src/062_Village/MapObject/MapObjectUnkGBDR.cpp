@@ -21,5 +21,5 @@ ARM MapObjectUnkGBDR::MapObjectUnkGBDR() {}
 ARM void MapObjectUnkGBDR::func_ov062_0215be70(void) {}
 ARM void MapObjectUnkGBDR::func_ov062_0215bfc8(void) {}
 
-MapObjectUnkGBDR::~MapObjectUnkGBDR() {}
-MapObjectProfileUnkGBDR::~MapObjectProfileUnkGBDR() {}
+ARM MapObjectUnkGBDR::~MapObjectUnkGBDR() {}
+ARM MapObjectProfileUnkGBDR::~MapObjectProfileUnkGBDR() {}

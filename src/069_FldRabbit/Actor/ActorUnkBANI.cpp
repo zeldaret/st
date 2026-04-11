@@ -36,5 +36,5 @@ ARM void ActorUnkBANI::func_ov069_02158d24(void) {}
 ARM void ActorUnkBANI::func_ov069_02158d50(void) {}
 ARM void ActorUnkBANI::func_ov069_02158d6c(void) {}
 
-ActorUnkBANI::~ActorUnkBANI() {}
-ActorProfileUnkBANI::~ActorProfileUnkBANI() {}
+ARM ActorUnkBANI::~ActorUnkBANI() {}
+ARM ActorProfileUnkBANI::~ActorProfileUnkBANI() {}

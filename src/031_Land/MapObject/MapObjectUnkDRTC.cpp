@@ -26,5 +26,5 @@ ARM void MapObjectUnkDRTC::func_ov031_0210040c(void) {}
 ARM void MapObjectUnkDRTC::func_ov031_02100410(void) {}
 ARM void MapObjectUnkDRTC::func_ov031_02100414(void) {}
 
-MapObjectUnkDRTC::~MapObjectUnkDRTC() {}
-MapObjectProfileUnkDRTC::~MapObjectProfileUnkDRTC() {}
+ARM MapObjectUnkDRTC::~MapObjectUnkDRTC() {}
+ARM MapObjectProfileUnkDRTC::~MapObjectProfileUnkDRTC() {}

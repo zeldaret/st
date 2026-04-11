@@ -21,5 +21,5 @@ ARM MapObjectUnkFSTA::MapObjectUnkFSTA() {}
 ARM void MapObjectUnkFSTA::func_ov040_0212d450(void) {}
 ARM void MapObjectUnkFSTA::func_ov040_0212d64c(void) {}
 
-MapObjectUnkFSTA::~MapObjectUnkFSTA() {}
-MapObjectProfileUnkFSTA::~MapObjectProfileUnkFSTA() {}
+ARM MapObjectUnkFSTA::~MapObjectUnkFSTA() {}
+ARM MapObjectProfileUnkFSTA::~MapObjectProfileUnkFSTA() {}

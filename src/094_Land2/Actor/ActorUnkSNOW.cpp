@@ -27,5 +27,5 @@ ARM void ActorUnkSNOW::func_ov094_0216dd30(void) {}
 ARM void ActorUnkSNOW::func_ov094_0216dd98(void) {}
 ARM void ActorUnkSNOW::func_ov094_0216dda8(void) {}
 
-ActorUnkSNOW::~ActorUnkSNOW() {}
-ActorProfileUnkSNOW::~ActorProfileUnkSNOW() {}
+ARM ActorUnkSNOW::~ActorUnkSNOW() {}
+ARM ActorProfileUnkSNOW::~ActorProfileUnkSNOW() {}

@@ -27,5 +27,5 @@ ARM void ActorUnkBLST::func_ov031_020e3b94(void) {}
 ARM void ActorUnkBLST::func_ov031_020e3b9c(void) {}
 ARM void ActorUnkBLST::func_ov031_020e3c60(void) {}
 
-ActorUnkBLST::~ActorUnkBLST() {}
-ActorProfileUnkBLST::~ActorProfileUnkBLST() {}
+ARM ActorUnkBLST::~ActorUnkBLST() {}
+ARM ActorProfileUnkBLST::~ActorProfileUnkBLST() {}

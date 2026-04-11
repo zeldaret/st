@@ -21,5 +21,5 @@ ARM ActorUnkRMSF::ActorUnkRMSF() {}
 ARM void ActorUnkRMSF::func_ov063_0215c250(void) {}
 ARM void ActorUnkRMSF::func_ov063_0215c290(void) {}
 
-ActorUnkRMSF::~ActorUnkRMSF() {}
-ActorProfileUnkRMSF::~ActorProfileUnkRMSF() {}
+ARM ActorUnkRMSF::~ActorUnkRMSF() {}
+ARM ActorProfileUnkRMSF::~ActorProfileUnkRMSF() {}

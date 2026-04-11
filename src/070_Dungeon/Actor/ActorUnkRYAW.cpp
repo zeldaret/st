@@ -49,5 +49,5 @@ ARM void ActorUnkRYAW::func_ov070_0214dac4(void) {}
 ARM void ActorUnkRYAW::func_ov070_0214db34(void) {}
 ARM void ActorUnkRYAW::func_ov070_0214db90(void) {}
 
-ActorUnkRYAW::~ActorUnkRYAW() {}
-ActorProfileUnkRYAW::~ActorProfileUnkRYAW() {}
+ARM ActorUnkRYAW::~ActorUnkRYAW() {}
+ARM ActorProfileUnkRYAW::~ActorProfileUnkRYAW() {}

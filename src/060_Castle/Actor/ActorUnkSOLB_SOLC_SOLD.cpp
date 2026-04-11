@@ -54,6 +54,6 @@ ARM ActorProfileUnkSOLD::ActorProfileUnkSOLD() :
 
 ARM ActorUnkSOLD::ActorUnkSOLD() {}
 
-ActorProfileUnkSOLB::~ActorProfileUnkSOLB() {}
-ActorProfileUnkSOLC::~ActorProfileUnkSOLC() {}
-ActorProfileUnkSOLD::~ActorProfileUnkSOLD() {}
+ARM ActorProfileUnkSOLB::~ActorProfileUnkSOLB() {}
+ARM ActorProfileUnkSOLC::~ActorProfileUnkSOLC() {}
+ARM ActorProfileUnkSOLD::~ActorProfileUnkSOLD() {}

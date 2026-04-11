@@ -39,5 +39,5 @@ ARM void ActorUnkSTTG::func_ov094_0216b150(void) {}
 ARM void ActorUnkSTTG::func_ov094_0216b188(void) {}
 ARM void ActorUnkSTTG::func_ov094_0216b1a4(void) {}
 
-ActorUnkSTTG::~ActorUnkSTTG() {}
-ActorProfileUnkSTTG::~ActorProfileUnkSTTG() {}
+ARM ActorUnkSTTG::~ActorUnkSTTG() {}
+ARM ActorProfileUnkSTTG::~ActorProfileUnkSTTG() {}

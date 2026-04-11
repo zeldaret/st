@@ -63,5 +63,5 @@ ARM void ActorUnkPASS::func_ov056_0213a8b8(void) {}
 ARM void ActorUnkPASS::func_ov056_0213a8d8(void) {}
 ARM void ActorUnkPASS::func_ov056_0213a934(void) {}
 
-ActorUnkPASS::~ActorUnkPASS() {}
-ActorProfileUnkPASS::~ActorProfileUnkPASS() {}
+ARM ActorUnkPASS::~ActorUnkPASS() {}
+ARM ActorProfileUnkPASS::~ActorProfileUnkPASS() {}

@@ -30,5 +30,5 @@ ARM void ActorUnkRCFO::func_ov033_02119bc4(void) {}
 ARM void ActorUnkRCFO::func_ov033_02119d00(void) {}
 ARM void ActorUnkRCFO::func_ov033_02119d40(void) {}
 
-ActorUnkRCFO::~ActorUnkRCFO() {}
-ActorProfileUnkRCFO::~ActorProfileUnkRCFO() {}
+ARM ActorUnkRCFO::~ActorUnkRCFO() {}
+ARM ActorProfileUnkRCFO::~ActorProfileUnkRCFO() {}

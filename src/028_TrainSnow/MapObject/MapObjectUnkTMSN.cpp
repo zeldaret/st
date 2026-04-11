@@ -28,5 +28,5 @@ ARM void MapObjectUnkTMSN::func_ov028_02145540(void) {}
 ARM void MapObjectUnkTMSN::func_ov028_02145560(void) {}
 ARM void MapObjectUnkTMSN::func_ov028_021455c4(void) {}
 
-MapObjectUnkTMSN::~MapObjectUnkTMSN() {}
-MapObjectProfileUnkTMSN::~MapObjectProfileUnkTMSN() {}
+ARM MapObjectUnkTMSN::~MapObjectUnkTMSN() {}
+ARM MapObjectProfileUnkTMSN::~MapObjectProfileUnkTMSN() {}

@@ -33,5 +33,5 @@ ARM void MapObjectUnkBREX::func_ov031_02108700(void) {}
 ARM void MapObjectUnkBREX::func_ov031_021087f8(void) {}
 ARM void MapObjectUnkBREX::func_ov031_02108834(void) {}
 
-MapObjectUnkBREX::~MapObjectUnkBREX() {}
-MapObjectProfileUnkBREX::~MapObjectProfileUnkBREX() {}
+ARM MapObjectUnkBREX::~MapObjectUnkBREX() {}
+ARM MapObjectProfileUnkBREX::~MapObjectProfileUnkBREX() {}

@@ -49,5 +49,5 @@ ARM void ActorUnkPBSP::func_ov059_02158a34(void) {}
 ARM void ActorUnkPBSP::func_ov059_02158aa0(void) {}
 ARM void ActorUnkPBSP::func_ov059_02158b30(void) {}
 
-ActorUnkPBSP::~ActorUnkPBSP() {}
-ActorProfileUnkPBSP::~ActorProfileUnkPBSP() {}
+ARM ActorUnkPBSP::~ActorUnkPBSP() {}
+ARM ActorProfileUnkPBSP::~ActorProfileUnkPBSP() {}

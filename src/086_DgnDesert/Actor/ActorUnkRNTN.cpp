@@ -30,5 +30,5 @@ ARM void ActorUnkRNTN::func_ov086_0215d394(void) {}
 ARM void ActorUnkRNTN::func_ov086_0215d610(void) {}
 ARM void ActorUnkRNTN::func_ov086_0215d890(void) {}
 
-ActorUnkRNTN::~ActorUnkRNTN() {}
-ActorProfileUnkRNTN::~ActorProfileUnkRNTN() {}
+ARM ActorUnkRNTN::~ActorUnkRNTN() {}
+ARM ActorProfileUnkRNTN::~ActorProfileUnkRNTN() {}

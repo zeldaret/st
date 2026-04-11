@@ -21,5 +21,5 @@ ARM MapObjectUnkEBRD::MapObjectUnkEBRD() {}
 ARM void MapObjectUnkEBRD::func_ov026_0210aa20(void) {}
 ARM void MapObjectUnkEBRD::func_ov026_0210ab3c(void) {}
 
-MapObjectUnkEBRD::~MapObjectUnkEBRD() {}
-MapObjectProfileUnkEBRD::~MapObjectProfileUnkEBRD() {}
+ARM MapObjectUnkEBRD::~MapObjectUnkEBRD() {}
+ARM MapObjectProfileUnkEBRD::~MapObjectProfileUnkEBRD() {}

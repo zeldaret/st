@@ -71,7 +71,7 @@ ARM ActorProfileUnkSRSL::ActorProfileUnkSRSL() :
 
 ARM ActorUnkSRSL::ActorUnkSRSL() {}
 
-ActorProfileUnkSIRO::~ActorProfileUnkSIRO() {}
-ActorProfileUnkSIRS::~ActorProfileUnkSIRS() {}
-ActorProfileUnkSRNM::~ActorProfileUnkSRNM() {}
-ActorProfileUnkSRSL::~ActorProfileUnkSRSL() {}
+ARM ActorProfileUnkSIRO::~ActorProfileUnkSIRO() {}
+ARM ActorProfileUnkSIRS::~ActorProfileUnkSIRS() {}
+ARM ActorProfileUnkSRNM::~ActorProfileUnkSRNM() {}
+ARM ActorProfileUnkSRSL::~ActorProfileUnkSRSL() {}

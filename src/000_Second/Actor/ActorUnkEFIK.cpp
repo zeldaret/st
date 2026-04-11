@@ -23,5 +23,5 @@ ARM void ActorUnkEFIK::func_ov000_0209c140(void) {}
 ARM void ActorUnkEFIK::func_ov000_0209c2d0(void) {}
 ARM void ActorUnkEFIK::func_ov000_0209c2e4(void) {}
 
-ActorUnkEFIK::~ActorUnkEFIK() {}
-ActorProfileUnkEFIK::~ActorProfileUnkEFIK() {}
+ARM ActorUnkEFIK::~ActorUnkEFIK() {}
+ARM ActorProfileUnkEFIK::~ActorProfileUnkEFIK() {}

@@ -27,5 +27,5 @@ ARM void ActorUnkCLBT::func_ov096_0217a910(void) {}
 ARM void ActorUnkCLBT::func_ov096_0217a948(void) {}
 ARM void ActorUnkCLBT::func_ov096_0217a9e4(void) {}
 
-ActorUnkCLBT::~ActorUnkCLBT() {}
-ActorProfileUnkCLBT::~ActorProfileUnkCLBT() {}
+ARM ActorUnkCLBT::~ActorUnkCLBT() {}
+ARM ActorProfileUnkCLBT::~ActorProfileUnkCLBT() {}

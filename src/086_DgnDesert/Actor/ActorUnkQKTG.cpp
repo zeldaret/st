@@ -23,5 +23,5 @@ ARM void ActorUnkQKTG::func_ov086_0215dd68(void) {}
 ARM void ActorUnkQKTG::func_ov086_0215de08(void) {}
 ARM void ActorUnkQKTG::func_ov086_0215de1c(void) {}
 
-ActorUnkQKTG::~ActorUnkQKTG() {}
-ActorProfileUnkQKTG::~ActorProfileUnkQKTG() {}
+ARM ActorUnkQKTG::~ActorUnkQKTG() {}
+ARM ActorProfileUnkQKTG::~ActorProfileUnkQKTG() {}

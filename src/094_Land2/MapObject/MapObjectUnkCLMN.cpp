@@ -20,5 +20,5 @@ ARM MapObjectUnkCLMN::MapObjectUnkCLMN() {}
 
 ARM void MapObjectUnkCLMN::func_ov094_0217195c(void) {}
 
-MapObjectUnkCLMN::~MapObjectUnkCLMN() {}
-MapObjectProfileUnkCLMN::~MapObjectProfileUnkCLMN() {}
+ARM MapObjectUnkCLMN::~MapObjectUnkCLMN() {}
+ARM MapObjectProfileUnkCLMN::~MapObjectProfileUnkCLMN() {}

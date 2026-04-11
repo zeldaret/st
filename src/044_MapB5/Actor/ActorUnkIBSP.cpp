@@ -23,5 +23,5 @@ ARM void ActorUnkIBSP::func_ov044_0212b8a0(void) {}
 ARM void ActorUnkIBSP::func_ov044_0212b918(void) {}
 ARM void ActorUnkIBSP::func_ov044_0212bb74(void) {}
 
-ActorUnkIBSP::~ActorUnkIBSP() {}
-ActorProfileUnkIBSP::~ActorProfileUnkIBSP() {}
+ARM ActorUnkIBSP::~ActorUnkIBSP() {}
+ARM ActorProfileUnkIBSP::~ActorProfileUnkIBSP() {}

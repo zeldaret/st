@@ -82,5 +82,5 @@ ARM void ActorUnkSTLF::func_ov043_02126698(void) {}
 ARM void ActorUnkSTLF::func_ov043_021266bc(void) {}
 ARM void ActorUnkSTLF::func_ov043_021266e8(void) {}
 
-ActorUnkSTLF::~ActorUnkSTLF() {}
-ActorProfileUnkSTLF::~ActorProfileUnkSTLF() {}
+ARM ActorUnkSTLF::~ActorUnkSTLF() {}
+ARM ActorProfileUnkSTLF::~ActorProfileUnkSTLF() {}

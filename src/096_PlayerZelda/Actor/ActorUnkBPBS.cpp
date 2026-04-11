@@ -55,5 +55,5 @@ ARM void ActorUnkBPBS::func_ov096_0217d19c(void) {}
 ARM void ActorUnkBPBS::func_ov096_0217d1b8(void) {}
 ARM void ActorUnkBPBS::func_ov096_0217d234(void) {}
 
-ActorUnkBPBS::~ActorUnkBPBS() {}
-ActorProfileUnkBPBS::~ActorProfileUnkBPBS() {}
+ARM ActorUnkBPBS::~ActorUnkBPBS() {}
+ARM ActorProfileUnkBPBS::~ActorProfileUnkBPBS() {}

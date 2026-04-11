@@ -55,5 +55,5 @@ ARM void ActorUnkCASE::func_ov063_0215b99c(void) {}
 ARM void ActorUnkCASE::func_ov063_0215ba64(void) {}
 ARM void ActorUnkCASE::func_ov063_0215bab0(void) {}
 
-ActorUnkCASE::~ActorUnkCASE() {}
-ActorProfileUnkCASE::~ActorProfileUnkCASE() {}
+ARM ActorUnkCASE::~ActorUnkCASE() {}
+ARM ActorProfileUnkCASE::~ActorProfileUnkCASE() {}

@@ -37,5 +37,5 @@ ARM ActorProfileUnkNCMB::ActorProfileUnkNCMB() :
 
 ARM ActorUnkNCMB::ActorUnkNCMB() {}
 
-ActorProfileUnkNCCB::~ActorProfileUnkNCCB() {}
-ActorProfileUnkNCMB::~ActorProfileUnkNCMB() {}
+ARM ActorProfileUnkNCCB::~ActorProfileUnkNCCB() {}
+ARM ActorProfileUnkNCMB::~ActorProfileUnkNCMB() {}

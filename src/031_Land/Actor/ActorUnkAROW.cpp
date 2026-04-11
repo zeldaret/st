@@ -74,5 +74,5 @@ ARM void ActorUnkAROW::func_ov031_020f3c38(void) {}
 ARM void ActorUnkAROW::func_ov031_020f3d04(void) {}
 ARM void ActorUnkAROW::func_ov031_020f3d4c(void) {}
 
-ActorUnkAROW::~ActorUnkAROW() {}
-ActorProfileUnkAROW::~ActorProfileUnkAROW() {}
+ARM ActorUnkAROW::~ActorUnkAROW() {}
+ARM ActorProfileUnkAROW::~ActorProfileUnkAROW() {}

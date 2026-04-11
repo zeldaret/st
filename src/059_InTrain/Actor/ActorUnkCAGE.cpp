@@ -36,5 +36,5 @@ ARM void ActorUnkCAGE::func_ov059_02161390(void) {}
 ARM void ActorUnkCAGE::func_ov059_021613bc(void) {}
 ARM void ActorUnkCAGE::func_ov059_02161448(void) {}
 
-ActorUnkCAGE::~ActorUnkCAGE() {}
-ActorProfileUnkCAGE::~ActorProfileUnkCAGE() {}
+ARM ActorUnkCAGE::~ActorUnkCAGE() {}
+ARM ActorProfileUnkCAGE::~ActorProfileUnkCAGE() {}

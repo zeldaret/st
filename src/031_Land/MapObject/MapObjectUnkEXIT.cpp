@@ -22,5 +22,5 @@ ARM void MapObjectUnkEXIT::func_ov031_021005fc(void) {}
 ARM void MapObjectUnkEXIT::func_ov031_021006d4(void) {}
 ARM void MapObjectUnkEXIT::func_ov031_02100714(void) {}
 
-MapObjectUnkEXIT::~MapObjectUnkEXIT() {}
-MapObjectProfileUnkEXIT::~MapObjectProfileUnkEXIT() {}
+ARM MapObjectUnkEXIT::~MapObjectUnkEXIT() {}
+ARM MapObjectProfileUnkEXIT::~MapObjectProfileUnkEXIT() {}

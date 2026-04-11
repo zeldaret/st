@@ -87,5 +87,5 @@ ARM void ActorUnkWHMA::func_ov082_0215765c(void) {}
 ARM void ActorUnkWHMA::func_ov082_02157680(void) {}
 ARM void ActorUnkWHMA::func_ov082_021576ac(void) {}
 
-ActorUnkWHMA::~ActorUnkWHMA() {}
-ActorProfileUnkWHMA::~ActorProfileUnkWHMA() {}
+ARM ActorUnkWHMA::~ActorUnkWHMA() {}
+ARM ActorProfileUnkWHMA::~ActorProfileUnkWHMA() {}

@@ -24,5 +24,5 @@ ARM void MapObjectUnkBFSP::func_ov021_020f6338(void) {}
 ARM void MapObjectUnkBFSP::func_ov021_020f6358(void) {}
 ARM void MapObjectUnkBFSP::func_ov021_020f63a8(void) {}
 
-MapObjectUnkBFSP::~MapObjectUnkBFSP() {}
-MapObjectProfileUnkBFSP::~MapObjectProfileUnkBFSP() {}
+ARM MapObjectUnkBFSP::~MapObjectUnkBFSP() {}
+ARM MapObjectProfileUnkBFSP::~MapObjectProfileUnkBFSP() {}

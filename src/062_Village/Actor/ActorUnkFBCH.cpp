@@ -31,5 +31,5 @@ ARM void ActorUnkFBCH::func_ov062_02158b10(void) {}
 ARM void ActorUnkFBCH::func_ov062_02158b34(void) {}
 ARM void ActorUnkFBCH::func_ov062_02158b88(void) {}
 
-ActorUnkFBCH::~ActorUnkFBCH() {}
-ActorProfileUnkFBCH::~ActorProfileUnkFBCH() {}
+ARM ActorUnkFBCH::~ActorUnkFBCH() {}
+ARM ActorProfileUnkFBCH::~ActorProfileUnkFBCH() {}

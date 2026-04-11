@@ -50,5 +50,5 @@ ARM void ActorUnkPRPL::func_ov081_021519f4(void) {}
 ARM void ActorUnkPRPL::func_ov081_02151a04(void) {}
 ARM void ActorUnkPRPL::func_ov081_02151a24(void) {}
 
-ActorUnkPRPL::~ActorUnkPRPL() {}
-ActorProfileUnkPRPL::~ActorProfileUnkPRPL() {}
+ARM ActorUnkPRPL::~ActorUnkPRPL() {}
+ARM ActorProfileUnkPRPL::~ActorProfileUnkPRPL() {}

@@ -39,5 +39,5 @@ ARM void MapObjectUnkGSST::func_ov031_0210cc28(void) {}
 ARM void MapObjectUnkGSST::func_ov031_0210cc2c(void) {}
 ARM void MapObjectUnkGSST::func_ov031_0210cca0(void) {}
 
-MapObjectUnkGSST::~MapObjectUnkGSST() {}
-MapObjectProfileUnkGSST::~MapObjectProfileUnkGSST() {}
+ARM MapObjectUnkGSST::~MapObjectUnkGSST() {}
+ARM MapObjectProfileUnkGSST::~MapObjectProfileUnkGSST() {}

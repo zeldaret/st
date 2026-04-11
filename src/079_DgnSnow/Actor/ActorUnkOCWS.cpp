@@ -31,5 +31,5 @@ ARM void ActorUnkOCWS::func_ov079_0215585c(void) {}
 ARM void ActorUnkOCWS::func_ov079_02155898(void) {}
 ARM void ActorUnkOCWS::func_ov079_02155928(void) {}
 
-ActorUnkOCWS::~ActorUnkOCWS() {}
-ActorProfileUnkOCWS::~ActorProfileUnkOCWS() {}
+ARM ActorUnkOCWS::~ActorUnkOCWS() {}
+ARM ActorProfileUnkOCWS::~ActorProfileUnkOCWS() {}

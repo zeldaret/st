@@ -45,5 +45,5 @@ ARM void ActorUnkMARG::func_ov092_02176a50(void) {}
 ARM void ActorUnkMARG::func_ov092_02176aa8(void) {}
 ARM void ActorUnkMARG::func_ov092_02176ac4(void) {}
 
-ActorUnkMARG::~ActorUnkMARG() {}
-ActorProfileUnkMARG::~ActorProfileUnkMARG() {}
+ARM ActorUnkMARG::~ActorUnkMARG() {}
+ARM ActorProfileUnkMARG::~ActorProfileUnkMARG() {}

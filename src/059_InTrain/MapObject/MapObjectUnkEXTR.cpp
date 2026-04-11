@@ -20,5 +20,5 @@ ARM MapObjectUnkEXTR::MapObjectUnkEXTR() {}
 
 ARM void MapObjectUnkEXTR::func_ov059_02162d44(void) {}
 
-MapObjectUnkEXTR::~MapObjectUnkEXTR() {}
-MapObjectProfileUnkEXTR::~MapObjectProfileUnkEXTR() {}
+ARM MapObjectUnkEXTR::~MapObjectUnkEXTR() {}
+ARM MapObjectProfileUnkEXTR::~MapObjectProfileUnkEXTR() {}

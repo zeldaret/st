@@ -22,5 +22,5 @@ ARM void MapObjectUnkMTOR::func_ov067_0215c074(void) {}
 ARM void MapObjectUnkMTOR::func_ov067_0215c0c0(void) {}
 ARM void MapObjectUnkMTOR::func_ov067_0215c0c4(void) {}
 
-MapObjectUnkMTOR::~MapObjectUnkMTOR() {}
-MapObjectProfileUnkMTOR::~MapObjectProfileUnkMTOR() {}
+ARM MapObjectUnkMTOR::~MapObjectUnkMTOR() {}
+ARM MapObjectProfileUnkMTOR::~MapObjectProfileUnkMTOR() {}

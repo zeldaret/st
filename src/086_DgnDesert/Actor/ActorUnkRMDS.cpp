@@ -25,5 +25,5 @@ ARM void ActorUnkRMDS::func_ov086_0215dbc8(void) {}
 ARM void ActorUnkRMDS::func_ov086_0215dbdc(void) {}
 ARM void ActorUnkRMDS::func_ov086_0215dbe8(void) {}
 
-ActorUnkRMDS::~ActorUnkRMDS() {}
-ActorProfileUnkRMDS::~ActorProfileUnkRMDS() {}
+ARM ActorUnkRMDS::~ActorUnkRMDS() {}
+ARM ActorProfileUnkRMDS::~ActorProfileUnkRMDS() {}

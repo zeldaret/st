@@ -26,5 +26,5 @@ ARM void ActorUnkROCK::func_ov031_020e8afc(void) {}
 ARM void ActorUnkROCK::func_ov031_020e8ba0(void) {}
 ARM void ActorUnkROCK::func_ov031_020e8c08(void) {}
 
-ActorUnkROCK::~ActorUnkROCK() {}
-ActorProfileUnkROCK::~ActorProfileUnkROCK() {}
+ARM ActorUnkROCK::~ActorUnkROCK() {}
+ARM ActorProfileUnkROCK::~ActorProfileUnkROCK() {}

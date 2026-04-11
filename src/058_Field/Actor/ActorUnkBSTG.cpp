@@ -21,5 +21,5 @@ ARM ActorUnkBSTG::ActorUnkBSTG() {}
 ARM void ActorUnkBSTG::func_ov058_0214d794(void) {}
 ARM void ActorUnkBSTG::func_ov058_0214d79c(void) {}
 
-ActorUnkBSTG::~ActorUnkBSTG() {}
-ActorProfileUnkBSTG::~ActorProfileUnkBSTG() {}
+ARM ActorUnkBSTG::~ActorUnkBSTG() {}
+ARM ActorProfileUnkBSTG::~ActorProfileUnkBSTG() {}

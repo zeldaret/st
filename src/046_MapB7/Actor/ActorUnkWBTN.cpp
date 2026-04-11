@@ -57,5 +57,5 @@ ARM void ActorUnkWBTN::func_ov046_021287c4(void) {}
 ARM void ActorUnkWBTN::func_ov046_02128844(void) {}
 ARM void ActorUnkWBTN::func_ov046_02128860(void) {}
 
-ActorUnkWBTN::~ActorUnkWBTN() {}
-ActorProfileUnkWBTN::~ActorProfileUnkWBTN() {}
+ARM ActorUnkWBTN::~ActorUnkWBTN() {}
+ARM ActorProfileUnkWBTN::~ActorProfileUnkWBTN() {}

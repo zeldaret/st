@@ -21,5 +21,5 @@ ARM MapObjectUnkFRAI::MapObjectUnkFRAI() {}
 ARM void MapObjectUnkFRAI::func_ov040_0212d81c(void) {}
 ARM void MapObjectUnkFRAI::func_ov040_0212d9a4(void) {}
 
-MapObjectUnkFRAI::~MapObjectUnkFRAI() {}
-MapObjectProfileUnkFRAI::~MapObjectProfileUnkFRAI() {}
+ARM MapObjectUnkFRAI::~MapObjectUnkFRAI() {}
+ARM MapObjectProfileUnkFRAI::~MapObjectProfileUnkFRAI() {}

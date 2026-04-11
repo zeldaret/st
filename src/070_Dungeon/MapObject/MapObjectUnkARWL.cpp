@@ -29,5 +29,5 @@ ARM void MapObjectUnkARWL::func_ov070_02146998(void) {}
 ARM void MapObjectUnkARWL::func_ov070_021469e4(void) {}
 ARM void MapObjectUnkARWL::func_ov070_02146a50(void) {}
 
-MapObjectUnkARWL::~MapObjectUnkARWL() {}
-MapObjectProfileUnkARWL::~MapObjectProfileUnkARWL() {}
+ARM MapObjectUnkARWL::~MapObjectUnkARWL() {}
+ARM MapObjectProfileUnkARWL::~MapObjectProfileUnkARWL() {}

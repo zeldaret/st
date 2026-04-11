@@ -44,5 +44,5 @@ ARM void ActorUnkBKST::func_ov074_0215d06c(void) {}
 ARM void ActorUnkBKST::func_ov074_0215d184(void) {}
 ARM void ActorUnkBKST::func_ov074_0215d4c0(void) {}
 
-ActorUnkBKST::~ActorUnkBKST() {}
-ActorProfileUnkBKST::~ActorProfileUnkBKST() {}
+ARM ActorUnkBKST::~ActorUnkBKST() {}
+ARM ActorProfileUnkBKST::~ActorProfileUnkBKST() {}

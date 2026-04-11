@@ -53,5 +53,5 @@ ARM void MapObjectUnkWDST::func_ov094_02173620(void) {}
 ARM void MapObjectUnkWDST::func_ov094_02173680(void) {}
 ARM void MapObjectUnkWDST::func_ov094_021738c0(void) {}
 
-MapObjectUnkWDST::~MapObjectUnkWDST() {}
-MapObjectProfileUnkWDST::~MapObjectProfileUnkWDST() {}
+ARM MapObjectUnkWDST::~MapObjectUnkWDST() {}
+ARM MapObjectProfileUnkWDST::~MapObjectProfileUnkWDST() {}

@@ -23,5 +23,5 @@ ARM void ActorUnkMRDL::func_ov075_0215e008(void) {}
 ARM void ActorUnkMRDL::func_ov075_0215e044(void) {}
 ARM void ActorUnkMRDL::func_ov075_0215e050(void) {}
 
-ActorUnkMRDL::~ActorUnkMRDL() {}
-ActorProfileUnkMRDL::~ActorProfileUnkMRDL() {}
+ARM ActorUnkMRDL::~ActorUnkMRDL() {}
+ARM ActorProfileUnkMRDL::~ActorProfileUnkMRDL() {}

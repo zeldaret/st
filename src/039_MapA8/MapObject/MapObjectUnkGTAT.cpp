@@ -22,5 +22,5 @@ ARM void MapObjectUnkGTAT::func_ov039_0211c7ac(void) {}
 ARM void MapObjectUnkGTAT::func_ov039_0211c960(void) {}
 ARM void MapObjectUnkGTAT::func_ov039_0211c964(void) {}
 
-MapObjectUnkGTAT::~MapObjectUnkGTAT() {}
-MapObjectProfileUnkGTAT::~MapObjectProfileUnkGTAT() {}
+ARM MapObjectUnkGTAT::~MapObjectUnkGTAT() {}
+ARM MapObjectProfileUnkGTAT::~MapObjectProfileUnkGTAT() {}

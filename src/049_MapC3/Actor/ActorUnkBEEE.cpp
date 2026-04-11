@@ -40,5 +40,5 @@ ARM void ActorUnkBEEE::func_ov049_02131304(void) {}
 ARM void ActorUnkBEEE::func_ov049_0213136c(void) {}
 ARM void ActorUnkBEEE::func_ov049_021313b0(void) {}
 
-ActorUnkBEEE::~ActorUnkBEEE() {}
-ActorProfileUnkBEEE::~ActorProfileUnkBEEE() {}
+ARM ActorUnkBEEE::~ActorUnkBEEE() {}
+ARM ActorProfileUnkBEEE::~ActorProfileUnkBEEE() {}

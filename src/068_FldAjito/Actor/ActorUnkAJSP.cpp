@@ -21,5 +21,5 @@ ARM ActorUnkAJSP::ActorUnkAJSP() {}
 ARM void ActorUnkAJSP::func_ov068_02160a08(void) {}
 ARM void ActorUnkAJSP::func_ov068_02160ad0(void) {}
 
-ActorUnkAJSP::~ActorUnkAJSP() {}
-ActorProfileUnkAJSP::~ActorProfileUnkAJSP() {}
+ARM ActorUnkAJSP::~ActorUnkAJSP() {}
+ARM ActorProfileUnkAJSP::~ActorProfileUnkAJSP() {}

@@ -25,5 +25,5 @@ ARM void ActorUnkBLON::func_ov093_02177700(void) {}
 ARM void ActorUnkBLON::func_ov093_02177724(void) {}
 ARM void ActorUnkBLON::func_ov093_021778c4(void) {}
 
-ActorUnkBLON::~ActorUnkBLON() {}
-ActorProfileUnkBLON::~ActorProfileUnkBLON() {}
+ARM ActorUnkBLON::~ActorUnkBLON() {}
+ARM ActorProfileUnkBLON::~ActorProfileUnkBLON() {}

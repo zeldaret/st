@@ -24,5 +24,5 @@ ARM void ActorUnkITSC::func_ov084_0215a0dc(void) {}
 ARM void ActorUnkITSC::func_ov084_0215a118(void) {}
 ARM void ActorUnkITSC::func_ov084_0215a280(void) {}
 
-ActorUnkITSC::~ActorUnkITSC() {}
-ActorProfileUnkITSC::~ActorProfileUnkITSC() {}
+ARM ActorUnkITSC::~ActorUnkITSC() {}
+ARM ActorProfileUnkITSC::~ActorProfileUnkITSC() {}

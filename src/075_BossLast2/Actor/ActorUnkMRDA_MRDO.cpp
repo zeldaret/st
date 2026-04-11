@@ -37,5 +37,5 @@ ARM ActorProfileUnkMRDO::ActorProfileUnkMRDO() :
 
 ARM ActorUnkMRDO::ActorUnkMRDO() {}
 
-ActorProfileUnkMRDA::~ActorProfileUnkMRDA() {}
-ActorProfileUnkMRDO::~ActorProfileUnkMRDO() {}
+ARM ActorProfileUnkMRDA::~ActorProfileUnkMRDA() {}
+ARM ActorProfileUnkMRDO::~ActorProfileUnkMRDO() {}

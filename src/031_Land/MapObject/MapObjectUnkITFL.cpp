@@ -24,5 +24,5 @@ ARM void MapObjectUnkITFL::func_ov031_02105cbc(void) {}
 ARM void MapObjectUnkITFL::func_ov031_02105dac(void) {}
 ARM void MapObjectUnkITFL::func_ov031_02105f54(void) {}
 
-MapObjectUnkITFL::~MapObjectUnkITFL() {}
-MapObjectProfileUnkITFL::~MapObjectProfileUnkITFL() {}
+ARM MapObjectUnkITFL::~MapObjectUnkITFL() {}
+ARM MapObjectProfileUnkITFL::~MapObjectProfileUnkITFL() {}

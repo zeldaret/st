@@ -27,5 +27,5 @@ ARM void MapObjectUnkGTTN::func_ov050_0213668c(void) {}
 ARM void MapObjectUnkGTTN::func_ov050_021366bc(void) {}
 ARM void MapObjectUnkGTTN::func_ov050_02136770(void) {}
 
-MapObjectUnkGTTN::~MapObjectUnkGTTN() {}
-MapObjectProfileUnkGTTN::~MapObjectProfileUnkGTTN() {}
+ARM MapObjectUnkGTTN::~MapObjectUnkGTTN() {}
+ARM MapObjectProfileUnkGTTN::~MapObjectProfileUnkGTTN() {}

@@ -78,5 +78,5 @@ ARM void ActorUnkFKTR::func_ov027_02147ea8(void) {}
 ARM void ActorUnkFKTR::func_ov027_02147eb0(void) {}
 ARM void ActorUnkFKTR::func_ov027_02147ecc(void) {}
 
-ActorUnkFKTR::~ActorUnkFKTR() {}
-ActorProfileUnkFKTR::~ActorProfileUnkFKTR() {}
+ARM ActorUnkFKTR::~ActorUnkFKTR() {}
+ARM ActorProfileUnkFKTR::~ActorProfileUnkFKTR() {}

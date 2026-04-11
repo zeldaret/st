@@ -60,5 +60,5 @@ ARM void ActorUnkRAT0::func_ov053_0213c9b0(void) {}
 ARM void ActorUnkRAT0::func_ov053_0213c9cc(void) {}
 ARM void ActorUnkRAT0::func_ov053_0213ca50(void) {}
 
-ActorUnkRAT0::~ActorUnkRAT0() {}
-ActorProfileUnkRAT0::~ActorProfileUnkRAT0() {}
+ARM ActorUnkRAT0::~ActorUnkRAT0() {}
+ARM ActorProfileUnkRAT0::~ActorProfileUnkRAT0() {}

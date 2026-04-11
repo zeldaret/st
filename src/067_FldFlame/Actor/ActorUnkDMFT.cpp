@@ -38,5 +38,5 @@ ARM void ActorUnkDMFT::func_ov067_0215a828(void) {}
 ARM void ActorUnkDMFT::func_ov067_0215a87c(void) {}
 ARM void ActorUnkDMFT::func_ov067_0215aab4(void) {}
 
-ActorUnkDMFT::~ActorUnkDMFT() {}
-ActorProfileUnkDMFT::~ActorProfileUnkDMFT() {}
+ARM ActorUnkDMFT::~ActorUnkDMFT() {}
+ARM ActorProfileUnkDMFT::~ActorProfileUnkDMFT() {}

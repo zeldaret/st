@@ -37,5 +37,5 @@ THUMB ActorProfileUnkZLSL::ActorProfileUnkZLSL() :
 
 THUMB ActorUnkZLSL::ActorUnkZLSL() {}
 
-ActorProfileUnkZLSL::~ActorProfileUnkZLSL() {}
-ActorProfileUnkZSRS::~ActorProfileUnkZSRS() {}
+ARM ActorProfileUnkZLSL::~ActorProfileUnkZLSL() {}
+ARM ActorProfileUnkZSRS::~ActorProfileUnkZSRS() {}

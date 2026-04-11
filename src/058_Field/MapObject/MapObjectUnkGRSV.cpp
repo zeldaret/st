@@ -22,5 +22,5 @@ ARM void MapObjectUnkGRSV::func_ov058_02151558(void) {}
 ARM void MapObjectUnkGRSV::func_ov058_02151874(void) {}
 ARM void MapObjectUnkGRSV::func_ov058_021518e8(void) {}
 
-MapObjectUnkGRSV::~MapObjectUnkGRSV() {}
-MapObjectProfileUnkGRSV::~MapObjectProfileUnkGRSV() {}
+ARM MapObjectUnkGRSV::~MapObjectUnkGRSV() {}
+ARM MapObjectProfileUnkGRSV::~MapObjectProfileUnkGRSV() {}

@@ -21,5 +21,5 @@ ARM ActorUnkEFRI::ActorUnkEFRI() {}
 ARM void ActorUnkEFRI::func_ov098_02181e3c(void) {}
 ARM void ActorUnkEFRI::func_ov098_02181ed8(void) {}
 
-ActorUnkEFRI::~ActorUnkEFRI() {}
-ActorProfileUnkEFRI::~ActorProfileUnkEFRI() {}
+ARM ActorUnkEFRI::~ActorUnkEFRI() {}
+ARM ActorProfileUnkEFRI::~ActorProfileUnkEFRI() {}

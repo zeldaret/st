@@ -47,5 +47,5 @@ ARM void ActorUnkCTFS::func_ov091_0216b250(void) {}
 ARM void ActorUnkCTFS::func_ov091_0216b274(void) {}
 ARM void ActorUnkCTFS::func_ov091_0216b2e4(void) {}
 
-ActorUnkCTFS::~ActorUnkCTFS() {}
-ActorProfileUnkCTFS::~ActorProfileUnkCTFS() {}
+ARM ActorUnkCTFS::~ActorUnkCTFS() {}
+ARM ActorProfileUnkCTFS::~ActorProfileUnkCTFS() {}

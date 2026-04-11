@@ -48,5 +48,5 @@ ARM void ActorUnkTRAP::func_ov070_02148a44(void) {}
 ARM void ActorUnkTRAP::func_ov070_02148ad8(void) {}
 ARM void ActorUnkTRAP::func_ov070_02148b80(void) {}
 
-ActorUnkTRAP::~ActorUnkTRAP() {}
-ActorProfileUnkTRAP::~ActorProfileUnkTRAP() {}
+ARM ActorUnkTRAP::~ActorUnkTRAP() {}
+ARM ActorProfileUnkTRAP::~ActorProfileUnkTRAP() {}

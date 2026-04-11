@@ -24,5 +24,5 @@ ARM void MapObjectUnkTMLV::func_ov084_0216054c(void) {}
 ARM void MapObjectUnkTMLV::func_ov084_02160560(void) {}
 ARM void MapObjectUnkTMLV::func_ov084_021605ac(void) {}
 
-MapObjectUnkTMLV::~MapObjectUnkTMLV() {}
-MapObjectProfileUnkTMLV::~MapObjectProfileUnkTMLV() {}
+ARM MapObjectUnkTMLV::~MapObjectUnkTMLV() {}
+ARM MapObjectProfileUnkTMLV::~MapObjectProfileUnkTMLV() {}

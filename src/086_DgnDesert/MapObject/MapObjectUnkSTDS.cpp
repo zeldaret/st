@@ -21,5 +21,5 @@ ARM MapObjectUnkSTDS::MapObjectUnkSTDS() {}
 ARM void MapObjectUnkSTDS::func_ov086_0215dfdc(void) {}
 ARM void MapObjectUnkSTDS::func_ov086_0215e094(void) {}
 
-MapObjectUnkSTDS::~MapObjectUnkSTDS() {}
-MapObjectProfileUnkSTDS::~MapObjectProfileUnkSTDS() {}
+ARM MapObjectUnkSTDS::~MapObjectUnkSTDS() {}
+ARM MapObjectProfileUnkSTDS::~MapObjectProfileUnkSTDS() {}

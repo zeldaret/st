@@ -45,5 +45,5 @@ ARM void ActorUnkNAVI::func_ov052_02135af8(void) {}
 ARM void ActorUnkNAVI::func_ov052_02135b0c(void) {}
 ARM void ActorUnkNAVI::func_ov052_02135b28(void) {}
 
-ActorUnkNAVI::~ActorUnkNAVI() {}
-ActorProfileUnkNAVI::~ActorProfileUnkNAVI() {}
+ARM ActorUnkNAVI::~ActorUnkNAVI() {}
+ARM ActorProfileUnkNAVI::~ActorProfileUnkNAVI() {}

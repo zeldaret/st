@@ -23,5 +23,5 @@ ARM void ActorUnkE3LV::func_ov099_02181dd8(void) {}
 ARM void ActorUnkE3LV::func_ov099_02181e04(void) {}
 ARM void ActorUnkE3LV::func_ov099_02181e18(void) {}
 
-ActorUnkE3LV::~ActorUnkE3LV() {}
-ActorProfileUnkE3LV::~ActorProfileUnkE3LV() {}
+ARM ActorUnkE3LV::~ActorUnkE3LV() {}
+ARM ActorProfileUnkE3LV::~ActorProfileUnkE3LV() {}

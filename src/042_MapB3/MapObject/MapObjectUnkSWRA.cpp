@@ -24,5 +24,5 @@ ARM void MapObjectUnkSWRA::func_ov042_0212b8e4(void) {}
 ARM void MapObjectUnkSWRA::func_ov042_0212b928(void) {}
 ARM void MapObjectUnkSWRA::func_ov042_0212b9b8(void) {}
 
-MapObjectUnkSWRA::~MapObjectUnkSWRA() {}
-MapObjectProfileUnkSWRA::~MapObjectProfileUnkSWRA() {}
+ARM MapObjectUnkSWRA::~MapObjectUnkSWRA() {}
+ARM MapObjectProfileUnkSWRA::~MapObjectProfileUnkSWRA() {}

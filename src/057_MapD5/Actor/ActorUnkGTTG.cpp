@@ -20,5 +20,5 @@ ARM ActorUnkGTTG::ActorUnkGTTG() {}
 
 ARM void ActorUnkGTTG::func_ov057_0213a8b8(void) {}
 
-ActorUnkGTTG::~ActorUnkGTTG() {}
-ActorProfileUnkGTTG::~ActorProfileUnkGTTG() {}
+ARM ActorUnkGTTG::~ActorUnkGTTG() {}
+ARM ActorProfileUnkGTTG::~ActorProfileUnkGTTG() {}

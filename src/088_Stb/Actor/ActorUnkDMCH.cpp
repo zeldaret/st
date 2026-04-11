@@ -52,5 +52,5 @@ ARM void ActorUnkDMCH::func_ov088_0216c2ec(void) {}
 ARM void ActorUnkDMCH::func_ov088_0216c300(void) {}
 ARM void ActorUnkDMCH::func_ov088_0216c340(void) {}
 
-ActorUnkDMCH::~ActorUnkDMCH() {}
-ActorProfileUnkDMCH::~ActorProfileUnkDMCH() {}
+ARM ActorUnkDMCH::~ActorUnkDMCH() {}
+ARM ActorProfileUnkDMCH::~ActorProfileUnkDMCH() {}

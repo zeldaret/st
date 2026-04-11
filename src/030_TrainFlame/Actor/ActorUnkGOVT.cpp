@@ -32,5 +32,5 @@ ARM void ActorUnkGOVT::func_ov030_0214d5d8(void) {}
 ARM void ActorUnkGOVT::func_ov030_0214d604(void) {}
 ARM void ActorUnkGOVT::func_ov030_0214d624(void) {}
 
-ActorUnkGOVT::~ActorUnkGOVT() {}
-ActorProfileUnkGOVT::~ActorProfileUnkGOVT() {}
+ARM ActorUnkGOVT::~ActorUnkGOVT() {}
+ARM ActorProfileUnkGOVT::~ActorProfileUnkGOVT() {}

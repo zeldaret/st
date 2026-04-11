@@ -21,5 +21,5 @@ ARM ActorUnkTSCN::ActorUnkTSCN() {}
 ARM void ActorUnkTSCN::func_ov068_0215a8c4(void) {}
 ARM void ActorUnkTSCN::func_ov068_0215a8e0(void) {}
 
-ActorUnkTSCN::~ActorUnkTSCN() {}
-ActorProfileUnkTSCN::~ActorProfileUnkTSCN() {}
+ARM ActorUnkTSCN::~ActorUnkTSCN() {}
+ARM ActorProfileUnkTSCN::~ActorProfileUnkTSCN() {}

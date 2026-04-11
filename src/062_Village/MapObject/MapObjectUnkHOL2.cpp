@@ -23,5 +23,5 @@ ARM void MapObjectUnkHOL2::func_ov062_0215b6e4(void) {}
 ARM void MapObjectUnkHOL2::func_ov062_0215b784(void) {}
 ARM void MapObjectUnkHOL2::func_ov062_0215b798(void) {}
 
-MapObjectUnkHOL2::~MapObjectUnkHOL2() {}
-MapObjectProfileUnkHOL2::~MapObjectProfileUnkHOL2() {}
+ARM MapObjectUnkHOL2::~MapObjectUnkHOL2() {}
+ARM MapObjectProfileUnkHOL2::~MapObjectProfileUnkHOL2() {}

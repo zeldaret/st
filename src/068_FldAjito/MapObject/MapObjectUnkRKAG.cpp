@@ -24,5 +24,5 @@ ARM void MapObjectUnkRKAG::func_ov068_0216168c(void) {}
 ARM void MapObjectUnkRKAG::func_ov068_02161694(void) {}
 ARM void MapObjectUnkRKAG::func_ov068_02161698(void) {}
 
-MapObjectUnkRKAG::~MapObjectUnkRKAG() {}
-MapObjectProfileUnkRKAG::~MapObjectProfileUnkRKAG() {}
+ARM MapObjectUnkRKAG::~MapObjectUnkRKAG() {}
+ARM MapObjectProfileUnkRKAG::~MapObjectProfileUnkRKAG() {}

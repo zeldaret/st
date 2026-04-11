@@ -37,5 +37,5 @@ ARM void ActorUnkELVT::func_ov057_0213b6b0(void) {}
 ARM void ActorUnkELVT::func_ov057_0213b6cc(void) {}
 ARM void ActorUnkELVT::func_ov057_0213b70c(void) {}
 
-ActorUnkELVT::~ActorUnkELVT() {}
-ActorProfileUnkELVT::~ActorProfileUnkELVT() {}
+ARM ActorUnkELVT::~ActorUnkELVT() {}
+ARM ActorProfileUnkELVT::~ActorProfileUnkELVT() {}

@@ -22,5 +22,5 @@ ARM void ActorUnkYUKY::func_ov036_0211b668(void) {}
 ARM void ActorUnkYUKY::func_ov036_0211b6cc(void) {}
 ARM void ActorUnkYUKY::func_ov036_0211b6f8(void) {}
 
-ActorUnkYUKY::~ActorUnkYUKY() {}
-ActorProfileUnkYUKY::~ActorProfileUnkYUKY() {}
+ARM ActorUnkYUKY::~ActorUnkYUKY() {}
+ARM ActorProfileUnkYUKY::~ActorProfileUnkYUKY() {}

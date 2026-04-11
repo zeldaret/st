@@ -29,5 +29,5 @@ ARM void ActorUnkPLSR::func_ov038_02120824(void) {}
 ARM void ActorUnkPLSR::func_ov038_02120894(void) {}
 ARM void ActorUnkPLSR::func_ov038_021208c4(void) {}
 
-ActorUnkPLSR::~ActorUnkPLSR() {}
-ActorProfileUnkPLSR::~ActorProfileUnkPLSR() {}
+ARM ActorUnkPLSR::~ActorUnkPLSR() {}
+ARM ActorProfileUnkPLSR::~ActorProfileUnkPLSR() {}

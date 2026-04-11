@@ -38,5 +38,5 @@ ARM void ActorUnkWIDT::func_ov084_0215cf74(void) {}
 ARM void ActorUnkWIDT::func_ov084_0215cfac(void) {}
 ARM void ActorUnkWIDT::func_ov084_0215d044(void) {}
 
-ActorUnkWIDT::~ActorUnkWIDT() {}
-ActorProfileUnkWIDT::~ActorProfileUnkWIDT() {}
+ARM ActorUnkWIDT::~ActorUnkWIDT() {}
+ARM ActorProfileUnkWIDT::~ActorProfileUnkWIDT() {}

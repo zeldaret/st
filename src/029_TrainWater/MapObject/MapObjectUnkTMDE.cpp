@@ -32,5 +32,5 @@ ARM void MapObjectUnkTMDE::func_ov029_02141ec0(void) {}
 ARM void MapObjectUnkTMDE::func_ov029_02141f24(void) {}
 ARM void MapObjectUnkTMDE::func_ov029_02141f54(void) {}
 
-MapObjectUnkTMDE::~MapObjectUnkTMDE() {}
-MapObjectProfileUnkTMDE::~MapObjectProfileUnkTMDE() {}
+ARM MapObjectUnkTMDE::~MapObjectUnkTMDE() {}
+ARM MapObjectProfileUnkTMDE::~MapObjectProfileUnkTMDE() {}

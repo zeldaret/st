@@ -24,5 +24,5 @@ ARM void ActorUnkSKDO::func_ov031_02106e58(void) {}
 ARM void ActorUnkSKDO::func_ov031_02106e90(void) {}
 ARM void ActorUnkSKDO::func_ov031_02106e98(void) {}
 
-ActorUnkSKDO::~ActorUnkSKDO() {}
-ActorProfileUnkSKDO::~ActorProfileUnkSKDO() {}
+ARM ActorUnkSKDO::~ActorUnkSKDO() {}
+ARM ActorProfileUnkSKDO::~ActorProfileUnkSKDO() {}

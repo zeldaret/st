@@ -33,5 +33,5 @@ ARM void ActorUnkTVLR::func_ov026_02122dd8(void) {}
 ARM void ActorUnkTVLR::func_ov026_02122dec(void) {}
 ARM void ActorUnkTVLR::func_ov026_02122e3c(void) {}
 
-ActorUnkTVLR::~ActorUnkTVLR() {}
-ActorProfileUnkTVLR::~ActorProfileUnkTVLR() {}
+ARM ActorUnkTVLR::~ActorUnkTVLR() {}
+ARM ActorProfileUnkTVLR::~ActorProfileUnkTVLR() {}

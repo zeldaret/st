@@ -26,5 +26,5 @@ ARM void ActorUnkSNMB::func_ov028_021434f0(void) {}
 ARM void ActorUnkSNMB::func_ov028_02143630(void) {}
 ARM void ActorUnkSNMB::func_ov028_021437a8(void) {}
 
-ActorUnkSNMB::~ActorUnkSNMB() {}
-ActorProfileUnkSNMB::~ActorProfileUnkSNMB() {}
+ARM ActorUnkSNMB::~ActorUnkSNMB() {}
+ARM ActorProfileUnkSNMB::~ActorProfileUnkSNMB() {}

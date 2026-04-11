@@ -31,5 +31,5 @@ ARM void MapObjectUnkTWGS::func_ov090_02172808(void) {}
 ARM void MapObjectUnkTWGS::func_ov090_02172840(void) {}
 ARM void MapObjectUnkTWGS::func_ov090_021728d4(void) {}
 
-MapObjectUnkTWGS::~MapObjectUnkTWGS() {}
-MapObjectProfileUnkTWGS::~MapObjectProfileUnkTWGS() {}
+ARM MapObjectUnkTWGS::~MapObjectUnkTWGS() {}
+ARM MapObjectProfileUnkTWGS::~MapObjectProfileUnkTWGS() {}

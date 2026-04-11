@@ -27,5 +27,5 @@ ARM void MapObjectUnkTSUB::func_ov031_02105348(void) {}
 ARM void MapObjectUnkTSUB::func_ov031_021053b4(void) {}
 ARM void MapObjectUnkTSUB::func_ov031_021053fc(void) {}
 
-MapObjectUnkTSUB::~MapObjectUnkTSUB() {}
-MapObjectProfileUnkTSUB::~MapObjectProfileUnkTSUB() {}
+ARM MapObjectUnkTSUB::~MapObjectUnkTSUB() {}
+ARM MapObjectProfileUnkTSUB::~MapObjectProfileUnkTSUB() {}

@@ -73,5 +73,5 @@ ARM void ActorUnkWKTR::func_ov030_02150578(void) {}
 ARM void ActorUnkWKTR::func_ov030_02150588(void) {}
 ARM void ActorUnkWKTR::func_ov030_02150590(void) {}
 
-ActorUnkWKTR::~ActorUnkWKTR() {}
-ActorProfileUnkWKTR::~ActorProfileUnkWKTR() {}
+ARM ActorUnkWKTR::~ActorUnkWKTR() {}
+ARM ActorProfileUnkWKTR::~ActorProfileUnkWKTR() {}

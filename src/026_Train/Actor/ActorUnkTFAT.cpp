@@ -25,5 +25,5 @@ ARM void ActorUnkTFAT::func_ov026_0211670c(void) {}
 ARM void ActorUnkTFAT::func_ov026_02116720(void) {}
 ARM void ActorUnkTFAT::func_ov026_02116728(void) {}
 
-ActorUnkTFAT::~ActorUnkTFAT() {}
-ActorProfileUnkTFAT::~ActorProfileUnkTFAT() {}
+ARM ActorUnkTFAT::~ActorUnkTFAT() {}
+ARM ActorProfileUnkTFAT::~ActorProfileUnkTFAT() {}

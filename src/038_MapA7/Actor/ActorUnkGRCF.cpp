@@ -21,5 +21,5 @@ ARM ActorUnkGRCF::ActorUnkGRCF() {}
 ARM void ActorUnkGRCF::func_ov038_0211ecdc(void) {}
 ARM void ActorUnkGRCF::func_ov038_0211ed38(void) {}
 
-ActorUnkGRCF::~ActorUnkGRCF() {}
-ActorProfileUnkGRCF::~ActorProfileUnkGRCF() {}
+ARM ActorUnkGRCF::~ActorUnkGRCF() {}
+ARM ActorProfileUnkGRCF::~ActorProfileUnkGRCF() {}

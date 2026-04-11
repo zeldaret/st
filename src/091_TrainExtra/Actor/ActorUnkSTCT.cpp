@@ -21,5 +21,5 @@ ARM ActorUnkSTCT::ActorUnkSTCT() {}
 ARM void ActorUnkSTCT::func_ov091_02169ea8(void) {}
 ARM void ActorUnkSTCT::func_ov091_02169eec(void) {}
 
-ActorUnkSTCT::~ActorUnkSTCT() {}
-ActorProfileUnkSTCT::~ActorProfileUnkSTCT() {}
+ARM ActorUnkSTCT::~ActorUnkSTCT() {}
+ARM ActorProfileUnkSTCT::~ActorProfileUnkSTCT() {}

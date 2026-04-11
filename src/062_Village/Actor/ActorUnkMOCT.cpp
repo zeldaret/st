@@ -24,5 +24,5 @@ ARM void ActorUnkMOCT::func_ov062_0215a5cc(void) {}
 ARM void ActorUnkMOCT::func_ov062_0215a634(void) {}
 ARM void ActorUnkMOCT::func_ov062_0215a670(void) {}
 
-ActorUnkMOCT::~ActorUnkMOCT() {}
-ActorProfileUnkMOCT::~ActorProfileUnkMOCT() {}
+ARM ActorUnkMOCT::~ActorUnkMOCT() {}
+ARM ActorProfileUnkMOCT::~ActorProfileUnkMOCT() {}

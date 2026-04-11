@@ -25,5 +25,5 @@ ARM void ActorUnkRBL2::func_ov044_0212bfc0(void) {}
 ARM void ActorUnkRBL2::func_ov044_0212c04c(void) {}
 ARM void ActorUnkRBL2::func_ov044_0212c050(void) {}
 
-ActorUnkRBL2::~ActorUnkRBL2() {}
-ActorProfileUnkRBL2::~ActorProfileUnkRBL2() {}
+ARM ActorUnkRBL2::~ActorUnkRBL2() {}
+ARM ActorProfileUnkRBL2::~ActorProfileUnkRBL2() {}

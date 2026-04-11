@@ -37,5 +37,5 @@ ARM void MapObjectUnkFLSP::func_ov070_02144f10(void) {}
 ARM void MapObjectUnkFLSP::func_ov070_02144f1c(void) {}
 ARM void MapObjectUnkFLSP::func_ov070_021450b8(void) {}
 
-MapObjectUnkFLSP::~MapObjectUnkFLSP() {}
-MapObjectProfileUnkFLSP::~MapObjectProfileUnkFLSP() {}
+ARM MapObjectUnkFLSP::~MapObjectUnkFLSP() {}
+ARM MapObjectProfileUnkFLSP::~MapObjectProfileUnkFLSP() {}

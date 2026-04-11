@@ -86,5 +86,5 @@ ARM void ActorUnkASYU::func_ov077_02156f14(void) {}
 ARM void ActorUnkASYU::func_ov077_02156f30(void) {}
 ARM void ActorUnkASYU::func_ov077_02156f4c(void) {}
 
-ActorUnkASYU::~ActorUnkASYU() {}
-ActorProfileUnkASYU::~ActorProfileUnkASYU() {}
+ARM ActorUnkASYU::~ActorUnkASYU() {}
+ARM ActorProfileUnkASYU::~ActorProfileUnkASYU() {}

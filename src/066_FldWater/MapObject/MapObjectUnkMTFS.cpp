@@ -26,5 +26,5 @@ ARM void MapObjectUnkMTFS::func_ov066_0215d488(void) {}
 ARM void MapObjectUnkMTFS::func_ov066_0215d4a8(void) {}
 ARM void MapObjectUnkMTFS::func_ov066_0215d764(void) {}
 
-MapObjectUnkMTFS::~MapObjectUnkMTFS() {}
-MapObjectProfileUnkMTFS::~MapObjectProfileUnkMTFS() {}
+ARM MapObjectUnkMTFS::~MapObjectUnkMTFS() {}
+ARM MapObjectProfileUnkMTFS::~MapObjectProfileUnkMTFS() {}

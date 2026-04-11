@@ -36,5 +36,5 @@ ARM void ActorUnkNTUB::func_ov031_020f0e5c(void) {}
 ARM void ActorUnkNTUB::func_ov031_020f0e70(void) {}
 ARM void ActorUnkNTUB::func_ov031_020f0f44(void) {}
 
-ActorUnkNTUB::~ActorUnkNTUB() {}
-ActorProfileUnkNTUB::~ActorProfileUnkNTUB() {}
+ARM ActorUnkNTUB::~ActorUnkNTUB() {}
+ARM ActorProfileUnkNTUB::~ActorProfileUnkNTUB() {}

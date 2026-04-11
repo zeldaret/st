@@ -21,5 +21,5 @@ ARM ActorUnkTMNC::ActorUnkTMNC() {}
 ARM void ActorUnkTMNC::func_ov058_0214dde0(void) {}
 ARM void ActorUnkTMNC::func_ov058_0214de70(void) {}
 
-ActorUnkTMNC::~ActorUnkTMNC() {}
-ActorProfileUnkTMNC::~ActorProfileUnkTMNC() {}
+ARM ActorUnkTMNC::~ActorUnkTMNC() {}
+ARM ActorProfileUnkTMNC::~ActorProfileUnkTMNC() {}

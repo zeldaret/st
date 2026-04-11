@@ -28,5 +28,5 @@ ARM void MapObjectUnkETET::func_ov092_02166da8(void) {}
 ARM void MapObjectUnkETET::func_ov092_02166db0(void) {}
 ARM void MapObjectUnkETET::func_ov092_02166dd0(void) {}
 
-MapObjectUnkETET::~MapObjectUnkETET() {}
-MapObjectProfileUnkETET::~MapObjectProfileUnkETET() {}
+ARM MapObjectUnkETET::~MapObjectUnkETET() {}
+ARM MapObjectProfileUnkETET::~MapObjectProfileUnkETET() {}

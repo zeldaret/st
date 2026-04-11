@@ -37,5 +37,5 @@ ARM ActorProfileUnkWAWS::ActorProfileUnkWAWS() :
 
 ARM ActorUnkWAWS::ActorUnkWAWS() {}
 
-ActorProfileUnkWAWB::~ActorProfileUnkWAWB() {}
-ActorProfileUnkWAWS::~ActorProfileUnkWAWS() {}
+ARM ActorProfileUnkWAWB::~ActorProfileUnkWAWB() {}
+ARM ActorProfileUnkWAWS::~ActorProfileUnkWAWS() {}

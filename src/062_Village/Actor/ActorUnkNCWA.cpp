@@ -23,5 +23,5 @@ ARM void ActorUnkNCWA::func_ov062_0215a220(void) {}
 ARM void ActorUnkNCWA::func_ov062_0215a238(void) {}
 ARM void ActorUnkNCWA::func_ov062_0215a28c(void) {}
 
-ActorUnkNCWA::~ActorUnkNCWA() {}
-ActorProfileUnkNCWA::~ActorProfileUnkNCWA() {}
+ARM ActorUnkNCWA::~ActorUnkNCWA() {}
+ARM ActorProfileUnkNCWA::~ActorProfileUnkNCWA() {}

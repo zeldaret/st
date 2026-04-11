@@ -41,5 +41,5 @@ ARM void ActorUnkAJTM::func_ov068_0215cb90(void) {}
 ARM void ActorUnkAJTM::func_ov068_0215cdf8(void) {}
 ARM void ActorUnkAJTM::func_ov068_0215cf38(void) {}
 
-ActorUnkAJTM::~ActorUnkAJTM() {}
-ActorProfileUnkAJTM::~ActorProfileUnkAJTM() {}
+ARM ActorUnkAJTM::~ActorUnkAJTM() {}
+ARM ActorProfileUnkAJTM::~ActorProfileUnkAJTM() {}

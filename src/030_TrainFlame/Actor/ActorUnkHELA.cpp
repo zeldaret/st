@@ -121,5 +121,5 @@ ARM void ActorUnkHELA::func_ov030_0214b03c(void) {}
 ARM void ActorUnkHELA::func_ov030_0214b08c(void) {}
 ARM void ActorUnkHELA::func_ov030_0214b0a4(void) {}
 
-ActorUnkHELA::~ActorUnkHELA() {}
-ActorProfileUnkHELA::~ActorProfileUnkHELA() {}
+ARM ActorUnkHELA::~ActorUnkHELA() {}
+ARM ActorProfileUnkHELA::~ActorProfileUnkHELA() {}

@@ -23,5 +23,5 @@ ARM void MapObjectUnkSTIR::func_ov031_02100d70(void) {}
 ARM void MapObjectUnkSTIR::func_ov031_02100d74(void) {}
 ARM void MapObjectUnkSTIR::func_ov031_02100da4(void) {}
 
-MapObjectUnkSTIR::~MapObjectUnkSTIR() {}
-MapObjectProfileUnkSTIR::~MapObjectProfileUnkSTIR() {}
+ARM MapObjectUnkSTIR::~MapObjectUnkSTIR() {}
+ARM MapObjectProfileUnkSTIR::~MapObjectProfileUnkSTIR() {}

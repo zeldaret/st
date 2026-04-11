@@ -23,5 +23,5 @@ ARM void ActorUnkHYSW::func_ov057_0213aab8(void) {}
 ARM void ActorUnkHYSW::func_ov057_0213ab2c(void) {}
 ARM void ActorUnkHYSW::func_ov057_0213ab40(void) {}
 
-ActorUnkHYSW::~ActorUnkHYSW() {}
-ActorProfileUnkHYSW::~ActorProfileUnkHYSW() {}
+ARM ActorUnkHYSW::~ActorUnkHYSW() {}
+ARM ActorProfileUnkHYSW::~ActorProfileUnkHYSW() {}

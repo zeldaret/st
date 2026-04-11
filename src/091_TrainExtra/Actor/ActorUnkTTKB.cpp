@@ -105,5 +105,5 @@ ARM void ActorUnkTTKB::func_ov091_021756ec(void) {}
 ARM void ActorUnkTTKB::func_ov091_02175794(void) {}
 ARM void ActorUnkTTKB::func_ov091_021757b0(void) {}
 
-ActorUnkTTKB::~ActorUnkTTKB() {}
-ActorProfileUnkTTKB::~ActorProfileUnkTTKB() {}
+ARM ActorUnkTTKB::~ActorUnkTTKB() {}
+ARM ActorProfileUnkTTKB::~ActorProfileUnkTTKB() {}

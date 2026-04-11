@@ -23,5 +23,5 @@ ARM void MapObjectUnkGRSG::func_ov086_0215e534(void) {}
 ARM void MapObjectUnkGRSG::func_ov086_0215e584(void) {}
 ARM void MapObjectUnkGRSG::func_ov086_0215e5e0(void) {}
 
-MapObjectUnkGRSG::~MapObjectUnkGRSG() {}
-MapObjectProfileUnkGRSG::~MapObjectProfileUnkGRSG() {}
+ARM MapObjectUnkGRSG::~MapObjectUnkGRSG() {}
+ARM MapObjectProfileUnkGRSG::~MapObjectProfileUnkGRSG() {}

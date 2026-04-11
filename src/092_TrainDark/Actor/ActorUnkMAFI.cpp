@@ -32,5 +32,5 @@ ARM void ActorUnkMAFI::func_ov092_02176f78(void) {}
 ARM void ActorUnkMAFI::func_ov092_02177000(void) {}
 ARM void ActorUnkMAFI::func_ov092_02177040(void) {}
 
-ActorUnkMAFI::~ActorUnkMAFI() {}
-ActorProfileUnkMAFI::~ActorProfileUnkMAFI() {}
+ARM ActorUnkMAFI::~ActorUnkMAFI() {}
+ARM ActorProfileUnkMAFI::~ActorProfileUnkMAFI() {}

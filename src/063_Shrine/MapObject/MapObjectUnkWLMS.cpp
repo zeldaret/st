@@ -35,5 +35,5 @@ ARM void MapObjectUnkWLMS::func_ov063_02160918(void) {}
 ARM void MapObjectUnkWLMS::func_ov063_02160938(void) {}
 ARM void MapObjectUnkWLMS::func_ov063_0216095c(void) {}
 
-MapObjectUnkWLMS::~MapObjectUnkWLMS() {}
-MapObjectProfileUnkWLMS::~MapObjectProfileUnkWLMS() {}
+ARM MapObjectUnkWLMS::~MapObjectUnkWLMS() {}
+ARM MapObjectProfileUnkWLMS::~MapObjectProfileUnkWLMS() {}

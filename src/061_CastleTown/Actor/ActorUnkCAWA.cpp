@@ -24,5 +24,5 @@ ARM void ActorUnkCAWA::func_ov061_02158ccc(void) {}
 ARM void ActorUnkCAWA::func_ov061_02158cf8(void) {}
 ARM void ActorUnkCAWA::func_ov061_02158d4c(void) {}
 
-ActorUnkCAWA::~ActorUnkCAWA() {}
-ActorProfileUnkCAWA::~ActorProfileUnkCAWA() {}
+ARM ActorUnkCAWA::~ActorUnkCAWA() {}
+ARM ActorProfileUnkCAWA::~ActorProfileUnkCAWA() {}

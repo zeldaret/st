@@ -30,5 +30,5 @@ ARM void MapObjectUnkBFFL::func_ov021_020f609c(void) {}
 ARM void MapObjectUnkBFFL::func_ov021_020f60b8(void) {}
 ARM void MapObjectUnkBFFL::func_ov021_020f6160(void) {}
 
-MapObjectUnkBFFL::~MapObjectUnkBFFL() {}
-MapObjectProfileUnkBFFL::~MapObjectProfileUnkBFFL() {}
+ARM MapObjectUnkBFFL::~MapObjectUnkBFFL() {}
+ARM MapObjectProfileUnkBFFL::~MapObjectProfileUnkBFFL() {}

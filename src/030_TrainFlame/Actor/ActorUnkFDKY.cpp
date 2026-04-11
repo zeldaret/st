@@ -32,5 +32,5 @@ ARM void ActorUnkFDKY::func_ov030_0214cb50(void) {}
 ARM void ActorUnkFDKY::func_ov030_0214cc68(void) {}
 ARM void ActorUnkFDKY::func_ov030_0214cdc0(void) {}
 
-ActorUnkFDKY::~ActorUnkFDKY() {}
-ActorProfileUnkFDKY::~ActorProfileUnkFDKY() {}
+ARM ActorUnkFDKY::~ActorUnkFDKY() {}
+ARM ActorProfileUnkFDKY::~ActorProfileUnkFDKY() {}

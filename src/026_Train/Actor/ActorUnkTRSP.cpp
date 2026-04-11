@@ -58,5 +58,5 @@ ARM void ActorUnkTRSP::func_ov026_0211d9fc(void) {}
 ARM void ActorUnkTRSP::func_ov026_0211db80(void) {}
 ARM void ActorUnkTRSP::func_ov026_0211db9c(void) {}
 
-ActorUnkTRSP::~ActorUnkTRSP() {}
-ActorProfileUnkTRSP::~ActorProfileUnkTRSP() {}
+ARM ActorUnkTRSP::~ActorUnkTRSP() {}
+ARM ActorProfileUnkTRSP::~ActorProfileUnkTRSP() {}

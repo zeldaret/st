@@ -43,5 +43,5 @@ ARM void ActorUnkNSSW::func_ov032_02120dbc(void) {}
 ARM void ActorUnkNSSW::func_ov032_02120df8(void) {}
 ARM void ActorUnkNSSW::func_ov032_02120e4c(void) {}
 
-ActorUnkNSSW::~ActorUnkNSSW() {}
-ActorProfileUnkNSSW::~ActorProfileUnkNSSW() {}
+ARM ActorUnkNSSW::~ActorUnkNSSW() {}
+ARM ActorProfileUnkNSSW::~ActorProfileUnkNSSW() {}

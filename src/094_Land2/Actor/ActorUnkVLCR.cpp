@@ -32,5 +32,5 @@ ARM void ActorUnkVLCR::func_ov094_021693bc(void) {}
 ARM void ActorUnkVLCR::func_ov094_021693c8(void) {}
 ARM void ActorUnkVLCR::func_ov094_02169494(void) {}
 
-ActorUnkVLCR::~ActorUnkVLCR() {}
-ActorProfileUnkVLCR::~ActorProfileUnkVLCR() {}
+ARM ActorUnkVLCR::~ActorUnkVLCR() {}
+ARM ActorProfileUnkVLCR::~ActorProfileUnkVLCR() {}

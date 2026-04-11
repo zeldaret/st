@@ -29,5 +29,5 @@ ARM void ActorUnkTRBC::func_ov026_02110150(void) {}
 ARM void ActorUnkTRBC::func_ov026_021101c8(void) {}
 ARM void ActorUnkTRBC::func_ov026_021101cc(void) {}
 
-ActorUnkTRBC::~ActorUnkTRBC() {}
-ActorProfileUnkTRBC::~ActorProfileUnkTRBC() {}
+ARM ActorUnkTRBC::~ActorUnkTRBC() {}
+ARM ActorProfileUnkTRBC::~ActorProfileUnkTRBC() {}

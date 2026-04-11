@@ -47,5 +47,5 @@ ARM void ActorUnkRB1F::func_ov069_02159e5c(void) {}
 ARM void ActorUnkRB1F::func_ov069_02159e6c(void) {}
 ARM void ActorUnkRB1F::func_ov069_02159ec0(void) {}
 
-ActorUnkRB1F::~ActorUnkRB1F() {}
-ActorProfileUnkRB1F::~ActorProfileUnkRB1F() {}
+ARM ActorUnkRB1F::~ActorUnkRB1F() {}
+ARM ActorProfileUnkRB1F::~ActorProfileUnkRB1F() {}

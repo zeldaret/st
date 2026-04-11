@@ -33,5 +33,5 @@ ARM void ActorUnkEFWV::func_ov098_02181634(void) {}
 ARM void ActorUnkEFWV::func_ov098_0218163c(void) {}
 ARM void ActorUnkEFWV::func_ov098_02181658(void) {}
 
-ActorUnkEFWV::~ActorUnkEFWV() {}
-ActorProfileUnkEFWV::~ActorProfileUnkEFWV() {}
+ARM ActorUnkEFWV::~ActorUnkEFWV() {}
+ARM ActorProfileUnkEFWV::~ActorProfileUnkEFWV() {}

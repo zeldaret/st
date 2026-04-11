@@ -32,5 +32,5 @@ ARM void ActorUnkTEHT::func_ov036_0211dcf8(void) {}
 ARM void ActorUnkTEHT::func_ov036_0211dd08(void) {}
 ARM void ActorUnkTEHT::func_ov036_0211dd0c(void) {}
 
-ActorUnkTEHT::~ActorUnkTEHT() {}
-ActorProfileUnkTEHT::~ActorProfileUnkTEHT() {}
+ARM ActorUnkTEHT::~ActorUnkTEHT() {}
+ARM ActorProfileUnkTEHT::~ActorProfileUnkTEHT() {}

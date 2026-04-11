@@ -27,5 +27,5 @@ ARM void ActorUnkCRCH::func_ov049_021343cc(void) {}
 ARM void ActorUnkCRCH::func_ov049_021343d4(void) {}
 ARM void ActorUnkCRCH::func_ov049_021343e4(void) {}
 
-ActorUnkCRCH::~ActorUnkCRCH() {}
-ActorProfileUnkCRCH::~ActorProfileUnkCRCH() {}
+ARM ActorUnkCRCH::~ActorUnkCRCH() {}
+ARM ActorProfileUnkCRCH::~ActorProfileUnkCRCH() {}

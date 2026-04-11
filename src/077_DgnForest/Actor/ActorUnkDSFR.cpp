@@ -20,5 +20,5 @@ ARM ActorUnkDSFR::ActorUnkDSFR() {}
 
 ARM void ActorUnkDSFR::func_ov077_02158bf0(void) {}
 
-ActorUnkDSFR::~ActorUnkDSFR() {}
-ActorProfileUnkDSFR::~ActorProfileUnkDSFR() {}
+ARM ActorUnkDSFR::~ActorUnkDSFR() {}
+ARM ActorProfileUnkDSFR::~ActorProfileUnkDSFR() {}

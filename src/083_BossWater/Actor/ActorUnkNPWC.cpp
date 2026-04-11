@@ -20,5 +20,5 @@ ARM ActorUnkNPWC::ActorUnkNPWC() {}
 
 ARM void ActorUnkNPWC::func_ov083_0215c3b4(void) {}
 
-ActorUnkNPWC::~ActorUnkNPWC() {}
-ActorProfileUnkNPWC::~ActorProfileUnkNPWC() {}
+ARM ActorUnkNPWC::~ActorUnkNPWC() {}
+ARM ActorProfileUnkNPWC::~ActorProfileUnkNPWC() {}

@@ -24,5 +24,5 @@ ARM void ActorUnkDMMS::func_ov088_02171c8c(void) {}
 ARM void ActorUnkDMMS::func_ov088_02171ca0(void) {}
 ARM void ActorUnkDMMS::func_ov088_02171cb4(void) {}
 
-ActorUnkDMMS::~ActorUnkDMMS() {}
-ActorProfileUnkDMMS::~ActorProfileUnkDMMS() {}
+ARM ActorUnkDMMS::~ActorUnkDMMS() {}
+ARM ActorProfileUnkDMMS::~ActorProfileUnkDMMS() {}

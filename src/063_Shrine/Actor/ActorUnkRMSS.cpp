@@ -21,5 +21,5 @@ ARM ActorUnkRMSS::ActorUnkRMSS() {}
 ARM void ActorUnkRMSS::func_ov063_0215c5fc(void) {}
 ARM void ActorUnkRMSS::func_ov063_0215c63c(void) {}
 
-ActorUnkRMSS::~ActorUnkRMSS() {}
-ActorProfileUnkRMSS::~ActorProfileUnkRMSS() {}
+ARM ActorUnkRMSS::~ActorUnkRMSS() {}
+ARM ActorProfileUnkRMSS::~ActorProfileUnkRMSS() {}

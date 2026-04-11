@@ -20,5 +20,5 @@ ARM MapObjectUnkDRBR::MapObjectUnkDRBR() {}
 
 ARM void MapObjectUnkDRBR::func_ov086_0215e1bc(void) {}
 
-MapObjectUnkDRBR::~MapObjectUnkDRBR() {}
-MapObjectProfileUnkDRBR::~MapObjectProfileUnkDRBR() {}
+ARM MapObjectUnkDRBR::~MapObjectUnkDRBR() {}
+ARM MapObjectProfileUnkDRBR::~MapObjectProfileUnkDRBR() {}

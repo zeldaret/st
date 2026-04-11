@@ -24,5 +24,5 @@ ARM void MapObjectUnkETUS::func_ov091_02168730(void) {}
 ARM void MapObjectUnkETUS::func_ov091_02168744(void) {}
 ARM void MapObjectUnkETUS::func_ov091_02168784(void) {}
 
-MapObjectUnkETUS::~MapObjectUnkETUS() {}
-MapObjectProfileUnkETUS::~MapObjectProfileUnkETUS() {}
+ARM MapObjectUnkETUS::~MapObjectUnkETUS() {}
+ARM MapObjectProfileUnkETUS::~MapObjectProfileUnkETUS() {}

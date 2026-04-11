@@ -40,5 +40,5 @@ ARM void ActorUnkITWP::func_ov105_0218a010(void) {}
 ARM void ActorUnkITWP::func_ov105_0218a044(void) {}
 ARM void ActorUnkITWP::func_ov105_0218a078(void) {}
 
-ActorUnkITWP::~ActorUnkITWP() {}
-ActorProfileUnkITWP::~ActorProfileUnkITWP() {}
+ARM ActorUnkITWP::~ActorUnkITWP() {}
+ARM ActorProfileUnkITWP::~ActorProfileUnkITWP() {}

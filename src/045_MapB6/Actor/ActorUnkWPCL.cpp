@@ -20,5 +20,5 @@ ARM ActorUnkWPCL::ActorUnkWPCL() {}
 
 ARM void ActorUnkWPCL::func_ov045_02128f58(void) {}
 
-ActorUnkWPCL::~ActorUnkWPCL() {}
-ActorProfileUnkWPCL::~ActorProfileUnkWPCL() {}
+ARM ActorUnkWPCL::~ActorUnkWPCL() {}
+ARM ActorProfileUnkWPCL::~ActorProfileUnkWPCL() {}

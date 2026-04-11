@@ -40,7 +40,7 @@ ARM void ActorUnkPMTT::func_ov042_0212e4d8(void) {}
 ARM void ActorUnkPMTT::func_ov042_0212e4f8(void) {}
 ARM void ActorUnkPMTT::func_ov042_0212e53c(void) {}
 
-ActorUnkPMTT::~ActorUnkPMTT() {}
-ActorProfileUnkPMTT::~ActorProfileUnkPMTT() {}
+ARM ActorUnkPMTT::~ActorUnkPMTT() {}
+ARM ActorProfileUnkPMTT::~ActorProfileUnkPMTT() {}
 
 #endif

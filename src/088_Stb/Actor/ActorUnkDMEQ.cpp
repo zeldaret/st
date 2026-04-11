@@ -22,5 +22,5 @@ ARM void ActorUnkDMEQ::func_ov088_0216e31c(void) {}
 ARM void ActorUnkDMEQ::func_ov088_0216e718(void) {}
 ARM void ActorUnkDMEQ::func_ov088_0216e738(void) {}
 
-ActorUnkDMEQ::~ActorUnkDMEQ() {}
-ActorProfileUnkDMEQ::~ActorProfileUnkDMEQ() {}
+ARM ActorUnkDMEQ::~ActorUnkDMEQ() {}
+ARM ActorProfileUnkDMEQ::~ActorProfileUnkDMEQ() {}

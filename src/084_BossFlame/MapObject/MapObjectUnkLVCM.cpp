@@ -31,5 +31,5 @@ ARM void MapObjectUnkLVCM::func_ov084_0215da98(void) {}
 ARM void MapObjectUnkLVCM::func_ov084_0215dabc(void) {}
 ARM void MapObjectUnkLVCM::func_ov084_0215dacc(void) {}
 
-MapObjectUnkLVCM::~MapObjectUnkLVCM() {}
-MapObjectProfileUnkLVCM::~MapObjectProfileUnkLVCM() {}
+ARM MapObjectUnkLVCM::~MapObjectUnkLVCM() {}
+ARM MapObjectProfileUnkLVCM::~MapObjectProfileUnkLVCM() {}

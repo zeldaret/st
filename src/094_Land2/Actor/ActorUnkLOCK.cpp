@@ -24,5 +24,5 @@ ARM void ActorUnkLOCK::func_ov094_02166144(void) {}
 ARM void ActorUnkLOCK::func_ov094_02166150(void) {}
 ARM void ActorUnkLOCK::func_ov094_02166154(void) {}
 
-ActorUnkLOCK::~ActorUnkLOCK() {}
-ActorProfileUnkLOCK::~ActorProfileUnkLOCK() {}
+ARM ActorUnkLOCK::~ActorUnkLOCK() {}
+ARM ActorProfileUnkLOCK::~ActorProfileUnkLOCK() {}

@@ -49,5 +49,5 @@ ARM void MapObjectUnkSTSH::func_ov070_0214b23c(void) {}
 ARM void MapObjectUnkSTSH::func_ov070_0214b248(void) {}
 ARM void MapObjectUnkSTSH::func_ov070_0214b29c(void) {}
 
-MapObjectUnkSTSH::~MapObjectUnkSTSH() {}
-MapObjectProfileUnkSTSH::~MapObjectProfileUnkSTSH() {}
+ARM MapObjectUnkSTSH::~MapObjectUnkSTSH() {}
+ARM MapObjectProfileUnkSTSH::~MapObjectProfileUnkSTSH() {}

@@ -79,5 +79,5 @@ ARM void ActorUnkPRSP::func_ov029_02150da4(void) {}
 ARM void ActorUnkPRSP::func_ov029_02150dc8(void) {}
 ARM void ActorUnkPRSP::func_ov029_02150e2c(void) {}
 
-ActorUnkPRSP::~ActorUnkPRSP() {}
-ActorProfileUnkPRSP::~ActorProfileUnkPRSP() {}
+ARM ActorUnkPRSP::~ActorUnkPRSP() {}
+ARM ActorProfileUnkPRSP::~ActorProfileUnkPRSP() {}

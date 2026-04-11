@@ -30,5 +30,5 @@ ARM void MapObjectUnkETYG::func_ov092_02167a0c(void) {}
 ARM void MapObjectUnkETYG::func_ov092_02167a14(void) {}
 ARM void MapObjectUnkETYG::func_ov092_02167a28(void) {}
 
-MapObjectUnkETYG::~MapObjectUnkETYG() {}
-MapObjectProfileUnkETYG::~MapObjectProfileUnkETYG() {}
+ARM MapObjectUnkETYG::~MapObjectUnkETYG() {}
+ARM MapObjectProfileUnkETYG::~MapObjectProfileUnkETYG() {}

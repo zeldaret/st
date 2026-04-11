@@ -29,5 +29,5 @@ ARM void ActorUnkCNBL::func_ov026_0210f678(void) {}
 ARM void ActorUnkCNBL::func_ov026_0210fa04(void) {}
 ARM void ActorUnkCNBL::func_ov026_0210fc14(void) {}
 
-ActorUnkCNBL::~ActorUnkCNBL() {}
-ActorProfileUnkCNBL::~ActorProfileUnkCNBL() {}
+ARM ActorUnkCNBL::~ActorUnkCNBL() {}
+ARM ActorProfileUnkCNBL::~ActorProfileUnkCNBL() {}

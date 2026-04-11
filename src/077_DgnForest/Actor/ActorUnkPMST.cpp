@@ -40,5 +40,5 @@ ARM void ActorUnkPMST::func_ov077_0215aa20(void) {}
 ARM void ActorUnkPMST::func_ov077_0215aa44(void) {}
 ARM void ActorUnkPMST::func_ov077_0215aa88(void) {}
 
-ActorUnkPMST::~ActorUnkPMST() {}
-ActorProfileUnkPMST::~ActorProfileUnkPMST() {}
+ARM ActorUnkPMST::~ActorUnkPMST() {}
+ARM ActorProfileUnkPMST::~ActorProfileUnkPMST() {}

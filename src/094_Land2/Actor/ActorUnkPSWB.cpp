@@ -65,5 +65,5 @@ ARM void ActorUnkPSWB::func_ov094_02168348(void) {}
 ARM void ActorUnkPSWB::func_ov094_02168364(void) {}
 ARM void ActorUnkPSWB::func_ov094_02168388(void) {}
 
-ActorUnkPSWB::~ActorUnkPSWB() {}
-ActorProfileUnkPSWB::~ActorProfileUnkPSWB() {}
+ARM ActorUnkPSWB::~ActorUnkPSWB() {}
+ARM ActorProfileUnkPSWB::~ActorProfileUnkPSWB() {}

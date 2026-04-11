@@ -18,5 +18,5 @@ ARM ActorProfileUnkBMHN::ActorProfileUnkBMHN() :
 
 ARM ActorUnkBMHN::ActorUnkBMHN() {}
 
-ActorUnkBMHN::~ActorUnkBMHN() {}
-ActorProfileUnkBMHN::~ActorProfileUnkBMHN() {}
+ARM ActorUnkBMHN::~ActorUnkBMHN() {}
+ARM ActorProfileUnkBMHN::~ActorProfileUnkBMHN() {}

@@ -70,5 +70,5 @@ ARM void ActorUnkBGOK::func_ov076_02152a58(void) {}
 ARM void ActorUnkBGOK::func_ov076_02152a74(void) {}
 ARM void ActorUnkBGOK::func_ov076_02152a90(void) {}
 
-ActorUnkBGOK::~ActorUnkBGOK() {}
-ActorProfileUnkBGOK::~ActorProfileUnkBGOK() {}
+ARM ActorUnkBGOK::~ActorUnkBGOK() {}
+ARM ActorProfileUnkBGOK::~ActorProfileUnkBGOK() {}

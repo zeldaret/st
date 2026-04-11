@@ -32,5 +32,5 @@ ARM void MapObjectUnkLVVT::func_ov067_0215b8c4(void) {}
 ARM void MapObjectUnkLVVT::func_ov067_0215b8e4(void) {}
 ARM void MapObjectUnkLVVT::func_ov067_0215ba18(void) {}
 
-MapObjectUnkLVVT::~MapObjectUnkLVVT() {}
-MapObjectProfileUnkLVVT::~MapObjectProfileUnkLVVT() {}
+ARM MapObjectUnkLVVT::~MapObjectUnkLVVT() {}
+ARM MapObjectProfileUnkLVVT::~MapObjectProfileUnkLVVT() {}

@@ -60,5 +60,5 @@ ARM void ActorUnkRLST::func_ov031_020f9cc0(void) {}
 ARM void ActorUnkRLST::func_ov031_020f9cf4(void) {}
 ARM void ActorUnkRLST::func_ov031_020f9d60(void) {}
 
-ActorUnkRLST::~ActorUnkRLST() {}
-ActorProfileUnkRLST::~ActorProfileUnkRLST() {}
+ARM ActorUnkRLST::~ActorUnkRLST() {}
+ARM ActorProfileUnkRLST::~ActorProfileUnkRLST() {}

@@ -22,5 +22,5 @@ ARM void ActorUnkCASL::func_ov060_0215eafc(void) {}
 ARM void ActorUnkCASL::func_ov060_0215eb10(void) {}
 ARM void ActorUnkCASL::func_ov060_0215eb24(void) {}
 
-ActorUnkCASL::~ActorUnkCASL() {}
-ActorProfileUnkCASL::~ActorProfileUnkCASL() {}
+ARM ActorUnkCASL::~ActorUnkCASL() {}
+ARM ActorProfileUnkCASL::~ActorProfileUnkCASL() {}

@@ -27,5 +27,5 @@ ARM void MapObjectUnkSTNE::func_ov058_0214efb8(void) {}
 ARM void MapObjectUnkSTNE::func_ov058_0214efcc(void) {}
 ARM void MapObjectUnkSTNE::func_ov058_0214f000(void) {}
 
-MapObjectUnkSTNE::~MapObjectUnkSTNE() {}
-MapObjectProfileUnkSTNE::~MapObjectProfileUnkSTNE() {}
+ARM MapObjectUnkSTNE::~MapObjectUnkSTNE() {}
+ARM MapObjectProfileUnkSTNE::~MapObjectProfileUnkSTNE() {}

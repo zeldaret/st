@@ -43,5 +43,5 @@ ARM void ActorUnkZELD::func_ov039_02119db8(void) {}
 ARM void ActorUnkZELD::func_ov039_02119de4(void) {}
 ARM void ActorUnkZELD::func_ov039_02119e00(void) {}
 
-ActorUnkZELD::~ActorUnkZELD() {}
-ActorProfileUnkZELD::~ActorProfileUnkZELD() {}
+ARM ActorUnkZELD::~ActorUnkZELD() {}
+ARM ActorProfileUnkZELD::~ActorProfileUnkZELD() {}

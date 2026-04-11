@@ -26,5 +26,5 @@ ARM void ActorUnkEFRP::func_ov098_02181b30(void) {}
 ARM void ActorUnkEFRP::func_ov098_02181b88(void) {}
 ARM void ActorUnkEFRP::func_ov098_02181ba4(void) {}
 
-ActorUnkEFRP::~ActorUnkEFRP() {}
-ActorProfileUnkEFRP::~ActorProfileUnkEFRP() {}
+ARM ActorUnkEFRP::~ActorUnkEFRP() {}
+ARM ActorProfileUnkEFRP::~ActorProfileUnkEFRP() {}

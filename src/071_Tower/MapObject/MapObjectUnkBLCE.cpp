@@ -20,5 +20,5 @@ ARM MapObjectUnkBLCE::MapObjectUnkBLCE() {}
 
 ARM void MapObjectUnkBLCE::func_ov071_02161a40(void) {}
 
-MapObjectUnkBLCE::~MapObjectUnkBLCE() {}
-MapObjectProfileUnkBLCE::~MapObjectProfileUnkBLCE() {}
+ARM MapObjectUnkBLCE::~MapObjectUnkBLCE() {}
+ARM MapObjectProfileUnkBLCE::~MapObjectProfileUnkBLCE() {}

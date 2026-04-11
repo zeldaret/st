@@ -24,5 +24,5 @@ ARM void ActorUnkENGE::func_ov070_0213f508(void) {}
 ARM void ActorUnkENGE::func_ov070_0213f548(void) {}
 ARM void ActorUnkENGE::func_ov070_0213f65c(void) {}
 
-ActorUnkENGE::~ActorUnkENGE() {}
-ActorProfileUnkENGE::~ActorProfileUnkENGE() {}
+ARM ActorUnkENGE::~ActorUnkENGE() {}
+ARM ActorProfileUnkENGE::~ActorProfileUnkENGE() {}

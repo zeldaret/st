@@ -36,5 +36,5 @@ ARM void MapObjectUnkDRKY::func_ov031_020feda4(void) {}
 ARM void MapObjectUnkDRKY::func_ov031_020fede8(void) {}
 ARM void MapObjectUnkDRKY::func_ov031_020fedec(void) {}
 
-MapObjectUnkDRKY::~MapObjectUnkDRKY() {}
-MapObjectProfileUnkDRKY::~MapObjectProfileUnkDRKY() {}
+ARM MapObjectUnkDRKY::~MapObjectUnkDRKY() {}
+ARM MapObjectProfileUnkDRKY::~MapObjectProfileUnkDRKY() {}

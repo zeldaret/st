@@ -22,5 +22,5 @@ ARM void MapObjectUnkPLFR::func_ov077_0215ad70(void) {}
 ARM void MapObjectUnkPLFR::func_ov077_0215add0(void) {}
 ARM void MapObjectUnkPLFR::func_ov077_0215add4(void) {}
 
-MapObjectUnkPLFR::~MapObjectUnkPLFR() {}
-MapObjectProfileUnkPLFR::~MapObjectProfileUnkPLFR() {}
+ARM MapObjectUnkPLFR::~MapObjectUnkPLFR() {}
+ARM MapObjectProfileUnkPLFR::~MapObjectProfileUnkPLFR() {}

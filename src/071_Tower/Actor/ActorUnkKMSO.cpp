@@ -30,5 +30,5 @@ ARM void ActorUnkKMSO::func_ov071_02160684(void) {}
 ARM void ActorUnkKMSO::func_ov071_02160688(void) {}
 ARM void ActorUnkKMSO::func_ov071_02160930(void) {}
 
-ActorUnkKMSO::~ActorUnkKMSO() {}
-ActorProfileUnkKMSO::~ActorProfileUnkKMSO() {}
+ARM ActorUnkKMSO::~ActorUnkKMSO() {}
+ARM ActorProfileUnkKMSO::~ActorProfileUnkKMSO() {}

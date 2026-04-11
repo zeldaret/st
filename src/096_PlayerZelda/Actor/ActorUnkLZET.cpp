@@ -18,5 +18,5 @@ ARM ActorProfileUnkLZET::ActorProfileUnkLZET() :
 
 ARM ActorUnkLZET::ActorUnkLZET() {}
 
-ActorUnkLZET::~ActorUnkLZET() {}
-ActorProfileUnkLZET::~ActorProfileUnkLZET() {}
+ARM ActorUnkLZET::~ActorUnkLZET() {}
+ARM ActorProfileUnkLZET::~ActorProfileUnkLZET() {}

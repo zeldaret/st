@@ -54,6 +54,6 @@ ARM ActorProfileUnkYKEP::ActorProfileUnkYKEP() :
 
 ARM ActorUnkYKEP::ActorUnkYKEP() {}
 
-ActorProfileUnkYKAP::~ActorProfileUnkYKAP() {}
-ActorProfileUnkYKCP::~ActorProfileUnkYKCP() {}
-ActorProfileUnkYKEP::~ActorProfileUnkYKEP() {}
+ARM ActorProfileUnkYKAP::~ActorProfileUnkYKAP() {}
+ARM ActorProfileUnkYKCP::~ActorProfileUnkYKCP() {}
+ARM ActorProfileUnkYKEP::~ActorProfileUnkYKEP() {}

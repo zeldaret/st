@@ -77,5 +77,5 @@ ARM void ActorUnkBOMB::func_ov031_020e33dc(void) {}
 ARM void ActorUnkBOMB::func_ov031_020e33f8(void) {}
 ARM void ActorUnkBOMB::func_ov031_020e3448(void) {}
 
-ActorUnkBOMB::~ActorUnkBOMB() {}
-ActorProfileUnkBOMB::~ActorProfileUnkBOMB() {}
+ARM ActorUnkBOMB::~ActorUnkBOMB() {}
+ARM ActorProfileUnkBOMB::~ActorProfileUnkBOMB() {}

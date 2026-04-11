@@ -25,5 +25,5 @@ ARM void ActorUnkEFSC::func_ov086_0215ba40(void) {}
 ARM void ActorUnkEFSC::func_ov086_0215ba54(void) {}
 ARM void ActorUnkEFSC::func_ov086_0215bb04(void) {}
 
-ActorUnkEFSC::~ActorUnkEFSC() {}
-ActorProfileUnkEFSC::~ActorProfileUnkEFSC() {}
+ARM ActorUnkEFSC::~ActorUnkEFSC() {}
+ARM ActorProfileUnkEFSC::~ActorProfileUnkEFSC() {}

@@ -58,5 +58,5 @@ ARM void ActorUnkFIBB::func_ov054_0213d4dc(void) {}
 ARM void ActorUnkFIBB::func_ov054_0213d510(void) {}
 ARM void ActorUnkFIBB::func_ov054_0213d534(void) {}
 
-ActorUnkFIBB::~ActorUnkFIBB() {}
-ActorProfileUnkFIBB::~ActorProfileUnkFIBB() {}
+ARM ActorUnkFIBB::~ActorUnkFIBB() {}
+ARM ActorProfileUnkFIBB::~ActorProfileUnkFIBB() {}

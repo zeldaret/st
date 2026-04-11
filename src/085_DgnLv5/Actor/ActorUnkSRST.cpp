@@ -55,5 +55,5 @@ ARM void ActorUnkSRST::func_ov085_021530bc(void) {}
 ARM void ActorUnkSRST::func_ov085_021530fc(void) {}
 ARM void ActorUnkSRST::func_ov085_02153158(void) {}
 
-ActorUnkSRST::~ActorUnkSRST() {}
-ActorProfileUnkSRST::~ActorProfileUnkSRST() {}
+ARM ActorUnkSRST::~ActorUnkSRST() {}
+ARM ActorProfileUnkSRST::~ActorProfileUnkSRST() {}

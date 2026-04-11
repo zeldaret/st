@@ -25,5 +25,5 @@ ARM void ActorUnkDMST::func_ov088_021712ec(void) {}
 ARM void ActorUnkDMST::func_ov088_02171300(void) {}
 ARM void ActorUnkDMST::func_ov088_02171350(void) {}
 
-ActorUnkDMST::~ActorUnkDMST() {}
-ActorProfileUnkDMST::~ActorProfileUnkDMST() {}
+ARM ActorUnkDMST::~ActorUnkDMST() {}
+ARM ActorProfileUnkDMST::~ActorProfileUnkDMST() {}

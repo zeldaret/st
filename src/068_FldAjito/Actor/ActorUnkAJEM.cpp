@@ -50,5 +50,5 @@ ARM void ActorUnkAJEM::func_ov068_0215a76c(void) {}
 ARM void ActorUnkAJEM::func_ov068_0215a790(void) {}
 ARM void ActorUnkAJEM::func_ov068_0215a800(void) {}
 
-ActorUnkAJEM::~ActorUnkAJEM() {}
-ActorProfileUnkAJEM::~ActorProfileUnkAJEM() {}
+ARM ActorUnkAJEM::~ActorUnkAJEM() {}
+ARM ActorProfileUnkAJEM::~ActorProfileUnkAJEM() {}

@@ -29,5 +29,5 @@ ARM void ActorUnkOLDS::func_ov040_0212cfb8(void) {}
 ARM void ActorUnkOLDS::func_ov040_0212cfd4(void) {}
 ARM void ActorUnkOLDS::func_ov040_0212d040(void) {}
 
-ActorUnkOLDS::~ActorUnkOLDS() {}
-ActorProfileUnkOLDS::~ActorProfileUnkOLDS() {}
+ARM ActorUnkOLDS::~ActorUnkOLDS() {}
+ARM ActorProfileUnkOLDS::~ActorProfileUnkOLDS() {}

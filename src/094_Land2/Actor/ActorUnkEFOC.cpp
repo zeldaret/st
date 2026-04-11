@@ -35,5 +35,5 @@ ARM void ActorUnkEFOC::func_ov094_0216f4ac(void) {}
 ARM void ActorUnkEFOC::func_ov094_0216f508(void) {}
 ARM void ActorUnkEFOC::func_ov094_0216f52c(void) {}
 
-ActorUnkEFOC::~ActorUnkEFOC() {}
-ActorProfileUnkEFOC::~ActorProfileUnkEFOC() {}
+ARM ActorUnkEFOC::~ActorUnkEFOC() {}
+ARM ActorProfileUnkEFOC::~ActorProfileUnkEFOC() {}

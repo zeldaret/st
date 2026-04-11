@@ -24,5 +24,5 @@ ARM void MapObjectUnkDRHS::func_ov058_0214fc24(void) {}
 ARM void MapObjectUnkDRHS::func_ov058_0214fc7c(void) {}
 ARM void MapObjectUnkDRHS::func_ov058_0214fc90(void) {}
 
-MapObjectUnkDRHS::~MapObjectUnkDRHS() {}
-MapObjectProfileUnkDRHS::~MapObjectProfileUnkDRHS() {}
+ARM MapObjectUnkDRHS::~MapObjectUnkDRHS() {}
+ARM MapObjectProfileUnkDRHS::~MapObjectProfileUnkDRHS() {}

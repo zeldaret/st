@@ -37,5 +37,5 @@ ARM void MapObjectUnkETDK::func_ov027_02143724(void) {}
 ARM void MapObjectUnkETDK::func_ov027_02143744(void) {}
 ARM void MapObjectUnkETDK::func_ov027_021437ec(void) {}
 
-MapObjectUnkETDK::~MapObjectUnkETDK() {}
-MapObjectProfileUnkETDK::~MapObjectProfileUnkETDK() {}
+ARM MapObjectUnkETDK::~MapObjectUnkETDK() {}
+ARM MapObjectProfileUnkETDK::~MapObjectProfileUnkETDK() {}

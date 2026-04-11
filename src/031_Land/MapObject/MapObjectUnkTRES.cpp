@@ -22,5 +22,5 @@ ARM void MapObjectUnkTRES::func_ov031_02102f64(void) {}
 ARM void MapObjectUnkTRES::func_ov031_02102f90(void) {}
 ARM void MapObjectUnkTRES::func_ov031_02102f98(void) {}
 
-MapObjectUnkTRES::~MapObjectUnkTRES() {}
-MapObjectProfileUnkTRES::~MapObjectProfileUnkTRES() {}
+ARM MapObjectUnkTRES::~MapObjectUnkTRES() {}
+ARM MapObjectProfileUnkTRES::~MapObjectProfileUnkTRES() {}

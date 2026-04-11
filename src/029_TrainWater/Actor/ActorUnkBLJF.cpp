@@ -46,5 +46,5 @@ ARM void ActorUnkBLJF::func_ov029_0214ada4(void) {}
 ARM void ActorUnkBLJF::func_ov029_0214aec0(void) {}
 ARM void ActorUnkBLJF::func_ov029_0214af20(void) {}
 
-ActorUnkBLJF::~ActorUnkBLJF() {}
-ActorProfileUnkBLJF::~ActorProfileUnkBLJF() {}
+ARM ActorUnkBLJF::~ActorUnkBLJF() {}
+ARM ActorProfileUnkBLJF::~ActorProfileUnkBLJF() {}

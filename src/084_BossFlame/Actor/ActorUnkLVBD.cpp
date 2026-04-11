@@ -49,5 +49,5 @@ ARM void ActorUnkLVBD::func_ov084_02160384(void) {}
 ARM void ActorUnkLVBD::func_ov084_021603a0(void) {}
 ARM void ActorUnkLVBD::func_ov084_021603fc(void) {}
 
-ActorUnkLVBD::~ActorUnkLVBD() {}
-ActorProfileUnkLVBD::~ActorProfileUnkLVBD() {}
+ARM ActorUnkLVBD::~ActorUnkLVBD() {}
+ARM ActorProfileUnkLVBD::~ActorProfileUnkLVBD() {}

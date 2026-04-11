@@ -26,5 +26,5 @@ ARM void ActorUnkSNST::func_ov026_0211ac44(void) {}
 ARM void ActorUnkSNST::func_ov026_0211ac70(void) {}
 ARM void ActorUnkSNST::func_ov026_0211ace8(void) {}
 
-ActorUnkSNST::~ActorUnkSNST() {}
-ActorProfileUnkSNST::~ActorProfileUnkSNST() {}
+ARM ActorUnkSNST::~ActorUnkSNST() {}
+ARM ActorProfileUnkSNST::~ActorProfileUnkSNST() {}

@@ -52,5 +52,5 @@ ARM void ActorUnkPBK2::func_ov048_02133810(void) {}
 ARM void ActorUnkPBK2::func_ov048_02133914(void) {}
 ARM void ActorUnkPBK2::func_ov048_02133a38(void) {}
 
-ActorUnkPBK2::~ActorUnkPBK2() {}
-ActorProfileUnkPBK2::~ActorProfileUnkPBK2() {}
+ARM ActorUnkPBK2::~ActorUnkPBK2() {}
+ARM ActorProfileUnkPBK2::~ActorProfileUnkPBK2() {}

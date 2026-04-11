@@ -36,5 +36,5 @@ ARM void ActorUnkVCFT::func_ov066_0215b938(void) {}
 ARM void ActorUnkVCFT::func_ov066_0215b9ac(void) {}
 ARM void ActorUnkVCFT::func_ov066_0215b9f4(void) {}
 
-ActorUnkVCFT::~ActorUnkVCFT() {}
-ActorProfileUnkVCFT::~ActorProfileUnkVCFT() {}
+ARM ActorUnkVCFT::~ActorUnkVCFT() {}
+ARM ActorProfileUnkVCFT::~ActorProfileUnkVCFT() {}

@@ -23,5 +23,5 @@ ARM void ActorUnkFLEN::func_ov031_020f8118(void) {}
 ARM void ActorUnkFLEN::func_ov031_020f81b4(void) {}
 ARM void ActorUnkFLEN::func_ov031_020f81f8(void) {}
 
-ActorUnkFLEN::~ActorUnkFLEN() {}
-ActorProfileUnkFLEN::~ActorProfileUnkFLEN() {}
+ARM ActorUnkFLEN::~ActorUnkFLEN() {}
+ARM ActorProfileUnkFLEN::~ActorProfileUnkFLEN() {}

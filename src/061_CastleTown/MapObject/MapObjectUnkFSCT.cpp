@@ -21,5 +21,5 @@ ARM MapObjectUnkFSCT::MapObjectUnkFSCT() {}
 ARM void MapObjectUnkFSCT::func_ov061_021594d0(void) {}
 ARM void MapObjectUnkFSCT::func_ov061_02159520(void) {}
 
-MapObjectUnkFSCT::~MapObjectUnkFSCT() {}
-MapObjectProfileUnkFSCT::~MapObjectProfileUnkFSCT() {}
+ARM MapObjectUnkFSCT::~MapObjectUnkFSCT() {}
+ARM MapObjectProfileUnkFSCT::~MapObjectProfileUnkFSCT() {}

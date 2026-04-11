@@ -28,5 +28,5 @@ ARM void ActorUnkTTET::func_ov026_02123544(void) {}
 ARM void ActorUnkTTET::func_ov026_021235bc(void) {}
 ARM void ActorUnkTTET::func_ov026_021235c4(void) {}
 
-ActorUnkTTET::~ActorUnkTTET() {}
-ActorProfileUnkTTET::~ActorProfileUnkTTET() {}
+ARM ActorUnkTTET::~ActorUnkTTET() {}
+ARM ActorProfileUnkTTET::~ActorProfileUnkTTET() {}

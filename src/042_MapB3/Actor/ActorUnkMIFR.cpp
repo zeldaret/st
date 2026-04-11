@@ -46,5 +46,5 @@ ARM void ActorUnkMIFR::func_ov042_02126604(void) {}
 ARM void ActorUnkMIFR::func_ov042_021268cc(void) {}
 ARM void ActorUnkMIFR::func_ov042_02126918(void) {}
 
-ActorUnkMIFR::~ActorUnkMIFR() {}
-ActorProfileUnkMIFR::~ActorProfileUnkMIFR() {}
+ARM ActorUnkMIFR::~ActorUnkMIFR() {}
+ARM ActorProfileUnkMIFR::~ActorProfileUnkMIFR() {}

@@ -25,5 +25,5 @@ ARM void MapObjectUnkETDD::func_ov092_021681c8(void) {}
 ARM void MapObjectUnkETDD::func_ov092_021681f8(void) {}
 ARM void MapObjectUnkETDD::func_ov092_02168200(void) {}
 
-MapObjectUnkETDD::~MapObjectUnkETDD() {}
-MapObjectProfileUnkETDD::~MapObjectProfileUnkETDD() {}
+ARM MapObjectUnkETDD::~MapObjectUnkETDD() {}
+ARM MapObjectProfileUnkETDD::~MapObjectProfileUnkETDD() {}

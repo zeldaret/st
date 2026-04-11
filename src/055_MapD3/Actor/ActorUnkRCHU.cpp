@@ -48,5 +48,5 @@ ARM void ActorUnkRCHU::func_ov055_0213bdd0(void) {}
 ARM void ActorUnkRCHU::func_ov055_0213be10(void) {}
 ARM void ActorUnkRCHU::func_ov055_0213be4c(void) {}
 
-ActorUnkRCHU::~ActorUnkRCHU() {}
-ActorProfileUnkRCHU::~ActorProfileUnkRCHU() {}
+ARM ActorUnkRCHU::~ActorUnkRCHU() {}
+ARM ActorProfileUnkRCHU::~ActorProfileUnkRCHU() {}

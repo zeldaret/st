@@ -20,5 +20,5 @@ ARM MapObjectUnkEXCT::MapObjectUnkEXCT() {}
 
 ARM void MapObjectUnkEXCT::func_ov060_02160a84(void) {}
 
-MapObjectUnkEXCT::~MapObjectUnkEXCT() {}
-MapObjectProfileUnkEXCT::~MapObjectProfileUnkEXCT() {}
+ARM MapObjectUnkEXCT::~MapObjectUnkEXCT() {}
+ARM MapObjectProfileUnkEXCT::~MapObjectProfileUnkEXCT() {}

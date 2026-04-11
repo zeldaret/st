@@ -157,5 +157,5 @@ ARM void ActorUnkICBS::func_ov080_0215c7cc(void) {}
 ARM void ActorUnkICBS::func_ov080_0215c7d8(void) {}
 ARM void ActorUnkICBS::func_ov080_0215c7f4(void) {}
 
-ActorUnkICBS::~ActorUnkICBS() {}
-ActorProfileUnkICBS::~ActorProfileUnkICBS() {}
+ARM ActorUnkICBS::~ActorUnkICBS() {}
+ARM ActorProfileUnkICBS::~ActorProfileUnkICBS() {}

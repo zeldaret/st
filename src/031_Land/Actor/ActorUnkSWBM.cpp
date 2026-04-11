@@ -31,5 +31,5 @@ ARM void ActorUnkSWBM::func_ov031_020e7294(void) {}
 ARM void ActorUnkSWBM::func_ov031_020e72f0(void) {}
 ARM void ActorUnkSWBM::func_ov031_020e7334(void) {}
 
-ActorUnkSWBM::~ActorUnkSWBM() {}
-ActorProfileUnkSWBM::~ActorProfileUnkSWBM() {}
+ARM ActorUnkSWBM::~ActorUnkSWBM() {}
+ARM ActorProfileUnkSWBM::~ActorProfileUnkSWBM() {}

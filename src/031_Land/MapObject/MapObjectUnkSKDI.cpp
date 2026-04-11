@@ -34,5 +34,5 @@ ARM void MapObjectUnkSKDI::func_ov031_02106ca0(void) {}
 ARM void MapObjectUnkSKDI::func_ov031_02106ca8(void) {}
 ARM void MapObjectUnkSKDI::func_ov031_02106cb0(void) {}
 
-MapObjectUnkSKDI::~MapObjectUnkSKDI() {}
-MapObjectProfileUnkSKDI::~MapObjectProfileUnkSKDI() {}
+ARM MapObjectUnkSKDI::~MapObjectUnkSKDI() {}
+ARM MapObjectProfileUnkSKDI::~MapObjectProfileUnkSKDI() {}

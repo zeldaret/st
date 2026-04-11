@@ -24,5 +24,5 @@ ARM void ActorUnkALEV::func_ov070_0213f858(void) {}
 ARM void ActorUnkALEV::func_ov070_0213f86c(void) {}
 ARM void ActorUnkALEV::func_ov070_0213f8dc(void) {}
 
-ActorUnkALEV::~ActorUnkALEV() {}
-ActorProfileUnkALEV::~ActorProfileUnkALEV() {}
+ARM ActorUnkALEV::~ActorUnkALEV() {}
+ARM ActorProfileUnkALEV::~ActorProfileUnkALEV() {}

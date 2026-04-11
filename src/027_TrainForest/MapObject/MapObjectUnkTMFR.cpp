@@ -34,5 +34,5 @@ ARM void MapObjectUnkTMFR::func_ov027_02141f30(void) {}
 ARM void MapObjectUnkTMFR::func_ov027_02141f94(void) {}
 ARM void MapObjectUnkTMFR::func_ov027_02141fc4(void) {}
 
-MapObjectUnkTMFR::~MapObjectUnkTMFR() {}
-MapObjectProfileUnkTMFR::~MapObjectProfileUnkTMFR() {}
+ARM MapObjectUnkTMFR::~MapObjectUnkTMFR() {}
+ARM MapObjectProfileUnkTMFR::~MapObjectProfileUnkTMFR() {}

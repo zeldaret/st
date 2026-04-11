@@ -50,5 +50,5 @@ ARM void ActorUnkFIMA::func_ov035_0211a998(void) {}
 ARM void ActorUnkFIMA::func_ov035_0211a9e0(void) {}
 ARM void ActorUnkFIMA::func_ov035_0211aa24(void) {}
 
-ActorUnkFIMA::~ActorUnkFIMA() {}
-ActorProfileUnkFIMA::~ActorProfileUnkFIMA() {}
+ARM ActorUnkFIMA::~ActorUnkFIMA() {}
+ARM ActorProfileUnkFIMA::~ActorProfileUnkFIMA() {}

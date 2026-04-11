@@ -76,5 +76,5 @@ ARM void ActorUnkSZRD::func_ov090_02168ad4(void) {}
 ARM void ActorUnkSZRD::func_ov090_02168b00(void) {}
 ARM void ActorUnkSZRD::func_ov090_02168b1c(void) {}
 
-ActorUnkSZRD::~ActorUnkSZRD() {}
-ActorProfileUnkSZRD::~ActorProfileUnkSZRD() {}
+ARM ActorUnkSZRD::~ActorUnkSZRD() {}
+ARM ActorProfileUnkSZRD::~ActorProfileUnkSZRD() {}

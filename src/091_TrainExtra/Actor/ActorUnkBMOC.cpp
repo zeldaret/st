@@ -26,5 +26,5 @@ ARM void ActorUnkBMOC::func_ov091_0216ece0(void) {}
 ARM void ActorUnkBMOC::func_ov091_0216edec(void) {}
 ARM void ActorUnkBMOC::func_ov091_0216ee1c(void) {}
 
-ActorUnkBMOC::~ActorUnkBMOC() {}
-ActorProfileUnkBMOC::~ActorProfileUnkBMOC() {}
+ARM ActorUnkBMOC::~ActorUnkBMOC() {}
+ARM ActorProfileUnkBMOC::~ActorProfileUnkBMOC() {}

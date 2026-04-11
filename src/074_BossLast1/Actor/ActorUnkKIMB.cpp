@@ -43,5 +43,5 @@ ARM void ActorUnkKIMB::func_ov074_0215e4ec(void) {}
 ARM void ActorUnkKIMB::func_ov074_0215e584(void) {}
 ARM void ActorUnkKIMB::func_ov074_0215e62c(void) {}
 
-ActorUnkKIMB::~ActorUnkKIMB() {}
-ActorProfileUnkKIMB::~ActorProfileUnkKIMB() {}
+ARM ActorUnkKIMB::~ActorUnkKIMB() {}
+ARM ActorProfileUnkKIMB::~ActorProfileUnkKIMB() {}

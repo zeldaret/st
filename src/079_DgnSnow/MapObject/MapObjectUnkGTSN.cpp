@@ -22,5 +22,5 @@ ARM void MapObjectUnkGTSN::func_ov079_02156e14(void) {}
 ARM void MapObjectUnkGTSN::func_ov079_02156f24(void) {}
 ARM void MapObjectUnkGTSN::func_ov079_02156f28(void) {}
 
-MapObjectUnkGTSN::~MapObjectUnkGTSN() {}
-MapObjectProfileUnkGTSN::~MapObjectProfileUnkGTSN() {}
+ARM MapObjectUnkGTSN::~MapObjectUnkGTSN() {}
+ARM MapObjectProfileUnkGTSN::~MapObjectProfileUnkGTSN() {}

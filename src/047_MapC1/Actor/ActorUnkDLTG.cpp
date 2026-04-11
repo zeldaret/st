@@ -23,5 +23,5 @@ ARM void ActorUnkDLTG::func_ov047_02135878(void) {}
 ARM void ActorUnkDLTG::func_ov047_021358a4(void) {}
 ARM void ActorUnkDLTG::func_ov047_021358c0(void) {}
 
-ActorUnkDLTG::~ActorUnkDLTG() {}
-ActorProfileUnkDLTG::~ActorProfileUnkDLTG() {}
+ARM ActorUnkDLTG::~ActorUnkDLTG() {}
+ARM ActorProfileUnkDLTG::~ActorProfileUnkDLTG() {}

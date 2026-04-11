@@ -31,5 +31,5 @@ ARM void ActorUnkITTD::func_ov031_020e6340(void) {}
 ARM void ActorUnkITTD::func_ov031_020e6398(void) {}
 ARM void ActorUnkITTD::func_ov031_020e6474(void) {}
 
-ActorUnkITTD::~ActorUnkITTD() {}
-ActorProfileUnkITTD::~ActorProfileUnkITTD() {}
+ARM ActorUnkITTD::~ActorUnkITTD() {}
+ARM ActorProfileUnkITTD::~ActorProfileUnkITTD() {}

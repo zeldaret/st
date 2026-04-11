@@ -30,5 +30,5 @@ ARM void MapObjectUnkWPHL::func_ov034_02121d84(void) {}
 ARM void MapObjectUnkWPHL::func_ov034_02121de4(void) {}
 ARM void MapObjectUnkWPHL::func_ov034_02121e44(void) {}
 
-MapObjectUnkWPHL::~MapObjectUnkWPHL() {}
-MapObjectProfileUnkWPHL::~MapObjectProfileUnkWPHL() {}
+ARM MapObjectUnkWPHL::~MapObjectUnkWPHL() {}
+ARM MapObjectProfileUnkWPHL::~MapObjectProfileUnkWPHL() {}

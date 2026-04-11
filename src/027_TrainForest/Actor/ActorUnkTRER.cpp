@@ -32,5 +32,5 @@ ARM void ActorUnkTRER::func_ov027_02144f58(void) {}
 ARM void ActorUnkTRER::func_ov027_02144f5c(void) {}
 ARM void ActorUnkTRER::func_ov027_02144f9c(void) {}
 
-ActorUnkTRER::~ActorUnkTRER() {}
-ActorProfileUnkTRER::~ActorProfileUnkTRER() {}
+ARM ActorUnkTRER::~ActorUnkTRER() {}
+ARM ActorProfileUnkTRER::~ActorProfileUnkTRER() {}

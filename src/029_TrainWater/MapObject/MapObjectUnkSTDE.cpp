@@ -24,5 +24,5 @@ ARM void MapObjectUnkSTDE::func_ov029_02144228(void) {}
 ARM void MapObjectUnkSTDE::func_ov029_02144244(void) {}
 ARM void MapObjectUnkSTDE::func_ov029_02144288(void) {}
 
-MapObjectUnkSTDE::~MapObjectUnkSTDE() {}
-MapObjectProfileUnkSTDE::~MapObjectProfileUnkSTDE() {}
+ARM MapObjectUnkSTDE::~MapObjectUnkSTDE() {}
+ARM MapObjectProfileUnkSTDE::~MapObjectProfileUnkSTDE() {}

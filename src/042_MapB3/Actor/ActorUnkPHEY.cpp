@@ -76,5 +76,5 @@ ARM void ActorUnkPHEY::func_ov042_0212b514(void) {}
 ARM void ActorUnkPHEY::func_ov042_0212b538(void) {}
 ARM void ActorUnkPHEY::func_ov042_0212b5b4(void) {}
 
-ActorUnkPHEY::~ActorUnkPHEY() {}
-ActorProfileUnkPHEY::~ActorProfileUnkPHEY() {}
+ARM ActorUnkPHEY::~ActorUnkPHEY() {}
+ARM ActorProfileUnkPHEY::~ActorProfileUnkPHEY() {}

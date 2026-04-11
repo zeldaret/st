@@ -26,5 +26,5 @@ ARM void MapObjectUnkSTAT::func_ov063_0215fc40(void) {}
 ARM void MapObjectUnkSTAT::func_ov063_0215fc88(void) {}
 ARM void MapObjectUnkSTAT::func_ov063_0215fce0(void) {}
 
-MapObjectUnkSTAT::~MapObjectUnkSTAT() {}
-MapObjectProfileUnkSTAT::~MapObjectProfileUnkSTAT() {}
+ARM MapObjectUnkSTAT::~MapObjectUnkSTAT() {}
+ARM MapObjectProfileUnkSTAT::~MapObjectProfileUnkSTAT() {}

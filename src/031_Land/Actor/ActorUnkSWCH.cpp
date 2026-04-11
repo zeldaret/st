@@ -22,5 +22,5 @@ ARM void ActorUnkSWCH::func_ov031_020f7b0c(void) {}
 ARM void ActorUnkSWCH::func_ov031_020f7b20(void) {}
 ARM void ActorUnkSWCH::func_ov031_020f7b88(void) {}
 
-ActorUnkSWCH::~ActorUnkSWCH() {}
-ActorProfileUnkSWCH::~ActorProfileUnkSWCH() {}
+ARM ActorUnkSWCH::~ActorUnkSWCH() {}
+ARM ActorProfileUnkSWCH::~ActorProfileUnkSWCH() {}

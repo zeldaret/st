@@ -21,5 +21,5 @@ ARM ActorUnkE3TT::ActorUnkE3TT() {}
 ARM void ActorUnkE3TT::func_ov090_021711a4(void) {}
 ARM void ActorUnkE3TT::func_ov090_021711d4(void) {}
 
-ActorUnkE3TT::~ActorUnkE3TT() {}
-ActorProfileUnkE3TT::~ActorProfileUnkE3TT() {}
+ARM ActorUnkE3TT::~ActorUnkE3TT() {}
+ARM ActorProfileUnkE3TT::~ActorProfileUnkE3TT() {}

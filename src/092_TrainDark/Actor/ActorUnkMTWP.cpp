@@ -34,5 +34,5 @@ ARM void ActorUnkMTWP::func_ov092_021700e4(void) {}
 ARM void ActorUnkMTWP::func_ov092_02170118(void) {}
 ARM void ActorUnkMTWP::func_ov092_02170230(void) {}
 
-ActorUnkMTWP::~ActorUnkMTWP() {}
-ActorProfileUnkMTWP::~ActorProfileUnkMTWP() {}
+ARM ActorUnkMTWP::~ActorUnkMTWP() {}
+ARM ActorProfileUnkMTWP::~ActorProfileUnkMTWP() {}

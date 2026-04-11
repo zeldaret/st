@@ -23,5 +23,5 @@ ARM void MapObjectUnkBRGW::func_ov094_02174c88(void) {}
 ARM void MapObjectUnkBRGW::func_ov094_02174c8c(void) {}
 ARM void MapObjectUnkBRGW::func_ov094_02174e2c(void) {}
 
-MapObjectUnkBRGW::~MapObjectUnkBRGW() {}
-MapObjectProfileUnkBRGW::~MapObjectProfileUnkBRGW() {}
+ARM MapObjectUnkBRGW::~MapObjectUnkBRGW() {}
+ARM MapObjectProfileUnkBRGW::~MapObjectProfileUnkBRGW() {}

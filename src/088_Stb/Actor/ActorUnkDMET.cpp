@@ -27,5 +27,5 @@ ARM void ActorUnkDMET::func_ov088_021720fc(void) {}
 ARM void ActorUnkDMET::func_ov088_0217213c(void) {}
 ARM void ActorUnkDMET::func_ov088_0217218c(void) {}
 
-ActorUnkDMET::~ActorUnkDMET() {}
-ActorProfileUnkDMET::~ActorProfileUnkDMET() {}
+ARM ActorUnkDMET::~ActorUnkDMET() {}
+ARM ActorProfileUnkDMET::~ActorProfileUnkDMET() {}

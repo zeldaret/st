@@ -21,5 +21,5 @@ ARM ActorUnkDMZS::ActorUnkDMZS() {}
 ARM void ActorUnkDMZS::func_ov088_0216c470(void) {}
 ARM void ActorUnkDMZS::func_ov088_0216c4d0(void) {}
 
-ActorUnkDMZS::~ActorUnkDMZS() {}
-ActorProfileUnkDMZS::~ActorProfileUnkDMZS() {}
+ARM ActorUnkDMZS::~ActorUnkDMZS() {}
+ARM ActorProfileUnkDMZS::~ActorProfileUnkDMZS() {}

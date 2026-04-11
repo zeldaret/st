@@ -22,5 +22,5 @@ ARM void ActorUnkKIMA::func_ov060_02160334(void) {}
 ARM void ActorUnkKIMA::func_ov060_02160340(void) {}
 ARM void ActorUnkKIMA::func_ov060_02160348(void) {}
 
-ActorUnkKIMA::~ActorUnkKIMA() {}
-ActorProfileUnkKIMA::~ActorProfileUnkKIMA() {}
+ARM ActorUnkKIMA::~ActorUnkKIMA() {}
+ARM ActorProfileUnkKIMA::~ActorProfileUnkKIMA() {}

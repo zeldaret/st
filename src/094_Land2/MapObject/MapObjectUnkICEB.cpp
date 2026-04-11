@@ -32,5 +32,5 @@ ARM void MapObjectUnkICEB::func_ov094_021746cc(void) {}
 ARM void MapObjectUnkICEB::func_ov094_02174870(void) {}
 ARM void MapObjectUnkICEB::func_ov094_02174888(void) {}
 
-MapObjectUnkICEB::~MapObjectUnkICEB() {}
-MapObjectProfileUnkICEB::~MapObjectProfileUnkICEB() {}
+ARM MapObjectUnkICEB::~MapObjectUnkICEB() {}
+ARM MapObjectProfileUnkICEB::~MapObjectProfileUnkICEB() {}

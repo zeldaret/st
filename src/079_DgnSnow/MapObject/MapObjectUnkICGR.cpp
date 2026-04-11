@@ -27,5 +27,5 @@ ARM void MapObjectUnkICGR::func_ov079_0215628c(void) {}
 ARM void MapObjectUnkICGR::func_ov079_02156304(void) {}
 ARM void MapObjectUnkICGR::func_ov079_02156314(void) {}
 
-MapObjectUnkICGR::~MapObjectUnkICGR() {}
-MapObjectProfileUnkICGR::~MapObjectProfileUnkICGR() {}
+ARM MapObjectUnkICGR::~MapObjectUnkICGR() {}
+ARM MapObjectProfileUnkICGR::~MapObjectProfileUnkICGR() {}

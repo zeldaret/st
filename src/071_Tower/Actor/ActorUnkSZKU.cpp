@@ -50,5 +50,5 @@ ARM void ActorUnkSZKU::func_ov071_021600b8(void) {}
 ARM void ActorUnkSZKU::func_ov071_021600d4(void) {}
 ARM void ActorUnkSZKU::func_ov071_021600e8(void) {}
 
-ActorUnkSZKU::~ActorUnkSZKU() {}
-ActorProfileUnkSZKU::~ActorProfileUnkSZKU() {}
+ARM ActorUnkSZKU::~ActorUnkSZKU() {}
+ARM ActorProfileUnkSZKU::~ActorProfileUnkSZKU() {}

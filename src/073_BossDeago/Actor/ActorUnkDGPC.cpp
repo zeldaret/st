@@ -27,5 +27,5 @@ ARM void ActorUnkDGPC::func_ov073_02163388(void) {}
 ARM void ActorUnkDGPC::func_ov073_021633c0(void) {}
 ARM void ActorUnkDGPC::func_ov073_021633c8(void) {}
 
-ActorUnkDGPC::~ActorUnkDGPC() {}
-ActorProfileUnkDGPC::~ActorProfileUnkDGPC() {}
+ARM ActorUnkDGPC::~ActorUnkDGPC() {}
+ARM ActorProfileUnkDGPC::~ActorProfileUnkDGPC() {}

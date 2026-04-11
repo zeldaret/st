@@ -31,5 +31,5 @@ ARM void MapObjectUnkPRSH::func_ov081_02152600(void) {}
 ARM void MapObjectUnkPRSH::func_ov081_02152610(void) {}
 ARM void MapObjectUnkPRSH::func_ov081_02152698(void) {}
 
-MapObjectUnkPRSH::~MapObjectUnkPRSH() {}
-MapObjectProfileUnkPRSH::~MapObjectProfileUnkPRSH() {}
+ARM MapObjectUnkPRSH::~MapObjectUnkPRSH() {}
+ARM MapObjectProfileUnkPRSH::~MapObjectProfileUnkPRSH() {}

@@ -46,5 +46,5 @@ ARM void ActorUnkYUKI::func_ov065_021588f8(void) {}
 ARM void ActorUnkYUKI::func_ov065_02158940(void) {}
 ARM void ActorUnkYUKI::func_ov065_02158960(void) {}
 
-ActorUnkYUKI::~ActorUnkYUKI() {}
-ActorProfileUnkYUKI::~ActorProfileUnkYUKI() {}
+ARM ActorUnkYUKI::~ActorUnkYUKI() {}
+ARM ActorProfileUnkYUKI::~ActorProfileUnkYUKI() {}

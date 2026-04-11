@@ -36,5 +36,5 @@ ARM void ActorUnkSEFS::func_ov091_0216d8e4(void) {}
 ARM void ActorUnkSEFS::func_ov091_0216d8f0(void) {}
 ARM void ActorUnkSEFS::func_ov091_0216d9b0(void) {}
 
-ActorUnkSEFS::~ActorUnkSEFS() {}
-ActorProfileUnkSEFS::~ActorProfileUnkSEFS() {}
+ARM ActorUnkSEFS::~ActorUnkSEFS() {}
+ARM ActorProfileUnkSEFS::~ActorProfileUnkSEFS() {}

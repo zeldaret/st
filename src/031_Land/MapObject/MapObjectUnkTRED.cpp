@@ -21,5 +21,5 @@ ARM MapObjectUnkTRED::MapObjectUnkTRED() {}
 ARM void MapObjectUnkTRED::func_ov031_02104114(void) {}
 ARM void MapObjectUnkTRED::func_ov031_02104168(void) {}
 
-MapObjectUnkTRED::~MapObjectUnkTRED() {}
-MapObjectProfileUnkTRED::~MapObjectProfileUnkTRED() {}
+ARM MapObjectUnkTRED::~MapObjectUnkTRED() {}
+ARM MapObjectProfileUnkTRED::~MapObjectProfileUnkTRED() {}

@@ -24,5 +24,5 @@ ARM void ActorUnkEVCH::func_ov047_02135268(void) {}
 ARM void ActorUnkEVCH::func_ov047_021352e4(void) {}
 ARM void ActorUnkEVCH::func_ov047_021352f8(void) {}
 
-ActorUnkEVCH::~ActorUnkEVCH() {}
-ActorProfileUnkEVCH::~ActorProfileUnkEVCH() {}
+ARM ActorUnkEVCH::~ActorUnkEVCH() {}
+ARM ActorProfileUnkEVCH::~ActorProfileUnkEVCH() {}

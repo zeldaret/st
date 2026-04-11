@@ -109,5 +109,5 @@ ARM void ActorUnkHAMN::func_ov086_02158008(void) {}
 ARM void ActorUnkHAMN::func_ov086_02158024(void) {}
 ARM void ActorUnkHAMN::func_ov086_02158040(void) {}
 
-ActorUnkHAMN::~ActorUnkHAMN() {}
-ActorProfileUnkHAMN::~ActorProfileUnkHAMN() {}
+ARM ActorUnkHAMN::~ActorUnkHAMN() {}
+ARM ActorProfileUnkHAMN::~ActorProfileUnkHAMN() {}

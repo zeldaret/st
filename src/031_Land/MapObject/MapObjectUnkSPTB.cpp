@@ -32,5 +32,5 @@ ARM void MapObjectUnkSPTB::func_ov031_0210b9c0(void) {}
 ARM void MapObjectUnkSPTB::func_ov031_0210b9c4(void) {}
 ARM void MapObjectUnkSPTB::func_ov031_0210b9e0(void) {}
 
-MapObjectUnkSPTB::~MapObjectUnkSPTB() {}
-MapObjectProfileUnkSPTB::~MapObjectProfileUnkSPTB() {}
+ARM MapObjectUnkSPTB::~MapObjectUnkSPTB() {}
+ARM MapObjectProfileUnkSPTB::~MapObjectProfileUnkSPTB() {}

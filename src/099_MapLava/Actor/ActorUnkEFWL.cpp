@@ -27,5 +27,5 @@ ARM void ActorUnkEFWL::func_ov099_021813dc(void) {}
 ARM void ActorUnkEFWL::func_ov099_02181400(void) {}
 ARM void ActorUnkEFWL::func_ov099_0218142c(void) {}
 
-ActorUnkEFWL::~ActorUnkEFWL() {}
-ActorProfileUnkEFWL::~ActorProfileUnkEFWL() {}
+ARM ActorUnkEFWL::~ActorUnkEFWL() {}
+ARM ActorProfileUnkEFWL::~ActorProfileUnkEFWL() {}

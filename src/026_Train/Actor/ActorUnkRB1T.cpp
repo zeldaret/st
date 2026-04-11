@@ -75,5 +75,5 @@ ARM void ActorUnkRB1T::func_ov026_02120974(void) {}
 ARM void ActorUnkRB1T::func_ov026_021209d8(void) {}
 ARM void ActorUnkRB1T::func_ov026_02120a10(void) {}
 
-ActorUnkRB1T::~ActorUnkRB1T() {}
-ActorProfileUnkRB1T::~ActorProfileUnkRB1T() {}
+ARM ActorUnkRB1T::~ActorUnkRB1T() {}
+ARM ActorProfileUnkRB1T::~ActorProfileUnkRB1T() {}

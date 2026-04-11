@@ -43,5 +43,5 @@ ARM void ActorUnkNLTR::func_ov091_0216bfd0(void) {}
 ARM void ActorUnkNLTR::func_ov091_0216bfe0(void) {}
 ARM void ActorUnkNLTR::func_ov091_0216bfe8(void) {}
 
-ActorUnkNLTR::~ActorUnkNLTR() {}
-ActorProfileUnkNLTR::~ActorProfileUnkNLTR() {}
+ARM ActorUnkNLTR::~ActorUnkNLTR() {}
+ARM ActorProfileUnkNLTR::~ActorProfileUnkNLTR() {}

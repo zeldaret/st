@@ -31,5 +31,5 @@ ARM void ActorUnkTDKT::func_ov092_02177c58(void) {}
 ARM void ActorUnkTDKT::func_ov092_02177c88(void) {}
 ARM void ActorUnkTDKT::func_ov092_02177d00(void) {}
 
-ActorUnkTDKT::~ActorUnkTDKT() {}
-ActorProfileUnkTDKT::~ActorProfileUnkTDKT() {}
+ARM ActorUnkTDKT::~ActorUnkTDKT() {}
+ARM ActorProfileUnkTDKT::~ActorProfileUnkTDKT() {}

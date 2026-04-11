@@ -53,5 +53,5 @@ ARM void ActorUnkSHIT::func_ov036_0211d75c(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211d774(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211d790(void) {}
 
-ActorUnkSHIT::~ActorUnkSHIT() {}
-ActorProfileUnkSHIT::~ActorProfileUnkSHIT() {}
+ARM ActorUnkSHIT::~ActorUnkSHIT() {}
+ARM ActorProfileUnkSHIT::~ActorProfileUnkSHIT() {}

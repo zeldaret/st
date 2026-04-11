@@ -23,5 +23,5 @@ ARM void ActorUnkCAST::func_ov060_0215eca4(void) {}
 ARM void ActorUnkCAST::func_ov060_0215eca8(void) {}
 ARM void ActorUnkCAST::func_ov060_0215ecbc(void) {}
 
-ActorUnkCAST::~ActorUnkCAST() {}
-ActorProfileUnkCAST::~ActorProfileUnkCAST() {}
+ARM ActorUnkCAST::~ActorUnkCAST() {}
+ARM ActorProfileUnkCAST::~ActorProfileUnkCAST() {}

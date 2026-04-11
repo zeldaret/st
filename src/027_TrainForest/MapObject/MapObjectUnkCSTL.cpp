@@ -26,5 +26,5 @@ ARM void MapObjectUnkCSTL::func_ov027_02143de8(void) {}
 ARM void MapObjectUnkCSTL::func_ov027_02143e28(void) {}
 ARM void MapObjectUnkCSTL::func_ov027_02143e48(void) {}
 
-MapObjectUnkCSTL::~MapObjectUnkCSTL() {}
-MapObjectProfileUnkCSTL::~MapObjectProfileUnkCSTL() {}
+ARM MapObjectUnkCSTL::~MapObjectUnkCSTL() {}
+ARM MapObjectProfileUnkCSTL::~MapObjectProfileUnkCSTL() {}

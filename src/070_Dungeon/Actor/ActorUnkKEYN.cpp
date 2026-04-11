@@ -54,5 +54,5 @@ ARM void ActorUnkKEYN::func_ov070_0214266c(void) {}
 ARM void ActorUnkKEYN::func_ov070_02142688(void) {}
 ARM void ActorUnkKEYN::func_ov070_021426ac(void) {}
 
-ActorUnkKEYN::~ActorUnkKEYN() {}
-ActorProfileUnkKEYN::~ActorProfileUnkKEYN() {}
+ARM ActorUnkKEYN::~ActorUnkKEYN() {}
+ARM ActorProfileUnkKEYN::~ActorProfileUnkKEYN() {}

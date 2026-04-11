@@ -118,5 +118,5 @@ ARM void ActorUnkWTBS::func_ov083_0215a4f0(void) {}
 ARM void ActorUnkWTBS::func_ov083_0215a514(void) {}
 ARM void ActorUnkWTBS::func_ov083_0215a540(void) {}
 
-ActorUnkWTBS::~ActorUnkWTBS() {}
-ActorProfileUnkWTBS::~ActorProfileUnkWTBS() {}
+ARM ActorUnkWTBS::~ActorUnkWTBS() {}
+ARM ActorProfileUnkWTBS::~ActorProfileUnkWTBS() {}

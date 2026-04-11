@@ -28,5 +28,5 @@ ARM void MapObjectUnkWLMP::func_ov094_02171604(void) {}
 ARM void MapObjectUnkWLMP::func_ov094_02171674(void) {}
 ARM void MapObjectUnkWLMP::func_ov094_02171694(void) {}
 
-MapObjectUnkWLMP::~MapObjectUnkWLMP() {}
-MapObjectProfileUnkWLMP::~MapObjectProfileUnkWLMP() {}
+ARM MapObjectUnkWLMP::~MapObjectUnkWLMP() {}
+ARM MapObjectProfileUnkWLMP::~MapObjectProfileUnkWLMP() {}

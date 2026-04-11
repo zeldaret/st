@@ -27,5 +27,5 @@ ARM void MapObjectUnkGELG::func_ov034_021221ec(void) {}
 ARM void MapObjectUnkGELG::func_ov034_02122334(void) {}
 ARM void MapObjectUnkGELG::func_ov034_02122340(void) {}
 
-MapObjectUnkGELG::~MapObjectUnkGELG() {}
-MapObjectProfileUnkGELG::~MapObjectProfileUnkGELG() {}
+ARM MapObjectUnkGELG::~MapObjectUnkGELG() {}
+ARM MapObjectProfileUnkGELG::~MapObjectProfileUnkGELG() {}

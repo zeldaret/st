@@ -26,5 +26,5 @@ ARM void ActorUnkFLCT::func_ov061_02159360(void) {}
 ARM void ActorUnkFLCT::func_ov061_02159374(void) {}
 ARM void ActorUnkFLCT::func_ov061_02159408(void) {}
 
-ActorUnkFLCT::~ActorUnkFLCT() {}
-ActorProfileUnkFLCT::~ActorProfileUnkFLCT() {}
+ARM ActorUnkFLCT::~ActorUnkFLCT() {}
+ARM ActorProfileUnkFLCT::~ActorProfileUnkFLCT() {}

@@ -28,5 +28,5 @@ ARM void ActorUnkRCSG::func_ov070_02143f34(void) {}
 ARM void ActorUnkRCSG::func_ov070_02143f38(void) {}
 ARM void ActorUnkRCSG::func_ov070_02143f7c(void) {}
 
-ActorUnkRCSG::~ActorUnkRCSG() {}
-ActorProfileUnkRCSG::~ActorProfileUnkRCSG() {}
+ARM ActorUnkRCSG::~ActorUnkRCSG() {}
+ARM ActorProfileUnkRCSG::~ActorProfileUnkRCSG() {}

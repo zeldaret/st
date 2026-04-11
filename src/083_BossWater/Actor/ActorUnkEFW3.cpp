@@ -21,5 +21,5 @@ ARM ActorUnkEFW3::ActorUnkEFW3() {}
 ARM void ActorUnkEFW3::func_ov083_0215c6e8(void) {}
 ARM void ActorUnkEFW3::func_ov083_0215c784(void) {}
 
-ActorUnkEFW3::~ActorUnkEFW3() {}
-ActorProfileUnkEFW3::~ActorProfileUnkEFW3() {}
+ARM ActorUnkEFW3::~ActorUnkEFW3() {}
+ARM ActorProfileUnkEFW3::~ActorProfileUnkEFW3() {}

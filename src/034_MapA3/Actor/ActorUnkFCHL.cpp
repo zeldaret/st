@@ -24,5 +24,5 @@ ARM void ActorUnkFCHL::func_ov034_0211a208(void) {}
 ARM void ActorUnkFCHL::func_ov034_0211a21c(void) {}
 ARM void ActorUnkFCHL::func_ov034_0211a288(void) {}
 
-ActorUnkFCHL::~ActorUnkFCHL() {}
-ActorProfileUnkFCHL::~ActorProfileUnkFCHL() {}
+ARM ActorUnkFCHL::~ActorUnkFCHL() {}
+ARM ActorProfileUnkFCHL::~ActorProfileUnkFCHL() {}

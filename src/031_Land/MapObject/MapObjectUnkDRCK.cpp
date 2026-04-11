@@ -41,5 +41,5 @@ ARM void MapObjectUnkDRCK::func_ov031_021001a8(void) {}
 ARM void MapObjectUnkDRCK::func_ov031_021001ac(void) {}
 ARM void MapObjectUnkDRCK::func_ov031_021001b0(void) {}
 
-MapObjectUnkDRCK::~MapObjectUnkDRCK() {}
-MapObjectProfileUnkDRCK::~MapObjectProfileUnkDRCK() {}
+ARM MapObjectUnkDRCK::~MapObjectUnkDRCK() {}
+ARM MapObjectProfileUnkDRCK::~MapObjectProfileUnkDRCK() {}

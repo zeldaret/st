@@ -23,5 +23,5 @@ ARM void MapObjectUnkFNCE::func_ov094_02170b58(void) {}
 ARM void MapObjectUnkFNCE::func_ov094_02170d54(void) {}
 ARM void MapObjectUnkFNCE::func_ov094_02170db4(void) {}
 
-MapObjectUnkFNCE::~MapObjectUnkFNCE() {}
-MapObjectProfileUnkFNCE::~MapObjectProfileUnkFNCE() {}
+ARM MapObjectUnkFNCE::~MapObjectUnkFNCE() {}
+ARM MapObjectProfileUnkFNCE::~MapObjectProfileUnkFNCE() {}

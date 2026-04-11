@@ -22,5 +22,5 @@ ARM void ActorUnkE3GL::func_ov090_02171054(void) {}
 ARM void ActorUnkE3GL::func_ov090_02171064(void) {}
 ARM void ActorUnkE3GL::func_ov090_02171074(void) {}
 
-ActorUnkE3GL::~ActorUnkE3GL() {}
-ActorProfileUnkE3GL::~ActorProfileUnkE3GL() {}
+ARM ActorUnkE3GL::~ActorUnkE3GL() {}
+ARM ActorProfileUnkE3GL::~ActorProfileUnkE3GL() {}

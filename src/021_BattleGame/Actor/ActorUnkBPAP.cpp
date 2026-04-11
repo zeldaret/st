@@ -20,5 +20,5 @@ ARM ActorUnkBPAP::ActorUnkBPAP() {}
 
 ARM void ActorUnkBPAP::func_ov021_020f3858(void) {}
 
-ActorUnkBPAP::~ActorUnkBPAP() {}
-ActorProfileUnkBPAP::~ActorProfileUnkBPAP() {}
+ARM ActorUnkBPAP::~ActorUnkBPAP() {}
+ARM ActorProfileUnkBPAP::~ActorProfileUnkBPAP() {}

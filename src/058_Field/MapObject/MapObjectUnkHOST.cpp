@@ -21,5 +21,5 @@ ARM MapObjectUnkHOST::MapObjectUnkHOST() {}
 ARM void MapObjectUnkHOST::func_ov058_0214f838(void) {}
 ARM void MapObjectUnkHOST::func_ov058_0214f888(void) {}
 
-MapObjectUnkHOST::~MapObjectUnkHOST() {}
-MapObjectProfileUnkHOST::~MapObjectProfileUnkHOST() {}
+ARM MapObjectUnkHOST::~MapObjectUnkHOST() {}
+ARM MapObjectProfileUnkHOST::~MapObjectProfileUnkHOST() {}

@@ -24,5 +24,5 @@ ARM void ActorUnkATTG::func_ov031_020f3eac(void) {}
 ARM void ActorUnkATTG::func_ov031_020f3eec(void) {}
 ARM void ActorUnkATTG::func_ov031_020f4014(void) {}
 
-ActorUnkATTG::~ActorUnkATTG() {}
-ActorProfileUnkATTG::~ActorProfileUnkATTG() {}
+ARM ActorUnkATTG::~ActorUnkATTG() {}
+ARM ActorProfileUnkATTG::~ActorProfileUnkATTG() {}

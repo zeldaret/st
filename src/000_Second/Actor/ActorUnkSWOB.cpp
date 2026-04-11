@@ -22,5 +22,5 @@ ARM void ActorUnkSWOB::func_ov000_0209a948(void) {}
 ARM void ActorUnkSWOB::func_ov000_0209a9b4(void) {}
 ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {}
 
-ActorUnkSWOB::~ActorUnkSWOB() {}
-ActorProfileUnkSWOB::~ActorProfileUnkSWOB() {}
+ARM ActorUnkSWOB::~ActorUnkSWOB() {}
+ARM ActorProfileUnkSWOB::~ActorProfileUnkSWOB() {}

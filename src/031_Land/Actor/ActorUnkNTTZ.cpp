@@ -24,5 +24,5 @@ ARM void ActorUnkNTTZ::func_ov031_020f619c(void) {}
 ARM void ActorUnkNTTZ::func_ov031_020f61a0(void) {}
 ARM void ActorUnkNTTZ::func_ov031_020f61f0(void) {}
 
-ActorUnkNTTZ::~ActorUnkNTTZ() {}
-ActorProfileUnkNTTZ::~ActorProfileUnkNTTZ() {}
+ARM ActorUnkNTTZ::~ActorUnkNTTZ() {}
+ARM ActorProfileUnkNTTZ::~ActorProfileUnkNTTZ() {}

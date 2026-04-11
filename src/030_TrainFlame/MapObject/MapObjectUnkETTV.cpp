@@ -40,5 +40,5 @@ ARM void MapObjectUnkETTV::func_ov030_021428a8(void) {}
 ARM void MapObjectUnkETTV::func_ov030_02142918(void) {}
 ARM void MapObjectUnkETTV::func_ov030_02142960(void) {}
 
-MapObjectUnkETTV::~MapObjectUnkETTV() {}
-MapObjectProfileUnkETTV::~MapObjectProfileUnkETTV() {}
+ARM MapObjectUnkETTV::~MapObjectUnkETTV() {}
+ARM MapObjectProfileUnkETTV::~MapObjectProfileUnkETTV() {}

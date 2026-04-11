@@ -24,5 +24,5 @@ ARM void ActorUnkKGDB::func_ov041_021237e4(void) {}
 ARM void ActorUnkKGDB::func_ov041_0212382c(void) {}
 ARM void ActorUnkKGDB::func_ov041_02123a2c(void) {}
 
-ActorUnkKGDB::~ActorUnkKGDB() {}
-ActorProfileUnkKGDB::~ActorProfileUnkKGDB() {}
+ARM ActorUnkKGDB::~ActorUnkKGDB() {}
+ARM ActorProfileUnkKGDB::~ActorProfileUnkKGDB() {}

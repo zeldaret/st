@@ -66,5 +66,5 @@ ARM void ActorUnkMKUR::func_ov032_0211d910(void) {}
 ARM void ActorUnkMKUR::func_ov032_0211d920(void) {}
 ARM void ActorUnkMKUR::func_ov032_0211da0c(void) {}
 
-ActorUnkMKUR::~ActorUnkMKUR() {}
-ActorProfileUnkMKUR::~ActorProfileUnkMKUR() {}
+ARM ActorUnkMKUR::~ActorUnkMKUR() {}
+ARM ActorProfileUnkMKUR::~ActorProfileUnkMKUR() {}

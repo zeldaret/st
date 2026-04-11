@@ -32,5 +32,5 @@ ARM void ActorUnkBDBA::func_ov045_02128254(void) {}
 ARM void ActorUnkBDBA::func_ov045_02128264(void) {}
 ARM void ActorUnkBDBA::func_ov045_021282d0(void) {}
 
-ActorUnkBDBA::~ActorUnkBDBA() {}
-ActorProfileUnkBDBA::~ActorProfileUnkBDBA() {}
+ARM ActorUnkBDBA::~ActorUnkBDBA() {}
+ARM ActorProfileUnkBDBA::~ActorProfileUnkBDBA() {}

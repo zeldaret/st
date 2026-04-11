@@ -20,5 +20,5 @@ ARM ActorUnkSWON::ActorUnkSWON() {}
 
 ARM void ActorUnkSWON::func_ov031_020f7e34(void) {}
 
-ActorUnkSWON::~ActorUnkSWON() {}
-ActorProfileUnkSWON::~ActorProfileUnkSWON() {}
+ARM ActorUnkSWON::~ActorUnkSWON() {}
+ARM ActorProfileUnkSWON::~ActorProfileUnkSWON() {}

@@ -22,5 +22,5 @@ ARM void ActorUnkTTFT::func_ov030_0214d6c0(void) {}
 ARM void ActorUnkTTFT::func_ov030_0214d710(void) {}
 ARM void ActorUnkTTFT::func_ov030_0214d724(void) {}
 
-ActorUnkTTFT::~ActorUnkTTFT() {}
-ActorProfileUnkTTFT::~ActorProfileUnkTTFT() {}
+ARM ActorUnkTTFT::~ActorUnkTTFT() {}
+ARM ActorProfileUnkTTFT::~ActorProfileUnkTTFT() {}

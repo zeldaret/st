@@ -81,5 +81,5 @@ ARM void ActorUnkWDBA::func_ov090_0216daf8(void) {}
 ARM void ActorUnkWDBA::func_ov090_0216dca0(void) {}
 ARM void ActorUnkWDBA::func_ov090_0216dcd8(void) {}
 
-ActorUnkWDBA::~ActorUnkWDBA() {}
-ActorProfileUnkWDBA::~ActorProfileUnkWDBA() {}
+ARM ActorUnkWDBA::~ActorUnkWDBA() {}
+ARM ActorProfileUnkWDBA::~ActorProfileUnkWDBA() {}

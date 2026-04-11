@@ -32,5 +32,5 @@ ARM void MapObjectUnkDRTY::func_ov061_02159ce8(void) {}
 ARM void MapObjectUnkDRTY::func_ov061_02159d10(void) {}
 ARM void MapObjectUnkDRTY::func_ov061_02159d54(void) {}
 
-MapObjectUnkDRTY::~MapObjectUnkDRTY() {}
-MapObjectProfileUnkDRTY::~MapObjectProfileUnkDRTY() {}
+ARM MapObjectUnkDRTY::~MapObjectUnkDRTY() {}
+ARM MapObjectProfileUnkDRTY::~MapObjectProfileUnkDRTY() {}

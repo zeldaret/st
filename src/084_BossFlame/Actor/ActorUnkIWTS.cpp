@@ -139,5 +139,5 @@ ARM void ActorUnkIWTS::func_ov084_02159c40(void) {}
 ARM void ActorUnkIWTS::func_ov084_02159c54(void) {}
 ARM void ActorUnkIWTS::func_ov084_02159c70(void) {}
 
-ActorUnkIWTS::~ActorUnkIWTS() {}
-ActorProfileUnkIWTS::~ActorProfileUnkIWTS() {}
+ARM ActorUnkIWTS::~ActorUnkIWTS() {}
+ARM ActorProfileUnkIWTS::~ActorProfileUnkIWTS() {}

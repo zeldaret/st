@@ -36,5 +36,5 @@ ARM void MapObjectUnkKNBN::func_ov058_02151078(void) {}
 ARM void MapObjectUnkKNBN::func_ov058_02151098(void) {}
 ARM void MapObjectUnkKNBN::func_ov058_02151160(void) {}
 
-MapObjectUnkKNBN::~MapObjectUnkKNBN() {}
-MapObjectProfileUnkKNBN::~MapObjectProfileUnkKNBN() {}
+ARM MapObjectUnkKNBN::~MapObjectUnkKNBN() {}
+ARM MapObjectProfileUnkKNBN::~MapObjectProfileUnkKNBN() {}

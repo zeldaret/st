@@ -37,5 +37,5 @@ ARM void MapObjectUnkSWCB::func_ov058_02152564(void) {}
 ARM void MapObjectUnkSWCB::func_ov058_02152574(void) {}
 ARM void MapObjectUnkSWCB::func_ov058_0215266c(void) {}
 
-MapObjectUnkSWCB::~MapObjectUnkSWCB() {}
-MapObjectProfileUnkSWCB::~MapObjectProfileUnkSWCB() {}
+ARM MapObjectUnkSWCB::~MapObjectUnkSWCB() {}
+ARM MapObjectProfileUnkSWCB::~MapObjectProfileUnkSWCB() {}

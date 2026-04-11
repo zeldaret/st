@@ -20,5 +20,5 @@ ARM ActorUnkRMBC::ActorUnkRMBC() {}
 
 ARM void ActorUnkRMBC::func_ov062_0215a464(void) {}
 
-ActorUnkRMBC::~ActorUnkRMBC() {}
-ActorProfileUnkRMBC::~ActorProfileUnkRMBC() {}
+ARM ActorUnkRMBC::~ActorUnkRMBC() {}
+ARM ActorProfileUnkRMBC::~ActorProfileUnkRMBC() {}

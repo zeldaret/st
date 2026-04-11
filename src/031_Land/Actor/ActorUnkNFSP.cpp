@@ -35,5 +35,5 @@ ARM void ActorUnkNFSP::func_ov031_020fbc94(void) {}
 ARM void ActorUnkNFSP::func_ov031_020fbcc0(void) {}
 ARM void ActorUnkNFSP::func_ov031_020fbcf0(void) {}
 
-ActorUnkNFSP::~ActorUnkNFSP() {}
-ActorProfileUnkNFSP::~ActorProfileUnkNFSP() {}
+ARM ActorUnkNFSP::~ActorUnkNFSP() {}
+ARM ActorProfileUnkNFSP::~ActorProfileUnkNFSP() {}

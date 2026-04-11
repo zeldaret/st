@@ -24,5 +24,5 @@ ARM void ActorUnkNSHD::func_ov062_02158df4(void) {}
 ARM void ActorUnkNSHD::func_ov062_02158e38(void) {}
 ARM void ActorUnkNSHD::func_ov062_02158e4c(void) {}
 
-ActorUnkNSHD::~ActorUnkNSHD() {}
-ActorProfileUnkNSHD::~ActorProfileUnkNSHD() {}
+ARM ActorUnkNSHD::~ActorUnkNSHD() {}
+ARM ActorProfileUnkNSHD::~ActorProfileUnkNSHD() {}

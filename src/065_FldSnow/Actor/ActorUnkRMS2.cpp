@@ -20,5 +20,5 @@ ARM ActorUnkRMS2::ActorUnkRMS2() {}
 
 ARM void ActorUnkRMS2::func_ov065_02159050(void) {}
 
-ActorUnkRMS2::~ActorUnkRMS2() {}
-ActorProfileUnkRMS2::~ActorProfileUnkRMS2() {}
+ARM ActorUnkRMS2::~ActorUnkRMS2() {}
+ARM ActorProfileUnkRMS2::~ActorProfileUnkRMS2() {}

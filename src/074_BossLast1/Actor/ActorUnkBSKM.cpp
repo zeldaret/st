@@ -104,5 +104,5 @@ ARM void ActorUnkBSKM::func_ov074_0215c850(void) {}
 ARM void ActorUnkBSKM::func_ov074_0215c980(void) {}
 ARM void ActorUnkBSKM::func_ov074_0215c99c(void) {}
 
-ActorUnkBSKM::~ActorUnkBSKM() {}
-ActorProfileUnkBSKM::~ActorProfileUnkBSKM() {}
+ARM ActorUnkBSKM::~ActorUnkBSKM() {}
+ARM ActorProfileUnkBSKM::~ActorProfileUnkBSKM() {}

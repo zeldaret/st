@@ -20,5 +20,5 @@ ARM MapObjectUnkEXHS::MapObjectUnkEXHS() {}
 
 ARM void MapObjectUnkEXHS::func_ov058_0214fdc0(void) {}
 
-MapObjectUnkEXHS::~MapObjectUnkEXHS() {}
-MapObjectProfileUnkEXHS::~MapObjectProfileUnkEXHS() {}
+ARM MapObjectUnkEXHS::~MapObjectUnkEXHS() {}
+ARM MapObjectProfileUnkEXHS::~MapObjectProfileUnkEXHS() {}

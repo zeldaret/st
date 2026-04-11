@@ -22,5 +22,5 @@ ARM void ActorUnkRMTR::func_ov059_02162a9c(void) {}
 ARM void ActorUnkRMTR::func_ov059_02162ad4(void) {}
 ARM void ActorUnkRMTR::func_ov059_02162af4(void) {}
 
-ActorUnkRMTR::~ActorUnkRMTR() {}
-ActorProfileUnkRMTR::~ActorProfileUnkRMTR() {}
+ARM ActorUnkRMTR::~ActorUnkRMTR() {}
+ARM ActorProfileUnkRMTR::~ActorProfileUnkRMTR() {}

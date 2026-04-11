@@ -71,5 +71,5 @@ ARM void ActorUnkCHUC::func_ov055_0213b25c(void) {}
 ARM void ActorUnkCHUC::func_ov055_0213b264(void) {}
 ARM void ActorUnkCHUC::func_ov055_0213b278(void) {}
 
-ActorUnkCHUC::~ActorUnkCHUC() {}
-ActorProfileUnkCHUC::~ActorProfileUnkCHUC() {}
+ARM ActorUnkCHUC::~ActorUnkCHUC() {}
+ARM ActorProfileUnkCHUC::~ActorProfileUnkCHUC() {}

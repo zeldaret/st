@@ -20,5 +20,5 @@ ARM ActorUnkRMST::ActorUnkRMST() {}
 
 ARM void ActorUnkRMST::func_ov036_0211dea0(void) {}
 
-ActorUnkRMST::~ActorUnkRMST() {}
-ActorProfileUnkRMST::~ActorProfileUnkRMST() {}
+ARM ActorUnkRMST::~ActorUnkRMST() {}
+ARM ActorProfileUnkRMST::~ActorProfileUnkRMST() {}

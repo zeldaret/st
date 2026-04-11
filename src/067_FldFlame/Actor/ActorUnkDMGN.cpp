@@ -32,5 +32,5 @@ ARM void ActorUnkDMGN::func_ov067_0215af34(void) {}
 ARM void ActorUnkDMGN::func_ov067_0215afa4(void) {}
 ARM void ActorUnkDMGN::func_ov067_0215afd8(void) {}
 
-ActorUnkDMGN::~ActorUnkDMGN() {}
-ActorProfileUnkDMGN::~ActorProfileUnkDMGN() {}
+ARM ActorUnkDMGN::~ActorUnkDMGN() {}
+ARM ActorProfileUnkDMGN::~ActorProfileUnkDMGN() {}

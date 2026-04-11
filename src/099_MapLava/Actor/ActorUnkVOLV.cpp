@@ -23,5 +23,5 @@ ARM void ActorUnkVOLV::func_ov099_02181ae8(void) {}
 ARM void ActorUnkVOLV::func_ov099_02181b14(void) {}
 ARM void ActorUnkVOLV::func_ov099_02181b28(void) {}
 
-ActorUnkVOLV::~ActorUnkVOLV() {}
-ActorProfileUnkVOLV::~ActorProfileUnkVOLV() {}
+ARM ActorUnkVOLV::~ActorUnkVOLV() {}
+ARM ActorProfileUnkVOLV::~ActorProfileUnkVOLV() {}

@@ -24,5 +24,5 @@ ARM void ActorUnkSSFC::func_ov079_02152e00(void) {}
 ARM void ActorUnkSSFC::func_ov079_02152e4c(void) {}
 ARM void ActorUnkSSFC::func_ov079_02152ed4(void) {}
 
-ActorUnkSSFC::~ActorUnkSSFC() {}
-ActorProfileUnkSSFC::~ActorProfileUnkSSFC() {}
+ARM ActorUnkSSFC::~ActorUnkSSFC() {}
+ARM ActorProfileUnkSSFC::~ActorProfileUnkSSFC() {}

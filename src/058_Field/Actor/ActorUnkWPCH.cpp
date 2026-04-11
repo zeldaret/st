@@ -26,5 +26,5 @@ ARM void ActorUnkWPCH::func_ov058_0214d570(void) {}
 ARM void ActorUnkWPCH::func_ov058_0214d684(void) {}
 ARM void ActorUnkWPCH::func_ov058_0214d694(void) {}
 
-ActorUnkWPCH::~ActorUnkWPCH() {}
-ActorProfileUnkWPCH::~ActorProfileUnkWPCH() {}
+ARM ActorUnkWPCH::~ActorUnkWPCH() {}
+ARM ActorProfileUnkWPCH::~ActorProfileUnkWPCH() {}

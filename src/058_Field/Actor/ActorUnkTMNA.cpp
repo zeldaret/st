@@ -28,5 +28,5 @@ ARM void ActorUnkTMNA::func_ov058_0214dbe4(void) {}
 ARM void ActorUnkTMNA::func_ov058_0214dc88(void) {}
 ARM void ActorUnkTMNA::func_ov058_0214dca8(void) {}
 
-ActorUnkTMNA::~ActorUnkTMNA() {}
-ActorProfileUnkTMNA::~ActorProfileUnkTMNA() {}
+ARM ActorUnkTMNA::~ActorUnkTMNA() {}
+ARM ActorProfileUnkTMNA::~ActorProfileUnkTMNA() {}

@@ -21,5 +21,5 @@ ARM MapObjectUnkDRGN::MapObjectUnkDRGN() {}
 ARM void MapObjectUnkDRGN::func_ov067_0215bb08(void) {}
 ARM void MapObjectUnkDRGN::func_ov067_0215bce0(void) {}
 
-MapObjectUnkDRGN::~MapObjectUnkDRGN() {}
-MapObjectProfileUnkDRGN::~MapObjectProfileUnkDRGN() {}
+ARM MapObjectUnkDRGN::~MapObjectUnkDRGN() {}
+ARM MapObjectProfileUnkDRGN::~MapObjectProfileUnkDRGN() {}

@@ -23,5 +23,5 @@ ARM void ActorUnkTSMT::func_ov091_0216eff4(void) {}
 ARM void ActorUnkTSMT::func_ov091_0216f024(void) {}
 ARM void ActorUnkTSMT::func_ov091_0216f034(void) {}
 
-ActorUnkTSMT::~ActorUnkTSMT() {}
-ActorProfileUnkTSMT::~ActorProfileUnkTSMT() {}
+ARM ActorUnkTSMT::~ActorUnkTSMT() {}
+ARM ActorProfileUnkTSMT::~ActorProfileUnkTSMT() {}

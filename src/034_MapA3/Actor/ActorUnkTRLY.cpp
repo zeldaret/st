@@ -76,5 +76,5 @@ ARM void ActorUnkTRLY::func_ov034_0211e204(void) {}
 ARM void ActorUnkTRLY::func_ov034_0211e234(void) {}
 ARM void ActorUnkTRLY::func_ov034_0211e28c(void) {}
 
-ActorUnkTRLY::~ActorUnkTRLY() {}
-ActorProfileUnkTRLY::~ActorProfileUnkTRLY() {}
+ARM ActorUnkTRLY::~ActorUnkTRLY() {}
+ARM ActorProfileUnkTRLY::~ActorProfileUnkTRLY() {}

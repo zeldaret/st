@@ -73,5 +73,5 @@ ARM void ActorUnkPPPM::func_ov074_02161a0c(void) {}
 ARM void ActorUnkPPPM::func_ov074_02161ac8(void) {}
 ARM void ActorUnkPPPM::func_ov074_02161be8(void) {}
 
-ActorUnkPPPM::~ActorUnkPPPM() {}
-ActorProfileUnkPPPM::~ActorProfileUnkPPPM() {}
+ARM ActorUnkPPPM::~ActorUnkPPPM() {}
+ARM ActorProfileUnkPPPM::~ActorProfileUnkPPPM() {}

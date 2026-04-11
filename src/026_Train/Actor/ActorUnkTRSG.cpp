@@ -23,5 +23,5 @@ ARM void ActorUnkTRSG::func_ov026_02123700(void) {}
 ARM void ActorUnkTRSG::func_ov026_02123730(void) {}
 ARM void ActorUnkTRSG::func_ov026_0212386c(void) {}
 
-ActorUnkTRSG::~ActorUnkTRSG() {}
-ActorProfileUnkTRSG::~ActorProfileUnkTRSG() {}
+ARM ActorUnkTRSG::~ActorUnkTRSG() {}
+ARM ActorProfileUnkTRSG::~ActorProfileUnkTRSG() {}

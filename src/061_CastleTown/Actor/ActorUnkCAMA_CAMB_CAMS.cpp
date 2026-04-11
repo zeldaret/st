@@ -54,6 +54,6 @@ ARM ActorProfileUnkCAMS::ActorProfileUnkCAMS() :
 
 ARM ActorUnkCAMS::ActorUnkCAMS() {}
 
-ActorProfileUnkCAMA::~ActorProfileUnkCAMA() {}
-ActorProfileUnkCAMB::~ActorProfileUnkCAMB() {}
-ActorProfileUnkCAMS::~ActorProfileUnkCAMS() {}
+ARM ActorProfileUnkCAMA::~ActorProfileUnkCAMA() {}
+ARM ActorProfileUnkCAMB::~ActorProfileUnkCAMB() {}
+ARM ActorProfileUnkCAMS::~ActorProfileUnkCAMS() {}

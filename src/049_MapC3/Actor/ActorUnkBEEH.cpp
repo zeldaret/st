@@ -39,5 +39,5 @@ ARM void ActorUnkBEEH::func_ov049_02131e58(void) {}
 ARM void ActorUnkBEEH::func_ov049_02131f60(void) {}
 ARM void ActorUnkBEEH::func_ov049_02131fc4(void) {}
 
-ActorUnkBEEH::~ActorUnkBEEH() {}
-ActorProfileUnkBEEH::~ActorProfileUnkBEEH() {}
+ARM ActorUnkBEEH::~ActorUnkBEEH() {}
+ARM ActorProfileUnkBEEH::~ActorProfileUnkBEEH() {}

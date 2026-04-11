@@ -41,5 +41,5 @@ ARM void ActorUnkFOMD::func_ov064_02159de8(void) {}
 ARM void ActorUnkFOMD::func_ov064_02159e14(void) {}
 ARM void ActorUnkFOMD::func_ov064_02159e30(void) {}
 
-ActorUnkFOMD::~ActorUnkFOMD() {}
-ActorProfileUnkFOMD::~ActorProfileUnkFOMD() {}
+ARM ActorUnkFOMD::~ActorUnkFOMD() {}
+ARM ActorProfileUnkFOMD::~ActorProfileUnkFOMD() {}

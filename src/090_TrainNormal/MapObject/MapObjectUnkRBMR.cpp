@@ -21,5 +21,5 @@ ARM MapObjectUnkRBMR::MapObjectUnkRBMR() {}
 ARM void MapObjectUnkRBMR::func_ov090_02174bf8(void) {}
 ARM void MapObjectUnkRBMR::func_ov090_02174c0c(void) {}
 
-MapObjectUnkRBMR::~MapObjectUnkRBMR() {}
-MapObjectProfileUnkRBMR::~MapObjectProfileUnkRBMR() {}
+ARM MapObjectUnkRBMR::~MapObjectUnkRBMR() {}
+ARM MapObjectProfileUnkRBMR::~MapObjectProfileUnkRBMR() {}

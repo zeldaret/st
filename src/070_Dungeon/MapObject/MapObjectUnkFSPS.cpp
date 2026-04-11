@@ -22,5 +22,5 @@ ARM void MapObjectUnkFSPS::func_ov070_02145200(void) {}
 ARM void MapObjectUnkFSPS::func_ov070_0214520c(void) {}
 ARM void MapObjectUnkFSPS::func_ov070_0214525c(void) {}
 
-MapObjectUnkFSPS::~MapObjectUnkFSPS() {}
-MapObjectProfileUnkFSPS::~MapObjectProfileUnkFSPS() {}
+ARM MapObjectUnkFSPS::~MapObjectUnkFSPS() {}
+ARM MapObjectProfileUnkFSPS::~MapObjectProfileUnkFSPS() {}

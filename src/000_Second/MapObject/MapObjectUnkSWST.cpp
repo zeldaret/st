@@ -29,5 +29,5 @@ ARM void MapObjectUnkSWST::func_ov000_0209e2b4(void) {}
 ARM void MapObjectUnkSWST::func_ov000_0209e38c(void) {}
 ARM void MapObjectUnkSWST::func_ov000_0209e3c8(void) {}
 
-MapObjectUnkSWST::~MapObjectUnkSWST() {}
-MapObjectProfileUnkSWST::~MapObjectProfileUnkSWST() {}
+ARM MapObjectUnkSWST::~MapObjectUnkSWST() {}
+ARM MapObjectProfileUnkSWST::~MapObjectProfileUnkSWST() {}

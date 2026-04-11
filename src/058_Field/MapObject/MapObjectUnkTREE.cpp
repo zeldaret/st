@@ -25,5 +25,5 @@ ARM void MapObjectUnkTREE::func_ov058_0214e330(void) {}
 ARM void MapObjectUnkTREE::func_ov058_0214e338(void) {}
 ARM void MapObjectUnkTREE::func_ov058_0214e3e8(void) {}
 
-MapObjectUnkTREE::~MapObjectUnkTREE() {}
-MapObjectProfileUnkTREE::~MapObjectProfileUnkTREE() {}
+ARM MapObjectUnkTREE::~MapObjectUnkTREE() {}
+ARM MapObjectProfileUnkTREE::~MapObjectProfileUnkTREE() {}

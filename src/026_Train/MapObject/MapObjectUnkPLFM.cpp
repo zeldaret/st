@@ -36,5 +36,5 @@ ARM void MapObjectUnkPLFM::func_ov026_02108d8c(void) {}
 ARM void MapObjectUnkPLFM::func_ov026_02108da8(void) {}
 ARM void MapObjectUnkPLFM::func_ov026_02108df4(void) {}
 
-MapObjectUnkPLFM::~MapObjectUnkPLFM() {}
-MapObjectProfileUnkPLFM::~MapObjectProfileUnkPLFM() {}
+ARM MapObjectUnkPLFM::~MapObjectUnkPLFM() {}
+ARM MapObjectProfileUnkPLFM::~MapObjectProfileUnkPLFM() {}

@@ -23,5 +23,5 @@ ARM void ActorUnkSEAT::func_ov098_02182110(void) {}
 ARM void ActorUnkSEAT::func_ov098_0218212c(void) {}
 ARM void ActorUnkSEAT::func_ov098_02182140(void) {}
 
-ActorUnkSEAT::~ActorUnkSEAT() {}
-ActorProfileUnkSEAT::~ActorProfileUnkSEAT() {}
+ARM ActorUnkSEAT::~ActorUnkSEAT() {}
+ARM ActorProfileUnkSEAT::~ActorProfileUnkSEAT() {}

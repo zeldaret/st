@@ -145,5 +145,5 @@ ARM void ActorUnkMRD2::func_ov075_0215de38(void) {}
 ARM void ActorUnkMRD2::func_ov075_0215dee8(void) {}
 ARM void ActorUnkMRD2::func_ov075_0215def4(void) {}
 
-ActorUnkMRD2::~ActorUnkMRD2() {}
-ActorProfileUnkMRD2::~ActorProfileUnkMRD2() {}
+ARM ActorUnkMRD2::~ActorUnkMRD2() {}
+ARM ActorProfileUnkMRD2::~ActorProfileUnkMRD2() {}

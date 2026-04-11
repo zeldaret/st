@@ -32,5 +32,5 @@ ARM void ActorUnkFSIR::func_ov056_0213b144(void) {}
 ARM void ActorUnkFSIR::func_ov056_0213b148(void) {}
 ARM void ActorUnkFSIR::func_ov056_0213b234(void) {}
 
-ActorUnkFSIR::~ActorUnkFSIR() {}
-ActorProfileUnkFSIR::~ActorProfileUnkFSIR() {}
+ARM ActorUnkFSIR::~ActorUnkFSIR() {}
+ARM ActorProfileUnkFSIR::~ActorProfileUnkFSIR() {}

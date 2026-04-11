@@ -25,5 +25,5 @@ ARM void ActorUnkNICO::func_ov062_02158690(void) {}
 ARM void ActorUnkNICO::func_ov062_021586bc(void) {}
 ARM void ActorUnkNICO::func_ov062_021586d8(void) {}
 
-ActorUnkNICO::~ActorUnkNICO() {}
-ActorProfileUnkNICO::~ActorProfileUnkNICO() {}
+ARM ActorUnkNICO::~ActorUnkNICO() {}
+ARM ActorProfileUnkNICO::~ActorProfileUnkNICO() {}

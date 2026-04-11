@@ -25,5 +25,5 @@ ARM void MapObjectUnkSWEY::func_ov070_02147b48(void) {}
 ARM void MapObjectUnkSWEY::func_ov070_02147c10(void) {}
 ARM void MapObjectUnkSWEY::func_ov070_02147ca8(void) {}
 
-MapObjectUnkSWEY::~MapObjectUnkSWEY() {}
-MapObjectProfileUnkSWEY::~MapObjectProfileUnkSWEY() {}
+ARM MapObjectUnkSWEY::~MapObjectUnkSWEY() {}
+ARM MapObjectProfileUnkSWEY::~MapObjectProfileUnkSWEY() {}

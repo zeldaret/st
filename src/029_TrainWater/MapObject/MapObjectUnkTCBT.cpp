@@ -38,5 +38,5 @@ ARM void MapObjectUnkTCBT::func_ov029_02145174(void) {}
 ARM void MapObjectUnkTCBT::func_ov029_021451f8(void) {}
 ARM void MapObjectUnkTCBT::func_ov029_02145324(void) {}
 
-MapObjectUnkTCBT::~MapObjectUnkTCBT() {}
-MapObjectProfileUnkTCBT::~MapObjectProfileUnkTCBT() {}
+ARM MapObjectUnkTCBT::~MapObjectUnkTCBT() {}
+ARM MapObjectProfileUnkTCBT::~MapObjectProfileUnkTCBT() {}

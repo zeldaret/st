@@ -23,5 +23,5 @@ ARM void ActorUnkDMT2::func_ov088_0216cd90(void) {}
 ARM void ActorUnkDMT2::func_ov088_0216cf4c(void) {}
 ARM void ActorUnkDMT2::func_ov088_0216cf50(void) {}
 
-ActorUnkDMT2::~ActorUnkDMT2() {}
-ActorProfileUnkDMT2::~ActorProfileUnkDMT2() {}
+ARM ActorUnkDMT2::~ActorUnkDMT2() {}
+ARM ActorProfileUnkDMT2::~ActorProfileUnkDMT2() {}

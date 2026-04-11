@@ -88,5 +88,5 @@ ARM void ActorUnkGHOS::func_ov047_02135144(void) {}
 ARM void ActorUnkGHOS::func_ov047_02135160(void) {}
 ARM void ActorUnkGHOS::func_ov047_0213517c(void) {}
 
-ActorUnkGHOS::~ActorUnkGHOS() {}
-ActorProfileUnkGHOS::~ActorProfileUnkGHOS() {}
+ARM ActorUnkGHOS::~ActorUnkGHOS() {}
+ARM ActorProfileUnkGHOS::~ActorProfileUnkGHOS() {}

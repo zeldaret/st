@@ -22,5 +22,5 @@ ARM void ActorUnkKEYB::func_ov041_021235b0(void) {}
 ARM void ActorUnkKEYB::func_ov041_021235e8(void) {}
 ARM void ActorUnkKEYB::func_ov041_02123630(void) {}
 
-ActorUnkKEYB::~ActorUnkKEYB() {}
-ActorProfileUnkKEYB::~ActorProfileUnkKEYB() {}
+ARM ActorUnkKEYB::~ActorUnkKEYB() {}
+ARM ActorProfileUnkKEYB::~ActorProfileUnkKEYB() {}

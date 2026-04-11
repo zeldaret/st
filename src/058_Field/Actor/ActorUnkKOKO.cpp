@@ -78,5 +78,5 @@ ARM void ActorUnkKOKO::func_ov058_02141d70(void) {}
 ARM void ActorUnkKOKO::func_ov058_02141d8c(void) {}
 ARM void ActorUnkKOKO::func_ov058_02141da8(void) {}
 
-ActorUnkKOKO::~ActorUnkKOKO() {}
-ActorProfileUnkKOKO::~ActorProfileUnkKOKO() {}
+ARM ActorUnkKOKO::~ActorUnkKOKO() {}
+ARM ActorProfileUnkKOKO::~ActorProfileUnkKOKO() {}

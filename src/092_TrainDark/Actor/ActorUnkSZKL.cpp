@@ -36,5 +36,5 @@ ARM void ActorUnkSZKL::func_ov092_02178b8c(void) {}
 ARM void ActorUnkSZKL::func_ov092_02178c08(void) {}
 ARM void ActorUnkSZKL::func_ov092_02178c58(void) {}
 
-ActorUnkSZKL::~ActorUnkSZKL() {}
-ActorProfileUnkSZKL::~ActorProfileUnkSZKL() {}
+ARM ActorUnkSZKL::~ActorUnkSZKL() {}
+ARM ActorProfileUnkSZKL::~ActorProfileUnkSZKL() {}

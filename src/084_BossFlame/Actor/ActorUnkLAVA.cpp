@@ -35,5 +35,5 @@ ARM void ActorUnkLAVA::func_ov084_0215e9fc(void) {}
 ARM void ActorUnkLAVA::func_ov084_0215ea14(void) {}
 ARM void ActorUnkLAVA::func_ov084_0215eae4(void) {}
 
-ActorUnkLAVA::~ActorUnkLAVA() {}
-ActorProfileUnkLAVA::~ActorProfileUnkLAVA() {}
+ARM ActorUnkLAVA::~ActorUnkLAVA() {}
+ARM ActorProfileUnkLAVA::~ActorProfileUnkLAVA() {}

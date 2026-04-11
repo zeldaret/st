@@ -22,5 +22,5 @@ ARM void MapObjectUnkMTIC::func_ov065_02159f08(void) {}
 ARM void MapObjectUnkMTIC::func_ov065_02159f54(void) {}
 ARM void MapObjectUnkMTIC::func_ov065_02159f58(void) {}
 
-MapObjectUnkMTIC::~MapObjectUnkMTIC() {}
-MapObjectProfileUnkMTIC::~MapObjectProfileUnkMTIC() {}
+ARM MapObjectUnkMTIC::~MapObjectUnkMTIC() {}
+ARM MapObjectProfileUnkMTIC::~MapObjectProfileUnkMTIC() {}

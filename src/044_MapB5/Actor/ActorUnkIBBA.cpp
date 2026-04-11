@@ -43,5 +43,5 @@ ARM void ActorUnkIBBA::func_ov044_0212b6a8(void) {}
 ARM void ActorUnkIBBA::func_ov044_0212b6c4(void) {}
 ARM void ActorUnkIBBA::func_ov044_0212b6e0(void) {}
 
-ActorUnkIBBA::~ActorUnkIBBA() {}
-ActorProfileUnkIBBA::~ActorProfileUnkIBBA() {}
+ARM ActorUnkIBBA::~ActorUnkIBBA() {}
+ARM ActorProfileUnkIBBA::~ActorProfileUnkIBBA() {}

@@ -24,5 +24,5 @@ ARM void ActorUnkYWIS::func_ov065_021597f4(void) {}
 ARM void ActorUnkYWIS::func_ov065_02159808(void) {}
 ARM void ActorUnkYWIS::func_ov065_02159810(void) {}
 
-ActorUnkYWIS::~ActorUnkYWIS() {}
-ActorProfileUnkYWIS::~ActorProfileUnkYWIS() {}
+ARM ActorUnkYWIS::~ActorUnkYWIS() {}
+ARM ActorProfileUnkYWIS::~ActorProfileUnkYWIS() {}

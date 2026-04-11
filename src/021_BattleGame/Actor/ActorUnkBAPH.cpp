@@ -93,5 +93,5 @@ ARM void ActorUnkBAPH::func_ov021_020f01c0(void) {}
 ARM void ActorUnkBAPH::func_ov021_020f01dc(void) {}
 ARM void ActorUnkBAPH::func_ov021_020f0264(void) {}
 
-ActorUnkBAPH::~ActorUnkBAPH() {}
-ActorProfileUnkBAPH::~ActorProfileUnkBAPH() {}
+ARM ActorUnkBAPH::~ActorUnkBAPH() {}
+ARM ActorProfileUnkBAPH::~ActorProfileUnkBAPH() {}

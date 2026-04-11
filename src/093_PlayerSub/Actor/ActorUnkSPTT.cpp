@@ -24,5 +24,5 @@ ARM void ActorUnkSPTT::func_ov093_02176ea4(void) {}
 ARM void ActorUnkSPTT::func_ov093_02176ef8(void) {}
 ARM void ActorUnkSPTT::func_ov093_02176fa8(void) {}
 
-ActorUnkSPTT::~ActorUnkSPTT() {}
-ActorProfileUnkSPTT::~ActorProfileUnkSPTT() {}
+ARM ActorUnkSPTT::~ActorUnkSPTT() {}
+ARM ActorProfileUnkSPTT::~ActorProfileUnkSPTT() {}

@@ -40,5 +40,5 @@ ARM void ActorUnkMAGR::func_ov074_02152c74(void) {}
 ARM void ActorUnkMAGR::func_ov074_02152c88(void) {}
 ARM void ActorUnkMAGR::func_ov074_02152df0(void) {}
 
-ActorUnkMAGR::~ActorUnkMAGR() {}
-ActorProfileUnkMAGR::~ActorProfileUnkMAGR() {}
+ARM ActorUnkMAGR::~ActorUnkMAGR() {}
+ARM ActorProfileUnkMAGR::~ActorProfileUnkMAGR() {}

@@ -29,5 +29,5 @@ ARM void ActorUnkDMFR::func_ov088_021707a4(void) {}
 ARM void ActorUnkDMFR::func_ov088_021707b4(void) {}
 ARM void ActorUnkDMFR::func_ov088_02170800(void) {}
 
-ActorUnkDMFR::~ActorUnkDMFR() {}
-ActorProfileUnkDMFR::~ActorProfileUnkDMFR() {}
+ARM ActorUnkDMFR::~ActorUnkDMFR() {}
+ARM ActorProfileUnkDMFR::~ActorProfileUnkDMFR() {}

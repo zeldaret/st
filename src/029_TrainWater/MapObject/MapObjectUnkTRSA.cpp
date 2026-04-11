@@ -35,5 +35,5 @@ ARM void MapObjectUnkTRSA::func_ov029_02143110(void) {}
 ARM void MapObjectUnkTRSA::func_ov029_02143130(void) {}
 ARM void MapObjectUnkTRSA::func_ov029_021431c0(void) {}
 
-MapObjectUnkTRSA::~MapObjectUnkTRSA() {}
-MapObjectProfileUnkTRSA::~MapObjectProfileUnkTRSA() {}
+ARM MapObjectUnkTRSA::~MapObjectUnkTRSA() {}
+ARM MapObjectProfileUnkTRSA::~MapObjectProfileUnkTRSA() {}

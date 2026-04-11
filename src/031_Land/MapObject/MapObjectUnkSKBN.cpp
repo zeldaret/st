@@ -24,5 +24,5 @@ ARM void MapObjectUnkSKBN::func_ov031_02105690(void) {}
 ARM void MapObjectUnkSKBN::func_ov031_021056bc(void) {}
 ARM void MapObjectUnkSKBN::func_ov031_021057b4(void) {}
 
-MapObjectUnkSKBN::~MapObjectUnkSKBN() {}
-MapObjectProfileUnkSKBN::~MapObjectProfileUnkSKBN() {}
+ARM MapObjectUnkSKBN::~MapObjectUnkSKBN() {}
+ARM MapObjectProfileUnkSKBN::~MapObjectProfileUnkSKBN() {}

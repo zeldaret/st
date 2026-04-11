@@ -36,5 +36,5 @@ ARM void MapObjectUnkTWPG::func_ov090_02172104(void) {}
 ARM void MapObjectUnkTWPG::func_ov090_0217213c(void) {}
 ARM void MapObjectUnkTWPG::func_ov090_02172148(void) {}
 
-MapObjectUnkTWPG::~MapObjectUnkTWPG() {}
-MapObjectProfileUnkTWPG::~MapObjectProfileUnkTWPG() {}
+ARM MapObjectUnkTWPG::~MapObjectUnkTWPG() {}
+ARM MapObjectProfileUnkTWPG::~MapObjectProfileUnkTWPG() {}

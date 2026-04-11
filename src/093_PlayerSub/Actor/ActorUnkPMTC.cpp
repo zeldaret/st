@@ -18,5 +18,5 @@ ARM ActorProfileUnkPMTC::ActorProfileUnkPMTC() :
 
 ARM ActorUnkPMTC::ActorUnkPMTC() {}
 
-ActorUnkPMTC::~ActorUnkPMTC() {}
-ActorProfileUnkPMTC::~ActorProfileUnkPMTC() {}
+ARM ActorUnkPMTC::~ActorUnkPMTC() {}
+ARM ActorProfileUnkPMTC::~ActorProfileUnkPMTC() {}

@@ -60,5 +60,5 @@ ARM void ActorUnkZLSS::func_ov039_0211c6bc(void) {}
 ARM void ActorUnkZLSS::func_ov039_0211c6c0(void) {}
 ARM void ActorUnkZLSS::func_ov039_0211c6d4(void) {}
 
-ActorUnkZLSS::~ActorUnkZLSS() {}
-ActorProfileUnkZLSS::~ActorProfileUnkZLSS() {}
+ARM ActorUnkZLSS::~ActorUnkZLSS() {}
+ARM ActorProfileUnkZLSS::~ActorProfileUnkZLSS() {}

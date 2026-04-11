@@ -28,5 +28,5 @@ ARM void MapObjectUnkETNL::func_ov026_0210adac(void) {}
 ARM void MapObjectUnkETNL::func_ov026_0210ae10(void) {}
 ARM void MapObjectUnkETNL::func_ov026_0210ae18(void) {}
 
-MapObjectUnkETNL::~MapObjectUnkETNL() {}
-MapObjectProfileUnkETNL::~MapObjectProfileUnkETNL() {}
+ARM MapObjectUnkETNL::~MapObjectUnkETNL() {}
+ARM MapObjectProfileUnkETNL::~MapObjectProfileUnkETNL() {}

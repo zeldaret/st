@@ -27,5 +27,5 @@ ARM void ActorUnkKOTA::func_ov094_0216e5a4(void) {}
 ARM void ActorUnkKOTA::func_ov094_0216e9fc(void) {}
 ARM void ActorUnkKOTA::func_ov094_0216ed94(void) {}
 
-ActorUnkKOTA::~ActorUnkKOTA() {}
-ActorProfileUnkKOTA::~ActorProfileUnkKOTA() {}
+ARM ActorUnkKOTA::~ActorUnkKOTA() {}
+ARM ActorProfileUnkKOTA::~ActorProfileUnkKOTA() {}

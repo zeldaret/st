@@ -46,5 +46,5 @@ ARM void ActorUnkCRFT::func_ov058_02148a6c(void) {}
 ARM void ActorUnkCRFT::func_ov058_02148a98(void) {}
 ARM void ActorUnkCRFT::func_ov058_02148b04(void) {}
 
-ActorUnkCRFT::~ActorUnkCRFT() {}
-ActorProfileUnkCRFT::~ActorProfileUnkCRFT() {}
+ARM ActorUnkCRFT::~ActorUnkCRFT() {}
+ARM ActorProfileUnkCRFT::~ActorProfileUnkCRFT() {}

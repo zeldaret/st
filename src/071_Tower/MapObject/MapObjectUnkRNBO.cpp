@@ -21,5 +21,5 @@ ARM MapObjectUnkRNBO::MapObjectUnkRNBO() {}
 ARM void MapObjectUnkRNBO::func_ov071_02160b04(void) {}
 ARM void MapObjectUnkRNBO::func_ov071_02160b18(void) {}
 
-MapObjectUnkRNBO::~MapObjectUnkRNBO() {}
-MapObjectProfileUnkRNBO::~MapObjectProfileUnkRNBO() {}
+ARM MapObjectUnkRNBO::~MapObjectUnkRNBO() {}
+ARM MapObjectProfileUnkRNBO::~MapObjectProfileUnkRNBO() {}

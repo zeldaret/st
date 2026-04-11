@@ -32,5 +32,5 @@ ARM void MapObjectUnkMTGT::func_ov026_0210b964(void) {}
 ARM void MapObjectUnkMTGT::func_ov026_0210b984(void) {}
 ARM void MapObjectUnkMTGT::func_ov026_0210ba14(void) {}
 
-MapObjectUnkMTGT::~MapObjectUnkMTGT() {}
-MapObjectProfileUnkMTGT::~MapObjectProfileUnkMTGT() {}
+ARM MapObjectUnkMTGT::~MapObjectUnkMTGT() {}
+ARM MapObjectProfileUnkMTGT::~MapObjectProfileUnkMTGT() {}

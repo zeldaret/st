@@ -24,5 +24,5 @@ ARM void MapObjectUnkETSW::func_ov028_02145960(void) {}
 ARM void MapObjectUnkETSW::func_ov028_021459c4(void) {}
 ARM void MapObjectUnkETSW::func_ov028_021459d8(void) {}
 
-MapObjectUnkETSW::~MapObjectUnkETSW() {}
-MapObjectProfileUnkETSW::~MapObjectProfileUnkETSW() {}
+ARM MapObjectUnkETSW::~MapObjectUnkETSW() {}
+ARM MapObjectProfileUnkETSW::~MapObjectProfileUnkETSW() {}

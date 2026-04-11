@@ -29,5 +29,5 @@ ARM void ActorUnkDKCB::func_ov092_021791c8(void) {}
 ARM void ActorUnkDKCB::func_ov092_021794f0(void) {}
 ARM void ActorUnkDKCB::func_ov092_02179650(void) {}
 
-ActorUnkDKCB::~ActorUnkDKCB() {}
-ActorProfileUnkDKCB::~ActorProfileUnkDKCB() {}
+ARM ActorUnkDKCB::~ActorUnkDKCB() {}
+ARM ActorProfileUnkDKCB::~ActorProfileUnkDKCB() {}

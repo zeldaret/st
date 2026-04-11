@@ -43,5 +43,5 @@ ARM void MapObjectUnkDRDS::func_ov031_020fe350(void) {}
 ARM void MapObjectUnkDRDS::func_ov031_020fe388(void) {}
 ARM void MapObjectUnkDRDS::func_ov031_020fe5fc(void) {}
 
-MapObjectUnkDRDS::~MapObjectUnkDRDS() {}
-MapObjectProfileUnkDRDS::~MapObjectProfileUnkDRDS() {}
+ARM MapObjectUnkDRDS::~MapObjectUnkDRDS() {}
+ARM MapObjectProfileUnkDRDS::~MapObjectProfileUnkDRDS() {}

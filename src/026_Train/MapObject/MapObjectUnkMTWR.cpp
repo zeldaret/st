@@ -22,5 +22,5 @@ ARM void MapObjectUnkMTWR::func_ov026_0210a744(void) {}
 ARM void MapObjectUnkMTWR::func_ov026_0210a85c(void) {}
 ARM void MapObjectUnkMTWR::func_ov026_0210a878(void) {}
 
-MapObjectUnkMTWR::~MapObjectUnkMTWR() {}
-MapObjectProfileUnkMTWR::~MapObjectProfileUnkMTWR() {}
+ARM MapObjectUnkMTWR::~MapObjectUnkMTWR() {}
+ARM MapObjectProfileUnkMTWR::~MapObjectProfileUnkMTWR() {}

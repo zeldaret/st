@@ -24,5 +24,5 @@ ARM void MapObjectUnkSTAL::func_ov071_02161e94(void) {}
 ARM void MapObjectUnkSTAL::func_ov071_02161ed4(void) {}
 ARM void MapObjectUnkSTAL::func_ov071_02161f0c(void) {}
 
-MapObjectUnkSTAL::~MapObjectUnkSTAL() {}
-MapObjectProfileUnkSTAL::~MapObjectProfileUnkSTAL() {}
+ARM MapObjectUnkSTAL::~MapObjectUnkSTAL() {}
+ARM MapObjectProfileUnkSTAL::~MapObjectProfileUnkSTAL() {}

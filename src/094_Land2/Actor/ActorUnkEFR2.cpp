@@ -21,5 +21,5 @@ ARM ActorUnkEFR2::ActorUnkEFR2() {}
 ARM void ActorUnkEFR2::func_ov094_02170778(void) {}
 ARM void ActorUnkEFR2::func_ov094_02170814(void) {}
 
-ActorUnkEFR2::~ActorUnkEFR2() {}
-ActorProfileUnkEFR2::~ActorProfileUnkEFR2() {}
+ARM ActorUnkEFR2::~ActorUnkEFR2() {}
+ARM ActorProfileUnkEFR2::~ActorProfileUnkEFR2() {}

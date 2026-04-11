@@ -35,5 +35,5 @@ ARM void ActorUnkBTIR::func_ov021_020f2214(void) {}
 ARM void ActorUnkBTIR::func_ov021_020f22d4(void) {}
 ARM void ActorUnkBTIR::func_ov021_020f23d4(void) {}
 
-ActorUnkBTIR::~ActorUnkBTIR() {}
-ActorProfileUnkBTIR::~ActorProfileUnkBTIR() {}
+ARM ActorUnkBTIR::~ActorUnkBTIR() {}
+ARM ActorProfileUnkBTIR::~ActorProfileUnkBTIR() {}

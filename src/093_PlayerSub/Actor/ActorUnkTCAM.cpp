@@ -25,5 +25,5 @@ ARM void ActorUnkTCAM::func_ov093_02177474(void) {}
 ARM void ActorUnkTCAM::func_ov093_0217747c(void) {}
 ARM void ActorUnkTCAM::func_ov093_0217748c(void) {}
 
-ActorUnkTCAM::~ActorUnkTCAM() {}
-ActorProfileUnkTCAM::~ActorProfileUnkTCAM() {}
+ARM ActorUnkTCAM::~ActorUnkTCAM() {}
+ARM ActorProfileUnkTCAM::~ActorProfileUnkTCAM() {}

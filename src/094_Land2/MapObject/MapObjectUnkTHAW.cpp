@@ -28,5 +28,5 @@ ARM void MapObjectUnkTHAW::func_ov094_021758b0(void) {}
 ARM void MapObjectUnkTHAW::func_ov094_02175910(void) {}
 ARM void MapObjectUnkTHAW::func_ov094_02175938(void) {}
 
-MapObjectUnkTHAW::~MapObjectUnkTHAW() {}
-MapObjectProfileUnkTHAW::~MapObjectProfileUnkTHAW() {}
+ARM MapObjectUnkTHAW::~MapObjectUnkTHAW() {}
+ARM MapObjectProfileUnkTHAW::~MapObjectProfileUnkTHAW() {}

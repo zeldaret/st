@@ -37,5 +37,5 @@ ARM ActorProfileUnkWCAS::ActorProfileUnkWCAS() :
 
 ARM ActorUnkWCAS::ActorUnkWCAS() {}
 
-ActorProfileUnkTCOW::~ActorProfileUnkTCOW() {}
-ActorProfileUnkWCAS::~ActorProfileUnkWCAS() {}
+ARM ActorProfileUnkTCOW::~ActorProfileUnkTCOW() {}
+ARM ActorProfileUnkWCAS::~ActorProfileUnkWCAS() {}

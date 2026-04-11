@@ -25,5 +25,5 @@ ARM void ActorUnkFBSC::func_ov058_0214ab34(void) {}
 ARM void ActorUnkFBSC::func_ov058_0214ab68(void) {}
 ARM void ActorUnkFBSC::func_ov058_0214ab78(void) {}
 
-ActorUnkFBSC::~ActorUnkFBSC() {}
-ActorProfileUnkFBSC::~ActorProfileUnkFBSC() {}
+ARM ActorUnkFBSC::~ActorUnkFBSC() {}
+ARM ActorProfileUnkFBSC::~ActorProfileUnkFBSC() {}

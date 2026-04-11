@@ -29,5 +29,5 @@ ARM void ActorUnkRBSN::func_ov080_0215ebf4(void) {}
 ARM void ActorUnkRBSN::func_ov080_0215ec04(void) {}
 ARM void ActorUnkRBSN::func_ov080_0215ec50(void) {}
 
-ActorUnkRBSN::~ActorUnkRBSN() {}
-ActorProfileUnkRBSN::~ActorProfileUnkRBSN() {}
+ARM ActorUnkRBSN::~ActorUnkRBSN() {}
+ARM ActorProfileUnkRBSN::~ActorProfileUnkRBSN() {}

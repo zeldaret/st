@@ -30,5 +30,5 @@ ARM void ActorUnkMNCB::func_ov094_0216ffe8(void) {}
 ARM void ActorUnkMNCB::func_ov094_02170374(void) {}
 ARM void ActorUnkMNCB::func_ov094_02170584(void) {}
 
-ActorUnkMNCB::~ActorUnkMNCB() {}
-ActorProfileUnkMNCB::~ActorProfileUnkMNCB() {}
+ARM ActorUnkMNCB::~ActorUnkMNCB() {}
+ARM ActorProfileUnkMNCB::~ActorProfileUnkMNCB() {}

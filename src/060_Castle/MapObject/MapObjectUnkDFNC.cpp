@@ -24,5 +24,5 @@ ARM void MapObjectUnkDFNC::func_ov060_021608c4(void) {}
 ARM void MapObjectUnkDFNC::func_ov060_02160924(void) {}
 ARM void MapObjectUnkDFNC::func_ov060_02160968(void) {}
 
-MapObjectUnkDFNC::~MapObjectUnkDFNC() {}
-MapObjectProfileUnkDFNC::~MapObjectProfileUnkDFNC() {}
+ARM MapObjectUnkDFNC::~MapObjectUnkDFNC() {}
+ARM MapObjectProfileUnkDFNC::~MapObjectProfileUnkDFNC() {}

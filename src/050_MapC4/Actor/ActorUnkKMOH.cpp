@@ -72,5 +72,5 @@ ARM void ActorUnkKMOH::func_ov050_021351b8(void) {}
 ARM void ActorUnkKMOH::func_ov050_02135200(void) {}
 ARM void ActorUnkKMOH::func_ov050_0213527c(void) {}
 
-ActorUnkKMOH::~ActorUnkKMOH() {}
-ActorProfileUnkKMOH::~ActorProfileUnkKMOH() {}
+ARM ActorUnkKMOH::~ActorUnkKMOH() {}
+ARM ActorProfileUnkKMOH::~ActorProfileUnkKMOH() {}

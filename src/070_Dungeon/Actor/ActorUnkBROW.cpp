@@ -35,5 +35,5 @@ ARM void ActorUnkBROW::func_ov070_02140944(void) {}
 ARM void ActorUnkBROW::func_ov070_02140994(void) {}
 ARM void ActorUnkBROW::func_ov070_021409bc(void) {}
 
-ActorUnkBROW::~ActorUnkBROW() {}
-ActorProfileUnkBROW::~ActorProfileUnkBROW() {}
+ARM ActorUnkBROW::~ActorUnkBROW() {}
+ARM ActorProfileUnkBROW::~ActorProfileUnkBROW() {}

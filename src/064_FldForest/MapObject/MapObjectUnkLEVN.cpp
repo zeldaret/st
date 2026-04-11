@@ -20,5 +20,5 @@ ARM MapObjectUnkLEVN::MapObjectUnkLEVN() {}
 
 ARM void MapObjectUnkLEVN::func_ov064_0215a260(void) {}
 
-MapObjectUnkLEVN::~MapObjectUnkLEVN() {}
-MapObjectProfileUnkLEVN::~MapObjectProfileUnkLEVN() {}
+ARM MapObjectUnkLEVN::~MapObjectUnkLEVN() {}
+ARM MapObjectProfileUnkLEVN::~MapObjectProfileUnkLEVN() {}

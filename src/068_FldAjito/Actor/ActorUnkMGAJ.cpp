@@ -25,5 +25,5 @@ ARM void ActorUnkMGAJ::func_ov068_0215e7b8(void) {}
 ARM void ActorUnkMGAJ::func_ov068_0215e7e4(void) {}
 ARM void ActorUnkMGAJ::func_ov068_0215e894(void) {}
 
-ActorUnkMGAJ::~ActorUnkMGAJ() {}
-ActorProfileUnkMGAJ::~ActorProfileUnkMGAJ() {}
+ARM ActorUnkMGAJ::~ActorUnkMGAJ() {}
+ARM ActorProfileUnkMGAJ::~ActorProfileUnkMGAJ() {}

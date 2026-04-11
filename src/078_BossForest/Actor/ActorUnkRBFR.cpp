@@ -25,5 +25,5 @@ ARM void ActorUnkRBFR::func_ov078_0215cee8(void) {}
 ARM void ActorUnkRBFR::func_ov078_0215cefc(void) {}
 ARM void ActorUnkRBFR::func_ov078_0215cf7c(void) {}
 
-ActorUnkRBFR::~ActorUnkRBFR() {}
-ActorProfileUnkRBFR::~ActorProfileUnkRBFR() {}
+ARM ActorUnkRBFR::~ActorUnkRBFR() {}
+ARM ActorProfileUnkRBFR::~ActorProfileUnkRBFR() {}

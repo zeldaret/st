@@ -61,5 +61,5 @@ ARM void ActorUnkCROW::func_ov049_021340cc(void) {}
 ARM void ActorUnkCROW::func_ov049_021340f8(void) {}
 ARM void ActorUnkCROW::func_ov049_02134104(void) {}
 
-ActorUnkCROW::~ActorUnkCROW() {}
-ActorProfileUnkCROW::~ActorProfileUnkCROW() {}
+ARM ActorUnkCROW::~ActorUnkCROW() {}
+ARM ActorProfileUnkCROW::~ActorProfileUnkCROW() {}

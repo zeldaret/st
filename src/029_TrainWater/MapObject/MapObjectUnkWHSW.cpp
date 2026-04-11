@@ -25,5 +25,5 @@ ARM void MapObjectUnkWHSW::func_ov029_02145910(void) {}
 ARM void MapObjectUnkWHSW::func_ov029_02145a0c(void) {}
 ARM void MapObjectUnkWHSW::func_ov029_02145a7c(void) {}
 
-MapObjectUnkWHSW::~MapObjectUnkWHSW() {}
-MapObjectProfileUnkWHSW::~MapObjectProfileUnkWHSW() {}
+ARM MapObjectUnkWHSW::~MapObjectUnkWHSW() {}
+ARM MapObjectProfileUnkWHSW::~MapObjectProfileUnkWHSW() {}

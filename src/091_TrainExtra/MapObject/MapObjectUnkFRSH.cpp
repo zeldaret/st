@@ -20,5 +20,5 @@ ARM MapObjectUnkFRSH::MapObjectUnkFRSH() {}
 
 ARM void MapObjectUnkFRSH::func_ov091_02167a90(void) {}
 
-MapObjectUnkFRSH::~MapObjectUnkFRSH() {}
-MapObjectProfileUnkFRSH::~MapObjectProfileUnkFRSH() {}
+ARM MapObjectUnkFRSH::~MapObjectUnkFRSH() {}
+ARM MapObjectProfileUnkFRSH::~MapObjectProfileUnkFRSH() {}

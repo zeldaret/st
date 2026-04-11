@@ -71,7 +71,7 @@ ARM ActorProfileUnkGORM::ActorProfileUnkGORM() :
 
 ARM ActorUnkGORM::ActorUnkGORM() {}
 
-ActorProfileUnkGOCA::~ActorProfileUnkGOCA() {}
-ActorProfileUnkGOCB::~ActorProfileUnkGOCB() {}
-ActorProfileUnkGORK::~ActorProfileUnkGORK() {}
-ActorProfileUnkGORM::~ActorProfileUnkGORM() {}
+ARM ActorProfileUnkGOCA::~ActorProfileUnkGOCA() {}
+ARM ActorProfileUnkGOCB::~ActorProfileUnkGOCB() {}
+ARM ActorProfileUnkGORK::~ActorProfileUnkGORK() {}
+ARM ActorProfileUnkGORM::~ActorProfileUnkGORM() {}

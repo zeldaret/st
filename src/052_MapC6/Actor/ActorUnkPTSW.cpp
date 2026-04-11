@@ -26,7 +26,7 @@ ARM void ActorUnkPTSW::func_ov052_02137650(void) {}
 ARM void ActorUnkPTSW::func_ov052_02137684(void) {}
 ARM void ActorUnkPTSW::func_ov052_02137698(void) {}
 
-ActorUnkPTSW::~ActorUnkPTSW() {}
-ActorProfileUnkPTSW::~ActorProfileUnkPTSW() {}
+ARM ActorUnkPTSW::~ActorUnkPTSW() {}
+ARM ActorProfileUnkPTSW::~ActorProfileUnkPTSW() {}
 
 #endif

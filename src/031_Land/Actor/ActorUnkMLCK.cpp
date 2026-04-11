@@ -37,5 +37,5 @@ ARM void ActorUnkMLCK::func_ov031_020fb1cc(void) {}
 ARM void ActorUnkMLCK::func_ov031_020fb1e8(void) {}
 ARM void ActorUnkMLCK::func_ov031_020fb204(void) {}
 
-ActorUnkMLCK::~ActorUnkMLCK() {}
-ActorProfileUnkMLCK::~ActorProfileUnkMLCK() {}
+ARM ActorUnkMLCK::~ActorUnkMLCK() {}
+ARM ActorProfileUnkMLCK::~ActorProfileUnkMLCK() {}

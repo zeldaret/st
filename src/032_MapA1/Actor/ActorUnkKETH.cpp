@@ -65,5 +65,5 @@ ARM void ActorUnkKETH::func_ov032_0211fc00(void) {}
 ARM void ActorUnkKETH::func_ov032_0211fc1c(void) {}
 ARM void ActorUnkKETH::func_ov032_0211fcc0(void) {}
 
-ActorUnkKETH::~ActorUnkKETH() {}
-ActorProfileUnkKETH::~ActorProfileUnkKETH() {}
+ARM ActorUnkKETH::~ActorUnkKETH() {}
+ARM ActorProfileUnkKETH::~ActorProfileUnkKETH() {}

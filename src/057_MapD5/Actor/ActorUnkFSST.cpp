@@ -42,5 +42,5 @@ ARM void ActorUnkFSST::func_ov057_02139c08(void) {}
 ARM void ActorUnkFSST::func_ov057_02139c20(void) {}
 ARM void ActorUnkFSST::func_ov057_02139d70(void) {}
 
-ActorUnkFSST::~ActorUnkFSST() {}
-ActorProfileUnkFSST::~ActorProfileUnkFSST() {}
+ARM ActorUnkFSST::~ActorUnkFSST() {}
+ARM ActorProfileUnkFSST::~ActorProfileUnkFSST() {}

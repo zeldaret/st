@@ -52,5 +52,5 @@ ARM void ActorUnkBFFN::func_ov021_020f3680(void) {}
 ARM void ActorUnkBFFN::func_ov021_020f3708(void) {}
 ARM void ActorUnkBFFN::func_ov021_020f376c(void) {}
 
-ActorUnkBFFN::~ActorUnkBFFN() {}
-ActorProfileUnkBFFN::~ActorProfileUnkBFFN() {}
+ARM ActorUnkBFFN::~ActorUnkBFFN() {}
+ARM ActorProfileUnkBFFN::~ActorProfileUnkBFFN() {}

@@ -23,5 +23,5 @@ ARM void ActorUnkKOAT::func_ov058_0214210c(void) {}
 ARM void ActorUnkKOAT::func_ov058_02142228(void) {}
 ARM void ActorUnkKOAT::func_ov058_021422f0(void) {}
 
-ActorUnkKOAT::~ActorUnkKOAT() {}
-ActorProfileUnkKOAT::~ActorProfileUnkKOAT() {}
+ARM ActorUnkKOAT::~ActorUnkKOAT() {}
+ARM ActorProfileUnkKOAT::~ActorProfileUnkKOAT() {}

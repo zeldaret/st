@@ -26,5 +26,5 @@ ARM void MapObjectUnkMZFE::func_ov027_021446b4(void) {}
 ARM void MapObjectUnkMZFE::func_ov027_02144738(void) {}
 ARM void MapObjectUnkMZFE::func_ov027_02144774(void) {}
 
-MapObjectUnkMZFE::~MapObjectUnkMZFE() {}
-MapObjectProfileUnkMZFE::~MapObjectProfileUnkMZFE() {}
+ARM MapObjectUnkMZFE::~MapObjectUnkMZFE() {}
+ARM MapObjectProfileUnkMZFE::~MapObjectProfileUnkMZFE() {}
