@@ -85,7 +85,7 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
     }
 
     if (this->mUnk_80 >= 0) {
-        if (this->func_ov000_02098a60(0) != 0) {
+        if (this->func_ov000_02098a60(0)) {
             return false;
         }
 

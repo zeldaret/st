@@ -31,6 +31,7 @@ src/000_Second/Actor/ActorUnkSWOB.cpp:
     .text       start:0x0209a8b8 end:0x0209aca8
     .init       start:0x020b07e8 end:0x020b0838
     .ctor       start:0x020b1908 end:0x020b190c
+    .data       start:0x020b328c end:0x020b330c
     .bss        start:0x020b5c0c end:0x020b5c48
 
 src/000_Second/Actor/ActorUnkSWTM.cpp:

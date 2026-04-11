@@ -31,8 +31,20 @@ public:
 class Actor_5c : public Actor_5c_Base {
 public:
     /* 00 (base) */
+    // /* 04 */ STRUCT_PAD(0x04, 0x28);
+    // /* 28 */ unk32 mUnk_28;
 
     Actor_5c() {};
+    void func_ov000_020975f8();
+};
+
+class Actor_5c_temp : public Actor_5c_Base {
+public:
+    /* 00 (base) */
+    /* 10 */ STRUCT_PAD(0x10, 0x28);
+    /* 28 */ unk32 mUnk_28;
+
+    Actor_5c_temp() {};
     void func_ov000_020975f8();
 };
 
@@ -112,18 +124,18 @@ public:
     /* 6c */ u16 mUnk_6c; // actor user id?
     /* 6e */ u16 mUnk_6e;
     /* 70 */ u16 mUnk_70;
-    /* 70 */ unk16 mUnk_72;
+    /* 70 */ u16 mUnk_72;
     /* 74 */ u8 mUnk_74;
     /* 74 */ u8 mUnk_75;
     /* 76 */ u16 mUnk_76;
     /* 78 */ u16 mUnk_78;
-    /* 78 */ unk16 mUnk_7a;
-    /* 7c */ unk32 mUnk_7c;
+    /* 7A */ unk16 mUnk_7a;
+    /* 7C */ unk32 mUnk_7c;
     /* 80 */ s16 mUnk_80;
     /* 80 */ unk16 mUnk_82;
     /* 84 */ unk32 mUnk_84;
     /* 88 */ unk32 mUnk_88;
-    /* 8c */ ActorRef mRef;
+    /* 8C */ ActorRef mRef;
     /* 90 */ ActorProfile *mType;
     /* 94 */
 
@@ -169,7 +181,7 @@ public:
     unk32 func_ov000_02098910(unk32 param1, unk32 param2);
 
     s32 func_ov000_02098518(unk32 *param1);
-    void func_ov000_0209853c();
+    Vec3p *func_ov000_0209853c(unk32 param1);
     s32 func_ov000_02098554();
     s16 func_ov000_0209856c();
     s8 func_ov000_02098578();
@@ -182,7 +194,8 @@ public:
     void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c param3);
     void func_ov000_020989e0();
 
-    unk32 func_ov000_02098a60(unk32 param1);
+    bool func_ov000_02098a60(unk32 param1);
+    void func_ov000_02098a88(unk32 param1, unk32 param2);
 
     void func_ov017_020bf5c4(Vec3p *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
 };

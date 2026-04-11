@@ -53,7 +53,7 @@ public:
     /* 40 */ unk32 *mUnk_40; // pointer to data_027e0478 when not on the train
     /* 44 */
 
-    void func_01fff148();
+    Vec3p *func_01fff148(unk32 param1);
 
     void func_ov000_0208a318(unk32 param1, unk32 param2, unk32 param3);
 };
