@@ -60,11 +60,12 @@ src/031_Land/Actor/ActorUnkZLSL_ZSRS.cpp:
     .ctor       start:0x02114548 end:0x0211454c
     .bss        start:0x021184e4 end:0x021185f8
 
-src/031_Land/Actor/ActorUnkHERT.cpp:
+src/031_Land/Actor/ActorHeart.cpp:
     .text       start:0x020f06e0 end:0x020f1218
     .init       start:0x0211310c end:0x02113178
     .ctor       start:0x0211454c end:0x02114550
-    .bss        start:0x02118608 end:0x02118644
+    .data       start:0x02115b04 end:0x02115c0c
+    .bss        start:0x021185f8 end:0x02118644
 
 src/031_Land/Actor/ActorUnkRMTG.cpp:
     .text       start:0x020f1218 end:0x020f1408
