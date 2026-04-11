@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkCTFS::Create() {
 }
 
 ARM ActorProfileUnkCTFS::ActorProfileUnkCTFS() :
-    ActorProfile(ActorId_CTFS) {}
+    ActorProfile_Derived1(ActorId_CTFS) {}
 
 ARM ActorUnkCTFS::ActorUnkCTFS() {}
 

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkAJAI::Create() {
 }
 
 ARM ActorProfileUnkAJAI::ActorProfileUnkAJAI() :
-    ActorProfile(ActorId_AJAI) {}
+    ActorProfile_Derived1(ActorId_AJAI) {}
 
 ARM ActorUnkAJAI::ActorUnkAJAI() {}
 

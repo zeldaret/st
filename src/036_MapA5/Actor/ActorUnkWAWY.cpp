@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkWAWY::Create() {
 }
 
 ARM ActorProfileUnkWAWY::ActorProfileUnkWAWY() :
-    ActorProfile(ActorId_WAWY) {}
+    ActorProfile_Derived1(ActorId_WAWY) {}
 
 ARM ActorUnkWAWY::ActorUnkWAWY() {}
 

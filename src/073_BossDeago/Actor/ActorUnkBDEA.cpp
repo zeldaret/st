@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkBDEA::Create() {
 }
 
 ARM ActorProfileUnkBDEA::ActorProfileUnkBDEA() :
-    ActorProfile(ActorId_BDEA) {}
+    ActorProfile_Derived1(ActorId_BDEA) {}
 
 ARM ActorUnkBDEA::ActorUnkBDEA() {}
 

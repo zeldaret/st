@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkLBCK::Create() {
 }
 
 ARM ActorProfileUnkLBCK::ActorProfileUnkLBCK() :
-    ActorProfile(ActorId_LBCK) {}
+    ActorProfile_Derived1(ActorId_LBCK) {}
 
 ARM ActorUnkLBCK::ActorUnkLBCK() {}
 

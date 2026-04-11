@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkBLJF::Create() {
 }
 
 ARM ActorProfileUnkBLJF::ActorProfileUnkBLJF() :
-    ActorProfile(ActorId_BLJF) {}
+    ActorProfile_Derived1(ActorId_BLJF) {}
 
 ARM ActorUnkBLJF::ActorUnkBLJF() {}
 

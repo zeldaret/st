@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkKMOS::Create() {
 }
 
 ARM ActorProfileUnkKMOS::ActorProfileUnkKMOS() :
-    ActorProfile(ActorId_KMOS) {}
+    ActorProfile_Derived1(ActorId_KMOS) {}
 
 ARM ActorUnkKMOS::ActorUnkKMOS() {}
 

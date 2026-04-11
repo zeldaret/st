@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkDLPN::Create() {
 }
 
 ARM ActorProfileUnkDLPN::ActorProfileUnkDLPN() :
-    ActorProfile(ActorId_DLPN) {}
+    ActorProfile_Derived1(ActorId_DLPN) {}
 
 ARM ActorUnkDLPN::ActorUnkDLPN() {}
 

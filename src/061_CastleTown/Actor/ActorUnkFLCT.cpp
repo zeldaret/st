@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkFLCT::Create() {
 }
 
 ARM ActorProfileUnkFLCT::ActorProfileUnkFLCT() :
-    ActorProfile(ActorId_FieldCastleTown) {}
+    ActorProfile_Derived1(ActorId_FieldCastleTown) {}
 
 ARM ActorUnkFLCT::ActorUnkFLCT() {}
 

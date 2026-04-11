@@ -16,7 +16,7 @@ ARM Actor *ActorProfileUnkSOLB::Create() {
 }
 
 ARM ActorProfileUnkSOLB::ActorProfileUnkSOLB() :
-    ActorProfile(ActorId_SoldierBoy) {}
+    ActorProfile_Derived1(ActorId_SoldierBoy) {}
 
 ARM ActorUnkSOLB::ActorUnkSOLB() {}
 
@@ -33,7 +33,7 @@ ARM Actor *ActorProfileUnkSOLC::Create() {
 }
 
 ARM ActorProfileUnkSOLC::ActorProfileUnkSOLC() :
-    ActorProfile(ActorId_SOLC) {}
+    ActorProfile_Derived1(ActorId_SOLC) {}
 
 ARM ActorUnkSOLC::ActorUnkSOLC() {}
 
@@ -50,7 +50,7 @@ ARM Actor *ActorProfileUnkSOLD::Create() {
 }
 
 ARM ActorProfileUnkSOLD::ActorProfileUnkSOLD() :
-    ActorProfile(ActorId_Soldier) {}
+    ActorProfile_Derived1(ActorId_Soldier) {}
 
 ARM ActorUnkSOLD::ActorUnkSOLD() {}
 

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkBMOC::Create() {
 }
 
 ARM ActorProfileUnkBMOC::ActorProfileUnkBMOC() :
-    ActorProfile(ActorId_BMOC) {}
+    ActorProfile_Derived1(ActorId_BMOC) {}
 
 ARM ActorUnkBMOC::ActorUnkBMOC() {}
 

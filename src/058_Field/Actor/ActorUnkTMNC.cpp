@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkTMNC::Create() {
 }
 
 ARM ActorProfileUnkTMNC::ActorProfileUnkTMNC() :
-    ActorProfile(ActorId_TMNC) {}
+    ActorProfile_Derived1(ActorId_TMNC) {}
 
 ARM ActorUnkTMNC::ActorUnkTMNC() {}
 

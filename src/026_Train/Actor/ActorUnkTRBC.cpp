@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkTRBC::Create() {
 }
 
 ARM ActorProfileUnkTRBC::ActorProfileUnkTRBC() :
-    ActorProfile(ActorId_TRBC) {}
+    ActorProfile_Derived1(ActorId_TRBC) {}
 
 ARM ActorUnkTRBC::ActorUnkTRBC() {}
 

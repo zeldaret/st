@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkMIFR::Create() {
 }
 
 ARM ActorProfileUnkMIFR::ActorProfileUnkMIFR() :
-    ActorProfile(ActorId_MIFR) {}
+    ActorProfile_Derived1(ActorId_MIFR) {}
 
 ARM ActorUnkMIFR::ActorUnkMIFR() {}
 

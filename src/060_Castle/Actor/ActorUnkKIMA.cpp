@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkKIMA::Create() {
 }
 
 ARM ActorProfileUnkKIMA::ActorProfileUnkKIMA() :
-    ActorProfile(ActorId_KIMA) {}
+    ActorProfile_Derived1(ActorId_KIMA) {}
 
 ARM ActorUnkKIMA::ActorUnkKIMA() {}
 

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkBROW::Create() {
 }
 
 ARM ActorProfileUnkBROW::ActorProfileUnkBROW() :
-    ActorProfile(ActorId_BROW) {}
+    ActorProfile_Derived1(ActorId_BROW) {}
 
 ARM ActorUnkBROW::ActorUnkBROW() {}
 

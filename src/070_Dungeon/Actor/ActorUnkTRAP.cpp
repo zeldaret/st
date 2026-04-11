@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkTRAP::Create() {
 }
 
 ARM ActorProfileUnkTRAP::ActorProfileUnkTRAP() :
-    ActorProfile(ActorId_TRAP) {}
+    ActorProfile_Derived1(ActorId_TRAP) {}
 
 ARM ActorUnkTRAP::ActorUnkTRAP() {}
 

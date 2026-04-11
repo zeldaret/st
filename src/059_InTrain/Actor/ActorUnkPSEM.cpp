@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkPSEM::Create() {
 }
 
 ARM ActorProfileUnkPSEM::ActorProfileUnkPSEM() :
-    ActorProfile(ActorId_PSEM) {}
+    ActorProfile_Derived1(ActorId_PSEM) {}
 
 ARM ActorUnkPSEM::ActorUnkPSEM() {}
 

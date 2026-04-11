@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkMARG::Create() {
 }
 
 ARM ActorProfileUnkMARG::ActorProfileUnkMARG() :
-    ActorProfile(ActorId_MARG) {}
+    ActorProfile_Derived1(ActorId_MARG) {}
 
 ARM ActorUnkMARG::ActorUnkMARG() {}
 

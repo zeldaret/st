@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkAJBS::Create() {
 }
 
 ARM ActorProfileUnkAJBS::ActorProfileUnkAJBS() :
-    ActorProfile(ActorId_AJBS) {}
+    ActorProfile_Derived1(ActorId_AJBS) {}
 
 ARM ActorUnkAJBS::ActorUnkAJBS() {}
 

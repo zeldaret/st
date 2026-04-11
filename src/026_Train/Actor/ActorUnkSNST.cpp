@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkSNST::Create() {
 }
 
 ARM ActorProfileUnkSNST::ActorProfileUnkSNST() :
-    ActorProfile(ActorId_SNST) {}
+    ActorProfile_Derived1(ActorId_SNST) {}
 
 ARM ActorUnkSNST::ActorUnkSNST() {}
 

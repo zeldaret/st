@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkFSST::Create() {
 }
 
 ARM ActorProfileUnkFSST::ActorProfileUnkFSST() :
-    ActorProfile(ActorId_FSST) {}
+    ActorProfile_Derived1(ActorId_FSST) {}
 
 ARM ActorUnkFSST::ActorUnkFSST() {}
 

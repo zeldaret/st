@@ -16,7 +16,7 @@ ARM Actor *ActorProfileUnkTCOW::Create() {
 }
 
 ARM ActorProfileUnkTCOW::ActorProfileUnkTCOW() :
-    ActorProfile(ActorId_TCOW) {}
+    ActorProfile_Derived1(ActorId_TCOW) {}
 
 ARM ActorUnkTCOW::ActorUnkTCOW() {}
 
@@ -33,7 +33,7 @@ ARM Actor *ActorProfileUnkWCAS::Create() {
 }
 
 ARM ActorProfileUnkWCAS::ActorProfileUnkWCAS() :
-    ActorProfile(ActorId_WCAS) {}
+    ActorProfile_Derived1(ActorId_WCAS) {}
 
 ARM ActorUnkWCAS::ActorUnkWCAS() {}
 

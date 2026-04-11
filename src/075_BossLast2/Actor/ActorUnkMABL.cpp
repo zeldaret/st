@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkMABL::Create() {
 }
 
 ARM ActorProfileUnkMABL::ActorProfileUnkMABL() :
-    ActorProfile(ActorId_MABL) {}
+    ActorProfile_Derived1(ActorId_MABL) {}
 
 ARM ActorUnkMABL::ActorUnkMABL() {}
 

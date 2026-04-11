@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkEFWI::Create() {
 }
 
 ARM ActorProfileUnkEFWI::ActorProfileUnkEFWI() :
-    ActorProfile(ActorId_EFWI) {}
+    ActorProfile_Derived1(ActorId_EFWI) {}
 
 ARM ActorUnkEFWI::ActorUnkEFWI() {}
 

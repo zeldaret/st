@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkHELA::Create() {
 }
 
 ARM ActorProfileUnkHELA::ActorProfileUnkHELA() :
-    ActorProfile(ActorId_HELA) {}
+    ActorProfile_Derived1(ActorId_HELA) {}
 
 ARM ActorUnkHELA::ActorUnkHELA() {}
 

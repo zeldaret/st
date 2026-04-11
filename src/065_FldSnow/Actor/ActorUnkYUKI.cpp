@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkYUKI::Create() {
 }
 
 ARM ActorProfileUnkYUKI::ActorProfileUnkYUKI() :
-    ActorProfile(ActorId_YUKI) {}
+    ActorProfile_Derived1(ActorId_YUKI) {}
 
 ARM ActorUnkYUKI::ActorUnkYUKI() {}
 

@@ -16,7 +16,7 @@ ARM Actor *ActorProfileUnkFMAS::Create() {
 }
 
 ARM ActorProfileUnkFMAS::ActorProfileUnkFMAS() :
-    ActorProfile(ActorId_FMAS) {}
+    ActorProfile_Derived1(ActorId_FMAS) {}
 
 ARM ActorUnkFMAS::ActorUnkFMAS() {}
 
@@ -33,7 +33,7 @@ ARM Actor *ActorProfileUnkFMLS::Create() {
 }
 
 ARM ActorProfileUnkFMLS::ActorProfileUnkFMLS() :
-    ActorProfile(ActorId_FMLS) {}
+    ActorProfile_Derived1(ActorId_FMLS) {}
 
 ARM ActorUnkFMLS::ActorUnkFMLS() {}
 

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkPPPM::Create() {
 }
 
 ARM ActorProfileUnkPPPM::ActorProfileUnkPPPM() :
-    ActorProfile(ActorId_PPPM) {}
+    ActorProfile_Derived1(ActorId_PPPM) {}
 
 ARM ActorUnkPPPM::ActorUnkPPPM() {}
 

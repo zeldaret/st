@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkSEAT::Create() {
 }
 
 ARM ActorProfileUnkSEAT::ActorProfileUnkSEAT() :
-    ActorProfile(ActorId_SEAT) {}
+    ActorProfile_Derived1(ActorId_SEAT) {}
 
 ARM ActorUnkSEAT::ActorUnkSEAT() {}
 

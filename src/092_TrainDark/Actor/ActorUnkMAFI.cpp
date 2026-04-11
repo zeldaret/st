@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkMAFI::Create() {
 }
 
 ARM ActorProfileUnkMAFI::ActorProfileUnkMAFI() :
-    ActorProfile(ActorId_MAFI) {}
+    ActorProfile_Derived1(ActorId_MAFI) {}
 
 ARM ActorUnkMAFI::ActorUnkMAFI() {}
 

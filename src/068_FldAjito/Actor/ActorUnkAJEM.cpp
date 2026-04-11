@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkAJEM::Create() {
 }
 
 ARM ActorProfileUnkAJEM::ActorProfileUnkAJEM() :
-    ActorProfile(ActorId_AJEM) {}
+    ActorProfile_Derived1(ActorId_AJEM) {}
 
 ARM ActorUnkAJEM::ActorUnkAJEM() {}
 

@@ -16,7 +16,7 @@ ARM Actor *ActorProfileUnkMRDA::Create() {
 }
 
 ARM ActorProfileUnkMRDA::ActorProfileUnkMRDA() :
-    ActorProfile(ActorId_MRDA) {}
+    ActorProfile_Derived1(ActorId_MRDA) {}
 
 ARM ActorUnkMRDA::ActorUnkMRDA() {}
 
@@ -33,7 +33,7 @@ ARM Actor *ActorProfileUnkMRDO::Create() {
 }
 
 ARM ActorProfileUnkMRDO::ActorProfileUnkMRDO() :
-    ActorProfile(ActorId_MRDO) {}
+    ActorProfile_Derived1(ActorId_MRDO) {}
 
 ARM ActorUnkMRDO::ActorUnkMRDO() {}
 

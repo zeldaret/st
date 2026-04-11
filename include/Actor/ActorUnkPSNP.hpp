@@ -50,7 +50,7 @@ public:
     void func_ov059_02160db4(void);
 };
 
-class ActorProfileUnkPSNP : public ActorProfile {
+class ActorProfileUnkPSNP : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 

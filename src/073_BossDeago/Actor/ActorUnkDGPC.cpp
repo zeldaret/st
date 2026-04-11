@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkDGPC::Create() {
 }
 
 ARM ActorProfileUnkDGPC::ActorProfileUnkDGPC() :
-    ActorProfile(ActorId_DGPC) {}
+    ActorProfile_Derived1(ActorId_DGPC) {}
 
 ARM ActorUnkDGPC::ActorUnkDGPC() {}
 

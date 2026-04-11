@@ -5,18 +5,18 @@
 
 static ActorProfileUnkPSNP sActorProfileUnkPSNP;
 
-ARM ActorProfileUnkPSNP *ActorProfileUnkPSNP::GetProfile() {
+THUMB ActorProfileUnkPSNP *ActorProfileUnkPSNP::GetProfile() {
     return &sActorProfileUnkPSNP;
 }
 
-ARM Actor *ActorProfileUnkPSNP::Create() {
+THUMB Actor *ActorProfileUnkPSNP::Create() {
     return new(HeapIndex_2) ActorUnkPSNP();
 }
 
-ARM ActorProfileUnkPSNP::ActorProfileUnkPSNP() :
-    ActorProfile(ActorId_PSNP) {}
+THUMB ActorProfileUnkPSNP::ActorProfileUnkPSNP() :
+    ActorProfile_Derived1(ActorId_PSNP, ActorId_PSEM) {}
 
-ARM ActorUnkPSNP::ActorUnkPSNP() {}
+THUMB ActorUnkPSNP::ActorUnkPSNP() {}
 
 THUMB void ActorUnkPSNP::func_ov059_021604b8(void) {}
 THUMB void ActorUnkPSNP::func_ov059_021605c8(void) {}
@@ -51,5 +51,5 @@ ARM void ActorUnkPSNP::func_ov059_02160cc8(void) {}
 ARM void ActorUnkPSNP::func_ov059_02160d08(void) {}
 ARM void ActorUnkPSNP::func_ov059_02160db4(void) {}
 
-ActorUnkPSNP::~ActorUnkPSNP() {}
-ActorProfileUnkPSNP::~ActorProfileUnkPSNP() {}
+ARM ActorUnkPSNP::~ActorUnkPSNP() {}
+ARM ActorProfileUnkPSNP::~ActorProfileUnkPSNP() {}

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkWBPS::Create() {
 }
 
 ARM ActorProfileUnkWBPS::ActorProfileUnkWBPS() :
-    ActorProfile(ActorId_WBPS) {}
+    ActorProfile_Derived1(ActorId_WBPS) {}
 
 ARM ActorUnkWBPS::ActorUnkWBPS() {}
 

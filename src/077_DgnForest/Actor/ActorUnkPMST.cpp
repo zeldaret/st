@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkPMST::Create() {
 }
 
 ARM ActorProfileUnkPMST::ActorProfileUnkPMST() :
-    ActorProfile(ActorId_PMST) {}
+    ActorProfile_Derived1(ActorId_PMST) {}
 
 ARM ActorUnkPMST::ActorUnkPMST() {}
 

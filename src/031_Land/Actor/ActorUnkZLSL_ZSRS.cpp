@@ -3,39 +3,39 @@
 #include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "System/SysNew.hpp"
 
-// --- Actor ZLSL ---
-
-static ActorProfileUnkZLSL sActorProfileUnkZLSL;
-
-ARM ActorProfileUnkZLSL *ActorProfileUnkZLSL::GetProfile() {
-    return &sActorProfileUnkZLSL;
-}
-
-ARM Actor *ActorProfileUnkZLSL::Create() {
-    return new(HeapIndex_2) ActorUnkZLSL();
-}
-
-ARM ActorProfileUnkZLSL::ActorProfileUnkZLSL() :
-    ActorProfile(ActorId_ZLSL) {}
-
-ARM ActorUnkZLSL::ActorUnkZLSL() {}
-
 // --- Actor ZSRS ---
 
 static ActorProfileUnkZSRS sActorProfileUnkZSRS;
 
-ARM ActorProfileUnkZSRS *ActorProfileUnkZSRS::GetProfile() {
+THUMB ActorProfileUnkZSRS *ActorProfileUnkZSRS::GetProfile() {
     return &sActorProfileUnkZSRS;
 }
 
-ARM Actor *ActorProfileUnkZSRS::Create() {
-    return new(HeapIndex_2) ActorUnkZSRS();
+THUMB Actor *ActorProfileUnkZSRS::Create() {
+    return NULL;
 }
 
-ARM ActorProfileUnkZSRS::ActorProfileUnkZSRS() :
-    ActorProfile(ActorId_ZSRS) {}
+THUMB ActorProfileUnkZSRS::ActorProfileUnkZSRS() :
+    ActorProfile_Derived1(ActorId_ZSRS, ActorId_ZSRS) {}
 
-ARM ActorUnkZSRS::ActorUnkZSRS() {}
+THUMB ActorUnkZSRS::ActorUnkZSRS() {}
+
+// --- Actor ZLSL ---
+
+static ActorProfileUnkZLSL sActorProfileUnkZLSL;
+
+THUMB ActorProfileUnkZLSL *ActorProfileUnkZLSL::GetProfile() {
+    return &sActorProfileUnkZLSL;
+}
+
+THUMB Actor *ActorProfileUnkZLSL::Create() {
+    return new(HeapIndex_2) ActorUnkZLSL();
+}
+
+THUMB ActorProfileUnkZLSL::ActorProfileUnkZLSL() :
+    ActorProfile_Derived1(ActorId_ZLSL) {}
+
+THUMB ActorUnkZLSL::ActorUnkZLSL() {}
 
 ActorProfileUnkZLSL::~ActorProfileUnkZLSL() {}
 ActorProfileUnkZSRS::~ActorProfileUnkZSRS() {}

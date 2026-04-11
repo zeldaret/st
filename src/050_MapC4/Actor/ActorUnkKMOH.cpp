@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkKMOH::Create() {
 }
 
 ARM ActorProfileUnkKMOH::ActorProfileUnkKMOH() :
-    ActorProfile(ActorId_KMOH) {}
+    ActorProfile_Derived1(ActorId_KMOH) {}
 
 ARM ActorUnkKMOH::ActorUnkKMOH() {}
 

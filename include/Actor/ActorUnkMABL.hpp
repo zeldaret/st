@@ -50,7 +50,7 @@ public:
     void func_ov075_0216071c(void);
 };
 
-class ActorProfileUnkMABL : public ActorProfile {
+class ActorProfileUnkMABL : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 

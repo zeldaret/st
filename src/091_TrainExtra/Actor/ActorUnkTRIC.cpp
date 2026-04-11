@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkTRIC::Create() {
 }
 
 ARM ActorProfileUnkTRIC::ActorProfileUnkTRIC() :
-    ActorProfile(ActorId_TRIC) {}
+    ActorProfile_Derived1(ActorId_TRIC) {}
 
 ARM ActorUnkTRIC::ActorUnkTRIC() {}
 

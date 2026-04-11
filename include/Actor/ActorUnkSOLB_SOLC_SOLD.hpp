@@ -19,7 +19,7 @@ public:
     /* 4C */ virtual ~ActorUnkSOLB() override;
 };
 
-class ActorProfileUnkSOLB : public ActorProfile {
+class ActorProfileUnkSOLB : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
@@ -43,7 +43,7 @@ public:
     /* 4C */ virtual ~ActorUnkSOLC() override;
 };
 
-class ActorProfileUnkSOLC : public ActorProfile {
+class ActorProfileUnkSOLC : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
@@ -67,7 +67,7 @@ public:
     /* 4C */ virtual ~ActorUnkSOLD() override;
 };
 
-class ActorProfileUnkSOLD : public ActorProfile {
+class ActorProfileUnkSOLD : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 

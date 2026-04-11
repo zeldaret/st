@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkELVT::Create() {
 }
 
 ARM ActorProfileUnkELVT::ActorProfileUnkELVT() :
-    ActorProfile(ActorId_ELVT) {}
+    ActorProfile_Derived1(ActorId_ELVT) {}
 
 ARM ActorUnkELVT::ActorUnkELVT() {}
 

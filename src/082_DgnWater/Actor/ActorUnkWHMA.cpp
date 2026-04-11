@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkWHMA::Create() {
 }
 
 ARM ActorProfileUnkWHMA::ActorProfileUnkWHMA() :
-    ActorProfile(ActorId_WHMA) {}
+    ActorProfile_Derived1(ActorId_WHMA) {}
 
 ARM ActorUnkWHMA::ActorUnkWHMA() {}
 

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkNCWA::Create() {
 }
 
 ARM ActorProfileUnkNCWA::ActorProfileUnkNCWA() :
-    ActorProfile(ActorId_NCWA) {}
+    ActorProfile_Derived1(ActorId_NCWA) {}
 
 ARM ActorUnkNCWA::ActorUnkNCWA() {}
 

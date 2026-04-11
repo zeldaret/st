@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkEFRI::Create() {
 }
 
 ARM ActorProfileUnkEFRI::ActorProfileUnkEFRI() :
-    ActorProfile(ActorId_EFRI) {}
+    ActorProfile_Derived1(ActorId_EFRI) {}
 
 ARM ActorUnkEFRI::ActorUnkEFRI() {}
 

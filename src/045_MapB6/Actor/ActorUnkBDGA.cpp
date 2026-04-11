@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkBDGA::Create() {
 }
 
 ARM ActorProfileUnkBDGA::ActorProfileUnkBDGA() :
-    ActorProfile(ActorId_BDGA) {}
+    ActorProfile_Derived1(ActorId_BDGA) {}
 
 ARM ActorUnkBDGA::ActorUnkBDGA() {}
 

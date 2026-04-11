@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkDSBN::Create() {
 }
 
 ARM ActorProfileUnkDSBN::ActorProfileUnkDSBN() :
-    ActorProfile(ActorId_DSBN) {}
+    ActorProfile_Derived1(ActorId_DSBN) {}
 
 ARM ActorUnkDSBN::ActorUnkDSBN() {}
 

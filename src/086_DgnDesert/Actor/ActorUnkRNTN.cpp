@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkRNTN::Create() {
 }
 
 ARM ActorProfileUnkRNTN::ActorProfileUnkRNTN() :
-    ActorProfile(ActorId_RNTN) {}
+    ActorProfile_Derived1(ActorId_RNTN) {}
 
 ARM ActorUnkRNTN::ActorUnkRNTN() {}
 

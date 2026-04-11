@@ -35,7 +35,7 @@ public:
     void func_ov059_02161448(void);
 };
 
-class ActorProfileUnkCAGE : public ActorProfile {
+class ActorProfileUnkCAGE : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 

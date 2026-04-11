@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkMZCT::Create() {
 }
 
 ARM ActorProfileUnkMZCT::ActorProfileUnkMZCT() :
-    ActorProfile(ActorId_MZCT) {}
+    ActorProfile_Derived1(ActorId_MZCT) {}
 
 ARM ActorUnkMZCT::ActorUnkMZCT() {}
 

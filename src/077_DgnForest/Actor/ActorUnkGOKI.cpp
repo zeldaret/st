@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkGOKI::Create() {
 }
 
 ARM ActorProfileUnkGOKI::ActorProfileUnkGOKI() :
-    ActorProfile(ActorId_GOKI) {}
+    ActorProfile_Derived1(ActorId_GOKI) {}
 
 ARM ActorUnkGOKI::ActorUnkGOKI() {}
 

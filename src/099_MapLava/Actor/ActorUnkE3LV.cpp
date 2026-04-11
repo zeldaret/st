@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkE3LV::Create() {
 }
 
 ARM ActorProfileUnkE3LV::ActorProfileUnkE3LV() :
-    ActorProfile(ActorId_E3LV) {}
+    ActorProfile_Derived1(ActorId_E3LV) {}
 
 ARM ActorUnkE3LV::ActorUnkE3LV() {}
 

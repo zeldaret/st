@@ -39,7 +39,7 @@ public:
     void func_ov074_02152df0(void);
 };
 
-class ActorProfileUnkMAGR : public ActorProfile {
+class ActorProfileUnkMAGR : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 

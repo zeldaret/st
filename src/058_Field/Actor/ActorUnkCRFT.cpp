@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkCRFT::Create() {
 }
 
 ARM ActorProfileUnkCRFT::ActorProfileUnkCRFT() :
-    ActorProfile(ActorId_CRFT) {}
+    ActorProfile_Derived1(ActorId_CRFT) {}
 
 ARM ActorUnkCRFT::ActorUnkCRFT() {}
 

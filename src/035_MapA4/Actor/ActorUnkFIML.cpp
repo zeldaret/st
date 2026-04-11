@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkFIML::Create() {
 }
 
 ARM ActorProfileUnkFIML::ActorProfileUnkFIML() :
-    ActorProfile(ActorId_FIML) {}
+    ActorProfile_Derived1(ActorId_FIML) {}
 
 ARM ActorUnkFIML::ActorUnkFIML() {}
 

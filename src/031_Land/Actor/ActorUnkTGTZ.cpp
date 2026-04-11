@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkTGTZ::Create() {
 }
 
 ARM ActorProfileUnkTGTZ::ActorProfileUnkTGTZ() :
-    ActorProfile(ActorId_TGTZ) {}
+    ActorProfile_Derived1(ActorId_TGTZ) {}
 
 ARM ActorUnkTGTZ::ActorUnkTGTZ() {}
 

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkSZRD::Create() {
 }
 
 ARM ActorProfileUnkSZRD::ActorProfileUnkSZRD() :
-    ActorProfile(ActorId_SZRD) {}
+    ActorProfile_Derived1(ActorId_SZRD) {}
 
 ARM ActorUnkSZRD::ActorUnkSZRD() {}
 

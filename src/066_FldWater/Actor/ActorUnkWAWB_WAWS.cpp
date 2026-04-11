@@ -16,7 +16,7 @@ ARM Actor *ActorProfileUnkWAWB::Create() {
 }
 
 ARM ActorProfileUnkWAWB::ActorProfileUnkWAWB() :
-    ActorProfile(ActorId_WAWB) {}
+    ActorProfile_Derived1(ActorId_WAWB) {}
 
 ARM ActorUnkWAWB::ActorUnkWAWB() {}
 
@@ -33,7 +33,7 @@ ARM Actor *ActorProfileUnkWAWS::Create() {
 }
 
 ARM ActorProfileUnkWAWS::ActorProfileUnkWAWS() :
-    ActorProfile(ActorId_WAWS) {}
+    ActorProfile_Derived1(ActorId_WAWS) {}
 
 ARM ActorUnkWAWS::ActorUnkWAWS() {}
 

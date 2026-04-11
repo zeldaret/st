@@ -16,7 +16,7 @@ ARM Actor *ActorProfileUnkYKAP::Create() {
 }
 
 ARM ActorProfileUnkYKAP::ActorProfileUnkYKAP() :
-    ActorProfile(ActorId_YKAP) {}
+    ActorProfile_Derived1(ActorId_YKAP) {}
 
 ARM ActorUnkYKAP::ActorUnkYKAP() {}
 
@@ -33,7 +33,7 @@ ARM Actor *ActorProfileUnkYKCP::Create() {
 }
 
 ARM ActorProfileUnkYKCP::ActorProfileUnkYKCP() :
-    ActorProfile(ActorId_YKCP) {}
+    ActorProfile_Derived1(ActorId_YKCP) {}
 
 ARM ActorUnkYKCP::ActorUnkYKCP() {}
 
@@ -50,7 +50,7 @@ ARM Actor *ActorProfileUnkYKEP::Create() {
 }
 
 ARM ActorProfileUnkYKEP::ActorProfileUnkYKEP() :
-    ActorProfile(ActorId_YKEP) {}
+    ActorProfile_Derived1(ActorId_YKEP) {}
 
 ARM ActorUnkYKEP::ActorUnkYKEP() {}
 

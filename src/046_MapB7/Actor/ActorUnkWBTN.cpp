@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkWBTN::Create() {
 }
 
 ARM ActorProfileUnkWBTN::ActorProfileUnkWBTN() :
-    ActorProfile(ActorId_WBTN) {}
+    ActorProfile_Derived1(ActorId_WBTN) {}
 
 ARM ActorUnkWBTN::ActorUnkWBTN() {}
 

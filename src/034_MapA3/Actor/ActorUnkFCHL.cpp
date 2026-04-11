@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkFCHL::Create() {
 }
 
 ARM ActorProfileUnkFCHL::ActorProfileUnkFCHL() :
-    ActorProfile(ActorId_FCHL) {}
+    ActorProfile_Derived1(ActorId_FCHL) {}
 
 ARM ActorUnkFCHL::ActorUnkFCHL() {}
 

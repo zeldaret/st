@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkTVLR::Create() {
 }
 
 ARM ActorProfileUnkTVLR::ActorProfileUnkTVLR() :
-    ActorProfile(ActorId_TVLR) {}
+    ActorProfile_Derived1(ActorId_TVLR) {}
 
 ARM ActorUnkTVLR::ActorUnkTVLR() {}
 

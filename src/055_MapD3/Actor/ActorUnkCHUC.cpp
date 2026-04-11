@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkCHUC::Create() {
 }
 
 ARM ActorProfileUnkCHUC::ActorProfileUnkCHUC() :
-    ActorProfile(ActorId_ChuChu) {}
+    ActorProfile_Derived1(ActorId_ChuChu) {}
 
 ARM ActorUnkCHUC::ActorUnkCHUC() {}
 

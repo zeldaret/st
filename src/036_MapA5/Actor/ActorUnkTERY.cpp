@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkTERY::Create() {
 }
 
 ARM ActorProfileUnkTERY::ActorProfileUnkTERY() :
-    ActorProfile(ActorId_Beedle) {}
+    ActorProfile_Derived1(ActorId_Beedle) {}
 
 ARM ActorUnkTERY::ActorUnkTERY() {}
 

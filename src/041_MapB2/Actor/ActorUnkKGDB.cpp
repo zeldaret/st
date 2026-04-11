@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkKGDB::Create() {
 }
 
 ARM ActorProfileUnkKGDB::ActorProfileUnkKGDB() :
-    ActorProfile(ActorId_KGDB) {}
+    ActorProfile_Derived1(ActorId_KGDB) {}
 
 ARM ActorUnkKGDB::ActorUnkKGDB() {}
 

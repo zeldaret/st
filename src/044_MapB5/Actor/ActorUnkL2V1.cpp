@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkL2V1::Create() {
 }
 
 ARM ActorProfileUnkL2V1::ActorProfileUnkL2V1() :
-    ActorProfile(ActorId_L2V1) {}
+    ActorProfile_Derived1(ActorId_L2V1) {}
 
 ARM ActorUnkL2V1::ActorUnkL2V1() {}
 

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkPBK2::Create() {
 }
 
 ARM ActorProfileUnkPBK2::ActorProfileUnkPBK2() :
-    ActorProfile(ActorId_PBK2) {}
+    ActorProfile_Derived1(ActorId_PBK2) {}
 
 ARM ActorUnkPBK2::ActorUnkPBK2() {}
 

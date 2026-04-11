@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkNAVI::Create() {
 }
 
 ARM ActorProfileUnkNAVI::ActorProfileUnkNAVI() :
-    ActorProfile(ActorId_NAVI) {}
+    ActorProfile_Derived1(ActorId_NAVI) {}
 
 ARM ActorUnkNAVI::ActorUnkNAVI() {}
 

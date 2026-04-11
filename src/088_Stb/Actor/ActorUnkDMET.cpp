@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkDMET::Create() {
 }
 
 ARM ActorProfileUnkDMET::ActorProfileUnkDMET() :
-    ActorProfile(ActorId_DMET) {}
+    ActorProfile_Derived1(ActorId_DMET) {}
 
 ARM ActorUnkDMET::ActorUnkDMET() {}
 

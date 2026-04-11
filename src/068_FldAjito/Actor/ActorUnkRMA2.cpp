@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkRMA2::Create() {
 }
 
 ARM ActorProfileUnkRMA2::ActorProfileUnkRMA2() :
-    ActorProfile(ActorId_RMA2) {}
+    ActorProfile_Derived1(ActorId_RMA2) {}
 
 ARM ActorUnkRMA2::ActorUnkRMA2() {}
 

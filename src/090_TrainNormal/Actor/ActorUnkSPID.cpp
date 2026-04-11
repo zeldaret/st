@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkSPID::Create() {
 }
 
 ARM ActorProfileUnkSPID::ActorProfileUnkSPID() :
-    ActorProfile(ActorId_SPID) {}
+    ActorProfile_Derived1(ActorId_SPID) {}
 
 ARM ActorUnkSPID::ActorUnkSPID() {}
 

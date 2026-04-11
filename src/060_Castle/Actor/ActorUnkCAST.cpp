@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkCAST::Create() {
 }
 
 ARM ActorProfileUnkCAST::ActorProfileUnkCAST() :
-    ActorProfile(ActorId_CAST) {}
+    ActorProfile_Derived1(ActorId_CAST) {}
 
 ARM ActorUnkCAST::ActorUnkCAST() {}
 

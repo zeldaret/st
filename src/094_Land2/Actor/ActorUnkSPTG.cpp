@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkSPTG::Create() {
 }
 
 ARM ActorProfileUnkSPTG::ActorProfileUnkSPTG() :
-    ActorProfile(ActorId_SPTG) {}
+    ActorProfile_Derived1(ActorId_SPTG) {}
 
 ARM ActorUnkSPTG::ActorUnkSPTG() {}
 

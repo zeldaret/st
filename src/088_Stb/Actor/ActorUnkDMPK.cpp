@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkDMPK::Create() {
 }
 
 ARM ActorProfileUnkDMPK::ActorProfileUnkDMPK() :
-    ActorProfile(ActorId_DMPK) {}
+    ActorProfile_Derived1(ActorId_DMPK) {}
 
 ARM ActorUnkDMPK::ActorUnkDMPK() {}
 

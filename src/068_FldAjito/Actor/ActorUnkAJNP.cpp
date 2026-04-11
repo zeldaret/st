@@ -5,18 +5,18 @@
 
 static ActorProfileUnkAJNP sActorProfileUnkAJNP;
 
-ARM ActorProfileUnkAJNP *ActorProfileUnkAJNP::GetProfile() {
+THUMB ActorProfileUnkAJNP *ActorProfileUnkAJNP::GetProfile() {
     return &sActorProfileUnkAJNP;
 }
 
-ARM Actor *ActorProfileUnkAJNP::Create() {
+THUMB Actor *ActorProfileUnkAJNP::Create() {
     return new(HeapIndex_2) ActorUnkAJNP();
 }
 
-ARM ActorProfileUnkAJNP::ActorProfileUnkAJNP() :
-    ActorProfile(ActorId_AJNP) {}
+THUMB ActorProfileUnkAJNP::ActorProfileUnkAJNP() :
+    ActorProfile_Derived1(ActorId_AJNP, ActorId_WAMA) {}
 
-ARM ActorUnkAJNP::ActorUnkAJNP() {}
+THUMB ActorUnkAJNP::ActorUnkAJNP() {}
 
 THUMB void ActorUnkAJNP::func_ov068_0215d018(void) {}
 THUMB void ActorUnkAJNP::func_ov068_0215d104(void) {}
@@ -36,5 +36,5 @@ ARM void ActorUnkAJNP::func_ov068_0215d68c(void) {}
 ARM void ActorUnkAJNP::func_ov068_0215d6e8(void) {}
 ARM void ActorUnkAJNP::func_ov068_0215d710(void) {}
 
-ActorUnkAJNP::~ActorUnkAJNP() {}
-ActorProfileUnkAJNP::~ActorProfileUnkAJNP() {}
+ARM ActorUnkAJNP::~ActorUnkAJNP() {}
+ARM ActorProfileUnkAJNP::~ActorProfileUnkAJNP() {}

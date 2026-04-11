@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkKMSO::Create() {
 }
 
 ARM ActorProfileUnkKMSO::ActorProfileUnkKMSO() :
-    ActorProfile(ActorId_KMSO) {}
+    ActorProfile_Derived1(ActorId_KMSO) {}
 
 ARM ActorUnkKMSO::ActorUnkKMSO() {}
 

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkLIKE::Create() {
 }
 
 ARM ActorProfileUnkLIKE::ActorProfileUnkLIKE() :
-    ActorProfile(ActorId_LikeLike) {}
+    ActorProfile_Derived1(ActorId_LikeLike) {}
 
 ARM ActorUnkLIKE::ActorUnkLIKE() {}
 

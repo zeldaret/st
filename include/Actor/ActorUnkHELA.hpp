@@ -120,7 +120,7 @@ public:
     void func_ov030_0214b0a4(void);
 };
 
-class ActorProfileUnkHELA : public ActorProfile {
+class ActorProfileUnkHELA : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 

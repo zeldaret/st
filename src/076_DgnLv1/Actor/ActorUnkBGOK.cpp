@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkBGOK::Create() {
 }
 
 ARM ActorProfileUnkBGOK::ActorProfileUnkBGOK() :
-    ActorProfile(ActorId_BGOK) {}
+    ActorProfile_Derived1(ActorId_BGOK) {}
 
 ARM ActorUnkBGOK::ActorUnkBGOK() {}
 

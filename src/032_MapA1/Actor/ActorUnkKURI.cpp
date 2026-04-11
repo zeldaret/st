@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkKURI::Create() {
 }
 
 ARM ActorProfileUnkKURI::ActorProfileUnkKURI() :
-    ActorProfile(ActorId_KURI) {}
+    ActorProfile_Derived1(ActorId_KURI) {}
 
 ARM ActorUnkKURI::ActorUnkKURI() {}
 

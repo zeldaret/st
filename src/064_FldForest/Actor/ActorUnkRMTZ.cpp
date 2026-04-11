@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkRMTZ::Create() {
 }
 
 ARM ActorProfileUnkRMTZ::ActorProfileUnkRMTZ() :
-    ActorProfile(ActorId_RMTZ) {}
+    ActorProfile_Derived1(ActorId_RMTZ) {}
 
 ARM ActorUnkRMTZ::ActorUnkRMTZ() {}
 

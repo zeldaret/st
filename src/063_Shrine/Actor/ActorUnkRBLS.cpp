@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkRBLS::Create() {
 }
 
 ARM ActorProfileUnkRBLS::ActorProfileUnkRBLS() :
-    ActorProfile(ActorId_RBLS) {}
+    ActorProfile_Derived1(ActorId_RBLS) {}
 
 ARM ActorUnkRBLS::ActorUnkRBLS() {}
 

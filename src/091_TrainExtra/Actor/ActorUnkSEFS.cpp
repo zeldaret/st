@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkSEFS::Create() {
 }
 
 ARM ActorProfileUnkSEFS::ActorProfileUnkSEFS() :
-    ActorProfile(ActorId_SEFS) {}
+    ActorProfile_Derived1(ActorId_SEFS) {}
 
 ARM ActorUnkSEFS::ActorUnkSEFS() {}
 

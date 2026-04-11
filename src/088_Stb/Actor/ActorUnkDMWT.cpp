@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkDMWT::Create() {
 }
 
 ARM ActorProfileUnkDMWT::ActorProfileUnkDMWT() :
-    ActorProfile(ActorId_DMWT) {}
+    ActorProfile_Derived1(ActorId_DMWT) {}
 
 ARM ActorUnkDMWT::ActorUnkDMWT() {}
 

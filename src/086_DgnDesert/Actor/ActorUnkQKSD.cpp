@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkQKSD::Create() {
 }
 
 ARM ActorProfileUnkQKSD::ActorProfileUnkQKSD() :
-    ActorProfile(ActorId_QKSD) {}
+    ActorProfile_Derived1(ActorId_QKSD) {}
 
 ARM ActorUnkQKSD::ActorUnkQKSD() {}
 

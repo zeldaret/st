@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkSZKL::Create() {
 }
 
 ARM ActorProfileUnkSZKL::ActorProfileUnkSZKL() :
-    ActorProfile(ActorId_SZKL) {}
+    ActorProfile_Derived1(ActorId_SZKL) {}
 
 ARM ActorUnkSZKL::ActorUnkSZKL() {}
 

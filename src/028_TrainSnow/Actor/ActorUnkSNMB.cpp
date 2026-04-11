@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkSNMB::Create() {
 }
 
 ARM ActorProfileUnkSNMB::ActorProfileUnkSNMB() :
-    ActorProfile(ActorId_SNMB) {}
+    ActorProfile_Derived1(ActorId_SNMB) {}
 
 ARM ActorUnkSNMB::ActorUnkSNMB() {}
 

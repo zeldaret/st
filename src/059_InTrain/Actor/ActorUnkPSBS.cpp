@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkPSBS::Create() {
 }
 
 ARM ActorProfileUnkPSBS::ActorProfileUnkPSBS() :
-    ActorProfile(ActorId_PSBS) {}
+    ActorProfile_Derived1(ActorId_PSBS) {}
 
 ARM ActorUnkPSBS::ActorUnkPSBS() {}
 

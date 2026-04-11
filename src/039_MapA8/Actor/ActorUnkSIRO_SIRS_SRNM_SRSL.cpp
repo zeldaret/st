@@ -16,7 +16,7 @@ ARM Actor *ActorProfileUnkSIRO::Create() {
 }
 
 ARM ActorProfileUnkSIRO::ActorProfileUnkSIRO() :
-    ActorProfile(ActorId_SIRO) {}
+    ActorProfile_Derived1(ActorId_SIRO) {}
 
 ARM ActorUnkSIRO::ActorUnkSIRO() {}
 
@@ -33,7 +33,7 @@ ARM Actor *ActorProfileUnkSIRS::Create() {
 }
 
 ARM ActorProfileUnkSIRS::ActorProfileUnkSIRS() :
-    ActorProfile(ActorId_SIRS) {}
+    ActorProfile_Derived1(ActorId_SIRS) {}
 
 ARM ActorUnkSIRS::ActorUnkSIRS() {}
 
@@ -50,7 +50,7 @@ ARM Actor *ActorProfileUnkSRNM::Create() {
 }
 
 ARM ActorProfileUnkSRNM::ActorProfileUnkSRNM() :
-    ActorProfile(ActorId_SRNM) {}
+    ActorProfile_Derived1(ActorId_SRNM) {}
 
 ARM ActorUnkSRNM::ActorUnkSRNM() {}
 
@@ -67,7 +67,7 @@ ARM Actor *ActorProfileUnkSRSL::Create() {
 }
 
 ARM ActorProfileUnkSRSL::ActorProfileUnkSRSL() :
-    ActorProfile(ActorId_SRSL) {}
+    ActorProfile_Derived1(ActorId_SRSL) {}
 
 ARM ActorUnkSRSL::ActorUnkSRSL() {}
 

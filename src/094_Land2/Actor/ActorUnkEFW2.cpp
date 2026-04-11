@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkEFW2::Create() {
 }
 
 ARM ActorProfileUnkEFW2::ActorProfileUnkEFW2() :
-    ActorProfile(ActorId_EFW2) {}
+    ActorProfile_Derived1(ActorId_EFW2) {}
 
 ARM ActorUnkEFW2::ActorUnkEFW2() {}
 

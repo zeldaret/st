@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkSHIT::Create() {
 }
 
 ARM ActorProfileUnkSHIT::ActorProfileUnkSHIT() :
-    ActorProfile(ActorId_SHIT) {}
+    ActorProfile_Derived1(ActorId_SHIT) {}
 
 ARM ActorUnkSHIT::ActorUnkSHIT() {}
 

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkITSC::Create() {
 }
 
 ARM ActorProfileUnkITSC::ActorProfileUnkITSC() :
-    ActorProfile(ActorId_ITSC) {}
+    ActorProfile_Derived1(ActorId_ITSC) {}
 
 ARM ActorUnkITSC::ActorUnkITSC() {}
 

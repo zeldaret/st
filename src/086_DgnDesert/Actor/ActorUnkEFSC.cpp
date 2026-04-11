@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkEFSC::Create() {
 }
 
 ARM ActorProfileUnkEFSC::ActorProfileUnkEFSC() :
-    ActorProfile(ActorId_EFSC) {}
+    ActorProfile_Derived1(ActorId_EFSC) {}
 
 ARM ActorUnkEFSC::ActorUnkEFSC() {}
 

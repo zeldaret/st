@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkPRSP::Create() {
 }
 
 ARM ActorProfileUnkPRSP::ActorProfileUnkPRSP() :
-    ActorProfile(ActorId_PRSP) {}
+    ActorProfile_Derived1(ActorId_PRSP) {}
 
 ARM ActorUnkPRSP::ActorUnkPRSP() {}
 

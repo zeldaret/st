@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkCASE::Create() {
 }
 
 ARM ActorProfileUnkCASE::ActorProfileUnkCASE() :
-    ActorProfile(ActorId_CASE) {}
+    ActorProfile_Derived1(ActorId_CASE) {}
 
 ARM ActorUnkCASE::ActorUnkCASE() {}
 

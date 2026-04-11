@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkNICO::Create() {
 }
 
 ARM ActorProfileUnkNICO::ActorProfileUnkNICO() :
-    ActorProfile(ActorId_NICO) {}
+    ActorProfile_Derived1(ActorId_NICO) {}
 
 ARM ActorUnkNICO::ActorUnkNICO() {}
 

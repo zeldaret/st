@@ -19,7 +19,7 @@ public:
     /* 4C */ virtual ~ActorUnkWAWA() override;
 };
 
-class ActorProfileUnkWAWA : public ActorProfile {
+class ActorProfileUnkWAWA : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
@@ -43,7 +43,7 @@ public:
     /* 4C */ virtual ~ActorUnkWAWC() override;
 };
 
-class ActorProfileUnkWAWC : public ActorProfile {
+class ActorProfileUnkWAWC : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 

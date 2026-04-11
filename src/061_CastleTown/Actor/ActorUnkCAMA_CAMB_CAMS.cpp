@@ -16,7 +16,7 @@ ARM Actor *ActorProfileUnkCAMA::Create() {
 }
 
 ARM ActorProfileUnkCAMA::ActorProfileUnkCAMA() :
-    ActorProfile(ActorId_CAMA) {}
+    ActorProfile_Derived1(ActorId_CAMA) {}
 
 ARM ActorUnkCAMA::ActorUnkCAMA() {}
 
@@ -33,7 +33,7 @@ ARM Actor *ActorProfileUnkCAMB::Create() {
 }
 
 ARM ActorProfileUnkCAMB::ActorProfileUnkCAMB() :
-    ActorProfile(ActorId_CAMB) {}
+    ActorProfile_Derived1(ActorId_CAMB) {}
 
 ARM ActorUnkCAMB::ActorUnkCAMB() {}
 
@@ -50,7 +50,7 @@ ARM Actor *ActorProfileUnkCAMS::Create() {
 }
 
 ARM ActorProfileUnkCAMS::ActorProfileUnkCAMS() :
-    ActorProfile(ActorId_CAMS) {}
+    ActorProfile_Derived1(ActorId_CAMS) {}
 
 ARM ActorUnkCAMS::ActorUnkCAMS() {}
 

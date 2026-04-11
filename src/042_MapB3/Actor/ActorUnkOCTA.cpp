@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkOCTA::Create() {
 }
 
 ARM ActorProfileUnkOCTA::ActorProfileUnkOCTA() :
-    ActorProfile(ActorId_OCTA) {}
+    ActorProfile_Derived1(ActorId_OCTA) {}
 
 ARM ActorUnkOCTA::ActorUnkOCTA() {}
 

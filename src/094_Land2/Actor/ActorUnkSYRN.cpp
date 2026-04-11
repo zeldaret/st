@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkSYRN::Create() {
 }
 
 ARM ActorProfileUnkSYRN::ActorProfileUnkSYRN() :
-    ActorProfile(ActorId_SYRN) {}
+    ActorProfile_Derived1(ActorId_SYRN) {}
 
 ARM ActorUnkSYRN::ActorUnkSYRN() {}
 

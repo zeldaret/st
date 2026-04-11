@@ -19,7 +19,7 @@ public:
     /* 4C */ virtual ~ActorUnkMRDA() override;
 };
 
-class ActorProfileUnkMRDA : public ActorProfile {
+class ActorProfileUnkMRDA : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
@@ -43,7 +43,7 @@ public:
     /* 4C */ virtual ~ActorUnkMRDO() override;
 };
 
-class ActorProfileUnkMRDO : public ActorProfile {
+class ActorProfileUnkMRDO : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 

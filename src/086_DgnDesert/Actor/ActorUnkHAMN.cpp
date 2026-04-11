@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkHAMN::Create() {
 }
 
 ARM ActorProfileUnkHAMN::ActorProfileUnkHAMN() :
-    ActorProfile(ActorId_HAMN) {}
+    ActorProfile_Derived1(ActorId_HAMN) {}
 
 ARM ActorUnkHAMN::ActorUnkHAMN() {}
 

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkZELD::Create() {
 }
 
 ARM ActorProfileUnkZELD::ActorProfileUnkZELD() :
-    ActorProfile(ActorId_ZELD) {}
+    ActorProfile_Derived1(ActorId_ZELD) {}
 
 ARM ActorUnkZELD::ActorUnkZELD() {}
 

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkRCMS::Create() {
 }
 
 ARM ActorProfileUnkRCMS::ActorProfileUnkRCMS() :
-    ActorProfile(ActorId_RCMS) {}
+    ActorProfile_Derived1(ActorId_RCMS) {}
 
 ARM ActorUnkRCMS::ActorUnkRCMS() {}
 

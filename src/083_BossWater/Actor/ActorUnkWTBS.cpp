@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkWTBS::Create() {
 }
 
 ARM ActorProfileUnkWTBS::ActorProfileUnkWTBS() :
-    ActorProfile(ActorId_WTBS) {}
+    ActorProfile_Derived1(ActorId_WTBS) {}
 
 ARM ActorUnkWTBS::ActorUnkWTBS() {}
 

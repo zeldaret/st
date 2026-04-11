@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkMTFB::Create() {
 }
 
 ARM ActorProfileUnkMTFB::ActorProfileUnkMTFB() :
-    ActorProfile(ActorId_MTFB) {}
+    ActorProfile_Derived1(ActorId_MTFB) {}
 
 ARM ActorUnkMTFB::ActorUnkMTFB() {}
 

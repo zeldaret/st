@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkROCK::Create() {
 }
 
 ARM ActorProfileUnkROCK::ActorProfileUnkROCK() :
-    ActorProfile(ActorId_ROCK) {}
+    ActorProfile_Derived1(ActorId_ROCK) {}
 
 ARM ActorUnkROCK::ActorUnkROCK() {}
 

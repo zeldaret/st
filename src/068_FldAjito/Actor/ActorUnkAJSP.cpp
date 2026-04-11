@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkAJSP::Create() {
 }
 
 ARM ActorProfileUnkAJSP::ActorProfileUnkAJSP() :
-    ActorProfile(ActorId_AJSP) {}
+    ActorProfile_Derived1(ActorId_AJSP) {}
 
 ARM ActorUnkAJSP::ActorUnkAJSP() {}
 

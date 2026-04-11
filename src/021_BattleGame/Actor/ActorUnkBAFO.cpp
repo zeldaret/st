@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkBAFO::Create() {
 }
 
 ARM ActorProfileUnkBAFO::ActorProfileUnkBAFO() :
-    ActorProfile(ActorId_BAFO) {}
+    ActorProfile_Derived1(ActorId_BAFO) {}
 
 ARM ActorUnkBAFO::ActorUnkBAFO() {}
 

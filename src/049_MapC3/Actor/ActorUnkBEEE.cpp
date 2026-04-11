@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkBEEE::Create() {
 }
 
 ARM ActorProfileUnkBEEE::ActorProfileUnkBEEE() :
-    ActorProfile(ActorId_TreasureBee) {}
+    ActorProfile_Derived1(ActorId_TreasureBee) {}
 
 ARM ActorUnkBEEE::ActorUnkBEEE() {}
 

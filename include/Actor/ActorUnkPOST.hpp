@@ -34,7 +34,7 @@ public:
     void func_ov049_021351cc(void);
 };
 
-class ActorProfileUnkPOST : public ActorProfile {
+class ActorProfileUnkPOST : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 

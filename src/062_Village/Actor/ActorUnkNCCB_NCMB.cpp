@@ -16,7 +16,7 @@ ARM Actor *ActorProfileUnkNCCB::Create() {
 }
 
 ARM ActorProfileUnkNCCB::ActorProfileUnkNCCB() :
-    ActorProfile(ActorId_NCCB) {}
+    ActorProfile_Derived1(ActorId_NCCB) {}
 
 ARM ActorUnkNCCB::ActorUnkNCCB() {}
 
@@ -33,7 +33,7 @@ ARM Actor *ActorProfileUnkNCMB::Create() {
 }
 
 ARM ActorProfileUnkNCMB::ActorProfileUnkNCMB() :
-    ActorProfile(ActorId_NCMB) {}
+    ActorProfile_Derived1(ActorId_NCMB) {}
 
 ARM ActorUnkNCMB::ActorUnkNCMB() {}
 

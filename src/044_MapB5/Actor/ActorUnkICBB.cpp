@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkICBB::Create() {
 }
 
 ARM ActorProfileUnkICBB::ActorProfileUnkICBB() :
-    ActorProfile(ActorId_ICBB) {}
+    ActorProfile_Derived1(ActorId_ICBB) {}
 
 ARM ActorUnkICBB::ActorUnkICBB() {}
 

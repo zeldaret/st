@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkWBEF::Create() {
 }
 
 ARM ActorProfileUnkWBEF::ActorProfileUnkWBEF() :
-    ActorProfile(ActorId_WBEF) {}
+    ActorProfile_Derived1(ActorId_WBEF) {}
 
 ARM ActorUnkWBEF::ActorUnkWBEF() {}
 

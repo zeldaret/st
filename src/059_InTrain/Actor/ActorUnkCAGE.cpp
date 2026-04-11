@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkCAGE::Create() {
 }
 
 ARM ActorProfileUnkCAGE::ActorProfileUnkCAGE() :
-    ActorProfile(ActorId_CAGE) {}
+    ActorProfile_Derived1(ActorId_CAGE) {}
 
 ARM ActorUnkCAGE::ActorUnkCAGE() {}
 

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkDSFR::Create() {
 }
 
 ARM ActorProfileUnkDSFR::ActorProfileUnkDSFR() :
-    ActorProfile(ActorId_DSFR) {}
+    ActorProfile_Derived1(ActorId_DSFR) {}
 
 ARM ActorUnkDSFR::ActorUnkDSFR() {}
 

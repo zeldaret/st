@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkVLCR::Create() {
 }
 
 ARM ActorProfileUnkVLCR::ActorProfileUnkVLCR() :
-    ActorProfile(ActorId_VLCR) {}
+    ActorProfile_Derived1(ActorId_VLCR) {}
 
 ARM ActorUnkVLCR::ActorUnkVLCR() {}
 

@@ -5,18 +5,18 @@
 
 static ActorProfileUnkSHDL sActorProfileUnkSHDL;
 
-ARM ActorProfileUnkSHDL *ActorProfileUnkSHDL::GetProfile() {
+THUMB ActorProfileUnkSHDL *ActorProfileUnkSHDL::GetProfile() {
     return &sActorProfileUnkSHDL;
 }
 
-ARM Actor *ActorProfileUnkSHDL::Create() {
+THUMB Actor *ActorProfileUnkSHDL::Create() {
     return new(HeapIndex_2) ActorUnkSHDL();
 }
 
-ARM ActorProfileUnkSHDL::ActorProfileUnkSHDL() :
+THUMB ActorProfileUnkSHDL::ActorProfileUnkSHDL() :
     ActorProfile(ActorId_SHDL) {}
 
-ARM ActorUnkSHDL::ActorUnkSHDL() {}
+THUMB ActorUnkSHDL::ActorUnkSHDL() {}
 
 THUMB void ActorUnkSHDL::func_ov043_02128b44(void) {}
 THUMB void ActorUnkSHDL::func_ov043_02128d94(void) {}
@@ -95,5 +95,5 @@ THUMB void ActorUnkSHDL::func_ov043_0212c844(void) {}
 THUMB void ActorUnkSHDL::func_ov043_0212c88c(void) {}
 THUMB void ActorUnkSHDL::func_ov043_0212c94c(void) {}
 
-ActorUnkSHDL::~ActorUnkSHDL() {}
-ActorProfileUnkSHDL::~ActorProfileUnkSHDL() {}
+ARM ActorUnkSHDL::~ActorUnkSHDL() {}
+ARM ActorProfileUnkSHDL::~ActorProfileUnkSHDL() {}

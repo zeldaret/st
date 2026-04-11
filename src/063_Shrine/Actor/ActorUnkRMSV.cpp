@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkRMSV::Create() {
 }
 
 ARM ActorProfileUnkRMSV::ActorProfileUnkRMSV() :
-    ActorProfile(ActorId_RMSV) {}
+    ActorProfile_Derived1(ActorId_RMSV) {}
 
 ARM ActorUnkRMSV::ActorUnkRMSV() {}
 

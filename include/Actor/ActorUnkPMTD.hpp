@@ -17,7 +17,7 @@ public:
     /* 4C */ virtual ~ActorUnkPMTD() override;
 };
 
-class ActorProfileUnkPMTD : public ActorProfile {
+class ActorProfileUnkPMTD : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 

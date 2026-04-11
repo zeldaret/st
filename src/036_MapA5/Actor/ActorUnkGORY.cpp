@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkGORY::Create() {
 }
 
 ARM ActorProfileUnkGORY::ActorProfileUnkGORY() :
-    ActorProfile(ActorId_GORY) {}
+    ActorProfile_Derived1(ActorId_GORY) {}
 
 ARM ActorUnkGORY::ActorUnkGORY() {}
 

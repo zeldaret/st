@@ -80,7 +80,7 @@ public:
     void func_ov090_0216dcd8(void);
 };
 
-class ActorProfileUnkWDBA : public ActorProfile {
+class ActorProfileUnkWDBA : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 

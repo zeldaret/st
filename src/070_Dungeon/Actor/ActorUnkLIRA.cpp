@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkLIRA::Create() {
 }
 
 ARM ActorProfileUnkLIRA::ActorProfileUnkLIRA() :
-    ActorProfile(ActorId_LIRA) {}
+    ActorProfile_Derived1(ActorId_LIRA) {}
 
 ARM ActorUnkLIRA::ActorUnkLIRA() {}
 

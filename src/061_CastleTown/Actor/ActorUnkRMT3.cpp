@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkRMT3::Create() {
 }
 
 ARM ActorProfileUnkRMT3::ActorProfileUnkRMT3() :
-    ActorProfile(ActorId_RMT3) {}
+    ActorProfile_Derived1(ActorId_RMT3) {}
 
 ARM ActorUnkRMT3::ActorUnkRMT3() {}
 

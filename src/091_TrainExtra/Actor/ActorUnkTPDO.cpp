@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkTPDO::Create() {
 }
 
 ARM ActorProfileUnkTPDO::ActorProfileUnkTPDO() :
-    ActorProfile(ActorId_TPDO) {}
+    ActorProfile_Derived1(ActorId_TPDO) {}
 
 ARM ActorUnkTPDO::ActorUnkTPDO() {}
 

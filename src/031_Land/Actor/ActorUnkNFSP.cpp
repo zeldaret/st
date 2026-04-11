@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkNFSP::Create() {
 }
 
 ARM ActorProfileUnkNFSP::ActorProfileUnkNFSP() :
-    ActorProfile(ActorId_NFSP) {}
+    ActorProfile_Derived1(ActorId_NFSP) {}
 
 ARM ActorUnkNFSP::ActorUnkNFSP() {}
 

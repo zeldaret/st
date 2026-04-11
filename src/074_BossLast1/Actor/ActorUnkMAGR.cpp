@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkMAGR::Create() {
 }
 
 ARM ActorProfileUnkMAGR::ActorProfileUnkMAGR() :
-    ActorProfile(ActorId_MAGR) {}
+    ActorProfile_Derived1(ActorId_MAGR) {}
 
 ARM ActorUnkMAGR::ActorUnkMAGR() {}
 

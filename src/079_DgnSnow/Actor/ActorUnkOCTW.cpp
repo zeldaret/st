@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkOCTW::Create() {
 }
 
 ARM ActorProfileUnkOCTW::ActorProfileUnkOCTW() :
-    ActorProfile(ActorId_OCTW) {}
+    ActorProfile_Derived1(ActorId_OCTW) {}
 
 ARM ActorUnkOCTW::ActorUnkOCTW() {}
 

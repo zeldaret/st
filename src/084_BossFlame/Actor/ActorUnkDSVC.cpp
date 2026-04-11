@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkDSVC::Create() {
 }
 
 ARM ActorProfileUnkDSVC::ActorProfileUnkDSVC() :
-    ActorProfile(ActorId_DSVC) {}
+    ActorProfile_Derived1(ActorId_DSVC) {}
 
 ARM ActorUnkDSVC::ActorUnkDSVC() {}
 

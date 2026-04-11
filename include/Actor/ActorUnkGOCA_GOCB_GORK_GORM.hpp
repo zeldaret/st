@@ -19,7 +19,7 @@ public:
     /* 4C */ virtual ~ActorUnkGOCA() override;
 };
 
-class ActorProfileUnkGOCA : public ActorProfile {
+class ActorProfileUnkGOCA : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
@@ -43,7 +43,7 @@ public:
     /* 4C */ virtual ~ActorUnkGOCB() override;
 };
 
-class ActorProfileUnkGOCB : public ActorProfile {
+class ActorProfileUnkGOCB : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
@@ -67,7 +67,7 @@ public:
     /* 4C */ virtual ~ActorUnkGORK() override;
 };
 
-class ActorProfileUnkGORK : public ActorProfile {
+class ActorProfileUnkGORK : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
@@ -91,7 +91,7 @@ public:
     /* 4C */ virtual ~ActorUnkGORM() override;
 };
 
-class ActorProfileUnkGORM : public ActorProfile {
+class ActorProfileUnkGORM : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 

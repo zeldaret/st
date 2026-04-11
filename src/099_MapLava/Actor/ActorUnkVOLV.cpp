@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkVOLV::Create() {
 }
 
 ARM ActorProfileUnkVOLV::ActorProfileUnkVOLV() :
-    ActorProfile(ActorId_VOLV) {}
+    ActorProfile_Derived1(ActorId_VOLV) {}
 
 ARM ActorUnkVOLV::ActorUnkVOLV() {}
 

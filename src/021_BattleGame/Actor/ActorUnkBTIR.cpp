@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkBTIR::Create() {
 }
 
 ARM ActorProfileUnkBTIR::ActorProfileUnkBTIR() :
-    ActorProfile(ActorId_BTIR) {}
+    ActorProfile_Derived1(ActorId_BTIR) {}
 
 ARM ActorUnkBTIR::ActorUnkBTIR() {}
 

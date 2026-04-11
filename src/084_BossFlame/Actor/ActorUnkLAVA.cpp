@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkLAVA::Create() {
 }
 
 ARM ActorProfileUnkLAVA::ActorProfileUnkLAVA() :
-    ActorProfile(ActorId_LAVA) {}
+    ActorProfile_Derived1(ActorId_LAVA) {}
 
 ARM ActorUnkLAVA::ActorUnkLAVA() {}
 

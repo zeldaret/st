@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkPOST::Create() {
 }
 
 ARM ActorProfileUnkPOST::ActorProfileUnkPOST() :
-    ActorProfile(ActorId_PostBox) {}
+    ActorProfile_Derived1(ActorId_PostBox) {}
 
 ARM ActorUnkPOST::ActorUnkPOST() {}
 

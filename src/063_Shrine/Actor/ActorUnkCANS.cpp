@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkCANS::Create() {
 }
 
 ARM ActorProfileUnkCANS::ActorProfileUnkCANS() :
-    ActorProfile(ActorId_CANS) {}
+    ActorProfile_Derived1(ActorId_CANS) {}
 
 ARM ActorUnkCANS::ActorUnkCANS() {}
 

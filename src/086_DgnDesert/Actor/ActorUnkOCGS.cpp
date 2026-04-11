@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkOCGS::Create() {
 }
 
 ARM ActorProfileUnkOCGS::ActorProfileUnkOCGS() :
-    ActorProfile(ActorId_OCGS) {}
+    ActorProfile_Derived1(ActorId_OCGS) {}
 
 ARM ActorUnkOCGS::ActorUnkOCGS() {}
 

@@ -16,7 +16,7 @@ ARM Actor *ActorProfileUnkGOCA::Create() {
 }
 
 ARM ActorProfileUnkGOCA::ActorProfileUnkGOCA() :
-    ActorProfile(ActorId_GOCA) {}
+    ActorProfile_Derived1(ActorId_GOCA) {}
 
 ARM ActorUnkGOCA::ActorUnkGOCA() {}
 
@@ -33,7 +33,7 @@ ARM Actor *ActorProfileUnkGOCB::Create() {
 }
 
 ARM ActorProfileUnkGOCB::ActorProfileUnkGOCB() :
-    ActorProfile(ActorId_GOCB) {}
+    ActorProfile_Derived1(ActorId_GOCB) {}
 
 ARM ActorUnkGOCB::ActorUnkGOCB() {}
 
@@ -50,7 +50,7 @@ ARM Actor *ActorProfileUnkGORK::Create() {
 }
 
 ARM ActorProfileUnkGORK::ActorProfileUnkGORK() :
-    ActorProfile(ActorId_GORK) {}
+    ActorProfile_Derived1(ActorId_GORK) {}
 
 ARM ActorUnkGORK::ActorUnkGORK() {}
 
@@ -67,7 +67,7 @@ ARM Actor *ActorProfileUnkGORM::Create() {
 }
 
 ARM ActorProfileUnkGORM::ActorProfileUnkGORM() :
-    ActorProfile(ActorId_GORM) {}
+    ActorProfile_Derived1(ActorId_GORM) {}
 
 ARM ActorUnkGORM::ActorUnkGORM() {}
 

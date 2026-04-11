@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkWWFS::Create() {
 }
 
 ARM ActorProfileUnkWWFS::ActorProfileUnkWWFS() :
-    ActorProfile(ActorId_WWFS) {}
+    ActorProfile_Derived1(ActorId_WWFS) {}
 
 ARM ActorUnkWWFS::ActorUnkWWFS() {}
 

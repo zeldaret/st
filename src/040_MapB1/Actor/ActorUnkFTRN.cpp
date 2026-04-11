@@ -5,18 +5,18 @@
 
 static ActorProfileUnkFTRN sActorProfileUnkFTRN;
 
-ARM ActorProfileUnkFTRN *ActorProfileUnkFTRN::GetProfile() {
+OV040_ARM ActorProfileUnkFTRN *ActorProfileUnkFTRN::GetProfile() {
     return &sActorProfileUnkFTRN;
 }
 
-ARM Actor *ActorProfileUnkFTRN::Create() {
+OV040_ARM Actor *ActorProfileUnkFTRN::Create() {
     return new(HeapIndex_2) ActorUnkFTRN();
 }
 
-ARM ActorProfileUnkFTRN::ActorProfileUnkFTRN() :
+OV040_ARM ActorProfileUnkFTRN::ActorProfileUnkFTRN() :
     ActorProfile(ActorId_FieldTrain) {}
 
-ARM ActorUnkFTRN::ActorUnkFTRN() {}
+OV040_ARM ActorUnkFTRN::ActorUnkFTRN() {}
 
 ARM void ActorUnkFTRN::func_ov040_02123688(void) {}
 ARM void ActorUnkFTRN::func_ov040_0212369c(void) {}

@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkKEYN::Create() {
 }
 
 ARM ActorProfileUnkKEYN::ActorProfileUnkKEYN() :
-    ActorProfile(ActorId_KEYN) {}
+    ActorProfile_Derived1(ActorId_KEYN) {}
 
 ARM ActorUnkKEYN::ActorUnkKEYN() {}
 

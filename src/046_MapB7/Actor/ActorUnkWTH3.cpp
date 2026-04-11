@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkWTH3::Create() {
 }
 
 ARM ActorProfileUnkWTH3::ActorProfileUnkWTH3() :
-    ActorProfile(ActorId_WTH3) {}
+    ActorProfile_Derived1(ActorId_WTH3) {}
 
 ARM ActorUnkWTH3::ActorUnkWTH3() {}
 

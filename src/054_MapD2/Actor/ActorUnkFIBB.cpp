@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkFIBB::Create() {
 }
 
 ARM ActorProfileUnkFIBB::ActorProfileUnkFIBB() :
-    ActorProfile(ActorId_FIBB) {}
+    ActorProfile_Derived1(ActorId_FIBB) {}
 
 ARM ActorUnkFIBB::ActorUnkFIBB() {}
 
