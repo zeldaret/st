@@ -329,12 +329,12 @@ _ZN15ProfileInstanceI19ActorProfileUnkRPMTE8sProfileE kind:bss addr:0x02130310
 data_ov041_0213034c kind:bss addr:0x0213034c
 data_ov041_02130350 kind:bss addr:0x02130350
 data_ov041_0213035c kind:bss addr:0x0213035c
-sMapObjectProfileUnkDRBK kind:bss addr:0x02130368
+_ZN15ProfileInstanceI23MapObjectProfileUnkDRBKE8sProfileE kind:bss addr:0x02130368
 data_ov041_0213043c kind:bss addr:0x0213043c
 data_ov041_02130460 kind:bss addr:0x02130460
 data_ov041_02130464 kind:bss addr:0x02130464
-sMapObjectProfileUnkDRTK kind:bss addr:0x02130470
+_ZN15ProfileInstanceI23MapObjectProfileUnkDRTKE8sProfileE kind:bss addr:0x02130470
 data_ov041_02130544 kind:bss addr:0x02130544
 data_ov041_02130568 kind:bss addr:0x02130568
 data_ov041_0213056c kind:bss addr:0x0213056c
-sMapObjectProfileUnkDRMC kind:bss addr:0x02130578
+_ZN15ProfileInstanceI23MapObjectProfileUnkDRMCE8sProfileE kind:bss addr:0x02130578

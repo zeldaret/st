@@ -617,8 +617,8 @@ data_ov068_021647c8 kind:bss addr:0x021647c8
 _ZN15ProfileInstanceI19ActorProfileUnkAJSPE8sProfileE kind:bss addr:0x021647d4
 data_ov068_021648ac kind:bss addr:0x021648ac
 data_ov068_021648b0 kind:bss addr:0x021648b0
-sMapObjectProfileUnkDRVC kind:bss addr:0x021648bc
+_ZN15ProfileInstanceI23MapObjectProfileUnkDRVCE8sProfileE kind:bss addr:0x021648bc
 data_ov068_02164990 kind:bss addr:0x02164990
 data_ov068_02164994 kind:bss addr:0x02164994
-sMapObjectProfileUnkRKAG kind:bss addr:0x021649a0
+_ZN15ProfileInstanceI23MapObjectProfileUnkRKAGE8sProfileE kind:bss addr:0x021649a0
 data_ov068_02164a74 kind:bss addr:0x02164a74

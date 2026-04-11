@@ -215,6 +215,6 @@ _ZN15ProfileInstanceI19ActorProfileUnkPBK2E8sProfileE kind:bss addr:0x02137c70
 data_ov048_02137d48 kind:bss addr:0x02137d48
 data_ov048_02137d4c kind:bss addr:0x02137d4c
 data_ov048_02137d58 kind:bss addr:0x02137d58
-sMapObjectProfileUnkDRTW kind:bss addr:0x02137d64
+_ZN15ProfileInstanceI23MapObjectProfileUnkDRTWE8sProfileE kind:bss addr:0x02137d64
 data_ov048_02137d84 kind:bss addr:0x02137d84
 data_ov048_02137e38 kind:bss addr:0x02137e38

@@ -363,30 +363,30 @@ data_ov067_0215df24 kind:bss addr:0x0215df24 ambiguous
 data_ov067_0215df38 kind:bss addr:0x0215df38 ambiguous
 data_ov067_0215df58 kind:bss addr:0x0215df58
 data_ov067_0215df5c kind:bss addr:0x0215df5c
-sMapObjectProfileUnkBRGL kind:bss addr:0x0215df68
+_ZN15ProfileInstanceI23MapObjectProfileUnkBRGLE8sProfileE kind:bss addr:0x0215df68
 data_ov067_0215df6c kind:bss addr:0x0215df6c ambiguous
 data_ov067_0215e03c kind:bss addr:0x0215e03c
 data_ov067_0215e044 kind:bss addr:0x0215e044
 data_ov067_0215e050 kind:bss addr:0x0215e050
-sMapObjectProfileUnkLVVT kind:bss addr:0x0215e05c
+_ZN15ProfileInstanceI23MapObjectProfileUnkLVVTE8sProfileE kind:bss addr:0x0215e05c
 data_ov067_0215e07c kind:bss addr:0x0215e07c
 data_ov067_0215e08c kind:bss addr:0x0215e08c ambiguous
 data_ov067_0215e110 kind:bss addr:0x0215e110 ambiguous
 data_ov067_0215e130 kind:bss addr:0x0215e130
 data_ov067_0215e134 kind:bss addr:0x0215e134
-sMapObjectProfileUnkDRGN kind:bss addr:0x0215e140
+_ZN15ProfileInstanceI23MapObjectProfileUnkDRGNE8sProfileE kind:bss addr:0x0215e140
 data_ov067_0215e160 kind:bss addr:0x0215e160
 data_ov067_0215e164 kind:bss addr:0x0215e164
-sMapObjectProfileUnkMTIR kind:bss addr:0x0215e170
+_ZN15ProfileInstanceI23MapObjectProfileUnkMTIRE8sProfileE kind:bss addr:0x0215e170
 data_ov067_0215e1b4 kind:bss addr:0x0215e1b4 ambiguous
 data_ov067_0215e244 kind:bss addr:0x0215e244
 data_ov067_0215e268 kind:bss addr:0x0215e268
 data_ov067_0215e26c kind:bss addr:0x0215e26c
-sMapObjectProfileUnkMTOR kind:bss addr:0x0215e278
+_ZN15ProfileInstanceI23MapObjectProfileUnkMTORE8sProfileE kind:bss addr:0x0215e278
 data_ov067_0215e284 kind:bss addr:0x0215e284 ambiguous
 data_ov067_0215e290 kind:bss addr:0x0215e290 ambiguous
 data_ov067_0215e34c kind:bss addr:0x0215e34c
 data_ov067_0215e370 kind:bss addr:0x0215e370
 data_ov067_0215e374 kind:bss addr:0x0215e374
-sMapObjectProfileUnkDRVT kind:bss addr:0x0215e380
+_ZN15ProfileInstanceI23MapObjectProfileUnkDRVTE8sProfileE kind:bss addr:0x0215e380
 data_ov067_0215e3a0 kind:bss addr:0x0215e3a0

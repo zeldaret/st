@@ -4065,12 +4065,12 @@ data_ov000_020b5d3c kind:bss addr:0x020b5d3c
 data_ov000_020b6114 kind:bss addr:0x020b6114
 data_ov000_020b6118 kind:bss addr:0x020b6118
 data_ov000_020b6124 kind:bss addr:0x020b6124
-sMapObjectProfileUnkSWST kind:bss addr:0x020b6130
+_ZN15ProfileInstanceI23MapObjectProfileUnkSWSTE8sProfileE kind:bss addr:0x020b6130
 data_ov000_020b6150 kind:bss addr:0x020b6150
 data_ov000_020b6204 kind:bss addr:0x020b6204
 data_ov000_020b6228 kind:bss addr:0x020b6228
 data_ov000_020b622c kind:bss addr:0x020b622c
-sMapObjectProfileUnkBLCM kind:bss addr:0x020b6238
+_ZN15ProfileInstanceI23MapObjectProfileUnkBLCME8sProfileE kind:bss addr:0x020b6238
 data_ov000_020b62a0 kind:bss addr:0x020b62a0
 data_ov000_020b62a4 kind:bss addr:0x020b62a4
 gSaveManager kind:bss addr:0x020b62a8

@@ -1093,13 +1093,13 @@ data_ov021_0210965c kind:bss addr:0x0210965c ambiguous
 data_ov021_02109694 kind:bss addr:0x02109694
 data_ov021_02109698 kind:bss addr:0x02109698
 data_ov021_021096a4 kind:bss addr:0x021096a4
-sMapObjectProfileUnkBAPL kind:bss addr:0x021096b0
+_ZN15ProfileInstanceI23MapObjectProfileUnkBAPLE8sProfileE kind:bss addr:0x021096b0
 data_ov021_021096d0 kind:bss addr:0x021096d0
 data_ov021_021096d4 kind:bss addr:0x021096d4
-sMapObjectProfileUnkBFFL kind:bss addr:0x021096e0
+_ZN15ProfileInstanceI23MapObjectProfileUnkBFFLE8sProfileE kind:bss addr:0x021096e0
 data_ov021_021097b4 kind:bss addr:0x021097b4
 data_ov021_021097b8 kind:bss addr:0x021097b8
-sMapObjectProfileUnkBFSP kind:bss addr:0x021097c4
+_ZN15ProfileInstanceI23MapObjectProfileUnkBFSPE8sProfileE kind:bss addr:0x021097c4
 data_ov021_02109898 kind:bss addr:0x02109898
 data_ov021_021098bc kind:bss addr:0x021098bc
 data_ov021_021098c0 kind:bss addr:0x021098c0

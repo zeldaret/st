@@ -350,7 +350,7 @@ data_ov080_02160134 kind:bss addr:0x02160134 ambiguous
 data_ov080_021601ac kind:bss addr:0x021601ac
 data_ov080_021601cc kind:bss addr:0x021601cc
 data_ov080_021601d0 kind:bss addr:0x021601d0
-sMapObjectProfileUnkSTSS kind:bss addr:0x021601dc
+_ZN15ProfileInstanceI23MapObjectProfileUnkSTSSE8sProfileE kind:bss addr:0x021601dc
 data_ov080_02160244 kind:bss addr:0x02160244
 data_ov080_02160248 kind:bss addr:0x02160248
 _ZN15ProfileInstanceI19ActorProfileUnkRBSNE8sProfileE kind:bss addr:0x02160254

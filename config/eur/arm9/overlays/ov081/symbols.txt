@@ -118,5 +118,5 @@ data_ov081_02152b54 kind:bss addr:0x02152b54 ambiguous
 _ZN15ProfileInstanceI19ActorProfileUnkPRPPE8sProfileE kind:bss addr:0x02152b5c
 data_ov081_02152b98 kind:bss addr:0x02152b98
 data_ov081_02152b9c kind:bss addr:0x02152b9c
-sMapObjectProfileUnkPRSH kind:bss addr:0x02152ba8
+_ZN15ProfileInstanceI23MapObjectProfileUnkPRSHE8sProfileE kind:bss addr:0x02152ba8
 data_ov081_02152c7c kind:bss addr:0x02152c7c

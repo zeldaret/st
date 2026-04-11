@@ -245,4 +245,4 @@ data_ov039_0211e260 kind:bss addr:0x0211e260
 _ZN15ProfileInstanceI19ActorProfileUnkZLSSE8sProfileE kind:bss addr:0x0211e26c
 data_ov039_0211e2b0 kind:bss addr:0x0211e2b0
 data_ov039_0211e2b4 kind:bss addr:0x0211e2b4
-sMapObjectProfileUnkGTAT kind:bss addr:0x0211e2c0
+_ZN15ProfileInstanceI23MapObjectProfileUnkGTATE8sProfileE kind:bss addr:0x0211e2c0

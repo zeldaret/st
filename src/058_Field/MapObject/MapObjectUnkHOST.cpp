@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkHOST.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkHOST sMapObjectProfileUnkHOST;
-
-ARM MapObjectProfileUnkHOST *MapObjectProfileUnkHOST::GetProfile() {
-    return &sMapObjectProfileUnkHOST;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkHOST);
 
 ARM MapObject *MapObjectProfileUnkHOST::Create() {
     return new(HeapIndex_2) MapObjectUnkHOST();

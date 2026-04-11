@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkETYG.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkETYG sMapObjectProfileUnkETYG;
-
-ARM MapObjectProfileUnkETYG *MapObjectProfileUnkETYG::GetProfile() {
-    return &sMapObjectProfileUnkETYG;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkETYG);
 
 ARM MapObject *MapObjectProfileUnkETYG::Create() {
     return new(HeapIndex_2) MapObjectUnkETYG();

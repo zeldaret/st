@@ -268,7 +268,7 @@ data_ov056_0213ee24 kind:bss addr:0x0213ee24
 _ZN15ProfileInstanceI19ActorProfileUnkPASSE8sProfileE kind:bss addr:0x0213ee30
 data_ov056_0213ee80 kind:bss addr:0x0213ee80
 data_ov056_0213ee84 kind:bss addr:0x0213ee84
-sMapObjectProfileUnkFSVC kind:bss addr:0x0213ee90
+_ZN15ProfileInstanceI23MapObjectProfileUnkFSVCE8sProfileE kind:bss addr:0x0213ee90
 data_ov056_0213ef64 kind:bss addr:0x0213ef64
 data_ov056_0213ef68 kind:bss addr:0x0213ef68
 _ZN15ProfileInstanceI19ActorProfileUnkFSIRE8sProfileE kind:bss addr:0x0213ef74

@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkFLSP.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkFLSP sMapObjectProfileUnkFLSP;
-
-ARM MapObjectProfileUnkFLSP *MapObjectProfileUnkFLSP::GetProfile() {
-    return &sMapObjectProfileUnkFLSP;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkFLSP);
 
 ARM MapObject *MapObjectProfileUnkFLSP::Create() {
     return new(HeapIndex_2) MapObjectUnkFLSP();

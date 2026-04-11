@@ -559,31 +559,31 @@ data_ov062_021632a4 kind:bss addr:0x021632a4 ambiguous
 data_ov062_021632a8 kind:bss addr:0x021632a8 ambiguous
 data_ov062_02163330 kind:bss addr:0x02163330
 data_ov062_02163334 kind:bss addr:0x02163334
-sMapObjectProfileUnkFSFS kind:bss addr:0x02163340
+_ZN15ProfileInstanceI23MapObjectProfileUnkFSFSE8sProfileE kind:bss addr:0x02163340
 data_ov062_02163408 kind:bss addr:0x02163408 ambiguous
 data_ov062_02163414 kind:bss addr:0x02163414
 data_ov062_02163418 kind:bss addr:0x02163418
-sMapObjectProfileUnkHOL2 kind:bss addr:0x02163424
+_ZN15ProfileInstanceI23MapObjectProfileUnkHOL2E8sProfileE kind:bss addr:0x02163424
 data_ov062_02163428 kind:bss addr:0x02163428 ambiguous
 data_ov062_02163444 kind:bss addr:0x02163444
 data_ov062_021634c4 kind:bss addr:0x021634c4 ambiguous
 data_ov062_0216351c kind:bss addr:0x0216351c
 data_ov062_02163520 kind:bss addr:0x02163520
-sMapObjectProfileUnkHOL0 kind:bss addr:0x0216352c
+_ZN15ProfileInstanceI23MapObjectProfileUnkHOL0E8sProfileE kind:bss addr:0x0216352c
 data_ov062_02163584 kind:bss addr:0x02163584 ambiguous
 data_ov062_02163600 kind:bss addr:0x02163600
 data_ov062_02163604 kind:bss addr:0x02163604
-sMapObjectProfileUnkHOL1 kind:bss addr:0x02163610
+_ZN15ProfileInstanceI23MapObjectProfileUnkHOL1E8sProfileE kind:bss addr:0x02163610
 data_ov062_021636e4 kind:bss addr:0x021636e4
 data_ov062_021636e8 kind:bss addr:0x021636e8
-sMapObjectProfileUnkHOLB kind:bss addr:0x021636f4
+_ZN15ProfileInstanceI23MapObjectProfileUnkHOLBE8sProfileE kind:bss addr:0x021636f4
 data_ov062_021637c8 kind:bss addr:0x021637c8
 data_ov062_021637cc kind:bss addr:0x021637cc
-sMapObjectProfileUnkHOSB kind:bss addr:0x021637d8
+_ZN15ProfileInstanceI23MapObjectProfileUnkHOSBE8sProfileE kind:bss addr:0x021637d8
 data_ov062_02163884 kind:bss addr:0x02163884 ambiguous
 data_ov062_021638ac kind:bss addr:0x021638ac
 data_ov062_021638b0 kind:bss addr:0x021638b0
-sMapObjectProfileUnkGBDR kind:bss addr:0x021638bc
+_ZN15ProfileInstanceI23MapObjectProfileUnkGBDRE8sProfileE kind:bss addr:0x021638bc
 data_ov062_02163918 kind:bss addr:0x02163918 ambiguous
 data_ov062_02163938 kind:bss addr:0x02163938 ambiguous
 data_ov062_02163990 kind:bss addr:0x02163990

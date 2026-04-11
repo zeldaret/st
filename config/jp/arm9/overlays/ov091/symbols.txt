@@ -579,23 +579,23 @@ data_ov091_0217a3dc kind:bss addr:0x0217a3dc
 data_ov091_0217a428 kind:bss addr:0x0217a428 ambiguous
 data_ov091_0217a444 kind:bss addr:0x0217a444
 data_ov091_0217a448 kind:bss addr:0x0217a448
-sMapObjectProfileUnkFRSH kind:bss addr:0x0217a454
+_ZN15ProfileInstanceI23MapObjectProfileUnkFRSHE8sProfileE kind:bss addr:0x0217a454
 data_ov091_0217a4d4 kind:bss addr:0x0217a4d4 ambiguous
 data_ov091_0217a528 kind:bss addr:0x0217a528
 data_ov091_0217a52c kind:bss addr:0x0217a52c
-sMapObjectProfileUnkMZFX kind:bss addr:0x0217a538
+_ZN15ProfileInstanceI23MapObjectProfileUnkMZFXE8sProfileE kind:bss addr:0x0217a538
 data_ov091_0217a55c kind:bss addr:0x0217a55c
 data_ov091_0217a560 kind:bss addr:0x0217a560
-sMapObjectProfileUnkMZTR kind:bss addr:0x0217a56c
+_ZN15ProfileInstanceI23MapObjectProfileUnkMZTRE8sProfileE kind:bss addr:0x0217a56c
 data_ov091_0217a57c kind:bss addr:0x0217a57c ambiguous
 data_ov091_0217a640 kind:bss addr:0x0217a640
 data_ov091_0217a648 kind:bss addr:0x0217a648
 data_ov091_0217a654 kind:bss addr:0x0217a654
-sMapObjectProfileUnkTMSB kind:bss addr:0x0217a660
+_ZN15ProfileInstanceI23MapObjectProfileUnkTMSBE8sProfileE kind:bss addr:0x0217a660
 data_ov091_0217a734 kind:bss addr:0x0217a734
 data_ov091_0217a738 kind:bss addr:0x0217a738
 data_ov091_0217a740 kind:bss addr:0x0217a740 ambiguous
-sMapObjectProfileUnkETUS kind:bss addr:0x0217a744
+_ZN15ProfileInstanceI23MapObjectProfileUnkETUSE8sProfileE kind:bss addr:0x0217a744
 data_ov091_0217a748 kind:bss addr:0x0217a748 ambiguous
 data_ov091_0217a75c kind:bss addr:0x0217a75c ambiguous
 data_ov091_0217a764 kind:bss addr:0x0217a764 ambiguous
@@ -604,7 +604,7 @@ data_ov091_0217a76c kind:bss addr:0x0217a76c ambiguous
 data_ov091_0217a7f0 kind:bss addr:0x0217a7f0 ambiguous
 data_ov091_0217a818 kind:bss addr:0x0217a818
 data_ov091_0217a81c kind:bss addr:0x0217a81c
-sMapObjectProfileUnkBOGN kind:bss addr:0x0217a828
+_ZN15ProfileInstanceI23MapObjectProfileUnkBOGNE8sProfileE kind:bss addr:0x0217a828
 data_ov091_0217a848 kind:bss addr:0x0217a848
 data_ov091_0217a84c kind:bss addr:0x0217a84c
 _ZN15ProfileInstanceI19ActorProfileUnkMZCTE8sProfileE kind:bss addr:0x0217a858

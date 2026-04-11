@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkTBSD.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkTBSD sMapObjectProfileUnkTBSD;
-
-ARM MapObjectProfileUnkTBSD *MapObjectProfileUnkTBSD::GetProfile() {
-    return &sMapObjectProfileUnkTBSD;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkTBSD);
 
 ARM MapObject *MapObjectProfileUnkTBSD::Create() {
     return new(HeapIndex_2) MapObjectUnkTBSD();

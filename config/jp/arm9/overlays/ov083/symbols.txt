@@ -383,4 +383,4 @@ data_ov083_021608f4 kind:bss addr:0x021608f4 ambiguous
 data_ov083_021608fc kind:bss addr:0x021608fc ambiguous
 data_ov083_0216096c kind:bss addr:0x0216096c
 data_ov083_02160970 kind:bss addr:0x02160970
-sMapObjectProfileUnkSHWB kind:bss addr:0x0216097c
+_ZN15ProfileInstanceI23MapObjectProfileUnkSHWBE8sProfileE kind:bss addr:0x0216097c
