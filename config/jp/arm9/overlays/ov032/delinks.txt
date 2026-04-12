@@ -9,28 +9,28 @@ src/032_MapA1/Actor/ActorUnkKURI.cpp:
     .text       start:0x0211ad60 end:0x0211d46c
     .init       start:0x02123f0c end:0x02123f78
     .ctor       start:0x02124104 end:0x02124108
-    .bss        start:0x02124810 end:0x021248e8
+    .bss        start:0x02124800 end:0x021248f8
 
 src/032_MapA1/Actor/ActorUnkMKUR.cpp:
     .text       start:0x0211d46c end:0x0211f8e0
     .init       start:0x02123f78 end:0x02123ff8
     .ctor       start:0x02124108 end:0x0212410c
-    .bss        start:0x02124910 end:0x02124954
+    .bss        start:0x021248f8 end:0x02124954
 
 src/032_MapA1/Actor/ActorUnkKETH.cpp:
     .text       start:0x0211f8e0 end:0x02121b20
     .init       start:0x02123ff8 end:0x02124064
     .ctor       start:0x0212410c end:0x02124110
-    .bss        start:0x02124964 end:0x02124a3c
+    .bss        start:0x02124954 end:0x02124a3c
 
 src/032_MapA1/Actor/ActorUnkNSSW.cpp:
     .text       start:0x02121b20 end:0x02122e68
     .init       start:0x02124064 end:0x021240b4
     .ctor       start:0x02124110 end:0x02124114
-    .bss        start:0x02124a4c end:0x02124a88
+    .bss        start:0x02124a3c end:0x02124a88
 
 src/032_MapA1/MapObject/MapObjectUnkSWSW.cpp:
     .text       start:0x02122e68 end:0x02123ea8
     .init       start:0x021240b4 end:0x02124104
     .ctor       start:0x02124114 end:0x02124118
-    .bss        start:0x02124a98 end:0x02124ab8
+    .bss        start:0x02124a88 end:0x02124ab8

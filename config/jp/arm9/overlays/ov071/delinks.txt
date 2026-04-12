@@ -9,43 +9,43 @@ src/071_Tower/Actor/ActorUnkSZKU.cpp:
     .text       start:0x02161450 end:0x02162358
     .init       start:0x02166030 end:0x021660a4
     .ctor       start:0x0216631c end:0x02166320
-    .bss        start:0x021673c8 end:0x021674a0
+    .bss        start:0x021673b0 end:0x021674a0
 
 src/071_Tower/Actor/ActorUnkKMSO.cpp:
     .text       start:0x02162358 end:0x02162bbc
     .init       start:0x021660a4 end:0x021660f4
     .ctor       start:0x02166320 end:0x02166324
-    .bss        start:0x021674b0 end:0x02167588
+    .bss        start:0x021674a0 end:0x02167588
 
 src/071_Tower/MapObject/MapObjectUnkRNBO.cpp:
     .text       start:0x02162bbc end:0x02162df8
     .init       start:0x021660f4 end:0x02166144
     .ctor       start:0x02166324 end:0x02166328
-    .bss        start:0x02167598 end:0x0216766c
+    .bss        start:0x02167588 end:0x02167690
 
 src/071_Tower/MapObject/MapObjectUnkRPFL.cpp:
     .text       start:0x02162df8 end:0x02163b9c
     .init       start:0x02166144 end:0x02166194
     .ctor       start:0x02166328 end:0x0216632c
-    .bss        start:0x021676a0 end:0x021676c0
+    .bss        start:0x02167690 end:0x02167798
 
 src/071_Tower/MapObject/MapObjectUnkBLCE.cpp:
     .text       start:0x02163b9c end:0x02163d2c
     .init       start:0x02166194 end:0x021661e4
     .ctor       start:0x0216632c end:0x02166330
-    .bss        start:0x021677a8 end:0x021678a0
+    .bss        start:0x02167798 end:0x021678a0
 
 src/071_Tower/MapObject/MapObjectUnkSTAL.cpp:
     .text       start:0x02163d2c end:0x02164300
     .init       start:0x021661e4 end:0x02166234
     .ctor       start:0x02166330 end:0x02166334
-    .bss        start:0x021678b0 end:0x02167984
+    .bss        start:0x021678a0 end:0x02167994
 
 src/071_Tower/MapObject/MapObjectUnkBRGS.cpp:
     .text       start:0x02164300 end:0x02165194
     .init       start:0x02166234 end:0x02166298
     .ctor       start:0x02166334 end:0x02166338
-    .bss        start:0x021679ac end:0x02167a80
+    .bss        start:0x02167994 end:0x02167a80
 
 src/071_Tower/MapObject/MapObjectUnkBLCT.cpp:
     .text       start:0x02165194 end:0x021659c0

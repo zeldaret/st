@@ -9,37 +9,37 @@ src/093_PlayerSub/Actor/ActorUnkSPTT.cpp:
     .text       start:0x021794dc end:0x02179c5c
     .init       start:0x0217aec8 end:0x0217af18
     .ctor       start:0x0217b154 end:0x0217b158
-    .bss        start:0x0217b7e0 end:0x0217b81c
+    .bss        start:0x0217b7cc end:0x0217b81c
 
 src/093_PlayerSub/Actor/ActorUnkTCAM.cpp:
     .text       start:0x02179c5c end:0x02179fa0
     .init       start:0x0217af18 end:0x0217af68
     .ctor       start:0x0217b158 end:0x0217b15c
-    .bss        start:0x0217b82c end:0x0217b868
+    .bss        start:0x0217b81c end:0x0217b868
 
 src/093_PlayerSub/Actor/ActorUnkBLON.cpp:
     .text       start:0x02179fa0 end:0x0217a37c
     .init       start:0x0217af68 end:0x0217afb8
     .ctor       start:0x0217b15c end:0x0217b160
-    .bss        start:0x0217b878 end:0x0217b8b4
+    .bss        start:0x0217b868 end:0x0217b8b4
 
 src/093_PlayerSub/Actor/ActorUnkPHTM.cpp:
     .text       start:0x0217a37c end:0x0217a428
     .init       start:0x0217afb8 end:0x0217b014
     .ctor       start:0x0217b160 end:0x0217b164
-    .bss        start:0x0217b8d0 end:0x0217b9a8
+    .bss        start:0x0217b8b4 end:0x0217b9a8
 
 src/093_PlayerSub/Actor/ActorUnkPMTB.cpp:
     .text       start:0x0217a428 end:0x0217a4d4
     .init       start:0x0217b014 end:0x0217b070
     .ctor       start:0x0217b164 end:0x0217b168
-    .bss        start:0x0217b9c4 end:0x0217ba9c
+    .bss        start:0x0217b9a8 end:0x0217ba9c
 
 src/093_PlayerSub/Actor/ActorUnkPMTC.cpp:
     .text       start:0x0217a4d4 end:0x0217a57c
     .init       start:0x0217b070 end:0x0217b0cc
     .ctor       start:0x0217b168 end:0x0217b16c
-    .bss        start:0x0217bab8 end:0x0217bb90
+    .bss        start:0x0217ba9c end:0x0217bb90
 
 src/093_PlayerSub/Actor/ActorUnkPMTD.cpp:
     .text       start:0x0217a57c end:0x0217a628

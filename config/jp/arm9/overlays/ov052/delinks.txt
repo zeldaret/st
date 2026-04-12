@@ -9,19 +9,19 @@ src/052_MapC6/Actor/ActorUnkSTLW.cpp:
     .text       start:0x02131ec0 end:0x02134b84
     .init       start:0x021377e4 end:0x021378c4
     .ctor       start:0x02137a8c end:0x02137a90
-    .bss        start:0x02138458 end:0x02138530
+    .bss        start:0x02138440 end:0x02138530
 
 src/052_MapC6/Actor/ActorUnkSTWH.cpp:
     .text       start:0x02134b84 end:0x021367a4
     .init       start:0x021378c4 end:0x021379ac
     .ctor       start:0x02137a90 end:0x02137a94
-    .bss        start:0x02138540 end:0x02138618
+    .bss        start:0x02138530 end:0x02138618
 
 src/052_MapC6/Actor/ActorUnkNAVI.cpp:
     .text       start:0x021367a4 end:0x021375a4
     .init       start:0x021379ac end:0x02137a3c
     .ctor       start:0x02137a94 end:0x02137a98
-    .bss        start:0x02138628 end:0x02138700
+    .bss        start:0x02138618 end:0x02138700
 
 src/052_MapC6/Actor/ActorUnkPTSW.cpp:
     .text       start:0x021375a4 end:0x021377bc

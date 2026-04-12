@@ -9,16 +9,16 @@ src/033_MapA2/Actor/ActorUnkRCFO.cpp:
     .text       start:0x0211b0e8 end:0x0211bb20
     .init       start:0x02122e08 end:0x02122e58
     .ctor       start:0x02122f18 end:0x02122f1c
-    .bss        start:0x02123a54 end:0x02123a90
+    .bss        start:0x02123a44 end:0x02123a94
 
 src/033_MapA2/MapObject/MapObjectUnkDOPA.cpp:
     .text       start:0x0211bb20 end:0x0211d4c4
     .init       start:0x02122e58 end:0x02122ec8
     .ctor       start:0x02122f1c end:0x02122f20
-    .bss        start:0x02123aac end:0x02123b80
+    .bss        start:0x02123a94 end:0x02124420
 
 src/033_MapA2/MapObject/MapObjectUnkRCFL.cpp:
     .text       start:0x0211d524 end:0x0211dc2c
     .init       start:0x02122ec8 end:0x02122f18
     .ctor       start:0x02122f20 end:0x02122f24
-    .bss        start:0x02124430 end:0x02124504
+    .bss        start:0x02124420 end:0x02124504

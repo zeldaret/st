@@ -9,22 +9,22 @@ src/043_MapB4/Actor/ActorUnkSTLF.cpp:
     .text       start:0x02125280 end:0x021284d8
     .init       start:0x0212e938 end:0x0212ea38
     .ctor       start:0x0212ebe0 end:0x0212ebe4
-    .bss        start:0x0212f998 end:0x0212fa70
+    .bss        start:0x0212f980 end:0x0212fa70
 
 src/043_MapB4/Actor/ActorUnkSTFH.cpp:
     .text       start:0x021284d8 end:0x0212a108
     .init       start:0x0212ea38 end:0x0212eb18
     .ctor       start:0x0212ebe4 end:0x0212ebe8
-    .bss        start:0x0212fa80 end:0x0212fb58
+    .bss        start:0x0212fa70 end:0x0212fb58
 
 src/043_MapB4/Actor/ActorUnkSTFB.cpp:
     .text       start:0x0212a108 end:0x0212a814
     .init       start:0x0212eb18 end:0x0212eb68
     .ctor       start:0x0212ebe8 end:0x0212ebec
-    .bss        start:0x0212fb68 end:0x0212fbac
+    .bss        start:0x0212fb58 end:0x0212fbac
 
 src/043_MapB4/Actor/ActorUnkSHDL.cpp:
     .text       start:0x0212a898 end:0x0212e7f4
     .init       start:0x0212eb68 end:0x0212ebe0
     .ctor       start:0x0212ebec end:0x0212ebf0
-    .bss        start:0x0212fbc0 end:0x0212fc00
+    .bss        start:0x0212fbac end:0x0212fc00

@@ -9,13 +9,13 @@ src/037_MapA6/Actor/ActorUnkSOLF.cpp:
     .text       start:0x0211d1a4 end:0x021206ec
     .init       start:0x02123a58 end:0x02123aa8
     .ctor       start:0x02123b98 end:0x02123b9c
-    .bss        start:0x02124738 end:0x0212477c
+    .bss        start:0x02124728 end:0x0212477c
 
 src/037_MapA6/Actor/ActorUnkSOLT.cpp:
     .text       start:0x021206ec end:0x02122764
     .init       start:0x02123aa8 end:0x02123af8
     .ctor       start:0x02123b9c end:0x02123ba0
-    .bss        start:0x0212478c end:0x02124864
+    .bss        start:0x0212477c end:0x02124864
 
 src/037_MapA6/Actor/ActorUnkTUTO.cpp:
     .text       start:0x02122764 end:0x02123964

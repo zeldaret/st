@@ -9,49 +9,49 @@ src/036_MapA5/Actor/ActorUnkCAMY.cpp:
     .text       start:0x0211cd20 end:0x0211cfcc
     .init       start:0x02122c14 end:0x02122c64
     .ctor       start:0x02122ee4 end:0x02122ee8
-    .bss        start:0x02124514 end:0x021245d0
+    .bss        start:0x02124504 end:0x021245ec
 
 src/036_MapA5/Actor/ActorUnkFOMY.cpp:
     .text       start:0x0211cfec end:0x0211d2a4
     .init       start:0x02122c64 end:0x02122cb4
     .ctor       start:0x02122ee8 end:0x02122eec
-    .bss        start:0x021245fc end:0x021246d4
+    .bss        start:0x021245ec end:0x021246d4
 
 src/036_MapA5/Actor/ActorUnkYUKY.cpp:
     .text       start:0x0211d2c4 end:0x0211d590
     .init       start:0x02122cb4 end:0x02122d04
     .ctor       start:0x02122eec end:0x02122ef0
-    .bss        start:0x021246e4 end:0x021247bc
+    .bss        start:0x021246d4 end:0x021247bc
 
 src/036_MapA5/Actor/ActorUnkWAWY.cpp:
     .text       start:0x0211d5b0 end:0x0211d858
     .init       start:0x02122d04 end:0x02122d54
     .ctor       start:0x02122ef0 end:0x02122ef4
-    .bss        start:0x021247cc end:0x021248a4
+    .bss        start:0x021247bc end:0x021248a4
 
 src/036_MapA5/Actor/ActorUnkGORY.cpp:
     .text       start:0x0211d878 end:0x0211db64
     .init       start:0x02122d54 end:0x02122da4
     .ctor       start:0x02122ef4 end:0x02122ef8
-    .bss        start:0x021248b4 end:0x0212498c
+    .bss        start:0x021248a4 end:0x0212498c
 
 src/036_MapA5/Actor/ActorUnkTERY.cpp:
     .text       start:0x0211db84 end:0x0211df28
     .init       start:0x02122da4 end:0x02122df4
     .ctor       start:0x02122ef8 end:0x02122efc
-    .bss        start:0x0212499c end:0x02124a74
+    .bss        start:0x0212498c end:0x02124a74
 
 src/036_MapA5/Actor/ActorUnkSHIT.cpp:
     .text       start:0x0211df48 end:0x0211f554
     .init       start:0x02122df4 end:0x02122e44
     .ctor       start:0x02122efc end:0x02122f00
-    .bss        start:0x02124a84 end:0x02124b5c
+    .bss        start:0x02124a74 end:0x02124b5c
 
 src/036_MapA5/Actor/ActorUnkTEHT.cpp:
     .text       start:0x0211f5f4 end:0x0211fb2c
     .init       start:0x02122e44 end:0x02122e94
     .ctor       start:0x02122f00 end:0x02122f04
-    .bss        start:0x02124b78 end:0x02124bb4
+    .bss        start:0x02124b5c end:0x02124bb4
 
 src/036_MapA5/Actor/ActorUnkRMST.cpp:
     .text       start:0x0211fbcc end:0x0211fcf0

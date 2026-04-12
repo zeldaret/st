@@ -9,52 +9,52 @@ src/077_DgnForest/Actor/ActorUnkASYU.cpp:
     .text       start:0x02154f28 end:0x02158f9c
     .init       start:0x0215d140 end:0x0215d1a4
     .ctor       start:0x0215d424 end:0x0215d428
-    .bss        start:0x0215ddb8 end:0x0215ddf8
+    .bss        start:0x0215dda4 end:0x0215de94
 
 src/077_DgnForest/Actor/ActorUnkASBA.cpp:
     .text       start:0x02158f9c end:0x02159af4
     .init       start:0x0215d1a4 end:0x0215d1f4
     .ctor       start:0x0215d428 end:0x0215d42c
-    .bss        start:0x0215dea0 end:0x0215dee4
+    .bss        start:0x0215de94 end:0x0215dee4
 
 src/077_DgnForest/Actor/ActorUnkBBLE.cpp:
     .text       start:0x02159af4 end:0x0215ab98
     .init       start:0x0215d1f4 end:0x0215d244
     .ctor       start:0x0215d42c end:0x0215d430
-    .bss        start:0x0215def4 end:0x0215df30
+    .bss        start:0x0215dee4 end:0x0215dfcc
 
 src/077_DgnForest/Actor/ActorUnkDSFR.cpp:
     .text       start:0x0215ab98 end:0x0215acbc
     .init       start:0x0215d244 end:0x0215d294
     .ctor       start:0x0215d430 end:0x0215d434
-    .bss        start:0x0215dfdc end:0x0215e064
+    .bss        start:0x0215dfcc end:0x0215e0b4
 
 src/077_DgnForest/Actor/ActorUnkGOKI.cpp:
     .text       start:0x0215acbc end:0x0215bd2c
     .init       start:0x0215d294 end:0x0215d2e4
     .ctor       start:0x0215d434 end:0x0215d438
-    .bss        start:0x0215e0c4 end:0x0215e0d0
+    .bss        start:0x0215e0b4 end:0x0215e19c
 
 src/077_DgnForest/Actor/ActorUnkPMST.cpp:
     .text       start:0x0215bd2c end:0x0215caec
     .init       start:0x0215d2e4 end:0x0215d334
     .ctor       start:0x0215d438 end:0x0215d43c
-    .bss        start:0x0215e1b0 end:0x0215e278
+    .bss        start:0x0215e19c end:0x0215e288
 
 src/077_DgnForest/Actor/ActorUnkOFSW.cpp:
     .text       start:0x0215caec end:0x0215cc3c
     .init       start:0x0215d334 end:0x0215d384
     .ctor       start:0x0215d43c end:0x0215d440
-    .bss        start:0x0215e298 end:0x0215e2a8
+    .bss        start:0x0215e288 end:0x0215e2d4
 
 src/077_DgnForest/MapObject/MapObjectUnkPLFR.cpp:
     .text       start:0x0215cc3c end:0x0215ce70
     .init       start:0x0215d384 end:0x0215d3d4
     .ctor       start:0x0215d440 end:0x0215d444
-    .bss        start:0x0215e2e4 end:0x0215e2f8
+    .bss        start:0x0215e2d4 end:0x0215e3dc
 
 src/077_DgnForest/MapObject/MapObjectUnkGTRK.cpp:
     .text       start:0x0215ce70 end:0x0215d0c4
     .init       start:0x0215d3d4 end:0x0215d424
     .ctor       start:0x0215d444 end:0x0215d448
-    .bss        start:0x0215e3ec end:0x0215e4c0
+    .bss        start:0x0215e3dc end:0x0215e4c0

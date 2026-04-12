@@ -30,37 +30,37 @@ src/000_Second/Actor/ActorUnkSWOB.cpp:
     .text       start:0x0209c084 end:0x0209c474
     .init       start:0x020b1ff8 end:0x020b2048
     .ctor       start:0x020b3118 end:0x020b311c
-    .bss        start:0x020b741c end:0x020b7458
+    .bss        start:0x020b740c end:0x020b7458
 
 src/000_Second/Actor/ActorUnkSWTM.cpp:
     .text       start:0x0209c474 end:0x0209c9f8
     .init       start:0x020b2048 end:0x020b2098
     .ctor       start:0x020b311c end:0x020b3120
-    .bss        start:0x020b7468 end:0x020b74a4
+    .bss        start:0x020b7458 end:0x020b74a8
 
 src/000_Second/Actor/ActorUnkEVIC.cpp:
     .text       start:0x0209d754 end:0x0209d840
     .init       start:0x020b2098 end:0x020b20e8
     .ctor       start:0x020b3120 end:0x020b3124
-    .bss        start:0x020b74b8 end:0x020b74f4
+    .bss        start:0x020b74a8 end:0x020b74f4
 
 src/000_Second/Actor/ActorUnkEFIK.cpp:
     .text       start:0x0209d840 end:0x0209db14
     .init       start:0x020b20e8 end:0x020b2138
     .ctor       start:0x020b3124 end:0x020b3128
-    .bss        start:0x020b7504 end:0x020b7540
+    .bss        start:0x020b74f4 end:0x020b7928
 
 src/000_Second/MapObject/MapObjectUnkSWST.cpp:
     .text       start:0x0209f4a4 end:0x0209fbbc
     .init       start:0x020b2160 end:0x020b21bc
     .ctor       start:0x020b312c end:0x020b3130
-    .bss        start:0x020b7940 end:0x020b7960
+    .bss        start:0x020b7928 end:0x020b7a38
 
 src/000_Second/MapObject/MapObjectUnkBLCM.cpp:
     .text       start:0x0209fbbc end:0x0209ff2c
     .init       start:0x020b21bc end:0x020b220c
     .ctor       start:0x020b3130 end:0x020b3134
-    .bss        start:0x020b7a48 end:0x020b7ab0
+    .bss        start:0x020b7a38 end:0x020b7ab0
 
 src/000_Second/Item/ItemManager.cpp:
     complete
