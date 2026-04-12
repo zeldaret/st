@@ -152,7 +152,7 @@ config.libs = [
             Object("000_Second/Item/ItemManager.cpp"),
             Object("000_Second/Item/TreasureManager.cpp"),
             Object("000_Second/Actor/ActorUnkEFIK.cpp"),
-            Object("000_Second/Actor/ActorUnkEVIC.cpp"),
+            Object("000_Second/Actor/ActorEventIcon.cpp"),
             Object("000_Second/Actor/ActorUnkSWOB.cpp"),
             Object("000_Second/Actor/ActorUnkSWTM.cpp"),
             Object("000_Second/MapObject/MapObjectUnkBLCM.cpp"),
