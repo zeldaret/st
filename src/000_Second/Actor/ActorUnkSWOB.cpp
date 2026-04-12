@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkSWOB.hpp"
 #include "Actor/ActorManager.hpp"
 #include "System/Random.hpp"
