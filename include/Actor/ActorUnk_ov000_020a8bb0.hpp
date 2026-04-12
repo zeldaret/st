@@ -143,8 +143,6 @@ public:
     /* b8 */ virtual void vfunc_b8();
     /* bc */
 
-    ActorId func_01fff458();
-
     void func_ov000_020a8ae0(q20 param1);
     ActorUnk_ov000_020a8bb0(ActorUnk_ov000_020a8bb0_a4_00 *param1, unk32 param2);
     unk32 func_ov000_020a8db0();
@@ -167,6 +165,4 @@ public:
     void func_ov000_020a9afc();
 
     void func_ov031_020e3ca4();
-
-    void func_ov062_02158ce8();
 };

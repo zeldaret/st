@@ -16,7 +16,7 @@ class ActorManager : public SysObject {
 public:
     /* 00 */ Actor **mActorTable;
     /* 04 */ Actor **mActorTableEnd;
-    /* 08 */ Actor **mUnk_08;
+    /* 08 */ Actor **mUnk_08; // pointer to first available slot?
     /* 0c */ unk16 mActorCount;
     /* 0e */ unk16 mNextActorId;
     /* 10 */ unk8 mUnk_10;
@@ -41,7 +41,7 @@ public:
     ActorManager();
     ~ActorManager();
 
-    ActorUnk_ov000_020a8bb0 *func_01fff3b4(unk32 param1);
+    Actor *func_01fff3b4(unk32 param1);
     Actor **func_01fff350(void *param1, Actor **ppActorTable);
 
     void func_ov000_02096e44(int index);
@@ -65,4 +65,4 @@ public:
     static void func_ov001_020bb844();
 };
 
-extern ActorManager *gActorManager;
+extern ActorManager *gpActorManager;

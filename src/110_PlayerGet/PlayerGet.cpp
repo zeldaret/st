@@ -2,6 +2,8 @@
 
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorManager.hpp"
+#include "Actor/ActorUnkNSHD.hpp"
+#include "MapObject/MapObjectManager.hpp"
 #include "Player/PlayerGet.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_020d8698.hpp"
@@ -9,7 +11,6 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
-#include "Unknown/UnkStruct_027e0ce8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
@@ -33,8 +34,6 @@ extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, Vec3p *);
 extern unk32 *data_027e0958;
 extern "C" void func_ov024_020d6370(unk32 *, ItemId);
 extern unk32 *data_ov024_020d86b0;
-extern "C" unk32 func_01fff584();
-extern "C" ActorId func_01fff458(void *);
 extern "C" void func_ov000_0208ba10(char *, void *, unk32);
 extern "C" unk32 func_ov000_020a4c00(ItemId itemId);
 extern "C" void func_02015ea8(unk32, unk16 *);
@@ -286,7 +285,7 @@ ARM bool PlayerGet::func_ov110_02186b8c() {
 ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
     ItemManager *pItemManager;
     ItemId itemId;
-    ActorUnk_ov000_020a8bb0 *iVar10;
+    Actor *iVar10;
     Vec3p *pUnk_38;
     Vec3p *pUnk_3c;
     char auStack_108[12];
@@ -349,7 +348,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                 return;
             }
 
-            iVar10 = gActorManager->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
+            iVar10 = gpActorManager->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
 
             if (iVar10 == NULL) {
                 return;
@@ -499,14 +498,14 @@ const UnkStruct_ov110_021861ec data_ov110_021861ec = UnkStruct_ov110_021861ec(0x
 
 ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
     unk32 var_r1;
-    UnkStruct_func_01fff520_ret **temp_r0_6;
+    MapObject **temp_r0_6;
     s32 temp_r5;
     bool temp_r6;
     s32 var_r0;
     s32 var_r0_2;
     bool var_r1_2;
     u32 var_r5_2;
-    ActorUnk_ov000_020a8bb0 *temp_r0_3;
+    ActorUnkNSHD *temp_r0_3;
 
     switch (param1) {
         case 0x39:
@@ -631,7 +630,8 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                         this->mUnk_30->func_ov000_020936ec();
 
                         if (((*(u16 *) this->mUnk_54.mUnk_00 << 0x10) >> 0x1E) == 1) {
-                            temp_r0_3 = gActorManager->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
+                            temp_r0_3 = (ActorUnkNSHD *) gpActorManager->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
+
                             if ((temp_r0_3 != NULL) && (temp_r0_3->func_01fff458() == ActorId_NormalShield)) {
                                 if (this->func_ov110_02186b8c()) {
                                     this->mUnk_28->pItemManager->mUnk_12 ^= 2;
@@ -669,24 +669,27 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                 }
 
                 if (*(u16 *) this->mUnk_54.mUnk_00 == 0x1000) {
-                    if (data_027e0ce8->func_01fff498(this->mUnk_54.mUnk_00[0], this->mUnk_54.mUnk_00[1]) != 0) {
-                        var_r5_2 = '\0';
+                    MapObject *pMapObj = gpMapObjManager->func_01fff498(this->mUnk_54.mUnk_00[0], this->mUnk_54.mUnk_00[1]);
 
-                        switch (func_01fff584()) {
-                            case 'TRLN':
-                                var_r5_2 = 'TREN';
+                    if (pMapObj != NULL) {
+                        var_r5_2 = MapObjectId_None;
+
+                        switch (pMapObj->func_01fff584()) {
+                            case MapObjectId_TRLN:
+                                var_r5_2 = MapObjectId_TREN;
                                 break;
-                            case 'TREN':
-                                var_r5_2 = 'TRLN';
+                            case MapObjectId_TREN:
+                                var_r5_2 = MapObjectId_TRLN;
                                 break;
                             default:
                                 break;
                         }
 
-                        if (var_r5_2 != 0) {
-                            // data_ov000_020b34c4.mUnk_04 = var_r5_2;
-                            temp_r0_6 = data_027e0ce8->func_01fff520(&data_ov000_020b34c4, data_027e0ce8->mUnk_00);
-                            if (temp_r0_6 == data_027e0ce8->mUnk_08) {
+                        if (var_r5_2 != MapObjectId_None) {
+                            data_ov000_020b34c4.mUnk_04 = var_r5_2;
+                            temp_r0_6 = gpMapObjManager->func_01fff520(&data_ov000_020b34c4, gpMapObjManager->mMapObjTable);
+
+                            if (temp_r0_6 == gpMapObjManager->mUnk_08) {
                                 (*temp_r0_6)->func_ov031_02103878();
                             }
                         }

@@ -170,6 +170,9 @@ public:
     }
 
     Actor();
+
+    ActorId func_01fff458();
+
     void func_ov000_0209848c(ActorProfile *param1);
     void func_ov000_020984b0();
     void func_ov000_020984b4();

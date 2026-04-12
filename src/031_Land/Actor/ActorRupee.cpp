@@ -337,7 +337,7 @@ ARM void ActorRupee::func_ov031_020e9438() {
 }
 
 ARM void ActorRupee::func_ov031_020e9450() {
-    this->func_ov017_020bf9c8(gActorManager->func_01fff3b4(this->mUnk_bc));
+    this->func_ov017_020bf9c8(gpActorManager->func_01fff3b4(this->mUnk_bc));
     this->mPrevPos = this->mPos;
     Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
 
@@ -409,17 +409,17 @@ ARM void ActorRupee::func_ov031_020e95b0() {
 
 // non-matching
 ARM void ActorRupee::func_ov031_020e95c0() {
-    ActorUnk_ov000_020a8bb0 *temp_r0;
+    Actor *pActor;
 
-    temp_r0 = gActorManager->func_01fff3b4(this->mUnk_c0);
-    if (temp_r0 == NULL) {
+    pActor = gpActorManager->func_01fff3b4(this->mUnk_c0);
+    if (pActor == NULL) {
         this->func_ov031_020e9904(0);
         return;
     }
 
-    this->mPos.x = temp_r0->mPos.x;
-    this->mPos.y = temp_r0->mPos.y;
-    this->mPos.z = temp_r0->mPos.z;
+    this->mPos.x = pActor->mPos.x;
+    this->mPos.y = pActor->mPos.y;
+    this->mPos.z = pActor->mPos.z;
 }
 
 ARM void ActorRupee::func_ov031_020e9610() {

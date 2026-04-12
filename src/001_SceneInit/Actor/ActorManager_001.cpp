@@ -403,10 +403,10 @@ THUMB void ActorManager::func_ov001_020bb844() {
 }
 
 THUMB void ActorManager::SetInstance(ActorManager *instance) {
-    gActorManager = instance;
+    gpActorManager = instance;
 }
 
 THUMB int ActorManager::ClearInstance() {
-    gActorManager = NULL;
+    gpActorManager = NULL;
     //! @bug: the function expects a return value (though it seems unused)
 }

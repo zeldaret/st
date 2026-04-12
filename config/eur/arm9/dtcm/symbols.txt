@@ -107,8 +107,8 @@ data_027e0ccc kind:bss addr:0x027e0ccc
 data_027e0cd8 kind:bss addr:0x027e0cd8
 data_027e0cdc kind:bss addr:0x027e0cdc
 data_027e0ce0 kind:bss addr:0x027e0ce0
-gActorManager kind:bss addr:0x027e0ce4
-data_027e0ce8 kind:bss addr:0x027e0ce8
+gpActorManager kind:bss addr:0x027e0ce4
+gpMapObjManager kind:bss addr:0x027e0ce8
 data_027e0cec kind:bss addr:0x027e0cec
 data_027e0cf0 kind:bss addr:0x027e0cf0
 data_027e0cf4 kind:bss addr:0x027e0cf4
