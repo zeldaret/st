@@ -425,7 +425,7 @@ _ZGVN15ProfileInstanceI19ActorProfileUnkCAWBE8sProfileE kind:bss addr:0x02130e94
 @448 kind:bss addr:0x02130f04
 @440 kind:bss addr:0x02130f10
 @444 kind:bss addr:0x02130f1c
-@448 kind:bss addr:0x02130f28
+data_ov040_02130f28 kind:bss addr:0x02130f28
 _ZN15ProfileInstanceI19ActorProfileUnkFOMSE8sProfileE kind:bss addr:0x02130f34
 _ZN15ProfileInstanceI19ActorProfileUnkNCCAE8sProfileE kind:bss addr:0x0213100c
 _ZN15ProfileInstanceI19ActorProfileUnkWAMAE8sProfileE kind:bss addr:0x021310e4
