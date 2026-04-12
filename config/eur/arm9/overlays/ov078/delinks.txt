@@ -9,13 +9,13 @@ src/078_BossForest/Actor/ActorUnkFRBS.cpp:
     .text       start:0x02152ea0 end:0x0215ccb4
     .init       start:0x0215d40c end:0x0215d4b0
     .ctor       start:0x0215d550 end:0x0215d554
-    .bss        start:0x0215dce4 end:0x0215ddbc
+    .bss        start:0x0215dca8 end:0x0215ddbc
 
 src/078_BossForest/Actor/ActorUnkRBFR.cpp:
     .text       start:0x0215ccb4 end:0x0215cfc8
     .init       start:0x0215d4b0 end:0x0215d500
     .ctor       start:0x0215d554 end:0x0215d558
-    .bss        start:0x0215ddcc end:0x0215dea4
+    .bss        start:0x0215ddbc end:0x0215dea4
 
 src/078_BossForest/MapObject/MapObjectUnkSTSF.cpp:
     .text       start:0x0215cfc8 end:0x0215d1c0

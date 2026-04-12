@@ -9,46 +9,46 @@ src/064_FldForest/MapObject/MapObjectUnkFSFR.cpp:
     .text       start:0x02159140 end:0x02159278
     .init       start:0x0215a344 end:0x0215a394
     .ctor       start:0x0215a5ec end:0x0215a5f0
-    .bss        start:0x0215adf4 end:0x0215ae50
+    .bss        start:0x0215ade4 end:0x0215aec8
 
 src/064_FldForest/Actor/ActorUnkRMF0.cpp:
     .text       start:0x02159278 end:0x0215939c
     .init       start:0x0215a394 end:0x0215a3e4
     .ctor       start:0x0215a5f0 end:0x0215a5f4
-    .bss        start:0x0215aed8 end:0x0215aee4
+    .bss        start:0x0215aec8 end:0x0215afb0
 
 src/064_FldForest/Actor/ActorUnkRMF1.cpp:
     .text       start:0x0215939c end:0x021594c0
     .init       start:0x0215a3e4 end:0x0215a434
     .ctor       start:0x0215a5f4 end:0x0215a5f8
-    .bss        start:0x0215afc0 end:0x0215b004
+    .bss        start:0x0215afb0 end:0x0215b098
 
 src/064_FldForest/Actor/ActorUnkRMTZ.cpp:
     .text       start:0x021594c0 end:0x0215968c
     .init       start:0x0215a434 end:0x0215a484
     .ctor       start:0x0215a5f8 end:0x0215a5fc
-    .bss        start:0x0215b0a8 end:0x0215b180
+    .bss        start:0x0215b098 end:0x0215b19c
 
 src/064_FldForest/Actor/ActorUnkFOMD.cpp:
     .text       start:0x0215968c end:0x02159e8c
     .init       start:0x0215a484 end:0x0215a4fc
     .ctor       start:0x0215a5fc end:0x0215a600
-    .bss        start:0x0215b1d8 end:0x0215b2b0
+    .bss        start:0x0215b19c end:0x0215b2b0
 
 src/064_FldForest/MapObject/MapObjectUnkHOF1.cpp:
     .text       start:0x02159e8c end:0x02159ff8
     .init       start:0x0215a4fc end:0x0215a54c
     .ctor       start:0x0215a600 end:0x0215a604
-    .bss        start:0x0215b2c0 end:0x0215b388
+    .bss        start:0x0215b2b0 end:0x0215b3b8
 
 src/064_FldForest/MapObject/MapObjectUnkHOF0.cpp:
     .text       start:0x02159ff8 end:0x0215a170
     .init       start:0x0215a54c end:0x0215a59c
     .ctor       start:0x0215a604 end:0x0215a608
-    .bss        start:0x0215b3c8 end:0x0215b3d4
+    .bss        start:0x0215b3b8 end:0x0215b4c0
 
 src/064_FldForest/MapObject/MapObjectUnkLEVN.cpp:
     .text       start:0x0215a170 end:0x0215a2d8
     .init       start:0x0215a59c end:0x0215a5ec
     .ctor       start:0x0215a608 end:0x0215a60c
-    .bss        start:0x0215b4d0 end:0x0215b520
+    .bss        start:0x0215b4c0 end:0x0215b520

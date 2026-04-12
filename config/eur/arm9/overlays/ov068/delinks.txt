@@ -9,106 +9,106 @@ src/068_FldAjito/Actor/ActorUnkRMAJ.cpp:
     .text       start:0x02157ea0 end:0x02157fa0
     .init       start:0x02161e6c end:0x02161ebc
     .ctor       start:0x0216245c end:0x02162460
-    .bss        start:0x02163ad0 end:0x02163b0c
+    .bss        start:0x02163ac0 end:0x02163b0c
 
 src/068_FldAjito/Actor/ActorUnkAJMN.cpp:
     .text       start:0x02157fa0 end:0x02158ae4
     .init       start:0x02161ebc end:0x02161f0c
     .ctor       start:0x02162460 end:0x02162464
-    .bss        start:0x02163b1c end:0x02163b58
+    .bss        start:0x02163b0c end:0x02163b58
 
 src/068_FldAjito/Actor/ActorUnkAJAI.cpp:
     .text       start:0x02158ae4 end:0x021592b0
     .init       start:0x02161f0c end:0x02161f5c
     .ctor       start:0x02162464 end:0x02162468
-    .bss        start:0x02163b68 end:0x02163c40
+    .bss        start:0x02163b58 end:0x02163c40
 
 src/068_FldAjito/Actor/ActorUnkAJEM.cpp:
     .text       start:0x021592b0 end:0x0215a844
     .init       start:0x02161f5c end:0x02161fac
     .ctor       start:0x02162468 end:0x0216246c
-    .bss        start:0x02163c54 end:0x02163d2c
+    .bss        start:0x02163c40 end:0x02163d2c
 
 src/068_FldAjito/Actor/ActorUnkTSCN.cpp:
     .text       start:0x0215a844 end:0x0215aa18
     .init       start:0x02161fac end:0x02161ffc
     .ctor       start:0x0216246c end:0x02162470
-    .bss        start:0x02163d3c end:0x02163d78
+    .bss        start:0x02163d2c end:0x02163d78
 
 src/068_FldAjito/Actor/ActorUnkAJET.cpp:
     .text       start:0x0215aa18 end:0x0215c068
     .init       start:0x02161ffc end:0x0216204c
     .ctor       start:0x02162470 end:0x02162474
-    .bss        start:0x02163d88 end:0x02163e60
+    .bss        start:0x02163d78 end:0x02163e60
 
 src/068_FldAjito/Actor/ActorUnkAJTM.cpp:
     .text       start:0x0215c068 end:0x0215cfb4
     .init       start:0x0216204c end:0x0216209c
     .ctor       start:0x02162474 end:0x02162478
-    .bss        start:0x02163e70 end:0x02163eac
+    .bss        start:0x02163e60 end:0x02163eac
 
 src/068_FldAjito/Actor/ActorUnkAJNP.cpp:
     .text       start:0x0215cfb4 end:0x0215d76c
     .init       start:0x0216209c end:0x021620ec
     .ctor       start:0x02162478 end:0x0216247c
-    .bss        start:0x02163ebc end:0x02163f94
+    .bss        start:0x02163eac end:0x02163f94
 
 src/068_FldAjito/Actor/ActorUnkAJCR.cpp:
     .text       start:0x0215d76c end:0x0215d92c
     .init       start:0x021620ec end:0x0216213c
     .ctor       start:0x0216247c end:0x02162480
-    .bss        start:0x02163fa4 end:0x02163fe0
+    .bss        start:0x02163f94 end:0x02164254
 
 src/068_FldAjito/Actor/ActorUnkMGAJ.cpp:
     .text       start:0x0215e518 end:0x0215e90c
     .init       start:0x0216218c end:0x021621dc
     .ctor       start:0x02162484 end:0x02162488
-    .bss        start:0x02164264 end:0x021642fc
+    .bss        start:0x02164254 end:0x0216433c
 
 src/068_FldAjito/Actor/ActorUnkAJBS.cpp:
     .text       start:0x0215e90c end:0x021603d8
     .init       start:0x021621dc end:0x0216222c
     .ctor       start:0x02162488 end:0x0216248c
-    .bss        start:0x0216434c end:0x02164424
+    .bss        start:0x0216433c end:0x02164424
 
 src/068_FldAjito/Actor/ActorUnkRMA1.cpp:
     .text       start:0x021603d8 end:0x02160528
     .init       start:0x0216222c end:0x0216227c
     .ctor       start:0x0216248c end:0x02162490
-    .bss        start:0x02164434 end:0x0216450c
+    .bss        start:0x02164424 end:0x0216450c
 
 src/068_FldAjito/Actor/ActorUnkRMA2.cpp:
     .text       start:0x02160528 end:0x02160678
     .init       start:0x0216227c end:0x021622cc
     .ctor       start:0x02162490 end:0x02162494
-    .bss        start:0x0216451c end:0x021645f4
+    .bss        start:0x0216450c end:0x021645f4
 
 src/068_FldAjito/Actor/ActorUnkRMA0.cpp:
     .text       start:0x02160678 end:0x021607c8
     .init       start:0x021622cc end:0x0216231c
     .ctor       start:0x02162494 end:0x02162498
-    .bss        start:0x02164604 end:0x02164690
+    .bss        start:0x021645f4 end:0x021646dc
 
 src/068_FldAjito/Actor/ActorUnkRMA3.cpp:
     .text       start:0x021607c8 end:0x02160918
     .init       start:0x0216231c end:0x0216236c
     .ctor       start:0x02162498 end:0x0216249c
-    .bss        start:0x021646ec end:0x021647c4
+    .bss        start:0x021646dc end:0x021647c4
 
 src/068_FldAjito/Actor/ActorUnkAJSP.cpp:
     .text       start:0x02160918 end:0x02160b70
     .init       start:0x0216236c end:0x021623bc
     .ctor       start:0x0216249c end:0x021624a0
-    .bss        start:0x021647d4 end:0x021648ac
+    .bss        start:0x021647c4 end:0x021648ac
 
 src/068_FldAjito/MapObject/MapObjectUnkDRVC.cpp:
     .text       start:0x02160b70 end:0x02161520
     .init       start:0x021623bc end:0x0216240c
     .ctor       start:0x021624a0 end:0x021624a4
-    .bss        start:0x021648bc end:0x02164990
+    .bss        start:0x021648ac end:0x02164990
 
 src/068_FldAjito/MapObject/MapObjectUnkRKAG.cpp:
     .text       start:0x02161520 end:0x02161748
     .init       start:0x0216240c end:0x0216245c
     .ctor       start:0x021624a4 end:0x021624a8
-    .bss        start:0x021649a0 end:0x02164a74
+    .bss        start:0x02164990 end:0x02164a74

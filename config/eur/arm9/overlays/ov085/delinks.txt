@@ -9,16 +9,16 @@ src/085_DgnLv5/Actor/ActorUnkGRCM.cpp:
     .text       start:0x02150c00 end:0x02150f8c
     .init       start:0x02153ebc end:0x02153f0c
     .ctor       start:0x02153fac end:0x02153fb0
-    .bss        start:0x02154210 end:0x0215424c
+    .bss        start:0x02154200 end:0x0215424c
 
 src/085_DgnLv5/Actor/ActorUnkSRST.cpp:
     .text       start:0x02150f8c end:0x021531b4
     .init       start:0x02153f0c end:0x02153f5c
     .ctor       start:0x02153fb0 end:0x02153fb4
-    .bss        start:0x0215425c end:0x02154334
+    .bss        start:0x0215424c end:0x02154334
 
 src/085_DgnLv5/MapObject/MapObjectUnkCTPT.cpp:
     .text       start:0x021531b4 end:0x02153e18
     .init       start:0x02153f5c end:0x02153fac
     .ctor       start:0x02153fb4 end:0x02153fb8
-    .bss        start:0x02154344 end:0x02154364
+    .bss        start:0x02154334 end:0x02154364

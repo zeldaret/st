@@ -9,76 +9,76 @@ src/063_Shrine/Actor/ActorUnkCANS.cpp:
     .text       start:0x02157ea0 end:0x0215aaf8
     .init       start:0x02162730 end:0x021627a0
     .ctor       start:0x02162e40 end:0x02162e44
-    .bss        start:0x02163b70 end:0x02163c48
+    .bss        start:0x02163b60 end:0x02163c48
 
 src/063_Shrine/Actor/ActorUnkCASE.cpp:
     .text       start:0x0215aaf8 end:0x0215bafc
     .init       start:0x021627a0 end:0x02162834
     .ctor       start:0x02162e44 end:0x02162e48
-    .bss        start:0x02163c58 end:0x02163d30
+    .bss        start:0x02163c48 end:0x02163d30
 
 src/063_Shrine/Actor/ActorUnkRMSV.cpp:
     .text       start:0x0215bc2c end:0x0215bf90
     .init       start:0x02162834 end:0x02162884
     .ctor       start:0x02162e48 end:0x02162e4c
-    .bss        start:0x02163d40 end:0x02163e18
+    .bss        start:0x02163d30 end:0x02163e18
 
 src/063_Shrine/Actor/ActorUnkRMSW.cpp:
     .text       start:0x0215bf90 end:0x0215c1d8
     .init       start:0x02162884 end:0x021628d4
     .ctor       start:0x02162e4c end:0x02162e50
-    .bss        start:0x02163e28 end:0x02163f00
+    .bss        start:0x02163e18 end:0x02163f00
 
 src/063_Shrine/Actor/ActorUnkRMSF.cpp:
     .text       start:0x0215c1d8 end:0x0215c33c
     .init       start:0x021628d4 end:0x02162924
     .ctor       start:0x02162e50 end:0x02162e54
-    .bss        start:0x02163f10 end:0x02163fe0
+    .bss        start:0x02163f00 end:0x02163fec
 
 src/063_Shrine/Actor/ActorUnkRMSD.cpp:
     .text       start:0x0215c33c end:0x0215c584
     .init       start:0x02162924 end:0x02162974
     .ctor       start:0x02162e54 end:0x02162e58
-    .bss        start:0x02163ff8 end:0x021640d0
+    .bss        start:0x02163fec end:0x021640d0
 
 src/063_Shrine/Actor/ActorUnkRMSS.cpp:
     .text       start:0x0215c584 end:0x0215c6e8
     .init       start:0x02162974 end:0x021629c4
     .ctor       start:0x02162e58 end:0x02162e5c
-    .bss        start:0x021640e0 end:0x02164144
+    .bss        start:0x021640d0 end:0x02164318
 
 src/063_Shrine/Actor/ActorUnkRBLS.cpp:
     .text       start:0x0215f2b8 end:0x0215f544
     .init       start:0x02162b2c end:0x02162b7c
     .ctor       start:0x02162e60 end:0x02162e64
-    .bss        start:0x02164328 end:0x02164400
+    .bss        start:0x02164318 end:0x02164400
 
 src/063_Shrine/MapObject/MapObjectUnkSTAT.cpp:
     .text       start:0x0215f544 end:0x0215fd94
     .init       start:0x02162b7c end:0x02162bcc
     .ctor       start:0x02162e64 end:0x02162e68
-    .bss        start:0x02164410 end:0x021644e4
+    .bss        start:0x02164400 end:0x02164514
 
 src/063_Shrine/MapObject/MapObjectUnkWLMS.cpp:
     .text       start:0x0215fd94 end:0x02160a60
     .init       start:0x02162bcc end:0x02162d20
     .ctor       start:0x02162e68 end:0x02162e6c
-    .bss        start:0x02164604 end:0x02164690
+    .bss        start:0x02164514 end:0x021646f8
 
 src/063_Shrine/MapObject/MapObjectUnkLTRW.cpp:
     .text       start:0x02160ad0 end:0x02160e98
     .init       start:0x02162d20 end:0x02162da0
     .ctor       start:0x02162e6c end:0x02162e70
-    .bss        start:0x02164708 end:0x021647dc
+    .bss        start:0x021646f8 end:0x02164800
 
 src/063_Shrine/MapObject/MapObjectUnkMTJR.cpp:
     .text       start:0x02160e98 end:0x02161430
     .init       start:0x02162da0 end:0x02162df0
     .ctor       start:0x02162e70 end:0x02162e74
-    .bss        start:0x02164810 end:0x021648e4
+    .bss        start:0x02164800 end:0x02164904
 
 src/063_Shrine/MapObject/MapObjectUnkSWCR.cpp:
     .text       start:0x02161430 end:0x02162148
     .init       start:0x02162df0 end:0x02162e40
     .ctor       start:0x02162e74 end:0x02162e78
-    .bss        start:0x02164914 end:0x02164934
+    .bss        start:0x02164904 end:0x02164934

@@ -9,16 +9,16 @@ src/056_MapD4/Actor/ActorUnkPASS.cpp:
     .text       start:0x02138788 end:0x0213a978
     .init       start:0x0213e3dc end:0x0213e42c
     .ctor       start:0x0213e4cc end:0x0213e4d0
-    .bss        start:0x0213ee30 end:0x0213ee80
+    .bss        start:0x0213ee20 end:0x0213ee80
 
 src/056_MapD4/MapObject/MapObjectUnkFSVC.cpp:
     .text       start:0x0213aa48 end:0x0213ab80
     .init       start:0x0213e42c end:0x0213e47c
     .ctor       start:0x0213e4d0 end:0x0213e4d4
-    .bss        start:0x0213ee90 end:0x0213ef64
+    .bss        start:0x0213ee80 end:0x0213ef64
 
 src/056_MapD4/Actor/ActorUnkFSIR.cpp:
     .text       start:0x0213ab80 end:0x0213b24c
     .init       start:0x0213e47c end:0x0213e4cc
     .ctor       start:0x0213e4d4 end:0x0213e4d8
-    .bss        start:0x0213ef74 end:0x0213efb8
+    .bss        start:0x0213ef64 end:0x0213efb8

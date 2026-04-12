@@ -9,31 +9,31 @@ src/049_MapC3/Actor/ActorUnkBEEE.cpp:
     .text       start:0x021304a0 end:0x02131478
     .init       start:0x02136b70 end:0x02136bc0
     .ctor       start:0x021372c8 end:0x021372cc
-    .bss        start:0x02138010 end:0x021380e8
+    .bss        start:0x02138000 end:0x021380e8
 
 src/049_MapC3/Actor/ActorUnkBEEH.cpp:
     .text       start:0x02131478 end:0x021320ec
     .init       start:0x02136bc0 end:0x02136c10
     .ctor       start:0x021372cc end:0x021372d0
-    .bss        start:0x021380f8 end:0x021381d0
+    .bss        start:0x021380e8 end:0x021381d0
 
 src/049_MapC3/Actor/ActorUnkCROW.cpp:
     .text       start:0x021320ec end:0x02134134
     .init       start:0x02136c10 end:0x02136c60
     .ctor       start:0x021372d0 end:0x021372d4
-    .bss        start:0x021381e0 end:0x021382b8
+    .bss        start:0x021381d0 end:0x021382b8
 
 src/049_MapC3/Actor/ActorUnkCRCH.cpp:
     .text       start:0x02134134 end:0x0213444c
     .init       start:0x02136c60 end:0x02136cb0
     .ctor       start:0x021372d4 end:0x021372d8
-    .bss        start:0x021382c8 end:0x02138304
+    .bss        start:0x021382b8 end:0x02138304
 
 src/049_MapC3/Actor/ActorUnkPOST.cpp:
     .text       start:0x021347bc end:0x02135228
     .init       start:0x02136cb0 end:0x02136fbc
     .ctor       start:0x021372d8 end:0x021372dc
-    .bss        start:0x02138314 end:0x021383ec
+    .bss        start:0x02138304 end:0x021383ec
 
 src/049_MapC3/Actor/ActorUnkPTMN.cpp:
     .text       start:0x02135548 end:0x02136b40

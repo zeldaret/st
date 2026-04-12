@@ -9,22 +9,22 @@ src/096_PlayerZelda/Actor/ActorUnkLZET.cpp:
     .text       start:0x0217a68c end:0x0217a738
     .init       start:0x0217dbc8 end:0x0217dc18
     .ctor       start:0x0217dd58 end:0x0217dd5c
-    .bss        start:0x0217e250 end:0x0217e28c
+    .bss        start:0x0217e240 end:0x0217e28c
 
 src/096_PlayerZelda/Actor/ActorUnkCLBT.cpp:
     .text       start:0x0217a738 end:0x0217ab6c
     .init       start:0x0217dc18 end:0x0217dc68
     .ctor       start:0x0217dd5c end:0x0217dd60
-    .bss        start:0x0217e29c end:0x0217e2d8
+    .bss        start:0x0217e28c end:0x0217e2d8
 
 src/096_PlayerZelda/Actor/ActorUnkTKYT.cpp:
     .text       start:0x0217ab8c end:0x0217ad30
     .init       start:0x0217dc68 end:0x0217dcb8
     .ctor       start:0x0217dd60 end:0x0217dd64
-    .bss        start:0x0217e2e8 end:0x0217e324
+    .bss        start:0x0217e2d8 end:0x0217e324
 
 src/096_PlayerZelda/Actor/ActorUnkBPBS.cpp:
     .text       start:0x0217ad30 end:0x0217d2b0
     .init       start:0x0217dcb8 end:0x0217dd08
     .ctor       start:0x0217dd64 end:0x0217dd68
-    .bss        start:0x0217e334 end:0x0217e40c
+    .bss        start:0x0217e324 end:0x0217e40c

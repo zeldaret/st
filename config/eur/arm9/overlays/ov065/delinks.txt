@@ -9,70 +9,70 @@ src/065_FldSnow/Actor/ActorUnkYUKI.cpp:
     .text       start:0x02157ea0 end:0x02158988
     .init       start:0x0215a064 end:0x0215a0dc
     .ctor       start:0x0215a4a8 end:0x0215a4ac
-    .bss        start:0x0215b00c end:0x0215b064
+    .bss        start:0x0215b004 end:0x0215b0e4
 
 src/065_FldSnow/Actor/ActorUnkRMS0.cpp:
     .text       start:0x02158d90 end:0x02158eb4
     .init       start:0x0215a0dc end:0x0215a12c
     .ctor       start:0x0215a4ac end:0x0215a4b0
-    .bss        start:0x0215b0f4 end:0x0215b1b4
+    .bss        start:0x0215b0e4 end:0x0215b1cc
 
 src/065_FldSnow/Actor/ActorUnkRMS1.cpp:
     .text       start:0x02158eb4 end:0x02158fd8
     .init       start:0x0215a12c end:0x0215a17c
     .ctor       start:0x0215a4b0 end:0x0215a4b4
-    .bss        start:0x0215b1dc end:0x0215b2b4
+    .bss        start:0x0215b1cc end:0x0215b2b4
 
 src/065_FldSnow/Actor/ActorUnkRMS2.cpp:
     .text       start:0x02158fd8 end:0x021590fc
     .init       start:0x0215a17c end:0x0215a1cc
     .ctor       start:0x0215a4b4 end:0x0215a4b8
-    .bss        start:0x0215b2c4 end:0x0215b388
+    .bss        start:0x0215b2b4 end:0x0215b39c
 
 src/065_FldSnow/Actor/ActorUnkRMS3.cpp:
     .text       start:0x021590fc end:0x02159220
     .init       start:0x0215a1cc end:0x0215a21c
     .ctor       start:0x0215a4b8 end:0x0215a4bc
-    .bss        start:0x0215b3ac end:0x0215b3d4
+    .bss        start:0x0215b39c end:0x0215b484
 
 src/065_FldSnow/Actor/ActorUnkRMS4.cpp:
     .text       start:0x02159220 end:0x02159344
     .init       start:0x0215a21c end:0x0215a26c
     .ctor       start:0x0215a4bc end:0x0215a4c0
-    .bss        start:0x0215b494 end:0x0215b50c
+    .bss        start:0x0215b484 end:0x0215b56c
 
 src/065_FldSnow/Actor/ActorUnkRMS5.cpp:
     .text       start:0x02159344 end:0x02159468
     .init       start:0x0215a26c end:0x0215a2bc
     .ctor       start:0x0215a4c0 end:0x0215a4c4
-    .bss        start:0x0215b57c end:0x0215b654
+    .bss        start:0x0215b56c end:0x0215b654
 
 src/065_FldSnow/Actor/ActorUnkRMTE.cpp:
     .text       start:0x02159468 end:0x021596f8
     .init       start:0x0215a2bc end:0x0215a30c
     .ctor       start:0x0215a4c4 end:0x0215a4c8
-    .bss        start:0x0215b664 end:0x0215b6ec
+    .bss        start:0x0215b654 end:0x0215b758
 
 src/065_FldSnow/Actor/ActorUnkYWIS.cpp:
     .text       start:0x021596f8 end:0x02159920
     .init       start:0x0215a30c end:0x0215a388
     .ctor       start:0x0215a4c8 end:0x0215a4cc
-    .bss        start:0x0215b764 end:0x0215b7a0
+    .bss        start:0x0215b758 end:0x0215b7a0
 
 src/065_FldSnow/MapObject/MapObjectUnkTSGM.cpp:
     .text       start:0x02159920 end:0x02159c18
     .init       start:0x0215a388 end:0x0215a408
     .ctor       start:0x0215a4cc end:0x0215a4d0
-    .bss        start:0x0215b7bc end:0x0215b7dc
+    .bss        start:0x0215b7a0 end:0x0215b800
 
 src/065_FldSnow/MapObject/MapObjectUnkHOSO.cpp:
     .text       start:0x02159c78 end:0x02159dcc
     .init       start:0x0215a408 end:0x0215a458
     .ctor       start:0x0215a4d0 end:0x0215a4d4
-    .bss        start:0x0215b80c end:0x0215b850
+    .bss        start:0x0215b800 end:0x0215b8e0
 
 src/065_FldSnow/MapObject/MapObjectUnkMTIC.cpp:
     .text       start:0x02159dcc end:0x02159fd4
     .init       start:0x0215a458 end:0x0215a4a8
     .ctor       start:0x0215a4d4 end:0x0215a4d8
-    .bss        start:0x0215b8f0 end:0x0215b9a4
+    .bss        start:0x0215b8e0 end:0x0215b9a4
