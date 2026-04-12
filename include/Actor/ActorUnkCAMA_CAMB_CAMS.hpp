@@ -9,6 +9,15 @@
 
 // --- Actor CAMA ---
 
+class ActorUnkCAMA_c4 : public Actor_c4 {
+    ActorUnkCAMA_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkCAMA : public Actor {
 public:
     /* 00 (base) */
@@ -33,6 +42,15 @@ public:
 
 // --- Actor CAMB ---
 
+class ActorUnkCAMB_c4 : public Actor_c4 {
+    ActorUnkCAMB_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkCAMB : public Actor {
 public:
     /* 00 (base) */
@@ -56,6 +74,15 @@ public:
 };
 
 // --- Actor CAMS ---
+
+class ActorUnkCAMS_c4 : public Actor_c4 {
+    ActorUnkCAMS_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
 
 class ActorUnkCAMS : public Actor {
 public:

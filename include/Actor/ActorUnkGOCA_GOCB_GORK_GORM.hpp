@@ -9,6 +9,15 @@
 
 // --- Actor GOCA ---
 
+class ActorUnkGOCA_c4 : public Actor_c4 {
+    ActorUnkGOCA_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkGOCA : public Actor {
 public:
     /* 00 (base) */
@@ -32,6 +41,15 @@ public:
 };
 
 // --- Actor GOCB ---
+
+class ActorUnkGOCB_c4 : public Actor_c4 {
+    ActorUnkGOCB_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
 
 class ActorUnkGOCB : public Actor {
 public:
@@ -57,6 +75,15 @@ public:
 
 // --- Actor GORK ---
 
+class ActorUnkGORK_c4 : public Actor_c4 {
+    ActorUnkGORK_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkGORK : public Actor {
 public:
     /* 00 (base) */
@@ -80,6 +107,15 @@ public:
 };
 
 // --- Actor GORM ---
+
+class ActorUnkGORM_c4 : public Actor_c4 {
+    ActorUnkGORM_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
 
 class ActorUnkGORM : public Actor {
 public:

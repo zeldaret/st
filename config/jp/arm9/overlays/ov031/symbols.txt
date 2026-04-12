@@ -598,11 +598,11 @@ _ZN10ActorRupee8vfunc_2cEi kind:function(arm,size=0x128) addr:0x020eb618
 _ZN10ActorRupee19func_ov031_020e9d54Ev kind:function(arm,size=0x40) addr:0x020eb740
 _ZN10ActorRupee19func_ov031_020e9d94Ev kind:function(arm,size=0xc8) addr:0x020eb780
 _ZN10ActorRupee19func_ov031_020e9e5cEv kind:function(arm,size=0x94) addr:0x020eb848
-_ZN8Actor_c4C1EP5Actor kind:function(arm,size=0x38) addr:0x020eb8dc
-_ZN8Actor_c48vfunc_00E14Actor_c4_stacki kind:function(arm,size=0x44) addr:0x020eb914
-_ZN8Actor_c48vfunc_04Ev kind:function(arm,size=0x20) addr:0x020eb958
-_ZN8Actor_c48vfunc_0cEi kind:function(arm,size=0x28) addr:0x020eb978
-_ZN8Actor_c48vfunc_08Ev kind:function(arm,size=0x1c) addr:0x020eb9a0
+_ZN13ActorRupee_c4C1EP5Actor kind:function(arm,size=0x38) addr:0x020eb8dc
+_ZN13ActorRupee_c48vfunc_00E14Actor_c4_stacki kind:function(arm,size=0x44) addr:0x020eb914
+_ZN13ActorRupee_c48vfunc_04Ev kind:function(arm,size=0x20) addr:0x020eb958
+_ZN13ActorRupee_c48vfunc_0cEi kind:function(arm,size=0x28) addr:0x020eb978
+_ZN13ActorRupee_c48vfunc_08Ev kind:function(arm,size=0x1c) addr:0x020eb9a0
 _ZN10ActorRupeeD1Ev kind:function(arm,size=0x20) addr:0x020eb9bc
 _ZN10ActorRupeeD0Ev kind:function(arm,size=0x28) addr:0x020eb9dc
 _ZN17ActorProfileRupeeD1Ev kind:function(arm,size=0x14) addr:0x020eba04
@@ -2286,7 +2286,7 @@ _ZTV19data_ov031_02115188 kind:data(any) addr:0x02115188
 _ZTV19data_ov031_021151ac kind:data(any) addr:0x021151ac
 data_ov031_02115208 kind:data(any) addr:0x02115208
 data_ov031_02115218 kind:data(any) addr:0x02115218
-_ZTV8Actor_c4 kind:data(any) addr:0x02115228
+_ZTV13ActorRupee_c4 kind:data(any) addr:0x02115228
 _ZTV17ActorProfileRupee kind:data(any) addr:0x02115240
 _ZTV10ActorRupee kind:data(any) addr:0x02115264
 data_ov031_021152c0 kind:data(any) addr:0x021152c0
@@ -2324,7 +2324,7 @@ data_ov031_02115af8 kind:data(any) addr:0x02115af8
 data_ov031_02115b04 kind:data(any) addr:0x02115b04
 data_ov031_02115b14 kind:data(any) addr:0x02115b14
 data_ov031_02115b44 kind:data(any) addr:0x02115b44
-data_ov031_02115b7c kind:data(any) addr:0x02115b7c
+data_ov031_02115b7c kind:data(any) addr:0x02115b74
 _ZTV19data_ov031_02115b8c kind:data(any) addr:0x02115b8c
 _ZTV19data_ov031_02115bb0 kind:data(any) addr:0x02115bb0
 _ZTV19data_ov031_02115c0c kind:data(any) addr:0x02115c0c

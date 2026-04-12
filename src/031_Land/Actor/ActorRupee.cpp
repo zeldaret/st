@@ -857,36 +857,36 @@ ARM bool ActorRupee::func_ov031_020e9e5c() {
 
 #define GET_ACTOR_RUPEE(pActor) ((ActorRupee *) (pActor))
 
-ARM Actor_c4::Actor_c4(Actor *param1) :
-    Actor_c4_Base(&param1->mRef, 0) {
+ARM ActorRupee_c4::ActorRupee_c4(Actor *param1) :
+    Actor_c4(param1) {
     this->mUnk_20 = param1;
     this->mUnk_04 = 1;
 }
 
 // non-matching
-ARM unk32 Actor_c4::vfunc_00(Actor_c4_stack param1, unk32 param2) {
-    if (param1.param2 != 0) {
+ARM unk32 ActorRupee_c4::vfunc_00(Actor_c4_stack param1, unk32 param2) {
+    if (param2 != 0) {
         ActorRupee *pRupee = GET_ACTOR_RUPEE(this->mUnk_20);
         pRupee->mUnk_c0    = param1.param1;
         pRupee->func_ov031_020e9904(7);
     }
 
-    return this->func_ov031_020f62e4(param1.param1, param1.param2);
+    return this->Actor_c4::vfunc_00(param1, param2);
 }
 
-ARM void Actor_c4::vfunc_04() {
+ARM void ActorRupee_c4::vfunc_04() {
     GET_ACTOR_RUPEE(this->mUnk_20)->func_ov031_020e9904(8);
-    this->func_ov031_020f6374();
+    this->Actor_c4::vfunc_04();
 }
 
-ARM void Actor_c4::vfunc_0c(unk32 param1) {
+ARM void ActorRupee_c4::vfunc_0c(unk32 param1) {
     GET_ACTOR_RUPEE(this->mUnk_20)->func_ov031_020e9904(1);
-    this->func_ov031_020f6384(param1);
+    this->Actor_c4::vfunc_0c(param1);
 }
 
-ARM void Actor_c4::vfunc_08() {
+ARM void ActorRupee_c4::vfunc_08() {
     GET_ACTOR_RUPEE(this->mUnk_20)->func_ov031_020e9068();
-    this->func_ov031_020f637c();
+    this->Actor_c4::vfunc_08();
 }
 
 ARM ActorRupee::~ActorRupee() {}

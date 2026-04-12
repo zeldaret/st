@@ -83,6 +83,8 @@ enum ActorFlag_ {
     ActorFlag_31          = FLAG(0, 31),
 };
 
+class Actor_c4;
+
 class Actor : public SysObject {
 public:
     /* 00 (vtable) */
@@ -96,13 +98,13 @@ public:
     /* 34 */ Cylinder *mUnk_34;
     /* 38 */ unk32 *mUnk_38;
     /* 3c */ unk32 mUnk_3c;
-    /* 40 */ void *mUnk_40; // pointer to `Actor_c4`
+    /* 40 */ Actor_c4 *mUnk_40;
     /* 44 */ u16 mUnk_44;
     /* 46 */ unk16 mUnk_46;
     /* 48 */ unk16 mUnk_48;
     /* 4a */ unk8 mUnk_4a;
     /* 4a */ unk8 mUnk_4b;
-    /* 4c */ unk16 mUnk_4c;
+    /* 4c */ s16 mUnk_4c;
     /* 4e */ s16 mUnk_4e;
     /* 50 */ volatile u16 mUnk_50;
     /* 52 */ u16 mUnk_52;
@@ -185,6 +187,42 @@ public:
     unk32 func_ov000_02098a60(unk32 param1);
 
     void func_ov017_020bf5c4(Vec3p *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+};
+
+struct Actor_c4_stack {
+    unk32 param1;
+    unk32 param2;
+};
+
+class Actor_c4_Base {
+public:
+    Actor_c4_Base(void *param1, unk32 param2);
+};
+
+class Actor_c4 : public Actor_c4_Base {
+public:
+    /* 00 (vtable) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk16 mUnk_08;
+    /* 08 */ unk16 mUnk_0a;
+    /* 0c */ unk16 mUnk_0c;
+    /* 0c */ unk16 mUnk_0e;
+    /* 10 */ unk16 mUnk_10;
+    /* 10 */ unk16 mUnk_12;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1c */ unk32 mUnk_1c;
+    /* 20 */ Actor *mUnk_20;
+    /* 24 */
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2);
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
+    /* 0c */ virtual void vfunc_0c(unk32 param1);
+    /* 10 */
+
+    Actor_c4(Actor *param1) :
+        Actor_c4_Base(&param1->mRef, 0) {}
 };
 
 extern UnkStruct_ov000_020b539c data_ov000_020b539c;

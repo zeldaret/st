@@ -9,6 +9,15 @@
 
 // --- Actor SYDE ---
 
+class ActorUnkSYDE_c4 : public Actor_c4 {
+    ActorUnkSYDE_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkSYDE : public Actor {
 public:
     /* 00 (base) */
@@ -32,6 +41,15 @@ public:
 };
 
 // --- Actor SYDL ---
+
+class ActorUnkSYDL_c4 : public Actor_c4 {
+    ActorUnkSYDL_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
 
 class ActorUnkSYDL : public Actor {
 public:
@@ -57,6 +75,15 @@ public:
 
 // --- Actor SYDS ---
 
+class ActorUnkSYDS_c4 : public Actor_c4 {
+    ActorUnkSYDS_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkSYDS : public Actor {
 public:
     /* 00 (base) */
@@ -80,6 +107,15 @@ public:
 };
 
 // --- Actor SYFI ---
+
+class ActorUnkSYFI_c4 : public Actor_c4 {
+    ActorUnkSYFI_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
 
 class ActorUnkSYFI : public Actor {
 public:
@@ -105,6 +141,15 @@ public:
 
 // --- Actor SYFO ---
 
+class ActorUnkSYFO_c4 : public Actor_c4 {
+    ActorUnkSYFO_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkSYFO : public Actor {
 public:
     /* 00 (base) */
@@ -128,6 +173,15 @@ public:
 };
 
 // --- Actor SYIL ---
+
+class ActorUnkSYIL_c4 : public Actor_c4 {
+    ActorUnkSYIL_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
 
 class ActorUnkSYIL : public Actor {
 public:
@@ -153,6 +207,15 @@ public:
 
 // --- Actor SYIS ---
 
+class ActorUnkSYIS_c4 : public Actor_c4 {
+    ActorUnkSYIS_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkSYIS : public Actor {
 public:
     /* 00 (base) */
@@ -176,6 +239,15 @@ public:
 };
 
 // --- Actor SYOL ---
+
+class ActorUnkSYOL_c4 : public Actor_c4 {
+    ActorUnkSYOL_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
 
 class ActorUnkSYOL : public Actor {
 public:
@@ -201,6 +273,15 @@ public:
 
 // --- Actor SYOS ---
 
+class ActorUnkSYOS_c4 : public Actor_c4 {
+    ActorUnkSYOS_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkSYOS : public Actor {
 public:
     /* 00 (base) */
@@ -224,6 +305,15 @@ public:
 };
 
 // --- Actor SYSL ---
+
+class ActorUnkSYSL_c4 : public Actor_c4 {
+    ActorUnkSYSL_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
 
 class ActorUnkSYSL : public Actor {
 public:
@@ -249,6 +339,15 @@ public:
 
 // --- Actor SYSN ---
 
+class ActorUnkSYSN_c4 : public Actor_c4 {
+    ActorUnkSYSN_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkSYSN : public Actor {
 public:
     /* 00 (base) */
@@ -272,6 +371,15 @@ public:
 };
 
 // --- Actor SYSS ---
+
+class ActorUnkSYSS_c4 : public Actor_c4 {
+    ActorUnkSYSS_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
 
 class ActorUnkSYSS : public Actor {
 public:
@@ -297,6 +405,15 @@ public:
 
 // --- Actor SYWA ---
 
+class ActorUnkSYWA_c4 : public Actor_c4 {
+    ActorUnkSYWA_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkSYWA : public Actor {
 public:
     /* 00 (base) */
@@ -321,6 +438,15 @@ public:
 
 // --- Actor SYWL ---
 
+class ActorUnkSYWL_c4 : public Actor_c4 {
+    ActorUnkSYWL_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkSYWL : public Actor {
 public:
     /* 00 (base) */
@@ -344,6 +470,15 @@ public:
 };
 
 // --- Actor SYWS ---
+
+class ActorUnkSYWS_c4 : public Actor_c4 {
+    ActorUnkSYWS_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
 
 class ActorUnkSYWS : public Actor {
 public:
