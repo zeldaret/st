@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkWBPS.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkWBPS sActorProfileUnkWBPS;
-
-ARM ActorProfileUnkWBPS *ActorProfileUnkWBPS::GetProfile() {
-    return &sActorProfileUnkWBPS;
-}
+ARM DECL_PROFILE(ActorProfileUnkWBPS);
 
 ARM Actor *ActorProfileUnkWBPS::Create() {
     return new(HeapIndex_2) ActorUnkWBPS();

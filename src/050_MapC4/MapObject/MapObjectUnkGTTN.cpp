@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkGTTN.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkGTTN sMapObjectProfileUnkGTTN;
-
-ARM MapObjectProfileUnkGTTN *MapObjectProfileUnkGTTN::GetProfile() {
-    return &sMapObjectProfileUnkGTTN;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkGTTN);
 
 ARM MapObject *MapObjectProfileUnkGTTN::Create() {
     return new(HeapIndex_2) MapObjectUnkGTTN();

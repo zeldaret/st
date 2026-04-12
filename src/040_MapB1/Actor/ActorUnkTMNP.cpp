@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkTMNP.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkTMNP sActorProfileUnkTMNP;
-
-ARM ActorProfileUnkTMNP *ActorProfileUnkTMNP::GetProfile() {
-    return &sActorProfileUnkTMNP;
-}
+ARM DECL_PROFILE(ActorProfileUnkTMNP);
 
 ARM Actor *ActorProfileUnkTMNP::Create() {
     return new(HeapIndex_2) ActorUnkTMNP();

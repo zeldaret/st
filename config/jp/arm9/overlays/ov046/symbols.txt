@@ -256,22 +256,22 @@ data_ov046_0212c428 kind:data(any) addr:0x0212c428
 _ZTV19data_ov046_0212c43c kind:data(any) addr:0x0212c43c
 data_ov046_0212c460 kind:data(any) addr:0x0212c460
 _ZTV19data_ov046_0212c4b0 kind:data(any) addr:0x0212c4b0
-data_ov046_0212c520 kind:bss addr:0x0212c520
-data_ov046_0212c524 kind:bss addr:0x0212c524
-sActorProfileUnkWTTH kind:bss addr:0x0212c530
-data_ov046_0212c608 kind:bss addr:0x0212c608
-data_ov046_0212c60c kind:bss addr:0x0212c60c
-sActorProfileUnkWTH2 kind:bss addr:0x0212c618
+_ZGVN15ProfileInstanceI19ActorProfileUnkWTTHE8sProfileE kind:bss addr:0x0212c520
+@31717 kind:bss addr:0x0212c524
+_ZN15ProfileInstanceI19ActorProfileUnkWTTHE8sProfileE kind:bss addr:0x0212c530
+_ZGVN15ProfileInstanceI19ActorProfileUnkWTH2E8sProfileE kind:bss addr:0x0212c608
+@31723 kind:bss addr:0x0212c60c
+_ZN15ProfileInstanceI19ActorProfileUnkWTH2E8sProfileE kind:bss addr:0x0212c618
 data_ov046_0212c648 kind:bss addr:0x0212c648 ambiguous
-data_ov046_0212c6f0 kind:bss addr:0x0212c6f0
-data_ov046_0212c6f4 kind:bss addr:0x0212c6f4
-sActorProfileUnkWTH3 kind:bss addr:0x0212c700
+_ZGVN15ProfileInstanceI19ActorProfileUnkWTH3E8sProfileE kind:bss addr:0x0212c6f0
+@31729 kind:bss addr:0x0212c6f4
+_ZN15ProfileInstanceI19ActorProfileUnkWTH3E8sProfileE kind:bss addr:0x0212c700
 data_ov046_0212c76c kind:bss addr:0x0212c76c ambiguous
-data_ov046_0212c7d8 kind:bss addr:0x0212c7d8
-data_ov046_0212c7dc kind:bss addr:0x0212c7dc
-sActorProfileUnkWBTN kind:bss addr:0x0212c7e8
+_ZGVN15ProfileInstanceI19ActorProfileUnkWBTNE8sProfileE kind:bss addr:0x0212c7d8
+@31735 kind:bss addr:0x0212c7dc
+_ZN15ProfileInstanceI19ActorProfileUnkWBTNE8sProfileE kind:bss addr:0x0212c7e8
 data_ov046_0212c7ec kind:bss addr:0x0212c7ec
-data_ov046_0212c8c0 kind:bss addr:0x0212c8c0
-data_ov046_0212c8c4 kind:bss addr:0x0212c8c4
-sActorProfileUnkWBN2 kind:bss addr:0x0212c8d0
+_ZGVN15ProfileInstanceI19ActorProfileUnkWBN2E8sProfileE kind:bss addr:0x0212c8c0
+@31741 kind:bss addr:0x0212c8c4
+_ZN15ProfileInstanceI19ActorProfileUnkWBN2E8sProfileE kind:bss addr:0x0212c8d0
 data_ov046_0212c8d4 kind:bss addr:0x0212c8d4

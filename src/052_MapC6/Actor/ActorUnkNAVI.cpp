@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkNAVI.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkNAVI sActorProfileUnkNAVI;
-
-ARM ActorProfileUnkNAVI *ActorProfileUnkNAVI::GetProfile() {
-    return &sActorProfileUnkNAVI;
-}
+ARM DECL_PROFILE(ActorProfileUnkNAVI);
 
 ARM Actor *ActorProfileUnkNAVI::Create() {
     return new(HeapIndex_2) ActorUnkNAVI();

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkBDEA.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkBDEA sActorProfileUnkBDEA;
-
-ARM ActorProfileUnkBDEA *ActorProfileUnkBDEA::GetProfile() {
-    return &sActorProfileUnkBDEA;
-}
+ARM DECL_PROFILE(ActorProfileUnkBDEA);
 
 ARM Actor *ActorProfileUnkBDEA::Create() {
     return new(HeapIndex_2) ActorUnkBDEA();

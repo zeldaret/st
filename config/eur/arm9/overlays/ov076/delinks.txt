@@ -9,4 +9,4 @@ src/076_DgnLv1/Actor/ActorUnkBGOK.cpp:
     .text       start:0x02150c00 end:0x02152ac0
     .init       start:0x02152ae0 end:0x02152b30
     .ctor       start:0x02152b30 end:0x02152b34
-    .bss        start:0x02152db0 end:0x02152ea0
+    .bss        start:0x02152da0 end:0x02152ea0

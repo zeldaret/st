@@ -5,11 +5,7 @@
 
 // --- Actor SIRO ---
 
-static ActorProfileUnkSIRO sActorProfileUnkSIRO;
-
-ARM ActorProfileUnkSIRO *ActorProfileUnkSIRO::GetProfile() {
-    return &sActorProfileUnkSIRO;
-}
+ARM DECL_PROFILE(ActorProfileUnkSIRO);
 
 ARM Actor *ActorProfileUnkSIRO::Create() {
     return new(HeapIndex_2) ActorUnkSIRO();
@@ -22,11 +18,7 @@ ARM ActorUnkSIRO::ActorUnkSIRO() {}
 
 // --- Actor SIRS ---
 
-static ActorProfileUnkSIRS sActorProfileUnkSIRS;
-
-ARM ActorProfileUnkSIRS *ActorProfileUnkSIRS::GetProfile() {
-    return &sActorProfileUnkSIRS;
-}
+ARM DECL_PROFILE(ActorProfileUnkSIRS);
 
 ARM Actor *ActorProfileUnkSIRS::Create() {
     return new(HeapIndex_2) ActorUnkSIRS();
@@ -39,11 +31,7 @@ ARM ActorUnkSIRS::ActorUnkSIRS() {}
 
 // --- Actor SRNM ---
 
-static ActorProfileUnkSRNM sActorProfileUnkSRNM;
-
-ARM ActorProfileUnkSRNM *ActorProfileUnkSRNM::GetProfile() {
-    return &sActorProfileUnkSRNM;
-}
+ARM DECL_PROFILE(ActorProfileUnkSRNM);
 
 ARM Actor *ActorProfileUnkSRNM::Create() {
     return new(HeapIndex_2) ActorUnkSRNM();
@@ -56,11 +44,7 @@ ARM ActorUnkSRNM::ActorUnkSRNM() {}
 
 // --- Actor SRSL ---
 
-static ActorProfileUnkSRSL sActorProfileUnkSRSL;
-
-ARM ActorProfileUnkSRSL *ActorProfileUnkSRSL::GetProfile() {
-    return &sActorProfileUnkSRSL;
-}
+ARM DECL_PROFILE(ActorProfileUnkSRSL);
 
 ARM Actor *ActorProfileUnkSRSL::Create() {
     return new(HeapIndex_2) ActorUnkSRSL();

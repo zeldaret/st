@@ -9,70 +9,70 @@ src/067_FldFlame/Actor/ActorUnkGOCA_GOCB_GORK_GORM.cpp:
     .text       start:0x02159be0 end:0x0215b2d0
     .init       start:0x0215e358 end:0x0215e474
     .ctor       start:0x0215e7fc end:0x0215e800
-    .bss        start:0x0215f600 end:0x0215f960
+    .bss        start:0x0215f5e8 end:0x0215f960
 
 src/067_FldFlame/Actor/ActorUnkGORS.cpp:
     .text       start:0x0215b2d0 end:0x0215bab0
     .init       start:0x0215e474 end:0x0215e4c4
     .ctor       start:0x0215e800 end:0x0215e804
-    .bss        start:0x0215f970 end:0x0215f9bc
+    .bss        start:0x0215f960 end:0x0215fa48
 
 src/067_FldFlame/Actor/ActorUnkRMV0.cpp:
     .text       start:0x0215bab0 end:0x0215bbd4
     .init       start:0x0215e4c4 end:0x0215e514
     .ctor       start:0x0215e804 end:0x0215e808
-    .bss        start:0x0215fa58 end:0x0215fad8
+    .bss        start:0x0215fa48 end:0x0215fb30
 
 src/067_FldFlame/Actor/ActorUnkRMV1.cpp:
     .text       start:0x0215bbd4 end:0x0215bcf8
     .init       start:0x0215e514 end:0x0215e564
     .ctor       start:0x0215e808 end:0x0215e80c
-    .bss        start:0x0215fb40 end:0x0215fc18
+    .bss        start:0x0215fb30 end:0x0215fc18
 
 src/067_FldFlame/Actor/ActorUnkDMFT.cpp:
     .text       start:0x0215bd20 end:0x0215c8ac
     .init       start:0x0215e564 end:0x0215e5b4
     .ctor       start:0x0215e80c end:0x0215e810
-    .bss        start:0x0215fc28 end:0x0215fc64
+    .bss        start:0x0215fc18 end:0x0215fc64
 
 src/067_FldFlame/Actor/ActorUnkDMGN.cpp:
     .text       start:0x0215c8ac end:0x0215cdbc
     .init       start:0x0215e5b4 end:0x0215e604
     .ctor       start:0x0215e810 end:0x0215e814
-    .bss        start:0x0215fc74 end:0x0215fcb8
+    .bss        start:0x0215fc64 end:0x0215fcb8
 
 src/067_FldFlame/MapObject/MapObjectUnkBRGL.cpp:
     .text       start:0x0215cdbc end:0x0215d0e0
     .init       start:0x0215e604 end:0x0215e654
     .ctor       start:0x0215e814 end:0x0215e818
-    .bss        start:0x0215fcc8 end:0x0215fd04
+    .bss        start:0x0215fcb8 end:0x0215fda4
 
 src/067_FldFlame/MapObject/MapObjectUnkLVVT.cpp:
     .text       start:0x0215d0e0 end:0x0215d7cc
     .init       start:0x0215e654 end:0x0215e6bc
     .ctor       start:0x0215e818 end:0x0215e81c
-    .bss        start:0x0215fdbc end:0x0215fdcc
+    .bss        start:0x0215fda4 end:0x0215fe90
 
 src/067_FldFlame/MapObject/MapObjectUnkDRGN.cpp:
     .text       start:0x0215d7cc end:0x0215da98
     .init       start:0x0215e6bc end:0x0215e70c
     .ctor       start:0x0215e81c end:0x0215e820
-    .bss        start:0x0215fea0 end:0x0215fec0
+    .bss        start:0x0215fe90 end:0x0215fec0
 
 src/067_FldFlame/MapObject/MapObjectUnkMTIR.cpp:
     .text       start:0x0215da98 end:0x0215dc98
     .init       start:0x0215e70c end:0x0215e75c
     .ctor       start:0x0215e820 end:0x0215e824
-    .bss        start:0x0215fed0 end:0x0215fef4
+    .bss        start:0x0215fec0 end:0x0215ffc8
 
 src/067_FldFlame/MapObject/MapObjectUnkMTOR.cpp:
     .text       start:0x0215dc98 end:0x0215de98
     .init       start:0x0215e75c end:0x0215e7ac
     .ctor       start:0x0215e824 end:0x0215e828
-    .bss        start:0x0215ffd8 end:0x021600ac
+    .bss        start:0x0215ffc8 end:0x021600d0
 
 src/067_FldFlame/MapObject/MapObjectUnkDRVT.cpp:
     .text       start:0x0215de98 end:0x0215e24c
     .init       start:0x0215e7ac end:0x0215e7fc
     .ctor       start:0x0215e828 end:0x0215e82c
-    .bss        start:0x021600e0 end:0x02160100
+    .bss        start:0x021600d0 end:0x02160100

@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkEXIT.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkEXIT sMapObjectProfileUnkEXIT;
-
-ARM MapObjectProfileUnkEXIT *MapObjectProfileUnkEXIT::GetProfile() {
-    return &sMapObjectProfileUnkEXIT;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkEXIT);
 
 ARM MapObject *MapObjectProfileUnkEXIT::Create() {
     return new(HeapIndex_2) MapObjectUnkEXIT();

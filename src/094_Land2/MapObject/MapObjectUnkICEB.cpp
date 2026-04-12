@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkICEB.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkICEB sMapObjectProfileUnkICEB;
-
-ARM MapObjectProfileUnkICEB *MapObjectProfileUnkICEB::GetProfile() {
-    return &sMapObjectProfileUnkICEB;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkICEB);
 
 ARM MapObject *MapObjectProfileUnkICEB::Create() {
     return new(HeapIndex_2) MapObjectUnkICEB();

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkPASS.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkPASS sActorProfileUnkPASS;
-
-ARM ActorProfileUnkPASS *ActorProfileUnkPASS::GetProfile() {
-    return &sActorProfileUnkPASS;
-}
+ARM DECL_PROFILE(ActorProfileUnkPASS);
 
 ARM Actor *ActorProfileUnkPASS::Create() {
     return new(HeapIndex_2) ActorUnkPASS();

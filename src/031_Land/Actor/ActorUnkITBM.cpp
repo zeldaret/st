@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkITBM.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkITBM sActorProfileUnkITBM;
-
-ARM ActorProfileUnkITBM *ActorProfileUnkITBM::GetProfile() {
-    return &sActorProfileUnkITBM;
-}
+ARM DECL_PROFILE(ActorProfileUnkITBM);
 
 ARM Actor *ActorProfileUnkITBM::Create() {
     return new(HeapIndex_2) ActorUnkITBM();

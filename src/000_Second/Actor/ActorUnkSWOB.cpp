@@ -11,7 +11,7 @@
 extern "C" void func_01ffedac(u16 *, Vec3p *);
 extern "C" void func_01ffb9cc(void *, Vec3p *);
 
-DECL_PROFILE(ActorProfileUnkSWOB);
+ARM DECL_PROFILE(ActorProfileUnkSWOB);
 
 ARM Actor *ActorProfileUnkSWOB::Create() {
     return new(HeapIndex_2) ActorUnkSWOB();

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkZLBB.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkZLBB sActorProfileUnkZLBB;
-
-ARM ActorProfileUnkZLBB *ActorProfileUnkZLBB::GetProfile() {
-    return &sActorProfileUnkZLBB;
-}
+ARM DECL_PROFILE(ActorProfileUnkZLBB);
 
 ARM Actor *ActorProfileUnkZLBB::Create() {
     return new(HeapIndex_2) ActorUnkZLBB();

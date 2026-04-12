@@ -172,15 +172,15 @@ _ZTV19data_ov082_0215ad0c kind:data(any) addr:0x0215ad0c
 _ZTV19data_ov082_0215ad10 kind:data(any) addr:0x0215ad10 ambiguous
 _ZTV19data_ov082_0215ad30 kind:data(any) addr:0x0215ad30
 _ZTV19data_ov082_0215ad90 kind:data(any) addr:0x0215ad90
-data_ov082_0215adc0 kind:bss addr:0x0215adc0
-data_ov082_0215adc4 kind:bss addr:0x0215adc4
-sActorProfileUnkWHMA kind:bss addr:0x0215add0
+_ZGVN15ProfileInstanceI19ActorProfileUnkWHMAE8sProfileE kind:bss addr:0x0215adc0
+@33662 kind:bss addr:0x0215adc4
+_ZN15ProfileInstanceI19ActorProfileUnkWHMAE8sProfileE kind:bss addr:0x0215add0
 data_ov082_0215ae3c kind:bss addr:0x0215ae3c ambiguous
 data_ov082_0215ae80 kind:bss addr:0x0215ae80 ambiguous
-data_ov082_0215aea8 kind:bss addr:0x0215aea8
-data_ov082_0215aeac kind:bss addr:0x0215aeac
-sActorProfileUnkEWHI kind:bss addr:0x0215aeb8
+_ZGVN15ProfileInstanceI19ActorProfileUnkEWHIE8sProfileE kind:bss addr:0x0215aea8
+@33668 kind:bss addr:0x0215aeac
+_ZN15ProfileInstanceI19ActorProfileUnkEWHIE8sProfileE kind:bss addr:0x0215aeb8
 data_ov082_0215aee0 kind:bss addr:0x0215aee0 ambiguous
-data_ov082_0215aef4 kind:bss addr:0x0215aef4
-data_ov082_0215aef8 kind:bss addr:0x0215aef8
-sActorProfileUnkDSWT kind:bss addr:0x0215af04
+_ZGVN15ProfileInstanceI19ActorProfileUnkDSWTE8sProfileE kind:bss addr:0x0215aef4
+@33674 kind:bss addr:0x0215aef8
+_ZN15ProfileInstanceI19ActorProfileUnkDSWTE8sProfileE kind:bss addr:0x0215af04

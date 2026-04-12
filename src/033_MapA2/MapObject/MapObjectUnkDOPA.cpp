@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkDOPA.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkDOPA sMapObjectProfileUnkDOPA;
-
-ARM MapObjectProfileUnkDOPA *MapObjectProfileUnkDOPA::GetProfile() {
-    return &sMapObjectProfileUnkDOPA;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkDOPA);
 
 ARM MapObject *MapObjectProfileUnkDOPA::Create() {
     return new(HeapIndex_2) MapObjectUnkDOPA();

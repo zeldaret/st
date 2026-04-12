@@ -9,76 +9,76 @@ src/086_DgnDesert/Actor/ActorUnkDSDS.cpp:
     .text       start:0x02154440 end:0x02154564
     .init       start:0x0215f188 end:0x0215f1d8
     .ctor       start:0x0215f5d4 end:0x0215f5d8
-    .bss        start:0x02160350 end:0x02160364
+    .bss        start:0x02160340 end:0x02160428
 
 src/086_DgnDesert/Actor/ActorUnkHAMN.cpp:
     .text       start:0x02154564 end:0x02158070
     .init       start:0x0215f1d8 end:0x0215f228
     .ctor       start:0x0215f5d8 end:0x0215f5dc
-    .bss        start:0x02160438 end:0x02160458
+    .bss        start:0x02160428 end:0x02160510
 
 src/086_DgnDesert/Actor/ActorUnkOCTG.cpp:
     .text       start:0x02158070 end:0x0215afa4
     .init       start:0x0215f228 end:0x0215f2b4
     .ctor       start:0x0215f5dc end:0x0215f5e0
-    .bss        start:0x02160520 end:0x02160528
+    .bss        start:0x02160510 end:0x021605f8
 
 src/086_DgnDesert/Actor/ActorUnkOCGS.cpp:
     .text       start:0x0215afa4 end:0x0215b804
     .init       start:0x0215f2b4 end:0x0215f304
     .ctor       start:0x0215f5e0 end:0x0215f5e4
-    .bss        start:0x02160608 end:0x0216060c
+    .bss        start:0x021605f8 end:0x021606e0
 
 src/086_DgnDesert/Actor/ActorUnkEFSC.cpp:
     .text       start:0x0215b804 end:0x0215bb34
     .init       start:0x0215f304 end:0x0215f354
     .ctor       start:0x0215f5e4 end:0x0215f5e8
-    .bss        start:0x021606f0 end:0x021607c8
+    .bss        start:0x021606e0 end:0x021607c8
 
 src/086_DgnDesert/Actor/ActorUnkQKSD.cpp:
     .text       start:0x0215bb34 end:0x0215bd98
     .init       start:0x0215f354 end:0x0215f3a4
     .ctor       start:0x0215f5e8 end:0x0215f5ec
-    .bss        start:0x021607d8 end:0x02160830
+    .bss        start:0x021607c8 end:0x021608b0
 
 src/086_DgnDesert/Actor/ActorUnkRNTN.cpp:
     .text       start:0x0215bd98 end:0x0215da78
     .init       start:0x0215f3a4 end:0x0215f3f4
     .ctor       start:0x0215f5ec end:0x0215f5f0
-    .bss        start:0x021608c0 end:0x02160918
+    .bss        start:0x021608b0 end:0x02160998
 
 src/086_DgnDesert/Actor/ActorUnkRMDS.cpp:
     .text       start:0x0215da78 end:0x0215dca4
     .init       start:0x0215f3f4 end:0x0215f444
     .ctor       start:0x0215f5f0 end:0x0215f5f4
-    .bss        start:0x021609a8 end:0x021609dc
+    .bss        start:0x02160998 end:0x02160a80
 
 src/086_DgnDesert/Actor/ActorUnkQKTG.cpp:
     .text       start:0x0215dca4 end:0x0215df38
     .init       start:0x0215f444 end:0x0215f494
     .ctor       start:0x0215f5f4 end:0x0215f5f8
-    .bss        start:0x02160a90 end:0x02160acc
+    .bss        start:0x02160a80 end:0x02160acc
 
 src/086_DgnDesert/MapObject/MapObjectUnkSTDS.cpp:
     .text       start:0x0215df38 end:0x0215e110
     .init       start:0x0215f494 end:0x0215f4e4
     .ctor       start:0x0215f5f8 end:0x0215f5fc
-    .bss        start:0x02160adc end:0x02160b70
+    .bss        start:0x02160acc end:0x02160bb4
 
 src/086_DgnDesert/MapObject/MapObjectUnkDRBR.cpp:
     .text       start:0x0215e110 end:0x0215e270
     .init       start:0x0215f4e4 end:0x0215f534
     .ctor       start:0x0215f5fc end:0x0215f600
-    .bss        start:0x02160bc0 end:0x02160c94
+    .bss        start:0x02160bb4 end:0x02160c94
 
 src/086_DgnDesert/MapObject/MapObjectUnkGRSG.cpp:
     .text       start:0x0215e290 end:0x0215e658
     .init       start:0x0215f534 end:0x0215f584
     .ctor       start:0x0215f600 end:0x0215f604
-    .bss        start:0x02160ca4 end:0x02160d78
+    .bss        start:0x02160c94 end:0x02160d9c
 
 src/086_DgnDesert/MapObject/MapObjectUnkDRRS.cpp:
     .text       start:0x0215e658 end:0x0215ebe4
     .init       start:0x0215f584 end:0x0215f5d4
     .ctor       start:0x0215f604 end:0x0215f608
-    .bss        start:0x02160dac end:0x02160e80
+    .bss        start:0x02160d9c end:0x02160e80

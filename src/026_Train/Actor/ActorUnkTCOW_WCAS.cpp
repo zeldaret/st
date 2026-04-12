@@ -5,11 +5,7 @@
 
 // --- Actor TCOW ---
 
-static ActorProfileUnkTCOW sActorProfileUnkTCOW;
-
-ARM ActorProfileUnkTCOW *ActorProfileUnkTCOW::GetProfile() {
-    return &sActorProfileUnkTCOW;
-}
+ARM DECL_PROFILE(ActorProfileUnkTCOW);
 
 ARM Actor *ActorProfileUnkTCOW::Create() {
     return new(HeapIndex_2) ActorUnkTCOW();
@@ -22,11 +18,7 @@ ARM ActorUnkTCOW::ActorUnkTCOW() {}
 
 // --- Actor WCAS ---
 
-static ActorProfileUnkWCAS sActorProfileUnkWCAS;
-
-ARM ActorProfileUnkWCAS *ActorProfileUnkWCAS::GetProfile() {
-    return &sActorProfileUnkWCAS;
-}
+ARM DECL_PROFILE(ActorProfileUnkWCAS);
 
 ARM Actor *ActorProfileUnkWCAS::Create() {
     return new(HeapIndex_2) ActorUnkWCAS();

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkFIRB.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkFIRB sActorProfileUnkFIRB;
-
-ARM ActorProfileUnkFIRB *ActorProfileUnkFIRB::GetProfile() {
-    return &sActorProfileUnkFIRB;
-}
+ARM DECL_PROFILE(ActorProfileUnkFIRB);
 
 ARM Actor *ActorProfileUnkFIRB::Create() {
     return new(HeapIndex_2) ActorUnkFIRB();

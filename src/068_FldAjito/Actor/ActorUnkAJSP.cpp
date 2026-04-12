@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkAJSP.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkAJSP sActorProfileUnkAJSP;
-
-ARM ActorProfileUnkAJSP *ActorProfileUnkAJSP::GetProfile() {
-    return &sActorProfileUnkAJSP;
-}
+ARM DECL_PROFILE(ActorProfileUnkAJSP);
 
 ARM Actor *ActorProfileUnkAJSP::Create() {
     return new(HeapIndex_2) ActorUnkAJSP();

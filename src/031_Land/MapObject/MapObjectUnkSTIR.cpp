@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkSTIR.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkSTIR sMapObjectProfileUnkSTIR;
-
-ARM MapObjectProfileUnkSTIR *MapObjectProfileUnkSTIR::GetProfile() {
-    return &sMapObjectProfileUnkSTIR;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkSTIR);
 
 ARM MapObject *MapObjectProfileUnkSTIR::Create() {
     return new(HeapIndex_2) MapObjectUnkSTIR();

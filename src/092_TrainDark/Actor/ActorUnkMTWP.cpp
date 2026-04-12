@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkMTWP.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkMTWP sActorProfileUnkMTWP;
-
-ARM ActorProfileUnkMTWP *ActorProfileUnkMTWP::GetProfile() {
-    return &sActorProfileUnkMTWP;
-}
+ARM DECL_PROFILE(ActorProfileUnkMTWP);
 
 ARM Actor *ActorProfileUnkMTWP::Create() {
     return new(HeapIndex_2) ActorUnkMTWP();

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkCTFS.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkCTFS sActorProfileUnkCTFS;
-
-ARM ActorProfileUnkCTFS *ActorProfileUnkCTFS::GetProfile() {
-    return &sActorProfileUnkCTFS;
-}
+ARM DECL_PROFILE(ActorProfileUnkCTFS);
 
 ARM Actor *ActorProfileUnkCTFS::Create() {
     return new(HeapIndex_2) ActorUnkCTFS();

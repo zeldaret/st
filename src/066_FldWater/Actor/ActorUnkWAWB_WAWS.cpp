@@ -5,11 +5,7 @@
 
 // --- Actor WAWB ---
 
-static ActorProfileUnkWAWB sActorProfileUnkWAWB;
-
-ARM ActorProfileUnkWAWB *ActorProfileUnkWAWB::GetProfile() {
-    return &sActorProfileUnkWAWB;
-}
+ARM DECL_PROFILE(ActorProfileUnkWAWB);
 
 ARM Actor *ActorProfileUnkWAWB::Create() {
     return new(HeapIndex_2) ActorUnkWAWB();
@@ -22,11 +18,7 @@ ARM ActorUnkWAWB::ActorUnkWAWB() {}
 
 // --- Actor WAWS ---
 
-static ActorProfileUnkWAWS sActorProfileUnkWAWS;
-
-ARM ActorProfileUnkWAWS *ActorProfileUnkWAWS::GetProfile() {
-    return &sActorProfileUnkWAWS;
-}
+ARM DECL_PROFILE(ActorProfileUnkWAWS);
 
 ARM Actor *ActorProfileUnkWAWS::Create() {
     return new(HeapIndex_2) ActorUnkWAWS();

@@ -249,26 +249,26 @@ data_ov042_0212c5dc kind:data(any) addr:0x0212c5dc
 data_ov042_0212c5f8 kind:data(any) addr:0x0212c5f8
 data_ov042_0212c620 kind:data(any) addr:0x0212c620
 data_ov042_0212c644 kind:data(any) addr:0x0212c644 ambiguous
-data_ov042_0212c660 kind:bss addr:0x0212c660
-data_ov042_0212c664 kind:bss addr:0x0212c664
-sActorProfileUnkOCTS kind:bss addr:0x0212c670
-data_ov042_0212c748 kind:bss addr:0x0212c748
-data_ov042_0212c74c kind:bss addr:0x0212c74c
-sActorProfileUnkOCTA kind:bss addr:0x0212c758
+_ZGVN15ProfileInstanceI19ActorProfileUnkOCTSE8sProfileE kind:bss addr:0x0212c660
+@11558 kind:bss addr:0x0212c664
+_ZN15ProfileInstanceI19ActorProfileUnkOCTSE8sProfileE kind:bss addr:0x0212c670
+_ZGVN15ProfileInstanceI19ActorProfileUnkOCTAE8sProfileE kind:bss addr:0x0212c748
+@11564 kind:bss addr:0x0212c74c
+_ZN15ProfileInstanceI19ActorProfileUnkOCTAE8sProfileE kind:bss addr:0x0212c758
 data_ov042_0212c788 kind:bss addr:0x0212c788 ambiguous
 data_ov042_0212c7d0 kind:bss addr:0x0212c7d0 ambiguous
 data_ov042_0212c830 kind:bss addr:0x0212c830
-data_ov042_0212c834 kind:bss addr:0x0212c834
-data_ov042_0212c83c kind:bss addr:0x0212c83c ambiguous
-sActorProfileUnkMIFR kind:bss addr:0x0212c840
+_ZGVN15ProfileInstanceI19ActorProfileUnkMIFRE8sProfileE kind:bss addr:0x0212c834
+@11570 kind:bss addr:0x0212c83c ambiguous
+_ZN15ProfileInstanceI19ActorProfileUnkMIFRE8sProfileE kind:bss addr:0x0212c840
 data_ov042_0212c888 kind:bss addr:0x0212c888 ambiguous
 data_ov042_0212c8d8 kind:bss addr:0x0212c8d8 ambiguous
 data_ov042_0212c918 kind:bss addr:0x0212c918
-data_ov042_0212c924 kind:bss addr:0x0212c924
-data_ov042_0212c928 kind:bss addr:0x0212c928
-sActorProfileUnkPHEY kind:bss addr:0x0212c934
-data_ov042_0212ca0c kind:bss addr:0x0212ca0c
-data_ov042_0212ca10 kind:bss addr:0x0212ca10
-sMapObjectProfileUnkSWRA kind:bss addr:0x0212ca1c
+_ZGVN15ProfileInstanceI19ActorProfileUnkPHEYE8sProfileE kind:bss addr:0x0212c924
+@11576 kind:bss addr:0x0212c928
+_ZN15ProfileInstanceI19ActorProfileUnkPHEYE8sProfileE kind:bss addr:0x0212c934
+_ZGVN15ProfileInstanceI23MapObjectProfileUnkSWRAE8sProfileE kind:bss addr:0x0212ca0c
+@11458 kind:bss addr:0x0212ca10
+_ZN15ProfileInstanceI23MapObjectProfileUnkSWRAE8sProfileE kind:bss addr:0x0212ca1c
 data_ov042_0212ca3c kind:bss addr:0x0212ca3c
 data_ov042_0212caf0 kind:bss addr:0x0212caf0

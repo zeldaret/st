@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkWIDT.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkWIDT sActorProfileUnkWIDT;
-
-ARM ActorProfileUnkWIDT *ActorProfileUnkWIDT::GetProfile() {
-    return &sActorProfileUnkWIDT;
-}
+ARM DECL_PROFILE(ActorProfileUnkWIDT);
 
 ARM Actor *ActorProfileUnkWIDT::Create() {
     return new(HeapIndex_2) ActorUnkWIDT();

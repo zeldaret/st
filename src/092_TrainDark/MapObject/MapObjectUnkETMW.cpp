@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkETMW.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkETMW sMapObjectProfileUnkETMW;
-
-ARM MapObjectProfileUnkETMW *MapObjectProfileUnkETMW::GetProfile() {
-    return &sMapObjectProfileUnkETMW;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkETMW);
 
 ARM MapObject *MapObjectProfileUnkETMW::Create() {
     return new(HeapIndex_2) MapObjectUnkETMW();

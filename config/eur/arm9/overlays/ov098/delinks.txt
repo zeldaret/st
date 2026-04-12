@@ -9,28 +9,28 @@ src/098_MapWater/Actor/ActorUnkEFWV.cpp:
     .text       start:0x021810d8 end:0x02181688
     .init       start:0x021821d0 end:0x02182220
     .ctor       start:0x02182360 end:0x02182364
-    .bss        start:0x02182790 end:0x02182868
+    .bss        start:0x02182780 end:0x02182868
 
 src/098_MapWater/Actor/ActorUnkEFWI.cpp:
     .text       start:0x02181688 end:0x0218186c
     .init       start:0x02182220 end:0x02182270
     .ctor       start:0x02182364 end:0x02182368
-    .bss        start:0x02182878 end:0x02182950
+    .bss        start:0x02182868 end:0x02182950
 
 src/098_MapWater/Actor/ActorUnkEFRP.cpp:
     .text       start:0x0218186c end:0x02181d8c
     .init       start:0x02182270 end:0x021822c0
     .ctor       start:0x02182368 end:0x0218236c
-    .bss        start:0x02182960 end:0x02182a38
+    .bss        start:0x02182950 end:0x02182a38
 
 src/098_MapWater/Actor/ActorUnkEFRI.cpp:
     .text       start:0x02181d8c end:0x02181f70
     .init       start:0x021822c0 end:0x02182310
     .ctor       start:0x0218236c end:0x02182370
-    .bss        start:0x02182a48 end:0x02182b20
+    .bss        start:0x02182a38 end:0x02182b20
 
 src/098_MapWater/Actor/ActorUnkSEAT.cpp:
     .text       start:0x02181f70 end:0x021821bc
     .init       start:0x02182310 end:0x02182360
     .ctor       start:0x02182370 end:0x02182374
-    .bss        start:0x02182b30 end:0x02182b6c
+    .bss        start:0x02182b20 end:0x02182b6c

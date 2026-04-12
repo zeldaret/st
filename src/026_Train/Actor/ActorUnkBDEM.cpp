@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkBDEM.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkBDEM sActorProfileUnkBDEM;
-
-ARM ActorProfileUnkBDEM *ActorProfileUnkBDEM::GetProfile() {
-    return &sActorProfileUnkBDEM;
-}
+ARM DECL_PROFILE(ActorProfileUnkBDEM);
 
 ARM Actor *ActorProfileUnkBDEM::Create() {
     return new(HeapIndex_2) ActorUnkBDEM();

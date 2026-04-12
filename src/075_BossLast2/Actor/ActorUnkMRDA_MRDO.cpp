@@ -5,11 +5,7 @@
 
 // --- Actor MRDA ---
 
-static ActorProfileUnkMRDA sActorProfileUnkMRDA;
-
-ARM ActorProfileUnkMRDA *ActorProfileUnkMRDA::GetProfile() {
-    return &sActorProfileUnkMRDA;
-}
+ARM DECL_PROFILE(ActorProfileUnkMRDA);
 
 ARM Actor *ActorProfileUnkMRDA::Create() {
     return new(HeapIndex_2) ActorUnkMRDA();
@@ -22,11 +18,7 @@ ARM ActorUnkMRDA::ActorUnkMRDA() {}
 
 // --- Actor MRDO ---
 
-static ActorProfileUnkMRDO sActorProfileUnkMRDO;
-
-ARM ActorProfileUnkMRDO *ActorProfileUnkMRDO::GetProfile() {
-    return &sActorProfileUnkMRDO;
-}
+ARM DECL_PROFILE(ActorProfileUnkMRDO);
 
 ARM Actor *ActorProfileUnkMRDO::Create() {
     return new(HeapIndex_2) ActorUnkMRDO();

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkGORS.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkGORS sActorProfileUnkGORS;
-
-ARM ActorProfileUnkGORS *ActorProfileUnkGORS::GetProfile() {
-    return &sActorProfileUnkGORS;
-}
+ARM DECL_PROFILE(ActorProfileUnkGORS);
 
 ARM Actor *ActorProfileUnkGORS::Create() {
     return new(HeapIndex_2) ActorUnkGORS();

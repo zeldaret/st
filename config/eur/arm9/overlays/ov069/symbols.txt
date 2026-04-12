@@ -150,19 +150,19 @@ _ZTV19data_ov069_0215b380 kind:data(any) addr:0x0215b380 ambiguous
 data_ov069_0215b3a4 kind:data(any) addr:0x0215b3a4
 data_ov069_0215b3c0 kind:data(any) addr:0x0215b3c0
 data_ov069_0215b3d4 kind:data(any) addr:0x0215b3d4 ambiguous
-data_ov069_0215b400 kind:bss addr:0x0215b400
-data_ov069_0215b404 kind:bss addr:0x0215b404
-sActorProfileUnkBANI kind:bss addr:0x0215b410
-data_ov069_0215b4e8 kind:bss addr:0x0215b4e8
-data_ov069_0215b4ec kind:bss addr:0x0215b4ec
-sActorProfileUnkRB1F kind:bss addr:0x0215b4f8
+_ZGVN15ProfileInstanceI19ActorProfileUnkBANIE8sProfileE kind:bss addr:0x0215b400
+@13080 kind:bss addr:0x0215b404
+_ZN15ProfileInstanceI19ActorProfileUnkBANIE8sProfileE kind:bss addr:0x0215b410
+_ZGVN15ProfileInstanceI19ActorProfileUnkRB1FE8sProfileE kind:bss addr:0x0215b4e8
+@13086 kind:bss addr:0x0215b4ec
+_ZN15ProfileInstanceI19ActorProfileUnkRB1FE8sProfileE kind:bss addr:0x0215b4f8
 data_ov069_0215b50c kind:bss addr:0x0215b50c ambiguous
 data_ov069_0215b5d0 kind:bss addr:0x0215b5d0
 data_ov069_0215b5d4 kind:bss addr:0x0215b5d4
 data_ov069_0215b5e0 kind:bss addr:0x0215b5e0
-data_ov069_0215b600 kind:bss addr:0x0215b600
-data_ov069_0215b604 kind:bss addr:0x0215b604
-sActorProfileUnkRBRP kind:bss addr:0x0215b610
+_ZGVN15ProfileInstanceI19ActorProfileUnkRBRPE8sProfileE kind:bss addr:0x0215b600
+@13092 kind:bss addr:0x0215b604
+_ZN15ProfileInstanceI19ActorProfileUnkRBRPE8sProfileE kind:bss addr:0x0215b610
 data_ov069_0215b6e8 kind:bss addr:0x0215b6e8
 data_ov069_0215b6ec kind:bss addr:0x0215b6ec
-sMapObjectProfileUnkGTRB kind:bss addr:0x0215b6f8
+_ZN15ProfileInstanceI23MapObjectProfileUnkGTRBE8sProfileE kind:bss addr:0x0215b6f8

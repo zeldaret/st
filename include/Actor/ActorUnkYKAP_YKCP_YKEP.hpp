@@ -9,6 +9,16 @@
 
 // --- Actor YKAP ---
 
+class ActorUnkYKAP_c4 : public Actor_c4 {
+public:
+    ActorUnkYKAP_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkYKAP : public Actor {
 public:
     /* 00 (base) */
@@ -33,6 +43,16 @@ public:
 
 // --- Actor YKCP ---
 
+class ActorUnkYKCP_c4 : public Actor_c4 {
+public:
+    ActorUnkYKCP_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkYKCP : public Actor {
 public:
     /* 00 (base) */
@@ -56,6 +76,16 @@ public:
 };
 
 // --- Actor YKEP ---
+
+class ActorUnkYKEP_c4 : public Actor_c4 {
+public:
+    ActorUnkYKEP_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
 
 class ActorUnkYKEP : public Actor {
 public:

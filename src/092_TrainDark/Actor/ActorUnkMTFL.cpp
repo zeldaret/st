@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkMTFL.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkMTFL sActorProfileUnkMTFL;
-
-ARM ActorProfileUnkMTFL *ActorProfileUnkMTFL::GetProfile() {
-    return &sActorProfileUnkMTFL;
-}
+ARM DECL_PROFILE(ActorProfileUnkMTFL);
 
 ARM Actor *ActorProfileUnkMTFL::Create() {
     return new(HeapIndex_2) ActorUnkMTFL();

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkPMTB.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkPMTB sActorProfileUnkPMTB;
-
-ARM ActorProfileUnkPMTB *ActorProfileUnkPMTB::GetProfile() {
-    return &sActorProfileUnkPMTB;
-}
+ARM DECL_PROFILE(ActorProfileUnkPMTB);
 
 ARM Actor *ActorProfileUnkPMTB::Create() {
     return new(HeapIndex_2) ActorUnkPMTB();

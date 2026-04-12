@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkGATE.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkGATE sMapObjectProfileUnkGATE;
-
-ARM MapObjectProfileUnkGATE *MapObjectProfileUnkGATE::GetProfile() {
-    return &sMapObjectProfileUnkGATE;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkGATE);
 
 ARM MapObject *MapObjectProfileUnkGATE::Create() {
     return new(HeapIndex_2) MapObjectUnkGATE();

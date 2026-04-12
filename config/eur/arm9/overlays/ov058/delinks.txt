@@ -9,148 +9,148 @@ src/058_Field/Actor/ActorUnkKOKO.cpp:
     .text       start:0x0213f254 end:0x02141dd8
     .init       start:0x02153498 end:0x021534e8
     .ctor       start:0x02154120 end:0x02154124
-    .bss        start:0x02155eb0 end:0x02155f88
+    .bss        start:0x02155ea0 end:0x02155f8c
 
 src/058_Field/Actor/ActorUnkKOAT.cpp:
     .text       start:0x02141dd8 end:0x0214237c
     .init       start:0x021534e8 end:0x02153538
     .ctor       start:0x02154124 end:0x02154128
-    .bss        start:0x02155fa0 end:0x02155fe4
+    .bss        start:0x02155f8c end:0x02155fe4
 
 src/058_Field/Actor/ActorUnkKOCH.cpp:
     .text       start:0x0214237c end:0x021429ac
     .init       start:0x02153538 end:0x02153588
     .ctor       start:0x02154128 end:0x0215412c
-    .bss        start:0x02155ff4 end:0x02156030
+    .bss        start:0x02155fe4 end:0x02156030
 
 src/058_Field/Actor/ActorUnkNSTN.cpp:
     .text       start:0x021429cc end:0x02142d90
     .init       start:0x02153588 end:0x021535d8
     .ctor       start:0x0215412c end:0x02154130
-    .bss        start:0x02156040 end:0x0215607c
+    .bss        start:0x02156030 end:0x021561a0
 
 src/058_Field/Actor/ActorUnkSYDE_SYDL_SYDS_SYFI_SYFO_SYIL_SYIS_SYOL_SYOS_SYSL_SYSN_SYSS_SYWA_SYWL_SYWS.cpp:
     .text       start:0x02142d90 end:0x02147ef0
     .init       start:0x021535d8 end:0x021539a8
     .ctor       start:0x02154130 end:0x02154134
-    .bss        start:0x02156220 end:0x02156ec8
+    .bss        start:0x021561a0 end:0x02156ec8
 
 src/058_Field/Actor/ActorUnkCRFT.cpp:
     .text       start:0x02147ef0 end:0x02148bec
     .init       start:0x021539a8 end:0x021539f8
     .ctor       start:0x02154134 end:0x02154138
-    .bss        start:0x02156ed8 end:0x02156f38
+    .bss        start:0x02156ec8 end:0x02156fbc
 
 src/058_Field/Actor/ActorUnkFBRD.cpp:
     .text       start:0x02148bec end:0x0214a988
     .init       start:0x021539f8 end:0x02153a74
     .ctor       start:0x02154138 end:0x0215413c
-    .bss        start:0x02156fec end:0x02157064
+    .bss        start:0x02156fbc end:0x021570c4
 
 src/058_Field/Actor/ActorUnkFBSC.cpp:
     .text       start:0x0214a988 end:0x0214aba0
     .init       start:0x02153a74 end:0x02153ac4
     .ctor       start:0x0215413c end:0x02154140
-    .bss        start:0x021570d4 end:0x02157110
+    .bss        start:0x021570c4 end:0x02157110
 
 src/058_Field/Actor/ActorUnkWPBD.cpp:
     .text       start:0x0214abc0 end:0x0214d468
     .init       start:0x02153ac4 end:0x02153b44
     .ctor       start:0x02154140 end:0x02154144
-    .bss        start:0x02157124 end:0x021571fc
+    .bss        start:0x02157110 end:0x021571fc
 
 src/058_Field/Actor/ActorUnkWPCH.cpp:
     .text       start:0x0214d468 end:0x0214d6fc
     .init       start:0x02153b44 end:0x02153b94
     .ctor       start:0x02154144 end:0x02154148
-    .bss        start:0x0215720c end:0x02157248
+    .bss        start:0x021571fc end:0x02157248
 
 src/058_Field/Actor/ActorUnkBSTG.cpp:
     .text       start:0x0214d71c end:0x0214d814
     .init       start:0x02153b94 end:0x02153be4
     .ctor       start:0x02154148 end:0x0215414c
-    .bss        start:0x02157258 end:0x02157294
+    .bss        start:0x02157248 end:0x021572a4
 
 src/058_Field/Actor/ActorUnkTMNA.cpp:
     .text       start:0x0214d814 end:0x0214dcd0
     .init       start:0x02153be4 end:0x02153c5c
     .ctor       start:0x0215414c end:0x02154150
-    .bss        start:0x021572fc end:0x021573d4
+    .bss        start:0x021572a4 end:0x021573d4
 
 src/058_Field/Actor/ActorUnkTMNC.cpp:
     .text       start:0x0214dcd0 end:0x0214df5c
     .init       start:0x02153c5c end:0x02153cac
     .ctor       start:0x02154150 end:0x02154154
-    .bss        start:0x021573e4 end:0x0215741c
+    .bss        start:0x021573d4 end:0x021574cc
 
 src/058_Field/MapObject/MapObjectUnkTREE.cpp:
     .text       start:0x0214df5c end:0x0214e4bc
     .init       start:0x02153cac end:0x02153d28
     .ctor       start:0x02154154 end:0x02154158
-    .bss        start:0x021574ec end:0x02157554
+    .bss        start:0x021574cc end:0x02157574
 
 src/058_Field/MapObject/MapObjectUnkLEVS.cpp:
     .text       start:0x0214e508 end:0x0214ea70
     .init       start:0x02153d28 end:0x02153d78
     .ctor       start:0x02154158 end:0x0215415c
-    .bss        start:0x02157584 end:0x02157658
+    .bss        start:0x02157574 end:0x02157678
 
 src/058_Field/MapObject/MapObjectUnkSTNE.cpp:
     .text       start:0x0214ea70 end:0x0214f064
     .init       start:0x02153d78 end:0x02153dc8
     .ctor       start:0x0215415c end:0x02154160
-    .bss        start:0x02157688 end:0x021576a4
+    .bss        start:0x02157678 end:0x0215777c
 
 src/058_Field/MapObject/MapObjectUnkHOUS.cpp:
     .text       start:0x0214f064 end:0x0214f5f8
     .init       start:0x02153dc8 end:0x02153e18
     .ctor       start:0x02154160 end:0x02154164
-    .bss        start:0x02157794 end:0x021577b4
+    .bss        start:0x0215777c end:0x021577fc
 
 src/058_Field/MapObject/MapObjectUnkHOST.cpp:
     .text       start:0x0214f7a0 end:0x0214f8ec
     .init       start:0x02153e18 end:0x02153e68
     .ctor       start:0x02154164 end:0x02154168
-    .bss        start:0x0215780c end:0x02157878
+    .bss        start:0x021577fc end:0x021578e0
 
 src/058_Field/MapObject/MapObjectUnkDRHS.cpp:
     .text       start:0x0214f8ec end:0x0214fd18
     .init       start:0x02153e68 end:0x02153eb8
     .ctor       start:0x02154168 end:0x0215416c
-    .bss        start:0x021578f0 end:0x02157908
+    .bss        start:0x021578e0 end:0x021579c4
 
 src/058_Field/MapObject/MapObjectUnkEXHS.cpp:
     .text       start:0x0214fd18 end:0x0214fed0
     .init       start:0x02153eb8 end:0x02153f08
     .ctor       start:0x0215416c end:0x02154170
-    .bss        start:0x021579d4 end:0x021579f4
+    .bss        start:0x021579c4 end:0x021579f4
 
 src/058_Field/MapObject/MapObjectUnkBBFL.cpp:
     .text       start:0x0214fed0 end:0x021509a4
     .init       start:0x02153f08 end:0x02153f58
     .ctor       start:0x02154170 end:0x02154174
-    .bss        start:0x02157a04 end:0x02157a70
+    .bss        start:0x021579f4 end:0x02157ad8
 
 src/058_Field/MapObject/MapObjectUnkKNBN.cpp:
     .text       start:0x021509a4 end:0x0215119c
     .init       start:0x02153f58 end:0x02153fcc
     .ctor       start:0x02154174 end:0x02154178
-    .bss        start:0x02157ae8 end:0x02157bac
+    .bss        start:0x02157ad8 end:0x02157be0
 
 src/058_Field/MapObject/MapObjectUnkMSCL.cpp:
     .text       start:0x0215119c end:0x02151480
     .init       start:0x02153fcc end:0x02154040
     .ctor       start:0x02154178 end:0x0215417c
-    .bss        start:0x02157bf0 end:0x02157c10
+    .bss        start:0x02157be0 end:0x02157c44
 
 src/058_Field/MapObject/MapObjectUnkGRSV.cpp:
     .text       start:0x02151480 end:0x02151968
     .init       start:0x02154040 end:0x021540d0
     .ctor       start:0x0215417c end:0x02154180
-    .bss        start:0x02157ca0 end:0x02157ca4
+    .bss        start:0x02157c44 end:0x02157d94
 
 src/058_Field/MapObject/MapObjectUnkSWCB.cpp:
     .text       start:0x021519a0 end:0x02152968
     .init       start:0x021540d0 end:0x02154120
     .ctor       start:0x02154180 end:0x02154184
-    .bss        start:0x02157da4 end:0x02157dc4
+    .bss        start:0x02157d94 end:0x02157dc4

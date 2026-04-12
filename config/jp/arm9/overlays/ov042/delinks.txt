@@ -9,34 +9,34 @@ src/042_MapB3/Actor/ActorUnkOCTS.cpp:
     .text       start:0x02125280 end:0x02125a0c
     .init       start:0x0212eac8 end:0x0212eb18
     .ctor       start:0x0212ecf8 end:0x0212ecfc
-    .bss        start:0x0212f7f0 end:0x0212f8c8
+    .bss        start:0x0212f7e0 end:0x0212f8c8
 
 src/042_MapB3/Actor/ActorUnkOCTA.cpp:
     .text       start:0x02125a0c end:0x02126f68
     .init       start:0x0212eb18 end:0x0212eb84
     .ctor       start:0x0212ecfc end:0x0212ed00
-    .bss        start:0x0212f8d8 end:0x0212f9b0
+    .bss        start:0x0212f8c8 end:0x0212f9b0
 
 src/042_MapB3/Actor/ActorUnkMIFR.cpp:
     .text       start:0x02126f68 end:0x0212878c
     .init       start:0x0212eb84 end:0x0212ebd4
     .ctor       start:0x0212ed00 end:0x0212ed04
-    .bss        start:0x0212f9c0 end:0x0212fa98
+    .bss        start:0x0212f9b0 end:0x0212faa4
 
 src/042_MapB3/Actor/ActorUnkPHEY.cpp:
     .text       start:0x0212a770 end:0x0212d7f8
     .init       start:0x0212ebec end:0x0212ec58
     .ctor       start:0x0212ed08 end:0x0212ed0c
-    .bss        start:0x0212fab4 end:0x0212fb8c
+    .bss        start:0x0212faa4 end:0x0212fb8c
 
 src/042_MapB3/Actor/ActorUnkPMTT.cpp:
     .text       start:0x0212d7f8 end:0x0212e580
     .init       start:0x0212ec58 end:0x0212eca8
     .ctor       start:0x0212ed0c end:0x0212ed10
-    .bss        start:0x0212fba0 end:0x0212fc78
+    .bss        start:0x0212fb8c end:0x0212fc78
 
 src/042_MapB3/MapObject/MapObjectUnkSWRA.cpp:
     .text       start:0x0212e580 end:0x0212ea40
     .init       start:0x0212eca8 end:0x0212ecf8
     .ctor       start:0x0212ed10 end:0x0212ed14
-    .bss        start:0x0212fc88 end:0x0212fca8
+    .bss        start:0x0212fc78 end:0x0212fca8

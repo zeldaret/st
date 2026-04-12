@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkBSTG.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkBSTG sActorProfileUnkBSTG;
-
-ARM ActorProfileUnkBSTG *ActorProfileUnkBSTG::GetProfile() {
-    return &sActorProfileUnkBSTG;
-}
+ARM DECL_PROFILE(ActorProfileUnkBSTG);
 
 ARM Actor *ActorProfileUnkBSTG::Create() {
     return new(HeapIndex_2) ActorUnkBSTG();

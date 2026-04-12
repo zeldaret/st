@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkTMWT.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkTMWT sMapObjectProfileUnkTMWT;
-
-ARM MapObjectProfileUnkTMWT *MapObjectProfileUnkTMWT::GetProfile() {
-    return &sMapObjectProfileUnkTMWT;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkTMWT);
 
 ARM MapObject *MapObjectProfileUnkTMWT::Create() {
     return new(HeapIndex_2) MapObjectUnkTMWT();

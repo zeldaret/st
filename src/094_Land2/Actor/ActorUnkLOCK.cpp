@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkLOCK.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkLOCK sActorProfileUnkLOCK;
-
-ARM ActorProfileUnkLOCK *ActorProfileUnkLOCK::GetProfile() {
-    return &sActorProfileUnkLOCK;
-}
+ARM DECL_PROFILE(ActorProfileUnkLOCK);
 
 ARM Actor *ActorProfileUnkLOCK::Create() {
     return new(HeapIndex_2) ActorUnkLOCK();

@@ -9,19 +9,19 @@ src/047_MapC1/Actor/ActorUnkGHOS.cpp:
     .text       start:0x02132e98 end:0x02136bcc
     .init       start:0x021377ec end:0x0213783c
     .ctor       start:0x02137930 end:0x02137934
-    .bss        start:0x02137e10 end:0x02137e2c
+    .bss        start:0x02137e00 end:0x02137ee8
 
 src/047_MapC1/Actor/ActorUnkEVCH.cpp:
     .text       start:0x02136bcc end:0x02136eb0
     .init       start:0x0213783c end:0x0213788c
     .ctor       start:0x02137934 end:0x02137938
-    .bss        start:0x02137ef8 end:0x02137f34
+    .bss        start:0x02137ee8 end:0x02137f34
 
 src/047_MapC1/Actor/ActorUnkFLDK.cpp:
     .text       start:0x02136eb0 end:0x021370f8
     .init       start:0x0213788c end:0x021378dc
     .ctor       start:0x02137938 end:0x0213793c
-    .bss        start:0x02137f44 end:0x02137f80
+    .bss        start:0x02137f34 end:0x02137f80
 
 src/047_MapC1/Actor/ActorUnkDLTG.cpp:
     .text       start:0x02137188 end:0x02137550

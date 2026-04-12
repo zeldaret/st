@@ -5,11 +5,7 @@
 
 // --- Actor FMAS ---
 
-static ActorProfileUnkFMAS sActorProfileUnkFMAS;
-
-ARM ActorProfileUnkFMAS *ActorProfileUnkFMAS::GetProfile() {
-    return &sActorProfileUnkFMAS;
-}
+ARM DECL_PROFILE(ActorProfileUnkFMAS);
 
 ARM Actor *ActorProfileUnkFMAS::Create() {
     return new(HeapIndex_2) ActorUnkFMAS();
@@ -22,11 +18,7 @@ ARM ActorUnkFMAS::ActorUnkFMAS() {}
 
 // --- Actor FMLS ---
 
-static ActorProfileUnkFMLS sActorProfileUnkFMLS;
-
-ARM ActorProfileUnkFMLS *ActorProfileUnkFMLS::GetProfile() {
-    return &sActorProfileUnkFMLS;
-}
+ARM DECL_PROFILE(ActorProfileUnkFMLS);
 
 ARM Actor *ActorProfileUnkFMLS::Create() {
     return new(HeapIndex_2) ActorUnkFMLS();

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkAJET.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkAJET sActorProfileUnkAJET;
-
-ARM ActorProfileUnkAJET *ActorProfileUnkAJET::GetProfile() {
-    return &sActorProfileUnkAJET;
-}
+ARM DECL_PROFILE(ActorProfileUnkAJET);
 
 ARM Actor *ActorProfileUnkAJET::Create() {
     return new(HeapIndex_2) ActorUnkAJET();

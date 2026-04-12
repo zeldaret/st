@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkPSNP.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkPSNP sActorProfileUnkPSNP;
-
-THUMB ActorProfileUnkPSNP *ActorProfileUnkPSNP::GetProfile() {
-    return &sActorProfileUnkPSNP;
-}
+THUMB DECL_PROFILE(ActorProfileUnkPSNP);
 
 THUMB Actor *ActorProfileUnkPSNP::Create() {
     return new(HeapIndex_2) ActorUnkPSNP();

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkDSSN.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkDSSN sActorProfileUnkDSSN;
-
-ARM ActorProfileUnkDSSN *ActorProfileUnkDSSN::GetProfile() {
-    return &sActorProfileUnkDSSN;
-}
+ARM DECL_PROFILE(ActorProfileUnkDSSN);
 
 ARM Actor *ActorProfileUnkDSSN::Create() {
     return new(HeapIndex_2) ActorUnkDSSN();

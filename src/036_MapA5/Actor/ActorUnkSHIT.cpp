@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkSHIT.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkSHIT sActorProfileUnkSHIT;
-
-ARM ActorProfileUnkSHIT *ActorProfileUnkSHIT::GetProfile() {
-    return &sActorProfileUnkSHIT;
-}
+ARM DECL_PROFILE(ActorProfileUnkSHIT);
 
 ARM Actor *ActorProfileUnkSHIT::Create() {
     return new(HeapIndex_2) ActorUnkSHIT();

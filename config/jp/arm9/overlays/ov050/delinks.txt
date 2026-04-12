@@ -9,19 +9,19 @@ src/050_MapC4/Actor/ActorUnkKMOS.cpp:
     .text       start:0x02131ec0 end:0x021348e0
     .init       start:0x0213842c end:0x02138488
     .ctor       start:0x021385a0 end:0x021385a4
-    .bss        start:0x02138cbc end:0x02138d94
+    .bss        start:0x02138ca4 end:0x02138d94
 
 src/050_MapC4/Actor/ActorUnkKMOH.cpp:
     .text       start:0x021348e0 end:0x02136d34
     .init       start:0x02138488 end:0x021384f0
     .ctor       start:0x021385a4 end:0x021385a8
-    .bss        start:0x02138da4 end:0x02138e7c
+    .bss        start:0x02138d94 end:0x02138e7c
 
 src/050_MapC4/Actor/ActorUnkFRTN.cpp:
     .text       start:0x02136d34 end:0x02137e74
     .init       start:0x021384f0 end:0x02138550
     .ctor       start:0x021385a8 end:0x021385ac
-    .bss        start:0x02138e98 end:0x02138f70
+    .bss        start:0x02138e7c end:0x02138f70
 
 src/050_MapC4/MapObject/MapObjectUnkGTTN.cpp:
     .text       start:0x02137e74 end:0x0213840c

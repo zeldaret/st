@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkFIMA.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkFIMA sActorProfileUnkFIMA;
-
-ARM ActorProfileUnkFIMA *ActorProfileUnkFIMA::GetProfile() {
-    return &sActorProfileUnkFIMA;
-}
+ARM DECL_PROFILE(ActorProfileUnkFIMA);
 
 ARM Actor *ActorProfileUnkFIMA::Create() {
     return new(HeapIndex_2) ActorUnkFIMA();

@@ -5,11 +5,7 @@
 
 // --- Actor NCCB ---
 
-static ActorProfileUnkNCCB sActorProfileUnkNCCB;
-
-ARM ActorProfileUnkNCCB *ActorProfileUnkNCCB::GetProfile() {
-    return &sActorProfileUnkNCCB;
-}
+ARM DECL_PROFILE(ActorProfileUnkNCCB);
 
 ARM Actor *ActorProfileUnkNCCB::Create() {
     return new(HeapIndex_2) ActorUnkNCCB();
@@ -22,11 +18,7 @@ ARM ActorUnkNCCB::ActorUnkNCCB() {}
 
 // --- Actor NCMB ---
 
-static ActorProfileUnkNCMB sActorProfileUnkNCMB;
-
-ARM ActorProfileUnkNCMB *ActorProfileUnkNCMB::GetProfile() {
-    return &sActorProfileUnkNCMB;
-}
+ARM DECL_PROFILE(ActorProfileUnkNCMB);
 
 ARM Actor *ActorProfileUnkNCMB::Create() {
     return new(HeapIndex_2) ActorUnkNCMB();

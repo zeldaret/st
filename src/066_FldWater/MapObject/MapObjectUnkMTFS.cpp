@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkMTFS.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkMTFS sMapObjectProfileUnkMTFS;
-
-ARM MapObjectProfileUnkMTFS *MapObjectProfileUnkMTFS::GetProfile() {
-    return &sMapObjectProfileUnkMTFS;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkMTFS);
 
 ARM MapObject *MapObjectProfileUnkMTFS::Create() {
     return new(HeapIndex_2) MapObjectUnkMTFS();

@@ -9,64 +9,64 @@ src/061_CastleTown/Actor/ActorUnkRMT0.cpp:
     .text       start:0x02157ea0 end:0x02157fc4
     .init       start:0x02159e98 end:0x02159ee8
     .ctor       start:0x0215a2d8 end:0x0215a2dc
-    .bss        start:0x0215af90 end:0x0215afa4
+    .bss        start:0x0215af80 end:0x0215b068
 
 src/061_CastleTown/Actor/ActorUnkRMT1.cpp:
     .text       start:0x02157fc4 end:0x02158234
     .init       start:0x02159ee8 end:0x02159f38
     .ctor       start:0x0215a2dc end:0x0215a2e0
-    .bss        start:0x0215b078 end:0x0215b098
+    .bss        start:0x0215b068 end:0x0215b150
 
 src/061_CastleTown/Actor/ActorUnkRMT2.cpp:
     .text       start:0x02158234 end:0x02158358
     .init       start:0x02159f38 end:0x02159f88
     .ctor       start:0x0215a2e0 end:0x0215a2e4
-    .bss        start:0x0215b160 end:0x0215b1b4
+    .bss        start:0x0215b150 end:0x0215b238
 
 src/061_CastleTown/Actor/ActorUnkRMT3.cpp:
     .text       start:0x02158358 end:0x0215847c
     .init       start:0x02159f88 end:0x02159fd8
     .ctor       start:0x0215a2e4 end:0x0215a2e8
-    .bss        start:0x0215b248 end:0x0215b320
+    .bss        start:0x0215b238 end:0x0215b320
 
 src/061_CastleTown/Actor/ActorUnkRMT4.cpp:
     .text       start:0x0215847c end:0x021585a0
     .init       start:0x02159fd8 end:0x0215a028
     .ctor       start:0x0215a2e8 end:0x0215a2ec
-    .bss        start:0x0215b330 end:0x0215b388
+    .bss        start:0x0215b320 end:0x0215b420
 
 src/061_CastleTown/Actor/ActorUnkCAMA_CAMB_CAMS.cpp:
     .text       start:0x021585a0 end:0x02158af8
     .init       start:0x0215a028 end:0x0215a100
     .ctor       start:0x0215a2ec end:0x0215a2f0
-    .bss        start:0x0215b438 end:0x0215b6c0
+    .bss        start:0x0215b420 end:0x0215b6c0
 
 src/061_CastleTown/Actor/ActorUnkCAWA.cpp:
     .text       start:0x02158af8 end:0x02158eac
     .init       start:0x0215a100 end:0x0215a150
     .ctor       start:0x0215a2f0 end:0x0215a2f4
-    .bss        start:0x0215b6d0 end:0x0215b6ec
+    .bss        start:0x0215b6c0 end:0x0215b7a8
 
 src/061_CastleTown/Actor/ActorUnkJOLN.cpp:
     .text       start:0x02158eac end:0x021591a0
     .init       start:0x0215a150 end:0x0215a1a0
     .ctor       start:0x0215a2f4 end:0x0215a2f8
-    .bss        start:0x0215b7b8 end:0x0215b804
+    .bss        start:0x0215b7a8 end:0x0215b890
 
 src/061_CastleTown/Actor/ActorUnkFLCT.cpp:
     .text       start:0x021591a0 end:0x0215944c
     .init       start:0x0215a1a0 end:0x0215a214
     .ctor       start:0x0215a2f8 end:0x0215a2fc
-    .bss        start:0x0215b8a0 end:0x0215b978
+    .bss        start:0x0215b890 end:0x0215b978
 
 src/061_CastleTown/MapObject/MapObjectUnkFSCT.cpp:
     .text       start:0x0215944c end:0x02159584
     .init       start:0x0215a214 end:0x0215a264
     .ctor       start:0x0215a2fc end:0x0215a300
-    .bss        start:0x0215b988 end:0x0215b9a4
+    .bss        start:0x0215b978 end:0x0215ba5c
 
 src/061_CastleTown/MapObject/MapObjectUnkDRTY.cpp:
     .text       start:0x02159584 end:0x02159dfc
     .init       start:0x0215a264 end:0x0215a2d8
     .ctor       start:0x0215a300 end:0x0215a304
-    .bss        start:0x0215ba6c end:0x0215bb40
+    .bss        start:0x0215ba5c end:0x0215bb40

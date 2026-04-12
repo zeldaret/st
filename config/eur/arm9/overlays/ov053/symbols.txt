@@ -149,9 +149,9 @@ _ZTV19data_ov053_0213d280 kind:data(any) addr:0x0213d280
 data_ov053_0213d2e0 kind:data(any) addr:0x0213d2e0
 data_ov053_0213d2f0 kind:data(any) addr:0x0213d2f0
 data_ov053_0213d3b8 kind:data(any) addr:0x0213d3b8
-data_ov053_0213d3c0 kind:bss addr:0x0213d3c0
-data_ov053_0213d3c4 kind:bss addr:0x0213d3c4
-sActorProfileUnkLIKE kind:bss addr:0x0213d3d0
+_ZGVN15ProfileInstanceI19ActorProfileUnkLIKEE8sProfileE kind:bss addr:0x0213d3c0
+@11905 kind:bss addr:0x0213d3c4
+_ZN15ProfileInstanceI19ActorProfileUnkLIKEE8sProfileE kind:bss addr:0x0213d3d0
 data_ov053_0213d4a8 kind:bss addr:0x0213d4a8
 data_ov053_0213d4b0 kind:bss addr:0x0213d4b0
-sActorProfileUnkRAT0 kind:bss addr:0x0213d4bc
+_ZN15ProfileInstanceI19ActorProfileUnkRAT0E8sProfileE kind:bss addr:0x0213d4bc

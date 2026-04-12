@@ -9,64 +9,64 @@ src/066_FldWater/Actor/ActorUnkVCCH.cpp:
     .text       start:0x02157ea0 end:0x02158d90
     .init       start:0x0215d8c8 end:0x0215d918
     .ctor       start:0x0215dcc0 end:0x0215dcc4
-    .bss        start:0x02162630 end:0x02162708
+    .bss        start:0x02162620 end:0x02162708
 
 src/066_FldWater/Actor/ActorUnkVCFT.cpp:
     .text       start:0x02158d90 end:0x0215ba58
     .init       start:0x0215d918 end:0x0215d968
     .ctor       start:0x0215dcc4 end:0x0215dcc8
-    .bss        start:0x02162718 end:0x021627f0
+    .bss        start:0x02162708 end:0x021627f8
 
 src/066_FldWater/Actor/ActorUnkWAWB_WAWS.cpp:
     .text       start:0x0215ba58 end:0x0215bf6c
     .init       start:0x0215d968 end:0x0215d9fc
     .ctor       start:0x0215dcc8 end:0x0215dccc
-    .bss        start:0x02162810 end:0x021629c0
+    .bss        start:0x021627f8 end:0x021629d0
 
 src/066_FldWater/Actor/ActorUnkWAWA_WAWC.cpp:
     .text       start:0x0215bf6c end:0x0215c444
     .init       start:0x0215d9fc end:0x0215da90
     .ctor       start:0x0215dccc end:0x0215dcd0
-    .bss        start:0x021629e0 end:0x02162b78
+    .bss        start:0x021629d0 end:0x02162b90
 
 src/066_FldWater/Actor/ActorUnkRMW1.cpp:
     .text       start:0x0215c444 end:0x0215c568
     .init       start:0x0215da90 end:0x0215dae0
     .ctor       start:0x0215dcd0 end:0x0215dcd4
-    .bss        start:0x02162ba0 end:0x02162c78
+    .bss        start:0x02162b90 end:0x02162c78
 
 src/066_FldWater/Actor/ActorUnkRMW0.cpp:
     .text       start:0x0215c568 end:0x0215c9d8
     .init       start:0x0215dae0 end:0x0215db30
     .ctor       start:0x0215dcd4 end:0x0215dcd8
-    .bss        start:0x02162c88 end:0x02162c9c
+    .bss        start:0x02162c78 end:0x02162d60
 
 src/066_FldWater/MapObject/MapObjectUnkFSWT.cpp:
     .text       start:0x0215c9d8 end:0x0215cb10
     .init       start:0x0215db30 end:0x0215db80
     .ctor       start:0x0215dcd8 end:0x0215dcdc
-    .bss        start:0x02162d70 end:0x02162e44
+    .bss        start:0x02162d60 end:0x02162e44
 
 src/066_FldWater/Actor/ActorUnkSWHI.cpp:
     .text       start:0x0215cb10 end:0x0215ce14
     .init       start:0x0215db80 end:0x0215dbd0
     .ctor       start:0x0215dcdc end:0x0215dce0
-    .bss        start:0x02162e54 end:0x02162e90
+    .bss        start:0x02162e44 end:0x02162e90
 
 src/066_FldWater/MapObject/MapObjectUnkHOW0.cpp:
     .text       start:0x0215ce14 end:0x0215cf68
     .init       start:0x0215dbd0 end:0x0215dc20
     .ctor       start:0x0215dce0 end:0x0215dce4
-    .bss        start:0x02162ea0 end:0x02162f34
+    .bss        start:0x02162e90 end:0x02162f74
 
 src/066_FldWater/MapObject/MapObjectUnkHOW1.cpp:
     .text       start:0x0215cf68 end:0x0215d0bc
     .init       start:0x0215dc20 end:0x0215dc70
     .ctor       start:0x0215dce4 end:0x0215dce8
-    .bss        start:0x02162f84 end:0x02163058
+    .bss        start:0x02162f74 end:0x02163058
 
 src/066_FldWater/MapObject/MapObjectUnkMTFS.cpp:
     .text       start:0x0215d13c end:0x0215d7a0
     .init       start:0x0215dc70 end:0x0215dcc0
     .ctor       start:0x0215dce8 end:0x0215dcec
-    .bss        start:0x02163068 end:0x0216313c
+    .bss        start:0x02163058 end:0x0216313c

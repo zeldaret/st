@@ -9,6 +9,16 @@
 
 // --- Actor ZLSL ---
 
+class ActorUnkZLSL_c4 : public Actor_c4 {
+public:
+    ActorUnkZLSL_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
+
 class ActorUnkZLSL : public Actor {
 public:
     /* 00 (base) */
@@ -32,6 +42,16 @@ public:
 };
 
 // --- Actor ZSRS ---
+
+class ActorUnkZSRS_c4 : public Actor_c4 {
+public:
+    ActorUnkZSRS_c4(Actor *param1);
+
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+};
 
 class ActorUnkZSRS : public Actor {
 public:

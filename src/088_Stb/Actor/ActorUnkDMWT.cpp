@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkDMWT.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkDMWT sActorProfileUnkDMWT;
-
-ARM ActorProfileUnkDMWT *ActorProfileUnkDMWT::GetProfile() {
-    return &sActorProfileUnkDMWT;
-}
+ARM DECL_PROFILE(ActorProfileUnkDMWT);
 
 ARM Actor *ActorProfileUnkDMWT::Create() {
     return new(HeapIndex_2) ActorUnkDMWT();

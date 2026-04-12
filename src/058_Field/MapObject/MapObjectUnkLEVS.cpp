@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkLEVS.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkLEVS sMapObjectProfileUnkLEVS;
-
-ARM MapObjectProfileUnkLEVS *MapObjectProfileUnkLEVS::GetProfile() {
-    return &sMapObjectProfileUnkLEVS;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkLEVS);
 
 ARM MapObject *MapObjectProfileUnkLEVS::Create() {
     return new(HeapIndex_2) MapObjectUnkLEVS();

@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkETNL.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkETNL sMapObjectProfileUnkETNL;
-
-ARM MapObjectProfileUnkETNL *MapObjectProfileUnkETNL::GetProfile() {
-    return &sMapObjectProfileUnkETNL;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkETNL);
 
 ARM MapObject *MapObjectProfileUnkETNL::Create() {
     return new(HeapIndex_2) MapObjectUnkETNL();

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkRBL2.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkRBL2 sActorProfileUnkRBL2;
-
-ARM ActorProfileUnkRBL2 *ActorProfileUnkRBL2::GetProfile() {
-    return &sActorProfileUnkRBL2;
-}
+ARM DECL_PROFILE(ActorProfileUnkRBL2);
 
 ARM Actor *ActorProfileUnkRBL2::Create() {
     return new(HeapIndex_2) ActorUnkRBL2();

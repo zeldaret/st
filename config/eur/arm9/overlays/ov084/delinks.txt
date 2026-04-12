@@ -9,88 +9,88 @@ src/084_BossFlame/Actor/ActorUnkIWTS.cpp:
     .text       start:0x02150c00 end:0x02159ca0
     .init       start:0x02161e60 end:0x0216252c
     .ctor       start:0x02162a38 end:0x02162a3c
-    .bss        start:0x02163b50 end:0x02163c28
+    .bss        start:0x02163b04 end:0x02163c28
 
 src/084_BossFlame/Actor/ActorUnkITSC.cpp:
     .text       start:0x02159ca0 end:0x0215a3a8
     .init       start:0x0216252c end:0x0216259c
     .ctor       start:0x02162a3c end:0x02162a40
-    .bss        start:0x02163c38 end:0x02163d10
+    .bss        start:0x02163c28 end:0x02163d10
 
 src/084_BossFlame/Actor/ActorUnkFIRB.cpp:
     .text       start:0x0215a3a8 end:0x0215aee4
     .init       start:0x0216259c end:0x021625ec
     .ctor       start:0x02162a40 end:0x02162a44
-    .bss        start:0x02163d20 end:0x02163df8
+    .bss        start:0x02163d10 end:0x02163df8
 
 src/084_BossFlame/Actor/ActorUnkDSVC.cpp:
     .text       start:0x0215aee4 end:0x0215b008
     .init       start:0x021625ec end:0x0216263c
     .ctor       start:0x02162a44 end:0x02162a48
-    .bss        start:0x02163e08 end:0x02163ee0
+    .bss        start:0x02163df8 end:0x02163ee0
 
 src/084_BossFlame/Actor/ActorUnkWIDR.cpp:
     .text       start:0x0215b008 end:0x0215c65c
     .init       start:0x0216263c end:0x0216268c
     .ctor       start:0x02162a48 end:0x02162a4c
-    .bss        start:0x02163ef0 end:0x02163fc8
+    .bss        start:0x02163ee0 end:0x02163fc8
 
 src/084_BossFlame/Actor/ActorUnkWIDT.cpp:
     .text       start:0x0215c65c end:0x0215d098
     .init       start:0x0216268c end:0x021626dc
     .ctor       start:0x02162a4c end:0x02162a50
-    .bss        start:0x02163fd8 end:0x02163fe0
+    .bss        start:0x02163fc8 end:0x0216401c
 
 src/084_BossFlame/Actor/ActorUnkRBVC.cpp:
     .text       start:0x0215d098 end:0x0215d468
     .init       start:0x021626dc end:0x0216272c
     .ctor       start:0x02162a50 end:0x02162a54
-    .bss        start:0x0216402c end:0x02164104
+    .bss        start:0x0216401c end:0x02164104
 
 src/084_BossFlame/MapObject/MapObjectUnkLVCM.cpp:
     .text       start:0x0215d468 end:0x0215db78
     .init       start:0x0216272c end:0x0216277c
     .ctor       start:0x02162a54 end:0x02162a58
-    .bss        start:0x02164114 end:0x02164144
+    .bss        start:0x02164104 end:0x02164208
 
 src/084_BossFlame/MapObject/MapObjectUnkMLVC.cpp:
     .text       start:0x0215db78 end:0x0215df6c
     .init       start:0x0216277c end:0x021627cc
     .ctor       start:0x02162a58 end:0x02162a5c
-    .bss        start:0x02164218 end:0x0216423c
+    .bss        start:0x02164208 end:0x02164240
 
 src/084_BossFlame/Actor/ActorUnkLAVA.cpp:
     .text       start:0x0215df6c end:0x0215eb58
     .init       start:0x021627cc end:0x0216282c
     .ctor       start:0x02162a5c end:0x02162a60
-    .bss        start:0x02164258 end:0x021642fc
+    .bss        start:0x02164240 end:0x02164358
 
 src/084_BossFlame/Actor/ActorUnkLVBD.cpp:
     .text       start:0x0215eb58 end:0x02160458
     .init       start:0x0216282c end:0x021628c0
     .ctor       start:0x02162a60 end:0x02162a64
-    .bss        start:0x02164428 end:0x02164500
+    .bss        start:0x02164358 end:0x02164500
 
 src/084_BossFlame/MapObject/MapObjectUnkTMLV.cpp:
     .text       start:0x02160458 end:0x0216060c
     .init       start:0x021628c0 end:0x02162910
     .ctor       start:0x02162a64 end:0x02162a68
-    .bss        start:0x02164510 end:0x02164530
+    .bss        start:0x02164500 end:0x02164530
 
 src/084_BossFlame/MapObject/MapObjectUnkSTSV.cpp:
     .text       start:0x0216060c end:0x02160804
     .init       start:0x02162910 end:0x02162960
     .ctor       start:0x02162a68 end:0x02162a6c
-    .bss        start:0x02164540 end:0x021645a8
+    .bss        start:0x02164530 end:0x021645a8
 
 src/084_BossFlame/Actor/ActorUnkLBRC.cpp:
     .text       start:0x02160830 end:0x0216122c
     .init       start:0x02162960 end:0x021629e8
     .ctor       start:0x02162a6c end:0x02162a70
-    .bss        start:0x021645b8 end:0x02164690
+    .bss        start:0x021645a8 end:0x02164694
 
 src/084_BossFlame/MapObject/MapObjectUnkPLV2.cpp:
     .text       start:0x021612c8 end:0x021614a4
     .init       start:0x021629e8 end:0x02162a38
     .ctor       start:0x02162a70 end:0x02162a74
-    .bss        start:0x021646a4 end:0x02164778
+    .bss        start:0x02164694 end:0x02164778

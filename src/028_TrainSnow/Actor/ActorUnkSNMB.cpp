@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkSNMB.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkSNMB sActorProfileUnkSNMB;
-
-ARM ActorProfileUnkSNMB *ActorProfileUnkSNMB::GetProfile() {
-    return &sActorProfileUnkSNMB;
-}
+ARM DECL_PROFILE(ActorProfileUnkSNMB);
 
 ARM Actor *ActorProfileUnkSNMB::Create() {
     return new(HeapIndex_2) ActorUnkSNMB();

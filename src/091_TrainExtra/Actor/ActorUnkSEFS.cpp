@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkSEFS.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkSEFS sActorProfileUnkSEFS;
-
-ARM ActorProfileUnkSEFS *ActorProfileUnkSEFS::GetProfile() {
-    return &sActorProfileUnkSEFS;
-}
+ARM DECL_PROFILE(ActorProfileUnkSEFS);
 
 ARM Actor *ActorProfileUnkSEFS::Create() {
     return new(HeapIndex_2) ActorUnkSEFS();

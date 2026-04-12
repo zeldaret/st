@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkAROW.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkAROW sActorProfileUnkAROW;
-
-ARM ActorProfileUnkAROW *ActorProfileUnkAROW::GetProfile() {
-    return &sActorProfileUnkAROW;
-}
+ARM DECL_PROFILE(ActorProfileUnkAROW);
 
 ARM Actor *ActorProfileUnkAROW::Create() {
     return new(HeapIndex_2) ActorUnkAROW();
