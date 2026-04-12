@@ -10,6 +10,7 @@
 // --- Actor SPAR ---
 
 class ActorUnkSPAR_c4 : public Actor_c4 {
+public:
     ActorUnkSPAR_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -43,6 +44,7 @@ public:
 // --- Actor SPBM ---
 
 class ActorUnkSPBM_c4 : public Actor_c4 {
+public:
     ActorUnkSPBM_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -76,6 +78,7 @@ public:
 // --- Actor SPDR ---
 
 class ActorUnkSPDR_c4 : public Actor_c4 {
+public:
     ActorUnkSPDR_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -109,6 +112,7 @@ public:
 // --- Actor SPTR ---
 
 class ActorUnkSPTR_c4 : public Actor_c4 {
+public:
     ActorUnkSPTR_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;

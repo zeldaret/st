@@ -33,6 +33,7 @@ public:
 };
 
 class ActorRupee_c4 : public Actor_c4 {
+public:
     ActorRupee_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -58,7 +59,7 @@ public:
     /* b8 */ unk32 mUnk_b8;
     /* bc */ unk32 mUnk_bc;
     /* c0 */ unk32 mUnk_c0;
-    /* c4 */ Actor_c4 mUnk_c4;
+    /* c4 */ ActorRupee_c4 mUnk_c4;
     /* e8 */ unk32 mUnk_e8;
     /* ec */ s16 mUnk_ec;
     /* f0 */ UnkStruct_PlayerGet_ec mUnk_f0;

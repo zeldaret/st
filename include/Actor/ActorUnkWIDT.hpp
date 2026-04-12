@@ -8,6 +8,7 @@
 #include "types.h"
 
 class ActorUnkWIDT_c4 : public Actor_c4 {
+public:
     ActorUnkWIDT_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;

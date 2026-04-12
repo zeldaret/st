@@ -10,6 +10,7 @@
 // --- Actor CAWB ---
 
 class ActorUnkCAWB_c4 : public Actor_c4 {
+public:
     ActorUnkCAWB_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -43,6 +44,7 @@ public:
 // --- Actor CRFP ---
 
 class ActorUnkCRFP_c4 : public Actor_c4 {
+public:
     ActorUnkCRFP_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -76,6 +78,7 @@ public:
 // --- Actor FOMA ---
 
 class ActorUnkFOMA_c4 : public Actor_c4 {
+public:
     ActorUnkFOMA_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -109,6 +112,7 @@ public:
 // --- Actor FOMB ---
 
 class ActorUnkFOMB_c4 : public Actor_c4 {
+public:
     ActorUnkFOMB_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -142,6 +146,7 @@ public:
 // --- Actor FOMC ---
 
 class ActorUnkFOMC_c4 : public Actor_c4 {
+public:
     ActorUnkFOMC_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -175,6 +180,7 @@ public:
 // --- Actor FOMR ---
 
 class ActorUnkFOMR_c4 : public Actor_c4 {
+public:
     ActorUnkFOMR_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -208,6 +214,7 @@ public:
 // --- Actor FOMS ---
 
 class ActorUnkFOMS_c4 : public Actor_c4 {
+public:
     ActorUnkFOMS_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -241,6 +248,7 @@ public:
 // --- Actor FOPD ---
 
 class ActorUnkFOPD_c4 : public Actor_c4 {
+public:
     ActorUnkFOPD_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -274,6 +282,7 @@ public:
 // --- Actor GOCP ---
 
 class ActorUnkGOCP_c4 : public Actor_c4 {
+public:
     ActorUnkGOCP_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -307,6 +316,7 @@ public:
 // --- Actor GORP ---
 
 class ActorUnkGORP_c4 : public Actor_c4 {
+public:
     ActorUnkGORP_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -340,6 +350,7 @@ public:
 // --- Actor NCCA ---
 
 class ActorUnkNCCA_c4 : public Actor_c4 {
+public:
     ActorUnkNCCA_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -373,6 +384,7 @@ public:
 // --- Actor NCCS ---
 
 class ActorUnkNCCS_c4 : public Actor_c4 {
+public:
     ActorUnkNCCS_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -406,6 +418,7 @@ public:
 // --- Actor WAMA ---
 
 class ActorUnkWAMA_c4 : public Actor_c4 {
+public:
     ActorUnkWAMA_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
