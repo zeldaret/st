@@ -354,7 +354,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                 return;
             }
 
-            if (iVar10->func_01fff458() == ActorId_NormalShield) {
+            if (iVar10->GetActorId() == ActorId_NormalShield) {
                 UNSET_FLAG(iVar10->mFlags, ActorFlag_Visible);
                 iVar10->mUnk_4a = 0;
             }
@@ -632,7 +632,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                         if (((*(u16 *) this->mUnk_54.mUnk_00 << 0x10) >> 0x1E) == 1) {
                             temp_r0_3 = (ActorUnkNSHD *) gpActorManager->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
 
-                            if ((temp_r0_3 != NULL) && (temp_r0_3->func_01fff458() == ActorId_NormalShield)) {
+                            if ((temp_r0_3 != NULL) && (temp_r0_3->GetActorId() == ActorId_NormalShield)) {
                                 if (this->func_ov110_02186b8c()) {
                                     this->mUnk_28->pItemManager->mUnk_12 ^= 2;
                                 }
@@ -674,7 +674,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                     if (pMapObj != NULL) {
                         var_r5_2 = MapObjectId_None;
 
-                        switch (pMapObj->func_01fff584()) {
+                        switch (pMapObj->GetMapObjectId()) {
                             case MapObjectId_TRLN:
                                 var_r5_2 = MapObjectId_TREN;
                                 break;

@@ -221,7 +221,7 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a94b0() {}
 ARM void ActorUnk_ov000_020a8bb0::vfunc_9c() {}
 
 ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_a0() {
-    this->func_01fff458();
+    this->GetActorId();
     return 1;
 }
 

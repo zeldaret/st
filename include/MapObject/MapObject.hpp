@@ -84,7 +84,7 @@ public:
 
     MapObject();
 
-    MapObjectId func_01fff584();
+    MapObjectId GetMapObjectId();
 
     void func_ov000_0209d6ac(Vec3p *param1);
     void func_ov031_02103878();

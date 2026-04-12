@@ -171,7 +171,7 @@ public:
 
     Actor();
 
-    ActorId func_01fff458();
+    ActorId GetActorId();
 
     void func_ov000_0209848c(ActorProfile *param1);
     void func_ov000_020984b0();
