@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkKMSO.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkKMSO sActorProfileUnkKMSO;
-
-ARM ActorProfileUnkKMSO *ActorProfileUnkKMSO::GetProfile() {
-    return &sActorProfileUnkKMSO;
-}
+ARM DECL_PROFILE(ActorProfileUnkKMSO);
 
 ARM Actor *ActorProfileUnkKMSO::Create() {
     return new(HeapIndex_2) ActorUnkKMSO();

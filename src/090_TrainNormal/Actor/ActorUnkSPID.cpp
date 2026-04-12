@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkSPID.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkSPID sActorProfileUnkSPID;
-
-ARM ActorProfileUnkSPID *ActorProfileUnkSPID::GetProfile() {
-    return &sActorProfileUnkSPID;
-}
+ARM DECL_PROFILE(ActorProfileUnkSPID);
 
 ARM Actor *ActorProfileUnkSPID::Create() {
     return new(HeapIndex_2) ActorUnkSPID();

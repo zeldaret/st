@@ -9,13 +9,13 @@ src/055_MapD3/Actor/ActorUnkCHUC.cpp:
     .text       start:0x02139808 end:0x0213b2a8
     .init       start:0x0213d288 end:0x0213d2f4
     .ctor       start:0x0213d3f4 end:0x0213d3f8
-    .bss        start:0x0213dbf0 end:0x0213dcc8
+    .bss        start:0x0213dbe0 end:0x0213dcc8
 
 src/055_MapD3/Actor/ActorUnkRCHU.cpp:
     .text       start:0x0213b2a8 end:0x0213be7c
     .init       start:0x0213d2f4 end:0x0213d360
     .ctor       start:0x0213d3f8 end:0x0213d3fc
-    .bss        start:0x0213dcd8 end:0x0213dd1c
+    .bss        start:0x0213dcc8 end:0x0213dd1c
 
 src/055_MapD3/Actor/ActorUnkRCMS.cpp:
     .text       start:0x0213be7c end:0x0213d258

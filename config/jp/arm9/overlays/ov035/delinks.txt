@@ -9,22 +9,22 @@ src/035_MapA4/Actor/ActorUnkFIMA.cpp:
     .text       start:0x0211ad60 end:0x0211c808
     .init       start:0x02122d34 end:0x02122d84
     .ctor       start:0x02122f18 end:0x02122f1c
-    .bss        start:0x021238b0 end:0x02123988
+    .bss        start:0x021238a0 end:0x02123990
 
 src/035_MapA4/Actor/ActorUnkFMAS_FMLS.cpp:
     .text       start:0x0211c808 end:0x0211d8c8
     .init       start:0x02122d84 end:0x02122e60
     .ctor       start:0x02122f1c end:0x02122f20
-    .bss        start:0x021239a8 end:0x02123b58
+    .bss        start:0x02123990 end:0x02123b64
 
 src/035_MapA4/Actor/ActorUnkFIML.cpp:
     .text       start:0x0211d954 end:0x0212023c
     .init       start:0x02122e60 end:0x02122ec8
     .ctor       start:0x02122f20 end:0x02122f24
-    .bss        start:0x02123b7c end:0x02123c54
+    .bss        start:0x02123b64 end:0x02123c54
 
 src/035_MapA4/Actor/ActorUnkFIFI.cpp:
     .text       start:0x0212023c end:0x021206a8
     .init       start:0x02122ec8 end:0x02122f18
     .ctor       start:0x02122f24 end:0x02122f28
-    .bss        start:0x02123c64 end:0x02123ca0
+    .bss        start:0x02123c54 end:0x02123ca0

@@ -9,43 +9,43 @@ src/074_BossLast1/Actor/ActorUnkRBL1.cpp:
     .text       start:0x02152c20 end:0x02153b34
     .init       start:0x0216441c end:0x021644e0
     .ctor       start:0x021647f8 end:0x021647fc
-    .bss        start:0x02165590 end:0x02165668
+    .bss        start:0x02165580 end:0x02165668
 
 src/074_BossLast1/Actor/ActorUnkMAGR.cpp:
     .text       start:0x02153b34 end:0x02154e6c
     .init       start:0x021644e0 end:0x02164564
     .ctor       start:0x021647fc end:0x02164800
-    .bss        start:0x02165678 end:0x02165750
+    .bss        start:0x02165668 end:0x02165750
 
 src/074_BossLast1/Actor/ActorUnkZLBS.cpp:
     .text       start:0x02154e6c end:0x021576fc
     .init       start:0x02164564 end:0x021645d8
     .ctor       start:0x02164800 end:0x02164804
-    .bss        start:0x02165760 end:0x02165838
+    .bss        start:0x02165750 end:0x02165838
 
 src/074_BossLast1/Actor/ActorUnkZLBB.cpp:
     .text       start:0x021576fc end:0x02158ba8
     .init       start:0x021645d8 end:0x0216464c
     .ctor       start:0x02164804 end:0x02164808
-    .bss        start:0x02165848 end:0x02165920
+    .bss        start:0x02165838 end:0x02165920
 
 src/074_BossLast1/Actor/ActorUnkBSKM.cpp:
     .text       start:0x02158ba8 end:0x0215ec38
     .init       start:0x0216464c end:0x021646c0
     .ctor       start:0x02164808 end:0x0216480c
-    .bss        start:0x02165930 end:0x02165a08
+    .bss        start:0x02165920 end:0x02165a08
 
 src/074_BossLast1/Actor/ActorUnkBKST.cpp:
     .text       start:0x0215ec38 end:0x0215f9bc
     .init       start:0x021646c0 end:0x02164710
     .ctor       start:0x0216480c end:0x02164810
-    .bss        start:0x02165a18 end:0x02165a54
+    .bss        start:0x02165a08 end:0x02165a54
 
 src/074_BossLast1/Actor/ActorUnkKIMB.cpp:
     .text       start:0x0215f9bc end:0x021608f4
     .init       start:0x02164710 end:0x02164784
     .ctor       start:0x02164810 end:0x02164814
-    .bss        start:0x02165a64 end:0x02165b3c
+    .bss        start:0x02165a54 end:0x02165b3c
 
 src/074_BossLast1/Actor/ActorUnkPPPM.cpp:
     .text       start:0x021608f4 end:0x02163e98

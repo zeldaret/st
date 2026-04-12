@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkBREX.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkBREX sMapObjectProfileUnkBREX;
-
-ARM MapObjectProfileUnkBREX *MapObjectProfileUnkBREX::GetProfile() {
-    return &sMapObjectProfileUnkBREX;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkBREX);
 
 ARM MapObject *MapObjectProfileUnkBREX::Create() {
     return new(HeapIndex_2) MapObjectUnkBREX();

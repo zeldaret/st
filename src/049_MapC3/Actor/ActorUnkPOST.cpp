@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkPOST.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkPOST sActorProfileUnkPOST;
-
-ARM ActorProfileUnkPOST *ActorProfileUnkPOST::GetProfile() {
-    return &sActorProfileUnkPOST;
-}
+ARM DECL_PROFILE(ActorProfileUnkPOST);
 
 ARM Actor *ActorProfileUnkPOST::Create() {
     return new(HeapIndex_2) ActorUnkPOST();

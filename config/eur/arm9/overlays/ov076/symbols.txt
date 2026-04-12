@@ -74,6 +74,6 @@ data_ov076_02152d0c kind:data(any) addr:0x02152d0c
 data_ov076_02152d24 kind:data(any) addr:0x02152d24
 _ZTV19data_ov076_02152d3c kind:data(any) addr:0x02152d3c
 _ZTV19data_ov076_02152d5c kind:data(any) addr:0x02152d5c ambiguous
-data_ov076_02152da0 kind:bss addr:0x02152da0
-data_ov076_02152da4 kind:bss addr:0x02152da4
-sActorProfileUnkBGOK kind:bss addr:0x02152db0
+_ZGVN15ProfileInstanceI19ActorProfileUnkBGOKE8sProfileE kind:bss addr:0x02152da0
+@13435 kind:bss addr:0x02152da4
+_ZN15ProfileInstanceI19ActorProfileUnkBGOKE8sProfileE kind:bss addr:0x02152db0

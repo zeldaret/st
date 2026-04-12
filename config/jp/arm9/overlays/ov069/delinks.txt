@@ -9,19 +9,19 @@ src/069_FldRabbit/Actor/ActorUnkBANI.cpp:
     .text       start:0x02159be0 end:0x0215ab08
     .init       start:0x0215c7e8 end:0x0215c838
     .ctor       start:0x0215c978 end:0x0215c97c
-    .bss        start:0x0215d150 end:0x0215d1ec
+    .bss        start:0x0215d140 end:0x0215d228
 
 src/069_FldRabbit/Actor/ActorUnkRB1F.cpp:
     .text       start:0x0215ab08 end:0x0215bc4c
     .init       start:0x0215c838 end:0x0215c888
     .ctor       start:0x0215c97c end:0x0215c980
-    .bss        start:0x0215d238 end:0x0215d24c
+    .bss        start:0x0215d228 end:0x0215d340
 
 src/069_FldRabbit/Actor/ActorUnkRBRP.cpp:
     .text       start:0x0215bf6c end:0x0215c5d8
     .init       start:0x0215c8d8 end:0x0215c928
     .ctor       start:0x0215c984 end:0x0215c988
-    .bss        start:0x0215d350 end:0x0215d428
+    .bss        start:0x0215d340 end:0x0215d428
 
 src/069_FldRabbit/MapObject/MapObjectUnkGTRB.cpp:
     .text       start:0x0215c5d8 end:0x0215c7d4

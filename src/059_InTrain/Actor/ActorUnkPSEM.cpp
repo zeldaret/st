@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkPSEM.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkPSEM sActorProfileUnkPSEM;
-
-ARM ActorProfileUnkPSEM *ActorProfileUnkPSEM::GetProfile() {
-    return &sActorProfileUnkPSEM;
-}
+ARM DECL_PROFILE(ActorProfileUnkPSEM);
 
 ARM Actor *ActorProfileUnkPSEM::Create() {
     return new(HeapIndex_2) ActorUnkPSEM();

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkDMMM.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkDMMM sActorProfileUnkDMMM;
-
-ARM ActorProfileUnkDMMM *ActorProfileUnkDMMM::GetProfile() {
-    return &sActorProfileUnkDMMM;
-}
+ARM DECL_PROFILE(ActorProfileUnkDMMM);
 
 ARM Actor *ActorProfileUnkDMMM::Create() {
     return new(HeapIndex_2) ActorUnkDMMM();

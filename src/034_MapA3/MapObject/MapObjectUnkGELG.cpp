@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkGELG.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkGELG sMapObjectProfileUnkGELG;
-
-ARM MapObjectProfileUnkGELG *MapObjectProfileUnkGELG::GetProfile() {
-    return &sMapObjectProfileUnkGELG;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkGELG);
 
 ARM MapObject *MapObjectProfileUnkGELG::Create() {
     return new(HeapIndex_2) MapObjectUnkGELG();

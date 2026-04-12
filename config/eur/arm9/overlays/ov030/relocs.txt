@@ -1042,7 +1042,7 @@ from:0x0214a710 kind:load to:0x027e0d24 module:dtcm
 from:0x0214a714 kind:load to:0x027e0cd8 module:dtcm
 from:0x0214a718 kind:load to:0x0215093a module:overlay(30)
 from:0x0214a71c kind:load to:0x021522f8 module:overlay(30)
-from:0x0214a720 kind:load to:0x0215230a module:overlay(30)
+from:0x0214a720 kind:load to:0x021522fc add:0xe module:overlay(30)
 from:0x0214a724 kind:load to:0x0215230c module:overlay(30)
 from:0x0214a728 kind:load to:0x02150950 module:overlay(30)
 from:0x0214a740 kind:arm_call to:0x02144110 module:overlay(30)

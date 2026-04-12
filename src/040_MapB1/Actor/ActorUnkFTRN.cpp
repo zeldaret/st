@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkFTRN.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkFTRN sActorProfileUnkFTRN;
-
-OV040_ARM ActorProfileUnkFTRN *ActorProfileUnkFTRN::GetProfile() {
-    return &sActorProfileUnkFTRN;
-}
+OV040_ARM DECL_PROFILE(ActorProfileUnkFTRN);
 
 OV040_ARM Actor *ActorProfileUnkFTRN::Create() {
     return new(HeapIndex_2) ActorUnkFTRN();

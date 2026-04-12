@@ -5,11 +5,7 @@
 
 // --- Actor CAMA ---
 
-static ActorProfileUnkCAMA sActorProfileUnkCAMA;
-
-ARM ActorProfileUnkCAMA *ActorProfileUnkCAMA::GetProfile() {
-    return &sActorProfileUnkCAMA;
-}
+ARM DECL_PROFILE(ActorProfileUnkCAMA);
 
 ARM Actor *ActorProfileUnkCAMA::Create() {
     return new(HeapIndex_2) ActorUnkCAMA();
@@ -22,11 +18,7 @@ ARM ActorUnkCAMA::ActorUnkCAMA() {}
 
 // --- Actor CAMB ---
 
-static ActorProfileUnkCAMB sActorProfileUnkCAMB;
-
-ARM ActorProfileUnkCAMB *ActorProfileUnkCAMB::GetProfile() {
-    return &sActorProfileUnkCAMB;
-}
+ARM DECL_PROFILE(ActorProfileUnkCAMB);
 
 ARM Actor *ActorProfileUnkCAMB::Create() {
     return new(HeapIndex_2) ActorUnkCAMB();
@@ -39,11 +31,7 @@ ARM ActorUnkCAMB::ActorUnkCAMB() {}
 
 // --- Actor CAMS ---
 
-static ActorProfileUnkCAMS sActorProfileUnkCAMS;
-
-ARM ActorProfileUnkCAMS *ActorProfileUnkCAMS::GetProfile() {
-    return &sActorProfileUnkCAMS;
-}
+ARM DECL_PROFILE(ActorProfileUnkCAMS);
 
 ARM Actor *ActorProfileUnkCAMS::Create() {
     return new(HeapIndex_2) ActorUnkCAMS();

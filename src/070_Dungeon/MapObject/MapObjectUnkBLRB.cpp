@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkBLRB.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkBLRB sMapObjectProfileUnkBLRB;
-
-ARM MapObjectProfileUnkBLRB *MapObjectProfileUnkBLRB::GetProfile() {
-    return &sMapObjectProfileUnkBLRB;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkBLRB);
 
 ARM MapObject *MapObjectProfileUnkBLRB::Create() {
     return new(HeapIndex_2) MapObjectUnkBLRB();

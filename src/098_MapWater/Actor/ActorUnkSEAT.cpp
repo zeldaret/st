@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkSEAT.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkSEAT sActorProfileUnkSEAT;
-
-ARM ActorProfileUnkSEAT *ActorProfileUnkSEAT::GetProfile() {
-    return &sActorProfileUnkSEAT;
-}
+ARM DECL_PROFILE(ActorProfileUnkSEAT);
 
 ARM Actor *ActorProfileUnkSEAT::Create() {
     return new(HeapIndex_2) ActorUnkSEAT();

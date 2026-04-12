@@ -9,43 +9,43 @@ src/040_MapB1/Actor/ActorUnkFTRN.cpp:
     .text       start:0x021252b4 end:0x021290f8
     .init       start:0x0212f7d8 end:0x0212f8f8
     .ctor       start:0x0212feb0 end:0x0212feb4
-    .bss        start:0x02130ddc end:0x02130e18
+    .bss        start:0x02130dc4 end:0x02130e18
 
 src/040_MapB1/Actor/ActorUnkZSTG.cpp:
     .text       start:0x0212c76c end:0x0212cad4
     .init       start:0x0212f8f8 end:0x0212f948
     .ctor       start:0x0212feb4 end:0x0212feb8
-    .bss        start:0x02130e28 end:0x02130e64
+    .bss        start:0x02130e18 end:0x02130e64
 
 src/040_MapB1/Actor/ActorUnkCAWB_CRFP_FOMA_FOMB_FOMC_FOMR_FOMS_FOPD_GOCP_GORP_NCCA_NCCS_WAMA.cpp:
     .text       start:0x0212cb68 end:0x0212e254
     .init       start:0x0212f948 end:0x0212fc98
     .ctor       start:0x0212feb8 end:0x0212febc
-    .bss        start:0x02130f34 end:0x02131a3c
+    .bss        start:0x02130e64 end:0x02131a54
 
 src/040_MapB1/Actor/ActorUnkYKAP_YKCP_YKEP.cpp:
     .text       start:0x0212e254 end:0x0212e7ec
     .init       start:0x0212fc98 end:0x0212fd70
     .ctor       start:0x0212febc end:0x0212fec0
-    .bss        start:0x02131a6c end:0x02131bcc
+    .bss        start:0x02131a54 end:0x02131bcc
 
 src/040_MapB1/Actor/ActorUnkOLDS.cpp:
     .text       start:0x0212e7ec end:0x0212eb88
     .init       start:0x0212fd70 end:0x0212fdc0
     .ctor       start:0x0212fec0 end:0x0212fec4
-    .bss        start:0x02131bdc end:0x02131cb4
+    .bss        start:0x02131bcc end:0x02131cb4
 
 src/040_MapB1/Actor/ActorUnkTMNP.cpp:
     .text       start:0x0212eb88 end:0x0212ed6c
     .init       start:0x0212fdc0 end:0x0212fe10
     .ctor       start:0x0212fec4 end:0x0212fec8
-    .bss        start:0x02131cc4 end:0x02131d9c
+    .bss        start:0x02131cb4 end:0x02131d9c
 
 src/040_MapB1/MapObject/MapObjectUnkFSTA.cpp:
     .text       start:0x0212ed6c end:0x0212f130
     .init       start:0x0212fe10 end:0x0212fe60
     .ctor       start:0x0212fec8 end:0x0212fecc
-    .bss        start:0x02131dac end:0x02131dcc
+    .bss        start:0x02131d9c end:0x02131dcc
 
 src/040_MapB1/MapObject/MapObjectUnkFRAI.cpp:
     .text       start:0x0212f17c end:0x0212f5b4

@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkMZFX.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkMZFX sMapObjectProfileUnkMZFX;
-
-ARM MapObjectProfileUnkMZFX *MapObjectProfileUnkMZFX::GetProfile() {
-    return &sMapObjectProfileUnkMZFX;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkMZFX);
 
 ARM MapObject *MapObjectProfileUnkMZFX::Create() {
     return new(HeapIndex_2) MapObjectUnkMZFX();

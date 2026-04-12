@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkAJNP.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkAJNP sActorProfileUnkAJNP;
-
-THUMB ActorProfileUnkAJNP *ActorProfileUnkAJNP::GetProfile() {
-    return &sActorProfileUnkAJNP;
-}
+THUMB DECL_PROFILE(ActorProfileUnkAJNP);
 
 THUMB Actor *ActorProfileUnkAJNP::Create() {
     return new(HeapIndex_2) ActorUnkAJNP();

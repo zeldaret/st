@@ -9,13 +9,13 @@ src/052_MapC6/Actor/ActorUnkSTLW.cpp:
     .text       start:0x021304a0 end:0x02133164
     .init       start:0x02135bac end:0x02135c8c
     .ctor       start:0x02135e04 end:0x02135e08
-    .bss        start:0x02136758 end:0x02136830
+    .bss        start:0x02136740 end:0x02136830
 
 src/052_MapC6/Actor/ActorUnkSTWH.cpp:
     .text       start:0x02133164 end:0x02134d84
     .init       start:0x02135c8c end:0x02135d74
     .ctor       start:0x02135e08 end:0x02135e0c
-    .bss        start:0x02136840 end:0x02136918
+    .bss        start:0x02136830 end:0x02136918
 
 src/052_MapC6/Actor/ActorUnkNAVI.cpp:
     .text       start:0x02134d84 end:0x02135b84

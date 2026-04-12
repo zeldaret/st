@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkSHDL.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkSHDL sActorProfileUnkSHDL;
-
-THUMB ActorProfileUnkSHDL *ActorProfileUnkSHDL::GetProfile() {
-    return &sActorProfileUnkSHDL;
-}
+THUMB DECL_PROFILE(ActorProfileUnkSHDL);
 
 THUMB Actor *ActorProfileUnkSHDL::Create() {
     return new(HeapIndex_2) ActorUnkSHDL();

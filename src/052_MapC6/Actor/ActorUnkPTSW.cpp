@@ -6,11 +6,7 @@
 
 #if IS_JP
 
-static ActorProfileUnkPTSW sActorProfileUnkPTSW;
-
-ARM ActorProfileUnkPTSW *ActorProfileUnkPTSW::GetProfile() {
-    return &sActorProfileUnkPTSW;
-}
+ARM DECL_PROFILE(ActorProfileUnkPTSW);
 
 ARM Actor *ActorProfileUnkPTSW::Create() {
     return new(HeapIndex_2) ActorUnkPTSW();

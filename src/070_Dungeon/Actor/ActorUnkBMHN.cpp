@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkBMHN.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkBMHN sActorProfileUnkBMHN;
-
-ARM ActorProfileUnkBMHN *ActorProfileUnkBMHN::GetProfile() {
-    return &sActorProfileUnkBMHN;
-}
+ARM DECL_PROFILE(ActorProfileUnkBMHN);
 
 ARM Actor *ActorProfileUnkBMHN::Create() {
     return new(HeapIndex_2) ActorUnkBMHN();

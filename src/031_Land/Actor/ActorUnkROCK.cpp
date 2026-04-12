@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkROCK.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkROCK sActorProfileUnkROCK;
-
-ARM ActorProfileUnkROCK *ActorProfileUnkROCK::GetProfile() {
-    return &sActorProfileUnkROCK;
-}
+ARM DECL_PROFILE(ActorProfileUnkROCK);
 
 ARM Actor *ActorProfileUnkROCK::Create() {
     return new(HeapIndex_2) ActorUnkROCK();

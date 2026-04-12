@@ -5,11 +5,7 @@
 
 // --- Actor ZSRS ---
 
-static ActorProfileUnkZSRS sActorProfileUnkZSRS;
-
-THUMB ActorProfileUnkZSRS *ActorProfileUnkZSRS::GetProfile() {
-    return &sActorProfileUnkZSRS;
-}
+THUMB DECL_PROFILE(ActorProfileUnkZSRS);
 
 THUMB Actor *ActorProfileUnkZSRS::Create() {
     return NULL;
@@ -22,11 +18,7 @@ THUMB ActorUnkZSRS::ActorUnkZSRS() {}
 
 // --- Actor ZLSL ---
 
-static ActorProfileUnkZLSL sActorProfileUnkZLSL;
-
-THUMB ActorProfileUnkZLSL *ActorProfileUnkZLSL::GetProfile() {
-    return &sActorProfileUnkZLSL;
-}
+THUMB DECL_PROFILE(ActorProfileUnkZLSL);
 
 THUMB Actor *ActorProfileUnkZLSL::Create() {
     return new(HeapIndex_2) ActorUnkZLSL();

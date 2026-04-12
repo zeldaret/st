@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkMKUR.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkMKUR sActorProfileUnkMKUR;
-
-ARM ActorProfileUnkMKUR *ActorProfileUnkMKUR::GetProfile() {
-    return &sActorProfileUnkMKUR;
-}
+ARM DECL_PROFILE(ActorProfileUnkMKUR);
 
 ARM Actor *ActorProfileUnkMKUR::Create() {
     return new(HeapIndex_2) ActorUnkMKUR();

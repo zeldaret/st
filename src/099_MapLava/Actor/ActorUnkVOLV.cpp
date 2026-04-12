@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkVOLV.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkVOLV sActorProfileUnkVOLV;
-
-ARM ActorProfileUnkVOLV *ActorProfileUnkVOLV::GetProfile() {
-    return &sActorProfileUnkVOLV;
-}
+ARM DECL_PROFILE(ActorProfileUnkVOLV);
 
 ARM Actor *ActorProfileUnkVOLV::Create() {
     return new(HeapIndex_2) ActorUnkVOLV();

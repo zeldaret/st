@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkEFOC.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkEFOC sActorProfileUnkEFOC;
-
-ARM ActorProfileUnkEFOC *ActorProfileUnkEFOC::GetProfile() {
-    return &sActorProfileUnkEFOC;
-}
+ARM DECL_PROFILE(ActorProfileUnkEFOC);
 
 ARM Actor *ActorProfileUnkEFOC::Create() {
     return new(HeapIndex_2) ActorUnkEFOC();

@@ -8,13 +8,13 @@ src/054_MapD2/Actor/ActorUnkFBBH.cpp:
     .text       start:0x02139fa4 end:0x0213dc5c
     .init       start:0x0213f458 end:0x0213f588
     .ctor       start:0x0213f6b0 end:0x0213f6b4
-    .bss        start:0x0213ff70 end:0x02140048
+    .bss        start:0x0213ff60 end:0x02140048
 
 src/054_MapD2/Actor/ActorUnkFIBB.cpp:
     .text       start:0x0213dc5c end:0x0213f040
     .init       start:0x0213f588 end:0x0213f660
     .ctor       start:0x0213f6b4 end:0x0213f6b8
-    .bss        start:0x02140058 end:0x02140130
+    .bss        start:0x02140048 end:0x02140130
 
 src/054_MapD2/Actor/ActorUnkFBBF.cpp:
     .text       start:0x0213f040 end:0x0213f458

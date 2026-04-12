@@ -294,24 +294,24 @@ data_ov087_02162a5c kind:data(any) addr:0x02162a5c
 data_ov087_02162a70 kind:data(any) addr:0x02162a70
 data_ov087_02162a98 kind:data(any) addr:0x02162a98
 data_ov087_02162b08 kind:data(any) addr:0x02162b08
-data_ov087_02162b20 kind:bss addr:0x02162b20
-data_ov087_02162b24 kind:bss addr:0x02162b24
-sActorProfileUnkDSBN kind:bss addr:0x02162b30
+_ZGVN15ProfileInstanceI19ActorProfileUnkDSBNE8sProfileE kind:bss addr:0x02162b20
+@13936 kind:bss addr:0x02162b24
+_ZN15ProfileInstanceI19ActorProfileUnkDSBNE8sProfileE kind:bss addr:0x02162b30
 data_ov087_02162b78 kind:bss addr:0x02162b78 ambiguous
-data_ov087_02162c08 kind:bss addr:0x02162c08
-data_ov087_02162c0c kind:bss addr:0x02162c0c
-sActorProfileUnkDSBB kind:bss addr:0x02162c18
+_ZGVN15ProfileInstanceI19ActorProfileUnkDSBBE8sProfileE kind:bss addr:0x02162c08
+@13942 kind:bss addr:0x02162c0c
+_ZN15ProfileInstanceI19ActorProfileUnkDSBBE8sProfileE kind:bss addr:0x02162c18
 data_ov087_02162c9c kind:bss addr:0x02162c9c ambiguous
-data_ov087_02162cf0 kind:bss addr:0x02162cf0
-data_ov087_02162cf4 kind:bss addr:0x02162cf4
-sActorProfileUnkDSBH kind:bss addr:0x02162d00
-data_ov087_02162dd8 kind:bss addr:0x02162dd8
-data_ov087_02162ddc kind:bss addr:0x02162ddc
-sActorProfileUnkRBDS kind:bss addr:0x02162de8
-data_ov087_02162ec0 kind:bss addr:0x02162ec0
-data_ov087_02162ec4 kind:bss addr:0x02162ec4
-sActorProfileUnkRBD2 kind:bss addr:0x02162ed0
+_ZGVN15ProfileInstanceI19ActorProfileUnkDSBHE8sProfileE kind:bss addr:0x02162cf0
+@13948 kind:bss addr:0x02162cf4
+_ZN15ProfileInstanceI19ActorProfileUnkDSBHE8sProfileE kind:bss addr:0x02162d00
+_ZGVN15ProfileInstanceI19ActorProfileUnkRBDSE8sProfileE kind:bss addr:0x02162dd8
+@13954 kind:bss addr:0x02162ddc
+_ZN15ProfileInstanceI19ActorProfileUnkRBDSE8sProfileE kind:bss addr:0x02162de8
+_ZGVN15ProfileInstanceI19ActorProfileUnkRBD2E8sProfileE kind:bss addr:0x02162ec0
+@13960 kind:bss addr:0x02162ec4
+_ZN15ProfileInstanceI19ActorProfileUnkRBD2E8sProfileE kind:bss addr:0x02162ed0
 data_ov087_02162f34 kind:bss addr:0x02162f34 ambiguous
 data_ov087_02162fa8 kind:bss addr:0x02162fa8
 data_ov087_02162fac kind:bss addr:0x02162fac
-sMapObjectProfileUnkSTSD kind:bss addr:0x02162fb8
+_ZN15ProfileInstanceI23MapObjectProfileUnkSTSDE8sProfileE kind:bss addr:0x02162fb8

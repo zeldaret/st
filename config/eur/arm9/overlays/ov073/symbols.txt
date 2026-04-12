@@ -288,10 +288,10 @@ data_ov073_021646e8 kind:data(any) addr:0x021646e8
 _ZTV19data_ov073_02164700 kind:data(any) addr:0x02164700
 _ZTV19data_ov073_02164724 kind:data(any) addr:0x02164724
 _ZTV19data_ov073_0216478c kind:data(any) addr:0x0216478c
-data_ov073_021647c0 kind:bss addr:0x021647c0
-data_ov073_021647c4 kind:bss addr:0x021647c4
-sActorProfileUnkBDEA kind:bss addr:0x021647d0
+_ZGVN15ProfileInstanceI19ActorProfileUnkBDEAE8sProfileE kind:bss addr:0x021647c0
+@13335 kind:bss addr:0x021647c4
+_ZN15ProfileInstanceI19ActorProfileUnkBDEAE8sProfileE kind:bss addr:0x021647d0
 data_ov073_021647d4 kind:bss addr:0x021647d4
 data_ov073_021648a8 kind:bss addr:0x021648a8
 data_ov073_021648ac kind:bss addr:0x021648ac
-sActorProfileUnkDGPC kind:bss addr:0x021648b8
+_ZN15ProfileInstanceI19ActorProfileUnkDGPCE8sProfileE kind:bss addr:0x021648b8

@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkNICO.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkNICO sActorProfileUnkNICO;
-
-ARM ActorProfileUnkNICO *ActorProfileUnkNICO::GetProfile() {
-    return &sActorProfileUnkNICO;
-}
+ARM DECL_PROFILE(ActorProfileUnkNICO);
 
 ARM Actor *ActorProfileUnkNICO::Create() {
     return new(HeapIndex_2) ActorUnkNICO();

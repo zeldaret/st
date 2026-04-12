@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkSYRN.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkSYRN sActorProfileUnkSYRN;
-
-ARM ActorProfileUnkSYRN *ActorProfileUnkSYRN::GetProfile() {
-    return &sActorProfileUnkSYRN;
-}
+ARM DECL_PROFILE(ActorProfileUnkSYRN);
 
 ARM Actor *ActorProfileUnkSYRN::Create() {
     return new(HeapIndex_2) ActorUnkSYRN();

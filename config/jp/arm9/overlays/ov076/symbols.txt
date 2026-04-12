@@ -73,6 +73,6 @@ data_ov076_02154d14 kind:data(any) addr:0x02154d14
 data_ov076_02154d2c kind:data(any) addr:0x02154d2c
 data_ov076_02154d44 kind:data(any) addr:0x02154d44
 _ZTV19data_ov076_02154d5c kind:data(any) addr:0x02154d5c
-data_ov076_02154dc0 kind:bss addr:0x02154dc0
-data_ov076_02154dc4 kind:bss addr:0x02154dc4
-sActorProfileUnkBGOK kind:bss addr:0x02154dd0
+_ZGVN15ProfileInstanceI19ActorProfileUnkBGOKE8sProfileE kind:bss addr:0x02154dc0
+@33446 kind:bss addr:0x02154dc4
+_ZN15ProfileInstanceI19ActorProfileUnkBGOKE8sProfileE kind:bss addr:0x02154dd0

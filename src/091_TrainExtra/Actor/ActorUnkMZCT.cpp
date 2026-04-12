@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkMZCT.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkMZCT sActorProfileUnkMZCT;
-
-ARM ActorProfileUnkMZCT *ActorProfileUnkMZCT::GetProfile() {
-    return &sActorProfileUnkMZCT;
-}
+ARM DECL_PROFILE(ActorProfileUnkMZCT);
 
 ARM Actor *ActorProfileUnkMZCT::Create() {
     return new(HeapIndex_2) ActorUnkMZCT();

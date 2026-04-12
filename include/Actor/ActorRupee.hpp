@@ -32,43 +32,14 @@ public:
     void func_ov000_02097bec();
 };
 
-struct Actor_c4_stack {
-    unk32 param1;
-    unk32 param2;
-};
-
-class Actor_c4_Base {
+class ActorRupee_c4 : public Actor_c4 {
 public:
-    Actor_c4_Base(void *param1, unk32 param2);
-};
+    ActorRupee_c4(Actor *param1);
 
-class Actor_c4 : public Actor_c4_Base {
-public:
-    /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk16 mUnk_08;
-    /* 08 */ unk16 mUnk_0a;
-    /* 0c */ unk16 mUnk_0c;
-    /* 0c */ unk16 mUnk_0e;
-    /* 10 */ unk16 mUnk_10;
-    /* 10 */ unk16 mUnk_12;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1c */ unk32 mUnk_1c;
-    /* 20 */ Actor *mUnk_20;
-    /* 24 */
-
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2);
-    /* 04 */ virtual void vfunc_04();
-    /* 08 */ virtual void vfunc_08();
-    /* 0c */ virtual void vfunc_0c(unk32 param1);
-    /* 10 */
-
-    Actor_c4(Actor *param1);
-    void func_ov031_020f637c();
-    void func_ov031_020f6374();
-    void func_ov031_020f6384(unk32 param1);
-    unk32 func_ov031_020f62e4(unk32 param1, unk32 param2);
+    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
 };
 
 class ActorRupee : public Actor {
@@ -88,7 +59,7 @@ public:
     /* b8 */ unk32 mUnk_b8;
     /* bc */ unk32 mUnk_bc;
     /* c0 */ unk32 mUnk_c0;
-    /* c4 */ Actor_c4 mUnk_c4;
+    /* c4 */ ActorRupee_c4 mUnk_c4;
     /* e8 */ unk32 mUnk_e8;
     /* ec */ s16 mUnk_ec;
     /* f0 */ UnkStruct_PlayerGet_ec mUnk_f0;

@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkTRED.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkTRED sMapObjectProfileUnkTRED;
-
-ARM MapObjectProfileUnkTRED *MapObjectProfileUnkTRED::GetProfile() {
-    return &sMapObjectProfileUnkTRED;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkTRED);
 
 ARM MapObject *MapObjectProfileUnkTRED::Create() {
     return new(HeapIndex_2) MapObjectUnkTRED();

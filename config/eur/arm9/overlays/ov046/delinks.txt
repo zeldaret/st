@@ -9,28 +9,28 @@ src/046_MapB7/Actor/ActorUnkWTTH.cpp:
     .text       start:0x021234c0 end:0x02124dc8
     .init       start:0x02129cd0 end:0x02129d58
     .ctor       start:0x02129f60 end:0x02129f64
-    .bss        start:0x0212a710 end:0x0212a798
+    .bss        start:0x0212a700 end:0x0212a7e8
 
 src/046_MapB7/Actor/ActorUnkWTH2.cpp:
     .text       start:0x02124dc8 end:0x02126504
     .init       start:0x02129d58 end:0x02129e10
     .ctor       start:0x02129f64 end:0x02129f68
-    .bss        start:0x0212a7f8 end:0x0212a8d0
+    .bss        start:0x0212a7e8 end:0x0212a8d0
 
 src/046_MapB7/Actor/ActorUnkWTH3.cpp:
     .text       start:0x02126504 end:0x02127840
     .init       start:0x02129e10 end:0x02129ec0
     .ctor       start:0x02129f68 end:0x02129f6c
-    .bss        start:0x0212a8e0 end:0x0212a9b8
+    .bss        start:0x0212a8d0 end:0x0212a9b8
 
 src/046_MapB7/Actor/ActorUnkWBTN.cpp:
     .text       start:0x02127840 end:0x02128890
     .init       start:0x02129ec0 end:0x02129f10
     .ctor       start:0x02129f6c end:0x02129f70
-    .bss        start:0x0212a9c8 end:0x0212a9cc
+    .bss        start:0x0212a9b8 end:0x0212aaa0
 
 src/046_MapB7/Actor/ActorUnkWBN2.cpp:
     .text       start:0x02128890 end:0x021295f8
     .init       start:0x02129f10 end:0x02129f60
     .ctor       start:0x02129f70 end:0x02129f74
-    .bss        start:0x0212aab0 end:0x0212aab4
+    .bss        start:0x0212aaa0 end:0x0212aab4

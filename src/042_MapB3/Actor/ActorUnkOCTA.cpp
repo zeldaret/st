@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkOCTA.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkOCTA sActorProfileUnkOCTA;
-
-ARM ActorProfileUnkOCTA *ActorProfileUnkOCTA::GetProfile() {
-    return &sActorProfileUnkOCTA;
-}
+ARM DECL_PROFILE(ActorProfileUnkOCTA);
 
 ARM Actor *ActorProfileUnkOCTA::Create() {
     return new(HeapIndex_2) ActorUnkOCTA();

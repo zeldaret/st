@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkWBTN.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkWBTN sActorProfileUnkWBTN;
-
-ARM ActorProfileUnkWBTN *ActorProfileUnkWBTN::GetProfile() {
-    return &sActorProfileUnkWBTN;
-}
+ARM DECL_PROFILE(ActorProfileUnkWBTN);
 
 ARM Actor *ActorProfileUnkWBTN::Create() {
     return new(HeapIndex_2) ActorUnkWBTN();

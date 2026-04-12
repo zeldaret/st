@@ -9,16 +9,16 @@ src/048_MapC2/Actor/ActorUnkPSBK.cpp:
     .text       start:0x02132600 end:0x02133b4c
     .init       start:0x02138f28 end:0x02138fa0
     .ctor       start:0x02139050 end:0x02139054
-    .bss        start:0x02139544 end:0x0213961c
+    .bss        start:0x02139520 end:0x021396f8
 
 src/048_MapC2/Actor/ActorUnkPBK2.cpp:
     .text       start:0x02133b4c end:0x0213565c
     .init       start:0x02138fa0 end:0x02138ff0
     .ctor       start:0x02139054 end:0x02139058
-    .bss        start:0x02139710 end:0x021397e8
+    .bss        start:0x021396f8 end:0x021397ec
 
 src/048_MapC2/MapObject/MapObjectUnkDRTW.cpp:
     .text       start:0x0213565c end:0x021363fc
     .init       start:0x02138ff0 end:0x0213904c
     .ctor       start:0x02139058 end:0x0213905c
-    .bss        start:0x02139804 end:0x02139824
+    .bss        start:0x021397ec end:0x02139824

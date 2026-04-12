@@ -9,25 +9,25 @@ src/039_MapA8/Actor/ActorUnkZELD.cpp:
     .text       start:0x0211ad8c end:0x0211bbfc
     .init       start:0x0211e920 end:0x0211e970
     .ctor       start:0x0211eba8 end:0x0211ebac
-    .bss        start:0x0211fb30 end:0x0211fbcc
+    .bss        start:0x0211fb20 end:0x0211fc30
 
 src/039_MapA8/Actor/ActorUnkSIRO_SIRS_SRNM_SRSL.cpp:
     .text       start:0x0211bbfc end:0x0211c7c8
     .init       start:0x0211e970 end:0x0211eab8
     .ctor       start:0x0211ebac end:0x0211ebb0
-    .bss        start:0x0211fc48 end:0x0211fe48
+    .bss        start:0x0211fc30 end:0x0211ff14
 
 src/039_MapA8/Actor/ActorUnkRMM4.cpp:
     .text       start:0x0211c8c8 end:0x0211d2a8
     .init       start:0x0211eab8 end:0x0211eb08
     .ctor       start:0x0211ebb0 end:0x0211ebb4
-    .bss        start:0x0211ff24 end:0x0211fffc
+    .bss        start:0x0211ff14 end:0x0211fffc
 
 src/039_MapA8/Actor/ActorUnkZLSS.cpp:
     .text       start:0x0211d2a8 end:0x0211e4a4
     .init       start:0x0211eb08 end:0x0211eb58
     .ctor       start:0x0211ebb4 end:0x0211ebb8
-    .bss        start:0x0212000c end:0x02120050
+    .bss        start:0x0211fffc end:0x02120050
 
 src/039_MapA8/MapObject/MapObjectUnkGTAT.cpp:
     .text       start:0x0211e4a4 end:0x0211e74c

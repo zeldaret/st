@@ -9,46 +9,46 @@ src/038_MapA7/Actor/ActorUnkWWFS.cpp:
     .text       start:0x021190d0 end:0x0211cd98
     .init       start:0x02120a74 end:0x02120b04
     .ctor       start:0x02120d34 end:0x02120d38
-    .bss        start:0x0212149c end:0x021214a0
+    .bss        start:0x02121488 end:0x02121574
 
 src/038_MapA7/Actor/ActorUnkBLBR.cpp:
     .text       start:0x0211cd98 end:0x0211e430
     .init       start:0x02120b04 end:0x02120b54
     .ctor       start:0x02120d38 end:0x02120d3c
-    .bss        start:0x02121584 end:0x0212165c
+    .bss        start:0x02121574 end:0x0212165c
 
 src/038_MapA7/MapObject/MapObjectUnkBLSR.cpp:
     .text       start:0x0211e430 end:0x0211e770
     .init       start:0x02120b54 end:0x02120ba4
     .ctor       start:0x02120d3c end:0x02120d40
-    .bss        start:0x0212166c end:0x0212171c
+    .bss        start:0x0212165c end:0x02121760
 
 src/038_MapA7/MapObject/MapObjectUnkSWBR.cpp:
     .text       start:0x0211e770 end:0x0211ea48
     .init       start:0x02120ba4 end:0x02120bf4
     .ctor       start:0x02120d40 end:0x02120d44
-    .bss        start:0x02121770 end:0x02121844
+    .bss        start:0x02121760 end:0x02121844
 
 src/038_MapA7/Actor/ActorUnkBLBL.cpp:
     .text       start:0x0211ea48 end:0x0211ec64
     .init       start:0x02120bf4 end:0x02120c44
     .ctor       start:0x02120d44 end:0x02120d48
-    .bss        start:0x02121854 end:0x0212192c
+    .bss        start:0x02121844 end:0x0212192c
 
 src/038_MapA7/Actor/ActorUnkGRCF.cpp:
     .text       start:0x0211ec64 end:0x0211ee78
     .init       start:0x02120c44 end:0x02120c94
     .ctor       start:0x02120d48 end:0x02120d4c
-    .bss        start:0x0212193c end:0x02121978
+    .bss        start:0x0212192c end:0x02121978
 
 src/038_MapA7/MapObject/MapObjectUnkFSSN.cpp:
     .text       start:0x0211ee78 end:0x0211f0a0
     .init       start:0x02120c94 end:0x02120ce4
     .ctor       start:0x02120d4c end:0x02120d50
-    .bss        start:0x02121988 end:0x02121a5c
+    .bss        start:0x02121978 end:0x02121a5c
 
 src/038_MapA7/Actor/ActorUnkPLSR.cpp:
     .text       start:0x0211f0a0 end:0x02120980
     .init       start:0x02120ce4 end:0x02120d34
     .ctor       start:0x02120d50 end:0x02120d54
-    .bss        start:0x02121a6c end:0x02121b44
+    .bss        start:0x02121a5c end:0x02121b44

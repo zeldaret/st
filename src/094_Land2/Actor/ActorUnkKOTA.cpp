@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkKOTA.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkKOTA sActorProfileUnkKOTA;
-
-ARM ActorProfileUnkKOTA *ActorProfileUnkKOTA::GetProfile() {
-    return &sActorProfileUnkKOTA;
-}
+ARM DECL_PROFILE(ActorProfileUnkKOTA);
 
 ARM Actor *ActorProfileUnkKOTA::Create() {
     return new(HeapIndex_2) ActorUnkKOTA();

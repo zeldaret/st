@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkETTV.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkETTV sMapObjectProfileUnkETTV;
-
-ARM MapObjectProfileUnkETTV *MapObjectProfileUnkETTV::GetProfile() {
-    return &sMapObjectProfileUnkETTV;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkETTV);
 
 ARM MapObject *MapObjectProfileUnkETTV::Create() {
     return new(HeapIndex_2) MapObjectUnkETTV();

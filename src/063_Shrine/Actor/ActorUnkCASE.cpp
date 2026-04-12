@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkCASE.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkCASE sActorProfileUnkCASE;
-
-ARM ActorProfileUnkCASE *ActorProfileUnkCASE::GetProfile() {
-    return &sActorProfileUnkCASE;
-}
+ARM DECL_PROFILE(ActorProfileUnkCASE);
 
 ARM Actor *ActorProfileUnkCASE::Create() {
     return new(HeapIndex_2) ActorUnkCASE();

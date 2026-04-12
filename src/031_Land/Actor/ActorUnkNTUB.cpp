@@ -3,11 +3,7 @@
 #include "Actor/ActorUnkNTUB.hpp"
 #include "System/SysNew.hpp"
 
-static ActorProfileUnkNTUB sActorProfileUnkNTUB;
-
-ARM ActorProfileUnkNTUB *ActorProfileUnkNTUB::GetProfile() {
-    return &sActorProfileUnkNTUB;
-}
+ARM DECL_PROFILE(ActorProfileUnkNTUB);
 
 ARM Actor *ActorProfileUnkNTUB::Create() {
     return new(HeapIndex_2) ActorUnkNTUB();

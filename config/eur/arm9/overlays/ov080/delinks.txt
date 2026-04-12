@@ -9,19 +9,19 @@ src/080_BossSnow/Actor/ActorUnkICBS.cpp:
     .text       start:0x02150c38 end:0x0215c824
     .init       start:0x0215ed48 end:0x0215f2ac
     .ctor       start:0x0215f3c0 end:0x0215f3c4
-    .bss        start:0x0215fe3c end:0x0215fe40
+    .bss        start:0x0215fe24 end:0x021600c4
 
 src/080_BossSnow/Actor/ActorUnkICBA.cpp:
     .text       start:0x0215c824 end:0x0215e504
     .init       start:0x0215f2ac end:0x0215f320
     .ctor       start:0x0215f3c4 end:0x0215f3c8
-    .bss        start:0x021600d4 end:0x02160118
+    .bss        start:0x021600c4 end:0x021601cc
 
 src/080_BossSnow/MapObject/MapObjectUnkSTSS.cpp:
     .text       start:0x0215e740 end:0x0215e9e0
     .init       start:0x0215f320 end:0x0215f370
     .ctor       start:0x0215f3c8 end:0x0215f3cc
-    .bss        start:0x021601dc end:0x02160244
+    .bss        start:0x021601cc end:0x02160244
 
 src/080_BossSnow/Actor/ActorUnkRBSN.cpp:
     .text       start:0x0215ea0c end:0x0215ec94

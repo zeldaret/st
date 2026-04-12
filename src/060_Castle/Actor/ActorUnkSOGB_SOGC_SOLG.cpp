@@ -5,11 +5,7 @@
 
 // --- Actor SOGB ---
 
-static ActorProfileUnkSOGB sActorProfileUnkSOGB;
-
-ARM ActorProfileUnkSOGB *ActorProfileUnkSOGB::GetProfile() {
-    return &sActorProfileUnkSOGB;
-}
+ARM DECL_PROFILE(ActorProfileUnkSOGB);
 
 ARM Actor *ActorProfileUnkSOGB::Create() {
     return new(HeapIndex_2) ActorUnkSOGB();
@@ -22,11 +18,7 @@ ARM ActorUnkSOGB::ActorUnkSOGB() {}
 
 // --- Actor SOGC ---
 
-static ActorProfileUnkSOGC sActorProfileUnkSOGC;
-
-ARM ActorProfileUnkSOGC *ActorProfileUnkSOGC::GetProfile() {
-    return &sActorProfileUnkSOGC;
-}
+ARM DECL_PROFILE(ActorProfileUnkSOGC);
 
 ARM Actor *ActorProfileUnkSOGC::Create() {
     return new(HeapIndex_2) ActorUnkSOGC();
@@ -39,11 +31,7 @@ ARM ActorUnkSOGC::ActorUnkSOGC() {}
 
 // --- Actor SOLG ---
 
-static ActorProfileUnkSOLG sActorProfileUnkSOLG;
-
-ARM ActorProfileUnkSOLG *ActorProfileUnkSOLG::GetProfile() {
-    return &sActorProfileUnkSOLG;
-}
+ARM DECL_PROFILE(ActorProfileUnkSOLG);
 
 ARM Actor *ActorProfileUnkSOLG::Create() {
     return new(HeapIndex_2) ActorUnkSOLG();

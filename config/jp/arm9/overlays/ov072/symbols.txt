@@ -68,10 +68,10 @@ _ZTV19data_ov072_021547f0 kind:data(any) addr:0x021547f0
 _ZTV19data_ov072_02154814 kind:data(any) addr:0x02154814
 data_ov072_02154878 kind:data(any) addr:0x02154878
 data_ov072_02154884 kind:data(any) addr:0x02154884
-data_ov072_021548a0 kind:bss addr:0x021548a0
-data_ov072_021548a4 kind:bss addr:0x021548a4
-sActorProfileUnkRMM0 kind:bss addr:0x021548b0
+_ZGVN15ProfileInstanceI19ActorProfileUnkRMM0E8sProfileE kind:bss addr:0x021548a0
+@33328 kind:bss addr:0x021548a4
+_ZN15ProfileInstanceI19ActorProfileUnkRMM0E8sProfileE kind:bss addr:0x021548b0
 data_ov072_021548ec kind:bss addr:0x021548ec
 data_ov072_02154988 kind:bss addr:0x02154988
 data_ov072_0215498c kind:bss addr:0x0215498c
-sActorProfileUnkRMM3 kind:bss addr:0x02154998
+_ZN15ProfileInstanceI19ActorProfileUnkRMM3E8sProfileE kind:bss addr:0x02154998

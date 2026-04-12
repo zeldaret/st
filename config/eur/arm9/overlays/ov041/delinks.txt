@@ -9,43 +9,43 @@ src/041_MapB2/Actor/ActorUnkKEYB.cpp:
     .text       start:0x021234c0 end:0x021236a0
     .init       start:0x0212d460 end:0x0212d4b0
     .ctor       start:0x0212d7cc end:0x0212d7d0
-    .bss        start:0x0212e190 end:0x0212e268
+    .bss        start:0x0212e180 end:0x0212e268
 
 src/041_MapB2/Actor/ActorUnkKGDB.cpp:
     .text       start:0x021236a0 end:0x02123b70
     .init       start:0x0212d4b0 end:0x0212d51c
     .ctor       start:0x0212d7d0 end:0x0212d7d4
-    .bss        start:0x0212e278 end:0x0212e350
+    .bss        start:0x0212e268 end:0x0212e350
 
 src/041_MapB2/Actor/ActorUnkKEYT.cpp:
     .text       start:0x02123b70 end:0x0212418c
     .init       start:0x0212d51c end:0x0212d578
     .ctor       start:0x0212d7d4 end:0x0212d7d8
-    .bss        start:0x0212e36c end:0x0212e3b0
+    .bss        start:0x0212e350 end:0x0212e3b0
 
 src/041_MapB2/Actor/ActorUnkKGDN.cpp:
     .text       start:0x0212418c end:0x02124c08
     .init       start:0x0212d578 end:0x0212d5c8
     .ctor       start:0x0212d7d8 end:0x0212d7dc
-    .bss        start:0x0212e3c0 end:0x0212e404
+    .bss        start:0x0212e3b0 end:0x0212e420
 
 src/041_MapB2/Actor/ActorUnkRPMT.cpp:
     .text       start:0x0212a798 end:0x0212b998
     .init       start:0x0212d614 end:0x0212d664
     .ctor       start:0x0212d7e4 end:0x0212d7e8
-    .bss        start:0x0212e430 end:0x0212e46c
+    .bss        start:0x0212e420 end:0x0212e470
 
 src/041_MapB2/MapObject/MapObjectUnkDRBK.cpp:
     .text       start:0x0212b998 end:0x0212c7d0
     .init       start:0x0212d664 end:0x0212d6e4
     .ctor       start:0x0212d7e8 end:0x0212d7ec
-    .bss        start:0x0212e488 end:0x0212e55c
+    .bss        start:0x0212e470 end:0x0212e580
 
 src/041_MapB2/MapObject/MapObjectUnkDRTK.cpp:
     .text       start:0x0212c7d0 end:0x0212cfa8
     .init       start:0x0212d6e4 end:0x0212d758
     .ctor       start:0x0212d7ec end:0x0212d7f0
-    .bss        start:0x0212e590 end:0x0212e664
+    .bss        start:0x0212e580 end:0x0212e664
 
 src/041_MapB2/MapObject/MapObjectUnkDRMC.cpp:
     .text       start:0x0212cfa8 end:0x0212d2c8

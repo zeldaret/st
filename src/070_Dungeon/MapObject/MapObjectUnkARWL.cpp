@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkARWL.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkARWL sMapObjectProfileUnkARWL;
-
-ARM MapObjectProfileUnkARWL *MapObjectProfileUnkARWL::GetProfile() {
-    return &sMapObjectProfileUnkARWL;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkARWL);
 
 ARM MapObject *MapObjectProfileUnkARWL::Create() {
     return new(HeapIndex_2) MapObjectUnkARWL();

@@ -3,11 +3,7 @@
 #include "MapObject/MapObjectUnkRKAG.hpp"
 #include "System/SysNew.hpp"
 
-static MapObjectProfileUnkRKAG sMapObjectProfileUnkRKAG;
-
-ARM MapObjectProfileUnkRKAG *MapObjectProfileUnkRKAG::GetProfile() {
-    return &sMapObjectProfileUnkRKAG;
-}
+ARM DECL_PROFILE(MapObjectProfileUnkRKAG);
 
 ARM MapObject *MapObjectProfileUnkRKAG::Create() {
     return new(HeapIndex_2) MapObjectUnkRKAG();

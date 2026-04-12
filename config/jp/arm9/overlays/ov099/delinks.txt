@@ -8,19 +8,19 @@ src/099_MapLava/Actor/ActorUnkEFWL.cpp:
     .text       start:0x02182c34 end:0x02182fdc
     .init       start:0x02183c50 end:0x02183ca0
     .ctor       start:0x02183d90 end:0x02183d94
-    .bss        start:0x02184130 end:0x02184208
+    .bss        start:0x02184120 end:0x02184208
 
 src/099_MapLava/Actor/ActorUnkEFRL.cpp:
     .text       start:0x02182fdc end:0x02183408
     .init       start:0x02183ca0 end:0x02183cf0
     .ctor       start:0x02183d94 end:0x02183d98
-    .bss        start:0x02184218 end:0x021842f0
+    .bss        start:0x02184208 end:0x021842f0
 
 src/099_MapLava/Actor/ActorUnkVOLV.cpp:
     .text       start:0x02183408 end:0x02183744
     .init       start:0x02183cf0 end:0x02183d40
     .ctor       start:0x02183d98 end:0x02183d9c
-    .bss        start:0x02184300 end:0x021843d8
+    .bss        start:0x021842f0 end:0x021843d8
 
 src/099_MapLava/Actor/ActorUnkE3LV.cpp:
     .text       start:0x02183744 end:0x02183a34
