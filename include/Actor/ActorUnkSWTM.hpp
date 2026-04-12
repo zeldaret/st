@@ -34,11 +34,10 @@ public:
 
     ActorUnkSWTM();
 
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
     /* 4C */ virtual ~ActorUnkSWTM() override;
-
-    /* 18 */ virtual bool vfunc_18(unk32 param1);
-    /* 20 */ virtual void vfunc_20();
-    /* 24 */ virtual void vfunc_24();
 
     void func_ov000_0209af54(unk32 param1);
     bool func_ov000_0209afe4(void);

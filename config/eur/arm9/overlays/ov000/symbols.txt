@@ -2477,7 +2477,7 @@ _ZN19ActorProfileUnkEVIC10GetProfileEv kind:function(arm,size=0xc) addr:0x0209bf
 _ZN19ActorProfileUnkEVIC6CreateEv kind:function(arm,size=0x24) addr:0x0209bf94
 _ZN19ActorProfileUnkEVICC1Ev kind:function(arm,size=0x28) addr:0x0209bfb8
 _ZN12ActorUnkEVICC1Ev kind:function(arm,size=0x34) addr:0x0209bfe0
-_ZN12ActorUnkEVIC19func_ov000_0209c014Ev kind:function(arm,size=0x1c) addr:0x0209c014
+_ZN12ActorUnkEVIC8vfunc_18Ei kind:function(arm,size=0x1c) addr:0x0209c014
 _ZN12ActorUnkEVICD1Ev kind:function(arm,size=0x14) addr:0x0209c030
 _ZN12ActorUnkEVICD0Ev kind:function(arm,size=0x1c) addr:0x0209c044
 _ZN19ActorProfileUnkEVICD1Ev kind:function(arm,size=0x14) addr:0x0209c060
@@ -3679,8 +3679,8 @@ _ZTV19ActorProfileUnkSWTM kind:data(any) addr:0x020b330c
 _ZTV12ActorUnkSWTM kind:data(any) addr:0x020b3330
 data_ov000_020b338c kind:data(any) addr:0x020b338c
 data_ov000_020b33a4 kind:data(any) addr:0x020b33a4
-_ZTV19data_ov000_020b33ac kind:data(any) addr:0x020b33ac
-_ZTV19data_ov000_020b33d0 kind:data(any) addr:0x020b33d0
+_ZTV19ActorProfileUnkEVIC kind:data(any) addr:0x020b33ac
+_ZTV12ActorUnkEVIC kind:data(any) addr:0x020b33d0
 _ZTV19data_ov000_020b342c kind:data(any) addr:0x020b342c
 _ZTV19data_ov000_020b3450 kind:data(any) addr:0x020b3450
 data_ov000_020b34b8 kind:data(any) addr:0x020b34b8

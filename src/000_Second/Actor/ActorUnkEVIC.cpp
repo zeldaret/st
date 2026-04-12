@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkEVIC.hpp"
 #include "System/SysNew.hpp"
 
@@ -12,9 +10,15 @@ ARM Actor *ActorProfileUnkEVIC::Create() {
 ARM ActorProfileUnkEVIC::ActorProfileUnkEVIC() :
     ActorProfile(ActorId_EVIC) {}
 
-ARM ActorUnkEVIC::ActorUnkEVIC() {}
+ARM ActorUnkEVIC::ActorUnkEVIC() {
+    this->mUnk_10C = 0;
+}
 
-ARM void ActorUnkEVIC::func_ov000_0209c014(void) {}
+ARM bool ActorUnkEVIC::vfunc_18(unk32 param1) {
+    this->mUnk_094.func_ov000_0206082c(0x5D, this->mUnk_6c);
+    return true;
+}
 
 ARM ActorUnkEVIC::~ActorUnkEVIC() {}
+
 ARM ActorProfileUnkEVIC::~ActorProfileUnkEVIC() {}

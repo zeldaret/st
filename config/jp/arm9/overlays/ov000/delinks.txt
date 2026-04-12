@@ -44,6 +44,7 @@ src/000_Second/Actor/ActorUnkEVIC.cpp:
     .text       start:0x0209d754 end:0x0209d840
     .init       start:0x020b2098 end:0x020b20e8
     .ctor       start:0x020b3120 end:0x020b3124
+    .data       start:0x020b4bac end:0x020b4c2c
     .bss        start:0x020b74a8 end:0x020b74f4
 
 src/000_Second/Actor/ActorUnkEFIK.cpp:
