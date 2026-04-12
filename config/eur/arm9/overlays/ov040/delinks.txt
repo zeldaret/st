@@ -15,13 +15,13 @@ src/040_MapB1/Actor/ActorUnkZSTG.cpp:
     .text       start:0x0212a7c4 end:0x0212ab2c
     .init       start:0x0212ded8 end:0x0212df28
     .ctor       start:0x0212e494 end:0x0212e498
-    .bss        start:0x0212f3f8 end:0x0212f4fc
+    .bss        start:0x0212f3f8 end:0x0212f444
 
 src/040_MapB1/Actor/ActorUnkCAWB_CRFP_FOMA_FOMB_FOMC_FOMR_FOMS_FOPD_GOCP_GORP_NCCA_NCCS_WAMA.cpp:
     .text       start:0x0212abe8 end:0x0212c788
     .init       start:0x0212df28 end:0x0212e278
     .ctor       start:0x0212e498 end:0x0212e49c
-    .bss        start:0x0212f4fc end:0x02130034
+    .bss        start:0x0212f444 end:0x02130034
 
 src/040_MapB1/Actor/ActorUnkYKAP_YKCP_YKEP.cpp:
     .text       start:0x0212c788 end:0x0212ccb0
