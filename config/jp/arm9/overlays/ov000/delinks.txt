@@ -49,10 +49,12 @@ src/000_Second/Actor/ActorUnkEVIC.cpp:
     .bss        start:0x020b74a8 end:0x020b74f4
 
 src/000_Second/Actor/ActorUnkEFIK.cpp:
+    complete
     .text       start:0x0209d840 end:0x0209db14
     .init       start:0x020b20e8 end:0x020b2138
     .ctor       start:0x020b3124 end:0x020b3128
-    .bss        start:0x020b74f4 end:0x020b7928
+    .data       start:0x020b4c2c end:0x020b4cb0
+    .bss        start:0x020b74f4 end:0x020b7540
 
 src/000_Second/MapObject/MapObjectUnkSWST.cpp:
     .text       start:0x0209f4a4 end:0x0209fbbc
