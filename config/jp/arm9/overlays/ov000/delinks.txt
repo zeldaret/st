@@ -41,6 +41,7 @@ src/000_Second/Actor/ActorUnkSWTM.cpp:
     .bss        start:0x020b7458 end:0x020b74a4
 
 src/000_Second/Actor/ActorUnkEVIC.cpp:
+    complete
     .text       start:0x0209d754 end:0x0209d840
     .init       start:0x020b2098 end:0x020b20e8
     .ctor       start:0x020b3120 end:0x020b3124
