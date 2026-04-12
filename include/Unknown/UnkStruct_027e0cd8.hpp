@@ -92,8 +92,8 @@ public:
     /* 0c */ UnkStruct_027e0cd8_0c *mUnk_0c;
     /* 10 */
 
-    unk32 func_ov000_02081e30(u16 param1, u8 param2);
-    void func_ov000_02081d7c(unk16 param1, unk32 param2, unk32 param3);
+    unk32 func_ov000_02081e30(unk32 param1, unk32 param2);
+    void func_ov000_02081d7c(unk32 param1, unk32 param2, unk32 param3);
     void func_ov000_02081ecc(unk16 param1, unk32 param2);
 };
 

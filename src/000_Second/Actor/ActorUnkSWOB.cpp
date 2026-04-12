@@ -56,6 +56,8 @@ ARM void ActorUnkSWOB::func_ov000_0209a9b4(unk32 param1) {
             this->mUnk_52 = -1;
             this->mUnk_50 = 0;
             break;
+        default:
+            break;
     }
 }
 
@@ -74,48 +76,48 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
 
             s16 unk_78 = this->mUnk_78;
             if (unk_78 > 0) {
-                data_027e0cd8->func_ov000_02081d7c(unk_78 - 1, this->mUnk_75, 1);
+                data_027e0cd8->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_75, 1);
             }
             break;
-        case 2:
+        case 2: {
+            Vec3p temp;
+            Vec3p vec2;
+            Vec3p vec;
+            Actor_5c_temp AStack_7c;
+            u16 auStack_80[4];
+            int j;
+            u32 i;
+
             data_ov000_020b5214.func_ov000_0206db44(0xA3);
+            temp.coords = data_027e0ce0->func_01fff148(0)->coords;
+            vec2.x      = temp.x;
+            vec2.y      = temp.y + FLOAT_TO_Q20(3.0f);
+            vec2.z      = temp.z;
 
-            {
-                Vec3p temp;
-                Vec3p vec2;
-                Vec3p vec;
-                Actor_5c_temp AStack_7c;
-                u16 auStack_80[4];
-                int j;
-                u32 i;
+            AStack_7c.mUnk_28 = 0;
+            AStack_7c.func_ov000_020975f8();
 
-                temp.coords = data_027e0ce0->func_01fff148(0)->coords;
-                vec2.x      = temp.x;
-                vec2.y      = temp.y + 0x3000;
-                vec2.z      = temp.z;
+            for (j = 0, i = 0; i < ARRAY_LEN(this->mUnk_A4); i++) {
+                if (gActorManager->func_01fff3b4(this->mUnk_A4[i].mUnk_00) == NULL) {
+                    this->mUnk_A4[i].mUnk_00 = 0;
 
-                AStack_7c.mUnk_28 = 0;
-                AStack_7c.func_ov000_020975f8();
+                    vec.x = INT_TO_Q20(gRandom.Next32(0, 11) - 5);
+                    vec.y = 0;
+                    vec.z = INT_TO_Q20(gRandom.Next32(0, 11) - 5);
 
-                for (j = 0, i = 0; i < ARRAY_LEN(this->mUnk_A4); i++) {
-                    if (gActorManager->func_01fff3b4(this->mUnk_A4[i].mUnk_00) == NULL) {
-                        this->mUnk_A4[i].mUnk_00 = 0;
+                    Vec3p_Add(&vec, &vec2, &vec);
 
-                        vec.x = INT_TO_Q20(gRandom.Next32(0, 11) - 5);
-                        vec.y = 0;
-                        vec.z = INT_TO_Q20(gRandom.Next32(0, 11) - 5);
-
-                        Vec3p_Add(&vec, &vec2, &vec);
-
-                        if (j < 10) {
-                            func_01ffedac(auStack_80, &vec);
-                            func_01ffb9cc(&vec2, &vec);
-                            i--;
-                            j++;
-                        }
+                    if (j < 10) {
+                        func_01ffedac(auStack_80, &vec);
+                        func_01ffb9cc(&vec2, &vec);
+                        i--;
+                        j++;
                     }
                 }
             }
+            break;
+        }
+        default:
             break;
     }
 }

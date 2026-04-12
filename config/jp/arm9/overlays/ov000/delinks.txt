@@ -37,7 +37,8 @@ src/000_Second/Actor/ActorUnkSWTM.cpp:
     .text       start:0x0209c474 end:0x0209c9f8
     .init       start:0x020b2048 end:0x020b2098
     .ctor       start:0x020b311c end:0x020b3120
-    .bss        start:0x020b7458 end:0x020b74a8
+    .data       start:0x020b4b0c end:0x020b4b8c
+    .bss        start:0x020b7458 end:0x020b74a4
 
 src/000_Second/Actor/ActorUnkEVIC.cpp:
     .text       start:0x0209d754 end:0x0209d840

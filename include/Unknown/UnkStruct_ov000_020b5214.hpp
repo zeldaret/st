@@ -48,6 +48,7 @@ public:
     void func_ov000_0206d6b4(unk32 param1, unk32 param2);
     void func_ov000_0206d83c(unk32 param1);
     void func_ov000_0206db44(unk32 param1); // play sfx?
+    void func_ov000_0206e7e8(unk32 param1);
 };
 
 extern UnkStruct_ov000_020b5214 data_ov000_020b5214;
