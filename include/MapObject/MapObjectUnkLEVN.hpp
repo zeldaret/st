@@ -10,11 +10,11 @@
 class MapObjectUnkLEVN : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkLEVN();
 
-    /* 4C */ virtual ~MapObjectUnkLEVN() override;
+    /* 30 */ virtual ~MapObjectUnkLEVN() override;
 
     void func_ov064_0215a260(void);
 };

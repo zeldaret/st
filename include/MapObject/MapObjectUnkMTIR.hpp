@@ -10,11 +10,11 @@
 class MapObjectUnkMTIR : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkMTIR();
 
-    /* 4C */ virtual ~MapObjectUnkMTIR() override;
+    /* 30 */ virtual ~MapObjectUnkMTIR() override;
 
     void func_ov067_0215be74(void);
     void func_ov067_0215bec0(void);

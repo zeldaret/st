@@ -10,11 +10,11 @@
 class MapObjectUnkDRRS : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkDRRS();
 
-    /* 4C */ virtual ~MapObjectUnkDRRS() override;
+    /* 30 */ virtual ~MapObjectUnkDRRS() override;
 
     void func_ov086_0215e778(void);
     void func_ov086_0215e78c(void);

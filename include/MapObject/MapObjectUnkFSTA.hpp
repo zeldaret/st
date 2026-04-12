@@ -10,11 +10,11 @@
 class MapObjectUnkFSTA : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkFSTA();
 
-    /* 4C */ virtual ~MapObjectUnkFSTA() override;
+    /* 30 */ virtual ~MapObjectUnkFSTA() override;
 
     void func_ov040_0212d450(void);
     void func_ov040_0212d64c(void);

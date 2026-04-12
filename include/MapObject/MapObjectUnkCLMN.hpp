@@ -10,11 +10,11 @@
 class MapObjectUnkCLMN : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkCLMN();
 
-    /* 4C */ virtual ~MapObjectUnkCLMN() override;
+    /* 30 */ virtual ~MapObjectUnkCLMN() override;
 
     void func_ov094_0217195c(void);
 };

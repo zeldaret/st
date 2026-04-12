@@ -10,11 +10,11 @@
 class MapObjectUnkGTRK : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkGTRK();
 
-    /* 4C */ virtual ~MapObjectUnkGTRK() override;
+    /* 30 */ virtual ~MapObjectUnkGTRK() override;
 
     void func_ov077_0215af58(void);
     void func_ov077_0215b018(void);

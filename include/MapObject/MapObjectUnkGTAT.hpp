@@ -10,11 +10,11 @@
 class MapObjectUnkGTAT : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkGTAT();
 
-    /* 4C */ virtual ~MapObjectUnkGTAT() override;
+    /* 30 */ virtual ~MapObjectUnkGTAT() override;
 
     void func_ov039_0211c7ac(void);
     void func_ov039_0211c960(void);

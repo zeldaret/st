@@ -10,11 +10,11 @@
 class MapObjectUnkGRSS : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkGRSS();
 
-    /* 4C */ virtual ~MapObjectUnkGRSS() override;
+    /* 30 */ virtual ~MapObjectUnkGRSS() override;
 
     void func_ov031_021010e0(void);
     void func_ov031_02101170(void);

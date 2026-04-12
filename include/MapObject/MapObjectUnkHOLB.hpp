@@ -10,11 +10,11 @@
 class MapObjectUnkHOLB : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkHOLB();
 
-    /* 4C */ virtual ~MapObjectUnkHOLB() override;
+    /* 30 */ virtual ~MapObjectUnkHOLB() override;
 
     void func_ov062_0215bb90(void);
     void func_ov062_0215bbe0(void);

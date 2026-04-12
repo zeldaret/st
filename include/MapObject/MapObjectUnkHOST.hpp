@@ -10,11 +10,11 @@
 class MapObjectUnkHOST : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkHOST();
 
-    /* 4C */ virtual ~MapObjectUnkHOST() override;
+    /* 30 */ virtual ~MapObjectUnkHOST() override;
 
     void func_ov058_0214f838(void);
     void func_ov058_0214f888(void);

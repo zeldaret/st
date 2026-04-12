@@ -10,11 +10,11 @@
 class MapObjectUnkFRWL : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkFRWL();
 
-    /* 4C */ virtual ~MapObjectUnkFRWL() override;
+    /* 30 */ virtual ~MapObjectUnkFRWL() override;
 
     void func_ov070_02149248(void);
     void func_ov070_021494a8(void);

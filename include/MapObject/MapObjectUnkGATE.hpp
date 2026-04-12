@@ -10,11 +10,11 @@
 class MapObjectUnkGATE : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkGATE();
 
-    /* 4C */ virtual ~MapObjectUnkGATE() override;
+    /* 30 */ virtual ~MapObjectUnkGATE() override;
 
     void func_ov031_02100890(void);
     void func_ov031_02100a28(void);
