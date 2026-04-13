@@ -29,7 +29,7 @@ from:0x020d8ad0 kind:load to:0x02110651 module:overlay(31)
 from:0x020d8ad4 kind:load to:0x0211296c module:overlay(31)
 from:0x020d8ad8 kind:load to:0x02112958 module:overlay(31)
 from:0x020d8adc kind:load to:0x02112a50 module:overlay(31)
-from:0x020d8ae0 kind:load to:0x02043f40 module:main
+from:0x020d8ae0 kind:load to:0x02043f38 add:0x8 module:main
 from:0x020d8b10 kind:arm_call to:0x0200f218 module:main
 from:0x020d8b38 kind:arm_call to:0x0200b578 module:main
 from:0x020d8b48 kind:load to:0x02110640 module:overlay(31)

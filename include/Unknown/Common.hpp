@@ -2,6 +2,7 @@
 
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkFileSystem.hpp"
 #include "global.h"
 #include "nitro/math.h"
 #include "nns/text.h"
@@ -766,17 +767,6 @@ public:
     void func_02015460(const char *param1, void *param2, unk32 param3);
 };
 
-class UnkSystem4 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */
-
-    ~UnkSystem4();
-};
-
 class UnkStruct2 {
 public:
     /* 00 */ unk8 pad[0x10];
@@ -791,9 +781,9 @@ struct UnkResult {
     void *mUnk_00;
     void *mUnk_04;
     void *mUnk_08;
-    UnkSystem4 mUnk_0C;
-    UnkSystem4 mUnk_1C;
-    UnkSystem4 mUnk_2C;
+    UnkFileSystem3 mUnk_0C;
+    UnkFileSystem3 mUnk_1C;
+    UnkFileSystem3 mUnk_2C;
 
     UnkResult();
     UnkResult(const char *path);

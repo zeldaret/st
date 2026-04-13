@@ -2058,7 +2058,7 @@ from:0x020d3ff0 kind:load to:0x020d9c08 module:overlay(24)
 from:0x020d3ff4 kind:load to:0x027e09a0 module:dtcm
 from:0x020d3ff8 kind:load to:0x020d9c10 module:overlay(24)
 from:0x020d3ffc kind:load to:0x020d9c28 module:overlay(24)
-from:0x020d4000 kind:load to:0x02045484 module:main
+from:0x020d4000 kind:load to:0x0204547c add:0x8 module:main
 from:0x020d40b4 kind:arm_call to:0x02011f3c module:main
 from:0x020d40c8 kind:arm_call to:0x020d4120 module:overlay(24)
 from:0x020d40f8 kind:arm_call to:0x02011ff4 module:main

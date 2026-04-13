@@ -4611,7 +4611,7 @@ from:0x02105f30 kind:arm_call_thumb to:0x0201568c module:main
 from:0x02105f3c kind:load to:0x027e09a4 module:dtcm
 from:0x02105f40 kind:load to:0x027e09a0 module:dtcm
 from:0x02105f44 kind:load to:0x02136750 module:overlay(26)
-from:0x02105f48 kind:load to:0x02043f40 module:main
+from:0x02105f48 kind:load to:0x02043f38 add:0x8 module:main
 from:0x02106078 kind:arm_call to:0x020c6770 module:overlay(24)
 from:0x02106090 kind:arm_call_thumb to:0x020b8a5c module:overlay(1)
 from:0x021060e4 kind:load to:0x027e09a4 module:dtcm

@@ -129,7 +129,7 @@ config.libs = [
             Object("Main/Game/Game.cpp"),
             Object("Main/Player/TouchControl.cpp"),
             Object("Main/System/OverlayManager.cpp"),
-            Object("Main/UnkStruct_ov000_020b4f84_00_Base.cpp"),
+            Object("Main/UnkFileSystem.cpp"),
             Object("Main/System/Random.cpp"),
             Object("Main/Game/GameModeLinkListNode.cpp"),
             Object("Main/func_02017ea4.cpp"),
