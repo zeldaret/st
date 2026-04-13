@@ -91,6 +91,7 @@ THUMB void *UnkFileSystem3::vfunc_08(unk32 param1) {
     return this->mpFile;
 }
 
+// https://decomp.me/scratch/Y2SB8
 THUMB UnkFileSystem2::UnkFileSystem2(void *param1, unk32 param2) :
     UnkFileSystem1(param1) {
     this->mUnk_14 = param2;
