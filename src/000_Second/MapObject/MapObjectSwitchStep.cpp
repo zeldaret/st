@@ -93,9 +93,9 @@ ARM MapObjectSwitchStep::MapObjectSwitchStep() :
     if (ptr != NULL) {
         u8 *temp_r1 = (u8 *) ptr + 8;
         u32 *var_r0;
+        u8 zero = 0;
 
-        //! TODO: fake match?
-        if (temp_r1 != NULL && (void *) ptr->mUnk_09 > (void *) 0) {
+        if (temp_r1 != NULL && ptr->mUnk_09 > zero) {
             var_r0 = (u32 *) (temp_r1 + ptr->mUnk_0E + 4);
         } else {
             var_r0 = NULL;
