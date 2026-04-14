@@ -4,6 +4,7 @@
 #include "types.h"
 #include "versions.h"
 
+#include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
 #include "nitro/math.h"
@@ -48,22 +49,6 @@ public:
     UnkStruct_PlayerGet_74(UnkStruct_ov000_0208f820 *param1) {
         this->mUnk_14 = param1;
     }
-};
-
-class UnkStruct_PlayerGet_8c {
-public:
-    // /* 00 */ unk32 *mUnk_00;
-
-    /* 00 */ virtual ~UnkStruct_PlayerGet_8c();
-    /* 08 */ virtual void vfunc_08(unk32 param1); //! TODO: name symbol func_ov000_02057bf4
-    /* 0c */ virtual void vfunc_0c(); //! TODO: name symbol func_01ffc57c
-    /* 10 */ virtual void vfunc_10(); //! TODO: name symbol func_ov000_02057dc8
-    /* 14 */ virtual void vfunc_14(); //! TODO: name symbol func_ov000_02057e44
-    /* 18 */ virtual void vfunc_18(); //! TODO: name symbol func_ov000_02057ea8
-    /* 1c */ virtual void vfunc_1c(); //! TODO: name symbol func_ov000_02057c34
-    /* 20 */ virtual void vfunc_20(); //! TODO: name symbol func_ov000_02057d84
-
-    UnkStruct_PlayerGet_8c(unk32 param1);
 };
 
 class UnkStruct_PlayerGet_ec {
@@ -122,29 +107,7 @@ public:
     /* 070 */ u8 mUnk_72; // probably bools
     /* 070 */ u8 mUnk_73; // probably bools
     /* 074 */ UnkStruct_PlayerGet_74 mUnk_74;
-    /* 08c */ UnkStruct_PlayerGet_8c mUnk_8c;
-    /* 090 */ unk32 *mUnk_90;
-    /* 094 */ unk32 mUnk_94;
-    /* 098 */ unk32 *mUnk_98;
-    /* 09c */ unk32 mUnk_9c;
-    /* 0a0 */ unk32 *mUnk_a0;
-    /* 0a4 */ unk32 mUnk_a4;
-    /* 0a8 */ unk32 *mUnk_a8;
-    /* 0ac */ unk32 mUnk_ac;
-    /* 0b0 */ unk32 *mUnk_b0;
-    /* 0b4 */ unk32 mUnk_b4;
-    /* 0b8 */ unk32 mUnk_b8;
-    /* 0bc */ unk32 mUnk_bc;
-    /* 0c0 */ unk32 mUnk_c0;
-    /* 0c4 */ unk32 mUnk_c4;
-    /* 0c8 */ unk32 mUnk_c8;
-    /* 0cc */ unk32 mUnk_cc;
-    /* 0d0 */ unk32 mUnk_d0;
-    /* 0d4 */ unk32 mUnk_d4;
-    /* 0d8 */ unk32 mUnk_d8;
-    /* 0dc */ unk32 mUnk_dc;
-    /* 0e0 */ unk32 mUnk_e0;
-    /* 0e4 */ unk32 mUnk_e4;
+    /* 08c */ UnkSystem4 mUnk_8c;
     /* 0e8 */ unk32 mUnk_e8;
     /* 0ec */ UnkStruct_PlayerGet_ec mUnk_ec[4];
     /* 0fc */ void *mUnk_fc;

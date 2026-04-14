@@ -1,9 +1,8 @@
 #pragma once
 
 #include "Actor/Actor.hpp"
+#include "Unknown/Common.hpp"
 #include "types.h"
-
-typedef void (*ActorUnk_ov000_020a8bb0_a4UnkCallback)(void);
 
 class ActorUnk_vfunc_b0 {
 public:
@@ -44,17 +43,9 @@ public:
     ~ActorUnk_ov000_020a8bb0_94();
 };
 
-class ActorUnk_ov000_020a8bb0_a4_00 {
-public:
-    ActorUnk_ov000_020a8bb0_a4_00();
-    ~ActorUnk_ov000_020a8bb0_a4_00();
-    void func_ov000_02057c38(unk32 param1, unk32 param2);
-    void func_ov000_0209a7b8(void *param1, ActorUnk_ov000_020a8bb0_a4UnkCallback param2);
-};
-
 class ActorUnk_ov000_020a8bb0_a4 {
 public:
-    /* 00 */ ActorUnk_ov000_020a8bb0_a4_00 *mUnk_00;
+    /* 00 */ UnkSystem4 *mUnk_00;
     /* 08 */ unk16 mUnk_04;
     /* 08 */ unk16 mUnk_06;
     /* 0a */ unk32 mUnk_08;
@@ -144,7 +135,7 @@ public:
     /* bc */
 
     void func_ov000_020a8ae0(q20 param1);
-    ActorUnk_ov000_020a8bb0(ActorUnk_ov000_020a8bb0_a4_00 *param1, unk32 param2);
+    ActorUnk_ov000_020a8bb0(UnkSystem4 *param1, unk32 param2);
     unk32 func_ov000_020a8db0();
     unk32 func_ov000_020a8dd0();
     void func_ov000_020a8df0(ActorRef param1, unk32 param2);

@@ -27,7 +27,7 @@ UnkStruct_02186240 data_ov110_02186240;
 
 extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
-extern "C" void func_01ffc5a0(UnkStruct_PlayerGet_8c *, unk32, u16, void *, unk32);
+extern "C" void func_01ffc5a0(UnkSystem4 *, unk32, u16, void *, unk32);
 extern "C" void func_ov000_0208f820();
 extern "C" unk32 func_ov024_020d5354(unk32 *, u16 *);
 extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, Vec3p *);
@@ -776,7 +776,7 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
         case 0x3A:
             break;
         case 0x3B:
-            if (param3 != 0 && this->mUnk_54.mItemId != ItemId_Nothing && this->mUnk_90 != 0) {
+            if (param3 != 0 && this->mUnk_54.mItemId != ItemId_Nothing && this->mUnk_8c.mUnk_04 != 0) {
                 Vec3p_Add(this->mUnk_34, (Vec3p *) &data_ov110_021861ec.mUnk_00, &auStack_18);
                 func_ov000_02058fc4(data_027e0958, &this->mUnk_74, &auStack_18);
             }
