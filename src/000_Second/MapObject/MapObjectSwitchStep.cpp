@@ -12,7 +12,7 @@ extern "C" unk32 func_0200f218(unk32, const char *);
 static const char data_ov000_020af550[] = "switch";
 static const char data_ov000_020af560[] = "switchB";
 
-UnkStruct_ov019_020d24c8_28_258_00 MapObjectUnkSWST_data_020b6118(0, 0);
+UnkStruct_ov019_020d24c8_28_258_00 MapObjectSwitchStep_data_020b6118(0, 0);
 
 ARM DECL_PROFILE(MapObjectProfileSwitchStep);
 
@@ -21,7 +21,7 @@ ARM MapObject *MapObjectProfileSwitchStep::Create() {
 }
 
 ARM MapObjectProfileSwitchStep::MapObjectProfileSwitchStep() :
-    MapObjectProfileUnkSWST_Base(MapObjectId_SwitchStep) {
+    MapObjectProfileSwitchStep_Base(MapObjectId_SwitchStep) {
     this->mUnk_D4.mUnk_08 = 0x2DC04009;
 
     this->mUnk_E0.x = -FLOAT_TO_Q20(0.5f);
@@ -141,7 +141,7 @@ ARM bool MapObjectSwitchStep::vfunc_00(void) {
     }
 
     if (data_027e09a4->mSceneIndex >= SceneIndex_battle01 && data_027e09a4->mSceneIndex < SceneIndex_Max) {
-        MapObjectUnkSWST_data_020b6118.func_ov000_0205fc20(0x78, 0x0C, NULL, NULL);
+        MapObjectSwitchStep_data_020b6118.func_ov000_0205fc20(0x78, 0x0C, NULL, NULL);
         SET_FLAG(this->mFlags, MapObjFlag_5);
     }
 
@@ -230,14 +230,15 @@ ARM void MapObjectSwitchStep::vfunc_18(void) {
         stack_struct sp8;
         unk32 sp4;
 
-        sp4 = this->mUnk_38;
+        //! TODO: fake match?
+        sp4 = *(u32 *) &this->mUnk_38;
 
         if (data_027e0998->vfunc_00(&this->mPos, &sp10, &sp4)) {
             sp8.mUnk_06 = 0x00;
             MI_CpuFill32(0, &sp8, sizeof(sp8));
             sp8.mUnk_05 = -1;
             sp8.mUnk_06 |= 0x01;
-            data_0204af1c.func_0201aa44(&MapObjectUnkSWST_data_020b6118, &sp10, 2, &sp8);
+            data_0204af1c.func_0201aa44(&MapObjectSwitchStep_data_020b6118, &sp10, 2, &sp8);
         }
     }
 }

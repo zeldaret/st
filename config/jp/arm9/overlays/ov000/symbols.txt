@@ -4063,7 +4063,7 @@ data_ov000_020b7540 kind:bss addr:0x020b7540
 data_ov000_020b7544 kind:bss addr:0x020b7544
 data_ov000_020b754c kind:bss addr:0x020b754c
 _ZGVN15ProfileInstanceI26MapObjectProfileSwitchStepE8sProfileE kind:bss addr:0x020b7924
-MapObjectUnkSWST_data_020b6118 kind:bss(size=0x8) addr:0x020b7928
+MapObjectSwitchStep_data_020b6118 kind:bss(size=0x8) addr:0x020b7928
 @1056 kind:bss addr:0x020b7934 local
 _ZN15ProfileInstanceI26MapObjectProfileSwitchStepE8sProfileE kind:bss addr:0x020b7940
 _ZGVN15ProfileInstanceI26MapObjectProfileMiniBlocksE8sProfileE kind:bss addr:0x020b7a38
