@@ -40,6 +40,7 @@ public:
     /* 0C */
 
     MapObjectProfile_D4() {}
+    ~MapObjectProfile_D4() {}
 
     /* 00 */ virtual void vfunc_00(void);
     /* 04 */ virtual void vfunc_04(void);
@@ -70,6 +71,7 @@ public:
     /* 20 */
 
     MapObjectProfile(MapObjectId mapObjId); // func_ov000_0209c828
+    ~MapObjectProfile();
 
     // data_ov000_020b3524
     /* 00 */ virtual MapObject *Create() = 0;
@@ -118,13 +120,30 @@ public:
 
 class MapObjectProfile_Derived2_20_Base_20 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
+    /* 00 */ void *mUnk_00;
+    /* 04 */ void *mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */
 
     MapObjectProfile_Derived2_20_Base_20(unk32 param1, unk32 param2, unk32 param3, unk32 param4,
                                          unk32 param5); // func_020153fc
+};
+
+class MapObjectProfile_Derived2_20_Base_50 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ u8 mUnk_08;
+    /* 08 */ u8 mUnk_09;
+    /* 08 */ u8 mUnk_0A;
+    /* 08 */ u8 mUnk_0B;
+    /* 0C */ unk8 mUnk_0C;
+    /* 0C */ unk8 mUnk_0D;
+    /* 0C */ u16 mUnk_0E;
+    /* 10 */
+
+    MapObjectProfile_Derived2_20_Base_50();
+    ~MapObjectProfile_Derived2_20_Base_50();
 };
 
 class MapObjectProfile_Derived2_20_Base_54 {
@@ -142,10 +161,10 @@ public:
 class MapObjectProfile_Derived2_20_Base {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
+    /* 04 */ const char *mUnk_04;
+    /* 08 */ void *mUnk_08;
+    /* 0C */ void *mUnk_0C;
+    /* 10 */ void *mUnk_10;
     /* 14 */ unk8 mUnk_14; // bool?
     /* 15 */ unk8 mUnk_15; // bool?
     /* 16 */ unk8 mUnk_16; // bool?
@@ -154,7 +173,7 @@ public:
     /* 20 */ MapObjectProfile_Derived2_20_Base_20 mUnk_20;
     /* 2C */ UnkFileSystem3 mUnk_2C;
     /* 3C */ UnkFileSystem5 mUnk_3C;
-    /* 50 */ unk32 mUnk_50;
+    /* 50 */ MapObjectProfile_Derived2_20_Base_50 *mUnk_50;
     /* 54 */ MapObjectProfile_Derived2_20_Base_54 mUnk_54[4];
     /* 94 */
 
@@ -184,23 +203,25 @@ public:
 
     // data_ov000_020b3568
     /* 00 */ virtual ~MapObjectProfile_Derived2_20() override;
+
+    unk32 func_ov000_02058a24();
+    unk32 func_ov000_02058a84(unk32 param1, const char *param2);
 };
 
 class MapObjectProfile_Derived2 : public MapObjectProfile {
 public:
     /* 00 (base) */
     /* 20 */ MapObjectProfile_Derived2_20 mUnk_20;
-    /* D4 */ MapObjectProfile_D4 mUnk_D4;
-    /* E0 */ Vec3p mUnk_E0;
-    /* EC */ Vec3p mUnk_EC;
-    /* F8 */
+    /* D4 */
 
     MapObjectProfile_Derived2(MapObjectId mapObjId1, MapObjectId mapObjId2); // func_ov000_0209c9a8
+    ~MapObjectProfile_Derived2();
 
     // data_ov000_020b3508
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
+    /* 10 */ virtual void vfunc_10() override;
 };
 
 typedef MapObjectProfile *(*GetMapObjectProfile)();

@@ -9,7 +9,7 @@
 #include "nitro/math.h"
 #include "types.h"
 
-typedef u32 MapObjFlags;
+typedef u16 MapObjFlags;
 enum MapObjFlag_ {
     MapObjFlag_Alive = FLAG(0, 0),
     MapObjFlag_1     = FLAG(0, 1),
@@ -57,28 +57,31 @@ public:
     /* 1A */ unk8 mUnk_1A;
     /* 1B */ unk8 mUnk_1B;
     /* 1C */ MapObjFlags mFlags[1];
-    /* 20 */ unk32 mUnk_20;
-    /* 20 */ unk32 mUnk_24;
-    /* 20 */ unk32 mUnk_28;
-    /* 20 */ unk32 mUnk_2C;
-    /* 20 */ unk32 mUnk_30;
-    /* 20 */ unk32 mUnk_34;
+    /* 1E */ unk16 mUnk_1E;
+    /* 20 */ u16 mUnk_20;
+    /* 22 */ u16 mUnk_22;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ unk32 mUnk_28;
+    /* 2C */ unk32 mUnk_2C;
+    /* 30 */ unk32 mUnk_30;
+    /* 34 */ unk32 mUnk_34;
     /* 38 */ unk32 mUnk_38;
     /* 3C */ MapObjectProfile *mpProfile;
     /* 40 */
 
-    /* 00 */ virtual void vfunc_00();
+    // data_ov000_020b3590
+    /* 00 */ virtual bool vfunc_00();
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
-    /* 0c */ virtual unk8 vfunc_0c();
+    /* 0C */ virtual unk8 vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual bool vfunc_18();
-    /* 1c */ virtual void vfunc_1c();
+    /* 18 */ virtual void vfunc_18();
+    /* 1C */ virtual void vfunc_1C();
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28();
-    /* 2c */ virtual void vfunc_2c();
+    /* 2C */ virtual void vfunc_2C();
     /* 30 */ virtual ~MapObject();
     /* 38 */
 
@@ -86,6 +89,23 @@ public:
 
     MapObjectId GetMapObjectId();
 
+    void func_ov000_0209d0bc();
+    void func_ov000_0209d114();
+    void func_ov000_0209d12c();
+    void func_ov000_0209d144();
+    void func_ov000_0209d22c();
+    void func_ov000_0209d274();
+    unk32 func_ov000_0209d29c(unk32 param1);
+    void func_ov000_0209d2c4(unk32 param1, unk32 param2);
+    void func_ov000_0209d2f0();
+    void func_ov000_0209d3b4();
+    void func_ov000_0209d434();
+    void func_ov000_0209d518();
+    void func_ov000_0209d54c();
+    void func_ov000_0209d5c8();
+    void func_ov000_0209d614();
+    void func_ov000_0209d668();
     void func_ov000_0209d6ac(Vec3p *param1);
+
     void func_ov031_02103878();
 };
