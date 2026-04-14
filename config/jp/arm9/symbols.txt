@@ -2284,7 +2284,7 @@ data_0203fe14 kind:data(any) addr:0x0203fe14
 data_0203fe58 kind:data(any) addr:0x0203fe58
 data_0203fea4 kind:data(any) addr:0x0203fea4
 data_0203feaa kind:data(any) addr:0x0203feaa
-data_0203feb0 kind:data(any) addr:0x0203feb0
+gSinCosTable kind:data(any) addr:0x0203feb0
 data_0203ffb0 kind:data(any) addr:0x0203ffb0
 data_02040105 kind:data(any) addr:0x02040105
 data_020401b0 kind:data(any) addr:0x020401b0

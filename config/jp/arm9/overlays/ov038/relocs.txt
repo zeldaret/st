@@ -523,7 +523,7 @@ from:0x02120298 kind:load to:0x02122f10 module:overlay(38)
 from:0x0212029c kind:load to:0x02122ef4 module:overlay(38)
 from:0x021202b4 kind:arm_call to:0x0209e7a4 module:overlay(0)
 from:0x021202e0 kind:load to:0x02122f38 module:overlay(38)
-from:0x021202e4 kind:load to:0x020b3168 module:overlay(0)
+from:0x021202e4 kind:load to:0x020b3160 add:0x8 module:overlay(0)
 from:0x02120328 kind:arm_call to:0x0200f05c module:main
 from:0x02120370 kind:arm_call to:0x0200f05c module:main
 from:0x021203dc kind:arm_call to:0x0200f05c module:main

@@ -994,7 +994,7 @@ from:0x02160600 kind:load to:0x02162e24 module:overlay(60)
 from:0x02160604 kind:load to:0x02162e08 module:overlay(60)
 from:0x02160618 kind:arm_call to:0x0209cfe0 module:overlay(0)
 from:0x0216065c kind:load to:0x02162e4c module:overlay(60)
-from:0x02160660 kind:load to:0x020b1968 module:overlay(0)
+from:0x02160660 kind:load to:0x020b1960 add:0x8 module:overlay(0)
 from:0x02160690 kind:arm_call to:0x01ffedf4 module:itcm
 from:0x021606ac kind:load to:0x027e0cd8 module:dtcm
 from:0x021606b0 kind:load to:0x021640e0 module:overlay(60)

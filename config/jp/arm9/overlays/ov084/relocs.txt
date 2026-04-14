@@ -1049,7 +1049,7 @@ from:0x0215c6f8 kind:arm_call to:0x0203e690 module:main
 from:0x0215c710 kind:arm_call to:0x0203e690 module:main
 from:0x0215c748 kind:load to:0x021653d0 add:0x8 module:overlay(84)
 from:0x0215c74c kind:load to:0x02165f80 module:overlay(84)
-from:0x0215c750 kind:load to:0x020b3168 module:overlay(0)
+from:0x0215c750 kind:load to:0x020b3160 add:0x8 module:overlay(0)
 from:0x0215c754 kind:load to:0x020b4000 module:overlay(0)
 from:0x0215c758 kind:load to:0x0215c760 module:overlay(84)
 from:0x0215c75c kind:load to:0x0215c798 module:overlay(84)

@@ -65,7 +65,9 @@ public:
     /* 2C */ unk32 mUnk_2C;
     /* 30 */ unk32 mUnk_30;
     /* 34 */ unk32 mUnk_34;
-    /* 38 */ unk32 mUnk_38;
+    /* 38 */ unk8 mUnk_38;
+    /* 38 */ unk8 mUnk_39;
+    /* 3A */ Vec2b mUnk_3A;
     /* 3C */ MapObjectProfile *mpProfile;
     /* 40 */
 

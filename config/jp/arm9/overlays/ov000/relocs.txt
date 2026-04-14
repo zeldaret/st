@@ -7303,8 +7303,8 @@ from:0x0209fbe4 kind:arm_call to:0x0209fc38 module:overlay(0)
 from:0x0209fc04 kind:arm_call to:0x0209e310 module:overlay(0)
 from:0x0209fc30 kind:load to:0x020b4f44 add:0x8 module:overlay(0)
 from:0x0209fc40 kind:arm_call to:0x0209e7a4 module:overlay(0)
-from:0x0209fc6c kind:load to:0x020b4f74 module:overlay(0)
-from:0x0209fc70 kind:load to:0x020b3168 module:overlay(0)
+from:0x0209fc6c kind:load to:0x020b4f6c add:0x8 module:overlay(0)
+from:0x0209fc70 kind:load to:0x020b3160 add:0x8 module:overlay(0)
 from:0x0209fc94 kind:arm_call to:0x0209e49c module:overlay(0)
 from:0x0209fcc4 kind:arm_call to:0x01ffedf4 module:itcm
 from:0x0209fe44 kind:arm_call to:0x01ff9638 module:itcm

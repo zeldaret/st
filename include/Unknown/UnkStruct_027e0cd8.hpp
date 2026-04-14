@@ -80,6 +80,7 @@ public:
     /* 28 */ virtual q20 vfunc_28(Vec3p *param1, unk32 param2, unk32 param3);
     /* 2c */ virtual void vfunc_2c();
 
+    q20 func_01ffedf4(Vec2b *pPos);
     unk32 func_ov000_02080180(void *param1);
     bool func_ov000_02080658(unk32 param1, UnkStruct_SceneChange1 *param2);
     void func_ov000_020808f4(void *param1, void *param2, unk32 param3);

@@ -951,3 +951,21 @@ public:
     void func_ov000_020577a4(unk32 param1, unk32 param2, unk32 param3);
     void func_ov000_020577f8(unk32 param1);
 };
+
+// related to UnkSystem5?
+class UnkSystem6 {
+public:
+    /* 00 (vtable) */
+    /* 04 */
+
+    UnkSystem6() {}
+
+    // data_ov000_020b1968
+    /* 00 */ virtual ~UnkSystem6();
+    /* 08 */ virtual void vfunc_08(unk32 param1);
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10();
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2);
+    /* 18 */ virtual void vfunc_18();
+    /* 1C */
+};

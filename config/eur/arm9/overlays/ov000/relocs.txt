@@ -7302,8 +7302,8 @@ from:0x0209e420 kind:arm_call to:0x0209e474 module:overlay(0)
 from:0x0209e440 kind:arm_call to:0x0209cb4c module:overlay(0)
 from:0x0209e46c kind:load to:0x020b3744 add:0x8 module:overlay(0)
 from:0x0209e47c kind:arm_call to:0x0209cfe0 module:overlay(0)
-from:0x0209e4a8 kind:load to:0x020b3774 module:overlay(0)
-from:0x0209e4ac kind:load to:0x020b1968 module:overlay(0)
+from:0x0209e4a8 kind:load to:0x020b376c add:0x8 module:overlay(0)
+from:0x0209e4ac kind:load to:0x020b1960 add:0x8 module:overlay(0)
 from:0x0209e4d0 kind:arm_call to:0x0209ccd8 module:overlay(0)
 from:0x0209e500 kind:arm_call to:0x01ffedf4 module:itcm
 from:0x0209e680 kind:arm_call to:0x01ff9638 module:itcm
