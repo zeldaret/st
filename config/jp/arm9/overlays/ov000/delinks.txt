@@ -64,7 +64,7 @@ src/000_Second/MapObject/MapObjectSwitchStep.cpp:
     .data       start:0x020b4e78 end:0x020b4f44
     .bss        start:0x020b7924 end:0x020b7a38
 
-src/000_Second/MapObject/MapObjectUnkBLCM.cpp:
+src/000_Second/MapObject/MapObjectMiniBlocks.cpp:
     .text       start:0x0209fbbc end:0x0209ff2c
     .init       start:0x020b21bc end:0x020b220c
     .ctor       start:0x020b3130 end:0x020b3134

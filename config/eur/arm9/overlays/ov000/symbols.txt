@@ -2614,15 +2614,15 @@ _ZN19MapObjectSwitchStep8vfunc_18Ev kind:function(arm,size=0xd8) addr:0x0209e2b4
 _ZN19MapObjectSwitchStep19func_ov000_0209e38cEv kind:function(arm,size=0x3c) addr:0x0209e38c
 _ZN22MapObjectSwitchStep_40D0Ev kind:function(arm,size=0x1c) addr:0x0209e3c8
 _ZN26MapObjectProfileSwitchStepD1Ev kind:function(arm,size=0x14) addr:0x0209e3e4
-_ZN23MapObjectProfileUnkBLCM10GetProfileEv kind:function(arm,size=0xc) addr:0x0209e3f8
-_ZN23MapObjectProfileUnkBLCM6CreateEv kind:function(arm,size=0x24) addr:0x0209e404
-_ZN23MapObjectProfileUnkBLCMC1Ev kind:function(arm,size=0x4c) addr:0x0209e428
-_ZN16MapObjectUnkBLCMC1Ev kind:function(arm,size=0x3c) addr:0x0209e474
-_ZN16MapObjectUnkBLCM19func_ov000_0209e4b0Ev kind:function(arm,size=0x1fc) addr:0x0209e4b0
-_ZN16MapObjectUnkBLCM19func_ov000_0209e6acEv kind:function(arm,size=0x60) addr:0x0209e6ac
-_ZN16MapObjectUnkBLCMD1Ev kind:function(arm,size=0x20) addr:0x0209e70c
-_ZN16MapObjectUnkBLCMD0Ev kind:function(arm,size=0x28) addr:0x0209e72c
-_ZN23MapObjectProfileUnkBLCMD1Ev kind:function(arm,size=0x14) addr:0x0209e754
+_ZN26MapObjectProfileMiniBlocks10GetProfileEv kind:function(arm,size=0xc) addr:0x0209e3f8
+_ZN26MapObjectProfileMiniBlocks6CreateEv kind:function(arm,size=0x24) addr:0x0209e404
+_ZN26MapObjectProfileMiniBlocksC1Ev kind:function(arm,size=0x4c) addr:0x0209e428
+_ZN19MapObjectMiniBlocksC1Ev kind:function(arm,size=0x3c) addr:0x0209e474
+_ZN19MapObjectMiniBlocks19func_ov000_0209e4b0Ev kind:function(arm,size=0x1fc) addr:0x0209e4b0
+_ZN19MapObjectMiniBlocks19func_ov000_0209e6acEv kind:function(arm,size=0x60) addr:0x0209e6ac
+_ZN19MapObjectMiniBlocksD1Ev kind:function(arm,size=0x20) addr:0x0209e70c
+_ZN19MapObjectMiniBlocksD0Ev kind:function(arm,size=0x28) addr:0x0209e72c
+_ZN26MapObjectProfileMiniBlocksD1Ev kind:function(arm,size=0x14) addr:0x0209e754
 _ZN19func_ov000_0209e768D0Ev kind:function(arm,size=0x1c) addr:0x0209e768
 func_ov000_0209e784 kind:function(arm,size=0x3cc) addr:0x0209e784
 func_ov000_0209eb50 kind:function(arm,size=0x38) addr:0x0209eb50
@@ -3353,7 +3353,7 @@ __sinit_ActorEventIcon.cpp kind:function(arm,size=0x50) addr:0x020b0888 local
 __sinit_ActorUnkEFIK.cpp kind:function(arm,size=0x50) addr:0x020b08d8 local
 __sinit_ov000_020b0928 kind:function(arm,size=0x28) addr:0x020b0928
 __sinit_MapObjectSwitchStep.cpp kind:function(arm,size=0x5c) addr:0x020b0950
-__sinit_MapObjectUnkBLCM.cpp kind:function(arm,size=0x50) addr:0x020b09ac
+__sinit_MapObjectMiniBlocks.cpp kind:function(arm,size=0x50) addr:0x020b09ac
 __sinit_ov000_020b09fc kind:function(arm,size=0x9e8) addr:0x020b09fc
 __sinit_ov000_020b13e4 kind:function(arm,size=0x408) addr:0x020b13e4
 __sinit_ov000_020b17ec kind:function(arm,size=0x34) addr:0x020b17ec
@@ -3388,7 +3388,7 @@ __sinit_ov000_020b18a0 kind:function(arm,size=0x14) addr:0x020b18a0
 .p__sinit_ActorUnkEFIK.cpp kind:data(word) addr:0x020b1914 local
 .p__sinit_ov000_020b0928 kind:data(word) addr:0x020b1918
 .p__sinit_MapObjectSwitchStep.cpp kind:data(word) addr:0x020b191c
-.p__sinit_MapObjectUnkBLCM.cpp kind:data(word) addr:0x020b1920
+.p__sinit_MapObjectMiniBlocks.cpp kind:data(word) addr:0x020b1920
 .p__sinit_ov000_020b09fc kind:data(word) addr:0x020b1924
 .p__sinit_ov000_020b13e4 kind:data(word) addr:0x020b1928
 .p__sinit_ov000_020b17ec kind:data(word) addr:0x020b192c
@@ -4066,9 +4066,9 @@ _ZGVN15ProfileInstanceI26MapObjectProfileSwitchStepE8sProfileE kind:bss addr:0x0
 MapObjectUnkSWST_data_020b6118 kind:bss(size=0x8) addr:0x020b6118
 @1056 kind:bss addr:0x020b6124 local
 _ZN15ProfileInstanceI26MapObjectProfileSwitchStepE8sProfileE kind:bss addr:0x020b6130
-_ZGVN15ProfileInstanceI23MapObjectProfileUnkBLCME8sProfileE kind:bss addr:0x020b6228
+_ZGVN15ProfileInstanceI26MapObjectProfileMiniBlocksE8sProfileE kind:bss addr:0x020b6228
 @10063 kind:bss addr:0x020b622c
-_ZN15ProfileInstanceI23MapObjectProfileUnkBLCME8sProfileE kind:bss addr:0x020b6238
+_ZN15ProfileInstanceI26MapObjectProfileMiniBlocksE8sProfileE kind:bss addr:0x020b6238
 data_ov000_020b62a0 kind:bss addr:0x020b62a0
 data_ov000_020b62a4 kind:bss addr:0x020b62a4
 gSaveManager kind:bss addr:0x020b62a8
