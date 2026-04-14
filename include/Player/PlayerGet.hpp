@@ -108,7 +108,6 @@ public:
     /* 070 */ u8 mUnk_73; // probably bools
     /* 074 */ UnkStruct_PlayerGet_74 mUnk_74;
     /* 08c */ UnkSystem4 mUnk_8c;
-    /* 0e8 */ unk32 mUnk_e8;
     /* 0ec */ UnkStruct_PlayerGet_ec mUnk_ec[4];
     /* 0fc */ void *mUnk_fc;
     /* 100 */
