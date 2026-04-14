@@ -2593,23 +2593,23 @@ func_ov000_0209f440 kind:function(arm,size=0x4) addr:0x0209f440
 func_ov000_0209f444 kind:function(arm,size=0x18) addr:0x0209f444
 _ZN19func_ov000_0209f45cD1Ev kind:function(arm,size=0x20) addr:0x0209f45c
 _ZN19func_ov000_0209f47cD0Ev kind:function(arm,size=0x28) addr:0x0209f47c
-_ZN23MapObjectProfileUnkSWST10GetProfileEv kind:function(arm,size=0xc) addr:0x0209f4a4
-_ZN23MapObjectProfileUnkSWST6CreateEv kind:function(arm,size=0x24) addr:0x0209f4b0
-_ZN23MapObjectProfileUnkSWSTC1Ev kind:function(arm,size=0x94) addr:0x0209f4d4
-_ZN19MapObjectUnkSWST_40C1Ev kind:function(arm,size=0x3c) addr:0x0209f568
-_ZN19MapObjectUnkSWST_4019func_ov000_0209dde0Ev kind:function(arm,size=0x30) addr:0x0209f5a4
-_ZN19MapObjectUnkSWST_408vfunc_1CEP19UnkSystem4_vfunc_1C kind:function(arm,size=0x90) addr:0x0209f5d4
-_ZN16MapObjectUnkSWSTC1Ev kind:function(arm,size=0xfc) addr:0x0209f664
-_ZN19MapObjectUnkSWST_40D1Ev kind:function(arm,size=0x14) addr:0x0209f760
-_ZN16MapObjectUnkSWSTD1Ev kind:function(arm,size=0x58) addr:0x0209f774
-_ZN16MapObjectUnkSWSTD0Ev kind:function(arm,size=0x60) addr:0x0209f7cc
-_ZN16MapObjectUnkSWST8vfunc_00Ev kind:function(arm,size=0xb4) addr:0x0209f82c
-_ZN16MapObjectUnkSWST19func_ov000_0209e11cEii kind:function(arm,size=0x164) addr:0x0209f8e0
-_ZN16MapObjectUnkSWST8vfunc_20Ev kind:function(arm,size=0x34) addr:0x0209fa44
-_ZN16MapObjectUnkSWST8vfunc_18Ev kind:function(arm,size=0xd8) addr:0x0209fa78
-_ZN16MapObjectUnkSWST19func_ov000_0209e38cEv kind:function(arm,size=0x3c) addr:0x0209fb50
-_ZN19MapObjectUnkSWST_40D0Ev kind:function(arm,size=0x1c) addr:0x0209fb8c
-_ZN23MapObjectProfileUnkSWSTD1Ev kind:function(arm,size=0x14) addr:0x0209fba8
+_ZN26MapObjectProfileSwitchStep10GetProfileEv kind:function(arm,size=0xc) addr:0x0209f4a4
+_ZN26MapObjectProfileSwitchStep6CreateEv kind:function(arm,size=0x24) addr:0x0209f4b0
+_ZN26MapObjectProfileSwitchStepC1Ev kind:function(arm,size=0x94) addr:0x0209f4d4
+_ZN22MapObjectSwitchStep_40C1Ev kind:function(arm,size=0x3c) addr:0x0209f568
+_ZN22MapObjectSwitchStep_4019func_ov000_0209dde0Ev kind:function(arm,size=0x30) addr:0x0209f5a4
+_ZN22MapObjectSwitchStep_408vfunc_1CEP19UnkSystem4_vfunc_1C kind:function(arm,size=0x90) addr:0x0209f5d4
+_ZN19MapObjectSwitchStepC1Ev kind:function(arm,size=0xfc) addr:0x0209f664
+_ZN22MapObjectSwitchStep_40D1Ev kind:function(arm,size=0x14) addr:0x0209f760
+_ZN19MapObjectSwitchStepD1Ev kind:function(arm,size=0x58) addr:0x0209f774
+_ZN19MapObjectSwitchStepD0Ev kind:function(arm,size=0x60) addr:0x0209f7cc
+_ZN19MapObjectSwitchStep8vfunc_00Ev kind:function(arm,size=0xb4) addr:0x0209f82c
+_ZN19MapObjectSwitchStep19func_ov000_0209e11cEii kind:function(arm,size=0x164) addr:0x0209f8e0
+_ZN19MapObjectSwitchStep8vfunc_20Ev kind:function(arm,size=0x34) addr:0x0209fa44
+_ZN19MapObjectSwitchStep8vfunc_18Ev kind:function(arm,size=0xd8) addr:0x0209fa78
+_ZN19MapObjectSwitchStep19func_ov000_0209e38cEv kind:function(arm,size=0x3c) addr:0x0209fb50
+_ZN22MapObjectSwitchStep_40D0Ev kind:function(arm,size=0x1c) addr:0x0209fb8c
+_ZN26MapObjectProfileSwitchStepD1Ev kind:function(arm,size=0x14) addr:0x0209fba8
 _ZN23MapObjectProfileUnkBLCM10GetProfileEv kind:function(arm,size=0xc) addr:0x0209fbbc
 _ZN23MapObjectProfileUnkBLCM6CreateEv kind:function(arm,size=0x24) addr:0x0209fbc8
 _ZN23MapObjectProfileUnkBLCMC1Ev kind:function(arm,size=0x4c) addr:0x0209fbec
@@ -3352,7 +3352,7 @@ __sinit_ActorUnkSWTM.cpp kind:function(arm,size=0x50) addr:0x020b2048
 __sinit_ActorEventIcon.cpp kind:function(arm,size=0x50) addr:0x020b2098 local
 __sinit_ActorUnkEFIK.cpp kind:function(arm,size=0x50) addr:0x020b20e8 local
 __sinit_ov000_020b2138 kind:function(arm,size=0x28) addr:0x020b2138
-__sinit_MapObjectUnkSWST.cpp kind:function(arm,size=0x5c) addr:0x020b2160
+__sinit_MapObjectSwitchStep.cpp kind:function(arm,size=0x5c) addr:0x020b2160
 __sinit_MapObjectUnkBLCM.cpp kind:function(arm,size=0x50) addr:0x020b21bc
 __sinit_ov000_020b220c kind:function(arm,size=0x9e8) addr:0x020b220c
 __sinit_ov000_020b2bf4 kind:function(arm,size=0x408) addr:0x020b2bf4
@@ -3387,7 +3387,7 @@ __sinit_ov000_020b30b0 kind:function(arm,size=0x14) addr:0x020b30b0
 .p__sinit_ActorEventIcon.cpp kind:data(word) addr:0x020b3120 local
 .p__sinit_ActorUnkEFIK.cpp kind:data(word) addr:0x020b3124 local
 .p__sinit_ov000_020b2138 kind:data(word) addr:0x020b3128
-.p__sinit_MapObjectUnkSWST.cpp kind:data(word) addr:0x020b312c
+.p__sinit_MapObjectSwitchStep.cpp kind:data(word) addr:0x020b312c
 .p__sinit_MapObjectUnkBLCM.cpp kind:data(word) addr:0x020b3130
 .p__sinit_ov000_020b220c kind:data(word) addr:0x020b3134
 .p__sinit_ov000_020b2bf4 kind:data(word) addr:0x020b3138
@@ -3698,11 +3698,11 @@ data_ov000_020b4d90 kind:data(any) addr:0x020b4d90
 data_ov000_020b4dd0 kind:data(any) addr:0x020b4dd0
 data_ov000_020b4e30 kind:data(any) addr:0x020b4e30
 data_ov000_020b4e3c kind:data(any) addr:0x020b4e3c
-_ZTV23MapObjectProfileUnkSWST kind:data(any) addr:0x020b4e78
-_ZTV28MapObjectProfileUnkSWST_Base kind:data(any) addr:0x020b4e94
+_ZTV26MapObjectProfileSwitchStep kind:data(any) addr:0x020b4e78
+_ZTV31MapObjectProfileSwitchStep_Base kind:data(any) addr:0x020b4e94
 _ZTV19MapObjectProfile_D4 kind:data(any) addr:0x020b4eb0
-_ZTV19MapObjectUnkSWST_40 kind:data(any) addr:0x020b4ed8
-_ZTV16MapObjectUnkSWST kind:data(any) addr:0x020b4f04
+_ZTV22MapObjectSwitchStep_40 kind:data(any) addr:0x020b4ed8
+_ZTV19MapObjectSwitchStep kind:data(any) addr:0x020b4f04
 data_ov000_020b4f4c kind:data(any) addr:0x020b4f44
 data_ov000_020b4f74 kind:data(any) addr:0x020b4f74
 data_ov000_020b4fac kind:data(any) addr:0x020b4fac
@@ -4062,10 +4062,10 @@ _ZN15ProfileInstanceI19ActorProfileUnkEFIKE8sProfileE kind:bss addr:0x020b7504
 data_ov000_020b7540 kind:bss addr:0x020b7540
 data_ov000_020b7544 kind:bss addr:0x020b7544
 data_ov000_020b754c kind:bss addr:0x020b754c
-_ZGVN15ProfileInstanceI23MapObjectProfileUnkSWSTE8sProfileE kind:bss addr:0x020b7924
+_ZGVN15ProfileInstanceI26MapObjectProfileSwitchStepE8sProfileE kind:bss addr:0x020b7924
 MapObjectUnkSWST_data_020b6118 kind:bss(size=0x8) addr:0x020b7928
 @1056 kind:bss addr:0x020b7934 local
-_ZN15ProfileInstanceI23MapObjectProfileUnkSWSTE8sProfileE kind:bss addr:0x020b7940
+_ZN15ProfileInstanceI26MapObjectProfileSwitchStepE8sProfileE kind:bss addr:0x020b7940
 _ZGVN15ProfileInstanceI23MapObjectProfileUnkBLCME8sProfileE kind:bss addr:0x020b7a38
 @30062 kind:bss addr:0x020b7a3c
 _ZN15ProfileInstanceI23MapObjectProfileUnkBLCME8sProfileE kind:bss addr:0x020b7a48
