@@ -69,7 +69,7 @@ extern q4 data_02041964[];
 extern q4 data_0203f964[];
 extern q4 data_0203feb0[];
 extern "C" void func_01ffb714(Vec3p *, Vec3p *, void *);
-extern "C" void func_01ff9638(void *, unk32);
+extern "C" void func_01ff9638(void *, s16);
 extern "C" q20 func_01ffb800(void *);
 extern "C" void func_01ff9770(void *);
 extern "C" void func_ov000_02072fd0(void *);
