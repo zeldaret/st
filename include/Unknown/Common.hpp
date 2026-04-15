@@ -470,6 +470,7 @@ public:
 
 class UnkSystem2_UnkSubSystem1_Base {
 public:
+    /* 00 (vtable) */
     /* 04 */ GameModeLinkList<UnkSystem2_UnkSubSystem1_Base> mUnk_04;
     /* 0C */ void *mUnk_0C;
     /* 10 */ unk32 mButtonID;

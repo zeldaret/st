@@ -1544,20 +1544,22 @@ ARM void FileSelectMain::func_ov019_020cb2dc() {
     this->mUnk_0B24.func_ov000_02062f30();
 }
 
-struct struct_stack_020cb324 {
-    unk32 mUnk_00;
-    unk8 mUnk_04;
-    unk8 mUnk_05;
-    unk16 mUnk_06;
+struct stack_struct {
+    /* 00 */ unk16 mUnk_00;
+    /* 02 */ unk16 mUnk_02;
+    /* 04 */ unk8 mUnk_04;
+    /* 05 */ unk8 mUnk_05;
+    /* 06 */ u16 mUnk_06;
+    /* 08 */
 };
 
 // non-matching
 ARM void FileSelectMain::func_ov019_020cb324() {
     Vec2s local_34;
     Vec2s local_30;
-    struct_stack_020cb324 auStack_24;
-    Vec2s sStack_1c;
-    Vec2s sStack_18;
+    stack_struct auStack_24;
+    volatile Vec2s sStack_1c;
+    volatile Vec2s sStack_18;
 
     this->mUnk_0160.func_ov000_02062f30();
     this->GetUnk03E0().func_ov019_020cbc0c();
@@ -1582,17 +1584,17 @@ ARM void FileSelectMain::func_ov019_020cb324() {
 
     auStack_24.mUnk_06 = 0;
     MI_CpuFill32(0, &auStack_24, sizeof(auStack_24));
-    auStack_24.mUnk_05 = 0xFF;
+    auStack_24.mUnk_05 = -1;
     auStack_24.mUnk_06 |= 0x04;
 
     local_30.x = this->mUnk_1144.mUnk_5C.x + sStack_18.x;
     local_30.y = this->mUnk_1144.mUnk_5C.y + sStack_18.y;
-    data_0204af1c.func_0201aad0(&this->mUnk_1144, &local_30, 0, &auStack_24);
+    data_0204af1c.func_0201aad0(&this->mUnk_1144, (void *) &local_30, 0, &auStack_24);
     // data_0204af1c.func_0201aad0(&this->mUnk_1144,&local_30,0, 0);
 
     local_34.x = this->mUnk_155C.mUnk_5C.x + sStack_1c.x;
     local_34.y = this->mUnk_155C.mUnk_5C.y + sStack_1c.y;
-    data_0204af1c.func_0201aad0(&this->mUnk_155C, &local_34, 0, &auStack_24);
+    data_0204af1c.func_0201aad0(&this->mUnk_155C, (void *) &local_34, 0, &auStack_24);
     // data_0204af1c.func_0201aad0(&this->mUnk_155C,&local_34,0, 0);
 }
 
