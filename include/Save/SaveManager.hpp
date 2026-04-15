@@ -254,13 +254,10 @@ public:
     void func_ov019_020d15cc();
 };
 
-class SaveSub17_03 {
-public:
+struct SaveSub17_03 {
     /* 00 */ u8 mUnk_00;
     /* 01 */ u8 mUnk_01;
     /* 02 */
-
-    SaveSub17_03() {}
 };
 
 class SaveSub17 {
