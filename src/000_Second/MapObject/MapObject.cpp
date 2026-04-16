@@ -15,6 +15,7 @@ extern "C" void func_01ffb714(Vec3p *, Vec3p *, void *);
 extern "C" void func_01ffb9cc(Vec3p *, Vec3p *);
 extern "C" u16 func_01ffbbe0(q20 x, q20 z);
 extern "C" void func_01ffecdc(unk32 param1, Cylinder *param2);
+extern "C" bool func_01ffd768(unk32, void *, void *, unk8);
 
 extern "C" void func_ov000_020973f4(void *, void *, u32, void *, int); //! TODO: solve oddity
 
@@ -62,10 +63,54 @@ ARM bool MapObject::vfunc_00() {
 
 ARM bool MapObject::vfunc_04() {}
 
-ARM void MapObject::func_ov000_0209d0bc() {}
-ARM void MapObject::func_ov000_0209d114() {}
-ARM void MapObject::func_ov000_0209d12c() {}
-ARM void MapObject::func_ov000_0209d144() {}
+ARM void MapObject::func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx) {
+    Vec3p pos;
+    Vec2p out;
+
+    UnkStruct_027e0cd8_10 *t = data_027e0cd8->mUnk_10;
+    pos.coords               = thisx->mPos.coords;
+    t->func_01fff6d0(&pos, (q20 *) &out.y, (q20 *) &out.x);
+
+    Vec2p temp;
+    temp.y    = out.x;
+    temp.x    = out.y;
+    param1->x = temp.x;
+    param1->y = temp.y;
+}
+
+ARM bool MapObject::func_ov000_0209d114() {
+    bool result[2];
+    MapObject::func_ov000_0209d0bc((Vec2b *) &result, this);
+    return result[0];
+}
+
+ARM bool MapObject::func_ov000_0209d12c() {
+    bool result[2];
+    MapObject::func_ov000_0209d0bc((Vec2b *) &result, this);
+    return result[1];
+}
+
+ARM bool MapObject::func_ov000_0209d144(Vec2s *param1, unk32 param2, unk32 param3) {
+    if (this->mUnk_10 != NULL) {
+        u32 stack[5];
+
+        stack[3] = 0;
+        stack[0] = 0;
+        stack[1] = 0;
+        stack[2] = 0;
+
+        this->vfunc_2C((Vec3p *) &stack);
+        unk8 value = this->mpProfile->mUnk_04[param2];
+        Vec2s stack2;
+
+        stack2.x = param1->x;
+        stack2.y = param1->y;
+
+        return func_01ffd768(param3, &stack, &stack2, value);
+    }
+
+    return false;
+}
 
 ARM bool MapObject::vfunc_1C() {
     return true;
@@ -201,6 +246,7 @@ struct TempStruct {
     void func_ov000_020975f8();
 };
 
+// non-matching
 ARM void MapObject::func_ov000_0209d54c(unk32 param1, u16 param2, Vec3p *param3, s16 param4, u16 param5) {
     TempStruct local_4c;
     local_4c.mUnk_28 = 0;

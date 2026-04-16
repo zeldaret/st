@@ -147,11 +147,9 @@ public:
 
     MapObjectId GetMapObjectId();
 
-    void func_ov000_0209d0bc();
-    void func_ov000_0209d114();
-    void func_ov000_0209d12c();
-    void func_ov000_0209d144();
-    static void func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2);
+    bool func_ov000_0209d114();
+    bool func_ov000_0209d12c();
+    bool func_ov000_0209d144(Vec2s *param1, unk32 param2, unk32 param3);
     void func_ov000_0209d274(unk32 param1);
     unk32 func_ov000_0209d29c(unk32 param1);
     void func_ov000_0209d2c4(unk32 param1, unk32 param2);
@@ -166,4 +164,7 @@ public:
     void func_ov000_0209d6ac(Vec3p *param1);
 
     void func_ov031_02103878();
+
+    static void func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx);
+    static void func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2);
 };

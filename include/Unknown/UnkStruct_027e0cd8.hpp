@@ -88,13 +88,22 @@ public:
     void func_ov000_020801b0(Vec2b *param1, unk32 param2, unk32 param3);
 };
 
+class UnkStruct_027e0cd8_10 {
+public:
+    /* 00 */ unk32 mUnk_00;
+
+    void func_01fff6d0(Vec3p *param1, s32 *param2, s32 *param3);
+};
+
 class UnkStruct_027e0cd8 {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 *mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0c */ UnkStruct_027e0cd8_0c *mUnk_0c;
-    /* 10 */
+    /* 0C */ UnkStruct_027e0cd8_0c *mUnk_0c;
+    /* 10 */ UnkStruct_027e0cd8_10 *mUnk_10;
+    /* 14 */ STRUCT_PAD(0x14, 0x4C);
+    /* 4C */
 
     unk32 func_ov000_02081e30(unk32 param1, unk32 param2);
     void func_ov000_02081d7c(unk32 param1, unk32 param2, unk32 param3);
