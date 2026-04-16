@@ -1337,9 +1337,15 @@ config.libs = [
     LibCPP(
         "libcpp",
         [
-            Object("__register_global_object.c")
+            Object("__register_global_object.c"),
         ]
     ),
+    NitroLib(
+        "nitro",
+        [
+            Object("g3d/sbc.c"),
+        ]
+    )
 ]
 
 

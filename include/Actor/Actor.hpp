@@ -7,9 +7,9 @@
 #include "System/SysNew.hpp"
 #include "flags.h"
 #include "global.h"
-#include "nitro/math.h"
 #include "types.h"
 #include "versions.h"
+#include <nitro/math.h>
 
 // some functions use thumb mode on the japanese version (only in overlay 40?)
 #if IS_JP

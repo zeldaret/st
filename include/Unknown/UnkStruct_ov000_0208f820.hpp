@@ -5,7 +5,7 @@
 
 #include "Item/ItemManager.hpp"
 #include "System/SysNew.hpp"
-#include "nitro/math.h"
+#include <nitro/math.h>
 
 class UnkStruct_ov000_0208f820_14 {
 public:

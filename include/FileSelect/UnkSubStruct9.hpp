@@ -4,8 +4,8 @@
 #include "System/SysNew.hpp"
 #include "global.h"
 #include "iterator.hpp"
-#include "nitro/math.h"
 #include "types.h"
+#include <nitro/math.h>
 
 // file tab manager?
 class UnkSubStruct9 : public SysObject {

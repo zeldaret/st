@@ -1,8 +1,8 @@
 #pragma once
 
 #include "global.h"
-#include "nitro/math.h"
 #include "types.h"
+#include <nitro/math.h>
 
 #ifdef __cplusplus
 extern "C" {

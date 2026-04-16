@@ -4,7 +4,7 @@
 #include "Player/Player.hpp"
 #include "Player/TouchControl.hpp"
 #include "global.h"
-#include "nitro/button.h"
+#include <nitro/button.h>
 
 // incomplete
 class UnkStruct_027e0478 {

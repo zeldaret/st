@@ -216,8 +216,8 @@ struct Mat4p {
         wColumn = W;
     }
 };
-#else
 extern "C" {
+#else
 typedef struct Vec2b {
     /* 0 */ u8 x;
     /* 1 */ u8 y;
@@ -279,10 +279,10 @@ typedef struct Mat4p {
     /* 30 */ Vec4p wColumn;
     /* 40 */
 } Mat4p;
-}
 #endif
 
 #ifdef __cplusplus
+}
 extern "C" {
 #endif
 

@@ -12,7 +12,7 @@ data_027e0030 kind:data(any) addr:0x027e0030
 data_027e003c kind:data(any) addr:0x027e003c
 data_027e004c kind:data(any) addr:0x027e004c
 data_027e005c kind:data(any) addr:0x027e005c
-data_027e006c kind:data(any) addr:0x027e006c
+G3d_FuncSbcTable kind:data(any) addr:0x027e006c
 data_027e00ec kind:data(any) addr:0x027e00ec
 data_027e00f0 kind:data(any) addr:0x027e00f0
 data_027e00fc kind:data(any) addr:0x027e00fc

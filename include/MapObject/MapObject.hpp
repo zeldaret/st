@@ -7,8 +7,8 @@
 #include "System/SysNew.hpp"
 #include "flags.h"
 #include "global.h"
-#include "nitro/math.h"
 #include "types.h"
+#include <nitro/math.h>
 
 class MapObjectProfile;
 

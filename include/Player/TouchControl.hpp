@@ -1,8 +1,8 @@
 #pragma once
 
-#include "nitro/math.h"
-#include "nitro/touch.h"
 #include "types.h"
+#include <nitro/math.h>
+#include <nitro/touch.h>
 
 typedef u16 TouchFlags;
 enum TouchFlag_ {

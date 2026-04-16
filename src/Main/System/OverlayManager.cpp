@@ -1,6 +1,6 @@
 #include "System/OverlayManager.hpp"
 #include "global.h"
-#include "nitro/Overlay.h"
+#include <nitro/Overlay.h>
 
 struct UnkStruct_020ee698 {
     /* 00 */ unk8 mUnk_00[0x2C];

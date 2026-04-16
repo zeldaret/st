@@ -3,8 +3,8 @@
 #include "Game/GameModeManager.hpp"
 #include "Unknown/Common.hpp"
 #include "global.h"
-#include "nitro/math.h"
 #include "types.h"
+#include <nitro/math.h>
 
 #define MAX_MIC_LEVELS 4
 #define MIC_LEVEL_1 0 // green bar

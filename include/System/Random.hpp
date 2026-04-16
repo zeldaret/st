@@ -1,8 +1,8 @@
 #pragma once
 
 #include "global.h"
-#include "nitro/math.h"
 #include "types.h"
+#include <nitro/math.h>
 
 struct Random {
     /* 00 */ u16 mRandomValue[4];

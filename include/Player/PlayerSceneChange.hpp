@@ -6,7 +6,7 @@
 
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
-#include "nitro/math.h"
+#include <nitro/math.h>
 
 class PlayerSceneChange : public UnkStruct_ov000_0208f820 {
 public:

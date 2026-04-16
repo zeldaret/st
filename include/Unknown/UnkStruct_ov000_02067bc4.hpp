@@ -6,8 +6,8 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_02049b18.hpp"
 #include "global.h"
-#include "nitro/button.h"
 #include "types.h"
+#include <nitro/button.h>
 
 class UnkStruct_ov000_02067bc4_Sub1 {
 public:
