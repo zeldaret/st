@@ -1,4 +1,4 @@
-#include "nitro/g3d/sbc.h"
+#include "nns/g3d/sbc.h"
 typedef struct UnkStruct_027e037c_ {
     /* 000 */ unk32 mUnk_000;
     /* 004 */ unk32 mUnk_004;

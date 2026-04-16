@@ -4,9 +4,9 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "global.h"
-#include "nns/text.h"
 #include "types.h"
 #include <nitro/math.h>
+#include <nns/text.h>
 
 extern "C" void func_0201e8d4(void *param1, void *param2);
 

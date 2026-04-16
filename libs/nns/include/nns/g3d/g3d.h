@@ -1,4 +1,4 @@
-#include "nitro/math.h"
+#include <nitro/math.h>
 
 struct G3d_RenderState_;
 typedef void (*G3d_CallbackFunction)(struct G3d_RenderState_ *);

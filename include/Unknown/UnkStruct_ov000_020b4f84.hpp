@@ -2,8 +2,8 @@
 
 #include "System/SysNew.hpp"
 #include "Unknown/UnkFileSystem.hpp"
-#include "nns/font.h"
 #include "types.h"
+#include <nns/font.h>
 
 enum {
     FontIndex_DSZ2_msg       = 0,
