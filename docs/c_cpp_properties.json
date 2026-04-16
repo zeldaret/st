@@ -21,6 +21,7 @@
                 "libs/c/include",
                 "libs/cpp/include",
                 "libs/nitro/include",
+                "libs/nns/include",
                 "libs/runtime/include"
             ],
             "defines": [
