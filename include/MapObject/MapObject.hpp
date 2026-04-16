@@ -106,6 +106,8 @@ public:
     /* 18 */
 
     MapObject_20() {}
+
+    void func_ov000_0209c7c8();
 };
 
 class MapObject : public SysObject {

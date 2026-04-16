@@ -10,7 +10,6 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
 
-extern "C" void func_ov000_0209c7c8(void *);
 extern "C" void func_01ffb714(Vec3p *, Vec3p *, void *);
 extern "C" void func_01ffb9cc(Vec3p *, Vec3p *);
 extern "C" u16 func_01ffbbe0(q20 x, q20 z);
@@ -30,7 +29,7 @@ ARM MapObject::MapObject() {
     this->mUnk_10   = NULL;
     this->mUnk_16   = -1;
     this->mFlags[0] = 0;
-    func_ov000_0209c7c8(&this->mUnk_20);
+    this->mUnk_20.func_ov000_0209c7c8();
     *(u32 *) &this->mUnk_38 = 0;
 
     UnkStruct_ov000_020b5d34 *ptr1 = &data_ov000_020b5d34;

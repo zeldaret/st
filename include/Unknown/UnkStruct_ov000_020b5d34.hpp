@@ -23,10 +23,15 @@ public:
     /* 00 */ UnkStruct_ov000_020b5d34_00 *mUnk_00;
     /* 04 */ MapObjectProfile *mpProfile;
     /* 08 */ unk32 mUnk_08;
-    UnkStruct_ov000_020b5d34_0C *mUnk_0C;
+    /* 0C */ UnkStruct_ov000_020b5d34_0C *mUnk_0C;
 
     UnkStruct_ov000_020b5d34();
     ~UnkStruct_ov000_020b5d34();
+
+    void func_ov000_0209c6b8();
+    void func_ov000_0209c6f0();
+
+    static void func_ov000_0209c718();
 };
 
 extern UnkStruct_ov000_020b5d34 data_ov000_020b5d34;

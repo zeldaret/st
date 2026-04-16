@@ -24,6 +24,12 @@ public:
 
     MapObject **func_01fff520(UnkStruct_ov000_020b34c4 *param1, void *);
     MapObject *func_01fff498(unk32 param1, unk32 param2);
+
+    void func_ov000_0209c3a8();
+    void func_ov000_0209c3e8();
+    void func_ov000_0209c444();
+
+    static void func_ov000_0209c490();
 };
 
 extern MapObjectManager *gpMapObjManager;
