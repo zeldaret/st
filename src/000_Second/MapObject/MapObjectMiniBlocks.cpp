@@ -38,11 +38,11 @@ ARM MapObjectMiniBlocks::MapObjectMiniBlocks() :
 
 ARM bool MapObjectMiniBlocks::vfunc_00(void) {
     GET_PROFILE(MapObjectProfileMiniBlocks)
-        ->func_ov000_0209ccd8(this->mUnk_20.mUnk_02, data_ov000_020af574[this->mUnk_20.mUnk_02]);
+        ->func_ov000_0209ccd8(this->mUnk_20.mUnk_00[1], data_ov000_020af574[this->mUnk_20.mUnk_00[1]]);
     UnkStruct_027e0cd8_0c *pUnkStruct_027e0cd8_0c = data_027e0cd8->mUnk_0c;
     u8 uVar6;
 
-    if (this->mUnk_20.mUnk_02 != MiniBlocksVariant_BLKF) {
+    if (this->mUnk_20.mUnk_00[1] != MiniBlocksVariant_BLKF) {
         Vec2b vec(this->mUnk_3A.x, this->mUnk_3A.y);
         this->mPos.y = pUnkStruct_027e0cd8_0c->func_01ffedf4(&vec);
     }
@@ -50,7 +50,7 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
     Vec3p vec(FLOAT_TO_Q20(0.0f), FLOAT_TO_Q20(0.0f), FLOAT_TO_Q20(0.0f));
     uVar6 = 0;
 
-    switch (this->mUnk_20.mUnk_00) {
+    switch (this->mUnk_20.mUnk_00[0]) {
         case 4:
         case 5:
         case 6:
@@ -64,7 +64,7 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
             uVar6 = 2;
             break;
         default:
-            if (this->mUnk_20.mUnk_02 == MiniBlocksVariant_BLKF) {
+            if (this->mUnk_20.mUnk_00[1] == MiniBlocksVariant_BLKF) {
                 vec.x = FLOAT_TO_Q20(0.0f);
                 vec.y = FLOAT_TO_Q20(0.0f);
                 vec.z = -FLOAT_TO_Q20(0.375f);
@@ -77,7 +77,7 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
     }
 
     MapObjectProfile_Derived2_20_Base_50 *ptr =
-        GET_PROFILE(MapObjectProfileMiniBlocks)->vfunc_1C(this->mUnk_20.mUnk_02)->mUnk_50;
+        GET_PROFILE(MapObjectProfileMiniBlocks)->vfunc_1C(this->mUnk_20.mUnk_00[1])->mUnk_50;
     void *var_r1;
     if (ptr != NULL) {
         u16 *temp_r1 = (u16 *) ((u8 *) ptr + 8);
@@ -104,7 +104,7 @@ next:
 
     unk32 var_r0_2;
     unk32 var_r0;
-    switch (this->mUnk_20.mUnk_00) {
+    switch (this->mUnk_20.mUnk_00[0]) {
         case 1:
         case 6:
         case 8:

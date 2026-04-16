@@ -256,7 +256,7 @@ ARM void MapObject::func_ov000_0209d54c(unk32 param1, u16 param2, Vec3p *param3,
     local_4c.param_r2  = param2;
     local_4c.extra_s16 = param4;
     local_4c.extra_u16 = param5;
-    func_ov000_020973f4(this, &data_ov000_020b539c, ActorId_EventIcon, &local_4c, 0);
+    func_ov000_020973f4(this, &data_ov000_020b539c_eur, ActorId_EventIcon, &local_4c, 0);
 }
 
 ARM void MapObject::func_ov000_0209d5c8(ActorRef ref) {

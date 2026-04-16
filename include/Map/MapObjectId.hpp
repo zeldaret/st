@@ -9,3 +9,11 @@ enum MapObjectId_ {
 #include "Map/MapObjectTable.inl"
 #undef DEFINE_MAP_OBJECT_TYPE
 };
+
+typedef u32 MapObjectIndex;
+enum MapObjectIndex_ {
+#define DEFINE_MAP_OBJECT_TYPE(id, name) MapObjectIndex_##name,
+#include "Map/MapObjectTable.inl"
+#undef DEFINE_MAP_OBJECT_TYPE
+    MapObjectIndex_Max,
+};

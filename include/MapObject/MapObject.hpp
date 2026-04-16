@@ -94,20 +94,22 @@ public:
 
 class MapObject_20 {
 public:
-    /* 00 */ u16 mUnk_00;
-    /* 02 */ u16 mUnk_02;
-    /* 04 */ unk32 mUnk_04;
+    /* 00 */ u16 mUnk_00[4];
     /* 08 */ u8 mUnk_08[2];
     /* 0A */ u16 mUnk_0A[2];
     /* 0E */ unk16 mUnk_0E;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ s16 mUnk_14;
-    /* 16 */ unk16 mUnk_16;
+    /* 16 */ unk8 mUnk_16;
+    /* 16 */ unk8 mUnk_17;
     /* 18 */
 
     MapObject_20() {}
 
     void func_ov000_0209c7c8();
+
+    static void func_ov000_0209c790(MapObjectId mapObjId, MapObjectProfile *pProfile);
+    static void func_ov000_0209c7ac(MapObjectId mapObjId);
 };
 
 class MapObject : public SysObject {

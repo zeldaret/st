@@ -242,4 +242,4 @@ public:
         Actor_c4_Base(&param1->mRef, 0) {}
 };
 
-extern UnkStruct_ov000_020b539c data_ov000_020b539c;
+extern UnkStruct_ov000_020b539c data_ov000_020b539c_eur;

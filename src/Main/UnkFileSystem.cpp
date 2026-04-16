@@ -2,9 +2,9 @@
 #include "Unknown/UnkStruct_ov000_020b4f84.hpp"
 
 extern "C" size_t func_020010e0(UnkStruct_02011e10_Sub1 *heapID, void *pFile, unk32 param3);
-extern "C" void *func_02012ec8(unk32, unk16, void *, size_t *, unk32, u8);
-extern "C" void *func_02012ee4(void *, unk32, unk32, size_t *, u8);
-extern "C" void *func_02012f6c(void *, size_t *);
+extern "C" void *func_02012ec8(unk32, unk16, const char *, size_t *, unk32, u8);
+extern "C" void *func_02012ee4(const char *, unk32, unk32, size_t *, u8);
+extern "C" void *func_02012f6c(const char *, size_t *);
 extern "C" HeapIndex16 func_02015338();
 
 THUMB UnkFileSystem1::~UnkFileSystem1() {}
@@ -27,7 +27,7 @@ THUMB UnkFileSystem5::UnkFileSystem5() :
     this->mUnk_12    = 0;
 }
 
-THUMB UnkFileSystem5::UnkFileSystem5(void *param1, unk32 param2, unk32 param3, u8 param4) :
+THUMB UnkFileSystem5::UnkFileSystem5(const char *param1, unk32 param2, unk32 param3, u8 param4) :
     UnkFileSystem1(param1) {
     this->mHeapIndex = param3;
     this->mUnk_12    = param4;
@@ -64,7 +64,7 @@ THUMB size_t UnkFileSystem5::vfunc_10(unk32 param1) {
     return prevFileSize;
 }
 
-THUMB UnkFileSystem4::UnkFileSystem4(void *param1, unk32 param2, unk32 param3, unk32 param4) :
+THUMB UnkFileSystem4::UnkFileSystem4(const char *param1, unk32 param2, unk32 param3, unk32 param4) :
     UnkFileSystem1(param1) {
     this->mUnk_18 = param2;
     this->mUnk_10 = param3;
@@ -92,7 +92,7 @@ THUMB void *UnkFileSystem3::vfunc_08(unk32 param1) {
 }
 
 // https://decomp.me/scratch/Y2SB8
-THUMB UnkFileSystem2::UnkFileSystem2(void *param1, unk32 param2) :
+THUMB UnkFileSystem2::UnkFileSystem2(const char *param1, unk32 param2) :
     UnkFileSystem1(param1) {
     this->mUnk_14 = param2;
 }

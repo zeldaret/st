@@ -58,8 +58,14 @@ src/000_Second/Actor/ActorUnkEFIK.cpp:
     .bss        start:0x020b5ce4 end:0x020b5d30
 
 src/000_Second/MapObject/MapObjectProfile.cpp:
-    .text       start:0x0209c790 end:0x0209cfe0
-    .data       start:0x020b34c8 end:0x020b3570
+    complete
+    .text       start:0x0209c790 end:0x0209ce08
+    .data       start:0x020b34c8 end:0x020b3560
+
+src/000_Second/MapObject/MapObjectProfile_Derived2_20.cpp:
+    complete
+    .text       start:0x0209ce08 end:0x0209cfe0
+    .data       start:0x020b3560 end:0x020b3588
 
 src/000_Second/MapObject/MapObject.cpp:
     .text       start:0x0209cfe0 end:0x0209d700

@@ -6,7 +6,7 @@
 class UnkFileSystem1 {
 public:
     /* 00 (vtable) */
-    /* 04 */ void *mUnk_04;
+    /* 04 */ const char *mUnk_04;
     /* 08 */ union {
         void *mpFile;
         void *volatile mpFile2;
@@ -14,7 +14,7 @@ public:
     /* 0C */ size_t mFileSize;
     /* 10 */
 
-    UnkFileSystem1(void *param1) :
+    UnkFileSystem1(const char *param1) :
         mUnk_04(param1),
         mpFile(NULL),
         mFileSize(0) {}
@@ -36,7 +36,7 @@ public:
     /* 14 */
 
     UnkFileSystem5();
-    UnkFileSystem5(void *param1, unk32 param2, unk32 param3, u8 param4);
+    UnkFileSystem5(const char *param1, unk32 param2, unk32 param3, u8 param4);
 
     // data_02043f08
     /* 00 */ virtual ~UnkFileSystem5() override;
@@ -61,7 +61,7 @@ public:
     /* 18 */ u8 mUnk_18;
     /* 1C */
 
-    UnkFileSystem4(void *param1, unk32 param2, unk32 param3, unk32 param4); // func_02015628
+    UnkFileSystem4(const char *param1, unk32 param2, unk32 param3, unk32 param4); // func_02015628
 
     // data_02043f24
     /* 00 */ virtual ~UnkFileSystem4() override; // func_02015644 && func_02015650
@@ -73,7 +73,7 @@ public:
     /* 00 (base) */
     /* 10 */
 
-    UnkFileSystem3(void *param1) :
+    UnkFileSystem3(const char *param1) :
         UnkFileSystem1(param1) {}
 
     // data_02043f40
@@ -87,7 +87,7 @@ public:
     /* 10 */ UnkFileSystem2_10 mUnk_10;
     /* 14 */ unk8 mUnk_14;
 
-    UnkFileSystem2(void *param1, unk32 param2); // func_020156c8
+    UnkFileSystem2(const char *param1, unk32 param2); // func_020156c8
 
     // data_02043f5c
     /* 00 */ virtual ~UnkFileSystem2() override; // func_020156f4 && func_02015708

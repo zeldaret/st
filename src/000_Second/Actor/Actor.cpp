@@ -21,7 +21,7 @@ ARM Actor::Actor() {
     this->mUnk_5c.func_ov000_020975f8();
     this->mRef.Reset();
     this->mType = NULL;
-    _MI_CpuCopy(&data_ov000_020b539c.mUnk_00, &this->mUnk_5c, sizeof(data_ov000_020b539c.mUnk_00));
+    _MI_CpuCopy(&data_ov000_020b539c_eur.mUnk_00, &this->mUnk_5c, sizeof(data_ov000_020b539c_eur.mUnk_00));
     this->mPos     = this->mUnk_5c.mUnk_00;
     this->mPrevPos = this->mUnk_5c.mUnk_00;
     this->mAngle   = this->mUnk_5c.mUnk_0c;
@@ -29,7 +29,7 @@ ARM Actor::Actor() {
     this->mUnk_44 = 0xFF;
     this->mUnk_46 = 0;
     this->func_ov000_0209862c(0);
-    this->func_ov000_0209848c(data_ov000_020b539c.mUnk_30);
+    this->func_ov000_0209848c(data_ov000_020b539c_eur.mUnk_30);
 }
 
 ARM Actor::~Actor() {}
