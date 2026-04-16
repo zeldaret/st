@@ -155,6 +155,7 @@ config.libs = [
             Object("000_Second/Actor/ActorEventIcon.cpp"),
             Object("000_Second/Actor/ActorUnkSWOB.cpp"),
             Object("000_Second/Actor/ActorUnkSWTM.cpp"),
+            Object("000_Second/MapObject/MapObject.cpp"),
             Object("000_Second/MapObject/MapObjectSwitchStep.cpp"),
             Object("000_Second/MapObject/MapObjectMiniBlocks.cpp"),
         ]

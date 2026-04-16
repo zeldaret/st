@@ -121,7 +121,7 @@ end:
 }
 
 ARM MapObjectSwitchStep::~MapObjectSwitchStep() {
-    if (this->mUnk_20 == 2) {
+    if (this->mUnk_20.mUnk_00 == 2) {
         this->func_ov000_0209e11c(0, 1);
         this->func_ov000_0209d2c4(0, 0);
     }
@@ -129,10 +129,10 @@ ARM MapObjectSwitchStep::~MapObjectSwitchStep() {
 
 ARM bool MapObjectSwitchStep::vfunc_00(void) {
     SET_FLAG(this->mFlags, MapObjFlag_9);
-    this->mUnk_18 = 1;
+    this->mUnk_18[0] = 1;
 
     SET_FLAG(this->mFlags, MapObjFlag_10);
-    this->mUnk_19 = 1;
+    this->mUnk_18[1] = 1;
 
     if (this->func_ov000_0209d29c(0)) {
         this->func_ov000_0209e11c(2, 1);
@@ -182,8 +182,8 @@ ARM void MapObjectSwitchStep::func_ov000_0209e11c(unk32 param1, unk32 param2) {
                 this->mUnk_EA = 1;
             }
 
-            if (this->mUnk_20 == 2) {
-                this->mUnk_E6 = this->mUnk_22;
+            if (this->mUnk_20.mUnk_00 == 2) {
+                this->mUnk_E6 = this->mUnk_20.mUnk_02;
                 this->mUnk_E4 = 0;
             }
 

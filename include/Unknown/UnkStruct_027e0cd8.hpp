@@ -85,6 +85,7 @@ public:
     bool func_ov000_02080658(unk32 param1, UnkStruct_SceneChange1 *param2);
     void func_ov000_020808f4(void *param1, void *param2, unk32 param3);
     unk32 func_ov000_02080a44();
+    void func_ov000_020801b0(Vec2b *param1, unk32 param2, unk32 param3);
 };
 
 class UnkStruct_027e0cd8 {
@@ -98,6 +99,8 @@ public:
     unk32 func_ov000_02081e30(unk32 param1, unk32 param2);
     void func_ov000_02081d7c(unk32 param1, unk32 param2, unk32 param3);
     void func_ov000_02081ecc(unk16 param1, unk32 param2);
+    void func_ov000_02081eec(unk16 param1, unk32 param2, unk32 param3);
+    bool func_ov000_02081f3c(unk16 param1, unk32 param2);
 };
 
 extern UnkStruct_027e0cd8 *data_027e0cd8;

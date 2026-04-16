@@ -9,48 +9,7 @@
 #include "types.h"
 
 class MapObject;
-
-class MapObjectProfile_D4_Base {
-public:
-    /* 00 (vtable) */
-    /* 04 */ unk8 mUnk_04;
-    /* 05 */ unk8 mUnk_05;
-    /* 06 */ unk8 mUnk_06;
-    /* 07 */ unk8 mUnk_07;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */
-
-    MapObjectProfile_D4_Base(); // func_ov000_0207c018
-
-    // data_ov000_020b2854
-    /* 00 */ virtual void vfunc_00(void) = 0;
-    /* 04 */ virtual void vfunc_04(void) = 0;
-    /* 08 */ virtual void vfunc_08(void) = 0;
-    /* 0C */ virtual void vfunc_0C(void) = 0;
-    /* 10 */ virtual void vfunc_10(void) = 0;
-    /* 14 */ virtual void vfunc_14(void) = 0;
-    /* 18 */ virtual void vfunc_18(void) = 0;
-    /* 1C */ virtual void vfunc_1C(void) = 0;
-    /* 20 */
-};
-
-class MapObjectProfile_D4 : public MapObjectProfile_D4_Base {
-public:
-    /* 00 (base) */
-    /* 0C */
-
-    MapObjectProfile_D4() {}
-    ~MapObjectProfile_D4() {}
-
-    /* 00 */ virtual void vfunc_00(void);
-    /* 04 */ virtual void vfunc_04(void);
-    /* 08 */ virtual void vfunc_08(void);
-    /* 0C */ virtual void vfunc_0C(void);
-    /* 10 */ virtual void vfunc_10(void);
-    /* 14 */ virtual void vfunc_14(void);
-    /* 18 */ virtual void vfunc_18(void);
-    /* 1C */ virtual void vfunc_1C(void);
-};
+class MapObject_20;
 
 class MapObjectProfile : public SysObject {
 public:
@@ -80,6 +39,8 @@ public:
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */
+
+    unk32 func_ov000_0209c8e4(MapObject_20 *param1);
 };
 
 class MapObjectProfile_Derived2_20;

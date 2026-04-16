@@ -55,7 +55,7 @@ public:
 class MapObjectProfileSwitchStep_Base : public MapObjectProfile_Derived2 {
 public:
     /* 00 (base) */
-    /* D4 */ MapObjectProfile_D4 mUnk_D4;
+    /* D4 */ MapObject_10 mUnk_D4;
 
     MapObjectProfileSwitchStep_Base(MapObjectId mapObjId) :
         MapObjectProfile_Derived2(mapObjId, mapObjId) {}
