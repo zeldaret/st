@@ -48,33 +48,33 @@ public:
     /* 94 */ u16 mUnk_94;
     /* 96 */ u16 mUnk_96;
     /* 98 */ u16 mUnk_98;
-    /* 9a */ u16 mUnk_9a;
-    /* 9c */ Actor_9c mUnk_9c;
-    /* a0 */ unk32 mUnk_a0;
-    /* a4 */ unk32 mUnk_a4;
-    /* a8 */ unk32 mUnk_a8;
-    /* ac */ unk32 mUnk_ac;
-    /* b0 */ unk32 mUnk_b0;
-    /* b4 */ unk32 mUnk_b4;
-    /* b8 */ unk32 mUnk_b8;
-    /* bc */ unk32 mUnk_bc;
-    /* c0 */ unk32 mUnk_c0;
-    /* c4 */ ActorRupee_c4 mUnk_c4;
-    /* e8 */ unk32 mUnk_e8;
-    /* ec */ s16 mUnk_ec;
-    /* f0 */ UnkStruct_PlayerGet_ec mUnk_f0;
-    /* f4 */ bool mUnk_f4;
-    /* f5 */ unk8 mUnk_f5;
-    /* f6 */ unk8 mUnk_f6;
-    /* f7 */ unk8 mUnk_f7;
-    /* f8 */
+    /* 9A */ u16 mUnk_9A;
+    /* 9C */ Actor_9c mUnk_9C;
+    /* A0 */ unk32 mUnk_A0;
+    /* A4 */ unk32 mUnk_A4;
+    /* A8 */ unk32 mUnk_A8;
+    /* AC */ unk32 mUnk_AC;
+    /* B0 */ unk32 mUnk_B0;
+    /* B4 */ unk32 mUnk_B4;
+    /* B8 */ unk32 mUnk_B8;
+    /* BC */ unk32 mUnk_BC;
+    /* C0 */ unk32 mUnk_C0;
+    /* C4 */ ActorRupee_c4 mUnk_C4;
+    /* E8 */ unk32 mUnk_E8;
+    /* EC */ s16 mUnk_EC;
+    /* F0 */ UnkStruct_PlayerGet_ec mUnk_F0;
+    /* F4 */ bool mUnk_F4;
+    /* F5 */ unk8 mUnk_F5;
+    /* F6 */ unk8 mUnk_F6;
+    /* F7 */ unk8 mUnk_F7;
+    /* F8 */
 
     ActorRupee();
 
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
-    /* 2c */ virtual void vfunc_2c(unk32 param1) override;
-    /* 4c */ virtual ~ActorRupee() override;
+    /* 2C */ virtual void vfunc_2c(unk32 param1) override;
+    /* 4C */ virtual ~ActorRupee() override;
 
     void func_ov017_020bf9c8(Actor *param1);
 
@@ -121,7 +121,7 @@ public:
 
     ActorProfileRupee();
 
-    /* 0c */ virtual Actor *Create();
+    /* 0C */ virtual Actor *Create();
 
     static ActorProfileRupee *GetProfile();
 };

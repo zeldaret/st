@@ -11,15 +11,15 @@ public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
+    /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
-    /* 1c */ unk32 mUnk_1c;
+    /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk32 mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ unk32 mUnk_28;
-    /* 2c */ unk32 mUnk_2c;
+    /* 2C */ unk32 mUnk_2C;
     /* 30 */
 
     void func_ov024_020d3d98(unk32 param1, unk32 param2);
@@ -37,19 +37,19 @@ public:
     /* 03 */ unk8 mUnk_03;
     /* 04 */ unk32 *mUnk_04;
     /* 08 */ unk32 *mUnk_08;
-    /* 0c */ unk32 *mUnk_0c; // vtable
+    /* 0C */ unk32 *mUnk_0C; // vtable
     /* 10 */ unk32 *mUnk_10;
     /* 14 */ unk32 *mUnk_14;
     /* 18 */ unk32 *mUnk_18;
-    /* 1c */ unk32 *mUnk_1c;
+    /* 1C */ unk32 *mUnk_1C;
     /* 20 */ unk32 *mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ ItemManager *mUnk_28;
-    /* 2c */ ItemManager *mUnk_2c; // same as above
+    /* 2C */ ItemManager *mUnk_2C; // same as above
     /* 30 */ unk32 *mUnk_30; // ?
     /* 34 */ UnkStruct_027e0ce0_34 *mUnk_34;
     /* 38 */ unk32 *mUnk_38; // pointer to data_027e0478 when on the train
-    /* 3c */ unk32 mUnk_3c;
+    /* 3C */ unk32 mUnk_3C;
     /* 40 */ unk32 *mUnk_40; // pointer to data_027e0478 when not on the train
     /* 44 */
 

@@ -35,27 +35,27 @@ typedef struct G3d_RenderState_ {
     /* 00 */ u8 *currentCmd; // current command being processed
     /* 04 */ G3d_RenderObject *renderObj; // current render object being processed
     /* 08 */ u32 flag; // G3d_RenderStateFlag
-    /* 0c */ G3d_CallbackFunction callbackFuncs[32]; // callback function for each SBC command
-    /* 8c */ u8 callbackSegment[32]; // determines at which segment of the SBC command to invoke the callback
-    /* ac */ u8 currentBoneId;
-    /* ad */ u8 currentMaterialId;
-    /* ae */ u8 currentBoneMtxId;
-    /* af */ u8 dummy;
-    /* b0 */ G3d_MaterialAnimation *matAnim;
-    /* b4 */ void *mUnk_19;
-    /* b8 */ u8 *visibilityPtr; // points to isVisible (0x187)
-    /* bc */ u32 mUnk_bc[2];
-    /* c4 */ u32 mUnk_c4[2];
-    /* cc */ u32 mUnk_cc[2];
-    /* d4 */ G3d_NameList *boneList;
-    /* d8 */ const G3d_Material_List *materialList;
-    /* dc */ G3d_NameList *meshList;
-    /* e0 */ q20 upScale;
-    /* e4 */ q20 downScale;
-    /* e8 */ void *jntScalingHandler; // scaling handler
-    /* ec */ void *jntSRTHandler;     // SRT transform handler
-    /* f0 */ void *textureHandler;    // texture matrix handler
-    /* f4 */ u8 mUnk_f4[0x93];
+    /* 0C */ G3d_CallbackFunction callbackFuncs[32]; // callback function for each SBC command
+    /* 8C */ u8 callbackSegment[32]; // determines at which segment of the SBC command to invoke the callback
+    /* AC */ u8 currentBoneId;
+    /* AD */ u8 currentMaterialId;
+    /* AE */ u8 currentBoneMtxId;
+    /* AF */ u8 dummy;
+    /* B0 */ G3d_MaterialAnimation *matAnim;
+    /* B4 */ void *mUnk_19;
+    /* B8 */ u8 *visibilityPtr; // points to isVisible (0x187)
+    /* BC */ u32 mUnk_BC[2];
+    /* C4 */ u32 mUnk_C4[2];
+    /* CC */ u32 mUnk_CC[2];
+    /* D4 */ G3d_NameList *boneList;
+    /* D8 */ const G3d_Material_List *materialList;
+    /* DC */ G3d_NameList *meshList;
+    /* E0 */ q20 upScale;
+    /* E4 */ q20 downScale;
+    /* E8 */ void *jntScalingHandler; // scaling handler
+    /* EC */ void *jntSRTHandler;     // SRT transform handler
+    /* F0 */ void *textureHandler;    // texture matrix handler
+    /* F4 */ u8 mUnk_F4[0x93];
     /* 187 */ u8 isVisible;
     /* 188 */
 } G3d_RenderState;

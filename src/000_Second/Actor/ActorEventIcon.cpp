@@ -15,7 +15,7 @@ ARM ActorEventIcon::ActorEventIcon() {
 }
 
 ARM bool ActorEventIcon::vfunc_18(unk32 param1) {
-    this->mUnk_094.func_ov000_0206082c(0x5D, this->mUnk_6c);
+    this->mUnk_094.func_ov000_0206082c(0x5D, this->mUnk_6C);
     return true;
 }
 

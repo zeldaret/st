@@ -138,7 +138,7 @@ union Vec4p {
         /* 00 */ q20 x;
         /* 04 */ q20 y;
         /* 08 */ q20 z;
-        /* 0c */ q20 w;
+        /* 0C */ q20 w;
         /* 10 */
     };
     q20 coords[4];
@@ -173,7 +173,7 @@ struct Mat2p {
 
 struct Mat3p {
     /* 00 */ Vec3p xColumn;
-    /* 0c */ Vec3p yColumn;
+    /* 0C */ Vec3p yColumn;
     /* 18 */ Vec3p zColumn;
     /* 24 */
 
@@ -187,7 +187,7 @@ struct Mat3p {
 
 struct Mat4x3p {
     /* 00 */ Vec3p xColumn;
-    /* 0c */ Vec3p yColumn;
+    /* 0C */ Vec3p yColumn;
     /* 18 */ Vec3p zColumn;
     /* 24 */ Vec3p wColumn;
     /* 30 */
@@ -240,14 +240,14 @@ typedef struct Vec3p {
     /* 0 */ q20 x;
     /* 4 */ q20 y;
     /* 8 */ q20 z;
-    /* c */
+    /* C */
 } Vec3p;
 
 typedef struct Vec4p {
     /* 00 */ q20 x;
     /* 04 */ q20 y;
     /* 08 */ q20 z;
-    /* 0c */ q20 w;
+    /* 0C */ q20 w;
     /* 10 */
 } Vec4p;
 
@@ -259,14 +259,14 @@ typedef struct Mat2p {
 
 typedef struct Mat3p {
     /* 00 */ Vec3p xColumn;
-    /* 0c */ Vec3p yColumn;
+    /* 0C */ Vec3p yColumn;
     /* 18 */ Vec3p zColumn;
     /* 24 */
 } Mat3p;
 
 typedef struct Mat4x3p {
     /* 00 */ Vec3p xColumn;
-    /* 0c */ Vec3p yColumn;
+    /* 0C */ Vec3p yColumn;
     /* 18 */ Vec3p zColumn;
     /* 24 */ Vec3p wColumn;
     /* 30 */

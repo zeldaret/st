@@ -12,7 +12,7 @@ struct UnkStruct_ov000_020afc48 {
     /* 02 */ unk16 mUnk_02;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
+    /* 0C */ unk32 mUnk_0C;
     /* 10 */ char mUnk_10[16];
     /* 20 */
 };
@@ -26,11 +26,11 @@ public:
     /* 00 */ virtual void vfunc_00(); //! TODO: name symbol func_ov000_020667d8
     /* 04 */ virtual void vfunc_04(); //! TODO: name symbol func_ov000_020667f4
     /* 08 */ virtual void vfunc_08(); //! TODO: name symbol func_ov000_020673c8
-    /* 0c */ virtual void vfunc_0c(); //! TODO: name symbol func_ov000_02067434
+    /* 0C */ virtual void vfunc_0c(); //! TODO: name symbol func_ov000_02067434
     /* 10 */ virtual void vfunc_10(); //! TODO: name symbol func_ov000_02067474
     /* 14 */ virtual void vfunc_14(); //! TODO: name symbol func_ov000_02066dfc
     /* 18 */ virtual void vfunc_18(); //! TODO: name symbol func_ov000_020669d8
-    /* 1c */ virtual void vfunc_1c(); //! TODO: name symbol func_ov000_02067234
+    /* 1C */ virtual void vfunc_1c(); //! TODO: name symbol func_ov000_02067234
     /* 20 */ virtual void vfunc_20(); //! TODO: name symbol func_ov000_0206723c
     /* 24 */ virtual ~UnkStruct_ItemManager_20_14(); //! TODO: name symbols func_ov000_020672ac, func_ov000_020672f4
 
@@ -44,7 +44,7 @@ public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
+    /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ UnkStruct_ItemManager_20_14 mUnk_14;
 
@@ -65,10 +65,10 @@ public:
     /* 17 */ u8 mKeyAmount; // number of small keys
     /* 18 */ UpgradeCapacity mQuiverCapacity;
     /* 19 */ UpgradeCapacity mBombBagCapacity;
-    /* 1a */ u8 mArrowAmount;
-    /* 1b */ u8 mBombAmount;
-    /* 1c */ u8 mPotions[MAX_POTIONS];
-    /* 1e */ unk16 mUnk_1e;
+    /* 1A */ u8 mArrowAmount;
+    /* 1B */ u8 mBombAmount;
+    /* 1C */ u8 mPotions[MAX_POTIONS];
+    /* 1E */ unk16 mUnk_1E;
     /* 20 */ UnkStruct_ItemManager_20 *mUnk_20;
     /* 24 */ unk8 mUnk_24;
     /* 24 */ unk8 mUnk_25;
@@ -116,7 +116,7 @@ public:
 class TreasureManager : public ItemManager {
 public:
     /* 28 */ unk8 mUnk_28[0x3C - 0x28];
-    /* 3C */ s16 mUnk_3c[TreasureType_Max]; // treasures
+    /* 3C */ s16 mUnk_3C[TreasureType_Max]; // treasures
     /* 5C */ unk16 mUnk_5C;
     /* 5E */ unk16 mUnk_5E;
     /* 60 */ STRUCT_PAD(0x60, 0x7E);

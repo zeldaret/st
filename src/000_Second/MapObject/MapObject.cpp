@@ -147,7 +147,7 @@ ARM void MapObject::func_ov000_0209d2c4(unk32 param1, unk32 param2) {
 }
 
 ARM void MapObject::func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2b *param3) {
-    UnkStruct_027e0cd8_0c *temp_r5 = data_027e0cd8->mUnk_0c;
+    UnkStruct_027e0cd8_0c *temp_r5 = data_027e0cd8->mUnk_0C;
     Vec2b sp0(0, 0);
 
     sp0.x = this->mUnk_3A.x;

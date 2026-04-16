@@ -17,44 +17,44 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8ae0(q20 param1) {
 ARM ActorUnk_ov000_020a8bb0::ActorUnk_ov000_020a8bb0(UnkSystem4 *param1, unk32 param2) {
     unk32 uVar2;
 
-    this->mUnk_0b0         = 0;
-    this->mUnk_094.mUnk_0c = param2;
-    this->mUnk_0a4.mUnk_00 = param1;
-    this->mUnk_0a4.mUnk_04 = 0;
-    this->mUnk_0a4.mUnk_08 = 0;
-    this->mUnk_0b4         = -1;
-    this->mUnk_0b8         = 0;
-    this->mUnk_0bc.Reset();
-    this->mUnk_0c0.x = 0;
-    this->mUnk_0c0.y = 0;
-    this->mUnk_0c0.z = 0;
-    this->mUnk_0cc   = 0;
-    this->mUnk_0ce   = 0;
-    this->mUnk_0d0   = 0;
-    this->mUnk_0d4   = 0;
-    this->mUnk_0d8   = 0;
-    this->mUnk_0da   = 0;
-    this->mUnk_0dc   = 0x2AAB;
-    this->mUnk_0de   = 0xEAAB;
-    this->mUnk_0e0   = 0x1555;
-    this->mUnk_0e4   = 0;
-    this->mUnk_0e8   = 0;
-    this->mUnk_0ea   = 0;
-    this->mUnk_0ec.func_ov024_020d6668();
+    this->mUnk_0B0         = 0;
+    this->mUnk_094.mUnk_0C = param2;
+    this->mUnk_0A4.mUnk_00 = param1;
+    this->mUnk_0A4.mUnk_04 = 0;
+    this->mUnk_0A4.mUnk_08 = 0;
+    this->mUnk_0B4         = -1;
+    this->mUnk_0B8         = 0;
+    this->mUnk_0BC.Reset();
+    this->mUnk_0C0.x = 0;
+    this->mUnk_0C0.y = 0;
+    this->mUnk_0C0.z = 0;
+    this->mUnk_0CC   = 0;
+    this->mUnk_0CE   = 0;
+    this->mUnk_0D0   = 0;
+    this->mUnk_0D4   = 0;
+    this->mUnk_0D8   = 0;
+    this->mUnk_0DA   = 0;
+    this->mUnk_0DC   = 0x2AAB;
+    this->mUnk_0DE   = 0xEAAB;
+    this->mUnk_0E0   = 0x1555;
+    this->mUnk_0E4   = 0;
+    this->mUnk_0E8   = 0;
+    this->mUnk_0EA   = 0;
+    this->mUnk_0EC.func_ov024_020d6668();
     uVar2                  = this->mUnk_34->size;
     this->mUnk_114         = -1;
     this->mUnk_118         = 0x1000;
-    this->mUnk_11c         = 0x019A;
+    this->mUnk_11C         = 0x019A;
     this->mUnk_104         = 0;
     this->mUnk_108         = uVar2;
-    this->mUnk_10c         = 0;
+    this->mUnk_10C         = 0;
     this->mUnk_110         = uVar2;
     this->mUnk_30          = (Cylinder *) &this->mUnk_104;
-    this->mUnk_4a          = 5;
+    this->mUnk_4A          = 5;
     this->mUnk_44          = 0x1F;
     this->mUnk_094.mUnk_08 = 3;
     this->mUnk_38          = &this->mUnk_094.mUnk_00;
-    this->mUnk_0b0 |= 8;
+    this->mUnk_0B0 |= 8;
 }
 
 ARM ActorUnk_ov000_020a8bb0::~ActorUnk_ov000_020a8bb0() {}
@@ -64,9 +64,9 @@ ARM bool ActorUnk_ov000_020a8bb0::vfunc_18(unk32 param1) {
         UNSET_FLAG(this->mFlags, ActorFlag_Alive);
     }
 
-    if (this->mUnk_0b0 & 8) {
-        this->mUnk_0a4.mUnk_00->func_ov000_02057c38(6, 2);
-        this->mUnk_0a4.mUnk_00->func_ov000_0209a7b8(this, ActorUnk_ov000_020a8bb0::func_ov000_020a9804);
+    if (this->mUnk_0B0 & 8) {
+        this->mUnk_0A4.mUnk_00->func_ov000_02057c38(6, 2);
+        this->mUnk_0A4.mUnk_00->func_ov000_0209a7b8(this, ActorUnk_ov000_020a8bb0::func_ov000_020a9804);
     }
 
     this->vfunc_54(param1);
@@ -90,18 +90,18 @@ ARM unk32 ActorUnk_ov000_020a8bb0::func_ov000_020a8dd0() {
 // non-matching
 ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8df0(ActorRef param1, unk32 param2) {
     if (!((u32) (((param2 + 8) - param2) / 2) < 2)) {
-        this->mUnk_0b0 |= 2;
+        this->mUnk_0B0 |= 2;
     } else {
-        this->mUnk_0b0 &= ~2;
+        this->mUnk_0B0 &= ~2;
     }
 
     if (this->mRef != param1) {
         this->vfunc_b4();
-        *(u32 *) &this->mUnk_0bc = param1.Get32();
-        this->mUnk_0c0.x         = 0;
-        this->mUnk_0c0.y         = 0;
-        this->mUnk_0c0.z         = 0;
-        this->mUnk_0b0 |= 1;
+        *(u32 *) &this->mUnk_0BC = param1.Get32();
+        this->mUnk_0C0.x         = 0;
+        this->mUnk_0C0.y         = 0;
+        this->mUnk_0C0.z         = 0;
+        this->mUnk_0B0 |= 1;
     }
 }
 
@@ -115,26 +115,26 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8e9c(Vec3p *param1) {
     q20 y = param1->y;
     q20 x = param1->z;
 
-    this->mUnk_0c0.x = x;
-    this->mUnk_0c0.y = y;
-    this->mUnk_0c0.z = x;
-    this->mUnk_0bc.Reset();
+    this->mUnk_0C0.x = x;
+    this->mUnk_0C0.y = y;
+    this->mUnk_0C0.z = x;
+    this->mUnk_0BC.Reset();
 }
 
 ARM void ActorUnk_ov000_020a8bb0::vfunc_b0() {
     if (data_027e09b8->func_01ffd420() == 0) {
         ActorUnk_vfunc_b0 auStack_60;
         auStack_60.mUnk_24 = this;
-        auStack_60.mUnk_0c = this->mUnk_7c;
+        auStack_60.mUnk_0C = this->mUnk_7C;
         auStack_60.mUnk_14 = 0;
         auStack_60.mUnk_18 = -1;
-        auStack_60.mUnk_1c = -1;
+        auStack_60.mUnk_1C = -1;
         auStack_60.mUnk_20 = 0;
         auStack_60.mUnk_21 = 0;
         auStack_60.mUnk_32 = 1;
 
         this->vfunc_00(&auStack_60.mUnk_34);
-        this->mUnk_0b4 = data_027e09b8->func_ov000_02073470(&auStack_60, 0);
+        this->mUnk_0B4 = data_027e09b8->func_ov000_02073470(&auStack_60, 0);
     }
 }
 
@@ -151,7 +151,7 @@ ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_90() {
 }
 
 ARM void ActorUnk_ov000_020a8bb0::vfunc_94() {
-    this->mUnk_0a4.mUnk_08 = 0xF6;
+    this->mUnk_0A4.mUnk_08 = 0xF6;
 }
 
 ARM void ActorUnk_ov000_020a8bb0::vfunc_60() {
@@ -176,8 +176,8 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_68() {
     UNSET_FLAG(this->mFlags, ActorFlag_Interacting);
     this->func_ov000_020a9200();
     this->vfunc_ac();
-    this->mUnk_0b0 &= ~0x01;
-    this->mUnk_0b0 &= ~0x10;
+    this->mUnk_0B0 &= ~0x01;
+    this->mUnk_0B0 &= ~0x10;
 }
 
 ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_7c() {
@@ -196,9 +196,9 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a91b8(Vec3p *param1, unk32 param
     this->func_ov000_020a8e9c(param1);
 
     if (param2 != 0) {
-        this->mUnk_0b0 |= 0x20;
+        this->mUnk_0B0 |= 0x20;
     } else {
-        this->mUnk_0b0 &= ~0x20;
+        this->mUnk_0B0 &= ~0x20;
     }
 
     this->vfunc_58(7);
@@ -207,7 +207,7 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a91b8(Vec3p *param1, unk32 param
 ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a9200() {}
 
 ARM void ActorUnk_ov000_020a8bb0::vfunc_70() {
-    if (this->mUnk_4c != 5) {
+    if (this->mUnk_4C != 5) {
         this->vfunc_58(4);
     }
 }
@@ -238,14 +238,14 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_20() {}
 
 // non-matching
 ARM void ActorUnk_ov000_020a8bb0::vfunc_24() {
-    if (data_027e09b8->func_ov000_020732dc(3) == 0 || !(this->mUnk_0b0 & 4)) {
+    if (data_027e09b8->func_ov000_020732dc(3) == 0 || !(this->mUnk_0B0 & 4)) {
         this->vfunc_20();
     }
 
-    if (!(this->mUnk_0b0 & 0x200)) {
-        this->mUnk_0b0 &= ~0x100;
+    if (!(this->mUnk_0B0 & 0x200)) {
+        this->mUnk_0B0 &= ~0x100;
     } else {
-        this->mUnk_0b0 &= ~0x200;
+        this->mUnk_0B0 &= ~0x200;
     }
 }
 
@@ -256,7 +256,7 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_2c(unk32 param1) {
     }
 
     this->vfunc_b8();
-    this->mUnk_0a4.func_01ffc6d4(this->mAngle, &this->mPos);
+    this->mUnk_0A4.func_01ffc6d4(this->mAngle, &this->mPos);
 }
 
 ARM void ActorUnk_ov000_020a8bb0::vfunc_b8() {

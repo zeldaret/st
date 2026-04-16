@@ -54,7 +54,7 @@ THUMB ActorManager::ActorManager() {
     this->mUnk_14.mUnk_04 = 0;
     this->mUnk_24         = 0;
     this->mUnk_28         = 0;
-    this->mUnk_2c         = 0;
+    this->mUnk_2C         = 0;
     this->mUnk_30         = 0;
     this->mUnk_34         = 0;
 }
@@ -231,7 +231,7 @@ THUMB void ActorManager::func_ov001_020bb488() {
             case 0x01:
             case 0x03:
             case 0x06:
-                if (data_027e0cd8->mUnk_0c->mUnk_128 & 0x800) {
+                if (data_027e0cd8->mUnk_0C->mUnk_128 & 0x800) {
                     func_ov031_020ea100();
                 }
                 break;

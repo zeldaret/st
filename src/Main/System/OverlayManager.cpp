@@ -4,7 +4,7 @@
 
 struct UnkStruct_020ee698 {
     /* 00 */ unk8 mUnk_00[0x2C];
-    /* 2c */ unk32 mUnk_2c;
+    /* 2C */ unk32 mUnk_2C;
     /* 30 */
 };
 extern UnkStruct_020ee698 data_ov000_020ee698;
@@ -16,11 +16,11 @@ struct OverlaySetup {
     /* 03 */ unk8 mUnk_03;
     /* 04 */ OverlayId slot1Overlay;
     /* 08 */ OverlayId slot2Overlay;
-    /* 0c */ OverlayId slot3Overlay;
+    /* 0C */ OverlayId slot3Overlay;
     /* 10 */ OverlayId slot12Overlay;
     /* 14 */ void *mUnk_14;
     /* 18 */ void *mUnk_18;
-    /* 1c */
+    /* 1C */
 };
 extern OverlaySetup gOverlaySetups[];
 
@@ -68,7 +68,7 @@ THUMB void OverlayManager::LoadOverlaySetup(s32 index) {
     } else {
         overlayId = pSetup->slot12Overlay;
 
-        if (index == 6 && data_ov000_020ee698.mUnk_2c == 2) {
+        if (index == 6 && data_ov000_020ee698.mUnk_2C == 2) {
             overlayId = OverlayId_CastleTown;
         }
 

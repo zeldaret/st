@@ -10,16 +10,16 @@
 class UnkStruct_ov000_0208f820_14 {
 public:
     /* 00 */ unk8 mUnk_00[0x6C];
-    /* 6c */ unk32 mUnk_6c;
+    /* 6C */ unk32 mUnk_6C;
     /* 70 */ u16 mUnk_70;
     /* 72 */ unk16 mUnk_72;
     /* 74 */ unk32 mUnk_74;
     /* 78 */ unk32 mUnk_78;
-    /* 7c */ unk32 mUnk_7c;
+    /* 7C */ unk32 mUnk_7C;
     /* 80 */ unk32 mUnk_80;
     /* 84 */ unk32 mUnk_84;
     /* 88 */ unk32 mUnk_88;
-    /* 8c */ unk32 mUnk_8c;
+    /* 8C */ unk32 mUnk_8C;
     /* 90 */
 };
 
@@ -37,7 +37,7 @@ class UnkStruct_ov000_0208f820_28_98 {
 public:
     /* 00 */ unk8 mUnk_00[0x38];
     /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
-    /* 3c */ unk32 mUnk_3c;
+    /* 3C */ unk32 mUnk_3C;
     /* 40 */ u16 mUnk_40;
 
     void func_ov093_0216f76c(Vec3p *param1, unk32 param2);
@@ -68,7 +68,7 @@ public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
+    /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ unk16 mUnk_14;
     /* 16 */ unk16 mUnk_16;
@@ -94,11 +94,11 @@ public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
+    /* 0C */ unk32 mUnk_0C;
     /* 10 */ UnkStruct_ov000_0208f820_30_10 *mUnk_10;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
-    /* 1c */ unk32 mUnk_1c;
+    /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk32 mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ STRUCT_PAD(0x28, 0x68);
@@ -122,9 +122,9 @@ public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
+    /* 0C */ unk32 mUnk_0C;
     /* 10 */ Vec3p mUnk_10;
-    /* 1c */ ItemId mUnk_1c;
+    /* 1C */ ItemId mUnk_1C;
 };
 
 class UnkStruct_ov000_0208f820_24 {
@@ -150,7 +150,7 @@ public:
     /* 00 */ u8 mUnk_00[4];
     /* 04 */ u8 mUnk_04[4];
     /* 08 */ unk32 mUnk_08;
-    /* 0c */ ItemId mItemId;
+    /* 0C */ ItemId mItemId;
     /* 14 */
 
     UnkStruct_ov000_0208f820_04(unk32 param1, unk32 param2, unk32 param3, ItemId itemId) {
@@ -170,28 +170,28 @@ public:
     /* 14 */ UnkStruct_ov000_0208f820_14 *mUnk_14;
     /* 18 */ unk8 mUnk_18;
     /* 19 */ unk8 mUnk_19;
-    /* 1a */ unk8 mUnk_1a;
-    /* 1b */ unk8 mUnk_1b;
-    /* 1c */ unk32 mUnk_1c;
+    /* 1A */ unk8 mUnk_1A;
+    /* 1B */ unk8 mUnk_1B;
+    /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk32 mUnk_20;
     /* 24 */ UnkStruct_ov000_0208f820_24 *mUnk_24;
     /* 28 */ UnkStruct_ov000_0208f820_28 *mUnk_28;
-    /* 2c */ UnkStruct_ov000_0208f820_2c *mUnk_2c;
+    /* 2C */ UnkStruct_ov000_0208f820_2c *mUnk_2C;
     /* 30 */ UnkStruct_ov000_0208f820_30 *mUnk_30;
     /* 34 */ Vec3p *mUnk_34;
     /* 38 */ Vec3p *mUnk_38;
-    /* 3c */ Vec3p *mUnk_3C;
+    /* 3C */ Vec3p *mUnk_3C;
     /* 40 */ UnkStruct_ov000_0208f820_40 *mUnk_40;
     /* 44 */ unk32 *mUnk_44;
     /* 48 */
 
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual ~UnkStruct_ov000_0208f820();
-    /* 0c */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) = 0;
+    /* 0C */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) = 0;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2)                  = 0;
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3);
-    /* 1c */ virtual bool vfunc_1c(Vec3p *param1);
+    /* 1C */ virtual bool vfunc_1c(Vec3p *param1);
     /* 20 */
 
     UnkStruct_ov000_0208f820();

@@ -4,33 +4,33 @@ typedef struct UnkStruct_027e037c_ {
     /* 004 */ unk32 mUnk_004;
     /* 008 */ Mat4p mUnk_008;
     /* 048 */ unk32 mUnk_048;
-    /* 04c */ Mat4x3p mUnk_04c;
-    /* 07c */ unk32 mUnk_07c;
+    /* 04C */ Mat4x3p mUnk_04C;
+    /* 07C */ unk32 mUnk_07C;
     /* 080 */ unk32 mUnk_080;
     /* 084 */ unk32 mUnk_084;
     /* 088 */ unk32 mUnk_088;
-    /* 08c */ unk32 mUnk_08c;
+    /* 08C */ unk32 mUnk_08C;
     /* 090 */ unk32 mUnk_090;
     /* 094 */ unk32 mUnk_094;
     /* 098 */ unk32 mUnk_098;
-    /* 09c */ unk32 mUnk_09c;
-    /* 0a0 */ unk32 mUnk_0a0;
-    /* 0a4 */ unk32 mUnk_0a4;
-    /* 0a8 */ unk32 mUnk_0a8;
-    /* 0ac */ unk32 mUnk_0ac;
-    /* 0b0 */ unk32 mUnk_0b0;
-    /* 0b4 */ unk32 mUnk_0b4;
-    /* 0b8 */ unk32 mUnk_0b8;
-    /* 0bc */ Mat3p rotation;
-    /* 0e0 */ Vec3p translation;
-    /* 0ec */ Vec3p scale;
-    /* 0f8 */ unk32 mUnk_0f8;
-    /* 0fc */ u32 flags;
+    /* 09C */ unk32 mUnk_09C;
+    /* 0A0 */ unk32 mUnk_0A0;
+    /* 0A4 */ unk32 mUnk_0A4;
+    /* 0A8 */ unk32 mUnk_0A8;
+    /* 0AC */ unk32 mUnk_0AC;
+    /* 0B0 */ unk32 mUnk_0B0;
+    /* 0B4 */ unk32 mUnk_0B4;
+    /* 0B8 */ unk32 mUnk_0B8;
+    /* 0BC */ Mat3p rotation;
+    /* 0E0 */ Vec3p translation;
+    /* 0EC */ Vec3p scale;
+    /* 0F8 */ unk32 mUnk_0F8;
+    /* 0FC */ u32 flags;
     /* 100 */ Mat4x3p mUnk_100;
     /* 130 */ Mat4x3p mUnk_130;
     /* 160 */ Mat4x3p mUnk_160;
     /* 190 */ Mat4x3p mUnk_190;
-    /* 1c0 */
+    /* 1C0 */
 } UnkStruct_027e037c;
 
 extern UnkStruct_027e037c data_027e0208;
@@ -71,7 +71,7 @@ void G3d_RenderSBCCommands(G3d_RenderState *renderState) {
 void G3d_InitRenderState(G3d_RenderState *renderState, G3d_RenderObject *renderObj) {
     _MI_CpuFill(0, (short *) renderState, sizeof(*renderState));
 
-    renderState->mUnk_c4[0] = 1;
+    renderState->mUnk_C4[0] = 1;
     renderState->flag       = G3D_RENDERST_FLAG_BONE_VISIBLE;
 
     if (renderObj->unkCommandsList) {
@@ -262,7 +262,7 @@ void G3d_SBCRender_007(G3d_RenderState *renderState, u32 opCode) {
             Mat4x3p_CopyToMat4p(mtx1, &mtx2);
             Mat4p_Multiply(&currentMtx, &mtx2, &currentMtx);
         } else if (data_027e0208.flags & 2) {
-            const Mat4x3p *mtx1 = &data_027e0208.mUnk_04c;
+            const Mat4x3p *mtx1 = &data_027e0208.mUnk_04C;
             Mat4p mtx2;
 
             Mat4x3p_CopyToMat4p(mtx1, &mtx2);
@@ -400,7 +400,7 @@ void G3d_SBCRender_008(G3d_RenderState *renderState, u32 opCode) {
             Mat4x3p_CopyToMat4p(mtx1, &mtx2);
             Mat4p_Multiply(&currentMtx, &mtx2, &currentMtx);
         } else if (data_027e0208.flags & 2) {
-            const Mat4x3p *mtx1 = &data_027e0208.mUnk_04c;
+            const Mat4x3p *mtx1 = &data_027e0208.mUnk_04C;
             Mat4p mtx2;
 
             Mat4x3p_CopyToMat4p(mtx1, &mtx2);
@@ -493,11 +493,11 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
 
     for (i = 0; i < numTerms; i++) {
         u32 jntIndex = *(termPtr + 1);
-        u32 unk      = G3d_FindInBitArray(&renderState->mUnk_cc[0], jntIndex);
+        u32 unk      = G3d_FindInBitArray(&renderState->mUnk_CC[0], jntIndex);
 
         mat4x = &data_02046c80.mUnk_1400[jntIndex].mtx1;
         if (!unk) {
-            G3d_SetBitArray(&renderState->mUnk_cc[0], jntIndex);
+            G3d_SetBitArray(&renderState->mUnk_CC[0], jntIndex);
 
             GFX_FIFO_MTX_RESTORE = (*termPtr);
             GFX_FIFO_MTX_MODE    = 1; // Position
@@ -749,11 +749,11 @@ void G3d_SBCRender_00C(G3d_RenderState *renderState, u32) {
             G3d_SetMtxMode_inline(3); // MTX_MODE = Texture
 
             if (data_027e0208.flags & 1) {
-                G3d_MtxMult33_inline((const Mat3p *) &data_027e0208.mUnk_04c); // MTX_MULT_3x3
+                G3d_MtxMult33_inline((const Mat3p *) &data_027e0208.mUnk_04C); // MTX_MULT_3x3
                 G3d_MtxMult33_inline(&gGeomMatrix);            // MTX_MULT_3x3
                 G3d_MtxMult33_inline(&m);                      // MTX_MULT_3x3
             } else if (data_027e0208.flags & 2) {
-                G3d_MtxMult33_inline((const Mat3p *) &data_027e0208.mUnk_04c); // MTX_MULT_3x3
+                G3d_MtxMult33_inline((const Mat3p *) &data_027e0208.mUnk_04C); // MTX_MULT_3x3
                 G3d_MtxMult33_inline(&m);                      // MTX_MULT_3x3
             } else {
                 G3d_MtxMult33_inline(&m); // MTX_MULT_3x3

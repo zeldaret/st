@@ -23,7 +23,7 @@ ARM ActorUnkSWTM::ActorUnkSWTM() :
     mUnk_A8(0) {}
 
 ARM ActorUnkSWTM::~ActorUnkSWTM() {
-    if (this->mUnk_4c != 2 && this->func_ov000_02098a60(0) == 0) {
+    if (this->mUnk_4C != 2 && this->func_ov000_02098a60(0) == 0) {
         this->func_ov000_0209b184();
     }
 }
@@ -32,8 +32,8 @@ ARM ActorUnkSWTM::~ActorUnkSWTM() {
 ARM bool ActorUnkSWTM::vfunc_18(unk32 param1) {
     this->mUnk_9E = this->mUnk_78;
     this->mUnk_98 = this->mUnk_70;
-    this->mUnk_A4 = this->mUnk_6e * 30;
-    this->mUnk_A0 = this->mUnk_9E + this->mUnk_6c;
+    this->mUnk_A4 = this->mUnk_6E * 30;
+    this->mUnk_A0 = this->mUnk_9E + this->mUnk_6C;
     this->mUnk_A2 = this->mUnk_75;
     this->mUnk_9C = this->mUnk_9E;
 
@@ -47,7 +47,7 @@ ARM bool ActorUnkSWTM::vfunc_18(unk32 param1) {
 }
 
 ARM void ActorUnkSWTM::vfunc_20(void) {
-    switch (this->mUnk_4c) {
+    switch (this->mUnk_4C) {
         case 0:
             if (!this->func_ov000_0209afe4()) {
                 return;
@@ -94,10 +94,10 @@ ARM void ActorUnkSWTM::vfunc_20(void) {
 ARM void ActorUnkSWTM::vfunc_24(void) {}
 
 ARM void ActorUnkSWTM::func_ov000_0209af54(unk32 param1) {
-    this->mUnk_4c = param1;
+    this->mUnk_4C = param1;
     this->mUnk_A8 = 0;
 
-    switch (this->mUnk_4c) {
+    switch (this->mUnk_4C) {
         case 0:
             this->func_ov000_02098a88(0, 0);
             break;
@@ -167,7 +167,7 @@ ARM unk32 ActorUnkSWTM::func_ov000_0209b038(void) {
             break;
     }
 
-    for (int i = 0; i < this->mUnk_6c; i++) {
+    for (int i = 0; i < this->mUnk_6C; i++) {
         if (data_027e0cd8->func_ov000_02081e30(this->mUnk_9E + i, this->mUnk_A2) == 0) {
             return 0;
         }
@@ -177,7 +177,7 @@ ARM unk32 ActorUnkSWTM::func_ov000_0209b038(void) {
 }
 
 ARM void ActorUnkSWTM::func_ov000_0209b160(void) {
-    if (this->mUnk_4c != 2) {
+    if (this->mUnk_4C != 2) {
         data_ov000_020b5214.func_ov000_0206db44(0xA3);
     }
 }

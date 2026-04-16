@@ -271,7 +271,7 @@ ARM unk32 ItemManager::func_ov000_020a8aa4() {
 }
 
 ARM unk32 ItemManager::func_ov000_020a8ab8() {
-    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_0c : 0;
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_0C : 0;
 }
 
 ARM unk32 ItemManager::func_ov000_020a8acc() {

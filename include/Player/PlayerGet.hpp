@@ -17,7 +17,7 @@ struct UnkStruct_ov110_02185dc8 {
 class UnkStruct_ov110_021861ec {
 public:
     /* 00 */ Vec3p mUnk_00;
-    /* 0c */
+    /* 0C */
 
     ARM UnkStruct_ov110_021861ec(q20 x, q20 y, q20 z) {
         this->mUnk_00.x = x;
@@ -40,7 +40,7 @@ public:
     /* 00 (base) */
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
+    /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ UnkStruct_ov000_0208f820 *mUnk_14;
 
@@ -86,7 +86,7 @@ public:
     /* 46 */ unk8 mUnk_46;
     /* 47 */ unk8 mUnk_47;
     /* 48 */ unk8 mUnk_48[0x5E - 0x48];
-    /* 5e */ unk16 mUnk_5e;
+    /* 5E */ unk16 mUnk_5E;
     /* 60 */ unk8 mUnk_60;
     /* 61 */ unk8 mUnk_61;
     /* 62 */ unk8 mUnk_62;
@@ -97,23 +97,23 @@ class PlayerGet : public UnkStruct_ov000_0208f820 {
 public:
     /* 000 (base) */
     /* 048 */ UnkStruct_PlayerGet_48 *mUnk_48;
-    /* 04c */ unk32 *mUnk_4c;
+    /* 04C */ unk32 *mUnk_4C;
     /* 050 */ UnkStruct_PlayerGet_50 *mUnk_50;
     /* 054 */ UnkStruct_ov000_0208f820_04 mUnk_54;
     /* 064 */ UnkStruct_PlayerGet_64 mUnk_64;
     /* 068 */ unk32 mUnk_68;
-    /* 06c */ unk32 mUnk_6c; // scale
+    /* 06C */ unk32 mUnk_6C; // scale
     /* 070 */ unk16 mUnk_70; // angle/rotation
     /* 070 */ u8 mUnk_72; // probably bools
     /* 070 */ u8 mUnk_73; // probably bools
     /* 074 */ UnkStruct_PlayerGet_74 mUnk_74;
-    /* 08c */ UnkSystem4 mUnk_8c;
-    /* 0ec */ UnkStruct_PlayerGet_ec mUnk_ec[4];
-    /* 0fc */ void *mUnk_fc;
+    /* 08C */ UnkSystem4 mUnk_8C;
+    /* 0EC */ UnkStruct_PlayerGet_ec mUnk_EC[4];
+    /* 0FC */ void *mUnk_FC;
     /* 100 */
 
     /* 04 */ virtual ~PlayerGet() override;
-    /* 0c */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) override;
+    /* 0C */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) override;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3) override;
 

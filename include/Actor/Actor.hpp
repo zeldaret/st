@@ -21,8 +21,8 @@
 class Actor_5c_Base {
 public:
     /* 00 */ Vec3p mUnk_00;
-    /* 0c */ s16 mUnk_0c;
-    /* 0e */ unk16 mUnk_0e; // padding?
+    /* 0C */ s16 mUnk_0C;
+    /* 0E */ unk16 mUnk_0E; // padding?
     /* 10 */
 
     Actor_5c_Base() {};
@@ -103,37 +103,37 @@ public:
     /* 00 (vtable) */
     /* 04 */ Vec3p mPos;
     /* 10 */ Vec3p mPrevPos;
-    /* 1c */ Vec3p mVel;
+    /* 1C */ Vec3p mVel;
     /* 28 */ s16 mAngle;
-    /* 2a */ unk16 mUnk_2a;
-    /* 2c */ unk32 mUnk_2c; // gravity?
+    /* 2A */ unk16 mUnk_2A;
+    /* 2C */ unk32 mUnk_2C; // gravity?
     /* 30 */ Cylinder *mUnk_30;
     /* 34 */ Cylinder *mUnk_34;
     /* 38 */ unk32 *mUnk_38;
-    /* 3c */ unk32 mUnk_3c;
+    /* 3C */ unk32 mUnk_3C;
     /* 40 */ Actor_c4 *mUnk_40;
     /* 44 */ u16 mUnk_44;
     /* 46 */ unk16 mUnk_46;
     /* 48 */ unk16 mUnk_48;
-    /* 4a */ unk8 mUnk_4a;
-    /* 4a */ unk8 mUnk_4b;
-    /* 4c */ s16 mUnk_4c;
-    /* 4e */ s16 mUnk_4e;
+    /* 4A */ unk8 mUnk_4A;
+    /* 4A */ unk8 mUnk_4B;
+    /* 4C */ s16 mUnk_4C;
+    /* 4E */ s16 mUnk_4E;
     /* 50 */ volatile u16 mUnk_50;
     /* 52 */ u16 mUnk_52;
     /* 54 */ unk32 mUnk_54;
     /* 58 */ ActorFlags mFlags[1];
-    /* 5c */ Actor_5c mUnk_5c;
-    /* 6c */ u16 mUnk_6c; // actor user id?
-    /* 6e */ u16 mUnk_6e;
+    /* 5C */ Actor_5c mUnk_5C;
+    /* 6C */ u16 mUnk_6C; // actor user id?
+    /* 6E */ u16 mUnk_6E;
     /* 70 */ u16 mUnk_70;
     /* 70 */ u16 mUnk_72;
     /* 74 */ u8 mUnk_74;
     /* 74 */ u8 mUnk_75;
     /* 76 */ u16 mUnk_76;
     /* 78 */ u16 mUnk_78;
-    /* 7A */ unk16 mUnk_7a;
-    /* 7C */ unk32 mUnk_7c;
+    /* 7A */ unk16 mUnk_7A;
+    /* 7C */ unk32 mUnk_7C;
     /* 80 */ s16 mUnk_80;
     /* 80 */ unk16 mUnk_82;
     /* 84 */ unk32 mUnk_84;
@@ -145,23 +145,23 @@ public:
     /* 00 */ virtual void vfunc_00(Vec3p *param1);
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
-    /* 0c */ virtual unk8 vfunc_0c();
+    /* 0C */ virtual unk8 vfunc_0c();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual bool vfunc_18(unk32 param1);
-    /* 1c */ virtual void vfunc_1c();
+    /* 1C */ virtual void vfunc_1c();
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28();
-    /* 2c */ virtual void vfunc_2c(unk32 param1);
+    /* 2C */ virtual void vfunc_2c(unk32 param1);
     /* 30 */ virtual void vfunc_30();
     /* 34 */ virtual unk32 vfunc_34();
     /* 38 */ virtual unk32 vfunc_38(unk32 param1);
-    /* 3c */ virtual bool vfunc_3c(unk32 param2, Vec3p *param3);
+    /* 3C */ virtual bool vfunc_3c(unk32 param2, Vec3p *param3);
     /* 40 */ virtual void vfunc_40();
     /* 44 */ virtual void vfunc_44();
     /* 48 */ virtual void vfunc_48();
-    /* 4c */ virtual ~Actor();
+    /* 4C */ virtual ~Actor();
     /* 54 */
 
     unk32 func_01fff5d0(unk32 param1, unk32 param2);
@@ -221,21 +221,21 @@ public:
     /* 00 (vtable) */
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk16 mUnk_08;
-    /* 08 */ unk16 mUnk_0a;
-    /* 0c */ unk16 mUnk_0c;
-    /* 0c */ unk16 mUnk_0e;
+    /* 08 */ unk16 mUnk_0A;
+    /* 0C */ unk16 mUnk_0C;
+    /* 0C */ unk16 mUnk_0E;
     /* 10 */ unk16 mUnk_10;
     /* 10 */ unk16 mUnk_12;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
-    /* 1c */ unk32 mUnk_1c;
+    /* 1C */ unk32 mUnk_1C;
     /* 20 */ Actor *mUnk_20;
     /* 24 */
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2);
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
-    /* 0c */ virtual void vfunc_0c(unk32 param1);
+    /* 0C */ virtual void vfunc_0c(unk32 param1);
     /* 10 */
 
     Actor_c4(Actor *param1) :

@@ -13,7 +13,7 @@ extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_ov000_0205d65c(void *, Vec3p *, Vec3p *, u32);
 
 ARM PlayerSceneChange::PlayerSceneChange() {
-    this->mUnk_68 = this->mUnk_2c->mUnk_14C;
+    this->mUnk_68 = this->mUnk_2C->mUnk_14C;
     this->mUnk_6C = -1;
 
     this->mUnk_70.coords = this->mUnk_34->coords;
@@ -82,7 +82,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
 
     switch (param1->mUnk_04) {
         case 0x3C: {
-            int iVar19 = data_027e0cd8->mUnk_0c->func_ov000_02080658((this->mUnk_2c->mUnk_148 >> 16) & 0x3F, &this->mUnk_54);
+            int iVar19 = data_027e0cd8->mUnk_0C->func_ov000_02080658((this->mUnk_2C->mUnk_148 >> 16) & 0x3F, &this->mUnk_54);
             if (iVar19 != 0 && this->mUnk_28->mUnk_94 != 0 && func_ov096_02179c14()) {
                 this->mUnk_54.mUnk_10 = 1;
             }
@@ -143,9 +143,9 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                     this->mUnk_70.z = temp_r8->z + MUL_Q20(data_0203f964[1], FLOAT_TO_Q20(2.0f));
                     break;
                 default:
-                    if (this->mUnk_2c->mUnk_150 == 0x1000) {
+                    if (this->mUnk_2C->mUnk_150 == 0x1000) {
                         MapObjectUnkDRTY *pDRTY =
-                            (MapObjectUnkDRTY *) gpMapObjManager->func_01fff498(this->mUnk_2c->mUnk_150 >> 0x10, 0);
+                            (MapObjectUnkDRTY *) gpMapObjManager->func_01fff498(this->mUnk_2C->mUnk_150 >> 0x10, 0);
 
                         if (pDRTY != NULL) {
                             pDRTY->func_ov000_0209d6ac((Vec3p *) &this->mUnk_70);
@@ -170,9 +170,9 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                             }
                         }
                     } else {
-                        if (((u32) ((u16) this->mUnk_2c->mUnk_150 << 0x10) >> 0x1E) == 1) {
+                        if (((u32) ((u16) this->mUnk_2C->mUnk_150 << 0x10) >> 0x1E) == 1) {
                             ActorUnk_ov000_020a8bb0 *temp_r0_6 =
-                                (ActorUnk_ov000_020a8bb0 *) gpActorManager->func_01fff3b4(this->mUnk_2c->mUnk_150);
+                                (ActorUnk_ov000_020a8bb0 *) gpActorManager->func_01fff3b4(this->mUnk_2C->mUnk_150);
 
                             if (temp_r0_6 != NULL) {
                                 this->mUnk_70.x = temp_r0_6->mPos.x;
@@ -418,7 +418,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                 case 0x1E:
                 case 0x1F:
                 default:
-                    UnkStruct_027e0cd8_0c *ptr = data_027e0cd8->mUnk_0c;
+                    UnkStruct_027e0cd8_0c *ptr = data_027e0cd8->mUnk_0C;
 
                     switch (this->mUnk_68) {
                         case 0x0F:
@@ -622,10 +622,10 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                 case 0x14:
                 case 0x21:
                 case 0x25:
-                    this->mUnk_2c->mUnk_9C = this->mUnk_34->y + 0xFFFFFCCD;
+                    this->mUnk_2C->mUnk_9C = this->mUnk_34->y + 0xFFFFFCCD;
                     break;
                 default:
-                    this->mUnk_2c->mUnk_9C = this->mUnk_34->y;
+                    this->mUnk_2C->mUnk_9C = this->mUnk_34->y;
                     break;
             }
             break;
@@ -673,7 +673,7 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                 case 0x25:
                     break;
                 default:
-                    this->mUnk_2c->mUnk_9C = this->mUnk_34->y;
+                    this->mUnk_2C->mUnk_9C = this->mUnk_34->y;
                     break;
             }
 
@@ -684,7 +684,7 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                 case 0x11:
                 case 0x13:
                 case 0x24: {
-                    UnkStruct_027e0cd8_0c *temp_r0_13 = data_027e0cd8->mUnk_0c;
+                    UnkStruct_027e0cd8_0c *temp_r0_13 = data_027e0cd8->mUnk_0C;
                     q20 temp_r0_14                    = temp_r0_13->vfunc_28(this->mUnk_34, 0, 0);
                     Vec3p *temp_r2_9                  = this->mUnk_34;
 

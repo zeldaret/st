@@ -17,21 +17,21 @@ public:
     /* 00 */ Actor **mActorTable;
     /* 04 */ Actor **mActorTableEnd;
     /* 08 */ Actor **mUnk_08; // pointer to first available slot?
-    /* 0c */ unk16 mActorCount;
-    /* 0e */ unk16 mNextActorId;
+    /* 0C */ unk16 mActorCount;
+    /* 0E */ unk16 mNextActorId;
     /* 10 */ unk8 mUnk_10;
     /* 10 */ unk8 mUnk_11;
     /* 10 */ unk8 mUnk_12;
     /* 10 */ unk8 mUnk_13;
     /* 14 */ UnkStruct_ov019_020d24c8_28_258_00 mUnk_14;
-    /* 1c */ unk32 mUnk_1c;
+    /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk8 mUnk_20;
     /* 21 */ unk8 mUnk_21;
     /* 22 */ unk8 mUnk_22;
     /* 23 */ unk8 mUnk_23;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ unk32 mUnk_28;
-    /* 2c */ unk32 mUnk_2c;
+    /* 2C */ unk32 mUnk_2C;
     /* 30 */ unk16 mUnk_30;
     /* 32 */ unk8 mUnk_32;
     /* 33 */ unk8 mUnk_33;

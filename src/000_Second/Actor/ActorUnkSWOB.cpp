@@ -22,9 +22,9 @@ ARM ActorUnkSWOB::ActorUnkSWOB() {}
 
 ARM bool ActorUnkSWOB::vfunc_18(unk32 param1) {
     this->mUnk_9E = this->mUnk_78;
-    this->mUnk_94 = this->mUnk_6e;
+    this->mUnk_94 = this->mUnk_6E;
     this->mUnk_98 = this->mUnk_70;
-    this->mUnk_A0 = this->mUnk_9E + this->mUnk_6c;
+    this->mUnk_A0 = this->mUnk_9E + this->mUnk_6C;
     this->mUnk_A2 = this->mUnk_75;
     this->mUnk_9C = this->mUnk_9E;
 
@@ -38,9 +38,9 @@ ARM bool ActorUnkSWOB::vfunc_18(unk32 param1) {
 }
 
 ARM void ActorUnkSWOB::func_ov000_0209a9b4(unk32 param1) {
-    this->mUnk_4c = param1;
+    this->mUnk_4C = param1;
 
-    switch (this->mUnk_4c) {
+    switch (this->mUnk_4C) {
         case 0:
             this->func_ov000_02098a88(0, 0);
             break;
@@ -63,7 +63,7 @@ ARM void ActorUnkSWOB::func_ov000_0209a9b4(unk32 param1) {
 
 // https://decomp.me/scratch/cUf0c
 ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
-    if (this->mUnk_4c == 1) {
+    if (this->mUnk_4C == 1) {
         return;
     }
 

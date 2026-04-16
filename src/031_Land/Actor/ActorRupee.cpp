@@ -62,15 +62,15 @@ ARM ActorRupee::ActorRupee() :
     mUnk_94(0),
     mUnk_96(0),
     mUnk_98(0),
-    mUnk_9a(6),
-    mUnk_bc(0),
-    mUnk_c0(0),
-    mUnk_c4(this),
-    mUnk_e8(0),
-    mUnk_f0(0),
-    mUnk_f4(false) {
-    this->mUnk_a0 = 0x13100;
-    this->mUnk_40 = &this->mUnk_c4;
+    mUnk_9A(6),
+    mUnk_BC(0),
+    mUnk_C0(0),
+    mUnk_C4(this),
+    mUnk_E8(0),
+    mUnk_F0(0),
+    mUnk_F4(false) {
+    this->mUnk_A0 = 0x13100;
+    this->mUnk_40 = &this->mUnk_C4;
 }
 
 // https://decomp.me/scratch/wunA4
@@ -86,7 +86,7 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
             return false;
         }
 
-        if (this->mUnk_6e == 0) {
+        if (this->mUnk_6E == 0) {
             this->func_ov031_020e9904(3);
         } else {
             this->func_ov031_020e9904(10);
@@ -157,7 +157,7 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
 }
 
 ARM void ActorRupee::func_ov031_020e8fec() {
-    switch (this->mUnk_6c) {
+    switch (this->mUnk_6C) {
         case RupeeId_Green:
             data_027e09a8->func_ov000_02071b30(0x73, &this->mPos, 0);
             break;
@@ -176,14 +176,14 @@ ARM void ActorRupee::func_ov031_020e8fec() {
 ARM void ActorRupee::func_ov031_020e9068() {
     bool var_r4 = false;
 
-    switch (this->mUnk_6c) {
+    switch (this->mUnk_6C) {
         case RupeeId_BigGreen:
         case RupeeId_BigRed:
         case RupeeId_Gold:
             this->func_ov031_020e9904(5);
             break;
         default: {
-            ItemManager *pItemManager = data_027e0ce0->mUnk_2c;
+            ItemManager *pItemManager = data_027e0ce0->mUnk_2C;
             pItemManager->GiveRupees(func_02017158(), false, true);
             var_r4 = true;
             break;
@@ -228,7 +228,7 @@ ARM void ActorRupee::func_ov031_020e91a8() {
         return;
     }
 
-    func_01fff05c(&sp0, data_027e0cd8->mUnk_0c, &this->mPos);
+    func_01fff05c(&sp0, data_027e0cd8->mUnk_0C, &this->mPos);
 
     if (((sp0 >> 5) & 0x03) == 2) {
         this->func_ov000_020984d0();
@@ -258,7 +258,7 @@ ARM void ActorRupee::func_ov031_020e9254() {
         return;
     }
 
-    func_01fff05c(&sp0, data_027e0cd8->mUnk_0c, &this->mPos);
+    func_01fff05c(&sp0, data_027e0cd8->mUnk_0C, &this->mPos);
 
     if (((sp0 >> 5) & 0x03) == 2) {
         this->func_ov000_020984d0();
@@ -287,10 +287,10 @@ ARM void ActorRupee::func_ov031_020e9310() {
         this->mUnk_50++;
     }
 
-    switch (this->mUnk_ec) {
+    switch (this->mUnk_EC) {
         case 0:
-            if (data_027e0cd8->mUnk_0c->vfunc_28(&this->mPos, 1, 0) < this->mPos.y) {
-                this->mUnk_ec++;
+            if (data_027e0cd8->mUnk_0C->vfunc_28(&this->mPos, 1, 0) < this->mPos.y) {
+                this->mUnk_EC++;
             }
             break;
         case 1:
@@ -300,10 +300,10 @@ ARM void ActorRupee::func_ov031_020e9310() {
                 this->mVel.y = 0;
                 this->mVel.z = 0;
 
-                func_01fff05c(&sp0, data_027e0cd8->mUnk_0c, &this->mPos);
+                func_01fff05c(&sp0, data_027e0cd8->mUnk_0C, &this->mPos);
 
                 if (((sp0 >> 5) & 3) != 2) {
-                    this->mUnk_ec = 0;
+                    this->mUnk_EC = 0;
                 } else {
                     this->func_ov000_020984d0();
                 }
@@ -333,11 +333,11 @@ ARM void ActorRupee::func_ov031_020e9434() {}
 
 ARM void ActorRupee::func_ov031_020e9438() {
     func_ov017_020bf99c();
-    this->mUnk_9c.func_ov000_02097bec();
+    this->mUnk_9C.func_ov000_02097bec();
 }
 
 ARM void ActorRupee::func_ov031_020e9450() {
-    this->func_ov017_020bf9c8(gpActorManager->func_01fff3b4(this->mUnk_bc));
+    this->func_ov017_020bf9c8(gpActorManager->func_01fff3b4(this->mUnk_BC));
     this->mPrevPos = this->mPos;
     Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
 
@@ -348,7 +348,7 @@ ARM void ActorRupee::func_ov031_020e9450() {
     this->mVel.x = 0;
     this->mVel.y = 0;
     this->mVel.z = 0;
-    this->mUnk_a0 |= 0x1000;
+    this->mUnk_A0 |= 0x1000;
     this->func_ov031_020e9904(0);
 }
 
@@ -358,9 +358,9 @@ ARM void ActorRupee::func_ov031_020e94d4() {
     this->mVel.x  = 0;
     this->mVel.y  = 0;
     this->mVel.z  = 0;
-    this->mUnk_4a = 0;
+    this->mUnk_4A = 0;
     this->mUnk_44 = 0;
-    this->mUnk_9c.func_ov000_02097bec();
+    this->mUnk_9C.func_ov000_02097bec();
     UNSET_FLAG(this->mFlags, ActorFlag_Visible);
 }
 
@@ -373,7 +373,7 @@ ARM void ActorRupee::func_ov031_020e951c() {
 
     itemId = ItemId_None;
 
-    switch (this->mUnk_6c) {
+    switch (this->mUnk_6C) {
         case RupeeId_Gold:
             itemId = ItemId_BigGoldRupee;
             break;
@@ -411,7 +411,7 @@ ARM void ActorRupee::func_ov031_020e95b0() {
 ARM void ActorRupee::func_ov031_020e95c0() {
     Actor *pActor;
 
-    pActor = gpActorManager->func_01fff3b4(this->mUnk_c0);
+    pActor = gpActorManager->func_01fff3b4(this->mUnk_C0);
     if (pActor == NULL) {
         this->func_ov031_020e9904(0);
         return;
@@ -429,7 +429,7 @@ ARM void ActorRupee::func_ov031_020e9610() {
 }
 
 ARM void ActorRupee::func_ov031_020e9624() {
-    this->mUnk_9a = 0x14;
+    this->mUnk_9A = 0x14;
     this->mUnk_98 = 0x00;
 }
 
@@ -438,13 +438,13 @@ ARM void ActorRupee::func_ov031_020e9638() {
     this->mVel.y = 0;
     this->mVel.z = 0;
     UNSET_FLAG(this->mFlags, ActorFlag_Visible);
-    this->mUnk_c4.mUnk_04 = 0;
+    this->mUnk_C4.mUnk_04 = 0;
 
-    if (this->mUnk_6e == 2) {
-        this->mUnk_4a = 1;
-        data_027e0cec->func_ov000_0209ff8c(&this->mUnk_f0, 0xD00C, &this->mPos, 2);
+    if (this->mUnk_6E == 2) {
+        this->mUnk_4A = 1;
+        data_027e0cec->func_ov000_0209ff8c(&this->mUnk_F0, 0xD00C, &this->mPos, 2);
     } else {
-        this->mUnk_4a = 0;
+        this->mUnk_4A = 0;
     }
 
     this->mPos.y -= FLOAT_TO_Q20(1.2);
@@ -468,7 +468,7 @@ ARM void ActorRupee::func_ov031_020e970c() {
     this->mVel.y = 0;
     this->mVel.z = 0;
     SET_FLAG(this->mFlags, ActorFlag_Visible);
-    this->mUnk_4a = 1;
+    this->mUnk_4A = 1;
     this->mUnk_52 = -1;
     this->mUnk_50 = 0;
 }
@@ -485,7 +485,7 @@ ARM void ActorRupee::func_ov031_020e9740() {
     sp4 = 0;
 
     if (func_ov031_0210af50(sp0, &sp4) != 0) {
-        temp_r0 = data_027e0cd8->mUnk_0c;
+        temp_r0 = data_027e0cd8->mUnk_0C;
         temp_r2 = (sp4 - 0x800) + temp_r0->vfunc_28(&this->mPos, 0, 0);
 
         if (this->mPos.y != temp_r2) {
@@ -496,8 +496,8 @@ ARM void ActorRupee::func_ov031_020e9740() {
             this->func_ov031_020e9904(0xC);
         }
     } else {
-        temp_r0      = data_027e0cd8->mUnk_0c;
-        this->mPos.y = temp_r0->vfunc_28(&this->mUnk_5c.mUnk_00, 0, 0);
+        temp_r0      = data_027e0cd8->mUnk_0C;
+        this->mPos.y = temp_r0->vfunc_28(&this->mUnk_5C.mUnk_00, 0, 0);
         this->func_ov031_020e9904(0xC);
     }
 
@@ -511,11 +511,11 @@ ARM void ActorRupee::func_ov031_020e9838() {
     u16 sp2;
 
     func_01ffedac(&sp2, &this->mPos);
-    this->mUnk_c4.mUnk_04 = 1;
+    this->mUnk_C4.mUnk_04 = 1;
     func_ov031_0210b0e4(sp2, 0);
     func_ov031_0210acd4(sp2);
     func_ov031_0210acd4(sp2);
-    data_027e0cec->func_ov000_020a0110(&this->mUnk_f0);
+    data_027e0cec->func_ov000_020a0110(&this->mUnk_F0);
 }
 
 // non-matching
@@ -537,17 +537,17 @@ extern UnkStruct_ov031_02113520 data_ov031_02113520[13];
 
 // non-matching
 ARM void ActorRupee::func_ov031_020e9904(unk32 param1) {
-    this->mUnk_4c = param1;
+    this->mUnk_4C = param1;
     this->mUnk_52 = -1;
     this->mUnk_50 = 0;
-    this->mUnk_ec = 0;
-    u32 uVar1     = data_ov031_02113520[this->mUnk_4c].mUnk_04;
+    this->mUnk_EC = 0;
+    u32 uVar1     = data_ov031_02113520[this->mUnk_4C].mUnk_04;
     UnkCallback_ov031_02113520 pcVar2;
 
     if (!(uVar1 & 1)) {
-        pcVar2 = data_ov031_02113520[this->mUnk_4c].mUnk_00;
+        pcVar2 = data_ov031_02113520[this->mUnk_4C].mUnk_00;
     } else {
-        pcVar2 = (UnkCallback_ov031_02113520) (((u32) this + uVar1 >> 1) + &data_ov031_02113520[this->mUnk_4c]);
+        pcVar2 = (UnkCallback_ov031_02113520) (((u32) this + uVar1 >> 1) + &data_ov031_02113520[this->mUnk_4C]);
     }
 
     pcVar2(this);
@@ -589,56 +589,56 @@ ARM void ActorRupee::vfunc_20() {
 
     func_01fff17c(&sStack_1c, data_027e0ce0, 0);
     func_02018114(&uStack_1a, sStack_1c);
-    this->mUnk_c4.mUnk_08 = uStack_1a;
-    this->mUnk_c4.mUnk_0a = uStack_18;
-    this->mUnk_c4.mUnk_0c = uStack_16;
+    this->mUnk_C4.mUnk_08 = uStack_1a;
+    this->mUnk_C4.mUnk_0A = uStack_18;
+    this->mUnk_C4.mUnk_0C = uStack_16;
 
     uStack_1a             = 0;
     uStack_18             = 0x666;
     uStack_16             = 0;
-    this->mUnk_c4.mUnk_0e = 0;
-    this->mUnk_c4.mUnk_10 = 0x666;
-    sVar1                 = this->mUnk_4c;
+    this->mUnk_C4.mUnk_0E = 0;
+    this->mUnk_C4.mUnk_10 = 0x666;
+    sVar1                 = this->mUnk_4C;
 
     test = this->mPos;
 
     if (sVar1 != 5) {
-        iVar4 = (int) (short) this->mUnk_4c;
+        iVar4 = (int) (short) this->mUnk_4C;
     }
 
-    this->mUnk_c4.mUnk_12 = 0;
+    this->mUnk_C4.mUnk_12 = 0;
 
     this->mPrevPos = test;
 
     uVar3 = uVar2;
 
     if ((sVar1 != 5 && iVar4 != 10) && iVar4 != 0xb) {
-        if ((sVar1 != 6) && ((u16) this->mUnk_98 < (u16) this->mUnk_9a)) {
+        if ((sVar1 != 6) && ((u16) this->mUnk_98 < (u16) this->mUnk_9A)) {
             this->mUnk_98++;
         }
 
         uVar3 = uStack_18;
 
-        if ((u16) this->mUnk_9a <= (u16) this->mUnk_98) {
-            this->mUnk_3c = (unk32) & this->mUnk_9c;
+        if ((u16) this->mUnk_9A <= (u16) this->mUnk_98) {
+            this->mUnk_3C = (unk32) & this->mUnk_9C;
             uStack_18     = uVar2;
             this->func_ov000_020989e0();
             uVar3 = uStack_18;
 
-            if ((this->mUnk_a4 & 0x3ffff) != 0) {
-                sVar1 = *(short *) &this->mUnk_b8;
+            if ((this->mUnk_A4 & 0x3ffff) != 0) {
+                sVar1 = *(short *) &this->mUnk_B8;
 
-                switch (mUnk_b8) {
+                switch (mUnk_B8) {
                     case 0x08:
                     case 0x10:
-                        if ((this->mUnk_a8 & 0x100) != 0) {
+                        if ((this->mUnk_A8 & 0x100) != 0) {
                             this->func_ov031_020e9068();
                             uVar3 = uStack_18;
                         }
                         break;
                     case 0x0C:
-                        this->mUnk_bc = this->mUnk_a8;
-                        this->mUnk_a0 &= 0xffffefff;
+                        this->mUnk_BC = this->mUnk_A8;
+                        this->mUnk_A0 &= 0xffffefff;
                         this->func_ov031_020e9904(6);
                         uVar3 = uStack_18;
                         break;
@@ -650,7 +650,7 @@ ARM void ActorRupee::vfunc_20() {
     }
 
     uStack_18 = uVar3;
-    iVar4     = (int) (short) this->mUnk_4c;
+    iVar4     = (int) (short) this->mUnk_4C;
     // uVar5     = *(u32 *) (data_ov031_0211358c[iVar4 * 8]);
 
     if (!(uVar5 & 1)) {
@@ -662,12 +662,12 @@ ARM void ActorRupee::vfunc_20() {
 
     // (*pcVar6)();
 
-    if ((this->mUnk_80 < 0) && (this->mUnk_4c != 5)) {
+    if ((this->mUnk_80 < 0) && (this->mUnk_4C != 5)) {
         this->func_ov031_020e9d94();
     }
 
-    if (this->mUnk_6e != 0) {
-        sVar1 = this->mUnk_4c;
+    if (this->mUnk_6E != 0) {
+        sVar1 = this->mUnk_4C;
 
         if (!(sVar1 != 10 && sVar1 != 0xb && sVar1 != 0xc)) {
             func_01ffedac(&uStack_1e, &this->mPos);
@@ -683,7 +683,7 @@ ARM void ActorRupee::func_ov031_020e9b88() {
     func_ov000_02098838();
     Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
 
-    if (this->mUnk_5c.mUnk_00.y < this->mPos.y + this->mVel.y) {
+    if (this->mUnk_5C.mUnk_00.y < this->mPos.y + this->mVel.y) {
         this->mUnk_44 = 0x9C;
     } else {
         this->mUnk_44 = 0x9F;
@@ -721,7 +721,7 @@ ARM void ActorRupee::vfunc_2c(unk32 param1) {
         return;
     }
 
-    func_ov000_0205c1f0(auStack_30, data_ov031_02110aa0[this->mUnk_6c]);
+    func_ov000_0205c1f0(auStack_30, data_ov031_02110aa0[this->mUnk_6C]);
     iStack_18 = this->mPos;
 
     if (!this->func_ov031_020e9d54()) {
@@ -734,7 +734,7 @@ ARM void ActorRupee::vfunc_2c(unk32 param1) {
         uVar2 = 0x4CD;
     }
 
-    if (this->mUnk_4c != 9) {
+    if (this->mUnk_4C != 9) {
         iStack_28.x = this->mPos.x;
         iStack_28.y = this->mPos.y + 0x80;
         iStack_28.z = this->mPos.z;
@@ -743,7 +743,7 @@ ARM void ActorRupee::vfunc_2c(unk32 param1) {
 }
 
 ARM bool ActorRupee::func_ov031_020e9d54() {
-    switch (this->mUnk_6c) {
+    switch (this->mUnk_6C) {
         case RupeeId_BigGreen:
         case RupeeId_BigRed:
         case RupeeId_Gold:
@@ -771,7 +771,7 @@ ARM void ActorRupee::func_ov031_020e9d94() {
         return;
     }
 
-    if (!this->mUnk_f4) {
+    if (!this->mUnk_F4) {
         if (this->mUnk_94 < this->mUnk_96) {
             this->mUnk_94++;
             var_r1 = 0;
@@ -782,7 +782,7 @@ ARM void ActorRupee::func_ov031_020e9d94() {
         if (var_r1 == 0) {
             return;
         }
-        this->mUnk_f4 = 1;
+        this->mUnk_F4 = 1;
         this->mUnk_96 = 0x3C;
         this->mUnk_94 = 0;
         return;
@@ -822,7 +822,7 @@ ARM bool ActorRupee::func_ov031_020e9e5c() {
     bool bVar6;
     bool bVar7;
 
-    sVar1 = this->mUnk_4c;
+    sVar1 = this->mUnk_4C;
     bVar6 = true;
     bVar5 = true;
     bVar4 = true;
@@ -867,7 +867,7 @@ ARM ActorRupee_c4::ActorRupee_c4(Actor *param1) :
 ARM unk32 ActorRupee_c4::vfunc_00(Actor_c4_stack param1, unk32 param2) {
     if (param2 != 0) {
         ActorRupee *pRupee = GET_ACTOR_RUPEE(this->mUnk_20);
-        pRupee->mUnk_c0    = param1.param1;
+        pRupee->mUnk_C0    = param1.param1;
         pRupee->func_ov031_020e9904(7);
     }
 
