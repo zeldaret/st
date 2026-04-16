@@ -77,16 +77,15 @@ typedef struct G3d_Model_ {
 } G3d_Model;
 
 static inline G3d_NameList *G3d_GetBoneList(const G3d_Model *mdl) {
-    return (G3d_NameList *) &mdl->boneList;
+    return mdl != NULL ? (G3d_NameList *) &mdl->boneList : NULL;
 }
 
 static inline void *G3d_GetMat(const G3d_Model *mdl) {
-
-    return (void *) ((u8 *) mdl + mdl->offMat);
+    return mdl != NULL && mdl->offMat != 0 ? (void *) ((u8 *) mdl + mdl->offMat) : NULL;
 }
 
 static inline G3d_NameList *G3d_GetMesh(const G3d_Model *mdl) {
-    return (G3d_NameList *) ((u8 *) mdl + mdl->offMesh);
+    return mdl != NULL && mdl->offMesh != 0 ? (G3d_NameList *) ((u8 *) mdl + mdl->offMesh) : NULL;
 }
 
 typedef enum {

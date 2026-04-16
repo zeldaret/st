@@ -4,7 +4,9 @@
 
 //! TODO: temporary place until this is documented properly
 
+#ifdef __cplusplus
 extern "C" {
+#endif
 void MI_CpuFill16(int value, void *dst, size_t size);
 void MI_CpuCopy16(void *src, void *dest, size_t size);
 void MI_CpuFill32(int value, void *dest, size_t size);
@@ -20,4 +22,6 @@ void MI_CpuFill8(void *dst, int value, size_t size);
 // Copy
 // Zero288
 // Swap32
+#ifdef __cplusplus
 }
+#endif

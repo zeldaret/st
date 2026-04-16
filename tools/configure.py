@@ -79,7 +79,7 @@ def NitroLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
         "lib": lib_name,
         "mw_version": "dsi/1.2p1",
         "src_dir": "libs/nitro/src",
-        "cflags": config.cflags_base,
+        "cflags": [*config.cflags_base, "-lang c"],
         "objects": objects,
     }
 

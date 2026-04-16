@@ -392,7 +392,7 @@ from:0x0211e9f8 kind:arm_call to:0x01ffad5c module:itcm
 from:0x0211ea08 kind:arm_call to:0x01ff8e58 module:itcm
 from:0x0211ea1c kind:load to:0x027e0964 module:dtcm
 from:0x0211ea20 kind:load to:0x0203feb0 module:main
-from:0x0211ea24 kind:load to:0x027e0254 module:dtcm
+from:0x0211ea24 kind:load to:0x027e0208 add:0x4c module:dtcm
 from:0x0211ea68 kind:arm_call to:0x01ff9638 module:itcm
 from:0x0211ea78 kind:arm_call to:0x01ffb6e4 module:itcm
 from:0x0211ea90 kind:arm_call to:0x02059218 module:overlay(0)

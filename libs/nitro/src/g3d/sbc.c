@@ -33,7 +33,8 @@ typedef struct UnkStruct_027e037c_ {
     /* 1c0 */
 } UnkStruct_027e037c;
 
-extern UnkStruct_027e037c data_027e037c;
+extern UnkStruct_027e037c data_027e0208;
+#include "Unknown/UnkMemFuncs.h"
 #include "regs.h"
 
 #define G3D_SBC_CMD_MASK 0x1f
@@ -41,22 +42,21 @@ extern UnkStruct_027e037c data_027e037c;
 #define GX_ST(s, t) ((u32) ((u16) (s16) (s >> 8) | ((u16) (s16) (t >> 8) << 16)))
 #define GX_PACK_TEXCOORD_PARAM(s, t) (GX_ST((s), (t)))
 
-extern void Fill256(unk32, unk16 *, unk32);
-extern void Fill32(unk32, u32 *, unk32);
 extern void FlushGfxQueue();
-extern s32 func_0200598c(Mat4p *matrix);
-extern Mat4x3p *func_02018450();
-extern Mat4x3p *func_02018738();
-extern Mat4x3p *func_02018770();
-extern s32 func_020059bc(Mat3p *matrix);
-extern void func_0200567c(unk32 param1);
-extern void func_02005644(Mat4x3p *matrix);
-extern void func_01ffa94c(const void *param1, u32 param2);
+extern s32 func_02024d64(Mat4p *matrix);
+extern Mat4x3p *func_0200c198();
+extern Mat4x3p *func_0200c23c();
+extern Mat4x3p *func_0200c270();
+extern s32 func_02024d94(Mat3p *matrix);
+extern void func_02024a68(unk32 param1);
+extern void func_02024a30(Mat4x3p *matrix);
+extern void func_01ff8dac(const void *param1, u32 param2);
+extern void func_02024a84(Mat3p *param1);
 extern Mat3p gGeomMatrix;
 extern Vec3p gGeomTranslation;
 extern void G3d_GetCurrentMtx(Mat4x3p *mtx1, Mat3p *mtx2);
 
-UnkStruct_0205ae08 data_0205ae08;
+UnkStruct_0205ae08 data_02046c80;
 
 // Renders all SBC commands until the end of the list
 void G3d_RenderSBCCommands(G3d_RenderState *renderState) {
@@ -69,7 +69,8 @@ void G3d_RenderSBCCommands(G3d_RenderState *renderState) {
 
 // Initializes the render state and starts rendering the SBC command list
 void G3d_InitRenderState(G3d_RenderState *renderState, G3d_RenderObject *renderObj) {
-    Fill256(0, (short *) renderState, sizeof(*renderState));
+    _MI_CpuFill(0, (short *) renderState, sizeof(*renderState));
+
     renderState->mUnk_c4[0] = 1;
     renderState->flag       = G3D_RENDERST_FLAG_BONE_VISIBLE;
 
@@ -88,6 +89,7 @@ void G3d_InitRenderState(G3d_RenderState *renderState, G3d_RenderObject *renderO
     renderState->textureHandler    = G3d_gTextureHandlers[renderObj->model->textureHandler];
     renderState->upScale           = renderObj->model->upScale;
     renderState->downScale         = renderObj->model->downScale;
+
     if (renderObj->callbackFunction && renderObj->callbackIdx < 32) {
         renderState->callbackFuncs[renderObj->callbackIdx]   = renderObj->callbackFunction;
         renderState->callbackSegment[renderObj->callbackIdx] = renderObj->mUnk_25;
@@ -134,9 +136,9 @@ void G3d_SetRenderObjAnimationMap(u32 *arr, const G3d_Animation *anim) {
 // Renders a model by processing the SBC command list
 void G3d_Render(G3d_RenderObject *renderObj) {
     if ((renderObj->flag & G3D_RENDEROBJ_FLAG_ANIMMAP_OUTDATED) == G3D_RENDEROBJ_FLAG_ANIMMAP_OUTDATED) {
-        Fill32(0, &renderObj->matAnimBindMap[0], 8);
-        Fill32(0, &renderObj->jntAnimBindMap[0], 8);
-        Fill32(0, &renderObj->unkAnimBindMap[0], 8);
+        MI_CpuFill32(0, &renderObj->matAnimBindMap[0], 8);
+        MI_CpuFill32(0, &renderObj->jntAnimBindMap[0], 8);
+        MI_CpuFill32(0, &renderObj->unkAnimBindMap[0], 8);
 
         if (renderObj->matAnim) {
             G3d_SetRenderObjAnimationMap(&renderObj->matAnimBindMap[0], renderObj->matAnim);
@@ -181,10 +183,16 @@ void G3d_SBCRender_007(G3d_RenderState *renderState, u32 opCode) {
 
     u32 totalArgs = 2;
 
-    static u32 funcArgs[] = {0x1b171012, // MTX_POP | MTX_MODE | MTX_LOAD_4x3 | MTX_SCALE
-                             1,  // MTX_MODE = Position
-                             2,          0x1000, 0, 0, 0, 0x1000, 0, 0, 0, 0x1000, // Identity MTX
-                             0,          0,      0, 0, 0, 0};
+    // clang-format off
+    static u32 funcArgs[] = {
+        0x1b171012,      // MTX_POP | MTX_MODE | MTX_LOAD_4x3 | MTX_SCALE
+        1,               // MTX_MODE = Position
+        2, 0x1000, 0, 0, // Identity MTX
+        0, 0x1000, 0, 0,
+        0, 0x1000, 0, 0,
+        0, 0, 0, 0,
+    };
+    // clang-format on
 
     Vec3p *translationVec = (Vec3p *) &funcArgs[12];
     Vec3p *scaleVec       = (Vec3p *) &funcArgs[15];
@@ -244,17 +252,17 @@ void G3d_SBCRender_007(G3d_RenderState *renderState, u32 opCode) {
 
         REG_GFX_FIFO = 0;
 
-        while (func_0200598c(&currentMtx))
+        while (func_02024d64(&currentMtx))
             ;
 
-        if (data_027e037c.flags & 1) {
-            const Mat4x3p *mtx1 = func_02018738();
+        if (data_027e0208.flags & 1) {
+            const Mat4x3p *mtx1 = func_0200c23c();
             Mat4p mtx2;
 
             Mat4x3p_CopyToMat4p(mtx1, &mtx2);
             Mat4p_Multiply(&currentMtx, &mtx2, &currentMtx);
-        } else if (data_027e037c.flags & 2) {
-            const Mat4x3p *mtx1 = &data_027e037c.mUnk_04c;
+        } else if (data_027e0208.flags & 2) {
+            const Mat4x3p *mtx1 = &data_027e0208.mUnk_04c;
             Mat4p mtx2;
 
             Mat4x3p_CopyToMat4p(mtx1, &mtx2);
@@ -269,17 +277,17 @@ void G3d_SBCRender_007(G3d_RenderState *renderState, u32 opCode) {
         scaleVec->y = Vec3p_Length((Vec3p *) &currentMtx.yColumn);
         scaleVec->z = Vec3p_Length((Vec3p *) &currentMtx.zColumn);
 
-        if (data_027e037c.flags & 1) {
+        if (data_027e0208.flags & 1) {
             REG_GFX_FIFO = 0x171012; // MTX_POP | MTX_MODE | MTX_LOAD_4x3
             Stream32(&funcArgs[1], &REG_GFX_FIFO, 8); // MTX_MODE = Position
-            Stream32(func_02018770(), &REG_GFX_FIFO, 0x30);
+            Stream32(func_0200c270(), &REG_GFX_FIFO, 0x30);
 
             REG_GFX_FIFO = 0x1b19; // MTX_MULT_4x3 | MTX_SCALE
             Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3c); // Identity MTX
-        } else if (data_027e037c.flags & 2) {
+        } else if (data_027e0208.flags & 2) {
             REG_GFX_FIFO = 0x171012; // MTX_POP | MTX_MODE | MTX_LOAD_4x3
             Stream32(&funcArgs[1], &REG_GFX_FIFO, 8); // MTX_MODE = Position
-            Stream32(func_02018450(), &REG_GFX_FIFO, 0x30);
+            Stream32(func_0200c198(), &REG_GFX_FIFO, 0x30);
 
             REG_GFX_FIFO = 0x1b19; // MTX_MULT_4x3 | MTX_SCALE
             Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3c); // Identity MTX
@@ -314,10 +322,16 @@ void G3d_SBCRender_008(G3d_RenderState *renderState, u32 opCode) {
     u32 totalArgs = 2;
     Mat4p currentMtx;
 
-    static u32 funcArgs[] = {0x1b171012, // MTX_POP | MTX_MODE | MTX_LOAD_4x3 | MTX_SCALE
-                             1,  // MTX_MODE = Position
-                             2,          0x1000, 0, 0, 0, 0x1000, 0, 0, 0, 0x1000, // Identity MTX
-                             0,          0,      0, 0, 0, 0};
+    // clang-format off
+    static u32 funcArgs[] = {
+        0x1b171012,      // MTX_POP | MTX_MODE | MTX_LOAD_4x3 | MTX_SCALE
+        1,               // MTX_MODE = Position
+        2, 0x1000, 0, 0, // Identity MTX
+        0, 0x1000, 0, 0,
+        0, 0x1000, 0, 0,
+        0, 0, 0, 0,
+    };
+    // clang-format on
 
     Vec3p *translationVec = (Vec3p *) &funcArgs[12];
     Vec3p *scaleVec       = (Vec3p *) &funcArgs[15];
@@ -376,17 +390,17 @@ void G3d_SBCRender_008(G3d_RenderState *renderState, u32 opCode) {
 
         REG_GFX_FIFO = 0;
 
-        while (func_0200598c(&currentMtx))
+        while (func_02024d64(&currentMtx))
             ;
 
-        if (data_027e037c.flags & 1) {
-            const Mat4x3p *mtx1 = func_02018738();
+        if (data_027e0208.flags & 1) {
+            const Mat4x3p *mtx1 = func_0200c23c();
             Mat4p mtx2;
 
             Mat4x3p_CopyToMat4p(mtx1, &mtx2);
             Mat4p_Multiply(&currentMtx, &mtx2, &currentMtx);
-        } else if (data_027e037c.flags & 2) {
-            const Mat4x3p *mtx1 = &data_027e037c.mUnk_04c;
+        } else if (data_027e0208.flags & 2) {
+            const Mat4x3p *mtx1 = &data_027e0208.mUnk_04c;
             Mat4p mtx2;
 
             Mat4x3p_CopyToMat4p(mtx1, &mtx2);
@@ -413,17 +427,17 @@ void G3d_SBCRender_008(G3d_RenderState *renderState, u32 opCode) {
             mtx->yColumn.y = mtx->zColumn.z;
         }
 
-        if (data_027e037c.flags & 1) {
+        if (data_027e0208.flags & 1) {
             REG_GFX_FIFO = 0x171012; // MTX_POP | MTX_MODE | MTX_LOAD_4x3
             Stream32(&funcArgs[1], &REG_GFX_FIFO, 8); // MTX_MODE = Position
-            Stream32(func_02018770(), &REG_GFX_FIFO, 0x30);
+            Stream32(func_0200c270(), &REG_GFX_FIFO, 0x30);
 
             REG_GFX_FIFO = 0x1b19; // MTX_MULT_4x3 | MTX_SCALE
             Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3c); // Identity MTX
-        } else if (data_027e037c.flags & 2) {
+        } else if (data_027e0208.flags & 2) {
             REG_GFX_FIFO = 0x171012; // MTX_POP | MTX_MODE | MTX_LOAD_4x3
             Stream32(&funcArgs[1], &REG_GFX_FIFO, 8); // MTX_MODE = Position
-            Stream32(func_02018450(), &REG_GFX_FIFO, 0x30);
+            Stream32(func_0200c198(), &REG_GFX_FIFO, 0x30);
 
             REG_GFX_FIFO = 0x1b19; // MTX_MULT_4x3 | MTX_SCALE
             Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3c); // Identity MTX
@@ -469,7 +483,7 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
     Mat4p *mat4x;
     Mat3p *mat3x;
 
-    Fill256(0, (unk16 *) &mtxStruct, sizeof(mtxStruct));
+    _MI_CpuFill(0, (unk16 *) &mtxStruct, sizeof(mtxStruct));
     FlushGfxQueue();
 
     GFX_FIFO_MTX_MODE     = 0; // Projection
@@ -481,13 +495,13 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
         u32 jntIndex = *(termPtr + 1);
         u32 unk      = G3d_FindInBitArray(&renderState->mUnk_cc[0], jntIndex);
 
-        mat4x = &data_0205ae08.mUnk_1400[jntIndex].mtx1;
+        mat4x = &data_02046c80.mUnk_1400[jntIndex].mtx1;
         if (!unk) {
             G3d_SetBitArray(&renderState->mUnk_cc[0], jntIndex);
 
             GFX_FIFO_MTX_RESTORE = (*termPtr);
             GFX_FIFO_MTX_MODE    = 1; // Position
-            func_0200567c(&invBMtx[jntIndex].mtx);
+            func_02024a68(&invBMtx[jntIndex].mtx);
         }
 
         if (i != 0) {
@@ -505,10 +519,10 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
         }
 
         if (!unk) {
-            while (func_0200598c(mat4x))
+            while (func_02024d64(mat4x))
                 ;
             GFX_FIFO_MTX_MODE = 2; // Position + Vector
-            func_02005698(&invBMtx[jntIndex].unkMtx);
+            func_02024a84(&invBMtx[jntIndex].unkMtx);
         }
 
         weight = *(termPtr + 2) << 4;
@@ -530,10 +544,10 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
         mtxStruct.mtx1.wColumn.z += (weight * mat4x->wColumn.z) >> 0xc;
 
         termPtr += 3;
-        mat3x = &data_0205ae08.mUnk_1400[jntIndex].mtx2;
+        mat3x = &data_02046c80.mUnk_1400[jntIndex].mtx2;
 
         if (!unk) {
-            while (func_020059bc(mat3x))
+            while (func_02024d94(mat3x))
                 ;
         }
     }
@@ -549,9 +563,9 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
     mtxStruct.mtx2.zColumn.y += (weight * mat3x->zColumn.y) >> 0xc;
     mtxStruct.mtx2.zColumn.z += (weight * mat3x->zColumn.z) >> 0xc;
 
-    func_02005644((const Mat4x3p *) &mtxStruct.mtx2);
+    func_02024a30((const Mat4x3p *) &mtxStruct.mtx2);
     GFX_FIFO_MTX_MODE = 1; // Position
-    func_02005644(&mtxStruct.mtx1);
+    func_02024a30(&mtxStruct.mtx1);
     GFX_FIFO_MTX_MODE    = 0; // Projection
     GFX_FIFO_MTX_RESTORE = 1;
     GFX_FIFO_MTX_MODE    = 2; // Position + Vector
@@ -592,7 +606,7 @@ void G3d_SBCRender_00A(G3d_RenderState *renderState, u32) {
         int2 = (u32) ((*(renderState->currentCmd + 5) << 0) | (*(renderState->currentCmd + 6) << 8) |
                       (*(renderState->currentCmd + 7) << 16) | (*(renderState->currentCmd + 8) << 24));
 
-        func_01ffa94c(renderState->currentCmd + int1, int2);
+        func_01ff8dac(renderState->currentCmd + int1, int2);
     }
 
     if (callbackSegment == 3) {
@@ -634,7 +648,7 @@ void G3d_SBCRender_00C(G3d_RenderState *renderState, u32) {
             renderState->matAnim->teximage_params |= 0x80000000; // Normal source
 
             funcArgs[1] = renderState->matAnim->teximage_params;
-            PushGeometryCommand(funcArgs[0], &funcArgs[1], 1);
+            PushGeometryCommand(funcArgs[0], &funcArgs[3], 1);
         }
 
         mtxModeTex = 3;
@@ -685,28 +699,38 @@ void G3d_SBCRender_00C(G3d_RenderState *renderState, u32) {
         }
 
         if (!callbackSkip) {
-            u32 matIndex            = *(renderState->currentCmd + 1);
-            G3d_NameList_Header *h  = (G3d_NameList_Header *) ((u8 *) &renderState->materialList->materials +
-                                                              renderState->materialList->materials.ofsHeader);
-            u32 *materialOffset     = (u32 *) (&h->data[0] + h->element_size * matIndex);
-            const G3d_Material *mat = (G3d_Material *) ((u8 *) renderState->materialList + *materialOffset);
+            u32 matIndex                    = *(renderState->currentCmd + 1);
+            G3d_Material_List *materialList = renderState->materialList;
 
-            if (mat->flag & 0x2000) {
-                const u8 *p = (const u8 *) mat + sizeof(G3d_Material);
+            if (materialList != NULL) {
+                G3d_NameList_Header *h = (G3d_NameList_Header *) ((u8 *) &materialList->materials);
 
-                if (!(mat->flag & 2)) {
-                    p += 8;
+                if (h != NULL) {
+                    int numMaterials = *((u8 *) &materialList->materials + 1);
+
+                    if (numMaterials < matIndex) {
+                        u32 *materialOffset     = (u32 *) (&h->data[0] + h->element_size * matIndex);
+                        const G3d_Material *mat = (G3d_Material *) ((u8 *) materialList + *materialOffset);
+
+                        if (mat->flag & 0x2000) {
+                            const u8 *p = (const u8 *) mat + sizeof(G3d_Material);
+
+                            if (!(mat->flag & 2)) {
+                                p += 8;
+                            }
+
+                            if (!(mat->flag & 4)) {
+                                p += 4;
+                            }
+
+                            if (!(mat->flag & 8)) {
+                                p += 8;
+                            }
+
+                            G3d_MtxMult44_inline((const Mat4p *) p); // MTX_MULT_4x4
+                        }
+                    }
                 }
-
-                if (!(mat->flag & 4)) {
-                    p += 4;
-                }
-
-                if (!(mat->flag & 8)) {
-                    p += 8;
-                }
-
-                G3d_MtxMult44_inline((const Mat4p *) p); // MTX_MULT_4x4
             }
         }
 
@@ -724,12 +748,12 @@ void G3d_SBCRender_00C(G3d_RenderState *renderState, u32) {
             G3d_GetCurrentMtx(0, &m);
             G3d_SetMtxMode_inline(3); // MTX_MODE = Texture
 
-            if (data_027e037c.flags & 1) {
-                G3d_MtxMult33_inline((const Mat3p *) &data_027e037c.mUnk_04c); // MTX_MULT_3x3
+            if (data_027e0208.flags & 1) {
+                G3d_MtxMult33_inline((const Mat3p *) &data_027e0208.mUnk_04c); // MTX_MULT_3x3
                 G3d_MtxMult33_inline(&gGeomMatrix);            // MTX_MULT_3x3
                 G3d_MtxMult33_inline(&m);                      // MTX_MULT_3x3
-            } else if (data_027e037c.flags & 2) {
-                G3d_MtxMult33_inline((const Mat3p *) &data_027e037c.mUnk_04c); // MTX_MULT_3x3
+            } else if (data_027e0208.flags & 2) {
+                G3d_MtxMult33_inline((const Mat3p *) &data_027e0208.mUnk_04c); // MTX_MULT_3x3
                 G3d_MtxMult33_inline(&m);                      // MTX_MULT_3x3
             } else {
                 G3d_MtxMult33_inline(&m); // MTX_MULT_3x3
@@ -851,15 +875,15 @@ void G3d_SBCRender_00D(G3d_RenderState *renderState, u32) {
             Mat4p mtx;
             u32 tmp;
 
-            if (data_027e037c.flags & 1) {
+            if (data_027e0208.flags & 1) {
                 PushGeometryCommand(0x1c, &gGeomTranslation, 3); // MTX_TRANS
                 G3d_MtxMult33_inline(&gGeomMatrix); // MTX_MULT_3x3
                 G3d_MtxMult43_inline(&m);  // MTX_MULT_4x3
 
-            } else if (data_027e037c.flags & 2) {
+            } else if (data_027e0208.flags & 2) {
                 G3d_MtxMult43_inline(&m);
             } else {
-                G3d_MtxMult43_inline(func_02018450());
+                G3d_MtxMult43_inline(func_0200c198());
                 G3d_MtxMult43_inline(&m);
             }
 
@@ -870,7 +894,7 @@ void G3d_SBCRender_00D(G3d_RenderState *renderState, u32) {
                 GFX_FIFO_MTX_PUSH     = 0;
                 GFX_FIFO_MTX_IDENTITY = 0;
 
-                while (func_0200598c(&mtx))
+                while (func_02024d64(&mtx))
                     ;
 
                 GFX_FIFO_MTX_POP  = 1;

@@ -850,14 +850,14 @@ from:0x0218281c kind:arm_call to:0x0200e260 module:main
 from:0x0218282c kind:arm_call to:0x01ff8e58 module:itcm
 from:0x0218283c kind:arm_call to:0x01ffad5c module:itcm
 from:0x02182868 kind:arm_call to:0x0205a544 module:overlay(0)
-from:0x02182874 kind:load to:0x027e0254 module:dtcm
+from:0x02182874 kind:load to:0x027e0208 add:0x4c module:dtcm
 from:0x02182878 kind:load to:0x027e0964 module:dtcm
 from:0x0218287c kind:load to:0x027e0958 module:dtcm
 from:0x02182888 kind:arm_call to:0x0218272c module:overlay(95)
 from:0x021828a0 kind:arm_call to:0x01ff8e58 module:itcm
 from:0x021828a4 kind:arm_call to:0x0205c254 module:overlay(0)
 from:0x021828c4 kind:arm_call to:0x01ff8e58 module:itcm
-from:0x021828cc kind:load to:0x027e0254 module:dtcm
+from:0x021828cc kind:load to:0x027e0208 add:0x4c module:dtcm
 from:0x02182968 kind:load to:0x0217c4e0 module:overlay(95)
 from:0x0218298c kind:load to:0x0217c0e0 module:overlay(95)
 from:0x02182990 kind:load to:0x0217c540 module:overlay(95)

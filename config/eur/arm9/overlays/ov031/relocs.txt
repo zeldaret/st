@@ -509,7 +509,7 @@ from:0x020dd2f4 kind:arm_call to:0x01ff8e58 module:itcm
 from:0x020dd314 kind:arm_call to:0x01ff8e58 module:itcm
 from:0x020dd320 kind:load to:0x02041964 module:main
 from:0x020dd324 kind:load to:0x020aa394 module:overlay(0)
-from:0x020dd328 kind:load to:0x027e0254 module:dtcm
+from:0x020dd328 kind:load to:0x027e0208 add:0x4c module:dtcm
 from:0x020dd338 kind:arm_call to:0x0207b6c0 module:overlay(0)
 from:0x020dd340 kind:arm_call_thumb to:0x02057ed4 module:overlay(0)
 from:0x020dd348 kind:arm_call_thumb to:0x0208c6d0 module:overlay(0)

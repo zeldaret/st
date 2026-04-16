@@ -1043,7 +1043,7 @@ from:0x02171418 kind:arm_call to:0x01ff8e58 module:itcm
 from:0x02171428 kind:arm_call to:0x0200e750 module:main
 from:0x02171438 kind:load to:0x0203feb0 module:main
 from:0x0217143c kind:load to:0x027e0130 module:dtcm
-from:0x02171440 kind:load to:0x027e0254 module:dtcm
+from:0x02171440 kind:load to:0x027e0208 add:0x4c module:dtcm
 from:0x02171504 kind:arm_call_thumb to:0x01ffa184 module:itcm
 from:0x02171514 kind:arm_call to:0x01ffa60c module:itcm
 from:0x021715a8 kind:arm_call_thumb to:0x01ffa1a0 module:itcm

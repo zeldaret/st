@@ -70,7 +70,6 @@ extern q4 data_0203f964[];
 extern q4 data_0203feb0[];
 extern "C" void func_01ffb714(Vec3p *, Vec3p *, void *);
 extern "C" void func_01ff9638(void *, s16);
-extern "C" q20 func_01ffb800(void *);
 extern "C" void func_01ff9770(void *);
 extern "C" void func_ov000_02072fd0(void *);
 extern unk32 data_ov000_020b3000;
@@ -219,7 +218,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                     this->mUnk_9C.z = 0;
                     func_01ff9638(&this->mUnk_9C, temp_r8_2);
 
-                    q20 temp_r0_11 = func_01ffb800(&this->mUnk_9C);
+                    q20 temp_r0_11 = Vec3p_Length(&this->mUnk_9C);
                     if (temp_r0_11 > 0x800) {
                         if ((((temp_r0_11 - 0x800) / 10) + ((temp_r0_11 - 0x800) >> 0x1F)) <= 0) {
                             this->mUnk_9C.x = 0;

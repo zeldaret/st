@@ -686,7 +686,7 @@ from:0x021296d4 kind:arm_call to:0x0212971c module:overlay(46)
 from:0x02129700 kind:arm_call to:0x0212971c module:overlay(46)
 from:0x02129710 kind:load to:0x027e09ac module:dtcm
 from:0x021297c8 kind:arm_call to:0x02024a30 module:main
-from:0x02129a1c kind:load to:0x027e0254 module:dtcm
+from:0x02129a1c kind:load to:0x027e0208 add:0x4c module:dtcm
 from:0x02129cf0 kind:arm_call to:0x021234f0 module:overlay(46)
 from:0x02129d00 kind:arm_call to:0x0203ce74 module:main
 from:0x02129d40 kind:load to:0x0212a700 module:overlay(46)

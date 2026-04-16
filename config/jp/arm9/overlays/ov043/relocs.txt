@@ -685,7 +685,7 @@ from:0x0212ae64 kind:thumb_call_arm to:0x01ff8e58 module:itcm
 from:0x0212ae6c kind:load to:0x020b66c4 module:overlay(0)
 from:0x0212ae70 kind:load to:0x0212fbac module:overlay(43)
 from:0x0212ae74 kind:load to:0x027e0964 module:dtcm
-from:0x0212ae7c kind:load to:0x027e0254 module:dtcm
+from:0x0212ae7c kind:load to:0x027e0208 add:0x4c module:dtcm
 from:0x0212af02 kind:thumb_call_arm to:0x01ffc3b4 module:itcm
 from:0x0212af22 kind:thumb_call_arm to:0x02015018 module:main
 from:0x0212af3e kind:thumb_call_arm to:0x02015018 module:main
