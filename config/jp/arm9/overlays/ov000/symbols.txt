@@ -3351,7 +3351,7 @@ __sinit_ActorUnkSWOB.cpp kind:function(arm,size=0x50) addr:0x020b1ff8
 __sinit_ActorUnkSWTM.cpp kind:function(arm,size=0x50) addr:0x020b2048
 __sinit_ActorEventIcon.cpp kind:function(arm,size=0x50) addr:0x020b2098 local
 __sinit_ActorUnkEFIK.cpp kind:function(arm,size=0x50) addr:0x020b20e8 local
-__sinit_ov000_020b2138 kind:function(arm,size=0x28) addr:0x020b2138
+__sinit_MapObjectProfile.cpp kind:function(arm,size=0x28) addr:0x020b2138 local
 __sinit_MapObjectSwitchStep.cpp kind:function(arm,size=0x5c) addr:0x020b2160
 __sinit_MapObjectMiniBlocks.cpp kind:function(arm,size=0x50) addr:0x020b21bc
 __sinit_ov000_020b220c kind:function(arm,size=0x9e8) addr:0x020b220c
@@ -3386,7 +3386,7 @@ __sinit_ov000_020b30b0 kind:function(arm,size=0x14) addr:0x020b30b0
 .p__sinit_ActorUnkSWTM.cpp kind:data(word) addr:0x020b311c
 .p__sinit_ActorEventIcon.cpp kind:data(word) addr:0x020b3120 local
 .p__sinit_ActorUnkEFIK.cpp kind:data(word) addr:0x020b3124 local
-.p__sinit_ov000_020b2138 kind:data(word) addr:0x020b3128
+.p__sinit_MapObjectProfile.cpp kind:data(word) addr:0x020b3128 local
 .p__sinit_MapObjectSwitchStep.cpp kind:data(word) addr:0x020b312c
 .p__sinit_MapObjectMiniBlocks.cpp kind:data(word) addr:0x020b3130
 .p__sinit_ov000_020b220c kind:data(word) addr:0x020b3134
@@ -4059,8 +4059,8 @@ _ZN15ProfileInstanceI21ActorProfileEventIconE8sProfileE kind:bss addr:0x020b74b8
 _ZGVN15ProfileInstanceI19ActorProfileUnkEFIKE8sProfileE kind:bss addr:0x020b74f4
 @30050 kind:bss addr:0x020b74f8 local
 _ZN15ProfileInstanceI19ActorProfileUnkEFIKE8sProfileE kind:bss addr:0x020b7504
-data_ov000_020b7540 kind:bss addr:0x020b7540
-data_ov000_020b5d34 kind:bss addr:0x020b7544
+_ZGVN33UnkStruct_ov000_020b5d34_InstanceI24UnkStruct_ov000_020b5d34E19data_ov000_020b5d34E kind:bss addr:0x020b7540
+_ZN33UnkStruct_ov000_020b5d34_InstanceI24UnkStruct_ov000_020b5d34E19data_ov000_020b5d34E kind:bss addr:0x020b7544
 data_ov000_020b5d3c kind:bss addr:0x020b754c
 _ZGVN15ProfileInstanceI26MapObjectProfileSwitchStepE8sProfileE kind:bss addr:0x020b7924
 MapObjectSwitchStep_data_020b6118 kind:bss(size=0x8) addr:0x020b7928

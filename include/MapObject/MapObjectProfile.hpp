@@ -72,20 +72,6 @@ public:
     void func_ov000_0209ccd8(unk32 param1, u32 param2);
 };
 
-class MapObjectProfile_Derived3 : public MapObjectProfile {
-public:
-    /* 00 (base) */
-    /* 20 */ MapObjectProfile_Derived2_20 *mUnk_20;
-    /* 24 */
-
-    MapObjectProfile_Derived3(MapObjectId mapObjId1, MapObjectId mapObjId2); // func_ov000_0209ca88
-    ~MapObjectProfile_Derived3() {}
-
-    // data_ov000_020b34ec
-    /* 04 */ virtual MapObjectProfile_Derived2_20 *vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
-};
-
 class MapObjectProfile_Derived2 : public MapObjectProfile {
 public:
     /* 00 (base) */
@@ -100,6 +86,20 @@ public:
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 10 */ virtual void vfunc_10() override;
+};
+
+class MapObjectProfile_Derived3 : public MapObjectProfile {
+public:
+    /* 00 (base) */
+    /* 20 */ MapObjectProfile_Derived2_20 *mUnk_20;
+    /* 24 */
+
+    MapObjectProfile_Derived3(MapObjectId mapObjId1, MapObjectId mapObjId2); // func_ov000_0209ca88
+    ~MapObjectProfile_Derived3() {}
+
+    // data_ov000_020b34ec
+    /* 04 */ virtual MapObjectProfile_Derived2_20 *vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
 };
 
 class MapObjectProfile_Derived4 : public MapObjectProfile_Derived2 {

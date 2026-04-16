@@ -1,16 +1,14 @@
-#include "global.h"
-
-//! TODO: it seems it's impossible to get the right vtable order without this (pch hint?)
-VTABLE_PAD(MapObjectProfile_cpp);
+#include "MapObject/MapObjectProfile.hpp"
 
 #include "Actor/Actor.hpp"
 #include "MapObject/MapObject.hpp"
-#include "MapObject/MapObjectProfile.hpp"
 #include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
 
-extern MapObjectProfile *data_ov000_020b5d3c[];
 extern unk8 data_ov000_020af4d4[];
+
+MapObjectProfile *data_ov000_020b5d3c[MapObjectIndex_Max];
+UnkStruct_ov000_020b5d34 data_ov000_020b5d34;
 
 ARM void MapObject_20::func_ov000_0209c790(MapObjectId mapObjId, MapObjectProfile *pProfile) {
     data_ov000_020b5d3c[UnkStruct_ov000_020b5d34::func_ov000_0209c718(mapObjId)] = pProfile;
