@@ -97,10 +97,10 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8df0(ActorRef param1, unk32 par
 
     if (this->mRef != param1) {
         this->vfunc_b4();
-        this->mUnk_0bc   = param1;
-        this->mUnk_0c0.x = 0;
-        this->mUnk_0c0.y = 0;
-        this->mUnk_0c0.z = 0;
+        *(u32 *) &this->mUnk_0bc = param1.Get32();
+        this->mUnk_0c0.x         = 0;
+        this->mUnk_0c0.y         = 0;
+        this->mUnk_0c0.z         = 0;
         this->mUnk_0b0 |= 1;
     }
 }
