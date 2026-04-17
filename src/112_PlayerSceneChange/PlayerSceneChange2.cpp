@@ -27,7 +27,7 @@ ARM void PlayerSceneChange2::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param
     pVVar1->y     = 0;
     pVVar1->z     = 0;
 
-    this->mUnk_2c->mUnk_58 = 0;
+    this->mUnk_2C->mUnk_58 = 0;
 
     func_ov000_0208ba10(auStack_18, &this->mUnk_24->mUnk_94, 0);
 
@@ -76,10 +76,10 @@ ARM void PlayerSceneChange2::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param
             func_ov000_0205d65c(&auStack_2c, this->mUnk_34, (Vec3p *) &this->mUnk_54, this->mUnk_40->mUnk_00);
             this->mUnk_40->mUnk_00 = auStack_2c;
 
-            this->mUnk_2c->mUnk_26 = 0;
+            this->mUnk_2C->mUnk_26 = 0;
             break;
         case 0x45:
-            this->mUnk_2c->mUnk_26 = 0;
+            this->mUnk_2C->mUnk_26 = 0;
             break;
         default:
             break;

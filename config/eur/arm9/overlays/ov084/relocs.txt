@@ -1030,7 +1030,7 @@ from:0x0215a4fc kind:arm_call to:0x0203d160 module:main
 from:0x0215a514 kind:arm_call to:0x0203d160 module:main
 from:0x0215a54c kind:load to:0x02163184 add:0x8 module:overlay(84)
 from:0x0215a550 kind:load to:0x02163d20 module:overlay(84)
-from:0x0215a554 kind:load to:0x020b1968 module:overlay(0)
+from:0x0215a554 kind:load to:0x020b1960 add:0x8 module:overlay(0)
 from:0x0215a558 kind:load to:0x020b2800 module:overlay(0)
 from:0x0215a55c kind:load to:0x0215a564 module:overlay(84)
 from:0x0215a560 kind:load to:0x0215a59c module:overlay(84)

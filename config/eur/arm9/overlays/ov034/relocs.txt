@@ -589,7 +589,7 @@ from:0x0211e4b4 kind:arm_call to:0x02028c90 module:main
 from:0x0211e4c8 kind:arm_call to:0x02028c90 module:main
 from:0x0211e4dc kind:arm_call to:0x02028c90 module:main
 from:0x0211e504 kind:load to:0x02122c6c add:0x8 module:overlay(34)
-from:0x0211e508 kind:load to:0x020b1968 module:overlay(0)
+from:0x0211e508 kind:load to:0x020b1960 add:0x8 module:overlay(0)
 from:0x0211e50c kind:load to:0x02123200 module:overlay(34)
 from:0x0211e540 kind:arm_call_thumb to:0x02057ed4 module:overlay(0)
 from:0x0211e54c kind:arm_call_thumb to:0x02057ed4 module:overlay(0)

@@ -21,8 +21,8 @@ enum FSOptionsState_ {
 
 class UnkStruct_ov019_020d24c8_2C_24_FC3 {
 public:
-    /* 00 */ unk8 mUnk_00;
-    /* 01 */ unk8 mUnk_01;
+    /* 00 */ u8 mUnk_00;
+    /* 01 */ u8 mUnk_01;
     /* 02 */
 
     UnkStruct_ov019_020d24c8_2C_24_FC3() {}
@@ -75,7 +75,8 @@ public:
     /* 0FC0 */ u8 mUnk_FC0;
     /* 0FC1 */ u8 mUnk_FC1;
     /* 0FC2 */ u8 mUnk_FC2;
-    /* 0FC3 */ STRUCT_PAD(0xFC3, 0x103E);
+    /* 0FC3 */ UnkStruct_ov019_020d24c8_2C_24_FC3 mUnk_FC3[61];
+    /* 103D */ unk8 mUnk_103D; // pad?
     /* 103E */ unk16 mUnk_103E;
     /* 1040 */
 

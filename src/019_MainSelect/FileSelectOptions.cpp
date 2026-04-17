@@ -617,11 +617,22 @@ ARM UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManag
     mUnk_FB8(NULL),
     mUnk_FBC(NULL) {
 
-    SaveSub17 *pSaveSub17 = gSaveManager.GetSaveSlot(this->mSaveSlotIndex)->Get2600Ptr();
+    SaveSlot *pSlot       = gSaveManager.GetSaveSlot(this->mSaveSlotIndex);
+    SaveSub17 *pSaveSub17 = pSlot->Get2600Ptr();
     this->mUnk_FC0        = pSaveSub17->mUnk_00;
     this->mUnk_FC1        = pSaveSub17->mUnk_01;
     this->mUnk_FC2        = pSaveSub17->mUnk_02;
-    this->mUnk_103E       = pSaveSub17[1].mUnk_00;
+
+    u8 *src = (u8 *) pSaveSub17->mUnk_03;
+    u8 *dst = (u8 *) &this->mUnk_FC3[0];
+    for (u32 i = ARRAY_LEN(this->mUnk_FC3); i != 0; i--) {
+        u8 b1                     = *src++;
+        u8 b2                     = *src++;
+        this->mUnk_FC3[i].mUnk_00 = b1;
+        this->mUnk_FC3[i].mUnk_01 = b2;
+    }
+    this->mUnk_FC3[0].mUnk_00 = *src;
+    this->mUnk_103E           = pSaveSub17->mUnk_7E;
 
     param1->mList.func_020166cc(&this->mUnk_490.mUnk_04);
     param1->mList.func_020166cc(&this->mUnk_4F0.mUnk_04);
@@ -738,6 +749,15 @@ ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce414() {
     }
 }
 
+struct stack_struct {
+    /* 00 */ unk16 mUnk_00;
+    /* 02 */ unk16 mUnk_02;
+    /* 04 */ unk8 mUnk_04;
+    /* 05 */ unk8 mUnk_05;
+    /* 06 */ u16 mUnk_06;
+    /* 08 */
+};
+
 // non-matching
 ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce4dc() {
     for (int i = 0; i < ARRAY_LEN(this->mUnk_FB0->mUnk_00); i++) {
@@ -761,24 +781,30 @@ ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce4dc() {
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_FB8->mUnk_00); i++) {
         UnkSystem2_UnkSubSystem1_Derived1 *ptr = this->mUnk_FB8->mUnk_00[i];
-        Vec2s local_2c;
-        Vec2s local_30;
 
-        local_2c.x = this->mUnk_008.mPos.x;
-        local_2c.y = this->mUnk_008.mPos.y;
+        Vec2s sVar1_2;
+        sVar1_2.x = this->mUnk_008.mPos.x;
+        sVar1_2.y = this->mUnk_008.mPos.y;
 
-        func_ov000_02062e44(&local_30, ptr);
+        volatile Vec2s result;
+        Vec2s fetch;
 
-        ptr->mPos.x = this->mUnk_004.x + local_30.x + local_2c.x;
-        ptr->mPos.y = this->mUnk_004.y + local_30.y + local_2c.y;
+        func_ov000_02062e44(&fetch, ptr);
+
+        result.x = this->mUnk_004.x;
+        result.y = this->mUnk_004.y;
+
+        ptr->mPos.x = result.x + fetch.x - sVar1_2.x;
+        ptr->mPos.y = result.y + fetch.y - sVar1_2.y;
     }
 
-    u8 auStack_28[8];
-    auStack_28[6] = 0;
-    MI_CpuFill32(0, auStack_28, 8);
-    auStack_28[7] = 0xFF;
-    auStack_28[6] |= 4;
-    data_0204af1c.func_0201aa44(&this->mUnk_008, &this->mUnk_004, 2, auStack_28);
+    stack_struct sp8;
+    sp8.mUnk_06 = 0x00;
+    MI_CpuFill32(0, &sp8, sizeof(sp8));
+    sp8.mUnk_05 = -1;
+    sp8.mUnk_06 |= 0x04;
+
+    data_0204af1c.func_0201aa44(&this->mUnk_008, &this->mUnk_004, 2, &sp8);
 }
 
 ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce61c(bool decrement) {

@@ -2,8 +2,18 @@
 
 #include "types.h"
 
-enum MapObjectId {
+typedef u32 MapObjectId;
+enum MapObjectId_ {
+    MapObjectId_None = 0,
 #define DEFINE_MAP_OBJECT_TYPE(id, name) MapObjectId_##name = id,
 #include "Map/MapObjectTable.inl"
 #undef DEFINE_MAP_OBJECT_TYPE
+};
+
+typedef u32 MapObjectIndex;
+enum MapObjectIndex_ {
+#define DEFINE_MAP_OBJECT_TYPE(id, name) MapObjectIndex_##name,
+#include "Map/MapObjectTable.inl"
+#undef DEFINE_MAP_OBJECT_TYPE
+    MapObjectIndex_Max,
 };

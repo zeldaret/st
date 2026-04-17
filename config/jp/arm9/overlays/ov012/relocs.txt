@@ -112,7 +112,7 @@ from:0x020b8564 kind:thumb_call_arm to:0x020165f4 module:main
 from:0x020b856a kind:thumb_call to:0x0201545c module:main
 from:0x020b8574 kind:load to:0x020b5c64 module:overlay(0)
 from:0x020b8578 kind:load to:0x020b9c70 module:overlay(12)
-from:0x020b857c kind:load to:0x02045484 module:main
+from:0x020b857c kind:load to:0x0204547c add:0x8 module:main
 from:0x020b8584 kind:load to:0x0204ba00 module:main
 from:0x020b8588 kind:load to:0x020b9c80 module:overlay(12)
 from:0x020b8590 kind:load to:0x020b5df4 module:overlay(0)

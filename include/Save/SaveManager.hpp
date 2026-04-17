@@ -254,14 +254,19 @@ public:
     void func_ov019_020d15cc();
 };
 
+struct SaveSub17_03 {
+    /* 00 */ u8 mUnk_00;
+    /* 01 */ u8 mUnk_01;
+    /* 02 */
+};
+
 class SaveSub17 {
 public:
     // /* 00 */ unk8 mUnk_00[0x7E];
     /* 00 */ u8 mUnk_00;
     /* 01 */ u8 mUnk_01;
     /* 02 */ u8 mUnk_02;
-    /* 03 */ u8 mUnk_03; // bool?
-    /* 04 */ STRUCT_PAD(0x04, 0x7E);
+    /* 03 */ SaveSub17_03 mUnk_03[61];
     /* 7E */ u16 mUnk_7E;
 };
 

@@ -25,4 +25,4 @@
 #define GET_FLAGS_IMPL2(N, ...) GET_FLAGS_##N(__VA_ARGS__)
 #define GET_FLAGS_IMPL(N, ...) GET_FLAGS_IMPL2(N, __VA_ARGS__)
 #define GET_FLAGS(...) GET_FLAGS_IMPL(VA_NARGS(__VA_ARGS__), __VA_ARGS__)
-#define SET_FLAGS(arr, ...) (*(u32 *) arr = GET_FLAGS_IMPL(VA_NARGS(__VA_ARGS__), __VA_ARGS__))
+#define SET_FLAGS(arr, ...) (*(arr) = GET_FLAGS_IMPL(VA_NARGS(__VA_ARGS__), __VA_ARGS__))

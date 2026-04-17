@@ -10,11 +10,11 @@
 class MapObjectUnkMSCL : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkMSCL();
 
-    /* 4C */ virtual ~MapObjectUnkMSCL() override;
+    /* 30 */ virtual ~MapObjectUnkMSCL() override;
 
     void func_ov058_021512c0(void);
     void func_ov058_02151350(void);

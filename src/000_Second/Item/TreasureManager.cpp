@@ -9,13 +9,13 @@ ARM void TreasureManager::func_ov000_020a9b3c() {}
 ARM void TreasureManager::func_ov000_020a9b4c() {}
 
 ARM bool TreasureManager::func_ov000_020a9c4c(TreasureType type) {
-    return this->mUnk_3c[type] >= 0;
+    return this->mUnk_3C[type] >= 0;
 }
 
 // hasAnyTreasure
 ARM bool TreasureManager::func_ov000_020a9c64() {
-    for (s32 i = 0; i < ARRAY_LEN(this->mUnk_3c); i++) {
-        if (this->mUnk_3c[i] >= 0) {
+    for (s32 i = 0; i < ARRAY_LEN(this->mUnk_3C); i++) {
+        if (this->mUnk_3C[i] >= 0) {
             return true;
         }
     }
@@ -25,8 +25,8 @@ ARM bool TreasureManager::func_ov000_020a9c64() {
 
 // getTreasureAmount
 ARM unk32 TreasureManager::func_ov000_020a9c90(TreasureType type) {
-    if (this->mUnk_3c[type] >= 0) {
-        return this->mUnk_3c[type];
+    if (this->mUnk_3C[type] >= 0) {
+        return this->mUnk_3C[type];
     }
 
     return 0;
@@ -41,11 +41,11 @@ ARM bool TreasureManager::func_ov000_020a9ca4(TreasureType type) {
 ARM void TreasureManager::func_ov000_020a9cbc(TreasureType type, s32 amount) {
     s32 newAmount;
 
-    if (this->mUnk_3c[type] < 0) {
-        this->mUnk_3c[type] = 0;
+    if (this->mUnk_3C[type] < 0) {
+        this->mUnk_3C[type] = 0;
     }
 
-    newAmount = this->mUnk_3c[type] + amount;
+    newAmount = this->mUnk_3C[type] + amount;
 
     if (newAmount > MAX_TREASURE) {
         newAmount = MAX_TREASURE;
@@ -53,7 +53,7 @@ ARM void TreasureManager::func_ov000_020a9cbc(TreasureType type, s32 amount) {
         newAmount = 0;
     }
 
-    this->mUnk_3c[type] = newAmount;
+    this->mUnk_3C[type] = newAmount;
 }
 
 ARM unk32 TreasureManager::func_ov000_020a9d78(unk32 param1) {}

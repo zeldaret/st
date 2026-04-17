@@ -2,8 +2,8 @@
 
 #include "Player/TouchControl.hpp"
 #include "global.h"
-#include "nitro/button.h"
 #include "types.h"
+#include <nitro/button.h>
 
 class UnkStruct_02049b18_06 {
 public:

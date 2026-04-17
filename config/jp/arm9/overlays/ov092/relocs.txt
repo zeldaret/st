@@ -79,7 +79,7 @@ from:0x021686e8 kind:load to:0x0217de88 module:overlay(92)
 from:0x021686f4 kind:arm_call to:0x0210dcfc module:overlay(26)
 from:0x0216876c kind:load to:0x0217dea4 module:overlay(92)
 from:0x02168770 kind:load to:0x0217f490 module:overlay(92)
-from:0x02168774 kind:load to:0x020b3168 module:overlay(0)
+from:0x02168774 kind:load to:0x020b3160 add:0x8 module:overlay(0)
 from:0x02168784 kind:arm_call to:0x0210dd84 module:overlay(26)
 from:0x0216879c kind:arm_call to:0x0210dfa4 module:overlay(26)
 from:0x021687bc kind:arm_call to:0x01ffc768 module:itcm

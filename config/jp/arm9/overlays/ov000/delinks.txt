@@ -30,36 +30,63 @@ src/000_Second/Actor/ActorUnkSWOB.cpp:
     .text       start:0x0209c084 end:0x0209c474
     .init       start:0x020b1ff8 end:0x020b2048
     .ctor       start:0x020b3118 end:0x020b311c
+    .data       start:0x020b4a8c end:0x020b4b0c
     .bss        start:0x020b740c end:0x020b7458
 
 src/000_Second/Actor/ActorUnkSWTM.cpp:
     .text       start:0x0209c474 end:0x0209c9f8
     .init       start:0x020b2048 end:0x020b2098
     .ctor       start:0x020b311c end:0x020b3120
-    .bss        start:0x020b7458 end:0x020b74a8
+    .data       start:0x020b4b0c end:0x020b4b8c
+    .bss        start:0x020b7458 end:0x020b74a4
 
-src/000_Second/Actor/ActorUnkEVIC.cpp:
+src/000_Second/Actor/ActorEventIcon.cpp:
+    complete
     .text       start:0x0209d754 end:0x0209d840
     .init       start:0x020b2098 end:0x020b20e8
     .ctor       start:0x020b3120 end:0x020b3124
+    .data       start:0x020b4bac end:0x020b4c2c
     .bss        start:0x020b74a8 end:0x020b74f4
 
 src/000_Second/Actor/ActorUnkEFIK.cpp:
+    complete
     .text       start:0x0209d840 end:0x0209db14
     .init       start:0x020b20e8 end:0x020b2138
     .ctor       start:0x020b3124 end:0x020b3128
-    .bss        start:0x020b74f4 end:0x020b7928
+    .data       start:0x020b4c2c end:0x020b4cb0
+    .bss        start:0x020b74f4 end:0x020b7540
 
-src/000_Second/MapObject/MapObjectUnkSWST.cpp:
+src/000_Second/MapObject/MapObjectProfile.cpp:
+    complete
+    .text       start:0x0209df5c end:0x0209e5cc
+    .init       start:0x020b2138 end:0x020b2160
+    .ctor       start:0x020b3128 end:0x020b312c
+    .data       start:0x020b4cc8 end:0x020b4d60
+    .bss        start:0x020b7540 end:0x020b7924
+
+src/000_Second/MapObject/MapObjectProfile_Derived2_20.cpp:
+    complete
+    .text       start:0x0209e5cc end:0x0209e7a4
+    .data       start:0x020b4d60 end:0x020b4d88
+
+src/000_Second/MapObject/MapObject.cpp:
+    .text       start:0x0209e7a4 end:0x0209eec4
+    .data       start:0x020b4d88 end:0x020b4dc8
+
+src/000_Second/MapObject/MapObjectSwitchStep.cpp:
     .text       start:0x0209f4a4 end:0x0209fbbc
+    .rodata     start:0x020af548 end:0x020af56c
     .init       start:0x020b2160 end:0x020b21bc
     .ctor       start:0x020b312c end:0x020b3130
-    .bss        start:0x020b7928 end:0x020b7a38
+    .data       start:0x020b4e78 end:0x020b4f44
+    .bss        start:0x020b7924 end:0x020b7a38
 
-src/000_Second/MapObject/MapObjectUnkBLCM.cpp:
+src/000_Second/MapObject/MapObjectMiniBlocks.cpp:
     .text       start:0x0209fbbc end:0x0209ff2c
+    .rodata     start:0x020af56c end:0x020af578
     .init       start:0x020b21bc end:0x020b220c
     .ctor       start:0x020b3130 end:0x020b3134
+    .data       start:0x020b4f44 end:0x020b4fac
     .bss        start:0x020b7a38 end:0x020b7ab0
 
 src/000_Second/Cutscene/Cutscene.cpp:

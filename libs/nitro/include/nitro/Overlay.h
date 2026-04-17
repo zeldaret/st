@@ -14,11 +14,11 @@ typedef struct Overlay {
     /* 00 */ unk32 mId;
     /* 04 */ void *mBaseAddress;
     /* 08 */ u32 mTextSize;
-    /* 0c */ s32 mBssSize;
+    /* 0C */ s32 mBssSize;
     /* 10 */ unk32 mCtorStart;
     /* 14 */ unk32 mCtorEnd;
     /* 18 */ unk32 mFileId;
-    /* 1c */ u32 mFileSize;
+    /* 1C */ u32 mFileSize;
     /* 20 */
 } Overlay;
 

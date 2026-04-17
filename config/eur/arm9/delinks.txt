@@ -10,6 +10,9 @@
 src/Main/Main.cpp:
     .text       start:0x02000800 end:0x02000bdc
 
+libs/nns/src/g3d/sbc.c:
+    .text       start:0x0200c8cc end:0x0200e2ec
+
 src/Main/System/SysNew.cpp:
     .text       start:0x02011e10 end:0x0201200c
 
@@ -25,10 +28,9 @@ src/Main/Player/TouchControl.cpp:
 src/Main/System/OverlayManager.cpp:
     .text       start:0x020147fc end:0x02014944
 
-src/Main/UnkStruct_ov000_020b4f84_00_Base.cpp:
-    complete
-    .text       start:0x02015528 end:0x02015628
-    .data       start:0x02043f00 end:0x02043f1c
+src/Main/UnkFileSystem.cpp:
+    .text       start:0x02015518 end:0x02015788
+    .data       start:0x02043f00 end:0x02043f8c
 
 src/Main/System/Random.cpp:
     .text       start:0x02016384 end:0x02016404

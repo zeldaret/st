@@ -55,7 +55,7 @@ from:0x02185070 kind:arm_call_thumb to:0x0208ed30 module:overlay(0)
 from:0x0218509c kind:arm_call to:0x0205cadc module:overlay(0)
 from:0x021850ac kind:load to:0x0218517c module:overlay(104)
 from:0x021850b0 kind:load to:0x027e0ce0 module:dtcm
-from:0x021850b4 kind:load to:0x020b1968 module:overlay(0)
+from:0x021850b4 kind:load to:0x020b1960 add:0x8 module:overlay(0)
 from:0x021850b8 kind:load to:0x02185168 module:overlay(104)
 from:0x021850dc kind:load to:0x0208c724 module:overlay(0)
 from:0x021850ec kind:arm_call_thumb to:0x02057ed4 module:overlay(0)

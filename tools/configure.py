@@ -79,7 +79,18 @@ def NitroLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
         "lib": lib_name,
         "mw_version": "dsi/1.2p1",
         "src_dir": "libs/nitro/src",
-        "cflags": config.cflags_base,
+        "cflags": [*config.cflags_base, "-lang c"],
+        "objects": objects,
+    }
+
+
+# Helper function for NNS libraries
+def NNSLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
+    return {
+        "lib": lib_name,
+        "mw_version": "dsi/1.2p1",
+        "src_dir": "libs/nns/src",
+        "cflags": [*config.cflags_base, "-lang c"],
         "objects": objects,
     }
 
@@ -123,7 +134,7 @@ config.libs = [
     GameLib(
         "ITCM",
         [
-            Object("ITCM/UnkStruct_027e0ce8.cpp"),
+            Object("ITCM/ITCM_MapObjectManager.cpp"),
         ]
     ),
     GameLib(
@@ -135,7 +146,7 @@ config.libs = [
             Object("Main/Game/Game.cpp"),
             Object("Main/Player/TouchControl.cpp"),
             Object("Main/System/OverlayManager.cpp"),
-            Object("Main/UnkStruct_ov000_020b4f84_00_Base.cpp"),
+            Object("Main/UnkFileSystem.cpp"),
             Object("Main/System/Random.cpp"),
             Object("Main/Game/GameModeLinkListNode.cpp"),
             Object("Main/func_02017ea4.cpp"),
@@ -154,16 +165,19 @@ config.libs = [
             Object("000_Second/UnkSystem1_Derived1.cpp"),
             Object("000_Second/Actor/Actor.cpp"),
             Object("000_Second/Actor/ActorManager.cpp"),
-            Object("000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp"),
-            Object("000_Second/Cutscene/Cutscene.cpp"),
-            Object("000_Second/Item/ItemManager.cpp"),
-            Object("000_Second/Item/TreasureManager.cpp"),
-            Object("000_Second/Actor/ActorUnkEFIK.cpp"),
-            Object("000_Second/Actor/ActorUnkEVIC.cpp"),
             Object("000_Second/Actor/ActorUnkSWOB.cpp"),
             Object("000_Second/Actor/ActorUnkSWTM.cpp"),
-            Object("000_Second/MapObject/MapObjectUnkBLCM.cpp"),
-            Object("000_Second/MapObject/MapObjectUnkSWST.cpp"),
+            Object("000_Second/Actor/ActorEventIcon.cpp"),
+            Object("000_Second/Actor/ActorUnkEFIK.cpp"),
+            Object("000_Second/MapObject/MapObjectProfile.cpp"),
+            Object("000_Second/MapObject/MapObjectProfile_Derived2_20.cpp"),
+            Object("000_Second/MapObject/MapObject.cpp"),
+            Object("000_Second/MapObject/MapObjectSwitchStep.cpp"),
+            Object("000_Second/MapObject/MapObjectMiniBlocks.cpp"),
+            Object("000_Second/Cutscene/Cutscene.cpp"),
+            Object("000_Second/Item/ItemManager.cpp"),
+            Object("000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp"),
+            Object("000_Second/Item/TreasureManager.cpp"),
         ]
     ),
     GameLib(
@@ -1341,9 +1355,15 @@ config.libs = [
     LibCPP(
         "libcpp",
         [
-            Object("__register_global_object.c")
+            Object("__register_global_object.c"),
         ]
     ),
+    NNSLib(
+        "nns/g3d",
+        [
+            Object("g3d/sbc.c"),
+        ]
+    )
 ]
 
 

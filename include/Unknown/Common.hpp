@@ -2,10 +2,11 @@
 
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkFileSystem.hpp"
 #include "global.h"
-#include "nitro/math.h"
-#include "nns/text.h"
 #include "types.h"
+#include <nitro/math.h>
+#include <nns/text.h>
 
 extern "C" void func_0201e8d4(void *param1, void *param2);
 
@@ -469,6 +470,7 @@ public:
 
 class UnkSystem2_UnkSubSystem1_Base {
 public:
+    /* 00 (vtable) */
     /* 04 */ GameModeLinkList<UnkSystem2_UnkSubSystem1_Base> mUnk_04;
     /* 0C */ void *mUnk_0C;
     /* 10 */ unk32 mButtonID;
@@ -766,17 +768,6 @@ public:
     void func_02015460(const char *param1, void *param2, unk32 param3);
 };
 
-class UnkSystem4 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */
-
-    ~UnkSystem4();
-};
-
 class UnkStruct2 {
 public:
     /* 00 */ unk8 pad[0x10];
@@ -791,9 +782,9 @@ struct UnkResult {
     void *mUnk_00;
     void *mUnk_04;
     void *mUnk_08;
-    UnkSystem4 mUnk_0C;
-    UnkSystem4 mUnk_1C;
-    UnkSystem4 mUnk_2C;
+    UnkFileSystem3 mUnk_0C;
+    UnkFileSystem3 mUnk_1C;
+    UnkFileSystem3 mUnk_2C;
 
     UnkResult();
     UnkResult(const char *path);
@@ -876,4 +867,106 @@ struct UnkStruct_StackTitleScreen {
 
     void func_ov000_02059270(unk32 param1, char *param2, unk32 param3);
     void func_ov000_02059288(unk32 param1, char *param2, unk32 param3);
+};
+
+typedef void (*UnkSystem4_UnkCallback)(void);
+
+class UnkSystem4_vfunc_1C_B4 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 00 */ STRUCT_PAD(0x04, 0x4C);
+    /* 4C */ unk32 mUnk_4C;
+    /* 50 */ unk32 mUnk_50;
+    /* 54 */ unk32 mUnk_54;
+};
+
+class UnkSystem4_vfunc_1C {
+public:
+    /* 00 */ u8 *mUnk_00;
+    /* 04 */ unk32 *mUnk_04;
+    /* 08 */ STRUCT_PAD(0x08, 0xB4);
+    /* B4 */ UnkSystem4_vfunc_1C_B4 *mUnk_B4;
+    /* 00 */ unk32 *mUnk_B8;
+};
+
+class UnkSystem4 {
+public:
+    /* 00 (vtable) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 *mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 *mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 *mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ unk32 *mUnk_20;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ unk32 *mUnk_28;
+    /* 2C */ unk32 mUnk_2C;
+    /* 30 */ unk32 mUnk_30;
+    /* 34 */ unk32 mUnk_34;
+    /* 38 */ unk32 mUnk_38;
+    /* 3C */ unk32 mUnk_3C;
+    /* 40 */ unk32 mUnk_40;
+    /* 44 */ unk32 mUnk_44;
+    /* 48 */ unk32 mUnk_48;
+    /* 4C */ unk32 mUnk_4C;
+    /* 50 */ unk32 mUnk_50;
+    /* 54 */ unk32 mUnk_54;
+    /* 58 */ unk32 mUnk_58;
+    /* 5C */ unk32 mUnk_5C;
+    /* 60 */
+
+    UnkSystem4(unk32 param1); // func_ov000_02057b54
+
+    // data_ov000_020b1a6c
+    /* 00 */ virtual ~UnkSystem4();
+    /* 08 */ virtual void vfunc_08(unk32 param1);
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10();
+    /* 14 */ virtual void vfunc_14();
+    /* 18 */ virtual void vfunc_18();
+    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1);
+    /* 20 */ virtual void vfunc_20();
+
+    void func_ov000_02057c38(unk32 param1, unk32 param2);
+    void func_ov000_0209a7b8(void *param1, UnkSystem4_UnkCallback param2);
+};
+
+class UnkSystem5 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */
+
+    UnkSystem5(void *param1, unk32 param2); // func_ov000_0205778c
+
+    void func_01ffc3b4();
+
+    void func_ov000_020577a4(unk32 param1, unk32 param2, unk32 param3);
+    void func_ov000_020577f8(unk32 param1);
+};
+
+// related to UnkSystem5?
+class UnkSystem6 {
+public:
+    /* 00 (vtable) */
+    /* 04 */
+
+    UnkSystem6() {}
+
+    // data_ov000_020b1968
+    /* 00 */ virtual ~UnkSystem6();
+    /* 08 */ virtual void vfunc_08(unk32 param1);
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10();
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2);
+    /* 18 */ virtual void vfunc_18();
+    /* 1C */
 };

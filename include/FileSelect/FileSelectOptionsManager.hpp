@@ -3,8 +3,8 @@
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "global.h"
-#include "nitro/math.h"
 #include "types.h"
+#include <nitro/math.h>
 
 class FileSelectOptions;
 class FileSelectMicTest;
