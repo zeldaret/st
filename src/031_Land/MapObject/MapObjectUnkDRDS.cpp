@@ -1,43 +1,60 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "MapObject/MapObjectUnkDRDS.hpp"
 #include "System/SysNew.hpp"
 
 ARM DECL_PROFILE(MapObjectProfileUnkDRDS);
 
 ARM MapObject *MapObjectProfileUnkDRDS::Create() {
-    return new(HeapIndex_2) MapObjectUnkDRDS();
+    return new(HeapIndex_ITCM) MapObjectUnkDRDS();
 }
 
 ARM MapObjectProfileUnkDRDS::MapObjectProfileUnkDRDS() :
-    MapObjectProfile(MapObjectId_DRDS) {}
+    MapObjectProfile_Derived2(MapObjectId_DRDS, MapObjectId_DRDS) {
+    this->mUnk_0E = 1;
+    this->mUnk_06 = -1;
+    this->mUnk_1E &= ~1;
+}
 
-ARM MapObjectUnkDRDS::MapObjectUnkDRDS() {}
+ARM MapObjectUnkDRDS::MapObjectUnkDRDS() {
+    // this->mUnk_98 = GetUnkPointer1<MapObjectProfileUnkDRDS>();
+    this->mUnk_9C = 1;
+    this->mUnk_A0 = 0;
+    this->mUnk_A1 = 0;
+    this->mUnk_A2 = 0;
+    this->mUnk_A3 = 0;
+    this->mUnk_A4 = -1;
+    this->mUnk_A8 = 0;
+    this->mUnk_AC = 0;
+    this->mUnk_AE = 0;
+    this->mUnk_89 = 1;
+}
 
-ARM void MapObjectUnkDRDS::func_ov031_020fd234(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fd284(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fd3f8(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fd404(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fd474(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fd7e8(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fd814(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fdc08(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fdcc4(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fdd70(void) {}
+ARM bool MapObjectUnkDRDS::vfunc_00(void) {}
+ARM bool MapObjectUnkDRDS::vfunc_04(void) {}
+ARM void MapObjectUnkDRDS::vfunc_38(void) {}
+ARM void MapObjectUnkDRDS::vfunc_3C(void) {}
+ARM unk16 MapObjectUnkDRDS::vfunc_08(void) {}
+ARM unk8 MapObjectUnkDRDS::vfunc_0C(void) {}
+ARM void MapObjectUnkDRDS::vfunc_5C(void) {}
+ARM void MapObjectUnkDRDS::vfunc_64(void) {}
+ARM void MapObjectUnkDRDS::vfunc_68(void) {}
+ARM void MapObjectUnkDRDS::vfunc_6C(void) {}
 ARM void MapObjectUnkDRDS::func_ov031_020fdec8(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fdfc0(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fdfcc(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fe04c(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fe0d0(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fe22c(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fe250(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fe278(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fe2bc(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fe2e8(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fe32c(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fe350(void) {}
-ARM void MapObjectUnkDRDS::func_ov031_020fe388(void) {}
+ARM void MapObjectUnkDRDS::vfunc_18(void) {}
+ARM void MapObjectUnkDRDS::vfunc_14(void) {}
+ARM void MapObjectUnkDRDS::vfunc2_10(void) {}
+ARM void MapObjectUnkDRDS::vfunc_74(void) {}
+ARM void MapObjectUnkDRDS::vfunc_7C(void) {}
+ARM void MapObjectUnkDRDS::vfunc_40(void) {}
+ARM void MapObjectUnkDRDS::vfunc_44(void) {}
+ARM void MapObjectUnkDRDS::vfunc_48(void) {}
+ARM void MapObjectUnkDRDS::vfunc_4C(void) {}
+ARM void MapObjectUnkDRDS::vfunc_88(void) {}
+ARM void MapObjectUnkDRDS::vfunc_8C(void) {}
+ARM void MapObjectUnkDRDS::vfunc_84(void) {}
 ARM void MapObjectUnkDRDS::func_ov031_020fe5fc(void) {}
 
 ARM MapObjectUnkDRDS::~MapObjectUnkDRDS() {}
 ARM MapObjectProfileUnkDRDS::~MapObjectProfileUnkDRDS() {}
+
+ARM void MapObjectUnkDRDS::vfunc2_08() {}
+ARM void MapObjectUnkDRDS::vfunc2_04() {}

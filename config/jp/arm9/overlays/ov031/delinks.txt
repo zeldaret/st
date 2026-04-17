@@ -175,7 +175,7 @@ src/031_Land/Actor/ActorUnkNFSP.cpp:
     .bss        start:0x02118ebc end:0x0211901c
 
 src/031_Land/MapObject/MapObjectUnkDRDS.cpp:
-    .text       start:0x020feb40 end:0x021001bc
+    .text       start:0x020feb40 end:0x021001dc
     .init       start:0x021138b4 end:0x02113918
     .ctor       start:0x021145a0 end:0x021145a4
     .bss        start:0x0211901c end:0x02119100

@@ -175,10 +175,11 @@ src/031_Land/Actor/ActorUnkNFSP.cpp:
     .bss        start:0x0211711c end:0x0211727c
 
 src/031_Land/MapObject/MapObjectUnkDRDS.cpp:
-    .text       start:0x020fd0f8 end:0x020fe714
+    .text       start:0x020fd0f8 end:0x020fe734
     .init       start:0x02111b28 end:0x02111b8c
     .ctor       start:0x02112814 end:0x02112818
     .bss        start:0x0211727c end:0x02117360
+    .data       start:0x021150d0 end:0x02115184
 
 src/031_Land/MapObject/MapObjectUnkDRKY.cpp:
     .text       start:0x020fe734 end:0x020fee6c
