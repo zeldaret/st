@@ -32,6 +32,7 @@ public:
     MapObject *func_01fff498(UnkStruct_func_01fff498 param1);
     void func_01fff4cc(UnkCallback_func_01fff4cc param1, void *param2);
     MapObject **func_01fff520(UnkStruct_ov000_020b34c4 *param1, MapObject **param2);
+    void func_01fff6d0(Vec3p *param1, s32 *param2, s32 *param3);
 
     void func_ov000_0209c3a8();
     void func_ov000_0209c3e8();

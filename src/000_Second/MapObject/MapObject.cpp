@@ -59,8 +59,8 @@ ARM void MapObject::func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx) {
     Vec3p pos;
     Vec2p out;
 
-    UnkStruct_027e0cd8_10 *t = data_027e0cd8->mUnk_10;
-    pos.coords               = thisx->mPos.coords;
+    MapObjectManager *t = data_027e0cd8->mUnk_10;
+    pos.coords          = thisx->mPos.coords;
     t->func_01fff6d0(&pos, (q20 *) &out.y, (q20 *) &out.x);
 
     Vec2p temp;
