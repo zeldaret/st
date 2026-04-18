@@ -373,7 +373,7 @@ config.libs = [
             Object("031_Land/Actor/ActorUnkCLLT.cpp"),
             Object("031_Land/Actor/ActorUnkEFSB.cpp"),
             Object("031_Land/Actor/ActorUnkFLEN.cpp"),
-            Object("031_Land/Actor/ActorUnkHERT.cpp"),
+            Object("031_Land/Actor/ActorHeart.cpp"),
             Object("031_Land/Actor/ActorUnkITBM.cpp"),
             Object("031_Land/Actor/ActorUnkITTD.cpp"),
             Object("031_Land/Actor/ActorUnkMLCK.cpp"),

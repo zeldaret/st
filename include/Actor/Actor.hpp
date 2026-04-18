@@ -60,6 +60,8 @@ public:
     ActorProfile *func_ov000_020974dc(u32 id);
 };
 
+class Actor_c4;
+
 typedef u32 ActorFlags;
 enum ActorFlag_ {
     ActorFlag_Alive       = FLAG(0, 0),
