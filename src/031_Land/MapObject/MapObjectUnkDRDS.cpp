@@ -14,15 +14,15 @@ ARM MapObjectProfileUnkDRDS::MapObjectProfileUnkDRDS() :
     this->mUnk_1E &= ~1;
 }
 
-ARM MapObjectUnkDRDS::MapObjectUnkDRDS() {
-    // this->mUnk_98 = GetUnkPointer1<MapObjectProfileUnkDRDS>();
-    this->mUnk_9C = 1;
-    this->mUnk_A0 = 0;
-    this->mUnk_A1 = 0;
-    this->mUnk_A2 = 0;
-    this->mUnk_A3 = 0;
-    this->mUnk_A4 = -1;
-    this->mUnk_A8 = 0;
+ARM MapObjectUnkDRDS::MapObjectUnkDRDS() :
+    mUnk_94(GetUnkPointer1<MapObjectProfileUnkDRDS>()),
+    mUnk_9C(1),
+    mUnk_A0(0),
+    mUnk_A1(0),
+    mUnk_A2(0),
+    mUnk_A3(0),
+    mUnk_A4(-1),
+    mUnk_A8(NULL) {
     this->mUnk_AC = 0;
     this->mUnk_AE = 0;
     this->mUnk_89 = 1;

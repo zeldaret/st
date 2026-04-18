@@ -3,6 +3,7 @@
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectDoorBase.hpp"
 #include "MapObject/MapObjectProfile.hpp"
+#include "Player/PlayerGet.hpp"
 #include "Unknown/Common.hpp"
 #include "global.h"
 #include "types.h"
@@ -19,21 +20,10 @@ public:
     static MapObjectProfileUnkDRDS *GetProfile();
 };
 
-class MapObjectUnkDRDS_Test {
-public:
-    /* 94 */ void *mUnk_98;
-    /* 94 */ UnkSystem6 mUnk_94;
-
-    MapObjectUnkDRDS_Test() :
-        mUnk_98(GetUnkPointer1<MapObjectProfileUnkDRDS>()) {}
-};
-
 class MapObjectUnkDRDS : public MapObjectDoorBase {
 public:
     /* 00 (base) */
-    MapObjectUnkDRDS_Test t;
-    // /* 94 */ UnkSystem6 mUnk_94;
-    // /* 94 */ void* mUnk_98;
+    /* 94 */ UnkSystem6_Derived2 mUnk_94;
     /* 9C */ unk8 mUnk_9C;
     /* 9D */ unk8 mUnk_9D;
     /* 9E */ unk8 mUnk_9E;
@@ -43,7 +33,7 @@ public:
     /* A2 */ unk8 mUnk_A2;
     /* A3 */ unk8 mUnk_A3;
     /* A4 */ unk32 mUnk_A4;
-    /* A8 */ unk32 mUnk_A8;
+    /* A8 */ UnkStruct_PlayerGet_ec mUnk_A8;
     /* AC */ unk16 mUnk_AC;
     /* AE */ unk16 mUnk_AE;
 

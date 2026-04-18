@@ -1,6 +1,7 @@
 #pragma once
 
 #include "MapObject/MapObject.hpp"
+#include "Player/PlayerGet.hpp"
 
 class MapObject_UnkStruct1 {
 public:
@@ -53,7 +54,7 @@ class MapObjectDoorBase : public MapObject, public MapObject_UnkStruct1_Derived2
 public:
     /* 00 (base MapObject) */
     /* 40 (base MapObject_UnkStruct1_Derived2) */
-    /* 68 */ unk32 mUnk_68;
+    /* 68 */ UnkStruct_PlayerGet_ec mUnk_68;
     /* 6C */ unk32 mUnk_6C;
     /* 70 */ unk32 mUnk_70;
     /* 74 */ unk32 mUnk_74;
@@ -85,7 +86,7 @@ public:
     // data_ov031_02115008 (MapObject)
     /* 08 */ virtual unk16 vfunc_08() override;
     /* 0C */ virtual unk8 vfunc_0C() override;
-    /* 30 */ virtual ~MapObjectDoorBase() override;
+    /* 30 */ virtual ~MapObjectDoorBase() override {}
     /* 38 */ virtual void vfunc_38();
     /* 3C */ virtual void vfunc_3C();
     /* 40 */ virtual void vfunc_40();

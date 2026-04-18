@@ -30,9 +30,7 @@ ARM MapObjectProfileMiniBlocks::MapObjectProfileMiniBlocks() :
 }
 
 // https://decomp.me/scratch/euvAz
-ARM MapObjectMiniBlocks::MapObjectMiniBlocks() :
-    mUnk_40() {
-    this->mUnk_44 = 0;
+ARM MapObjectMiniBlocks::MapObjectMiniBlocks() {
     this->mUnk_48 = 1;
 }
 

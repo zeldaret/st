@@ -961,12 +961,43 @@ public:
 
     UnkSystem6() {}
 
-    // data_ov000_020b1968
+    // data_ov000_020b1a98
     /* 00 */ virtual ~UnkSystem6();
     /* 08 */ virtual void vfunc_08(unk32 param1);
-    /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
-    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2);
-    /* 18 */ virtual void vfunc_18();
+    /* 0C */ virtual void vfunc_0C()                             = 0;
+    /* 10 */ virtual void vfunc_10()                             = 0;
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2) = 0;
+    /* 18 */ virtual void vfunc_18()                             = 0;
     /* 1C */
+};
+
+class UnkSystem6_Derived1 : public UnkSystem6 {
+public:
+    /* 00 (base) */
+    /* 04 */ void *mUnk_04;
+
+    UnkSystem6_Derived1(void *ptr) :
+        mUnk_04(ptr) {}
+
+    // data_ov000_020b1a48
+    /* 00 */ virtual ~UnkSystem6_Derived1() override {}
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2) override;
+    /* 18 */ virtual void vfunc_18() override;
+};
+
+class UnkSystem6_Derived2 : public UnkSystem6_Derived1 {
+public:
+    /* 00 (base) */
+    /* 08 */
+
+    UnkSystem6_Derived2() :
+        UnkSystem6_Derived1(NULL) {}
+
+    UnkSystem6_Derived2(void *ptr) :
+        UnkSystem6_Derived1(ptr) {}
+
+    // data_ov000_020b1968
+    /* 00 */ virtual ~UnkSystem6_Derived2() {}
+    /* 0C */ virtual void vfunc_0C() override;
 };

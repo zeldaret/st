@@ -83,7 +83,8 @@ src/000_Second/MapObject/MapObjectSwitchStep.cpp:
     .bss        start:0x020b6114 end:0x020b6228
 
 src/000_Second/MapObject/MapObjectMiniBlocks.cpp:
-    .text       start:0x0209e3f8 end:0x0209e768
+    complete
+    .text       start:0x0209e3f8 end:0x0209e784
     .rodata     start:0x020af574 end:0x020af580
     .init       start:0x020b09ac end:0x020b09fc
     .ctor       start:0x020b1920 end:0x020b1924

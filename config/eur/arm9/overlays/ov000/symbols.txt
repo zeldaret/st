@@ -112,9 +112,9 @@ func_ov000_02057d9c kind:function(arm,size=0x2c) addr:0x02057d9c
 _ZN10UnkSystem48vfunc_10Ev kind:function(arm,size=0x7c) addr:0x02057dc8
 _ZN10UnkSystem48vfunc_14Ev kind:function(arm,size=0x64) addr:0x02057e44
 _ZN10UnkSystem48vfunc_18Ev kind:function(arm,size=0x1c) addr:0x02057ea8
-func_ov000_02057ec4 kind:function(thumb,size=0x2) addr:0x02057ec4
-_ZN19func_ov000_02057ec8D0Ev kind:function(thumb,size=0xc) addr:0x02057ec8
-_ZN10UnkSystem6D1Ev kind:function(thumb,size=0x2) addr:0x02057ed4
+_ZN10UnkSystem6D1Ev kind:function(thumb,size=0x2) addr:0x02057ec4
+_ZN10UnkSystem6D0Ev kind:function(thumb,size=0xc) addr:0x02057ec8
+_ZN10UnkSystem6D2Ev kind:function(thumb,size=0x2) addr:0x02057ed4
 func_ov000_02057ed8 kind:function(arm,size=0x8) addr:0x02057ed8
 func_ov000_02057ee0 kind:function(arm,size=0x14) addr:0x02057ee0
 func_ov000_02057ef4 kind:function(arm,size=0x24) addr:0x02057ef4
@@ -3267,7 +3267,7 @@ data_ov000_020af4d8 kind:data(any) addr:0x020af4d8
 data_ov000_020af4ec kind:data(any) addr:0x020af4ec
 data_ov000_020af550 kind:data(byte[7]) addr:0x020af550
 data_ov000_020af560 kind:data(byte[8]) addr:0x020af560
-data_ov000_020af574 kind:data(any) addr:0x020af574
+data_ov000_020af574 kind:data(any) addr:0x020af574 local
 data_ov000_020af580 kind:data(any) addr:0x020af580
 data_ov000_020af58c kind:data(any) addr:0x020af58c
 data_ov000_020af760 kind:data(any) addr:0x020af760
@@ -3352,8 +3352,8 @@ __sinit_ActorUnkSWTM.cpp kind:function(arm,size=0x50) addr:0x020b0838
 __sinit_ActorEventIcon.cpp kind:function(arm,size=0x50) addr:0x020b0888 local
 __sinit_ActorUnkEFIK.cpp kind:function(arm,size=0x50) addr:0x020b08d8 local
 __sinit_MapObjectProfile.cpp kind:function(arm,size=0x28) addr:0x020b0928 local
-__sinit_MapObjectSwitchStep.cpp kind:function(arm,size=0x5c) addr:0x020b0950
-__sinit_MapObjectMiniBlocks.cpp kind:function(arm,size=0x50) addr:0x020b09ac
+__sinit_MapObjectSwitchStep.cpp kind:function(arm,size=0x5c) addr:0x020b0950 local
+__sinit_MapObjectMiniBlocks.cpp kind:function(arm,size=0x50) addr:0x020b09ac local
 __sinit_ov000_020b09fc kind:function(arm,size=0x9e8) addr:0x020b09fc
 __sinit_ov000_020b13e4 kind:function(arm,size=0x408) addr:0x020b13e4
 __sinit_ov000_020b17ec kind:function(arm,size=0x34) addr:0x020b17ec
@@ -3387,8 +3387,8 @@ __sinit_ov000_020b18a0 kind:function(arm,size=0x14) addr:0x020b18a0
 .p__sinit_ActorEventIcon.cpp kind:data(word) addr:0x020b1910 local
 .p__sinit_ActorUnkEFIK.cpp kind:data(word) addr:0x020b1914 local
 .p__sinit_MapObjectProfile.cpp kind:data(word) addr:0x020b1918 local
-.p__sinit_MapObjectSwitchStep.cpp kind:data(word) addr:0x020b191c
-.p__sinit_MapObjectMiniBlocks.cpp kind:data(word) addr:0x020b1920
+.p__sinit_MapObjectSwitchStep.cpp kind:data(word) addr:0x020b191c local
+.p__sinit_MapObjectMiniBlocks.cpp kind:data(word) addr:0x020b1920 local
 .p__sinit_ov000_020b09fc kind:data(word) addr:0x020b1924
 .p__sinit_ov000_020b13e4 kind:data(word) addr:0x020b1928
 .p__sinit_ov000_020b17ec kind:data(word) addr:0x020b192c
@@ -3396,7 +3396,7 @@ __sinit_ov000_020b18a0 kind:function(arm,size=0x14) addr:0x020b18a0
 .p__sinit_ov000_020b183c kind:data(word) addr:0x020b1934
 .p__sinit_ov000_020b1878 kind:data(word) addr:0x020b1938
 .p__sinit_ov000_020b18a0 kind:data(word) addr:0x020b193c
-_ZTV10UnkSystem6 kind:data(any) addr:0x020b1960
+_ZTV19UnkSystem6_Derived2 kind:data(any) addr:0x020b1960
 data_ov000_020b198c kind:data(any) addr:0x020b198c
 data_ov000_020b19a8 kind:data(any) addr:0x020b19a8
 data_ov000_020b19b0 kind:data(any) addr:0x020b19b0
@@ -4067,7 +4067,7 @@ MapObjectSwitchStep_data_020b6118 kind:bss(size=0x8) addr:0x020b6118
 @1056 kind:bss addr:0x020b6124 local
 _ZN15ProfileInstanceI26MapObjectProfileSwitchStepE8sProfileE kind:bss addr:0x020b6130
 _ZGVN15ProfileInstanceI26MapObjectProfileMiniBlocksE8sProfileE kind:bss addr:0x020b6228
-@10063 kind:bss addr:0x020b622c
+@10063 kind:bss addr:0x020b622c local
 _ZN15ProfileInstanceI26MapObjectProfileMiniBlocksE8sProfileE kind:bss addr:0x020b6238
 data_ov000_020b62a0 kind:bss addr:0x020b62a0
 data_ov000_020b62a4 kind:bss addr:0x020b62a4
