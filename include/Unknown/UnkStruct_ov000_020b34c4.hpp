@@ -8,10 +8,10 @@ typedef bool (**UnkStruct_ov000_020b34c4_Callback)(void *, void *);
 
 class UnkStruct_ov000_020b34c4 {
 public:
-    /* 00 */ UnkStruct_ov000_020b34c4_Callback mUnk_00;
+    /* 08 */ unk32 mUnk_08;
+    /* 08 */ unk32 mUnk_0C;
+    /* 00 */ UnkStruct_ov000_020b34c4_Callback *mUnk_00;
     /* 04 */ unk32 mUnk_04;
-
-    /* 00 */ virtual bool vfunc_00(void *param1);
 };
 
 extern UnkStruct_ov000_020b34c4 data_ov000_020b34c4;

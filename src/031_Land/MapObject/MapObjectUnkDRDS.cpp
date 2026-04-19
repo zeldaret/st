@@ -69,6 +69,7 @@ ARM bool MapObjectUnkDRDS::vfunc_00(void) {
 
 ARM void MapObjectUnkDRDS::vfunc_04(void) {
     UnkStruct_027e0cd8_0c *ptr;
+    Vec3p auStack_20;
 
     if (this->mUnk_20.mUnk_00[1] == 2) {
         this->mUnk_6C = 0;
@@ -96,19 +97,26 @@ ARM void MapObjectUnkDRDS::vfunc_04(void) {
 
 #if IS_JP
     //! TODO: non-matching
-    bool run = true;
     UnkStruct_ov000_020b34c4 stack;
-    MapObjectManager *pManager = gpMapObjManager;
-    stack.mUnk_04              = MapObjectId_DRDS;
-    stack.mUnk_00              = data_ov000_020b4cc4;
+    bool run      = true;
+    stack.mUnk_00 = &data_ov000_020b4cc4;
+    stack.mUnk_04 = MapObjectId_DRDS;
 
-    MapObject **ppMapObject = pManager->func_01fff520(&stack, pManager->mMapObjTable);
+    MapObject **ppMapObject =
+        gpMapObjManager->func_01fff520((UnkStruct_ov000_020b34c4 *) &stack.mUnk_00, gpMapObjManager->mMapObjTable);
 
-    if (ppMapObject != pManager->mUnk_08) {
+    if (ppMapObject != gpMapObjManager->mUnk_08) {
         MapObjectUnkDRDS *pMapObject = (MapObjectUnkDRDS *) *ppMapObject;
+        u32 temp1;
+        u32 temp2;
 
-        if (pMapObject != NULL && *(u32 *) &pMapObject->mUnk_38 != *(u32 *) &this->mUnk_38 && pMapObject->mUnk_A2) {
-            run = false;
+        if (pMapObject != NULL) {
+            temp1 = *(u32 *) &this->mUnk_38;
+            temp2 = *(u32 *) &pMapObject->mUnk_38;
+
+            if (temp2 != temp1 && pMapObject->mUnk_A2) {
+                run = false;
+            }
         }
     }
 
@@ -122,8 +130,6 @@ ARM void MapObjectUnkDRDS::vfunc_04(void) {
     ptr = data_027e0cd8->mUnk_0C;
 
     if (this->func_ov031_020fdec8()) {
-        Vec3p auStack_20;
-
         this->mUnk_A2 = true;
         this->mUnk_8C = 0;
         ptr->func_ov000_020803ec(this->mUnk_20.mUnk_00[0]);

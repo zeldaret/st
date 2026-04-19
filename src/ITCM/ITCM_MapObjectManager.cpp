@@ -29,15 +29,16 @@ void MapObjectManager::func_01fff4cc(UnkCallback_func_01fff4cc param1, void *par
     }
 }
 
+// non-matching
 MapObject **MapObjectManager::func_01fff520(UnkStruct_ov000_020b34c4 *param1, MapObject **param2) {
     MapObject **ptr = param2;
 
     while (ptr != this->mUnk_08) {
         MapObject *ptr2 = *ptr;
         if (ptr2 != NULL && GET_FLAG((ptr2)->mFlags, MapObjFlag_Alive)) {
+            UnkStruct_ov000_020b34c4_Callback cb = *param1->mUnk_00;
 
-            //! TODO: fake match
-            if (param1->vfunc_00(ptr2)) {
+            if ((*cb)(param1, ptr2)) {
                 break;
             }
         }
