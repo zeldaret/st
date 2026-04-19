@@ -53,7 +53,7 @@ ARM bool MapObject::vfunc_00() {
     return true;
 }
 
-ARM bool MapObject::vfunc_04() {}
+ARM void MapObject::vfunc_04() {}
 
 ARM void MapObject::func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx) {
     Vec3p pos;

@@ -6,6 +6,8 @@
 #include "files.h"
 #include "types.h"
 
+class UnkStruct_SceneChange1;
+
 struct UnkStruct_func_ov001_020bb018_param2 {
     /* 00 */ STRUCT_PAD(0x00, 0x08);
     /* 08 */ u16 mUnk_08;
@@ -45,6 +47,8 @@ public:
     Actor **func_01fff350(void *param1, Actor **ppActorTable);
 
     void func_ov000_02096e44(int index);
+    unk32 func_ov000_0209704c();
+    unk32 func_ov000_020970c8(u16 param1, unk32 *param2);
 
     int ClearInstance();
     void func_ov001_020bafdc();
@@ -52,7 +56,7 @@ public:
     void func_ov001_020bb488();
     void func_ov001_020bb548();
     void func_ov001_020bb630();
-    void func_ov001_020bb6b0(s32 *param1);
+    void func_ov001_020bb6b0(UnkStruct_SceneChange1 *param1);
     void func_ov001_020bb7b0(ZeldaObjectList *pObjList);
     void func_ov001_020bb7f0();
 

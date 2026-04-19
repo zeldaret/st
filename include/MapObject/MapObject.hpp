@@ -100,7 +100,7 @@ public:
     /* 0E */ unk16 mUnk_0E;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ s16 mUnk_14;
-    /* 16 */ unk8 mUnk_16;
+    /* 16 */ bool mUnk_16;
     /* 16 */ unk8 mUnk_17;
     /* 18 */
 
@@ -117,8 +117,8 @@ public:
     /* 00 (vtable) */
     /* 04 */ Vec3p mPos;
     /* 10 */ MapObject_10 *mUnk_10;
-    /* 14 */ unk16 mUnk_14;
-    /* 16 */ unk16 mUnk_16;
+    /* 14 */ s16 mUnk_14;
+    /* 16 */ s16 mUnk_16;
     /* 18 */ unk8 mUnk_18[2]; // bools? when set Link walks to the map object when touched
     /* 1A */ unk8 mUnk_1A;
     /* 1B */ unk8 mUnk_1B;
@@ -126,16 +126,16 @@ public:
     /* 1E */ unk16 mUnk_1E;
     /* 20 */ MapObject_20 mUnk_20;
     /* 38 */ unk8 mUnk_38;
-    /* 38 */ unk8 mUnk_39;
+    /* 39 */ unk8 mUnk_39;
     /* 3A */ Vec2b mUnk_3A;
     /* 3C */ MapObjectProfile *mpProfile;
     /* 40 */
 
     // data_ov000_020b3590
     /* 00 */ virtual bool vfunc_00();
-    /* 04 */ virtual bool vfunc_04();
+    /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
-    /* 0C */ virtual unk8 vfunc_0C();
+    /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();

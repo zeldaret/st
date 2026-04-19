@@ -54,6 +54,7 @@ public:
     /* 44 */
 
     Vec3p *func_01fff148(unk32 param1);
+    bool func_01fff1a4();
 
     void func_ov000_0208a318(unk32 param1, unk32 param2, unk32 param3);
 };

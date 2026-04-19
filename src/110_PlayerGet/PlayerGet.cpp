@@ -494,7 +494,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
     }
 }
 
-const UnkStruct_ov110_021861ec data_ov110_021861ec = UnkStruct_ov110_021861ec(0x5E3, 0x152D, 0xCD);
+const UnkStruct_ov110_021861ec data_ov110_021861ec(0x5E3, 0x152D, 0xCD);
 
 ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
     unk32 var_r1;

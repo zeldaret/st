@@ -1079,7 +1079,7 @@ from:0x020bb484 kind:load to:0x027e09a4 module:dtcm
 from:0x020bb494 kind:thumb_call_arm to:0x01ffd400 module:itcm
 from:0x020bb4cc kind:thumb_call to:0x020ea100 module:overlay(31)
 from:0x020bb4de kind:thumb_call_arm to:0x020f8cdc module:overlay(21)
-from:0x020bb530 kind:thumb_call_arm to:0x0215e8f8 module:overlays(68,71)
+from:0x020bb530 kind:thumb_call_arm to:0x0215e8f8 module:overlay(71)
 from:0x020bb538 kind:load to:0x027e09a4 module:dtcm
 from:0x020bb53c kind:load to:0x027e0cd8 module:dtcm
 from:0x020bb540 kind:load to:0x027e0cf4 module:dtcm

@@ -141,14 +141,6 @@ enum SceneIndex_ {
     /* 121 */ SceneIndex_Max           = 0x79
 };
 
-struct UnkStruct_027e09a4_58_78 {
-    unk32 mUnk_00;
-    unk32 mUnk_04;
-    unk8 mUnk_08;
-    unk8 mUnk_09;
-    u8 mUnk_0A;
-};
-
 struct UnkStruct_func_01ffd400 {
     /* 00 */ STRUCT_PAD(0x00, 0x10);
     /* 1B */ unk32 mUnk_10;
@@ -164,7 +156,7 @@ struct UnkStruct_SceneChange1 {
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk16 mUnk_08;
     /* 0A */ u8 mRoomIndex;
-    /* 0B */ unk8 mSpawnIndex;
+    /* 0B */ u8 mSpawnIndex;
     /* 0C */ bool mNextIsCS;
     /* 0D */ unk8 mUnk_0D;
     /* 0E */ unk8 mCutsceneIndex;
@@ -265,7 +257,7 @@ public:
     UnkStruct_func_01ffd400 *func_01ffd400();
 
     unk8 func_ov000_02070bd0(unk32 csIndex, unk32 param2);
-    UnkStruct_027e09a4_58_78 *func_ov000_02070560();
+    UnkStruct_SceneChange1 *func_ov000_02070560();
     void func_ov000_020707a8(void *param1);
     void func_ov000_02070834(void *param1);
     void func_ov000_0207087c(unk32 param1);

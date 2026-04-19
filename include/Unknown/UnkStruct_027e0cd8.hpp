@@ -7,6 +7,8 @@
 #include "MapObject/MapObjectManager.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 
+class MapObject_20;
+
 class UnkStruct_027e0cd8_0c {
 public:
     /* 000 (vtable) */
@@ -82,11 +84,17 @@ public:
     /* 2C */ virtual void vfunc_2c();
 
     q20 func_01ffedf4(Vec2b *pPos);
+
     unk32 func_ov000_02080180(void *param1);
     bool func_ov000_02080658(unk32 param1, UnkStruct_SceneChange1 *param2);
     void func_ov000_020808f4(void *param1, void *param2, unk32 param3);
     unk32 func_ov000_02080a44();
     void func_ov000_020801b0(Vec2b *param1, unk32 param2, unk32 param3);
+    void func_ov000_0208053c(u16 param1);
+    void func_ov000_020803ec(u16 param1);
+    unk32 func_ov000_020802ec(u16 param1, Vec3p *param2);
+
+    Vec3p *func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1);
 };
 
 class UnkStruct_027e0cd8 {
@@ -104,6 +112,7 @@ public:
     void func_ov000_02081ecc(unk16 param1, unk32 param2);
     void func_ov000_02081eec(unk16 param1, unk32 param2, unk32 param3);
     bool func_ov000_02081f3c(unk16 param1, unk32 param2);
+    unk32 func_ov000_02081d5c();
 };
 
 extern UnkStruct_027e0cd8 *data_027e0cd8;

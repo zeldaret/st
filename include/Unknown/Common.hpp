@@ -1001,3 +1001,23 @@ public:
     /* 00 */ virtual ~UnkSystem6_Derived2() {}
     /* 0C */ virtual void vfunc_0C() override;
 };
+
+struct UnkStackStruct1 {
+    /* 00 */ unk8 mUnk_00;
+    /* 01 */ unk8 mUnk_01;
+    /* 01 */ unk8 mUnk_02;
+    /* 01 */ unk8 mUnk_03;
+    /* 01 */ unk8 mUnk_04;
+    /* 01 */ unk8 mUnk_05;
+    /* 01 */ unk8 mUnk_06;
+    /* 01 */ unk8 mUnk_07;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ Vec3p mUnk_0C;
+    /* 18 */ STRUCT_PAD(0x18, 0x38);
+    /* 38 */ u16 mUnk_38;
+    /* 3A */ unk8 mUnk_3A;
+    /* 3B */ unk8 mUnk_3B;
+    /* 3C */ unk32 mUnk_3C;
+    /* 40 */
+};
+extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);

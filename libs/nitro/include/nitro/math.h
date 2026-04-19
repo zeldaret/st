@@ -126,6 +126,9 @@ union Vec3p {
     }
 
     Vec3p() {}
+    Vec3p(Vec3p &from) {
+        this->coords = from.coords;
+    }
     Vec3p(q20 X, q20 Y, q20 Z) {
         x = X;
         y = Y;

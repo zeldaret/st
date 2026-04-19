@@ -394,6 +394,7 @@ config.libs = [
             Object("031_Land/Actor/ActorUnkTGTZ.cpp"),
             Object("031_Land/Actor/ActorUnkTLKT.cpp"),
             Object("031_Land/Actor/ActorUnkZLSL_ZSRS.cpp"),
+            Object("031_Land/MapObject/MapObjectDoorBase.cpp"),
             Object("031_Land/MapObject/MapObjectUnkBLCC.cpp"),
             Object("031_Land/MapObject/MapObjectUnkBMFL.cpp"),
             Object("031_Land/MapObject/MapObjectUnkBREX.cpp"),
