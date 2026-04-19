@@ -1,5 +1,6 @@
 #include "MapObject/MapObjectUnkDRDS.hpp"
 #include "Actor/ActorManager.hpp"
+#include "MapObject/MapObjectManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -11,6 +12,7 @@
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "Unknown/UnkStruct_027e0d8c.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
+#include "versions.h"
 
 extern "C" void *func_ov000_02077590(unk32);
 extern "C" unk32 func_01ffb428(unk32, unk32);
@@ -18,6 +20,7 @@ extern "C" void func_01ffaf74(Vec3p *, Mat4x3p *, Vec3p *);
 extern "C" void func_ov000_020a0334(void *); //! TODO: solve oddity
 extern "C" void func_01ff93c0(Vec3p *, q20);
 extern unk32 data_ov031_02110c00[];
+extern UnkStruct_ov000_020b34c4_Callback data_ov000_020b4cc4;
 
 struct UnkStruct_ov031_021150b0 {
     /* 00 */ u32 mUnk_00;
@@ -91,7 +94,31 @@ ARM void MapObjectUnkDRDS::vfunc_04(void) {
 
     this->vfunc_5C(8, 1);
 
+#if IS_JP
+    //! TODO: non-matching
+    bool run = true;
+    UnkStruct_ov000_020b34c4 stack;
+    MapObjectManager *pManager = gpMapObjManager;
+    stack.mUnk_04              = MapObjectId_DRDS;
+    stack.mUnk_00              = data_ov000_020b4cc4;
+
+    MapObject **ppMapObject = pManager->func_01fff520(&stack, pManager->mMapObjTable);
+
+    if (ppMapObject != pManager->mUnk_08) {
+        MapObjectUnkDRDS *pMapObject = (MapObjectUnkDRDS *) *ppMapObject;
+
+        if (pMapObject != NULL && *(u32 *) &pMapObject->mUnk_38 != *(u32 *) &this->mUnk_38 && pMapObject->mUnk_A2) {
+            run = false;
+        }
+    }
+
+    if (run) {
+        data_027e0cd8->mUnk_0C->func_ov000_0208053c(this->mUnk_20.mUnk_00[0]);
+    }
+#else
     data_027e0cd8->mUnk_0C->func_ov000_0208053c(this->mUnk_20.mUnk_00[0]);
+#endif
+
     ptr = data_027e0cd8->mUnk_0C;
 
     if (this->func_ov031_020fdec8()) {
@@ -698,15 +725,11 @@ ARM void MapObjectUnkDRDS::vfunc_84(unk32 param1, Vec3p *param2, unk16 *param3) 
     iVar1         = this->mUnk_14 - DEG_TO_ANG(30);
     if (param1 != 0) {
         local_30.x = MUL_Q20(SIN((u16) iVar1), 0x1666);
-        ;
         local_30.z = MUL_Q20(COS((u16) iVar1), 0x1666);
-        ;
         local_30.y = 0;
     } else {
         local_30.x = MUL_Q20(SIN((u16) iVar1), 0x10CD);
-        ;
         local_30.z = MUL_Q20(COS((u16) iVar1), 0x10CD);
-        ;
         local_30.y = 0;
         this->mUnk_5A += DEG_TO_ANG(180);
     }
