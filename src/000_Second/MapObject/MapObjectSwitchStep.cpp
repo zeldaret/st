@@ -200,7 +200,7 @@ struct stack_struct {
     /* 08 */
 };
 
-ARM void MapObjectSwitchStep::vfunc_18(void) {
+ARM void MapObjectSwitchStep::vfunc_18(s8 *param1, s8 param2) {
     if (!GET_FLAG(this->mFlags, MapObjFlag_5)) {
         return;
     }

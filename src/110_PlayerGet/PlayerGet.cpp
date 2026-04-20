@@ -790,9 +790,8 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
     }
 }
 
-ARM UnkStruct_PlayerGet_ec::UnkStruct_PlayerGet_ec() {
-    this->mUnk_00 = NULL;
-}
+ARM UnkStruct_PlayerGet_ec::UnkStruct_PlayerGet_ec() :
+    UnkSystem7(NULL) {}
 
 // non-matching
 THUMB void UnkStruct_027e0ce0_34::func_ov110_02185d3c(ItemId itemId) {

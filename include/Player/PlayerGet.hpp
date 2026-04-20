@@ -51,26 +51,6 @@ public:
     }
 };
 
-class UnkStruct_PlayerGet_ec {
-public:
-    struct UnkStruct_00 {
-        /* 00 */ STRUCT_PAD(0x00, 0x24);
-        /* 24 */ unk32 mUnk_24;
-        /* 28 */ STRUCT_PAD(0x28, 0xA4);
-        /* A4 */ unk16 mUnk_A4;
-    };
-
-    /* 00 */ UnkStruct_00 *mUnk_00;
-    /* 04 */
-
-    UnkStruct_PlayerGet_ec(UnkStruct_00 *param1) {
-        this->mUnk_00 = param1;
-    }
-
-    UnkStruct_PlayerGet_ec();
-    ~UnkStruct_PlayerGet_ec();
-};
-
 class UnkStruct_PlayerGet_50 {
 public:
     unk32 func_01ff8fa8();

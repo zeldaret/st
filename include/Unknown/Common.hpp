@@ -1029,3 +1029,39 @@ struct UnkStackStruct1 {
     /* 40 */
 };
 extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
+
+struct UnkSystem7_UnkStruct_00 {
+    /* 00 */ STRUCT_PAD(0x00, 0x24);
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ STRUCT_PAD(0x28, 0xA4);
+    /* A4 */ unk16 mUnk_A4;
+};
+
+class UnkSystem7 {
+public:
+    /* 00 */ UnkSystem7_UnkStruct_00 *mUnk_00;
+    /* 04 */
+
+    UnkSystem7(UnkSystem7_UnkStruct_00 *param1) {
+        this->mUnk_00 = param1;
+    }
+
+    ~UnkSystem7() {
+        this->func_ov000_020a0304();
+    }
+
+    void func_ov000_020a0304(void);
+    void func_ov000_020a0334();
+};
+
+class UnkStruct_PlayerGet_ec : public UnkSystem7 {
+public:
+    /* 00 (base) */
+    /* 04 */
+
+    UnkStruct_PlayerGet_ec(UnkSystem7_UnkStruct_00 *param1) :
+        UnkSystem7(param1) {}
+
+    UnkStruct_PlayerGet_ec();
+    ~UnkStruct_PlayerGet_ec();
+};

@@ -45,7 +45,7 @@ public:
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 14 */ virtual void vfunc_14() override;
-    /* 18 */ virtual void vfunc_18() override;
+    /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2) override;
     /* 30 */ virtual ~MapObjectUnkDRDS() override;
 
     // (MapObject_UnkStruct1_Derived1)

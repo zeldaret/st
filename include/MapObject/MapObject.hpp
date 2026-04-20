@@ -139,7 +139,7 @@ public:
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual void vfunc_18();
+    /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2);
     /* 1C */ virtual bool vfunc_1C();
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
@@ -163,7 +163,6 @@ public:
     void func_ov000_0209d3b4(unk32 param1, q20 size);
     void func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_00 *param2, unk32 param3);
     void func_ov000_0209d518(unk32 param1, unk32 param2, unk32 param3, u8 param4);
-    void func_ov000_0209d54c(unk32 param1, u16 param2, Vec3p *param3, s16 param4, u16 param5);
     void func_ov000_0209d5c8(ActorRef ref);
     void func_ov000_0209d614(unk32 param1);
     bool func_ov000_0209d668();
@@ -173,4 +172,5 @@ public:
 
     static void func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx);
     static void func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2);
+    static void func_ov000_0209d54c(void *param1, MapObject *thisx, unk32 param2, Vec3p *param3, unk32 param4, unk32 param5);
 };

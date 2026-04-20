@@ -239,17 +239,18 @@ struct TempStruct {
 };
 
 // non-matching
-ARM void MapObject::func_ov000_0209d54c(unk32 param1, u16 param2, Vec3p *param3, s16 param4, u16 param5) {
+ARM void MapObject::func_ov000_0209d54c(void *param1, MapObject *thisx, unk32 param2, Vec3p *param3, unk32 param4,
+                                        unk32 param5) {
     TempStruct local_4c;
     local_4c.mUnk_28 = 0;
     local_4c.func_ov000_020975f8();
     local_4c.pos.x     = param3->x;
     local_4c.pos.y     = param3->y;
     local_4c.pos.z     = param3->z;
-    local_4c.param_r2  = param2;
-    local_4c.extra_s16 = param4;
-    local_4c.extra_u16 = param5;
-    func_ov000_020973f4(this, &data_ov000_020b539c_eur, ActorId_EventIcon, &local_4c, 0);
+    local_4c.param_r2  = param4;
+    local_4c.extra_s16 = param5;
+    local_4c.extra_u16 = param2;
+    func_ov000_020973f4(param1, &data_ov000_020b539c_eur, ActorId_EventIcon, &local_4c, 0);
 }
 
 ARM void MapObject::func_ov000_0209d5c8(ActorRef ref) {

@@ -41,8 +41,8 @@ public:
 class Actor_5c_temp : public Actor_5c_Base {
 public:
     /* 00 (base) */
-    /* 10 */ unk16 mUnk_10;
-    /* 14 */ STRUCT_PAD(0x14, 0x28);
+    /* 10 */ unk16 mUnk_10[3];
+    /* 16 */ STRUCT_PAD(0x16, 0x28);
     /* 28 */ unk32 mUnk_28;
 
     Actor_5c_temp() {};

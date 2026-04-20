@@ -17,7 +17,8 @@ ARM Actor *ActorProfileUnkEFIK::Create() {
 ARM ActorProfileUnkEFIK::ActorProfileUnkEFIK() :
     ActorProfile(ActorId_EFIK) {}
 
-ARM ActorUnkEFIK::ActorUnkEFIK() {
+ARM ActorUnkEFIK::ActorUnkEFIK() :
+    mUnk_98(NULL) {
     this->mUnk_9C = -1;
     this->mUnk_A0 = 0;
 }

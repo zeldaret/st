@@ -17,7 +17,6 @@
 extern "C" void *func_ov000_02077590(unk32);
 extern "C" unk32 func_01ffb428(unk32, unk32);
 extern "C" void func_01ffaf74(Vec3p *, Mat4x3p *, Vec3p *);
-extern "C" void func_ov000_020a0334(void *); //! TODO: solve oddity
 extern "C" void func_01ff93c0(Vec3p *, q20);
 extern unk32 data_ov031_02110c00[];
 extern UnkStruct_ov000_020b34c4_Callback data_ov000_020b4cc4;
@@ -569,8 +568,8 @@ ARM bool MapObjectUnkDRDS::func_ov031_020fdec8(void) {
     return false;
 }
 
-ARM void MapObjectUnkDRDS::vfunc_18(void) {
-    this->func_ov031_020fcb78();
+ARM void MapObjectUnkDRDS::vfunc_18(s8 *param1, s8 param2) {
+    this->func_ov031_020fcb78(param1, param2);
 }
 
 ARM void MapObjectUnkDRDS::vfunc_14(void) {
@@ -663,7 +662,7 @@ ARM void MapObjectUnkDRDS::vfunc_7C(void) {
     this->MapObjectDoorBase::vfunc_7C();
 
     if (this->mUnk_A8.mUnk_00 != NULL) {
-        func_ov000_020a0334(&this->mUnk_A8.mUnk_00);
+        this->mUnk_A8.func_ov000_020a0334();
     }
 }
 
