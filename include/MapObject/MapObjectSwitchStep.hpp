@@ -66,8 +66,6 @@ public:
 class MapObjectProfileSwitchStep : public MapObjectProfileSwitchStep_Base {
 public:
     /* 00 (base) */
-    /* E0 */ Vec3p mUnk_E0;
-    /* EC */ Vec3p mUnk_EC;
     /* F8 */
 
     MapObjectProfileSwitchStep();

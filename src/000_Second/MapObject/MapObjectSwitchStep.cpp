@@ -24,13 +24,13 @@ ARM MapObjectProfileSwitchStep::MapObjectProfileSwitchStep() :
     MapObjectProfileSwitchStep_Base(MapObjectId_SwitchStep) {
     this->mUnk_D4.mUnk_08 = 0x2DC04009;
 
-    this->mUnk_E0.x = -FLOAT_TO_Q20(0.5f);
-    this->mUnk_E0.y = FLOAT_TO_Q20(0.0f);
-    this->mUnk_E0.z = -FLOAT_TO_Q20(0.5f);
+    this->mUnk_D4.mUnk_0C.x = -FLOAT_TO_Q20(0.5f);
+    this->mUnk_D4.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
+    this->mUnk_D4.mUnk_0C.z = -FLOAT_TO_Q20(0.5f);
 
-    this->mUnk_EC.x = FLOAT_TO_Q20(0.5f);
-    this->mUnk_EC.y = FLOAT_TO_Q20(0.5f);
-    this->mUnk_EC.z = FLOAT_TO_Q20(0.5f);
+    this->mUnk_D4.mUnk_18.x = FLOAT_TO_Q20(0.5f);
+    this->mUnk_D4.mUnk_18.y = FLOAT_TO_Q20(0.5f);
+    this->mUnk_D4.mUnk_18.z = FLOAT_TO_Q20(0.5f);
 
     this->mUnk_06         = 1;
     this->mUnk_0C         = 0xC00;
