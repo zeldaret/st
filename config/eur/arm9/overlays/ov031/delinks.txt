@@ -172,10 +172,14 @@ src/031_Land/Actor/ActorUnkNFSP.cpp:
     .text       start:0x020fb80c end:0x020fbd6c
     .init       start:0x02111a9c end:0x02111aec
     .ctor       start:0x0211280c end:0x02112810
-    .bss        start:0x0211711c end:0x0211727c
+    .bss        start:0x0211711c end:0x02117204
 
 src/031_Land/MapObject/MapObjectDoorBase.cpp:
     .text       start:0x020fbd6c end:0x020fd0f8
+    .init       start:0x02111aec end:0x02111b28
+    .ctor       start:0x02112810 end:0x02112814
+    .data       start:0x02114ffc end:0x021150b0
+    .bss        start:0x02117204 end:0x0211727c
 
 src/031_Land/MapObject/MapObjectUnkDRDS.cpp:
     .text       start:0x020fd0f8 end:0x020fe734

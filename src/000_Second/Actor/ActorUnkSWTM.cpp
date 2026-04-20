@@ -140,15 +140,15 @@ ARM unk32 ActorUnkSWTM::func_ov000_0209b038(void) {
             bool bVar1 = true;
 
             for (i = this->mUnk_9E; i < this->mUnk_A0; i++) {
-                if (i > this->mUnk_9C && data_027e0cd8->func_ov000_02081e30(i, this->mUnk_A2) != 0) {
+                if (i > this->mUnk_9C && data_027e0cd8->func_ov000_02081e30(i, this->mUnk_A2)) {
                     this->mUnk_AC = true;
                 }
 
-                if (i == this->mUnk_9C && data_027e0cd8->func_ov000_02081e30(i, this->mUnk_A2) != 0) {
+                if (i == this->mUnk_9C && data_027e0cd8->func_ov000_02081e30(i, this->mUnk_A2)) {
                     this->mUnk_9C++;
                 }
 
-                if (data_027e0cd8->func_ov000_02081e30(i, this->mUnk_A2) == 0) {
+                if (!data_027e0cd8->func_ov000_02081e30(i, this->mUnk_A2)) {
                     bVar1 = false;
                 }
             }
@@ -168,7 +168,7 @@ ARM unk32 ActorUnkSWTM::func_ov000_0209b038(void) {
     }
 
     for (int i = 0; i < this->mUnk_6C; i++) {
-        if (data_027e0cd8->func_ov000_02081e30(this->mUnk_9E + i, this->mUnk_A2) == 0) {
+        if (!data_027e0cd8->func_ov000_02081e30(this->mUnk_9E + i, this->mUnk_A2)) {
             return 0;
         }
     }

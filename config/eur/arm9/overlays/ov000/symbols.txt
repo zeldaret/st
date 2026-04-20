@@ -3700,7 +3700,7 @@ data_ov000_020b3630 kind:data(any) addr:0x020b3630
 data_ov000_020b363c kind:data(any) addr:0x020b363c
 _ZTV26MapObjectProfileSwitchStep kind:data(any) addr:0x020b3678
 _ZTV31MapObjectProfileSwitchStep_Base kind:data(any) addr:0x020b3694
-_ZTV12MapObject_10 kind:data(any) addr:0x020b36b0
+_ZTV12MapObject_10 kind:data(any) addr:0x020b36b0 local
 _ZTV22MapObjectSwitchStep_40 kind:data(any) addr:0x020b36d8
 _ZTV19MapObjectSwitchStep kind:data(any) addr:0x020b3704
 _ZTV26MapObjectProfileMiniBlocks kind:data(any) addr:0x020b3744

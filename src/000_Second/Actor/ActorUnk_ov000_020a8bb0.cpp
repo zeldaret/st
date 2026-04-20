@@ -60,7 +60,7 @@ ARM ActorUnk_ov000_020a8bb0::ActorUnk_ov000_020a8bb0(UnkSystem4 *param1, unk32 p
 ARM ActorUnk_ov000_020a8bb0::~ActorUnk_ov000_020a8bb0() {}
 
 ARM bool ActorUnk_ov000_020a8bb0::vfunc_18(unk32 param1) {
-    if (this->mUnk_70 == 0 && this->func_ov000_020a8dd0() != 0) {
+    if (this->mUnk_70 == 0 && this->func_ov000_020a8dd0()) {
         UNSET_FLAG(this->mFlags, ActorFlag_Alive);
     }
 
@@ -79,11 +79,11 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_1c() {
     this->func_ov031_020e3ca4();
 }
 
-ARM unk32 ActorUnk_ov000_020a8bb0::func_ov000_020a8db0() {
+ARM bool ActorUnk_ov000_020a8bb0::func_ov000_020a8db0() {
     return data_027e0cd8->func_ov000_02081e30(this->mUnk_76, this->mUnk_74);
 }
 
-ARM unk32 ActorUnk_ov000_020a8bb0::func_ov000_020a8dd0() {
+ARM bool ActorUnk_ov000_020a8bb0::func_ov000_020a8dd0() {
     return data_027e0cd8->func_ov000_02081e30(this->mUnk_78, this->mUnk_75);
 }
 

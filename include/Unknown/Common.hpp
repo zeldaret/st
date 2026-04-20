@@ -1002,18 +1002,26 @@ public:
     /* 0C */ virtual void vfunc_0C() override;
 };
 
+class MapObject;
+
 struct UnkStackStruct1 {
     /* 00 */ unk8 mUnk_00;
     /* 01 */ unk8 mUnk_01;
-    /* 01 */ unk8 mUnk_02;
-    /* 01 */ unk8 mUnk_03;
-    /* 01 */ unk8 mUnk_04;
-    /* 01 */ unk8 mUnk_05;
-    /* 01 */ unk8 mUnk_06;
-    /* 01 */ unk8 mUnk_07;
+    /* 02 */ unk8 mUnk_02;
+    /* 03 */ unk8 mUnk_03;
+    /* 04 */ void *mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ Vec3p mUnk_0C;
-    /* 18 */ STRUCT_PAD(0x18, 0x38);
+    /* 18 */ unk16 mUnk_18;
+    /* 1A */ unk16 mUnk_1A;
+    /* 1C */ unk16 mUnk_1C;
+    /* 1E */ unk16 mUnk_1E;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ Vec3p mUnk_24;
+    /* 30 */ unk16 mUnk_30;
+    /* 32 */ unk16 mUnk_32;
+    /* 34 */ unk16 mUnk_34;
+    /* 36 */ unk16 mUnk_36;
     /* 38 */ u16 mUnk_38;
     /* 3A */ unk8 mUnk_3A;
     /* 3B */ unk8 mUnk_3B;

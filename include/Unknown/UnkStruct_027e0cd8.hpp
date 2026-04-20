@@ -107,7 +107,7 @@ public:
     /* 14 */ STRUCT_PAD(0x14, 0x4C);
     /* 4C */
 
-    unk32 func_ov000_02081e30(unk32 param1, unk32 param2);
+    bool func_ov000_02081e30(unk32 param1, unk32 param2);
     void func_ov000_02081d7c(unk32 param1, unk32 param2, unk32 param3);
     void func_ov000_02081ecc(unk16 param1, unk32 param2);
     void func_ov000_02081eec(unk16 param1, unk32 param2, unk32 param3);

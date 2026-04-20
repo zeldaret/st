@@ -58,7 +58,7 @@ ARM MapObjectUnkDRDS::MapObjectUnkDRDS() :
 }
 
 ARM bool MapObjectUnkDRDS::vfunc_00(void) {
-    this->func_ov031_020fbf10(1, 0);
+    this->func_ov031_020fbf10(true, false);
     this->mUnk_78 = 0x23;
     this->mUnk_7A = 0x0F;
     this->mUnk_7C = 0x28;
@@ -163,7 +163,7 @@ struct UnkStruct_Copy {
 };
 
 // https://decomp.me/scratch/KLkdU
-ARM unk16 MapObjectUnkDRDS::vfunc_08(void) {
+ARM void MapObjectUnkDRDS::vfunc_08(void) {
     UnkStruct_Copy sp3C;
     UnkStruct_Copy sp1C;
     Vec3p sp10;
@@ -633,14 +633,13 @@ ARM void MapObjectUnkDRDS::vfunc_74(void) {
     local_28.y = local_34.y;
     local_28.z = local_34.z;
 
-    u16 var_r5   = this->mUnk_14 + DEG_TO_ANG(45);
-    s32 var_r5_2 = (u16) var_r5;
+    u16 var_r5 = (u16) (this->mUnk_14 + DEG_TO_ANG(45));
 
-    if ((u16) this->mUnk_14 == 2 && this->mUnk_16 == 5) {
-        var_r5_2 = 0;
+    if (((u16) this->mUnk_14 / DEG_TO_ANG(90)) == 2 && this->mUnk_16 == 5) {
+        var_r5 = 0;
     }
 
-    Mat4x3p_InitYRotation(&m, SIN(var_r5_2), COS(var_r5_2));
+    Mat4x3p_InitYRotation(&m, SIN(var_r5), COS(var_r5));
 
     func_01ffaf74(&local_40, &m, &local_40);
     func_01ffaf74(&local_4c, &m, &local_4c);

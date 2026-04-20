@@ -791,7 +791,7 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
 }
 
 ARM UnkStruct_PlayerGet_ec::UnkStruct_PlayerGet_ec() {
-    this->mUnk_00 = 0;
+    this->mUnk_00 = NULL;
 }
 
 // non-matching

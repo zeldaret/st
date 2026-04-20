@@ -51,7 +51,7 @@ enum MapObjFlag_ {
 class MapObject_10_Base {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk8 mUnk_04;
+    /* 04 */ u8 mUnk_04;
     /* 05 */ unk8 mUnk_05;
     /* 06 */ unk8 mUnk_06;
     /* 07 */ unk8 mUnk_07;
@@ -75,10 +75,11 @@ public:
 class MapObject_10 : public MapObject_10_Base {
 public:
     /* 00 (vtable) */
-    /* 0C */
+    /* 0C */ Vec3p mUnk_0C;
+    /* 18 */ Vec3p mUnk_18;
+    /* 24 */
 
     MapObject_10() {}
-    ~MapObject_10() {}
 
     // data_ov031_02113f18
     /* 00 */ virtual void vfunc_00();
@@ -134,7 +135,7 @@ public:
     // data_ov000_020b3590
     /* 00 */ virtual bool vfunc_00();
     /* 04 */ virtual void vfunc_04();
-    /* 08 */ virtual unk16 vfunc_08();
+    /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
@@ -156,7 +157,7 @@ public:
     bool func_ov000_0209d12c();
     bool func_ov000_0209d144(Vec2s *param1, unk32 param2, unk32 param3);
     void func_ov000_0209d274(unk32 param1);
-    unk32 func_ov000_0209d29c(unk32 param1);
+    bool func_ov000_0209d29c(unk32 param1);
     void func_ov000_0209d2c4(unk32 param1, unk32 param2);
     void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2b *param3);
     void func_ov000_0209d3b4(unk32 param1, q20 size);

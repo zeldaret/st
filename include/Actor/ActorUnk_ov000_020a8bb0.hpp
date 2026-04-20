@@ -136,8 +136,8 @@ public:
 
     void func_ov000_020a8ae0(q20 param1);
     ActorUnk_ov000_020a8bb0(UnkSystem4 *param1, unk32 param2);
-    unk32 func_ov000_020a8db0();
-    unk32 func_ov000_020a8dd0();
+    bool func_ov000_020a8db0();
+    bool func_ov000_020a8dd0();
     void func_ov000_020a8df0(ActorRef param1, unk32 param2);
     void func_ov000_020a8e9c(Vec3p *param1);
     void func_ov000_020a8ff4();

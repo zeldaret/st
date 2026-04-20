@@ -40,7 +40,7 @@ public:
     MapObjectSwitchStep();
 
     /* 00 */ virtual bool vfunc_00() override;
-    /* 08 */ virtual unk16 vfunc_08() override;
+    /* 08 */ virtual void vfunc_08() override;
     /* 14 */ virtual void vfunc_14() override;
     /* 18 */ virtual void vfunc_18() override;
     /* 20 */ virtual void vfunc_20() override;

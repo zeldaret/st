@@ -42,7 +42,7 @@ public:
     // data_ov031_021150d8 (MapObject)
     /* 00 */ virtual bool vfunc_00() override;
     /* 04 */ virtual void vfunc_04() override;
-    /* 08 */ virtual unk16 vfunc_08() override;
+    /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 14 */ virtual void vfunc_14() override;
     /* 18 */ virtual void vfunc_18() override;

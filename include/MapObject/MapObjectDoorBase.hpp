@@ -55,15 +55,15 @@ public:
     /* 70 */ unk32 mUnk_70;
     /* 74 */ unk32 mUnk_74;
     /* 78 */ u16 mUnk_78;
-    /* 7A */ unk16 mUnk_7A;
-    /* 7C */ unk16 mUnk_7C;
+    /* 7A */ u16 mUnk_7A;
+    /* 7C */ u16 mUnk_7C;
     /* 7E */ unk16 mUnk_7E;
     /* 80 */ unk16 mUnk_80;
-    /* 82 */ unk16 mUnk_82;
-    /* 84 */ unk16 mUnk_84;
+    /* 82 */ u16 mUnk_82;
+    /* 84 */ u16 mUnk_84;
     /* 86 */ bool mUnk_86;
     /* 87 */ unk8 mUnk_87;
-    /* 88 */ unk8 mUnk_88;
+    /* 88 */ bool mUnk_88;
     /* 89 */ bool mUnk_89;
     /* 8A */ bool mUnk_8A;
     /* 8B */ unk8 mUnk_8B;
@@ -72,7 +72,7 @@ public:
     /* 8E */ unk8 mUnk_8E;
     /* 8F */ unk8 mUnk_8F;
     /* 90 */ bool mUnk_90;
-    /* 91 */ unk8 mUnk_91;
+    /* 91 */ bool mUnk_91;
     /* 91 */ unk8 mUnk_92; // pad?
     /* 91 */ unk8 mUnk_93; // pad?
     /* 94 */
@@ -80,7 +80,7 @@ public:
     MapObjectDoorBase();
 
     // data_ov031_02115008 (MapObject)
-    /* 08 */ virtual unk16 vfunc_08() override;
+    /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 30 */ virtual ~MapObjectDoorBase() override {}
 
@@ -111,6 +111,9 @@ public:
     /* 8C */ virtual unk32 vfunc_8C();
     /* 90 */
 
-    void func_ov031_020fbf10(unk32 param1, unk32 param2);
+    void func_ov031_020fbf10(bool param1, bool param2);
     void func_ov031_020fcb78();
+    void func_ov031_020fcd40();
+    void func_ov031_020fcf0c(unk32 param1);
+    bool func_ov031_020fcf30();
 };
