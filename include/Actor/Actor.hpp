@@ -356,7 +356,7 @@ public:
     /* 110 */ unk8 mUnk_110[0x70];
     /* 180 */ unk8 mUnk_180;
     /* 181 */ unk8 mUnk_181;
-    /* 182 */ unk8 mUnk_182;
+    /* 182 */ bool mUnk_182;
     /* 183 */ unk8 mUnk_183;
     /* 184 */ STRUCT_PAD(0x184, 0x1C4); // unsure if this is here
 
@@ -370,7 +370,19 @@ public:
     /* 1C8 */ unk32 mUnk_1C8;
     /* 1CC */ unk32 mUnk_1CC;
     /* 1D0 */ unk32 mUnk_1D0;
-    /* 1D4 */ unk32 mUnk_1D4;
+    /* 1D4 */ union {
+        struct {
+            u8 mUnk_1D4_0 : 1;
+            u8 mUnk_1D4_1 : 1;
+            u8 mUnk_1D4_2 : 1;
+            u8 mUnk_1D4_3 : 1;
+            u8 mUnk_1D4_4 : 1;
+            u8 mUnk_1D4_5 : 1;
+            u8 mUnk_1D4_6 : 1;
+            u8 mUnk_1D4_7 : 1;
+        };
+        u8 mUnk_1D4;
+    };
     /* 1D8 */ unk32 mUnk_1D8;
     /* 1DC */ unk32 mUnk_1DC;
     /* 1E0 */ unk32 mUnk_1E0;
@@ -383,6 +395,19 @@ public:
     ~Actor_UnkSystem2();
 
     void func_ov026_020ee538(unk32 param1);
+    void func_ov026_020f93d4(unk32, u16);
+    Vec3p *func_ov026_020f9ecc(void);
+    Vec3p *func_ov026_020f9ec4(void);
+    bool func_ov026_020fa358(void);
+    bool func_ov026_020fa46c(unk32, u16);
+    bool func_ov026_020fa55c(void);
+    unk32 func_ov026_020fa73c();
+    void func_ov026_020fa77c(bool);
+    unk32 func_ov026_020fa7c0(void);
+    unk32 func_ov026_020fa7f4(void);
+    bool func_ov026_020fac30(u32, unk32, unk32, unk32);
+    void func_ov026_020fa838(unk32, u8);
+    bool func_ov026_020fb0a4(void);
 };
 
 class Actor_UnkStruct1 {
@@ -478,6 +503,8 @@ public:
     Actor_UnkSystem5(); // func_ov026_020ff498
 
     void func_ov026_0210136c(unk32 param1);
+    unk32 func_ov026_021016d8(unk32);
+    void func_ov026_02101890(unk32, unk32);
     void func_ov026_02101c54(unk32 param1);
 };
 
@@ -584,6 +611,7 @@ public:
     /* 198 */
 
     Actor_UnkSystem9_2(); // func_ov026_0210566c
+    void func_ov026_02105468(unk32);
 };
 
 //! TODO: fill members
@@ -606,11 +634,14 @@ struct Actor_UnkStruct4 {
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
+    /* 0C */ union {
+        u8 mUnk_0C[4];
+        u32 mUnk_0C_32;
+    };
     /* 10 */ Actor_UnkSystem5 mUnk_10;
 
     Actor_UnkStruct4() :
-        mUnk_0C(0) {}
+        mUnk_0C_32(0) {}
 };
 
 struct Actor_UnkStruct5 {

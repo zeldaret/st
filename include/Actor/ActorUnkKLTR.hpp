@@ -25,7 +25,7 @@ public:
     /* 294 */ Actor_UnkStruct1 mUnk_294;
     /* 2B4 */ Actor_9c mUnk_2B4;
     /* 2D4 */ Actor_UnkSystem3_Derived1 mUnk_2D4;
-    /* 304 */ unk8 mUnk_300; // bool?
+    /* 304 */ bool mUnk_300;
     /* 305 */ unk8 mUnk_301; // pad?
     /* 306 */ unk8 mUnk_302; // pad?
     /* 307 */ unk8 mUnk_303; // pad?
@@ -59,35 +59,35 @@ public:
     void func_ov026_02112088(void);
     void func_ov026_0211210c(void);
     void func_ov026_02112328(void);
-    void func_ov026_021127e8(void);
+    bool func_ov026_021127e8(void);
     void func_ov026_02112850(void);
     void func_ov026_02112944(void);
-    void func_ov026_02112bd4(void);
-    void func_ov026_02112ca8(void);
+    bool func_ov026_02112bd4(void);
+    bool func_ov026_02112ca8(void);
     void func_ov026_02112cbc(void);
     void func_ov026_02112cc0(void);
     void func_ov026_02112e28(void);
-    void func_ov026_02112ecc(void);
+    bool func_ov026_02112ecc(void);
     void func_ov026_02112f08(void);
-    void func_ov026_02112fb0(void);
+    bool func_ov026_02112fb0(void);
     void func_ov026_02112fec(void);
-    void func_ov026_02112ff8(void);
+    bool func_ov026_02112ff8(void);
     void func_ov026_02113040(void);
-    void func_ov026_02113118(void);
+    bool func_ov026_02113118(void);
     void func_ov026_02113204(void);
     void func_ov026_021132c0(void);
     void func_ov026_02113304(void);
-    void func_ov026_021133b0(void);
+    bool func_ov026_021133b0(void);
     void func_ov026_0211340c(void);
-    void func_ov026_021134c8(void);
+    bool func_ov026_021134c8(void);
     void func_ov026_0211350c(void);
-    void func_ov026_021135b8(void);
+    bool func_ov026_021135b8(void);
     void func_ov026_021135e4(void);
-    void func_ov026_02113704(void);
+    bool func_ov026_02113704(void);
     void func_ov026_02113718(void);
     void func_ov026_02113784(void);
     void func_ov026_0211391c(void);
-    void func_ov026_02113a40(void);
+    bool func_ov026_02113a40(void);
     void func_ov026_02113a5c(void);
     void func_ov026_02113b5c(void);
     void func_ov026_02113b98(void);
