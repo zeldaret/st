@@ -970,3 +970,43 @@ public:
     /* 18 */ virtual void vfunc_18();
     /* 1C */
 };
+
+struct UnkSystem7_UnkStruct_00 {
+    /* 00 */ STRUCT_PAD(0x00, 0x24);
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ STRUCT_PAD(0x28, 0xA4);
+    /* A4 */ unk16 mUnk_A4;
+};
+
+class UnkSystem7_Base {
+public:
+    /* 00 */ UnkSystem7_UnkStruct_00 *mUnk_00;
+    /* 04 */
+
+    ~UnkSystem7_Base();
+};
+
+class UnkSystem7 : public UnkSystem7_Base {
+public:
+    /* 00 (base) */
+    /* 04 */
+
+    UnkSystem7() {}
+    UnkSystem7(UnkSystem7_UnkStruct_00 *param1) {
+        this->mUnk_00 = param1;
+    }
+
+    void func_ov000_020a0304(void);
+    void func_ov000_020a0334();
+};
+
+class UnkStruct_PlayerGet_ec : public UnkSystem7 {
+public:
+    /* 00 (base) */
+    /* 04 */
+
+    UnkStruct_PlayerGet_ec(UnkSystem7_UnkStruct_00 *param1) :
+        UnkSystem7(param1) {}
+
+    UnkStruct_PlayerGet_ec();
+};

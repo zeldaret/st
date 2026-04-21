@@ -76,8 +76,7 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
             break;
     }
 
-    MapObjectProfile_Derived2_20_Base_50 *ptr =
-        GET_PROFILE(MapObjectProfileMiniBlocks)->vfunc_1C(this->mUnk_20.mUnk_00[1])->mUnk_50;
+    UnkActorFileSystem_Base_50 *ptr = GET_PROFILE(MapObjectProfileMiniBlocks)->vfunc_1C(this->mUnk_20.mUnk_00[1])->mUnk_50;
     void *var_r1;
     if (ptr != NULL) {
         u16 *temp_r1 = (u16 *) ((u8 *) ptr + 8);

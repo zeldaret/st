@@ -1,4 +1,4 @@
-#include "MapObject/MapObjectProfile_Derived2_20.hpp"
+#include "Unknown/UnkActorFileSystem.hpp"
 
 #include <string.h>
 
@@ -7,8 +7,8 @@ void func_02015ea8(u32 resourceId, void *);
 unk32 func_02012fa8(const char *);
 }
 
-ARM MapObjectProfile_Derived2_20::MapObjectProfile_Derived2_20(MapObjectId mapObjId2) :
-    MapObjectProfile_Derived2_20_Base("MapObj", &mUnk_94, &mUnk_94, &mUnk_94, 0, 0),
+ARM UnkActorFileSystem1::UnkActorFileSystem1(MapObjectId mapObjId2) :
+    UnkActorFileSystem_Base("MapObj", &mUnk_94, &mUnk_94, &mUnk_94, 0, 0),
     mUnk_94(0),
     mUnk_98(0),
     mUnk_B0(false),
@@ -16,12 +16,12 @@ ARM MapObjectProfile_Derived2_20::MapObjectProfile_Derived2_20(MapObjectId mapOb
     func_02015ea8(mapObjId2, &this->mUnk_94);
 }
 
-ARM MapObjectProfile_Derived2_20::~MapObjectProfile_Derived2_20() {
+ARM UnkActorFileSystem1::~UnkActorFileSystem1() {
     this->func_ov000_020589e4();
     this->func_ov000_0209cfac();
 }
 
-ARM void MapObjectProfile_Derived2_20::func_ov000_0209cef0() {
+ARM void UnkActorFileSystem1::func_ov000_0209cef0() {
     char path[32 + 1];
     size_t curLength;
 
@@ -48,11 +48,11 @@ ARM void MapObjectProfile_Derived2_20::func_ov000_0209cef0() {
     }
 }
 
-ARM void MapObjectProfile_Derived2_20::func_ov000_0209cfac() {
+ARM void UnkActorFileSystem1::func_ov000_0209cfac() {
     if (this->mUnk_B0) {
         this->mUnk_9C.vfunc_0C();
         this->mUnk_B0 = false;
     }
 }
 
-ARM void MapObjectProfile_Derived2_20::func_ov000_0209cfdc(unk32 param1, unk32 param2) {}
+ARM void UnkActorFileSystem1::func_ov000_0209cfdc(unk32 param1, unk32 param2) {}

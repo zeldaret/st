@@ -4708,7 +4708,7 @@ from:0x02085b36 kind:thumb_call to:0x02088990 module:overlay(0)
 from:0x02085bec kind:thumb_call_arm to:0x020871d4 module:overlay(0)
 from:0x02085bfa kind:thumb_call_arm to:0x020871d4 module:overlay(0)
 from:0x02085c18 kind:load to:0x020b4250 module:overlay(0)
-from:0x02085c1c kind:load to:0x020b3fc8 module:overlay(0)
+from:0x02085c1c kind:load to:0x020b3fc0 add:0x8 module:overlay(0)
 from:0x02085c20 kind:load to:0x020accdc module:overlay(0)
 from:0x02085c24 kind:load to:0x027e09a4 module:dtcm
 from:0x02085c44 kind:thumb_call_arm to:0x020804a0 module:overlay(0)

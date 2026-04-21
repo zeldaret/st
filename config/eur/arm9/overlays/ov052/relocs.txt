@@ -319,7 +319,7 @@ from:0x021334e0 kind:load to:0x021361e8 add:0x8 module:overlay(52)
 from:0x021334e4 kind:load to:0x02136840 module:overlay(52)
 from:0x021334e8 kind:load to:0x021361a4 module:overlay(52)
 from:0x021334ec kind:load to:0x0213615c module:overlay(52)
-from:0x021334f0 kind:load to:0x020b27c8 module:overlay(0)
+from:0x021334f0 kind:load to:0x020b27c0 add:0x8 module:overlay(0)
 from:0x021334f4 kind:load to:0x027e07d4 module:dtcm
 from:0x021334fc kind:load to:0x02136118 module:overlay(52)
 from:0x02133508 kind:arm_call_thumb to:0x0209a248 module:overlay(0)

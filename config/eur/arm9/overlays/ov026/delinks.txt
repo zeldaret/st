@@ -107,6 +107,9 @@ src/026_Train/Actor/ActorUnkTRCB.cpp:
     .ctor       start:0x0213521c end:0x02135220
     .bss        start:0x021403d8 end:0x02140424
 
+src/026_Train/Actor/Actor_Derived.cpp:
+    .text       start:0x02110c7c end:0x021110a0
+
 src/026_Train/Actor/ActorUnkTHER.cpp:
     .text       start:0x021110a0 end:0x02111334
     .init       start:0x02134a10 end:0x02134a60
@@ -117,13 +120,14 @@ src/026_Train/Actor/ActorUnkTRUP.cpp:
     .text       start:0x02111334 end:0x02111640
     .init       start:0x02134a60 end:0x02134ab0
     .ctor       start:0x02135224 end:0x02135228
-    .bss        start:0x02140470 end:0x021405c4
+    .bss        start:0x02140470 end:0x021404f0
 
 src/026_Train/Actor/ActorUnkKLTR.cpp:
     .text       start:0x02111640 end:0x02113d3c
     .init       start:0x02134ab0 end:0x02134b00
     .ctor       start:0x02135228 end:0x0213522c
-    .bss        start:0x021405c4 end:0x021406c4
+    .data       start:0x02137820 end:0x021378a8
+    .bss        start:0x021404f0 end:0x021406bc
 
 src/026_Train/Actor/ActorUnkTRTT.cpp:
     .text       start:0x02113d3c end:0x021165f0
@@ -201,10 +205,11 @@ src/026_Train/Actor/ActorUnkTCOW_WCAS.cpp:
     .text       start:0x02127f84 end:0x0212b8b8
     .init       start:0x02135040 end:0x021350f4
     .ctor       start:0x02135260 end:0x02135264
-    .bss        start:0x02141574 end:0x02141830
+    .bss        start:0x02141574 end:0x0214174c
 
 src/026_Train/Actor/ActorUnkDKTR.cpp:
-    .text       start:0x0212b8b8 end:0x0212e458
+    .text       start:0x0212b8b8 end:0x0212e488
     .init       start:0x021350f4 end:0x02135144
     .ctor       start:0x02135264 end:0x02135268
-    .bss        start:0x02141830 end:0x02141928
+    .data       start:0x02138ae4 end:0x02138b8c
+    .bss        start:0x0214174c end:0x02141928

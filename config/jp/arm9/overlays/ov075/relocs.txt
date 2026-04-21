@@ -1479,7 +1479,7 @@ from:0x02160634 kind:arm_call to:0x02161a80 module:overlay(75)
 from:0x02160644 kind:load to:0x02165208 add:0x8 module:overlay(75)
 from:0x02160648 kind:load to:0x021655f4 module:overlay(75)
 from:0x0216064c kind:load to:0x021651c8 module:overlay(75)
-from:0x02160650 kind:load to:0x020b3fc8 module:overlay(0)
+from:0x02160650 kind:load to:0x020b3fc0 add:0x8 module:overlay(0)
 from:0x02160654 kind:load to:0x021655e8 module:overlay(75)
 from:0x0216065c kind:load to:0x027e0130 module:dtcm
 from:0x02160660 kind:load to:0x027e07d4 module:dtcm

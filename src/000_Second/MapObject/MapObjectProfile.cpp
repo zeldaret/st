@@ -57,7 +57,7 @@ ARM MapObjectProfile::~MapObjectProfile() {
     MapObject_20::func_ov000_0209c7ac(this->mMapObjId);
 }
 
-ARM MapObjectProfile_Derived2_20 *MapObjectProfile::vfunc_04() {
+ARM UnkActorFileSystem_Base *MapObjectProfile::vfunc_04() {
     return NULL;
 }
 
@@ -105,7 +105,7 @@ ARM MapObjectProfile_Derived2::~MapObjectProfile_Derived2() {
     this->vfunc_10();
 }
 
-ARM MapObjectProfile_Derived2_20 *MapObjectProfile_Derived2::vfunc_04() {
+ARM UnkActorFileSystem_Base *MapObjectProfile_Derived2::vfunc_04() {
     return &this->mUnk_20;
 }
 
@@ -131,7 +131,7 @@ ARM MapObjectProfile_Derived3::MapObjectProfile_Derived3(MapObjectId mapObjId1, 
     this->mUnk_14 = mapObjId2;
 }
 
-ARM MapObjectProfile_Derived2_20 *MapObjectProfile_Derived3::vfunc_04() {
+ARM UnkActorFileSystem_Base *MapObjectProfile_Derived3::vfunc_04() {
     return this->mUnk_20;
 }
 
@@ -156,12 +156,12 @@ ARM MapObjectProfile_Derived1::MapObjectProfile_Derived1(MapObjectId mapObjId, u
     MapObjectProfile(mapObjId),
     mUnk_60(param3),
     mUnk_64(param2) {
-    for (MapObjectProfile_Derived2_20 **ptr = this->mUnk_20; ptr != &this->mUnk_20[ARRAY_LEN(this->mUnk_20)]; ptr++) {
+    for (UnkActorFileSystem_Base **ptr = this->mUnk_20; ptr != &this->mUnk_20[ARRAY_LEN(this->mUnk_20)]; ptr++) {
         *ptr = NULL;
     }
 }
 
-ARM MapObjectProfile_Derived2_20 *MapObjectProfile_Derived1::vfunc_04() {
+ARM UnkActorFileSystem_Base *MapObjectProfile_Derived1::vfunc_04() {
     if (this->mUnk_64 >= 0) {
         return this->mUnk_20[this->mUnk_64];
     }
@@ -169,7 +169,7 @@ ARM MapObjectProfile_Derived2_20 *MapObjectProfile_Derived1::vfunc_04() {
     return NULL;
 }
 
-ARM MapObjectProfile_Derived2_20 *MapObjectProfile_Derived1::vfunc_1C(unk32 param1) {
+ARM UnkActorFileSystem_Base *MapObjectProfile_Derived1::vfunc_1C(unk32 param1) {
     if (param1 >= 0) {
         return this->mUnk_20[param1];
     }
@@ -178,16 +178,16 @@ ARM MapObjectProfile_Derived2_20 *MapObjectProfile_Derived1::vfunc_1C(unk32 para
 }
 
 ARM MapObjectProfile_Derived1::~MapObjectProfile_Derived1() {
-    for (MapObjectProfile_Derived2_20 **ptr = this->mUnk_20; ptr != &this->mUnk_20[ARRAY_LEN(this->mUnk_20)]; ptr++) {
+    for (UnkActorFileSystem_Base **ptr = this->mUnk_20; ptr != &this->mUnk_20[ARRAY_LEN(this->mUnk_20)]; ptr++) {
         delete *ptr;
     }
 }
 
 ARM void MapObjectProfile_Derived1::func_ov000_0209ccd8(unk32 param1, u32 param2) {
     if (this->mUnk_20[param1] == NULL) {
-        MapObjectProfile_Derived2_20 *ptr       = new(HeapIndex_1) MapObjectProfile_Derived2_20(param2);
-        MapObjectProfile_Derived2_20 **ppUnk_20 = this->mUnk_20;
-        ppUnk_20[param1]                        = ptr;
+        UnkActorFileSystem1 *ptr       = new(HeapIndex_1) UnkActorFileSystem1(param2);
+        UnkActorFileSystem1 **ppUnk_20 = (UnkActorFileSystem1 **) this->mUnk_20;
+        ppUnk_20[param1]               = ptr;
         ppUnk_20[param1]->func_ov000_0209cfdc(0, 0);
         ppUnk_20[param1]->func_ov000_020586b4(0, 0, 0, 0);
         ppUnk_20[param1]->func_ov000_02058ab0();
@@ -201,7 +201,7 @@ ARM void MapObjectProfile_Derived1::vfunc_08() {
 }
 
 ARM void MapObjectProfile_Derived1::vfunc_0C() {
-    for (MapObjectProfile_Derived2_20 **ptr = this->mUnk_20; ptr != &this->mUnk_20[ARRAY_LEN(this->mUnk_20)]; ptr++) {
+    for (UnkActorFileSystem_Base **ptr = this->mUnk_20; ptr != &this->mUnk_20[ARRAY_LEN(this->mUnk_20)]; ptr++) {
         if (*ptr != NULL && (*ptr)->mUnk_20.mUnk_04 != NULL) {
             (*ptr)->func_ov000_02058914(0);
         }
@@ -209,7 +209,7 @@ ARM void MapObjectProfile_Derived1::vfunc_0C() {
 }
 
 ARM void MapObjectProfile_Derived1::vfunc_10() {
-    for (MapObjectProfile_Derived2_20 **ptr = this->mUnk_20; ptr != &this->mUnk_20[ARRAY_LEN(this->mUnk_20)]; ptr++) {
+    for (UnkActorFileSystem_Base **ptr = this->mUnk_20; ptr != &this->mUnk_20[ARRAY_LEN(this->mUnk_20)]; ptr++) {
         if (*ptr != NULL) {
             delete *ptr;
             *ptr = NULL;

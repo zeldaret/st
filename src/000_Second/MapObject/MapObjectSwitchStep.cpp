@@ -88,7 +88,7 @@ ARM MapObjectSwitchStep::MapObjectSwitchStep() :
     this->mUnk_EA = 0;
     this->mUnk_EB = 0;
 
-    MapObjectProfile_Derived2_20_Base_50 *ptr = GET_PROFILE_20_50(MapObjectProfileSwitchStep);
+    UnkActorFileSystem_Base_50 *ptr = GET_PROFILE_20_50(MapObjectProfileSwitchStep);
     void *var_r1;
     if (ptr != NULL) {
         u8 *temp_r1 = (u8 *) ptr + 8;
@@ -113,8 +113,8 @@ end:
     this->mUnk_40.vfunc_08((unk32) var_r1);
     this->mUnk_A4.mUnk_00 = this->mUnk_40.mUnk_04;
 
-    MapObjectProfile_Derived2_20 *temp_r6 = GET_PROFILE_20(MapObjectProfileSwitchStep);
-    unk32 temp_r5                         = temp_r6->func_ov000_02058a24();
+    UnkActorFileSystem_Base *temp_r6 = GET_PROFILE_20(MapObjectProfileSwitchStep);
+    unk32 temp_r5                    = temp_r6->func_ov000_02058a24();
     this->mUnk_A4.func_ov000_020577a4(temp_r6->func_ov000_02058a84(3, data_ov000_020af550), temp_r5, 1);
 
     this->mUnk_10 = GET_PROFILE_D4(MapObjectProfileSwitchStep);

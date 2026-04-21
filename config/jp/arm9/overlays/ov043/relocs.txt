@@ -381,7 +381,7 @@ from:0x02128860 kind:load to:0x0212f028 add:0x8 module:overlay(43)
 from:0x02128864 kind:load to:0x0212fa80 module:overlay(43)
 from:0x02128868 kind:load to:0x0212efe4 module:overlay(43)
 from:0x0212886c kind:load to:0x0212ef9c module:overlay(43)
-from:0x02128870 kind:load to:0x020b3fc8 module:overlay(0)
+from:0x02128870 kind:load to:0x020b3fc0 add:0x8 module:overlay(0)
 from:0x02128874 kind:load to:0x027e07d4 module:dtcm
 from:0x0212887c kind:load to:0x0212ef58 module:overlay(43)
 from:0x02128888 kind:arm_call_thumb to:0x0209ba14 module:overlay(0)

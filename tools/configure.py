@@ -170,7 +170,7 @@ config.libs = [
             Object("000_Second/Actor/ActorEventIcon.cpp"),
             Object("000_Second/Actor/ActorUnkEFIK.cpp"),
             Object("000_Second/MapObject/MapObjectProfile.cpp"),
-            Object("000_Second/MapObject/MapObjectProfile_Derived2_20.cpp"),
+            Object("000_Second/UnkActorFileSystem/UnkActorFileSystem1.cpp"),
             Object("000_Second/MapObject/MapObject.cpp"),
             Object("000_Second/MapObject/MapObjectSwitchStep.cpp"),
             Object("000_Second/MapObject/MapObjectMiniBlocks.cpp"),
@@ -245,6 +245,7 @@ config.libs = [
     GameLib(
         "Overlay 26",
         [
+            Object("026_Train/Actor/Actor_Derived.cpp"),
             Object("026_Train/Actor/ActorUnkBDEM.cpp"),
             Object("026_Train/Actor/ActorUnkCNBL.cpp"),
             Object("026_Train/Actor/ActorUnkDKCL.cpp"),

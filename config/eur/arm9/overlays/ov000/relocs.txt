@@ -4707,7 +4707,7 @@ from:0x0208447a kind:thumb_call to:0x020872bc module:overlay(0)
 from:0x0208451c kind:thumb_call_arm to:0x02085b00 module:overlay(0)
 from:0x0208452a kind:thumb_call_arm to:0x02085b00 module:overlay(0)
 from:0x02084548 kind:load to:0x020b2a50 module:overlay(0)
-from:0x0208454c kind:load to:0x020b27c8 module:overlay(0)
+from:0x0208454c kind:load to:0x020b27c0 add:0x8 module:overlay(0)
 from:0x02084550 kind:load to:0x020ab4dc module:overlay(0)
 from:0x02084554 kind:load to:0x027e09a4 module:dtcm
 from:0x02084574 kind:thumb_call_arm to:0x0207ede8 module:overlay(0)

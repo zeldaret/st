@@ -69,8 +69,8 @@ ARM ActorRupee::ActorRupee() :
     mUnk_E8(0),
     mUnk_F0(0),
     mUnk_F4(false) {
-    this->mUnk_A0 = 0x13100;
-    this->mUnk_40 = &this->mUnk_C4;
+    this->mUnk_9C.mUnk_04 = 0x13100;
+    this->mUnk_40         = &this->mUnk_C4;
 }
 
 // https://decomp.me/scratch/wunA4
@@ -348,7 +348,7 @@ ARM void ActorRupee::func_ov031_020e9450() {
     this->mVel.x = 0;
     this->mVel.y = 0;
     this->mVel.z = 0;
-    this->mUnk_A0 |= 0x1000;
+    this->mUnk_9C.mUnk_04 |= 0x1000;
     this->func_ov031_020e9904(0);
 }
 
@@ -625,20 +625,20 @@ ARM void ActorRupee::vfunc_20() {
             this->func_ov000_020989e0();
             uVar3 = uStack_18;
 
-            if ((this->mUnk_A4 & 0x3ffff) != 0) {
-                sVar1 = *(short *) &this->mUnk_B8;
+            if ((this->mUnk_9C.mUnk_08 & 0x3ffff) != 0) {
+                sVar1 = *(short *) &this->mUnk_9C.mUnk_1C;
 
-                switch (mUnk_B8) {
+                switch (this->mUnk_9C.mUnk_1C) {
                     case 0x08:
                     case 0x10:
-                        if ((this->mUnk_A8 & 0x100) != 0) {
+                        if ((this->mUnk_9C.mUnk_0C & 0x100) != 0) {
                             this->func_ov031_020e9068();
                             uVar3 = uStack_18;
                         }
                         break;
                     case 0x0C:
-                        this->mUnk_BC = this->mUnk_A8;
-                        this->mUnk_A0 &= 0xffffefff;
+                        this->mUnk_BC = this->mUnk_9C.mUnk_0C;
+                        this->mUnk_9C.mUnk_04 &= 0xffffefff;
                         this->func_ov031_020e9904(6);
                         uVar3 = uStack_18;
                         break;
