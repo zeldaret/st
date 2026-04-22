@@ -120,7 +120,7 @@ public:
     /* 10 */ MapObject_10 *mUnk_10;
     /* 14 */ s16 mUnk_14;
     /* 16 */ s16 mUnk_16;
-    /* 18 */ unk8 mUnk_18[2]; // bools? when set Link walks to the map object when touched
+    /* 18 */ unk8 mUnk_18[2]; // related to Link walking to the map object when touched
     /* 1A */ unk8 mUnk_1A;
     /* 1B */ unk8 mUnk_1B;
     /* 1C */ MapObjFlags mFlags[1];
@@ -143,7 +143,7 @@ public:
     /* 1C */ virtual bool vfunc_1C();
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
-    /* 28 */ virtual bool vfunc_28();
+    /* 28 */ virtual unk32 vfunc_28();
     /* 2C */ virtual bool vfunc_2C(Vec3p *param1);
     /* 30 */ virtual ~MapObject();
     /* 38 */

@@ -1035,6 +1035,8 @@ struct UnkSystem7_UnkStruct_00 {
     /* 24 */ unk32 mUnk_24;
     /* 28 */ STRUCT_PAD(0x28, 0xA4);
     /* A4 */ unk16 mUnk_A4;
+
+    void func_ov000_02052c48(Vec3p *param1, Vec3p *param2);
 };
 
 class UnkSystem7 {

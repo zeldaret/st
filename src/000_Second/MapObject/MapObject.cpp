@@ -114,8 +114,8 @@ ARM void MapObject::vfunc_24() {
     *(u32 *) this = 0; // ????
 }
 
-ARM bool MapObject::vfunc_28() {
-    return false;
+ARM unk32 MapObject::vfunc_28() {
+    return 0;
 }
 
 ARM bool MapObject::vfunc_2C(Vec3p *param1) {
