@@ -1,40 +1,54 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "MapObject/MapObject.hpp"
+#include "MapObject/MapObjectDoorBase.hpp"
 #include "MapObject/MapObjectProfile.hpp"
 #include "global.h"
 #include "types.h"
+#include "versions.h"
 
-class MapObjectUnkDRSW : public MapObject {
+class MapObjectUnkDRSW : public MapObjectDoorBase {
 public:
-    /* 00 (base) */
-    /* 40 */
+    /* 000 (base) */
+    /* 094 */ UnkSystem4 mUnk_094;
+    /* 0F4 */ MapObject_10 mUnk_0F4;
+#if IS_JP
+    /* 118 */ MapObject_10 mUnk_118;
+    /* 13C */ q20 mUnkPos;
+    /* 140 */ bool mUnk_140;
+    /* 141 */ bool mUnk_141;
+    /* 142 */ unk8 mUnk_142; // pad
+    /* 143 */ unk8 mUnk_143; // pad
+    /* 144 */
+#else
+    /* 118 */ q20 mUnkPos;
+    /* 11C */
+#endif
 
     MapObjectUnkDRSW();
 
+    // data_ov031_0211527c (MapObject)
+    /* 00 */ virtual bool vfunc_00() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2) override;
     /* 30 */ virtual ~MapObjectUnkDRSW() override;
+    /* 40 */ virtual void vfunc_40() override;
+    /* 44 */ virtual void vfunc_44() override;
+    /* 48 */ virtual void vfunc_48() override;
+    /* 4C */ virtual void vfunc_4C() override;
+    /* 50 */ virtual void vfunc_50() override;
+    /* 54 */ virtual void vfunc_54() override;
+    /* 58 */ virtual void vfunc_58() override;
+    /* 64 */ virtual bool vfunc_64() override;
+    /* 6C */ virtual bool vfunc_6C() override;
+    /* 74 */ virtual void vfunc_74() override;
 
-    void func_ov031_020feee4(void);
-    void func_ov031_020fefac(void);
-    void func_ov031_020ff07c(void);
-    void func_ov031_020ff100(void);
-    void func_ov031_020ff110(void);
-    void func_ov031_020ff130(void);
-    void func_ov031_020ff1b0(void);
-    void func_ov031_020ff1bc(void);
-    void func_ov031_020ff288(void);
-    void func_ov031_020ff2d8(void);
-    void func_ov031_020ff318(void);
-    void func_ov031_020ff38c(void);
-    void func_ov031_020ff3d0(void);
-    void func_ov031_020ff3fc(void);
-    void func_ov031_020ff43c(void);
-    void func_ov031_020ff468(void);
+    // (MapObject_UnkStruct1_Derived1)
+    /* 10 */ virtual void *vfunc2_10();
 };
 
-class MapObjectProfileUnkDRSW : public MapObjectProfile {
+class MapObjectProfileUnkDRSW : public MapObjectProfile_Derived2 {
 public:
     /* 00 (base) */
 

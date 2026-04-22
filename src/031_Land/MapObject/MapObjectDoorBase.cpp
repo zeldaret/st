@@ -11,13 +11,6 @@ extern "C" void func_01ff9218(void *, unk32, unk32);
 extern "C" unk32 func_01ffb428(unk32, unk32);
 extern "C" void *func_ov000_02077590(unk32);
 
-struct UnkStruct_ov031_021150b0 {
-    /* 00 */ u32 mUnk_00;
-
-    UnkStruct_ov031_021150b0(u32 val) :
-        mUnk_00(val) {}
-};
-
 class UnkStruct_ov031_02117210 {
 public:
     /* 00 */ MapObject_10 mUnk_00[3];
@@ -87,14 +80,7 @@ ARM MapObjectDoorBase::MapObjectDoorBase() :
 }
 
 ARM void MapObjectDoorBase::func_ov031_020fbf10(bool param1, bool param2) {
-    u16 value   = (u16) (this->mUnk_14 + DEG_TO_ANG(45)) / DEG_TO_ANG(90);
-    bool var_r1 = true;
-
-    if (value != 3 && value != 1) {
-        var_r1 = false;
-    }
-
-    if (var_r1) {
+    if (this->IsOrientedVertically()) {
         this->mPos.z += FLOAT_TO_Q20(0.5f);
         Vec2b local_16(1, 2);
         this->func_ov000_0209d2f0(5, 1, &local_16);
@@ -105,15 +91,8 @@ ARM void MapObjectDoorBase::func_ov031_020fbf10(bool param1, bool param2) {
         this->func_ov000_0209d2f0(5, 1, &local_18);
     }
 
-    value  = (u16) (this->mUnk_14 + DEG_TO_ANG(45)) / DEG_TO_ANG(90);
-    var_r1 = true;
-
-    if (value != 3 && value != 1) {
-        var_r1 = false;
-    }
-
     MapObject_10 *pMapObject_10;
-    if (!var_r1) {
+    if (!this->IsOrientedVertically()) {
         if (param1) {
             pMapObject_10 = &data_ov031_02117210.mUnk_00[1];
         } else {
@@ -508,14 +487,8 @@ ARM void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
             if (this->mUnk_8A && this->mUnk_86 && param2 == 0) {
                 unk32 var_r5   = 1;
                 unk32 var_r1_2 = 2;
-                bool var_r2    = true;
-                u16 temp_r0_8  = (u16) (this->mUnk_14 + 0x2000) / DEG_TO_ANG(90);
 
-                if (temp_r0_8 != 3 && temp_r0_8 != 1) {
-                    var_r2 = false;
-                }
-
-                if (var_r2) {
+                if (this->IsOrientedVertically()) {
                     var_r1_2 = -1;
                 }
 
@@ -603,15 +576,9 @@ ARM void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1, s8 param2) {
     sp4 = *(u32 *) &this->mUnk_38;
 
     if (data_027e0998->vfunc_00(&this->mPos, &sp10, &sp4) && uVar4 != 0) {
-        u16 value = (u16) (this->mUnk_14 + 0x2000) / DEG_TO_ANG(90);
         Mat2p m;
 
-        bool var_r1 = true;
-        if (value != 3 && value != 1) {
-            var_r1 = false;
-        }
-
-        if (var_r1) {
+        if (this->IsOrientedVertically()) {
             Mat2p_InitRotation(&m, data_0203f964[0], data_0203f964[1]);
         } else {
             Mat2p_InitIdentity(&m);

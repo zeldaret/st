@@ -123,3 +123,10 @@ public:
     void func_ov031_020fcf0c(unk32 param1);
     bool func_ov031_020fcf30();
 };
+
+struct UnkStruct_ov031_021150b0 {
+    /* 00 */ u32 mUnk_00;
+
+    UnkStruct_ov031_021150b0(u32 val) :
+        mUnk_00(val) {}
+};

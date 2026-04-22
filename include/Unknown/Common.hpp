@@ -921,10 +921,10 @@ public:
 
     // data_ov000_020b1a6c
     /* 00 */ virtual ~UnkSystem4();
-    /* 08 */ virtual void vfunc_08(unk32 param1);
+    /* 08 */ virtual void vfunc_08(void *param1); // resource thing? (GetUnkPointer1 as param1)
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
-    /* 14 */ virtual void vfunc_14();
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2);
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1);
     /* 20 */ virtual void vfunc_20();

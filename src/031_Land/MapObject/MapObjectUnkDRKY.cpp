@@ -7,12 +7,6 @@
 extern "C" f32 func_02039f04(unk32);
 extern "C" void func_01ffaf74(Vec3p *, Mat4x3p *, Vec3p *);
 
-struct UnkStruct_ov031_021150b0 {
-    /* 00 */ u32 mUnk_00;
-
-    UnkStruct_ov031_021150b0(u32 val) :
-        mUnk_00(val) {}
-};
 const UnkStruct_ov031_021150b0 data_ov031_02115184(0x1E66);
 
 ARM DECL_PROFILE(MapObjectProfileUnkDRKY);
@@ -40,7 +34,7 @@ ARM MapObjectUnkDRKY::MapObjectUnkDRKY() :
 }
 
 ARM bool MapObjectUnkDRKY::vfunc_00(void) {
-    this->func_ov031_020fbf10(1, 0);
+    this->func_ov031_020fbf10(true, false);
     return true;
 }
 

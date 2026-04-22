@@ -21,12 +21,6 @@ extern "C" void func_01ff93c0(Vec3p *, q20);
 extern unk32 data_ov031_02110c00[];
 extern UnkStruct_ov000_020b34c4_Callback data_ov000_020b4cc4;
 
-struct UnkStruct_ov031_021150b0 {
-    /* 00 */ u32 mUnk_00;
-
-    UnkStruct_ov031_021150b0(u32 val) :
-        mUnk_00(val) {}
-};
 const UnkStruct_ov031_021150b0 data_ov031_021150b0(0x1E66);
 
 ARM DECL_PROFILE(MapObjectProfileUnkDRDS);

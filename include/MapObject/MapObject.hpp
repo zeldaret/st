@@ -148,6 +148,21 @@ public:
     /* 30 */ virtual ~MapObject();
     /* 38 */
 
+    u16 GetDirection() {
+        return (u16) (this->mUnk_14 + DEG_TO_ANG(45)) / DEG_TO_ANG(90);
+    }
+
+    bool IsOrientedVertically() {
+        bool isVertical = true;
+        u16 direction   = GetDirection();
+
+        if (direction != 3 && direction != 1) {
+            isVertical = false;
+        }
+
+        return isVertical;
+    }
+
     MapObject();
 
     MapObjectId GetMapObjectId();
