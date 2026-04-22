@@ -6,6 +6,7 @@
 #include "MapObject/MapObjectManager.hpp"
 #include "Player/PlayerGet.hpp"
 #include "System/OverlayManager.hpp"
+#include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -42,18 +43,8 @@ extern "C" void func_02015664(char *, unk32);
 extern "C" void func_020156c8(char *, char *, unk32);
 extern "C" void func_020156f4(char *);
 extern "C" void func_02015644(char *);
-struct func_ov000_0205abcc_ret {
-    unk32 mUnk_00;
-    unk32 mUnk_04;
-    unk8 mUnk_08;
-    unk8 mUnk_09;
-    unk8 mUnk_0A;
-    unk8 mUnk_0B;
-    unk8 mUnk_0C;
-    unk8 mUnk_0D;
-    unk8 mUnk_0E;
-};
-extern "C" func_ov000_0205abcc_ret *func_ov000_0205abcc(char *, char *, unk32, unk32, unk32);
+
+extern "C" UnkResourceStruct *func_ov000_0205abcc(char *, char *, unk32, unk32, unk32);
 extern "C" unk32 func_ov000_02077590(unk32);
 
 static const unk32 data_ov110_02185dc4[1] = {8};
@@ -387,36 +378,20 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                     auStack_64[1] = 0;
                     strncpy((char *) acStack_a6, (char *) acStack_e0, 0x3f);
                     len = strlen((char *) acStack_a6);
-                    // strncpy((char *) acStack_a6 + len, ".nsbmd", 0x3f - len);
+                    strncpy((char *) acStack_a6 + len, ".nsbmd", 0x3f - len);
                     func_02015628((char *) auStack_64, (char *) acStack_a6, 0, &data_ov110_02186240,
                                   sizeof(UnkStruct_02186240));
                     func_02015664((char *) auStack_64, 0x10);
                     strncpy((char *) acStack_a6, (char *) acStack_e0, 0x3f);
                     len = strlen((char *) acStack_a6);
-                    // strncpy((char *) acStack_a6 + len, ".nsbtx", 0x3f - len);
+                    strncpy((char *) acStack_a6 + len, ".nsbtx", 0x3f - len);
                     func_020156c8((char *) auStack_48, (char *) acStack_a6, 0);
 
-                    void *var_r1_3;
                     unk32 var_r1_2;
-                    func_ov000_0205abcc_ret *ret =
+                    UnkResourceStruct *ret =
                         func_ov000_0205abcc((char *) auStack_64, (char *) auStack_48, 0, 1, this->mUnk_30->mUnk_24);
-                    if (ret != NULL) {
-                        if (ret->mUnk_08 != 0 && ret->mUnk_09 > 0) {
-                            var_r1_2 = ret->mUnk_08 + ret->mUnk_0E + 4;
-                        } else {
-                            var_r1_2 = 0;
-                        }
 
-                        if (var_r1_2 != 0) {
-                            var_r1_3 = ret + var_r1_2;
-                        } else {
-                            var_r1_3 = NULL;
-                        }
-                    } else {
-                        var_r1_3 = NULL;
-                    }
-
-                    this->mUnk_8C.vfunc_08((unk32) var_r1_3);
+                    this->mUnk_8C.vfunc_08(GetUnkPointer1_Impl(ret));
                     func_020156f4((char *) auStack_48);
                     func_02015644((char *) auStack_64);
                 }

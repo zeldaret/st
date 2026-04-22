@@ -115,25 +115,3 @@ class MapObjectProfile_Derived4 : public MapObjectProfile_Derived2 {
 };
 
 typedef MapObjectProfile *(*GetMapObjectProfile)();
-
-template <typename T> static inline void *GetUnkPointer1() {
-    MapObjectProfile_Derived2_20_Base_50 *ptr = GET_PROFILE_20_50(T);
-
-    if (ptr != NULL) {
-        u8 *temp_r1 = (u8 *) ptr + 8;
-        u32 *var_r0;
-        u8 zero = 0;
-
-        if (temp_r1 != NULL && ptr->mUnk_09 > zero) {
-            var_r0 = (u32 *) (temp_r1 + ptr->mUnk_0E + 4);
-        } else {
-            var_r0 = NULL;
-        }
-
-        if (var_r0 != NULL) {
-            return (void *) ((u8 *) ptr + *var_r0);
-        }
-    }
-
-    return NULL;
-}

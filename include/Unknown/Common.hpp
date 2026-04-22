@@ -4,6 +4,7 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "global.h"
+#include "profile.hpp"
 #include "types.h"
 #include <nitro/math.h>
 #include <nns/text.h>
@@ -921,7 +922,7 @@ public:
 
     // data_ov000_020b1a6c
     /* 00 */ virtual ~UnkSystem4();
-    /* 08 */ virtual void vfunc_08(void *param1); // resource thing? (GetUnkPointer1 as param1)
+    /* 08 */ virtual void vfunc_08(void *param1); // resource thing? (GetUnkPointer1_Impl as param1)
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2);
@@ -932,6 +933,47 @@ public:
     void func_ov000_02057c38(unk32 param1, unk32 param2);
     void func_ov000_0209a7b8(void *param1, UnkSystem4_UnkCallback param2);
 };
+
+struct UnkResourceStruct_Base {
+    /* 00 */ void *mUnk_00;
+    /* 04 */ void *mUnk_04;
+    /* 08 */ u8 mUnk_08;
+    /* 09 */ u8 mUnk_09;
+    /* 0A */ u8 mUnk_0A;
+    /* 0B */ u8 mUnk_0B;
+    /* 0C */
+};
+
+struct UnkResourceStruct : public UnkResourceStruct_Base {
+    /* 0C */ unk8 mUnk_0C;
+    /* 0D */ unk8 mUnk_0D;
+    /* 0E */ u16 mUnk_0E;
+    /* 10 */
+};
+
+static inline void *GetUnkPointer1_Impl(UnkResourceStruct *ptr) {
+    if (ptr != NULL) {
+        u8 *temp_r1 = (u8 *) ptr + 8;
+        u32 *var_r0;
+        u8 zero = 0;
+
+        if (temp_r1 != NULL && ptr->mUnk_09 > zero) {
+            var_r0 = (u32 *) (temp_r1 + *(u16 *) ((u8 *) ptr + 14) + 4);
+        } else {
+            var_r0 = NULL;
+        }
+
+        if (var_r0 != NULL) {
+            return (void *) ((u8 *) ptr + *var_r0);
+        }
+    }
+
+    return NULL;
+}
+
+template <typename T> static inline void *GetUnkPointer1() {
+    return GetUnkPointer1_Impl((UnkResourceStruct *) GET_PROFILE_20_50(T));
+}
 
 class UnkSystem5 {
 public:
