@@ -50,10 +50,10 @@ public:
     /* 78 */ virtual void vfunc_78() override;
     /* 7C */ virtual void vfunc_7C() override;
 
-    /* 10 */ virtual void vfunc2_10() override;
-    /* 14 */ virtual void vfunc2_14() override;
-    /* 18 */ virtual void vfunc2_18() override;
-    /* 1C */ virtual void vfunc2_1C() override;
+    /* 10 */ virtual void vfunc2_10();
+    /* 14 */ virtual MapObject_10 *vfunc2_14();
+    /* 18 */ virtual void vfunc2_18();
+    /* 1C */ virtual void vfunc2_1C();
 
     void func_ov031_020ffde4();
 };

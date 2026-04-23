@@ -1,6 +1,8 @@
 #include "MapObject/MapObjectUnkDRCK.hpp"
 #include "System/SysNew.hpp"
 
+const UnkStruct_ov031_021150b0 data_ov031_02115328(0x1E66);
+
 ARM DECL_PROFILE(MapObjectProfileUnkDRCK);
 
 ARM MapObject *MapObjectProfileUnkDRCK::Create() {
@@ -29,12 +31,23 @@ ARM void MapObjectUnkDRCK::vfunc_08(void) {}
 ARM void MapObjectUnkDRCK::vfunc_18(s8 *param1, s8 param2) {}
 ARM void MapObjectUnkDRCK::vfunc_14(void) {}
 ARM void MapObjectUnkDRCK::vfunc_5C(unk32 param1, unk32 param2) {}
-ARM void MapObjectUnkDRCK::vfunc2_14(void) {}
+
+ARM MapObject_10 *MapObjectUnkDRCK::vfunc2_14(void) {
+    return &this->mUnk_A8;
+}
+
 ARM void MapObjectUnkDRCK::func_ov031_020ffde4(void) {}
 ARM unk32 MapObjectUnkDRCK::vfunc_28(void) {}
 ARM bool MapObjectUnkDRCK::vfunc_64(void) {}
-ARM bool MapObjectUnkDRCK::vfunc_68(void) {}
-ARM bool MapObjectUnkDRCK::vfunc_6C(void) {}
+
+ARM bool MapObjectUnkDRCK::vfunc_68(void) {
+    return false;
+}
+
+ARM bool MapObjectUnkDRCK::vfunc_6C(void) {
+    return false;
+}
+
 ARM void MapObjectUnkDRCK::vfunc_74(void) {}
 ARM void MapObjectUnkDRCK::vfunc_7C(void) {}
 ARM void MapObjectUnkDRCK::vfunc_78(void) {}
