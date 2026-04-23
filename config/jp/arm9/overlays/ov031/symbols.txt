@@ -1396,7 +1396,7 @@ _ZN23MapObjectProfileUnkDRCK6CreateEv kind:function(arm,size=0x24) addr:0x021012
 _ZN23MapObjectProfileUnkDRCKC1Ev kind:function(arm,size=0x50) addr:0x02101290
 _ZN16MapObjectUnkDRCKC2Ev kind:function(arm,size=0x88) addr:0x021012e0
 _ZN16MapObjectUnkDRCKC1Ev kind:function(arm,size=0x88) addr:0x02101368
-_ZN16MapObjectUnkDRCK9vfunc2_1CEv kind:function(arm,size=0x14) addr:0x021013f0
+_ZN16MapObjectUnkDRCK9vfunc2_1CEi kind:function(arm,size=0x14) addr:0x021013f0
 _ZN16MapObjectUnkDRCK8vfunc_00Ev kind:function(arm,size=0x100) addr:0x02101404
 _ZN16MapObjectUnkDRCK8vfunc_08Ev kind:function(arm,size=0x3d0) addr:0x02101504
 _ZN16MapObjectUnkDRCK8vfunc_18EPcc kind:function(arm,size=0xc) addr:0x021018d4
@@ -1420,7 +1420,7 @@ _ZN16MapObjectUnkDRCK9vfunc2_18Ev kind:function(arm,size=0x4) addr:0x02101ef8
 _ZN16MapObjectUnkDRCKD1Ev kind:function(arm,size=0x30) addr:0x02101efc
 _ZN16MapObjectUnkDRCKD0Ev kind:function(arm,size=0x38) addr:0x02101f2c
 _ZN23MapObjectProfileUnkDRCKD1Ev kind:function(arm,size=0x14) addr:0x02101f64
-_ZN19func_ov031_02100230D0Ev kind:function(arm,size=0x1c) addr:0x02101f78
+_ZN23MapObjectProfileUnkDRCKD0Ev kind:function(arm,size=0x1c) addr:0x02101f78
 _ZN23MapObjectProfileUnkDRTC10GetProfileEv kind:function(arm,size=0xc) addr:0x02101f94
 _ZN23MapObjectProfileUnkDRTC6CreateEv kind:function(arm,size=0x24) addr:0x02101fa0
 _ZN23MapObjectProfileUnkDRTCC1Ev kind:function(arm,size=0x4c) addr:0x02101fc4
@@ -2028,8 +2028,8 @@ data_ov031_0211292c kind:data(any) addr:0x0211292c
 data_ov031_02112938 kind:data(any) addr:0x02112938
 data_ov031_0211295c kind:data(any) addr:0x0211295c
 data_ov031_02112970 kind:data(any) addr:0x02112970
-data_ov031_0211298c kind:data(any) addr:0x0211298c
-data_ov031_02112998 kind:data(any) addr:0x02112998
+data_ov031_02110c1c kind:data(any) addr:0x0211298c local
+data_ov031_02110c28 kind:data(any) addr:0x02112998 local
 data_ov031_02110c3c kind:data(any) addr:0x021129ac
 data_ov031_021129b4 kind:data(any) addr:0x021129b4
 data_ov031_021129d8 kind:data(any) addr:0x021129d8
@@ -2419,7 +2419,7 @@ _ZTV16MapObjectUnkDRKY kind:data(any) addr:0x02116f18
 data_ov031_02115254 kind:data(any) addr:0x02116fc8
 _ZTV23MapObjectProfileUnkDRSW kind:data(any) addr:0x02116fcc
 _ZTV16MapObjectUnkDRSW kind:data(any) addr:0x02116fe8
-data_ov031_0211709c kind:data(any) addr:0x0211709c
+data_ov031_0211709c kind:data(any) addr:0x0211709c local
 _ZTV23MapObjectProfileUnkDRCK kind:data(any) addr:0x021170a0
 _ZTV16MapObjectUnkDRCK kind:data(any) addr:0x021170c8
 _ZTV23MapObjectProfileUnkDRTC kind:data(any) addr:0x02117188

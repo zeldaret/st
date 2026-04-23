@@ -53,7 +53,7 @@ public:
     /* 10 */ virtual void vfunc2_10();
     /* 14 */ virtual MapObject_10 *vfunc2_14();
     /* 18 */ virtual void vfunc2_18();
-    /* 1C */ virtual void vfunc2_1C();
+    /* 1C */ virtual u16 vfunc2_1C(unk32 param2);
 
-    void func_ov031_020ffde4();
+    bool func_ov031_020ffde4();
 };
