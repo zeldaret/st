@@ -6,7 +6,7 @@
 #include "global.h"
 #include "types.h"
 
-class MapObjectUnkDRKY : public MapObjectDoorBase {
+class MapObjectDoorKey : public MapObjectDoorBase {
 public:
     /* 00 (base) */
     /* 94 */ UnkSystem6_Derived2 mUnk_94;
@@ -21,14 +21,14 @@ public:
     /* A7 */ unk8 mUnk_A7; // pad?
     /* A8 */
 
-    MapObjectUnkDRKY();
+    MapObjectDoorKey();
 
     /* 00 */ virtual bool vfunc_00() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 14 */ virtual void vfunc_14() override;
     /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2) override;
     /* 28 */ virtual unk32 vfunc_28() override;
-    /* 30 */ virtual ~MapObjectUnkDRKY() override;
+    /* 30 */ virtual ~MapObjectDoorKey() override;
     /* 40 */ virtual void vfunc_40() override;
     /* 44 */ virtual void vfunc_44() override;
     /* 48 */ virtual void vfunc_48() override;
@@ -44,14 +44,14 @@ public:
     bool func_ov031_020fea88(void);
 };
 
-class MapObjectProfileUnkDRKY : public MapObjectProfile_Derived2 {
+class MapObjectProfileDoorKey : public MapObjectProfile_Derived2 {
 public:
     /* 00 (base) */
 
-    MapObjectProfileUnkDRKY();
-    ~MapObjectProfileUnkDRKY();
+    MapObjectProfileDoorKey();
+    ~MapObjectProfileDoorKey();
 
     /* 0C */ virtual MapObject *Create();
 
-    static MapObjectProfileUnkDRKY *GetProfile();
+    static MapObjectProfileDoorKey *GetProfile();
 };

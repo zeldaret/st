@@ -181,28 +181,28 @@ src/031_Land/MapObject/MapObjectDoorBase.cpp:
     .data       start:0x02114ffc end:0x021150b0
     .bss        start:0x02117204 end:0x0211727c
 
-src/031_Land/MapObject/MapObjectUnkDRDS.cpp:
+src/031_Land/MapObject/MapObjectDoorDangerSpawn.cpp:
     .text       start:0x020fd0f8 end:0x020fe734
     .init       start:0x02111b28 end:0x02111b8c
     .ctor       start:0x02112814 end:0x02112818
     .data       start:0x021150b0 end:0x02115184
     .bss        start:0x0211727c end:0x02117360
 
-src/031_Land/MapObject/MapObjectUnkDRKY.cpp:
+src/031_Land/MapObject/MapObjectDoorKey.cpp:
     .text       start:0x020fe734 end:0x020fee6c
     .init       start:0x02111b8c end:0x02111bf0
     .ctor       start:0x02112818 end:0x0211281c
     .data       start:0x02115184 end:0x02115254
     .bss        start:0x02117360 end:0x02117444
 
-src/031_Land/MapObject/MapObjectUnkDRSW.cpp:
+src/031_Land/MapObject/MapObjectDoorSwitch.cpp:
     .text       start:0x020fee6c end:0x020ff518
     .init       start:0x02111bf0 end:0x02111c54
     .ctor       start:0x0211281c end:0x02112820
     .data       start:0x02115254 end:0x02115328
     .bss        start:0x02117444 end:0x02117528
 
-src/031_Land/MapObject/MapObjectUnkDRCK.cpp:
+src/031_Land/MapObject/MapObjectDoorClick.cpp:
     .text       start:0x020ff518 end:0x02100230
     .rodata     start:0x02110c1c end:0x02110c3c
     .init       start:0x02111c54 end:0x02111cb8
@@ -210,7 +210,7 @@ src/031_Land/MapObject/MapObjectUnkDRCK.cpp:
     .data       start:0x02115328 end:0x02115414
     .bss        start:0x02117528 end:0x021175a0
 
-src/031_Land/MapObject/MapObjectUnkDRTC.cpp:
+src/031_Land/MapObject/MapObjectDoorTouch.cpp:
     .text       start:0x0210024c end:0x021004bc
     .init       start:0x02111cb8 end:0x02111d08
     .ctor       start:0x02112824 end:0x02112828

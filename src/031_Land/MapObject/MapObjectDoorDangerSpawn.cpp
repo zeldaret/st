@@ -1,4 +1,4 @@
-#include "MapObject/MapObjectUnkDRDS.hpp"
+#include "MapObject/MapObjectDoorDangerSpawn.hpp"
 #include "Actor/ActorManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "System/SysNew.hpp"
@@ -23,21 +23,21 @@ extern UnkStruct_ov000_020b34c4_Callback data_ov000_020b4cc4;
 
 const UnkStruct_ov031_021150b0 data_ov031_021150b0(0x1E66);
 
-ARM DECL_PROFILE(MapObjectProfileUnkDRDS);
+ARM DECL_PROFILE(MapObjectProfileDoorDangerSpawn);
 
-ARM MapObject *MapObjectProfileUnkDRDS::Create() {
-    return new(HeapIndex_ITCM) MapObjectUnkDRDS();
+ARM MapObject *MapObjectProfileDoorDangerSpawn::Create() {
+    return new(HeapIndex_ITCM) MapObjectDoorDangerSpawn();
 }
 
-ARM MapObjectProfileUnkDRDS::MapObjectProfileUnkDRDS() :
-    MapObjectProfile_Derived2(MapObjectId_DRDS, MapObjectId_DRDS) {
+ARM MapObjectProfileDoorDangerSpawn::MapObjectProfileDoorDangerSpawn() :
+    MapObjectProfile_Derived2(MapObjectId_DoorDangerSpawn, MapObjectId_DoorDangerSpawn) {
     this->mUnk_0E = 1;
     this->mUnk_06 = -1;
     this->mUnk_1E &= ~0x01;
 }
 
-ARM MapObjectUnkDRDS::MapObjectUnkDRDS() :
-    mUnk_94(GetUnkPointer1<MapObjectProfileUnkDRDS>()),
+ARM MapObjectDoorDangerSpawn::MapObjectDoorDangerSpawn() :
+    mUnk_94(GetUnkPointer1<MapObjectProfileDoorDangerSpawn>()),
     mUnk_9C(1),
     mUnk_A0(0),
     mUnk_A1(false),
@@ -50,7 +50,7 @@ ARM MapObjectUnkDRDS::MapObjectUnkDRDS() :
     this->mUnk_89 = true;
 }
 
-ARM bool MapObjectUnkDRDS::vfunc_00(void) {
+ARM bool MapObjectDoorDangerSpawn::vfunc_00(void) {
     this->func_ov031_020fbf10(true, false);
     this->mUnk_78 = 0x23;
     this->mUnk_7A = 0x0F;
@@ -60,7 +60,7 @@ ARM bool MapObjectUnkDRDS::vfunc_00(void) {
     return true;
 }
 
-ARM void MapObjectUnkDRDS::vfunc_04(void) {
+ARM void MapObjectDoorDangerSpawn::vfunc_04(void) {
     UnkStruct_027e0cd8_0c *ptr;
     Vec3p auStack_20;
 
@@ -93,13 +93,13 @@ ARM void MapObjectUnkDRDS::vfunc_04(void) {
     UnkStruct_ov000_020b34c4 stack;
     bool run      = true;
     stack.mUnk_00 = &data_ov000_020b4cc4;
-    stack.mUnk_04 = MapObjectId_DRDS;
+    stack.mUnk_04 = MapObjectId_DoorDangerSpawn;
 
     MapObject **ppMapObject =
         gpMapObjManager->func_01fff520((UnkStruct_ov000_020b34c4 *) &stack.mUnk_00, gpMapObjManager->mMapObjTable);
 
     if (ppMapObject != gpMapObjManager->mUnk_08) {
-        MapObjectUnkDRDS *pMapObject = (MapObjectUnkDRDS *) *ppMapObject;
+        MapObjectDoorDangerSpawn *pMapObject = (MapObjectDoorDangerSpawn *) *ppMapObject;
         u32 temp1;
         u32 temp2;
 
@@ -129,17 +129,17 @@ ARM void MapObjectUnkDRDS::vfunc_04(void) {
         this->vfunc_5C(0, 0);
 
         UnkStruct_027e09bc_0c *uVar5 = data_027e09bc->mUnk_0C;
-        MapObjectUnkDRDS::func_ov031_020fe5fc(&auStack_20, this);
+        MapObjectDoorDangerSpawn::func_ov031_020fe5fc(&auStack_20, this);
 
         uVar5->func_ov000_0207834c(&auStack_20, (unk32) func_ov000_02077590(0), 0);
     }
 }
 
-ARM void MapObjectUnkDRDS::vfunc2_04(void) {
+ARM void MapObjectDoorDangerSpawn::vfunc2_04(void) {
     this->MapObjectDoorBase::vfunc2_04();
 }
 
-ARM void MapObjectUnkDRDS::vfunc2_08(void) {
+ARM void MapObjectDoorDangerSpawn::vfunc2_08(void) {
     this->mUnk_8C = 1;
     this->vfunc_84(1, &this->mUnk_4C, &this->mUnk_4A);
     this->MapObjectDoorBase::vfunc2_08();
@@ -156,7 +156,7 @@ struct UnkStruct_Copy {
 };
 
 // https://decomp.me/scratch/KLkdU
-ARM void MapObjectUnkDRDS::vfunc_08(void) {
+ARM void MapObjectDoorDangerSpawn::vfunc_08(void) {
     UnkStruct_Copy sp3C;
     UnkStruct_Copy sp1C;
     Vec3p sp10;
@@ -264,7 +264,7 @@ ARM void MapObjectUnkDRDS::vfunc_08(void) {
     }
 }
 
-ARM void MapObjectUnkDRDS::vfunc_0C(void) {
+ARM void MapObjectDoorDangerSpawn::vfunc_0C(void) {
     this->MapObjectDoorBase::vfunc_0C();
 
     if ((u16) this->mUnk_16 <= 1) {
@@ -272,7 +272,7 @@ ARM void MapObjectUnkDRDS::vfunc_0C(void) {
     }
 }
 
-ARM void MapObjectUnkDRDS::vfunc_5C(unk32 param1, unk32 param2) {
+ARM void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
     UnkStruct_027e0cd8 **ptr;
     s32 var_r6;
     u32 temp_r8;
@@ -402,7 +402,7 @@ ARM void MapObjectUnkDRDS::vfunc_5C(unk32 param1, unk32 param2) {
     }
 }
 
-ARM bool MapObjectUnkDRDS::vfunc_64(void) {
+ARM bool MapObjectDoorDangerSpawn::vfunc_64(void) {
     UnkStruct_027e0cd8_0c *pUVar4;
     unk32 var_r0;
     bool var_r5;
@@ -440,7 +440,7 @@ ARM bool MapObjectUnkDRDS::vfunc_64(void) {
     return MapObjectDoorBase::vfunc_64();
 }
 
-ARM bool MapObjectUnkDRDS::vfunc_68(void) {
+ARM bool MapObjectDoorDangerSpawn::vfunc_68(void) {
     UnkStruct_027e0cd8_0c *pUVar2 = data_027e0cd8->mUnk_0C;
 
     if (this->mUnk_20.mUnk_00[2] == 1) {
@@ -465,7 +465,7 @@ ARM bool MapObjectUnkDRDS::vfunc_68(void) {
     return gpActorManager->func_ov000_0209704c() == 0;
 }
 
-ARM bool MapObjectUnkDRDS::vfunc_6C(void) {
+ARM bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
     UnkStruct_027e0cd8_0c *pUVar5;
 
     switch (this->mUnk_20.mUnk_00[1]) {
@@ -519,7 +519,7 @@ ARM bool MapObjectUnkDRDS::vfunc_6C(void) {
     return false;
 }
 
-ARM bool MapObjectUnkDRDS::func_ov031_020fdec8(void) {
+ARM bool MapObjectDoorDangerSpawn::func_ov031_020fdec8(void) {
     UnkStruct_027e0cd8_0c *pUVar4;
     Vec3p *uVar3;
     int iVar1;
@@ -562,11 +562,11 @@ ARM bool MapObjectUnkDRDS::func_ov031_020fdec8(void) {
     return false;
 }
 
-ARM void MapObjectUnkDRDS::vfunc_18(s8 *param1, s8 param2) {
+ARM void MapObjectDoorDangerSpawn::vfunc_18(s8 *param1, s8 param2) {
     this->func_ov031_020fcb78(param1, param2);
 }
 
-ARM void MapObjectUnkDRDS::vfunc_14(void) {
+ARM void MapObjectDoorDangerSpawn::vfunc_14(void) {
     Mat3p m;
     Mat3p_InitYRotation(&m, SIN((u16) this->mUnk_14), COS((u16) this->mUnk_14));
 
@@ -576,7 +576,7 @@ ARM void MapObjectUnkDRDS::vfunc_14(void) {
     this->mUnk_94.vfunc_14(&m, &pos);
 }
 
-ARM void MapObjectUnkDRDS::vfunc2_10(void) {
+ARM void MapObjectDoorDangerSpawn::vfunc2_10(void) {
     switch (this->mUnk_16) {
         case 0:
         default:
@@ -601,7 +601,7 @@ ARM void MapObjectUnkDRDS::vfunc2_10(void) {
 }
 
 // https://decomp.me/scratch/DEJfq
-ARM void MapObjectUnkDRDS::vfunc_74(void) {
+ARM void MapObjectDoorDangerSpawn::vfunc_74(void) {
     Vec3p local_28;
     Vec3p local_34;
     Vec3p local_40;
@@ -652,7 +652,7 @@ ARM void MapObjectUnkDRDS::vfunc_74(void) {
     }
 }
 
-ARM void MapObjectUnkDRDS::vfunc_7C(void) {
+ARM void MapObjectDoorDangerSpawn::vfunc_7C(void) {
     this->MapObjectDoorBase::vfunc_7C();
 
     if (this->mUnk_A8.mUnk_00 != NULL) {
@@ -660,29 +660,29 @@ ARM void MapObjectUnkDRDS::vfunc_7C(void) {
     }
 }
 
-ARM void MapObjectUnkDRDS::vfunc_40(void) {
+ARM void MapObjectDoorDangerSpawn::vfunc_40(void) {
     data_027e09a8->func_ov000_02071b30(0x138, &this->mPos, 0);
 }
 
-ARM void MapObjectUnkDRDS::vfunc_44(void) {
+ARM void MapObjectDoorDangerSpawn::vfunc_44(void) {
     unk32 local_c = *(u32 *) &this->mUnk_38;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x137, &this->mPos, 0);
 }
 
-ARM void MapObjectUnkDRDS::vfunc_48(void) {
+ARM void MapObjectDoorDangerSpawn::vfunc_48(void) {
     data_027e09a8->func_ov000_02071b30(0x13A, &this->mPos, 0);
 }
 
-ARM void MapObjectUnkDRDS::vfunc_4C(void) {
+ARM void MapObjectDoorDangerSpawn::vfunc_4C(void) {
     unk32 local_c = *(u32 *) &this->mUnk_38;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x139, &this->mPos, 0);
 }
 
-ARM bool MapObjectUnkDRDS::vfunc_88(void) {
+ARM bool MapObjectDoorDangerSpawn::vfunc_88(void) {
     return !data_027e09b8->func_01ffd420();
 }
 
-ARM unk32 MapObjectUnkDRDS::vfunc_8C(void) {
+ARM unk32 MapObjectDoorDangerSpawn::vfunc_8C(void) {
     if (this->mUnk_A2) {
         if (data_027e0ce0->func_01fff1a4()) {
             return 0x28;
@@ -694,7 +694,7 @@ ARM unk32 MapObjectUnkDRDS::vfunc_8C(void) {
     return 0;
 }
 
-ARM void MapObjectUnkDRDS::vfunc_84(unk32 param1, Vec3p *param2, unk16 *param3) {
+ARM void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, Vec3p *param2, unk16 *param3) {
     s16 iVar1;
 
     if (!this->mUnk_58) {
@@ -734,7 +734,7 @@ ARM void MapObjectUnkDRDS::vfunc_84(unk32 param1, Vec3p *param2, unk16 *param3) 
     Vec3p_Add(&this->mPos, &local_30, &this->mUnk_5C);
 }
 
-ARM void MapObjectUnkDRDS::func_ov031_020fe5fc(Vec3p *param1, MapObjectUnkDRDS *thisx) {
+ARM void MapObjectDoorDangerSpawn::func_ov031_020fe5fc(Vec3p *param1, MapObjectDoorDangerSpawn *thisx) {
     if (data_027e0ce0->func_01fff1a4()) {
         Vec3p *piVar2 = data_027e0ce0->func_01fff148(1);
         Vec3p *piVar3 = data_027e0ce0->func_01fff148(0);
@@ -750,5 +750,5 @@ ARM void MapObjectUnkDRDS::func_ov031_020fe5fc(Vec3p *param1, MapObjectUnkDRDS *
     }
 }
 
-ARM MapObjectUnkDRDS::~MapObjectUnkDRDS() {}
-ARM MapObjectProfileUnkDRDS::~MapObjectProfileUnkDRDS() {}
+ARM MapObjectDoorDangerSpawn::~MapObjectDoorDangerSpawn() {}
+ARM MapObjectProfileDoorDangerSpawn::~MapObjectProfileDoorDangerSpawn() {}

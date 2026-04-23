@@ -1,4 +1,4 @@
-#include "MapObject/MapObjectUnkDRSW.hpp"
+#include "MapObject/MapObjectDoorSwitch.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -11,19 +11,19 @@ extern "C" void func_01ff9218(q20 *, q20, q20);
 
 const UnkStruct_ov031_021150b0 data_ov031_02115254(0x1E66);
 
-ARM DECL_PROFILE(MapObjectProfileUnkDRSW);
+ARM DECL_PROFILE(MapObjectProfileDoorSwitch);
 
-ARM MapObject *MapObjectProfileUnkDRSW::Create() {
-    return new(HeapIndex_ITCM) MapObjectUnkDRSW();
+ARM MapObject *MapObjectProfileDoorSwitch::Create() {
+    return new(HeapIndex_ITCM) MapObjectDoorSwitch();
 }
 
-ARM MapObjectProfileUnkDRSW::MapObjectProfileUnkDRSW() :
-    MapObjectProfile_Derived2(MapObjectId_DRSW, MapObjectId_DRSW) {
+ARM MapObjectProfileDoorSwitch::MapObjectProfileDoorSwitch() :
+    MapObjectProfile_Derived2(MapObjectId_DoorSwitch, MapObjectId_DoorSwitch) {
     this->mUnk_06 = -1;
     this->mUnk_1E &= ~0x01;
 }
 
-ARM MapObjectUnkDRSW::MapObjectUnkDRSW() :
+ARM MapObjectDoorSwitch::MapObjectDoorSwitch() :
     mUnk_094(0) {
     this->mUnkPos = FLOAT_TO_Q20(0.0f);
 
@@ -37,7 +37,7 @@ ARM MapObjectUnkDRSW::MapObjectUnkDRSW() :
     this->mUnk_89 = true;
 }
 
-ARM bool MapObjectUnkDRSW::vfunc_00(void) {
+ARM bool MapObjectDoorSwitch::vfunc_00(void) {
     this->mUnk_094.vfunc_08(this->vfunc2_10());
     this->func_ov031_020fbf10(true, true);
 
@@ -90,7 +90,7 @@ ARM bool MapObjectUnkDRSW::vfunc_00(void) {
     return true;
 }
 
-ARM void MapObjectUnkDRSW::vfunc_08(void) {
+ARM void MapObjectDoorSwitch::vfunc_08(void) {
     if (this->mUnk_20.mUnk_00[3] == 2 && data_027e09b8->func_01ffd420()) {
         this->MapObjectDoorBase::vfunc_08();
     } else if (this->mUnk_16 == 5 && this->vfunc_6C()) {
@@ -100,11 +100,11 @@ ARM void MapObjectUnkDRSW::vfunc_08(void) {
     }
 }
 
-ARM bool MapObjectUnkDRSW::vfunc_64(void) {
+ARM bool MapObjectDoorSwitch::vfunc_64(void) {
     return this->func_ov000_0209d29c(0);
 }
 
-ARM bool MapObjectUnkDRSW::vfunc_6C(void) {
+ARM bool MapObjectDoorSwitch::vfunc_6C(void) {
     if (this->func_ov000_0209d29c(0)) {
         return false;
     }
@@ -112,7 +112,7 @@ ARM bool MapObjectUnkDRSW::vfunc_6C(void) {
     return true;
 }
 
-ARM void MapObjectUnkDRSW::vfunc_14(void) {
+ARM void MapObjectDoorSwitch::vfunc_14(void) {
     u16 angle = this->mUnk_14;
     Mat3p m;
 
@@ -123,11 +123,11 @@ ARM void MapObjectUnkDRSW::vfunc_14(void) {
     this->mUnk_094.vfunc_14(&m, &local_40);
 }
 
-ARM void MapObjectUnkDRSW::vfunc_18(s8 *param1, s8 param2) {
+ARM void MapObjectDoorSwitch::vfunc_18(s8 *param1, s8 param2) {
     this->func_ov031_020fcb78(param1, param2);
 }
 
-ARM void MapObjectUnkDRSW::vfunc_74(void) {
+ARM void MapObjectDoorSwitch::vfunc_74(void) {
     Vec3p local_20(this->mPos);
     Vec3p local_2c(0, 0, 0x666);
     Mat4x3p m;
@@ -144,11 +144,11 @@ ARM void MapObjectUnkDRSW::vfunc_74(void) {
     }
 }
 
-ARM void *MapObjectUnkDRSW::vfunc2_10(void) {
-    return GetUnkPointer1<MapObjectProfileUnkDRSW>();
+ARM void *MapObjectDoorSwitch::vfunc2_10(void) {
+    return GetUnkPointer1<MapObjectProfileDoorSwitch>();
 }
 
-ARM void MapObjectUnkDRSW::vfunc_50(void) {
+ARM void MapObjectDoorSwitch::vfunc_50(void) {
 #if IS_JP
     if (!this->mUnk_140) {
         return;
@@ -207,7 +207,7 @@ ARM void MapObjectUnkDRSW::vfunc_50(void) {
 #endif
 }
 
-ARM void MapObjectUnkDRSW::vfunc_54(void) {
+ARM void MapObjectDoorSwitch::vfunc_54(void) {
     this->func_ov031_020fcf0c(1);
 
 #if IS_JP
@@ -280,7 +280,7 @@ ARM void MapObjectUnkDRSW::vfunc_54(void) {
 #endif
 }
 
-ARM void MapObjectUnkDRSW::vfunc_58(void) {
+ARM void MapObjectDoorSwitch::vfunc_58(void) {
 #if IS_JP
     if (!this->mUnk_140) {
         return;
@@ -316,23 +316,23 @@ ARM void MapObjectUnkDRSW::vfunc_58(void) {
 #endif
 }
 
-ARM void MapObjectUnkDRSW::vfunc_40(void) {
+ARM void MapObjectDoorSwitch::vfunc_40(void) {
     data_027e09a8->func_ov000_02071b30(0x131, &this->mPos, 0);
 }
 
-ARM void MapObjectUnkDRSW::vfunc_44(void) {
+ARM void MapObjectDoorSwitch::vfunc_44(void) {
     unk32 local_c = *(u32 *) &this->mUnk_38;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x130, &this->mPos, 0);
 }
 
-ARM void MapObjectUnkDRSW::vfunc_48(void) {
+ARM void MapObjectDoorSwitch::vfunc_48(void) {
     data_027e09a8->func_ov000_02071b30(0x133, &this->mPos, 0);
 }
 
-ARM void MapObjectUnkDRSW::vfunc_4C(void) {
+ARM void MapObjectDoorSwitch::vfunc_4C(void) {
     unk32 local_c = *(u32 *) &this->mUnk_38;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x132, &this->mPos, 0);
 }
 
-ARM MapObjectUnkDRSW::~MapObjectUnkDRSW() {}
-ARM MapObjectProfileUnkDRSW::~MapObjectProfileUnkDRSW() {}
+ARM MapObjectDoorSwitch::~MapObjectDoorSwitch() {}
+ARM MapObjectProfileDoorSwitch::~MapObjectProfileDoorSwitch() {}

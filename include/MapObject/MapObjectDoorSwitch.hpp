@@ -7,7 +7,7 @@
 #include "types.h"
 #include "versions.h"
 
-class MapObjectUnkDRSW : public MapObjectDoorBase {
+class MapObjectDoorSwitch : public MapObjectDoorBase {
 public:
     /* 000 (base) */
     /* 094 */ UnkSystem4 mUnk_094;
@@ -25,14 +25,14 @@ public:
     /* 11C */
 #endif
 
-    MapObjectUnkDRSW();
+    MapObjectDoorSwitch();
 
     // data_ov031_0211527c (MapObject)
     /* 00 */ virtual bool vfunc_00() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 14 */ virtual void vfunc_14() override;
     /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2) override;
-    /* 30 */ virtual ~MapObjectUnkDRSW() override;
+    /* 30 */ virtual ~MapObjectDoorSwitch() override;
     /* 40 */ virtual void vfunc_40() override;
     /* 44 */ virtual void vfunc_44() override;
     /* 48 */ virtual void vfunc_48() override;
@@ -48,14 +48,14 @@ public:
     /* 10 */ virtual void *vfunc2_10();
 };
 
-class MapObjectProfileUnkDRSW : public MapObjectProfile_Derived2 {
+class MapObjectProfileDoorSwitch : public MapObjectProfile_Derived2 {
 public:
     /* 00 (base) */
 
-    MapObjectProfileUnkDRSW();
-    ~MapObjectProfileUnkDRSW();
+    MapObjectProfileDoorSwitch();
+    ~MapObjectProfileDoorSwitch();
 
     /* 0C */ virtual MapObject *Create();
 
-    static MapObjectProfileUnkDRSW *GetProfile();
+    static MapObjectProfileDoorSwitch *GetProfile();
 };

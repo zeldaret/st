@@ -1,4 +1,4 @@
-#include "MapObject/MapObjectUnkDRCK.hpp"
+#include "MapObject/MapObjectDoorClick.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -21,20 +21,20 @@ static const u16 data_ov031_02110c28[] = {0x00, 0x00, 0x00, 0x00, 0x07, 0x0A, 0x
 
 const UnkStruct_ov031_021150b0 data_ov031_02115328(0x1E66);
 
-ARM DECL_PROFILE(MapObjectProfileUnkDRCK);
+ARM DECL_PROFILE(MapObjectProfileDoorClick);
 
-ARM MapObject *MapObjectProfileUnkDRCK::Create() {
-    return new(HeapIndex_ITCM) MapObjectUnkDRCK();
+ARM MapObject *MapObjectProfileDoorClick::Create() {
+    return new(HeapIndex_ITCM) MapObjectDoorClick();
 }
 
-ARM MapObjectProfileUnkDRCK::MapObjectProfileUnkDRCK() :
-    MapObjectProfile_Derived1(MapObjectId_DRCK, -1, 0) {
+ARM MapObjectProfileDoorClick::MapObjectProfileDoorClick() :
+    MapObjectProfile_Derived1(MapObjectId_DoorClick, -1, 0) {
     this->mUnk_06 = 2;
     this->mUnk_1E |= 0x01;
     this->mUnk_0C = 0x399A;
 }
 
-ARM MapObjectUnkDRCK::MapObjectUnkDRCK() :
+ARM MapObjectDoorClick::MapObjectDoorClick() :
     mUnk_9C(1),
     mUnk_A0(0) {
     this->mUnk_8F = true;
@@ -43,12 +43,12 @@ ARM MapObjectUnkDRCK::MapObjectUnkDRCK() :
     this->func_ov000_0209d2c4(1, 1);
 }
 
-ARM u16 MapObjectUnkDRCK::vfunc2_1C(unk32 param1) {
+ARM u16 MapObjectDoorClick::vfunc2_1C(unk32 param1) {
     return data_ov031_02110c28[param1];
 }
 
 // https://decomp.me/scratch/zmw3b
-ARM bool MapObjectUnkDRCK::vfunc_00(void) {
+ARM bool MapObjectDoorClick::vfunc_00(void) {
     Vec3p local_1c;
     Vec3p local_28;
     Vec3p local_40[2];
@@ -93,7 +93,7 @@ ARM bool MapObjectUnkDRCK::vfunc_00(void) {
     return true;
 }
 
-ARM void MapObjectUnkDRCK::vfunc_08(void) {
+ARM void MapObjectDoorClick::vfunc_08(void) {
     if (this->mUnk_A4 != 0 && this->func_ov000_0209d29c(0)) {
         this->mUnk_A4 = 0;
     }
@@ -198,12 +198,12 @@ ARM void MapObjectUnkDRCK::vfunc_08(void) {
     }
 }
 
-ARM void MapObjectUnkDRCK::vfunc_18(s8 *param1, s8 param2) {
+ARM void MapObjectDoorClick::vfunc_18(s8 *param1, s8 param2) {
     this->func_ov031_020fcb78(param1, param2);
 }
 
 // https://decomp.me/scratch/3XTMj
-ARM void MapObjectUnkDRCK::vfunc_14(void) {
+ARM void MapObjectDoorClick::vfunc_14(void) {
     f32 factor;
     f32 uVar3;
     s32 sVar2;
@@ -246,7 +246,7 @@ ARM void MapObjectUnkDRCK::vfunc_14(void) {
     this->mUnk_94.vfunc_14(&m, &local_48);
 }
 
-ARM void MapObjectUnkDRCK::vfunc_5C(unk32 param1, unk32 param2) {
+ARM void MapObjectDoorClick::vfunc_5C(unk32 param1, unk32 param2) {
     s32 var_r6;
     u32 temp_r8;
     UnkStackStruct1 sp8;
@@ -287,11 +287,11 @@ ARM void MapObjectUnkDRCK::vfunc_5C(unk32 param1, unk32 param2) {
     }
 }
 
-ARM MapObject_10 *MapObjectUnkDRCK::vfunc2_14(void) {
+ARM MapObject_10 *MapObjectDoorClick::vfunc2_14(void) {
     return &this->mUnk_A8;
 }
 
-ARM bool MapObjectUnkDRCK::func_ov031_020ffde4(void) {
+ARM bool MapObjectDoorClick::func_ov031_020ffde4(void) {
     switch (this->mUnk_A4) {
         case 0:
             return true;
@@ -307,7 +307,7 @@ ARM bool MapObjectUnkDRCK::func_ov031_020ffde4(void) {
     return false;
 }
 
-ARM unk32 MapObjectUnkDRCK::vfunc_28(void) {
+ARM unk32 MapObjectDoorClick::vfunc_28(void) {
     switch (this->mUnk_16) {
         case 3:
         case 4:
@@ -324,24 +324,24 @@ ARM unk32 MapObjectUnkDRCK::vfunc_28(void) {
     return 0;
 }
 
-ARM bool MapObjectUnkDRCK::vfunc_64(void) {
+ARM bool MapObjectDoorClick::vfunc_64(void) {
     return this->func_ov000_0209d29c(1);
 }
 
-ARM bool MapObjectUnkDRCK::vfunc_68(void) {
+ARM bool MapObjectDoorClick::vfunc_68(void) {
     return false;
 }
 
-ARM bool MapObjectUnkDRCK::vfunc_6C(void) {
+ARM bool MapObjectDoorClick::vfunc_6C(void) {
     return false;
 }
 
-ARM void MapObjectUnkDRCK::vfunc_74(void) {
+ARM void MapObjectDoorClick::vfunc_74(void) {
     data_027e0cec->func_ov000_0209ff8c(&this->mUnk_68, 0x89E, &this->mPos, 4);
     data_027e0cec->func_ov000_0209ff8c(&this->mUnk_A0, 0x89E, &this->mPos, 4);
 }
 
-ARM void MapObjectUnkDRCK::vfunc_7C(void) {
+ARM void MapObjectDoorClick::vfunc_7C(void) {
     this->MapObjectDoorBase::vfunc_7C();
 
     if (this->mUnk_A0.mUnk_00 != NULL) {
@@ -349,7 +349,7 @@ ARM void MapObjectUnkDRCK::vfunc_7C(void) {
     }
 }
 
-ARM void MapObjectUnkDRCK::vfunc_78(void) {
+ARM void MapObjectDoorClick::vfunc_78(void) {
     Vec3p local_24;
     Vec3p local_30;
     Vec3p VStack_3c;
@@ -404,22 +404,22 @@ ARM void MapObjectUnkDRCK::vfunc_78(void) {
     }
 }
 
-ARM void MapObjectUnkDRCK::vfunc2_10(void) {
+ARM void MapObjectDoorClick::vfunc2_10(void) {
     unk32 index = this->mUnk_20.mUnk_00[0];
-    this->mUnk_94.vfunc_08(GetUnkPointer2<MapObjectProfileUnkDRCK>(index, data_ov031_02110c1c[index]));
+    this->mUnk_94.vfunc_08(GetUnkPointer2<MapObjectProfileDoorClick>(index, data_ov031_02110c1c[index]));
 }
 
-ARM void MapObjectUnkDRCK::vfunc_40(void) {
+ARM void MapObjectDoorClick::vfunc_40(void) {
     data_027e09a8->func_ov000_02071b30(0x143, &this->mPos, 0);
 }
 
-ARM void MapObjectUnkDRCK::vfunc_44(void) {
+ARM void MapObjectDoorClick::vfunc_44(void) {
     unk32 local_c = *(u32 *) &this->mUnk_38;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x142, &this->mPos, 0);
 }
 
-ARM void MapObjectUnkDRCK::vfunc_48(void) {}
+ARM void MapObjectDoorClick::vfunc_48(void) {}
 
-ARM void MapObjectUnkDRCK::vfunc_4C(void) {}
+ARM void MapObjectDoorClick::vfunc_4C(void) {}
 
-ARM void MapObjectUnkDRCK::vfunc2_18(void) {}
+ARM void MapObjectDoorClick::vfunc2_18(void) {}

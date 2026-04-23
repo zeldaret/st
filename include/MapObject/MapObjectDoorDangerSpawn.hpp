@@ -8,19 +8,19 @@
 #include "global.h"
 #include "types.h"
 
-class MapObjectProfileUnkDRDS : public MapObjectProfile_Derived2 {
+class MapObjectProfileDoorDangerSpawn : public MapObjectProfile_Derived2 {
 public:
     /* 00 (base) */
 
-    MapObjectProfileUnkDRDS();
-    ~MapObjectProfileUnkDRDS();
+    MapObjectProfileDoorDangerSpawn();
+    ~MapObjectProfileDoorDangerSpawn();
 
     /* 0C */ virtual MapObject *Create();
 
-    static MapObjectProfileUnkDRDS *GetProfile();
+    static MapObjectProfileDoorDangerSpawn *GetProfile();
 };
 
-class MapObjectUnkDRDS : public MapObjectDoorBase {
+class MapObjectDoorDangerSpawn : public MapObjectDoorBase {
 public:
     /* 00 (base) */
     /* 94 */ UnkSystem6_Derived2 mUnk_94;
@@ -37,7 +37,7 @@ public:
     /* AC */ volatile u16 mUnk_AC;
     /* AE */ u16 mUnk_AE;
 
-    MapObjectUnkDRDS();
+    MapObjectDoorDangerSpawn();
 
     // data_ov031_021150d8 (MapObject)
     /* 00 */ virtual bool vfunc_00() override;
@@ -46,7 +46,7 @@ public:
     /* 0C */ virtual void vfunc_0C() override;
     /* 14 */ virtual void vfunc_14() override;
     /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2) override;
-    /* 30 */ virtual ~MapObjectUnkDRDS() override;
+    /* 30 */ virtual ~MapObjectDoorDangerSpawn() override;
 
     // (MapObject_UnkStruct1_Derived1)
     /* 04 */ virtual void vfunc2_04() override;
@@ -72,5 +72,5 @@ public:
 
     bool func_ov031_020fdec8(void);
 
-    static void func_ov031_020fe5fc(Vec3p *param1, MapObjectUnkDRDS *thisx);
+    static void func_ov031_020fe5fc(Vec3p *param1, MapObjectDoorDangerSpawn *thisx);
 };

@@ -1,4 +1,4 @@
-#include "MapObject/MapObjectUnkDRKY.hpp"
+#include "MapObject/MapObjectDoorKey.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
@@ -9,22 +9,22 @@ extern "C" void func_01ffaf74(Vec3p *, Mat4x3p *, Vec3p *);
 
 const UnkStruct_ov031_021150b0 data_ov031_02115184(0x1E66);
 
-ARM DECL_PROFILE(MapObjectProfileUnkDRKY);
+ARM DECL_PROFILE(MapObjectProfileDoorKey);
 
-ARM MapObject *MapObjectProfileUnkDRKY::Create() {
-    return new(HeapIndex_ITCM) MapObjectUnkDRKY();
+ARM MapObject *MapObjectProfileDoorKey::Create() {
+    return new(HeapIndex_ITCM) MapObjectDoorKey();
 }
 
-ARM MapObjectProfileUnkDRKY::MapObjectProfileUnkDRKY() :
-    MapObjectProfile_Derived2(MapObjectId_DRKY, MapObjectId_DRKY) {
+ARM MapObjectProfileDoorKey::MapObjectProfileDoorKey() :
+    MapObjectProfile_Derived2(MapObjectId_DoorKey, MapObjectId_DoorKey) {
     this->mUnk_0E = 1;
     this->mUnk_06 = 2;
     this->mUnk_1E |= 0x01;
     this->mUnk_0C = 0x2666;
 }
 
-ARM MapObjectUnkDRKY::MapObjectUnkDRKY() :
-    mUnk_94(GetUnkPointer1<MapObjectProfileUnkDRKY>()),
+ARM MapObjectDoorKey::MapObjectDoorKey() :
+    mUnk_94(GetUnkPointer1<MapObjectProfileDoorKey>()),
     mUnk_9C(1),
     mUnk_A0(0),
     mUnk_A4(false) {
@@ -33,22 +33,22 @@ ARM MapObjectUnkDRKY::MapObjectUnkDRKY() :
     this->mUnk_18[0] = 0x0E;
 }
 
-ARM bool MapObjectUnkDRKY::vfunc_00(void) {
+ARM bool MapObjectDoorKey::vfunc_00(void) {
     this->func_ov031_020fbf10(true, false);
     return true;
 }
 
-ARM void MapObjectUnkDRKY::vfunc_08(void) {
+ARM void MapObjectDoorKey::vfunc_08(void) {
     this->MapObjectDoorBase::vfunc_08();
     this->mUnk_A4 = false;
 }
 
-ARM void MapObjectUnkDRKY::vfunc_18(s8 *param1, s8 param2) {
+ARM void MapObjectDoorKey::vfunc_18(s8 *param1, s8 param2) {
     this->MapObjectDoorBase::func_ov031_020fcb78(param1, param2);
 }
 
 // https://decomp.me/scratch/XO3u2
-ARM void MapObjectUnkDRKY::vfunc_14(void) {
+ARM void MapObjectDoorKey::vfunc_14(void) {
     f32 factor;
     f32 uVar3;
     s32 sVar2;
@@ -91,7 +91,7 @@ ARM void MapObjectUnkDRKY::vfunc_14(void) {
     this->mUnk_94.vfunc_14(&m, &local_48);
 }
 
-ARM void MapObjectUnkDRKY::vfunc_5C(unk32 param1, unk32 param2) {
+ARM void MapObjectDoorKey::vfunc_5C(unk32 param1, unk32 param2) {
     this->mUnk_8D = true;
     this->MapObjectDoorBase::vfunc_5C(param1, param2);
 
@@ -112,7 +112,7 @@ ARM void MapObjectUnkDRKY::vfunc_5C(unk32 param1, unk32 param2) {
     }
 }
 
-ARM bool MapObjectUnkDRKY::func_ov031_020fea88(void) {
+ARM bool MapObjectDoorKey::func_ov031_020fea88(void) {
     if (this->mUnk_A4) {
         return false;
     }
@@ -124,7 +124,7 @@ ARM bool MapObjectUnkDRKY::func_ov031_020fea88(void) {
     return false;
 }
 
-ARM unk32 MapObjectUnkDRKY::vfunc_28(void) {
+ARM unk32 MapObjectDoorKey::vfunc_28(void) {
     if (this->mUnk_A4) {
         return -1;
     }
@@ -149,24 +149,24 @@ ARM unk32 MapObjectUnkDRKY::vfunc_28(void) {
     return 0;
 }
 
-ARM bool MapObjectUnkDRKY::vfunc_64(void) {
+ARM bool MapObjectDoorKey::vfunc_64(void) {
     return this->func_ov000_0209d668();
 }
 
-ARM bool MapObjectUnkDRKY::vfunc_68(void) {
+ARM bool MapObjectDoorKey::vfunc_68(void) {
     return false;
 }
 
-ARM bool MapObjectUnkDRKY::vfunc_6C(void) {
+ARM bool MapObjectDoorKey::vfunc_6C(void) {
     return false;
 }
 
-ARM void MapObjectUnkDRKY::vfunc_74(void) {
+ARM void MapObjectDoorKey::vfunc_74(void) {
     data_027e0cec->func_ov000_0209ff8c(&this->mUnk_68, 0x89E, &this->mPos, 4);
     data_027e0cec->func_ov000_0209ff8c(&this->mUnk_A0, 0x89E, &this->mPos, 4);
 }
 
-ARM void MapObjectUnkDRKY::vfunc_7C(void) {
+ARM void MapObjectDoorKey::vfunc_7C(void) {
     this->MapObjectDoorBase::vfunc_7C();
 
     if (this->mUnk_A0.mUnk_00 != NULL) {
@@ -174,7 +174,7 @@ ARM void MapObjectUnkDRKY::vfunc_7C(void) {
     }
 }
 
-ARM void MapObjectUnkDRKY::vfunc_78(void) {
+ARM void MapObjectDoorKey::vfunc_78(void) {
     Vec3p local_24;
     Vec3p local_30;
     Vec3p VStack_3c;
@@ -229,18 +229,18 @@ ARM void MapObjectUnkDRKY::vfunc_78(void) {
     }
 }
 
-ARM void MapObjectUnkDRKY::vfunc_40(void) {
+ARM void MapObjectDoorKey::vfunc_40(void) {
     data_027e09a8->func_ov000_02071b30(0x136, &this->mPos, 0);
 }
 
-ARM void MapObjectUnkDRKY::vfunc_44(void) {
+ARM void MapObjectDoorKey::vfunc_44(void) {
     unk32 stack = *(u32 *) &this->mUnk_38;
     data_027e09a8->func_ov000_02071d34(&stack, 0x135, &this->mPos, 0);
 }
 
-ARM void MapObjectUnkDRKY::vfunc_48(void) {}
+ARM void MapObjectDoorKey::vfunc_48(void) {}
 
-ARM void MapObjectUnkDRKY::vfunc_4C(void) {}
+ARM void MapObjectDoorKey::vfunc_4C(void) {}
 
-ARM MapObjectUnkDRKY::~MapObjectUnkDRKY() {}
-ARM MapObjectProfileUnkDRKY::~MapObjectProfileUnkDRKY() {}
+ARM MapObjectDoorKey::~MapObjectDoorKey() {}
+ARM MapObjectProfileDoorKey::~MapObjectProfileDoorKey() {}
