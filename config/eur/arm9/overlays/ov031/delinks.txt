@@ -212,6 +212,7 @@ src/031_Land/MapObject/MapObjectUnkDRTC.cpp:
     .text       start:0x0210024c end:0x021004bc
     .init       start:0x02111cb8 end:0x02111d08
     .ctor       start:0x02112824 end:0x02112828
+    .data       start:0x02115414 end:0x021154fc
     .bss        start:0x021175a0 end:0x02117618
 
 src/031_Land/MapObject/MapObjectUnkEXIT.cpp:

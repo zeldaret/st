@@ -1,53 +1,59 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
-#include "MapObject/MapObject.hpp"
+#include "MapObject/MapObjectDoorBase.hpp"
 #include "MapObject/MapObjectProfile.hpp"
 #include "global.h"
 #include "types.h"
 
-class MapObjectUnkDRCK : public MapObject {
-public:
-    /* 00 (base) */
-    /* 40 */
-
-    MapObjectUnkDRCK();
-
-    /* 30 */ virtual ~MapObjectUnkDRCK() override;
-
-    void func_ov031_020ff598(void);
-    void func_ov031_020ff6a8(void);
-    void func_ov031_020ff6bc(void);
-    void func_ov031_020ff7bc(void);
-    void func_ov031_020ffb8c(void);
-    void func_ov031_020ffb98(void);
-    void func_ov031_020ffce4(void);
-    void func_ov031_020ffddc(void);
-    void func_ov031_020ffde4(void);
-    void func_ov031_020ffe1c(void);
-    void func_ov031_020ffe7c(void);
-    void func_ov031_020ffe8c(void);
-    void func_ov031_020ffe94(void);
-    void func_ov031_020ffe9c(void);
-    void func_ov031_020ffeec(void);
-    void func_ov031_020fff10(void);
-    void func_ov031_021000ac(void);
-    void func_ov031_02100138(void);
-    void func_ov031_02100164(void);
-    void func_ov031_021001a8(void);
-    void func_ov031_021001ac(void);
-    void func_ov031_021001b0(void);
-};
-
-class MapObjectProfileUnkDRCK : public MapObjectProfile {
+class MapObjectProfileUnkDRCK : public MapObjectProfile_Derived1 {
 public:
     /* 00 (base) */
 
     MapObjectProfileUnkDRCK();
-    ~MapObjectProfileUnkDRCK();
+    ~MapObjectProfileUnkDRCK() {}
 
     /* 0C */ virtual MapObject *Create();
 
     static MapObjectProfileUnkDRCK *GetProfile();
+};
+
+class MapObjectUnkDRCK : public MapObjectDoorBase {
+public:
+    /* 00 (base) */
+    /* 94 */ UnkSystem6_Derived2 mUnk_94;
+    /* 9C */ unk8 mUnk_9C; // bool?
+    /* 9D */ unk8 mUnk_9D; // pad?
+    /* 9E */ unk8 mUnk_9E; // pad?
+    /* 9F */ unk8 mUnk_9F; // pad?
+    /* A0 */ UnkStruct_PlayerGet_ec mUnk_A0;
+    /* A0 */ unk32 mUnk_A4;
+    /* A8 */ MapObject_10 mUnk_A8;
+    /* CC */
+
+    MapObjectUnkDRCK();
+
+    /* 00 */ virtual bool vfunc_00() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2) override;
+    /* 28 */ virtual unk32 vfunc_28() override;
+    /* 30 */ virtual ~MapObjectUnkDRCK() override {}
+    /* 40 */ virtual void vfunc_40() override;
+    /* 44 */ virtual void vfunc_44() override;
+    /* 48 */ virtual void vfunc_48() override;
+    /* 4C */ virtual void vfunc_4C() override;
+    /* 5C */ virtual void vfunc_5C(unk32 param1, unk32 param2) override;
+    /* 64 */ virtual bool vfunc_64() override;
+    /* 68 */ virtual bool vfunc_68() override;
+    /* 6C */ virtual bool vfunc_6C() override;
+    /* 74 */ virtual void vfunc_74() override;
+    /* 78 */ virtual void vfunc_78() override;
+    /* 7C */ virtual void vfunc_7C() override;
+
+    /* 10 */ virtual void vfunc2_10() override;
+    /* 14 */ virtual void vfunc2_14() override;
+    /* 18 */ virtual void vfunc2_18() override;
+    /* 1C */ virtual void vfunc2_1C() override;
+
+    void func_ov031_020ffde4();
 };

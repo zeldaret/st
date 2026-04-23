@@ -97,7 +97,7 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
     var_r1 = NULL;
 
 next:
-    this->mUnk_40.vfunc_08((unk32) var_r1);
+    this->mUnk_40.vfunc_08(var_r1);
 
     unk32 var_r0_2;
     unk32 var_r0;

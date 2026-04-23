@@ -975,6 +975,12 @@ template <typename T> static inline void *GetUnkPointer1() {
     return GetUnkPointer1_Impl((UnkResourceStruct *) GET_PROFILE_20_50(T));
 }
 
+template <typename T> static inline void *GetUnkPointer2(unk32 param1, u32 resId) {
+    T *pProfile = GET_PROFILE(T);
+    pProfile->func_ov000_0209ccd8(param1, resId);
+    return GetUnkPointer1_Impl((UnkResourceStruct *) pProfile->mUnk_20[param1]->mUnk_50);
+}
+
 class UnkSystem5 {
 public:
     /* 00 */ unk32 mUnk_00;
@@ -1005,7 +1011,7 @@ public:
 
     // data_ov000_020b1a98
     /* 00 */ virtual ~UnkSystem6();
-    /* 08 */ virtual void vfunc_08(unk32 param1);
+    /* 08 */ virtual void vfunc_08(void *param1); // resource thing like UnkSystem4?
     /* 0C */ virtual void vfunc_0C()                             = 0;
     /* 10 */ virtual void vfunc_10()                             = 0;
     /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2) = 0;
