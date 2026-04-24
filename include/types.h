@@ -40,11 +40,11 @@ typedef s32 unk32;
 #define CEIL_DIV(a, b) (((a) + (b) - 1) / (b))
 
 #ifdef __cplusplus
-    #define DECL_PTMF(name, ...)                          \
-        template <typename T> struct name {               \
-            typedef void (T::*PTMFCallback)(__VA_ARGS__); \
-                                                          \
-            PTMFCallback callback;                        \
+    #define DECL_PTMF(name, ...)                               \
+        template <typename T, typename R = void> struct name { \
+            typedef R (T::*PTMFCallback)(__VA_ARGS__);         \
+                                                               \
+            PTMFCallback callback;                             \
         };
 
     #define CALL_PTMF(type, data, ...)          \
