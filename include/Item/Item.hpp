@@ -126,11 +126,11 @@ enum ItemId_ {
     /* 0x16 */ ItemId_SnowGlyph             = 22,
     /* 0x17 */ ItemId_OceanGlyph            = 23,
     /* 0x18 */ ItemId_FireGlyph             = 24,
-    /* 0x19 */ ItemId_25                    = 25,
-    /* 0x1A */ ItemId_26                    = 26,
-    /* 0x1B */ ItemId_27                    = 27,
-    /* 0x1C */ ItemId_28                    = 28,
-    /* 0x1D */ ItemId_29                    = 29,
+    /* 0x19 */ ItemId_25                    = 25, // glyph after forest restoration song
+    /* 0x1A */ ItemId_26                    = 26, // glyph after restoration song
+    /* 0x1B */ ItemId_27                    = 27, // glyph after restoration song
+    /* 0x1C */ ItemId_28                    = 28, // glyph after restoration song
+    /* 0x1D */ ItemId_29                    = 29, // glyph after restoration song
     /* 0x1E */ ItemId_FinalTrack            = 30, // unlocks the endgame portal
     /* 0x1F */ ItemId_31                    = 31,
     /* 0x20 */ ItemId_32                    = 32,

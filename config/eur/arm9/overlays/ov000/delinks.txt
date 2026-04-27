@@ -28,6 +28,7 @@ src/000_Second/Actor/Actor.cpp:
     .data       start:0x020b30e4 end:0x020b3140
 
 src/000_Second/Actor/ActorUnkSWOB.cpp:
+    complete
     .text       start:0x0209a8b8 end:0x0209aca8
     .init       start:0x020b07e8 end:0x020b0838
     .ctor       start:0x020b1908 end:0x020b190c
@@ -107,3 +108,5 @@ src/000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp:
 
 src/000_Second/Item/TreasureManager.cpp:
     .text       start:0x020a9b10 end:0x020aa224
+    .rodata     start:0x020afd68 end:0x020afed8
+    .data       start:0x020b4e60 end:0x020b4ec0

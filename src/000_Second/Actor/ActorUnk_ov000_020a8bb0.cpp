@@ -60,7 +60,7 @@ ARM ActorUnk_ov000_020a8bb0::ActorUnk_ov000_020a8bb0(UnkSystem4 *param1, unk32 p
 ARM ActorUnk_ov000_020a8bb0::~ActorUnk_ov000_020a8bb0() {}
 
 ARM bool ActorUnk_ov000_020a8bb0::vfunc_18(unk32 param1) {
-    if (this->mUnk_70 == 0 && this->func_ov000_020a8dd0()) {
+    if (this->mUnk_5C.mParams[2] == 0 && this->func_ov000_020a8dd0()) {
         UNSET_FLAG(this->mFlags, ActorFlag_Alive);
     }
 
@@ -80,11 +80,11 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_1c() {
 }
 
 ARM bool ActorUnk_ov000_020a8bb0::func_ov000_020a8db0() {
-    return data_027e0cd8->func_ov000_02081e30(this->mUnk_76, this->mUnk_74);
+    return data_027e0cd8->func_ov000_02081e30(this->mUnk_5C.mUnk_1A, this->mUnk_5C.mUnk_18.x);
 }
 
 ARM bool ActorUnk_ov000_020a8bb0::func_ov000_020a8dd0() {
-    return data_027e0cd8->func_ov000_02081e30(this->mUnk_78, this->mUnk_75);
+    return data_027e0cd8->func_ov000_02081e30(this->mUnk_5C.mUnk_1C_0, this->mUnk_5C.mUnk_18.y);
 }
 
 // non-matching
@@ -125,7 +125,7 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_b0() {
     if (data_027e09b8->func_01ffd420() == 0) {
         ActorUnk_vfunc_b0 auStack_60;
         auStack_60.mUnk_24 = this;
-        auStack_60.mUnk_0C = this->mUnk_7C;
+        auStack_60.mUnk_0C = this->mUnk_5C.mUnk_20;
         auStack_60.mUnk_14 = 0;
         auStack_60.mUnk_18 = -1;
         auStack_60.mUnk_1C = -1;

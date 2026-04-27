@@ -361,6 +361,13 @@ public:
     void func_ov019_020d1b14(unk32 param1);
 };
 
+class SaveManager_21C {
+public:
+    /* 00 */ unk32 mUnk_00;
+
+    unk32 func_ov000_020a1000();
+};
+
 class SaveManager {
 public:
     /* 000 */ void *mUnk_000; // related to mUnk_184
@@ -374,7 +381,8 @@ public:
     /* 210 */ unk32 mUnk_210;
     /* 214 */ unk32 mUnk_214;
     /* 218 */ SaveFile *mpSaveFile;
-    /* 21C */ unk8 mUnk_21C[0x23C - 0x21C];
+    /* 21C */ SaveManager_21C mUnk_21C;
+    /* 220 */ STRUCT_PAD(0x220, 0x23C);
     /* 23C */ PTMF<SaveFile>::PTMFCallback mUnk_23C;
     /* 244 */ unk32 mUnk_244;
 

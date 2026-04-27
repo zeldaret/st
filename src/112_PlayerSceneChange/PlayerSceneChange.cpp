@@ -37,9 +37,9 @@ ARM PlayerSceneChange::PlayerSceneChange() {
 
 ARM PlayerSceneChange::~PlayerSceneChange() {
     UnkStruct_ov000_0208f820_28 *pUnk_28 = this->mUnk_28;
-    pUnk_28->mUnk_40 &= 0xFFFD;
+    pUnk_28->mUnk_38.mUnk_40 &= 0xFFFD;
 
-    if (pUnk_28->mUnk_40 == 0) {
+    if (pUnk_28->mUnk_38.mUnk_40 == 0) {
         pUnk_28->mUnk_38.~UnkStruct_PlayerGet_64();
     }
 
@@ -648,7 +648,7 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                 this->mUnk_6C--;
 
                 if (this->mUnk_6C < 0x37) {
-                    this->mUnk_28->mUnk_40 |= 0x02;
+                    this->mUnk_28->mUnk_38.mUnk_40 |= 0x02;
                     break;
                 }
 

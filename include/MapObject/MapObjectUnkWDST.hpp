@@ -10,7 +10,8 @@
 class MapObjectUnkWDST : public MapObject {
 public:
     /* 00 (base) */
-    /* 40 */
+    /* 40 */ STRUCT_PAD(0x40, 0xB8);
+    /* B8 */ unk32 mUnk_B8;
 
     MapObjectUnkWDST();
 
@@ -34,7 +35,7 @@ public:
     void func_ov094_02172ae0(void);
     void func_ov094_02172af4(void);
     void func_ov094_02172bfc(void);
-    void func_ov094_02172c94(void);
+    void func_ov094_02172c94(unk32 param1);
     void func_ov094_0217310c(void);
     void func_ov094_021731e4(void);
     void func_ov094_02173464(void);

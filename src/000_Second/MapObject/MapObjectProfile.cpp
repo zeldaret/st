@@ -68,7 +68,7 @@ ARM unk32 MapObjectProfile::func_ov000_0209c8e4(MapObject_20 *param1) {
 ARM void MapObjectProfile::func_ov000_0209c8ec(MapObjectProfile *thisx) {
     if (thisx->mUnk_0F == 0) {
         if (thisx->mUnk_14 != 0) {
-            thisx->func_ov000_0209c8ec(data_ov000_020b5d34.func_ov000_0209c6b8(thisx->mUnk_14));
+            thisx->func_ov000_0209c8ec(data_ov000_020b5d34.GetProfileFromId(thisx->mUnk_14));
         }
 
         if (thisx->mUnk_18 != 0) {
@@ -136,7 +136,7 @@ ARM MapObjectProfile_Derived2_20 *MapObjectProfile_Derived3::vfunc_04() {
 }
 
 ARM void MapObjectProfile_Derived3::vfunc_08() {
-    this->mUnk_20 = data_ov000_020b5d34.func_ov000_0209c6b8(this->mUnk_14)->vfunc_04();
+    this->mUnk_20 = data_ov000_020b5d34.GetProfileFromId(this->mUnk_14)->vfunc_04();
 }
 
 ARM MapObjectProfile_Derived4::MapObjectProfile_Derived4(MapObjectId mapObjId1, MapObjectId mapObjId2) :

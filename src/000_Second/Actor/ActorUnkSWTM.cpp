@@ -30,11 +30,11 @@ ARM ActorUnkSWTM::~ActorUnkSWTM() {
 
 // https://decomp.me/scratch/qkP8m
 ARM bool ActorUnkSWTM::vfunc_18(unk32 param1) {
-    this->mUnk_9E = this->mUnk_78;
-    this->mUnk_98 = this->mUnk_70;
-    this->mUnk_A4 = this->mUnk_6E * 30;
-    this->mUnk_A0 = this->mUnk_9E + this->mUnk_6C;
-    this->mUnk_A2 = this->mUnk_75;
+    this->mUnk_9E = this->mUnk_5C.mUnk_1C_0;
+    this->mUnk_98 = this->mUnk_5C.mParams[2];
+    this->mUnk_A4 = this->mUnk_5C.mParams[1] * 30;
+    this->mUnk_A0 = this->mUnk_9E + this->mUnk_5C.mParams[0];
+    this->mUnk_A2 = this->mUnk_5C.mUnk_18.y;
     this->mUnk_9C = this->mUnk_9E;
 
     if (this->func_ov000_02098a60(0)) {
@@ -167,7 +167,7 @@ ARM unk32 ActorUnkSWTM::func_ov000_0209b038(void) {
             break;
     }
 
-    for (int i = 0; i < this->mUnk_6C; i++) {
+    for (int i = 0; i < this->mUnk_5C.mParams[0]; i++) {
         if (!data_027e0cd8->func_ov000_02081e30(this->mUnk_9E + i, this->mUnk_A2)) {
             return 0;
         }

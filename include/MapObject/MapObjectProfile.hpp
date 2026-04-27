@@ -24,7 +24,7 @@ public:
     /* 0E */ unk8 mUnk_0E;
     /* 0F */ u8 mUnk_0F;
     /* 10 */ MapObjectId mMapObjId;
-    /* 14 */ unk32 mUnk_14;
+    /* 14 */ MapObjectId mUnk_14;
     /* 18 */ unk32 mUnk_18;
     /* 1C */ unk8 mUnk_1C;
     /* 1D */ unk8 mUnk_1D;

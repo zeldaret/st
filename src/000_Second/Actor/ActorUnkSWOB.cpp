@@ -21,11 +21,11 @@ ARM ActorProfileUnkSWOB::ActorProfileUnkSWOB() :
 ARM ActorUnkSWOB::ActorUnkSWOB() {}
 
 ARM bool ActorUnkSWOB::vfunc_18(unk32 param1) {
-    this->mUnk_9E = this->mUnk_78;
-    this->mUnk_94 = this->mUnk_6E;
-    this->mUnk_98 = this->mUnk_70;
-    this->mUnk_A0 = this->mUnk_9E + this->mUnk_6C;
-    this->mUnk_A2 = this->mUnk_75;
+    this->mUnk_9E = this->mUnk_5C.mUnk_1C_0;
+    this->mUnk_94 = this->mUnk_5C.mParams[1];
+    this->mUnk_98 = this->mUnk_5C.mParams[2];
+    this->mUnk_A0 = this->mUnk_9E + this->mUnk_5C.mParams[0];
+    this->mUnk_A2 = this->mUnk_5C.mUnk_18.y;
     this->mUnk_9C = this->mUnk_9E;
 
     if (this->func_ov000_02098a60(0)) {
@@ -61,30 +61,29 @@ ARM void ActorUnkSWOB::func_ov000_0209a9b4(unk32 param1) {
     }
 }
 
-// https://decomp.me/scratch/cUf0c
 ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
     if (this->mUnk_4C == 1) {
         return;
     }
 
-    switch (this->mUnk_72) {
+    switch (this->mUnk_5C.mParams[3]) {
         case 1:
             data_ov000_020b5214.func_ov000_0206db44(0xA3);
             break;
         case 3:
             data_ov000_020b5214.func_ov000_0206db44(0xA3);
 
-            s16 unk_78 = this->mUnk_78;
+            s16 unk_78 = this->mUnk_5C.mUnk_1C_0;
             if (unk_78 > 0) {
-                data_027e0cd8->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_75, 1);
+                data_027e0cd8->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_5C.mUnk_18.y, 1);
             }
             break;
         case 2: {
             Vec3p temp;
             Vec3p vec2;
             Vec3p vec;
-            Actor_5c_temp AStack_7c;
-            u16 auStack_80[4];
+            ActorParams AStack_7c;
+            u16 auStack_80[2];
             int j;
             u32 i;
 
@@ -109,7 +108,7 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
 
                     if (j < 10) {
                         func_01ffedac(auStack_80, &vec);
-                        func_01ffb9cc(&vec2, &vec);
+                        func_01ffb9cc(&temp, &vec);
                         i--;
                         j++;
                     }

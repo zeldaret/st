@@ -26,19 +26,34 @@ public:
 class UnkStruct_PlayerGet_64 {
 public:
     /* 00 */ unk32 mUnk_00;
+    /* 3C */ unk32 mUnk_3C;
+    /* 40 */ u16 mUnk_40;
 
-    UnkStruct_PlayerGet_64(unk32 *param1, unk32 param2);
+    UnkStruct_PlayerGet_64(void *param1, unk32 param2);
     ~UnkStruct_PlayerGet_64();
+
+    void func_ov000_0208a100();
+};
+
+class UnkStruct_PlayerGet_64_2 {
+public:
+    /* 00 */ unk32 mUnk_00;
+
+    UnkStruct_PlayerGet_64_2(void *param1, unk32 param2);
+    ~UnkStruct_PlayerGet_64_2();
 
     void func_ov000_0208a100();
 };
 
 class UnkStruct_ov000_0208f820_28_98 {
 public:
-    /* 00 */ unk8 mUnk_00[0x38];
+    /* 00 */ unk32 mUnk_00;
+    /* 00 */ unk32 mUnk_04;
+    /* 00 */ u16 mUnk_08;
+    /* 0C */ STRUCT_PAD(0x0C, 0x38);
     /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
-    /* 3C */ unk32 mUnk_3C;
-    /* 40 */ u16 mUnk_40;
+    // /* 3C */ unk32 mUnk_3C;
+    // /* 40 */ u16 mUnk_40;
 
     void func_ov093_0216f76c(Vec3p *param1, unk32 param2);
 };
@@ -47,9 +62,7 @@ class UnkStruct_ov000_0208f820_28 {
 public:
     /* 00 */ STRUCT_PAD(0x00, 0x38);
     /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
-    /* 3C */ unk32 mUnk_3C;
-    /* 40 */ u16 mUnk_40;
-    /* 42 */ STRUCT_PAD(0x42, 0x48);
+    /* 42 */ STRUCT_PAD(0x44, 0x48);
     /* 48 */ unk32 mUnk_48;
     /* 48 */ unk32 mUnk_4C;
     /* 48 */ unk32 mUnk_50;
@@ -147,11 +160,19 @@ public:
 
 class UnkStruct_ov000_0208f820_04 {
 public:
-    /* 00 */ u8 mUnk_00[4];
-    /* 04 */ u8 mUnk_04[4];
+    /* 00 */ union {
+        u8 mUnk_00[4];
+        u16 mUnk_00_s16;
+        u32 mUnk_00_s32;
+    };
+    /* 04 */ union {
+        u8 mUnk_04[4];
+        u16 mUnk_04_s16;
+        u32 mUnk_04_s32;
+    };
     /* 08 */ unk32 mUnk_08;
     /* 0C */ ItemId mItemId;
-    /* 14 */
+    /* 10 */
 
     UnkStruct_ov000_0208f820_04(unk32 param1, unk32 param2, unk32 param3, ItemId itemId) {
         *(u32 *) this->mUnk_00 = param1;
@@ -161,6 +182,11 @@ public:
     }
 
     UnkStruct_ov000_0208f820_04() {}
+};
+
+class UnkStruct_ov000_0208f820_44 {
+public:
+    void *mUnk_00;
 };
 
 class UnkStruct_ov000_0208f820 {
@@ -182,7 +208,7 @@ public:
     /* 38 */ Vec3p *mUnk_38;
     /* 3C */ Vec3p *mUnk_3C;
     /* 40 */ UnkStruct_ov000_0208f820_40 *mUnk_40;
-    /* 44 */ unk32 *mUnk_44;
+    /* 44 */ UnkStruct_ov000_0208f820_44 *mUnk_44;
     /* 48 */
 
     /* 00 */ virtual void vfunc_00();

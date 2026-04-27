@@ -4,6 +4,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Item/Item.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -20,7 +21,8 @@ public:
 class ActorUnkSZKU : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 94 */ STRUCT_PAD(0x94, 0xA0);
+    /* A0 */ ItemId mItemId;
 
     ActorUnkSZKU();
 

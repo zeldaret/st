@@ -64,15 +64,15 @@ public:
 
 class UnkStruct_PlayerGet_48 {
 public:
-    /* 00 */ unk8 mUnk_00[0x40];
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ STRUCT_PAD(0x04, 0x40);
     /* 40 */ unk16 mUnk_40;
     /* 42 */ unk16 mUnk_42;
-    /* 43 */ unk8 mUnk_43;
     /* 44 */ unk8 mUnk_44;
     /* 45 */ unk8 mUnk_45;
     /* 46 */ unk8 mUnk_46;
     /* 47 */ unk8 mUnk_47;
-    /* 48 */ unk8 mUnk_48[0x5E - 0x48];
+    /* 48 */ STRUCT_PAD(0x48, 0x5E);
     /* 5E */ unk16 mUnk_5E;
     /* 60 */ unk8 mUnk_60;
     /* 61 */ unk8 mUnk_61;
@@ -87,7 +87,7 @@ public:
     /* 04C */ unk32 *mUnk_4C;
     /* 050 */ UnkStruct_PlayerGet_50 *mUnk_50;
     /* 054 */ UnkStruct_ov000_0208f820_04 mUnk_54;
-    /* 064 */ UnkStruct_PlayerGet_64 mUnk_64;
+    /* 064 */ UnkStruct_PlayerGet_64_2 mUnk_64;
     /* 068 */ unk32 mUnk_68;
     /* 06C */ unk32 mUnk_6C; // scale
     /* 070 */ unk16 mUnk_70; // angle/rotation

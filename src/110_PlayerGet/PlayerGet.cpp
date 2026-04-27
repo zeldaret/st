@@ -13,6 +13,7 @@
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
+#include "Unknown/UnkStruct_027e0cf8.hpp"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
@@ -26,6 +27,9 @@ struct UnkStruct_02186240 {
 };
 UnkStruct_02186240 data_ov110_02186240;
 
+extern const char *data_ov000_020aa240; // .nsbtx
+extern const char *data_ov000_020aa248; // .nsbmd
+
 extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
 extern "C" void func_01ffc5a0(UnkSystem4 *, unk32, u16, void *, unk32);
@@ -35,16 +39,16 @@ extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, Vec3p *);
 extern unk32 *data_027e0958;
 extern "C" void func_ov024_020d6370(unk32 *, ItemId);
 extern unk32 *data_ov024_020d86b0;
-extern "C" void func_ov000_0208ba10(char *, void *, unk32);
+extern "C" void func_ov000_0208ba10(void *, void *, unk32);
 extern "C" unk32 func_ov000_020a4c00(ItemId itemId);
-extern "C" void func_02015ea8(unk32, unk16 *);
+extern "C" void func_02015ea8(unk32, void *);
 extern "C" void func_02015628(char *, char *, unk32, void *, size_t);
 extern "C" void func_02015664(char *, unk32);
 extern "C" void func_020156c8(char *, char *, unk32);
 extern "C" void func_020156f4(char *);
 extern "C" void func_02015644(char *);
 
-extern "C" UnkResourceStruct *func_ov000_0205abcc(char *, char *, unk32, unk32, unk32);
+extern "C" UnkResourceStruct *func_ov000_0205abcc(void *, void *, unk32, unk32, unk32);
 extern "C" unk32 func_ov000_02077590(unk32);
 
 static const unk32 data_ov110_02185dc4[1] = {8};
@@ -186,6 +190,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
     return false;
 }
 
+// BMG IDs
 static const unk32 data_ov110_02185de8[] = {
     0x30001,  0x30002,  0xB00D6,  0x8007A,  0x30003, 0x8007B, 0x8007C, 0x8007D, 0x8007E, 0x30004,  0x30005, 0x30006,  0x30007,
     0x30008,  0x30009,  0x3000A,  0x3000B,  0x3000C, 0x3000D, 0x3000E, 0x3000F, 0xD0000, 0xD0001,  0xD0002, 0xD0003,  0xF00EB,
@@ -243,9 +248,9 @@ ARM PlayerGet::~PlayerGet() {
 
     UnkStruct_ov000_0208f820_28_98 *pUnk_28_98 = this->mUnk_28->mUnk_98;
     if (pUnk_28_98 != 0) {
-        pUnk_28_98->mUnk_40 &= ~0x10;
+        pUnk_28_98->mUnk_38.mUnk_40 &= ~0x10;
 
-        if (pUnk_28_98->mUnk_40 == 0) {
+        if (pUnk_28_98->mUnk_38.mUnk_40 == 0) {
             // real?
             pUnk_28_98->mUnk_38.~UnkStruct_PlayerGet_64();
         }
@@ -273,24 +278,25 @@ ARM bool PlayerGet::func_ov110_02186b8c() {
 }
 #endif
 
+// https://decomp.me/scratch/ZAW2N
 ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
-    ItemManager *pItemManager;
     ItemId itemId;
+    ItemManager *pItemManager;
     Actor *iVar10;
     Vec3p *pUnk_38;
     Vec3p *pUnk_3c;
-    char auStack_108[12];
-    Vec3p VStack_fc;
-    unk32 uStack_f0[4];
-    unk32 auStack_30[5];
 
     switch (param1->mUnk_04) {
         case 0x39:
-            *(u32 *) this->mUnk_54.mUnk_00 = param1->mUnk_10.x;
-            *(u32 *) this->mUnk_54.mUnk_04 = param1->mUnk_10.y;
-            this->mUnk_54.mUnk_08          = param1->mUnk_10.z;
-            pItemManager                   = this->mUnk_28->pItemManager;
-            itemId                         = param1->mUnk_1C;
+            Vec3p temp;
+            itemId                    = param1->mUnk_1C;
+            temp.x                    = param1->mUnk_10.x;
+            temp.y                    = param1->mUnk_10.y;
+            temp.z                    = param1->mUnk_10.z;
+            this->mUnk_54.mUnk_08     = temp.z;
+            this->mUnk_54.mUnk_00_s32 = temp.x;
+            this->mUnk_54.mUnk_04_s32 = temp.y;
+            pItemManager              = this->mUnk_28->pItemManager;
 
             switch (itemId) {
                 case ItemId_BombBag:
@@ -323,8 +329,9 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             this->mUnk_54.mItemId  = itemId;
             this->mUnk_70          = 0;
             this->mUnk_2C->mUnk_58 = 0;
-            func_ov000_0208ba10(auStack_108, &this->mUnk_24->mUnk_25, 0);
-            this->mUnk_40->mUnk_00 = 0x8000;
+            char auStack_108[12];
+            func_ov000_0208ba10(auStack_108, &this->mUnk_24->mUnk_94, 0);
+            *(s16 *) &this->mUnk_40->mUnk_00 = 0x8000;
 
             pUnk_38    = this->mUnk_38;
             pUnk_38->x = 0;
@@ -335,7 +342,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             pUnk_3c->y = 0;
             pUnk_3c->z = 0;
 
-            if (((*(u16 *) this->mUnk_54.mUnk_00 << 0x10) >> 0x1E) != 1) {
+            if (((u32) (u16) this->mUnk_54.mUnk_00_s16 << 16) >> 30 != 1) {
                 return;
             }
 
@@ -352,48 +359,44 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             break;
         case 0x3A:
             if (this->mUnk_54.mItemId != ItemId_Nothing) {
-                if (func_ov000_020a4c00(this->mUnk_54.mItemId) == 0) {
-                    this->mUnk_8C.vfunc_08(0);
-                } else {
-                    unk32 niVar10;
+                unk32 niVar10 = func_ov000_020a4c00(this->mUnk_54.mItemId);
 
+                if (niVar10 == 0) {
+                    this->mUnk_8C.vfunc_08(NULL);
+                } else {
                     if (this->mUnk_54.mItemId == ItemId_LokomoSword) {
                         niVar10 = func_ov000_020a4c00(ItemId_NormalSword);
                     }
 
-                    unk16 auStack_110[2];
-                    unk16 acStack_a6[2];
-                    unk16 auStack_48[2];
-                    unk16 auStack_64[2];
-                    unk16 acStack_e0[2];
-                    size_t len;
+                    wchar_t pathBuffer[32];
+                    char modelPath[64];
+                    u16 idStr[5];
 
-                    auStack_110[0] = 0;
-                    auStack_110[1] = 0;
-                    func_02015ea8(niVar10, auStack_110);
-                    acStack_a6[1] = 0;
-                    strncpy((char *) acStack_e0, "Player/get/", 0x39);
-                    len = strlen((char *) acStack_e0);
-                    strncpy((char *) acStack_e0 + len, (char *) auStack_110, 0x39 - len);
-                    auStack_64[1] = 0;
-                    strncpy((char *) acStack_a6, (char *) acStack_e0, 0x3f);
-                    len = strlen((char *) acStack_a6);
-                    strncpy((char *) acStack_a6 + len, ".nsbmd", 0x3f - len);
-                    func_02015628((char *) auStack_64, (char *) acStack_a6, 0, &data_ov110_02186240,
-                                  sizeof(UnkStruct_02186240));
-                    func_02015664((char *) auStack_64, 0x10);
-                    strncpy((char *) acStack_a6, (char *) acStack_e0, 0x3f);
-                    len = strlen((char *) acStack_a6);
-                    strncpy((char *) acStack_a6 + len, ".nsbtx", 0x3f - len);
-                    func_020156c8((char *) auStack_48, (char *) acStack_a6, 0);
+                    idStr[0] = 0;
+                    idStr[1] = 0;
+                    func_02015ea8(niVar10, idStr);
+                    idStr[4] = '\0';
 
-                    unk32 var_r1_2;
-                    UnkResourceStruct *ret =
-                        func_ov000_0205abcc((char *) auStack_64, (char *) auStack_48, 0, 1, this->mUnk_30->mUnk_24);
+                    strncpy((char *) pathBuffer, "Player/get/", 0x39);
+                    size_t l = strlen((char *) pathBuffer);
+                    strncpy((char *) pathBuffer + l, (char *) idStr, 0x39 - l);
+                    pathBuffer[31] = '\0';
 
-                    this->mUnk_8C.vfunc_08(GetUnkPointer1_Impl(ret));
-                    func_020156f4((char *) auStack_48);
-                    func_02015644((char *) auStack_64);
+                    strncpy(modelPath, (char *) pathBuffer, 0x3F);
+                    l = strlen(modelPath);
+                    strncpy(modelPath + l, data_ov000_020aa248, 0x3F - l);
+
+                    UnkFileSystem4 fs4(modelPath, 0, (unk32) &data_ov110_02186240, sizeof(UnkStruct_02186240));
+                    fs4.vfunc_08(0x10);
+
+                    strncpy(modelPath, (char *) pathBuffer, 0x3F);
+                    l = strlen(modelPath);
+                    strncpy(modelPath + l, data_ov000_020aa240, 0x3F - l);
+
+                    UnkFileSystem2 fs2(modelPath, 0);
+                    UnkResourceStruct *res = func_ov000_0205abcc((void *) &fs4, (void *) &fs2, 0, 1, this->mUnk_30->mUnk_24);
+
+                    this->mUnk_8C.vfunc_08(GetUnkPointer1_Impl(res));
                 }
 
                 switch (this->mUnk_54.mItemId) {
@@ -409,8 +412,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             }
 
             UnkStruct_027e09bc_0c *uVar11 = data_027e09bc->mUnk_0C;
-            unk32 uVar6                   = func_ov000_02077590(4);
-            uVar11->func_ov000_0207834c(this->mUnk_34, uVar6, 0);
+            uVar11->func_ov000_0207834c(this->mUnk_34, func_ov000_02077590(4), 0);
 
             UnkStruct_PlayerGet_48 *pUnk_48 = this->mUnk_48;
             pUnk_48->mUnk_42                = 0x1000;
@@ -418,19 +420,48 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             pUnk_48->mUnk_5E                = 0x1000;
             pUnk_48->mUnk_63                = 0;
 
-            if (this->mUnk_44 != NULL) {
+            if (this->mUnk_44->mUnk_00 != NULL) {
                 this->mUnk_64.func_ov000_0208a100();
             }
 
-            // pUnk24 = this->mUnk_24;
-            bool bVar8;
+            bool var_r1_4    = 0;
+            void **temp_r5_2 = this->mUnk_24->mUnk_78;
+            if (temp_r5_2 != NULL) {
+                u16 temp_r6 = *(u16 *) temp_r5_2;
+                bool var_r3 = 1;
+                bool var_r2 = 0;
 
-            // ...
+                if ((temp_r6 != 0x100) && (temp_r6 != 0x101)) {
+                    var_r3 = 0;
+                }
 
-            UnkStruct_ov000_0208f820_28_98 *pUnk28_98 = this->mUnk_28->mUnk_98;
-            if (!bVar8 && pUnk28_98 != NULL) {
-                pUnk28_98->mUnk_40 |= 0x10;
-                this->mUnk_64.func_ov000_0208a100();
+                if (var_r3 != 0) {
+                    bool var_r0_2;
+
+                    if (temp_r6 == 0x101) {
+                        var_r0_2 = 0;
+                    } else {
+                        var_r0_2 = ((u16 *) temp_r5_2)[1];
+                    }
+
+                    if (var_r0_2 == 1) {
+                        var_r2 = 1;
+                    }
+                }
+
+                if (var_r2 != 0) {
+                    var_r1_4 = 1;
+                }
+            }
+
+            if (!var_r1_4) {
+                UnkStruct_ov000_0208f820_28_98 *pUnk28_98 = this->mUnk_28->mUnk_98;
+
+                if (pUnk28_98 != NULL) {
+                    UnkStruct_PlayerGet_64 *ptr = &pUnk28_98->mUnk_38;
+                    ptr->mUnk_40 |= 0x10;
+                    this->mUnk_64.func_ov000_0208a100();
+                }
             }
 
             this->mUnk_73 = 0;
@@ -441,26 +472,31 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                 case ItemId_27:
                 case ItemId_28:
                 case ItemId_29:
+                    data_ov000_020b51b8.func_ov000_0206c96c(data_027e0cd8->mUnk_0C->func_ov000_02080a44());
+                    this->mUnk_73 = 1;
                     break;
                 default:
-                    return;
+                    break;
             }
 
-            data_ov000_020b51b8.func_ov000_0206c96c(data_027e0cd8->mUnk_0C->func_ov000_02080a44());
-            this->mUnk_73 = 1;
             break;
         case 0x3B:
             this->mUnk_72 = 0;
 
             if (this->mUnk_54.mItemId != ItemId_Nothing) {
+                unk32 uStack_f0[4];
+                Vec3p VStack_fc;
+
                 Vec3p_Add(this->mUnk_34, &data_ov110_021861ec.mUnk_00, &VStack_fc);
+                data_027e0cec->func_ov000_0209feac(0x874, &VStack_fc, 1, 0, 0);
+                uStack_f0[0] = 0x870;
                 uStack_f0[1] = 0x871;
                 uStack_f0[2] = 0x872;
-                uStack_f0[0] = 0x870;
                 uStack_f0[3] = 0x873;
-                data_027e0cec->func_ov000_020a0000(this->mUnk_EC, this->mUnk_FC, uStack_f0, &VStack_fc, 1);
+                data_027e0cec->func_ov000_020a0000(this->mUnk_EC, &this->mUnk_FC, uStack_f0, &VStack_fc, 1);
             }
 
+            data_027e0cf8->func_ov024_020c7828(this->mUnk_54.mItemId);
             UnkStruct_ov000_02067bc4::UnkStruct1 auStack_30;
             data_ov000_020b504c.func_ov000_02067cf8(ItemManager::func_ov110_02185da4(this->mUnk_54.mItemId), 0, &auStack_30);
             break;

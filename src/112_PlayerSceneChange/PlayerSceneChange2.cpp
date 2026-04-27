@@ -31,7 +31,7 @@ ARM void PlayerSceneChange2::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param
 
     func_ov000_0208ba10(auStack_18, &this->mUnk_24->mUnk_94, 0);
 
-    if (this->mUnk_44[0] != 0) {
+    if (this->mUnk_44->mUnk_00 != 0) {
         this->mUnk_28->func_ov000_0208cf20(0x1400, 0);
     }
 

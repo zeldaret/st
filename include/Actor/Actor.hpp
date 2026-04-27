@@ -18,40 +18,41 @@
     #define OV040_ARM ARM
 #endif
 
-class Actor_5c_Base {
+class ActorParams {
 public:
-    /* 00 */ Vec3p mUnk_00;
-    /* 0C */ s16 mUnk_0C;
-    /* 0E */ unk16 mUnk_0E; // padding?
-    /* 10 */
-
-    Actor_5c_Base() {};
-};
-
-class Actor_5c : public Actor_5c_Base {
-public:
-    /* 00 (base) */
-    // /* 04 */ STRUCT_PAD(0x04, 0x28);
-    // /* 28 */ unk32 mUnk_28;
-
-    Actor_5c() {};
-    void func_ov000_020975f8();
-};
-
-class Actor_5c_temp : public Actor_5c_Base {
-public:
-    /* 00 (base) */
-    /* 10 */ unk16 mUnk_10[3];
-    /* 16 */ STRUCT_PAD(0x16, 0x28);
+    /* 00 */ Vec3p mInitialPos;
+    /* 0C */ s16 mInitialAngle;
+    /* 0E */ s8 mUnk_0E;
+    /* 0F */ bool mUnk_0F;
+    /* 10 */ u16 mParams[4];
+    /* 18 */ Vec2b mUnk_18;
+    /* 1A */ u16 mUnk_1A;
+    /* 1C */ union {
+        unk32 mUnk_1C;
+        u16 mUnk_1C_0;
+        u16 mUnk_1C_2;
+    };
+    /* 20 */ union {
+        unk32 mUnk_20;
+        unk16 mUnk_20_0;
+        unk16 mUnk_20_2;
+    };
+    /* 24 */ unk16 mUnk_24;
+    /* 26 */ union {
+        unk16 mUnk_26;
+        unk8 mUnk_26_0;
+        unk8 mUnk_26_1;
+    };
     /* 28 */ unk32 mUnk_28;
+    /* 2C */ unk32 mUnk_2C;
+    /* 30 */
 
-    Actor_5c_temp() {};
     void func_ov000_020975f8();
 };
 
 class UnkStruct_ov000_020b539c {
 public:
-    /* 00 */ Actor_5c_Base mUnk_00[3];
+    /* 00 */ ActorParams mUnk_00;
     /* 30 */ ActorProfile *mUnk_30;
     /* 34 */
 
@@ -123,21 +124,7 @@ public:
     /* 52 */ u16 mUnk_52;
     /* 54 */ unk32 mUnk_54;
     /* 58 */ ActorFlags mFlags[1];
-    /* 5C */ Actor_5c mUnk_5C;
-    /* 6C */ u16 mUnk_6C; // actor user id?
-    /* 6E */ u16 mUnk_6E;
-    /* 70 */ u16 mUnk_70;
-    /* 70 */ u16 mUnk_72;
-    /* 74 */ u8 mUnk_74;
-    /* 74 */ u8 mUnk_75;
-    /* 76 */ u16 mUnk_76;
-    /* 78 */ u16 mUnk_78;
-    /* 7A */ unk16 mUnk_7A;
-    /* 7C */ unk32 mUnk_7C;
-    /* 80 */ s16 mUnk_80;
-    /* 80 */ unk16 mUnk_82;
-    /* 84 */ unk32 mUnk_84;
-    /* 88 */ unk32 mUnk_88;
+    /* 5C */ ActorParams mUnk_5C;
     /* 8C */ ActorRef mRef;
     /* 90 */ ActorProfile *mType;
     /* 94 */
@@ -170,6 +157,10 @@ public:
         *(u32 *) this->mFlags = 0;
     }
 
+    void Kill() {
+        UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+    }
+
     Actor();
 
     ActorId GetActorId();
@@ -195,9 +186,9 @@ public:
     s32 func_ov000_020985f0(void *param1);
     void func_ov000_0209862c(unk32 param1);
 
-    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c *param3, unk32 param4);
-    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c *param3);
-    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c param3);
+    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, ActorParams *param3, unk32 param4);
+    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, ActorParams *param3);
+    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, ActorParams param3);
     void func_ov000_020989e0();
 
     bool func_ov000_02098a60(unk32 param1);

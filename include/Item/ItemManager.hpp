@@ -126,15 +126,16 @@ public:
     TreasureManager();
     ~TreasureManager();
 
-    void func_ov000_020a9b10();
-    void func_ov000_020a9b2c();
-    void func_ov000_020a9b3c();
-    void func_ov000_020a9b4c();
+    void func_ov000_020a9b10(void *param1);
+    static unk32 func_ov000_020a9b2c(unk32 param1);
+    static unk32 func_ov000_020a9b3c(unk32 param1);
+    unk32 func_ov000_020a9b4c(unk32 param1);
     bool func_ov000_020a9c4c(TreasureType type);
     bool func_ov000_020a9c64();
     unk32 func_ov000_020a9c90(TreasureType type);
     bool func_ov000_020a9ca4(TreasureType type);
     void func_ov000_020a9cbc(TreasureType type, s32 amount);
+    static u32 func_ov000_020a9cfc(u8 *param1, u8 param2);
     static unk32 func_ov000_020a9d78(unk32 param1);
     static unk32 func_ov000_020a9e14(unk32 param1);
     static unk32 func_ov000_020a9eb0(unk32 param1);
@@ -142,7 +143,7 @@ public:
     ItemId func_ov000_020aa02c(ItemId itemId);
     void func_ov000_020aa0ac(ItemId itemId);
     void func_ov000_020aa200();
-    void func_ov000_020aa210();
+    bool func_ov000_020aa210();
 };
 
 extern TreasureManager *data_ov000_020b6510;

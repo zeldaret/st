@@ -169,7 +169,7 @@ ARM FileSelect_UnkClass7::FileSelect_UnkClass7() {
     for (int i = 0; i < ARRAY_LEN(this->mUnk_004.mUnk_000); i++) {
         this->mUnk_004.mUnk_000[i].func_ov000_0206082c(0x8F, data_ov019_020d1bcc[gRandom.Next32(0, 3)]);
 
-        u16 value = gRandom.ConditionalNext32(this->mUnk_004.mUnk_000[i].func_ov000_02060c28());
+        u16 value = gRandom.ConditionalNext16(this->mUnk_004.mUnk_000[i].func_ov000_02060c28());
         this->mUnk_004.mUnk_000[i].func_ov000_02060bd8(value);
 
         Vec2us pos;

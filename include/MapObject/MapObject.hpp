@@ -95,7 +95,7 @@ public:
 
 class MapObject_20 {
 public:
-    /* 00 */ u16 mUnk_00[4];
+    /* 00 */ u16 mUnk_00[4]; // parameters
     /* 08 */ u8 mUnk_08[2];
     /* 0A */ u16 mUnk_0A[2];
     /* 0E */ unk16 mUnk_0E;
@@ -125,7 +125,7 @@ public:
     /* 1B */ unk8 mUnk_1B;
     /* 1C */ MapObjFlags mFlags[1];
     /* 1E */ unk16 mUnk_1E;
-    /* 20 */ MapObject_20 mUnk_20;
+    /* 20 */ MapObject_20 mUnk_20; // parameters
     /* 38 */ unk8 mUnk_38;
     /* 39 */ unk8 mUnk_39;
     /* 3A */ Vec2b mUnk_3A;
@@ -133,7 +133,7 @@ public:
     /* 40 */
 
     // data_ov000_020b3590
-    /* 00 */ virtual bool vfunc_00();
+    /* 00 */ virtual bool vfunc_00(); // Init? the newly-created map object is deleted if this returns false
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();

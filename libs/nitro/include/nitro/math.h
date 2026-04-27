@@ -127,7 +127,11 @@ union Vec3p {
 
     Vec3p() {}
     Vec3p(Vec3p &from) {
+    #if __MWERKS__
         this->coords = from.coords;
+    #else
+        *this = from;
+    #endif
     }
     Vec3p(q20 X, q20 Y, q20 Z) {
         x = X;

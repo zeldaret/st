@@ -28,8 +28,8 @@ public:
 
     ~UnkStruct_ov000_020b5d34() {}
 
-    MapObjectProfile *func_ov000_0209c6b8(unk32 param1);
-    void func_ov000_0209c6f0();
+    MapObjectProfile *GetProfileFromId(MapObjectId mapObjId);
+    MapObject *CreateMapObject(MapObjectId mapObjId);
 
     static unk32 func_ov000_0209c718(u32 param1);
 };

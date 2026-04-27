@@ -40,13 +40,25 @@ struct Random {
         return (((this->GetRandomValue() >> 32) * (max - min)) >> 32) + min;
     }
 
-    u32 ConditionalNext32(u32 value) {
+    u16 ConditionalNext16(u32 value) {
         this->UpdateRandomValue();
 
         u64 result = this->GetRandomValue() >> 32;
 
         if (value != 0) {
             result = (result * value) >> 32;
+        }
+
+        return result;
+    }
+
+    u32 ConditionalNext32(u32 value) {
+        this->UpdateRandomValue();
+
+        u32 result = this->GetRandomValue() >> 32;
+
+        if (value != 0) {
+            return ((u64) result * value) >> 32;
         }
 
         return result;

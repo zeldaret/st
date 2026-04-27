@@ -80,10 +80,10 @@ typedef void (*UnkCallback2)();
 
 class UnkStruct_ov000_020b504c_Sub3 : public SysObject {
 public:
-    /* 00 */ SectionINF1 *mUnk_00;
-    /* 04 */ BMGHeader *mUnk_04;
-    /* 08 */ BMGHeader *mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
+    /* 00 */ SectionINF1 **mUnk_00;
+    /* 04 */ BMGHeader **mUnk_04;
+    /* 08 */ BMGHeader **mUnk_08;
+    /* 0C */ SectionINF1 *mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */
 
@@ -117,7 +117,7 @@ public:
 
     void *func_ov000_02067bb4(unk32 param1);
     UnkStruct_ov000_02067bc4 *func_ov000_02067bc4(unk32);
-    unk8 func_ov000_02067cf8(unk32 param1, unk32 param2, UnkStruct_ov000_02067bc4::UnkStruct1 *param3);
+    unk8 func_ov000_02067cf8(unk32 param1, unk32 param2, UnkStruct_ov000_02067bc4::UnkStruct1 *param3); // ShowText?
     void func_ov000_02067e60(u8 param1, unk32 param2);
     unk32 func_ov000_020682c0(unk32 param1);
 
@@ -134,4 +134,5 @@ public:
     void func_ov001_020be6f4(void);
 };
 
+// gMessageManager?
 extern UnkStruct_ov000_020b504c data_ov000_020b504c;

@@ -17,14 +17,14 @@ ARM Actor::Actor() {
     this->mUnk_52 = 0;
     this->mUnk_54 = 0;
     this->ResetFlags();
-    this->mUnk_84 = 0;
+    this->mUnk_5C.mUnk_28 = 0;
     this->mUnk_5C.func_ov000_020975f8();
     this->mRef.Reset();
     this->mType = NULL;
-    _MI_CpuCopy(&data_ov000_020b539c_eur.mUnk_00, &this->mUnk_5C, sizeof(data_ov000_020b539c_eur.mUnk_00));
-    this->mPos     = this->mUnk_5C.mUnk_00;
-    this->mPrevPos = this->mUnk_5C.mUnk_00;
-    this->mAngle   = this->mUnk_5C.mUnk_0C;
+    _MI_CpuCopy(&data_ov000_020b539c_eur.mUnk_00, &this->mUnk_5C, sizeof(ActorParams));
+    this->mPos     = this->mUnk_5C.mInitialPos;
+    this->mPrevPos = this->mUnk_5C.mInitialPos;
+    this->mAngle   = this->mUnk_5C.mInitialAngle;
     SET_FLAGS(this->mFlags, ActorFlag_Alive, ActorFlag_Visible, ActorFlag_Active, ActorFlag_14);
     this->mUnk_44 = 0xFF;
     this->mUnk_46 = 0;
@@ -76,8 +76,8 @@ ARM void Actor::func_ov000_020984d0() {
 }
 
 ARM void Actor::func_ov000_020984f0() {
-    if (this->mUnk_80 >= 0) {
-        data_027e0cd8->func_ov000_02081ecc(this->mUnk_80, 1);
+    if (this->mUnk_5C.mUnk_24 >= 0) {
+        data_027e0cd8->func_ov000_02081ecc(this->mUnk_5C.mUnk_24, 1);
     }
 }
 

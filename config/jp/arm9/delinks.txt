@@ -70,6 +70,14 @@ libs/c/src/ansi_files.c:
     .data       start:0x02045c1c end:0x02045d00
     .bss        start:0x02052d20 end:0x02053020
 
+libs/c/src/float.c:
+    complete
+    .data       start:0x02045d00 end:0x02045d04
+
+libs/c/src/locale.c:
+    complete
+    .data       start:0x02045d04 end:0x02045f20
+
 libs/c/src/arith.c:
     complete
     .text       start:0x02034e04 end:0x02034e1c
@@ -115,14 +123,6 @@ libs/c/src/string.c:
 libs/c/src/wmem.c:
     complete
     .text       start:0x02035728 end:0x02035760
-
-libs/c/src/float.c:
-    complete
-    .data       start:0x02045d00 end:0x02045d04
-
-libs/c/src/locale.c:
-    complete
-    .data       start:0x02045d04 end:0x02045f20
 
 libs/c/src/wprintf.c:
     .text       start:0x02035760 end:0x0203768c
