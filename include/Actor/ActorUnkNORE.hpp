@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
@@ -26,7 +24,7 @@ public:
 
     /* 4C */ virtual ~ActorUnkNORE() override;
 
-    void func_ov031_020f7f8c(void);
+    bool func_ov031_020f7f8c(void);
 };
 
 class ActorProfileUnkNORE : public ActorProfile {
