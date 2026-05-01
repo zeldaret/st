@@ -61,14 +61,17 @@ static const UnkStruct_ov110_02185dc8 data_ov110_02185dc8[] = {
     {ItemId_AncientShield, ItemFlag_AncientShield}, {ItemId_PanFlute, ItemFlag_PanFlute},
 };
 
-// non-matching
-ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
-    s16 itemFlag_s16;
-    ItemFlag itemFlag;
-    ItemFlag temp_r0_5;
-    u32 temp_r2;
-    u32 i;
+static inline s16 GetItemFlag(ItemId itemId) {
+    for (u32 i = 0; i < ARRAY_LEN(data_ov110_02185dc8); i++) {
+        if (itemId == data_ov110_02185dc8[i].mItemId) {
+            return data_ov110_02185dc8[i].mItemFlag;
+        }
+    }
 
+    return ItemFlag_None;
+}
+
+ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
     switch (itemId) {
         case ItemId_NormalKey:
             this->func_ov000_020a87c8(1);
@@ -133,7 +136,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
             }
             break;
         default:
-            itemFlag = ItemManager::func_ov000_020a8984(itemId);
+            ItemFlag itemFlag = ItemManager::func_ov000_020a8984(itemId);
 
             if (itemFlag != ItemFlag_None) {
                 this->func_ov000_020a863c(itemFlag);
@@ -153,30 +156,23 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
 
                 if (this->mEquippedItem == ItemFlag_None) {
                     this->mEquippedItem = itemFlag;
-                    data_ov024_020d8698->func_ov024_020cd458(itemFlag, 0);
+                    data_ov024_020d8698->func_ov024_020cd458(this->mEquippedItem, 0);
                 }
             } else {
-                itemFlag_s16 = ItemFlag_None;
+                itemFlag = GetItemFlag(itemId);
 
-                for (i = 0; i < ARRAY_LEN(data_ov110_02185dc8); i++) {
-                    if (itemId == data_ov110_02185dc8[i].mItemId) {
-                        itemFlag_s16 = data_ov110_02185dc8[i].mItemFlag;
-                        break;
-                    }
-                }
-
-                if (itemFlag_s16 != ItemFlag_None) {
-                    this->func_ov000_020a863c(itemFlag_s16);
+                if (itemFlag != ItemFlag_None) {
+                    this->func_ov000_020a863c(itemFlag);
                 }
             }
             break;
     }
 
-    temp_r0_5 = ItemManager::func_ov110_02185db4(itemId);
+    AdventureFlag advFlag = ItemManager::func_ov110_02185db4(itemId);
 
-    if (temp_r0_5 != 0) {
-        temp_r0_5 &= 0xFFFF;
-        SET_FLAG(data_027e09b8->mAdventureFlags, temp_r0_5);
+    if (advFlag != AdventureFlag_Nothing) {
+        advFlag &= 0xFFFF;
+        SET_FLAG(data_027e09b8->mAdventureFlags, advFlag);
     }
 
     data_027e0ce0->mUnk_34->func_ov110_02185d3c(itemId);
@@ -313,7 +309,7 @@ static const unk32 data_ov110_02185de8[] = {
 };
 
 // Adventure Flags
-static const unk32 data_ov110_02185fbc[] = {
+static const AdventureFlag data_ov110_02185fbc[] = {
     AdventureFlag_Nothing, // ItemId_Nothing
     AdventureFlag_Nothing, // ItemId_NormalShield
     AdventureFlag_ObtainedRecruitSword, // ItemId_NormalSword
@@ -1054,6 +1050,6 @@ ARM unk32 ItemManager::func_ov110_02185da4(unk32 param1) {
     return data_ov110_02185de8[param1];
 }
 
-ARM ItemFlag ItemManager::func_ov110_02185db4(ItemId itemId) {
+ARM AdventureFlag ItemManager::func_ov110_02185db4(ItemId itemId) {
     return data_ov110_02185fbc[itemId];
 }

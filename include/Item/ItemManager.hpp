@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Item/Item.hpp"
+#include "Save/AdventureFlags.hpp"
 #include "System/SysNew.hpp"
 #include "global.h"
 #include "types.h"
@@ -110,7 +111,7 @@ public:
 
     bool func_ov110_02184a40(ItemId itemId);
     static ItemId func_ov110_02185da4(ItemId itemId);
-    static ItemFlag func_ov110_02185db4(ItemId itemId);
+    static AdventureFlag func_ov110_02185db4(ItemId itemId);
 };
 
 class TreasureManager : public ItemManager {
