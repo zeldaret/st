@@ -10,6 +10,8 @@ public:
     /* 7F */ s8 mNumPostedCards; // current amount of posted postcards
     /* 80 */ STRUCT_PAD(0x80, 0x90);
     /* 90 */
+
+    unk32 func_ov024_020d655c();
 };
 
 extern UnkStruct_ov024_020d86b0 *data_ov024_020d86b0;

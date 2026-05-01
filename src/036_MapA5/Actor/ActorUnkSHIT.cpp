@@ -2,7 +2,11 @@
 
 #include "Actor/ActorUnkSHIT.hpp"
 #include "Item/ItemManager.hpp"
+#include "Save/AdventureFlags.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_027e09b8.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "Unknown/UnkStruct_ov024_020d86b0.hpp"
 
 ARM DECL_PROFILE(ActorProfileUnkSHIT);
 
@@ -35,7 +39,7 @@ ARM void ActorUnkSHIT::func_ov036_0211c998(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211c9ac(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211c9cc(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211c9d4(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211cddc(void) {}
+ARM unk32 ActorUnkSHIT::func_ov036_0211cddc(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211cdfc(void) {}
 
 ARM u16 ActorUnkSHIT::func_ov036_0211ceec(void) {
@@ -167,8 +171,184 @@ ARM void ActorUnkSHIT::func_ov036_0211d254(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211d270(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211d28c(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211d2a8(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211d2dc(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211d570(void) {}
+
+ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
+    ItemManager *pIVar4 = data_027e0ce0->mUnk_2C;
+
+    switch (this->mItemId) {
+        case ItemId_NormalShield:
+            if (GET_FLAG(pIVar4->mUnk_08, ItemFlag_Shield)) {
+                return false;
+            }
+
+            break;
+        case ItemId_RedPotion:
+        case ItemId_PurplePotion:
+        case ItemId_YellowPotion:
+            if (pIVar4->func_ov000_020a8948()) {
+                return false;
+            }
+
+            break;
+        case ItemId_TenPriceCard:
+            if (data_ov024_020d86b0->func_ov024_020d655c() >= 0x63 ? 1 : 0) {
+                return false;
+            }
+
+            break;
+        case ItemId_DemonFossil:
+        case ItemId_StalfosSkull:
+        case ItemId_StarFragment:
+        case ItemId_BeeLarvae:
+        case ItemId_WoodHeart:
+        case ItemId_DarkPearlLoop:
+        case ItemId_WhitePearlLoop:
+        case ItemId_RutoCrown:
+        case ItemId_DragonScale:
+        case ItemId_PirateNecklace:
+        case ItemId_PalaceDish:
+        case ItemId_GoronAmber:
+        case ItemId_MysticJade:
+        case ItemId_AncientCoin:
+            if (data_ov000_020b6510->func_ov000_020a9ca4(this->mItemId - ItemId_DemonFossil)) {
+                return false;
+            }
+
+            break;
+        case ItemId_PricelessStone:
+        case ItemId_RegalRing:
+            return false;
+        case ItemId_HeartContainer:
+            if (this->mUnk_5C.mParams[3] == 5) {
+                if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_Unk_10F)) {
+                    return false;
+                }
+            } else {
+                if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_Unk_10E)) {
+                    return false;
+                }
+            }
+
+            break;
+        case ItemId_BombsRefill:
+            if (!GET_FLAG(pIVar4->mUnk_08, ItemFlag_Bombs)) {
+                return false;
+            }
+
+            {
+                u8 amount = pIVar4->mBombAmount;
+                if (amount >= pIVar4->func_ov000_020a8748()) {
+                    return false;
+                }
+            }
+
+            break;
+        case ItemId_ArrowsRefill:
+            if (!GET_FLAG(pIVar4->mUnk_08, ItemFlag_Bow)) {
+                return false;
+            }
+
+            {
+                u8 amount = pIVar4->mArrowAmount;
+                if (amount >= pIVar4->func_ov000_020a8728()) {
+                    return false;
+                }
+            }
+
+            break;
+        case ItemId_QuiverMedium:
+        case ItemId_QuiverLarge:
+            if (!GET_FLAG(pIVar4->mUnk_08, ItemFlag_Bow)) {
+                return false;
+            }
+
+            if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_BoughtGoronShopQuiver)) {
+                return false;
+            }
+
+            break;
+        case ItemId_BombBag:
+        case ItemId_BombBagMedium:
+        case ItemId_BombBagLarge:
+            if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_BoughtBombBagFromBeedle)) {
+                return false;
+            }
+
+            break;
+        default:
+            break;
+    }
+
+    return true;
+}
+
+ARM void ActorUnkSHIT::func_ov036_0211d570(unk32 param1) {
+    ItemManager *pIVar4 = data_027e0ce0->mUnk_2C;
+
+    switch (this->mItemId) {
+        case ItemId_NormalShield:
+            break;
+        case ItemId_RedPotion:
+            break;
+        case ItemId_PurplePotion:
+            break;
+        case ItemId_YellowPotion:
+            break;
+        case ItemId_TenPriceCard:
+            break;
+        case ItemId_DemonFossil:
+        case ItemId_StalfosSkull:
+        case ItemId_StarFragment:
+        case ItemId_BeeLarvae:
+        case ItemId_WoodHeart:
+        case ItemId_DarkPearlLoop:
+        case ItemId_WhitePearlLoop:
+        case ItemId_RutoCrown:
+        case ItemId_DragonScale:
+        case ItemId_PirateNecklace:
+        case ItemId_PalaceDish:
+        case ItemId_GoronAmber:
+        case ItemId_MysticJade:
+        case ItemId_AncientCoin:
+        case ItemId_PricelessStone:
+        case ItemId_RegalRing:
+            this->mUnk_2D3 = true;
+            break;
+        case ItemId_HeartContainer:
+            if (this->mUnk_5C.mParams[3] == 5) {
+                SET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_Unk_10F);
+            } else {
+                SET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_Unk_10E);
+            }
+
+            this->mUnk_2D3 = true;
+            break;
+        case ItemId_BombsRefill:
+            pIVar4->func_ov000_020a8820(10);
+            break;
+        case ItemId_ArrowsRefill:
+            pIVar4->func_ov000_020a87ec(10);
+            break;
+        case ItemId_QuiverMedium:
+        case ItemId_QuiverLarge:
+            SET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_BoughtGoronShopQuiver);
+            this->mUnk_2D3 = true;
+            break;
+        case ItemId_BombBag:
+        case ItemId_BombBagMedium:
+        case ItemId_BombBagLarge:
+            SET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_BoughtBombBagFromBeedle);
+            this->mUnk_2D3 = true;
+            break;
+        default:
+            break;
+    }
+
+    if (param1 == 0) {
+        pIVar4->GiveRupees(-this->func_ov036_0211cddc(), false, false);
+    }
+}
+
 ARM void ActorUnkSHIT::func_ov036_0211d75c(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211d774(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211d790(void) {}

@@ -221,7 +221,7 @@ enum ItemId_ {
 };
 
 #define MAX_TREASURE 99
-typedef s16 TreasureType;
+typedef s32 TreasureType;
 enum TreasureType_ {
     TreasureType_None           = -1,
     TreasureType_DemonFossil    = 0,

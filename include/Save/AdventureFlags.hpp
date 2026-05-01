@@ -292,7 +292,7 @@ enum AdventureFlag_ {
     /* 0x10D */ AdventureFlag_OpenedLargeDoorsTOS23F                  = FLAG(8, 13),
     /* 0x10E */ AdventureFlag_Unk_10E                                 = FLAG(8, 14),
     /* 0x10F */ AdventureFlag_Unk_10F                                 = FLAG(8, 15),
-    /* 0x110 */ AdventureFlag_Unk_110                                 = FLAG(8, 16),
+    /* 0x110 */ AdventureFlag_BoughtGoronShopQuiver                   = FLAG(8, 16),
     /* 0x111 */ AdventureFlag_BoughtBombBagFromBeedle                 = FLAG(8, 17),
     /* 0x112 */ AdventureFlag_WatchedFireLandVolcanoEruptionCS        = FLAG(8, 18),
     /* 0x113 */ AdventureFlag_PurchasedLumberFirstTime                = FLAG(8, 19),

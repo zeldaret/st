@@ -50,7 +50,7 @@ public:
     void func_ov036_0211c9ac(void);
     void func_ov036_0211c9cc(void);
     void func_ov036_0211c9d4(void);
-    void func_ov036_0211cddc(void);
+    unk32 func_ov036_0211cddc(void);
     void func_ov036_0211cdfc(void);
     u16 func_ov036_0211ceec(void);
     unk32 func_ov036_0211d0a8(void);
@@ -59,8 +59,8 @@ public:
     void func_ov036_0211d270(void);
     void func_ov036_0211d28c(void);
     void func_ov036_0211d2a8(void);
-    void func_ov036_0211d2dc(void);
-    void func_ov036_0211d570(void);
+    bool func_ov036_0211d2dc(void);
+    void func_ov036_0211d570(unk32 param1);
     void func_ov036_0211d75c(void);
     void func_ov036_0211d774(void);
     void func_ov036_0211d790(void);
