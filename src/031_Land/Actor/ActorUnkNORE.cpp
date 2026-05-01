@@ -16,7 +16,7 @@ ARM ActorProfileUnkNORE::ActorProfileUnkNORE() :
 
 ARM ActorUnkNORE::ActorUnkNORE() {}
 
-ARM bool ActorUnkNORE::func_ov031_020f7f8c(void) {
+ARM bool ActorUnkNORE::vfunc_18(unk32 param1) {
     Vec2b local_vec;
 
     UnkStruct_027e0cd8_0c *unk_obj = data_027e0cd8->mUnk_0C;
@@ -25,7 +25,7 @@ ARM bool ActorUnkNORE::func_ov031_020f7f8c(void) {
 
     unk_obj->func_ov000_020801b0(&local_vec, 7, 1);
 
-    this->mFlags[0] &= ~1;
+    UNSET_FLAG(this->mFlags, ActorFlag_Alive);
 
     return true;
 }
