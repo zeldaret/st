@@ -107,7 +107,61 @@ ARM u16 ActorUnkSHIT::func_ov036_0211ceec(void) {
     return 9999;
 }
 
-ARM void ActorUnkSHIT::func_ov036_0211d0a8(void) {}
+ARM unk32 ActorUnkSHIT::func_ov036_0211d0a8(void) {
+    if (this->mUnk_2D3) {
+        return 0x12;
+    }
+
+    switch (this->mItemId) {
+        case ItemId_SoldOutSign:
+            return 0x12;
+        case ItemId_NormalShield:
+            return 0x08;
+        case ItemId_RedPotion:
+            return 0x09;
+        case ItemId_PurplePotion:
+            return 0x0A;
+        case ItemId_YellowPotion:
+            return 0x0B;
+        case ItemId_TenPriceCard:
+            return 0x13;
+        case ItemId_DemonFossil:
+        case ItemId_StalfosSkull:
+        case ItemId_StarFragment:
+        case ItemId_BeeLarvae:
+        case ItemId_WoodHeart:
+        case ItemId_DarkPearlLoop:
+        case ItemId_WhitePearlLoop:
+        case ItemId_RutoCrown:
+        case ItemId_DragonScale:
+        case ItemId_PirateNecklace:
+        case ItemId_PalaceDish:
+        case ItemId_GoronAmber:
+        case ItemId_MysticJade:
+        case ItemId_AncientCoin:
+        case ItemId_PricelessStone:
+        case ItemId_RegalRing:
+            return 0x06;
+        case ItemId_HeartContainer:
+            return 0x07;
+        case ItemId_BombsRefill:
+            return 0x05;
+        case ItemId_ArrowsRefill:
+            return 0x03;
+        case ItemId_QuiverMedium:
+        case ItemId_QuiverLarge:
+            return 0x02;
+        case ItemId_BombBag:
+        case ItemId_BombBagMedium:
+        case ItemId_BombBagLarge:
+            return 0x04;
+        default:
+            break;
+    }
+
+    return 0x0D;
+}
+
 ARM void ActorUnkSHIT::func_ov036_0211d22c(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211d254(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211d270(void) {}

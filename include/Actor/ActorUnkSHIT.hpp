@@ -20,9 +20,11 @@ public:
 
 class ActorUnkSHIT : public Actor {
 public:
-    /* 00 (base) */
-    /* 94 */ STRUCT_PAD(0x94, 0xE4);
-    /* E4 */ ItemId mItemId;
+    /* 000 (base) */
+    /* 094 */ STRUCT_PAD(0x94, 0xE4);
+    /* 0E4 */ ItemId mItemId;
+    /* 0E8 */ STRUCT_PAD(0xE8, 0x2D3);
+    /* 2D3 */ bool mUnk_2D3;
 
     ActorUnkSHIT();
 
@@ -51,7 +53,7 @@ public:
     void func_ov036_0211cddc(void);
     void func_ov036_0211cdfc(void);
     u16 func_ov036_0211ceec(void);
-    void func_ov036_0211d0a8(void);
+    unk32 func_ov036_0211d0a8(void);
     void func_ov036_0211d22c(void);
     void func_ov036_0211d254(void);
     void func_ov036_0211d270(void);
