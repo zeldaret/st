@@ -368,7 +368,7 @@ THUMB bool ActorManager::func_ov001_020bb728(s32 param1) {
 THUMB void ActorManager::func_ov001_020bb7b0(ZeldaObjectList *pObjList) {
     for (s32 i = 0; i < pObjList->nEntries; i++) {
         u32 id                      = pObjList->aIdList[i];
-        ActorProfile *pActorProfile = data_ov000_020b539c_eur.func_ov000_020974dc(id);
+        ActorProfile *pActorProfile = data_ov000_020b539c_eur.GetProfileFromId(id);
 
         if (!this->func_ov001_020bb728(id) && pActorProfile != NULL) {
             pActorProfile->vfunc_08();

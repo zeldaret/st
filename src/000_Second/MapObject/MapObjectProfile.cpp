@@ -72,7 +72,7 @@ ARM void MapObjectProfile::func_ov000_0209c8ec(MapObjectProfile *thisx) {
         }
 
         if (thisx->mUnk_18 != 0) {
-            data_ov000_020b539c_eur.func_ov000_020974dc(thisx->mUnk_18)->vfunc_08();
+            data_ov000_020b539c_eur.GetProfileFromId(thisx->mUnk_18)->vfunc_08();
         }
 
         thisx->vfunc_08();

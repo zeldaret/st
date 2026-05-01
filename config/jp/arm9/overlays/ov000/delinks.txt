@@ -90,6 +90,10 @@ src/000_Second/MapObject/MapObjectMiniBlocks.cpp:
     .data       start:0x020b4f44 end:0x020b4fac
     .bss        start:0x020b7a38 end:0x020b7ab0
 
+src/000_Second/data_ov000_020af58c.cpp:
+    .text       start:0x020a6400 end:0x020a6410
+    .rodata     start:0x020b0d9c end:0x020b0f70
+
 src/000_Second/Cutscene/Cutscene.cpp:
     .text       start:0x020a902c end:0x020a9108
     .rodata     start:0x020b0f90 end:0x020b144c

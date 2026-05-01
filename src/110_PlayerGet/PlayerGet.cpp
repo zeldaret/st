@@ -42,7 +42,6 @@ extern unk32 *data_027e0958;
 extern "C" void func_ov024_020d6370(unk32 *, ItemId);
 extern unk32 *data_ov024_020d86b0;
 extern "C" void func_ov000_0208ba10(void *, void *, unk32);
-extern "C" unk32 func_ov000_020a4c00(ItemId itemId);
 extern "C" void func_02015ea8(unk32, void *);
 extern "C" void func_02015628(char *, char *, unk32, void *, size_t);
 extern "C" void func_02015664(char *, unk32);
@@ -577,9 +576,9 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             break;
         case 0x3A:
             if (this->mUnk_54.mItemId != ItemId_Nothing) {
-                unk32 niVar10 = func_ov000_020a4c00(this->mUnk_54.mItemId);
+                u32 niVar10 = func_ov000_020a4c00(this->mUnk_54.mItemId);
 
-                if (niVar10 == 0) {
+                if (niVar10 == GIModel_None) {
                     this->mUnk_8C.vfunc_08(NULL);
                 } else {
                     if (this->mUnk_54.mItemId == ItemId_LokomoSword) {

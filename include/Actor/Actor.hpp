@@ -58,7 +58,7 @@ public:
 
     ActorProfile **func_ov000_02073dc();
     ActorProfile **func_ov000_02073e8();
-    ActorProfile *func_ov000_020974dc(u32 id);
+    ActorProfile *GetProfileFromId(ActorId actorId);
 };
 
 typedef u32 ActorFlags;

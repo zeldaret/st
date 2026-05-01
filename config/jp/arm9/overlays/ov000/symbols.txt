@@ -2254,7 +2254,7 @@ _ZN24UnkStruct_ov000_020b539c18func_ov000_02073dcEv kind:function(arm,size=0xc) 
 _ZN24UnkStruct_ov000_020b539c18func_ov000_02073e8Ev kind:function(arm,size=0xc) addr:0x02098b9c
 func_ov000_02098ba8 kind:function(arm,size=0x50) addr:0x02098ba8
 func_ov000_02098bf8 kind:function(arm,size=0x98) addr:0x02098bf8
-_ZN24UnkStruct_ov000_020b539c19func_ov000_020974dcEj kind:function(arm,size=0x4c) addr:0x02098c90
+_ZN24UnkStruct_ov000_020b539c16GetProfileFromIdEj kind:function(arm,size=0x4c) addr:0x02098c90
 func_ov000_02098cdc kind:function(arm,size=0x20) addr:0x02098cdc
 func_ov000_02098cfc kind:function(arm,size=0x78) addr:0x02098cfc
 func_ov000_02098d74 kind:function(arm,size=0x1c) addr:0x02098d74
@@ -2827,7 +2827,7 @@ func_ov000_020a6374 kind:function(arm,size=0x4c) addr:0x020a6374
 func_ov000_020a63c0 kind:function(arm,size=0x10) addr:0x020a63c0
 _ZN19func_ov000_020a63d0D1Ev kind:function(arm,size=0x14) addr:0x020a63d0
 _ZN19func_ov000_020a63e4D0Ev kind:function(arm,size=0x1c) addr:0x020a63e4
-func_ov000_020a6400 kind:function(arm,size=0x10) addr:0x020a6400
+_Z19func_ov000_020a4c00i kind:function(arm,size=0x10) addr:0x020a6400
 func_ov000_020a6410 kind:function(arm,size=0xc4) addr:0x020a6410
 func_ov000_020a64d4 kind:function(arm,size=0x7c) addr:0x020a64d4
 func_ov000_020a6550 kind:function(arm,size=0x98) addr:0x020a6550
@@ -3269,7 +3269,7 @@ data_ov000_020b030a kind:data(any) addr:0x020b030a
 data_ov000_020b05e0 kind:data(word[246]) addr:0x020b05e0
 data_ov000_020b09b8 kind:data(word[246]) addr:0x020b09b8
 data_ov000_020b0d90 kind:data(any) addr:0x020b0d90
-data_ov000_020b0d9c kind:data(any) addr:0x020b0d9c
+data_ov000_020af58c kind:data(any) addr:0x020b0d9c
 data_ov000_020b0f70 kind:data(any) addr:0x020b0f70
 data_ov000_020b0f74 kind:data(any) addr:0x020b0f74
 data_ov000_020b0f80 kind:data(any) addr:0x020b0f80
