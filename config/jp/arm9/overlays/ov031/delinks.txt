@@ -133,6 +133,7 @@ src/031_Land/Actor/ActorUnkNORE.cpp:
     .text       start:0x020f9958 end:0x020f9a68
     .init       start:0x021134ec end:0x0211353c
     .ctor       start:0x0211457c end:0x02114580
+    .data       start:0x021166ac end:0x0211672c
     .bss        start:0x02118a8c end:0x02118ad8
 
 src/031_Land/Actor/ActorUnkFLEN.cpp:
