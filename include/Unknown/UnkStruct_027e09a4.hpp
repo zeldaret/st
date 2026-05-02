@@ -204,9 +204,9 @@ class UnkStruct_WarpUnk1 : public UnkStruct_0204a060_Base {
 public:
     /* 00 (base) */
     /* 24 */ STRUCT_PAD(0x24, 0x78);
-    /* 78 */ UnkStruct_SceneChange1 mUnk_78;
-    /* 8C */ unk32 mNextSceneIndex;
-    /* 90 */ STRUCT_PAD(0x90, 0xB4);
+    /* 78 */ UnkStruct_SceneChange1 mUnk_78; // current scene?
+    /* 8C */ UnkStruct_SceneChange1 mUnk_8C; // next scene
+    /* A0 */ STRUCT_PAD(0xA0, 0xB4);
     /* B4 */ unk32 mSpawnTransitionType; // the behavior of Link when entering a new scene
 };
 
