@@ -78,9 +78,9 @@ extern "C" void func_01ff930c(UnkStruct_ov000_0208f820_40 *, unk16, unk32);
 // https://decomp.me/scratch/c7PhN
 ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
     q4 *pSinCosTable = gSinCosTable;
-    UnkStruct_func_01fff498 stack4;
+    Vec2b stack4;
     s16 stack3;
-    UnkStruct_func_01fff498 stack2;
+    Vec2b stack2;
     UnkStackStruct1 stack;
 
     switch (param1->mUnk_04) {
@@ -147,8 +147,8 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                     break;
                 default:
                     if (this->mUnk_2C->mUnk_150 == 0x1000) {
-                        stack2.ptrIndex   = this->mUnk_2C->mUnk_150 >> 0x10;
-                        stack2.valueIndex = 0;
+                        stack2.y = this->mUnk_2C->mUnk_150 >> 0x10;
+                        stack2.x = 0;
 
                         MapObjectUnkDRTY *pDRTY = (MapObjectUnkDRTY *) gpMapObjManager->func_01fff498(stack2);
 
@@ -287,8 +287,8 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                 return;
             }
 
-            stack4.ptrIndex   = this->mUnk_8C >> 16;
-            stack4.valueIndex = 0;
+            stack4.y = this->mUnk_8C >> 16;
+            stack4.x = 0;
 
             MapObject *target = gpMapObjManager->func_01fff498(stack4);
             if (target != NULL && target->GetMapObjectId() == MapObjectId_WPHL) {

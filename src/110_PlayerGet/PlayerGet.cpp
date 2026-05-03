@@ -891,9 +891,9 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                 }
 
                 if (*(u16 *) this->mUnk_54.mUnk_00 == 0x1000) {
-                    UnkStruct_func_01fff498 stack;
-                    stack.ptrIndex   = this->mUnk_54.mUnk_00[0];
-                    stack.valueIndex = this->mUnk_54.mUnk_00[1];
+                    Vec2b stack;
+                    stack.x = this->mUnk_54.mUnk_00[0];
+                    stack.y = this->mUnk_54.mUnk_00[1];
 
                     MapObject *pMapObj = gpMapObjManager->func_01fff498(stack);
 

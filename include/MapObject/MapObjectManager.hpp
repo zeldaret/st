@@ -4,12 +4,9 @@
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "types.h"
 
-typedef void (*UnkCallback_func_01fff4cc)(void *, void *);
+#include <nitro/math.h>
 
-struct UnkStruct_func_01fff498 {
-    u8 ptrIndex;
-    u8 valueIndex;
-};
+typedef void (*UnkCallback_func_01fff4cc)(void *, void *);
 
 class MapObjectManager {
 public:
@@ -29,12 +26,12 @@ public:
     /* 6C */ void *mUnk_6C;
     /* 70 */
 
-    MapObject *func_01fff498(UnkStruct_func_01fff498 param1);
+    MapObject *func_01fff498(Vec2b param1);
     void func_01fff4cc(UnkCallback_func_01fff4cc param1, void *param2);
     MapObject **func_01fff520(UnkStruct_ov000_020b34c4 *param1, MapObject **param2);
     void func_01fff6d0(Vec3p *param1, s32 *param2, s32 *param3);
 
-    void func_ov000_0209c3a8();
+    MapObjectId func_ov000_0209c3a8(Vec2b *param1);
     void func_ov000_0209c3e8();
     void func_ov000_0209c444();
 

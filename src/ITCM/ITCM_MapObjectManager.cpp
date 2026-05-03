@@ -9,12 +9,12 @@ struct UnkStruct {
 
 extern "C" void func_01ffecdc(int, void *);
 
-MapObject *MapObjectManager::func_01fff498(UnkStruct_func_01fff498 param1) {
-    if (this->mUnk_0C[param1.valueIndex][param1.ptrIndex] < 0) {
+MapObject *MapObjectManager::func_01fff498(Vec2b param1) {
+    if (this->mUnk_0C[param1.x][param1.y] < 0) {
         return NULL;
     }
 
-    return this->mMapObjTable[this->mUnk_0C[param1.valueIndex][param1.ptrIndex]];
+    return this->mMapObjTable[this->mUnk_0C[param1.x][param1.y]];
 }
 
 void MapObjectManager::func_01fff4cc(UnkCallback_func_01fff4cc param1, void *param2) {

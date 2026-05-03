@@ -56,7 +56,6 @@ public:
     /* 3C */ virtual unk32 vfunc_3C();
     /* 40 */ virtual bool vfunc_40();
     /* 44 */ virtual bool vfunc_44();
-    /* 48 */ virtual void vfunc_48();
     /* 4C */ virtual void vfunc_4C();
     /* 50 */ virtual void vfunc_50();
     /* 54 */ virtual Vec2p *vfunc_54();
@@ -65,4 +64,5 @@ public:
     unk32 func_ov031_021037d0();
     bool func_ov031_02103864();
     void func_ov031_02103878();
+    void func_ov031_02103f48();
 };

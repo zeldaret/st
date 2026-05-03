@@ -1559,7 +1559,7 @@ _ZN18MapObjectChestBase8vfunc_14Ev kind:function(arm,size=0x108) addr:0x02105a8c
 _ZN18MapObjectChestBase8vfunc_3CEv kind:function(arm,size=0x100) addr:0x02105b94
 _ZN18MapObjectChestBase8vfunc_40Ev kind:function(arm,size=0x8) addr:0x02105c94
 _ZN18MapObjectChestBase8vfunc_44Ev kind:function(arm,size=0x8) addr:0x02105c9c
-_ZN18MapObjectChestBase8vfunc_48Ev kind:function(arm,size=0x58) addr:0x02105ca4
+_ZN18MapObjectChestBase19func_ov031_02103f48Ev kind:function(arm,size=0x58) addr:0x02105ca4
 _ZN18MapObjectChestBase8vfunc_4CEv kind:function(arm,size=0x28) addr:0x02105cfc
 _ZN18MapObjectChestBase8vfunc_50Ev kind:function(arm,size=0x2c) addr:0x02105d24
 _ZN18MapObjectChestBase8vfunc_54Ev kind:function(arm,size=0xc) addr:0x02105d50
@@ -2109,7 +2109,7 @@ __sinit_MapObjectUnkGRSS.cpp kind:function(arm,size=0x90) addr:0x02113b84
 __sinit_MapObjectUnkSWHT.cpp kind:function(arm,size=0x70) addr:0x02113c14
 __sinit_MapObjectUnkBMFL.cpp kind:function(arm,size=0x50) addr:0x02113c84
 __sinit_MapObjectUnkTRES.cpp kind:function(arm,size=0x6c) addr:0x02113cd4
-__sinit_ov031_02113d40 kind:function(arm,size=0x30) addr:0x02113d40
+__sinit_MapObjectChestBase.cpp kind:function(arm,size=0x30) addr:0x02113d40
 __sinit_MapObjectUnkTRED.cpp kind:function(arm,size=0x6c) addr:0x02113d70
 __sinit_MapObjectUnkTREW.cpp kind:function(arm,size=0x6c) addr:0x02113ddc
 __sinit_MapObjectUnkTREN.cpp kind:function(arm,size=0x6c) addr:0x02113e48
@@ -2173,7 +2173,7 @@ __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x021144b0
 .p__sinit_MapObjectUnkSWHT.cpp kind:data(word) addr:0x021145c4
 .p__sinit_MapObjectUnkBMFL.cpp kind:data(word) addr:0x021145c8
 .p__sinit_MapObjectUnkTRES.cpp kind:data(word) addr:0x021145cc
-.p__sinit_ov031_02113d40 kind:data(word) addr:0x021145d0
+.p__sinit_MapObjectChestBase.cpp kind:data(word) addr:0x021145d0
 .p__sinit_MapObjectUnkTRED.cpp kind:data(word) addr:0x021145d4
 .p__sinit_MapObjectUnkTREW.cpp kind:data(word) addr:0x021145d8
 .p__sinit_MapObjectUnkTREN.cpp kind:data(word) addr:0x021145dc
@@ -2444,8 +2444,8 @@ _ZTV23MapObjectProfileUnkTRES kind:data(any) addr:0x0211752c
 _ZTV16MapObjectUnkTRES kind:data(any) addr:0x02117548
 data_ov031_021175a4 kind:data(any) addr:0x021175a4
 data_ov031_021175a8 kind:data(any) addr:0x021175a8
-data_ov031_021175b8 kind:data(any) addr:0x021175b8
-data_ov031_021175e4 kind:data(any) addr:0x021175e4
+_ZTV19MapObjectUnkTRES_74 kind:data(any) addr:0x021175b0
+_ZTV18MapObjectChestBase kind:data(any) addr:0x021175dc
 data_ov031_02117638 kind:data(any) addr:0x02117638
 data_ov031_02117648 kind:data(any) addr:0x02117648
 data_ov031_02117664 kind:data(any) addr:0x02117664

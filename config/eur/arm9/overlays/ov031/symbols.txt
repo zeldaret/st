@@ -1560,7 +1560,7 @@ _ZN18MapObjectChestBase8vfunc_14Ev kind:function(arm,size=0x108) addr:0x02103d30
 _ZN18MapObjectChestBase8vfunc_3CEv kind:function(arm,size=0x100) addr:0x02103e38
 _ZN18MapObjectChestBase8vfunc_40Ev kind:function(arm,size=0x8) addr:0x02103f38
 _ZN18MapObjectChestBase8vfunc_44Ev kind:function(arm,size=0x8) addr:0x02103f40
-_ZN18MapObjectChestBase8vfunc_48Ev kind:function(arm,size=0x58) addr:0x02103f48
+_ZN18MapObjectChestBase19func_ov031_02103f48Ev kind:function(arm,size=0x58) addr:0x02103f48
 _ZN18MapObjectChestBase8vfunc_4CEv kind:function(arm,size=0x28) addr:0x02103fa0
 _ZN18MapObjectChestBase8vfunc_50Ev kind:function(arm,size=0x2c) addr:0x02103fc8
 _ZN18MapObjectChestBase8vfunc_54Ev kind:function(arm,size=0xc) addr:0x02103ff4
@@ -2044,7 +2044,7 @@ data_ov031_02110d38 kind:data(any) addr:0x02110d38 ambiguous
 data_ov031_02110d40 kind:data(any) addr:0x02110d40
 data_ov031_02110d54 kind:data(any) addr:0x02110d54
 data_ov031_02110d68 kind:data(any) addr:0x02110d68
-data_ov031_02110d74 kind:data(any) addr:0x02110d74
+@1604 kind:data(byte[6]) addr:0x02110d74 local
 data_ov031_02110d7c kind:data(any) addr:0x02110d7c ambiguous
 data_ov031_02110d98 kind:data(any) addr:0x02110d98
 data_ov031_02110da4 kind:data(any) addr:0x02110da4
@@ -2112,7 +2112,7 @@ __sinit_MapObjectUnkGRSS.cpp kind:function(arm,size=0x90) addr:0x02111df8
 __sinit_MapObjectUnkSWHT.cpp kind:function(arm,size=0x70) addr:0x02111e88
 __sinit_MapObjectUnkBMFL.cpp kind:function(arm,size=0x50) addr:0x02111ef8
 __sinit_MapObjectUnkTRES.cpp kind:function(arm,size=0x6c) addr:0x02111f48
-__sinit_ov031_02111fb4 kind:function(arm,size=0x30) addr:0x02111fb4
+__sinit_MapObjectChestBase.cpp kind:function(arm,size=0x30) addr:0x02111fb4
 __sinit_MapObjectUnkTRED.cpp kind:function(arm,size=0x6c) addr:0x02111fe4
 __sinit_MapObjectUnkTREW.cpp kind:function(arm,size=0x6c) addr:0x02112050
 __sinit_MapObjectUnkTREN.cpp kind:function(arm,size=0x6c) addr:0x021120bc
@@ -2176,7 +2176,7 @@ __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x02112724
 .p__sinit_MapObjectUnkSWHT.cpp kind:data(word) addr:0x02112838
 .p__sinit_MapObjectUnkBMFL.cpp kind:data(word) addr:0x0211283c
 .p__sinit_MapObjectUnkTRES.cpp kind:data(word) addr:0x02112840
-.p__sinit_ov031_02111fb4 kind:data(word) addr:0x02112844
+.p__sinit_MapObjectChestBase.cpp kind:data(word) addr:0x02112844
 .p__sinit_MapObjectUnkTRED.cpp kind:data(word) addr:0x02112848
 .p__sinit_MapObjectUnkTREW.cpp kind:data(word) addr:0x0211284c
 .p__sinit_MapObjectUnkTREN.cpp kind:data(word) addr:0x02112850
@@ -2449,8 +2449,8 @@ _ZTV23MapObjectProfileUnkTRES kind:data(any) addr:0x021157b8
 _ZTV16MapObjectUnkTRES kind:data(any) addr:0x021157d4
 data_ov031_02115830 kind:data(any) addr:0x02115830
 data_ov031_02115834 kind:data(any) addr:0x02115834
-data_ov031_02115844 kind:data(any) addr:0x02115844
-data_ov031_02115870 kind:data(any) addr:0x02115870
+_ZTV19MapObjectUnkTRES_74 kind:data(any) addr:0x0211583c
+_ZTV18MapObjectChestBase kind:data(any) addr:0x02115868
 data_ov031_021158c4 kind:data(any) addr:0x021158c4
 data_ov031_021158d4 kind:data(any) addr:0x021158d4
 data_ov031_021158f0 kind:data(any) addr:0x021158f0
