@@ -3,6 +3,7 @@
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorUnkNSHD.hpp"
+#include "MainGame/MiscAdvManager.hpp"
 #include "MapObject/MapObjectChestBase.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Player/PlayerGet.hpp"
@@ -19,7 +20,6 @@
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b51c0.hpp"
-#include "Unknown/UnkStruct_ov024_020d86b0.hpp"
 #include "versions.h"
 
 #include <nitro/math.h>
@@ -176,7 +176,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
 
     data_027e0ce0->mUnk_34->func_ov110_02185d3c(itemId);
     data_ov000_020b6510->func_ov000_020aa0ac(itemId);
-    data_ov024_020d86b0->GiveLetterOrPriceCard(itemId);
+    gpMiscAdvManager->GiveLetterOrPriceCard(itemId);
 
     if (!GET_FLAG(this->mUnk_08, ItemFlag_LokomoSword) && itemId == ItemId_TearLight &&
         this->mTearsAmount == MAX_TEARS_OF_LIGHT && (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower)) {

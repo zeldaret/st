@@ -233,7 +233,7 @@ config.libs = [
     GameLib(
         "Overlay 24",
         [
-            Object("024_MainGame/UnkStruct_ov024_020d86b0.cpp"),
+            Object("024_MainGame/MiscAdvManager.cpp"),
             Object("024_MainGame/Actor/ActorUnkOBPC.cpp"),
         ]
     ),

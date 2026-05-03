@@ -1,4 +1,4 @@
-#include "Unknown/UnkStruct_ov024_020d86b0.hpp"
+#include "MainGame/MiscAdvManager.hpp"
 #include "Item/ItemManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkMemFuncs.h"
@@ -6,25 +6,25 @@
 
 extern "C" u8 func_ov000_020a9a50();
 
-UnkStruct_ov024_020d86b0 *UnkStruct_ov024_020d86b0::Create() {
-    return new(HeapIndex_1) UnkStruct_ov024_020d86b0();
+MiscAdvManager *MiscAdvManager::Create() {
+    return new(HeapIndex_1) MiscAdvManager();
 }
 
-UnkStruct_ov024_020d86b0::UnkStruct_ov024_020d86b0() {
-    UnkStruct_ov024_020d86b0::SetInstance(this);
+MiscAdvManager::MiscAdvManager() {
+    MiscAdvManager::SetInstance(this);
     this->mLettersRead = 0;
     this->mStampsFlag  = 0;
     this->mSongs       = 0;
 }
 
-UnkStruct_ov024_020d86b0::~UnkStruct_ov024_020d86b0() {
-    UnkStruct_ov024_020d86b0::ClearInstance();
+MiscAdvManager::~MiscAdvManager() {
+    MiscAdvManager::ClearInstance();
 }
 
-void UnkStruct_ov024_020d86b0::func_ov024_020d6310(UnkStruct_ov024_020d86b0 *pSrc) {
+void MiscAdvManager::func_ov024_020d6310(MiscAdvManager *pSrc) {
     u16 local_10;
 
-    _MI_CpuCopy(pSrc, this, sizeof(UnkStruct_ov024_020d86b0));
+    _MI_CpuCopy(pSrc, this, sizeof(MiscAdvManager));
     data_02049bac.func_02014a34(&local_10);
 
     if (local_10 == this->mUnk_28) {
@@ -36,7 +36,7 @@ void UnkStruct_ov024_020d86b0::func_ov024_020d6310(UnkStruct_ov024_020d86b0 *pSr
     }
 }
 
-void UnkStruct_ov024_020d86b0::GiveLetterOrPriceCard(ItemId itemId) {
+void MiscAdvManager::GiveLetterOrPriceCard(ItemId itemId) {
     AdventureFlag flag = ItemManager::func_ov110_02185db4(itemId);
 
     if (flag - AdventureFlag_MetPostmanFirstLetter < LetterType_Max) {
@@ -48,7 +48,7 @@ void UnkStruct_ov024_020d86b0::GiveLetterOrPriceCard(ItemId itemId) {
     }
 }
 
-unk32 UnkStruct_ov024_020d86b0::GetObtainedLetterCount() {
+unk32 MiscAdvManager::GetObtainedLetterCount() {
     u8 ret = 0;
 
     for (u32 i = 0; i < ARRAY_LEN(this->mObtainedLetters); i++) {
@@ -60,7 +60,7 @@ unk32 UnkStruct_ov024_020d86b0::GetObtainedLetterCount() {
     return ret;
 }
 
-bool UnkStruct_ov024_020d86b0::GotUnreadLetters() {
+bool MiscAdvManager::GotUnreadLetters() {
     for (u32 i = 0; i < ARRAY_LEN(this->mObtainedLetters); i++) {
         if (this->mObtainedLetters[i] >= 0 && !GET_FLAG2(this->mLettersRead, i)) {
             return true;
@@ -70,7 +70,7 @@ bool UnkStruct_ov024_020d86b0::GotUnreadLetters() {
     return false;
 }
 
-void UnkStruct_ov024_020d86b0::GiveLetter(AdventureFlag_Half flag) {
+void MiscAdvManager::GiveLetter(AdventureFlag_Half flag) {
     s8 letterType = flag - AdventureFlag_MetPostmanFirstLetter;
     u32 i;
 
@@ -90,7 +90,7 @@ void UnkStruct_ov024_020d86b0::GiveLetter(AdventureFlag_Half flag) {
     }
 }
 
-unk32 UnkStruct_ov024_020d86b0::func_ov024_020d6468() {
+unk32 MiscAdvManager::func_ov024_020d6468() {
     unk32 ret = 0;
 
     for (u32 i = 0; i < ARRAY_LEN(this->mObtainedStamps); i++) {
@@ -102,19 +102,19 @@ unk32 UnkStruct_ov024_020d86b0::func_ov024_020d6468() {
     return ret;
 }
 
-unk32 UnkStruct_ov024_020d86b0::GetStamp(unk32 index) {
+unk32 MiscAdvManager::GetStamp(unk32 index) {
     return this->mObtainedStamps[index];
 }
 
-u16 *UnkStruct_ov024_020d86b0::GetStampDate(unk32 index) {
+u16 *MiscAdvManager::GetStampDate(unk32 index) {
     return &this->mStampDates[index];
 }
 
-Vec2b *UnkStruct_ov024_020d86b0::GetStampPos(unk32 index) {
+Vec2b *MiscAdvManager::GetStampPos(unk32 index) {
     return &this->mStampPositions[index];
 }
 
-void UnkStruct_ov024_020d86b0::func_ov024_020d64b4(unk32 param1, unk32 param2, Vec2b *param3) {
+void MiscAdvManager::func_ov024_020d64b4(unk32 param1, unk32 param2, Vec2b *param3) {
     if (param2 < 0) {
         return;
     }
@@ -138,13 +138,13 @@ void UnkStruct_ov024_020d86b0::func_ov024_020d64b4(unk32 param1, unk32 param2, V
     ((u16 *) this->mStampPositions)[param2] = var;
 }
 
-void UnkStruct_ov024_020d86b0::func_ov024_020d6530() {
+void MiscAdvManager::func_ov024_020d6530() {
     this->mLastRandomNum = this->mRandomNum;
     this->mRandomNum     = func_ov000_020a9a50();
     data_02049bac.func_02014a34(&this->mUnk_28);
 }
 
-unk32 UnkStruct_ov024_020d86b0::GetNumPostcards() {
+unk32 MiscAdvManager::GetNumPostcards() {
     unk32 numPostcards = this->mNumPriceCards;
 
     if (numPostcards < 0) {
@@ -154,7 +154,7 @@ unk32 UnkStruct_ov024_020d86b0::GetNumPostcards() {
     return numPostcards;
 }
 
-void UnkStruct_ov024_020d86b0::GivePriceCard(unk32 amount) {
+void MiscAdvManager::GivePriceCard(unk32 amount) {
     if (this->mNumPriceCards < 0) {
         this->mNumPriceCards = 0;
     }
@@ -166,7 +166,7 @@ void UnkStruct_ov024_020d86b0::GivePriceCard(unk32 amount) {
     }
 }
 
-void UnkStruct_ov024_020d86b0::PostPriceCard(unk32 amount, unk32 param2) {
+void MiscAdvManager::PostPriceCard(unk32 amount, unk32 param2) {
     if (amount > this->mNumPriceCards) {
         this->mNumPriceCards = 0;
     } else {
@@ -188,17 +188,17 @@ void UnkStruct_ov024_020d86b0::PostPriceCard(unk32 amount, unk32 param2) {
     }
 }
 
-void UnkStruct_ov024_020d86b0::func_ov024_020d6610() {
+void MiscAdvManager::func_ov024_020d6610() {
     this->mNumPostedPriceCards = 0;
     this->mUnk_80              = -1;
     this->func_ov024_020d6530();
 }
 
-void UnkStruct_ov024_020d86b0::SetInstance(UnkStruct_ov024_020d86b0 *pInstance) {
-    data_ov024_020d86b0 = pInstance;
+void MiscAdvManager::SetInstance(MiscAdvManager *pInstance) {
+    gpMiscAdvManager = pInstance;
 }
 
-int UnkStruct_ov024_020d86b0::ClearInstance() {
-    data_ov024_020d86b0 = NULL;
+int MiscAdvManager::ClearInstance() {
+    gpMiscAdvManager = NULL;
     //! @bug: missing return
 }

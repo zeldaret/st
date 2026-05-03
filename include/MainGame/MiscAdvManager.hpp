@@ -59,7 +59,7 @@ enum StampType_ {
     /*  20 */ StampType_Max = 20,
 };
 
-class UnkStruct_ov024_020d86b0 {
+class MiscAdvManager {
 public:
     /* 00 */ u16 mStampDates[StampType_Max];
     /* 28 */ u16 mUnk_28; // rand date
@@ -81,14 +81,14 @@ public:
     /* 8E */ unk16 mUnk_8E; // pad?
     /* 90 */
 
-    UnkStruct_ov024_020d86b0();
-    ~UnkStruct_ov024_020d86b0();
+    MiscAdvManager();
+    ~MiscAdvManager();
 
     bool GotMaxPriceCards() {
         return this->GetNumPostcards() >= MAX_PRICECARDS ? true : false;
     }
 
-    void func_ov024_020d6310(UnkStruct_ov024_020d86b0 *pSrc);
+    void func_ov024_020d6310(MiscAdvManager *pSrc);
     void GiveLetterOrPriceCard(ItemId itemId);
     void GiveLetter(AdventureFlag_Half flag);
     unk32 GetObtainedLetterCount();
@@ -104,9 +104,9 @@ public:
     void PostPriceCard(unk32 amount, unk32 param2);
     void func_ov024_020d6610();
 
-    static UnkStruct_ov024_020d86b0 *Create();
-    static void SetInstance(UnkStruct_ov024_020d86b0 *pInstance);
+    static MiscAdvManager *Create();
+    static void SetInstance(MiscAdvManager *pInstance);
     static int ClearInstance();
 };
 
-extern UnkStruct_ov024_020d86b0 *data_ov024_020d86b0;
+extern MiscAdvManager *gpMiscAdvManager;

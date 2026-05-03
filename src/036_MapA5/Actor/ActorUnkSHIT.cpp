@@ -2,11 +2,11 @@
 
 #include "Actor/ActorUnkSHIT.hpp"
 #include "Item/ItemManager.hpp"
+#include "MainGame/MiscAdvManager.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
-#include "Unknown/UnkStruct_ov024_020d86b0.hpp"
 
 ARM DECL_PROFILE(ActorProfileUnkSHIT);
 
@@ -191,7 +191,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
 
             break;
         case ItemId_TenPriceCard:
-            if (data_ov024_020d86b0->GotMaxPriceCards()) {
+            if (gpMiscAdvManager->GotMaxPriceCards()) {
                 return false;
             }
 
