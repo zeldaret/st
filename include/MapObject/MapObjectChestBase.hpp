@@ -6,7 +6,7 @@
 #include "global.h"
 #include "types.h"
 
-class MapObjectUnkTRES_74 : public UnkSystem4 {
+class MapObjectTreasureSpawned_74 : public UnkSystem4 {
 public:
     /* 00 (base) */
     /* 60 */ bool mUnk_60;
@@ -15,10 +15,10 @@ public:
     /* 63 */ unk8 mUnk_63; // pad?
     /* 64 */
 
-    MapObjectUnkTRES_74(unk32 param1);
+    MapObjectTreasureSpawned_74(unk32 param1);
 
     // data_ov031_02115844
-    /* 00 */ virtual ~MapObjectUnkTRES_74() override {}
+    /* 00 */ virtual ~MapObjectTreasureSpawned_74() override {}
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
 
     void func_ov000_0209dde0(void);
@@ -37,7 +37,7 @@ public:
     /* 04E */ unk8 mUnk_04E; // pad?
     /* 04F */ unk8 mUnk_04F; // pad?
     /* 050 */ MapObject_10 mUnk_050;
-    /* 074 */ MapObjectUnkTRES_74 mUnk_074;
+    /* 074 */ MapObjectTreasureSpawned_74 mUnk_074;
     /* 0D8 */ ItemId mItemId;
     /* 0DC */ UnkSubStruct19 mUnk_0DC;
     /* 154 */

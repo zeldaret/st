@@ -3,14 +3,14 @@
 #include "MapObject/MapObjectChestBase.hpp"
 #include "MapObject/MapObjectProfile.hpp"
 
-class MapObjectUnkTRES : public MapObjectChestBase {
+class MapObjectTreasureSpawned : public MapObjectChestBase {
 public:
     /* 00 (base) */
 
-    MapObjectUnkTRES();
+    MapObjectTreasureSpawned();
 
     // data_ov031_021157dc
-    /* 30 */ virtual ~MapObjectUnkTRES() override;
+    /* 30 */ virtual ~MapObjectTreasureSpawned() override;
     /* 3C */ virtual unk32 vfunc_3C() override;
     /* 40 */ virtual bool vfunc_40() override;
     /* 54 */ virtual Vec2p *vfunc_54() override;
@@ -20,14 +20,14 @@ public:
     void func_ov031_02102f98(void);
 };
 
-class MapObjectProfileUnkTRES : public MapObjectProfile_Derived2 {
+class MapObjectProfileTreasureSpawned : public MapObjectProfile_Derived2 {
 public:
     /* 00 (base) */
 
-    MapObjectProfileUnkTRES();
-    ~MapObjectProfileUnkTRES();
+    MapObjectProfileTreasureSpawned();
+    ~MapObjectProfileTreasureSpawned();
 
     /* 0C */ virtual MapObject *Create();
 
-    static MapObjectProfileUnkTRES *GetProfile();
+    static MapObjectProfileTreasureSpawned *GetProfile();
 };

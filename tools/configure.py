@@ -425,7 +425,7 @@ config.libs = [
             Object("031_Land/MapObject/MapObjectUnkTATZ.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTRED.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTREN.cpp"),
-            Object("031_Land/MapObject/MapObjectUnkTRES.cpp"),
+            Object("031_Land/MapObject/MapObjectTreasureSpawned.cpp"),
             Object("031_Land/MapObject/MapObjectChestBase.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTREW.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTRWS.cpp"),

@@ -257,7 +257,8 @@ src/031_Land/MapObject/MapObjectUnkBMFL.cpp:
     .ctor       start:0x0211283c end:0x02112840
     .bss        start:0x02117abc end:0x02117ba0
 
-src/031_Land/MapObject/MapObjectUnkTRES.cpp:
+src/031_Land/MapObject/MapObjectTreasureSpawned.cpp:
+    complete
     .text       start:0x02102e70 end:0x02102fe8
     .init       start:0x02111f48 end:0x02111fb4
     .ctor       start:0x02112840 end:0x02112844

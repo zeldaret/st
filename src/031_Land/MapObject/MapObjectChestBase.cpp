@@ -14,11 +14,11 @@ extern "C" void func_01ffcfcc(Vec3p *, Vec3p *, Vec3p *);
 static const Vec2p data_ov031_02115830(0x800, 0x800);
 static const UnkSubStruct19 data_ov031_02115c84;
 
-ARM MapObjectUnkTRES_74::MapObjectUnkTRES_74(unk32 param1) :
+ARM MapObjectTreasureSpawned_74::MapObjectTreasureSpawned_74(unk32 param1) :
     UnkSystem4(param1),
     mUnk_60(1) {}
 
-ARM void MapObjectUnkTRES_74::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
+ARM void MapObjectTreasureSpawned_74::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
     unk32 iVar1;
     unk32 uVar2;
 
@@ -41,7 +41,7 @@ ARM void MapObjectUnkTRES_74::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
     }
 }
 
-ARM void MapObjectUnkTRES_74::func_ov031_0210306c() {
+ARM void MapObjectTreasureSpawned_74::func_ov031_0210306c() {
     func_0200b58c(&this->mUnk_08);
 }
 
