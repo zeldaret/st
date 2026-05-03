@@ -4047,7 +4047,7 @@ data_ov000_020b5398 kind:bss addr:0x020b5398
 data_ov000_020b539c_eur kind:bss addr:0x020b539c
 data_ov000_020b53d0 kind:bss addr:0x020b53d0
 _ZGVN15ProfileInstanceI19ActorProfileUnkSWOBE8sProfileE kind:bss addr:0x020b5bfc
-@10033 kind:bss addr:0x020b5c00
+@10033 kind:bss addr:0x020b5c00 local
 _ZN15ProfileInstanceI19ActorProfileUnkSWOBE8sProfileE kind:bss addr:0x020b5c0c
 _ZGVN15ProfileInstanceI19ActorProfileUnkSWTME8sProfileE kind:bss addr:0x020b5c48
 @10039 kind:bss addr:0x020b5c4c

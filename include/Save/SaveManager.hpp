@@ -384,7 +384,8 @@ struct SaveManager_00 {
 class SaveManager {
 public:
     /* 000 */ SaveManager_00 *mUnk_000; // related to mUnk_184, allocated from func_ov001_020ba670
-    /* 000 */ STRUCT_PAD(0x04, 0x204);
+    /* 004 */ unk32 mUnk_004;
+    /* 008 */ STRUCT_PAD(0x08, 0x204);
     /* 204 */ unk16 mUnk_204;
     /* 206 */ unk16 mUnk_206;
     /* 208 */ unk16 mUnk_208;

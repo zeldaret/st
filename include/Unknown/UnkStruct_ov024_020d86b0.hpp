@@ -4,7 +4,10 @@
 #include "Save/AdventureFlags.hpp"
 #include "global.h"
 #include "types.h"
+
 #include <nitro/math.h>
+
+#define MAX_PRICECARDS 99
 
 enum LetterType_ {
     /* -1 */ LetterType_None                 = -1,
@@ -66,8 +69,8 @@ public:
     /* 68 */ s8 mObtainedStamps[StampType_Max];
     /* 7C */ u8 mLastRandomNum;
     /* 7D */ u8 mRandomNum;
-    /* 7E */ s8 mNumPostcards; // current amount of postcards
-    /* 7F */ s8 mNumPostedCards; // current amount of posted postcards
+    /* 7E */ s8 mNumPriceCards; // current amount of price cards
+    /* 7F */ s8 mNumPostedPriceCards; // current amount of posted price cards
     /* 80 */ unk8 mUnk_80;
     /* 81 */ unk8 mUnk_81; // pad?
     /* 82 */ unk8 mUnk_82; // pad?
@@ -80,6 +83,10 @@ public:
 
     UnkStruct_ov024_020d86b0();
     ~UnkStruct_ov024_020d86b0();
+
+    bool GotMaxPriceCards() {
+        return this->GetNumPostcards() >= MAX_PRICECARDS ? true : false;
+    }
 
     void func_ov024_020d6310(UnkStruct_ov024_020d86b0 *pSrc);
     void GiveLetterOrPriceCard(ItemId itemId);

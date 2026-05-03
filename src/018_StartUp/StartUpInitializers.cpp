@@ -127,7 +127,7 @@ ARM SaveManager::SaveManager() {
     this->mpSaveFile = NULL;
     this->mUnk_244   = 0;
 
-    func_020327c8(this->mUnk_004, 0x1021);
+    func_020327c8(&this->mUnk_004, 0x1021);
 
     this->mUnk_204 = OS_GetLockID();
     int uVar8      = 1;

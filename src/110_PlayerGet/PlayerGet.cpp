@@ -19,6 +19,7 @@
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b51c0.hpp"
+#include "Unknown/UnkStruct_ov024_020d86b0.hpp"
 #include "versions.h"
 
 #include <nitro/math.h>
@@ -39,8 +40,6 @@ extern "C" void func_ov000_0208f820();
 extern "C" unk32 func_ov024_020d5354(unk32 *, u16 *);
 extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, Vec3p *);
 extern unk32 *data_027e0958;
-extern "C" void func_ov024_020d6370(unk32 *, ItemId);
-extern unk32 *data_ov024_020d86b0;
 extern "C" void func_ov000_0208ba10(void *, void *, unk32);
 extern "C" void func_02015ea8(unk32, void *);
 extern "C" void func_02015628(char *, char *, unk32, void *, size_t);
@@ -177,7 +176,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
 
     data_027e0ce0->mUnk_34->func_ov110_02185d3c(itemId);
     data_ov000_020b6510->func_ov000_020aa0ac(itemId);
-    func_ov024_020d6370(data_ov024_020d86b0, itemId);
+    data_ov024_020d86b0->GiveLetterOrPriceCard(itemId);
 
     if (!GET_FLAG(this->mUnk_08, ItemFlag_LokomoSword) && itemId == ItemId_TearLight &&
         this->mTearsAmount == MAX_TEARS_OF_LIGHT && (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower)) {

@@ -191,7 +191,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
 
             break;
         case ItemId_TenPriceCard:
-            if (data_ov024_020d86b0->func_ov024_020d655c() >= 0x63 ? 1 : 0) {
+            if (data_ov024_020d86b0->GotMaxPriceCards()) {
                 return false;
             }
 

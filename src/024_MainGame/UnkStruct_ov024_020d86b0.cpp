@@ -31,7 +31,7 @@ void UnkStruct_ov024_020d86b0::func_ov024_020d6310(UnkStruct_ov024_020d86b0 *pSr
         return;
     }
 
-    if (this->mNumPostedCards == 0) {
+    if (this->mNumPostedPriceCards == 0) {
         this->func_ov024_020d6530();
     }
 }
@@ -145,7 +145,7 @@ void UnkStruct_ov024_020d86b0::func_ov024_020d6530() {
 }
 
 unk32 UnkStruct_ov024_020d86b0::GetNumPostcards() {
-    unk32 numPostcards = this->mNumPostcards;
+    unk32 numPostcards = this->mNumPriceCards;
 
     if (numPostcards < 0) {
         numPostcards = 0;
@@ -155,28 +155,28 @@ unk32 UnkStruct_ov024_020d86b0::GetNumPostcards() {
 }
 
 void UnkStruct_ov024_020d86b0::GivePriceCard(unk32 amount) {
-    if (this->mNumPostcards < 0) {
-        this->mNumPostcards = 0;
+    if (this->mNumPriceCards < 0) {
+        this->mNumPriceCards = 0;
     }
 
-    if (this->mNumPostcards + amount > 99) {
-        this->mNumPostcards = 99;
+    if (this->mNumPriceCards + amount > MAX_PRICECARDS) {
+        this->mNumPriceCards = MAX_PRICECARDS;
     } else {
-        this->mNumPostcards += amount;
+        this->mNumPriceCards += amount;
     }
 }
 
 void UnkStruct_ov024_020d86b0::PostPriceCard(unk32 amount, unk32 param2) {
-    if (amount > this->mNumPostcards) {
-        this->mNumPostcards = 0;
+    if (amount > this->mNumPriceCards) {
+        this->mNumPriceCards = 0;
     } else {
-        this->mNumPostcards -= amount;
+        this->mNumPriceCards -= amount;
     }
 
-    if (this->mNumPostedCards + amount > 99) {
-        this->mNumPostedCards = 99;
+    if (this->mNumPostedPriceCards + amount > MAX_PRICECARDS) {
+        this->mNumPostedPriceCards = MAX_PRICECARDS;
     } else {
-        this->mNumPostedCards += amount;
+        this->mNumPostedPriceCards += amount;
     }
 
     u16 date;
@@ -189,8 +189,8 @@ void UnkStruct_ov024_020d86b0::PostPriceCard(unk32 amount, unk32 param2) {
 }
 
 void UnkStruct_ov024_020d86b0::func_ov024_020d6610() {
-    this->mNumPostedCards = 0;
-    this->mUnk_80         = -1;
+    this->mNumPostedPriceCards = 0;
+    this->mUnk_80              = -1;
     this->func_ov024_020d6530();
 }
 
