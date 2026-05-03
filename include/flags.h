@@ -11,6 +11,7 @@
  */
 
 #define GET_FLAG(arr, pos) (((arr)[((u32) (pos)) >> 5] & (1 << ((pos) & 0x1F))) != 0)
+#define GET_FLAG2(var, pos) ((var) & (1 << pos))
 #define SET_FLAG(arr, pos) ((arr)[((u32) (pos)) >> 5] |= 1 << ((pos) & 0x1F))
 #define UNSET_FLAG(arr, pos) ((arr)[((u32) (pos)) >> 5] &= ~(1 << ((pos) & 0x1F)))
 #define FLAG(index, pos) (((index) << 5) | ((pos) & 0x1F))

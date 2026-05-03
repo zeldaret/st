@@ -1,17 +1,105 @@
 #pragma once
 
+#include "Item/Item.hpp"
+#include "Save/AdventureFlags.hpp"
 #include "global.h"
 #include "types.h"
+#include <nitro/math.h>
+
+enum LetterType_ {
+    /* -1 */ LetterType_None                 = -1,
+    /*  0 */ LetterType_MetPostmanFirst      = 0, // AdventureFlag_MetPostmanFirstLetter
+    /*  1 */ LetterType_ReceivedZeldas       = 1, // AdventureFlag_ReceivedZeldasLetter
+    /*  2 */ LetterType_ReceivedAlfonzos     = 2, // AdventureFlag_ReceivedAlfonzosLetter
+    /*  3 */ LetterType_ReceivedRussells     = 3, // AdventureFlag_ReceivedRussellsLetter
+    /*  4 */ LetterType_ObtainedLinebecks    = 4, // AdventureFlag_ObtainedLinebecksLetter
+    /*  5 */ LetterType_ReceivedBeedlesFirst = 5, // AdventureFlag_ReceivedBeedlesFirstLetter
+    /*  6 */ LetterType_Unk_03E              = 6, // AdventureFlag_Unk_03E
+    /*  7 */ LetterType_Unk_03F              = 7, // AdventureFlag_Unk_03F
+    /*  8 */ LetterType_Unk_040              = 8, // AdventureFlag_Unk_040
+    /*  9 */ LetterType_Unk_041              = 9, // AdventureFlag_Unk_041
+    /*  10 */ LetterType_Unk_042             = 10, // AdventureFlag_Unk_042
+    /*  11 */ LetterType_Unk_043             = 11, // AdventureFlag_Unk_043
+    /*  12 */ LetterType_Unk_044             = 12, // AdventureFlag_Unk_044
+    /*  13 */ LetterType_Unk_045             = 13, // AdventureFlag_Unk_045
+    /*  14 */ LetterType_ReceivedCarbens     = 14, // AdventureFlag_ReceivedCarbensLetter
+    /*  15 */ LetterType_ReceivedNikos       = 15, // AdventureFlag_ReceivedNikosLetter
+    /*  16 */ LetterType_ReceivedFerrus1     = 16, // AdventureFlag_ReceivedFerrusLetter1
+    /*  17 */ LetterType_ReceivedFerrus2     = 17, // AdventureFlag_ReceivedFerrusLetter2
+    /*  18 */ LetterType_ReceivedFerrus3     = 18, // AdventureFlag_ReceivedFerrusLetter3
+    /*  19 */ LetterType_ReceivedKagorons    = 19, // AdventureFlag_ReceivedKagoronsLetter
+    /*  20 */ LetterType_Max                 = 20,
+};
+
+enum StampType_ {
+    /* -1 */ StampType_None = -1,
+    /*  0 */ StampType_0    = 0,
+    /*  1 */ StampType_1    = 1,
+    /*  2 */ StampType_2    = 2,
+    /*  3 */ StampType_3    = 3,
+    /*  4 */ StampType_4    = 4,
+    /*  5 */ StampType_5    = 5,
+    /*  6 */ StampType_6    = 6,
+    /*  7 */ StampType_7    = 7,
+    /*  8 */ StampType_8    = 8,
+    /*  9 */ StampType_9    = 9,
+    /*  10 */ StampType_10  = 10,
+    /*  11 */ StampType_11  = 11,
+    /*  12 */ StampType_12  = 12,
+    /*  13 */ StampType_13  = 13,
+    /*  14 */ StampType_14  = 14,
+    /*  15 */ StampType_15  = 15,
+    /*  16 */ StampType_16  = 16,
+    /*  17 */ StampType_17  = 17,
+    /*  18 */ StampType_18  = 18,
+    /*  19 */ StampType_19  = 19,
+    /*  20 */ StampType_Max = 20,
+};
 
 class UnkStruct_ov024_020d86b0 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x7E);
+    /* 00 */ u16 mStampDates[StampType_Max];
+    /* 28 */ u16 mUnk_28; // rand date
+    /* 2A */ u16 mPostDate;
+    /* 2C */ Vec2b mStampPositions[StampType_Max];
+    /* 54 */ s8 mObtainedLetters[LetterType_Max];
+    /* 68 */ s8 mObtainedStamps[StampType_Max];
+    /* 7C */ u8 mLastRandomNum;
+    /* 7D */ u8 mRandomNum;
     /* 7E */ s8 mNumPostcards; // current amount of postcards
     /* 7F */ s8 mNumPostedCards; // current amount of posted postcards
-    /* 80 */ STRUCT_PAD(0x80, 0x90);
+    /* 80 */ unk8 mUnk_80;
+    /* 81 */ unk8 mUnk_81; // pad?
+    /* 82 */ unk8 mUnk_82; // pad?
+    /* 83 */ unk8 mUnk_83; // pad?
+    /* 84 */ unk32 mLettersRead; // bitfield
+    /* 88 */ unk32 mStampsFlag; // bitfield, related to the checkmarks from the stampbook
+    /* 8C */ unk16 mSongs; // bitfield
+    /* 8E */ unk16 mUnk_8E; // pad?
     /* 90 */
 
-    unk32 func_ov024_020d655c();
+    UnkStruct_ov024_020d86b0();
+    ~UnkStruct_ov024_020d86b0();
+
+    void func_ov024_020d6310(UnkStruct_ov024_020d86b0 *pSrc);
+    void GiveLetterOrPriceCard(ItemId itemId);
+    void GiveLetter(AdventureFlag_Half flag);
+    unk32 GetObtainedLetterCount();
+    bool GotUnreadLetters();
+    unk32 func_ov024_020d6468();
+    unk32 GetStamp(unk32 index);
+    u16 *GetStampDate(unk32 index);
+    Vec2b *GetStampPos(unk32 index);
+    void func_ov024_020d64b4(unk32 param1, unk32 param2, Vec2b *param3);
+    void func_ov024_020d6530();
+    unk32 GetNumPostcards();
+    void GivePriceCard(unk32 amount);
+    void PostPriceCard(unk32 amount, unk32 param2);
+    void func_ov024_020d6610();
+
+    static UnkStruct_ov024_020d86b0 *Create();
+    static void SetInstance(UnkStruct_ov024_020d86b0 *pInstance);
+    static int ClearInstance();
 };
 
 extern UnkStruct_ov024_020d86b0 *data_ov024_020d86b0;
