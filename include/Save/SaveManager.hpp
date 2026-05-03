@@ -368,10 +368,23 @@ public:
     unk32 func_ov000_020a1000();
 };
 
+struct SaveManager_36 {
+    /* 00 */ u8 mKeyAmount;
+    /* 01 */ STRUCT_PAD(0x01, 0x08);
+    /* 08 */
+};
+
+struct SaveManager_00 {
+    /* 000 */ STRUCT_PAD(0x00, 0x36);
+    /* 036 */ SaveManager_36 mUnk_36[0x60];
+    /* 336 */
+    /* BB8 */
+};
+
 class SaveManager {
 public:
-    /* 000 */ void *mUnk_000; // related to mUnk_184
-    /* 000 */ unk8 mUnk_004[0x204 - 0x004];
+    /* 000 */ SaveManager_00 *mUnk_000; // related to mUnk_184, allocated from func_ov001_020ba670
+    /* 000 */ STRUCT_PAD(0x04, 0x204);
     /* 204 */ unk16 mUnk_204;
     /* 206 */ unk16 mUnk_206;
     /* 208 */ unk16 mUnk_208;

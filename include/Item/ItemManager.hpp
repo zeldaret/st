@@ -109,6 +109,8 @@ public:
     unk32 func_ov000_020a8ab8();
     unk32 func_ov000_020a8acc();
 
+    void func_ov001_020bb9f8();
+
     bool func_ov110_02184a40(ItemId itemId);
     static ItemId func_ov110_02185da4(ItemId itemId);
     static AdventureFlag func_ov110_02185db4(ItemId itemId);

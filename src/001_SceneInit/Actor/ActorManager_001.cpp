@@ -126,7 +126,7 @@ THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param
         if (func_01ffd3b0() != 0) {
             iVar5 = data_027e09a4->mSceneIndex;
 
-            if (iVar5 == 0x3E) {
+            if (iVar5 == SceneIndex_f_rabbit) {
                 this->mUnk_34 = 0xFFFFECCD; // ~0x1332
             }
 
@@ -154,7 +154,7 @@ THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param
                 auStack_28.func_ov000_02059270(0x24, "drop4", 0x2D200000);
                 auStack_28.func_ov000_02059270(0x25, "drop5", 0x2D200000);
 
-                UnkStruct_func_ov000_0207029c *ptr = data_027e09a0->func_ov000_0207029c(iVar5);
+                CourseEntry *ptr = data_027e09a0->func_ov000_0207029c(iVar5);
                 if ((ptr->mUnk_1D - 1) == 1) {
                     auStack_28.func_ov000_02059270(0x38, "mic_0", 0x35B00000);
                     auStack_28.func_ov000_02059270(0x39, "mic_1", 0x35B00000);
