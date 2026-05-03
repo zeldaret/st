@@ -4693,9 +4693,9 @@ from:0x02104bd4 kind:load to:0x02119950 module:overlay(31)
 from:0x02104be8 kind:arm_call to:0x02011f3c module:main
 from:0x02104bf4 kind:arm_call to:0x02104c40 module:overlay(31)
 from:0x02104c0c kind:arm_call to:0x0209e16c module:overlay(0)
-from:0x02104c38 kind:load to:0x02117534 module:overlay(31)
+from:0x02104c38 kind:load to:0x0211752c add:8 module:overlay(31)
 from:0x02104c4c kind:arm_call to:0x02104dd8 module:overlay(31)
-from:0x02104cb8 kind:load to:0x02117550 module:overlay(31)
+from:0x02104cb8 kind:load to:0x02117548 add:8 module:overlay(31)
 from:0x02104cbc kind:load to:0x02119950 module:overlay(31)
 from:0x02104cd4 kind:arm_call to:0x020835f4 module:overlay(0)
 from:0x02104ce8 kind:load to:0x027e0cd8 module:dtcm

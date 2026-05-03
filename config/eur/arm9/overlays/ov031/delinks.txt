@@ -261,7 +261,8 @@ src/031_Land/MapObject/MapObjectUnkTRES.cpp:
     .text       start:0x02102e70 end:0x02102fe8
     .init       start:0x02111f48 end:0x02111fb4
     .ctor       start:0x02112840 end:0x02112844
-    .bss        start:0x02117ba0 end:0x02117cfc
+    .bss        start:0x02117ba0 end:0x02117c84
+    .data       start:0x021157b0 end:0x02115830
 
 src/031_Land/MapObject/MapObjectChestBase.cpp:
     .text       start:0x02102fe8 end:0x0210401c

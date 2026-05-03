@@ -4684,9 +4684,9 @@ from:0x02102e78 kind:load to:0x02117bb0 module:overlay(31)
 from:0x02102e8c kind:arm_call to:0x02011f3c module:main
 from:0x02102e98 kind:arm_call to:0x02102ee4 module:overlay(31)
 from:0x02102eb0 kind:arm_call to:0x0209c9a8 module:overlay(0)
-from:0x02102edc kind:load to:0x021157c0 module:overlay(31)
+from:0x02102edc kind:load to:0x021157b8 add:8 module:overlay(31)
 from:0x02102ef0 kind:arm_call to:0x0210307c module:overlay(31)
-from:0x02102f5c kind:load to:0x021157dc module:overlay(31)
+from:0x02102f5c kind:load to:0x021157d4 add:8 module:overlay(31)
 from:0x02102f60 kind:load to:0x02117bb0 module:overlay(31)
 from:0x02102f78 kind:arm_call to:0x02081f3c module:overlay(0)
 from:0x02102f8c kind:load to:0x027e0cd8 module:dtcm

@@ -2445,8 +2445,8 @@ data_ov031_0211570c kind:data(any) addr:0x0211570c
 data_ov031_02115728 kind:data(any) addr:0x02115728
 data_ov031_0211578c kind:data(any) addr:0x0211578c
 data_ov031_021157b0 kind:data(any) addr:0x021157b0
-data_ov031_021157c0 kind:data(any) addr:0x021157c0
-data_ov031_021157dc kind:data(any) addr:0x021157dc
+_ZTV23MapObjectProfileUnkTRES kind:data(any) addr:0x021157b8
+_ZTV16MapObjectUnkTRES kind:data(any) addr:0x021157d4
 data_ov031_02115830 kind:data(any) addr:0x02115830
 data_ov031_02115834 kind:data(any) addr:0x02115834
 data_ov031_02115844 kind:data(any) addr:0x02115844

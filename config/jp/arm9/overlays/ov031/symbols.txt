@@ -2440,8 +2440,8 @@ data_ov031_02117480 kind:data(any) addr:0x02117480
 data_ov031_0211749c kind:data(any) addr:0x0211749c
 data_ov031_02117500 kind:data(any) addr:0x02117500
 data_ov031_02117524 kind:data(any) addr:0x02117524
-data_ov031_02117534 kind:data(any) addr:0x02117534
-data_ov031_02117550 kind:data(any) addr:0x02117550
+_ZTV23MapObjectProfileUnkTRES kind:data(any) addr:0x0211752c
+_ZTV16MapObjectUnkTRES kind:data(any) addr:0x02117548
 data_ov031_021175a4 kind:data(any) addr:0x021175a4
 data_ov031_021175a8 kind:data(any) addr:0x021175a8
 data_ov031_021175b8 kind:data(any) addr:0x021175b8
