@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Item/ItemManager.hpp"
+#include "MainGame/MiscAdvManager.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkMemFuncs.h"
@@ -155,11 +156,7 @@ public:
 
     /* 184 */ SaveUnknown184 mUnk_184;
 
-    /* C94 */ unk8 mUnk_C94[0x84];
-    /* D18 */ unk32 mUnk_D18;
-    /* D1C */ unk32 mUnk_D1C;
-    /* D20 */ unk16 mSongs;
-    /* D22 */ unk16 mUnk_D22;
+    /* C94 */ MiscAdvManager mMiscAdvManager;
     /* D24 */ unk8 mUnk_00_SaveUnknownD24[0x48];
     /* D6C */ unk8 mUnk_48_SaveUnknownD24[8];
     /* D74 */ unk16 mUnk_50_SaveUnknownD24;
@@ -168,9 +165,9 @@ public:
     /* D8C */
 
     SaveUnknown14C() {
-        mUnk_D18 = 0;
-        mUnk_D1C = 0;
-        mSongs   = 0;
+        this->mMiscAdvManager.mLettersRead = 0;
+        this->mMiscAdvManager.mStampsFlag  = 0;
+        this->mMiscAdvManager.mSongs       = 0;
         MI_CpuFill32(0, this->mUnk_48_SaveUnknownD24, sizeof(this->mUnk_48_SaveUnknownD24));
         this->mUnk_50_SaveUnknownD24 = 0;
     }

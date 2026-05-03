@@ -107,14 +107,15 @@ unk32 MiscAdvManager::GetStamp(unk32 index) {
 }
 
 u16 *MiscAdvManager::GetStampDate(unk32 index) {
-    return &this->mStampDates[index];
+    return (u16 *) &this->mStampDates[index];
 }
 
 Vec2b *MiscAdvManager::GetStampPos(unk32 index) {
-    return &this->mStampPositions[index];
+    return (Vec2b *) &this->mStampPositions[index];
 }
 
-void MiscAdvManager::func_ov024_020d64b4(unk32 param1, unk32 param2, Vec2b *param3) {
+// non-matching
+void MiscAdvManager::func_ov024_020d64b4(unk32 param1, unk32 param2, u16 *param3) {
     if (param2 < 0) {
         return;
     }
@@ -131,11 +132,9 @@ void MiscAdvManager::func_ov024_020d64b4(unk32 param1, unk32 param2, Vec2b *para
 
     u16 local_18;
     data_02049bac.func_02014a34((void *) &local_18);
-    this->mObtainedStamps[param2] = param1;
-    this->mStampDates[param2]     = local_18;
-
-    u16 var                                 = *(u16 *) param3;
-    ((u16 *) this->mStampPositions)[param2] = var;
+    this->mObtainedStamps[param2]           = param1;
+    this->mStampDates[param2]               = local_18;
+    *(u16 *) &this->mStampPositions[param2] = *param3;
 }
 
 void MiscAdvManager::func_ov024_020d6530() {

@@ -35,34 +35,34 @@ enum LetterType_ {
 };
 
 enum StampType_ {
-    /* -1 */ StampType_None = -1,
-    /*  0 */ StampType_0    = 0,
-    /*  1 */ StampType_1    = 1,
-    /*  2 */ StampType_2    = 2,
-    /*  3 */ StampType_3    = 3,
-    /*  4 */ StampType_4    = 4,
-    /*  5 */ StampType_5    = 5,
-    /*  6 */ StampType_6    = 6,
-    /*  7 */ StampType_7    = 7,
-    /*  8 */ StampType_8    = 8,
-    /*  9 */ StampType_9    = 9,
-    /*  10 */ StampType_10  = 10,
-    /*  11 */ StampType_11  = 11,
-    /*  12 */ StampType_12  = 12,
-    /*  13 */ StampType_13  = 13,
-    /*  14 */ StampType_14  = 14,
-    /*  15 */ StampType_15  = 15,
-    /*  16 */ StampType_16  = 16,
-    /*  17 */ StampType_17  = 17,
-    /*  18 */ StampType_18  = 18,
-    /*  19 */ StampType_19  = 19,
-    /*  20 */ StampType_Max = 20,
+    /* -1 */ StampType_None              = -1,
+    /*  0 */ StampType_TowerOfSpirits    = 0,
+    /*  1 */ StampType_CastleTown        = 1,
+    /*  2 */ StampType_OutsetVillage     = 2,
+    /*  3 */ StampType_Mayscore          = 3,
+    /*  4 */ StampType_WoodlandSanctuary = 4,
+    /*  5 */ StampType_AnoukiVillage     = 5,
+    /*  6 */ StampType_SnowfallSanctuary = 6,
+    /*  7 */ StampType_PapuziaVillage    = 7,
+    /*  8 */ StampType_IslandSanctuary   = 8,
+    /*  9 */ StampType_GoronVillage      = 9,
+    /*  10 */ StampType_ValleySanctuary  = 10,
+    /*  11 */ StampType_DuneSanctuary    = 11,
+    /*  12 */ StampType_WoodedTemple     = 12,
+    /*  13 */ StampType_BlizzardTemple   = 13,
+    /*  14 */ StampType_MarineTemple     = 14,
+    /*  15 */ StampType_MountainTemple   = 15,
+    /*  16 */ StampType_DesertTemple     = 16,
+    /*  17 */ StampType_PirateHideout    = 17,
+    /*  18 */ StampType_TradingPost      = 18,
+    /*  19 */ StampType_IcySpring        = 19,
+    /*  20 */ StampType_Max              = 20,
 };
 
 class MiscAdvManager {
 public:
     /* 00 */ u16 mStampDates[StampType_Max];
-    /* 28 */ u16 mUnk_28; // rand date
+    /* 28 */ u16 mUnk_28;
     /* 2A */ u16 mPostDate;
     /* 2C */ Vec2b mStampPositions[StampType_Max];
     /* 54 */ s8 mObtainedLetters[LetterType_Max];
@@ -97,7 +97,7 @@ public:
     unk32 GetStamp(unk32 index);
     u16 *GetStampDate(unk32 index);
     Vec2b *GetStampPos(unk32 index);
-    void func_ov024_020d64b4(unk32 param1, unk32 param2, Vec2b *param3);
+    void func_ov024_020d64b4(unk32 param1, unk32 param2, u16 *param3);
     void func_ov024_020d6530();
     unk32 GetNumPostcards();
     void GivePriceCard(unk32 amount);
