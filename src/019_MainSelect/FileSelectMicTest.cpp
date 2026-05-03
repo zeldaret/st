@@ -56,9 +56,9 @@ ARM FileSelectMicTest::FileSelectMicTest() :
     mUnk_3F8(0x8D, 0x01),
     mUnk_630(1) {
     this->mUnk_0C.mList.func_020166cc(&this->mUnk_304.mUnk_044.mUnk_04);
-    this->mUnk_020.func_0201f730(0x00020006);
+    this->mUnk_020.func_0201f730(BMG_ID(BMGGroup_select, 0x06));
     this->mUnk_3F8.mUnk_14E = 1;
-    this->mUnk_3F8.func_0201f730(0x00020043);
+    this->mUnk_3F8.func_0201f730(BMG_ID(BMGGroup_select, 0x43));
 
     volatile Vec2us result;
     Vec2s fetch;
@@ -216,13 +216,13 @@ ARM void FileSelectMicTest::vfunc_14(unk8 *param1) {
     if (this->mUnk_630 != 0) {
         if (data_ov000_020b5340[5] == 0) {
             this->mUnk_630 = 0;
-            this->mUnk_3F8.func_0201fa70(0x00020046);
+            this->mUnk_3F8.func_0201fa70(BMG_ID(BMGGroup_select, 0x46));
             this->mUnk_270.func_ov019_020cf130();
         }
     } else {
         if (data_ov000_020b5340[5] != 0) {
             this->mUnk_630 = 1;
-            this->mUnk_3F8.func_0201fa70(0x00020043);
+            this->mUnk_3F8.func_0201fa70(BMG_ID(BMGGroup_select, 0x43));
         }
     }
 }

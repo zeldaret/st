@@ -37,7 +37,7 @@ void MiscAdvManager::func_ov024_020d6310(MiscAdvManager *pSrc) {
 }
 
 void MiscAdvManager::GiveLetterOrPriceCard(ItemId itemId) {
-    AdventureFlag flag = ItemManager::func_ov110_02185db4(itemId);
+    AdventureFlag flag = ItemManager::GetAdvFlagFromItem(itemId);
 
     if (flag - AdventureFlag_MetPostmanFirstLetter < LetterType_Max) {
         this->GiveLetter(flag);

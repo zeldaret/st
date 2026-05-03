@@ -10,6 +10,42 @@
 #define BMG_GET_MSG_ADDR(pGroups, flags)                                                              \
     ((u32) (pGroups)->entries[(flags) >> 0x10].pDAT1 + (BMG_GET_MSG_OFFSET((pGroups), (flags)) & ~1))
 
+#define BMG_ID(group, infIndex) (((group) << 16) | (infIndex))
+
+enum BMGGroup_ {
+    BMGGroup_regular       = 0x00,
+    BMGGroup_select        = 0x02,
+    BMGGroup_maingame      = 0x03,
+    BMGGroup_battle_parent = 0x04,
+    BMGGroup_battle_common = 0x05,
+    BMGGroup_field         = 0x07,
+    BMGGroup_dungeon       = 0x08,
+    BMGGroup_train         = 0x09,
+    BMGGroup_demo          = 0x0A,
+    BMGGroup_castle        = 0x0B,
+    BMGGroup_castle_town   = 0x0C,
+    BMGGroup_tower         = 0x0D,
+    BMGGroup_tower_lobby   = 0x0E,
+    BMGGroup_forest        = 0x0F,
+    BMGGroup_snow          = 0x10,
+    BMGGroup_water         = 0x11,
+    BMGGroup_flame         = 0x12,
+    BMGGroup_intrain       = 0x13,
+    BMGGroup_village       = 0x14,
+    BMGGroup_collect       = 0x15,
+    BMGGroup_demo01_05     = 0x16,
+    BMGGroup_demo06_10     = 0x17,
+    BMGGroup_demo11_15     = 0x18,
+    BMGGroup_demo16_20     = 0x19,
+    BMGGroup_demo21_25     = 0x1A,
+    BMGGroup_shop          = 0x1B,
+    BMGGroup_flame_fld     = 0x1C,
+    BMGGroup_post          = 0x1D,
+    BMGGroup_desert        = 0x1E,
+    BMGGroup_staff         = 0x1F,
+    BMGGroup_train_extra   = 0x20,
+};
+
 enum BMGTag {
     /* "INF1" */ BMG_TAG_INF1 = '1FNI',
     /* "FLW1" */ BMG_TAG_FLW1 = '1WLF',

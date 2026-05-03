@@ -63,7 +63,7 @@ ARM void UnkSubStruct9::func_ov019_020cbb40() {
     if (this->IsPlayerNameSet()) {
         this->mUnk_064.func_0201fb78(pSlotArray[this->mSaveSlotIndex].GetPlayerName());
     } else {
-        this->mUnk_064.func_0201fa70(0x00020026);
+        this->mUnk_064.func_0201fa70(BMG_ID(BMGGroup_select, 0x26));
     }
 }
 

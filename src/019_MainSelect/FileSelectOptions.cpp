@@ -165,19 +165,19 @@ ARM FileSelectOptions::FileSelectOptions(s32 saveSlotIndex) :
     mUnk_0024(&this->mUnk_0C, saveSlotIndex),
 
     mUnk_10A8(BTN_ID_NONE, 0x8C, 0x01, 0x01, 0x8C, 0x01),
-    mUnk_1108(&mUnk_10A8, 0x8C, 0x00, 0x00020010),
+    mUnk_1108(&mUnk_10A8, 0x8C, 0x00, BMG_ID(BMGGroup_select, 0x10)),
 
     mUnk_1388(BTN_ID_FILE_SELECT_MIC_TEST, 0x8C, 0x08, 0x14, 0x8C, 0x01),
     mUnk_1420(&mUnk_1388),
-    mUnk_1470(&mUnk_1388, 0x8C, 0x07, 0x0002000B),
+    mUnk_1470(&mUnk_1388, 0x8C, 0x07, BMG_ID(BMGGroup_select, 0x0B)),
 
     mUnk_16AC(BTN_ID_FILE_SELECT_CONFIRM, 0x8C, 0x0B, 0x12, 0x8C, 0x00),
     mUnk_1744(&mUnk_16AC),
-    mUnk_1794(&mUnk_16AC, 0x8C, 0x08, 0x00020008),
+    mUnk_1794(&mUnk_16AC, 0x8C, 0x08, BMG_ID(BMGGroup_select, 0x08)),
 
     mUnk_19D0(BTN_ID_RETURN, 0x8C, 0x0C, 0x13, 0x8C, 0x08),
     mUnk_1A68(&mUnk_19D0),
-    mUnk_1AB8(&mUnk_19D0, 0x8C, 0x09, 0x00020007) {
+    mUnk_1AB8(&mUnk_19D0, 0x8C, 0x09, BMG_ID(BMGGroup_select, 0x07)) {
     this->mUnk_1CF5 = false;
     this->mUnk_0C.mList.func_020166cc(&this->mUnk_10A8.mUnk_04);
     this->mUnk_0C.mList.func_020166cc(&this->mUnk_19D0.mUnk_04);
@@ -852,11 +852,11 @@ ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce6c8() {
 ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce704(u8 param1) {
     switch (param1) {
         case 0:
-            return 0x0002004C;
+            return BMG_ID(BMGGroup_select, 0x4C);
         case 1:
-            return 0x0002004B;
+            return BMG_ID(BMGGroup_select, 0x4B);
         case 2:
-            return 0x0002004A;
+            return BMG_ID(BMGGroup_select, 0x4A);
         default:
             break;
     }
@@ -867,13 +867,13 @@ ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce704(u8 param1) {
 ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce74c(u8 param1) {
     switch (param1) {
         case 0:
-            return 0x00020050;
+            return BMG_ID(BMGGroup_select, 0x50);
         case 1:
-            return 0x0002004F;
+            return BMG_ID(BMGGroup_select, 0x4F);
         case 2:
-            return 0x0002004D;
+            return BMG_ID(BMGGroup_select, 0x4D);
         case 3:
-            return 0x0002004E;
+            return BMG_ID(BMGGroup_select, 0x4E);
         default:
             break;
     }
@@ -884,9 +884,9 @@ ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce74c(u8 param1) {
 ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce7a0(u8 param1) {
     switch (param1) {
         case 0:
-            return 0x00020049;
+            return BMG_ID(BMGGroup_select, 0x49);
         case 1:
-            return 0x00020048;
+            return BMG_ID(BMGGroup_select, 0x48);
         default:
             break;
     }

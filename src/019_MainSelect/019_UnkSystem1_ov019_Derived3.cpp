@@ -40,9 +40,9 @@ ARM unk32 UnkSystem1_ov019_Derived3::vfunc_1C(u32 param1, unk32 param2, unk32 pa
             UnkStruct_ov000_02067bc4::UnkStruct1 stack1;
 
             if (this->mUnk_18 == 0) {
-                this->mUnk_13 = data_ov000_020b504c.func_ov000_02067cf8(0x0002001E, 0, &stack1);
+                this->mUnk_13 = data_ov000_020b504c.func_ov000_02067cf8(BMG_ID(BMGGroup_select, 0x1E), 0, &stack1);
             } else {
-                this->mUnk_13 = data_ov000_020b504c.func_ov000_02067cf8(0x00020028, 0, &stack1);
+                this->mUnk_13 = data_ov000_020b504c.func_ov000_02067cf8(BMG_ID(BMGGroup_select, 0x28), 0, &stack1);
             }
 
             data_ov000_020b504c.func_ov000_02067bc4(0)->func_02021bec(1);

@@ -112,8 +112,8 @@ public:
     void func_ov001_020bb9f8();
 
     bool func_ov110_02184a40(ItemId itemId);
-    static ItemId func_ov110_02185da4(ItemId itemId);
-    static AdventureFlag func_ov110_02185db4(ItemId itemId);
+    static u32 GetBmgIDFromItem(ItemId itemId);
+    static AdventureFlag GetAdvFlagFromItem(ItemId itemId);
 };
 
 class TreasureManager : public ItemManager {

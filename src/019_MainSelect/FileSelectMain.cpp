@@ -128,28 +128,28 @@ ARM FileSelectMain::FileSelectMain() :
     mUnk_005C(5, 0x8E, 0, 1, 0x8E, 0),
 
     mUnk_0100(BTN_ID_NONE, 0x89, 0, 0, 0x89, 0),
-    mUnk_0160(&mUnk_0100, 0x89, 0, 0x20012),
+    mUnk_0160(&mUnk_0100, 0x89, 0, BMG_ID(BMGGroup_select, 0x12)),
 
     mUnk_0488(BTN_ID_FILE_SELECT_START, 0x8A, 0, 0x0D, 0x8A, 0),
-    mUnk_0520(&mUnk_0488, 0x8A, 0, 0x20016),
+    mUnk_0520(&mUnk_0488, 0x8A, 0, BMG_ID(BMGGroup_select, 0x16)),
 
     mUnk_07E4(BTN_ID_FILE_SELECT_COPY, 0x8A, 1, 3, 0x8A, 2),
-    mUnk_0844(&mUnk_07E4, 0x8A, 2, 0x20014),
+    mUnk_0844(&mUnk_07E4, 0x8A, 2, BMG_ID(BMGGroup_select, 0x14)),
 
     mUnk_0AC4(BTN_ID_FILE_SELECT_ERASE, 0x8A, 2, 4, 0x8A, 1),
-    mUnk_0B24(&mUnk_0AC4, 0x8A, 1, 0x20015),
+    mUnk_0B24(&mUnk_0AC4, 0x8A, 1, BMG_ID(BMGGroup_select, 0x15)),
 
     mUnk_0DA4(BTN_ID_FILE_SELECT_ADVENTURE, 0x8B, 1, 0x0E, 0x8B, 1),
-    mUnk_0E3C(&mUnk_0DA4, 0x8B, 2, 0x20017),
+    mUnk_0E3C(&mUnk_0DA4, 0x8B, 2, BMG_ID(BMGGroup_select, 0x17)),
 
     mUnk_11BC(BTN_ID_FILE_SELECT_BATTLE, 0x8B, 0, 0x0F, 0x8B, 0),
-    mUnk_1254(&mUnk_11BC, 0x8B, 0, 0x20018),
+    mUnk_1254(&mUnk_11BC, 0x8B, 0, BMG_ID(BMGGroup_select, 0x18)),
 
     mUnk_15D4(BTN_ID_FILE_SELECT_CONTACT_MODE, 0x8B, 0, 0x10, 0x8B, 3),
-    mUnk_166C(&mUnk_15D4, 0x8B, 3, 0x20019),
+    mUnk_166C(&mUnk_15D4, 0x8B, 3, BMG_ID(BMGGroup_select, 0x19)),
 
     mUnk_18EC(BTN_ID_FILE_SELECT_OPTIONS, 0x8B, 3, 0x11, 0x8B, 2),
-    mUnk_1984(&mUnk_18EC, 0x8B, 1, 0x2001A) {
+    mUnk_1984(&mUnk_18EC, 0x8B, 1, BMG_ID(BMGGroup_select, 0x1A)) {
 
     stack_struct1 params;
     params.param2 = NULL;
