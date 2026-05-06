@@ -132,10 +132,10 @@ enum ItemId_ {
     /* 0x1C */ ItemId_28                    = 28, // glyph after restoration song
     /* 0x1D */ ItemId_29                    = 29, // glyph after restoration song
     /* 0x1E */ ItemId_FinalTrack            = 30, // unlocks the endgame portal
-    /* 0x1F */ ItemId_31                    = 31,
-    /* 0x20 */ ItemId_32                    = 32,
-    /* 0x21 */ ItemId_33                    = 33,
-    /* 0x22 */ ItemId_34                    = 34,
+    /* 0x1F */ ItemId_SpiritTrain           = 31,
+    /* 0x20 */ ItemId_TrainCannon           = 32,
+    /* 0x21 */ ItemId_SpiritTrainCar        = 33,
+    /* 0x22 */ ItemId_TrainWagon            = 34,
     /* 0x23 */ ItemId_ForceGem_35           = 35, // rightmost fire gem
     /* 0x24 */ ItemId_ForceGem_36           = 36, // right snow gem
     /* 0x25 */ ItemId_ForceGem_37           = 37, // top fire gem

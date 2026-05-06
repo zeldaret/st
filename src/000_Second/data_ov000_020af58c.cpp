@@ -34,10 +34,10 @@ const u32 data_ov000_020af58c[] = {
     GIModel_litD, // ItemId_28
     GIModel_litC, // ItemId_29
     GIModel_litA, // ItemId_FinalTrack
-    GIModel_None, // ItemId_31
-    GIModel_None, // ItemId_32
-    GIModel_None, // ItemId_33
-    GIModel_None, // ItemId_34
+    GIModel_None, // ItemId_SpiritTrain
+    GIModel_None, // ItemId_TrainCannon
+    GIModel_None, // ItemId_SpiritTrainCar
+    GIModel_None, // ItemId_TrainWagon
     GIModel_frcY, // ItemId_ForceGem_35
     GIModel_frcY, // ItemId_ForceGem_36
     GIModel_frcY, // ItemId_ForceGem_37

@@ -219,10 +219,10 @@ static const u32 sBMGItemMap[] = {
     BMG_ID(BMGGroup_flame_fld, 0x8E), // ItemId_28
     BMG_ID(BMGGroup_desert, 0x48), // ItemId_29
     BMG_ID(BMGGroup_maingame, 0x10), // ItemId_FinalTrack
-    BMG_ID(BMGGroup_maingame, 0x11), // ItemId_31
-    BMG_ID(BMGGroup_maingame, 0x12), // ItemId_32
-    BMG_ID(BMGGroup_maingame, 0x13), // ItemId_33
-    BMG_ID(BMGGroup_maingame, 0x14), // ItemId_34
+    BMG_ID(BMGGroup_maingame, 0x11), // ItemId_SpiritTrain
+    BMG_ID(BMGGroup_maingame, 0x12), // ItemId_TrainCannon
+    BMG_ID(BMGGroup_maingame, 0x13), // ItemId_SpiritTrainCar
+    BMG_ID(BMGGroup_maingame, 0x14), // ItemId_TrainWagon
     BMG_ID(BMGGroup_maingame, 0x15), // ItemId_ForceGem_35
     BMG_ID(BMGGroup_maingame, 0x16), // ItemId_ForceGem_36
     BMG_ID(BMGGroup_maingame, 0x17), // ItemId_ForceGem_37
@@ -340,10 +340,10 @@ static const AdventureFlag sAdvFlagItemMap[] = {
     AdventureFlag_CompletedFireRestorationSong, // ItemId_28
     AdventureFlag_CompletedSandRestorationSong, // ItemId_29
     AdventureFlag_OpenedDarkRealmPortal, // ItemId_FinalTrack
-    AdventureFlag_ObtainedSpiritTrain, // ItemId_31
-    AdventureFlag_ObtainedTrainCannon, // ItemId_32
-    AdventureFlag_Unk_020, // ItemId_33
-    AdventureFlag_ObtainedTrainWagon, // ItemId_34
+    AdventureFlag_ObtainedSpiritTrain, // ItemId_SpiritTrain
+    AdventureFlag_ObtainedTrainCannon, // ItemId_TrainCannon
+    AdventureFlag_ObtainedSpiritTrainCar, // ItemId_SpiritTrainCar
+    AdventureFlag_ObtainedTrainWagon, // ItemId_TrainWagon
     AdventureFlag_ObtainedFerrusForceGem2, // ItemId_ForceGem_35
     AdventureFlag_ObtainedKofuForceGem, // ItemId_ForceGem_36
     AdventureFlag_ObtainedChildGoronForceGem, // ItemId_ForceGem_37
@@ -1022,13 +1022,13 @@ THUMB void UnkStruct_027e0ce0_34::func_ov110_02185d3c(ItemId itemId) {
     u16 auStack_18[2];
 
     switch (itemId) {
-        case ItemId_31:
+        case ItemId_SpiritTrain:
             this->func_ov024_020d3d98(0, 0);
             this->mUnk_2C = 1;
             this->mUnk_00 = 0;
             this->mUnk_10 = 0;
             break;
-        case ItemId_33:
+        case ItemId_SpiritTrainCar:
             this->func_ov024_020d3d98(2, 0);
             this->mUnk_2C = 2;
             this->mUnk_04 = 2;

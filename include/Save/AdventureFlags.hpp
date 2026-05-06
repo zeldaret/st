@@ -44,7 +44,7 @@ enum AdventureFlag_ {
     /* 0x01E */ AdventureFlag_EnteredForestTemple = FLAG(0, 30),
     /* 0x01F */ AdventureFlag_ObtainedTrainCannon = FLAG(0, 31),   // set after alfonzo text, but before cannon exits garage
 
-    /* 0x020 */ AdventureFlag_Unk_020                                  = FLAG(1, 0),
+    /* 0x020 */ AdventureFlag_ObtainedSpiritTrainCar                   = FLAG(1, 0),
     /* 0x021 */ AdventureFlag_ObtainedTrainWagon                       = FLAG(1, 1),
     /* 0x022 */ AdventureFlag_MetAnjeanFirstTime                       = FLAG(1, 2),    // loads the train in ToS
     /* 0x023 */ AdventureFlag_Unk_023                                  = FLAG(1, 3),
