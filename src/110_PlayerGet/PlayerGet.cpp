@@ -213,11 +213,11 @@ static const u32 sBMGItemMap[] = {
     BMG_ID(BMGGroup_tower, 0x01), // ItemId_SnowGlyph
     BMG_ID(BMGGroup_tower, 0x02), // ItemId_OceanGlyph
     BMG_ID(BMGGroup_tower, 0x03), // ItemId_FireGlyph
-    BMG_ID(BMGGroup_forest, 0xEB), // ItemId_25
-    BMG_ID(BMGGroup_snow, 0x00), // ItemId_26
-    BMG_ID(BMGGroup_water, 0x00), // ItemId_27
-    BMG_ID(BMGGroup_flame_fld, 0x8E), // ItemId_28
-    BMG_ID(BMGGroup_desert, 0x48), // ItemId_29
+    BMG_ID(BMGGroup_forest, 0xEB), // ItemId_RestoredForestGlyph
+    BMG_ID(BMGGroup_snow, 0x00), // ItemId_RestoredSnowGlyph
+    BMG_ID(BMGGroup_water, 0x00), // ItemId_RestoredOceanGlyph
+    BMG_ID(BMGGroup_flame_fld, 0x8E), // ItemId_RestoredFireGlyph
+    BMG_ID(BMGGroup_desert, 0x48), // ItemId_RestoredDesertOceanGlyph
     BMG_ID(BMGGroup_maingame, 0x10), // ItemId_FinalTrack
     BMG_ID(BMGGroup_maingame, 0x11), // ItemId_SpiritTrain
     BMG_ID(BMGGroup_maingame, 0x12), // ItemId_TrainCannon
@@ -334,11 +334,11 @@ static const AdventureFlag sAdvFlagItemMap[] = {
     AdventureFlag_ObtainedSnowGlyph, // ItemId_SnowGlyph
     AdventureFlag_ObtainedOceanGlyph, // ItemId_OceanGlyph
     AdventureFlag_ObtainedFireGlyph, // ItemId_FireGlyph
-    AdventureFlag_CompletedForestRestorationSong, // ItemId_25
-    AdventureFlag_CompletedOceanRestorationSong, // ItemId_26
-    AdventureFlag_CompletedSnowRestorationSong, // ItemId_27
-    AdventureFlag_CompletedFireRestorationSong, // ItemId_28
-    AdventureFlag_CompletedSandRestorationSong, // ItemId_29
+    AdventureFlag_CompletedForestRestorationSong, // ItemId_RestoredForestGlyph
+    AdventureFlag_CompletedOceanRestorationSong, // ItemId_RestoredSnowGlyph
+    AdventureFlag_CompletedSnowRestorationSong, // ItemId_RestoredOceanGlyph
+    AdventureFlag_CompletedFireRestorationSong, // ItemId_RestoredFireGlyph
+    AdventureFlag_CompletedSandRestorationSong, // ItemId_RestoredDesertOceanGlyph
     AdventureFlag_OpenedDarkRealmPortal, // ItemId_FinalTrack
     AdventureFlag_ObtainedSpiritTrain, // ItemId_SpiritTrain
     AdventureFlag_ObtainedTrainCannon, // ItemId_TrainCannon
@@ -679,11 +679,11 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             this->mUnk_73 = 0;
 
             switch (this->mUnk_54.mItemId) {
-                case ItemId_25:
-                case ItemId_26:
-                case ItemId_27:
-                case ItemId_28:
-                case ItemId_29:
+                case ItemId_RestoredForestGlyph:
+                case ItemId_RestoredSnowGlyph:
+                case ItemId_RestoredOceanGlyph:
+                case ItemId_RestoredFireGlyph:
+                case ItemId_RestoredDesertOceanGlyph:
                     data_ov000_020b51b8.func_ov000_0206c96c(data_027e0cd8->mUnk_0C->func_ov000_02080a44());
                     this->mUnk_73 = 1;
                     break;
@@ -777,11 +777,11 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                 case ItemId_FireGlyph:
                     var_r1 = 0x68;
                     break;
-                case ItemId_25:
-                case ItemId_26:
-                case ItemId_27:
-                case ItemId_28:
-                case ItemId_29:
+                case ItemId_RestoredForestGlyph:
+                case ItemId_RestoredSnowGlyph:
+                case ItemId_RestoredOceanGlyph:
+                case ItemId_RestoredFireGlyph:
+                case ItemId_RestoredDesertOceanGlyph:
                 case ItemId_PanFluteSong_101:
                 case ItemId_PanFluteSong_102:
                 case ItemId_PanFluteSong_103:

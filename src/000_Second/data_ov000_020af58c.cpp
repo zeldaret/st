@@ -28,11 +28,11 @@ const u32 data_ov000_020af58c[] = {
     GIModel_litB, // ItemId_SnowGlyph
     GIModel_litC, // ItemId_OceanGlyph
     GIModel_litD, // ItemId_FireGlyph
-    GIModel_litA, // ItemId_25
-    GIModel_litB, // ItemId_26
-    GIModel_litC, // ItemId_27
-    GIModel_litD, // ItemId_28
-    GIModel_litC, // ItemId_29
+    GIModel_litA, // ItemId_RestoredForestGlyph
+    GIModel_litB, // ItemId_RestoredSnowGlyph
+    GIModel_litC, // ItemId_RestoredOceanGlyph
+    GIModel_litD, // ItemId_RestoredFireGlyph
+    GIModel_litC, // ItemId_RestoredDesertOceanGlyph
     GIModel_litA, // ItemId_FinalTrack
     GIModel_None, // ItemId_SpiritTrain
     GIModel_None, // ItemId_TrainCannon
