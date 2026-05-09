@@ -113,7 +113,7 @@ data_027e0cec kind:bss addr:0x027e0cec
 data_027e0cf0 kind:bss addr:0x027e0cf0
 data_027e0cf4 kind:bss addr:0x027e0cf4
 data_027e0cf8 kind:bss addr:0x027e0cf8
-data_027e0cfc kind:bss addr:0x027e0cfc
+gpPassengerManager kind:bss addr:0x027e0cfc
 data_027e0d00 kind:bss addr:0x027e0d00
 data_027e0d04 kind:bss addr:0x027e0d04
 data_027e0d08 kind:bss addr:0x027e0d08

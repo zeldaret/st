@@ -16,6 +16,7 @@ naming scheme:
 - f_xxx: "F" for "Field" -> normal gameplay area (also known as a "land" area)
 */
 typedef u32 SceneIndex;
+typedef u16 SceneIndex_Half;
 enum SceneIndex_ {
     /*   0 */ SceneIndex_test_trn      = 0x00, //
     /*   1 */ SceneIndex_test_trn2     = 0x01, //
