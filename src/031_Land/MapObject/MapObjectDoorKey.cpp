@@ -98,7 +98,7 @@ ARM void MapObjectDoorKey::vfunc_5C(unk32 param1, unk32 param2) {
     switch (this->mUnk_16) {
         case 3:
             if (param2 == 0) {
-                data_027e0ce0->mUnk_2C->func_ov000_020a87c8(-1);
+                data_027e0ce0->mUnk_2C->GiveSmallKeys(-1);
             }
 
             UNSET_FLAG(this->mFlags, MapObjFlag_9);

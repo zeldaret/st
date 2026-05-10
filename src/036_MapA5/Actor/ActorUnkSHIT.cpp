@@ -185,7 +185,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
         case ItemId_RedPotion:
         case ItemId_PurplePotion:
         case ItemId_YellowPotion:
-            if (pIVar4->func_ov000_020a8948()) {
+            if (pIVar4->PotionSlotsFull()) {
                 return false;
             }
 
@@ -237,7 +237,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
 
             {
                 u8 amount = pIVar4->mBombAmount;
-                if (amount >= pIVar4->func_ov000_020a8748()) {
+                if (amount >= pIVar4->GetBombBagCapacity()) {
                     return false;
                 }
             }
@@ -250,7 +250,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
 
             {
                 u8 amount = pIVar4->mArrowAmount;
-                if (amount >= pIVar4->func_ov000_020a8728()) {
+                if (amount >= pIVar4->GetQuiverCapacity()) {
                     return false;
                 }
             }
@@ -324,10 +324,10 @@ ARM void ActorUnkSHIT::func_ov036_0211d570(unk32 param1) {
             this->mUnk_2D3 = true;
             break;
         case ItemId_BombsRefill:
-            pIVar4->func_ov000_020a8820(10);
+            pIVar4->GiveBombs(10);
             break;
         case ItemId_ArrowsRefill:
-            pIVar4->func_ov000_020a87ec(10);
+            pIVar4->GiveArrows(10);
             break;
         case ItemId_QuiverMedium:
         case ItemId_QuiverLarge:

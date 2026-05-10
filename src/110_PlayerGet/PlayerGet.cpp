@@ -73,7 +73,7 @@ static inline s16 GetItemFlag(ItemId itemId) {
 ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
     switch (itemId) {
         case ItemId_NormalKey:
-            this->func_ov000_020a87c8(1);
+            this->GiveSmallKeys(1);
             break;
         case ItemId_GreenRupee:
             this->GiveRupees(1, true, true);
@@ -102,7 +102,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
                 this->mQuiverCapacity++;
             }
 
-            this->mArrowAmount = this->func_ov000_020a8728();
+            this->mArrowAmount = this->GetQuiverCapacity();
             break;
         case ItemId_BombBagMedium:
         case ItemId_BombBagLarge:
@@ -110,22 +110,22 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
                 this->mBombBagCapacity++;
             }
 
-            this->mBombAmount = this->func_ov000_020a8748();
+            this->mBombAmount = this->GetBombBagCapacity();
             break;
         case ItemId_RedPotion:
-            this->func_ov000_020a888c(PotionType_Red);
+            this->GivePotion(PotionType_Red);
             break;
         case ItemId_PurplePotion:
-            this->func_ov000_020a888c(PotionType_Purple);
+            this->GivePotion(PotionType_Purple);
             break;
         case ItemId_YellowPotion:
-            this->func_ov000_020a888c(PotionType_Yellow);
+            this->GivePotion(PotionType_Yellow);
             break;
         case ItemId_ArrowsRefill:
-            this->func_ov000_020a87ec(10);
+            this->GiveArrows(10);
             break;
         case ItemId_BombsRefill:
-            this->func_ov000_020a8820(10);
+            this->GiveBombs(10);
             break;
         case ItemId_TearLight:
             if (this->mTearsAmount >= 3) {
@@ -135,10 +135,10 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
             }
             break;
         default:
-            ItemFlag itemFlag = ItemManager::func_ov000_020a8984(itemId);
+            ItemFlag itemFlag = ItemManager::GetEquippedItemFlag(itemId);
 
             if (itemFlag != ItemFlag_None) {
-                this->func_ov000_020a863c(itemFlag);
+                this->SetFlag(itemFlag);
 
                 switch (itemFlag) {
                     case ItemFlag_Bombs:
@@ -161,7 +161,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
                 itemFlag = GetItemFlag(itemId);
 
                 if (itemFlag != ItemFlag_None) {
-                    this->func_ov000_020a863c(itemFlag);
+                    this->SetFlag(itemFlag);
                 }
             }
             break;

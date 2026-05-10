@@ -14,35 +14,32 @@ const u8 gBombBagCapacities[UpgradeCapacity_Max] = {
     CAPACITY_BOMB_BAG_TIER_3,
 };
 
-// SetInventoryFlag?
-ARM void ItemManager::func_ov000_020a863c(ItemFlag itemFlag) {
-    SET_FLAG(this->mUnk_08, itemFlag);
+ARM void ItemManager::SetFlag(ItemFlag itemFlag) {
+    SET_FLAG(this->mFlags, itemFlag);
 }
 
-// removeEquipmentItem
-ARM void ItemManager::func_ov000_020a865c(ItemFlag itemFlag) {
-    UNSET_FLAG(this->mUnk_08, itemFlag);
+ARM void ItemManager::ClearFlag(ItemFlag itemFlag) {
+    UNSET_FLAG(this->mFlags, itemFlag);
 }
 
-ARM bool ItemManager::func_ov000_020a8680() {
-    return GET_FLAG(this->mUnk_08, ItemFlag_RecruitUniform) && (this->mUnk_12 & 1);
+ARM bool ItemManager::HasRecruitUniform() {
+    return GET_FLAG(this->mFlags, ItemFlag_RecruitUniform) && (this->mUnk_12 & 1);
 }
 
 ARM unk32 ItemManager::func_ov000_020a86a4() {
-    if (GET_FLAG(this->mUnk_08, ItemFlag_AncientShield) && (this->mUnk_12 & 2)) {
+    if (GET_FLAG(this->mFlags, ItemFlag_AncientShield) && (this->mUnk_12 & 2)) {
         return 1;
     }
 
-    if (GET_FLAG(this->mUnk_08, ItemFlag_Shield)) {
+    if (GET_FLAG(this->mFlags, ItemFlag_Shield)) {
         return 0;
     }
 
     return -1;
 }
 
-// getItemAmmo
-ARM u32 ItemManager::func_ov000_020a86d0(ItemFlag itemFlag) {
-    bool canUse = GET_FLAG(this->mUnk_08, itemFlag);
+ARM u32 ItemManager::GetItemAmount(ItemFlag itemFlag) {
+    bool canUse = GET_FLAG(this->mFlags, itemFlag);
 
     switch (itemFlag) {
         case ItemFlag_Bow:
@@ -56,18 +53,16 @@ ARM u32 ItemManager::func_ov000_020a86d0(ItemFlag itemFlag) {
     return canUse;
 }
 
-// getMaxArrows
-ARM u8 ItemManager::func_ov000_020a8728() {
-    if (GET_FLAG(this->mUnk_08, ItemFlag_Bow) == 0) {
+ARM u8 ItemManager::GetQuiverCapacity() {
+    if (GET_FLAG(this->mFlags, ItemFlag_Bow) == 0) {
         return 0;
     }
 
     return gQuiverCapacities[this->mQuiverCapacity];
 }
 
-// getMaxBombs
-ARM u8 ItemManager::func_ov000_020a8748() {
-    if (GET_FLAG(this->mUnk_08, ItemFlag_Bombs) == 0) {
+ARM u8 ItemManager::GetBombBagCapacity() {
+    if (GET_FLAG(this->mFlags, ItemFlag_Bombs) == 0) {
         return 0;
     }
 
@@ -91,8 +86,7 @@ ARM void ItemManager::GiveRupees(s32 amount, bool param2, bool param3) {
     }
 }
 
-// addKeys
-ARM void ItemManager::func_ov000_020a87c8(s32 amount) {
+ARM void ItemManager::GiveSmallKeys(s32 amount) {
     s32 newAmount = this->mKeyAmount + amount;
 
     if (newAmount > MAX_KEYS) {
@@ -104,9 +98,8 @@ ARM void ItemManager::func_ov000_020a87c8(s32 amount) {
     this->mKeyAmount = newAmount;
 }
 
-// gainArrows
-ARM void ItemManager::func_ov000_020a87ec(s32 amount) {
-    s32 maxArrows = this->func_ov000_020a8728();
+ARM void ItemManager::GiveArrows(s32 amount) {
+    s32 maxArrows = this->GetQuiverCapacity();
     s32 newAmount = this->mArrowAmount + amount;
 
     if (newAmount > maxArrows) {
@@ -118,9 +111,8 @@ ARM void ItemManager::func_ov000_020a87ec(s32 amount) {
     this->mArrowAmount = newAmount;
 }
 
-// gainBombs
-ARM void ItemManager::func_ov000_020a8820(s32 amount) {
-    s32 maxBombs  = this->func_ov000_020a8748();
+ARM void ItemManager::GiveBombs(s32 amount) {
+    s32 maxBombs  = this->GetBombBagCapacity();
     s32 newAmount = this->mBombAmount + amount;
 
     if (newAmount > maxBombs) {
@@ -132,7 +124,7 @@ ARM void ItemManager::func_ov000_020a8820(s32 amount) {
     this->mBombAmount = newAmount;
 }
 
-ARM bool ItemManager::func_ov000_020a8854() {
+ARM bool ItemManager::TryEquipForcedItem() {
     if (this->mForcedItem != ItemFlag_None) {
         this->mEquippedItem = this->mForcedItem;
         this->mForcedItem   = ItemFlag_None;
@@ -143,8 +135,7 @@ ARM bool ItemManager::func_ov000_020a8854() {
     return false;
 }
 
-// gainPotion
-ARM void ItemManager::func_ov000_020a888c(PotionType type) {
+ARM void ItemManager::GivePotion(PotionType type) {
     switch (type) {
         case PotionType_Red:
         case PotionType_Purple:
@@ -161,8 +152,7 @@ ARM void ItemManager::func_ov000_020a888c(PotionType type) {
     }
 }
 
-// hasPotion
-ARM bool ItemManager::func_ov000_020a88c8() {
+ARM bool ItemManager::HasPotion() {
     for (u32 i = 0; i < ARRAY_LEN(this->mPotions); i++) {
         if (this->mPotions[i] != PotionType_None) {
             return true;
@@ -172,8 +162,7 @@ ARM bool ItemManager::func_ov000_020a88c8() {
     return false;
 }
 
-// hasPurplePotion
-ARM bool ItemManager::func_ov000_020a88f4() {
+ARM bool ItemManager::HasPurplePotion() {
     for (u32 i = 0; i < ARRAY_LEN(this->mPotions); i++) {
         if (this->mPotions[i] == PotionType_Purple) {
             return true;
@@ -183,8 +172,7 @@ ARM bool ItemManager::func_ov000_020a88f4() {
     return false;
 }
 
-// removePurplePotion
-ARM void ItemManager::func_ov000_020a8920() {
+ARM void ItemManager::RemovePurplePotion() {
     for (s32 i = ARRAY_LEN(this->mPotions) - 1; i >= 0; i--) {
         if (this->mPotions[i] == PotionType_Purple) {
             this->mPotions[i] = PotionType_None;
@@ -193,13 +181,13 @@ ARM void ItemManager::func_ov000_020a8920() {
     }
 }
 
-// potionInventoryFull
-ARM bool ItemManager::func_ov000_020a8948() {
+ARM bool ItemManager::PotionSlotsFull() {
     for (u32 i = 0; i < ARRAY_LEN(this->mPotions); i++) {
         if (this->mPotions[i] == PotionType_None) {
             return false;
         }
     }
+
     return true;
 }
 
@@ -207,8 +195,7 @@ ARM UnkStruct_ov000_020afc48 *ItemManager::func_ov000_020a8974(ItemFlag itemFlag
     return &data_ov000_020afc48[itemFlag];
 }
 
-// GetEquipItemFlag?
-ARM ItemFlag ItemManager::func_ov000_020a8984(ItemId itemId) {
+ARM ItemFlag ItemManager::GetEquippedItemFlag(ItemId itemId) {
     ItemFlag itemFlag;
 
     for (itemFlag = 0; itemFlag < ItemFlag_EQUIP_COUNT; itemFlag++) {
@@ -238,8 +225,7 @@ ARM bool ItemManager::func_ov000_020a89d4() {
 
 ARM bool ItemManager::func_ov000_020a8a0c() {
     if (this->mUnk_20 == NULL || this->mEquippedItem == ItemFlag_None ||
-        IS_ITEM_RESTRICTED(this->mItemRestrictions, this->mEquippedItem) ||
-        this->func_ov000_020a86d0(this->mEquippedItem) == 0) {
+        IS_ITEM_RESTRICTED(this->mItemRestrictions, this->mEquippedItem) || this->GetItemAmount(this->mEquippedItem) == 0) {
         return false;
     }
 
