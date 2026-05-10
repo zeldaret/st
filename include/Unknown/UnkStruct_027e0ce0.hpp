@@ -24,6 +24,7 @@ public:
 
     void func_ov024_020d3d98(unk32 param1, unk32 param2);
     void func_ov024_020d3ee8(unk32 param1, u16 param2, unk32 param3);
+    unk32 func_ov024_020d3dcc();
 
     void func_ov110_02185d3c(ItemId itemId);
 };
@@ -60,6 +61,8 @@ public:
     void func_ov000_0208bbd4(unk32 param1, Vec3p *param2, u16 param3);
 
     void func_ov000_0208bbd4(unk32 param1, Vec3p *param2, void *param3);
+
+    static UnkStruct_027e0ce0_34 *func_ov000_0205c904();
 };
 
 extern UnkStruct_027e0ce0 *data_027e0ce0;

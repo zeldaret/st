@@ -9,6 +9,10 @@ src/024_MainGame/PassengerManager.cpp:
     .text       start:0x020d4120 end:0x020d46b4
     .rodata     start:0x020d75a4 end:0x020d7624
 
+src/024_MainGame/CargoManager_024.cpp:
+    complete
+    .text       start:0x020d58b4 end:0x020d5938
+
 src/024_MainGame/MiscAdvManager.cpp:
     .text       start:0x020d62b4 end:0x020d6650
 
