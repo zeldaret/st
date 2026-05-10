@@ -32,22 +32,34 @@ public:
     /* 0C */ u8 mRoomIndex;
     /* 10 */ unk32 mHappiness;
 
+    Passenger();
     void Reset();
 };
 
-class PassengerManager {
+class PassengerManager : public AutoInstance<PassengerManager> {
 public:
     /* 00 */ Passenger mPassenger;
     /* 14 */ Passenger mPassenger2;
     /* 28 */ u16 mDate;
-    /* 28 */ unk16 mUnk_2A;
+    /* 2A */ unk16 mUnk_2A;
     /* 2C */ unk32 mUnk_2C;
     /* 30 */ unk32 mUnk_30;
     /* 34 */
 
+    // overlay 1
     PassengerManager();
     ~PassengerManager();
 
+    void func_ov001_020bf8e4();
+    void func_ov001_020bf90c();
+    void func_ov001_020bf910();
+    bool func_ov001_020bfa1c();
+
+    static bool func_ov001_020bf870();
+    static void SetInstance(PassengerManager *pInstance); // func_ov001_020bfa38
+    static bool ClearInstance(); // func_ov001_020bfa44
+
+    // overlay 24
     void func_ov024_020d41bc(UnkStruct_Param1 *pActorId);
     void func_ov024_020d41f4(UnkStruct_Param1 *param1);
     void func_ov024_020d4228();
@@ -76,8 +88,6 @@ public:
     static AdventureFlag GetBoardFlag(ActorId actorId);
     static AdventureFlag GetFailFlag(ActorId actorId);
     static PassengerManager *Create();
-    static void SetInstance(PassengerManager *pInstance); // func_ov001_020bfa38
-    static bool ClearInstance(); // func_ov001_020bfa44
 };
 
 extern PassengerManager *gpPassengerManager;

@@ -21,6 +21,10 @@ public:
     /* 08 */ u32 mDecayTimer;
     /* 0C */
 
+    Cargo() {
+        this->Clear();
+    }
+
     void Set(unk32 type, unk32 amount) {
         this->mType       = type;
         this->mAmount     = amount;
@@ -34,7 +38,7 @@ public:
     }
 };
 
-class CargoManager {
+class CargoManager : public AutoInstance<CargoManager> {
 public:
     /* 00 */ Cargo mCargo;
     /* 0C */ Cargo mCargo2;
@@ -42,7 +46,15 @@ public:
     /* 1C */ bool mUnk_1C;
     /* 20 */
 
+    // overlay 1
     CargoManager();
+    ~CargoManager();
+
+    void func_ov001_020bf830();
+
+    static void SetInstance(CargoManager *pInstance);
+    static bool ClearInstance();
+    static void Destroy(); // func_ov001_020bf428
 
     // overlay 17
     void Update();
@@ -63,8 +75,6 @@ public:
     void func_ov024_020d591c();
 
     static CargoManager *Create();
-    static void SetInstance(CargoManager *pInstance); // func_ov001_020bf858
-    static bool ClearInstance(); // func_ov001_020bf864
 };
 
 extern CargoManager *gpCargoManager;

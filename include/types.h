@@ -67,6 +67,17 @@ typedef s32 unk32;
 
 DECL_PTMF(PTMF);
 typedef void (*UnkCallback)(u16 param1);
+
+template <typename T> class AutoInstance {
+public:
+    AutoInstance() {
+        T::SetInstance((T *) this);
+    }
+
+    ~AutoInstance() {
+        T::ClearInstance();
+    }
+};
 #endif
 
 #endif

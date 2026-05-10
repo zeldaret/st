@@ -186,6 +186,8 @@ config.libs = [
         [
             Object("001_SceneInit/Actor/ActorManager_001.cpp"),
             Object("001_SceneInit/Item/ItemManager_001.cpp"),
+            Object("001_SceneInit/CargoManager_001.cpp"),
+            Object("001_SceneInit/PassengerManager_001.cpp"),
         ]
     ),
     GameLib(
