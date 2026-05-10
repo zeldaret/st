@@ -167,7 +167,7 @@ func_ov017_020c3bc0 kind:function(arm,size=0xa4) addr:0x020c3bc0
 func_ov017_020c3c64 kind:function(arm,size=0x40) addr:0x020c3c64
 func_ov017_020c3ca4 kind:function(arm,size=0xf4) addr:0x020c3ca4
 func_ov017_020c3d98 kind:function(arm,size=0x28) addr:0x020c3d98
-sCargoInfos kind:data(byte[42]) addr:0x020c3dc0
+sCargoInfos kind:data(byte[42]) addr:0x020c3dc0 local
 data_ov017_020c3dec kind:data(any) addr:0x020c3dec
 __sinit_ov017_020c3e24 kind:function(arm,size=0x6c) addr:0x020c3e24
 __sinit_ov017_020c3e90 kind:function(arm,size=0x38) addr:0x020c3e90
