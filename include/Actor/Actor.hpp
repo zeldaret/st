@@ -195,6 +195,9 @@ public:
     void func_ov000_02098a88(unk32 param1, unk32 param2);
 
     void func_ov017_020bf5c4(Vec3p *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+
+    void func_ov031_020f7574();
+    void func_ov000_02099afc();
 };
 
 struct Actor_c4_stack {

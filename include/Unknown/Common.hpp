@@ -918,6 +918,7 @@ public:
     /* 5C */ unk32 mUnk_5C;
     /* 60 */
 
+    UnkSystem4() {}
     UnkSystem4(unk32 param1); // func_ov000_02057b54
 
     // data_ov000_020b1a6c
@@ -926,7 +927,7 @@ public:
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2);
-    /* 18 */ virtual void vfunc_18();
+    /* 18 */ virtual void vfunc_18(Vec3p *param1);
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1);
     /* 20 */ virtual void vfunc_20();
 
@@ -993,6 +994,7 @@ public:
     /* 1C */ unk32 mUnk_1C;
     /* 20 */
 
+    UnkSystem5() {}
     UnkSystem5(void *param1, unk32 param2); // func_ov000_0205778c
 
     void func_01ffc3b4();
