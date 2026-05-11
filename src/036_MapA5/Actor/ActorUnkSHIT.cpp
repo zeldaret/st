@@ -177,7 +177,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
 
     switch (this->mItemId) {
         case ItemId_NormalShield:
-            if (GET_FLAG(pIVar4->mUnk_08, ItemFlag_Shield)) {
+            if (GET_FLAG(pIVar4->mFlags, ItemFlag_Shield)) {
                 return false;
             }
 
@@ -231,7 +231,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
 
             break;
         case ItemId_BombsRefill:
-            if (!GET_FLAG(pIVar4->mUnk_08, ItemFlag_Bombs)) {
+            if (!GET_FLAG(pIVar4->mFlags, ItemFlag_Bombs)) {
                 return false;
             }
 
@@ -244,7 +244,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
 
             break;
         case ItemId_ArrowsRefill:
-            if (!GET_FLAG(pIVar4->mUnk_08, ItemFlag_Bow)) {
+            if (!GET_FLAG(pIVar4->mFlags, ItemFlag_Bow)) {
                 return false;
             }
 
@@ -258,7 +258,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
             break;
         case ItemId_QuiverMedium:
         case ItemId_QuiverLarge:
-            if (!GET_FLAG(pIVar4->mUnk_08, ItemFlag_Bow)) {
+            if (!GET_FLAG(pIVar4->mFlags, ItemFlag_Bow)) {
                 return false;
             }
 

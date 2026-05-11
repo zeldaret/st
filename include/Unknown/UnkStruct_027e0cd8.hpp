@@ -9,6 +9,11 @@
 
 class MapObject_20;
 
+class UnkStruct_027e0cd8_0c_160 {
+public:
+    bool func_ov026_02106aa8();
+};
+
 class UnkStruct_027e0cd8_0c {
 public:
     /* 000 (vtable) */
@@ -69,7 +74,12 @@ public:
     /* 0DC */ ZeldaObjectList *mUnk_DC[8];
     /* 0FC */ STRUCT_PAD(0xFC, 0x128);
     /* 128 */ u16 mUnk_128;
+    /* 12A */ STRUCT_PAD(0x12A, 0x160);
+    /* 160 */ UnkStruct_027e0cd8_0c_160 *mUnk_160;
+    /* 164 */ STRUCT_PAD(0x164, 0x1E0);
+    /* 1E0 */
 
+    // data_ov031_02112a0c
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
@@ -97,12 +107,32 @@ public:
     Vec3p *func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1);
 };
 
+class UnkStruct_027e0cd8_04_0C {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x50);
+    /* 50 */
+
+    UnkStruct_027e0cd8_04_0C();
+};
+
+class UnkStruct_027e0cd8_04 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ UnkStruct_027e0cd8_04_0C *mUnk_0C;
+    /* 10 */
+    /* B4 */
+
+    UnkStruct_027e0cd8_04();
+};
+
 class UnkStruct_027e0cd8 {
 public:
     /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 *mUnk_04;
+    /* 04 */ UnkStruct_027e0cd8_04 *mUnk_04; // stage flags
     /* 08 */ unk32 mUnk_08;
-    /* 0C */ UnkStruct_027e0cd8_0c *mUnk_0C;
+    /* 0C */ UnkStruct_027e0cd8_0c *mUnk_0C; // related to train?
     /* 10 */ MapObjectManager *mUnk_10;
     /* 14 */ STRUCT_PAD(0x14, 0x4C);
     /* 4C */

@@ -178,7 +178,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
     data_ov000_020b6510->func_ov000_020aa0ac(itemId);
     gpMiscAdvManager->GiveLetterOrPriceCard(itemId);
 
-    if (!GET_FLAG(this->mUnk_08, ItemFlag_LokomoSword) && itemId == ItemId_TearLight &&
+    if (!GET_FLAG(this->mFlags, ItemFlag_LokomoSword) && itemId == ItemId_TearLight &&
         this->mTearsAmount == MAX_TEARS_OF_LIGHT && (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower)) {
         return true;
     }
@@ -188,244 +188,244 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
 
 // BMG IDs
 static const u32 sBMGItemMap[] = {
-    BMG_ID(BMGGroup_maingame, 0x01), // ItemId_Nothing
-    BMG_ID(BMGGroup_maingame, 0x02), // ItemId_NormalShield
-    BMG_ID(BMGGroup_castle, 0xD6), // ItemId_NormalSword
-    BMG_ID(BMGGroup_dungeon, 0x7A), // ItemId_Whirlwind
-    BMG_ID(BMGGroup_maingame, 0x03), // ItemId_BombBag
-    BMG_ID(BMGGroup_dungeon, 0x7B), // ItemId_NormalBow
-    BMG_ID(BMGGroup_dungeon, 0x7C), // ItemId_Boomerang
-    BMG_ID(BMGGroup_dungeon, 0x7D), // ItemId_Whip
-    BMG_ID(BMGGroup_dungeon, 0x7E), // ItemId_SandRod
-    BMG_ID(BMGGroup_maingame, 0x04), // ItemId_9
-    BMG_ID(BMGGroup_maingame, 0x05), // ItemId_NormalKey
-    BMG_ID(BMGGroup_maingame, 0x06), // ItemId_BossKey
-    BMG_ID(BMGGroup_maingame, 0x07), // ItemId_GreenRupee
-    BMG_ID(BMGGroup_maingame, 0x08), // ItemId_BlueRupee
-    BMG_ID(BMGGroup_maingame, 0x09), // ItemId_RedRupee
-    BMG_ID(BMGGroup_maingame, 0x0A), // ItemId_BigGreenRupee
-    BMG_ID(BMGGroup_maingame, 0x0B), // ItemId_BigRedRupee
-    BMG_ID(BMGGroup_maingame, 0x0C), // ItemId_BigGoldRupee
-    BMG_ID(BMGGroup_maingame, 0x0D), // ItemId_ForceGem_18
-    BMG_ID(BMGGroup_maingame, 0x0E), // ItemId_ForceGem_19
-    BMG_ID(BMGGroup_maingame, 0x0F), // ItemId_ForceGem_20
-    BMG_ID(BMGGroup_tower, 0x00), // ItemId_ForestGlyph
-    BMG_ID(BMGGroup_tower, 0x01), // ItemId_SnowGlyph
-    BMG_ID(BMGGroup_tower, 0x02), // ItemId_OceanGlyph
-    BMG_ID(BMGGroup_tower, 0x03), // ItemId_FireGlyph
-    BMG_ID(BMGGroup_forest, 0xEB), // ItemId_RestoredForestGlyph
-    BMG_ID(BMGGroup_snow, 0x00), // ItemId_RestoredSnowGlyph
-    BMG_ID(BMGGroup_water, 0x00), // ItemId_RestoredOceanGlyph
+    BMG_ID(BMGGroup_maingame, 0x01),  // ItemId_Nothing
+    BMG_ID(BMGGroup_maingame, 0x02),  // ItemId_NormalShield
+    BMG_ID(BMGGroup_castle, 0xD6),    // ItemId_NormalSword
+    BMG_ID(BMGGroup_dungeon, 0x7A),   // ItemId_Whirlwind
+    BMG_ID(BMGGroup_maingame, 0x03),  // ItemId_BombBag
+    BMG_ID(BMGGroup_dungeon, 0x7B),   // ItemId_NormalBow
+    BMG_ID(BMGGroup_dungeon, 0x7C),   // ItemId_Boomerang
+    BMG_ID(BMGGroup_dungeon, 0x7D),   // ItemId_Whip
+    BMG_ID(BMGGroup_dungeon, 0x7E),   // ItemId_SandRod
+    BMG_ID(BMGGroup_maingame, 0x04),  // ItemId_9
+    BMG_ID(BMGGroup_maingame, 0x05),  // ItemId_NormalKey
+    BMG_ID(BMGGroup_maingame, 0x06),  // ItemId_BossKey
+    BMG_ID(BMGGroup_maingame, 0x07),  // ItemId_GreenRupee
+    BMG_ID(BMGGroup_maingame, 0x08),  // ItemId_BlueRupee
+    BMG_ID(BMGGroup_maingame, 0x09),  // ItemId_RedRupee
+    BMG_ID(BMGGroup_maingame, 0x0A),  // ItemId_BigGreenRupee
+    BMG_ID(BMGGroup_maingame, 0x0B),  // ItemId_BigRedRupee
+    BMG_ID(BMGGroup_maingame, 0x0C),  // ItemId_BigGoldRupee
+    BMG_ID(BMGGroup_maingame, 0x0D),  // ItemId_ForceGem_18
+    BMG_ID(BMGGroup_maingame, 0x0E),  // ItemId_ForceGem_19
+    BMG_ID(BMGGroup_maingame, 0x0F),  // ItemId_ForceGem_20
+    BMG_ID(BMGGroup_tower, 0x00),     // ItemId_ForestGlyph
+    BMG_ID(BMGGroup_tower, 0x01),     // ItemId_SnowGlyph
+    BMG_ID(BMGGroup_tower, 0x02),     // ItemId_OceanGlyph
+    BMG_ID(BMGGroup_tower, 0x03),     // ItemId_FireGlyph
+    BMG_ID(BMGGroup_forest, 0xEB),    // ItemId_RestoredForestGlyph
+    BMG_ID(BMGGroup_snow, 0x00),      // ItemId_RestoredSnowGlyph
+    BMG_ID(BMGGroup_water, 0x00),     // ItemId_RestoredOceanGlyph
     BMG_ID(BMGGroup_flame_fld, 0x8E), // ItemId_RestoredFireGlyph
-    BMG_ID(BMGGroup_desert, 0x48), // ItemId_RestoredDesertOceanGlyph
-    BMG_ID(BMGGroup_maingame, 0x10), // ItemId_FinalTrack
-    BMG_ID(BMGGroup_maingame, 0x11), // ItemId_SpiritTrain
-    BMG_ID(BMGGroup_maingame, 0x12), // ItemId_TrainCannon
-    BMG_ID(BMGGroup_maingame, 0x13), // ItemId_SpiritTrainCar
-    BMG_ID(BMGGroup_maingame, 0x14), // ItemId_TrainWagon
-    BMG_ID(BMGGroup_maingame, 0x15), // ItemId_ForceGem_35
-    BMG_ID(BMGGroup_maingame, 0x16), // ItemId_ForceGem_36
-    BMG_ID(BMGGroup_maingame, 0x17), // ItemId_ForceGem_37
-    BMG_ID(BMGGroup_castle, 0xD7), // ItemId_RecruitUniform
-    BMG_ID(BMGGroup_maingame, 0x18), // ItemId_PostmasterLetter
-    BMG_ID(BMGGroup_maingame, 0x19), // ItemId_HeartContainer
-    BMG_ID(BMGGroup_maingame, 0x1A), // ItemId_QuiverMedium
-    BMG_ID(BMGGroup_maingame, 0x1B), // ItemId_BombBagMedium
-    BMG_ID(BMGGroup_maingame, 0x1C), // ItemId_ForceGem_43
-    BMG_ID(BMGGroup_maingame, 0x1D), // ItemId_ForceGem_44
-    BMG_ID(BMGGroup_maingame, 0x1E), // ItemId_ForceGem_45
-    BMG_ID(BMGGroup_maingame, 0x1F), // ItemId_ForceGem_46
-    BMG_ID(BMGGroup_maingame, 0x20), // ItemId_ForceGem_47
-    BMG_ID(BMGGroup_maingame, 0x21), // ItemId_ForceGem_48
-    BMG_ID(BMGGroup_maingame, 0x22), // ItemId_ForceGem_49
-    BMG_ID(BMGGroup_maingame, 0x23), // ItemId_ForceGem_50
-    BMG_ID(BMGGroup_maingame, 0x24), // ItemId_ForceGem_51
-    BMG_ID(BMGGroup_maingame, 0x25), // ItemId_ForceGem_52
-    BMG_ID(BMGGroup_maingame, 0x26), // ItemId_ForceGem_53
-    BMG_ID(BMGGroup_maingame, 0x27), // ItemId_ForceGem_54
-    BMG_ID(BMGGroup_maingame, 0x28), // ItemId_ForceGem_55
-    BMG_ID(BMGGroup_maingame, 0x29), // ItemId_ForceGem_56
-    BMG_ID(BMGGroup_maingame, 0x2A), // ItemId_ForceGem_57
-    BMG_ID(BMGGroup_maingame, 0x2B), // ItemId_ForceGem_58
-    BMG_ID(BMGGroup_maingame, 0x2C), // ItemId_ForceGem_59
-    BMG_ID(BMGGroup_maingame, 0x2D), // ItemId_ForceGem_60
-    BMG_ID(BMGGroup_maingame, 0x2E), // ItemId_ForceGem_61
-    BMG_ID(BMGGroup_maingame, 0x2F), // ItemId_PanFlute
-    BMG_ID(BMGGroup_village, 0xF7), // ItemId_StampBook
-    BMG_ID(BMGGroup_dungeon, 0x7F), // ItemId_LightBow
-    BMG_ID(BMGGroup_maingame, 0x30), // ItemId_LokomoSword
-    BMG_ID(BMGGroup_maingame, 0x31), // ItemId_TenPriceCard
-    BMG_ID(BMGGroup_maingame, 0x32), // ItemId_RedPotion
-    BMG_ID(BMGGroup_maingame, 0x33), // ItemId_PurplePotion
-    BMG_ID(BMGGroup_maingame, 0x34), // ItemId_YellowPotion
-    BMG_ID(BMGGroup_maingame, 0x35), // ItemId_DemonFossil
-    BMG_ID(BMGGroup_maingame, 0x36), // ItemId_StalfosSkull
-    BMG_ID(BMGGroup_maingame, 0x37), // ItemId_StarFragment
-    BMG_ID(BMGGroup_maingame, 0x38), // ItemId_BeeLarvae
-    BMG_ID(BMGGroup_maingame, 0x39), // ItemId_WoodHeart
-    BMG_ID(BMGGroup_maingame, 0x3A), // ItemId_DarkPearlLoop
-    BMG_ID(BMGGroup_maingame, 0x3B), // ItemId_WhitePearlLoop
-    BMG_ID(BMGGroup_maingame, 0x3C), // ItemId_RutoCrown
-    BMG_ID(BMGGroup_maingame, 0x3D), // ItemId_DragonScale
-    BMG_ID(BMGGroup_maingame, 0x3E), // ItemId_PirateNecklace
-    BMG_ID(BMGGroup_maingame, 0x3F), // ItemId_PalaceDish
-    BMG_ID(BMGGroup_maingame, 0x40), // ItemId_GoronAmber
-    BMG_ID(BMGGroup_maingame, 0x41), // ItemId_MysticJade
-    BMG_ID(BMGGroup_maingame, 0x42), // ItemId_AncientCoin
-    BMG_ID(BMGGroup_maingame, 0x43), // ItemId_PricelessStone
-    BMG_ID(BMGGroup_maingame, 0x44), // ItemId_RegalRing
-    BMG_ID(BMGGroup_maingame, 0x45), // ItemId_ArrowsRefill
-    BMG_ID(BMGGroup_maingame, 0x46), // ItemId_BombsRefill
-    BMG_ID(BMGGroup_maingame, 0x47), // ItemId_SoldOutSign
-    BMG_ID(BMGGroup_village, 0xF8), // ItemId_AncientShield
-    BMG_ID(BMGGroup_maingame, 0x48), // ItemId_QuiverLarge
-    BMG_ID(BMGGroup_maingame, 0x49), // ItemId_BombBagLarge
-    BMG_ID(BMGGroup_maingame, 0x4A), // ItemId_RandCommonTreasure
-    BMG_ID(BMGGroup_maingame, 0x4B), // ItemId_RandUncommonTreasure
-    BMG_ID(BMGGroup_maingame, 0x4C), // ItemId_RandRareTreasure
-    BMG_ID(BMGGroup_maingame, 0x4D), // ItemId_RandLegendaryTreasure
-    BMG_ID(BMGGroup_tower, 0x04), // ItemId_TearLight
-    BMG_ID(BMGGroup_tower, 0x05), // ItemId_LightCompass
-    BMG_ID(BMGGroup_maingame, 0x4E), // ItemId_ScrollSpinAttack
-    BMG_ID(BMGGroup_maingame, 0x4F), // ItemId_ScrollBeam
-    BMG_ID(BMGGroup_village, 0xF9), // ItemId_LinebeckLetter
-    BMG_ID(BMGGroup_forest, 0xEC), // ItemId_PanFluteSong_101
-    BMG_ID(BMGGroup_dungeon, 0x80), // ItemId_PanFluteSong_102
-    BMG_ID(BMGGroup_water, 0x01), // ItemId_PanFluteSong_103
-    BMG_ID(BMGGroup_village, 0xFA), // ItemId_PanFluteSong_104
-    BMG_ID(BMGGroup_snow, 0x01), // ItemId_PanFluteSong_105
-    BMG_ID(BMGGroup_maingame, 0x50), // ItemId_RabbitNet
-    BMG_ID(BMGGroup_maingame, 0x51), // ItemId_BeedleCard
-    BMG_ID(BMGGroup_maingame, 0x52), // ItemId_SilverCard
-    BMG_ID(BMGGroup_maingame, 0x53), // ItemId_GoldCard
-    BMG_ID(BMGGroup_maingame, 0x54), // ItemId_PlatinumCard
-    BMG_ID(BMGGroup_maingame, 0x55), // ItemId_DiamondCard
-    BMG_ID(BMGGroup_maingame, 0x56), // ItemId_FreebieCard
-    BMG_ID(BMGGroup_maingame, 0x57), // ItemId_QuintupleCard
-    BMG_ID(BMGGroup_maingame, 0x58), // ItemId_CarbenLetter
-    BMG_ID(BMGGroup_maingame, 0x59), // ItemId_RecruitUniform2
-    BMG_ID(BMGGroup_maingame, 0x5A), // ItemId_EngineerUniform
+    BMG_ID(BMGGroup_desert, 0x48),    // ItemId_RestoredDesertOceanGlyph
+    BMG_ID(BMGGroup_maingame, 0x10),  // ItemId_FinalTrack
+    BMG_ID(BMGGroup_maingame, 0x11),  // ItemId_SpiritTrain
+    BMG_ID(BMGGroup_maingame, 0x12),  // ItemId_TrainCannon
+    BMG_ID(BMGGroup_maingame, 0x13),  // ItemId_SpiritTrainCar
+    BMG_ID(BMGGroup_maingame, 0x14),  // ItemId_TrainWagon
+    BMG_ID(BMGGroup_maingame, 0x15),  // ItemId_ForceGem_35
+    BMG_ID(BMGGroup_maingame, 0x16),  // ItemId_ForceGem_36
+    BMG_ID(BMGGroup_maingame, 0x17),  // ItemId_ForceGem_37
+    BMG_ID(BMGGroup_castle, 0xD7),    // ItemId_RecruitUniform
+    BMG_ID(BMGGroup_maingame, 0x18),  // ItemId_PostmasterLetter
+    BMG_ID(BMGGroup_maingame, 0x19),  // ItemId_HeartContainer
+    BMG_ID(BMGGroup_maingame, 0x1A),  // ItemId_QuiverMedium
+    BMG_ID(BMGGroup_maingame, 0x1B),  // ItemId_BombBagMedium
+    BMG_ID(BMGGroup_maingame, 0x1C),  // ItemId_ForceGem_43
+    BMG_ID(BMGGroup_maingame, 0x1D),  // ItemId_ForceGem_44
+    BMG_ID(BMGGroup_maingame, 0x1E),  // ItemId_ForceGem_45
+    BMG_ID(BMGGroup_maingame, 0x1F),  // ItemId_ForceGem_46
+    BMG_ID(BMGGroup_maingame, 0x20),  // ItemId_ForceGem_47
+    BMG_ID(BMGGroup_maingame, 0x21),  // ItemId_ForceGem_48
+    BMG_ID(BMGGroup_maingame, 0x22),  // ItemId_ForceGem_49
+    BMG_ID(BMGGroup_maingame, 0x23),  // ItemId_ForceGem_50
+    BMG_ID(BMGGroup_maingame, 0x24),  // ItemId_ForceGem_51
+    BMG_ID(BMGGroup_maingame, 0x25),  // ItemId_ForceGem_52
+    BMG_ID(BMGGroup_maingame, 0x26),  // ItemId_ForceGem_53
+    BMG_ID(BMGGroup_maingame, 0x27),  // ItemId_ForceGem_54
+    BMG_ID(BMGGroup_maingame, 0x28),  // ItemId_ForceGem_55
+    BMG_ID(BMGGroup_maingame, 0x29),  // ItemId_ForceGem_56
+    BMG_ID(BMGGroup_maingame, 0x2A),  // ItemId_ForceGem_57
+    BMG_ID(BMGGroup_maingame, 0x2B),  // ItemId_ForceGem_58
+    BMG_ID(BMGGroup_maingame, 0x2C),  // ItemId_ForceGem_59
+    BMG_ID(BMGGroup_maingame, 0x2D),  // ItemId_ForceGem_60
+    BMG_ID(BMGGroup_maingame, 0x2E),  // ItemId_ForceGem_61
+    BMG_ID(BMGGroup_maingame, 0x2F),  // ItemId_PanFlute
+    BMG_ID(BMGGroup_village, 0xF7),   // ItemId_StampBook
+    BMG_ID(BMGGroup_dungeon, 0x7F),   // ItemId_LightBow
+    BMG_ID(BMGGroup_maingame, 0x30),  // ItemId_LokomoSword
+    BMG_ID(BMGGroup_maingame, 0x31),  // ItemId_TenPriceCard
+    BMG_ID(BMGGroup_maingame, 0x32),  // ItemId_RedPotion
+    BMG_ID(BMGGroup_maingame, 0x33),  // ItemId_PurplePotion
+    BMG_ID(BMGGroup_maingame, 0x34),  // ItemId_YellowPotion
+    BMG_ID(BMGGroup_maingame, 0x35),  // ItemId_DemonFossil
+    BMG_ID(BMGGroup_maingame, 0x36),  // ItemId_StalfosSkull
+    BMG_ID(BMGGroup_maingame, 0x37),  // ItemId_StarFragment
+    BMG_ID(BMGGroup_maingame, 0x38),  // ItemId_BeeLarvae
+    BMG_ID(BMGGroup_maingame, 0x39),  // ItemId_WoodHeart
+    BMG_ID(BMGGroup_maingame, 0x3A),  // ItemId_DarkPearlLoop
+    BMG_ID(BMGGroup_maingame, 0x3B),  // ItemId_WhitePearlLoop
+    BMG_ID(BMGGroup_maingame, 0x3C),  // ItemId_RutoCrown
+    BMG_ID(BMGGroup_maingame, 0x3D),  // ItemId_DragonScale
+    BMG_ID(BMGGroup_maingame, 0x3E),  // ItemId_PirateNecklace
+    BMG_ID(BMGGroup_maingame, 0x3F),  // ItemId_PalaceDish
+    BMG_ID(BMGGroup_maingame, 0x40),  // ItemId_GoronAmber
+    BMG_ID(BMGGroup_maingame, 0x41),  // ItemId_MysticJade
+    BMG_ID(BMGGroup_maingame, 0x42),  // ItemId_AncientCoin
+    BMG_ID(BMGGroup_maingame, 0x43),  // ItemId_PricelessStone
+    BMG_ID(BMGGroup_maingame, 0x44),  // ItemId_RegalRing
+    BMG_ID(BMGGroup_maingame, 0x45),  // ItemId_ArrowsRefill
+    BMG_ID(BMGGroup_maingame, 0x46),  // ItemId_BombsRefill
+    BMG_ID(BMGGroup_maingame, 0x47),  // ItemId_SoldOutSign
+    BMG_ID(BMGGroup_village, 0xF8),   // ItemId_AncientShield
+    BMG_ID(BMGGroup_maingame, 0x48),  // ItemId_QuiverLarge
+    BMG_ID(BMGGroup_maingame, 0x49),  // ItemId_BombBagLarge
+    BMG_ID(BMGGroup_maingame, 0x4A),  // ItemId_RandCommonTreasure
+    BMG_ID(BMGGroup_maingame, 0x4B),  // ItemId_RandUncommonTreasure
+    BMG_ID(BMGGroup_maingame, 0x4C),  // ItemId_RandRareTreasure
+    BMG_ID(BMGGroup_maingame, 0x4D),  // ItemId_RandLegendaryTreasure
+    BMG_ID(BMGGroup_tower, 0x04),     // ItemId_TearLight
+    BMG_ID(BMGGroup_tower, 0x05),     // ItemId_LightCompass
+    BMG_ID(BMGGroup_maingame, 0x4E),  // ItemId_ScrollSpinAttack
+    BMG_ID(BMGGroup_maingame, 0x4F),  // ItemId_ScrollBeam
+    BMG_ID(BMGGroup_village, 0xF9),   // ItemId_LinebeckLetter
+    BMG_ID(BMGGroup_forest, 0xEC),    // ItemId_PanFluteSong_101
+    BMG_ID(BMGGroup_dungeon, 0x80),   // ItemId_PanFluteSong_102
+    BMG_ID(BMGGroup_water, 0x01),     // ItemId_PanFluteSong_103
+    BMG_ID(BMGGroup_village, 0xFA),   // ItemId_PanFluteSong_104
+    BMG_ID(BMGGroup_snow, 0x01),      // ItemId_PanFluteSong_105
+    BMG_ID(BMGGroup_maingame, 0x50),  // ItemId_RabbitNet
+    BMG_ID(BMGGroup_maingame, 0x51),  // ItemId_BeedleCard
+    BMG_ID(BMGGroup_maingame, 0x52),  // ItemId_SilverCard
+    BMG_ID(BMGGroup_maingame, 0x53),  // ItemId_GoldCard
+    BMG_ID(BMGGroup_maingame, 0x54),  // ItemId_PlatinumCard
+    BMG_ID(BMGGroup_maingame, 0x55),  // ItemId_DiamondCard
+    BMG_ID(BMGGroup_maingame, 0x56),  // ItemId_FreebieCard
+    BMG_ID(BMGGroup_maingame, 0x57),  // ItemId_QuintupleCard
+    BMG_ID(BMGGroup_maingame, 0x58),  // ItemId_CarbenLetter
+    BMG_ID(BMGGroup_maingame, 0x59),  // ItemId_RecruitUniform2
+    BMG_ID(BMGGroup_maingame, 0x5A),  // ItemId_EngineerUniform
 };
 
 // Adventure Flags
 static const AdventureFlag sAdvFlagItemMap[] = {
-    AdventureFlag_Nothing, // ItemId_Nothing
-    AdventureFlag_Nothing, // ItemId_NormalShield
-    AdventureFlag_ObtainedRecruitSword, // ItemId_NormalSword
-    AdventureFlag_Nothing, // ItemId_Whirlwind
-    AdventureFlag_Nothing, // ItemId_BombBag
-    AdventureFlag_ObtainedBowAndArrows, // ItemId_NormalBow
-    AdventureFlag_Nothing, // ItemId_Boomerang
-    AdventureFlag_ObtainedWhip, // ItemId_Whip
-    AdventureFlag_ObtainedSandWand, // ItemId_SandRod
-    AdventureFlag_Nothing, // ItemId_9
-    AdventureFlag_Nothing, // ItemId_NormalKey
-    AdventureFlag_Nothing, // ItemId_BossKey
-    AdventureFlag_Nothing, // ItemId_GreenRupee
-    AdventureFlag_Nothing, // ItemId_BlueRupee
-    AdventureFlag_Nothing, // ItemId_RedRupee
-    AdventureFlag_Nothing, // ItemId_BigGreenRupee
-    AdventureFlag_Nothing, // ItemId_BigRedRupee
-    AdventureFlag_Nothing, // ItemId_BigGoldRupee
-    AdventureFlag_ObtainedWadatsumiForceGem, // ItemId_ForceGem_18
-    AdventureFlag_ObtainedNiboshiForceGem, // ItemId_ForceGem_19
+    AdventureFlag_Nothing,                           // ItemId_Nothing
+    AdventureFlag_Nothing,                           // ItemId_NormalShield
+    AdventureFlag_ObtainedRecruitSword,              // ItemId_NormalSword
+    AdventureFlag_Nothing,                           // ItemId_Whirlwind
+    AdventureFlag_Nothing,                           // ItemId_BombBag
+    AdventureFlag_ObtainedBowAndArrows,              // ItemId_NormalBow
+    AdventureFlag_Nothing,                           // ItemId_Boomerang
+    AdventureFlag_ObtainedWhip,                      // ItemId_Whip
+    AdventureFlag_ObtainedSandWand,                  // ItemId_SandRod
+    AdventureFlag_Nothing,                           // ItemId_9
+    AdventureFlag_Nothing,                           // ItemId_NormalKey
+    AdventureFlag_Nothing,                           // ItemId_BossKey
+    AdventureFlag_Nothing,                           // ItemId_GreenRupee
+    AdventureFlag_Nothing,                           // ItemId_BlueRupee
+    AdventureFlag_Nothing,                           // ItemId_RedRupee
+    AdventureFlag_Nothing,                           // ItemId_BigGreenRupee
+    AdventureFlag_Nothing,                           // ItemId_BigRedRupee
+    AdventureFlag_Nothing,                           // ItemId_BigGoldRupee
+    AdventureFlag_ObtainedWadatsumiForceGem,         // ItemId_ForceGem_18
+    AdventureFlag_ObtainedNiboshiForceGem,           // ItemId_ForceGem_19
     AdventureFlag_ObtainedGoronAdultMegaIceForceGem, // ItemId_ForceGem_20
-    AdventureFlag_ObtainedForestGlyph, // ItemId_ForestGlyph
-    AdventureFlag_ObtainedSnowGlyph, // ItemId_SnowGlyph
-    AdventureFlag_ObtainedOceanGlyph, // ItemId_OceanGlyph
-    AdventureFlag_ObtainedFireGlyph, // ItemId_FireGlyph
-    AdventureFlag_CompletedForestRestorationSong, // ItemId_RestoredForestGlyph
-    AdventureFlag_CompletedOceanRestorationSong, // ItemId_RestoredSnowGlyph
-    AdventureFlag_CompletedSnowRestorationSong, // ItemId_RestoredOceanGlyph
-    AdventureFlag_CompletedFireRestorationSong, // ItemId_RestoredFireGlyph
-    AdventureFlag_CompletedSandRestorationSong, // ItemId_RestoredDesertOceanGlyph
-    AdventureFlag_OpenedDarkRealmPortal, // ItemId_FinalTrack
-    AdventureFlag_ObtainedSpiritTrain, // ItemId_SpiritTrain
-    AdventureFlag_ObtainedTrainCannon, // ItemId_TrainCannon
-    AdventureFlag_ObtainedSpiritTrainCar, // ItemId_SpiritTrainCar
-    AdventureFlag_ObtainedTrainWagon, // ItemId_TrainWagon
-    AdventureFlag_ObtainedFerrusForceGem2, // ItemId_ForceGem_35
-    AdventureFlag_ObtainedKofuForceGem, // ItemId_ForceGem_36
-    AdventureFlag_ObtainedChildGoronForceGem, // ItemId_ForceGem_37
-    AdventureFlag_Nothing, // ItemId_RecruitUniform
-    AdventureFlag_Nothing, // ItemId_PostmasterLetter
-    AdventureFlag_Nothing, // ItemId_HeartContainer
-    AdventureFlag_Nothing, // ItemId_QuiverMedium
-    AdventureFlag_Nothing, // ItemId_BombBagMedium
-    AdventureFlag_ObtainedLuciaForceGem, // ItemId_ForceGem_43
-    AdventureFlag_ObtainedOrcaForceGem, // ItemId_ForceGem_44
-    AdventureFlag_ObtainedCarbenForceGem, // ItemId_ForceGem_45
-    AdventureFlag_ObtainedRaelForceGem, // ItemId_ForceGem_46
-    AdventureFlag_ObtainedJoeForceGem, // ItemId_ForceGem_47
-    AdventureFlag_ObtainedMonaForceGem, // ItemId_ForceGem_48
-    AdventureFlag_ObtainedHarryForceGem, // ItemId_ForceGem_49
-    AdventureFlag_ObtainedMashForceGem, // ItemId_ForceGem_50
-    AdventureFlag_ObtainedFerrusForceGem1, // ItemId_ForceGem_51
-    AdventureFlag_ObtainedYekoForceGem, // ItemId_ForceGem_52
-    AdventureFlag_ObtainedNokoForceGem, // ItemId_ForceGem_53
-    AdventureFlag_ObtainedGoronAdultAnoukiForceGem, // ItemId_ForceGem_54
-    AdventureFlag_ObtainedSteemForceGem, // ItemId_ForceGem_55
-    AdventureFlag_ObtainedLinebeckForceGem, // ItemId_ForceGem_56
-    AdventureFlag_ObtainedAnjeanDesertForceGem, // ItemId_ForceGem_57
-    AdventureFlag_Unk_0A7, // ItemId_ForceGem_58
-    AdventureFlag_Unk_0A8, // ItemId_ForceGem_59
-    AdventureFlag_Unk_0A9, // ItemId_ForceGem_60
-    AdventureFlag_Unk_0AA, // ItemId_ForceGem_61
-    AdventureFlag_Nothing, // ItemId_PanFlute
-    AdventureFlag_Nothing, // ItemId_StampBook
-    AdventureFlag_ObtainedBowOfLight, // ItemId_LightBow
-    AdventureFlag_Unk_0B1, // ItemId_LokomoSword
-    AdventureFlag_Nothing, // ItemId_TenPriceCard
-    AdventureFlag_Nothing, // ItemId_RedPotion
-    AdventureFlag_Nothing, // ItemId_PurplePotion
-    AdventureFlag_Nothing, // ItemId_YellowPotion
-    AdventureFlag_Nothing, // ItemId_DemonFossil
-    AdventureFlag_Nothing, // ItemId_StalfosSkull
-    AdventureFlag_Nothing, // ItemId_StarFragment
-    AdventureFlag_Nothing, // ItemId_BeeLarvae
-    AdventureFlag_Nothing, // ItemId_WoodHeart
-    AdventureFlag_Nothing, // ItemId_DarkPearlLoop
-    AdventureFlag_Nothing, // ItemId_WhitePearlLoop
-    AdventureFlag_Nothing, // ItemId_RutoCrown
-    AdventureFlag_Nothing, // ItemId_DragonScale
-    AdventureFlag_Nothing, // ItemId_PirateNecklace
-    AdventureFlag_Nothing, // ItemId_PalaceDish
-    AdventureFlag_Nothing, // ItemId_GoronAmber
-    AdventureFlag_Nothing, // ItemId_MysticJade
-    AdventureFlag_Nothing, // ItemId_AncientCoin
-    AdventureFlag_Nothing, // ItemId_PricelessStone
-    AdventureFlag_Nothing, // ItemId_RegalRing
-    AdventureFlag_Nothing, // ItemId_ArrowsRefill
-    AdventureFlag_Nothing, // ItemId_BombsRefill
-    AdventureFlag_Nothing, // ItemId_SoldOutSign
-    AdventureFlag_Nothing, // ItemId_AncientShield
-    AdventureFlag_Nothing, // ItemId_QuiverLarge
-    AdventureFlag_Nothing, // ItemId_BombBagLarge
-    AdventureFlag_Nothing, // ItemId_RandCommonTreasure
-    AdventureFlag_Nothing, // ItemId_RandUncommonTreasure
-    AdventureFlag_Nothing, // ItemId_RandRareTreasure
-    AdventureFlag_Nothing, // ItemId_RandLegendaryTreasure
-    AdventureFlag_Nothing, // ItemId_TearLight
-    AdventureFlag_ObtainedCompassOfLight, // ItemId_LightCompass
-    AdventureFlag_Nothing, // ItemId_ScrollSpinAttack
-    AdventureFlag_Nothing, // ItemId_ScrollBeam
-    AdventureFlag_ObtainedLinebecksLetter, // ItemId_LinebeckLetter
-    AdventureFlag_Nothing, // ItemId_PanFluteSong_101
-    AdventureFlag_Nothing, // ItemId_PanFluteSong_102
-    AdventureFlag_Nothing, // ItemId_PanFluteSong_103
-    AdventureFlag_Nothing, // ItemId_PanFluteSong_104
-    AdventureFlag_Nothing, // ItemId_PanFluteSong_105
-    AdventureFlag_ObtainedRabbitNet, // ItemId_RabbitNet
-    AdventureFlag_ObtainedBeedlePointsCard, // ItemId_BeedleCard
-    AdventureFlag_Unk_18E, // ItemId_SilverCard
-    AdventureFlag_Unk_18F, // ItemId_GoldCard
-    AdventureFlag_Unk_190, // ItemId_PlatinumCard
-    AdventureFlag_Unk_191, // ItemId_DiamondCard
-    AdventureFlag_ObtainedBeedleFreebieCard, // ItemId_FreebieCard
+    AdventureFlag_ObtainedForestGlyph,               // ItemId_ForestGlyph
+    AdventureFlag_ObtainedSnowGlyph,                 // ItemId_SnowGlyph
+    AdventureFlag_ObtainedOceanGlyph,                // ItemId_OceanGlyph
+    AdventureFlag_ObtainedFireGlyph,                 // ItemId_FireGlyph
+    AdventureFlag_CompletedForestRestorationSong,    // ItemId_RestoredForestGlyph
+    AdventureFlag_CompletedOceanRestorationSong,     // ItemId_RestoredSnowGlyph
+    AdventureFlag_CompletedSnowRestorationSong,      // ItemId_RestoredOceanGlyph
+    AdventureFlag_CompletedFireRestorationSong,      // ItemId_RestoredFireGlyph
+    AdventureFlag_CompletedSandRestorationSong,      // ItemId_RestoredDesertOceanGlyph
+    AdventureFlag_OpenedDarkRealmPortal,             // ItemId_FinalTrack
+    AdventureFlag_ObtainedSpiritTrain,               // ItemId_SpiritTrain
+    AdventureFlag_ObtainedTrainCannon,               // ItemId_TrainCannon
+    AdventureFlag_ObtainedSpiritTrainCar,            // ItemId_SpiritTrainCar
+    AdventureFlag_ObtainedTrainWagon,                // ItemId_TrainWagon
+    AdventureFlag_ObtainedFerrusForceGem2,           // ItemId_ForceGem_35
+    AdventureFlag_ObtainedKofuForceGem,              // ItemId_ForceGem_36
+    AdventureFlag_ObtainedChildGoronForceGem,        // ItemId_ForceGem_37
+    AdventureFlag_Nothing,                           // ItemId_RecruitUniform
+    AdventureFlag_Nothing,                           // ItemId_PostmasterLetter
+    AdventureFlag_Nothing,                           // ItemId_HeartContainer
+    AdventureFlag_Nothing,                           // ItemId_QuiverMedium
+    AdventureFlag_Nothing,                           // ItemId_BombBagMedium
+    AdventureFlag_ObtainedLuciaForceGem,             // ItemId_ForceGem_43
+    AdventureFlag_ObtainedOrcaForceGem,              // ItemId_ForceGem_44
+    AdventureFlag_ObtainedCarbenForceGem,            // ItemId_ForceGem_45
+    AdventureFlag_ObtainedRaelForceGem,              // ItemId_ForceGem_46
+    AdventureFlag_ObtainedJoeForceGem,               // ItemId_ForceGem_47
+    AdventureFlag_ObtainedMonaForceGem,              // ItemId_ForceGem_48
+    AdventureFlag_ObtainedHarryForceGem,             // ItemId_ForceGem_49
+    AdventureFlag_ObtainedMashForceGem,              // ItemId_ForceGem_50
+    AdventureFlag_ObtainedFerrusForceGem1,           // ItemId_ForceGem_51
+    AdventureFlag_ObtainedYekoForceGem,              // ItemId_ForceGem_52
+    AdventureFlag_ObtainedNokoForceGem,              // ItemId_ForceGem_53
+    AdventureFlag_ObtainedGoronAdultAnoukiForceGem,  // ItemId_ForceGem_54
+    AdventureFlag_ObtainedSteemForceGem,             // ItemId_ForceGem_55
+    AdventureFlag_ObtainedLinebeckForceGem,          // ItemId_ForceGem_56
+    AdventureFlag_ObtainedAnjeanDesertForceGem,      // ItemId_ForceGem_57
+    AdventureFlag_Unk_0A7,                           // ItemId_ForceGem_58
+    AdventureFlag_Unk_0A8,                           // ItemId_ForceGem_59
+    AdventureFlag_Unk_0A9,                           // ItemId_ForceGem_60
+    AdventureFlag_Unk_0AA,                           // ItemId_ForceGem_61
+    AdventureFlag_Nothing,                           // ItemId_PanFlute
+    AdventureFlag_Nothing,                           // ItemId_StampBook
+    AdventureFlag_ObtainedBowOfLight,                // ItemId_LightBow
+    AdventureFlag_Unk_0B1,                           // ItemId_LokomoSword
+    AdventureFlag_Nothing,                           // ItemId_TenPriceCard
+    AdventureFlag_Nothing,                           // ItemId_RedPotion
+    AdventureFlag_Nothing,                           // ItemId_PurplePotion
+    AdventureFlag_Nothing,                           // ItemId_YellowPotion
+    AdventureFlag_Nothing,                           // ItemId_DemonFossil
+    AdventureFlag_Nothing,                           // ItemId_StalfosSkull
+    AdventureFlag_Nothing,                           // ItemId_StarFragment
+    AdventureFlag_Nothing,                           // ItemId_BeeLarvae
+    AdventureFlag_Nothing,                           // ItemId_WoodHeart
+    AdventureFlag_Nothing,                           // ItemId_DarkPearlLoop
+    AdventureFlag_Nothing,                           // ItemId_WhitePearlLoop
+    AdventureFlag_Nothing,                           // ItemId_RutoCrown
+    AdventureFlag_Nothing,                           // ItemId_DragonScale
+    AdventureFlag_Nothing,                           // ItemId_PirateNecklace
+    AdventureFlag_Nothing,                           // ItemId_PalaceDish
+    AdventureFlag_Nothing,                           // ItemId_GoronAmber
+    AdventureFlag_Nothing,                           // ItemId_MysticJade
+    AdventureFlag_Nothing,                           // ItemId_AncientCoin
+    AdventureFlag_Nothing,                           // ItemId_PricelessStone
+    AdventureFlag_Nothing,                           // ItemId_RegalRing
+    AdventureFlag_Nothing,                           // ItemId_ArrowsRefill
+    AdventureFlag_Nothing,                           // ItemId_BombsRefill
+    AdventureFlag_Nothing,                           // ItemId_SoldOutSign
+    AdventureFlag_Nothing,                           // ItemId_AncientShield
+    AdventureFlag_Nothing,                           // ItemId_QuiverLarge
+    AdventureFlag_Nothing,                           // ItemId_BombBagLarge
+    AdventureFlag_Nothing,                           // ItemId_RandCommonTreasure
+    AdventureFlag_Nothing,                           // ItemId_RandUncommonTreasure
+    AdventureFlag_Nothing,                           // ItemId_RandRareTreasure
+    AdventureFlag_Nothing,                           // ItemId_RandLegendaryTreasure
+    AdventureFlag_Nothing,                           // ItemId_TearLight
+    AdventureFlag_ObtainedCompassOfLight,            // ItemId_LightCompass
+    AdventureFlag_Nothing,                           // ItemId_ScrollSpinAttack
+    AdventureFlag_Nothing,                           // ItemId_ScrollBeam
+    AdventureFlag_ObtainedLinebecksLetter,           // ItemId_LinebeckLetter
+    AdventureFlag_Nothing,                           // ItemId_PanFluteSong_101
+    AdventureFlag_Nothing,                           // ItemId_PanFluteSong_102
+    AdventureFlag_Nothing,                           // ItemId_PanFluteSong_103
+    AdventureFlag_Nothing,                           // ItemId_PanFluteSong_104
+    AdventureFlag_Nothing,                           // ItemId_PanFluteSong_105
+    AdventureFlag_ObtainedRabbitNet,                 // ItemId_RabbitNet
+    AdventureFlag_ObtainedBeedlePointsCard,          // ItemId_BeedleCard
+    AdventureFlag_Unk_18E,                           // ItemId_SilverCard
+    AdventureFlag_Unk_18F,                           // ItemId_GoldCard
+    AdventureFlag_Unk_190,                           // ItemId_PlatinumCard
+    AdventureFlag_Unk_191,                           // ItemId_DiamondCard
+    AdventureFlag_ObtainedBeedleFreebieCard,         // ItemId_FreebieCard
     AdventureFlag_ObtainedBeedleQuintuplePointsCard, // ItemId_QuintupleCard
-    AdventureFlag_ReceivedCarbensLetter, // ItemId_CarbenLetter
-    AdventureFlag_Nothing, // ItemId_RecruitUniform2
-    AdventureFlag_Nothing, // ItemId_EngineerUniform
+    AdventureFlag_ReceivedCarbensLetter,             // ItemId_CarbenLetter
+    AdventureFlag_Nothing,                           // ItemId_RecruitUniform2
+    AdventureFlag_Nothing,                           // ItemId_EngineerUniform
 };
 
 // non-matching
@@ -514,7 +514,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                 case ItemId_BombBag:
                 case ItemId_BombBagMedium:
                 case ItemId_BombBagLarge:
-                    if (GET_FLAG(pItemManager->mUnk_08, ItemFlag_Bombs) == 0) {
+                    if (GET_FLAG(pItemManager->mFlags, ItemFlag_Bombs) == 0) {
                         itemId = ItemId_BombBag;
                     } else if (pItemManager->mBombBagCapacity == UpgradeCapacity_Tier1) {
                         itemId = ItemId_BombBagMedium;
@@ -525,7 +525,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                 case ItemId_NormalBow:
                 case ItemId_QuiverMedium:
                 case ItemId_QuiverLarge:
-                    if (GET_FLAG(pItemManager->mUnk_08, ItemFlag_Bow) == 0) {
+                    if (GET_FLAG(pItemManager->mFlags, ItemFlag_Bow) == 0) {
                         itemId = ItemId_NormalBow;
                     } else if (pItemManager->mQuiverCapacity == UpgradeCapacity_Tier1) {
                         itemId = ItemId_QuiverMedium;
