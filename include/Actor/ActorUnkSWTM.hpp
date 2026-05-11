@@ -26,9 +26,9 @@ public:
     /* A4 */ u32 mUnk_A4;
     /* A8 */ u32 mUnk_A8;
     /* AC */ bool mUnk_AC;
-    /* AC */ unk8 mUnk_AD; // pad?
-    /* AC */ unk8 mUnk_AE; // pad?
-    /* AC */ unk8 mUnk_AF; // pad?
+    /* AC */ unk8 mUnk_AD;               // pad?
+    /* AC */ unk8 mUnk_AE;               // pad?
+    /* AC */ unk8 mUnk_AF;               // pad?
     /* B0 */ ActorUnkSWTM_B0 mUnk_B0[5]; // unused?
     /* C4 */
 

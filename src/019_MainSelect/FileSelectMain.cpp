@@ -282,7 +282,7 @@ ARM void FileSelectMain::func_ov019_020c6e3c() {
     Vec2p auStack_50[2];
     Vec2s local_44;
     Vec2us auStack_60[2]; // c e
-    Vec2us local_64; // 4 6
+    Vec2us local_64;      // 4 6
     int fileIndex;
 
     fileIndex = this->mSaveSlotIndex == 0;
@@ -977,7 +977,7 @@ ARM void FileSelectMain::func_ov019_020c7dc8() {
     unk32 var_r10;
     unk32 var_r2;
     unk32 var_r1;
-    Vec2p local_48; // sp8 spC
+    Vec2p local_48;      // sp8 spC
     Vec2us sp10_sp12[2]; // sp4 sp6 sp10 sp12
 
     if (this->mState == FileSelectState_ChooseModeToContactMode) {

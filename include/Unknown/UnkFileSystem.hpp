@@ -22,7 +22,7 @@ public:
     // data_02043f78
     /* 00 */ virtual ~UnkFileSystem1(); // func_02015518 && func_0201551c && func_02015528
     /* 08 */ virtual void *vfunc_08(unk32 param1) = 0;
-    /* 0C */ virtual void vfunc_0C(void); // func_0201552c
+    /* 0C */ virtual void vfunc_0C(void);           // func_0201552c
     /* 10 */ virtual size_t vfunc_10(unk32 param1); // func_02015534
     /* 14 */
 };
@@ -49,7 +49,7 @@ class UnkFileSystem2_10 {
 public:
     /* 00 */ void *mpFile;
 
-    UnkFileSystem2_10(); // func_02015380
+    UnkFileSystem2_10();  // func_02015380
     ~UnkFileSystem2_10(); // func_020153c4
 };
 
@@ -64,7 +64,7 @@ public:
     UnkFileSystem4(const char *param1, unk32 param2, unk32 param3, unk32 param4); // func_02015628
 
     // data_02043f24
-    /* 00 */ virtual ~UnkFileSystem4() override; // func_02015644 && func_02015650
+    /* 00 */ virtual ~UnkFileSystem4() override;            // func_02015644 && func_02015650
     /* 08 */ virtual void *vfunc_08(unk32 param1) override; // func_02015664
 };
 
@@ -77,7 +77,7 @@ public:
         UnkFileSystem1(param1) {}
 
     // data_02043f40
-    /* 00 */ virtual ~UnkFileSystem3() override; // func_0201568c && func_02015698
+    /* 00 */ virtual ~UnkFileSystem3() override;            // func_0201568c && func_02015698
     /* 08 */ virtual void *vfunc_08(unk32 param1) override; // func_020156ac
 };
 
@@ -90,8 +90,8 @@ public:
     UnkFileSystem2(const char *param1, unk32 param2); // func_020156c8
 
     // data_02043f5c
-    /* 00 */ virtual ~UnkFileSystem2() override; // func_020156f4 && func_02015708
-    /* 08 */ virtual void *vfunc_08(unk32 param1) override; // func_02015724
-    /* 0C */ virtual void vfunc_0C(void) override; // func_02015750
+    /* 00 */ virtual ~UnkFileSystem2() override;             // func_020156f4 && func_02015708
+    /* 08 */ virtual void *vfunc_08(unk32 param1) override;  // func_02015724
+    /* 0C */ virtual void vfunc_0C(void) override;           // func_02015750
     /* 10 */ virtual size_t vfunc_10(unk32 param1) override; // func_02015758
 };

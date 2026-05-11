@@ -12,7 +12,7 @@ enum AdventureFlag_ {
     /* 0x002 */ AdventureFlag_ObtainedSpiritTrain            = FLAG(0, 2),
     /* 0x003 */ AdventureFlag_ObtainedRecruitSword           = FLAG(0, 3),
     /* 0x004 */ AdventureFlag_ObtainedForestSource           = FLAG(0, 4),
-    /* 0x005 */ AdventureFlag_ObtainedSnowSource             = FLAG(0, 5),    // gets rid of the blizzard
+    /* 0x005 */ AdventureFlag_ObtainedSnowSource             = FLAG(0, 5), // gets rid of the blizzard
     /* 0x006 */ AdventureFlag_ObtainedOceanSource            = FLAG(0, 6),
     /* 0x007 */ AdventureFlag_ObtainedFireSource             = FLAG(0, 7),
     /* 0x008 */ AdventureFlag_CompletedForestRestorationSong = FLAG(0, 8),
@@ -22,31 +22,31 @@ enum AdventureFlag_ {
     /* 0x00C */ AdventureFlag_CompletedSandRestorationSong   = FLAG(0, 12),
     /* 0x00D */ AdventureFlag_OpenedDarkRealmPortal          = FLAG(0, 13),
     /* 0x00E */ AdventureFlag_TalkedToDovokLostWoods         = FLAG(0, 14),
-    /* 0x00F */ AdventureFlag_ObtainedForestGlyph            = FLAG(0, 15),   // unlocks track map
+    /* 0x00F */ AdventureFlag_ObtainedForestGlyph            = FLAG(0, 15), // unlocks track map
     /* 0x010 */ AdventureFlag_ObtainedSnowGlyph              = FLAG(0, 16),
     /* 0x011 */ AdventureFlag_ObtainedOceanGlyph             = FLAG(0, 17),
     /* 0x012 */ AdventureFlag_ObtainedFireGlyph              = FLAG(0, 18),
     /* 0x013 */ AdventureFlag_Unk_013                        = FLAG(0, 19),
     /* 0x014 */ AdventureFlag_CompletedSwordTutorial         = FLAG(0, 20),
     /* 0x015 */ AdventureFlag_PlayedHyruleGuardGetLostText =
-        FLAG(0, 21),   // hyrule castle guard tells Link to get lost (before Cole shows up)
+        FLAG(0, 21), // hyrule castle guard tells Link to get lost (before Cole shows up)
     /* 0x016 */ AdventureFlag_HyruleGuardMovesAfterCole =
-        FLAG(0, 22),   // hyrule castle guard moves out of the way of stairs leading to throne room
+        FLAG(0, 22), // hyrule castle guard moves out of the way of stairs leading to throne room
     /* 0x017 */ AdventureFlag_WatchedHyruleGuardColeCS =
-        FLAG(0, 23),   // hyrule castle intro Cole walks into throne room cs over
+        FLAG(0, 23), // hyrule castle intro Cole walks into throne room cs over
     /* 0x018 */ AdventureFlag_ObtainedEngineerCertificate   = FLAG(0, 24),
-    /* 0x019 */ AdventureFlag_WatchedZeldasBedroomFirstCS   = FLAG(0, 25),   // zelda bedroom conversation pre-spirit zelda
+    /* 0x019 */ AdventureFlag_WatchedZeldasBedroomFirstCS   = FLAG(0, 25), // zelda bedroom conversation pre-spirit zelda
     /* 0x01A */ AdventureFlag_WatchedSpiritTowerSplitCS     = FLAG(0, 26),
     /* 0x01B */ AdventureFlag_MayscoreLostWoodsHintBranches = FLAG(0, 27),
     /* 0x01C */ AdventureFlag_MayscoreLostWoodsHint4thTree  = FLAG(0, 28),
     /* 0x01D */ AdventureFlag_TalkedToYamahikoFirstTime =
-        FLAG(0, 29),   // talk to yellow guy (?) in Mayascore for the first time
+        FLAG(0, 29), // talk to yellow guy (?) in Mayascore for the first time
     /* 0x01E */ AdventureFlag_EnteredForestTemple = FLAG(0, 30),
-    /* 0x01F */ AdventureFlag_ObtainedTrainCannon = FLAG(0, 31),   // set after alfonzo text, but before cannon exits garage
+    /* 0x01F */ AdventureFlag_ObtainedTrainCannon = FLAG(0, 31), // set after alfonzo text, but before cannon exits garage
 
     /* 0x020 */ AdventureFlag_ObtainedSpiritTrainCar                   = FLAG(1, 0),
     /* 0x021 */ AdventureFlag_ObtainedTrainWagon                       = FLAG(1, 1),
-    /* 0x022 */ AdventureFlag_MetAnjeanFirstTime                       = FLAG(1, 2),    // loads the train in ToS
+    /* 0x022 */ AdventureFlag_MetAnjeanFirstTime                       = FLAG(1, 2), // loads the train in ToS
     /* 0x023 */ AdventureFlag_Unk_023                                  = FLAG(1, 3),
     /* 0x024 */ AdventureFlag_FleeFirstPhantomTOS                      = FLAG(1, 4), // zelda text after first phantom spawns
     /* 0x025 */ AdventureFlag_SpawnFirstPhantomTOS                     = FLAG(1, 5),

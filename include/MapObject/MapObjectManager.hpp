@@ -13,8 +13,8 @@ public:
     /* 00 */ MapObject **mMapObjTable;
     /* 04 */ MapObject **mMapObjTableEnd;
     /* 08 */ MapObject **mUnk_08; // pointer to first available slot?
-    /* 0C */ s16 **mUnk_0C; // unknown table
-    /* 10 */ void **mUnk_10; // unknown table end
+    /* 0C */ s16 **mUnk_0C;       // unknown table
+    /* 10 */ void **mUnk_10;      // unknown table end
     /* 14 */ void *mUnk_14;
     /* 18 */ unk16 mUnk_18;
     /* 1A */ unk16 mUnk_1A;
@@ -35,7 +35,7 @@ public:
     void func_ov000_0209c3e8();
     void func_ov000_0209c444();
 
-    void SetInstance(); // func_ov001_020baf4c
+    void SetInstance();   // func_ov001_020baf4c
     void ClearInstance(); // func_ov001_020baf58
 
     static void func_ov000_0209c490();

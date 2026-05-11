@@ -51,7 +51,7 @@ public:
     /* 00 (vtable) */
     /* 04 */ u16 mUnk_04;
     /* 04 */ u16 mUnk_06;
-    /* 08 */ u16 mUnk_08; // 220
+    /* 08 */ u16 mUnk_08;  // 220
     /* 08 */ bool mUnk_0A; // 222
     /* 08 */ bool mUnk_0B; // 223
     /* 0C */ bool mUnk_0C; // 224

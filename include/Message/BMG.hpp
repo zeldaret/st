@@ -70,16 +70,16 @@ typedef enum BMGFileIndex {
 } BMGFileIndex;
 
 struct SectionBase {
-    /* 00 */ u32 tag; // "INF1", "DAT1", ...
+    /* 00 */ u32 tag;  // "INF1", "DAT1", ...
     /* 04 */ u32 size; // the size of the section
     /* 08 */
 };
 
 struct BMGHeader {
-    /* 00 */ char magic[8]; // always "MESGbmg1"
-    /* 08 */ u32 fileSize; // the size of the BMG file
+    /* 00 */ char magic[8];   // always "MESGbmg1"
+    /* 08 */ u32 fileSize;    // the size of the BMG file
     /* 0C */ u32 numSections; // the number of sections (INF1, DAT1, ...)
-    /* 10 */ u8 encoding; // see `BMGEncoding`
+    /* 10 */ u8 encoding;     // see `BMGEncoding`
     /* 11 */ u8 unk_11[0x0F]; // alignment padding?
     /* 20 */
 };
@@ -112,9 +112,9 @@ enum InstrType {
 };
 
 struct InstrShowMsg {
-    /* 01 */ u8 bmgFileIndex; // index into sBMGFiles
-    /* 02 */ u16 msgIndex; // index of INF1 entry
-    /* 04 */ s16 nextIndex; // index of FLW1 entry, 0xFFFF stops the conversation
+    /* 01 */ u8 bmgFileIndex;      // index into sBMGFiles
+    /* 02 */ u16 msgIndex;         // index of INF1 entry
+    /* 04 */ s16 nextIndex;        // index of FLW1 entry, 0xFFFF stops the conversation
     /* 06 */ s16 nextBMGFileIndex; // index into sBMGFiles
     /* 08 */
 };
@@ -122,15 +122,15 @@ struct InstrShowMsg {
 struct InstrBranch {
     /* 01 */ u8 mUnk_01;
     /* 02 */ u16 funcIndex; // index of the query function to run
-    /* 04 */ u16 funcArg; // the argument to use in the function
-    /* 06 */ u16 flwEntry; // the index of the second section table to be used next in the conversation.
+    /* 04 */ u16 funcArg;   // the argument to use in the function
+    /* 06 */ u16 flwEntry;  // the index of the second section table to be used next in the conversation.
     /* 08 */
 };
 
 struct InstrEvent {
     /* 01 */ u8 funcIndex; // index of the query function to run
     /* 02 */ u16 flwEntry; // the index of the second section table to be used next in the conversation.
-    /* 04 */ u32 funcArg; // the argument to use in the function
+    /* 04 */ u32 funcArg;  // the argument to use in the function
     /* 08 */
 };
 
@@ -188,8 +188,8 @@ struct BMGFileInfo {
     /* 0C */ SectionFLI1 *pFLI1; // pointer to the message flow index table (FLI -> flow index table)
     /* 10 */ SectionDAT1 *pDAT1; // pointer to the data (DAT -> data)
     /* 14 */ BMGHeader *mUnk_14; // same as pHeader (?)
-    /* 18 */ s16 mUnk_18; // stores `func_020372F0`->param_3 value (currently undetermined purpose)
-    /* 1A */ s16 groupId; // stores the group id
+    /* 18 */ s16 mUnk_18;        // stores `func_020372F0`->param_3 value (currently undetermined purpose)
+    /* 1A */ s16 groupId;        // stores the group id
     /* 1C */
 };
 

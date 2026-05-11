@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 typedef struct Font_UnkStruct1 {
-    /* 00 */ void *mpFINF; // pointer to the FINF section of the FNTR file
+    /* 00 */ void *mpFINF;  // pointer to the FINF section of the FNTR file
     /* 04 */ void *mUnk_04; // pointer to a function
     /* 08 */
 } Font_UnkStruct1;

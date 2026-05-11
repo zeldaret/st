@@ -173,8 +173,8 @@ struct UnkStruct_SceneChange1 {
         this->mUnk_04         = 0;
         this->mUnk_08         = 0;
         this->mRoomIndex      = 0xFF; // this changes when you enter a house, it's not clear if it has another purpose yet
-        this->mSpawnIndex     = 0; // changing this then saving will change your spawn location after opening the save again
-                               // (not the area)
+        this->mSpawnIndex     = 0;    // changing this then saving will change your spawn location after opening the save again
+                                      // (not the area)
         this->mNextIsCS      = false;
         this->mUnk_0D        = 0;
         this->mCutsceneIndex = CutsceneIndex_None;

@@ -41,7 +41,7 @@ double x;
     i1 = __LO(x);
     j0 = ((i0 >> 20) & 0x7ff) - 0x3ff;
     if (j0 < 20) {
-        if (j0 < 0) { /* raise inexact if x != 0 */
+        if (j0 < 0) {             /* raise inexact if x != 0 */
             if (huge + x > 0.0) { /* return 0*sign(x) if |x|<1 */
                 if (i0 < 0) {
                     i0 = 0x80000000;

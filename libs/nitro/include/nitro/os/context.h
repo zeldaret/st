@@ -12,4 +12,4 @@ typedef struct OSContext {
     /* 0x44 */ char unk_40[0x20];
 } OSContext; // Size: 0x64
 
-#endif       // NITROSDK_OS_CONTEXT_H
+#endif // NITROSDK_OS_CONTEXT_H

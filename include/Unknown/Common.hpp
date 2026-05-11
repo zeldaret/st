@@ -364,7 +364,7 @@ public:
 #define BTN_ID_RAIL_MAP_OCEAN_LOST_AT_SEA_STATION 0x77
 #define BTN_ID_RAIL_MAP_SNOW_SLIPPERY_STATION 0x78
 
-#define BTN_ID_SHOP_QUIT 0x81 // quit shop
+#define BTN_ID_SHOP_QUIT 0x81   // quit shop
 #define BTN_ID_SHOP_RETURN 0x82 // quit item preview
 #define BTN_ID_SHOP_BUY 0x83
 #define BTN_ID_SHOP_ITEM_1 0x84
@@ -478,9 +478,9 @@ public:
     /* 14 */ Vec2s mPos; // image position (among other things)
     /* 18 */ STRUCT_PAD(0x18, 0x24);
     /* 24 */ Vec2us mPosOffset; // used to shift the button when selected
-    /* 28 */ bool mUnk_28; // selected highlight effect when set to true
-    /* 29 */ bool mUnk_29; // related to having the button selected
-    /* 2A */ bool mUnk_2A; // disables button action
+    /* 28 */ bool mUnk_28;      // selected highlight effect when set to true
+    /* 29 */ bool mUnk_29;      // related to having the button selected
+    /* 2A */ bool mUnk_2A;      // disables button action
     /* 2A */ bool mUnk_2B;
     /* 2C */ bool mUnk_2C;
     /* 2D */ unk8 mUnk_2D;
@@ -524,9 +524,9 @@ public:
 class UnkSystem2_UnkSubSystem1_Derived2 : public UnkSystem2_UnkSubSystem1_Base {
 public:
     /* 00 (vtable) */
-    /* 30 */ void *mUnk_30; // related to the background texture draw (idle)
+    /* 30 */ void *mUnk_30;                    // related to the background texture draw (idle)
     /* 34 */ UnkSystem2_UnkSubSystem7 mUnk_34; // related to the texture draw
-    /* 38 */ unk16 mUnk_38; // related to the texture draw
+    /* 38 */ unk16 mUnk_38;                    // related to the texture draw
     /* 3C */ Vec2us mUnk_3A; // overlaid elements position (text, icons etc...), relative to background position
     /* 40 */ unk16 mUnk_3E;
     /* 40 */ unk32 mUnk_40;
@@ -637,8 +637,8 @@ class UnkSystem2_UnkSubSystem5_Base {
 public:
     /* 000 (vtable) */
     /* 004 */ wchar_t *mpString; // in this context it points to the player's name
-    /* 008 */ unk16 mUnk_008; // UnkSystem2_UnkSubSystem5()'s param1
-    /* 00A */ unk16 mUnk_00A; // UnkSystem2_UnkSubSystem5()'s param2
+    /* 008 */ unk16 mUnk_008;    // UnkSystem2_UnkSubSystem5()'s param1
+    /* 00A */ unk16 mUnk_00A;    // UnkSystem2_UnkSubSystem5()'s param2
     /* 00C */ void *mUnk_00C;
     /* 010 */ UnkSystem2_UnkSubSystem5_Base_10 mUnk_010;
     /* 130 */ STRUCT_PAD(0x130, 0x140);
@@ -823,7 +823,7 @@ public:
     /* 4C */ unk32 mUnk_4C;
     /* 50 */ unk32 mUnk_50;
     /* 54 */ unk32 mUnk_54;
-    /* 58 */ unk32 mUnk_58; // another timer?
+    /* 58 */ unk32 mUnk_58;  // another timer?
     /* 5C */ Vec2us mUnk_5C; // position of the animated texture
     /* 60 */ unk32 mUnk_60;
     /* 64 */ unk32 mUnk_64;

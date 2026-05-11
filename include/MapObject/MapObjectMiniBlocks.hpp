@@ -11,7 +11,7 @@ public:
     /* 00 (base) */
     /* 40 */ UnkSystem6_Derived2 mUnk_40;
     /* 48 */ unk8 mUnk_48;
-    /* 49 */ unk8 mUnk_49; // pad?
+    /* 49 */ unk8 mUnk_49;  // pad?
     /* 4A */ unk16 mUnk_4A; // pad?
     /* 4C */
 

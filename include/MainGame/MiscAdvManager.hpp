@@ -11,16 +11,16 @@
 
 enum LetterType_ {
     /* -1 */ LetterType_None                 = -1,
-    /*  0 */ LetterType_MetPostmanFirst      = 0, // AdventureFlag_MetPostmanFirstLetter
-    /*  1 */ LetterType_ReceivedZeldas       = 1, // AdventureFlag_ReceivedZeldasLetter
-    /*  2 */ LetterType_ReceivedAlfonzos     = 2, // AdventureFlag_ReceivedAlfonzosLetter
-    /*  3 */ LetterType_ReceivedRussells     = 3, // AdventureFlag_ReceivedRussellsLetter
-    /*  4 */ LetterType_ObtainedLinebecks    = 4, // AdventureFlag_ObtainedLinebecksLetter
-    /*  5 */ LetterType_ReceivedBeedlesFirst = 5, // AdventureFlag_ReceivedBeedlesFirstLetter
-    /*  6 */ LetterType_Unk_03E              = 6, // AdventureFlag_Unk_03E
-    /*  7 */ LetterType_Unk_03F              = 7, // AdventureFlag_Unk_03F
-    /*  8 */ LetterType_Unk_040              = 8, // AdventureFlag_Unk_040
-    /*  9 */ LetterType_Unk_041              = 9, // AdventureFlag_Unk_041
+    /*  0 */ LetterType_MetPostmanFirst      = 0,  // AdventureFlag_MetPostmanFirstLetter
+    /*  1 */ LetterType_ReceivedZeldas       = 1,  // AdventureFlag_ReceivedZeldasLetter
+    /*  2 */ LetterType_ReceivedAlfonzos     = 2,  // AdventureFlag_ReceivedAlfonzosLetter
+    /*  3 */ LetterType_ReceivedRussells     = 3,  // AdventureFlag_ReceivedRussellsLetter
+    /*  4 */ LetterType_ObtainedLinebecks    = 4,  // AdventureFlag_ObtainedLinebecksLetter
+    /*  5 */ LetterType_ReceivedBeedlesFirst = 5,  // AdventureFlag_ReceivedBeedlesFirstLetter
+    /*  6 */ LetterType_Unk_03E              = 6,  // AdventureFlag_Unk_03E
+    /*  7 */ LetterType_Unk_03F              = 7,  // AdventureFlag_Unk_03F
+    /*  8 */ LetterType_Unk_040              = 8,  // AdventureFlag_Unk_040
+    /*  9 */ LetterType_Unk_041              = 9,  // AdventureFlag_Unk_041
     /*  10 */ LetterType_Unk_042             = 10, // AdventureFlag_Unk_042
     /*  11 */ LetterType_Unk_043             = 11, // AdventureFlag_Unk_043
     /*  12 */ LetterType_Unk_044             = 12, // AdventureFlag_Unk_044
@@ -69,16 +69,16 @@ public:
     /* 68 */ s8 mObtainedStamps[StampType_Max];
     /* 7C */ u8 mLastRandomNum;
     /* 7D */ u8 mRandomNum;
-    /* 7E */ s8 mNumPriceCards; // current amount of price cards
+    /* 7E */ s8 mNumPriceCards;       // current amount of price cards
     /* 7F */ s8 mNumPostedPriceCards; // current amount of posted price cards
     /* 80 */ unk8 mUnk_80;
-    /* 81 */ unk8 mUnk_81; // pad?
-    /* 82 */ unk8 mUnk_82; // pad?
-    /* 83 */ unk8 mUnk_83; // pad?
+    /* 81 */ unk8 mUnk_81;       // pad?
+    /* 82 */ unk8 mUnk_82;       // pad?
+    /* 83 */ unk8 mUnk_83;       // pad?
     /* 84 */ unk32 mLettersRead; // bitfield
-    /* 88 */ unk32 mStampsFlag; // bitfield, related to the checkmarks from the stampbook
-    /* 8C */ unk16 mSongs; // bitfield
-    /* 8E */ unk16 mUnk_8E; // pad?
+    /* 88 */ unk32 mStampsFlag;  // bitfield, related to the checkmarks from the stampbook
+    /* 8C */ unk16 mSongs;       // bitfield
+    /* 8E */ unk16 mUnk_8E;      // pad?
     /* 90 */
 
     MiscAdvManager();

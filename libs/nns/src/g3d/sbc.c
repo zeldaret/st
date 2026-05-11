@@ -248,7 +248,7 @@ void G3d_SBCRender_007(G3d_RenderState *renderState, u32 opCode) {
         FlushGfxQueue();
 
         REG_GFX_FIFO = 0x151110; // MTX_MODE | MTX_PUSH | MTX_IDENTITY
-        REG_GFX_FIFO = 0; // MTX_MODE = Projection
+        REG_GFX_FIFO = 0;        // MTX_MODE = Projection
 
         REG_GFX_FIFO = 0;
 
@@ -278,18 +278,18 @@ void G3d_SBCRender_007(G3d_RenderState *renderState, u32 opCode) {
         scaleVec->z = Vec3p_Length((Vec3p *) &currentMtx.zColumn);
 
         if (data_027e0208.flags & 1) {
-            REG_GFX_FIFO = 0x171012; // MTX_POP | MTX_MODE | MTX_LOAD_4x3
+            REG_GFX_FIFO = 0x171012;                  // MTX_POP | MTX_MODE | MTX_LOAD_4x3
             Stream32(&funcArgs[1], &REG_GFX_FIFO, 8); // MTX_MODE = Position
             Stream32(func_0200c270(), &REG_GFX_FIFO, 0x30);
 
-            REG_GFX_FIFO = 0x1b19; // MTX_MULT_4x3 | MTX_SCALE
+            REG_GFX_FIFO = 0x1b19;                       // MTX_MULT_4x3 | MTX_SCALE
             Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3c); // Identity MTX
         } else if (data_027e0208.flags & 2) {
-            REG_GFX_FIFO = 0x171012; // MTX_POP | MTX_MODE | MTX_LOAD_4x3
+            REG_GFX_FIFO = 0x171012;                  // MTX_POP | MTX_MODE | MTX_LOAD_4x3
             Stream32(&funcArgs[1], &REG_GFX_FIFO, 8); // MTX_MODE = Position
             Stream32(func_0200c198(), &REG_GFX_FIFO, 0x30);
 
-            REG_GFX_FIFO = 0x1b19; // MTX_MULT_4x3 | MTX_SCALE
+            REG_GFX_FIFO = 0x1b19;                       // MTX_MULT_4x3 | MTX_SCALE
             Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3c); // Identity MTX
         } else {
             Stream32(&funcArgs, &REG_GFX_FIFO, 0x48); // MTX_POP | MTX_MODE | MTX_LOAD_4x3 | MTX_SCALE
@@ -386,7 +386,7 @@ void G3d_SBCRender_008(G3d_RenderState *renderState, u32 opCode) {
         FlushGfxQueue();
 
         REG_GFX_FIFO = 0x151110; // MTX_MODE | MTX_PUSH | MTX_IDENTITY
-        REG_GFX_FIFO = 0; // MTX_MODE = Projection
+        REG_GFX_FIFO = 0;        // MTX_MODE = Projection
 
         REG_GFX_FIFO = 0;
 
@@ -428,18 +428,18 @@ void G3d_SBCRender_008(G3d_RenderState *renderState, u32 opCode) {
         }
 
         if (data_027e0208.flags & 1) {
-            REG_GFX_FIFO = 0x171012; // MTX_POP | MTX_MODE | MTX_LOAD_4x3
+            REG_GFX_FIFO = 0x171012;                  // MTX_POP | MTX_MODE | MTX_LOAD_4x3
             Stream32(&funcArgs[1], &REG_GFX_FIFO, 8); // MTX_MODE = Position
             Stream32(func_0200c270(), &REG_GFX_FIFO, 0x30);
 
-            REG_GFX_FIFO = 0x1b19; // MTX_MULT_4x3 | MTX_SCALE
+            REG_GFX_FIFO = 0x1b19;                       // MTX_MULT_4x3 | MTX_SCALE
             Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3c); // Identity MTX
         } else if (data_027e0208.flags & 2) {
-            REG_GFX_FIFO = 0x171012; // MTX_POP | MTX_MODE | MTX_LOAD_4x3
+            REG_GFX_FIFO = 0x171012;                  // MTX_POP | MTX_MODE | MTX_LOAD_4x3
             Stream32(&funcArgs[1], &REG_GFX_FIFO, 8); // MTX_MODE = Position
             Stream32(func_0200c198(), &REG_GFX_FIFO, 0x30);
 
-            REG_GFX_FIFO = 0x1b19; // MTX_MULT_4x3 | MTX_SCALE
+            REG_GFX_FIFO = 0x1b19;                       // MTX_MULT_4x3 | MTX_SCALE
             Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3c); // Identity MTX
         } else {
             Stream32(&funcArgs, &REG_GFX_FIFO, 0x48); // MTX_POP | MTX_MODE | MTX_LOAD_4x3 | MTX_SCALE
@@ -750,11 +750,11 @@ void G3d_SBCRender_00C(G3d_RenderState *renderState, u32) {
 
             if (data_027e0208.flags & 1) {
                 G3d_MtxMult33_inline((const Mat3p *) &data_027e0208.mUnk_04C); // MTX_MULT_3x3
-                G3d_MtxMult33_inline(&gGeomMatrix);            // MTX_MULT_3x3
-                G3d_MtxMult33_inline(&m);                      // MTX_MULT_3x3
+                G3d_MtxMult33_inline(&gGeomMatrix);                            // MTX_MULT_3x3
+                G3d_MtxMult33_inline(&m);                                      // MTX_MULT_3x3
             } else if (data_027e0208.flags & 2) {
                 G3d_MtxMult33_inline((const Mat3p *) &data_027e0208.mUnk_04C); // MTX_MULT_3x3
-                G3d_MtxMult33_inline(&m);                      // MTX_MULT_3x3
+                G3d_MtxMult33_inline(&m);                                      // MTX_MULT_3x3
             } else {
                 G3d_MtxMult33_inline(&m); // MTX_MULT_3x3
             }
@@ -877,8 +877,8 @@ void G3d_SBCRender_00D(G3d_RenderState *renderState, u32) {
 
             if (data_027e0208.flags & 1) {
                 PushGeometryCommand(0x1c, &gGeomTranslation, 3); // MTX_TRANS
-                G3d_MtxMult33_inline(&gGeomMatrix); // MTX_MULT_3x3
-                G3d_MtxMult43_inline(&m);  // MTX_MULT_4x3
+                G3d_MtxMult33_inline(&gGeomMatrix);              // MTX_MULT_3x3
+                G3d_MtxMult43_inline(&m);                        // MTX_MULT_4x3
 
             } else if (data_027e0208.flags & 2) {
                 G3d_MtxMult43_inline(&m);

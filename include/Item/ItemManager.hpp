@@ -24,15 +24,15 @@ public:
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
 
-    /* 00 */ virtual void vfunc_00(); //! TODO: name symbol func_ov000_020667d8
-    /* 04 */ virtual void vfunc_04(); //! TODO: name symbol func_ov000_020667f4
-    /* 08 */ virtual void vfunc_08(); //! TODO: name symbol func_ov000_020673c8
-    /* 0C */ virtual void vfunc_0c(); //! TODO: name symbol func_ov000_02067434
-    /* 10 */ virtual void vfunc_10(); //! TODO: name symbol func_ov000_02067474
-    /* 14 */ virtual void vfunc_14(); //! TODO: name symbol func_ov000_02066dfc
-    /* 18 */ virtual void vfunc_18(); //! TODO: name symbol func_ov000_020669d8
-    /* 1C */ virtual void vfunc_1c(); //! TODO: name symbol func_ov000_02067234
-    /* 20 */ virtual void vfunc_20(); //! TODO: name symbol func_ov000_0206723c
+    /* 00 */ virtual void vfunc_00();                //! TODO: name symbol func_ov000_020667d8
+    /* 04 */ virtual void vfunc_04();                //! TODO: name symbol func_ov000_020667f4
+    /* 08 */ virtual void vfunc_08();                //! TODO: name symbol func_ov000_020673c8
+    /* 0C */ virtual void vfunc_0c();                //! TODO: name symbol func_ov000_02067434
+    /* 10 */ virtual void vfunc_10();                //! TODO: name symbol func_ov000_02067474
+    /* 14 */ virtual void vfunc_14();                //! TODO: name symbol func_ov000_02066dfc
+    /* 18 */ virtual void vfunc_18();                //! TODO: name symbol func_ov000_020669d8
+    /* 1C */ virtual void vfunc_1c();                //! TODO: name symbol func_ov000_02067234
+    /* 20 */ virtual void vfunc_20();                //! TODO: name symbol func_ov000_0206723c
     /* 24 */ virtual ~UnkStruct_ItemManager_20_14(); //! TODO: name symbols func_ov000_020672ac, func_ov000_020672f4
 
     UnkStruct_ItemManager_20_14();
@@ -60,10 +60,10 @@ public:
     /* 04 */ ItemFlag mForcedItem;
     /* 08 */ u32 mFlags[2]; // inventory items bitfield & collection/equipment bitfield
     /* 10 */ u16 mNumRupees;
-    /* 12 */ u16 mUnk_12; // "toggle bitfield"
+    /* 12 */ u16 mUnk_12;           // "toggle bitfield"
     /* 14 */ u16 mItemRestrictions; // bitfield
-    /* 16 */ u8 mTearsAmount; // number of tears of light
-    /* 17 */ u8 mKeyAmount; // number of small keys
+    /* 16 */ u8 mTearsAmount;       // number of tears of light
+    /* 17 */ u8 mKeyAmount;         // number of small keys
     /* 18 */ UpgradeCapacity mQuiverCapacity;
     /* 19 */ UpgradeCapacity mBombBagCapacity;
     /* 1A */ u8 mArrowAmount;

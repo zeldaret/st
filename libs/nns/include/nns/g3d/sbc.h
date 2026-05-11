@@ -32,11 +32,11 @@ typedef enum {
 } G3d_RenderStateFlag;
 
 typedef struct G3d_RenderState_ {
-    /* 00 */ u8 *currentCmd; // current command being processed
-    /* 04 */ G3d_RenderObject *renderObj; // current render object being processed
-    /* 08 */ u32 flag; // G3d_RenderStateFlag
+    /* 00 */ u8 *currentCmd;                         // current command being processed
+    /* 04 */ G3d_RenderObject *renderObj;            // current render object being processed
+    /* 08 */ u32 flag;                               // G3d_RenderStateFlag
     /* 0C */ G3d_CallbackFunction callbackFuncs[32]; // callback function for each SBC command
-    /* 8C */ u8 callbackSegment[32]; // determines at which segment of the SBC command to invoke the callback
+    /* 8C */ u8 callbackSegment[32];                 // determines at which segment of the SBC command to invoke the callback
     /* AC */ u8 currentBoneId;
     /* AD */ u8 currentMaterialId;
     /* AE */ u8 currentBoneMtxId;

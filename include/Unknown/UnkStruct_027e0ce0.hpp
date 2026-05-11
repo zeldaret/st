@@ -47,7 +47,7 @@ public:
     /* 24 */ unk32 mUnk_24;
     /* 28 */ ItemManager *mUnk_28;
     /* 2C */ ItemManager *mUnk_2C; // same as above
-    /* 30 */ unk32 *mUnk_30; // ?
+    /* 30 */ unk32 *mUnk_30;       // ?
     /* 34 */ UnkStruct_027e0ce0_34 *mUnk_34;
     /* 38 */ unk32 *mUnk_38; // pointer to data_027e0478 when on the train
     /* 3C */ unk32 mUnk_3C;

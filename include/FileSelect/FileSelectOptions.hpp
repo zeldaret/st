@@ -51,20 +51,20 @@ public:
     /* 0008 */ UnkStruct_ov019_020d24c8_28_258 mUnk_008;
 
     // message speed
-    /* 0020 */ UnkSystem2_UnkSubSystem5 mUnk_020; // label
-    /* 0258 */ UnkSystem2_UnkSubSystem5 mUnk_258; // current string
+    /* 0020 */ UnkSystem2_UnkSubSystem5 mUnk_020;          // label
+    /* 0258 */ UnkSystem2_UnkSubSystem5 mUnk_258;          // current string
     /* 0490 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_490; // left arrow
     /* 04F0 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_4F0; // right arrow
 
     // sound settings
-    /* 0550 */ UnkSystem2_UnkSubSystem5 mUnk_550; // label
-    /* 0788 */ UnkSystem2_UnkSubSystem5 mUnk_788; // current string
+    /* 0550 */ UnkSystem2_UnkSubSystem5 mUnk_550;          // label
+    /* 0788 */ UnkSystem2_UnkSubSystem5 mUnk_788;          // current string
     /* 09C0 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_9C0; // left arrow
     /* 0A20 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_A20; // right arrow
 
     // handedness
-    /* 0A80 */ UnkSystem2_UnkSubSystem5 mUnk_A80; // label
-    /* 0CB8 */ UnkSystem2_UnkSubSystem5 mUnk_CB8; // current type string
+    /* 0A80 */ UnkSystem2_UnkSubSystem5 mUnk_A80;          // label
+    /* 0CB8 */ UnkSystem2_UnkSubSystem5 mUnk_CB8;          // current type string
     /* 0EF0 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_EF0; // left arrow
     /* 0F50 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_F50; // right arrow
 

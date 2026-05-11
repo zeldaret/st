@@ -5,8 +5,8 @@ typedef void (*G3d_CallbackFunction)(struct G3d_RenderState_ *);
 
 typedef struct G3d_NameList_ {
     /* 00 */ u8 dummy;
-    /* 01 */ u8 numElmnts;   // number of elements
-    /* 02 */ u16 size;       // size of this NameList in bytes
+    /* 01 */ u8 numElmnts; // number of elements
+    /* 02 */ u16 size;     // size of this NameList in bytes
     /* 04 */ u16 dummy2;
     /* 06 */ u16 ofsHeader;  // offset to the G3d_NameList_Header
     /* 08 */ void *entry[1]; // variable size
@@ -44,31 +44,31 @@ typedef struct G3d_Animation_ {
     /* 00 */ u8 mUnk_00[0x10];
     /* 10 */ struct G3d_Animation_ *next; // next animation in the list
     /* 14 */ u8 mUnk_14[0x5];
-    /* 19 */ u8 numElmnts; // number of elements in the elementBinds array
+    /* 19 */ u8 numElmnts;        // number of elements in the elementBinds array
     /* 1A */ u16 elementBinds[1]; // each bit corresponds to a bone/material and determines whether an animation exists for it
     /* 1C */
 } G3d_Animation;
 
 // Structure representing the NSBMD model file
 typedef struct G3d_Model_ {
-    /* 00 */ u32 size; // size of the model in bytes
-    /* 04 */ u32 offSbc; // offset of the SBC commands list
-    /* 08 */ u32 offMat; // offset of the material list
-    /* 0C */ u32 offMesh; // offset of the mesh list
+    /* 00 */ u32 size;       // size of the model in bytes
+    /* 04 */ u32 offSbc;     // offset of the SBC commands list
+    /* 08 */ u32 offMat;     // offset of the material list
+    /* 0C */ u32 offMesh;    // offset of the mesh list
     /* 10 */ u32 offInvBMtx; // offset of the InvBindMatrix list
     /* 14 */ u8 dummy1;
     /* 15 */ u8 scalingHandler; // Determines which of the G3d_gScaleHandlers to use for this model
     /* 16 */ u8 textureHandler; // Determines which of the G3d_gTextureHandlers to use for this model
-    /* 17 */ u8 numBones; // number of nodes
-    /* 18 */ u8 numMat; // number of materials
-    /* 19 */ u8 numMesh; // number of meshes
+    /* 17 */ u8 numBones;       // number of nodes
+    /* 18 */ u8 numMat;         // number of materials
+    /* 19 */ u8 numMesh;        // number of meshes
     /* 1A */ u8 dummy2[2];
     /* 1C */ q20 upScale;
     /* 20 */ q20 downScale;
-    /* 24 */ u16 numVertex; // number of vertices
-    /* 26 */ u16 numPolygon; // number of polygons
-    /* 28 */ u16 numTriangle; // number of triangles
-    /* 2A */ u16 numQuad; // number of quads
+    /* 24 */ u16 numVertex;        // number of vertices
+    /* 26 */ u16 numPolygon;       // number of polygons
+    /* 28 */ u16 numTriangle;      // number of triangles
+    /* 2A */ u16 numQuad;          // number of quads
     /* 2C */ q4 boundingBoxMin[3]; // bounding box lower vertex
     /* 32 */ q4 boundingBoxMax[3]; // bounding box upper vertex
     /* 38 */ u8 dummy3[8];
@@ -108,11 +108,11 @@ typedef struct G3d_RenderObject_ {
     /* 1C */ void *mUnk_1C;
     /* 20 */ G3d_CallbackFunction callbackFunction;
     /* 24 */ u8 callbackIdx; // index of the callbackFunction in the callback array of G3d_RenderState
-    /* 25 */ u8 mUnk_25; // related to callback
+    /* 25 */ u8 mUnk_25;     // related to callback
     /* 26 */ u16 dummy_;
     /* 28 */ G3d_CallbackFunction callbackInitFunc; // initializes the G3d_RenderState callback array
-    /* 2C */ void *modelRender; // pointer to the ModelRender that is rendering this model
-    /* 30 */ u8 *unkCommandsList; // if not null, this command list is used instead of the one in the model
+    /* 2C */ void *modelRender;                     // pointer to the ModelRender that is rendering this model
+    /* 30 */ u8 *unkCommandsList;                   // if not null, this command list is used instead of the one in the model
     /* 34 */ G3d_BoneMtxStruct *cacheJntAnm;
     /* 38 */ void *cacheMatAnm;
     /* 3C */ u32 matAnimBindMap[2];

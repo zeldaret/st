@@ -18,7 +18,7 @@ class TouchControl {
 public:
     /* 00 */ u16 mSpeed;
     /* 02 */ u16 mTimeBetweenTouches; // gets set to mTimeSinceTouch when touching the screen
-    /* 04 */ u16 mTimeSinceTouch; // increases by mSpeed every frame
+    /* 04 */ u16 mTimeSinceTouch;     // increases by mSpeed every frame
     /* 06 */ u16 mRepeatStart;
     /* 08 */ u16 mRepeatLoop;
     // mRepeatTimer starts at mRepeatStart, decreases by mSpeed while touching the screen.

@@ -165,8 +165,8 @@ public:
     /* 068 */ unk32 mUnk_68;
     /* 06C */ unk32 mUnk_6C; // scale
     /* 070 */ unk16 mUnk_70; // angle/rotation
-    /* 070 */ u8 mUnk_72; // probably bools
-    /* 070 */ u8 mUnk_73; // probably bools
+    /* 070 */ u8 mUnk_72;    // probably bools
+    /* 070 */ u8 mUnk_73;    // probably bools
     /* 074 */ UnkStruct_PlayerGet_74 mUnk_74;
     /* 08C */ UnkSystem4 mUnk_8C;
     /* 0EC */ UnkStruct_PlayerGet_ec mUnk_EC[4];

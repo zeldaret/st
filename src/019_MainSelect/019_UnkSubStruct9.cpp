@@ -24,7 +24,7 @@ ARM UnkSubStruct9::UnkSubStruct9(stack_struct1 param1) :
     mUnk_614(0x89, 0x07),
     mUnk_68C(0x89, 0x08),
     mUnk_704(0x89, 0x09) {
-        // Vec2s stack;
+    // Vec2s stack;
     void *stack;
     if (this->mSaveSlotIndex == 0) {
         this->mUnk_004.func_ov000_020633c0(0x40, 0x89, 0x02, 0x1F, 0x89, 0x00);
@@ -32,7 +32,7 @@ ARM UnkSubStruct9::UnkSubStruct9(stack_struct1 param1) :
         this->mUnk_77C.y = 0;
     } else if (this->mSaveSlotIndex == 1) {
         this->mUnk_004.func_ov000_020633c0(0x41, 0x89, 0x01, 0x1F, 0x89, 0x01);
-        UnkStruct_ov019_020d24c8_28_258 local_40(0x89, 0x02);  // sp28
+        UnkStruct_ov019_020d24c8_28_258 local_40(0x89, 0x02); // sp28
         UnkStruct_ov019_020d24c8_28_258 local_58(0x89, 0x01); // sp10
 
         s16 temp_r2   = local_58.mPos.x - local_40.mPos.x;

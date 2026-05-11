@@ -17,20 +17,20 @@ enum CutsceneIndex_ {
     /*  8 */ CutsceneIndex_WalkingToSpiritTower,
     /*  9 */ CutsceneIndex_FirstAnjeanMeeting,
     /* 10 */ CutsceneIndex_FirstPhantomPossession,
-    /* 11 */ CutsceneIndex_ForestTempleCompleted_01, // Altar appearing in boss room
-    /* 12 */ CutsceneIndex_ForestTempleCompleted_02, // Forest Realm Spirit Tracks restoring
-    /* 13 */ CutsceneIndex_ForestTempleCompleted_03, // First part of Spirit Tower split re-attatching
-    /* 14 */ CutsceneIndex_BlizzardTempleCompleted_01, // Altar appearing in boss room
-    /* 15 */ CutsceneIndex_BlizzardTempleCompleted_02, // Snow Realm Spirit Tracks restoring
-    /* 16 */ CutsceneIndex_BlizzardTempleCompleted_03, // Second part of Spirit Tower split re-attatching
-    /* 17 */ CutsceneIndex_MarineTempleCompleted_01, // Altar appearing in boss room
-    /* 18 */ CutsceneIndex_MarineTempleCompleted_02, // Ocean Realm Spirit Tracks restoring
-    /* 19 */ CutsceneIndex_MarineTempleCompleted_03, // Third part of Spirit Tower split re-attatching
+    /* 11 */ CutsceneIndex_ForestTempleCompleted_01,     // Altar appearing in boss room
+    /* 12 */ CutsceneIndex_ForestTempleCompleted_02,     // Forest Realm Spirit Tracks restoring
+    /* 13 */ CutsceneIndex_ForestTempleCompleted_03,     // First part of Spirit Tower split re-attatching
+    /* 14 */ CutsceneIndex_BlizzardTempleCompleted_01,   // Altar appearing in boss room
+    /* 15 */ CutsceneIndex_BlizzardTempleCompleted_02,   // Snow Realm Spirit Tracks restoring
+    /* 16 */ CutsceneIndex_BlizzardTempleCompleted_03,   // Second part of Spirit Tower split re-attatching
+    /* 17 */ CutsceneIndex_MarineTempleCompleted_01,     // Altar appearing in boss room
+    /* 18 */ CutsceneIndex_MarineTempleCompleted_02,     // Ocean Realm Spirit Tracks restoring
+    /* 19 */ CutsceneIndex_MarineTempleCompleted_03,     // Third part of Spirit Tower split re-attatching
     /* 20 */ CutsceneIndex_StavenInTOSAfterFireGlyph_01, // Staven appearing in ToS
     /* 21 */ CutsceneIndex_StavenInTOSAfterFireGlyph_02, // Zelda and Link falling inside tower's lobby
-    /* 22 */ CutsceneIndex_MountainTempleCompleted_01, // Altar appearing in boss room
-    /* 23 */ CutsceneIndex_MountainTempleCompleted_02, // Fire Realm Spirit Tracks restoring
-    /* 24 */ CutsceneIndex_MountainTempleCompleted_03, // Fourth part of Spirit Tower split re-attatching
+    /* 22 */ CutsceneIndex_MountainTempleCompleted_01,   // Altar appearing in boss room
+    /* 23 */ CutsceneIndex_MountainTempleCompleted_02,   // Fire Realm Spirit Tracks restoring
+    /* 24 */ CutsceneIndex_MountainTempleCompleted_03,   // Fourth part of Spirit Tower split re-attatching
     /* 25 */ CutsceneIndex_StavenPreBattle,
     /* 26 */ CutsceneIndex_StavenPostBattle,
     /* 27 */ CutsceneIndex_MalladusOnTOSSummit_01, // Malladus appearing

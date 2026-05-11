@@ -10,7 +10,7 @@ enum FileType {
 // .zob
 typedef struct ZeldaObjectList {
     /* 00 */ FileType type; // always "ZOLB"
-    /* 04 */ unk32 nSize; // file size?
+    /* 04 */ unk32 nSize;   // file size?
     /* 08 */ unk16 unk_08;
     /* 0A */ unk16 unk_0a;
     /* 0C */ u16 nEntries; // number of entries
