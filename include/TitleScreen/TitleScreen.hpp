@@ -201,7 +201,7 @@ public:
     /* 24 */ virtual void vfunc_24() override;
     /* 28 */ virtual void vfunc_28(unk8 *param1) override;
     /* 2C */ virtual void vfunc_2C(unk8 *param1) override;
-    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2, unk32 param3, unk32 param4) override;
+    /* 38 */ virtual void vfunc_38(u32 param1, u8 param2, unk16 param3, unk16 param4) override;
 
     static TitleScreenManager *Create(unk32 param1);
 };

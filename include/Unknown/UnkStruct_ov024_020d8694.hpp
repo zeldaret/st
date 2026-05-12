@@ -10,6 +10,9 @@ public:
     UnkStruct_ov024_020d8694();
 
     /* 00 */ virtual ~UnkStruct_ov024_020d8694();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10(unk8 *param1);
 
     void func_ov024_020cb0c4();
 };

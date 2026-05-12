@@ -449,7 +449,7 @@ from:0x020c6f28 kind:arm_call to:0x02011ff4 module:main
 from:0x020c6f30 kind:load to:0x027e0998 module:dtcm
 from:0x020c6f44 kind:load to:0x027e0998 module:dtcm
 from:0x020c6f50 kind:arm_call_thumb to:0x02061700 module:overlay(0)
-from:0x020c6f64 kind:load to:0x020d7c98 module:overlay(24)
+from:0x020c6f64 kind:load to:0x020d7c90 add:0x8 module:overlay(24)
 from:0x020c6f78 kind:arm_call to:0x02011f3c module:main
 from:0x020c6f84 kind:arm_call to:0x020c6f48 module:overlay(24)
 from:0x020c6fbc kind:arm_call to:0x020a782c module:overlay(0)

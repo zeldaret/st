@@ -17,6 +17,8 @@ public:
     UnkStruct_027e0d34();
     ~UnkStruct_027e0d34();
 
+    bool func_ov031_020d97e4();
+    bool func_ov031_020d97f4();
     void func_ov031_020d9844();
     bool TryItemGive(ItemId itemId);
 };

@@ -154,8 +154,8 @@ THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param
                 auStack_28.func_ov000_02059270(0x24, "drop4", 0x2D200000);
                 auStack_28.func_ov000_02059270(0x25, "drop5", 0x2D200000);
 
-                CourseEntry *ptr = data_027e09a0->func_ov000_0207029c(iVar5);
-                if ((ptr->mUnk_1D - 1) == 1) {
+                CourseEntry *ptr = data_027e09a0->GetCourseEntry(iVar5);
+                if ((ptr->unk_1D - 1) == 1) {
                     auStack_28.func_ov000_02059270(0x38, "mic_0", 0x35B00000);
                     auStack_28.func_ov000_02059270(0x39, "mic_1", 0x35B00000);
                     auStack_28.func_ov000_02059270(0x3A, "mic_on", 0x35B00000);

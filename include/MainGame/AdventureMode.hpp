@@ -4,6 +4,7 @@
 #include "Game/GameModeManager.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
+#include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkSystem1.hpp"
 
 class AdventureModeManager_1B8;
@@ -59,7 +60,7 @@ public:
     /* 44 */ unk8 mUnk_44;
     /* 45 */ unk8 mUnk_45;
     /* 46 */ unk8 mUnk_46;
-    /* 47 */ unk8 mUnk_47;
+    /* 47 */ bool mUnk_47;
     /* 48 */ unk32 mUnk_48;
     /* 4C */
 
@@ -153,7 +154,10 @@ public:
 class AdventureModeManager_168 : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x24);
+    /* 0C */ STRUCT_PAD(0x0C, 0x20);
+    /* 20 */ bool mUnk_20;
+    /* 21 */ bool mUnk_21;
+    /* 24 */
 
     AdventureModeManager_168(GameModeManagerBase_104 *param1); // overlay 31
 
@@ -166,12 +170,16 @@ public:
     /* 20 */ virtual void vfunc_20() override;
 
     void func_ov031_0210df60(unk32 param1);
+    void func_ov031_0210df70(unk32 param1);
+    unk32 func_ov031_0210dfcc();
+    unk32 func_ov031_0210dfd8();
 };
 
 class AdventureModeManager_16C : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x20);
+    /* 0C */ STRUCT_PAD(0x0C, 0x1C);
+    /* 1C */ bool mUnk_1C;
     /* 20 */
 
     AdventureModeManager_16C(GameModeManagerBase_104 *param1); // overlay 26
@@ -184,6 +192,11 @@ public:
     /* 18 */ virtual void vfunc_18(unk32 param1) override;
     /* 1C */ virtual void vfunc_1C(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
+
+    void func_ov026_020d8dd4(unk32 param1);
+    unk32 func_ov026_020d8e30();
+    unk32 func_ov026_020d8e44();
+    void func_ov026_020d8e58();
 };
 
 class AdventureModeManager_170 : public FileSelectManager_UnkDrawBase {
@@ -284,7 +297,10 @@ public:
 class AdventureModeManager_180 : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x48);
+    /* 0C */ STRUCT_PAD(0x0C, 0x40);
+    /* 40 */ unk32 mUnk_40;
+    /* 44 */ unk32 mUnk_44;
+    /* 48 */
 
     AdventureModeManager_180(GameModeManagerBase_104 *param1); // overlay 24
 
@@ -353,12 +369,17 @@ public:
     /* 1C */ virtual void vfunc_1C(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
+
+    void func_ov024_020ca068(unk32 param1);
+    void func_ov024_020ca074();
 };
 
 class AdventureModeManager_190 : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x64);
+    /* 0C */ STRUCT_PAD(0x0C, 0x60);
+    /* 60 */ unk32 mUnk_60;
+    /* 64 */
 
     AdventureModeManager_190(GameModeManagerBase_104 *param1); // overlay 24
 
@@ -370,12 +391,16 @@ public:
     /* 18 */ virtual void vfunc_18(unk32 param1) override;
     /* 1C */ virtual void vfunc_1C(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
+
+    bool func_ov024_020ca24c(unk32 param1);
 };
 
 class AdventureModeManager_194 : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x48);
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ STRUCT_PAD(0x10, 0x48);
+    /* 48 */
 
     AdventureModeManager_194(GameModeManagerBase_104 *param1);
 
@@ -516,6 +541,10 @@ public:
 class AdventureModeManager_1B8_Base {
 public:
     AdventureModeManager_1B8_Base();
+
+    void func_ov024_020d06d0();
+    void func_ov024_020d072c(unk8 *param1);
+    void func_ov024_020d13cc();
 };
 
 class AdventureModeManager_1B8 : public AdventureModeManager_1B8_Base {
@@ -536,7 +565,15 @@ public:
 
     AdventureModeManager_1BC(); // overlay 93
     ~AdventureModeManager_1BC();
+
     void func_ov093_02175514();
+};
+
+struct SceneInfos {
+    /* 00 */ u32 sceneIndex; // scene index
+    /* 04 */ u8 unk_04;
+    /* 05 */ unk8 unk_05; // pad?
+    /* 06 */ unk16 unk_06;
 };
 
 class AdventureModeManager : public TitleScreenManager_Base {
@@ -573,15 +610,11 @@ public:
     /* 1B8 */ AdventureModeManager_1B8 *mUnk_1B8;
     /* 1BC */ AdventureModeManager_1BC *mUnk_1BC;
     /* 1C0 */ unk8 mUnk_1C0;
-    /* 1C0 */ unk8 mUnk_1C1;
-    /* 1C0 */ unk8 mUnk_1C2;  // pad?
-    /* 1C0 */ unk8 mUnk_1C3;  // pad?
-    /* 1C4 */ unk32 mUnk_1C4; // scene index?
-    /* 1C8 */ unk8 mUnk_1C8;
-    /* 1C8 */ unk8 mUnk_1C9; // pad?
-    /* 1C8 */ unk16 mUnk_1CA;
-    /* 1CC */ unk32 mUnk_1CC; // scene index?
-    /* 1D0 */ unk32 mUnk_1D0;
+    /* 1C0 */ bool mAllowMapPaint;
+    /* 1C0 */ unk8 mUnk_1C2; // pad?
+    /* 1C0 */ unk8 mUnk_1C3; // pad?
+    /* 1C4 */ SceneInfos mUnk_1C4;
+    /* 1C4 */ SceneInfos mUnk_1CC;
     /* 1D4 */
 
     AdventureModeManager(unk32 param1);
@@ -596,9 +629,8 @@ public:
     /* 24 */ virtual void vfunc_24() override;
     /* 28 */ virtual void vfunc_28(unk8 *param1) override;
     /* 2C */ virtual void vfunc_2C(unk8 *param1) override;
-    /* 30 */ virtual void vfunc_30(unk32 param1) override;
     /* 34 */ virtual void vfunc_34(unk32 param1, unk32 param2) override;
-    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2, unk32 param3, unk32 param4) override;
+    /* 38 */ virtual void vfunc_38(u32 param1, u8 param2, unk16 param3, unk16 param4) override;
 
     void func_ov001_020c08b8();
 
@@ -612,37 +644,37 @@ public:
     void func_ov024_020c53e8();
     void func_ov024_020c555c(unk32 param1);
     void func_ov024_020c5cec();
-    void func_ov024_020c5dac();
-    void func_ov024_020c5ecc();
-    void func_ov024_020c5f70();
-    void func_ov024_020c60f4();
-    void func_ov024_020c623c();
-    void func_ov024_020c6514();
-    void func_ov024_020c6674();
+    bool func_ov024_020c5dac();
+    bool func_ov024_020c5ecc();
+    bool func_ov024_020c5f70();
+    bool func_ov024_020c60f4();
+    bool func_ov024_020c623c();
+    void func_ov024_020c6514(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4);
+    u8 GetMapPaintIndex(SceneIndex sceneIndex, u8 param2);
     void func_ov024_020c66c0();
     void func_ov024_020c671c();
-    void func_ov024_020c6770();
-    void func_ov024_020c681c();
-    void func_ov024_020c6840();
+    void func_ov024_020c6770(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4);
+    bool func_ov024_020c681c();
+    void func_ov024_020c6840(SceneIndex sceneIndex);
     void func_ov024_020c68d4();
-    void func_ov024_020c68ec();
+    bool func_ov024_020c68ec(unk32 param1, unk32 param2);
     void func_ov024_020c6930();
-    void func_ov024_020c6940();
-    void func_ov024_020c69d0();
-    void func_ov024_020c6a20();
-    void func_ov024_020c6a48();
-    void func_ov024_020c6af4();
+    bool func_ov024_020c6940(unk32 param1, unk32 param2);
+    unk32 func_ov024_020c69d0();
+    unk32 func_ov024_020c6a20();
+    void func_ov024_020c6a48(unk32 param1, unk32 param2);
+    bool func_ov024_020c6af4(unk32 param1);
     void func_ov024_020c6b8c();
     void func_ov024_020c6c60();
     void func_ov024_020c6cd4();
-    void func_ov024_020c6ce4();
-    void func_ov024_020c6d04();
+    bool func_ov024_020c6ce4();
+    unk32 func_ov024_020c6d04();
     void func_ov024_020c6d10();
-    void func_ov024_020c6d20();
+    void func_ov024_020c6d20(unk32 param1);
     void func_ov024_020c6d2c(unk32 param1);
-    void func_ov024_020c6d64();
+    bool func_ov024_020c6d64();
     void func_ov024_020c6db8(unk32 param1);
-    void func_ov024_020c6dec();
+    bool func_ov024_020c6dec();
     void func_ov024_020c699c();
 
     static AdventureModeManager *Create(unk32 param1);

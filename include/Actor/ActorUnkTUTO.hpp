@@ -27,7 +27,6 @@ public:
     /* 4C */ virtual ~ActorUnkTUTO() override;
 
     void func_ov037_02120a10(void);
-    void func_ov037_02120a64(void);
     void func_ov037_02120afc(void);
     void func_ov037_02120b10(void);
     void func_ov037_02120ba8(void);
@@ -58,6 +57,8 @@ public:
     void func_ov037_02121ab0(void);
     void func_ov037_02121af0(void);
     void func_ov037_02121b2c(void);
+
+    static unk32 func_ov037_02120a64(void);
 };
 
 class ActorProfileUnkTUTO : public ActorProfile {

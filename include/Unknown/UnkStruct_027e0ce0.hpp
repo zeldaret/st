@@ -29,6 +29,19 @@ public:
     void func_ov110_02185d3c(ItemId itemId);
 };
 
+class UnkStruct_027e0ce0_38_158 {
+public:
+    void func_ov026_020dc2d0();
+};
+
+class UnkStruct_027e0ce0_38 {
+public:
+    /* 000 */ STRUCT_PAD(0x00, 0x158);
+    /* 158 */ UnkStruct_027e0ce0_38_158 *mUnk_158;
+
+    // data_ov026_0213562c
+};
+
 // PlayerManager?
 class UnkStruct_027e0ce0 {
 public:
@@ -49,7 +62,7 @@ public:
     /* 2C */ ItemManager *mUnk_2C; // same as above
     /* 30 */ unk32 *mUnk_30;       // ?
     /* 34 */ UnkStruct_027e0ce0_34 *mUnk_34;
-    /* 38 */ unk32 *mUnk_38; // pointer to data_027e0478 when on the train
+    /* 38 */ UnkStruct_027e0ce0_38 *mUnk_38; // pointer to data_027e0478 when on the train
     /* 3C */ unk32 mUnk_3C;
     /* 40 */ unk32 *mUnk_40; // pointer to data_027e0478 when not on the train
     /* 44 */

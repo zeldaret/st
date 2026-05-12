@@ -45,7 +45,7 @@ ARM void TitleScreenManager::vfunc_2C(unk8 *param1) {
     this->func_02018830(param1);
 }
 
-ARM void TitleScreenManager::vfunc_38(unk32 param1, unk32 param2, unk32 param3, unk32 param4) {}
+ARM void TitleScreenManager::vfunc_38(u32 param1, u8 param2, unk16 param3, unk16 param4) {}
 
 ARM void TitleScreenManager::func_ov025_020c4c20() {
     ((TitleScreen *) this->mpGameMode)->func_ov025_020c4e6c();

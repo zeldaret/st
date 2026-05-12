@@ -39,35 +39,35 @@ AdventureModeManager *AdventureModeManager::Create(unk32 param1) {
 }
 
 AdventureModeManager::AdventureModeManager(unk32 param1) {
-    this->mUnk_154 = 0;
-    this->mUnk_158 = &this->mUnk_104;
-    this->mUnk_15C = new(HeapIndex_1) AdventureModeManager_15C();
-    this->mUnk_160 = NULL;
-    this->mUnk_164 = NULL;
-    this->mUnk_168 = NULL;
-    this->mUnk_16C = NULL;
-    this->mUnk_174 = NULL;
-    this->mUnk_178 = NULL;
-    this->mUnk_17C = NULL;
-    this->mUnk_180 = NULL;
-    this->mUnk_184 = NULL;
-    this->mUnk_188 = NULL;
-    this->mUnk_18C = NULL;
-    this->mUnk_190 = NULL;
-    this->mUnk_194 = NULL;
-    this->mUnk_198 = NULL;
-    this->mUnk_19C = NULL;
-    this->mUnk_1A0 = NULL;
-    this->mUnk_1A4 = NULL;
-    this->mUnk_1A8 = NULL;
-    this->mUnk_1AC = new(HeapIndex_1) AdventureModeManager_1AC();
-    this->mUnk_1B0 = NULL;
-    this->mUnk_1B4 = false;
-    this->mUnk_1B5 = false;
-    this->mUnk_1B8 = NULL;
-    this->mUnk_1BC = NULL;
-    this->mUnk_1C0 = 0;
-    this->mUnk_1C1 = 0;
+    this->mUnk_154       = 0;
+    this->mUnk_158       = &this->mUnk_104;
+    this->mUnk_15C       = new(HeapIndex_1) AdventureModeManager_15C();
+    this->mUnk_160       = NULL;
+    this->mUnk_164       = NULL;
+    this->mUnk_168       = NULL;
+    this->mUnk_16C       = NULL;
+    this->mUnk_174       = NULL;
+    this->mUnk_178       = NULL;
+    this->mUnk_17C       = NULL;
+    this->mUnk_180       = NULL;
+    this->mUnk_184       = NULL;
+    this->mUnk_188       = NULL;
+    this->mUnk_18C       = NULL;
+    this->mUnk_190       = NULL;
+    this->mUnk_194       = NULL;
+    this->mUnk_198       = NULL;
+    this->mUnk_19C       = NULL;
+    this->mUnk_1A0       = NULL;
+    this->mUnk_1A4       = NULL;
+    this->mUnk_1A8       = NULL;
+    this->mUnk_1AC       = new(HeapIndex_1) AdventureModeManager_1AC();
+    this->mUnk_1B0       = NULL;
+    this->mUnk_1B4       = false;
+    this->mUnk_1B5       = false;
+    this->mUnk_1B8       = NULL;
+    this->mUnk_1BC       = NULL;
+    this->mUnk_1C0       = 0;
+    this->mAllowMapPaint = false;
 
     func_ov024_020c6f68();
     func_ov024_020d1658();
@@ -77,9 +77,9 @@ AdventureModeManager::AdventureModeManager(unk32 param1) {
     GX_SetGraphicsMode(1, 0, 1);
     GXS_SetGraphicsMode(5);
 
-    this->mUnk_1C4 = -1;
-    this->mUnk_1C8 = 0;
-    this->mUnk_1CA = -1;
+    this->mUnk_1C4.sceneIndex = SceneIndex_None;
+    this->mUnk_1C4.unk_04     = 0;
+    this->mUnk_1C4.unk_06     = -1;
 }
 
 void AdventureModeManager::vfunc_10(unk32 param1, unk32 param2, unk32 param3) {
@@ -118,8 +118,7 @@ void AdventureModeManager::vfunc_14() {
         this->mUnk_004.func_ov001_020bd734(&data_ov001_020c276c);
 
         if (data_027e09a4->IsNotCutscene()) {
-            if (data_027e09a4->mUnk_00.mSceneIndex <= SceneIndex_t_eviltrain3 &&
-                data_027e09a4->mUnk_00.mSceneIndex >= SceneIndex_t_eviltrain) {
+            if (data_027e09a4->IsDarkRealm()) {
                 this->mUnk_004.func_0201c00c(6, 1);
             } else {
                 this->mUnk_004.func_0201c00c(4, 1);
@@ -189,12 +188,10 @@ void AdventureModeManager::vfunc_14() {
     func_ov024_020ccd1c();
 
     if (data_027e09a4->IsNotCutscene()) {
-        //! TODO: fake match?
-        GameModeLinkListNode *pList = ((GameModeLinkListNode *) &this->mUnk_104);
-        UnkStruct_020d8698 *temp_r5 = data_ov024_020d8698;
-        ((GameModeLinkListNode *) ((u8 *) pList + 4))->func_020166cc(temp_r5);
-
-        temp_r5->vfunc_18();
+        GameModeManagerBase_104 *ptr = &this->mUnk_104;
+        GameModeLinkListNode *origin = data_ov024_020d8698->GetOrigin();
+        ptr->mList.func_020166cc(data_ov024_020d8698->GetNode());
+        ((UnkStruct_020d8698 *) origin)->vfunc_18();
         this->mUnk_1B4 = true;
     }
 

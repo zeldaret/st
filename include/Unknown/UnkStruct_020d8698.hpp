@@ -4,16 +4,8 @@
 #include "Item/Item.hpp"
 #include "types.h"
 
-class UnkStruct_020d8698 : public GameModeLinkList<UnkStruct_020d8698> {
+class UnkStruct_020d8698 : public GameModeManagerBase_104 {
 public:
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (node != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
-    }
-
     void func_ov024_020cd094();
     void func_ov024_020cd150();
     void func_ov024_020cd368(bool param1, bool param2);
@@ -23,6 +15,8 @@ public:
     void func_ov024_020cd410();
     void func_ov024_020cd420();
     void func_ov024_020cd458(ItemFlag itemFlag, unk32 param2);
+    void func_ov024_020cd4e4(u16 param1);
+    bool func_ov024_020cd5c0(u16 param1);
 
     /* 00 */ virtual ~UnkStruct_020d8698();
     /* 08 */ virtual void vfunc_08();

@@ -18,6 +18,7 @@ naming scheme:
 typedef u32 SceneIndex;
 typedef u16 SceneIndex_Half;
 enum SceneIndex_ {
+    /*  -1 */ SceneIndex_None          = -1,
     /*   0 */ SceneIndex_test_trn      = 0x00, //
     /*   1 */ SceneIndex_test_trn2     = 0x01, //
     /*   2 */ SceneIndex_test_pre      = 0x02, //
@@ -160,7 +161,7 @@ struct UnkStruct_SceneChange1_Base {
     /* 0B */ u8 mSpawnIndex;
     /* 0C */ bool mIsCS;
     /* 0D */ unk8 mUnk_0D;
-    /* 0E */ unk8 mCutsceneIndex;
+    /* 0E */ u8 mCutsceneIndex;
     /* 0F */ unk8 mUnk_0F;
 };
 
@@ -216,8 +217,7 @@ public:
 
 class UnkStruct_027e09a4 : public SysObject {
 public:
-    /* 00 */ UnkStruct_SceneChange1_Base
-        mUnk_00; // the scene index of the current area, this isn't saved when you save the game
+    /* 00 */ UnkStruct_SceneChange1_Base mUnk_00; // the infos of the current area, this isn't saved when you save the game
     /* 10 */ unk32 *mUnk_10;
     /* 14 */ UnkStruct_SceneChange1 mUnk_14;
     /* 32 */ STRUCT_PAD(0x28, 0x54);
@@ -257,6 +257,10 @@ public:
         }
 
         return false;
+    }
+
+    bool IsDarkRealm() {
+        return this->mUnk_00.mSceneIndex <= SceneIndex_t_eviltrain3 && this->mUnk_00.mSceneIndex >= SceneIndex_t_eviltrain;
     }
 
     ~UnkStruct_027e09a4();

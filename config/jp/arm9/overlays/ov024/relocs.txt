@@ -451,7 +451,7 @@ from:0x020c8778 kind:arm_call to:0x02011ff4 module:main
 from:0x020c8780 kind:load to:0x027e0998 module:dtcm
 from:0x020c8794 kind:load to:0x027e0998 module:dtcm
 from:0x020c87a0 kind:arm_call_thumb to:0x02062c88 module:overlay(0)
-from:0x020c87b4 kind:load to:0x020d9638 module:overlay(24)
+from:0x020c87b4 kind:load to:0x020d9630 add:0x8 module:overlay(24)
 from:0x020c87c8 kind:arm_call to:0x02011f3c module:main
 from:0x020c87d4 kind:arm_call to:0x020c8798 module:overlay(24)
 from:0x020c880c kind:arm_call to:0x020a902c module:overlay(0)

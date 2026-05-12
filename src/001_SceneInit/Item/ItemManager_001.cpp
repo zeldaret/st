@@ -9,7 +9,7 @@ THUMB void ItemManager::func_ov001_020bb9f8() {
         this->mTearsAmount = 0;
     }
 
-    CourseEntry *pEntry = data_027e09a0->func_ov000_0207029c(data_027e09a4->mUnk_00.mSceneIndex);
+    CourseEntry *pEntry = data_027e09a0->GetCourseEntry(data_027e09a4->mUnk_00.mSceneIndex);
 
     if (pEntry->mSaveCourseIndex < SaveCourseIndex_Max) {
         this->mKeyAmount = gSaveManager.mUnk_000->mUnk_36[pEntry->mSaveCourseIndex].mKeyAmount;

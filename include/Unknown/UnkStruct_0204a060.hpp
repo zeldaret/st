@@ -12,7 +12,7 @@ class GameModeFileSelect;
 class UnkStruct_0204a060_Base3 : public SysObject {
 public:
     /* 00 (vtable) */
-    /* 04 */ GameModeLinkListNode mUnk_04;
+    /* 04 */ GameModeLinkList<UnkStruct_0204a060_Base3> mUnk_04;
     /* 0C */ bool mUnk_0C;
     /* 0D */ unk8 mUnk_0D;
     /* 0E */ unk8 mUnk_0E;
