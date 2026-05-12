@@ -16,6 +16,8 @@ public:
 
     void func_ov000_02061760();
     unk32 func_ov000_02061a70();
+
+    static void Destroy();
 };
 
 extern UnkStruct_027e0998 *data_027e0998;

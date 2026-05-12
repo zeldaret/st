@@ -2161,7 +2161,7 @@ from:0x020c17e8 kind:thumb_call_arm to:0x0206246c module:overlay(0)
 from:0x020c1808 kind:thumb_call_arm to:0x02011f3c module:main
 from:0x020c1810 kind:thumb_call to:0x020c210c module:overlay(1)
 from:0x020c188a kind:thumb_call_arm to:0x02011f3c module:main
-from:0x020c1892 kind:thumb_call_arm to:0x020c8688 module:overlays(20,24)
+from:0x020c1892 kind:thumb_call_arm to:0x020c8688 module:overlay(24)
 from:0x020c18c4 kind:thumb_call_arm to:0x020c87b8 module:overlay(24)
 from:0x020c18c8 kind:thumb_call_arm to:0x020d2fac module:overlay(24)
 from:0x020c18d4 kind:thumb_call_arm to:0x02011f3c module:main

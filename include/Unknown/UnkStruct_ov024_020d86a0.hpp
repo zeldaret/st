@@ -11,6 +11,8 @@ public:
     ~UnkStruct_ov024_020d86a0();
 
     void func_ov001_020bd818();
+
+    static void Destroy();
 };
 
 extern UnkStruct_ov024_020d86a0 *data_ov024_020d86a0;

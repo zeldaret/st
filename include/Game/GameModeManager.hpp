@@ -211,24 +211,12 @@ public:
     static GameModeManagerBase *Create(unk32 param1);
 };
 
-class TitleScreen;
-class AdventureMode;
-
 class TitleScreenManager_Base : public GameModeManagerBase {
 public:
     /* 000 (base) */
-    /* 154 */ GameModeBase *mpGameMode;
-    /* 158 */
+    /* 154 */
 
     TitleScreenManager_Base();
-
-    TitleScreen *GetTitleScreen() {
-        return (TitleScreen *) this->mpGameMode;
-    }
-
-    AdventureMode *GetAdventureMode() {
-        return (AdventureMode *) this->mpGameMode;
-    }
 
     // data_ov000_020b1d14 vtable
     /* 08 */ virtual ~TitleScreenManager_Base() override;

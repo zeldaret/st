@@ -21,6 +21,7 @@ public:
     void func_ov024_020cd3e0(unk32 param1);
     void func_ov024_020cd3f0(unk32 param1);
     void func_ov024_020cd410();
+    void func_ov024_020cd420();
     void func_ov024_020cd458(ItemFlag itemFlag, unk32 param2);
 
     /* 00 */ virtual ~UnkStruct_020d8698();

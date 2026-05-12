@@ -2,6 +2,8 @@
 
 #include "FileSelect/FileSelectUnkDraw.hpp"
 #include "Game/GameModeManager.hpp"
+#include "Unknown/Common.hpp"
+#include "Unknown/UnkStruct_0204a060.hpp"
 #include "Unknown/UnkSystem1.hpp"
 
 class AdventureModeManager_1B8;
@@ -67,42 +69,121 @@ public:
     void func_ov001_020c0920();
 };
 
-class AdventureModeManager_160 {
+class AdventureModeManager_160_28 : public UnkStruct_0204a060_Base {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x98);
+    AdventureModeManager_160_28();
 
-    AdventureModeManager_160(GameModeManagerBase_104 *param1, AdventureModeManager_1B8 *param2);
-    /* 00 */ virtual ~AdventureModeManager_160();
+    // data_ov000_020b1ff4
+    /* 00 */ virtual ~AdventureModeManager_160_28() override;
+    /* 08 */ virtual bool vfunc_08(unk32 param1) override;
+    /* 10 */ virtual bool vfunc_10(void) override;
 };
 
-class AdventureModeManager_164 {
+class AdventureModeManager_160_4C : public UnkStruct_0204a060_Base {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x1C);
+    AdventureModeManager_160_4C();
+
+    // data_ov024_020d7ca4
+    /* 00 */ virtual ~AdventureModeManager_160_4C() override;
+    /* 0C */ virtual bool vfunc_0C(void) override;
+};
+
+class AdventureModeManager_160_18 {
+public:
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10();
+    /* 14 */ virtual void vfunc_14();
+    /* 18 */ virtual void vfunc_18();
+};
+
+class AdventureModeManager_160 : public FileSelectManager_UnkDrawBase {
+public:
+    /* 00 (base) */
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ AdventureModeManager_160_18 *mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ unk16 mUnk_24;
+    /* 26 */ unk16 mUnk_26;
+    /* 28 */ AdventureModeManager_160_28 mUnk_28;
+    /* 4C */ AdventureModeManager_160_4C mUnk_4C;
+    /* 70 */ UnkStruct_0204a060_Base mUnk_70;
+    /* 94 */ unk8 mUnk_94;
+    /* 95 */ unk8 mUnk_95;
+    /* 96 */ unk8 mUnk_96;
+    /* 97 */ unk8 mUnk_97;
+    /* 98 */
+
+    AdventureModeManager_160(GameModeManagerBase_104 *param1, AdventureModeManager_1B8 *param2);
+
+    // data_ov024_020d7cc0
+    /* 00 */ virtual ~AdventureModeManager_160() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+};
+
+class AdventureModeManager_164 : public FileSelectManager_UnkDrawBase {
+public:
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0x1C);
     /* 1C */
 
     AdventureModeManager_164(GameModeManagerBase_104 *param1, GameModeManagerBase_004 *param2); // overlay 26
-    /* 00 */ virtual ~AdventureModeManager_164();
+
+    // data_ov026_0213528c
+    /* 00 */ virtual ~AdventureModeManager_164() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
 };
 
-class AdventureModeManager_168 {
+class AdventureModeManager_168 : public FileSelectManager_UnkDrawBase {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x24);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0x24);
 
-    AdventureModeManager_168(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_168();
+    AdventureModeManager_168(GameModeManagerBase_104 *param1); // overlay 31
+
+    // data_ov031_02116254
+    /* 00 */ virtual ~AdventureModeManager_168() override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+
+    void func_ov031_0210df60(unk32 param1);
 };
 
-class AdventureModeManager_16C {
+class AdventureModeManager_16C : public FileSelectManager_UnkDrawBase {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x20);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0x20);
     /* 20 */
 
     AdventureModeManager_16C(GameModeManagerBase_104 *param1); // overlay 26
-    /* 00 */ virtual ~AdventureModeManager_16C();
+
+    // data_ov026_021352bc
+    /* 00 */ virtual ~AdventureModeManager_16C() override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
 };
 
 class AdventureModeManager_170 : public FileSelectManager_UnkDrawBase {
@@ -111,148 +192,309 @@ public:
     /* 0C */ STRUCT_PAD(0x0C, 0x3C);
     /* 3C */
 
-    AdventureModeManager_170(GameModeManagerBase_104 *param1);
+    AdventureModeManager_170(GameModeManagerBase_104 *param1); // overlay 24
+
+    // data_ov024_020d7d0c
+    /* 00 */ virtual ~AdventureModeManager_170() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 24 */ virtual void vfunc_24() override;
 };
 
-class AdventureModeManager_174 {
+class AdventureModeManager_174_Base : public FileSelectManager_UnkDrawBase {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0xC0);
+    /* 00 (base) */
+    /* 0C */
 
-    AdventureModeManager_174(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_174();
+    AdventureModeManager_174_Base();
+
+    // data_ov024_020d7d58
+    /* 00 */ virtual ~AdventureModeManager_174_Base() override;
 };
 
-class AdventureModeManager_178 {
+class AdventureModeManager_178_Base : public AdventureModeManager_174_Base {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0xBC);
+    /* 00 (base) */
+    /* 0C */
 
-    AdventureModeManager_178(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_178();
+    AdventureModeManager_178_Base();
+
+    // data_ov024_020d7db8
+    /* 00 */ virtual ~AdventureModeManager_178_Base() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
 };
 
-class AdventureModeManager_17C {
+class AdventureModeManager_174 : public AdventureModeManager_174_Base {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0xBC);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0xC0);
 
-    AdventureModeManager_17C(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_17C();
+    AdventureModeManager_174(GameModeManagerBase_104 *param1); // overlay 24
+
+    // data_ov024_020d7d88
+    /* 00 */ virtual ~AdventureModeManager_174() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
 };
 
-class AdventureModeManager_180 {
+class AdventureModeManager_178 : public AdventureModeManager_178_Base {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x48);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0xBC);
 
-    AdventureModeManager_180(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_180();
+    AdventureModeManager_178(GameModeManagerBase_104 *param1); // overlay 24
+
+    // data_ov024_020d7de8
+    /* 00 */ virtual ~AdventureModeManager_178() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
 };
 
-class AdventureModeManager_184 {
+class AdventureModeManager_17C : public AdventureModeManager_178_Base {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x1C);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0xBC);
 
-    AdventureModeManager_184(GameModeManagerBase_104 *param1);
+    AdventureModeManager_17C(GameModeManagerBase_104 *param1); // overlay 62
+
+    // data_ov062_02160790
+    /* 00 */ virtual ~AdventureModeManager_17C() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+};
+
+class AdventureModeManager_180 : public FileSelectManager_UnkDrawBase {
+public:
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0x48);
+
+    AdventureModeManager_180(GameModeManagerBase_104 *param1); // overlay 24
+
+    // data_ov024_020d7e34
+    /* 00 */ virtual ~AdventureModeManager_180() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+};
+
+class AdventureModeManager_184 : public FileSelectManager_UnkDrawBase {
+public:
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0x1C);
+
+    AdventureModeManager_184(GameModeManagerBase_104 *param1); // overlay 24
+
+    // data_ov024_020d7e64
     /* 00 */ virtual ~AdventureModeManager_184();
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
 };
 
-class AdventureModeManager_188 {
+class AdventureModeManager_188 : public FileSelectManager_UnkDrawBase {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x38);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0x38);
 
-    AdventureModeManager_188(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_188();
+    AdventureModeManager_188(GameModeManagerBase_104 *param1); // overlay 31
+
+    // data_ov031_021162a0
+    /* 00 */ virtual ~AdventureModeManager_188() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
 };
 
-class AdventureModeManager_18C {
+class AdventureModeManager_18C : public FileSelectManager_UnkDrawBase {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x58);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0x58);
 
     AdventureModeManager_18C(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_18C();
+
+    // data_ov024_020d7eb0
+    /* 00 */ virtual ~AdventureModeManager_18C() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
 };
 
-class AdventureModeManager_190 {
+class AdventureModeManager_190 : public FileSelectManager_UnkDrawBase {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x64);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0x64);
 
-    AdventureModeManager_190(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_190();
+    AdventureModeManager_190(GameModeManagerBase_104 *param1); // overlay 24
+
+    // data_ov024_020d7f18
+    /* 00 */ virtual ~AdventureModeManager_190() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
 };
 
-class AdventureModeManager_194 {
+class AdventureModeManager_194 : public FileSelectManager_UnkDrawBase {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x48);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0x48);
 
     AdventureModeManager_194(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_194();
+
+    // data_ov031_021162ec
+    /* 00 */ virtual ~AdventureModeManager_194() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
 };
 
-class AdventureModeManager_198 {
+class AdventureModeManager_198 : public FileSelectManager_UnkDrawBase {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x3C);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0x3C);
 
-    AdventureModeManager_198(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_198();
+    AdventureModeManager_198(GameModeManagerBase_104 *param1); // overlay 58
+
+    // data_ov058_02155e08
+    /* 00 */ virtual ~AdventureModeManager_198() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
 };
 
-class AdventureModeManager_19C {
+class AdventureModeManager_19C : public FileSelectManager_UnkDrawBase {
 public:
-    /* 00 (vtable) */
-    /* 0C */ STRUCT_PAD(0x04, 0x14);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0x14);
     /* 14 */
 
-    AdventureModeManager_19C(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_19C();
+    AdventureModeManager_19C(GameModeManagerBase_104 *param1); // overlay 26
+
+    // data_ov026_021352ec
+    /* 00 */ virtual ~AdventureModeManager_19C() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 24 */ virtual void vfunc_24() override;
 };
 
-class AdventureModeManager_1A0 {
+class AdventureModeManager_1A0 : public AdventureModeManager_174_Base {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0xBC);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0xBC);
 
-    AdventureModeManager_1A0(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_1A0();
+    AdventureModeManager_1A0(GameModeManagerBase_104 *param1); // overlay 62
+
+    // data_ov062_021607c0
+    /* 00 */ virtual ~AdventureModeManager_1A0() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
 };
 
-class AdventureModeManager_1A4 {
+class AdventureModeManager_1A4 : public AdventureModeManager_174_Base {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0xBC);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0xBC);
 
-    AdventureModeManager_1A4(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_1A4();
+    AdventureModeManager_1A4(GameModeManagerBase_104 *param1); // overlay 62
+
+    // data_ov062_021607f0
+    /* 00 */ virtual ~AdventureModeManager_1A4() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
 };
 
-class AdventureModeManager_1A8 {
+class AdventureModeManager_1A8 : public FileSelectManager_UnkDrawBase {
 public:
-    /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x38);
+    /* 00 (base) */
+    /* 0C */ STRUCT_PAD(0x0C, 0x38);
 
-    AdventureModeManager_1A8(GameModeManagerBase_104 *param1);
-    /* 00 */ virtual ~AdventureModeManager_1A8();
+    AdventureModeManager_1A8(GameModeManagerBase_104 *param1); // overlay 88
+
+    // data_ov088_02176068
+    /* 00 */ virtual ~AdventureModeManager_1A8() override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1) override;
+    /* 24 */ virtual void vfunc_24() override;
 };
 
-class AdventureModeManager_1AC {
+// AdventureMode?
+class AdventureModeManager_1AC : public GameModeManagerBase_104 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x1C);
+    /* 00 (base) */
     /* 1C */
 
-    AdventureModeManager_1AC(); // overlay 20
+    AdventureModeManager_1AC(); // overlay 24
+
+    // data_ov024_020d7bf4
+    /* 00 */ virtual ~AdventureModeManager_1AC() override;
+    /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl) override;
+    /* 10 */ virtual void vfunc_10(unk8 *param1) override;
+    /* 14 */ virtual void vfunc_14(unk8 *param1) override;
 };
 
-class AdventureModeManager_1B0 {
+class AdventureModeManager_1B0 : public GameModeManagerBase_104 {
 public:
-    GameModeLinkList<AdventureModeManager_1B0> mList;
-    /* 04 */ STRUCT_PAD(0x0C, 0x50);
+    /* 1C */ UnkStruct_ov019_020d24c8_28_258 mUnk_1C;
+    /* 34 */ STRUCT_PAD(0x34, 0x50);
+    /* 50 */
 
     GameModeLinkListNode *GetNode() {
         GameModeLinkListNode *node = (GameModeLinkListNode *) this;
@@ -262,18 +504,21 @@ public:
         return node;
     }
 
-    AdventureModeManager_1B0();
+    AdventureModeManager_1B0(); // overlay 31
     void func_ov031_0210fad0();
 
-    /* 00 */ virtual ~AdventureModeManager_1B0();
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
-    /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual void vfunc_18();
+    // data_ov031_02116358
+    /* 00 */ virtual ~AdventureModeManager_1B0() override;
+    /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl) override;
+    /* 10 */ virtual void vfunc_10(unk8 *param1) override;
 };
 
-class AdventureModeManager_1B8 {
+class AdventureModeManager_1B8_Base {
+public:
+    AdventureModeManager_1B8_Base();
+};
+
+class AdventureModeManager_1B8 : public AdventureModeManager_1B8_Base {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
@@ -285,11 +530,11 @@ public:
     ~AdventureModeManager_1B8();
 };
 
-class AdventureModeManager_1BC {
+class AdventureModeManager_1BC : public AdventureModeManager_1B8_Base {
 public:
     /* 00 */ STRUCT_PAD(0x00, 0x38);
 
-    AdventureModeManager_1BC();
+    AdventureModeManager_1BC(); // overlay 93
     ~AdventureModeManager_1BC();
     void func_ov093_02175514();
 };
@@ -297,6 +542,7 @@ public:
 class AdventureModeManager : public TitleScreenManager_Base {
 public:
     /* 000 (base) */
+    /* 154 */ unk32 mUnk_154;
     /* 158 */ GameModeManagerBase_104 *mUnk_158;
     /* 15C */ AdventureModeManager_15C *mUnk_15C;
     /* 160 */ AdventureModeManager_160 *mUnk_160;
@@ -355,6 +601,48 @@ public:
     /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2, unk32 param3, unk32 param4) override;
 
     void func_ov001_020c08b8();
+
+    void func_ov024_020c5288();
+    void func_ov024_020c52a0();
+    void func_ov024_020c52b8();
+    void func_ov024_020c52f4();
+    void func_ov024_020c530c();
+    void func_ov024_020c5364();
+    void func_ov024_020c537c();
+    void func_ov024_020c53e8();
+    void func_ov024_020c555c(unk32 param1);
+    void func_ov024_020c5cec();
+    void func_ov024_020c5dac();
+    void func_ov024_020c5ecc();
+    void func_ov024_020c5f70();
+    void func_ov024_020c60f4();
+    void func_ov024_020c623c();
+    void func_ov024_020c6514();
+    void func_ov024_020c6674();
+    void func_ov024_020c66c0();
+    void func_ov024_020c671c();
+    void func_ov024_020c6770();
+    void func_ov024_020c681c();
+    void func_ov024_020c6840();
+    void func_ov024_020c68d4();
+    void func_ov024_020c68ec();
+    void func_ov024_020c6930();
+    void func_ov024_020c6940();
+    void func_ov024_020c69d0();
+    void func_ov024_020c6a20();
+    void func_ov024_020c6a48();
+    void func_ov024_020c6af4();
+    void func_ov024_020c6b8c();
+    void func_ov024_020c6c60();
+    void func_ov024_020c6cd4();
+    void func_ov024_020c6ce4();
+    void func_ov024_020c6d04();
+    void func_ov024_020c6d10();
+    void func_ov024_020c6d20();
+    void func_ov024_020c6d2c(unk32 param1);
+    void func_ov024_020c6d64();
+    void func_ov024_020c6db8(unk32 param1);
+    void func_ov024_020c6dec();
     void func_ov024_020c699c();
 
     static AdventureModeManager *Create(unk32 param1);

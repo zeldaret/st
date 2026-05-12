@@ -181,6 +181,7 @@ public:
 class TitleScreenManager : public TitleScreenManager_Base {
 public:
     /* 000 (base) */
+    /* 154 */ GameModeBase *mpGameMode;
     /* 158 */
 
     TitleScreenManager(unk32 param1) NO_INLINE {
