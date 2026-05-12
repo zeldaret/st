@@ -9,7 +9,7 @@
 extern "C" {
 void func_0201659c();
 void func_0200e234();
-void func_ov001_020b6520(unk32 param1);
+void *func_ov001_020b6520(unk32 param1);
 }
 
 ARM GameModeTitleScreen::GameModeTitleScreen() {

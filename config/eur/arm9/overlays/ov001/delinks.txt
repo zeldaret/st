@@ -1,5 +1,5 @@
-    .text       start:0x020b6520 end:0x020c0a24 kind:code align:32
-    .rodata     start:0x020c0a24 end:0x020c2814 kind:rodata align:4
+    .text       start:0x020b6520 end:0x020c25c0 kind:code align:32
+    .rodata     start:0x020c25c0 end:0x020c2814 kind:rodata align:4
     .init       start:0x020c2814 end:0x020c2900 kind:code align:4
     .ctor       start:0x020c2900 end:0x020c2920 kind:rodata align:4
     .data       start:0x020c2940 end:0x020c2fe0 kind:data align:32
@@ -19,3 +19,6 @@ src/001_SceneInit/CargoManager_001.cpp:
 
 src/001_SceneInit/PassengerManager_001.cpp:
     .text       start:0x020bf870 end:0x020bfa50
+
+src/001_SceneInit/Game/GameModeAdventure_001.cpp:
+    .text       start:0x020bff74 end:0x020c099c

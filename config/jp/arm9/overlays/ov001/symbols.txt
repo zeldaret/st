@@ -144,9 +144,9 @@ func_ov001_020bbe44 kind:function(thumb,size=0x18) addr:0x020bbe44
 func_ov001_020bbe5c kind:function(thumb,size=0x20) addr:0x020bbe5c
 func_ov001_020bbe7c kind:function(thumb,size=0x16) addr:0x020bbe7c
 func_ov001_020bbe94 kind:function(thumb,size=0x18) addr:0x020bbe94
-func_ov001_020bbeac kind:function(thumb,size=0x138) addr:0x020bbeac
-func_ov001_020bbfe4 kind:function(thumb,size=0x20) addr:0x020bbfe4
-_ZN11SaveManager19func_ov000_020ba7c8Et kind:function(thumb,size=0x90) addr:0x020bc004
+_ZN11SaveManager19func_ov001_020ba670Ev kind:function(thumb,size=0x138) addr:0x020bbeac
+_ZN11SaveManager19func_ov001_020ba7a8Ev kind:function(thumb,size=0x20) addr:0x020bbfe4
+_ZN11SaveManager19func_ov001_020ba7c8Et kind:function(thumb,size=0x90) addr:0x020bc004
 func_ov001_020bc094 kind:function(thumb,size=0x15c) addr:0x020bc094
 func_ov001_020bc1f0 kind:function(thumb,size=0x2) addr:0x020bc1f0
 func_ov001_020bc1f4 kind:function(thumb,size=0x16) addr:0x020bc1f4
@@ -275,7 +275,7 @@ _ZN23GameModeManagerBase_00419func_ov001_020bd784Ev kind:function(thumb,size=0x3
 func_ov001_020bf008 kind:function(thumb,size=0x8) addr:0x020bf008
 func_ov001_020bf010 kind:function(thumb,size=0x32) addr:0x020bf010
 func_ov001_020bf044 kind:function(thumb,size=0x1a) addr:0x020bf044
-func_ov001_020bf060 kind:function(thumb,size=0x24) addr:0x020bf060
+_ZN24UnkStruct_ov024_020d86a019func_ov001_020bd818Ev kind:function(thumb,size=0x24) addr:0x020bf060
 func_ov001_020bf084 kind:function(thumb,size=0xc) addr:0x020bf084
 func_ov001_020bf090 kind:function(thumb,size=0xc) addr:0x020bf090
 func_ov001_020bf09c kind:function(thumb,size=0x28) addr:0x020bf09c
@@ -420,55 +420,78 @@ func_ov001_020c1760 kind:function(thumb,size=0x10) addr:0x020c1760
 func_ov001_020c1770 kind:function(thumb,size=0x10) addr:0x020c1770
 func_ov001_020c1780 kind:function(thumb,size=0x8) addr:0x020c1780
 func_ov001_020c1788 kind:function(thumb,size=0x40) addr:0x020c1788
-func_ov001_020c17c8 kind:function(thumb,size=0x1c) addr:0x020c17c8
-func_ov001_020c17e4 kind:function(thumb,size=0x134) addr:0x020c17e4
-func_ov001_020c1918 kind:function(thumb,size=0x10) addr:0x020c1918
-func_ov001_020c1928 kind:function(thumb,size=0x30) addr:0x020c1928
-func_ov001_020c1958 kind:function(thumb,size=0x90) addr:0x020c1958
-func_ov001_020c19e8 kind:function(thumb,size=0x7c) addr:0x020c19e8
-func_ov001_020c1a64 kind:function(thumb,size=0x364) addr:0x020c1a64
-func_ov001_020c1dc8 kind:function(thumb,size=0x248) addr:0x020c1dc8
-func_ov001_020c2010 kind:function(thumb,size=0x40) addr:0x020c2010
-func_ov001_020c2050 kind:function(thumb,size=0x28) addr:0x020c2050
-func_ov001_020c2078 kind:function(thumb,size=0x18) addr:0x020c2078
-func_ov001_020c2090 kind:function(thumb,size=0x18) addr:0x020c2090
-func_ov001_020c20a8 kind:function(thumb,size=0x20) addr:0x020c20a8
-func_ov001_020c20c8 kind:function(thumb,size=0x20) addr:0x020c20c8
-func_ov001_020c20e8 kind:function(thumb,size=0x18) addr:0x020c20e8
-func_ov001_020c2100 kind:function(thumb,size=0xc) addr:0x020c2100
-func_ov001_020c210c kind:function(thumb,size=0x68) addr:0x020c210c
-func_ov001_020c2174 kind:function(thumb,size=0x22) addr:0x020c2174
-func_ov001_020c2198 kind:function(thumb,size=0x58) addr:0x020c2198
+_ZN20AdventureModeManager6CreateEi kind:function(thumb,size=0x1c) addr:0x020c17c8
+_ZN20AdventureModeManagerC1Ei kind:function(thumb,size=0x134) addr:0x020c17e4
+_ZN20AdventureModeManager8vfunc_10Eiii kind:function(thumb,size=0x10) addr:0x020c1918
+_ZN20AdventureModeManager19func_ov001_020c00d4Ev kind:function(thumb,size=0x30) addr:0x020c1928
+_ZN20AdventureModeManager19func_ov001_020c0104Ev kind:function(thumb,size=0x90) addr:0x020c1958
+_ZN20AdventureModeManager19func_ov001_020c0194Ev kind:function(thumb,size=0x7c) addr:0x020c19e8
+_ZN20AdventureModeManager8vfunc_14Ev kind:function(thumb,size=0x364) addr:0x020c1a64
+_ZN20AdventureModeManager8vfunc_18Ev kind:function(thumb,size=0x248) addr:0x020c1dc8
+_ZN20AdventureModeManager8vfunc_1CEv kind:function(thumb,size=0x40) addr:0x020c2010
+_ZN20AdventureModeManager8vfunc_20Ev kind:function(thumb,size=0x28) addr:0x020c2050
+_ZN20AdventureModeManager19func_ov001_020c0824Ev kind:function(thumb,size=0x18) addr:0x020c2078
+_ZN20AdventureModeManager19func_ov001_020c083cEv kind:function(thumb,size=0x18) addr:0x020c2090
+_ZN20AdventureModeManager19func_ov001_020c0854Ev kind:function(thumb,size=0x20) addr:0x020c20a8
+_ZN20AdventureModeManager19func_ov001_020c0874Ev kind:function(thumb,size=0x20) addr:0x020c20c8
+_ZN20AdventureModeManager19func_ov001_020c0894Ev kind:function(thumb,size=0x18) addr:0x020c20e8
+_ZN24UnkStruct_ov000_020b4f70D1Ev kind:function(thumb,size=0xc) addr:0x020c2100
+_ZN24AdventureModeManager_15CC1Ev kind:function(thumb,size=0x68) addr:0x020c210c
+_ZN24AdventureModeManager_15CD1Ev kind:function(thumb,size=0x22) addr:0x020c2174
+_ZN17GameModeAdventureC1Ev kind:function(thumb,size=0x58) addr:0x020c2198
 func_ov001_020c21f0 kind:function(thumb,size=0x24) addr:0x020c21f0
 func_ov001_020c2214 kind:function(thumb,size=0x1c) addr:0x020c2214
 func_ov001_020c2230 kind:function(thumb,size=0x48) addr:0x020c2230
-func_ov001_020c2688_unk kind:function(arm,size=0x0,unknown) addr:0x020c2688
-func_ov001_020c2700_unk kind:function(arm,size=0x0,unknown) addr:0x020c2700
-data_ov001_020c2708 kind:data(any) addr:0x020c2708 ambiguous
-func_ov001_020c2778_unk kind:function(arm,size=0x0,unknown) addr:0x020c2778
-func_ov001_020c27f0_unk kind:function(arm,size=0x0,unknown) addr:0x020c27f0
-func_ov001_020c2868_unk kind:function(arm,size=0x0,unknown) addr:0x020c2868
-func_ov001_020c28e0_unk kind:function(arm,size=0x0,unknown) addr:0x020c28e0
-data_ov001_020c2958 kind:data(any) addr:0x020c2958
-data_ov001_020c2f5c kind:data(any) addr:0x020c2f5c
-data_ov001_020c308c kind:data(any) addr:0x020c308c ambiguous
-data_ov001_020c3218 kind:data(any) addr:0x020c3218
-data_ov001_020c3678 kind:data(any) addr:0x020c3678
-data_ov001_020c3730 kind:data(any) addr:0x020c3730
-data_ov001_020c37e8 kind:data(any) addr:0x020c37e8
-data_ov001_020c38a0 kind:data(any) addr:0x020c38a0
-data_ov001_020c3958 kind:data(any) addr:0x020c3958
-data_ov001_020c39d4 kind:data(any) addr:0x020c39d4
-data_ov001_020c39f0 kind:data(any) addr:0x020c39f0
-data_ov001_020c3a88 kind:data(any) addr:0x020c3a88
-data_ov001_020c3b00 kind:data(any) addr:0x020c3b00
-data_ov001_020c3b78 kind:data(any) addr:0x020c3b78
-data_ov001_020c3bf0 kind:data(any) addr:0x020c3bf0
-data_ov001_020c3c68 kind:data(any) addr:0x020c3c68
-data_ov001_020c3ce0 kind:data(any) addr:0x020c3ce0
-data_ov001_020c3da4 kind:data(any) addr:0x020c3da4
-data_ov001_020c3dc4 kind:data(any) addr:0x020c3dc4
-data_ov001_020c3e14 kind:data(any) addr:0x020c3e14
+DetectFlashcart kind:function(arm,size=0xb8,unknown) addr:0x020c2278
+DetectNotFlashcart kind:function(arm,size=0xb8,unknown) addr:0x020c2330
+DetectEmulator kind:function(arm,size=0xb8,unknown) addr:0x020c23e8
+DetectNotEmulator kind:function(arm,size=0xb8,unknown) addr:0x020c24a0
+DetectDummy kind:function(arm,size=0x98,unknown) addr:0x020c2558
+DetectNotDummy kind:function(arm,size=0x98,unknown) addr:0x020c25f0
+DSProt_DetectFlashcart kind:function(arm,size=0x78,unknown) addr:0x020c2688
+DSProt_DetectNotFlashcart kind:function(arm,size=0x78,unknown) addr:0x020c2700
+DSProt_DetectEmulator kind:function(arm,size=0x78,unknown) addr:0x020c2778
+DSProt_DetectNotEmulator kind:function(arm,size=0x78,unknown) addr:0x020c27f0
+DSProt_DetectDummy kind:function(arm,size=0x78,unknown) addr:0x020c2868
+DSProt_DetectNotDummy kind:function(arm,size=0x78,unknown) addr:0x020c28e0
+NitroStaticInit kind:function(arm,size=0x4c,unknown) addr:0x020c2958 local
+Integrity_MACOwner_IsBad kind:function(arm,size=0xd8,unknown) addr:0x020c29a4
+Integrity_MACOwner_IsGood kind:function(arm,size=0x114,unknown) addr:0x020c2a7c
+Integrity_ROMTest_IsBad kind:function(arm,size=0xd8,unknown) addr:0x020c2b90
+Integrity_ROMTest_IsGood kind:function(arm,size=0x114,unknown) addr:0x020c2c68
+RunEncrypted_Integrity_MACOwner_IsBad kind:function(arm,size=0x78,unknown) addr:0x020c2d7c
+RunEncrypted_Integrity_MACOwner_IsGood kind:function(arm,size=0x78,unknown) addr:0x020c2df4
+RunEncrypted_Integrity_ROMTest_IsBad kind:function(arm,size=0x78,unknown) addr:0x020c2e6c
+RunEncrypted_Integrity_ROMTest_IsGood kind:function(arm,size=0x78,unknown) addr:0x020c2ee4
+NitroStaticInit kind:function(arm,size=0x38,unknown) addr:0x020c2f5c local
+clearDataAndInstructionCache kind:function(arm,size=0x20,unknown) addr:0x020c2f94
+Encryptor_CategorizeInstruction kind:function(arm,size=0x3c,unknown) addr:0x020c2fb4
+Encryptor_DecodeFunctionTable kind:function(arm,size=0x110,unknown) addr:0x020c2ff0
+Encryptor_DecryptFunction kind:function(arm,size=0x88,unknown) addr:0x020c3100
+Encryptor_EncryptFunction kind:function(arm,size=0x90,unknown) addr:0x020c3188
+NitroStaticInit kind:function(arm,size=0x28,unknown) addr:0x020c3218 local
+MACOwner_IsBad kind:function(arm,size=0xb0,unknown) addr:0x020c3240
+MACOwner_IsGood kind:function(arm,size=0xb0,unknown) addr:0x020c32f0
+RunEncrypted_MACOwner_IsBad kind:function(arm,size=0x78,unknown) addr:0x020c33a0
+RunEncrypted_MACOwner_IsGood kind:function(arm,size=0x78,unknown) addr:0x020c3418
+ROMUtil_Read kind:function(arm,size=0x184,unknown) addr:0x020c3490
+ROMUtil_CRC32 kind:function(arm,size=0x58,unknown) addr:0x020c3614
+RunEncrypted_ROMUtil_Read kind:function(arm,size=0x78,unknown) addr:0x020c366c
+RunEncrypted_ROMUtil_CRC32 kind:function(arm,size=0x78,unknown) addr:0x020c36e4
+ROMTest_IsBad kind:function(arm,size=0xc4,unknown) addr:0x020c375c
+ROMTest_IsGood kind:function(arm,size=0xc4,unknown) addr:0x020c3820
+RunEncrypted_ROMTest_IsBad kind:function(arm,size=0x78,unknown) addr:0x020c38e4
+RunEncrypted_ROMTest_IsGood kind:function(arm,size=0x78,unknown) addr:0x020c395c
+NitroStaticInit kind:function(arm,size=0x48,unknown) addr:0x020c39d4 local
+RC4_Init kind:function(arm,size=0x74,unknown) addr:0x020c3a1c
+RC4_Byte kind:function(arm,size=0x4c,unknown) addr:0x020c3a90
+RC4_InitSBox kind:function(arm,size=0x24,unknown) addr:0x020c3adc
+RC4_EncryptInstructions kind:function(arm,size=0x108,unknown) addr:0x020c3b00
+RC4_DecryptInstructions kind:function(arm,size=0x10c,unknown) addr:0x020c3c08
+RC4_InitAndEncryptInstructions kind:function(arm,size=0x58,unknown) addr:0x020c3d14
+RC4_InitAndDecryptInstructions kind:function(arm,size=0x58,unknown) addr:0x020c3d6c
+NitroStaticInit kind:function(arm,size=0x50,unknown) addr:0x020c3dc4 local
+bad_mac_addr kind:data(any) addr:0x020c3e14
 data_ov001_020c3e28 kind:data(any) addr:0x020c3e28
 data_ov001_020c3e50 kind:data(any) addr:0x020c3e50
 data_ov001_020c3e78 kind:data(any) addr:0x020c3e78
@@ -489,11 +512,11 @@ __sinit_ov001_020c4144 kind:function(thumb,size=0x10) addr:0x020c4144
 .p__sinit_ov001_020c4068 kind:data(word) addr:0x020c4154
 .p__sinit_ov001_020c408c kind:data(word) addr:0x020c4158
 .p__sinit_ov001_020c4144 kind:data(word) addr:0x020c415c
-.p__sinit_ov001_020c2958 kind:data(word) addr:0x020c4160
-.p__sinit_ov001_020c2f5c kind:data(word) addr:0x020c4164
-.p__sinit_ov001_020c3218 kind:data(word) addr:0x020c4168
-.p__sinit_ov001_020c39d4 kind:data(word) addr:0x020c416c
-.p__sinit_ov001_020c3dc4 kind:data(word) addr:0x020c4170
+.p__sinit_ov001_020c2958 kind:data(word) addr:0x020c4160 local
+.p__sinit_ov001_020c2f5c kind:data(word) addr:0x020c4164 local
+.p__sinit_ov001_020c3218 kind:data(word) addr:0x020c4168 local
+.p__sinit_ov001_020c39d4 kind:data(word) addr:0x020c416c local
+.p__sinit_ov001_020c3dc4 kind:data(word) addr:0x020c4170 local
 data_ov001_020c4180 kind:data(any) addr:0x020c4180
 data_ov001_020c4198 kind:data(any) addr:0x020c4198
 data_ov001_020c41b0 kind:data(any) addr:0x020c41b0

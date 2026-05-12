@@ -31,6 +31,8 @@ public:
     void func_0201c1e4();
     void func_0201c22c();
 
+    void func_ov024_020cada0();
+
     void func_ov001_020bd734(unk32 *param1);
     void func_ov001_020bd784();
 };
@@ -43,6 +45,14 @@ public:
 
     GameModeLinkListNode();
     ~GameModeLinkListNode();
+
+    GameModeLinkListNode *GetNode() {
+        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
+        if (node != NULL) {
+            node = (GameModeLinkListNode *) ((u32 *) node + 1);
+        }
+        return node;
+    }
 
     void func_020166cc(GameModeLinkListNode *param1);
     void func_020166f4(GameModeLinkListNode *param1);
@@ -125,6 +135,8 @@ public:
     /* 10 */ virtual void vfunc_10(unk8 *param1);
     /* 14 */ virtual void vfunc_14(unk8 *param1);
     /* 18 */ virtual void vfunc_18(void);
+
+    void func_ov088_0217230c();
 };
 
 class GameModeManagerBase : public SysObject {
@@ -200,12 +212,13 @@ public:
 };
 
 class TitleScreen;
-class MainGame;
+class AdventureMode;
 
 class TitleScreenManager_Base : public GameModeManagerBase {
 public:
     /* 000 (base) */
     /* 154 */ GameModeBase *mpGameMode;
+    /* 158 */
 
     TitleScreenManager_Base();
 
@@ -213,8 +226,8 @@ public:
         return (TitleScreen *) this->mpGameMode;
     }
 
-    MainGame *GetMainGame() {
-        return (MainGame *) this->mpGameMode;
+    AdventureMode *GetAdventureMode() {
+        return (AdventureMode *) this->mpGameMode;
     }
 
     // data_ov000_020b1d14 vtable
@@ -228,3 +241,9 @@ public:
 };
 
 extern TitleScreenManager_Base *data_027e0994;
+
+class AdventureModeManager;
+
+static inline AdventureModeManager *GetAdventureModeManager() {
+    return (AdventureModeManager *) data_027e0994;
+}

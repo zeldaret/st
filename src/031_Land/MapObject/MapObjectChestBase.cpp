@@ -159,7 +159,7 @@ ARM void MapObjectChestBase::vfunc_04() {
         sp48.z -= FLOAT_TO_Q20(0.5f);
     }
 
-    if (data_027e09a4->mSceneIndex == SceneIndex_d_flame) {
+    if (data_027e09a4->mUnk_00.mSceneIndex == SceneIndex_d_flame) {
         local_64.x = this->mUnk_3A.x;
         local_66.y = this->mUnk_3A.y;
 

@@ -416,7 +416,10 @@ public:
     SaveManager();
 
     void func_ov000_020a0b2c(UnkCallback param1, unk32 param2);
-    void func_ov000_020ba7c8(u16 saveSlotIndex);
+
+    void func_ov001_020ba670();
+    void func_ov001_020ba7a8();
+    void func_ov001_020ba7c8(u16 saveSlotIndex);
 
     void func_ov019_020d08fc(unk32 param1, PTMF<SaveFile>::PTMFCallback param2);
     bool func_ov019_020d0964(void);

@@ -14,6 +14,7 @@ public:
     /* 00 */ virtual bool vfunc_00(Vec3p *pPos, void *param2, void *param3);
     /* 04 */
 
+    void func_ov000_02061760();
     unk32 func_ov000_02061a70();
 };
 

@@ -5,6 +5,9 @@
     .data       start:0x020d7b60 end:0x020d8660 kind:data align:32
     .bss        start:0x020d8660 end:0x020d8720 kind:bss align:32
 
+src/024_MainGame/Game/GameModeAdventure_024.cpp:
+    .text       start:0x020c5158 end:0x020c6dec
+
 src/024_MainGame/PassengerManager.cpp:
     .text       start:0x020d4120 end:0x020d46b4
     .rodata     start:0x020d75a4 end:0x020d7624

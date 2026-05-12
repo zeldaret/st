@@ -5,11 +5,11 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 
 THUMB void ItemManager::func_ov001_020bb9f8() {
-    if (data_027e09a4->mUnk_0C != 1 && gOverlayManager.mLoadedOverlays[OverlaySlot_10] != OverlayIndex_PlayerPhantom) {
+    if (data_027e09a4->IsNotCutscene() && gOverlayManager.mLoadedOverlays[OverlaySlot_10] != OverlayIndex_PlayerPhantom) {
         this->mTearsAmount = 0;
     }
 
-    CourseEntry *pEntry = data_027e09a0->func_ov000_0207029c(data_027e09a4->mSceneIndex);
+    CourseEntry *pEntry = data_027e09a0->func_ov000_0207029c(data_027e09a4->mUnk_00.mSceneIndex);
 
     if (pEntry->mSaveCourseIndex < SaveCourseIndex_Max) {
         this->mKeyAmount = gSaveManager.mUnk_000->mUnk_36[pEntry->mSaveCourseIndex].mKeyAmount;

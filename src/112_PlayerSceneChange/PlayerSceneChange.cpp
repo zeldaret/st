@@ -302,7 +302,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                 this->mUnk_68 = data_027e09a4->func_ov000_02070554();
             }
 
-            SceneIndex eScene = data_027e09a4->mSceneIndex;
+            SceneIndex eScene = data_027e09a4->mUnk_00.mSceneIndex;
             if (eScene == SceneIndex_tekiya07) {
                 this->mUnk_68 = 0x18;
             } else {

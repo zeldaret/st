@@ -364,7 +364,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
             this->MapObjectDoorBase::vfunc_5C(param1, param2);
 
             var_r6  = 1;
-            temp_r8 = data_027e09a4->mSceneIndex;
+            temp_r8 = data_027e09a4->mUnk_00.mSceneIndex;
 
             if (param2 != 0 && (temp_r8 - SceneIndex_tekiya00) > 4) {
                 var_r6 = 0;

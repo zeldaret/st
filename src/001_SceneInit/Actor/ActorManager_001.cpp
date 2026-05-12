@@ -98,7 +98,7 @@ THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param
     int aligned0A = ALIGN_NEXT(unk_0A, 8);
     int aligned08 = ALIGN_NEXT(unk_08, 8);
 
-    int iVar5 = data_027e09a0->func_ov000_020702a8(data_027e09a4->mSceneIndex)->mUnk_20;
+    int iVar5 = data_027e09a0->func_ov000_020702a8(data_027e09a4->mUnk_00.mSceneIndex)->mUnk_20;
 
     s32 allocCount;
     if (data_027e09a4->mUnk_60 == 0) {
@@ -124,7 +124,7 @@ THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param
         unk32 iVar5;
 
         if (func_01ffd3b0() != 0) {
-            iVar5 = data_027e09a4->mSceneIndex;
+            iVar5 = data_027e09a4->mUnk_00.mSceneIndex;
 
             if (iVar5 == SceneIndex_f_rabbit) {
                 this->mUnk_34 = 0xFFFFECCD; // ~0x1332
@@ -199,7 +199,7 @@ THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param
         }
     }
 
-    if (data_027e09a4->UnkCheck(data_027e09a4->mSceneIndex)) {
+    if (data_027e09a4->UnkCheck(data_027e09a4->mUnk_00.mSceneIndex)) {
         func_ov071_0215e8d4();
     }
 
@@ -212,7 +212,7 @@ THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param
 THUMB void ActorManager::func_ov001_020bb414(ActorManager *instance) {
     func_ov001_020ba59c(&data_0204999c);
 
-    if (data_027e09a4->UnkCheck(data_027e09a4->mSceneIndex)) {
+    if (data_027e09a4->UnkCheck(data_027e09a4->mUnk_00.mSceneIndex)) {
         instance->func_ov001_020bb844();
     }
 
@@ -225,7 +225,7 @@ THUMB void ActorManager::func_ov001_020bb414(ActorManager *instance) {
 }
 
 THUMB void ActorManager::func_ov001_020bb488() {
-    if (data_027e09a4->mUnk_0C != 1) {
+    if (data_027e09a4->IsNotCutscene()) {
         switch (data_027e09a4->func_01ffd400()->mUnk_10) {
             case 0x00:
             case 0x01:
@@ -244,7 +244,7 @@ THUMB void ActorManager::func_ov001_020bb488() {
         data_027e0cf4->func_ov021_020f8cdc();
     }
 
-    if (data_027e09a4->UnkCheck(data_027e09a4->mSceneIndex)) {
+    if (data_027e09a4->UnkCheck(data_027e09a4->mUnk_00.mSceneIndex)) {
         data_027e0d70->func_ov071_0215e8f8();
     }
 }
@@ -264,7 +264,7 @@ THUMB void ActorManager::func_ov001_020bb548() {
         i++;
     }
 
-    unk32 value = data_027e09a4->mSceneIndex;
+    unk32 value = data_027e09a4->mUnk_00.mSceneIndex;
     if (data_027e09a4->UnkCheck(value)) {
         data_027e0d70->func_ov071_0215e9ac();
 
@@ -321,7 +321,7 @@ THUMB void ActorManager::func_ov001_020bb6b0(UnkStruct_SceneChange1 *param1) {
             for (int i = 0; i < ARRAY_LEN(data_ov000_020ab1ac); i++) {
                 UnkStruct_ov000_020ab1ac *pEntry = &data_ov000_020ab1ac[i];
 
-                if (pEntry->mUnk_00 == iVar5->mActorId && pEntry->mUnk_04 == param1->mNextSceneIndex &&
+                if (pEntry->mUnk_00 == iVar5->mActorId && pEntry->mUnk_04 == param1->mSceneIndex &&
                     pEntry->mUnk_08 == param1->mRoomIndex) {
                     (*piVar1)->mUnk_39 = 1;
                     (*piVar1)->vfunc_08();
@@ -337,7 +337,7 @@ THUMB void ActorManager::func_ov001_020bb6b0(UnkStruct_SceneChange1 *param1) {
 THUMB bool ActorManager::func_ov001_020bb728(s32 param1) {
     UnkStruct_SceneChange1 *piVar1 = data_027e09a4->func_ov000_02070560();
 
-    if (piVar1->mNextSceneIndex != SceneIndex_f_water || piVar1->mRoomIndex != 0) {
+    if (piVar1->mSceneIndex != SceneIndex_f_water || piVar1->mRoomIndex != 0) {
         return false;
     }
 
