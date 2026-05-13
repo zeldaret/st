@@ -22,7 +22,7 @@ public:
     /* 20 */ virtual void vfunc_20(unk32 param1);
     /* 24 */ virtual unk32 vfunc_24() = 0;
     /* 28 */ virtual unk32 vfunc_28() = 0;
-    /* 2C */ virtual unk32 vfunc_2C();
+    /* 2C */ virtual bool vfunc_2C();
     /* 30 */
 };
 

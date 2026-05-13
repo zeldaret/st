@@ -97,7 +97,7 @@ void UnkStruct_ov024_020d8660::func_ov024_020c4cc8() {
         return;
     }
 
-    if (this->mUnk_00->vfunc_2C() == 0) {
+    if (!this->mUnk_00->vfunc_2C()) {
         return;
     }
 

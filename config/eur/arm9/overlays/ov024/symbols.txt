@@ -775,7 +775,7 @@ __sinit_ActorUnkOBPC.cpp kind:function(arm,size=0x50) addr:0x020d7ae4
 .p__sinit_ov024_020d7acc kind:data(word) addr:0x020d7b48
 .p__sinit_ActorUnkOBPC.cpp kind:data(word) addr:0x020d7b4c
 _ZTV17GameModeAdventure kind:data(any) addr:0x020d7b60
-data_ov024_020d7b98 kind:data(any) addr:0x020d7b98
+_ZTV15UnkActorSystem1 kind:data(any) addr:0x020d7b90
 _ZTV19data_ov024_020d7bc8 kind:data(any) addr:0x020d7bc8
 _ZTV19data_ov024_020d7bec kind:data(any) addr:0x020d7bec
 _ZTV20AdventureModeManager kind:data(any) addr:0x020d7c10

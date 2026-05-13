@@ -86,7 +86,7 @@ from:0x020c65dc kind:load to:0x0204b690 module:main
 from:0x020c65e4 kind:load to:0x0204c42c module:main
 from:0x020c665c kind:load to:0x020da000 module:overlay(24)
 from:0x020c6670 kind:load to:0x020da000 module:overlay(24)
-from:0x020c6688 kind:load to:0x020d9538 module:overlay(24)
+from:0x020c6688 kind:load to:0x020d9530 add:0x8 module:overlay(24)
 from:0x020c6698 kind:arm_call to:0x02011ff4 module:main
 from:0x020c66e8 kind:arm_call to:0x0206306c module:overlay(0)
 from:0x020c6700 kind:arm_call to:0x02061d8c module:overlay(0)

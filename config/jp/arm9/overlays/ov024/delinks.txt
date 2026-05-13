@@ -7,11 +7,17 @@
 
 src/024_MainGame/Game/GameModeAdventure_024.cpp:
     .text       start:0x020c6060 end:0x020c62cc
+    .data       start:0x020d9500 end:0x020d9530
 
 src/024_MainGame/Game/UnkStruct_ov000_020d8660_024.cpp:
     complete
     .text       start:0x020c62cc end:0x020c6674
     .bss        start:0x020da000 end:0x020da034
+
+src/024_MainGame/Game/UnkActorSystem1_024.cpp:
+    complete
+    .text       start:0x020c6674 end:0x020c66dc
+    .data       start:0x020d9530 end:0x020d9568
 
 src/024_MainGame/Game/AdventureModeManager_024.cpp:
     .text       start:0x020c69cc end:0x020c8688

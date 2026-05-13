@@ -82,7 +82,7 @@ from:0x020c4d68 kind:load to:0x027e09a4 module:dtcm
 from:0x020c4d6c kind:load to:0x0204a110 module:main
 from:0x020c4de8 kind:load to:0x020d8660 module:overlay(24)
 from:0x020c4dfc kind:load to:0x020d8660 module:overlay(24)
-from:0x020c4e14 kind:load to:0x020d7b98 module:overlay(24)
+from:0x020c4e14 kind:load to:0x020d7b90 add:0x8 module:overlay(24)
 from:0x020c4e24 kind:arm_call to:0x02011ff4 module:main
 from:0x020c4e74 kind:arm_call to:0x02061ae4 module:overlay(0)
 from:0x020c4e8c kind:arm_call to:0x02060804 module:overlay(0)
