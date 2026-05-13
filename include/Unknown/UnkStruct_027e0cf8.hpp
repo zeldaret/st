@@ -17,6 +17,10 @@ public:
     UnkStruct_027e0cf8();
     ~UnkStruct_027e0cf8();
 
+    void func_ov017_020c390c();
+    void func_ov017_020c397c();
+    void func_ov017_020c39d4();
+
     void func_ov024_020c755c(void *param1);
     void func_ov024_020c7724();
     void func_ov024_020c7780();

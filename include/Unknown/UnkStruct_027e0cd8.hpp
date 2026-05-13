@@ -134,7 +134,9 @@ public:
     /* 08 */ unk32 mUnk_08;
     /* 0C */ UnkStruct_027e0cd8_0c *mUnk_0C; // related to train?
     /* 10 */ MapObjectManager *mUnk_10;
-    /* 14 */ STRUCT_PAD(0x14, 0x4C);
+    /* 14 */ STRUCT_PAD(0x14, 0x24);
+    /* 24 */ Vec3p mUnk_24;
+    /* 34 */ STRUCT_PAD(0x34, 0x4C);
     /* 4C */
 
     bool func_ov000_02081e30(unk32 param1, unk32 param2);
@@ -143,6 +145,7 @@ public:
     void func_ov000_02081eec(unk16 param1, unk32 param2, unk32 param3);
     bool func_ov000_02081f3c(unk16 param1, unk32 param2);
     unk32 func_ov000_02081d5c();
+    bool func_ov000_02082124();
 };
 
 extern UnkStruct_027e0cd8 *data_027e0cd8;

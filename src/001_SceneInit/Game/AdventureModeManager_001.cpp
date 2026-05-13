@@ -110,7 +110,7 @@ void AdventureModeManager::vfunc_14() {
     data_027e09a4->func_ov000_0207056c();
     func_ov024_020c7390();
 
-    if (data_027e09a4->func_01ffd3d8() != 0) {
+    if (data_027e09a4->func_01ffd3d8()) {
         this->mUnk_004.func_ov001_020bd734(&data_ov001_020c276c);
 
         if (data_027e09a4->IsNotCutscene()) {
@@ -127,7 +127,7 @@ void AdventureModeManager::vfunc_14() {
         }
     }
 
-    if (data_027e09a4->func_01ffd3d8() != 0) {
+    if (data_027e09a4->func_01ffd3d8()) {
         if (DSProt_DetectEmulator(AdventureModeManager::func_ov001_020c0194) == 0) {
             AdventureModeManager::func_ov001_020c0104();
         }
@@ -237,7 +237,7 @@ void AdventureModeManager::vfunc_18() {
         this->mUnk_1B4 = false;
     }
 
-    if (data_027e09a4->func_01ffd3d8() != 0) {
+    if (data_027e09a4->func_01ffd3d8()) {
         delete this->mUnk_16C;
         this->mUnk_16C = NULL;
 
@@ -300,7 +300,7 @@ void AdventureModeManager::vfunc_1C() {
     data_ov024_020d8698->func_ov024_020cd094();
     data_ov024_020d8698->func_ov024_020cd150();
 
-    if (data_027e09a4->func_01ffd3d8() == 0) {
+    if (!data_027e09a4->func_01ffd3d8()) {
         this->mUnk_1B0->func_ov031_0210fad0();
     }
 }

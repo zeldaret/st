@@ -95,6 +95,10 @@ public:
         return prev;
     }
 
+    template <typename T> T *GetTarget() {
+        return (T *) this;
+    }
+
     void func_020166cc(GameModeLinkListNode *param1);
     void func_020166f4(GameModeLinkListNode *param1);
     unk32 func_0201673c();
@@ -172,7 +176,7 @@ public:
     // data_ov000_020b1e60 vtable
     /* 00 */ virtual ~GameModeManagerBase_104();
     /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl);
-    /* 0C */ virtual void vfunc_0C(unk32 param1);
+    /* 0C */ virtual void vfunc_0C(void *param1);
     /* 10 */ virtual void vfunc_10(unk8 *param1);
     /* 14 */ virtual void vfunc_14(unk8 *param1);
     /* 18 */ virtual void vfunc_18(void);

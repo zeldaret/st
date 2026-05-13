@@ -23,6 +23,7 @@ public:
     /* 125 */ unk8 mUnk_125;
     /* 126 */ unk8 mUnk_126;
     /* 127 */ bool mUnk_127;
+    /* 128 */ unk16 mUnk_128;
 
     void func_ov000_02061098(void);
     void func_ov000_020611dc(void *param1, unk32 param2);

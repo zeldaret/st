@@ -222,7 +222,11 @@ public:
     /* 00 */ UnkStruct_SceneChange1_Base mUnk_00; // the infos of the current area, this isn't saved when you save the game
     /* 10 */ unk32 *mUnk_10;
     /* 14 */ UnkStruct_SceneChange1 mUnk_14;
-    /* 32 */ STRUCT_PAD(0x28, 0x54);
+    /* 28 */ unk32 mUnk_28;
+    /* 2C */ s16 mUnk_2C;
+    /* 2C */ unk16 mUnk_2E;
+    /* 30 */ Vec3p mUnk_30;
+    /* 3C */ STRUCT_PAD(0x3C, 0x54);
     /* 54 */ void *mUnk_54; // vtable
     /* 58 */ UnkStruct_WarpUnk1 *mpWarpUnk1;
     /* 5C */ unk32 mUnk_5C;
@@ -236,6 +240,10 @@ public:
 
     bool IsNotCutscene() {
         return this->mUnk_00.mIsCS != true;
+    }
+
+    u8 CurrentCSIndex() {
+        return this->mUnk_00.mCutsceneIndex;
     }
 
     bool UnkCheck(unk32 sceneIndex) {
@@ -261,13 +269,25 @@ public:
         return false;
     }
 
+    SceneIndex CurrentSceneIndex() {
+        return this->mUnk_00.mSceneIndex;
+    }
+
     bool IsDarkRealm() {
         return this->mUnk_00.mSceneIndex <= SceneIndex_t_eviltrain3 && this->mUnk_00.mSceneIndex >= SceneIndex_t_eviltrain;
     }
 
+    bool IsPirate() {
+        return this->mUnk_00.mSceneIndex == SceneIndex_f_pirate;
+    }
+
+    bool IsPassenger() {
+        return this->mUnk_00.mSceneIndex == SceneIndex_f_passenger;
+    }
+
     ~UnkStruct_027e09a4();
 
-    unk32 func_01ffd3d8();
+    bool func_01ffd3d8();
     UnkStruct_func_01ffd400 *func_01ffd400();
 
     unk8 func_ov000_02070bd0(unk32 csIndex, unk32 param2);

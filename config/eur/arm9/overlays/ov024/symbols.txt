@@ -99,22 +99,22 @@ _ZN20AdventureModeManager19func_ov024_020c6d64Ev kind:function(arm,size=0x54) ad
 _ZN20AdventureModeManager19func_ov024_020c6db8Ei kind:function(arm,size=0x34) addr:0x020c6db8
 _ZN20AdventureModeManager19func_ov024_020c6decEv kind:function(arm,size=0x4c) addr:0x020c6dec
 _ZN24AdventureModeManager_1ACC1Ev kind:function(arm,size=0x2c) addr:0x020c6e38
-_ZN19func_ov024_020c6e64D1Ev kind:function(arm,size=0x14) addr:0x020c6e64
-_ZN19func_ov024_020c6e78D0Ev kind:function(arm,size=0x1c) addr:0x020c6e78
-func_ov024_020c6e94 kind:function(arm,size=0x18) addr:0x020c6e94
-func_ov024_020c6eac kind:function(arm,size=0x18) addr:0x020c6eac
-func_ov024_020c6ec4 kind:function(arm,size=0x18) addr:0x020c6ec4
+_ZN24AdventureModeManager_1ACD1Ev kind:function(arm,size=0x14) addr:0x020c6e64
+_ZN24AdventureModeManager_1ACD0Ev kind:function(arm,size=0x1c) addr:0x020c6e78
+_ZN24AdventureModeManager_1AC8vfunc_08EP5InputP12TouchControl kind:function(arm,size=0x18) addr:0x020c6e94
+_ZN24AdventureModeManager_1AC8vfunc_10EPc kind:function(arm,size=0x18) addr:0x020c6eac
+_ZN24AdventureModeManager_1AC8vfunc_14EPc kind:function(arm,size=0x18) addr:0x020c6ec4
 _ZN24UnkStruct_ov024_020d86a07DestroyEv kind:function(arm,size=0x2c) addr:0x020c6edc
 _ZN18UnkStruct_027e09987DestroyEv kind:function(arm,size=0x2c) addr:0x020c6f08
-func_ov024_020c6f34 kind:function(arm,size=0x14) addr:0x020c6f34
-func_ov024_020c6f48 kind:function(arm,size=0x20) addr:0x020c6f48
-func_ov024_020c6f68 kind:function(arm,size=0x24) addr:0x020c6f68
-func_ov024_020c6f8c kind:function(arm,size=0x1e0) addr:0x020c6f8c
-func_ov024_020c716c kind:function(arm,size=0xa8) addr:0x020c716c
-func_ov024_020c7214 kind:function(arm,size=0x68) addr:0x020c7214
-func_ov024_020c727c kind:function(arm,size=0x84) addr:0x020c727c
-func_ov024_020c7300 kind:function(arm,size=0x54) addr:0x020c7300
-func_ov024_020c7354 kind:function(arm,size=0x3c) addr:0x020c7354
+_ZN18UnkStruct_027e0998D1Ev kind:function(arm,size=0x14) addr:0x020c6f34
+_ZN18UnkStruct_027e0998C1Ev kind:function(arm,size=0x20) addr:0x020c6f48
+_ZN18UnkStruct_027e09986CreateEv kind:function(arm,size=0x24) addr:0x020c6f68
+_ZN18UnkStruct_027e09988vfunc_00EP5Vec3pP5Vec2sPt kind:function(arm,size=0x1e0) addr:0x020c6f8c
+_ZN18UnkStruct_027e099819func_ov024_020c716cEv kind:function(arm,size=0xa8) addr:0x020c716c
+_ZN18UnkStruct_027e099819func_ov024_020c7214EP5Vec3pP5Vec2sPt kind:function(arm,size=0x68) addr:0x020c7214
+_ZN18UnkStruct_027e099819func_ov024_020c727cEP5Vec2sPt kind:function(arm,size=0x84) addr:0x020c727c
+_ZN18UnkStruct_027e099819func_ov024_020c7300Ei kind:function(arm,size=0x54) addr:0x020c7300
+_ZN18UnkStruct_027e099819func_ov024_020c7354Ev kind:function(arm,size=0x3c) addr:0x020c7354
 func_ov024_020c7390 kind:function(arm,size=0x24) addr:0x020c7390
 func_ov024_020c73b4 kind:function(arm,size=0xf0) addr:0x020c73b4
 _ZN18UnkStruct_027e0cf8D1Ev kind:function(arm,size=0xb8) addr:0x020c74a4
@@ -777,13 +777,13 @@ __sinit_ActorUnkOBPC.cpp kind:function(arm,size=0x50) addr:0x020d7ae4
 _ZTV17GameModeAdventure kind:data(any) addr:0x020d7b60
 _ZTV15UnkActorSystem1 kind:data(any) addr:0x020d7b90
 _ZTV15UnkActorSystem2 kind:data(any) addr:0x020d7bc8
-_ZTV19data_ov024_020d7bec kind:data(any) addr:0x020d7bec
+_ZTV24AdventureModeManager_1AC kind:data(any) addr:0x020d7bec
 _ZTV20AdventureModeManager kind:data(any) addr:0x020d7c10
 @2869 kind:data(any) addr:0x020d7c60 local
 @2870 kind:data(any) addr:0x020d7c74 local
 @2871 kind:data(byte[11]) addr:0x020d7c78 local
 @2872 kind:data(byte[10]) addr:0x020d7c84 local
-data_ov024_020d7c98 kind:data(any) addr:0x020d7c90
+_ZTV18UnkStruct_027e0998 kind:data(any) addr:0x020d7c90
 _ZTV19data_ov024_020d7c9c kind:data(any) addr:0x020d7c9c
 data_ov024_020d7cc0 kind:data(any) addr:0x020d7cc0
 _ZTV19data_ov024_020d7ce8 kind:data(any) addr:0x020d7ce8

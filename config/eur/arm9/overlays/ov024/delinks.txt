@@ -25,8 +25,49 @@ src/024_MainGame/Game/UnkActorSystem2_024.cpp:
     .data       start:0x020d7bc8 end:0x020d7bec
 
 src/024_MainGame/Game/AdventureModeManager_024.cpp:
-    .text       start:0x020c5158 end:0x020c6e38
-    .data       start:0x020d7c10 end:0x020d7c90
+    .text       start:0x020c5158 end:0x020c6edc
+    .data       start:0x020d7bec end:0x020d7c90
+
+src/024_MainGame/Game/UnkStruct_027e0998_024.cpp:
+    complete
+    .text       start:0x020c6edc end:0x020c7390
+    .data       start:0x020d7c90 end:0x020d7c9c
+
+src/024_MainGame/Game/UnkStruct_027e0cf8_024.cpp:
+    .text       start:0x020c7390 end:0x020c7940
+
+src/024_MainGame/Game/AdventureModeManager_160_024.cpp:
+    .text       start:0x020c7940 end:0x020c85b8
+
+src/024_MainGame/Game/AdventureModeManager_170_024.cpp:
+    .text       start:0x020c85b8 end:0x020c8860
+
+src/024_MainGame/Game/AdventureModeManager_174_Base_024.cpp:
+    .text       start:0x020c8860 end:0x020c8d64
+
+src/024_MainGame/Game/AdventureModeManager_174_024.cpp:
+    .text       start:0x020c8d64 end:0x020c9094
+
+src/024_MainGame/Game/AdventureModeManager_178_Base_024.cpp:
+    .text       start:0x020c9094 end:0x020c9180
+
+src/024_MainGame/Game/AdventureModeManager_178_024.cpp:
+    .text       start:0x020c9180 end:0x020c923c
+
+src/024_MainGame/Game/AdventureModeManager_180_024.cpp:
+    .text       start:0x020c923c end:0x020c9628
+
+src/024_MainGame/Game/AdventureModeManager_184_024.cpp:
+    .text       start:0x020c9628 end:0x020c9970
+
+src/024_MainGame/Game/AdventureModeManager_18C_024.cpp:
+    .text       start:0x020c9970 end:0x020ca098
+
+src/024_MainGame/Game/AdventureModeManager_190_024.cpp:
+    .text       start:0x020ca098 end:0x020ca320
+
+src/024_MainGame/Game/AdventureModeManager_15C_20_00_024.cpp:
+    .text       start:0x020ca320 end:0x020caa58
 
 src/024_MainGame/PassengerManager.cpp:
     .text       start:0x020d4120 end:0x020d46b4

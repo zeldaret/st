@@ -105,7 +105,7 @@ void UnkStruct_ov024_020d8660::func_ov024_020c4cc8() {
     this->mUnk_00 = NULL;
     this->mUnk_1C = 0;
 
-    if (data_027e09a4->func_01ffd3d8() != 0) {
+    if (data_027e09a4->func_01ffd3d8()) {
         data_0204a110.func_02019538(4, 1);
     } else {
         data_0204a110.func_02019538(0, 1);
@@ -115,7 +115,7 @@ void UnkStruct_ov024_020d8660::func_ov024_020c4cc8() {
     GX_func_0008(&REG_BLDCNT, 0x2F, 0);
     GX_func_0008(&REG_BLDCNT_SUB, 0x3F, 0);
 
-    if (data_027e09a4->func_01ffd3d8() != 0) {
+    if (data_027e09a4->func_01ffd3d8()) {
         data_0204aeac.func_0201c494(1);
     } else {
         data_0204aeac.func_0201c494(0);

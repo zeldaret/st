@@ -46,65 +46,11 @@ void func_ov024_020d2518(void *);
 
 extern void *data_ov000_020b64f8;
 
-struct UnkNodeStruct1 {
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ GameModeLinkListNode mUnk_14;
-};
-
-struct UnkNodeStruct6 {
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 14 */ GameModeLinkListNode mUnk_10;
-};
-
-struct UnkNodeStruct2 {
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ GameModeManagerBase_104 mUnk_0C;
-};
-
-struct UnkNodeStruct3 {
-    virtual void vfunc_00();
-    virtual void vfunc_04();
-    virtual void vfunc_08();
-    virtual void vfunc_0C(void *param1);
-    virtual void vfunc_10(void *param1);
-    virtual void vfunc_14();
-    virtual void vfunc_18();
-};
-
 struct InputInformations {
     void *unk_00;
     void *unk_04;
     void *unk_08;
     void *unk_0C;
-};
-
-struct UnkNodeStruct5 {
-    virtual void vfunc_00();
-    virtual void vfunc_04();
-    virtual void vfunc_08(InputInformations *);
-    virtual void vfunc_0C(void *param1);
-    virtual void vfunc_10(void *param1);
-    virtual void vfunc_14();
-    virtual void vfunc_18();
-};
-
-struct UnkNodeStruct4 {
-    virtual void vfunc_00();
-    virtual void vfunc_04();
-    virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl);
-    virtual void vfunc_0C(void *param1);
-    virtual void vfunc_10(void *param1);
-    virtual void vfunc_14();
-    virtual void vfunc_18();
 };
 
 AdventureModeManager::~AdventureModeManager() {
@@ -178,7 +124,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             data_0204aeac.func_0201c494(1);
             break;
         case 3:
-            if (data_027e09a4->func_01ffd3d8() != 0) {
+            if (data_027e09a4->func_01ffd3d8()) {
                 this->func_ov024_020c5364();
             } else {
                 this->func_ov024_020c52f4();
@@ -193,7 +139,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             }
             break;
         case 4:
-            if (data_027e09a4->func_01ffd3d8() != 0) {
+            if (data_027e09a4->func_01ffd3d8()) {
                 this->func_ov024_020c5364();
             } else {
                 this->func_ov024_020c52f4();
@@ -209,7 +155,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             }
             break;
         case 5:
-            if (data_027e09a4->func_01ffd3d8() != 0) {
+            if (data_027e09a4->func_01ffd3d8()) {
                 this->func_ov024_020c537c();
             } else {
                 this->func_ov024_020c530c();
@@ -231,6 +177,12 @@ void AdventureModeManager::func_ov024_020c555c(unk32 param1) {
     this->mUnk_154 = param1;
 }
 
+struct UnkNodeStruct5 {
+    virtual void vfunc_00();
+    virtual void vfunc_04();
+    virtual void vfunc_08(InputInformations *);
+};
+
 void AdventureModeManager::vfunc_24() {
     u16 press;
 
@@ -246,7 +198,7 @@ void AdventureModeManager::vfunc_24() {
             this->mUnk_15C->func_ov017_020c3c64();
         }
 
-        if (data_027e09a4->func_01ffd3d8() != 0) {
+        if (data_027e09a4->func_01ffd3d8()) {
             data_ov026_0213f578->func_ov026_020f4844();
         }
 
@@ -259,10 +211,12 @@ void AdventureModeManager::vfunc_24() {
         GameModeLinkListNode *var_r4 = this->mUnk_15C->mUnk_04.mList.mNext->GetNext3();
 
         while (var_r4 != this->mUnk_15C->mUnk_04.GetOrigin()) {
-            GameModeLinkListNode *var_r9 = ((UnkNodeStruct6 *) var_r4)->mUnk_10.GetNext();
+            GameModeManagerBase_104 *pTarget = var_r4->GetTarget<GameModeManagerBase_104>();
+            GameModeLinkListNode *var_r9     = pTarget->mUnk_0C.mList.GetNext();
 
-            while (var_r9 != ((UnkNodeStruct2 *) var_r4)->mUnk_0C.GetOrigin()) {
-                ((UnkNodeStruct5 *) var_r9)->vfunc_08(&sp24);
+            while (var_r9 != pTarget->mUnk_0C.GetOrigin()) {
+                //! TODO: figure out which class it is
+                var_r9->GetTarget<UnkNodeStruct5>()->vfunc_08(&sp24);
                 var_r9 = var_r9->GetUnk2();
             }
 
@@ -272,7 +226,7 @@ void AdventureModeManager::vfunc_24() {
         GameModeLinkListNode *var_r4_2 = this->mUnk_15C->mUnk_04.mList.mNext->GetNext3();
 
         while (var_r4_2 != this->mUnk_15C->mUnk_04.GetOrigin()) {
-            ((UnkNodeStruct4 *) var_r4_2)->vfunc_08(&this->mButtons, &this->mTouchControl);
+            var_r4_2->GetTarget<GameModeManagerBase_104>()->vfunc_08(&this->mButtons, &this->mTouchControl);
             var_r4_2 = var_r4_2->GetUnk2();
         }
 
@@ -321,7 +275,7 @@ void AdventureModeManager::vfunc_24() {
         return;
     }
 
-    if (data_027e09a4->func_01ffd3d8() != 0) {
+    if (data_027e09a4->func_01ffd3d8()) {
         data_027e0ce0->mUnk_38->mUnk_010->func_ov026_020f4870();
     }
 
@@ -468,7 +422,7 @@ void AdventureModeManager::vfunc_24() {
                 }
             }
 
-            if (data_027e09a4->func_01ffd3d8() == 0) {
+            if (!data_027e09a4->func_01ffd3d8()) {
                 return;
             }
 
@@ -500,7 +454,7 @@ void AdventureModeManager::vfunc_24() {
 void AdventureModeManager::func_ov024_020c5cec() {
     data_ov024_020d8698->func_ov024_020cd420();
 
-    if (data_027e09a4->func_01ffd3d8() == 0) {
+    if (!data_027e09a4->func_01ffd3d8()) {
         data_ov024_020d8698->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, 1);
 
         if (gOverlayManager.IsPlayerSub() && data_0204a088->mUnk_00 == OverlayIndex_SceneInit) {
@@ -525,8 +479,8 @@ bool AdventureModeManager::func_ov024_020c5dac() {
             GameModeLinkListNode *node = data_0204e5f8.mUnk_00.mUnk_04.GetNext();
 
             if ((void *) node == (void *) &data_0204e5f8 && (unk_00 != 1 || this->func_ov024_020c69d0() != 0) &&
-                (data_027e09a4->func_01ffd3d8() != 0 || this->mUnk_168->func_ov031_0210dfd8() == 0) &&
-                (data_027e09a4->func_01ffd3d8() == 0 || data_ov026_02138d10->func_ov026_020e18fc() != 0)) {
+                (data_027e09a4->func_01ffd3d8() || this->mUnk_168->func_ov031_0210dfd8() == 0) &&
+                (!data_027e09a4->func_01ffd3d8() || data_ov026_02138d10->func_ov026_020e18fc() != 0)) {
                 return true;
             }
         }
@@ -549,7 +503,7 @@ bool AdventureModeManager::func_ov024_020c5ecc() {
 bool AdventureModeManager::func_ov024_020c5f70() {
     bool var_r4 = false;
 
-    if (data_027e09a4->func_01ffd3d8() != 0) {
+    if (data_027e09a4->func_01ffd3d8()) {
         var_r4 = true;
     } else if (data_027e0d34 != NULL) {
         var_r4 = data_027e0d34->func_ov031_020d97f4();
@@ -564,7 +518,7 @@ bool AdventureModeManager::func_ov024_020c5f70() {
             if ((void *) node == (void *) &data_0204e5f8 && (unk_00 == 1 || unk_00 - 6 <= 1) &&
                 (unk_00 != 1 || this->func_ov024_020c69d0() != 0) &&
                 (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == 0) &&
-                (data_027e09a4->func_01ffd3d8() != 0 || this->mUnk_168->func_ov031_0210dfd8() == 0) &&
+                (data_027e09a4->func_01ffd3d8() || this->mUnk_168->func_ov031_0210dfd8() == 0) &&
                 !data_027e09a4->IsDarkRealm()) {
                 return true;
             }
@@ -577,7 +531,7 @@ bool AdventureModeManager::func_ov024_020c5f70() {
 bool AdventureModeManager::func_ov024_020c60f4() {
     bool var_r4 = false;
 
-    if (data_027e09a4->func_01ffd3d8() != 0) {
+    if (data_027e09a4->func_01ffd3d8()) {
         var_r4 = true;
     } else if (data_027e0d34 != NULL) {
         var_r4 = data_027e0d34->func_ov031_020d97e4();
@@ -638,10 +592,11 @@ void AdventureModeManager::vfunc_2C(unk8 *param1) {
             GameModeLinkListNode *var_r4 = this->mUnk_15C->mUnk_04.mList.mPrev->GetNext3();
 
             while (var_r4 != this->mUnk_15C->mUnk_04.GetOrigin()) {
-                GameModeLinkListNode *var_r9 = ((UnkNodeStruct1 *) var_r4)->mUnk_14.GetNext();
+                GameModeManagerBase_104 *pTarget = var_r4->GetTarget<GameModeManagerBase_104>();
+                GameModeLinkListNode *var_r9     = pTarget->mUnk_0C.mList.GetPrev();
 
-                while (var_r9 != ((UnkNodeStruct2 *) var_r4)->mUnk_0C.GetOrigin()) {
-                    ((UnkNodeStruct3 *) var_r9)->vfunc_0C(savedUnk);
+                while (var_r9 != pTarget->mUnk_0C.GetOrigin()) {
+                    var_r9->GetTarget<GameModeManagerBase_104>()->vfunc_0C(savedUnk);
                     var_r9 = var_r9->GetUnk();
                 }
 
@@ -651,7 +606,7 @@ void AdventureModeManager::vfunc_2C(unk8 *param1) {
             GameModeLinkListNode *var_r4_2 = this->mUnk_15C->mUnk_04.mList.mPrev->GetNext3();
 
             while (var_r4_2 != this->mUnk_15C->mUnk_04.GetOrigin()) {
-                ((UnkNodeStruct3 *) var_r4_2)->vfunc_10(param1);
+                var_r4_2->GetTarget<GameModeManagerBase_104>()->vfunc_10(param1);
                 var_r4_2 = var_r4_2->GetUnk();
             }
         }
@@ -752,7 +707,7 @@ void AdventureModeManager::func_ov024_020c66c0() {
 void AdventureModeManager::func_ov024_020c671c() {
     this->func_ov024_020c6770(this->mUnk_1C4.sceneIndex, this->mUnk_1C4.unk_04, 1, this->mUnk_1C4.unk_06);
 
-    if (data_027e09a4->func_01ffd3d8() != 0) {
+    if (data_027e09a4->func_01ffd3d8()) {
         data_027e0ce0->mUnk_38->mUnk_158->func_ov026_020dc2d0();
     }
 }
@@ -760,7 +715,7 @@ void AdventureModeManager::func_ov024_020c671c() {
 void AdventureModeManager::func_ov024_020c6770(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4) {
     this->func_ov024_020c6514(sceneIndex, param2, param3, param4);
 
-    if (data_027e09a4->func_01ffd3d8() != 0) {
+    if (data_027e09a4->func_01ffd3d8()) {
         data_027e0cf8->func_ov024_020c77b0(1);
     } else {
         data_027e0cf8->func_ov024_020c77b0(0);
@@ -772,7 +727,7 @@ void AdventureModeManager::func_ov024_020c6770(SceneIndex sceneIndex, u8 param2,
     if (this->mUnk_1AC->mList.func_0201673c() == 0) {
         GameModeLinkListNode *origin = this->mUnk_1AC->GetOrigin();
         this->mUnk_158->mList.func_020166cc(origin->GetNode());
-        ((UnkNodeStruct3 *) origin)->vfunc_18();
+        origin->GetTarget<AdventureModeManager_1AC>()->vfunc_18();
     }
 }
 
@@ -856,7 +811,7 @@ void AdventureModeManager::func_ov024_020c699c() {
 }
 
 unk32 AdventureModeManager::func_ov024_020c69d0() {
-    if (data_027e09a4->func_01ffd3d8() != 0) {
+    if (data_027e09a4->func_01ffd3d8()) {
         unk32 uVar2 = 0;
 
         if (this->mUnk_16C != NULL && this->mUnk_16C->func_ov026_020d8e30() != 0) {
@@ -888,7 +843,7 @@ void AdventureModeManager::func_ov024_020c6a48(unk32 param1, unk32 param2) {
             data_ov024_020d8698->func_ov024_020cd4e4(param1);
             break;
         case 4:
-            if (data_027e09a4->func_01ffd3d8() != 0) {
+            if (data_027e09a4->func_01ffd3d8()) {
                 this->mUnk_16C->func_ov026_020d8dd4(param2);
             } else {
                 this->mUnk_168->func_ov031_0210df70(param2);
@@ -915,7 +870,7 @@ bool AdventureModeManager::func_ov024_020c6af4(unk32 param1) {
 
             return data_ov024_020d8698->func_ov024_020cd5c0(param1);
         case 4:
-            if (data_027e09a4->func_01ffd3d8() != 0) {
+            if (data_027e09a4->func_01ffd3d8()) {
                 if (this->mUnk_16C != NULL) {
                     return this->mUnk_16C->mUnk_1C;
                 }
@@ -943,7 +898,7 @@ void AdventureModeManager::func_ov024_020c6b8c() {
     if (data_ov024_020d8698 != NULL) {
         GameModeLinkListNode *origin = data_ov024_020d8698->GetOrigin();
         this->mUnk_104.mList.func_020166cc(data_ov024_020d8698->GetNode());
-        ((UnkNodeStruct3 *) origin)->vfunc_18();
+        origin->GetTarget<UnkStruct_020d8698>()->vfunc_18();
 
         if (!this->mUnk_1B4) {
             data_ov024_020d8698->func_ov024_020cd094();
@@ -952,11 +907,11 @@ void AdventureModeManager::func_ov024_020c6b8c() {
         this->mUnk_1B4 = true;
     }
 
-    if (data_027e09a4->func_01ffd3d8() == 0) {
+    if (!data_027e09a4->func_01ffd3d8()) {
         if (!this->mUnk_1B5 && this->mUnk_1B0 != NULL) {
             GameModeLinkListNode *origin = this->mUnk_1B0->GetOrigin();
             this->mUnk_104.mList.func_020166cc(this->mUnk_1B0->GetNode());
-            ((UnkNodeStruct3 *) origin)->vfunc_18();
+            origin->GetTarget<AdventureModeManager_1B0>()->vfunc_18();
 
             this->mUnk_1B5 = true;
         }
@@ -969,7 +924,7 @@ void AdventureModeManager::func_ov024_020c6c60() {
         this->mUnk_1B4 = false;
     }
 
-    if (data_027e09a4->func_01ffd3d8() == 0) {
+    if (!data_027e09a4->func_01ffd3d8()) {
         if (this->mUnk_1B5 && this->mUnk_1B0 != NULL) {
             GameModeLinkListNode::func_020166ac(&this->mUnk_1B0->mList);
             this->mUnk_1B5 = false;
@@ -1037,4 +992,23 @@ bool AdventureModeManager::func_ov024_020c6dec() {
     }
 
     return false;
+}
+
+AdventureModeManager_1AC::AdventureModeManager_1AC() {
+    this->mUnk_18 = true;
+    this->mUnk_19 = true;
+}
+
+AdventureModeManager_1AC::~AdventureModeManager_1AC() {}
+
+void AdventureModeManager_1AC::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
+    data_027e0cf8->func_ov017_020c390c();
+}
+
+void AdventureModeManager_1AC::vfunc_10(unk8 *param1) {
+    data_027e0cf8->func_ov017_020c397c();
+}
+
+void AdventureModeManager_1AC::vfunc_14(unk8 *param1) {
+    data_027e0cf8->func_ov017_020c39d4();
 }

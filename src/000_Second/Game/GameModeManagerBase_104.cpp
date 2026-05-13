@@ -19,7 +19,7 @@ ARM GameModeManagerBase_104::~GameModeManagerBase_104() {
 
 ARM void GameModeManagerBase_104::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {}
 
-ARM void GameModeManagerBase_104::vfunc_0C(unk32 param1) {}
+ARM void GameModeManagerBase_104::vfunc_0C(void *param1) {}
 
 ARM void GameModeManagerBase_104::vfunc_10(unk8 *param1) {}
 
