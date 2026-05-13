@@ -27,6 +27,7 @@
 #include "Unknown/UnkStruct_ov026_0213f590.hpp"
 #include "Unknown/UnkStruct_ov031_02118fa4.hpp"
 #include "regs.h"
+#include "versions.h"
 
 extern "C" {
 void GX_SetGraphicsMode(unk32 param1, unk32 param2, unk32 param3);
@@ -405,6 +406,7 @@ void AdventureModeManager::vfunc_24() {
 
                             data_ov000_020b5214.func_ov000_0206db44(0x37);
                             break;
+#if !IS_JP
                         case 7:
                             if (data_ov031_02118fa4 == 0) {
                                 return;
@@ -417,6 +419,7 @@ void AdventureModeManager::vfunc_24() {
                             data_0204a088->func_ov000_020611fc(2);
                             data_ov000_020b5214.func_ov000_0206db44(0x37);
                             break;
+#endif
                         case 6:
                             data_0204a088->func_ov000_020611fc(2);
                             data_ov000_020b5214.func_ov000_0206db44(0x37);
@@ -828,6 +831,13 @@ void AdventureModeManager::func_ov024_020c6930() {
 bool AdventureModeManager::func_ov024_020c6940(unk32 param1, unk32 param2) {
     if (param1 != 0) {
         if (data_0204a088->mUnk_00 == 1) {
+
+#if IS_JP
+            if (data_027e09b8->mUnk_94 & 8) {
+                data_027e09b8->func_ov000_02074d78(3);
+            }
+#endif
+
             this->mUnk_190->mUnk_60 = param2;
             return data_0204a088->func_ov000_020611fc(21);
         }
