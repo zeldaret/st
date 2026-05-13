@@ -29,6 +29,11 @@ public:
     void func_ov110_02185d3c(ItemId itemId);
 };
 
+class UnkStruct_027e0ce0_38_10 {
+public:
+    void func_ov026_020f4870();
+};
+
 class UnkStruct_027e0ce0_38_158 {
 public:
     void func_ov026_020dc2d0();
@@ -36,7 +41,9 @@ public:
 
 class UnkStruct_027e0ce0_38 {
 public:
-    /* 000 */ STRUCT_PAD(0x00, 0x158);
+    /* 000 */ STRUCT_PAD(0x00, 0x10);
+    /* 010 */ UnkStruct_027e0ce0_38_10 *mUnk_010;
+    /* 014 */ STRUCT_PAD(0x14, 0x158);
     /* 158 */ UnkStruct_027e0ce0_38_158 *mUnk_158;
 
     // data_ov026_0213562c

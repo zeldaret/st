@@ -18,11 +18,14 @@
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f70.hpp"
+#include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
 #include "Unknown/UnkStruct_ov024_020d8694.hpp"
 #include "Unknown/UnkStruct_ov024_020d86a0.hpp"
 #include "Unknown/UnkStruct_ov026_02138d10.hpp"
+#include "Unknown/UnkStruct_ov026_0213f578.hpp"
 #include "Unknown/UnkStruct_ov026_0213f590.hpp"
+#include "Unknown/UnkStruct_ov031_02118fa4.hpp"
 #include "regs.h"
 
 extern "C" {
@@ -35,9 +38,73 @@ void func_02019a74();
 unk32 func_ov024_020d5304(unk32 sceneIndex);
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
+void func_ov024_020d24d4(void *);
+void func_ov024_020d2538(void *, SceneIndex, unk32, void *);
+void func_ov024_020d2518(void *);
 }
 
 extern void *data_ov000_020b64f8;
+
+struct UnkNodeStruct1 {
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ GameModeLinkListNode mUnk_14;
+};
+
+struct UnkNodeStruct6 {
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 14 */ GameModeLinkListNode mUnk_10;
+};
+
+struct UnkNodeStruct2 {
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ GameModeManagerBase_104 mUnk_0C;
+};
+
+struct UnkNodeStruct3 {
+    virtual void vfunc_00();
+    virtual void vfunc_04();
+    virtual void vfunc_08();
+    virtual void vfunc_0C(void *param1);
+    virtual void vfunc_10(void *param1);
+    virtual void vfunc_14();
+    virtual void vfunc_18();
+};
+
+struct InputInformations {
+    void *unk_00;
+    void *unk_04;
+    void *unk_08;
+    void *unk_0C;
+};
+
+struct UnkNodeStruct5 {
+    virtual void vfunc_00();
+    virtual void vfunc_04();
+    virtual void vfunc_08(InputInformations *);
+    virtual void vfunc_0C(void *param1);
+    virtual void vfunc_10(void *param1);
+    virtual void vfunc_14();
+    virtual void vfunc_18();
+};
+
+struct UnkNodeStruct4 {
+    virtual void vfunc_00();
+    virtual void vfunc_04();
+    virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl);
+    virtual void vfunc_0C(void *param1);
+    virtual void vfunc_10(void *param1);
+    virtual void vfunc_14();
+    virtual void vfunc_18();
+};
 
 AdventureModeManager::~AdventureModeManager() {
     delete this->mUnk_1B8;
@@ -163,7 +230,269 @@ void AdventureModeManager::func_ov024_020c555c(unk32 param1) {
     this->mUnk_154 = param1;
 }
 
-void AdventureModeManager::vfunc_24() {}
+void AdventureModeManager::vfunc_24() {
+    u16 press;
+
+    this->GameModeManagerBase::vfunc_24();
+
+    if (this->mUnk_150) {
+        if (this->mUnk_15C->mUnk_47 && this->mUnk_15C->func_ov017_020c3a00(&this->mButtons, &this->mTouchControl)) {
+            this->GameModeManagerBase::vfunc_04(0);
+            this->func_ov024_020c5cec();
+        }
+
+        if (CHECK_BUTTON_COMBO(this->mButtons.press, BTN_START) && this->mUnk_15C->mUnk_47) {
+            this->mUnk_15C->func_ov017_020c3c64();
+        }
+
+        if (data_027e09a4->func_01ffd3d8() != 0) {
+            data_ov026_0213f578->func_ov026_020f4844();
+        }
+
+        InputInformations sp24;
+        sp24.unk_00 = &this->mNextButtonID;
+        sp24.unk_04 = &this->mButtonID;
+        sp24.unk_08 = &this->mButtons;
+        sp24.unk_0C = &this->mTouchControl;
+
+        GameModeLinkListNode *var_r4 = this->mUnk_15C->mUnk_04.mList.mNext->GetNext3();
+
+        while (var_r4 != this->mUnk_15C->mUnk_04.GetOrigin()) {
+            GameModeLinkListNode *var_r9 = ((UnkNodeStruct6 *) var_r4)->mUnk_10.GetNext();
+
+            while (var_r9 != ((UnkNodeStruct2 *) var_r4)->mUnk_0C.GetOrigin()) {
+                ((UnkNodeStruct5 *) var_r9)->vfunc_08(&sp24);
+                var_r9 = var_r9->GetUnk2();
+            }
+
+            var_r4 = var_r4->GetUnk2();
+        }
+
+        GameModeLinkListNode *var_r4_2 = this->mUnk_15C->mUnk_04.mList.mNext->GetNext3();
+
+        while (var_r4_2 != this->mUnk_15C->mUnk_04.GetOrigin()) {
+            ((UnkNodeStruct4 *) var_r4_2)->vfunc_08(&this->mButtons, &this->mTouchControl);
+            var_r4_2 = var_r4_2->GetUnk2();
+        }
+
+        if (!this->mTouchControl.mState.touch) {
+            this->mNextButtonID = -1;
+        }
+
+        return;
+    }
+
+    bool var_r0;
+    if (CHECK_BUTTON_COMBO(this->mButtons.press, BTN_START) && data_027e09a4->IsNotCutscene()) {
+        if (data_027e09b8->func_ov000_020732dc(0) == 0 && data_027e09b8->func_ov000_020732dc(1) == 0) {
+            if (data_027e09b8->func_ov000_020732dc(2) == 0 && data_0204e5f8.mUnk_3A == 0 && data_0204e5f8.mUnk_3E == 0 &&
+                !data_0204e5f8.mUnk_18) {
+                unk32 temp_r0_2 = data_0204a088->mUnk_00;
+                if ((temp_r0_2 == 1 || temp_r0_2 == 6) && !data_0204a088->mUnk_127 &&
+                    data_0204999c.mUnk_00[HeapIndex_8] != NULL) {
+                    this->mNextButtonID = -1;
+                    this->vfunc_00();
+                    this->mUnk_15C->func_ov017_020c3bc0();
+                    data_ov024_020d8694->func_ov024_020cb0c4();
+
+                    if (data_0204a110.mUnk_008 == 1) {
+                        data_ov000_020b504c.func_ov000_02067f5c(0);
+                    }
+
+                    var_r0 = true;
+                } else {
+                    goto play_sound;
+                }
+            } else {
+                goto play_sound;
+            }
+        } else {
+        play_sound:
+            data_ov000_020b5214.func_ov000_0206db44(0xA4);
+            goto do_return;
+        }
+    } else {
+    do_return:
+        var_r0 = false;
+    }
+
+    if (var_r0) {
+        return;
+    }
+
+    if (data_027e09a4->func_01ffd3d8() != 0) {
+        data_027e0ce0->mUnk_38->mUnk_010->func_ov026_020f4870();
+    }
+
+    this->func_0201875c();
+    this->func_02018908();
+
+    if (this->mTouchControl.mState.touch) {
+        bool var_r2 = true;
+
+        if (data_0204a088->mUnk_04 == -1 && data_0204a088->mUnk_08 == -1) {
+            var_r2 = false;
+        }
+
+        if (var_r2 && data_0204a088->mUnk_08 != 1) {
+            goto reset_button_id;
+        }
+    } else {
+    reset_button_id:
+        this->mNextButtonID = -1;
+    }
+
+    if (this->mUnk_1C0) {
+        this->mUnk_1C0 = false;
+        this->func_ov024_020c6b8c();
+    }
+
+    data_ov024_020d8694->vfunc_08(&this->mButtons, &this->mTouchControl);
+    data_ov024_020d86a0->func_ov024_020d167c();
+    data_027e0998->func_ov000_02061764();
+
+    if (data_ov000_020b4f70 != NULL && data_027e09b8 != NULL) {
+        if (data_027e09b8->func_01ffd420() == 0) {
+            data_ov000_020b4f70->func_ov000_02066370();
+        }
+    }
+
+    if (data_027e09a4->IsCutscene()) {
+        return;
+    }
+
+    bool var_r2_2 = true;
+    if (data_0204a088->mUnk_04 == -1 && data_0204a088->mUnk_08 == -1) {
+        var_r2_2 = false;
+    }
+
+    if (!var_r2_2 && !data_0204a088->mUnk_127) {
+        if (data_0204a110.func_01ff9b50() == 0x80) {
+            return;
+        }
+
+        if (data_0204e5f8.mUnk_3A == 0 && data_0204e5f8.mUnk_3E == 0 && !data_0204e5f8.mUnk_18) {
+            // should we open the menu
+            press = this->mButtons.press;
+            if (CHECK_BUTTON_COMBO(press, BTN_DRIGHT) || CHECK_BUTTON_COMBO(press, BTN_Y)) {
+                if (this->func_ov024_020c5dac() != 0) {
+                    if (data_0204a088->mUnk_00 != 1) {
+                        return;
+                    }
+
+                    stack_ov000_02073578 sp18;
+                    sp18.unk_08 = 0x06;
+                    sp18.unk_00 = 0x0A;
+                    data_027e09b8->func_ov000_02073578(&sp18, 1);
+                    return;
+                }
+
+                if (data_0204a088->mUnk_00 == 1) {
+                    data_ov000_020b5214.func_ov000_0206db44(0xA4);
+                }
+            }
+
+            // should we switch to the map screen
+            press = this->mButtons.press;
+            if (CHECK_BUTTON_COMBO(press, BTN_DDOWN) || CHECK_BUTTON_COMBO(press, BTN_B)) {
+                if (this->func_ov024_020c5f70() != 0) {
+                    switch (data_0204a088->mUnk_00) {
+                        case 1:
+                            stack_ov000_02073578 spC;
+                            spC.unk_08 = 0x02;
+                            spC.unk_00 = 0x0B;
+                            data_027e09b8->func_ov000_02073578(&spC, 1);
+
+                            data_ov000_020b5214.func_ov000_0206db44(0x37);
+                            break;
+                        case 7:
+                            if (data_ov031_02118fa4 == 0) {
+                                return;
+                            }
+
+                            if (data_ov031_02118fa4->func_ov009_020b670c(1) == 0) {
+                                return;
+                            }
+
+                            data_0204a088->func_ov000_020611fc(2);
+                            data_ov000_020b5214.func_ov000_0206db44(0x37);
+                            break;
+                        case 6:
+                            data_0204a088->func_ov000_020611fc(2);
+                            data_ov000_020b5214.func_ov000_0206db44(0x37);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    return;
+                }
+
+                unk32 value = data_0204a088->mUnk_00;
+                if (!(value != 1 && value != 7 && value != 6)) {
+                    data_ov000_020b5214.func_ov000_0206db44(0xA4);
+                }
+            }
+
+            // should we open the collection
+            if (CHECK_BUTTON_COMBO(this->mButtons.press, BTN_SELECT)) {
+                if (this->func_ov024_020c60f4()) {
+                    switch (data_0204a088->mUnk_00) {
+                        case 1:
+                            stack_ov000_02073578 stack;
+                            stack.unk_08 = 0x05;
+                            data_027e09b8->func_ov000_02073578(&stack, 1);
+                            data_ov000_020b5214.func_ov000_0206db44(0x37);
+                            break;
+                        case 6:
+                            data_0204a088->func_ov000_020611fc(5);
+                            data_ov000_020b5214.func_ov000_0206db44(0x37);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    return;
+                }
+
+                switch (data_0204a088->mUnk_00) {
+                    case 1:
+                    case 6:
+                        data_ov000_020b5214.func_ov000_0206db44(0xA4);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (data_027e09a4->func_01ffd3d8() == 0) {
+                return;
+            }
+
+            // should we open the rail map
+            press = this->mButtons.press;
+            if (!CHECK_BUTTON_COMBO(press, BTN_DLEFT)) {
+                if (!CHECK_BUTTON_COMBO(press, BTN_A)) {
+                    return;
+                }
+
+                if (data_ov000_020b504c.func_ov000_02067bc4(0)->vfunc_08() != 0) {
+                    return;
+                }
+            }
+
+            if (this->func_ov024_020c5ecc() != 0) {
+                if (data_0204a088->mUnk_00 == 1) {
+                    data_ov026_02138d10->func_ov026_020e1440();
+                    data_ov000_020b5214.func_ov000_0206db44(0x9019);
+                    data_ov000_020b5214.func_ov000_0206db44(0x3B);
+                }
+            } else if (data_0204a088->mUnk_00 == 1) {
+                data_ov000_020b5214.func_ov000_0206db44(0xA4);
+            }
+        }
+    }
+}
 
 void AdventureModeManager::func_ov024_020c5cec() {
     data_ov024_020d8698->func_ov024_020cd420();
@@ -290,32 +619,6 @@ void AdventureModeManager::vfunc_28(unk8 *param1) {
     }
 }
 
-struct UnkNodeStruct1 {
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ GameModeLinkListNode mUnk_14;
-};
-
-struct UnkNodeStruct2 {
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ GameModeManagerBase_104 mUnk_0C;
-};
-
-struct UnkNodeStruct3 {
-    virtual void vfunc_00();
-    virtual void vfunc_04();
-    virtual void vfunc_08();
-    virtual void vfunc_0C(void *param1);
-    virtual void vfunc_10(void *param1);
-    virtual void vfunc_14();
-    virtual void vfunc_18();
-};
-
 void AdventureModeManager::vfunc_2C(unk8 *param1) {
     s8 value = *param1;
 
@@ -403,10 +706,10 @@ void AdventureModeManager::func_ov024_020c6514(SceneIndex sceneIndex, u8 param2,
         this->func_ov000_02060fc8(sceneIndex, param2, param3, param4);
     }
 
-    unk32 var_r1 = this->GetMapPaintIndex(sceneIndex, param2);
+    u8 var_r1 = this->GetMapPaintIndex(sceneIndex, param2);
     bool var_r2;
     var_r2 = true;
-    if (var_r1) {
+    if (var_r1 != 0xFF) {
         var_r2 = false;
     }
     this->mAllowMapPaint = var_r2;
@@ -480,19 +783,10 @@ bool AdventureModeManager::func_ov024_020c681c() {
 
 struct SomeSaveFileStruct {
     /* 00 */ SaveFile *mpSaveFiles[MAX_SAVE_SLOTS];
+    STRUCT_PAD(0x00, 0xCC);
 
     SomeSaveFileStruct(unk32 param1);
     ~SomeSaveFileStruct();
-};
-
-extern "C" {
-void func_ov024_020d24d4(void *);
-void func_ov024_020d2538(void *, SceneIndex, unk32, void *);
-void func_ov024_020d2518(void *);
-}
-
-struct stack_struct {
-    STRUCT_PAD(0x00, 0xCC);
 };
 
 void AdventureModeManager::func_ov024_020c6840(SceneIndex sceneIndex) {
@@ -505,12 +799,12 @@ void AdventureModeManager::func_ov024_020c6840(SceneIndex sceneIndex) {
     }
 
     {
-        stack_struct auStack_e4;
+        //! TODO: fake match most likely
         SomeSaveFileStruct uStack_e8(0x1770);
-        func_ov024_020d24d4(&auStack_e4);
-        func_ov024_020d2538(&auStack_e4, sceneIndex, 0, uStack_e8.mpSaveFiles[0]);
-        data_027e0cf8->func_ov024_020c755c(&auStack_e4);
-        func_ov024_020d2518(&auStack_e4);
+        func_ov024_020d24d4(&uStack_e8.mpSaveFiles[1]);
+        func_ov024_020d2538(&uStack_e8.mpSaveFiles[1], sceneIndex, 0, uStack_e8.mpSaveFiles[0]);
+        data_027e0cf8->func_ov024_020c755c(&uStack_e8.mpSaveFiles[1]);
+        func_ov024_020d2518(&uStack_e8.mpSaveFiles[1]);
     }
 }
 

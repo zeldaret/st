@@ -79,6 +79,14 @@ public:
         return prev;
     }
 
+    GameModeLinkListNode *GetUnk2() {
+        GameModeLinkListNode *prev = (GameModeLinkListNode *) *((u32 *) this + 1);
+        if (prev != NULL) {
+            prev = (GameModeLinkListNode *) ((u32 *) prev - 1);
+        }
+        return prev;
+    }
+
     GameModeLinkListNode *GetPrev() {
         GameModeLinkListNode *prev = mPrev;
         if (prev != NULL) {
@@ -230,7 +238,7 @@ public:
 
     // data_02044064 vtable
     /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
+    /* 04 */ virtual void vfunc_04(unk32 param1);
     /* 08 */ virtual ~GameModeManagerBase();
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2, unk32 param3);
     /* 14 */ virtual void vfunc_14();

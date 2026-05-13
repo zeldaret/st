@@ -17,6 +17,7 @@ public:
     /* 04 */
 
     void func_ov000_02061760();
+    void func_ov000_02061764();
     void func_ov000_02061768();
     void func_ov000_02061850(unk32 param1);
     unk32 func_ov000_02061a70();

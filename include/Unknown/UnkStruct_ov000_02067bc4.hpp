@@ -142,6 +142,8 @@ public:
 
     void func_ov001_020be668(void);
     void func_ov001_020be6f4(void);
+
+    void func_ov000_02067f5c(unk32 param1);
 };
 
 // gMessageManager?

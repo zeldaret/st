@@ -68,6 +68,10 @@ public:
     ~AdventureModeManager_15C();
 
     void func_ov001_020c0920();
+
+    unk32 func_ov017_020c3a00(Input *pButtons, TouchControl *pTouchControl);
+    void func_ov017_020c3bc0();
+    void func_ov017_020c3c64();
 };
 
 class AdventureModeManager_160_28 : public UnkStruct_0204a060_Base {
@@ -609,7 +613,7 @@ public:
     /* 1B4 */ unk8 mUnk_1B7; // pad?
     /* 1B8 */ AdventureModeManager_1B8 *mUnk_1B8;
     /* 1BC */ AdventureModeManager_1BC *mUnk_1BC;
-    /* 1C0 */ unk8 mUnk_1C0;
+    /* 1C0 */ bool mUnk_1C0;
     /* 1C0 */ bool mAllowMapPaint;
     /* 1C0 */ unk8 mUnk_1C2; // pad?
     /* 1C0 */ unk8 mUnk_1C3; // pad?

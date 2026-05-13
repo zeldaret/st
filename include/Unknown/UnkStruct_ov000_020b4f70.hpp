@@ -11,6 +11,7 @@ public:
     ~UnkStruct_ov000_020b4f70();
 
     void func_ov000_020662e8();
+    void func_ov000_02066370();
     void func_ov000_0206645c(unk8 *param1);
 };
 

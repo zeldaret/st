@@ -44,8 +44,8 @@ ARM void GameModeManagerBase::vfunc_00() {
     }
 }
 
-ARM void GameModeManagerBase::vfunc_04() {
-    data_ov000_020b50c0.func_ov000_02069d7c();
+ARM void GameModeManagerBase::vfunc_04(unk32 param1) {
+    data_ov000_020b50c0.func_ov000_02069d7c(param1);
 
     if (this->mUnk_150) {
         this->mUnk_150 = false;

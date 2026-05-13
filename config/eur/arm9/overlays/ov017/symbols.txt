@@ -160,11 +160,11 @@ func_ov017_020c397c kind:function(arm,size=0x58) addr:0x020c397c
 func_ov017_020c39d4 kind:function(arm,size=0x1c) addr:0x020c39d4
 func_ov017_020c39f0 kind:function(arm,size=0x8) addr:0x020c39f0
 func_ov017_020c39f8 kind:function(arm,size=0x8) addr:0x020c39f8
-func_ov017_020c3a00 kind:function(arm,size=0x38) addr:0x020c3a00
+_ZN24AdventureModeManager_15C19func_ov017_020c3a00EP5InputP12TouchControl kind:function(arm,size=0x38) addr:0x020c3a00
 func_ov017_020c3a38 kind:function(arm,size=0x120) addr:0x020c3a38
 func_ov017_020c3b58 kind:function(arm,size=0x68) addr:0x020c3b58
-func_ov017_020c3bc0 kind:function(arm,size=0xa4) addr:0x020c3bc0
-func_ov017_020c3c64 kind:function(arm,size=0x40) addr:0x020c3c64
+_ZN24AdventureModeManager_15C19func_ov017_020c3bc0Ev kind:function(arm,size=0xa4) addr:0x020c3bc0
+_ZN24AdventureModeManager_15C19func_ov017_020c3c64Ev kind:function(arm,size=0x40) addr:0x020c3c64
 func_ov017_020c3ca4 kind:function(arm,size=0xf4) addr:0x020c3ca4
 func_ov017_020c3d98 kind:function(arm,size=0x28) addr:0x020c3d98
 sCargoInfos kind:data(byte[42]) addr:0x020c3dc0 local

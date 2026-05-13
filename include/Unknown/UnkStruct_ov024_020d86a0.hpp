@@ -12,6 +12,8 @@ public:
 
     void func_ov001_020bd818();
 
+    void func_ov024_020d167c();
+
     static void Destroy();
 };
 

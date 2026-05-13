@@ -12,6 +12,7 @@ public:
 
     unk32 func_ov026_020e13f4();
     unk32 func_ov026_020e18fc();
+    void func_ov026_020e1440();
 };
 
 extern UnkStruct_ov026_02138d10 *data_ov026_02138d10;
