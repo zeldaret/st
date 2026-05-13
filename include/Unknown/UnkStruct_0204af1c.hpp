@@ -2,6 +2,8 @@
 
 #include "types.h"
 
+class UnkSubStruct19;
+
 class UnkStruct_0204af1c_00 {
 public:
     /* 0000 */ unk8 mUnk_0000[0x1490];
@@ -20,7 +22,7 @@ public:
     UnkStruct_0204af1c();
     void func_0201a800();
     void func_0201aa44(void *param1, void *param2, unk32 param3, void *param4);
-    void func_0201aad0(void *param1, void *param2, unk32 param3, void *param4);
+    void func_0201aad0(UnkSubStruct19 *param1, void *param2, unk32 param3, void *param4);
 };
 
 extern UnkStruct_0204af1c data_0204af1c;

@@ -51,4 +51,5 @@ public:
     void func_ov000_0206e7e8(unk32 param1);
 };
 
-extern UnkStruct_ov000_020b5214 data_ov000_020b5214;
+extern UnkStruct_ov000_020b5214 data_ov000_020b5214_eur;
+#define data_ov000_020b5214 data_ov000_020b5214_eur

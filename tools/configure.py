@@ -246,6 +246,7 @@ config.libs = [
             Object("024_MainGame/Game/GameModeAdventure_024.cpp"),
             Object("024_MainGame/Game/UnkStruct_ov000_020d8660_024.cpp"),
             Object("024_MainGame/Game/UnkActorSystem1_024.cpp"),
+            Object("024_MainGame/Game/UnkActorSystem2_024.cpp"),
             Object("024_MainGame/Game/AdventureModeManager_024.cpp"),
             Object("024_MainGame/PassengerManager.cpp"),
             Object("024_MainGame/CargoManager_024.cpp"),

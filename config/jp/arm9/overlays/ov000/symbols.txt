@@ -428,7 +428,7 @@ _ZN14UnkSubStruct1919func_ov000_0206082cEii kind:function(arm,size=0x124) addr:0
 _ZN14UnkSubStruct1919func_ov000_02060950Ev kind:function(arm,size=0x60) addr:0x02061ed8
 _ZN14UnkSubStruct1919func_ov000_020609b0Ev kind:function(arm,size=0x14) addr:0x02061f38
 _ZN14UnkSubStruct1919func_ov000_020609c4Ev kind:function(arm,size=0xd4) addr:0x02061f4c
-_ZN14UnkSubStruct1919func_ov000_02060a98Ev kind:function(arm,size=0x38) addr:0x02062020
+_ZN14UnkSubStruct1919func_ov000_02060a98Ei kind:function(arm,size=0x38) addr:0x02062020
 _ZN14UnkSubStruct1919func_ov000_02060ad0Ev kind:function(arm,size=0x28) addr:0x02062058
 _ZN14UnkSubStruct1919func_ov000_02060af8Ev kind:function(arm,size=0x58) addr:0x02062080
 _ZN14UnkSubStruct1919func_ov000_02060b50Ev kind:function(arm,size=0x14) addr:0x020620d8
@@ -4028,7 +4028,7 @@ data_ov000_020b69c0 kind:bss addr:0x020b69c0
 data_ov000_020b69c4 kind:bss addr:0x020b69c4
 data_ov000_020b69c8 kind:bss addr:0x020b69c8
 data_ov000_020b6a10 kind:bss addr:0x020b6a10
-data_ov000_020b6a14 kind:bss addr:0x020b6a14
+data_ov000_020b5214_eur kind:bss addr:0x020b6a14
 data_ov000_020b6ab0 kind:bss addr:0x020b6ab0
 data_ov000_020b6ab4 kind:bss addr:0x020b6ab4
 data_ov000_020b6ad8 kind:bss addr:0x020b6ad8

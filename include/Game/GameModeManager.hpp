@@ -153,7 +153,6 @@ public:
     /* 18 */ bool mUnk_18;
     /* 19 */ bool mUnk_19;
     /* 1A */ bool mUnk_1A;
-    /* 1B */ unk8 mUnk_1B;
     /* 1C */
 
     GameModeLinkList<GameModeManagerBase_104> *GetOrigin() {

@@ -19,6 +19,11 @@ src/024_MainGame/Game/UnkActorSystem1_024.cpp:
     .text       start:0x020c4e00 end:0x020c4e68
     .data       start:0x020d7b90 end:0x020d7bc8
 
+src/024_MainGame/Game/UnkActorSystem2_024.cpp:
+    complete
+    .text       start:0x020c4e68 end:0x020c5158
+    .data       start:0x020d7bc8 end:0x020d7bec
+
 src/024_MainGame/Game/AdventureModeManager_024.cpp:
     .text       start:0x020c5158 end:0x020c6e38
     .data       start:0x020d7c10 end:0x020d7c90

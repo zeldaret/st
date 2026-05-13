@@ -1572,7 +1572,7 @@ from:0x0217550c kind:thumb_call_arm to:0x020d0680 module:overlay(24)
 from:0x0217551c kind:arm_call to:0x020d0698 module:overlay(24)
 from:0x02175568 kind:arm_call to:0x01ffd294 module:itcm
 from:0x0217559c kind:arm_call to:0x020d0924 module:overlay(24)
-from:0x021755c4 kind:arm_call to:0x020d0744 module:overlays(20,24)
+from:0x021755c4 kind:arm_call to:0x020d0744 module:overlay(24)
 from:0x021755e0 kind:load to:0x027e0998 module:dtcm
 from:0x0217560c kind:arm_call to:0x0201ec30 module:main
 from:0x0217561c kind:arm_call to:0x0201e8d4 module:main

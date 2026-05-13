@@ -850,7 +850,7 @@ public:
     void func_ov000_02060950();
     void func_ov000_020609b0();
     void func_ov000_020609c4(void);
-    void func_ov000_02060a98();
+    bool func_ov000_02060a98(unk32 param1);
     void func_ov000_02060ad0();
     unk32 func_ov000_02060af8(void);
     void func_ov000_02060b50();
@@ -1114,4 +1114,34 @@ public:
 
     UnkStruct_PlayerGet_ec();
     ~UnkStruct_PlayerGet_ec();
+};
+
+class UnkActorSystem2 : public GameModeManagerBase_104 {
+public:
+    /* 000 (base) */
+    /* 01B */ bool mUnk_01B;
+    /* 01C */ UnkSubStruct19 mUnk_01C;
+    /* 094 */ UnkSubStruct19 mUnk_094;
+    /* 10C */ bool mUnk_10C;
+    /* 10C */ bool mUnk_10D;
+
+    UnkActorSystem2(bool param1);
+
+    // data_ov024_020d7bd0
+    /* 00 */ virtual ~UnkActorSystem2() override;
+    /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl) override;
+    /* 10 */ virtual void vfunc_10(unk8 *param1) override;
+
+    void func_ov024_020c4ec0();
+    void func_ov024_020c4ed8();
+    void func_ov024_020c4ef0();
+    void func_ov024_020c4f08();
+    void func_ov024_020c4f18();
+    void func_ov024_020c4f28();
+    void func_ov024_020c4f4c();
+    void func_ov024_020c4f5c();
+    void func_ov024_020c4f6c();
+    bool func_ov024_020c4f7c();
+    bool func_ov024_020c510c();
+    void func_ov024_020c5120(bool param1);
 };
