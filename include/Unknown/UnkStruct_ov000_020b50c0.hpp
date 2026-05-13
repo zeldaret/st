@@ -51,8 +51,10 @@ public:
     void func_ov000_0206a758(void);
     void func_ov000_0206a77c(void);
 
-    void func_ov001_020bd8ac(void);
+    void func_ov001_020bd854();
+    void func_ov001_020bd87c(void);
     void func_ov001_020bd8dc(void);
+    void func_ov001_020bd8ac(void);
 
     UnkStruct_ov018_020c5ac0 *func_ov018_020c5718(void);
 };

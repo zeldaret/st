@@ -188,6 +188,7 @@ config.libs = [
             Object("001_SceneInit/Item/ItemManager_001.cpp"),
             Object("001_SceneInit/CargoManager_001.cpp"),
             Object("001_SceneInit/PassengerManager_001.cpp"),
+            Object("001_SceneInit/Game/AdventureModeManager_001.cpp"),
             Object("001_SceneInit/Game/GameModeAdventure_001.cpp"),
         ]
     ),
@@ -243,6 +244,8 @@ config.libs = [
         "Overlay 24",
         [
             Object("024_MainGame/Game/GameModeAdventure_024.cpp"),
+            Object("024_MainGame/Game/UnkStruct_ov000_020d8660_024.cpp"),
+            Object("024_MainGame/Game/AdventureModeManager_024.cpp"),
             Object("024_MainGame/PassengerManager.cpp"),
             Object("024_MainGame/CargoManager_024.cpp"),
             Object("024_MainGame/MiscAdvManager.cpp"),

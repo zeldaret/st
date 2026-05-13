@@ -15,11 +15,11 @@ public:
     /* 16 */ unk16 mUnk_16;
     /* 18 */ unk32 mUnk_18;
     /* 1C */ unk32 mUnk_1C;
-    /* 20 */ unk8 mUnk_20;
-    /* 21 */ unk8 mUnk_21;
+    /* 20 */ bool mUnk_20;
+    /* 21 */ bool mUnk_21;
     /* 22 */ unk8 mUnk_22;
     /* 23 */ unk8 mUnk_23;
-    /* 24 */ void *mUnk_24;
+    /* 24 */ Actor *mpActor;
     /* 28 */ unk32 mUnk_28;
     /* 2C */ unk32 mUnk_2C;
     /* 30 */ unk16 mUnk_30;

@@ -6,6 +6,8 @@
 #include "global.h"
 #include "types.h"
 
+struct SaveFile;
+
 /*
 naming scheme:
 - test_xxx: debug area
@@ -281,12 +283,14 @@ public:
     bool func_ov000_02070a9c(UnkStruct_SceneChange1 *param1);
     bool func_ov000_02072154(UnkStruct_SceneChange1 *param1, unk32 param2);
     void func_ov000_0207056c();
+    void func_ov000_020705e8(SaveFile *param1, unk32 param2);
 
     void func_ov017_020bb994(void *param1);
     void func_ov017_020bb994(unk32 param1);
     void func_ov017_020bb994(void *, void *);
 
     static void func_ov025_020c4a60();
+    static void Destroy();
 };
 
 extern UnkStruct_027e09a4 *data_027e09a4;

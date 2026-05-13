@@ -181,8 +181,8 @@ public:
     /* 00C */ unk32 mUnk_00C;
     /* 010 */ unk32 mUnk_010;
     /* 014 */ unk16 mUnk_014;
-    /* 016 */ unk16 mSceneIndex;
-    /* 018 */ u8 mInteriorIndex; // "house" index but could be more?
+    /* 016 */ u16 mSceneIndex;
+    /* 018 */ u8 mRoomIndex; // "house" index but could be more?
     /* 019 */ u8 mSpawnIndex;
     /* 01A */ unk16 mUnk_01A;
     /* 01C */ unk32 mUnk_01C;

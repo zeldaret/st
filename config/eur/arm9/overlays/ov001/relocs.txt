@@ -2299,7 +2299,7 @@ from:0x020c0968 kind:thumb_call to:0x020bd514 module:overlay(1)
 from:0x020c0970 kind:thumb_call to:0x020ba670 module:overlay(1)
 from:0x020c0976 kind:thumb_call to:0x020ba7a8 module:overlay(1)
 from:0x020c097c kind:thumb_call to:0x020b6520 module:overlay(1)
-from:0x020c0980 kind:thumb_call_arm to:0x020c4ac0 module:overlays(20,24)
+from:0x020c0980 kind:thumb_call_arm to:0x020c4ac0 module:overlay(24)
 from:0x020c0988 kind:load to:0x020d7b60 add:0x8 module:overlay(24)
 from:0x020c098c kind:load to:0x02049a2c module:main
 from:0x020c0990 kind:load to:0x0204a110 module:main

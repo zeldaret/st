@@ -10,7 +10,7 @@ public:
     GameModeAdventure();
 
     // data_ov024_020d7b68 vtable
-    /* 00 */ virtual ~GameModeAdventure();
+    /* 00 */ virtual ~GameModeAdventure() override;
     /* 08 */ virtual void vfunc_08() override; // Init
     /* 0C */ virtual void vfunc_0C() override; // Update
     /* 10 */ virtual void vfunc_10() override;

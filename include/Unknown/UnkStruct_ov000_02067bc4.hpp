@@ -140,6 +140,7 @@ public:
 
     unk32 func_ov000_02067f88(unk32 param1, unk32 param2);
 
+    void func_ov001_020be510();
     void func_ov001_020be668(void);
     void func_ov001_020be6f4(void);
 
