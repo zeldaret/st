@@ -1845,10 +1845,10 @@ from:0x021733dc kind:arm_call to:0x0205fc20 module:overlay(0)
 from:0x021733f8 kind:arm_call to:0x0201effc module:main
 from:0x02173420 kind:arm_call to:0x0201f04c module:main
 from:0x02173434 kind:arm_call to:0x0201c4d8 module:main
-from:0x0217343c kind:load to:0x0204aeac module:main
+from:0x0217343c kind:load to:0x0204a110 add:0xd9c module:main
 from:0x02173570 kind:arm_call to:0x0201f04c module:main
 from:0x02173584 kind:arm_call to:0x0201c4d8 module:main
-from:0x021735e0 kind:load to:0x0204aeac module:main
+from:0x021735e0 kind:load to:0x0204a110 add:0xd9c module:main
 from:0x021735e4 kind:load to:0x021760c0 module:overlay(88)
 from:0x02173610 kind:arm_call to:0x0201aa44 module:main
 from:0x02173618 kind:load to:0x0204af1c module:main

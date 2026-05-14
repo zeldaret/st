@@ -280,7 +280,7 @@ from:0x02168e0c kind:load to:0x0204e5f8 module:main
 from:0x02168e14 kind:load to:0x027e09a4 module:dtcm
 from:0x02168e18 kind:load to:0x02178d60 module:overlay(93)
 from:0x02168e1c kind:load to:0x021787a0 module:overlay(93)
-from:0x02168e20 kind:load to:0x0204aeac module:main
+from:0x02168e20 kind:load to:0x0204a110 add:0xd9c module:main
 from:0x02168e5c kind:arm_call to:0x0208ba60 module:overlay(0)
 from:0x02168e80 kind:arm_call to:0x02168484 module:overlay(93)
 from:0x02168e8c kind:load to:0x027e0ce0 module:dtcm

@@ -104,6 +104,10 @@ public:
     /* 04 */ unk32 mUnk_04;
 
     UnkStruct_0204a110_Sub5();
+
+    void func_0201c494(unk32 param1);
+    void func_0201c4d8(unk32 param1, unk32 param2, unk32 param3);
+    void func_0201c504(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
 };
 
 class UnkStruct_0204a110_Sub6 {
@@ -122,12 +126,17 @@ public:
     // data_020442b4 vtable
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual void vfunc_04();
+
+    void func_0201ced8();
+    void func_0201cf30();
 };
 
 class UnkStruct_0204a110_Sub7_08 : public SysObject {
 public:
     /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x30);
+    /* 04 */ STRUCT_PAD(0x04, 0x0A);
+    /* 0A */ bool mUnk_0A;
+    /* 0B */ STRUCT_PAD(0x0B, 0x30);
     /* 30 */
 
     UnkStruct_0204a110_Sub7_08();
@@ -136,6 +145,8 @@ public:
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
+
+    unk32 func_0201ec30();
 };
 
 struct UnkStruct_027e0120 {
@@ -147,7 +158,7 @@ extern UnkStruct_027e0120 data_027e0120;
 
 class UnkStruct_0204a110_Sub7 {
 public:
-    /* 00 */ unk8 mUnk_00;
+    /* 00 */ bool mUnk_00;
     /* 01 */ unk8 mUnk_01;
     /* 02 */ unk8 mUnk_02;
     /* 03 */ unk8 mUnk_03;
@@ -157,6 +168,9 @@ public:
     /* 1C */
 
     UnkStruct_0204a110_Sub7();
+
+    void func_0201db14(unk32 param1, unk32 param2, Vec2s *param3, Vec2s *param4, unk32 param5, unk32 param6);
+    void func_0201dd58(unk32 param1, unk32 param2);
 };
 
 class UnkStruct_0204a110_Sub8 {
@@ -169,7 +183,14 @@ public:
     /* 08 */ unk8 mUnk_0B;
     /* 0C */ UnkSystem2_UnkSubSystem9 *mUnk_0C;
 
+    UnkSystem2_UnkSubSystem9 *GetUnk0C() {
+        return this->mUnk_0C;
+    }
+
     UnkStruct_0204a110_Sub8();
+
+    void func_0201e588(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+    void func_0201e698(void);
 };
 
 class UnkStruct_0204a110 {
@@ -189,7 +210,7 @@ public:
     /* DA6 */ unk8 mUnk_DA6;
     /* DA7 */ unk8 mUnk_DA7;
     /* DA8 */ UnkStruct_0204a110_Sub6 mUnk_DA8;
-    /* DAC */ STRUCT_PAD(0xDBC, 0xDC0);
+    /* DBC */ STRUCT_PAD(0xDBC, 0xDC0);
     /* DC0 */ UnkStruct_0204a110_Sub7 mUnk_DC0;
     /* DDC */ UnkStruct_0204a110_Sub8 mUnk_DDC;
     /* DEC */ GameModeManagerBase *mUnk_DEC;
@@ -206,6 +227,16 @@ public:
     /* E00 */ unk8 mUnk_E01;
     /* E02 */ unk16 mUnk_E02;
     /* E04 */ unk16 mUnk_E04;
+    /* E06 */ unk16 mUnk_E06; // pad?
+    /* E08 */
+
+    UnkStruct_0204a110_Sub5 *GetUnkD9C() {
+        return &this->mUnk_D9C;
+    }
+
+    UnkStruct_0204a110_Sub8 *GetUnkDDC() {
+        return &this->mUnk_DDC;
+    }
 
     UnkStruct_0204a110();
 

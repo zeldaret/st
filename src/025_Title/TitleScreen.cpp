@@ -2,7 +2,7 @@
 #include "Game/GameMode.hpp"
 #include "Unknown/UnkStruct_02049be0.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
-#include "Unknown/UnkStruct_0204aeac.hpp"
+#include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0954.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
@@ -62,7 +62,7 @@ TitleScreen::TitleScreen() :
         auStack_68.func_ov000_02059270(0x3E, "title", 0x32500000);
     }
 
-    data_0204aeac.func_0201c494(3);
+    data_0204a110.mUnk_D9C.func_0201c494(3);
     this->mUnk_218.func_0201effc(0x0F, 1, 0x1F);
 }
 
@@ -171,8 +171,8 @@ void TitleScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     }
 
     CALL_PTMF(TitleScreenPTMF<TitleScreen>, data_ov025_020c5aec[this->mState], pButtons, pTouchControl);
-    data_0204aeac.func_0201c4d8(0, 0x0B, 8);
-    data_0204aeac.func_0201c504(1, 10, 0x10, 8);
+    data_0204a110.mUnk_D9C.func_0201c4d8(0, 0x0B, 8);
+    data_0204a110.mUnk_D9C.func_0201c504(1, 10, 0x10, 8);
 }
 
 void TitleScreen::func_ov025_020c5200(Input *pButtons, TouchControl *pTouchControl) {}
@@ -284,12 +284,12 @@ void TitleScreen::func_ov025_020c55e4(Input *pButtons, TouchControl *pTouchContr
 void TitleScreen::vfunc_14(unk8 *param1) {
     if (param1[1] == 0) {
         this->func_ov025_020c592c();
-        data_0204aeac.func_0201c494(3);
+        data_0204a110.mUnk_D9C.func_0201c494(3);
     }
 
     if (param1[0] == 0) {
         this->func_ov025_020c5964();
-        data_0204aeac.func_0201c494(0);
+        data_0204a110.mUnk_D9C.func_0201c494(0);
     }
 }
 

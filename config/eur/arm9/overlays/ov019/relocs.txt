@@ -1324,7 +1324,7 @@ from:0x020d0184 kind:load to:0x020d24c8 module:overlay(19)
 from:0x020d01a8 kind:arm_call to:0x020cc85c module:overlay(19)
 from:0x020d01b0 kind:arm_call to:0x0201e698 module:main
 from:0x020d01b8 kind:load to:0x020d24c8 module:overlay(19)
-from:0x020d01bc kind:load to:0x0204aeec module:main
+from:0x020d01bc kind:load to:0x0204a110 add:0xddc module:main
 from:0x020d01ec kind:arm_call to:0x020cc874 module:overlay(19)
 from:0x020d0228 kind:arm_call to:0x02061224 module:overlay(0)
 from:0x020d023c kind:arm_call to:0x020cb748 module:overlay(19)

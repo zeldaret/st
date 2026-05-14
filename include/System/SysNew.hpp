@@ -80,7 +80,7 @@ public:
     /* 83 */ unk8 mUnk_83;
 
     unk32 func_02013014();
-    void func_02013070();
+    bool func_02013070();
     void func_020130d4(unk32 param1);
 
     void func_ov001_020ba588(unk32 param1, unk32 param2);

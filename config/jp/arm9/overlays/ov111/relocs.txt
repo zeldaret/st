@@ -59,7 +59,7 @@ from:0x02186c34 kind:load to:0x027e09bc module:dtcm
 from:0x02186c38 kind:load to:0x0204fb78 module:main
 from:0x02186c3c kind:load to:0x0204b608 module:main
 from:0x02186c40 kind:load to:0x0204b690 module:main
-from:0x02186c44 kind:load to:0x0204c390 module:main
+from:0x02186c44 kind:load to:0x0204b690 add:0xd00 module:main
 from:0x02186c48 kind:load to:0x027e09ac module:dtcm
 from:0x02186c4c kind:load to:0x027e0ce0 module:dtcm
 from:0x02186c50 kind:load to:0x027e09a4 module:dtcm

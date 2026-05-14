@@ -398,11 +398,11 @@ public:
     /* 244 */ unk32 mUnk_244;
 
     bool IsUnk20A() {
-        return mUnk_20A == 0;
+        return this->mUnk_20A == 0;
     }
 
-    unk32 IsUnk210() {
-        return mUnk_210 == 0;
+    BOOL IsUnk210() {
+        return this->mUnk_210 == 0;
     }
 
     SaveSlot *GetSaveSlot(int saveSlotIndex) {

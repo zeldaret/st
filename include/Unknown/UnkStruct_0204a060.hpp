@@ -35,6 +35,9 @@ public:
     /* 14 */
 
     UnkStruct_0204a060_Base2();
+
+    /* 00 */ virtual ~UnkStruct_0204a060_Base2() override;
+
     void func_0201ba68();
 };
 
@@ -54,10 +57,10 @@ public:
     UnkStruct_0204a060_Base();
     void func_0201bb84(unk32 param1, unk32 param2, unk32 param3);
     void func_0201bba4(unk32 param1, unk32 param2);
-    void func_0201bbcc();
+    void func_0201bbcc(unk32 param1, unk32 param2);
 
     // data_02044108 vtable
-    /* 00 */ virtual ~UnkStruct_0204a060_Base() override;
+    /* 00 */ WEAK virtual ~UnkStruct_0204a060_Base() override {}
     /* 08 */ virtual bool vfunc_08(unk32 param1) override;
     /* 0C */ virtual bool vfunc_0C(void);
     /* 10 */ virtual bool vfunc_10(void);

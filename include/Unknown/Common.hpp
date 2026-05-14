@@ -254,7 +254,7 @@ public:
         Vec2s mPos;
         Vec2us mPosU;
     };
-    /* 0E */ unk16 mUnk_0E;
+    /* 0E */ s16 mUnk_0E;
     /* 10 */ unk16 mUnk_10;
     /* 12 */ unk16 mUnk_12;
     /* 14 */ unk16 mUnk_14;

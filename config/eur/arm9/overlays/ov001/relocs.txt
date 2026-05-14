@@ -1558,7 +1558,7 @@ from:0x020bd80e kind:thumb_call to:0x020bd848 module:overlay(1)
 from:0x020bd824 kind:thumb_call_arm to:0x02018ac4 module:main
 from:0x020bd82c kind:thumb_call to:0x0201ca28 module:main
 from:0x020bd834 kind:load to:0x027e0994 module:dtcm
-from:0x020bd838 kind:load to:0x0204a120 module:main
+from:0x020bd838 kind:load to:0x0204a110 add:0x10 module:main
 from:0x020bd844 kind:load to:0x020d86a0 module:overlay(24)
 from:0x020bd850 kind:load to:0x020d86a0 module:overlay(24)
 from:0x020bd85c kind:thumb_call to:0x020bde6c module:overlay(1)

@@ -223,6 +223,13 @@ struct Mat4p {
         wColumn = W;
     }
 };
+
+extern "C" static inline void Vec2s_Clear(Vec2s *pVec) {
+    s16 x = 0, y = 0;
+
+    pVec->x = *(s16 *) &x;
+    pVec->y = *(s16 *) &y;
+}
 extern "C" {
 #else
 typedef struct Vec2b {

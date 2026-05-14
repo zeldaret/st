@@ -484,7 +484,7 @@ from:0x020eeee0 kind:arm_call to:0x0201a9dc module:main
 from:0x020eeeec kind:load to:0x0203feb0 module:main
 from:0x020eeef0 kind:load to:0x0210ac64 module:overlay(21)
 from:0x020eeef4 kind:load to:0x027e0998 module:dtcm
-from:0x020eeef8 kind:load to:0x0204c42c module:main
+from:0x020eeef8 kind:load to:0x0204b690 add:0xd9c module:main
 from:0x020eeefc kind:load to:0x0204c49c module:main
 from:0x020eef00 kind:load to:0x0210ac9c module:overlay(21)
 from:0x020eef28 kind:arm_call to:0x01fff5d0 module:itcm
@@ -2133,7 +2133,7 @@ from:0x020fe234 kind:load to:0x027e0cf4 module:dtcm
 from:0x020fe238 kind:load to:0x020b69b8 module:overlay(0)
 from:0x020fe23c kind:load to:0x027e09a4 module:dtcm
 from:0x020fe240 kind:load to:0x0204b690 module:main
-from:0x020fe244 kind:load to:0x0204c42c module:main
+from:0x020fe244 kind:load to:0x0204b690 add:0xd9c module:main
 from:0x020fe248 kind:load to:0x027e0ce0 module:dtcm
 from:0x020fe26c kind:arm_call to:0x02071f90 module:overlay(0)
 from:0x020fe274 kind:load to:0x027e09a4 module:dtcm
@@ -2268,7 +2268,7 @@ from:0x020ff4b4 kind:load to:0x0210a90c module:overlay(21)
 from:0x020ff4b8 kind:load to:0x0210a8fc module:overlay(21)
 from:0x020ff4bc kind:load to:0x0210a91c module:overlay(21)
 from:0x020ff4c0 kind:load to:0x0210a928 module:overlay(21)
-from:0x020ff4c8 kind:load to:0x0204c390 module:main
+from:0x020ff4c8 kind:load to:0x0204b690 add:0xd00 module:main
 from:0x020ff4cc kind:load to:0x027e09ac module:dtcm
 from:0x020ff4d0 kind:load to:0x020b66c4 module:overlay(0)
 from:0x020ff4d4 kind:load to:0x0210a8a4 module:overlay(21)
@@ -2698,7 +2698,7 @@ from:0x02102d44 kind:arm_call to:0x020654ec module:overlay(0)
 from:0x02102d54 kind:arm_call to:0x020654ec module:overlay(0)
 from:0x02103100 kind:load to:0x020e9dc4 module:overlay(20)
 from:0x02103104 kind:load to:0x027e0994 module:dtcm
-from:0x0210310c kind:load to:0x0204c42c module:main
+from:0x0210310c kind:load to:0x0204b690 add:0xd9c module:main
 from:0x02103150 kind:arm_call to:0x02103734 module:overlay(21)
 from:0x02103158 kind:arm_call to:0x01ff9b50 module:itcm
 from:0x02103174 kind:arm_call to:0x02103734 module:overlay(21)

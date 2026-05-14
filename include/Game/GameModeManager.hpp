@@ -151,6 +151,10 @@ public:
     /* 0C */ GameModeManagerBase_104_0C mUnk_0C;
 };
 
+class AdventureModeManager_160_14;
+class AdventureModeManager_160_18;
+class AdventureModeManager_1B8;
+
 class GameModeManagerBase_104 : public GameModeManagerBase_104_00 {
 public:
     /* 00 (vtable) */

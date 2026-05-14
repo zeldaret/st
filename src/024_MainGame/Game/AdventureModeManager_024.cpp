@@ -6,7 +6,6 @@
 #include "Unknown/UnkFileSystem.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
-#include "Unknown/UnkStruct_0204aeac.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
@@ -112,16 +111,16 @@ void AdventureModeManager::func_ov024_020c53e8() {
     switch (this->mUnk_154) {
         case 0:
             this->func_ov024_020c52b8();
-            data_0204aeac.func_0201c494(0);
+            data_0204a110.mUnk_D9C.func_0201c494(0);
             break;
         case 1:
             this->func_ov024_020c5364();
-            data_0204aeac.func_0201c494(1);
+            data_0204a110.mUnk_D9C.func_0201c494(1);
             break;
         case 2:
             this->func_ov024_020c52a0();
             this->func_ov024_020c6db8(0x18);
-            data_0204aeac.func_0201c494(1);
+            data_0204a110.mUnk_D9C.func_0201c494(1);
             break;
         case 3:
             if (data_027e09a4->func_01ffd3d8()) {
@@ -131,7 +130,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             }
 
             this->func_ov024_020c6db8(0x1C);
-            data_0204aeac.func_0201c494(0);
+            data_0204a110.mUnk_D9C.func_0201c494(0);
 
             if (data_0204a110.mUnk_008 == 5) {
                 REG_DISPCNT &= ~0x1F00;
@@ -147,7 +146,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             }
 
             this->func_ov024_020c6db8(0x1E);
-            data_0204aeac.func_0201c494(1);
+            data_0204a110.mUnk_D9C.func_0201c494(1);
 
             if (data_0204a110.mUnk_008 == 5) {
                 REG_DISPCNT &= ~0x1F00;
@@ -162,7 +161,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             }
 
             this->func_ov024_020c6db8(0x1C);
-            data_0204aeac.func_0201c494(0);
+            data_0204a110.mUnk_D9C.func_0201c494(0);
             break;
         default:
             break;

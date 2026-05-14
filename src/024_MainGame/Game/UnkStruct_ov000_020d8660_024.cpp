@@ -1,7 +1,6 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
-#include "Unknown/UnkStruct_0204aeac.hpp"
 #include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -116,9 +115,9 @@ void UnkStruct_ov024_020d8660::func_ov024_020c4cc8() {
     GX_func_0008(&REG_BLDCNT_SUB, 0x3F, 0);
 
     if (data_027e09a4->func_01ffd3d8()) {
-        data_0204aeac.func_0201c494(1);
+        data_0204a110.mUnk_D9C.func_0201c494(1);
     } else {
-        data_0204aeac.func_0201c494(0);
+        data_0204a110.mUnk_D9C.func_0201c494(0);
     }
 #else
     GX_func_0008(&REG_BLDCNT, 0x0F, 0);

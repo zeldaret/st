@@ -665,7 +665,7 @@ func_ov000_02066190 kind:function(arm,size=0x1c) addr:0x02066190
 func_ov000_020661ac kind:function(arm,size=0x3c) addr:0x020661ac
 _ZN19func_ov000_020661e8D1Ev kind:function(arm,size=0x14) addr:0x020661e8
 _ZN19func_ov000_020661fcD0Ev kind:function(arm,size=0x1c) addr:0x020661fc
-func_ov000_02066218 kind:function(arm,size=0x38) addr:0x02066218
+_ZN27AdventureModeManager_160_2819func_ov000_02066218Ei kind:function(arm,size=0x38) addr:0x02066218
 func_ov000_02066250 kind:function(arm,size=0x14) addr:0x02066250
 _ZN19func_ov000_02066264D1Ev kind:function(arm,size=0x14) addr:0x02066264
 _ZN19func_ov000_02066278D0Ev kind:function(arm,size=0x1c) addr:0x02066278
@@ -991,7 +991,7 @@ func_ov000_020702a8 kind:function(arm,size=0x14) addr:0x020702a8
 _ZN18UnkStruct_027e09a017GetRoomEntryIndexEv kind:function(arm,size=0x40) addr:0x020702bc
 _ZN18UnkStruct_027e09a012GetRoomEntryEji kind:function(arm,size=0x14) addr:0x020702fc
 func_ov000_02070310 kind:function(arm,size=0x68) addr:0x02070310
-func_ov000_02070378 kind:function(arm,size=0x44) addr:0x02070378
+_ZN18UnkStruct_027e09a019func_ov000_02070378Ej kind:function(arm,size=0x44) addr:0x02070378
 func_ov000_020703bc kind:function(arm,size=0x8) addr:0x020703bc
 func_ov000_020703c4 kind:function(arm,size=0x5c) addr:0x020703c4
 func_ov000_02070420 kind:function(arm,size=0xa8) addr:0x02070420
@@ -3474,7 +3474,7 @@ data_ov000_020b1f9c kind:data(any) addr:0x020b1f9c
 data_ov000_020b1fac kind:data(any) addr:0x020b1fac
 data_ov000_020b1fbc kind:data(any) addr:0x020b1fbc
 data_ov000_020b1fd8 kind:data(any) addr:0x020b1fd8
-_ZTV19data_ov000_020b1fec kind:data(any) addr:0x020b1fec
+_ZTV27AdventureModeManager_160_28 kind:data(any) addr:0x020b1fec
 data_ov000_020b2008 kind:data(any) addr:0x020b2008
 data_ov000_020b2014 kind:data(any) addr:0x020b2014
 data_ov000_020b2020 kind:data(any) addr:0x020b2020

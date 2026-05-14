@@ -41,9 +41,9 @@ ARM void FileSelectManager_160::vfunc_0C(unk32 param1) {
     }
 }
 
-ARM void FileSelectManager_160::vfunc_14() {}
+ARM void FileSelectManager_160::vfunc_14(unk32 param1) {}
 
-ARM void FileSelectManager_160::vfunc_10() {
+ARM void FileSelectManager_160::vfunc_10(unk32 param1, unk32 param2) {
     data_0204999c.func_02013014();
     data_0204999c.mUnk_60 = 0xD6D8;
     data_0204a088->func_ov000_02061248();
@@ -80,7 +80,7 @@ ARM void FileSelectManager_160::vfunc_1C(unk32 param1) {
     }
 }
 
-ARM void FileSelectManager_160::vfunc_20() {
+ARM bool FileSelectManager_160::vfunc_20(unk32 param1) {
     data_0204999c.func_02013014();
     data_0204999c.mUnk_60 = 0xD6D8;
     this->mUnk_14         = NULL;
@@ -97,7 +97,7 @@ ARM void FileSelectManager_160::vfunc_20() {
     REG_DISPCNT &= 0xFFFFE0FF;
     REG_DISPCNT |= 0x1C00;
 
-    data_0204999c.func_02013070();
+    return data_0204999c.func_02013070();
 }
 
 ARM void FileSelectManager_160::vfunc_24() {

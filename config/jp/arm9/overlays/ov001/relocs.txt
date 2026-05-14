@@ -1559,7 +1559,7 @@ from:0x020bf056 kind:thumb_call to:0x020bf090 module:overlay(1)
 from:0x020bf06c kind:thumb_call_arm to:0x02018a5c module:main
 from:0x020bf074 kind:thumb_call to:0x0201c818 module:main
 from:0x020bf07c kind:load to:0x027e0994 module:dtcm
-from:0x020bf080 kind:load to:0x0204b6a0 module:main
+from:0x020bf080 kind:load to:0x0204b690 add:0x10 module:main
 from:0x020bf08c kind:load to:0x020da040 module:overlay(24)
 from:0x020bf098 kind:load to:0x020da040 module:overlay(24)
 from:0x020bf0a4 kind:thumb_call to:0x020bf6c0 module:overlay(1)

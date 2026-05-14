@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Message/BMGEnums.hpp"
 #include "System/SysNew.hpp"
 #include "global.h"
 #include "types.h"

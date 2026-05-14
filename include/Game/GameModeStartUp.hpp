@@ -19,7 +19,7 @@ public:
     GameModeStartUp();
 
     // data_ov018_020c5b28 vtable
-    /* 00 */ virtual ~GameModeStartUp() override {}
+    // /* 00 */ virtual ~GameModeStartUp() override {}
     /* 0C */ virtual void vfunc_0C() override;
     /* 20 */ virtual void vfunc_20() override;
 

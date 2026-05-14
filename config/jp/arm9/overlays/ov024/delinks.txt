@@ -38,7 +38,9 @@ src/024_MainGame/Game/UnkStruct_027e0cf8_024.cpp:
     .text       start:0x020c8be0 end:0x020c9190
 
 src/024_MainGame/Game/AdventureModeManager_160_024.cpp:
+    complete
     .text       start:0x020c9190 end:0x020c9e08
+    .data       start:0x020d963c end:0x020d9688
 
 src/024_MainGame/Game/AdventureModeManager_170_024.cpp:
     .text       start:0x020c9e08 end:0x020ca0b0
