@@ -588,21 +588,21 @@ void AdventureModeManager::vfunc_2C(unk8 *param1) {
             savedUnk[1] = this->mNextButtonID;
             savedUnk[0] = (u32) param1;
 
-            GameModeLinkListNode *var_r4 = this->mUnk_15C->mUnk_04.mList.mPrev->GetNext3();
+            GameModeLinkListNode *var_r4 = this->mUnk_15C->mUnk_04.mUnk_0C.GetUnk3();
 
             while (var_r4 != this->mUnk_15C->mUnk_04.GetOrigin()) {
                 GameModeManagerBase_104 *pTarget = var_r4->GetTarget<GameModeManagerBase_104>();
                 GameModeLinkListNode *var_r9     = pTarget->mUnk_0C.mList.GetPrev();
 
                 while (var_r9 != pTarget->mUnk_0C.GetOrigin()) {
-                    var_r9->GetTarget<GameModeManagerBase_104>()->vfunc_0C(savedUnk);
+                    var_r9->GetTarget<GameModeManagerBase_104_0C>()->vfunc_0C(savedUnk);
                     var_r9 = var_r9->GetUnk();
                 }
 
                 var_r4 = var_r4->GetUnk();
             }
 
-            GameModeLinkListNode *var_r4_2 = this->mUnk_15C->mUnk_04.mList.mPrev->GetNext3();
+            GameModeLinkListNode *var_r4_2 = this->mUnk_15C->mUnk_04.mUnk_0C.GetUnk3();
 
             while (var_r4_2 != this->mUnk_15C->mUnk_04.GetOrigin()) {
                 var_r4_2->GetTarget<GameModeManagerBase_104>()->vfunc_10(param1);

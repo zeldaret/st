@@ -206,12 +206,12 @@ ARM void MapObjectSwitchStep::vfunc_18(s8 *param1, s8 param2) {
     if (data_027e09a4->mUnk_00.mSceneIndex >= SceneIndex_battle01 && data_027e09a4->mUnk_00.mSceneIndex < SceneIndex_Max) {
         Vec2s sp10;
         stack_struct sp8;
-        u16 sp4;
+        u32 sp4;
 
         //! TODO: fake match?
         sp4 = *(u32 *) &this->mUnk_38;
 
-        if (data_027e0998->vfunc_00(&this->mPos, &sp10, &sp4)) {
+        if (data_027e0998->vfunc_00(&this->mPos, &sp10, (u16 *) &sp4)) {
             sp8.mUnk_06 = 0x00;
             MI_CpuFill32(0, &sp8, sizeof(sp8));
             sp8.mUnk_05 = -1;

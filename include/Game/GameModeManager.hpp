@@ -137,6 +137,14 @@ public:
         return (GameModeLinkList<GameModeManagerBase_104_0C> *) this;
     }
 
+    GameModeLinkListNode *GetUnk3() {
+        GameModeLinkListNode *prev = (GameModeLinkListNode *) *((u32 *) this - 1);
+        if (prev != NULL) {
+            prev = (GameModeLinkListNode *) ((u32 *) prev - 1);
+        }
+        return prev;
+    }
+
     // data_ov000_020b1e48 vtable
     /* 00 */ virtual ~GameModeManagerBase_104_0C();
     /* 08 */ virtual void vfunc_08(void *param1);
@@ -180,7 +188,7 @@ public:
     // data_ov000_020b1e60 vtable
     /* 00 */ virtual ~GameModeManagerBase_104();
     /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl);
-    /* 0C */ virtual void vfunc_0C(void *param1);
+    /* 0C */ virtual void vfunc_0C(unk32 param1);
     /* 10 */ virtual void vfunc_10(unk8 *param1);
     /* 14 */ virtual void vfunc_14(unk8 *param1);
     /* 18 */ virtual void vfunc_18(void);
