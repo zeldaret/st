@@ -1044,7 +1044,7 @@ from:0x0212e578 kind:load to:0x0212f2c0 module:overlay(41)
 from:0x0212e5dc kind:arm_call to:0x01fff520 module:itcm
 from:0x0212e5fc kind:arm_call to:0x0209ea60 module:overlay(0)
 from:0x0212e630 kind:load to:0x027e09a4 module:dtcm
-from:0x0212e638 kind:load to:0x020b4cb8 module:overlay(0)
+from:0x0212e638 kind:load to:0x020b4cb0 add:0x8 module:overlay(0)
 from:0x0212e63c kind:load to:0x027e0ce8 module:dtcm
 from:0x0212e64c kind:arm_call_thumb to:0x02059154 module:overlay(0)
 from:0x0212e654 kind:arm_call to:0x02011ff4 module:main

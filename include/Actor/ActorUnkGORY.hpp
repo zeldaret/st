@@ -4,6 +4,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Item/Item.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -28,7 +29,7 @@ public:
 
     void func_ov036_0211bc20(void);
     void func_ov036_0211bc84(void);
-    void func_ov036_0211bcb0(void);
+    ItemId func_ov036_0211bcb0(unk32 param1);
 };
 
 class ActorProfileUnkGORY : public ActorProfile_Derived1 {

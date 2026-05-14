@@ -3,8 +3,8 @@
 #include "Game/GameModeManager.hpp"
 #include "Unknown/Common.hpp"
 #include "global.h"
-#include "nitro/math.h"
 #include "types.h"
+#include <nitro/math.h>
 
 #define MAX_MIC_LEVELS 4
 #define MIC_LEVEL_1 0 // green bar
@@ -63,11 +63,11 @@ class FileSelectMicTest : public GameModeManagerBase_104 {
 public:
     /* 000 (base) */
     /* 01C */ FSMicTestState mState;
-    /* 020 */ UnkSystem2_UnkSubSystem5 mUnk_020; // "mic test" string
+    /* 020 */ UnkSystem2_UnkSubSystem5 mUnk_020;        // "mic test" string
     /* 258 */ UnkStruct_ov019_020d24c8_28_258 mUnk_258; // "mic test" background
     /* 270 */ UnkStruct_ov019_020d24c8_28_270 mUnk_270; // microphone level display (green to red bars + background)
     /* 304 */ UnkStruct_ov019_020d24c8_28_304 mUnk_304; // "go back" arrow
-    /* 3F8 */ UnkSystem2_UnkSubSystem5 mUnk_3F8; // "please face the mic" string
+    /* 3F8 */ UnkSystem2_UnkSubSystem5 mUnk_3F8;        // "please face the mic" string
     /* 630 */ bool mUnk_630;
     /* 631 */ unk8 mUnk_631;
     /* 632 */ unk8 mUnk_632;

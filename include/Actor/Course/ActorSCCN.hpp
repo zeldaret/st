@@ -46,18 +46,18 @@ public:
     /* 94 */ unk32 mUnk_94;
     /* 98 */ unk8 mUnk_98;
     /* 99 */ unk8 mUnk_99; // gives knockback if not -1
-    /* 9a */ unk8 mUnk_9a;
-    /* 9b */ SCCNType mUnk_9b : 8;
-    /* 9c */ unk32 mUnk_9c;
-    /* a0 */ q20 mUnk_a0;
-    /* a4 */ q20 mUnk_a4;
-    /* a8 */ q20 mUnk_a8;
-    /* ac */ q20 mUnk_ac;
-    /* b0 */ q20 mUnk_b0;
-    /* b4 */ q20 mUnk_b4;
-    /* b8 */ unk32 mUnk_b8;
-    /* bc */ unk32 mUnk_bc;
-    /* c0 */ unk32 mUnk_c0;
-    /* c4 */ unk32 mUnk_c4;
-    /* c8 */
+    /* 9A */ unk8 mUnk_9A;
+    /* 9B */ SCCNType mUnk_9B : 8;
+    /* 9C */ unk32 mUnk_9C;
+    /* A0 */ q20 mUnk_A0;
+    /* A4 */ q20 mUnk_A4;
+    /* A8 */ q20 mUnk_A8;
+    /* AC */ q20 mUnk_AC;
+    /* B0 */ q20 mUnk_B0;
+    /* B4 */ q20 mUnk_B4;
+    /* B8 */ unk32 mUnk_B8;
+    /* BC */ unk32 mUnk_BC;
+    /* C0 */ unk32 mUnk_C0;
+    /* C4 */ unk32 mUnk_C4;
+    /* C8 */
 };

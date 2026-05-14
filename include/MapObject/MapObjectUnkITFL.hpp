@@ -10,11 +10,11 @@
 class MapObjectUnkITFL : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkITFL();
 
-    /* 4C */ virtual ~MapObjectUnkITFL() override;
+    /* 30 */ virtual ~MapObjectUnkITFL() override;
 
     void func_ov031_021059b8(void);
     void func_ov031_02105be4(void);

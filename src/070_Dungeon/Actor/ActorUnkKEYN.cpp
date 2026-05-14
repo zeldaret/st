@@ -2,6 +2,8 @@
 
 #include "Actor/ActorUnkKEYN.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_027e09b8.hpp"
+#include "Unknown/UnkStruct_027e0d34.hpp"
 
 ARM DECL_PROFILE(ActorProfileUnkKEYN);
 
@@ -38,7 +40,21 @@ ARM void ActorUnkKEYN::func_ov070_02141fbc(void) {}
 ARM void ActorUnkKEYN::func_ov070_02142014(void) {}
 ARM void ActorUnkKEYN::func_ov070_021420a4(void) {}
 ARM void ActorUnkKEYN::func_ov070_021420d8(void) {}
-ARM void ActorUnkKEYN::func_ov070_02142140(void) {}
+
+ARM void ActorUnkKEYN::func_ov070_02142140(void) {
+    if (this->mUnk_50 < this->mUnk_52) {
+        this->mUnk_50++;
+    }
+
+    if (!data_027e09b8->func_01ffd420()) {
+        if (data_027e0d34->TryItemGive(this->mItemId)) {
+            this->func_ov000_02098a88(0, 1);
+            this->Kill();
+            this->func_ov000_020984f0();
+        }
+    }
+}
+
 ARM void ActorUnkKEYN::func_ov070_021421bc(void) {}
 ARM void ActorUnkKEYN::func_ov070_021421e8(void) {}
 ARM void ActorUnkKEYN::func_ov070_021421ec(void) {}

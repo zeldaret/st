@@ -9,3 +9,13 @@ src/001_SceneInit/Actor/ActorManager_001.cpp:
     .text       start:0x020baf64 end:0x020bb87c
     .rodata     start:0x020c2624 end:0x020c264c
     .data       start:0x020c2b3c end:0x020c2c70
+
+src/001_SceneInit/Item/ItemManager_001.cpp:
+    .text       start:0x020bb9f8 end:0x020bba54
+
+src/001_SceneInit/CargoManager_001.cpp:
+    complete
+    .text       start:0x020bf800 end:0x020bf870
+
+src/001_SceneInit/PassengerManager_001.cpp:
+    .text       start:0x020bf870 end:0x020bfa50

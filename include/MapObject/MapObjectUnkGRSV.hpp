@@ -10,11 +10,11 @@
 class MapObjectUnkGRSV : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkGRSV();
 
-    /* 4C */ virtual ~MapObjectUnkGRSV() override;
+    /* 30 */ virtual ~MapObjectUnkGRSV() override;
 
     void func_ov058_02151558(void);
     void func_ov058_02151874(void);

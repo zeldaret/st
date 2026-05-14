@@ -76,7 +76,7 @@ from:0x02153b8c kind:arm_call_thumb to:0x01ffa1bc module:itcm
 from:0x02153b9c kind:arm_call to:0x01ffa60c module:itcm
 from:0x02153ba8 kind:load to:0x027e0964 module:dtcm
 from:0x02153bac kind:load to:0x0203e964 module:main
-from:0x02153bb0 kind:load to:0x027e0254 module:dtcm
+from:0x02153bb0 kind:load to:0x027e0208 add:0x4c module:dtcm
 from:0x02153bf0 kind:arm_call to:0x020a0334 module:overlay(0)
 from:0x02153c18 kind:arm_call to:0x0215a96c module:overlay(78)
 from:0x02153c34 kind:arm_call to:0x02097bec module:overlay(0)

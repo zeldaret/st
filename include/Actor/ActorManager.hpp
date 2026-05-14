@@ -6,6 +6,8 @@
 #include "files.h"
 #include "types.h"
 
+class UnkStruct_SceneChange1;
+
 struct UnkStruct_func_ov001_020bb018_param2 {
     /* 00 */ STRUCT_PAD(0x00, 0x08);
     /* 08 */ u16 mUnk_08;
@@ -16,22 +18,22 @@ class ActorManager : public SysObject {
 public:
     /* 00 */ Actor **mActorTable;
     /* 04 */ Actor **mActorTableEnd;
-    /* 08 */ Actor **mUnk_08;
-    /* 0c */ unk16 mActorCount;
-    /* 0e */ unk16 mNextActorId;
+    /* 08 */ Actor **mUnk_08; // pointer to first available slot?
+    /* 0C */ unk16 mActorCount;
+    /* 0E */ unk16 mNextActorId;
     /* 10 */ unk8 mUnk_10;
     /* 10 */ unk8 mUnk_11;
     /* 10 */ unk8 mUnk_12;
     /* 10 */ unk8 mUnk_13;
     /* 14 */ UnkStruct_ov019_020d24c8_28_258_00 mUnk_14;
-    /* 1c */ unk32 mUnk_1c;
+    /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk8 mUnk_20;
     /* 21 */ unk8 mUnk_21;
     /* 22 */ unk8 mUnk_22;
     /* 23 */ unk8 mUnk_23;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ unk32 mUnk_28;
-    /* 2c */ unk32 mUnk_2c;
+    /* 2C */ unk32 mUnk_2C;
     /* 30 */ unk16 mUnk_30;
     /* 32 */ unk8 mUnk_32;
     /* 33 */ unk8 mUnk_33;
@@ -41,10 +43,12 @@ public:
     ActorManager();
     ~ActorManager();
 
-    ActorUnk_ov000_020a8bb0 *func_01fff3b4(unk32 param1);
+    Actor *func_01fff3b4(unk32 param1);
     Actor **func_01fff350(void *param1, Actor **ppActorTable);
 
     void func_ov000_02096e44(int index);
+    unk32 func_ov000_0209704c();
+    unk32 func_ov000_020970c8(u16 param1, unk32 *param2);
 
     int ClearInstance();
     void func_ov001_020bafdc();
@@ -52,7 +56,7 @@ public:
     void func_ov001_020bb488();
     void func_ov001_020bb548();
     void func_ov001_020bb630();
-    void func_ov001_020bb6b0(s32 *param1);
+    void func_ov001_020bb6b0(UnkStruct_SceneChange1 *param1);
     void func_ov001_020bb7b0(ZeldaObjectList *pObjList);
     void func_ov001_020bb7f0();
 
@@ -65,4 +69,4 @@ public:
     static void func_ov001_020bb844();
 };
 
-extern ActorManager *gActorManager;
+extern ActorManager *gpActorManager;

@@ -10,11 +10,11 @@
 class MapObjectUnkEXCT : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkEXCT();
 
-    /* 4C */ virtual ~MapObjectUnkEXCT() override;
+    /* 30 */ virtual ~MapObjectUnkEXCT() override;
 
     void func_ov060_02160a84(void);
 };

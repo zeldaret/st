@@ -10,11 +10,11 @@
 class MapObjectUnkBREX : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkBREX();
 
-    /* 4C */ virtual ~MapObjectUnkBREX() override;
+    /* 30 */ virtual ~MapObjectUnkBREX() override;
 
     void func_ov031_021076b8(void);
     void func_ov031_02107b04(void);

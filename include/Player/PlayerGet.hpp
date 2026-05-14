@@ -4,9 +4,84 @@
 #include "types.h"
 #include "versions.h"
 
+#include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
-#include "nitro/math.h"
+#include <nitro/math.h>
+
+enum GIModel_ {
+    GIModel_None = 0,
+    GIModel_stmp = 'stmp',
+    GIModel_shdA = 'shdA',
+    GIModel_rupR = 'rupR',
+    GIModel_trnd = 'trnd',
+    GIModel_litA = 'litA',
+    GIModel_stlb = 'stlb',
+    GIModel_keyB = 'keyB',
+    GIModel_ring = 'ring',
+    GIModel_gold = 'gold',
+    GIModel_bmst = 'bmst',
+    GIModel_makA = 'makA',
+    GIModel_bmrn = 'bmrn',
+    GIModel_ptmL = 'ptmL',
+    GIModel_star = 'star',
+    GIModel_poit = 'poit',
+    GIModel_cloB = 'cloB',
+    GIModel_crwn = 'crwn',
+    GIModel_rupL = 'rupL',
+    GIModel_mons = 'mons',
+    GIModel_swdA = 'swdA',
+    GIModel_beee = 'beee',
+    GIModel_makB = 'makB',
+    GIModel_szku = 'szku',
+    GIModel_keyN = 'keyN',
+    GIModel_srod = 'srod',
+    GIModel_pnec = 'pnec',
+    GIModel_frcY = 'frcY',
+    GIModel_prlA = 'prlA',
+    GIModel_poiF = 'poiF',
+    GIModel_bowB = 'bowB',
+    GIModel_sold = 'sold',
+    GIModel_apdM = 'apdM',
+    GIModel_hrtu = 'hrtu',
+    GIModel_poiD = 'poiD',
+    GIModel_poi5 = 'poi5',
+    GIModel_pflt = 'pflt',
+    GIModel_rbnt = 'rbnt',
+    GIModel_cloA = 'cloA',
+    GIModel_arst = 'arst',
+    GIModel_revY = 'revY',
+    GIModel_swdB = 'swdB',
+    GIModel_bomb = 'bomb',
+    GIModel_litD = 'litD',
+    GIModel_revP = 'revP',
+    GIModel_rupB = 'rupB',
+    GIModel_Lcmp = 'Lcmp',
+    GIModel_shdB = 'shdB',
+    GIModel_gdpf = 'gdpf',
+    GIModel_bmbM = 'bmbM',
+    GIModel_przC = 'przC',
+    GIModel_prlB = 'prlB',
+    GIModel_poiP = 'poiP',
+    GIModel_rupG = 'rupG',
+    GIModel_revR = 'revR',
+    GIModel_mrrn = 'mrrn',
+    GIModel_zola = 'zola',
+    GIModel_bowA = 'bowA',
+    GIModel_bmbL = 'bmbL',
+    GIModel_litC = 'litC',
+    GIModel_bowl = 'bowl',
+    GIModel_whip = 'whip',
+    GIModel_coin = 'coin',
+    GIModel_apdL = 'apdL',
+    GIModel_poiS = 'poiS',
+    GIModel_jade = 'jade',
+    GIModel_glon = 'glon',
+    GIModel_poiG = 'poiG',
+    GIModel_litB = 'litB',
+};
+
+u32 func_ov000_020a4c00(ItemId itemId);
 
 struct UnkStruct_ov110_02185dc8 {
     u16 mItemId;
@@ -16,7 +91,7 @@ struct UnkStruct_ov110_02185dc8 {
 class UnkStruct_ov110_021861ec {
 public:
     /* 00 */ Vec3p mUnk_00;
-    /* 0c */
+    /* 0C */
 
     ARM UnkStruct_ov110_021861ec(q20 x, q20 y, q20 z) {
         this->mUnk_00.x = x;
@@ -39,7 +114,7 @@ public:
     /* 00 (base) */
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
+    /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ UnkStruct_ov000_0208f820 *mUnk_14;
 
@@ -48,35 +123,6 @@ public:
     UnkStruct_PlayerGet_74(UnkStruct_ov000_0208f820 *param1) {
         this->mUnk_14 = param1;
     }
-};
-
-class UnkStruct_PlayerGet_8c {
-public:
-    // /* 00 */ unk32 *mUnk_00;
-
-    /* 00 */ virtual ~UnkStruct_PlayerGet_8c();
-    /* 08 */ virtual void vfunc_08(unk32 param1); //! TODO: name symbol func_ov000_02057bf4
-    /* 0c */ virtual void vfunc_0c(); //! TODO: name symbol func_01ffc57c
-    /* 10 */ virtual void vfunc_10(); //! TODO: name symbol func_ov000_02057dc8
-    /* 14 */ virtual void vfunc_14(); //! TODO: name symbol func_ov000_02057e44
-    /* 18 */ virtual void vfunc_18(); //! TODO: name symbol func_ov000_02057ea8
-    /* 1c */ virtual void vfunc_1c(); //! TODO: name symbol func_ov000_02057c34
-    /* 20 */ virtual void vfunc_20(); //! TODO: name symbol func_ov000_02057d84
-
-    UnkStruct_PlayerGet_8c(unk32 param1);
-};
-
-class UnkStruct_PlayerGet_ec {
-public:
-    /* 00 */ unk32 *mUnk_00;
-    /* 04 */
-
-    UnkStruct_PlayerGet_ec(unk32 *param1) {
-        this->mUnk_00 = param1;
-    }
-
-    UnkStruct_PlayerGet_ec();
-    ~UnkStruct_PlayerGet_ec();
 };
 
 class UnkStruct_PlayerGet_50 {
@@ -92,16 +138,16 @@ public:
 
 class UnkStruct_PlayerGet_48 {
 public:
-    /* 00 */ unk8 mUnk_00[0x40];
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ STRUCT_PAD(0x04, 0x40);
     /* 40 */ unk16 mUnk_40;
     /* 42 */ unk16 mUnk_42;
-    /* 43 */ unk8 mUnk_43;
     /* 44 */ unk8 mUnk_44;
     /* 45 */ unk8 mUnk_45;
     /* 46 */ unk8 mUnk_46;
     /* 47 */ unk8 mUnk_47;
-    /* 48 */ unk8 mUnk_48[0x5E - 0x48];
-    /* 5e */ unk16 mUnk_5e;
+    /* 48 */ STRUCT_PAD(0x48, 0x5E);
+    /* 5E */ unk16 mUnk_5E;
     /* 60 */ unk8 mUnk_60;
     /* 61 */ unk8 mUnk_61;
     /* 62 */ unk8 mUnk_62;
@@ -112,46 +158,23 @@ class PlayerGet : public UnkStruct_ov000_0208f820 {
 public:
     /* 000 (base) */
     /* 048 */ UnkStruct_PlayerGet_48 *mUnk_48;
-    /* 04c */ unk32 *mUnk_4c;
+    /* 04C */ unk32 *mUnk_4C;
     /* 050 */ UnkStruct_PlayerGet_50 *mUnk_50;
     /* 054 */ UnkStruct_ov000_0208f820_04 mUnk_54;
-    /* 064 */ UnkStruct_PlayerGet_64 mUnk_64;
+    /* 064 */ UnkStruct_PlayerGet_64_2 mUnk_64;
     /* 068 */ unk32 mUnk_68;
-    /* 06c */ unk32 mUnk_6c; // scale
+    /* 06C */ unk32 mUnk_6C; // scale
     /* 070 */ unk16 mUnk_70; // angle/rotation
-    /* 070 */ u8 mUnk_72; // probably bools
-    /* 070 */ u8 mUnk_73; // probably bools
+    /* 070 */ u8 mUnk_72;    // probably bools
+    /* 070 */ u8 mUnk_73;    // probably bools
     /* 074 */ UnkStruct_PlayerGet_74 mUnk_74;
-    /* 08c */ UnkStruct_PlayerGet_8c mUnk_8c;
-    /* 090 */ unk32 *mUnk_90;
-    /* 094 */ unk32 mUnk_94;
-    /* 098 */ unk32 *mUnk_98;
-    /* 09c */ unk32 mUnk_9c;
-    /* 0a0 */ unk32 *mUnk_a0;
-    /* 0a4 */ unk32 mUnk_a4;
-    /* 0a8 */ unk32 *mUnk_a8;
-    /* 0ac */ unk32 mUnk_ac;
-    /* 0b0 */ unk32 *mUnk_b0;
-    /* 0b4 */ unk32 mUnk_b4;
-    /* 0b8 */ unk32 mUnk_b8;
-    /* 0bc */ unk32 mUnk_bc;
-    /* 0c0 */ unk32 mUnk_c0;
-    /* 0c4 */ unk32 mUnk_c4;
-    /* 0c8 */ unk32 mUnk_c8;
-    /* 0cc */ unk32 mUnk_cc;
-    /* 0d0 */ unk32 mUnk_d0;
-    /* 0d4 */ unk32 mUnk_d4;
-    /* 0d8 */ unk32 mUnk_d8;
-    /* 0dc */ unk32 mUnk_dc;
-    /* 0e0 */ unk32 mUnk_e0;
-    /* 0e4 */ unk32 mUnk_e4;
-    /* 0e8 */ unk32 mUnk_e8;
-    /* 0ec */ UnkStruct_PlayerGet_ec mUnk_ec[4];
-    /* 0fc */ void *mUnk_fc;
+    /* 08C */ UnkSystem4 mUnk_8C;
+    /* 0EC */ UnkStruct_PlayerGet_ec mUnk_EC[4];
+    /* 0FC */ void *mUnk_FC;
     /* 100 */
 
     /* 04 */ virtual ~PlayerGet() override;
-    /* 0c */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) override;
+    /* 0C */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) override;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3) override;
 

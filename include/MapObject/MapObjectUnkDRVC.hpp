@@ -10,11 +10,11 @@
 class MapObjectUnkDRVC : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkDRVC();
 
-    /* 4C */ virtual ~MapObjectUnkDRVC() override;
+    /* 30 */ virtual ~MapObjectUnkDRVC() override;
 
     void func_ov068_02160be8(void);
     void func_ov068_02160c64(void);

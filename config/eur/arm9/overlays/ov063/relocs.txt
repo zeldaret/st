@@ -999,7 +999,7 @@ from:0x0215f5fc kind:load to:0x02163844 module:overlay(63)
 from:0x0215f610 kind:arm_call to:0x0209cfe0 module:overlay(0)
 from:0x0215f6c0 kind:load to:0x02163888 module:overlay(63)
 from:0x0215f6c4 kind:load to:0x02164410 module:overlay(63)
-from:0x0215f6c8 kind:load to:0x020b1968 module:overlay(0)
+from:0x0215f6c8 kind:load to:0x020b1960 add:0x8 module:overlay(0)
 from:0x0215f6cc kind:load to:0x021644e4 module:overlay(63)
 from:0x0215f6f0 kind:arm_call to:0x0215fc40 module:overlay(63)
 from:0x0215f72c kind:arm_call to:0x01ffb428 module:itcm

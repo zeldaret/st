@@ -1,0 +1,47 @@
+{
+    "configurations": [
+        {
+            "name": "st-eur",
+            "includePath": [
+                "include",
+                "libs/c/include",
+                "libs/cpp/include",
+                "libs/nitro/include",
+                "libs/nns/include",
+                "libs/runtime/include"
+            ],
+            "defines": [
+                "VERSION=EUR"
+            ]
+        },
+        {
+            "name": "st-jp",
+            "includePath": [
+                "include",
+                "libs/c/include",
+                "libs/cpp/include",
+                "libs/nitro/include",
+                "libs/nns/include",
+                "libs/runtime/include"
+            ],
+            "defines": [
+                "VERSION=JP"
+            ]
+        },
+        {
+            "name": "st-usa",
+            "includePath": [
+                "include",
+                "libs/c/include",
+                "libs/cpp/include",
+                "libs/nitro/include",
+                "libs/nns/include",
+                "libs/runtime/include"
+            ],
+            "defines": [
+                "VERSION=USA"
+            ]
+        }
+    ],
+    "version": 4
+}

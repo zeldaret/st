@@ -10,11 +10,11 @@
 class MapObjectUnkETMW : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkETMW();
 
-    /* 4C */ virtual ~MapObjectUnkETMW() override;
+    /* 30 */ virtual ~MapObjectUnkETMW() override;
 
     void func_ov092_021673e4(void);
     void func_ov092_021674a8(void);

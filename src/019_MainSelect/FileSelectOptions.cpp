@@ -165,19 +165,19 @@ ARM FileSelectOptions::FileSelectOptions(s32 saveSlotIndex) :
     mUnk_0024(&this->mUnk_0C, saveSlotIndex),
 
     mUnk_10A8(BTN_ID_NONE, 0x8C, 0x01, 0x01, 0x8C, 0x01),
-    mUnk_1108(&mUnk_10A8, 0x8C, 0x00, 0x00020010),
+    mUnk_1108(&mUnk_10A8, 0x8C, 0x00, BMG_ID(BMGGroup_select, 0x10)),
 
     mUnk_1388(BTN_ID_FILE_SELECT_MIC_TEST, 0x8C, 0x08, 0x14, 0x8C, 0x01),
     mUnk_1420(&mUnk_1388),
-    mUnk_1470(&mUnk_1388, 0x8C, 0x07, 0x0002000B),
+    mUnk_1470(&mUnk_1388, 0x8C, 0x07, BMG_ID(BMGGroup_select, 0x0B)),
 
     mUnk_16AC(BTN_ID_FILE_SELECT_CONFIRM, 0x8C, 0x0B, 0x12, 0x8C, 0x00),
     mUnk_1744(&mUnk_16AC),
-    mUnk_1794(&mUnk_16AC, 0x8C, 0x08, 0x00020008),
+    mUnk_1794(&mUnk_16AC, 0x8C, 0x08, BMG_ID(BMGGroup_select, 0x08)),
 
     mUnk_19D0(BTN_ID_RETURN, 0x8C, 0x0C, 0x13, 0x8C, 0x08),
     mUnk_1A68(&mUnk_19D0),
-    mUnk_1AB8(&mUnk_19D0, 0x8C, 0x09, 0x00020007) {
+    mUnk_1AB8(&mUnk_19D0, 0x8C, 0x09, BMG_ID(BMGGroup_select, 0x07)) {
     this->mUnk_1CF5 = false;
     this->mUnk_0C.mList.func_020166cc(&this->mUnk_10A8.mUnk_04);
     this->mUnk_0C.mList.func_020166cc(&this->mUnk_19D0.mUnk_04);
@@ -617,11 +617,22 @@ ARM UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManag
     mUnk_FB8(NULL),
     mUnk_FBC(NULL) {
 
-    SaveSub17 *pSaveSub17 = gSaveManager.GetSaveSlot(this->mSaveSlotIndex)->Get2600Ptr();
+    SaveSlot *pSlot       = gSaveManager.GetSaveSlot(this->mSaveSlotIndex);
+    SaveSub17 *pSaveSub17 = pSlot->Get2600Ptr();
     this->mUnk_FC0        = pSaveSub17->mUnk_00;
     this->mUnk_FC1        = pSaveSub17->mUnk_01;
     this->mUnk_FC2        = pSaveSub17->mUnk_02;
-    this->mUnk_103E       = pSaveSub17[1].mUnk_00;
+
+    u8 *src = (u8 *) pSaveSub17->mUnk_03;
+    u8 *dst = (u8 *) &this->mUnk_FC3[0];
+    for (u32 i = ARRAY_LEN(this->mUnk_FC3); i != 0; i--) {
+        u8 b1                     = *src++;
+        u8 b2                     = *src++;
+        this->mUnk_FC3[i].mUnk_00 = b1;
+        this->mUnk_FC3[i].mUnk_01 = b2;
+    }
+    this->mUnk_FC3[0].mUnk_00 = *src;
+    this->mUnk_103E           = pSaveSub17->mUnk_7E;
 
     param1->mList.func_020166cc(&this->mUnk_490.mUnk_04);
     param1->mList.func_020166cc(&this->mUnk_4F0.mUnk_04);
@@ -738,6 +749,15 @@ ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce414() {
     }
 }
 
+struct stack_struct {
+    /* 00 */ unk16 mUnk_00;
+    /* 02 */ unk16 mUnk_02;
+    /* 04 */ unk8 mUnk_04;
+    /* 05 */ unk8 mUnk_05;
+    /* 06 */ u16 mUnk_06;
+    /* 08 */
+};
+
 // non-matching
 ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce4dc() {
     for (int i = 0; i < ARRAY_LEN(this->mUnk_FB0->mUnk_00); i++) {
@@ -761,24 +781,30 @@ ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce4dc() {
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_FB8->mUnk_00); i++) {
         UnkSystem2_UnkSubSystem1_Derived1 *ptr = this->mUnk_FB8->mUnk_00[i];
-        Vec2s local_2c;
-        Vec2s local_30;
 
-        local_2c.x = this->mUnk_008.mPos.x;
-        local_2c.y = this->mUnk_008.mPos.y;
+        Vec2s sVar1_2;
+        sVar1_2.x = this->mUnk_008.mPos.x;
+        sVar1_2.y = this->mUnk_008.mPos.y;
 
-        func_ov000_02062e44(&local_30, ptr);
+        volatile Vec2s result;
+        Vec2s fetch;
 
-        ptr->mPos.x = this->mUnk_004.x + local_30.x + local_2c.x;
-        ptr->mPos.y = this->mUnk_004.y + local_30.y + local_2c.y;
+        func_ov000_02062e44(&fetch, ptr);
+
+        result.x = this->mUnk_004.x;
+        result.y = this->mUnk_004.y;
+
+        ptr->mPos.x = result.x + fetch.x - sVar1_2.x;
+        ptr->mPos.y = result.y + fetch.y - sVar1_2.y;
     }
 
-    u8 auStack_28[8];
-    auStack_28[6] = 0;
-    MI_CpuFill32(0, auStack_28, 8);
-    auStack_28[7] = 0xFF;
-    auStack_28[6] |= 4;
-    data_0204af1c.func_0201aa44(&this->mUnk_008, &this->mUnk_004, 2, auStack_28);
+    stack_struct sp8;
+    sp8.mUnk_06 = 0x00;
+    MI_CpuFill32(0, &sp8, sizeof(sp8));
+    sp8.mUnk_05 = -1;
+    sp8.mUnk_06 |= 0x04;
+
+    data_0204af1c.func_0201aa44(&this->mUnk_008, &this->mUnk_004, 2, &sp8);
 }
 
 ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce61c(bool decrement) {
@@ -826,11 +852,11 @@ ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce6c8() {
 ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce704(u8 param1) {
     switch (param1) {
         case 0:
-            return 0x0002004C;
+            return BMG_ID(BMGGroup_select, 0x4C);
         case 1:
-            return 0x0002004B;
+            return BMG_ID(BMGGroup_select, 0x4B);
         case 2:
-            return 0x0002004A;
+            return BMG_ID(BMGGroup_select, 0x4A);
         default:
             break;
     }
@@ -841,13 +867,13 @@ ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce704(u8 param1) {
 ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce74c(u8 param1) {
     switch (param1) {
         case 0:
-            return 0x00020050;
+            return BMG_ID(BMGGroup_select, 0x50);
         case 1:
-            return 0x0002004F;
+            return BMG_ID(BMGGroup_select, 0x4F);
         case 2:
-            return 0x0002004D;
+            return BMG_ID(BMGGroup_select, 0x4D);
         case 3:
-            return 0x0002004E;
+            return BMG_ID(BMGGroup_select, 0x4E);
         default:
             break;
     }
@@ -858,9 +884,9 @@ ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce74c(u8 param1) {
 ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce7a0(u8 param1) {
     switch (param1) {
         case 0:
-            return 0x00020049;
+            return BMG_ID(BMGGroup_select, 0x49);
         case 1:
-            return 0x00020048;
+            return BMG_ID(BMGGroup_select, 0x48);
         default:
             break;
     }

@@ -1006,7 +1006,7 @@ from:0x021613d0 kind:load to:0x02165664 module:overlay(63)
 from:0x021613e4 kind:arm_call to:0x0209e7a4 module:overlay(0)
 from:0x02161494 kind:load to:0x021656a8 module:overlay(63)
 from:0x02161498 kind:load to:0x02166230 module:overlay(63)
-from:0x0216149c kind:load to:0x020b3168 module:overlay(0)
+from:0x0216149c kind:load to:0x020b3160 add:0x8 module:overlay(0)
 from:0x021614a0 kind:load to:0x02166304 module:overlay(63)
 from:0x021614c4 kind:arm_call to:0x02161a14 module:overlay(63)
 from:0x02161500 kind:arm_call to:0x01ffb428 module:itcm

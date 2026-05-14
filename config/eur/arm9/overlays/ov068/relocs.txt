@@ -1100,7 +1100,7 @@ from:0x02160da0 kind:arm_call to:0x0207c018 module:overlay(0)
 from:0x02160db0 kind:arm_call to:0x02166364 module:overlay(89)
 from:0x02160dd8 kind:load to:0x021638bc module:overlay(68)
 from:0x02160ddc kind:load to:0x021648bc module:overlay(68)
-from:0x02160de0 kind:load to:0x020b1968 module:overlay(0)
+from:0x02160de0 kind:load to:0x020b1960 add:0x8 module:overlay(0)
 from:0x02160de4 kind:load to:0x02163664 module:overlay(68)
 from:0x02160e50 kind:arm_call to:0x01ffcfcc module:itcm
 from:0x02160e98 kind:arm_call to:0x0209d29c module:overlay(0)

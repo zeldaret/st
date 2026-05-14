@@ -10,11 +10,11 @@
 class MapObjectUnkRKAG : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkRKAG();
 
-    /* 4C */ virtual ~MapObjectUnkRKAG() override;
+    /* 30 */ virtual ~MapObjectUnkRKAG() override;
 
     void func_ov068_02161674(void);
     void func_ov068_02161684(void);

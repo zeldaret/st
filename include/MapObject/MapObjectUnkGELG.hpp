@@ -10,11 +10,11 @@
 class MapObjectUnkGELG : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkGELG();
 
-    /* 4C */ virtual ~MapObjectUnkGELG() override;
+    /* 30 */ virtual ~MapObjectUnkGELG() override;
 
     void func_ov034_0212200c(void);
     void func_ov034_0212202c(void);

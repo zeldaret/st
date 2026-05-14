@@ -16,9 +16,9 @@ public:
 // members 00 04 and 08 are used in data_ov000_020b1d74 to figure out which overlay to load next in slot 1
 class UnkStruct_0204a088 : public UnkStruct_0204a088_Base {
 public:
-    /* 000 */ unk32 mUnk_00; // current index
-    /* 000 */ unk32 mUnk_04; // prev index
-    /* 000 */ unk32 mUnk_08; // next index
+    /* 000 */ unk32 mUnk_00;                             // current index
+    /* 000 */ unk32 mUnk_04;                             // prev index
+    /* 000 */ unk32 mUnk_08;                             // next index
     /* 00C */ FileSelectManager_UnkDrawBase mUnk_0C[23]; // 23 possible overlays
     /* 120 */ u16 mUnk_120;
     /* 122 */ unk16 mUnk_122;

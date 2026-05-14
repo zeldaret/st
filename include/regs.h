@@ -138,6 +138,18 @@ extern u32 _DTCM_BASE; // TODO: Provide address via LCF
 #define REG_OAM_A (*(((u32 *) (0x07000000))))
 #define REG_OAM_B (*(((u32 *) (0x07000400))))
 
+#define REG_GFX_FIFO (*(vu32 *) 0x04000400)
+#define GFX_FIFO_MTX_MODE (*(vu32 *) 0x04000440)
+#define GFX_FIFO_MTX_PUSH (*(vu32 *) 0x04000444)
+#define GFX_FIFO_MTX_POP (*(vu32 *) 0x04000448)
+#define GFX_FIFO_MTX_STORE (*(vu32 *) 0x0400044c)
+#define GFX_FIFO_MTX_RESTORE (*(vu32 *) 0x04000450)
+#define GFX_FIFO_MTX_IDENTITY (*(vu32 *) 0x04000454)
+#define GFX_FIFO_SWAP_BUFFERS (*(vu32 *) 0x04000540)
+#define GFX_FIFO_VIEWPORT (*(vu32 *) 0x04000580)
+#define REG_GFX_RAM_COUNT (*(vu16 *) 0x04000604)
+#define REG_GFX_RAM_COUNT_2 (*(vu16 *) 0x04000606)
+
 #ifdef __cplusplus
 } // extern "C"
 #endif

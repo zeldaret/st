@@ -13,7 +13,7 @@
 extern "C" void func_020196fc();
 extern "C" unk32 CARD_func_0033();
 extern "C" void CARD_func_0034();
-extern "C" void func_01ff8d38();
+extern "C" void FlushGfxQueue();
 extern "C" void func_020132c8();
 extern "C" void func_020132dc();
 extern "C" void func_02013354();
@@ -105,7 +105,7 @@ ARM void Game::Run() {
 
             Mat3p_InitIdentity(&data_027e02c4);
             data_027e0208.mUnk_0FC = 0;
-            func_01ff8d38();
+            FlushGfxQueue();
             this->mpCurrentGameMode->vfunc_18();
             data_0204a110.func_020194dc();
 
@@ -114,7 +114,7 @@ ARM void Game::Run() {
             }
 
 #if IS_JP
-            func_01ff8d38();
+            FlushGfxQueue();
 #endif
 
             if (data_0204e64c.mUnk_00.mUnk_0B == 0) {
@@ -122,7 +122,7 @@ ARM void Game::Run() {
             }
 
             this->mpCurrentGameMode->vfunc_1C();
-            func_01ff8d38();
+            FlushGfxQueue();
             data_0204a110.func_02019454();
             this->mpCurrentGameMode->vfunc_20();
 

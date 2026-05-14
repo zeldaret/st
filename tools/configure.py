@@ -79,7 +79,18 @@ def NitroLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
         "lib": lib_name,
         "mw_version": "dsi/1.2p1",
         "src_dir": "libs/nitro/src",
-        "cflags": config.cflags_base,
+        "cflags": [*config.cflags_base, "-lang c"],
+        "objects": objects,
+    }
+
+
+# Helper function for NNS libraries
+def NNSLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
+    return {
+        "lib": lib_name,
+        "mw_version": "dsi/1.2p1",
+        "src_dir": "libs/nns/src",
+        "cflags": [*config.cflags_base, "-lang c"],
         "objects": objects,
     }
 
@@ -121,6 +132,12 @@ config.warn_missing_source = True
 
 config.libs = [
     GameLib(
+        "ITCM",
+        [
+            Object("ITCM/ITCM_MapObjectManager.cpp"),
+        ]
+    ),
+    GameLib(
         "Main",
         [
             Object("Main/Main.cpp"),
@@ -129,7 +146,7 @@ config.libs = [
             Object("Main/Game/Game.cpp"),
             Object("Main/Player/TouchControl.cpp"),
             Object("Main/System/OverlayManager.cpp"),
-            Object("Main/UnkStruct_ov000_020b4f84_00_Base.cpp"),
+            Object("Main/UnkFileSystem.cpp"),
             Object("Main/System/Random.cpp"),
             Object("Main/Game/GameModeLinkListNode.cpp"),
             Object("Main/func_02017ea4.cpp"),
@@ -146,23 +163,37 @@ config.libs = [
             Object("000_Second/Game/GameModeManagerBase_104.cpp"),
             Object("000_Second/UnkSystem1_Base.cpp"),
             Object("000_Second/UnkSystem1_Derived1.cpp"),
+            Object("000_Second/data_ov000_020af58c.cpp"),
             Object("000_Second/Actor/Actor.cpp"),
             Object("000_Second/Actor/ActorManager.cpp"),
-            Object("000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp"),
-            Object("000_Second/Item/ItemManager.cpp"),
-            Object("000_Second/Item/TreasureManager.cpp"),
-            Object("000_Second/Actor/ActorUnkEFIK.cpp"),
-            Object("000_Second/Actor/ActorUnkEVIC.cpp"),
             Object("000_Second/Actor/ActorUnkSWOB.cpp"),
             Object("000_Second/Actor/ActorUnkSWTM.cpp"),
-            Object("000_Second/MapObject/MapObjectUnkBLCM.cpp"),
-            Object("000_Second/MapObject/MapObjectUnkSWST.cpp"),
+            Object("000_Second/Actor/ActorEventIcon.cpp"),
+            Object("000_Second/Actor/ActorUnkEFIK.cpp"),
+            Object("000_Second/MapObject/MapObjectProfile.cpp"),
+            Object("000_Second/MapObject/MapObjectProfile_Derived2_20.cpp"),
+            Object("000_Second/MapObject/MapObject.cpp"),
+            Object("000_Second/MapObject/MapObjectSwitchStep.cpp"),
+            Object("000_Second/MapObject/MapObjectMiniBlocks.cpp"),
+            Object("000_Second/Cutscene/Cutscene.cpp"),
+            Object("000_Second/Item/ItemManager.cpp"),
+            Object("000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp"),
+            Object("000_Second/Item/TreasureManager.cpp"),
         ]
     ),
     GameLib(
         "Overlay 1",
         [
             Object("001_SceneInit/Actor/ActorManager_001.cpp"),
+            Object("001_SceneInit/Item/ItemManager_001.cpp"),
+            Object("001_SceneInit/CargoManager_001.cpp"),
+            Object("001_SceneInit/PassengerManager_001.cpp"),
+        ]
+    ),
+    GameLib(
+        "Overlay 17",
+        [
+            Object("017_CourseExec/CargoManager_017.cpp"),
         ]
     ),
     GameLib(
@@ -210,6 +241,9 @@ config.libs = [
     GameLib(
         "Overlay 24",
         [
+            Object("024_MainGame/PassengerManager.cpp"),
+            Object("024_MainGame/CargoManager_024.cpp"),
+            Object("024_MainGame/MiscAdvManager.cpp"),
             Object("024_MainGame/Actor/ActorUnkOBPC.cpp"),
         ]
     ),
@@ -344,6 +378,7 @@ config.libs = [
     GameLib(
         "Overlay 31",
         [
+            Object("031_Land/UnkStruct_027e0d34.cpp"),
             Object("031_Land/Actor/ActorRupee.cpp"),
             Object("031_Land/Actor/ActorUnkAROW.cpp"),
             Object("031_Land/Actor/ActorUnkATTG.cpp"),
@@ -373,15 +408,16 @@ config.libs = [
             Object("031_Land/Actor/ActorUnkTGTZ.cpp"),
             Object("031_Land/Actor/ActorUnkTLKT.cpp"),
             Object("031_Land/Actor/ActorUnkZLSL_ZSRS.cpp"),
+            Object("031_Land/MapObject/MapObjectDoorBase.cpp"),
             Object("031_Land/MapObject/MapObjectUnkBLCC.cpp"),
             Object("031_Land/MapObject/MapObjectUnkBMFL.cpp"),
             Object("031_Land/MapObject/MapObjectUnkBREX.cpp"),
             Object("031_Land/MapObject/MapObjectUnkCRWL.cpp"),
-            Object("031_Land/MapObject/MapObjectUnkDRCK.cpp"),
-            Object("031_Land/MapObject/MapObjectUnkDRDS.cpp"),
-            Object("031_Land/MapObject/MapObjectUnkDRKY.cpp"),
-            Object("031_Land/MapObject/MapObjectUnkDRSW.cpp"),
-            Object("031_Land/MapObject/MapObjectUnkDRTC.cpp"),
+            Object("031_Land/MapObject/MapObjectDoorClick.cpp"),
+            Object("031_Land/MapObject/MapObjectDoorDangerSpawn.cpp"),
+            Object("031_Land/MapObject/MapObjectDoorKey.cpp"),
+            Object("031_Land/MapObject/MapObjectDoorSwitch.cpp"),
+            Object("031_Land/MapObject/MapObjectDoorTouch.cpp"),
             Object("031_Land/MapObject/MapObjectUnkEXIT.cpp"),
             Object("031_Land/MapObject/MapObjectUnkGATE.cpp"),
             Object("031_Land/MapObject/MapObjectUnkGRSS.cpp"),
@@ -399,7 +435,8 @@ config.libs = [
             Object("031_Land/MapObject/MapObjectUnkTATZ.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTRED.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTREN.cpp"),
-            Object("031_Land/MapObject/MapObjectUnkTRES.cpp"),
+            Object("031_Land/MapObject/MapObjectTreasureSpawned.cpp"),
+            Object("031_Land/MapObject/MapObjectChestBase.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTREW.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTRWS.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTSUB.cpp"),
@@ -1334,9 +1371,15 @@ config.libs = [
     LibCPP(
         "libcpp",
         [
-            Object("__register_global_object.c")
+            Object("__register_global_object.c"),
         ]
     ),
+    NNSLib(
+        "nns/g3d",
+        [
+            Object("g3d/sbc.c"),
+        ]
+    )
 ]
 
 

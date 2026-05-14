@@ -2,22 +2,26 @@
 
 #include "types.h"
 
-#define ACTOR_INDEX_MASK 0x3fff
+#define ACTOR_INDEX_MASK 0x3FFF
 
 struct ActorRef {
-    /* 0 */ s16 index;
-    /* 2 */ s16 id;
+    /* 0 */ u16 index;
+    /* 2 */ u16 id;
     /* 4 */
 
-    inline void Reset() {
+    void Reset() {
         *(u32 *) this = 0;
     }
 
-    inline bool operator==(const ActorRef &other) const {
+    bool operator==(const ActorRef &other) const {
         return this->index == other.index && this->id == other.id;
     }
 
-    inline bool operator!=(const ActorRef &other) const {
+    bool operator!=(const ActorRef &other) const {
         return !(*this == other);
+    }
+
+    u32 Get32() {
+        return *(u32 *) this;
     }
 };

@@ -10,11 +10,11 @@
 class MapObjectUnkDOPA : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkDOPA();
 
-    /* 4C */ virtual ~MapObjectUnkDOPA() override;
+    /* 30 */ virtual ~MapObjectUnkDOPA() override;
 
     void func_ov033_02119e7c(void);
     void func_ov033_02119ee0(void);

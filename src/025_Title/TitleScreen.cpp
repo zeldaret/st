@@ -6,9 +6,9 @@
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0954.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-#include "nitro/button.h"
 #include "regs.h"
 #include "versions.h"
+#include <nitro/button.h>
 
 #include <string.h>
 

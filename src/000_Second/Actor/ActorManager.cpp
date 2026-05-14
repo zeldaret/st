@@ -15,5 +15,5 @@ static ActorId gActorProfileLookupTable[] = {
 // };
 
 DTCM_BEGIN;
-ActorManager *gActorManager;
+ActorManager *gpActorManager;
 DTCM_END;

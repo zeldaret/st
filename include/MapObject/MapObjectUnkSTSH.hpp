@@ -10,11 +10,11 @@
 class MapObjectUnkSTSH : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkSTSH();
 
-    /* 4C */ virtual ~MapObjectUnkSTSH() override;
+    /* 30 */ virtual ~MapObjectUnkSTSH() override;
 
     void func_ov070_0214a0b8(void);
     void func_ov070_0214a1a0(void);

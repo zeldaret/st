@@ -10,11 +10,11 @@
 class MapObjectUnkSKBN : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkSKBN();
 
-    /* 4C */ virtual ~MapObjectUnkSKBN() override;
+    /* 30 */ virtual ~MapObjectUnkSKBN() override;
 
     void func_ov031_0210556c(void);
     void func_ov031_02105648(void);

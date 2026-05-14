@@ -10,6 +10,9 @@
 src/Main/Main.cpp:
     .text       start:0x02000800 end:0x02000bdc
 
+libs/nns/src/g3d/sbc.c:
+    .text       start:0x0200c8cc end:0x0200e2ec
+
 src/Main/System/SysNew.cpp:
     .text       start:0x02011e10 end:0x0201200c
 
@@ -25,10 +28,9 @@ src/Main/Player/TouchControl.cpp:
 src/Main/System/OverlayManager.cpp:
     .text       start:0x02014800 end:0x02014948
 
-src/Main/UnkStruct_ov000_020b4f84_00_Base.cpp:
-    complete
-    .text       start:0x020154c0 end:0x020155c0
-    .data       start:0x02045444 end:0x02045460
+src/Main/UnkFileSystem.cpp:
+    .text       start:0x020154b0 end:0x02015720
+    .data       start:0x02045444 end:0x020454d0
 
 src/Main/System/Random.cpp:
     .text       start:0x0201631c end:0x0201639c
@@ -67,6 +69,14 @@ libs/c/src/ansi_files.c:
     .text       start:0x02034da0 end:0x02034e04
     .data       start:0x02045c1c end:0x02045d00
     .bss        start:0x02052d20 end:0x02053020
+
+libs/c/src/float.c:
+    complete
+    .data       start:0x02045d00 end:0x02045d04
+
+libs/c/src/locale.c:
+    complete
+    .data       start:0x02045d04 end:0x02045f20
 
 libs/c/src/arith.c:
     complete
@@ -113,14 +123,6 @@ libs/c/src/string.c:
 libs/c/src/wmem.c:
     complete
     .text       start:0x02035728 end:0x02035760
-
-libs/c/src/float.c:
-    complete
-    .data       start:0x02045d00 end:0x02045d04
-
-libs/c/src/locale.c:
-    complete
-    .data       start:0x02045d04 end:0x02045f20
 
 libs/c/src/wprintf.c:
     .text       start:0x02035760 end:0x0203768c

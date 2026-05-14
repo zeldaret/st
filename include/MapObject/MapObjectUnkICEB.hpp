@@ -10,11 +10,11 @@
 class MapObjectUnkICEB : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkICEB();
 
-    /* 4C */ virtual ~MapObjectUnkICEB() override;
+    /* 30 */ virtual ~MapObjectUnkICEB() override;
 
     void func_ov094_02173c10(void);
     void func_ov094_02173c40(void);

@@ -10,11 +10,11 @@
 class MapObjectUnkMZFE : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkMZFE();
 
-    /* 4C */ virtual ~MapObjectUnkMZFE() override;
+    /* 30 */ virtual ~MapObjectUnkMZFE() override;
 
     void func_ov027_02144378(void);
     void func_ov027_0214454c(void);

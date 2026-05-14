@@ -17,7 +17,7 @@ AccessModifierOffset: -4
 
 AlignConsecutiveAssignments: Consecutive
 AlignEscapedNewlines: LeftWithLastLine
-AlignTrailingComments: Leave
+AlignTrailingComments: true
 
 BreakConstructorInitializers: AfterColon
 

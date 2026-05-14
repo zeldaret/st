@@ -10,11 +10,11 @@
 class MapObjectUnkPLFM : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkPLFM();
 
-    /* 4C */ virtual ~MapObjectUnkPLFM() override;
+    /* 30 */ virtual ~MapObjectUnkPLFM() override;
 
     void func_ov026_02108468(void);
     void func_ov026_0210847c(void);

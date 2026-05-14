@@ -27,7 +27,7 @@ double ldexp(double x, int n) {
     hx = __HI(x);
     lx = __LO(x);
     k  = (hx & 0x7ff00000) >> 20; /* extract exponent */
-    if (k == 0) { /* 0 or subnormal x */
+    if (k == 0) {                 /* 0 or subnormal x */
         if ((lx | (hx & 0x7fffffff)) == 0) {
             return x; /* +-0 */
         }
@@ -51,7 +51,7 @@ double ldexp(double x, int n) {
         return x;
     }
     if (k <= -54) {
-        if (n > 50000) { /* in case integer overflow in n+k */
+        if (n > 50000) {                   /* in case integer overflow in n+k */
             return big * copysign(big, x); /*overflow*/
         } else {
             return tiny * copysign(tiny, x); /*underflow*/

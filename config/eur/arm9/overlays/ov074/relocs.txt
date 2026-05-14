@@ -526,7 +526,7 @@ from:0x02155508 kind:arm_call to:0x01ff8e58 module:itcm
 from:0x0215551c kind:arm_call to:0x01ff8e58 module:itcm
 from:0x02155534 kind:load to:0x0203e964 module:main
 from:0x02155538 kind:load to:0x027e0964 module:dtcm
-from:0x0215553c kind:load to:0x027e0254 module:dtcm
+from:0x0215553c kind:load to:0x027e0208 add:0x4c module:dtcm
 from:0x0215564c kind:load to:0x02162a14 module:overlay(74)
 from:0x02155660 kind:arm_call to:0x02057c98 module:overlay(0)
 from:0x0215566c kind:arm_call to:0x02057c98 module:overlay(0)

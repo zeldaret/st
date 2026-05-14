@@ -10,11 +10,11 @@
 class MapObjectUnkGTSN : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkGTSN();
 
-    /* 4C */ virtual ~MapObjectUnkGTSN() override;
+    /* 30 */ virtual ~MapObjectUnkGTSN() override;
 
     void func_ov079_02156e14(void);
     void func_ov079_02156f24(void);

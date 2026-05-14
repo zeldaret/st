@@ -10,11 +10,11 @@
 class MapObjectUnkFLSP : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkFLSP();
 
-    /* 4C */ virtual ~MapObjectUnkFLSP() override;
+    /* 30 */ virtual ~MapObjectUnkFLSP() override;
 
     void func_ov070_021442f4(void);
     void func_ov070_0214433c(void);

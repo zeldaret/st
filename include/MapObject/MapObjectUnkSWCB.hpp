@@ -10,11 +10,11 @@
 class MapObjectUnkSWCB : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkSWCB();
 
-    /* 4C */ virtual ~MapObjectUnkSWCB() override;
+    /* 30 */ virtual ~MapObjectUnkSWCB() override;
 
     void func_ov058_02151a68(void);
     void func_ov058_02151a7c(void);

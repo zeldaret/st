@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Item/ItemManager.hpp"
+#include "MainGame/MiscAdvManager.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkMemFuncs.h"
@@ -155,11 +156,7 @@ public:
 
     /* 184 */ SaveUnknown184 mUnk_184;
 
-    /* C94 */ unk8 mUnk_C94[0x84];
-    /* D18 */ unk32 mUnk_D18;
-    /* D1C */ unk32 mUnk_D1C;
-    /* D20 */ unk16 mSongs;
-    /* D22 */ unk16 mUnk_D22;
+    /* C94 */ MiscAdvManager mMiscAdvManager;
     /* D24 */ unk8 mUnk_00_SaveUnknownD24[0x48];
     /* D6C */ unk8 mUnk_48_SaveUnknownD24[8];
     /* D74 */ unk16 mUnk_50_SaveUnknownD24;
@@ -168,9 +165,9 @@ public:
     /* D8C */
 
     SaveUnknown14C() {
-        mUnk_D18 = 0;
-        mUnk_D1C = 0;
-        mSongs   = 0;
+        this->mMiscAdvManager.mLettersRead = 0;
+        this->mMiscAdvManager.mStampsFlag  = 0;
+        this->mMiscAdvManager.mSongs       = 0;
         MI_CpuFill32(0, this->mUnk_48_SaveUnknownD24, sizeof(this->mUnk_48_SaveUnknownD24));
         this->mUnk_50_SaveUnknownD24 = 0;
     }
@@ -254,14 +251,19 @@ public:
     void func_ov019_020d15cc();
 };
 
+struct SaveSub17_03 {
+    /* 00 */ u8 mUnk_00;
+    /* 01 */ u8 mUnk_01;
+    /* 02 */
+};
+
 class SaveSub17 {
 public:
     // /* 00 */ unk8 mUnk_00[0x7E];
     /* 00 */ u8 mUnk_00;
     /* 01 */ u8 mUnk_01;
     /* 02 */ u8 mUnk_02;
-    /* 03 */ u8 mUnk_03; // bool?
-    /* 04 */ STRUCT_PAD(0x04, 0x7E);
+    /* 03 */ SaveSub17_03 mUnk_03[61];
     /* 7E */ u16 mUnk_7E;
 };
 
@@ -356,10 +358,31 @@ public:
     void func_ov019_020d1b14(unk32 param1);
 };
 
+class SaveManager_21C {
+public:
+    /* 00 */ unk32 mUnk_00;
+
+    unk32 func_ov000_020a1000();
+};
+
+struct SaveManager_36 {
+    /* 00 */ u8 mKeyAmount;
+    /* 01 */ STRUCT_PAD(0x01, 0x08);
+    /* 08 */
+};
+
+struct SaveManager_00 {
+    /* 000 */ STRUCT_PAD(0x00, 0x36);
+    /* 036 */ SaveManager_36 mUnk_36[0x60];
+    /* 336 */
+    /* BB8 */
+};
+
 class SaveManager {
 public:
-    /* 000 */ void *mUnk_000; // related to mUnk_184
-    /* 000 */ unk8 mUnk_004[0x204 - 0x004];
+    /* 000 */ SaveManager_00 *mUnk_000; // related to mUnk_184, allocated from func_ov001_020ba670
+    /* 004 */ unk32 mUnk_004;
+    /* 008 */ STRUCT_PAD(0x08, 0x204);
     /* 204 */ unk16 mUnk_204;
     /* 206 */ unk16 mUnk_206;
     /* 208 */ unk16 mUnk_208;
@@ -369,7 +392,8 @@ public:
     /* 210 */ unk32 mUnk_210;
     /* 214 */ unk32 mUnk_214;
     /* 218 */ SaveFile *mpSaveFile;
-    /* 21C */ unk8 mUnk_21C[0x23C - 0x21C];
+    /* 21C */ SaveManager_21C mUnk_21C;
+    /* 220 */ STRUCT_PAD(0x220, 0x23C);
     /* 23C */ PTMF<SaveFile>::PTMFCallback mUnk_23C;
     /* 244 */ unk32 mUnk_244;
 

@@ -10,11 +10,12 @@
 class MapObjectUnkWPHL : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */ STRUCT_PAD(0x40, 0x8C);
+    /* 8C */
 
     MapObjectUnkWPHL();
 
-    /* 4C */ virtual ~MapObjectUnkWPHL() override;
+    /* 30 */ virtual ~MapObjectUnkWPHL() override;
 
     void func_ov034_02121854(void);
     void func_ov034_021218f0(void);

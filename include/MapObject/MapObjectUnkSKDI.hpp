@@ -10,11 +10,11 @@
 class MapObjectUnkSKDI : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkSKDI();
 
-    /* 4C */ virtual ~MapObjectUnkSKDI() override;
+    /* 30 */ virtual ~MapObjectUnkSKDI() override;
 
     void func_ov031_02106190(void);
     void func_ov031_021061dc(void);

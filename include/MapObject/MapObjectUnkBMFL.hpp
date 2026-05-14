@@ -10,11 +10,11 @@
 class MapObjectUnkBMFL : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkBMFL();
 
-    /* 4C */ virtual ~MapObjectUnkBMFL() override;
+    /* 30 */ virtual ~MapObjectUnkBMFL() override;
 
     void func_ov031_021025c4(void);
     void func_ov031_02102708(void);

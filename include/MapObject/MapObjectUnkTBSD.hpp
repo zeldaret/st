@@ -10,11 +10,11 @@
 class MapObjectUnkTBSD : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkTBSD();
 
-    /* 4C */ virtual ~MapObjectUnkTBSD() override;
+    /* 30 */ virtual ~MapObjectUnkTBSD() override;
 
     void func_ov092_02167c00(void);
     void func_ov092_02167c58(void);

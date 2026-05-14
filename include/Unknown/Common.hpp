@@ -2,10 +2,12 @@
 
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkFileSystem.hpp"
 #include "global.h"
-#include "nitro/math.h"
-#include "nns/text.h"
+#include "profile.hpp"
 #include "types.h"
+#include <nitro/math.h>
+#include <nns/text.h>
 
 extern "C" void func_0201e8d4(void *param1, void *param2);
 
@@ -362,7 +364,7 @@ public:
 #define BTN_ID_RAIL_MAP_OCEAN_LOST_AT_SEA_STATION 0x77
 #define BTN_ID_RAIL_MAP_SNOW_SLIPPERY_STATION 0x78
 
-#define BTN_ID_SHOP_QUIT 0x81 // quit shop
+#define BTN_ID_SHOP_QUIT 0x81   // quit shop
 #define BTN_ID_SHOP_RETURN 0x82 // quit item preview
 #define BTN_ID_SHOP_BUY 0x83
 #define BTN_ID_SHOP_ITEM_1 0x84
@@ -469,15 +471,16 @@ public:
 
 class UnkSystem2_UnkSubSystem1_Base {
 public:
+    /* 00 (vtable) */
     /* 04 */ GameModeLinkList<UnkSystem2_UnkSubSystem1_Base> mUnk_04;
     /* 0C */ void *mUnk_0C;
     /* 10 */ unk32 mButtonID;
     /* 14 */ Vec2s mPos; // image position (among other things)
     /* 18 */ STRUCT_PAD(0x18, 0x24);
     /* 24 */ Vec2us mPosOffset; // used to shift the button when selected
-    /* 28 */ bool mUnk_28; // selected highlight effect when set to true
-    /* 29 */ bool mUnk_29; // related to having the button selected
-    /* 2A */ bool mUnk_2A; // disables button action
+    /* 28 */ bool mUnk_28;      // selected highlight effect when set to true
+    /* 29 */ bool mUnk_29;      // related to having the button selected
+    /* 2A */ bool mUnk_2A;      // disables button action
     /* 2A */ bool mUnk_2B;
     /* 2C */ bool mUnk_2C;
     /* 2D */ unk8 mUnk_2D;
@@ -521,9 +524,9 @@ public:
 class UnkSystem2_UnkSubSystem1_Derived2 : public UnkSystem2_UnkSubSystem1_Base {
 public:
     /* 00 (vtable) */
-    /* 30 */ void *mUnk_30; // related to the background texture draw (idle)
+    /* 30 */ void *mUnk_30;                    // related to the background texture draw (idle)
     /* 34 */ UnkSystem2_UnkSubSystem7 mUnk_34; // related to the texture draw
-    /* 38 */ unk16 mUnk_38; // related to the texture draw
+    /* 38 */ unk16 mUnk_38;                    // related to the texture draw
     /* 3C */ Vec2us mUnk_3A; // overlaid elements position (text, icons etc...), relative to background position
     /* 40 */ unk16 mUnk_3E;
     /* 40 */ unk32 mUnk_40;
@@ -634,8 +637,8 @@ class UnkSystem2_UnkSubSystem5_Base {
 public:
     /* 000 (vtable) */
     /* 004 */ wchar_t *mpString; // in this context it points to the player's name
-    /* 008 */ unk16 mUnk_008; // UnkSystem2_UnkSubSystem5()'s param1
-    /* 00A */ unk16 mUnk_00A; // UnkSystem2_UnkSubSystem5()'s param2
+    /* 008 */ unk16 mUnk_008;    // UnkSystem2_UnkSubSystem5()'s param1
+    /* 00A */ unk16 mUnk_00A;    // UnkSystem2_UnkSubSystem5()'s param2
     /* 00C */ void *mUnk_00C;
     /* 010 */ UnkSystem2_UnkSubSystem5_Base_10 mUnk_010;
     /* 130 */ STRUCT_PAD(0x130, 0x140);
@@ -766,17 +769,6 @@ public:
     void func_02015460(const char *param1, void *param2, unk32 param3);
 };
 
-class UnkSystem4 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */
-
-    ~UnkSystem4();
-};
-
 class UnkStruct2 {
 public:
     /* 00 */ unk8 pad[0x10];
@@ -791,9 +783,9 @@ struct UnkResult {
     void *mUnk_00;
     void *mUnk_04;
     void *mUnk_08;
-    UnkSystem4 mUnk_0C;
-    UnkSystem4 mUnk_1C;
-    UnkSystem4 mUnk_2C;
+    UnkFileSystem3 mUnk_0C;
+    UnkFileSystem3 mUnk_1C;
+    UnkFileSystem3 mUnk_2C;
 
     UnkResult();
     UnkResult(const char *path);
@@ -831,7 +823,7 @@ public:
     /* 4C */ unk32 mUnk_4C;
     /* 50 */ unk32 mUnk_50;
     /* 54 */ unk32 mUnk_54;
-    /* 58 */ unk32 mUnk_58; // another timer?
+    /* 58 */ unk32 mUnk_58;  // another timer?
     /* 5C */ Vec2us mUnk_5C; // position of the animated texture
     /* 60 */ unk32 mUnk_60;
     /* 64 */ unk32 mUnk_64;
@@ -876,4 +868,250 @@ struct UnkStruct_StackTitleScreen {
 
     void func_ov000_02059270(unk32 param1, char *param2, unk32 param3);
     void func_ov000_02059288(unk32 param1, char *param2, unk32 param3);
+};
+
+typedef void (*UnkSystem4_UnkCallback)(void);
+
+class UnkSystem4_vfunc_1C_B4 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 00 */ STRUCT_PAD(0x04, 0x4C);
+    /* 4C */ unk32 mUnk_4C;
+    /* 50 */ unk32 mUnk_50;
+    /* 54 */ unk32 mUnk_54;
+};
+
+class UnkSystem4_vfunc_1C {
+public:
+    /* 00 */ u8 *mUnk_00;
+    /* 04 */ unk32 *mUnk_04;
+    /* 08 */ STRUCT_PAD(0x08, 0xB4);
+    /* B4 */ UnkSystem4_vfunc_1C_B4 *mUnk_B4;
+    /* 00 */ unk32 *mUnk_B8;
+};
+
+class UnkSystem4 {
+public:
+    /* 00 (vtable) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 *mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 *mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 *mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ unk32 *mUnk_20;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ unk32 *mUnk_28;
+    /* 2C */ unk32 mUnk_2C;
+    /* 30 */ unk32 mUnk_30;
+    /* 34 */ unk32 mUnk_34;
+    /* 38 */ unk32 mUnk_38;
+    /* 3C */ unk32 mUnk_3C;
+    /* 40 */ unk32 mUnk_40;
+    /* 44 */ unk32 mUnk_44;
+    /* 48 */ unk32 mUnk_48;
+    /* 4C */ unk32 mUnk_4C;
+    /* 50 */ unk32 mUnk_50;
+    /* 54 */ unk32 mUnk_54;
+    /* 58 */ unk32 mUnk_58;
+    /* 5C */ unk32 mUnk_5C;
+    /* 60 */
+
+    UnkSystem4(unk32 param1); // func_ov000_02057b54
+
+    // data_ov000_020b1a6c
+    /* 00 */ virtual ~UnkSystem4();
+    /* 08 */ virtual void vfunc_08(void *param1); // resource thing? (GetUnkPointer1_Impl as param1)
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10();
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2);
+    /* 18 */ virtual void vfunc_18();
+    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1);
+    /* 20 */ virtual void vfunc_20();
+
+    void func_ov000_02057c38(unk32 param1, unk32 param2);
+    void func_ov000_0209a7b8(void *param1, UnkSystem4_UnkCallback param2);
+};
+
+struct UnkResourceStruct_Base {
+    /* 00 */ void *mUnk_00;
+    /* 04 */ void *mUnk_04;
+    /* 08 */ u8 mUnk_08;
+    /* 09 */ u8 mUnk_09;
+    /* 0A */ u8 mUnk_0A;
+    /* 0B */ u8 mUnk_0B;
+    /* 0C */
+};
+
+struct UnkResourceStruct : public UnkResourceStruct_Base {
+    /* 0C */ unk8 mUnk_0C;
+    /* 0D */ unk8 mUnk_0D;
+    /* 0E */ u16 mUnk_0E;
+    /* 10 */
+};
+
+static inline void *GetUnkPointer1_Impl(UnkResourceStruct *ptr) {
+    if (ptr != NULL) {
+        u8 *temp_r1 = (u8 *) ptr + 8;
+        u32 *var_r0;
+        u8 zero = 0;
+
+        if (temp_r1 != NULL && ptr->mUnk_09 > zero) {
+            var_r0 = (u32 *) (temp_r1 + *(u16 *) ((u8 *) ptr + 14) + 4);
+        } else {
+            var_r0 = NULL;
+        }
+
+        if (var_r0 != NULL) {
+            return (void *) ((u8 *) ptr + *var_r0);
+        }
+    }
+
+    return NULL;
+}
+
+template <typename T> static inline void *GetUnkPointer1() {
+    return GetUnkPointer1_Impl((UnkResourceStruct *) GET_PROFILE_20_50(T));
+}
+
+template <typename T> static inline void *GetUnkPointer2(unk32 param1, u32 resId) {
+    T *pProfile = GET_PROFILE(T);
+    pProfile->func_ov000_0209ccd8(param1, resId);
+    return GetUnkPointer1_Impl((UnkResourceStruct *) pProfile->mUnk_20[param1]->mUnk_50);
+}
+
+class UnkSystem5 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */
+
+    UnkSystem5(void *param1, unk32 param2); // func_ov000_0205778c
+
+    void func_01ffc3b4();
+
+    void func_ov000_020577a4(unk32 param1, unk32 param2, unk32 param3);
+    void func_ov000_020577f8(unk32 param1);
+};
+
+// related to UnkSystem5?
+class UnkSystem6 {
+public:
+    /* 00 (vtable) */
+    /* 04 */
+
+    UnkSystem6() {}
+
+    // data_ov000_020b1a98
+    /* 00 */ virtual ~UnkSystem6();
+    /* 08 */ virtual void vfunc_08(void *param1); // resource thing like UnkSystem4?
+    /* 0C */ virtual void vfunc_0C()                             = 0;
+    /* 10 */ virtual void vfunc_10()                             = 0;
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2) = 0;
+    /* 18 */ virtual void vfunc_18()                             = 0;
+    /* 1C */
+};
+
+class UnkSystem6_Derived1 : public UnkSystem6 {
+public:
+    /* 00 (base) */
+    /* 04 */ void *mUnk_04;
+
+    UnkSystem6_Derived1(void *ptr) :
+        mUnk_04(ptr) {}
+
+    // data_ov000_020b1a48
+    /* 00 */ virtual ~UnkSystem6_Derived1() override {}
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2) override;
+    /* 18 */ virtual void vfunc_18() override;
+};
+
+class UnkSystem6_Derived2 : public UnkSystem6_Derived1 {
+public:
+    /* 00 (base) */
+    /* 08 */
+
+    UnkSystem6_Derived2() :
+        UnkSystem6_Derived1(NULL) {}
+
+    UnkSystem6_Derived2(void *ptr) :
+        UnkSystem6_Derived1(ptr) {}
+
+    // data_ov000_020b1968
+    /* 00 */ virtual ~UnkSystem6_Derived2() {}
+    /* 0C */ virtual void vfunc_0C() override;
+};
+
+class MapObject;
+
+struct UnkStackStruct1 {
+    /* 00 */ unk8 mUnk_00;
+    /* 01 */ unk8 mUnk_01;
+    /* 02 */ unk8 mUnk_02;
+    /* 03 */ unk8 mUnk_03;
+    /* 04 */ void *mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ Vec3p mUnk_0C;
+    /* 18 */ unk16 mUnk_18;
+    /* 1A */ unk16 mUnk_1A;
+    /* 1C */ unk16 mUnk_1C;
+    /* 1E */ unk16 mUnk_1E;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ Vec3p mUnk_24;
+    /* 30 */ unk16 mUnk_30;
+    /* 32 */ unk16 mUnk_32;
+    /* 34 */ unk16 mUnk_34;
+    /* 36 */ unk16 mUnk_36;
+    /* 38 */ u16 mUnk_38;
+    /* 3A */ unk8 mUnk_3A;
+    /* 3B */ unk8 mUnk_3B;
+    /* 3C */ unk32 mUnk_3C;
+    /* 40 */
+};
+extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
+
+struct UnkSystem7_UnkStruct_00 {
+    /* 00 */ STRUCT_PAD(0x00, 0x24);
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ STRUCT_PAD(0x28, 0xA4);
+    /* A4 */ unk16 mUnk_A4;
+
+    void func_ov000_02052c48(Vec3p *param1, Vec3p *param2);
+};
+
+class UnkSystem7 {
+public:
+    /* 00 */ UnkSystem7_UnkStruct_00 *mUnk_00;
+    /* 04 */
+
+    UnkSystem7(UnkSystem7_UnkStruct_00 *param1) {
+        this->mUnk_00 = param1;
+    }
+
+    ~UnkSystem7() {
+        this->func_ov000_020a0304();
+    }
+
+    void func_ov000_020a0304(void);
+    void func_ov000_020a0334();
+};
+
+class UnkStruct_PlayerGet_ec : public UnkSystem7 {
+public:
+    /* 00 (base) */
+    /* 04 */
+
+    UnkStruct_PlayerGet_ec(UnkSystem7_UnkStruct_00 *param1) :
+        UnkSystem7(param1) {}
+
+    UnkStruct_PlayerGet_ec();
+    ~UnkStruct_PlayerGet_ec();
 };

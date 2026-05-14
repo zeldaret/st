@@ -83,7 +83,7 @@ double x;
             return (x - x) / zero;
         } /* log(-#) = NaN */
         k -= 54;
-        x *= two54; /* subnormal number, scale up x */
+        x *= two54;   /* subnormal number, scale up x */
         hx = __HI(x); /* high word of x */
     }
     if (hx >= 0x7ff00000) {

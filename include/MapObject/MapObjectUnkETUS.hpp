@@ -10,11 +10,11 @@
 class MapObjectUnkETUS : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkETUS();
 
-    /* 4C */ virtual ~MapObjectUnkETUS() override;
+    /* 30 */ virtual ~MapObjectUnkETUS() override;
 
     void func_ov091_021686a4(void);
     void func_ov091_0216872c(void);

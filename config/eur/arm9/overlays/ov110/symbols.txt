@@ -8,12 +8,12 @@ _ZN9PlayerGet8vfunc_10Eii kind:function(arm,size=0x6d0) addr:0x021855e4
 _ZN9PlayerGet8vfunc_18Eiii kind:function(arm,size=0x7c) addr:0x02185cb4
 _ZN22UnkStruct_PlayerGet_ecC1Ev kind:function(arm,size=0xc) addr:0x02185d30
 _ZN21UnkStruct_027e0ce0_3419func_ov110_02185d3cEi kind:function(thumb,size=0x66) addr:0x02185d3c
-_ZN11ItemManager19func_ov110_02185da4Ei kind:function(arm,size=0x10) addr:0x02185da4
-_ZN11ItemManager19func_ov110_02185db4Ei kind:function(arm,size=0x10) addr:0x02185db4
+_ZN11ItemManager16GetBmgIDFromItemEi kind:function(arm,size=0x10) addr:0x02185da4
+_ZN11ItemManager18GetAdvFlagFromItemEi kind:function(arm,size=0x10) addr:0x02185db4
 data_ov110_02185dc4 kind:data(any) addr:0x02185dc4
 data_ov110_02185dc8 kind:data(any) addr:0x02185dc8
-data_ov110_02185de8 kind:data(any) addr:0x02185de8
-data_ov110_02185fbc kind:data(any) addr:0x02185fbc
+sBMGItemMap kind:data(any) addr:0x02185de8
+sAdvFlagItemMap kind:data(any) addr:0x02185fbc
 data_ov110_021860c4 kind:data(any) addr:0x021860c4 ambiguous
 __sinit_PlayerGet.cpp kind:function(arm,size=0x2c) addr:0x02186190
 .p__sinit_PlayerGet.cpp kind:data(word) addr:0x021861bc

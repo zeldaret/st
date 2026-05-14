@@ -27,14 +27,14 @@ public:
     void func_ov000_020669dc();
     unk32 func_ov000_02066a08(UnkStruct5 *param1);
 
-    /* 00 */ virtual void vfunc_00(unk32 param1); // func_ov000_020667d8
-    /* 04 */ virtual void vfunc_04(); // func_ov000_020667f4
-    /* 08 */ virtual void vfunc_08(unk32 param1); // func_ov000_020669cc
-    /* 0C */ virtual unk32 vfunc_0C(); // func_ov000_020669d0
-    /* 10 */ virtual unk32 vfunc_10(u16 *param1); // func_ov000_02066a5c
-    /* 14 */ virtual unk32 vfunc_14(void *param1); // func_ov000_02066dfc
-    /* 18 */ virtual void vfunc_18(); // func_ov000_020669d8
-    /* 1C */ virtual unk32 vfunc_1C(u32 param1, unk32 param2, unk32 param3); // func_ov000_02067234
+    /* 00 */ virtual void vfunc_00(unk32 param1);                              // func_ov000_020667d8
+    /* 04 */ virtual void vfunc_04();                                          // func_ov000_020667f4
+    /* 08 */ virtual void vfunc_08(unk32 param1);                              // func_ov000_020669cc
+    /* 0C */ virtual unk32 vfunc_0C();                                         // func_ov000_020669d0
+    /* 10 */ virtual unk32 vfunc_10(u16 *param1);                              // func_ov000_02066a5c
+    /* 14 */ virtual unk32 vfunc_14(void *param1);                             // func_ov000_02066dfc
+    /* 18 */ virtual void vfunc_18();                                          // func_ov000_020669d8
+    /* 1C */ virtual unk32 vfunc_1C(u32 param1, unk32 param2, unk32 param3);   // func_ov000_02067234
     /* 20 */ virtual unk32 vfunc_20(unk32 param1, unk32 param2, unk32 param3); // func_ov000_0206723c
     /* 24 */
 };
@@ -54,9 +54,9 @@ public:
     void func_ov000_0206738c();
 
     /* 08 */ virtual void vfunc_08(unk32 param1) override; // func_ov000_020673c8
-    /* 0C */ virtual unk32 vfunc_0C() override; // func_ov000_02067434
+    /* 0C */ virtual unk32 vfunc_0C() override;            // func_ov000_02067434
     /* 10 */ virtual unk32 vfunc_10(u16 *param1) override; // func_ov000_02067474
-    /* 24 */ virtual ~UnkSystem1_ov000_Derived1(); // func_ov000_020672ac & func_ov000_020672f4
+    /* 24 */ virtual ~UnkSystem1_ov000_Derived1();         // func_ov000_020672ac & func_ov000_020672f4
 };
 
 // data_ov000_020b489c
@@ -66,8 +66,8 @@ public:
 
     UnkSystem1_ov000_Derived2(unk32 param1, unk32 param2);
 
-    /* 08 */ virtual void vfunc_08(unk32 param1) override; // func_ov000_0209fbec
-    /* 0C */ virtual unk32 vfunc_0C() override; // func_ov000_0209fcdc
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;  // func_ov000_0209fbec
+    /* 0C */ virtual unk32 vfunc_0C() override;             // func_ov000_0209fcdc
     /* 24 */ virtual ~UnkSystem1_ov000_Derived2() override; // func_ov000_0209fb18 & func_ov000_0209fb5c
 };
 
@@ -78,9 +78,9 @@ public:
 
     UnkSystem1_ov010(unk32 param1, UnkStruct_ov000_02067bc4::UnkStruct1 *param2);
 
-    /* 08 */ virtual void vfunc_08(unk32 param1) override; // func_ov010_020b8844
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;                            // func_ov010_020b8844
     /* 1C */ virtual unk32 vfunc_1C(u32 param1, unk32 param2, unk32 param3) override; // func_ov010_020b8878
-    /* 24 */ virtual ~UnkSystem1_ov010() override; // func_ov010_020b65f0
+    /* 24 */ virtual ~UnkSystem1_ov010() override;                                    // func_ov010_020b65f0
 };
 
 class UnkSystem1_ov010_Derived1 : public UnkSystem1_ov010 {
@@ -107,7 +107,7 @@ public:
 
     UnkSystem1_ov016_Derived1(unk32 param1, UnkStruct_ov000_02067bc4::UnkStruct1 *param2);
     /* 24 */ virtual ~UnkSystem1_ov016_Derived1() override; // func_ov016_020b7664
-    /* 2C */ virtual void vfunc_2C(); // func_ov016_020b776c
+    /* 2C */ virtual void vfunc_2C();                       // func_ov016_020b776c
 };
 
 // data_ov019_020d1e00
@@ -128,7 +128,7 @@ public:
     /* 14 */ SaveFile *mUnk_14;
     /* 18 */ unk16 mUnk_18;
     /* 1A */ unk8 mUnk_1A; // bool?
-    /* 1B */ u8 mUnk_1B; // bool?
+    /* 1B */ u8 mUnk_1B;   // bool?
     /* 1C */
 
     UnkSystem1_ov019_Derived1();
@@ -138,10 +138,10 @@ public:
     unk32 func_ov019_020c5540(bool param1, unk16 param2);
     void func_ov019_020c5590(unk32 param1, unk32 param2, unk32 param3);
 
-    /* 08 */ virtual void vfunc_08(unk32 param1) override; // func_ov019_020c523c
-    /* 1C */ virtual unk32 vfunc_1C(u32 param1, unk32 param2, unk32 param3) override; // func_ov019_020c5284
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;                              // func_ov019_020c523c
+    /* 1C */ virtual unk32 vfunc_1C(u32 param1, unk32 param2, unk32 param3) override;   // func_ov019_020c5284
     /* 20 */ virtual unk32 vfunc_20(unk32 param1, unk32 param2, unk32 param3) override; // func_ov019_020c5430
-    /* 24 */ WEAK virtual ~UnkSystem1_ov019_Derived1() override {} // func_ov019_020c5614
+    /* 24 */ WEAK virtual ~UnkSystem1_ov019_Derived1() override {}                      // func_ov019_020c5614
 };
 
 class UnkSystem1_ov019_2 : public UnkSystem1_ov000_Derived1 {
@@ -167,9 +167,9 @@ public:
     UnkSystem1_ov019_Derived2();
 
     // data_ov019_020d2440 vtable
-    /* 08 */ virtual void vfunc_08(unk32 param1) override; // func_ov019_020d035c
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;                            // func_ov019_020d035c
     /* 1C */ virtual unk32 vfunc_1C(u32 param1, unk32 param2, unk32 param3) override; // func_ov019_020d03a4
-    /* 24 */ WEAK virtual ~UnkSystem1_ov019_Derived2() override {} // func_ov019_020d0594
+    /* 24 */ WEAK virtual ~UnkSystem1_ov019_Derived2() override {}                    // func_ov019_020d0594
 };
 
 class UnkSystem1_ov019_3 : public UnkSystem1_ov000_Derived1 {

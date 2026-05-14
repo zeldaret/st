@@ -10,11 +10,11 @@
 class MapObjectUnkSTAT : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkSTAT();
 
-    /* 4C */ virtual ~MapObjectUnkSTAT() override;
+    /* 30 */ virtual ~MapObjectUnkSTAT() override;
 
     void func_ov063_0215f6d0(void);
     void func_ov063_0215f710(void);

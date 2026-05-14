@@ -10,11 +10,11 @@
 class MapObjectUnkEXIT : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkEXIT();
 
-    /* 4C */ virtual ~MapObjectUnkEXIT() override;
+    /* 30 */ virtual ~MapObjectUnkEXIT() override;
 
     void func_ov031_021005fc(void);
     void func_ov031_021006d4(void);

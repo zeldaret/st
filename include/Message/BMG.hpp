@@ -10,6 +10,42 @@
 #define BMG_GET_MSG_ADDR(pGroups, flags)                                                              \
     ((u32) (pGroups)->entries[(flags) >> 0x10].pDAT1 + (BMG_GET_MSG_OFFSET((pGroups), (flags)) & ~1))
 
+#define BMG_ID(group, infIndex) (((group) << 16) | (infIndex))
+
+enum BMGGroup_ {
+    BMGGroup_regular       = 0x00,
+    BMGGroup_select        = 0x02,
+    BMGGroup_maingame      = 0x03,
+    BMGGroup_battle_parent = 0x04,
+    BMGGroup_battle_common = 0x05,
+    BMGGroup_field         = 0x07,
+    BMGGroup_dungeon       = 0x08,
+    BMGGroup_train         = 0x09,
+    BMGGroup_demo          = 0x0A,
+    BMGGroup_castle        = 0x0B,
+    BMGGroup_castle_town   = 0x0C,
+    BMGGroup_tower         = 0x0D,
+    BMGGroup_tower_lobby   = 0x0E,
+    BMGGroup_forest        = 0x0F,
+    BMGGroup_snow          = 0x10,
+    BMGGroup_water         = 0x11,
+    BMGGroup_flame         = 0x12,
+    BMGGroup_intrain       = 0x13,
+    BMGGroup_village       = 0x14,
+    BMGGroup_collect       = 0x15,
+    BMGGroup_demo01_05     = 0x16,
+    BMGGroup_demo06_10     = 0x17,
+    BMGGroup_demo11_15     = 0x18,
+    BMGGroup_demo16_20     = 0x19,
+    BMGGroup_demo21_25     = 0x1A,
+    BMGGroup_shop          = 0x1B,
+    BMGGroup_flame_fld     = 0x1C,
+    BMGGroup_post          = 0x1D,
+    BMGGroup_desert        = 0x1E,
+    BMGGroup_staff         = 0x1F,
+    BMGGroup_train_extra   = 0x20,
+};
+
 enum BMGTag {
     /* "INF1" */ BMG_TAG_INF1 = '1FNI',
     /* "FLW1" */ BMG_TAG_FLW1 = '1WLF',
@@ -34,16 +70,16 @@ typedef enum BMGFileIndex {
 } BMGFileIndex;
 
 struct SectionBase {
-    /* 00 */ u32 tag; // "INF1", "DAT1", ...
+    /* 00 */ u32 tag;  // "INF1", "DAT1", ...
     /* 04 */ u32 size; // the size of the section
     /* 08 */
 };
 
 struct BMGHeader {
-    /* 00 */ char magic[8]; // always "MESGbmg1"
-    /* 08 */ u32 fileSize; // the size of the BMG file
+    /* 00 */ char magic[8];   // always "MESGbmg1"
+    /* 08 */ u32 fileSize;    // the size of the BMG file
     /* 0C */ u32 numSections; // the number of sections (INF1, DAT1, ...)
-    /* 10 */ u8 encoding; // see `BMGEncoding`
+    /* 10 */ u8 encoding;     // see `BMGEncoding`
     /* 11 */ u8 unk_11[0x0F]; // alignment padding?
     /* 20 */
 };
@@ -76,9 +112,9 @@ enum InstrType {
 };
 
 struct InstrShowMsg {
-    /* 01 */ u8 bmgFileIndex; // index into sBMGFiles
-    /* 02 */ u16 msgIndex; // index of INF1 entry
-    /* 04 */ s16 nextIndex; // index of FLW1 entry, 0xFFFF stops the conversation
+    /* 01 */ u8 bmgFileIndex;      // index into sBMGFiles
+    /* 02 */ u16 msgIndex;         // index of INF1 entry
+    /* 04 */ s16 nextIndex;        // index of FLW1 entry, 0xFFFF stops the conversation
     /* 06 */ s16 nextBMGFileIndex; // index into sBMGFiles
     /* 08 */
 };
@@ -86,15 +122,15 @@ struct InstrShowMsg {
 struct InstrBranch {
     /* 01 */ u8 mUnk_01;
     /* 02 */ u16 funcIndex; // index of the query function to run
-    /* 04 */ u16 funcArg; // the argument to use in the function
-    /* 06 */ u16 flwEntry; // the index of the second section table to be used next in the conversation.
+    /* 04 */ u16 funcArg;   // the argument to use in the function
+    /* 06 */ u16 flwEntry;  // the index of the second section table to be used next in the conversation.
     /* 08 */
 };
 
 struct InstrEvent {
     /* 01 */ u8 funcIndex; // index of the query function to run
     /* 02 */ u16 flwEntry; // the index of the second section table to be used next in the conversation.
-    /* 04 */ u32 funcArg; // the argument to use in the function
+    /* 04 */ u32 funcArg;  // the argument to use in the function
     /* 08 */
 };
 
@@ -152,8 +188,8 @@ struct BMGFileInfo {
     /* 0C */ SectionFLI1 *pFLI1; // pointer to the message flow index table (FLI -> flow index table)
     /* 10 */ SectionDAT1 *pDAT1; // pointer to the data (DAT -> data)
     /* 14 */ BMGHeader *mUnk_14; // same as pHeader (?)
-    /* 18 */ s16 mUnk_18; // stores `func_020372F0`->param_3 value (currently undetermined purpose)
-    /* 1A */ s16 groupId; // stores the group id
+    /* 18 */ s16 mUnk_18;        // stores `func_020372F0`->param_3 value (currently undetermined purpose)
+    /* 1A */ s16 groupId;        // stores the group id
     /* 1C */
 };
 

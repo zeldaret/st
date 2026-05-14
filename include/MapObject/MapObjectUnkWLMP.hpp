@@ -10,11 +10,11 @@
 class MapObjectUnkWLMP : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkWLMP();
 
-    /* 4C */ virtual ~MapObjectUnkWLMP() override;
+    /* 30 */ virtual ~MapObjectUnkWLMP() override;
 
     void func_ov094_02171150(void);
     void func_ov094_021711d0(void);

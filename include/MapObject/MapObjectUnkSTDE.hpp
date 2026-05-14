@@ -10,11 +10,11 @@
 class MapObjectUnkSTDE : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkSTDE();
 
-    /* 4C */ virtual ~MapObjectUnkSTDE() override;
+    /* 30 */ virtual ~MapObjectUnkSTDE() override;
 
     void func_ov029_02144194(void);
     void func_ov029_02144200(void);

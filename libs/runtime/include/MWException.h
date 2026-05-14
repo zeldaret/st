@@ -44,9 +44,9 @@ extern void __rethrow(void);
 extern char __throw_catch_compare(const u8 *throwtype, const u8 *catchtype, s32 *offset_result);
 
 #define DTORARG_TYPE short
-#define DTORARG_PARTIAL (0)  //	destroy non-virtual bases
+#define DTORARG_PARTIAL (0)   //	destroy non-virtual bases
 #define DTORARG_COMPLETE (-1) //	destroy all bases
-#define DTORARG_DELETE (1)  //	destroy all bases and delete object
+#define DTORARG_DELETE (1)    //	destroy all bases and delete object
 
 #define DTORCALL_COMPLETE(dtor, objptr) (((void (*)(void *, DTORARG_TYPE)) dtor)(objptr, DTORARG_COMPLETE))
 #define DTORCALL_PARTIAL(dtor, objptr) (((void (*)(void *, DTORARG_TYPE)) dtor)(objptr, DTORARG_PARTIAL))

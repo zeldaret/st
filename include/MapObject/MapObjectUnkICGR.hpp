@@ -10,11 +10,11 @@
 class MapObjectUnkICGR : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkICGR();
 
-    /* 4C */ virtual ~MapObjectUnkICGR() override;
+    /* 30 */ virtual ~MapObjectUnkICGR() override;
 
     void func_ov079_02155bdc(void);
     void func_ov079_02155bf0(void);

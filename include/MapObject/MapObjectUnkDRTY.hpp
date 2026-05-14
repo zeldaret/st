@@ -4,17 +4,21 @@
 
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectProfile.hpp"
+#include "MapObject/MapObjectUnkWPHL.hpp"
 #include "global.h"
 #include "types.h"
 
-class MapObjectUnkDRTY : public MapObject {
+class MapObjectUnkDRTY : public MapObjectUnkWPHL { //! TODO: fake?
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 8C */ STRUCT_PAD(0x8C, 0xCC);
+    /* CC */ unk32 mUnk_CC;
+    /* D0 */ STRUCT_PAD(0xD0, 0xF4);
+    /* F4 */
 
     MapObjectUnkDRTY();
 
-    /* 4C */ virtual ~MapObjectUnkDRTY() override;
+    /* 30 */ virtual ~MapObjectUnkDRTY() override;
 
     void func_ov061_02159660(void);
     void func_ov061_0215978c(void);

@@ -21,8 +21,8 @@ enum FSOptionsState_ {
 
 class UnkStruct_ov019_020d24c8_2C_24_FC3 {
 public:
-    /* 00 */ unk8 mUnk_00;
-    /* 01 */ unk8 mUnk_01;
+    /* 00 */ u8 mUnk_00;
+    /* 01 */ u8 mUnk_01;
     /* 02 */
 
     UnkStruct_ov019_020d24c8_2C_24_FC3() {}
@@ -51,20 +51,20 @@ public:
     /* 0008 */ UnkStruct_ov019_020d24c8_28_258 mUnk_008;
 
     // message speed
-    /* 0020 */ UnkSystem2_UnkSubSystem5 mUnk_020; // label
-    /* 0258 */ UnkSystem2_UnkSubSystem5 mUnk_258; // current string
+    /* 0020 */ UnkSystem2_UnkSubSystem5 mUnk_020;          // label
+    /* 0258 */ UnkSystem2_UnkSubSystem5 mUnk_258;          // current string
     /* 0490 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_490; // left arrow
     /* 04F0 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_4F0; // right arrow
 
     // sound settings
-    /* 0550 */ UnkSystem2_UnkSubSystem5 mUnk_550; // label
-    /* 0788 */ UnkSystem2_UnkSubSystem5 mUnk_788; // current string
+    /* 0550 */ UnkSystem2_UnkSubSystem5 mUnk_550;          // label
+    /* 0788 */ UnkSystem2_UnkSubSystem5 mUnk_788;          // current string
     /* 09C0 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_9C0; // left arrow
     /* 0A20 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_A20; // right arrow
 
     // handedness
-    /* 0A80 */ UnkSystem2_UnkSubSystem5 mUnk_A80; // label
-    /* 0CB8 */ UnkSystem2_UnkSubSystem5 mUnk_CB8; // current type string
+    /* 0A80 */ UnkSystem2_UnkSubSystem5 mUnk_A80;          // label
+    /* 0CB8 */ UnkSystem2_UnkSubSystem5 mUnk_CB8;          // current type string
     /* 0EF0 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_EF0; // left arrow
     /* 0F50 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_F50; // right arrow
 
@@ -75,7 +75,8 @@ public:
     /* 0FC0 */ u8 mUnk_FC0;
     /* 0FC1 */ u8 mUnk_FC1;
     /* 0FC2 */ u8 mUnk_FC2;
-    /* 0FC3 */ STRUCT_PAD(0xFC3, 0x103E);
+    /* 0FC3 */ UnkStruct_ov019_020d24c8_2C_24_FC3 mUnk_FC3[61];
+    /* 103D */ unk8 mUnk_103D; // pad?
     /* 103E */ unk16 mUnk_103E;
     /* 1040 */
 

@@ -10,11 +10,11 @@
 class MapObjectUnkSAND : public MapObject {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 40 */
 
     MapObjectUnkSAND();
 
-    /* 4C */ virtual ~MapObjectUnkSAND() override;
+    /* 30 */ virtual ~MapObjectUnkSAND() override;
 
     void func_ov031_0210acd4(void);
     void func_ov031_0210ad64(void);
