@@ -689,7 +689,7 @@ from:0x020c9fc8 kind:arm_call to:0x0206918c module:overlay(0)
 from:0x020c9fec kind:arm_call to:0x020194d0 module:main
 from:0x020c9ff8 kind:arm_call to:0x020627d0 module:overlay(0)
 from:0x020ca008 kind:arm_call to:0x020b8270 module:overlay(8)
-from:0x020ca010 kind:arm_call to:0x020b7d40 module:overlays(3,4,5,7,8,9,11,13,15,16)
+from:0x020ca010 kind:arm_call to:0x020b7d40 module:overlay(8)
 from:0x020ca038 kind:arm_call to:0x0206edf8 module:overlay(0)
 from:0x020ca040 kind:load to:0x0204b690 module:main
 from:0x020ca044 kind:load to:0x0204fb78 module:main

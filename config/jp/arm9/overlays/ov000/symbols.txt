@@ -472,10 +472,10 @@ _ZN29FileSelectManager_UnkDrawBaseD2Ev kind:function(arm,size=0x18) addr:0x02062
 _ZN29FileSelectManager_UnkDrawBase8vfunc_08Ei kind:function(arm,size=0x4) addr:0x02062c68
 _ZN29FileSelectManager_UnkDrawBase8vfunc_0CEi kind:function(arm,size=0x4) addr:0x02062c6c
 _ZN29FileSelectManager_UnkDrawBase8vfunc_10Ev kind:function(arm,size=0x4) addr:0x02062c70
-_ZN29FileSelectManager_UnkDrawBase8vfunc_14Ev kind:function(arm,size=0x4) addr:0x02062c74
+_ZN29FileSelectManager_UnkDrawBase8vfunc_14Ei kind:function(arm,size=0x4) addr:0x02062c74
 _ZN29FileSelectManager_UnkDrawBase8vfunc_18Ei kind:function(arm,size=0x4) addr:0x02062c78
 _ZN29FileSelectManager_UnkDrawBase8vfunc_1CEi kind:function(arm,size=0x4) addr:0x02062c7c
-_ZN29FileSelectManager_UnkDrawBase8vfunc_20Ev kind:function(arm,size=0x4) addr:0x02062c80
+_ZN29FileSelectManager_UnkDrawBase8vfunc_20Ei kind:function(arm,size=0x4) addr:0x02062c80
 _ZN29FileSelectManager_UnkDrawBase8vfunc_24Ev kind:function(arm,size=0x4) addr:0x02062c84
 _ZN23UnkStruct_027e0998_BaseC2Ev kind:function(thumb,size=0x24) addr:0x02062c88
 _ZN23UnkStruct_027e0998_BaseC1Ev kind:function(thumb,size=0x24) addr:0x02062cac
@@ -725,7 +725,7 @@ func_ov000_020690fc kind:function(arm,size=0x54) addr:0x020690fc
 _ZN24UnkStruct_ov000_02067bc419func_ov000_02067bb4Ei kind:function(arm,size=0x10) addr:0x02069150
 _ZN24UnkStruct_ov000_020b504c19func_ov000_02067bc4Ei kind:function(arm,size=0x1c) addr:0x02069160
 func_ov000_0206917c kind:function(arm,size=0x10) addr:0x0206917c
-func_ov000_0206918c kind:function(arm,size=0x8) addr:0x0206918c
+_ZN24UnkStruct_ov000_020b504c19func_ov000_02067bf0Ev kind:function(arm,size=0x8) addr:0x0206918c
 func_ov000_02069194 kind:function(arm,size=0x8) addr:0x02069194
 func_ov000_0206919c kind:function(arm,size=0x8) addr:0x0206919c
 func_ov000_020691a4 kind:function(arm,size=0x98) addr:0x020691a4
@@ -4012,7 +4012,7 @@ data_ov000_020b66e0 kind:bss addr:0x020b66e0
 data_ov000_020b66e4 kind:bss addr:0x020b66e4
 data_ov000_020b66e8 kind:bss addr:0x020b66e8
 data_ov000_020b66ec kind:bss addr:0x020b66ec
-data_ov000_020b6770 kind:bss addr:0x020b6770
+data_ov000_020b4f70 kind:bss addr:0x020b6770
 data_ov000_020b6774 kind:bss addr:0x020b6774
 data_ov000_020b6778 kind:bss addr:0x020b6778
 data_ov000_020b6784 kind:bss addr:0x020b6784

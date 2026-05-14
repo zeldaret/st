@@ -224,7 +224,7 @@ public:
 class AdventureModeManager_16C : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x1C);
+    /* 0C */ STRUCT_PAD(0x0C, 0x14);
     /* 1C */ bool mUnk_1C;
     /* 20 */
 
@@ -245,10 +245,21 @@ public:
     void func_ov026_020d8e58();
 };
 
+class AdventureModeManager_170_14 : public UnkStruct_0204a060_Base {
+public:
+    /* 00 (base) */
+    /* 24 */
+
+    /* 0C */ virtual bool vfunc_0C(void) override;
+};
+
 class AdventureModeManager_170 : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x3C);
+    /* 0C */ GameModeManagerBase_104 *mUnk_0C; // related to game over, set to data_ov008_020b6b5c
+    /* 10 */ GameModeManagerBase_104 *mUnk_10;
+    /* 14 */ AdventureModeManager_170_14 mUnk_14;
+    /* 38 */ unk32 mUnk_38;
     /* 3C */
 
     AdventureModeManager_170(GameModeManagerBase_104 *param1); // overlay 24

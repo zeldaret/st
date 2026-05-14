@@ -101,6 +101,20 @@ public:
     void func_ov000_020676f8(const char *bmgFileName, unk32 param2);
 };
 
+class UnkStruct_ov000_020b504c_Sub4_00 {
+public:
+    /* 00 (vtable) */
+    /* 04 */
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10();
+    /* 14 */ virtual void vfunc_14();
+    /* 18 */ virtual void vfunc_18(unk32 param1);
+};
+
 class UnkStruct_ov000_020b504c_Sub4 {
 public:
     /* 00 */ unk32 mUnk_00;
@@ -130,6 +144,9 @@ public:
     unk8 func_ov000_02067cf8(unk32 param1, unk32 param2, UnkStruct_ov000_02067bc4::UnkStruct1 *param3); // ShowText?
     void func_ov000_02067e60(u8 param1, unk32 param2);
     unk32 func_ov000_020682c0(unk32 param1);
+    void func_ov000_02067f5c(unk32 param1);
+    unk32 func_ov000_02067f88(unk32 param1, unk32 param2);
+    UnkStruct_ov000_020b504c_Sub4_00 *func_ov000_02067bf0();
 
     //! TODO: figure this out
     void func_ov000_0206807c(unk32 param1, void *param2, unk32 param3, unk32 param4);
@@ -138,13 +155,9 @@ public:
     void func_ov000_0206807c(void *param1, void *param2);
     void func_ov000_0206807c(void *param1, unk32 param2);
 
-    unk32 func_ov000_02067f88(unk32 param1, unk32 param2);
-
     void func_ov001_020be510();
     void func_ov001_020be668(void);
     void func_ov001_020be6f4(void);
-
-    void func_ov000_02067f5c(unk32 param1);
 };
 
 // gMessageManager?
