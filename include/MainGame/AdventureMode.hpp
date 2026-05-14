@@ -670,10 +670,10 @@ public:
     // data_ov024_020d7c18 vtable
     /* 08 */ virtual ~AdventureModeManager() override;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2, unk32 param3) override;
-    /* 14 */ virtual void vfunc_14(unk32 param1) override;
+    /* 14 */ virtual void vfunc_14() override;
     /* 18 */ virtual void vfunc_18() override;
     /* 1C */ virtual void vfunc_1C() override;
-    /* 20 */ virtual bool vfunc_20(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
     /* 28 */ virtual void vfunc_28(unk8 *param1) override;
     /* 2C */ virtual void vfunc_2C(unk8 *param1) override;

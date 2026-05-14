@@ -16,7 +16,6 @@
 #include <dsprot.h>
 
 extern "C" {
-void *func_ov024_020c6f68();
 void *func_ov024_020d1658();
 void *func_ov000_02066294();
 void *func_ov024_020ccd1c();
@@ -64,7 +63,7 @@ AdventureModeManager::AdventureModeManager(unk32 param1) {
     this->mUnk_1C0       = 0;
     this->mAllowMapPaint = false;
 
-    func_ov024_020c6f68();
+    UnkStruct_027e0998::Create();
     func_ov024_020d1658();
 
     this->mUnk_170 = new(HeapIndex_1) AdventureModeManager_170(&this->mUnk_104);
@@ -105,7 +104,7 @@ void AdventureModeManager::func_ov001_020c0194() {
     GetAdventureModeManager()->mUnk_19C = new(HeapIndex_1) AdventureModeManager_19C(&GetAdventureModeManager()->mUnk_104);
 }
 
-void AdventureModeManager::vfunc_14(unk32 param1) {
+void AdventureModeManager::vfunc_14() {
     data_027e09a4->func_ov000_0207056c();
     UnkStruct_027e0cf8::Create();
 
@@ -304,7 +303,7 @@ void AdventureModeManager::vfunc_1C() {
     }
 }
 
-bool AdventureModeManager::vfunc_20(unk32 param1) {
+void AdventureModeManager::vfunc_20() {
     if (data_ov000_020b4f70 != NULL) {
         data_ov000_020b4f70->func_ov000_020662e8();
     }
