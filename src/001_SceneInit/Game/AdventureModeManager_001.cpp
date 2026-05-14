@@ -17,7 +17,6 @@
 
 extern "C" {
 void *func_ov024_020c6f68();
-void *func_ov024_020c7390();
 void *func_ov024_020d1658();
 void *func_ov000_02066294();
 void *func_ov024_020ccd1c();
@@ -108,7 +107,7 @@ void AdventureModeManager::func_ov001_020c0194() {
 
 void AdventureModeManager::vfunc_14() {
     data_027e09a4->func_ov000_0207056c();
-    func_ov024_020c7390();
+    UnkStruct_027e0cf8::Create();
 
     if (data_027e09a4->func_01ffd3d8()) {
         this->mUnk_004.func_ov001_020bd734(&data_ov001_020c276c);

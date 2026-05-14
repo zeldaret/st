@@ -72,7 +72,7 @@ ARM void GameModeManagerBase::vfunc_30(unk32 param1) {
     GameModeLinkList<GameModeManagerBase_104> *pNode;
 
     for (pNode = this->mUnk_104.mList.GetNextList(); pNode != this->mUnk_104.GetOrigin(); pNode = pNode->GetPrevList()) {
-        pNode->GetTarget()->vfunc_0C(param1);
+        pNode->GetTarget()->vfunc_0C((void *) param1);
     }
 }
 

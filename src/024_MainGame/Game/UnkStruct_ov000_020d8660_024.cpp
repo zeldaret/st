@@ -154,10 +154,4 @@ void UnkStruct_ov024_020d8660::func_ov024_020c4dac(ActorId actorId, unk32 param2
     this->mUnk_0C.mUnk_0D = param3->mUnk_0D;
 }
 
-void UnkStruct_ov024_020d8660::SetInstance(UnkStruct_ov024_020d8660 *pInstance) {
-    data_ov024_020d8660 = pInstance;
-}
-
-bool UnkStruct_ov024_020d8660::ClearInstance() {
-    data_ov024_020d8660 = NULL;
-}
+DECL_INSTANCE(UnkStruct_ov024_020d8660, data_ov024_020d8660);

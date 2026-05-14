@@ -341,11 +341,4 @@ ARM void TreasureManager::func_ov000_020aa0ac(ItemId itemId) {
     }
 }
 
-void TreasureManager::func_ov000_020aa200() {
-    data_ov000_020b6510 = this;
-}
-
-bool TreasureManager::func_ov000_020aa210() {
-    data_ov000_020b6510 = NULL;
-    //! @bug: no return value
-}
+DECL_INSTANCE(TreasureManager, gpTreasureManager);

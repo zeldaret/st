@@ -11,15 +11,12 @@ MiscAdvManager *MiscAdvManager::Create() {
 }
 
 MiscAdvManager::MiscAdvManager() {
-    MiscAdvManager::SetInstance(this);
     this->mLettersRead = 0;
     this->mStampsFlag  = 0;
     this->mSongs       = 0;
 }
 
-MiscAdvManager::~MiscAdvManager() {
-    MiscAdvManager::ClearInstance();
-}
+MiscAdvManager::~MiscAdvManager() {}
 
 void MiscAdvManager::func_ov024_020d6310(MiscAdvManager *pSrc) {
     u16 local_10;
@@ -193,11 +190,4 @@ void MiscAdvManager::func_ov024_020d6610() {
     this->func_ov024_020d6530();
 }
 
-void MiscAdvManager::SetInstance(MiscAdvManager *pInstance) {
-    gpMiscAdvManager = pInstance;
-}
-
-int MiscAdvManager::ClearInstance() {
-    gpMiscAdvManager = NULL;
-    //! @bug: missing return
-}
+DECL_INSTANCE(MiscAdvManager, gpMiscAdvManager);

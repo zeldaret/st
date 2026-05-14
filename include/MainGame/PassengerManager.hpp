@@ -56,8 +56,6 @@ public:
     bool func_ov001_020bfa1c();
 
     static bool func_ov001_020bf870();
-    static void SetInstance(PassengerManager *pInstance); // func_ov001_020bfa38
-    static bool ClearInstance();                          // func_ov001_020bfa44
 
     // overlay 24
     void func_ov024_020d41bc(UnkStruct_Param1 *pActorId);

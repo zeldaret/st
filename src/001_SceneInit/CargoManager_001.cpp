@@ -20,13 +20,6 @@ void CargoManager::func_ov001_020bf830() {
     this->mUnk_1C = 0;
 }
 
-void CargoManager::SetInstance(CargoManager *pInstance) {
-    gpCargoManager = pInstance;
-}
-
-bool CargoManager::ClearInstance() {
-    gpCargoManager = NULL;
-    //! @bug: missing return
-}
+DECL_INSTANCE(CargoManager, gpCargoManager);
 
 THUMB_END

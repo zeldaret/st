@@ -196,7 +196,7 @@ struct stack_struct {
 };
 
 ARM void MapObject::func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_00 *param2, unk32 param3) {
-    unk32 sp10;
+    Vec2s sp10;
     stack_struct spC;
     s32 var_r2;
 
@@ -214,7 +214,7 @@ ARM void MapObject::func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_
         return;
     }
 
-    if (data_027e0998->vfunc_00(&this->mPos, &sp10, &this->mUnk_38)) {
+    if (data_027e0998->vfunc_00(&this->mPos, &sp10, (u16 *) &this->mUnk_38)) {
         spC.mUnk_06 = 0x00;
         MI_CpuFill32(0, &spC, sizeof(spC));
         spC.mUnk_05             = -1;

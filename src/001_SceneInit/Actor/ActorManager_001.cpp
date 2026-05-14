@@ -38,7 +38,6 @@ THUMB ActorManager *ActorManager::Create() {
 }
 
 THUMB ActorManager::ActorManager() {
-    this->SetInstance(this);
     this->mUnk_20         = 0;
     this->mUnk_21         = 0;
     this->mUnk_22         = 0;
@@ -63,8 +62,6 @@ THUMB ActorManager::~ActorManager() {
     if (this->mActorTable != NULL) {
         delete this->mActorTable;
     }
-
-    this->ClearInstance();
 }
 
 THUMB void ActorManager::func_ov001_020bafdc() {
@@ -402,11 +399,4 @@ THUMB void ActorManager::func_ov001_020bb844() {
     }
 }
 
-THUMB void ActorManager::SetInstance(ActorManager *instance) {
-    gpActorManager = instance;
-}
-
-THUMB int ActorManager::ClearInstance() {
-    gpActorManager = NULL;
-    //! @bug: the function expects a return value (though it seems unused)
-}
+DECL_INSTANCE(ActorManager, gpActorManager);

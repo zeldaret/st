@@ -52,8 +52,6 @@ public:
 
     void func_ov001_020bf830();
 
-    static void SetInstance(CargoManager *pInstance);
-    static bool ClearInstance();
     static void Destroy(); // func_ov001_020bf428
 
     // overlay 17

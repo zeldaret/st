@@ -3093,8 +3093,8 @@ _ZN15TreasureManager19func_ov000_020a9eb0Ei kind:function(arm,size=0x9c) addr:0x
 _ZN15TreasureManager19func_ov000_020a9f4cEi kind:function(arm,size=0xe0) addr:0x020a9f4c
 _ZN15TreasureManager19func_ov000_020aa02cEi kind:function(arm,size=0x80) addr:0x020aa02c
 _ZN15TreasureManager19func_ov000_020aa0acEi kind:function(arm,size=0x154) addr:0x020aa0ac
-_ZN15TreasureManager19func_ov000_020aa200Ev kind:function(arm,size=0x10) addr:0x020aa200
-_ZN15TreasureManager19func_ov000_020aa210Ev kind:function(arm,size=0x14) addr:0x020aa210
+_ZN8InstanceI15TreasureManagerEC2Ev kind:function(arm,size=0x10) addr:0x020aa200
+_ZN8InstanceI15TreasureManagerED2Ev kind:function(arm,size=0x14) addr:0x020aa210
 func_ov000_020aa224 kind:function(arm,size=0x14) addr:0x020aa224
 data_ov000_020aa238 kind:data(any) addr:0x020aa238
 data_ov000_020aa240 kind:data(any) addr:0x020aa240
@@ -4077,4 +4077,4 @@ data_ov000_020b64f4 kind:bss addr:0x020b64f4
 data_ov000_020b64f8 kind:bss addr:0x020b64f8
 data_ov000_020b64fc kind:bss addr:0x020b64fc
 data_ov000_020b6500 kind:bss addr:0x020b6500
-data_ov000_020b6510 kind:bss addr:0x020b6510
+gpTreasureManager kind:bss addr:0x020b6510

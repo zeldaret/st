@@ -59,7 +59,7 @@ enum StampType_ {
     /*  20 */ StampType_Max              = 20,
 };
 
-class MiscAdvManager {
+class MiscAdvManager : public AutoInstance<MiscAdvManager> {
 public:
     /* 00 */ u16 mStampDates[StampType_Max];
     /* 28 */ u16 mUnk_28;
@@ -105,8 +105,6 @@ public:
     void func_ov024_020d6610();
 
     static MiscAdvManager *Create();
-    static void SetInstance(MiscAdvManager *pInstance);
-    static int ClearInstance();
 };
 
 extern MiscAdvManager *gpMiscAdvManager;

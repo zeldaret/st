@@ -116,7 +116,7 @@ public:
     static AdventureFlag GetAdvFlagFromItem(ItemId itemId);
 };
 
-class TreasureManager : public ItemManager {
+class TreasureManager : public AutoInstance<TreasureManager>, public ItemManager {
 public:
     /* 28 */ unk8 mUnk_28[0x3C - 0x28];
     /* 3C */ s16 mUnk_3C[TreasureType_Max]; // treasures
@@ -145,11 +145,9 @@ public:
     static unk32 func_ov000_020a9f4c(unk32 param1);
     ItemId func_ov000_020aa02c(ItemId itemId);
     void func_ov000_020aa0ac(ItemId itemId);
-    void func_ov000_020aa200();
-    bool func_ov000_020aa210();
 };
 
-extern TreasureManager *data_ov000_020b6510;
+extern TreasureManager *gpTreasureManager;
 extern UnkStruct_ov000_020afc48 data_ov000_020afc48[ItemFlag_EQUIP_COUNT];
 extern const u8 gQuiverCapacities[UpgradeCapacity_Max];
 extern const u8 gBombBagCapacities[UpgradeCapacity_Max];

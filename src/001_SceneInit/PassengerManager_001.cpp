@@ -78,13 +78,6 @@ bool PassengerManager::func_ov001_020bfa1c() {
     return !((date2 << 0x1B) & 1);
 }
 
-void PassengerManager::SetInstance(PassengerManager *pInstance) {
-    gpPassengerManager = pInstance;
-}
-
-bool PassengerManager::ClearInstance() {
-    gpPassengerManager = NULL;
-    //! @bug missing return
-}
+DECL_INSTANCE(PassengerManager, gpPassengerManager);
 
 THUMB_END

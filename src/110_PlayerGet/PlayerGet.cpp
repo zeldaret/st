@@ -175,7 +175,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
     }
 
     data_027e0ce0->mUnk_34->func_ov110_02185d3c(itemId);
-    data_ov000_020b6510->func_ov000_020aa0ac(itemId);
+    gpTreasureManager->func_ov000_020aa0ac(itemId);
     gpMiscAdvManager->GiveLetterOrPriceCard(itemId);
 
     if (!GET_FLAG(this->mFlags, ItemFlag_LokomoSword) && itemId == ItemId_TearLight &&
@@ -534,7 +534,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                     }
                     break;
                 default:
-                    itemId = data_ov000_020b6510->func_ov000_020aa02c(itemId);
+                    itemId = gpTreasureManager->func_ov000_020aa02c(itemId);
                     break;
             }
 

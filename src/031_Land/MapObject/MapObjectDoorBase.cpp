@@ -555,9 +555,9 @@ extern "C" void func_01ff9fbc(Mat2p *, unk32, Mat2p *);
 extern q4 data_0203f964[];
 
 ARM void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1, s8 param2) {
-    unk32 sp10;
+    Vec2s sp10;
     stack_struct sp8;
-    unk32 sp4;
+    u16 sp4;
     bool var_r2;
 
     if (!GET_FLAG(this->mFlags, MapObjFlag_5)) {

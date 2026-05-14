@@ -204,9 +204,9 @@ ARM void MapObjectSwitchStep::vfunc_18(s8 *param1, s8 param2) {
     }
 
     if (data_027e09a4->mUnk_00.mSceneIndex >= SceneIndex_battle01 && data_027e09a4->mUnk_00.mSceneIndex < SceneIndex_Max) {
-        unk32 sp10;
+        Vec2s sp10;
         stack_struct sp8;
-        unk32 sp4;
+        u16 sp4;
 
         //! TODO: fake match?
         sp4 = *(u32 *) &this->mUnk_38;
