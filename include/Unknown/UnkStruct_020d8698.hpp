@@ -17,6 +17,8 @@ public:
     void func_ov024_020cd458(ItemFlag itemFlag, unk32 param2);
     void func_ov024_020cd4e4(u16 param1);
     bool func_ov024_020cd5c0(u16 param1);
+    void func_ov024_020cd3a4();
+    void func_ov024_020cd400();
 
     /* 00 */ virtual ~UnkStruct_020d8698();
     /* 08 */ virtual void vfunc_08();

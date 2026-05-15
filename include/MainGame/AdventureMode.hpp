@@ -225,7 +225,7 @@ public:
 class AdventureModeManager_16C : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x14);
+    /* 0C */ STRUCT_PAD(0x0C, 0x1C);
     /* 1C */ bool mUnk_1C;
     /* 20 */
 
@@ -415,10 +415,48 @@ public:
     void func_ov024_020c95c4();
 };
 
+class AdventureModeManager_184_10_Base : public GameModeManagerBase_104 {
+public:
+    /* 00 (vtable) */
+
+    AdventureModeManager_184_10_Base(); // func_ov010_020b6690
+
+    // data_ov010_020b8dd0 vtable
+    /* 00 */ virtual ~AdventureModeManager_184_10_Base() override;
+    /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl) override;
+    /* 10 */ virtual void vfunc_10(unk8 *param1) override;
+    /* 1C */ virtual void vfunc_1C();
+    /* 20 */ virtual bool vfunc_20();
+    /* 24 */ virtual void vfunc_24();
+    /* 28 */ virtual void vfunc_28();
+    /* 2C */ virtual void vfunc_2C();
+    /* 30 */ virtual void vfunc_30();
+    /* 34 */ virtual void vfunc_34();
+
+    void func_ov010_020b7008();
+    void func_ov010_020b7054();
+};
+
+class AdventureModeManager_184_10 : public AdventureModeManager_184_10_Base {
+public:
+    /* 00 (base) */
+};
+
+class AdventureModeManager_184_14 {
+public:
+    /* 00 */
+};
+
 class AdventureModeManager_184 : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x1C);
+    /* 0C */ GameModeManagerBase_104 *mUnk_0C;
+    /* 10 */ AdventureModeManager_184_10 *mUnk_10;
+    /* 14 */ AdventureModeManager_184_14 *mUnk_14;
+    /* 18 */ bool mUnk_18;
+    /* 19 */ unk8 mUnk_19; // pad?
+    /* 1A */ unk8 mUnk_1A; // pad?
+    /* 1B */ unk8 mUnk_1B; // pad?
 
     AdventureModeManager_184(GameModeManagerBase_104 *param1); // overlay 24
 
@@ -432,6 +470,8 @@ public:
     /* 1C */ virtual void vfunc_1C(unk32 param1) override;
     /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
     /* 24 */ virtual void vfunc_24() override;
+
+    void func_ov024_020c979c(unk32 param1);
 };
 
 class AdventureModeManager_188 : public FileSelectManager_UnkDrawBase {
@@ -663,7 +703,12 @@ public:
 
 class AdventureModeManager_1BC : public AdventureModeManager_1B8_Base {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x38);
+    /* 00 */ STRUCT_PAD(0x00, 0x34);
+    /* 34 */ bool mUnk_34;
+    /* 35 */ unk8 mUnk_35;
+    /* 36 */ unk8 mUnk_36;
+    /* 37 */ unk8 mUnk_37;
+    /* 38 */
 
     AdventureModeManager_1BC(); // overlay 93
     ~AdventureModeManager_1BC();
@@ -693,7 +738,7 @@ public:
     /* 178 */ AdventureModeManager_178 *mUnk_178; // related to factory ovl?
     /* 17C */ AdventureModeManager_17C *mUnk_17C;
     /* 180 */ AdventureModeManager_180 *mUnk_180; // related to stamps?
-    /* 184 */ AdventureModeManager_184 *mUnk_184;
+    /* 184 */ AdventureModeManager_184 *mUnk_184; // related to WDST actor?
     /* 188 */ AdventureModeManager_188 *mUnk_188;
     /* 18C */ AdventureModeManager_18C *mUnk_18C;
     /* 190 */ AdventureModeManager_190 *mUnk_190;

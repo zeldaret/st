@@ -74,7 +74,9 @@ src/024_MainGame/Game/AdventureModeManager_180_024.cpp:
     .data       start:0x020d97b0 end:0x020d97fc
 
 src/024_MainGame/Game/AdventureModeManager_184_024.cpp:
+    complete
     .text       start:0x020cae78 end:0x020cb1c0
+    .data       start:0x020d97fc end:0x020d982c
 
 src/024_MainGame/Game/AdventureModeManager_18C_024.cpp:
     .text       start:0x020cb1c0 end:0x020cb8e8

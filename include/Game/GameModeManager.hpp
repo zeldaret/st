@@ -26,6 +26,7 @@ public:
     void func_0201bfec();
     void func_0201c00c(unk32 param1, unk32 param2);
     void func_0201c068(unk16 param1);
+    void func_0201c0c4(unk32 param1);
     void func_0201c0e4();
     void func_0201c19c();
     void func_0201c124(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);

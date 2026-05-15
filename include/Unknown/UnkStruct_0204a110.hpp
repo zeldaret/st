@@ -258,6 +258,7 @@ public:
     void func_02019454();
     unk32 func_02019514();
     void func_02019528();
+    bool func_02019548();
 
     void func_ov001_020bd514(unk32 param1, void *param2, unk32 param3, unk32 param4);
     void func_ov001_020bd58c(void);

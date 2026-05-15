@@ -238,7 +238,7 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_20() {}
 
 // non-matching
 ARM void ActorUnk_ov000_020a8bb0::vfunc_24() {
-    if (data_027e09b8->func_ov000_020732dc(3) == 0 || !(this->mUnk_0B0 & 4)) {
+    if (!data_027e09b8->func_ov000_020732dc(3) || !(this->mUnk_0B0 & 4)) {
         this->vfunc_20();
     }
 

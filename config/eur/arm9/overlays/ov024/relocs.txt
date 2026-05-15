@@ -957,7 +957,7 @@ from:0x020c96e2 kind:thumb_call_arm to:0x01ffd3d8 module:itcm
 from:0x020c96ee kind:thumb_call_arm to:0x020732dc module:overlay(0)
 from:0x020c9704 kind:thumb_call_arm to:0x02067f88 module:overlay(0)
 from:0x020c9710 kind:thumb_call to:0x020b65fc module:overlay(10)
-from:0x020c971a kind:thumb_call to:0x020b6520 module:overlays(1,2,6,10,12,14)
+from:0x020c971a kind:thumb_call to:0x020b6520 module:overlay(10)
 from:0x020c9732 kind:thumb_call to:0x020b88c4 module:overlay(10)
 from:0x020c973a kind:thumb_call to:0x020b7008 module:overlay(10)
 from:0x020c9746 kind:thumb_call_arm to:0x020cd368 module:overlay(24)

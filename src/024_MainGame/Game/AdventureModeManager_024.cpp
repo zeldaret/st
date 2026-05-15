@@ -238,8 +238,8 @@ void AdventureModeManager::vfunc_24() {
 
     bool var_r0;
     if (CHECK_BUTTON_COMBO(this->mButtons.press, BTN_START) && data_027e09a4->IsNotCutscene()) {
-        if (data_027e09b8->func_ov000_020732dc(0) == 0 && data_027e09b8->func_ov000_020732dc(1) == 0) {
-            if (data_027e09b8->func_ov000_020732dc(2) == 0 && data_0204e5f8.mUnk_3A == 0 && data_0204e5f8.mUnk_3E == 0 &&
+        if (!data_027e09b8->func_ov000_020732dc(0) && !data_027e09b8->func_ov000_020732dc(1)) {
+            if (!data_027e09b8->func_ov000_020732dc(2) && data_0204e5f8.mUnk_3A == 0 && data_0204e5f8.mUnk_3E == 0 &&
                 !data_0204e5f8.mUnk_18) {
                 unk32 temp_r0_2 = data_0204a088->mUnk_00;
                 if ((temp_r0_2 == 1 || temp_r0_2 == 6) && !data_0204a088->mUnk_127 &&
@@ -473,8 +473,8 @@ bool AdventureModeManager::func_ov024_020c5dac() {
     int unk_00 = data_0204a088->mUnk_00;
 
     if (this->func_ov024_020c6af4(4)) {
-        if (data_027e09b8->func_ov000_020732dc(0) == 0 && data_027e09b8->func_ov000_020732dc(1) == 0 &&
-            data_027e09b8->func_ov000_020732dc(3) == 0 && data_027e09b8->func_ov000_020732dc(4) == 0) {
+        if (!data_027e09b8->func_ov000_020732dc(0) && !data_027e09b8->func_ov000_020732dc(1) &&
+            !data_027e09b8->func_ov000_020732dc(3) && !data_027e09b8->func_ov000_020732dc(4)) {
             GameModeLinkListNode *node = data_0204e5f8.mUnk_00.mUnk_04.GetNext();
 
             if ((void *) node == (void *) &data_0204e5f8 && (unk_00 != 1 || this->func_ov024_020c69d0() != 0) &&
@@ -510,8 +510,8 @@ bool AdventureModeManager::func_ov024_020c5f70() {
 
     u32 unk_00 = data_0204a088->mUnk_00;
     if (var_r4) {
-        if (this->func_ov024_020c6af4(4) && data_0204a110.mUnk_008 != 1 && data_027e09b8->func_ov000_020732dc(0) == 0 &&
-            data_027e09b8->func_ov000_020732dc(1) == 0 && data_027e09b8->func_ov000_020732dc(4) == 0) {
+        if (this->func_ov024_020c6af4(4) && data_0204a110.mUnk_008 != 1 && !data_027e09b8->func_ov000_020732dc(0) &&
+            !data_027e09b8->func_ov000_020732dc(1) && !data_027e09b8->func_ov000_020732dc(4)) {
             GameModeLinkListNode *node = data_0204e5f8.mUnk_00.mUnk_04.GetNext();
 
             if ((void *) node == (void *) &data_0204e5f8 && (unk_00 == 1 || unk_00 - 6 <= 1) &&
@@ -538,9 +538,9 @@ bool AdventureModeManager::func_ov024_020c60f4() {
 
     u32 unk_00 = data_0204a088->mUnk_00;
 
-    if (var_r4 && this->func_ov024_020c6af4(4) && data_027e09b8->func_ov000_020732dc(0) == 0 &&
-        data_027e09b8->func_ov000_020732dc(1) == 0 && data_027e09b8->func_ov000_020732dc(2) == 0 &&
-        data_027e09b8->func_ov000_020732dc(4) == 0 && (unk_00 == 1 || unk_00 == 6) &&
+    if (var_r4 && this->func_ov024_020c6af4(4) && !data_027e09b8->func_ov000_020732dc(0) &&
+        !data_027e09b8->func_ov000_020732dc(1) && !data_027e09b8->func_ov000_020732dc(2) &&
+        !data_027e09b8->func_ov000_020732dc(4) && (unk_00 == 1 || unk_00 == 6) &&
         (unk_00 != 1 || this->func_ov024_020c69d0() != 0) && data_ov024_020d8660->mUnk_00 == 0 &&
         (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == 0) && !data_027e09a4->IsDarkRealm()) {
         return true;
