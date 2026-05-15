@@ -15,10 +15,10 @@ func_ov011_020b84f0 kind:function(arm,size=0xd4) addr:0x020b84f0
 func_ov011_020b85c4 kind:function(arm,size=0xc8) addr:0x020b85c4
 func_ov011_020b868c kind:function(arm,size=0x60) addr:0x020b868c
 func_ov011_020b86ec kind:function(arm,size=0x1c0) addr:0x020b86ec
-func_ov011_020b88ac kind:function(arm,size=0xb0) addr:0x020b88ac
+_ZN27AdventureModeManager_18C_1019func_ov011_020b88acEv kind:function(arm,size=0xb0) addr:0x020b88ac
 func_ov011_020b895c kind:function(arm,size=0x30) addr:0x020b895c
 func_ov011_020b898c kind:function(arm,size=0x64) addr:0x020b898c
-func_ov011_020b89f0 kind:function(arm,size=0x20c) addr:0x020b89f0
+_ZN27AdventureModeManager_18C_1019func_ov011_020b89f0Ei kind:function(arm,size=0x20c) addr:0x020b89f0
 func_ov011_020b8bfc kind:function(arm,size=0x94) addr:0x020b8bfc
 func_ov011_020b8c90 kind:function(arm,size=0xbc) addr:0x020b8c90
 func_ov011_020b8d4c kind:function(arm,size=0x20) addr:0x020b8d4c
@@ -29,7 +29,7 @@ func_ov011_020b8e24 kind:function(arm,size=0x30) addr:0x020b8e24
 func_ov011_020b8e54 kind:function(arm,size=0x84) addr:0x020b8e54
 func_ov011_020b8ed8 kind:function(arm,size=0x14) addr:0x020b8ed8
 func_ov011_020b8eec kind:function(arm,size=0x34) addr:0x020b8eec
-func_ov011_020b8f20 kind:function(arm,size=0x158) addr:0x020b8f20
+_ZN27AdventureModeManager_190_1019func_ov011_020b8f20Ei kind:function(arm,size=0x158) addr:0x020b8f20
 _ZN19func_ov011_020b9078D0Ev kind:function(arm,size=0x1c) addr:0x020b9078
 data_ov011_020b9094 kind:data(any) addr:0x020b9094
 data_ov011_020b90a0 kind:data(any) addr:0x020b90a0

@@ -171,6 +171,8 @@ public:
 
     void func_0201db14(unk32 param1, unk32 param2, Vec2s *param3, Vec2s *param4, unk32 param5, unk32 param6);
     void func_0201dd58(unk32 param1, unk32 param2);
+    void func_0201dc10(s16 *param1, unk32 param2, unk32 param3);
+    void func_0201d628();
 };
 
 class UnkStruct_0204a110_Sub8 {

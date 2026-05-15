@@ -1,6 +1,7 @@
 #pragma once
 
 #include "MapObject/MapObject.hpp"
+#include "Save/AdventureFlags.hpp"
 #include "types.h"
 #include "versions.h"
 
@@ -70,6 +71,10 @@ public:
     //! TODO: figure out if the other versions got these too
     /* 94 */ u16 mUnk_94;
 #endif
+
+    bool HasAdventureFlag(AdventureFlag flag) {
+        return GET_FLAG(this->mAdventureFlags, flag);
+    }
 
     unk32 func_01ffd420();
 

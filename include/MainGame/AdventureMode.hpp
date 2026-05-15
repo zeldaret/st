@@ -492,10 +492,47 @@ public:
     /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
 };
 
+class AdventureModeManager_18C_14 : public UnkStruct_0204a060_Base {
+public:
+    /* 00 (base) */
+    /* 24 */
+
+    AdventureModeManager_18C_14();
+
+    /* 0C */ virtual bool vfunc_0C(void) override;
+    /* 10 */ virtual bool vfunc_10(void) override;
+};
+
+class AdventureModeManager_18C_10 {
+public:
+    /* 0000 */ STRUCT_PAD(0x0000, 0x10E9);
+    /* 10E9 */ u8 mUnk_10E9;
+    /* 10EA */ unk8 mUnk_10EA; // pad?
+    /* 10EB */ unk8 mUnk_10EB; // pad?
+    /* 10EC */ u32 mUnk_10EC;
+
+    void func_ov011_020b88ac();
+    void func_ov011_020b89f0(unk32 param1);
+};
+
 class AdventureModeManager_18C : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x58);
+    /* 0C */ GameModeManagerBase_104 *mUnk_0C;
+    /* 0C */ AdventureModeManager_18C_10 *mUnk_10;
+    /* 14 */ AdventureModeManager_18C_14 mUnk_14;
+    /* 38 */ bool mUnk_38;
+    /* 39 */ bool mUnk_39;
+    /* 3A */ bool mUnk_3A;
+    /* 3B */ unk8 mUnk_3B;
+    /* 3C */ unk32 mUnk_3C;
+    /* 40 */ Vec2s mUnk_40;
+    /* 44 */ unk32 mUnk_44;
+    /* 48 */ Vec2s mUnk_48;
+    /* 4C */ unk32 mUnk_4C;
+    /* 50 */ unk16 mUnk_50;
+    /* 52 */ unk16 mUnk_52;
+    /* 50 */ unk32 mUnk_54;
 
     AdventureModeManager_18C(GameModeManagerBase_104 *param1);
 
@@ -510,21 +547,54 @@ public:
     /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
     /* 24 */ virtual void vfunc_24() override;
 
+    void func_ov024_020c9c6c();
+    void func_ov024_020ca034();
     void func_ov024_020ca068(unk32 param1);
-    void func_ov024_020ca074();
+    bool func_ov024_020ca074();
+};
+
+class AdventureModeManager_190_10 {
+public:
+    bool func_ov011_020b8f20(unk32 param1);
+};
+
+class AdventureModeManager_190_14 : public UnkStruct_0204a060_Base {
+public:
+    /* 00 (base) */
+    /* 24 */
+
+    // data_ov024_020d7efc
+    /* 0C */ virtual bool vfunc_0C(void) override;
+};
+
+class AdventureModeManager_190;
+class AdventureModeManager_190_38 : public UnkStruct_0204a060_Base {
+public:
+    /* 00 (base) */
+    /* 24 */ AdventureModeManager_190 *mpParent;
+    /* 28 */
+
+    AdventureModeManager_190_38(AdventureModeManager_190 *pParent) {
+        this->mpParent = pParent;
+    }
+
+    // data_ov024_020d7ee0
+    /* 0C */ virtual bool vfunc_0C(void) override;
 };
 
 class AdventureModeManager_190 : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x60);
+    /* 0C */ GameModeManagerBase_104 *mUnk_0C;
+    /* 10 */ AdventureModeManager_190_10 *mUnk_10;
+    /* 14 */ AdventureModeManager_190_14 mUnk_14;
+    /* 38 */ AdventureModeManager_190_38 mUnk_38;
     /* 60 */ unk32 mUnk_60;
     /* 64 */
 
     AdventureModeManager_190(GameModeManagerBase_104 *param1); // overlay 24
 
     // data_ov024_020d7f18
-    /* 00 */ virtual ~AdventureModeManager_190() override;
     /* 08 */ virtual void vfunc_08(unk32 param1) override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
@@ -532,7 +602,9 @@ public:
     /* 1C */ virtual void vfunc_1C(unk32 param1) override;
     /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
 
+    void func_ov024_020ca21c();
     bool func_ov024_020ca24c(unk32 param1);
+    bool func_ov024_020ca280();
 };
 
 class AdventureModeManager_194 : public FileSelectManager_UnkDrawBase {
@@ -740,8 +812,8 @@ public:
     /* 180 */ AdventureModeManager_180 *mUnk_180; // related to stamps?
     /* 184 */ AdventureModeManager_184 *mUnk_184; // related to WDST actor?
     /* 188 */ AdventureModeManager_188 *mUnk_188;
-    /* 18C */ AdventureModeManager_18C *mUnk_18C;
-    /* 190 */ AdventureModeManager_190 *mUnk_190;
+    /* 18C */ AdventureModeManager_18C *mUnk_18C; // related to world map?
+    /* 190 */ AdventureModeManager_190 *mUnk_190; // related to world map?
     /* 194 */ AdventureModeManager_194 *mUnk_194;
     /* 198 */ AdventureModeManager_198 *mUnk_198;
     /* 19C */ AdventureModeManager_19C *mUnk_19C;

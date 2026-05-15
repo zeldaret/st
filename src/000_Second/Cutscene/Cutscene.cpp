@@ -835,5 +835,5 @@ bool Cutscene_IsAdventureFlagSet(s32 csIndex) {
         return false;
     }
 
-    return GET_FLAG(data_027e09b8->mAdventureFlags, pEntry->mFlag);
+    return data_027e09b8->HasAdventureFlag(pEntry->mFlag);
 }

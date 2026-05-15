@@ -1017,7 +1017,7 @@ from:0x020cb1f0 kind:load to:0x020627ac module:overlay(0)
 from:0x020cb1fa kind:thumb_call_arm to:0x02062bd0 module:overlay(0)
 from:0x020cb20c kind:thumb_call to:0x020cb1c0 module:overlay(24)
 from:0x020cb24a kind:thumb_call_arm to:0x02062764 module:overlay(0)
-from:0x020cb254 kind:load to:0x020d9850 module:overlay(24)
+from:0x020cb254 kind:load to:0x020d9848 add:0x8 module:overlay(24)
 from:0x020cb258 kind:load to:0x0204b608 module:main
 from:0x020cb260 kind:thumb_call_arm to:0x0201b8bc module:main
 from:0x020cb26e kind:thumb_call_arm to:0x0201b8bc module:main
@@ -1056,9 +1056,9 @@ from:0x020cb4b4 kind:load to:0x0204b690 add:0xde0 module:main
 from:0x020cb4b8 kind:load to:0x0204b50c module:main
 from:0x020cb4c4 kind:thumb_call_arm to:0x020c81ec module:overlay(24)
 from:0x020cb4d0 kind:thumb_call_arm to:0x0201beb4 module:main
-from:0x020cb4e4 kind:thumb_call_arm to:0x020b7d40 module:overlays(3,4,5,7,8,9,11,13,15,16)
-from:0x020cb4ec kind:thumb_call_arm to:0x020ba150 module:overlays(3,11)
-from:0x020cb52a kind:thumb_call_arm to:0x020b7d40 module:overlays(3,4,5,7,8,9,11,13,15,16)
+from:0x020cb4e4 kind:thumb_call_arm to:0x020b7d40 module:overlay(11)
+from:0x020cb4ec kind:thumb_call_arm to:0x020ba150 module:overlay(11)
+from:0x020cb52a kind:thumb_call_arm to:0x020b7d40 module:overlay(11)
 from:0x020cb560 kind:load to:0x027e0994 module:dtcm
 from:0x020cb564 kind:load to:0x027e09b8 module:dtcm
 from:0x020cb576 kind:thumb_call_arm to:0x020ba00c module:overlay(11)
@@ -1154,7 +1154,7 @@ from:0x020cba98 kind:load to:0x0204fb78 module:main
 from:0x020cbaaa kind:thumb_call_arm to:0x0201b974 module:main
 from:0x020cbac4 kind:thumb_call_arm to:0x0201b798 module:main
 from:0x020cbacc kind:load to:0x0204fb78 module:main
-from:0x020cbadc kind:load to:0x020ba680 module:overlays(5,6,7,11,12,13,14)
+from:0x020cbadc kind:load to:0x020ba680 module:overlay(11)
 from:0x020cbae8 kind:arm_call to:0x0201b8bc module:main
 from:0x020cbaf0 kind:arm_call to:0x02011ff4 module:main
 from:0x020cbb04 kind:arm_call to:0x0201b8bc module:main

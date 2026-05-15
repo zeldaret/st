@@ -220,11 +220,11 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
             return false;
         case ItemId_HeartContainer:
             if (this->mUnk_5C.mParams[3] == 5) {
-                if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_Unk_10F)) {
+                if (data_027e09b8->HasAdventureFlag(AdventureFlag_Unk_10F)) {
                     return false;
                 }
             } else {
-                if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_Unk_10E)) {
+                if (data_027e09b8->HasAdventureFlag(AdventureFlag_Unk_10E)) {
                     return false;
                 }
             }
@@ -262,7 +262,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
                 return false;
             }
 
-            if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_BoughtGoronShopQuiver)) {
+            if (data_027e09b8->HasAdventureFlag(AdventureFlag_BoughtGoronShopQuiver)) {
                 return false;
             }
 
@@ -270,7 +270,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
         case ItemId_BombBag:
         case ItemId_BombBagMedium:
         case ItemId_BombBagLarge:
-            if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_BoughtBombBagFromBeedle)) {
+            if (data_027e09b8->HasAdventureFlag(AdventureFlag_BoughtBombBagFromBeedle)) {
                 return false;
             }
 
