@@ -322,7 +322,7 @@ void AdventureModeManager_160::vfunc_1C(unk32 param1) {
     }
 }
 
-bool AdventureModeManager_160::vfunc_20(unk32 param1) {
+bool AdventureModeManager_160::vfunc_20(unk32 param1, unk32 param2) {
     if (param1 != 1) {
         return;
     }
