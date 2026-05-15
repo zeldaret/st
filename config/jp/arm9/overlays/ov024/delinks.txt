@@ -6,6 +6,7 @@
     .bss        start:0x020da000 end:0x020da0c0 kind:bss align:32
 
 src/024_MainGame/Game/GameModeAdventure_024.cpp:
+    complete
     .text       start:0x020c6060 end:0x020c62cc
     .data       start:0x020d9500 end:0x020d9530
 

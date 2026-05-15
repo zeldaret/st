@@ -4011,7 +4011,7 @@ data_ov000_020b66d4 kind:bss addr:0x020b66d4
 data_ov000_020b66e0 kind:bss addr:0x020b66e0
 data_ov000_020b66e4 kind:bss addr:0x020b66e4
 data_ov000_020b66e8 kind:bss addr:0x020b66e8
-data_ov000_020b66ec kind:bss addr:0x020b66ec
+data_ov000_020b4eec kind:bss addr:0x020b66ec
 data_ov000_020b4f70 kind:bss addr:0x020b6770
 data_ov000_020b6774 kind:bss addr:0x020b6774
 data_ov000_020b6778 kind:bss addr:0x020b6778
