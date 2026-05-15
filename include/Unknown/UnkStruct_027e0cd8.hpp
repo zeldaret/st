@@ -146,6 +146,7 @@ public:
     bool func_ov000_02081f3c(unk16 param1, unk32 param2);
     unk32 func_ov000_02081d5c();
     bool func_ov000_02082124();
+    bool func_ov000_02081c28();
 };
 
 extern UnkStruct_027e0cd8 *data_027e0cd8;

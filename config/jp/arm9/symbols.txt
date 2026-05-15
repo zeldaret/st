@@ -959,12 +959,12 @@ _ZN19GameModeManagerBase13func_02018af0EP16GameModeLinkListI23GameModeManagerBas
 _ZN19GameModeManagerBase13func_02018b54EP16GameModeLinkListI23GameModeManagerBase_104E kind:function(arm,size=0x3c) addr:0x02018aec
 _ZN19GameModeManagerBase13func_02018b90EP16GameModeLinkListI23GameModeManagerBase_104EPc kind:function(arm,size=0x34) addr:0x02018b28
 _ZN19GameModeManagerBase13func_02018bc4Ei kind:function(arm,size=0x1c) addr:0x02018b5c
-func_02018b78 kind:function(arm,size=0x4c) addr:0x02018b78
-func_02018bc4 kind:function(arm,size=0x4c) addr:0x02018bc4
+_ZN18UnkStruct_0204a11013func_02018be0Ei kind:function(arm,size=0x4c) addr:0x02018b78
+_ZN18UnkStruct_0204a11013func_02018c2cEv kind:function(arm,size=0x4c) addr:0x02018bc4
 _ZN18UnkStruct_0204a11013func_02018c78Ei kind:function(arm,size=0x18) addr:0x02018c10
 _ZN18UnkStruct_0204a11013func_02018c90Ei kind:function(arm,size=0xa4) addr:0x02018c28
 _ZN18UnkStruct_0204a11013func_02018d34Ev kind:function(arm,size=0x44) addr:0x02018ccc
-func_02018d10 kind:function(arm,size=0x174) addr:0x02018d10
+_ZN18UnkStruct_0204a11013func_02018d78Ei kind:function(arm,size=0x174) addr:0x02018d10
 func_02018e84 kind:function(arm,size=0xac) addr:0x02018e84
 func_02018f30 kind:function(arm,size=0x368) addr:0x02018f30
 _ZN18UnkStruct_0204a11013func_02019300Ei kind:function(arm,size=0x40) addr:0x02019298
@@ -974,7 +974,7 @@ _ZN18UnkStruct_0204a11013func_02019408Ev kind:function(arm,size=0x4c) addr:0x020
 _ZN18UnkStruct_0204a11013func_02019454Ev kind:function(arm,size=0x88) addr:0x020193ec
 _ZN18UnkStruct_0204a11013func_020194dcEv kind:function(arm,size=0x38) addr:0x02019474
 _ZN18UnkStruct_0204a11013func_02019514Ev kind:function(arm,size=0x14) addr:0x020194ac
-func_020194c0 kind:function(arm,size=0x10) addr:0x020194c0
+_ZN18UnkStruct_0204a11013func_02019528Ev kind:function(arm,size=0x10) addr:0x020194c0
 _ZN18UnkStruct_0204a11013func_02019538Eii kind:function(arm,size=0x10) addr:0x020194d0
 func_020194e0 kind:function(arm,size=0x10) addr:0x020194e0
 func_020194f0 kind:function(arm,size=0x28) addr:0x020194f0
@@ -2768,7 +2768,7 @@ data_0204b17c kind:bss addr:0x0204b17c
 data_0204b480 kind:bss addr:0x0204b480
 data_0204b484 kind:bss addr:0x0204b484
 data_0204b508 kind:bss addr:0x0204b508
-data_0204b50c kind:bss addr:0x0204b50c
+data_02049f8c kind:bss addr:0x0204b50c
 data_0204b5d0 kind:bss addr:0x0204b5d0
 data_0204b5d4 kind:bss addr:0x0204b5d4
 data_0204a060 kind:bss addr:0x0204b5e0

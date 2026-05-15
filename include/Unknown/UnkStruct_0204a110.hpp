@@ -214,7 +214,7 @@ public:
     /* DC0 */ UnkStruct_0204a110_Sub7 mUnk_DC0;
     /* DDC */ UnkStruct_0204a110_Sub8 mUnk_DDC;
     /* DEC */ GameModeManagerBase *mUnk_DEC;
-    /* DF0 */ unk16 mUnk_DF0;
+    /* DF0 */ u16 mUnk_DF0;
     /* DF2 */ unk8 mUnk_DF2;
     /* DF3 */ unk8 mUnk_DF3;
     /* DF4 */ unk32 mUnk_DF4;
@@ -242,9 +242,12 @@ public:
 
     unk32 func_01ff9b50();
 
+    void func_02018be0(unk32 param1);
+    void func_02018c2c();
     void func_02018c78(unk32 param1);
     void func_02018c90(unk32 param1);
     void func_02018d34();
+    void func_02018d78(unk32 param1);
     void func_020195a0(const char *param1, unk32 param2, unk32 param3, unk32 param4);
     void func_0201967c(unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
     void func_02019538(unk32 param1, unk32 param2);
@@ -254,6 +257,7 @@ public:
     void func_02019408();
     void func_02019454();
     unk32 func_02019514();
+    void func_02019528();
 
     void func_ov001_020bd514(unk32 param1, void *param2, unk32 param3, unk32 param4);
     void func_ov001_020bd58c(void);

@@ -5,6 +5,7 @@
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
+#include "Unknown/UnkStruct_027e09ac.hpp"
 #include "Unknown/UnkSystem1.hpp"
 
 class AdventureModeManager_1B8;
@@ -273,15 +274,39 @@ public:
     /* 24 */ virtual void vfunc_24() override;
 };
 
+class AdventureModeManager_174_Base_10 : public UnkStruct_0204a060_Base {
+public:
+    /* 00 (base) */
+    /* 24 */
+
+    /* 0C */ virtual bool vfunc_0C(void) override;
+    /* 10 */ virtual bool vfunc_10(void) override;
+};
+
 class AdventureModeManager_174_Base : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */
+    /* 0C */ GameModeManagerBase_104 *mUnk_0C;
+    /* 10 */ AdventureModeManager_174_Base_10 mUnk_10;
+    /* 34 */ unk32 mUnk_34;
+    /* 38 */ u16 mUnk_38;
+    /* 3A */ unk16 mUnk_3A;
+    /* 3C */ UnkStruct_027e09ac_14 mUnk_3C;
+    /* A4 */ u16 mUnk_A4;
+    /* A6 */ u16 mUnk_A6;
+    /* A8 */ unk16 mUnk_A8;
+    /* AA */ unk16 mUnk_AA;
+    /* AC */ unk32 mUnk_AC;
+    /* B0 */ unk32 mUnk_B0;
+    /* B4 */ Vec2s mUnk_B4;
+    /* B8 */
 
-    AdventureModeManager_174_Base();
+    AdventureModeManager_174_Base(GameModeManagerBase_104 *param1);
 
-    // data_ov024_020d7d58
-    /* 00 */ virtual ~AdventureModeManager_174_Base() override;
+    // data_ov024_020d7d58 (vtable)
+
+    void func_ov024_020c88f0();
+    void func_ov024_020c8b2c();
 };
 
 class AdventureModeManager_178_Base : public AdventureModeManager_174_Base {
@@ -641,11 +666,11 @@ public:
     /* 154 */ unk32 mUnk_154;
     /* 158 */ GameModeManagerBase_104 *mUnk_158;
     /* 15C */ AdventureModeManager_15C *mUnk_15C;
-    /* 160 */ AdventureModeManager_160 *mUnk_160;
+    /* 160 */ AdventureModeManager_160 *mUnk_160; // related to the minimap?
     /* 164 */ AdventureModeManager_164 *mUnk_164;
     /* 168 */ AdventureModeManager_168 *mUnk_168;
     /* 16C */ AdventureModeManager_16C *mUnk_16C;
-    /* 170 */ AdventureModeManager_170 *mUnk_170;
+    /* 170 */ AdventureModeManager_170 *mUnk_170; // related to game over?
     /* 174 */ AdventureModeManager_174 *mUnk_174;
     /* 178 */ AdventureModeManager_178 *mUnk_178;
     /* 17C */ AdventureModeManager_17C *mUnk_17C;
