@@ -12,20 +12,20 @@ UnkStruct_027e0cf8 *UnkStruct_027e0cf8::Create() {
 }
 
 UnkStruct_027e0cf8::UnkStruct_027e0cf8() {
-    this->mUnk_00 = new(HeapIndex_1) UnkStruct_027e0cf8_00();
-    this->mUnk_04 = NULL;
-    this->mUnk_08 = new(HeapIndex_1) UnkStruct_027e0cf8_08();
-    this->mUnk_0C = new(HeapIndex_1) UnkStruct_027e0cf8_0C();
-    this->mUnk_10 = 0;
-    this->mUnk_12 = 0;
-    this->mUnk_14 = 0;
-    this->mUnk_16 = 0;
-    this->mUnk_18 = -1;
-    this->mUnk_1C = false;
-    this->mUnk_20 = -1;
-    this->mUnk_24 = -1;
-    this->mUnk_28 = 0;
-    this->mUnk_2A = 0;
+    this->mUnk_00   = new(HeapIndex_1) UnkStruct_027e0cf8_00();
+    this->mUnk_04   = NULL;
+    this->mUnk_08   = new(HeapIndex_1) UnkStruct_027e0cf8_08();
+    this->mUnk_0C   = new(HeapIndex_1) UnkStruct_027e0cf8_0C();
+    this->mUnk_10.x = 0;
+    this->mUnk_10.y = 0;
+    this->mUnk_14.x = 0;
+    this->mUnk_14.y = 0;
+    this->mUnk_18   = -1;
+    this->mUnk_1C   = false;
+    this->mUnk_20   = -1;
+    this->mUnk_24   = -1;
+    this->mUnk_28   = 0;
+    this->mUnk_2A   = 0;
 
     if (data_027e09a4->IsDarkRealm()) {
         this->mUnk_04 = new(HeapIndex_1) UnkStruct_027e0cf8_04();
@@ -84,32 +84,32 @@ void UnkStruct_027e0cf8::func_ov024_020c75d0(void *param1, unk32 param2, u16 par
     func_ov024_020d524c((Vec2us *) &local_1c, uVar1);
 
     Vec2us result;
-    result.x      = local_1c.x;
-    result.y      = local_1c.y;
-    this->mUnk_10 = result.x;
-    this->mUnk_12 = result.y;
+    result.x        = local_1c.x;
+    result.y        = local_1c.y;
+    this->mUnk_10.x = result.x;
+    this->mUnk_10.y = result.y;
 
     volatile Vec2us local_20;
     func_ov024_020d51dc((Vec2us *) &local_20, uVar1);
 
-    result.x      = local_20.x;
-    result.y      = local_20.y;
-    this->mUnk_14 = result.x;
-    this->mUnk_16 = result.y;
+    result.x        = local_20.x;
+    result.y        = local_20.y;
+    this->mUnk_14.x = result.x;
+    this->mUnk_14.y = result.y;
 
     Vec2s local_24;
-    local_24.x = this->mUnk_10;
-    local_24.y = this->mUnk_12;
+    local_24.x = this->mUnk_10.x;
+    local_24.y = this->mUnk_10.y;
     this->mUnk_08->func_ov024_020d32e8(&local_24);
 
     Vec2s local_28;
-    local_28.x = this->mUnk_14;
-    local_28.y = this->mUnk_16;
+    local_28.x = this->mUnk_14.x;
+    local_28.y = this->mUnk_14.y;
     this->mUnk_0C->func_ov024_020cff8c(param1, &local_28);
 
     Vec2s local_2c;
-    local_2c.x = this->mUnk_14;
-    local_2c.y = this->mUnk_16;
+    local_2c.x = this->mUnk_14.x;
+    local_2c.y = this->mUnk_14.y;
 
     Vec2s vec;
     vec.x = 0x1E;

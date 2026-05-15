@@ -70,10 +70,8 @@ public:
     /* 04 */ UnkStruct_027e0cf8_04 *mUnk_04;
     /* 08 */ UnkStruct_027e0cf8_08 *mUnk_08;
     /* 0C */ UnkStruct_027e0cf8_0C *mUnk_0C;
-    /* 10 */ unk16 mUnk_10;
-    /* 12 */ unk16 mUnk_12;
-    /* 14 */ s16 mUnk_14;
-    /* 16 */ s16 mUnk_16;
+    /* 10 */ Vec2s mUnk_10;
+    /* 14 */ Vec2s mUnk_14;
     /* 18 */ unk32 mUnk_18;
     /* 1C */ bool mUnk_1C;
     /* 1D */ unk8 mUnk_1D;

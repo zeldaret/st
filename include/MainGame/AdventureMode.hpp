@@ -314,10 +314,9 @@ public:
     /* 00 (base) */
     /* B8 */
 
-    AdventureModeManager_178_Base();
+    AdventureModeManager_178_Base(GameModeManagerBase_104 *param1);
 
     // data_ov024_020d7db8
-    /* 00 */ virtual ~AdventureModeManager_178_Base() override;
     /* 08 */ virtual void vfunc_08(unk32 param1) override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
     /* 18 */ virtual void vfunc_18(unk32 param1) override;
@@ -347,24 +346,21 @@ public:
 class AdventureModeManager_178 : public AdventureModeManager_178_Base {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0xBC);
+    /* B8 */ unk32 mUnk_B8;
+    /* BC */
 
     AdventureModeManager_178(GameModeManagerBase_104 *param1); // overlay 24
 
     // data_ov024_020d7de8
-    /* 00 */ virtual ~AdventureModeManager_178() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
     /* 20 */ virtual bool vfunc_20(unk32 param1, unk32 param2) override;
 };
 
 class AdventureModeManager_17C : public AdventureModeManager_178_Base {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0xBC);
+    /* B8 */ unk32 mUnk_B8;
+    /* BC */
 
     AdventureModeManager_17C(GameModeManagerBase_104 *param1); // overlay 62
 
@@ -674,7 +670,7 @@ public:
     /* 16C */ AdventureModeManager_16C *mUnk_16C;
     /* 170 */ AdventureModeManager_170 *mUnk_170; // related to game over?
     /* 174 */ AdventureModeManager_174 *mUnk_174; // related to the minimap?
-    /* 178 */ AdventureModeManager_178 *mUnk_178;
+    /* 178 */ AdventureModeManager_178 *mUnk_178; // related to factory ovl?
     /* 17C */ AdventureModeManager_17C *mUnk_17C;
     /* 180 */ AdventureModeManager_180 *mUnk_180;
     /* 184 */ AdventureModeManager_184 *mUnk_184;
