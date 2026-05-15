@@ -51,7 +51,7 @@ void AdventureModeManager_170::vfunc_0C(unk32 param1) {
 
 void AdventureModeManager_170::vfunc_10(unk32 param1, unk32 param2) {
     if (data_0204a110.mUnk_008 == 1) {
-        data_0204a110.mUnk_DFE = 1;
+        data_0204a110.mUnk_DFE = true;
     }
 
     data_0204e5f8.mUnk_38 = 0;

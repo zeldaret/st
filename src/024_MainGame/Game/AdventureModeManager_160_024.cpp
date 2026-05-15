@@ -322,7 +322,7 @@ void AdventureModeManager_160::vfunc_1C(unk32 param1) {
     }
 }
 
-bool AdventureModeManager_160::vfunc_20(unk32 param1, unk32 param2) {
+void AdventureModeManager_160::vfunc_20(unk32 param1, unk32 param2) {
     if (param1 != 1) {
         return;
     }
@@ -351,15 +351,12 @@ bool AdventureModeManager_160::vfunc_20(unk32 param1, unk32 param2) {
             GetAdventureModeManager()->func_ov024_020c66c0();
         }
 
-        if (!this->mUnk_70.mUnk_26) {
-            return this->mUnk_70.mUnk_26;
+        if (this->mUnk_70.mUnk_26) {
+            this->mUnk_28.vfunc_0C();
         }
-
-        return this->mUnk_28.vfunc_0C();
+    } else {
+        this->mUnk_70.mUnk_25 = false;
     }
-
-    this->mUnk_70.mUnk_25 = false;
-    return false;
 }
 
 void AdventureModeManager_160::vfunc_24() {}

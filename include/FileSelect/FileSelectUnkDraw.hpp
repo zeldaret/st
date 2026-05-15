@@ -21,7 +21,7 @@ public:
     /* 14 */ virtual void vfunc_14(unk32 param1);
     /* 18 */ virtual void vfunc_18(unk32 param1);
     /* 1C */ virtual void vfunc_1C(unk32 param1);
-    /* 20 */ virtual bool vfunc_20(unk32 param1, unk32 param2);
+    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2);
     /* 24 */ virtual void vfunc_24();
     /* 28 */
 };
@@ -46,7 +46,7 @@ public:
     /* 14 */ virtual void vfunc_14(unk32 param1) override;
     /* 18 */ virtual void vfunc_18(unk32 param1) override;
     /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual bool vfunc_20(unk32 param1, unk32 param2) override;
+    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
     /* 24 */ virtual void vfunc_24() override;
     /* 28 */
 };
@@ -70,7 +70,7 @@ public:
     /* 14 */ virtual void vfunc_14(unk32 param1) override;
     /* 18 */ virtual void vfunc_18(unk32 param1) override;
     /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual bool vfunc_20(unk32 param1, unk32 param2) override;
+    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
 
     static void func_ov019_020d02f4();
 };

@@ -221,7 +221,7 @@ public:
     /* DF8 */ unk32 mUnk_DF8;
     /* DFC */ unk8 mUnk_DFC;
     /* DFD */ unk8 mUnk_DFD;
-    /* DFE */ unk8 mUnk_DFE;
+    /* DFE */ bool mUnk_DFE;
     /* DFF */ unk8 mUnk_DFF;
     /* E00 */ unk8 mUnk_E00;
     /* E00 */ unk8 mUnk_E01;

@@ -19,7 +19,7 @@ void AdventureModeManager_178::vfunc_10(unk32 param1, unk32 param2) {
     }
 }
 
-bool AdventureModeManager_178::vfunc_20(unk32 param1, unk32 param2) {
+void AdventureModeManager_178::vfunc_20(unk32 param1, unk32 param2) {
     if (param2 == 1) {
         this->mUnk_B8 = 0;
         data_0204a088->func_ov000_02061248();

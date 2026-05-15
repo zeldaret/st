@@ -140,38 +140,38 @@ void AdventureModeManager_174::vfunc_1C(unk32 param1) {
     }
 }
 
-bool AdventureModeManager_174::vfunc_20(unk32 param1, unk32 param2) {
-    if (param2 == 1) {
-        this->mUnk_B8 = 0;
-
-        switch (param1) {
-            case 1:
-                this->func_ov024_020c8b2c();
-                break;
-            case 2:
-                func_ov002_020b6d50(&this->mUnk_BC);
-                data_0204a088->func_ov000_02061248();
-                data_0204a110.func_02018d78(5);
-                GetAdventureModeManager()->func_ov024_020c555c(5);
-                GetAdventureModeManager()->func_ov024_020c53e8();
-                GetAdventureModeManager()->vfunc_38(SceneIndex_f_hyral, 0, 0, 0);
-                data_0204a110.func_02019528();
-                data_0204a110.func_02019538(0x0F, 1);
-                break;
-            case 8:
-                data_0204a110.func_02018d78(5);
-                func_ov002_020b6d50(&this->mUnk_BC);
-                data_0204a088->func_ov000_02061248();
-                data_0204a110.func_02019528();
-                data_0204a110.func_02019538(0x0F, 1);
-                data_0204a110.GetUnkD9C()->func_0201c494(0);
-                break;
-            default:
-                break;
-        }
+void AdventureModeManager_174::vfunc_20(unk32 param1, unk32 param2) {
+    if (param2 != 1) {
+        return;
     }
 
-    //! @bug missing return
+    this->mUnk_B8 = 0;
+
+    switch (param1) {
+        case 1:
+            this->func_ov024_020c8b2c();
+            break;
+        case 2:
+            func_ov002_020b6d50(&this->mUnk_BC);
+            data_0204a088->func_ov000_02061248();
+            data_0204a110.func_02018d78(5);
+            GetAdventureModeManager()->func_ov024_020c555c(5);
+            GetAdventureModeManager()->func_ov024_020c53e8();
+            GetAdventureModeManager()->vfunc_38(SceneIndex_f_hyral, 0, 0, 0);
+            data_0204a110.func_02019528();
+            data_0204a110.func_02019538(0x0F, 1);
+            break;
+        case 8:
+            data_0204a110.func_02018d78(5);
+            func_ov002_020b6d50(&this->mUnk_BC);
+            data_0204a088->func_ov000_02061248();
+            data_0204a110.func_02019528();
+            data_0204a110.func_02019538(0x0F, 1);
+            data_0204a110.GetUnkD9C()->func_0201c494(0);
+            break;
+        default:
+            break;
+    }
 }
 
 void AdventureModeManager_174::vfunc_24() {}

@@ -3684,7 +3684,7 @@ _ZTV14ActorEventIcon kind:data(any) addr:0x020b4bd0
 _ZTV19ActorProfileUnkEFIK kind:data(any) addr:0x020b4c2c
 _ZTV12ActorUnkEFIK kind:data(any) addr:0x020b4c50
 data_ov000_020b4cb8 kind:data(any) addr:0x020b4cb0
-data_ov000_020b4cc4 kind:data(any) addr:0x020b4cc4
+data_ov000_020b34c4 kind:data(any) addr:0x020b4cc4
 _ZTV25MapObjectProfile_Derived4 kind:data(any) addr:0x020b4cc8
 _ZTV25MapObjectProfile_Derived3 kind:data(any) addr:0x020b4ce4
 _ZTV25MapObjectProfile_Derived2 kind:data(any) addr:0x020b4d00

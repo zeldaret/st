@@ -45,8 +45,8 @@ class UnkStruct_0204a060_Base : public UnkStruct_0204a060_Base2 {
 public:
     /* 00 (base) */
     /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk8 mUnk_18;
-    /* 19 */ unk8 mUnk_19;
+    /* 18 */ bool mUnk_18;
+    /* 19 */ bool mUnk_19;
     /* 1A */ u16 mUnk_1A;
     /* 1C */ unk16 mUnk_1C;
     /* 1E */ unk16 mUnk_1E;

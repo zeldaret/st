@@ -1,4 +1,4 @@
-func_ov014_020b7d40 kind:function(thumb,size=0x74) addr:0x020b7d40
+func_ov014_020b6520 kind:function(thumb,size=0x74) addr:0x020b7d40
 func_ov014_020b7db4 kind:function(thumb,size=0x350) addr:0x020b7db4
 func_ov014_020b8104 kind:function(thumb,size=0x60) addr:0x020b8104
 func_ov014_020b8164 kind:function(thumb,size=0x68) addr:0x020b8164

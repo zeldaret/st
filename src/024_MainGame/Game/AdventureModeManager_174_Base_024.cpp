@@ -111,7 +111,7 @@ void AdventureModeManager_174_Base::func_ov024_020c8b2c() {
     data_0204a110.func_02018d78(0);
 
     if (this->mUnk_34 == 1) {
-        data_0204a110.mUnk_DFE = 1;
+        data_0204a110.mUnk_DFE = true;
     }
 
     if (data_027e09a4->IsDarkRealm()) {
