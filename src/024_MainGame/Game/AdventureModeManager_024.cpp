@@ -491,7 +491,7 @@ bool AdventureModeManager::func_ov024_020c5dac() {
 bool AdventureModeManager::func_ov024_020c5ecc() {
     if (data_ov026_02138d10->func_ov026_020e13f4() != 0 && data_027e09b8->func_01ffd420() == 0 &&
         func_ov024_020d5304(data_027e09a4->mUnk_00.mSceneIndex) != 0 &&
-        (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == 0) && this->func_ov024_020c6a20() != 0 &&
+        (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == NULL) && this->func_ov024_020c6a20() != 0 &&
         data_ov026_0213f590.func_ov026_020f7cc0() == 0) {
         return true;
     }
@@ -516,7 +516,7 @@ bool AdventureModeManager::func_ov024_020c5f70() {
 
             if ((void *) node == (void *) &data_0204e5f8 && (unk_00 == 1 || unk_00 - 6 <= 1) &&
                 (unk_00 != 1 || this->func_ov024_020c69d0() != 0) &&
-                (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == 0) &&
+                (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == NULL) &&
                 (data_027e09a4->func_01ffd3d8() || this->mUnk_168->func_ov031_0210dfd8() == 0) &&
                 !data_027e09a4->IsDarkRealm()) {
                 return true;
@@ -541,8 +541,8 @@ bool AdventureModeManager::func_ov024_020c60f4() {
     if (var_r4 && this->func_ov024_020c6af4(4) && !data_027e09b8->func_ov000_020732dc(0) &&
         !data_027e09b8->func_ov000_020732dc(1) && !data_027e09b8->func_ov000_020732dc(2) &&
         !data_027e09b8->func_ov000_020732dc(4) && (unk_00 == 1 || unk_00 == 6) &&
-        (unk_00 != 1 || this->func_ov024_020c69d0() != 0) && data_ov024_020d8660->mUnk_00 == 0 &&
-        (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == 0) && !data_027e09a4->IsDarkRealm()) {
+        (unk_00 != 1 || this->func_ov024_020c69d0() != 0) && data_ov024_020d8660->mUnk_00 == NULL &&
+        (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == NULL) && !data_027e09a4->IsDarkRealm()) {
         return true;
     }
 
@@ -554,7 +554,7 @@ bool AdventureModeManager::func_ov024_020c623c() {
 
     if ((gOverlayManager.IsMapA6() && ActorUnkTUTO::func_ov037_02120a64() != 0) ||
         (data_027e09a4->func_01ffd400()->mUnk_10 == 6 && scene == SceneIndex_f_trnnpc) ||
-        (data_ov024_020d8660 != NULL && data_ov024_020d8660->mUnk_00 != 0) || (scene - SceneIndex_b_last1 <= 3)) {
+        (data_ov024_020d8660 != NULL && data_ov024_020d8660->mUnk_00 != NULL) || (scene - SceneIndex_b_last1 <= 3)) {
         return false;
     }
 

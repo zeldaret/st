@@ -63,4 +63,5 @@ public:
     static bool ClearInstance();
 };
 
+// related to minigames
 extern UnkStruct_ov024_020d8660 *data_ov024_020d8660;

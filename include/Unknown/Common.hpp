@@ -469,14 +469,15 @@ public:
 #define BTN_ID_BATTLE_MENU_JOIN_GROUP 0xBB
 #define BTN_ID_BATTLE_MENU_PLAYER_LIST 0xBD
 
-class UnkSystem2_UnkSubSystem1_Base {
+class UnkSystem2_UnkSubSystem1_Base : public GameModeLinkList<UnkSystem2_UnkSubSystem1_Base> {
 public:
     /* 00 (vtable) */
-    /* 04 */ GameModeLinkList<UnkSystem2_UnkSubSystem1_Base> mUnk_04;
     /* 0C */ void *mUnk_0C;
     /* 10 */ unk32 mButtonID;
     /* 14 */ Vec2s mPos; // image position (among other things)
-    /* 18 */ STRUCT_PAD(0x18, 0x24);
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ unk32 mUnk_20;
     /* 24 */ Vec2us mPosOffset; // used to shift the button when selected
     /* 28 */ bool mUnk_28;      // selected highlight effect when set to true
     /* 29 */ bool mUnk_29;      // related to having the button selected
@@ -513,11 +514,28 @@ public:
     /* 0C */ virtual void vfunc_0C() override;
 };
 
-class UnkSystem2_UnkSubSystem7 {
+class UnkSystem2_UnkSubSystem7_Base {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 (vtable) */
+
+    // data_ov000_020b1c88
+    /* 00 */ virtual void vfunc_00();
+    /* 00 */ virtual void vfunc_04();
+};
+
+class UnkSystem2_UnkSubSystem7 : public UnkSystem2_UnkSubSystem7_Base {
+public:
+    /* 00 (base) */
 
     ~UnkSystem2_UnkSubSystem7();
+};
+
+class UnkSystem2_UnkSubSystem7_Derived2 {
+public:
+    /* 00 */ UnkSystem2_UnkSubSystem7 mUnk_00;
+    /* 04 */ STRUCT_PAD(0x04, 0x64);
+
+    UnkSystem2_UnkSubSystem7_Derived2();
 };
 
 //! TODO: conflicts with UnkSystem2_UnkSubSystem1_Derived1? mUnk_34 type differs for some reasons
@@ -547,6 +565,21 @@ public:
     /* 00 */ virtual ~UnkSystem2_UnkSubSystem1_Derived2() override {}
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
+};
+
+class UnkSystem2_UnkSubSystem1_Derived3 : public UnkSystem2_UnkSubSystem1_Base {
+public:
+    /* 00 (base) */
+    /* 30 */ unk32 mUnk_30;
+    /* 34 */
+
+    UnkSystem2_UnkSubSystem1_Derived3() {}
+
+    // data_ov000_020b1f5c
+    /* 00 */ virtual ~UnkSystem2_UnkSubSystem1_Derived3() override {}
+    /* 0C */ virtual void vfunc_0C() override;
+
+    void func_ov000_02063a3c(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
 };
 
 class UnkSystem2_UnkSubSystem5_Base_10 {
@@ -687,15 +720,17 @@ public:
     /* 00 */ UnkSystem2_UnkSubSystem1_Base *mUnk_00;
     /* 04 */ UnkSystem2_UnkSubSystem5 mUnk_04;
 
+    UnkSystem2_UnkSubSystem3();
     UnkSystem2_UnkSubSystem3(UnkSystem2_UnkSubSystem1_Base *param1, unk32 param2, unk32 param3, unk32 param4);
 
     void func_ov000_02062f30();
+    void func_ov000_02062f18(void *param1, unk32 param2, unk32 param3);
 };
 
 class UnkSystem2_UnkSubSystem8_Base {
 public:
     /* 00 (vtable) */
-    /* 04 */ UnkSystem2_UnkSubSystem1_Derived2 *mUnk_04;
+    /* 04 */ UnkSystem2_UnkSubSystem1_Base *mUnk_04;
     /* 08 */ bool mUnk_08;
     /* 09 */ unk8 mUnk_09;
     /* 0A */ unk8 mUnk_0A;
@@ -1144,4 +1179,12 @@ public:
     bool func_ov024_020c4f7c();
     bool func_ov024_020c510c();
     void func_ov024_020c5120(bool param1);
+};
+
+class UnkSystem8 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x30);
+    /* 30 */
+
+    UnkSystem8();
 };

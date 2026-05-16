@@ -288,7 +288,7 @@ from:0x020ecd2c kind:load to:0x020a1aac module:overlay(0)
 from:0x020ecd30 kind:load to:0x020f08e0 module:overlay(23)
 from:0x020ecd34 kind:load to:0x020ecd88 module:overlay(23)
 from:0x020ecd38 kind:load to:0x020ec1a0 module:overlay(23)
-from:0x020ecd3c kind:load to:0x020b372c module:overlay(0)
+from:0x020ecd3c kind:load to:0x020b3724 module:overlay(0) add:0x8
 from:0x020ecd40 kind:load to:0x020ecd9c module:overlay(23)
 from:0x020ecd44 kind:load to:0x0201f468 module:main
 from:0x020ecd48 kind:load to:0x020b378c module:overlay(0)

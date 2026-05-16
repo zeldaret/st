@@ -10,15 +10,38 @@
 
 class AdventureModeManager_1B8;
 
-class AdventureModeManager_15C_20_00 {
+class AdventureModeManager_15C_20_00 : public GameModeManagerBase_104 {
 public:
     /* 000 (vtable) */
-    /* 004 */ STRUCT_PAD(0x04, 0x77C);
+    /* 01C */ unk32 mUnk_01C;
+    /* 020 */ UnkSystem2_UnkSubSystem1_Base *mUnk_020;
+    /* 024 */ UnkSystem2_UnkSubSystem1_Base *mUnk_024;
+    /* 028 */ UnkSystem2_UnkSubSystem8 mUnk_028;
+    /* 078 */ UnkSystem2_UnkSubSystem8 mUnk_078;
+    /* 0C8 */ UnkSystem8 mUnk_0C8;
+    /* 0F8 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_0F8;
+    /* 158 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_158;
+    /* 1B8 */ UnkSystem2_UnkSubSystem1_Derived3 mUnk_1B8;
+    /* 1EC */ UnkSystem2_UnkSubSystem7_Derived2 mUnk_1EC;
+    /* 250 */ UnkSystem2_UnkSubSystem1_Derived3 mUnk_250;
+    /* 284 */ UnkSystem2_UnkSubSystem7_Derived2 mUnk_284;
+    /* 2E8 */ UnkStruct_ov019_020d24c8_28_258 mUnk_2E8;
+    /* 300 */ UnkSystem2_UnkSubSystem3 mUnk_300;
+    /* 53C */ UnkSystem2_UnkSubSystem3 mUnk_53C;
+    /* 778 */ bool mUnk_778;
+    /* 779 */ bool mUnk_779;
+    /* 77A */ unk16 mUnk_77A;
     /* 77C */
 
-    AdventureModeManager_15C_20_00(unk32 param1);
+    AdventureModeManager_15C_20_00(bool param1);
 
-    /* 00 */ virtual ~AdventureModeManager_15C_20_00();
+    /* 00 */ virtual ~AdventureModeManager_15C_20_00() override;
+    /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl) override;
+    /* 10 */ virtual void vfunc_10(unk8 *param1) override;
+
+    void func_ov024_020ca48c();
+    void func_ov024_020ca5c8();
+    void func_ov024_020ca658();
 };
 
 class AdventureModeManager_15C_28 : public UnkSystem1_ov000_Derived1 {

@@ -402,7 +402,7 @@ _ZN34UnkStruct_ov019_020d24c8_28_258_0019func_ov000_0205fc20EiiPvS0_ kind:functi
 func_ov000_0205fd08 kind:function(arm,size=0x38) addr:0x0205fd08
 func_ov000_0205fd40 kind:function(arm,size=0x90) addr:0x0205fd40
 func_ov000_0205fdd0 kind:function(arm,size=0x28) addr:0x0205fdd0
-func_ov000_0205fdf8 kind:function(arm,size=0x28) addr:0x0205fdf8
+_ZN33UnkSystem2_UnkSubSystem7_Derived2C1Ev kind:function(arm,size=0x28) addr:0x0205fdf8
 _ZN24UnkSystem2_UnkSubSystem7D1Ev kind:function(arm,size=0x68) addr:0x0205fe20
 func_ov000_0205fe88 kind:function(arm,size=0x68) addr:0x0205fe88
 func_ov000_0205fef0 kind:function(arm,size=0x128) addr:0x0205fef0
@@ -551,8 +551,8 @@ func_ov000_02062e44 kind:function(arm,size=0x18) addr:0x02062e44
 func_ov000_02062e5c kind:function(arm,size=0x18) addr:0x02062e5c
 func_ov000_02062e74 kind:function(arm,size=0x54) addr:0x02062e74
 _ZN24UnkSystem2_UnkSubSystem3C1EP29UnkSystem2_UnkSubSystem1_Baseiii kind:function(arm,size=0x30) addr:0x02062ec8
-func_ov000_02062ef8 kind:function(arm,size=0x20) addr:0x02062ef8
-func_ov000_02062f18 kind:function(arm,size=0x18) addr:0x02062f18
+_ZN24UnkSystem2_UnkSubSystem3C1Ev kind:function(arm,size=0x20) addr:0x02062ef8
+_ZN24UnkSystem2_UnkSubSystem319func_ov000_02062f18EPvii kind:function(arm,size=0x18) addr:0x02062f18
 _ZN24UnkSystem2_UnkSubSystem319func_ov000_02062f30Ev kind:function(arm,size=0xd4) addr:0x02062f30
 func_ov000_02063004 kind:function(arm,size=0x6c) addr:0x02063004
 _ZN19func_ov000_02063070D1Ev kind:function(arm,size=0x14) addr:0x02063070
@@ -564,8 +564,8 @@ func_ov000_02063164 kind:function(arm,size=0xcc) addr:0x02063164
 _ZN33UnkSystem2_UnkSubSystem1_Derived1C2Eiiiiii kind:function(arm,size=0x84) addr:0x02063230
 _ZN33UnkSystem2_UnkSubSystem1_Derived1C1Eiiiiii kind:function(arm,size=0x84) addr:0x020632b4
 func_ov000_02063338 kind:function(arm,size=0x44) addr:0x02063338
-func_ov000_0206337c kind:function(arm,size=0x44) addr:0x0206337c
-func_ov000_020633c0 kind:function(arm,size=0x124) addr:0x020633c0
+_ZN33UnkSystem2_UnkSubSystem1_Derived1C1Ev kind:function(arm,size=0x44) addr:0x0206337c
+_ZN33UnkSystem2_UnkSubSystem1_Derived119func_ov000_020633c0Eiiiiii kind:function(arm,size=0x124) addr:0x020633c0
 func_ov000_020634e4 kind:function(arm,size=0x58) addr:0x020634e4
 func_ov000_0206353c kind:function(arm,size=0xcc) addr:0x0206353c
 _ZN19func_ov000_02063608D1Ev kind:function(arm,size=0x14) addr:0x02063608
@@ -574,11 +574,11 @@ func_ov000_02063638 kind:function(arm,size=0xb0) addr:0x02063638
 func_ov000_020636e8 kind:function(arm,size=0x130) addr:0x020636e8
 _ZN19func_ov000_02063818D1Ev kind:function(arm,size=0x14) addr:0x02063818
 _ZN19func_ov000_0206382cD0Ev kind:function(arm,size=0x1c) addr:0x0206382c
-func_ov000_02063848 kind:function(arm,size=0x28) addr:0x02063848
+_ZN29UnkSystem2_UnkSubSystem1_BaseC2Ev kind:function(arm,size=0x28) addr:0x02063848
 func_ov000_02063870 kind:function(arm,size=0x98) addr:0x02063870
 func_ov000_02063908 kind:function(arm,size=0xcc) addr:0x02063908
 _ZN33UnkSystem2_UnkSubSystem1_Derived2C1Eiiiiii kind:function(arm,size=0x68) addr:0x020639d4
-func_ov000_02063a3c kind:function(arm,size=0x54) addr:0x02063a3c
+_ZN33UnkSystem2_UnkSubSystem1_Derived319func_ov000_02063a3cEiiiiii kind:function(arm,size=0x54) addr:0x02063a3c
 func_ov000_02063a90 kind:function(arm,size=0x2c) addr:0x02063a90
 func_ov000_02063abc kind:function(arm,size=0x54) addr:0x02063abc
 func_ov000_02063b10 kind:function(arm,size=0xc) addr:0x02063b10
@@ -3465,7 +3465,7 @@ _ZTV19data_ov000_020b1ec4 kind:data(any) addr:0x020b1ec4
 _ZTV19data_ov000_020b1edc kind:data(any) addr:0x020b1edc
 _ZTV19data_ov000_020b1ef4 kind:data(any) addr:0x020b1ef4
 _ZTV19data_ov000_020b1f0c kind:data(any) addr:0x020b1f0c
-data_ov000_020b1f2c kind:data(any) addr:0x020b1f2c
+_ZTV33UnkSystem2_UnkSubSystem1_Derived3 kind:data(any) addr:0x020b1f24
 data_ov000_020b1f44 kind:data(any) addr:0x020b1f44
 _ZTV19data_ov000_020b1f54 kind:data(any) addr:0x020b1f54
 data_ov000_020b1f74 kind:data(any) addr:0x020b1f74
