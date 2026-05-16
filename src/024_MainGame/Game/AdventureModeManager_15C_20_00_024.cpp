@@ -7,6 +7,7 @@
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
 #include "regs.h"
+#include "versions.h"
 
 extern "C" void GX_func_0008(void *, unk32, unk32);
 
@@ -89,11 +90,19 @@ void AdventureModeManager_15C_20_00::vfunc_08(Input *pButtons, TouchControl *pTo
             if (!this->mUnk_779 && !this->mUnk_0C8.mUnk_0C) {
                 this->mUnk_0C8.UpdateLogic();
 
+#if IS_JP
+                GX_func_0008(&REG_BLDCNT, 0x2F, this->mUnk_0C8.func_0201edbc());
+
+                if (data_0204a110.mUnk_008 != 1) {
+                    GX_func_0008(&REG_BLDCNT_SUB, 0x3F, this->mUnk_0C8.func_0201edbc());
+                }
+#else
                 GX_func_0008(&REG_BLDCNT, 0x0F, this->mUnk_0C8.func_0201edbc());
 
                 if (data_0204a110.mUnk_008 != 1) {
                     GX_func_0008(&REG_BLDCNT_SUB, 0x1F, this->mUnk_0C8.func_0201edbc());
                 }
+#endif
             }
 
             if (!this->func_ov017_020c19a0()) {

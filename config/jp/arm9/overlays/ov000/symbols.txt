@@ -3469,7 +3469,7 @@ _ZTV33UnkSystem2_UnkSubSystem1_Derived4 kind:data(any) addr:0x020b3724
 data_ov000_020b3744 kind:data(any) addr:0x020b3744
 _ZTV19data_ov000_020b3754 kind:data(any) addr:0x020b3754
 data_ov000_020b3774 kind:data(any) addr:0x020b3774
-_ZTV24UnkSystem2_UnkSubSystem8 kind:data(any) addr:0x020b378c
+_ZTV24UnkSystem2_UnkSubSystem8 kind:data(any) addr:0x020b3784
 data_ov000_020b379c kind:data(any) addr:0x020b379c
 data_ov000_020b37ac kind:data(any) addr:0x020b37ac
 data_ov000_020b37bc kind:data(any) addr:0x020b37bc

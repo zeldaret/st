@@ -123,6 +123,9 @@ enum MsgIndex_ {
     MsgIndex_CantReadSign,
     MsgIndex_Empty_73,
     MsgIndex_SaveAskQuit,
+#if IS_JP
+    MsgIndex_TooDarkToRead,
+#endif
     MsgIndex_MiniGameQuit,
     MsgIndex_ItLooksDifferent,
     MsgIndex_NothingHappened,
