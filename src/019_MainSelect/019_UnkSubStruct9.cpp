@@ -44,7 +44,7 @@ ARM UnkSubStruct9::UnkSubStruct9(stack_struct1 param1) :
     }
 
     stack = &this->mUnk_004;
-    func_020166cc(&this->mUnk_004.mUnk_04, &stack, param1.param1);
+    func_020166cc(&this->mUnk_004, &stack, param1.param1);
     this->mUnk_004.mUnk_2C = 1;
 }
 

@@ -18,12 +18,12 @@ public:
     /* 024 */ UnkSystem2_UnkSubSystem1_Base *mUnk_024;
     /* 028 */ UnkSystem2_UnkSubSystem8 mUnk_028;
     /* 078 */ UnkSystem2_UnkSubSystem8 mUnk_078;
-    /* 0C8 */ UnkSystem8 mUnk_0C8;
+    /* 0C8 */ UnkSubStruct1_Derived1 mUnk_0C8;
     /* 0F8 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_0F8;
     /* 158 */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_158;
-    /* 1B8 */ UnkSystem2_UnkSubSystem1_Derived3 mUnk_1B8;
+    /* 1B8 */ UnkSystem2_UnkSubSystem1_Derived4 mUnk_1B8;
     /* 1EC */ UnkSystem2_UnkSubSystem7_Derived2 mUnk_1EC;
-    /* 250 */ UnkSystem2_UnkSubSystem1_Derived3 mUnk_250;
+    /* 250 */ UnkSystem2_UnkSubSystem1_Derived4 mUnk_250;
     /* 284 */ UnkSystem2_UnkSubSystem7_Derived2 mUnk_284;
     /* 2E8 */ UnkStruct_ov019_020d24c8_28_258 mUnk_2E8;
     /* 300 */ UnkSystem2_UnkSubSystem3 mUnk_300;
@@ -39,6 +39,11 @@ public:
     /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl) override;
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
 
+    // overlay 17
+    bool func_ov017_020c19a0();
+    void func_ov017_020c1c80(unk32 param1);
+
+    // overlay 24
     void func_ov024_020ca48c();
     void func_ov024_020ca5c8();
     void func_ov024_020ca658();

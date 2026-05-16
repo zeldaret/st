@@ -1565,7 +1565,7 @@ from:0x020639d0 kind:load to:0x0204af1c module:main
 from:0x020639ec kind:arm_call to:0x02063848 module:overlay(0)
 from:0x020639fc kind:arm_call to:0x0205fdf8 module:overlay(0)
 from:0x02063a28 kind:arm_call to:0x02063a3c module:overlay(0)
-from:0x02063a38 kind:load to:0x020b1f24 module:overlay(0) add:0x8
+from:0x02063a38 kind:load to:0x020b1f24 add:0x8 module:overlay(0)
 from:0x02063a88 kind:arm_call to:0x02063870 module:overlay(0)
 from:0x02063a98 kind:arm_call to:0x02062ce0 module:overlay(0)
 from:0x02063aac kind:arm_call to:0x02060018 module:overlay(0)

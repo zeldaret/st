@@ -55,7 +55,7 @@ ARM FileSelectMicTest::FileSelectMicTest() :
     mUnk_304(BTN_ID_RETURN, 0x8E, 0x00, 0x01, 0x8E, 0x00),
     mUnk_3F8(0x8D, 0x01),
     mUnk_630(1) {
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_304.mUnk_044.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_304.mUnk_044);
     this->mUnk_020.func_0201f730(BMG_ID(BMGGroup_select, 0x06));
     this->mUnk_3F8.mUnk_14E = 1;
     this->mUnk_3F8.func_0201f730(BMG_ID(BMGGroup_select, 0x43));
@@ -131,7 +131,6 @@ ARM void FileSelectMicTest::func_ov019_020ceaac() {
 }
 
 ARM void FileSelectMicTest::func_ov019_020cebcc() {
-
     this->mUnk_304.mUnk_000.mUnk_0A = false;
     this->mUnk_304.mUnk_000.mUnk_0B = true;
     this->mUnk_304.mUnk_000.mUnk_0C = false;
@@ -181,7 +180,7 @@ ARM void FileSelectMicTest::vfunc_08(Input *pButtons, TouchControl *pTouchContro
     }
 
     if (this->mState - 1 <= FSMicTestState_OptionsToMicTest) {
-        this->mUnk_304.mUnk_000.UnkOperations(NULL, false);
+        this->mUnk_304.mUnk_000.UpdateLogic();
         UnkStruct_ov019_020d24c8_28_258 local_2c(0x8D, 0x01);
 
         volatile Vec2us result;

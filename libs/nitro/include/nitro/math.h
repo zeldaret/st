@@ -230,6 +230,19 @@ extern "C" static inline void Vec2s_Clear(Vec2s *pVec) {
     pVec->x = *(s16 *) &x;
     pVec->y = *(s16 *) &y;
 }
+
+extern "C" static inline void Vec2s_SetU(Vec2s *dest, Vec2us *src) {
+    u16 x = src->x;
+    u16 y = src->y;
+
+    // clear current data
+    dest->x = 0;
+    dest->y = 0;
+
+    // set new data
+    dest->x = x;
+    dest->y = y;
+}
 extern "C" {
 #else
 typedef struct Vec2b {

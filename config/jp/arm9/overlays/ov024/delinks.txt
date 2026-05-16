@@ -89,7 +89,9 @@ src/024_MainGame/Game/AdventureModeManager_190_024.cpp:
     .data       start:0x020d9878 end:0x020d98e0
 
 src/024_MainGame/Game/AdventureModeManager_15C_20_00_024.cpp:
+    complete
     .text       start:0x020cbb70 end:0x020cc2a8
+    .data       start:0x020d98f0 end:0x020d9914
 
 src/024_MainGame/PassengerManager.cpp:
     .text       start:0x020d5a74 end:0x020d6008

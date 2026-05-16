@@ -179,10 +179,10 @@ ARM FileSelectOptions::FileSelectOptions(s32 saveSlotIndex) :
     mUnk_1A68(&mUnk_19D0),
     mUnk_1AB8(&mUnk_19D0, 0x8C, 0x09, BMG_ID(BMGGroup_select, 0x07)) {
     this->mUnk_1CF5 = false;
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_10A8.mUnk_04);
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_19D0.mUnk_04);
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_1388.mUnk_04);
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_16AC.mUnk_04);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_10A8);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_19D0);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_1388);
+    this->mUnk_0C.mList.func_020166cc(&this->mUnk_16AC);
     this->mUnk_10A8.mUnk_2A = false;
     this->mUnk_1388.mUnk_2C = true;
     this->mUnk_16AC.mUnk_2C = true;
@@ -505,11 +505,11 @@ ARM void FileSelectOptions::func_ov019_020cd7f8() {
 }
 
 ARM void FileSelectOptions::func_ov019_020cd8d4() {
-    this->mUnk_1064.UnkOperations(&this->mUnk_0024.mUnk_004, true);
+    this->mUnk_1064.Update(&this->mUnk_0024.mUnk_004);
     this->mUnk_1420.func_ov000_02063f64();
     this->mUnk_1744.func_ov000_02063f64();
     this->mUnk_1A68.func_ov000_02063f64();
-    this->mUnk_1344.UnkOperations2(&this->mUnk_10A8.mPos, true);
+    this->mUnk_1344.Update(&this->mUnk_10A8.mPos);
 }
 
 ARM bool FileSelectOptions::func_ov019_020cdbdc() {
@@ -634,12 +634,12 @@ ARM UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManag
     this->mUnk_FC3[0].mUnk_00 = *src;
     this->mUnk_103E           = pSaveSub17->mUnk_7E;
 
-    param1->mList.func_020166cc(&this->mUnk_490.mUnk_04);
-    param1->mList.func_020166cc(&this->mUnk_4F0.mUnk_04);
-    param1->mList.func_020166cc(&this->mUnk_9C0.mUnk_04);
-    param1->mList.func_020166cc(&this->mUnk_A20.mUnk_04);
-    param1->mList.func_020166cc(&this->mUnk_EF0.mUnk_04);
-    param1->mList.func_020166cc(&this->mUnk_F50.mUnk_04);
+    param1->mList.func_020166cc(&this->mUnk_490);
+    param1->mList.func_020166cc(&this->mUnk_4F0);
+    param1->mList.func_020166cc(&this->mUnk_9C0);
+    param1->mList.func_020166cc(&this->mUnk_A20);
+    param1->mList.func_020166cc(&this->mUnk_EF0);
+    param1->mList.func_020166cc(&this->mUnk_F50);
 
     this->mUnk_490.mPosOffset.x = 0;
     this->mUnk_490.mPosOffset.y = 0;

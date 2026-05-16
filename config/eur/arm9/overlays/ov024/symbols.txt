@@ -803,7 +803,7 @@ _ZTV27AdventureModeManager_190_14 kind:data(any) addr:0x020d7ef4
 _ZTV24AdventureModeManager_190 kind:data(any) addr:0x020d7f10
 data_ov024_020d7f40 kind:data(any) addr:0x020d7f40
 _ZTV30AdventureModeManager_15C_20_00 kind:data(any) addr:0x020d7f50
-data_ov024_020d7f7c kind:data(any) addr:0x020d7f7c
+_ZTV19data_ov024_020d7f7c kind:data(any) addr:0x020d7f74
 _ZTV19data_ov024_020d7f80 kind:data(any) addr:0x020d7f80
 data_ov024_020d7fac kind:data(any) addr:0x020d7fac
 data_ov024_020d7fd0 kind:data(any) addr:0x020d7fd0

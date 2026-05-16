@@ -574,7 +574,7 @@ func_ov000_02063638 kind:function(arm,size=0xb0) addr:0x02063638
 func_ov000_020636e8 kind:function(arm,size=0x130) addr:0x020636e8
 _ZN19func_ov000_02063818D1Ev kind:function(arm,size=0x14) addr:0x02063818
 _ZN19func_ov000_0206382cD0Ev kind:function(arm,size=0x1c) addr:0x0206382c
-_ZN29UnkSystem2_UnkSubSystem1_BaseC2Ev kind:function(arm,size=0x28) addr:0x02063848
+_ZN33UnkSystem2_UnkSubSystem1_Derived3C2Ev kind:function(arm,size=0x28) addr:0x02063848
 func_ov000_02063870 kind:function(arm,size=0x98) addr:0x02063870
 func_ov000_02063908 kind:function(arm,size=0xcc) addr:0x02063908
 _ZN33UnkSystem2_UnkSubSystem1_Derived2C1Eiiiiii kind:function(arm,size=0x68) addr:0x020639d4
@@ -3465,7 +3465,7 @@ _ZTV19data_ov000_020b1ec4 kind:data(any) addr:0x020b1ec4
 _ZTV19data_ov000_020b1edc kind:data(any) addr:0x020b1edc
 _ZTV19data_ov000_020b1ef4 kind:data(any) addr:0x020b1ef4
 _ZTV19data_ov000_020b1f0c kind:data(any) addr:0x020b1f0c
-_ZTV33UnkSystem2_UnkSubSystem1_Derived3 kind:data(any) addr:0x020b1f24
+_ZTV33UnkSystem2_UnkSubSystem1_Derived4 kind:data(any) addr:0x020b1f24
 data_ov000_020b1f44 kind:data(any) addr:0x020b1f44
 _ZTV19data_ov000_020b1f54 kind:data(any) addr:0x020b1f54
 data_ov000_020b1f74 kind:data(any) addr:0x020b1f74

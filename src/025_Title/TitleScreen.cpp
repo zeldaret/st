@@ -193,7 +193,7 @@ test:
 }
 
 void TitleScreen::func_ov025_020c5240(Input *pButtons, TouchControl *pTouchControl) {
-    this->mUnk_218.UnkOperations();
+    this->mUnk_218.UpdateLogic();
     this->mUnk_204.mUnk_10 = this->mUnk_218.func_0201f04c();
 
     if (this->mUnk_024.func_ov000_02060af8() == 0) {
@@ -230,7 +230,7 @@ void TitleScreen::func_ov025_020c53d0(Input *pButtons, TouchControl *pTouchContr
         this->mUnk_18C.mUnk_6E = true;
     }
 
-    this->mUnk_218.UnkOperations();
+    this->mUnk_218.UpdateLogic();
     this->mUnk_204.mUnk_10 = this->mUnk_218.func_0201f04c();
 
     if (this->mUnk_218.mUnk_0C) {

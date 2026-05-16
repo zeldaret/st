@@ -55,6 +55,26 @@ enum FileSelectExitMode_ {
     /* 0x03 */ FileSelectExitMode_Unk_3         = 3,
 };
 
+class FileSelectMain_UnkSubStruct1 : public UnkSubStruct1_Base {
+public:
+    /* 00 (base) */
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ unk32 mUnk_28;
+    /* 2C */ unk32 mUnk_2C;
+    /* 30 */
+
+    void Subprocess1_UnkValueSets() {
+        this->mUnk_10 = this->mUnk_18;
+    }
+
+    void Subprocess2_UnkValueSets() {
+        this->mUnk_10 = this->mUnk_14;
+    }
+
+    UnkSubStruct1_Methods;
+};
+
 class FileSelectMain : public GameModeManagerBase_104 { // 022E5F70
 public:
     /* 0000 (base) */
@@ -65,7 +85,7 @@ public:
     /* 0026 */ unk8 mUnk_0026;
     /* 0027 */ unk8 mUnk_0027;
     /* 0028 */ unk32 mUnk_0028;
-    /* 002C */ UnkSubStruct1 mUnk_002C;
+    /* 002C */ FileSelectMain_UnkSubStruct1 mUnk_002C;
     /* 005C */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_005C;
     /* 00BC */ UnkSystem2_UnkSubSystem9 mUnk_00BC;
 

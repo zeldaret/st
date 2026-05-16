@@ -321,7 +321,7 @@ void AdventureModeManager::vfunc_24() {
     }
 
     if (!var_r2_2 && !data_0204a088->mUnk_127) {
-        if (data_0204a110.func_01ff9b50() == 0x80) {
+        if (data_0204a110.func_01ff9b50() == BTN_ID_UNK_80) {
             return;
         }
 
