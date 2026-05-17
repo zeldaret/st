@@ -778,32 +778,83 @@ public:
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
 };
 
+struct AdventureModeManager_1B8_Base_1C {
+    /* 00 */ unk16 mUnk_00;
+    /* 02 */ s16 mUnk_02;
+    /* 04 */ unk16 mUnk_04;
+    /* 06 */ s16 mUnk_06;
+};
+
 class AdventureModeManager_1B8_Base {
 public:
-    AdventureModeManager_1B8_Base();
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ bool mUnk_08;
+    /* 09 */ bool mUnk_09;
+    /* 0A */ bool mUnk_0A;
+    /* 0B */ u8 mUnk_0B;
+    /* 0C */ u8 mUnk_0C;
+    /* 0C */ bool mUnk_0D;
+    /* 0E */ u8 mBGType;
+    /* 0F */ bool mIsTopScreen;
+    /* 10 */ bool mUnk_10;
+    /* 11 */ unk8 mUnk_11; // pad?
+    /* 12 */ unk8 mUnk_12; // pad?
+    /* 13 */ unk8 mUnk_13; // pad?
+    /* 14 */ s32 mUnk_14;
+    /* 18 */ u8 *mUnk_18;
+    /* 1C */ AdventureModeManager_1B8_Base_1C mUnk_1C;
+    /* 24 */
 
+    int GetUnkValue_Impl(int val, bool cond) {
+        if (cond) {
+            return (val * 256) / 2;
+        }
+
+        return val * 256;
+    }
+
+    int GetUnkValue(int val) {
+        return GetUnkValue_Impl(val, this->mUnk_10);
+    }
+
+    AdventureModeManager_1B8_Base(u8 bgType, bool param2, AdventureModeManager_1B8_Base_1C *param3, bool param4, bool param5);
+    ~AdventureModeManager_1B8_Base();
+
+    void func_ov024_020d0698();
     void func_ov024_020d06d0();
     void func_ov024_020d072c(unk8 *param1);
-    void func_ov024_020d13cc();
+    bool func_ov024_020d0744(s32 arg1, s32 arg2, s32 arg3, s32 arg4, u8 arg5, u8 arg6);
+    bool func_ov024_020d0924(unk32 param1, unk32 param2, u8 param3, u8 param4);
+    void func_ov024_020d0a64();
+    void TryLoadBGChar(void *ptr, u32 offset, u32 size);
+    unk32 func_ov024_020d0db4(unk32 param1, unk32 param2);
+    bool func_ov024_020d0df8(unk32 param1, unk32 param2);
+    void func_ov024_020d0e64(void *ptr, u32 size);
+    bool func_ov024_020d0e98();
+    static void func_ov024_020d0ec0(s32 *pFlags, s32 position, bool doSet);
+    static bool func_ov024_020d0f0c(s32 *pFlags, s32 position);
+    static unk32 func_ov024_020d0f2c(unk32 param1, unk32 param2);
 };
 
 class AdventureModeManager_1B8 : public AdventureModeManager_1B8_Base {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk8 mUnk_08;
-    /* 0C */ STRUCT_PAD(0x0C, 0x2C);
+    /* 00 (base) */
+    /* 24 */ unk32 mUnk_24;
+    /* 24 */ unk32 mUnk_28;
     /* 2C */
 
     AdventureModeManager_1B8(unk32 param1, unk32 param2, unk32 param3); // overlay 24
     ~AdventureModeManager_1B8();
 
     void func_ov024_020d1364();
+    void func_ov024_020d13cc();
 };
 
 class AdventureModeManager_1BC : public AdventureModeManager_1B8_Base {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x34);
+    /* 00 (base) */
+    /* 24 */ STRUCT_PAD(0x24, 0x34);
     /* 34 */ bool mUnk_34;
     /* 35 */ unk8 mUnk_35;
     /* 36 */ unk8 mUnk_36;
