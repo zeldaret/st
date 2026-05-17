@@ -30,15 +30,15 @@ public:
 
 UnkStruct_ov019_020d24c0 data_ov019_020d24c0(-0x100, 0, 0x100, 0);
 
-UnkStruct_ov019_020d1e4c UnkStruct_ov019_020d1e70::data_ov019_020d1e4c = {
-    0x14, 0x14, 0x14, 0x04, 0x03, -0x47, 0x00, 0x0281, -0x47, {0x00, 0x00}, 0x0281,
-};
+static const UnkStruct_ov019_020d1e70 data_ov019_020d1e70;
 
 UnkStruct_ov019_020d1e94 UnkStruct_ov019_020d1e70::data_ov019_020d1e94 = {
     0x00, 0x00, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14,
 };
 
-static const UnkStruct_ov019_020d1e70 data_ov019_020d1e70;
+UnkStruct_ov019_020d1e4c UnkStruct_ov019_020d1e70::data_ov019_020d1e4c = {
+    0x14, 0x14, 0x14, 0x04, 0x03, -0x47, 0x00, 0x0281, -0x47, {0x00, 0x00}, 0x0281,
+};
 
 static PTMF<FileSelectMain> data_ov019_020d1f94[FileSelectState_Max] = {
     FileSelectMain::func_ov019_020c8290, // FileSelectState_Unk_00
@@ -66,32 +66,6 @@ static PTMF<FileSelectMain> data_ov019_020d1f94[FileSelectState_Max] = {
     FileSelectMain::func_ov019_020c80f4, // FileSelectState_OptionsFromChooseMode
 };
 
-static PTMF<FileSelectMain> data_ov019_020d1edc[FileSelectState_Max] = {
-    FileSelectMain::func_ov019_020c6d0c, // FileSelectState_Unk_00
-    FileSelectMain::func_ov019_020c6d48, // FileSelectState_Init
-    FileSelectMain::func_ov019_020c6e14, // FileSelectState_SlotSelectIdle
-    FileSelectMain::func_ov019_020c717c, // FileSelectState_SlotSelectToFileManager
-    FileSelectMain::func_ov019_020c71f0, // FileSelectState_FileManagerFromSlotSelect
-    FileSelectMain::func_ov019_020c7210, // FileSelectState_FileManagerToSlotSelect
-    FileSelectMain::func_ov019_020c71d0, // FileSelectState_SlotSelectFromFileManager
-    FileSelectMain::func_ov019_020c7274, // FileSelectState_FileManagerIdle
-    FileSelectMain::func_ov019_020c7768, // FileSelectState_FileManagerToChooseMode
-    FileSelectMain::func_ov019_020c77b8, // FileSelectState_ChooseModeFromFileManager
-    FileSelectMain::func_ov019_020c7804, // FileSelectState_ChooseModeToFileManager
-    FileSelectMain::func_ov019_020c7858, // FileSelectState_FileManagerFromChooseMode
-    FileSelectMain::func_ov019_020c7878, // FileSelectState_ChooseModeIdle
-    FileSelectMain::func_ov019_020c78ac, // FileSelectState_ChooseModeToEnterGameMode
-    FileSelectMain::func_ov019_020c7910, // FileSelectState_EnterGameMode
-    FileSelectMain::func_ov019_020c7c3c, // FileSelectState_SlotSelectToNewFile
-    FileSelectMain::func_ov019_020c7c48, // FileSelectState_NewFileToSlotSelect
-    FileSelectMain::func_ov019_020c7c70, // FileSelectState_FileManagerToCopyErase
-    FileSelectMain::func_ov019_020c7d3c, // FileSelectState_CopyEraseFromFileManager
-    FileSelectMain::func_ov019_020c80dc, // FileSelectState_ChooseModeToContactMode
-    FileSelectMain::func_ov019_020c80e8, // FileSelectState_OptionsToChooseMode
-    FileSelectMain::func_ov019_020c6d08, // FileSelectState_NewFileFromSlotSelect
-    FileSelectMain::func_ov019_020c6d08, // FileSelectState_OptionsFromChooseMode
-};
-
 static PTMF<FileSelectMain> data_ov019_020d204c[FileSelectState_Max] = {
     FileSelectMain::func_ov019_020cb26c, // FileSelectState_Unk_00
     FileSelectMain::func_ov019_020cb4bc, // FileSelectState_Init
@@ -116,6 +90,32 @@ static PTMF<FileSelectMain> data_ov019_020d204c[FileSelectState_Max] = {
     FileSelectMain::func_ov019_020cb5bc, // FileSelectState_OptionsToChooseMode
     FileSelectMain::func_ov019_020cb268, // FileSelectState_NewFileFromSlotSelect
     FileSelectMain::func_ov019_020cb268, // FileSelectState_OptionsFromChooseMode
+};
+
+static PTMF<FileSelectMain> data_ov019_020d1edc[FileSelectState_Max] = {
+    FileSelectMain::func_ov019_020c6d0c, // FileSelectState_Unk_00
+    FileSelectMain::func_ov019_020c6d48, // FileSelectState_Init
+    FileSelectMain::func_ov019_020c6e14, // FileSelectState_SlotSelectIdle
+    FileSelectMain::func_ov019_020c717c, // FileSelectState_SlotSelectToFileManager
+    FileSelectMain::func_ov019_020c71f0, // FileSelectState_FileManagerFromSlotSelect
+    FileSelectMain::func_ov019_020c7210, // FileSelectState_FileManagerToSlotSelect
+    FileSelectMain::func_ov019_020c71d0, // FileSelectState_SlotSelectFromFileManager
+    FileSelectMain::func_ov019_020c7274, // FileSelectState_FileManagerIdle
+    FileSelectMain::func_ov019_020c7768, // FileSelectState_FileManagerToChooseMode
+    FileSelectMain::func_ov019_020c77b8, // FileSelectState_ChooseModeFromFileManager
+    FileSelectMain::func_ov019_020c7804, // FileSelectState_ChooseModeToFileManager
+    FileSelectMain::func_ov019_020c7858, // FileSelectState_FileManagerFromChooseMode
+    FileSelectMain::func_ov019_020c7878, // FileSelectState_ChooseModeIdle
+    FileSelectMain::func_ov019_020c78ac, // FileSelectState_ChooseModeToEnterGameMode
+    FileSelectMain::func_ov019_020c7910, // FileSelectState_EnterGameMode
+    FileSelectMain::func_ov019_020c7c3c, // FileSelectState_SlotSelectToNewFile
+    FileSelectMain::func_ov019_020c7c48, // FileSelectState_NewFileToSlotSelect
+    FileSelectMain::func_ov019_020c7c70, // FileSelectState_FileManagerToCopyErase
+    FileSelectMain::func_ov019_020c7d3c, // FileSelectState_CopyEraseFromFileManager
+    FileSelectMain::func_ov019_020c80dc, // FileSelectState_ChooseModeToContactMode
+    FileSelectMain::func_ov019_020c80e8, // FileSelectState_OptionsToChooseMode
+    FileSelectMain::func_ov019_020c6d08, // FileSelectState_NewFileFromSlotSelect
+    FileSelectMain::func_ov019_020c6d08, // FileSelectState_OptionsFromChooseMode
 };
 
 const unk32 data_ov019_020d1bbc[] = {0x00000000, 0x00000000, 0x00000000, 0x00000001};
