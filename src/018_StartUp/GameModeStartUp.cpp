@@ -96,9 +96,9 @@ ARM void UnkStruct_02011e10::func_ov018_020c4980() {
 
     this->mUnk_00[HeapIndex_Main] = func_020012e0(arenaLo, arenaHi - arenaLo, 2);
     unk32 length                  = func_0202d624(NULL, 0);
-    void *ptr                     = ::operator new(length, 0);
+    void *ptr                     = ::operator new(length, 0, 4);
     func_0202d624(ptr, length);
-    ptr         = ::operator new(0xBE000, 0);
+    ptr         = ::operator new(0xBE000, 0, 4);
     void *uVar3 = func_02001fd4(ptr, 0xBE000);
 
     this->mUnk_24[0] = (unk32) uVar3;

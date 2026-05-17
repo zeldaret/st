@@ -33,8 +33,6 @@ public:
     void func_0201c1e4();
     void func_0201c22c();
 
-    void func_ov024_020cada0();
-
     void func_ov001_020bd734(unk32 *param1);
     void func_ov001_020bd784();
 };

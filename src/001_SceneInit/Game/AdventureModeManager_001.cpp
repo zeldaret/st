@@ -197,7 +197,7 @@ void AdventureModeManager::vfunc_14() {
     this->mUnk_18C = new(HeapIndex_1) AdventureModeManager_18C(&this->mUnk_104);
     this->mUnk_190 = new(HeapIndex_1) AdventureModeManager_190(&this->mUnk_104);
 
-    this->mUnk_004.func_ov024_020cada0();
+    UnkStruct_ov024_020d8694::Create(&this->mUnk_004);
     data_ov024_020d86a0->func_ov001_020bd818();
 }
 

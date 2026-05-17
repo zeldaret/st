@@ -40,6 +40,10 @@ public:
 
 void *operator new(size_t length, u32 id, u32 idLength = 4);
 void *operator new[](size_t length, u32 id, u32 idLength = 4);
+static inline void *operator new(size_t length, void *ptr = nullptr) {
+#pragma unused(length)
+    return ptr;
+}
 
 class UnkStruct_02011e10_Sub1 {
 public:
