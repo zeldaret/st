@@ -732,8 +732,8 @@ data_ov024_020d8dae kind:data(any) addr:0x020d8dae
 data_ov024_020d8dc2 kind:data(any) addr:0x020d8dc2
 data_ov024_020d8dd6 kind:data(any) addr:0x020d8dd6
 data_ov024_020d8df8 kind:data(any) addr:0x020d8df8
-data_ov024_020d7544 kind:data(any) addr:0x020d8ee8
-data_ov024_020d7547 kind:data(any) addr:0x020d8eeb
+data_ov024_020d7544 kind:data(any) addr:0x020d8ee8 local
+data_ov024_020d7547 kind:data(any) addr:0x020d8eeb local
 data_ov024_020d8ef4 kind:data(any) addr:0x020d8ef4
 data_ov024_020d8ef9 kind:data(any) addr:0x020d8ef9
 data_ov024_020d8f04 kind:data(any) addr:0x020d8f04
@@ -904,7 +904,7 @@ _ZGVZN24UnkStruct_ov024_020d866019func_ov024_020c4ac0EvE8instance kind:bss addr:
 _ZZN24UnkStruct_ov024_020d866019func_ov024_020c4ac0EvE8instance kind:bss addr:0x020da014 local
 data_ov024_020d8694 kind:bss addr:0x020da034
 data_ov024_020d8698 kind:bss addr:0x020da038
-data_ov024_020d869c kind:bss(size=2) addr:0x020da03c
+data_ov024_020d869c kind:bss(size=0x2) addr:0x020da03c local
 data_ov024_020d86a0 kind:bss addr:0x020da040
 data_ov024_020da044 kind:bss addr:0x020da044
 data_ov024_020da048 kind:bss addr:0x020da048
