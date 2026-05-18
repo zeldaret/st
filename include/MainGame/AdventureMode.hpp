@@ -816,6 +816,14 @@ public:
     /* 1C */ AdventureModeManager_1B8_Base_1C mUnk_1C;
     /* 24 */
 
+    s32 GetUnkValue_ImplS(s32 val, bool cond) {
+        if (cond) {
+            return (val * 256) / 2;
+        }
+
+        return val * 256;
+    }
+
     u32 GetUnkValue(u32 val) {
         if (this->mUnk_10) {
             return (val * 256) / 2;
