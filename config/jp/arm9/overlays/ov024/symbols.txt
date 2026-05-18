@@ -275,11 +275,11 @@ _ZN30AdventureModeManager_15C_20_0019func_ov024_020ca658Ev kind:function(arm,siz
 _ZN30AdventureModeManager_15C_20_008vfunc_08EP5InputP12TouchControl kind:function(arm,size=0x2d0) addr:0x020cbef8
 _ZN30AdventureModeManager_15C_20_00D1Ev kind:function(arm,size=0x6c) addr:0x020cc1c8
 _ZN30AdventureModeManager_15C_20_00D0Ev kind:function(arm,size=0x74) addr:0x020cc234
-_ZN23UnkAdventureModeSystem1C2EPsPsi kind:function(arm,size=0xa4) addr:0x020cc2a8
-_ZN23UnkAdventureModeSystem1C2Ei kind:function(arm,size=0x5c) addr:0x020cc34c
-_ZN23UnkAdventureModeSystem119func_ov024_020cab58Ev kind:function(arm,size=0x4c) addr:0x020cc3a8
-_ZN23UnkAdventureModeSystem119func_ov024_020caba4Ev kind:function(arm,size=0x1d8) addr:0x020cc3f4
-_ZN23UnkAdventureModeSystem119func_ov024_020cad7cEv kind:function(arm,size=0x24) addr:0x020cc5cc
+_ZN23UnkAdventureModeSystem1C2EP5Vec2sS1_b kind:function(arm,size=0xa4) addr:0x020cc2a8
+_ZN23UnkAdventureModeSystem1C2Eb kind:function(arm,size=0x5c) addr:0x020cc34c
+_ZN23UnkAdventureModeSystem119func_ov024_020cab58EP5Vec2sS1_ kind:function(arm,size=0x4c) addr:0x020cc3a8
+_ZN23UnkAdventureModeSystem119func_ov024_020caba4Ei kind:function(arm,size=0x1d8) addr:0x020cc3f4
+_ZN23UnkAdventureModeSystem119func_ov024_020cad7cEi kind:function(arm,size=0x24) addr:0x020cc5cc
 _ZN24UnkStruct_ov024_020d86946CreateEP23GameModeManagerBase_004 kind:function(arm,size=0x2c) addr:0x020cc5f0
 _ZN24UnkStruct_ov024_020d8694C1Ev kind:function(arm,size=0xec) addr:0x020cc61c
 _ZN24UnkStruct_ov024_020d8694D1Ev kind:function(arm,size=0x7c) addr:0x020cc708
@@ -803,7 +803,7 @@ _ZTV27AdventureModeManager_190_14 kind:data(any) addr:0x020d9894
 _ZTV24AdventureModeManager_190 kind:data(any) addr:0x020d98b0
 data_ov024_020d98e0 kind:data(any) addr:0x020d98e0
 _ZTV30AdventureModeManager_15C_20_00 kind:data(any) addr:0x020d98f0
-_ZTV19data_ov024_020d7f7c kind:data(any) addr:0x020d9914
+_ZTV23UnkAdventureModeSystem1 kind:data(any) addr:0x020d9914
 _ZTV19data_ov024_020d9920 kind:data(any) addr:0x020d9920
 data_ov024_020d994c kind:data(any) addr:0x020d994c
 data_ov024_020d9970 kind:data(any) addr:0x020d9970

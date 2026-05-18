@@ -120,6 +120,28 @@ public:
     /* 1C */ unk32 mUnk_1C;
     /* 20 */
 
+    void UnkOperations1() {
+        this->mUnk_0A = true;
+        this->mUnk_0B = false;
+        this->mUnk_0C = false;
+
+        if (this->mUnk_04 == this->mUnk_06) {
+            this->mUnk_0A = false;
+            this->mUnk_0C = true;
+        }
+    }
+
+    void UnkOperations2() {
+        this->mUnk_0A = false;
+        this->mUnk_0B = true;
+        this->mUnk_0C = false;
+
+        if (this->mUnk_04 == 0) {
+            this->mUnk_0B = false;
+            this->mUnk_0C = true;
+        }
+    }
+
     UnkSubStruct1_Base();
 
     // data_02044330 vtable
