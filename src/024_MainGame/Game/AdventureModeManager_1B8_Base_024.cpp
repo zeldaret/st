@@ -110,7 +110,6 @@ static inline void SetUnkValue4(int a, int b, int *pVal) {
     }
 }
 
-// https://decomp.me/scratch/LhXwS
 bool AdventureModeManager_1B8_Base::func_ov024_020d0744(s32 arg1, s32 arg2, s32 arg3, s32 arg4, u8 arg5, u8 arg6) {
     bool sp10;
     s32 sp8;
@@ -258,7 +257,6 @@ bool AdventureModeManager_1B8_Base::func_ov024_020d0924(unk32 param1, unk32 para
     return true;
 }
 
-// https://decomp.me/scratch/e7SZ5
 void AdventureModeManager_1B8_Base::func_ov024_020d0a64() {
     u32 var_r2;
     s32 var_r2_2;
