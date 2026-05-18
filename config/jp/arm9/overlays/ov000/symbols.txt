@@ -250,8 +250,8 @@ _ZN19func_ov000_0205bd8cD1Ev kind:function(arm,size=0x14) addr:0x0205bd8c
 _ZN19func_ov000_0205bda0D0Ev kind:function(arm,size=0x1c) addr:0x0205bda0
 func_ov000_0205bdbc kind:function(thumb,size=0xaa) addr:0x0205bdbc
 func_ov000_0205be68 kind:function(thumb,size=0x64) addr:0x0205be68
-func_ov000_0205becc kind:function(thumb,size=0xc) addr:0x0205becc
-func_ov000_0205bed8 kind:function(thumb,size=0xe) addr:0x0205bed8
+func_ov000_0205a944 kind:function(thumb,size=0xc) addr:0x0205becc
+func_ov000_0205a950 kind:function(thumb,size=0xe) addr:0x0205bed8
 func_ov000_0205bee8 kind:function(thumb,size=0x40) addr:0x0205bee8
 func_ov000_0205bf28 kind:function(arm,size=0x70) addr:0x0205bf28
 func_ov000_0205bf98 kind:function(arm,size=0x60) addr:0x0205bf98
@@ -961,7 +961,7 @@ _ZN24UnkStruct_ov000_020b52b419func_ov000_0206f6acEv kind:function(arm,size=0x2c
 func_ov000_02070d50 kind:function(arm,size=0x34) addr:0x02070d50
 func_ov000_02070d84 kind:function(arm,size=0x48) addr:0x02070d84
 func_ov000_02070dcc kind:function(arm,size=0x24) addr:0x02070dcc
-func_ov000_02070df0 kind:function(arm,size=0x1f0) addr:0x02070df0
+_ZN24UnkStruct_ov000_020b52b419func_ov000_0206f778Eiii kind:function(arm,size=0x1f0) addr:0x02070df0
 func_ov000_02070fe0 kind:function(arm,size=0x18) addr:0x02070fe0
 func_ov000_02070ff8 kind:function(arm,size=0x14) addr:0x02070ff8
 func_ov000_0207100c kind:function(arm,size=0xc) addr:0x0207100c
@@ -3804,7 +3804,7 @@ data_ov000_020b5294 kind:data(any) addr:0x020b5294
 data_ov000_020b529c kind:data(any) addr:0x020b529c
 data_ov000_020b52a4 kind:data(any) addr:0x020b52a4
 data_ov000_020b52ac kind:data(any) addr:0x020b52ac
-data_ov000_020b52b4 kind:data(any) addr:0x020b52b4
+data_ov000_020b52b4_jp kind:data(any) addr:0x020b52b4
 data_ov000_020b52bc kind:data(any) addr:0x020b52bc
 data_ov000_020b52c4 kind:data(any) addr:0x020b52c4
 data_ov000_020b52cc kind:data(any) addr:0x020b52cc
@@ -4030,7 +4030,7 @@ data_ov000_020b69c8 kind:bss addr:0x020b69c8
 data_ov000_020b6a10 kind:bss addr:0x020b6a10
 data_ov000_020b5214_eur kind:bss addr:0x020b6a14
 data_ov000_020b6ab0 kind:bss addr:0x020b6ab0
-data_ov000_020b6ab4 kind:bss addr:0x020b6ab4
+data_ov000_020b52b4 kind:bss addr:0x020b6ab4
 data_ov000_020b6ad8 kind:bss addr:0x020b6ad8
 data_ov000_020b6adc kind:bss addr:0x020b6adc
 data_ov000_020b6ae8 kind:bss addr:0x020b6ae8

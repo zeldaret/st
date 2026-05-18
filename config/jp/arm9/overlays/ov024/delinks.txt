@@ -110,10 +110,13 @@ src/024_MainGame/UnkStruct_027e0cf8_00_0C_024.cpp:
     .text       start:0x020d129c end:0x020d1f40
 
 src/024_MainGame/Game/AdventureModeManager_1B8_Base_024.cpp:
-    .text       start:0x020d1f40 end:0x020d28a4
-
-src/024_MainGame/Game/AdventureModeManager_1B8.cpp:
-    .text       start:0x020d28a4 end:0x020d2fac
+    complete
+    .text       start:0x020d1f40 end:0x020d2fac
+    .rodata     start:0x020d8ee8 end:0x020d8ef4
+    .init       start:0x020d93e4 end:0x020d9410
+    .ctor       start:0x020d94e0 end:0x020d94e4
+    .data       start:0x020d9ba0 end:0x020d9ba8
+    .bss        start:0x020da03c end:0x020da040
 
 src/024_MainGame/UnkStruct_ov024_020d86a0_024.cpp:
     .text       start:0x020d2fac end:0x020d3050

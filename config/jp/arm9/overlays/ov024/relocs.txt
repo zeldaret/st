@@ -1959,9 +1959,9 @@ from:0x020d2f1c kind:arm_call to:0x020d2860 module:overlay(24)
 from:0x020d2f3c kind:arm_call to:0x020d2278 module:overlay(24)
 from:0x020d2f78 kind:arm_call to:0x0202a1c0 module:main
 from:0x020d2f80 kind:arm_call to:0x020bd298 module:overlay(17)
-from:0x020d2f88 kind:load to:0x020c5790 module:overlays(1,17)
+from:0x020d2f88 kind:load to:0x020c5790 module:overlay(17)
 from:0x020d2f98 kind:arm_call to:0x020bd2b4 module:overlay(17)
-from:0x020d2fa8 kind:load to:0x020c5790 module:overlays(1,17)
+from:0x020d2fa8 kind:load to:0x020c5790 module:overlay(17)
 from:0x020d2fbc kind:arm_call to:0x02011f3c module:main
 from:0x020d2fc8 kind:arm_call_thumb to:0x020bf010 module:overlay(1)
 from:0x020d2fe0 kind:arm_call to:0x020c49f8 module:overlay(17)

@@ -2,6 +2,7 @@
 
 #include "FileSelect/FileSelectUnkDraw.hpp"
 #include "Game/GameModeManager.hpp"
+#include "Player/TouchControl.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -793,6 +794,7 @@ struct AdventureModeManager_1B8_Base_1C {
     }
 };
 
+#define ADVMGR_UNK -0x8000
 class AdventureModeManager_1B8_Base {
 public:
     /* 00 */ unk32 mUnk_00;
@@ -814,16 +816,20 @@ public:
     /* 1C */ AdventureModeManager_1B8_Base_1C mUnk_1C;
     /* 24 */
 
-    int GetUnkValue_Impl(int val, bool cond) {
-        if (cond) {
+    u32 GetUnkValue(u32 val) {
+        if (this->mUnk_10) {
             return (val * 256) / 2;
         }
 
         return val * 256;
     }
 
-    int GetUnkValue(int val) {
-        return GetUnkValue_Impl(val, this->mUnk_10);
+    u32 GetUnkValue2() {
+        if (this->mUnk_08) {
+            return 0x2000;
+        }
+
+        return 0;
     }
 
     AdventureModeManager_1B8_Base(u8 bgType, bool param2, const AdventureModeManager_1B8_Base_1C *param3, bool param4,
@@ -857,12 +863,12 @@ public:
     AdventureModeManager_1B8(u8 bgType, bool param2, bool param3); // overlay 24
     ~AdventureModeManager_1B8();
 
-    void func_ov024_020d0fb4();
+    void func_ov024_020d0fb4(unk32 param1, unk32 param2, u8 param3, u8 param4, TouchControl *param5);
     void func_ov024_020d114c();
     bool func_ov024_020d1160();
     void func_ov024_020d1364();
     void func_ov024_020d13cc(s32 param1);
-    bool func_ov024_020d14a8(AdventureModeManager_1B8_Base_1C *param1, unk32 param2, s32 *pFlags, const u8 param4);
+    bool func_ov024_020d14a8(AdventureModeManager_1B8_Base_1C *param1, unk32 param2, s32 *pFlags);
     void func_ov024_020d1564(const AdventureModeManager_1B8_Base_1C *param1, unk32 param2, s32 *pFlags, const u8 param4);
     void func_ov024_020d1614(void *param1);
     void func_ov024_020d1638();

@@ -446,12 +446,12 @@ _ZN29AdventureModeManager_1B8_Base19func_ov024_020d0f0cEPii kind:function(arm,si
 _ZN29AdventureModeManager_1B8_Base19func_ov024_020d0f2cEii kind:function(arm,size=0x24) addr:0x020d2880
 _ZN24AdventureModeManager_1B8C1Ehbb kind:function(arm,size=0x50) addr:0x020d28a4
 _ZN24AdventureModeManager_1B8D1Ev kind:function(arm,size=0x14) addr:0x020d28f4
-_ZN24AdventureModeManager_1B819func_ov024_020d0fb4Ev kind:function(arm,size=0x198) addr:0x020d2908
+_ZN24AdventureModeManager_1B819func_ov024_020d0fb4EiihhP12TouchControl kind:function(arm,size=0x198) addr:0x020d2908
 _ZN24AdventureModeManager_1B819func_ov024_020d114cEv kind:function(arm,size=0x14) addr:0x020d2aa0
 _ZN24AdventureModeManager_1B819func_ov024_020d1160Ev kind:function(arm,size=0x204) addr:0x020d2ab4
 _ZN24AdventureModeManager_1B819func_ov024_020d1364Ev kind:function(arm,size=0x68) addr:0x020d2cb8
 _ZN24AdventureModeManager_1B819func_ov024_020d13ccEi kind:function(arm,size=0xdc) addr:0x020d2d20
-_ZN24AdventureModeManager_1B819func_ov024_020d14a8EP32AdventureModeManager_1B8_Base_1CiPih kind:function(arm,size=0xbc) addr:0x020d2dfc
+_ZN24AdventureModeManager_1B819func_ov024_020d14a8EP32AdventureModeManager_1B8_Base_1CiPi kind:function(arm,size=0xbc) addr:0x020d2dfc
 _ZN24AdventureModeManager_1B819func_ov024_020d1564EPK32AdventureModeManager_1B8_Base_1CiPih kind:function(arm,size=0xb0) addr:0x020d2eb8
 _ZN24AdventureModeManager_1B819func_ov024_020d1614EPv kind:function(arm,size=0x24) addr:0x020d2f68
 _ZN24AdventureModeManager_1B819func_ov024_020d1638Ev kind:function(arm,size=0x20) addr:0x020d2f8c
@@ -732,8 +732,8 @@ data_ov024_020d8dae kind:data(any) addr:0x020d8dae
 data_ov024_020d8dc2 kind:data(any) addr:0x020d8dc2
 data_ov024_020d8dd6 kind:data(any) addr:0x020d8dd6
 data_ov024_020d8df8 kind:data(any) addr:0x020d8df8
-data_ov024_020d8ee8 kind:data(any) addr:0x020d8ee8
-data_ov024_020d8eeb kind:data(any) addr:0x020d8eeb
+data_ov024_020d7544 kind:data(any) addr:0x020d8ee8
+data_ov024_020d7547 kind:data(any) addr:0x020d8eeb
 data_ov024_020d8ef4 kind:data(any) addr:0x020d8ef4
 data_ov024_020d8ef9 kind:data(any) addr:0x020d8ef9
 data_ov024_020d8f04 kind:data(any) addr:0x020d8f04
@@ -762,14 +762,14 @@ data_ov024_020d9264 kind:data(any) addr:0x020d9264 ambiguous
 data_ov024_020d9266 kind:data(any) addr:0x020d9266 ambiguous
 __sinit_ov024_020d928c kind:function(arm,size=0x38) addr:0x020d928c
 __sinit_ov024_020d92c4 kind:function(arm,size=0x120) addr:0x020d92c4
-__sinit_ov024_020d93e4 kind:function(arm,size=0x2c) addr:0x020d93e4
+__sinit_AdventureModeManager_1B8_Base_024.cpp kind:function(arm,size=0x2c) addr:0x020d93e4 local
 __sinit_ov024_020d9410 kind:function(arm,size=0x48) addr:0x020d9410
 __sinit_ov024_020d9458 kind:function(arm,size=0x18) addr:0x020d9458
 __sinit_ov024_020d9470 kind:function(arm,size=0x18) addr:0x020d9470
 __sinit_ActorUnkOBPC.cpp kind:function(arm,size=0x50) addr:0x020d9488
 .p__sinit_ov024_020d928c kind:data(word) addr:0x020d94d8
 .p__sinit_ov024_020d92c4 kind:data(word) addr:0x020d94dc
-.p__sinit_ov024_020d93e4 kind:data(word) addr:0x020d94e0
+.p__sinit_AdventureModeManager_1B8_Base_024.cpp kind:data(word) addr:0x020d94e0 local
 .p__sinit_ov024_020d9410 kind:data(word) addr:0x020d94e4
 .p__sinit_ov024_020d9458 kind:data(word) addr:0x020d94e8
 .p__sinit_ov024_020d9470 kind:data(word) addr:0x020d94ec
@@ -817,7 +817,7 @@ data_ov024_020d9a38 kind:data(any) addr:0x020d9a38
 data_ov024_020d9a3e kind:data(any) addr:0x020d9a3e
 data_ov024_020d9a42 kind:data(any) addr:0x020d9a42
 data_ov024_020d9a43 kind:data(any) addr:0x020d9a43
-data_ov024_020d9ba0 kind:data(any) addr:0x020d9ba0
+data_ov024_020d8200 kind:data(any) addr:0x020d9ba0 local
 _ZTV19data_ov024_020d9ba8 kind:data(any) addr:0x020d9ba8
 data_ov024_020d9bc4 kind:data(any) addr:0x020d9bc4
 data_ov024_020d9be4 kind:data(any) addr:0x020d9be4
@@ -904,7 +904,7 @@ _ZGVZN24UnkStruct_ov024_020d866019func_ov024_020c4ac0EvE8instance kind:bss addr:
 _ZZN24UnkStruct_ov024_020d866019func_ov024_020c4ac0EvE8instance kind:bss addr:0x020da014 local
 data_ov024_020d8694 kind:bss addr:0x020da034
 data_ov024_020d8698 kind:bss addr:0x020da038
-data_ov024_020da03c kind:bss addr:0x020da03c
+data_ov024_020d869c kind:bss(size=2) addr:0x020da03c
 data_ov024_020d86a0 kind:bss addr:0x020da040
 data_ov024_020da044 kind:bss addr:0x020da044
 data_ov024_020da048 kind:bss addr:0x020da048

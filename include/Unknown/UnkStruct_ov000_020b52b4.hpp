@@ -19,6 +19,7 @@ public:
     ~UnkStruct_ov000_020b52b4();
 
     void func_ov000_0206f6ac();
+    void func_ov000_0206f778(unk32 param1, unk32 param2, unk32 param3);
 };
 
 extern UnkStruct_ov000_020b52b4 data_ov000_020b52b4;
