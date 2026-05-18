@@ -28,26 +28,22 @@ unk32 func_01ffb558();
 
 extern s16 data_ov024_020d8200[4];
 
-// https://decomp.me/scratch/ODNIj
-AdventureModeManager_1B8_Base::AdventureModeManager_1B8_Base(u8 bgType, bool param2, AdventureModeManager_1B8_Base_1C *param3,
-                                                             bool param4, bool param5) {
-    s16 unk_06 = param3->mUnk_06;
-    bool arg4  = param4;
-    bool arg5  = param5;
-
-    this->mUnk_00      = -0x8000;
-    this->mUnk_04      = -0x8000;
+AdventureModeManager_1B8_Base::AdventureModeManager_1B8_Base(u8 bgType, bool param2,
+                                                             const AdventureModeManager_1B8_Base_1C *param3, bool param4,
+                                                             bool param5) {
+    this->mUnk_00      = (s16) 0x8000;
+    this->mUnk_04      = (s16) 0x8000;
     this->mUnk_08      = false;
-    this->mUnk_09      = arg5;
+    this->mUnk_09      = param5;
     this->mUnk_0A      = false;
     this->mUnk_0B      = 0xBF;
     this->mUnk_0C      = 0x00;
     this->mBGType      = bgType;
     this->mIsTopScreen = param2;
     this->mUnk_10      = param4;
-    this->mUnk_14      = GetUnkValue_Impl(unk_06, param4);
+    this->mUnk_14      = GetUnkValue_Impl(param3->mUnk_06, param4);
     this->mUnk_18      = (u8 *) ::operator new(this->mUnk_14, HeapIndex_1, 4);
-    MI_CpuCopy16(param3, &this->mUnk_1C, sizeof(AdventureModeManager_1B8_Base_1C));
+    MI_CpuCopy16((void *) param3, &this->mUnk_1C, sizeof(AdventureModeManager_1B8_Base_1C));
     this->func_ov024_020d0698();
 }
 

@@ -1954,9 +1954,9 @@ from:0x020d15c8 kind:arm_call to:0x020d0f0c module:overlay(24)
 from:0x020d15e8 kind:arm_call to:0x020d0924 module:overlay(24)
 from:0x020d1624 kind:arm_call to:0x02028c90 module:main
 from:0x020d162c kind:arm_call to:0x020bba78 module:overlay(17)
-from:0x020d1634 kind:load to:0x020c3f70 module:overlays(1,17)
+from:0x020d1634 kind:load to:0x020c3f70 module:overlay(17)
 from:0x020d1644 kind:arm_call to:0x020bba94 module:overlay(17)
-from:0x020d1654 kind:load to:0x020c3f70 module:overlays(1,17)
+from:0x020d1654 kind:load to:0x020c3f70 module:overlay(17)
 from:0x020d1668 kind:arm_call to:0x02011f3c module:main
 from:0x020d1674 kind:arm_call_thumb to:0x020bd7c8 module:overlay(1)
 from:0x020d168c kind:arm_call to:0x020c31cc module:overlay(17)

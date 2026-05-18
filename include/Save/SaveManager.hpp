@@ -374,7 +374,8 @@ struct SaveManager_36 {
 struct SaveManager_00 {
     /* 000 */ STRUCT_PAD(0x00, 0x36);
     /* 036 */ SaveManager_36 mUnk_36[0x60];
-    /* 336 */
+    /* 336 */ STRUCT_PAD(0x336, 0xB30);
+    /* B30 */ unk32 mUnk_B30[1]; // flags, at least 1
     /* BB8 */
 };
 
@@ -416,10 +417,13 @@ public:
     SaveManager();
 
     void func_ov000_020a0b2c(UnkCallback param1, unk32 param2);
+    bool func_ov000_020a0b70(void *param1, unk32 param2);
 
     void func_ov001_020ba670();
     void func_ov001_020ba7a8();
     void func_ov001_020ba7c8(u16 saveSlotIndex);
+
+    void func_ov017_020c3040(void *param1, unk32 param2);
 
     void func_ov019_020d08fc(unk32 param1, PTMF<SaveFile>::PTMFCallback param2);
     bool func_ov019_020d0964(void);

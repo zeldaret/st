@@ -428,7 +428,7 @@ _ZN21UnkStruct_027e0cf8_0C19func_ov024_020d03f8EP5Vec2s kind:function(arm,size=0
 _ZN21UnkStruct_027e0cf8_0C19func_ov024_020d041cEP5Vec2s kind:function(arm,size=0xf4) addr:0x020d1d70
 func_ov024_020d1e64 kind:function(arm,size=0xa0) addr:0x020d1e64
 _ZN21UnkStruct_027e0cf8_0C19func_ov024_020d05d0Eii kind:function(arm,size=0x3c) addr:0x020d1f04
-_ZN29AdventureModeManager_1B8_BaseC2EhbP32AdventureModeManager_1B8_Base_1Cbb kind:function(arm,size=0x94) addr:0x020d1f40
+_ZN29AdventureModeManager_1B8_BaseC2EhbPK32AdventureModeManager_1B8_Base_1Cbb kind:function(arm,size=0x94) addr:0x020d1f40
 _ZN29AdventureModeManager_1B8_BaseD2Ev kind:function(arm,size=0x18) addr:0x020d1fd4
 _ZN29AdventureModeManager_1B8_Base19func_ov024_020d0698Ev kind:function(arm,size=0x38) addr:0x020d1fec
 _ZN29AdventureModeManager_1B8_Base19func_ov024_020d06d0Ev kind:function(arm,size=0x5c) addr:0x020d2024
@@ -444,17 +444,17 @@ _ZN29AdventureModeManager_1B8_Base19func_ov024_020d0e98Ev kind:function(arm,size
 _ZN29AdventureModeManager_1B8_Base19func_ov024_020d0ec0EPiib kind:function(arm,size=0x4c) addr:0x020d2814
 _ZN29AdventureModeManager_1B8_Base19func_ov024_020d0f0cEPii kind:function(arm,size=0x20) addr:0x020d2860
 _ZN29AdventureModeManager_1B8_Base19func_ov024_020d0f2cEii kind:function(arm,size=0x24) addr:0x020d2880
-_ZN24AdventureModeManager_1B8C1Eiii kind:function(arm,size=0x50) addr:0x020d28a4
+_ZN24AdventureModeManager_1B8C1Ehbb kind:function(arm,size=0x50) addr:0x020d28a4
 _ZN24AdventureModeManager_1B8D1Ev kind:function(arm,size=0x14) addr:0x020d28f4
-func_ov024_020d0fb4 kind:function(arm,size=0x198) addr:0x020d2908
-func_ov024_020d114c kind:function(arm,size=0x14) addr:0x020d2aa0
+_ZN24AdventureModeManager_1B819func_ov024_020d0fb4Ev kind:function(arm,size=0x198) addr:0x020d2908
+_ZN24AdventureModeManager_1B819func_ov024_020d114cEv kind:function(arm,size=0x14) addr:0x020d2aa0
 _ZN24AdventureModeManager_1B819func_ov024_020d1160Ev kind:function(arm,size=0x204) addr:0x020d2ab4
 _ZN24AdventureModeManager_1B819func_ov024_020d1364Ev kind:function(arm,size=0x68) addr:0x020d2cb8
-_ZN24AdventureModeManager_1B819func_ov024_020d13ccEv kind:function(arm,size=0xdc) addr:0x020d2d20
-func_ov024_020d2dfc kind:function(arm,size=0xbc) addr:0x020d2dfc
-func_ov024_020d2eb8 kind:function(arm,size=0xb0) addr:0x020d2eb8
-func_ov024_020d2f68 kind:function(arm,size=0x24) addr:0x020d2f68
-func_ov024_020d2f8c kind:function(arm,size=0x20) addr:0x020d2f8c
+_ZN24AdventureModeManager_1B819func_ov024_020d13ccEi kind:function(arm,size=0xdc) addr:0x020d2d20
+_ZN24AdventureModeManager_1B819func_ov024_020d14a8EP32AdventureModeManager_1B8_Base_1CiPih kind:function(arm,size=0xbc) addr:0x020d2dfc
+_ZN24AdventureModeManager_1B819func_ov024_020d1564EPK32AdventureModeManager_1B8_Base_1CiPih kind:function(arm,size=0xb0) addr:0x020d2eb8
+_ZN24AdventureModeManager_1B819func_ov024_020d1614EPv kind:function(arm,size=0x24) addr:0x020d2f68
+_ZN24AdventureModeManager_1B819func_ov024_020d1638Ev kind:function(arm,size=0x20) addr:0x020d2f8c
 func_ov024_020d2fac kind:function(arm,size=0x24) addr:0x020d2fac
 _ZN24UnkStruct_ov024_020d86a019func_ov024_020d167cEv kind:function(arm,size=0x18) addr:0x020d2fd0
 func_ov024_020d2fe8 kind:function(arm,size=0x28) addr:0x020d2fe8
@@ -507,11 +507,11 @@ func_ov024_020d3d90 kind:function(arm,size=0xc) addr:0x020d3d90
 func_ov024_020d3d9c kind:function(arm,size=0x1c) addr:0x020d3d9c
 func_ov024_020d3db8 kind:function(arm,size=0x2c) addr:0x020d3db8
 func_ov024_020d3de4 kind:function(arm,size=0x44) addr:0x020d3de4
-func_ov024_020d3e28 kind:function(arm,size=0x44) addr:0x020d3e28
-func_ov024_020d3e6c kind:function(arm,size=0x4) addr:0x020d3e6c
+func_ov024_020d24d4 kind:function(arm,size=0x44) addr:0x020d3e28
+func_ov024_020d2518 kind:function(arm,size=0x4) addr:0x020d3e6c
 func_ov024_020d3e70 kind:function(arm,size=0x4) addr:0x020d3e70
 func_ov024_020d3e74 kind:function(arm,size=0x18) addr:0x020d3e74
-func_ov024_020d3e8c kind:function(arm,size=0x2c) addr:0x020d3e8c
+func_ov024_020d2538 kind:function(arm,size=0x2c) addr:0x020d3e8c
 func_ov024_020d3eb8 kind:function(arm,size=0x28) addr:0x020d3eb8
 func_ov024_020d3ee0 kind:function(arm,size=0x124) addr:0x020d3ee0
 func_ov024_020d4004 kind:function(arm,size=0xcc) addr:0x020d4004
@@ -639,7 +639,7 @@ _ZN19func_ov024_020d6b34D0Ev kind:function(arm,size=0x30) addr:0x020d6b34
 _ZN19func_ov024_020d6b64D0Ev kind:function(arm,size=0x1c) addr:0x020d6b64
 func_ov024_020d51dc kind:function(arm,size=0x70) addr:0x020d6b80
 func_ov024_020d524c kind:function(arm,size=0xb8) addr:0x020d6bf0
-func_ov024_020d6ca8 kind:function(arm,size=0x3c) addr:0x020d6ca8
+func_ov024_020d5304 kind:function(arm,size=0x3c) addr:0x020d6ca8
 func_ov024_020d6ce4 kind:function(arm,size=0x14) addr:0x020d6ce4
 func_ov024_020d5354 kind:function(arm,size=0x5c) addr:0x020d6cf8
 func_ov024_020d6d54 kind:function(arm,size=0x60) addr:0x020d6d54
@@ -902,7 +902,7 @@ data_ov024_020d8660 kind:bss addr:0x020da000
 _ZGVZN24UnkStruct_ov024_020d866019func_ov024_020c4ac0EvE8instance kind:bss addr:0x020da004 local
 @1365 kind:bss addr:0x020da008 local
 _ZZN24UnkStruct_ov024_020d866019func_ov024_020c4ac0EvE8instance kind:bss addr:0x020da014 local
-data_ov024_020da034 kind:bss addr:0x020da034
+data_ov024_020d8694 kind:bss addr:0x020da034
 data_ov024_020d8698 kind:bss addr:0x020da038
 data_ov024_020da03c kind:bss addr:0x020da03c
 data_ov024_020d86a0 kind:bss addr:0x020da040

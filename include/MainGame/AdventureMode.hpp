@@ -783,6 +783,14 @@ struct AdventureModeManager_1B8_Base_1C {
     /* 02 */ s16 mUnk_02;
     /* 04 */ unk16 mUnk_04;
     /* 06 */ s16 mUnk_06;
+
+    AdventureModeManager_1B8_Base_1C() {}
+    AdventureModeManager_1B8_Base_1C(unk16 param1, unk16 param2, unk16 param3, unk16 param4) {
+        this->mUnk_00 = param1;
+        this->mUnk_02 = param2;
+        this->mUnk_04 = param3;
+        this->mUnk_06 = param4;
+    }
 };
 
 class AdventureModeManager_1B8_Base {
@@ -818,7 +826,8 @@ public:
         return GetUnkValue_Impl(val, this->mUnk_10);
     }
 
-    AdventureModeManager_1B8_Base(u8 bgType, bool param2, AdventureModeManager_1B8_Base_1C *param3, bool param4, bool param5);
+    AdventureModeManager_1B8_Base(u8 bgType, bool param2, const AdventureModeManager_1B8_Base_1C *param3, bool param4,
+                                  bool param5);
     ~AdventureModeManager_1B8_Base();
 
     void func_ov024_020d0698();
@@ -840,15 +849,23 @@ public:
 class AdventureModeManager_1B8 : public AdventureModeManager_1B8_Base {
 public:
     /* 00 (base) */
-    /* 24 */ unk32 mUnk_24;
-    /* 24 */ unk32 mUnk_28;
+    /* 24 */ u16 mUnk_24;
+    /* 24 */ unk16 mUnk_26; // pad?
+    /* 24 */ void *mUnk_28;
     /* 2C */
 
-    AdventureModeManager_1B8(unk32 param1, unk32 param2, unk32 param3); // overlay 24
+    AdventureModeManager_1B8(u8 bgType, bool param2, bool param3); // overlay 24
     ~AdventureModeManager_1B8();
 
+    void func_ov024_020d0fb4();
+    void func_ov024_020d114c();
+    bool func_ov024_020d1160();
     void func_ov024_020d1364();
-    void func_ov024_020d13cc();
+    void func_ov024_020d13cc(s32 param1);
+    bool func_ov024_020d14a8(AdventureModeManager_1B8_Base_1C *param1, unk32 param2, s32 *pFlags, const u8 param4);
+    void func_ov024_020d1564(const AdventureModeManager_1B8_Base_1C *param1, unk32 param2, s32 *pFlags, const u8 param4);
+    void func_ov024_020d1614(void *param1);
+    void func_ov024_020d1638();
 };
 
 class AdventureModeManager_1BC : public AdventureModeManager_1B8_Base {

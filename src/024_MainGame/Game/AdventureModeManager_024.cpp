@@ -648,7 +648,6 @@ void AdventureModeManager::vfunc_38(u32 param1, u8 param2, unk16 param3, unk16 p
     this->func_ov024_020c6514(param1, param2, param3, param4);
 }
 
-// https://decomp.me/scratch/BdAyq
 void AdventureModeManager::func_ov024_020c6514(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4) {
     if (data_027e09a4->IsDarkRealm()) {
         UnkStruct2 auStack_34("Screen/Bg/Darea.bin", 1);
@@ -663,7 +662,7 @@ void AdventureModeManager::func_ov024_020c6514(SceneIndex sceneIndex, u8 param2,
         this->func_ov000_02060fc8(sceneIndex, param2, param3, param4);
     }
 
-    u8 var_r1 = this->GetMapPaintIndex(sceneIndex, param2);
+    s32 var_r1 = this->GetMapPaintIndex(sceneIndex, param2);
     bool var_r2;
     var_r2 = true;
     if (var_r1 != 0xFF) {
@@ -671,7 +670,7 @@ void AdventureModeManager::func_ov024_020c6514(SceneIndex sceneIndex, u8 param2,
     }
     this->mAllowMapPaint = var_r2;
 
-    this->mUnk_1B8->func_ov024_020d13cc();
+    this->mUnk_1B8->func_ov024_020d13cc(var_r1);
     this->mUnk_1B8->func_ov024_020d06d0();
     this->mUnk_1CC.sceneIndex = sceneIndex;
     this->mUnk_1CC.unk_04     = param2;

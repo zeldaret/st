@@ -26,6 +26,7 @@ src/024_MainGame/Game/UnkActorSystem2_024.cpp:
     .data       start:0x020d9568 end:0x020d958c
 
 src/024_MainGame/Game/AdventureModeManager_024.cpp:
+    complete
     .text       start:0x020c69cc end:0x020c872c
     .data       start:0x020d958c end:0x020d9630
 
