@@ -60,6 +60,7 @@ public:
 
     UnkStruct_0204a110_Sub2();
     void func_0201c890(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+    void func_0201ca28(unk32 param1);
 };
 
 class UnkStruct_0204a110_Sub3_00 {

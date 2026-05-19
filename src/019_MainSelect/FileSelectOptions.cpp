@@ -246,7 +246,7 @@ ARM void FileSelectOptions::func_ov019_020cce30() {
     local_4c.x = sVar2_1.x;
     local_4c.y = sVar2_1.y;
 
-    this->mUnk_1344.func_0201e874(0x0F, &local_4c, &local_50, 6);
+    this->mUnk_1344.func_0201e874(BTN_ID_FILE_SELECT_UNK_0F, &local_4c, &local_50, 6);
     this->mUnk_1344.mUnk_0A = true;
     this->mUnk_1344.mUnk_0B = false;
     this->mUnk_1344.mUnk_0C = false;
@@ -268,7 +268,7 @@ ARM void FileSelectOptions::func_ov019_020cce30() {
     local_5c.x = local_38.mPos.x;
     local_5c.y = local_38.mPos.y;
 
-    this->mUnk_1064.func_0201e874(0x14, &local_58, &local_5c, 6);
+    this->mUnk_1064.func_0201e874(BTN_ID_FILE_SELECT_UNK_14, &local_58, &local_5c, 6);
     this->mUnk_1064.mUnk_0A = true;
     this->mUnk_1064.mUnk_0B = false;
     this->mUnk_1064.mUnk_0C = false;
@@ -341,7 +341,7 @@ ARM void FileSelectOptions::func_ov019_020cd16c() {
     local_50.y = local_48.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_04.y;
     local_4c.x = local_38.x;
     local_4c.y = local_38.y;
-    this->mUnk_1344.func_0201e874(0xf, &local_4c, &local_50, 7);
+    this->mUnk_1344.func_0201e874(BTN_ID_FILE_SELECT_UNK_0F, &local_4c, &local_50, 7);
     uVar1                   = this->mUnk_1344.mUnk_04;
     uVar2                   = this->mUnk_1344.mUnk_06;
     this->mUnk_1344.mUnk_0A = true;
@@ -357,7 +357,7 @@ ARM void FileSelectOptions::func_ov019_020cd16c() {
     local_58.y = local_34.mPosU.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_08.y;
     local_54.y = local_34.mPosU.y;
     local_54.x = local_34.mPosU.x;
-    this->mUnk_1064.func_0201e874(0x14, &local_54, &local_58, 7);
+    this->mUnk_1064.func_0201e874(BTN_ID_FILE_SELECT_UNK_14, &local_54, &local_58, 7);
 
     this->mUnk_1064.mUnk_0A = true;
     this->mUnk_1064.mUnk_0B = false;
@@ -396,7 +396,7 @@ ARM void FileSelectOptions::func_ov019_020cd41c() {
     local_40.y = local_34.mPosU.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.y;
     local_3c.x = local_34.mPosU.x;
     local_3c.y = local_34.mPosU.y;
-    this->mUnk_1064.func_0201e874(0x0C, &local_3c, &local_40, 0);
+    this->mUnk_1064.func_0201e874(BTN_ID_UNK_0C, &local_3c, &local_40, 0);
     this->mUnk_1064.mUnk_0A = true;
     this->mUnk_1064.mUnk_0C = false;
     this->mUnk_1064.mUnk_0B = false;
@@ -445,7 +445,7 @@ ARM void FileSelectOptions::func_ov019_020cd614() {
     local_3c.x = local_30.mPos.x;
     local_3c.y = local_30.mPos.y;
 
-    this->mUnk_1064.func_0201e874(0x0C, &local_38, &local_3c, 0);
+    this->mUnk_1064.func_0201e874(BTN_ID_UNK_0C, &local_38, &local_3c, 0);
     this->mUnk_1064.mUnk_0A = true;
     this->mUnk_1064.mUnk_0B = false;
     this->mUnk_1064.mUnk_0C = false;

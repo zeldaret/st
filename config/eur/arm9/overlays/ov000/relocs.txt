@@ -1403,9 +1403,9 @@ from:0x02061dfc kind:arm_call to:0x02008a0c module:main
 from:0x02061eac kind:arm_call to:0x0200ab00 module:main
 from:0x02061ef8 kind:arm_call to:0x02028c90 module:main
 from:0x02061f38 kind:arm_call to:0x02061ce0 module:overlay(0)
-from:0x02061f5c kind:load to:0x020b1e9c module:overlay(0)
+from:0x02061f5c kind:load to:0x020b1e94 add:0x8 module:overlay(0)
 from:0x02061f7c kind:arm_call to:0x02062144 module:overlay(0)
-from:0x02061f88 kind:load to:0x020b1e9c module:overlay(0)
+from:0x02061f88 kind:load to:0x020b1e94 add:0x8 module:overlay(0)
 from:0x02061ff0 kind:arm_call to:0x02008b58 module:main
 from:0x020620f4 kind:arm_call to:0x02015ef8 module:main
 from:0x02062100 kind:arm_call to:0x0203a3c8 module:main

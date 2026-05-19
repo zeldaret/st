@@ -99,7 +99,7 @@ ARM void FileSelectMicTest::func_ov019_020ceaac() {
     local_34.y = data_ov019_020d2248.mUnk_10.y;
     local_38.y = 0;
 
-    this->mUnk_304.func_0201e874(0x0C, (void *) &local_34, (void *) &local_38, 0);
+    this->mUnk_304.func_0201e874(BTN_ID_UNK_0C, (void *) &local_34, (void *) &local_38, 0);
 
     this->mUnk_304.mUnk_000.mUnk_0A = true;
     this->mUnk_304.mUnk_000.mUnk_0B = false;

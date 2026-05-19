@@ -12,6 +12,7 @@
     ((u32) (pGroups)->entries[(flags) >> 0x10].pDAT1 + (BMG_GET_MSG_OFFSET((pGroups), (flags)) & ~1))
 
 #define BMG_ID(group, infIndex) (((group) << 16) | (infIndex))
+#define BMG_ID_NONE 0
 
 enum BMGGroup_ {
     BMGGroup_regular       = 0x00,

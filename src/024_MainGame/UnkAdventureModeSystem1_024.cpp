@@ -10,7 +10,7 @@ UnkAdventureModeSystem1::UnkAdventureModeSystem1(Vec2s *param1, Vec2s *param2, b
     local_24.x = param1->x;
     local_24.y = param1->y;
 
-    this->mUnk_04.func_0201e874(8, &local_24, &local_20, 0);
+    this->mUnk_04.func_0201e874(BTN_ID_UNK_08, &local_24, &local_20, 0);
 
     if (!param3) {
         this->mUnk_04.mUnk_10 = this->mUnk_04.mUnk_20;
@@ -43,7 +43,7 @@ void UnkAdventureModeSystem1::func_ov024_020cab58(Vec2s *param1, Vec2s *param2) 
     local_24.x = param1->x;
     local_24.y = param1->y;
 
-    this->mUnk_04.func_0201e874(8, &local_24, &local_20, 0);
+    this->mUnk_04.func_0201e874(BTN_ID_UNK_08, &local_24, &local_20, 0);
 }
 
 bool UnkAdventureModeSystem1::func_ov024_020caba4(unk32 param1) {
