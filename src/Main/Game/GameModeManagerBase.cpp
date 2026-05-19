@@ -66,7 +66,7 @@ ARM void GameModeManagerBase::vfunc_28(unk8 *param1) {
     this->mUnk_004.func_0201bf54();
 }
 
-ARM void GameModeManagerBase::vfunc_2C(unk8 *param1) {}
+ARM void GameModeManagerBase::DrawUI(unk8 *param1) {}
 
 ARM void GameModeManagerBase::vfunc_30(unk32 param1) {
     GameModeLinkList<GameModeManagerBase_104> *pNode;
@@ -194,8 +194,8 @@ void GameModeManagerBase::func_02018a9c(unk32 param1, unk32 param2) {
     this->mUnk_004.func_0201c00c(param1, param2);
 }
 
-void GameModeManagerBase::func_02018aac(unk32 param1) {
-    this->mUnk_004.func_0201c068(param1);
+void GameModeManagerBase::func_02018aac(unk32 param1, bool param2) {
+    this->mUnk_004.func_0201c068(param1, param2);
 }
 
 void GameModeManagerBase::func_02018ac4(void) {

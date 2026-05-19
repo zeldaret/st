@@ -9,6 +9,54 @@
 
 #include <nitro/button.h>
 
+// Title Card Scene Message Index (see sBMGSceneMap)
+enum TC_SceneMsgIdx_ {
+    TC_SceneMsgIdx_ForestLand,
+    TC_SceneMsgIdx_SnowLand,
+    TC_SceneMsgIdx_OceanLand,
+    TC_SceneMsgIdx_FireLand,
+    TC_SceneMsgIdx_TowerOfSpirits,
+    TC_SceneMsgIdx_TunnelToTheTower,
+    TC_SceneMsgIdx_WoodedTemple,
+    TC_SceneMsgIdx_BlizzardTemple,
+    TC_SceneMsgIdx_MarineTemple,
+    TC_SceneMsgIdx_MountainTemple,
+    TC_SceneMsgIdx_DesertTemple,
+    TC_SceneMsgIdx_PirateHideout,
+    TC_SceneMsgIdx_HyruleCastle,
+    TC_SceneMsgIdx_CastleTown,
+    TC_SceneMsgIdx_Mayscore,
+    TC_SceneMsgIdx_AnoukiVillage,
+    TC_SceneMsgIdx_PapuziaVillage,
+    TC_SceneMsgIdx_GoronVillage,
+    TC_SceneMsgIdx_TradingPost,
+    TC_SceneMsgIdx_IcySpring,
+    TC_SceneMsgIdx_OutsetVillage,
+    TC_SceneMsgIdx_WoodlandSanctuary,
+    TC_SceneMsgIdx_SnowfallSanctuary,
+    TC_SceneMsgIdx_IslandSanctuary,
+    TC_SceneMsgIdx_ValleySanctuary,
+    TC_SceneMsgIdx_DuneSanctuary,
+    TC_SceneMsgIdx_BridgeWorkersHouse,
+    TC_SceneMsgIdx_BossStagnox,
+    TC_SceneMsgIdx_BossFraaz,
+    TC_SceneMsgIdx_BossCactops,
+    TC_SceneMsgIdx_BossVulcano,
+    TC_SceneMsgIdx_BossCapbone,
+    TC_SceneMsgIdx_BossGhostTrain,
+    TC_SceneMsgIdx_BossStaven,
+    TC_SceneMsgIdx_BossMalladus1,
+    TC_SceneMsgIdx_BossMalladus2,
+    TC_SceneMsgIdx_GoronTargetRange,
+    TC_SceneMsgIdx_SnowdriftStation,
+    TC_SceneMsgIdx_LostAtSeaStation,
+    TC_SceneMsgIdx_DisorientationStation,
+    TC_SceneMsgIdx_EndsOfTheEarthStation,
+    TC_SceneMsgIdx_DarkOreMine,
+    TC_SceneMsgIdx_RabbitHaven,
+    TC_SceneMsgIdx_SlipperyStation,
+};
+
 class UnkTitleCardSystem1 {
 public:
     /* 000 (vtable) */
@@ -60,13 +108,17 @@ public:
 
     // data_ov024_020d7fd0
     /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
+    /* 04 */ virtual void vfunc_04(unk8 *param1);
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
     /* 1C */
+
+    void func_ov024_020cb274(UnkSystem2_UnkSubSystem11_Derived2 *param1, UnkSystem2_UnkSubSystem5_Base_10 *param2);
+    void func_ov024_020cb280();
+    void func_ov024_020cb5bc();
 };
 
 class UnkTitleCardSystem1_Derived1 : public UnkTitleCardSystem1 {
@@ -90,6 +142,14 @@ public:
     /* 18 */ virtual void vfunc_18() override;
     /* 1C */ virtual void vfunc_1C();
     /* 20 */
+
+    void func_ov024_020cbe94(unk32 param1);
+    void func_ov024_020cbeb8();
+    void func_ov024_020cbf74(unk32 param1);
+    void func_ov024_020cbf98();
+    void func_ov024_020cc05c(unk32 param1);
+    void func_ov024_020cc088(bool param1);
+    void func_ov024_020cc0b4();
 };
 
 class UnkStruct_ov024_020d8694_01C : public UnkTitleCardSystem1_Derived1 {
@@ -119,7 +179,7 @@ public:
 
     // data_ov024_020d801c
     /* 00 */ virtual void vfunc_00() override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual void vfunc_04(unk8 *param1) override;
     /* 14 */ virtual void vfunc_14() override;
     /* 1C */ virtual void vfunc_1C() override;
 };
@@ -136,14 +196,19 @@ public:
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 10 */ virtual void vfunc_10() override;
+
+    void func_ov024_020ccb10(unk32 param1, Vec2s *param2, Vec2s *param3);
 };
 
-class UnkStruct_ov024_020d8694 : public AutoInstance<UnkStruct_ov024_020d8694>, public GameModeManagerBase_104 {
+class UnkStruct_ov024_020d8694 : public GameModeManagerBase_104, public AutoInstance<UnkStruct_ov024_020d8694> {
 public:
     /* 000 (vtable) */
     /* 01C */ UnkStruct_ov024_020d8694_01C mUnk_01C;
     /* 188 */ UnkStruct_ov024_020d8694_188 mUnk_188;
     /* 2FC */ UnkStruct_ov024_020d8694_2FC mUnk_2FC;
+    /* 434 */ UnkSystem2_UnkSubSystem11_Derived2 *mUnk_434;
+    /* 438 */ UnkSystem2_UnkSubSystem5_Base_10 *mUnk_438;
+    /* 43C */ GameModeManagerBase_004 *mUnk_43C;
     /* 440 */
 
     UnkStruct_ov024_020d8694(GameModeManagerBase_004 *param1);
@@ -153,15 +218,15 @@ public:
     /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl);
     /* 10 */ virtual void vfunc_10(unk8 *param1);
 
-    void func_ov024_020cafb8();
-    void func_ov024_020cafd8();
-    void func_ov024_020cb000();
-    void func_ov024_020cb020();
+    void func_ov024_020cafb8(unk32 param1);
+    void func_ov024_020cafd8(unk32 param1);
+    void func_ov024_020cb000(unk32 param1);
+    void func_ov024_020cb020(unk32 param1);
     void func_ov024_020cb040();
-    void func_ov024_020cb054();
-    void func_ov024_020cb0ac();
+    void func_ov024_020cb054(unk32 param1, Vec2s *param2, Vec2s *param3);
+    u32 GetMessageID(int index);
     void func_ov024_020cb0c4();
-    void func_ov024_020cb178();
+    void func_ov024_020cb178(unk32 param1);
     void func_ov024_020cb194();
 
     static UnkStruct_ov024_020d8694 *Create(GameModeManagerBase_004 *param1);

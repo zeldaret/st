@@ -188,6 +188,38 @@ enum MsgIndex_ {
     MsgIndex_ValleySanctuary,
     MsgIndex_DuneSanctuary,
     MsgIndex_BridgeWorkersHouse,
+
+#if IS_JP
+    //! TODO: add the indices from the other files so we can improve this
+    // BMGGroup_dungeon
+    MsgIndex_BossStagnox = 0x90,
+    MsgIndex_BossFraaz,
+    MsgIndex_BossCactops,
+    MsgIndex_BossVulcano,
+    MsgIndex_BossCapbone,
+
+    // BMGGroup_train_extra
+    MsgIndex_BossGhostTrain = 0x1A,
+
+    // BMGGroup_dungeon
+    MsgIndex_BossStaven = 0x95,
+    MsgIndex_BossMalladus1,
+    MsgIndex_BossMalladus2,
+
+    MsgIndex_GoronTargetRange = 0xB2,
+    MsgIndex_SnowdriftStation,
+    MsgIndex_LostAtSeaStation,
+    MsgIndex_DisorientationStation,
+    MsgIndex_EndsOfTheEarthStation,
+    MsgIndex_DarkOreMine,
+    MsgIndex_RabbitHaven,
+    MsgIndex_SlipperyStation,
+    MsgIndex_ThreeQuestionMarks,
+    MsgIndex_Floor1,
+    MsgIndex_Floor2,
+    MsgIndex_Floor3,
+    MsgIndex_ZeldaPhantomTooFar,
+#else
     MsgIndex_BossStagnox,
     MsgIndex_BossFraaz,
     MsgIndex_BossCactops,
@@ -202,7 +234,7 @@ enum MsgIndex_ {
     MsgIndex_LostAtSeaStation,
     MsgIndex_DisorientationStation,
     MsgIndex_EndsOfTheEarthStation,
-    MsgIndex_DarOreMine,
+    MsgIndex_DarkOreMine,
     MsgIndex_RabbitHaven,
     MsgIndex_SlipperyStation,
     MsgIndex_ThreeQuestionMarks,
@@ -210,4 +242,5 @@ enum MsgIndex_ {
     MsgIndex_Floor2,
     MsgIndex_Floor3,
     MsgIndex_ZeldaPhantomTooFar,
+#endif
 };

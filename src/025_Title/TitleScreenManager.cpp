@@ -40,7 +40,7 @@ ARM void TitleScreenManager::vfunc_28(unk8 *param1) {
     this->func_02018a14(param1);
 }
 
-ARM void TitleScreenManager::vfunc_2C(unk8 *param1) {
+ARM void TitleScreenManager::DrawUI(unk8 *param1) {
     this->func_02018984(param1);
     this->func_02018830(param1);
 }

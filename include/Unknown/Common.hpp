@@ -120,6 +120,28 @@ public:
     /* 1C */ unk32 mUnk_1C;
     /* 20 */
 
+    void UnkOperations1() {
+        this->mUnk_0A = true;
+        this->mUnk_0B = false;
+        this->mUnk_0C = false;
+
+        if (this->mUnk_04 == this->mUnk_06) {
+            this->mUnk_0A = false;
+            this->mUnk_0C = true;
+        }
+    }
+
+    void UnkOperations2() {
+        this->mUnk_0A = false;
+        this->mUnk_0B = true;
+        this->mUnk_0C = false;
+
+        if (this->mUnk_04 == 0) {
+            this->mUnk_0B = false;
+            this->mUnk_0C = true;
+        }
+    }
+
     UnkSubStruct1_Base();
 
     // data_02044330 vtable
@@ -226,6 +248,9 @@ public:
 #define BTN_ID_ITEM 0x03
 #define BTN_ID_RETURN 0x05
 
+#define BTN_ID_UNK_08 0x08
+#define BTN_ID_UNK_0C 0x0C
+
 #define BTN_ID_TRAIN_ROUTE_GO 0x0E
 #define BTN_ID_TRAIN_ROUTE_CANCEL 0x0F
 #define BTN_ID_TRAIN_ROUTE_QUIT 0x10
@@ -256,6 +281,8 @@ public:
 #define BTN_ID_MENU_PAN_FLUTE 0x3C
 #define BTN_ID_MENU_CLOSE_TOP 0x3D
 
+#define BTN_ID_FILE_SELECT_UNK_0F 0x0F
+#define BTN_ID_FILE_SELECT_UNK_14 0x14
 #define BTN_ID_FILE_SELECT_FILE_1 0x40
 #define BTN_ID_FILE_SELECT_FILE_2 0x41
 #define BTN_ID_FILE_SELECT_42 0x42 // unused file 3 probably
@@ -538,25 +565,26 @@ public:
 class UnkSystem2_UnkSubSystem5_Base_10 {
 public:
     /* 000 (vtable) */
-    /* 014 */ void *mUnk_014;
-    /* 018 */ unk32 mUnk_018;
-    /* 01C */ void *mUnk_01C;
-    /* 020 */ unk32 mUnk_020;
-    /* 024 */ unk32 mUnk_024;
-    /* 028 */ unk8 mUnk_028;
-    /* 029 */ unk8 mUnk_029;
-    /* 02A */ unk8 mUnk_02A;
-    /* 02B */ unk8 mUnk_02B;
-    /* 02C */ unk32 mUnk_02C;
-    /* 030 */ unk32 mUnk_030;
-    /* 034 */ unk32 mUnk_034;
-    /* 038 */ unk32 mUnk_038;
-    /* 03C */ unk32 mUnk_03C;
-    /* 040 */ unk32 mUnk_040;
-    /* 044 */ unk32 mUnk_044;
-    /* 048 */ unk32 mUnk_048;
-    /* 04C */ unk32 mUnk_04C;
-    /* 050 */ STRUCT_PAD(0x50, 0x130); // e0
+    /* 014 */ void *mUnk_004;
+    /* 018 */ unk32 mUnk_008;
+    /* 01C */ void *mUnk_00C;
+    /* 020 */ unk32 mUnk_010;
+    /* 024 */ unk32 mUnk_014;
+    /* 028 */ unk8 mUnk_018;
+    /* 029 */ unk8 mUnk_019;
+    /* 02A */ unk8 mUnk_01A;
+    /* 02B */ unk8 mUnk_01B;
+    /* 02C */ unk32 mUnk_01C;
+    /* 030 */ unk32 mUnk_020;
+    /* 034 */ unk32 mUnk_024;
+    /* 038 */ unk32 mUnk_028;
+    /* 03C */ unk32 mUnk_02C;
+    /* 040 */ unk32 mUnk_030;
+    /* 044 */ unk32 mUnk_034;
+    /* 048 */ unk32 mUnk_038;
+    /* 04C */ unk32 mUnk_03C;
+    /* 040 */ STRUCT_PAD(0x40, 0x130);
+    /* 130 */
 
     UnkSystem2_UnkSubSystem5_Base_10();
 
@@ -591,7 +619,9 @@ public:
     /* 00 (vtable) */
     /* 04 */ Text_UnkStruct2 mUnk_04;
     /* 1C */ UnkSystem2_UnkSubSystem11_Base_1C mUnk_1C; // +0x24: space between characters, set from BMG INF1 entry
-    /* 2C */
+    /* 2C */ unk16 mUnk_2C;
+    /* 2E */ unk16 mUnk_2E; // pad?
+    /* 30 */
 
     UnkSystem2_UnkSubSystem11_Base(); // func_ov000_02061ce0
 
@@ -600,23 +630,44 @@ public:
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
+
+    void func_ov000_02061d38();
+    void func_ov000_02061d88();
+    void func_ov000_02061da8();
+    void func_ov000_02061db8();
 };
 
-class UnkSystem2_UnkSubSystem11 : public UnkSystem2_UnkSubSystem11_Base {
+class UnkSystem2_UnkSubSystem11_Derived1 : public UnkSystem2_UnkSubSystem11_Base {
 public:
     /* 00 (base) */
-    /* 2C */ STRUCT_PAD(0x2C, 0xE8);
-    /* E8 */
+    /* 30 */ STRUCT_PAD(0x30, 0xC0);
+    /* C0 */
 
-    UnkSystem2_UnkSubSystem11(); // func_ov000_02061f30
-    ~UnkSystem2_UnkSubSystem11();
-    void func_ov000_02061f60();
+    UnkSystem2_UnkSubSystem11_Derived1(); // func_ov000_02061f30
+    ~UnkSystem2_UnkSubSystem11_Derived1();
 
     // data_ov000_020b1e9c vtable
     /* 00 */ virtual void vfunc_00() override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
+
+    void func_ov000_02061f8c();
+    void func_ov000_02062144();
+    void func_ov000_0206216c();
+    void func_ov000_02062228();
+};
+
+class UnkSystem2_UnkSubSystem11_Derived2 : public UnkSystem2_UnkSubSystem11_Derived1 {
+public:
+    /* 00 (base) */
+    /* C0 */ STRUCT_PAD(0xC0, 0xE0);
+    /* E0 */
+
+    UnkSystem2_UnkSubSystem11_Derived2() {}
+    ~UnkSystem2_UnkSubSystem11_Derived2() {}
+
+    // data_020443a8 (vtable)
 };
 
 class UnkSystem2_UnkSubSystem5_Base {
@@ -627,7 +678,6 @@ public:
     /* 00A */ unk16 mUnk_00A;    // UnkSystem2_UnkSubSystem5()'s param2
     /* 00C */ void *mUnk_00C;
     /* 010 */ UnkSystem2_UnkSubSystem5_Base_10 mUnk_010;
-    /* 130 */ STRUCT_PAD(0x130, 0x140);
     /* 140 */ unk16 mUnk_140;
     /* 142 */ unk16 mUnk_142;
     /* 144 */ unk16 mUnk_144;
@@ -638,7 +688,7 @@ public:
     /* 14E */ unk8 mUnk_14E; // 0x546
     /* 14F */ unk8 mUnk_14F; // 0x547
 
-    UnkSystem2_UnkSubSystem5_Base(UnkSystem2_UnkSubSystem11 *param1, unk32 param2, unk32 param3); // func_0201f288
+    UnkSystem2_UnkSubSystem5_Base(UnkSystem2_UnkSubSystem11_Derived2 *param1, unk32 param2, unk32 param3); // func_0201f288
     ~UnkSystem2_UnkSubSystem5_Base();
 
     /* 00 */ virtual void vfunc_00();
@@ -649,7 +699,9 @@ public:
 class UnkSystem2_UnkSubSystem5 : public UnkSystem2_UnkSubSystem5_Base {
 public:
     /* 000 (base) */
-    /* 150 */ UnkSystem2_UnkSubSystem11 mUnk_150;
+    /* 150 */ UnkSystem2_UnkSubSystem11_Derived2 mUnk_150;
+    /* 230 */ unk32 mUnk_230;
+    /* 234 */ unk32 mUnk_234;
     /* 238 */
 
     UnkSystem2_UnkSubSystem5(unk32 param1, unk32 param2);
@@ -717,7 +769,7 @@ public:
     /* 0C */
 
     //! TODO: conflict with UnkStruct_ov019_020d24c8_28_304
-    void func_0201e874(unk32 param1, void *param2, void *param3, unk32 param4);
+    void func_0201e874(unk32 buttonID, void *param2, void *param3, unk32 param4);
 };
 
 class UnkSystem2_UnkSubSystem8 : public UnkSystem2_UnkSubSystem8_Base {

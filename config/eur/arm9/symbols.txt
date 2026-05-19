@@ -937,7 +937,7 @@ _ZN19GameModeManagerBase8vfunc_04Ei kind:function(arm,size=0x28) addr:0x0201860c
 _ZN19GameModeManagerBase13func_02018634Et kind:function(arm,size=0x48) addr:0x02018634
 _ZN19GameModeManagerBase8vfunc_24Ev kind:function(arm,size=0x18) addr:0x0201867c
 _ZN19GameModeManagerBase8vfunc_28EPc kind:function(arm,size=0x10) addr:0x02018694
-_ZN19GameModeManagerBase8vfunc_2CEPc kind:function(arm,size=0x4) addr:0x020186a4
+_ZN19GameModeManagerBase6DrawUIEPc kind:function(arm,size=0x4) addr:0x020186a4
 _ZN19GameModeManagerBase8vfunc_30Ei kind:function(arm,size=0x4c) addr:0x020186a8
 _ZN19GameModeManagerBase8vfunc_34Eii kind:function(arm,size=0x4) addr:0x020186f4
 _ZN19GameModeManagerBase13func_020186f8Ei kind:function(arm,size=0xc) addr:0x020186f8
@@ -952,7 +952,7 @@ _ZN19GameModeManagerBase13func_02018984EPc kind:function(arm,size=0x90) addr:0x0
 _ZN19GameModeManagerBase13func_02018a14EPc kind:function(arm,size=0x78) addr:0x02018a14
 _ZN19GameModeManagerBase13func_02018a8cEv kind:function(arm,size=0x10) addr:0x02018a8c
 _ZN19GameModeManagerBase13func_02018a9cEii kind:function(arm,size=0x10) addr:0x02018a9c
-_ZN19GameModeManagerBase13func_02018aacEi kind:function(arm,size=0x18) addr:0x02018aac
+_ZN19GameModeManagerBase13func_02018aacEib kind:function(arm,size=0x18) addr:0x02018aac
 _ZN19GameModeManagerBase13func_02018ac4Ev kind:function(arm,size=0x10) addr:0x02018ac4
 _ZN19GameModeManagerBase13func_02018ad4Ev kind:function(arm,size=0x1c) addr:0x02018ad4
 _ZN19GameModeManagerBase13func_02018af0EP16GameModeLinkListI23GameModeManagerBase_104E kind:function(arm,size=0x64) addr:0x02018af0
@@ -1065,7 +1065,7 @@ _ZN23GameModeManagerBase_00413func_0201bf54Ev kind:function(arm,size=0x3c) addr:
 _ZN23GameModeManagerBase_00413func_0201bf90Ev kind:function(arm,size=0x5c) addr:0x0201bf90
 _ZN23GameModeManagerBase_00413func_0201bfecEv kind:function(arm,size=0x20) addr:0x0201bfec
 _ZN23GameModeManagerBase_00413func_0201c00cEii kind:function(arm,size=0x5c) addr:0x0201c00c
-_ZN23GameModeManagerBase_00413func_0201c068Es kind:function(arm,size=0x3c) addr:0x0201c068
+_ZN23GameModeManagerBase_00413func_0201c068Esb kind:function(arm,size=0x3c) addr:0x0201c068
 func_0201c0a4 kind:function(arm,size=0x20) addr:0x0201c0a4
 _ZN23GameModeManagerBase_00413func_0201c0c4Ei kind:function(arm,size=0x20) addr:0x0201c0c4
 _ZN23GameModeManagerBase_00413func_0201c0e4Ev kind:function(arm,size=0x40) addr:0x0201c0e4
@@ -1097,7 +1097,7 @@ func_0201c99c kind:function(thumb,size=0x20) addr:0x0201c99c
 func_0201c9bc kind:function(thumb,size=0x26) addr:0x0201c9bc
 func_0201c9e4 kind:function(thumb,size=0x2e) addr:0x0201c9e4
 func_0201ca14 kind:function(thumb,size=0x12) addr:0x0201ca14
-func_0201ca28 kind:function(thumb,size=0xa) addr:0x0201ca28
+_ZN23UnkStruct_0204a110_Sub213func_0201ca28Ei kind:function(thumb,size=0xa) addr:0x0201ca28
 func_0201ca34 kind:function(arm,size=0x104) addr:0x0201ca34
 func_0201cb38 kind:function(arm,size=0x44) addr:0x0201cb38
 func_0201cb7c kind:function(arm,size=0x148) addr:0x0201cb7c
@@ -2554,7 +2554,7 @@ data_02044340 kind:data(any) addr:0x02044340
 data_02044384 kind:data(any) addr:0x02044384
 data_02044390 kind:data(any) addr:0x02044390
 _ZTV24UnkSystem2_UnkSubSystem5 kind:data(any) addr:0x02044394
-data_020443a8 kind:data(any) addr:0x020443a8
+_ZTV34UnkSystem2_UnkSubSystem11_Derived2 kind:data(any) addr:0x020443a0
 data_020443c0 kind:data(any) addr:0x020443c0
 _ZTV21UnkStruct_0204e64c_00 kind:data(any) addr:0x020443d0
 data_020443e8 kind:data(any) addr:0x020443e8

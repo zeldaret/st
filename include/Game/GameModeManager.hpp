@@ -25,7 +25,7 @@ public:
     void func_0201bf90();
     void func_0201bfec();
     void func_0201c00c(unk32 param1, unk32 param2);
-    void func_0201c068(unk16 param1);
+    void func_0201c068(unk16 param1, bool param2);
     void func_0201c0c4(unk32 param1);
     void func_0201c0e4();
     void func_0201c19c();
@@ -242,7 +242,7 @@ public:
     void func_02018a14(unk8 *param1);
     void func_02018a8c(void);
     void func_02018a9c(unk32 param1, unk32 param2);
-    void func_02018aac(unk32 param1);
+    void func_02018aac(unk32 param1, bool param2);
     void func_02018ac4(void);
     bool func_02018ad4(void);
     bool func_02018af0(GameModeLinkList<GameModeManagerBase_104> *param1);
@@ -261,7 +261,7 @@ public:
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28(unk8 *param1);
-    /* 2C */ virtual void vfunc_2C(unk8 *param1);
+    /* 2C */ virtual void DrawUI(unk8 *param1);
     /* 30 */ virtual void vfunc_30(unk32 param1);
     /* 34 */ virtual void vfunc_34(unk32 param1, unk32 param2);
 

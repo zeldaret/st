@@ -55,7 +55,7 @@ def main():
                 # Try next symbols.txt file
                 continue
 
-            file_name = str(symbol_file.relative_to(config_path))
+            file_name = str(symbol_file.relative_to(base_config_path))
             if file_name.endswith("dtcm/symbols.txt"):
                 dest_module = ("dtcm", 0)
             elif file_name.endswith("itcm/symbols.txt"):

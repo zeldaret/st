@@ -575,7 +575,7 @@ void AdventureModeManager::vfunc_28(unk8 *param1) {
     }
 }
 
-void AdventureModeManager::vfunc_2C(unk8 *param1) {
+void AdventureModeManager::DrawUI(unk8 *param1) {
     s8 value = *param1;
 
     this->func_02018984(param1);
