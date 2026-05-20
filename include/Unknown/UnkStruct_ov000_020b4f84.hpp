@@ -16,9 +16,9 @@ enum FontIndex_ {
 };
 
 // FontEntry?
-class UnkStruct_ov000_020b4f84_00 : public UnkFileSystem5 {
+class UnkStruct_ov000_020b4f84_00 {
 public:
-    /* 00 (base) */
+    /* 00 */ UnkFileSystem5 mUnk_00;
     /* 14 */ Font_UnkStruct1 mUnk_14;
     /* 1C */ unk16 mUnk_1C;
     /* 1E */ unk16 mUnk_1E;

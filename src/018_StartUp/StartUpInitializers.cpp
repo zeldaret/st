@@ -273,11 +273,11 @@ ARM UnkStruct_0204a110_Sub6::UnkStruct_0204a110_Sub6() {
 }
 
 ARM UnkStruct_0204a110_Sub7::UnkStruct_0204a110_Sub7() {
-    this->mUnk_00 = 0;
-    this->mUnk_01 = 0;
-    this->mUnk_0C = data_027e0120;
-    this->mUnk_04 = new(HeapIndex_Main) UnkSystem2_UnkSubSystem9();
-    this->mUnk_08 = new(HeapIndex_Main) UnkStruct_0204a110_Sub7_08();
+    this->mUnk_00        = 0;
+    this->mUnk_01        = 0;
+    this->mUnk_0C.coords = data_027e0120.coords;
+    this->mUnk_04        = new(HeapIndex_Main) UnkSystem2_UnkSubSystem9();
+    this->mUnk_08        = new(HeapIndex_Main) UnkStruct_0204a110_Sub7_08();
 }
 
 ARM UnkStruct_0204a110_Sub8::UnkStruct_0204a110_Sub8() {
