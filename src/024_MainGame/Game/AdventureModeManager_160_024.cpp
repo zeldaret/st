@@ -153,7 +153,7 @@ void AdventureModeManager_160::func_ov024_020c7d4c(unk32 param1) {
     this->func_ov024_020c851c(param1);
 
     UnkStruct_ov019_020d24c8_28_258 local_30(0x5F, 0);
-    data_0204a110.GetUnkDDC()->func_0201e588(1, (s16) (-local_30.mUnk_0E / 2), 0, 8, 0);
+    data_0204a110.GetUnkDDC()->func_0201e588(1, (s16) (-local_30.mUnk_0E.x / 2), 0, 8, 0);
     this->mUnk_18->func_ov006_020b6c74();
     this->mUnk_0C = 7;
 

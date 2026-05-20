@@ -63,22 +63,13 @@ void UnkStruct_027e0cf8::func_ov024_020c755c(void *param1) {
     }
 }
 
-//! TODO: figure this out
-struct SomeSaveFileStruct {
-    /* 00 */ SaveFile *mpSaveFiles[MAX_SAVE_SLOTS];
-    /* 08 */ STRUCT_PAD(0x00, 0xC4);
-    /* CC */ unk32 mUnk_CC;
-
-    SomeSaveFileStruct(unk32 param1);
-    ~SomeSaveFileStruct();
-};
-
 void UnkStruct_027e0cf8::func_ov024_020c75d0(void *param1, unk32 param2, u16 param3) {
     if (this->mUnk_1C) {
         UnkStruct_027e0cf8::func_ov024_020c7724();
     }
 
-    unk32 uVar1 = ((SomeSaveFileStruct *) param1)->mUnk_CC;
+    //! TODO: confirm what UnkDataStruct3 is so we can remove the cast
+    unk32 uVar1 = ((UnkDataStruct3 *) param1)->mUnk_CC;
 
     volatile Vec2us local_1c;
     func_ov024_020d524c((Vec2us *) &local_1c, uVar1);

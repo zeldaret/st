@@ -432,7 +432,7 @@ void AdventureModeManager::vfunc_24() {
                     return;
                 }
 
-                if (data_ov000_020b504c.func_ov000_02067bc4(0)->vfunc_08() != 0) {
+                if (data_ov000_020b504c.func_ov000_02067bc4(0)->vfunc_08()) {
                     return;
                 }
             }
@@ -737,14 +737,6 @@ bool AdventureModeManager::func_ov024_020c681c() {
     return false;
 }
 
-struct SomeSaveFileStruct {
-    /* 00 */ SaveFile *mpSaveFiles[MAX_SAVE_SLOTS];
-    STRUCT_PAD(0x00, 0xCC);
-
-    SomeSaveFileStruct(unk32 param1);
-    ~SomeSaveFileStruct();
-};
-
 void AdventureModeManager::func_ov024_020c6840(SceneIndex sceneIndex) {
     if (this->func_ov024_020c6d64() != 0) {
         return;
@@ -755,12 +747,11 @@ void AdventureModeManager::func_ov024_020c6840(SceneIndex sceneIndex) {
     }
 
     {
-        //! TODO: fake match most likely
-        SomeSaveFileStruct uStack_e8(0x1770);
-        func_ov024_020d24d4(&uStack_e8.mpSaveFiles[1]);
-        func_ov024_020d2538(&uStack_e8.mpSaveFiles[1], sceneIndex, 0, uStack_e8.mpSaveFiles[0]);
-        data_027e0cf8->func_ov024_020c755c(&uStack_e8.mpSaveFiles[1]);
-        func_ov024_020d2518(&uStack_e8.mpSaveFiles[1]);
+        UnkDataStruct3 uStack_e8(0x1770);
+        func_ov024_020d24d4(&uStack_e8.mUnk_04);
+        func_ov024_020d2538(&uStack_e8.mUnk_04, sceneIndex, 0, uStack_e8.mUnk_00.unk_00);
+        data_027e0cf8->func_ov024_020c755c(&uStack_e8.mUnk_04);
+        func_ov024_020d2518(&uStack_e8.mUnk_04);
     }
 }
 

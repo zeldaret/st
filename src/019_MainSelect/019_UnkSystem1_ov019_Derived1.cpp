@@ -21,7 +21,7 @@ ARM unk32 UnkSystem1_ov019_Derived1::vfunc_1C(u32 param1, unk32 param2, unk32 pa
         if (this->mUnk_04 <= 0) {
             this->func_ov019_020c5590(BMG_ID(BMGGroup_select, 0x1B), param2, param3);
             this->mUnk_04++;
-        } else if (data_ov000_020b504c.func_ov000_02067bc4(this->mUnk_10)->vfunc_08() != 0) {
+        } else if (data_ov000_020b504c.func_ov000_02067bc4(this->mUnk_10)->vfunc_08()) {
             switch (this->mUnk_04) {
                 case 0x1E:
                     switch (param1) {

@@ -3,12 +3,15 @@
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkFileSystem.hpp"
+#include "Unknown/UnkMemFuncs.h"
 #include "global.h"
 #include "profile.hpp"
 #include "types.h"
+
 #include <nitro/math.h>
 #include <nns/text.h>
 
+class UnkDataStruct2;
 extern "C" void func_0201e8d4(void *param1, void *param2);
 
 //! TODO: make this work with templates?
@@ -218,8 +221,7 @@ public:
         Vec2s mPos;
         Vec2us mPosU;
     };
-    /* 0E */ s16 mUnk_0E;
-    /* 10 */ unk16 mUnk_10;
+    /* 0E */ Vec2s mUnk_0E;
     /* 12 */ unk16 mUnk_12;
     /* 14 */ unk16 mUnk_14;
     /* 16 */ unk16 mUnk_16;
@@ -245,6 +247,9 @@ public:
 };
 
 #define BTN_ID_NONE -1
+
+#define BTN_ID_UNK_00 0x00
+
 #define BTN_ID_ITEM 0x03
 #define BTN_ID_RETURN 0x05
 
@@ -569,7 +574,8 @@ public:
     /* 018 */ unk32 mUnk_008;
     /* 01C */ void *mUnk_00C;
     /* 020 */ unk32 mUnk_010;
-    /* 024 */ unk32 mUnk_014;
+    /* 024 */ unk16 mUnk_014;
+    /* 026 */ u16 mUnk_016;
     /* 028 */ unk8 mUnk_018;
     /* 029 */ unk8 mUnk_019;
     /* 02A */ unk8 mUnk_01A;
@@ -583,7 +589,13 @@ public:
     /* 044 */ unk32 mUnk_034;
     /* 048 */ unk32 mUnk_038;
     /* 04C */ unk32 mUnk_03C;
-    /* 040 */ STRUCT_PAD(0x40, 0x130);
+    /* 050 */ unk32 mUnk_040;
+    /* 054 */ unk32 mUnk_044;
+    /* 058 */ unk32 mUnk_048;
+    /* 05C */ unk32 mUnk_04C;
+    /* 060 */ unk32 mUnk_050;
+    /* 064 */ unk32 mUnk_054;
+    /* 068 */ STRUCT_PAD(0x58, 0x130);
     /* 130 */
 
     UnkSystem2_UnkSubSystem5_Base_10();
@@ -593,7 +605,7 @@ public:
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10(void *param1);
-    /* 14 */ virtual void vfunc_14();
+    /* 14 */ virtual void vfunc_14(unk32 param1);
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C();
     /* 20 */ virtual void vfunc_20();
@@ -608,10 +620,18 @@ public:
     /* 44 */ virtual void vfunc_44();
     /* 48 */ virtual void vfunc_48();
     /* 4C */
+
+    unk32 func_ov000_020691e0(void *param1);
+    void func_ov000_02068798(Vec2s *param1);
 };
 
+struct Font_UnkStruct1;
 struct UnkSystem2_UnkSubSystem11_Base_1C {
-    u8 pad[0x10];
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ Font_UnkStruct1 *mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */
 };
 
 class UnkSystem2_UnkSubSystem11_Base {
@@ -619,7 +639,7 @@ public:
     /* 00 (vtable) */
     /* 04 */ Text_UnkStruct2 mUnk_04;
     /* 1C */ UnkSystem2_UnkSubSystem11_Base_1C mUnk_1C; // +0x24: space between characters, set from BMG INF1 entry
-    /* 2C */ unk16 mUnk_2C;
+    /* 2C */ s16 mUnk_2C;
     /* 2E */ unk16 mUnk_2E; // pad?
     /* 30 */
 
@@ -633,8 +653,8 @@ public:
 
     void func_ov000_02061d38();
     void func_ov000_02061d88();
-    void func_ov000_02061da8();
-    void func_ov000_02061db8();
+    unk32 func_ov000_02061da8();
+    unk32 func_ov000_02061db8();
 };
 
 class UnkSystem2_UnkSubSystem11_Derived1 : public UnkSystem2_UnkSubSystem11_Base {
@@ -654,8 +674,9 @@ public:
 
     void func_ov000_02061f8c();
     void func_ov000_02062144();
-    void func_ov000_0206216c();
+    void func_ov000_0206216c(Vec2s *param1, unk32 param2, unk32 param3);
     void func_ov000_02062228();
+    void func_ov000_02062838(void *param1);
 };
 
 class UnkSystem2_UnkSubSystem11_Derived2 : public UnkSystem2_UnkSubSystem11_Derived1 {
@@ -668,6 +689,9 @@ public:
     ~UnkSystem2_UnkSubSystem11_Derived2() {}
 
     // data_020443a8 (vtable)
+
+    void func_ov000_020626e4(void *param1, bool param2, unk32 *param3, void *param4);
+    void func_ov000_020626e4(void *param1, bool param2, unk32 *param3, unk32 param4, unk32 param5, unk32 param6, unk32 param7);
 };
 
 class UnkSystem2_UnkSubSystem5_Base {
@@ -1184,4 +1208,48 @@ public:
     bool func_ov024_020c4f7c();
     bool func_ov024_020c510c();
     void func_ov024_020c5120(bool param1);
+};
+
+struct UnkDataStruct1 {
+    /* 00 */ void *mUnk_00;
+    /* 04 */ unk8 mUnk_04;
+    /* 05 */ unk8 mUnk_05;
+    /* 06 */ u16 mUnk_06;
+    /* 08 */
+
+    UnkDataStruct1(u16 param1) {
+        this->Init(param1);
+    }
+
+    UnkDataStruct1(void *param1, u16 param2) {
+        this->Init(param2);
+        this->mUnk_00 = param1;
+    }
+
+    void Init(u16 param1) {
+        this->mUnk_06 = 0x00;
+        MI_CpuFill32(0, this, sizeof(UnkDataStruct1));
+        this->mUnk_05 = -1;
+        this->mUnk_06 |= param1;
+    }
+};
+
+struct UnkDataStruct2 {
+    /* 00 */ void *unk_00;
+    /* 04 */
+
+    UnkDataStruct2(unk32 param1);
+    ~UnkDataStruct2();
+};
+
+struct UnkDataStruct3 {
+    /* 00 */ UnkDataStruct2 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ STRUCT_PAD(0x08, 0xCC);
+    /* CC */ unk32 mUnk_CC;
+    /* D0 */ unk32 mUnk_D0;
+    /* D4 */
+
+    UnkDataStruct3(unk32 param1) :
+        mUnk_00(param1) {}
 };

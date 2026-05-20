@@ -132,12 +132,10 @@ public:
     void func_0201cf30();
 };
 
-class UnkStruct_0204a110_Sub7_08 : public SysObject {
+class UnkStruct_0204a110_Sub7_08 : public UnkSubStruct1_Base {
 public:
     /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x0A);
-    /* 0A */ bool mUnk_0A;
-    /* 0B */ STRUCT_PAD(0x0B, 0x30);
+    /* 0B */ STRUCT_PAD(0x20, 0x30);
     /* 30 */
 
     UnkStruct_0204a110_Sub7_08();
@@ -148,14 +146,21 @@ public:
     /* 08 */ virtual void vfunc_08();
 
     unk32 func_0201ec30();
+    void func_0201ebf8(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
+
+    void Subprocess1_UnkValueSets() {
+        this->mUnk_10 = this->mUnk_18;
+    }
+
+    void Subprocess2_UnkValueSets() {
+        this->mUnk_10 = this->mUnk_14;
+    }
+
+    UnkSubStruct1_Methods;
 };
 
-struct UnkStruct_027e0120 {
-    /* 00 */ unk32 mUnk_00[4];
-    /* 10 */
-};
-
-extern UnkStruct_027e0120 data_027e0120;
+//! TODO: actually a matrix
+extern Vec4p data_027e0120;
 
 class UnkStruct_0204a110_Sub7 {
 public:
@@ -165,7 +170,7 @@ public:
     /* 03 */ unk8 mUnk_03;
     /* 04 */ UnkSystem2_UnkSubSystem9 *mUnk_04;
     /* 08 */ UnkStruct_0204a110_Sub7_08 *mUnk_08;
-    /* 0C */ UnkStruct_027e0120 mUnk_0C;
+    /* 0C */ Vec4p mUnk_0C; // same type as data_027e0120?
     /* 1C */
 
     UnkStruct_0204a110_Sub7();
@@ -194,6 +199,21 @@ public:
 
     void func_0201e588(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_0201e698(void);
+};
+
+//! TODO: is this real?
+struct UnkStruct_func_02019590 {
+    s16 a : 12;
+    s16 b : 12;
+    union {
+        unk32 c_raw;
+        struct {
+            u16 c_b1 : 8;
+            u16 c_b2 : 8;
+        };
+    };
+    u16 d : 8;
+    u16 e : 4;
 };
 
 class UnkStruct_0204a110 {
@@ -262,6 +282,7 @@ public:
     unk32 func_02019514();
     void func_02019528();
     bool func_02019548();
+    UnkStruct_func_02019590 *func_02019590(unk16 param1, bool param2);
 
     void func_ov001_020bd514(unk32 param1, void *param2, unk32 param3, unk32 param4);
     void func_ov001_020bd58c(void);

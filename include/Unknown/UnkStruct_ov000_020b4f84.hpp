@@ -5,7 +5,7 @@
 #include "types.h"
 #include <nns/font.h>
 
-enum {
+enum FontIndex_ {
     FontIndex_DSZ2_msg       = 0,
     FontIndex_LC_Font_s      = 1, // unused?
     FontIndex_DSZ2_endL      = 2,

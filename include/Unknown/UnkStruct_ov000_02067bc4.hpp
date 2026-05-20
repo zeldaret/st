@@ -69,7 +69,7 @@ public:
 
     /* 00 */ virtual unk32 vfunc_00();
     /* 04 */ virtual unk32 vfunc_04();
-    /* 08 */ virtual unk32 vfunc_08();
+    /* 08 */ virtual bool vfunc_08();
 
     void func_02021bec(unk16 param1);
     void func_02021c08();
@@ -99,6 +99,7 @@ public:
 
     UnkStruct_ov000_020b504c_Sub3(unk32 param1);
     void func_ov000_020676f8(const char *bmgFileName, unk32 param2);
+    EntryINF1 *func_ov000_02067a2c(u32 msgId);
 };
 
 class UnkStruct_ov000_020b504c_Sub4_00 {

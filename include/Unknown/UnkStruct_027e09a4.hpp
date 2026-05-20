@@ -78,7 +78,7 @@ enum SceneIndex_ {
     /*  54 */ SceneIndex_f_bridge      = 0x36, // Bridge Worker's House
     /*  55 */ SceneIndex_f_bridge2     = 0x37, // Trading Post
     /*  56 */ SceneIndex_f_forest3     = 0x38, // whittleton forest
-    /*  57 */ SceneIndex_f_water3      = 0x39, // papuchia south
+    /*  57 */ SceneIndex_f_water3      = 0x39, // papuchia south and lost at sea station
     /*  58 */ SceneIndex_f_ajito       = 0x3A, // Pirate Hideout
     /*  59 */ SceneIndex_f_ajito2      = 0x3B, // same as above
     /*  60 */ SceneIndex_f_flame3      = 0x3C, // Goron Target Range
@@ -147,11 +147,13 @@ enum SceneIndex_ {
 
 struct UnkStruct_func_01ffd400 {
     /* 00 */ STRUCT_PAD(0x00, 0x10);
-    /* 1B */ unk32 mUnk_10;
-    /* 1B */ unk32 mUnk_14;
-    /* 1B */ unk8 mUnk_18;
-    /* 1B */ unk8 mUnk_19;
-    /* 1B */ unk8 mUnk_1A;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk16 mUnk_14;
+    /* 16 */ s8 mUnk_16;
+    /* 17 */ unk8 mUnk_17;
+    /* 18 */ unk8 mUnk_18;
+    /* 19 */ unk8 mUnk_19;
+    /* 1A */ unk8 mUnk_1A;
     /* 1B */ u8 mUnk_1B;
 };
 
@@ -269,6 +271,16 @@ public:
         return false;
     }
 
+    bool UnkCheck2() const {
+        bool result = true;
+
+        if (this->func_01ffd400()->mUnk_10 != 1 && this->func_01ffd400()->mUnk_10 != 3) {
+            result = false;
+        }
+
+        return result;
+    }
+
     SceneIndex CurrentSceneIndex() {
         return this->mUnk_00.mSceneIndex;
     }
@@ -281,6 +293,14 @@ public:
         return this->mUnk_00.mSceneIndex == SceneIndex_f_pirate;
     }
 
+    bool IsWater3() {
+        return this->mUnk_00.mSceneIndex == SceneIndex_f_water3;
+    }
+
+    bool IsSnowdriftStation() {
+        return this->mUnk_00.mSceneIndex == SceneIndex_f_kakushi1;
+    }
+
     bool IsPassenger() {
         return this->mUnk_00.mSceneIndex == SceneIndex_f_passenger;
     }
@@ -288,7 +308,7 @@ public:
     ~UnkStruct_027e09a4();
 
     bool func_01ffd3d8();
-    UnkStruct_func_01ffd400 *func_01ffd400();
+    UnkStruct_func_01ffd400 *func_01ffd400() const;
 
     unk8 func_ov000_02070bd0(unk32 csIndex, unk32 param2);
     UnkStruct_SceneChange1 *func_ov000_02070560();

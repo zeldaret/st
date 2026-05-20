@@ -198,8 +198,8 @@ void GameModeManagerBase::func_02018aac(unk32 param1, bool param2) {
     this->mUnk_004.func_0201c068(param1, param2);
 }
 
-void GameModeManagerBase::func_02018ac4(void) {
-    this->mUnk_004.func_0201bfec();
+void GameModeManagerBase::func_02018ac4(unk16 param1) {
+    this->mUnk_004.func_0201bfec(param1);
 }
 
 bool GameModeManagerBase::func_02018ad4(void) {

@@ -109,7 +109,10 @@ public:
 
 class UnkStruct_027e0cd8_04_0C {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x50);
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ s16 mUnk_08;
+    /* 0C */ STRUCT_PAD(0x0C, 0x50);
     /* 50 */
 
     UnkStruct_027e0cd8_04_0C();
@@ -144,7 +147,7 @@ public:
     void func_ov000_02081ecc(unk16 param1, unk32 param2);
     void func_ov000_02081eec(unk16 param1, unk32 param2, unk32 param3);
     bool func_ov000_02081f3c(unk16 param1, unk32 param2);
-    unk32 func_ov000_02081d5c();
+    u32 func_ov000_02081d5c(); // returns current room index?
     bool func_ov000_02082124();
     bool func_ov000_02081c28();
 };

@@ -20,14 +20,7 @@ extern "C" void func_02013354();
 extern "C" void func_0201328c();
 extern "C" int OS_DisableInterrupts_Irq();
 extern "C" void OS_RestoreInterrupts(int enabled);
-extern Mat3p data_027e02c4;
-
-struct SomeSaveFileStruct {
-    /* 00 */ SaveFile *mpSaveFiles[MAX_SAVE_SLOTS];
-
-    SomeSaveFileStruct(unk32 param1);
-    ~SomeSaveFileStruct();
-};
+extern Mat3p gGeomMatrix;
 
 ARM void Game::func_02013370(unk32 param1) {
     data_0204a110.func_02018c78(param1);
@@ -43,8 +36,8 @@ ARM void Game::Run() {
             data_0204999c.func_02013014();
 
             {
-                SomeSaveFileStruct local_28(0x1300);
-                this->mpSaveFile = local_28.mpSaveFiles[0];
+                UnkDataStruct2 local_28(0x1300);
+                this->mpSaveFile = (SaveFile *) local_28.unk_00;
 
                 if (this->mpCurrentGameMode != NULL) {
                     delete this->mpCurrentGameMode;
@@ -103,7 +96,7 @@ ARM void Game::Run() {
             data_027e0208.mUnk_0E4 = 0;
             data_027e0208.mUnk_0E8 = 0;
 
-            Mat3p_InitIdentity(&data_027e02c4);
+            Mat3p_InitIdentity(&gGeomMatrix);
             data_027e0208.mUnk_0FC = 0;
             FlushGfxQueue();
             this->mpCurrentGameMode->vfunc_18();

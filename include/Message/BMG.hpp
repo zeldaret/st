@@ -90,8 +90,8 @@ struct EntryINF1 {
     /* 00 */ u32 offset; // relative to the end of the DAT1 header
     /* 04 */ u8 mUnk_04; // flags/attributes? (+0x04 to +0x06)
     /* 05 */ u8 mUnk_05;
-    /* 06 */ u8 mUnk_06;
-    /* 07 */ u8 mUnk_07;
+    /* 06 */ u8 fontIndex; // see FontIndex enum
+    /* 07 */ s8 mUnk_07;
     /* 08 */
 };
 

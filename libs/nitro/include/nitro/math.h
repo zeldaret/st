@@ -243,6 +243,59 @@ extern "C" static inline void Vec2s_SetU(Vec2s *dest, Vec2us *src) {
     dest->x = x;
     dest->y = y;
 }
+
+extern "C" static inline void Vec2s_Set(const Vec2s *src, Vec2s *dest) {
+    s16 x = src->x;
+    s16 y = src->y;
+
+    // clear current data
+    dest->x = 0;
+    dest->y = 0;
+
+    // set new data
+    dest->x = x;
+    dest->y = y;
+}
+
+extern "C" static inline Vec2s *Vec2s_New(s16 x, s16 y) {
+    Vec2s vec;
+    vec.x = x;
+    vec.y = y;
+    return &vec;
+}
+
+extern "C" static inline Vec2s *Vec2s_GetCopy(Vec2s *src) {
+    Vec2s vec;
+    vec.x = src->x;
+    vec.y = src->y;
+    return &vec;
+}
+
+extern "C" static inline void Vec2s_Add(const Vec2s *a, const Vec2s *b, Vec2s *dst) {
+    s16 x;
+    s16 y;
+
+    const Vec2s *real_a = (const Vec2s *) a;
+
+    x = real_a->x + b->x;
+    y = real_a->y + b->y;
+
+    dst->x = x;
+    dst->y = y;
+}
+
+extern "C" static inline void Vec2s_OffsetAdd(const Vec2s *a, const Vec2s *b, const Vec2s *o, Vec2s *dst) {
+    s16 x;
+    s16 y;
+
+    const Vec2s *real_a = (const Vec2s *) a;
+
+    x = real_a->x + b->x;
+    y = real_a->y + b->y;
+
+    dst->x = x + o->x;
+    dst->y = y + o->y;
+}
 extern "C" {
 #else
 typedef struct Vec2b {

@@ -23,7 +23,7 @@ public:
     void func_0201bf24();
     void func_0201bf54();
     void func_0201bf90();
-    void func_0201bfec();
+    void func_0201bfec(unk16 param1);
     void func_0201c00c(unk32 param1, unk32 param2);
     void func_0201c068(unk16 param1, bool param2);
     void func_0201c0c4(unk32 param1);
@@ -226,6 +226,10 @@ public:
     /* 150 */ unk8 mUnk_153;
     /* 154 */
 
+    BOOL IsUnk150() {
+        return this->mUnk_150;
+    }
+
     GameModeManagerBase(unk32 param1);
     void func_02018550(void);
     void func_02018554(void);
@@ -243,7 +247,7 @@ public:
     void func_02018a8c(void);
     void func_02018a9c(unk32 param1, unk32 param2);
     void func_02018aac(unk32 param1, bool param2);
-    void func_02018ac4(void);
+    void func_02018ac4(unk16 param1);
     bool func_02018ad4(void);
     bool func_02018af0(GameModeLinkList<GameModeManagerBase_104> *param1);
     bool func_02018b54(GameModeLinkList<GameModeManagerBase_104> *param1);

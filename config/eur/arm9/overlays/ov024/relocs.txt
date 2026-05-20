@@ -1310,7 +1310,7 @@ from:0x020cb1ec kind:load to:0x020d8694 module:overlay(24)
 from:0x020cb250 kind:arm_call to:0x0201e6d0 module:main
 from:0x020cb258 kind:arm_call to:0x0201e6d0 module:main
 from:0x020cb260 kind:arm_call to:0x0201e6d0 module:main
-from:0x020cb270 kind:load to:0x020d7fd0 module:overlay(24)
+from:0x020cb270 kind:load to:0x020d7fc8 add:0x8 module:overlay(24)
 from:0x020cb2a8 kind:arm_call to:0x02067f88 module:overlay(0)
 from:0x020cb2c8 kind:arm_call to:0x02067f5c module:overlay(0)
 from:0x020cb2e4 kind:arm_call to:0x02067a2c module:overlay(0)
@@ -1352,7 +1352,7 @@ from:0x020cb86c kind:arm_call to:0x0201e8d4 module:main
 from:0x020cb8a0 kind:arm_call to:0x0206216c module:overlay(0)
 from:0x020cb8ac kind:load to:0x0204af1c module:main
 from:0x020cb8d4 kind:arm_call to:0x020cb1f0 module:overlay(24)
-from:0x020cb900 kind:load to:0x020d8044 module:overlay(24)
+from:0x020cb900 kind:load to:0x020d803c add:0x8 module:overlay(24)
 from:0x020cb940 kind:arm_call to:0x020cb284 module:overlay(24)
 from:0x020cb974 kind:arm_call to:0x0201e874 module:main
 from:0x020cb9c0 kind:arm_call to:0x0201e874 module:main
@@ -1409,7 +1409,7 @@ from:0x020cc138 kind:load to:0x0204a088 module:main
 from:0x020cc13c kind:load to:0x027e0994 module:dtcm
 from:0x020cc15c kind:arm_call to:0x020cb8cc module:overlay(24)
 from:0x020cc16c kind:arm_call to:0x0201ef9c module:main
-from:0x020cc180 kind:load to:0x020d7ff4 module:overlay(24)
+from:0x020cc180 kind:load to:0x020d7fec add:0x8 module:overlay(24)
 from:0x020cc1c0 kind:arm_call to:0x020cb904 module:overlay(24)
 from:0x020cc1d4 kind:arm_call to:0x0201effc module:main
 from:0x020cc208 kind:arm_call to:0x0201f04c module:main
@@ -1425,7 +1425,7 @@ from:0x020cc448 kind:arm_call to:0x020cbf98 module:overlay(24)
 from:0x020cc454 kind:load to:0x0204a110 add:0xd9c module:main
 from:0x020cc460 kind:arm_call to:0x020cb8cc module:overlay(24)
 from:0x020cc470 kind:arm_call to:0x0201eb4c module:main
-from:0x020cc47c kind:load to:0x020d801c module:overlay(24)
+from:0x020cc47c kind:load to:0x020d8014 add:0x8 module:overlay(24)
 from:0x020cc488 kind:arm_call to:0x020cb904 module:overlay(24)
 from:0x020cc4a4 kind:arm_call to:0x0201ebf8 module:main
 from:0x020cc508 kind:arm_call to:0x020cc088 module:overlay(24)
