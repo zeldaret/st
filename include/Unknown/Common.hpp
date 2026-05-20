@@ -623,6 +623,7 @@ public:
 
     unk32 func_ov000_020691e0(void *param1);
     void func_ov000_02068798(Vec2s *param1);
+    void func_ov000_02068798(void *, void *);
 };
 
 struct Font_UnkStruct1;

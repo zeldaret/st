@@ -166,3 +166,9 @@ public:
 
 // gMessageManager?
 extern UnkStruct_ov000_020b504c data_ov000_020b504c;
+
+struct UnkMsgDataStruct1 {
+    unk32 mUnk_00;
+
+    void func_ov000_02067a60(void *, int);
+};

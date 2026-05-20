@@ -31,14 +31,8 @@ void UnkTitleCardSystem1::func_ov024_020cb274(UnkSystem2_UnkSubSystem11_Derived2
 
 void UnkTitleCardSystem1::func_ov024_020cb280() {}
 
-struct struct_aStack_2e0 {
-    int mUnk_00;
-
-    struct_aStack_2e0(void *, int);
-};
-
 void UnkTitleCardSystem1::func_ov024_020cb284(unk32 param1, unk32 param2) {
-    if (data_ov000_020b504c.func_ov000_02067f88(0, 1) == 0) {
+    if (data_ov000_020b504c.func_ov000_02067f88(0, param2) == 0) {
         return;
     }
 
@@ -68,28 +62,33 @@ void UnkTitleCardSystem1::func_ov024_020cb284(unk32 param1, unk32 param2) {
         bitFieldVal1 = 0x100;
     }
 
-    UnkDataStruct2 uStack_28(((bitFieldVal1 * bitFieldVal2) / 64) * 32);
+    UnkDataStruct2 sp10(((bitFieldVal1 * bitFieldVal2) / 64) * 32);
+    UnkMsgDataStruct1 spC;
+    UnkMsgDataStruct1 sp8;
 
-    Vec2s vec;
-    vec.x = bitFieldVal1;
-    vec.y = bitFieldVal2;
-    this->func_ov024_020cb490(&uStack_28, (unk32 *) &vec);
+    Vec2s sp4;
+    sp4.x = bitFieldVal1;
+    sp4.y = bitFieldVal2;
+    this->func_ov024_020cb490(&sp10, (unk32 *) &sp4);
     this->mUnk_008->mUnk_1C.mUnk_08 = pINF1->mUnk_07;
-    struct_aStack_2e0 auStack_2c(data_ov000_020b504c.mUnk_000, param1);
-    unk32 iVar6    = this->mUnk_00C->func_ov000_020691e0(&auStack_2c);
-    this->mUnk_130 = iVar6 + this->vfunc_18();
 
-    int iVar10 = this->mUnk_008->mUnk_04.unk_08;
-    int y      = (((iVar10 * 8) - this->mUnk_008->func_ov000_02061db8()) / 2) + (this->mUnk_008->func_ov000_02061da8() / 2);
-    int x      = (((this->mUnk_008->mUnk_04.unk_04 * 8) - iVar6) / 2);
+    spC.func_ov000_02067a60(data_ov000_020b504c.mUnk_000, param1);
+    unk32 temp_r7                               = this->mUnk_00C->func_ov000_020691e0(&spC);
+    UnkSystem2_UnkSubSystem11_Derived2 *temp_r8 = this->mUnk_008;
+    this->mUnk_130                              = temp_r7 + this->vfunc_18();
 
-    struct_aStack_2e0 auStack_30(data_ov000_020b504c.mUnk_000, param1);
-    this->mUnk_00C->vfunc_14(auStack_30.mUnk_00);
-    Vec2s uStack_38;
-    uStack_38.x = x;
-    uStack_38.y = y;
-    this->mUnk_00C->func_ov000_02068798(&uStack_38);
-    this->mUnk_008->func_ov000_02062838(uStack_28.unk_00);
+    unk32 temp_r0_3 = (this->mUnk_008->mUnk_04.unk_08 * 8);
+    int temp_r5_3   = (this->mUnk_008->func_ov000_02061db8() / 2) + ((temp_r0_3 - this->mUnk_008->func_ov000_02061da8()) / 2);
+    int temp_r6_2   = (((this->mUnk_008->mUnk_04.unk_04 * 8) - temp_r7) / 2);
+
+    UnkMsgDataStruct1 *ptr = (UnkMsgDataStruct1 *) &sp8; // cast is required
+    ptr->func_ov000_02067a60(data_ov000_020b504c.mUnk_000, param1);
+    this->mUnk_00C->vfunc_14(ptr->mUnk_00);
+    Vec2s sp0;
+    sp0.x = temp_r6_2;
+    sp0.y = temp_r5_3;
+    this->mUnk_00C->func_ov000_02068798(&sp0);
+    this->mUnk_008->func_ov000_02062838(sp10.unk_00);
 }
 
 //! TODO: fake match? see UnkStruct_func_02019590

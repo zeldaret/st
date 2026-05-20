@@ -33,11 +33,6 @@ extern u16 data_0203e0c4[];
 extern int data_0203e0be;
 extern int data_ov020_20e8580;
 
-struct struct_aStack_2e0 {
-    int mUnk_00;
-    struct_aStack_2e0(void *, int);
-};
-
 struct struct_aStack_2d8 {
     struct_aStack_2d8();
     void func_ov000_020685cc();
@@ -146,7 +141,8 @@ THUMB void SysFault::func_020127f0(unk32 param1) {
                 {
                     UnkSystem2_UnkSubSystem5_Base_10 aStack_278;
                     aStack_2d8.func_ov000_0206869c();
-                    struct_aStack_2e0 uStack_2e0(data_ov000_020b504c.mUnk_000, 0x25);
+                    UnkMsgDataStruct1 uStack_2e0;
+                    uStack_2e0.func_ov000_02067a60(data_ov000_020b504c.mUnk_000, 0x25);
                     aStack_2d8.func_ov000_020686a4(uStack_2e0.mUnk_00);
                     aStack_2d8.func_ov000_02068fec();
                     aStack_2d8.func_ov000_0206878c();
@@ -166,7 +162,8 @@ THUMB void SysFault::func_020127f0(unk32 param1) {
                 {
                     UnkSystem2_UnkSubSystem5_Base_10 aStack_278;
                     aStack_2d8.func_ov000_0206869c();
-                    struct_aStack_2e0 uStack_2e0(data_ov000_020b504c.mUnk_000, 0x26);
+                    UnkMsgDataStruct1 uStack_2e0;
+                    uStack_2e0.func_ov000_02067a60(data_ov000_020b504c.mUnk_000, 0x26);
                     aStack_2d8.func_ov000_020686a4(uStack_2e0.mUnk_00);
                     aStack_2d8.func_ov000_02068fec();
                     aStack_2d8.func_ov000_0206878c();
