@@ -282,7 +282,7 @@ public:
     unk32 func_02019514();
     void func_02019528();
     bool func_02019548();
-    UnkStruct_func_02019590 *func_02019590(unk16 param1, bool param2);
+    UnkStruct_func_02019590 *func_02019590(unk16 param1, unk32 param2);
 
     void func_ov001_020bd514(unk32 param1, void *param2, unk32 param3, unk32 param4);
     void func_ov001_020bd58c(void);

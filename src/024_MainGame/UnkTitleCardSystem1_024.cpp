@@ -117,8 +117,8 @@ void UnkTitleCardSystem1::func_ov024_020cb490(UnkDataStruct2 *param1, unk32 *par
     this->mUnk_00C->mUnk_016 = ptr->d;
 }
 
-bool UnkTitleCardSystem1::vfunc_08() {
-    return false;
+unk32 UnkTitleCardSystem1::vfunc_08() {
+    return 0;
 }
 
 void UnkTitleCardSystem1::vfunc_0C() {}
@@ -262,25 +262,27 @@ void UnkTitleCardSystem1_Derived1::vfunc_1C(u32 msgId, unk32 param2, bool param3
     this->mUnk_0EC.func_0201e874(BTN_ID_UNK_00, Vec2s_New(x, 0), Vec2s_New(x, 0), 0);
 }
 
-bool UnkTitleCardSystem1_Derived1::vfunc_08() {
+unk32 UnkTitleCardSystem1_Derived1::vfunc_08() {
     switch (this->mUnk_004) {
         case 0x04:
-            return false;
+            return 0;
         case 0x06:
-            return false;
+            return 0;
         case 0x05:
-            return false;
+            return 0;
         case 0x14:
-            return false;
+            return 0;
         case 0x15:
-            return false;
+            return 0;
         case 0x07:
-            return false;
+            return 0;
         case 0x63:
-            return false;
+            return 0;
         default:
             break;
     }
+
+    //! @bug: missing return
 }
 
 void UnkTitleCardSystem1_Derived1::vfunc_0C() {
@@ -601,8 +603,8 @@ void UnkStruct_ov024_020d8694_2FC::func_ov024_020ccb10(unk32 param1, Vec2s *para
     this->mUnk_0EC.UnkOperations1();
 }
 
-bool UnkStruct_ov024_020d8694_2FC::vfunc_08() {
-    return false;
+unk32 UnkStruct_ov024_020d8694_2FC::vfunc_08() {
+    return 0;
 }
 
 void UnkStruct_ov024_020d8694_2FC::vfunc_0C() {

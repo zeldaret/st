@@ -87,7 +87,7 @@ public:
     // data_ov024_020d7fd0
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual void vfunc_04(unk8 *param1);
-    /* 08 */ virtual bool vfunc_08();
+    /* 08 */ virtual unk32 vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual bool vfunc_14();
@@ -118,7 +118,7 @@ public:
     UnkTitleCardSystem1_Derived1(GameModeManagerBase_004 *param1);
 
     // data_ov024_020d8044
-    /* 08 */ virtual bool vfunc_08() override;
+    /* 08 */ virtual unk32 vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 10 */ virtual void vfunc_10() override;
     /* 18 */ virtual unk32 vfunc_18() override;
@@ -175,7 +175,7 @@ public:
 
     // data_ov024_020d7fac
     /* 00 */ virtual void vfunc_00() override;
-    /* 08 */ virtual bool vfunc_08() override;
+    /* 08 */ virtual unk32 vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 10 */ virtual void vfunc_10() override;
 
