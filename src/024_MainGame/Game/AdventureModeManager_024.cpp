@@ -790,13 +790,13 @@ unk32 AdventureModeManager::func_ov024_020c6a20() {
     return uVar2;
 }
 
-void AdventureModeManager::func_ov024_020c6a48(unk32 param1, unk32 param2) {
+void AdventureModeManager::func_ov024_020c6a48(unk32 param1, bool param2) {
     switch (param1) {
         case 0:
         case 1:
         case 2:
         case 3:
-            data_ov024_020d8698->func_ov024_020cd4e4(param1);
+            data_ov024_020d8698->func_ov024_020cd4e4(param1, param2);
             break;
         case 4:
             if (data_027e09a4->func_01ffd3d8()) {
@@ -806,7 +806,7 @@ void AdventureModeManager::func_ov024_020c6a48(unk32 param1, unk32 param2) {
             }
             break;
         case 5:
-            data_ov024_020d8698->func_ov024_020cd4e4(param1);
+            data_ov024_020d8698->func_ov024_020cd4e4(param1, param2);
             this->func_ov024_020c6a48(4, param2);
             break;
         default:

@@ -59,8 +59,8 @@ public:
     void func_ov024_020ce518();
     void func_ov024_020ce570();
     void func_ov024_020ce5cc();
-    void func_ov024_020ce88c();
-    void func_ov024_020ce990();
+    void func_ov024_020ce88c(unk8 *param1);
+    void func_ov024_020ce990(bool param1, bool param2);
     void func_ov024_020ce9ac();
 };
 
@@ -77,11 +77,11 @@ public:
     void func_ov024_020cee64();
     void func_ov024_020cee84();
     void func_ov024_020cef58();
-    void func_ov024_020cf2b8();
-    void func_ov024_020cf494();
+    void func_ov024_020cf2b8(unk8 *param1);
+    void func_ov024_020cf494(unk32 param1);
     void func_ov024_020cf4c4();
     void func_ov024_020cf514();
-    void func_ov024_020cf53c();
+    void func_ov024_020cf53c(unk32 param1);
     void func_ov024_020cf570();
     void func_ov024_020cf584();
     void func_ov024_020cf5a8();
@@ -113,13 +113,19 @@ public:
 
 class UnkStruct_020d8698_44 : public LinkList<UnkStruct_020d8698_44> {
 public:
-    /* 008 */ STRUCT_PAD(0x0C, 0x52C);
+    /* 008 */ STRUCT_PAD(0x0C, 0x18B);
+    /* 18B */ bool mUnk_18B;
+    /* 18C */ STRUCT_PAD(0x18C, 0x52C);
     /* 52C */
 
     UnkStruct_020d8698_44(); // overlay 31
 
     /* 00 */ virtual ~UnkStruct_020d8698_44();
     /* 08 */
+
+    void func_ov031_0210eeb4();
+    void func_ov031_0210f7e4(ItemFlag itemFlag, unk32 param2);
+    void func_ov031_0210f814();
 };
 
 class UnkStruct_020d8698 : public GameModeManagerBase_104, AutoInstance<UnkStruct_020d8698> {
@@ -157,8 +163,8 @@ public:
     void func_ov024_020cd410();
     void func_ov024_020cd420();
     void func_ov024_020cd458(ItemFlag itemFlag, unk32 param2);
-    void func_ov024_020cd4a4();
-    void func_ov024_020cd4e4(u16 param1);
+    void func_ov024_020cd4a4(bool param1);
+    void func_ov024_020cd4e4(u16 param1, bool param2);
     bool func_ov024_020cd5c0(u16 param1);
     bool func_ov024_020cd604();
 

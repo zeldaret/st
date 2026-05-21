@@ -26,14 +26,20 @@ class UnkStruct_ov000_02067bc4 {
 public:
     class UnkStruct1 {
     public:
-        unk16 mUnk_00;
-        unk16 mUnk_02;
-        unk32 mUnk_04;
-        unk32 mUnk_08;
-        unk8 mUnk_0C;
-        unk8 mUnk_0D;
-        unk8 mUnk_0E;
-        unk8 mUnk_0F;
+        union {
+            struct {
+                unk16 mUnk_00;
+                unk16 mUnk_02;
+                unk32 mUnk_04;
+                unk32 mUnk_08;
+                u8 mUnk_0C;
+                unk8 mUnk_0D;
+                unk8 mUnk_0E;
+                unk8 mUnk_0F;
+            };
+
+            u32 data[4];
+        };
 
         UnkStruct1(unk32 param1, unk32 param2) {
             mUnk_00 = 0;
@@ -64,7 +70,9 @@ public:
     /* 000 (vtable) */
     /* 004 */ unk32 mUnk_004;
     /* 008 */ UnkStruct_ov000_02067bc4_Sub2 *mUnk_008;
-    /* 00C */ STRUCT_PAD(0x0C, 0x160);
+    /* 00C */ STRUCT_PAD(0x0C, 0x28);
+    /* 028 */ UnkStruct1 mUnk_028;
+    /* 038 */ STRUCT_PAD(0x38, 0x160);
     /* 160 */ UnkStruct_ov000_02067bc4_Sub1 mUnk_160;
 
     /* 00 */ virtual unk32 vfunc_00();
@@ -146,7 +154,7 @@ public:
     void func_ov000_02067e60(u8 param1, unk32 param2);
     unk32 func_ov000_020682c0(unk32 param1);
     void func_ov000_02067f5c(unk32 param1);
-    unk32 func_ov000_02067f88(unk32 param1, unk32 param2);
+    bool func_ov000_02067f88(unk32 param1, unk32 param2);
     UnkStruct_ov000_020b504c_Sub4_00 *func_ov000_02067bf0();
     void func_ov000_02067b20();
     void func_ov000_02068068(unk32 param1);

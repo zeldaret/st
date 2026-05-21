@@ -985,7 +985,7 @@ public:
     bool func_ov024_020c6940(unk32 param1, unk32 param2);
     unk32 func_ov024_020c69d0();
     unk32 func_ov024_020c6a20();
-    void func_ov024_020c6a48(unk32 param1, unk32 param2);
+    void func_ov024_020c6a48(unk32 param1, bool param2);
     bool func_ov024_020c6af4(unk32 param1);
     void func_ov024_020c6b8c();
     void func_ov024_020c6c60();

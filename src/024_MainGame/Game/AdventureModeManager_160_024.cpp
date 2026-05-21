@@ -95,7 +95,7 @@ void AdventureModeManager_160::vfunc_0C(unk32 param1) {
                     }
                     break;
                 case 6:
-                    if (data_ov000_020b504c.func_ov000_02067f88(0, 1) != 0) {
+                    if (data_ov000_020b504c.func_ov000_02067f88(0, 1)) {
                         this->func_ov024_020c7d4c(param1);
                     }
                     break;

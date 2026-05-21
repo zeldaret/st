@@ -32,7 +32,7 @@ void UnkTitleCardSystem1::func_ov024_020cb274(UnkSystem2_UnkSubSystem11_Derived2
 void UnkTitleCardSystem1::func_ov024_020cb280() {}
 
 void UnkTitleCardSystem1::func_ov024_020cb284(unk32 param1, unk32 param2) {
-    if (data_ov000_020b504c.func_ov000_02067f88(0, param2) == 0) {
+    if (!data_ov000_020b504c.func_ov000_02067f88(0, param2)) {
         return;
     }
 
