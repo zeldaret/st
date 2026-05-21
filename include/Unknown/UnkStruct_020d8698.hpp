@@ -2,30 +2,167 @@
 
 #include "Game/GameModeManager.hpp"
 #include "Item/Item.hpp"
+#include "Unknown/Common.hpp"
+#include "iterator.hpp"
 #include "types.h"
 
-class UnkStruct_020d8698 : public GameModeManagerBase_104 {
+struct UnkStructIterator1 {
+    /* 00 */ unk32 mUnk_00;
+
+    UnkStructIterator1() {
+        this->mUnk_00 = 0;
+    }
+    ~UnkStructIterator1() {}
+};
+
+typedef Iterator<UnkStructIterator1> UnkIterator1;
+
+class UnkStruct_020d8698_1C {
 public:
+    /* 000 */ UnkIterator1 mUnk_000;
+    /* 008 */ unk32 mUnk_008;
+    /* 000 */ UnkStruct_ov019_020d24c8_28_258 mUnk_00C;
+    /* 018 */ UnkSubStruct19 mUnk_024;
+    /* 090 */ UnkSubStruct19 mUnk_09C;
+    /* 108 */ UnkSubStruct19 mUnk_114;
+    /* 180 */ UnkSubStruct19 mUnk_18C;
+    /* 1F8 */ UnkSubStruct19 mUnk_204;
+    /* 270 */ UnkSubStruct19 mUnk_27C;
+    /* 2E8 */ UnkSubStruct19 mUnk_2F4;
+    /* 360 */ UnkSubStruct19 mUnk_36C;
+    /* 3E4 */ UnkSubStruct19 mUnk_3E4[2];
+    /* 4D4 */ unk32 mUnk_4D4;
+    /* 4D8 */
+
+    UnkStruct_020d8698_1C();
+
+    void func_ov024_020cd768();
+    void func_ov024_020cd774();
+    void func_ov024_020cd9f0();
+    void func_ov024_020cdaac();
+    void func_ov024_020cdd3c();
+    void func_ov024_020cde54();
+    void func_ov024_020cdec8();
+    void func_ov024_020cdfd8();
+    void func_ov024_020ce218();
+    void func_ov024_020ce260();
+    unk32 func_ov024_020ce2a8();
+};
+
+class UnkStruct_020d8698_24 {
+public:
+    /* 000 */ STRUCT_PAD(0x00, 0x10C);
+    /* 10C */
+
+    UnkStruct_020d8698_24();
+
+    void func_ov024_020ce518();
+    void func_ov024_020ce570();
+    void func_ov024_020ce5cc();
+    void func_ov024_020ce88c();
+    void func_ov024_020ce990();
+    void func_ov024_020ce9ac();
+};
+
+class UnkStruct_020d8698_2C {
+public:
+    /* 000 */ STRUCT_PAD(0x00, 0x21C);
+    /* 21C */
+
+    UnkStruct_020d8698_2C();
+
+    void func_ov024_020ced54();
+    void func_ov024_020ceda8();
+    void func_ov024_020cee58();
+    void func_ov024_020cee64();
+    void func_ov024_020cee84();
+    void func_ov024_020cef58();
+    void func_ov024_020cf2b8();
+    void func_ov024_020cf494();
+    void func_ov024_020cf4c4();
+    void func_ov024_020cf514();
+    void func_ov024_020cf53c();
+    void func_ov024_020cf570();
+    void func_ov024_020cf584();
+    void func_ov024_020cf5a8();
+};
+
+class UnkStruct_020d8698_34 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x94);
+    /* 94 */
+
+    UnkStruct_020d8698_34();
+
+    void func_ov024_020cf698();
+    void func_ov024_020cf6e4();
+    void func_ov024_020cf724();
+};
+
+class UnkStruct_020d8698_3C {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x30);
+    /* 30 */
+
+    UnkStruct_020d8698_3C();
+
+    void func_ov024_020cf82c();
+    void func_ov024_020cf888();
+    void func_ov024_020cf88c();
+};
+
+class UnkStruct_020d8698_44 : public LinkList<UnkStruct_020d8698_44> {
+public:
+    /* 008 */ STRUCT_PAD(0x0C, 0x52C);
+    /* 52C */
+
+    UnkStruct_020d8698_44(); // overlay 31
+
+    /* 00 */ virtual ~UnkStruct_020d8698_44();
+    /* 08 */
+};
+
+class UnkStruct_020d8698 : public GameModeManagerBase_104, AutoInstance<UnkStruct_020d8698> {
+public:
+    /* 000 (base) */
+    /* 01C */ UnkStruct_020d8698_1C *mUnk_01C;
+    /* 020 */ bool mUnk_020;
+    /* 024 */ UnkStruct_020d8698_24 *mUnk_024;
+    /* 028 */ bool mUnk_028;
+    /* 02C */ UnkStruct_020d8698_2C *mUnk_02C;
+    /* 030 */ bool mUnk_030;
+    /* 034 */ UnkStruct_020d8698_34 *mUnk_034;
+    /* 038 */ bool mUnk_038;
+    /* 03C */ UnkStruct_020d8698_3C *mUnk_03C;
+    /* 040 */ bool mUnk_040;
+    /* 044 */ UnkStruct_020d8698_44 *mUnk_044;
+    /* 048 */ bool mUnk_048;
+
+    UnkStruct_020d8698();
+
+    /* 00 */ virtual ~UnkStruct_020d8698();
+    /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl);
+    /* 10 */ virtual void vfunc_10(unk8 *param1);
+
     void func_ov024_020cd094();
     void func_ov024_020cd150();
+    void func_ov024_020cd348();
+    void func_ov024_020cd358();
     void func_ov024_020cd368(bool param1, bool param2);
+    void func_ov024_020cd3a4();
     void func_ov024_020cd3d0();
     void func_ov024_020cd3e0(unk32 param1);
     void func_ov024_020cd3f0(unk32 param1);
+    void func_ov024_020cd400();
     void func_ov024_020cd410();
     void func_ov024_020cd420();
     void func_ov024_020cd458(ItemFlag itemFlag, unk32 param2);
+    void func_ov024_020cd4a4();
     void func_ov024_020cd4e4(u16 param1);
     bool func_ov024_020cd5c0(u16 param1);
-    void func_ov024_020cd3a4();
-    void func_ov024_020cd400();
+    bool func_ov024_020cd604();
 
-    /* 00 */ virtual ~UnkStruct_020d8698();
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
-    /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual void vfunc_18();
+    static UnkStruct_020d8698 *Create();
 };
 
 extern UnkStruct_020d8698 *data_ov024_020d8698;

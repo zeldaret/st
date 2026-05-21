@@ -35,9 +35,9 @@ src/Main/UnkFileSystem.cpp:
 src/Main/System/Random.cpp:
     .text       start:0x02016384 end:0x02016404
 
-src/Main/Game/GameModeLinkListNode.cpp:
+src/Main/LinkList.cpp:
     complete
-    .text       start:0x0201667c end:0x02016720
+    .text       start:0x0201667c end:0x02016798
 
 src/Main/func_02017ea4.cpp:
     .text       start:0x02017ea4 end:0x02017f38
@@ -53,6 +53,7 @@ src/Main/UnkStruct_0204a060.cpp:
     .data       start:0x02044040 end:0x0204405c
 
 src/Main/Game/GameModeManagerBase.cpp:
+    complete
     .text       start:0x0201847c end:0x02018bc4
     .data       start:0x0204405c end:0x0204409c
 

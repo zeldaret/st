@@ -55,7 +55,7 @@ ARM FileSelectMicTest::FileSelectMicTest() :
     mUnk_304(BTN_ID_RETURN, 0x8E, 0x00, 0x01, 0x8E, 0x00),
     mUnk_3F8(0x8D, 0x01),
     mUnk_630(1) {
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_304.mUnk_044);
+    this->mUnk_0C.Append(&this->mUnk_304.mUnk_044);
     this->mUnk_020.func_0201f730(BMG_ID(BMGGroup_select, 0x06));
     this->mUnk_3F8.mUnk_14E = 1;
     this->mUnk_3F8.func_0201f730(BMG_ID(BMGGroup_select, 0x43));

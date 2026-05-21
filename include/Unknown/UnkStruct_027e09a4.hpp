@@ -289,6 +289,10 @@ public:
         return this->mUnk_00.mSceneIndex <= SceneIndex_t_eviltrain3 && this->mUnk_00.mSceneIndex >= SceneIndex_t_eviltrain;
     }
 
+    bool IsDungeonTower() {
+        return this->mUnk_00.mSceneIndex == SceneIndex_d_main;
+    }
+
     bool IsPirate() {
         return this->mUnk_00.mSceneIndex == SceneIndex_f_pirate;
     }

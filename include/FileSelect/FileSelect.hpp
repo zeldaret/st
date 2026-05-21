@@ -66,14 +66,6 @@ public:
     /* 0FE4 */ UnkResult mUnk_0FE4;
     /* 1020 */
 
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (this != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
-    }
-
     FileSelectSubScreen();
     void func_ov019_020cf73c(unk32 param1, unk32 param2);
 

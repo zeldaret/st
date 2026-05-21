@@ -74,14 +74,6 @@ public:
     /* 633 */ unk8 mUnk_633;
     /* 634 */
 
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (this != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
-    }
-
     FileSelectMicTest();
     void func_ov019_020cea74();
     void func_ov019_020cefe4();

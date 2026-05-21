@@ -29,8 +29,8 @@ AdventureModeManager_15C_20_00::AdventureModeManager_15C_20_00(bool param1) :
         this->mUnk_01C         = 0;
     }
 
-    this->mUnk_0C.mList.func_020166cc(this->mUnk_020);
-    this->mUnk_0C.mList.func_020166cc(this->mUnk_024);
+    this->mUnk_0C.Append(this->mUnk_020);
+    this->mUnk_0C.Append(this->mUnk_024);
 
     this->mUnk_028.mUnk_04 = this->mUnk_020;
     this->mUnk_078.mUnk_04 = this->mUnk_024;

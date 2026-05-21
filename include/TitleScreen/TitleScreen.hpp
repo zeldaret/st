@@ -24,7 +24,7 @@ enum TitleScreenState_ {
     TitleScreenState_Max                  = 6
 };
 
-class TitleScreen_Sub2 : public GameModeLinkListNode {
+class TitleScreen_Sub2 : public LinkList<TitleScreen_Sub2> {
 public:
     /* 00 (vtable) */
     /* 0C */ unk32 mUnk_0C;
@@ -36,10 +36,6 @@ public:
     TitleScreen_Sub2() :
         mUnk_0C(0),
         mUnk_10(false) {}
-
-    GameModeLinkListNode *GetNode() {
-        return this;
-    }
 
     // data_ov025_020c5b24 vtable
     /* 00 */ virtual void vfunc_00();
@@ -91,14 +87,6 @@ public:
     /* 2CC */ UnkSubStruct19 mUnk_2CC; // logo shine outline (it's barely visible)
     /* 344 */ unk32 mUnk_344;
     /* 348 */
-
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (this != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
-    }
 
     TitleScreen();
 

@@ -43,8 +43,7 @@ public:
 
     UnkSubStruct9();
     UnkSubStruct9(stack_struct1 param1);
-    void Init();
-    void Init(stack_struct1 param1);
+
     void func_ov019_020cbaec();
     bool IsPlayerNameSet();
     void func_ov019_020cbb40();

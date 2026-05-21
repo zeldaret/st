@@ -5,7 +5,7 @@
 #include "global.h"
 #include "types.h"
 
-class UnkStruct_0204e5f8_1C_Base : GameModeLinkListNode {
+class UnkStruct_0204e5f8_1C_Base : public LinkList<UnkStruct_0204e5f8_1C_Base> {
 public:
     /* 00 (base) */
     /* 08 */ unk32 mUnk_08;

@@ -154,9 +154,9 @@ ARM FileSelectMain::FileSelectMain() :
     stack_struct1 params;
     params.param2 = NULL;
     params.param1 = &this->mUnk_0C;
-    this->mUnk_03E0.Init(&params);
+    this->mUnk_03E0.Init(sizeof(UnkSubStruct9) * MAX_SAVE_SLOTS, &params);
 
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_0100);
+    this->mUnk_0C.Append(&this->mUnk_0100);
     this->mUnk_0100.mUnk_2A = 0;
     this->mUnk_0488.mUnk_2C = 1;
     this->mUnk_07E4.mUnk_2C = 1;
@@ -188,7 +188,7 @@ ARM FileSelectMain::FileSelectMain() :
     REG_DISPCNT &= 0xFFFFE0FF;
     REG_DISPCNT |= 0x00001C00;
     _G2_SetBlend(&REG_BLDCNT, 4, 8, 0, 0x10);
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_005C);
+    this->mUnk_0C.Append(&this->mUnk_005C);
     this->func_ov019_020c63dc();
     this->func_ov019_020c6d10();
 }
@@ -200,31 +200,31 @@ ARM FileSelectMain::~FileSelectMain() {
 ARM void FileSelectMain::func_ov019_020c6c14() {}
 
 ARM void FileSelectMain::func_ov019_020c6c18() {
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_0488);
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_07E4);
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_0AC4);
+    this->mUnk_0C.Append(&this->mUnk_0488);
+    this->mUnk_0C.Append(&this->mUnk_07E4);
+    this->mUnk_0C.Append(&this->mUnk_0AC4);
 }
 
 ARM void FileSelectMain::func_ov019_020c6c54() {
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_0DA4);
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_11BC);
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_15D4);
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_18EC);
+    this->mUnk_0C.Append(&this->mUnk_0DA4);
+    this->mUnk_0C.Append(&this->mUnk_11BC);
+    this->mUnk_0C.Append(&this->mUnk_15D4);
+    this->mUnk_0C.Append(&this->mUnk_18EC);
 }
 
 ARM void FileSelectMain::func_ov019_020c6c9c() {}
 
 ARM void FileSelectMain::func_ov019_020c6ca0() {
-    GameModeLinkListNode::func_020166ac(&this->mUnk_0488);
-    GameModeLinkListNode::func_020166ac(&this->mUnk_07E4);
-    GameModeLinkListNode::func_020166ac(&this->mUnk_0AC4);
+    this->mUnk_0488.Detach();
+    this->mUnk_07E4.Detach();
+    this->mUnk_0AC4.Detach();
 }
 
 ARM void FileSelectMain::func_ov019_020c6cd0() {
-    GameModeLinkListNode::func_020166ac(&this->mUnk_0DA4);
-    GameModeLinkListNode::func_020166ac(&this->mUnk_11BC);
-    GameModeLinkListNode::func_020166ac(&this->mUnk_15D4);
-    GameModeLinkListNode::func_020166ac(&this->mUnk_18EC);
+    this->mUnk_0DA4.Detach();
+    this->mUnk_11BC.Detach();
+    this->mUnk_15D4.Detach();
+    this->mUnk_18EC.Detach();
 }
 
 ARM void FileSelectMain::func_ov019_020c6d08() {}

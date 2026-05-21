@@ -9,7 +9,7 @@
 #include "types.h"
 #include <nitro/math.h>
 
-typedef Iterator<UnkSubStruct9, MAX_SAVE_SLOTS> FileSlotIterator;
+typedef Iterator<UnkSubStruct9> FileSlotIterator;
 
 /*
     - "Slot Select" refers to the screen where you choose which file to use
@@ -158,14 +158,6 @@ public:
 
     UnkSubStruct9 &GetUnk03E0() {
         return this->GetUnk03E0(this->mSaveSlotIndex);
-    }
-
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (this != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
     }
 
     FileSelectMain();

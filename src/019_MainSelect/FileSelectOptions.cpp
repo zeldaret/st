@@ -106,7 +106,7 @@ ARM FileSelectOptionsManager::FileSelectOptionsManager(void *param1, s32 saveSlo
 
     FileSelectOptions *var_r5 = new(HeapIndex_1) FileSelectOptions(saveSlotIndex);
     this->mpOptions           = var_r5;
-    this->mUnk_24->mList.func_020166cc(var_r5->GetNode());
+    this->mUnk_24->Append(var_r5);
     var_r5->vfunc_18();
 }
 
@@ -128,17 +128,17 @@ ARM void FileSelectOptionsManager::vfunc_08(Input *pButtons, TouchControl *pTouc
     switch (this->mUnk_1C) {
         case 0:
             FileSelectOptions *pFVar4 = this->mpOptions;
-            this->mUnk_24->mList.func_020166cc(pFVar4->GetNode());
+            this->mUnk_24->Append(pFVar4);
             pFVar4->vfunc_18();
             this->mpOptions->func_ov019_020cde9c();
-            GameModeLinkListNode::func_020166ac(&this->mpMicTest->mList);
+            this->mpMicTest->Detach();
             break;
         case 1:
             FileSelectMicTest *pFVar5 = this->mpMicTest;
-            this->mUnk_24->mList.func_020166cc(pFVar5->GetNode());
+            this->mUnk_24->Append(pFVar5);
             pFVar5->vfunc_18();
             this->mpMicTest->func_ov019_020cefe4();
-            GameModeLinkListNode::func_020166ac(&this->mpOptions->mList);
+            this->mpOptions->Detach();
             break;
         case 2:
             this->mpOptions->func_ov019_020ccdf4();
@@ -179,10 +179,10 @@ ARM FileSelectOptions::FileSelectOptions(s32 saveSlotIndex) :
     mUnk_1A68(&mUnk_19D0),
     mUnk_1AB8(&mUnk_19D0, 0x8C, 0x09, BMG_ID(BMGGroup_select, 0x07)) {
     this->mUnk_1CF5 = false;
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_10A8);
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_19D0);
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_1388);
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_16AC);
+    this->mUnk_0C.Append(&this->mUnk_10A8);
+    this->mUnk_0C.Append(&this->mUnk_19D0);
+    this->mUnk_0C.Append(&this->mUnk_1388);
+    this->mUnk_0C.Append(&this->mUnk_16AC);
     this->mUnk_10A8.mUnk_2A = false;
     this->mUnk_1388.mUnk_2C = true;
     this->mUnk_16AC.mUnk_2C = true;
@@ -634,12 +634,12 @@ ARM UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManag
     this->mUnk_FC3[0].mUnk_00 = *src;
     this->mUnk_103E           = pSaveSub17->mUnk_7E;
 
-    param1->mList.func_020166cc(&this->mUnk_490);
-    param1->mList.func_020166cc(&this->mUnk_4F0);
-    param1->mList.func_020166cc(&this->mUnk_9C0);
-    param1->mList.func_020166cc(&this->mUnk_A20);
-    param1->mList.func_020166cc(&this->mUnk_EF0);
-    param1->mList.func_020166cc(&this->mUnk_F50);
+    param1->Append(&this->mUnk_490);
+    param1->Append(&this->mUnk_4F0);
+    param1->Append(&this->mUnk_9C0);
+    param1->Append(&this->mUnk_A20);
+    param1->Append(&this->mUnk_EF0);
+    param1->Append(&this->mUnk_F50);
 
     this->mUnk_490.mPosOffset.x = 0;
     this->mUnk_490.mPosOffset.y = 0;

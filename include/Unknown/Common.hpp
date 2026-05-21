@@ -445,7 +445,7 @@ public:
 #define BTN_ID_BATTLE_MENU_JOIN_GROUP 0xBB
 #define BTN_ID_BATTLE_MENU_PLAYER_LIST 0xBD
 
-class UnkSystem2_UnkSubSystem1_Base : public GameModeLinkList<UnkSystem2_UnkSubSystem1_Base> {
+class UnkSystem2_UnkSubSystem1_Base : public LinkList<UnkSystem2_UnkSubSystem1_Base> {
 public:
     /* 00 (vtable) */
     /* 0C */ void *mUnk_0C;
@@ -1253,4 +1253,11 @@ struct UnkDataStruct3 {
 
     UnkDataStruct3(unk32 param1) :
         mUnk_00(param1) {}
+};
+
+struct InputInformations {
+    void *unk_00;
+    void *unk_04;
+    void *unk_08;
+    void *unk_0C;
 };

@@ -11,6 +11,7 @@ src/000_Second/Game/GameModeManagerBase_104_0C.cpp:
     .data       start:0x020b3640 end:0x020b3658
 
 src/000_Second/Game/GameModeManagerBase_104.cpp:
+    complete
     .text       start:0x0206306c end:0x02063268
     .data       start:0x020b3658 end:0x020b367c
 

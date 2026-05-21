@@ -2,6 +2,7 @@
 
 #include "Game/GameMode.hpp"
 #include "Game/GameModeManager.hpp"
+#include "LinkList.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
@@ -9,10 +10,10 @@
 
 class GameModeFileSelect;
 
-class UnkStruct_0204a060_Base3 : public SysObject {
+class UnkStruct_0204a060_Base3 : public LinkList<UnkStruct_0204a060_Base3> {
 public:
     /* 00 (vtable) */
-    /* 04 */ GameModeLinkList<UnkStruct_0204a060_Base3> mUnk_04;
+    /* 04 (base) */
     /* 0C */ bool mUnk_0C;
     /* 0D */ unk8 mUnk_0D;
     /* 0E */ unk8 mUnk_0E;

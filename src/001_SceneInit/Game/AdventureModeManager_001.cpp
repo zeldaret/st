@@ -18,7 +18,6 @@
 extern "C" {
 void *func_ov024_020d1658();
 void *func_ov000_02066294();
-void *func_ov024_020ccd1c();
 void GX_SetGraphicsMode(unk32 param1, unk32 param2, unk32 param3);
 void GXS_SetGraphicsMode(unk32 param1);
 }
@@ -164,11 +163,10 @@ void AdventureModeManager::vfunc_14() {
         this->mUnk_1B0                   = var_r5;
 
         if (data_027e09a4->IsNotCutscene()) {
-            //! TODO: fake match?
-            GameModeLinkListNode *pList = (GameModeLinkListNode *) &this->mUnk_104;
-            ((GameModeLinkListNode *) ((u8 *) pList + 4))->func_020166cc(var_r5->GetNode());
-
+            GameModeManagerBase_104 *pList = GetLinkListRef(this->mUnk_104);
+            pList->Append(var_r5);
             var_r5->vfunc_18();
+
             this->mUnk_1B5 = true;
         }
 
@@ -179,13 +177,14 @@ void AdventureModeManager::vfunc_14() {
         func_ov000_02066294();
     }
 
-    func_ov024_020ccd1c();
+    UnkStruct_020d8698::Create();
 
     if (data_027e09a4->IsNotCutscene()) {
-        GameModeManagerBase_104 *ptr = &this->mUnk_104;
-        GameModeLinkListNode *origin = data_ov024_020d8698->GetOrigin();
-        ptr->mList.func_020166cc(data_ov024_020d8698->GetNode());
-        ((UnkStruct_020d8698 *) origin)->vfunc_18();
+        GameModeManagerBase_104 *pList = GetLinkListRef(this->mUnk_104);
+        UnkStruct_020d8698 *ptr        = data_ov024_020d8698;
+        pList->Append(ptr);
+        ptr->vfunc_18();
+
         this->mUnk_1B4 = true;
     }
 

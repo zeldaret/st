@@ -115,10 +115,10 @@ public:
     void func_ov000_02066218(unk32 param1);
 };
 
-class AdventureModeManager_160_18 {
+class AdventureModeManager_160_18 : public LinkList<AdventureModeManager_160_18> {
 public:
     /* 00 (vtable) */
-    /* 04 */
+    /* 04 (base) */
 
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual void vfunc_04();
@@ -695,7 +695,8 @@ public:
 class AdventureModeManager_1A0 : public AdventureModeManager_174_Base {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0xBC);
+    /* B8 */ unk32 mUnk_B8;
+    /* BC */
 
     AdventureModeManager_1A0(GameModeManagerBase_104 *param1); // overlay 62
 
@@ -712,7 +713,8 @@ public:
 class AdventureModeManager_1A4 : public AdventureModeManager_174_Base {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0xBC);
+    /* B8 */ unk32 mUnk_B8;
+    /* BC */
 
     AdventureModeManager_1A4(GameModeManagerBase_104 *param1); // overlay 62
 
@@ -761,14 +763,6 @@ public:
     /* 1C */ UnkStruct_ov019_020d24c8_28_258 mUnk_1C;
     /* 34 */ STRUCT_PAD(0x34, 0x50);
     /* 50 */
-
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (node != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
-    }
 
     AdventureModeManager_1B0(); // overlay 31
     void func_ov031_0210fad0();
