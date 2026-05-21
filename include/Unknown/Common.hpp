@@ -234,12 +234,12 @@ public:
         this->mPos.y  = 0;
     };
 
-    UnkStruct_ov019_020d24c8_28_258(unk32 param1, unk32 param2) :
+    UnkStruct_ov019_020d24c8_28_258(s16 param1, unk32 param2) :
         UnkStruct_ov019_020d24c8_28_258_00(NULL, 0) {
         this->UnknownAction(param1, param2);
     }
 
-    void UnknownAction(unk32 param1, unk32 param2) {
+    void UnknownAction(s16 param1, unk32 param2) {
         this->func_ov000_0205fc20(param1, param2, &this->mPos, &this->mUnk_0E);
         this->mUnk_12 = param1;
         this->mUnk_14 = param2;
@@ -911,15 +911,16 @@ public:
         this->func_ov000_0206082c(param1, param2);
     }
 
-    void func_ov000_0206082c(unk32 param1, unk32 param2);
+    void func_ov000_0206082c(s16 param1, unk32 param2);
     void func_ov000_02060950();
     void func_ov000_020609b0();
     void func_ov000_020609c4(void);
     bool func_ov000_02060a98(unk32 param1);
     void func_ov000_02060ad0();
-    unk32 func_ov000_02060af8(void);
+    bool func_ov000_02060af8(void);
     void func_ov000_02060b50();
     void func_ov000_02060b64(void);
+    void func_ov000_02060bac();
     unk32 func_ov000_02060c28(void);
     void func_ov000_02060bd8(unk32 param1);
 };

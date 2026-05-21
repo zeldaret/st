@@ -201,7 +201,7 @@ ARM void FileSelectMicTest::vfunc_08(Input *pButtons, TouchControl *pTouchContro
 
 ARM void FileSelectMicTest::vfunc_10(unk8 *param1) {
     this->mUnk_270.func_ov019_020cf21c();
-    data_0204af1c.func_0201aa44(&this->mUnk_258.mUnk_00, &this->mUnk_258.mPos, 0, 0);
+    data_0204af1c.func_0201aa44(&this->mUnk_258, &this->mUnk_258.mPos, 0, 0);
     this->mUnk_020.func_0201f4b4(0);
 
     unk32 stack;
@@ -320,7 +320,7 @@ ARM void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf168() {
 }
 
 ARM void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf21c() {
-    data_0204af1c.func_0201aa44(this, &this->mUnk_8E, 0, 0);
+    data_0204af1c.func_0201aa44(&this->mUnk_00, &this->mUnk_8E, 0, 0);
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_18.mUnk_00); i++) {
         if (this->mUnk_78[i] != 0) {

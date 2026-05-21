@@ -1363,14 +1363,14 @@ ARM void FileSelectMain::func_ov019_020c9d88() {
     this->mUnk_155C.func_ov000_020609c4();
 
     if (this->mExitMode == FileSelectExitMode_AdventureMode) {
-        if (this->mUnk_1144.func_ov000_02060af8() != 0) {
+        if (this->mUnk_1144.func_ov000_02060af8()) {
             this->SetState(FileSelectState_EnterGameMode);
             return;
         }
     }
 
     if (this->mExitMode == FileSelectExitMode_BattleMode) {
-        if (this->mUnk_155C.func_ov000_02060af8() != 0) {
+        if (this->mUnk_155C.func_ov000_02060af8()) {
             this->SetState(FileSelectState_EnterGameMode);
             return;
         }

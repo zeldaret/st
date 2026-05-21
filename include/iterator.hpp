@@ -93,7 +93,7 @@ public:
         this->Clear();
     }
 
-    T &GetRef(int index) {
+    T &Get(int index) {
         return ((T *) this->begin)[index];
     }
 };

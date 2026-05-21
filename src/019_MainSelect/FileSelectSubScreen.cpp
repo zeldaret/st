@@ -185,7 +185,7 @@ ARM void FileSelect_UnkClass7::vfunc_00() {
     for (int i = 0; i < ARRAY_LEN(this->mUnk_004.mUnk_000); i++) {
         this->mUnk_004.mUnk_000[i].func_ov000_020609c4();
 
-        if (this->mUnk_004.mUnk_000[i].func_ov000_02060af8() != 0) {
+        if (this->mUnk_004.mUnk_000[i].func_ov000_02060af8()) {
             this->mUnk_004.mUnk_000[i].func_ov000_02060b64();
 
             Vec2us pos;

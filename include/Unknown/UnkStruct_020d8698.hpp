@@ -20,7 +20,10 @@ typedef Iterator<UnkStructIterator1> UnkIterator1;
 class UnkStruct_020d8698_1C {
 public:
     /* 000 */ UnkIterator1 mUnk_000;
-    /* 008 */ unk32 mUnk_008;
+    /* 008 */ u8 mUnk_008;
+    /* 009 */ u8 mUnk_009;
+    /* 00A */ u8 mUnk_00A;
+    /* 00B */ unk8 mUnk_00B;
     /* 000 */ UnkStruct_ov019_020d24c8_28_258 mUnk_00C;
     /* 018 */ UnkSubStruct19 mUnk_024;
     /* 090 */ UnkSubStruct19 mUnk_09C;
@@ -31,8 +34,19 @@ public:
     /* 2E8 */ UnkSubStruct19 mUnk_2F4;
     /* 360 */ UnkSubStruct19 mUnk_36C;
     /* 3E4 */ UnkSubStruct19 mUnk_3E4[2];
-    /* 4D4 */ unk32 mUnk_4D4;
+    /* 4D4 */ u8 mUnk_4D4;
+    /* 4D5 */ u8 mUnk_4D5;
+    /* 4D6 */ unk8 mUnk_4D6; // pad?
+    /* 4D7 */ unk8 mUnk_4D7; // pad?
     /* 4D8 */
+
+    unk32 GetIterValue(int index) {
+        return this->mUnk_000.Get(index).mUnk_00;
+    }
+
+    void SetIterValue(u32 index, u32 value) {
+        this->mUnk_000.Get(index).mUnk_00 = value;
+    }
 
     UnkStruct_020d8698_1C();
 
@@ -40,13 +54,13 @@ public:
     void func_ov024_020cd774();
     void func_ov024_020cd9f0();
     void func_ov024_020cdaac();
-    void func_ov024_020cdd3c();
-    void func_ov024_020cde54();
+    void func_ov024_020cdd3c(u8 param1, u8 param2);
+    void func_ov024_020cde54(u8 param1);
     void func_ov024_020cdec8();
     void func_ov024_020cdfd8();
-    void func_ov024_020ce218();
-    void func_ov024_020ce260();
-    unk32 func_ov024_020ce2a8();
+    u8 func_ov024_020ce218();
+    u8 func_ov024_020ce260();
+    u32 func_ov024_020ce2a8();
 };
 
 class UnkStruct_020d8698_24 {
@@ -152,8 +166,8 @@ public:
 
     void func_ov024_020cd094();
     void func_ov024_020cd150();
-    void func_ov024_020cd348();
-    void func_ov024_020cd358();
+    void func_ov024_020cd348(u8 param1, u8 param2);
+    void func_ov024_020cd358(u8 param1);
     void func_ov024_020cd368(bool param1, bool param2);
     void func_ov024_020cd3a4();
     void func_ov024_020cd3d0();

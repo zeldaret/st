@@ -311,7 +311,7 @@ public:
 
     ~UnkStruct_027e09a4();
 
-    bool func_01ffd3d8();
+    bool func_01ffd3d8(); // is on train?
     UnkStruct_func_01ffd400 *func_01ffd400() const;
 
     unk8 func_ov000_02070bd0(unk32 csIndex, unk32 param2);

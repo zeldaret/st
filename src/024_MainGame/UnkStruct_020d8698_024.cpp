@@ -1,11 +1,18 @@
 #include "Unknown/UnkStruct_0204a110.hpp"
+#include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
+#include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
+#include "versions.h"
+
+extern "C" s16 func_020196b0(unk32 param1);
+extern u16 data_ov024_020d73fa[];
+extern u16 data_ov024_020d7432[];
 
 UnkStruct_020d8698 *UnkStruct_020d8698::Create() {
     return new(HeapIndex_1) UnkStruct_020d8698();
@@ -168,12 +175,12 @@ void UnkStruct_020d8698::vfunc_10(unk8 *param1) {
     }
 }
 
-void UnkStruct_020d8698::func_ov024_020cd348() {
-    this->mUnk_01C->func_ov024_020cdd3c();
+void UnkStruct_020d8698::func_ov024_020cd348(u8 param1, u8 param2) {
+    this->mUnk_01C->func_ov024_020cdd3c(param1, param2);
 }
 
-void UnkStruct_020d8698::func_ov024_020cd358() {
-    this->mUnk_01C->func_ov024_020cde54();
+void UnkStruct_020d8698::func_ov024_020cd358(u8 param1) {
+    this->mUnk_01C->func_ov024_020cde54(param1);
 }
 
 void UnkStruct_020d8698::func_ov024_020cd368(bool param1, bool param2) {
@@ -300,17 +307,448 @@ UnkStruct_020d8698_1C::UnkStruct_020d8698_1C() {
     this->func_ov024_020cd774();
 }
 
-void UnkStruct_020d8698_1C::func_ov024_020cd768() {}
-void UnkStruct_020d8698_1C::func_ov024_020cd774() {}
-void UnkStruct_020d8698_1C::func_ov024_020cd9f0() {}
-void UnkStruct_020d8698_1C::func_ov024_020cdaac() {}
-void UnkStruct_020d8698_1C::func_ov024_020cdd3c() {}
-void UnkStruct_020d8698_1C::func_ov024_020cde54() {}
-void UnkStruct_020d8698_1C::func_ov024_020cdec8() {}
-void UnkStruct_020d8698_1C::func_ov024_020cdfd8() {}
-void UnkStruct_020d8698_1C::func_ov024_020ce218() {}
-void UnkStruct_020d8698_1C::func_ov024_020ce260() {}
-unk32 UnkStruct_020d8698_1C::func_ov024_020ce2a8() {}
+void UnkStruct_020d8698_1C::func_ov024_020cd768() {
+    this->func_ov024_020cdec8();
+}
+
+void UnkStruct_020d8698_1C::func_ov024_020cd774() {
+    if (data_027e09a4->func_01ffd3d8()) {
+        s32 sVar1 = func_020196b0(0x34);
+        s32 sVar2 = func_020196b0(0x27);
+
+        this->mUnk_00C.UnknownAction(sVar1, 0);
+        this->mUnk_024.func_ov000_0206082c(sVar1, 0);
+        this->mUnk_204.func_ov000_0206082c(sVar2, 1);
+        this->mUnk_18C.func_ov000_0206082c(sVar2, 2);
+        this->mUnk_114.func_ov000_0206082c(sVar2, 3);
+        this->mUnk_09C.func_ov000_0206082c(sVar1, 2);
+        this->mUnk_3E4[0].func_ov000_0206082c(sVar1, 1);
+        this->mUnk_3E4[0].func_ov000_02060bac();
+        this->mUnk_3E4[1].func_ov000_0206082c(sVar1, 1);
+        this->mUnk_3E4[1].func_ov000_02060bac();
+        this->mUnk_36C.func_ov000_0206082c(sVar2, 6);
+        this->mUnk_2F4.func_ov000_0206082c(sVar2, 7);
+        this->mUnk_27C.func_ov000_0206082c(sVar2, 8);
+    } else {
+        s32 sVar2 = func_020196b0(0x27);
+
+        this->mUnk_00C.UnknownAction(sVar2, 0);
+        this->mUnk_024.func_ov000_0206082c(sVar2, 0);
+        this->mUnk_204.func_ov000_0206082c(sVar2, 1);
+        this->mUnk_18C.func_ov000_0206082c(sVar2, 2);
+        this->mUnk_114.func_ov000_0206082c(sVar2, 3);
+        this->mUnk_09C.func_ov000_0206082c(sVar2, 4);
+        this->mUnk_3E4[0].func_ov000_0206082c(sVar2, 5);
+        this->mUnk_3E4[0].func_ov000_02060bac();
+        this->mUnk_3E4[1].func_ov000_0206082c(sVar2, 5);
+        this->mUnk_3E4[1].func_ov000_02060bac();
+        this->mUnk_36C.func_ov000_0206082c(sVar2, 6);
+        this->mUnk_2F4.func_ov000_0206082c(sVar2, 7);
+        this->mUnk_27C.func_ov000_0206082c(sVar2, 8);
+    }
+}
+
+void UnkStruct_020d8698_1C::func_ov024_020cd9f0() {
+    this->mUnk_024.func_ov000_020609c4();
+    this->mUnk_114.func_ov000_020609c4();
+    this->mUnk_18C.func_ov000_020609c4();
+    this->mUnk_204.func_ov000_020609c4();
+    this->mUnk_3E4[0].func_ov000_020609c4();
+    this->mUnk_3E4[1].func_ov000_020609c4();
+    this->mUnk_36C.func_ov000_020609c4();
+    this->mUnk_2F4.func_ov000_020609c4();
+    this->mUnk_27C.func_ov000_020609c4();
+    this->func_ov024_020cdfd8();
+
+    if (data_027e09b8->func_ov000_020732dc(2)) {
+        return;
+    }
+
+    s32 iVar1 = this->func_ov024_020ce218();
+
+    if (iVar1 != 0) {
+        if (iVar1 <= 2) {
+            data_ov000_020b5214.func_ov000_0206e7e8(0x6B);
+        } else if (iVar1 <= 6) {
+            data_ov000_020b5214.func_ov000_0206e7e8(0x6A);
+        }
+    }
+}
+
+void UnkStruct_020d8698_1C::func_ov024_020cdaac() {
+    unk32 temp_r0 = this->func_ov024_020ce2a8();
+
+    for (int var_r8 = 0; var_r8 < temp_r0; var_r8++) {
+        unk32 temp_r1 = (this->func_ov024_020ce260() / 4) - 1;
+        unk32 var_r7;
+
+        if (var_r8 <= temp_r1) {
+            if (data_0204a110.mUnk_000 == 0) {
+                var_r7 = var_r8;
+            } else if (var_r8 < 8) {
+                if (temp_r1 < 8) {
+                    var_r7 = temp_r1 - var_r8;
+                } else {
+                    var_r7 = 0x07 - var_r8;
+                }
+            } else {
+                var_r7 = 0x17 - var_r8;
+            }
+
+            Vec2s sp4;
+            if (data_027e09a4->func_01ffd3d8()) {
+                UnkStruct_ov019_020d24c8_28_258 sp20(func_020196b0(0x34), data_ov024_020d73fa[var_r7]);
+                sp4.x = sp20.mPosU.x;
+                sp4.y = sp20.mPosU.y;
+            } else {
+                UnkStruct_ov019_020d24c8_28_258 sp20(func_020196b0(0x27), data_ov024_020d7432[var_r7]);
+                sp4.x = sp20.mPosU.x;
+                sp4.y = sp20.mPosU.y;
+            }
+
+            //! TODO: regalloc fix
+            Vec2s *ptr2          = &sp4;
+            UnkSubStruct19 *ptr3 = &this->mUnk_3E4[1];
+
+            switch (this->GetIterValue(var_r8)) {
+                case 0:
+                    data_0204af1c.func_0201aad0(&this->mUnk_09C, &sp4, 0, NULL);
+                    break;
+                case 1:
+                    data_0204af1c.func_0201aa44(&this->mUnk_00C, &sp4, 0, NULL);
+                    break;
+                case 2:
+                    data_0204af1c.func_0201aad0(&this->mUnk_024, &sp4, 0, NULL);
+                    break;
+                case 5:
+                    data_0204af1c.func_0201aad0(&this->mUnk_114, &sp4, 0, NULL);
+                    break;
+                case 7:
+                    data_0204af1c.func_0201aad0(&this->mUnk_18C, &sp4, 0, NULL);
+                    break;
+                case 9:
+                    data_0204af1c.func_0201aad0(&this->mUnk_204, &sp4, 0, NULL);
+                    break;
+                case 3:
+                    data_0204af1c.func_0201aad0(&this->mUnk_3E4[0], &sp4, 0, NULL);
+                    break;
+                case 4:
+                    data_0204af1c.func_0201aad0(ptr3, &sp4, 0, NULL);
+                    break;
+                case 6:
+                    data_0204af1c.func_0201aad0(&this->mUnk_27C, &sp4, 0, NULL);
+                    break;
+                case 8:
+                    data_0204af1c.func_0201aad0(&this->mUnk_2F4, &sp4, 0, NULL);
+                    break;
+                case 10:
+                    data_0204af1c.func_0201aad0(&this->mUnk_36C, ptr2, 0, NULL);
+                    break;
+                case 11:
+                default:
+                    break;
+            }
+        }
+    }
+}
+
+void UnkStruct_020d8698_1C::func_ov024_020cdd3c(u8 param1, u8 param2) {
+    u8 var_r4 = param2;
+    u8 var_r5 = param1;
+
+    if (data_027e09a4->func_01ffd3d8()) {
+        var_r5 *= 4;
+        var_r4 *= 4;
+    }
+
+#if IS_JP
+    if (var_r5 < var_r4 && (var_r4 - var_r5) >= 4) {
+        this->mUnk_008 = var_r5 / 4;
+        this->mUnk_009 = var_r4 / 4;
+        this->mUnk_4D4 = 0x12;
+        this->mUnk_00A = var_r4 % 4;
+
+        for (int var_r2 = 0; var_r2 < this->mUnk_008; var_r2++) {
+            this->SetIterValue(var_r2, 1);
+        }
+
+        this->SetIterValue(this->mUnk_008, 3);
+        this->mUnk_3E4[0].func_ov000_02060b64();
+
+        if ((var_r4 - var_r5) != 4) {
+            return;
+        }
+
+        this->mUnk_00A = 0;
+
+        int value = var_r4 % 4;
+        if (value != 0) {
+            switch (value) {
+                case 1:
+                    this->SetIterValue(this->mUnk_009, 0x06);
+                    this->mUnk_27C.func_ov000_02060b64();
+                    break;
+                case 2:
+                    this->SetIterValue(this->mUnk_009, 0x08);
+                    this->mUnk_2F4.func_ov000_02060b64();
+                    break;
+                case 3:
+                    this->SetIterValue(this->mUnk_009, 0x0A);
+                    this->mUnk_36C.func_ov000_02060b64();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        return;
+    }
+#else
+    if (var_r5 < var_r4) {
+        this->mUnk_008 = var_r5 / 4;
+        this->mUnk_009 = var_r4 / 4;
+        this->mUnk_4D4 = 0x12;
+
+        if (this->mUnk_008 != 0) {
+            this->SetIterValue(this->mUnk_008 - 1, 1);
+        }
+
+        this->SetIterValue(this->mUnk_008, 3);
+        this->mUnk_3E4[0].func_ov000_02060b64();
+
+        if ((var_r4 - var_r5) != 4) {
+            return;
+        }
+
+        int value = var_r4 % 4;
+        if (value != 0) {
+            switch (value) {
+                case 1:
+                    this->SetIterValue(this->mUnk_009, 0x06);
+                    this->mUnk_27C.func_ov000_02060b64();
+                    break;
+                case 2:
+                    this->SetIterValue(this->mUnk_009, 0x08);
+                    this->mUnk_2F4.func_ov000_02060b64();
+                    break;
+                case 3:
+                    this->SetIterValue(this->mUnk_009, 0x0A);
+                    this->mUnk_36C.func_ov000_02060b64();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        return;
+    }
+#endif
+
+    this->func_ov024_020cdec8();
+}
+
+void UnkStruct_020d8698_1C::func_ov024_020cde54(u8 param1) {
+    u8 var_r5 = param1;
+
+    if (data_027e09a4->func_01ffd3d8() != 0) {
+        var_r5 *= 4;
+    }
+
+    int temp_r3 = var_r5 / 4;
+
+    for (int var_ip = 0; var_ip < temp_r3; var_ip++) {
+        if (this->GetIterValue(var_ip) == 0x0B) {
+            this->SetIterValue(var_ip, 0x00);
+        }
+    }
+
+    this->func_ov024_020cdd3c(this->func_ov024_020ce218(), var_r5);
+}
+
+void UnkStruct_020d8698_1C::func_ov024_020cdec8() {
+    s32 temp_r5 = this->func_ov024_020ce218();
+    s32 temp_r0 = this->func_ov024_020ce260();
+
+    s32 temp_r4   = temp_r5 / 4;
+    s32 temp_r5_2 = temp_r5 % 4;
+    s32 temp_r7   = temp_r0 / 4;
+
+    s32 temp_r0_2 = this->func_ov024_020ce2a8();
+
+    for (int var_r8 = 0; var_r8 < temp_r0_2; var_r8++) {
+        if (var_r8 < temp_r7) {
+            if (var_r8 < temp_r4) {
+                if ((var_r8 == (temp_r4 - 1)) && (temp_r5_2 == 0)) {
+                    this->SetIterValue(var_r8, 0x02);
+                } else {
+                    this->SetIterValue(var_r8, 0x01);
+                }
+            } else if (var_r8 == temp_r4) {
+                switch (temp_r5_2) {
+                    case 0:
+                        this->SetIterValue(var_r8, 0x00);
+                        break;
+                    case 1:
+                        this->SetIterValue(var_r8, 0x05);
+                        break;
+                    case 2:
+                        this->SetIterValue(var_r8, 0x07);
+                        break;
+                    case 3:
+                        this->SetIterValue(var_r8, 0x09);
+                        break;
+                    default:
+                        break;
+                }
+            } else if (var_r8 < temp_r7) {
+                this->SetIterValue(var_r8, 0x00);
+            }
+        } else {
+            this->SetIterValue(var_r8, 0x0B);
+        }
+    }
+}
+
+void UnkStruct_020d8698_1C::func_ov024_020cdfd8() {
+    s32 temp_r0 = this->func_ov024_020ce2a8();
+
+    for (int var_r7 = 0; var_r7 < temp_r0; var_r7++) {
+        switch (this->GetIterValue(var_r7)) {
+            case 3:
+            case 4: {
+                bool var_r0 = false;
+                bool var_r8 = false;
+
+                switch (this->GetIterValue(var_r7)) {
+                    case 3:
+                        if (this->mUnk_4D4 != 0) {
+                            this->mUnk_4D4--;
+
+                            if (this->mUnk_4D4 == 8) {
+                                var_r8 = true;
+                            } else if (this->mUnk_4D4 == 0) {
+                                var_r0 = true;
+                            }
+                        }
+                        break;
+                    case 4:
+                        if (this->mUnk_4D5 != 0) {
+                            this->mUnk_4D5--;
+
+                            if (this->mUnk_4D5 == 8) {
+                                var_r8 = true;
+                            } else if (this->mUnk_4D5 == 0) {
+                                var_r0 = true;
+                            }
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                if (var_r0) {
+                    this->SetIterValue(var_r7, 0x01);
+
+                    if (this->mUnk_008 == this->mUnk_009) {
+                        if (this->mUnk_008 == (data_027e09a4->func_01ffd3d8() ? 0x08 : 0x10) ||
+                            this->GetIterValue(this->mUnk_008) == 0x0B || this->GetIterValue(this->mUnk_008) == 0x00) {
+
+                            this->mUnk_024.func_ov000_02060b64();
+                            this->SetIterValue(this->mUnk_008 - 1, 0x02);
+                        }
+                    }
+                }
+
+                if (var_r8) {
+                    this->mUnk_008++;
+
+                    if (this->mUnk_008 != this->mUnk_009) {
+                        // the cast is required to fix the regalloc
+                        if (this->GetIterValue((u32) var_r7) == 3) {
+                            this->mUnk_3E4[1].func_ov000_02060b64();
+                            this->SetIterValue(this->mUnk_008, 0x04);
+                            this->mUnk_4D5 = 0x12;
+                        } else {
+                            this->mUnk_3E4[0].func_ov000_02060b64();
+                            this->SetIterValue(this->mUnk_008, 0x03);
+                            this->mUnk_4D4 = 0x12;
+                        }
+                    } else if (this->mUnk_00A != 0) {
+#if IS_JP
+                        switch (this->mUnk_00A) {
+                            case 1:
+                                this->SetIterValue(this->mUnk_008, 0x06);
+                                this->mUnk_27C.func_ov000_02060b64();
+                                break;
+                            case 2:
+                                this->SetIterValue(this->mUnk_008, 0x08);
+                                this->mUnk_2F4.func_ov000_02060b64();
+                                break;
+                            case 3:
+                                this->SetIterValue(this->mUnk_008, 0x0A);
+                                this->mUnk_36C.func_ov000_02060b64();
+                                break;
+                            default:
+                                break;
+                        }
+
+                        this->mUnk_00A = 0;
+                        data_ov000_020b5214.func_ov000_0206db44(0x6C);
+#endif
+                    }
+                }
+
+                break;
+            }
+            case 6:
+                if (this->mUnk_27C.func_ov000_02060af8()) {
+                    this->mUnk_114.func_ov000_02060b64();
+                    this->SetIterValue(var_r7, 0x05);
+                }
+                break;
+            case 8:
+                if (this->mUnk_2F4.func_ov000_02060af8()) {
+                    this->mUnk_18C.func_ov000_02060b64();
+                    this->SetIterValue(var_r7, 0x07);
+                    break;
+                }
+                break;
+            case 10:
+                if (this->mUnk_36C.func_ov000_02060af8()) {
+                    this->mUnk_204.func_ov000_02060b64();
+                    this->SetIterValue(var_r7, 0x09);
+                    break;
+                }
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+u8 UnkStruct_020d8698_1C::func_ov024_020ce218() {
+    if (data_027e09a4->func_01ffd3d8()) {
+        return data_027e0ce0->mUnk_34->mUnk_28 * 4;
+    }
+
+    return data_027e0ce0->mHealth;
+}
+
+u8 UnkStruct_020d8698_1C::func_ov024_020ce260() {
+    if (data_027e09a4->func_01ffd3d8()) {
+        return data_027e0ce0->mUnk_34->mUnk_24 * 4;
+    }
+
+    return data_027e0ce0->mHealthMax;
+}
+
+u32 UnkStruct_020d8698_1C::func_ov024_020ce2a8() {
+    if (data_027e09a4->func_01ffd3d8()) {
+        return 0x08;
+    }
+
+    return 0x10;
+}
 
 UnkStruct_020d8698_24::UnkStruct_020d8698_24() {}
 void UnkStruct_020d8698_24::func_ov024_020ce518() {}

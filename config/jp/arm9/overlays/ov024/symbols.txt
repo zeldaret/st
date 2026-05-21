@@ -347,8 +347,8 @@ _ZN18UnkStruct_020d869819func_ov024_020cd094Ev kind:function(arm,size=0xbc) addr
 _ZN18UnkStruct_020d869819func_ov024_020cd150Ev kind:function(arm,size=0x94) addr:0x020ce9a0
 _ZN18UnkStruct_020d86988vfunc_08EP5InputP12TouchControl kind:function(arm,size=0x98) addr:0x020cea34
 _ZN18UnkStruct_020d86988vfunc_10EPc kind:function(arm,size=0xcc) addr:0x020ceacc
-_ZN18UnkStruct_020d869819func_ov024_020cd348Ev kind:function(arm,size=0x10) addr:0x020ceb98
-_ZN18UnkStruct_020d869819func_ov024_020cd358Ev kind:function(arm,size=0x10) addr:0x020ceba8
+_ZN18UnkStruct_020d869819func_ov024_020cd348Ehh kind:function(arm,size=0x10) addr:0x020ceb98
+_ZN18UnkStruct_020d869819func_ov024_020cd358Eh kind:function(arm,size=0x10) addr:0x020ceba8
 _ZN18UnkStruct_020d869819func_ov024_020cd368Ebb kind:function(arm,size=0x3c) addr:0x020cebb8
 _ZN18UnkStruct_020d869819func_ov024_020cd3a4Ev kind:function(arm,size=0x2c) addr:0x020cebf4
 _ZN18UnkStruct_020d869819func_ov024_020cd3d0Ev kind:function(arm,size=0x10) addr:0x020cec20
@@ -367,8 +367,8 @@ _ZN21UnkStruct_020d8698_1C19func_ov024_020cd768Ev kind:function(arm,size=0xc) ad
 _ZN21UnkStruct_020d8698_1C19func_ov024_020cd774Ev kind:function(arm,size=0x27c) addr:0x020cefc4
 _ZN21UnkStruct_020d8698_1C19func_ov024_020cd9f0Ev kind:function(arm,size=0xbc) addr:0x020cf240
 _ZN21UnkStruct_020d8698_1C19func_ov024_020cdaacEv kind:function(arm,size=0x290) addr:0x020cf2fc
-_ZN21UnkStruct_020d8698_1C19func_ov024_020cdd3cEv kind:function(arm,size=0x144) addr:0x020cf58c
-_ZN21UnkStruct_020d8698_1C19func_ov024_020cde54Ev kind:function(arm,size=0x74) addr:0x020cf6d0
+_ZN21UnkStruct_020d8698_1C19func_ov024_020cdd3cEhh kind:function(arm,size=0x144) addr:0x020cf58c
+_ZN21UnkStruct_020d8698_1C19func_ov024_020cde54Eh kind:function(arm,size=0x74) addr:0x020cf6d0
 _ZN21UnkStruct_020d8698_1C19func_ov024_020cdec8Ev kind:function(arm,size=0x110) addr:0x020cf744
 _ZN21UnkStruct_020d8698_1C19func_ov024_020cdfd8Ev kind:function(arm,size=0x2b8) addr:0x020cf854
 _ZN21UnkStruct_020d8698_1C19func_ov024_020ce218Ev kind:function(arm,size=0x48) addr:0x020cfb0c
@@ -727,10 +727,10 @@ sBMGSceneMap kind:data(any) addr:0x020d8ccc local
 data_ov024_020d8d7c kind:data(any) addr:0x020d8d7c
 data_ov024_020d8d82 kind:data(any) addr:0x020d8d82
 data_ov024_020d8d90 kind:data(any) addr:0x020d8d90
-data_ov024_020d8d9e kind:data(any) addr:0x020d8d9e
+data_ov024_020d73fa kind:data(any) addr:0x020d8d9e
 data_ov024_020d8dae kind:data(any) addr:0x020d8dae
 data_ov024_020d8dc2 kind:data(any) addr:0x020d8dc2
-data_ov024_020d8dd6 kind:data(any) addr:0x020d8dd6
+data_ov024_020d7432 kind:data(any) addr:0x020d8dd6
 data_ov024_020d8df8 kind:data(any) addr:0x020d8df8
 data_ov024_020d7544 kind:data(any) addr:0x020d8ee8 local
 data_ov024_020d7547 kind:data(any) addr:0x020d8eeb local

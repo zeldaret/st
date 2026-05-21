@@ -153,7 +153,7 @@ public:
     /* 1C28 */
 
     UnkSubStruct9 &GetUnk03E0(int saveSlotIndex) {
-        return this->mUnk_03E0.GetRef(saveSlotIndex);
+        return this->mUnk_03E0.Get(saveSlotIndex);
     }
 
     UnkSubStruct9 &GetUnk03E0() {
