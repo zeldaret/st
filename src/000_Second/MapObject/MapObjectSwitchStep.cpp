@@ -12,7 +12,7 @@ extern "C" unk32 func_0200f218(unk32, const char *);
 static const char data_ov000_020af550[] = "switch";
 static const char data_ov000_020af560[] = "switchB";
 
-UnkStruct_ov019_020d24c8_28_258_00 MapObjectSwitchStep_data_020b6118(0, 0);
+UnkStruct_ov019_020d24c8_28_258_00 MapObjectSwitchStep_data_020b6118(NULL, 0);
 
 ARM DECL_PROFILE(MapObjectProfileSwitchStep);
 

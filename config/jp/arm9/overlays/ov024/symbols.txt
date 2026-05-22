@@ -728,7 +728,7 @@ data_ov024_020d8d7c kind:data(any) addr:0x020d8d7c
 data_ov024_020d8d82 kind:data(any) addr:0x020d8d82
 data_ov024_020d8d90 kind:data(any) addr:0x020d8d90
 data_ov024_020d73fa kind:data(any) addr:0x020d8d9e
-data_ov024_020d8dae kind:data(any) addr:0x020d8dae
+data_ov024_020d740a kind:data(any) addr:0x020d8dae
 data_ov024_020d8dc2 kind:data(any) addr:0x020d8dc2
 data_ov024_020d7432 kind:data(any) addr:0x020d8dd6
 data_ov024_020d8df8 kind:data(any) addr:0x020d8df8

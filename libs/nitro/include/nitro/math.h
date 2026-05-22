@@ -231,32 +231,7 @@ extern "C" static inline void Vec2s_Clear(Vec2s *pVec) {
     pVec->y = *(s16 *) &y;
 }
 
-extern "C" static inline void Vec2s_SetU(Vec2s *dest, Vec2us *src) {
-    u16 x = src->x;
-    u16 y = src->y;
-
-    // clear current data
-    dest->x = 0;
-    dest->y = 0;
-
-    // set new data
-    dest->x = x;
-    dest->y = y;
-}
-
-extern "C" static inline void Vec2s_Set(const Vec2s *src, Vec2s *dest) {
-    s16 x = src->x;
-    s16 y = src->y;
-
-    // clear current data
-    dest->x = 0;
-    dest->y = 0;
-
-    // set new data
-    dest->x = x;
-    dest->y = y;
-}
-
+//! TODO: remove
 extern "C" static inline Vec2s *Vec2s_New(s16 x, s16 y) {
     Vec2s vec;
     vec.x = x;
@@ -264,6 +239,7 @@ extern "C" static inline Vec2s *Vec2s_New(s16 x, s16 y) {
     return &vec;
 }
 
+//! TODO: remove
 extern "C" static inline Vec2s *Vec2s_GetCopy(Vec2s *src) {
     Vec2s vec;
     vec.x = src->x;
@@ -296,6 +272,40 @@ extern "C" static inline void Vec2s_OffsetAdd(const Vec2s *a, const Vec2s *b, co
     dst->x = x + o->x;
     dst->y = y + o->y;
 }
+
+extern "C" static inline void Vec2s_Sub(const Vec2s *a, const Vec2s *b, Vec2s *dst) {
+    s16 x;
+    s16 y;
+
+    x = a->x - b->x;
+    y = a->y - b->y;
+
+    dst->x = x;
+    dst->y = y;
+}
+
+extern "C" static inline void Vec2s_OffsetSub(const Vec2s *a, const Vec2s *b, const Vec2s *o, Vec2s *dst) {
+    s16 x;
+    s16 y;
+
+    x = a->x - b->x;
+    y = a->y - b->y;
+
+    dst->x = x + o->x;
+    dst->y = y + o->y;
+}
+
+extern "C" static inline void Vec2s_Copy(const Vec2s *src, Vec2s *dst) {
+    s16 x = ((u16 *) src)[0];
+    s16 y = ((u16 *) src)[1];
+
+    dst->x = src->x; // regalloc/stack access fixes
+    dst->x = x;
+
+    dst->y = src->y; // not required but for consistency
+    dst->y = y;
+}
+
 extern "C" {
 #else
 typedef struct Vec2b {

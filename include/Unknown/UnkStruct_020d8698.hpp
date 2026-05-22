@@ -63,9 +63,52 @@ public:
     u32 func_ov024_020ce2a8();
 };
 
+class UnkStruct_020d8698_24_5C_Base {
+public:
+    /* 00 */ Vec2s mUnk_00;
+    /* 04 */ unk16 mUnk_04;
+    /* 06 */ unk16 mUnk_06;
+    /* 08 */ UnkStruct_ov019_020d24c8_28_258_00_Derived1 mUnk_08[10];
+    /* 80 */ unk32 mUnk_80;
+    /* 84 */ unk32 mUnk_84;
+    /* 88 */ unk32 mUnk_88;
+    /* 8C */ unk32 mUnk_8C;
+    /* 90 */ unk32 mUnk_90;
+    /* 94 */ unk32 mUnk_94;
+    /* 98 */
+
+    UnkStruct_020d8698_24_5C_Base(unk32 param1, u16 *param2, u16 param3, unk32 param4);
+
+    void func_ov000_02065884();
+    void func_ov000_0206590c(u16 param1, unk32 param2);
+    void func_ov000_02065930();
+    void func_ov000_02065988(u16 param1, u16 *param2);
+    void func_ov000_020659d0(unk8 *param1, UnkDataStruct1 *param2);
+};
+
+class UnkStruct_020d8698_24_5C : public UnkStruct_020d8698_24_5C_Base {
+public:
+    /* 00 (base) */
+    /* 98 */ unk32 mUnk_98;
+    /* 98 */ unk32 mUnk_9C;
+    /* A0 */
+
+    UnkStruct_020d8698_24_5C(unk32 param1, u16 *param2, u16 param3, unk32 param4);
+
+    void func_ov000_02065b48(u16 param1, unk32 param2);
+    void func_ov000_02065b8c();
+};
+
 class UnkStruct_020d8698_24 {
 public:
-    /* 000 */ STRUCT_PAD(0x00, 0x10C);
+    /* 000 */ UnkStruct_ov019_020d24c8_28_258 mUnk_000;
+    /* 018 */ UnkSystem2_UnkSubSystem9 mUnk_018;
+    /* 05C */ UnkStruct_020d8698_24_5C mUnk_05C;
+    /* 0FC */ Vec2s mUnk_0FC;
+    /* 100 */ unk32 mUnk_100;
+    /* 104 */ bool mUnk_104;
+    /* 105 */ bool mUnk_105;
+    /* 106 */ Vec2s mUnk_106;
     /* 10C */
 
     UnkStruct_020d8698_24();

@@ -98,9 +98,9 @@ extern "C" void func_0201e8d4(void *param1, void *param2);
     }                                                           \
                                                                 \
     void UpdatePosition(Vec2s *pOutPos) {                       \
-        Vec2us fetch;                                           \
+        Vec2s fetch;                                            \
         func_0201e8d4(&fetch, this);                            \
-        Vec2s_SetU(pOutPos, &fetch);                            \
+        Vec2s_Copy(&fetch, pOutPos);                            \
     }                                                           \
                                                                 \
     void Update(Vec2s *pOutPos) {                               \
@@ -143,6 +143,13 @@ public:
             this->mUnk_0B = false;
             this->mUnk_0C = true;
         }
+    }
+
+    void UnkOperations3() {
+        this->mUnk_04 = 0;
+        this->mUnk_0A = false;
+        this->mUnk_0B = false;
+        this->mUnk_0C = true;
     }
 
     UnkSubStruct1_Base();
@@ -206,12 +213,23 @@ public:
 struct UnkStruct_ov019_020d24c8_28_258_00 {
     /* 00 */ void *mUnk_00;
     /* 04 */ unk32 mUnk_04;
+    /* 08 */
 
-    UnkStruct_ov019_020d24c8_28_258_00() {}
+    UnkStruct_ov019_020d24c8_28_258_00() {
+        this->mUnk_00 = NULL;
+        this->mUnk_04 = 0;
+    }
+
     UnkStruct_ov019_020d24c8_28_258_00(void *param1, unk32 param2) :
         mUnk_00(param1),
         mUnk_04(param2) {}
     void func_ov000_0205fc20(unk32 param1, unk32 param2, void *param3, void *param4);
+};
+
+struct UnkStruct_ov019_020d24c8_28_258_00_Derived1 : public UnkStruct_ov019_020d24c8_28_258_00 {
+    /* 00 (base) */
+    /* 08 */ unk32 mUnk_00;
+    /* 0C */
 };
 
 class UnkStruct_ov019_020d24c8_28_258 : public UnkStruct_ov019_020d24c8_28_258_00 {
@@ -228,14 +246,11 @@ public:
     /* 18 */
 
     UnkStruct_ov019_020d24c8_28_258() {
-        this->mUnk_00 = NULL;
-        this->mUnk_04 = 0;
-        this->mPos.x  = 0;
-        this->mPos.y  = 0;
+        this->mPos.x = 0;
+        this->mPos.y = 0;
     };
 
-    UnkStruct_ov019_020d24c8_28_258(s16 param1, unk32 param2) :
-        UnkStruct_ov019_020d24c8_28_258_00(NULL, 0) {
+    UnkStruct_ov019_020d24c8_28_258(s16 param1, unk32 param2) {
         this->UnknownAction(param1, param2);
     }
 
@@ -1214,25 +1229,31 @@ public:
 
 struct UnkDataStruct1 {
     /* 00 */ void *mUnk_00;
-    /* 04 */ unk8 mUnk_04;
+    /* 04 */ u8 mUnk_04;
     /* 05 */ unk8 mUnk_05;
     /* 06 */ u16 mUnk_06;
     /* 08 */
 
+    UnkDataStruct1() {}
     UnkDataStruct1(u16 param1) {
-        this->Init(param1);
+        this->Init();
+        this->mUnk_06 |= param1;
     }
 
     UnkDataStruct1(void *param1, u16 param2) {
-        this->Init(param2);
+        this->Init();
+        this->mUnk_06 |= param2;
         this->mUnk_00 = param1;
     }
 
-    void Init(u16 param1) {
+    void Init() {
         this->mUnk_06 = 0x00;
         MI_CpuFill32(0, this, sizeof(UnkDataStruct1));
         this->mUnk_05 = -1;
-        this->mUnk_06 |= param1;
+    }
+
+    void SetUnk04(u8 param1) {
+        this->mUnk_04 = param1;
     }
 };
 

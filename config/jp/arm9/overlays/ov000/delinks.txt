@@ -15,6 +15,9 @@ src/000_Second/Game/GameModeManagerBase_104.cpp:
     .text       start:0x0206306c end:0x02063268
     .data       start:0x020b3658 end:0x020b367c
 
+src/000_Second/code_020657fc.cpp:
+    .text       start:0x02066d84 end:0x020671a8
+
 src/000_Second/UnkSystem1_Base.cpp:
     .text       start:0x02067d38 end:0x020687e0
     .data       start:0x020b3870 end:0x020b389c

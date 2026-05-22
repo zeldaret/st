@@ -1118,7 +1118,6 @@ ARM void FileSelectMain::func_ov019_020c80e8() {
 
 ARM void FileSelectMain::func_ov019_020c80f4() {}
 
-// non-matching
 ARM void FileSelectMain::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         this->mUnk_03E8[i].func_ov000_02063f64();
@@ -1136,7 +1135,6 @@ ARM void FileSelectMain::func_ov019_020c8290() {
     }
 }
 
-// non-matching
 ARM void FileSelectMain::func_ov019_020c82c4() {
     this->mUnk_039C.Update(&this->mUnk_0100.mPos);
 
