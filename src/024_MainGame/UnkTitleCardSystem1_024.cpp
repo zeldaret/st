@@ -169,8 +169,10 @@ void UnkTitleCardSystem1::func_ov024_020cb654(unk8 *param1, UnkDataStruct1 *para
     Vec2s sp20;
 
     func_0201e8d4(&sp20, &this->mUnk_0A8);
-    func_0201e8d4(&sp24, &this->mUnk_064);
-    Vec2s_Add(&sp24, &sp20, &sp34);
+
+    Vec2s *pSp14 = (Vec2s *) &sp24;
+    func_0201e8d4(pSp14, &this->mUnk_064);
+    Vec2s_Add(pSp14, &sp20, &sp34);
 
     data_0204af1c.func_0201aa44(&this->mUnk_030, &sp34, 1, (void *) param2);
     s16 unk_056 = this->mUnk_048.mUnk_0E.x;
@@ -210,15 +212,17 @@ void UnkTitleCardSystem1::func_ov024_020cb654(unk8 *param1, UnkDataStruct1 *para
     Vec2s spC;
     Vec2s sp8;
     func_0201e8d4(&sp8, &this->mUnk_0EC);
-    func_0201e8d4(&spC, &this->mUnk_064);
-    Vec2s_Add(&spC, &sp8, &sp2C);
+    Vec2s *pSpC = (Vec2s *) &spC;
+    func_0201e8d4(pSpC, &this->mUnk_064);
+    Vec2s_Add(pSpC, &sp8, &sp2C);
 
     data_0204af1c.func_0201aa44(&this->mUnk_048, &sp2C, 1, (void *) param2);
 
     if (this->vfunc_14()) {
         Vec2s sp4;
-        func_0201e8d4(&sp4, &this->mUnk_064);
-        Vec2s_Add(&sp4, &this->mUnk_060, &sp28);
+        Vec2s *pSp4 = (Vec2s *) &sp4;
+        func_0201e8d4(pSp4, &this->mUnk_064);
+        Vec2s_Add(pSp4, &this->mUnk_060, &sp28);
         this->mUnk_008->func_ov000_0206216c(&sp28, 0, 0);
     }
 }
