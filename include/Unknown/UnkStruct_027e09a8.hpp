@@ -1,7 +1,7 @@
 #pragma once
 
+#include "math.hpp"
 #include "types.h"
-#include <nitro/math.h>
 
 class UnkStruct_027e09a8 {
 public:

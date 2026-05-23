@@ -4,9 +4,9 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "global.h"
+#include "math.hpp"
 #include "profile.hpp"
 #include "types.h"
-#include <nitro/math.h>
 #include <nns/text.h>
 
 extern "C" void func_0201e8d4(void *param1, void *param2);
@@ -95,9 +95,9 @@ extern "C" void func_0201e8d4(void *param1, void *param2);
     }                                                           \
                                                                 \
     void UpdatePosition(Vec2s *pOutPos) {                       \
-        Vec2us fetch;                                           \
+        Vec2s fetch;                                            \
         func_0201e8d4(&fetch, this);                            \
-        Vec2s_SetU(pOutPos, &fetch);                            \
+        Vec2s_Set(&fetch, pOutPos);                             \
     }                                                           \
                                                                 \
     void Update(Vec2s *pOutPos) {                               \
@@ -422,10 +422,10 @@ public:
     /* 18 */ unk32 mUnk_18;
     /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk32 mUnk_20;
-    /* 24 */ Vec2us mPosOffset; // used to shift the button when selected
-    /* 28 */ bool mUnk_28;      // selected highlight effect when set to true
-    /* 29 */ bool mUnk_29;      // related to having the button selected
-    /* 2A */ bool mUnk_2A;      // disables button action
+    /* 24 */ Vec2s mPosOffset; // used to shift the button when selected
+    /* 28 */ bool mUnk_28;     // selected highlight effect when set to true
+    /* 29 */ bool mUnk_29;     // related to having the button selected
+    /* 2A */ bool mUnk_2A;     // disables button action
     /* 2A */ bool mUnk_2B;
     /* 2C */ bool mUnk_2C;
     /* 2D */ unk8 mUnk_2D;
@@ -811,8 +811,8 @@ public:
     /* 4C */ unk32 mUnk_4C;
     /* 50 */ unk32 mUnk_50;
     /* 54 */ unk32 mUnk_54;
-    /* 58 */ unk32 mUnk_58;  // another timer?
-    /* 5C */ Vec2us mUnk_5C; // position of the animated texture
+    /* 58 */ unk32 mUnk_58; // another timer?
+    /* 5C */ Vec2s mUnk_5C; // position of the animated texture
     /* 60 */ unk32 mUnk_60;
     /* 64 */ unk32 mUnk_64;
     /* 68 */ unk32 mUnk_68;

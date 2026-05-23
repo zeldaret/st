@@ -4,7 +4,7 @@
 #include "global.h"
 #include "types.h"
 
-#include <nitro/math.h>
+#include "math.hpp"
 
 struct UnkStruct_027e09ac_Base_00 {
     /* 00 */ unk16 mUnk_00[2];

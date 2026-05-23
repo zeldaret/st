@@ -1,8 +1,8 @@
 #pragma once
 
 #include "files.h"
+#include "math.hpp"
 #include "types.h"
-#include <nitro/math.h>
 
 #include "MapObject/MapObjectManager.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"

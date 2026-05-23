@@ -739,8 +739,11 @@ ARM void MapObjectDoorDangerSpawn::func_ov031_020fe5fc(Vec3p *param1, MapObjectD
         Vec3p *piVar2 = data_027e0ce0->func_01fff148(1);
         Vec3p *piVar3 = data_027e0ce0->func_01fff148(0);
 
-        Vec3p temp(piVar3->x, piVar3->y, piVar3->z);
-        Vec3p pos(temp.x + piVar2->x, temp.y + piVar2->y, temp.z + piVar2->z);
+        Vec3p temp;
+        Vec3p_Init(piVar3->x, piVar3->y, piVar3->z, &temp);
+
+        Vec3p pos;
+        Vec3p_Init(temp.x + piVar2->x, temp.y + piVar2->y, temp.z + piVar2->z, &pos);
 
         func_01ff93c0(&pos, FLOAT_TO_Q20(0.5f));
         param1->coords = pos.coords;

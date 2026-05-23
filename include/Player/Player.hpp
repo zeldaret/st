@@ -1,7 +1,7 @@
 #pragma once
 
+#include "math.hpp"
 #include "types.h"
-#include <nitro/math.h>
 
 // incomplete
 class PlayerActor {

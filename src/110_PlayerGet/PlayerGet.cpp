@@ -22,7 +22,7 @@
 #include "Unknown/UnkStruct_ov000_020b51c0.hpp"
 #include "versions.h"
 
-#include <nitro/math.h>
+#include "math.hpp"
 
 struct UnkStruct_02186240 {
     /* 0000 */ unk8 mUnk_0000[0x3F68];

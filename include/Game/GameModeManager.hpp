@@ -4,9 +4,9 @@
 #include "Player/TouchControl.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_02049b18.hpp"
+#include "math.hpp"
 #include "types.h"
 #include <nitro/button.h>
-#include <nitro/math.h>
 #include <nitro/touch.h>
 
 class GameModeManagerBase;

@@ -7,9 +7,9 @@
 #include "Unknown/UnkSystem1.hpp"
 #include "global.h"
 #include "iterator.hpp"
+#include "math.hpp"
 #include "regs.h"
 #include "types.h"
-#include <nitro/math.h>
 
 extern const unk16 data_ov019_020d1bb0[];
 extern "C" void func_ov001_020bd6a8();
@@ -144,12 +144,12 @@ public:
     /* 00 */ u16 mUnk_02;
     /* 04 */ u16 mUnk_04[2];
     /* 08 */ unk32 mUnk_08;
-    /* 0C */ volatile unk32 mUnk_0C;
+    /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ VEC2S mUnk_1C;
-    /* 20 */ volatile unk32 mUnk_20;
+    /* 14 */ volatile unk32 mUnk_14;
+    /* 18 */ volatile unk32 mUnk_18;
+    /* 1C */ Vec2s mUnk_1C;
+    /* 20 */ unk32 mUnk_20;
 };
 
 class UnkStruct_ov019_020d1e94 {

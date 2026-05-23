@@ -37,7 +37,7 @@ UnkStruct_ov019_020d1e94 UnkStruct_ov019_020d1e70::data_ov019_020d1e94 = {
 };
 
 UnkStruct_ov019_020d1e4c UnkStruct_ov019_020d1e70::data_ov019_020d1e4c = {
-    0x14, 0x14, 0x14, 0x04, 0x03, -0x47, 0x00, 0x0281, -0x47, {0x00, 0x00}, 0x0281,
+    0x14, 0x14, 0x14, 0x04, 0x03, -0x47, 0x00, 0x0281, -0x47, Vec2s(0x00, 0x00), 0x0281,
 };
 
 static PTMF<FileSelectMain> data_ov019_020d1f94[FileSelectState_Max] = {
@@ -277,52 +277,62 @@ ARM void FileSelectMain::func_ov019_020c6e14() {
 
 // non-matching
 ARM void FileSelectMain::func_ov019_020c6e3c() {
-    Vec2s local_40;
-    Vec2s local_58;
-    Vec2p auStack_50[2];
-    Vec2s local_44;
-    Vec2us auStack_60[2]; // c e
-    Vec2us local_64;      // 4 6
-    int fileIndex;
+    u16 var_r4;
+    int var_r5;
+    s32 var_r7;
+    s32 var_r8;
+    s32 var_r9;
 
-    fileIndex = this->mSaveSlotIndex == 0;
-
-    int unaff_r9;
-    u16 unaff_r4;
-    int unaff_r7;
-
-    if (this->mState == FileSelectState_SlotSelectToFileManager) {
-        unaff_r4 = 0;
-        UnkStruct_ov019_020d24c8_28_258 local_3c(0x8A, 0x05);
-
-        local_40.x = local_3c.mPosU.x;
-        local_40.y = local_3c.mPosU.y;
-
-        unaff_r9 = 10;
-        func_ov000_02062e44(auStack_50, &this->GetUnk03E0(fileIndex).mUnk_004);
-        func_ov000_02062e44(&local_58, &this->GetUnk03E0(fileIndex).mUnk_004);
-        local_44.x = local_58.x + data_ov019_020d24c0.mUnk_00.x;
-        local_44.y = local_58.y + data_ov019_020d24c0.mUnk_00.y;
-        unaff_r7   = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_0C;
-    } else if (this->mState == FileSelectState_SlotSelectFromFileManager) {
-        func_ov000_02062e44(auStack_60 + 1, &this->GetUnk03E0(mSaveSlotIndex).mUnk_004);
-        local_40.x = auStack_60[1].x;
-        local_40.y = auStack_60[1].y;
-
-        func_ov000_02062e44(auStack_60, &this->GetUnk03E0(fileIndex).mUnk_004);
-        func_ov000_02062e44(&local_64, &this->GetUnk03E0(fileIndex).mUnk_004);
-        local_44.x = local_64.x;
-        local_44.y = local_64.y;
-
-        unaff_r9 = 0;
-        unaff_r4 = 10;
-        unaff_r7 = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_20;
+    var_r5 = 1;
+    if (this->mSaveSlotIndex != 0) {
+        var_r5 = 0;
     }
 
-    this->mUnk_03E8[this->mSaveSlotIndex].func_ov000_0206415c(&local_40, 0, 0xf, unaff_r9);
-    auStack_50[1].x = unaff_r7;
-    this->mUnk_03E8[fileIndex].func_ov000_02064080(&local_44, auStack_50 + 1,
-                                                   UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_02, unaff_r4);
+    Vec2s sp28;
+    Vec2s sp24;
+    unk32 sp1C[2];
+    Vec2s sp18;
+    Vec2s temp; // sp14
+    Vec2s sp10;
+    Vec2s spC;
+    Vec2s sp8;
+    Vec2s sp4;
+
+    if (this->mState == FileSelectState_SlotSelectToFileManager) {
+        UnkStruct_ov019_020d24c8_28_258 sp2C(0x8A, 0x05);
+
+        sp28.coords = sp2C.mPos.coords;
+        var_r9      = 0x0A;
+
+        func_ov000_02062e44(&sp18, &this->GetUnk03E0(var_r5).mUnk_004);
+        func_ov000_02062e44(&sp10, &this->GetUnk03E0(var_r5).mUnk_004);
+
+        //! TODO: use Vec2s_CopyAdd
+        temp.x          = (&sp10)->x + (&data_ov019_020d24c0.mUnk_00)->x;
+        temp.y          = (&sp10)->y + (&data_ov019_020d24c0.mUnk_00)->y;
+        var_r7          = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18;
+        (&sp24)->coords = temp.coords;
+        var_r8          = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_14;
+        var_r4          = 0;
+    } else if (this->mState == FileSelectState_SlotSelectFromFileManager) {
+        func_ov000_02062e44(&spC, &this->GetUnk03E0(this->mSaveSlotIndex).mUnk_004);
+
+        sp28.coords = spC.coords;
+        var_r9      = 0x00;
+
+        func_ov000_02062e44(&sp8, &this->GetUnk03E0(var_r5).mUnk_004);
+        func_ov000_02062e44(&sp4, &this->GetUnk03E0(var_r5).mUnk_004);
+        sp4.coords = sp24.coords;
+
+        var_r7 = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_20;
+        var_r8 = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_0C;
+        var_r4 = 0x0A;
+    }
+
+    this->mUnk_03E8[this->mSaveSlotIndex].func_ov000_0206415c(&sp28, 0, 0x0F, var_r9);
+    sp1C[0] = var_r7;
+    sp1C[1] = var_r8;
+    this->mUnk_03E8[var_r5].func_ov000_02064080(&sp24, &sp1C, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_02, var_r4);
 }
 
 ARM void FileSelectMain::func_ov019_020c7000() {
@@ -834,30 +844,29 @@ ARM void FileSelectMain::func_ov019_020c7a44() {
     Vec2s local_50;
     Vec2s local_44;
     Vec2s local_4c;
-    Vec2us local_28;
-    Vec2us local_2c;
+    Vec2s local_28;
+    Vec2s local_2c;
     Vec2p local_3c;
     Vec2p local_34;
     Vec2p unaff_r5;
     Vec2p unaff_r11;
-    // Vec2p local_34;
     int fileIndex = this->mSaveSlotIndex == 0;
     u16 value1;
     u16 value2;
 
     if (this->mState == FileSelectState_SlotSelectToNewFile) {
         func_ov000_02062e44(&local_44, &this->GetUnk03E0().mUnk_004);
-        unaff_r11.x = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_0C;
-        unaff_r11.y = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_20;
-        local_28.x  = local_44.x + data_ov019_020d1e70.mUnk_20.x;
-        local_28.y  = local_44.y + data_ov019_020d1e70.mUnk_20.y;
+        Vec2s_CopyAdd(&local_44, &data_ov019_020d1e70.mUnk_20, &local_28);
+
+        unaff_r11.x = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_14;
+        unaff_r11.y = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18;
         value1      = 0x0F;
 
         func_ov000_02062e44(&local_4c, &this->GetUnk03E0(fileIndex).mUnk_004);
-        unaff_r5.x = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_0C;
-        unaff_r5.y = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_20;
-        local_2c.x = local_4c.x + data_ov019_020d24c0.mUnk_04.x;
-        local_2c.y = local_4c.y + data_ov019_020d24c0.mUnk_04.y;
+        Vec2s_CopyAdd(&local_4c, &data_ov019_020d1e70.mUnk_04, &local_2c);
+
+        unaff_r5.x = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_14;
+        unaff_r5.y = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18;
         value2     = 0;
 
         this->mUnk_039C.mUnk_0A = 1;
@@ -870,17 +879,17 @@ ARM void FileSelectMain::func_ov019_020c7a44() {
         }
     } else if (this->mState == FileSelectState_NewFileToSlotSelect) {
         func_ov000_02062e44(&local_50, &this->GetUnk03E0().mUnk_004);
-        unaff_r11.x = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_0C;
-        unaff_r11.y = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_20;
-        local_28.x  = local_50.x;
-        local_28.y  = local_50.y;
+        local_28.coords = local_50.coords;
+
+        unaff_r11.x = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_14;
+        unaff_r11.y = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18;
         value1      = 0;
 
         func_ov000_02062e44(&local_54, &this->GetUnk03E0(fileIndex).mUnk_004);
-        unaff_r5.x = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_0C;
-        unaff_r5.y = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_20;
-        local_2c.x = local_54.x;
-        local_2c.y = local_54.y;
+        local_2c.coords = local_54.coords;
+
+        unaff_r5.x = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_14;
+        unaff_r5.y = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18;
         value2     = 0x0F;
 
         this->mUnk_039C.mUnk_0A = 1;
@@ -1263,24 +1272,34 @@ ARM void FileSelectMain::func_ov019_020c92dc() {
     }
 
     this->mUnk_00BC.Update(&this->mUnk_005C.mPos);
-
     this->mUnk_1078.Update(&this->mUnk_0DA4.mPos);
+
     UnkStruct_ov019_020d24c8_28_258 local_30(0x8B, 0x06);
     Vec2s local_5c;
     Vec2s local_58;
     func_ov000_02062e44(&local_5c, &this->mUnk_0DA4);
-    func_0201e8d4(&local_58, &this->mUnk_1100);
-    this->mUnk_1144.mUnk_5C.x = local_58.x + local_30.mPos.x - local_5c.x;
-    this->mUnk_1144.mUnk_5C.y = local_58.y + local_30.mPos.y - local_5c.y;
+    func_0201e8d4(&local_58, &this->mUnk_1078);
+
+    {
+        s16 temp_x                = local_58.x + local_30.mPos.x;
+        s16 temp_y                = local_58.y + local_30.mPos.y;
+        this->mUnk_1144.mUnk_5C.x = temp_x - local_5c.x;
+        this->mUnk_1144.mUnk_5C.y = temp_y - local_5c.y;
+    }
 
     this->mUnk_1490.Update(&this->mUnk_11BC.mPos);
     UnkStruct_ov019_020d24c8_28_258 local_48(0x8B, 0x06);
     Vec2s local_60;
     Vec2s local_64;
     func_ov000_02062e44(&local_60, &this->mUnk_0DA4);
-    func_0201e8d4(&local_64, &this->mUnk_1100);
-    this->mUnk_1144.mUnk_5C.x = local_64.x + local_48.mPos.x - local_60.x;
-    this->mUnk_1144.mUnk_5C.y = local_64.y + local_48.mPos.y - local_60.y;
+    func_0201e8d4(&local_64, &this->mUnk_1490);
+
+    {
+        s16 temp_x                = local_64.x + local_48.mPos.x;
+        s16 temp_y                = local_64.y + local_48.mPos.y;
+        this->mUnk_1144.mUnk_5C.x = temp_x - local_60.x;
+        this->mUnk_1144.mUnk_5C.y = temp_y - local_60.y;
+    }
 
     this->mUnk_18A8.Update(&this->mUnk_15D4.mPos);
     this->mUnk_1BC0.Update(&this->mUnk_18EC.mPos);
@@ -1558,8 +1577,8 @@ ARM void FileSelectMain::func_ov019_020cb324() {
     Vec2s local_34;
     Vec2s local_30;
     stack_struct auStack_24;
-    volatile Vec2s sStack_1c;
-    volatile Vec2s sStack_18;
+    Vec2s sStack_1c;
+    Vec2s sStack_18;
 
     this->mUnk_0160.func_ov000_02062f30();
     this->GetUnk03E0().func_ov019_020cbc0c();
@@ -1571,15 +1590,13 @@ ARM void FileSelectMain::func_ov019_020cb324() {
     sStack_18.x = 0;
     sStack_18.y = 0;
     if (this->mUnk_0DA4.mUnk_28) {
-        sStack_18.x = this->mUnk_0DA4.mPosOffset.x;
-        sStack_18.y = this->mUnk_0DA4.mPosOffset.y;
+        sStack_18.coords = this->mUnk_0DA4.mPosOffset.coords;
     }
 
     sStack_1c.x = 0;
     sStack_1c.y = 0;
     if (this->mUnk_11BC.mUnk_28) {
-        sStack_1c.x = this->mUnk_11BC.mPosOffset.x;
-        sStack_1c.y = this->mUnk_11BC.mPosOffset.y;
+        sStack_1c.coords = this->mUnk_11BC.mPosOffset.coords;
     }
 
     auStack_24.mUnk_06 = 0;
@@ -1587,15 +1604,17 @@ ARM void FileSelectMain::func_ov019_020cb324() {
     auStack_24.mUnk_05 = -1;
     auStack_24.mUnk_06 |= 0x04;
 
-    local_30.x = this->mUnk_1144.mUnk_5C.x + sStack_18.x;
-    local_30.y = this->mUnk_1144.mUnk_5C.y + sStack_18.y;
+    s16 temp_x1 = this->mUnk_1144.mUnk_5C.x + sStack_18.x;
+    s16 temp_y1 = this->mUnk_1144.mUnk_5C.y + sStack_18.y;
+    local_30.x  = temp_x1;
+    local_30.y  = temp_y1;
     data_0204af1c.func_0201aad0(&this->mUnk_1144, (void *) &local_30, 0, &auStack_24);
-    // data_0204af1c.func_0201aad0(&this->mUnk_1144,&local_30,0, 0);
 
-    local_34.x = this->mUnk_155C.mUnk_5C.x + sStack_1c.x;
-    local_34.y = this->mUnk_155C.mUnk_5C.y + sStack_1c.y;
+    s16 temp_x2 = this->mUnk_155C.mUnk_5C.x + sStack_1c.x;
+    s16 temp_y2 = this->mUnk_155C.mUnk_5C.y + sStack_1c.y;
+    local_34.x  = temp_x2;
+    local_34.y  = temp_y2;
     data_0204af1c.func_0201aad0(&this->mUnk_155C, (void *) &local_34, 0, &auStack_24);
-    // data_0204af1c.func_0201aad0(&this->mUnk_155C,&local_34,0, 0);
 }
 
 ARM void FileSelectMain::func_ov019_020cb4bc() {
