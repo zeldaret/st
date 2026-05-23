@@ -4,7 +4,7 @@
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "types.h"
 
-#include <nitro/math.h>
+#include "math.hpp"
 
 typedef void (*UnkCallback_func_01fff4cc)(void *, void *);
 

@@ -22,9 +22,9 @@ ARM Actor::Actor() {
     this->mRef.Reset();
     this->mpProfile = NULL;
     _MI_CpuCopy(&data_ov000_020b539c_eur.mUnk_00, &this->mUnk_5C, sizeof(ActorParams));
-    this->mPos     = this->mUnk_5C.mInitialPos;
-    this->mPrevPos = this->mUnk_5C.mInitialPos;
-    this->mAngle   = this->mUnk_5C.mInitialAngle;
+    Vec3p_Copy(&this->mUnk_5C.mInitialPos, &this->mPos);
+    Vec3p_Copy(&this->mUnk_5C.mInitialPos, &this->mPrevPos);
+    this->mAngle = this->mUnk_5C.mInitialAngle;
     SET_FLAGS(this->mFlags, ActorFlag_Alive, ActorFlag_Visible, ActorFlag_Active, ActorFlag_14);
     this->mUnk_44 = 0xFF;
     this->mUnk_46 = 0;

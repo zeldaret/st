@@ -11,7 +11,16 @@ extern "C" void func_0200b58c(void *);
 extern "C" void func_01ffb714(Vec3p *, Vec3p *, void *);
 extern "C" void func_01ffcfcc(Vec3p *, Vec3p *, Vec3p *);
 
-static const Vec2p data_ov031_02115830(0x800, 0x800);
+struct UnkStruct_ov031_02117c84 {
+    u16 mUnk_00;
+
+    UnkStruct_ov031_02117c84(u16 x) {
+        this->mUnk_00 = x;
+    }
+};
+
+static const Vec2pCpp data_ov031_02115830(0x800, 0x800);
+static const UnkStruct_ov031_02117c84 data_ov031_02117c84(0x3C);
 static const UnkSubStruct19 data_ov031_02115c84;
 
 ARM MapObjectTreasureSpawned_74::MapObjectTreasureSpawned_74(unk32 param1) :
@@ -242,7 +251,8 @@ ARM bool MapObjectChestBase::vfunc_44() {
 }
 
 ARM void MapObjectChestBase::func_ov031_02103f48() {
-    Vec3p local_10(this->mPos.x, this->mPos.y + 0x800, this->mPos.z);
+    Vec3p local_10;
+    Vec3p_Init(this->mPos.x, this->mPos.y + 0x800, this->mPos.z, &local_10);
     data_027e0cec->func_ov000_0209feac(0x81f, &local_10, 4, 0, 0);
 }
 

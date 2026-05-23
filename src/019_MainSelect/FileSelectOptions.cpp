@@ -17,11 +17,11 @@ void func_ov000_020623d8(void *param1, unk32 param2);
 
 class UnkStruct_ov019_020d215c {
 public:
-    /* 00 */ VEC2S mUnk_00;
-    /* 04 */ VEC2S mUnk_04;
-    /* 08 */ VEC2S mUnk_08;
-    /* 0C */ VEC2S mUnk_0C;
-    /* 10 */ VEC2S mUnk_10;
+    /* 00 */ Vec2sC mUnk_00;
+    /* 04 */ Vec2sC mUnk_04;
+    /* 08 */ Vec2sC mUnk_08;
+    /* 0C */ Vec2sC mUnk_0C;
+    /* 10 */ Vec2sC mUnk_10;
     /* 14 */
 };
 

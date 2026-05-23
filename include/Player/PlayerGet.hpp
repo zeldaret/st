@@ -7,7 +7,7 @@
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
-#include <nitro/math.h>
+#include "math.hpp"
 
 enum GIModel_ {
     GIModel_None = 0,

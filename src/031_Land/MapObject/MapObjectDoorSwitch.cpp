@@ -128,8 +128,10 @@ ARM void MapObjectDoorSwitch::vfunc_18(s8 *param1, s8 param2) {
 }
 
 ARM void MapObjectDoorSwitch::vfunc_74(void) {
-    Vec3p local_20(this->mPos);
-    Vec3p local_2c(0, 0, 0x666);
+    Vec3p local_20 = this->mPos;
+    Vec3p local_2c;
+    Vec3p_Init(0, 0, 0x666, &local_2c);
+
     Mat4x3p m;
     u16 angle = this->mUnk_14;
 

@@ -4,6 +4,30 @@
 #include "global.h"
 #include "types.h"
 
+#define Vec2_Set(a, dst)             \
+    {                                \
+        (dst)->coords = (a)->coords; \
+    }                                \
+    ((void) 0)
+
+#define Vec2_CopyAdd(type, a, b, dst) \
+    {                                 \
+        type temp;                    \
+        temp.x = (a)->x + (b)->x;     \
+        temp.y = (a)->y + (b)->y;     \
+        Vec2_Set(&temp, dst);         \
+    }                                 \
+    ((void) 0)
+
+#define Vec2_CopySub(type, a, b, dst) \
+    {                                 \
+        type temp;                    \
+        temp.x = (a)->x - (b)->x;     \
+        temp.y = (a)->y - (b)->y;     \
+        Vec2_Set(&temp, dst);         \
+    }                                 \
+    ((void) 0)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -32,115 +56,31 @@ typedef s16 q4;
 #define SIN2(table, n) ((table)[2 * ((n) >> 4)])
 #define COS2(table, n) ((table)[2 * ((n) >> 4) + 1])
 
-#ifdef __cplusplus
-}
-#endif
-
-#ifdef __cplusplus
-union Vec2b {
-    struct {
-        /* 0 */ u8 x;
-        /* 1 */ u8 y;
-        /* 2 */
-    };
-    u8 coords[2];
-
-    void operator=(const Vec2b &from) {
-        this->x = from.x;
-        this->y = from.y;
-    }
-
-    Vec2b() {}
-    Vec2b(u8 X, u8 Y) {
-        x = X;
-        y = Y;
-    }
-};
-
-struct Vec2s {
-    /* 0 */ s16 x;
-    /* 2 */ s16 y;
-    /* 4 */
-
-    void operator=(const Vec2s &from) {
-        this->x = from.x;
-        this->y = from.y;
-    }
-
-    Vec2s() {}
-    Vec2s(s16 X, s16 Y) {
-        x = X;
-        y = Y;
-    }
-};
-
-struct Vec2us {
-    /* 0 */ u16 x;
-    /* 2 */ u16 y;
-    /* 4 */
-
-    void operator=(const Vec2us &from) {
-        this->x = from.x;
-        this->y = from.y;
-    }
-
-    Vec2us() {}
-    Vec2us(u16 X, u16 Y) {
-        x = X;
-        y = Y;
-    }
-};
-
-union Vec2p {
+typedef union Vec2p {
     struct {
         /* 0 */ q20 x;
         /* 4 */ q20 y;
         /* 8 */
     };
     q20 coords[2];
+} Vec2p;
 
-    void operator=(const Vec2p &from) {
-        this->x = from.x;
-        this->y = from.y;
-    }
+#define Vec2p_Add(a, b, dst) Vec2_Add(Vec2p, a, b, dst)
+#define Vec2p_Sub(a, b, dst) Vec2_Sub(Vec2p, a, b, dst)
+#define Vec2p_Set(a, dst) Vec2_Set(Vec2p, a, dst)
+#define Vec2p_Clear(dst) Vec2_Clear(q20, dst)
 
-    Vec2p() {}
-    Vec2p(q20 X, q20 Y) {
-        x = X;
-        y = Y;
-    }
-};
-
-union Vec3p {
+typedef union Vec3p {
     struct {
-        q20 x;
-        q20 y;
-        q20 z;
+        /* 0 */ q20 x;
+        /* 4 */ q20 y;
+        /* 8 */ q20 z;
+        /* C */
     };
     q20 coords[3];
+} Vec3p;
 
-    void operator=(const Vec3p &from) {
-        this->x = from.x;
-        this->y = from.y;
-        this->z = from.z;
-    }
-
-    Vec3p() {}
-    Vec3p(Vec3p &from) {
-    #if __MWERKS__
-        this->coords = from.coords;
-    #else
-        *this = from;
-    #endif
-    }
-    Vec3p(q20 X, q20 Y, q20 Z) {
-        x = X;
-        y = Y;
-        z = Z;
-    }
-};
-
-union Vec4p {
+typedef union Vec4p {
     struct {
         /* 00 */ q20 x;
         /* 04 */ q20 y;
@@ -149,196 +89,6 @@ union Vec4p {
         /* 10 */
     };
     q20 coords[4];
-
-    void operator=(const Vec4p &from) {
-        this->x = from.x;
-        this->y = from.y;
-        this->z = from.z;
-        this->w = from.w;
-    }
-
-    Vec4p() {}
-    Vec4p(q20 X, q20 Y, q20 Z, q20 W) {
-        x = X;
-        y = Y;
-        z = Z;
-        w = W;
-    }
-};
-
-struct Mat2p {
-    /* 00 */ Vec2p xColumn;
-    /* 08 */ Vec2p yColumn;
-    /* 10 */
-
-    Mat2p() {}
-    Mat2p(Vec2p X, Vec2p Y) {
-        xColumn = X;
-        yColumn = Y;
-    }
-};
-
-struct Mat3p {
-    /* 00 */ Vec3p xColumn;
-    /* 0C */ Vec3p yColumn;
-    /* 18 */ Vec3p zColumn;
-    /* 24 */
-
-    Mat3p() {}
-    Mat3p(Vec3p X, Vec3p Y, Vec3p Z) {
-        xColumn = X;
-        yColumn = Y;
-        zColumn = Z;
-    }
-};
-
-struct Mat4x3p {
-    /* 00 */ Vec3p xColumn;
-    /* 0C */ Vec3p yColumn;
-    /* 18 */ Vec3p zColumn;
-    /* 24 */ Vec3p wColumn;
-    /* 30 */
-
-    Mat4x3p() {}
-    Mat4x3p(Vec3p X, Vec3p Y, Vec3p Z, Vec3p W) {
-        xColumn = X;
-        yColumn = Y;
-        zColumn = Z;
-        wColumn = W;
-    }
-};
-
-struct Mat4p {
-    /* 00 */ Vec4p xColumn;
-    /* 10 */ Vec4p yColumn;
-    /* 20 */ Vec4p zColumn;
-    /* 30 */ Vec4p wColumn;
-    /* 40 */
-
-    Mat4p() {}
-    Mat4p(Vec4p X, Vec4p Y, Vec4p Z, Vec4p W) {
-        xColumn = X;
-        yColumn = Y;
-        zColumn = Z;
-        wColumn = W;
-    }
-};
-
-extern "C" static inline void Vec2s_Clear(Vec2s *pVec) {
-    s16 x = 0, y = 0;
-
-    pVec->x = *(s16 *) &x;
-    pVec->y = *(s16 *) &y;
-}
-
-//! TODO: remove
-extern "C" static inline Vec2s *Vec2s_New(s16 x, s16 y) {
-    Vec2s vec;
-    vec.x = x;
-    vec.y = y;
-    return &vec;
-}
-
-//! TODO: remove
-extern "C" static inline Vec2s *Vec2s_GetCopy(Vec2s *src) {
-    Vec2s vec;
-    vec.x = src->x;
-    vec.y = src->y;
-    return &vec;
-}
-
-extern "C" static inline void Vec2s_Add(const Vec2s *a, const Vec2s *b, Vec2s *dst) {
-    s16 x;
-    s16 y;
-
-    const Vec2s *real_a = (const Vec2s *) a;
-
-    x = real_a->x + b->x;
-    y = real_a->y + b->y;
-
-    dst->x = x;
-    dst->y = y;
-}
-
-extern "C" static inline void Vec2s_OffsetAdd(const Vec2s *a, const Vec2s *b, const Vec2s *o, Vec2s *dst) {
-    s16 x;
-    s16 y;
-
-    const Vec2s *real_a = (const Vec2s *) a;
-
-    x = real_a->x + b->x;
-    y = real_a->y + b->y;
-
-    dst->x = x + o->x;
-    dst->y = y + o->y;
-}
-
-extern "C" static inline void Vec2s_Sub(const Vec2s *a, const Vec2s *b, Vec2s *dst) {
-    s16 x;
-    s16 y;
-
-    x = a->x - b->x;
-    y = a->y - b->y;
-
-    dst->x = x;
-    dst->y = y;
-}
-
-extern "C" static inline void Vec2s_OffsetSub(const Vec2s *a, const Vec2s *b, const Vec2s *o, Vec2s *dst) {
-    s16 x;
-    s16 y;
-
-    x = a->x - b->x;
-    y = a->y - b->y;
-
-    dst->x = x + o->x;
-    dst->y = y + o->y;
-}
-
-extern "C" static inline void Vec2s_Copy(const Vec2s *src, Vec2s *dst) {
-    s16 x = ((u16 *) src)[0];
-    s16 y = ((u16 *) src)[1];
-
-    dst->x = src->x; // regalloc/stack access fixes
-    dst->x = x;
-
-    dst->y = src->y; // not required but for consistency
-    dst->y = y;
-}
-
-extern "C" {
-#else
-typedef struct Vec2b {
-    /* 0 */ u8 x;
-    /* 1 */ u8 y;
-    /* 2 */
-} Vec2b;
-
-typedef struct Vec2us {
-    /* 0 */ u16 x;
-    /* 2 */ u16 y;
-    /* 4 */
-} Vec2us;
-
-typedef struct Vec2p {
-    /* 0 */ q20 x;
-    /* 4 */ q20 y;
-    /* 8 */
-} Vec2p;
-
-typedef struct Vec3p {
-    /* 0 */ q20 x;
-    /* 4 */ q20 y;
-    /* 8 */ q20 z;
-    /* C */
-} Vec3p;
-
-typedef struct Vec4p {
-    /* 00 */ q20 x;
-    /* 04 */ q20 y;
-    /* 08 */ q20 z;
-    /* 0C */ q20 w;
-    /* 10 */
 } Vec4p;
 
 typedef struct Mat2p {
@@ -369,18 +119,6 @@ typedef struct Mat4p {
     /* 30 */ Vec4p wColumn;
     /* 40 */
 } Mat4p;
-#endif
-
-#ifdef __cplusplus
-}
-extern "C" {
-#endif
-
-typedef struct VEC2S {
-    /* 0 */ s16 x;
-    /* 1 */ s16 y;
-    /* 2 */
-} VEC2S;
 
 u32 func_01ff9f3c(s32 a, s32 b);
 s32 Atan2(s32 x, s32 y);
@@ -420,14 +158,14 @@ q20 Vec3p_DistanceSquared(Vec3p *a, Vec3p *b);
 void Vec3p_Scale(Vec3p *vec, q20 scale);
 bool Vec3p_CalculateNormal(Vec3p *vec, Vec3p *a, Vec3p *b, Vec3p *c);
 
-inline void Vec3p_Rotate(Vec3p *vec, q20 sin, q20 cos, Vec3p *out) {
+static inline void Vec3p_Rotate(Vec3p *vec, q20 sin, q20 cos, Vec3p *out) {
     out->x += MUL_Q20(vec->z, sin);
     out->z += MUL_Q20(vec->z, cos);
     out->x += MUL_Q20(vec->x, cos);
     out->z += MUL_Q20(vec->x, -sin);
 }
 
-inline void Vec3p_CopyXZ(Vec3p *vec, Vec3p *out) {
+static inline void Vec3p_CopyXZ(Vec3p *vec, Vec3p *out) {
     q20 z = vec->z;
     q20 x = vec->x;
 
@@ -436,10 +174,16 @@ inline void Vec3p_CopyXZ(Vec3p *vec, Vec3p *out) {
     out->z = z;
 }
 
-inline void Vec3p_Copy(Vec3p *vec, Vec3p *out) {
+static inline void Vec3p_Copy(Vec3p *vec, Vec3p *out) {
     out->x = vec->x;
     out->y = vec->y;
     out->z = vec->z;
+}
+
+static inline void Vec3p_Init(q20 x, q20 y, q20 z, Vec3p *dst) {
+    dst->x = x;
+    dst->y = y;
+    dst->z = z;
 }
 
 void Mat2p_InitIdentity(Mat2p *m);

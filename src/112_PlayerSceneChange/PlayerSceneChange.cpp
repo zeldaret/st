@@ -7,7 +7,7 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cdc.hpp"
 
-#include <nitro/math.h>
+#include "math.hpp"
 
 extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_ov000_0205d65c(void *, Vec3p *, Vec3p *, u32);

@@ -6,8 +6,8 @@
 #include "Unknown/UnkSystem1.hpp"
 #include "global.h"
 #include "iterator.hpp"
+#include "math.hpp"
 #include "types.h"
-#include <nitro/math.h>
 
 typedef Iterator<UnkSubStruct9> FileSlotIterator;
 

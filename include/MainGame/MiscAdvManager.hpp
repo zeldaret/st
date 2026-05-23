@@ -5,7 +5,7 @@
 #include "global.h"
 #include "types.h"
 
-#include <nitro/math.h>
+#include "math.hpp"
 
 #define MAX_PRICECARDS 99
 

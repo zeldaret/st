@@ -1,7 +1,7 @@
 #pragma once
 
+#include "math.hpp"
 #include "types.h"
-#include <nitro/math.h>
 #include <nitro/touch.h>
 
 typedef u16 TouchFlags;
@@ -35,10 +35,10 @@ public:
     void IncreaseSpeed(u16 increase);
     void UpdateFlags(u16 speed);
     void UpdateWithStateFlags(TouchStateFlags *state, u16 speed);
-    void Update(TouchState *state, u16 speed);
+    void Update(const TouchState *state, u16 speed);
     void func_02014414(u16 speedIncrease, bool shouldIncrease);
     void func_02014478(TouchState *state, u16 speed);
 
     static bool func_020143f0();
-    static void UpdateState(TouchState *state, TouchStateFlags *stateFlags);
+    static void UpdateState(TouchState *state, const TouchStateFlags *stateFlags);
 };
