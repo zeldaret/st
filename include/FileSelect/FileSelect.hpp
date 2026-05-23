@@ -144,12 +144,12 @@ public:
     /* 00 */ u16 mUnk_02;
     /* 04 */ u16 mUnk_04[2];
     /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
+    /* 0C */ volatile unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
-    /* 14 */ volatile unk32 mUnk_14;
-    /* 18 */ volatile unk32 mUnk_18;
-    /* 1C */ Vec2s mUnk_1C;
-    /* 20 */ unk32 mUnk_20;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ Vec2sC mUnk_1C;
+    /* 20 */ volatile unk32 mUnk_20;
 };
 
 class UnkStruct_ov019_020d1e94 {

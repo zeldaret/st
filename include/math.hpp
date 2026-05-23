@@ -2,6 +2,18 @@
 
 #include <nitro/math.h>
 
+extern "C" {
+//! TODO: find a way to remove that
+typedef union Vec2sC {
+    struct {
+        /* 0 */ s16 x;
+        /* 2 */ s16 y;
+        /* 4 */
+    };
+    s16 coords[2];
+} Vec2sC;
+}
+
 union Vec2s {
     struct {
         /* 0 */ s16 x;
@@ -9,6 +21,11 @@ union Vec2s {
         /* 4 */
     };
     s16 coords[2];
+
+    void operator=(const Vec2s &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
 
     Vec2s() {}
     Vec2s(s16 X, s16 Y) {
@@ -59,6 +76,68 @@ static inline void Vec2s_Copy(const Vec2s *a, Vec2s *dst) {
 #endif
 }
 
+union Vec2us {
+    struct {
+        /* 0 */ u16 x;
+        /* 2 */ u16 y;
+        /* 4 */
+    };
+    u16 coords[2];
+
+    void operator=(const Vec2us &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
+
+    Vec2us() {}
+    Vec2us(u16 X, u16 Y) {
+        x = X;
+        y = Y;
+    }
+};
+
+#define Vec2us_CopyAdd(a, b, dst) Vec2_CopyAdd(Vec2us, a, b, dst)
+#define Vec2us_CopySub(a, b, dst) Vec2_CopySub(Vec2us, a, b, dst)
+#define Vec2us_Set(a, dst) Vec2_Set(a, dst)
+
+static inline void Vec2us_Clear(Vec2us *dst) {
+    Vec2us empty;
+    empty.x = 0;
+    empty.y = 0;
+
+#if __MWERKS__
+    dst->coords = empty.coords;
+#else
+    dst->x = empty.x;
+    dst->y = empty.y;
+#endif
+}
+
+static inline void Vec2us_Add(const Vec2us *a, const Vec2us *b, Vec2us *dst) {
+    u16 x = a->x + b->x;
+    u16 y = a->y + b->y;
+
+    dst->x = x;
+    dst->y = y;
+}
+
+static inline void Vec2us_Sub(const Vec2us *a, const Vec2us *b, Vec2us *dst) {
+    u16 x = a->x - b->x;
+    u16 y = a->y - b->y;
+
+    dst->x = x;
+    dst->y = y;
+}
+
+static inline void Vec2us_Copy(const Vec2us *a, Vec2us *dst) {
+#if __MWERKS__
+    dst->coords = a->coords;
+#else
+    dst->x = a->x;
+    dst->y = a->y;
+#endif
+}
+
 union Vec2b {
     struct {
         /* 0 */ u8 x;
@@ -66,6 +145,11 @@ union Vec2b {
         /* 4 */
     };
     u8 coords[2];
+
+    void operator=(const Vec2b &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
 
     Vec2b() {}
     Vec2b(u8 X, u8 Y) {
@@ -119,10 +203,15 @@ static inline void Vec2b_Copy(const Vec2b *a, Vec2b *dst) {
 union Vec2pCpp {
     struct {
         /* 0 */ q20 x;
-        /* 2 */ q20 y;
-        /* 4 */
+        /* 4 */ q20 y;
+        /* 8 */
     };
     q20 coords[2];
+
+    void operator=(const Vec2pCpp &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
 
     Vec2pCpp() {}
     Vec2pCpp(q20 X, q20 Y) {

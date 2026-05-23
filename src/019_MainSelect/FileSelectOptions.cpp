@@ -17,11 +17,11 @@ void func_ov000_020623d8(void *param1, unk32 param2);
 
 class UnkStruct_ov019_020d215c {
 public:
-    /* 00 */ Vec2s mUnk_00;
-    /* 04 */ Vec2s mUnk_04;
-    /* 08 */ Vec2s mUnk_08;
-    /* 0C */ Vec2s mUnk_0C;
-    /* 10 */ Vec2s mUnk_10;
+    /* 00 */ Vec2sC mUnk_00;
+    /* 04 */ Vec2sC mUnk_04;
+    /* 08 */ Vec2sC mUnk_08;
+    /* 0C */ Vec2sC mUnk_0C;
+    /* 10 */ Vec2sC mUnk_10;
     /* 14 */
 };
 
@@ -68,7 +68,7 @@ public:
 };
 
 UnkStruct_ov019_020d215c UnkStruct_ov019_020d2170::data_ov019_020d215c = {
-    Vec2s(0, 0), Vec2s(0, 0), Vec2s(0, 0), Vec2s(-0x47, -0x01), Vec2s(0x0281, 0x00),
+    {0, 0}, {0, 0}, {0, 0}, {-0x47, -0x01}, {0x0281, 0x00},
 };
 
 static const UnkStruct_ov019_020d2170 data_ov019_020d2170;

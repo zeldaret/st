@@ -56,20 +56,6 @@ typedef s16 q4;
 #define SIN2(table, n) ((table)[2 * ((n) >> 4)])
 #define COS2(table, n) ((table)[2 * ((n) >> 4) + 1])
 
-typedef union Vec2us {
-    struct {
-        /* 0 */ u16 x;
-        /* 2 */ u16 y;
-        /* 4 */
-    };
-    u16 coords[2];
-} Vec2us;
-
-#define Vec2us_Add(a, b, dst) Vec2_Add(Vec2us, a, b, dst)
-#define Vec2us_Sub(a, b, dst) Vec2_Sub(Vec2us, a, b, dst)
-#define Vec2us_Set(a, dst) Vec2_Set(Vec2us, a, dst)
-#define Vec2us_Clear(dst) Vec2_Clear(u16, dst)
-
 typedef union Vec2p {
     struct {
         /* 0 */ q20 x;

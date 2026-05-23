@@ -37,7 +37,7 @@ UnkStruct_ov019_020d1e94 UnkStruct_ov019_020d1e70::data_ov019_020d1e94 = {
 };
 
 UnkStruct_ov019_020d1e4c UnkStruct_ov019_020d1e70::data_ov019_020d1e4c = {
-    0x14, 0x14, 0x14, 0x04, 0x03, -0x47, 0x00, 0x0281, -0x47, Vec2s(0x00, 0x00), 0x0281,
+    0x14, 0x14, 0x14, 0x04, 0x03, -0x47, 0x00, 0x0281, -0x47, {0x00, 0x00}, 0x0281,
 };
 
 static PTMF<FileSelectMain> data_ov019_020d1f94[FileSelectState_Max] = {
@@ -237,7 +237,7 @@ ARM void FileSelectMain::func_ov019_020c6d10() {
 
 ARM void FileSelectMain::func_ov019_020c6d48() {
     Vec2us auStack_2c;
-    volatile Vec2p local_34;
+    volatile Vec2pCpp local_34;
     int value;
 
     this->func_ov019_020c6c14();
@@ -255,7 +255,7 @@ ARM void FileSelectMain::func_ov019_020c6d48() {
             value = 0;
         }
 
-        this->mUnk_03E8[i].func_ov000_02064080(&auStack_2c, (Vec3p *) &local_34,
+        this->mUnk_03E8[i].func_ov000_02064080(&auStack_2c, (Vec2p *) &local_34,
                                                UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_02, value);
     }
 

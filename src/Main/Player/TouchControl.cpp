@@ -2,16 +2,15 @@
 #include "Unknown/UnkMemFuncs.h"
 
 // non-matching
-ARM void TouchControl::UpdateState(TouchState *state, TouchStateFlags *stateFlags) {
+ARM void TouchControl::UpdateState(TouchState *state, const TouchStateFlags *stateFlags) {
     if (stateFlags->touch == 1) {
         if (stateFlags->flags == 0) {
-            Vec2us pos;
-            pos.y = stateFlags->touchPos.y;
-            pos.x = stateFlags->touchPos.x;
+            state->touch = true;
 
-            state->touch      = true;
-            state->touchPos.x = pos.x;
-            state->touchPos.y = pos.y;
+            u16 x             = stateFlags->touchPos.x;
+            u16 y             = stateFlags->touchPos.y;
+            state->touchPos.x = x;
+            state->touchPos.y = y;
         } else {
             if ((stateFlags->flags & 1) == 0) {
                 state->touchPos.x = stateFlags->touchPos.x;
@@ -125,27 +124,14 @@ ARM void TouchControl::UpdateFlags(u16 speed) {
 }
 
 ARM void TouchControl::UpdateWithStateFlags(TouchStateFlags *state, u16 speed) {
-    *(TouchStateU *) &this->mPrevState = *(TouchStateU *) &this->mState;
+    this->mPrevState = this->mState;
     this->UpdateState(&this->mState, state);
     this->UpdateFlags(speed);
 }
 
-ARM void TouchControl::Update(TouchState *state, u16 speed) {
-    TouchStateU curState = *(TouchStateU *) &this->mState;
-    TouchStateU newState = *(TouchStateU *) &*state;
-
-    this->mPrevState.touch = curState.touch;
-
-    this->mPrevState.touch      = curState.touch;
-    this->mPrevState.unk_01     = curState.unk_01;
-    this->mPrevState.touchPos.x = curState.touchPos.x;
-    this->mPrevState.touchPos.y = curState.touchPos.y;
-
-    this->mState.touch      = newState.touch;
-    this->mState.unk_01     = newState.unk_01;
-    this->mState.touchPos.x = newState.touchPos.x;
-    this->mState.touchPos.y = newState.touchPos.y;
-
+ARM void TouchControl::Update(const TouchState *state, u16 speed) {
+    this->mPrevState = this->mState;
+    this->mState     = *state;
     this->UpdateFlags(speed);
 }
 

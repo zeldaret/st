@@ -177,7 +177,8 @@ ARM FileSelect_UnkClass7::FileSelect_UnkClass7() {
         pos.y = pRandom->Next32(0, SUBSCREEN_HEIGHT);
 
         Vec2us *pVec = &this->mUnk_004.mUnk_E10[i];
-        *pVec        = pos;
+        pVec->x      = pos.x;
+        pVec->y      = pos.y;
     }
 }
 
@@ -193,7 +194,8 @@ ARM void FileSelect_UnkClass7::vfunc_00() {
             pos.y = gRandom.Next32(0, SUBSCREEN_HEIGHT);
 
             Vec2us *pVec = &this->mUnk_004.mUnk_E10[i];
-            *pVec        = pos;
+            pVec->x      = pos.x;
+            pVec->y      = pos.y;
         }
     }
 }

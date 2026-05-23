@@ -29,7 +29,7 @@ static TitleScreenPTMF<TitleScreen> data_ov025_020c5aec[TitleScreenState_Max] = 
 #if IS_JP
 static const Vec2s data_ov025_020c5ae4(0x0000, 0x0000);
 static const Vec2s data_ov025_020c5ae8(0x0000, 0x0000);
-static const Vec2us data_ov025_020c5ae0 = {0x0100, 0x0080};
+static const Vec2us data_ov025_020c5ae0(0x0100, 0x0080);
 static const Vec2s data_ov025_020c7398(0x0100, 0x0080);
 static const Vec2s data_ov025_020c7394(0x0000, 0x0094);
 static const Vec2s data_ov025_020c738e(0x0100, 0x0020);
@@ -37,7 +37,7 @@ static const Vec2s data_ov025_020c738c(0x0100, 0x0020);
 #else
 static const Vec2s data_ov025_020c5ae4(0x0000, 0x0020);
 static const Vec2s data_ov025_020c5ae8(0x0100, 0x0080);
-static const Vec2us data_ov025_020c5ae0 = {0x0100, 0x0080};
+static const Vec2us data_ov025_020c5ae0(0x0100, 0x0080);
 #endif
 
 TitleScreen::TitleScreen() :

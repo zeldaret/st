@@ -9,7 +9,9 @@ extern "C" {
 #endif
 
 typedef struct TouchStateFlags {
-    /* 00 */ Vec2us touchPos;
+    /* 00 */ struct {
+        u16 x, y;
+    } touchPos;
     /* 04 */ u16 touch;
     /* 06 */ u16 flags;
 } TouchStateFlags; // size = 0x08
@@ -17,14 +19,10 @@ typedef struct TouchStateFlags {
 typedef struct TouchState {
     /* 00 */ bool touch;
     /* 01 */ bool unk_01;
-    /* 02 */ Vec2s touchPos;
+    /* 02 */ struct {
+        s16 x, y;
+    } touchPos;
 } TouchState; // size = 0x06
-
-typedef struct TouchStateU {
-    /* 00 */ bool touch;
-    /* 01 */ bool unk_01;
-    /* 02 */ Vec2us touchPos;
-} TouchStateU; // size = 0x06
 
 void WaitForTouchUpdate(u16 param1);
 bool TP_GetTouchStateFlags(TouchStateFlags *pState);

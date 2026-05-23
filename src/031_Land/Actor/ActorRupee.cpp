@@ -100,10 +100,12 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
             this->mUnk_94 = 0;
             {
                 Vec3p vel;
-                vel.x      = 0;
-                vel.y      = 0;
-                vel.z      = 0;
-                this->mVel = vel;
+                vel.x        = 0;
+                vel.y        = 0;
+                vel.z        = 0;
+                this->mVel.x = vel.x;
+                this->mVel.y = vel.y;
+                this->mVel.z = vel.z;
             }
             this->func_ov031_020e9904(0);
             break;
@@ -123,7 +125,9 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
                 q20 vz = gRandom.Next32(0, 0x223) - 0x111;
                 vel.z  = vz;
 
-                this->mVel = vel;
+                this->mVel.x = vel.x;
+                this->mVel.y = vel.y;
+                this->mVel.z = vel.z;
             }
             this->func_ov031_020e9904(0);
             break;
@@ -133,10 +137,12 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
             this->mUnk_94 = 0;
             {
                 Vec3p vel;
-                vel.x      = 0;
-                vel.y      = 0x800;
-                vel.z      = 0;
-                this->mVel = vel;
+                vel.x        = 0;
+                vel.y        = 0x800;
+                vel.z        = 0;
+                this->mVel.x = vel.x;
+                this->mVel.y = vel.y;
+                this->mVel.z = vel.z;
             }
             this->func_ov031_020e9904(0);
             break;
@@ -337,7 +343,7 @@ ARM void ActorRupee::func_ov031_020e9438() {
 
 ARM void ActorRupee::func_ov031_020e9450() {
     this->func_ov017_020bf9c8(gpActorManager->func_01fff3b4(this->mUnk_BC));
-    this->mPrevPos = this->mPos;
+    Vec3p_Copy(&this->mPos, &this->mPrevPos);
     Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (!GET_FLAG(this->mFlags, ActorFlag_5)) {
