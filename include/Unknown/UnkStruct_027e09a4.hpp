@@ -301,7 +301,8 @@ public:
     ~UnkStruct_027e09a4();
 
     // itcm
-    bool IsOnTrain();
+    bool IsLand();
+    bool IsTrain();
     CourseEntry *GetCurrentCourseEntry() const;
 
     // overlay 0

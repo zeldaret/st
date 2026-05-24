@@ -185,7 +185,7 @@ void AdventureModeManager_180::vfunc_20(unk32 param1, unk32 param2) {
             GetAdventureModeManager()->func_ov024_020c555c(0);
             GetAdventureModeManager()->func_ov024_020c53e8();
 
-            if (data_027e09a4->IsOnTrain()) {
+            if (data_027e09a4->IsTrain()) {
                 GetAdventureModeManager()->func_ov024_020c671c();
             } else {
                 GetAdventureModeManager()->func_ov024_020c66c0();

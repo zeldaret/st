@@ -116,7 +116,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             data_0204a110.mUnk_D9C.func_0201c494(1);
             break;
         case 3:
-            if (data_027e09a4->IsOnTrain()) {
+            if (data_027e09a4->IsTrain()) {
                 this->func_ov024_020c5364();
             } else {
                 this->func_ov024_020c52f4();
@@ -131,7 +131,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             }
             break;
         case 4:
-            if (data_027e09a4->IsOnTrain()) {
+            if (data_027e09a4->IsTrain()) {
                 this->func_ov024_020c5364();
             } else {
                 this->func_ov024_020c52f4();
@@ -147,7 +147,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             }
             break;
         case 5:
-            if (data_027e09a4->IsOnTrain()) {
+            if (data_027e09a4->IsTrain()) {
                 this->func_ov024_020c537c();
             } else {
                 this->func_ov024_020c530c();
@@ -184,7 +184,7 @@ void AdventureModeManager::vfunc_24() {
             this->mUnk_15C->func_ov017_020c3c64();
         }
 
-        if (data_027e09a4->IsOnTrain()) {
+        if (data_027e09a4->IsTrain()) {
             data_ov026_0213f578->func_ov026_020f4844();
         }
 
@@ -253,7 +253,7 @@ void AdventureModeManager::vfunc_24() {
         return;
     }
 
-    if (data_027e09a4->IsOnTrain()) {
+    if (data_027e09a4->IsTrain()) {
         data_027e0ce0->mUnk_38->mUnk_010->func_ov026_020f4870();
     }
 
@@ -400,7 +400,7 @@ void AdventureModeManager::vfunc_24() {
                 }
             }
 
-            if (!data_027e09a4->IsOnTrain()) {
+            if (!data_027e09a4->IsTrain()) {
                 return;
             }
 
@@ -432,7 +432,7 @@ void AdventureModeManager::vfunc_24() {
 void AdventureModeManager::func_ov024_020c5cec() {
     data_ov024_020d8698->func_ov024_020cd420();
 
-    if (!data_027e09a4->IsOnTrain()) {
+    if (!data_027e09a4->IsTrain()) {
         data_ov024_020d8698->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
 
         if (gOverlayManager.IsPlayerSub() && data_0204a088->mUnk_00 == OverlayIndex_SceneInit) {
@@ -455,8 +455,8 @@ bool AdventureModeManager::func_ov024_020c5dac() {
             !data_027e09b8->func_ov000_020732dc(3) && !data_027e09b8->func_ov000_020732dc(4)) {
             if (data_0204e5f8.mUnk_00.GetNextTarget() == GetLinkListOrigin(data_0204e5f8.mUnk_00) &&
                 (unk_00 != 1 || this->func_ov024_020c69d0() != 0) &&
-                (data_027e09a4->IsOnTrain() || this->mUnk_168->func_ov031_0210dfd8() == 0) &&
-                (!data_027e09a4->IsOnTrain() || data_ov026_02138d10->func_ov026_020e18fc() != 0)) {
+                (data_027e09a4->IsTrain() || this->mUnk_168->func_ov031_0210dfd8() == 0) &&
+                (!data_027e09a4->IsTrain() || data_ov026_02138d10->func_ov026_020e18fc() != 0)) {
                 return true;
             }
         }
@@ -479,7 +479,7 @@ bool AdventureModeManager::func_ov024_020c5ecc() {
 bool AdventureModeManager::func_ov024_020c5f70() {
     bool var_r4 = false;
 
-    if (data_027e09a4->IsOnTrain()) {
+    if (data_027e09a4->IsTrain()) {
         var_r4 = true;
     } else if (data_027e0d34 != NULL) {
         var_r4 = data_027e0d34->func_ov031_020d97f4();
@@ -492,7 +492,7 @@ bool AdventureModeManager::func_ov024_020c5f70() {
             if (data_0204e5f8.mUnk_00.GetNextTarget() == GetLinkListOrigin(data_0204e5f8.mUnk_00) &&
                 (unk_00 == 1 || unk_00 - 6 <= 1) && (unk_00 != 1 || this->func_ov024_020c69d0() != 0) &&
                 (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == NULL) &&
-                (data_027e09a4->IsOnTrain() || this->mUnk_168->func_ov031_0210dfd8() == 0) && !data_027e09a4->IsDarkRealm()) {
+                (data_027e09a4->IsTrain() || this->mUnk_168->func_ov031_0210dfd8() == 0) && !data_027e09a4->IsDarkRealm()) {
                 return true;
             }
         }
@@ -504,7 +504,7 @@ bool AdventureModeManager::func_ov024_020c5f70() {
 bool AdventureModeManager::func_ov024_020c60f4() {
     bool var_r4 = false;
 
-    if (data_027e09a4->IsOnTrain()) {
+    if (data_027e09a4->IsTrain()) {
         var_r4 = true;
     } else if (data_027e0d34 != NULL) {
         var_r4 = data_027e0d34->func_ov031_020d97e4();
@@ -671,7 +671,7 @@ void AdventureModeManager::func_ov024_020c66c0() {
 void AdventureModeManager::func_ov024_020c671c() {
     this->func_ov024_020c6770(this->mUnk_1C4.sceneIndex, this->mUnk_1C4.unk_04, 1, this->mUnk_1C4.unk_06);
 
-    if (data_027e09a4->IsOnTrain()) {
+    if (data_027e09a4->IsTrain()) {
         data_027e0ce0->mUnk_38->mUnk_158->func_ov026_020dc2d0();
     }
 }
@@ -679,7 +679,7 @@ void AdventureModeManager::func_ov024_020c671c() {
 void AdventureModeManager::func_ov024_020c6770(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4) {
     this->func_ov024_020c6514(sceneIndex, param2, param3, param4);
 
-    if (data_027e09a4->IsOnTrain()) {
+    if (data_027e09a4->IsTrain()) {
         data_027e0cf8->func_ov024_020c77b0(1);
     } else {
         data_027e0cf8->func_ov024_020c77b0(0);
@@ -766,7 +766,7 @@ void AdventureModeManager::func_ov024_020c699c() {
 }
 
 unk32 AdventureModeManager::func_ov024_020c69d0() {
-    if (data_027e09a4->IsOnTrain()) {
+    if (data_027e09a4->IsTrain()) {
         unk32 uVar2 = 0;
 
         if (this->mUnk_16C != NULL && this->mUnk_16C->func_ov026_020d8e30() != 0) {
@@ -798,7 +798,7 @@ void AdventureModeManager::func_ov024_020c6a48(unk32 param1, bool param2) {
             data_ov024_020d8698->func_ov024_020cd4e4(param1, param2);
             break;
         case 4:
-            if (data_027e09a4->IsOnTrain()) {
+            if (data_027e09a4->IsTrain()) {
                 this->mUnk_16C->func_ov026_020d8dd4(param2);
             } else {
                 this->mUnk_168->func_ov031_0210df70(param2);
@@ -825,7 +825,7 @@ bool AdventureModeManager::func_ov024_020c6af4(unk32 param1) {
 
             return data_ov024_020d8698->func_ov024_020cd5c0(param1);
         case 4:
-            if (data_027e09a4->IsOnTrain()) {
+            if (data_027e09a4->IsTrain()) {
                 if (this->mUnk_16C != NULL) {
                     return this->mUnk_16C->mUnk_1C;
                 }
@@ -862,7 +862,7 @@ void AdventureModeManager::func_ov024_020c6b8c() {
         this->mUnk_1B4 = true;
     }
 
-    if (!data_027e09a4->IsOnTrain()) {
+    if (!data_027e09a4->IsTrain()) {
         if (!this->mUnk_1B5 && this->mUnk_1B0 != NULL) {
             AdventureModeManager_1B0 *ptr = this->mUnk_1B0;
             this->mUnk_104.Append(ptr);
@@ -879,7 +879,7 @@ void AdventureModeManager::func_ov024_020c6c60() {
         this->mUnk_1B4 = false;
     }
 
-    if (!data_027e09a4->IsOnTrain()) {
+    if (!data_027e09a4->IsTrain()) {
         if (this->mUnk_1B5 && this->mUnk_1B0 != NULL) {
             this->mUnk_1B0->Detach();
             this->mUnk_1B5 = false;

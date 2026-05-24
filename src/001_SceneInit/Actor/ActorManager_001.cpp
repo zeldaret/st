@@ -16,7 +16,6 @@ void func_ov001_020ba59c(void *);
 void func_ov021_020f8818();
 void func_ov031_020ea100();
 void func_ov071_0215e8d4();
-unk32 func_01ffd3b0();
 }
 
 struct UnkStruct_ov000_020ab1ac {
@@ -119,7 +118,7 @@ THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param
     if (data_027e09a4->mUnk_60 != 2) {
         unk32 iVar5;
 
-        if (func_01ffd3b0() != 0) {
+        if (data_027e09a4->IsLand() != 0) {
             iVar5 = data_027e09a4->mUnk_00.mSceneIndex;
 
             if (iVar5 == SceneIndex_f_rabbit) {
@@ -185,7 +184,7 @@ THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param
                 auStack_64.func_ov000_02059270(0x32, "zeldahit", 0x29200000);
                 auStack_64.func_ov000_02059270(0x33, "zeldatarget", 0x2D200000);
             }
-        } else if (data_027e09a4->IsOnTrain()) {
+        } else if (data_027e09a4->IsTrain()) {
             UnkStruct_StackTitleScreen auStack_78("Npc/Tex.bin", 1);
             auStack_78.func_ov000_02059270(0x12, "rupy0", 0x2D200000);
             auStack_78.func_ov000_02059288(0x13, "rupy1", 0x12);

@@ -329,7 +329,7 @@ void UnkTitleCardSystem1_Derived1::vfunc_0C() {
 }
 
 void UnkTitleCardSystem1_Derived1::vfunc_10() {
-    if (data_027e09a4->IsOnTrain()) {
+    if (data_027e09a4->IsTrain()) {
         if (data_0204a110.mUnk_DF4 == 0) {
             this->mUnk_004 = 0x07;
         } else {
