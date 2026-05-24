@@ -724,13 +724,13 @@ data_ov024_020d731c kind:data(any) addr:0x020d731c ambiguous
 data_ov024_020d7320 kind:data(any) addr:0x020d7320 ambiguous
 data_ov024_020d7324 kind:data(any) addr:0x020d7324 ambiguous
 sBMGSceneMap kind:data(any) addr:0x020d7328 local
-data_ov024_020d73d8 kind:data(any) addr:0x020d73d8
-data_ov024_020d73de kind:data(any) addr:0x020d73de
-data_ov024_020d73ec kind:data(any) addr:0x020d73ec
-data_ov024_020d73fa kind:data(any) addr:0x020d73fa
-data_ov024_020d740a kind:data(any) addr:0x020d740a
-data_ov024_020d741e kind:data(any) addr:0x020d741e
-data_ov024_020d7432 kind:data(any) addr:0x020d7432
+data_ov024_020d73d8 kind:data(any) addr:0x020d73d8 local
+data_ov024_020d73de kind:data(any) addr:0x020d73de local
+data_ov024_020d73ec kind:data(any) addr:0x020d73ec local
+data_ov024_020d73fa kind:data(any) addr:0x020d73fa local
+data_ov024_020d740a kind:data(any) addr:0x020d740a local
+data_ov024_020d741e kind:data(any) addr:0x020d741e local
+data_ov024_020d7432 kind:data(any) addr:0x020d7432 local
 data_ov024_020d7454 kind:data(any) addr:0x020d7454
 data_ov024_020d7544 kind:data(any) addr:0x020d7544 local
 data_ov024_020d7547 kind:data(any) addr:0x020d7547 local

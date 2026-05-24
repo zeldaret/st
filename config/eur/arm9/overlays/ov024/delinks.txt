@@ -110,8 +110,11 @@ src/024_MainGame/UnkTitleCardSystem1_024.cpp:
     .data       start:0x020d7fa4 end:0x020d8064
 
 src/024_MainGame/UnkStruct_020d8698_024.cpp:
+    complete
     .text       start:0x020ccd1c end:0x020cf968
+    .rodata     start:0x020d73d8 end:0x020d7454
     .data       start:0x020d8064 end:0x020d8094
+    .bss        start:0x020d8698 end:0x020d869c
 
 src/024_MainGame/UnkStruct_027e0cf8_00_0C_024.cpp:
     .text       start:0x020cf968 end:0x020d05ec

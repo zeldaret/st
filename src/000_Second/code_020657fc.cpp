@@ -1,7 +1,7 @@
 #include "Unknown/UnkStruct_020d8698.hpp"
 
 // non-matching
-UnkStruct_020d8698_24_5C_Base::UnkStruct_020d8698_24_5C_Base(unk32 param1, u16 *param2, u16 param3, unk32 param4) {
+UnkStruct_020d8698_24_5C_Base::UnkStruct_020d8698_24_5C_Base(unk32 param1, const u16 *param2, u16 param3, unk32 param4) {
     this->mUnk_80 = 0;
     this->mUnk_84 = 0;
 
@@ -12,7 +12,7 @@ UnkStruct_020d8698_24_5C_Base::UnkStruct_020d8698_24_5C_Base(unk32 param1, u16 *
     }
 }
 
-UnkStruct_020d8698_24_5C::UnkStruct_020d8698_24_5C(unk32 param1, u16 *param2, u16 param3, unk32 param4) :
+UnkStruct_020d8698_24_5C::UnkStruct_020d8698_24_5C(unk32 param1, const u16 *param2, u16 param3, unk32 param4) :
     UnkStruct_020d8698_24_5C_Base(param1, param2, param3, param4) {
     this->mUnk_98 = 0;
     this->mUnk_9C = 0;

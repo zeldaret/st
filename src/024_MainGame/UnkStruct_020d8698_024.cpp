@@ -13,12 +13,38 @@
 
 extern "C" s16 func_020196b0(unk32 param1);
 extern "C" unk32 func_02015788(u16 param1);
-extern u16 data_ov024_020d73de[];
-extern u16 data_ov024_020d73ec[];
-extern u16 data_ov024_020d73fa[];
-extern u16 data_ov024_020d740a[];
-extern u16 data_ov024_020d741e[];
-extern u16 data_ov024_020d7432[];
+
+UnkStruct_020d8698 *data_ov024_020d8698 = NULL;
+
+static const u16 data_ov024_020d73d8[] = {
+    0x09,
+    0x0A,
+    0x08,
+};
+
+static const u16 data_ov024_020d73de[] = {
+    0x01, 0x02, 0x03, 0x00, 0x05, 0x06, 0x04,
+};
+
+static const u16 data_ov024_020d73ec[] = {
+    0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06,
+};
+
+static const u16 data_ov024_020d73fa[] = {
+    0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+};
+
+static const u16 data_ov024_020d741e[] = {
+    0x1A, 0x19, 0x18, 0x1D, 0x1C, 0x1B, 0x20, 0x1F, 0x1E, 0x23,
+};
+
+static const u16 data_ov024_020d740a[] = {
+    0x02, 0x01, 0x00, 0x05, 0x04, 0x03, 0x08, 0x07, 0x06, 0x0B,
+};
+
+static const u16 data_ov024_020d7432[] = {
+    0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x00,
+};
 
 UnkStruct_020d8698 *UnkStruct_020d8698::Create() {
     return new(HeapIndex_1) UnkStruct_020d8698();
@@ -1232,14 +1258,75 @@ void UnkStruct_020d8698_2C::func_ov024_020cf5a8(bool param1) {
     }
 }
 
-UnkStruct_020d8698_34::UnkStruct_020d8698_34() {}
-void UnkStruct_020d8698_34::func_ov024_020cf698() {}
-void UnkStruct_020d8698_34::func_ov024_020cf6e4() {}
-void UnkStruct_020d8698_34::func_ov024_020cf724() {}
+UnkStruct_020d8698_34::UnkStruct_020d8698_34() {
+    this->mUnk_90 = 0;
+    this->mUnk_92 = 0;
+    this->func_ov024_020cf698();
+    UnkStruct_ov019_020d24c8_28_258 local_2c(0x5E, 0x04);
+    UnkStruct_ov019_020d24c8_28_258 local_44(0x5E, 0x05);
+    this->mUnk_90 = local_44.mPos.x - local_2c.mPos.x;
+}
 
-UnkStruct_020d8698_3C::UnkStruct_020d8698_3C() {}
-void UnkStruct_020d8698_3C::func_ov024_020cf82c() {}
+void UnkStruct_020d8698_34::func_ov024_020cf698() {
+    this->mUnk_00.UnknownAction(0x5E, 0x04);
+    this->mUnk_18.func_ov000_0206082c(0x5E, 0x00);
+}
+
+void UnkStruct_020d8698_34::func_ov024_020cf6e4() {
+    this->mUnk_18.func_ov000_020609c4();
+
+    u8 amount = data_027e0ce0->mUnk_2C->GetKeyAmount();
+    if (amount > this->mUnk_92) {
+        this->mUnk_18.func_ov000_02060b64();
+        this->mUnk_92 = amount;
+    }
+}
+
+void UnkStruct_020d8698_34::func_ov024_020cf724() {
+    const s32 amount = data_027e0ce0->mUnk_2C->GetKeyAmount();
+
+    if (amount <= 0) {
+        return;
+    }
+
+    s16 offsetX = 0;
+    for (int i = 0; i < amount; i++) {
+        if (i == amount - 1 && !this->mUnk_18.func_ov000_02060af8()) {
+            Vec2s sStack_28;
+            Vec2s offset(offsetX, 0);
+            Vec2s_Add(&this->mUnk_00.mPos, &offset, &sStack_28);
+            data_0204af1c.func_0201aad0(&this->mUnk_18, &sStack_28, 1, NULL);
+        } else {
+            data_0204af1c.func_0201aa8c(&this->mUnk_00, 1, 0, offsetX, 0);
+        }
+
+        offsetX += this->mUnk_90;
+    }
+}
+
+UnkStruct_020d8698_3C::UnkStruct_020d8698_3C() {
+    this->func_ov024_020cf82c();
+}
+
+void UnkStruct_020d8698_3C::func_ov024_020cf82c() {
+    this->mUnk_00.UnknownAction(0x5E, 0x09);
+    this->mUnk_18.UnknownAction(0x5E, 0x0B);
+}
+
 void UnkStruct_020d8698_3C::func_ov024_020cf888() {}
-void UnkStruct_020d8698_3C::func_ov024_020cf88c() {}
+
+void UnkStruct_020d8698_3C::func_ov024_020cf88c() {
+    const s32 amount = data_027e0ce0->mUnk_2C->GetTearsAmount();
+
+    for (int i = 0; i < MAX_TEARS_OF_LIGHT; i++) {
+        UnkStruct_ov019_020d24c8_28_258 local_3c(0x5E, data_ov024_020d73d8[i]);
+
+        if (i < amount) {
+            data_0204af1c.func_0201aa44(&this->mUnk_18, &local_3c.mPos, 0, NULL);
+        } else {
+            data_0204af1c.func_0201aa44(&this->mUnk_00, &local_3c.mPos, 0, NULL);
+        }
+    }
+}
 
 DECL_INSTANCE(UnkStruct_020d8698, data_ov024_020d8698);

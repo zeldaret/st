@@ -77,6 +77,14 @@ public:
     /* 24 */ unk8 mUnk_27;
     /* 28 */
 
+    u8 GetTearsAmount() const {
+        return this->mTearsAmount;
+    }
+
+    u8 GetKeyAmount() const {
+        return this->mKeyAmount;
+    }
+
     ItemManager();
     ~ItemManager();
 
