@@ -3,8 +3,8 @@
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
-#include "regs.h"
 #include "types.h"
+#include <nitro/reg.h>
 
 extern "C" {
 void GX_SetGraphicsMode(unk32 param1, unk32 param2, unk32 param3);

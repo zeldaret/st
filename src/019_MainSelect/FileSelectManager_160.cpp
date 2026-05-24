@@ -1,7 +1,7 @@
 #include "FileSelect/FileSelect.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
-#include "regs.h"
+#include <nitro/reg.h>
 
 extern "C" GameModeManagerBase_104 *func_ov003_020b6520(void *param1, void *param2);
 

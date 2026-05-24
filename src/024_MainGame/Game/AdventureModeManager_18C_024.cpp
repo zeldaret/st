@@ -8,7 +8,7 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-#include "regs.h"
+#include <nitro/reg.h>
 
 extern "C" AdventureModeManager_18C_10 *func_ov011_020b6520(void *, int);
 extern "C" void func_ov011_020b84f0(s16 *param1, void *, unk32 param2);

@@ -3,7 +3,7 @@
 #include "System/Random.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "global.h"
-#include "regs.h"
+#include <nitro/reg.h>
 
 extern "C" {
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,

@@ -10,7 +10,7 @@
 #include "math.hpp"
 
 extern "C" void func_ov000_0205ca74(unk32);
-extern "C" void func_ov000_0205d65c(void *, Vec3p *, Vec3p *, u32);
+extern "C" void func_ov000_0205d65c(void *, VecFx32 *, VecFx32 *, u32);
 
 ARM PlayerSceneChange::PlayerSceneChange() {
     this->mUnk_68 = this->mUnk_2C->mUnk_14C;
@@ -63,21 +63,21 @@ ARM s16 PlayerSceneChange::func_ov112_02184bbc(s16 param1) {
 
 extern "C" bool func_ov096_02179c14();
 extern "C" void func_ov034_02121de4(void *);
-extern q4 data_02040964[];
-extern q4 data_0203e964[];
-extern q4 data_02041964[];
-extern q4 data_0203f964[];
-extern q4 data_0203feb0[];
-extern "C" void func_01ffb714(Vec3p *, Vec3p *, void *);
+extern fx16 data_02040964[];
+extern fx16 data_0203e964[];
+extern fx16 data_02041964[];
+extern fx16 data_0203f964[];
+extern fx16 data_0203feb0[];
+extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
 extern "C" void func_01ff9638(void *, s16);
 extern "C" void func_01ff9770(void *);
 extern unk32 data_ov000_020b3000;
-extern "C" bool func_ov000_02080998(Vec3p *);
+extern "C" bool func_ov000_02080998(VecFx32 *);
 extern "C" void func_01ff930c(UnkStruct_ov000_0208f820_40 *, unk16, unk32);
 
 // https://decomp.me/scratch/c7PhN
 ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
-    q4 *pSinCosTable = gSinCosTable;
+    fx16 *pSinCosTable = gSinCosTable;
     Vec2b stack4;
     s16 stack3;
     Vec2b stack2;
@@ -119,10 +119,10 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                     break;
             }
 
-            Vec3p *temp_r8  = this->mUnk_34;
-            this->mUnk_70.x = temp_r8->x;
-            this->mUnk_70.y = temp_r8->y;
-            this->mUnk_70.z = temp_r8->z;
+            VecFx32 *temp_r8 = this->mUnk_34;
+            this->mUnk_70.x  = temp_r8->x;
+            this->mUnk_70.y  = temp_r8->y;
+            this->mUnk_70.z  = temp_r8->z;
 
             this->mUnk_A8 = -0x8000;
             this->mUnk_AA = -0x8000;
@@ -153,7 +153,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                         MapObjectUnkDRTY *pDRTY = (MapObjectUnkDRTY *) gpMapObjManager->func_01fff498(stack2);
 
                         if (pDRTY != NULL) {
-                            pDRTY->func_ov000_0209d6ac((Vec3p *) &this->mUnk_70);
+                            pDRTY->func_ov000_0209d6ac((VecFx32 *) &this->mUnk_70);
 
                             if (this->mUnk_68 == 0x19) {
                                 pDRTY->func_ov034_02121d84();
@@ -195,7 +195,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                     break;
             }
 
-            func_ov000_0205d65c(&stack3, this->mUnk_34, (Vec3p *) &this->mUnk_70, this->mUnk_40->mUnk_00);
+            func_ov000_0205d65c(&stack3, this->mUnk_34, (VecFx32 *) &this->mUnk_70, this->mUnk_40->mUnk_00);
             this->mUnk_40->mUnk_00 = stack3;
 
             switch (this->mUnk_68) {
@@ -215,14 +215,14 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
 
                     unk32 sp78;
                     unk16 temp_r8_2 = this->mUnk_A8 - 0x8000;
-                    func_01ffb714(this->mUnk_34, (Vec3p *) &this->mUnk_70, &sp78);
+                    func_01ffb714(this->mUnk_34, (VecFx32 *) &this->mUnk_70, &sp78);
                     func_01ff9638(&sp78, -temp_r8_2);
                     this->mUnk_9C.x = -sp78;
                     this->mUnk_9C.y = 0;
                     this->mUnk_9C.z = 0;
                     func_01ff9638(&this->mUnk_9C, temp_r8_2);
 
-                    q20 temp_r0_11 = Vec3p_Length(&this->mUnk_9C);
+                    fx32 temp_r0_11 = VecFx32_Length(&this->mUnk_9C);
                     if (temp_r0_11 > 0x800) {
                         if ((((temp_r0_11 - 0x800) / 10) + ((temp_r0_11 - 0x800) >> 0x1F)) <= 0) {
                             this->mUnk_9C.x = 0;
@@ -230,7 +230,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                             this->mUnk_9C.z = 0;
                         } else {
                             func_01ff9770(&this->mUnk_9C);
-                            Vec3p_Add(this->mUnk_3C, &this->mUnk_9C, this->mUnk_3C);
+                            VecFx32_Add(this->mUnk_3C, &this->mUnk_9C, this->mUnk_3C);
                         }
                     } else {
                         this->mUnk_9C.x = 0;
@@ -264,16 +264,16 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
             }
 
             if (this->mUnk_28->mUnk_98 != NULL) {
-                this->mUnk_28->mUnk_98->func_ov093_0216f76c((Vec3p *) &this->mUnk_70, this->mUnk_68);
+                this->mUnk_28->mUnk_98->func_ov093_0216f76c((VecFx32 *) &this->mUnk_70, this->mUnk_68);
             }
 
             break;
         }
         case 0x3D: {
-            Vec3p *pVec = this->mUnk_38;
-            pVec->x     = 0;
-            pVec->y     = 0;
-            pVec->z     = 0;
+            VecFx32 *pVec = this->mUnk_38;
+            pVec->x       = 0;
+            pVec->y       = 0;
+            pVec->z       = 0;
             break;
         }
         case 0x3E: {
@@ -343,7 +343,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
 
             this->mUnk_6C = -1;
 
-            Vec3p *pVec     = this->mUnk_34;
+            VecFx32 *pVec   = this->mUnk_34;
             this->mUnk_70.x = pVec->x;
             this->mUnk_70.y = pVec->y;
             this->mUnk_70.z = pVec->z;
@@ -424,14 +424,14 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                         case 0x11:
                         case 0x13:
                         case 0x24: {
-                            q20 posY = ptr->vfunc_28(this->mUnk_34, 0, 0);
+                            fx32 posY = ptr->vfunc_28(this->mUnk_34, 0, 0);
                             if (this->mUnk_34->y >= posY) {
                                 this->mUnk_34->y = posY;
                             }
                             break;
                         }
                         default: {
-                            q20 posY = ptr->vfunc_28(this->mUnk_34, 0, 0);
+                            fx32 posY = ptr->vfunc_28(this->mUnk_34, 0, 0);
                             if (this->mUnk_34->y <= posY) {
                                 this->mUnk_34->y = posY;
                             }
@@ -463,14 +463,14 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
     switch (param1) {
         case 0x3C:
             if (this->mUnk_68 == 0x19) {
-                if (this->func_ov000_020914b0(0x3C, (Vec3p *) &this->mUnk_70, this->mUnk_7C)) {
+                if (this->func_ov000_020914b0(0x3C, (VecFx32 *) &this->mUnk_70, this->mUnk_7C)) {
                     this->mUnk_30->func_ov000_020921e4(0x3D);
                 }
 
-                Vec3p *temp_r1  = this->mUnk_34;
-                this->mUnk_80.x = temp_r1->x;
-                this->mUnk_80.y = temp_r1->y;
-                this->mUnk_80.z = temp_r1->z;
+                VecFx32 *temp_r1 = this->mUnk_34;
+                this->mUnk_80.x  = temp_r1->x;
+                this->mUnk_80.y  = temp_r1->y;
+                this->mUnk_80.z  = temp_r1->z;
             } else {
                 if (this->mUnk_6C > 0) {
                     this->mUnk_6C--;
@@ -490,7 +490,7 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                         break;
                 }
 
-                if (this->func_ov000_020914b0(0x3C, (Vec3p *) &this->mUnk_70, this->mUnk_7C)) {
+                if (this->func_ov000_020914b0(0x3C, (VecFx32 *) &this->mUnk_70, this->mUnk_7C)) {
                     s16 var_r1_2 = this->mUnk_40->mUnk_00;
                     bool var_r3  = true;
 
@@ -544,9 +544,9 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     }
 
                     // s16 iVar3 = var_r1_2 >> 4;
-                    // q20 uVar6 = gSinCosTable[iVar3 * 2] * 0x2000;
-                    // q20 uVar5 = gSinCosTable[iVar3 * 2 + 1] * 0x2000;
-                    // q20 iVar2 = (gSinCosTable[iVar3 * 2 + 1] >> 0x13) + (0xfffff7ff < uVar5);
+                    // fx32 uVar6 = gSinCosTable[iVar3 * 2] * 0x2000;
+                    // fx32 uVar5 = gSinCosTable[iVar3 * 2 + 1] * 0x2000;
+                    // fx32 iVar2 = (gSinCosTable[iVar3 * 2 + 1] >> 0x13) + (0xfffff7ff < uVar5);
 
                     // this->mUnk_70.x +=
                     //     (((uVar6 + 0x800) >> 0xc) | (gSinCosTable[iVar3 * 2] >> 0x13) + (0xfffff7ff < uVar6)) * 0x100000;
@@ -564,8 +564,8 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     case 0x21:
                     case 0x25: {
                         s16 value = this->func_ov112_02184bbc(0);
-                        q4 sin    = SIN2(data_0203feb0, value);
-                        q4 cos    = COS2(data_0203feb0, value);
+                        fx16 sin  = SIN2(data_0203feb0, value);
+                        fx16 cos  = COS2(data_0203feb0, value);
 
                         this->mUnk_70.x += MUL_Q20(sin, 0x19A);
                         this->mUnk_70.z += MUL_Q20(cos, 0x19A);
@@ -584,13 +584,13 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                         if (!this->mUnk_AC) {
                             func_01ff930c(this->mUnk_40, this->mUnk_AA, 0x200);
 
-                            Vec3p *temp_r2_4 = this->mUnk_34;
-                            this->mUnk_70.x  = temp_r2_4->x;
-                            this->mUnk_70.y  = temp_r2_4->y;
-                            this->mUnk_70.z  = temp_r2_4->z;
+                            VecFx32 *temp_r2_4 = this->mUnk_34;
+                            this->mUnk_70.x    = temp_r2_4->x;
+                            this->mUnk_70.y    = temp_r2_4->y;
+                            this->mUnk_70.z    = temp_r2_4->z;
 
-                            q4 sin = SIN2(data_0203feb0, this->mUnk_40->mUnk_00);
-                            q4 cos = COS2(data_0203feb0, this->mUnk_40->mUnk_00);
+                            fx16 sin = SIN2(data_0203feb0, this->mUnk_40->mUnk_00);
+                            fx16 cos = COS2(data_0203feb0, this->mUnk_40->mUnk_00);
                             this->mUnk_70.x += MUL_Q20(sin, 0x19A);
                             this->mUnk_70.z += MUL_Q20(cos, 0x19A);
                         }
@@ -605,7 +605,7 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     case 0x13:
                     case 0x14:
                         if (this->mUnk_30->mUnk_70 < 0x0A) {
-                            Vec3p_Add(this->mUnk_3C, &this->mUnk_9C, this->mUnk_3C);
+                            VecFx32_Add(this->mUnk_3C, &this->mUnk_9C, this->mUnk_3C);
                         }
                         break;
                     default:
@@ -630,7 +630,7 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
             break;
         case 0x3D: {
             func_01ff930c(this->mUnk_40, 0, 0xE39);
-            Vec3p *temp_r2_8 = this->mUnk_34;
+            VecFx32 *temp_r2_8 = this->mUnk_34;
 
             this->mUnk_80.x = temp_r2_8->x;
             this->mUnk_80.y = temp_r2_8->y;
@@ -676,7 +676,7 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     break;
             }
 
-            bool temp_r5_2 = this->func_ov000_020914b0(0x3F, (Vec3p *) &this->mUnk_70, this->mUnk_7C);
+            bool temp_r5_2 = this->func_ov000_020914b0(0x3F, (VecFx32 *) &this->mUnk_70, this->mUnk_7C);
 
             switch (this->mUnk_68) {
                 case 0x0F:
@@ -684,8 +684,8 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                 case 0x13:
                 case 0x24: {
                     UnkStruct_027e0cd8_0c *temp_r0_13 = data_027e0cd8->mUnk_0C;
-                    q20 temp_r0_14                    = temp_r0_13->vfunc_28(this->mUnk_34, 0, 0);
-                    Vec3p *temp_r2_9                  = this->mUnk_34;
+                    fx32 temp_r0_14                   = temp_r0_13->vfunc_28(this->mUnk_34, 0, 0);
+                    VecFx32 *temp_r2_9                = this->mUnk_34;
 
                     if (temp_r2_9->y < temp_r0_14) {
                         temp_r2_9->y = temp_r0_14;
@@ -706,8 +706,8 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                 if (!this->func_ov000_02091e68(param2) && data_02049b18.mUnk_06.mTouchControl.mState.touch) {
                     func_ov000_0205ca74(this->mUnk_98);
                     this->mUnk_98 = -1;
-                    q4 sin        = SIN2(data_0203feb0, this->mUnk_40->mUnk_00);
-                    q4 cos        = COS2(data_0203feb0, this->mUnk_40->mUnk_00);
+                    fx16 sin      = SIN2(data_0203feb0, this->mUnk_40->mUnk_00);
+                    fx16 cos      = COS2(data_0203feb0, this->mUnk_40->mUnk_00);
                     this->mUnk_70.x += MUL_Q20(sin, FLOAT_TO_Q20(2.0f));
                     this->mUnk_70.z += MUL_Q20(cos, FLOAT_TO_Q20(2.0f));
                     this->mUnk_AD = true;
@@ -724,14 +724,14 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
     }
 }
 
-ARM bool PlayerSceneChange::vfunc_1c(Vec3p *param1) {
+ARM bool PlayerSceneChange::vfunc_1c(VecFx32 *param1) {
     if (data_027e0cdc->func_ov000_02082a28(1) == 0) {
         switch (this->mUnk_30->mUnk_68) {
             case 0x3C:
             case 0x3D:
             case 0x3E:
             case 0x3F: {
-                Vec3p unk_80;
+                VecFx32 unk_80;
 
                 unk_80.x = this->mUnk_80.x;
                 unk_80.y = this->mUnk_80.y;

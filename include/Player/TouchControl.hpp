@@ -2,7 +2,8 @@
 
 #include "math.hpp"
 #include "types.h"
-#include <nitro/touch.h>
+
+#include <nitro/tp.h>
 
 typedef u16 TouchFlags;
 enum TouchFlag_ {
@@ -13,6 +14,14 @@ enum TouchFlag_ {
 };
 
 #define CHECK_TOUCH_FLAGS(pTC, flags) ((pTC)->mFlags & (flags))
+
+struct TouchState {
+    /* 00 */ bool touch;
+    /* 01 */ bool unk_01;
+    /* 02 */ struct {
+        s16 x, y;
+    } touchPos;
+}; // size = 0x06
 
 class TouchControl {
 public:
@@ -34,11 +43,13 @@ public:
     TouchControl();
     void IncreaseSpeed(u16 increase);
     void UpdateFlags(u16 speed);
-    void UpdateWithStateFlags(TouchStateFlags *state, u16 speed);
+    void UpdateWithStateFlags(TPData *state, u16 speed);
     void Update(const TouchState *state, u16 speed);
     void func_02014414(u16 speedIncrease, bool shouldIncrease);
     void func_02014478(TouchState *state, u16 speed);
 
     static bool func_020143f0();
-    static void UpdateState(TouchState *state, const TouchStateFlags *stateFlags);
+    static void UpdateState(TouchState *state, const TPData *stateFlags);
 };
+
+extern TouchState data_02049b4c;

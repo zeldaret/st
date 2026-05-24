@@ -1,5 +1,5 @@
 #include "TitleScreen/TitleScreen.hpp"
-#include "regs.h"
+#include <nitro/reg.h>
 
 const unk16 data_ov025_020c5a0c[] = {0x0016, 0x003C};
 

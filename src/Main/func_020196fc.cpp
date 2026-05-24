@@ -1,6 +1,6 @@
 #include "Unknown/UnkMemFuncs.h"
-#include "regs.h"
 #include "types.h"
+#include <nitro/reg.h>
 
 extern "C" void GX_SetGraphicsMode(int, int, int);
 extern "C" void GXS_SetGraphicsMode(int);

@@ -7,8 +7,10 @@
 #include "Unknown/UnkStruct_0204e64c.hpp"
 #include "Unknown/UnkStruct_027e0208.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
-#include "regs.h"
 #include "versions.h"
+
+#include <nitro/os.h>
+#include <nitro/reg.h>
 
 extern "C" void func_020196fc();
 extern "C" unk32 CARD_func_0033();
@@ -18,8 +20,6 @@ extern "C" void func_020132c8();
 extern "C" void func_020132dc();
 extern "C" void func_02013354();
 extern "C" void func_0201328c();
-extern "C" int OS_DisableInterrupts_Irq();
-extern "C" void OS_RestoreInterrupts(int enabled);
 extern Mat3p gGeomMatrix;
 
 ARM void Game::func_02013370(unk32 param1) {
@@ -136,7 +136,7 @@ ARM void Game::Run() {
         {
             int enabled = OS_DisableInterrupts_Irq();
             this->mUnk_1C.func_02013e18(func_020132dc, 0);
-            REG_SWAP_BUFFERS = 3;
+            REG_GFX_FIFO_SWAP_BUFFERS = 3;
             OS_RestoreInterrupts(enabled);
         }
 

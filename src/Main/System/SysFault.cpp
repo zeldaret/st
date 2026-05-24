@@ -7,7 +7,7 @@
 #include "Unknown/UnkStruct_ov000_020b4f84.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "global.h"
-#include "regs.h"
+#include <nitro/reg.h>
 
 extern "C" void _OS_Panic();
 extern "C" void func_020131ec();

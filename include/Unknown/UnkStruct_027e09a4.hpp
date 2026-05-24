@@ -227,7 +227,7 @@ public:
     /* 28 */ unk32 mUnk_28;
     /* 2C */ s16 mUnk_2C;
     /* 2C */ unk16 mUnk_2E;
-    /* 30 */ Vec3p mUnk_30;
+    /* 30 */ VecFx32 mUnk_30;
     /* 3C */ STRUCT_PAD(0x3C, 0x54);
     /* 54 */ void *mUnk_54; // vtable
     /* 58 */ UnkStruct_WarpUnk1 *mpWarpUnk1;

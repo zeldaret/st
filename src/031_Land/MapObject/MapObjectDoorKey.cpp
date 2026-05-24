@@ -5,7 +5,7 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
 extern "C" f32 func_02039f04(unk32);
-extern "C" void func_01ffaf74(Vec3p *, Mat4x3p *, Vec3p *);
+extern "C" void func_01ffaf74(VecFx32 *, Mat4x3p *, VecFx32 *);
 
 const UnkStruct_ov031_021150b0 data_ov031_02115184(0x1E66);
 
@@ -68,8 +68,8 @@ ARM void MapObjectDoorKey::vfunc_14(void) {
     u16 angle = (u16) sVar2;
 
     Mat3p m;
-    Vec3p local_48;
-    Vec3p temp;
+    VecFx32 local_48;
+    VecFx32 temp;
 
     Mat3p_InitYRotation(&m, SIN(angle), COS(angle));
     temp.x     = this->mPos.x - FLOAT_TO_Q20(1.0f) + this->mUnk_70;
@@ -175,15 +175,15 @@ ARM void MapObjectDoorKey::vfunc_7C(void) {
 }
 
 ARM void MapObjectDoorKey::vfunc_78(void) {
-    Vec3p local_24;
-    Vec3p local_30;
-    Vec3p VStack_3c;
-    Vec3p VStack_48;
+    VecFx32 local_24;
+    VecFx32 local_30;
+    VecFx32 VStack_3c;
+    VecFx32 VStack_48;
     Mat4x3p m;
-    Vec3p local_84;
-    Vec3p local_90;
+    VecFx32 local_84;
+    VecFx32 local_90;
 
-    Vec3p temp;
+    VecFx32 temp;
     temp.x = this->mPos.x;
     temp.z = this->mPos.z;
     temp.y = this->mPos.y;
@@ -212,13 +212,13 @@ ARM void MapObjectDoorKey::vfunc_78(void) {
     func_01ffaf74(&local_90, &m, &local_90);
     func_01ffaf74(&local_84, &m, &local_84);
 
-    Vec3p_Add(&local_24, &local_90, &local_24);
-    Vec3p_Add(&local_24, &local_84, &VStack_3c);
+    VecFx32_Add(&local_24, &local_90, &local_24);
+    VecFx32_Add(&local_24, &local_84, &VStack_3c);
 
     local_90.x = -local_90.x;
     local_84.x = -local_84.x;
-    Vec3p_Add(&local_30, &local_90, &local_30);
-    Vec3p_Add(&local_30, &local_84, &VStack_48);
+    VecFx32_Add(&local_30, &local_90, &local_30);
+    VecFx32_Add(&local_30, &local_84, &VStack_48);
 
     if (this->mUnk_68.mUnk_00 != NULL) {
         this->mUnk_68.mUnk_00->func_ov000_02052c48(&VStack_3c, &local_24);

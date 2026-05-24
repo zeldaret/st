@@ -27,7 +27,7 @@ void DC_func_0002();
 
 void func_ov000_0205a950(u8 bgType, bool isTopScreen, bool);
 void func_ov000_0205a944(u8 bgType, bool isTopScreen, bool);
-void func_01ffb644(q20 x, q20 y);
+void func_01ffb644(fx32 x, fx32 y);
 unk32 func_01ffb558();
 
 void func_02029058(void *, void *);

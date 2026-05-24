@@ -4,7 +4,7 @@
 #include "flags.h"
 #include "global.h"
 
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8ae0(q20 param1) {
+ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8ae0(fx32 param1) {
     u32 posY = this->mVel.y;
 
     if (posY <= param1) {
@@ -110,10 +110,10 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_b4() {
 }
 
 // non-matching
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8e9c(Vec3p *param1) {
-    q20 z = param1->x;
-    q20 y = param1->y;
-    q20 x = param1->z;
+ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8e9c(VecFx32 *param1) {
+    fx32 z = param1->x;
+    fx32 y = param1->y;
+    fx32 x = param1->z;
 
     this->mUnk_0C0.x = x;
     this->mUnk_0C0.y = y;
@@ -192,7 +192,7 @@ ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_84() {
     return 1;
 }
 
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a91b8(Vec3p *param1, unk32 param2) {
+ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a91b8(VecFx32 *param1, unk32 param2) {
     this->func_ov000_020a8e9c(param1);
 
     if (param2 != 0) {

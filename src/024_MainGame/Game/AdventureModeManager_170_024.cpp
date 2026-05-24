@@ -6,7 +6,7 @@
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f70.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-#include "regs.h"
+#include <nitro/reg.h>
 
 extern "C" GameModeManagerBase_104 *func_ov008_020b6520(void *);
 

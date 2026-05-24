@@ -27,7 +27,7 @@ UnkStruct_027e0998 *UnkStruct_027e0998::Create() {
     return new(HeapIndex_1) UnkStruct_027e0998();
 }
 
-bool UnkStruct_027e0998::vfunc_00(Vec3p *pPos, Vec2s *param2, u16 *param3) {
+bool UnkStruct_027e0998::vfunc_00(VecFx32 *pPos, Vec2s *param2, u16 *param3) {
     if (data_027e09a4->IsCutscene()) {
         CutsceneParamsEntry *pEntry = Cutscene_GetParamEntry(data_027e09a4->CurrentCSIndex());
 
@@ -83,7 +83,7 @@ bool UnkStruct_027e0998::vfunc_00(Vec3p *pPos, Vec2s *param2, u16 *param3) {
             return false;
         }
 
-        Vec3p pos;
+        VecFx32 pos;
         pos.x = data_027e0cd8->mUnk_24.x;
         pos.y = data_027e0cd8->mUnk_24.y;
         pos.z = data_027e0cd8->mUnk_24.z;
@@ -103,7 +103,7 @@ bool UnkStruct_027e0998::func_ov024_020c716c() {
     return false;
 }
 
-bool UnkStruct_027e0998::func_ov024_020c7214(Vec3p *pPos, Vec2s *param2, u16 *param3) {
+bool UnkStruct_027e0998::func_ov024_020c7214(VecFx32 *pPos, Vec2s *param2, u16 *param3) {
     bool temp_r4 = this->UnkStruct_027e0998_Base::vfunc_00(pPos, param2, param3);
 
     if (data_027e09a4->func_01ffd3d8()) {

@@ -7,8 +7,8 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 
-extern "C" void func_01ffedac(u16 *, Vec3p *);
-extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, Vec3p *);
+extern "C" void func_01ffedac(u16 *, VecFx32 *);
+extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, VecFx32 *);
 extern "C" unk32 func_02017158();
 extern "C" void func_ov000_02098838();
 extern "C" void func_ov017_020bf99c();
@@ -33,7 +33,7 @@ ARM ActorProfileRupee::ActorProfileRupee() :
 }
 
 struct stack_struct {
-    Vec3p sp4; // 4 8 c
+    VecFx32 sp4; // 4 8 c
     unk32 pad1;
     unk16 sp14;
     u8 pad2[0x16];
@@ -44,7 +44,7 @@ struct stack_struct {
 };
 
 // non-matching
-ARM void ActorRupee::func_ov031_020e8d2c(Vec3p *param1, u8 param2, unk32 param3, unk32 param4) {
+ARM void ActorRupee::func_ov031_020e8d2c(VecFx32 *param1, u8 param2, unk32 param3, unk32 param4) {
     stack_struct stack;
     stack.sp2C = 0;
     stack.func_ov000_020975f8();
@@ -99,7 +99,7 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
             this->mUnk_96 = 0x1E0;
             this->mUnk_94 = 0;
             {
-                Vec3p vel;
+                VecFx32 vel;
                 vel.x        = 0;
                 vel.y        = 0;
                 vel.z        = 0;
@@ -114,16 +114,16 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
             this->mUnk_96 = 0x1E0;
             this->mUnk_94 = 0;
             {
-                Vec3p vel;
+                VecFx32 vel;
 
-                q20 vx = gRandom.Next32(0, 0x223) - 0x111;
-                vel.x  = vx;
+                fx32 vx = gRandom.Next32(0, 0x223) - 0x111;
+                vel.x   = vx;
 
-                q20 vy = gRandom.Next32(0, 0x333) + 0x555;
-                vel.y  = vy;
+                fx32 vy = gRandom.Next32(0, 0x333) + 0x555;
+                vel.y   = vy;
 
-                q20 vz = gRandom.Next32(0, 0x223) - 0x111;
-                vel.z  = vz;
+                fx32 vz = gRandom.Next32(0, 0x223) - 0x111;
+                vel.z   = vz;
 
                 this->mVel.x = vel.x;
                 this->mVel.y = vel.y;
@@ -136,7 +136,7 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
             this->mUnk_96 = 0x1E0;
             this->mUnk_94 = 0;
             {
-                Vec3p vel;
+                VecFx32 vel;
                 vel.x        = 0;
                 vel.y        = 0x800;
                 vel.z        = 0;
@@ -207,7 +207,7 @@ ARM void ActorRupee::func_ov031_020e9068() {
 }
 
 ARM void ActorRupee::func_ov031_020e9108() {
-    Vec3p vel;
+    VecFx32 vel;
 
     vel.x = gRandom.Next32(0, 0x19B);
     vel.y = gRandom.Next32(0, 0x19A);
@@ -343,8 +343,8 @@ ARM void ActorRupee::func_ov031_020e9438() {
 
 ARM void ActorRupee::func_ov031_020e9450() {
     this->func_ov017_020bf9c8(gpActorManager->func_01fff3b4(this->mUnk_BC));
-    Vec3p_Copy(&this->mPos, &this->mPrevPos);
-    Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
+    VecFx32_Copy(&this->mPos, &this->mPrevPos);
+    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (!GET_FLAG(this->mFlags, ActorFlag_5)) {
         return;
@@ -560,7 +560,7 @@ ARM void ActorRupee::func_ov031_020e9904(unk32 param1) {
 
 extern "C" void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
 extern "C" void func_02018114(unk16 *, unk32);
-typedef void (*UnkCallback_vfunc_20)(Vec3p *);
+typedef void (*UnkCallback_vfunc_20)(VecFx32 *);
 
 struct UnkStruct_ov031_02113588 {
     /* 00 */ UnkCallback_vfunc_20 callback;
@@ -585,7 +585,7 @@ ARM void ActorRupee::vfunc_20() {
     short sStack_1c;
     u16 uStack_1e;
     u16 uStack_20;
-    Vec3p test;
+    VecFx32 test;
 
     uStack_1a = 0;
     uVar2     = 0x666;
@@ -686,7 +686,7 @@ ARM void ActorRupee::vfunc_20() {
 
 ARM void ActorRupee::func_ov031_020e9b88() {
     func_ov000_02098838();
-    Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
+    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mUnk_5C.mInitialPos.y < this->mPos.y + this->mVel.y) {
         this->mUnk_44 = 0x9C;
@@ -702,7 +702,7 @@ ARM void ActorRupee::func_ov031_020e9b88() {
 
 ARM void ActorRupee::func_ov031_020e9be8() {
     func_ov000_02098838();
-    Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
+    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mVel.y < 0) {
         this->mUnk_44 = 3;
@@ -713,12 +713,12 @@ ARM void ActorRupee::func_ov031_020e9be8() {
 extern "C" void func_ov000_0205c1f0(unk32 *, unk16);
 extern unk32 data_ov031_02110aa0[];
 extern unk32 data_ov031_02113468[];
-extern "C" void func_ov000_0205c204(unk32 *, Vec3p *, unk32, unk32, unk32);
+extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
 
 // non-matching
 ARM void ActorRupee::vfunc_2c(unk32 param1) {
-    Vec3p iStack_18;
-    Vec3p iStack_28;
+    VecFx32 iStack_18;
+    VecFx32 iStack_28;
     unk32 auStack_30[4];
     s32 uVar2;
 

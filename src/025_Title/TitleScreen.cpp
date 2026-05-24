@@ -6,9 +6,8 @@
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0954.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-#include "regs.h"
 #include "versions.h"
-#include <nitro/button.h>
+#include <nitro/pad.h>
 
 #include <string.h>
 
@@ -255,7 +254,7 @@ void TitleScreen::func_ov025_020c53d0(Input *pButtons, TouchControl *pTouchContr
 }
 
 void TitleScreen::func_ov025_020c55a4(Input *pButtons, TouchControl *pTouchControl) {
-    if (CHECK_TOUCH_FLAGS(pTouchControl, TouchFlag_UntouchedNow) || CHECK_BUTTON_COMBO(pButtons->press, BTN_START)) {
+    if (CHECK_TOUCH_FLAGS(pTouchControl, TouchFlag_UntouchedNow) || CHECK_BUTTON_COMBO(pButtons->press, PAD_BUTTON_START)) {
         data_ov000_020b5214.func_ov000_0206db44(0x0B);
         this->func_ov025_020c4ea0(TitleScreenState_ToFileSelect);
     }

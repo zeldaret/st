@@ -310,7 +310,7 @@ struct UnkStackStruct {
     s16 mUnk_04;
     s16 mUnk_06;
     unk32 mUnk_08;
-    Vec3p mUnk_0C;
+    VecFx32 mUnk_0C;
     u16 mUnk_18;
     u16 mUnk_1A;
     u16 mUnk_1C;
@@ -367,13 +367,13 @@ ARM void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
                     auStack_5c.mUnk_3B = 0;
                 }
 
-                UnkStackStruct *puVar5    = (UnkStackStruct *) func_ov000_02077590(3);
-                auStack_5c.mUnk_18        = puVar5->mUnk_00;
-                auStack_5c.mUnk_1A        = puVar5->mUnk_02;
-                auStack_5c.mUnk_1C        = puVar5->mUnk_04;
-                auStack_5c.mUnk_1E        = puVar5->mUnk_06;
-                auStack_5c.mUnk_20        = puVar5->mUnk_08;
-                auStack_5c.mUnk_24.coords = puVar5->mUnk_0C.coords;
+                UnkStackStruct *puVar5 = (UnkStackStruct *) func_ov000_02077590(3);
+                auStack_5c.mUnk_18     = puVar5->mUnk_00;
+                auStack_5c.mUnk_1A     = puVar5->mUnk_02;
+                auStack_5c.mUnk_1C     = puVar5->mUnk_04;
+                auStack_5c.mUnk_1E     = puVar5->mUnk_06;
+                auStack_5c.mUnk_20     = puVar5->mUnk_08;
+                auStack_5c.mUnk_24     = puVar5->mUnk_0C;
 
                 u16 unk_18         = puVar5->mUnk_18;
                 u16 unk_1A         = puVar5->mUnk_1A;
@@ -455,13 +455,13 @@ ARM void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
 
                     auStack_9c.mUnk_38 |= 0x200;
 
-                    UnkStackStruct *puVar5    = (UnkStackStruct *) func_ov000_02077590(2);
-                    auStack_9c.mUnk_18        = puVar5->mUnk_00;
-                    auStack_9c.mUnk_1A        = puVar5->mUnk_02;
-                    auStack_9c.mUnk_1C        = puVar5->mUnk_04;
-                    auStack_9c.mUnk_1E        = puVar5->mUnk_06;
-                    auStack_9c.mUnk_20        = puVar5->mUnk_08;
-                    auStack_9c.mUnk_24.coords = puVar5->mUnk_0C.coords;
+                    UnkStackStruct *puVar5 = (UnkStackStruct *) func_ov000_02077590(2);
+                    auStack_9c.mUnk_18     = puVar5->mUnk_00;
+                    auStack_9c.mUnk_1A     = puVar5->mUnk_02;
+                    auStack_9c.mUnk_1C     = puVar5->mUnk_04;
+                    auStack_9c.mUnk_1E     = puVar5->mUnk_06;
+                    auStack_9c.mUnk_20     = puVar5->mUnk_08;
+                    auStack_9c.mUnk_24     = puVar5->mUnk_0C;
 
                     u16 unk_18         = puVar5->mUnk_18;
                     u16 unk_1A         = puVar5->mUnk_1A;
@@ -552,7 +552,7 @@ struct stack_struct {
 };
 
 extern "C" void func_01ff9fbc(Mat2p *, unk32, Mat2p *);
-extern q4 data_0203f964[];
+extern fx16 data_0203f964[];
 
 ARM void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1, s8 param2) {
     Vec2s sp10;
@@ -653,8 +653,8 @@ ARM void MapObjectDoorBase::vfunc_44() {}
 
 ARM void MapObjectDoorBase::vfunc_4C() {}
 
-ARM void MapObjectDoorBase::vfunc_84(unk32 param1, Vec3p *param2, unk16 *param3) {
-    Vec3p local_20;
+ARM void MapObjectDoorBase::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param3) {
+    VecFx32 local_20;
     *param3 = this->mUnk_14;
 
     if (param1 != 0) {
@@ -669,7 +669,7 @@ ARM void MapObjectDoorBase::vfunc_84(unk32 param1, Vec3p *param2, unk16 *param3)
         *param3 += -DEG_TO_ANG(180);
     }
 
-    Vec3p_Add(&this->mPos, &local_20, param2);
+    VecFx32_Add(&this->mPos, &local_20, param2);
 }
 
 ARM void MapObjectDoorBase::func_ov031_020fcf0c(unk32 param1) {

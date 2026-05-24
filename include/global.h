@@ -1,9 +1,6 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-#define ARRAY_LEN_U(arr) (u32)((sizeof(arr) / sizeof(*arr)))
-#define ARRAY_LEN(arr) (s32)((sizeof(arr) / sizeof(*arr)))
-
 // Prevent the IDE from reporting errors that the compiler/linker won't report
 #ifdef __INTELLISENSE__
 #endif

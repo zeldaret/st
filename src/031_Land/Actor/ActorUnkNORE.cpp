@@ -3,7 +3,7 @@
 
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 
-extern "C" void func_01ffedac(Vec2b *, Vec3p *);
+extern "C" void func_01ffedac(Vec2b *, VecFx32 *);
 
 ARM DECL_PROFILE(ActorProfileUnkNORE);
 

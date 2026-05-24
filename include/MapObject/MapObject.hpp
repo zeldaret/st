@@ -67,16 +67,16 @@ public:
     /* 0C */ virtual void vfunc_0C()                 = 0;
     /* 10 */ virtual void vfunc_10(Cylinder *param1) = 0;
     /* 14 */ virtual void vfunc_14()                 = 0;
-    /* 18 */ virtual void vfunc_18(Vec3p *param1)    = 0;
-    /* 1C */ virtual void vfunc_1C(Vec3p *param1)    = 0;
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1)  = 0;
+    /* 1C */ virtual void vfunc_1C(VecFx32 *param1)  = 0;
     /* 20 */
 };
 
 class MapObject_10 : public MapObject_10_Base {
 public:
     /* 00 (vtable) */
-    /* 0C */ Vec3p mUnk_0C;
-    /* 18 */ Vec3p mUnk_18;
+    /* 0C */ VecFx32 mUnk_0C;
+    /* 18 */ VecFx32 mUnk_18;
     /* 24 */
 
     MapObject_10() {}
@@ -88,8 +88,8 @@ public:
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10(Cylinder *param1);
     /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual void vfunc_18(Vec3p *param1);
-    /* 1C */ virtual void vfunc_1C(Vec3p *param1);
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1);
+    /* 1C */ virtual void vfunc_1C(VecFx32 *param1);
     /* 20 */
 };
 
@@ -116,7 +116,7 @@ public:
 class MapObject : public SysObject {
 public:
     /* 00 (vtable) */
-    /* 04 */ Vec3p mPos;
+    /* 04 */ VecFx32 mPos;
     /* 10 */ MapObject_10 *mUnk_10;
     /* 14 */ s16 mUnk_14;
     /* 16 */ s16 mUnk_16;
@@ -144,7 +144,7 @@ public:
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual unk32 vfunc_28();
-    /* 2C */ virtual bool vfunc_2C(Vec3p *param1);
+    /* 2C */ virtual bool vfunc_2C(VecFx32 *param1);
     /* 30 */ virtual ~MapObject();
     /* 38 */
 
@@ -175,15 +175,15 @@ public:
     bool func_ov000_0209d29c(unk32 param1);
     void func_ov000_0209d2c4(unk32 param1, unk32 param2);
     void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2b *param3);
-    void func_ov000_0209d3b4(unk32 param1, q20 size);
+    void func_ov000_0209d3b4(unk32 param1, fx32 size);
     void func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_00 *param2, unk32 param3);
     void func_ov000_0209d518(unk32 param1, unk32 param2, unk32 param3, u8 param4);
     void func_ov000_0209d5c8(ActorRef ref);
     void func_ov000_0209d614(unk32 param1);
     bool func_ov000_0209d668();
-    void func_ov000_0209d6ac(Vec3p *param1);
+    void func_ov000_0209d6ac(VecFx32 *param1);
 
     static void func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx);
     static void func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2);
-    static void func_ov000_0209d54c(void *param1, MapObject *thisx, unk32 param2, Vec3p *param3, unk32 param4, unk32 param5);
+    static void func_ov000_0209d54c(void *param1, MapObject *thisx, unk32 param2, VecFx32 *param3, unk32 param4, unk32 param5);
 };

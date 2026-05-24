@@ -1,7 +1,7 @@
 #include "Game/Game.hpp"
 #include "global.h"
-#include "regs.h"
 #include "types.h"
+#include <nitro/reg.h>
 
 void func_0203b920(void);
 void func_02011da0(void);

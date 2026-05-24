@@ -24,8 +24,8 @@ public:
     /* 2C */ unk32 mUnk_2C;
     /* 30 */ unk16 mUnk_30;
     /* 32 */ unk16 mUnk_32;
-    /* 34 */ Vec3p mUnk_34;
-    /* 40 */ Vec3p mUnk_40;
+    /* 34 */ VecFx32 mUnk_34;
+    /* 40 */ VecFx32 mUnk_40;
     /* 4C */
 
     ActorUnk_vfunc_b0();
@@ -51,7 +51,7 @@ public:
     /* 0A */ unk32 mUnk_08;
     /* 0C */
 
-    void func_01ffc6d4(u16 param1, Vec3p *pos);
+    void func_01ffc6d4(u16 param1, VecFx32 *pos);
 
     ActorUnk_ov000_020a8bb0_a4() {}
     ~ActorUnk_ov000_020a8bb0_a4() {}
@@ -71,7 +71,7 @@ public:
     /* 0B4 */ unk32 mUnk_0B4;
     /* 0B8 */ unk32 mUnk_0B8;
     /* 0BC */ ActorRef mUnk_0BC;
-    /* 0C0 */ Vec3p mUnk_0C0;
+    /* 0C0 */ VecFx32 mUnk_0C0;
     /* 0CC */ unk16 mUnk_0CC;
     /* 0CC */ unk16 mUnk_0CE;
     /* 0D0 */ unk32 mUnk_0D0;
@@ -134,14 +134,14 @@ public:
     /* B8 */ virtual void vfunc_b8();
     /* BC */
 
-    void func_ov000_020a8ae0(q20 param1);
+    void func_ov000_020a8ae0(fx32 param1);
     ActorUnk_ov000_020a8bb0(UnkSystem4 *param1, unk32 param2);
     bool func_ov000_020a8db0();
     bool func_ov000_020a8dd0();
     void func_ov000_020a8df0(ActorRef param1, unk32 param2);
-    void func_ov000_020a8e9c(Vec3p *param1);
+    void func_ov000_020a8e9c(VecFx32 *param1);
     void func_ov000_020a8ff4();
-    void func_ov000_020a91b8(Vec3p *param1, unk32 param2);
+    void func_ov000_020a91b8(VecFx32 *param1, unk32 param2);
     void func_ov000_020a9200();
     void func_ov000_020a9248();
     void func_ov000_020a94b0();

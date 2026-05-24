@@ -71,6 +71,7 @@ OSMutex *OS_RemoveMutexFromQueue(OSMutexQueue *queue);
 OSThread *OS_SelectThread(void);
 void OS_CreateThread(OSThread *thread, void (*func)(void *), void *arg, void *stack, u32 stackSize, u32 priority);
 void OS_ExitThread(void);
+void OS_WakeupThreadDirect(void *param1);
 
 /// MARK: Inlines
 

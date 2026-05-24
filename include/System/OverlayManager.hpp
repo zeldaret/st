@@ -3,7 +3,7 @@
 #include "System/SysFault.hpp"
 #include "types.h"
 
-#include <nitro/Overlay.h>
+#include <nitro/fs.h>
 
 typedef u32 ItemFlag;
 

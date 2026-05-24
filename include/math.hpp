@@ -231,11 +231,11 @@ static inline void Vec2b_Copy(const Vec2b *a, Vec2b *dst) {
 
 union Vec2pCpp {
     struct {
-        /* 0 */ q20 x;
-        /* 4 */ q20 y;
+        /* 0 */ fx32 x;
+        /* 4 */ fx32 y;
         /* 8 */
     };
-    q20 coords[2];
+    fx32 coords[2];
 
     void operator=(const Vec2pCpp &from) {
         this->x = from.x;
@@ -243,7 +243,7 @@ union Vec2pCpp {
     }
 
     Vec2pCpp() {}
-    Vec2pCpp(q20 X, q20 Y) {
+    Vec2pCpp(fx32 X, fx32 Y) {
         x = X;
         y = Y;
     }
@@ -267,16 +267,16 @@ static inline void Vec2pCpp_Clear(Vec2pCpp *dst) {
 }
 
 static inline void Vec2pCpp_Add(const Vec2pCpp *a, const Vec2pCpp *b, Vec2pCpp *dst) {
-    q20 x = a->x + b->x;
-    q20 y = a->y + b->y;
+    fx32 x = a->x + b->x;
+    fx32 y = a->y + b->y;
 
     dst->x = x;
     dst->y = y;
 }
 
 static inline void Vec2pCpp_Sub(const Vec2pCpp *a, const Vec2pCpp *b, Vec2pCpp *dst) {
-    q20 x = a->x - b->x;
-    q20 y = a->y - b->y;
+    fx32 x = a->x - b->x;
+    fx32 y = a->y - b->y;
 
     dst->x = x;
     dst->y = y;

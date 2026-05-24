@@ -50,8 +50,8 @@ typedef struct G3d_RenderState_ {
     /* D4 */ G3d_NameList *boneList;
     /* D8 */ const G3d_Material_List *materialList;
     /* DC */ G3d_NameList *meshList;
-    /* E0 */ q20 upScale;
-    /* E4 */ q20 downScale;
+    /* E0 */ fx32 upScale;
+    /* E4 */ fx32 downScale;
     /* E8 */ void *jntScalingHandler; // scaling handler
     /* EC */ void *jntSRTHandler;     // SRT transform handler
     /* F0 */ void *textureHandler;    // texture matrix handler
@@ -102,8 +102,8 @@ static inline void G3d_MtxMult44_inline(const Mat4p *m) {
     PushGeometryCommand(0x18, (u32 *) m, 0x10);
 }
 
-static inline void G3d_Scale_inline(q20 x, q20 y, q20 z) {
-    Vec3p vec;
+static inline void G3d_Scale_inline(fx32 x, fx32 y, fx32 z) {
+    VecFx32 vec;
     vec.x = x;
     vec.y = y;
     vec.z = z;
