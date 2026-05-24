@@ -2,6 +2,8 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_ov024_020d8694.hpp"
 
+UnkStruct_ov024_020d8694 *data_ov024_020d8694 = NULL;
+
 static const u32 sBMGSceneMap[] = {
     BMG_ID(BMGGroup_maingame, MsgIndex_ForestLand),         // TC_SceneMsgIdx_ForestLand
     BMG_ID(BMGGroup_maingame, MsgIndex_SnowLand),           // TC_SceneMsgIdx_SnowLand

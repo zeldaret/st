@@ -103,6 +103,7 @@ src/024_MainGame/UnkStruct_ov024_020d8694_024.cpp:
     .text       start:0x020cada0 end:0x020cb1f0
     .rodata     start:0x020d7328 end:0x020d73d8
     .data       start:0x020d7f80 end:0x020d7fa4
+    .bss        start:0x020d8694 end:0x020d8698
 
 src/024_MainGame/UnkTitleCardSystem1_024.cpp:
     complete
