@@ -4,11 +4,20 @@
 #include "global.h"
 #include "types.h"
 
-#define Vec2_Set(a, dst)             \
-    {                                \
-        (dst)->coords = (a)->coords; \
-    }                                \
-    ((void) 0)
+#if __MWERKS__
+    #define Vec2_Set(a, dst)             \
+        {                                \
+            (dst)->coords = (a)->coords; \
+        }                                \
+        ((void) 0)
+#else
+    #define Vec2_Set(a, dst)   \
+        {                      \
+            (dst)->x = (a)->x; \
+            (dst)->y = (a)->y; \
+        }                      \
+        ((void) 0)
+#endif
 
 #define Vec2_CopyAdd(type, a, b, dst) \
     {                                 \

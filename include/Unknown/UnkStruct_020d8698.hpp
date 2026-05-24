@@ -95,7 +95,7 @@ public:
 
     UnkStruct_020d8698_24_5C(unk32 param1, u16 *param2, u16 param3, unk32 param4);
 
-    void func_ov000_02065b48(u16 param1, unk32 param2);
+    void func_ov000_02065b48(unk32 param1, unk32 param2);
     void func_ov000_02065b8c();
 };
 
@@ -121,9 +121,53 @@ public:
     void func_ov024_020ce9ac();
 };
 
+class UnkStruct_020d8698_2C_198 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x80);
+    /* 80 */
+};
+
+class UnkStruct_020d8698_2C_14C {
+public:
+    /* 00 */ wchar_t mUnk_00[31]; // path to a ncgr file
+    /* 40 */ unk32 mUnk_40;
+    /* 44 */ unk32 mUnk_44;
+    /* 48 */ unk32 mUnk_48;
+    /* 4C */
+
+    UnkStruct_020d8698_2C_14C();
+
+    void func_ov000_02060c50(const wchar_t *path, UnkStruct_020d8698_2C_198 *param2, unk32 param3,
+                             UnkStruct_ov019_020d24c8_28_258_00 *param4); // is param3 sizeof(param2)?
+    void func_ov000_02060c7c(unk32 param1);
+    void func_ov000_02060d7c(unk32 param1, u16 param2);
+    void func_ov000_02060db8(u16 param1);
+    void func_ov000_02060e3c(unk32 param1, const char *filename, wchar_t *param3);
+};
+
 class UnkStruct_020d8698_2C {
 public:
-    /* 000 */ STRUCT_PAD(0x00, 0x21C);
+    /* 000 */ unk32 mUnk_000;
+    /* 004 */ UnkStruct_ov019_020d24c8_28_258 mUnk_004;
+    /* 01C */ UnkStruct_ov019_020d24c8_28_258 mUnk_01C;
+    /* 034 */ UnkStruct_ov019_020d24c8_28_258 mUnk_034;
+    /* 04C */ UnkSystem2_UnkSubSystem9 mUnk_04C;
+    /* 090 */ UnkStruct_020d8698_24_5C mUnk_090;
+    /* 130 */ Vec2s mUnk_130;
+    /* 134 */ Vec2s mUnk_134;
+    /* 138 */ Vec2s mUnk_138;
+    /* 13C */ unk32 mUnk_13C;
+    /* 140 */ bool mUnk_140;
+    /* 141 */ bool mUnk_141;
+    /* 142 */ bool mUnk_142;
+    /* 143 */ bool mUnk_143;
+    /* 144 */ unk16 mUnk_144;
+    /* 144 */ bool mUnk_146;
+    /* 148 */ unk16 mUnk_148;
+    /* 14A */ unk16 mUnk_14A;
+    /* 14C */ UnkStruct_020d8698_2C_14C mUnk_14C;
+    /* 198 */ UnkStruct_020d8698_2C_198 mUnk_198;
+    /* 218 */ Vec2s mUnk_218;
     /* 21C */
 
     UnkStruct_020d8698_2C();
@@ -135,13 +179,13 @@ public:
     void func_ov024_020cee84();
     void func_ov024_020cef58();
     void func_ov024_020cf2b8(unk8 *param1);
-    void func_ov024_020cf494(unk32 param1);
+    void func_ov024_020cf494(bool param1);
     void func_ov024_020cf4c4();
     void func_ov024_020cf514();
-    void func_ov024_020cf53c(unk32 param1);
+    void func_ov024_020cf53c(bool param1);
     void func_ov024_020cf570();
     void func_ov024_020cf584();
-    void func_ov024_020cf5a8();
+    void func_ov024_020cf5a8(bool param1);
 };
 
 class UnkStruct_020d8698_34 {
@@ -181,7 +225,7 @@ public:
     /* 08 */
 
     void func_ov031_0210eeb4();
-    void func_ov031_0210f7e4(ItemFlag itemFlag, unk32 param2);
+    void func_ov031_0210f7e4(ItemFlag itemFlag, bool param2);
     void func_ov031_0210f814();
 };
 
@@ -214,12 +258,12 @@ public:
     void func_ov024_020cd368(bool param1, bool param2);
     void func_ov024_020cd3a4();
     void func_ov024_020cd3d0();
-    void func_ov024_020cd3e0(unk32 param1);
-    void func_ov024_020cd3f0(unk32 param1);
+    void func_ov024_020cd3e0(bool param1);
+    void func_ov024_020cd3f0(bool param1);
     void func_ov024_020cd400();
     void func_ov024_020cd410();
     void func_ov024_020cd420();
-    void func_ov024_020cd458(ItemFlag itemFlag, unk32 param2);
+    void func_ov024_020cd458(ItemFlag itemFlag, bool param2);
     void func_ov024_020cd4a4(bool param1);
     void func_ov024_020cd4e4(u16 param1, bool param2);
     bool func_ov024_020cd5c0(u16 param1);

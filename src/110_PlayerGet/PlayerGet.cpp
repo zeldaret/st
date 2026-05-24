@@ -155,7 +155,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
 
                 if (this->mEquippedItem == ItemFlag_None) {
                     this->mEquippedItem = itemFlag;
-                    data_ov024_020d8698->func_ov024_020cd458(this->mEquippedItem, 0);
+                    data_ov024_020d8698->func_ov024_020cd458(this->mEquippedItem, false);
                 }
             } else {
                 itemFlag = GetItemFlag(itemId);

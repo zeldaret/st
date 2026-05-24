@@ -34,6 +34,7 @@ public:
     void func_0201c124(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_0201c1e4();
     void func_0201c22c();
+    bool func_0201c2b0(unk32 param1);
 
     void func_ov001_020bd734(unk32 *param1);
     void func_ov001_020bd784();

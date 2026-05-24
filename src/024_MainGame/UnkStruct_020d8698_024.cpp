@@ -1,3 +1,4 @@
+#include "MainGame/CargoManager.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
@@ -12,9 +13,12 @@
 
 extern "C" s16 func_020196b0(unk32 param1);
 extern "C" unk32 func_02015788(u16 param1);
+extern u16 data_ov024_020d73de[];
+extern u16 data_ov024_020d73ec[];
 extern u16 data_ov024_020d73fa[];
-extern u16 data_ov024_020d7432[];
 extern u16 data_ov024_020d740a[];
+extern u16 data_ov024_020d741e[];
+extern u16 data_ov024_020d7432[];
 
 UnkStruct_020d8698 *UnkStruct_020d8698::Create() {
     return new(HeapIndex_1) UnkStruct_020d8698();
@@ -107,7 +111,7 @@ void UnkStruct_020d8698::func_ov024_020cd094() {
 
     if (!local.mUnk_0C) {
         this->func_ov024_020cd368(false, false);
-        this->func_ov024_020cd3f0(0);
+        this->func_ov024_020cd3f0(false);
     }
 }
 
@@ -123,7 +127,7 @@ void UnkStruct_020d8698::func_ov024_020cd150() {
     if (!data_027e09a4->func_01ffd3d8()) {
         this->mUnk_034->func_ov024_020cf698();
         this->mUnk_044->func_ov031_0210eeb4();
-        data_ov024_020d8698->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, 1);
+        data_ov024_020d8698->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
     }
 
     if (this->mUnk_03C != NULL) {
@@ -201,11 +205,11 @@ void UnkStruct_020d8698::func_ov024_020cd3d0() {
     this->mUnk_02C->func_ov024_020cf514();
 }
 
-void UnkStruct_020d8698::func_ov024_020cd3e0(unk32 param1) {
+void UnkStruct_020d8698::func_ov024_020cd3e0(bool param1) {
     this->mUnk_02C->func_ov024_020cf53c(param1);
 }
 
-void UnkStruct_020d8698::func_ov024_020cd3f0(unk32 param1) {
+void UnkStruct_020d8698::func_ov024_020cd3f0(bool param1) {
     this->mUnk_02C->func_ov024_020cf494(param1);
 }
 
@@ -223,7 +227,7 @@ void UnkStruct_020d8698::func_ov024_020cd420() {
     }
 }
 
-void UnkStruct_020d8698::func_ov024_020cd458(ItemFlag itemFlag, unk32 param2) {
+void UnkStruct_020d8698::func_ov024_020cd458(ItemFlag itemFlag, bool param2) {
     if (!data_027e09a4->func_01ffd3d8() && data_027e09a4->IsNotCutscene()) {
         this->mUnk_044->func_ov031_0210f7e4(itemFlag, param2);
     }
@@ -762,7 +766,7 @@ UnkStruct_020d8698_24::UnkStruct_020d8698_24() :
     this->mUnk_106.x = 0;
     this->mUnk_106.y = 0;
 
-    s16 sVar2 = func_020196b0(0x1b);
+    s16 sVar2 = func_020196b0(0x1B);
 
     UnkStruct_ov019_020d24c8_28_258 local_30((volatile s32) sVar2, 1);
     UnkStruct_ov019_020d24c8_28_258 local_48((volatile s32) sVar2, 2);
@@ -770,9 +774,7 @@ UnkStruct_020d8698_24::UnkStruct_020d8698_24() :
 
     UnkStruct_ov019_020d24c8_28_258 local_60((volatile s32) sVar2, 0);
 
-    Vec2s temp;
-    Vec2s_Sub(&local_30.mPos, &local_60.mPos, &temp);
-    Vec2s_Copy(&temp, &this->mUnk_0FC);
+    Vec2s_CopySub(&local_30.mPos, &local_60.mPos, &this->mUnk_0FC);
 
     this->mUnk_05C.func_ov000_02065b48(data_027e0ce0->mUnk_2C->mNumRupees, 0);
 
@@ -888,15 +890,17 @@ void UnkStruct_020d8698_24::func_ov024_020ce88c(unk8 *param1) {
     Vec2s sp8;
     Vec2s sp4;
 
-    func_0201e8d4(&spC, &this->mUnk_018);
-    Vec2s_Add(&spC, &this->mUnk_106, &sp10);
+    Vec2s *pSpC = (Vec2s *) &spC;
+    func_0201e8d4(pSpC, &this->mUnk_018);
+    Vec2s_Add(pSpC, &this->mUnk_106, &sp10);
     data_0204af1c.func_0201aa44(&this->mUnk_000, &sp10, 2, NULL);
 
     sp14.Init();
     sp14.SetUnk04(2);
 
-    func_0201e8d4(&sp4, &this->mUnk_018);
-    Vec2s_OffsetAdd(&sp4, &this->mUnk_0FC, &this->mUnk_106, &sp8);
+    Vec2s *pSp4 = (Vec2s *) &sp4;
+    func_0201e8d4(pSp4, &this->mUnk_018);
+    Vec2s_OffsetAdd(pSp4, &this->mUnk_0FC, &this->mUnk_106, &sp8);
     Vec2s_Copy(&sp8, &this->mUnk_05C.mUnk_00);
 
     this->mUnk_05C.func_ov000_020659d0(param1, &sp14);
@@ -921,21 +925,312 @@ void UnkStruct_020d8698_24::func_ov024_020ce9ac() {
     }
 }
 
-UnkStruct_020d8698_2C::UnkStruct_020d8698_2C() {}
-void UnkStruct_020d8698_2C::func_ov024_020ced54() {}
-void UnkStruct_020d8698_2C::func_ov024_020ceda8() {}
-void UnkStruct_020d8698_2C::func_ov024_020cee58() {}
-void UnkStruct_020d8698_2C::func_ov024_020cee64() {}
-void UnkStruct_020d8698_2C::func_ov024_020cee84() {}
-void UnkStruct_020d8698_2C::func_ov024_020cef58() {}
-void UnkStruct_020d8698_2C::func_ov024_020cf2b8(unk8 *param1) {}
-void UnkStruct_020d8698_2C::func_ov024_020cf494(unk32 param1) {}
-void UnkStruct_020d8698_2C::func_ov024_020cf4c4() {}
-void UnkStruct_020d8698_2C::func_ov024_020cf514() {}
-void UnkStruct_020d8698_2C::func_ov024_020cf53c(unk32 param1) {}
-void UnkStruct_020d8698_2C::func_ov024_020cf570() {}
-void UnkStruct_020d8698_2C::func_ov024_020cf584() {}
-void UnkStruct_020d8698_2C::func_ov024_020cf5a8() {}
+UnkStruct_020d8698_2C::UnkStruct_020d8698_2C() :
+    mUnk_000(0),
+    mUnk_004(func_020196b0(0x1B), 6),
+    mUnk_01C(func_020196b0(0x1B), 5),
+    mUnk_034(func_020196b0(0x1B), 9),
+    mUnk_090(0x18, data_ov024_020d740a, 0, 1),
+    mUnk_13C(0),
+    mUnk_140(false),
+    mUnk_141(false),
+    mUnk_142(false),
+    mUnk_143(false),
+    mUnk_144(0),
+    mUnk_146(false) {
+    this->mUnk_218.x = 0;
+    this->mUnk_218.y = 0;
+
+    s16 sVar2 = func_020196b0(0x1B);
+
+    UnkStruct_ov019_020d24c8_28_258 local_30((volatile s32) sVar2, 7);
+    UnkStruct_ov019_020d24c8_28_258 local_48((volatile s32) sVar2, 8);
+    this->mUnk_090.mUnk_04 = local_48.mPos.x - local_30.mPos.x;
+
+    this->mUnk_090.func_ov000_02065b48(gpCargoManager->GetCargo()->GetAmount(), 0);
+
+    Vec2s_CopySub(&local_30.mPos, &this->mUnk_004.mPos, &this->mUnk_130);
+    Vec2s_CopySub(&this->mUnk_034.mPos, &this->mUnk_004.mPos, &this->mUnk_134);
+    Vec2s_CopySub(&this->mUnk_01C.mPos, &this->mUnk_004.mPos, &this->mUnk_138);
+
+    UnkStruct_ov019_020d24c8_28_258 local_78((volatile s32) sVar2, 8);
+    s16 temp_r0 = local_78.mPos.x + local_78.mUnk_0E.x;
+
+    if (data_0204a110.mUnk_000 == 0) {
+        Vec2s sp10;
+        Vec2s spC;
+
+        spC.x = this->mUnk_004.mPos.x;
+        spC.y = this->mUnk_004.mPos.y;
+
+        sp10.x = this->mUnk_004.mPos.x - temp_r0;
+        sp10.y = this->mUnk_004.mPos.y;
+
+        this->mUnk_04C.func_0201e874(BTN_ID_UNK_08, &sp10, &spC, 1);
+    } else {
+        Vec2s sp8;
+        Vec2s sp4;
+
+        sp4.x = this->mUnk_004.mPos.x;
+        sp4.y = this->mUnk_004.mPos.y;
+
+        sp8.x = this->mUnk_004.mPos.x + temp_r0;
+        sp8.y = this->mUnk_004.mPos.y;
+
+        this->mUnk_04C.func_0201e874(BTN_ID_UNK_08, &sp8, &sp4, 1);
+    }
+
+    if (gpCargoManager->GetCargo()->IsTypeSet()) {
+        this->func_ov024_020cee84();
+    }
+
+    if (data_027e09a4->func_01ffd3d8() && gpCargoManager->GetCargo()->IsTypeSet()) {
+        this->mUnk_141 = true;
+    } else {
+        this->mUnk_141 = false;
+    }
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020ced54() {
+    this->mUnk_04C.Subprocess2_UnkValueSets();
+    this->mUnk_04C.UnkOperations3();
+    this->mUnk_090.func_ov000_02065b48(gpCargoManager->GetCargo()->GetAmount(), 0);
+    this->mUnk_140 = false;
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020ceda8() {
+    s16 sVar1 = func_020196b0(0x1B);
+    this->mUnk_004.UnknownAction((volatile s32) sVar1, 0x06);
+    this->mUnk_01C.UnknownAction((volatile s32) sVar1, 0x05);
+    this->mUnk_034.UnknownAction((volatile s32) sVar1, 0x09);
+    this->mUnk_090.func_ov000_02065988(0x18, data_ov024_020d740a);
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020cee58() {
+    this->func_ov024_020cee84();
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020cee64() {
+    if (gpCargoManager->GetCargo()->IsTypeSet()) {
+        this->mUnk_143 = true;
+    } else {
+#if IS_JP
+        this->mUnk_141 = false;
+        this->mUnk_04C.Subprocess2_UnkValueSets();
+        this->mUnk_04C.UnkOperations3();
+#endif
+    }
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020cee84() {
+    if (!data_027e0994->mUnk_004.func_0201c2b0(func_020196b0(0x1B))) {
+        return;
+    }
+
+    wchar_t path[32];
+    path[0]  = L'\0';
+    path[31] = L'\0';
+
+    this->mUnk_14C.func_ov000_02060e3c(0, "Cargo.ncgr", path);
+
+#if IS_JP
+    if (!gpCargoManager->GetCargo()->IsTypeSet()) {
+        this->mUnk_141 = false;
+        return;
+    }
+#endif
+
+    CargoType eType = gpCargoManager->GetCargo()->GetType();
+    this->mUnk_14C.func_ov000_02060c50(path, &this->mUnk_198, 0x80, &this->mUnk_004);
+    this->mUnk_14C.func_ov000_02060db8(data_ov024_020d73ec[eType]);
+    this->mUnk_14C.func_ov000_02060c7c(0);
+    this->mUnk_14C.func_ov000_02060d7c(0x1D, data_ov024_020d73de[eType]);
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020cef58() {
+    this->mUnk_090.func_ov000_02065b8c();
+    this->mUnk_090.func_ov000_02065b48(gpCargoManager->GetCargo()->GetAmount(), 1);
+
+    if (data_0204a110.mUnk_000 == 1) {
+        switch (func_02015788(this->mUnk_090.mUnk_94)) {
+            case 1:
+                this->mUnk_218.x = this->mUnk_090.mUnk_04;
+                this->mUnk_218.y = 0;
+                break;
+            case 2:
+                this->mUnk_218.x = 0;
+                this->mUnk_218.y = 0;
+                break;
+            default:
+                break;
+        }
+    }
+
+    bool var_r2 = false;
+    bool var_r3 = false;
+
+    if (this->mUnk_13C > 0 && this->mUnk_090.mUnk_9C == 0) {
+        this->mUnk_13C--;
+    }
+
+    if (this->mUnk_141 || this->mUnk_140 || this->mUnk_13C > 0 || this->mUnk_090.mUnk_9C != 0) {
+        var_r2 = true;
+    } else {
+        var_r3 = true;
+    }
+
+    if (var_r2) {
+        if (!this->mUnk_04C.mUnk_0A) {
+            this->mUnk_04C.mUnk_0A = true;
+            this->mUnk_04C.UnkOperations1();
+            this->mUnk_04C.mUnk_08 = 1;
+        }
+    } else if (var_r3) {
+        if (!this->mUnk_04C.mUnk_0B) {
+            this->mUnk_04C.mUnk_0B = true;
+            this->mUnk_04C.UnkOperations2();
+            this->mUnk_04C.mUnk_08 = 1;
+        }
+    }
+
+    this->mUnk_04C.UpdateLogic();
+
+    if (this->mUnk_000 != 0) {
+        switch (this->mUnk_000) {
+            case 1:
+                this->mUnk_148++;
+
+                if (this->mUnk_148 == 0x1E) {
+                    this->mUnk_148 = 0;
+                    this->func_ov024_020cf5a8(true);
+                } else if (this->mUnk_148 == 0x0F) {
+                    this->func_ov024_020cf5a8(false);
+                }
+                break;
+            case 2:
+                this->mUnk_144--;
+
+                if (this->mUnk_144 == 0) {
+                    if (this->mUnk_146) {
+                        this->func_ov024_020cf584();
+                    } else {
+                        this->func_ov024_020cf570();
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    if (this->mUnk_143 && data_027e0994->func_02018ad4()) {
+        this->func_ov024_020cee84();
+        this->mUnk_143 = false;
+    }
+
+    if (this->mUnk_090.mUnk_9C != 0) {
+        if (this->mUnk_090.mUnk_9C == 1) {
+            data_ov000_020b5214.func_ov000_0206e7e8(0x78);
+        } else {
+            data_ov000_020b5214.func_ov000_0206e7e8(0x79);
+        }
+    }
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020cf2b8(unk8 *param1) {
+    UnkDataStruct1 sp24;
+    Vec2s sp20;
+    Vec2s sp1C;
+    Vec2s sp18;
+    Vec2s sp14;
+    Vec2s sp10;
+    Vec2s spC;
+    Vec2s sp8;
+    Vec2s sp4;
+
+    Vec2s *pSp1C = (Vec2s *) &sp1C;
+    func_0201e8d4(pSp1C, &this->mUnk_04C);
+    Vec2s_Add(pSp1C, &this->mUnk_218, &sp20);
+    data_0204af1c.func_0201aa44(&this->mUnk_004, &sp20, 2, NULL);
+
+    Vec2s *pSp14 = (Vec2s *) &sp14;
+    func_0201e8d4(&sp14, &this->mUnk_04C);
+    Vec2s_OffsetAdd2(pSp14, &this->mUnk_138, &this->mUnk_218, &sp18);
+    data_0204af1c.func_0201aa44(&this->mUnk_01C, &sp18, 2, NULL);
+
+    Vec2s *pSpC = (Vec2s *) &spC;
+    func_0201e8d4(&spC, &this->mUnk_04C);
+    Vec2s_OffsetAdd2(pSpC, &this->mUnk_134, &this->mUnk_218, &sp10);
+    data_0204af1c.func_0201aa44(&this->mUnk_034, &sp10, 2, NULL);
+
+    sp24.Init();
+    sp24.SetUnk04(2);
+
+    Vec2s *pSp4 = (Vec2s *) &sp4;
+    func_0201e8d4(&sp4, &this->mUnk_04C);
+    Vec2s_OffsetAdd(pSp4, &this->mUnk_130, &this->mUnk_218, &sp8);
+    Vec2s_Copy(&sp8, &this->mUnk_090.mUnk_00);
+
+    this->mUnk_090.func_ov000_020659d0(param1, &sp24);
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020cf494(bool param1) {
+    if (gpCargoManager->GetCargo()->IsTypeSet()) {
+        if (param1) {
+            this->mUnk_13C = 0x4B;
+        } else {
+            this->mUnk_140 = true;
+        }
+    }
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020cf4c4() {
+    this->mUnk_140 = false;
+
+    if (data_ov024_020d8698->func_ov024_020cd604()) {
+        this->mUnk_04C.Subprocess2_UnkValueSets();
+        this->mUnk_04C.UnkOperations3();
+    }
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020cf514() {
+    this->mUnk_000 = 0x02;
+    this->func_ov024_020cf5a8(true);
+    this->mUnk_144 = 0x4B;
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020cf53c(bool param1) {
+    if (this->mUnk_146 != param1) {
+        this->mUnk_146 = param1;
+
+        if (this->mUnk_000 != 2) {
+            if (param1 & 0xFF) {
+                this->func_ov024_020cf584();
+            } else {
+                this->func_ov024_020cf570();
+            }
+        }
+    }
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020cf570() {
+    this->mUnk_000 = 0x00;
+    this->func_ov024_020cf5a8(false);
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020cf584() {
+    this->mUnk_000 = 0x01;
+    this->func_ov024_020cf5a8(true);
+    this->mUnk_148 = 0x00;
+}
+
+void UnkStruct_020d8698_2C::func_ov024_020cf5a8(bool param1) {
+    if (param1) {
+        this->mUnk_090.func_ov000_02065988(0x18, data_ov024_020d741e);
+    } else {
+        this->mUnk_090.func_ov000_02065988(0x18, data_ov024_020d740a);
+    }
+}
 
 UnkStruct_020d8698_34::UnkStruct_020d8698_34() {}
 void UnkStruct_020d8698_34::func_ov024_020cf698() {}

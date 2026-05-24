@@ -56,8 +56,8 @@ void AdventureModeManager_184::vfunc_0C(unk32 param1) {
         }
 
         this->mUnk_10->func_ov010_020b7008();
-        data_ov024_020d8698->func_ov024_020cd368(0, 0);
-        data_ov024_020d8698->func_ov024_020cd3f0(0);
+        data_ov024_020d8698->func_ov024_020cd368(false, false);
+        data_ov024_020d8698->func_ov024_020cd3f0(false);
     }
 
     if (this->mUnk_10 != NULL && this->mUnk_10->vfunc_20()) {

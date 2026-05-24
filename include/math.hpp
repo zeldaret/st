@@ -67,6 +67,35 @@ static inline void Vec2s_Sub(const Vec2s *a, const Vec2s *b, Vec2s *dst) {
     dst->y = y;
 }
 
+//! TODO: Vec2s_OffsetAdd and Vec2s_OffsetAdd2 are probably fake?
+static inline void Vec2s_OffsetAdd(Vec2s *a, Vec2s *b, Vec2s *c, Vec2s *dst) {
+    s16 y;
+    s16 x;
+
+    y = a->y + b->y;
+    x = a->x + b->x;
+
+    x += c->x;
+    y += c->y;
+
+    dst->x = x;
+    dst->y = y;
+}
+
+static inline void Vec2s_OffsetAdd2(Vec2s *a, Vec2s *b, Vec2s *c, Vec2s *dst) {
+    s16 y;
+    s16 x;
+
+    y = a->y + b->y;
+    x = a->x + b->x;
+
+    y += c->y;
+    x += c->x;
+
+    dst->x = x;
+    dst->y = y;
+}
+
 static inline void Vec2s_Copy(const Vec2s *a, Vec2s *dst) {
 #if __MWERKS__
     dst->coords = a->coords;
@@ -276,18 +305,4 @@ extern "C" static inline Vec2s *Vec2s_GetCopy(Vec2s *src) {
     vec.x = src->x;
     vec.y = src->y;
     return &vec;
-}
-
-//! TODO: remove
-extern "C" static inline void Vec2s_OffsetAdd(const Vec2s *a, const Vec2s *b, const Vec2s *o, Vec2s *dst) {
-    s16 x;
-    s16 y;
-
-    const Vec2s *real_a = (const Vec2s *) a;
-
-    x = real_a->x + b->x;
-    y = real_a->y + b->y;
-
-    dst->x = x + o->x;
-    dst->y = y + o->y;
 }

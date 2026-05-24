@@ -433,7 +433,7 @@ void AdventureModeManager::func_ov024_020c5cec() {
     data_ov024_020d8698->func_ov024_020cd420();
 
     if (!data_027e09a4->func_01ffd3d8()) {
-        data_ov024_020d8698->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, 1);
+        data_ov024_020d8698->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
 
         if (gOverlayManager.IsPlayerSub() && data_0204a088->mUnk_00 == OverlayIndex_SceneInit) {
             this->mUnk_168->func_ov031_0210df60(1);

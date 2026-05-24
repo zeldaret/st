@@ -228,7 +228,7 @@ struct UnkStruct_ov019_020d24c8_28_258_00 {
 
 struct UnkStruct_ov019_020d24c8_28_258_00_Derived1 : public UnkStruct_ov019_020d24c8_28_258_00 {
     /* 00 (base) */
-    /* 08 */ unk32 mUnk_00;
+    /* 08 */ unk32 mUnk_08;
     /* 0C */
 };
 
