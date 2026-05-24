@@ -3,13 +3,13 @@
 #include "System/Random.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "global.h"
-#include <nitro/reg.h>
+
+#include <nitro/dc.h>
+#include <nitro/g2.h>
 
 extern "C" {
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
-void _G2_SetBlend(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-void DC_FlushAll();
 };
 
 FileSelectOptionsManager *gpFSOptionsManager = NULL;
@@ -47,9 +47,8 @@ ARM FileSelectSubScreen::FileSelectSubScreen() :
     this->mUnk_0FA8.func_02017520("TPD:Tape_d", "TPD:Tape_d", NULL);
     this->mUnk_0FE4.func_02017520("TPE:Tape_e", "TPE:Tape_e", NULL);
 
-    REG_DISPCNT_SUB &= ~0x00001F00;
-    REG_DISPCNT_SUB |= 0x00001F00;
-    _G2_SetBlend(&REG_BLDCNT_SUB, 0x01, 0x1E, 0x08, 0x0A);
+    GXS_SetVisiblePlane(31);
+    G2S_SetBlendAlpha(1, 30, 8, 10);
 
     {
         UnkStruct2 stack_narc("Screen/Bg/Cover.bin", 1);
@@ -75,9 +74,9 @@ ARM void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchCont
     this->mUnk_0024 = this->mUnk_0020;
     this->mUnk_0020 += 0x800;
 
-    REG_BG1OFS_SUB = ROUND_Q20(this->mUnk_0020) & 0x1FF;
-    REG_BG2OFS_SUB = (ROUND_Q20(this->mUnk_0020) + 0x100) & 0x1FF;
-    REG_BG3OFS_SUB = (ROUND_Q20(this->mUnk_0020) / 2) & 0x1FF;
+    G2S_SetBG1Offset(ROUND_Q20(this->mUnk_0020), 0);
+    G2S_SetBG2Offset(ROUND_Q20(this->mUnk_0020) + 0x100, 0);
+    G2S_SetBG3Offset(ROUND_Q20(this->mUnk_0020) / 2, 0);
 
     if (!(ROUND_Q20(this->mUnk_0020) % 256) && (ROUND_Q20(this->mUnk_0024) % 256)) {
         switch (this->mUnk_001C) {

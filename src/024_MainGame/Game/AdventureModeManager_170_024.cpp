@@ -6,7 +6,8 @@
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f70.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-#include <nitro/reg.h>
+
+#include <nitro/gx.h>
 
 extern "C" GameModeManagerBase_104 *func_ov008_020b6520(void *);
 
@@ -43,8 +44,8 @@ void AdventureModeManager_170::vfunc_0C(unk32 param1) {
         this->mUnk_38--;
 
         if (this->mUnk_38 == 0) {
-            REG_DISPCNT     = (REG_DISPCNT & ~0x1F00) | 0x1000;
-            REG_DISPCNT_SUB = (REG_DISPCNT_SUB & ~0x1F00) | 0x1000;
+            GX_SetVisiblePlane(16);
+            GXS_SetVisiblePlane(16);
         }
     }
 }

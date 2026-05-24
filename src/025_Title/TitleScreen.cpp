@@ -348,15 +348,14 @@ void TitleScreen::vfunc_0C(unk32 param1) {
 }
 
 void TitleScreen::func_ov025_020c592c() {
-    REG_DISPCNT &= ~0xE000;
-    REG_DISPCNT |= 0x8000;
+    GX_SetVisibleWindows(4);
 
     REG_WINOUT = (REG_WINOUT & ~0x3F00) | 0x1900;
     REG_WINOUT = (REG_WINOUT & ~0x3F) | 0x09;
 }
 
 void TitleScreen::func_ov025_020c5964() {
-    REG_DISPCNT &= ~0xE000;
+    GX_SetVisibleWindows(0);
     REG_WINOUT = (REG_WINOUT & ~0x3F) | 0x30;
 }
 

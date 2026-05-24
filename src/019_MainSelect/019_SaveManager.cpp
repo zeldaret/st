@@ -3,16 +3,11 @@
 #include "Unknown/UnkStruct_02049b80.hpp"
 #include "Unknown/UnkStruct_02049bd4.hpp"
 
+#include <nitro/card.h>
 #include <wstring.h>
 
 extern "C" {
 unk32 func_020328c8(void *, void *, size_t);
-unk32 CARD_GetResultCode();
-void CARD_LockBackup(u16 param1);
-void CARD_UnlockBackup(u16 param1);
-unk32 CARD_ReadWriteBackupAsync(void *src, uintptr_t dest, unk32 param3, unk32 param4, unk32 param5, unk32 param6,
-                                unk32 param7, unk32 param8, unk32 param9);
-
 bool func_ov000_020a0a90(size_t param1, void *param2, size_t param3);
 void func_ov000_020a0b58();
 };
@@ -199,7 +194,7 @@ ARM void SaveFile::func_ov019_020d0d50() {
     stack[1].mUnk_04 = 0x1A;
     MI_CpuFill16(0, &stack[1].mUnk_06, 0x16);
 
-    CARD_ReadWriteBackupAsync(stack, SAVE_DATA_SIZE * 2, sizeof(stack_struct) * 2, 0, 0, 0, 7, 10, 2);
+    CARD_WriteAndVerifyFlashAsync((u32) stack, (void *) (SAVE_DATA_SIZE * 2), sizeof(stack_struct) * 2, NULL, NULL);
 }
 
 // https://decomp.me/scratch/gJJbb
@@ -362,7 +357,7 @@ ARM void SaveFile::func_ov019_020d1808(unk32 param1) {
     SaveSlot *pSub2 = &this->mSlots[param1];
     stack_struct2 stack1[5];
 
-    if (CARD_ReadWriteBackupAsync(pSub2, param1 * SAVE_DATA_SIZE, sizeof(SaveSlot), 0, 0, 0, 6, 1, 0) == 0) {
+    if (CARD_ReadFlashAsync((u32) pSub2, (void *) (param1 * SAVE_DATA_SIZE), sizeof(SaveSlot), NULL, NULL) == 0) {
         return;
     }
 

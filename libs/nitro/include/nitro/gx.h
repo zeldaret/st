@@ -406,6 +406,14 @@ inline void GXS_SetOBJVRamModeBmp(u32 mode) {
     REG_DISPCNT_SUB = REG_DISPCNT_SUB & ~0x60 | ((mode & 0x3) << 5);
 }
 
+inline void GX_SetVisibleWindows(s32 windows) {
+    REG_DISPCNT = (REG_DISPCNT & ~0xE000) | (windows << 13);
+}
+
+inline void GXS_SetVisibleWindows(s32 windows) {
+    REG_DISPCNT_SUB = (REG_DISPCNT_SUB & ~0xE000) | (windows << 13);
+}
+
 #ifdef __cplusplus
 } // extern "C"
 #endif

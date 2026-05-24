@@ -7,10 +7,10 @@
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-#include <nitro/reg.h>
+
+#include <nitro/g2.h>
 
 extern "C" {
-void _G2_SetBlend(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
 void func_ov000_02062e44(void *param1, void *param2);
 };
 
@@ -185,9 +185,9 @@ ARM FileSelectMain::FileSelectMain() :
     data_0204a110.func_020195a0("MSB:SelectBG.nclr", 0, 6, 0);
     // Test1 aauStack_94[6];
     // Test2 aauStack_48;
-    REG_DISPCNT &= 0xFFFFE0FF;
-    REG_DISPCNT |= 0x00001C00;
-    _G2_SetBlend(&REG_BLDCNT, 4, 8, 0, 0x10);
+
+    GX_SetVisiblePlane(28);
+    G2_SetBlendAlpha(4, 8, 0, 16);
     this->mUnk_0C.Append(&this->mUnk_005C);
     this->func_ov019_020c63dc();
     this->func_ov019_020c6d10();
@@ -766,7 +766,7 @@ ARM void FileSelectMain::func_ov019_020c7878() {
     this->mUnk_15D4.mUnk_2A = true;
     this->mUnk_18EC.mUnk_2A = true;
     this->mUnk_005C.mUnk_2A = true;
-    REG_BLDALPHA            = 0x1010;
+    G2_ChangeBlendAlpha(16, 16);
 }
 
 ARM void FileSelectMain::func_ov019_020c78ac() {
@@ -1135,7 +1135,7 @@ ARM void FileSelectMain::vfunc_08(Input *pButtons, TouchControl *pTouchControl) 
 
     CALL_PTMF(PTMF<FileSelectMain>, data_ov019_020d1f94[this->mState]);
     this->mUnk_002C.UpdateLogic();
-    REG_BLDALPHA = this->mUnk_002C.func_0201eaa0() | 0x1000;
+    G2_ChangeBlendAlpha(this->mUnk_002C.func_0201eaa0(), 16);
 }
 
 ARM void FileSelectMain::func_ov019_020c8290() {

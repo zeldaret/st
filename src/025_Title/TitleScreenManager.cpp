@@ -3,11 +3,6 @@
 
 const unk16 data_ov025_020c5a0c[] = {0x0016, 0x003C};
 
-extern "C" {
-void GX_SetGraphicsMode(unk32 param1, unk32 param2, unk32 param3);
-void GXS_SetGraphicsMode(unk32 param1);
-}
-
 ARM TitleScreenManager *TitleScreenManager::Create(unk32 param1) {
     return new(HeapIndex_1) TitleScreenManager(param1);
 }

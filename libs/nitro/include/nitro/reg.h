@@ -53,6 +53,7 @@ extern "C" {
 #define REG_FNT_SIZE (*(u32 *) (_BIOS_REG_BASE | 0xE44))
 #define REG_FAT_ROM_OFFSET (*(u32 *) (_BIOS_REG_BASE | 0xE48))
 #define REG_FAT_SIZE (*(u32 *) (_BIOS_REG_BASE | 0xE4C))
+#define REG_027FFF9C (*(u32 *) (_BIOS_REG_BASE | 0xF9C))
 #define REG_027FFFA0 (*(u32 *) (_BIOS_REG_BASE | 0xFA0))
 
 #define REG_GFX_FIFO (*(vu32 *) 0x04000400)

@@ -18,8 +18,6 @@
 extern "C" {
 void *func_ov024_020d1658();
 void *func_ov000_02066294();
-void GX_SetGraphicsMode(unk32 param1, unk32 param2, unk32 param3);
-void GXS_SetGraphicsMode(unk32 param1);
 }
 
 extern int data_ov001_020c27a8;
