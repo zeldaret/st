@@ -158,7 +158,7 @@ void AdventureModeManager_160::func_ov024_020c7d4c(unk32 param1) {
     this->mUnk_0C = 7;
 
     if (param1 == 6) {
-        if (data_027e09a4->func_01ffd3d8()) {
+        if (data_027e09a4->IsOnTrain()) {
             data_0204a110.func_02019538(4, 1);
         } else {
             data_0204a110.func_02019538(0, 1);
@@ -333,7 +333,7 @@ void AdventureModeManager_160::vfunc_20(unk32 param1, unk32 param2) {
         this->mUnk_70.mUnk_27 = false;
         SceneIndex sceneIndex = GetAdventureModeManager()->mUnk_1C4.sceneIndex;
 
-        if (data_027e09a4->func_01ffd3d8()) {
+        if (data_027e09a4->IsOnTrain()) {
             GetAdventureModeManager()->func_ov024_020c555c(1);
         } else {
             if (data_027e09a0->func_ov000_02070378(sceneIndex)) {

@@ -90,11 +90,13 @@ struct CourseRoomEntry {
 struct CourseEntry {
     /* 00 */ const char name[16];
     /* 10 */ unk32 unk_10;
-    /* 14 */ unk8 mNumRooms;
+    /* 14 */ unk8 numRooms;
     /* 15 */ unk8 unk_15;
-    /* 16 */ unk8 unk_16;
-    /* 17 */ u8 mSaveCourseIndex;
-    /* 18 */ STRUCT_PAD(0x18, 0x1D);
+    /* 16 */ unk8 titleCardMsgIndex;
+    /* 17 */ u8 saveCourseIndex;
+    /* 18 */ STRUCT_PAD(0x18, 0x1B);
+    /* 1B */ u8 unk_1B;
+    /* 1C */ u8 unk_1C;
     /* 1D */ u8 unk_1D;
     /* 1E */ u8 unk_1E;
     /* 1F */ u8 unk_1F;

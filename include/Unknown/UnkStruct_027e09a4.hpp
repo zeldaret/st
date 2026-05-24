@@ -3,6 +3,7 @@
 #include "Cutscene/Cutscene.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
+#include "Unknown/UnkStruct_027e09a0.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -145,18 +146,6 @@ enum SceneIndex_ {
     /* 121 */ SceneIndex_Max           = 0x79
 };
 
-struct UnkStruct_func_01ffd400 {
-    /* 00 */ STRUCT_PAD(0x00, 0x10);
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk16 mUnk_14;
-    /* 16 */ s8 mUnk_16;
-    /* 17 */ unk8 mUnk_17;
-    /* 18 */ unk8 mUnk_18;
-    /* 19 */ unk8 mUnk_19;
-    /* 1A */ unk8 mUnk_1A;
-    /* 1B */ u8 mUnk_1B;
-};
-
 struct UnkStruct_SceneChange1_Base {
     /* 00 */ unk32 mSceneIndex;
     /* 04 */ unk32 mUnk_04;
@@ -274,7 +263,7 @@ public:
     bool UnkCheck2() const {
         bool result = true;
 
-        if (this->func_01ffd400()->mUnk_10 != 1 && this->func_01ffd400()->mUnk_10 != 3) {
+        if (this->GetCurrentCourseEntry()->unk_10 != 1 && this->GetCurrentCourseEntry()->unk_10 != 3) {
             result = false;
         }
 
@@ -311,9 +300,11 @@ public:
 
     ~UnkStruct_027e09a4();
 
-    bool func_01ffd3d8(); // is on train?
-    UnkStruct_func_01ffd400 *func_01ffd400() const;
+    // itcm
+    bool IsOnTrain();
+    CourseEntry *GetCurrentCourseEntry() const;
 
+    // overlay 0
     unk8 func_ov000_02070bd0(unk32 csIndex, unk32 param2);
     UnkStruct_SceneChange1 *func_ov000_02070560();
     void func_ov000_020707a8(void *param1);
@@ -329,6 +320,7 @@ public:
     bool func_ov000_0207056c();
     void func_ov000_020705e8(SaveFile *param1, unk32 param2);
 
+    // overlay 17
     void func_ov017_020bb994(void *param1);
     void func_ov017_020bb994(unk32 param1);
     void func_ov017_020bb994(void *, void *);

@@ -98,7 +98,7 @@ void CargoManager::Update() {
                 }
             } else if (type == CargoType_MegaIce || type == CargoType_Fish) {
                 // the timer won't increase if we are in snow realm
-                if (data_027e09a4->func_01ffd400()->mUnk_1B & 0x20) {
+                if (data_027e09a4->GetCurrentCourseEntry()->unk_1B & 0x20) {
                     this->mCargo.mDecayTimer++;
                 }
             } else {
@@ -172,7 +172,7 @@ void CargoManager::RemoveAmount(unk32 decr) {
 }
 
 bool CargoManager::func_ov017_020bec9c() {
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsOnTrain()) {
         return data_027e0cd8->mUnk_0C->mUnk_160->func_ov026_02106aa8();
     }
 

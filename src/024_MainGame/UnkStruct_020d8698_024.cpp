@@ -69,7 +69,7 @@ UnkStruct_020d8698::UnkStruct_020d8698() :
     this->mUnk_024 = new(HeapIndex_1) UnkStruct_020d8698_24();
     this->mUnk_02C = new(HeapIndex_1) UnkStruct_020d8698_2C();
 
-    if (!data_027e09a4->func_01ffd3d8()) {
+    if (!data_027e09a4->IsOnTrain()) {
         this->mUnk_034 = new(HeapIndex_1) UnkStruct_020d8698_34();
         this->mUnk_044 = new(HeapIndex_1) UnkStruct_020d8698_44();
 
@@ -95,7 +95,7 @@ UnkStruct_020d8698::~UnkStruct_020d8698() {
     delete this->mUnk_02C;
     this->mUnk_02C = NULL;
 
-    if (!data_027e09a4->func_01ffd3d8()) {
+    if (!data_027e09a4->IsOnTrain()) {
         delete this->mUnk_034;
         this->mUnk_034 = NULL;
 
@@ -150,7 +150,7 @@ void UnkStruct_020d8698::func_ov024_020cd150() {
     this->mUnk_024->func_ov024_020ce570();
     this->mUnk_02C->func_ov024_020ceda8();
 
-    if (!data_027e09a4->func_01ffd3d8()) {
+    if (!data_027e09a4->IsOnTrain()) {
         this->mUnk_034->func_ov024_020cf698();
         this->mUnk_044->func_ov031_0210eeb4();
         data_ov024_020d8698->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
@@ -174,7 +174,7 @@ void UnkStruct_020d8698::vfunc_08(Input *pButtons, TouchControl *pTouchControl) 
         this->mUnk_02C->func_ov024_020cef58();
     }
 
-    if (!data_027e09a4->func_01ffd3d8() && this->mUnk_038) {
+    if (!data_027e09a4->IsOnTrain() && this->mUnk_038) {
         this->mUnk_034->func_ov024_020cf6e4();
     }
 
@@ -197,7 +197,7 @@ void UnkStruct_020d8698::vfunc_10(unk8 *param1) {
             this->mUnk_02C->func_ov024_020cf2b8(param1);
         }
 
-        if (!data_027e09a4->func_01ffd3d8() && this->mUnk_038) {
+        if (!data_027e09a4->IsOnTrain() && this->mUnk_038) {
             this->mUnk_034->func_ov024_020cf724();
         }
     }
@@ -254,13 +254,13 @@ void UnkStruct_020d8698::func_ov024_020cd420() {
 }
 
 void UnkStruct_020d8698::func_ov024_020cd458(ItemFlag itemFlag, bool param2) {
-    if (!data_027e09a4->func_01ffd3d8() && data_027e09a4->IsNotCutscene()) {
+    if (!data_027e09a4->IsOnTrain() && data_027e09a4->IsNotCutscene()) {
         this->mUnk_044->func_ov031_0210f7e4(itemFlag, param2);
     }
 }
 
 void UnkStruct_020d8698::func_ov024_020cd4a4(bool param1) {
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsOnTrain()) {
         return;
     }
 
@@ -283,7 +283,7 @@ void UnkStruct_020d8698::func_ov024_020cd4e4(u16 param1, bool param2) {
             this->mUnk_030 = param2;
             break;
         case 2:
-            if (!data_027e09a4->func_01ffd3d8() && param2 != this->mUnk_048) {
+            if (!data_027e09a4->IsOnTrain() && param2 != this->mUnk_048) {
                 this->mUnk_048 = param2;
 
                 if (this->mUnk_044 != NULL) {
@@ -344,7 +344,7 @@ void UnkStruct_020d8698_1C::func_ov024_020cd768() {
 }
 
 void UnkStruct_020d8698_1C::func_ov024_020cd774() {
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsOnTrain()) {
         s32 sVar1 = func_020196b0(0x34);
         s32 sVar2 = func_020196b0(0x27);
 
@@ -428,7 +428,7 @@ void UnkStruct_020d8698_1C::func_ov024_020cdaac() {
             }
 
             Vec2s sp4;
-            if (data_027e09a4->func_01ffd3d8()) {
+            if (data_027e09a4->IsOnTrain()) {
                 UnkStruct_ov019_020d24c8_28_258 sp20(func_020196b0(0x34), data_ov024_020d73fa[var_r7]);
                 sp4.x = sp20.mPosU.x;
                 sp4.y = sp20.mPosU.y;
@@ -488,7 +488,7 @@ void UnkStruct_020d8698_1C::func_ov024_020cdd3c(u8 param1, u8 param2) {
     u8 var_r4 = param2;
     u8 var_r5 = param1;
 
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsOnTrain()) {
         var_r5 *= 4;
         var_r4 *= 4;
     }
@@ -582,7 +582,7 @@ void UnkStruct_020d8698_1C::func_ov024_020cdd3c(u8 param1, u8 param2) {
 void UnkStruct_020d8698_1C::func_ov024_020cde54(u8 param1) {
     u8 var_r5 = param1;
 
-    if (data_027e09a4->func_01ffd3d8() != 0) {
+    if (data_027e09a4->IsOnTrain() != 0) {
         var_r5 *= 4;
     }
 
@@ -682,7 +682,7 @@ void UnkStruct_020d8698_1C::func_ov024_020cdfd8() {
                     this->SetIterValue(var_r7, 0x01);
 
                     if (this->mUnk_008 == this->mUnk_009) {
-                        if (this->mUnk_008 == (data_027e09a4->func_01ffd3d8() ? 0x08 : 0x10) ||
+                        if (this->mUnk_008 == (data_027e09a4->IsOnTrain() ? 0x08 : 0x10) ||
                             this->GetIterValue(this->mUnk_008) == 0x0B || this->GetIterValue(this->mUnk_008) == 0x00) {
 
                             this->mUnk_024.func_ov000_02060b64();
@@ -759,7 +759,7 @@ void UnkStruct_020d8698_1C::func_ov024_020cdfd8() {
 }
 
 u8 UnkStruct_020d8698_1C::func_ov024_020ce218() {
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsOnTrain()) {
         return data_027e0ce0->mUnk_34->mUnk_28 * 4;
     }
 
@@ -767,7 +767,7 @@ u8 UnkStruct_020d8698_1C::func_ov024_020ce218() {
 }
 
 u8 UnkStruct_020d8698_1C::func_ov024_020ce260() {
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsOnTrain()) {
         return data_027e0ce0->mUnk_34->mUnk_24 * 4;
     }
 
@@ -775,7 +775,7 @@ u8 UnkStruct_020d8698_1C::func_ov024_020ce260() {
 }
 
 u32 UnkStruct_020d8698_1C::func_ov024_020ce2a8() {
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsOnTrain()) {
         return 0x08;
     }
 
@@ -1010,7 +1010,7 @@ UnkStruct_020d8698_2C::UnkStruct_020d8698_2C() :
         this->func_ov024_020cee84();
     }
 
-    if (data_027e09a4->func_01ffd3d8() && gpCargoManager->GetCargo()->IsTypeSet()) {
+    if (data_027e09a4->IsOnTrain() && gpCargoManager->GetCargo()->IsTypeSet()) {
         this->mUnk_141 = true;
     } else {
         this->mUnk_141 = false;

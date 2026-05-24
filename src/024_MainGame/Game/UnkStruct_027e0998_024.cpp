@@ -40,7 +40,7 @@ bool UnkStruct_027e0998::vfunc_00(Vec3p *pPos, Vec2s *param2, u16 *param3) {
         return false;
     }
 
-    if (data_027e09a4->func_01ffd3d8() && data_ov026_02138d10->func_ov026_020e6a6c()) {
+    if (data_027e09a4->IsOnTrain() && data_ov026_02138d10->func_ov026_020e6a6c()) {
         return false;
     }
 
@@ -52,7 +52,7 @@ bool UnkStruct_027e0998::vfunc_00(Vec3p *pPos, Vec2s *param2, u16 *param3) {
         case 3:
             return this->func_ov024_020c727c(param2, param3);
         case 4:
-            if (data_027e09a4->func_01ffd3d8()) {
+            if (data_027e09a4->IsOnTrain()) {
                 u32 value = *(u32 *) param3;
 
                 // position? param3 could be a Vec2us
@@ -106,7 +106,7 @@ bool UnkStruct_027e0998::func_ov024_020c716c() {
 bool UnkStruct_027e0998::func_ov024_020c7214(Vec3p *pPos, Vec2s *param2, u16 *param3) {
     bool temp_r4 = this->UnkStruct_027e0998_Base::vfunc_00(pPos, param2, param3);
 
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsOnTrain()) {
         Vec2s sp0;
         func_ov024_020d51dc(&sp0, data_027e09a4->CurrentSceneIndex());
 
@@ -158,7 +158,7 @@ bool UnkStruct_027e0998::func_ov024_020c7300(unk32 param1) {
 }
 
 bool UnkStruct_027e0998::func_ov024_020c7354() {
-    if (data_027e09a4->func_01ffd400()->mUnk_10 == 6 && !data_027e09a4->IsPirate()) {
+    if (data_027e09a4->GetCurrentCourseEntry()->unk_10 == 6 && !data_027e09a4->IsPirate()) {
         return true;
     }
 

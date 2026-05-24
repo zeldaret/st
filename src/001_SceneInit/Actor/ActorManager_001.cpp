@@ -17,7 +17,6 @@ void func_ov021_020f8818();
 void func_ov031_020ea100();
 void func_ov071_0215e8d4();
 unk32 func_01ffd3b0();
-unk32 func_01ffd3d8();
 }
 
 struct UnkStruct_ov000_020ab1ac {
@@ -186,7 +185,7 @@ THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param
                 auStack_64.func_ov000_02059270(0x32, "zeldahit", 0x29200000);
                 auStack_64.func_ov000_02059270(0x33, "zeldatarget", 0x2D200000);
             }
-        } else if (func_01ffd3d8() != 0) {
+        } else if (data_027e09a4->IsOnTrain()) {
             UnkStruct_StackTitleScreen auStack_78("Npc/Tex.bin", 1);
             auStack_78.func_ov000_02059270(0x12, "rupy0", 0x2D200000);
             auStack_78.func_ov000_02059288(0x13, "rupy1", 0x12);
@@ -223,7 +222,7 @@ THUMB void ActorManager::func_ov001_020bb414(ActorManager *instance) {
 
 THUMB void ActorManager::func_ov001_020bb488() {
     if (data_027e09a4->IsNotCutscene()) {
-        switch (data_027e09a4->func_01ffd400()->mUnk_10) {
+        switch (data_027e09a4->GetCurrentCourseEntry()->unk_10) {
             case 0x00:
             case 0x01:
             case 0x03:
@@ -288,7 +287,7 @@ THUMB void ActorManager::func_ov001_020bb630() {
             if (iVar4->mUnk_38 != 0) {
                 run_vfunc_08 = true;
             } else {
-                if (iVar4->mActorId == ActorId_BSFC && data_027e09a4->func_01ffd400()->mUnk_1B & 0x10) {
+                if (iVar4->mActorId == ActorId_BSFC && data_027e09a4->GetCurrentCourseEntry()->unk_1B & 0x10) {
                     run_vfunc_08 = true;
                 }
             }

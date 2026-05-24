@@ -329,7 +329,7 @@ void UnkTitleCardSystem1_Derived1::vfunc_0C() {
 }
 
 void UnkTitleCardSystem1_Derived1::vfunc_10() {
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsOnTrain()) {
         if (data_0204a110.mUnk_DF4 == 0) {
             this->mUnk_004 = 0x07;
         } else {
@@ -379,7 +379,7 @@ void UnkTitleCardSystem1_Derived1::func_ov024_020cbeb8() {
             index = TC_SceneMsgIdx_LostAtSeaStation;
         }
     } else {
-        index = data_027e09a4->func_01ffd400()->mUnk_16;
+        index = data_027e09a4->GetCurrentCourseEntry()->titleCardMsgIndex;
     }
 
     if (index >= 0) {
