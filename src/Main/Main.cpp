@@ -3,6 +3,7 @@
 #include "types.h"
 
 #include <nitro/gx.h>
+#include <nitro/hw.h>
 
 void func_0203b920(void);
 void func_02011da0(void);
@@ -57,8 +58,8 @@ extern "C" ARM void Entry(void) {
 
     func_02000a78();
     func_0200093c(0, (u32 *) data_027e0000, 0x4000);
-    func_0200093c(0, &REG_PALETTE_A, 0x400);
-    func_0200093c(0x200, &REG_OAM_A, 0x400);
+    func_0200093c(0, (u32 *) HW_PLTT, 0x400);
+    func_0200093c(0x200, (u32 *) HW_OAM, 0x400);
     func_02000950(BuildInfo.mUnk_14);
     func_020009fc();
     puVar4 = BuildInfo.mUnk_10;

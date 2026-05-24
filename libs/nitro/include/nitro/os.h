@@ -164,6 +164,7 @@ void OS_func_0169(u32, void (*)(u32, u32, u32));
 BOOL OS_func_0170(u32, u32);
 s32 OS_func_0171(u32, u32, u32);
 s32 OS_func_0174(void);
+BOOL OS_func_0065(void);
 
 inline void OS_SetIrqCheckFlag(void) {
     REG_IRQ |= 1;

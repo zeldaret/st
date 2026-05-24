@@ -42,6 +42,8 @@ CARDBackupType CARD_GetBackupType();
 BOOL CARD_ReadWriteBackupAsync(u32 offset, void *buf, u32 size, void *, void *, u32, u32, u32, u32);
 void CARD_WaitBackupAsync(void);
 CARDResult CARD_GetResultCode(void);
+BOOL CARD_func_0033();
+void CARD_func_0034();
 
 inline BOOL CARD_ReadEepromAsync(u32 offset, void *buf, u32 size, void *param4, void *param5) {
     return CARD_ReadWriteBackupAsync(offset, buf, size, param4, param5, 1, 6, 1, 0);

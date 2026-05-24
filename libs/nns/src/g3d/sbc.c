@@ -34,7 +34,7 @@ typedef struct UnkStruct_027e037c_ {
 } UnkStruct_027e037c;
 
 extern UnkStruct_027e037c data_027e0208;
-#include "Unknown/UnkMemFuncs.h"
+#include <nitro/mi.h>
 #include <nitro/reg.h>
 
 #define G3D_SBC_CMD_MASK 0x1f
@@ -69,7 +69,7 @@ void G3d_RenderSBCCommands(G3d_RenderState *renderState) {
 
 // Initializes the render state and starts rendering the SBC command list
 void G3d_InitRenderState(G3d_RenderState *renderState, G3d_RenderObject *renderObj) {
-    _MI_CpuFill(0, (short *) renderState, sizeof(*renderState));
+    MI_CpuClearFast(renderState, sizeof(*renderState));
 
     renderState->mUnk_C4[0] = 1;
     renderState->flag       = G3D_RENDERST_FLAG_BONE_VISIBLE;
@@ -483,7 +483,7 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
     Mat4p *mat4x;
     Mat3p *mat3x;
 
-    _MI_CpuFill(0, (unk16 *) &mtxStruct, sizeof(mtxStruct));
+    MI_CpuClearFast(&mtxStruct, sizeof(mtxStruct));
     FlushGfxQueue();
 
     REG_GFX_FIFO_MATRIX_MODE     = 0; // Projection

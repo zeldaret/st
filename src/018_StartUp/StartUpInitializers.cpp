@@ -2,7 +2,6 @@
 #include "System/Random.hpp"
 #include "System/SysFault.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_02049f04.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
 #include "Unknown/UnkStruct_0204a090.hpp"
@@ -18,6 +17,7 @@
 #include "Unknown/UnkStruct_ov000_020b52e8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5340.hpp"
 #include "versions.h"
+#include <nitro/mi.h>
 
 #include <nitro/card.h>
 #include <nitro/gx.h>

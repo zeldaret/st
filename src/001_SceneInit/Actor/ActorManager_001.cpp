@@ -1,6 +1,5 @@
 #include "Actor/ActorManager.hpp"
 #include "System/OverlayManager.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -9,6 +8,7 @@
 #include "Unknown/UnkStruct_027e0d70.hpp"
 #include "flags.h"
 #include "global.h"
+#include <nitro/mi.h>
 
 extern "C" {
 void func_ov000_020977e4();

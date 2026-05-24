@@ -1,6 +1,5 @@
 #include "Game/GameModeManager.hpp"
 #include "System/OverlayManager.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_02049be0.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
@@ -11,6 +10,7 @@
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f84.hpp"
 #include "Unknown/UnkStruct_ov024_020d8694.hpp"
+#include <nitro/mi.h>
 
 extern "C" unk32 func_02014fe0();
 extern "C" fx32 func_01ffb428(unk32, unk32);

@@ -23,7 +23,7 @@ extern "C" {
 #define HW_DB_OBJ_VRAM ((void *) 0x06600000)
 #define HW_DB_OBJ_VRAM_SIZE // TODO
 
-#define HW_LCDC_VRAM 0x06800000
+#define HW_LCDC_VRAM ((void *) 0x06800000)
 #define HW_LCDC_VRAM_SIZE 0xA4000
 
 #define HW_OAM ((void *) 0x07000000)

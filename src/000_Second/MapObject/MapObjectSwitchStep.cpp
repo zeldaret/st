@@ -1,11 +1,11 @@
 #include "MapObject/MapObjectSwitchStep.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
+#include <nitro/mi.h>
 
 extern "C" unk32 func_0200f218(unk32, const char *);
 

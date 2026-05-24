@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Unknown/UnkMemFuncs.h"
 #include "global.h"
 #include "types.h"
+#include <nitro/mi.h>
 
 #include "math.hpp"
 

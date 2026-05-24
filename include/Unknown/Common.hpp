@@ -3,11 +3,11 @@
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkFileSystem.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "global.h"
 #include "math.hpp"
 #include "profile.hpp"
 #include "types.h"
+#include <nitro/mi.h>
 
 #include <nns/text.h>
 

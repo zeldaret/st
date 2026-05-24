@@ -1,10 +1,10 @@
 #define DOORBASE_DTOR_NOINLINE
 #include "MapObject/MapObjectDoorBase.hpp"
 #include "Unknown/Common.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
+#include <nitro/mi.h>
 
 extern "C" unk32 func_01ffb464(unk32 param1);
 extern "C" void func_01ff9218(void *, unk32, unk32);

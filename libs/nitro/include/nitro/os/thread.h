@@ -1,5 +1,5 @@
-#ifndef NITROSDK_OS_THREAD_H
-#define NITROSDK_OS_THREAD_H
+#ifndef _NITRO_THREAD_H
+#define _NITRO_THREAD_H
 
 #include <nitro/os/context.h>
 
@@ -96,4 +96,4 @@ static inline u32 OS_GetThreadId(OSThread *thread) {
     return thread->id;
 }
 
-#endif // NITROSDK_OS_THREAD_H
+#endif // _NITRO_THREAD_H

@@ -2,13 +2,13 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Physics/Cylinder.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
+#include <nitro/mi.h>
 
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
 extern "C" void func_01ffb9cc(VecFx32 *, VecFx32 *);
@@ -38,7 +38,7 @@ ARM MapObject::MapObject() {
     this->mPos.z = ptr->z;
 
     this->mUnk_14 = *ptr2->mUnk_0C;
-    _MI_CpuCopy(ptr2->mUnk_04, &this->mUnk_20, sizeof(MapObject_20));
+    MI_CpuCopyFast(ptr2->mUnk_04, &this->mUnk_20, sizeof(MapObject_20));
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_18); i++) {
         this->mUnk_18[i] = 0;

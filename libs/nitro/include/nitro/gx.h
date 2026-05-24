@@ -338,6 +338,8 @@ void GX_BeginLoadTex(void);
 void GX_LoadTex(void *ptr, u32 offset, u32 size);
 void GX_EndLoadTex(void);
 
+void GX_func_0008(void *, s32, s32);
+
 extern u16 data_020a7088;
 extern u32 data_020a708c;
 

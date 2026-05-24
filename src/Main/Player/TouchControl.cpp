@@ -1,5 +1,5 @@
 #include "Player/TouchControl.hpp"
-#include "Unknown/UnkMemFuncs.h"
+#include <nitro/mi.h>
 
 #include <nitro/pad.h>
 

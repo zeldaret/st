@@ -9,12 +9,11 @@
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "versions.h"
 
+#include <nitro/card.h>
 #include <nitro/os.h>
 #include <nitro/reg.h>
 
 extern "C" void func_020196fc();
-extern "C" unk32 CARD_func_0033();
-extern "C" void CARD_func_0034();
 extern "C" void FlushGfxQueue();
 extern "C" void func_020132c8();
 extern "C" void func_020132dc();
@@ -63,7 +62,7 @@ ARM void Game::Run() {
                 this->mUnk_08 = NULL;
             }
 
-            if (CARD_func_0033() != 0) {
+            if (CARD_func_0033()) {
                 CARD_func_0034();
             }
 

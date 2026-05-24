@@ -171,12 +171,6 @@ extern u32 __DTCM_LO;
 
 #define REG_04FFF200 (*(vu32 *) 0x04fff200)
 
-#define REG_VRAM (*(((u32 *) (0x06800000))))
-#define REG_PALETTE_A (*(((u32 *) (0x05000000))))
-#define REG_PALETTE_B (*(((u32 *) (0x05000400))))
-#define REG_OAM_A (*(((u32 *) (0x07000000))))
-#define REG_OAM_B (*(((u32 *) (0x07000400))))
-
 #ifdef __cplusplus
 } // extern "C"
 #endif

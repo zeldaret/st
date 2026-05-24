@@ -11,6 +11,7 @@
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 
 #include <nitro/dc.h>
+#include <nitro/gx.h>
 #include <nitro/os.h>
 #include <nitro/reg.h>
 #include <nitro/tp.h>
@@ -20,7 +21,6 @@ void func_0201245c();
 void func_02027a28(void *param1, unk32 param2);
 void func_02013184();
 void func_020131b0();
-void GX_VBlankIntr(unk32 param1);
 void func_02031e48(void *param1);
 
 UnkStruct_02011e10_Sub1 *func_020012e0(unk32 param1, unk32 param2, unk32 param3);
@@ -29,7 +29,6 @@ void *func_02001fd4(void *param1, size_t param2);
 void func_020013ac(void *param1);
 UnkStruct_02011e10_Sub1 *func_02001098(unk32 param1, unk32 param2, unk32 param3);
 unk32 func_020011f4();
-unk32 OS_func_0065();
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
 }
@@ -143,9 +142,9 @@ ARM UnkStruct_02049b18_06::UnkStruct_02049b18_06() {
 
     TP_Init();
 
-    if (OS_func_0065() != 0) {
+    if (OS_func_0065()) {
         TP_SetCalibrateParam(NULL);
-    } else if (TP_GetUserInfo(&params) != 0) {
+    } else if (TP_GetUserInfo(&params)) {
         TP_SetCalibrateParam(&params);
     }
 }

@@ -1,7 +1,7 @@
 #include "Actor/Actor.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
+#include <nitro/mi.h>
 
 ARM Actor::Actor() {
     this->mVel.x  = 0;
@@ -21,7 +21,7 @@ ARM Actor::Actor() {
     this->mUnk_5C.func_ov000_020975f8();
     this->mRef.Reset();
     this->mpProfile = NULL;
-    _MI_CpuCopy(&data_ov000_020b539c_eur.mUnk_00, &this->mUnk_5C, sizeof(ActorParams));
+    MI_CpuCopyFast(&data_ov000_020b539c_eur.mUnk_00, &this->mUnk_5C, sizeof(ActorParams));
     VecFx32_Copy(&this->mUnk_5C.mInitialPos, &this->mPos);
     VecFx32_Copy(&this->mUnk_5C.mInitialPos, &this->mPrevPos);
     this->mAngle = this->mUnk_5C.mInitialAngle;

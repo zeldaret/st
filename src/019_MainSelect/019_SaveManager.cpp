@@ -237,7 +237,7 @@ ARM void SaveFile::func_ov019_020d13b8() {
 
 ARM void SaveSub7::func_ov019_020d1400() {
     this->mUnk_00[0].mUnk_7E = func_020328c8(&gSaveManager.mUnk_004, &this->mUnk_00, sizeof(SaveSub17) - sizeof(u16));
-    _MI_CpuCopy(&this->mUnk_00[0], &this->mUnk_00[1], sizeof(SaveSub17));
+    MI_CpuCopyFast(&this->mUnk_00[0], &this->mUnk_00[1], sizeof(SaveSub17));
 }
 
 // non-matching
@@ -260,13 +260,13 @@ ARM void SaveFile::func_ov019_020d1434() {
 }
 ARM void SaveSub5::func_ov019_020d14c0() {
     this->mUnk_000[0].mUnk_3FE = func_020328c8(&gSaveManager.mUnk_004, &this->mUnk_000, offsetof(SaveSub15, mUnk_3FE));
-    _MI_CpuCopy(&this->mUnk_000[0], &this->mUnk_000[1], sizeof(SaveSub15));
+    MI_CpuCopyFast(&this->mUnk_000[0], &this->mUnk_000[1], sizeof(SaveSub15));
 }
 
 ARM void SaveInfo::func_ov019_020d14fc() {
     this->mSaveInfoData[0].mUnk_DFE =
         func_020328c8(&gSaveManager.mUnk_004, &this->mSaveInfoData[0].mUnk_000, offsetof(SaveInfoData, mUnk_DFE));
-    _MI_CpuCopy(&this->mSaveInfoData[0], &this->mSaveInfoData[1], sizeof(SaveInfoData));
+    MI_CpuCopyFast(&this->mSaveInfoData[0], &this->mSaveInfoData[1], sizeof(SaveInfoData));
 }
 
 //! TODO: weird sizeof
@@ -291,13 +291,13 @@ ARM void SaveFile::func_ov019_020d1538() {
 
 ARM void SaveSub6::func_ov019_020d15cc() {
     this->mUnk_00[0].mUnk_7E = func_020328c8(&gSaveManager.mUnk_004, &this->mUnk_00, offsetof(SaveSub16, mUnk_7E));
-    _MI_CpuCopy(&this->mUnk_00[0], &this->mUnk_00[1], sizeof(SaveSub16));
+    MI_CpuCopyFast(&this->mUnk_00[0], &this->mUnk_00[1], sizeof(SaveSub16));
 }
 
 ARM void SaveTreasures::func_ov019_020d1600() {
     this->mTreasureData[0].mUnk_7E =
         func_020328c8(&gSaveManager.mUnk_004, &this->mTreasureData, offsetof(TreasureData, mUnk_7E));
-    _MI_CpuCopy(&this->mTreasureData[0], &this->mTreasureData[1], sizeof(TreasureData));
+    MI_CpuCopyFast(&this->mTreasureData[0], &this->mTreasureData[1], sizeof(TreasureData));
 }
 
 // https://decomp.me/scratch/ibnQS
@@ -320,15 +320,15 @@ ARM void SaveFile::func_ov019_020d16d0() {
     SaveSlot *pSub2   = &this->mSlots[this->mSaveSlotIndex];
     SaveSlot *pSub3   = &this->mSlots[saveSlotIndex];
 
-    _MI_CpuCopy(&pSub2->mSaveInfo, &pSub3->mSaveInfo, sizeof(SaveInfo));
-    _MI_CpuCopy(&pSub2->mTreasures, &pSub3->mTreasures, sizeof(SaveTreasures));
-    _MI_CpuCopy(&pSub2->mUnk_2600, &pSub3->mUnk_2600, sizeof(SaveSub7));
+    MI_CpuCopyFast(&pSub2->mSaveInfo, &pSub3->mSaveInfo, sizeof(SaveInfo));
+    MI_CpuCopyFast(&pSub2->mTreasures, &pSub3->mTreasures, sizeof(SaveTreasures));
+    MI_CpuCopyFast(&pSub2->mUnk_2600, &pSub3->mUnk_2600, sizeof(SaveSub7));
 
     pSub3->mUnk_1D00.func_ov000_020a12a0();
-    _MI_CpuCopy(&pSub2->mUnk_1D00, &pSub3->mUnk_1D00, sizeof(SaveSub5));
+    MI_CpuCopyFast(&pSub2->mUnk_1D00, &pSub3->mUnk_1D00, sizeof(SaveSub5));
 
-    _MI_CpuFill(0, &pSub3->mUnk_2500, sizeof(SaveSub6));
-    _MI_CpuCopy(&pSub2->mUnk_2500, &pSub3->mUnk_2500, sizeof(SaveSub6));
+    MI_CpuClearFast(&pSub3->mUnk_2500, sizeof(SaveSub6));
+    MI_CpuCopyFast(&pSub2->mUnk_2500, &pSub3->mUnk_2500, sizeof(SaveSub6));
 
     this->mSaveSlotIndex = saveSlotIndex;
     this->func_ov019_020d1538();
@@ -393,7 +393,7 @@ ARM void SaveFile::func_ov019_020d1808(unk32 param1) {
 
         if (stack1[i].mUnk_00 != 0) {
             if (stack1[i].mUnk_04 == 0 || stack1[i].mUnk_00 != stack1[i * 2].mUnk_04) {
-                _MI_CpuCopy(puVar5, puVar5 + data_ov019_020d1bd4[i], data_ov019_020d1bd4[i]);
+                MI_CpuCopyFast(puVar5, puVar5 + data_ov019_020d1bd4[i], data_ov019_020d1bd4[i]);
                 this->mUnk_04E00[param1][1].mUnk_00 |= 1 << (i & 0xFF);
             }
         } else {
@@ -402,7 +402,7 @@ ARM void SaveFile::func_ov019_020d1808(unk32 param1) {
             if (stack1[i * 2].mUnk_04 == 0) {
                 this->mUnk_04E00[param1][1].mUnk_00 |= 1 << (i & 0xFF);
             } else {
-                _MI_CpuCopy(puVar5 + data_ov019_020d1bd4[i], puVar5, data_ov019_020d1bd4[i]);
+                MI_CpuCopyFast(puVar5 + data_ov019_020d1bd4[i], puVar5, data_ov019_020d1bd4[i]);
             }
         }
     }
@@ -427,7 +427,7 @@ ARM void SaveFile::func_ov019_020d1b14(unk32 param1) {
     pSVar3->mSaveInfo.func_ov000_020a1028();
     pSVar3->mSaveInfo.func_ov019_020d14fc();
 
-    _MI_CpuFill(0, &pSVar3->mTreasures, sizeof(SaveTreasures));
+    MI_CpuClearFast(&pSVar3->mTreasures, sizeof(SaveTreasures));
     for (int i = 0; i < TreasureType_Max; i++) {
         pSVar3->mTreasures.mTreasureData[0].mUnk_3C[i] = TreasureType_None;
     }
@@ -436,7 +436,7 @@ ARM void SaveFile::func_ov019_020d1b14(unk32 param1) {
     this->mSlots[param1].mUnk_1D00.func_ov000_020a12a0();
     this->mSlots[param1].mUnk_1D00.func_ov019_020d14c0();
 
-    _MI_CpuFill(0, &this->mSlots[param1].mUnk_2500, 0x80);
+    MI_CpuClearFast(&this->mSlots[param1].mUnk_2500, 0x80);
     this->mSlots[param1].mUnk_2500.func_ov019_020d15cc();
 
     this->mSlots[param1].mUnk_2600.func_ov000_020a10f4();

@@ -2,9 +2,10 @@
 
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "global.h"
 #include "types.h"
+
+#include <nitro/mi.h>
 
 class GameModeManagerBase;
 
@@ -69,7 +70,7 @@ public:
     /* 200 */
 
     UnkStruct_0204a110_Sub3_00() {
-        MI_CpuFill16(0, (u16 *) this->mUnk_000, sizeof(this->mUnk_000));
+        MI_CpuFill16(0, this->mUnk_000, sizeof(this->mUnk_000));
     }
 };
 

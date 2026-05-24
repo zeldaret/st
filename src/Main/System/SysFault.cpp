@@ -1,14 +1,15 @@
 #include "System/SysFault.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/Common.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_02049b18.hpp"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f84.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "global.h"
+#include <nitro/mi.h>
 
 #include <nitro/g2.h>
+#include <nitro/os.h>
 #include <nitro/reg.h>
 
 extern "C" void func_020131ec();
@@ -18,7 +19,6 @@ extern "C" void func_02014d38(void *, int);
 extern "C" void func_020196fc();
 extern "C" unk32 func_ov000_02068504(int);
 extern "C" unk32 func_020147a8();
-extern "C" void *G2S_func_0001();
 extern "C" void func_0201b278(bool, bool);
 extern "C" void func_0201b180(bool, bool);
 extern "C" void SetBrightColor(void *, int);
@@ -192,6 +192,6 @@ THUMB void SysFault::func_020127f0(unk32 param1) {
         }
 
         this->mUnk_05 = 0;
-        _OS_Panic();
+        OS_Panic();
     }
 }

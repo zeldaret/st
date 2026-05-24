@@ -7,11 +7,8 @@
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
 #include "versions.h"
-#include <nitro/reg.h>
 
-extern "C" {
-void GX_func_0008(void *, unk32, unk32);
-}
+#include <nitro/gx.h>
 
 extern unk32 data_ov000_020b3000;
 
