@@ -539,7 +539,7 @@ def add_mwcc_builds(cfg: ProjectConfig, version: str, objects: Dict[str, Object]
                 "basedir": str(src_obj_path.parent),
                 "basefile": str(src_obj_path.with_suffix("")),
             },
-            order_only="objdiff",
+            # order_only="objdiff",
         )
         n.newline()
 
@@ -748,6 +748,10 @@ def process_project(cfg: ProjectConfig, args: Any):
 
     create_objdiff_fixup_config(cfg, objects)
 
+    rust_log = "RUST_LOG=ds_rom::rom::rom=warn"
+    if cfg.platform.system == "windows":
+        rust_log = f"set {rust_log} &&"
+
     with cfg.build_ninja_path.open("w") as file:
         n = ninja_syntax.Writer(file)
 
@@ -765,7 +769,7 @@ def process_project(cfg: ProjectConfig, args: Any):
 
         n.rule(
             name="extract",
-            command=f"{cfg.dsd_path} {cfg.dsd_flags} rom extract --rom $in --output-path $output_path $arm7_bios_flag"
+            command=f"{rust_log} {cfg.dsd_path} {cfg.dsd_flags} rom extract --rom $in --output-path $output_path $arm7_bios_flag"
         )
         n.newline()
 
@@ -811,13 +815,13 @@ def process_project(cfg: ProjectConfig, args: Any):
 
         n.rule(
             name="rom_config",
-            command=f"{cfg.dsd_path} {cfg.dsd_flags} rom config --elf $in --config $config_path"
+            command=f"{rust_log} {cfg.dsd_path} {cfg.dsd_flags} rom config --elf $in --config $config_path"
         )
         n.newline()
 
         n.rule(
             name="rom_build",
-            command=f"{cfg.dsd_path} {cfg.dsd_flags} rom build --config $in --rom $out $arm7_bios_flag"
+            command=f"{rust_log} {cfg.dsd_path} {cfg.dsd_flags} rom build --config $in --rom $out $arm7_bios_flag"
         )
         n.newline()
 
