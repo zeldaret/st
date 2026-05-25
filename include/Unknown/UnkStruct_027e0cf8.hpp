@@ -15,18 +15,18 @@ struct UnkStruct_027e0cf8_00_18_00 {
 
 struct UnkStruct_027e0cf8_00_18 {
     /* 0000 */ UnkStruct_027e0cf8_00_18_00 mUnk_00[48];
-    /* 18C0 */ STRUCT_PAD(0x18C0, 0x2220);
+    /* 18C0 */ Vec2p mUnk_18C0;
+    /* 18C8 */ STRUCT_PAD(0x18C8, 0x2220);
     /* 2220 */
 };
 
 class UnkStruct_027e0cf8_00 {
 public:
-    /* 0000 */ Random mUnk_0000;
+    /* 0000 */ Random mRandom;
     /* 0018 */ UnkStruct_027e0cf8_00_18 mUnk_0018;
-    /* 2238 */ void *mUnk_2238;
+    /* 2238 */ Vec2p *mUnk_2238;
     /* 223C */ unk32 mUnk_223C;
-    /* 2240 */ unk16 mUnk_2240;
-    /* 2242 */ unk16 mUnk_2242;
+    /* 2240 */ Vec2s mUnk_2240;
     /* 2244 */ unk32 mUnk_2244;
     /* 2248 */ unk32 mUnk_2248;
     /* 224C */ unk32 mUnk_224C;
@@ -38,13 +38,13 @@ public:
     ~UnkStruct_027e0cf8_00();
 
     void func_ov024_020cf9d4(UnkStruct_027e0cf8_00_18_00 *param1);
-    void func_ov024_020cfb7c(void *param1, Vec2s *param2, unk32 param3, u16 param4, unk32 param5, unk32 param6);
-    void func_ov024_020cfd54();
-    void func_ov024_020cfe24();
-    void func_ov024_020cfe6c();
-    void func_ov024_020cfe94();
-    void func_ov024_020cfed0();
-    void func_ov024_020cff1c();
+    void func_ov024_020cfb7c(UnkDataStruct4 *param1, Vec2s *param2, unk32 param3, u16 param4, unk32 param5, unk32 param6);
+
+    static s32 func_ov024_020cfd54(s32 param1, s32 param2, s32 param3, s32 param4);
+    static bool func_ov024_020cfe24(s16 param1);
+    static s32 func_ov024_020cfe6c(s32 param1, s32 param2, s32 param3, s32 param4);
+    static s16 func_ov024_020cfe94(s16 param1);
+    static bool func_ov024_020cfed0(s16 param1);
 };
 
 class UnkStruct_027e0cf8_04 {
@@ -78,6 +78,7 @@ public:
     UnkStruct_027e0cf8_0C();
     ~UnkStruct_027e0cf8_0C();
 
+    void func_ov024_020cff1c();
     void func_ov024_020cff8c(void *param1, Vec2s *param2);
     void func_ov024_020d0004();
     void func_ov024_020d002c();
@@ -116,8 +117,8 @@ public:
     void func_ov017_020c397c();
     void func_ov017_020c39d4();
 
-    void func_ov024_020c755c(void *param1);
-    void func_ov024_020c75d0(void *param1, unk32 param2, u16 param3);
+    void func_ov024_020c755c(UnkDataStruct4 *param1);
+    void func_ov024_020c75d0(UnkDataStruct4 *param1, unk32 param2, u16 param3);
     void func_ov024_020c7724();
     void func_ov024_020c7750();
     void func_ov024_020c7780();

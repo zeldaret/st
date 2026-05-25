@@ -48,6 +48,14 @@ struct Random {
     }
 
     /**
+     * @brief Setup the randomizer without any specific seed
+     */
+    void Setup() {
+        this->SetRandomValue((u64) 0);
+        this->SetFactorAddend();
+    }
+
+    /**
      * @brief Sets the factor and addend values
      */
     void SetFactorAddend() {

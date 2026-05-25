@@ -1265,12 +1265,24 @@ struct UnkDataStruct2 {
     ~UnkDataStruct2();
 };
 
+struct UnkDataStruct4_14 {
+    /* 00 */ STRUCT_PAD(0x00, 0x14);
+};
+
+struct UnkDataStruct4 {
+    /* 00 */ STRUCT_PAD(0x00, 0x14);
+    /* 14 */ UnkDataStruct4_14 *mUnk_14[15];
+    /* 50 */ STRUCT_PAD(0x50, 0xCC);
+    /* CC */ u32 mSceneIndex;
+    /* D0 */
+
+    void func_ov024_020d2b08(unk32 param1, unk32 param2, VecFx32 *param3);
+    void func_ov024_020d2b08(unk32 param1, unk32 param2);
+};
+
 struct UnkDataStruct3 {
     /* 00 */ UnkDataStruct2 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ STRUCT_PAD(0x08, 0xCC);
-    /* CC */ unk32 mUnk_CC;
-    /* D0 */ unk32 mUnk_D0;
+    /* 04 */ UnkDataStruct4 mUnk_04;
     /* D4 */
 
     UnkDataStruct3(unk32 param1) :

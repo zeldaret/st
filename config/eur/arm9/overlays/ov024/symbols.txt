@@ -118,8 +118,8 @@ _ZN18UnkStruct_027e099819func_ov024_020c7354Ev kind:function(arm,size=0x3c) addr
 _ZN18UnkStruct_027e0cf86CreateEv kind:function(arm,size=0x24) addr:0x020c7390
 _ZN18UnkStruct_027e0cf8C1Ev kind:function(arm,size=0xf0) addr:0x020c73b4
 _ZN18UnkStruct_027e0cf8D1Ev kind:function(arm,size=0xb8) addr:0x020c74a4
-_ZN18UnkStruct_027e0cf819func_ov024_020c755cEPv kind:function(arm,size=0x74) addr:0x020c755c
-_ZN18UnkStruct_027e0cf819func_ov024_020c75d0EPvit kind:function(arm,size=0x154) addr:0x020c75d0
+_ZN18UnkStruct_027e0cf819func_ov024_020c755cEP14UnkDataStruct4 kind:function(arm,size=0x74) addr:0x020c755c
+_ZN18UnkStruct_027e0cf819func_ov024_020c75d0EP14UnkDataStruct4it kind:function(arm,size=0x154) addr:0x020c75d0
 _ZN18UnkStruct_027e0cf819func_ov024_020c7724Ev kind:function(arm,size=0x2c) addr:0x020c7724
 _ZN18UnkStruct_027e0cf819func_ov024_020c7750Ev kind:function(arm,size=0x30) addr:0x020c7750
 _ZN18UnkStruct_027e0cf819func_ov024_020c7780Ev kind:function(arm,size=0x30) addr:0x020c7780
@@ -408,14 +408,14 @@ _ZN8InstanceI18UnkStruct_020d8698EC2Ev kind:function(arm,size=0x10) addr:0x020cf
 _ZN8InstanceI18UnkStruct_020d8698ED2Ev kind:function(arm,size=0x14) addr:0x020cf954
 _ZN21UnkStruct_027e0cf8_00C1Ev kind:function(arm,size=0x68) addr:0x020cf968
 _ZN21UnkStruct_027e0cf8_00D1Ev kind:function(arm,size=0x4) addr:0x020cf9d0
-_ZN21UnkStruct_027e0cf8_0019func_ov024_020cf9d4Ev kind:function(arm,size=0x1a8) addr:0x020cf9d4
-_ZN21UnkStruct_027e0cf8_0019func_ov024_020cfb7cEPvP5Vec2sitii kind:function(arm,size=0x1d8) addr:0x020cfb7c
-_ZN21UnkStruct_027e0cf8_0019func_ov024_020cfd54Ev kind:function(arm,size=0xd0) addr:0x020cfd54
-_ZN21UnkStruct_027e0cf8_0019func_ov024_020cfe24Ev kind:function(arm,size=0x48) addr:0x020cfe24
-_ZN21UnkStruct_027e0cf8_0019func_ov024_020cfe6cEv kind:function(arm,size=0x28) addr:0x020cfe6c
-_ZN21UnkStruct_027e0cf8_0019func_ov024_020cfe94Ev kind:function(arm,size=0x3c) addr:0x020cfe94
-_ZN21UnkStruct_027e0cf8_0019func_ov024_020cfed0Ev kind:function(arm,size=0x4c) addr:0x020cfed0
-_ZN21UnkStruct_027e0cf8_0019func_ov024_020cff1cEv kind:function(arm,size=0x2c) addr:0x020cff1c
+_ZN21UnkStruct_027e0cf8_0019func_ov024_020cf9d4EP27UnkStruct_027e0cf8_00_18_00 kind:function(arm,size=0x1a8) addr:0x020cf9d4
+_ZN21UnkStruct_027e0cf8_0019func_ov024_020cfb7cEP14UnkDataStruct4P5Vec2sitii kind:function(arm,size=0x1d8) addr:0x020cfb7c
+_ZN21UnkStruct_027e0cf8_0019func_ov024_020cfd54Eiiii kind:function(arm,size=0xd0) addr:0x020cfd54
+_ZN21UnkStruct_027e0cf8_0019func_ov024_020cfe24Es kind:function(arm,size=0x48) addr:0x020cfe24
+_ZN21UnkStruct_027e0cf8_0019func_ov024_020cfe6cEiiii kind:function(arm,size=0x28) addr:0x020cfe6c
+_ZN21UnkStruct_027e0cf8_0019func_ov024_020cfe94Es kind:function(arm,size=0x3c) addr:0x020cfe94
+_ZN21UnkStruct_027e0cf8_0019func_ov024_020cfed0Es kind:function(arm,size=0x4c) addr:0x020cfed0
+_ZN21UnkStruct_027e0cf8_0C19func_ov024_020cff1cEv kind:function(arm,size=0x2c) addr:0x020cff1c
 _ZN21UnkStruct_027e0cf8_0CC1Ev kind:function(arm,size=0x40) addr:0x020cff48
 _ZN21UnkStruct_027e0cf8_0CD1Ev kind:function(arm,size=0x4) addr:0x020cff88
 _ZN21UnkStruct_027e0cf8_0C19func_ov024_020cff8cEPvP5Vec2s kind:function(arm,size=0x78) addr:0x020cff8c
@@ -520,7 +520,7 @@ func_ov024_020d27cc kind:function(arm,size=0x40) addr:0x020d27cc
 func_ov024_020d280c kind:function(arm,size=0x1a4) addr:0x020d280c
 func_ov024_020d29b0 kind:function(arm,size=0x68) addr:0x020d29b0
 func_ov024_020d2a18 kind:function(arm,size=0xf0) addr:0x020d2a18
-func_ov024_020d2b08 kind:function(arm,size=0x38) addr:0x020d2b08
+_ZN14UnkDataStruct419func_ov024_020d2b08EiiP7VecFx32 kind:function(arm,size=0x38) addr:0x020d2b08
 func_ov024_020d2b40 kind:function(arm,size=0x8c) addr:0x020d2b40
 func_ov024_020d2bcc kind:function(arm,size=0x88) addr:0x020d2bcc
 func_ov024_020d2c54 kind:function(arm,size=0xa8) addr:0x020d2c54
@@ -814,9 +814,6 @@ _ZTV18UnkStruct_020d8698 kind:data(any) addr:0x020d8064
 @4721 kind:data(byte[11]) addr:0x020d8088 local
 data_ov024_020d8094 kind:data(any) addr:0x020d8094
 data_ov024_020d8098 kind:data(any) addr:0x020d8098
-data_ov024_020d809e kind:data(any) addr:0x020d809e
-data_ov024_020d80a2 kind:data(any) addr:0x020d80a2
-data_ov024_020d80a3 kind:data(any) addr:0x020d80a3
 data_ov024_020d8200 kind:data(any) addr:0x020d8200 local
 _ZTV19data_ov024_020d8208 kind:data(any) addr:0x020d8208
 data_ov024_020d8224 kind:data(any) addr:0x020d8224

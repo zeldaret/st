@@ -75,6 +75,14 @@ typedef union Vec2p {
 #define Vec2p_Sub(a, b, dst) Vec2_Sub(Vec2p, a, b, dst)
 #define Vec2p_Set(a, dst) Vec2_Set(Vec2p, a, dst)
 #define Vec2p_Clear(dst) Vec2_Clear(fx32, dst)
+static inline void Vec2p_Copy(const Vec2p *src, Vec2p *dst) {
+#if __MWERKS__
+    dst->coords = src->coords;
+#else
+    dst->x = src->x;
+    dst->y = src->y;
+#endif
+}
 
 typedef struct Mat2p {
     /* 00 */ Vec2p xColumn;
