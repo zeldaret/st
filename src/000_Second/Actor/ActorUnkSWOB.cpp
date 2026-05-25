@@ -100,9 +100,9 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
                 if (gpActorManager->func_01fff3b4(this->mUnk_A4[i].mUnk_00) == NULL) {
                     this->mUnk_A4[i].mUnk_00 = 0;
 
-                    vec.x = INT_TO_Q20(gRandom.Next32(0, 11) - 5);
+                    vec.x = INT_TO_Q20(gRandom.Next32(11) - 5);
                     vec.y = 0;
-                    vec.z = INT_TO_Q20(gRandom.Next32(0, 11) - 5);
+                    vec.z = INT_TO_Q20(gRandom.Next32(11) - 5);
 
                     VecFx32_Add(&vec, &vec2, &vec);
 

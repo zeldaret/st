@@ -174,7 +174,7 @@ ARM void TreasureManager::func_ov000_020a9cbc(TreasureType type, s32 amount) {
 }
 
 ARM u32 TreasureManager::func_ov000_020a9cfc(u8 *param1, u8 param2) {
-    s32 uVar2 = gRandom.Next32(0, 100);
+    s32 uVar2 = gRandom.Next32(100);
     s32 iVar1 = 0;
 
     for (int i = 0; i < param2; i++) {
@@ -203,7 +203,7 @@ ARM unk32 TreasureManager::func_ov000_020a9d78(unk32 param1) {
     }
 
     u32 var_r3;
-    var_r3 = gRandom.ConditionalNext32(temp_r4);
+    var_r3 = gRandom.Next32(temp_r4);
     return data_ov000_020afec4[var_r3];
 }
 
@@ -222,7 +222,7 @@ ARM unk32 TreasureManager::func_ov000_020a9e14(unk32 param1) {
     }
 
     u32 var_r3;
-    var_r3 = gRandom.ConditionalNext32(temp_r4);
+    var_r3 = gRandom.Next32(temp_r4);
     return data_ov000_020afeb0[var_r3];
 }
 
@@ -241,12 +241,12 @@ ARM unk32 TreasureManager::func_ov000_020a9eb0(unk32 param1) {
     }
 
     u32 var_r3;
-    var_r3 = gRandom.ConditionalNext32(temp_r4);
+    var_r3 = gRandom.Next32(temp_r4);
     return data_ov000_020afea0[var_r3];
 }
 
 ARM unk32 TreasureManager::func_ov000_020a9f4c(unk32 param1) {
-    if ((s32) gRandom.Next32(0, 100) < 80) {
+    if ((s32) gRandom.Next32(100) < 80) {
         return TreasureManager::func_ov000_020a9eb0(param1);
     }
 
@@ -264,7 +264,7 @@ ARM unk32 TreasureManager::func_ov000_020a9f4c(unk32 param1) {
     }
 
     u32 var_r3;
-    var_r3 = gRandom.ConditionalNext32(temp_r4);
+    var_r3 = gRandom.Next32(temp_r4);
     return data_ov000_020afe98[var_r3];
 }
 

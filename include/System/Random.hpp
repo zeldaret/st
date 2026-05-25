@@ -18,6 +18,44 @@ struct Random {
     }
 
     /**
+     * @brief Sets the seed's value from a u64
+     */
+    void SetRandomValue(u64 value) {
+        *(u64 *) this->mRandomValue = value;
+    }
+
+    /**
+     * @brief Sets the seed's value from a u16 array
+     */
+    void SetRandomValue(u16 *value) {
+        this->SetRandomValue(*(u64 *) value);
+    }
+
+    /**
+     * @brief Setup the randomizer with a set seed as a u64
+     */
+    void Setup(u64 initial) {
+        this->SetRandomValue(initial);
+        this->SetFactorAddend();
+    }
+
+    /**
+     * @brief Setup the randomizer with a set seed as a u16 array
+     */
+    void Setup(u16 *initial) {
+        this->SetRandomValue(initial);
+        this->SetFactorAddend();
+    }
+
+    /**
+     * @brief Sets the factor and addend values
+     */
+    void SetFactorAddend() {
+        this->mFactor = 0x5D588B656C078965;
+        this->mAddend = 0x00269EC3;
+    }
+
+    /**
      * @brief Updates the seed's value
      */
     void UpdateRandomValue() {
@@ -25,43 +63,17 @@ struct Random {
     }
 
     /**
-     * @brief Generates a random number as a u16
+     * @brief Generates a random number as u32
      */
-    u16 Next16() {
+    u32 Next32(u32 factor) {
         this->UpdateRandomValue();
-        return this->GetRandomValue() >> 48;
-    }
+        u64 randomValue = this->GetRandomValue();
 
-    /**
-     * @brief Generates a random number from 0 (inclusive) to `max` (exclusive) as a u32
-     */
-    u32 Next32(u64 min, u64 max) {
-        this->UpdateRandomValue();
-        return (((this->GetRandomValue() >> 32) * (max - min)) >> 32) + min;
-    }
-
-    u16 ConditionalNext16(u32 value) {
-        this->UpdateRandomValue();
-
-        u64 result = this->GetRandomValue() >> 32;
-
-        if (value != 0) {
-            result = (result * value) >> 32;
+        if (factor == 0) {
+            return randomValue >> 32;
         }
 
-        return result;
-    }
-
-    u32 ConditionalNext32(u32 value) {
-        this->UpdateRandomValue();
-
-        u32 result = this->GetRandomValue() >> 32;
-
-        if (value != 0) {
-            return ((u64) result * value) >> 32;
-        }
-
-        return result;
+        return ((randomValue >> 32) * factor) >> 32;
     }
 
     void Init();
