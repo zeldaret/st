@@ -1,4 +1,5 @@
 #include "MainGame/PassengerManager.hpp"
+#include "System/Random.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_02049bac.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -333,17 +334,10 @@ s16 PassengerManager::GetDate() {
     return date;
 }
 
-// non-matching
-u32 PassengerManager::GetRandomIndex(u32 arg1, s32 arg2) {
-    u64 factor = 0x5D588B656C078965;
-    u64 addend = 0x00269EC3;
-
-    u64 seed  = (u32) arg2;
-    u64 seed2 = addend + (factor * seed);
-
-    u32 thing = seed2 >> 32;
-
-    return thing % arg1;
+u32 PassengerManager::GetRandomIndex(u32 param1, u32 seed) {
+    Random random;
+    random.Setup(seed);
+    return random.Next32(0) % param1;
 }
 
 void PassengerManager::SetFailedFlag() {

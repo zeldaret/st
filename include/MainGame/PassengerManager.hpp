@@ -79,7 +79,7 @@ public:
     void Reset();
     bool IsDateUnset();
     s16 GetDate();
-    u32 GetRandomIndex(u32 arg1, s32 arg2);
+    u32 GetRandomIndex(u32 param1, u32 seed);
     void SetFailedFlag();
 
     static u32 GetPassengerInfoIndex(ActorId actorId);
