@@ -8,7 +8,8 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-#include "regs.h"
+
+#include <nitro/g2.h>
 
 extern "C" AdventureModeManager_18C_10 *func_ov011_020b6520(void *, int);
 extern "C" void func_ov011_020b84f0(s16 *param1, void *, unk32 param2);
@@ -199,9 +200,9 @@ void AdventureModeManager_18C::func_ov024_020c9c6c() {
         this->mUnk_10 = func_ov011_020b6520(&this->mUnk_0C, var_r4);
     }
 
-    REG_DISPCNT_SUB = (REG_DISPCNT_SUB & ~0x1F00) | 0x1C00;
-    REG_BG2CNT_SUB  = (REG_BG2CNT_SUB & ~0x03) | 0x03;
-    REG_BG3CNT_SUB  = (REG_BG3CNT_SUB & ~0x03) | 0x02;
+    GXS_SetVisiblePlane(28);
+    G2S_SetBG2Priority(3);
+    G2S_SetBG3Priority(2);
 }
 
 void AdventureModeManager_18C::vfunc_14(unk32 param1) {

@@ -6,9 +6,8 @@
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0954.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-#include "regs.h"
 #include "versions.h"
-#include <nitro/button.h>
+#include <nitro/pad.h>
 
 #include <string.h>
 
@@ -255,7 +254,7 @@ void TitleScreen::func_ov025_020c53d0(Input *pButtons, TouchControl *pTouchContr
 }
 
 void TitleScreen::func_ov025_020c55a4(Input *pButtons, TouchControl *pTouchControl) {
-    if (CHECK_TOUCH_FLAGS(pTouchControl, TouchFlag_UntouchedNow) || CHECK_BUTTON_COMBO(pButtons->press, BTN_START)) {
+    if (CHECK_TOUCH_FLAGS(pTouchControl, TouchFlag_UntouchedNow) || CHECK_BUTTON_COMBO(pButtons->press, PAD_BUTTON_START)) {
         data_ov000_020b5214.func_ov000_0206db44(0x0B);
         this->func_ov025_020c4ea0(TitleScreenState_ToFileSelect);
     }
@@ -349,15 +348,14 @@ void TitleScreen::vfunc_0C(unk32 param1) {
 }
 
 void TitleScreen::func_ov025_020c592c() {
-    REG_DISPCNT &= ~0xE000;
-    REG_DISPCNT |= 0x8000;
+    GX_SetVisibleWindows(4);
 
     REG_WINOUT = (REG_WINOUT & ~0x3F00) | 0x1900;
     REG_WINOUT = (REG_WINOUT & ~0x3F) | 0x09;
 }
 
 void TitleScreen::func_ov025_020c5964() {
-    REG_DISPCNT &= ~0xE000;
+    GX_SetVisibleWindows(0);
     REG_WINOUT = (REG_WINOUT & ~0x3F) | 0x30;
 }
 

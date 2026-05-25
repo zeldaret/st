@@ -2,9 +2,10 @@
 
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "global.h"
 #include "types.h"
+
+#include <nitro/mi.h>
 
 class GameModeManagerBase;
 
@@ -69,7 +70,7 @@ public:
     /* 200 */
 
     UnkStruct_0204a110_Sub3_00() {
-        MI_CpuFill16(0, (u16 *) this->mUnk_000, sizeof(this->mUnk_000));
+        MI_CpuFill16(0, this->mUnk_000, sizeof(this->mUnk_000));
     }
 };
 
@@ -159,8 +160,7 @@ public:
     UnkSubStruct1_Methods;
 };
 
-//! TODO: actually a matrix
-extern Vec4p data_027e0120;
+extern MtxFx22 data_027e0120;
 
 class UnkStruct_0204a110_Sub7 {
 public:
@@ -170,7 +170,7 @@ public:
     /* 03 */ unk8 mUnk_03;
     /* 04 */ UnkSystem2_UnkSubSystem9 *mUnk_04;
     /* 08 */ UnkStruct_0204a110_Sub7_08 *mUnk_08;
-    /* 0C */ Vec4p mUnk_0C; // same type as data_027e0120?
+    /* 0C */ MtxFx22 mUnk_0C;
     /* 1C */
 
     UnkStruct_0204a110_Sub7();

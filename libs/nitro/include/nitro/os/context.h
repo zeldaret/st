@@ -1,5 +1,5 @@
-#ifndef NITROSDK_OS_CONTEXT_H
-#define NITROSDK_OS_CONTEXT_H
+#ifndef _NITRO_CONTEXT_H
+#define _NITRO_CONTEXT_H
 
 #include <types.h>
 
@@ -12,4 +12,4 @@ typedef struct OSContext {
     /* 0x44 */ char unk_40[0x20];
 } OSContext; // Size: 0x64
 
-#endif // NITROSDK_OS_CONTEXT_H
+#endif // _NITRO_CONTEXT_H

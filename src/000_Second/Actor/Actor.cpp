@@ -1,7 +1,7 @@
 #include "Actor/Actor.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
+#include <nitro/mi.h>
 
 ARM Actor::Actor() {
     this->mVel.x  = 0;
@@ -21,9 +21,9 @@ ARM Actor::Actor() {
     this->mUnk_5C.func_ov000_020975f8();
     this->mRef.Reset();
     this->mpProfile = NULL;
-    _MI_CpuCopy(&data_ov000_020b539c_eur.mUnk_00, &this->mUnk_5C, sizeof(ActorParams));
-    Vec3p_Copy(&this->mUnk_5C.mInitialPos, &this->mPos);
-    Vec3p_Copy(&this->mUnk_5C.mInitialPos, &this->mPrevPos);
+    MI_CpuCopyFast(&data_ov000_020b539c_eur.mUnk_00, &this->mUnk_5C, sizeof(ActorParams));
+    VecFx32_Copy(&this->mUnk_5C.mInitialPos, &this->mPos);
+    VecFx32_Copy(&this->mUnk_5C.mInitialPos, &this->mPrevPos);
     this->mAngle = this->mUnk_5C.mInitialAngle;
     SET_FLAGS(this->mFlags, ActorFlag_Alive, ActorFlag_Visible, ActorFlag_Active, ActorFlag_14);
     this->mUnk_44 = 0xFF;
@@ -82,7 +82,7 @@ ARM void Actor::func_ov000_020984f0() {
 }
 
 // non-matching
-ARM void Actor::vfunc_00(Vec3p *param1) {
+ARM void Actor::vfunc_00(VecFx32 *param1) {
     *param1 = mPos;
     param1->y += mUnk_4E;
     // short sVar1;
@@ -94,7 +94,7 @@ ARM void Actor::vfunc_00(Vec3p *param1) {
     // param1->z = this->mPos.z;
 }
 
-ARM Vec3p *Actor::func_ov000_0209853c(unk32 param1) {
+ARM VecFx32 *Actor::func_ov000_0209853c(unk32 param1) {
     return data_027e0ce0->func_01fff148(param1);
 }
 
@@ -142,7 +142,7 @@ ARM unk32 Actor::vfunc_38(unk32 param1) {
 }
 
 // non-matching
-ARM bool Actor::vfunc_3c(unk32 param2, Vec3p *param3) {
+ARM bool Actor::vfunc_3c(unk32 param2, VecFx32 *param3) {
     if (!GET_FLAG(this->mFlags, ActorFlag_Grabbed)) {
         return false;
     }

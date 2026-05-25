@@ -1,23 +1,25 @@
 #include "Player/TouchControl.hpp"
-#include "Unknown/UnkMemFuncs.h"
+#include <nitro/mi.h>
+
+#include <nitro/pad.h>
 
 // non-matching
-ARM void TouchControl::UpdateState(TouchState *state, const TouchStateFlags *stateFlags) {
-    if (stateFlags->touch == 1) {
-        if (stateFlags->flags == 0) {
+ARM void TouchControl::UpdateState(TouchState *state, const TPData *data) {
+    if (data->touch == 1) {
+        if (data->validity == TP_VALIDITY_VALID) {
             state->touch = true;
 
-            u16 x             = stateFlags->touchPos.x;
-            u16 y             = stateFlags->touchPos.y;
+            u16 x             = data->x;
+            u16 y             = data->y;
             state->touchPos.x = x;
             state->touchPos.y = y;
         } else {
-            if ((stateFlags->flags & 1) == 0) {
-                state->touchPos.x = stateFlags->touchPos.x;
+            if ((data->validity & TP_VALIDITY_INVALID_X) == 0) {
+                state->touchPos.x = data->x;
             }
 
-            if ((stateFlags->flags & 2) == 0) {
-                state->touchPos.y = stateFlags->touchPos.y;
+            if ((data->validity & TP_VALIDITY_INVALID_Y) == 0) {
+                state->touchPos.y = data->y;
             }
 
             if (state->touchPos.x >= 0 && state->touchPos.x < 0x100 && state->touchPos.y >= 0 && state->touchPos.y < 0xC0) {
@@ -123,7 +125,7 @@ ARM void TouchControl::UpdateFlags(u16 speed) {
     }
 }
 
-ARM void TouchControl::UpdateWithStateFlags(TouchStateFlags *state, u16 speed) {
+ARM void TouchControl::UpdateWithStateFlags(TPData *state, u16 speed) {
     this->mPrevState = this->mState;
     this->UpdateState(&this->mState, state);
     this->UpdateFlags(speed);
@@ -136,11 +138,11 @@ ARM void TouchControl::Update(const TouchState *state, u16 speed) {
 }
 
 ARM bool TouchControl::func_020143f0() {
-    return ((*((u16 *) 0x027FFFA8) & 0x8000) >> 15) == 1;
+    return PAD_DetectFold() == 1;
 }
 
 ARM void TouchControl::func_02014414(u16 speedIncrease, bool shouldIncrease) {
-    TouchStateFlags touchState;
+    TPData data;
 
     if (shouldIncrease) {
         this->IncreaseSpeed(speedIncrease);
@@ -148,12 +150,12 @@ ARM void TouchControl::func_02014414(u16 speedIncrease, bool shouldIncrease) {
     }
 
     if (TouchControl::func_020143f0()) {
-        MI_CpuFill16(0, (u16 *) &touchState, sizeof(TouchStateFlags));
+        MI_CpuFill16(0, (u16 *) &data, sizeof(TPData));
     } else {
-        TP_GetTouchStateFlags(&touchState);
+        TP_GetData(&data);
     }
 
-    this->UpdateWithStateFlags(&touchState, speedIncrease);
+    this->UpdateWithStateFlags(&data, speedIncrease);
 }
 
 ARM void TouchControl::func_02014478(TouchState *state, u16 speed) {

@@ -38,7 +38,7 @@ extern "C" void func_01ffb6e4(unk32, const void *, void *);
 extern "C" void func_01ffc5a0(UnkSystem4 *, unk32, u16, void *, unk32);
 extern "C" void func_ov000_0208f820();
 extern "C" unk32 func_ov024_020d5354(unk32 *, u16 *);
-extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, Vec3p *);
+extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, VecFx32 *);
 extern unk32 *data_027e0958;
 extern "C" void func_ov000_0208ba10(void *, void *, unk32);
 extern "C" void func_02015ea8(unk32, void *);
@@ -501,12 +501,12 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
     ItemId itemId;
     ItemManager *pItemManager;
     Actor *iVar10;
-    Vec3p *pUnk_38;
-    Vec3p *pUnk_3c;
+    VecFx32 *pUnk_38;
+    VecFx32 *pUnk_3c;
 
     switch (param1->mUnk_04) {
         case 0x39:
-            Vec3p temp;
+            VecFx32 temp;
             itemId                    = param1->mUnk_1C;
             temp.x                    = param1->mUnk_10.x;
             temp.y                    = param1->mUnk_10.y;
@@ -703,9 +703,9 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
             if (this->mUnk_54.mItemId != ItemId_Nothing) {
                 unk32 uStack_f0[4];
-                Vec3p VStack_fc;
+                VecFx32 VStack_fc;
 
-                Vec3p_Add(this->mUnk_34, &data_ov110_021861ec.mUnk_00, &VStack_fc);
+                VecFx32_Add(this->mUnk_34, &data_ov110_021861ec.mUnk_00, &VStack_fc);
                 data_027e0cec->func_ov000_0209feac(0x874, &VStack_fc, 1, 0, 0);
                 uStack_f0[0] = 0x870;
                 uStack_f0[1] = 0x871;
@@ -1002,7 +1002,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
 }
 
 ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
-    Vec3p auStack_18;
+    VecFx32 auStack_18;
 
     switch (param2) {
         case 0x39:
@@ -1010,7 +1010,7 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
             break;
         case 0x3B:
             if (param3 != 0 && this->mUnk_54.mItemId != ItemId_Nothing && this->mUnk_8C.mUnk_04 != 0) {
-                Vec3p_Add(this->mUnk_34, (Vec3p *) &data_ov110_021861ec.mUnk_00, &auStack_18);
+                VecFx32_Add(this->mUnk_34, (VecFx32 *) &data_ov110_021861ec.mUnk_00, &auStack_18);
                 func_ov000_02058fc4(data_027e0958, &this->mUnk_74, &auStack_18);
             }
             break;

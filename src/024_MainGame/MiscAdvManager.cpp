@@ -1,8 +1,8 @@
 #include "MainGame/MiscAdvManager.hpp"
 #include "Item/ItemManager.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_02049bac.hpp"
+#include <nitro/mi.h>
 
 extern "C" u8 func_ov000_020a9a50();
 
@@ -21,7 +21,7 @@ MiscAdvManager::~MiscAdvManager() {}
 void MiscAdvManager::func_ov024_020d6310(MiscAdvManager *pSrc) {
     u16 local_10;
 
-    _MI_CpuCopy(pSrc, this, sizeof(MiscAdvManager));
+    MI_CpuCopyFast(pSrc, this, sizeof(MiscAdvManager));
     data_02049bac.func_02014a34(&local_10);
 
     if (local_10 == this->mUnk_28) {

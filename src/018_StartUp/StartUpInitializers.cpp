@@ -2,7 +2,6 @@
 #include "System/Random.hpp"
 #include "System/SysFault.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_02049f04.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
 #include "Unknown/UnkStruct_0204a090.hpp"
@@ -17,22 +16,18 @@
 #include "Unknown/UnkStruct_ov000_020b52b4.hpp"
 #include "Unknown/UnkStruct_ov000_020b52e8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5340.hpp"
-#include "regs.h"
 #include "versions.h"
+#include <nitro/mi.h>
+
+#include <nitro/card.h>
+#include <nitro/gx.h>
+#include <nitro/os.h>
+#include <nitro/rtc.h>
 
 extern "C" {
 unk32 func_02014fe0();
-unk16 OS_GetLockID();
-void GX_DispOn();
 void func_020327c8(void *param1, unk32 param2);
-void CARD_LockBackup(u16 param1);
-void CARD_UnlockBackup(u16 param1);
-unk32 CARD_IdentifyBackup(unk32 param1);
-unk32 CARD_ReadWriteBackupAsync(void *param1, void *param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6,
-                                unk32 param7, unk32 param8, unk32 param9);
-unk32 CARD_GetResultCode();
 void func_0201bdd0();
-void OS_SetIrqFunction(unk32 param1, void *param2);
 void NNS_SndInit();
 void NNS_SndArcInit(void *param1, const char *soundDataPath, unk32 param2, unk32 param3);
 void NNS_SndArcPlayerSetup(unk32 param1);
@@ -46,7 +41,6 @@ void func_0202f958(unk32 param1);
 void func_02005030(void *param1);
 void NNS_SndHandleInit(void *param1);
 void NNS_SndPlayerStopSeq(void *param1, unk32 param2);
-void RTC_Init();
 }
 
 ARM void func_ov018_020c4e8c(void) {
@@ -133,11 +127,11 @@ ARM SaveManager::SaveManager() {
     int uVar8      = 1;
     CARD_LockBackup(this->mUnk_204);
 
-    if (CARD_IdentifyBackup(0x1402) != 0) {
+    if (CARD_IdentifyBackup(CARD_BACKUP_TYPE_FLASH_8MBITS)) {
         stack_struct stack[MAX_SAVE_SLOTS];
         int cVar1;
 
-        if (CARD_ReadWriteBackupAsync((void *) 0xF4E00, &stack[0], 0x40, 0, 0, 0, 6, 1, 0) == 1) {
+        if (CARD_ReadFlashAsync(0xF4E00, &stack[0], 0x40, NULL, NULL) == true) {
             if (!stack[0].UnkCheck() && !stack[1].UnkCheck()) {
                 cVar1 = 1;
             } else {
@@ -159,7 +153,7 @@ ARM SaveManager::SaveManager() {
                     MI_CpuFill16(0, (u16 *) stack[1].mUnk_06, 0x16);
 
                     uVar8 = 2;
-                    CARD_ReadWriteBackupAsync(stack, (void *) 0xF4E00, 0x40, 0, 0, 0, 7, 10, 2);
+                    CARD_WriteAndVerifyFlashAsync((u32) stack, (void *) 0xF4E00, 0x40, NULL, NULL);
                 }
             }
         }
@@ -195,7 +189,7 @@ ARM void UnkStruct_0204a110::func_ov018_020c5300() {
     func_02018c90(2);
     this->mUnk_010.func_0201c890(0x0004800, 0x00016800, 1, 1, 0);
     GX_DispOn();
-    REG_DISPCNT_SUB |= 0x00010000;
+    GXS_DispOn();
 }
 
 ARM UnkStruct_0204e640::UnkStruct_0204e640() {
@@ -273,11 +267,11 @@ ARM UnkStruct_0204a110_Sub6::UnkStruct_0204a110_Sub6() {
 }
 
 ARM UnkStruct_0204a110_Sub7::UnkStruct_0204a110_Sub7() {
-    this->mUnk_00        = 0;
-    this->mUnk_01        = 0;
-    this->mUnk_0C.coords = data_027e0120.coords;
-    this->mUnk_04        = new(HeapIndex_Main) UnkSystem2_UnkSubSystem9();
-    this->mUnk_08        = new(HeapIndex_Main) UnkStruct_0204a110_Sub7_08();
+    this->mUnk_00 = 0;
+    this->mUnk_01 = 0;
+    this->mUnk_0C = data_027e0120;
+    this->mUnk_04 = new(HeapIndex_Main) UnkSystem2_UnkSubSystem9();
+    this->mUnk_08 = new(HeapIndex_Main) UnkStruct_0204a110_Sub7_08();
 }
 
 ARM UnkStruct_0204a110_Sub8::UnkStruct_0204a110_Sub8() {

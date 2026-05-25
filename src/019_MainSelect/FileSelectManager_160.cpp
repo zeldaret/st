@@ -1,7 +1,8 @@
 #include "FileSelect/FileSelect.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
-#include "regs.h"
+
+#include <nitro/gx.h>
 
 extern "C" GameModeManagerBase_104 *func_ov003_020b6520(void *param1, void *param2);
 
@@ -51,8 +52,7 @@ ARM void FileSelectManager_160::vfunc_10(unk32 param1, unk32 param2) {
     this->mUnk_10->Detach();
     this->mUnk_10->func_ov019_020cb664();
     this->mUnk_14 = func_ov003_020b6520(&this->mUnk_18, this->mUnk_1C);
-    REG_DISPCNT &= 0xFFFFE0FF;
-    REG_DISPCNT |= 0x1F00;
+    GX_SetVisiblePlane(31);
     data_0204999c.func_02013070();
 }
 
@@ -94,8 +94,7 @@ ARM void FileSelectManager_160::vfunc_20(unk32 param1, unk32 param2) {
     this->mUnk_10->func_ov019_020cb5dc();
     this->mUnk_10->func_ov019_020cb718();
 
-    REG_DISPCNT &= 0xFFFFE0FF;
-    REG_DISPCNT |= 0x1C00;
+    GX_SetVisiblePlane(28);
 
     data_0204999c.func_02013070();
 }

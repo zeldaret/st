@@ -4,10 +4,10 @@
 #include "MainGame/MiscAdvManager.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "global.h"
 #include "types.h"
+#include <nitro/mi.h>
 
 //! TODO: kinda draft state for now
 

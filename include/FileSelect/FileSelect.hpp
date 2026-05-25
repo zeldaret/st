@@ -8,8 +8,8 @@
 #include "global.h"
 #include "iterator.hpp"
 #include "math.hpp"
-#include "regs.h"
 #include "types.h"
+#include <nitro/reg.h>
 
 extern const unk16 data_ov019_020d1bb0[];
 extern "C" void func_ov001_020bd6a8();

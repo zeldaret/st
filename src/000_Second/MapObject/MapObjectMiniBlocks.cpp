@@ -44,7 +44,7 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
         this->mPos.y = pUnkStruct_027e0cd8_0c->func_01ffedf4(&vec);
     }
 
-    Vec3p vec;
+    VecFx32 vec;
     vec.x = FLOAT_TO_Q20(0.0f);
     vec.y = FLOAT_TO_Q20(0.0f);
     vec.z = FLOAT_TO_Q20(0.0f);
@@ -125,7 +125,7 @@ next:
     }
 
     func_01ff9638(&vec, -this->mUnk_14);
-    Vec3p_Add(&this->mPos, &vec, &this->mPos);
+    VecFx32_Add(&this->mPos, &vec, &this->mPos);
     return true;
 }
 

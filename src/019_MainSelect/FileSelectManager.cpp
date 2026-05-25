@@ -3,7 +3,7 @@
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include "Unknown/UnkStruct_ov003_020ba740.hpp"
-#include "regs.h"
+#include <nitro/reg.h>
 
 const unk16 data_ov019_020d1bb0[] = {0x01, 0x37, 0x38, 0x39, 0x3C, 0x00};
 

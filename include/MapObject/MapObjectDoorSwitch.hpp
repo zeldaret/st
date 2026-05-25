@@ -14,14 +14,14 @@ public:
     /* 0F4 */ MapObject_10 mUnk_0F4;
 #if IS_JP
     /* 118 */ MapObject_10 mUnk_118;
-    /* 13C */ q20 mUnkPos;
+    /* 13C */ fx32 mUnkPos;
     /* 140 */ bool mUnk_140;
     /* 141 */ bool mUnk_141;
     /* 142 */ unk8 mUnk_142; // pad
     /* 143 */ unk8 mUnk_143; // pad
     /* 144 */
 #else
-    /* 118 */ q20 mUnkPos;
+    /* 118 */ fx32 mUnkPos;
     /* 11C */
 #endif
 

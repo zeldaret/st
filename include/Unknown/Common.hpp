@@ -3,11 +3,11 @@
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkFileSystem.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "global.h"
 #include "math.hpp"
 #include "profile.hpp"
 #include "types.h"
+#include <nitro/mi.h>
 
 #include <nns/text.h>
 
@@ -1006,7 +1006,7 @@ public:
     /* 08 */ virtual void vfunc_08(void *param1); // resource thing? (GetUnkPointer1_Impl as param1)
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
-    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2);
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2);
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1);
     /* 20 */ virtual void vfunc_20();
@@ -1093,10 +1093,10 @@ public:
     // data_ov000_020b1a98
     /* 00 */ virtual ~UnkSystem6();
     /* 08 */ virtual void vfunc_08(void *param1); // resource thing like UnkSystem4?
-    /* 0C */ virtual void vfunc_0C()                             = 0;
-    /* 10 */ virtual void vfunc_10()                             = 0;
-    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2) = 0;
-    /* 18 */ virtual void vfunc_18()                             = 0;
+    /* 0C */ virtual void vfunc_0C()                               = 0;
+    /* 10 */ virtual void vfunc_10()                               = 0;
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) = 0;
+    /* 18 */ virtual void vfunc_18()                               = 0;
     /* 1C */
 };
 
@@ -1111,7 +1111,7 @@ public:
     // data_ov000_020b1a48
     /* 00 */ virtual ~UnkSystem6_Derived1() override {}
     /* 10 */ virtual void vfunc_10() override;
-    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2) override;
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) override;
     /* 18 */ virtual void vfunc_18() override;
 };
 
@@ -1140,13 +1140,13 @@ struct UnkStackStruct1 {
     /* 03 */ unk8 mUnk_03;
     /* 04 */ void *mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0C */ Vec3p mUnk_0C;
+    /* 0C */ VecFx32 mUnk_0C;
     /* 18 */ unk16 mUnk_18;
     /* 1A */ unk16 mUnk_1A;
     /* 1C */ unk16 mUnk_1C;
     /* 1E */ unk16 mUnk_1E;
     /* 20 */ unk32 mUnk_20;
-    /* 24 */ Vec3p mUnk_24;
+    /* 24 */ VecFx32 mUnk_24;
     /* 30 */ unk16 mUnk_30;
     /* 32 */ unk16 mUnk_32;
     /* 34 */ unk16 mUnk_34;
@@ -1165,7 +1165,7 @@ struct UnkSystem7_UnkStruct_00 {
     /* 28 */ STRUCT_PAD(0x28, 0xA4);
     /* A4 */ unk16 mUnk_A4;
 
-    void func_ov000_02052c48(Vec3p *param1, Vec3p *param2);
+    void func_ov000_02052c48(VecFx32 *param1, VecFx32 *param2);
 };
 
 class UnkSystem7 {

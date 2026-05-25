@@ -7,7 +7,7 @@
 #include "global.h"
 #include "types.h"
 
-#include <nitro/button.h>
+#include <nitro/pad.h>
 
 // Title Card Scene Message Index (see sBMGSceneMap)
 typedef s32 TC_SceneMsgIdx;

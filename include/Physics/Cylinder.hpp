@@ -5,15 +5,15 @@
 #include "math.hpp"
 
 struct Cylinder {
-    Vec3p pos;
-    q20 size; // height and radius
+    VecFx32 pos;
+    fx32 size; // height and radius
 
     Cylinder() {}
-    Cylinder(q20 size) {
+    Cylinder(fx32 size) {
         this->Init(size);
     }
 
-    void Init(q20 size) {
+    void Init(fx32 size) {
         pos.x = 0;
         pos.y = size;
         pos.z = 0;
@@ -22,7 +22,7 @@ struct Cylinder {
     }
 
     void MakeEmpty() {
-        pos  = gVec3p_ZERO;
+        pos  = gVecFx32_ZERO;
         size = -1;
     }
 };

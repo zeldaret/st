@@ -63,7 +63,7 @@ public:
     /* 6C */ virtual bool vfunc_6C() override;
     /* 74 */ virtual void vfunc_74() override;
     /* 7C */ virtual void vfunc_7C() override;
-    /* 84 */ virtual void vfunc_84(unk32 param1, Vec3p *param2, unk16 *param3) override;
+    /* 84 */ virtual void vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param3) override;
     /* 88 */ virtual bool vfunc_88() override;
     /* 8C */ virtual unk32 vfunc_8C() override;
 
@@ -72,5 +72,5 @@ public:
 
     bool func_ov031_020fdec8(void);
 
-    static void func_ov031_020fe5fc(Vec3p *param1, MapObjectDoorDangerSpawn *thisx);
+    static void func_ov031_020fe5fc(VecFx32 *param1, MapObjectDoorDangerSpawn *thisx);
 };

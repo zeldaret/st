@@ -7,7 +7,7 @@
 #include "Unknown/UnkStruct_02049b18.hpp"
 #include "global.h"
 #include "types.h"
-#include <nitro/button.h>
+#include <nitro/pad.h>
 
 class UnkStruct_ov000_02067bc4_Sub1 {
 public:

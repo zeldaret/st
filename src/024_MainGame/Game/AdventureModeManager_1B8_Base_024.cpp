@@ -1,33 +1,19 @@
 #include "MainGame/AdventureMode.hpp"
 #include "Save/SaveManager.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b52b4.hpp"
 #include "Unknown/UnkStruct_ov017_020c3f70.hpp"
+#include <nitro/mi.h>
+
+#include <nitro/dc.h>
+#include <nitro/gx.h>
 
 extern "C" {
-void GX_LoadBG0Char(void *ptr, u32 offset, u32 size);
-void GX_LoadBG1Char(void *ptr, u32 offset, u32 size);
-void GX_LoadBG2Char(void *ptr, u32 offset, u32 size);
-void GX_LoadBG3Char(void *ptr, u32 offset, u32 size);
-
-void GXS_LoadBG0Char(void *ptr, u32 offset, u32 size);
-void GXS_LoadBG1Char(void *ptr, u32 offset, u32 size);
-void GXS_LoadBG2Char(void *ptr, u32 offset, u32 size);
-void GXS_LoadBG3Char(void *ptr, u32 offset, u32 size);
-
-void GXS_BeginLoadBGExtPltt(void);
-void GXS_LoadBGExtPltt(void *ptr, u32 offset, u32 size);
-void GXS_EndLoadBGExtPltt(void);
-
-void DC_func_0004(void *, int);
-void DC_func_0002();
-
 void func_ov000_0205a950(u8 bgType, bool isTopScreen, bool);
 void func_ov000_0205a944(u8 bgType, bool isTopScreen, bool);
-void func_01ffb644(q20 x, q20 y);
+void func_01ffb644(fx32 x, fx32 y);
 unk32 func_01ffb558();
 
 void func_02029058(void *, void *);
@@ -64,7 +50,7 @@ AdventureModeManager_1B8_Base::~AdventureModeManager_1B8_Base() {
 }
 
 void AdventureModeManager_1B8_Base::func_ov024_020d0698() {
-    _MI_CpuFill(0, this->mUnk_18, this->mUnk_14);
+    MI_CpuClearFast(this->mUnk_18, this->mUnk_14);
     this->mUnk_0A = true;
     this->mUnk_0D = true;
     this->mUnk_00 = ADVMGR_UNK;
@@ -272,7 +258,7 @@ void AdventureModeManager_1B8_Base::func_ov024_020d0a64() {
 
             if (var_r6 != 0) {
                 UnkDataStruct2 sp4(var_r6);
-                _MI_CpuFill(0, sp4.unk_00, var_r6);
+                MI_CpuClearFast(sp4.unk_00, var_r6);
                 this->TryLoadBGChar(sp4.unk_00, GetUnkValue2(), var_r6);
             }
 
@@ -281,7 +267,7 @@ void AdventureModeManager_1B8_Base::func_ov024_020d0a64() {
 
             if (var_r7 != 0) {
                 UnkDataStruct2 sp0(var_r7);
-                _MI_CpuFill(0, sp0.unk_00, var_r7);
+                MI_CpuClearFast(sp0.unk_00, var_r7);
                 this->TryLoadBGChar(sp0.unk_00, GetUnkValue2() + GetUnkValue(var_r6), var_r7);
             }
         }
@@ -656,7 +642,7 @@ void AdventureModeManager_1B8::func_ov024_020d1564(const AdventureModeManager_1B
 
 void AdventureModeManager_1B8::func_ov024_020d1614(void *param1) {
     this->mUnk_28 = param1;
-    _MI_CpuFill(0, this->mUnk_28, 0x1000);
+    MI_CpuClearFast(this->mUnk_28, 0x1000);
     data_ov017_020c3f70.func_ov017_020bba78();
 }
 

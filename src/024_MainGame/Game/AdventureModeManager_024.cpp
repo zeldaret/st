@@ -25,13 +25,12 @@
 #include "Unknown/UnkStruct_ov026_0213f578.hpp"
 #include "Unknown/UnkStruct_ov026_0213f590.hpp"
 #include "Unknown/UnkStruct_ov031_02118fa4.hpp"
-#include "regs.h"
 #include "versions.h"
 
+#include <nitro/dc.h>
+#include <nitro/g2.h>
+
 extern "C" {
-void GX_SetGraphicsMode(unk32 param1, unk32 param2, unk32 param3);
-void GXS_SetGraphicsMode(unk32 param1);
-void DC_FlushAll();
 void func_02019b3c();
 void func_02019c4c();
 void func_02019a74();
@@ -56,13 +55,11 @@ AdventureModeManager::~AdventureModeManager() {
 }
 
 void AdventureModeManager::func_ov024_020c5288() {
-    REG_DISPCNT &= ~0x1F00;
-    REG_DISPCNT |= 0x1100;
+    GX_SetVisiblePlane(17);
 }
 
 void AdventureModeManager::func_ov024_020c52a0() {
-    REG_DISPCNT &= ~0x1F00;
-    REG_DISPCNT |= 0x1100;
+    GX_SetVisiblePlane(17);
 }
 
 void AdventureModeManager::func_ov024_020c52b8() {
@@ -81,8 +78,8 @@ void AdventureModeManager::func_ov024_020c52f4() {
 
 void AdventureModeManager::func_ov024_020c530c() {
     GXS_SetGraphicsMode(5);
-    REG_BG2CNT_SUB = (REG_BG2CNT_SUB & 0x43) | 0x4d08;
-    REG_BG3CNT_SUB = (REG_BG3CNT_SUB & 0x43) | 0x4e14;
+    G2S_SetBG2Control(1, 0, 13, 2, 0);
+    G2S_SetBG3Control(1, 0, 14, 5, 0);
     this->func_ov024_020c6db8(0x1C);
 }
 
@@ -93,11 +90,11 @@ void AdventureModeManager::func_ov024_020c5364() {
 
 void AdventureModeManager::func_ov024_020c537c() {
     GXS_SetGraphicsMode(3);
-    REG_BG0CNT_SUB = (REG_BG0CNT_SUB & 0x43) | 0x1800;
+    G2S_SetBG0Control(0, 0, 24, 0, 0);
     this->func_ov024_020c6d2c(1);
-    REG_BG2CNT_SUB = (REG_BG2CNT_SUB & 0x43) | 0x1a0c;
-    REG_BG3CNT_SUB = (REG_BG3CNT_SUB & 0x43) | 0x5b14;
-    this->func_ov024_020c6db8(0x1f);
+    G2S_SetBG2Control(0, 0, 26, 3, 0);
+    G2S_SetBG3Control(1, 0, 27, 5, 0);
+    this->func_ov024_020c6db8(0x1F);
 }
 
 void AdventureModeManager::func_ov024_020c53e8() {
@@ -126,8 +123,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             data_0204a110.mUnk_D9C.func_0201c494(0);
 
             if (data_0204a110.mUnk_008 == 5) {
-                REG_DISPCNT &= ~0x1F00;
-                REG_DISPCNT |= 0x0200;
+                GX_SetVisiblePlane(2);
             }
             break;
         case 4:
@@ -142,8 +138,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             data_0204a110.mUnk_D9C.func_0201c494(1);
 
             if (data_0204a110.mUnk_008 == 5) {
-                REG_DISPCNT &= ~0x1F00;
-                REG_DISPCNT |= 0x0200;
+                GX_SetVisiblePlane(2);
             }
             break;
         case 5:
@@ -180,7 +175,7 @@ void AdventureModeManager::vfunc_24() {
             this->func_ov024_020c5cec();
         }
 
-        if (CHECK_BUTTON_COMBO(this->mButtons.press, BTN_START) && this->mUnk_15C->mUnk_47) {
+        if (CHECK_BUTTON_COMBO(this->mButtons.press, PAD_BUTTON_START) && this->mUnk_15C->mUnk_47) {
             this->mUnk_15C->func_ov017_020c3c64();
         }
 
@@ -216,7 +211,7 @@ void AdventureModeManager::vfunc_24() {
     }
 
     bool var_r0;
-    if (CHECK_BUTTON_COMBO(this->mButtons.press, BTN_START) && data_027e09a4->IsNotCutscene()) {
+    if (CHECK_BUTTON_COMBO(this->mButtons.press, PAD_BUTTON_START) && data_027e09a4->IsNotCutscene()) {
         if (!data_027e09b8->func_ov000_020732dc(0) && !data_027e09b8->func_ov000_020732dc(1)) {
             if (!data_027e09b8->func_ov000_020732dc(2) && data_0204e5f8.mUnk_3A == 0 && data_0204e5f8.mUnk_3E == 0 &&
                 !data_0204e5f8.mUnk_18) {
@@ -307,7 +302,7 @@ void AdventureModeManager::vfunc_24() {
         if (data_0204e5f8.mUnk_3A == 0 && data_0204e5f8.mUnk_3E == 0 && !data_0204e5f8.mUnk_18) {
             // should we open the menu
             press = this->mButtons.press;
-            if (CHECK_BUTTON_COMBO(press, BTN_DRIGHT) || CHECK_BUTTON_COMBO(press, BTN_Y)) {
+            if (CHECK_BUTTON_COMBO(press, PAD_KEY_RIGHT) || CHECK_BUTTON_COMBO(press, PAD_BUTTON_Y)) {
                 if (this->func_ov024_020c5dac() != 0) {
                     if (data_0204a088->mUnk_00 != 1) {
                         return;
@@ -327,7 +322,7 @@ void AdventureModeManager::vfunc_24() {
 
             // should we switch to the map screen
             press = this->mButtons.press;
-            if (CHECK_BUTTON_COMBO(press, BTN_DDOWN) || CHECK_BUTTON_COMBO(press, BTN_B)) {
+            if (CHECK_BUTTON_COMBO(press, PAD_KEY_DOWN) || CHECK_BUTTON_COMBO(press, PAD_BUTTON_B)) {
                 if (this->func_ov024_020c5f70() != 0) {
                     switch (data_0204a088->mUnk_00) {
                         case 1:
@@ -370,7 +365,7 @@ void AdventureModeManager::vfunc_24() {
             }
 
             // should we open the collection
-            if (CHECK_BUTTON_COMBO(this->mButtons.press, BTN_SELECT)) {
+            if (CHECK_BUTTON_COMBO(this->mButtons.press, PAD_BUTTON_SELECT)) {
                 if (this->func_ov024_020c60f4()) {
                     switch (data_0204a088->mUnk_00) {
                         case 1:
@@ -406,8 +401,8 @@ void AdventureModeManager::vfunc_24() {
 
             // should we open the rail map
             press = this->mButtons.press;
-            if (!CHECK_BUTTON_COMBO(press, BTN_DLEFT)) {
-                if (!CHECK_BUTTON_COMBO(press, BTN_A)) {
+            if (!CHECK_BUTTON_COMBO(press, PAD_KEY_LEFT)) {
+                if (!CHECK_BUTTON_COMBO(press, PAD_BUTTON_A)) {
                     return;
                 }
 
@@ -913,9 +908,9 @@ void AdventureModeManager::func_ov024_020c6d20(unk32 param1) {
 
 void AdventureModeManager::func_ov024_020c6d2c(unk32 param1) {
     if (param1) {
-        REG_BG1CNT_SUB = (REG_BG1CNT_SUB & 0x43) | 0x1904;
+        G2S_SetBG1Control(0, 0, 25, 1, 0);
     } else {
-        REG_BG1CNT_SUB = (REG_BG1CNT_SUB & 0x43) | 0x0C00;
+        G2S_SetBG1Control(0, 0, 12, 0, 0);
     }
 }
 

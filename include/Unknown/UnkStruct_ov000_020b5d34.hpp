@@ -10,7 +10,7 @@ class UnkStruct_ov000_020b5d34_00 {
 public:
     /* 00 */ unk32 *mUnk_00;
     /* 04 */ MapObject_20 *mUnk_04;
-    /* 08 */ Vec3p *mUnk_08;
+    /* 08 */ VecFx32 *mUnk_08;
     /* 0C */ s16 *mUnk_0C;
     /* 10 */
 };

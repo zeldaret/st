@@ -3,13 +3,10 @@
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
-#include "regs.h"
 #include "types.h"
 
-extern "C" {
-void GX_SetGraphicsMode(unk32 param1, unk32 param2, unk32 param3);
-void GXS_SetGraphicsMode(unk32 param1);
-}
+#include <nitro/g2.h>
+#include <nitro/reg.h>
 
 DECL_PTMF(TitleScreenPTMF, Input *pButtons, TouchControl *pTouchControl);
 
@@ -124,7 +121,7 @@ public:
         this->mpGameMode = NULL;
         GX_SetGraphicsMode(1, 0, 1);
         GXS_SetGraphicsMode(5);
-        REG_BG3CNT_SUB = (REG_BG3CNT_SUB & 0x0043) | 0x4E14;
+        G2S_SetBG3Control(1, 0, 14, 5, 0);
     }
 
     void func_ov025_020c4c20();

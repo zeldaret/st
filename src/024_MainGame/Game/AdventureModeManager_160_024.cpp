@@ -7,7 +7,9 @@
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov024_020d86a0.hpp"
-#include "regs.h"
+
+#include <nitro/g2.h>
+#include <nitro/reg.h>
 
 extern "C" void func_02019b3c();
 extern "C" AdventureModeManager_160_18 *func_ov006_020b6ab0(void *, void *);
@@ -165,7 +167,7 @@ void AdventureModeManager_160::func_ov024_020c7d4c(unk32 param1) {
         }
     }
 
-    REG_BG2CNT_SUB = (REG_BG2CNT_SUB & ~0x03) | 0x01;
+    G2S_SetBG2Priority(1);
 }
 
 void AdventureModeManager_160::vfunc_18(unk32 param1) {

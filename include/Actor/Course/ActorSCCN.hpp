@@ -49,12 +49,12 @@ public:
     /* 9A */ unk8 mUnk_9A;
     /* 9B */ SCCNType mUnk_9B : 8;
     /* 9C */ unk32 mUnk_9C;
-    /* A0 */ q20 mUnk_A0;
-    /* A4 */ q20 mUnk_A4;
-    /* A8 */ q20 mUnk_A8;
-    /* AC */ q20 mUnk_AC;
-    /* B0 */ q20 mUnk_B0;
-    /* B4 */ q20 mUnk_B4;
+    /* A0 */ fx32 mUnk_A0;
+    /* A4 */ fx32 mUnk_A4;
+    /* A8 */ fx32 mUnk_A8;
+    /* AC */ fx32 mUnk_AC;
+    /* B0 */ fx32 mUnk_B0;
+    /* B4 */ fx32 mUnk_B4;
     /* B8 */ unk32 mUnk_B8;
     /* BC */ unk32 mUnk_BC;
     /* C0 */ unk32 mUnk_C0;

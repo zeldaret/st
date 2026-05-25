@@ -63,14 +63,14 @@ typedef struct G3d_Model_ {
     /* 18 */ u8 numMat;         // number of materials
     /* 19 */ u8 numMesh;        // number of meshes
     /* 1A */ u8 dummy2[2];
-    /* 1C */ q20 upScale;
-    /* 20 */ q20 downScale;
-    /* 24 */ u16 numVertex;        // number of vertices
-    /* 26 */ u16 numPolygon;       // number of polygons
-    /* 28 */ u16 numTriangle;      // number of triangles
-    /* 2A */ u16 numQuad;          // number of quads
-    /* 2C */ q4 boundingBoxMin[3]; // bounding box lower vertex
-    /* 32 */ q4 boundingBoxMax[3]; // bounding box upper vertex
+    /* 1C */ fx32 upScale;
+    /* 20 */ fx32 downScale;
+    /* 24 */ u16 numVertex;          // number of vertices
+    /* 26 */ u16 numPolygon;         // number of polygons
+    /* 28 */ u16 numTriangle;        // number of triangles
+    /* 2A */ u16 numQuad;            // number of quads
+    /* 2C */ fx16 boundingBoxMin[3]; // bounding box lower vertex
+    /* 32 */ fx16 boundingBoxMax[3]; // bounding box upper vertex
     /* 38 */ u8 dummy3[8];
     /* 40 */ G3d_NameList boneList; // bone list
     /* 4C */

@@ -6,10 +6,9 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
-#include "regs.h"
 #include "versions.h"
 
-extern "C" void GX_func_0008(void *, unk32, unk32);
+#include <nitro/gx.h>
 
 AdventureModeManager_15C_20_00::AdventureModeManager_15C_20_00(bool param1) :
     mUnk_778(false),

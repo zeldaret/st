@@ -1,8 +1,8 @@
 #include "Item/ItemManager.hpp"
 #include "Save/SaveManager.hpp"
 #include "System/Random.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "global.h"
+#include <nitro/mi.h>
 
 static const unk32 data_ov000_020afda8[] = {
     0x0015007E, 0x0015007F, 0x00150080, 0x00150081, 0x00150082, 0x00150083, 0x00150084, 0x00150085,
@@ -86,7 +86,7 @@ extern u16 data_ov000_020afe90;
 extern u16 data_ov000_020afe94;
 
 ARM void TreasureManager::func_ov000_020a9b10(void *param1) {
-    _MI_CpuCopy(param1, this, sizeof(TreasureManager));
+    MI_CpuCopyFast(param1, this, sizeof(TreasureManager));
 }
 
 ARM unk32 TreasureManager::func_ov000_020a9b2c(unk32 param1) {
