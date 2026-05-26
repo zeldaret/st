@@ -1,42 +1,32 @@
 #include "System/SysFault.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/Common.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_02049b18.hpp"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f84.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "global.h"
-#include "regs.h"
+#include <nitro/mi.h>
 
-extern "C" void _OS_Panic();
+#include <nitro/g2.h>
+#include <nitro/os.h>
+#include <nitro/reg.h>
+
 extern "C" void func_020131ec();
 extern "C" void func_02013214();
 extern "C" void func_ov020_020c86d8(void *);
 extern "C" void func_02014d38(void *, int);
 extern "C" void func_020196fc();
-extern "C" void GX_SetBankForBG(int);
-extern "C" void GX_SetBankForSubBG(int);
-extern "C" void GX_SetBankForLCDC(int);
-extern "C" void GX_SetGraphicsMode(int, int, int);
-extern "C" void GXS_SetGraphicsMode(int);
 extern "C" unk32 func_ov000_02068504(int);
 extern "C" unk32 func_020147a8();
-extern "C" void *G2S_func_0001();
 extern "C" void func_0201b278(bool, bool);
 extern "C" void func_0201b180(bool, bool);
-extern "C" void GXS_LoadBGPltt(void *, int, int);
 extern "C" void SetBrightColor(void *, int);
 extern int data_02049bd4;
 
 extern u16 data_0203e0c4[];
 extern int data_0203e0be;
 extern int data_ov020_20e8580;
-
-struct struct_aStack_2e0 {
-    int mUnk_00;
-    struct_aStack_2e0(void *, int);
-};
 
 struct struct_aStack_2d8 {
     struct_aStack_2d8();
@@ -64,12 +54,10 @@ THUMB void SysFault::func_020127f0(unk32 param1) {
     GX_SetBankForLCDC(0x100);
     GX_SetGraphicsMode(1, 0, 0);
     GXS_SetGraphicsMode(0);
-
-    REG_DISPCNT     = ((REG_DISPCNT & ~0x1F00) | 0x100);
-    REG_DISPCNT_SUB = (REG_DISPCNT_SUB & ~0x1F00) | 0x100;
-
-    REG_BG0CNT     = (REG_BG0CNT & 0x43) | 4;
-    REG_BG0CNT_SUB = (REG_BG0CNT_SUB & 0x43) | 4;
+    GX_SetVisiblePlane(1);
+    GXS_SetVisiblePlane(1);
+    G2_SetBG0Control(0, 0, 0, 1, 0);
+    G2S_SetBG0Control(0, 0, 0, 1, 0);
 
     if (this->mUnk_05 < 0xFF) {
         this->mUnk_05 = 0xFF;
@@ -146,7 +134,8 @@ THUMB void SysFault::func_020127f0(unk32 param1) {
                 {
                     UnkSystem2_UnkSubSystem5_Base_10 aStack_278;
                     aStack_2d8.func_ov000_0206869c();
-                    struct_aStack_2e0 uStack_2e0(data_ov000_020b504c.mUnk_000, 0x25);
+                    UnkMsgDataStruct1 uStack_2e0;
+                    uStack_2e0.func_ov000_02067a60(data_ov000_020b504c.mUnk_000, 0x25);
                     aStack_2d8.func_ov000_020686a4(uStack_2e0.mUnk_00);
                     aStack_2d8.func_ov000_02068fec();
                     aStack_2d8.func_ov000_0206878c();
@@ -166,7 +155,8 @@ THUMB void SysFault::func_020127f0(unk32 param1) {
                 {
                     UnkSystem2_UnkSubSystem5_Base_10 aStack_278;
                     aStack_2d8.func_ov000_0206869c();
-                    struct_aStack_2e0 uStack_2e0(data_ov000_020b504c.mUnk_000, 0x26);
+                    UnkMsgDataStruct1 uStack_2e0;
+                    uStack_2e0.func_ov000_02067a60(data_ov000_020b504c.mUnk_000, 0x26);
                     aStack_2d8.func_ov000_020686a4(uStack_2e0.mUnk_00);
                     aStack_2d8.func_ov000_02068fec();
                     aStack_2d8.func_ov000_0206878c();
@@ -202,6 +192,6 @@ THUMB void SysFault::func_020127f0(unk32 param1) {
         }
 
         this->mUnk_05 = 0;
-        _OS_Panic();
+        OS_Panic();
     }
 }

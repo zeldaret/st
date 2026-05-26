@@ -14,7 +14,7 @@ struct UnkStruct_func_ov001_020bb018_param2 {
     /* 08 */ u16 mUnk_0A;
 };
 
-class ActorManager : public SysObject {
+class ActorManager : public AutoInstance<ActorManager> {
 public:
     /* 00 */ Actor **mActorTable;
     /* 04 */ Actor **mActorTableEnd;
@@ -50,7 +50,6 @@ public:
     unk32 func_ov000_0209704c();
     unk32 func_ov000_020970c8(u16 param1, unk32 *param2);
 
-    int ClearInstance();
     void func_ov001_020bafdc();
     void func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param2 *param1);
     void func_ov001_020bb488();
@@ -60,7 +59,6 @@ public:
     void func_ov001_020bb7b0(ZeldaObjectList *pObjList);
     void func_ov001_020bb7f0();
 
-    static void SetInstance(ActorManager *instance);
     static ActorManager *Create();
     static void Destroy();
     static void func_ov001_020bb414(ActorManager *instance);

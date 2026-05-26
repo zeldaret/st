@@ -1,5 +1,5 @@
-#ifndef NITROSDK_OS_THREAD_H
-#define NITROSDK_OS_THREAD_H
+#ifndef _NITRO_THREAD_H
+#define _NITRO_THREAD_H
 
 #include <nitro/os/context.h>
 
@@ -71,6 +71,7 @@ OSMutex *OS_RemoveMutexFromQueue(OSMutexQueue *queue);
 OSThread *OS_SelectThread(void);
 void OS_CreateThread(OSThread *thread, void (*func)(void *), void *arg, void *stack, u32 stackSize, u32 priority);
 void OS_ExitThread(void);
+void OS_WakeupThreadDirect(void *param1);
 
 /// MARK: Inlines
 
@@ -95,4 +96,4 @@ static inline u32 OS_GetThreadId(OSThread *thread) {
     return thread->id;
 }
 
-#endif // NITROSDK_OS_THREAD_H
+#endif // _NITRO_THREAD_H

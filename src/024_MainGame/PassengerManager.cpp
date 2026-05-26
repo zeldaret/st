@@ -275,7 +275,7 @@ bool PassengerManager::CanCompleteTrip() {
     bool result = false;
 
     if (this->mPassenger.mActorId != ActorId_None && this->mPassenger.mUnk_04 == 0 &&
-        data_027e09a4->mSceneIndex != SceneIndex_t_minigame) {
+        data_027e09a4->mUnk_00.mSceneIndex != SceneIndex_t_minigame) {
         result = true;
     }
 

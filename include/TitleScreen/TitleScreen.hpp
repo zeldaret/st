@@ -3,13 +3,10 @@
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
-#include "regs.h"
 #include "types.h"
 
-extern "C" {
-void GX_SetGraphicsMode(unk32 param1, unk32 param2, unk32 param3);
-void GXS_SetGraphicsMode(unk32 param1);
-}
+#include <nitro/g2.h>
+#include <nitro/reg.h>
 
 DECL_PTMF(TitleScreenPTMF, Input *pButtons, TouchControl *pTouchControl);
 
@@ -24,7 +21,7 @@ enum TitleScreenState_ {
     TitleScreenState_Max                  = 6
 };
 
-class TitleScreen_Sub2 : public GameModeLinkListNode {
+class TitleScreen_Sub2 : public LinkList<TitleScreen_Sub2> {
 public:
     /* 00 (vtable) */
     /* 0C */ unk32 mUnk_0C;
@@ -37,91 +34,35 @@ public:
         mUnk_0C(0),
         mUnk_10(false) {}
 
-    GameModeLinkListNode *GetNode() {
-        return this;
-    }
-
     // data_ov025_020c5b24 vtable
     /* 00 */ virtual void vfunc_00();
 };
 
 // similar to UnkSubStruct1
-class TitleScreen_Sub3 {
+class TitleScreen_Sub3 : public UnkSubStruct1_Base {
 public:
-    /* 00 (vtable) */
-    /* 04 */ u16 mUnk_04;
-    /* 04 */ u16 mUnk_06;
-    /* 08 */ u16 mUnk_08;  // 220
-    /* 08 */ bool mUnk_0A; // 222
-    /* 08 */ bool mUnk_0B; // 223
-    /* 0C */ bool mUnk_0C; // 224
-    /* 0C */ bool mUnk_0D;
-    /* 0C */ bool mUnk_0E;
-    /* 0C */ bool mUnk_0F;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk32 mUnk_1C;
+    /* 00 (base) */
     /* 20 */ unk32 mUnk_20;
+    /* 24 */
 
     TitleScreen_Sub3();
     void func_0201effc(unk32 param1, unk32 param2, unk32 param3);
     bool func_0201f04c();
 
     // data_020442d4 vtable
-    /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */
+    /* 00 */ virtual void vfunc_00() override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
 
-    void UnkOperations() {
-        int iVar1;
-
-        if (this->mUnk_08 != 0) {
-            iVar1         = this->mUnk_08 - this->mUnk_0D;
-            this->mUnk_08 = CLAMP(iVar1, 0, 0xFFFF);
-        } else {
-            if (this->mUnk_0A) {
-                if (this->mUnk_04 < this->mUnk_06) {
-                    iVar1 = this->mUnk_04 + this->mUnk_0D;
-
-                    if (iVar1 > this->mUnk_06) {
-                        iVar1 = this->mUnk_06;
-                    } else if (iVar1 < 0) {
-                        iVar1 = 0;
-                    }
-
-                    this->mUnk_04 = iVar1;
-                    this->vfunc_00();
-
-                    if (this->mUnk_04 >= this->mUnk_06) {
-                        this->mUnk_10 = this->mUnk_18;
-                        this->mUnk_0A = false;
-                        this->mUnk_0C = true;
-                    }
-                }
-            } else {
-                if (this->mUnk_0B && this->mUnk_04 != 0) {
-                    iVar1 = this->mUnk_04 - this->mUnk_0D;
-
-                    if (iVar1 > this->mUnk_06) {
-                        iVar1 = this->mUnk_06;
-                    } else if (iVar1 < 0) {
-                        iVar1 = 0;
-                    }
-
-                    this->mUnk_04 = iVar1;
-                    this->vfunc_04();
-
-                    if (this->mUnk_04 == 0) {
-                        this->mUnk_10 = this->mUnk_14;
-                        this->mUnk_0B = false;
-                        this->mUnk_0C = true;
-                    }
-                }
-            }
-        }
+    void Subprocess1_UnkValueSets() {
+        this->mUnk_10 = this->mUnk_18;
     }
+
+    void Subprocess2_UnkValueSets() {
+        this->mUnk_10 = this->mUnk_14;
+    }
+
+    UnkSubStruct1_Methods;
 };
 
 class TitleScreen : public SysObject, public GameModeManagerBase_104 { // 0233c6d4
@@ -143,14 +84,6 @@ public:
     /* 2CC */ UnkSubStruct19 mUnk_2CC; // logo shine outline (it's barely visible)
     /* 344 */ unk32 mUnk_344;
     /* 348 */
-
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (this != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
-    }
 
     TitleScreen();
 
@@ -181,13 +114,14 @@ public:
 class TitleScreenManager : public TitleScreenManager_Base {
 public:
     /* 000 (base) */
+    /* 154 */ GameModeBase *mpGameMode;
     /* 158 */
 
     TitleScreenManager(unk32 param1) NO_INLINE {
         this->mpGameMode = NULL;
         GX_SetGraphicsMode(1, 0, 1);
         GXS_SetGraphicsMode(5);
-        REG_BG3CNT_SUB = (REG_BG3CNT_SUB & 0x0043) | 0x4E14;
+        G2S_SetBG3Control(1, 0, 14, 5, 0);
     }
 
     void func_ov025_020c4c20();
@@ -199,8 +133,8 @@ public:
     /* 18 */ virtual void vfunc_18() override;
     /* 24 */ virtual void vfunc_24() override;
     /* 28 */ virtual void vfunc_28(unk8 *param1) override;
-    /* 2C */ virtual void vfunc_2C(unk8 *param1) override;
-    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2, unk32 param3, unk32 param4) override;
+    /* 2C */ virtual void DrawUI(unk8 *param1) override;
+    /* 38 */ virtual void vfunc_38(u32 param1, u8 param2, unk16 param3, unk16 param4) override;
 
     static TitleScreenManager *Create(unk32 param1);
 };

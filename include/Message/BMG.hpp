@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Message/BMGEnums.hpp"
 #include "System/SysNew.hpp"
 #include "global.h"
 #include "types.h"
@@ -11,6 +12,7 @@
     ((u32) (pGroups)->entries[(flags) >> 0x10].pDAT1 + (BMG_GET_MSG_OFFSET((pGroups), (flags)) & ~1))
 
 #define BMG_ID(group, infIndex) (((group) << 16) | (infIndex))
+#define BMG_ID_NONE 0
 
 enum BMGGroup_ {
     BMGGroup_regular       = 0x00,
@@ -88,8 +90,8 @@ struct EntryINF1 {
     /* 00 */ u32 offset; // relative to the end of the DAT1 header
     /* 04 */ u8 mUnk_04; // flags/attributes? (+0x04 to +0x06)
     /* 05 */ u8 mUnk_05;
-    /* 06 */ u8 mUnk_06;
-    /* 07 */ u8 mUnk_07;
+    /* 06 */ u8 fontIndex; // see FontIndex enum
+    /* 07 */ s8 mUnk_07;
     /* 08 */
 };
 

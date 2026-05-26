@@ -2,8 +2,8 @@
 
 #include "Actor/Actor.hpp"
 #include "MapObject/MapObject.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
+#include <nitro/mi.h>
 
 extern unk8 data_ov000_020af4d4[];
 

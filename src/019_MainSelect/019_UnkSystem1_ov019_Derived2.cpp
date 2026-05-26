@@ -34,7 +34,7 @@ ARM unk32 UnkSystem1_ov019_Derived2::vfunc_1C(u32 param1, unk32 param2, unk32 pa
             data_ov000_020b504c.func_ov000_02067bc4(0)->func_02021bec(1);
             data_ov000_020b504c.func_ov000_02067bc4(this->mUnk_10)->func_02021c08();
             this->mUnk_04++;
-        } else if (data_ov000_020b504c.func_ov000_02067bc4(this->mUnk_10)->vfunc_08() != 0) {
+        } else if (data_ov000_020b504c.func_ov000_02067bc4(this->mUnk_10)->vfunc_08()) {
             if (this->mUnk_04 == 0x0F) {
                 SaveFile *pSaveFile = gSaveManager.mpSaveFile;
                 pSaveFile->func_ov019_020d1aac(this->mUnk_12, data_ov003_020ba740->mUnk_9D0);

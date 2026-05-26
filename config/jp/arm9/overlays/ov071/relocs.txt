@@ -990,7 +990,7 @@ from:0x0215c2b8 kind:arm_call to:0x0201a9dc module:main
 from:0x0215c2c4 kind:load to:0x0203feb0 module:main
 from:0x0215c2c8 kind:load to:0x02167360 module:overlay(71)
 from:0x0215c2cc kind:load to:0x027e0998 module:dtcm
-from:0x0215c2d0 kind:load to:0x0204c42c module:main
+from:0x0215c2d0 kind:load to:0x0204b690 add:0xd9c module:main
 from:0x0215c2d4 kind:load to:0x0204c49c module:main
 from:0x0215c2d8 kind:load to:0x0216737c module:overlay(71)
 from:0x0215c388 kind:arm_call to:0x0201a9dc module:main

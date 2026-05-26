@@ -1,8 +1,8 @@
 #include "MainGame/MiscAdvManager.hpp"
 #include "Item/ItemManager.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_02049bac.hpp"
+#include <nitro/mi.h>
 
 extern "C" u8 func_ov000_020a9a50();
 
@@ -11,20 +11,17 @@ MiscAdvManager *MiscAdvManager::Create() {
 }
 
 MiscAdvManager::MiscAdvManager() {
-    MiscAdvManager::SetInstance(this);
     this->mLettersRead = 0;
     this->mStampsFlag  = 0;
     this->mSongs       = 0;
 }
 
-MiscAdvManager::~MiscAdvManager() {
-    MiscAdvManager::ClearInstance();
-}
+MiscAdvManager::~MiscAdvManager() {}
 
 void MiscAdvManager::func_ov024_020d6310(MiscAdvManager *pSrc) {
     u16 local_10;
 
-    _MI_CpuCopy(pSrc, this, sizeof(MiscAdvManager));
+    MI_CpuCopyFast(pSrc, this, sizeof(MiscAdvManager));
     data_02049bac.func_02014a34(&local_10);
 
     if (local_10 == this->mUnk_28) {
@@ -193,11 +190,4 @@ void MiscAdvManager::func_ov024_020d6610() {
     this->func_ov024_020d6530();
 }
 
-void MiscAdvManager::SetInstance(MiscAdvManager *pInstance) {
-    gpMiscAdvManager = pInstance;
-}
-
-int MiscAdvManager::ClearInstance() {
-    gpMiscAdvManager = NULL;
-    //! @bug: missing return
-}
+DECL_INSTANCE(MiscAdvManager, gpMiscAdvManager);

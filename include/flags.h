@@ -16,6 +16,10 @@
 #define UNSET_FLAG(arr, pos) ((arr)[((u32) (pos)) >> 5] &= ~(1 << ((pos) & 0x1F)))
 #define FLAG(index, pos) (((index) << 5) | ((pos) & 0x1F))
 
+#define GET_FLAG_ALT(arr, pos) (((arr)[(pos) >> 5] & (1 << ((0x1F - ((pos) & 0x1F))))) != 0)
+#define SET_FLAG_ALT(arr, pos) ((arr)[(pos) >> 5] |= 1 << ((0x1F - ((pos) & 0x1F))))
+#define UNSET_FLAG_ALT(arr, pos) ((arr)[(pos) >> 5] &= ~(1 << ((0x1F - ((pos) & 0x1F)))))
+
 //! TODO: improve or remove? idk
 #define VA_NARGS_IMPL(_1, _2, _3, _4, N, ...) N
 #define VA_NARGS(...) VA_NARGS_IMPL(__VA_ARGS__, 4, 3, 2, 1)

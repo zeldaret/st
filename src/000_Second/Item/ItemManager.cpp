@@ -82,7 +82,7 @@ ARM void ItemManager::GiveRupees(s32 amount, bool param2, bool param3) {
     this->mNumRupees = newAmount;
 
     if (param3) {
-        data_ov024_020d8698->func_ov024_020cd368(param2 && prevNumRupees != this->mNumRupees, 1);
+        data_ov024_020d8698->func_ov024_020cd368(param2 && prevNumRupees != this->mNumRupees, true);
     }
 }
 
@@ -128,7 +128,7 @@ ARM bool ItemManager::TryEquipForcedItem() {
     if (this->mForcedItem != ItemFlag_None) {
         this->mEquippedItem = this->mForcedItem;
         this->mForcedItem   = ItemFlag_None;
-        data_ov024_020d8698->func_ov024_020cd458(this->mEquippedItem, 0);
+        data_ov024_020d8698->func_ov024_020cd458(this->mEquippedItem, false);
         return true;
     }
 

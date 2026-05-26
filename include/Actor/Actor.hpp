@@ -7,6 +7,7 @@
 #include "System/SysNew.hpp"
 #include "flags.h"
 #include "global.h"
+#include "math.hpp"
 #include "types.h"
 #include "versions.h"
 #include <nitro/math.h>
@@ -20,7 +21,7 @@
 
 class ActorParams {
 public:
-    /* 00 */ Vec3p mInitialPos;
+    /* 00 */ VecFx32 mInitialPos;
     /* 0C */ s16 mInitialAngle;
     /* 0E */ s8 mUnk_0E;
     /* 0F */ bool mUnk_0F;
@@ -104,9 +105,9 @@ class Actor_c4;
 class Actor : public SysObject {
 public:
     /* 00 (vtable) */
-    /* 04 */ Vec3p mPos;
-    /* 10 */ Vec3p mPrevPos;
-    /* 1C */ Vec3p mVel;
+    /* 04 */ VecFx32 mPos;
+    /* 10 */ VecFx32 mPrevPos;
+    /* 1C */ VecFx32 mVel;
     /* 28 */ s16 mAngle;
     /* 2A */ unk16 mUnk_2A;
     /* 2C */ unk32 mUnk_2C; // gravity?
@@ -131,7 +132,7 @@ public:
     /* 90 */ ActorProfile *mpProfile;
     /* 94 */
 
-    /* 00 */ virtual void vfunc_00(Vec3p *param1);
+    /* 00 */ virtual void vfunc_00(VecFx32 *param1);
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
     /* 0C */ virtual unk8 vfunc_0c();
@@ -146,7 +147,7 @@ public:
     /* 30 */ virtual void vfunc_30();
     /* 34 */ virtual unk32 vfunc_34();
     /* 38 */ virtual unk32 vfunc_38(unk32 param1);
-    /* 3C */ virtual bool vfunc_3c(unk32 param2, Vec3p *param3);
+    /* 3C */ virtual bool vfunc_3c(unk32 param2, VecFx32 *param3);
     /* 40 */ virtual void vfunc_40();
     /* 44 */ virtual void vfunc_44();
     /* 48 */ virtual void vfunc_48();
@@ -180,7 +181,7 @@ public:
     unk32 func_ov000_02098910(unk32 param1, unk32 param2);
 
     s32 func_ov000_02098518(unk32 *param1);
-    Vec3p *func_ov000_0209853c(unk32 param1);
+    VecFx32 *func_ov000_0209853c(unk32 param1);
     s32 func_ov000_02098554();
     s16 func_ov000_0209856c();
     s8 func_ov000_02098578();
@@ -196,7 +197,7 @@ public:
     bool func_ov000_02098a60(unk32 param1);
     void func_ov000_02098a88(unk32 param1, unk32 param2);
 
-    void func_ov017_020bf5c4(Vec3p *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+    void func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_ov017_020bf9c8(Actor *param1);
 };
 

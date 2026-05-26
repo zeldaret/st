@@ -113,7 +113,7 @@ from:0x020b6d4a kind:thumb_call to:0x020154c4 module:main
 from:0x020b6d54 kind:load to:0x020b4464 module:overlay(0)
 from:0x020b6d58 kind:load to:0x020b8450 module:overlay(12)
 from:0x020b6d5c kind:load to:0x02043f38 add:0x8 module:main
-from:0x020b6d64 kind:load to:0x0204a480 module:main
+from:0x020b6d64 kind:load to:0x0204a110 add:0x370 module:main
 from:0x020b6d68 kind:load to:0x020b8460 module:overlay(12)
 from:0x020b6d70 kind:load to:0x020b45f4 module:overlay(0)
 from:0x020b6d74 kind:load to:0x020b8470 module:overlay(12)
@@ -165,7 +165,7 @@ from:0x020b7080 kind:thumb_call_arm to:0x0206db44 module:overlay(0)
 from:0x020b709c kind:thumb_call_arm to:0x0201c73c module:main
 from:0x020b718c kind:load to:0x020b8380 module:overlay(12)
 from:0x020b7190 kind:load to:0x020b5214 module:overlay(0)
-from:0x020b7198 kind:load to:0x0204a480 module:main
+from:0x020b7198 kind:load to:0x0204a110 add:0x370 module:main
 from:0x020b71de kind:thumb_call_arm to:0x02070148 module:overlay(0)
 from:0x020b71e8 kind:thumb_call_arm to:0x0203a1bc module:main
 from:0x020b725c kind:thumb_call_arm to:0x02019624 module:main
@@ -194,7 +194,7 @@ from:0x020b749e kind:thumb_call_arm to:0x02067f88 module:overlay(0)
 from:0x020b74b4 kind:thumb_call_arm to:0x0201c504 module:main
 from:0x020b74c2 kind:thumb_call_arm to:0x0201c504 module:main
 from:0x020b74c8 kind:load to:0x020b504c module:overlay(0)
-from:0x020b74cc kind:load to:0x0204aeac module:main
+from:0x020b74cc kind:load to:0x0204a110 add:0xd9c module:main
 from:0x020b74f0 kind:thumb_call_arm to:0x02028c4c module:main
 from:0x020b750a kind:thumb_call_arm to:0x0201edbc module:main
 from:0x020b753a kind:thumb_call_arm to:0x0201aa44 module:main
@@ -226,7 +226,7 @@ from:0x020b787a kind:thumb_call to:0x020b7ca0 module:overlay(12)
 from:0x020b78aa kind:thumb_call to:0x020b7c90 module:overlay(12)
 from:0x020b78f8 kind:load to:0x020b827c module:overlay(12)
 from:0x020b78fc kind:load to:0x020b8270 module:overlay(12)
-from:0x020b7904 kind:load to:0x0204a480 module:main
+from:0x020b7904 kind:load to:0x0204a110 add:0x370 module:main
 from:0x020b7908 kind:load to:0x027e0cf0 module:dtcm
 from:0x020b794e kind:thumb_call_arm to:0x0205fc20 module:overlay(0)
 from:0x020b796e kind:thumb_call_arm to:0x0205fc20 module:overlay(0)

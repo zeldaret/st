@@ -44,8 +44,8 @@ ARM void GameModeManagerBase::vfunc_00() {
     }
 }
 
-ARM void GameModeManagerBase::vfunc_04() {
-    data_ov000_020b50c0.func_ov000_02069d7c();
+ARM void GameModeManagerBase::vfunc_04(unk32 param1) {
+    data_ov000_020b50c0.func_ov000_02069d7c(param1);
 
     if (this->mUnk_150) {
         this->mUnk_150 = false;
@@ -66,13 +66,11 @@ ARM void GameModeManagerBase::vfunc_28(unk8 *param1) {
     this->mUnk_004.func_0201bf54();
 }
 
-ARM void GameModeManagerBase::vfunc_2C(unk8 *param1) {}
+ARM void GameModeManagerBase::DrawUI(unk8 *param1) {}
 
 ARM void GameModeManagerBase::vfunc_30(unk32 param1) {
-    GameModeLinkList<GameModeManagerBase_104> *pNode;
-
-    for (pNode = this->mUnk_104.mList.GetNext(); pNode != this->mUnk_104.GetOrigin(); pNode = pNode->GetPrev()) {
-        pNode->GetTarget()->vfunc_0C(param1);
+    for (GameModeManagerBase_104::Iterator it = GetBeginIter(this->mUnk_104); it != GetEndIter(this->mUnk_104); it++) {
+        it->vfunc_0C(param1);
     }
 }
 
@@ -104,84 +102,70 @@ ARM void GameModeManagerBase::func_0201874c(void) {
     this->mUnk_004.func_0201c1e4();
 }
 
-struct UnkStruct4 {
-    void *a;
-    void *b;
-    void *c;
-    void *d;
-};
-
 // non-matching
 ARM void GameModeManagerBase::func_0201875c(void) {
-    GameModeLinkList<GameModeManagerBase_104_0C> *pNode2;
-    GameModeLinkList<GameModeManagerBase_104> *pNode;
+    InputInformations local_30;
+    local_30.unk_00 = &this->mNextButtonID;
+    local_30.unk_04 = &this->mButtonID;
+    local_30.unk_08 = &this->mButtons;
+    local_30.unk_0C = &this->mTouchControl;
 
-    UnkStruct4 local_30;
-    local_30.a = &this->mNextButtonID;
-    local_30.b = &this->mButtonID;
-    local_30.c = &this->mButtons;
-    local_30.d = &this->mTouchControl;
-
-    for (pNode = this->mUnk_104.mList.GetNext(); pNode != this->mUnk_104.GetOrigin(); pNode = pNode->GetPrev()) {
-        if (this->func_02018af0(pNode) && this->func_02018b54(pNode)) {
-            for (pNode2 = pNode->GetTarget()->mUnk_0C.mList.GetNext(); pNode2 != pNode->GetTarget()->mUnk_0C.GetOrigin();
-                 pNode2 = pNode2->GetPrev()) {
-                pNode2->GetTarget()->vfunc_08(&local_30);
+    for (GameModeManagerBase_104::Iterator it1 = GetBeginIter(this->mUnk_104); it1 != GetEndIter(this->mUnk_104); it1++) {
+        if (this->func_02018af0(it1.operator->()) && this->func_02018b54(it1.operator->())) {
+            //! TODO: regalloc issues when using the iterator
+            for (GameModeManagerBase_104_0C *it2 = GetBeginIter(it1->mUnk_0C); it2 != GetEndIter(it1->mUnk_0C);
+                 GetNextIter(it2)) {
+                it2->vfunc_08(&local_30);
             }
         }
     }
 }
 
 struct UnkStruct5 {
-    unk32 a;
-    void *b;
+    void *a;
+    unk32 b;
 };
 
-// non-matching
 ARM void GameModeManagerBase::func_02018830(unk8 *param1) {
-    GameModeLinkList<GameModeManagerBase_104_0C> *pNode2;
-    GameModeLinkList<GameModeManagerBase_104> *pNode;
-
+    unk32 id = this->mNextButtonID;
     UnkStruct5 local_28;
-    local_28.a = this->mNextButtonID;
-    local_28.b = param1;
+    local_28.a = param1;
+    local_28.b = id;
 
-    for (pNode = this->mUnk_104.mList.GetPrev(); pNode != this->mUnk_104.GetOrigin(); pNode = pNode->GetNext2()) {
-        if (this->func_02018af0(pNode) && this->func_02018b54(pNode) && this->func_02018b90(pNode, (unk8 *) param1)) {
-            for (pNode2 = pNode->GetTarget()->mUnk_0C.mList.GetPrev(); pNode2 != pNode->GetTarget()->mUnk_0C.GetOrigin();
-                 pNode2 = pNode2->GetNext2()) {
-                pNode2->GetTarget()->vfunc_0C(&local_28);
+    for (GameModeManagerBase_104::Iterator it1 = GetBeginIterReverse(this->mUnk_104); it1 != GetEndIter(this->mUnk_104);
+         it1--) {
+        if (this->func_02018af0(it1.operator->()) && this->func_02018b54(it1.operator->()) &&
+            this->func_02018b90(it1.operator->(), (unk8 *) param1)) {
+            //! TODO: regalloc issues when using the iterator
+            for (GameModeManagerBase_104_0C *it2 = GetBeginIterReverse(it1->mUnk_0C); it2 != GetEndIter(it1->mUnk_0C);
+                 GetPrevIter(it2)) {
+                it2->vfunc_0C(&local_28);
             }
         }
     }
 }
 
 ARM void GameModeManagerBase::func_02018908() {
-    GameModeLinkList<GameModeManagerBase_104> *pNode;
-
-    for (pNode = this->mUnk_104.mList.GetNext(); pNode != this->mUnk_104.GetOrigin(); pNode = pNode->GetPrev()) {
-        if (this->func_02018af0(pNode) && this->func_02018b54(pNode)) {
-            pNode->GetTarget()->vfunc_08(&this->mButtons, &this->mTouchControl);
+    for (GameModeManagerBase_104::Iterator it = GetBeginIter(this->mUnk_104); it != GetEndIter(this->mUnk_104); it++) {
+        if (this->func_02018af0(it.operator->()) && this->func_02018b54(it.operator->())) {
+            it->vfunc_08(&this->mButtons, &this->mTouchControl);
         }
     }
 }
 
 ARM void GameModeManagerBase::func_02018984(unk8 *param1) {
-    GameModeLinkList<GameModeManagerBase_104> *pNode;
-
-    for (pNode = this->mUnk_104.mList.GetPrev(); pNode != this->mUnk_104.GetOrigin(); pNode = pNode->GetNext2()) {
-        if (this->func_02018af0(pNode) && this->func_02018b54(pNode) && this->func_02018b90(pNode, param1)) {
-            pNode->GetTarget()->vfunc_10(param1);
+    for (GameModeManagerBase_104::Iterator it = GetBeginIterReverse(this->mUnk_104); it != GetEndIter(this->mUnk_104); it--) {
+        if (this->func_02018af0(it.operator->()) && this->func_02018b54(it.operator->()) &&
+            this->func_02018b90(it.operator->(), param1)) {
+            it->vfunc_10(param1);
         }
     }
 }
 
 ARM void GameModeManagerBase::func_02018a14(unk8 *param1) {
-    GameModeLinkList<GameModeManagerBase_104> *pNode;
-
-    for (pNode = this->mUnk_104.mList.GetNext(); pNode != this->mUnk_104.GetOrigin(); pNode = pNode->GetPrev()) {
-        if (this->func_02018af0(pNode) && this->func_02018b54(pNode)) {
-            pNode->GetTarget()->vfunc_14(param1);
+    for (GameModeManagerBase_104::Iterator it = GetBeginIter(this->mUnk_104); it != GetEndIter(this->mUnk_104); it++) {
+        if (this->func_02018af0(it.operator->()) && this->func_02018b54(it.operator->())) {
+            it->vfunc_14(param1);
         }
     }
 }
@@ -194,20 +178,20 @@ void GameModeManagerBase::func_02018a9c(unk32 param1, unk32 param2) {
     this->mUnk_004.func_0201c00c(param1, param2);
 }
 
-void GameModeManagerBase::func_02018aac(unk32 param1) {
-    this->mUnk_004.func_0201c068(param1);
+void GameModeManagerBase::func_02018aac(unk32 param1, bool param2) {
+    this->mUnk_004.func_0201c068(param1, param2);
 }
 
-void GameModeManagerBase::func_02018ac4(void) {
-    this->mUnk_004.func_0201bfec();
+void GameModeManagerBase::func_02018ac4(unk16 param1) {
+    this->mUnk_004.func_0201bfec(param1);
 }
 
 bool GameModeManagerBase::func_02018ad4(void) {
     return !this->mUnk_0F4 && !this->mUnk_0F5;
 }
 
-bool GameModeManagerBase::func_02018af0(GameModeLinkList<GameModeManagerBase_104> *param1) {
-    if (param1->GetTarget()->mUnk_18) {
+bool GameModeManagerBase::func_02018af0(GameModeManagerBase_104 *param1) {
+    if (param1->mUnk_18) {
         return true;
     }
 
@@ -222,8 +206,8 @@ bool GameModeManagerBase::func_02018af0(GameModeLinkList<GameModeManagerBase_104
     return true;
 }
 
-bool GameModeManagerBase::func_02018b54(GameModeLinkList<GameModeManagerBase_104> *param1) {
-    if (param1->GetTarget()->mUnk_19) {
+bool GameModeManagerBase::func_02018b54(GameModeManagerBase_104 *param1) {
+    if (param1->mUnk_19) {
         return true;
     }
 
@@ -234,8 +218,8 @@ bool GameModeManagerBase::func_02018b54(GameModeLinkList<GameModeManagerBase_104
     return true;
 }
 
-bool GameModeManagerBase::func_02018b90(GameModeLinkList<GameModeManagerBase_104> *param1, unk8 *param2) {
-    if (param1->GetTarget()->mUnk_1A) {
+bool GameModeManagerBase::func_02018b90(GameModeManagerBase_104 *param1, unk8 *param2) {
+    if (param1->mUnk_1A) {
         return true;
     }
 

@@ -3,7 +3,7 @@
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 
-static const Vec2p data_ov031_021157b0(0x96B, 0x99A);
+static const Vec2pCpp data_ov031_021157b0(0x96B, 0x99A);
 
 ARM DECL_PROFILE(MapObjectProfileTreasureSpawned);
 

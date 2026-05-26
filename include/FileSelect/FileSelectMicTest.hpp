@@ -3,8 +3,8 @@
 #include "Game/GameModeManager.hpp"
 #include "Unknown/Common.hpp"
 #include "global.h"
+#include "math.hpp"
 #include "types.h"
-#include <nitro/math.h>
 
 #define MAX_MIC_LEVELS 4
 #define MIC_LEVEL_1 0 // green bar
@@ -73,14 +73,6 @@ public:
     /* 632 */ unk8 mUnk_632;
     /* 633 */ unk8 mUnk_633;
     /* 634 */
-
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (this != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
-    }
 
     FileSelectMicTest();
     void func_ov019_020cea74();

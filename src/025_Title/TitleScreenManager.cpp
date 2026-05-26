@@ -1,12 +1,7 @@
 #include "TitleScreen/TitleScreen.hpp"
-#include "regs.h"
+#include <nitro/reg.h>
 
 const unk16 data_ov025_020c5a0c[] = {0x0016, 0x003C};
-
-extern "C" {
-void GX_SetGraphicsMode(unk32 param1, unk32 param2, unk32 param3);
-void GXS_SetGraphicsMode(unk32 param1);
-}
 
 ARM TitleScreenManager *TitleScreenManager::Create(unk32 param1) {
     return new(HeapIndex_1) TitleScreenManager(param1);
@@ -18,7 +13,7 @@ ARM void TitleScreenManager::vfunc_14() {
 
     TitleScreen *pTitleScreen = new(HeapIndex_1) TitleScreen();
     this->mpGameMode          = (GameModeBase *) pTitleScreen;
-    this->mUnk_104.mList.func_020166cc(pTitleScreen->GetNode());
+    this->mUnk_104.Append(pTitleScreen);
     pTitleScreen->vfunc_18();
 }
 
@@ -40,12 +35,12 @@ ARM void TitleScreenManager::vfunc_28(unk8 *param1) {
     this->func_02018a14(param1);
 }
 
-ARM void TitleScreenManager::vfunc_2C(unk8 *param1) {
+ARM void TitleScreenManager::DrawUI(unk8 *param1) {
     this->func_02018984(param1);
     this->func_02018830(param1);
 }
 
-ARM void TitleScreenManager::vfunc_38(unk32 param1, unk32 param2, unk32 param3, unk32 param4) {}
+ARM void TitleScreenManager::vfunc_38(u32 param1, u8 param2, unk16 param3, unk16 param4) {}
 
 ARM void TitleScreenManager::func_ov025_020c4c20() {
     ((TitleScreen *) this->mpGameMode)->func_ov025_020c4e6c();

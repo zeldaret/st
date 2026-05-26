@@ -35,9 +35,9 @@ src/Main/UnkFileSystem.cpp:
 src/Main/System/Random.cpp:
     .text       start:0x0201631c end:0x0201639c
 
-src/Main/Game/GameModeLinkListNode.cpp:
+src/Main/LinkList.cpp:
     complete
-    .text       start:0x02016614 end:0x020166b8
+    .text       start:0x02016614 end:0x02016730
 
 src/Main/func_02017ea4.cpp:
     .text       start:0x02017e3c end:0x02017ed0
@@ -53,6 +53,7 @@ src/Main/UnkStruct_0204a060.cpp:
     .data       start:0x02045584 end:0x020455a0
 
 src/Main/Game/GameModeManagerBase.cpp:
+    complete
     .text       start:0x02018414 end:0x02018b5c
     .data       start:0x020455a0 end:0x020455e0
 
@@ -69,14 +70,6 @@ libs/c/src/ansi_files.c:
     .text       start:0x02034da0 end:0x02034e04
     .data       start:0x02045c1c end:0x02045d00
     .bss        start:0x02052d20 end:0x02053020
-
-libs/c/src/float.c:
-    complete
-    .data       start:0x02045d00 end:0x02045d04
-
-libs/c/src/locale.c:
-    complete
-    .data       start:0x02045d04 end:0x02045f20
 
 libs/c/src/arith.c:
     complete
@@ -123,6 +116,14 @@ libs/c/src/string.c:
 libs/c/src/wmem.c:
     complete
     .text       start:0x02035728 end:0x02035760
+
+libs/c/src/float.c:
+    complete
+    .data       start:0x02045d00 end:0x02045d04
+
+libs/c/src/locale.c:
+    complete
+    .data       start:0x02045d04 end:0x02045f20
 
 libs/c/src/wprintf.c:
     .text       start:0x02035760 end:0x0203768c

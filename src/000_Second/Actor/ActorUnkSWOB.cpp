@@ -6,8 +6,8 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
-extern "C" void func_01ffedac(u16 *, Vec3p *);
-extern "C" void func_01ffb9cc(void *, Vec3p *);
+extern "C" void func_01ffedac(u16 *, VecFx32 *);
+extern "C" void func_01ffb9cc(void *, VecFx32 *);
 
 ARM DECL_PROFILE(ActorProfileUnkSWOB);
 
@@ -79,19 +79,19 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
             }
             break;
         case 2: {
-            Vec3p temp;
-            Vec3p vec2;
-            Vec3p vec;
+            VecFx32 temp;
+            VecFx32 vec2;
+            VecFx32 vec;
             ActorParams AStack_7c;
             u16 auStack_80[2];
             int j;
             u32 i;
 
             data_ov000_020b5214.func_ov000_0206db44(0xA3);
-            temp.coords = data_027e0ce0->func_01fff148(0)->coords;
-            vec2.x      = temp.x;
-            vec2.y      = temp.y + FLOAT_TO_Q20(3.0f);
-            vec2.z      = temp.z;
+            temp   = *data_027e0ce0->func_01fff148(0);
+            vec2.x = temp.x;
+            vec2.y = temp.y + FLOAT_TO_Q20(3.0f);
+            vec2.z = temp.z;
 
             AStack_7c.mUnk_28 = 0;
             AStack_7c.func_ov000_020975f8();
@@ -104,7 +104,7 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
                     vec.y = 0;
                     vec.z = INT_TO_Q20(gRandom.Next32(0, 11) - 5);
 
-                    Vec3p_Add(&vec, &vec2, &vec);
+                    VecFx32_Add(&vec, &vec2, &vec);
 
                     if (j < 10) {
                         func_01ffedac(auStack_80, &vec);

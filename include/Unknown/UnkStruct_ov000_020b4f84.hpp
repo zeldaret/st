@@ -5,7 +5,7 @@
 #include "types.h"
 #include <nns/font.h>
 
-enum {
+enum FontIndex_ {
     FontIndex_DSZ2_msg       = 0,
     FontIndex_LC_Font_s      = 1, // unused?
     FontIndex_DSZ2_endL      = 2,
@@ -16,9 +16,9 @@ enum {
 };
 
 // FontEntry?
-class UnkStruct_ov000_020b4f84_00 : public UnkFileSystem5 {
+class UnkStruct_ov000_020b4f84_00 {
 public:
-    /* 00 (base) */
+    /* 00 */ UnkFileSystem5 mUnk_00;
     /* 14 */ Font_UnkStruct1 mUnk_14;
     /* 1C */ unk16 mUnk_1C;
     /* 1E */ unk16 mUnk_1E;

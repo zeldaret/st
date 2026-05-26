@@ -216,7 +216,7 @@ from:0x0215a23c kind:load to:0x021631c4 module:overlay(60)
 from:0x0215a240 kind:load to:0x0203e964 module:main
 from:0x0215a244 kind:load to:0x021631b8 module:overlay(60)
 from:0x0215a248 kind:load to:0x027e0998 module:dtcm
-from:0x0215a24c kind:load to:0x0204aeac module:main
+from:0x0215a24c kind:load to:0x0204a110 add:0xd9c module:main
 from:0x0215a250 kind:load to:0x0204af1c module:main
 from:0x0215a254 kind:load to:0x021631f4 module:overlay(60)
 from:0x0215a260 kind:arm_call to:0x020e84b4 module:overlay(31)

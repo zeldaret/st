@@ -58,6 +58,6 @@ _ZTV15GameModeStartUp kind:data(any) addr:0x020c5b20
 @1676 kind:data(any) addr:0x020c5b84 local
 @1845 kind:data(byte[32]) addr:0x020c5b8c local
 data_ov018_020c5bc0 kind:bss(size=0x1) addr:0x020c5bc0 local
-_ZGVZN18UnkStruct_02049a2c19func_ov018_020c4ba8EvE19data_ov018_020c5bd4 kind:bss addr:0x020c5bc4 local
+_ZGVZN4Game19func_ov018_020c4ba8EvE19data_ov018_020c5bd4 kind:bss addr:0x020c5bc4 local
 @978 kind:bss addr:0x020c5bc8 local
-_ZZN18UnkStruct_02049a2c19func_ov018_020c4ba8EvE19data_ov018_020c5bd4 kind:bss(size=0x34) addr:0x020c5bd4 local
+_ZZN4Game19func_ov018_020c4ba8EvE19data_ov018_020c5bd4 kind:bss(size=0x34) addr:0x020c5bd4 local

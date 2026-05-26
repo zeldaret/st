@@ -29,7 +29,6 @@ ARM MapObjectProfileMiniBlocks::MapObjectProfileMiniBlocks() :
     this->mUnk_1E &= ~0x01;
 }
 
-// https://decomp.me/scratch/euvAz
 ARM MapObjectMiniBlocks::MapObjectMiniBlocks() {
     this->mUnk_48 = 1;
 }
@@ -45,7 +44,10 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
         this->mPos.y = pUnkStruct_027e0cd8_0c->func_01ffedf4(&vec);
     }
 
-    Vec3p vec(FLOAT_TO_Q20(0.0f), FLOAT_TO_Q20(0.0f), FLOAT_TO_Q20(0.0f));
+    VecFx32 vec;
+    vec.x = FLOAT_TO_Q20(0.0f);
+    vec.y = FLOAT_TO_Q20(0.0f);
+    vec.z = FLOAT_TO_Q20(0.0f);
     uVar6 = 0;
 
     switch (this->mUnk_20.mUnk_00[0]) {
@@ -123,7 +125,7 @@ next:
     }
 
     func_01ff9638(&vec, -this->mUnk_14);
-    Vec3p_Add(&this->mPos, &vec, &this->mPos);
+    VecFx32_Add(&this->mPos, &vec, &this->mPos);
     return true;
 }
 

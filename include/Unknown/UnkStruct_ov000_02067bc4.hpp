@@ -7,7 +7,7 @@
 #include "Unknown/UnkStruct_02049b18.hpp"
 #include "global.h"
 #include "types.h"
-#include <nitro/button.h>
+#include <nitro/pad.h>
 
 class UnkStruct_ov000_02067bc4_Sub1 {
 public:
@@ -26,14 +26,20 @@ class UnkStruct_ov000_02067bc4 {
 public:
     class UnkStruct1 {
     public:
-        unk16 mUnk_00;
-        unk16 mUnk_02;
-        unk32 mUnk_04;
-        unk32 mUnk_08;
-        unk8 mUnk_0C;
-        unk8 mUnk_0D;
-        unk8 mUnk_0E;
-        unk8 mUnk_0F;
+        union {
+            struct {
+                unk16 mUnk_00;
+                unk16 mUnk_02;
+                unk32 mUnk_04;
+                unk32 mUnk_08;
+                u8 mUnk_0C;
+                unk8 mUnk_0D;
+                unk8 mUnk_0E;
+                unk8 mUnk_0F;
+            };
+
+            u32 data[4];
+        };
 
         UnkStruct1(unk32 param1, unk32 param2) {
             mUnk_00 = 0;
@@ -64,12 +70,14 @@ public:
     /* 000 (vtable) */
     /* 004 */ unk32 mUnk_004;
     /* 008 */ UnkStruct_ov000_02067bc4_Sub2 *mUnk_008;
-    /* 00C */ STRUCT_PAD(0x0C, 0x160);
+    /* 00C */ STRUCT_PAD(0x0C, 0x28);
+    /* 028 */ UnkStruct1 mUnk_028;
+    /* 038 */ STRUCT_PAD(0x38, 0x160);
     /* 160 */ UnkStruct_ov000_02067bc4_Sub1 mUnk_160;
 
     /* 00 */ virtual unk32 vfunc_00();
     /* 04 */ virtual unk32 vfunc_04();
-    /* 08 */ virtual unk32 vfunc_08();
+    /* 08 */ virtual bool vfunc_08();
 
     void func_02021bec(unk16 param1);
     void func_02021c08();
@@ -99,6 +107,21 @@ public:
 
     UnkStruct_ov000_020b504c_Sub3(unk32 param1);
     void func_ov000_020676f8(const char *bmgFileName, unk32 param2);
+    EntryINF1 *func_ov000_02067a2c(u32 msgId);
+};
+
+class UnkStruct_ov000_020b504c_Sub4_00 {
+public:
+    /* 00 (vtable) */
+    /* 04 */
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10();
+    /* 14 */ virtual void vfunc_14();
+    /* 18 */ virtual void vfunc_18(unk32 param1);
 };
 
 class UnkStruct_ov000_020b504c_Sub4 {
@@ -130,6 +153,11 @@ public:
     unk8 func_ov000_02067cf8(unk32 param1, unk32 param2, UnkStruct_ov000_02067bc4::UnkStruct1 *param3); // ShowText?
     void func_ov000_02067e60(u8 param1, unk32 param2);
     unk32 func_ov000_020682c0(unk32 param1);
+    void func_ov000_02067f5c(unk32 param1);
+    bool func_ov000_02067f88(unk32 param1, unk32 param2);
+    UnkStruct_ov000_020b504c_Sub4_00 *func_ov000_02067bf0();
+    void func_ov000_02067b20();
+    void func_ov000_02068068(unk32 param1);
 
     //! TODO: figure this out
     void func_ov000_0206807c(unk32 param1, void *param2, unk32 param3, unk32 param4);
@@ -137,12 +165,18 @@ public:
     void func_ov000_0206807c(unk32 param1, void *param2);
     void func_ov000_0206807c(void *param1, void *param2);
     void func_ov000_0206807c(void *param1, unk32 param2);
+    void func_ov000_02067b60();
 
-    unk32 func_ov000_02067f88(unk32 param1, unk32 param2);
-
+    void func_ov001_020be510();
     void func_ov001_020be668(void);
     void func_ov001_020be6f4(void);
 };
 
 // gMessageManager?
 extern UnkStruct_ov000_020b504c data_ov000_020b504c;
+
+struct UnkMsgDataStruct1 {
+    unk32 mUnk_00;
+
+    void func_ov000_02067a60(void *, int);
+};

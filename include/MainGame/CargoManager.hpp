@@ -2,6 +2,7 @@
 
 #include "types.h"
 
+typedef s32 CargoType;
 enum CargoType_ {
     CargoType_None = -1,
     CargoType_MegaIce,
@@ -16,7 +17,7 @@ enum CargoType_ {
 
 class Cargo {
 public:
-    /* 00 */ unk32 mType;
+    /* 00 */ CargoType mType;
     /* 04 */ unk32 mAmount;
     /* 08 */ u32 mDecayTimer;
     /* 0C */
@@ -36,6 +37,18 @@ public:
         this->mAmount     = 0;
         this->mDecayTimer = 0;
     }
+
+    CargoType GetType() {
+        return this->mType;
+    }
+
+    bool IsTypeSet() {
+        return this->mType != CargoType_None;
+    }
+
+    unk32 GetAmount() {
+        return this->mAmount;
+    }
 };
 
 class CargoManager : public AutoInstance<CargoManager> {
@@ -46,14 +59,16 @@ public:
     /* 1C */ bool mUnk_1C;
     /* 20 */
 
+    Cargo *GetCargo() {
+        return &this->mCargo;
+    }
+
     // overlay 1
     CargoManager();
     ~CargoManager();
 
     void func_ov001_020bf830();
 
-    static void SetInstance(CargoManager *pInstance);
-    static bool ClearInstance();
     static void Destroy(); // func_ov001_020bf428
 
     // overlay 17

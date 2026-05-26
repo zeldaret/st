@@ -2,6 +2,7 @@
 
 #include "Game/GameMode.hpp"
 #include "Game/GameModeManager.hpp"
+#include "LinkList.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
@@ -9,10 +10,10 @@
 
 class GameModeFileSelect;
 
-class UnkStruct_0204a060_Base3 : public SysObject {
+class UnkStruct_0204a060_Base3 : public LinkList<UnkStruct_0204a060_Base3> {
 public:
     /* 00 (vtable) */
-    /* 04 */ GameModeLinkListNode mUnk_04;
+    /* 04 (base) */
     /* 0C */ bool mUnk_0C;
     /* 0D */ unk8 mUnk_0D;
     /* 0E */ unk8 mUnk_0E;
@@ -35,6 +36,9 @@ public:
     /* 14 */
 
     UnkStruct_0204a060_Base2();
+
+    /* 00 */ virtual ~UnkStruct_0204a060_Base2() override;
+
     void func_0201ba68();
 };
 
@@ -42,8 +46,8 @@ class UnkStruct_0204a060_Base : public UnkStruct_0204a060_Base2 {
 public:
     /* 00 (base) */
     /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk8 mUnk_18;
-    /* 19 */ unk8 mUnk_19;
+    /* 18 */ bool mUnk_18;
+    /* 19 */ bool mUnk_19;
     /* 1A */ u16 mUnk_1A;
     /* 1C */ unk16 mUnk_1C;
     /* 1E */ unk16 mUnk_1E;
@@ -54,10 +58,10 @@ public:
     UnkStruct_0204a060_Base();
     void func_0201bb84(unk32 param1, unk32 param2, unk32 param3);
     void func_0201bba4(unk32 param1, unk32 param2);
-    void func_0201bbcc();
+    void func_0201bbcc(unk32 param1, unk32 param2);
 
     // data_02044108 vtable
-    /* 00 */ virtual ~UnkStruct_0204a060_Base() override;
+    /* 00 */ WEAK virtual ~UnkStruct_0204a060_Base() override {}
     /* 08 */ virtual bool vfunc_08(unk32 param1) override;
     /* 0C */ virtual bool vfunc_0C(void);
     /* 10 */ virtual bool vfunc_10(void);

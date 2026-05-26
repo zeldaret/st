@@ -44,15 +44,17 @@ public:
     UnkStruct_ov000_020b50c0();
 
     void func_ov000_02069d3c(unk32 param1);
-    void func_ov000_02069d7c(void);
+    void func_ov000_02069d7c(unk32 param1);
     void func_ov000_02069f58(void);
     unk32 func_ov000_0206a5d8(unk32 param1);
     void func_ov000_0206a6a4(unk32 param1);
     void func_ov000_0206a758(void);
     void func_ov000_0206a77c(void);
 
-    void func_ov001_020bd8ac(void);
+    void func_ov001_020bd854();
+    void func_ov001_020bd87c(void);
     void func_ov001_020bd8dc(void);
+    void func_ov001_020bd8ac(void);
 
     UnkStruct_ov018_020c5ac0 *func_ov018_020c5718(void);
 };

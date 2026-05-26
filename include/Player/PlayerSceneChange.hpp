@@ -6,7 +6,7 @@
 
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
-#include <nitro/math.h>
+#include "math.hpp"
 
 class PlayerSceneChange : public UnkStruct_ov000_0208f820 {
 public:
@@ -17,14 +17,14 @@ public:
     /* 54 */ UnkStruct_SceneChange1 mUnk_54;
     /* 68 */ unk32 mUnk_68;
     /* 6C */ s32 mUnk_6C;
-    /* 70 */ volatile Vec3p mUnk_70;
+    /* 70 */ volatile VecFx32 mUnk_70;
     /* 7C */ unk32 mUnk_7C;
-    /* 80 */ volatile Vec3p mUnk_80;
+    /* 80 */ volatile VecFx32 mUnk_80;
     /* 8C */ unk32 mUnk_8C;
     /* 90 */ volatile u32 mUnk_90;
     /* 94 */ u16 mUnk_94[2];
     /* 98 */ unk32 mUnk_98;
-    /* 9C */ Vec3p mUnk_9C;
+    /* 9C */ VecFx32 mUnk_9C;
     /* A8 */ unk16 mUnk_A8;
     /* AA */ unk16 mUnk_AA;
     /* AC */ bool mUnk_AC;
@@ -38,7 +38,7 @@ public:
     /* 04 */ virtual ~PlayerSceneChange() override;
     /* 0C */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) override;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 1C */ virtual bool vfunc_1c(Vec3p *param1) override;
+    /* 1C */ virtual bool vfunc_1c(VecFx32 *param1) override;
 };
 
 class PlayerSceneChange2 : public UnkStruct_ov000_0208f820 {
@@ -47,8 +47,8 @@ public:
     /* 48 */ unk32 mUnk_48;
     /* 4C */ unk32 mUnk_4C;
     /* 50 */ unk32 mUnk_50;
-    /* 54 */ Vec3p mUnk_54;
-    /* 54 */ Vec3p mUnk_60;
+    /* 54 */ VecFx32 mUnk_54;
+    /* 54 */ VecFx32 mUnk_60;
 
     PlayerSceneChange2();
 

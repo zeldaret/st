@@ -9,7 +9,7 @@ public:
     /* 04 */ unk32 mUnk_44;
     /* 08 */ unk16 mUnk_48;
     /* 0A */ s16 mUnk_4A;
-    /* 0C */ Vec3p mUnk_4C;
+    /* 0C */ VecFx32 mUnk_4C;
     /* 18 */
 
     MapObject_UnkStruct1(); // func_ov000_02073194 & func_ov000_020731c4
@@ -27,7 +27,7 @@ public:
     /* 18 */ bool mUnk_58;
     /* 19 */ unk8 mUnk_59;
     /* 1A */ s16 mUnk_5A;
-    /* 1C */ Vec3p mUnk_5C;
+    /* 1C */ VecFx32 mUnk_5C;
     /* 28 */
 
     MapObject_UnkStruct1_Derived1(); // func_ov000_02073234
@@ -112,7 +112,7 @@ public:
     /* 78 */ virtual void vfunc_78();
     /* 7C */ virtual void vfunc_7C();
     /* 80 */ virtual void vfunc_80();
-    /* 84 */ virtual void vfunc_84(unk32 param1, Vec3p *param2, unk16 *param3);
+    /* 84 */ virtual void vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param3);
     /* 88 */ virtual bool vfunc_88();
     /* 8C */ virtual unk32 vfunc_8C();
     /* 90 */

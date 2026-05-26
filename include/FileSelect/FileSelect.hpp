@@ -7,9 +7,9 @@
 #include "Unknown/UnkSystem1.hpp"
 #include "global.h"
 #include "iterator.hpp"
-#include "regs.h"
+#include "math.hpp"
 #include "types.h"
-#include <nitro/math.h>
+#include <nitro/reg.h>
 
 extern const unk16 data_ov019_020d1bb0[];
 extern "C" void func_ov001_020bd6a8();
@@ -66,14 +66,6 @@ public:
     /* 0FE4 */ UnkResult mUnk_0FE4;
     /* 1020 */
 
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (this != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
-    }
-
     FileSelectSubScreen();
     void func_ov019_020cf73c(unk32 param1, unk32 param2);
 
@@ -122,7 +114,7 @@ public:
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2, unk32 param3) override;
     /* 24 */ virtual void vfunc_24() override;
     /* 28 */ virtual void vfunc_28(unk8 *param1) override;
-    /* 2C */ virtual void vfunc_2C(unk8 *param1) override;
+    /* 2C */ virtual void DrawUI(unk8 *param1) override;
 
     static GameModeManagerBase *Create(unk32 param1);
 };
@@ -148,7 +140,7 @@ public:
     /* 10 */ unk32 mUnk_10;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
-    /* 1C */ VEC2S mUnk_1C;
+    /* 1C */ Vec2sC mUnk_1C;
     /* 20 */ volatile unk32 mUnk_20;
 };
 

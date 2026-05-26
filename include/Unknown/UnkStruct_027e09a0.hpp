@@ -80,14 +80,26 @@ struct UnkStruct_func_ov000_020702a8 {
     /* 20 */ unk16 mUnk_20;
 };
 
-class CourseEntry {
-public:
-    /* 00 */ STRUCT_PAD(0x00, 0x17);
+struct CourseRoomEntry {
+    u8 roomIndex;
+    u8 mapPaintIndex;
+    u8 unk_02;
+    u8 unk_03;
+};
+
+struct CourseEntry {
+    /* 00 */ const char name[16];
+    /* 10 */ unk32 unk_10;
+    /* 14 */ unk8 mNumRooms;
+    /* 15 */ unk8 unk_15;
+    /* 16 */ unk8 unk_16;
     /* 17 */ u8 mSaveCourseIndex;
     /* 18 */ STRUCT_PAD(0x18, 0x1D);
-    /* 1D */ u8 mUnk_1D;
-    /* 1E */ STRUCT_PAD(0x1E, 0x2C);
-    /* 2C */
+    /* 1D */ u8 unk_1D;
+    /* 1E */ u8 unk_1E;
+    /* 1F */ u8 unk_1F;
+    /* 20 */ u8 defaultMapPaintIndex;
+    /* 24 */ CourseRoomEntry roomEntries[];
 };
 
 class UnkStruct_027e09a0 {
@@ -97,8 +109,11 @@ public:
     UnkStruct_027e09a0();
     ~UnkStruct_027e09a0();
 
-    CourseEntry *func_ov000_0207029c(unk32 param1);
+    CourseEntry *GetCourseEntry(u32 sceneIndex);
     UnkStruct_func_ov000_020702a8 *func_ov000_020702a8(unk32 param1);
+    unk32 GetRoomEntryIndex();
+    CourseRoomEntry *GetRoomEntry(u32 sceneIndex, unk32 param2);
+    bool func_ov000_02070378(u32 param1);
 };
 
 extern UnkStruct_027e09a0 *data_027e09a0;

@@ -281,7 +281,7 @@ from:0x0216b098 kind:load to:0x0204fb78 module:main
 from:0x0216b0a0 kind:load to:0x027e09a4 module:dtcm
 from:0x0216b0a4 kind:load to:0x0217b7c0 module:overlay(93)
 from:0x0216b0a8 kind:load to:0x0217b1e0 module:overlay(93)
-from:0x0216b0ac kind:load to:0x0204c42c module:main
+from:0x0216b0ac kind:load to:0x0204b690 add:0xd9c module:main
 from:0x0216b0e8 kind:arm_call to:0x0208d134 module:overlay(0)
 from:0x0216b10c kind:arm_call to:0x0216a710 module:overlay(93)
 from:0x0216b118 kind:load to:0x027e0ce0 module:dtcm

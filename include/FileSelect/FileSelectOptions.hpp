@@ -135,14 +135,6 @@ public:
     /* 1CF7 */ unk8 mUnk_1CF7;
     /* 1CF8 */
 
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (this != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
-    }
-
     FileSelectOptions(s32 saveSlotIndex);
     void func_ov019_020ccd40();
     void func_ov019_020ccdf4();

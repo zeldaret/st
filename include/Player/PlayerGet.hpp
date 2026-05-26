@@ -7,7 +7,7 @@
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
-#include <nitro/math.h>
+#include "math.hpp"
 
 enum GIModel_ {
     GIModel_None = 0,
@@ -90,10 +90,10 @@ struct UnkStruct_ov110_02185dc8 {
 
 class UnkStruct_ov110_021861ec {
 public:
-    /* 00 */ Vec3p mUnk_00;
+    /* 00 */ VecFx32 mUnk_00;
     /* 0C */
 
-    ARM UnkStruct_ov110_021861ec(q20 x, q20 y, q20 z) {
+    ARM UnkStruct_ov110_021861ec(fx32 x, fx32 y, fx32 z) {
         this->mUnk_00.x = x;
         this->mUnk_00.y = y;
         this->mUnk_00.z = z;

@@ -229,7 +229,7 @@ from:0x01ffd32c kind:arm_call to:0x0201ea20 module:main
 from:0x01ffd348 kind:arm_call to:0x0201ea20 module:main
 from:0x01ffd3a4 kind:load to:0x027e0cd8 module:dtcm
 from:0x01ffd3a8 kind:load to:0x0204b690 module:main
-from:0x01ffd3ac kind:load to:0x0204c490 module:main
+from:0x01ffd3ac kind:load to:0x0204b690 add:0xe00 module:main
 from:0x01ffd3b4 kind:arm_call to:0x01ffd400 module:itcm
 from:0x01ffd3d4 kind:load to:0x020b39c4 module:overlay(0)
 from:0x01ffd3dc kind:arm_call to:0x01ffd400 module:itcm

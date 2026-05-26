@@ -5,16 +5,182 @@
     .data       start:0x020d9500 end:0x020da000 kind:data align:32
     .bss        start:0x020da000 end:0x020da0c0 kind:bss align:32
 
+src/024_MainGame/Game/GameModeAdventure_024.cpp:
+    complete
+    .text       start:0x020c6060 end:0x020c62cc
+    .data       start:0x020d9500 end:0x020d9530
+
+src/024_MainGame/Game/UnkStruct_ov000_020d8660_024.cpp:
+    complete
+    .text       start:0x020c62cc end:0x020c6674
+    .bss        start:0x020da000 end:0x020da034
+
+src/024_MainGame/Game/UnkActorSystem1_024.cpp:
+    complete
+    .text       start:0x020c6674 end:0x020c66dc
+    .data       start:0x020d9530 end:0x020d9568
+
+src/024_MainGame/Game/UnkActorSystem2_024.cpp:
+    complete
+    .text       start:0x020c66dc end:0x020c69cc
+    .data       start:0x020d9568 end:0x020d958c
+
+src/024_MainGame/Game/AdventureModeManager_024.cpp:
+    complete
+    .text       start:0x020c69cc end:0x020c872c
+    .data       start:0x020d958c end:0x020d9630
+
+src/024_MainGame/Game/UnkStruct_027e0998_024.cpp:
+    complete
+    .text       start:0x020c872c end:0x020c8be0
+    .data       start:0x020d9630 end:0x020d963c
+
+src/024_MainGame/Game/UnkStruct_027e0cf8_024.cpp:
+    complete
+    .text       start:0x020c8be0 end:0x020c9190
+
+src/024_MainGame/Game/AdventureModeManager_160_024.cpp:
+    complete
+    .text       start:0x020c9190 end:0x020c9e08
+    .data       start:0x020d963c end:0x020d9688
+
+src/024_MainGame/Game/AdventureModeManager_170_024.cpp:
+    complete
+    .text       start:0x020c9e08 end:0x020ca0b0
+    .data       start:0x020d9688 end:0x020d96d4
+
+src/024_MainGame/Game/AdventureModeManager_174_Base_024.cpp:
+    complete
+    .text       start:0x020ca0b0 end:0x020ca5b4
+    .data       start:0x020d96d4 end:0x020d9720
+
+src/024_MainGame/Game/AdventureModeManager_174_024.cpp:
+    complete
+    .text       start:0x020ca5b4 end:0x020ca8e4
+    .data       start:0x020d9720 end:0x020d9750
+
+src/024_MainGame/Game/AdventureModeManager_178_Base_024.cpp:
+    complete
+    .text       start:0x020ca8e4 end:0x020ca9d0
+    .data       start:0x020d9750 end:0x020d9780
+
+src/024_MainGame/Game/AdventureModeManager_178_024.cpp:
+    complete
+    .text       start:0x020ca9d0 end:0x020caa8c
+    .data       start:0x020d9780 end:0x020d97b0
+
+src/024_MainGame/Game/AdventureModeManager_180_024.cpp:
+    complete
+    .text       start:0x020caa8c end:0x020cae78
+    .data       start:0x020d97b0 end:0x020d97fc
+
+src/024_MainGame/Game/AdventureModeManager_184_024.cpp:
+    complete
+    .text       start:0x020cae78 end:0x020cb1c0
+    .data       start:0x020d97fc end:0x020d982c
+
+src/024_MainGame/Game/AdventureModeManager_18C_024.cpp:
+    complete
+    .text       start:0x020cb1c0 end:0x020cb8e8
+    .data       start:0x020d982c end:0x020d9878
+
+src/024_MainGame/Game/AdventureModeManager_190_024.cpp:
+    complete
+    .text       start:0x020cb8e8 end:0x020cbb70
+    .data       start:0x020d9878 end:0x020d98e0
+
+src/024_MainGame/Game/AdventureModeManager_15C_20_00_024.cpp:
+    complete
+    .text       start:0x020cbb70 end:0x020cc2a8
+    .data       start:0x020d98f0 end:0x020d9914
+
+src/024_MainGame/UnkAdventureModeSystem1_024.cpp:
+    complete
+    .text       start:0x020cc2a8 end:0x020cc5f0
+    .data       start:0x020d9914 end:0x020d9920
+
+src/024_MainGame/UnkStruct_ov024_020d8694_024.cpp:
+    .text       start:0x020cc5f0 end:0x020cca40
+    .rodata     start:0x020d8ccc end:0x020d8d7c
+    .data       start:0x020d9920 end:0x020d9944
+    .bss        start:0x020da034 end:0x020da038
+
+src/024_MainGame/UnkTitleCardSystem1_024.cpp:
+    complete
+    .text       start:0x020cca40 end:0x020ce56c
+    .data       start:0x020d9944 end:0x020d9a04
+
+src/024_MainGame/UnkStruct_020d8698_024.cpp:
+    complete
+    .text       start:0x020ce56c end:0x020d129c
+    .rodata     start:0x020d8d7c end:0x020d8df8
+    .data       start:0x020d9a04 end:0x020d9a34
+    .bss        start:0x020da038 end:0x020da03c
+
+src/024_MainGame/UnkStruct_027e0cf8_00_0C_024.cpp:
+    .text       start:0x020d129c end:0x020d1f40
+
+src/024_MainGame/Game/AdventureModeManager_1B8_Base_024.cpp:
+    complete
+    .text       start:0x020d1f40 end:0x020d2fac
+    .rodata     start:0x020d8ee8 end:0x020d8ef4
+    .init       start:0x020d93e4 end:0x020d9410
+    .ctor       start:0x020d94e0 end:0x020d94e4
+    .data       start:0x020d9ba0 end:0x020d9ba8
+    .bss        start:0x020da03c end:0x020da040
+
+src/024_MainGame/UnkStruct_ov024_020d86a0_024.cpp:
+    .text       start:0x020d2fac end:0x020d3050
+
+src/024_MainGame/code_020d16fc_024.cpp:
+    .text       start:0x020d3050 end:0x020d3e28
+
+src/024_MainGame/code_020d24d4_024.cpp:
+    .text       start:0x020d3e28 end:0x020d4aac
+
+src/024_MainGame/UnkStruct_027e0cf8_08_024.cpp:
+    .text       start:0x020d4aac end:0x020d4fc4
+
+src/024_MainGame/code_020d3670_024.cpp:
+    .text       start:0x020d4fc4 end:0x020d5674
+
+src/024_MainGame/UnkStruct_027e0ce0_34_024.cpp:
+    .text       start:0x020d5674 end:0x020d5a74
+
 src/024_MainGame/PassengerManager.cpp:
     .text       start:0x020d5a74 end:0x020d6008
     .rodata     start:0x020d8f48 end:0x020d8fc8
+
+src/024_MainGame/code_020d46b4_024.cpp:
+    .text       start:0x020d6008 end:0x020d6118
+
+src/024_MainGame/UnkStruct_027e0d00.cpp:
+    .text       start:0x020d6118 end:0x020d6840
+
+src/024_MainGame/code_020d4e9c_024.cpp:
+    .text       start:0x020d6840 end:0x020d6b80
+
+src/024_MainGame/code_020d51dc_024.cpp:
+    .text       start:0x020d6b80 end:0x020d6e54
+
+src/024_MainGame/code_020d54b0_024.cpp:
+    .text       start:0x020d6e54 end:0x020d7258
 
 src/024_MainGame/CargoManager_024.cpp:
     complete
     .text       start:0x020d7258 end:0x020d72dc
 
+src/024_MainGame/code_020d5938_024.cpp:
+    .text       start:0x020d72dc end:0x020d7630
+
+src/024_MainGame/UnkStruct_027e0d08_024.cpp:
+    .text       start:0x020d7630 end:0x020d7c58
+
 src/024_MainGame/MiscAdvManager.cpp:
     .text       start:0x020d7c58 end:0x020d7ff4
+
+src/024_MainGame/code_020d6650_024.cpp:
+    .text       start:0x020d7ff4 end:0x020d8840
 
 src/024_MainGame/Actor/ActorUnkOBPC.cpp:
     .text       start:0x020d8840 end:0x020d8cbc

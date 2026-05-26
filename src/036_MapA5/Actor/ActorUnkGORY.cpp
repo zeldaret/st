@@ -31,7 +31,7 @@ ARM ItemId ActorUnkGORY::func_ov036_0211bcb0(unk32 param1) {
         case 3:
             return ItemId_NormalShield;
         case 4:
-            if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_BoughtGoronShopQuiver)) {
+            if (data_027e09b8->HasAdventureFlag(AdventureFlag_BoughtGoronShopQuiver)) {
                 return ItemId_TenPriceCard;
             }
 

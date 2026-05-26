@@ -25,10 +25,20 @@ class ConfigVersion:
         objdiff_json = json.loads(self.objdiff_path.read_text())
         self.objdiff_json: dict = copy.copy(objdiff_json)
 
-        # deprecated options
+        # remove deprecated options
         self.objdiff_json.pop("target_dir")
         self.objdiff_json.pop("base_dir")
         self.objdiff_json.pop("build_base")
+
+        # fix watch patterns, remove yaml, json and all txt files
+        # except symbols, delinks and relocs
+        self.objdiff_json["watch_patterns"].remove("*.yml")
+        self.objdiff_json["watch_patterns"].remove("*.yaml")
+        self.objdiff_json["watch_patterns"].remove("*.json")
+        self.objdiff_json["watch_patterns"].remove("*.txt")
+        self.objdiff_json["watch_patterns"].append("*symbols.txt")
+        self.objdiff_json["watch_patterns"].append("*delinks.txt")
+        self.objdiff_json["watch_patterns"].append("*relocs.txt")
 
         for i, unit_dict in enumerate(objdiff_json["units"]):
             if "name" in unit_dict:

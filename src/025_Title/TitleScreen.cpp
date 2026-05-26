@@ -2,13 +2,12 @@
 #include "Game/GameMode.hpp"
 #include "Unknown/UnkStruct_02049be0.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
-#include "Unknown/UnkStruct_0204aeac.hpp"
+#include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0954.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-#include "regs.h"
 #include "versions.h"
-#include <nitro/button.h>
+#include <nitro/pad.h>
 
 #include <string.h>
 
@@ -62,7 +61,7 @@ TitleScreen::TitleScreen() :
         auStack_68.func_ov000_02059270(0x3E, "title", 0x32500000);
     }
 
-    data_0204aeac.func_0201c494(3);
+    data_0204a110.mUnk_D9C.func_0201c494(3);
     this->mUnk_218.func_0201effc(0x0F, 1, 0x1F);
 }
 
@@ -171,8 +170,8 @@ void TitleScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     }
 
     CALL_PTMF(TitleScreenPTMF<TitleScreen>, data_ov025_020c5aec[this->mState], pButtons, pTouchControl);
-    data_0204aeac.func_0201c4d8(0, 0x0B, 8);
-    data_0204aeac.func_0201c504(1, 10, 0x10, 8);
+    data_0204a110.mUnk_D9C.func_0201c4d8(0, 0x0B, 8);
+    data_0204a110.mUnk_D9C.func_0201c504(1, 10, 0x10, 8);
 }
 
 void TitleScreen::func_ov025_020c5200(Input *pButtons, TouchControl *pTouchControl) {}
@@ -193,22 +192,22 @@ test:
 }
 
 void TitleScreen::func_ov025_020c5240(Input *pButtons, TouchControl *pTouchControl) {
-    this->mUnk_218.UnkOperations();
+    this->mUnk_218.UpdateLogic();
     this->mUnk_204.mUnk_10 = this->mUnk_218.func_0201f04c();
 
-    if (this->mUnk_024.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_024.func_ov000_02060af8()) {
         return;
     }
 
-    if (this->mUnk_09C.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_09C.func_ov000_02060af8()) {
         return;
     }
 
-    if (this->mUnk_114.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_114.func_ov000_02060af8()) {
         return;
     }
 
-    if (this->mUnk_18C.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_18C.func_ov000_02060af8()) {
         return;
     }
 
@@ -230,23 +229,23 @@ void TitleScreen::func_ov025_020c53d0(Input *pButtons, TouchControl *pTouchContr
         this->mUnk_18C.mUnk_6E = true;
     }
 
-    this->mUnk_218.UnkOperations();
+    this->mUnk_218.UpdateLogic();
     this->mUnk_204.mUnk_10 = this->mUnk_218.func_0201f04c();
 
     if (this->mUnk_218.mUnk_0C) {
-        if (this->mUnk_024.func_ov000_02060af8() == 0) {
+        if (!this->mUnk_024.func_ov000_02060af8()) {
             return;
         }
 
-        if (this->mUnk_09C.func_ov000_02060af8() == 0) {
+        if (!this->mUnk_09C.func_ov000_02060af8()) {
             return;
         }
 
-        if (this->mUnk_114.func_ov000_02060af8() == 0) {
+        if (!this->mUnk_114.func_ov000_02060af8()) {
             return;
         }
 
-        if (this->mUnk_18C.func_ov000_02060af8() == 0) {
+        if (!this->mUnk_18C.func_ov000_02060af8()) {
             return;
         }
 
@@ -255,26 +254,26 @@ void TitleScreen::func_ov025_020c53d0(Input *pButtons, TouchControl *pTouchContr
 }
 
 void TitleScreen::func_ov025_020c55a4(Input *pButtons, TouchControl *pTouchControl) {
-    if (CHECK_TOUCH_FLAGS(pTouchControl, TouchFlag_UntouchedNow) || CHECK_BUTTON_COMBO(pButtons->press, BTN_START)) {
+    if (CHECK_TOUCH_FLAGS(pTouchControl, TouchFlag_UntouchedNow) || CHECK_BUTTON_COMBO(pButtons->press, PAD_BUTTON_START)) {
         data_ov000_020b5214.func_ov000_0206db44(0x0B);
         this->func_ov025_020c4ea0(TitleScreenState_ToFileSelect);
     }
 }
 
 void TitleScreen::func_ov025_020c55e4(Input *pButtons, TouchControl *pTouchControl) {
-    if (this->mUnk_024.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_024.func_ov000_02060af8()) {
         return;
     }
 
-    if (this->mUnk_09C.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_09C.func_ov000_02060af8()) {
         return;
     }
 
-    if (this->mUnk_114.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_114.func_ov000_02060af8()) {
         return;
     }
 
-    if (this->mUnk_18C.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_18C.func_ov000_02060af8()) {
         return;
     }
 
@@ -284,12 +283,12 @@ void TitleScreen::func_ov025_020c55e4(Input *pButtons, TouchControl *pTouchContr
 void TitleScreen::vfunc_14(unk8 *param1) {
     if (param1[1] == 0) {
         this->func_ov025_020c592c();
-        data_0204aeac.func_0201c494(3);
+        data_0204a110.mUnk_D9C.func_0201c494(3);
     }
 
     if (param1[0] == 0) {
         this->func_ov025_020c5964();
-        data_0204aeac.func_0201c494(0);
+        data_0204a110.mUnk_D9C.func_0201c494(0);
     }
 }
 
@@ -343,20 +342,20 @@ void TitleScreen::vfunc_10(unk8 *param1) {
 void TitleScreen::vfunc_0C(unk32 param1) {
     if (param1 == 1 && this->mShowUI) {
         UnkStruct_027e0954 *ptr = data_027e0954;
-        ptr->mUnk_14.func_020166f4(this->mUnk_204.GetNode());
+        TitleScreen_Sub2 *pList = GetLinkListRef(this->mUnk_204);
+        ptr->mUnk_14.Prepend(pList);
     }
 }
 
 void TitleScreen::func_ov025_020c592c() {
-    REG_DISPCNT &= ~0xE000;
-    REG_DISPCNT |= 0x8000;
+    GX_SetVisibleWindows(4);
 
     REG_WINOUT = (REG_WINOUT & ~0x3F00) | 0x1900;
     REG_WINOUT = (REG_WINOUT & ~0x3F) | 0x09;
 }
 
 void TitleScreen::func_ov025_020c5964() {
-    REG_DISPCNT &= ~0xE000;
+    GX_SetVisibleWindows(0);
     REG_WINOUT = (REG_WINOUT & ~0x3F) | 0x30;
 }
 

@@ -6,6 +6,7 @@
 #include <mem.h>
 #include <secure_error.h>
 #include <stdarg.h>
+#include <stdbool.h>
 #include <string.h>
 
 #include <wstring.h>

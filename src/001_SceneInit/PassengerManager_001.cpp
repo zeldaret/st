@@ -26,7 +26,7 @@ inline bool Test3(s32 val) {
     bool ret = true;
 
     if (!Test2(val)) {
-        if (*((volatile unk32 *) &data_027e09a4->mSceneIndex) != 36) {
+        if (*((volatile unk32 *) &data_027e09a4->mUnk_00.mSceneIndex) != 36) {
             ret = false;
         }
     }
@@ -36,11 +36,11 @@ inline bool Test3(s32 val) {
 
 // https://decomp.me/scratch/svwnb
 bool PassengerManager::func_ov001_020bf870() {
-    s32 sceneIndex = data_027e09a4->mSceneIndex;
+    s32 sceneIndex = data_027e09a4->mUnk_00.mSceneIndex;
     bool ret       = true;
 
     if (!Test3(sceneIndex)) {
-        if (*((volatile unk32 *) &data_027e09a4->mSceneIndex) != 37) {
+        if (*((volatile unk32 *) &data_027e09a4->mUnk_00.mSceneIndex) != 37) {
             ret = false;
         }
     }
@@ -78,13 +78,6 @@ bool PassengerManager::func_ov001_020bfa1c() {
     return !((date2 << 0x1B) & 1);
 }
 
-void PassengerManager::SetInstance(PassengerManager *pInstance) {
-    gpPassengerManager = pInstance;
-}
-
-bool PassengerManager::ClearInstance() {
-    gpPassengerManager = NULL;
-    //! @bug missing return
-}
+DECL_INSTANCE(PassengerManager, gpPassengerManager);
 
 THUMB_END

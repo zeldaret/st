@@ -1,8 +1,8 @@
 #pragma once
 
 #include "files.h"
+#include "math.hpp"
 #include "types.h"
-#include <nitro/math.h>
 
 #include "MapObject/MapObjectManager.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -90,10 +90,10 @@ public:
     /* 1C */ virtual void vfunc_1c();
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
-    /* 28 */ virtual q20 vfunc_28(Vec3p *param1, unk32 param2, unk32 param3);
+    /* 28 */ virtual fx32 vfunc_28(VecFx32 *param1, unk32 param2, unk32 param3);
     /* 2C */ virtual void vfunc_2c();
 
-    q20 func_01ffedf4(Vec2b *pPos);
+    fx32 func_01ffedf4(Vec2b *pPos);
 
     unk32 func_ov000_02080180(void *param1);
     bool func_ov000_02080658(unk32 param1, UnkStruct_SceneChange1 *param2);
@@ -102,14 +102,17 @@ public:
     void func_ov000_020801b0(Vec2b *param1, unk32 param2, unk32 param3);
     void func_ov000_0208053c(u16 param1);
     void func_ov000_020803ec(u16 param1);
-    unk32 func_ov000_020802ec(u16 param1, Vec3p *param2);
+    unk32 func_ov000_020802ec(u16 param1, VecFx32 *param2);
 
-    Vec3p *func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1);
+    VecFx32 *func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1);
 };
 
 class UnkStruct_027e0cd8_04_0C {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x50);
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ s16 mUnk_08;
+    /* 0C */ STRUCT_PAD(0x0C, 0x50);
     /* 50 */
 
     UnkStruct_027e0cd8_04_0C();
@@ -134,7 +137,9 @@ public:
     /* 08 */ unk32 mUnk_08;
     /* 0C */ UnkStruct_027e0cd8_0c *mUnk_0C; // related to train?
     /* 10 */ MapObjectManager *mUnk_10;
-    /* 14 */ STRUCT_PAD(0x14, 0x4C);
+    /* 14 */ STRUCT_PAD(0x14, 0x24);
+    /* 24 */ VecFx32 mUnk_24;
+    /* 34 */ STRUCT_PAD(0x34, 0x4C);
     /* 4C */
 
     bool func_ov000_02081e30(unk32 param1, unk32 param2);
@@ -142,7 +147,9 @@ public:
     void func_ov000_02081ecc(unk16 param1, unk32 param2);
     void func_ov000_02081eec(unk16 param1, unk32 param2, unk32 param3);
     bool func_ov000_02081f3c(unk16 param1, unk32 param2);
-    unk32 func_ov000_02081d5c();
+    u32 func_ov000_02081d5c(); // returns current room index?
+    bool func_ov000_02082124();
+    bool func_ov000_02081c28();
 };
 
 extern UnkStruct_027e0cd8 *data_027e0cd8;

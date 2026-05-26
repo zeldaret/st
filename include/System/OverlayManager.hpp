@@ -3,7 +3,7 @@
 #include "System/SysFault.hpp"
 #include "types.h"
 
-#include <nitro/Overlay.h>
+#include <nitro/fs.h>
 
 typedef u32 ItemFlag;
 
@@ -386,6 +386,14 @@ class OverlayManager {
 public:
     /* 00 */ OverlayIndex mLoadedOverlays[OverlaySlot_COUNT];
     /* 48 */
+
+    bool IsPlayerSub() {
+        return this->mLoadedOverlays[OverlaySlot_9] == OverlayIndex_PlayerSub;
+    }
+
+    bool IsMapA6() {
+        return this->mLoadedOverlays[OverlaySlot_13] == OverlayIndex_MapA6;
+    }
 
     void Load(OverlaySlot slot, OverlayIndex index);
     void LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index);

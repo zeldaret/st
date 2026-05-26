@@ -3,7 +3,7 @@
 #include "global.h"
 #include "types.h"
 
-class UnkStruct_027e0d00 {
+class UnkStruct_027e0d00 : public AutoInstance<UnkStruct_027e0d00> {
 public:
     /* 00 */ unk32 mUnk_00;
 

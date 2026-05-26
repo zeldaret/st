@@ -6,6 +6,8 @@
 #include "global.h"
 #include "types.h"
 
+struct SaveFile;
+
 /*
 naming scheme:
 - test_xxx: debug area
@@ -18,6 +20,7 @@ naming scheme:
 typedef u32 SceneIndex;
 typedef u16 SceneIndex_Half;
 enum SceneIndex_ {
+    /*  -1 */ SceneIndex_None          = -1,
     /*   0 */ SceneIndex_test_trn      = 0x00, //
     /*   1 */ SceneIndex_test_trn2     = 0x01, //
     /*   2 */ SceneIndex_test_pre      = 0x02, //
@@ -75,7 +78,7 @@ enum SceneIndex_ {
     /*  54 */ SceneIndex_f_bridge      = 0x36, // Bridge Worker's House
     /*  55 */ SceneIndex_f_bridge2     = 0x37, // Trading Post
     /*  56 */ SceneIndex_f_forest3     = 0x38, // whittleton forest
-    /*  57 */ SceneIndex_f_water3      = 0x39, // papuchia south
+    /*  57 */ SceneIndex_f_water3      = 0x39, // papuchia south and lost at sea station
     /*  58 */ SceneIndex_f_ajito       = 0x3A, // Pirate Hideout
     /*  59 */ SceneIndex_f_ajito2      = 0x3B, // same as above
     /*  60 */ SceneIndex_f_flame3      = 0x3C, // Goron Target Range
@@ -144,24 +147,29 @@ enum SceneIndex_ {
 
 struct UnkStruct_func_01ffd400 {
     /* 00 */ STRUCT_PAD(0x00, 0x10);
-    /* 1B */ unk32 mUnk_10;
-    /* 1B */ unk32 mUnk_14;
-    /* 1B */ unk8 mUnk_18;
-    /* 1B */ unk8 mUnk_19;
-    /* 1B */ unk8 mUnk_1A;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk16 mUnk_14;
+    /* 16 */ s8 mUnk_16;
+    /* 17 */ unk8 mUnk_17;
+    /* 18 */ unk8 mUnk_18;
+    /* 19 */ unk8 mUnk_19;
+    /* 1A */ unk8 mUnk_1A;
     /* 1B */ u8 mUnk_1B;
 };
 
-struct UnkStruct_SceneChange1 {
-    /* 00 */ unk32 mNextSceneIndex;
+struct UnkStruct_SceneChange1_Base {
+    /* 00 */ unk32 mSceneIndex;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk16 mUnk_08;
     /* 0A */ u8 mRoomIndex;
     /* 0B */ u8 mSpawnIndex;
-    /* 0C */ bool mNextIsCS;
+    /* 0C */ bool mIsCS;
     /* 0D */ unk8 mUnk_0D;
-    /* 0E */ unk8 mCutsceneIndex;
+    /* 0E */ u8 mCutsceneIndex;
     /* 0F */ unk8 mUnk_0F;
+};
+
+struct UnkStruct_SceneChange1 : public UnkStruct_SceneChange1_Base {
     /* 10 */ unk8 mUnk_10;
     /* 11 */ unk8 mUnk_11;
     /* 12 */ unk8 mUnk_12;
@@ -169,13 +177,13 @@ struct UnkStruct_SceneChange1 {
     /* 14 */
 
     UnkStruct_SceneChange1() {
-        this->mNextSceneIndex = SceneIndex_Max;
-        this->mUnk_04         = 0;
-        this->mUnk_08         = 0;
-        this->mRoomIndex      = 0xFF; // this changes when you enter a house, it's not clear if it has another purpose yet
-        this->mSpawnIndex     = 0;    // changing this then saving will change your spawn location after opening the save again
-                                      // (not the area)
-        this->mNextIsCS      = false;
+        this->mSceneIndex = SceneIndex_Max;
+        this->mUnk_04     = 0;
+        this->mUnk_08     = 0;
+        this->mRoomIndex  = 0xFF; // this changes when you enter a house, it's not clear if it has another purpose yet
+        this->mSpawnIndex = 0;    // changing this then saving will change your spawn location after opening the save again
+                                  // (not the area)
+        this->mIsCS          = false;
         this->mUnk_0D        = 0;
         this->mCutsceneIndex = CutsceneIndex_None;
         this->mUnk_0F        = 0;
@@ -188,16 +196,16 @@ struct UnkStruct_SceneChange1 {
         u8 spawnIndex    = pEntry->mSpawnIndex;
         u8 roomIndex     = pEntry->mRoomIndex;
 
-        this->mNextSceneIndex = sceneIndex;
-        this->mUnk_04         = 0;
-        this->mUnk_08         = 0;
-        this->mRoomIndex      = roomIndex;
-        this->mSpawnIndex     = spawnIndex;
-        this->mNextIsCS       = nextIsCS;
-        this->mUnk_0D         = 0;
-        this->mCutsceneIndex  = cutsceneIndex;
-        this->mUnk_0F         = 0;
-        this->mUnk_10         = 0;
+        this->mSceneIndex    = sceneIndex;
+        this->mUnk_04        = 0;
+        this->mUnk_08        = 0;
+        this->mRoomIndex     = roomIndex;
+        this->mSpawnIndex    = spawnIndex;
+        this->mIsCS          = nextIsCS;
+        this->mUnk_0D        = 0;
+        this->mCutsceneIndex = cutsceneIndex;
+        this->mUnk_0F        = 0;
+        this->mUnk_10        = 0;
     }
 };
 
@@ -213,22 +221,32 @@ public:
 
 class UnkStruct_027e09a4 : public SysObject {
 public:
-    /* 00 */ unk32 mSceneIndex; // the scene index of the current area, this isn't saved when you save the game
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ u8 mUnk_0C;
-    /* 0D */ unk8 mUnk_0D;
-    /* 0E */ u8 mCutsceneIndex;
-    /* 0F */ unk8 mUnk_0F;
+    /* 00 */ UnkStruct_SceneChange1_Base mUnk_00; // the infos of the current area, this isn't saved when you save the game
     /* 10 */ unk32 *mUnk_10;
     /* 14 */ UnkStruct_SceneChange1 mUnk_14;
-    /* 32 */ STRUCT_PAD(0x28, 0x54);
+    /* 28 */ unk32 mUnk_28;
+    /* 2C */ s16 mUnk_2C;
+    /* 2C */ unk16 mUnk_2E;
+    /* 30 */ VecFx32 mUnk_30;
+    /* 3C */ STRUCT_PAD(0x3C, 0x54);
     /* 54 */ void *mUnk_54; // vtable
     /* 58 */ UnkStruct_WarpUnk1 *mpWarpUnk1;
     /* 5C */ unk32 mUnk_5C;
     /* 60 */ unk32 mUnk_60; // related to ds download?
     /* 64 */ unk32 mUnk_64;
     /* 68 */
+
+    bool IsCutscene() {
+        return this->mUnk_00.mIsCS == true;
+    }
+
+    bool IsNotCutscene() {
+        return this->mUnk_00.mIsCS != true;
+    }
+
+    u8 CurrentCSIndex() {
+        return this->mUnk_00.mCutsceneIndex;
+    }
 
     bool UnkCheck(unk32 sceneIndex) {
         switch (sceneIndex) {
@@ -253,10 +271,48 @@ public:
         return false;
     }
 
+    bool UnkCheck2() const {
+        bool result = true;
+
+        if (this->func_01ffd400()->mUnk_10 != 1 && this->func_01ffd400()->mUnk_10 != 3) {
+            result = false;
+        }
+
+        return result;
+    }
+
+    SceneIndex CurrentSceneIndex() {
+        return this->mUnk_00.mSceneIndex;
+    }
+
+    bool IsDarkRealm() {
+        return this->mUnk_00.mSceneIndex <= SceneIndex_t_eviltrain3 && this->mUnk_00.mSceneIndex >= SceneIndex_t_eviltrain;
+    }
+
+    bool IsDungeonTower() {
+        return this->mUnk_00.mSceneIndex == SceneIndex_d_main;
+    }
+
+    bool IsPirate() {
+        return this->mUnk_00.mSceneIndex == SceneIndex_f_pirate;
+    }
+
+    bool IsWater3() {
+        return this->mUnk_00.mSceneIndex == SceneIndex_f_water3;
+    }
+
+    bool IsSnowdriftStation() {
+        return this->mUnk_00.mSceneIndex == SceneIndex_f_kakushi1;
+    }
+
+    bool IsPassenger() {
+        return this->mUnk_00.mSceneIndex == SceneIndex_f_passenger;
+    }
+
     ~UnkStruct_027e09a4();
 
-    unk32 func_01ffd3d8();
-    UnkStruct_func_01ffd400 *func_01ffd400();
+    bool func_01ffd3d8(); // is on train?
+    UnkStruct_func_01ffd400 *func_01ffd400() const;
 
     unk8 func_ov000_02070bd0(unk32 csIndex, unk32 param2);
     UnkStruct_SceneChange1 *func_ov000_02070560();
@@ -270,12 +326,15 @@ public:
     unk16 *func_ov000_02070538();
     bool func_ov000_02070a9c(UnkStruct_SceneChange1 *param1);
     bool func_ov000_02072154(UnkStruct_SceneChange1 *param1, unk32 param2);
+    bool func_ov000_0207056c();
+    void func_ov000_020705e8(SaveFile *param1, unk32 param2);
 
     void func_ov017_020bb994(void *param1);
     void func_ov017_020bb994(unk32 param1);
     void func_ov017_020bb994(void *, void *);
 
     static void func_ov025_020c4a60();
+    static void Destroy();
 };
 
 extern UnkStruct_027e09a4 *data_027e09a4;

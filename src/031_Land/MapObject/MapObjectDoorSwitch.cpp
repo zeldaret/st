@@ -5,9 +5,9 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "versions.h"
 
-extern "C" void func_01ffaf74(Vec3p *, Mat4x3p *, Vec3p *);
-extern "C" q20 func_01ffb464(q20);
-extern "C" void func_01ff9218(q20 *, q20, q20);
+extern "C" void func_01ffaf74(VecFx32 *, Mat4x3p *, VecFx32 *);
+extern "C" fx32 func_01ffb464(fx32);
+extern "C" void func_01ff9218(fx32 *, fx32, fx32);
 
 const UnkStruct_ov031_021150b0 data_ov031_02115254(0x1E66);
 
@@ -118,7 +118,7 @@ ARM void MapObjectDoorSwitch::vfunc_14(void) {
 
     Mat3p_InitYRotation(&m, SIN(angle), COS(angle));
 
-    Vec3p local_40(this->mPos);
+    VecFx32 local_40(this->mPos);
     local_40.y -= this->mUnk_6C * 2;
     this->mUnk_094.vfunc_14(&m, &local_40);
 }
@@ -128,14 +128,16 @@ ARM void MapObjectDoorSwitch::vfunc_18(s8 *param1, s8 param2) {
 }
 
 ARM void MapObjectDoorSwitch::vfunc_74(void) {
-    Vec3p local_20(this->mPos);
-    Vec3p local_2c(0, 0, 0x666);
+    VecFx32 local_20 = this->mPos;
+    VecFx32 local_2c;
+    VecFx32_Init(0, 0, 0x666, &local_2c);
+
     Mat4x3p m;
     u16 angle = this->mUnk_14;
 
     Mat4x3p_InitYRotation(&m, SIN(angle), COS(angle));
     func_01ffaf74(&local_2c, &m, &local_2c);
-    Vec3p_Add(&local_20, &local_2c, &local_20);
+    VecFx32_Add(&local_20, &local_2c, &local_20);
 
     data_027e0cec->func_ov000_0209ff8c(&this->mUnk_68, 0x8CF, &local_20, 4);
 
@@ -222,7 +224,7 @@ ARM void MapObjectDoorSwitch::vfunc_54(void) {
             func_01ff9218(&this->mUnkPos, -FLOAT_TO_Q20(1.35f), func_01ffb464(INT_TO_Q20(this->mUnk_80)));
         }
 
-        q20 temp_118             = this->mUnkPos;
+        fx32 temp_118            = this->mUnkPos;
         this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_Q20(1.0f);
         this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
         this->mUnk_0F4.mUnk_0C.z = temp_118;
@@ -269,7 +271,7 @@ ARM void MapObjectDoorSwitch::vfunc_54(void) {
         func_01ff9218(&this->mUnkPos, -FLOAT_TO_Q20(1.35f), func_01ffb464(INT_TO_Q20(this->mUnk_80)));
     }
 
-    q20 temp_118             = this->mUnkPos;
+    fx32 temp_118            = this->mUnkPos;
     this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_Q20(1.0f);
     this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
     this->mUnk_0F4.mUnk_0C.z = temp_118;

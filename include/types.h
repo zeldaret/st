@@ -1,37 +1,7 @@
 #ifndef TYPES_H
 #define TYPES_H
 
-#include <stddef.h>
-
-typedef unsigned long long u64;
-typedef unsigned int u32;
-typedef unsigned short u16;
-typedef unsigned char u8;
-
-typedef long long s64;
-typedef int s32;
-typedef short s16;
-typedef char s8;
-
-typedef float f32;
-typedef double f64;
-
-typedef volatile u64 vu64;
-typedef volatile u32 vu32;
-typedef volatile u16 vu16;
-typedef volatile u8 vu8;
-
-typedef volatile s64 vs64;
-typedef volatile s32 vs32;
-typedef volatile s16 vs16;
-typedef volatile s8 vs8;
-
-typedef volatile f32 vf32;
-typedef volatile f64 vf64;
-
-typedef u32 BOOL;
-
-#define ATTRIBUTE_ALIGN(x) __attribute__((aligned(x)))
+#include <nitro/types.h>
 
 typedef s8 unk8;
 typedef s16 unk16;
@@ -68,16 +38,27 @@ typedef s32 unk32;
 DECL_PTMF(PTMF);
 typedef void (*UnkCallback)(u16 param1);
 
-template <typename T> class AutoInstance {
+template <typename T> class Instance {
 public:
-    AutoInstance() {
-        T::SetInstance((T *) this);
-    }
-
-    ~AutoInstance() {
-        T::ClearInstance();
-    }
+    Instance();
+    ~Instance();
 };
+
+template <typename T> class AutoInstance : public Instance<T> {
+public:
+    AutoInstance() {}
+    ~AutoInstance() {}
+};
+
+    #define DECL_INSTANCE(T, gpInstance)                 \
+        template <typename T> Instance<T>::Instance() {  \
+            gpInstance = (T *) this;                     \
+        }                                                \
+        template <typename T> Instance<T>::~Instance() { \
+            gpInstance = NULL;                           \
+        }                                                \
+        template class Instance<T>
+
 #endif
 
 #endif

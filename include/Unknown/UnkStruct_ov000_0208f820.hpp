@@ -5,7 +5,7 @@
 
 #include "Item/ItemManager.hpp"
 #include "System/SysNew.hpp"
-#include <nitro/math.h>
+#include "math.hpp"
 
 class UnkStruct_ov000_0208f820_14 {
 public:
@@ -55,7 +55,7 @@ public:
     // /* 3C */ unk32 mUnk_3C;
     // /* 40 */ u16 mUnk_40;
 
-    void func_ov093_0216f76c(Vec3p *param1, unk32 param2);
+    void func_ov093_0216f76c(VecFx32 *param1, unk32 param2);
 };
 
 class UnkStruct_ov000_0208f820_28 {
@@ -136,7 +136,7 @@ public:
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
-    /* 10 */ Vec3p mUnk_10;
+    /* 10 */ VecFx32 mUnk_10;
     /* 1C */ ItemId mUnk_1C;
 };
 
@@ -204,9 +204,9 @@ public:
     /* 28 */ UnkStruct_ov000_0208f820_28 *mUnk_28;
     /* 2C */ UnkStruct_ov000_0208f820_2c *mUnk_2C;
     /* 30 */ UnkStruct_ov000_0208f820_30 *mUnk_30;
-    /* 34 */ Vec3p *mUnk_34;
-    /* 38 */ Vec3p *mUnk_38;
-    /* 3C */ Vec3p *mUnk_3C;
+    /* 34 */ VecFx32 *mUnk_34;
+    /* 38 */ VecFx32 *mUnk_38;
+    /* 3C */ VecFx32 *mUnk_3C;
     /* 40 */ UnkStruct_ov000_0208f820_40 *mUnk_40;
     /* 44 */ UnkStruct_ov000_0208f820_44 *mUnk_44;
     /* 48 */
@@ -217,11 +217,11 @@ public:
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2)                  = 0;
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3);
-    /* 1C */ virtual bool vfunc_1c(Vec3p *param1);
+    /* 1C */ virtual bool vfunc_1c(VecFx32 *param1);
     /* 20 */
 
     UnkStruct_ov000_0208f820();
 
-    bool func_ov000_020914b0(unk32 param1, Vec3p *param2, unk32 param3);
+    bool func_ov000_020914b0(unk32 param1, VecFx32 *param2, unk32 param3);
     bool func_ov000_02091e68(unk32 param1);
 };

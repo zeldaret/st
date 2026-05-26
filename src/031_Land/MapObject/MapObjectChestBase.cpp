@@ -8,10 +8,19 @@
 
 extern "C" unk32 func_0200f218(unk32, const char *);
 extern "C" void func_0200b58c(void *);
-extern "C" void func_01ffb714(Vec3p *, Vec3p *, void *);
-extern "C" void func_01ffcfcc(Vec3p *, Vec3p *, Vec3p *);
+extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
+extern "C" void func_01ffcfcc(VecFx32 *, VecFx32 *, VecFx32 *);
 
-static const Vec2p data_ov031_02115830(0x800, 0x800);
+struct UnkStruct_ov031_02117c84 {
+    u16 mUnk_00;
+
+    UnkStruct_ov031_02117c84(u16 x) {
+        this->mUnk_00 = x;
+    }
+};
+
+static const Vec2pCpp data_ov031_02115830(0x800, 0x800);
+static const UnkStruct_ov031_02117c84 data_ov031_02117c84(0x3C);
 static const UnkSubStruct19 data_ov031_02115c84;
 
 ARM MapObjectTreasureSpawned_74::MapObjectTreasureSpawned_74(unk32 param1) :
@@ -81,14 +90,14 @@ ARM bool MapObjectChestBase::vfunc_00() {
 
 // non-matching
 ARM void MapObjectChestBase::vfunc_04() {
-    q20 iVar2;
+    fx32 iVar2;
     UnkStruct_027e0cd8_0c *pUVar5;
-    Vec3p sp48;
-    Vec3p sp3C;
-    Vec3p local_38;
-    Vec3p local_44;
-    Vec3p sp18;
-    Vec3p spC;
+    VecFx32 sp48;
+    VecFx32 sp3C;
+    VecFx32 local_38;
+    VecFx32 local_44;
+    VecFx32 sp18;
+    VecFx32 spC;
     Vec2b local_5e;
     Vec2b local_62;
     Vec2b local_64;
@@ -116,7 +125,7 @@ ARM void MapObjectChestBase::vfunc_04() {
     spC.y = FLOAT_TO_Q20(1.0f);
     spC.z = FLOAT_TO_Q20(0.5f);
 
-    Vec3p_Add((Vec3p *) &sp3C, &spC, (Vec3p *) &sp3C);
+    VecFx32_Add((VecFx32 *) &sp3C, &spC, (VecFx32 *) &sp3C);
 
     local_68.x = this->mUnk_3A.x;
     local_68.y = this->mUnk_3A.y;
@@ -159,7 +168,7 @@ ARM void MapObjectChestBase::vfunc_04() {
         sp48.z -= FLOAT_TO_Q20(0.5f);
     }
 
-    if (data_027e09a4->mSceneIndex == SceneIndex_d_flame) {
+    if (data_027e09a4->mUnk_00.mSceneIndex == SceneIndex_d_flame) {
         local_64.x = this->mUnk_3A.x;
         local_66.y = this->mUnk_3A.y;
 
@@ -171,7 +180,7 @@ ARM void MapObjectChestBase::vfunc_04() {
         }
     }
 
-    func_01ffcfcc(&local_44, &sp48, (Vec3p *) &sp3C);
+    func_01ffcfcc(&local_44, &sp48, (VecFx32 *) &sp3C);
 
     this->mUnk_050.mUnk_0C.x = local_44.x;
     this->mUnk_050.mUnk_0C.y = local_44.y;
@@ -242,7 +251,8 @@ ARM bool MapObjectChestBase::vfunc_44() {
 }
 
 ARM void MapObjectChestBase::func_ov031_02103f48() {
-    Vec3p local_10(this->mPos.x, this->mPos.y + 0x800, this->mPos.z);
+    VecFx32 local_10;
+    VecFx32_Init(this->mPos.x, this->mPos.y + 0x800, this->mPos.z, &local_10);
     data_027e0cec->func_ov000_0209feac(0x81f, &local_10, 4, 0, 0);
 }
 

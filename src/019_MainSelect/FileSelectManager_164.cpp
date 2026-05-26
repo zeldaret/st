@@ -2,7 +2,6 @@
 #include "FileSelect/FileSelectOptionsManager.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
-#include "Unknown/UnkStruct_0204aeec.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 
 ARM FileSelectManager_164::FileSelectManager_164(GameModeManagerBase_104 *param1, FileSelectMain *param2) {
@@ -44,19 +43,19 @@ ARM void FileSelectManager_164::vfunc_0C(unk32 param1) {
     }
 }
 
-ARM void FileSelectManager_164::vfunc_14() {}
+ARM void FileSelectManager_164::vfunc_14(unk32 param1) {}
 
-ARM void FileSelectManager_164::vfunc_10() {
+ARM void FileSelectManager_164::vfunc_10(unk32 param1, unk32 param2) {
     data_0204999c.func_02013014();
     data_0204999c.mUnk_60 = 0xD6D8;
     data_ov000_020b50c0.func_ov000_0206a758();
-    GameModeLinkListNode::func_020166ac(&this->mUnk_10->mList);
+    this->mUnk_10->Detach();
     this->mUnk_10->func_ov019_020cb664();
     data_0204a110.func_02019538(0x26, 1);
     FileSelectOptionsManager::Create(this->mUnk_18, this->mUnk_10->mSaveSlotIndex);
 
     FileSelectOptionsManager *pVar1 = gpFSOptionsManager;
-    this->mUnk_14->mList.func_020166cc(pVar1->GetNode());
+    this->mUnk_14->Append(pVar1);
     pVar1->vfunc_18();
 
     data_0204999c.func_02013070();
@@ -66,7 +65,7 @@ ARM void FileSelectManager_164::vfunc_18(unk32 param1) {
     if (param1 == 0) {
         this->mUnk_0C = 1;
         gpFSOptionsManager->func_ov019_020cc85c(2);
-        data_0204aeec.func_0201e698();
+        data_0204a110.GetUnkDDC()->func_0201e698();
     }
 }
 
@@ -90,14 +89,14 @@ ARM void FileSelectManager_164::vfunc_1C(unk32 param1) {
     }
 }
 
-ARM void FileSelectManager_164::vfunc_20() {
+ARM void FileSelectManager_164::vfunc_20(unk32 param1, unk32 param2) {
     data_0204999c.func_02013014();
     data_0204999c.mUnk_60 = 0xD6D8;
     FileSelectManager_164::func_ov019_020d02f4();
     data_0204a110.func_02019538(0x25, 1);
 
     FileSelectMain *temp_r4 = this->mUnk_10;
-    this->mUnk_14->mList.func_020166cc(temp_r4->GetNode());
+    this->mUnk_14->Append(temp_r4);
     temp_r4->vfunc_18();
 
     this->mUnk_10->func_ov019_020cb5dc();

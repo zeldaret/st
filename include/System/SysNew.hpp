@@ -40,6 +40,10 @@ public:
 
 void *operator new(size_t length, u32 id, u32 idLength = 4);
 void *operator new[](size_t length, u32 id, u32 idLength = 4);
+static inline void *operator new(size_t length, void *ptr = nullptr) {
+#pragma unused(length)
+    return ptr;
+}
 
 class UnkStruct_02011e10_Sub1 {
 public:
@@ -79,8 +83,9 @@ public:
     /* 82 */ unk8 mUnk_82;
     /* 83 */ unk8 mUnk_83;
 
-    void func_02013014();
-    void func_02013070();
+    unk32 func_02013014();
+    bool func_02013070();
+    void func_020130d4(unk32 param1);
 
     void func_ov001_020ba588(unk32 param1, unk32 param2);
 

@@ -15,7 +15,7 @@ ARM ActorProfileUnkTUTO::ActorProfileUnkTUTO() :
 ARM ActorUnkTUTO::ActorUnkTUTO() {}
 
 ARM void ActorUnkTUTO::func_ov037_02120a10(void) {}
-ARM void ActorUnkTUTO::func_ov037_02120a64(void) {}
+ARM unk32 ActorUnkTUTO::func_ov037_02120a64(void) {}
 ARM void ActorUnkTUTO::func_ov037_02120afc(void) {}
 ARM void ActorUnkTUTO::func_ov037_02120b10(void) {}
 ARM void ActorUnkTUTO::func_ov037_02120ba8(void) {}

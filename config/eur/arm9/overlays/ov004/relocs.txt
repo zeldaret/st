@@ -77,7 +77,7 @@ from:0x020b6d54 kind:load to:0x020b51b8 module:overlay(0)
 from:0x020b6d58 kind:load to:0x0204a110 module:main
 from:0x020b6d5c kind:load to:0x0204a088 module:main
 from:0x020b6d60 kind:load to:0x020b5214 module:overlay(0)
-from:0x020b6d64 kind:load to:0x0204aeac module:main
+from:0x020b6d64 kind:load to:0x0204a110 add:0xd9c module:main
 from:0x020b6d7c kind:arm_call to:0x020b91ac module:overlay(4)
 from:0x020b6d8c kind:arm_call to:0x0213bc94 module:overlay(56)
 from:0x020b6d9c kind:arm_call to:0x0211f0e4 module:overlay(36)

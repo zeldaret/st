@@ -78,7 +78,7 @@ ARM u16 ActorUnkSHIT::func_ov036_0211ceec(void) {
         case ItemId_AncientCoin:
         case ItemId_PricelessStone:
         case ItemId_RegalRing: {
-            return data_ov000_020b6510->func_ov000_020a9b4c(this->mItemId - ItemId_DemonFossil) * 2;
+            return gpTreasureManager->func_ov000_020a9b4c(this->mItemId - ItemId_DemonFossil) * 2;
         }
         case ItemId_HeartContainer:
             return 2000;
@@ -210,7 +210,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
         case ItemId_GoronAmber:
         case ItemId_MysticJade:
         case ItemId_AncientCoin:
-            if (data_ov000_020b6510->func_ov000_020a9ca4(this->mItemId - ItemId_DemonFossil)) {
+            if (gpTreasureManager->func_ov000_020a9ca4(this->mItemId - ItemId_DemonFossil)) {
                 return false;
             }
 
@@ -220,11 +220,11 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
             return false;
         case ItemId_HeartContainer:
             if (this->mUnk_5C.mParams[3] == 5) {
-                if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_Unk_10F)) {
+                if (data_027e09b8->HasAdventureFlag(AdventureFlag_Unk_10F)) {
                     return false;
                 }
             } else {
-                if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_Unk_10E)) {
+                if (data_027e09b8->HasAdventureFlag(AdventureFlag_Unk_10E)) {
                     return false;
                 }
             }
@@ -262,7 +262,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
                 return false;
             }
 
-            if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_BoughtGoronShopQuiver)) {
+            if (data_027e09b8->HasAdventureFlag(AdventureFlag_BoughtGoronShopQuiver)) {
                 return false;
             }
 
@@ -270,7 +270,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
         case ItemId_BombBag:
         case ItemId_BombBagMedium:
         case ItemId_BombBagLarge:
-            if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_BoughtBombBagFromBeedle)) {
+            if (data_027e09b8->HasAdventureFlag(AdventureFlag_BoughtBombBagFromBeedle)) {
                 return false;
             }
 

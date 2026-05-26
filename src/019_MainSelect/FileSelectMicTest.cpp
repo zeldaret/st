@@ -55,22 +55,18 @@ ARM FileSelectMicTest::FileSelectMicTest() :
     mUnk_304(BTN_ID_RETURN, 0x8E, 0x00, 0x01, 0x8E, 0x00),
     mUnk_3F8(0x8D, 0x01),
     mUnk_630(1) {
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_304.mUnk_044.mUnk_04);
+    this->mUnk_0C.Append(&this->mUnk_304.mUnk_044);
     this->mUnk_020.func_0201f730(BMG_ID(BMGGroup_select, 0x06));
     this->mUnk_3F8.mUnk_14E = 1;
     this->mUnk_3F8.func_0201f730(BMG_ID(BMGGroup_select, 0x43));
 
-    volatile Vec2us result;
+    Vec2s temp;
     Vec2s fetch;
-    Vec2s *pFetch = (Vec2s *) &fetch; // yes the cast is required because why not after all...
-
-    func_ov000_02062e44(pFetch, &this->mUnk_304.mUnk_044);
-
-    result.x = pFetch->x + data_ov019_020d2248.mUnk_02.x;
-    result.y = pFetch->y + data_ov019_020d2248.mUnk_02.y;
-
-    this->mUnk_304.mUnk_044.mPos.x = result.x;
-    this->mUnk_304.mUnk_044.mPos.y = result.y;
+    func_ov000_02062e44(&fetch, &this->mUnk_304.mUnk_044);
+    Vec2s *pFetch                       = (Vec2s *) &fetch; // yes the cast is required because why not after all...
+    temp.x                              = (pFetch)->x + (&data_ov019_020d2248.mUnk_02)->x;
+    temp.y                              = (pFetch)->y + (&data_ov019_020d2248.mUnk_02)->y;
+    this->mUnk_304.mUnk_044.mPos.coords = temp.coords;
 
     this->func_ov019_020cea74();
 }
@@ -94,12 +90,12 @@ ARM void FileSelectMicTest::func_ov019_020ceaac() {
     Vec2s local_38;
 
     local_34.x = data_ov019_020d2248.mUnk_10.x;
-    local_38.x = 0;
-
     local_34.y = data_ov019_020d2248.mUnk_10.y;
+
+    local_38.x = 0;
     local_38.y = 0;
 
-    this->mUnk_304.func_0201e874(0x0C, (void *) &local_34, (void *) &local_38, 0);
+    this->mUnk_304.func_0201e874(BTN_ID_UNK_0C, (void *) &local_34, (void *) &local_38, 0);
 
     this->mUnk_304.mUnk_000.mUnk_0A = true;
     this->mUnk_304.mUnk_000.mUnk_0B = false;
@@ -113,7 +109,7 @@ ARM void FileSelectMicTest::func_ov019_020ceaac() {
     {
         UnkStruct_ov019_020d24c8_28_258 local_30(0x8D, 0x01);
 
-        volatile Vec2us result;
+        Vec2s result;
         Vec2s fetch;
 
         func_0201e8d4(&fetch, &this->mUnk_304);
@@ -121,8 +117,7 @@ ARM void FileSelectMicTest::func_ov019_020ceaac() {
         result.x = local_30.mPos.x + fetch.x;
         result.y = local_30.mPos.y + fetch.y;
 
-        this->mUnk_270.mUnk_8E.x = result.x;
-        this->mUnk_270.mUnk_8E.y = result.y;
+        this->mUnk_270.mUnk_8E.coords = result.coords;
     }
 
     Vec2s local_44;
@@ -131,7 +126,6 @@ ARM void FileSelectMicTest::func_ov019_020ceaac() {
 }
 
 ARM void FileSelectMicTest::func_ov019_020cebcc() {
-
     this->mUnk_304.mUnk_000.mUnk_0A = false;
     this->mUnk_304.mUnk_000.mUnk_0B = true;
     this->mUnk_304.mUnk_000.mUnk_0C = false;
@@ -143,14 +137,12 @@ ARM void FileSelectMicTest::func_ov019_020cebcc() {
 
     this->mUnk_270.func_ov019_020cf130();
 
-    volatile Vec2s result; // not necessary, here for consistency
+    Vec2s result;
     Vec2s fetch;
     Vec2s *pFetch = (Vec2s *) &fetch;
 
     func_ov000_02062e44(pFetch, &this->mUnk_304.mUnk_044);
-
-    result.y = pFetch->y + data_ov019_020d2248.mUnk_02.y;
-    result.x = pFetch->x + data_ov019_020d2248.mUnk_02.x;
+    Vec2s_Add(pFetch, &data_ov019_020d2248.mUnk_02, &result);
 
     this->mUnk_304.mUnk_0A4.func_ov000_0206415c((void *) &result, 7, data_ov019_020d2248.mUnk_00, 0);
 }
@@ -181,18 +173,15 @@ ARM void FileSelectMicTest::vfunc_08(Input *pButtons, TouchControl *pTouchContro
     }
 
     if (this->mState - 1 <= FSMicTestState_OptionsToMicTest) {
-        this->mUnk_304.mUnk_000.UnkOperations(NULL, false);
+        this->mUnk_304.mUnk_000.UpdateLogic();
         UnkStruct_ov019_020d24c8_28_258 local_2c(0x8D, 0x01);
 
-        volatile Vec2us result;
+        Vec2s result;
         Vec2s fetch;
         func_0201e8d4(&fetch, &this->mUnk_304);
 
-        result.x = local_2c.mPos.x + fetch.x;
-        result.y = local_2c.mPos.y + fetch.y;
-
-        this->mUnk_270.mUnk_8E.x = result.x;
-        this->mUnk_270.mUnk_8E.y = result.y;
+        Vec2s_Add(&local_2c.mPos, &fetch, &result);
+        Vec2s_Copy(&result, &this->mUnk_270.mUnk_8E);
 
         this->mUnk_304.mUnk_0A4.func_ov000_02063f64();
     }
@@ -202,7 +191,7 @@ ARM void FileSelectMicTest::vfunc_08(Input *pButtons, TouchControl *pTouchContro
 
 ARM void FileSelectMicTest::vfunc_10(unk8 *param1) {
     this->mUnk_270.func_ov019_020cf21c();
-    data_0204af1c.func_0201aa44(&this->mUnk_258.mUnk_00, &this->mUnk_258.mPos, 0, 0);
+    data_0204af1c.func_0201aa44(&this->mUnk_258, &this->mUnk_258.mPos, 0, 0);
     this->mUnk_020.func_0201f4b4(0);
 
     unk32 stack;
@@ -321,7 +310,7 @@ ARM void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf168() {
 }
 
 ARM void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf21c() {
-    data_0204af1c.func_0201aa44(this, &this->mUnk_8E, 0, 0);
+    data_0204af1c.func_0201aa44(&this->mUnk_00, &this->mUnk_8E, 0, 0);
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_18.mUnk_00); i++) {
         if (this->mUnk_78[i] != 0) {

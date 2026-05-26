@@ -6,14 +6,13 @@ ARM GameModeManagerBase_104::GameModeManagerBase_104() :
     mUnk_1A(false) {}
 
 ARM GameModeManagerBase_104::~GameModeManagerBase_104() {
-    GameModeLinkList<GameModeManagerBase_104_0C> *pNode = this->mUnk_0C.mList.GetPrev();
-    GameModeLinkList<GameModeManagerBase_104_0C> *pOrigin =
-        (GameModeLinkList<GameModeManagerBase_104_0C> *) ((u8 *) this + offsetof(GameModeManagerBase_104, mUnk_0C));
+    GameModeManagerBase_104_0C *pTarget = this->mUnk_0C.GetPrevTarget();
+    GameModeManagerBase_104_0C *pOrigin = &this->mUnk_0C;
 
-    while (pNode != pOrigin) {
-        GameModeLinkList<GameModeManagerBase_104_0C> *pNextNode = pNode->GetNext2();
-        delete pNode->GetTarget();
-        pNode = pNextNode;
+    while (pTarget != pOrigin) {
+        GameModeManagerBase_104_0C *pNext = pTarget->GetPrevTarget();
+        delete pTarget;
+        pTarget = pNext;
     }
 }
 

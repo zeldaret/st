@@ -108,15 +108,15 @@ void CargoManager::Update() {
             if (this->mCargo.mDecayTimer >= sCargoInfos[this->mCargo.mType].timerMax) {
                 this->RemoveAmount(1);
                 this->mCargo.mDecayTimer = 0;
-                data_ov024_020d8698->func_ov024_020cd3f0(1);
+                data_ov024_020d8698->func_ov024_020cd3f0(true);
             }
         }
     }
 
     if (this->mCargo.mAmount <= sCargoInfos[this->mCargo.mType].amount) {
-        data_ov024_020d8698->func_ov024_020cd3e0(1);
+        data_ov024_020d8698->func_ov024_020cd3e0(true);
     } else {
-        data_ov024_020d8698->func_ov024_020cd3e0(0);
+        data_ov024_020d8698->func_ov024_020cd3e0(false);
     }
 
     if (this->mUnk_18 > 0) {
@@ -139,7 +139,7 @@ void CargoManager::Init(unk32 type, unk32 amount) {
     pUnkStruct_027e0d00->func_ov024_020d4cc0(this->mCargo.mType);
 
     data_ov024_020d8698->func_ov024_020cd410();
-    data_ov024_020d8698->func_ov024_020cd3f0(1);
+    data_ov024_020d8698->func_ov024_020cd3f0(true);
 }
 
 void CargoManager::func_ov017_020bebdc() {
@@ -172,7 +172,7 @@ void CargoManager::RemoveAmount(unk32 decr) {
 }
 
 bool CargoManager::func_ov017_020bec9c() {
-    if (data_027e09a4->func_01ffd3d8() != 0) {
+    if (data_027e09a4->func_01ffd3d8()) {
         return data_027e0cd8->mUnk_0C->mUnk_160->func_ov026_02106aa8();
     }
 

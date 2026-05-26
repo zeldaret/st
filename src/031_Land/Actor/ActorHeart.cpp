@@ -4,14 +4,12 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
-#include <nitro/math.h>
-
 class UnkStruct_ov031_02113d64 {
 public:
     /* 00 */ unk32 mUnk_00;
-    /* 04 */ Vec3p mUnk_04;
+    /* 04 */ VecFx32 mUnk_04;
 
-    UnkStruct_ov031_02113d64(unk32 param1, q20 x, q20 y, q20 z) {
+    UnkStruct_ov031_02113d64(unk32 param1, fx32 x, fx32 y, fx32 z) {
         mUnk_00   = param1;
         mUnk_04.x = x;
         mUnk_04.y = y;
@@ -54,7 +52,7 @@ ARM void ActorHeart::func_ov031_020eed64(ActorParams *param_2, unk32 param_3, un
 
 ARM void ActorHeart::func_ov031_020f0750() {}
 
-extern "C" void func_01ffedac(u16 *, Vec3p *);
+extern "C" void func_01ffedac(u16 *, VecFx32 *);
 
 // func_ov031_020eede0
 ARM ActorHeart::ActorHeart() :
@@ -131,14 +129,14 @@ void ActorHeart::vfunc_20() {
     }
     this->func_ov031_020ef208();
 
-    Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
+    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
     if (this->mUnk_4C != 0x3) {
         this->func_ov000_02098910(0, 0x10);
     }
     if (this->mUnk_46 == 0x3) {
     }
 
-    Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
+    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
     this->mUnk_EC = 0;
     this->mUnk_F0 = 0;
     this->mUnk_F4 = 0;
@@ -340,12 +338,12 @@ ARM void ActorHeart::func_ov031_020ef570() {
 }
 
 extern "C" void func_ov000_0205c1f0(unk32 *, unk16);
-extern "C" void func_ov000_0205c204(unk32 *, Vec3p *, unk32, unk32, unk32);
+extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
 
 // func_ov031_020ef5e8
 ARM void ActorHeart::vfunc_2c(unk32 param1) {
-    Vec3p iStack_20;
-    Vec3p iStack_2c;
+    VecFx32 iStack_20;
+    VecFx32 iStack_2c;
     unk32 auStack_30;
 
     if (this->func_01fff5d0(param1, 0) == 0) {

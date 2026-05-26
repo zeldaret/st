@@ -26,6 +26,7 @@ CXX_FLAGS = [
     '-Ilibs/runtime/include',
     '-Ilibs/nitro/include',
     '-Ilibs/nns/include',
+    '-Ilibs/dsprotect/include',
     f'-DVERSION={args.version}',
     '-D__MWERKS__',
 ]

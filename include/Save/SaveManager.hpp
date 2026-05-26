@@ -4,10 +4,10 @@
 #include "MainGame/MiscAdvManager.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "global.h"
 #include "types.h"
+#include <nitro/mi.h>
 
 //! TODO: kinda draft state for now
 
@@ -181,8 +181,8 @@ public:
     /* 00C */ unk32 mUnk_00C;
     /* 010 */ unk32 mUnk_010;
     /* 014 */ unk16 mUnk_014;
-    /* 016 */ unk16 mSceneIndex;
-    /* 018 */ u8 mInteriorIndex; // "house" index but could be more?
+    /* 016 */ u16 mSceneIndex;
+    /* 018 */ u8 mRoomIndex; // "house" index but could be more?
     /* 019 */ u8 mSpawnIndex;
     /* 01A */ unk16 mUnk_01A;
     /* 01C */ unk32 mUnk_01C;
@@ -374,7 +374,8 @@ struct SaveManager_36 {
 struct SaveManager_00 {
     /* 000 */ STRUCT_PAD(0x00, 0x36);
     /* 036 */ SaveManager_36 mUnk_36[0x60];
-    /* 336 */
+    /* 336 */ STRUCT_PAD(0x336, 0xB30);
+    /* B30 */ unk32 mUnk_B30[1]; // flags, at least 1
     /* BB8 */
 };
 
@@ -398,11 +399,11 @@ public:
     /* 244 */ unk32 mUnk_244;
 
     bool IsUnk20A() {
-        return mUnk_20A == 0;
+        return this->mUnk_20A == 0;
     }
 
-    unk32 IsUnk210() {
-        return mUnk_210 == 0;
+    BOOL IsUnk210() {
+        return this->mUnk_210 == 0;
     }
 
     SaveSlot *GetSaveSlot(int saveSlotIndex) {
@@ -416,7 +417,13 @@ public:
     SaveManager();
 
     void func_ov000_020a0b2c(UnkCallback param1, unk32 param2);
-    void func_ov000_020ba7c8(u16 saveSlotIndex);
+    bool func_ov000_020a0b70(void *param1, unk32 param2);
+
+    void func_ov001_020ba670();
+    void func_ov001_020ba7a8();
+    void func_ov001_020ba7c8(u16 saveSlotIndex);
+
+    void func_ov017_020c3040(void *param1, unk32 param2);
 
     void func_ov019_020d08fc(unk32 param1, PTMF<SaveFile>::PTMFCallback param2);
     bool func_ov019_020d0964(void);

@@ -3,7 +3,7 @@
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include "Unknown/UnkStruct_ov003_020ba740.hpp"
-#include "regs.h"
+#include <nitro/reg.h>
 
 const unk16 data_ov019_020d1bb0[] = {0x01, 0x37, 0x38, 0x39, 0x3C, 0x00};
 
@@ -36,12 +36,12 @@ ARM void FileSelectManager::vfunc_10(unk32 param1, unk32 param2, unk32 param3) {
 
     FileSelectMain *newSub3 = new(HeapIndex_1) FileSelectMain();
     this->mUnk_158          = newSub3;
-    this->mUnk_154->mList.func_020166cc(newSub3->GetNode());
+    this->mUnk_154->Append(newSub3);
     newSub3->vfunc_18();
 
     FileSelectSubScreen *newSub4 = new(HeapIndex_1) FileSelectSubScreen();
     this->mUnk_15C               = newSub4;
-    this->mUnk_154->mList.func_020166cc(newSub4->GetNode());
+    this->mUnk_154->Append(newSub4);
     newSub4->vfunc_18();
 
     this->mUnk_160 = new(HeapIndex_1) FileSelectManager_160(&this->mUnk_104, this->mUnk_158);
@@ -114,7 +114,7 @@ ARM void FileSelectManager::vfunc_28(unk8 *param1) {
     this->func_02018a14(param1);
 }
 
-ARM void FileSelectManager::vfunc_2C(unk8 *param1) {
+ARM void FileSelectManager::DrawUI(unk8 *param1) {
     this->func_02018984(param1);
     this->func_02018830(param1);
 }

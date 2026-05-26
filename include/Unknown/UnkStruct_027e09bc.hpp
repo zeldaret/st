@@ -5,8 +5,8 @@
 class UnkStruct_027e09bc_0c {
 public:
     void func_ov000_02078230(unk32 param1);
-    bool func_ov000_0207834c(Vec3p *param1, unk32 param2, unk32 param3);
-    bool func_ov000_02078764(Vec3p *param1, void *param2, unk32 param3);
+    bool func_ov000_0207834c(VecFx32 *param1, unk32 param2, unk32 param3);
+    bool func_ov000_02078764(VecFx32 *param1, void *param2, unk32 param3);
 };
 
 class UnkStruct_027e09bc {
