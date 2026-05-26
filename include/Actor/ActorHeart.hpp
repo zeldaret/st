@@ -47,7 +47,7 @@ public:
     /* 4C */ virtual ~ActorHeart() override {};
 
     void func_ov031_020f0750();
-    void func_ov031_020eed64(ActorParams *param_2, unk32 param_3, unk32 param_4, ...);
+    void func_ov031_020eed64(ActorParams *param_2, unk32 param_3, unk32 param_4);
     void func_ov031_020ef1b4(unk16 param_2);
     void func_ov031_020ef208();
     void func_ov031_020ef4a8();

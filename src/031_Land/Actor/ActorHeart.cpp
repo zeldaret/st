@@ -39,7 +39,7 @@ extern "C" void func_02097bb8(void);
 
 // extern UnkStruct_ov000_020b539c UnkStruct_020b539c;
 
-ARM void ActorHeart::func_ov031_020eed64(ActorParams *param_2, unk32 param_3, unk32 param_4, ...) {
+ARM void ActorHeart::func_ov031_020eed64(ActorParams *param_2, unk32 param_3, unk32 param_4) {
     ActorParams actorParams;
     actorParams.func_ov000_020975f8();
 
