@@ -59,6 +59,22 @@ static inline void Vec2s_Add(const Vec2s *a, const Vec2s *b, Vec2s *dst) {
     dst->y = y;
 }
 
+//! TODO: probably fake
+static inline void Vec2s_Add2(const Vec2s *a, Vec2s *dst) {
+    s16 x1, y1, x2, y2;
+
+    x1 = a->x;
+    x2 = dst->x;
+    y2 = dst->y;
+    y1 = a->y;
+
+    x2 += x1;
+    dst->x = x2;
+
+    dst->y = (s16) dst->y;
+    dst->y += y1;
+}
+
 static inline void Vec2s_Sub(const Vec2s *a, const Vec2s *b, Vec2s *dst) {
     s16 x = a->x - b->x;
     s16 y = a->y - b->y;

@@ -147,12 +147,12 @@ void UnkStruct_027e0cf8::func_ov024_020c77b0(unk32 param1) {
     this->mUnk_08->func_ov024_020d341c(param1);
 }
 
-void UnkStruct_027e0cf8::func_ov024_020c77c0() {
-    this->mUnk_0C->func_ov024_020d02e0();
+bool UnkStruct_027e0cf8::func_ov024_020c77c0(fx32 *pX, fx32 *pZ, s32 param3) {
+    return this->mUnk_0C->func_ov024_020d02e0(pX, pZ, param3);
 }
 
-void UnkStruct_027e0cf8::func_ov024_020c77d0() {
-    this->mUnk_0C->func_ov024_020d0340();
+bool UnkStruct_027e0cf8::func_ov024_020c77d0(Vec2s *param1, unk32 param2) {
+    return this->mUnk_0C->func_ov024_020d0340(param1, param2);
 }
 
 void UnkStruct_027e0cf8::func_ov024_020c77e0(Vec2s *param1) {
@@ -216,13 +216,13 @@ void UnkStruct_027e0cf8::func_ov024_020c78d0() {
 
 void UnkStruct_027e0cf8::func_ov024_020c78e4(unk32 param1) {
     if (this->mUnk_0C != NULL) {
-        this->mUnk_0C->func_ov024_020d05d0(param1, 1);
+        this->mUnk_0C->func_ov024_020d05d0(param1, true);
     }
 }
 
 void UnkStruct_027e0cf8::func_ov024_020c7900(unk32 param1) {
     if (this->mUnk_0C != NULL) {
-        this->mUnk_0C->func_ov024_020d05d0(param1, 0);
+        this->mUnk_0C->func_ov024_020d05d0(param1, false);
     }
 }
 

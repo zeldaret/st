@@ -1265,8 +1265,15 @@ struct UnkDataStruct2 {
     ~UnkDataStruct2();
 };
 
+#define UnkDataStruct4_14_Unk_Max 20
 struct UnkDataStruct4_14 {
-    /* 00 */ STRUCT_PAD(0x00, 0x14);
+    /* 00 */ unk8 mUnk_00;
+    /* 01 */ s8 mUnk_01;
+    /* 02 */ STRUCT_PAD(0x02, 0x14);
+    /* 14 */
+
+    bool func_ov024_020d23bc() const;
+    bool func_ov024_020d239c() const;
 };
 
 struct UnkDataStruct4 {
@@ -1276,8 +1283,8 @@ struct UnkDataStruct4 {
     /* CC */ u32 mSceneIndex;
     /* D0 */
 
-    void func_ov024_020d2b08(unk32 param1, unk32 param2, VecFx32 *param3);
-    void func_ov024_020d2b08(unk32 param1, unk32 param2);
+    void func_ov024_020d2b08(unk32 param1, unk32 param2, VecFx32 *param3) const;
+    bool func_ov024_020d308c(fx32 *param1, fx32 *param2, unk16 param3) const;
 };
 
 struct UnkDataStruct3 {

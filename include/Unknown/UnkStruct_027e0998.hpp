@@ -25,6 +25,7 @@ public:
     void func_ov000_02061764();
     void func_ov000_02061768();
     void func_ov000_02061850(unk32 param1);
+    bool func_ov000_02061a48(VecFx32 *param1, Vec2s *param2, Vec2s *param3);
     unk32 func_ov000_02061a70();
 
     static void SetInstance(UnkStruct_027e0998_Base *pInstance);

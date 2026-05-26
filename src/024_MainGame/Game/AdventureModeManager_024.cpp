@@ -716,8 +716,8 @@ void AdventureModeManager::func_ov024_020c6840(SceneIndex sceneIndex) {
     }
 }
 
-void AdventureModeManager::func_ov024_020c68d4() {
-    data_027e0cf8->func_ov024_020c77d0();
+void AdventureModeManager::func_ov024_020c68d4(Vec2s *param1, unk32 param2) {
+    data_027e0cf8->func_ov024_020c77d0(param1, param2);
 }
 
 bool AdventureModeManager::func_ov024_020c68ec(unk32 param1, unk32 param2) {

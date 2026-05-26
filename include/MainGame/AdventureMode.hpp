@@ -979,7 +979,7 @@ public:
     void func_ov024_020c6770(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4);
     bool func_ov024_020c681c();
     void func_ov024_020c6840(SceneIndex sceneIndex);
-    void func_ov024_020c68d4();
+    void func_ov024_020c68d4(Vec2s *param1, unk32 param2);
     bool func_ov024_020c68ec(unk32 param1, unk32 param2);
     void func_ov024_020c6930();
     bool func_ov024_020c6940(unk32 param1, unk32 param2);

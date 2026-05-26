@@ -43,7 +43,7 @@ public:
     static s32 func_ov024_020cfd54(s32 param1, s32 param2, s32 param3, s32 param4);
     static bool func_ov024_020cfe24(s16 param1);
     static s32 func_ov024_020cfe6c(s32 param1, s32 param2, s32 param3, s32 param4);
-    static s16 func_ov024_020cfe94(s16 param1);
+    static s16 func_ov024_020cfe94(s32 param1);
     static bool func_ov024_020cfed0(s16 param1);
 };
 
@@ -71,24 +71,49 @@ public:
     void func_ov024_020d341c(unk32 param1);
 };
 
+class UnkStruct_027e0cf8_0C_00 {
+public:
+    /* 00 */ UnkStruct_ov019_020d24c8_28_258_00 mUnk_00;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ Vec2p mUnk_0C;
+    /* 14 */ unk16 mUnk_14;
+    /* 16 */ unk16 mUnk_16;
+    /* 18 */ bool mUnk_18;
+    /* 19 */ bool mUnk_19;
+    /* 1A */ bool mUnk_1A;
+    /* 1B */ bool mUnk_1B;
+    /* 1C */
+
+    UnkStruct_027e0cf8_0C_00() {}
+
+    void func_ov024_020cff1c();
+};
+
 class UnkStruct_027e0cf8_0C {
 public:
-    /* 000 */ STRUCT_PAD(0x00, 0x170);
+    /* 000 */ UnkStruct_027e0cf8_0C_00 mUnk_000[12];
+    /* 150 */ UnkStruct_ov019_020d24c8_28_258_00 mUnk_150;
+    /* 158 */ unk32 mUnk_158;
+    /* 15C */ UnkStruct_ov019_020d24c8_28_258_00 mUnk_15C;
+    /* 164 */ unk32 mUnk_164;
+    /* 168 */ Vec2s mUnk_168;
+    /* 16C */ unk32 mUnk_16C;
+    /* 170 */
 
     UnkStruct_027e0cf8_0C();
     ~UnkStruct_027e0cf8_0C();
 
-    void func_ov024_020cff1c();
-    void func_ov024_020cff8c(void *param1, Vec2s *param2);
+    void func_ov024_020cff8c(UnkDataStruct4 *param1, Vec2s *param2);
     void func_ov024_020d0004();
-    void func_ov024_020d002c();
-    void func_ov024_020d01c0();
-    void func_ov024_020d02e0();
-    void func_ov024_020d0340();
+    void func_ov024_020d002c(const UnkDataStruct4 *param1);
+    void func_ov024_020d01c0(const UnkDataStruct4 *param1);
+    bool func_ov024_020d02e0(fx32 *pX, fx32 *pZ, s32 param3);
+    bool func_ov024_020d0340(Vec2s *param1, unk32 param2);
     void func_ov024_020d03f8(Vec2s *param1);
-    void func_ov024_020d041c(Vec2s *param1);
-    void func_ov024_020d0510();
-    void func_ov024_020d05d0(unk32 param1, unk32 param2);
+    s32 func_ov024_020d041c(Vec2s *param1);
+    void func_ov024_020d05d0(unk32 param1, bool param2);
+
+    static bool func_ov024_020d0510(s16 param1);
 };
 
 class UnkStruct_027e0cf8 : AutoInstance<UnkStruct_027e0cf8> {
@@ -123,8 +148,8 @@ public:
     void func_ov024_020c7750();
     void func_ov024_020c7780();
     void func_ov024_020c77b0(unk32 param1);
-    void func_ov024_020c77c0();
-    void func_ov024_020c77d0();
+    bool func_ov024_020c77c0(fx32 *pX, fx32 *pZ, s32 param3);
+    bool func_ov024_020c77d0(Vec2s *param1, unk32 param2);
     void func_ov024_020c77e0(Vec2s *param1);
     void func_ov024_020c7804(Vec2s *param1);
     void func_ov024_020c7828(unk32 param1);
