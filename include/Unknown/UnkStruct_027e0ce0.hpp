@@ -61,6 +61,7 @@ public:
     void func_ov000_0208bbd4(unk32 param1, Vec3p *param2, u16 param3);
 
     void func_ov000_0208bbd4(unk32 param1, Vec3p *param2, void *param3);
+    void func_ov000_0208bc9c(unk32 param1, unk32 param2);
 
     static UnkStruct_027e0ce0_34 *func_ov000_0205c904();
 };

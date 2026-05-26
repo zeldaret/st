@@ -2,9 +2,11 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "ActorRupee.hpp"
 #include "types.h"
 
 class ActorHeart_c4 : public Actor_c4 {
+public:
     ActorHeart_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
@@ -16,17 +18,26 @@ class ActorHeart_c4 : public Actor_c4 {
 class ActorHeart : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */ STRUCT_PAD(0x94, 0x98);
-    /* 98 */ unk32 mUnk_98;
-    /* 9C */ unk32 mUnk_9c;
-    /* A0 */ STRUCT_PAD(0xA0, 0xB8);
-    /* B8 */ u16 mUnk_b8;
-    /* BA */ STRUCT_PAD(0xBA, 0xBC);
-    /* BC */ u16 mUnk_bc;
-    /* BE */ u8 mUnk_be;
+    /* 94 */ unk16 mUnk_94;
+    /* 96 */ unk16 mUnk_96;
+    /* 98 */ Actor_9c mUnk_98;
+    /* 9C */ unk32 mUnk_9C;
+    /* A0 */ unk32 mUnk_A0;
+    /* A4 */ unk32 mUnk_A4;
+    /* A8 */ STRUCT_PAD(0xA8, 0xB4);
+    /* B4 */ unk16 mUnk_B4;
+    /* B6 */ STRUCT_PAD(0xB6, 0xB8);
+    /* B8 */ s16 mUnk_B8;
+    /* BA */ unk16 mUnk_BA;
+    /* BC */ unk16 mUnk_BC;
+    /* BE */ s8 mUnk_BE;
     /* BF */ STRUCT_PAD(0xBF, 0xC0);
-    /* C0 */ unk32 mUnk_c0;
-    /* C4 */ unk32 mUnk_c4;
+    /* C0 */ unk32 mUnk_C0;
+    /* C4 */ unk32 mUnk_C4;
+    /* C8 */ ActorHeart_c4 mUnk_C8;
+    /* EC */ unk32 mUnk_EC;
+    /* F0 */ unk32 mUnk_F0;
+    /* F4 */ unk32 mUnk_F4;
 
     ActorHeart();
 
@@ -36,7 +47,7 @@ public:
     /* 4C */ virtual ~ActorHeart() override {};
 
     void func_ov031_020f0750();
-    void func_ov031_020eed64(unk32 *param_2, unk32 param_3, unk32 param_4);
+    void func_ov031_020eed64(ActorParams *param_2, unk32 param_3, unk32 param_4, ...);
     void func_ov031_020ef1b4(unk16 param_2);
     void func_ov031_020ef208();
     void func_ov031_020ef4a8();

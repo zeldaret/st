@@ -1,6 +1,8 @@
 #include "Actor/ActorHeart.hpp"
-#include "Actor/ActorRupee.hpp"
+#include "System/Random.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
+#include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 
 #include <nitro/math.h>
 
@@ -37,35 +39,46 @@ ARM ActorProfileHeart::ActorProfileHeart() :
 extern "C" void func_02098388(void);
 extern "C" void func_02097bb8(void);
 
-extern UnkStruct_ov000_020b539c UnkStruct_020b539c;
+// extern UnkStruct_ov000_020b539c UnkStruct_020b539c;
 
-ARM void ActorHeart::func_ov031_020eed64(unk32 *param_2, unk32 param_3, unk32 param_4) {
-    unk32 local_5c;
-    unk32 local_58;
-    unk32 local_54;
-    // ??
-    unk32 local_34;
-    unk32 local_30;
-    unk32 local_2c;
+ARM void ActorHeart::func_ov031_020eed64(ActorParams *param_2, unk32 param_3, unk32 param_4, ...) {
+    ActorParams actorParams;
+    actorParams.func_ov000_020975f8();
 
-    local_30 = 0;
-    local_2c = param_4;
+    actorParams.mInitialPos = param_2->mInitialPos;
+    actorParams.mUnk_28     = param_4;
+    actorParams.mUnk_2C     = param_3;
 
-    this->mUnk_5c.func_ov000_020975f8();
-    local_58 = param_2[1];
-    local_58 = param_2[2];
-    local_5c = param_2[0];
-    local_34 = param_4;
-    local_30 = param_3;
-
-    this->func_ov000_020973f4(&UnkStruct_020b539c, ActorId_Heart, this->mUnk_5c);
+    this->func_ov000_020973f4(&data_ov000_020b539c_eur, ActorId_Heart, (ActorParams *) &actorParams, 0);
 }
 
 ARM void ActorHeart::func_ov031_020f0750() {}
 
+extern "C" void func_01ffedac(u16 *, Vec3p *);
+
 // func_ov031_020eede0
-ARM ActorHeart::ActorHeart() {
-    func_02098388();
+ARM ActorHeart::ActorHeart() :
+    mUnk_94(0),
+    mUnk_96(6),
+    mUnk_B8(0),
+    mUnk_BA(gRandom.ConditionalNext32(0) & 0x80000000 ? 0x666 : ~0x665),
+    mUnk_BC(0),
+    mUnk_BE(0),
+    mUnk_C0(0),
+    mUnk_C4(0),
+    mUnk_C8(this),
+    mUnk_EC(0),
+    mUnk_F0(0),
+    mUnk_F4(0) {
+    this->mUnk_9C = 0x13100;
+    this->mUnk_40 = &this->mUnk_C8;
+
+    u16 sp0;
+    func_01ffedac(&sp0, &this->mPos);
+
+    if (data_027e0cd8->mUnk_0C->func_ov000_02080180(&sp0) == 0x5) {
+        this->mUnk_34 = (Cylinder *) &data_ov031_02113d64;
+    }
 }
 
 // func_ov031_020eeed8
@@ -74,8 +87,11 @@ ARM bool ActorHeart::vfunc_18(unk32 param1) {
     return true;
 }
 
+extern "C" void func_01ffce1c(unk32, unk16 *);
+extern "C" void func_01ffcea0(unk32, unk16 *);
 extern "C" void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
 extern "C" void func_02018114(unk16 *, unk32);
+extern "C" void func_ov000_0208bc00();
 
 static PTMF<ActorHeart> data_ov031_02113d74[] = {
     ActorHeart::func_ov031_020ef2f8, ActorHeart::func_ov031_020ef334, ActorHeart::func_ov031_020ef3a0,
@@ -83,12 +99,49 @@ static PTMF<ActorHeart> data_ov031_02113d74[] = {
 };
 
 void ActorHeart::vfunc_20() {
+    unk16 stack[0x1E];
 
-    short local_58;
+    func_01fff17c(stack + 0x2C, nullptr, 0);
+    func_02018114(0, 0);
+    CALL_PTMF(PTMF<ActorHeart>, data_ov031_02113d74[this->mUnk_4C]);
 
-    func_01fff17c(&local_58, nullptr, 0);
-    CALL_PTMF(PTMF<ActorHeart>, data_ov031_02113d74[this->mUnk_4c]);
+    this->func_ov000_020989e0();
+    func_ov000_0208bc00();
 
+    func_01ffce1c(0, 0);
+
+    func_01ffcea0(0, 0);
+
+    this->func_ov031_020ef528();
+
+    data_027e0ce0->func_01fff1a4();
+
+    func_ov000_0208bc00();
+
+    func_01ffce1c(0, 0);
+
+    func_01ffcea0(0, 0);
+
+    if (this->mUnk_A0 != 0x666) {
+        unk16 var = this->mUnk_B4;
+        if (var != 0x8 && var == 0xC) {
+            this->mUnk_C0 = this->mUnk_A4;
+            this->mUnk_9C &= ~0x1000;
+        }
+    }
+    this->func_ov031_020ef208();
+
+    Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
+    if (this->mUnk_4C != 0x3) {
+        this->func_ov000_02098910(0, 0x10);
+    }
+    if (this->mUnk_46 == 0x3) {
+    }
+
+    Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
+    this->mUnk_EC = 0;
+    this->mUnk_F0 = 0;
+    this->mUnk_F4 = 0;
 } // func_ov031_020eeee8
 
 extern unk32 data_ov000_020aecf8;
@@ -99,30 +152,35 @@ static PTMF<ActorHeart> data_ov031_02113da4[] = {
 };
 
 ARM void ActorHeart::func_ov031_020ef1b4(unk16 param_2) {
-    this->mUnk_4c = param_2;
-    this->mUnk_2c = data_ov000_020aecf8;
+    this->mUnk_4C = param_2;
+    this->mUnk_2C = data_ov000_020aecf8;
     this->mUnk_44 = 0x9C;
-    CALL_PTMF(PTMF<ActorHeart>, data_ov031_02113da4[this->mUnk_4c]);
+    CALL_PTMF(PTMF<ActorHeart>, data_ov031_02113da4[this->mUnk_4C]);
 }
 
 ARM void ActorHeart::func_ov031_020ef208() {
-    if (this->mUnk_4c == 3 || this->mUnk_4c == 4 || this->mUnk_4c == 5) {
-        this->mFlags[0] |= 0b10;
+    bool is3or4 = (this->mUnk_4C == 3 && this->mUnk_4C == 4);
+    bool var2   = true;
+    if (is3or4 && this->mUnk_4C != 5) {
+        var2 = false;
+    }
+    if (var2) {
+        this->mFlags[0] |= 2;
         return;
     }
-    if (this->mUnk_be == 0) {
-        if (this->mUnk_52 <= this->mUnk_50) {
-            this->mUnk_52 = 0x3C;
+    if (this->mUnk_BE == 0) {
+        if (this->mUnk_52 < this->mUnk_50) {
             this->mUnk_50 = 0x00;
-            this->mUnk_be = 0x01;
+            this->mUnk_52 = 0x3C;
+            this->mUnk_BE = 0x01;
             return;
         }
         this->mUnk_50++;
         return;
     }
 
-    if ((this->mUnk_50 & 0b111) < 4) {
-        this->mFlags[0] &= 0xFFFFFFFD;
+    if ((this->mUnk_50 % 8) < 4) {
+        this->mFlags[0] &= ~2;
     } else {
         this->mFlags[0] |= 0b10;
     }
@@ -149,7 +207,7 @@ ARM void ActorHeart::func_ov031_020ef2f8() {
 }
 
 ARM void ActorHeart::func_ov031_020ef320() {
-    this->mUnk_2c = 0x06;
+    this->mUnk_2C = 0x06;
     this->mUnk_44 = 0x9F;
 }
 
@@ -165,7 +223,7 @@ ARM void ActorHeart::func_ov031_020ef35c() {
     this->mVel.x = 0;
     this->mVel.y = 0;
     this->mVel.z = 0;
-    if (this->mUnk_be == 0 && (this->mUnk_52 - this->mUnk_50) > 0xB4) {
+    if (this->mUnk_BE == 0 && (this->mUnk_52 - this->mUnk_50) > 0xB4) {
         this->mUnk_52 = 0xB4;
         this->mUnk_50 = 0x00;
     }
@@ -173,7 +231,7 @@ ARM void ActorHeart::func_ov031_020ef35c() {
 }
 
 ARM void ActorHeart::func_ov031_020ef3a0() {
-    if (this->mUnk_80 >= 0) {
+    if (this->mUnk_5C.mUnk_24 >= 0) {
         return;
     }
     this->func_ov031_020ef698();
@@ -181,18 +239,15 @@ ARM void ActorHeart::func_ov031_020ef3a0() {
 
 extern "C" void func_ov017_020bf99c(void);
 // Actor_9c::func_ov000_02097bec() ?
-extern "C" void func_ov017_02097bec(int);
+extern "C" void func_ov017_02097bec(Actor_9c *);
 
 ARM void ActorHeart::func_ov031_020ef3b8() {
     func_ov017_020bf99c();
-    func_ov017_02097bec(this->mUnk_98);
+    this->mUnk_98.func_ov000_02097bec();
 }
 
-extern "C" void func_ov017_020bf9c8(ActorUnk_ov000_020a8bb0 *param1);
-
 ARM void ActorHeart::func_ov031_020ef3d0() {
-    ActorUnk_ov000_020a8bb0 *actor = gActorManager->func_01fff3b4(this->mUnk_c0);
-    func_ov017_020bf9c8(actor);
+    this->func_ov017_020bf9c8(gpActorManager->func_01fff3b4(this->mUnk_C0));
     if ((this->mFlags[0] & 0x20) == 0) {
         return;
     }
@@ -200,7 +255,7 @@ ARM void ActorHeart::func_ov031_020ef3d0() {
     this->mVel.y = 0;
     this->mVel.z = 0;
 
-    this->mUnk_9c |= 0x1000;
+    this->mUnk_9C |= 0x1000;
     this->func_ov031_020ef1b4(0x01);
 }
 
@@ -221,102 +276,111 @@ ARM void ActorHeart::func_ov031_020ef448() {
 }
 
 ARM void ActorHeart::func_ov031_020ef458() {
-    ActorUnk_ov000_020a8bb0 *actorUnk = gActorManager->func_01fff3b4(this->mUnk_c4);
-    if (actorUnk == nullptr) {
+    // which actor is this ?
+    Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_C4);
+    if (actor == nullptr) {
         this->func_ov031_020ef1b4(0x01);
         return;
     }
-    this->mPos.x = actorUnk->mUnk_0e8;
-    this->mPos.y = *reinterpret_cast<unk32 *>(&actorUnk->mUnk_0ec);
-    this->mPos.z = actorUnk->mUnk_0f0;
+    this->mPos.x = actor->mPos.x;
+    this->mPos.y = actor->mPos.y;
+    this->mPos.z = actor->mPos.z;
 }
 
 ARM void ActorHeart::func_ov031_020ef4a8() {
-    if (this->mUnk_80 >= 0) {
+    if (this->mUnk_5C.mUnk_24 >= 0) {
         this->func_ov031_020ef1b4(2);
         return;
     }
 
-    if (this->mUnk_88 != 0) {
-        if (this->mUnk_88 != 1) {
-            this->mUnk_52 = 0x1E0;
-            this->mUnk_50 = 0x000;
+    switch (this->mUnk_5C.mUnk_2C) {
+        case 0: {
+            this->mUnk_52 = 0xB4;
+            this->mUnk_50 = 0x00;
             this->func_ov031_020ef1b4(2);
             return;
         }
-        this->mUnk_52 = 0x1E0;
-        this->mUnk_50 = 0x000;
-        this->func_ov031_020ef1b4(2);
-        return;
+
+        case 1: {
+            this->mUnk_52 = 0x1E0;
+            this->mUnk_50 = 0x00;
+            this->func_ov031_020ef1b4(0);
+            return;
+        }
+
+        default: {
+            this->mUnk_52 = 0x1E0;
+            this->mUnk_50 = 0x00;
+            this->func_ov031_020ef1b4(0);
+        }
     }
-    this->mUnk_52 = 0xB4;
-    this->mUnk_50 = 0x00;
-    this->func_ov031_020ef1b4(2);
 }
 
 ARM void ActorHeart::func_ov031_020ef528() {
-    data_027e0ce0->func_0208bc9c(4, 1);
+    data_027e0ce0->func_ov000_0208bc9c(4, 1);
     data_027e09a8->func_ov000_02071b30(0x76, &this->mPos, 0);
     this->func_ov000_020984d0();
 }
 
 ARM void ActorHeart::func_ov031_020ef570() {
-    int value;
-    int newVelY;
-    u32 sine;
-
     func_ov000_02098838();
-    this->mUnk_b8 += 0x666;
-    sine         = SIN(this->mUnk_b8);
-    this->mVel.z = 0x0;
-    value        = ((unk32) sine >> 0x1F) << 6 | (sine >> 0x1A) + (0xFFFFF7FF < sine * 0x40);
-    newVelY      = value;
-    if (this->mVel.y < -0x13) {
-        newVelY = -0x14;
-    }
-    *((u32 *) &this->mVel.x) = (sine * 0x40 + 0x800) >> 0xc | value * 0x100000;
-    if (this->mVel.y < -0x13) {
-        this->mVel.y = newVelY;
+    this->mUnk_B8 += 0x666;
+    this->mVel.z = 0;
+
+    s16 sin_value = SIN((u16) this->mUnk_B8);
+    s32 value     = ((sin_value >> 0x1F) << 6 | sin_value >> 0x1A) + (sin_value * 0x40 > ~0x800);
+
+    s32 ivar2    = value;
+    this->mVel.x = (sin_value * 0x40 + 0x800) >> 0xC | value * 0x100000;
+
+    if (this->mVel.y <= -0x14) {
+        ivar2        = -0x14;
+        this->mVel.y = ivar2;
     }
 }
 
+extern "C" void func_ov000_0205c1f0(unk32 *, unk16);
+extern "C" void func_ov000_0205c204(unk32 *, Vec3p *, unk32, unk32, unk32);
+
 // func_ov031_020ef5e8
 ARM void ActorHeart::vfunc_2c(unk32 param1) {
-    Vec3p uStack_20;
-    Vec3p uStack_2c;
-
-    // TODO : auStack30
+    Vec3p iStack_20;
+    Vec3p iStack_2c;
+    unk32 auStack_30;
 
     if (this->func_01fff5d0(param1, 0) == 0) {
         return;
     }
 
-    uStack_20.x = this->mPos.x;
-    uStack_20.z = this->mPos.z;
-    uStack_20.y = this->mPos.y + 0x80;
-    this->func_ov017_020bf5c4(&uStack_20, 0x400, 0x400, 0x1F, 0x00);
+    iStack_20 = this->mPos;
+    iStack_20.y += 0x80;
+    this->func_ov017_020bf5c4(&iStack_20, 0x400, 0x400, 0x1f, 0);
 
-    uStack_20.x = this->mPos.x;
-    uStack_20.z = this->mPos.z;
-    uStack_20.y = this->mPos.y + 0x80;
-    this->func_ov017_020bf5c4(&uStack_2c, 0xCCD, 0xCCD, 0x1F, 0x00);
+    func_ov000_0205c1f0(&auStack_30, 0x10);
+
+    iStack_2c = this->mPos;
+    iStack_2c.y += 0x548;
+    func_ov000_0205c204(&auStack_30, &iStack_2c, 0xccd, 0xccd, 0x1f);
 }
 
 ARM void ActorHeart::func_ov031_020ef698() {
-    if (this->mUnk_bc == 0x00) {
-        if ((this->mUnk_46 & 3) == 0) {
-            this->mUnk_bc = 0x01;
-            this->mUnk_2c = 0x06;
+    switch (this->mUnk_BC) {
+        case 0x00: {
+            if ((this->mUnk_46 & 3) == 0) {
+                this->mUnk_BC += 0x01;
+                this->mUnk_2C = 0x06;
+            }
+            break;
         }
-        return;
-    }
-    if (this->mUnk_bc == 0x01) {
-        this->func_ov031_020ef570();
-        if ((this->mUnk_46 & 3) != 0) {
-            this->mVel.x  = 0;
-            this->mVel.y  = 0;
-            this->mVel.z  = 0;
-            this->mUnk_bc = 0;
+        case 0x01: {
+            this->func_ov031_020ef570();
+            if ((this->mUnk_46 & 3) != 0) {
+                this->mVel.x  = 0;
+                this->mVel.y  = 0;
+                this->mVel.z  = 0;
+                this->mUnk_BC = 0;
+            }
+            break;
         }
     }
 }
@@ -333,7 +397,7 @@ ARM ActorHeart_c4::ActorHeart_c4(Actor *param1) :
 ARM unk32 ActorHeart_c4::vfunc_00(Actor_c4_stack param_2, unk32 param_3) {
     if (param_3 != 0) {
         ActorHeart *pHeart = GET_ACTORHEART(this);
-        pHeart->mUnk_c4    = param_2.param1;
+        pHeart->mUnk_C4    = param_2.param1;
         pHeart->func_ov031_020ef1b4(0x04);
     }
 
