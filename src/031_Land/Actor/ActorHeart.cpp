@@ -221,7 +221,7 @@ ARM void ActorHeart::func_ov031_020ef35c() {
     this->mVel.x = 0;
     this->mVel.y = 0;
     this->mVel.z = 0;
-    if (this->mUnk_BE == 0 && (this->mUnk_52 - this->mUnk_50) > 0xB4) {
+    if ((u8) this->mUnk_BE == 0 && (this->mUnk_52 - this->mUnk_50) > 0xB4) {
         this->mUnk_52 = 0xB4;
         this->mUnk_50 = 0x00;
     }
