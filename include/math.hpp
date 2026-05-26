@@ -322,3 +322,23 @@ extern "C" static inline Vec2s *Vec2s_GetCopy(Vec2s *src) {
     vec.y = src->y;
     return &vec;
 }
+
+union Vec2sb {
+    struct {
+        /* 0 */ s8 x;
+        /* 2 */ s8 y;
+        /* 4 */
+    };
+    s8 coords[2];
+
+    void operator=(const Vec2sb &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
+
+    Vec2sb() {}
+    Vec2sb(u8 X, u8 Y) {
+        x = X;
+        y = Y;
+    }
+};

@@ -731,7 +731,7 @@ data_ov024_020d73fa kind:data(any) addr:0x020d8d9e local
 data_ov024_020d740a kind:data(any) addr:0x020d8dae local
 data_ov024_020d741e kind:data(any) addr:0x020d8dc2 local
 data_ov024_020d7432 kind:data(any) addr:0x020d8dd6 local
-data_ov024_020d7454 kind:data(any) addr:0x020d8df8
+data_ov024_020d7454 kind:data(byte[238]) addr:0x020d8df8 local
 data_ov024_020d7544 kind:data(any) addr:0x020d8ee8 local
 data_ov024_020d7547 kind:data(any) addr:0x020d8eeb local
 data_ov024_020d8ef4 kind:data(any) addr:0x020d8ef4
@@ -761,14 +761,14 @@ data_ov024_020d9260 kind:data(any) addr:0x020d9260
 data_ov024_020d9264 kind:data(any) addr:0x020d9264 ambiguous
 data_ov024_020d9266 kind:data(any) addr:0x020d9266 ambiguous
 __sinit_ov024_020d928c kind:function(arm,size=0x38) addr:0x020d928c
-__sinit_ov024_020d92c4 kind:function(arm,size=0x120) addr:0x020d92c4
+__sinit_UnkStruct_027e0cf8_00_0C_024.cpp kind:function(arm,size=0x120) addr:0x020d92c4 local
 __sinit_AdventureModeManager_1B8_Base_024.cpp kind:function(arm,size=0x2c) addr:0x020d93e4 local
 __sinit_ov024_020d9410 kind:function(arm,size=0x48) addr:0x020d9410
 __sinit_ov024_020d9458 kind:function(arm,size=0x18) addr:0x020d9458
 __sinit_ov024_020d9470 kind:function(arm,size=0x18) addr:0x020d9470
 __sinit_ActorUnkOBPC.cpp kind:function(arm,size=0x50) addr:0x020d9488
 .p__sinit_ov024_020d928c kind:data(word) addr:0x020d94d8
-.p__sinit_ov024_020d92c4 kind:data(word) addr:0x020d94dc
+.p__sinit_UnkStruct_027e0cf8_00_0C_024.cpp kind:data(word) addr:0x020d94dc
 .p__sinit_AdventureModeManager_1B8_Base_024.cpp kind:data(word) addr:0x020d94e0 local
 .p__sinit_ov024_020d9410 kind:data(word) addr:0x020d94e4
 .p__sinit_ov024_020d9458 kind:data(word) addr:0x020d94e8
@@ -812,8 +812,8 @@ _ZTV28UnkStruct_ov024_020d8694_188 kind:data(any) addr:0x020d99b4
 _ZTV28UnkTitleCardSystem1_Derived1 kind:data(any) addr:0x020d99dc
 _ZTV18UnkStruct_020d8698 kind:data(any) addr:0x020d9a04
 @5034 kind:data(byte[11]) addr:0x020d9a28 local
-data_ov024_020d8094 kind:data(any) addr:0x020d9a34
-data_ov024_020d8098 kind:data(any) addr:0x020d9a38
+data_ov024_020d8094 kind:data(byte[2]) addr:0x020d9a34 local
+data_ov024_020d8098 kind:data(any) addr:0x020d9a38 local
 data_ov024_020d8200 kind:data(any) addr:0x020d9ba0 local
 _ZTV19data_ov024_020d9ba8 kind:data(any) addr:0x020d9ba8
 data_ov024_020d9bc4 kind:data(any) addr:0x020d9bc4

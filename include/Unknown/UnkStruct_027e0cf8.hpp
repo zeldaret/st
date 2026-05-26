@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Save/AdventureFlags.hpp"
 #include "System/Random.hpp"
 #include "Unknown/Common.hpp"
 #include "global.h"
@@ -162,6 +163,30 @@ public:
     void func_ov024_020c7900(unk32 param1);
 
     static UnkStruct_027e0cf8 *Create();
+};
+
+struct UnkStruct_ov024_020d8098 {
+    /* 00 */ s16 mUnk_00;
+    /* 02 */ s16 mUnk_02;
+    /* 04 */ Vec2sb mUnk_04;
+    /* 06 */ s16 mUnk_06;
+    /* 08 */ u16 mUnk_08;
+    /* 0A */ bool mUnk_0A;
+    /* 0B */ bool mUnk_0B;
+    /* 0C */
+};
+
+struct UnkStruct_ov024_020d7454 {
+    /* 00 */ s16 mSceneIndex;
+    /* 02 */ unk16 mUnk_02;
+    /* 04 */ u16 mUnk_04;
+    /* 06 */ AdventureFlag_Half mAdvFlag;
+    /* 08 */ bool mUnk_08;
+    /* 09 */ bool mUnk_09;
+    /* 0A */ bool mUnk_0A;
+    /* 0B */ unk8 mUnk_0B;
+    /* 0C */ unk16 mUnk_0C;
+    /* 0E */
 };
 
 extern UnkStruct_027e0cf8 *data_027e0cf8;

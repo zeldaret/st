@@ -10,41 +10,215 @@ extern "C" bool func_ov000_0205ca18(unk32 param1, unk32 param2);
 extern "C" bool func_ov000_0205c9d0(unk32 param1);
 extern VecFx32 data_027e07d4;
 
-struct UnkStruct_ov024_020d8094 {
-    /* 00 */ unk8 mUnk_00;
-    /* 01 */ unk8 mUnk_01;
-    /* 02 */ unk8 mUnk_02;
-    /* 03 */ unk8 mUnk_03;
-    /* 04 */
-};
-extern UnkStruct_ov024_020d8094 data_ov024_020d8094;
+static const Vec2sb data_ov024_020d8094(0x7F, 0x7F);
 
-struct UnkStruct_ov024_020d8098 {
-    /* 00 */ unk16 mUnk_00;
-    /* 02 */ s16 mUnk_02;
-    /* 04 */ unk8 mUnk_04;
-    /* 05 */ unk8 mUnk_05;
-    /* 06 */ s16 mUnk_06;
-    /* 08 */ u16 mUnk_08;
-    /* 0A */ bool mUnk_0A;
-    /* 0B */ bool mUnk_0B;
-    /* 0C */
+static const UnkStruct_ov024_020d8098 data_ov024_020d8098[] = {
+    {-1, 0x14, data_ov024_020d8094, 0x00, 0x03, false, false},   {-1, 0x29, data_ov024_020d8094, 0x01, 0x02, true, false},
+    {-1, 0x2F, data_ov024_020d8094, 0x02, 0x0A, true, false},    {-1, 0x2A, data_ov024_020d8094, 0x03, 0x0B, true, false},
+    {-1, 0x2B, data_ov024_020d8094, 0x04, 0x0C, true, false},    {-1, 0x2C, data_ov024_020d8094, 0x05, 0x0E, true, false},
+    {-1, 0x2E, data_ov024_020d8094, 0x06, 0x0D, true, false},    {-1, 0x30, data_ov024_020d8094, 0x07, 0x13, true, true},
+    {-1, 0x31, data_ov024_020d8094, 0x08, 0x14, true, true},     {-1, 0x32, data_ov024_020d8094, 0x09, 0x15, true, true},
+    {-1, 0x33, data_ov024_020d8094, 0x0A, 0x16, true, true},     {-1, 0x19, data_ov024_020d8094, 0x0B, 0x05, false, false},
+    {-1, 0x1A, data_ov024_020d8094, 0x0C, 0x06, false, false},   {0x0A, 0x1B, data_ov024_020d8094, 0x0E, 0x1D, false, false},
+    {0x06, 0x1B, data_ov024_020d8094, 0x0D, 0x07, false, false}, {-1, 0x1C, data_ov024_020d8094, 0x0F, 0x08, false, false},
+    {-1, 0x1D, data_ov024_020d8094, 0x1B, 0x09, false, false},   {-1, 0x35, data_ov024_020d8094, 0x10, 0x1F, true, true},
+    {-1, 0x36, data_ov024_020d8094, 0x11, 0x1E, true, true},     {-1, 0x37, data_ov024_020d8094, 0x12, 0x19, true, true},
+    {-1, 0x3C, data_ov024_020d8094, 0x1C, 0x20, true, false},    {-1, 0x3A, data_ov024_020d8094, 0x1D, 0x26, true, true},
+    {-1, 0x34, data_ov024_020d8094, 0x1E, 0x17, true, true},     {-1, 0x3D, data_ov024_020d8094, 0x1F, 0x24, true, true},
+    {-1, 0x3E, data_ov024_020d8094, 0x20, 0x25, true, true},     {-1, 0x3F, Vec2sb(0x01, 0x01), 0x26, 0x29, true, true},
+    {-1, 0x40, data_ov024_020d8094, 0x27, 0x21, true, true},     {-1, 0x41, data_ov024_020d8094, 0x28, 0x22, true, true},
+    {-1, 0x39, data_ov024_020d8094, 0x29, 0x1C, true, true},     {-1, 0x3F, Vec2sb(0x0E, 0x01), 0x38, 0x29, true, true},
 };
-extern const UnkStruct_ov024_020d8098 data_ov024_020d8098[];
 
-struct UnkStruct_ov024_020d7454 {
-    /* 00 */ unk16 mUnk_00;
-    /* 02 */ unk16 mUnk_02;
-    /* 04 */ u16 mUnk_04;
-    /* 06 */ u16 mUnk_06;
-    /* 08 */ bool mUnk_08;
-    /* 09 */ bool mUnk_09;
-    /* 0A */ bool mUnk_0A;
-    /* 0B */ unk8 mUnk_0B;
-    /* 0C */ unk16 mUnk_0C;
-    /* 0E */
+static const UnkStruct_ov024_020d7454 data_ov024_020d7454[] = {
+    {
+        .mSceneIndex = SceneIndex_t_area1,
+        .mUnk_02     = 0x000B,
+        .mUnk_04     = 0x1B,
+        .mAdvFlag    = AdventureFlag_AnoukiPuzzleComplete,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x14,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_area2,
+        .mUnk_02     = 0x000A,
+        .mUnk_04     = 0x1A,
+        .mAdvFlag    = AdventureFlag_OpenedMarineTemplePath,
+        .mUnk_08     = true,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x15,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_area3,
+        .mUnk_02     = 0xFFFF,
+        .mUnk_04     = 0x1B,
+        .mAdvFlag    = AdventureFlag_ObtainedThreeKeysToMountainTemple,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x16,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_area0,
+        .mUnk_02     = 0x000F,
+        .mUnk_04     = 0x28,
+        .mAdvFlag    = AdventureFlag_ZeldaTextAfterCompassOfLight,
+        .mUnk_08     = true,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x21,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_area0,
+        .mUnk_02     = 0x0014,
+        .mUnk_04     = 0x0F,
+        .mAdvFlag    = AdventureFlag_Unset,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x17,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_area1,
+        .mUnk_02     = 0x0014,
+        .mUnk_04     = 0x11,
+        .mAdvFlag    = AdventureFlag_Unset,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x18,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_area2,
+        .mUnk_02     = 0x0014,
+        .mUnk_04     = 0x12,
+        .mAdvFlag    = AdventureFlag_Unset,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x19,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_area3,
+        .mUnk_02     = 0x0014,
+        .mUnk_04     = 0x10,
+        .mAdvFlag    = AdventureFlag_Unset,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x1A,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_smarine,
+        .mUnk_02     = 0x0006,
+        .mUnk_04     = 0x1A,
+        .mAdvFlag    = AdventureFlag_Unset,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x22,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_dark,
+        .mUnk_02     = 0x000F,
+        .mUnk_04     = 0x04,
+        .mAdvFlag    = AdventureFlag_Unset,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x2A,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_dark,
+        .mUnk_02     = 0x000F,
+        .mUnk_04     = 0x04,
+        .mAdvFlag    = AdventureFlag_Unset,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x2B,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_dark,
+        .mUnk_02     = 0x000F,
+        .mUnk_04     = 0x04,
+        .mAdvFlag    = AdventureFlag_Unset,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x2C,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_dark,
+        .mUnk_02     = 0x000F,
+        .mUnk_04     = 0x04,
+        .mAdvFlag    = AdventureFlag_Unset,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x2D,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_dark,
+        .mUnk_02     = 0x000F,
+        .mUnk_04     = 0x04,
+        .mAdvFlag    = AdventureFlag_Unset,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x2E,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_dark,
+        .mUnk_02     = 0x000F,
+        .mUnk_04     = 0x04,
+        .mAdvFlag    = AdventureFlag_Unset,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x2F,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_dark,
+        .mUnk_02     = 0x000F,
+        .mUnk_04     = 0x04,
+        .mAdvFlag    = AdventureFlag_Unset,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x36,
+    },
+    {
+        .mSceneIndex = SceneIndex_t_dark,
+        .mUnk_02     = 0x000F,
+        .mUnk_04     = 0x04,
+        .mAdvFlag    = AdventureFlag_Unset,
+        .mUnk_08     = false,
+        .mUnk_09     = false,
+        .mUnk_0A     = false,
+        .mUnk_0B     = 0x00,
+        .mUnk_0C     = 0x37,
+    },
 };
-extern const UnkStruct_ov024_020d7454 data_ov024_020d7454[];
 
 UnkStruct_027e0cf8_00::UnkStruct_027e0cf8_00() {
     this->mUnk_2238   = &this->mUnk_0018.mUnk_18C0;
@@ -150,7 +324,7 @@ s32 UnkStruct_027e0cf8_00::func_ov024_020cfd54(s32 param1, s32 param2, s32 param
     bool var_r9;
     bool var_r10;
 
-    for (i = 0; i < 0x1E; i++) {
+    for (i = 0; i < ARRAY_LEN(data_ov024_020d8098); i++) {
         ptr = &data_ov024_020d8098[i];
 
         var_r8 = 1;
@@ -164,13 +338,13 @@ s32 UnkStruct_027e0cf8_00::func_ov024_020cfd54(s32 param1, s32 param2, s32 param
         }
 
         var_r9 = 1;
-        if (ptr->mUnk_04 != data_ov024_020d8094.mUnk_00 || ptr->mUnk_05 != data_ov024_020d8094.mUnk_01) {
+        if (ptr->mUnk_04.x != data_ov024_020d8094.x || ptr->mUnk_04.y != data_ov024_020d8094.y) {
             s8 temp[2];
             temp[0] = param3;
             temp[1] = param4;
 
             s8 *new_var4 = temp;
-            if (ptr->mUnk_04 != new_var4[0] || ptr->mUnk_05 != new_var4[1]) {
+            if (ptr->mUnk_04.x != new_var4[0] || ptr->mUnk_04.y != new_var4[1]) {
                 var_r9 = 0;
             }
         }
@@ -184,7 +358,7 @@ s32 UnkStruct_027e0cf8_00::func_ov024_020cfd54(s32 param1, s32 param2, s32 param
 }
 
 bool UnkStruct_027e0cf8_00::func_ov024_020cfe24(s16 param1) {
-    for (u32 i = 0; i < 0x1E; i++) {
+    for (u32 i = 0; i < ARRAY_LEN(data_ov024_020d8098); i++) {
         if (param1 == data_ov024_020d8098[i].mUnk_02) {
             return data_ov024_020d8098[i].mUnk_0A;
         }
@@ -204,7 +378,7 @@ s32 UnkStruct_027e0cf8_00::func_ov024_020cfe6c(s32 param1, s32 param2, s32 param
 }
 
 s16 UnkStruct_027e0cf8_00::func_ov024_020cfe94(s32 param1) {
-    for (u32 i = 0; i < 0x1E; i++) {
+    for (u32 i = 0; i < ARRAY_LEN(data_ov024_020d8098); i++) {
         const UnkStruct_ov024_020d8098 *ptr = &data_ov024_020d8098[i];
 
         if (ptr->mUnk_06 == param1) {
@@ -216,7 +390,7 @@ s16 UnkStruct_027e0cf8_00::func_ov024_020cfe94(s32 param1) {
 }
 
 bool UnkStruct_027e0cf8_00::func_ov024_020cfed0(s16 param1) {
-    for (u32 i = 0; i < 0x1E; i++) {
+    for (u32 i = 0; i < ARRAY_LEN(data_ov024_020d8098); i++) {
         if (param1 == data_ov024_020d8098[i].mUnk_02) {
             return data_ov024_020d8098[i].mUnk_0B;
         }
@@ -351,18 +525,18 @@ void UnkStruct_027e0cf8_0C::func_ov024_020d002c(const UnkDataStruct4 *param1) {
 void UnkStruct_027e0cf8_0C::func_ov024_020d01c0(const UnkDataStruct4 *param1) {
     SceneIndex sceneIndex = param1->mSceneIndex;
 
-    for (u32 i = 0; i < 0x11; i++) {
+    for (u32 i = 0; i < ARRAY_LEN(data_ov024_020d7454); i++) {
         const UnkStruct_ov024_020d7454 *temp_r7 = &data_ov024_020d7454[i];
 
-        if (sceneIndex == temp_r7->mUnk_00) {
+        if (sceneIndex == temp_r7->mSceneIndex) {
             UnkStruct_027e0cf8_0C_00 *temp_r8 = &this->mUnk_000[this->mUnk_16C];
 
-            if (temp_r7->mUnk_06 == 0xFFFF) {
+            if (temp_r7->mAdvFlag == AdventureFlag_Unset) {
                 temp_r8->mUnk_18 = true;
             } else {
                 bool var_r1;
 
-                if (data_027e09b8->HasAdventureFlag(temp_r7->mUnk_06)) {
+                if (data_027e09b8->HasAdventureFlag(temp_r7->mAdvFlag)) {
                     var_r1 = true;
                 } else {
                     var_r1 = false;
@@ -492,7 +666,7 @@ s32 UnkStruct_027e0cf8_0C::func_ov024_020d041c(Vec2s *param1) {
 }
 
 bool UnkStruct_027e0cf8_0C::func_ov024_020d0510(s16 param1) {
-    for (u32 i = 0; i < 0x1E; i++) {
+    for (u32 i = 0; i < ARRAY_LEN(data_ov024_020d8098); i++) {
         const UnkStruct_ov024_020d8098 *ptr = &data_ov024_020d8098[i];
 
         if (ptr->mUnk_06 == param1) {
