@@ -157,23 +157,34 @@ ARM void ActorHeart::func_ov031_020ef1b4(unk16 param_2) {
 }
 
 ARM void ActorHeart::func_ov031_020ef208() {
-    bool is3or4 = (this->mUnk_4C == 3 && this->mUnk_4C == 4);
-    bool var2   = true;
-    if (is3or4 && this->mUnk_4C != 5) {
-        var2 = false;
+    bool var2 = true;
+    bool var1 = true;
+    if (this->mUnk_4C != 0x3 && this->mUnk_4C != 0x4) {
+        var1 = false;
     }
+    if (!var1) {
+        if (this->mUnk_4C != 0x5) {
+            var2 = false;
+        }
+    }
+
     if (var2) {
         this->mFlags[0] |= 2;
         return;
     }
-    if (this->mUnk_BE == 0) {
-        if (this->mUnk_52 < this->mUnk_50) {
+    if ((u8) this->mUnk_BE == 0) {
+        if (this->mUnk_50 < this->mUnk_52) {
+            this->mUnk_50++;
+            var2 = false;
+        } else {
+            var2 = true;
+        }
+
+        if (var2) {
+            this->mUnk_BE = 0x01;
             this->mUnk_50 = 0x00;
             this->mUnk_52 = 0x3C;
-            this->mUnk_BE = 0x01;
-            return;
         }
-        this->mUnk_50++;
         return;
     }
 
@@ -183,11 +194,15 @@ ARM void ActorHeart::func_ov031_020ef208() {
         this->mFlags[0] |= 0b10;
     }
 
-    if (this->mUnk_52 <= this->mUnk_50) {
-        this->func_ov000_020984d0();
-        return;
+    if (this->mUnk_50 < this->mUnk_52) {
+        this->mUnk_50++;
+        var2 = false;
+    } else {
+        var2 = true;
     }
-    this->mUnk_50++;
+    if (var2) {
+        this->func_ov000_020984d0();
+    }
 }
 
 ARM void ActorHeart::func_ov031_020ef2ec() {
