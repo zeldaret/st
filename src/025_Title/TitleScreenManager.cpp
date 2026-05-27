@@ -19,9 +19,7 @@ ARM void TitleScreenManager::vfunc_14() {
 
 ARM void TitleScreenManager::vfunc_18() {
     this->mUnk_004.func_ov001_020bd784();
-
-    delete this->mpGameMode;
-    this->mpGameMode = NULL;
+    DELETE(this->mpGameMode);
 }
 
 ARM void TitleScreenManager::vfunc_24() {

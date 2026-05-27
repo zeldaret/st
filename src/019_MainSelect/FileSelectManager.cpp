@@ -18,17 +18,10 @@ ARM FileSelectManager::~FileSelectManager() {
     data_0204a110.mUnk_DA4 = 1;
     this->mUnk_004.func_ov001_020bd784();
 
-    delete this->mUnk_164;
-    this->mUnk_164 = NULL;
-
-    delete this->mUnk_160;
-    this->mUnk_160 = NULL;
-
-    delete this->mUnk_15C;
-    this->mUnk_15C = NULL;
-
-    delete this->mUnk_158;
-    this->mUnk_158 = NULL;
+    DELETE(this->mUnk_164);
+    DELETE(this->mUnk_160);
+    DELETE(this->mUnk_15C);
+    DELETE(this->mUnk_158);
 }
 
 ARM void FileSelectManager::vfunc_10(unk32 param1, unk32 param2, unk32 param3) {

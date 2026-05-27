@@ -111,11 +111,8 @@ ARM FileSelectOptionsManager::FileSelectOptionsManager(void *param1, s32 saveSlo
 }
 
 ARM FileSelectOptionsManager::~FileSelectOptionsManager() {
-    delete this->mpMicTest;
-    this->mpMicTest = NULL;
-
-    delete this->mpOptions;
-    this->mpOptions = NULL;
+    DELETE(this->mpMicTest);
+    DELETE(this->mpOptions);
 }
 
 ARM void FileSelectOptionsManager::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {

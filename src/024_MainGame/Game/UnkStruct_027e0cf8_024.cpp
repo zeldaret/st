@@ -36,18 +36,12 @@ UnkStruct_027e0cf8::~UnkStruct_027e0cf8() {
     this->func_ov024_020c7750();
 
     if (data_027e09a4->IsDarkRealm()) {
-        delete this->mUnk_04;
-        this->mUnk_04 = NULL;
+        DELETE(this->mUnk_04);
     }
 
-    delete this->mUnk_0C;
-    this->mUnk_0C = NULL;
-
-    delete this->mUnk_08;
-    this->mUnk_08 = NULL;
-
-    delete this->mUnk_00;
-    this->mUnk_00 = NULL;
+    DELETE(this->mUnk_0C);
+    DELETE(this->mUnk_08);
+    DELETE(this->mUnk_00);
 }
 
 void UnkStruct_027e0cf8::func_ov024_020c755c(UnkDataStruct4 *param1) {

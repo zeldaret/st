@@ -17,12 +17,8 @@ THUMB_BEGIN
 
 GameModeAdventure::~GameModeAdventure() {
     UnkStruct_027e09a4::Destroy();
-
-    delete gSaveManager.mUnk_000;
-    gSaveManager.mUnk_000 = NULL;
-
+    DELETE(gSaveManager.mUnk_000);
     func_0200e234();
-
     data_ov000_020b504c.func_ov001_020be6f4();
     data_ov000_020b50c0.func_ov001_020bd87c();
 }

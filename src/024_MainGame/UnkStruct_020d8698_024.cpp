@@ -86,26 +86,17 @@ UnkStruct_020d8698::UnkStruct_020d8698() :
 }
 
 UnkStruct_020d8698::~UnkStruct_020d8698() {
-    delete this->mUnk_01C;
-    this->mUnk_01C = NULL;
-
-    delete this->mUnk_024;
-    this->mUnk_024 = NULL;
-
-    delete this->mUnk_02C;
-    this->mUnk_02C = NULL;
+    DELETE(this->mUnk_01C);
+    DELETE(this->mUnk_024);
+    DELETE(this->mUnk_02C);
 
     if (!data_027e09a4->IsTrain()) {
-        delete this->mUnk_034;
-        this->mUnk_034 = NULL;
-
-        delete this->mUnk_044;
-        this->mUnk_044 = NULL;
+        DELETE(this->mUnk_034);
+        DELETE(this->mUnk_044);
     }
 
     if (this->mUnk_03C != NULL) {
-        delete this->mUnk_03C;
-        this->mUnk_03C = NULL;
+        DELETE(this->mUnk_03C);
     }
 }
 
