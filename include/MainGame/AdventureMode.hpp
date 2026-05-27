@@ -834,7 +834,7 @@ public:
         return 0;
     }
 
-    AdventureModeManager_1B8_Base(u8 bgType, bool param2, const AdventureModeManager_1B8_Base_1C *param3, bool param4,
+    AdventureModeManager_1B8_Base(u8 bgType, bool param2, const AdventureModeManager_1B8_Base_1C &param3, bool param4,
                                   bool param5);
     ~AdventureModeManager_1B8_Base();
 

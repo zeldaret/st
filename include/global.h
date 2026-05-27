@@ -58,4 +58,11 @@
     };                                  \
     void _VTABLE_PAD_##name::dummy() {}
 
+#define DELETE(ptr) \
+    {               \
+        delete ptr; \
+        ptr = NULL; \
+    }               \
+    (void) 0
+
 #endif

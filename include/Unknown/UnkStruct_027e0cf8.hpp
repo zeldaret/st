@@ -1,5 +1,6 @@
 #pragma once
 
+#include "MainGame/AdventureMode.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "System/Random.hpp"
 #include "Unknown/Common.hpp"
@@ -57,19 +58,60 @@ public:
     void func_ov026_020dc300();
 };
 
+// related to the rail positions (only on the minimap?)
+class UnkStruct_027e0cf8_08_00 : public AdventureModeManager_1B8_Base {
+public:
+    /* 000 (base) */
+    /* 024 */ Vec2s mUnk_024[7];
+    /* 040 */ Vec2s mUnk_040[7];
+    /* 05C */ Vec2s mUnk_05C[7];
+    /* 078 */ Vec2s mUnk_078[7];
+    /* 094 */ Vec2s mUnk_094[7];
+    /* 0B0 */ Vec2s mUnk_0B0[7];
+    /* 0CC */ Vec2s mUnk_0CC[7];
+    /* 0E8 */ Vec2s mUnk_0E8[7];
+    /* 104 */ Vec2s mUnk_104[7];
+    /* 120 */ Vec2s mUnk_120[7];
+    /* 13C */ Vec2s mUnk_13C[7];
+    /* 158 */ Vec2s mUnk_158[7];
+    /* 174 */ Vec2s mUnk_174;
+    /* 178 */ Vec2s *mUnk_178[4][4];
+    /* 1B8 */
+
+    UnkStruct_027e0cf8_08_00(u8 bgType);
+    ~UnkStruct_027e0cf8_08_00();
+
+    void func_ov001_020bfb20();
+};
+
 class UnkStruct_027e0cf8_08 {
 public:
-    /* 000 */ STRUCT_PAD(0x00, 0x26C);
+    /* 000 */ UnkStruct_027e0cf8_08_00 *mUnk_000;
+    /* 004 */ unk32 mUnk_004;
+    /* 008 */ unk32 mUnk_008;
+    /* 00C */ unk32 mUnk_00C;
+    /* 010 */ u8 mUnk_010[0x12C]; // TBD
+    /* 13C */ u8 mUnk_13C[0x12C]; // TBD
+    /* 268 */ u16 mUnk_268;
+    /* 26A */ u8 mUnk_26A;
+    /* 26B */ unk8 mUnk_26B;
+    /* 26C */
 
     UnkStruct_027e0cf8_08();
     ~UnkStruct_027e0cf8_08();
 
+    void func_ov024_020d32b4(unk8 *param1);
     void func_ov024_020d32d8();
     void func_ov024_020d32e8(Vec2s *param1);
-    void func_ov024_020d3324(void *param1);
-    void func_ov024_020d3348(void *param1, unk32 param2, u16 param3, unk32 param4, unk32 param5);
+    void func_ov024_020d3324(UnkDataStruct4 *param1);
+    void func_ov024_020d3348(UnkDataStruct4 *param1, unk32 param2, u16 param3, unk32 param4, unk32 param5);
+    void func_ov024_020d336c(UnkDataStruct4 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_ov024_020d340c();
-    void func_ov024_020d341c(unk32 param1);
+    void func_ov024_020d341c(bool param1);
+    void func_ov024_020d3428(UnkDataStruct4 *param1, unk32 param2, unk32 param3);
+    void func_ov024_020d34a0(void *param1, u8 param2);
+
+    static u8 func_ov024_020d3158(SceneIndex sceneIndex);
 };
 
 class UnkStruct_027e0cf8_0C_00 {
@@ -117,7 +159,7 @@ public:
     static bool func_ov024_020d0510(s16 param1);
 };
 
-class UnkStruct_027e0cf8 : AutoInstance<UnkStruct_027e0cf8> {
+class UnkStruct_027e0cf8 : public AutoInstance<UnkStruct_027e0cf8> {
 public:
     /* 00 */ UnkStruct_027e0cf8_00 *mUnk_00;
     /* 04 */ UnkStruct_027e0cf8_04 *mUnk_04;
@@ -148,7 +190,7 @@ public:
     void func_ov024_020c7724();
     void func_ov024_020c7750();
     void func_ov024_020c7780();
-    void func_ov024_020c77b0(unk32 param1);
+    void func_ov024_020c77b0(bool param1);
     bool func_ov024_020c77c0(fx32 *pX, fx32 *pZ, s32 param3);
     bool func_ov024_020c77d0(Vec2s *param1, unk32 param2);
     void func_ov024_020c77e0(Vec2s *param1);

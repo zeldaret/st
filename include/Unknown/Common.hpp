@@ -1285,6 +1285,8 @@ struct UnkDataStruct4 {
 
     void func_ov024_020d2b08(unk32 param1, unk32 param2, VecFx32 *param3) const;
     bool func_ov024_020d308c(fx32 *param1, fx32 *param2, unk16 param3) const;
+    void func_ov024_020d2cfc(void *param1, unk32 param2, unk32 param3);
+    void func_ov024_020d2c54(void *param1, unk32 param2);
 };
 
 struct UnkDataStruct3 {

@@ -143,7 +143,7 @@ void UnkStruct_027e0cf8::func_ov024_020c7780() {
     }
 }
 
-void UnkStruct_027e0cf8::func_ov024_020c77b0(unk32 param1) {
+void UnkStruct_027e0cf8::func_ov024_020c77b0(bool param1) {
     this->mUnk_08->func_ov024_020d341c(param1);
 }
 

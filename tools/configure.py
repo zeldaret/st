@@ -189,6 +189,7 @@ config.libs = [
             Object("001_SceneInit/Item/ItemManager_001.cpp"),
             Object("001_SceneInit/CargoManager_001.cpp"),
             Object("001_SceneInit/PassengerManager_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cf8_08_00_001.cpp"),
             Object("001_SceneInit/Game/AdventureModeManager_001.cpp"),
             Object("001_SceneInit/Game/GameModeAdventure_001.cpp"),
         ]
