@@ -5,9 +5,9 @@
 #include "global.h"
 #include "types.h"
 
-class ActorArrow_c4 : public Actor_c4 {
+class ActorShotArrow_c4 : public Actor_c4 {
 public:
-    ActorArrow_c4(Actor *param1);
+    ActorShotArrow_c4(Actor *param1);
 
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
@@ -15,17 +15,17 @@ public:
     /* 0C */ virtual void vfunc_0c(unk32 param1) override;
 };
 
-class ActorArrow : public Actor {
+class ActorShotArrow : public Actor {
 public:
     /* 00 (base) */
     /* 94 */
 
-    ActorArrow();
+    ActorShotArrow();
 
-    /* 4C */ virtual ~ActorArrow() override;
+    /* 4C */ virtual ~ActorShotArrow() override;
 
     unk32 func_ov031_020f1404();
-    ActorArrow *func_ov031_020f1608();
+    ActorShotArrow *func_ov031_020f1608();
     void func_ov031_020f173c(void);
     void func_ov031_020f1868(void);
     void func_ov031_020f1874(void);
@@ -81,14 +81,14 @@ public:
     void func_ov031_020f3d4c(void);
 };
 
-class ActorProfileArrow : public ActorProfile {
+class ActorProfileShotArrow : public ActorProfile {
 public:
     /* 00 (base) */
 
-    ActorProfileArrow();
-    ~ActorProfileArrow();
+    ActorProfileShotArrow();
+    ~ActorProfileShotArrow();
 
     /* 0C */ virtual Actor *Create();
 
-    static ActorProfileArrow *GetProfile();
+    static ActorProfileShotArrow *GetProfile();
 };

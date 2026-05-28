@@ -93,7 +93,7 @@ src/031_Land/Actor/ActorUnkNITF.cpp:
     .ctor       start:0x021127d0 end:0x021127d4
     .bss        start:0x02116a24 end:0x02116a70
 
-src/031_Land/Actor/ActorArrow.cpp:
+src/031_Land/Actor/ActorShotArrow.cpp:
     .text       start:0x020f1390 end:0x020f3d7c
     .init       start:0x02111548 end:0x02111598
     .ctor       start:0x021127d4 end:0x021127d8
