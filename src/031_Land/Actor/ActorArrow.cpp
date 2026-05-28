@@ -8,7 +8,9 @@ ARM Actor *ActorProfileArrow::Create() {
 }
 
 ARM ActorProfileArrow::ActorProfileArrow() :
-    ActorProfile(ActorId_AROW) {}
+    ActorProfile(ActorId_AROW) {
+    this->mUnk_04.Init(FLOAT_TO_Q20(0.2));
+}
 
 ARM ActorArrow::ActorArrow() {}
 
