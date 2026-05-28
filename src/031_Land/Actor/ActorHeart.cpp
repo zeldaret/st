@@ -57,10 +57,7 @@ ARM Actor *ActorProfileHeart::Create() {
 
 ARM ActorProfileHeart::ActorProfileHeart() :
     ActorProfile(ActorId_Heart) {
-    this->mUnk_04.pos.x = FLOAT_TO_Q20(0.0);
-    this->mUnk_04.pos.y = FLOAT_TO_Q20(0.25);
-    this->mUnk_04.pos.z = FLOAT_TO_Q20(0.0);
-    this->mUnk_04.size  = FLOAT_TO_Q20(0.25);
+    this->mUnk_04.Init(FLOAT_TO_Q20(0.25));
 }
 
 ARM void ActorHeart::func_ov031_020eed64(ActorParams *param_2, unk32 param_3, unk32 param_4) {
