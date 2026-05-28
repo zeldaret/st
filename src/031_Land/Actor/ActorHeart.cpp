@@ -355,21 +355,19 @@ ARM void ActorHeart::func_ov031_020ef448() {
     this->mVel.z = 0;
 }
 
+typedef struct {
+    STRUCT_PAD(0x00, 0xE8);
+    VecFx32 mUnk_E8;
+} UnkActor_02ef458;
+
 ARM void ActorHeart::func_ov031_020ef458() {
     // which actor is this ?
-    // should have a VecFx32 at E8
-    Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_C4);
+    UnkActor_02ef458 *actor = (UnkActor_02ef458 *) gpActorManager->func_01fff3b4(this->mUnk_C4);
     if (actor == nullptr) {
         this->func_ov031_020ef1b4(0x01);
         return;
     }
-    // non-matching should be mUnk_E8
-    // this->mPos.x = actor->mUnk_E8.x;
-    // this->mPos.y = actor->mUnk_E8.y;
-    // this->mPos.z = actor->mUnk_E8.z;
-    this->mPos.x = actor->mPos.x;
-    this->mPos.y = actor->mPos.y;
-    this->mPos.z = actor->mPos.z;
+    VecFx32_Copy(&actor->mUnk_E8, &this->mPos);
 }
 
 ARM void ActorHeart::func_ov031_020ef4a8() {
