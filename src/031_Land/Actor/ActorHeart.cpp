@@ -51,12 +51,10 @@ extern "C" void func_ov017_02097bec(Actor_9c *);
 
 ARM DECL_PROFILE(ActorProfileHeart);
 
-// func_ov031_020eed00
 ARM Actor *ActorProfileHeart::Create() {
     return new(HeapIndex_2) ActorHeart();
 }
 
-// func_ov031_020eed24
 ARM ActorProfileHeart::ActorProfileHeart() :
     ActorProfile(ActorId_Heart) {
     this->mUnk_04.pos.x = 0;
@@ -64,8 +62,6 @@ ARM ActorProfileHeart::ActorProfileHeart() :
     this->mUnk_04.pos.z = 0;
     this->mUnk_04.size  = 0x400;
 }
-
-// extern UnkStruct_ov000_020b539c UnkStruct_020b539c;
 
 ARM void ActorHeart::func_ov031_020eed64(ActorParams *param_2, unk32 param_3, unk32 param_4) {
     ActorParams actorParams;
@@ -80,7 +76,6 @@ ARM void ActorHeart::func_ov031_020eed64(ActorParams *param_2, unk32 param_3, un
 
 ARM void ActorHeart::func_ov031_020f0750() {}
 
-// func_ov031_020eede0
 ARM ActorHeart::ActorHeart() :
     mUnk_94(0),
     mUnk_96(6),
@@ -106,7 +101,6 @@ ARM ActorHeart::ActorHeart() :
     }
 }
 
-// func_ov031_020eeed8
 ARM bool ActorHeart::vfunc_18(unk32 param1) {
     this->func_ov031_020ef4a8();
     return true;
@@ -117,6 +111,7 @@ static PTMF<ActorHeart> data_ov031_02113d74[] = {
     ActorHeart::func_ov031_020ef3d0, ActorHeart::func_ov031_020ef444, ActorHeart::func_ov031_020ef458,
 };
 
+// non-matching
 void ActorHeart::vfunc_20() {
     UnkStruct_ov031_020eeee8 stack;
 
@@ -210,7 +205,7 @@ void ActorHeart::vfunc_20() {
     this->mUnk_EC.x = 0;
     this->mUnk_EC.y = 0;
     this->mUnk_EC.z = 0;
-} // func_ov031_020eeee8
+}
 
 extern unk32 data_ov000_020aecf8;
 
@@ -226,6 +221,7 @@ ARM void ActorHeart::func_ov031_020ef1b4(unk16 param_2) {
     CALL_PTMF(PTMF<ActorHeart>, data_ov031_02113da4[this->mUnk_4C]);
 }
 
+// non-matching (r1 and r2 swapped)
 ARM void ActorHeart::func_ov031_020ef208() {
     bool var2 = true;
     bool var1 = true;
@@ -342,7 +338,6 @@ ARM void ActorHeart::func_ov031_020ef430() {
     this->mVel.z = 0;
 }
 
-// ¯\_(ツ)_/¯
 ARM void ActorHeart::func_ov031_020ef444() {
     return;
 }
@@ -400,6 +395,7 @@ ARM void ActorHeart::func_ov031_020ef528() {
     this->func_ov000_020984d0();
 }
 
+// non-matching
 ARM void ActorHeart::func_ov031_020ef570() {
     func_ov000_02098838();
     this->mUnk_B8 += 0x666;
@@ -417,7 +413,6 @@ ARM void ActorHeart::func_ov031_020ef570() {
     }
 }
 
-// func_ov031_020ef5e8
 ARM void ActorHeart::vfunc_2c(unk32 param1) {
     VecFx32 iStack_20;
     VecFx32 iStack_2c;
