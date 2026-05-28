@@ -57,10 +57,10 @@ ARM Actor *ActorProfileHeart::Create() {
 
 ARM ActorProfileHeart::ActorProfileHeart() :
     ActorProfile(ActorId_Heart) {
-    this->mUnk_04.pos.x = 0;
-    this->mUnk_04.pos.y = 0x400;
-    this->mUnk_04.pos.z = 0;
-    this->mUnk_04.size  = 0x400;
+    this->mUnk_04.pos.x = FLOAT_TO_Q20(0x0);
+    this->mUnk_04.pos.y = FLOAT_TO_Q20(0.24987793);
+    this->mUnk_04.pos.z = FLOAT_TO_Q20(0x0);
+    this->mUnk_04.size  = FLOAT_TO_Q20(0.24987793);
 }
 
 ARM void ActorHeart::func_ov031_020eed64(ActorParams *param_2, unk32 param_3, unk32 param_4) {
@@ -87,9 +87,9 @@ ARM ActorHeart::ActorHeart() :
     mUnk_C4(0),
     mUnk_C8(this) {
 
-    this->mUnk_EC.x = 0;
-    this->mUnk_EC.y = 0;
-    this->mUnk_EC.z = 0;
+    this->mUnk_EC.x = FLOAT_TO_Q20(0x0);
+    this->mUnk_EC.y = FLOAT_TO_Q20(0x0);
+    this->mUnk_EC.z = FLOAT_TO_Q20(0x0);
 
     this->mUnk_9C = 0x13100;
     this->mUnk_40 = &this->mUnk_C8;
@@ -198,13 +198,13 @@ void ActorHeart::vfunc_20() {
         this->func_ov000_02098910(0, 0x10);
     }
     if (this->mUnk_46 & 0x3) {
-        this->mVel.y = 0;
+        this->mVel.y = FLOAT_TO_Q20(0x0);
     }
 
     VecFx32_Add(&this->mPos, &this->mUnk_EC, &this->mPos);
-    this->mUnk_EC.x = 0;
-    this->mUnk_EC.y = 0;
-    this->mUnk_EC.z = 0;
+    this->mUnk_EC.x = FLOAT_TO_Q20(0x0);
+    this->mUnk_EC.y = FLOAT_TO_Q20(0x0);
+    this->mUnk_EC.z = FLOAT_TO_Q20(0x0);
 }
 
 extern unk32 data_ov000_020aecf8;
@@ -272,7 +272,7 @@ ARM void ActorHeart::func_ov031_020ef208() {
 }
 
 ARM void ActorHeart::func_ov031_020ef2ec() {
-    this->mVel.y = 0x400;
+    this->mVel.y = FLOAT_TO_Q20(0.24987793);
 }
 
 ARM void ActorHeart::func_ov031_020ef2f8() {
@@ -297,9 +297,9 @@ ARM void ActorHeart::func_ov031_020ef334() {
 }
 
 ARM void ActorHeart::func_ov031_020ef35c() {
-    this->mVel.x = 0;
-    this->mVel.y = 0;
-    this->mVel.z = 0;
+    this->mVel.x = FLOAT_TO_Q20(0);
+    this->mVel.y = FLOAT_TO_Q20(0);
+    this->mVel.z = FLOAT_TO_Q20(0);
     if ((u8) this->mUnk_BE == 0 && (this->mUnk_52 - this->mUnk_50) > 0xB4) {
         this->mUnk_52 = 0xB4;
         this->mUnk_50 = 0x00;
@@ -324,18 +324,18 @@ ARM void ActorHeart::func_ov031_020ef3d0() {
     if ((this->mFlags[0] & 0x20) == 0) {
         return;
     }
-    this->mVel.x = 0;
-    this->mVel.y = 0;
-    this->mVel.z = 0;
+    this->mVel.x = FLOAT_TO_Q20(0);
+    this->mVel.y = FLOAT_TO_Q20(0);
+    this->mVel.z = FLOAT_TO_Q20(0);
 
     this->mUnk_9C |= 0x1000;
     this->func_ov031_020ef1b4(0x01);
 }
 
 ARM void ActorHeart::func_ov031_020ef430() {
-    this->mVel.x = 0;
-    this->mVel.y = 0;
-    this->mVel.z = 0;
+    this->mVel.x = FLOAT_TO_Q20(0);
+    this->mVel.y = FLOAT_TO_Q20(0);
+    this->mVel.z = FLOAT_TO_Q20(0);
 }
 
 ARM void ActorHeart::func_ov031_020ef444() {
@@ -343,8 +343,8 @@ ARM void ActorHeart::func_ov031_020ef444() {
 }
 
 ARM void ActorHeart::func_ov031_020ef448() {
-    this->mVel.x = 0;
-    this->mVel.z = 0;
+    this->mVel.x = FLOAT_TO_Q20(0);
+    this->mVel.z = FLOAT_TO_Q20(0);
 }
 
 typedef struct {
@@ -399,17 +399,15 @@ ARM void ActorHeart::func_ov031_020ef528() {
 ARM void ActorHeart::func_ov031_020ef570() {
     func_ov000_02098838();
     this->mUnk_B8 += 0x666;
-    this->mVel.z = 0;
+    this->mVel.z = FLOAT_TO_Q20(0);
 
     s16 sin_value = SIN((u16) this->mUnk_B8);
     s32 value     = ((sin_value >> 0x1F) << 6 | sin_value >> 0x1A) + (sin_value * 0x40 > ~0x800);
 
-    s32 ivar2    = value;
     this->mVel.x = (sin_value * 0x40 + 0x800) >> 0xC | value * 0x100000;
 
-    if (this->mVel.y <= -0x14) {
-        ivar2        = -0x14;
-        this->mVel.y = ivar2;
+    if (this->mVel.y <= FLOAT_TO_Q20(-0.005004883)) {
+        this->mVel.y = FLOAT_TO_Q20(-0.005004883);
     }
 }
 
@@ -423,13 +421,13 @@ ARM void ActorHeart::vfunc_2c(unk32 param1) {
     }
 
     iStack_20 = this->mPos;
-    iStack_20.y += 0x80;
+    iStack_20.y += FLOAT_TO_Q20(0.03112793);
     this->func_ov017_020bf5c4(&iStack_20, 0x400, 0x400, 0x1f, 0);
 
     func_ov000_0205c1f0(&auStack_30, 0x10);
 
     iStack_2c = this->mPos;
-    iStack_2c.y += 0x548;
+    iStack_2c.y += FLOAT_TO_Q20(0.329956055);
     func_ov000_0205c204(&auStack_30, &iStack_2c, 0xccd, 0xccd, 0x1f);
 }
 
