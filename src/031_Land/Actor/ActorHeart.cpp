@@ -290,7 +290,7 @@ ARM void ActorHeart::func_ov031_020ef320() {
 
 ARM void ActorHeart::func_ov031_020ef334() {
     this->func_ov031_020ef570();
-    if ((this->mUnk_46 & 0b11) == 0) {
+    if ((this->mUnk_46 & 0x3) == 0) {
         return;
     }
     this->func_ov031_020ef1b4(0x02);
