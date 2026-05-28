@@ -364,6 +364,9 @@ ARM void ActorHeart::func_ov031_020ef458() {
         return;
     }
     // non-matching should be mUnk_E8
+    // this->mPos.x = actor->mUnk_E8.x;
+    // this->mPos.y = actor->mUnk_E8.y;
+    // this->mPos.z = actor->mUnk_E8.z;
     this->mPos.x = actor->mPos.x;
     this->mPos.y = actor->mPos.y;
     this->mPos.z = actor->mPos.z;
