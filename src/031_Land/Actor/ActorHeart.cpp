@@ -377,25 +377,23 @@ ARM void ActorHeart::func_ov031_020ef4a8() {
     }
 
     switch (this->mUnk_5C.mUnk_2C) {
-        case 0: {
+        case 0:
             this->mUnk_52 = 0xB4;
             this->mUnk_50 = 0x00;
             this->func_ov031_020ef1b4(2);
-            return;
-        }
+            break;
 
-        case 1: {
+        case 1:
             this->mUnk_52 = 0x1E0;
             this->mUnk_50 = 0x00;
             this->func_ov031_020ef1b4(0);
             return;
-        }
 
-        default: {
+        default:
             this->mUnk_52 = 0x1E0;
             this->mUnk_50 = 0x00;
             this->func_ov031_020ef1b4(0);
-        }
+            break;
     }
 }
 
@@ -448,14 +446,13 @@ ARM void ActorHeart::vfunc_2c(unk32 param1) {
 
 ARM void ActorHeart::func_ov031_020ef698() {
     switch (this->mUnk_BC) {
-        case 0x00: {
+        case 0x00:
             if ((this->mUnk_46 & 3) == 0) {
                 this->mUnk_BC += 0x01;
                 this->mUnk_2C = 0x06;
             }
             break;
-        }
-        case 0x01: {
+        case 0x01:
             this->func_ov031_020ef570();
             if ((this->mUnk_46 & 3) != 0) {
                 this->mVel.x  = 0;
@@ -464,7 +461,6 @@ ARM void ActorHeart::func_ov031_020ef698() {
                 this->mUnk_BC = 0;
             }
             break;
-        }
     }
 }
 
