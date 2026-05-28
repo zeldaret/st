@@ -18,8 +18,8 @@ public:
 class ActorHeart : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */ unk16 mUnk_94;
-    /* 96 */ unk16 mUnk_96;
+    /* 94 */ u16 mUnk_94;
+    /* 96 */ u16 mUnk_96;
     /* 98 */ Actor_9c mUnk_98;
     /* 9C */ unk32 mUnk_9C;
     /* A0 */ unk32 mUnk_A0;
@@ -35,9 +35,7 @@ public:
     /* C0 */ unk32 mUnk_C0;
     /* C4 */ unk32 mUnk_C4;
     /* C8 */ ActorHeart_c4 mUnk_C8;
-    /* EC */ unk32 mUnk_EC;
-    /* F0 */ unk32 mUnk_F0;
-    /* F4 */ unk32 mUnk_F4;
+    /* EC */ VecFx32 mUnk_EC;
 
     ActorHeart();
 

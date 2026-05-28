@@ -64,13 +64,14 @@ ARM ActorHeart::ActorHeart() :
     mUnk_BE(0),
     mUnk_C0(0),
     mUnk_C4(0),
-    mUnk_C8(this),
-    mUnk_EC(0),
-    mUnk_F0(0),
-    mUnk_F4(0) {
+    mUnk_C8(this) {
+
+    this->mUnk_EC.x = 0;
+    this->mUnk_EC.y = 0;
+    this->mUnk_EC.z = 0;
+
     this->mUnk_9C = 0x13100;
     this->mUnk_40 = &this->mUnk_C8;
-
     u16 sp0;
     func_01ffedac(&sp0, &this->mPos);
 
@@ -85,10 +86,24 @@ ARM bool ActorHeart::vfunc_18(unk32 param1) {
     return true;
 }
 
+typedef struct {
+    unk16 mUnk_00;
+    unk16 mUnk_02;
+    unk16 mUnk_04;
+    unk16 mUnk_06;
+    STRUCT_PAD(0x08, 0x14);
+    unk16 mUnk_14;
+    STRUCT_PAD(0x16, 0x1C);
+    unk16 mUnk_1C;
+    STRUCT_PAD(0x1E, 0x28);
+    unk16 mUnk_28;
+    STRUCT_PAD(0x2A, 0x3C);
+} UnkStruct_ov031_020eeee8;
+
 extern "C" void func_01ffce1c(unk32, unk16 *);
-extern "C" void func_01ffcea0(unk32, unk16 *);
-extern "C" void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
-extern "C" void func_02018114(unk16 *, unk32);
+extern "C" void func_01ffcea0(unk32, UnkStruct_ov031_020eeee8 *);
+extern "C" void func_01fff17c(UnkStruct_ov031_020eeee8 *, UnkStruct_027e0ce0 *, unk32);
+extern "C" void func_02018114(unk16 *, unk16);
 extern "C" void func_ov000_0208bc00();
 
 static PTMF<ActorHeart> data_ov031_02113d74[] = {
@@ -97,18 +112,42 @@ static PTMF<ActorHeart> data_ov031_02113d74[] = {
 };
 
 void ActorHeart::vfunc_20() {
-    unk16 stack[0x1E];
+    UnkStruct_ov031_020eeee8 stack;
 
-    func_01fff17c(stack + 0x2C, nullptr, 0);
-    func_02018114(0, 0);
+    stack.mUnk_02 = 0;
+    stack.mUnk_04 = 0x666;
+    stack.mUnk_06 = 0xfb33;
+
+    func_01fff17c(&stack, data_027e0ce0, 0);
+    func_02018114(&stack.mUnk_02, stack.mUnk_00);
+
+    this->mUnk_C8.mUnk_08 = stack.mUnk_02; // d0
+    this->mUnk_C8.mUnk_0A = stack.mUnk_04; // d2
+    this->mUnk_C8.mUnk_0C = stack.mUnk_06; // d4
+    stack.mUnk_02         = 0;
+    stack.mUnk_04         = 0x666;
+    stack.mUnk_06         = 0;
+    this->mUnk_C8.mUnk_0E = 0;
+
+    this->mUnk_C8.mUnk_10 = stack.mUnk_04; // d8
+    stack.mUnk_06         = stack.mUnk_04;
+    this->mUnk_C8.mUnk_12 = stack.mUnk_06; // da
+    this->mUnk_3C         = (unk32) & this->mUnk_98;
+
     CALL_PTMF(PTMF<ActorHeart>, data_ov031_02113d74[this->mUnk_4C]);
 
-    this->func_ov000_020989e0();
+    if (this->mUnk_94 < this->mUnk_96) {
+        this->mUnk_94 = this->mUnk_96;
+        this->mUnk_94++;
+    } else {
+        this->func_ov000_020989e0();
+    }
+
     func_ov000_0208bc00();
 
     func_01ffce1c(0, 0);
 
-    func_01ffcea0(0, 0);
+    func_01ffcea0(0, &stack);
 
     this->func_ov031_020ef528();
 
@@ -118,7 +157,9 @@ void ActorHeart::vfunc_20() {
 
     func_01ffce1c(0, 0);
 
-    func_01ffcea0(0, 0);
+    stack.mUnk_1C += stack.mUnk_14 + stack.mUnk_1C;
+    stack.mUnk_28 = stack.mUnk_14 + (stack.mUnk_14 << 1) + stack.mUnk_28;
+    func_01ffcea0(0, &stack);
 
     if (this->mUnk_A0 != 0x666) {
         unk16 var = this->mUnk_B4;
@@ -129,17 +170,22 @@ void ActorHeart::vfunc_20() {
     }
     this->func_ov031_020ef208();
 
+    this->mPrevPos.x = this->mPos.x;
+    this->mPrevPos.y = this->mPos.y;
+    this->mPrevPos.z = this->mPos.z;
+
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
     if (this->mUnk_4C != 0x3) {
         this->func_ov000_02098910(0, 0x10);
     }
-    if (this->mUnk_46 == 0x3) {
+    if (this->mUnk_46 & 0x3) {
+        this->mVel.y = 0;
     }
 
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
-    this->mUnk_EC = 0;
-    this->mUnk_F0 = 0;
-    this->mUnk_F4 = 0;
+    VecFx32_Add(&this->mPos, &this->mUnk_EC, &this->mPos);
+    this->mUnk_EC.x = 0;
+    this->mUnk_EC.y = 0;
+    this->mUnk_EC.z = 0;
 } // func_ov031_020eeee8
 
 extern unk32 data_ov000_020aecf8;
@@ -290,11 +336,13 @@ ARM void ActorHeart::func_ov031_020ef448() {
 
 ARM void ActorHeart::func_ov031_020ef458() {
     // which actor is this ?
+    // should have a VecFx32 at E8
     Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_C4);
     if (actor == nullptr) {
         this->func_ov031_020ef1b4(0x01);
         return;
     }
+    // non-matching should be mUnk_E8
     this->mPos.x = actor->mPos.x;
     this->mPos.y = actor->mPos.y;
     this->mPos.z = actor->mPos.z;
