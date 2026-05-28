@@ -91,20 +91,23 @@ typedef struct {
     unk16 mUnk_02;
     unk16 mUnk_04;
     unk16 mUnk_06;
-    STRUCT_PAD(0x08, 0x14);
+    unk16 mUnk_08;
+    STRUCT_PAD(0x0A, 0x14);
     unk16 mUnk_14;
-    STRUCT_PAD(0x16, 0x1C);
+    STRUCT_PAD(0x16, 0x18);
+    unk16 mUnk_18;
+    STRUCT_PAD(0x1A, 0x1C);
     unk16 mUnk_1C;
     STRUCT_PAD(0x1E, 0x28);
     unk16 mUnk_28;
     STRUCT_PAD(0x2A, 0x3C);
 } UnkStruct_ov031_020eeee8;
 
-extern "C" void func_01ffce1c(unk32, unk16 *);
-extern "C" void func_01ffcea0(unk32, UnkStruct_ov031_020eeee8 *);
+extern "C" void func_01ffce1c(unk16 *, unk16 *);
+extern "C" int func_01ffcea0(unk32, UnkStruct_ov031_020eeee8 *);
 extern "C" void func_01fff17c(UnkStruct_ov031_020eeee8 *, UnkStruct_027e0ce0 *, unk32);
 extern "C" void func_02018114(unk16 *, unk16);
-extern "C" void func_ov000_0208bc00();
+extern "C" void func_ov000_0208bc00(UnkStruct_027e0ce0 *, unk16, unk16 *);
 
 static PTMF<ActorHeart> data_ov031_02113d74[] = {
     ActorHeart::func_ov031_020ef2f8, ActorHeart::func_ov031_020ef334, ActorHeart::func_ov031_020ef3a0,
@@ -136,39 +139,57 @@ void ActorHeart::vfunc_20() {
 
     CALL_PTMF(PTMF<ActorHeart>, data_ov031_02113d74[this->mUnk_4C]);
 
+    bool t = true;
     if (this->mUnk_94 < this->mUnk_96) {
         this->mUnk_94 = this->mUnk_96;
         this->mUnk_94++;
+        t = false;
     } else {
-        this->func_ov000_020989e0();
+        t = true;
     }
+    if (t) {
+        this->func_ov000_020989e0();
 
-    func_ov000_0208bc00();
+        if (this->mUnk_4C == 1) {
+            func_ov000_0208bc00(data_027e0ce0, 0, &stack.mUnk_08);
 
-    func_01ffce1c(0, 0);
+            func_01ffce1c(&stack.mUnk_18, &stack.mUnk_08);
 
-    func_01ffcea0(0, &stack);
+            stack.mUnk_28 += stack.mUnk_14 + (stack.mUnk_14 << 1);
+            stack.mUnk_1C -= stack.mUnk_14;
 
-    this->func_ov031_020ef528();
+            func_01ffcea0(0, &stack);
 
-    data_027e0ce0->func_01fff1a4();
+            while (1) {
+                // should be lower
+                this->func_ov031_020ef528();
 
-    func_ov000_0208bc00();
+                if (data_027e0ce0->func_01fff1a4()) {
+                    func_ov000_0208bc00(data_027e0ce0, 0, &stack.mUnk_08);
 
-    func_01ffce1c(0, 0);
+                    func_01ffce1c(0, 0);
 
-    stack.mUnk_1C += stack.mUnk_14 + stack.mUnk_1C;
-    stack.mUnk_28 = stack.mUnk_14 + (stack.mUnk_14 << 1) + stack.mUnk_28;
-    func_01ffcea0(0, &stack);
+                    stack.mUnk_1C += stack.mUnk_14 + stack.mUnk_1C;
+                    stack.mUnk_28 = stack.mUnk_14 + (stack.mUnk_14 << 1) + stack.mUnk_28;
+                    if (func_01ffcea0(0, &stack) != 0x0) {
+                        break;
+                    }
+                }
+            }
+        }
 
-    if (this->mUnk_A0 != 0x666) {
-        unk16 var = this->mUnk_B4;
-        if (var != 0x8 && var == 0xC) {
-            this->mUnk_C0 = this->mUnk_A4;
-            this->mUnk_9C &= ~0x1000;
+        if (!(this->mUnk_A0 & 0x3ffff)) {
+            unk16 var = this->mUnk_B4;
+            if (var != 0x8 && var == 0xC) {
+                this->mUnk_C0 = this->mUnk_A4;
+                this->mUnk_9C &= ~0x1000;
+            }
         }
     }
-    this->func_ov031_020ef208();
+
+    if (this->mUnk_5C.mUnk_24 < 0) {
+        this->func_ov031_020ef208();
+    }
 
     this->mPrevPos.x = this->mPos.x;
     this->mPrevPos.y = this->mPos.y;
