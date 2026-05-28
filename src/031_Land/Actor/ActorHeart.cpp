@@ -18,6 +18,37 @@ public:
 };
 const UnkStruct_ov031_02113d64 data_ov031_02113d64(0, 0x800, 0, 0x800);
 
+typedef struct {
+    unk16 mUnk_00;
+    unk16 mUnk_02;
+    unk16 mUnk_04;
+    unk16 mUnk_06;
+    unk16 mUnk_08;
+    STRUCT_PAD(0x0A, 0x14);
+    unk16 mUnk_14;
+    STRUCT_PAD(0x16, 0x18);
+    unk16 mUnk_18;
+    STRUCT_PAD(0x1A, 0x1C);
+    unk16 mUnk_1C;
+    STRUCT_PAD(0x1E, 0x28);
+    unk16 mUnk_28;
+    STRUCT_PAD(0x2A, 0x3C);
+} UnkStruct_ov031_020eeee8;
+
+extern "C" void func_01ffce1c(unk16 *, unk16 *);
+extern "C" int func_01ffcea0(unk32, UnkStruct_ov031_020eeee8 *);
+extern "C" void func_01ffedac(u16 *, VecFx32 *);
+extern "C" void func_01fff17c(UnkStruct_ov031_020eeee8 *, UnkStruct_027e0ce0 *, unk32);
+extern "C" void func_02018114(unk16 *, unk16);
+extern "C" void func_02098388(void);
+extern "C" void func_02097bb8(void);
+extern "C" void func_ov000_0205c1f0(unk32 *, unk16);
+extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
+extern "C" void func_ov000_0208bc00(UnkStruct_027e0ce0 *, unk16, unk16 *);
+extern "C" void func_ov000_02098838();
+extern "C" void func_ov017_020bf99c(void);
+extern "C" void func_ov017_02097bec(Actor_9c *);
+
 ARM DECL_PROFILE(ActorProfileHeart);
 
 // func_ov031_020eed00
@@ -34,9 +65,6 @@ ARM ActorProfileHeart::ActorProfileHeart() :
     this->mUnk_04.size  = 0x400;
 }
 
-extern "C" void func_02098388(void);
-extern "C" void func_02097bb8(void);
-
 // extern UnkStruct_ov000_020b539c UnkStruct_020b539c;
 
 ARM void ActorHeart::func_ov031_020eed64(ActorParams *param_2, unk32 param_3, unk32 param_4) {
@@ -51,8 +79,6 @@ ARM void ActorHeart::func_ov031_020eed64(ActorParams *param_2, unk32 param_3, un
 }
 
 ARM void ActorHeart::func_ov031_020f0750() {}
-
-extern "C" void func_01ffedac(u16 *, VecFx32 *);
 
 // func_ov031_020eede0
 ARM ActorHeart::ActorHeart() :
@@ -85,29 +111,6 @@ ARM bool ActorHeart::vfunc_18(unk32 param1) {
     this->func_ov031_020ef4a8();
     return true;
 }
-
-typedef struct {
-    unk16 mUnk_00;
-    unk16 mUnk_02;
-    unk16 mUnk_04;
-    unk16 mUnk_06;
-    unk16 mUnk_08;
-    STRUCT_PAD(0x0A, 0x14);
-    unk16 mUnk_14;
-    STRUCT_PAD(0x16, 0x18);
-    unk16 mUnk_18;
-    STRUCT_PAD(0x1A, 0x1C);
-    unk16 mUnk_1C;
-    STRUCT_PAD(0x1E, 0x28);
-    unk16 mUnk_28;
-    STRUCT_PAD(0x2A, 0x3C);
-} UnkStruct_ov031_020eeee8;
-
-extern "C" void func_01ffce1c(unk16 *, unk16 *);
-extern "C" int func_01ffcea0(unk32, UnkStruct_ov031_020eeee8 *);
-extern "C" void func_01fff17c(UnkStruct_ov031_020eeee8 *, UnkStruct_027e0ce0 *, unk32);
-extern "C" void func_02018114(unk16 *, unk16);
-extern "C" void func_ov000_0208bc00(UnkStruct_027e0ce0 *, unk16, unk16 *);
 
 static PTMF<ActorHeart> data_ov031_02113d74[] = {
     ActorHeart::func_ov031_020ef2f8, ActorHeart::func_ov031_020ef334, ActorHeart::func_ov031_020ef3a0,
@@ -276,8 +279,6 @@ ARM void ActorHeart::func_ov031_020ef2ec() {
     this->mVel.y = 0x400;
 }
 
-extern "C" void func_ov000_02098838();
-
 ARM void ActorHeart::func_ov031_020ef2f8() {
     func_ov000_02098838();
     if (this->mVel.y > 0) {
@@ -316,10 +317,6 @@ ARM void ActorHeart::func_ov031_020ef3a0() {
     }
     this->func_ov031_020ef698();
 }
-
-extern "C" void func_ov017_020bf99c(void);
-// Actor_9c::func_ov000_02097bec() ?
-extern "C" void func_ov017_02097bec(Actor_9c *);
 
 ARM void ActorHeart::func_ov031_020ef3b8() {
     func_ov017_020bf99c();
@@ -419,9 +416,6 @@ ARM void ActorHeart::func_ov031_020ef570() {
         this->mVel.y = ivar2;
     }
 }
-
-extern "C" void func_ov000_0205c1f0(unk32 *, unk16);
-extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
 
 // func_ov031_020ef5e8
 ARM void ActorHeart::vfunc_2c(unk32 param1) {
