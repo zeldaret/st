@@ -235,7 +235,7 @@ ARM void ActorHeart::func_ov031_020ef208() {
     }
 
     if (var2) {
-        this->mFlags[0] |= 2;
+        SET_FLAG(this->mFlags, ActorFlag_2);
         return;
     }
     if ((u8) this->mUnk_BE == 0) {
@@ -255,9 +255,9 @@ ARM void ActorHeart::func_ov031_020ef208() {
     }
 
     if ((this->mUnk_50 % 8) < 4) {
-        this->mFlags[0] &= ~2;
+        UNSET_FLAG(this->mFlags, ActorFlag_2);
     } else {
-        this->mFlags[0] |= 0b10;
+        SET_FLAG(this->mFlags, ActorFlag_2);
     }
 
     if (this->mUnk_50 < this->mUnk_52) {
@@ -321,7 +321,7 @@ ARM void ActorHeart::func_ov031_020ef3b8() {
 
 ARM void ActorHeart::func_ov031_020ef3d0() {
     this->func_ov017_020bf9c8(gpActorManager->func_01fff3b4(this->mUnk_C0));
-    if ((this->mFlags[0] & 0x20) == 0) {
+    if (!GET_FLAG(this->mFlags, ActorFlag_5)) {
         return;
     }
     this->mVel.x = FLOAT_TO_Q20(0);
