@@ -71,7 +71,7 @@ ARM void ActorHeart::func_ov031_020eed64(ActorParams *param_2, unk32 param_3, un
     actorParams.mUnk_28     = param_4;
     actorParams.mUnk_2C     = param_3;
 
-    this->func_ov000_020973f4(&data_ov000_020b539c_eur, ActorId_Heart, (ActorParams *) &actorParams, 0);
+    this->func_ov000_020973f4(&data_ov000_020b539c_eur, ActorId_Heart, &actorParams, 0);
 }
 
 ARM void ActorHeart::func_ov031_020f0750() {}
