@@ -1,5 +1,10 @@
 #include "Actor/ActorArrow.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
+
+extern "C" void func_ov000_0207b6c0(void);
+
+extern UnkStruct_027e0ce0 *data_027e0ce0;
 
 ARM DECL_PROFILE(ActorProfileArrow);
 
@@ -14,8 +19,15 @@ ARM ActorProfileArrow::ActorProfileArrow() :
 
 ARM ActorArrow::ActorArrow() {}
 
-ARM void ActorArrow::func_ov031_020f1404(void) {}
-ARM void ActorArrow::func_ov031_020f1608(void) {}
+ARM unk32 ActorArrow::func_ov031_020f1404() {
+    return data_027e0ce0->mUnk_1C->mUnk_0C;
+}
+
+ARM ActorArrow *ActorArrow::func_ov031_020f1608() {
+    func_ov000_0207b6c0();
+    return this;
+}
+
 ARM void ActorArrow::func_ov031_020f173c(void) {}
 ARM void ActorArrow::func_ov031_020f1868(void) {}
 ARM void ActorArrow::func_ov031_020f1874(void) {}

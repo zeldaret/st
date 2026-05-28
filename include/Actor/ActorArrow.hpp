@@ -24,8 +24,8 @@ public:
 
     /* 4C */ virtual ~ActorArrow() override;
 
-    void func_ov031_020f1404(void);
-    void func_ov031_020f1608(void);
+    unk32 func_ov031_020f1404();
+    ActorArrow *func_ov031_020f1608();
     void func_ov031_020f173c(void);
     void func_ov031_020f1868(void);
     void func_ov031_020f1874(void);
