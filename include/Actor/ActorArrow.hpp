@@ -17,14 +17,14 @@ public:
     /* 0C */ virtual void vfunc_0c(unk32 param1) override;
 };
 
-class ActorUnkAROW : public Actor {
+class ActorArrow : public Actor {
 public:
     /* 00 (base) */
     /* 94 */
 
-    ActorUnkAROW();
+    ActorArrow();
 
-    /* 4C */ virtual ~ActorUnkAROW() override;
+    /* 4C */ virtual ~ActorArrow() override;
 
     void func_ov031_020f1404(void);
     void func_ov031_020f1608(void);
@@ -83,14 +83,14 @@ public:
     void func_ov031_020f3d4c(void);
 };
 
-class ActorProfileUnkAROW : public ActorProfile {
+class ActorProfileArrow : public ActorProfile {
 public:
     /* 00 (base) */
 
-    ActorProfileUnkAROW();
-    ~ActorProfileUnkAROW();
+    ActorProfileArrow();
+    ~ActorProfileArrow();
 
     /* 0C */ virtual Actor *Create();
 
-    static ActorProfileUnkAROW *GetProfile();
+    static ActorProfileArrow *GetProfile();
 };
