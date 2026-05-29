@@ -198,8 +198,12 @@ ARM unk32 ActorShotArrow::func_ov031_020f2270() {
     return (this->mUnk_5C.mParams[0] << 0x4) + 0x400;
 }
 
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f2280() {}
+ARM void ActorShotArrow::func_ov031_020f2280() {
+    // temp var needed
+    unk32 opposite_174 = -this->mUnk_174;
+    this->mUnk_174     = ((opposite_174 << 0x4) - opposite_174) >> 0x4;
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f229c() {}
 // non-matching
