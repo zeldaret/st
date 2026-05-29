@@ -23,7 +23,7 @@ ARM Actor *ActorProfileShotArrow::Create() {
 
 ARM ActorProfileShotArrow::ActorProfileShotArrow() :
     ActorProfile(ActorId_AROW) {
-    this->mUnk_04.Init(FLOAT_TO_Q20(0.2));
+    this->mUnk_04.Init(FLOAT_TO_Q20(0.2f));
 }
 
 // non-matching
@@ -81,7 +81,7 @@ ARM void ActorShotArrow::func_ov031_020f1a64() {
     fx16 value_func_020f2270 = this->func_ov031_020f2270();
     s16 cos_value            = COS((u16) this->mAngle);
     s16 sin_value            = SIN((u16) this->mAngle);
-    this->mVel.y             = FLOAT_TO_Q20(0.0);
+    this->mVel.y             = FLOAT_TO_Q20(0.0f);
 
     this->mVel.x = MUL_Q20(cos_value, value_func_020f2270);
     this->mVel.z = MUL_Q20(sin_value, value_func_020f2270);
@@ -91,9 +91,9 @@ ARM void ActorShotArrow::func_ov031_020f1a64() {
 ARM void ActorShotArrow::func_ov031_020f1b04() {}
 
 ARM void ActorShotArrow::func_ov031_020f1c24() {
-    this->mVel.x = FLOAT_TO_Q20(0.0);
-    this->mVel.y = FLOAT_TO_Q20(0.0);
-    this->mVel.z = FLOAT_TO_Q20(0.0);
+    this->mVel.x = FLOAT_TO_Q20(0.0f);
+    this->mVel.y = FLOAT_TO_Q20(0.0f);
+    this->mVel.z = FLOAT_TO_Q20(0.0f);
 
     this->func_ov031_020f2794(0x1);
     this->mUnk_174 = 0x1555;
@@ -106,9 +106,9 @@ ARM void ActorShotArrow::func_ov031_020f1c24() {
 ARM void ActorShotArrow::func_ov031_020f1c7c() {}
 
 ARM void ActorShotArrow::func_ov031_020f1dd4() {
-    this->mVel.x = FLOAT_TO_Q20(0.0);
-    this->mVel.y = FLOAT_TO_Q20(0.0);
-    this->mVel.z = FLOAT_TO_Q20(0.0);
+    this->mVel.x = FLOAT_TO_Q20(0.0f);
+    this->mVel.y = FLOAT_TO_Q20(0.0f);
+    this->mVel.z = FLOAT_TO_Q20(0.0f);
 
     this->func_ov031_020f2794(0x1);
     this->mUnk_174 = 0x1555;
@@ -155,7 +155,7 @@ ARM void ActorShotArrow::func_ov031_020f20bc() {
     }
 
     this->mUnk_176 += ~0x11C6;
-    this->mVel.y -= FLOAT_TO_Q20(0.002);
+    this->mVel.y -= FLOAT_TO_Q20(0.002f);
 
     func_ov000_02098838(this);
 
