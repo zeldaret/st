@@ -25,7 +25,7 @@ ARM MapObjectProfileDoorSwitch::MapObjectProfileDoorSwitch() :
 
 ARM MapObjectDoorSwitch::MapObjectDoorSwitch() :
     mUnk_094(0) {
-    this->mUnkPos = FLOAT_TO_Q20(0.0f);
+    this->mUnkPos = FLOAT_TO_FX32(0.0f);
 
 #if IS_JP
     this->mUnk_140 = false;
@@ -51,25 +51,25 @@ ARM bool MapObjectDoorSwitch::vfunc_00(void) {
     }
 #endif
 
-    this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_Q20(1.0f);
-    this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
-    this->mUnk_0F4.mUnk_0C.z = -FLOAT_TO_Q20(1.35f);
+    this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_FX32(1.0f);
+    this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
+    this->mUnk_0F4.mUnk_0C.z = -FLOAT_TO_FX32(1.35f);
 
-    this->mUnk_0F4.mUnk_18.x = FLOAT_TO_Q20(1.0f);
-    this->mUnk_0F4.mUnk_18.y = FLOAT_TO_Q20(2.4f);
-    this->mUnk_0F4.mUnk_18.z = FLOAT_TO_Q20(0.35f);
+    this->mUnk_0F4.mUnk_18.x = FLOAT_TO_FX32(1.0f);
+    this->mUnk_0F4.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+    this->mUnk_0F4.mUnk_18.z = FLOAT_TO_FX32(0.35f);
 
     this->mUnk_0F4.mUnk_04 &= ~0x01;
     this->mUnk_0F4.mUnk_08 = 0x7009;
 
 #if IS_JP
-    this->mUnk_118.mUnk_0C.x = -FLOAT_TO_Q20(0.35f);
-    this->mUnk_118.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
-    this->mUnk_118.mUnk_0C.z = -FLOAT_TO_Q20(1.0f);
+    this->mUnk_118.mUnk_0C.x = -FLOAT_TO_FX32(0.35f);
+    this->mUnk_118.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
+    this->mUnk_118.mUnk_0C.z = -FLOAT_TO_FX32(1.0f);
 
-    this->mUnk_118.mUnk_18.x = FLOAT_TO_Q20(0.35f);
-    this->mUnk_118.mUnk_18.y = FLOAT_TO_Q20(2.4f);
-    this->mUnk_118.mUnk_18.z = FLOAT_TO_Q20(1.0f);
+    this->mUnk_118.mUnk_18.x = FLOAT_TO_FX32(0.35f);
+    this->mUnk_118.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+    this->mUnk_118.mUnk_18.z = FLOAT_TO_FX32(1.0f);
 
     this->mUnk_118.mUnk_04 &= ~0x01;
     this->mUnk_118.mUnk_08 = 0x7009;
@@ -159,15 +159,15 @@ ARM void MapObjectDoorSwitch::vfunc_50(void) {
     u16 uVar1 = this->GetDirection();
 
     if (!this->IsOrientedVertically()) {
-        this->mUnkPos = FLOAT_TO_Q20(0.35f);
+        this->mUnkPos = FLOAT_TO_FX32(0.35f);
 
-        this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_Q20(1.0f);
-        this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
-        this->mUnk_0F4.mUnk_0C.z = FLOAT_TO_Q20(0.35f);
+        this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_FX32(1.0f);
+        this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
+        this->mUnk_0F4.mUnk_0C.z = FLOAT_TO_FX32(0.35f);
 
-        this->mUnk_0F4.mUnk_18.x = FLOAT_TO_Q20(1.0f);
-        this->mUnk_0F4.mUnk_18.y = FLOAT_TO_Q20(2.4f);
-        this->mUnk_0F4.mUnk_18.z = FLOAT_TO_Q20(0.35f);
+        this->mUnk_0F4.mUnk_18.x = FLOAT_TO_FX32(1.0f);
+        this->mUnk_0F4.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+        this->mUnk_0F4.mUnk_18.z = FLOAT_TO_FX32(0.35f);
         return;
     }
 
@@ -176,36 +176,36 @@ ARM void MapObjectDoorSwitch::vfunc_50(void) {
     }
 
     if (uVar1 == 3) {
-        this->mUnkPos = FLOAT_TO_Q20(0.35f);
+        this->mUnkPos = FLOAT_TO_FX32(0.35f);
 
-        this->mUnk_118.mUnk_0C.x = FLOAT_TO_Q20(0.35f);
-        this->mUnk_118.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
-        this->mUnk_118.mUnk_0C.z = -FLOAT_TO_Q20(1.0f);
+        this->mUnk_118.mUnk_0C.x = FLOAT_TO_FX32(0.35f);
+        this->mUnk_118.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
+        this->mUnk_118.mUnk_0C.z = -FLOAT_TO_FX32(1.0f);
 
-        this->mUnk_118.mUnk_18.x = FLOAT_TO_Q20(0.35f);
-        this->mUnk_118.mUnk_18.y = FLOAT_TO_Q20(2.4f);
-        this->mUnk_118.mUnk_18.z = FLOAT_TO_Q20(1.0f);
+        this->mUnk_118.mUnk_18.x = FLOAT_TO_FX32(0.35f);
+        this->mUnk_118.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+        this->mUnk_118.mUnk_18.z = FLOAT_TO_FX32(1.0f);
     } else {
-        this->mUnkPos = -FLOAT_TO_Q20(0.35f);
+        this->mUnkPos = -FLOAT_TO_FX32(0.35f);
 
-        this->mUnk_118.mUnk_0C.x = -FLOAT_TO_Q20(0.35f);
-        this->mUnk_118.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
-        this->mUnk_118.mUnk_0C.z = -FLOAT_TO_Q20(1.0f);
+        this->mUnk_118.mUnk_0C.x = -FLOAT_TO_FX32(0.35f);
+        this->mUnk_118.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
+        this->mUnk_118.mUnk_0C.z = -FLOAT_TO_FX32(1.0f);
 
-        this->mUnk_118.mUnk_18.x = -FLOAT_TO_Q20(0.35f);
-        this->mUnk_118.mUnk_18.y = FLOAT_TO_Q20(2.4f);
-        this->mUnk_118.mUnk_18.z = FLOAT_TO_Q20(1.0f);
+        this->mUnk_118.mUnk_18.x = -FLOAT_TO_FX32(0.35f);
+        this->mUnk_118.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+        this->mUnk_118.mUnk_18.z = FLOAT_TO_FX32(1.0f);
     }
 #else
-    this->mUnkPos = FLOAT_TO_Q20(0.35f);
+    this->mUnkPos = FLOAT_TO_FX32(0.35f);
 
-    this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_Q20(1.0f);
-    this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
-    this->mUnk_0F4.mUnk_0C.z = FLOAT_TO_Q20(0.35f);
+    this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_FX32(1.0f);
+    this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
+    this->mUnk_0F4.mUnk_0C.z = FLOAT_TO_FX32(0.35f);
 
-    this->mUnk_0F4.mUnk_18.x = FLOAT_TO_Q20(1.0f);
-    this->mUnk_0F4.mUnk_18.y = FLOAT_TO_Q20(2.4f);
-    this->mUnk_0F4.mUnk_18.z = FLOAT_TO_Q20(0.35f);
+    this->mUnk_0F4.mUnk_18.x = FLOAT_TO_FX32(1.0f);
+    this->mUnk_0F4.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+    this->mUnk_0F4.mUnk_18.z = FLOAT_TO_FX32(0.35f);
 #endif
 }
 
@@ -221,17 +221,17 @@ ARM void MapObjectDoorSwitch::vfunc_54(void) {
 
     if (!this->IsOrientedVertically()) {
         if (this->mUnk_80 > 0) {
-            func_01ff9218(&this->mUnkPos, -FLOAT_TO_Q20(1.35f), func_01ffb464(INT_TO_Q20(this->mUnk_80)));
+            func_01ff9218(&this->mUnkPos, -FLOAT_TO_FX32(1.35f), func_01ffb464(INT_TO_FX32(this->mUnk_80)));
         }
 
         fx32 temp_118            = this->mUnkPos;
-        this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_Q20(1.0f);
-        this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
+        this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_FX32(1.0f);
+        this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
         this->mUnk_0F4.mUnk_0C.z = temp_118;
 
-        this->mUnk_0F4.mUnk_18.x = FLOAT_TO_Q20(1.0f);
-        this->mUnk_0F4.mUnk_18.y = FLOAT_TO_Q20(2.4f);
-        this->mUnk_0F4.mUnk_18.z = FLOAT_TO_Q20(0.35f);
+        this->mUnk_0F4.mUnk_18.x = FLOAT_TO_FX32(1.0f);
+        this->mUnk_0F4.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+        this->mUnk_0F4.mUnk_18.z = FLOAT_TO_FX32(0.35f);
         return;
     }
 
@@ -243,42 +243,42 @@ ARM void MapObjectDoorSwitch::vfunc_54(void) {
 
     if (uVar1 == 3) {
         if (this->mUnk_80 > 0) {
-            func_01ff9218(&this->mUnkPos, -FLOAT_TO_Q20(0.35f), func_01ffb464(INT_TO_Q20(this->mUnk_80)));
+            func_01ff9218(&this->mUnkPos, -FLOAT_TO_FX32(0.35f), func_01ffb464(INT_TO_FX32(this->mUnk_80)));
         }
 
         this->mUnk_118.mUnk_0C.x = this->mUnkPos;
-        this->mUnk_118.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
-        this->mUnk_118.mUnk_0C.z = -FLOAT_TO_Q20(1.0f);
+        this->mUnk_118.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
+        this->mUnk_118.mUnk_0C.z = -FLOAT_TO_FX32(1.0f);
 
-        this->mUnk_118.mUnk_18.x = FLOAT_TO_Q20(0.35f);
-        this->mUnk_118.mUnk_18.y = FLOAT_TO_Q20(2.4f);
-        this->mUnk_118.mUnk_18.z = FLOAT_TO_Q20(1.0f);
+        this->mUnk_118.mUnk_18.x = FLOAT_TO_FX32(0.35f);
+        this->mUnk_118.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+        this->mUnk_118.mUnk_18.z = FLOAT_TO_FX32(1.0f);
     } else {
         if (this->mUnk_80 > 0) {
-            func_01ff9218(&this->mUnkPos, FLOAT_TO_Q20(0.35f), func_01ffb464(INT_TO_Q20(this->mUnk_80)));
+            func_01ff9218(&this->mUnkPos, FLOAT_TO_FX32(0.35f), func_01ffb464(INT_TO_FX32(this->mUnk_80)));
         }
 
-        this->mUnk_118.mUnk_0C.x = -FLOAT_TO_Q20(0.35f);
-        this->mUnk_118.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
-        this->mUnk_118.mUnk_0C.z = -FLOAT_TO_Q20(1.0f);
+        this->mUnk_118.mUnk_0C.x = -FLOAT_TO_FX32(0.35f);
+        this->mUnk_118.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
+        this->mUnk_118.mUnk_0C.z = -FLOAT_TO_FX32(1.0f);
 
         this->mUnk_118.mUnk_18.x = this->mUnkPos;
-        this->mUnk_118.mUnk_18.y = FLOAT_TO_Q20(2.4f);
-        this->mUnk_118.mUnk_18.z = FLOAT_TO_Q20(1.0f);
+        this->mUnk_118.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+        this->mUnk_118.mUnk_18.z = FLOAT_TO_FX32(1.0f);
     }
 #else
     if (this->mUnk_80 > 0) {
-        func_01ff9218(&this->mUnkPos, -FLOAT_TO_Q20(1.35f), func_01ffb464(INT_TO_Q20(this->mUnk_80)));
+        func_01ff9218(&this->mUnkPos, -FLOAT_TO_FX32(1.35f), func_01ffb464(INT_TO_FX32(this->mUnk_80)));
     }
 
     fx32 temp_118            = this->mUnkPos;
-    this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_Q20(1.0f);
-    this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
+    this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_FX32(1.0f);
+    this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
     this->mUnk_0F4.mUnk_0C.z = temp_118;
 
-    this->mUnk_0F4.mUnk_18.x = FLOAT_TO_Q20(1.0f);
-    this->mUnk_0F4.mUnk_18.y = FLOAT_TO_Q20(2.4f);
-    this->mUnk_0F4.mUnk_18.z = FLOAT_TO_Q20(0.35f);
+    this->mUnk_0F4.mUnk_18.x = FLOAT_TO_FX32(1.0f);
+    this->mUnk_0F4.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+    this->mUnk_0F4.mUnk_18.z = FLOAT_TO_FX32(0.35f);
 #endif
 }
 
@@ -289,32 +289,32 @@ ARM void MapObjectDoorSwitch::vfunc_58(void) {
     }
 
     if (!this->IsOrientedVertically()) {
-        this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_Q20(1.0f);
-        this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
-        this->mUnk_0F4.mUnk_0C.z = -FLOAT_TO_Q20(1.35f);
+        this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_FX32(1.0f);
+        this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
+        this->mUnk_0F4.mUnk_0C.z = -FLOAT_TO_FX32(1.35f);
 
-        this->mUnk_0F4.mUnk_18.x = FLOAT_TO_Q20(1.0f);
-        this->mUnk_0F4.mUnk_18.y = FLOAT_TO_Q20(2.4f);
-        this->mUnk_0F4.mUnk_18.z = FLOAT_TO_Q20(0.35f);
+        this->mUnk_0F4.mUnk_18.x = FLOAT_TO_FX32(1.0f);
+        this->mUnk_0F4.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+        this->mUnk_0F4.mUnk_18.z = FLOAT_TO_FX32(0.35f);
     } else {
         if (this->mUnk_141) {
-            this->mUnk_118.mUnk_0C.x = -FLOAT_TO_Q20(0.35f);
-            this->mUnk_118.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
-            this->mUnk_118.mUnk_0C.z = -FLOAT_TO_Q20(1.0f);
+            this->mUnk_118.mUnk_0C.x = -FLOAT_TO_FX32(0.35f);
+            this->mUnk_118.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
+            this->mUnk_118.mUnk_0C.z = -FLOAT_TO_FX32(1.0f);
 
-            this->mUnk_118.mUnk_18.x = FLOAT_TO_Q20(0.35f);
-            this->mUnk_118.mUnk_18.y = FLOAT_TO_Q20(2.4f);
-            this->mUnk_118.mUnk_18.z = FLOAT_TO_Q20(1.0f);
+            this->mUnk_118.mUnk_18.x = FLOAT_TO_FX32(0.35f);
+            this->mUnk_118.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+            this->mUnk_118.mUnk_18.z = FLOAT_TO_FX32(1.0f);
         }
     }
 #else
-    this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_Q20(1.0f);
-    this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
-    this->mUnk_0F4.mUnk_0C.z = -FLOAT_TO_Q20(1.35f);
+    this->mUnk_0F4.mUnk_0C.x = -FLOAT_TO_FX32(1.0f);
+    this->mUnk_0F4.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
+    this->mUnk_0F4.mUnk_0C.z = -FLOAT_TO_FX32(1.35f);
 
-    this->mUnk_0F4.mUnk_18.x = FLOAT_TO_Q20(1.0f);
-    this->mUnk_0F4.mUnk_18.y = FLOAT_TO_Q20(2.4f);
-    this->mUnk_0F4.mUnk_18.z = FLOAT_TO_Q20(0.35f);
+    this->mUnk_0F4.mUnk_18.x = FLOAT_TO_FX32(1.0f);
+    this->mUnk_0F4.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+    this->mUnk_0F4.mUnk_18.z = FLOAT_TO_FX32(0.35f);
 #endif
 }
 

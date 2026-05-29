@@ -282,7 +282,7 @@ ARM void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf168() {
         iVar4 += this->mUnk_7C[i];
     }
 
-    iVar4_2 = ROUND_Q20(func_01ffb428(iVar4 * 0x1000, 0xF000));
+    iVar4_2 = ROUND_FX32(func_01ffb428(iVar4 * 0x1000, 0xF000));
 
     if (iVar4_2 > 0) {
         this->mUnk_78[0] = 1;

@@ -74,11 +74,11 @@ ARM void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchCont
     this->mUnk_0024 = this->mUnk_0020;
     this->mUnk_0020 += 0x800;
 
-    G2S_SetBG1Offset(ROUND_Q20(this->mUnk_0020), 0);
-    G2S_SetBG2Offset(ROUND_Q20(this->mUnk_0020) + 0x100, 0);
-    G2S_SetBG3Offset(ROUND_Q20(this->mUnk_0020) / 2, 0);
+    G2S_SetBG1Offset(ROUND_FX32(this->mUnk_0020), 0);
+    G2S_SetBG2Offset(ROUND_FX32(this->mUnk_0020) + 0x100, 0);
+    G2S_SetBG3Offset(ROUND_FX32(this->mUnk_0020) / 2, 0);
 
-    if (!(ROUND_Q20(this->mUnk_0020) % 256) && (ROUND_Q20(this->mUnk_0024) % 256)) {
+    if (!(ROUND_FX32(this->mUnk_0020) % 256) && (ROUND_FX32(this->mUnk_0024) % 256)) {
         switch (this->mUnk_001C) {
             case 0:
                 this->mUnk_001C = 1;

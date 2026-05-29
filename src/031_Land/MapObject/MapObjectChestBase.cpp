@@ -107,23 +107,23 @@ ARM void MapObjectChestBase::vfunc_04() {
 
     pUVar5 = data_027e0cd8->mUnk_0C;
 
-    sp48.x = FLOAT_TO_Q20(0.0f);
-    sp48.y = FLOAT_TO_Q20(0.0f);
-    sp48.z = FLOAT_TO_Q20(0.0f);
+    sp48.x = FLOAT_TO_FX32(0.0f);
+    sp48.y = FLOAT_TO_FX32(0.0f);
+    sp48.z = FLOAT_TO_FX32(0.0f);
 
-    sp3C.x = FLOAT_TO_Q20(0.0f);
-    sp3C.y = FLOAT_TO_Q20(0.0f);
-    sp3C.z = FLOAT_TO_Q20(0.0f);
+    sp3C.x = FLOAT_TO_FX32(0.0f);
+    sp3C.y = FLOAT_TO_FX32(0.0f);
+    sp3C.z = FLOAT_TO_FX32(0.0f);
 
-    sp18.x = FLOAT_TO_Q20(0.5f);
-    sp18.y = FLOAT_TO_Q20(0.0f);
-    sp18.z = FLOAT_TO_Q20(0.5f);
+    sp18.x = FLOAT_TO_FX32(0.5f);
+    sp18.y = FLOAT_TO_FX32(0.0f);
+    sp18.z = FLOAT_TO_FX32(0.5f);
 
     func_01ffb714(&sp48, &sp18, &sp48);
 
-    spC.x = FLOAT_TO_Q20(0.5f);
-    spC.y = FLOAT_TO_Q20(1.0f);
-    spC.z = FLOAT_TO_Q20(0.5f);
+    spC.x = FLOAT_TO_FX32(0.5f);
+    spC.y = FLOAT_TO_FX32(1.0f);
+    spC.z = FLOAT_TO_FX32(0.5f);
 
     VecFx32_Add((VecFx32 *) &sp3C, &spC, (VecFx32 *) &sp3C);
 
@@ -136,12 +136,12 @@ ARM void MapObjectChestBase::vfunc_04() {
         temp_r0.x--;
 
         if (pUVar5->func_01ffedf4((Vec2b *) &temp_r0) > iVar2 || gpMapObjManager->func_01fff498(local_5e) != NULL) {
-            sp48.x -= FLOAT_TO_Q20(0.5f);
+            sp48.x -= FLOAT_TO_FX32(0.5f);
         }
 
         temp_r0.x += 3;
         if (pUVar5->func_01ffedf4((Vec2b *) &temp_r0) > iVar2 || gpMapObjManager->func_01fff498(local_5e) != NULL) {
-            sp3C.x += FLOAT_TO_Q20(0.5f);
+            sp3C.x += FLOAT_TO_FX32(0.5f);
         }
     } else {
         Vec2b temp_r0(this->mUnk_3A.x, this->mUnk_3A.y);
@@ -152,12 +152,12 @@ ARM void MapObjectChestBase::vfunc_04() {
         // local_5e.y += 2;
 
         if (gpMapObjManager->func_ov000_0209c3a8(&temp_r0) == MapObjectId_MiniBlocks) {
-            sp48.x -= FLOAT_TO_Q20(0.5f);
+            sp48.x -= FLOAT_TO_FX32(0.5f);
         }
 
         // temp_r0.x += 3;
         if (gpMapObjManager->func_ov000_0209c3a8(&temp_r0) == MapObjectId_MiniBlocks) {
-            sp3C.x += FLOAT_TO_Q20(0.5f);
+            sp3C.x += FLOAT_TO_FX32(0.5f);
         }
     }
 
@@ -165,7 +165,7 @@ ARM void MapObjectChestBase::vfunc_04() {
 
     if (gpMapObjManager->func_ov000_0209c3a8(&local_62) == MapObjectId_MiniBlocks &&
         iVar2 == pUVar5->func_01ffedf4(&local_62)) {
-        sp48.z -= FLOAT_TO_Q20(0.5f);
+        sp48.z -= FLOAT_TO_FX32(0.5f);
     }
 
     if (data_027e09a4->mUnk_00.mSceneIndex == SceneIndex_d_flame) {
@@ -176,7 +176,7 @@ ARM void MapObjectChestBase::vfunc_04() {
         local_64.y = local_66.y - 1;
 
         if (iVar2 > pUVar5->func_01ffedf4(&local_64) && iVar2 > pUVar5->func_01ffedf4(&local_66)) {
-            sp3C.y += FLOAT_TO_Q20(1.0f);
+            sp3C.y += FLOAT_TO_FX32(1.0f);
         }
     }
 

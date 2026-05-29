@@ -297,7 +297,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
                 this->mUnk_8B = 1;
             }
 
-            u16 result    = ROUND_Q20(MUL_Q20(func_01ffb428(0x1000 - this->mUnk_6C, 0x1000), INT_TO_Q20(this->mUnk_78)));
+            u16 result    = ROUND_FX32(MUL_Q20(func_01ffb428(0x1000 - this->mUnk_6C, 0x1000), INT_TO_Q20(this->mUnk_78)));
             this->mUnk_80 = result;
 
             if (this->mUnk_8A) {
@@ -706,12 +706,12 @@ ARM void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16
     *param3 = this->mUnk_14;
     iVar1   = this->mUnk_14 + DEG_TO_ANG(30);
     if (param1 != 0) {
-        local_24.x = MUL_Q20(SIN((u16) iVar1), 0x1666);
-        local_24.z = MUL_Q20(COS((u16) iVar1), 0x1666);
+        local_24.x = MUL_FX32(SIN((u16) iVar1), 0x1666);
+        local_24.z = MUL_FX32(COS((u16) iVar1), 0x1666);
         local_24.y = 0;
     } else {
-        local_24.x = MUL_Q20(SIN((u16) iVar1), 0x10CD);
-        local_24.z = MUL_Q20(COS((u16) iVar1), 0x10CD);
+        local_24.x = MUL_FX32(SIN((u16) iVar1), 0x10CD);
+        local_24.z = MUL_FX32(COS((u16) iVar1), 0x10CD);
         local_24.y = 0;
 
         *param3 += DEG_TO_ANG(180);
@@ -722,12 +722,12 @@ ARM void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16
     this->mUnk_5A = this->mUnk_14;
     iVar1         = this->mUnk_14 - DEG_TO_ANG(30);
     if (param1 != 0) {
-        local_30.x = MUL_Q20(SIN((u16) iVar1), 0x1666);
-        local_30.z = MUL_Q20(COS((u16) iVar1), 0x1666);
+        local_30.x = MUL_FX32(SIN((u16) iVar1), 0x1666);
+        local_30.z = MUL_FX32(COS((u16) iVar1), 0x1666);
         local_30.y = 0;
     } else {
-        local_30.x = MUL_Q20(SIN((u16) iVar1), 0x10CD);
-        local_30.z = MUL_Q20(COS((u16) iVar1), 0x10CD);
+        local_30.x = MUL_FX32(SIN((u16) iVar1), 0x10CD);
+        local_30.z = MUL_FX32(COS((u16) iVar1), 0x10CD);
         local_30.y = 0;
         this->mUnk_5A += DEG_TO_ANG(180);
     }
@@ -745,7 +745,7 @@ ARM void MapObjectDoorDangerSpawn::func_ov031_020fe5fc(VecFx32 *param1, MapObjec
         VecFx32 pos;
         VecFx32_Init(temp.x + piVar2->x, temp.y + piVar2->y, temp.z + piVar2->z, &pos);
 
-        func_01ff93c0(&pos, FLOAT_TO_Q20(0.5f));
+        func_01ff93c0(&pos, FLOAT_TO_FX32(0.5f));
         *param1 = pos;
     } else {
         VecFx32 *piVar4 = data_027e0ce0->func_01fff148(0);

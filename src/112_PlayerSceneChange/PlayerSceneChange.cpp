@@ -130,20 +130,20 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
 
             switch (this->mUnk_68) {
                 case 0x08:
-                    this->mUnk_70.x = temp_r8->x + MUL_Q20(data_02040964[0], FLOAT_TO_Q20(2.0f));
-                    this->mUnk_70.z = temp_r8->z + MUL_Q20(data_02040964[1], FLOAT_TO_Q20(2.0f));
+                    this->mUnk_70.x = temp_r8->x + MUL_FX32(data_02040964[0], FLOAT_TO_Q20(2.0f));
+                    this->mUnk_70.z = temp_r8->z + MUL_FX32(data_02040964[1], FLOAT_TO_Q20(2.0f));
                     break;
                 case 0x09:
-                    this->mUnk_70.x = temp_r8->x + MUL_Q20(data_0203e964[0], FLOAT_TO_Q20(2.0f));
-                    this->mUnk_70.z = temp_r8->z + MUL_Q20(data_0203e964[1], FLOAT_TO_Q20(2.0f));
+                    this->mUnk_70.x = temp_r8->x + MUL_FX32(data_0203e964[0], FLOAT_TO_Q20(2.0f));
+                    this->mUnk_70.z = temp_r8->z + MUL_FX32(data_0203e964[1], FLOAT_TO_Q20(2.0f));
                     break;
                 case 0x22:
-                    this->mUnk_70.x = temp_r8->x + MUL_Q20(data_02041964[0], FLOAT_TO_Q20(2.0f));
-                    this->mUnk_70.z = temp_r8->z + MUL_Q20(data_02041964[1], FLOAT_TO_Q20(2.0f));
+                    this->mUnk_70.x = temp_r8->x + MUL_FX32(data_02041964[0], FLOAT_TO_Q20(2.0f));
+                    this->mUnk_70.z = temp_r8->z + MUL_FX32(data_02041964[1], FLOAT_TO_Q20(2.0f));
                     break;
                 case 0x23:
-                    this->mUnk_70.x = temp_r8->x + MUL_Q20(data_0203f964[0], FLOAT_TO_Q20(2.0f));
-                    this->mUnk_70.z = temp_r8->z + MUL_Q20(data_0203f964[1], FLOAT_TO_Q20(2.0f));
+                    this->mUnk_70.x = temp_r8->x + MUL_FX32(data_0203f964[0], FLOAT_TO_Q20(2.0f));
+                    this->mUnk_70.z = temp_r8->z + MUL_FX32(data_0203f964[1], FLOAT_TO_Q20(2.0f));
                     break;
                 default:
                     if (this->mUnk_2C->mUnk_150 == 0x1000) {
@@ -163,13 +163,13 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
 
                                 switch (pDRTY->mUnk_CC) {
                                     case 1:
-                                        this->mUnk_AE = FLOAT_TO_Q20(-5.778f);
+                                        this->mUnk_AE = FLOAT_TO_FX32(-5.778f);
                                         break;
                                     case 2:
-                                        this->mUnk_AE = FLOAT_TO_Q20(5.7778f);
+                                        this->mUnk_AE = FLOAT_TO_FX32(5.7778f);
                                         break;
                                     default:
-                                        this->mUnk_AE = FLOAT_TO_Q20(-8.0002f);
+                                        this->mUnk_AE = FLOAT_TO_FX32(-8.0002f);
                                         break;
                                 }
                             }
@@ -253,13 +253,13 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                 case 0x21:
                 case 0x25:
                 case 0x33:
-                    this->mUnk_7C = FLOAT_TO_Q20(1 / 2);
+                    this->mUnk_7C = FLOAT_TO_FX32(1 / 2);
                     break;
                 case 0x19:
-                    this->mUnk_7C = FLOAT_TO_Q20(0.3f);
+                    this->mUnk_7C = FLOAT_TO_FX32(0.3f);
                     break;
                 default:
-                    this->mUnk_7C = FLOAT_TO_Q20(0.8f);
+                    this->mUnk_7C = FLOAT_TO_FX32(0.8f);
                     break;
             }
 
@@ -356,8 +356,8 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                 case 0x16:
                 case 0x1C:
                     pVec = this->mUnk_34;
-                    pVec->x += MUL_Q20(FLOAT_TO_Q20(-1.1003f), SIN2(pSinCosTable, this->mUnk_40->mUnk_00));
-                    pVec->z += MUL_Q20(FLOAT_TO_Q20(-1.1003f), COS2(pSinCosTable, this->mUnk_40->mUnk_00));
+                    pVec->x += MUL_FX32(FLOAT_TO_Q20(-1.1003f), SIN2(pSinCosTable, this->mUnk_40->mUnk_00));
+                    pVec->z += MUL_FX32(FLOAT_TO_Q20(-1.1003f), COS2(pSinCosTable, this->mUnk_40->mUnk_00));
                     break;
                 case 0x08:
                 case 0x09:
@@ -378,8 +378,8 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                 case 0x22:
                 case 0x23:
                     pVec = this->mUnk_34;
-                    pVec->x += MUL_Q20(FLOAT_TO_Q20(-1.9001f), SIN2(pSinCosTable, this->mUnk_40->mUnk_00));
-                    pVec->z += MUL_Q20(FLOAT_TO_Q20(-1.9001f), COS2(pSinCosTable, this->mUnk_40->mUnk_00));
+                    pVec->x += MUL_FX32(FLOAT_TO_Q20(-1.9001f), SIN2(pSinCosTable, this->mUnk_40->mUnk_00));
+                    pVec->z += MUL_FX32(FLOAT_TO_Q20(-1.9001f), COS2(pSinCosTable, this->mUnk_40->mUnk_00));
                     break;
                 case 0x0F:
                 case 0x10:
@@ -391,8 +391,8 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                 case 0x24:
                 case 0x25:
                     pVec = this->mUnk_34;
-                    pVec->x += MUL_Q20(FLOAT_TO_Q20(-1.0002f), SIN2(pSinCosTable, this->mUnk_40->mUnk_00));
-                    pVec->z += MUL_Q20(FLOAT_TO_Q20(-1.0002f), COS2(pSinCosTable, this->mUnk_40->mUnk_00));
+                    pVec->x += MUL_FX32(FLOAT_TO_Q20(-1.0002f), SIN2(pSinCosTable, this->mUnk_40->mUnk_00));
+                    pVec->z += MUL_FX32(FLOAT_TO_Q20(-1.0002f), COS2(pSinCosTable, this->mUnk_40->mUnk_00));
                     break;
                 default:
                     // pVec = this->mUnk_34;
@@ -447,10 +447,10 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                 case 0x1C:
                 case 0x33:
                 case 0x3B:
-                    this->mUnk_7C = FLOAT_TO_Q20(0.5f);
+                    this->mUnk_7C = FLOAT_TO_FX32(0.5f);
                     break;
                 default:
-                    this->mUnk_7C = FLOAT_TO_Q20(0.8f);
+                    this->mUnk_7C = FLOAT_TO_FX32(0.8f);
                     break;
             }
 
@@ -567,8 +567,8 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                         fx16 sin  = SIN2(data_0203feb0, value);
                         fx16 cos  = COS2(data_0203feb0, value);
 
-                        this->mUnk_70.x += MUL_Q20(sin, 0x19A);
-                        this->mUnk_70.z += MUL_Q20(cos, 0x19A);
+                        this->mUnk_70.x += MUL_FX32(sin, 0x19A);
+                        this->mUnk_70.z += MUL_FX32(cos, 0x19A);
                         break;
                     }
 
@@ -591,8 +591,8 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
 
                             fx16 sin = SIN2(data_0203feb0, this->mUnk_40->mUnk_00);
                             fx16 cos = COS2(data_0203feb0, this->mUnk_40->mUnk_00);
-                            this->mUnk_70.x += MUL_Q20(sin, 0x19A);
-                            this->mUnk_70.z += MUL_Q20(cos, 0x19A);
+                            this->mUnk_70.x += MUL_FX32(sin, 0x19A);
+                            this->mUnk_70.z += MUL_FX32(cos, 0x19A);
                         }
                         break;
                     default:
@@ -708,8 +708,8 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     this->mUnk_98 = -1;
                     fx16 sin      = SIN2(data_0203feb0, this->mUnk_40->mUnk_00);
                     fx16 cos      = COS2(data_0203feb0, this->mUnk_40->mUnk_00);
-                    this->mUnk_70.x += MUL_Q20(sin, FLOAT_TO_Q20(2.0f));
-                    this->mUnk_70.z += MUL_Q20(cos, FLOAT_TO_Q20(2.0f));
+                    this->mUnk_70.x += MUL_FX32(sin, FLOAT_TO_Q20(2.0f));
+                    this->mUnk_70.z += MUL_FX32(cos, FLOAT_TO_Q20(2.0f));
                     this->mUnk_AD = true;
                     return;
                 } else {
