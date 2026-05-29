@@ -29,8 +29,7 @@ public:
     /* 252 */ unk16 mUnk_252;
     /* 254 */ STRUCT_PAD(0x254, 0x258);
     /* 258 */ u16 mUnk_258;
-    /* 25A */ bool mUnk_25A;
-    /* 25B */ bool mUnk_25B;
+    /* 25A */ STRUCT_PAD(0x25A, 0x25C);
     /* 25C */ bool mUnk_25C;
     /* 25D */ bool mUnk_25D;
 
