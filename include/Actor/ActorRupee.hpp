@@ -19,19 +19,6 @@ enum RupeeId_ {
     /* 7 */ RupeeId_7,
 };
 
-class Actor_9c {
-public:
-    /* 00 (vtable) */
-    /* 04 */
-
-    /* 00 */ virtual void vfunc_00(); // corresponds to func_ov000_02097c14
-    /* 04 */ virtual void vfunc_04(); // corresponds to func_ov000_02097c20
-    /* 08 */
-
-    Actor_9c();
-    void func_ov000_02097bec();
-};
-
 class ActorRupee_c4 : public Actor_c4 {
 public:
     ActorRupee_c4(Actor *param1);
@@ -75,8 +62,6 @@ public:
     /* 20 */ virtual void vfunc_20() override;
     /* 2C */ virtual void vfunc_2c(unk32 param1) override;
     /* 4C */ virtual ~ActorRupee() override;
-
-    void func_ov017_020bf9c8(Actor *param1);
 
     void func_ov031_020e8d2c(VecFx32 *param1, u8 param2, unk32 param3, unk32 param4);
     void func_ov031_020e8fec();

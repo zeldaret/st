@@ -61,6 +61,8 @@ public:
     ActorProfile *GetProfileFromId(ActorId actorId);
 };
 
+class Actor_c4;
+
 typedef u32 ActorFlags;
 enum ActorFlag_ {
     ActorFlag_Alive       = FLAG(0, 0),
@@ -195,6 +197,7 @@ public:
     void func_ov000_02098a88(unk32 param1, unk32 param2);
 
     void func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+    void func_ov017_020bf9c8(Actor *param1);
 };
 
 struct Actor_c4_stack {
@@ -205,6 +208,19 @@ struct Actor_c4_stack {
 class Actor_c4_Base {
 public:
     Actor_c4_Base(void *param1, unk32 param2);
+};
+
+class Actor_9c {
+public:
+    /* 00 (vtable) */
+    /* 04 */
+
+    /* 00 */ virtual void vfunc_00(); // corresponds to func_ov000_02097c14
+    /* 04 */ virtual void vfunc_04(); // corresponds to func_ov000_02097c20
+    /* 08 */
+
+    Actor_9c();
+    void func_ov000_02097bec();
 };
 
 class Actor_c4 : public Actor_c4_Base {
