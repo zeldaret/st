@@ -77,7 +77,7 @@ ARM ActorHeart::ActorHeart() :
     mUnk_94(0),
     mUnk_96(6),
     mUnk_B8(0),
-    mUnk_BA(gRandom.ConditionalNext32(0) & 0x80000000 ? 0x666 : ~0x665),
+    mUnk_BA(gRandom.Next32(0) & 0x80000000 ? 0x666 : ~0x665),
     mUnk_BC(0),
     mUnk_BE(0),
     mUnk_C0(0),
