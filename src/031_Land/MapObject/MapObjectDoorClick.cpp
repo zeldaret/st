@@ -259,7 +259,7 @@ ARM void MapObjectDoorClick::vfunc_5C(unk32 param1, unk32 param2) {
         case 3:
             this->vfunc_7C();
 
-            u16 result    = ROUND_FX32(MUL_Q20(func_01ffb428(0x1000 - this->mUnk_6C, 0x1000), INT_TO_Q20(this->mUnk_78)));
+            u16 result    = ROUND_FX32(MUL_FX32(func_01ffb428(0x1000 - this->mUnk_6C, 0x1000), INT_TO_FX32(this->mUnk_78)));
             this->mUnk_80 = result;
 
             if (this->mUnk_8A) {

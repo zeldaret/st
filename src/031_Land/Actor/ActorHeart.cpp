@@ -401,7 +401,7 @@ ARM void ActorHeart::func_ov031_020ef570() {
     s16 sin_value = SIN((u16) this->mUnk_B8);
     s32 value     = ((sin_value >> 0x1F) << 6 | sin_value >> 0x1A) + (sin_value * 0x40 > ~0x800);
 
-    this->mVel.x = ROUND_Q20(sin_value * 0x40) + value;
+    this->mVel.x = ROUND_FX32(sin_value * 0x40) + value;
 
     if (this->mVel.y <= FLOAT_TO_FX32(-0.005)) {
         this->mVel.y = FLOAT_TO_FX32(-0.005);

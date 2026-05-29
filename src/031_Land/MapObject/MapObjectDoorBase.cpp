@@ -331,7 +331,7 @@ ARM void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
             this->mUnk_82 = 0;
             this->mUnk_84 = 0x0D;
             this->mUnk_80 =
-                (MUL_FX32(INT_TO_Q20(this->mUnk_7A), func_01ffb428(this->mUnk_6C, 0x1000)) + FLOAT_TO_FX32(0.5f)) >> 12;
+                (MUL_FX32(INT_TO_FX32(this->mUnk_7A), func_01ffb428(this->mUnk_6C, 0x1000)) + FLOAT_TO_FX32(0.5f)) >> 12;
 
             this->vfunc_50();
 
@@ -409,7 +409,7 @@ ARM void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
             this->vfunc_7C();
 
             this->mUnk_80 =
-                (MUL_FX32(INT_TO_Q20(this->mUnk_78), func_01ffb428(0x1000 - this->mUnk_6C, 0x1000)) + FLOAT_TO_FX32(0.5f)) >>
+                (MUL_FX32(INT_TO_FX32(this->mUnk_78), func_01ffb428(0x1000 - this->mUnk_6C, 0x1000)) + FLOAT_TO_FX32(0.5f)) >>
                 12;
 
             if (this->mUnk_8A) {

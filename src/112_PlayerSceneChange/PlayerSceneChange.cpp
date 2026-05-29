@@ -396,8 +396,8 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                     break;
                 default:
                     // pVec = this->mUnk_34;
-                    // pVec->x += MUL_Q20(FLOAT_TO_FX32(-1.7001f), SIN2(pSinCosTable, this->mUnk_40->mUnk_00));
-                    // pVec->z += MUL_Q20(FLOAT_TO_FX32(-1.7001f), COS2(pSinCosTable, this->mUnk_40->mUnk_00));
+                    // pVec->x += MUL_FX32(FLOAT_TO_FX32(-1.7001f), SIN2(pSinCosTable, this->mUnk_40->mUnk_00));
+                    // pVec->z += MUL_FX32(FLOAT_TO_FX32(-1.7001f), COS2(pSinCosTable, this->mUnk_40->mUnk_00));
                     break;
             }
 
