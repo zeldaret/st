@@ -117,7 +117,6 @@ ARM void ActorShotArrow::func_ov031_020f2010() {
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 }
 
-// non-matching
 ARM void ActorShotArrow::func_ov031_020f206c() {
     this->func_ov031_020f2794(0);
     this->mUnk_170 = 0x10;
