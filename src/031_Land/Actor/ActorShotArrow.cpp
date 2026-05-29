@@ -300,8 +300,19 @@ ARM void ActorShotArrow::func_ov031_020f3304() {
 ARM void ActorShotArrow::func_ov031_020f3310() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f33bc() {}
+
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f370c() {}
+ARM void ActorShotArrow::func_ov031_020f370c() {
+    this->mPos.y     = FLOAT_TO_Q20(0.0f);
+    this->mPos.z     = FLOAT_TO_Q20(0.0f);
+    this->mPrevPos.x = FLOAT_TO_Q20(0.0f);
+    this->mPrevPos.y = FLOAT_TO_Q20(0.0f);
+    this->mPrevPos.z = FLOAT_TO_Q20(0.0f);
+    this->mVel.x     = FLOAT_TO_Q20(0.0f);
+    this->mVel.y     = FLOAT_TO_Q20(0.0f);
+    this->mVel.z     = FLOAT_TO_Q20(0.0f);
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f374c() {}
 // non-matching
