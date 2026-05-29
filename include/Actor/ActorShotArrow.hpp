@@ -2,6 +2,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Unknown/Common.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -18,7 +19,10 @@ public:
 class ActorShotArrow : public Actor {
 public:
     /* 000 (base) */
-    /* 094 */ STRUCT_PAD(0x94, 0x168);
+    /* 094 */ STRUCT_PAD(0x94, 0xA0);
+    /* 0A0 */ UnkSystem4 mUnk_A0;
+    /* 100 */ UnkSystem5 mUnk_100;
+    /* 140 */ STRUCT_PAD(0x120, 0x168);
     /* 168 */ unk32 mUnk_168;
     /* 16C */ unk32 mUnk_16C;
     /* 170 */ unk16 mUnk_170;
@@ -35,6 +39,7 @@ public:
     /* 25A */ STRUCT_PAD(0x25A, 0x25C);
     /* 25C */ bool mUnk_25C;
     /* 25D */ bool mUnk_25D;
+    /* 25E */ bool mUnk_25E;
 
     ActorShotArrow();
 
@@ -66,7 +71,7 @@ public:
     unk32 func_ov031_020f2270();
     void func_ov031_020f2280();
     void func_ov031_020f229c();
-    void func_ov031_020f22d4();
+    void func_ov031_020f22d4(Mat3p *param_1, VecFx32 *param_2);
     void func_ov031_020f2310();
     void func_ov031_020f2654();
     unk16 func_ov031_020f2794(unk16 param_1);

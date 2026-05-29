@@ -27,7 +27,9 @@ ARM ActorProfileShotArrow::ActorProfileShotArrow() :
 }
 
 // non-matching
-ARM ActorShotArrow::ActorShotArrow() {}
+ARM ActorShotArrow::ActorShotArrow() :
+    mUnk_A0(UnkSystem4(0x0)),
+    mUnk_100(UnkSystem5(0x0, 0)) {}
 
 ARM unk32 ActorShotArrow::func_ov031_020f1404() {
     return data_027e0ce0->mUnk_1C->mUnk_0C;
@@ -208,8 +210,13 @@ ARM void ActorShotArrow::func_ov031_020f229c() {
     this->mUnk_168 = MUL_Q20(this->mUnk_168 + this->mUnk_16C, 0xccd);
 }
 
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f22d4() {}
+extern "C" void func_0200eab0(unk32, unk16, bool);
+
+ARM void ActorShotArrow::func_ov031_020f22d4(Mat3p *param_1, VecFx32 *param_2) {
+    func_0200eab0(this->mUnk_A0.mUnk_04, 0x0, this->mUnk_25E);
+    this->mUnk_A0.vfunc_14(param_1, param_2);
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f2310() {}
 // non-matching
