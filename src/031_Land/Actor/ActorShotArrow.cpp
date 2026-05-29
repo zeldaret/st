@@ -204,8 +204,10 @@ ARM void ActorShotArrow::func_ov031_020f2280() {
     this->mUnk_174     = ((opposite_174 << 0x4) - opposite_174) >> 0x4;
 }
 
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f229c() {}
+ARM void ActorShotArrow::func_ov031_020f229c() {
+    this->mUnk_168 = MUL_Q20(this->mUnk_168 + this->mUnk_16C, 0xccd);
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f22d4() {}
 // non-matching
