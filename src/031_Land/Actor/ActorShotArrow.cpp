@@ -321,8 +321,12 @@ ARM void ActorShotArrow::func_ov031_020f38b0() {}
 ARM void ActorShotArrow::func_ov031_020f3c38() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f3d04() {}
+
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f3d4c() {}
+ARM ActorShotArrow *ActorShotArrow::func_ov031_020f3d4c() {
+    operator delete(this);
+    return this;
+}
 
 ARM ActorShotArrow::~ActorShotArrow() {}
 ARM ActorProfileShotArrow::~ActorProfileShotArrow() {}

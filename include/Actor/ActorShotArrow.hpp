@@ -101,7 +101,7 @@ public:
     void func_ov031_020f38b0();
     void func_ov031_020f3c38();
     void func_ov031_020f3d04();
-    void func_ov031_020f3d4c();
+    ActorShotArrow *func_ov031_020f3d4c();
 };
 
 class ActorProfileShotArrow : public ActorProfile {
