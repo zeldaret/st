@@ -66,8 +66,25 @@ ARM void ActorShotArrow::func_ov031_020f18bc() {}
 ARM void ActorShotArrow::func_ov031_020f1958() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f195c() {}
+
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f1a64() {}
+ARM void ActorShotArrow::func_ov031_020f1a64() {
+    if (this->mUnk_5C.mParams[1] == 0x1 || this->mUnk_5C.mParams[1] == 0x4) {
+        this->mUnk_50 = 0x0;
+        this->mUnk_52 = 0x78;
+    } else {
+        this->mUnk_50 = 0x0;
+        this->mUnk_52 = 0x3C;
+    }
+    fx16 value_func_020f2270 = this->func_ov031_020f2270();
+    s16 cos_value            = COS((u16) this->mAngle);
+    s16 sin_value            = SIN((u16) this->mAngle);
+    this->mVel.y             = FLOAT_TO_Q20(0.0);
+
+    this->mVel.x = MUL_Q20(cos_value, value_func_020f2270);
+    this->mVel.z = MUL_Q20(sin_value, value_func_020f2270);
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f1b04() {}
 
@@ -177,7 +194,7 @@ ARM void ActorShotArrow::func_ov031_020f21dc() {
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f2214() {}
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f2270() {}
+ARM unk16 ActorShotArrow::func_ov031_020f2270() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f2280() {}
 // non-matching
