@@ -25,7 +25,9 @@ public:
     /* 172 */ STRUCT_PAD(0x172, 0x174);
     /* 174 */ unk16 mUnk_174;
     /* 176 */ unk16 mUnk_176;
-    /* 178 */ STRUCT_PAD(0x178, 0x250);
+    /* 178 */ STRUCT_PAD(0x178, 0x1C8);
+    /* 1C8 */ Actor *mUnk_1C8;
+    /* 1CC */ STRUCT_PAD(0x1CC, 0x250);
     /* 250 */ unk16 mUnk_250;
     /* 252 */ unk16 mUnk_252;
     /* 254 */ STRUCT_PAD(0x254, 0x258);
@@ -72,7 +74,7 @@ public:
     void func_ov031_020f2b8c();
     void func_ov031_020f2bbc();
     void func_ov031_020f2bec();
-    void func_ov031_020f2c08();
+    void func_ov031_020f2c08(unk16);
     void func_ov031_020f2cac();
     void func_ov031_020f2ef0();
     void func_ov031_020f2f5c();

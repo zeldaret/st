@@ -148,8 +148,21 @@ ARM void ActorShotArrow::func_ov031_020f2134() {
     data_027e09a8->func_ov000_02071b30(0x8D7A, &this->mPos, 0);
 }
 
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f2160() {}
+ARM void ActorShotArrow::func_ov031_020f2160() {
+    if (!this->mUnk_1C8 || !GET_FLAG(this->mUnk_1C8->mFlags, ActorFlag_Alive)) {
+        this->func_ov031_020f2c08(0x400);
+        return;
+    }
+    func_ov000_02098838(this);
+
+    VecFx32_Copy(&this->mPos, &this->mPrevPos);
+    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+
+    this->mUnk_16C = VecFx32_Length(&this->mVel);
+    this->func_ov031_020f2f9c();
+    this->func_ov031_020f2ef0();
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f21dc() {}
 // non-matching
@@ -177,7 +190,7 @@ ARM void ActorShotArrow::func_ov031_020f2bbc() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f2bec() {}
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f2c08() {}
+ARM void ActorShotArrow::func_ov031_020f2c08(unk16) {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f2cac() {}
 // non-matching
