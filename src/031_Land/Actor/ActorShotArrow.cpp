@@ -273,8 +273,11 @@ ARM void ActorShotArrow::func_ov031_020f3288() {}
 ARM void ActorShotArrow::func_ov031_020f32c4() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f32e0() {}
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f3304() {}
+
+ARM void ActorShotArrow::func_ov031_020f3304() {
+    *(fx16 *) &this->mPrevPos.z = FLOAT_TO_Q20(0.0f);
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f3310() {}
 // non-matching
