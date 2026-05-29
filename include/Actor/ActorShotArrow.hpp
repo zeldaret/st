@@ -22,7 +22,7 @@ public:
     /* 168 */ unk32 mUnk_168;
     /* 16C */ unk32 mUnk_16C;
     /* 170 */ unk16 mUnk_170;
-    /* 172 */ STRUCT_PAD(0x172, 0x174);
+    /* 172 */ unk16 mUnk_172;
     /* 174 */ unk16 mUnk_174;
     /* 176 */ unk16 mUnk_176;
     /* 178 */ STRUCT_PAD(0x178, 0x1C8);
