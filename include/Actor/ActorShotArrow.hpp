@@ -17,8 +17,16 @@ public:
 
 class ActorShotArrow : public Actor {
 public:
-    /* 00 (base) */
-    /* 94 */
+    /* 000 (base) */
+    /* 094 */ STRUCT_PAD(0x94, 0x16C);
+    /* 16C */ unk32 mUnk_16C;
+    /* 094 */ STRUCT_PAD(0x170, 0x174);
+    /* 174 */ unk16 mUnk_174;
+    /* 176 */ STRUCT_PAD(0x176, 0x250);
+    /* 250 */ unk16 mUnk_250;
+    /* 252 */ unk16 mUnk_252;
+    /* 254 */ STRUCT_PAD(0x254, 0x258);
+    /* 258 */ u16 mUnk_258;
 
     ActorShotArrow();
 
@@ -53,7 +61,7 @@ public:
     void func_ov031_020f22d4();
     void func_ov031_020f2310();
     void func_ov031_020f2654();
-    void func_ov031_020f2794();
+    unk16 func_ov031_020f2794(unk16 param_1);
     void func_ov031_020f28ac();
     void func_ov031_020f2b8c();
     void func_ov031_020f2bbc();
@@ -65,7 +73,7 @@ public:
     void func_ov031_020f2f9c();
     void func_ov031_020f3000();
     void func_ov031_020f311c();
-    void func_ov031_020f3210();
+    unk16 func_ov031_020f3210(unk16);
     void func_ov031_020f3258();
     void func_ov031_020f3288();
     void func_ov031_020f32c4();

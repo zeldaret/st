@@ -1,10 +1,13 @@
 #include "Actor/ActorShotArrow.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
 extern "C" void func_ov000_0207b6c0();
+extern "C" void func_ov000_02098838(Actor *);
 
 extern UnkStruct_027e0ce0 *data_027e0ce0;
+extern UnkStruct_027e09a8 *data_027e09a8;
 
 ARM DECL_PROFILE(ActorProfileShotArrow);
 
@@ -61,18 +64,54 @@ ARM void ActorShotArrow::func_ov031_020f195c() {}
 ARM void ActorShotArrow::func_ov031_020f1a64() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f1b04() {}
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f1c24() {}
+
+ARM void ActorShotArrow::func_ov031_020f1c24() {
+    this->mVel.x = FLOAT_TO_Q20(0.0);
+    this->mVel.y = FLOAT_TO_Q20(0.0);
+    this->mVel.z = FLOAT_TO_Q20(0.0);
+
+    this->func_ov031_020f2794(0x1);
+    this->mUnk_174 = 0x1555;
+
+    data_027e09a8->func_ov000_02071b30(0x8D7A, &this->mPos, 0);
+    this->mUnk_16C = 0;
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f1c7c() {}
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f1dd4() {}
+
+ARM void ActorShotArrow::func_ov031_020f1dd4() {
+    this->mVel.x = FLOAT_TO_Q20(0.0);
+    this->mVel.y = FLOAT_TO_Q20(0.0);
+    this->mVel.z = FLOAT_TO_Q20(0.0);
+
+    this->func_ov031_020f2794(0x1);
+    this->mUnk_174 = 0x1555;
+
+    data_027e09a8->func_ov000_02071b30(0x8D7A, &this->mPos, 0);
+    this->mUnk_16C = 0;
+    this->mUnk_50  = 0;
+    this->mUnk_52  = this->mUnk_258;
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f1e3c() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f1f54() {}
+
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f2010() {}
+ARM void ActorShotArrow::func_ov031_020f2010() {
+    if (this->func_ov031_020f3210(0x1) != 0) {
+        UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+    }
+
+    this->func_ov031_020f2280();
+    func_ov000_02098838(this);
+
+    VecFx32_Copy(&this->mPos, &this->mPrevPos);
+    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f206c() {}
 // non-matching
@@ -98,7 +137,7 @@ ARM void ActorShotArrow::func_ov031_020f2310() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f2654() {}
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f2794() {}
+ARM unk16 ActorShotArrow::func_ov031_020f2794(unk16 param_1) {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f28ac() {}
 // non-matching
@@ -122,7 +161,7 @@ ARM void ActorShotArrow::func_ov031_020f3000() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f311c() {}
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f3210() {}
+ARM unk16 ActorShotArrow::func_ov031_020f3210(unk16) {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f3258() {}
 // non-matching
