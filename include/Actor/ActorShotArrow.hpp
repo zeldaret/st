@@ -29,7 +29,9 @@ public:
     /* 172 */ unk16 mUnk_172;
     /* 174 */ unk16 mUnk_174;
     /* 176 */ unk16 mUnk_176;
-    /* 178 */ STRUCT_PAD(0x178, 0x1C8);
+    /* 178 */ STRUCT_PAD(0x178, 0x190);
+    /* 190 */ u16 mUnk_190;
+    /* 192 */ STRUCT_PAD(0x192, 0x1C8);
     /* 1C8 */ Actor *mUnk_1C8;
     /* 1CC */ STRUCT_PAD(0x1CC, 0x250);
     /* 250 */ unk16 mUnk_250;

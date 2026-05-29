@@ -225,8 +225,15 @@ ARM void ActorShotArrow::func_ov031_020f2654() {}
 ARM unk16 ActorShotArrow::func_ov031_020f2794(unk16 param_1) {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f28ac() {}
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f2b8c() {}
+
+ARM void ActorShotArrow::func_ov031_020f2b8c() {
+    if (!(this->mUnk_4C == 0x0 || this->mUnk_4C == 0x5)) {
+        return;
+    }
+    this->mUnk_190 |= 2;
+    this->func_ov031_020f1878(0x3);
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f2bbc() {}
 // non-matching
