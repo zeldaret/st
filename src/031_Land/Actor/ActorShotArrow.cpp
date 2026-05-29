@@ -3,11 +3,17 @@
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
-extern "C" void func_ov000_0207b6c0();
-extern "C" void func_ov000_02098838(Actor *);
+typedef struct {
+    /* 000 */ STRUCT_PAD(0x0, 0x25B);
+    /* 25B */ bool mUnk_25B;
+} UnkStruct_ov060_02163ff4;
 
 extern UnkStruct_027e0ce0 *data_027e0ce0;
 extern UnkStruct_027e09a8 *data_027e09a8;
+extern UnkStruct_ov060_02163ff4 data_ov060_02163ff4;
+
+extern "C" void func_ov000_0207b6c0();
+extern "C" void func_ov000_02098838(Actor *);
 
 ARM DECL_PROFILE(ActorProfileShotArrow);
 
@@ -99,7 +105,6 @@ ARM void ActorShotArrow::func_ov031_020f1e3c() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f1f54() {}
 
-// non-matching
 ARM void ActorShotArrow::func_ov031_020f2010() {
     if (this->func_ov031_020f3210(0x1) != 0) {
         UNSET_FLAG(this->mFlags, ActorFlag_Alive);
@@ -113,7 +118,19 @@ ARM void ActorShotArrow::func_ov031_020f2010() {
 }
 
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f206c() {}
+ARM void ActorShotArrow::func_ov031_020f206c() {
+    this->func_ov031_020f2794(0);
+    this->mUnk_170 = 0x10;
+    this->mUnk_16C = 0;
+    this->mUnk_168 = 0;
+
+    if (this->mUnk_25C != 0x0) {
+        if (this->mUnk_25D == 0x0) {
+            data_ov060_02163ff4.mUnk_25B = true;
+        }
+    }
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f20bc() {}
 // non-matching

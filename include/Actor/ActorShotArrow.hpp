@@ -18,15 +18,21 @@ public:
 class ActorShotArrow : public Actor {
 public:
     /* 000 (base) */
-    /* 094 */ STRUCT_PAD(0x94, 0x16C);
+    /* 094 */ STRUCT_PAD(0x94, 0x168);
+    /* 168 */ unk32 mUnk_168;
     /* 16C */ unk32 mUnk_16C;
-    /* 094 */ STRUCT_PAD(0x170, 0x174);
+    /* 170 */ unk16 mUnk_170;
+    /* 172 */ STRUCT_PAD(0x172, 0x174);
     /* 174 */ unk16 mUnk_174;
     /* 176 */ STRUCT_PAD(0x176, 0x250);
     /* 250 */ unk16 mUnk_250;
     /* 252 */ unk16 mUnk_252;
     /* 254 */ STRUCT_PAD(0x254, 0x258);
     /* 258 */ u16 mUnk_258;
+    /* 25A */ bool mUnk_25A;
+    /* 25B */ bool mUnk_25B;
+    /* 25C */ bool mUnk_25C;
+    /* 25D */ bool mUnk_25D;
 
     ActorShotArrow();
 
