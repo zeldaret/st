@@ -1266,6 +1266,7 @@ struct UnkDataStruct2 {
 };
 
 #define UnkDataStruct4_14_Unk_Max 20
+typedef u8 UnkArrayDataType1[UnkDataStruct4_14_Unk_Max][15];
 struct UnkDataStruct4_14 {
     /* 00 */ unk8 mUnk_00;
     /* 01 */ s8 mUnk_01;
@@ -1274,6 +1275,7 @@ struct UnkDataStruct4_14 {
 
     bool func_ov024_020d23bc() const;
     bool func_ov024_020d239c() const;
+    unk32 func_ov024_020d1c3c(VecFx32 *param1, unk32 param2) const;
 };
 
 struct UnkDataStruct4 {

@@ -90,8 +90,8 @@ public:
     /* 004 */ unk32 mUnk_004;
     /* 008 */ unk32 mUnk_008;
     /* 00C */ unk32 mUnk_00C;
-    /* 010 */ u8 mUnk_010[0x12C]; // TBD
-    /* 13C */ u8 mUnk_13C[0x12C]; // TBD
+    /* 010 */ UnkArrayDataType1 mUnk_010;
+    /* 13C */ UnkArrayDataType1 mUnk_13C;
     /* 268 */ u16 mUnk_268;
     /* 26A */ u8 mUnk_26A;
     /* 26B */ unk8 mUnk_26B;
@@ -108,8 +108,9 @@ public:
     void func_ov024_020d336c(UnkDataStruct4 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_ov024_020d340c();
     void func_ov024_020d341c(bool param1);
-    void func_ov024_020d3428(UnkDataStruct4 *param1, unk32 param2, unk32 param3);
-    void func_ov024_020d34a0(void *param1, u8 param2);
+    void func_ov024_020d3428(const UnkDataStruct4 *param1, unk32 param2, unk32 param3);
+    void func_ov024_020d34a0(UnkArrayDataType1 param1, u8 param2);
+    void func_ov024_020d351c(unk32 param1, unk32 param2, VecFx32 *param3, unk32 param4, unk32 param5);
 
     static u8 func_ov024_020d3158(SceneIndex sceneIndex);
 };
