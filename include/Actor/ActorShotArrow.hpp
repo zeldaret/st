@@ -63,7 +63,7 @@ public:
     void func_ov031_020f2160();
     void func_ov031_020f21dc();
     void func_ov031_020f2214();
-    unk16 func_ov031_020f2270();
+    unk32 func_ov031_020f2270();
     void func_ov031_020f2280();
     void func_ov031_020f229c();
     void func_ov031_020f22d4();
