@@ -1,6 +1,7 @@
 #include "Actor/ActorShotArrow.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
+#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
 typedef struct {
@@ -11,6 +12,7 @@ typedef struct {
 char data_ov031_02110b3c[0xF]  = "arrow";
 char data_ov031_02110b4c[0x13] = "arrow_s";
 
+extern UnkStruct_027e0cd8 *data_027e0cd8;
 extern UnkStruct_027e0ce0 *data_027e0ce0;
 extern UnkStruct_027e09a8 *data_027e09a8;
 extern UnkStruct_ov060_02163ff4 data_ov060_02163ff4;
@@ -98,8 +100,42 @@ ARM void ActorShotArrow::func_ov031_020f18bc() {
 
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f1958() {}
+
+static PTMF<ActorShotArrow> data_ov031_02114300[] = {ActorShotArrow::func_ov031_020f1b04, ActorShotArrow::func_ov031_020f1c7c,
+                                                     ActorShotArrow::func_ov031_020f1e3c, ActorShotArrow::func_ov031_020f2010,
+                                                     ActorShotArrow::func_ov031_020f20bc, ActorShotArrow::func_ov031_020f2160,
+                                                     ActorShotArrow::func_ov031_020f2214, ActorShotArrow::func_ov031_020f1958};
+
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f195c() {}
+ARM void ActorShotArrow::func_ov031_020f195c() {
+    this->mUnk_3C = (unk32) & this->mUnk_140;
+    CALL_PTMF(PTMF<ActorShotArrow>, data_ov031_02114300[this->mUnk_4C]);
+
+    if (this->mUnk_25A) {
+        if (this->mUnk_25E < 0x1F) {
+            if ((this->mUnk_25E = this->mUnk_25E + 0x4 & 0xFF) >= 0x1F) {
+                this->mUnk_25E = 0x1F;
+            }
+        }
+        this->mUnk_100.func_01ffc3b4();
+    }
+    if (func_ov000_0205aeac() != 0) {
+        bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
+        if (paramIs3Or4) {
+            if (this->mUnk_170 > 0x10) {
+                this->func_ov031_020f3000();
+            } else {
+                data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC);
+            }
+        }
+    }
+
+    if (this->mUnk_190 & 0x1) {
+        this->func_ov031_020f2cac(&this->mUnk_184, 0x1);
+        this->mUnk_178->func_ov031_020f3304();
+    }
+    this->func_ov031_020f229c();
+}
 
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f1a64() {
@@ -330,7 +366,7 @@ ARM void ActorShotArrow::func_ov031_020f2bec() {
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f2c08(unk16) {}
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f2cac() {}
+ARM void ActorShotArrow::func_ov031_020f2cac(unk32 *, unk32) {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f2ef0() {}
 
