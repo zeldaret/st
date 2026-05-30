@@ -99,7 +99,7 @@ public:
     void func_ov031_020f22d4(Mat3p *param_1, VecFx32 *param_2);
     void func_ov031_020f2310();
     void func_ov031_020f2654();
-    unk16 func_ov031_020f2794(unk16 param_1);
+    void func_ov031_020f2794(unk16 param_1);
     void func_ov031_020f28ac();
     void func_ov031_020f2b8c();
     void func_ov031_020f2bbc();

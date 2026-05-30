@@ -322,7 +322,7 @@ ARM void ActorShotArrow::func_ov031_020f2310() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f2654() {}
 
-ARM unk16 ActorShotArrow::func_ov031_020f2794(unk16 param_1) {
+ARM void ActorShotArrow::func_ov031_020f2794(unk16 param_1) {
     unk32 mUnk_50;
     unk32 arg;
     unk32 *var1;
