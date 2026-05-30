@@ -55,7 +55,31 @@ ARM ActorShotArrow *ActorShotArrow::func_ov031_020f1608() {
 }
 
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f173c() {}
+ARM bool ActorShotArrow::func_ov031_020f173c() {
+    fx32 cos_value = COS(this->mAngle);
+    fx32 sin_value = SIN(this->mAngle);
+
+    this->mVel.z   = MUL_Q20(sin_value, 1024);
+    this->mVel.x   = MUL_Q20(cos_value, 1024);
+    this->mUnk_2C  = 0;
+    this->mVel.y   = 0;
+    this->mUnk_16C = VecFx32_Length(&this->mVel);
+
+    if (func_ov000_0205aeac() != 0) {
+        bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
+        if (paramIs3Or4) {
+            VecFx32_Copy(&this->mPos, &this->mUnk_1DC);
+            data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_1DC);
+        }
+    }
+    this->func_ov031_020f1878(0x0);
+
+    this->mUnk_198 = (u32) this->mRef.index;
+    VecFx32_Copy(&this->mPos, &this->mUnk_1A0);
+    this->mUnk_1AC = 0x333;
+    this->mUnk_44  = 0x1F;
+    return true;
+}
 
 ARM void ActorShotArrow::func_ov031_020f1868() {
     this->mUnk_2C = 0;

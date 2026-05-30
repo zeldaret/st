@@ -103,7 +103,8 @@ public:
     void func_ov000_0208053c(u16 param1);
     void func_ov000_020803ec(u16 param1);
     unk32 func_ov000_020802ec(u16 param1, VecFx32 *param2);
-    void func_ov000_02080a78(unk32 *);
+    void func_ov000_02080a5c(VecFx32 *param1);
+    void func_ov000_02080a78(VecFx32 *param1);
 
     VecFx32 *func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1);
 };

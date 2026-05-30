@@ -35,7 +35,7 @@ public:
     /* 140 */ unk32 mUnk_140;
     /* 144 */ STRUCT_PAD(0x144, 0x168);
     /* 168 */ unk32 mUnk_168;
-    /* 16C */ unk32 mUnk_16C;
+    /* 16C */ fx32 mUnk_16C;
     /* 170 */ u16 mUnk_170;
     /* 172 */ u16 mUnk_172;
     /* 174 */ unk16 mUnk_174;
@@ -45,11 +45,16 @@ public:
     /* 180 */ unk32 mUnk_184;
     /* 184 */ STRUCT_PAD(0x188, 0x190);
     /* 190 */ u16 mUnk_190;
-    /* 192 */ STRUCT_PAD(0x192, 0x1C8);
+    /* 192 */ STRUCT_PAD(0x192, 0x198);
+    /* 198 */ u32 mUnk_198;
+    /* 19A */ STRUCT_PAD(0x19C, 0x1A0);
+    /* 1A0 */ VecFx32 mUnk_1A0;
+    /* 1AC */ unk32 mUnk_1AC;
+    /* 1B0 */ STRUCT_PAD(0x1B0, 0x1C8);
     /* 1C8 */ Actor *mUnk_1C8;
     /* 1CC */ STRUCT_PAD(0x1CC, 0x1DC);
-    /* 1DC */ unk32 mUnk_1DC;
-    /* 1E0 */ STRUCT_PAD(0x1E0, 0x250);
+    /* 1DC */ VecFx32 mUnk_1DC;
+    /* 1E0 */ STRUCT_PAD(0x1E8, 0x250);
     /* 250 */ unk16 mUnk_250;
     /* 252 */ unk16 mUnk_252;
     /* 254 */ STRUCT_PAD(0x254, 0x258);
@@ -67,7 +72,7 @@ public:
 
     UnkStruct_027e0ce0_1C_0C *func_ov031_020f1404();
     ActorShotArrow *func_ov031_020f1608();
-    void func_ov031_020f173c();
+    bool func_ov031_020f173c();
     void func_ov031_020f1868();
     void func_ov031_020f1874();
     void func_ov031_020f1878(s16 param_1);
