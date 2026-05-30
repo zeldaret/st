@@ -38,7 +38,8 @@ public:
     /* 252 */ unk16 mUnk_252;
     /* 254 */ STRUCT_PAD(0x254, 0x258);
     /* 258 */ u16 mUnk_258;
-    /* 25A */ STRUCT_PAD(0x25A, 0x25C);
+    /* 25A */ STRUCT_PAD(0x25A, 0x25B);
+    /* 25B */ bool mUnk_25B;
     /* 25C */ bool mUnk_25C;
     /* 25D */ bool mUnk_25D;
     /* 25E */ bool mUnk_25E;
@@ -88,7 +89,7 @@ public:
     void func_ov031_020f2f9c();
     void func_ov031_020f3000();
     void func_ov031_020f311c();
-    unk16 func_ov031_020f3210(unk16);
+    bool func_ov031_020f3210(u16);
     bool func_ov031_020f3258(u16 param_1);
     void func_ov031_020f3288();
     ActorShotArrow *func_ov031_020f32c4();
