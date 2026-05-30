@@ -197,8 +197,18 @@ ARM void ActorShotArrow::func_ov031_020f21dc() {
     }
 }
 
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f2214() {}
+ARM void ActorShotArrow::func_ov031_020f2214() {
+    if (this->mUnk_170 > (s16) 0x4) {
+        this->mUnk_170 -= 0x4;
+    } else {
+        UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+    }
+
+    func_ov000_02098838(this);
+
+    VecFx32_Copy(&this->mPos, &this->mPrevPos);
+    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+}
 
 ARM unk32 ActorShotArrow::func_ov031_020f2270() {
     return (this->mUnk_5C.mParams[0] << 0x4) + 0x400;
