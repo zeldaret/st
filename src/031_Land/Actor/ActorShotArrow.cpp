@@ -82,10 +82,10 @@ ARM void ActorShotArrow::func_ov031_020f1a64() {
         this->mUnk_50 = 0x0;
         this->mUnk_52 = 0x3C;
     }
-    fx16 value_func_020f2270 = this->func_ov031_020f2270();
-    s16 cos_value            = COS((u16) this->mAngle);
-    s16 sin_value            = SIN((u16) this->mAngle);
-    this->mVel.y             = FLOAT_TO_Q20(0.0f);
+    unk32 value_func_020f2270 = this->func_ov031_020f2270();
+    unk16 cos_value           = COS((u16) this->mAngle);
+    this->mVel.y              = FLOAT_TO_Q20(0.0f);
+    unk16 sin_value           = SIN((u16) this->mAngle);
 
     this->mVel.x = MUL_Q20(cos_value, value_func_020f2270);
     this->mVel.z = MUL_Q20(sin_value, value_func_020f2270);
@@ -292,7 +292,11 @@ ARM ActorShotArrow *ActorShotArrow::func_ov031_020f32c4() {
 }
 
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f32e0() {}
+ARM ActorShotArrow *ActorShotArrow::func_ov031_020f32e0() {
+    this->mPos.y = FLOAT_TO_Q20(0.0f);
+    func_ov000_0207bffc(this);
+    return this;
+}
 
 ARM void ActorShotArrow::func_ov031_020f3304() {
     *(fx16 *) &this->mPrevPos.z = FLOAT_TO_Q20(0.0f);
