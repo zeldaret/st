@@ -12,6 +12,8 @@ extern UnkStruct_027e0ce0 *data_027e0ce0;
 extern UnkStruct_027e09a8 *data_027e09a8;
 extern UnkStruct_ov060_02163ff4 data_ov060_02163ff4;
 
+extern "C" void func_01ff9638(VecFx32 *, s16);
+extern "C" void func_01ff95a0(VecFx32 *, unk16);
 extern "C" void func_0200eab0(unk32, unk16, bool);
 extern "C" void func_ov000_0207b6c0();
 extern "C" void func_ov000_0207bffc(Actor *);
@@ -319,8 +321,13 @@ ARM void ActorShotArrow::func_ov031_020f374c() {}
 ARM void ActorShotArrow::func_ov031_020f38b0() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f3c38() {}
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f3d04() {}
+
+ARM void ActorShotArrow::func_ov031_020f3d04(unk16 param_1) {
+    this->mUnk_176 = param_1;
+    func_01ff9638(&this->mVel, -this->mAngle);
+    func_01ff95a0(&this->mVel, param_1);
+    func_01ff9638(&this->mVel, this->mAngle);
+}
 
 // non-matching
 ARM ActorShotArrow *ActorShotArrow::func_ov031_020f3d4c() {

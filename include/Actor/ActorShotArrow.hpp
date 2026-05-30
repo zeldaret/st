@@ -100,7 +100,7 @@ public:
     void func_ov031_020f374c();
     void func_ov031_020f38b0();
     void func_ov031_020f3c38();
-    void func_ov031_020f3d04();
+    void func_ov031_020f3d04(unk16 param_1);
     ActorShotArrow *func_ov031_020f3d4c();
 };
 
