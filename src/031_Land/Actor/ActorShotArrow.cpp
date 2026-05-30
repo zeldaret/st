@@ -18,9 +18,10 @@ extern UnkStruct_ov060_02163ff4 data_ov060_02163ff4;
 extern "C" void func_01ff9638(VecFx32 *, s16);
 extern "C" void func_01ff95a0(VecFx32 *, unk16);
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" void func_0200eab0(unk32, unk16, bool);
+extern "C" void func_0200eab0(unk32, unk16, u8);
 extern "C" unk32 *func_0200f05c(u32, char *);
 extern "C" void func_ov000_02057c98(UnkSystem4 *param1, UnkSystem5 *param2);
+extern "C" unk32 func_ov000_0205aeac();
 extern "C" void func_ov000_0207b6c0();
 extern "C" void func_ov000_0207bffc(Actor *);
 extern "C" void func_ov000_02098838(Actor *);
@@ -72,8 +73,29 @@ ARM void ActorShotArrow::func_ov031_020f1878(s16 param_1) {
     CALL_PTMF(PTMF<ActorShotArrow>, data_ov031_021142c0[this->mUnk_4C]);
 }
 
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f18bc() {}
+ARM void ActorShotArrow::func_ov031_020f18bc() {
+    if (this->mUnk_25A) {
+        if (this->mUnk_25E < 0x1F) {
+            if ((this->mUnk_25E = this->mUnk_25E + 0x4 & 0xFF) >= 0x1F) {
+                this->mUnk_25E = 0x1F;
+            }
+        }
+        this->mUnk_100.func_01ffc3b4();
+    }
+    if (func_ov000_0205aeac() != 0) {
+        bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
+        if (paramIs3Or4) {
+            this->func_ov031_020f3000();
+        }
+    }
+
+    if (this->mUnk_4C != 0x1 && this->mUnk_4C != 0x2 && this->mUnk_4C != 0x3) {
+        return;
+    }
+    this->func_ov031_020f3258(0x1);
+    this->func_ov031_020f2280();
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f1958() {}
 // non-matching

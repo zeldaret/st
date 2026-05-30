@@ -51,7 +51,7 @@ public:
     /* 25B */ bool mUnk_25B;
     /* 25C */ bool mUnk_25C;
     /* 25D */ bool mUnk_25D;
-    /* 25E */ bool mUnk_25E;
+    /* 25E */ u8 mUnk_25E;
 
     ActorShotArrow();
 
