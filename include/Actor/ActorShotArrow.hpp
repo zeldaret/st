@@ -70,6 +70,10 @@ public:
     /* 00 */ virtual void func_ov000_0207b71c() override;
     /* 4C */ virtual ~ActorShotArrow() override;
 
+    unk32 func_ov000_0207e294(Cylinder *);
+    void func_ov000_02098838();
+    unk32 func_ov017_020beeec(unk32);
+
     UnkStruct_027e0ce0_1C_0C *func_ov031_020f1404();
     ActorShotArrow *func_ov031_020f1608();
     bool func_ov031_020f173c();

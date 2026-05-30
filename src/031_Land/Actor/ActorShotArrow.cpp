@@ -3,6 +3,7 @@
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "Unknown/UnkStruct_027e0d30.hpp"
 
 typedef struct {
     /* 000 */ STRUCT_PAD(0x0, 0x25B);
@@ -14,6 +15,7 @@ char data_ov031_02110b4c[0x13] = "arrow_s";
 
 extern UnkStruct_027e0cd8 *data_027e0cd8;
 extern UnkStruct_027e0ce0 *data_027e0ce0;
+extern UnkStruct_027e0d30 *data_027e0d30;
 extern UnkStruct_027e09a8 *data_027e09a8;
 extern UnkStruct_ov060_02163ff4 data_ov060_02163ff4;
 
@@ -26,7 +28,6 @@ extern "C" void func_ov000_02057c98(UnkSystem4 *param1, UnkSystem5 *param2);
 extern "C" unk32 func_ov000_0205aeac();
 extern "C" void func_ov000_0207b6c0();
 extern "C" void func_ov000_0207bffc(Actor *);
-extern "C" void func_ov000_02098838(Actor *);
 
 ARM DECL_PROFILE(ActorProfileShotArrow);
 
@@ -179,8 +180,52 @@ ARM void ActorShotArrow::func_ov031_020f1a64() {
     this->mVel.z = MUL_Q20(sin_value, value_func_020f2270);
 }
 
+struct UnkStruct_020f1b04 {
+    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ STRUCT_PAD(0x10, 0x1C);
+};
+
+extern "C" void func_01ffe6c4(unk32 *, unk32, VecFx32 *, VecFx32 *, s32, VecFx32 *);
+
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f1b04() {}
+ARM void ActorShotArrow::func_ov031_020f1b04() {
+    UnkStruct_020f1b04 stack;
+    bool var2;
+    if (this->mUnk_50 < this->mUnk_52) {
+        this->mUnk_50++;
+        var2 = false;
+    } else {
+        var2 = true;
+    }
+    if (var2) {
+        this->func_ov031_020f1878(0x6);
+        return;
+    }
+    this->func_ov031_020f28ac();
+    this->func_ov000_02098838();
+
+    VecFx32_Copy(&this->mPos, &this->mPrevPos);
+    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+
+    this->mUnk_16C = VecFx32_Length(&this->mVel);
+
+    if ((unk32) this->mUnk_5C.mParams[1] == 0x1 || this->mUnk_5C.mParams[1] == 0x4) {
+        data_027e0d30->func_ov031_020d9684(this->mUnk_5C.mParams[2], &this->mPos);
+    }
+
+    if (!this->func_ov017_020beeec(0x0)) {
+        stack.mUnk_0C = 0;
+        func_01ffe6c4(&stack.mUnk_0C, (unk32) this->mRef.index, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44,
+                      &this->mPos);
+        if (this->func_ov000_0207e294(this->mUnk_30)) {
+            UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+        }
+        return;
+    }
+
+    this->func_ov031_020f2ef0();
+}
 
 ARM void ActorShotArrow::func_ov031_020f1c24() {
     this->mVel.x = FLOAT_TO_Q20(0.0f);
@@ -222,7 +267,7 @@ ARM void ActorShotArrow::func_ov031_020f2010() {
     }
 
     this->func_ov031_020f2280();
-    func_ov000_02098838(this);
+    this->func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
@@ -249,7 +294,7 @@ ARM void ActorShotArrow::func_ov031_020f20bc() {
     this->mUnk_176 += ~0x11C6;
     this->mVel.y -= FLOAT_TO_Q20(0.002f);
 
-    func_ov000_02098838(this);
+    this->func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
@@ -264,7 +309,7 @@ ARM void ActorShotArrow::func_ov031_020f2160() {
         this->func_ov031_020f2c08(0x400);
         return;
     }
-    func_ov000_02098838(this);
+    this->func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
@@ -292,7 +337,7 @@ ARM void ActorShotArrow::func_ov031_020f2214() {
         UNSET_FLAG(this->mFlags, ActorFlag_Alive);
     }
 
-    func_ov000_02098838(this);
+    this->func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
