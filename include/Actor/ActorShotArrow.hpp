@@ -52,7 +52,9 @@ public:
     /* 1AC */ unk32 mUnk_1AC;
     /* 1B0 */ STRUCT_PAD(0x1B0, 0x1C8);
     /* 1C8 */ Actor *mUnk_1C8;
-    /* 1CC */ STRUCT_PAD(0x1CC, 0x1DC);
+    /* 1CC */ VecFx32 mUnk_1CC;
+    /* 1D8 */ s16 mUnk_1D8;
+    /* 1DA */ s16 mUnk_1DA;
     /* 1DC */ VecFx32 mUnk_1DC;
     /* 1E0 */ STRUCT_PAD(0x1E8, 0x250);
     /* 250 */ unk16 mUnk_250;

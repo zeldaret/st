@@ -239,8 +239,43 @@ ARM void ActorShotArrow::func_ov031_020f1c24() {
     this->mUnk_16C = 0;
 }
 
+extern "C" void func_01ff9638(VecFx32 *vec, s16 angle);
+
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f1c7c() {}
+ARM void ActorShotArrow::func_ov031_020f1c7c() {
+    if (this->func_ov031_020f3210(0x1)) {
+        UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+    }
+    Actor *targetActor = this->mUnk_1C8;
+    if (targetActor && GET_FLAG(targetActor->mFlags, ActorFlag_Alive) && !GET_FLAG(targetActor->mFlags, ActorFlag_18)) {
+
+        VecFx32_Copy(&targetActor->mPos, &this->mPos);
+
+        VecFx32 vec_fx32 = this->mUnk_1CC;
+        func_01ff9638(&vec_fx32, targetActor->mAngle - this->mUnk_1D8);
+
+        VecFx32_Add(&this->mPos, &vec_fx32, &this->mPos);
+
+        this->mAngle = targetActor->mAngle + (s16) (this->mUnk_1DA - this->mUnk_1D8);
+    } else {
+        this->func_ov031_020f2c08(0x400);
+    }
+    this->func_ov031_020f2280();
+    this->func_ov000_02098838();
+
+    VecFx32_Copy(&this->mPos, &this->mPrevPos);
+    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    if (!func_ov000_0205aeac()) {
+        return;
+    }
+
+    bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
+    if (!paramIs3Or4) {
+        return;
+    }
+
+    data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC);
+}
 
 ARM void ActorShotArrow::func_ov031_020f1dd4() {
     this->mVel.x = FLOAT_TO_Q20(0.0f);
