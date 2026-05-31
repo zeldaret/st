@@ -455,12 +455,12 @@ _ZN24AdventureModeManager_1B819func_ov024_020d14a8EP32AdventureModeManager_1B8_B
 _ZN24AdventureModeManager_1B819func_ov024_020d1564EPK32AdventureModeManager_1B8_Base_1CiPih kind:function(arm,size=0xb0) addr:0x020d2eb8
 _ZN24AdventureModeManager_1B819func_ov024_020d1614EPv kind:function(arm,size=0x24) addr:0x020d2f68
 _ZN24AdventureModeManager_1B819func_ov024_020d1638Ev kind:function(arm,size=0x20) addr:0x020d2f8c
-func_ov024_020d2fac kind:function(arm,size=0x24) addr:0x020d2fac
+_ZN24UnkStruct_ov024_020d86a06CreateEv kind:function(arm,size=0x24) addr:0x020d2fac
 _ZN24UnkStruct_ov024_020d86a019func_ov024_020d167cEv kind:function(arm,size=0x18) addr:0x020d2fd0
-func_ov024_020d2fe8 kind:function(arm,size=0x28) addr:0x020d2fe8
-_ZN19func_ov024_020d3010D1Ev kind:function(arm,size=0x14) addr:0x020d3010
-_ZN19func_ov024_020d3024D0Ev kind:function(arm,size=0x1c) addr:0x020d3024
-func_ov024_020d3040 kind:function(arm,size=0x10) addr:0x020d3040
+_ZN27UnkStruct_ov024_020d86a0_00C1EP24UnkStruct_ov024_020d86a0 kind:function(arm,size=0x28) addr:0x020d2fe8
+_ZN27UnkStruct_ov024_020d86a0_00D1Ev kind:function(arm,size=0x14) addr:0x020d3010
+_ZN27UnkStruct_ov024_020d86a0_00D0Ev kind:function(arm,size=0x1c) addr:0x020d3024
+_ZN27UnkStruct_ov024_020d86a0_008vfunc_0CEv kind:function(arm,size=0x10) addr:0x020d3040
 func_ov024_020d3050 kind:function(arm,size=0x80) addr:0x020d3050
 func_ov024_020d30d0 kind:function(arm,size=0x200) addr:0x020d30d0
 func_ov024_020d32d0 kind:function(thumb,size=0x44) addr:0x020d32d0
@@ -815,7 +815,7 @@ _ZTV18UnkStruct_020d8698 kind:data(any) addr:0x020d9a04
 data_ov024_020d8094 kind:data(byte[2]) addr:0x020d9a34 local
 data_ov024_020d8098 kind:data(any) addr:0x020d9a38 local
 data_ov024_020d8200 kind:data(any) addr:0x020d9ba0 local
-_ZTV19data_ov024_020d9ba8 kind:data(any) addr:0x020d9ba8
+_ZTV27UnkStruct_ov024_020d86a0_00 kind:data(any) addr:0x020d9ba8
 data_ov024_020d9bc4 kind:data(any) addr:0x020d9bc4
 data_ov024_020d9be4 kind:data(any) addr:0x020d9be4
 data_ov024_020d9bf0 kind:data(any) addr:0x020d9bf0
