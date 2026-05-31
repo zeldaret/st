@@ -48,9 +48,7 @@ extern "C" {
 #define CLAMP2(x, min, max) ((x) > (max) ? (max) : (x) >= (min) ? (x) : (min))
 
 #define INT_TO_FX32(n) ((s32) ((n) << FX32_SHIFT))
-#define FLOAT_TO_FX33(n) ((s32) (((n) * 8192 + 1) / 4))
 #define FLOAT_TO_FX32(n) ((s32) (((n) * 8192 + 1) / 2))
-#define FLOAT_TO_FX31(n) ((s32) (((n) * 8192 + 1)))
 #define ROUND_FX32(n) (((s32) (n) + 0x800) >> FX32_SHIFT)
 #define MUL_FX32(a, b) (fx32)((((s64) (a)) * ((s64) (b)) + 0x800) >> FX32_SHIFT)
 #define DIV_FX32(a, b) (((a) << FX32_SHIFT) / (b))
