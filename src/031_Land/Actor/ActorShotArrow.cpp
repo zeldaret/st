@@ -27,7 +27,6 @@ extern "C" unk32 *func_0200f05c(u32, char *);
 extern "C" void func_ov000_02057c98(UnkSystem4 *param1, UnkSystem5 *param2);
 extern "C" unk32 func_ov000_0205aeac();
 extern "C" void func_ov000_0207b6c0();
-extern "C" void func_ov000_0207bffc(Actor *);
 
 ARM DECL_PROFILE(ActorProfileShotArrow);
 
@@ -581,14 +580,14 @@ ARM void ActorShotArrow::func_ov031_020f3288() {}
 
 ARM ActorShotArrow *ActorShotArrow::func_ov031_020f32c4() {
     this->mPos.y = FLOAT_TO_Q20(0.0f);
-    func_ov000_0207bffc(this);
+    this->func_ov000_0207bffc();
     return this;
 }
 
 // non-matching
 ARM ActorShotArrow *ActorShotArrow::func_ov031_020f32e0() {
     this->mPos.y = FLOAT_TO_Q20(0.0f);
-    func_ov000_0207bffc(this);
+    this->func_ov000_0207bffc();
     return this;
 }
 
