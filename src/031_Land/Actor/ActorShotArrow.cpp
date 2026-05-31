@@ -329,8 +329,31 @@ ARM void ActorShotArrow::func_ov031_020f1e3c() {
     data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC);
 }
 
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f1f54() {}
+ARM void ActorShotArrow::func_ov031_020f1f54() {
+    this->mVel.x = FLOAT_TO_Q20(0.0f);
+    this->mVel.y = FLOAT_TO_Q20(0.0f);
+    this->mVel.z = FLOAT_TO_Q20(0.0f);
+    this->func_ov031_020f2794(0x1);
+
+    this->mUnk_174 = 0x1555;
+    data_027e09a8->func_ov000_02071b30(0x8D7A, &this->mPos, 0);
+    this->mUnk_16C = 0;
+
+    if (func_ov000_0205aeac()) {
+        bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
+        if (paramIs3Or4) {
+            data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC);
+        }
+    }
+
+    if (!this->mUnk_25C) {
+        return;
+    }
+
+    if (!this->mUnk_25D) {
+        data_ov060_02163ff4.mUnk_25B = true;
+    }
+}
 
 ARM void ActorShotArrow::func_ov031_020f2010() {
     if (this->func_ov031_020f3210(0x1) != 0) {
