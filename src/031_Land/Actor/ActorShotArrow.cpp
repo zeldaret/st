@@ -291,8 +291,44 @@ ARM void ActorShotArrow::func_ov031_020f1dd4() {
     this->mUnk_52  = this->mUnk_258;
 }
 
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f1e3c() {}
+ARM void ActorShotArrow::func_ov031_020f1e3c() {
+    if (!this->mUnk_25B) {
+        bool var2;
+        if (this->mUnk_50 < this->mUnk_52) {
+            this->mUnk_50++;
+            var2 = false;
+        } else {
+            var2 = true;
+        }
+        if (var2) {
+            if (this->func_ov031_020f3210(0x1)) {
+                UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+                return;
+            }
+            this->mUnk_52 = this->mUnk_258;
+            this->mUnk_50 = 0;
+        }
+    }
+
+    Actor *targetActor = this->mUnk_1C8;
+    if (!targetActor || !GET_FLAG(targetActor->mFlags, ActorFlag_Alive) || GET_FLAG(targetActor->mFlags, ActorFlag_18)) {
+        this->func_ov031_020f2c08(0x400);
+    }
+    this->func_ov031_020f2280();
+    this->func_ov000_02098838();
+
+    VecFx32_Copy(&this->mPos, &this->mPrevPos);
+    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    if (!func_ov000_0205aeac()) {
+        return;
+    }
+    bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
+    if (!paramIs3Or4) {
+        return;
+    }
+    data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC);
+}
+
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f1f54() {}
 
