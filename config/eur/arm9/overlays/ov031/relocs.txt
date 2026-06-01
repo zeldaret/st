@@ -2976,7 +2976,7 @@ from:0x020f3670 kind:arm_call to:0x01ffb6e4 module:itcm
 from:0x020f3680 kind:arm_call to:0x01ffb6e4 module:itcm
 from:0x020f36dc kind:arm_call to:0x020f2cac module:overlay(31)
 from:0x020f36f4 kind:load to:0x027e0ce8 module:dtcm
-from:0x020f3748 kind:load to:0x02114264 module:overlay(31) add:0x8
+from:0x020f3748 kind:load to:0x0211426c module:overlay(31)
 from:0x020f3778 kind:arm_call to:0x01ff93c0 module:itcm
 from:0x020f3798 kind:arm_call to:0x01ffb6e4 module:itcm
 from:0x020f37a8 kind:arm_call to:0x01ffb714 module:itcm
