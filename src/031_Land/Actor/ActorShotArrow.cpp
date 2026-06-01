@@ -36,7 +36,7 @@ ARM Actor *ActorProfileShotArrow::Create() {
 
 ARM ActorProfileShotArrow::ActorProfileShotArrow() :
     ActorProfile(ActorId_AROW) {
-    this->mUnk_04.Init(FLOAT_TO_Q20(0.2f));
+    this->mUnk_04.Init(FLOAT_TO_FX32(0.2f));
 }
 
 // non-matching
@@ -53,8 +53,8 @@ ARM bool ActorShotArrow::func_ov031_020f173c() {
     fx32 cos_value = COS(this->mAngle);
     fx32 sin_value = SIN(this->mAngle);
 
-    this->mVel.z   = MUL_Q20(sin_value, 1024);
-    this->mVel.x   = MUL_Q20(cos_value, 1024);
+    this->mVel.z   = MUL_FX32(sin_value, 1024);
+    this->mVel.x   = MUL_FX32(cos_value, 1024);
     this->mUnk_2C  = 0;
     this->mVel.y   = 0;
     this->mUnk_16C = VecFx32_Length(&this->mVel);
@@ -166,11 +166,11 @@ ARM void ActorShotArrow::func_ov031_020f1a64() {
     }
     unk32 value_func_020f2270 = this->func_ov031_020f2270();
     unk16 cos_value           = COS((u16) this->mAngle);
-    this->mVel.y              = FLOAT_TO_Q20(0.0f);
+    this->mVel.y              = FLOAT_TO_FX32(0.0f);
     unk16 sin_value           = SIN((u16) this->mAngle);
 
-    this->mVel.x = MUL_Q20(cos_value, value_func_020f2270);
-    this->mVel.z = MUL_Q20(sin_value, value_func_020f2270);
+    this->mVel.x = MUL_FX32(cos_value, value_func_020f2270);
+    this->mVel.z = MUL_FX32(sin_value, value_func_020f2270);
 }
 
 struct UnkStruct_020f1b04 {
@@ -221,9 +221,9 @@ ARM void ActorShotArrow::func_ov031_020f1b04() {
 }
 
 ARM void ActorShotArrow::func_ov031_020f1c24() {
-    this->mVel.x = FLOAT_TO_Q20(0.0f);
-    this->mVel.y = FLOAT_TO_Q20(0.0f);
-    this->mVel.z = FLOAT_TO_Q20(0.0f);
+    this->mVel.x = FLOAT_TO_FX32(0.0f);
+    this->mVel.y = FLOAT_TO_FX32(0.0f);
+    this->mVel.z = FLOAT_TO_FX32(0.0f);
 
     this->func_ov031_020f2794(0x1);
     this->mUnk_174 = 0x1555;
@@ -271,9 +271,9 @@ ARM void ActorShotArrow::func_ov031_020f1c7c() {
 }
 
 ARM void ActorShotArrow::func_ov031_020f1dd4() {
-    this->mVel.x = FLOAT_TO_Q20(0.0f);
-    this->mVel.y = FLOAT_TO_Q20(0.0f);
-    this->mVel.z = FLOAT_TO_Q20(0.0f);
+    this->mVel.x = FLOAT_TO_FX32(0.0f);
+    this->mVel.y = FLOAT_TO_FX32(0.0f);
+    this->mVel.z = FLOAT_TO_FX32(0.0f);
 
     this->func_ov031_020f2794(0x1);
     this->mUnk_174 = 0x1555;
@@ -323,9 +323,9 @@ ARM void ActorShotArrow::func_ov031_020f1e3c() {
 }
 
 ARM void ActorShotArrow::func_ov031_020f1f54() {
-    this->mVel.x = FLOAT_TO_Q20(0.0f);
-    this->mVel.y = FLOAT_TO_Q20(0.0f);
-    this->mVel.z = FLOAT_TO_Q20(0.0f);
+    this->mVel.x = FLOAT_TO_FX32(0.0f);
+    this->mVel.y = FLOAT_TO_FX32(0.0f);
+    this->mVel.z = FLOAT_TO_FX32(0.0f);
     this->func_ov031_020f2794(0x1);
 
     this->mUnk_174 = 0x1555;
@@ -379,7 +379,7 @@ ARM void ActorShotArrow::func_ov031_020f20bc() {
     }
 
     this->mUnk_176 += ~0x11C6;
-    this->mVel.y -= FLOAT_TO_Q20(0.002f);
+    this->mVel.y -= FLOAT_TO_FX32(0.002f);
 
     this->func_ov000_02098838();
 
@@ -441,7 +441,7 @@ ARM void ActorShotArrow::func_ov031_020f2280() {
 }
 
 ARM void ActorShotArrow::func_ov031_020f229c() {
-    this->mUnk_168 = MUL_Q20(this->mUnk_168 + this->mUnk_16C, 0xccd);
+    this->mUnk_168 = MUL_FX32(this->mUnk_168 + this->mUnk_16C, 0xccd);
 }
 
 ARM void ActorShotArrow::func_ov031_020f22d4(Mat3p *param_1, VecFx32 *param_2) {
@@ -573,20 +573,20 @@ ARM bool ActorShotArrow::func_ov031_020f3258(u16 param_1) {
 ARM void ActorShotArrow::func_ov031_020f3288() {}
 
 ARM ActorShotArrow *ActorShotArrow::func_ov031_020f32c4() {
-    this->mPos.y = FLOAT_TO_Q20(0.0f);
+    this->mPos.y = FLOAT_TO_FX32(0.0f);
     this->func_ov000_0207bffc();
     return this;
 }
 
 // non-matching
 ARM ActorShotArrow *ActorShotArrow::func_ov031_020f32e0() {
-    this->mPos.y = FLOAT_TO_Q20(0.0f);
+    this->mPos.y = FLOAT_TO_FX32(0.0f);
     this->func_ov000_0207bffc();
     return this;
 }
 
 ARM void ActorShotArrow::func_ov031_020f3304() {
-    *(fx16 *) &this->mPrevPos.z = FLOAT_TO_Q20(0.0f);
+    *(fx16 *) &this->mPrevPos.z = FLOAT_TO_FX32(0.0f);
 }
 
 // non-matching
