@@ -48,12 +48,6 @@ ARM UnkStruct_027e0ce0_1C_0C *ActorShotArrow::func_ov031_020f1404() {
     return data_027e0ce0->mUnk_1C->mUnk_0C;
 }
 
-// non-matching ?
-ARM ActorShotArrow *ActorShotArrow::func_ov031_020f1608() {
-    func_ov000_0207b6c0();
-    return this;
-}
-
 // non-matching
 ARM bool ActorShotArrow::func_ov031_020f173c() {
     fx32 cos_value = COS(this->mAngle);
@@ -600,27 +594,17 @@ ARM void ActorShotArrow::func_ov031_020f3310() {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f33bc() {}
 
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f370c(unk32 param_1) {
-    this->mPos.y     = FLOAT_TO_Q20(0.0f);
-    this->mPos.z     = FLOAT_TO_Q20(0.0f);
-    this->mPrevPos.x = FLOAT_TO_Q20(0.0f);
-    this->mPrevPos.y = FLOAT_TO_Q20(0.0f);
-    this->mPrevPos.z = FLOAT_TO_Q20(0.0f);
-    this->mVel.x     = FLOAT_TO_Q20(0.0f);
-    this->mVel.y     = FLOAT_TO_Q20(0.0f);
-    this->mVel.z     = FLOAT_TO_Q20(0.0f);
-    this->mAngle     = 0;
-    this->mUnk_2C    = param_1;
-    this->mUnk_30    = nullptr;
+ARM ActorShotArrow_194::ActorShotArrow_194(ActorShotArrow *param_1) {
+    this->mUnk_2C = param_1;
+    this->mUnk_30 = 0;
 }
 
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f374c() {}
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f38b0() {}
+ARM void ActorShotArrow_194::vfunc_10() {}
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f3c38() {}
+ARM void ActorShotArrow_194::vfunc_0C() {}
 
 ARM void ActorShotArrow::func_ov031_020f3d04(unk16 param_1) {
     this->mUnk_176 = param_1;
@@ -629,11 +613,7 @@ ARM void ActorShotArrow::func_ov031_020f3d04(unk16 param_1) {
     func_01ff9638(&this->mVel, this->mAngle);
 }
 
-// non-matching
-ARM ActorShotArrow *ActorShotArrow::func_ov031_020f3d4c() {
-    operator delete(this);
-    return this;
-}
+ARM ActorShotArrow_194::~ActorShotArrow_194() {}
 
 ARM ActorShotArrow::~ActorShotArrow() {}
 ARM ActorProfileShotArrow::~ActorProfileShotArrow() {}

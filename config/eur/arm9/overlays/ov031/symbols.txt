@@ -875,7 +875,7 @@ _ZN21ActorProfileShotArrow6CreateEv kind:function(arm,size=0x24) addr:0x020f139c
 _ZN21ActorProfileShotArrowC1Ev kind:function(arm,size=0x44) addr:0x020f13c0
 _ZN14ActorShotArrow19func_ov031_020f1404Ev kind:function(arm,size=0x18) addr:0x020f1404
 _ZN14ActorShotArrowC1Ev kind:function(arm,size=0x1ec) addr:0x020f141c
-_ZN14ActorShotArrow19func_ov031_020f1608Ev kind:function(arm,size=0x14) addr:0x020f1608
+_ZN18ActorShotArrow_194D1Ev kind:function(arm,size=0x14) addr:0x020f1608
 _ZN14ActorShotArrowD1Ev kind:function(arm,size=0x8c) addr:0x020f161c
 _ZN14ActorShotArrowD0Ev kind:function(arm,size=0x94) addr:0x020f16a8
 _ZN14ActorShotArrow19func_ov031_020f173cEv kind:function(arm,size=0x12c) addr:0x020f173c
@@ -925,12 +925,12 @@ _ZN14ActorShotArrow19func_ov031_020f32e0Ev kind:function(arm,size=0x24) addr:0x0
 _ZN14ActorShotArrow19func_ov031_020f3304Ev kind:function(arm,size=0xc) addr:0x020f3304
 _ZN14ActorShotArrow19func_ov031_020f3310Ev kind:function(arm,size=0xac) addr:0x020f3310
 _ZN14ActorShotArrow19func_ov031_020f33bcEv kind:function(arm,size=0x350) addr:0x020f33bc
-_ZN14ActorShotArrow19func_ov031_020f370cEi kind:function(arm,size=0x40) addr:0x020f370c
+_ZN18ActorShotArrow_194C2EP14ActorShotArrow kind:function(arm,size=0x40) addr:0x020f370c
 _ZN14ActorShotArrow19func_ov031_020f374cEv kind:function(arm,size=0x164) addr:0x020f374c
-_ZN14ActorShotArrow19func_ov031_020f38b0Ev kind:function(arm,size=0x388) addr:0x020f38b0
-_ZN14ActorShotArrow19func_ov031_020f3c38Ev kind:function(arm,size=0xcc) addr:0x020f3c38
+_ZN18ActorShotArrow_1948vfunc_10Ev kind:function(arm,size=0x388) addr:0x020f38b0
+_ZN18ActorShotArrow_1948vfunc_0CEv kind:function(arm,size=0xcc) addr:0x020f3c38
 _ZN14ActorShotArrow19func_ov031_020f3d04Es kind:function(arm,size=0x48) addr:0x020f3d04
-_ZN14ActorShotArrow19func_ov031_020f3d4cEv kind:function(arm,size=0x1c) addr:0x020f3d4c
+_ZN18ActorShotArrow_194D0Ev kind:function(arm,size=0x1c) addr:0x020f3d4c
 _ZN21ActorProfileShotArrowD1Ev kind:function(arm,size=0x14) addr:0x020f3d68
 _ZN19ActorProfileUnkATTG10GetProfileEv kind:function(arm,size=0xc) addr:0x020f3d7c
 _ZN19ActorProfileUnkATTG6CreateEv kind:function(arm,size=0x24) addr:0x020f3d88
@@ -2347,9 +2347,9 @@ _ZTV19data_ov031_02114150 kind:data(any) addr:0x02114150
 data_ov031_02114174 kind:data(any) addr:0x02114174
 data_ov031_021141b4 kind:data(any) addr:0x021141b4
 _ZTV19data_ov031_021141f4 kind:data(any) addr:0x021141f4
-data_ov031_0211426c kind:data(any) addr:0x0211426c
+_ZTV18ActorShotArrow_194 kind:data(any) addr:0x02114264
 data_ov031_02114288 kind:data(any) addr:0x02114288
-_ZTV19data_ov031_0211429c kind:data(any) addr:0x0211429c
+_ZTV21ActorProfileShotArrow kind:data(any) addr:0x02114294
 data_ov031_021142c0 kind:data(any) addr:0x021142c0
 data_ov031_02114300 kind:data(any) addr:0x02114300
 _ZTV19data_ov031_02114340 kind:data(any) addr:0x02114340

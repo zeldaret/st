@@ -7,6 +7,8 @@
 #include "global.h"
 #include "types.h"
 
+class ActorShotArrow;
+
 class ActorShotArrow_c4 : public Actor_c4 {
 public:
     ActorShotArrow_c4(Actor *param1);
@@ -14,7 +16,58 @@ public:
     /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+};
+
+class ActorShotArrow_194_Base {
+public:
+    /* 00 (vtable) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk16 mUnk_08;
+    /* 08 */ unk16 mUnk_0A;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ unk32 mUnk_28;
+    /* 2C */
+
+    ActorShotArrow_194_Base() {
+        this->mUnk_04 = 0;
+        this->mUnk_08 = 0;
+        this->mUnk_0C = 0;
+        this->mUnk_10 = 0;
+        this->mUnk_14 = 0;
+        this->mUnk_18 = 0;
+        this->mUnk_1C = 0;
+        this->mUnk_20 = 0;
+        this->mUnk_24 = 0;
+        this->mUnk_28 = 0;
+    }
+
+    // data_ov000_020b27c8
+    /* 00 */ virtual ~ActorShotArrow_194_Base();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10();
+};
+
+class ActorShotArrow_194 : public ActorShotArrow_194_Base {
+public:
+    /* 00 (base) */
+    /* 2C */ ActorShotArrow *mUnk_2C;
+    /* 30 */ unk32 mUnk_30;
+    /* 34 */
+
+    ActorShotArrow_194(ActorShotArrow *param1);
+
+    // data_ov031_0211426c
+    /* 00 */ virtual ~ActorShotArrow_194() override; // func_ov031_020f1608 (D1) & func_ov031_020f3d4c (D0)
+    /* 0C */ virtual void vfunc_0C() override;       // func_ov031_020f3c38
+    /* 10 */ virtual void vfunc_10() override;       // func_ov031_020f38b0
 };
 
 class UnkClass_ActorShotArrow_94 {
@@ -45,7 +98,8 @@ public:
     /* 180 */ unk32 mUnk_184;
     /* 184 */ STRUCT_PAD(0x188, 0x190);
     /* 190 */ u16 mUnk_190;
-    /* 192 */ STRUCT_PAD(0x192, 0x198);
+    /* 192 */ STRUCT_PAD(0x192, 0x194);
+    /* 194 */ ActorShotArrow_194 *mUnk_194;
     /* 198 */ u32 mUnk_198;
     /* 19A */ STRUCT_PAD(0x19C, 0x1A0);
     /* 1A0 */ VecFx32 mUnk_1A0;
@@ -126,7 +180,6 @@ public:
     void func_ov031_020f3304();
     void func_ov031_020f3310();
     void func_ov031_020f33bc();
-    void func_ov031_020f370c(unk32 param_1);
     void func_ov031_020f374c();
     void func_ov031_020f38b0();
     void func_ov031_020f3c38();
