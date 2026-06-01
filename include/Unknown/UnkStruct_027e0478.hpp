@@ -4,7 +4,7 @@
 #include "Player/Player.hpp"
 #include "Player/TouchControl.hpp"
 #include "global.h"
-#include <nitro/pad.h>
+#include "input.hpp"
 
 // incomplete
 class UnkStruct_027e0478 {
@@ -30,6 +30,7 @@ public:
     /* 110 */ void *mUnk_110;
     /* 114 */ STRUCT_PAD(0x114, 0x154);
     /* 154 */ PlayerActor mPlayer;
+    /* 328 */
 };
 
 extern UnkStruct_027e0478 data_027e0478;

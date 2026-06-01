@@ -81,10 +81,11 @@ struct UnkStruct_func_ov000_020702a8 {
 };
 
 struct CourseRoomEntry {
-    u8 roomIndex;
-    u8 mapPaintIndex;
-    u8 unk_02;
-    u8 unk_03;
+    /* 00 */ u8 roomIndex;
+    /* 01 */ u8 mapPaintIndex;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+    /* 04 */
 };
 
 struct CourseEntry {

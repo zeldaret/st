@@ -138,8 +138,19 @@ src/024_MainGame/UnkStruct_ov024_020d86a0_024.cpp:
     .text       start:0x020d2fac end:0x020d3050
     .data       start:0x020d9ba8 end:0x020d9bc4
 
+src/024_MainGame/PlayerActor_A0_38_024.cpp:
+    .text       start:0x020d3050 end:0x020d334c
+    .init       start:0x020d9410 end:0x020d9458
+    .ctor       start:0x020d94e4 end:0x020d94e8
+    .data       start:0x020d9bc4 end:0x020d9bf4
+
+src/024_MainGame/CreditsEndingType.cpp:
+    complete
+    .text       start:0x020d334c end:0x020d336c
+    .data       start:0x020d9bf4 end:0x020d9bf8
+
 src/024_MainGame/code_020d16fc_024.cpp:
-    .text       start:0x020d3050 end:0x020d3e28
+    .text       start:0x020d336c end:0x020d3e28
 
 src/024_MainGame/code_020d24d4_024.cpp:
     .text       start:0x020d3e28 end:0x020d4aac

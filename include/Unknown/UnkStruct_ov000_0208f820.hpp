@@ -26,8 +26,10 @@ public:
 class UnkStruct_PlayerGet_64 {
 public:
     /* 00 */ unk32 mUnk_00;
-    /* 3C */ unk32 mUnk_3C;
-    /* 40 */ u16 mUnk_40;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ u16 mUnk_08;
+    /* 0A */ unk16 mUnk_0A;
+    /* 0C */
 
     UnkStruct_PlayerGet_64(void *param1, unk32 param2);
     ~UnkStruct_PlayerGet_64();
@@ -48,12 +50,10 @@ public:
 class UnkStruct_ov000_0208f820_28_98 {
 public:
     /* 00 */ unk32 mUnk_00;
-    /* 00 */ unk32 mUnk_04;
-    /* 00 */ u16 mUnk_08;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ u16 mUnk_08;
     /* 0C */ STRUCT_PAD(0x0C, 0x38);
     /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
-    // /* 3C */ unk32 mUnk_3C;
-    // /* 40 */ u16 mUnk_40;
 
     void func_ov093_0216f76c(VecFx32 *param1, unk32 param2);
 };

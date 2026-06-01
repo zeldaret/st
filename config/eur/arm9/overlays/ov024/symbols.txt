@@ -461,13 +461,13 @@ _ZN27UnkStruct_ov024_020d86a0_00C1EP24UnkStruct_ov024_020d86a0 kind:function(arm
 _ZN27UnkStruct_ov024_020d86a0_00D1Ev kind:function(arm,size=0x14) addr:0x020d16bc
 _ZN27UnkStruct_ov024_020d86a0_00D0Ev kind:function(arm,size=0x1c) addr:0x020d16d0
 _ZN27UnkStruct_ov024_020d86a0_008vfunc_0CEv kind:function(arm,size=0x10) addr:0x020d16ec
-func_ov024_020d16fc kind:function(arm,size=0x80) addr:0x020d16fc
-func_ov024_020d177c kind:function(arm,size=0x200) addr:0x020d177c
-func_ov024_020d197c kind:function(thumb,size=0x44) addr:0x020d197c
-func_ov024_020d19c0 kind:function(thumb,size=0x16) addr:0x020d19c0
-func_ov024_020d19d8 kind:function(thumb,size=0x20) addr:0x020d19d8
-func_ov024_020d19f8 kind:function(arm,size=0x10) addr:0x020d19f8
-func_ov024_020d1a08 kind:function(arm,size=0x10) addr:0x020d1a08
+_ZN20PlayerActor_A0_38_048vfunc_00Ev kind:function(arm,size=0x80) addr:0x020d16fc
+_ZN20PlayerActor_A0_38_188vfunc_00Ev kind:function(arm,size=0x200) addr:0x020d177c
+_ZN17PlayerActor_A0_38C1Ev kind:function(thumb,size=0x44) addr:0x020d197c
+_ZN17PlayerActor_A0_38D1Ev kind:function(thumb,size=0x16) addr:0x020d19c0
+_ZN17PlayerActor_A0_3819func_ov024_020d19d8Ev kind:function(thumb,size=0x20) addr:0x020d19d8
+_Z20SetCreditsEndingTypes kind:function(arm,size=0x10) addr:0x020d19f8
+_Z20GetCreditsEndingTypev kind:function(arm,size=0x10) addr:0x020d1a08
 func_ov024_020d1a18 kind:function(arm,size=0x10) addr:0x020d1a18
 func_ov024_020d1a28 kind:function(arm,size=0x70) addr:0x020d1a28
 func_ov024_020d1a98 kind:function(arm,size=0x20) addr:0x020d1a98
@@ -763,14 +763,14 @@ data_ov024_020d78c2 kind:data(any) addr:0x020d78c2 ambiguous
 __sinit_ov024_020d78e8 kind:function(arm,size=0x38) addr:0x020d78e8
 __sinit_UnkStruct_027e0cf8_00_0C_024.cpp kind:function(arm,size=0x120) addr:0x020d7920 local
 __sinit_AdventureModeManager_1B8_Base_024.cpp kind:function(arm,size=0x2c) addr:0x020d7a40 local
-__sinit_ov024_020d7a6c kind:function(arm,size=0x48) addr:0x020d7a6c
+__sinit_PlayerActor_A0_38_024.cpp kind:function(arm,size=0x48) addr:0x020d7a6c
 __sinit_ov024_020d7ab4 kind:function(arm,size=0x18) addr:0x020d7ab4
 __sinit_ov024_020d7acc kind:function(arm,size=0x18) addr:0x020d7acc
 __sinit_ActorUnkOBPC.cpp kind:function(arm,size=0x50) addr:0x020d7ae4
 .p__sinit_ov024_020d78e8 kind:data(word) addr:0x020d7b34
 .p__sinit_UnkStruct_027e0cf8_00_0C_024.cpp kind:data(word) addr:0x020d7b38
 .p__sinit_AdventureModeManager_1B8_Base_024.cpp kind:data(word) addr:0x020d7b3c local
-.p__sinit_ov024_020d7a6c kind:data(word) addr:0x020d7b40
+.p__sinit_PlayerActor_A0_38_024.cpp kind:data(word) addr:0x020d7b40
 .p__sinit_ov024_020d7ab4 kind:data(word) addr:0x020d7b44
 .p__sinit_ov024_020d7acc kind:data(word) addr:0x020d7b48
 .p__sinit_ActorUnkOBPC.cpp kind:data(word) addr:0x020d7b4c
@@ -816,10 +816,15 @@ data_ov024_020d8094 kind:data(byte[2]) addr:0x020d8094 local
 data_ov024_020d8098 kind:data(any) addr:0x020d8098 local
 data_ov024_020d8200 kind:data(any) addr:0x020d8200 local
 _ZTV27UnkStruct_ov024_020d86a0_00 kind:data(any) addr:0x020d8208
-data_ov024_020d8224 kind:data(any) addr:0x020d8224
-data_ov024_020d8244 kind:data(any) addr:0x020d8244
-data_ov024_020d8250 kind:data(any) addr:0x020d8250
-data_ov024_020d8254 kind:data(any) addr:0x020d8254
+data_ov024_020d8224 kind:data(byte[4]) addr:0x020d8224
+data_ov024_020d8228 kind:data(byte[4]) addr:0x020d8228
+data_ov024_020d822c kind:data(byte[4]) addr:0x020d822c
+data_ov024_020d8230 kind:data(byte[4]) addr:0x020d8230
+data_ov024_020d8234 kind:data(byte[4]) addr:0x020d8234
+data_ov024_020d8238 kind:data(byte[4]) addr:0x020d8238
+_ZTV20PlayerActor_A0_38_18 kind:data(any) addr:0x020d823c
+_ZTV20PlayerActor_A0_38_04 kind:data(any) addr:0x020d8248
+sCreditsEndingType kind:data(byte[2]) addr:0x020d8254 local
 data_ov024_020d8260 kind:data(any) addr:0x020d8260
 data_ov024_020d8268 kind:data(any) addr:0x020d8268
 data_ov024_020d8270 kind:data(any) addr:0x020d8270

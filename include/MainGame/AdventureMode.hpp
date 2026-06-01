@@ -1010,3 +1010,6 @@ public:
     static void func_ov001_020c0874();
     static void func_ov001_020c0894();
 };
+
+extern void SetCreditsEndingType(u16 value);
+extern u16 GetCreditsEndingType();

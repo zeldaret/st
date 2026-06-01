@@ -1989,8 +1989,8 @@ from:0x020d32cc kind:load to:0x0203feb0 module:main
 from:0x020d32e0 kind:thumb_call_arm to:0x02016614 module:main
 from:0x020d32f4 kind:thumb_call_arm to:0x02016614 module:main
 from:0x020d3302 kind:thumb_call to:0x020d332c module:overlay(24)
-from:0x020d330c kind:load to:0x020d9bf0 module:overlay(24)
-from:0x020d3310 kind:load to:0x020d9be4 module:overlay(24)
+from:0x020d330c kind:load to:0x020d9be8 add:0x8 module:overlay(24)
+from:0x020d3310 kind:load to:0x020d9bdc add:0x8 module:overlay(24)
 from:0x020d331a kind:thumb_call_arm to:0x0201662c module:main
 from:0x020d3322 kind:thumb_call_arm to:0x0201662c module:main
 from:0x020d3358 kind:load to:0x020d9bf4 module:overlay(24)

@@ -466,9 +466,9 @@ ARM PlayerGet::~PlayerGet() {
 
     UnkStruct_ov000_0208f820_28_98 *pUnk_28_98 = this->mUnk_28->mUnk_98;
     if (pUnk_28_98 != 0) {
-        pUnk_28_98->mUnk_38.mUnk_40 &= ~0x10;
+        pUnk_28_98->mUnk_38.mUnk_08 &= ~0x10;
 
-        if (pUnk_28_98->mUnk_38.mUnk_40 == 0) {
+        if (pUnk_28_98->mUnk_38.mUnk_08 == 0) {
             // real?
             pUnk_28_98->mUnk_38.~UnkStruct_PlayerGet_64();
         }
@@ -677,7 +677,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
                 if (pUnk28_98 != NULL) {
                     UnkStruct_PlayerGet_64 *ptr = &pUnk28_98->mUnk_38;
-                    ptr->mUnk_40 |= 0x10;
+                    ptr->mUnk_08 |= 0x10;
                     this->mUnk_64.func_ov000_0208a100();
                 }
             }
