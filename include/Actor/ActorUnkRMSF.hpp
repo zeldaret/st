@@ -26,13 +26,15 @@ public:
 
     /* 4C */ virtual ~ActorUnkRMSF() override;
 
-    void func_ov063_0215c250(void);
-    void func_ov063_0215c290(void);
+    unk32 func_ov063_0215c250(void);
+    unk32 func_ov063_0215c290(void);
 };
 
 class ActorProfileUnkRMSF : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
+    /* 3A */ STRUCT_PAD(0x3A, 0x8C);
+    /* 8C */ unk32 mUnk_8C;
 
     ActorProfileUnkRMSF();
     ~ActorProfileUnkRMSF();
