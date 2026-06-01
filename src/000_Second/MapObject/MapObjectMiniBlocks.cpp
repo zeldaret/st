@@ -45,9 +45,9 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
     }
 
     VecFx32 vec;
-    vec.x = FLOAT_TO_Q20(0.0f);
-    vec.y = FLOAT_TO_Q20(0.0f);
-    vec.z = FLOAT_TO_Q20(0.0f);
+    vec.x = FLOAT_TO_FX32(0.0f);
+    vec.y = FLOAT_TO_FX32(0.0f);
+    vec.z = FLOAT_TO_FX32(0.0f);
     uVar6 = 0;
 
     switch (this->mUnk_20.mUnk_00[0]) {
@@ -65,13 +65,13 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
             break;
         default:
             if (this->mUnk_20.mUnk_00[1] == MiniBlocksVariant_BLKF) {
-                vec.x = FLOAT_TO_Q20(0.0f);
-                vec.y = FLOAT_TO_Q20(0.0f);
-                vec.z = -FLOAT_TO_Q20(0.375f);
+                vec.x = FLOAT_TO_FX32(0.0f);
+                vec.y = FLOAT_TO_FX32(0.0f);
+                vec.z = -FLOAT_TO_FX32(0.375f);
             } else {
-                vec.x = FLOAT_TO_Q20(0.0f);
-                vec.y = FLOAT_TO_Q20(0.0f);
-                vec.z = -FLOAT_TO_Q20(0.25f);
+                vec.x = FLOAT_TO_FX32(0.0f);
+                vec.y = FLOAT_TO_FX32(0.0f);
+                vec.z = -FLOAT_TO_FX32(0.25f);
             }
             break;
     }

@@ -47,13 +47,11 @@ extern "C" {
 #define CLAMP(x, min, max) ((x) > (max) ? (max) : (x) < (min) ? (min) : (x))
 #define CLAMP2(x, min, max) ((x) > (max) ? (max) : (x) >= (min) ? (x) : (min))
 
-#define INT_TO_Q20(n) ((s32) ((n) << FX32_SHIFT))
-#define FLOAT_TO_Q21(n) ((s32) (((n) * 8192 + 1) / 4))
-#define FLOAT_TO_Q20(n) ((s32) (((n) * 8192 + 1) / 2))
-#define FLOAT_TO_Q19(n) ((s32) (((n) * 8192 + 1)))
-#define ROUND_Q20(n) (((s32) (n) + 0x800) >> FX32_SHIFT)
-#define MUL_Q20(a, b) (fx32)((((s64) (a)) * ((s64) (b)) + 0x800) >> FX32_SHIFT)
-#define DIV_Q20(a, b) (((a) << FX32_SHIFT) / (b))
+#define INT_TO_FX32(n) ((s32) ((n) << FX32_SHIFT))
+#define FLOAT_TO_FX32(n) ((s32) (((n) * 8192 + 1) / 2))
+#define ROUND_FX32(n) (((s32) (n) + 0x800) >> FX32_SHIFT)
+#define MUL_FX32(a, b) (fx32)((((s64) (a)) * ((s64) (b)) + 0x800) >> FX32_SHIFT)
+#define DIV_FX32(a, b) (((a) << FX32_SHIFT) / (b))
 
 #define DEG_TO_ANG(n) ((n) * 0x10000 / 360)
 #define SIN(n) (gSinCosTable[2 * ((n) >> 4)])
@@ -144,10 +142,10 @@ void VecFx32_Scale(VecFx32 *vec, fx32 scale);
 bool VecFx32_CalculateNormal(VecFx32 *vec, VecFx32 *a, VecFx32 *b, VecFx32 *c);
 
 static inline void VecFx32_Rotate(VecFx32 *vec, fx32 sin, fx32 cos, VecFx32 *out) {
-    out->x += MUL_Q20(vec->z, sin);
-    out->z += MUL_Q20(vec->z, cos);
-    out->x += MUL_Q20(vec->x, cos);
-    out->z += MUL_Q20(vec->x, -sin);
+    out->x += MUL_FX32(vec->z, sin);
+    out->z += MUL_FX32(vec->z, cos);
+    out->x += MUL_FX32(vec->x, cos);
+    out->z += MUL_FX32(vec->x, -sin);
 }
 
 static inline void VecFx32_CopyXZ(VecFx32 *vec, VecFx32 *out) {

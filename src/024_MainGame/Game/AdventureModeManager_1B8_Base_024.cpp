@@ -116,14 +116,14 @@ bool AdventureModeManager_1B8_Base::func_ov024_020d0744(s32 arg1, s32 arg2, s32 
         s32 var_r11 = (temp_r1 >= 0) ? temp_r1 : -temp_r1;
 
         if (sp8 >= var_r11) {
-            func_01ffb644(INT_TO_Q20(temp_r1), INT_TO_Q20(temp_r2));
+            func_01ffb644(INT_TO_FX32(temp_r1), INT_TO_FX32(temp_r2));
             s32 var_r11_2 = (arg1 <= arg3) ? 1 : -1;
-            unk32 var_r5  = INT_TO_Q20(arg2);
+            unk32 var_r5  = INT_TO_FX32(arg2);
             unk32 var_r6  = func_01ffb558();
             SetUnkValue4(arg2, arg4, &var_r6);
 
             for (int i = 0; i <= sp8; i++) {
-                if (this->func_ov024_020d0924(arg1, ROUND_Q20(var_r5), arg5, arg6)) {
+                if (this->func_ov024_020d0924(arg1, ROUND_FX32(var_r5), arg5, arg6)) {
                     sp10 = true;
                 }
 
@@ -131,14 +131,14 @@ bool AdventureModeManager_1B8_Base::func_ov024_020d0744(s32 arg1, s32 arg2, s32 
                 var_r5 += var_r6;
             }
         } else {
-            func_01ffb644(INT_TO_Q20(temp_r2), INT_TO_Q20(temp_r1));
-            unk32 var_r5  = INT_TO_Q20(arg1);
+            func_01ffb644(INT_TO_FX32(temp_r2), INT_TO_FX32(temp_r1));
+            unk32 var_r5  = INT_TO_FX32(arg1);
             s32 var_r11_2 = (arg2 <= arg4) ? 1 : -1;
             unk32 var_r6  = func_01ffb558();
             SetUnkValue4(arg1, arg3, &var_r6);
 
             for (int i = 0; i <= var_r11; i++) {
-                if (this->func_ov024_020d0924(ROUND_Q20(var_r5), arg2, arg5, arg6)) {
+                if (this->func_ov024_020d0924(ROUND_FX32(var_r5), arg2, arg5, arg6)) {
                     sp10 = true;
                 }
 
