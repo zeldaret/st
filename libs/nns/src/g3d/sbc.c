@@ -679,7 +679,7 @@ void G3d_SBCRender_00C(G3d_RenderState *renderState, u32) {
             VecFx32 vec;
             u32 tmp;
 
-            G3d_Scale_inline(width << 15, -height << 15, INT_TO_Q20(1) << 4);
+            G3d_Scale_inline(width << 15, -height << 15, INT_TO_FX32(1) << 4);
 
             tmp = GX_PACK_TEXCOORD_PARAM(width << 11, height << 11);
             PushGeometryCommand(0x22, (u32 *) &tmp, 1); // TEXCOORD

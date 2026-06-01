@@ -449,7 +449,7 @@ ARM void ActorRupee::func_ov031_020e9638() {
         this->mUnk_4A = 0;
     }
 
-    this->mPos.y -= FLOAT_TO_Q20(1.2);
+    this->mPos.y -= FLOAT_TO_FX32(1.2);
 }
 
 // non-matching

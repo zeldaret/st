@@ -72,7 +72,7 @@ ARM void MapObjectDoorKey::vfunc_14(void) {
     VecFx32 temp;
 
     Mat3p_InitYRotation(&m, SIN(angle), COS(angle));
-    temp.x     = this->mPos.x - FLOAT_TO_Q20(1.0f) + this->mUnk_70;
+    temp.x     = this->mPos.x - FLOAT_TO_FX32(1.0f) + this->mUnk_70;
     temp.z     = this->mPos.z;
     temp.y     = this->mPos.y;
     local_48.x = temp.x;
@@ -82,7 +82,7 @@ ARM void MapObjectDoorKey::vfunc_14(void) {
 
     u16 var = (-0x8000 - sVar2);
     Mat3p_InitYRotation(&m, SIN(var), COS(var));
-    temp.x     = this->mPos.x + FLOAT_TO_Q20(1.0f) - this->mUnk_70;
+    temp.x     = this->mPos.x + FLOAT_TO_FX32(1.0f) - this->mUnk_70;
     temp.z     = this->mPos.z;
     temp.y     = this->mPos.y;
     local_48.x = temp.x;
@@ -188,11 +188,11 @@ ARM void MapObjectDoorKey::vfunc_78(void) {
     temp.z = this->mPos.z;
     temp.y = this->mPos.y;
 
-    local_24.x = temp.x - FLOAT_TO_Q20(0.999f);
+    local_24.x = temp.x - FLOAT_TO_FX32(0.999f);
     local_24.y = temp.y;
     local_24.z = temp.z;
 
-    local_30.x = temp.x + FLOAT_TO_Q20(0.999f);
+    local_30.x = temp.x + FLOAT_TO_FX32(0.999f);
     local_30.y = temp.y;
     local_30.z = temp.z;
 
@@ -201,13 +201,13 @@ ARM void MapObjectDoorKey::vfunc_78(void) {
 
     Mat4x3p_InitYRotation(&m, SIN((u16) angle), COS((u16) angle));
 
-    local_84.x = FLOAT_TO_Q20(1.0f);
+    local_84.x = FLOAT_TO_FX32(1.0f);
     local_84.y = 0;
     local_84.z = 0;
 
     local_90.x = 0;
     local_90.y = 0;
-    local_90.z = FLOAT_TO_Q20(0.3299f);
+    local_90.z = FLOAT_TO_FX32(0.3299f);
 
     func_01ffaf74(&local_90, &m, &local_90);
     func_01ffaf74(&local_84, &m, &local_84);

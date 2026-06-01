@@ -90,7 +90,7 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
             data_ov000_020b5214.func_ov000_0206db44(0xA3);
             temp   = *data_027e0ce0->func_01fff148(0);
             vec2.x = temp.x;
-            vec2.y = temp.y + FLOAT_TO_Q20(3.0f);
+            vec2.y = temp.y + FLOAT_TO_FX32(3.0f);
             vec2.z = temp.z;
 
             AStack_7c.mUnk_28 = 0;
@@ -100,9 +100,9 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
                 if (gpActorManager->func_01fff3b4(this->mUnk_A4[i].mUnk_00) == NULL) {
                     this->mUnk_A4[i].mUnk_00 = 0;
 
-                    vec.x = INT_TO_Q20(gRandom.Next32(11) - 5);
+                    vec.x = INT_TO_FX32(gRandom.Next32(11) - 5);
                     vec.y = 0;
-                    vec.z = INT_TO_Q20(gRandom.Next32(11) - 5);
+                    vec.z = INT_TO_FX32(gRandom.Next32(11) - 5);
 
                     VecFx32_Add(&vec, &vec2, &vec);
 

@@ -145,7 +145,7 @@ ARM void MapObjectDoorClick::vfunc_08(void) {
             this->mUnk_80--;
 
             if (this->mUnk_80 > 0) {
-                func_01ff9218(&this->mUnk_6C, 0x1000, func_01ffb464(INT_TO_Q20(this->mUnk_80)));
+                func_01ff9218(&this->mUnk_6C, 0x1000, func_01ffb464(INT_TO_FX32(this->mUnk_80)));
             }
 
             if (this->mUnk_88 != false) {
@@ -227,7 +227,7 @@ ARM void MapObjectDoorClick::vfunc_14(void) {
     VecFx32 temp;
 
     Mat3p_InitYRotation(&m, SIN(angle), COS(angle));
-    temp.x     = this->mPos.x - FLOAT_TO_Q20(1.0f) + this->mUnk_70;
+    temp.x     = this->mPos.x - FLOAT_TO_FX32(1.0f) + this->mUnk_70;
     temp.z     = this->mPos.z;
     temp.y     = this->mPos.y;
     local_48.x = temp.x;
@@ -237,7 +237,7 @@ ARM void MapObjectDoorClick::vfunc_14(void) {
 
     u16 var = (-0x8000 - sVar2);
     Mat3p_InitYRotation(&m, SIN(var), COS(var));
-    temp.x     = this->mPos.x + FLOAT_TO_Q20(1.0f) - this->mUnk_70;
+    temp.x     = this->mPos.x + FLOAT_TO_FX32(1.0f) - this->mUnk_70;
     temp.z     = this->mPos.z;
     temp.y     = this->mPos.y;
     local_48.x = temp.x;
@@ -259,7 +259,7 @@ ARM void MapObjectDoorClick::vfunc_5C(unk32 param1, unk32 param2) {
         case 3:
             this->vfunc_7C();
 
-            u16 result    = ROUND_Q20(MUL_Q20(func_01ffb428(0x1000 - this->mUnk_6C, 0x1000), INT_TO_Q20(this->mUnk_78)));
+            u16 result    = ROUND_FX32(MUL_FX32(func_01ffb428(0x1000 - this->mUnk_6C, 0x1000), INT_TO_FX32(this->mUnk_78)));
             this->mUnk_80 = result;
 
             if (this->mUnk_8A) {
@@ -363,11 +363,11 @@ ARM void MapObjectDoorClick::vfunc_78(void) {
     temp.z = this->mPos.z;
     temp.y = this->mPos.y;
 
-    local_24.x = temp.x - FLOAT_TO_Q20(0.999f);
+    local_24.x = temp.x - FLOAT_TO_FX32(0.999f);
     local_24.y = temp.y;
     local_24.z = temp.z;
 
-    local_30.x = temp.x + FLOAT_TO_Q20(0.999f);
+    local_30.x = temp.x + FLOAT_TO_FX32(0.999f);
     local_30.y = temp.y;
     local_30.z = temp.z;
 
@@ -376,13 +376,13 @@ ARM void MapObjectDoorClick::vfunc_78(void) {
 
     Mat4x3p_InitYRotation(&m, SIN((u16) angle), COS((u16) angle));
 
-    local_84.x = FLOAT_TO_Q20(1.0f);
+    local_84.x = FLOAT_TO_FX32(1.0f);
     local_84.y = 0;
     local_84.z = 0;
 
     local_90.x = 0;
     local_90.y = 0;
-    local_90.z = FLOAT_TO_Q20(0.3299f);
+    local_90.z = FLOAT_TO_FX32(0.3299f);
 
     func_01ffaf74(&local_90, &m, &local_90);
     func_01ffaf74(&local_84, &m, &local_84);
