@@ -2733,7 +2733,7 @@ from:0x020f1398 kind:load to:0x02116a80 module:overlay(31)
 from:0x020f13ac kind:arm_call to:0x02011f3c module:main
 from:0x020f13b8 kind:arm_call to:0x020f141c module:overlay(31)
 from:0x020f13cc kind:arm_call to:0x0209767c module:overlay(0)
-from:0x020f1400 kind:load to:0x02114294 module:overlay(31) add:0x8
+from:0x020f1400 kind:load to:0x0211429c add:0x8 module:overlay(31)
 from:0x020f1418 kind:load to:0x027e0ce0 module:dtcm
 from:0x020f1424 kind:arm_call to:0x02098388 module:overlay(0)
 from:0x020f1448 kind:arm_call to:0x020f1404 module:overlay(31)
