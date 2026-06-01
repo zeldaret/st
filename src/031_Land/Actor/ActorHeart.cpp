@@ -218,6 +218,7 @@ ARM void ActorHeart::func_ov031_020ef1b4(unk16 param_2) {
     CALL_PTMF(PTMF<ActorHeart>, data_ov031_02113da4[this->mUnk_4C]);
 }
 
+// non-matching (r1 and r2 swapped)
 ARM void ActorHeart::func_ov031_020ef208() {
     bool var2 = true;
     bool var1 = true;
