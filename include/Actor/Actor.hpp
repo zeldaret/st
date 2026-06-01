@@ -119,7 +119,7 @@ public:
     /* 46 */ unk16 mUnk_46;
     /* 48 */ unk16 mUnk_48;
     /* 4A */ unk8 mUnk_4A;
-    /* 4A */ unk8 mUnk_4B;
+    /* 4B */ unk8 mUnk_4B;
     /* 4C */ s16 mUnk_4C;
     /* 4E */ s16 mUnk_4E;
     /* 50 */ volatile u16 mUnk_50;
