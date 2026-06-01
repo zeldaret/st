@@ -6,6 +6,7 @@
 #include "types.h"
 
 extern "C" unk32 *func_0200f05c(unk32, char *);
+extern "C" void func_0x02057b8c(unk32 *);
 
 char data_ov063_021625b8[0x10] = "RMSF_wall";
 char data_ov063_021625c8[0x10] = "RMSF";
@@ -39,6 +40,9 @@ ARM unk32 ActorUnkRMSF::func_ov063_0215c290(void) {
     return 0;
 }
 
-ARM ActorUnkRMSF::~ActorUnkRMSF() {}
+ARM ActorUnkRMSF::~ActorUnkRMSF() {
+    func_0x02057b8c(&this->mUnk_F4);
+    func_0x02057b8c(&this->mUnk_94);
+}
 
 ARM ActorProfileUnkRMSF::~ActorProfileUnkRMSF() {}
