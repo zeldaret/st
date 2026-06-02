@@ -1270,12 +1270,54 @@ typedef u8 UnkArrayDataType1[UnkDataStruct4_14_Unk_Max][15];
 struct UnkDataStruct4_14 {
     /* 00 */ unk8 mUnk_00;
     /* 01 */ s8 mUnk_01;
-    /* 02 */ STRUCT_PAD(0x02, 0x14);
+    /* 02 */ s8 mUnk_02[3];
+    /* 02 */ unk8 mUnk_05;
+    /* 02 */ u16 mUnk_06[3];
+    /* 02 */ u8 mUnk_0C[3];
+    /* 02 */ u8 mUnk_0F[3];
+    /* 12 */ u8 mUnk_12;
+    /* 13 */ u8 mUnk_13;
     /* 14 */
 
+    s32 func_ov024_020d1c3c(unk32 *param1, unk32 param2) const;
+    void func_ov024_020d1c84();
+    bool func_ov024_020d1cc8(unk32 param1, unk32 param2) const;
+    bool func_ov024_020d1cf4(unk32 param1) const;
+    bool func_ov024_020d1d30(unk32 param1, u16 param2) const;
+    u8 func_ov024_020d1d78() const;
+    u8 func_ov024_020d1da0() const;
+    bool func_ov024_020d1dc8(unk32 param1, unk32 param2) const;
+    bool func_ov024_020d1df4(unk32 param1) const;
+    void func_ov024_020d1f60(u32 param1);
+    unk32 func_ov024_020d1f70() const;
+    bool func_ov024_020d1fa4(unk32 param1) const;
+    void func_ov024_020d1fe8();
+    bool func_ov024_020d2030(unk32 param1, unk32 param2);
+    u8 func_ov024_020d208c(unk32 param1) const;
+    void func_ov024_020d2098(unk32 param1, unk32 param2);
+    unk32 func_ov024_020d20c0(unk32 param1, unk32 param2) const;
+    bool func_ov024_020d21a0() const;
+    bool func_ov024_020d21d8() const;
+    bool func_ov024_020d223c() const;
+    bool func_ov024_020d2270(unk32 param1, unk32 param2) const;
+    unk32 func_ov024_020d22ac(unk32 param1) const;
+    bool func_ov024_020d2320(unk32 param1) const;
+    unk32 func_ov024_020d2348(unk32 param1) const;
     bool func_ov024_020d23bc() const;
     bool func_ov024_020d239c() const;
-    unk32 func_ov024_020d1c3c(VecFx32 *param1, unk32 param2) const;
+    bool func_ov024_020d23ec() const;
+    bool func_ov024_020d243c() const;
+    bool func_ov024_020d2448() const;
+    bool func_ov024_020d2464(bool param1) const;
+
+    static const u8 func_ov024_020d1a18(unk32 param1);
+    static unk32 func_ov024_020d1a28(u8 param1);
+    static u8 func_ov024_020d1a98(unk32 param1, unk32 param2);
+    static void func_ov024_020d1ab8(unk32 param1, unk32 *param2, unk32 *param3);
+    static s32 func_ov024_020d1b98(unk32 *param1, unk32 param2);
+    static s32 func_ov024_020d1be0(s32 param1);
+    static void func_ov024_020d1e20(unk16 *param1, unk32 param2);
+    static unk32 func_ov024_020d1eac(unk32 param1);
 };
 
 struct UnkDataStruct4 {

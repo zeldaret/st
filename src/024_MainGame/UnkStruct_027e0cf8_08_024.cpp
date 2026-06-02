@@ -3,7 +3,6 @@
 #include <nitro/mi.h>
 
 extern "C" void func_02019cec(u16 param1, unk32 param2);
-extern "C" unk32 func_ov024_020d1b98(VecFx32 *param1, u8 param2);
 extern "C" void func_ov024_020d3adc(void *, void *, u32, u32, unk32, unk32, unk32);
 
 u8 UnkStruct_027e0cf8_08::func_ov024_020d3158(SceneIndex sceneIndex) {
@@ -119,32 +118,32 @@ void UnkStruct_027e0cf8_08::func_ov024_020d341c(bool param1) {
 
 void UnkStruct_027e0cf8_08::func_ov024_020d3428(const UnkDataStruct4 *param1, unk32 param2, unk32 param3) {
     UnkDataStruct4_14 *const *pUnk_14 = NULL;
-    VecFx32 auStack_30;
+    unk32 auStack_30[3];
 
     for (int i = 0; i < UnkDataStruct4_14_Unk_Max; i++) {
         for (int j = 0; j < ARRAY_LEN(param1->mUnk_14); j++) {
             pUnk_14                         = param1->mUnk_14;
             UnkDataStruct4_14 *const *dummy = pUnk_14; // somehow required to match
-            this->func_ov024_020d351c(i, j, &auStack_30, pUnk_14[i][j].func_ov024_020d1c3c(&auStack_30, param2), param3);
+            this->func_ov024_020d351c(i, j, auStack_30, pUnk_14[i][j].func_ov024_020d1c3c(auStack_30, param2), param3);
         }
     }
 }
 
 void UnkStruct_027e0cf8_08::func_ov024_020d34a0(UnkArrayDataType1 param1, u8 param2) {
-    VecFx32 auStack_30;
+    unk32 auStack_30[3];
 
     for (int i = 0; i < UnkDataStruct4_14_Unk_Max; i++) {
         for (int j = 0; j < 15; j++) {
-            unk32 iVar1 = func_ov024_020d1b98(&auStack_30, param1[i][j]);
+            unk32 iVar1 = UnkDataStruct4_14::func_ov024_020d1b98(auStack_30, param1[i][j]);
 
             if (iVar1 > 0) {
-                this->func_ov024_020d351c(i, j, &auStack_30, iVar1, param2);
+                this->func_ov024_020d351c(i, j, auStack_30, iVar1, param2);
             }
         }
     }
 }
 
-void UnkStruct_027e0cf8_08::func_ov024_020d351c(unk32 param1, unk32 param2, VecFx32 *param3, unk32 param4, unk32 param5) {
+void UnkStruct_027e0cf8_08::func_ov024_020d351c(unk32 param1, unk32 param2, unk32 *param3, unk32 param4, unk32 param5) {
     unk16 sVar1;
     unk16 sVar2;
 
@@ -154,36 +153,36 @@ void UnkStruct_027e0cf8_08::func_ov024_020d351c(unk32 param1, unk32 param2, VecF
 
     switch (param4) {
         case 1: {
-            u32 val = param3->x;
+            u32 val = param3[0];
 
             Vec2s temp;
             temp.x = sVar1;
             temp.y = sVar2;
-            func_ov024_020d3adc(this->mUnk_000, &temp, param3->x, (val + 2) & 3, param5, 1, 4);
+            func_ov024_020d3adc(this->mUnk_000, &temp, param3[0], (val + 2) & 3, param5, 1, 4);
             break;
         }
         case 2: {
             Vec2s temp;
             temp.x = sVar1;
             temp.y = sVar2;
-            func_ov024_020d3adc(this->mUnk_000, &temp, param3->x, param3->y, param5, 0, 4);
+            func_ov024_020d3adc(this->mUnk_000, &temp, param3[0], param3[1], param5, 0, 4);
             break;
         }
         case 3: {
             Vec2s temp1;
             temp1.x = sVar1;
             temp1.y = sVar2;
-            func_ov024_020d3adc(this->mUnk_000, &temp1, param3->x, param3->y, param5, 0, 4);
+            func_ov024_020d3adc(this->mUnk_000, &temp1, param3[0], param3[1], param5, 0, 4);
 
             Vec2s temp2;
             temp2.x = sVar1;
             temp2.y = sVar2;
-            func_ov024_020d3adc(this->mUnk_000, &temp2, param3->y, param3->z, param5, 0, 4);
+            func_ov024_020d3adc(this->mUnk_000, &temp2, param3[1], param3[2], param5, 0, 4);
 
             Vec2s temp3;
             temp3.x = sVar1;
             temp3.y = sVar2;
-            func_ov024_020d3adc(this->mUnk_000, &temp3, param3->z, param3->x, param5, 0, 4);
+            func_ov024_020d3adc(this->mUnk_000, &temp3, param3[2], param3[0], param5, 0, 4);
             break;
         }
         case 0:

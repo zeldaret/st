@@ -149,11 +149,13 @@ src/024_MainGame/CreditsEndingType.cpp:
     .text       start:0x020d19f8 end:0x020d1a18
     .data       start:0x020d8254 end:0x020d8258
 
-src/024_MainGame/code_020d16fc_024.cpp:
-    .text       start:0x020d1a18 end:0x020d24d4
+src/024_MainGame/UnkDataStruct4_14.cpp:
+    complete
+    .text       start:0x020d1a18 end:0x020d2490
+    .rodata     start:0x020d7550 end:0x020d756c
 
 src/024_MainGame/code_020d24d4_024.cpp:
-    .text       start:0x020d24d4 end:0x020d3158
+    .text       start:0x020d2490 end:0x020d3158
 
 src/024_MainGame/UnkStruct_027e0cf8_08_024.cpp:
     complete

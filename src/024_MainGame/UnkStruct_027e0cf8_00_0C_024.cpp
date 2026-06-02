@@ -283,7 +283,7 @@ void UnkStruct_027e0cf8_00::func_ov024_020cfb7c(UnkDataStruct4 *param1, Vec2s *p
         UnkDataStruct4_14 **pUnk_14 = param1->mUnk_14;
 
         for (s16 j = 0; j < ARRAY_LEN(param1->mUnk_14); j++) {
-            if (func_ov024_020d1d30(&pUnk_14[i][j], param3, param4)) {
+            if (pUnk_14[i][j].func_ov024_020d1d30(param3, param4)) {
                 param1->func_ov024_020d2b08(i, j, &spC);
 
                 Vec2p temp2;

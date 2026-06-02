@@ -272,7 +272,7 @@ config.libs = [
             Object("024_MainGame/UnkStruct_ov024_020d86a0_024.cpp"),
             Object("024_MainGame/PlayerActor_A0_38_024.cpp"),
             Object("024_MainGame/CreditsEndingType.cpp"),
-            Object("024_MainGame/code_020d16fc_024.cpp"),
+            Object("024_MainGame/UnkDataStruct4_14.cpp"),
             Object("024_MainGame/code_020d24d4_024.cpp"),
             Object("024_MainGame/UnkStruct_027e0cf8_08_024.cpp"),
             Object("024_MainGame/code_020d3670_024.cpp"),

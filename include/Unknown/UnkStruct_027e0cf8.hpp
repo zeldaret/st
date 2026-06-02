@@ -110,7 +110,7 @@ public:
     void func_ov024_020d341c(bool param1);
     void func_ov024_020d3428(const UnkDataStruct4 *param1, unk32 param2, unk32 param3);
     void func_ov024_020d34a0(UnkArrayDataType1 param1, u8 param2);
-    void func_ov024_020d351c(unk32 param1, unk32 param2, VecFx32 *param3, unk32 param4, unk32 param5);
+    void func_ov024_020d351c(unk32 param1, unk32 param2, unk32 *param3, unk32 param4, unk32 param5);
 
     static u8 func_ov024_020d3158(SceneIndex sceneIndex);
 };
