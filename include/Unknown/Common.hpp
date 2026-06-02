@@ -851,7 +851,9 @@ public:
 
 class UnkStruct2 {
 public:
-    /* 00 */ unk8 pad[0x10];
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ const char *mUnk_04;
+    /* 08 */ STRUCT_PAD(0x08, 0x10);
     /* 10 */
 
     UnkStruct2(const char *path, unk32 param2);
@@ -1320,17 +1322,55 @@ struct UnkDataStruct4_14 {
     static unk32 func_ov024_020d1eac(unk32 param1);
 };
 
+struct UnkStruct_SceneChange1;
 struct UnkDataStruct4 {
-    /* 00 */ STRUCT_PAD(0x00, 0x14);
+    /* 00 (vtable) */
+    /* 04 */ unk16 mUnk_04;
+    /* 06 */ unk16 mUnk_06;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
     /* 14 */ UnkDataStruct4_14 *mUnk_14[15];
-    /* 50 */ STRUCT_PAD(0x50, 0xCC);
+    /* 50 */ unk32 mUnk_50;
+    /* 54 */ unk32 mUnk_54;
+    /* 58 */ unk32 mUnk_58;
+    /* 5C */ unk32 mUnk_5C;
+    /* 60 */ unk32 mUnk_60;
+    /* 64 */ unk32 mUnk_64;
+    /* 68 */ unk32 mUnk_68;
+    /* 6C */ STRUCT_PAD(0x6C, 0xC8);
+    /* C8 */ void *mUnk_C8;
     /* CC */ u32 mSceneIndex;
     /* D0 */
 
+    UnkDataStruct4();
+
+    // data_ov024_020d8260
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */
+
+    void func_ov024_020d2518();
+    void func_ov024_020d251c();
+    void func_ov024_020d2520(UnkStruct_SceneChange1 *param1);
+    void func_ov024_020d2538(u32 sceneIndex, u8 roomIndex, unk32 param3);
+    void func_ov024_020d2564();
+    void func_ov024_020d258c(u32 sceneIndex, u8 roomIndex);
+    void func_ov024_020d26b0();
+    void func_ov024_020d277c();
+    void func_ov024_020d27cc();
+    void func_ov024_020d280c();
+    void func_ov024_020d29b0();
+    void func_ov024_020d2a18();
     void func_ov024_020d2b08(unk32 param1, unk32 param2, VecFx32 *param3) const;
-    bool func_ov024_020d308c(fx32 *param1, fx32 *param2, unk16 param3) const;
+    void func_ov024_020d2b40();
+    void func_ov024_020d2bcc();
     void func_ov024_020d2cfc(void *param1, unk32 param2, unk32 param3);
     void func_ov024_020d2c54(void *param1, unk32 param2);
+    void func_ov024_020d3068();
+    bool func_ov024_020d308c(fx32 *param1, fx32 *param2, unk16 param3) const;
+    void func_ov024_020d3100();
+    void func_ov024_020d3140();
 };
 
 struct UnkDataStruct3 {

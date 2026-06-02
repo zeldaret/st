@@ -154,8 +154,9 @@ src/024_MainGame/UnkDataStruct4_14.cpp:
     .text       start:0x020d336c end:0x020d3de4
     .rodata     start:0x020d8ef4 end:0x020d8f10
 
-src/024_MainGame/code_020d24d4_024.cpp:
+src/024_MainGame/UnkDataStruct4.cpp:
     .text       start:0x020d3de4 end:0x020d4aac
+    .data       start:0x020d9bf8 end:0x020d9c08
 
 src/024_MainGame/UnkStruct_027e0cf8_08_024.cpp:
     complete
