@@ -1259,8 +1259,9 @@ struct UnkDataStruct1 {
     }
 };
 
+struct UnkDataStruct4_14_2;
 struct UnkDataStruct2 {
-    /* 00 */ void *unk_00;
+    /* 00 */ UnkDataStruct4_14_2 *unk_00;
     /* 04 */
 
     UnkDataStruct2(unk32 param1);
@@ -1319,27 +1320,33 @@ struct UnkDataStruct4_14 {
     static s32 func_ov024_020d1b98(unk32 *param1, unk32 param2);
     static s32 func_ov024_020d1be0(s32 param1);
     static void func_ov024_020d1e20(unk16 *param1, unk32 param2);
-    static unk32 func_ov024_020d1eac(unk32 param1);
+    static u8 func_ov024_020d1eac(const unk32 param1);
+};
+
+struct UnkDataStruct4_14_2 {
+    /* 000 */ UnkDataStruct4_14 mUnk_00[15];
+    /* 12C */
+};
+
+struct UnkDataStruct4_68 {
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */
 };
 
 struct UnkStruct_SceneChange1;
 struct UnkDataStruct4 {
     /* 00 (vtable) */
-    /* 04 */ unk16 mUnk_04;
-    /* 06 */ unk16 mUnk_06;
+    /* 04 */ u16 mUnk_04;
+    /* 06 */ u16 mUnk_06;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
-    /* 14 */ UnkDataStruct4_14 *mUnk_14[15];
-    /* 50 */ unk32 mUnk_50;
-    /* 54 */ unk32 mUnk_54;
-    /* 58 */ unk32 mUnk_58;
-    /* 5C */ unk32 mUnk_5C;
-    /* 60 */ unk32 mUnk_60;
-    /* 64 */ unk32 mUnk_64;
-    /* 68 */ unk32 mUnk_68;
-    /* 6C */ STRUCT_PAD(0x6C, 0xC8);
-    /* C8 */ void *mUnk_C8;
+    /* 14 */ UnkDataStruct4_14_2 *mUnk_14[20];
+    /* 64 */ UnkDataStruct4_14_2 *mUnk_64;
+    /* 68 */ UnkDataStruct4_68 mUnk_68[8];
+    /* C8 */ UnkDataStruct4_68 *mUnk_C8;
     /* CC */ u32 mSceneIndex;
     /* D0 */
 
@@ -1353,24 +1360,25 @@ struct UnkDataStruct4 {
     void func_ov024_020d2518();
     void func_ov024_020d251c();
     void func_ov024_020d2520(UnkStruct_SceneChange1 *param1);
-    void func_ov024_020d2538(u32 sceneIndex, u8 roomIndex, unk32 param3);
+    void func_ov024_020d2538(u32 sceneIndex, u8 roomIndex, UnkDataStruct4_14_2 *param3);
     void func_ov024_020d2564();
     void func_ov024_020d258c(u32 sceneIndex, u8 roomIndex);
-    void func_ov024_020d26b0();
+    void func_ov024_020d26b0(unk32 param1);
     void func_ov024_020d277c();
     void func_ov024_020d27cc();
     void func_ov024_020d280c();
-    void func_ov024_020d29b0();
-    void func_ov024_020d2a18();
+    void func_ov024_020d29b0(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+    bool func_ov024_020d2a18(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_ov024_020d2b08(unk32 param1, unk32 param2, VecFx32 *param3) const;
-    void func_ov024_020d2b40();
-    void func_ov024_020d2bcc();
-    void func_ov024_020d2cfc(void *param1, unk32 param2, unk32 param3);
-    void func_ov024_020d2c54(void *param1, unk32 param2);
-    void func_ov024_020d3068();
+    void func_ov024_020d2c54(UnkArrayDataType1 param1, unk32 param2);
+    void func_ov024_020d2cfc(UnkArrayDataType1 param1, unk32 param2, unk32 param3);
+    s32 func_ov024_020d3068() const;
     bool func_ov024_020d308c(fx32 *param1, fx32 *param2, unk16 param3) const;
     void func_ov024_020d3100();
     void func_ov024_020d3140();
+
+    static void func_ov024_020d2b40(Vec2s *param1, const UnkDataStruct4 *thisx);
+    static void func_ov024_020d2bcc(Vec2s *param1, const UnkDataStruct4 *thisx);
 };
 
 struct UnkDataStruct3 {

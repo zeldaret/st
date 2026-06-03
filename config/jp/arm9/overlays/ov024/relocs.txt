@@ -2037,8 +2037,8 @@ from:0x020d3d64 kind:arm_call to:0x020d3db8 module:overlay(24)
 from:0x020d3d78 kind:arm_call to:0x020d3db8 module:overlay(24)
 from:0x020d3d98 kind:load to:0x020d3d40 module:overlay(24)
 from:0x020d3da0 kind:arm_call to:0x020d36f4 module:overlay(24)
-from:0x020d3e24 kind:load to:0x020d9bf8 module:overlay(24) add:0x8
-from:0x020d3e68 kind:load to:0x020d9bf8 module:overlay(24) add:0x8
+from:0x020d3e24 kind:load to:0x020d9bf8 add:0x8 module:overlay(24)
+from:0x020d3e68 kind:load to:0x020d9bf8 add:0x8 module:overlay(24)
 from:0x020d3e88 kind:load to:0x020d3e8c module:overlay(24)
 from:0x020d3e98 kind:arm_call to:0x020d3ee0 module:overlay(24)
 from:0x020d3ea0 kind:arm_call to:0x020d4a94 module:overlay(24)

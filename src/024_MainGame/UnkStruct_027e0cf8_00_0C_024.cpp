@@ -279,11 +279,11 @@ void UnkStruct_027e0cf8_00::func_ov024_020cfb7c(UnkDataStruct4 *param1, Vec2s *p
 
     VecFx32 spC = data_027e07d4;
 
-    for (s16 i = 0; i < UnkDataStruct4_14_Unk_Max; i++) {
-        UnkDataStruct4_14 **pUnk_14 = param1->mUnk_14;
+    for (s16 i = 0; i < ARRAY_LEN(param1->mUnk_14); i++) {
+        UnkDataStruct4_14_2 **pUnk_14 = param1->mUnk_14;
 
-        for (s16 j = 0; j < ARRAY_LEN(param1->mUnk_14); j++) {
-            if (pUnk_14[i][j].func_ov024_020d1d30(param3, param4)) {
+        for (s16 j = 0; j < ARRAY_LEN(param1->mUnk_14[0]->mUnk_00); j++) {
+            if (pUnk_14[i]->mUnk_00[j].func_ov024_020d1d30(param3, param4)) {
                 param1->func_ov024_020d2b08(i, j, &spC);
 
                 Vec2p temp2;
@@ -441,7 +441,7 @@ void UnkStruct_027e0cf8_0C::func_ov024_020d002c(const UnkDataStruct4 *param1) {
     const UnkStruct_ov024_020d8098 *temp_r6;
     UnkStruct_027e0cf8_0C_00 *temp_r9;
     s8 temp_r8;
-    UnkDataStruct4_14 *const *sp8;
+    UnkDataStruct4_14_2 *const *sp8;
     const UnkDataStruct4_14 *pUnk_14;
     const UnkDataStruct4_14 *new_var;
     SceneIndex temp_r11;
@@ -455,11 +455,11 @@ void UnkStruct_027e0cf8_0C::func_ov024_020d002c(const UnkDataStruct4 *param1) {
     spC.y    = 0;
     spC.z    = 0;
 
-    for (i = 0; i < UnkDataStruct4_14_Unk_Max; i++) {
-        for (j = 0; j < ARRAY_LEN(param1->mUnk_14); j++) {
+    for (i = 0; i < ARRAY_LEN(param1->mUnk_14); i++) {
+        for (j = 0; j < ARRAY_LEN(param1->mUnk_14[0]->mUnk_00); j++) {
             sp8     = param1->mUnk_14;
-            pUnk_14 = sp8[i];
-            temp_r8 = sp8[i][j].mUnk_01;
+            pUnk_14 = sp8[i]->mUnk_00;
+            temp_r8 = sp8[i]->mUnk_00[j].mUnk_01;
             new_var = &pUnk_14[j];
 
             if (temp_r8 == 0x79) {

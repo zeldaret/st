@@ -100,11 +100,11 @@ void UnkStruct_027e0cf8_08::func_ov024_020d336c(UnkDataStruct4 *param1, unk32 pa
     } else {
         this->mUnk_004 = 0;
         this->mUnk_268 = 0x8000 - 1;
-        param1->func_ov024_020d2cfc(&this->mUnk_13C, param2, param3);
+        param1->func_ov024_020d2cfc(this->mUnk_13C, param2, param3);
     }
 
     this->func_ov024_020d3428(param1, 0x02, 0x03);
-    param1->func_ov024_020d2c54(&this->mUnk_010, 0);
+    param1->func_ov024_020d2c54(this->mUnk_010, 0);
     this->func_ov024_020d34a0(this->mUnk_010, this->mUnk_26A);
 }
 
@@ -117,14 +117,15 @@ void UnkStruct_027e0cf8_08::func_ov024_020d341c(bool param1) {
 }
 
 void UnkStruct_027e0cf8_08::func_ov024_020d3428(const UnkDataStruct4 *param1, unk32 param2, unk32 param3) {
-    UnkDataStruct4_14 *const *pUnk_14 = NULL;
+    UnkDataStruct4_14_2 *const *pUnk_14 = NULL;
     unk32 auStack_30[3];
 
-    for (int i = 0; i < UnkDataStruct4_14_Unk_Max; i++) {
-        for (int j = 0; j < ARRAY_LEN(param1->mUnk_14); j++) {
-            pUnk_14                         = param1->mUnk_14;
-            UnkDataStruct4_14 *const *dummy = pUnk_14; // somehow required to match
-            this->func_ov024_020d351c(i, j, auStack_30, pUnk_14[i][j].func_ov024_020d1c3c(auStack_30, param2), param3);
+    for (int i = 0; i < ARRAY_LEN(param1->mUnk_14); i++) {
+        for (int j = 0; j < ARRAY_LEN(param1->mUnk_14[0]->mUnk_00); j++) {
+            pUnk_14                           = param1->mUnk_14;
+            UnkDataStruct4_14_2 *const *dummy = pUnk_14; // somehow required to match
+            this->func_ov024_020d351c(i, j, auStack_30, pUnk_14[i]->mUnk_00[j].func_ov024_020d1c3c(auStack_30, param2),
+                                      param3);
         }
     }
 }

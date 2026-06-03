@@ -511,23 +511,23 @@ _ZN14UnkDataStruct4C1Ev kind:function(arm,size=0x44) addr:0x020d3e28
 _ZN14UnkDataStruct419func_ov024_020d2518Ev kind:function(arm,size=0x4) addr:0x020d3e6c
 _ZN14UnkDataStruct419func_ov024_020d251cEv kind:function(arm,size=0x4) addr:0x020d3e70
 _ZN14UnkDataStruct419func_ov024_020d2520EP22UnkStruct_SceneChange1 kind:function(arm,size=0x18) addr:0x020d3e74
-_ZN14UnkDataStruct419func_ov024_020d2538Ejhi kind:function(arm,size=0x2c) addr:0x020d3e8c
+_ZN14UnkDataStruct419func_ov024_020d2538EjhP19UnkDataStruct4_14_2 kind:function(arm,size=0x2c) addr:0x020d3e8c
 _ZN14UnkDataStruct419func_ov024_020d2564Ev kind:function(arm,size=0x28) addr:0x020d3eb8
 _ZN14UnkDataStruct419func_ov024_020d258cEjh kind:function(arm,size=0x124) addr:0x020d3ee0
-_ZN14UnkDataStruct419func_ov024_020d26b0Ev kind:function(arm,size=0xcc) addr:0x020d4004
+_ZN14UnkDataStruct419func_ov024_020d26b0Ei kind:function(arm,size=0xcc) addr:0x020d4004
 _ZN14UnkDataStruct419func_ov024_020d277cEv kind:function(arm,size=0x50) addr:0x020d40d0
 _ZN14UnkDataStruct419func_ov024_020d27ccEv kind:function(arm,size=0x40) addr:0x020d4120
 _ZN14UnkDataStruct419func_ov024_020d280cEv kind:function(arm,size=0x1a4) addr:0x020d4160
-_ZN14UnkDataStruct419func_ov024_020d29b0Ev kind:function(arm,size=0x68) addr:0x020d4304
-_ZN14UnkDataStruct419func_ov024_020d2a18Ev kind:function(arm,size=0xf0) addr:0x020d436c
+_ZN14UnkDataStruct419func_ov024_020d29b0Eiiiii kind:function(arm,size=0x68) addr:0x020d4304
+_ZN14UnkDataStruct419func_ov024_020d2a18Eiiiii kind:function(arm,size=0xf0) addr:0x020d436c
 _ZNK14UnkDataStruct419func_ov024_020d2b08EiiP7VecFx32 kind:function(arm,size=0x38) addr:0x020d445c
-_ZN14UnkDataStruct419func_ov024_020d2b40Ev kind:function(arm,size=0x8c) addr:0x020d4494
-_ZN14UnkDataStruct419func_ov024_020d2bccEv kind:function(arm,size=0x88) addr:0x020d4520
-_ZN14UnkDataStruct419func_ov024_020d2c54EPvi kind:function(arm,size=0xa8) addr:0x020d45a8
-_ZN14UnkDataStruct419func_ov024_020d2cfcEPvii kind:function(arm,size=0x364) addr:0x020d4650
+_ZN14UnkDataStruct419func_ov024_020d2b40EP5Vec2sPKS_ kind:function(arm,size=0x8c) addr:0x020d4494
+_ZN14UnkDataStruct419func_ov024_020d2bccEP5Vec2sPKS_ kind:function(arm,size=0x88) addr:0x020d4520
+_ZN14UnkDataStruct419func_ov024_020d2c54EPA15_hi kind:function(arm,size=0xa8) addr:0x020d45a8
+_ZN14UnkDataStruct419func_ov024_020d2cfcEPA15_hii kind:function(arm,size=0x364) addr:0x020d4650
 _ZN14UnkDataStruct48vfunc_00Ev kind:function(arm,size=0x4) addr:0x020d49b4
 _ZN14UnkDataStruct48vfunc_04Ev kind:function(arm,size=0x4) addr:0x020d49b8
-_ZN14UnkDataStruct419func_ov024_020d3068Ev kind:function(arm,size=0x24) addr:0x020d49bc
+_ZNK14UnkDataStruct419func_ov024_020d3068Ev kind:function(arm,size=0x24) addr:0x020d49bc
 _ZNK14UnkDataStruct419func_ov024_020d308cEPiS0_s kind:function(arm,size=0x74) addr:0x020d49e0
 _ZN14UnkDataStruct419func_ov024_020d3100Ev kind:function(arm,size=0x40) addr:0x020d4a54
 _ZN14UnkDataStruct419func_ov024_020d3140Ev kind:function(arm,size=0x18) addr:0x020d4a94
@@ -545,7 +545,7 @@ _ZN21UnkStruct_027e0cf8_0819func_ov024_020d341cEb kind:function(arm,size=0xc) ad
 _ZN21UnkStruct_027e0cf8_0819func_ov024_020d3428EPK14UnkDataStruct4ii kind:function(arm,size=0x78) addr:0x020d4d7c
 _ZN21UnkStruct_027e0cf8_0819func_ov024_020d34a0EPA15_hh kind:function(arm,size=0x7c) addr:0x020d4df4
 _ZN21UnkStruct_027e0cf8_0819func_ov024_020d351cEiiPiii kind:function(arm,size=0x154) addr:0x020d4e70
-func_ov024_020d4fc4 kind:function(thumb,size=0x8c) addr:0x020d4fc4
+func_ov024_020d3670 kind:function(thumb,size=0x8c) addr:0x020d4fc4
 func_ov024_020d5050 kind:function(thumb,size=0x68) addr:0x020d5050
 func_ov024_020d50b8 kind:function(thumb,size=0xdc) addr:0x020d50b8
 func_ov024_020d5194 kind:function(thumb,size=0x58) addr:0x020d5194
@@ -643,10 +643,10 @@ func_ov024_020d5304 kind:function(arm,size=0x3c) addr:0x020d6ca8
 func_ov024_020d5340 kind:function(arm,size=0x14) addr:0x020d6ce4
 func_ov024_020d5354 kind:function(arm,size=0x5c) addr:0x020d6cf8
 func_ov024_020d6d54 kind:function(arm,size=0x60) addr:0x020d6d54
-func_ov024_020d6db4 kind:function(arm,size=0x24) addr:0x020d6db4
-func_ov024_020d6dd8 kind:function(arm,size=0x24) addr:0x020d6dd8
-func_ov024_020d6dfc kind:function(arm,size=0x24) addr:0x020d6dfc
-func_ov024_020d6e20 kind:function(arm,size=0x24) addr:0x020d6e20
+func_ov024_020d5410 kind:function(arm,size=0x24) addr:0x020d6db4
+func_ov024_020d5434 kind:function(arm,size=0x24) addr:0x020d6dd8
+func_ov024_020d5458 kind:function(arm,size=0x24) addr:0x020d6dfc
+func_ov024_020d547c kind:function(arm,size=0x24) addr:0x020d6e20
 func_ov024_020d6e44 kind:function(arm,size=0x10) addr:0x020d6e44
 func_ov024_020d6e54 kind:function(arm,size=0x40) addr:0x020d6e54
 func_ov024_020d6e94 kind:function(arm,size=0x4) addr:0x020d6e94
@@ -737,7 +737,7 @@ data_ov024_020d7547 kind:data(any) addr:0x020d8eeb local
 data_ov024_020d7550 kind:data(any) addr:0x020d8ef4 local
 data_ov024_020d7555 kind:data(any) addr:0x020d8ef9 local
 data_ov024_020d7560 kind:data(any) addr:0x020d8f04 local
-data_ov024_020d8f10 kind:data(any) addr:0x020d8f10
+data_ov024_020d756c kind:data(any) addr:0x020d8f10
 data_ov024_020d8f14 kind:data(any) addr:0x020d8f14
 data_ov024_020d8f1c kind:data(any) addr:0x020d8f1c
 data_ov024_020d8f2c kind:data(any) addr:0x020d8f2c
@@ -826,9 +826,9 @@ _ZTV20PlayerActor_A0_38_18 kind:data(any) addr:0x020d9bdc
 _ZTV20PlayerActor_A0_38_04 kind:data(any) addr:0x020d9be8
 sCreditsEndingType kind:data(byte[2]) addr:0x020d9bf4 local
 _ZTV14UnkDataStruct4 kind:data(any) addr:0x020d9bf8
-data_ov024_020d9c08 kind:data(any) addr:0x020d9c08
-data_ov024_020d9c10 kind:data(any) addr:0x020d9c10
-data_ov024_020d9c28 kind:data(any) addr:0x020d9c28
+@2128 kind:data(byte[6]) addr:0x020d9c08 local
+@2129 kind:data(byte[21]) addr:0x020d9c10 local
+@2130 kind:data(byte[19]) addr:0x020d9c28 local
 data_ov024_020d9c3c kind:data(any) addr:0x020d9c3c
 data_ov024_020d9c40 kind:data(any) addr:0x020d9c40
 data_ov024_020d9c44 kind:data(any) addr:0x020d9c44

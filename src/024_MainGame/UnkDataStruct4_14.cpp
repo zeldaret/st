@@ -223,7 +223,7 @@ void UnkDataStruct4_14::func_ov024_020d1e20(unk16 *param1, unk32 param2) {
     }
 }
 
-unk32 UnkDataStruct4_14::func_ov024_020d1eac(unk32 param1) {
+u8 UnkDataStruct4_14::func_ov024_020d1eac(const unk32 param1) {
     switch (param1) {
         case 0x10:
             return 0x01;

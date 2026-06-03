@@ -37,9 +37,6 @@ void func_02019a74();
 unk32 func_ov024_020d5304(unk32 sceneIndex);
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
-void func_ov024_020d24d4(void *);
-void func_ov024_020d2538(void *, SceneIndex, unk32, void *);
-void func_ov024_020d2518(void *);
 }
 
 extern void *data_ov000_020b64f8;
@@ -709,10 +706,9 @@ void AdventureModeManager::func_ov024_020c6840(SceneIndex sceneIndex) {
 
     {
         UnkDataStruct3 uStack_e8(0x1770);
-        func_ov024_020d24d4(&uStack_e8.mUnk_04);
-        func_ov024_020d2538(&uStack_e8.mUnk_04, sceneIndex, 0, uStack_e8.mUnk_00.unk_00);
+        uStack_e8.mUnk_04.func_ov024_020d2538(sceneIndex, 0, uStack_e8.mUnk_00.unk_00);
         data_027e0cf8->func_ov024_020c755c(&uStack_e8.mUnk_04);
-        func_ov024_020d2518(&uStack_e8.mUnk_04);
+        uStack_e8.mUnk_04.func_ov024_020d2518();
     }
 }
 
