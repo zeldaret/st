@@ -130,24 +130,13 @@ PassengerManager *PassengerManager::Create() {
     return new(HeapIndex_1) PassengerManager();
 }
 
-// non-matching
-void PassengerManager::func_ov024_020d41bc(UnkStruct_Param1 *param1) {
-    ActorId actorId = param1->actorId;
-    s16 mUnk_04     = param1->mUnk_04;
-
-    s16 sceneIndex            = param1->sceneIndex;
-    this->mPassenger.mActorId = actorId;
-    this->mPassenger.mUnk_04  = mUnk_04;
-
-    u8 roomIndex    = param1->roomIndex;
-    unk32 happiness = param1->happiness;
-    u16 mUnk_14     = param1->mUnk_14;
-
-    this->mPassenger.mSceneIndex = sceneIndex;
-    this->mPassenger.mRoomIndex  = roomIndex;
-    this->mPassenger.mHappiness  = happiness;
-    this->mDate                  = mUnk_14;
-
+void PassengerManager::func_ov024_020d41bc(const UnkStruct_Param1 *param1) {
+    this->mPassenger.mActorId    = param1->actorId;
+    this->mPassenger.mUnk_04     = param1->mUnk_04;
+    this->mPassenger.mSceneIndex = (s16) param1->sceneIndex;
+    this->mPassenger.mRoomIndex  = param1->roomIndex;
+    this->mPassenger.mHappiness  = param1->happiness;
+    this->mDate                  = param1->mUnk_14;
     this->func_ov024_020d4228();
 }
 

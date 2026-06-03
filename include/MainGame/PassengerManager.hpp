@@ -58,7 +58,7 @@ public:
     static bool func_ov001_020bf870();
 
     // overlay 24
-    void func_ov024_020d41bc(UnkStruct_Param1 *pActorId);
+    void func_ov024_020d41bc(const UnkStruct_Param1 *pActorId);
     void func_ov024_020d41f4(UnkStruct_Param1 *param1);
     void func_ov024_020d4228();
     void func_ov024_020d4258();
