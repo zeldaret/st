@@ -1,4 +1,5 @@
 #include "Unknown/Common.hpp"
+#include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
 extern "C" unk32 func_02032784(unk32 param1);
@@ -279,8 +280,8 @@ bool UnkDataStruct4_14::func_ov024_020d1fa4(unk32 param1) const {
 }
 
 void UnkDataStruct4_14::func_ov024_020d1fe8() {
-    this->mUnk_00 = 0;
-    this->mUnk_01 = 0x79; // related to scene amount?
+    this->mUnk_00            = 0;
+    this->mStationSceneIndex = SceneIndex_Max;
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_0C); i++) {
         this->mUnk_0C[i] = 0;
@@ -349,13 +350,13 @@ unk32 UnkDataStruct4_14::func_ov024_020d20c0(unk32 param1, unk32 param2) const {
     return 4;
 }
 
-bool UnkDataStruct4_14::func_ov024_020d21a0() const {
-    switch (this->mUnk_01) {
-        case 0x19:
-        case 0x1A:
-        case 0x1B:
-        case 0x1C:
-        case 0x1D:
+bool UnkDataStruct4_14::IsStationDungeon() const {
+    switch (this->mStationSceneIndex) {
+        case SceneIndex_d_forest:
+        case SceneIndex_d_snow26:
+        case SceneIndex_d_water27:
+        case SceneIndex_d_flame:
+        case SceneIndex_d_sand:
             return true;
         default:
             break;

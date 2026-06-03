@@ -116,6 +116,7 @@ public:
     UnkStruct_func_ov000_020702a8 *func_ov000_020702a8(unk32 param1);
     unk32 GetRoomEntryIndex();
     CourseRoomEntry *GetRoomEntry(u32 sceneIndex, unk32 param2);
+    u32 GetSceneIndexFromName(const char *sceneName);
     bool func_ov000_02070378(u32 param1);
 };
 

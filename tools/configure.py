@@ -275,6 +275,7 @@ config.libs = [
             Object("024_MainGame/UnkDataStruct4_14.cpp"),
             Object("024_MainGame/UnkDataStruct4.cpp"),
             Object("024_MainGame/UnkStruct_027e0cf8_08_024.cpp"),
+            Object("024_MainGame/ZeldaTrainBinary.cpp"),
             Object("024_MainGame/code_020d3670_024.cpp"),
             Object("024_MainGame/UnkStruct_027e0ce0_34_024.cpp"),
             Object("024_MainGame/PassengerManager.cpp"),

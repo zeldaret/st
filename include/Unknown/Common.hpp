@@ -1272,12 +1272,12 @@ struct UnkDataStruct2 {
 typedef u8 UnkArrayDataType1[UnkDataStruct4_14_Unk_Max][15];
 struct UnkDataStruct4_14 {
     /* 00 */ unk8 mUnk_00;
-    /* 01 */ s8 mUnk_01;
+    /* 01 */ s8 mStationSceneIndex;
     /* 02 */ s8 mUnk_02[3];
-    /* 02 */ unk8 mUnk_05;
-    /* 02 */ u16 mUnk_06[3];
-    /* 02 */ u8 mUnk_0C[3];
-    /* 02 */ u8 mUnk_0F[3];
+    /* 05 */ unk8 mUnk_05;
+    /* 06 */ u16 mUnk_06[3];
+    /* 0C */ u8 mUnk_0C[3];
+    /* 0F */ u8 mUnk_0F[3];
     /* 12 */ u8 mUnk_12;
     /* 13 */ u8 mUnk_13;
     /* 14 */
@@ -1299,7 +1299,7 @@ struct UnkDataStruct4_14 {
     u8 func_ov024_020d208c(unk32 param1) const;
     void func_ov024_020d2098(unk32 param1, unk32 param2);
     unk32 func_ov024_020d20c0(unk32 param1, unk32 param2) const;
-    bool func_ov024_020d21a0() const;
+    bool IsStationDungeon() const;
     bool func_ov024_020d21d8() const;
     bool func_ov024_020d223c() const;
     bool func_ov024_020d2270(unk32 param1, unk32 param2) const;
@@ -1328,13 +1328,6 @@ struct UnkDataStruct4_14_2 {
     /* 12C */
 };
 
-struct UnkDataStruct4_68 {
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */
-};
-
 struct UnkStruct_SceneChange1;
 struct UnkDataStruct4 {
     /* 00 (vtable) */
@@ -1345,8 +1338,8 @@ struct UnkDataStruct4 {
     /* 10 */ unk32 mUnk_10;
     /* 14 */ UnkDataStruct4_14_2 *mUnk_14[20];
     /* 64 */ UnkDataStruct4_14_2 *mUnk_64;
-    /* 68 */ UnkDataStruct4_68 mUnk_68[8];
-    /* C8 */ UnkDataStruct4_68 *mUnk_C8;
+    /* 68 */ VecFx32 mUnk_68[8];
+    /* C8 */ VecFx32 *mUnk_C8;
     /* CC */ u32 mSceneIndex;
     /* D0 */
 

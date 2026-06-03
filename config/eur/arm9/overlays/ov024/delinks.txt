@@ -163,8 +163,12 @@ src/024_MainGame/UnkStruct_027e0cf8_08_024.cpp:
     complete
     .text       start:0x020d3158 end:0x020d3670
 
+src/024_MainGame/ZeldaTrainBinary.cpp:
+    complete
+    .text       start:0x020d3670 end:0x020d3900
+
 src/024_MainGame/code_020d3670_024.cpp:
-    .text       start:0x020d3670 end:0x020d3d20
+    .text       start:0x020d3900 end:0x020d3d20
 
 src/024_MainGame/UnkStruct_027e0ce0_34_024.cpp:
     .text       start:0x020d3d20 end:0x020d4120

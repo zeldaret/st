@@ -2,13 +2,13 @@
 #include "Unknown/UnkFileSystem.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
+#include "files.h"
 
 #include <nitro/mi.h>
 
 extern "C" void func_02026800(void *, int, const char *, ...);
 extern "C" unk32 func_02032784(unk32 param1);
 extern "C" unk32 func_ov000_0205c7ac(unk32, unk32);
-extern "C" void func_ov024_020d3670(void *, UnkDataStruct4 *);
 extern "C" bool func_ov000_0205c74c(unk32, unk32, unk32, unk32);
 extern "C" bool func_ov024_020d5434(SceneIndex sceneIndex);
 extern "C" bool func_ov024_020d5410(SceneIndex sceneIndex);
@@ -51,7 +51,7 @@ void UnkDataStruct4::func_ov024_020d2564() {
 void UnkDataStruct4::func_ov024_020d258c(u32 sceneIndex, u8 roomIndex) {
     wchar_t sp34[16];
     wchar_t sp10[2];
-    unk32 sp8[2]; //! TODO: struct
+    FileInfos sp8;
     CourseEntry *pEntry;
 
     this->mSceneIndex = sceneIndex;
@@ -75,9 +75,9 @@ void UnkDataStruct4::func_ov024_020d258c(u32 sceneIndex, u8 roomIndex) {
 
     UnkFileSystem3 sp14((char *) sp34);
     sp14.vfunc_08(0x10);
-    sp8[0] = (unk32) sp14.mpFile;
-    sp8[1] = sp14.mFileSize;
-    func_ov024_020d3670(sp8, this);
+    sp8.pFile = sp14.mpFile;
+    sp8.size  = sp14.mFileSize;
+    ZTB_ParseFile(&sp8, this);
 }
 
 void UnkDataStruct4::func_ov024_020d26b0(unk32 param1) {
@@ -384,22 +384,22 @@ void UnkDataStruct4::vfunc_00() {}
 void UnkDataStruct4::vfunc_04() {}
 
 s32 UnkDataStruct4::func_ov024_020d3068() const {
-    return ((s32) this->mUnk_C8 - (s32) this->mUnk_68) / (s32) sizeof(UnkDataStruct4_68);
+    return ((s32) this->mUnk_C8 - (s32) this->mUnk_68) / (s32) sizeof(VecFx32);
 }
 
 bool UnkDataStruct4::func_ov024_020d308c(fx32 *param1, fx32 *param2, unk16 param3) const {
     s32 arrayLen = this->func_ov024_020d3068();
 
     for (int i = 0; i < arrayLen; i++) {
-        const UnkDataStruct4_68 *pUnk_68 = &this->mUnk_68[i];
+        const VecFx32 *pUnk_68 = &this->mUnk_68[i];
 
-        if (pUnk_68->mUnk_00 == param3) {
+        if (pUnk_68->x == param3) {
             if (param1 != NULL) {
-                *param1 = pUnk_68->mUnk_04;
+                *param1 = pUnk_68->y;
             }
 
             if (param2 != NULL) {
-                *param2 = pUnk_68->mUnk_08;
+                *param2 = pUnk_68->z;
             }
 
             return true;

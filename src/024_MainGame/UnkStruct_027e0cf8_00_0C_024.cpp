@@ -7,27 +7,42 @@
 extern "C" bool func_ov024_020d1d30(void *param1, unk32 param3, u16 param4);
 extern "C" bool func_ov024_020d5340(s16 param1);
 extern "C" bool func_ov000_0205ca18(unk32 param1, unk32 param2);
-extern "C" bool func_ov000_0205c9d0(unk32 param1);
+extern "C" bool func_ov000_0205c9d0(unk32 stationSceneIdx);
 extern VecFx32 data_027e07d4;
 
 static const Vec2sb data_ov024_020d8094(0x7F, 0x7F);
 
 static const UnkStruct_ov024_020d8098 data_ov024_020d8098[] = {
-    {-1, 0x14, data_ov024_020d8094, 0x00, 0x03, false, false},   {-1, 0x29, data_ov024_020d8094, 0x01, 0x02, true, false},
-    {-1, 0x2F, data_ov024_020d8094, 0x02, 0x0A, true, false},    {-1, 0x2A, data_ov024_020d8094, 0x03, 0x0B, true, false},
-    {-1, 0x2B, data_ov024_020d8094, 0x04, 0x0C, true, false},    {-1, 0x2C, data_ov024_020d8094, 0x05, 0x0E, true, false},
-    {-1, 0x2E, data_ov024_020d8094, 0x06, 0x0D, true, false},    {-1, 0x30, data_ov024_020d8094, 0x07, 0x13, true, true},
-    {-1, 0x31, data_ov024_020d8094, 0x08, 0x14, true, true},     {-1, 0x32, data_ov024_020d8094, 0x09, 0x15, true, true},
-    {-1, 0x33, data_ov024_020d8094, 0x0A, 0x16, true, true},     {-1, 0x19, data_ov024_020d8094, 0x0B, 0x05, false, false},
-    {-1, 0x1A, data_ov024_020d8094, 0x0C, 0x06, false, false},   {0x0A, 0x1B, data_ov024_020d8094, 0x0E, 0x1D, false, false},
-    {0x06, 0x1B, data_ov024_020d8094, 0x0D, 0x07, false, false}, {-1, 0x1C, data_ov024_020d8094, 0x0F, 0x08, false, false},
-    {-1, 0x1D, data_ov024_020d8094, 0x1B, 0x09, false, false},   {-1, 0x35, data_ov024_020d8094, 0x10, 0x1F, true, true},
-    {-1, 0x36, data_ov024_020d8094, 0x11, 0x1E, true, true},     {-1, 0x37, data_ov024_020d8094, 0x12, 0x19, true, true},
-    {-1, 0x3C, data_ov024_020d8094, 0x1C, 0x20, true, false},    {-1, 0x3A, data_ov024_020d8094, 0x1D, 0x26, true, true},
-    {-1, 0x34, data_ov024_020d8094, 0x1E, 0x17, true, true},     {-1, 0x3D, data_ov024_020d8094, 0x1F, 0x24, true, true},
-    {-1, 0x3E, data_ov024_020d8094, 0x20, 0x25, true, true},     {-1, 0x3F, Vec2sb(0x01, 0x01), 0x26, 0x29, true, true},
-    {-1, 0x40, data_ov024_020d8094, 0x27, 0x21, true, true},     {-1, 0x41, data_ov024_020d8094, 0x28, 0x22, true, true},
-    {-1, 0x39, data_ov024_020d8094, 0x29, 0x1C, true, true},     {-1, 0x3F, Vec2sb(0x0E, 0x01), 0x38, 0x29, true, true},
+    {-1, SceneIndex_d_main_f, data_ov024_020d8094, 0x00, 0x03, false, false},
+    {-1, SceneIndex_f_htown, data_ov024_020d8094, 0x01, 0x02, true, false},
+    {-1, SceneIndex_f_first, data_ov024_020d8094, 0x02, 0x0A, true, false},
+    {-1, SceneIndex_f_forest1, data_ov024_020d8094, 0x03, 0x0B, true, false},
+    {-1, SceneIndex_f_snow, data_ov024_020d8094, 0x04, 0x0C, true, false},
+    {-1, SceneIndex_f_water, data_ov024_020d8094, 0x05, 0x0E, true, false},
+    {-1, SceneIndex_f_flame5, data_ov024_020d8094, 0x06, 0x0D, true, false},
+    {-1, SceneIndex_f_forest2, data_ov024_020d8094, 0x07, 0x13, true, true},
+    {-1, SceneIndex_f_snow2, data_ov024_020d8094, 0x08, 0x14, true, true},
+    {-1, SceneIndex_f_water2, data_ov024_020d8094, 0x09, 0x15, true, true},
+    {-1, SceneIndex_f_flame2, data_ov024_020d8094, 0x0A, 0x16, true, true},
+    {-1, SceneIndex_d_forest, data_ov024_020d8094, 0x0B, 0x05, false, false},
+    {-1, SceneIndex_d_snow26, data_ov024_020d8094, 0x0C, 0x06, false, false},
+    {0x0A, SceneIndex_d_water27, data_ov024_020d8094, 0x0E, 0x1D, false, false},
+    {0x06, SceneIndex_d_water27, data_ov024_020d8094, 0x0D, 0x07, false, false},
+    {-1, SceneIndex_d_flame, data_ov024_020d8094, 0x0F, 0x08, false, false},
+    {-1, SceneIndex_d_sand, data_ov024_020d8094, 0x1B, 0x09, false, false},
+    {-1, SceneIndex_f_tetsuo, data_ov024_020d8094, 0x10, 0x1F, true, true},
+    {-1, SceneIndex_f_bridge, data_ov024_020d8094, 0x11, 0x1E, true, true},
+    {-1, SceneIndex_f_bridge2, data_ov024_020d8094, 0x12, 0x19, true, true},
+    {-1, SceneIndex_f_flame3, data_ov024_020d8094, 0x1C, 0x20, true, false},
+    {-1, SceneIndex_f_ajito, data_ov024_020d8094, 0x1D, 0x26, true, true},
+    {-1, SceneIndex_f_sand, data_ov024_020d8094, 0x1E, 0x17, true, true},
+    {-1, SceneIndex_f_flame4, data_ov024_020d8094, 0x1F, 0x24, true, true},
+    {-1, SceneIndex_f_rabbit, data_ov024_020d8094, 0x20, 0x25, true, true},
+    {-1, SceneIndex_f_kakushi1, Vec2sb(0x01, 0x01), 0x26, 0x29, true, true},
+    {-1, SceneIndex_f_kakushi2, data_ov024_020d8094, 0x27, 0x21, true, true},
+    {-1, SceneIndex_f_kakushi3, data_ov024_020d8094, 0x28, 0x22, true, true},
+    {-1, SceneIndex_f_water3, data_ov024_020d8094, 0x29, 0x1C, true, true},
+    {-1, SceneIndex_f_kakushi1, Vec2sb(0x0E, 0x01), 0x38, 0x29, true, true},
 };
 
 static const UnkStruct_ov024_020d7454 data_ov024_020d7454[] = {
@@ -317,7 +332,7 @@ void UnkStruct_027e0cf8_00::func_ov024_020cfb7c(UnkDataStruct4 *param1, Vec2s *p
     this->mUnk_2250 = value;
 }
 
-s32 UnkStruct_027e0cf8_00::func_ov024_020cfd54(s32 param1, s32 param2, s32 param3, s32 param4) {
+s32 UnkStruct_027e0cf8_00::func_ov024_020cfd54(s32 param1, s32 stationSceneIdx, s32 param3, s32 param4) {
     u32 i;
     const UnkStruct_ov024_020d8098 *ptr;
     bool var_r8;
@@ -333,7 +348,7 @@ s32 UnkStruct_027e0cf8_00::func_ov024_020cfd54(s32 param1, s32 param2, s32 param
         }
 
         var_r10 = 1;
-        if (ptr->mUnk_02 != param2) {
+        if (ptr->mStationSceneIdx != stationSceneIdx) {
             var_r10 = 0;
         }
 
@@ -357,9 +372,9 @@ s32 UnkStruct_027e0cf8_00::func_ov024_020cfd54(s32 param1, s32 param2, s32 param
     return -1;
 }
 
-bool UnkStruct_027e0cf8_00::func_ov024_020cfe24(s16 param1) {
+bool UnkStruct_027e0cf8_00::func_ov024_020cfe24(s16 stationSceneIdx) {
     for (u32 i = 0; i < ARRAY_LEN(data_ov024_020d8098); i++) {
-        if (param1 == data_ov024_020d8098[i].mUnk_02) {
+        if (stationSceneIdx == data_ov024_020d8098[i].mStationSceneIdx) {
             return data_ov024_020d8098[i].mUnk_0A;
         }
     }
@@ -382,16 +397,16 @@ s16 UnkStruct_027e0cf8_00::func_ov024_020cfe94(s32 param1) {
         const UnkStruct_ov024_020d8098 *ptr = &data_ov024_020d8098[i];
 
         if (ptr->mUnk_06 == param1) {
-            return ptr->mUnk_02;
+            return ptr->mStationSceneIdx;
         }
     }
 
-    return -1;
+    return SceneIndex_None;
 }
 
 bool UnkStruct_027e0cf8_00::func_ov024_020cfed0(s16 param1) {
     for (u32 i = 0; i < ARRAY_LEN(data_ov024_020d8098); i++) {
-        if (param1 == data_ov024_020d8098[i].mUnk_02) {
+        if (param1 == data_ov024_020d8098[i].mStationSceneIdx) {
             return data_ov024_020d8098[i].mUnk_0B;
         }
     }
@@ -459,10 +474,10 @@ void UnkStruct_027e0cf8_0C::func_ov024_020d002c(const UnkDataStruct4 *param1) {
         for (j = 0; j < ARRAY_LEN(param1->mUnk_14[0]->mUnk_00); j++) {
             sp8     = param1->mUnk_14;
             pUnk_14 = sp8[i]->mUnk_00;
-            temp_r8 = sp8[i]->mUnk_00[j].mUnk_01;
+            temp_r8 = sp8[i]->mUnk_00[j].mStationSceneIndex;
             new_var = &pUnk_14[j];
 
-            if (temp_r8 == 0x79) {
+            if (temp_r8 == SceneIndex_Max) {
                 continue;
             }
 
@@ -473,7 +488,7 @@ void UnkStruct_027e0cf8_0C::func_ov024_020d002c(const UnkDataStruct4 *param1) {
 
             temp_r6 = &data_ov024_020d8098[temp_r0];
 
-            if (temp_r8 == 0x79) {
+            if (temp_r8 == SceneIndex_Max) {
                 continue;
             }
 
@@ -493,7 +508,7 @@ void UnkStruct_027e0cf8_0C::func_ov024_020d002c(const UnkDataStruct4 *param1) {
             this->mUnk_000[unk_16C].mUnk_0C.y = spC.z;
 
 #if IS_JP
-            if (temp_r8 == 0x14) {
+            if (temp_r8 == SceneIndex_d_main_f) {
                 if (param1->mSceneIndex == SceneIndex_t_area1 || param1->mSceneIndex == SceneIndex_t_area3) {
                     this->mUnk_000[unk_16C].mUnk_0C.y -= 0xC000;
                 }
@@ -683,7 +698,7 @@ bool UnkStruct_027e0cf8_0C::func_ov024_020d0510(s16 param1) {
                     return func_ov000_0205ca18(0x39, 0x0A);
                 }
 
-                return func_ov000_0205c9d0(ptr->mUnk_02);
+                return func_ov000_0205c9d0(ptr->mStationSceneIdx);
             }
 
             return true;

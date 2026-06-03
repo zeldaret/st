@@ -42,8 +42,8 @@ public:
     void func_ov024_020cf9d4(UnkStruct_027e0cf8_00_18_00 *param1);
     void func_ov024_020cfb7c(UnkDataStruct4 *param1, Vec2s *param2, unk32 param3, u16 param4, unk32 param5, unk32 param6);
 
-    static s32 func_ov024_020cfd54(s32 param1, s32 param2, s32 param3, s32 param4);
-    static bool func_ov024_020cfe24(s16 param1);
+    static s32 func_ov024_020cfd54(s32 param1, s32 stationSceneIdx, s32 param3, s32 param4);
+    static bool func_ov024_020cfe24(s16 stationSceneIdx);
     static s32 func_ov024_020cfe6c(s32 param1, s32 param2, s32 param3, s32 param4);
     static s16 func_ov024_020cfe94(s32 param1);
     static bool func_ov024_020cfed0(s16 param1);
@@ -210,7 +210,7 @@ public:
 
 struct UnkStruct_ov024_020d8098 {
     /* 00 */ s16 mUnk_00;
-    /* 02 */ s16 mUnk_02;
+    /* 02 */ s16 mStationSceneIdx;
     /* 04 */ Vec2sb mUnk_04;
     /* 06 */ s16 mUnk_06;
     /* 08 */ u16 mUnk_08;
