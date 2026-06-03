@@ -4,7 +4,6 @@
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 #include "versions.h"
 
-extern "C" bool func_ov024_020d1d30(void *param1, unk32 param3, u16 param4);
 extern "C" bool func_ov024_020d5340(s16 param1);
 extern "C" bool func_ov000_0205ca18(unk32 param1, unk32 param2);
 extern "C" bool func_ov000_0205c9d0(unk32 stationSceneIdx);
