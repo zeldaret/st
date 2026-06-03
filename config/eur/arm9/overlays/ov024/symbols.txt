@@ -559,11 +559,11 @@ func_ov024_020d3a60 kind:function(arm,size=0x2c) addr:0x020d3a60
 func_ov024_020d3a8c kind:function(arm,size=0x50) addr:0x020d3a8c
 func_ov024_020d3adc kind:function(arm,size=0x120) addr:0x020d3adc
 func_ov024_020d3bfc kind:function(arm,size=0x58) addr:0x020d3bfc
-func_ov024_020d3c54 kind:function(thumb,size=0xc) addr:0x020d3c54
-func_ov024_020d3c60 kind:function(thumb,size=0x94) addr:0x020d3c60
-func_ov024_020d3cf4 kind:function(thumb,size=0x2c) addr:0x020d3cf4
-func_ov024_020d3d20 kind:function(thumb,size=0x5e) addr:0x020d3d20
-func_ov024_020d3d80 kind:function(thumb,size=0x18) addr:0x020d3d80
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3c54Ei kind:function(thumb,size=0xc) addr:0x020d3c54
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3c60Ev kind:function(thumb,size=0x94) addr:0x020d3c60
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3cf4Ev kind:function(thumb,size=0x2c) addr:0x020d3cf4
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3d20Ev kind:function(thumb,size=0x5e) addr:0x020d3d20
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3d80Ev kind:function(thumb,size=0x18) addr:0x020d3d80
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3d98Eii kind:function(thumb,size=0x10) addr:0x020d3d98
 func_ov024_020d3da8 kind:function(thumb,size=0x16) addr:0x020d3da8
 func_ov024_020d3dc0 kind:function(thumb,size=0xa) addr:0x020d3dc0
@@ -742,7 +742,7 @@ data_ov024_020d7570 kind:data(any) addr:0x020d7570
 data_ov024_020d7578 kind:data(any) addr:0x020d7578
 data_ov024_020d7588 kind:data(any) addr:0x020d7588
 data_ov024_020d7598 kind:data(any) addr:0x020d7598 ambiguous
-sPassengerInfos kind:data(any) addr:0x020d75a4
+sPassengerInfos kind:data(any) addr:0x020d75a4 local
 data_ov024_020d7624 kind:data(any) addr:0x020d7624
 data_ov024_020d762c kind:data(any) addr:0x020d762c
 data_ov024_020d763c kind:data(any) addr:0x020d763c

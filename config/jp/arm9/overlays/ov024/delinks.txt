@@ -168,12 +168,13 @@ src/024_MainGame/ZeldaTrainBinary.cpp:
     .text       start:0x020d4fc4 end:0x020d5254
 
 src/024_MainGame/code_020d3670_024.cpp:
-    .text       start:0x020d5254 end:0x020d5674
+    .text       start:0x020d5254 end:0x020d55a8
 
 src/024_MainGame/UnkStruct_027e0ce0_34_024.cpp:
-    .text       start:0x020d5674 end:0x020d5a74
+    .text       start:0x020d55a8 end:0x020d5a74
 
 src/024_MainGame/PassengerManager.cpp:
+    complete
     .text       start:0x020d5a74 end:0x020d6008
     .rodata     start:0x020d8f48 end:0x020d8fc8
 
