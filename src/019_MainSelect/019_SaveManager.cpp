@@ -116,7 +116,7 @@ ARM unk16 SaveFile::func_ov019_020d0c4c(unk32 param1, unk32 param2) {
     s16 i = 0;
 
     do {
-        if ((this->mUnk_04E00[i][param2].mUnk_00 & (1 << param1)) != 0) {
+        if ((this->mUnk_04E00[i][param2].unk_00 & (1 << param1)) != 0) {
             return i;
         }
 
@@ -398,13 +398,13 @@ ARM void SaveFile::func_ov019_020d1808(unk32 param1) {
         if (stack1[i].mUnk_00 != 0) {
             if (stack1[i].mUnk_04 == 0 || stack1[i].mUnk_00 != stack1[i * 2].mUnk_04) {
                 MI_CpuCopyFast(puVar5, puVar5 + data_ov019_020d1bd4[i], data_ov019_020d1bd4[i]);
-                this->mUnk_04E00[param1][1].mUnk_00 |= 1 << (i & 0xFF);
+                this->mUnk_04E00[param1][1].unk_00 |= 1 << (i & 0xFF);
             }
         } else {
-            this->mUnk_04E00[param1][0].mUnk_00 |= 1 << (i & 0xFF);
+            this->mUnk_04E00[param1][0].unk_00 |= 1 << (i & 0xFF);
 
             if (stack1[i * 2].mUnk_04 == 0) {
-                this->mUnk_04E00[param1][1].mUnk_00 |= 1 << (i & 0xFF);
+                this->mUnk_04E00[param1][1].unk_00 |= 1 << (i & 0xFF);
             } else {
                 MI_CpuCopyFast(puVar5 + data_ov019_020d1bd4[i], puVar5, data_ov019_020d1bd4[i]);
             }

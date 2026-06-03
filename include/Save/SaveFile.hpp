@@ -15,70 +15,68 @@
 #define COUNT_DATA 2 // main data + backup (?)
 #define LENGTH_PLAYER_NAME 8
 
-class SaveFile_00000_0000_Data_D8 {
-public:
-    /* 00 */ unk32 mUnk_00;
+struct SaveFile_00000_0000_Data_D8 {
+    /* 00 */ unk32 unk_00;
     /* 04 */ STRUCT_PAD(0x04, 0x6C);
-    /* 6C */ u32 mTrackFlags[2];
-    /* 74 */ unk32 mSpiritTrackFlags[1];
-    /* 78 */ unk32 mUnk_74;
-    /* 7C */ unk32 mUnk_78;
+    /* 6C */ u32 trackFlags[2];
+    /* 74 */ unk32 spiritTrackFlags[1];
+    /* 78 */ unk32 unk_74;
+    /* 7C */ unk32 unk_78;
     /* 80 */
 
     SaveFile_00000_0000_Data_D8();
 };
 
-class SaveFile_00000_0000_Data_184 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk16 mUnk_04;
-    /* 06 */ unk16 mUnk_06;
+struct SaveFile_00000_0000_Data_184 {
+    /* 00 */ unk32 unk_00;
+    /* 04 */ unk16 unk_04;
+    /* 06 */ unk16 unk_06;
     /* 08 */
 
     SaveFile_00000_0000_Data_184() :
-        mUnk_00(0),
-        mUnk_04(0) {}
+        unk_00(0),
+        unk_04(0) {}
 };
 
-class SaveFile_00000_0000_Data_484 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
+struct SaveFile_00000_0000_Data_484 {
+    /* 00 */ unk32 unk_00;
+    /* 04 */ unk32 unk_04;
     /* 08 */
 
     SaveFile_00000_0000_Data_484() :
-        mUnk_00(0),
-        mUnk_04(0) {}
+        unk_00(0),
+        unk_04(0) {}
 };
 
+// same layout as `MiscAdvManager`
 struct SaveMiscAdvManager {
-    /* 00 */ u16 mStampDates[StampType_Max];
-    /* 28 */ u16 mUnk_28;
-    /* 2A */ u16 mPostDate;
+    /* 00 */ u16 stampDates[StampType_Max];
+    /* 28 */ u16 unk_28;
+    /* 2A */ u16 postDate;
     /* 2C */ union {
-        Vec2b mStampPositions[StampType_Max];
-        u16 mStampPos[StampType_Max];
+        Vec2b stampPositions[StampType_Max];
+        u16 stampPos[StampType_Max];
     };
-    /* 54 */ s8 mObtainedLetters[LetterType_Max];
-    /* 68 */ s8 mObtainedStamps[StampType_Max];
-    /* 7C */ u8 mLastRandomNum;
-    /* 7D */ u8 mRandomNum;
-    /* 7E */ s8 mNumPriceCards;       // current amount of price cards
-    /* 7F */ s8 mNumPostedPriceCards; // current amount of posted price cards
-    /* 80 */ unk8 mUnk_80;
-    /* 81 */ unk8 mUnk_81;       // pad?
-    /* 82 */ unk8 mUnk_82;       // pad?
-    /* 83 */ unk8 mUnk_83;       // pad?
-    /* 84 */ unk32 mLettersRead; // bitfield
-    /* 88 */ unk32 mStampsFlag;  // bitfield, related to the checkmarks from the stampbook
-    /* 8C */ unk16 mSongs;       // bitfield
-    /* 8E */ unk16 mUnk_8E;      // pad?
+    /* 54 */ s8 obtainedLetters[LetterType_Max];
+    /* 68 */ s8 obtainedStamps[StampType_Max];
+    /* 7C */ u8 lastRandomNum;
+    /* 7D */ u8 randomNum;
+    /* 7E */ s8 numPriceCards;       // current amount of price cards
+    /* 7F */ s8 numPostedPriceCards; // current amount of posted price cards
+    /* 80 */ unk8 unk_80;
+    /* 81 */ unk8 unk_81;       // pad?
+    /* 82 */ unk8 unk_82;       // pad?
+    /* 83 */ unk8 unk_83;       // pad?
+    /* 84 */ unk32 lettersRead; // bitfield
+    /* 88 */ unk32 stampsFlag;  // bitfield, related to the checkmarks from the stampbook
+    /* 8C */ unk16 songs;       // bitfield
+    /* 8E */ unk16 unk_8E;      // pad?
     /* 90 */
 
     SaveMiscAdvManager() :
-        mLettersRead(0),
-        mStampsFlag(0),
-        mSongs(0) {}
+        lettersRead(0),
+        stampsFlag(0),
+        songs(0) {}
 };
 
 struct SaveInventory {
@@ -293,12 +291,11 @@ public:
     static void func_ov019_020d1600(SaveTreasureData *param1);
 };
 
-class SaveFile_04E00 {
-public:
-    u16 mUnk_00;
+struct SaveFile_04E00 {
+    u16 unk_00;
 
     SaveFile_04E00() :
-        mUnk_00(0) {}
+        unk_00(0) {}
 };
 
 class SaveFile {
