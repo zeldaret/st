@@ -479,10 +479,10 @@ ARM void FileSelectOptions::func_ov019_020cd788() {
 ARM void FileSelectOptions::func_ov019_020cd7f8() {
     switch (data_0204a110.func_01ff9b50()) {
         case BTN_ID_RETURN:
-            SaveSub17 *pSaveSub17        = gSaveManager.GetSaveSlot(this->mUnk_0024.mSaveSlotIndex)->Get2600Ptr();
-            data_0204a110.mUnk_000       = pSaveSub17->mUnk_02;
-            data_ov000_020b504c.mUnk_030 = pSaveSub17->mUnk_00;
-            data_ov000_020b50c0.func_ov000_0206a6a4(pSaveSub17->mUnk_01);
+            SaveFile_00000_2600_Data *pSaveSub17 = gSaveManager.GetSaveSlot(this->mUnk_0024.mSaveSlotIndex)->Get2600Ptr();
+            data_0204a110.mUnk_000               = pSaveSub17->unk_02;
+            data_ov000_020b504c.mUnk_030         = pSaveSub17->unk_00;
+            data_ov000_020b50c0.func_ov000_0206a6a4(pSaveSub17->unk_01);
             data_0204a088->func_ov000_020611fc(0);
             data_ov000_020b5214.func_ov000_0206db44(0x2E);
             break;
@@ -563,10 +563,10 @@ ARM void FileSelectOptions::func_ov019_020cdcb8() {
 
         if (ptr->vfunc_08() == 0 ? true : false) {
             if (data_ov000_020b504c.func_ov000_020682c0(0) == 0) {
-                SaveSub17 *pSaveSub17 = gSaveManager.GetSaveSlot(this->mUnk_0024.mSaveSlotIndex)->Get2600Ptr();
-                pSaveSub17->mUnk_00   = this->mUnk_0024.mUnk_FC0;
-                pSaveSub17->mUnk_01   = this->mUnk_0024.mUnk_FC1;
-                pSaveSub17->mUnk_02   = this->mUnk_0024.mUnk_FC2;
+                SaveFile_00000_2600_Data *pSaveSub17 = gSaveManager.GetSaveSlot(this->mUnk_0024.mSaveSlotIndex)->Get2600Ptr();
+                pSaveSub17->unk_00                   = this->mUnk_0024.mUnk_FC0;
+                pSaveSub17->unk_01                   = this->mUnk_0024.mUnk_FC1;
+                pSaveSub17->unk_02                   = this->mUnk_0024.mUnk_FC2;
                 gSaveManager.mpSaveFile->mSaveSlotIndex = this->mUnk_0024.mSaveSlotIndex;
                 gSaveManager.func_ov019_020d08fc(2, SaveFile::func_ov019_020d13b8);
 
@@ -577,7 +577,7 @@ ARM void FileSelectOptions::func_ov019_020cdcb8() {
                 data_0204a110.mUnk_000 = this->mUnk_0024.mUnk_FC2;
                 this->mUnk_1CF5        = true;
             } else {
-                data_ov000_020b504c.mUnk_030 = gSaveManager.GetSaveSlot(this->mUnk_0024.mSaveSlotIndex)->Get2600Ptr()->mUnk_00;
+                data_ov000_020b504c.mUnk_030 = gSaveManager.GetSaveSlot(this->mUnk_0024.mSaveSlotIndex)->Get2600Ptr()->unk_00;
                 this->func_ov019_020cde8c(FSOptionsState_Idle);
             }
         }
@@ -614,13 +614,13 @@ ARM UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManag
     mUnk_FB8(NULL),
     mUnk_FBC(NULL) {
 
-    SaveSlot *pSlot       = gSaveManager.GetSaveSlot(this->mSaveSlotIndex);
-    SaveSub17 *pSaveSub17 = pSlot->Get2600Ptr();
-    this->mUnk_FC0        = pSaveSub17->mUnk_00;
-    this->mUnk_FC1        = pSaveSub17->mUnk_01;
-    this->mUnk_FC2        = pSaveSub17->mUnk_02;
+    SaveSlot *pSlot                      = gSaveManager.GetSaveSlot(this->mSaveSlotIndex);
+    SaveFile_00000_2600_Data *pSaveSub17 = pSlot->Get2600Ptr();
+    this->mUnk_FC0                       = pSaveSub17->unk_00;
+    this->mUnk_FC1                       = pSaveSub17->unk_01;
+    this->mUnk_FC2                       = pSaveSub17->unk_02;
 
-    u8 *src = (u8 *) pSaveSub17->mUnk_03;
+    u8 *src = (u8 *) pSaveSub17->unk_03;
     u8 *dst = (u8 *) &this->mUnk_FC3[0];
     for (u32 i = ARRAY_LEN(this->mUnk_FC3); i != 0; i--) {
         u8 b1                     = *src++;
@@ -629,7 +629,7 @@ ARM UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManag
         this->mUnk_FC3[i].mUnk_01 = b2;
     }
     this->mUnk_FC3[0].mUnk_00 = *src;
-    this->mUnk_103E           = pSaveSub17->mUnk_7E;
+    this->mUnk_103E           = pSaveSub17->unk_7E;
 
     param1->Append(&this->mUnk_490);
     param1->Append(&this->mUnk_4F0);

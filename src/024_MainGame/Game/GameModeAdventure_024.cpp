@@ -32,13 +32,13 @@ void GameModeAdventure::vfunc_08() {
     SaveFile *pSaveFile = data_ov000_020b4eec.func_ov001_020be12c();
 
 #if IS_JP
-    SaveInfoData *pSaveInfoData = &pSaveFile->mSlots[0].mSaveInfo.mSaveInfoData[0];
+    SaveInfoData *pSaveInfoData = &pSaveFile->mSlots[0].mInfoData[0];
 
-    if (pSaveInfoData->mSceneIndex == SceneIndex_f_ajito2) {
-        pSaveInfoData->mSceneIndex = SceneIndex_f_ajito;
-        pSaveInfoData->mRoomIndex  = 0;
-        pSaveInfoData->mSpawnIndex = 0;
-        UNSET_FLAG(pSaveInfoData->mAdventureFlags.data, AdventureFlag_WadatsumiMinigameSequence);
+    if (pSaveInfoData->sceneIndex == SceneIndex_f_ajito2) {
+        pSaveInfoData->sceneIndex = SceneIndex_f_ajito;
+        pSaveInfoData->roomIndex  = 0;
+        pSaveInfoData->spawnIndex = 0;
+        UNSET_FLAG(pSaveInfoData->inventory.adventureFlags, AdventureFlag_WadatsumiMinigameSequence);
     }
 #endif
 
