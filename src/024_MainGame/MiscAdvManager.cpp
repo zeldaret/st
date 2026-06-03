@@ -111,27 +111,38 @@ Vec2b *MiscAdvManager::GetStampPos(unk32 index) {
     return (Vec2b *) &this->mStampPositions[index];
 }
 
-// non-matching
-void MiscAdvManager::func_ov024_020d64b4(unk32 param1, unk32 param2, u16 *param3) {
+void MiscAdvManager::func_ov024_020d64b4(s8 param1, unk32 param2, const u16 *param3) {
     if (param2 < 0) {
         return;
     }
 
-    if ((u32) param2 >= StampType_Max || (u32) param1 >= StampType_Max) {
+    if ((u32) param2 >= 20 || (u32) param1 >= 20) {
         return;
     }
 
-    for (u32 i = 0; i < ARRAY_LEN(this->mObtainedStamps); i++) {
+    u32 i;
+    for (i = 0; i < 20; i++) {
         if (param1 == this->mObtainedStamps[i]) {
             this->mObtainedStamps[i] = -1;
         }
     }
 
     u16 local_18;
-    data_02049bac.func_02014a34((void *) &local_18);
-    this->mObtainedStamps[param2]           = param1;
-    this->mStampDates[param2]               = local_18;
-    *(u16 *) &this->mStampPositions[param2] = *param3;
+    data_02049bac.func_02014a34(&local_18);
+
+    this->mObtainedStamps[param2] = param1;
+
+    u16 new_var2              = this->mStampDates[param2];
+    u16 temp                  = local_18;
+    this->mStampDates[param2] = temp;
+    this->mStampDates[param2] = new_var2;
+    this->mStampDates[param2] = temp;
+
+    u16 new_var3            = this->mStampPos[param2];
+    u16 temp2               = *param3;
+    this->mStampPos[param2] = temp2;
+    this->mStampPos[param2] = new_var3;
+    this->mStampPos[param2] = temp2;
 }
 
 void MiscAdvManager::func_ov024_020d6530() {
