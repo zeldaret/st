@@ -9,8 +9,6 @@
 #include "global.h"
 #include "types.h"
 
-//! TODO: kinda draft state for now
-
 #define SAVE_DATA_SIZE (sizeof(SaveSlot) + sizeof(u8) * NUM_UNK_BLOCKS * SIZE_UNK_BLOCK)
 
 enum {

@@ -116,7 +116,7 @@ struct SaveFile_00000_0000_Data_C84 {
     }
 };
 
-struct SaveFile_00000_0000_Data_TEST4 {
+struct SaveFile_00000_0000_Data_D4C {
     /* D24 */ unk32 unk_D4C;
     /* D24 */ unk32 unk_D50;
     /* D24 */ unk32 unk_D54;
@@ -128,7 +128,7 @@ struct SaveFile_00000_0000_Data_TEST4 {
     /* D6C */ unk8 unk_D6C[0x08];
     /* D74 */ unk16 unk_D74;
 
-    SaveFile_00000_0000_Data_TEST4() {
+    SaveFile_00000_0000_Data_D4C() {
         MI_CpuFill32(0, this->unk_D6C, sizeof(this->unk_D6C));
         this->unk_D74 = 0;
     }
@@ -166,7 +166,7 @@ struct SaveInfoData {
     /* D24 */ unk32 unk_D40;
     /* D24 */ unk32 unk_D44;
     /* D24 */ unk32 unk_D48;
-    /* D4C */ SaveFile_00000_0000_Data_TEST4 unk_D4C;
+    /* D4C */ SaveFile_00000_0000_Data_D4C unk_D4C;
     /* D78 */ unk32 unk_D78;
     /* D7C */ unk32 unk_D7C;
     /* D80 */ unk32 unk_D80;
