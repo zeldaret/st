@@ -606,11 +606,11 @@ _ZN16PassengerManager11IsDateUnsetEv kind:function(arm,size=0x14) addr:0x020d5f0
 _ZN16PassengerManager7GetDateEv kind:function(arm,size=0x1c) addr:0x020d5f18
 _ZN16PassengerManager14GetRandomIndexEjj kind:function(arm,size=0x5c) addr:0x020d5f34
 _ZN16PassengerManager13SetFailedFlagEv kind:function(arm,size=0x78) addr:0x020d5f90
-func_ov024_020d6008 kind:function(arm,size=0x10) addr:0x020d6008
-func_ov024_020d6018 kind:function(arm,size=0x70) addr:0x020d6018
-func_ov024_020d6088 kind:function(arm,size=0x60) addr:0x020d6088
-_ZN19func_ov024_020d60e8D1Ev kind:function(arm,size=0x14) addr:0x020d60e8
-_ZN19func_ov024_020d60fcD0Ev kind:function(arm,size=0x1c) addr:0x020d60fc
+_Z19func_ov024_020d46b4i kind:function(arm,size=0x10) addr:0x020d6008
+_ZN25MapObjectProfile_Derived5C1Eii kind:function(arm,size=0x70) addr:0x020d6018
+_ZN25MapObjectProfile_Derived5C1Ei kind:function(arm,size=0x60) addr:0x020d6088
+_ZN25MapObjectProfile_Derived5D1Ev kind:function(arm,size=0x14) addr:0x020d60e8
+_ZN25MapObjectProfile_Derived5D0Ev kind:function(arm,size=0x1c) addr:0x020d60fc
 func_ov024_020d6118 kind:function(arm,size=0x74) addr:0x020d6118
 func_ov024_020d618c kind:function(arm,size=0x24) addr:0x020d618c
 func_ov024_020d61b0 kind:function(arm,size=0x6c) addr:0x020d61b0
@@ -647,7 +647,7 @@ func_ov024_020d5410 kind:function(arm,size=0x24) addr:0x020d6db4
 func_ov024_020d5434 kind:function(arm,size=0x24) addr:0x020d6dd8
 func_ov024_020d5458 kind:function(arm,size=0x24) addr:0x020d6dfc
 func_ov024_020d547c kind:function(arm,size=0x24) addr:0x020d6e20
-func_ov024_020d6e44 kind:function(arm,size=0x10) addr:0x020d6e44
+func_ov024_020d54a0 kind:function(arm,size=0x10) addr:0x020d6e44
 func_ov024_020d6e54 kind:function(arm,size=0x40) addr:0x020d6e54
 func_ov024_020d6e94 kind:function(arm,size=0x4) addr:0x020d6e94
 func_ov024_020d6e98 kind:function(arm,size=0x138) addr:0x020d6e98
@@ -829,33 +829,33 @@ _ZTV14UnkDataStruct4 kind:data(any) addr:0x020d9bf8
 @2128 kind:data(byte[6]) addr:0x020d9c08 local
 @2129 kind:data(byte[21]) addr:0x020d9c10 local
 @2130 kind:data(byte[19]) addr:0x020d9c28 local
-data_ov024_020d9c3c kind:data(any) addr:0x020d9c3c
-data_ov024_020d9c40 kind:data(any) addr:0x020d9c40
-data_ov024_020d9c44 kind:data(any) addr:0x020d9c44
-data_ov024_020d9c48 kind:data(any) addr:0x020d9c48
-data_ov024_020d9c50 kind:data(any) addr:0x020d9c50
-data_ov024_020d9c58 kind:data(any) addr:0x020d9c58
-data_ov024_020d9c60 kind:data(any) addr:0x020d9c60
-data_ov024_020d9c68 kind:data(any) addr:0x020d9c68
-data_ov024_020d9c70 kind:data(any) addr:0x020d9c70
-data_ov024_020d9c78 kind:data(any) addr:0x020d9c78
-data_ov024_020d9c80 kind:data(any) addr:0x020d9c80
-data_ov024_020d9c88 kind:data(any) addr:0x020d9c88
-data_ov024_020d9c94 kind:data(any) addr:0x020d9c94
-data_ov024_020d9ca0 kind:data(any) addr:0x020d9ca0
-data_ov024_020d9cac kind:data(any) addr:0x020d9cac
-data_ov024_020d9cb8 kind:data(any) addr:0x020d9cb8
-data_ov024_020d9cc4 kind:data(any) addr:0x020d9cc4
-data_ov024_020d9cd0 kind:data(any) addr:0x020d9cd0
-data_ov024_020d9cdc kind:data(any) addr:0x020d9cdc
-data_ov024_020d9cf0 kind:data(any) addr:0x020d9cf0
-data_ov024_020d9cf8 kind:data(any) addr:0x020d9cf8
-data_ov024_020d9d14 kind:data(any) addr:0x020d9d14
-data_ov024_020d9d44 kind:data(any) addr:0x020d9d44
-data_ov024_020d9d4c kind:data(any) addr:0x020d9d4c
-data_ov024_020d9d54 kind:data(any) addr:0x020d9d54
-data_ov024_020d9d58 kind:data(any) addr:0x020d9d58
-data_ov024_020d9d64 kind:data(any) addr:0x020d9d64
+@1520 kind:data(byte[4]) addr:0x020d9c3c local
+@1525 kind:data(byte[4]) addr:0x020d9c40 local
+@1526 kind:data(byte[4]) addr:0x020d9c44 local
+@1523 kind:data(byte[5]) addr:0x020d9c48 local
+@1521 kind:data(byte[5]) addr:0x020d9c50 local
+@1522 kind:data(byte[5]) addr:0x020d9c58 local
+@1517 kind:data(byte[6]) addr:0x020d9c60 local
+@1524 kind:data(byte[6]) addr:0x020d9c68 local
+@1511 kind:data(byte[7]) addr:0x020d9c70 local
+@1508 kind:data(byte[7]) addr:0x020d9c78 local
+@1510 kind:data(byte[8]) addr:0x020d9c80 local
+@1515 kind:data(byte[10]) addr:0x020d9c88 local
+@1509 kind:data(byte[10]) addr:0x020d9c94 local
+@1512 kind:data(byte[10]) addr:0x020d9ca0 local
+@1513 kind:data(byte[10]) addr:0x020d9cac local
+@1514 kind:data(byte[10]) addr:0x020d9cb8 local
+@1516 kind:data(byte[11]) addr:0x020d9cc4 local
+@1518 kind:data(byte[11]) addr:0x020d9cd0 local
+@1519 kind:data(byte[11]) addr:0x020d9cdc local
+_ZTV25MapObjectProfile_Derived5 kind:data(any) addr:0x020d9ce8
+data_ov024_020d8358 kind:data(any) addr:0x020d9cf8 local
+data_ov024_020d8374 kind:data(any) addr:0x020d9d14 local
+@1553 kind:data(byte[6]) addr:0x020d9d44 local
+@1554 kind:data(byte[6]) addr:0x020d9d4c local
+@1555 kind:data(byte[4]) addr:0x020d9d54 local
+@1562 kind:data(byte[10]) addr:0x020d9d58 local
+@1563 kind:data(byte) addr:0x020d9d64 local
 data_ov024_020d9d68 kind:data(any) addr:0x020d9d68
 data_ov024_020d9d74 kind:data(any) addr:0x020d9d74
 data_ov024_020d9d7c kind:data(any) addr:0x020d9d7c

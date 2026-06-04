@@ -606,11 +606,11 @@ _ZN16PassengerManager11IsDateUnsetEv kind:function(arm,size=0x14) addr:0x020d45b
 _ZN16PassengerManager7GetDateEv kind:function(arm,size=0x1c) addr:0x020d45c4
 _ZN16PassengerManager14GetRandomIndexEjj kind:function(arm,size=0x5c) addr:0x020d45e0
 _ZN16PassengerManager13SetFailedFlagEv kind:function(arm,size=0x78) addr:0x020d463c
-func_ov024_020d46b4 kind:function(arm,size=0x10) addr:0x020d46b4
-func_ov024_020d46c4 kind:function(arm,size=0x70) addr:0x020d46c4
-func_ov024_020d4734 kind:function(arm,size=0x60) addr:0x020d4734
-_ZN19func_ov024_020d4794D1Ev kind:function(arm,size=0x14) addr:0x020d4794
-_ZN19func_ov024_020d47a8D0Ev kind:function(arm,size=0x1c) addr:0x020d47a8
+_Z19func_ov024_020d46b4i kind:function(arm,size=0x10) addr:0x020d46b4
+_ZN25MapObjectProfile_Derived5C1Eii kind:function(arm,size=0x70) addr:0x020d46c4
+_ZN25MapObjectProfile_Derived5C1Ei kind:function(arm,size=0x60) addr:0x020d4734
+_ZN25MapObjectProfile_Derived5D1Ev kind:function(arm,size=0x14) addr:0x020d4794
+_ZN25MapObjectProfile_Derived5D0Ev kind:function(arm,size=0x1c) addr:0x020d47a8
 func_ov024_020d47c4 kind:function(arm,size=0x74) addr:0x020d47c4
 func_ov024_020d4838 kind:function(arm,size=0x24) addr:0x020d4838
 func_ov024_020d485c kind:function(arm,size=0x6c) addr:0x020d485c
@@ -829,33 +829,33 @@ _ZTV14UnkDataStruct4 kind:data(any) addr:0x020d8258
 @2128 kind:data(byte[6]) addr:0x020d8268 local
 @2129 kind:data(byte[21]) addr:0x020d8270 local
 @2130 kind:data(byte[19]) addr:0x020d8288 local
-data_ov024_020d829c kind:data(any) addr:0x020d829c
-data_ov024_020d82a0 kind:data(any) addr:0x020d82a0
-data_ov024_020d82a4 kind:data(any) addr:0x020d82a4
-data_ov024_020d82a8 kind:data(any) addr:0x020d82a8
-data_ov024_020d82b0 kind:data(any) addr:0x020d82b0
-data_ov024_020d82b8 kind:data(any) addr:0x020d82b8
-data_ov024_020d82c0 kind:data(any) addr:0x020d82c0
-data_ov024_020d82c8 kind:data(any) addr:0x020d82c8
-data_ov024_020d82d0 kind:data(any) addr:0x020d82d0
-data_ov024_020d82d8 kind:data(any) addr:0x020d82d8
-data_ov024_020d82e0 kind:data(any) addr:0x020d82e0
-data_ov024_020d82e8 kind:data(any) addr:0x020d82e8
-data_ov024_020d82f4 kind:data(any) addr:0x020d82f4
-data_ov024_020d8300 kind:data(any) addr:0x020d8300
-data_ov024_020d830c kind:data(any) addr:0x020d830c
-data_ov024_020d8318 kind:data(any) addr:0x020d8318
-data_ov024_020d8324 kind:data(any) addr:0x020d8324
-data_ov024_020d8330 kind:data(any) addr:0x020d8330
-data_ov024_020d833c kind:data(any) addr:0x020d833c
-data_ov024_020d8350 kind:data(any) addr:0x020d8350
-data_ov024_020d8358 kind:data(any) addr:0x020d8358
-data_ov024_020d8374 kind:data(any) addr:0x020d8374
-data_ov024_020d83a4 kind:data(any) addr:0x020d83a4
-data_ov024_020d83ac kind:data(any) addr:0x020d83ac
-data_ov024_020d83b4 kind:data(any) addr:0x020d83b4
-data_ov024_020d83b8 kind:data(any) addr:0x020d83b8
-data_ov024_020d83c4 kind:data(any) addr:0x020d83c4
+@1520 kind:data(byte[4]) addr:0x020d829c local
+@1525 kind:data(byte[4]) addr:0x020d82a0 local
+@1526 kind:data(byte[4]) addr:0x020d82a4 local
+@1523 kind:data(byte[5]) addr:0x020d82a8 local
+@1521 kind:data(byte[5]) addr:0x020d82b0 local
+@1522 kind:data(byte[5]) addr:0x020d82b8 local
+@1517 kind:data(byte[6]) addr:0x020d82c0 local
+@1524 kind:data(byte[6]) addr:0x020d82c8 local
+@1511 kind:data(byte[7]) addr:0x020d82d0 local
+@1508 kind:data(byte[7]) addr:0x020d82d8 local
+@1510 kind:data(byte[8]) addr:0x020d82e0 local
+@1515 kind:data(byte[10]) addr:0x020d82e8 local
+@1509 kind:data(byte[10]) addr:0x020d82f4 local
+@1512 kind:data(byte[10]) addr:0x020d8300 local
+@1513 kind:data(byte[10]) addr:0x020d830c local
+@1514 kind:data(byte[10]) addr:0x020d8318 local
+@1516 kind:data(byte[11]) addr:0x020d8324 local
+@1518 kind:data(byte[11]) addr:0x020d8330 local
+@1519 kind:data(byte[11]) addr:0x020d833c local
+_ZTV25MapObjectProfile_Derived5 kind:data(any) addr:0x020d8348
+data_ov024_020d8358 kind:data(any) addr:0x020d8358 local
+data_ov024_020d8374 kind:data(any) addr:0x020d8374 local
+@1553 kind:data(byte[6]) addr:0x020d83a4 local
+@1554 kind:data(byte[6]) addr:0x020d83ac local
+@1555 kind:data(byte[4]) addr:0x020d83b4 local
+@1562 kind:data(byte[10]) addr:0x020d83b8 local
+@1563 kind:data(byte) addr:0x020d83c4 local
 data_ov024_020d83c8 kind:data(any) addr:0x020d83c8
 data_ov024_020d83d4 kind:data(any) addr:0x020d83d4
 data_ov024_020d83dc kind:data(any) addr:0x020d83dc
