@@ -1,4 +1,11 @@
+#pragma once
+
 #include <nitro/math.h>
+#include <nitro/types.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 struct G3d_RenderState_;
 typedef void (*G3d_CallbackFunction)(struct G3d_RenderState_ *);
@@ -163,3 +170,55 @@ typedef struct G3d_MaterialAnimation_ {
 extern void *G3d_gScaleHandlers[3];
 extern void *G3d_gSRTTransformHandlers[3];
 extern void *G3d_gTextureHandlers[4];
+
+typedef struct BMDHeader {
+    /* 00 */ u32 type;      // always 'BMD0'
+    /* 04 */ u16 byteOrder; // 0xFEFF
+    /* 06 */ u16 version;   // always 2
+    /* 08 */ size_t fileSize;
+    /* 0C */ u16 headerSize;  // excluding the section offsets (always 0x10)
+    /* 0E */ u16 numSections; // 1 for 'MDL0' or 2 for 'MDL0' + 'TEX0'
+    /* 10 */ u32 offsetMDL0;  // from the beginning of the file
+    /* 14 */ u32 offsetTEX0;  // from the beginning of the file
+} BMDHeader;
+
+typedef struct BMDSectionHeader {
+    /* 00 */ u32 type;
+    /* 04 */ size_t sectionSize;
+} BMDSectionHeader;
+
+typedef struct BMDSectionModel {
+    /* 00 */ BMDSectionHeader header; // type will be 'MDL0'
+    /* 08 */ G3d_NameList modelList;
+} BMDSectionModel;
+
+static inline u32 *G3d_GetModelOffsetPtr(const BMDSectionModel *pSection, u8 modelIndex) {
+    const G3d_NameList *pList = &pSection->modelList;
+
+    if (pList != NULL && modelIndex < pSection->modelList.numElmnts) {
+        G3d_NameList_Header *pHeader = (G3d_NameList_Header *) ((u8 *) pList + pSection->modelList.ofsHeader);
+        return (u32 *) ((u8 *) pHeader + offsetof(G3d_NameList_Header, data) + pHeader->element_size * modelIndex);
+    }
+
+    return NULL;
+}
+
+static inline G3d_Model *G3d_GetModelVariantPtr(const BMDSectionModel *pSection, u8 modelIndex) {
+    if (pSection != NULL) {
+        u32 *pOffset = G3d_GetModelOffsetPtr(pSection, modelIndex);
+
+        if (pOffset != NULL) {
+            return (G3d_Model *) ((u8 *) pSection + *pOffset);
+        }
+    }
+
+    return NULL;
+}
+
+static inline G3d_Model *G3d_GetModelPtr(const BMDSectionModel *pSection) {
+    return G3d_GetModelVariantPtr(pSection, 0);
+}
+
+#ifdef __cplusplus
+} // extern "C"
+#endif

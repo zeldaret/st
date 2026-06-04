@@ -14,7 +14,7 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8ae0(fx32 param1) {
     this->mVel.y = posY;
 }
 
-ARM ActorUnk_ov000_020a8bb0::ActorUnk_ov000_020a8bb0(UnkSystem4 *param1, unk32 param2) {
+ARM ActorUnk_ov000_020a8bb0::ActorUnk_ov000_020a8bb0(ModelRender *param1, unk32 param2) {
     unk32 uVar2;
 
     this->mUnk_0B0         = 0;

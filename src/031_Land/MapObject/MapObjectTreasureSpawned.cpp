@@ -20,7 +20,7 @@ ARM MapObjectProfileTreasureSpawned::MapObjectProfileTreasureSpawned() :
 
 ARM MapObjectTreasureSpawned::MapObjectTreasureSpawned() :
     MapObjectChestBase(1) {
-    this->mUnk_074.vfunc_08(GetUnkPointer1<MapObjectProfileTreasureSpawned>());
+    this->mUnk_074.vfunc_08(GetModelFromProfile<MapObjectProfileTreasureSpawned>());
 }
 
 ARM unk32 MapObjectTreasureSpawned::vfunc_3C() {

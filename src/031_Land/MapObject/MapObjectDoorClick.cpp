@@ -406,7 +406,7 @@ ARM void MapObjectDoorClick::vfunc_78(void) {
 
 ARM void MapObjectDoorClick::vfunc2_10(void) {
     unk32 index = this->mUnk_20.mUnk_00[0];
-    this->mUnk_94.vfunc_08(GetUnkPointer2<MapObjectProfileDoorClick>(index, data_ov031_02110c1c[index]));
+    this->mUnk_94.vfunc_08(GetModelFromProfile2<MapObjectProfileDoorClick>(index, data_ov031_02110c1c[index]));
 }
 
 ARM void MapObjectDoorClick::vfunc_40(void) {

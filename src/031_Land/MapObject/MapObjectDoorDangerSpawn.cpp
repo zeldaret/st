@@ -37,7 +37,7 @@ ARM MapObjectProfileDoorDangerSpawn::MapObjectProfileDoorDangerSpawn() :
 }
 
 ARM MapObjectDoorDangerSpawn::MapObjectDoorDangerSpawn() :
-    mUnk_94(GetUnkPointer1<MapObjectProfileDoorDangerSpawn>()),
+    mUnk_94(GetModelFromProfile<MapObjectProfileDoorDangerSpawn>()),
     mUnk_9C(1),
     mUnk_A0(0),
     mUnk_A1(false),

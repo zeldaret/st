@@ -2,11 +2,12 @@
 
 #include "Item/Item.hpp"
 #include "MapObject/MapObject.hpp"
+#include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
 #include "global.h"
 #include "types.h"
 
-class MapObjectTreasureSpawned_74 : public UnkSystem4 {
+class MapObjectTreasureSpawned_74 : public ModelRender {
 public:
     /* 00 (base) */
     /* 60 */ bool mUnk_60;
@@ -15,7 +16,7 @@ public:
     /* 63 */ unk8 mUnk_63; // pad?
     /* 64 */
 
-    MapObjectTreasureSpawned_74(unk32 param1);
+    MapObjectTreasureSpawned_74(G3d_Model *param1);
 
     // data_ov031_02115844
     /* 00 */ virtual ~MapObjectTreasureSpawned_74() override {}

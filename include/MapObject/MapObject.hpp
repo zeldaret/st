@@ -4,6 +4,7 @@
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectProfile.hpp"
 #include "Physics/Cylinder.hpp"
+#include "Render/ModelRender.hpp"
 #include "System/SysNew.hpp"
 #include "flags.h"
 #include "global.h"
