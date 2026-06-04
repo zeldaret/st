@@ -560,25 +560,25 @@ _ZN24UnkStruct_027e0cf8_08_0019func_ov024_020d3a8cEP5Vec2s kind:function(arm,siz
 _ZN24UnkStruct_027e0cf8_08_0019func_ov024_020d3adcEP5Vec2siihbh kind:function(arm,size=0x120) addr:0x020d3adc
 _ZN24UnkStruct_027e0cf8_08_0019func_ov024_020d3bfcEP5Vec2siib kind:function(arm,size=0x58) addr:0x020d3bfc
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3c54Ei kind:function(thumb,size=0xc) addr:0x020d3c54
-_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3c60Ev kind:function(thumb,size=0x94) addr:0x020d3c60
-_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3cf4Ev kind:function(thumb,size=0x2c) addr:0x020d3cf4
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3c60EP27SaveFile_00000_0000_Data_D8 kind:function(thumb,size=0x94) addr:0x020d3c60
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3cf4Ei kind:function(thumb,size=0x2c) addr:0x020d3cf4
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3d20Ev kind:function(thumb,size=0x5e) addr:0x020d3d20
-_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3d80Ev kind:function(thumb,size=0x18) addr:0x020d3d80
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3d80Ei kind:function(thumb,size=0x18) addr:0x020d3d80
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3d98Eii kind:function(thumb,size=0x10) addr:0x020d3d98
-_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3da8Ev kind:function(thumb,size=0x16) addr:0x020d3da8
-_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3dc0Ev kind:function(thumb,size=0xa) addr:0x020d3dc0
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3da8Eii kind:function(thumb,size=0x16) addr:0x020d3da8
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3dc0Eii kind:function(thumb,size=0xa) addr:0x020d3dc0
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3dccEv kind:function(thumb,size=0x20) addr:0x020d3dcc
-_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3decEv kind:function(arm,size=0x20) addr:0x020d3dec
-_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3e0cEv kind:function(arm,size=0x24) addr:0x020d3e0c
-_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3e30Ev kind:function(arm,size=0x38) addr:0x020d3e30
-_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3e68Ev kind:function(arm,size=0x80) addr:0x020d3e68
-_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3ee8Eiti kind:function(arm,size=0x64) addr:0x020d3ee8
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3decEi kind:function(arm,size=0x20) addr:0x020d3dec
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3e0cEi kind:function(arm,size=0x24) addr:0x020d3e0c
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3e30Eii kind:function(arm,size=0x38) addr:0x020d3e30
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3e68Ei kind:function(arm,size=0x80) addr:0x020d3e68
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3ee8Eitb kind:function(arm,size=0x64) addr:0x020d3ee8
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3f4cEct kind:function(arm,size=0x40) addr:0x020d3f4c
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3f8cEv kind:function(arm,size=0x3c) addr:0x020d3f8c
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3fc8Ev kind:function(arm,size=0x40) addr:0x020d3fc8
-_ZN21UnkStruct_027e0ce0_3419func_ov024_020d4008Ev kind:function(arm,size=0x44) addr:0x020d4008
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d4008Ei kind:function(arm,size=0x44) addr:0x020d4008
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d404cEv kind:function(arm,size=0x4c) addr:0x020d404c
-_ZN21UnkStruct_027e0ce0_3419func_ov024_020d4098Ev kind:function(arm,size=0x88) addr:0x020d4098
+_ZN21UnkStruct_027e0ce0_3419func_ov024_020d4098EPiS0_ kind:function(arm,size=0x88) addr:0x020d4098
 _ZN16PassengerManager21GetPassengerInfoIndexEj kind:function(arm,size=0x30) addr:0x020d4120
 _ZN16PassengerManager12GetBoardFlagEj kind:function(arm,size=0x24) addr:0x020d4150
 _ZN16PassengerManager11GetFailFlagEj kind:function(arm,size=0x24) addr:0x020d4174
@@ -738,9 +738,9 @@ data_ov024_020d7550 kind:data(any) addr:0x020d7550 local
 data_ov024_020d7555 kind:data(any) addr:0x020d7555 local
 data_ov024_020d7560 kind:data(any) addr:0x020d7560 local
 data_ov024_020d756c kind:data(any) addr:0x020d756c
-data_ov024_020d7570 kind:data(any) addr:0x020d7570
-data_ov024_020d7578 kind:data(any) addr:0x020d7578
-data_ov024_020d7588 kind:data(any) addr:0x020d7588
+data_ov024_020d7570 kind:data(any) addr:0x020d7570 local
+data_ov024_020d7578 kind:data(any) addr:0x020d7578 local
+data_ov024_020d7588 kind:data(any) addr:0x020d7588 local
 data_ov024_020d7598 kind:data(any) addr:0x020d7598 ambiguous
 sPassengerInfos kind:data(any) addr:0x020d75a4 local
 data_ov024_020d7624 kind:data(any) addr:0x020d7624

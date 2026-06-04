@@ -1030,22 +1030,22 @@ THUMB void UnkStruct_027e0ce0_34::func_ov110_02185d3c(ItemId itemId) {
     switch (itemId) {
         case ItemId_SpiritTrain:
             this->func_ov024_020d3d98(0, 0);
-            this->mUnk_2C = 1;
-            this->mUnk_00 = 0;
-            this->mUnk_10 = 0;
+            this->mUnk_2C    = 1;
+            this->mUnk_00[0] = 0;
+            this->mUnk_10[0] = 0;
             break;
         case ItemId_SpiritTrainCar:
             this->func_ov024_020d3d98(2, 0);
-            this->mUnk_2C = 2;
-            this->mUnk_04 = 2;
-            this->mUnk_14 = 0;
+            this->mUnk_2C    = 2;
+            this->mUnk_00[1] = 2;
+            this->mUnk_10[1] = 0;
             break;
         default:
             uStack_14     = -1;
             auStack_18[0] = 0;
 
             if (func_ov024_020d5354(&uStack_14, auStack_18) != 0) {
-                this->func_ov024_020d3ee8(uStack_14, auStack_18[0], 1);
+                this->func_ov024_020d3ee8(uStack_14, auStack_18[0], true);
             }
             break;
     }

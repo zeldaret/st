@@ -172,7 +172,9 @@ src/024_MainGame/UnkStruct_027e0cf8_08_00_024.cpp:
     .text       start:0x020d5254 end:0x020d55a8
 
 src/024_MainGame/UnkStruct_027e0ce0_34_024.cpp:
+    complete
     .text       start:0x020d55a8 end:0x020d5a74
+    .rodata     start:0x020d8f14 end:0x020d8f3c
 
 src/024_MainGame/PassengerManager.cpp:
     complete

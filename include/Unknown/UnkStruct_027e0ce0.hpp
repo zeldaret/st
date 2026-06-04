@@ -7,6 +7,7 @@
 #include "LinkList.hpp"
 #include "Player/Player.hpp"
 #include "Player/TouchControl.hpp"
+#include "Save/SaveManager.hpp"
 #include "System/SysNew.hpp"
 #include "input.hpp"
 
@@ -14,45 +15,42 @@
 
 class UnkStruct_027e0ce0_34 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk32 mUnk_1C;
+    /* 00 */ unk32 mUnk_00[4];
+    /* 10 */ unk32 mUnk_10[4];
     /* 20 */ unk32 mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ unk32 mUnk_28;
-    /* 2C */ unk32 mUnk_2C;
-    /* 30 */
+    /* 2C */ s32 mUnk_2C;
+    /* 30 */ u32 mSpiritTrackFlags;
+    /* 34 */ unk32 mUnk_34;
+    /* 38 */ u32 mTrackFlags[3];
+    /* 44 */
 
     // overlay 8
     void func_ov008_020b6a50();
 
     // overlay 24
-    void func_ov024_020d3c60();
-    void func_ov024_020d3cf4();
-    void func_ov024_020d3d20();
-    void func_ov024_020d3d80();
+    void func_ov024_020d3c60(SaveFile_00000_0000_Data_D8 *param1);
+    unk32 func_ov024_020d3cf4(unk32 param1);
+    unk32 func_ov024_020d3d20();
+    void func_ov024_020d3d80(unk32 param1);
     void func_ov024_020d3d98(unk32 param1, unk32 param2);
-    void func_ov024_020d3da8();
-    void func_ov024_020d3dc0();
-    unk32 func_ov024_020d3dcc();
-    void func_ov024_020d3dec();
-    void func_ov024_020d3e0c();
-    void func_ov024_020d3e30();
-    void func_ov024_020d3e68();
-    void func_ov024_020d3ee8(unk32 param1, u16 param2, unk32 param3);
-    void func_ov024_020d3f4c(s8 param1, u16 param2);
+    bool func_ov024_020d3da8(unk32 param1, unk32 param2);
+    u32 func_ov024_020d3dc0(unk32 param1, unk32 param2);
+    bool func_ov024_020d3dcc();
+    unk32 func_ov024_020d3dec(unk32 param1);
+    unk32 func_ov024_020d3e0c(unk32 param1);
+    void func_ov024_020d3e30(unk32 param1, unk32 param2);
+    void *func_ov024_020d3e68(unk32 param1);
+    void func_ov024_020d3ee8(unk32 param1, u16 param2, bool param3);
+    bool func_ov024_020d3f4c(s8 param1, u16 param2);
     void func_ov024_020d3f8c();
     void func_ov024_020d3fc8();
-    void func_ov024_020d4008();
+    void func_ov024_020d4008(unk32 param1);
     void func_ov024_020d404c();
-    void func_ov024_020d4098();
+    void func_ov024_020d4098(s32 *param1, s32 *param2);
 
-    static void func_ov024_020d3c54(unk32 param1);
+    static s8 func_ov024_020d3c54(unk32 param1);
 
     // overlay 110
     void func_ov110_02185d3c(ItemId itemId);

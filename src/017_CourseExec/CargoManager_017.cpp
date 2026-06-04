@@ -83,7 +83,7 @@ bool CargoManager::IsNotUsingTimer(unk32 type) {
 }
 
 void CargoManager::Update() {
-    if (UnkStruct_027e0ce0::func_ov000_0205c904()->func_ov024_020d3dcc() == 0) {
+    if (!UnkStruct_027e0ce0::func_ov000_0205c904()->func_ov024_020d3dcc()) {
         return;
     }
 

@@ -15,13 +15,14 @@ enum HappinessLevel_ {
 };
 
 struct UnkStruct_Param1 {
-    ActorId actorId;
-    s16 mUnk_04;
-    SceneIndex_Half sceneIndex;
-    u8 roomIndex;
-    unk32 mUnk_0C;
-    unk32 happiness;
-    u16 mUnk_14;
+    /* 00 */ ActorId actorId;
+    /* 04 */ s16 mUnk_04;
+    /* 06 */ SceneIndex_Half sceneIndex;
+    /* 08 */ u8 roomIndex;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 happiness;
+    /* 14 */ u16 mUnk_14;
+    /* 18 */
 };
 
 class Passenger {

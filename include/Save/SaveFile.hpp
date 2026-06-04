@@ -2,6 +2,7 @@
 
 #include "Item/ItemManager.hpp"
 #include "MainGame/MiscAdvManager.hpp"
+#include "MainGame/PassengerManager.hpp"
 #include "math.hpp"
 #include "types.h"
 
@@ -17,11 +18,20 @@
 
 struct SaveFile_00000_0000_Data_D8 {
     /* 00 */ unk32 unk_00;
-    /* 04 */ STRUCT_PAD(0x04, 0x6C);
-    /* 6C */ u32 trackFlags[2];
-    /* 74 */ unk32 spiritTrackFlags[1];
-    /* 78 */ unk32 unk_74;
-    /* 7C */ unk32 unk_78;
+    /* 04 */ STRUCT_PAD(0x04, 0x40);
+    /* 40 */ UnkStruct_Param1 unk_40;
+    /* 58 */ unk32 unk_58;
+    /* 5C */ unk32 unk_5C;
+    /* 60 */ s8 unk_60[4];
+    /* 60 */ s8 unk_64[4];
+    /* 68 */ unk8 unk_68;
+    /* 69 */ unk8 unk_69;
+    /* 6A */ unk8 unk_6A;
+    /* 6B */ unk8 unk_6B;
+    /* 6C */ u32 trackFlags[3];
+    /* 78 */ unk32 spiritTrackFlags;
+    /* 7C */ unk16 cargoAmount;
+    /* 7E */ unk8 cargoType;
     /* 80 */
 
     SaveFile_00000_0000_Data_D8();
