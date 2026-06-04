@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Actor/Actor.hpp"
+#include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
 #include "types.h"
 
@@ -45,7 +46,7 @@ public:
 
 class ActorUnk_ov000_020a8bb0_a4 {
 public:
-    /* 00 */ UnkSystem4 *mUnk_00;
+    /* 00 */ ModelRender *mUnk_00;
     /* 08 */ unk16 mUnk_04;
     /* 08 */ unk16 mUnk_06;
     /* 0A */ unk32 mUnk_08;
@@ -135,7 +136,7 @@ public:
     /* BC */
 
     void func_ov000_020a8ae0(fx32 param1);
-    ActorUnk_ov000_020a8bb0(UnkSystem4 *param1, unk32 param2);
+    ActorUnk_ov000_020a8bb0(ModelRender *param1, unk32 param2);
     bool func_ov000_020a8db0();
     bool func_ov000_020a8dd0();
     void func_ov000_020a8df0(ActorRef param1, unk32 param2);

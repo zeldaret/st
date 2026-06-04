@@ -1,0 +1,119 @@
+#pragma once
+
+#include "global.h"
+#include "types.h"
+
+#include <nns/g3d/g3d.h>
+
+typedef void (*UnkSystem4_UnkCallback)(void);
+
+class UnkSystem4_vfunc_1C_B4 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 00 */ STRUCT_PAD(0x04, 0x4C);
+    /* 4C */ unk32 mUnk_4C;
+    /* 50 */ unk32 mUnk_50;
+    /* 54 */ unk32 mUnk_54;
+};
+
+class UnkSystem4_vfunc_1C {
+public:
+    /* 00 */ u8 *mUnk_00;
+    /* 04 */ unk32 *mUnk_04;
+    /* 08 */ STRUCT_PAD(0x08, 0xB4);
+    /* B4 */ UnkSystem4_vfunc_1C_B4 *mUnk_B4;
+    /* 00 */ unk32 *mUnk_B8;
+};
+
+class ModelRenderBase {
+public:
+    /* 00 (vtable) */
+    /* 04 */ G3d_Model *mpModel;
+    /* 08 */
+
+    ModelRenderBase(G3d_Model *pModel) :
+        mpModel(pModel) {}
+
+    // data_ov000_020b1a98
+    /* 00 */ virtual ~ModelRenderBase();
+    /* 08 */ virtual void vfunc_08(G3d_Model *pModel);
+    /* 0C */ virtual void vfunc_0C()                               = 0;
+    /* 10 */ virtual void vfunc_10()                               = 0;
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) = 0;
+    /* 18 */ virtual void vfunc_18()                               = 0;
+    /* 1C */
+};
+
+class ModelRender : public ModelRenderBase {
+public:
+    /* 00 (base) */
+    /* 08 */ G3d_RenderObject mRenderObj;
+    /* 5C */ unk32 mUnk_5C; // G3d_BoneMtxStruct?
+    /* 60 */
+
+    ModelRender(G3d_Model *pModel);
+
+    // data_ov000_020b1a6c
+    /* 00 */ virtual ~ModelRender();
+    /* 08 */ virtual void vfunc_08(G3d_Model *pModel);
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10();
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2); // SetRotationTranslation?
+    /* 18 */ virtual void vfunc_18();
+    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1);
+    /* 20 */ virtual void vfunc_20();
+
+    void func_ov000_02057c38(unk32 param1, unk32 param2);
+    void func_ov000_0209a7b8(void *param1, UnkSystem4_UnkCallback param2);
+};
+
+class UnkSystem6_Derived1 : public ModelRenderBase {
+public:
+    /* 00 (base) */
+    /* 08 */
+
+    UnkSystem6_Derived1(G3d_Model *pModel) :
+        ModelRenderBase(pModel) {}
+
+    // data_ov000_020b1a48
+    /* 00 */ virtual ~UnkSystem6_Derived1() override {}
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) override;
+    /* 18 */ virtual void vfunc_18() override;
+};
+
+class UnkSystem6_Derived2 : public UnkSystem6_Derived1 {
+public:
+    /* 00 (base) */
+    /* 08 */
+
+    UnkSystem6_Derived2() :
+        UnkSystem6_Derived1(NULL) {}
+
+    UnkSystem6_Derived2(G3d_Model *pModel) :
+        UnkSystem6_Derived1(pModel) {}
+
+    // data_ov000_020b1968
+    /* 00 */ virtual ~UnkSystem6_Derived2() {}
+    /* 0C */ virtual void vfunc_0C() override;
+};
+
+class UnkSystem5 {
+public:
+    /* 00 */ G3d_Model *mpModel;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */
+
+    UnkSystem5(void *param1, G3d_Model *pModel);
+
+    void func_01ffc3b4();
+
+    void func_ov000_020577a4(unk32 param1, unk32 param2, unk32 param3);
+    void func_ov000_020577f8(unk32 param1);
+};

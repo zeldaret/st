@@ -7,7 +7,7 @@
 #pragma readonly_strings on
 
 extern "C" unk32 func_0200f218(unk32, const char *);
-extern "C" void func_0200b58c(void *);
+extern "C" void func_0200b58c(G3d_RenderObject *);
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
 extern "C" void func_01ffcfcc(VecFx32 *, VecFx32 *, VecFx32 *);
 
@@ -23,8 +23,8 @@ static const Vec2pCpp data_ov031_02115830(0x800, 0x800);
 static const UnkStruct_ov031_02117c84 data_ov031_02117c84(0x3C);
 static const UnkSubStruct19 data_ov031_02115c84;
 
-ARM MapObjectTreasureSpawned_74::MapObjectTreasureSpawned_74(unk32 param1) :
-    UnkSystem4(param1),
+ARM MapObjectTreasureSpawned_74::MapObjectTreasureSpawned_74(G3d_Model *param1) :
+    ModelRender(param1),
     mUnk_60(1) {}
 
 ARM void MapObjectTreasureSpawned_74::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
@@ -51,7 +51,7 @@ ARM void MapObjectTreasureSpawned_74::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
 }
 
 ARM void MapObjectTreasureSpawned_74::func_ov031_0210306c() {
-    func_0200b58c(&this->mUnk_08);
+    func_0200b58c(&this->mRenderObj);
 }
 
 ARM MapObjectChestBase::MapObjectChestBase(unk32 param1) :

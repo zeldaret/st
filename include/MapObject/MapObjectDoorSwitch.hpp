@@ -3,6 +3,7 @@
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectDoorBase.hpp"
 #include "MapObject/MapObjectProfile.hpp"
+#include "Render/ModelRender.hpp"
 #include "global.h"
 #include "types.h"
 #include "versions.h"
@@ -10,7 +11,7 @@
 class MapObjectDoorSwitch : public MapObjectDoorBase {
 public:
     /* 000 (base) */
-    /* 094 */ UnkSystem4 mUnk_094;
+    /* 094 */ ModelRender mUnk_094;
     /* 0F4 */ MapObject_10 mUnk_0F4;
 #if IS_JP
     /* 118 */ MapObject_10 mUnk_118;
@@ -45,7 +46,7 @@ public:
     /* 74 */ virtual void vfunc_74() override;
 
     // (MapObject_UnkStruct1_Derived1)
-    /* 10 */ virtual void *vfunc2_10();
+    /* 10 */ virtual G3d_Model *GetModel();
 };
 
 class MapObjectProfileDoorSwitch : public MapObjectProfile_Derived2 {

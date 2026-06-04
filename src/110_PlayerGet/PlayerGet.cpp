@@ -35,7 +35,7 @@ extern const char *data_ov000_020aa248; // .nsbmd
 
 extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
-extern "C" void func_01ffc5a0(UnkSystem4 *, unk32, u16, void *, unk32);
+extern "C" void func_01ffc5a0(ModelRender *, unk32, u16, void *, unk32);
 extern "C" void func_ov000_0208f820();
 extern "C" unk32 func_ov024_020d5354(unk32 *, u16 *);
 extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, VecFx32 *);
@@ -48,7 +48,7 @@ extern "C" void func_020156c8(char *, char *, unk32);
 extern "C" void func_020156f4(char *);
 extern "C" void func_02015644(char *);
 
-extern "C" UnkResourceStruct *func_ov000_0205abcc(void *, void *, unk32, unk32, unk32);
+extern "C" BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, unk32);
 extern "C" unk32 func_ov000_02077590(unk32);
 
 static const unk32 data_ov110_02185dc4[1] = {8};
@@ -612,9 +612,9 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                     strncpy(modelPath + l, data_ov000_020aa240, 0x3F - l);
 
                     UnkFileSystem2 fs2(modelPath, 0);
-                    UnkResourceStruct *res = func_ov000_0205abcc((void *) &fs4, (void *) &fs2, 0, 1, this->mUnk_30->mUnk_24);
+                    BMDSectionModel *res = func_ov000_0205abcc((void *) &fs4, (void *) &fs2, 0, 1, this->mUnk_30->mUnk_24);
 
-                    this->mUnk_8C.vfunc_08(GetUnkPointer1_Impl(res));
+                    this->mUnk_8C.vfunc_08(G3d_GetModelPtr(res));
                 }
 
                 switch (this->mUnk_54.mItemId) {
@@ -1009,7 +1009,7 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
         case 0x3A:
             break;
         case 0x3B:
-            if (param3 != 0 && this->mUnk_54.mItemId != ItemId_Nothing && this->mUnk_8C.mUnk_04 != 0) {
+            if (param3 != 0 && this->mUnk_54.mItemId != ItemId_Nothing && this->mUnk_8C.mpModel != NULL) {
                 VecFx32_Add(this->mUnk_34, (VecFx32 *) &data_ov110_021861ec.mUnk_00, &auStack_18);
                 func_ov000_02058fc4(data_027e0958, &this->mUnk_74, &auStack_18);
             }
