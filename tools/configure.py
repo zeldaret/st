@@ -283,7 +283,7 @@ config.libs = [
             Object("024_MainGame/UnkStruct_027e0d00.cpp"),
             Object("024_MainGame/UnkStruct_027e0d00_20.cpp"),
             Object("024_MainGame/code_020d51dc_024.cpp"),
-            Object("024_MainGame/code_020d54b0_024.cpp"),
+            Object("024_MainGame/UnkTrainSystem1_024.cpp"),
             Object("024_MainGame/CargoManager_024.cpp"),
             Object("024_MainGame/code_020d5938_024.cpp"),
             Object("024_MainGame/UnkStruct_027e0d08_024.cpp"),

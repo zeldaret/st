@@ -1,5 +1,9 @@
+#include "MainGame/AdventureMode.hpp"
 #include "MainGame/CargoManager.hpp"
 #include "System/SysNew.hpp"
+
+// probably doesn't belong here but it's just to make data line up properly
+const UnkStruct_ov024_020d86a8 data_ov024_020d78b8 = {0};
 
 CargoManager *CargoManager::Create() {
     return new(HeapIndex_1) CargoManager();

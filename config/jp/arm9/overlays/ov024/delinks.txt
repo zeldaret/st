@@ -204,13 +204,18 @@ src/024_MainGame/code_020d51dc_024.cpp:
     .data       start:0x020d9ebc end:0x020d9ec0
     .bss        start:0x020da044 end:0x020da048
 
-src/024_MainGame/code_020d54b0_024.cpp:
+src/024_MainGame/UnkTrainSystem1_024.cpp:
+    complete
     .text       start:0x020d6e44 end:0x020d7258
     .rodata     start:0x020d9250 end:0x020d925c
+    .init       start:0x020d9458 end:0x020d9470
+    .ctor       start:0x020d94e8 end:0x020d94ec
+    .bss        start:0x020da048 end:0x020da04c
 
 src/024_MainGame/CargoManager_024.cpp:
     complete
     .text       start:0x020d7258 end:0x020d72dc
+    .rodata     start:0x020d925c end:0x020d9260
 
 src/024_MainGame/code_020d5938_024.cpp:
     .text       start:0x020d72dc end:0x020d7630

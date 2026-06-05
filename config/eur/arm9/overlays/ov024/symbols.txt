@@ -647,12 +647,12 @@ _Z19func_ov024_020d5410j kind:function(arm,size=0x24) addr:0x020d5410
 _Z19func_ov024_020d5434j kind:function(arm,size=0x24) addr:0x020d5434
 _Z19func_ov024_020d5458j kind:function(arm,size=0x24) addr:0x020d5458
 _Z19func_ov024_020d547cj kind:function(arm,size=0x24) addr:0x020d547c
-func_ov024_020d54a0 kind:function(arm,size=0x10) addr:0x020d54a0
-func_ov024_020d54b0 kind:function(arm,size=0x40) addr:0x020d54b0
-func_ov024_020d54f0 kind:function(arm,size=0x4) addr:0x020d54f0
-func_ov024_020d54f4 kind:function(arm,size=0x138) addr:0x020d54f4
-func_ov024_020d562c kind:function(arm,size=0x240) addr:0x020d562c
-func_ov024_020d586c kind:function(arm,size=0x48) addr:0x020d586c
+_ZN15UnkTrainSystem119func_ov024_020d54a0Ei kind:function(arm,size=0x10) addr:0x020d54a0
+_ZN15UnkTrainSystem1C1Ev kind:function(arm,size=0x40) addr:0x020d54b0
+_ZN15UnkTrainSystem1D1Ev kind:function(arm,size=0x4) addr:0x020d54f0
+_ZN15UnkTrainSystem119func_ov024_020d54f4Ev kind:function(arm,size=0x138) addr:0x020d54f4
+_ZN15UnkTrainSystem119func_ov024_020d562cEPK7VecFx32i kind:function(arm,size=0x240) addr:0x020d562c
+_ZN15UnkTrainSystem119func_ov024_020d586cEv kind:function(arm,size=0x48) addr:0x020d586c
 _ZN12CargoManager6CreateEv kind:function(arm,size=0x24) addr:0x020d58b4
 _ZN12CargoManager8SetCargoEii kind:function(arm,size=0x14) addr:0x020d58d8
 _ZN12CargoManager16GetTypeAndAmountEPiS0_ kind:function(arm,size=0x14) addr:0x020d58ec
@@ -762,14 +762,14 @@ __sinit_ov024_020d78e8 kind:function(arm,size=0x38) addr:0x020d78e8
 __sinit_UnkStruct_027e0cf8_00_0C_024.cpp kind:function(arm,size=0x120) addr:0x020d7920 local
 __sinit_AdventureModeManager_1B8_Base_024.cpp kind:function(arm,size=0x2c) addr:0x020d7a40 local
 __sinit_PlayerActor_A0_38_024.cpp kind:function(arm,size=0x48) addr:0x020d7a6c
-__sinit_ov024_020d7ab4 kind:function(arm,size=0x18) addr:0x020d7ab4
+__sinit_UnkTrainSystem1_024.cpp kind:function(arm,size=0x18) addr:0x020d7ab4 local
 __sinit_ov024_020d7acc kind:function(arm,size=0x18) addr:0x020d7acc
 __sinit_ActorUnkOBPC.cpp kind:function(arm,size=0x50) addr:0x020d7ae4
 .p__sinit_ov024_020d78e8 kind:data(word) addr:0x020d7b34
 .p__sinit_UnkStruct_027e0cf8_00_0C_024.cpp kind:data(word) addr:0x020d7b38
 .p__sinit_AdventureModeManager_1B8_Base_024.cpp kind:data(word) addr:0x020d7b3c local
 .p__sinit_PlayerActor_A0_38_024.cpp kind:data(word) addr:0x020d7b40
-.p__sinit_ov024_020d7ab4 kind:data(word) addr:0x020d7b44
+.p__sinit_UnkTrainSystem1_024.cpp kind:data(word) addr:0x020d7b44 local
 .p__sinit_ov024_020d7acc kind:data(word) addr:0x020d7b48
 .p__sinit_ActorUnkOBPC.cpp kind:data(word) addr:0x020d7b4c
 _ZTV17GameModeAdventure kind:data(any) addr:0x020d7b60

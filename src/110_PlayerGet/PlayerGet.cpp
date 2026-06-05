@@ -629,7 +629,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                 }
             }
 
-            UnkStruct_027e09bc_0c *uVar11 = data_027e09bc->mUnk_0C;
+            UnkStruct_027e09bc_0C *uVar11 = data_027e09bc->mUnk_0C;
             uVar11->func_ov000_0207834c(this->mUnk_34, func_ov000_02077590(4), 0);
 
             UnkStruct_PlayerGet_48 *pUnk_48 = this->mUnk_48;

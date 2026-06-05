@@ -1293,3 +1293,23 @@ public:
     /* 00 */ virtual ~MapObjectProfile_Derived5() override;
     /* 08 */
 };
+
+class UnkTrainSystem1 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */
+
+    UnkTrainSystem1();
+    ~UnkTrainSystem1();
+
+    void func_ov024_020d54f4();
+    void func_ov024_020d562c(const VecFx32 *param1, fx32 param2);
+    bool func_ov024_020d586c();
+
+    static u8 func_ov024_020d54a0(s32 param1);
+};

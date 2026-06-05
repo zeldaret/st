@@ -1011,6 +1011,18 @@ public:
     static void func_ov001_020c0894();
 };
 
+typedef struct UnkStruct_ov024_020d86a8 {
+    union {
+        struct {
+            /* 00 */ u8 mUnk_00_0 : 1;
+            /* 00 */ u8 mUnk_00_1 : 1;
+        };
+        u32 data;
+    };
+} UnkStruct_ov024_020d86a8;
+
+extern const UnkStruct_ov024_020d86a8 data_ov024_020d78b8;
+
 extern void SetCreditsEndingType(u16 value);
 extern u16 GetCreditsEndingType();
 
