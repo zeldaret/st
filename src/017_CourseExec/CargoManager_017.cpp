@@ -127,14 +127,14 @@ void CargoManager::Update() {
 void CargoManager::Reset() {
     this->mCargo.Clear();
     this->mCargo2.Clear();
-    UnkStruct_027e0d00::func_ov000_0205c944()->func_ov024_020d4d10();
+    UnkStruct_027e0d00::GetInstance()->func_ov024_020d4d10();
 }
 
 void CargoManager::Init(unk32 type, unk32 amount) {
     this->mCargo.Set(type, amount);
     this->mCargo2.Set(type, amount);
 
-    UnkStruct_027e0d00 *pUnkStruct_027e0d00 = UnkStruct_027e0d00::func_ov000_0205c944();
+    UnkStruct_027e0d00 *pUnkStruct_027e0d00 = UnkStruct_027e0d00::GetInstance();
     pUnkStruct_027e0d00->func_ov024_020d4d10();
     pUnkStruct_027e0d00->func_ov024_020d4cc0(this->mCargo.mType);
 

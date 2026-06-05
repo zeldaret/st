@@ -6,6 +6,8 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d00.hpp"
 
+#include <nns/g3d/g3d.h>
+
 static const s8 data_ov024_020d7570[]   = {0x04, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x08};
 static const s32 data_ov024_020d7578[4] = {0, 0, -1, -1};
 static const s32 data_ov024_020d7588[4] = {0, 2, -1, -1};
@@ -153,7 +155,7 @@ void UnkStruct_027e0ce0_34::func_ov024_020d3e30(unk32 param1, unk32 param2) {
 void *UnkStruct_027e0ce0_34::func_ov024_020d3e68(unk32 param1) {
     unk32 iVar1 = this->func_ov024_020d3e0c(param1);
     unk32 iVar2 = this->func_ov024_020d3dec(param1);
-    return GetUnkPointer1_Impl((UnkResourceStruct *) data_027e0d00->mUnk_020[iVar2][iVar1]->mUnk_50);
+    return G3d_GetModelPtr(data_027e0d00->mUnk_020[iVar2][iVar1]->mUnk_50);
 }
 
 void UnkStruct_027e0ce0_34::func_ov024_020d3ee8(unk32 param1, u16 param2, bool param3) {

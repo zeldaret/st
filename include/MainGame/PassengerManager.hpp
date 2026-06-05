@@ -90,3 +90,4 @@ public:
 };
 
 extern PassengerManager *gpPassengerManager;
+extern const s16 data_ov024_020d7598[];

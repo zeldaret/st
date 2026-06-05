@@ -179,18 +179,23 @@ src/024_MainGame/UnkStruct_027e0ce0_34_024.cpp:
 src/024_MainGame/PassengerManager.cpp:
     complete
     .text       start:0x020d4120 end:0x020d46b4
-    .rodata     start:0x020d75a4 end:0x020d7624
+    .rodata     start:0x020d7598 end:0x020d7624
 
-src/024_MainGame/code_020d46b4_024.cpp:
+src/024_MainGame/MapObjectProfile_Derived5.cpp:
     complete
     .text       start:0x020d46b4 end:0x020d47c4
     .data       start:0x020d829c end:0x020d83c8
 
 src/024_MainGame/UnkStruct_027e0d00.cpp:
+    complete
     .text       start:0x020d47c4 end:0x020d4e9c
+    .rodata     start:0x020d7624 end:0x020d767c
+    .data       start:0x020d83c8 end:0x020d8404
 
-src/024_MainGame/code_020d4e9c_024.cpp:
+src/024_MainGame/UnkStruct_027e0d00_20.cpp:
+    complete
     .text       start:0x020d4e9c end:0x020d51dc
+    .data       start:0x020d8404 end:0x020d851c
 
 src/024_MainGame/code_020d51dc_024.cpp:
     .text       start:0x020d51dc end:0x020d54b0

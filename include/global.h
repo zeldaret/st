@@ -44,6 +44,13 @@
 
 #define STRUCT_PAD(from, to) unsigned char _pad_##from[(to) - (from)]
 
+#define DF_CONCAT3_(a, b, c) a##b##c
+#define DF_CONCAT3(a, b, c) DF_CONCAT3_(a, b, c)
+#define DF_UNIQUE_IDENT(ident_) DF_CONCAT3(ident_, _, __LINE__)
+// sometimes we need something in .bss
+// to force things in .data to align properly
+#define DATA_ALIGN_FIX() int DF_UNIQUE_IDENT(__data_align_fix)
+
 #define SUBSCREEN_WIDTH 256
 #define SUBSCREEN_HEIGHT 192
 

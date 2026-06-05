@@ -117,3 +117,36 @@ public:
     void func_ov000_020577a4(unk32 param1, unk32 param2, unk32 param3);
     void func_ov000_020577f8(unk32 param1);
 };
+
+class ModelRender_Derived1 : public ModelRender {
+public:
+    /* 00 (base) */
+    /* 60 */ unk32 mUnk_60;
+    /* 64 */ unk32 mUnk_64;
+    /* 68 */ unk32 mUnk_68;
+    /* 6C */
+
+    ModelRender_Derived1(G3d_Model *pModel, unk32 param2, void *param3);
+
+    // data_ov000_020b1be4
+    /* 00 */ virtual ~ModelRender_Derived1() {}
+    override;
+    /* 08 */ virtual void vfunc_08(G3d_Model *pModel) override;
+    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
+
+    unk32 func_ov000_0205a778(const char *param1);
+    void *func_ov000_0205a7a8(unk32 param1);
+};
+
+class ModelRender_Derived2 : public ModelRender_Derived1 {
+public:
+    /* 00 (base) */
+    /* 6C */
+
+    ModelRender_Derived2(G3d_Model *pModel, unk32 param2, void *param3) :
+        ModelRender_Derived1(pModel, param2, param3) {}
+
+    // data_ov024_020d84bc
+    /* 00 */ virtual ~ModelRender_Derived2() {}
+    override;
+};
