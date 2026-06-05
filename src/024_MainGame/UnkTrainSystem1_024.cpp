@@ -5,6 +5,7 @@
 #include "Unknown/UnkStruct_027e0d00.hpp"
 #include "Unknown/UnkStruct_ov024_020d86a0.hpp"
 #include "types.h"
+#include "versions.h"
 
 extern "C" void func_ov000_0205c1f0(unk32 *, u16);
 extern "C" void func_ov000_0205c204(void *, VecFx32 *, int, int, u8);
@@ -117,10 +118,15 @@ void UnkTrainSystem1::func_ov024_020d562c(const VecFx32 *param1, fx32 param2) {
         sp44.y = new_var6;
         sp44.z = new_var5;
 
+#if IS_JP
+        UnkStruct_027e09bc_0C *temp_r8_2 = data_027e09bc->mUnk_04;
+#else
         UnkStruct_027e09bc_0C *temp_r8_2 = data_027e09bc->mUnk_0C;
-        temp_r1_3.x                      = temp_r8_2->mUnk_34.x;
-        temp_r1_3.z                      = temp_r8_2->mUnk_34.z;
-        temp_r1_3.y                      = temp_r8_2->mUnk_34.y;
+#endif
+
+        temp_r1_3.x = temp_r8_2->mUnk_34.x;
+        temp_r1_3.z = temp_r8_2->mUnk_34.z;
+        temp_r1_3.y = temp_r8_2->mUnk_34.y;
 
         fx32 x      = temp_r1_3.x - param1->x;
         temp_r1_3.x = x;

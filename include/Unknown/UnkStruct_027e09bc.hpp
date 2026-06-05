@@ -2,7 +2,6 @@
 
 #include "global.h"
 #include "types.h"
-#include "versions.h"
 
 class UnkStruct_027e09bc_0C {
 public:
@@ -16,15 +15,10 @@ public:
 
 class UnkStruct_027e09bc {
 public:
-#if IS_JP
     /* 00 */ unk32 mUnk_00;
-    /* 0C */ UnkStruct_027e09bc_0C *mUnk_0C;
-#else
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
+    /* 04 */ UnkStruct_027e09bc_0C *mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ UnkStruct_027e09bc_0C *mUnk_0C;
-#endif
 
     UnkStruct_027e09bc();
     ~UnkStruct_027e09bc();
