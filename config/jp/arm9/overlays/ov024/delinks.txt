@@ -198,10 +198,15 @@ src/024_MainGame/UnkStruct_027e0d00_20.cpp:
     .data       start:0x020d9da4 end:0x020d9ebc
 
 src/024_MainGame/code_020d51dc_024.cpp:
-    .text       start:0x020d6b80 end:0x020d6e54
+    complete
+    .text       start:0x020d6b80 end:0x020d6e44
+    .rodata     start:0x020d9020 end:0x020d9250
+    .data       start:0x020d9ebc end:0x020d9ec0
+    .bss        start:0x020da044 end:0x020da048
 
 src/024_MainGame/code_020d54b0_024.cpp:
-    .text       start:0x020d6e54 end:0x020d7258
+    .text       start:0x020d6e44 end:0x020d7258
+    .rodata     start:0x020d9250 end:0x020d925c
 
 src/024_MainGame/CargoManager_024.cpp:
     complete

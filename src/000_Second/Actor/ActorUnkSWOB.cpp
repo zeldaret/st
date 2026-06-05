@@ -75,7 +75,7 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
 
             s16 unk_78 = this->mUnk_5C.mUnk_1C_0;
             if (unk_78 > 0) {
-                data_027e0cd8->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_5C.mUnk_18.y, 1);
+                data_027e0cd8->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_5C.mUnk_18.y, true);
             }
             break;
         case 2: {

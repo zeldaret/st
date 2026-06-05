@@ -46,7 +46,7 @@ public:
     static bool func_ov024_020cfe24(s16 stationSceneIdx);
     static s32 func_ov024_020cfe6c(s32 param1, s32 param2, s32 param3, s32 param4);
     static s16 func_ov024_020cfe94(s32 param1);
-    static bool func_ov024_020cfed0(s16 param1);
+    static bool func_ov024_020cfed0(s16 sceneIndex);
 };
 
 class UnkStruct_027e0cf8_04 {
@@ -210,7 +210,7 @@ public:
     bool func_ov024_020c77d0(Vec2s *param1, unk32 param2);
     void func_ov024_020c77e0(Vec2s *param1);
     void func_ov024_020c7804(Vec2s *param1);
-    void func_ov024_020c7828(unk32 param1);
+    void func_ov024_020c7828(ItemId itemId);
     void func_ov024_020c7878(unk32 param1, u16 param2);
     void func_ov024_020c7884();
     void func_ov024_020c7898();

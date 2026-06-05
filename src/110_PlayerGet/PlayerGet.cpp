@@ -3,6 +3,7 @@
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorUnkNSHD.hpp"
+#include "MainGame/AdventureMode.hpp"
 #include "MainGame/MiscAdvManager.hpp"
 #include "MapObject/MapObjectChestBase.hpp"
 #include "MapObject/MapObjectManager.hpp"
@@ -37,7 +38,6 @@ extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
 extern "C" void func_01ffc5a0(ModelRender *, unk32, u16, void *, unk32);
 extern "C" void func_ov000_0208f820();
-extern "C" unk32 func_ov024_020d5354(unk32 *, u16 *);
 extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, VecFx32 *);
 extern unk32 *data_027e0958;
 extern "C" void func_ov000_0208ba10(void *, void *, unk32);
@@ -1022,10 +1022,9 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
 ARM UnkStruct_PlayerGet_ec::UnkStruct_PlayerGet_ec() :
     UnkSystem7(NULL) {}
 
-// non-matching
 THUMB void UnkStruct_027e0ce0_34::func_ov110_02185d3c(ItemId itemId) {
-    unk32 uStack_14;
-    u16 auStack_18[2];
+    s32 flagPos;
+    s16 flagValue;
 
     switch (itemId) {
         case ItemId_SpiritTrain:
@@ -1041,11 +1040,11 @@ THUMB void UnkStruct_027e0ce0_34::func_ov110_02185d3c(ItemId itemId) {
             this->mUnk_10[1] = 0;
             break;
         default:
-            uStack_14     = -1;
-            auStack_18[0] = 0;
+            flagPos   = -1;
+            flagValue = 0;
 
-            if (func_ov024_020d5354(&uStack_14, auStack_18) != 0) {
-                this->func_ov024_020d3ee8(uStack_14, auStack_18[0], true);
+            if (func_ov024_020d5354(&flagPos, &flagValue, itemId)) {
+                this->SetTrackFlag(flagPos, flagValue, true);
             }
             break;
     }

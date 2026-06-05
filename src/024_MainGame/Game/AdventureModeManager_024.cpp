@@ -34,7 +34,6 @@ extern "C" {
 void func_02019b3c();
 void func_02019c4c();
 void func_02019a74();
-unk32 func_ov024_020d5304(unk32 sceneIndex);
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
 }
@@ -459,7 +458,7 @@ bool AdventureModeManager::func_ov024_020c5dac() {
 
 bool AdventureModeManager::func_ov024_020c5ecc() {
     if (data_ov026_02138d10->func_ov026_020e13f4() != 0 && data_027e09b8->func_01ffd420() == 0 &&
-        func_ov024_020d5304(data_027e09a4->mUnk_00.mSceneIndex) != 0 &&
+        func_ov024_020d5304(data_027e09a4->mUnk_00.mSceneIndex) &&
         (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == NULL) && this->func_ov024_020c6a20() != 0 &&
         data_ov026_0213f590.func_ov026_020f7cc0() == 0) {
         return true;

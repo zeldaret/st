@@ -1,0 +1,7 @@
+#include "types.h"
+
+static const u8 data_ov024_020d78ac[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00};
+
+extern "C" u8 func_ov024_020d54a0(s32 param1) {
+    return data_ov024_020d78ac[param1];
+}

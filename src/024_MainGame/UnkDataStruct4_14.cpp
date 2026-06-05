@@ -1,3 +1,4 @@
+#include "MainGame/AdventureMode.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
@@ -5,7 +6,6 @@
 extern "C" unk32 func_02032784(unk32 param1);
 extern "C" u8 func_020157f0(unk32 param1, unk32 param2);
 extern "C" u8 func_020157c0(unk32 param1, unk32 param2);
-extern const u16 data_ov024_020d7684[4][6];
 
 static const u8 data_ov024_020d7550[]    = {0x01, 0x04, 0x10, 0x40, 0x00};
 static const u8 data_ov024_020d7555[]    = {0x20, 0x10, 0x08, 0x40, 0x00, 0x04, 0x80, 0x01, 0x02, 0x00, 0x00};
@@ -425,7 +425,7 @@ bool UnkDataStruct4_14::func_ov024_020d2320(unk32 param1) const {
 unk32 UnkDataStruct4_14::func_ov024_020d2348(unk32 param1) const {
     unk32 var_r6 = 0;
 
-    for (int i = 0; i < ARRAY_LEN(data_ov024_020d7684); i++) {
+    for (int i = 0; i < ARRAY_LEN(data_ov024_020d7684) - 1; i++) {
         //! TODO: fake match, how is this accessed??
         if (GET_FLAG2(data_ov024_020d7684[this->func_ov024_020d22ac(i)][12], param1)) {
             var_r6++;

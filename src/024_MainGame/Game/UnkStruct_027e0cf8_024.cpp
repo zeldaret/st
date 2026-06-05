@@ -3,10 +3,6 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 
-extern "C" bool func_ov024_020d5354(unk32 *param1, unk16 *param2, ItemId itemId);
-extern "C" void func_ov024_020d524c(Vec2us *param1, SceneIndex sceneIndex);
-extern "C" void func_ov024_020d51dc(Vec2us *param1, SceneIndex sceneIndex);
-
 UnkStruct_027e0cf8 *UnkStruct_027e0cf8::Create() {
     return new(HeapIndex_1) UnkStruct_027e0cf8();
 }
@@ -65,7 +61,7 @@ void UnkStruct_027e0cf8::func_ov024_020c75d0(UnkDataStruct4 *param1, unk32 param
     SceneIndex sceneIndex = param1->mSceneIndex;
 
     volatile Vec2us local_1c;
-    func_ov024_020d524c((Vec2us *) &local_1c, sceneIndex);
+    func_ov024_020d524c((Vec2s *) &local_1c, sceneIndex);
 
     Vec2us result;
     result.x        = local_1c.x;
@@ -74,7 +70,7 @@ void UnkStruct_027e0cf8::func_ov024_020c75d0(UnkDataStruct4 *param1, unk32 param
     this->mUnk_10.y = result.y;
 
     volatile Vec2us local_20;
-    func_ov024_020d51dc((Vec2us *) &local_20, sceneIndex);
+    func_ov024_020d51dc((Vec2s *) &local_20, sceneIndex);
 
     result.x        = local_20.x;
     result.y        = local_20.y;

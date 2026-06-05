@@ -174,7 +174,7 @@ public:
     bool func_ov000_0209d144(Vec2s *param1, unk32 param2, unk32 param3);
     void func_ov000_0209d274(unk32 param1);
     bool func_ov000_0209d29c(unk32 param1);
-    void func_ov000_0209d2c4(unk32 param1, unk32 param2);
+    void func_ov000_0209d2c4(unk32 param1, bool param2);
     void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2b *param3);
     void func_ov000_0209d3b4(unk32 param1, fx32 size);
     void func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_00 *param2, unk32 param3);

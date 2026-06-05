@@ -1013,3 +1013,14 @@ public:
 
 extern void SetCreditsEndingType(u16 value);
 extern u16 GetCreditsEndingType();
+
+extern void func_ov024_020d51dc(Vec2s *param1, SceneIndex sceneIndex);
+extern void func_ov024_020d524c(Vec2s *param1, SceneIndex sceneIndex);
+extern bool func_ov024_020d5304(SceneIndex sceneIndex);
+extern bool func_ov024_020d5340(SceneIndex sceneIndex);
+extern bool func_ov024_020d5354(s32 *pFlagPos, s16 *pFlagValue, ItemId itemId);
+extern bool func_ov024_020d5410(SceneIndex sceneIndex);
+extern bool func_ov024_020d5434(SceneIndex sceneIndex);
+extern bool func_ov024_020d5458(SceneIndex sceneIndex);
+extern bool func_ov024_020d547c(SceneIndex sceneIndex);
+extern const u16 data_ov024_020d7684[5][6];

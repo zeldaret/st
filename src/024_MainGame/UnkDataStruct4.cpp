@@ -1,3 +1,4 @@
+#include "MainGame/AdventureMode.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
@@ -10,11 +11,6 @@ extern "C" void func_02026800(void *, int, const char *, ...);
 extern "C" unk32 func_02032784(unk32 param1);
 extern "C" unk32 func_ov000_0205c7ac(unk32, unk32);
 extern "C" bool func_ov000_0205c74c(unk32, unk32, unk32, unk32);
-extern "C" bool func_ov024_020d5434(SceneIndex sceneIndex);
-extern "C" bool func_ov024_020d5410(SceneIndex sceneIndex);
-extern "C" bool func_ov024_020d5458(SceneIndex sceneIndex);
-extern "C" bool func_ov024_020d547c(SceneIndex sceneIndex);
-extern const u16 data_ov024_020d7684[3][6];
 extern u8 data_ov024_020d756c[4];
 
 UnkDataStruct4::UnkDataStruct4() {
@@ -254,7 +250,7 @@ void UnkDataStruct4::func_ov024_020d2c54(UnkArrayDataType1 param1, unk32 param2)
     MI_CpuFill8(param1, 0, sizeof(UnkArrayDataType1));
     UnkDataStruct4_14_2 **ppUnk_14 = this->mUnk_14;
 
-    for (int k = 0; k < 3; k++) {
+    for (int k = 0; k < ARRAY_LEN(data_ov024_020d7684) - 2; k++) {
         //! TODO: fake match, how is this accessed??
         if (GET_FLAG2(data_ov024_020d7684[k][12], param2)) {
             for (int i = 0; i < ARRAY_LEN(this->mUnk_14); i++) {

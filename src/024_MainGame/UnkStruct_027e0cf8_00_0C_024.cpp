@@ -4,7 +4,6 @@
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 #include "versions.h"
 
-extern "C" bool func_ov024_020d5340(s16 param1);
 extern "C" bool func_ov000_0205ca18(unk32 param1, unk32 param2);
 extern "C" bool func_ov000_0205c9d0(unk32 stationSceneIdx);
 extern VecFx32 data_027e07d4;
@@ -403,14 +402,14 @@ s16 UnkStruct_027e0cf8_00::func_ov024_020cfe94(s32 param1) {
     return SceneIndex_None;
 }
 
-bool UnkStruct_027e0cf8_00::func_ov024_020cfed0(s16 param1) {
+bool UnkStruct_027e0cf8_00::func_ov024_020cfed0(s16 sceneIndex) {
     for (u32 i = 0; i < ARRAY_LEN(data_ov024_020d8098); i++) {
-        if (param1 == data_ov024_020d8098[i].mStationSceneIdx) {
+        if (sceneIndex == data_ov024_020d8098[i].mStationSceneIdx) {
             return data_ov024_020d8098[i].mUnk_0B;
         }
     }
 
-    func_ov024_020d5340(param1);
+    func_ov024_020d5340(sceneIndex);
     return false;
 }
 

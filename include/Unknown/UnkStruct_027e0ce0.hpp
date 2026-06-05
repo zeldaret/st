@@ -42,7 +42,7 @@ public:
     unk32 func_ov024_020d3e0c(unk32 param1);
     void func_ov024_020d3e30(unk32 param1, unk32 param2);
     void *func_ov024_020d3e68(unk32 param1);
-    void func_ov024_020d3ee8(unk32 param1, u16 param2, bool param3);
+    void SetTrackFlag(s32 flagPos, u16 flagValue, bool doSet);
     bool func_ov024_020d3f4c(s8 param1, u16 param2);
     void func_ov024_020d3f8c();
     void func_ov024_020d3fc8();

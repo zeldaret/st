@@ -572,7 +572,7 @@ _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3decEi kind:function(arm,size=0x20) a
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3e0cEi kind:function(arm,size=0x24) addr:0x020d3e0c
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3e30Eii kind:function(arm,size=0x38) addr:0x020d3e30
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3e68Ei kind:function(arm,size=0x80) addr:0x020d3e68
-_ZN21UnkStruct_027e0ce0_3419func_ov024_020d3ee8Eitb kind:function(arm,size=0x64) addr:0x020d3ee8
+_ZN21UnkStruct_027e0ce0_3412SetTrackFlagEitb kind:function(arm,size=0x64) addr:0x020d3ee8
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3f4cEct kind:function(arm,size=0x40) addr:0x020d3f4c
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3f8cEv kind:function(arm,size=0x3c) addr:0x020d3f8c
 _ZN21UnkStruct_027e0ce0_3419func_ov024_020d3fc8Ev kind:function(arm,size=0x40) addr:0x020d3fc8
@@ -637,16 +637,16 @@ _ZN20ModelRender_Derived2D1Ev kind:function(arm,size=0x14) addr:0x020d5160
 _ZN21UnkStruct_027e0d00_2019func_ov024_020d5174Ev kind:function(arm,size=0x1c) addr:0x020d5174
 _ZN21UnkStruct_027e0d00_20D0Ev kind:function(arm,size=0x30) addr:0x020d5190
 _ZN20ModelRender_Derived2D0Ev kind:function(arm,size=0x1c) addr:0x020d51c0
-func_ov024_020d51dc kind:function(arm,size=0x70) addr:0x020d51dc
-func_ov024_020d524c kind:function(arm,size=0xb8) addr:0x020d524c
-func_ov024_020d5304 kind:function(arm,size=0x3c) addr:0x020d5304
-func_ov024_020d5340 kind:function(arm,size=0x14) addr:0x020d5340
-func_ov024_020d5354 kind:function(arm,size=0x5c) addr:0x020d5354
-func_ov024_020d53b0 kind:function(arm,size=0x60) addr:0x020d53b0
-func_ov024_020d5410 kind:function(arm,size=0x24) addr:0x020d5410
-func_ov024_020d5434 kind:function(arm,size=0x24) addr:0x020d5434
-func_ov024_020d5458 kind:function(arm,size=0x24) addr:0x020d5458
-func_ov024_020d547c kind:function(arm,size=0x24) addr:0x020d547c
+_Z19func_ov024_020d51dcP5Vec2sj kind:function(arm,size=0x70) addr:0x020d51dc
+_Z19func_ov024_020d524cP5Vec2sj kind:function(arm,size=0xb8) addr:0x020d524c
+_Z19func_ov024_020d5304j kind:function(arm,size=0x3c) addr:0x020d5304
+_Z19func_ov024_020d5340j kind:function(arm,size=0x14) addr:0x020d5340
+_Z19func_ov024_020d5354PiPsi kind:function(arm,size=0x5c) addr:0x020d5354
+_Z19func_ov024_020d53b0j kind:function(arm,size=0x60) addr:0x020d53b0 local
+_Z19func_ov024_020d5410j kind:function(arm,size=0x24) addr:0x020d5410
+_Z19func_ov024_020d5434j kind:function(arm,size=0x24) addr:0x020d5434
+_Z19func_ov024_020d5458j kind:function(arm,size=0x24) addr:0x020d5458
+_Z19func_ov024_020d547cj kind:function(arm,size=0x24) addr:0x020d547c
 func_ov024_020d54a0 kind:function(arm,size=0x10) addr:0x020d54a0
 func_ov024_020d54b0 kind:function(arm,size=0x40) addr:0x020d54b0
 func_ov024_020d54f0 kind:function(arm,size=0x4) addr:0x020d54f0
@@ -749,13 +749,11 @@ data_ov024_020d763c kind:data(any) addr:0x020d763c local
 data_ov024_020d764c kind:data(any) addr:0x020d764c local
 data_ov024_020d765c kind:data(any) addr:0x020d765c local
 data_ov024_020d766c kind:data(any) addr:0x020d766c
-data_ov024_020d767c kind:data(any) addr:0x020d767c
+data_ov024_020d767c kind:data(byte[5]) addr:0x020d767c local
 data_ov024_020d7684 kind:data(any) addr:0x020d7684
-data_ov024_020d76c0 kind:data(any) addr:0x020d76c0
-data_ov024_020d76c2 kind:data(any) addr:0x020d76c2
-data_ov024_020d774c kind:data(any) addr:0x020d774c
-data_ov024_020d7752 kind:data(any) addr:0x020d7752
-data_ov024_020d78ac kind:data(any) addr:0x020d78ac
+data_ov024_020d76c0 kind:data(any) addr:0x020d76c0 local
+data_ov024_020d774c kind:data(any) addr:0x020d774c local
+data_ov024_020d78ac kind:data(any) addr:0x020d78ac local
 data_ov024_020d78b8 kind:data(any) addr:0x020d78b8
 data_ov024_020d78bc kind:data(any) addr:0x020d78bc
 data_ov024_020d78c0 kind:data(any) addr:0x020d78c0 ambiguous
@@ -885,7 +883,8 @@ _ZTV20ModelRender_Derived2 kind:data(any) addr:0x020d84b4
 @1742 kind:data(byte[4]) addr:0x020d8500 local
 @1776 kind:data(byte[11]) addr:0x020d8504 local
 @1777 kind:data(byte[12]) addr:0x020d8510 local
-data_ov024_020d851c kind:data(any) addr:0x020d851c
+_ZZ19func_ov024_020d51dcP5Vec2sjE19data_ov024_020d851c kind:data(any) addr:0x020d851c local
+data_ov024_020d8520 kind:data(any) addr:0x020d8520
 data_ov024_020d8550 kind:data(any) addr:0x020d8550
 data_ov024_020d8558 kind:data(any) addr:0x020d8558
 data_ov024_020d8560 kind:data(any) addr:0x020d8560
@@ -908,7 +907,7 @@ data_ov024_020d8694 kind:bss addr:0x020d8694
 data_ov024_020d8698 kind:bss addr:0x020d8698
 data_ov024_020d869c kind:bss(size=0x2) addr:0x020d869c local
 data_ov024_020d86a0 kind:bss addr:0x020d86a0
-data_ov024_020d86a4 kind:bss addr:0x020d86a4
+_ZGVZ19func_ov024_020d51dcP5Vec2sjE19data_ov024_020d851c kind:bss addr:0x020d86a4 local
 data_ov024_020d86a8 kind:bss addr:0x020d86a8
 data_ov024_020d86ac kind:bss addr:0x020d86ac
 gpMiscAdvManager kind:bss addr:0x020d86b0

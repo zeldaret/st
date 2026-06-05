@@ -247,7 +247,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_08(void) {
 
                 unk32 temp = data_027e0cd8->mUnk_0C->func_ov000_02080a44();
                 data_ov000_020b51b8.func_ov000_0206d0ec(temp, 0x78, 0x7F, -1);
-                this->func_ov000_0209d2c4(1, 1);
+                this->func_ov000_0209d2c4(1, true);
                 return;
             }
             break;
@@ -335,8 +335,8 @@ ARM void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
             this->MapObjectDoorBase::vfunc_5C(param1, param2);
             break;
         case 0:
-            this->func_ov000_0209d2c4(1, 0);
-            this->func_ov000_0209d2c4(0, 1);
+            this->func_ov000_0209d2c4(1, false);
+            this->func_ov000_0209d2c4(0, true);
 
             if (this->mUnk_A2 == 0) {
                 data_ov000_020b51b8.func_ov000_0206d134(0x0F);
@@ -385,7 +385,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
         case 8:
             ptr = &data_027e0cd8;
             this->MapObjectDoorBase::vfunc_5C(param1, param2);
-            this->func_ov000_0209d2c4(0, 0);
+            this->func_ov000_0209d2c4(0, false);
 
             if (param2 == 0) {
                 (*ptr)->mUnk_0C->func_ov000_0208053c(this->mUnk_20.mUnk_00[0]);

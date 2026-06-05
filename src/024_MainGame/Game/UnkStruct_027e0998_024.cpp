@@ -7,8 +7,6 @@
 #include "Unknown/UnkStruct_ov024_020d86a0.hpp"
 #include "Unknown/UnkStruct_ov026_02138d10.hpp"
 
-extern "C" void func_ov024_020d51dc(Vec2s *param1, u32 param2);
-
 void UnkStruct_ov024_020d86a0::Destroy() {
     delete data_ov024_020d86a0;
 }

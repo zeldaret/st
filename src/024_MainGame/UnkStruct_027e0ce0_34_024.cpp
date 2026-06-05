@@ -158,16 +158,18 @@ void *UnkStruct_027e0ce0_34::func_ov024_020d3e68(unk32 param1) {
     return G3d_GetModelPtr(data_027e0d00->mUnk_020[iVar2][iVar1]->mUnk_50);
 }
 
-void UnkStruct_027e0ce0_34::func_ov024_020d3ee8(unk32 param1, u16 param2, bool param3) {
-    if (param1 == ARRAY_LEN(this->mTrackFlags)) {
-        data_027e0cd8->func_ov000_02081d7c(param2, 0x03, param3);
+void UnkStruct_027e0ce0_34::SetTrackFlag(s32 flagPos, u16 flagValue, bool doSet) {
+    if (flagPos == ARRAY_LEN(this->mTrackFlags)) {
+        // glyphs
+        data_027e0cd8->func_ov000_02081d7c(flagValue, 0x03, doSet);
         return;
     }
 
-    if (param3) {
-        SET_FLAG_ALT2(this->mTrackFlags, param1, param2);
+    // force gems
+    if (doSet) {
+        SET_FLAG_ALT2(this->mTrackFlags, flagPos, flagValue);
     } else {
-        UNSET_FLAG_ALT2(this->mTrackFlags, param1, param2);
+        UNSET_FLAG_ALT2(this->mTrackFlags, flagPos, flagValue);
     }
 }
 
