@@ -658,11 +658,11 @@ _ZN12CargoManager8SetCargoEii kind:function(arm,size=0x14) addr:0x020d58d8
 _ZN12CargoManager16GetTypeAndAmountEPiS0_ kind:function(arm,size=0x14) addr:0x020d58ec
 _ZN12CargoManager19func_ov024_020d5900Ev kind:function(arm,size=0x1c) addr:0x020d5900
 _ZN12CargoManager19func_ov024_020d591cEv kind:function(arm,size=0x1c) addr:0x020d591c
-func_ov024_020d5938 kind:function(arm,size=0x40) addr:0x020d5938
-func_ov024_020d5978 kind:function(arm,size=0x18) addr:0x020d5978
-func_ov024_020d5990 kind:function(arm,size=0x16c) addr:0x020d5990
-func_ov024_020d5afc kind:function(arm,size=0x144) addr:0x020d5afc
-func_ov024_020d5c40 kind:function(arm,size=0x4c) addr:0x020d5c40
+_ZN15UnkTrainSystem2C1Ev kind:function(arm,size=0x40) addr:0x020d5938
+_ZN15UnkTrainSystem2D1Ev kind:function(arm,size=0x18) addr:0x020d5978
+_ZN15UnkTrainSystem219func_ov024_020d5990Ev kind:function(arm,size=0x16c) addr:0x020d5990
+_ZN15UnkTrainSystem219func_ov024_020d5afcEPK5Mat3pPK7VecFx32i kind:function(arm,size=0x144) addr:0x020d5afc
+_ZN15UnkTrainSystem219func_ov024_020d5c40Ev kind:function(arm,size=0x4c) addr:0x020d5c40
 func_ov024_020d5c8c kind:function(arm,size=0x44) addr:0x020d5c8c
 func_ov024_020d5cd0 kind:function(arm,size=0x1c) addr:0x020d5cd0
 func_ov024_020d5cec kind:function(arm,size=0x24) addr:0x020d5cec
@@ -755,7 +755,7 @@ data_ov024_020d76c0 kind:data(any) addr:0x020d76c0 local
 data_ov024_020d774c kind:data(any) addr:0x020d774c local
 data_ov024_020d78ac kind:data(any) addr:0x020d78ac local
 data_ov024_020d78b8 kind:data(any) addr:0x020d78b8
-data_ov024_020d78bc kind:data(any) addr:0x020d78bc
+data_ov024_020d78bc kind:data(any) addr:0x020d78bc local
 data_ov024_020d78c0 kind:data(any) addr:0x020d78c0 ambiguous
 data_ov024_020d78c2 kind:data(any) addr:0x020d78c2 ambiguous
 __sinit_ov024_020d78e8 kind:function(arm,size=0x38) addr:0x020d78e8
@@ -763,14 +763,14 @@ __sinit_UnkStruct_027e0cf8_00_0C_024.cpp kind:function(arm,size=0x120) addr:0x02
 __sinit_AdventureModeManager_1B8_Base_024.cpp kind:function(arm,size=0x2c) addr:0x020d7a40 local
 __sinit_PlayerActor_A0_38_024.cpp kind:function(arm,size=0x48) addr:0x020d7a6c
 __sinit_UnkTrainSystem1_024.cpp kind:function(arm,size=0x18) addr:0x020d7ab4 local
-__sinit_ov024_020d7acc kind:function(arm,size=0x18) addr:0x020d7acc
+__sinit_UnkTrainSystem2_024.cpp kind:function(arm,size=0x18) addr:0x020d7acc local
 __sinit_ActorUnkOBPC.cpp kind:function(arm,size=0x50) addr:0x020d7ae4
 .p__sinit_ov024_020d78e8 kind:data(word) addr:0x020d7b34
 .p__sinit_UnkStruct_027e0cf8_00_0C_024.cpp kind:data(word) addr:0x020d7b38
 .p__sinit_AdventureModeManager_1B8_Base_024.cpp kind:data(word) addr:0x020d7b3c local
 .p__sinit_PlayerActor_A0_38_024.cpp kind:data(word) addr:0x020d7b40
 .p__sinit_UnkTrainSystem1_024.cpp kind:data(word) addr:0x020d7b44 local
-.p__sinit_ov024_020d7acc kind:data(word) addr:0x020d7b48
+.p__sinit_UnkTrainSystem2_024.cpp kind:data(word) addr:0x020d7b48 local
 .p__sinit_ActorUnkOBPC.cpp kind:data(word) addr:0x020d7b4c
 _ZTV17GameModeAdventure kind:data(any) addr:0x020d7b60
 _ZTV15UnkActorSystem1 kind:data(any) addr:0x020d7b90

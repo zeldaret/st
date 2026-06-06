@@ -1,3 +1,4 @@
+#include "MainGame/UnkTrainSystems.hpp"
 #include "Unknown/Common.hpp"
 
 static const char *data_ov024_020d8374[] = {

@@ -84,6 +84,13 @@ struct Random {
         return ((randomValue >> 32) * factor) >> 32;
     }
 
+    /**
+     * @brief Generates a random number as u32 then convert it to a u16
+     */
+    u16 Next16(u32 factor) {
+        return this->Next32(factor) >> 16;
+    }
+
     void Init();
 };
 

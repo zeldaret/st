@@ -37,10 +37,10 @@ public:
     // data_ov000_020b1a98
     /* 00 */ virtual ~ModelRenderBase();
     /* 08 */ virtual void vfunc_08(G3d_Model *pModel);
-    /* 0C */ virtual void vfunc_0C()                               = 0;
-    /* 10 */ virtual void vfunc_10()                               = 0;
-    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) = 0;
-    /* 18 */ virtual void vfunc_18()                               = 0;
+    /* 0C */ virtual void vfunc_0C()                                                = 0;
+    /* 10 */ virtual void vfunc_10(VecFx32 *param1, Mat3p *param2, VecFx32 *param3) = 0;
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2)                  = 0;
+    /* 18 */ virtual void vfunc_18()                                                = 0;
     /* 1C */
 };
 
@@ -55,11 +55,11 @@ public:
 
     // data_ov000_020b1a6c
     /* 00 */ virtual ~ModelRender();
-    /* 08 */ virtual void vfunc_08(G3d_Model *pModel);
-    /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
-    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2); // SetRotationTranslation?
-    /* 18 */ virtual void vfunc_18();
+    /* 08 */ virtual void vfunc_08(G3d_Model *pModel) override;
+    /* 0C */ virtual void vfunc_0C() override;
+    /* 10 */ virtual void vfunc_10(VecFx32 *param1, Mat3p *param2, VecFx32 *param3) override; // SetTransform?
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) override;                  // SetRotationTranslation?
+    /* 18 */ virtual void vfunc_18() override;
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1);
     /* 20 */ virtual void vfunc_20();
 
@@ -77,7 +77,7 @@ public:
 
     // data_ov000_020b1a48
     /* 00 */ virtual ~UnkSystem6_Derived1() override {}
-    /* 10 */ virtual void vfunc_10() override;
+    /* 10 */ virtual void vfunc_10(VecFx32 *param1, Mat3p *param2, VecFx32 *param3) override;
     /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) override;
     /* 18 */ virtual void vfunc_18() override;
 };
@@ -129,8 +129,7 @@ public:
     ModelRender_Derived1(G3d_Model *pModel, unk32 param2, void *param3);
 
     // data_ov000_020b1be4
-    /* 00 */ virtual ~ModelRender_Derived1() {}
-    override;
+    /* 00 */ virtual ~ModelRender_Derived1() override {}
     /* 08 */ virtual void vfunc_08(G3d_Model *pModel) override;
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
 
@@ -147,6 +146,5 @@ public:
         ModelRender_Derived1(pModel, param2, param3) {}
 
     // data_ov024_020d84bc
-    /* 00 */ virtual ~ModelRender_Derived2() {}
-    override;
+    /* 00 */ virtual ~ModelRender_Derived2() override {}
 };

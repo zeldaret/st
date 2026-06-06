@@ -1,5 +1,6 @@
 #include "MainGame/AdventureMode.hpp"
 #include "MainGame/PassengerManager.hpp"
+#include "MainGame/UnkTrainSystems.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e0d00.hpp"
