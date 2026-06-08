@@ -179,8 +179,8 @@ void UnkStruct_027e0d08::func_ov024_020d5fe4(s16 *param1, s16 *param2, u32 param
         MI_CpuCopyFast(&this->mUnk_08[var_r8_2], param2, param3);
     } else {
         temp_r5   = 0x1000 - var_r8_2;
-        temp_r7_3 = temp_r5 * (sizeof(u16));
-        temp_r6_2 = ((var_r8_2 + spC) - 0x1000) * (sizeof(u16));
+        temp_r7_3 = temp_r5 * sizeof(u16);
+        temp_r6_2 = (var_r8_2 + spC - 0x1000) * sizeof(u16);
 
         MI_CpuCopyFast(&this->mUnk_04[var_r8_2], param1, temp_r7_3);
         MI_CpuCopyFast(&this->mUnk_08[var_r8_2], param2, temp_r7_3);
