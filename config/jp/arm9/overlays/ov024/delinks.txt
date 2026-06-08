@@ -226,6 +226,7 @@ src/024_MainGame/UnkTrainSystem2_024.cpp:
     .bss        start:0x020da04c end:0x020da050
 
 src/024_MainGame/UnkStruct_027e0d08_024.cpp:
+    complete
     .text       start:0x020d7630 end:0x020d7c58
 
 src/024_MainGame/MiscAdvManager.cpp:

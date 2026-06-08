@@ -50,6 +50,7 @@ public:
     void *func_ov000_0206a5d8(unk32 param1);
     void func_ov000_0206a5fc(void);
     void func_ov000_0206a6a4(unk32 param1);
+    void func_ov000_0206a740(void);
     void func_ov000_0206a758(void);
     void func_ov000_0206a77c(void);
 
