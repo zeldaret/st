@@ -973,6 +973,7 @@ def process_project(cfg: ProjectConfig, args: Any):
                     implicit=cmds,
                 )
 
-            n.default(["format", "objdiff", *defaults])
+            # n.default(["format", "objdiff", *defaults])
+            n.default(["objdiff", *defaults])
         else:
             n.default(["download_tools"])
