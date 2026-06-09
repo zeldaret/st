@@ -17,7 +17,7 @@ struct UnkStructIterator1 {
 
 typedef Iterator<UnkStructIterator1> UnkIterator1;
 
-class UnkStruct_020d8698_1C {
+class UICounter_Health {
 public:
     /* 000 */ UnkIterator1 mUnk_000;
     /* 008 */ u8 mUnk_008;
@@ -48,7 +48,7 @@ public:
         this->mUnk_000.Get(index).mUnk_00 = value;
     }
 
-    UnkStruct_020d8698_1C();
+    UICounter_Health();
 
     void func_ov024_020cd768();
     void func_ov024_020cd774();
@@ -60,7 +60,7 @@ public:
     void func_ov024_020cdfd8();
     u8 func_ov024_020ce218();
     u8 func_ov024_020ce260();
-    u32 func_ov024_020ce2a8();
+    u32 GetMaxHearts();
 };
 
 class UnkStruct_020d8698_24_5C_Base {
@@ -99,7 +99,7 @@ public:
     void func_ov000_02065b8c();
 };
 
-class UnkStruct_020d8698_24 {
+class UICounter_Rupees {
 public:
     /* 000 */ UnkStruct_ov019_020d24c8_28_258 mUnk_000;
     /* 018 */ UnkSystem2_UnkSubSystem9 mUnk_018;
@@ -111,7 +111,7 @@ public:
     /* 106 */ Vec2s mUnk_106;
     /* 10C */
 
-    UnkStruct_020d8698_24();
+    UICounter_Rupees();
 
     void func_ov024_020ce518();
     void func_ov024_020ce570();
@@ -145,7 +145,7 @@ public:
     void func_ov000_02060e3c(unk32 param1, const char *filename, wchar_t *param3);
 };
 
-class UnkStruct_020d8698_2C {
+class UICounter_Cargo {
 public:
     /* 000 */ unk32 mUnk_000;
     /* 004 */ UnkStruct_ov019_020d24c8_28_258 mUnk_004;
@@ -170,7 +170,7 @@ public:
     /* 218 */ Vec2s mUnk_218;
     /* 21C */
 
-    UnkStruct_020d8698_2C();
+    UICounter_Cargo();
 
     void func_ov024_020ced54();
     void func_ov024_020ceda8();
@@ -188,7 +188,7 @@ public:
     void func_ov024_020cf5a8(bool param1);
 };
 
-class UnkStruct_020d8698_34 {
+class UICounter_SmallKeys {
 public:
     /* 00 */ UnkStruct_ov019_020d24c8_28_258 mUnk_00;
     /* 18 */ UnkSubStruct19 mUnk_18;
@@ -196,36 +196,37 @@ public:
     /* 92 */ unk16 mUnk_92;
     /* 94 */
 
-    UnkStruct_020d8698_34();
+    UICounter_SmallKeys();
 
     void func_ov024_020cf698();
     void func_ov024_020cf6e4();
     void func_ov024_020cf724();
 };
 
-class UnkStruct_020d8698_3C {
+class UICounter_TearsOfLight {
 public:
     /* 00 */ UnkStruct_ov019_020d24c8_28_258 mUnk_00;
     /* 18 */ UnkStruct_ov019_020d24c8_28_258 mUnk_18;
     /* 30 */
 
-    UnkStruct_020d8698_3C();
+    UICounter_TearsOfLight();
 
     void func_ov024_020cf82c();
     void func_ov024_020cf888();
     void func_ov024_020cf88c();
 };
 
-class UnkStruct_020d8698_44 : public LinkList<UnkStruct_020d8698_44> {
+// this is the item button, it's technically a counter because of arrows and bombs
+class UICounter_Items : public LinkList<UICounter_Items> {
 public:
     /* 008 */ STRUCT_PAD(0x0C, 0x18B);
     /* 18B */ bool mUnk_18B;
     /* 18C */ STRUCT_PAD(0x18C, 0x52C);
     /* 52C */
 
-    UnkStruct_020d8698_44(); // overlay 31
+    UICounter_Items(); // overlay 31
 
-    /* 00 */ virtual ~UnkStruct_020d8698_44();
+    /* 00 */ virtual ~UICounter_Items();
     /* 08 */
 
     void func_ov031_0210eeb4();
@@ -233,25 +234,25 @@ public:
     void func_ov031_0210f814();
 };
 
-class UnkStruct_020d8698 : public GameModeManagerBase_104, AutoInstance<UnkStruct_020d8698> {
+class UICounterManager : public GameModeManagerBase_104, AutoInstance<UICounterManager> {
 public:
     /* 000 (base) */
-    /* 01C */ UnkStruct_020d8698_1C *mUnk_01C;
+    /* 01C */ UICounter_Health *mpHealth;
     /* 020 */ bool mUnk_020;
-    /* 024 */ UnkStruct_020d8698_24 *mUnk_024;
+    /* 024 */ UICounter_Rupees *mpRupees;
     /* 028 */ bool mUnk_028;
-    /* 02C */ UnkStruct_020d8698_2C *mUnk_02C;
+    /* 02C */ UICounter_Cargo *mpCargo;
     /* 030 */ bool mUnk_030;
-    /* 034 */ UnkStruct_020d8698_34 *mUnk_034;
+    /* 034 */ UICounter_SmallKeys *mpKeys;
     /* 038 */ bool mUnk_038;
-    /* 03C */ UnkStruct_020d8698_3C *mUnk_03C;
+    /* 03C */ UICounter_TearsOfLight *mpTears;
     /* 040 */ bool mUnk_040;
-    /* 044 */ UnkStruct_020d8698_44 *mUnk_044;
+    /* 044 */ UICounter_Items *mpItems;
     /* 048 */ bool mUnk_048;
 
-    UnkStruct_020d8698();
+    UICounterManager();
 
-    /* 00 */ virtual ~UnkStruct_020d8698();
+    /* 00 */ virtual ~UICounterManager();
     /* 08 */ virtual void vfunc_08(Input *pButtons, TouchControl *pTouchControl);
     /* 10 */ virtual void vfunc_10(unk8 *param1);
 
@@ -273,7 +274,7 @@ public:
     bool func_ov024_020cd5c0(u16 param1);
     bool func_ov024_020cd604();
 
-    static UnkStruct_020d8698 *Create();
+    static UICounterManager *Create();
 };
 
-extern UnkStruct_020d8698 *data_ov024_020d8698;
+extern UICounterManager *gpUICounterManager;

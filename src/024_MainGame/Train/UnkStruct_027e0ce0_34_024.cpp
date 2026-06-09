@@ -1,7 +1,7 @@
 #include "MainGame/CargoManager.hpp"
 #include "MainGame/PassengerManager.hpp"
 #include "Unknown/Common.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d00.hpp"
@@ -213,7 +213,7 @@ void UnkStruct_027e0ce0_34::func_ov024_020d4008(unk32 param1) {
     }
 
     this->mUnk_28 = var_r3;
-    data_ov024_020d8698->func_ov024_020cd348(temp_ip, var_r3);
+    gpUICounterManager->func_ov024_020cd348(temp_ip, var_r3);
 }
 
 void UnkStruct_027e0ce0_34::func_ov024_020d404c() {

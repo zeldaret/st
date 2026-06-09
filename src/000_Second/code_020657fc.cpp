@@ -1,4 +1,4 @@
-#include "Unknown/UnkStruct_020d8698.hpp"
+#include "Unknown/UICounterManager.hpp"
 
 // non-matching
 UnkStruct_020d8698_24_5C_Base::UnkStruct_020d8698_24_5C_Base(unk32 param1, const u16 *param2, u16 param3, unk32 param4) {

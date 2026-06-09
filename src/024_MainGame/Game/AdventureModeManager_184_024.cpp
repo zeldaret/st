@@ -1,8 +1,8 @@
 #include "MainGame/AdventureMode.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
@@ -36,7 +36,7 @@ void AdventureModeManager_184::vfunc_0C(unk32 param1) {
         this->mUnk_18 = false;
 
         if (data_ov024_020d8660->mUnk_1C == 5) {
-            data_027e0994->mUnk_004.func_0201c0c4(0x25);
+            gpCurrentGameModeMgr->mUnk_004.func_0201c0c4(0x25);
         }
 
         data_0204a088->func_ov000_02061248();
@@ -55,8 +55,8 @@ void AdventureModeManager_184::vfunc_0C(unk32 param1) {
         }
 
         this->mUnk_10->func_ov010_020b7008();
-        data_ov024_020d8698->func_ov024_020cd368(false, false);
-        data_ov024_020d8698->func_ov024_020cd3f0(false);
+        gpUICounterManager->func_ov024_020cd368(false, false);
+        gpUICounterManager->func_ov024_020cd3f0(false);
     }
 
     if (this->mUnk_10 != NULL && this->mUnk_10->vfunc_20()) {
@@ -100,13 +100,13 @@ void AdventureModeManager_184::vfunc_18(unk32 param1) {
             this->mUnk_10->func_ov010_020b7054();
 
             if (data_ov000_020b504c.func_ov000_02067f88(0, 0)) {
-                data_ov024_020d8698->func_ov024_020cd3a4();
-                data_ov024_020d8698->func_ov024_020cd400();
+                gpUICounterManager->func_ov024_020cd3a4();
+                gpUICounterManager->func_ov024_020cd400();
             }
             break;
         case 2:
-            data_ov024_020d8698->func_ov024_020cd3a4();
-            data_ov024_020d8698->func_ov024_020cd400();
+            gpUICounterManager->func_ov024_020cd3a4();
+            gpUICounterManager->func_ov024_020cd400();
             GetAdventureModeManager()->func_ov024_020c6c60();
             data_ov000_020b504c.func_ov000_02067f5c(0);
             break;
@@ -148,8 +148,8 @@ void AdventureModeManager_184::vfunc_20(unk32 param1, unk32 param2) {
         case 5:
         case 8:
         case 9:
-            data_ov024_020d8698->func_ov024_020cd3a4();
-            data_ov024_020d8698->func_ov024_020cd400();
+            gpUICounterManager->func_ov024_020cd3a4();
+            gpUICounterManager->func_ov024_020cd400();
             GetAdventureModeManager()->func_ov024_020c6c60();
             data_ov000_020b504c.func_ov000_02067f5c(0);
             break;

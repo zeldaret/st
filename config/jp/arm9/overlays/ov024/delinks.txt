@@ -10,17 +10,17 @@ src/024_MainGame/Game/GameModeAdventure_024.cpp:
     .text       start:0x020c6060 end:0x020c62cc
     .data       start:0x020d9500 end:0x020d9530
 
-src/024_MainGame/Game/UnkStruct_ov000_020d8660_024.cpp:
+src/024_MainGame/Actor/UnkStruct_ov024_020d8660_024.cpp:
     complete
     .text       start:0x020c62cc end:0x020c6674
     .bss        start:0x020da000 end:0x020da034
 
-src/024_MainGame/Game/UnkActorSystem1_024.cpp:
+src/024_MainGame/Actor/UnkActorSystem1_024.cpp:
     complete
     .text       start:0x020c6674 end:0x020c66dc
     .data       start:0x020d9530 end:0x020d9568
 
-src/024_MainGame/Game/UnkActorSystem2_024.cpp:
+src/024_MainGame/Actor/UnkActorSystem2_024.cpp:
     complete
     .text       start:0x020c66dc end:0x020c69cc
     .data       start:0x020d9568 end:0x020d958c
@@ -30,12 +30,12 @@ src/024_MainGame/Game/AdventureModeManager_024.cpp:
     .text       start:0x020c69cc end:0x020c872c
     .data       start:0x020d958c end:0x020d9630
 
-src/024_MainGame/Game/UnkStruct_027e0998_024.cpp:
+src/024_MainGame/Unknown/UnkStruct_027e0998_024.cpp:
     complete
     .text       start:0x020c872c end:0x020c8be0
     .data       start:0x020d9630 end:0x020d963c
 
-src/024_MainGame/Game/UnkStruct_027e0cf8_024.cpp:
+src/024_MainGame/Train/UnkStruct_027e0cf8_024.cpp:
     complete
     .text       start:0x020c8be0 end:0x020c9190
 
@@ -101,30 +101,30 @@ src/024_MainGame/Game/AdventureModeManager_15C_20_00_024.cpp:
     .text       start:0x020cbb70 end:0x020cc2a8
     .data       start:0x020d98f0 end:0x020d9914
 
-src/024_MainGame/UnkAdventureModeSystem1_024.cpp:
+src/024_MainGame/Unknown/UnkAdventureModeSystem1_024.cpp:
     complete
     .text       start:0x020cc2a8 end:0x020cc5f0
     .data       start:0x020d9914 end:0x020d9920
 
-src/024_MainGame/UnkStruct_ov024_020d8694_024.cpp:
+src/024_MainGame/TitleCard/UnkStruct_ov024_020d8694_024.cpp:
     .text       start:0x020cc5f0 end:0x020cca40
     .rodata     start:0x020d8ccc end:0x020d8d7c
     .data       start:0x020d9920 end:0x020d9944
     .bss        start:0x020da034 end:0x020da038
 
-src/024_MainGame/UnkTitleCardSystem1_024.cpp:
+src/024_MainGame/TitleCard/UnkTitleCardSystem1_024.cpp:
     complete
     .text       start:0x020cca40 end:0x020ce56c
     .data       start:0x020d9944 end:0x020d9a04
 
-src/024_MainGame/UnkStruct_020d8698_024.cpp:
+src/024_MainGame/UICounterManager.cpp:
     complete
     .text       start:0x020ce56c end:0x020d129c
     .rodata     start:0x020d8d7c end:0x020d8df8
     .data       start:0x020d9a04 end:0x020d9a34
     .bss        start:0x020da038 end:0x020da03c
 
-src/024_MainGame/UnkStruct_027e0cf8_00_0C_024.cpp:
+src/024_MainGame/Train/UnkStruct_027e0cf8_00_0C_024.cpp:
     .text       start:0x020d129c end:0x020d1f40
     .rodata     start:0x020d8df8 end:0x020d8ee8
     .init       start:0x020d92c4 end:0x020d93e4
@@ -140,13 +140,13 @@ src/024_MainGame/Game/AdventureModeManager_1B8_Base_024.cpp:
     .data       start:0x020d9ba0 end:0x020d9ba8
     .bss        start:0x020da03c end:0x020da040
 
-src/024_MainGame/UnkStruct_ov024_020d86a0_024.cpp:
+src/024_MainGame/Unknown/UnkStruct_ov024_020d86a0_024.cpp:
     complete
     .text       start:0x020d2fac end:0x020d3050
     .data       start:0x020d9ba8 end:0x020d9bc4
     .bss        start:0x020da040 end:0x020da044
 
-src/024_MainGame/PlayerActor_A0_38_024.cpp:
+src/024_MainGame/Player/PlayerActor_A0_38_024.cpp:
     .text       start:0x020d3050 end:0x020d334c
     .init       start:0x020d9410 end:0x020d9458
     .ctor       start:0x020d94e4 end:0x020d94e8
@@ -157,18 +157,18 @@ src/024_MainGame/CreditsEndingType.cpp:
     .text       start:0x020d334c end:0x020d336c
     .data       start:0x020d9bf4 end:0x020d9bf8
 
-src/024_MainGame/UnkDataStruct4_14.cpp:
+src/024_MainGame/Train/UnkDataStruct4_14.cpp:
     complete
     .text       start:0x020d336c end:0x020d3de4
     .rodata     start:0x020d8ef4 end:0x020d8f10
 
-src/024_MainGame/UnkDataStruct4.cpp:
+src/024_MainGame/Train/UnkDataStruct4.cpp:
     complete
     .text       start:0x020d3de4 end:0x020d4aac
     .rodata     start:0x020d8f10 end:0x020d8f14
     .data       start:0x020d9bf8 end:0x020d9c3c
 
-src/024_MainGame/UnkStruct_027e0cf8_08_024.cpp:
+src/024_MainGame/Train/UnkStruct_027e0cf8_08_024.cpp:
     complete
     .text       start:0x020d4aac end:0x020d4fc4
 
@@ -176,44 +176,44 @@ src/024_MainGame/ZeldaTrainBinary.cpp:
     complete
     .text       start:0x020d4fc4 end:0x020d5254
 
-src/024_MainGame/UnkStruct_027e0cf8_08_00_024.cpp:
+src/024_MainGame/Train/UnkStruct_027e0cf8_08_00_024.cpp:
     complete
     .text       start:0x020d5254 end:0x020d55a8
 
-src/024_MainGame/UnkStruct_027e0ce0_34_024.cpp:
+src/024_MainGame/Train/UnkStruct_027e0ce0_34_024.cpp:
     complete
     .text       start:0x020d55a8 end:0x020d5a74
     .rodata     start:0x020d8f14 end:0x020d8f3c
 
-src/024_MainGame/PassengerManager.cpp:
+src/024_MainGame/Train/PassengerManager.cpp:
     complete
     .text       start:0x020d5a74 end:0x020d6008
     .rodata     start:0x020d8f3c end:0x020d8fc8
 
-src/024_MainGame/MapObjectProfile_Derived5.cpp:
+src/024_MainGame/Train/MapObjectProfile_Derived5.cpp:
     complete
     .text       start:0x020d6008 end:0x020d6118
     .data       start:0x020d9c3c end:0x020d9d68
 
-src/024_MainGame/UnkStruct_027e0d00.cpp:
+src/024_MainGame/Train/UnkStruct_027e0d00.cpp:
     complete
     .text       start:0x020d6118 end:0x020d6840
     .rodata     start:0x020d8fc8 end:0x020d9020
     .data       start:0x020d9d68 end:0x020d9da4
 
-src/024_MainGame/UnkStruct_027e0d00_20.cpp:
+src/024_MainGame/Train/UnkStruct_027e0d00_20.cpp:
     complete
     .text       start:0x020d6840 end:0x020d6b80
     .data       start:0x020d9da4 end:0x020d9ebc
 
-src/024_MainGame/code_020d51dc_024.cpp:
+src/024_MainGame/Train/code_020d51dc_024.cpp:
     complete
     .text       start:0x020d6b80 end:0x020d6e44
     .rodata     start:0x020d9020 end:0x020d9250
     .data       start:0x020d9ebc end:0x020d9ef0
     .bss        start:0x020da044 end:0x020da048
 
-src/024_MainGame/UnkTrainSystem1_024.cpp:
+src/024_MainGame/Train/UnkTrainSystem1_024.cpp:
     complete
     .text       start:0x020d6e44 end:0x020d7258
     .rodata     start:0x020d9250 end:0x020d925c
@@ -221,12 +221,12 @@ src/024_MainGame/UnkTrainSystem1_024.cpp:
     .ctor       start:0x020d94e8 end:0x020d94ec
     .bss        start:0x020da048 end:0x020da04c
 
-src/024_MainGame/CargoManager_024.cpp:
+src/024_MainGame/Train/CargoManager_024.cpp:
     complete
     .text       start:0x020d7258 end:0x020d72dc
     .rodata     start:0x020d925c end:0x020d9260
 
-src/024_MainGame/UnkTrainSystem2_024.cpp:
+src/024_MainGame/Train/UnkTrainSystem2_024.cpp:
     complete
     .text       start:0x020d72dc end:0x020d7630
     .rodata     start:0x020d9260 end:0x020d928c
@@ -234,7 +234,7 @@ src/024_MainGame/UnkTrainSystem2_024.cpp:
     .ctor       start:0x020d94ec end:0x020d94f0
     .bss        start:0x020da04c end:0x020da050
 
-src/024_MainGame/UnkStruct_027e0d08_024.cpp:
+src/024_MainGame/Unknown/UnkStruct_027e0d08_024.cpp:
     complete
     .text       start:0x020d7630 end:0x020d7c58
 
@@ -248,7 +248,7 @@ src/024_MainGame/Actor/ActorUnk_ov000_020a8bb0_EC_024.cpp:
     .text       start:0x020d7ff4 end:0x020d8840
     .bss        start:0x020da054 end:0x020da058
 
-src/024_MainGame/data_ov024_020d8550.cpp:
+src/024_MainGame/Train/data_ov024_020d8550.cpp:
     complete
     .data       start:0x020d9ef0 end:0x020d9f74
 

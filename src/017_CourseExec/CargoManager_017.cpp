@@ -1,6 +1,6 @@
 #include "MainGame/CargoManager.hpp"
 #include "Save/AdventureFlags.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
@@ -108,15 +108,15 @@ void CargoManager::Update() {
             if (this->mCargo.mDecayTimer >= sCargoInfos[this->mCargo.mType].timerMax) {
                 this->RemoveAmount(1);
                 this->mCargo.mDecayTimer = 0;
-                data_ov024_020d8698->func_ov024_020cd3f0(true);
+                gpUICounterManager->func_ov024_020cd3f0(true);
             }
         }
     }
 
     if (this->mCargo.mAmount <= sCargoInfos[this->mCargo.mType].amount) {
-        data_ov024_020d8698->func_ov024_020cd3e0(true);
+        gpUICounterManager->func_ov024_020cd3e0(true);
     } else {
-        data_ov024_020d8698->func_ov024_020cd3e0(false);
+        gpUICounterManager->func_ov024_020cd3e0(false);
     }
 
     if (this->mUnk_18 > 0) {
@@ -138,14 +138,14 @@ void CargoManager::Init(unk32 type, unk32 amount) {
     pUnkStruct_027e0d00->func_ov024_020d4d10();
     pUnkStruct_027e0d00->func_ov024_020d4cc0(this->mCargo.mType);
 
-    data_ov024_020d8698->func_ov024_020cd410();
-    data_ov024_020d8698->func_ov024_020cd3f0(true);
+    gpUICounterManager->func_ov024_020cd410();
+    gpUICounterManager->func_ov024_020cd3f0(true);
 }
 
 void CargoManager::func_ov017_020bebdc() {
     if (this->mCargo.mType > CargoType_None && this->mCargo.mType < CargoType_Max) {
         this->RemoveAmount(sCargoInfos[this->mCargo.mType].amountDecr);
-        data_ov024_020d8698->func_ov024_020cd3d0();
+        gpUICounterManager->func_ov024_020cd3d0();
     }
 }
 
@@ -153,7 +153,7 @@ void CargoManager::func_ov017_020bec20() {
     if (this->mCargo.mType > CargoType_None && this->mCargo.mType < CargoType_Max) {
         this->mUnk_18 = 0x1E;
         this->RemoveAmount(sCargoInfos[this->mCargo.mType].amountDamageDecr);
-        data_ov024_020d8698->func_ov024_020cd3d0();
+        gpUICounterManager->func_ov024_020cd3d0();
     }
 }
 

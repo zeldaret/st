@@ -3,8 +3,8 @@
 #include "MainGame/AdventureMode.hpp"
 #include "Save/SaveManager.hpp"
 #include "System/OverlayManager.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
@@ -175,11 +175,11 @@ void AdventureModeManager::vfunc_14() {
         func_ov000_02066294();
     }
 
-    UnkStruct_020d8698::Create();
+    UICounterManager::Create();
 
     if (data_027e09a4->IsNotCutscene()) {
         GameModeManagerBase_104 *pList = GetLinkListRef(this->mUnk_104);
-        UnkStruct_020d8698 *ptr        = data_ov024_020d8698;
+        UICounterManager *ptr          = gpUICounterManager;
         pList->Append(ptr);
         ptr->vfunc_18();
 
@@ -210,7 +210,7 @@ void AdventureModeManager::vfunc_18() {
     DELETE(this->mUnk_184);
 
     AdventureModeManager::func_ov001_020c083c();
-    if (data_ov024_020d8698 != NULL) {
+    if (gpUICounterManager != NULL) {
         AdventureModeManager::func_ov001_020c0894();
         this->mUnk_1B4 = false;
     }
@@ -258,8 +258,8 @@ void AdventureModeManager::vfunc_1C() {
         this->mUnk_1BC->func_ov093_02175514();
     }
 
-    data_ov024_020d8698->func_ov024_020cd094();
-    data_ov024_020d8698->func_ov024_020cd150();
+    gpUICounterManager->func_ov024_020cd094();
+    gpUICounterManager->func_ov024_020cd150();
 
     if (!data_027e09a4->IsTrain()) {
         this->mUnk_1B0->func_ov031_0210fad0();
@@ -300,8 +300,8 @@ void AdventureModeManager::func_ov001_020c0874() {
 }
 
 void AdventureModeManager::func_ov001_020c0894() {
-    if (data_ov024_020d8698 != NULL) {
-        delete data_ov024_020d8698;
+    if (gpUICounterManager != NULL) {
+        delete gpUICounterManager;
     }
 }
 

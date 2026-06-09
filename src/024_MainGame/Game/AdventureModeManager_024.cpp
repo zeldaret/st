@@ -3,11 +3,11 @@
 #include "MainGame/AdventureMode.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/Common.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -421,10 +421,10 @@ void AdventureModeManager::vfunc_24() {
 }
 
 void AdventureModeManager::func_ov024_020c5cec() {
-    data_ov024_020d8698->func_ov024_020cd420();
+    gpUICounterManager->func_ov024_020cd420();
 
     if (!data_027e09a4->IsTrain()) {
-        data_ov024_020d8698->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
+        gpUICounterManager->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
 
         if (gOverlayManager.IsPlayerSub() && data_0204a088->mUnk_00 == OverlayIndex_SceneInit) {
             this->mUnk_168->func_ov031_0210df60(1);
@@ -785,7 +785,7 @@ void AdventureModeManager::func_ov024_020c6a48(unk32 param1, bool param2) {
         case 1:
         case 2:
         case 3:
-            data_ov024_020d8698->func_ov024_020cd4e4(param1, param2);
+            gpUICounterManager->func_ov024_020cd4e4(param1, param2);
             break;
         case 4:
             if (data_027e09a4->IsTrain()) {
@@ -795,7 +795,7 @@ void AdventureModeManager::func_ov024_020c6a48(unk32 param1, bool param2) {
             }
             break;
         case 5:
-            data_ov024_020d8698->func_ov024_020cd4e4(param1, param2);
+            gpUICounterManager->func_ov024_020cd4e4(param1, param2);
             this->func_ov024_020c6a48(4, param2);
             break;
         default:
@@ -809,11 +809,11 @@ bool AdventureModeManager::func_ov024_020c6af4(unk32 param1) {
         case 1:
         case 2:
         case 3:
-            if (data_ov024_020d8698 == NULL) {
+            if (gpUICounterManager == NULL) {
                 return false;
             }
 
-            return data_ov024_020d8698->func_ov024_020cd5c0(param1);
+            return gpUICounterManager->func_ov024_020cd5c0(param1);
         case 4:
             if (data_027e09a4->IsTrain()) {
                 if (this->mUnk_16C != NULL) {
@@ -836,17 +836,17 @@ bool AdventureModeManager::func_ov024_020c6af4(unk32 param1) {
 }
 
 void AdventureModeManager::func_ov024_020c6b8c() {
-    if (this->mUnk_1B4 && data_ov024_020d8698 != NULL) {
-        data_ov024_020d8698->Detach();
+    if (this->mUnk_1B4 && gpUICounterManager != NULL) {
+        gpUICounterManager->Detach();
     }
 
-    if (data_ov024_020d8698 != NULL) {
-        UnkStruct_020d8698 *ptr = data_ov024_020d8698;
+    if (gpUICounterManager != NULL) {
+        UICounterManager *ptr = gpUICounterManager;
         this->mUnk_104.Append(ptr);
         ptr->vfunc_18();
 
         if (!this->mUnk_1B4) {
-            data_ov024_020d8698->func_ov024_020cd094();
+            gpUICounterManager->func_ov024_020cd094();
         }
 
         this->mUnk_1B4 = true;
@@ -864,8 +864,8 @@ void AdventureModeManager::func_ov024_020c6b8c() {
 }
 
 void AdventureModeManager::func_ov024_020c6c60() {
-    if (this->mUnk_1B4 && data_ov024_020d8698 != NULL) {
-        data_ov024_020d8698->Detach();
+    if (this->mUnk_1B4 && gpUICounterManager != NULL) {
+        gpUICounterManager->Detach();
         this->mUnk_1B4 = false;
     }
 

@@ -7,9 +7,7 @@
 class UnkStruct_027e0998_Base {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk16 mUnk_04;
-    /* 06 */ STRUCT_PAD(0x06, 0x42);
-    /* 42 */ unk16 mUnk_42;
+    /* 04 */ char mUnk_04[64]; // path to current scene's mapXX.bin
     /* 44 */ unk32 mUnk_44;
     /* 48 */ unk16 mUnk_48;
     /* 4A */ unk16 mUnk_4A; // pad?

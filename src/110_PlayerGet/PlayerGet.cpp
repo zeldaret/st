@@ -10,7 +10,7 @@
 #include "Player/PlayerGet.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/Common.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
@@ -155,7 +155,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
 
                 if (this->mEquippedItem == ItemFlag_None) {
                     this->mEquippedItem = itemFlag;
-                    data_ov024_020d8698->func_ov024_020cd458(this->mEquippedItem, false);
+                    gpUICounterManager->func_ov024_020cd458(this->mEquippedItem, false);
                 }
             } else {
                 itemFlag = GetItemFlag(itemId);

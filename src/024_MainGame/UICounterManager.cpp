@@ -1,8 +1,8 @@
+#include "Unknown/UICounterManager.hpp"
 #include "MainGame/CargoManager.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
@@ -14,7 +14,7 @@
 extern "C" s16 func_020196b0(unk32 param1);
 extern "C" unk32 func_02015788(u16 param1);
 
-UnkStruct_020d8698 *data_ov024_020d8698 = NULL;
+UICounterManager *gpUICounterManager = NULL;
 
 static const u16 data_ov024_020d73d8[] = {
     0x09,
@@ -46,64 +46,64 @@ static const u16 data_ov024_020d7432[] = {
     0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x00,
 };
 
-UnkStruct_020d8698 *UnkStruct_020d8698::Create() {
-    return new(HeapIndex_1) UnkStruct_020d8698();
+UICounterManager *UICounterManager::Create() {
+    return new(HeapIndex_1) UICounterManager();
 }
 
-UnkStruct_020d8698::UnkStruct_020d8698() :
-    mUnk_01C(NULL),
+UICounterManager::UICounterManager() :
+    mpHealth(NULL),
     mUnk_020(true),
-    mUnk_024(NULL),
+    mpRupees(NULL),
     mUnk_028(true),
-    mUnk_02C(NULL),
+    mpCargo(NULL),
     mUnk_030(true),
-    mUnk_034(NULL),
+    mpKeys(NULL),
     mUnk_038(true),
-    mUnk_03C(NULL),
+    mpTears(NULL),
     mUnk_040(true),
-    mUnk_044(NULL),
+    mpItems(NULL),
     mUnk_048(true) {
     this->mUnk_18  = true;
     this->mUnk_19  = true;
-    this->mUnk_01C = new(HeapIndex_1) UnkStruct_020d8698_1C();
-    this->mUnk_024 = new(HeapIndex_1) UnkStruct_020d8698_24();
-    this->mUnk_02C = new(HeapIndex_1) UnkStruct_020d8698_2C();
+    this->mpHealth = new(HeapIndex_1) UICounter_Health();
+    this->mpRupees = new(HeapIndex_1) UICounter_Rupees();
+    this->mpCargo  = new(HeapIndex_1) UICounter_Cargo();
 
     if (!data_027e09a4->IsTrain()) {
-        this->mUnk_034 = new(HeapIndex_1) UnkStruct_020d8698_34();
-        this->mUnk_044 = new(HeapIndex_1) UnkStruct_020d8698_44();
+        this->mpKeys  = new(HeapIndex_1) UICounter_SmallKeys();
+        this->mpItems = new(HeapIndex_1) UICounter_Items();
 
         if (this->mUnk_048) {
-            this->mUnk_0C.Append(this->mUnk_044);
+            this->mUnk_0C.Append(this->mpItems);
         }
     }
 
     if (data_027e09a4->IsDungeonTower() && !GET_FLAG(data_027e0ce0->mUnk_2C->mFlags, ItemFlag_LokomoSword)) {
-        this->mUnk_03C = new(HeapIndex_1) UnkStruct_020d8698_3C();
+        this->mpTears = new(HeapIndex_1) UICounter_TearsOfLight();
     }
 
-    this->mUnk_01C->func_ov024_020cdec8();
+    this->mpHealth->func_ov024_020cdec8();
 }
 
-UnkStruct_020d8698::~UnkStruct_020d8698() {
-    DELETE(this->mUnk_01C);
-    DELETE(this->mUnk_024);
-    DELETE(this->mUnk_02C);
+UICounterManager::~UICounterManager() {
+    DELETE(this->mpHealth);
+    DELETE(this->mpRupees);
+    DELETE(this->mpCargo);
 
     if (!data_027e09a4->IsTrain()) {
-        DELETE(this->mUnk_034);
-        DELETE(this->mUnk_044);
+        DELETE(this->mpKeys);
+        DELETE(this->mpItems);
     }
 
-    if (this->mUnk_03C != NULL) {
-        DELETE(this->mUnk_03C);
+    if (this->mpTears != NULL) {
+        DELETE(this->mpTears);
     }
 }
 
-void UnkStruct_020d8698::func_ov024_020cd094() {
-    this->mUnk_01C->func_ov024_020cd768();
-    this->mUnk_024->func_ov024_020ce518();
-    this->mUnk_02C->func_ov024_020ced54();
+void UICounterManager::func_ov024_020cd094() {
+    this->mpHealth->func_ov024_020cd768();
+    this->mpRupees->func_ov024_020ce518();
+    this->mpCargo->func_ov024_020ced54();
 
     if (data_ov000_020b504c.func_ov000_02067f88(0, 0) || data_027e09b8->func_ov000_020732dc(0)) {
         return;
@@ -132,137 +132,137 @@ void UnkStruct_020d8698::func_ov024_020cd094() {
     }
 }
 
-void UnkStruct_020d8698::func_ov024_020cd150() {
+void UICounterManager::func_ov024_020cd150() {
     if (data_027e09a4->IsCutscene()) {
         return;
     }
 
-    this->mUnk_01C->func_ov024_020cd774();
-    this->mUnk_024->func_ov024_020ce570();
-    this->mUnk_02C->func_ov024_020ceda8();
+    this->mpHealth->func_ov024_020cd774();
+    this->mpRupees->func_ov024_020ce570();
+    this->mpCargo->func_ov024_020ceda8();
 
     if (!data_027e09a4->IsTrain()) {
-        this->mUnk_034->func_ov024_020cf698();
-        this->mUnk_044->func_ov031_0210eeb4();
-        data_ov024_020d8698->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
+        this->mpKeys->func_ov024_020cf698();
+        this->mpItems->func_ov031_0210eeb4();
+        gpUICounterManager->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
     }
 
-    if (this->mUnk_03C != NULL) {
-        this->mUnk_03C->func_ov024_020cf82c();
+    if (this->mpTears != NULL) {
+        this->mpTears->func_ov024_020cf82c();
     }
 }
 
-void UnkStruct_020d8698::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
+void UICounterManager::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     if (this->mUnk_020 && !this->func_ov024_020cd604()) {
-        this->mUnk_01C->func_ov024_020cd9f0();
+        this->mpHealth->func_ov024_020cd9f0();
     }
 
     if (this->mUnk_028) {
-        this->mUnk_024->func_ov024_020ce5cc();
+        this->mpRupees->func_ov024_020ce5cc();
     }
 
     if (this->mUnk_030) {
-        this->mUnk_02C->func_ov024_020cef58();
+        this->mpCargo->func_ov024_020cef58();
     }
 
     if (!data_027e09a4->IsTrain() && this->mUnk_038) {
-        this->mUnk_034->func_ov024_020cf6e4();
+        this->mpKeys->func_ov024_020cf6e4();
     }
 
-    if (this->mUnk_03C != NULL && this->mUnk_040) {
-        this->mUnk_03C->func_ov024_020cf888();
+    if (this->mpTears != NULL && this->mUnk_040) {
+        this->mpTears->func_ov024_020cf888();
     }
 }
 
-void UnkStruct_020d8698::vfunc_10(unk8 *param1) {
+void UICounterManager::vfunc_10(unk8 *param1) {
     if (data_0204a110.mUnk_DF4 == 0 && !this->func_ov024_020cd604()) {
         if (this->mUnk_020) {
-            this->mUnk_01C->func_ov024_020cdaac();
+            this->mpHealth->func_ov024_020cdaac();
         }
 
         if (this->mUnk_028) {
-            this->mUnk_024->func_ov024_020ce88c(param1);
+            this->mpRupees->func_ov024_020ce88c(param1);
         }
 
         if (this->mUnk_030 && data_ov024_020d8660->mUnk_1C != 5) {
-            this->mUnk_02C->func_ov024_020cf2b8(param1);
+            this->mpCargo->func_ov024_020cf2b8(param1);
         }
 
         if (!data_027e09a4->IsTrain() && this->mUnk_038) {
-            this->mUnk_034->func_ov024_020cf724();
+            this->mpKeys->func_ov024_020cf724();
         }
     }
 
-    if (this->mUnk_03C != NULL && this->mUnk_040) {
-        this->mUnk_03C->func_ov024_020cf88c();
+    if (this->mpTears != NULL && this->mUnk_040) {
+        this->mpTears->func_ov024_020cf88c();
     }
 }
 
-void UnkStruct_020d8698::func_ov024_020cd348(u8 param1, u8 param2) {
-    this->mUnk_01C->func_ov024_020cdd3c(param1, param2);
+void UICounterManager::func_ov024_020cd348(u8 param1, u8 param2) {
+    this->mpHealth->func_ov024_020cdd3c(param1, param2);
 }
 
-void UnkStruct_020d8698::func_ov024_020cd358(u8 param1) {
-    this->mUnk_01C->func_ov024_020cde54(param1);
+void UICounterManager::func_ov024_020cd358(u8 param1) {
+    this->mpHealth->func_ov024_020cde54(param1);
 }
 
-void UnkStruct_020d8698::func_ov024_020cd368(bool param1, bool param2) {
+void UICounterManager::func_ov024_020cd368(bool param1, bool param2) {
     if (!data_027e09a4->func_ov000_0207056c()) {
-        this->mUnk_024->func_ov024_020ce990(param1, param2);
+        this->mpRupees->func_ov024_020ce990(param1, param2);
     }
 }
 
-void UnkStruct_020d8698::func_ov024_020cd3a4() {
+void UICounterManager::func_ov024_020cd3a4() {
     if (!data_027e09a4->func_ov000_0207056c()) {
-        this->mUnk_024->func_ov024_020ce9ac();
+        this->mpRupees->func_ov024_020ce9ac();
     }
 }
 
-void UnkStruct_020d8698::func_ov024_020cd3d0() {
-    this->mUnk_02C->func_ov024_020cf514();
+void UICounterManager::func_ov024_020cd3d0() {
+    this->mpCargo->func_ov024_020cf514();
 }
 
-void UnkStruct_020d8698::func_ov024_020cd3e0(bool param1) {
-    this->mUnk_02C->func_ov024_020cf53c(param1);
+void UICounterManager::func_ov024_020cd3e0(bool param1) {
+    this->mpCargo->func_ov024_020cf53c(param1);
 }
 
-void UnkStruct_020d8698::func_ov024_020cd3f0(bool param1) {
-    this->mUnk_02C->func_ov024_020cf494(param1);
+void UICounterManager::func_ov024_020cd3f0(bool param1) {
+    this->mpCargo->func_ov024_020cf494(param1);
 }
 
-void UnkStruct_020d8698::func_ov024_020cd400() {
-    this->mUnk_02C->func_ov024_020cf4c4();
+void UICounterManager::func_ov024_020cd400() {
+    this->mpCargo->func_ov024_020cf4c4();
 }
 
-void UnkStruct_020d8698::func_ov024_020cd410() {
-    this->mUnk_02C->func_ov024_020cee58();
+void UICounterManager::func_ov024_020cd410() {
+    this->mpCargo->func_ov024_020cee58();
 }
 
-void UnkStruct_020d8698::func_ov024_020cd420() {
+void UICounterManager::func_ov024_020cd420() {
     if (data_027e09a4->IsNotCutscene() && !data_027e09a4->func_ov000_0207056c()) {
-        this->mUnk_02C->func_ov024_020cee64();
+        this->mpCargo->func_ov024_020cee64();
     }
 }
 
-void UnkStruct_020d8698::func_ov024_020cd458(ItemFlag itemFlag, bool param2) {
+void UICounterManager::func_ov024_020cd458(ItemFlag itemFlag, bool param2) {
     if (!data_027e09a4->IsTrain() && data_027e09a4->IsNotCutscene()) {
-        this->mUnk_044->func_ov031_0210f7e4(itemFlag, param2);
+        this->mpItems->func_ov031_0210f7e4(itemFlag, param2);
     }
 }
 
-void UnkStruct_020d8698::func_ov024_020cd4a4(bool param1) {
+void UICounterManager::func_ov024_020cd4a4(bool param1) {
     if (data_027e09a4->IsTrain()) {
         return;
     }
 
     if (param1) {
-        this->mUnk_044->mUnk_18B = true;
+        this->mpItems->mUnk_18B = true;
     } else {
-        this->mUnk_044->mUnk_18B = false;
+        this->mpItems->mUnk_18B = false;
     }
 }
 
-void UnkStruct_020d8698::func_ov024_020cd4e4(u16 param1, bool param2) {
+void UICounterManager::func_ov024_020cd4e4(u16 param1, bool param2) {
     switch (param1) {
         case 0:
             this->mUnk_020 = param2;
@@ -277,11 +277,11 @@ void UnkStruct_020d8698::func_ov024_020cd4e4(u16 param1, bool param2) {
             if (!data_027e09a4->IsTrain() && param2 != this->mUnk_048) {
                 this->mUnk_048 = param2;
 
-                if (this->mUnk_044 != NULL) {
+                if (this->mpItems != NULL) {
                     if (param2) {
-                        this->mUnk_0C.Append(this->mUnk_044);
+                        this->mUnk_0C.Append(this->mpItems);
                     } else {
-                        this->mUnk_044->Detach();
+                        this->mpItems->Detach();
                     }
                 }
             }
@@ -297,7 +297,7 @@ void UnkStruct_020d8698::func_ov024_020cd4e4(u16 param1, bool param2) {
     }
 }
 
-bool UnkStruct_020d8698::func_ov024_020cd5c0(u16 param1) {
+bool UICounterManager::func_ov024_020cd5c0(u16 param1) {
     switch (param1) {
         case 0:
             return this->mUnk_020;
@@ -314,7 +314,7 @@ bool UnkStruct_020d8698::func_ov024_020cd5c0(u16 param1) {
     return false;
 }
 
-bool UnkStruct_020d8698::func_ov024_020cd604() {
+bool UICounterManager::func_ov024_020cd604() {
     if (data_027e09b8 != NULL) {
         if (data_027e09b8->func_ov000_020732dc(0) || data_027e09b8->func_ov000_020732dc(4) || data_0204e5f8.mUnk_18 ||
             data_0204e5f8.mUnk_3A != 0 || data_0204e5f8.mUnk_3E != 0) {
@@ -325,16 +325,16 @@ bool UnkStruct_020d8698::func_ov024_020cd604() {
     return false;
 }
 
-UnkStruct_020d8698_1C::UnkStruct_020d8698_1C() {
-    this->mUnk_000.Init(this->func_ov024_020ce2a8());
+UICounter_Health::UICounter_Health() {
+    this->mUnk_000.Init(this->GetMaxHearts());
     this->func_ov024_020cd774();
 }
 
-void UnkStruct_020d8698_1C::func_ov024_020cd768() {
+void UICounter_Health::func_ov024_020cd768() {
     this->func_ov024_020cdec8();
 }
 
-void UnkStruct_020d8698_1C::func_ov024_020cd774() {
+void UICounter_Health::func_ov024_020cd774() {
     if (data_027e09a4->IsTrain()) {
         s32 sVar1 = func_020196b0(0x34);
         s32 sVar2 = func_020196b0(0x27);
@@ -371,7 +371,7 @@ void UnkStruct_020d8698_1C::func_ov024_020cd774() {
     }
 }
 
-void UnkStruct_020d8698_1C::func_ov024_020cd9f0() {
+void UICounter_Health::func_ov024_020cd9f0() {
     this->mUnk_024.func_ov000_020609c4();
     this->mUnk_114.func_ov000_020609c4();
     this->mUnk_18C.func_ov000_020609c4();
@@ -398,8 +398,8 @@ void UnkStruct_020d8698_1C::func_ov024_020cd9f0() {
     }
 }
 
-void UnkStruct_020d8698_1C::func_ov024_020cdaac() {
-    unk32 temp_r0 = this->func_ov024_020ce2a8();
+void UICounter_Health::func_ov024_020cdaac() {
+    unk32 temp_r0 = this->GetMaxHearts();
 
     for (int var_r8 = 0; var_r8 < temp_r0; var_r8++) {
         unk32 temp_r1 = (this->func_ov024_020ce260() / 4) - 1;
@@ -475,7 +475,7 @@ void UnkStruct_020d8698_1C::func_ov024_020cdaac() {
     }
 }
 
-void UnkStruct_020d8698_1C::func_ov024_020cdd3c(u8 param1, u8 param2) {
+void UICounter_Health::func_ov024_020cdd3c(u8 param1, u8 param2) {
     u8 var_r4 = param2;
     u8 var_r5 = param1;
 
@@ -570,7 +570,7 @@ void UnkStruct_020d8698_1C::func_ov024_020cdd3c(u8 param1, u8 param2) {
     this->func_ov024_020cdec8();
 }
 
-void UnkStruct_020d8698_1C::func_ov024_020cde54(u8 param1) {
+void UICounter_Health::func_ov024_020cde54(u8 param1) {
     u8 var_r5 = param1;
 
     if (data_027e09a4->IsTrain() != 0) {
@@ -588,7 +588,7 @@ void UnkStruct_020d8698_1C::func_ov024_020cde54(u8 param1) {
     this->func_ov024_020cdd3c(this->func_ov024_020ce218(), var_r5);
 }
 
-void UnkStruct_020d8698_1C::func_ov024_020cdec8() {
+void UICounter_Health::func_ov024_020cdec8() {
     s32 temp_r5 = this->func_ov024_020ce218();
     s32 temp_r0 = this->func_ov024_020ce260();
 
@@ -596,7 +596,7 @@ void UnkStruct_020d8698_1C::func_ov024_020cdec8() {
     s32 temp_r5_2 = temp_r5 % 4;
     s32 temp_r7   = temp_r0 / 4;
 
-    s32 temp_r0_2 = this->func_ov024_020ce2a8();
+    s32 temp_r0_2 = this->GetMaxHearts();
 
     for (int var_r8 = 0; var_r8 < temp_r0_2; var_r8++) {
         if (var_r8 < temp_r7) {
@@ -632,8 +632,8 @@ void UnkStruct_020d8698_1C::func_ov024_020cdec8() {
     }
 }
 
-void UnkStruct_020d8698_1C::func_ov024_020cdfd8() {
-    s32 temp_r0 = this->func_ov024_020ce2a8();
+void UICounter_Health::func_ov024_020cdfd8() {
+    s32 temp_r0 = this->GetMaxHearts();
 
     for (int var_r7 = 0; var_r7 < temp_r0; var_r7++) {
         switch (this->GetIterValue(var_r7)) {
@@ -749,7 +749,7 @@ void UnkStruct_020d8698_1C::func_ov024_020cdfd8() {
     }
 }
 
-u8 UnkStruct_020d8698_1C::func_ov024_020ce218() {
+u8 UICounter_Health::func_ov024_020ce218() {
     if (data_027e09a4->IsTrain()) {
         return data_027e0ce0->mUnk_34->mUnk_28 * 4;
     }
@@ -757,7 +757,7 @@ u8 UnkStruct_020d8698_1C::func_ov024_020ce218() {
     return data_027e0ce0->mHealth;
 }
 
-u8 UnkStruct_020d8698_1C::func_ov024_020ce260() {
+u8 UICounter_Health::func_ov024_020ce260() {
     if (data_027e09a4->IsTrain()) {
         return data_027e0ce0->mUnk_34->mUnk_24 * 4;
     }
@@ -765,16 +765,16 @@ u8 UnkStruct_020d8698_1C::func_ov024_020ce260() {
     return data_027e0ce0->mHealthMax;
 }
 
-u32 UnkStruct_020d8698_1C::func_ov024_020ce2a8() {
+u32 UICounter_Health::GetMaxHearts() {
     if (data_027e09a4->IsTrain()) {
-        return 0x08;
+        return 8;
     }
 
-    return 0x10;
+    return 16;
 }
 
 //! TODO: remove the volatile casts?
-UnkStruct_020d8698_24::UnkStruct_020d8698_24() :
+UICounter_Rupees::UICounter_Rupees() :
     mUnk_000(func_020196b0(0x1B), 0),
     mUnk_05C(0x18, data_ov024_020d740a, 0, 1),
     mUnk_100(0),
@@ -823,19 +823,19 @@ UnkStruct_020d8698_24::UnkStruct_020d8698_24() :
     }
 }
 
-void UnkStruct_020d8698_24::func_ov024_020ce518() {
+void UICounter_Rupees::func_ov024_020ce518() {
     this->mUnk_018.Subprocess2_UnkValueSets();
     this->mUnk_018.UnkOperations3();
     this->mUnk_05C.func_ov000_02065b48(data_027e0ce0->mUnk_2C->mNumRupees, 0);
     this->mUnk_104 = false;
 }
 
-void UnkStruct_020d8698_24::func_ov024_020ce570() {
+void UICounter_Rupees::func_ov024_020ce570() {
     this->mUnk_000.UnknownAction(func_020196b0(0x1B), 0);
     this->mUnk_05C.func_ov000_02065988(0x18, data_ov024_020d740a);
 }
 
-void UnkStruct_020d8698_24::func_ov024_020ce5cc() {
+void UICounter_Rupees::func_ov024_020ce5cc() {
     bool var_r2 = false;
     bool var_r3 = false;
 
@@ -900,7 +900,7 @@ void UnkStruct_020d8698_24::func_ov024_020ce5cc() {
     }
 }
 
-void UnkStruct_020d8698_24::func_ov024_020ce88c(unk8 *param1) {
+void UICounter_Rupees::func_ov024_020ce88c(unk8 *param1) {
     UnkDataStruct1 sp14;
     Vec2s sp10;
     Vec2s spC;
@@ -923,7 +923,7 @@ void UnkStruct_020d8698_24::func_ov024_020ce88c(unk8 *param1) {
     this->mUnk_05C.func_ov000_020659d0(param1, &sp14);
 }
 
-void UnkStruct_020d8698_24::func_ov024_020ce990(bool param1, bool param2) {
+void UICounter_Rupees::func_ov024_020ce990(bool param1, bool param2) {
     this->mUnk_105 = param1;
 
     if (param2) {
@@ -933,16 +933,16 @@ void UnkStruct_020d8698_24::func_ov024_020ce990(bool param1, bool param2) {
     }
 }
 
-void UnkStruct_020d8698_24::func_ov024_020ce9ac() {
+void UICounter_Rupees::func_ov024_020ce9ac() {
     this->mUnk_104 = false;
 
-    if (data_ov024_020d8698->func_ov024_020cd604()) {
+    if (gpUICounterManager->func_ov024_020cd604()) {
         this->mUnk_018.Subprocess2_UnkValueSets();
         this->mUnk_018.UnkOperations3();
     }
 }
 
-UnkStruct_020d8698_2C::UnkStruct_020d8698_2C() :
+UICounter_Cargo::UICounter_Cargo() :
     mUnk_000(0),
     mUnk_004(func_020196b0(0x1B), 6),
     mUnk_01C(func_020196b0(0x1B), 5),
@@ -1008,14 +1008,14 @@ UnkStruct_020d8698_2C::UnkStruct_020d8698_2C() :
     }
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020ced54() {
+void UICounter_Cargo::func_ov024_020ced54() {
     this->mUnk_04C.Subprocess2_UnkValueSets();
     this->mUnk_04C.UnkOperations3();
     this->mUnk_090.func_ov000_02065b48(gpCargoManager->GetCargo()->GetAmount(), 0);
     this->mUnk_140 = false;
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020ceda8() {
+void UICounter_Cargo::func_ov024_020ceda8() {
     s16 sVar1 = func_020196b0(0x1B);
     this->mUnk_004.UnknownAction((volatile s32) sVar1, 0x06);
     this->mUnk_01C.UnknownAction((volatile s32) sVar1, 0x05);
@@ -1023,11 +1023,11 @@ void UnkStruct_020d8698_2C::func_ov024_020ceda8() {
     this->mUnk_090.func_ov000_02065988(0x18, data_ov024_020d740a);
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020cee58() {
+void UICounter_Cargo::func_ov024_020cee58() {
     this->func_ov024_020cee84();
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020cee64() {
+void UICounter_Cargo::func_ov024_020cee64() {
     if (gpCargoManager->GetCargo()->IsTypeSet()) {
         this->mUnk_143 = true;
     } else {
@@ -1039,8 +1039,8 @@ void UnkStruct_020d8698_2C::func_ov024_020cee64() {
     }
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020cee84() {
-    if (!data_027e0994->mUnk_004.func_0201c2b0(func_020196b0(0x1B))) {
+void UICounter_Cargo::func_ov024_020cee84() {
+    if (!gpCurrentGameModeMgr->mUnk_004.func_0201c2b0(func_020196b0(0x1B))) {
         return;
     }
 
@@ -1064,7 +1064,7 @@ void UnkStruct_020d8698_2C::func_ov024_020cee84() {
     this->mUnk_14C.func_ov000_02060d7c(0x1D, data_ov024_020d73de[eType]);
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020cef58() {
+void UICounter_Cargo::func_ov024_020cef58() {
     this->mUnk_090.func_ov000_02065b8c();
     this->mUnk_090.func_ov000_02065b48(gpCargoManager->GetCargo()->GetAmount(), 1);
 
@@ -1140,7 +1140,7 @@ void UnkStruct_020d8698_2C::func_ov024_020cef58() {
         }
     }
 
-    if (this->mUnk_143 && data_027e0994->func_02018ad4()) {
+    if (this->mUnk_143 && gpCurrentGameModeMgr->func_02018ad4()) {
         this->func_ov024_020cee84();
         this->mUnk_143 = false;
     }
@@ -1154,7 +1154,7 @@ void UnkStruct_020d8698_2C::func_ov024_020cef58() {
     }
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020cf2b8(unk8 *param1) {
+void UICounter_Cargo::func_ov024_020cf2b8(unk8 *param1) {
     UnkDataStruct1 sp24;
     Vec2s sp20;
     Vec2s sp1C;
@@ -1191,7 +1191,7 @@ void UnkStruct_020d8698_2C::func_ov024_020cf2b8(unk8 *param1) {
     this->mUnk_090.func_ov000_020659d0(param1, &sp24);
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020cf494(bool param1) {
+void UICounter_Cargo::func_ov024_020cf494(bool param1) {
     if (gpCargoManager->GetCargo()->IsTypeSet()) {
         if (param1) {
             this->mUnk_13C = 0x4B;
@@ -1201,22 +1201,22 @@ void UnkStruct_020d8698_2C::func_ov024_020cf494(bool param1) {
     }
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020cf4c4() {
+void UICounter_Cargo::func_ov024_020cf4c4() {
     this->mUnk_140 = false;
 
-    if (data_ov024_020d8698->func_ov024_020cd604()) {
+    if (gpUICounterManager->func_ov024_020cd604()) {
         this->mUnk_04C.Subprocess2_UnkValueSets();
         this->mUnk_04C.UnkOperations3();
     }
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020cf514() {
+void UICounter_Cargo::func_ov024_020cf514() {
     this->mUnk_000 = 0x02;
     this->func_ov024_020cf5a8(true);
     this->mUnk_144 = 0x4B;
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020cf53c(bool param1) {
+void UICounter_Cargo::func_ov024_020cf53c(bool param1) {
     if (this->mUnk_146 != param1) {
         this->mUnk_146 = param1;
 
@@ -1230,18 +1230,18 @@ void UnkStruct_020d8698_2C::func_ov024_020cf53c(bool param1) {
     }
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020cf570() {
+void UICounter_Cargo::func_ov024_020cf570() {
     this->mUnk_000 = 0x00;
     this->func_ov024_020cf5a8(false);
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020cf584() {
+void UICounter_Cargo::func_ov024_020cf584() {
     this->mUnk_000 = 0x01;
     this->func_ov024_020cf5a8(true);
     this->mUnk_148 = 0x00;
 }
 
-void UnkStruct_020d8698_2C::func_ov024_020cf5a8(bool param1) {
+void UICounter_Cargo::func_ov024_020cf5a8(bool param1) {
     if (param1) {
         this->mUnk_090.func_ov000_02065988(0x18, data_ov024_020d741e);
     } else {
@@ -1249,7 +1249,7 @@ void UnkStruct_020d8698_2C::func_ov024_020cf5a8(bool param1) {
     }
 }
 
-UnkStruct_020d8698_34::UnkStruct_020d8698_34() {
+UICounter_SmallKeys::UICounter_SmallKeys() {
     this->mUnk_90 = 0;
     this->mUnk_92 = 0;
     this->func_ov024_020cf698();
@@ -1258,12 +1258,12 @@ UnkStruct_020d8698_34::UnkStruct_020d8698_34() {
     this->mUnk_90 = local_44.mPos.x - local_2c.mPos.x;
 }
 
-void UnkStruct_020d8698_34::func_ov024_020cf698() {
+void UICounter_SmallKeys::func_ov024_020cf698() {
     this->mUnk_00.UnknownAction(0x5E, 0x04);
     this->mUnk_18.func_ov000_0206082c(0x5E, 0x00);
 }
 
-void UnkStruct_020d8698_34::func_ov024_020cf6e4() {
+void UICounter_SmallKeys::func_ov024_020cf6e4() {
     this->mUnk_18.func_ov000_020609c4();
 
     u8 amount = data_027e0ce0->mUnk_2C->GetKeyAmount();
@@ -1273,7 +1273,7 @@ void UnkStruct_020d8698_34::func_ov024_020cf6e4() {
     }
 }
 
-void UnkStruct_020d8698_34::func_ov024_020cf724() {
+void UICounter_SmallKeys::func_ov024_020cf724() {
     const s32 amount = data_027e0ce0->mUnk_2C->GetKeyAmount();
 
     if (amount <= 0) {
@@ -1295,18 +1295,18 @@ void UnkStruct_020d8698_34::func_ov024_020cf724() {
     }
 }
 
-UnkStruct_020d8698_3C::UnkStruct_020d8698_3C() {
+UICounter_TearsOfLight::UICounter_TearsOfLight() {
     this->func_ov024_020cf82c();
 }
 
-void UnkStruct_020d8698_3C::func_ov024_020cf82c() {
+void UICounter_TearsOfLight::func_ov024_020cf82c() {
     this->mUnk_00.UnknownAction(0x5E, 0x09);
     this->mUnk_18.UnknownAction(0x5E, 0x0B);
 }
 
-void UnkStruct_020d8698_3C::func_ov024_020cf888() {}
+void UICounter_TearsOfLight::func_ov024_020cf888() {}
 
-void UnkStruct_020d8698_3C::func_ov024_020cf88c() {
+void UICounter_TearsOfLight::func_ov024_020cf88c() {
     const s32 amount = data_027e0ce0->mUnk_2C->GetTearsAmount();
 
     for (int i = 0; i < MAX_TEARS_OF_LIGHT; i++) {
@@ -1320,4 +1320,4 @@ void UnkStruct_020d8698_3C::func_ov024_020cf88c() {
     }
 }
 
-DECL_INSTANCE(UnkStruct_020d8698, data_ov024_020d8698);
+DECL_INSTANCE(UICounterManager, gpUICounterManager);

@@ -454,7 +454,7 @@ bool UnkTitleCardSystem1_Derived1::func_ov024_020cc0b4() {
         return false;
     }
 
-    return !data_027e0994->IsUnk150();
+    return !gpCurrentGameModeMgr->IsUnk150();
 }
 
 unk32 UnkTitleCardSystem1_Derived1::vfunc_18() {

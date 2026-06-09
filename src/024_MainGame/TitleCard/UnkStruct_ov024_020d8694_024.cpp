@@ -165,11 +165,11 @@ void UnkStruct_ov024_020d8694::vfunc_10(unk8 *param1) {
 }
 
 void UnkStruct_ov024_020d8694::func_ov024_020cb178(unk32 param1) {
-    data_027e0994->func_02018aac(param1, true);
+    gpCurrentGameModeMgr->func_02018aac(param1, true);
 }
 
 void UnkStruct_ov024_020d8694::func_ov024_020cb194(unk16 param1) {
-    data_027e0994->func_02018ac4(param1);
+    gpCurrentGameModeMgr->func_02018ac4(param1);
     data_0204a110.mUnk_010.func_0201ca28(0);
     data_0204a110.mUnk_010.func_0201ca28(1);
 }

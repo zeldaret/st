@@ -1,7 +1,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorManager.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
@@ -47,7 +47,7 @@ void UnkStruct_ov024_020d8660::func_ov024_020c4b4c(unk32 param1) {
 void UnkStruct_ov024_020d8660::func_ov024_020c4ba0() {
     if (this->mUnk_00 != NULL) {
         this->mUnk_00->vfunc_20(1);
-        data_ov024_020d8698->func_ov024_020cd150();
+        gpUICounterManager->func_ov024_020cd150();
     }
 
     if (this->mUnk_00 != NULL && !this->mUnk_00->mUnk_04) {
