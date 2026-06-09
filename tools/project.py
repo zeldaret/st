@@ -112,6 +112,7 @@ class ProjectConfig:
         self.dsd_tag: Optional[str] = None
         self.wibo_tag: Optional[str] = None
         self.objdiff_tag: Optional[str] = None
+        self.sjiswrap_tag: Optional[str] = None
         self.mwcc_tag = mwcc_tag
         self.mwcc_root = Path(mwcc_root).resolve() if mwcc_root is not None else self.tools_path / "mwccarm"
         self.cfg_script = cfg_script
@@ -125,6 +126,7 @@ class ProjectConfig:
         self.wine_path = wine if self.platform.system != "windows" else ""
         self.dsd_path = (Path(dsd) if dsd is not None else (self.root_path / f"dsd{self.platform.exe}")).resolve()
         self.objdiff_path = (self.root_path / f"objdiff-cli{self.platform.exe}").resolve()
+        self.sjiswrap_path = (self.root_path / "tools" / "sjiswrap.exe").resolve()
         self.cc_path = (self.mwcc_path / "mwccarm.exe").resolve()
         self.ld_path = (self.mwcc_path / "mwldarm.exe").resolve()
         self.python_path = Path(sys.executable).resolve()
@@ -412,6 +414,18 @@ def add_download_tool_builds(cfg: ProjectConfig, n: ninja_syntax.Writer, args: A
             },
         )
         n.newline()
+
+    if cfg.sjiswrap_tag is not None:
+        downloads.append(str(cfg.sjiswrap_path))
+        n.build(
+            rule="download_tool",
+            outputs=str(cfg.sjiswrap_path),
+            variables={
+                "tool": "sjiswrap",
+                "tag": cfg.sjiswrap_tag,
+                "path": str(cfg.sjiswrap_path),
+            }
+        )
 
     n.build(
         inputs=downloads,
@@ -786,8 +800,8 @@ def process_project(cfg: ProjectConfig, args: Any):
         n.newline()
 
         # -MMD excludes all includes instead of just system includes for some reason, so use -MD instead.
-        mwcc_cmd = f'{cfg.wine_path} "{cfg.cc_path}" $cc_flags {cfg.includes} -DVERSION=$game_version -MD -c $in -o $basedir'
-        mwcc_implicit = [str(cfg.cc_path)]
+        mwcc_cmd = f'{cfg.wine_path} {cfg.sjiswrap_path} "{cfg.cc_path}" $cc_flags {cfg.includes} -DVERSION=$game_version -MD -c $in -o $basedir'
+        mwcc_implicit = [str(cfg.cc_path), str(cfg.sjiswrap_path)]
         if cfg.platform.system != "windows":
             transform_dep = "tools/transform_dep.py"
             mwcc_cmd += f" && $python {transform_dep} $basefile.d $basefile.d"

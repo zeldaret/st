@@ -22,6 +22,7 @@ config = ProjectConfig("st", args.compiler, "dsi/1.2p1", args.wine, args.dsd, Pa
 config.dsd_tag = "v0.11.0"
 config.wibo_tag = "1.1.0"
 config.objdiff_tag = "v3.7.1"
+config.sjiswrap_tag = "v1.2.2"
 
 GAME_VERSIONS = [
     "eur",
@@ -267,6 +268,7 @@ config.libs = [
             Object("024_MainGame/UnkStruct_ov024_020d8694_024.cpp"),
             Object("024_MainGame/UnkTitleCardSystem1_024.cpp"),
             Object("024_MainGame/UnkStruct_020d8698_024.cpp"),
+            Object("024_MainGame/data_ov024_020d7f40.cpp"),
             Object("024_MainGame/UnkStruct_027e0cf8_00_0C_024.cpp"),
             Object("024_MainGame/Game/AdventureModeManager_1B8_Base_024.cpp"),
             Object("024_MainGame/UnkStruct_ov024_020d86a0_024.cpp"),
@@ -289,6 +291,7 @@ config.libs = [
             Object("024_MainGame/UnkStruct_027e0d08_024.cpp"),
             Object("024_MainGame/MiscAdvManager.cpp"),
             Object("024_MainGame/Actor/ActorUnk_ov000_020a8bb0_EC_024.cpp"),
+            Object("024_MainGame/data_ov024_020d8520.cpp", extra_cflags=["-ipa file", "-enc shift-jis"]),
             Object("024_MainGame/Actor/ActorUnkOBPC.cpp"),
         ]
     ),
