@@ -96,4 +96,16 @@ public:
     T &Get(int index) {
         return ((T *) this->begin)[index];
     }
+
+    T *GetPtr(int index) {
+        return ((T *) this->begin) + index;
+    }
+
+    const int GetAllocSize() const {
+        return (int) this->end - (int) this->begin;
+    }
+
+    const int GetLastIndex() const {
+        return (this->GetAllocSize() / (int) sizeof(T)) - 1;
+    }
 };

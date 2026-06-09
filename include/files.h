@@ -13,6 +13,7 @@ typedef u32 FileType;
 enum FileType_ {
     FileType_ZOB = 'BLOZ',
     FileType_ZTB = '1BTZ',
+    FileType_ZMB = '1BMZ',
 };
 
 typedef struct FileInfos {
@@ -121,6 +122,50 @@ extern BOOL ZTB_ParseGRDB(FileInfos *pFileInfos, UnkDataStruct4 *pDst, ZTBSectio
 extern BOOL ZTB_ParseGRRL(FileInfos *pFileInfos, UnkDataStruct4 *pDst, ZTBSectionGRRL *pGRRL);
 extern BOOL ZTB_ParseSTAB(FileInfos *pFileInfos, UnkDataStruct4 *pDst, ZTBSectionSTAB *pSTAB);
 extern BOOL ZTB_ParseLDMK(FileInfos *pFileInfos, UnkDataStruct4 *pDst, ZTBSectionLDMK *pLDMK);
+
+// .zmb
+typedef u32 ZMBSectionType;
+enum ZMBSectionType_ {
+    ZMBSectionType_LDLB = 'LDLB', // related to script triggers
+    ZMBSectionType_ROMB = 'ROMB', // unknown
+    ZMBSectionType_ROOB = 'ROOM', // room settings
+    ZMBSectionType_ARAB = 'ARAB', // locations? (?)
+    ZMBSectionType_RALB = 'RALB', // paths?
+    ZMBSectionType_WARP = 'WARP', // exits?
+    ZMBSectionType_CAME = 'CAME', // camera settings?
+    ZMBSectionType_PLYR = 'PLYR', // player entrances?
+    ZMBSectionType_MPOB = 'MPOB', // map object list, parameters are stored here
+    ZMBSectionType_NPCA = 'NPCA', // actor list, same as above
+};
+
+typedef struct ZMBHeader {
+    /* 00 */ u32 magic;     // 'MAPB'
+    /* 04 */ FileType type; // always "ZMB1"
+    /* 08 */ size_t nSize;
+    /* 0C */ u32 nEntries;
+    /* 10 */ u8 unused[0x10];
+} ZMBHeader; // size = 0x20
+
+typedef struct ZMBSectionHeader {
+    /* 00 */ ZMBSectionType type;
+    /* 04 */ size_t nSize;
+    /* 08 */ u16 nEntries;
+    /* 0A */ u8 unk_0A;
+    /* 0B */ u8 unk_0B;
+} ZMBSectionHeader; // size = 0x0C
+
+typedef struct ZMBEntryRALB {
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 unk_01;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+    /* 04 */ unk32 unk_04;
+} ZMBEntryRALB; // size = 0x08
+
+typedef struct ZMBSectionRALB {
+    /* 00 */ ZMBSectionHeader header;
+    /* 0C */ ZMBEntryRALB entries[];
+} ZMBSectionRALB;
 
 #ifdef __cplusplus
 } // extern "C"

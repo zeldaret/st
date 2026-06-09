@@ -132,7 +132,7 @@ u32 CoRemainder(u32 a, u32 b);
 
 bool Approach(s32 *src, s32 dest, s32 step);
 bool Approach_thunk(s32 *src, s32 dest, s32 step);
-extern fx16 gSinCosTable[];
+extern const fx16 gSinCosTable[];
 
 extern const VecFx32 gVecFx32_ZERO;
 
@@ -165,7 +165,7 @@ static inline void VecFx32_CopyXZ(VecFx32 *vec, VecFx32 *out) {
     out->z = z;
 }
 
-static inline void VecFx32_Copy(VecFx32 *vec, VecFx32 *out) {
+static inline void VecFx32_Copy(const VecFx32 *vec, VecFx32 *out) {
     out->x = vec->x;
     out->y = vec->y;
     out->z = vec->z;

@@ -77,7 +77,7 @@ extern "C" void func_01ff930c(UnkStruct_ov000_0208f820_40 *, unk16, unk32);
 
 // https://decomp.me/scratch/c7PhN
 ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
-    fx16 *pSinCosTable = gSinCosTable;
+    const fx16 *pSinCosTable = gSinCosTable;
     Vec2b stack4;
     s16 stack3;
     Vec2b stack2;

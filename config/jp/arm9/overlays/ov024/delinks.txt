@@ -233,7 +233,8 @@ src/024_MainGame/MiscAdvManager.cpp:
     complete
     .text       start:0x020d7c58 end:0x020d7ff4
 
-src/024_MainGame/code_020d6650_024.cpp:
+src/024_MainGame/ActorUnk_ov000_020a8bb0_EC_024.cpp:
+    complete
     .text       start:0x020d7ff4 end:0x020d8840
 
 src/024_MainGame/Actor/ActorUnkOBPC.cpp:

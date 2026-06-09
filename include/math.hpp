@@ -2,6 +2,17 @@
 
 #include <nitro/math.h>
 
+//! TODO: find a way to make VecFx32 work in ctor init lists
+struct Vec3p {
+    fx32 x, y, z;
+
+    Vec3p(fx32 X, fx32 Y, fx32 Z) {
+        x = X;
+        y = Y;
+        z = Z;
+    }
+};
+
 extern "C" {
 //! TODO: find a way to remove that
 typedef union Vec2sC {
