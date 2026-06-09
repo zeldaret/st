@@ -288,7 +288,7 @@ config.libs = [
             Object("024_MainGame/UnkTrainSystem2_024.cpp"),
             Object("024_MainGame/UnkStruct_027e0d08_024.cpp"),
             Object("024_MainGame/MiscAdvManager.cpp"),
-            Object("024_MainGame/ActorUnk_ov000_020a8bb0_EC_024.cpp"),
+            Object("024_MainGame/Actor/ActorUnk_ov000_020a8bb0_EC_024.cpp"),
             Object("024_MainGame/Actor/ActorUnkOBPC.cpp"),
         ]
     ),
