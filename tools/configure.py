@@ -291,7 +291,7 @@ config.libs = [
             Object("024_MainGame/UnkStruct_027e0d08_024.cpp"),
             Object("024_MainGame/MiscAdvManager.cpp"),
             Object("024_MainGame/Actor/ActorUnk_ov000_020a8bb0_EC_024.cpp"),
-            Object("024_MainGame/data_ov024_020d8520.cpp", extra_cflags=["-ipa file", "-enc shift-jis"]),
+            Object("024_MainGame/data_ov024_020d8550.cpp", extra_cflags=["-ipa file", "-enc shift-jis"]),
             Object("024_MainGame/Actor/ActorUnkOBPC.cpp"),
         ]
     ),

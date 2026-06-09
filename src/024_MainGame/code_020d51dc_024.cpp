@@ -22,6 +22,27 @@ typedef struct UnkStruct_ov024_020d76c0 {
     u16 flagValue;
 } UnkStruct_ov024_020d76c0; // size = 0x04
 
+extern char data_ov024_020d8550[];
+extern char data_ov024_020d8558[];
+extern char data_ov024_020d8560[];
+extern char data_ov024_020d8568[];
+extern char data_ov024_020d8570[];
+extern char data_ov024_020d8578[];
+extern char data_ov024_020d8580[];
+extern char data_ov024_020d8588[];
+extern char data_ov024_020d8590[];
+extern char data_ov024_020d859c[];
+extern char data_ov024_020d85a8[];
+extern char data_ov024_020d85bc[];
+
+// unused, probably a debug leftover?
+const char *data_ov024_020d8520[] = {
+    data_ov024_020d8588, data_ov024_020d8590, data_ov024_020d8560, data_ov024_020d8568,
+    data_ov024_020d859c, data_ov024_020d8570, data_ov024_020d8580, data_ov024_020d8558,
+    data_ov024_020d8550, data_ov024_020d85a8, data_ov024_020d85bc, data_ov024_020d8578,
+};
+DECOMP_FORCE(data_ov024_020d8520);
+
 static const u8 data_ov024_020d767c[] = {0x0A, 0x09, 0x06, 0x05, 0x0A};
 
 // clang-format off

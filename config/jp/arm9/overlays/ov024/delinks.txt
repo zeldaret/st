@@ -89,6 +89,13 @@ src/024_MainGame/Game/AdventureModeManager_190_024.cpp:
     .text       start:0x020cb8e8 end:0x020cbb70
     .data       start:0x020d9878 end:0x020d98e0
 
+src/024_MainGame/data_ov024_020d7f40.cpp:
+    complete
+    .rodata     start:0x020d8cbc end:0x020d8ccc
+    .init       start:0x020d928c end:0x020d92c4
+    .ctor       start:0x020d94d8 end:0x020d94dc
+    .data       start:0x020d98e0 end:0x020d98f0
+
 src/024_MainGame/Game/AdventureModeManager_15C_20_00_024.cpp:
     complete
     .text       start:0x020cbb70 end:0x020cc2a8
@@ -137,6 +144,7 @@ src/024_MainGame/UnkStruct_ov024_020d86a0_024.cpp:
     complete
     .text       start:0x020d2fac end:0x020d3050
     .data       start:0x020d9ba8 end:0x020d9bc4
+    .bss        start:0x020da040 end:0x020da044
 
 src/024_MainGame/PlayerActor_A0_38_024.cpp:
     .text       start:0x020d3050 end:0x020d334c
@@ -157,6 +165,7 @@ src/024_MainGame/UnkDataStruct4_14.cpp:
 src/024_MainGame/UnkDataStruct4.cpp:
     complete
     .text       start:0x020d3de4 end:0x020d4aac
+    .rodata     start:0x020d8f10 end:0x020d8f14
     .data       start:0x020d9bf8 end:0x020d9c3c
 
 src/024_MainGame/UnkStruct_027e0cf8_08_024.cpp:
@@ -201,7 +210,7 @@ src/024_MainGame/code_020d51dc_024.cpp:
     complete
     .text       start:0x020d6b80 end:0x020d6e44
     .rodata     start:0x020d9020 end:0x020d9250
-    .data       start:0x020d9ebc end:0x020d9ec0
+    .data       start:0x020d9ebc end:0x020d9ef0
     .bss        start:0x020da044 end:0x020da048
 
 src/024_MainGame/UnkTrainSystem1_024.cpp:
@@ -220,7 +229,7 @@ src/024_MainGame/CargoManager_024.cpp:
 src/024_MainGame/UnkTrainSystem2_024.cpp:
     complete
     .text       start:0x020d72dc end:0x020d7630
-    .rodata     start:0x020d9260 end:0x020d9264
+    .rodata     start:0x020d9260 end:0x020d928c
     .init       start:0x020d9470 end:0x020d9488
     .ctor       start:0x020d94ec end:0x020d94f0
     .bss        start:0x020da04c end:0x020da050
@@ -232,10 +241,16 @@ src/024_MainGame/UnkStruct_027e0d08_024.cpp:
 src/024_MainGame/MiscAdvManager.cpp:
     complete
     .text       start:0x020d7c58 end:0x020d7ff4
+    .bss        start:0x020da050 end:0x020da054
 
 src/024_MainGame/Actor/ActorUnk_ov000_020a8bb0_EC_024.cpp:
     complete
     .text       start:0x020d7ff4 end:0x020d8840
+    .bss        start:0x020da054 end:0x020da058
+
+src/024_MainGame/data_ov024_020d8550.cpp:
+    complete
+    .data       start:0x020d9ef0 end:0x020d9f74
 
 src/024_MainGame/Actor/ActorUnkOBPC.cpp:
     complete

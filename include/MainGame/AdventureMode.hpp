@@ -1036,3 +1036,8 @@ extern bool func_ov024_020d5434(SceneIndex sceneIndex);
 extern bool func_ov024_020d5458(SceneIndex sceneIndex);
 extern bool func_ov024_020d547c(SceneIndex sceneIndex);
 extern const u16 data_ov024_020d7684[5][6];
+
+extern const int data_ov024_020d7318;
+extern const int data_ov024_020d731c;
+extern const int data_ov024_020d7320;
+extern const int data_ov024_020d7324;

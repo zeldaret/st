@@ -13,6 +13,14 @@ extern "C" void func_01ffa60c(const Mat3p *, Mat3p *, Mat3p *);
 
 const UnkStruct_ov024_020d86a8 data_ov024_020d78bc = {0};
 
+const UnkCargoStruct data_ov024_020d78c0[] = {
+    {.type = CargoType_MegaIce, .requiredAmount = 1},  {.type = CargoType_DarkOre, .requiredAmount = 5},
+    {.type = CargoType_MegaIce, .requiredAmount = 10}, {.type = CargoType_Iron, .requiredAmount = 5},
+    {.type = CargoType_Fish, .requiredAmount = 10},    {.type = CargoType_Cuccos, .requiredAmount = 10},
+    {.type = CargoType_Wood, .requiredAmount = 15},    {.type = CargoType_Vessel, .requiredAmount = 1},
+    {.type = CargoType_Cuccos, .requiredAmount = 5},   {.type = CargoType_MegaIce, .requiredAmount = 10},
+};
+
 struct UnkStruct_ov024_020d86a8_Mgr {
     const UnkStruct_ov024_020d86a8 *pInstance;
 

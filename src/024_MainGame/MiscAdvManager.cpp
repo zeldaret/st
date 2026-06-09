@@ -6,6 +6,8 @@
 
 extern "C" u8 func_ov000_020a9a50();
 
+MiscAdvManager *gpMiscAdvManager = NULL;
+
 MiscAdvManager *MiscAdvManager::Create() {
     return new(HeapIndex_1) MiscAdvManager();
 }

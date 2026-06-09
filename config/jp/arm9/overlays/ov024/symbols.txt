@@ -719,10 +719,10 @@ _ZN12ActorUnkOBPC19func_ov024_020d7154Ev kind:function(arm,size=0x168) addr:0x02
 _ZN12ActorUnkOBPCD1Ev kind:function(arm,size=0x20) addr:0x020d8c60
 _ZN12ActorUnkOBPCD0Ev kind:function(arm,size=0x28) addr:0x020d8c80
 _ZN19ActorProfileUnkOBPCD1Ev kind:function(arm,size=0x14) addr:0x020d8ca8
-data_ov024_020d8cbc kind:data(any) addr:0x020d8cbc ambiguous
-data_ov024_020d8cc0 kind:data(any) addr:0x020d8cc0 ambiguous
-data_ov024_020d8cc4 kind:data(any) addr:0x020d8cc4 ambiguous
-data_ov024_020d8cc8 kind:data(any) addr:0x020d8cc8 ambiguous
+data_ov024_020d7318 kind:data(any) addr:0x020d8cbc
+data_ov024_020d731c kind:data(any) addr:0x020d8cc0
+data_ov024_020d7320 kind:data(any) addr:0x020d8cc4
+data_ov024_020d7324 kind:data(any) addr:0x020d8cc8
 sBMGSceneMap kind:data(any) addr:0x020d8ccc local
 data_ov024_020d73d8 kind:data(any) addr:0x020d8d7c local
 data_ov024_020d73de kind:data(any) addr:0x020d8d82 local
@@ -737,7 +737,7 @@ data_ov024_020d7547 kind:data(any) addr:0x020d8eeb local
 data_ov024_020d7550 kind:data(any) addr:0x020d8ef4 local
 data_ov024_020d7555 kind:data(any) addr:0x020d8ef9 local
 data_ov024_020d7560 kind:data(any) addr:0x020d8f04 local
-data_ov024_020d756c kind:data(any) addr:0x020d8f10
+data_ov024_020d756c kind:data(any) addr:0x020d8f10 local
 data_ov024_020d7570 kind:data(any) addr:0x020d8f14 local
 data_ov024_020d7578 kind:data(any) addr:0x020d8f1c local
 data_ov024_020d7588 kind:data(any) addr:0x020d8f2c local
@@ -756,22 +756,21 @@ data_ov024_020d774c kind:data(any) addr:0x020d90f0 local
 data_ov024_020d78ac kind:data(any) addr:0x020d9250 local
 data_ov024_020d78b8 kind:data(any) addr:0x020d925c
 data_ov024_020d78bc kind:data(any) addr:0x020d9260 local
-data_ov024_020d9264 kind:data(any) addr:0x020d9264 ambiguous
-data_ov024_020d9266 kind:data(any) addr:0x020d9266 ambiguous
-__sinit_ov024_020d928c kind:function(arm,size=0x38) addr:0x020d928c
+data_ov024_020d78c0 kind:data(any) addr:0x020d9264
+__sinit_data_ov024_020d7f40.cpp kind:function(arm,size=0x38) addr:0x020d928c local
 __sinit_UnkStruct_027e0cf8_00_0C_024.cpp kind:function(arm,size=0x120) addr:0x020d92c4 local
 __sinit_AdventureModeManager_1B8_Base_024.cpp kind:function(arm,size=0x2c) addr:0x020d93e4 local
-__sinit_PlayerActor_A0_38_024.cpp kind:function(arm,size=0x48) addr:0x020d9410
+__sinit_PlayerActor_A0_38_024.cpp kind:function(arm,size=0x48) addr:0x020d9410 local
 __sinit_UnkTrainSystem1_024.cpp kind:function(arm,size=0x18) addr:0x020d9458 local
 __sinit_UnkTrainSystem2_024.cpp kind:function(arm,size=0x18) addr:0x020d9470 local
-__sinit_ActorUnkOBPC.cpp kind:function(arm,size=0x50) addr:0x020d9488
-.p__sinit_ov024_020d928c kind:data(word) addr:0x020d94d8
-.p__sinit_UnkStruct_027e0cf8_00_0C_024.cpp kind:data(word) addr:0x020d94dc
+__sinit_ActorUnkOBPC.cpp kind:function(arm,size=0x50) addr:0x020d9488 local
+.p__sinit_data_ov024_020d7f40.cpp kind:data(word) addr:0x020d94d8 local
+.p__sinit_UnkStruct_027e0cf8_00_0C_024.cpp kind:data(word) addr:0x020d94dc local
 .p__sinit_AdventureModeManager_1B8_Base_024.cpp kind:data(word) addr:0x020d94e0 local
-.p__sinit_PlayerActor_A0_38_024.cpp kind:data(word) addr:0x020d94e4
+.p__sinit_PlayerActor_A0_38_024.cpp kind:data(word) addr:0x020d94e4 local
 .p__sinit_UnkTrainSystem1_024.cpp kind:data(word) addr:0x020d94e8 local
 .p__sinit_UnkTrainSystem2_024.cpp kind:data(word) addr:0x020d94ec local
-.p__sinit_ActorUnkOBPC.cpp kind:data(word) addr:0x020d94f0
+.p__sinit_ActorUnkOBPC.cpp kind:data(word) addr:0x020d94f0 local
 _ZTV17GameModeAdventure kind:data(any) addr:0x020d9500
 _ZTV15UnkActorSystem1 kind:data(any) addr:0x020d9530
 _ZTV15UnkActorSystem2 kind:data(any) addr:0x020d9568
@@ -799,7 +798,7 @@ _ZTV24AdventureModeManager_18C kind:data(any) addr:0x020d9848
 _ZTV27AdventureModeManager_190_38 kind:data(any) addr:0x020d9878
 _ZTV27AdventureModeManager_190_14 kind:data(any) addr:0x020d9894
 _ZTV24AdventureModeManager_190 kind:data(any) addr:0x020d98b0
-data_ov024_020d98e0 kind:data(any) addr:0x020d98e0
+data_ov024_020d7f40 kind:data(any) addr:0x020d98e0 local
 _ZTV30AdventureModeManager_15C_20_00 kind:data(any) addr:0x020d98f0
 _ZTV23UnkAdventureModeSystem1 kind:data(any) addr:0x020d9914
 _ZTV24UnkStruct_ov024_020d8694 kind:data(any) addr:0x020d9920
@@ -884,19 +883,19 @@ _ZTV20ModelRender_Derived2 kind:data(any) addr:0x020d9e54
 @1776 kind:data(byte[11]) addr:0x020d9ea4 local
 @1777 kind:data(byte[12]) addr:0x020d9eb0 local
 _ZZ19func_ov024_020d51dcP5Vec2sjE19data_ov024_020d851c kind:data(any) addr:0x020d9ebc local
-data_ov024_020d9ec0 kind:data(any) addr:0x020d9ec0
-data_ov024_020d9ef0 kind:data(any) addr:0x020d9ef0
-data_ov024_020d9ef8 kind:data(any) addr:0x020d9ef8
-data_ov024_020d9f00 kind:data(any) addr:0x020d9f00
-data_ov024_020d9f08 kind:data(any) addr:0x020d9f08
-data_ov024_020d9f10 kind:data(any) addr:0x020d9f10
-data_ov024_020d9f18 kind:data(any) addr:0x020d9f18
-data_ov024_020d9f20 kind:data(any) addr:0x020d9f20
-data_ov024_020d9f28 kind:data(any) addr:0x020d9f28
-data_ov024_020d9f30 kind:data(any) addr:0x020d9f30
-data_ov024_020d9f3c kind:data(any) addr:0x020d9f3c
-data_ov024_020d9f48 kind:data(any) addr:0x020d9f48
-data_ov024_020d9f5c kind:data(any) addr:0x020d9f5c
+data_ov024_020d8520 kind:data(any) addr:0x020d9ec0
+data_ov024_020d8550 kind:data(byte[5]) addr:0x020d9ef0
+data_ov024_020d8558 kind:data(byte[5]) addr:0x020d9ef8
+data_ov024_020d8560 kind:data(byte[5]) addr:0x020d9f00
+data_ov024_020d8568 kind:data(byte[5]) addr:0x020d9f08
+data_ov024_020d8570 kind:data(byte[5]) addr:0x020d9f10
+data_ov024_020d8578 kind:data(byte[7]) addr:0x020d9f18
+data_ov024_020d8580 kind:data(byte[7]) addr:0x020d9f20
+data_ov024_020d8588 kind:data(byte[7]) addr:0x020d9f28
+data_ov024_020d8590 kind:data(byte[9]) addr:0x020d9f30
+data_ov024_020d859c kind:data(byte[9]) addr:0x020d9f3c
+data_ov024_020d85a8 kind:data(byte[19]) addr:0x020d9f48
+data_ov024_020d85bc kind:data(byte[21]) addr:0x020d9f5c
 _ZTV19ActorProfileUnkOBPC kind:data(any) addr:0x020d9f74
 _ZTV12ActorUnkOBPC kind:data(byte[92]) addr:0x020d9f98
 data_ov024_020d8660 kind:bss addr:0x020da000
@@ -911,7 +910,7 @@ _ZGVZ19func_ov024_020d51dcP5Vec2sjE19data_ov024_020d851c kind:bss addr:0x020da04
 data_ov024_020d86a8 kind:bss addr:0x020da048
 data_ov024_020d86ac kind:bss addr:0x020da04c
 gpMiscAdvManager kind:bss addr:0x020da050
-data_ov024_020da054 kind:bss addr:0x020da054 ambiguous
+data_ov024_020d86b4 kind:bss(size=0x1) addr:0x020da054
 _ZGVN15ProfileInstanceI19ActorProfileUnkOBPCE8sProfileE kind:bss addr:0x020da058
-@640 kind:bss addr:0x020da05c
+@640 kind:bss addr:0x020da05c local
 _ZN15ProfileInstanceI19ActorProfileUnkOBPCE8sProfileE kind:bss(size=0x3c) addr:0x020da068

@@ -11,7 +11,8 @@ extern "C" void func_02026800(void *, int, const char *, ...);
 extern "C" unk32 func_02032784(unk32 param1);
 extern "C" unk32 func_ov000_0205c7ac(unk32, unk32);
 extern "C" bool func_ov000_0205c74c(unk32, unk32, unk32, unk32);
-extern u8 data_ov024_020d756c[4];
+
+static const u8 data_ov024_020d756c[] = {0x01, 0x04, 0x10, 0x40};
 
 UnkDataStruct4::UnkDataStruct4() {
     this->mUnk_04     = 0x14;

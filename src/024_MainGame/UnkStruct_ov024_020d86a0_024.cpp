@@ -1,6 +1,8 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_ov024_020d86a0.hpp"
 
+UnkStruct_ov024_020d86a0 *data_ov024_020d86a0 = NULL;
+
 UnkStruct_ov024_020d86a0 *UnkStruct_ov024_020d86a0::Create() {
     return new(HeapIndex_1) UnkStruct_ov024_020d86a0();
 }

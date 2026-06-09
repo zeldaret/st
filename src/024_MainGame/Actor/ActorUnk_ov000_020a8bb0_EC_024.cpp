@@ -11,6 +11,9 @@ extern "C" void func_01ff930c(s16 *, unk16, unk32);
 extern "C" unk32 func_01ff9258(int, int);
 extern "C" fx32 func_02017f54(s16 *pAngle, UnkFuncStruct1);
 
+//! TODO: probably not there?
+bool data_ov024_020d86b4 = false;
+
 THUMB_BEGIN
 
 ActorUnk_ov000_020a8bb0_EC::ActorUnk_ov000_020a8bb0_EC() {
