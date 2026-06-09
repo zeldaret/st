@@ -415,7 +415,7 @@ ARM bool MapObjectDoorDangerSpawn::vfunc_64(void) {
             }
 
             pUVar4 = data_027e0cd8->mUnk_0C;
-            if (pUVar4->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], data_027e0ce0->func_01fff148(0)) == 0) {
+            if (!pUVar4->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], data_027e0ce0->func_01fff148(0))) {
                 return true;
             }
 
@@ -493,7 +493,7 @@ ARM bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
                 }
             }
 
-            if (pUVar5->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], data_027e0ce0->func_01fff148(0)) != 0) {
+            if (pUVar5->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], data_027e0ce0->func_01fff148(0))) {
                 pUVar5->func_ov000_020803ec(this->mUnk_20.mUnk_00[0]);
                 return true;
             }
@@ -550,7 +550,7 @@ ARM bool MapObjectDoorDangerSpawn::func_ov031_020fdec8(void) {
             pUVar4 = data_027e0cd8->mUnk_0C;
             uVar3  = pUVar4->func_ov001_020b8a5c(data_027e09a4->func_ov000_02070560()->mSpawnIndex, 0);
 
-            if (pUVar4->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], uVar3) != 0) {
+            if (pUVar4->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], uVar3)) {
                 return true;
             }
 

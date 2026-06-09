@@ -238,6 +238,9 @@ src/024_MainGame/Actor/ActorUnk_ov000_020a8bb0_EC_024.cpp:
     .text       start:0x020d7ff4 end:0x020d8840
 
 src/024_MainGame/Actor/ActorUnkOBPC.cpp:
+    complete
     .text       start:0x020d8840 end:0x020d8cbc
     .init       start:0x020d9488 end:0x020d94d8
     .ctor       start:0x020d94f0 end:0x020d94f4
+    .data       start:0x020d9f74 end:0x020da000
+    .bss        start:0x020da058 end:0x020da0c0

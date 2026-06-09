@@ -710,11 +710,11 @@ _ZN19ActorProfileUnkOBPC10GetProfileEv kind:function(arm,size=0xc) addr:0x020d6e
 _ZN19ActorProfileUnkOBPC6CreateEv kind:function(arm,size=0x24) addr:0x020d6ea8
 _ZN19ActorProfileUnkOBPCC1Ev kind:function(arm,size=0x28) addr:0x020d6ecc
 _ZN12ActorUnkOBPCC1Ev kind:function(arm,size=0x34) addr:0x020d6ef4
-_ZN12ActorUnkOBPC19func_ov024_020d6f28Ev kind:function(arm,size=0x4c) addr:0x020d6f28
+_ZN12ActorUnkOBPC8vfunc_18Ei kind:function(arm,size=0x4c) addr:0x020d6f28
 _ZN12ActorUnkOBPC19func_ov024_020d6f74Ev kind:function(arm,size=0x20) addr:0x020d6f74
-_ZN12ActorUnkOBPC19func_ov024_020d6f94Ev kind:function(arm,size=0xbc) addr:0x020d6f94
-_ZN12ActorUnkOBPC19func_ov024_020d7050Ev kind:function(arm,size=0x14) addr:0x020d7050
-_ZN12ActorUnkOBPC19func_ov024_020d7064Ev kind:function(arm,size=0xf0) addr:0x020d7064
+_ZN12ActorUnkOBPC8vfunc_20Ev kind:function(arm,size=0xbc) addr:0x020d6f94
+_ZN12ActorUnkOBPC8vfunc_24Ev kind:function(arm,size=0x14) addr:0x020d7050
+_ZN12ActorUnkOBPC19func_ov024_020d7064Esi kind:function(arm,size=0xf0) addr:0x020d7064
 _ZN12ActorUnkOBPC19func_ov024_020d7154Ev kind:function(arm,size=0x168) addr:0x020d7154
 _ZN12ActorUnkOBPCD1Ev kind:function(arm,size=0x20) addr:0x020d72bc
 _ZN12ActorUnkOBPCD0Ev kind:function(arm,size=0x28) addr:0x020d72dc
@@ -897,8 +897,8 @@ data_ov024_020d8590 kind:data(any) addr:0x020d8590
 data_ov024_020d859c kind:data(any) addr:0x020d859c
 data_ov024_020d85a8 kind:data(any) addr:0x020d85a8
 data_ov024_020d85bc kind:data(any) addr:0x020d85bc
-_ZTV19data_ov024_020d85d4 kind:data(any) addr:0x020d85d4
-_ZTV19data_ov024_020d85f8 kind:data(any) addr:0x020d85f8
+_ZTV19ActorProfileUnkOBPC kind:data(any) addr:0x020d85d4
+_ZTV12ActorUnkOBPC kind:data(byte[92]) addr:0x020d85f8
 data_ov024_020d8660 kind:bss addr:0x020d8660
 _ZGVZN24UnkStruct_ov024_020d866019func_ov024_020c4ac0EvE8instance kind:bss addr:0x020d8664 local
 @1365 kind:bss addr:0x020d8668 local
@@ -912,6 +912,6 @@ data_ov024_020d86a8 kind:bss addr:0x020d86a8
 data_ov024_020d86ac kind:bss addr:0x020d86ac
 gpMiscAdvManager kind:bss addr:0x020d86b0
 data_ov024_020d86b4 kind:bss addr:0x020d86b4 ambiguous
-data_ov024_020d86b8 kind:bss addr:0x020d86b8
-data_ov024_020d86bc kind:bss addr:0x020d86bc
-_ZN15ProfileInstanceI19ActorProfileUnkOBPCE8sProfileE kind:bss addr:0x020d86c8
+_ZGVN15ProfileInstanceI19ActorProfileUnkOBPCE8sProfileE kind:bss addr:0x020d86b8
+@640 kind:bss addr:0x020d86bc
+_ZN15ProfileInstanceI19ActorProfileUnkOBPCE8sProfileE kind:bss(size=0x3c) addr:0x020d86c8

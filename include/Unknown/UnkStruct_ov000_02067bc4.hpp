@@ -158,13 +158,7 @@ public:
     UnkStruct_ov000_020b504c_Sub4_00 *func_ov000_02067bf0();
     void func_ov000_02067b20();
     void func_ov000_02068068(unk32 param1);
-
-    //! TODO: figure this out
-    void func_ov000_0206807c(unk32 param1, void *param2, unk32 param3, unk32 param4);
-    void func_ov000_0206807c(unk32 param1, void *param2, unk32 param3);
-    void func_ov000_0206807c(unk32 param1, void *param2);
-    void func_ov000_0206807c(void *param1, void *param2);
-    void func_ov000_0206807c(void *param1, unk32 param2);
+    bool func_ov000_0206807c(unk32 param1, void *param2);
     void func_ov000_02067b60();
 
     void func_ov001_020be510();
