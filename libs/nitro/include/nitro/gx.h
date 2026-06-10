@@ -405,7 +405,7 @@ inline void GX_SetCapture(u32 size, u32 mode, u32 srcA, GXCaptureSrcB srcB, u32 
 }
 
 inline void GXS_SetOBJVRamModeBmp(u32 mode) {
-    REG_DISPCNT_SUB = REG_DISPCNT_SUB & ~0x60 | ((mode & 0x3) << 5);
+    REG_DISPCNT_SUB = (REG_DISPCNT_SUB & ~0x60) | ((mode & 0x3) << 5);
 }
 
 inline void GX_SetVisibleWindows(s32 windows) {
