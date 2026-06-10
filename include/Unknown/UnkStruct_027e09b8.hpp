@@ -15,7 +15,9 @@ struct stack_ov000_02073578 {
 
 class UnkStruct_027e09b8_00 {
 public:
-    /* 000 */ STRUCT_PAD(0x000, 0xFD4);
+    /* 000 */ STRUCT_PAD(0x000, 0xFD0);
+    /* FD0 */ unk16 mUnk_FD0; // set to 1 when
+    /* FD2 */ unk16 mUnk_FD2;
     /* FD4 */
 
     UnkStruct_027e09b8_00();
