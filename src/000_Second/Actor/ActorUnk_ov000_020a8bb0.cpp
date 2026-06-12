@@ -205,7 +205,7 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_74() {}
 ARM void ActorUnk_ov000_020a8bb0::vfunc_78() {}
 ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a9248() {}
 ARM void ActorUnk_ov000_020a8bb0::vfunc_5c() {}
-ARM void ActorUnk_ov000_020a8bb0::vfunc_98() {}
+ARM void ActorUnk_ov000_020a8bb0::vfunc_98(unk32 param1) {}
 ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a94b0() {}
 ARM void ActorUnk_ov000_020a8bb0::vfunc_9c() {}
 

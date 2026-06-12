@@ -12,7 +12,7 @@ THUMB void ItemManager::func_ov001_020bb9f8() {
     CourseEntry *pEntry = data_027e09a0->GetCourseEntry(data_027e09a4->mUnk_00.mSceneIndex);
 
     if (pEntry->saveCourseIndex < SaveCourseIndex_Max) {
-        this->mKeyAmount = gSaveManager.mUnk_000->mUnk_36[pEntry->saveCourseIndex].mKeyAmount;
+        this->mKeyAmount = gSaveManager.mUnk_000->unk_030[pEntry->saveCourseIndex].keyAmount;
     } else {
         this->mKeyAmount = 0;
     }

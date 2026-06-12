@@ -24,7 +24,7 @@ enum {
 struct SaveManager_00 {
     /* 000 */ unk32 unk_00;
     /* 004 */ SaveFile_00000_0000_Data_158 unk_004;
-    /* 030 */ SaveFile_00000_0000_Data_184 unk_030[96];
+    /* 030 */ SaveFile_00000_0000_Data_184 unk_030[SaveCourseIndex_Max];
     /* 330 */ SaveFile_00000_0000_Data_484 unk_330[256];
     /* B30 */ SaveFile_00000_0000_Data_C84 unk_B30;
     /* B40 */ SaveFile_00000_0000_Data_D24 unk_B40;

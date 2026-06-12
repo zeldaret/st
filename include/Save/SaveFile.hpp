@@ -38,10 +38,12 @@ struct SaveFile_00000_0000_Data_D8 {
     SaveFile_00000_0000_Data_D8();
 };
 
+// related to scene flags?
 struct SaveFile_00000_0000_Data_184 {
     /* 00 */ unk32 unk_00;
     /* 04 */ unk16 unk_04;
-    /* 06 */ unk16 unk_06;
+    /* 06 */ u8 keyAmount;
+    /* 07 */ unk8 unk_07;
     /* 08 */
 
     SaveFile_00000_0000_Data_184() :
@@ -261,7 +263,7 @@ struct SaveInfoData {
     /* 040 */ SaveInventory inventory;
     /* 0D8 */ SaveFile_00000_0000_Data_D8 unk_0D8;
     /* 158 */ SaveFile_00000_0000_Data_158 unk_158;
-    /* 184 */ SaveFile_00000_0000_Data_184 unk_184[96];
+    /* 184 */ SaveFile_00000_0000_Data_184 unk_184[SaveCourseIndex_Max];
     /* 484 */ SaveFile_00000_0000_Data_484 unk_484[256];
     /* C84 */ SaveFile_00000_0000_Data_C84 unk_C84;
     /* C94 */ SaveMiscAdvManager miscAdvManager;

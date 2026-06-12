@@ -47,7 +47,7 @@ ARM Game::Game() :
     mpCurrentGameMode(NULL),
     createCallback(NULL),
     mUnk_08(NULL),
-    mpSaveFile(NULL),
+    mpSaveSlot(NULL),
     mUnk_14(NULL),
     mUnk_18(NULL) {}
 
