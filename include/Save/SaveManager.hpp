@@ -22,18 +22,18 @@ enum {
 };
 
 struct SaveManager_00 {
-    /* 000 */ unk32 mUnk_00;
-    /* 004 */ SaveFile_00000_0000_Data_158 mUnk_004;
-    /* 030 */ SaveFile_00000_0000_Data_184 mUnk_030[96];
-    /* 330 */ SaveFile_00000_0000_Data_484 mUnk_330[256];
-    /* B30 */ SaveFile_00000_0000_Data_C84 mUnk_B30;
-    /* B40 */ SaveFile_00000_0000_Data_D24 mUnk_B40;
-    /* B68 */ SaveFile_00000_0000_Data_D8C mUnk_B68;
-    /* B78 */ SaveFile_00000_0000_Data_D4C mUnk_B78;
+    /* 000 */ unk32 unk_00;
+    /* 004 */ SaveFile_00000_0000_Data_158 unk_004;
+    /* 030 */ SaveFile_00000_0000_Data_184 unk_030[96];
+    /* 330 */ SaveFile_00000_0000_Data_484 unk_330[256];
+    /* B30 */ SaveFile_00000_0000_Data_C84 unk_B30;
+    /* B40 */ SaveFile_00000_0000_Data_D24 unk_B40;
+    /* B68 */ SaveFile_00000_0000_Data_D8C unk_B68;
+    /* B78 */ SaveFile_00000_0000_Data_D4C unk_B78;
     /* BB8 */
 
     SaveManager_00(unk16 param1) :
-        mUnk_B78(param1) {}
+        unk_B78(param1) {}
 };
 
 class SaveManager {
@@ -70,17 +70,25 @@ public:
         return this->mpSaveFile->mSlots;
     }
 
+    SaveManager_00 *GetUnk000() {
+        return this->mUnk_000;
+    }
+
     SaveManager();
 
+    // overlay 0
     void func_ov000_020a0b2c(UnkCallback param1, unk32 param2);
     bool func_ov000_020a0b70(void *param1, unk32 param2);
 
+    // overlay 1
     void func_ov001_020ba670();
     void func_ov001_020ba7a8();
     void func_ov001_020ba7c8(u16 saveSlotIndex);
 
+    // overlay 17
     void func_ov017_020c3040(void *param1, unk32 param2);
 
+    // overlay 19
     void func_ov019_020d08fc(unk32 param1, PTMF<SaveFile>::PTMFCallback param2);
     bool func_ov019_020d0964(void);
     void func_ov019_020d09dc(u16 saveSlotIndex);

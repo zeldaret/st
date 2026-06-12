@@ -141,7 +141,6 @@ struct SaveFile_00000_0000_Data_D24 {
     /* 28 */
 };
 
-//! TODO: unsure if this is using the flag system but the values should be correct
 typedef u32 RabbitFlag;
 enum RabbitFlag_ {
     RabbitFlag_None        = -1,

@@ -1,6 +1,7 @@
 //! TODO: This file was generated automatically and might contain errors
 
 #include "Actor/ActorUnkRB1T.hpp"
+#include "Save/SaveManager.hpp"
 #include "System/SysNew.hpp"
 
 ARM DECL_PROFILE(ActorProfileUnkRB1T);
@@ -12,7 +13,9 @@ ARM Actor *ActorProfileUnkRB1T::Create() {
 ARM ActorProfileUnkRB1T::ActorProfileUnkRB1T() :
     ActorProfile_Derived1(ActorId_RB1T) {}
 
-ARM ActorUnkRB1T::ActorUnkRB1T() {}
+ARM ActorUnkRB1T::ActorUnkRB1T() :
+    ActorUnk_ov000_020a8bb0(&this->mUnk_20C, this->mUnk_120),
+    mUnk_20C(0) {}
 
 ARM void ActorUnkRB1T::func_ov026_0211e3cc(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211e3e0(void) {}
@@ -39,7 +42,13 @@ ARM void ActorUnkRB1T::func_ov026_0211f1a0(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211f20c(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211f28c(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211f2f0(void) {}
-ARM void ActorUnkRB1T::func_ov026_0211f394(void) {}
+
+ARM void ActorUnkRB1T::func_ov026_0211f394(void) {
+    SET_FLAG(gSaveManager.GetUnk000()->unk_B78.rabbitFlags, this->mUnk_5C.mParams[1]);
+    this->vfunc_98(4);
+    this->mUnk_280 = 0;
+}
+
 ARM void ActorUnkRB1T::func_ov026_0211f3e8(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211f430(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211f470(void) {}
