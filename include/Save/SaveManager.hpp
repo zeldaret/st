@@ -9,6 +9,8 @@
 #include "global.h"
 #include "types.h"
 
+#include <nitro/mi.h>
+
 #define SAVE_DATA_SIZE (sizeof(SaveSlot) + sizeof(u8) * NUM_UNK_BLOCKS * SIZE_UNK_BLOCK)
 
 enum {
@@ -19,25 +21,19 @@ enum {
     SaveDataIndex_04,
 };
 
-class SaveManager_21C {
-public:
-    /* 00 */ unk32 mUnk_00;
-
-    unk32 func_ov000_020a1000();
-};
-
-struct SaveManager_36 {
-    /* 00 */ u8 mKeyAmount;
-    /* 01 */ STRUCT_PAD(0x01, 0x08);
-    /* 08 */
-};
-
 struct SaveManager_00 {
-    /* 000 */ STRUCT_PAD(0x00, 0x36);
-    /* 036 */ SaveManager_36 mUnk_36[0x60];
-    /* 336 */ STRUCT_PAD(0x336, 0xB30);
-    /* B30 */ unk32 mUnk_B30[1]; // flags, at least 1
+    /* 000 */ unk32 mUnk_00;
+    /* 004 */ SaveFile_00000_0000_Data_158 mUnk_004;
+    /* 030 */ SaveFile_00000_0000_Data_184 mUnk_030[96];
+    /* 330 */ SaveFile_00000_0000_Data_484 mUnk_330[256];
+    /* B30 */ SaveFile_00000_0000_Data_C84 mUnk_B30;
+    /* B40 */ SaveFile_00000_0000_Data_D24 mUnk_B40;
+    /* B68 */ SaveFile_00000_0000_Data_D8C mUnk_B68;
+    /* B78 */ SaveFile_00000_0000_Data_D4C mUnk_B78;
     /* BB8 */
+
+    SaveManager_00(unk16 param1) :
+        mUnk_B78(param1) {}
 };
 
 class SaveManager {
@@ -54,8 +50,7 @@ public:
     /* 210 */ unk32 mUnk_210;
     /* 214 */ unk32 mUnk_214;
     /* 218 */ SaveFile *mpSaveFile;
-    /* 21C */ SaveManager_21C mUnk_21C;
-    /* 220 */ STRUCT_PAD(0x220, 0x23C);
+    /* 21C */ SaveFile_00000_0000_Data_D9C mUnk_21C;
     /* 23C */ PTMF<SaveFile>::PTMFCallback mUnk_23C;
     /* 244 */ unk32 mUnk_244;
 

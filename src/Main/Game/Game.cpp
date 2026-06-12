@@ -36,7 +36,7 @@ ARM void Game::Run() {
 
             {
                 UnkDataStruct2 local_28(0x1300);
-                this->mpSaveFile = (SaveFile *) local_28.unk_00;
+                this->mpSaveSlot = (SaveSlot *) local_28.unk_00;
 
                 if (this->mpCurrentGameMode != NULL) {
                     delete this->mpCurrentGameMode;
@@ -49,7 +49,7 @@ ARM void Game::Run() {
                 this->mpCurrentGameMode = this->createCallback();
                 this->createCallback    = NULL;
                 this->mpCurrentGameMode->vfunc_08();
-                this->mpSaveFile = NULL;
+                this->mpSaveSlot = NULL;
             }
 
             data_0204999c.func_02013070();
