@@ -29,11 +29,31 @@ ARM bool ActorUnkFLEN::func_ov031_020f80b8() {
     return true;
 }
 
-// non-matching
-ARM void ActorUnkFLEN::func_ov031_020f8118(void) {}
+ARM void ActorUnkFLEN::func_ov031_020f8118() {
+    if (this->mUnk_50 < this->mUnk_52) {
+        ++this->mUnk_50;
+    }
+
+    switch (this->mUnk_4C) {
+        case 0x0:
+            if (!this->func_ov000_02098a60(0x0)) {
+                break;
+            }
+            this->func_ov031_020f81b4(0x1);
+            break;
+        case 0x1:
+            this->func_ov031_020f81b4(0x2);
+            break;
+        case 0x2:
+            if (!this->func_ov000_02098a60(0x0)) {
+                this->func_ov031_020f81b4(0x0);
+            }
+    }
+}
 
 ARM void ActorUnkFLEN::func_ov031_020f81b4(s16 param_1) {
     this->mUnk_4C = param_1;
+
     switch (param_1) {
         case 0x0:
             break;
