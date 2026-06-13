@@ -5,7 +5,6 @@
 #include "types.h"
 
 #include "MapObject/MapObjectManager.hpp"
-#include "Unknown/UnkStruct_027e09a4.hpp"
 
 class MapObject_20;
 
@@ -145,7 +144,7 @@ public:
     /* 4C */
 
     bool func_ov000_02081e30(unk32 param1, unk32 param2);
-    void func_ov000_02081d7c(unk32 param1, unk32 param2, unk32 param3);
+    void func_ov000_02081d7c(unk32 flagValue, unk32 param2, bool doSet);
     void func_ov000_02081ecc(unk16 param1, unk32 param2);
     void func_ov000_02081eec(unk16 param1, unk32 param2, unk32 param3);
     bool func_ov000_02081f3c(unk16 param1, unk32 param2);
