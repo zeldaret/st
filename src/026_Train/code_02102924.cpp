@@ -1,37 +1,6 @@
+#include "Unknown/Common.hpp"
 #include "math.hpp"
 #include "types.h"
-
-enum TrainPresetType_ {
-    TrainPresetType_Default                = 0, // normal overworld settings
-    TrainPresetType_DarkRealmNormal        = 1, // default dark realm settings (SceneIndex_t_dark)
-    TrainPresetType_DarkRealmLightTear     = 2, // dark realm when on a light tear (SceneIndex_t_dark)
-    TrainPresetType_DarkRealmLightTearRope = 3, // same as above but when pulling the rope (SceneIndex_t_dark)
-    TrainPresetType_DarkRealmFight         = 4, // (SceneIndex_t_eviltrain, SceneIndex_t_eviltrain2 & SceneIndex_t_eviltrain3)
-    TrainPresetType_5                      = 5, // unused?
-    TrainPresetType_Max,
-};
-
-struct TrainSpeedTarget {
-    /* 00 */ unk32 speed;
-    /* 04 */ unk32 unk_04;
-    /* 08 */
-};
-
-struct TrainSpeedPreset {
-    /* 00 */ TrainSpeedTarget reverse;
-    /* 08 */ TrainSpeedTarget stop;
-    /* 10 */ TrainSpeedTarget slow;
-    /* 18 */ TrainSpeedTarget fast;
-    /* 20 */ unk32 unk_20;
-    /* 24 */ unk32 unk_24;
-    /* 28 */ unk32 unk_28;
-    /* 2C */ unk32 unk_2C;
-    /* 30 */ unk32 unk_30;
-    /* 34 */ unk32 unk_34;
-    /* 38 */ unk32 unk_38; // related to the "emergency break" thing when you go to reverse while fast speed
-    /* 3C */ fx32 unk_3C;
-    /* 40 */
-};
 
 static TrainSpeedPreset data_ov026_02135fec[TrainPresetType_Max] = {
     // TrainPresetType_Default
