@@ -20,6 +20,15 @@ typedef struct UnkResourceStruct2 {
 } UnkResourceStruct2;
 
 typedef struct {
+    /* 00 */ VecFx32 mUnk_00;
+    /* 0C */ VecFx32 mUnk_0C;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ VecFx32 mUnk_1C;
+    /* 28 */ VecFx32 mUnk_28;
+    /* 34 */
+} UnkStruct_020f374c;
+
+typedef struct {
     /* 00 */ STRUCT_PAD(0x00, 0x04);
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
@@ -58,6 +67,9 @@ extern bool data_ov060_02163fe0;
 extern UnkStruct_ov060_02163ff4 data_ov060_02163ff4;
 extern ActorUnkMRD2 *data_ov075_02163518;
 
+extern "C" unk32 func_01ff9258(fx32, fx32);
+extern "C" void func_01ff93c0(VecFx32 *, unk32);
+;
 extern "C" void func_01ff9638(VecFx32 *, s16);
 extern "C" void func_01ff95a0(VecFx32 *, unk16);
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
@@ -694,8 +706,35 @@ ARM inline ActorShotArrow_1C8::ActorShotArrow_1C8() {
     this->mUnk_04.z = 0;
 }
 
-// non-matching
-ARM void ActorShotArrow_194::func_ov031_020f374c(Actor *) {}
+// un-initialized parameter
+ARM void ActorShotArrow_194::func_ov031_020f374c(Actor *actor) {
+    UnkStruct_020f374c stack;
+
+    stack.mUnk_28 = this->mUnk_2C->mVel;
+    func_01ff93c0(&stack.mUnk_28, this->mUnk_30);
+    stack.mUnk_1C = this->mUnk_0C;
+    VecFx32_Add(&stack.mUnk_1C, &stack.mUnk_28, &stack.mUnk_1C);
+
+    func_01ffb714(&stack.mUnk_1C, &actor->mVel, &stack.mUnk_1C);
+    actor->vfunc_10(&stack.mUnk_0C);
+
+    stack.mUnk_00 = stack.mUnk_0C;
+    func_01ffb714(&stack.mUnk_00, &stack.mUnk_1C, &stack.mUnk_00);
+
+    unk32 temp = func_01ff9258(stack.mUnk_00.x, stack.mUnk_00.z);
+    if (temp > stack.mUnk_18 && stack.mUnk_18 > FLOAT_TO_FX32(0.15f)) {
+        fx32 temp_r5 = (temp - stack.mUnk_18) + FLOAT_TO_FX32(0.15f);
+        u16 value    = (u32) (s16) func_01ffbbe0(stack.mUnk_00.x, stack.mUnk_00.z);
+
+        fx16 sin = SIN(value);
+        fx16 cos = COS(value);
+
+        stack.mUnk_28.x += MUL_FX32(sin, temp_r5);
+        stack.mUnk_28.z += MUL_FX32(cos, temp_r5);
+    }
+    this->mUnk_2C->func_ov031_020f2f5c(&stack.mUnk_28);
+    this->mUnk_2C->mUnk_1C8.mUnk_00 = actor;
+}
 
 // non-matching
 ARM void ActorShotArrow_194::vfunc_10(Actor *actor) {
