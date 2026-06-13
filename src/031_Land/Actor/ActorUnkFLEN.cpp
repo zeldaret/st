@@ -48,6 +48,7 @@ ARM void ActorUnkFLEN::func_ov031_020f8118() {
             if (!this->func_ov000_02098a60(0x0)) {
                 this->func_ov031_020f81b4(0x0);
             }
+            break;
     }
 }
 
@@ -59,11 +60,12 @@ ARM void ActorUnkFLEN::func_ov031_020f81b4(s16 param_1) {
             break;
         case 0x1:
             this->func_ov031_020f81f8();
-            return;
+            break;
         case 0x2:
             if (!this->mUnk_94) {
                 UNSET_FLAG(this->mFlags, ActorFlag_Alive);
             }
+            break;
     }
 }
 
