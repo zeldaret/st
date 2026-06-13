@@ -4,6 +4,8 @@
 #include "Save/SaveManager.hpp"
 #include "System/SysNew.hpp"
 
+extern UnkActorDataStruct1 data_ov026_02137edc;
+
 ARM DECL_PROFILE(ActorProfileUnkRB1T);
 
 ARM Actor *ActorProfileUnkRB1T::Create() {
@@ -18,10 +20,40 @@ ARM ActorUnkRB1T::ActorUnkRB1T() :
     mUnk_20C(0) {}
 
 ARM void ActorUnkRB1T::func_ov026_0211e3cc(void) {}
-ARM void ActorUnkRB1T::func_ov026_0211e3e0(void) {}
+
+bool ActorUnkRB1T::func_ov026_0211e3e0(int param1) {
+    if (GET_FLAG(gSaveManager.GetUnk000()->unk_B78.rabbitFlags, this->mUnk_5C.mParams[1])) {
+        this->Kill();
+        return true;
+    }
+
+    this->ActorUnk_ov000_020a8bb0::vfunc_18(param1);
+    this->mUnk_0E4 = ActorUnkRB1T::func_ov026_021208a0;
+
+    int result = this->func_ov026_0211e6cc();
+    func_ov000_02099ddc(&this->mUnk_300, data_ov026_02137edc, 0x1000, result << 12);
+
+    this->func_ov026_0211e554();
+
+    this->mUnk_36C = 0;
+    this->mUnk_36D = 0;
+    this->mUnk_36E = 0;
+    this->mUnk_36F = 0;
+    this->mUnk_370 = 0;
+    this->mUnk_371 = 0;
+    this->mUnk_372 = 0;
+    this->mUnk_373 = 0;
+    this->mUnk_374 = 0;
+    this->mUnk_375 = 0;
+    this->mUnk_376 = 0;
+    this->mUnk_377 = 0;
+
+    return true;
+}
+
 ARM void ActorUnkRB1T::func_ov026_0211e4c8(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211e554(void) {}
-ARM void ActorUnkRB1T::func_ov026_0211e6cc(void) {}
+ARM unk32 ActorUnkRB1T::func_ov026_0211e6cc(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211e6e4(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211e6f0(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211e748(void) {}

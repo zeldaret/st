@@ -116,7 +116,7 @@ public:
     /* 0DC */ unk16 mUnk_0DE;
     /* 0E0 */ unk16 mUnk_0E0;
     /* 0E0 */ unk16 mUnk_0E2;
-    /* 0E4 */ unk32 mUnk_0E4;
+    /* 0E4 */ void *mUnk_0E4; // callback
     /* 0E8 */ unk16 mUnk_0E8;
     /* 0E8 */ unk16 mUnk_0EA;
     /* 0EC */ ActorUnk_ov000_020a8bb0_EC mUnk_0EC;
