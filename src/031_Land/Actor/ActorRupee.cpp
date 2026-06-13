@@ -10,7 +10,6 @@
 extern "C" void func_01ffedac(u16 *, VecFx32 *);
 extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, VecFx32 *);
 extern "C" unk32 func_02017158();
-extern "C" void func_ov000_02098838();
 extern "C" void func_ov017_020bf99c();
 extern "C" void func_ov031_0210acd4(u8);
 extern "C" unk32 func_ov031_0210af50(u16, unk32 *);
@@ -682,7 +681,7 @@ ARM void ActorRupee::vfunc_20() {
 }
 
 ARM void ActorRupee::func_ov031_020e9b88() {
-    func_ov000_02098838();
+    this->func_ov000_02098838();
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mUnk_5C.mInitialPos.y < this->mPos.y + this->mVel.y) {
@@ -698,7 +697,7 @@ ARM void ActorRupee::func_ov031_020e9b88() {
 }
 
 ARM void ActorRupee::func_ov031_020e9be8() {
-    func_ov000_02098838();
+    this->func_ov000_02098838();
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mVel.y < 0) {
