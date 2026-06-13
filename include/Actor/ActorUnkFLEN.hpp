@@ -27,7 +27,7 @@ public:
 
     bool func_ov031_020f80b8();
     void func_ov031_020f8118(void);
-    void func_ov031_020f81b4(unk32);
+    void func_ov031_020f81b4(s16 param_1);
     void func_ov031_020f81f8(void);
 };
 
