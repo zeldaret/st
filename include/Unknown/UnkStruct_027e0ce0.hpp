@@ -105,7 +105,10 @@ public:
 
 class UnkStruct_027e0ce0_38_58 {
 public:
-    /* 000 */ STRUCT_PAD(0x00, 0x3D4);
+    /* 000 */ STRUCT_PAD(0x00, 0x338);
+    /* 338 */ unk32 mUnk_338; // rope pulled timer
+    /* 33C */ unk32 mUnk_33C; // rope pull strength, 0 to 8
+    /* 340 */ STRUCT_PAD(0x340, 0x3D4);
     /* 3D4 */
 
     UnkStruct_027e0ce0_38_58();
