@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
@@ -27,9 +25,9 @@ public:
 
     /* 4C */ virtual ~ActorUnkFLEN() override;
 
-    void func_ov031_020f80b8(void);
+    bool func_ov031_020f80b8();
     void func_ov031_020f8118(void);
-    void func_ov031_020f81b4(void);
+    void func_ov031_020f81b4(unk32);
     void func_ov031_020f81f8(void);
 };
 
