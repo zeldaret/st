@@ -45,7 +45,6 @@ extern "C" void func_02097bb8(void);
 extern "C" void func_ov000_0205c1f0(unk32 *, unk16);
 extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
 extern "C" void func_ov000_0208bc00(UnkStruct_027e0ce0 *, unk16, unk16 *);
-extern "C" void func_ov000_02098838();
 extern "C" void func_ov017_020bf99c(void);
 extern "C" void func_ov017_02097bec(Actor_9c *);
 
@@ -273,7 +272,7 @@ ARM void ActorHeart::func_ov031_020ef2ec() {
 }
 
 ARM void ActorHeart::func_ov031_020ef2f8() {
-    func_ov000_02098838();
+    this->func_ov000_02098838();
     if (this->mVel.y > 0) {
         return;
     }
@@ -394,7 +393,7 @@ ARM void ActorHeart::func_ov031_020ef528() {
 
 // non-matching
 ARM void ActorHeart::func_ov031_020ef570() {
-    func_ov000_02098838();
+    this->func_ov000_02098838();
     this->mUnk_B8 += 0x666;
     this->mVel.z = FLOAT_TO_FX32(0.0);
 

@@ -102,7 +102,9 @@ ARM void ActorUnkMRD2::func_ov075_0215b4dc(void) {}
 ARM void ActorUnkMRD2::func_ov075_0215b578(void) {}
 ARM void ActorUnkMRD2::func_ov075_0215b914(void) {}
 ARM void ActorUnkMRD2::func_ov075_0215bbe8(void) {}
-ARM void ActorUnkMRD2::func_ov075_0215bbf0(void) {}
+ARM bool ActorUnkMRD2::func_ov075_0215bbf0(ActorRef *param_1, unk32 *param_2) {
+    return false;
+}
 ARM void ActorUnkMRD2::func_ov075_0215bc50(void) {}
 ARM void ActorUnkMRD2::func_ov075_0215bd40(void) {}
 ARM void ActorUnkMRD2::func_ov075_0215bd50(void) {}

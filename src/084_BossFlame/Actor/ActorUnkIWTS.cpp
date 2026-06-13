@@ -49,7 +49,7 @@ ARM void ActorUnkIWTS::func_ov084_02152cd8(void) {}
 ARM void ActorUnkIWTS::func_ov084_02152cec(void) {}
 ARM void ActorUnkIWTS::func_ov084_02152d10(void) {}
 ARM void ActorUnkIWTS::func_ov084_02153018(void) {}
-ARM void ActorUnkIWTS::func_ov084_02153064(void) {}
+ARM bool ActorUnkIWTS::func_ov084_02153064(ActorRef *, unk32 *) {}
 ARM void ActorUnkIWTS::func_ov084_021530d4(void) {}
 ARM void ActorUnkIWTS::func_ov084_0215315c(void) {}
 ARM void ActorUnkIWTS::func_ov084_02153194(void) {}

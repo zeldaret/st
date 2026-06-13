@@ -118,6 +118,21 @@ public:
     void func_ov000_020577f8(unk32 param1);
 };
 
+class UnkSystem5_Derived1 : public UnkSystem5 {
+public:
+    UnkSystem5_Derived1(void *param1, G3d_Model *param2, unk32 param3) :
+        UnkSystem5(param1, param2) {
+        unk32 value = 0;
+
+        //! TODO: struct
+        if (!(*((u32 *) param3 + 2) & 2)) {
+            value = 1;
+        }
+
+        this->func_ov000_020577a4(param3, 0, value);
+    }
+};
+
 class ModelRender_Derived1 : public ModelRender {
 public:
     /* 00 (base) */

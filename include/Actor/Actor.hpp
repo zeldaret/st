@@ -119,7 +119,7 @@ public:
     /* 46 */ unk16 mUnk_46;
     /* 48 */ unk16 mUnk_48;
     /* 4A */ unk8 mUnk_4A;
-    /* 4A */ unk8 mUnk_4B;
+    /* 4B */ unk8 mUnk_4B;
     /* 4C */ s16 mUnk_4C;
     /* 4E */ s16 mUnk_4E;
     /* 50 */ volatile u16 mUnk_50;
@@ -135,7 +135,7 @@ public:
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
     /* 0C */ virtual unk8 vfunc_0c();
-    /* 10 */ virtual void vfunc_10();
+    /* 10 */ virtual void vfunc_10(VecFx32 *);
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual bool vfunc_18(unk32 param1);
     /* 1C */ virtual void vfunc_1c();
@@ -177,6 +177,7 @@ public:
     unk32 func_ov000_020984c8();
     void func_ov000_020984d0();
     void func_ov000_020984f0();
+    void func_ov000_02098838();
     unk32 func_ov000_02098910(unk32 param1, unk32 param2);
 
     s32 func_ov000_02098518(unk32 *param1);

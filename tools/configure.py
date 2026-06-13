@@ -428,7 +428,7 @@ config.libs = [
         [
             Object("031_Land/UnkStruct_027e0d34.cpp"),
             Object("031_Land/Actor/ActorRupee.cpp"),
-            Object("031_Land/Actor/ActorUnkAROW.cpp"),
+            Object("031_Land/Actor/ActorShotArrow.cpp"),
             Object("031_Land/Actor/ActorUnkATTG.cpp"),
             Object("031_Land/Actor/ActorUnkBLST.cpp"),
             Object("031_Land/Actor/ActorUnkBOMB.cpp"),

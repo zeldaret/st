@@ -361,6 +361,12 @@ public:
     UnkStruct_027e0ce0_3C();
 };
 
+class UnkStruct_027e0ce0_1C {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+    /* 0C */ MapObjectProfile_Derived2_20_Base *mUnk_0C;
+};
+
 // PlayerManager?
 class UnkStruct_027e0ce0 {
 public:
@@ -374,7 +380,7 @@ public:
     /* 10 */ unk32 *mUnk_10;
     /* 14 */ unk32 *mUnk_14;
     /* 18 */ unk32 *mUnk_18;
-    /* 1C */ unk32 *mUnk_1C;
+    /* 1C */ UnkStruct_027e0ce0_1C *mUnk_1C;
     /* 20 */ unk32 *mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ ItemManager *mUnk_28;
