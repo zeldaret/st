@@ -24,7 +24,7 @@ ARM MapObjectProfileDoorKey::MapObjectProfileDoorKey() :
 }
 
 ARM MapObjectDoorKey::MapObjectDoorKey() :
-    mUnk_94(GetUnkPointer1<MapObjectProfileDoorKey>()),
+    mUnk_94(GetModelFromProfile<MapObjectProfileDoorKey>()),
     mUnk_9C(1),
     mUnk_A0(0),
     mUnk_A4(false) {

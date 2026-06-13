@@ -12,7 +12,7 @@ CargoManager::CargoManager() {
 CargoManager::~CargoManager() {}
 
 void CargoManager::func_ov001_020bf830() {
-    if (this->mCargo.mAmount == 0 && !data_027e09a4->func_01ffd3d8()) {
+    if (this->mCargo.mAmount == 0 && !data_027e09a4->IsTrain()) {
         this->mCargo.mType = CargoType_None;
     }
 

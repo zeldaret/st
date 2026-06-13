@@ -63,6 +63,8 @@ void SND_StartTimer(u32 channel, u32, u32 num, u32);
 u32 SND_GetCurrentCommandTag(void);
 void SND_WaitForCommandProc(u32 tag);
 
+void SND_func_0013(int, int, int, int);
+
 #ifdef __cplusplus
 } // extern "C"
 #endif

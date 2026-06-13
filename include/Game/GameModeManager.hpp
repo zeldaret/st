@@ -175,10 +175,10 @@ public:
     void func_ov000_02060fc8(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
 };
 
-extern TitleScreenManager_Base *data_027e0994;
+extern TitleScreenManager_Base *gpCurrentGameModeMgr;
 
 class AdventureModeManager;
 
 static inline AdventureModeManager *GetAdventureModeManager() {
-    return (AdventureModeManager *) data_027e0994;
+    return (AdventureModeManager *) gpCurrentGameModeMgr;
 }

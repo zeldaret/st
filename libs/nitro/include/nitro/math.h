@@ -73,6 +73,14 @@ typedef union Vec2p {
 #define Vec2p_Sub(a, b, dst) Vec2_Sub(Vec2p, a, b, dst)
 #define Vec2p_Set(a, dst) Vec2_Set(Vec2p, a, dst)
 #define Vec2p_Clear(dst) Vec2_Clear(fx32, dst)
+static inline void Vec2p_Copy(const Vec2p *src, Vec2p *dst) {
+#if __MWERKS__
+    dst->coords = src->coords;
+#else
+    dst->x = src->x;
+    dst->y = src->y;
+#endif
+}
 
 typedef struct Mat2p {
     /* 00 */ Vec2p xColumn;
@@ -124,7 +132,7 @@ u32 CoRemainder(u32 a, u32 b);
 
 bool Approach(s32 *src, s32 dest, s32 step);
 bool Approach_thunk(s32 *src, s32 dest, s32 step);
-extern fx16 gSinCosTable[];
+extern const fx16 gSinCosTable[];
 
 extern const VecFx32 gVecFx32_ZERO;
 
@@ -157,7 +165,7 @@ static inline void VecFx32_CopyXZ(VecFx32 *vec, VecFx32 *out) {
     out->z = z;
 }
 
-static inline void VecFx32_Copy(VecFx32 *vec, VecFx32 *out) {
+static inline void VecFx32_Copy(const VecFx32 *vec, VecFx32 *out) {
     out->x = vec->x;
     out->y = vec->y;
     out->z = vec->z;

@@ -32,13 +32,13 @@ ARM MapObjectProfileSwitchStep::MapObjectProfileSwitchStep() :
     this->mUnk_D4.mUnk_18.y = FLOAT_TO_FX32(0.5f);
     this->mUnk_D4.mUnk_18.z = FLOAT_TO_FX32(0.5f);
 
-    this->mUnk_06                 = 1;
-    this->mUnk_0C                 = 0xC00;
-    this->mUnk_20.mUnk_0C.mUnk_09 = 1;
+    this->mUnk_06         = 1;
+    this->mUnk_0C         = 0xC00;
+    this->mUnk_20.mUnk_15 = 1;
 }
 
 ARM MapObjectSwitchStep_40::MapObjectSwitchStep_40(void) :
-    UnkSystem4(0) {
+    ModelRender(NULL) {
     this->mUnk_60 = 0;
     this->mUnk_62 = true;
     this->func_ov000_0209dde0();
@@ -81,15 +81,15 @@ ARM void MapObjectSwitchStep_40::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
 }
 
 ARM MapObjectSwitchStep::MapObjectSwitchStep() :
-    mUnk_A4(&mUnk_C4, 0) {
+    mUnk_A4(&mUnk_C4, NULL) {
     this->mUnk_E4 = 0;
     this->mUnk_E6 = 0;
     this->mUnk_E8 = 0;
     this->mUnk_EA = 0;
     this->mUnk_EB = 0;
 
-    this->mUnk_40.vfunc_08(GetUnkPointer1<MapObjectProfileSwitchStep>());
-    this->mUnk_A4.mUnk_00 = this->mUnk_40.mUnk_04;
+    this->mUnk_40.vfunc_08(GetModelFromProfile<MapObjectProfileSwitchStep>());
+    this->mUnk_A4.mpModel = this->mUnk_40.mpModel;
 
     MapObjectProfile_Derived2_20 *temp_r6 = GET_PROFILE_20(MapObjectProfileSwitchStep);
     unk32 temp_r5                         = temp_r6->func_ov000_02058a24();
@@ -101,7 +101,7 @@ ARM MapObjectSwitchStep::MapObjectSwitchStep() :
 ARM MapObjectSwitchStep::~MapObjectSwitchStep() {
     if (this->mUnk_20.mUnk_00[0] == 2) {
         this->func_ov000_0209e11c(0, 1);
-        this->func_ov000_0209d2c4(0, 0);
+        this->func_ov000_0209d2c4(0, false);
     }
 }
 
@@ -135,7 +135,7 @@ ARM void MapObjectSwitchStep::func_ov000_0209e11c(unk32 param1, unk32 param2) {
     switch (this->mUnk_16) {
         case 0:
             if (param2 == 0) {
-                this->func_ov000_0209d2c4(0, 0);
+                this->func_ov000_0209d2c4(0, false);
                 data_027e09a8->func_ov000_02071b30(0x123, &this->mPos, 0);
             }
 
@@ -151,7 +151,7 @@ ARM void MapObjectSwitchStep::func_ov000_0209e11c(unk32 param1, unk32 param2) {
             break;
         case 2:
             this->mUnk_40.mUnk_60 = -0x19A;
-            this->func_ov000_0209d2c4(0, 1);
+            this->func_ov000_0209d2c4(0, true);
             this->mUnk_40.mUnk_62 = 0;
 
             if (param2 == 0) {
@@ -168,7 +168,7 @@ ARM void MapObjectSwitchStep::func_ov000_0209e11c(unk32 param1, unk32 param2) {
             this->mUnk_A4.func_ov000_020577f8(0x1000);
             break;
         case 3:
-            this->func_ov000_0209d2c4(0, 0);
+            this->func_ov000_0209d2c4(0, false);
             break;
         default:
             break;

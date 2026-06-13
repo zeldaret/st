@@ -3,13 +3,14 @@
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorUnkNSHD.hpp"
+#include "MainGame/AdventureMode.hpp"
 #include "MainGame/MiscAdvManager.hpp"
 #include "MapObject/MapObjectChestBase.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Player/PlayerGet.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/Common.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
@@ -35,9 +36,8 @@ extern const char *data_ov000_020aa248; // .nsbmd
 
 extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
-extern "C" void func_01ffc5a0(UnkSystem4 *, unk32, u16, void *, unk32);
+extern "C" void func_01ffc5a0(ModelRender *, unk32, u16, void *, unk32);
 extern "C" void func_ov000_0208f820();
-extern "C" unk32 func_ov024_020d5354(unk32 *, u16 *);
 extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, VecFx32 *);
 extern unk32 *data_027e0958;
 extern "C" void func_ov000_0208ba10(void *, void *, unk32);
@@ -48,7 +48,7 @@ extern "C" void func_020156c8(char *, char *, unk32);
 extern "C" void func_020156f4(char *);
 extern "C" void func_02015644(char *);
 
-extern "C" UnkResourceStruct *func_ov000_0205abcc(void *, void *, unk32, unk32, unk32);
+extern "C" BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, unk32);
 extern "C" unk32 func_ov000_02077590(unk32);
 
 static const unk32 data_ov110_02185dc4[1] = {8};
@@ -155,7 +155,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
 
                 if (this->mEquippedItem == ItemFlag_None) {
                     this->mEquippedItem = itemFlag;
-                    data_ov024_020d8698->func_ov024_020cd458(this->mEquippedItem, false);
+                    gpUICounterManager->func_ov024_020cd458(this->mEquippedItem, false);
                 }
             } else {
                 itemFlag = GetItemFlag(itemId);
@@ -466,9 +466,9 @@ ARM PlayerGet::~PlayerGet() {
 
     UnkStruct_ov000_0208f820_28_98 *pUnk_28_98 = this->mUnk_28->mUnk_98;
     if (pUnk_28_98 != 0) {
-        pUnk_28_98->mUnk_38.mUnk_40 &= ~0x10;
+        pUnk_28_98->mUnk_38.mUnk_08 &= ~0x10;
 
-        if (pUnk_28_98->mUnk_38.mUnk_40 == 0) {
+        if (pUnk_28_98->mUnk_38.mUnk_08 == 0) {
             // real?
             pUnk_28_98->mUnk_38.~UnkStruct_PlayerGet_64();
         }
@@ -612,9 +612,9 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                     strncpy(modelPath + l, data_ov000_020aa240, 0x3F - l);
 
                     UnkFileSystem2 fs2(modelPath, 0);
-                    UnkResourceStruct *res = func_ov000_0205abcc((void *) &fs4, (void *) &fs2, 0, 1, this->mUnk_30->mUnk_24);
+                    BMDSectionModel *res = func_ov000_0205abcc((void *) &fs4, (void *) &fs2, 0, 1, this->mUnk_30->mUnk_24);
 
-                    this->mUnk_8C.vfunc_08(GetUnkPointer1_Impl(res));
+                    this->mUnk_8C.vfunc_08(G3d_GetModelPtr(res));
                 }
 
                 switch (this->mUnk_54.mItemId) {
@@ -629,7 +629,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                 }
             }
 
-            UnkStruct_027e09bc_0c *uVar11 = data_027e09bc->mUnk_0C;
+            UnkStruct_027e09bc_0C *uVar11 = data_027e09bc->mUnk_0C;
             uVar11->func_ov000_0207834c(this->mUnk_34, func_ov000_02077590(4), 0);
 
             UnkStruct_PlayerGet_48 *pUnk_48 = this->mUnk_48;
@@ -677,7 +677,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
                 if (pUnk28_98 != NULL) {
                     UnkStruct_PlayerGet_64 *ptr = &pUnk28_98->mUnk_38;
-                    ptr->mUnk_40 |= 0x10;
+                    ptr->mUnk_08 |= 0x10;
                     this->mUnk_64.func_ov000_0208a100();
                 }
             }
@@ -1009,7 +1009,7 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
         case 0x3A:
             break;
         case 0x3B:
-            if (param3 != 0 && this->mUnk_54.mItemId != ItemId_Nothing && this->mUnk_8C.mUnk_04 != 0) {
+            if (param3 != 0 && this->mUnk_54.mItemId != ItemId_Nothing && this->mUnk_8C.mpModel != NULL) {
                 VecFx32_Add(this->mUnk_34, (VecFx32 *) &data_ov110_021861ec.mUnk_00, &auStack_18);
                 func_ov000_02058fc4(data_027e0958, &this->mUnk_74, &auStack_18);
             }
@@ -1022,30 +1022,29 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
 ARM UnkStruct_PlayerGet_ec::UnkStruct_PlayerGet_ec() :
     UnkSystem7(NULL) {}
 
-// non-matching
 THUMB void UnkStruct_027e0ce0_34::func_ov110_02185d3c(ItemId itemId) {
-    unk32 uStack_14;
-    u16 auStack_18[2];
+    s32 flagPos;
+    s16 flagValue;
 
     switch (itemId) {
         case ItemId_SpiritTrain:
             this->func_ov024_020d3d98(0, 0);
-            this->mUnk_2C = 1;
-            this->mUnk_00 = 0;
-            this->mUnk_10 = 0;
+            this->mUnk_2C    = 1;
+            this->mUnk_00[0] = 0;
+            this->mUnk_10[0] = 0;
             break;
         case ItemId_SpiritTrainCar:
             this->func_ov024_020d3d98(2, 0);
-            this->mUnk_2C = 2;
-            this->mUnk_04 = 2;
-            this->mUnk_14 = 0;
+            this->mUnk_2C    = 2;
+            this->mUnk_00[1] = 2;
+            this->mUnk_10[1] = 0;
             break;
         default:
-            uStack_14     = -1;
-            auStack_18[0] = 0;
+            flagPos   = -1;
+            flagValue = 0;
 
-            if (func_ov024_020d5354(&uStack_14, auStack_18) != 0) {
-                this->func_ov024_020d3ee8(uStack_14, auStack_18[0], 1);
+            if (func_ov024_020d5354(&flagPos, &flagValue, itemId)) {
+                this->SetTrackFlag(flagPos, flagValue, true);
             }
             break;
     }

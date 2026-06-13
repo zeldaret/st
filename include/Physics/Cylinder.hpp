@@ -5,8 +5,9 @@
 #include "math.hpp"
 
 struct Cylinder {
-    VecFx32 pos;
-    fx32 size; // height and radius
+    /* 00 */ VecFx32 pos;
+    /* 0C */ fx32 size; // height and radius
+    /* 10 */
 
     Cylinder() {}
     Cylinder(fx32 size) {

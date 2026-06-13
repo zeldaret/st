@@ -2,7 +2,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "Unknown/Common.hpp"
+#include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "global.h"
 #include "types.h"
@@ -125,7 +125,7 @@ public:
     /* 094 */ UnkSystem6_Derived2 mUnk_94;
     /* 09C */ bool mUnk_9C;
     /* 09C */ STRUCT_PAD(0x9D, 0xA0);
-    /* 0A0 */ UnkSystem4 mUnk_A0;
+    /* 0A0 */ ModelRender mUnk_A0;
     /* 100 */ UnkSystem5_Derived1 mUnk_100;
     /* 120 */ unk32 mUnk_120;
     /* 124 */ STRUCT_PAD(0x124, 0x140);

@@ -3,9 +3,23 @@
 #include "Map/MapObjectId.hpp"
 #include "types.h"
 
-enum FileType {
+#include <nitro/math.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef u32 FileType;
+enum FileType_ {
     FileType_ZOB = 'BLOZ',
+    FileType_ZTB = '1BTZ',
+    FileType_ZMB = '1BMZ',
 };
+
+typedef struct FileInfos {
+    /* 00 */ void *pFile;
+    /* 04 */ size_t size;
+} FileInfos;
 
 // .zob
 typedef struct ZeldaObjectList {
@@ -17,3 +31,142 @@ typedef struct ZeldaObjectList {
     /* 0E */ unk16 unk_0e;
     /* 10 */ u32 aIdList[]; // actor id or map object id
 } ZeldaObjectList;
+
+// .ztb
+typedef u32 ZTBSectionType;
+enum ZTBSectionType_ {
+    ZTBSectionType_GRDB = 'GRDB', // grid block?
+    ZTBSectionType_GRRL = 'GRRL', // grid rail?
+    ZTBSectionType_STAB = 'STAB', // station block
+    ZTBSectionType_LDMK = 'LDMK', // land mark?
+};
+
+typedef struct ZTBHeader {
+    /* 00 */ u32 magic;     // 'MTRB'
+    /* 04 */ FileType type; // always "ZTB1"
+    /* 08 */ size_t nSize;
+    /* 0C */ u32 nEntries;
+    /* 10 */ u8 unused[0x10];
+} ZTBHeader; // size = 0x20
+
+typedef struct ZTBSectionHeader {
+    /* 00 */ ZTBSectionType type;
+    /* 04 */ size_t nSize;
+    /* 08 */ union {
+        u16 nEntries;
+        struct {
+            u8 nEntries1;
+            u8 nEntries2;
+        };
+    };
+    /* 0A */ u8 unk_0A;
+    /* 0B */ u8 unk_0B;
+} ZTBSectionHeader; // size = 0x0C
+
+typedef struct ZTBEntryGRDB {
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 unk_01;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+} ZTBEntryGRDB; // size = 0x04
+
+typedef struct ZTBEntryGRRL {
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 unk_01;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+    /* 04 */ u8 unk_04;
+    /* 05 */ u8 unk_05;
+    /* 06 */ u16 unk_06;
+} ZTBEntryGRRL; // size = 0x08
+
+typedef struct ZTBEntrySTAB {
+    /* 00 */ char sceneName[16];
+    /* 10 */ u8 unk_10;
+    /* 11 */ u8 unk_11;
+    /* 12 */ u8 unk_12;
+    /* 13 */ u8 unk_13;
+} ZTBEntrySTAB; // size = 0x14
+
+typedef struct ZTBEntryLDMK {
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 unk_01;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+} ZTBEntryLDMK; // size = 0x04
+
+typedef struct ZTBSectionGRDB {
+    /* 00 */ ZTBSectionHeader header;
+    /* 0C */ ZTBEntryGRDB entries[];
+} ZTBSectionGRDB;
+
+typedef struct ZTBSectionGRRL {
+    /* 00 */ ZTBSectionHeader header;
+    /* 0C */ ZTBEntryGRRL entries[];
+} ZTBSectionGRRL;
+
+typedef struct ZTBSectionSTAB {
+    /* 00 */ ZTBSectionHeader header;
+    /* 0C */ ZTBEntrySTAB entries[];
+} ZTBSectionSTAB;
+
+typedef struct ZTBSectionLDMK {
+    /* 00 */ ZTBSectionHeader header;
+    /* 0C */ ZTBEntryLDMK entries[];
+} ZTBSectionLDMK;
+
+struct UnkDataStruct4;
+
+extern BOOL ZTB_ParseFile(FileInfos *pFileInfos, UnkDataStruct4 *pDst);
+extern BOOL ZTB_ParseGRDB(FileInfos *pFileInfos, UnkDataStruct4 *pDst, ZTBSectionGRDB *pGRDB);
+extern BOOL ZTB_ParseGRRL(FileInfos *pFileInfos, UnkDataStruct4 *pDst, ZTBSectionGRRL *pGRRL);
+extern BOOL ZTB_ParseSTAB(FileInfos *pFileInfos, UnkDataStruct4 *pDst, ZTBSectionSTAB *pSTAB);
+extern BOOL ZTB_ParseLDMK(FileInfos *pFileInfos, UnkDataStruct4 *pDst, ZTBSectionLDMK *pLDMK);
+
+// .zmb
+typedef u32 ZMBSectionType;
+enum ZMBSectionType_ {
+    ZMBSectionType_LDLB = 'LDLB', // related to script triggers
+    ZMBSectionType_ROMB = 'ROMB', // unknown
+    ZMBSectionType_ROOB = 'ROOM', // room settings
+    ZMBSectionType_ARAB = 'ARAB', // locations? (?)
+    ZMBSectionType_RALB = 'RALB', // paths?
+    ZMBSectionType_WARP = 'WARP', // exits?
+    ZMBSectionType_CAME = 'CAME', // camera settings?
+    ZMBSectionType_PLYR = 'PLYR', // player entrances?
+    ZMBSectionType_MPOB = 'MPOB', // map object list, parameters are stored here
+    ZMBSectionType_NPCA = 'NPCA', // actor list, same as above
+};
+
+typedef struct ZMBHeader {
+    /* 00 */ u32 magic;     // 'MAPB'
+    /* 04 */ FileType type; // always "ZMB1"
+    /* 08 */ size_t nSize;
+    /* 0C */ u32 nEntries;
+    /* 10 */ u8 unused[0x10];
+} ZMBHeader; // size = 0x20
+
+typedef struct ZMBSectionHeader {
+    /* 00 */ ZMBSectionType type;
+    /* 04 */ size_t nSize;
+    /* 08 */ u16 nEntries;
+    /* 0A */ u8 unk_0A;
+    /* 0B */ u8 unk_0B;
+} ZMBSectionHeader; // size = 0x0C
+
+typedef struct ZMBEntryRALB {
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 unk_01;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+    /* 04 */ unk32 unk_04;
+} ZMBEntryRALB; // size = 0x08
+
+typedef struct ZMBSectionRALB {
+    /* 00 */ ZMBSectionHeader header;
+    /* 0C */ ZMBEntryRALB entries[];
+} ZMBSectionRALB;
+
+#ifdef __cplusplus
+} // extern "C"
+#endif

@@ -92,4 +92,10 @@ public:
     static CargoManager *Create();
 };
 
+struct UnkCargoStruct {
+    s16 type;
+    u16 requiredAmount;
+};
+
 extern CargoManager *gpCargoManager;
+extern const UnkCargoStruct data_ov024_020d78c0[];

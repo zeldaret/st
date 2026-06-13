@@ -1,5 +1,5 @@
 #include "Item/ItemManager.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "global.h"
 
 const u8 gQuiverCapacities[UpgradeCapacity_Max] = {
@@ -82,7 +82,7 @@ ARM void ItemManager::GiveRupees(s32 amount, bool param2, bool param3) {
     this->mNumRupees = newAmount;
 
     if (param3) {
-        data_ov024_020d8698->func_ov024_020cd368(param2 && prevNumRupees != this->mNumRupees, true);
+        gpUICounterManager->func_ov024_020cd368(param2 && prevNumRupees != this->mNumRupees, true);
     }
 }
 
@@ -128,7 +128,7 @@ ARM bool ItemManager::TryEquipForcedItem() {
     if (this->mForcedItem != ItemFlag_None) {
         this->mEquippedItem = this->mForcedItem;
         this->mForcedItem   = ItemFlag_None;
-        data_ov024_020d8698->func_ov024_020cd458(this->mEquippedItem, false);
+        gpUICounterManager->func_ov024_020cd458(this->mEquippedItem, false);
         return true;
     }
 

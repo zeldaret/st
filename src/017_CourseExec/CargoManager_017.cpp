@@ -1,6 +1,6 @@
 #include "MainGame/CargoManager.hpp"
 #include "Save/AdventureFlags.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
@@ -83,7 +83,7 @@ bool CargoManager::IsNotUsingTimer(unk32 type) {
 }
 
 void CargoManager::Update() {
-    if (UnkStruct_027e0ce0::func_ov000_0205c904()->func_ov024_020d3dcc() == 0) {
+    if (!UnkStruct_027e0ce0::func_ov000_0205c904()->func_ov024_020d3dcc()) {
         return;
     }
 
@@ -98,7 +98,7 @@ void CargoManager::Update() {
                 }
             } else if (type == CargoType_MegaIce || type == CargoType_Fish) {
                 // the timer won't increase if we are in snow realm
-                if (data_027e09a4->func_01ffd400()->mUnk_1B & 0x20) {
+                if (data_027e09a4->GetCurrentCourseEntry()->unk_1B & 0x20) {
                     this->mCargo.mDecayTimer++;
                 }
             } else {
@@ -108,15 +108,15 @@ void CargoManager::Update() {
             if (this->mCargo.mDecayTimer >= sCargoInfos[this->mCargo.mType].timerMax) {
                 this->RemoveAmount(1);
                 this->mCargo.mDecayTimer = 0;
-                data_ov024_020d8698->func_ov024_020cd3f0(true);
+                gpUICounterManager->func_ov024_020cd3f0(true);
             }
         }
     }
 
     if (this->mCargo.mAmount <= sCargoInfos[this->mCargo.mType].amount) {
-        data_ov024_020d8698->func_ov024_020cd3e0(true);
+        gpUICounterManager->func_ov024_020cd3e0(true);
     } else {
-        data_ov024_020d8698->func_ov024_020cd3e0(false);
+        gpUICounterManager->func_ov024_020cd3e0(false);
     }
 
     if (this->mUnk_18 > 0) {
@@ -127,25 +127,25 @@ void CargoManager::Update() {
 void CargoManager::Reset() {
     this->mCargo.Clear();
     this->mCargo2.Clear();
-    UnkStruct_027e0d00::func_ov000_0205c944()->func_ov024_020d4d10();
+    UnkStruct_027e0d00::GetInstance()->func_ov024_020d4d10();
 }
 
 void CargoManager::Init(unk32 type, unk32 amount) {
     this->mCargo.Set(type, amount);
     this->mCargo2.Set(type, amount);
 
-    UnkStruct_027e0d00 *pUnkStruct_027e0d00 = UnkStruct_027e0d00::func_ov000_0205c944();
+    UnkStruct_027e0d00 *pUnkStruct_027e0d00 = UnkStruct_027e0d00::GetInstance();
     pUnkStruct_027e0d00->func_ov024_020d4d10();
     pUnkStruct_027e0d00->func_ov024_020d4cc0(this->mCargo.mType);
 
-    data_ov024_020d8698->func_ov024_020cd410();
-    data_ov024_020d8698->func_ov024_020cd3f0(true);
+    gpUICounterManager->func_ov024_020cd410();
+    gpUICounterManager->func_ov024_020cd3f0(true);
 }
 
 void CargoManager::func_ov017_020bebdc() {
     if (this->mCargo.mType > CargoType_None && this->mCargo.mType < CargoType_Max) {
         this->RemoveAmount(sCargoInfos[this->mCargo.mType].amountDecr);
-        data_ov024_020d8698->func_ov024_020cd3d0();
+        gpUICounterManager->func_ov024_020cd3d0();
     }
 }
 
@@ -153,7 +153,7 @@ void CargoManager::func_ov017_020bec20() {
     if (this->mCargo.mType > CargoType_None && this->mCargo.mType < CargoType_Max) {
         this->mUnk_18 = 0x1E;
         this->RemoveAmount(sCargoInfos[this->mCargo.mType].amountDamageDecr);
-        data_ov024_020d8698->func_ov024_020cd3d0();
+        gpUICounterManager->func_ov024_020cd3d0();
     }
 }
 
@@ -172,7 +172,7 @@ void CargoManager::RemoveAmount(unk32 decr) {
 }
 
 bool CargoManager::func_ov017_020bec9c() {
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsTrain()) {
         return data_027e0cd8->mUnk_0C->mUnk_160->func_ov026_02106aa8();
     }
 

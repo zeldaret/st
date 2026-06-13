@@ -67,7 +67,7 @@ ARM void ActorUnkEFIK::vfunc_20() {
                 bStack_40[1] = k;
 
                 if (pUVar5->func_ov000_02080180(bStack_40) == 0x38) {
-                    u16 random = gRandom.Next32(0, 6);
+                    u16 random = gRandom.Next32(6);
 
                     if (random == 0) {
                         VecFx32 vec;

@@ -30,7 +30,7 @@ ARM bool MapObjectDoorTouch::vfunc_00(void) {
 ARM void MapObjectDoorTouch::vfunc2_10(void) {
     MapObjectProfileDoorTouch *p = GET_PROFILE(MapObjectProfileDoorTouch);
     unk32 index                  = this->mUnk_20.mUnk_00[0];
-    this->mUnk_94.vfunc_08(GetUnkPointer2<MapObjectProfileDoorTouch>(index, data_ov031_02110c3c[index]));
+    this->mUnk_94.vfunc_08(GetModelFromProfile2<MapObjectProfileDoorTouch>(index, data_ov031_02110c3c[index]));
 }
 
 ARM void MapObjectDoorTouch::vfunc_40(void) {

@@ -96,7 +96,7 @@ void AdventureModeManager_174_Base::func_ov024_020c8b2c() {
     data_027e0cd8->func_ov000_02081c28();
 
     AdventureModeManager *pAdvMgr = GetAdventureModeManager();
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsTrain()) {
         GetAdventureModeManager()->func_ov024_020c555c(1);
     } else {
         if (data_027e0998->func_ov024_020c7354()) {
@@ -117,14 +117,14 @@ void AdventureModeManager_174_Base::func_ov024_020c8b2c() {
     if (data_027e09a4->IsDarkRealm()) {
         data_0204a110.func_02019538(6, 1);
     } else {
-        if (data_027e09a4->func_01ffd3d8()) {
+        if (data_027e09a4->IsTrain()) {
             data_0204a110.func_02019538(4, 1);
         } else {
             data_0204a110.func_02019538(0, 1);
         }
     }
 
-    if (data_027e09a4->func_01ffd3d8() || data_027e0998->func_ov024_020c7354()) {
+    if (data_027e09a4->IsTrain() || data_027e0998->func_ov024_020c7354()) {
         pAdvMgr->func_ov024_020c671c();
     } else {
         pAdvMgr->func_ov024_020c66c0();

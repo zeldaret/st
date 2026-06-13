@@ -81,20 +81,23 @@ struct UnkStruct_func_ov000_020702a8 {
 };
 
 struct CourseRoomEntry {
-    u8 roomIndex;
-    u8 mapPaintIndex;
-    u8 unk_02;
-    u8 unk_03;
+    /* 00 */ u8 roomIndex;
+    /* 01 */ u8 mapPaintIndex;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+    /* 04 */
 };
 
 struct CourseEntry {
     /* 00 */ const char name[16];
     /* 10 */ unk32 unk_10;
-    /* 14 */ unk8 mNumRooms;
+    /* 14 */ unk8 numRooms;
     /* 15 */ unk8 unk_15;
-    /* 16 */ unk8 unk_16;
-    /* 17 */ u8 mSaveCourseIndex;
-    /* 18 */ STRUCT_PAD(0x18, 0x1D);
+    /* 16 */ unk8 titleCardMsgIndex;
+    /* 17 */ u8 saveCourseIndex;
+    /* 18 */ STRUCT_PAD(0x18, 0x1B);
+    /* 1B */ u8 unk_1B;
+    /* 1C */ u8 unk_1C;
     /* 1D */ u8 unk_1D;
     /* 1E */ u8 unk_1E;
     /* 1F */ u8 unk_1F;
@@ -113,6 +116,7 @@ public:
     UnkStruct_func_ov000_020702a8 *func_ov000_020702a8(unk32 param1);
     unk32 GetRoomEntryIndex();
     CourseRoomEntry *GetRoomEntry(u32 sceneIndex, unk32 param2);
+    u32 GetSceneIndexFromName(const char *sceneName);
     bool func_ov000_02070378(u32 param1);
 };
 

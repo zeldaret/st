@@ -37,7 +37,7 @@ ARM MapObjectProfileDoorDangerSpawn::MapObjectProfileDoorDangerSpawn() :
 }
 
 ARM MapObjectDoorDangerSpawn::MapObjectDoorDangerSpawn() :
-    mUnk_94(GetUnkPointer1<MapObjectProfileDoorDangerSpawn>()),
+    mUnk_94(GetModelFromProfile<MapObjectProfileDoorDangerSpawn>()),
     mUnk_9C(1),
     mUnk_A0(0),
     mUnk_A1(false),
@@ -128,7 +128,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_04(void) {
         ptr->func_ov000_020803ec(this->mUnk_20.mUnk_00[0]);
         this->vfunc_5C(0, 0);
 
-        UnkStruct_027e09bc_0c *uVar5 = data_027e09bc->mUnk_0C;
+        UnkStruct_027e09bc_0C *uVar5 = data_027e09bc->mUnk_0C;
         MapObjectDoorDangerSpawn::func_ov031_020fe5fc(&auStack_20, this);
 
         uVar5->func_ov000_0207834c(&auStack_20, (unk32) func_ov000_02077590(0), 0);
@@ -182,7 +182,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_08(void) {
                         sp3C                     = *temp_r0_3;
                         ((unk16 *) sp3C.data)[3] = this->mUnk_14;
 
-                        UnkStruct_027e09bc_0c *temp_r5 = data_027e09bc->mUnk_0C;
+                        UnkStruct_027e09bc_0C *temp_r5 = data_027e09bc->mUnk_0C;
 
                         this->func_ov031_020fe5fc(&sp10, this);
                         temp_r5->func_ov000_02078764(&sp10, &sp3C, 0);
@@ -196,7 +196,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_08(void) {
 
                         sp1C = *temp_r0_3;
 
-                        UnkStruct_027e09bc_0c *temp_r7_2 = data_027e09bc->mUnk_0C;
+                        UnkStruct_027e09bc_0C *temp_r7_2 = data_027e09bc->mUnk_0C;
                         this->func_ov031_020fe5fc(&sp4, this);
                         temp_r7_2->func_ov000_02078764(&sp4, &sp1C, 0);
                     }
@@ -247,7 +247,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_08(void) {
 
                 unk32 temp = data_027e0cd8->mUnk_0C->func_ov000_02080a44();
                 data_ov000_020b51b8.func_ov000_0206d0ec(temp, 0x78, 0x7F, -1);
-                this->func_ov000_0209d2c4(1, 1);
+                this->func_ov000_0209d2c4(1, true);
                 return;
             }
             break;
@@ -335,8 +335,8 @@ ARM void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
             this->MapObjectDoorBase::vfunc_5C(param1, param2);
             break;
         case 0:
-            this->func_ov000_0209d2c4(1, 0);
-            this->func_ov000_0209d2c4(0, 1);
+            this->func_ov000_0209d2c4(1, false);
+            this->func_ov000_0209d2c4(0, true);
 
             if (this->mUnk_A2 == 0) {
                 data_ov000_020b51b8.func_ov000_0206d134(0x0F);
@@ -385,7 +385,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
         case 8:
             ptr = &data_027e0cd8;
             this->MapObjectDoorBase::vfunc_5C(param1, param2);
-            this->func_ov000_0209d2c4(0, 0);
+            this->func_ov000_0209d2c4(0, false);
 
             if (param2 == 0) {
                 (*ptr)->mUnk_0C->func_ov000_0208053c(this->mUnk_20.mUnk_00[0]);
@@ -415,7 +415,7 @@ ARM bool MapObjectDoorDangerSpawn::vfunc_64(void) {
             }
 
             pUVar4 = data_027e0cd8->mUnk_0C;
-            if (pUVar4->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], data_027e0ce0->func_01fff148(0)) == 0) {
+            if (!pUVar4->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], data_027e0ce0->func_01fff148(0))) {
                 return true;
             }
 
@@ -493,7 +493,7 @@ ARM bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
                 }
             }
 
-            if (pUVar5->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], data_027e0ce0->func_01fff148(0)) != 0) {
+            if (pUVar5->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], data_027e0ce0->func_01fff148(0))) {
                 pUVar5->func_ov000_020803ec(this->mUnk_20.mUnk_00[0]);
                 return true;
             }
@@ -550,7 +550,7 @@ ARM bool MapObjectDoorDangerSpawn::func_ov031_020fdec8(void) {
             pUVar4 = data_027e0cd8->mUnk_0C;
             uVar3  = pUVar4->func_ov001_020b8a5c(data_027e09a4->func_ov000_02070560()->mSpawnIndex, 0);
 
-            if (pUVar4->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], uVar3) != 0) {
+            if (pUVar4->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], uVar3)) {
                 return true;
             }
 

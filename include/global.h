@@ -44,6 +44,31 @@
 
 #define STRUCT_PAD(from, to) unsigned char _pad_##from[(to) - (from)]
 
+#define DF_CONCAT3_(a, b, c) a##b##c
+#define DF_CONCAT3(a, b, c) DF_CONCAT3_(a, b, c)
+#define DF_UNIQUE_IDENT(ident_) DF_CONCAT3(ident_, _, __LINE__)
+
+// sometimes we need something in .bss
+// to force things in .data to align properly
+#define DATA_ALIGN_FIX() int DF_UNIQUE_IDENT(__data_align_fix)
+
+#ifndef typeof
+    #define typeof __typeof__
+#endif
+#define DF_TYPEOF typeof
+#define DF_FUNCTION_DECLARATOR_WITH_PROTO(ident_) \
+    extern void(ident_)(void);                    \
+    extern void(ident_)(void)
+#define DF_FUNCTION_CALL(ident_, arg_)    \
+    extern void(ident_)(DF_TYPEOF(arg_)); \
+    (ident_)(arg_)
+
+// prevents the linker from deadstripping a symbol (can be anything)
+#define DECOMP_FORCE(arg_)                                             \
+    DF_FUNCTION_DECLARATOR_WITH_PROTO(DF_UNIQUE_IDENT(DECOMP_FORCE)) { \
+        DF_FUNCTION_CALL(DF_UNIQUE_IDENT(DECOMP_FORCE_CALL), arg_);    \
+    }
+
 #define SUBSCREEN_WIDTH 256
 #define SUBSCREEN_HEIGHT 192
 
@@ -57,5 +82,12 @@
         virtual void dummy();           \
     };                                  \
     void _VTABLE_PAD_##name::dummy() {}
+
+#define DELETE(ptr) \
+    {               \
+        delete ptr; \
+        ptr = NULL; \
+    }               \
+    (void) 0
 
 #endif

@@ -40,7 +40,7 @@ ARM MapObjectDoorClick::MapObjectDoorClick() :
     this->mUnk_8F = true;
     SET_FLAG(this->mFlags, MapObjFlag_9);
     this->mUnk_18[0] = 0x0E;
-    this->func_ov000_0209d2c4(1, 1);
+    this->func_ov000_0209d2c4(1, true);
 }
 
 ARM u16 MapObjectDoorClick::vfunc2_1C(unk32 param1) {
@@ -268,7 +268,7 @@ ARM void MapObjectDoorClick::vfunc_5C(unk32 param1, unk32 param2) {
 
                 UNSET_FLAG(this->mFlags, MapObjFlag_9);
                 this->vfunc2_18();
-                this->func_ov000_0209d2c4(1, 1);
+                this->func_ov000_0209d2c4(1, true);
             }
 
             break;
@@ -406,7 +406,7 @@ ARM void MapObjectDoorClick::vfunc_78(void) {
 
 ARM void MapObjectDoorClick::vfunc2_10(void) {
     unk32 index = this->mUnk_20.mUnk_00[0];
-    this->mUnk_94.vfunc_08(GetUnkPointer2<MapObjectProfileDoorClick>(index, data_ov031_02110c1c[index]));
+    this->mUnk_94.vfunc_08(GetModelFromProfile2<MapObjectProfileDoorClick>(index, data_ov031_02110c1c[index]));
 }
 
 ARM void MapObjectDoorClick::vfunc_40(void) {

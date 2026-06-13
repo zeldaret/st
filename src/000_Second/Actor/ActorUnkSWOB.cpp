@@ -75,7 +75,7 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
 
             s16 unk_78 = this->mUnk_5C.mUnk_1C_0;
             if (unk_78 > 0) {
-                data_027e0cd8->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_5C.mUnk_18.y, 1);
+                data_027e0cd8->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_5C.mUnk_18.y, true);
             }
             break;
         case 2: {
@@ -100,9 +100,9 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
                 if (gpActorManager->func_01fff3b4(this->mUnk_A4[i].mUnk_00) == NULL) {
                     this->mUnk_A4[i].mUnk_00 = 0;
 
-                    vec.x = INT_TO_FX32(gRandom.Next32(0, 11) - 5);
+                    vec.x = INT_TO_FX32(gRandom.Next32(11) - 5);
                     vec.y = 0;
-                    vec.z = INT_TO_FX32(gRandom.Next32(0, 11) - 5);
+                    vec.z = INT_TO_FX32(gRandom.Next32(11) - 5);
 
                     VecFx32_Add(&vec, &vec2, &vec);
 

@@ -74,7 +74,7 @@ data_027e0960 kind:bss addr:0x027e0960
 data_027e0964 kind:bss addr:0x027e0964
 data_027e0970 kind:bss addr:0x027e0970
 data_027e0988 kind:bss addr:0x027e0988
-data_027e0994 kind:bss addr:0x027e0994
+gpCurrentGameModeMgr kind:bss addr:0x027e0994
 data_027e0998 kind:bss addr:0x027e0998
 data_027e099c kind:bss addr:0x027e099c
 data_027e09a0 kind:bss addr:0x027e09a0

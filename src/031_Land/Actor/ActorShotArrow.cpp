@@ -3,7 +3,6 @@
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorUnkGYAM.hpp"
 #include "Actor/ActorUnkIWTS.hpp"
-#include "Actor/ActorUnkLOCK.hpp"
 #include "Actor/ActorUnkMRD2.hpp"
 #include "MapObject/MapObjectUnkHOLB.hpp"
 #include "System/OverlayManager.hpp"
@@ -65,34 +64,34 @@ extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
 extern "C" unk32 func_01ffbbe0(fx32, fx32);
 extern "C" bool func_01ffccf4(VecFx32 *, VecFx32 *, VecFx32 *, unk32 *);
 extern "C" void func_01ffe6c4(unk32 *, u32, VecFx32 *, VecFx32 *, s32, VecFx32 *);
-extern "C" void func_0200eab0(unk32, unk16, u8);
-extern "C" UnkResourceStruct2 *func_0200f05c(void *, char *);
-extern "C" void func_ov000_02057c98(UnkSystem4 *param1, UnkSystem5 *param2);
+extern "C" void func_0200eab0(G3d_Model *, unk16, u8);
+extern "C" UnkResourceStruct2 *func_0200f05c(G3d_NameList *, char *);
+extern "C" void func_ov000_02057c98(ModelRender *param1, UnkSystem5 *param2);
 extern "C" unk32 func_ov000_0205aeac();
 extern "C" void func_ov000_0207b6c0();
 extern "C" void func_ov075_02160864(ActorShotArrow *, unk32);
 
-#define ReturnUnkPointer3(param1, param2)                                    \
-    {                                                                        \
-        UnkResourceStruct *temp = param1;                                    \
-        if (temp != NULL) {                                                  \
-            UnkResourceStruct2 *ptr = func_0200f05c(&temp->mUnk_08, param2); \
-                                                                             \
-            if (ptr != NULL) {                                               \
-                return (void *) ((u32) temp + (u32) ptr->mUnk_00);           \
-            }                                                                \
-        }                                                                    \
-                                                                             \
-        return NULL;                                                         \
+#define ReturnUnkPointer3(param1, param2)                                      \
+    {                                                                          \
+        BMDSectionModel *temp = param1;                                        \
+        if (temp != NULL) {                                                    \
+            UnkResourceStruct2 *ptr = func_0200f05c(&temp->modelList, param2); \
+                                                                               \
+            if (ptr != NULL) {                                                 \
+                return (G3d_Model *) ((u32) temp + (u32) ptr->mUnk_00);        \
+            }                                                                  \
+        }                                                                      \
+                                                                               \
+        return NULL;                                                           \
     }
 
 extern "C" MapObjectProfile_Derived2_20_Base *func_ov031_020f1404();
 
-ARM static inline void *GetResource(char *str) {
+ARM static inline G3d_Model *GetResource(char *str) {
     ReturnUnkPointer3(func_ov031_020f1404()->mUnk_50, str);
 }
 
-ARM static inline void *GetResource() {
+ARM static inline G3d_Model *GetResource() {
     ReturnUnkPointer3(func_ov031_020f1404()->mUnk_50, data_ov031_02110b5c);
 }
 
@@ -109,8 +108,8 @@ ARM ActorProfileShotArrow::ActorProfileShotArrow() :
 
 ARM ActorShotArrow::ActorShotArrow() :
     mUnk_9C(true),
-    mUnk_A0((unk32) GetResource()),
-    mUnk_100(&this->mUnk_120, (unk32) GetResource(), func_ov031_020f1404()->func_ov000_02058a84(0, data_ov031_02110b08)),
+    mUnk_A0(GetResource()),
+    mUnk_100(&this->mUnk_120, GetResource(), func_ov031_020f1404()->func_ov000_02058a84(0, data_ov031_02110b08)),
     mUnk_140(this),
     mUnk_168(0),
     mUnk_16C(0),
@@ -538,7 +537,7 @@ ARM void ActorShotArrow::func_ov031_020f229c() {
 }
 
 ARM void ActorShotArrow::func_ov031_020f22d4(Mat3p *param_1, VecFx32 *param_2) {
-    func_0200eab0(this->mUnk_A0.mUnk_04, 0x0, this->mUnk_25E);
+    func_0200eab0(this->mUnk_A0.mpModel, 0x0, this->mUnk_25E);
     this->mUnk_A0.vfunc_14(param_1, param_2);
 }
 

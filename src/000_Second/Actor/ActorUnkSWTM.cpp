@@ -184,7 +184,7 @@ ARM void ActorUnkSWTM::func_ov000_0209b160(void) {
 
 ARM void ActorUnkSWTM::func_ov000_0209b184(void) {
     for (int i = this->mUnk_9E; i < this->mUnk_A0; i++) {
-        data_027e0cd8->func_ov000_02081d7c(i, this->mUnk_A2, 0);
+        data_027e0cd8->func_ov000_02081d7c(i, this->mUnk_A2, false);
     }
 }
 

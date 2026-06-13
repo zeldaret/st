@@ -9,6 +9,11 @@ struct ActorRef {
     /* 2 */ u16 id;
     /* 4 */
 
+    ActorRef() {}
+    ActorRef(u32 value) {
+        *(u32 *) this = value;
+    }
+
     void Reset() {
         *(u32 *) this = 0;
     }

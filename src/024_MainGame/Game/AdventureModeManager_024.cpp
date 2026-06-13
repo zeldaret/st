@@ -3,11 +3,11 @@
 #include "MainGame/AdventureMode.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/Common.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -34,12 +34,8 @@ extern "C" {
 void func_02019b3c();
 void func_02019c4c();
 void func_02019a74();
-unk32 func_ov024_020d5304(unk32 sceneIndex);
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
-void func_ov024_020d24d4(void *);
-void func_ov024_020d2538(void *, SceneIndex, unk32, void *);
-void func_ov024_020d2518(void *);
 }
 
 extern void *data_ov000_020b64f8;
@@ -113,7 +109,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             data_0204a110.mUnk_D9C.func_0201c494(1);
             break;
         case 3:
-            if (data_027e09a4->func_01ffd3d8()) {
+            if (data_027e09a4->IsTrain()) {
                 this->func_ov024_020c5364();
             } else {
                 this->func_ov024_020c52f4();
@@ -127,7 +123,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             }
             break;
         case 4:
-            if (data_027e09a4->func_01ffd3d8()) {
+            if (data_027e09a4->IsTrain()) {
                 this->func_ov024_020c5364();
             } else {
                 this->func_ov024_020c52f4();
@@ -142,7 +138,7 @@ void AdventureModeManager::func_ov024_020c53e8() {
             }
             break;
         case 5:
-            if (data_027e09a4->func_01ffd3d8()) {
+            if (data_027e09a4->IsTrain()) {
                 this->func_ov024_020c537c();
             } else {
                 this->func_ov024_020c530c();
@@ -179,7 +175,7 @@ void AdventureModeManager::vfunc_24() {
             this->mUnk_15C->func_ov017_020c3c64();
         }
 
-        if (data_027e09a4->func_01ffd3d8()) {
+        if (data_027e09a4->IsTrain()) {
             data_ov026_0213f578->func_ov026_020f4844();
         }
 
@@ -248,7 +244,7 @@ void AdventureModeManager::vfunc_24() {
         return;
     }
 
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsTrain()) {
         data_027e0ce0->mUnk_38->mUnk_010->func_ov026_020f4870();
     }
 
@@ -395,7 +391,7 @@ void AdventureModeManager::vfunc_24() {
                 }
             }
 
-            if (!data_027e09a4->func_01ffd3d8()) {
+            if (!data_027e09a4->IsTrain()) {
                 return;
             }
 
@@ -425,10 +421,10 @@ void AdventureModeManager::vfunc_24() {
 }
 
 void AdventureModeManager::func_ov024_020c5cec() {
-    data_ov024_020d8698->func_ov024_020cd420();
+    gpUICounterManager->func_ov024_020cd420();
 
-    if (!data_027e09a4->func_01ffd3d8()) {
-        data_ov024_020d8698->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
+    if (!data_027e09a4->IsTrain()) {
+        gpUICounterManager->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
 
         if (gOverlayManager.IsPlayerSub() && data_0204a088->mUnk_00 == OverlayIndex_SceneInit) {
             this->mUnk_168->func_ov031_0210df60(1);
@@ -450,8 +446,8 @@ bool AdventureModeManager::func_ov024_020c5dac() {
             !data_027e09b8->func_ov000_020732dc(3) && !data_027e09b8->func_ov000_020732dc(4)) {
             if (data_0204e5f8.mUnk_00.GetNextTarget() == GetLinkListOrigin(data_0204e5f8.mUnk_00) &&
                 (unk_00 != 1 || this->func_ov024_020c69d0() != 0) &&
-                (data_027e09a4->func_01ffd3d8() || this->mUnk_168->func_ov031_0210dfd8() == 0) &&
-                (!data_027e09a4->func_01ffd3d8() || data_ov026_02138d10->func_ov026_020e18fc() != 0)) {
+                (data_027e09a4->IsTrain() || this->mUnk_168->func_ov031_0210dfd8() == 0) &&
+                (!data_027e09a4->IsTrain() || data_ov026_02138d10->func_ov026_020e18fc() != 0)) {
                 return true;
             }
         }
@@ -462,7 +458,7 @@ bool AdventureModeManager::func_ov024_020c5dac() {
 
 bool AdventureModeManager::func_ov024_020c5ecc() {
     if (data_ov026_02138d10->func_ov026_020e13f4() != 0 && data_027e09b8->func_01ffd420() == 0 &&
-        func_ov024_020d5304(data_027e09a4->mUnk_00.mSceneIndex) != 0 &&
+        func_ov024_020d5304(data_027e09a4->mUnk_00.mSceneIndex) &&
         (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == NULL) && this->func_ov024_020c6a20() != 0 &&
         data_ov026_0213f590.func_ov026_020f7cc0() == 0) {
         return true;
@@ -474,7 +470,7 @@ bool AdventureModeManager::func_ov024_020c5ecc() {
 bool AdventureModeManager::func_ov024_020c5f70() {
     bool var_r4 = false;
 
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsTrain()) {
         var_r4 = true;
     } else if (data_027e0d34 != NULL) {
         var_r4 = data_027e0d34->func_ov031_020d97f4();
@@ -487,8 +483,7 @@ bool AdventureModeManager::func_ov024_020c5f70() {
             if (data_0204e5f8.mUnk_00.GetNextTarget() == GetLinkListOrigin(data_0204e5f8.mUnk_00) &&
                 (unk_00 == 1 || unk_00 - 6 <= 1) && (unk_00 != 1 || this->func_ov024_020c69d0() != 0) &&
                 (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == NULL) &&
-                (data_027e09a4->func_01ffd3d8() || this->mUnk_168->func_ov031_0210dfd8() == 0) &&
-                !data_027e09a4->IsDarkRealm()) {
+                (data_027e09a4->IsTrain() || this->mUnk_168->func_ov031_0210dfd8() == 0) && !data_027e09a4->IsDarkRealm()) {
                 return true;
             }
         }
@@ -500,7 +495,7 @@ bool AdventureModeManager::func_ov024_020c5f70() {
 bool AdventureModeManager::func_ov024_020c60f4() {
     bool var_r4 = false;
 
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsTrain()) {
         var_r4 = true;
     } else if (data_027e0d34 != NULL) {
         var_r4 = data_027e0d34->func_ov031_020d97e4();
@@ -523,7 +518,7 @@ bool AdventureModeManager::func_ov024_020c623c() {
     u32 scene = data_027e09a4->mUnk_00.mSceneIndex;
 
     if ((gOverlayManager.IsMapA6() && ActorUnkTUTO::func_ov037_02120a64() != 0) ||
-        (data_027e09a4->func_01ffd400()->mUnk_10 == 6 && scene == SceneIndex_f_trnnpc) ||
+        (data_027e09a4->GetCurrentCourseEntry()->unk_10 == 6 && scene == SceneIndex_f_trnnpc) ||
         (data_ov024_020d8660 != NULL && data_ov024_020d8660->mUnk_00 != NULL) || (scene - SceneIndex_b_last1 <= 3)) {
         return false;
     }
@@ -667,7 +662,7 @@ void AdventureModeManager::func_ov024_020c66c0() {
 void AdventureModeManager::func_ov024_020c671c() {
     this->func_ov024_020c6770(this->mUnk_1C4.sceneIndex, this->mUnk_1C4.unk_04, 1, this->mUnk_1C4.unk_06);
 
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsTrain()) {
         data_027e0ce0->mUnk_38->mUnk_158->func_ov026_020dc2d0();
     }
 }
@@ -675,7 +670,7 @@ void AdventureModeManager::func_ov024_020c671c() {
 void AdventureModeManager::func_ov024_020c6770(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4) {
     this->func_ov024_020c6514(sceneIndex, param2, param3, param4);
 
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsTrain()) {
         data_027e0cf8->func_ov024_020c77b0(1);
     } else {
         data_027e0cf8->func_ov024_020c77b0(0);
@@ -710,15 +705,14 @@ void AdventureModeManager::func_ov024_020c6840(SceneIndex sceneIndex) {
 
     {
         UnkDataStruct3 uStack_e8(0x1770);
-        func_ov024_020d24d4(&uStack_e8.mUnk_04);
-        func_ov024_020d2538(&uStack_e8.mUnk_04, sceneIndex, 0, uStack_e8.mUnk_00.unk_00);
+        uStack_e8.mUnk_04.func_ov024_020d2538(sceneIndex, 0, uStack_e8.mUnk_00.unk_00);
         data_027e0cf8->func_ov024_020c755c(&uStack_e8.mUnk_04);
-        func_ov024_020d2518(&uStack_e8.mUnk_04);
+        uStack_e8.mUnk_04.func_ov024_020d2518();
     }
 }
 
-void AdventureModeManager::func_ov024_020c68d4() {
-    data_027e0cf8->func_ov024_020c77d0();
+void AdventureModeManager::func_ov024_020c68d4(Vec2s *param1, unk32 param2) {
+    data_027e0cf8->func_ov024_020c77d0(param1, param2);
 }
 
 bool AdventureModeManager::func_ov024_020c68ec(unk32 param1, unk32 param2) {
@@ -762,7 +756,7 @@ void AdventureModeManager::func_ov024_020c699c() {
 }
 
 unk32 AdventureModeManager::func_ov024_020c69d0() {
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsTrain()) {
         unk32 uVar2 = 0;
 
         if (this->mUnk_16C != NULL && this->mUnk_16C->func_ov026_020d8e30() != 0) {
@@ -791,17 +785,17 @@ void AdventureModeManager::func_ov024_020c6a48(unk32 param1, bool param2) {
         case 1:
         case 2:
         case 3:
-            data_ov024_020d8698->func_ov024_020cd4e4(param1, param2);
+            gpUICounterManager->func_ov024_020cd4e4(param1, param2);
             break;
         case 4:
-            if (data_027e09a4->func_01ffd3d8()) {
+            if (data_027e09a4->IsTrain()) {
                 this->mUnk_16C->func_ov026_020d8dd4(param2);
             } else {
                 this->mUnk_168->func_ov031_0210df70(param2);
             }
             break;
         case 5:
-            data_ov024_020d8698->func_ov024_020cd4e4(param1, param2);
+            gpUICounterManager->func_ov024_020cd4e4(param1, param2);
             this->func_ov024_020c6a48(4, param2);
             break;
         default:
@@ -815,13 +809,13 @@ bool AdventureModeManager::func_ov024_020c6af4(unk32 param1) {
         case 1:
         case 2:
         case 3:
-            if (data_ov024_020d8698 == NULL) {
+            if (gpUICounterManager == NULL) {
                 return false;
             }
 
-            return data_ov024_020d8698->func_ov024_020cd5c0(param1);
+            return gpUICounterManager->func_ov024_020cd5c0(param1);
         case 4:
-            if (data_027e09a4->func_01ffd3d8()) {
+            if (data_027e09a4->IsTrain()) {
                 if (this->mUnk_16C != NULL) {
                     return this->mUnk_16C->mUnk_1C;
                 }
@@ -842,23 +836,23 @@ bool AdventureModeManager::func_ov024_020c6af4(unk32 param1) {
 }
 
 void AdventureModeManager::func_ov024_020c6b8c() {
-    if (this->mUnk_1B4 && data_ov024_020d8698 != NULL) {
-        data_ov024_020d8698->Detach();
+    if (this->mUnk_1B4 && gpUICounterManager != NULL) {
+        gpUICounterManager->Detach();
     }
 
-    if (data_ov024_020d8698 != NULL) {
-        UnkStruct_020d8698 *ptr = data_ov024_020d8698;
+    if (gpUICounterManager != NULL) {
+        UICounterManager *ptr = gpUICounterManager;
         this->mUnk_104.Append(ptr);
         ptr->vfunc_18();
 
         if (!this->mUnk_1B4) {
-            data_ov024_020d8698->func_ov024_020cd094();
+            gpUICounterManager->func_ov024_020cd094();
         }
 
         this->mUnk_1B4 = true;
     }
 
-    if (!data_027e09a4->func_01ffd3d8()) {
+    if (!data_027e09a4->IsTrain()) {
         if (!this->mUnk_1B5 && this->mUnk_1B0 != NULL) {
             AdventureModeManager_1B0 *ptr = this->mUnk_1B0;
             this->mUnk_104.Append(ptr);
@@ -870,12 +864,12 @@ void AdventureModeManager::func_ov024_020c6b8c() {
 }
 
 void AdventureModeManager::func_ov024_020c6c60() {
-    if (this->mUnk_1B4 && data_ov024_020d8698 != NULL) {
-        data_ov024_020d8698->Detach();
+    if (this->mUnk_1B4 && gpUICounterManager != NULL) {
+        gpUICounterManager->Detach();
         this->mUnk_1B4 = false;
     }
 
-    if (!data_027e09a4->func_01ffd3d8()) {
+    if (!data_027e09a4->IsTrain()) {
         if (this->mUnk_1B5 && this->mUnk_1B0 != NULL) {
             this->mUnk_1B0->Detach();
             this->mUnk_1B5 = false;

@@ -1,0 +1,15 @@
+#include "types.h"
+
+// unused, probably a debug leftover?
+char data_ov024_020d8560[] = "客車";                 // "Passenger Car"
+char data_ov024_020d8568[] = "貨車";                 // "Freight Car"
+char data_ov024_020d8570[] = "木製";                 // "Wooden"
+char data_ov024_020d8550[] = "中世";                 // "Medieval Times"
+char data_ov024_020d8558[] = "骨製";                 // "Made of Bone"
+char data_ov024_020d8578[] = "黄金製";               // "Golden"
+char data_ov024_020d8580[] = "鋼鉄製";               // "Steel"
+char data_ov024_020d8588[] = "機関車";               // "Locomotive"
+char data_ov024_020d859c[] = "神の汽車";             // "God's Train"
+char data_ov024_020d8590[] = "砲台車輌";             // "Artillery Vehicle"
+char data_ov024_020d85a8[] = "お祭り（民族風？）";   // "Festival (ethnic style?)"
+char data_ov024_020d85bc[] = "キュート（お菓子？）"; // "Cute (candy?)"

@@ -4,6 +4,7 @@
 #include "types.h"
 #include "versions.h"
 
+#include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
@@ -168,7 +169,7 @@ public:
     /* 070 */ u8 mUnk_72;    // probably bools
     /* 070 */ u8 mUnk_73;    // probably bools
     /* 074 */ UnkStruct_PlayerGet_74 mUnk_74;
-    /* 08C */ UnkSystem4 mUnk_8C;
+    /* 08C */ ModelRender mUnk_8C;
     /* 0EC */ UnkStruct_PlayerGet_ec mUnk_EC[4];
     /* 0FC */ void *mUnk_FC;
     /* 100 */

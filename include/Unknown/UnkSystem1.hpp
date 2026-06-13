@@ -21,6 +21,7 @@ public:
     /* 04 */ unk16 mUnk_04;
     /* 06 */ u16 mUnk_06;
     /* 08 */ unk32 mUnk_08;
+    /* 0C */
 
     UnkSystem1_ov000_Base(unk32 param1);
     bool func_ov000_020669b4(u8 *param1);
@@ -63,12 +64,24 @@ public:
 class UnkSystem1_ov000_Derived2 : public UnkSystem1_ov000_Base {
 public:
     /* 00 (base) */
+    /* 0C */ unk16 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk8 mUnk_18;
+    /* 19 */ unk8 mUnk_19;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ unk8 mUnk_28;
+    /* 2C */ unk32 mUnk_2C;
+    /* 30 */ unk32 mUnk_30;
+    /* 34 */
 
-    UnkSystem1_ov000_Derived2(unk32 param1, unk32 param2);
+    UnkSystem1_ov000_Derived2(unk32 param1);
 
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;  // func_ov000_0209fbec
-    /* 0C */ virtual unk32 vfunc_0C() override;             // func_ov000_0209fcdc
-    /* 24 */ virtual ~UnkSystem1_ov000_Derived2() override; // func_ov000_0209fb18 & func_ov000_0209fb5c
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 0C */ virtual unk32 vfunc_0C() override;
+    /* 24 */ virtual ~UnkSystem1_ov000_Derived2() override;
 };
 
 // data_ov010_020b8e10

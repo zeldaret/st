@@ -157,13 +157,13 @@ ARM void UnkSubStruct9::func_ov019_020cbc0c() {
     }
 
     unk32 uVar10 = 0;
-    unk32 uVar6  = (pSlot->mSaveInfo.mSaveInfoData[0].mInventory.mUnk_00 << 4) >> 26;
+    unk32 uVar6  = (pSlot->mInfoData[0].inventory.unk_80 << 4) >> 26;
 
     if (uVar6 == 0) {
         uVar6 = 0x40;
     }
 
-    unk32 uVar13 = (pSlot->mSaveInfo.mSaveInfoData[0].mInventory.mUnk_00 << 10) >> 26;
+    unk32 uVar13 = (pSlot->mInfoData[0].inventory.unk_80 << 10) >> 26;
     if (uVar13 == 0) {
         uVar13 = uVar6;
     }

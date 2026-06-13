@@ -211,8 +211,7 @@ ARM void MapObjectProfile_Derived1::vfunc_0C() {
 ARM void MapObjectProfile_Derived1::vfunc_10() {
     for (MapObjectProfile_Derived2_20 **ptr = this->mUnk_20; ptr != &this->mUnk_20[ARRAY_LEN(this->mUnk_20)]; ptr++) {
         if (*ptr != NULL) {
-            delete *ptr;
-            *ptr = NULL;
+            DELETE(*ptr);
         }
     }
 }

@@ -15,13 +15,14 @@ enum HappinessLevel_ {
 };
 
 struct UnkStruct_Param1 {
-    ActorId actorId;
-    s16 mUnk_04;
-    SceneIndex_Half sceneIndex;
-    u8 roomIndex;
-    unk32 mUnk_0C;
-    unk32 happiness;
-    u16 mUnk_14;
+    /* 00 */ ActorId actorId;
+    /* 04 */ s16 mUnk_04;
+    /* 06 */ SceneIndex_Half sceneIndex;
+    /* 08 */ u8 roomIndex;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 happiness;
+    /* 14 */ u16 mUnk_14;
+    /* 18 */
 };
 
 class Passenger {
@@ -58,7 +59,7 @@ public:
     static bool func_ov001_020bf870();
 
     // overlay 24
-    void func_ov024_020d41bc(UnkStruct_Param1 *pActorId);
+    void func_ov024_020d41bc(const UnkStruct_Param1 *pActorId);
     void func_ov024_020d41f4(UnkStruct_Param1 *param1);
     void func_ov024_020d4228();
     void func_ov024_020d4258();
@@ -79,7 +80,7 @@ public:
     void Reset();
     bool IsDateUnset();
     s16 GetDate();
-    u32 GetRandomIndex(u32 arg1, s32 arg2);
+    u32 GetRandomIndex(u32 param1, u32 seed);
     void SetFailedFlag();
 
     static u32 GetPassengerInfoIndex(ActorId actorId);
@@ -89,3 +90,4 @@ public:
 };
 
 extern PassengerManager *gpPassengerManager;
+extern const s16 data_ov024_020d7598[];

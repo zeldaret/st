@@ -614,7 +614,7 @@ ARM void MapObjectDoorBase::vfunc_80() {
 }
 
 ARM void MapObjectDoorBase::func_ov031_020fcd40() {
-    this->func_ov000_0209d2c4(1, 1);
+    this->func_ov000_0209d2c4(1, true);
     this->func_ov000_0209d614(1);
 }
 

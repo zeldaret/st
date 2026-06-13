@@ -37,9 +37,9 @@ ARM PlayerSceneChange::PlayerSceneChange() {
 
 ARM PlayerSceneChange::~PlayerSceneChange() {
     UnkStruct_ov000_0208f820_28 *pUnk_28 = this->mUnk_28;
-    pUnk_28->mUnk_38.mUnk_40 &= 0xFFFD;
+    pUnk_28->mUnk_38.mUnk_08 &= 0xFFFD;
 
-    if (pUnk_28->mUnk_38.mUnk_40 == 0) {
+    if (pUnk_28->mUnk_38.mUnk_08 == 0) {
         pUnk_28->mUnk_38.~UnkStruct_PlayerGet_64();
     }
 
@@ -77,7 +77,7 @@ extern "C" void func_01ff930c(UnkStruct_ov000_0208f820_40 *, unk16, unk32);
 
 // https://decomp.me/scratch/c7PhN
 ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
-    fx16 *pSinCosTable = gSinCosTable;
+    const fx16 *pSinCosTable = gSinCosTable;
     Vec2b stack4;
     s16 stack3;
     Vec2b stack2;
@@ -648,7 +648,7 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                 this->mUnk_6C--;
 
                 if (this->mUnk_6C < 0x37) {
-                    this->mUnk_28->mUnk_38.mUnk_40 |= 0x02;
+                    this->mUnk_28->mUnk_38.mUnk_08 |= 0x02;
                     break;
                 }
 

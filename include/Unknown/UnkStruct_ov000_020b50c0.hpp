@@ -33,12 +33,12 @@ public:
     /* A4 */ unk16 mUnk_A4;
     /* A6 */ unk16 mUnk_A6;
     /* A8 */ unk32 mUnk_A8[9];
-    /* CC */ unk32 mUnk_CC;
-    /* D0 */ unk32 mUnk_D0;
-    /* D4 */ unk32 mUnk_D4;
-    /* D8 */ unk32 mUnk_D8;
-    /* DC */ unk32 mUnk_DC;
-    /* E0 */ unk32 mUnk_E0;
+    /* CC */ void *mUnk_CC;
+    /* D0 */ void *mUnk_D0;
+    /* D4 */ void *mUnk_D4;
+    /* D8 */ void *mUnk_D8;
+    /* DC */ void *mUnk_DC;
+    /* E0 */ void *mUnk_E0;
     /* E4 */ unk32 mUnk_E4;
 
     UnkStruct_ov000_020b50c0();
@@ -46,8 +46,11 @@ public:
     void func_ov000_02069d3c(unk32 param1);
     void func_ov000_02069d7c(unk32 param1);
     void func_ov000_02069f58(void);
-    unk32 func_ov000_0206a5d8(unk32 param1);
+    bool func_ov000_0206a5cc(unk32 param1);
+    void *func_ov000_0206a5d8(unk32 param1);
+    void func_ov000_0206a5fc(void);
     void func_ov000_0206a6a4(unk32 param1);
+    void func_ov000_0206a740(void);
     void func_ov000_0206a758(void);
     void func_ov000_0206a77c(void);
 

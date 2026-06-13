@@ -38,7 +38,7 @@ ARM MapObjectDoorSwitch::MapObjectDoorSwitch() :
 }
 
 ARM bool MapObjectDoorSwitch::vfunc_00(void) {
-    this->mUnk_094.vfunc_08(this->vfunc2_10());
+    this->mUnk_094.vfunc_08(this->GetModel());
     this->func_ov031_020fbf10(true, true);
 
     if (this->mUnk_20.mUnk_00[3] == 1) {
@@ -146,8 +146,8 @@ ARM void MapObjectDoorSwitch::vfunc_74(void) {
     }
 }
 
-ARM void *MapObjectDoorSwitch::vfunc2_10(void) {
-    return GetUnkPointer1<MapObjectProfileDoorSwitch>();
+ARM G3d_Model *MapObjectDoorSwitch::GetModel(void) {
+    return GetModelFromProfile<MapObjectProfileDoorSwitch>();
 }
 
 ARM void MapObjectDoorSwitch::vfunc_50(void) {

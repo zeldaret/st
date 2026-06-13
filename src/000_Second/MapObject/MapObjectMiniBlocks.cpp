@@ -76,30 +76,8 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
             break;
     }
 
-    UnkResourceStruct *ptr = GET_PROFILE(MapObjectProfileMiniBlocks)->vfunc_1C(this->mUnk_20.mUnk_00[1])->mUnk_50;
-    void *var_r1;
-    if (ptr != NULL) {
-        u16 *temp_r1 = (u16 *) ((u8 *) ptr + 8);
-        u32 *var_r0;
-
-        if (temp_r1 != NULL && uVar6 < ptr->mUnk_09) {
-            u32 unk_0E = ptr->mUnk_0E;
-            u16 temp   = *((u16 *) ((u8 *) temp_r1 + unk_0E));
-            var_r0     = (u32 *) ((u8 *) temp_r1 + unk_0E + 4 + temp * uVar6);
-        } else {
-            var_r0 = NULL;
-        }
-
-        if (var_r0 != NULL) {
-            var_r1 = (void *) ((u8 *) ptr + *var_r0);
-            goto next;
-        }
-    }
-
-    var_r1 = NULL;
-
-next:
-    this->mUnk_40.vfunc_08(var_r1);
+    BMDSectionModel *pSectionModel = GET_PROFILE(MapObjectProfileMiniBlocks)->vfunc_1C(this->mUnk_20.mUnk_00[1])->mUnk_50;
+    this->mUnk_40.vfunc_08(G3d_GetModelVariantPtr(pSectionModel, uVar6));
 
     unk32 var_r0_2;
     unk32 var_r0;

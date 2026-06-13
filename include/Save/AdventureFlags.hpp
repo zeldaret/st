@@ -7,6 +7,7 @@
 typedef u32 AdventureFlag;
 typedef u16 AdventureFlag_Half;
 enum AdventureFlag_ {
+    /*    -1 */ AdventureFlag_Unset                          = 0xFFFF,
     /* 0x000 */ AdventureFlag_Nothing                        = FLAG(0, 0),
     /* 0x001 */ AdventureFlag_Unk_001                        = FLAG(0, 1),
     /* 0x002 */ AdventureFlag_ObtainedSpiritTrain            = FLAG(0, 2),

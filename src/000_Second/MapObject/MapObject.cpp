@@ -142,7 +142,7 @@ ARM bool MapObject::func_ov000_0209d29c(unk32 param1) {
     return data_027e0cd8->func_ov000_02081e30(this->mUnk_20.mUnk_0A[param1], this->mUnk_20.mUnk_08[param1]);
 }
 
-ARM void MapObject::func_ov000_0209d2c4(unk32 param1, unk32 param2) {
+ARM void MapObject::func_ov000_0209d2c4(unk32 param1, bool param2) {
     data_027e0cd8->func_ov000_02081d7c(this->mUnk_20.mUnk_0A[param1], this->mUnk_20.mUnk_08[param1], param2);
 }
 

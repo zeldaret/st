@@ -179,7 +179,7 @@ void AdventureModeManager_18C::vfunc_10(unk32 param1, unk32 param2) {
 
 void AdventureModeManager_18C::func_ov024_020c9c6c() {
     GetAdventureModeManager()->func_ov024_020c699c();
-    data_027e0994->mUnk_004.func_0201c0c4(0x65);
+    gpCurrentGameModeMgr->mUnk_004.func_0201c0c4(0x65);
 
     if (this->mUnk_3A) {
         this->mUnk_10 = func_ov011_020b6520(&this->mUnk_0C, this->mUnk_4C);
@@ -289,11 +289,11 @@ void AdventureModeManager_18C::vfunc_20(unk32 param1, unk32 param2) {
 
     switch (param1) {
         case 1: {
-            if (!data_027e09a4->func_01ffd3d8()) {
+            if (!data_027e09a4->IsTrain()) {
                 GetAdventureModeManager()->mUnk_004.func_0201c0c4(0x68);
             }
 
-            if (data_027e09a4->func_01ffd3d8()) {
+            if (data_027e09a4->IsTrain()) {
                 GetAdventureModeManager()->func_ov024_020c555c(1);
             } else if (data_027e0998->func_ov024_020c7354()) {
                 GetAdventureModeManager()->func_ov024_020c555c(4);
@@ -303,7 +303,7 @@ void AdventureModeManager_18C::vfunc_20(unk32 param1, unk32 param2) {
 
             GetAdventureModeManager()->func_ov024_020c53e8();
 
-            if (data_027e09a4->func_01ffd3d8() || data_027e0998->func_ov024_020c7354()) {
+            if (data_027e09a4->IsTrain() || data_027e0998->func_ov024_020c7354()) {
                 GetAdventureModeManager()->func_ov024_020c671c();
             } else {
                 GetAdventureModeManager()->func_ov024_020c66c0();

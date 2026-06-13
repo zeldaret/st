@@ -100,12 +100,10 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
             this->mUnk_94 = 0;
             {
                 VecFx32 vel;
-                vel.x        = 0;
-                vel.y        = 0;
-                vel.z        = 0;
-                this->mVel.x = vel.x;
-                this->mVel.y = vel.y;
-                this->mVel.z = vel.z;
+                vel.x = 0;
+                vel.y = 0;
+                vel.z = 0;
+                VecFx32_Copy(&vel, &this->mVel);
             }
             this->func_ov031_020e9904(0);
             break;
@@ -116,18 +114,16 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
             {
                 VecFx32 vel;
 
-                fx32 vx = gRandom.Next32(0, 0x223) - 0x111;
+                fx32 vx = gRandom.Next32(0x223) - 0x111;
                 vel.x   = vx;
 
-                fx32 vy = gRandom.Next32(0, 0x333) + 0x555;
+                fx32 vy = gRandom.Next32(0x333) + 0x555;
                 vel.y   = vy;
 
-                fx32 vz = gRandom.Next32(0, 0x223) - 0x111;
+                fx32 vz = gRandom.Next32(0x223) - 0x111;
                 vel.z   = vz;
 
-                this->mVel.x = vel.x;
-                this->mVel.y = vel.y;
-                this->mVel.z = vel.z;
+                VecFx32_Copy(&vel, &this->mVel);
             }
             this->func_ov031_020e9904(0);
             break;
@@ -209,14 +205,15 @@ ARM void ActorRupee::func_ov031_020e9068() {
 ARM void ActorRupee::func_ov031_020e9108() {
     VecFx32 vel;
 
-    vel.x = gRandom.Next32(0, 0x19B);
-    vel.y = gRandom.Next32(0, 0x19A);
-    vel.z = gRandom.Next32(0, 0x19B);
+    vel.x = gRandom.Next32(0x19B);
+    vel.y = gRandom.Next32(0x19A);
+    vel.z = gRandom.Next32(0x19B);
 
-    this->mVel.x = vel.x - 0xCD;
-    this->mVel.y = vel.y + 0x9A + 0x100;
-    this->mVel.z = vel.z - 0xCD;
+    vel.x -= 0xCD;
+    vel.y += 0x9A + 0x100;
+    vel.z -= 0xCD;
 
+    VecFx32_Copy(&vel, &this->mVel);
     SET_FLAG(this->mFlags, ActorFlag_Visible);
 }
 

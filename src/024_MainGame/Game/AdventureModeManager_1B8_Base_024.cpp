@@ -27,7 +27,7 @@ static u16 data_ov024_020d869c;
 static const AdventureModeManager_1B8_Base_1C data_ov024_020d8200(0x14, 0x08, 0xD8, 0xB0);
 
 AdventureModeManager_1B8_Base::AdventureModeManager_1B8_Base(u8 bgType, bool param2,
-                                                             const AdventureModeManager_1B8_Base_1C *param3, bool param4,
+                                                             const AdventureModeManager_1B8_Base_1C &param3, bool param4,
                                                              bool param5) {
     this->mUnk_00      = ADVMGR_UNK;
     this->mUnk_04      = ADVMGR_UNK;
@@ -39,9 +39,9 @@ AdventureModeManager_1B8_Base::AdventureModeManager_1B8_Base(u8 bgType, bool par
     this->mBGType      = bgType;
     this->mIsTopScreen = param2;
     this->mUnk_10      = param4;
-    this->mUnk_14      = GetUnkValue_ImplS(param3->mUnk_06, param4);
+    this->mUnk_14      = GetUnkValue_ImplS(param3.mUnk_06, param4);
     this->mUnk_18      = (u8 *) ::operator new(this->mUnk_14, HeapIndex_1, 4);
-    MI_CpuCopy16((void *) param3, &this->mUnk_1C, sizeof(AdventureModeManager_1B8_Base_1C));
+    MI_CpuCopy16((void *) &param3, &this->mUnk_1C, sizeof(AdventureModeManager_1B8_Base_1C));
     this->func_ov024_020d0698();
 }
 
@@ -432,7 +432,7 @@ unk32 AdventureModeManager_1B8_Base::func_ov024_020d0f2c(unk32 param1, unk32 par
 }
 
 AdventureModeManager_1B8::AdventureModeManager_1B8(u8 bgType, bool param2, bool param3) :
-    AdventureModeManager_1B8_Base(bgType, param2, &data_ov024_020d8200, param3, false) {
+    AdventureModeManager_1B8_Base(bgType, param2, data_ov024_020d8200, param3, false) {
     this->mUnk_24 = 0xFF;
     this->mUnk_28 = NULL;
     this->func_ov024_020d0e64(&data_ov024_020d869c, sizeof(data_ov024_020d869c));

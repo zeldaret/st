@@ -361,7 +361,7 @@ ARM UnkStruct_ov000_020b5300::UnkStruct_ov000_020b5300() {
 #endif
 }
 
-ARM void UnkStruct_ov000_020b5300::func_ov018_020c583c(unk32 param1) {
+ARM void UnkStruct_ov000_020b5300::func_ov018_020c583c(void *param1) {
     this->mUnk_1C = param1;
     this->mUnk_00 = 0;
     this->mUnk_04 = param1;
