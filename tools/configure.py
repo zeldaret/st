@@ -307,6 +307,7 @@ config.libs = [
     GameLib(
         "Overlay 26",
         [
+            Object("026_Train/code_02102924.cpp"),
             Object("026_Train/Actor/ActorUnkBDEM.cpp"),
             Object("026_Train/Actor/ActorUnkCNBL.cpp"),
             Object("026_Train/Actor/ActorUnkDKCL.cpp"),

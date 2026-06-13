@@ -175,7 +175,7 @@ public:
     /* 050 */ unk32 mUnk_050;
     /* 054 */ unk16 mUnk_054;
     /* 056 */ unk16 mUnk_056;
-    /* 058 */ UnkStruct_027e0ce0_38_58 *mUnk_058;
+    /* 058 */ UnkStruct_027e0ce0_38_58 *mUnk_058; // related to train invicibility state in the dark realm (+0x35C/+0x360)
     /* 05C */ UnkStruct_027e0ce0_38_5C *mUnk_05C;
     /* 060 */ UnkStruct_027e0ce0_38_60 mUnk_060;
     /* 138 */ unk32 mUnk_138;
