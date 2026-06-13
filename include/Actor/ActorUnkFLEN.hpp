@@ -20,7 +20,8 @@ public:
 class ActorUnkFLEN : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 94 */ unk32 mUnk_94;
+    /* 98 */
 
     ActorUnkFLEN();
 
@@ -35,6 +36,7 @@ public:
 class ActorProfileUnkFLEN : public ActorProfile {
 public:
     /* 00 (base) */
+    /* 3C */
 
     ActorProfileUnkFLEN();
     ~ActorProfileUnkFLEN();
