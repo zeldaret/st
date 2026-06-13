@@ -45,7 +45,7 @@ public:
     /* 08 */ unk16 mUnk_08;
     /* 08 */ unk16 mUnk_0A;
     /* 0C */ VecFx32 mUnk_0C;
-    /* 18 */ unk32 mUnk_18;
+    /* 18 */ fx32 mUnk_18;
     /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk32 mUnk_20;
     /* 24 */ unk32 mUnk_24;
@@ -99,6 +99,7 @@ public:
 
     void func_ov031_020f3304();
     bool func_ov031_020f3310();
+    bool func_ov031_020f33bc();
 };
 
 class ActorShotArrow_1C8 {
@@ -205,12 +206,9 @@ public:
     void func_ov031_020f311c(unk32 param_1);
     bool func_ov031_020f3210(u16);
     bool func_ov031_020f3258(u16 param_1);
-    void func_ov031_020f3288();
     ActorShotArrow *func_ov031_020f32c4();
     ActorShotArrow *func_ov031_020f32e0();
-    void func_ov031_020f33bc();
-    void func_ov031_020f38b0();
-    void func_ov031_020f3c38();
+    bool func_ov031_020f33bc();
     void func_ov031_020f3d04(unk16 param_1);
     ActorShotArrow *func_ov031_020f3d4c();
 };

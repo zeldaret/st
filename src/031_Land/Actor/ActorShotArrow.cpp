@@ -97,13 +97,15 @@ extern "C" void func_ov075_02160864(ActorShotArrow *, unk32);
         return NULL;                                                           \
     }
 
-extern "C" MapObjectProfile_Derived2_20_Base *func_ov031_020f1404();
+MapObjectProfile_Derived2_20_Base *func_ov031_020f1404() {
+    return data_027e0ce0->mUnk_1C->mUnk_0C;
+}
 
-ARM static inline G3d_Model *GetResource(char *str) {
+ARM inline G3d_Model *GetResource(char *str) {
     ReturnUnkPointer3(func_ov031_020f1404()->mUnk_50, str);
 }
 
-ARM static inline G3d_Model *GetResource() {
+ARM inline G3d_Model *GetResource() {
     ReturnUnkPointer3(func_ov031_020f1404()->mUnk_50, data_ov031_02110b5c);
 }
 
@@ -156,14 +158,13 @@ ARM ActorShotArrow::ActorShotArrow() :
     }
 }
 
-// non-matching
 ARM bool ActorShotArrow::func_ov031_020f173c() {
-    fx32 cos_value = COS(this->mAngle);
-    fx32 sin_value = SIN(this->mAngle);
+    fx32 sin_value = SIN((u16) this->mAngle);
+    fx32 cos_value = COS((u16) this->mAngle);
 
-    this->mVel.z   = MUL_FX32(sin_value, 1024);
-    this->mVel.x   = MUL_FX32(cos_value, 1024);
     this->mUnk_2C  = 0;
+    this->mVel.x   = MUL_FX32(sin_value, 1024);
+    this->mVel.z   = MUL_FX32(cos_value, 1024);
     this->mVel.y   = 0;
     this->mUnk_16C = VecFx32_Length(&this->mVel);
 
@@ -176,9 +177,9 @@ ARM bool ActorShotArrow::func_ov031_020f173c() {
     }
     this->func_ov031_020f1878(0x0);
 
-    this->mUnk_194.mUnk_04 = (u32) this->mRef.index;
+    this->mUnk_194.mUnk_04 = this->mRef.Get32();
     VecFx32_Copy(&this->mPos, &this->mUnk_194.mUnk_0C);
-    this->mUnk_194.mUnk_18 = 0x333;
+    this->mUnk_194.mUnk_18 = FLOAT_TO_FX32(0.20f);
     this->mUnk_44          = 0x1F;
     return true;
 }
@@ -652,9 +653,6 @@ ARM bool ActorShotArrow::func_ov031_020f3258(u16 param_1) {
     return false;
 }
 
-// non-matching
-ARM void ActorShotArrow::func_ov031_020f3288() {}
-
 ARM ActorShotArrow *ActorShotArrow::func_ov031_020f32c4() {
     this->mPos.y = FLOAT_TO_FX32(0.0f);
     this->func_ov000_0207bffc();
@@ -690,7 +688,7 @@ ARM bool ActorShotArrow_178::func_ov031_020f3310() {
     return true;
 }
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f33bc() {}
+ARM bool ActorShotArrow_178::func_ov031_020f33bc() {}
 
 ARM ActorShotArrow_194::ActorShotArrow_194(ActorShotArrow *param_1) {
     this->mUnk_2C = param_1;
