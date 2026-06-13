@@ -177,6 +177,7 @@ public:
     unk32 func_ov000_020984c8();
     void func_ov000_020984d0();
     void func_ov000_020984f0();
+    void func_ov000_02098838();
     unk32 func_ov000_02098910(unk32 param1, unk32 param2);
 
     s32 func_ov000_02098518(unk32 *param1);

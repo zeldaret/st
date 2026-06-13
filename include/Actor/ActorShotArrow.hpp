@@ -161,7 +161,6 @@ public:
 
     unk32 func_ov000_0207e294(Cylinder *);
     void func_ov000_0207bffc();
-    void func_ov000_02098838();
     unk32 func_ov017_020beeec(unk32);
 
     ActorShotArrow *func_ov031_020f1608();

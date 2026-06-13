@@ -233,7 +233,6 @@ static PTMF<ActorShotArrow> data_ov031_02114300[] = {ActorShotArrow::func_ov031_
                                                      ActorShotArrow::func_ov031_020f20bc, ActorShotArrow::func_ov031_020f2160,
                                                      ActorShotArrow::func_ov031_020f2214, ActorShotArrow::func_ov031_020f1958};
 
-// non-matching
 ARM void ActorShotArrow::func_ov031_020f195c() {
     this->mUnk_3C = (unk32) & this->mUnk_140;
     CALL_PTMF(PTMF<ActorShotArrow>, data_ov031_02114300[this->mUnk_4C]);
