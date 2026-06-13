@@ -116,7 +116,7 @@ public:
     /* 0DC */ unk16 mUnk_0DE;
     /* 0E0 */ unk16 mUnk_0E0;
     /* 0E0 */ unk16 mUnk_0E2;
-    /* 0E4 */ unk32 mUnk_0E4;
+    /* 0E4 */ void *mUnk_0E4; // callback
     /* 0E8 */ unk16 mUnk_0E8;
     /* 0E8 */ unk16 mUnk_0EA;
     /* 0EC */ ActorUnk_ov000_020a8bb0_EC mUnk_0EC;
@@ -133,7 +133,7 @@ public:
     /* 2C */ virtual void vfunc_2c(unk32 param1) override;
     /* 4C */ virtual ~ActorUnk_ov000_020a8bb0();
     /* 54 */ virtual void vfunc_54(unk32 param1);
-    /* 54 */ virtual void vfunc_58(unk32 param1) = 0;
+    /* 58 */ virtual void vfunc_58(unk32 param1) = 0;
     /* 5C */ virtual void vfunc_5c();
     /* 60 */ virtual void vfunc_60();
     /* 64 */ virtual bool vfunc_64();
@@ -149,7 +149,7 @@ public:
     /* 8C */ virtual unk32 vfunc_8c();
     /* 90 */ virtual unk32 vfunc_90();
     /* 94 */ virtual void vfunc_94();
-    /* 98 */ virtual void vfunc_98();
+    /* 98 */ virtual void vfunc_98(unk32 param1);
     /* 9C */ virtual void vfunc_9c();
     /* A0 */ virtual unk32 vfunc_a0();
     /* A4 */ virtual void vfunc_a4();

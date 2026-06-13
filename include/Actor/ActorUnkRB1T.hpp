@@ -4,6 +4,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Actor/ActorUnk_ov000_020a8bb0.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -17,20 +18,40 @@ public:
     /* 0C */ virtual void vfunc_0c(unk32 param1) override;
 };
 
-class ActorUnkRB1T : public Actor {
+class ActorUnkRB1T : public ActorUnk_ov000_020a8bb0 {
 public:
-    /* 00 (base) */
-    /* 94 */
+    /* 000 (base) */
+    /* 120 */ unk32 mUnk_120;
+    /* 124 */ STRUCT_PAD(0x124, 0x20C);
+    /* 20C */ ModelRender mUnk_20C; // actually a derived class of a derived class
+    /* 26C */ STRUCT_PAD(0x26C, 0x280);
+    /* 280 */ unk32 mUnk_280;
+    /* 284 */ STRUCT_PAD(0x284, 0x300);
+    /* 300 */ unk32 mUnk_300;
+    /* 304 */ STRUCT_PAD(0x304, 0x36C);
+    /* 36C */ unk8 mUnk_36C;
+    /* 36D */ unk8 mUnk_36D;
+    /* 36E */ unk8 mUnk_36E;
+    /* 36F */ unk8 mUnk_36F;
+    /* 370 */ unk8 mUnk_370;
+    /* 371 */ unk8 mUnk_371;
+    /* 372 */ unk8 mUnk_372;
+    /* 373 */ unk8 mUnk_373;
+    /* 374 */ unk8 mUnk_374;
+    /* 375 */ unk8 mUnk_375;
+    /* 376 */ unk8 mUnk_376;
+    /* 377 */ unk8 mUnk_377;
 
     ActorUnkRB1T();
 
     /* 4C */ virtual ~ActorUnkRB1T() override;
+    /* 58 */ virtual void vfunc_58(unk32 param1);
 
     void func_ov026_0211e3cc(void);
-    void func_ov026_0211e3e0(void);
+    bool func_ov026_0211e3e0(unk32 param1);
     void func_ov026_0211e4c8(void);
     void func_ov026_0211e554(void);
-    void func_ov026_0211e6cc(void);
+    unk32 func_ov026_0211e6cc(void);
     void func_ov026_0211e6e4(void);
     void func_ov026_0211e6f0(void);
     void func_ov026_0211e748(void);
@@ -77,7 +98,7 @@ public:
     void func_ov026_02120744(void);
     void func_ov026_021207e0(void);
     void func_ov026_02120874(void);
-    void func_ov026_021208a0(void);
+    static void func_ov026_021208a0(void); //! TODO is this really static? can't make it work as a ptmf
     void func_ov026_02120954(void);
     void func_ov026_02120974(void);
     void func_ov026_021209d8(void);

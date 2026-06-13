@@ -193,6 +193,7 @@ config.libs = [
             Object("001_SceneInit/UnkStruct_027e0cf8_08_00_001.cpp"),
             Object("001_SceneInit/Game/AdventureModeManager_001.cpp"),
             Object("001_SceneInit/Game/GameModeAdventure_001.cpp"),
+            Object("001_SceneInit/Save/SaveManager_001.cpp"),
         ]
     ),
     GameLib(
@@ -306,6 +307,7 @@ config.libs = [
     GameLib(
         "Overlay 26",
         [
+            Object("026_Train/code_02102924.cpp"),
             Object("026_Train/Actor/ActorUnkBDEM.cpp"),
             Object("026_Train/Actor/ActorUnkCNBL.cpp"),
             Object("026_Train/Actor/ActorUnkDKCL.cpp"),

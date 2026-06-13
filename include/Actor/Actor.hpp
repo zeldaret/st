@@ -250,3 +250,11 @@ public:
 };
 
 extern UnkStruct_ov000_020b539c data_ov000_020b539c_eur;
+
+struct UnkActorDataStruct1 {
+    /* 00 */ unk32 unk_00[4];
+    /* 10 */ unk32 unk_10;
+    /* 14 */ unk32 unk_14;
+    /* 18 */
+};
+extern "C" void func_ov000_02099ddc(void *thisx, UnkActorDataStruct1 param1, unk32 param2, unk32 param3);
