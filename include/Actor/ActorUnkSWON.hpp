@@ -22,9 +22,8 @@ public:
 
     ActorUnkSWON();
 
+    /* 18 */ virtual bool vfunc_18(unk32 param_1) override;
     /* 4C */ virtual ~ActorUnkSWON() override;
-
-    bool func_ov031_020f7e34();
 };
 
 class ActorProfileUnkSWON : public ActorProfile {
