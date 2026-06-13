@@ -20,7 +20,7 @@ ARM bool ActorUnkSWON::vfunc_18(unk32 param_1) {
             }
             this->func_ov000_020984d0();
             this->func_ov000_020984f0();
-            if (*(u16 *) &this->mUnk_5C.mUnk_1C) {
+            if (this->mUnk_5C.mUnk_1C_0) {
                 this->func_ov000_02098a88(0x1, 0x1);
             }
             break;
