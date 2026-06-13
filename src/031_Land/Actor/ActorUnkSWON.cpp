@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkSWON.hpp"
 #include "System/SysNew.hpp"
 
@@ -14,7 +12,28 @@ ARM ActorProfileUnkSWON::ActorProfileUnkSWON() :
 
 ARM ActorUnkSWON::ActorUnkSWON() {}
 
-ARM void ActorUnkSWON::func_ov031_020f7e34(void) {}
+ARM bool ActorUnkSWON::func_ov031_020f7e34() {
+    switch (this->mUnk_5C.mParams[0]) {
+        case 0x0:
+            if (!this->func_ov000_02098a60(0x1)) {
+                this->func_ov000_02098a88(0x0, 0x1);
+            }
+            this->func_ov000_020984d0();
+            this->func_ov000_020984f0();
+            if (*(u16 *) &this->mUnk_5C.mUnk_1C) {
+                this->func_ov000_02098a88(0x1, 0x1);
+            }
+            break;
+        case 0x1:
+            if (!this->func_ov000_02098a60(0x1)) {
+                this->func_ov000_02098a88(0x0, 0x1);
+            }
+            break;
+        default:
+            break;
+    }
+    return true;
+}
 
 ARM ActorUnkSWON::~ActorUnkSWON() {}
 ARM ActorProfileUnkSWON::~ActorProfileUnkSWON() {}
