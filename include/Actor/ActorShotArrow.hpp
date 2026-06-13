@@ -87,12 +87,25 @@ public:
     void func_ov031_020f374c(Actor *);
 };
 
-class ActorShotArrow_178 {
+class ActorShotArrow_178_Base {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x08);
+    /* 00 (vtable) */
+    /* 04 */
+
+    ActorShotArrow_178_Base();
+    ~ActorShotArrow_178_Base();
+
+    /* 00 */ virtual void vfunc_00();
+};
+
+class ActorShotArrow_178 : ActorShotArrow_178_Base {
+public:
+    /* 00 (vtable) */
+    /* 04 */ STRUCT_PAD(0x04, 0x08);
     /* 08 */ ActorShotArrow *mUnk_08;
     /* 0C */ VecFx32 mUnk_0C;
     /* 18 */ u16 mUnk_18;
+    /* 1A */
 
     ActorShotArrow_178(ActorShotArrow *param1);
     ~ActorShotArrow_178();

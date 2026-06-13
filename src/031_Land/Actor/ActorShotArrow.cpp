@@ -69,8 +69,7 @@ extern ActorUnkMRD2 *data_ov075_02163518;
 
 extern "C" unk32 func_01ff9258(fx32, fx32);
 extern "C" void func_01ff93c0(VecFx32 *, unk32);
-;
-extern "C" void func_01ff9638(VecFx32 *, s16);
+extern "C" void func_01ff9638(VecFx32 *vec, s16 angle);
 extern "C" void func_01ff95a0(VecFx32 *, unk16);
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
 extern "C" unk32 func_01ffbbe0(fx32, fx32);
@@ -225,7 +224,6 @@ ARM void ActorShotArrow::func_ov031_020f18bc() {
     this->func_ov031_020f2280();
 }
 
-// non-matching
 ARM void ActorShotArrow::func_ov031_020f1958() {}
 
 static PTMF<ActorShotArrow> data_ov031_02114300[] = {ActorShotArrow::func_ov031_020f1b04, ActorShotArrow::func_ov031_020f1c7c,
@@ -336,8 +334,6 @@ ARM void ActorShotArrow::func_ov031_020f1c24() {
     data_027e09a8->func_ov000_02071b30(0x8D7A, &this->mPos, 0);
     this->mUnk_16C = 0;
 }
-
-extern "C" void func_01ff9638(VecFx32 *vec, s16 angle);
 
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f1c7c() {
@@ -606,8 +602,28 @@ ARM void ActorShotArrow::func_ov031_020f2bec() {
 ARM void ActorShotArrow::func_ov031_020f2c08(unk16) {}
 // non-matching
 ARM void ActorShotArrow::func_ov031_020f2cac(unk32 *, unk32) {}
+
+typedef struct {
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ ActorShotArrow_178 *mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ STRUCT_PAD(0x18, 0x24);
+    /* 24 */
+} UnkStruct_ov031_020f28ac;
+
+extern "C" unk32 func_ov000_0207df88(unk32 *, Cylinder *, unk32);
+
 // non-matching
-ARM void ActorShotArrow::func_ov031_020f2ef0() {}
+ARM void ActorShotArrow::func_ov031_020f2ef0() {
+    UnkStruct_ov031_020f28ac stack;
+    stack.mUnk_0C = 0;
+    stack.mUnk_08 = &this->mUnk_178;
+    func_01ffe6c4(&stack.mUnk_0C, this->mRef.Get32(), &this->mPos, &this->mVel, (s16) this->mUnk_44, &this->mPos);
+
+    unk32 result  = func_ov000_0207df88(&stack.mUnk_0C, this->mUnk_30, 0x3);
+    this->mUnk_46 = (s16) (result | func_ov000_0207e294(this->mUnk_30));
+}
 
 void ActorShotArrow::func_ov031_020f2f5c(VecFx32 *param_1) {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
@@ -657,8 +673,6 @@ ARM ActorShotArrow *ActorShotArrow::func_ov031_020f32c4() {
     this->func_ov000_0207bffc();
     return this;
 }
-
-extern "C" void func_ov000_020982a8();
 
 ARM ActorShotArrow_178::ActorShotArrow_178(ActorShotArrow *param1) {
     this->mUnk_08   = param1;
