@@ -395,6 +395,10 @@ public:
         return this->mLoadedOverlays[OverlaySlot_13] == OverlayIndex_MapA6;
     }
 
+    bool IsPirateHideout() {
+        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_FldAjito;
+    }
+
     void Load(OverlaySlot slot, OverlayIndex index);
     void LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index);
     void Unload(OverlaySlot slot);

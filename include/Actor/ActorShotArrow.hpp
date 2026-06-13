@@ -19,15 +19,32 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
+class ActorShotArrow_140 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ bool mUnk_24;
+    /* 25 */ unk8 mUnk_25;
+    /* 26 */ unk8 mUnk_26;
+    /* 27 */ unk8 mUnk_27;
+
+    ActorShotArrow_140(Actor *param1);
+};
+
 class ActorShotArrow_194_Base {
 public:
     /* 00 (vtable) */
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk16 mUnk_08;
     /* 08 */ unk16 mUnk_0A;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
+    /* 0C */ VecFx32 mUnk_0C;
     /* 18 */ unk32 mUnk_18;
     /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk32 mUnk_20;
@@ -38,9 +55,7 @@ public:
     ActorShotArrow_194_Base() {
         this->mUnk_04 = 0;
         this->mUnk_08 = 0;
-        this->mUnk_0C = 0;
-        this->mUnk_10 = 0;
-        this->mUnk_14 = 0;
+        VecFx32_Init(0, 0, 0, &this->mUnk_0C);
         this->mUnk_18 = 0;
         this->mUnk_1C = 0;
         this->mUnk_20 = 0;
@@ -51,8 +66,8 @@ public:
     // data_ov000_020b27c8
     /* 00 */ virtual ~ActorShotArrow_194_Base();
     /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
+    /* 0C */ virtual bool vfunc_0C(Actor *, VecFx32 *vector);
+    /* 10 */ virtual void vfunc_10(Actor *actor);
 };
 
 class ActorShotArrow_194 : public ActorShotArrow_194_Base {
@@ -65,52 +80,69 @@ public:
     ActorShotArrow_194(ActorShotArrow *param1);
 
     // data_ov031_0211426c
-    /* 00 */ virtual ~ActorShotArrow_194() override; // func_ov031_020f1608 (D1) & func_ov031_020f3d4c (D0)
-    /* 0C */ virtual void vfunc_0C() override;       // func_ov031_020f3c38
-    /* 10 */ virtual void vfunc_10() override;       // func_ov031_020f38b0
+    /* 00 */ virtual ~ActorShotArrow_194() override;                   // func_ov031_020f1608 (D1) & func_ov031_020f3d4c (D0)
+    /* 0C */ virtual bool vfunc_0C(Actor *, VecFx32 *vector) override; // func_ov031_020f3c38
+    /* 10 */ virtual void vfunc_10(Actor *actor) override;             // func_ov031_020f38b0
+
+    void func_ov031_020f374c(Actor *);
 };
 
-class UnkClass_ActorShotArrow_94 {
+class ActorShotArrow_178 {
 public:
-    /* 00 */ virtual void vfunc_00() override;
-    /* 04 */ virtual void vfunc_04() override;
-    /* 04 */ virtual void vfunc_08(unk32) override;
+    /* 00 */ STRUCT_PAD(0x00, 0x08);
+    /* 08 */ ActorShotArrow *mUnk_08;
+    /* 0C */ VecFx32 mUnk_0C;
+    /* 18 */ u16 mUnk_18;
+
+    ActorShotArrow_178(ActorShotArrow *param1);
+    ~ActorShotArrow_178();
+
+    void func_ov031_020f3304();
+    bool func_ov031_020f3310();
+};
+
+class ActorShotArrow_1C8 {
+public:
+    /* 00 */ Actor *mUnk_00;
+    /* 04 */ VecFx32 mUnk_04;
+    /* 10 */ s16 mUnk_10;
+    /* 12 */ s16 mUnk_14;
+
+    ActorShotArrow_1C8();
+};
+
+class ActorShotArrow_1DC {
+public:
+    /* 00 */ VecFx32 mUnk_00;
+
+    ActorShotArrow_1DC(unk32 param1, unk32 param2);
+    ~ActorShotArrow_1DC();
 };
 
 class ActorShotArrow : public Actor {
 public:
     /* 000 (base) */
-    /* 094 */ UnkClass_ActorShotArrow_94 mUnk_94;
-    /* 09C */ STRUCT_PAD(0x98, 0xA0);
+    /* 094 */ UnkSystem6_Derived2 mUnk_94;
+    /* 09C */ bool mUnk_9C;
+    /* 09C */ STRUCT_PAD(0x9D, 0xA0);
     /* 0A0 */ UnkSystem4 mUnk_A0;
-    /* 100 */ UnkSystem5 mUnk_100;
-    /* 120 */ STRUCT_PAD(0x120, 0x140);
-    /* 140 */ unk32 mUnk_140;
-    /* 144 */ STRUCT_PAD(0x144, 0x168);
+    /* 100 */ UnkSystem5_Derived1 mUnk_100;
+    /* 120 */ unk32 mUnk_120;
+    /* 124 */ STRUCT_PAD(0x124, 0x140);
+    /* 140 */ ActorShotArrow_140 mUnk_140;
     /* 168 */ unk32 mUnk_168;
     /* 16C */ fx32 mUnk_16C;
     /* 170 */ u16 mUnk_170;
     /* 172 */ u16 mUnk_172;
     /* 174 */ unk16 mUnk_174;
     /* 176 */ unk16 mUnk_176;
-    /* 178 */ ActorShotArrow *mUnk_178;
-    /* 17C */ STRUCT_PAD(0x17C, 0x184);
-    /* 180 */ unk32 mUnk_184;
-    /* 184 */ STRUCT_PAD(0x188, 0x190);
-    /* 190 */ u16 mUnk_190;
-    /* 192 */ STRUCT_PAD(0x192, 0x194);
-    /* 194 */ ActorShotArrow_194 *mUnk_194;
-    /* 198 */ u32 mUnk_198;
-    /* 19A */ STRUCT_PAD(0x19C, 0x1A0);
-    /* 1A0 */ VecFx32 mUnk_1A0;
-    /* 1AC */ unk32 mUnk_1AC;
-    /* 1B0 */ STRUCT_PAD(0x1B0, 0x1C8);
-    /* 1C8 */ Actor *mUnk_1C8;
-    /* 1CC */ VecFx32 mUnk_1CC;
-    /* 1D8 */ s16 mUnk_1D8;
-    /* 1DA */ s16 mUnk_1DA;
-    /* 1DC */ VecFx32 mUnk_1DC;
-    /* 1E0 */ STRUCT_PAD(0x1E8, 0x250);
+    /* 178 */ ActorShotArrow_178 mUnk_178;
+    /* 194 */ ActorShotArrow_194 mUnk_194;
+    /* 1C8 */ ActorShotArrow_1C8 mUnk_1C8;
+    /* 1DC */ ActorShotArrow_1DC mUnk_1DC;
+    /* 1E0 */ STRUCT_PAD(0x1E8, 0x224);
+    /* 224 */ unk32 mUnk_224;
+    /* 228 */ STRUCT_PAD(0x228, 0x250);
     /* 250 */ unk16 mUnk_250;
     /* 252 */ unk16 mUnk_252;
     /* 254 */ STRUCT_PAD(0x254, 0x258);
@@ -131,7 +163,6 @@ public:
     void func_ov000_02098838();
     unk32 func_ov017_020beeec(unk32);
 
-    UnkStruct_027e0ce0_1C_0C *func_ov031_020f1404();
     ActorShotArrow *func_ov031_020f1608();
     bool func_ov031_020f173c();
     void func_ov031_020f1868();
@@ -171,16 +202,13 @@ public:
     void func_ov031_020f2f5c(VecFx32 *param_1);
     void func_ov031_020f2f9c();
     void func_ov031_020f3000();
-    void func_ov031_020f311c();
+    void func_ov031_020f311c(unk32 param_1);
     bool func_ov031_020f3210(u16);
     bool func_ov031_020f3258(u16 param_1);
     void func_ov031_020f3288();
     ActorShotArrow *func_ov031_020f32c4();
     ActorShotArrow *func_ov031_020f32e0();
-    void func_ov031_020f3304();
-    void func_ov031_020f3310();
     void func_ov031_020f33bc();
-    void func_ov031_020f374c();
     void func_ov031_020f38b0();
     void func_ov031_020f3c38();
     void func_ov031_020f3d04(unk16 param_1);

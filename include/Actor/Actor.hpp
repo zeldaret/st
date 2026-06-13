@@ -135,7 +135,7 @@ public:
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
     /* 0C */ virtual unk8 vfunc_0c();
-    /* 10 */ virtual void vfunc_10();
+    /* 10 */ virtual void vfunc_10(VecFx32 *);
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual bool vfunc_18(unk32 param1);
     /* 1C */ virtual void vfunc_1c();
