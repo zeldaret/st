@@ -1,5 +1,8 @@
 build/
 .vscode/
+.clangd
+cmake/
+compile_commands.json
 ph_*/
 *.nds
 *bios.bin
