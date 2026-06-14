@@ -1,6 +1,7 @@
 #include "Actor/ActorUnkFLEN.hpp"
 #include "System/SysNew.hpp"
 
+extern "C" u16 data_ov031_02110b90[];
 extern "C" ActorId data_ov031_02110b94[];
 
 ARM DECL_PROFILE(ActorProfileUnkFLEN);
@@ -68,8 +69,6 @@ ARM void ActorUnkFLEN::func_ov031_020f81b4(s16 param_1) {
             break;
     }
 }
-
-extern "C" u16 data_ov031_02110b90[];
 
 ARM unk32 ActorUnkFLEN::func_ov031_020f81f8() {
     /* 08 */ ActorParams mUnk_08;
