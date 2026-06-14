@@ -4,7 +4,7 @@
 # The database is exported in the cmake/ directory
 
 cmake_minimum_required(VERSION 3.8)
-project(st_eur)
+project(st_decomp)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -17,10 +17,10 @@ file(GLOB_RECURSE sources
 # Add precompiler definitions like that:
 # add_definitions(-DSOME_DEFINITION)
 
-add_executable(st_eur ${sources})
+add_executable(st_decomp ${sources})
 
 # Add include directories
-target_include_directories(st_eur PUBLIC "${CMAKE_SOURCE_DIR}/include")
+target_include_directories(st_decomp PUBLIC "${CMAKE_SOURCE_DIR}/include")
 
 # Add lib directories
 file(GLOB lib_paths
@@ -38,9 +38,9 @@ foreach(path IN LISTS lib_paths)
           INTERFACE_INCLUDE_DIRECTORIES "${path}/include"
     )
 
-    target_link_libraries(st_eur ${lib_name}) # also adds the required include path
+    target_link_libraries(st_decomp ${lib_name}) # also adds the required include path
 
 endforeach()
 
 # If you have precompiled headers you can add them like this
-# trget_precompiled_headers(st_eur PRIVATE "${CMAKE_SOURCE_DIR}/src/pch.h")
+# trget_precompiled_headers(st_decomp PRIVATE "${CMAKE_SOURCE_DIR}/src/pch.h")
