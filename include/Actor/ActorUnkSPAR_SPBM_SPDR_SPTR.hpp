@@ -1,11 +1,43 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "global.h"
 #include "types.h"
+
+class ActorDroppedItem : public Actor {
+public:
+    ActorDroppedItem();
+
+    virtual ~ActorDroppedItem() override;
+
+    void func_ov031_020f9f8c();
+    void func_ov031_020fa00c();
+    void func_ov031_020fa20c();
+    void func_ov031_020fa23c();
+    void func_ov031_020fa260();
+    void func_ov031_020fa424();
+    void func_ov031_020fa468();
+    void func_ov031_020fa46c();
+    void func_ov031_020fa494();
+    void func_ov031_020fa4a0();
+    void func_ov031_020fa524();
+    void func_ov031_020fa568();
+    void func_ov031_020fa5f0();
+    void func_ov031_020fa650();
+    void func_ov031_020fa664();
+    void func_ov031_020fa668();
+    void func_ov031_020fa678();
+    void func_ov031_020fa6c8();
+    void func_ov031_020fa72c();
+    void func_ov031_020fa83c();
+    void func_ov031_020fa900();
+    void func_ov031_020fa9f8();
+    void func_ov031_020faa30();
+    void func_ov031_020faa74();
+    void func_ov031_020faa94();
+    void func_ov031_020faabc();
+};
 
 // --- Actor SPAR ---
 
@@ -19,7 +51,7 @@ public:
     /* 0C */ virtual void vfunc_0c(unk32 param1) override;
 };
 
-class ActorUnkSPAR : public Actor {
+class ActorUnkSPAR : public ActorDroppedItem {
 public:
     /* 00 (base) */
     /* 94 */
