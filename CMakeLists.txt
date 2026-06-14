@@ -1,3 +1,4 @@
+# See CONTRIBUTING.md for explanations
 # Adapted from https://gist.github.com/Strus/042a92a00070a943053006bf46912ae9
 # Build the compilation database with `cmake -S . -G "Unix Makefiles" -B cmake`
 # The database is exported in the cmake/ directory
@@ -28,11 +29,10 @@ file(GLOB lib_paths
 
 foreach(path IN LISTS lib_paths)
 
+    # Retrieve the name of the lib
     string(REGEX MATCH "([a-z]+)$" lib_name ${path}) # last word of the path is the name
-    # message(STATUS "path=${path}")
-    # message(STATUS "name=${lib_name}")
 
-    # Add the library only as an interface since we don't plan on compiling anyway
+    # Add the library as an interface only since we don't intend on actually compiling anyway
     add_library(${lib_name} INTERFACE)
     set_target_properties(${lib_name} PROPERTIES
           INTERFACE_INCLUDE_DIRECTORIES "${path}/include"
