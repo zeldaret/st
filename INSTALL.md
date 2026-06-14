@@ -54,11 +54,11 @@ ARM7 BIOS in the root directory of this repository, and verify that your dumped 
 
 ## LSP setup
 
-**This is likely not necessary.** Most C++ editors usually have their one LSP configuration that should recognize the project structure and work out of the box. This section is about how to setup your LSP yourself **if the need be**.
+**This is likely not necessary.** Most C++ editors usually have their one LSP (Language Server Protocol, a tool for code completion and more) configuration that should recognize the project structure and work out of the box. This section is about how to setup your LSP yourself **if the need be**.
 
 The repository contains a [`CMakeLists.txt`](CMakeLists.txt) that allows generating a compilation database. For now, the `CMakeLists.txt` can only be used to generate `compile_commands.json` and similar files, not compiling the project.  
 To generate the compilation database, run `cmake -S . -G "Unix Makefiles" -B cmake` from the root directory of the project. This will create a `cmake/` directory that contains the `compile_commands.json`.  
-Once the file is generated, you can dynamically link it to the root directory and let your LSP detect it, or edit your `.clangd` as follows for it to recognize the compilation database:
+Once the file is generated, you can dynamically link it to the root directory and let your LSP detect it (make sure not to `git add` it though), or edit your `.clangd` as follows for it to recognize the compilation database:
 ```clangd
 CompileFlags:
     CompilationDatabase: "cmake"
