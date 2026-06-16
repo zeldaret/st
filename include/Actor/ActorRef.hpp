@@ -45,9 +45,7 @@ struct ActorRef {
         u32 data;
     };
 
-    ActorRef() {
-        this->Reset();
-    }
+    ActorRef() {}
 
     ActorRef(u32 value) {
         this->data = value;
@@ -71,5 +69,14 @@ struct ActorRef {
 
     const u32 Get32() const {
         return this->data;
+    }
+};
+
+// for arrays
+struct ActorRefElem {
+    ActorRef ref;
+
+    ActorRefElem() {
+        this->ref.Reset();
     }
 };

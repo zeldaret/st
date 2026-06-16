@@ -15,7 +15,7 @@ public:
     /* 9C */ unk16 mUnk_9E;
     /* A0 */ unk16 mUnk_A0;
     /* A0 */ unk16 mUnk_A2;
-    /* A4 */ ActorRef mUnk_A4[5];
+    /* A4 */ ActorRefElem mUnk_A4[5];
     /* B8 */
 
     ActorUnkSWOB();

@@ -49,7 +49,7 @@ public:
     /* 44 */ unk32 mUnk_44;
     /* 48 */ unk32 mUnk_48;
     /* 4C */ unk32 mUnk_4C;
-    /* 50 */ unk32 mUnk_50;
+    /* 50 */ ActorGrabParams mUnk_50;
     /* 54 */ unk32 mUnk_54;
     /* 58 */ UnkStruct_027e0ce0_40 *mUnk_58;
     /* 5C */ PlayerActorBase_5C mUnk_5C;

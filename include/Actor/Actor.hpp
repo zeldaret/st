@@ -101,6 +101,12 @@ enum ActorFlag_ {
 
 class Actor_c4;
 
+struct ActorGrabParams {
+    /* 00 */ u16 unk_00;
+    /* 02 */ u16 unk_02;
+    /* 04 */
+};
+
 class Actor : public SysObject {
 public:
     /* 00 (vtable) */
@@ -118,10 +124,9 @@ public:
     /* 44 */ u16 mUnk_44;
     /* 46 */ unk16 mUnk_46;
     /* 48 */ unk16 mUnk_48;
-    /* 4A */ unk8 mUnk_4A;
-    /* 4A */ unk8 mUnk_4B;
+    /* 4A */ u8 mUnk_4A[2];
     /* 4C */ s16 mUnk_4C;
-    /* 4E */ s16 mUnk_4E;
+    /* 4E */ fx16 mYOffset;
     /* 50 */ volatile u16 mUnk_50;
     /* 52 */ u16 mUnk_52;
     /* 54 */ unk32 mUnk_54;
@@ -131,7 +136,7 @@ public:
     /* 90 */ ActorProfile *mpProfile;
     /* 94 */
 
-    /* 00 */ virtual void vfunc_00(VecFx32 *param1);
+    /* 00 */ virtual void GetOffsetPos(VecFx32 *pPos) const;
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
     /* 0C */ virtual unk8 vfunc_0c();
@@ -145,8 +150,8 @@ public:
     /* 2C */ virtual void vfunc_2c(unk32 param1);
     /* 30 */ virtual void vfunc_30();
     /* 34 */ virtual unk32 vfunc_34();
-    /* 38 */ virtual unk32 vfunc_38(unk32 param1);
-    /* 3C */ virtual bool vfunc_3c(unk32 param2, VecFx32 *param3);
+    /* 38 */ virtual bool Grab(ActorGrabParams grabParams);
+    /* 3C */ virtual bool Drop(ActorGrabParams grabParams, const VecFx32 *pVel);
     /* 40 */ virtual void vfunc_40();
     /* 44 */ virtual void vfunc_44();
     /* 48 */ virtual void vfunc_48();
