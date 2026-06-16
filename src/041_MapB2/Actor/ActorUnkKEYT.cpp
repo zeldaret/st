@@ -18,7 +18,7 @@ ARM void ActorUnkKEYT::func_ov041_02123c7c(void) {}
 ARM void ActorUnkKEYT::func_ov041_02123cf8(void) {}
 ARM void ActorUnkKEYT::func_ov041_02123d40(void) {}
 ARM void ActorUnkKEYT::func_ov041_02123d88(void) {}
-ARM void ActorUnkKEYT::func_ov041_02123eb8(void) {}
+ARM bool ActorUnkKEYT::Grab(ActorGrabParams grabParams) {}
 ARM void ActorUnkKEYT::func_ov041_02123ff8(void) {}
 ARM void ActorUnkKEYT::func_ov041_02124094(void) {}
 ARM void ActorUnkKEYT::func_ov041_021240c0(void) {}

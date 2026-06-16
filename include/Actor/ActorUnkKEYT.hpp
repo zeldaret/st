@@ -24,13 +24,13 @@ public:
 
     ActorUnkKEYT();
 
+    /* 38 */ virtual bool Grab(ActorGrabParams grabParams) override;
     /* 4C */ virtual ~ActorUnkKEYT() override;
 
     void func_ov041_02123c7c(void);
     void func_ov041_02123cf8(void);
     void func_ov041_02123d40(void);
     void func_ov041_02123d88(void);
-    void func_ov041_02123eb8(void);
     void func_ov041_02123ff8(void);
     void func_ov041_02124094(void);
     void func_ov041_021240c0(void);
