@@ -2087,7 +2087,7 @@ __sinit_ActorUnkNTTZ.cpp kind:function(arm,size=0x50) addr:0x02113358
 __sinit_ov031_021133a8 kind:function(arm,size=0x24) addr:0x021133a8
 __sinit_ActorUnkTGTZ.cpp kind:function(arm,size=0x80) addr:0x021133cc
 __sinit_ActorUnkSWCH.cpp kind:function(arm,size=0x50) addr:0x0211344c
-__sinit_ActorUnkSWON.cpp kind:function(arm,size=0x50) addr:0x0211349c
+__sinit_ActorUnkSWON.cpp kind:function(arm,size=0x50) addr:0x0211349c local
 __sinit_ActorUnkNORE.cpp kind:function(arm,size=0x50) addr:0x021134ec
 __sinit_ActorUnkFLEN.cpp kind:function(arm,size=0x50) addr:0x0211353c
 __sinit_ActorUnkRLST.cpp kind:function(arm,size=0x50) addr:0x0211358c
@@ -2151,7 +2151,7 @@ __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x021144b0
 .p__sinit_ov031_021133a8 kind:data(word) addr:0x0211456c
 .p__sinit_ActorUnkTGTZ.cpp kind:data(word) addr:0x02114570
 .p__sinit_ActorUnkSWCH.cpp kind:data(word) addr:0x02114574
-.p__sinit_ActorUnkSWON.cpp kind:data(word) addr:0x02114578
+.p__sinit_ActorUnkSWON.cpp kind:data(word) addr:0x02114578 local
 .p__sinit_ActorUnkNORE.cpp kind:data(word) addr:0x0211457c
 .p__sinit_ActorUnkFLEN.cpp kind:data(word) addr:0x02114580
 .p__sinit_ActorUnkRLST.cpp kind:data(word) addr:0x02114584
@@ -2581,7 +2581,7 @@ _ZGVN15ProfileInstanceI19ActorProfileUnkSWCHE8sProfileE kind:bss addr:0x021189f4
 _ZN15ProfileInstanceI19ActorProfileUnkSWCHE8sProfileE kind:bss addr:0x02118a04
 data_ov031_02118a1c kind:bss addr:0x02118a1c ambiguous
 _ZGVN15ProfileInstanceI19ActorProfileUnkSWONE8sProfileE kind:bss addr:0x02118a40
-@30890 kind:bss addr:0x02118a44
+@30890 kind:bss addr:0x02118a44 local
 _ZN15ProfileInstanceI19ActorProfileUnkSWONE8sProfileE kind:bss addr:0x02118a50
 _ZGVN15ProfileInstanceI19ActorProfileUnkNOREE8sProfileE kind:bss addr:0x02118a8c
 @30896 kind:bss addr:0x02118a90
