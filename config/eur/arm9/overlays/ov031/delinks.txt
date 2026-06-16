@@ -153,6 +153,7 @@ src/031_Land/Actor/ActorUnkSPAR_SPBM_SPDR_SPTR.cpp:
     .text       start:0x020f9dcc end:0x020fab5c
     .init       start:0x02111850 end:0x02111988
     .ctor       start:0x021127fc end:0x02112800
+    .data       start:0x02114be8 end:0x02114d3c
     .bss        start:0x02116e94 end:0x02116f9c
 
 src/031_Land/Actor/ActorUnkMLCK.cpp:

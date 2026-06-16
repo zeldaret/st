@@ -4,18 +4,112 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 
 // --- Actor Common ---
 
+static PTMF<ActorDroppedItem> data_ov031_02114be8[] = {
+    ActorDroppedItem::func_ov031_020fa468, ActorDroppedItem::func_ov031_020fa494, ActorDroppedItem::func_ov031_020fa524,
+    ActorDroppedItem::func_ov031_020fa5d8, ActorDroppedItem::func_ov031_020fa650, ActorDroppedItem::func_ov031_020fa668,
+    ActorDroppedItem::func_ov031_020fa6c8};
+
 extern UnkStruct_027e09a8 *data_027e09a8;
 extern UnkStruct_027e0cd8 *data_027e0cd8;
+extern Cylinder data_ov031_02114ba0;
+extern unk32 data_ov031_02114d28;
 
+extern "C" void func_01ffedac(u16 *, VecFx32 *);
 extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, VecFx32 *);
 extern "C" bool func_ov000_02098838();
 extern "C" void func_ov017_020bf99c();
 
-// non-matching
-ARM ActorDroppedItem::ActorDroppedItem() {}
+ARM ActorDroppedItem_Upperclass::ActorDroppedItem_Upperclass() {}
+
+ARM ActorDroppedItem_Upperclass::~ActorDroppedItem_Upperclass() {}
+
+ARM ActorDroppedItem::ActorDroppedItem() :
+    mUnk_AE(0x0),
+    mUnk_B0(0x6),
+    mUnk_D8(0x800),
+    mUnk_DC(0x0),
+    mUnk_E0(0x0),
+    mUnk_E4(this),
+    mUnk_108(0x0),
+    mUnk_10C(0x0),
+    mUnk_110(0x0),
+    mUnk_114(0x0),
+    mUnk_118(false),
+    mUnk_119(false) {
+
+    switch (this->GetActorId()) {
+        case ActorId_SPAR:
+            if (data_027e0ce0->mUnk_2C->mFlags[0] & 0x8) {
+                this->itemTypeId = DroppedItemTypeId_Arrow;
+                this->mUnk_D8    = 0x800;
+            } else {
+                this->itemTypeId = DroppedItemTypeId_Unknown;
+            }
+            break;
+        case ActorId_SPBM:
+            if (data_027e0ce0->mUnk_2C->mFlags[0] & 0x10) {
+                this->itemTypeId = DroppedItemTypeId_Bomb;
+                this->mUnk_D8    = 0x4CD;
+            } else {
+                this->itemTypeId = DroppedItemTypeId_Unknown;
+            }
+            break;
+        case ActorId_SPDR:
+            this->itemTypeId = DroppedItemTypeId_RedPotion;
+            this->mUnk_D8    = 0x666;
+            this->mUnk_119   = true;
+            break;
+        case ActorId_SPTR:
+            unk32 treasureType = 0;
+            switch (this->mUnk_5C.mParams[0]) {
+                case 0:
+                    treasureType = DroppedItemTypeId_DemonFossil;
+                    break;
+                case 1:
+                    treasureType = DroppedItemTypeId_StalfosSkull;
+                    break;
+                case 2:
+                    treasureType = DroppedItemTypeId_StarFragment;
+                    break;
+                case 3:
+                    treasureType = DroppedItemTypeId_BeeLarvae;
+                    break;
+                case 4:
+                    treasureType = DroppedItemTypeId_WoodHeart;
+                    break;
+                case 9:
+                    treasureType = DroppedItemTypeId_PirateNecklace;
+                    break;
+                default:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                    treasureType = DroppedItemTypeId_Unknown;
+                    break;
+            }
+            this->itemTypeId = treasureType;
+            this->mUnk_D8    = 0x4CD;
+            this->mUnk_119   = true;
+            break;
+        default:
+            this->itemTypeId = DroppedItemTypeId_Unknown;
+            break;
+    }
+
+    this->mUnk_B8 = 0x13100;
+    this->mUnk_40 = &this->mUnk_E4;
+    u16 sp0;
+    func_01ffedac(&sp0, &this->mPos);
+
+    if (data_027e0cd8->mUnk_0C->func_ov000_02080180(&sp0) == 0x5) {
+        this->mUnk_34 = &data_ov031_02114ba0;
+    }
+}
 
 // non-matching
 ARM void ActorDroppedItem::func_ov031_020f9f8c(VecFx32 *param_1, unk32 test, ActorRef ref) {
@@ -34,11 +128,9 @@ ARM void ActorDroppedItem::func_ov031_020f9f8c(VecFx32 *param_1, unk32 test, Act
 
     this->func_ov000_020973f4(&data_ov000_020b539c_eur, ActorId_SPTR, &stack_04, 0);
 }
-// non-matching
-ARM bool ActorDroppedItem::func_ov031_020fa00c() {}
 
 ARM bool ActorDroppedItem::func_ov031_020fa20c() {
-    if (this->mUnk_D4 >= (u32) 0x9) {
+    if (this->itemTypeId >= (u32) 0x9) {
         return false;
     }
     this->mUnk_52 = 0x1E0;
@@ -60,11 +152,6 @@ ARM void ActorDroppedItem::func_ov031_020fa248() {
 
 // non-matching
 ARM void ActorDroppedItem::func_ov031_020fa260() {}
-
-static PTMF<ActorDroppedItem> data_ov031_02114be8[] = {
-    ActorDroppedItem::func_ov031_020fa468, ActorDroppedItem::func_ov031_020fa494, ActorDroppedItem::func_ov031_020fa524,
-    ActorDroppedItem::func_ov031_020fa5d8, ActorDroppedItem::func_ov031_020fa650, ActorDroppedItem::func_ov031_020fa668,
-    ActorDroppedItem::func_ov031_020fa6c8};
 
 ARM void ActorDroppedItem::func_ov031_020fa424(s16 param_1) {
     this->mUnk_4C = param_1;
@@ -95,7 +182,7 @@ ARM void ActorDroppedItem::func_ov031_020fa4a0() {
     }
 
     func_01fff05c(&stack, data_027e0cd8->mUnk_0C, &this->mPos);
-    if (((stack >> 0x5) & 0x3) == 0x2 && this->mUnk_D4 != 0x0 && this->mUnk_D4 != 0x1) {
+    if (((stack >> 0x5) & 0x3) == 0x2 && this->itemTypeId != 0x0 && this->itemTypeId != 0x1) {
         this->func_ov000_020984d0();
         return;
     }
@@ -212,8 +299,12 @@ ARM void ActorDroppedItem::func_ov031_020fa72c() {}
 ARM void ActorDroppedItem::func_ov031_020fa83c() {}
 // non-matching
 ARM void ActorDroppedItem::func_ov031_020fa900() {}
-// non-matching
-ARM void ActorDroppedItem::func_ov031_020fa9f8() {}
+
+ARM ActorDroppedItem_c4::ActorDroppedItem_c4(Actor *param_1) :
+    Actor_c4(param_1) {
+    this->mUnk_20 = param_1;
+    this->mUnk_04 = 0x1;
+}
 
 #define GET_ACTOR_DROPPED_ITEM(pActor) ((ActorDroppedItem *) (pActor))
 
@@ -246,54 +337,57 @@ ARM void ActorDroppedItem_c4::func_ov031_020faabc() {
 
 // --- Actor SPAR ---
 
-ARM DECL_PROFILE(ActorProfileUnkSPAR);
+ARM DECL_PROFILE(ActorProfileDroppedArrow);
 
-ARM Actor *ActorProfileUnkSPAR::Create() {
-    return new(HeapIndex_2) ActorUnkSPAR();
+ARM Actor *ActorProfileDroppedArrow::Create() {
+    return new(HeapIndex_2) ActorDroppedItem();
 }
 
-ARM ActorProfileUnkSPAR::ActorProfileUnkSPAR() :
-    ActorProfile(ActorId_SPAR) {}
-
-ARM ActorUnkSPAR::ActorUnkSPAR() {}
+ARM ActorProfileDroppedArrow::ActorProfileDroppedArrow() :
+    ActorProfile(ActorId_SPAR) {
+    this->mUnk_04.Init(0x400);
+}
 
 // --- Actor SPBM ---
 
-ARM DECL_PROFILE(ActorProfileUnkSPBM);
+ARM DECL_PROFILE(ActorProfileDroppedBomb);
 
-ARM Actor *ActorProfileUnkSPBM::Create() {
-    return new(HeapIndex_2) ActorUnkSPBM();
+ARM Actor *ActorProfileDroppedBomb::Create() {
+    return new(HeapIndex_2) ActorDroppedItem();
 }
 
-ARM ActorProfileUnkSPBM::ActorProfileUnkSPBM() :
-    ActorProfile(ActorId_SPBM) {}
-
-ARM ActorUnkSPBM::ActorUnkSPBM() {}
+ARM ActorProfileDroppedBomb::ActorProfileDroppedBomb() :
+    ActorProfile(ActorId_SPBM) {
+    this->mUnk_04.Init(0x400);
+}
 
 // --- Actor SPDR ---
 
-ARM DECL_PROFILE(ActorProfileUnkSPDR);
+ARM DECL_PROFILE(ActorProfileDroppedRedPotion);
 
-ARM Actor *ActorProfileUnkSPDR::Create() {
-    return new(HeapIndex_2) ActorUnkSPDR();
+ARM Actor *ActorProfileDroppedRedPotion::Create() {
+    return new(HeapIndex_2) ActorDroppedItem();
 }
 
-ARM ActorProfileUnkSPDR::ActorProfileUnkSPDR() :
-    ActorProfile(ActorId_SPDR) {}
-
-ARM ActorUnkSPDR::ActorUnkSPDR() {}
+ARM ActorProfileDroppedRedPotion::ActorProfileDroppedRedPotion() :
+    ActorProfile(ActorId_SPDR) {
+    this->mUnk_04.Init(0x400);
+}
 
 // --- Actor SPTR ---
 
-ARM DECL_PROFILE(ActorProfileUnkSPTR);
+ARM DECL_PROFILE(ActorProfileDroppedTreasure);
 
-ARM Actor *ActorProfileUnkSPTR::Create() {
-    return new(HeapIndex_2) ActorUnkSPTR();
+ARM Actor *ActorProfileDroppedTreasure::Create() {
+    return new(HeapIndex_2) ActorDroppedItem();
 }
 
-ARM ActorProfileUnkSPTR::ActorProfileUnkSPTR() :
-    ActorProfile(ActorId_SPTR) {}
+ARM ActorProfileDroppedTreasure::ActorProfileDroppedTreasure() :
+    ActorProfile(ActorId_SPTR) {
+    this->mUnk_04.Init(0x400);
+}
 
-ARM ActorUnkSPTR::ActorUnkSPTR() {}
-
-//
+ARM ActorProfileDroppedArrow::~ActorProfileDroppedArrow() {}
+ARM ActorProfileDroppedBomb::~ActorProfileDroppedBomb() {}
+ARM ActorProfileDroppedRedPotion::~ActorProfileDroppedRedPotion() {}
+ARM ActorProfileDroppedTreasure::~ActorProfileDroppedTreasure() {}
