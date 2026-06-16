@@ -149,7 +149,7 @@ src/031_Land/Actor/ActorUnkRLST.cpp:
     .ctor       start:0x021127f8 end:0x021127fc
     .bss        start:0x02116d84 end:0x02116e94
 
-src/031_Land/Actor/ActorUnkSPAR_SPBM_SPDR_SPTR.cpp:
+src/031_Land/Actor/ActorDroppedItem.cpp:
     .text       start:0x020f9dcc end:0x020fab5c
     .init       start:0x02111850 end:0x02111988
     .ctor       start:0x021127fc end:0x02112800

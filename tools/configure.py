@@ -449,7 +449,7 @@ config.libs = [
             Object("031_Land/Actor/ActorUnkROCK.cpp"),
             Object("031_Land/Actor/ActorUnkSCCN.cpp"),
             Object("031_Land/Actor/ActorUnkSKDO.cpp"),
-            Object("031_Land/Actor/ActorUnkSPAR_SPBM_SPDR_SPTR.cpp"),
+            Object("031_Land/Actor/ActorDroppedItem.cpp"),
             Object("031_Land/Actor/ActorUnkSWBM.cpp"),
             Object("031_Land/Actor/ActorUnkSWCH.cpp"),
             Object("031_Land/Actor/ActorUnkSWON.cpp"),

@@ -1,10 +1,12 @@
-#include "Actor/ActorUnkSPAR_SPBM_SPDR_SPTR.hpp"
+#include "Actor/ActorDroppedItem.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
+#include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "Unknown/UnkStruct_027e0d34.hpp"
 
 // --- Actor Common ---
 
@@ -292,8 +294,49 @@ ARM void ActorDroppedItem::func_ov031_020fa6c8() {
     data_027e09a8->func_ov000_02071b30(0x77, &this->mPos, 0x0);
 }
 
-// non-matching
-ARM void ActorDroppedItem::func_ov031_020fa72c() {}
+ARM void ActorDroppedItem::func_ov031_020fa72c() {
+    this->mUnk_3C = 0x0;
+    if (data_027e09b8->func_01ffd420()) {
+        return;
+    }
+
+    bool executeFunction = true;
+    switch (this->itemTypeId) {
+        case DroppedItemTypeId_Arrow:
+            data_027e0ce0->mUnk_2C->GiveArrows(0x5);
+            break;
+        case DroppedItemTypeId_Bomb:
+            data_027e0ce0->mUnk_2C->GiveBombs(0x3);
+            break;
+        case DroppedItemTypeId_RedPotion:
+            executeFunction = data_027e0d34->TryItemGive(ItemId_RedPotion);
+            break;
+        case DroppedItemTypeId_DemonFossil:
+            executeFunction = data_027e0d34->TryItemGive(ItemId_DemonFossil);
+            break;
+        case DroppedItemTypeId_StalfosSkull:
+            executeFunction = data_027e0d34->TryItemGive(ItemId_StalfosSkull);
+            break;
+        case DroppedItemTypeId_StarFragment:
+            executeFunction = data_027e0d34->TryItemGive(ItemId_StarFragment);
+            break;
+        case DroppedItemTypeId_BeeLarvae:
+            executeFunction = data_027e0d34->TryItemGive(ItemId_BeeLarvae);
+            break;
+        case DroppedItemTypeId_WoodHeart:
+            executeFunction = data_027e0d34->TryItemGive(ItemId_WoodHeart);
+            break;
+        case DroppedItemTypeId_PirateNecklace:
+            executeFunction = data_027e0d34->TryItemGive(ItemId_PirateNecklace);
+            break;
+        default:
+            executeFunction = true;
+            break;
+    }
+    if (executeFunction) {
+        this->func_ov000_020984d0();
+    }
+}
 
 // non-matching
 ARM void ActorDroppedItem::func_ov031_020fa83c() {}

@@ -2091,7 +2091,7 @@ __sinit_ActorUnkSWON.cpp kind:function(arm,size=0x50) addr:0x0211349c
 __sinit_ActorUnkNORE.cpp kind:function(arm,size=0x50) addr:0x021134ec
 __sinit_ActorUnkFLEN.cpp kind:function(arm,size=0x50) addr:0x0211353c
 __sinit_ActorUnkRLST.cpp kind:function(arm,size=0x50) addr:0x0211358c
-__sinit_ActorUnkSPAR_SPBM_SPDR_SPTR.cpp kind:function(arm,size=0x138) addr:0x021135dc
+__sinit_ActorDroppedItem.cpp kind:function(arm,size=0x138) addr:0x021135dc
 __sinit_ActorUnkMLCK.cpp kind:function(arm,size=0x74) addr:0x02113714
 __sinit_ActorUnkCLLT.cpp kind:function(arm,size=0x50) addr:0x02113788
 __sinit_ActorUnkEFSB.cpp kind:function(arm,size=0x50) addr:0x021137d8
@@ -2155,7 +2155,7 @@ __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x021144b0
 .p__sinit_ActorUnkNORE.cpp kind:data(word) addr:0x0211457c
 .p__sinit_ActorUnkFLEN.cpp kind:data(word) addr:0x02114580
 .p__sinit_ActorUnkRLST.cpp kind:data(word) addr:0x02114584
-.p__sinit_ActorUnkSPAR_SPBM_SPDR_SPTR.cpp kind:data(word) addr:0x02114588
+.p__sinit_ActorDroppedItem.cpp kind:data(word) addr:0x02114588
 .p__sinit_ActorUnkMLCK.cpp kind:data(word) addr:0x0211458c
 .p__sinit_ActorUnkCLLT.cpp kind:data(word) addr:0x02114590
 .p__sinit_ActorUnkEFSB.cpp kind:data(word) addr:0x02114594
