@@ -292,7 +292,8 @@ struct SaveInfoData {
     /* E00 */
 
     SaveInfoData() :
-        unk_014(0) {}
+        unk_014(0),
+        unk_D4C(0) {}
 };
 
 struct SaveTreasureData {

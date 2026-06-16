@@ -486,8 +486,8 @@ ARM void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
             this->vfunc_7C();
 
             if (this->mUnk_8A && this->mUnk_86 && param2 == 0) {
-                unk32 var_r5   = 1;
-                unk32 var_r1_2 = 2;
+                u16 var_r5   = 1;
+                s16 var_r1_2 = 2;
 
                 if (this->IsOrientedVertically()) {
                     var_r1_2 = -1;
