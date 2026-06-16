@@ -572,7 +572,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
             if (pActor->GetActorId() == ActorId_NormalShield) {
                 UNSET_FLAG(pActor->mFlags, ActorFlag_Visible);
-                pActor->mUnk_4A = 0;
+                pActor->mUnk_4A[0] = 0;
             }
             break;
         case 0x3A:

@@ -355,13 +355,13 @@ ARM void ActorRupee::func_ov031_020e9450() {
 }
 
 ARM void ActorRupee::func_ov031_020e94d4() {
-    this->mUnk_52 = -1;
-    this->mUnk_50 = 0;
-    this->mVel.x  = 0;
-    this->mVel.y  = 0;
-    this->mVel.z  = 0;
-    this->mUnk_4A = 0;
-    this->mUnk_44 = 0;
+    this->mUnk_52    = -1;
+    this->mUnk_50    = 0;
+    this->mVel.x     = 0;
+    this->mVel.y     = 0;
+    this->mVel.z     = 0;
+    this->mUnk_4A[0] = 0;
+    this->mUnk_44    = 0;
     this->mUnk_9C.func_ov000_02097bec();
     UNSET_FLAG(this->mFlags, ActorFlag_Visible);
 }
@@ -443,10 +443,10 @@ ARM void ActorRupee::func_ov031_020e9638() {
     this->mUnk_C4.mUnk_04 = 0;
 
     if (this->mUnk_5C.mParams[1] == 2) {
-        this->mUnk_4A = 1;
+        this->mUnk_4A[0] = 1;
         data_027e0cec->func_ov000_0209ff8c(&this->mUnk_F0, 0xD00C, &this->mPos, 2);
     } else {
-        this->mUnk_4A = 0;
+        this->mUnk_4A[0] = 0;
     }
 
     this->mPos.y -= FLOAT_TO_FX32(1.2);
@@ -470,9 +470,9 @@ ARM void ActorRupee::func_ov031_020e970c() {
     this->mVel.y = 0;
     this->mVel.z = 0;
     SET_FLAG(this->mFlags, ActorFlag_Visible);
-    this->mUnk_4A = 1;
-    this->mUnk_52 = -1;
-    this->mUnk_50 = 0;
+    this->mUnk_4A[0] = 1;
+    this->mUnk_52    = -1;
+    this->mUnk_50    = 0;
 }
 
 // non-matching
@@ -557,14 +557,7 @@ ARM void ActorRupee::func_ov031_020e9904(unk32 param1) {
 
 extern "C" void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
 extern "C" void func_02018114(unk16 *, unk32);
-typedef void (*UnkCallback_vfunc_20)(VecFx32 *);
-
-struct UnkStruct_ov031_02113588 {
-    /* 00 */ UnkCallback_vfunc_20 callback;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */
-};
-extern UnkStruct_ov031_02113588 data_ov031_02113588[13];
+extern PTMF<ActorRupee> data_ov031_02113588[13];
 
 // non-matching
 ARM void ActorRupee::vfunc_20() {
@@ -573,7 +566,6 @@ ARM void ActorRupee::vfunc_20() {
     unk16 uVar3;
     int iVar4;
     u32 uVar5;
-    UnkCallback_vfunc_20 pcVar6;
     int iVar7;
     int iVar8;
     unk16 uStack_16;
@@ -651,18 +643,7 @@ ARM void ActorRupee::vfunc_20() {
         }
     }
 
-    uStack_18 = uVar3;
-    iVar4     = (int) (short) this->mUnk_4C;
-    // uVar5     = *(u32 *) (data_ov031_0211358c[iVar4 * 8]);
-
-    if (!(uVar5 & 1)) {
-        data_ov031_02113588[iVar4 * 2].callback(NULL);
-    } else {
-        this->vfunc_00(NULL);
-        // pcVar6 = *(code **) (*(int *) ((int) &this->vtable + ((int) uVar5 >> 1)) + (&data_ov031_02113588)[iVar4 * 2]);
-    }
-
-    // (*pcVar6)();
+    CALL_PTMF(PTMF<ActorRupee>, data_ov031_02113588[this->mUnk_4C]);
 
     if ((this->mUnk_5C.mUnk_24 < 0) && (this->mUnk_4C != 5)) {
         this->func_ov031_020e9d94();

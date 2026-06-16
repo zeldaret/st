@@ -39,7 +39,7 @@ ARM ActorUnk_ov000_020a8bb0::ActorUnk_ov000_020a8bb0(ModelRender *param1, unk32 
     mUnk_118(0x1000),
     mUnk_11C(0x019A) {
     this->mUnk_30          = &this->mUnk_104;
-    this->mUnk_4A          = 5;
+    this->mYOffset         = 5;
     this->mUnk_44          = 0x1F;
     this->mUnk_094.mUnk_08 = 3;
     this->mUnk_38          = &this->mUnk_094.mUnk_00;
@@ -122,7 +122,7 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_b0() {
         auStack_60.mUnk_21 = 0;
         auStack_60.mUnk_32 = 1;
 
-        this->vfunc_00(&auStack_60.mUnk_34);
+        this->GetOffsetPos(&auStack_60.mUnk_34);
         this->mUnk_0B4 = data_027e09b8->func_ov000_02073470(&auStack_60, 0);
     }
 }
