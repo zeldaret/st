@@ -3,6 +3,7 @@
 #include "global.h"
 #include "types.h"
 
+#include "Actor/ActorRef.hpp"
 #include "Item/ItemManager.hpp"
 #include "System/SysNew.hpp"
 #include "math.hpp"
@@ -25,9 +26,9 @@ public:
 
 class UnkStruct_PlayerGet_64 {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ ActorRef *mUnk_00;
     /* 04 */ unk32 mUnk_04;
-    /* 08 */ u16 mUnk_08;
+    /* 08 */ u16 mUnk_08; // makes link invisible when set
     /* 0A */ unk16 mUnk_0A;
     /* 0C */
 
@@ -94,7 +95,7 @@ public:
     /* A0 */ STRUCT_PAD(0xA0, 0x148);
     /* 148 */ u32 mUnk_148;
     /* 14C */ unk32 mUnk_14C;
-    /* 150 */ unk32 mUnk_150;
+    /* 150 */ ActorRef mUnk_150;
 };
 
 class UnkStruct_ov000_0208f820_30_10 {
@@ -160,25 +161,17 @@ public:
 
 class UnkStruct_ov000_0208f820_04 {
 public:
-    /* 00 */ union {
-        u8 mUnk_00[4];
-        u16 mUnk_00_s16;
-        u32 mUnk_00_s32;
-    };
-    /* 04 */ union {
-        u8 mUnk_04[4];
-        u16 mUnk_04_s16;
-        u32 mUnk_04_s32;
-    };
+    /* 00 */ ActorRef mUnk_00;
+    /* 04 */ ActorRef mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ ItemId mItemId;
     /* 10 */
 
     UnkStruct_ov000_0208f820_04(unk32 param1, unk32 param2, unk32 param3, ItemId itemId) {
-        *(u32 *) this->mUnk_00 = param1;
-        *(u32 *) this->mUnk_04 = param2;
-        this->mUnk_08          = param3;
-        this->mItemId          = itemId;
+        this->mUnk_00.data = param1;
+        this->mUnk_04.data = param2;
+        this->mUnk_08      = param3;
+        this->mItemId      = itemId;
     }
 
     UnkStruct_ov000_0208f820_04() {}

@@ -3,6 +3,7 @@
 #include "global.h"
 #include "types.h"
 
+#include "Actor/ActorRef.hpp"
 #include "Item/ItemManager.hpp"
 #include "LinkList.hpp"
 #include "Player/Player.hpp"
@@ -246,7 +247,17 @@ public:
 
 class UnkStruct_027e0ce0_40_Base_94 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x5C);
+    /* 00 */ STRUCT_PAD(0x00, 0x14);
+    /* 14 */ ActorRef mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ ActorRef mUnk_1C;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ STRUCT_PAD(0x24, 0x48);
+    /* 48 */ ActorRef mUnk_48;
+    /* 4C */ unk32 mUnk_4C;
+    /* 50 */ unk32 mUnk_50;
+    /* 54 */ unk32 mUnk_54;
+    /* 58 */ unk32 mUnk_58;
     /* 5C */ unk32 mUnk_5C; // seems to be the walking speed of link??
     /* 60 */ unk32 mUnk_60;
     /* 64 */ unk32 mUnk_64;

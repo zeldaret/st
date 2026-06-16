@@ -22,7 +22,7 @@ ARM PlayerSceneChange::PlayerSceneChange() {
     this->mUnk_80.coords = this->mUnk_34->coords;
     this->mUnk_8C        = 0;
 
-    this->mUnk_90            = 0;
+    this->mUnk_90.data       = 0;
     *((u32 *) this->mUnk_94) = 0;
     this->mUnk_98            = -1;
     this->mUnk_9C.x          = 0;
@@ -47,8 +47,7 @@ ARM PlayerSceneChange::~PlayerSceneChange() {
 }
 
 ARM s16 PlayerSceneChange::func_ov112_02184bbc(s16 param1) {
-    // fake match?
-    if ((u32) (*(u16 *) &this->mUnk_90 << 0x10) >> 0x1E == 1) {
+    if (this->mUnk_90.type == ActorRefType_1) {
         Actor *iVar1 = gpActorManager->func_01fff3b4(this->mUnk_90);
 
         if (iVar1 != NULL) {
@@ -146,8 +145,8 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                     this->mUnk_70.z = temp_r8->z + MUL_FX32(data_0203f964[1], FLOAT_TO_FX32(2.0f));
                     break;
                 default:
-                    if (this->mUnk_2C->mUnk_150 == 0x1000) {
-                        stack2.y = this->mUnk_2C->mUnk_150 >> 0x10;
+                    if (this->mUnk_2C->mUnk_150.type_index == 0x1000) {
+                        stack2.y = this->mUnk_2C->mUnk_150.type_index;
                         stack2.x = 0;
 
                         MapObjectUnkDRTY *pDRTY = (MapObjectUnkDRTY *) gpMapObjManager->func_01fff498(stack2);
@@ -175,7 +174,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                             }
                         }
                     } else {
-                        if (((u32) ((u16) this->mUnk_2C->mUnk_150 << 0x10) >> 0x1E) == 1) {
+                        if (this->mUnk_2C->mUnk_150.type == ActorRefType_1) {
                             ActorUnk_ov000_020a8bb0 *temp_r0_6 =
                                 (ActorUnk_ov000_020a8bb0 *) gpActorManager->func_01fff3b4(this->mUnk_2C->mUnk_150);
 
@@ -185,9 +184,9 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                                 this->mUnk_70.z = temp_r0_6->mPos.z;
 
                                 if (temp_r0_6->GetActorId() == ActorId_GTTG) {
-                                    this->mUnk_90 = temp_r0_6->mRef.index;
-                                    this->mUnk_AA = temp_r0_6->mAngle;
-                                    this->mUnk_A8 = temp_r0_6->mAngle;
+                                    this->mUnk_90.type_index = temp_r0_6->mRef.type_index;
+                                    this->mUnk_AA            = temp_r0_6->mAngle;
+                                    this->mUnk_A8            = temp_r0_6->mAngle;
                                 }
                             }
                         }

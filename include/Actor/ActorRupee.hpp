@@ -44,8 +44,8 @@ public:
     /* B0 */ unk32 mUnk_B0;
     /* B4 */ unk32 mUnk_B4;
     /* B8 */ unk32 mUnk_B8;
-    /* BC */ unk32 mUnk_BC;
-    /* C0 */ unk32 mUnk_C0;
+    /* BC */ ActorRef mUnk_BC;
+    /* C0 */ ActorRef mUnk_C0;
     /* C4 */ ActorRupee_c4 mUnk_C4;
     /* E8 */ unk32 mUnk_E8;
     /* EC */ s16 mUnk_EC;
@@ -63,7 +63,6 @@ public:
     /* 2C */ virtual void vfunc_2c(unk32 param1) override;
     /* 4C */ virtual ~ActorRupee() override;
 
-    void func_ov031_020e8d2c(VecFx32 *param1, u8 param2, unk32 param3, unk32 param4);
     void func_ov031_020e8fec();
     void func_ov031_020e9068();
     void func_ov031_020e9108();
@@ -98,6 +97,8 @@ public:
     bool func_ov031_020e9d54();
     void func_ov031_020e9d94();
     bool func_ov031_020e9e5c();
+
+    static void func_ov031_020e8d2c(ActorRef *pOutRef, VecFx32 *param1, u8 param2, unk32 param3, unk32 param4);
 };
 
 class ActorProfileRupee : public ActorProfile {

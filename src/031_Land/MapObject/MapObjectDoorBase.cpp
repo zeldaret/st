@@ -498,7 +498,7 @@ ARM void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
                 }
 
                 if (this->mUnk_87) {
-                    unk32 sp8;
+                    ActorRef sp8;
                     MapObject::func_ov000_0209d54c(&sp8, this, 1, &this->mPos, var_r1_2, var_r5);
                 }
             }

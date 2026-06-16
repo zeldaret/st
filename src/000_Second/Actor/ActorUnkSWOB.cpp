@@ -97,8 +97,8 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
             AStack_7c.func_ov000_020975f8();
 
             for (j = 0, i = 0; i < ARRAY_LEN(this->mUnk_A4); i++) {
-                if (gpActorManager->func_01fff3b4(this->mUnk_A4[i].mUnk_00) == NULL) {
-                    this->mUnk_A4[i].mUnk_00 = 0;
+                if (gpActorManager->func_01fff3b4(this->mUnk_A4[i]) == NULL) {
+                    this->mUnk_A4[i].Reset();
 
                     vec.x = INT_TO_FX32(gRandom.Next32(11) - 5);
                     vec.y = 0;

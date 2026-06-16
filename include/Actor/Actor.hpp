@@ -163,6 +163,10 @@ public:
         UNSET_FLAG(this->mFlags, ActorFlag_Alive);
     }
 
+    bool IsAlive() {
+        return GET_FLAG(this->mFlags, ActorFlag_Alive);
+    }
+
     Actor();
 
     ActorId GetActorId();
@@ -187,14 +191,13 @@ public:
     s32 func_ov000_02098584();
     s32 func_ov000_020985f0(void *param1);
     void func_ov000_0209862c(unk32 param1);
-
-    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, ActorParams *param3, unk32 param4);
-    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, ActorParams *param3);
-    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, ActorParams param3);
     void func_ov000_020989e0();
 
     bool func_ov000_02098a60(unk32 param1);
     void func_ov000_02098a88(unk32 param1, unk32 param2);
+
+    static void func_ov000_020973f4(ActorRef *pOutRef, UnkStruct_ov000_020b539c *param2, ActorId actorId, ActorParams *pParams,
+                                    int param5);
 
     void func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_ov017_020bf9c8(Actor *param1);

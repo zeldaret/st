@@ -1,10 +1,13 @@
 #pragma once
 
+#include "Actor/Actor.hpp"
 #include "LinkList.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
 #include "math.hpp"
 #include "types.h"
+
+class UnkStruct_027e0ce0_40;
 
 class PlayerActorBase_5C {
 public:
@@ -41,14 +44,14 @@ public:
     /* 30 */ u16 mAngle;
     /* 32 */ u8 mInvincibilityTimer;
     /* 33 */ u8 mInvincibilityIconTimer; // the blinking icon on top-screen
-    /* 34 */ unk32 mUnk_34;
+    /* 34 */ ActorRef mGrabActor;
     /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
     /* 44 */ unk32 mUnk_44;
     /* 48 */ unk32 mUnk_48;
     /* 4C */ unk32 mUnk_4C;
     /* 50 */ unk32 mUnk_50;
     /* 54 */ unk32 mUnk_54;
-    /* 58 */ unk32 mUnk_58;
+    /* 58 */ UnkStruct_027e0ce0_40 *mUnk_58;
     /* 5C */ PlayerActorBase_5C mUnk_5C;
     /* 70 */ PlayerActorBase_70 *mUnk_70;
     /* 74 */ PlayerActorBase_74 *mUnk_74;

@@ -135,6 +135,7 @@ config.libs = [
     GameLib(
         "ITCM",
         [
+            Object("ITCM/ITCM_ActorManager.cpp"),
             Object("ITCM/ITCM_MapObjectManager.cpp"),
         ]
     ),

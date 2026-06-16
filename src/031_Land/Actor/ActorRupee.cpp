@@ -44,7 +44,7 @@ struct stack_struct {
 };
 
 // non-matching
-ARM void ActorRupee::func_ov031_020e8d2c(VecFx32 *param1, u8 param2, unk32 param3, unk32 param4) {
+ARM void ActorRupee::func_ov031_020e8d2c(ActorRef *pOutRef, VecFx32 *param1, u8 param2, unk32 param3, unk32 param4) {
     stack_struct stack;
     stack.sp2C = 0;
     stack.func_ov000_020975f8();
@@ -54,7 +54,7 @@ ARM void ActorRupee::func_ov031_020e8d2c(VecFx32 *param1, u8 param2, unk32 param
     stack.sp4.z = param1->z;
     stack.sp2C  = param4;
     stack.sp30  = param3;
-    this->func_ov000_020973f4(&data_ov000_020b539c_eur, ActorId_Rupee, (ActorParams *) &stack, 0);
+    Actor::func_ov000_020973f4(pOutRef, &data_ov000_020b539c_eur, ActorId_Rupee, (ActorParams *) &stack, 0);
 }
 
 ARM ActorRupee::ActorRupee() :

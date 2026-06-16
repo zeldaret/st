@@ -32,8 +32,8 @@ public:
     /* BC */ unk16 mUnk_BC;
     /* BE */ s8 mUnk_BE;
     /* BF */ STRUCT_PAD(0xBF, 0xC0);
-    /* C0 */ unk32 mUnk_C0;
-    /* C4 */ unk32 mUnk_C4;
+    /* C0 */ ActorRef mUnk_C0;
+    /* C4 */ ActorRef mUnk_C4;
     /* C8 */ ActorHeart_c4 mUnk_C8;
     /* EC */ VecFx32 mUnk_EC;
 
@@ -45,13 +45,14 @@ public:
     /* 4C */ virtual ~ActorHeart() override {};
 
     void func_ov031_020f0750();
-    void func_ov031_020eed64(ActorParams *param_2, unk32 param_3, unk32 param_4);
     void func_ov031_020ef1b4(unk16 param_2);
     void func_ov031_020ef208();
     void func_ov031_020ef4a8();
     void func_ov031_020ef528();
     void func_ov031_020ef570();
     void func_ov031_020ef698();
+
+    static void func_ov031_020eed64(ActorRef *pOutRef, ActorParams *param_2, unk32 param_3, unk32 param_4);
 
     // data_ov031_02113d74
     void func_ov031_020ef2f8();

@@ -60,15 +60,20 @@ ARM ActorProfileHeart::ActorProfileHeart() :
     this->mUnk_04.Init(FLOAT_TO_FX32(0.25));
 }
 
-ARM void ActorHeart::func_ov031_020eed64(ActorParams *param_2, unk32 param_3, unk32 param_4) {
+ARM void ActorHeart::func_ov031_020eed64(ActorRef *pOutRef, ActorParams *param_2, unk32 param_3, unk32 param_4) {
     ActorParams actorParams;
+
+    actorParams.mUnk_28 = 0;
     actorParams.func_ov000_020975f8();
+    actorParams.mUnk_28 = param_4;
 
-    actorParams.mInitialPos = param_2->mInitialPos;
-    actorParams.mUnk_28     = param_4;
-    actorParams.mUnk_2C     = param_3;
+    actorParams.mInitialPos.x = param_2->mInitialPos.x;
+    actorParams.mInitialPos.y = param_2->mInitialPos.y;
+    actorParams.mInitialPos.z = param_2->mInitialPos.z;
 
-    this->func_ov000_020973f4(&data_ov000_020b539c_eur, ActorId_Heart, &actorParams, 0);
+    actorParams.mUnk_2C = param_3;
+
+    Actor::func_ov000_020973f4(pOutRef, &data_ov000_020b539c_eur, ActorId_Heart, &actorParams, 0);
 }
 
 ARM void ActorHeart::func_ov031_020f0750() {}
