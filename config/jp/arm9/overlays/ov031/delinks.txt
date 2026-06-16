@@ -125,7 +125,9 @@ src/031_Land/Actor/ActorUnkSWCH.cpp:
     .bss        start:0x021189f4 end:0x02118a40
 
 src/031_Land/Actor/ActorUnkSWON.cpp:
+    complete
     .text       start:0x020f9800 end:0x020f9958
+    .data       start:0x0211662c end:0x021166ac
     .init       start:0x0211349c end:0x021134ec
     .ctor       start:0x02114578 end:0x0211457c
     .bss        start:0x02118a40 end:0x02118a8c
