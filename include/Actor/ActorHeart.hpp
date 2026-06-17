@@ -9,7 +9,7 @@ class ActorHeart_c4 : public Actor_c4 {
 public:
     ActorHeart_c4(Actor *param1);
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0c(unk32 param1) override;
@@ -32,8 +32,8 @@ public:
     /* BC */ unk16 mUnk_BC;
     /* BE */ s8 mUnk_BE;
     /* BF */ STRUCT_PAD(0xBF, 0xC0);
-    /* C0 */ unk32 mUnk_C0;
-    /* C4 */ unk32 mUnk_C4;
+    /* C0 */ ActorRef mUnk_C0;
+    /* C4 */ ActorRef mUnk_C4;
     /* C8 */ ActorHeart_c4 mUnk_C8;
     /* EC */ VecFx32 mUnk_EC;
 
@@ -45,7 +45,7 @@ public:
     /* 4C */ virtual ~ActorHeart() override {};
 
     void func_ov031_020f0750();
-    void func_ov031_020eed64(ActorParams *param_2, unk32 param_3, unk32 param_4);
+    static void func_ov031_020eed64(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref);
     void func_ov031_020ef1b4(unk16 param_2);
     void func_ov031_020ef208();
     void func_ov031_020ef4a8();

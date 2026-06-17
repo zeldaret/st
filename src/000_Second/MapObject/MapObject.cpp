@@ -254,7 +254,7 @@ ARM void MapObject::func_ov000_0209d54c(void *param1, MapObject *thisx, unk32 pa
 }
 
 ARM void MapObject::func_ov000_0209d5c8(ActorRef ref) {
-    if (ref.index != 0) {
+    if (ref.type_index != 0) {
         Actor *pActor = gpActorManager->func_01fff3b4(ref.Get32());
 
         if (pActor != NULL) {

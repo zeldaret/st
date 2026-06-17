@@ -149,13 +149,16 @@ src/031_Land/Actor/ActorUnkRLST.cpp:
     .text       start:0x020f9d24 end:0x020fb810
     .init       start:0x0211358c end:0x021135dc
     .ctor       start:0x02114584 end:0x02114588
-    .bss        start:0x02118b24 end:0x02118c34
+    .bss        start:0x02118b24 end:0x02118c0c
 
 src/031_Land/Actor/ActorDroppedItem.cpp:
+    complete
     .text       start:0x020fb810 end:0x020fc5b4
     .init       start:0x021135dc end:0x02113714
     .ctor       start:0x02114588 end:0x0211458c
-    .bss        start:0x02118c34 end:0x02118d3c
+    .rodata     start:0x02112938 end:0x0211295c
+    .data       start:0x02116914 end:0x02116a9c
+    .bss        start:0x02118c0c end:0x02118d3c
 
 src/031_Land/Actor/ActorUnkMLCK.cpp:
     .text       start:0x020fc5b4 end:0x020fcd04

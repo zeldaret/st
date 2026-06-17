@@ -43,8 +43,8 @@ public:
         unk8 mUnk_26_0;
         unk8 mUnk_26_1;
     };
-    /* 28 */ unk32 mUnk_28;
-    /* 2C */ unk32 mUnk_2C;
+    /* 28 */ ActorRef mUnk_28;
+    /* 2C */ u32 mUnk_2C;
     /* 30 */
 
     void func_ov000_020975f8();
@@ -101,6 +101,21 @@ enum ActorFlag_ {
 
 class Actor_c4;
 
+class Actor_9c {
+public:
+    /* 00 (vtable) */
+    /* 04 */
+
+    /* 00 */ virtual void vfunc_00(); // corresponds to func_ov000_02097c14
+    /* 04 */ virtual void vfunc_04(); // corresponds to func_ov000_02097c20
+    /* 08 */
+
+    Actor_9c();
+    void func_ov000_02097bec();
+};
+
+typedef s16 ActorState;
+
 class Actor : public SysObject {
 public:
     /* 00 (vtable) */
@@ -111,16 +126,16 @@ public:
     /* 2A */ unk16 mUnk_2A;
     /* 2C */ unk32 mUnk_2C; // gravity?
     /* 30 */ Cylinder *mUnk_30;
-    /* 34 */ Cylinder *mUnk_34;
+    /* 34 */ const Cylinder *mUnk_34;
     /* 38 */ unk32 *mUnk_38;
-    /* 3C */ unk32 mUnk_3C;
+    /* 3C */ Actor_9c *mUnk_3C;
     /* 40 */ Actor_c4 *mUnk_40;
     /* 44 */ u16 mUnk_44;
     /* 46 */ unk16 mUnk_46;
     /* 48 */ unk16 mUnk_48;
     /* 4A */ unk8 mUnk_4A;
     /* 4A */ unk8 mUnk_4B;
-    /* 4C */ s16 mUnk_4C;
+    /* 4C */ ActorState mUnk_4C;
     /* 4E */ s16 mUnk_4E;
     /* 50 */ volatile u16 mUnk_50;
     /* 52 */ u16 mUnk_52;
@@ -167,14 +182,16 @@ public:
 
     ActorId GetActorId();
 
-    bool isTimerOut() {
+    bool IsTimerOut() {
         if (this->mUnk_50 < this->mUnk_52) {
-            ++this->mUnk_50;
+            this->mUnk_50++;
             return false;
         }
+
         return true;
     }
 
+    // overlay 0
     void func_ov000_0209848c(ActorProfile *param1);
     void func_ov000_020984b0();
     void func_ov000_020984b4();
@@ -188,7 +205,6 @@ public:
     bool func_ov000_02098838();
     unk32 func_ov000_02098910(unk32 param1, unk32 param2);
     void func_ov000_02098b8c(unk32 param1, unk32 param2);
-
     s32 func_ov000_02098518(unk32 *param1);
     VecFx32 *func_ov000_0209853c(unk32 param1);
     s32 func_ov000_02098554();
@@ -197,40 +213,21 @@ public:
     s32 func_ov000_02098584();
     s32 func_ov000_020985f0(void *param1);
     void func_ov000_0209862c(unk32 param1);
-
-    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, ActorParams *param3, unk32 param4);
-    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, ActorParams *param3);
-    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, ActorParams param3);
     void func_ov000_020989e0();
-
     bool func_ov000_02098a60(unk32 param1);
     void func_ov000_02098a88(unk32 param1, unk32 param2);
 
+    static void func_ov000_020973f4(ActorRef *pOutRef, UnkStruct_ov000_020b539c *param2, ActorId actorId, ActorParams *pParams,
+                                    int param5);
+
+    // overlay 17
     void func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_ov017_020bf9c8(Actor *param1);
-};
-
-struct Actor_c4_stack {
-    unk32 param1;
-    unk32 param2;
 };
 
 class Actor_c4_Base {
 public:
     Actor_c4_Base(void *param1, unk32 param2);
-};
-
-class Actor_9c {
-public:
-    /* 00 (vtable) */
-    /* 04 */
-
-    /* 00 */ virtual void vfunc_00(); // corresponds to func_ov000_02097c14
-    /* 04 */ virtual void vfunc_04(); // corresponds to func_ov000_02097c20
-    /* 08 */
-
-    Actor_9c();
-    void func_ov000_02097bec();
 };
 
 class Actor_c4 : public Actor_c4_Base {
@@ -249,7 +246,7 @@ public:
     /* 20 */ Actor *mUnk_20;
     /* 24 */
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2);
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2);
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0c(unk32 param1);
@@ -257,6 +254,23 @@ public:
 
     Actor_c4(Actor *param1) :
         Actor_c4_Base(&param1->mRef, 0) {}
+};
+
+class Actor_Derived2 : public Actor {
+public:
+    /* 00 (base) */
+    /* 94 */ unk32 mUnk_94;
+    /* 98 */ VecFx32 mUnk_98;
+    /* A4 */ unk32 mUnk_A4;
+    /* A8 */ void *mUnk_A8;
+    /* AC */ unk8 mUnk_AC;
+    /* AD */ unk8 mUnk_AD;
+    /* AE */
+
+    Actor_Derived2();
+
+    /* 30 */ virtual void vfunc_30();
+    /* 54 */ virtual void vfunc_54();
 };
 
 extern UnkStruct_ov000_020b539c data_ov000_020b539c_eur;

@@ -9,7 +9,7 @@ ARM Actor::Actor() {
     this->mVel.z  = 0;
     this->mUnk_2C = 0xCD;
     this->mUnk_38 = 0;
-    this->mUnk_3C = 0;
+    this->mUnk_3C = NULL;
     this->mUnk_40 = 0;
     this->mUnk_48 = 4;
     this->mUnk_4C = -1;

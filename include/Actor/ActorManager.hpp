@@ -43,7 +43,7 @@ public:
     ActorManager();
     ~ActorManager();
 
-    Actor *func_01fff3b4(unk32 param1);
+    Actor *func_01fff3b4(ActorRef ref);
     Actor **func_01fff350(void *param1, Actor **ppActorTable);
 
     void func_ov000_02096e44(int index);

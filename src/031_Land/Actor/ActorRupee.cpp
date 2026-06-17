@@ -32,29 +32,21 @@ ARM ActorProfileRupee::ActorProfileRupee() :
     this->mUnk_04.size  = 0x556;
 }
 
-struct stack_struct {
-    VecFx32 sp4; // 4 8 c
-    unk32 pad1;
-    unk16 sp14;
-    u8 pad2[0x16];
-    unk32 sp2C;
-    unk32 sp30;
+ARM void ActorRupee::func_ov031_020e8d2c(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, u32 unk_2C, ActorRef ref) {
+    ActorParams actorParams;
 
-    void func_ov000_020975f8();
-};
+    actorParams.mUnk_28.Reset();
+    actorParams.func_ov000_020975f8();
 
-// non-matching
-ARM void ActorRupee::func_ov031_020e8d2c(VecFx32 *param1, u8 param2, unk32 param3, unk32 param4) {
-    stack_struct stack;
-    stack.sp2C = 0;
-    stack.func_ov000_020975f8();
-    stack.sp14  = param2 & 0xFF;
-    stack.sp4.x = param1->x;
-    stack.sp4.y = param1->y;
-    stack.sp4.z = param1->z;
-    stack.sp2C  = param4;
-    stack.sp30  = param3;
-    this->func_ov000_020973f4(&data_ov000_020b539c_eur, ActorId_Rupee, (ActorParams *) &stack, 0);
+    actorParams.mInitialPos.x = pPos->x;
+    actorParams.mInitialPos.y = pPos->y;
+    actorParams.mInitialPos.z = pPos->z;
+
+    actorParams.mParams[0] = params & 0xFF;
+    actorParams.mUnk_28    = ref;
+    actorParams.mUnk_2C    = unk_2C;
+
+    Actor::func_ov000_020973f4(pOutRef, &data_ov000_020b539c_eur, ActorId_Rupee, &actorParams, 0);
 }
 
 ARM ActorRupee::ActorRupee() :
@@ -622,7 +614,7 @@ ARM void ActorRupee::vfunc_20() {
         uVar3 = uStack_18;
 
         if ((u16) this->mUnk_9A <= (u16) this->mUnk_98) {
-            this->mUnk_3C = (unk32) & this->mUnk_9C;
+            this->mUnk_3C = &this->mUnk_9C;
             uStack_18     = uVar2;
             this->func_ov000_020989e0();
             uVar3 = uStack_18;
@@ -865,15 +857,14 @@ ARM ActorRupee_c4::ActorRupee_c4(Actor *param1) :
     this->mUnk_04 = 1;
 }
 
-// non-matching
-ARM unk32 ActorRupee_c4::vfunc_00(Actor_c4_stack param1, unk32 param2) {
+ARM bool ActorRupee_c4::vfunc_00(ActorRef ref, unk32 param2) {
     if (param2 != 0) {
         ActorRupee *pRupee = GET_ACTOR_RUPEE(this->mUnk_20);
-        pRupee->mUnk_C0    = param1.param1;
+        pRupee->mUnk_C0    = ref.Get32();
         pRupee->func_ov031_020e9904(7);
     }
 
-    return this->Actor_c4::vfunc_00(param1, param2);
+    return this->Actor_c4::vfunc_00(ref, param2);
 }
 
 ARM void ActorRupee_c4::vfunc_04() {
