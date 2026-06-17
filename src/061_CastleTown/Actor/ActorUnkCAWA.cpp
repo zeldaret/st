@@ -14,8 +14,14 @@ ARM ActorProfileUnkCAWA::ActorProfileUnkCAWA() :
 
 ARM ActorUnkCAWA::ActorUnkCAWA() {}
 
-ARM void ActorUnkCAWA::func_ov061_02158b88(void) {}
-ARM void ActorUnkCAWA::func_ov061_02158ba8(void) {}
+ARM void ActorUnkCAWA::func_ov061_02158b88(void) {
+    data_ov000_020b539c_eur.mUnk_30->vfunc_04();
+}
+
+ARM void ActorUnkCAWA::func_ov061_02158ba8(void) {
+    data_ov000_020b539c_eur.mUnk_30->vfunc_04();
+}
+
 ARM void ActorUnkCAWA::func_ov061_02158ccc(void) {}
 ARM void ActorUnkCAWA::func_ov061_02158cf8(void) {}
 ARM void ActorUnkCAWA::func_ov061_02158d4c(void) {}
