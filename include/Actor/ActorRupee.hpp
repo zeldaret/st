@@ -44,7 +44,7 @@ public:
     /* B0 */ unk32 mUnk_B0;
     /* B4 */ unk32 mUnk_B4;
     /* B8 */ unk32 mUnk_B8;
-    /* BC */ unk32 mUnk_BC;
+    /* BC */ ActorRef mUnk_BC;
     /* C0 */ ActorRef mUnk_C0;
     /* C4 */ ActorRupee_c4 mUnk_C4;
     /* E8 */ unk32 mUnk_E8;

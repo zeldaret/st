@@ -22,7 +22,7 @@ ARM PlayerSceneChange::PlayerSceneChange() {
     this->mUnk_80.coords = this->mUnk_34->coords;
     this->mUnk_8C        = 0;
 
-    this->mUnk_90            = 0;
+    this->mUnk_90.Reset();
     *((u32 *) this->mUnk_94) = 0;
     this->mUnk_98            = -1;
     this->mUnk_9C.x          = 0;
@@ -47,12 +47,11 @@ ARM PlayerSceneChange::~PlayerSceneChange() {
 }
 
 ARM s16 PlayerSceneChange::func_ov112_02184bbc(s16 param1) {
-    // fake match?
-    if ((u32) (*(u16 *) &this->mUnk_90 << 0x10) >> 0x1E == 1) {
-        Actor *iVar1 = gpActorManager->func_01fff3b4(this->mUnk_90);
+    if (this->mUnk_90.type == ActorRefType_1) {
+        Actor *pActor = gpActorManager->func_01fff3b4(this->mUnk_90);
 
-        if (iVar1 != NULL) {
-            return iVar1->mAngle;
+        if (pActor != NULL) {
+            return pActor->mAngle;
         }
     } else if (this->mUnk_94[0] == 0x1000) {
         return this->mUnk_AE;
