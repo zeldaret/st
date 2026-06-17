@@ -10,6 +10,11 @@
 
 // --- Actor Common ---
 
+static PTMF<ActorDroppedItem> data_ov031_02114bb0[] = {
+    ActorDroppedItem::func_ov031_020fa46c, ActorDroppedItem::func_ov031_020fa4a0, ActorDroppedItem::func_ov031_020fa568,
+    ActorDroppedItem::func_ov031_020fa5f0, ActorDroppedItem::func_ov031_020fa664, ActorDroppedItem::func_ov031_020fa678,
+    ActorDroppedItem::func_ov031_020fa72c};
+
 static PTMF<ActorDroppedItem> data_ov031_02114be8[] = {
     ActorDroppedItem::func_ov031_020fa468, ActorDroppedItem::func_ov031_020fa494, ActorDroppedItem::func_ov031_020fa524,
     ActorDroppedItem::func_ov031_020fa5d8, ActorDroppedItem::func_ov031_020fa650, ActorDroppedItem::func_ov031_020fa668,
@@ -40,12 +45,13 @@ ARM ActorDroppedItem::ActorDroppedItem() :
     mUnk_DC(0x0),
     mUnk_E0(0x0),
     mUnk_E4(this),
-    mUnk_108(0x0),
-    mUnk_10C(0x0),
-    mUnk_110(0x0),
-    mUnk_114(0x0),
-    mUnk_118(false),
-    mUnk_119(false) {
+    mUnk_108(0x0) {
+
+    mUnk_10C.x = FLOAT_TO_FX32(0.0f);
+    mUnk_10C.y = FLOAT_TO_FX32(0.0f);
+    mUnk_10C.z = FLOAT_TO_FX32(0.0f);
+    mUnk_118   = false;
+    mUnk_119   = false;
 
     switch (this->GetActorId()) {
         case ActorId_SPAR:
@@ -136,7 +142,7 @@ ARM void ActorDroppedItem::func_ov031_020f9f8c(VecFx32 *param_1, unk32 test, Act
 }
 
 ARM bool ActorDroppedItem::vfunc_18(unk32 param1) {
-    if (this->itemTypeId >= (u32) 0x9) {
+    if (this->itemTypeId >= (u32) DroppedItemTypeId_Unknown) {
         return false;
     }
     this->mUnk_52 = 0x1E0;
@@ -157,7 +163,62 @@ ARM void ActorDroppedItem::vfunc_24() {
 }
 
 // non-matching
-ARM void ActorDroppedItem::func_ov031_020fa260() {}
+ARM void ActorDroppedItem::func_ov031_020fa260() {
+    this->mUnk_3C = (unk32) & this->mUnk_B4;
+
+    CALL_PTMF(PTMF<ActorDroppedItem>, data_ov031_02114bb0[this->mUnk_4C]);
+
+    if (!this->customTimerOut()) {
+        this->func_ov000_020989e0();
+
+        if (this->mUnk_BC & 0x3FFFF) {
+            switch ((s32) this->mUnk_D0) {
+                case 8:
+                case 16:
+                    if (this->mUnk_119) {
+                        bool var = false;
+                        if (this->mUnk_C0 == 0x100 && this->mUnk_C2 == 0) {
+                            var = true;
+                        }
+                        if (!var) {
+                            if (this->mUnk_C0 == 0x100 && this->mUnk_C2 == 1) {
+                                if (data_027e0ce0->func_01fff1e0()) {
+                                    this->func_ov031_020fa424(0x6);
+                                }
+                            }
+                        } else {
+                            this->func_ov031_020fa424(0x6);
+                        }
+                    } else if (this->mUnk_C0 & 0x100) {
+                        this->func_ov031_020fa424(0x6);
+                    }
+                    break;
+                case 12:
+                    this->mUnk_B8 &= ~0x1000;
+                    this->mUnk_DC = (u32) this->mUnk_C0;
+                    this->func_ov031_020fa424(0x3);
+            }
+        }
+    }
+
+    if (((s32) this->mUnk_5C.mUnk_24 < 0) && (this->mUnk_4C != 0x6)) {
+        this->func_ov031_020fa900();
+    }
+    VecFx32_Copy(&this->mPos, &this->mPrevPos);
+    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+
+    if (this->mUnk_4C != 0x3) {
+        this->func_ov000_02098b8c(0x0, 0x0);
+    }
+
+    if (this->mUnk_46 & 3) {
+        this->mVel.y = FLOAT_TO_FX32(0.0f);
+    }
+    VecFx32_Add(&this->mPos, &this->mUnk_10C, &this->mPos);
+    this->mUnk_10C.x = FLOAT_TO_FX32(0.0f);
+    this->mUnk_10C.y = FLOAT_TO_FX32(0.0f);
+    this->mUnk_10C.z = FLOAT_TO_FX32(0.0f);
+}
 
 ARM void ActorDroppedItem::func_ov031_020fa424(s16 param_1) {
     this->mUnk_4C = param_1;

@@ -187,6 +187,7 @@ public:
     void func_ov000_020984f0();
     bool func_ov000_02098838();
     unk32 func_ov000_02098910(unk32 param1, unk32 param2);
+    void func_ov000_02098b8c(unk32 param1, unk32 param2);
 
     s32 func_ov000_02098518(unk32 *param1);
     VecFx32 *func_ov000_0209853c(unk32 param1);

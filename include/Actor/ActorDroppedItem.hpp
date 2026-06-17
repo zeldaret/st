@@ -41,12 +41,16 @@ class ActorDroppedItem : public ActorDroppedItem_Upperclass {
 public:
     /* 000 (base) */
     /* 094 */ STRUCT_PAD(0x094, 0x0AE);
-    /* 0AE */ unk16 mUnk_AE;
-    /* 0B0 */ unk16 mUnk_B0;
+    /* 0AE */ u16 mUnk_AE;
+    /* 0B0 */ u16 mUnk_B0;
     /* 0B2 */ STRUCT_PAD(0xB2, 0xB4);
     /* 0B4 */ Actor_9c mUnk_B4;
     /* 0B8 */ unk32 mUnk_B8;
-    /* 0BC */ STRUCT_PAD(0x0BC, 0x0D4);
+    /* 0BC */ unk32 mUnk_BC;
+    /* 0C0 */ u16 mUnk_C0;
+    /* 0C2 */ u16 mUnk_C2;
+    /* 0C4 */ STRUCT_PAD(0x0C4, 0x0D0);
+    /* 0D0 */ unk32 mUnk_D0;
     /* 0D4 */ unk32 itemTypeId;
     /* 0D8 */ fx32 mUnk_D8;
     /* 0DC */ unk32 mUnk_DC;
@@ -54,9 +58,7 @@ public:
     /* 0E4 */ ActorDroppedItem_c4 mUnk_E4;
     /* 108 */ unk16 mUnk_108;
     /* 10A */ STRUCT_PAD(0x10A, 0x10C);
-    /* 10C */ unk32 mUnk_10C;
-    /* 110 */ unk32 mUnk_110;
-    /* 114 */ unk32 mUnk_114;
+    /* 10C */ VecFx32 mUnk_10C;
     /* 118 */ bool mUnk_118;
     /* 119 */ bool mUnk_119;
 
@@ -69,6 +71,14 @@ public:
     virtual bool vfunc_18(unk32 param1) override;
     virtual void vfunc_20() override;
     virtual void vfunc_24() override;
+
+    bool customTimerOut() {
+        if (this->mUnk_AE < this->mUnk_B0) {
+            ++this->mUnk_AE;
+            return false;
+        }
+        return true;
+    }
 
     void func_ov031_020fa260();
     void func_ov031_020fa424(s16 param_1);
