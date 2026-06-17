@@ -402,6 +402,7 @@ public:
 
     VecFx32 *func_01fff148(unk32 param1);
     bool func_01fff1a4();
+    bool func_01fff1e0();
 
     // overlay 0
     void func_ov000_0208a318(unk32 param1, unk32 param2, unk32 param3);

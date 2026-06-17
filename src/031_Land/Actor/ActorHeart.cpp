@@ -60,18 +60,17 @@ ARM ActorProfileHeart::ActorProfileHeart() :
     this->mUnk_04.Init(FLOAT_TO_FX32(0.25));
 }
 
-ARM void ActorHeart::func_ov031_020eed64(ActorRef *pOutRef, ActorParams *param_2, unk32 param_3, unk32 param_4) {
+ARM void ActorHeart::func_ov031_020eed64(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref) {
     ActorParams actorParams;
 
-    actorParams.mUnk_28 = 0;
+    actorParams.mUnk_28.Reset();
     actorParams.func_ov000_020975f8();
-    actorParams.mUnk_28 = param_4;
 
-    actorParams.mInitialPos.x = param_2->mInitialPos.x;
-    actorParams.mInitialPos.y = param_2->mInitialPos.y;
-    actorParams.mInitialPos.z = param_2->mInitialPos.z;
-
-    actorParams.mUnk_2C = param_3;
+    actorParams.mInitialPos.x = pPos->x;
+    actorParams.mInitialPos.y = pPos->y;
+    actorParams.mInitialPos.z = pPos->z;
+    actorParams.mUnk_28       = ref;
+    actorParams.mUnk_2C       = params;
 
     Actor::func_ov000_020973f4(pOutRef, &data_ov000_020b539c_eur, ActorId_Heart, &actorParams, 0);
 }
@@ -135,7 +134,7 @@ void ActorHeart::vfunc_20() {
     this->mUnk_C8.mUnk_10 = stack.mUnk_04; // d8
     stack.mUnk_06         = stack.mUnk_04;
     this->mUnk_C8.mUnk_12 = stack.mUnk_06; // da
-    this->mUnk_3C         = (unk32) & this->mUnk_98;
+    this->mUnk_3C         = &this->mUnk_98;
 
     CALL_PTMF(PTMF<ActorHeart>, data_ov031_02113d74[this->mUnk_4C]);
 
@@ -223,7 +222,6 @@ ARM void ActorHeart::func_ov031_020ef1b4(unk16 param_2) {
     CALL_PTMF(PTMF<ActorHeart>, data_ov031_02113da4[this->mUnk_4C]);
 }
 
-// non-matching (r1 and r2 swapped)
 ARM void ActorHeart::func_ov031_020ef208() {
     bool var2 = true;
     bool var1 = true;
@@ -241,18 +239,12 @@ ARM void ActorHeart::func_ov031_020ef208() {
         return;
     }
     if ((u8) this->mUnk_BE == 0) {
-        if (this->mUnk_50 < this->mUnk_52) {
-            this->mUnk_50++;
-            var2 = false;
-        } else {
-            var2 = true;
+        if (!this->IsTimerOut()) {
+            return;
         }
-
-        if (var2) {
-            this->mUnk_BE = 0x01;
-            this->mUnk_50 = 0x00;
-            this->mUnk_52 = 0x3C;
-        }
+        this->mUnk_BE = 0x01;
+        this->mUnk_52 = 0x3C;
+        this->mUnk_50 = 0x00;
         return;
     }
 
@@ -262,15 +254,10 @@ ARM void ActorHeart::func_ov031_020ef208() {
         SET_FLAG(this->mFlags, ActorFlag_Visible);
     }
 
-    if (this->mUnk_50 < this->mUnk_52) {
-        this->mUnk_50++;
-        var2 = false;
-    } else {
-        var2 = true;
+    if (!this->IsTimerOut()) {
+        return;
     }
-    if (var2) {
-        this->func_ov000_020984d0();
-    }
+    this->func_ov000_020984d0();
 }
 
 ARM void ActorHeart::func_ov031_020ef2ec() {
@@ -461,15 +448,14 @@ ARM ActorHeart_c4::ActorHeart_c4(Actor *param1) :
     this->mUnk_04 = 1;
 }
 
-// non-matching
-ARM unk32 ActorHeart_c4::vfunc_00(Actor_c4_stack param_2, unk32 param_3) {
+ARM bool ActorHeart_c4::vfunc_00(ActorRef ref, unk32 param_3) {
     if (param_3 != 0) {
         ActorHeart *pHeart = GET_ACTORHEART(this);
-        pHeart->mUnk_C4    = param_2.param1;
+        pHeart->mUnk_C4    = ref;
         pHeart->func_ov031_020ef1b4(0x04);
     }
 
-    return this->Actor_c4::vfunc_00(param_2, param_3);
+    return this->Actor_c4::vfunc_00(ref, param_3);
 }
 
 ARM void ActorHeart_c4::vfunc_04() {

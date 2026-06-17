@@ -23,7 +23,7 @@ class ActorRupee_c4 : public Actor_c4 {
 public:
     ActorRupee_c4(Actor *param1);
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0c(unk32 param1) override;
@@ -98,7 +98,7 @@ public:
     void func_ov031_020e9d94();
     bool func_ov031_020e9e5c();
 
-    static void func_ov031_020e8d2c(ActorRef *pOutRef, VecFx32 *param1, u8 param2, unk32 param3, unk32 param4);
+    static void func_ov031_020e8d2c(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, u32 unk_2C, ActorRef ref);
 };
 
 class ActorProfileRupee : public ActorProfile {
