@@ -12,7 +12,7 @@ ARM Actor::Actor() {
     this->mUnk_3C = NULL;
     this->mUnk_40 = 0;
     this->mUnk_48 = 4;
-    this->mUnk_4C = -1;
+    this->mState  = ActorState_None;
     this->mUnk_50 = 0;
     this->mUnk_52 = 0;
     this->mUnk_54 = 0;

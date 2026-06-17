@@ -6,6 +6,12 @@
 #include "global.h"
 #include "types.h"
 
+enum ActorUnkOBPCState_ {
+    ActorUnkOBPCState_0 = 0,
+    ActorUnkOBPCState_1 = 1,
+    ActorUnkOBPCState_Max,
+};
+
 class ActorUnkOBPC : public Actor {
 public:
     /* 00 (base) */
@@ -19,10 +25,9 @@ public:
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
-    /* 4C */ virtual ~ActorUnkOBPC() override;
 
     bool func_ov024_020d6f74(void);
-    void func_ov024_020d7064(s16 param1, unk32 param2);
+    void SetState(ActorState state, int param2);
     bool func_ov024_020d7154(void);
 };
 
@@ -31,7 +36,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkOBPC();
-    ~ActorProfileUnkOBPC();
 
     /* 0C */ virtual Actor *Create();
 

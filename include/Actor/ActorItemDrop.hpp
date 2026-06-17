@@ -20,21 +20,21 @@ enum ItemDropType_ {
     ItemDropType_Max            = 10,
 };
 
-enum ActorDroppedItemState_ {
-    ActorDroppedItemState_0 = 0,
-    ActorDroppedItemState_1 = 1,
-    ActorDroppedItemState_2 = 2,
-    ActorDroppedItemState_3 = 3,
-    ActorDroppedItemState_4 = 4,
-    ActorDroppedItemState_5 = 5,
-    ActorDroppedItemState_6 = 6,
-    ActorDroppedItemState_Max,
+enum ActorItemDropState_ {
+    ActorItemDropState_0 = 0,
+    ActorItemDropState_1 = 1,
+    ActorItemDropState_2 = 2,
+    ActorItemDropState_3 = 3,
+    ActorItemDropState_4 = 4,
+    ActorItemDropState_5 = 5,
+    ActorItemDropState_6 = 6,
+    ActorItemDropState_Max,
 };
 
-class ActorDroppedItem_c4 : public Actor_c4 {
+class ActorItemDrop_c4 : public Actor_c4 {
 public:
     // func_ov031_020fa9f8
-    ActorDroppedItem_c4(Actor *param1);
+    ActorItemDrop_c4(Actor *param1);
 
     virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     virtual void vfunc_04() override;
@@ -58,7 +58,7 @@ public:
     /* 0D8 */ fx32 mUnk_D8;
     /* 0DC */ ActorRef mUnk_DC;
     /* 0E0 */ ActorRef mUnk_E0;
-    /* 0E4 */ ActorDroppedItem_c4 mUnk_E4;
+    /* 0E4 */ ActorItemDrop_c4 mUnk_E4;
     /* 108 */ unk16 mUnk_108;
     /* 10A */ STRUCT_PAD(0x10A, 0x10C);
     /* 10C */ VecFx32 mUnk_10C;
@@ -83,7 +83,7 @@ public:
     /* 4C */ virtual ~ActorItemDrop() override;
 
     void func_ov031_020fa260();
-    void func_ov031_020fa424(ActorState state);
+    void SetState(ActorState state);
     void func_ov031_020fa900();
 
     static void func_ov031_020f9f8c(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref);

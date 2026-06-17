@@ -590,7 +590,7 @@ _ZN10ActorRupee19func_ov031_020e970cEv kind:function(arm,size=0x34) addr:0x020e9
 _ZN10ActorRupee19func_ov031_020e9740Ev kind:function(arm,size=0xf8) addr:0x020e9740
 _ZN10ActorRupee19func_ov031_020e9838Ev kind:function(arm,size=0x8c) addr:0x020e9838
 _ZN10ActorRupee19func_ov031_020e98c4Ev kind:function(arm,size=0x40) addr:0x020e98c4
-_ZN10ActorRupee19func_ov031_020e9904Ei kind:function(arm,size=0x54) addr:0x020e9904
+_ZN10ActorRupee8SetStateEs kind:function(arm,size=0x54) addr:0x020e9904
 _ZN10ActorRupee8vfunc_20Ev kind:function(arm,size=0x230) addr:0x020e9958
 _ZN10ActorRupee19func_ov031_020e9b88Ev kind:function(arm,size=0x60) addr:0x020e9b88
 _ZN10ActorRupee19func_ov031_020e9be8Ev kind:function(arm,size=0x44) addr:0x020e9be8
@@ -735,7 +735,7 @@ _ZN10ActorHeart19func_ov031_020eed64EP8ActorRefPK7VecFx32jS0_ kind:function(arm,
 _ZN10ActorHeartC1Ev kind:function(arm,size=0xf8) addr:0x020eede0
 _ZN10ActorHeart8vfunc_18Ei kind:function(arm,size=0x10) addr:0x020eeed8
 _ZN10ActorHeart8vfunc_20Ev kind:function(arm,size=0x2cc) addr:0x020eeee8
-_ZN10ActorHeart19func_ov031_020ef1b4Es kind:function(arm,size=0x54) addr:0x020ef1b4
+_ZN10ActorHeart8SetStateEs kind:function(arm,size=0x54) addr:0x020ef1b4
 _ZN10ActorHeart19func_ov031_020ef208Ev kind:function(arm,size=0xe4) addr:0x020ef208
 _ZN10ActorHeart19func_ov031_020ef2ecEv kind:function(arm,size=0xc) addr:0x020ef2ec
 _ZN10ActorHeart19func_ov031_020ef2f8Ev kind:function(arm,size=0x28) addr:0x020ef2f8
@@ -1173,7 +1173,7 @@ _ZN13ActorItemDrop8vfunc_18Ei kind:function(arm,size=0x30) addr:0x020fa20c
 _ZN13ActorItemDrop8vfunc_20Ev kind:function(arm,size=0xc) addr:0x020fa23c
 _ZN13ActorItemDrop8vfunc_24Ev kind:function(arm,size=0x18) addr:0x020fa248
 _ZN13ActorItemDrop19func_ov031_020fa260Ev kind:function(arm,size=0x1c4) addr:0x020fa260
-_ZN13ActorItemDrop19func_ov031_020fa424Es kind:function(arm,size=0x44) addr:0x020fa424
+_ZN13ActorItemDrop8SetStateEs kind:function(arm,size=0x44) addr:0x020fa424
 _ZN13ActorItemDrop19func_ov031_020fa468Ev kind:function(arm,size=0x4) addr:0x020fa468
 _ZN13ActorItemDrop19func_ov031_020fa46cEv kind:function(arm,size=0x28) addr:0x020fa46c
 _ZN13ActorItemDrop19func_ov031_020fa494Ev kind:function(arm,size=0xc) addr:0x020fa494
@@ -1190,11 +1190,11 @@ _ZN13ActorItemDrop19func_ov031_020fa6c8Ev kind:function(arm,size=0x64) addr:0x02
 _ZN13ActorItemDrop19func_ov031_020fa72cEv kind:function(arm,size=0x110) addr:0x020fa72c
 _ZN13ActorItemDrop8vfunc_2cEi kind:function(arm,size=0xc4) addr:0x020fa83c
 _ZN13ActorItemDrop19func_ov031_020fa900Ev kind:function(arm,size=0xf8) addr:0x020fa900
-_ZN19ActorDroppedItem_c4C1EP5Actor kind:function(arm,size=0x38) addr:0x020fa9f8
-_ZN19ActorDroppedItem_c48vfunc_00E8ActorRefi kind:function(arm,size=0x44) addr:0x020faa30
-_ZN19ActorDroppedItem_c48vfunc_04Ev kind:function(arm,size=0x20) addr:0x020faa74
-_ZN19ActorDroppedItem_c48vfunc_0cEi kind:function(arm,size=0x28) addr:0x020faa94
-_ZN19ActorDroppedItem_c48vfunc_08Ev kind:function(arm,size=0x20) addr:0x020faabc
+_ZN16ActorItemDrop_c4C1EP5Actor kind:function(arm,size=0x38) addr:0x020fa9f8
+_ZN16ActorItemDrop_c48vfunc_00E8ActorRefi kind:function(arm,size=0x44) addr:0x020faa30
+_ZN16ActorItemDrop_c48vfunc_04Ev kind:function(arm,size=0x20) addr:0x020faa74
+_ZN16ActorItemDrop_c48vfunc_0cEi kind:function(arm,size=0x28) addr:0x020faa94
+_ZN16ActorItemDrop_c48vfunc_08Ev kind:function(arm,size=0x20) addr:0x020faabc
 _ZN13ActorItemDropD1Ev kind:function(arm,size=0x14) addr:0x020faadc
 _ZN13ActorItemDropD0Ev kind:function(arm,size=0x1c) addr:0x020faaf0
 _ZN21ActorProfileArrowDropD1Ev kind:function(arm,size=0x14) addr:0x020fab0c
@@ -2394,7 +2394,7 @@ _ZTV19data_ov031_02114b44 kind:data(any) addr:0x02114b44
 data_ov031_02114ba0 kind:data(any) addr:0x02114ba0 local
 data_ov031_02114bb0 kind:data(any) addr:0x02114bb0 local
 data_ov031_02114be8 kind:data(any) addr:0x02114be8 local
-_ZTV19ActorDroppedItem_c4 kind:data(any) addr:0x02114c20
+_ZTV16ActorItemDrop_c4 kind:data(any) addr:0x02114c20
 _ZTV21ActorProfileArrowDrop kind:data(any) addr:0x02114c38
 _ZTV24ActorProfileTreasureDrop kind:data(any) addr:0x02114c5c
 _ZTV25ActorProfileRedPotionDrop kind:data(any) addr:0x02114c80

@@ -19,6 +19,23 @@ enum RupeeId_ {
     /* 7 */ RupeeId_7,
 };
 
+enum ActorRupeeState_ {
+    ActorRupeeState_0  = 0,
+    ActorRupeeState_1  = 1,
+    ActorRupeeState_2  = 2,
+    ActorRupeeState_3  = 3,
+    ActorRupeeState_4  = 4,
+    ActorRupeeState_5  = 5,
+    ActorRupeeState_6  = 6,
+    ActorRupeeState_7  = 7,
+    ActorRupeeState_8  = 8,
+    ActorRupeeState_9  = 9,
+    ActorRupeeState_10 = 10,
+    ActorRupeeState_11 = 11,
+    ActorRupeeState_12 = 12,
+    ActorRupeeState_Max,
+};
+
 class ActorRupee_c4 : public Actor_c4 {
 public:
     ActorRupee_c4(Actor *param1);
@@ -91,7 +108,7 @@ public:
     void func_ov031_020e9740();
     void func_ov031_020e9838();
     void func_ov031_020e98c4();
-    void func_ov031_020e9904(unk32 param1);
+    void SetState(ActorState state);
     void func_ov031_020e9b88();
     void func_ov031_020e9be8();
     bool func_ov031_020e9d54();

@@ -180,7 +180,7 @@ ARM bool ActorItemDrop::vfunc_18(unk32 param1) {
 
     this->mUnk_52 = FLOAT_TO_FX32(0.1173f);
     this->mUnk_50 = FLOAT_TO_FX32(0.0f);
-    this->func_ov031_020fa424(ActorDroppedItemState_0);
+    this->SetState(ActorItemDropState_0);
     return true;
 }
 
@@ -189,25 +189,25 @@ ARM void ActorItemDrop::vfunc_20() {
 }
 
 ARM void ActorItemDrop::vfunc_24() {
-    if (this->mUnk_4C == ActorDroppedItemState_6) {
+    if (this->mState == ActorItemDropState_6) {
         this->func_ov031_020fa260();
     }
 }
 
-static PTMF<ActorItemDrop> data_ov031_02114bb0[ActorDroppedItemState_Max] = {
-    ActorItemDrop::func_ov031_020fa46c, // ActorDroppedItemState_0
-    ActorItemDrop::func_ov031_020fa4a0, // ActorDroppedItemState_1
-    ActorItemDrop::func_ov031_020fa568, // ActorDroppedItemState_2
-    ActorItemDrop::func_ov031_020fa5f0, // ActorDroppedItemState_3
-    ActorItemDrop::func_ov031_020fa664, // ActorDroppedItemState_4
-    ActorItemDrop::func_ov031_020fa678, // ActorDroppedItemState_5
-    ActorItemDrop::func_ov031_020fa72c, // ActorDroppedItemState_6
+static PTMF<ActorItemDrop> data_ov031_02114bb0[ActorItemDropState_Max] = {
+    ActorItemDrop::func_ov031_020fa46c, // ActorItemDropState_0
+    ActorItemDrop::func_ov031_020fa4a0, // ActorItemDropState_1
+    ActorItemDrop::func_ov031_020fa568, // ActorItemDropState_2
+    ActorItemDrop::func_ov031_020fa5f0, // ActorItemDropState_3
+    ActorItemDrop::func_ov031_020fa664, // ActorItemDropState_4
+    ActorItemDrop::func_ov031_020fa678, // ActorItemDropState_5
+    ActorItemDrop::func_ov031_020fa72c, // ActorItemDropState_6
 };
 
 ARM void ActorItemDrop::func_ov031_020fa260() {
     this->mUnk_3C = &this->mUnk_B4;
 
-    CALL_PTMF(PTMF<ActorItemDrop>, data_ov031_02114bb0[this->mUnk_4C]);
+    CALL_PTMF(PTMF<ActorItemDrop>, data_ov031_02114bb0[this->mState]);
 
     if (this->IsTimerOut()) {
         this->func_ov000_020989e0();
@@ -225,16 +225,16 @@ ARM void ActorItemDrop::func_ov031_020fa260() {
 
                         if (var_r1_3 || (this->mUnk_C0.type_index == 0x100 && this->mUnk_C0.unk_id == 1 &&
                                          data_027e0ce0->func_01fff1e0())) {
-                            this->func_ov031_020fa424(ActorDroppedItemState_6);
+                            this->SetState(ActorItemDropState_6);
                         }
                     } else if (this->mUnk_C0.type_index & 0x100) {
-                        this->func_ov031_020fa424(ActorDroppedItemState_6);
+                        this->SetState(ActorItemDropState_6);
                     }
                     break;
                 case 12:
                     this->mUnk_DC = this->mUnk_C0;
                     this->mUnk_B8 &= ~0x1000;
-                    this->func_ov031_020fa424(ActorDroppedItemState_3);
+                    this->SetState(ActorItemDropState_3);
                     break;
                 default:
                     break;
@@ -242,14 +242,14 @@ ARM void ActorItemDrop::func_ov031_020fa260() {
         }
     }
 
-    if (this->mUnk_5C.mUnk_24 < 0 && this->mUnk_4C != ActorDroppedItemState_6) {
+    if (this->mUnk_5C.mUnk_24 < 0 && this->mState != ActorItemDropState_6) {
         this->func_ov031_020fa900();
     }
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
-    if (this->mUnk_4C != ActorDroppedItemState_3) {
+    if (this->mState != ActorItemDropState_3) {
         this->func_ov000_02098b8c(0x0, 0x0);
     }
 
@@ -263,26 +263,26 @@ ARM void ActorItemDrop::func_ov031_020fa260() {
     this->mUnk_10C.z = FLOAT_TO_FX32(0.0f);
 }
 
-static PTMF<ActorItemDrop> data_ov031_02114be8[ActorDroppedItemState_Max] = {
-    ActorItemDrop::func_ov031_020fa468, // ActorDroppedItemState_0
-    ActorItemDrop::func_ov031_020fa494, // ActorDroppedItemState_1
-    ActorItemDrop::func_ov031_020fa524, // ActorDroppedItemState_2
-    ActorItemDrop::func_ov031_020fa5d8, // ActorDroppedItemState_3
-    ActorItemDrop::func_ov031_020fa650, // ActorDroppedItemState_4
-    ActorItemDrop::func_ov031_020fa668, // ActorDroppedItemState_5
-    ActorItemDrop::func_ov031_020fa6c8, // ActorDroppedItemState_6
+static PTMF<ActorItemDrop> data_ov031_02114be8[ActorItemDropState_Max] = {
+    ActorItemDrop::func_ov031_020fa468, // ActorItemDropState_0
+    ActorItemDrop::func_ov031_020fa494, // ActorItemDropState_1
+    ActorItemDrop::func_ov031_020fa524, // ActorItemDropState_2
+    ActorItemDrop::func_ov031_020fa5d8, // ActorItemDropState_3
+    ActorItemDrop::func_ov031_020fa650, // ActorItemDropState_4
+    ActorItemDrop::func_ov031_020fa668, // ActorItemDropState_5
+    ActorItemDrop::func_ov031_020fa6c8, // ActorItemDropState_6
 };
 
-ARM void ActorItemDrop::func_ov031_020fa424(ActorState state) {
+ARM void ActorItemDrop::SetState(ActorState state) {
 #if IS_JP
-    if (this->mUnk_4C == ActorDroppedItemState_6 && state == ActorDroppedItemState_6) {
+    if (this->mState == ActorItemDropState_6 && state == ActorItemDropState_6) {
         return;
     }
 #endif
 
-    this->mUnk_4C = state;
+    this->mState  = state;
     this->mUnk_44 = 0x9C;
-    CALL_PTMF(PTMF<ActorItemDrop>, data_ov031_02114be8[this->mUnk_4C]);
+    CALL_PTMF(PTMF<ActorItemDrop>, data_ov031_02114be8[this->mState]);
 }
 
 ARM void ActorItemDrop::func_ov031_020fa468() {}
@@ -294,7 +294,7 @@ ARM void ActorItemDrop::func_ov031_020fa46c() {
         return;
     }
 
-    this->func_ov031_020fa424(ActorDroppedItemState_1);
+    this->SetState(ActorItemDropState_1);
 }
 
 ARM void ActorItemDrop::func_ov031_020fa494() {
@@ -317,7 +317,7 @@ ARM void ActorItemDrop::func_ov031_020fa4a0() {
         return;
     }
 
-    this->func_ov031_020fa424(ActorDroppedItemState_2);
+    this->SetState(ActorItemDropState_2);
 }
 
 ARM void ActorItemDrop::func_ov031_020fa524() {
@@ -374,7 +374,7 @@ ARM void ActorItemDrop::func_ov031_020fa5f0() {
         this->mVel.y = FLOAT_TO_FX32(0.0f);
         this->mVel.z = FLOAT_TO_FX32(0.0f);
         this->mUnk_B8 |= 0x1000;
-        this->func_ov031_020fa424(ActorDroppedItemState_1);
+        this->SetState(ActorItemDropState_1);
     }
 }
 
@@ -402,7 +402,7 @@ ARM void ActorItemDrop::func_ov031_020fa678() {
     UnkActor_ov031_020fa678 *actor = (UnkActor_ov031_020fa678 *) gpActorManager->func_01fff3b4(this->mUnk_E0);
 
     if (actor == NULL) {
-        this->func_ov031_020fa424(ActorDroppedItemState_1);
+        this->SetState(ActorItemDropState_1);
         return;
     }
 
@@ -493,15 +493,15 @@ ARM void ActorItemDrop::func_ov031_020fa900() {
     bool var_r3 = true;
     bool var_ip = true;
 
-    if (this->mUnk_4C != ActorDroppedItemState_3 && this->mUnk_4C != ActorDroppedItemState_4) {
+    if (this->mState != ActorItemDropState_3 && this->mState != ActorItemDropState_4) {
         var_ip = false;
     }
 
-    if (!var_ip && this->mUnk_4C != ActorDroppedItemState_5) {
+    if (!var_ip && this->mState != ActorItemDropState_5) {
         var_r3 = false;
     }
 
-    if (!var_r3 && this->mUnk_4C != ActorDroppedItemState_6) {
+    if (!var_r3 && this->mState != ActorItemDropState_6) {
         var_r2 = false;
     }
 
@@ -526,7 +526,7 @@ ARM void ActorItemDrop::func_ov031_020fa900() {
     }
 }
 
-ARM ActorDroppedItem_c4::ActorDroppedItem_c4(Actor *param_1) :
+ARM ActorItemDrop_c4::ActorItemDrop_c4(Actor *param_1) :
     Actor_c4(param_1) {
     this->mUnk_20 = param_1;
     this->mUnk_04 = 0x1;
@@ -534,28 +534,28 @@ ARM ActorDroppedItem_c4::ActorDroppedItem_c4(Actor *param_1) :
 
 #define GET_ACTOR_DROPPED_ITEM(pActor) ((ActorItemDrop *) (pActor))
 
-ARM bool ActorDroppedItem_c4::vfunc_00(ActorRef ref, unk32 param_2) {
+ARM bool ActorItemDrop_c4::vfunc_00(ActorRef ref, unk32 param_2) {
     if (param_2 != 0) {
         ActorItemDrop *actorDroppedItem = GET_ACTOR_DROPPED_ITEM(this->mUnk_20);
         actorDroppedItem->mUnk_E0       = ref;
-        actorDroppedItem->func_ov031_020fa424(ActorDroppedItemState_4);
+        actorDroppedItem->SetState(ActorItemDropState_4);
     }
 
     return Actor_c4::vfunc_00(ref, param_2);
 }
 
-ARM void ActorDroppedItem_c4::vfunc_04() {
-    GET_ACTOR_DROPPED_ITEM(this->mUnk_20)->func_ov031_020fa424(ActorDroppedItemState_5);
+ARM void ActorItemDrop_c4::vfunc_04() {
+    GET_ACTOR_DROPPED_ITEM(this->mUnk_20)->SetState(ActorItemDropState_5);
     Actor_c4::vfunc_04();
 }
 
-ARM void ActorDroppedItem_c4::vfunc_0c(unk32 param_1) {
-    GET_ACTOR_DROPPED_ITEM(this->mUnk_20)->func_ov031_020fa424(ActorDroppedItemState_1);
+ARM void ActorItemDrop_c4::vfunc_0c(unk32 param_1) {
+    GET_ACTOR_DROPPED_ITEM(this->mUnk_20)->SetState(ActorItemDropState_1);
     Actor_c4::vfunc_0c(param_1);
 }
 
-ARM void ActorDroppedItem_c4::vfunc_08() {
-    GET_ACTOR_DROPPED_ITEM(this->mUnk_20)->func_ov031_020fa424(ActorDroppedItemState_6);
+ARM void ActorItemDrop_c4::vfunc_08() {
+    GET_ACTOR_DROPPED_ITEM(this->mUnk_20)->SetState(ActorItemDropState_6);
     Actor_c4::vfunc_08();
 }
 

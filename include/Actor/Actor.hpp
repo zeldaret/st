@@ -121,6 +121,7 @@ public:
 };
 
 typedef s16 ActorState;
+#define ActorState_None -1
 
 class Actor : public SysObject {
 public:
@@ -140,7 +141,7 @@ public:
     /* 46 */ unk16 mUnk_46;
     /* 48 */ unk16 mUnk_48;
     /* 4A */ u8 mUnk_4A[2];
-    /* 4C */ ActorState mUnk_4C;
+    /* 4C */ ActorState mState;
     /* 4E */ fx16 mYOffset;
     /* 50 */ volatile u16 mUnk_50;
     /* 52 */ u16 mUnk_52;

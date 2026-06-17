@@ -78,9 +78,9 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
         }
 
         if (this->mUnk_5C.mParams[1] == 0) {
-            this->func_ov031_020e9904(3);
+            this->SetState(ActorRupeeState_3);
         } else {
-            this->func_ov031_020e9904(10);
+            this->SetState(ActorRupeeState_10);
         }
 
         return true;
@@ -97,7 +97,7 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
                 vel.z = 0;
                 VecFx32_Copy(&vel, &this->mVel);
             }
-            this->func_ov031_020e9904(0);
+            this->SetState(ActorRupeeState_0);
             break;
 
         case 1:
@@ -117,7 +117,7 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
 
                 VecFx32_Copy(&vel, &this->mVel);
             }
-            this->func_ov031_020e9904(0);
+            this->SetState(ActorRupeeState_0);
             break;
 
         case 2:
@@ -132,14 +132,14 @@ ARM bool ActorRupee::vfunc_18(unk32 param1) {
                 this->mVel.y = vel.y;
                 this->mVel.z = vel.z;
             }
-            this->func_ov031_020e9904(0);
+            this->SetState(ActorRupeeState_0);
             break;
 
         case 3:
             break;
 
         case 4:
-            this->func_ov031_020e9904(10);
+            this->SetState(ActorRupeeState_10);
             break;
 
         default:
@@ -173,7 +173,7 @@ ARM void ActorRupee::func_ov031_020e9068() {
         case RupeeId_BigGreen:
         case RupeeId_BigRed:
         case RupeeId_Gold:
-            this->func_ov031_020e9904(5);
+            this->SetState(ActorRupeeState_5);
             break;
         default: {
             ItemManager *pItemManager = data_027e0ce0->mUnk_2C;
@@ -229,7 +229,7 @@ ARM void ActorRupee::func_ov031_020e91a8() {
         return;
     }
 
-    this->func_ov031_020e9904(2);
+    this->SetState(ActorRupeeState_2);
 }
 
 ARM void ActorRupee::func_ov031_020e9234() {
@@ -259,7 +259,7 @@ ARM void ActorRupee::func_ov031_020e9254() {
         return;
     }
 
-    this->func_ov031_020e9904(2);
+    this->SetState(ActorRupeeState_2);
 }
 
 ARM void ActorRupee::func_ov031_020e92e0() {
@@ -314,7 +314,7 @@ ARM void ActorRupee::func_ov031_020e9310() {
         return;
     }
 
-    this->func_ov031_020e9904(1);
+    this->SetState(ActorRupeeState_1);
 }
 
 ARM void ActorRupee::func_ov031_020e9428() {}
@@ -343,7 +343,7 @@ ARM void ActorRupee::func_ov031_020e9450() {
     this->mVel.y = 0;
     this->mVel.z = 0;
     this->mUnk_A0 |= 0x1000;
-    this->func_ov031_020e9904(0);
+    this->SetState(ActorRupeeState_0);
 }
 
 ARM void ActorRupee::func_ov031_020e94d4() {
@@ -407,7 +407,7 @@ ARM void ActorRupee::func_ov031_020e95c0() {
 
     pActor = gpActorManager->func_01fff3b4(this->mUnk_C0);
     if (pActor == NULL) {
-        this->func_ov031_020e9904(0);
+        this->SetState(ActorRupeeState_0);
         return;
     }
 
@@ -454,7 +454,7 @@ ARM void ActorRupee::func_ov031_020e96bc() {
         return;
     }
 
-    this->func_ov031_020e9904(0xB);
+    this->SetState(ActorRupeeState_11);
 }
 
 ARM void ActorRupee::func_ov031_020e970c() {
@@ -487,12 +487,12 @@ ARM void ActorRupee::func_ov031_020e9740() {
             this->mUnk_52 = -1;
             this->mUnk_50 = 0;
         } else if (this->mUnk_50 == 8) {
-            this->func_ov031_020e9904(0xC);
+            this->SetState(ActorRupeeState_12);
         }
     } else {
         temp_r0      = data_027e0cd8->mUnk_0C;
         this->mPos.y = temp_r0->vfunc_28(&this->mUnk_5C.mInitialPos, 0, 0);
-        this->func_ov031_020e9904(0xC);
+        this->SetState(ActorRupeeState_12);
     }
 
     if (this->mUnk_50 < this->mUnk_52) {
@@ -518,33 +518,17 @@ ARM void ActorRupee::func_ov031_020e98c4() {
 
     func_01ffedac(&sp0, &this->mPos);
     func_ov031_0210b0e4(sp0, 1);
-    this->func_ov031_020e9904(1);
+    this->SetState(ActorRupeeState_1);
 }
 
-typedef void (*UnkCallback_ov031_02113520)(void *);
-struct UnkStruct_ov031_02113520 {
-    /* 00 */ UnkCallback_ov031_02113520 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */
-};
-extern UnkStruct_ov031_02113520 data_ov031_02113520[13];
+extern PTMF<ActorRupee> data_ov031_02113520[13];
 
-// non-matching
-ARM void ActorRupee::func_ov031_020e9904(unk32 param1) {
-    this->mUnk_4C = param1;
+ARM void ActorRupee::SetState(ActorState state) {
+    this->mState  = state;
     this->mUnk_52 = -1;
     this->mUnk_50 = 0;
     this->mUnk_EC = 0;
-    u32 uVar1     = data_ov031_02113520[this->mUnk_4C].mUnk_04;
-    UnkCallback_ov031_02113520 pcVar2;
-
-    if (!(uVar1 & 1)) {
-        pcVar2 = data_ov031_02113520[this->mUnk_4C].mUnk_00;
-    } else {
-        pcVar2 = (UnkCallback_ov031_02113520) (((u32) this + uVar1 >> 1) + &data_ov031_02113520[this->mUnk_4C]);
-    }
-
-    pcVar2(this);
+    CALL_PTMF(PTMF<ActorRupee>, data_ov031_02113520[this->mState]);
 }
 
 extern "C" void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
@@ -584,12 +568,12 @@ ARM void ActorRupee::vfunc_20() {
     uStack_16             = 0;
     this->mUnk_C4.mUnk_0E = 0;
     this->mUnk_C4.mUnk_10 = 0x666;
-    sVar1                 = this->mUnk_4C;
+    sVar1                 = this->mState;
 
     test = this->mPos;
 
-    if (sVar1 != 5) {
-        iVar4 = (int) (short) this->mUnk_4C;
+    if (sVar1 != ActorRupeeState_5) {
+        iVar4 = (int) (short) this->mState;
     }
 
     this->mUnk_C4.mUnk_12 = 0;
@@ -598,8 +582,8 @@ ARM void ActorRupee::vfunc_20() {
 
     uVar3 = uVar2;
 
-    if ((sVar1 != 5 && iVar4 != 10) && iVar4 != 0xb) {
-        if ((sVar1 != 6) && ((u16) this->mUnk_98 < (u16) this->mUnk_9A)) {
+    if ((sVar1 != ActorRupeeState_5 && iVar4 != ActorRupeeState_10) && iVar4 != ActorRupeeState_11) {
+        if ((sVar1 != ActorRupeeState_6) && ((u16) this->mUnk_98 < (u16) this->mUnk_9A)) {
             this->mUnk_98++;
         }
 
@@ -625,7 +609,7 @@ ARM void ActorRupee::vfunc_20() {
                     case 0x0C:
                         this->mUnk_BC = this->mUnk_A8;
                         this->mUnk_A0 &= 0xffffefff;
-                        this->func_ov031_020e9904(6);
+                        this->SetState(ActorRupeeState_6);
                         uVar3 = uStack_18;
                         break;
                     default:
@@ -635,16 +619,16 @@ ARM void ActorRupee::vfunc_20() {
         }
     }
 
-    CALL_PTMF(PTMF<ActorRupee>, data_ov031_02113588[this->mUnk_4C]);
+    CALL_PTMF(PTMF<ActorRupee>, data_ov031_02113588[this->mState]);
 
-    if ((this->mUnk_5C.mUnk_24 < 0) && (this->mUnk_4C != 5)) {
+    if (this->mUnk_5C.mUnk_24 < 0 && this->mState != ActorRupeeState_5) {
         this->func_ov031_020e9d94();
     }
 
     if (this->mUnk_5C.mParams[1] != 0) {
-        sVar1 = this->mUnk_4C;
+        sVar1 = this->mState;
 
-        if (!(sVar1 != 10 && sVar1 != 0xb && sVar1 != 0xc)) {
+        if (!(sVar1 != ActorRupeeState_10 && sVar1 != ActorRupeeState_11 && sVar1 != ActorRupeeState_12)) {
             func_01ffedac(&uStack_1e, &this->mPos);
             func_ov031_0210b0e4(uStack_1e, 0);
         } else {
@@ -709,7 +693,7 @@ ARM void ActorRupee::vfunc_2c(unk32 param1) {
         uVar2 = 0x4CD;
     }
 
-    if (this->mUnk_4C != 9) {
+    if (this->mState != ActorRupeeState_9) {
         iStack_28.x = this->mPos.x;
         iStack_28.y = this->mPos.y + 0x80;
         iStack_28.z = this->mPos.z;
@@ -797,7 +781,7 @@ ARM bool ActorRupee::func_ov031_020e9e5c() {
     bool bVar6;
     bool bVar7;
 
-    sVar1 = this->mUnk_4C;
+    sVar1 = this->mState;
     bVar6 = true;
     bVar5 = true;
     bVar4 = true;
@@ -805,25 +789,25 @@ ARM bool ActorRupee::func_ov031_020e9e5c() {
     bVar2 = true;
     bVar7 = true;
     bVar8 = true;
-    if ((sVar1 != 6 && sVar1 != 7)) {
+    if ((sVar1 != ActorRupeeState_6 && sVar1 != ActorRupeeState_7)) {
         bVar2 = false;
     }
-    if ((!bVar2) && (sVar1 != 3)) {
+    if ((!bVar2) && (sVar1 != ActorRupeeState_3)) {
         bVar8 = false;
     }
-    if ((!bVar8) && (sVar1 != 8)) {
+    if ((!bVar8) && (sVar1 != ActorRupeeState_8)) {
         bVar3 = false;
     }
-    if ((!bVar3) && (sVar1 != 9)) {
+    if ((!bVar3) && (sVar1 != ActorRupeeState_9)) {
         bVar4 = false;
     }
-    if ((!bVar4) && (sVar1 != 10)) {
+    if ((!bVar4) && (sVar1 != ActorRupeeState_10)) {
         bVar5 = false;
     }
-    if ((!bVar5) && (sVar1 != 0xb)) {
+    if ((!bVar5) && (sVar1 != ActorRupeeState_11)) {
         bVar6 = false;
     }
-    if (!(bVar6) && (sVar1 != 0xc)) {
+    if (!(bVar6) && (sVar1 != ActorRupeeState_12)) {
         bVar7 = false;
     }
 
@@ -842,19 +826,19 @@ ARM bool ActorRupee_c4::vfunc_00(ActorRef ref, unk32 param2) {
     if (param2 != 0) {
         ActorRupee *pRupee = GET_ACTOR_RUPEE(this->mUnk_20);
         pRupee->mUnk_C0    = ref.Get32();
-        pRupee->func_ov031_020e9904(7);
+        pRupee->SetState(ActorRupeeState_7);
     }
 
     return this->Actor_c4::vfunc_00(ref, param2);
 }
 
 ARM void ActorRupee_c4::vfunc_04() {
-    GET_ACTOR_RUPEE(this->mUnk_20)->func_ov031_020e9904(8);
+    GET_ACTOR_RUPEE(this->mUnk_20)->SetState(ActorRupeeState_8);
     this->Actor_c4::vfunc_04();
 }
 
 ARM void ActorRupee_c4::vfunc_0c(unk32 param1) {
-    GET_ACTOR_RUPEE(this->mUnk_20)->func_ov031_020e9904(1);
+    GET_ACTOR_RUPEE(this->mUnk_20)->SetState(ActorRupeeState_1);
     this->Actor_c4::vfunc_0c(param1);
 }
 

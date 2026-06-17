@@ -27,9 +27,9 @@ ARM bool ActorUnkOBPC::vfunc_18(unk32 param1) {
     this->mUnk_98 = this->mUnk_5C.mParams[3];
 
     if (!this->func_ov024_020d6f74()) {
-        this->func_ov024_020d7064(0x00, 0x01);
+        this->SetState(ActorUnkOBPCState_0, 1);
     } else {
-        this->func_ov024_020d7064(0x01, 0x01);
+        this->SetState(ActorUnkOBPCState_1, 1);
     }
 
     return true;
@@ -44,19 +44,19 @@ ARM bool ActorUnkOBPC::func_ov024_020d6f74(void) {
 }
 
 ARM void ActorUnkOBPC::vfunc_20(void) {
-    switch (this->mUnk_4C) {
+    switch (this->mState) {
         case 0:
             if (this->func_ov024_020d7154()) {
                 if (this->mUnk_5C.mUnk_20 == 0) {
-                    this->func_ov024_020d7064(0x01, 0x00);
+                    this->SetState(ActorUnkOBPCState_1, 0);
                 } else if (data_ov000_020b504c.func_ov000_0206807c(this->mUnk_5C.mUnk_20, &this->mUnk_9C)) {
-                    this->func_ov024_020d7064(0x01, 0x00);
+                    this->SetState(ActorUnkOBPCState_1, 0);
                 }
             }
             break;
         case 1:
             if (this->mUnk_5C.mParams[2] != 0 && !this->func_ov024_020d7154()) {
-                this->func_ov024_020d7064(0x00, 0x00);
+                this->SetState(ActorUnkOBPCState_0, 0);
             }
             break;
         default:
@@ -72,11 +72,11 @@ ARM void ActorUnkOBPC::vfunc_24(void) {
     this->vfunc_20();
 }
 
-ARM void ActorUnkOBPC::func_ov024_020d7064(s16 param1, unk32 param2) {
-    this->mUnk_4C = param1;
+ARM void ActorUnkOBPC::SetState(ActorState state, int param2) {
+    this->mState = state;
 
-    switch (this->mUnk_4C) {
-        case 0:
+    switch (this->mState) {
+        case ActorUnkOBPCState_0:
             if (this->mUnk_5C.mParams[2] == 0 || this->mUnk_5C.mParams[2] == 2) {
                 break;
             }
@@ -93,7 +93,7 @@ ARM void ActorUnkOBPC::func_ov024_020d7064(s16 param1, unk32 param2) {
                     break;
             }
             break;
-        case 1:
+        case ActorUnkOBPCState_1:
             switch (this->mUnk_98) {
                 case 1:
                     this->func_ov000_02098a88(0, 0);
@@ -173,7 +173,3 @@ ARM bool ActorUnkOBPC::func_ov024_020d7154(void) {
     sp10.y = 0;
     return temp_r5->func_ov000_020802ec(temp_r4, &sp10);
 }
-
-ARM ActorUnkOBPC::~ActorUnkOBPC() {}
-
-ARM ActorProfileUnkOBPC::~ActorProfileUnkOBPC() {}

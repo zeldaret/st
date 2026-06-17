@@ -196,7 +196,7 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a91b8(VecFx32 *param1, unk32 par
 ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a9200() {}
 
 ARM void ActorUnk_ov000_020a8bb0::vfunc_70() {
-    if (this->mUnk_4C != 5) {
+    if (this->mState != 5) {
         this->vfunc_58(4);
     }
 }

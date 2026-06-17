@@ -29,29 +29,29 @@ ARM bool ActorUnkSWOB::vfunc_18(unk32 param1) {
     this->mUnk_9C = this->mUnk_9E;
 
     if (this->func_ov000_02098a60(0)) {
-        this->func_ov000_0209a9b4(1);
+        this->SetState(ActorUnkSWOBState_1);
     } else {
-        this->func_ov000_0209a9b4(0);
+        this->SetState(ActorUnkSWOBState_0);
     }
 
     return true;
 }
 
-ARM void ActorUnkSWOB::func_ov000_0209a9b4(unk32 param1) {
-    this->mUnk_4C = param1;
+ARM void ActorUnkSWOB::SetState(ActorState state) {
+    this->mState = state;
 
-    switch (this->mUnk_4C) {
-        case 0:
+    switch (this->mState) {
+        case ActorUnkSWOBState_0:
             this->func_ov000_02098a88(0, 0);
             break;
-        case 1:
+        case ActorUnkSWOBState_1:
             this->func_ov000_02098a88(0, 1);
 
             if (this->mUnk_94 == 0) {
                 UNSET_FLAG(this->mFlags, ActorFlag_Alive);
             }
             break;
-        case 2:
+        case ActorUnkSWOBState_2:
             this->func_ov000_0209aa30();
             this->mUnk_52 = -1;
             this->mUnk_50 = 0;
@@ -62,7 +62,7 @@ ARM void ActorUnkSWOB::func_ov000_0209a9b4(unk32 param1) {
 }
 
 ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
-    if (this->mUnk_4C == 1) {
+    if (this->mState == ActorUnkSWOBState_1) {
         return;
     }
 
@@ -120,6 +120,3 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
             break;
     }
 }
-
-ARM ActorUnkSWOB::~ActorUnkSWOB() {}
-ARM ActorProfileUnkSWOB::~ActorProfileUnkSWOB() {}
