@@ -1,4 +1,4 @@
-#include "Actor/ActorDroppedItem.hpp"
+#include "Actor/ActorItemDrop.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "System/SysNew.hpp"
@@ -29,51 +29,51 @@ static const u32 data_ov031_02110bc8[] = {
     0x25, // ItemDropType_PirateNecklace
 };
 
-DECL_PROFILE(ActorProfileDroppedArrow);
+DECL_PROFILE(ActorProfileArrowDrop);
 
-ARM Actor *ActorProfileDroppedArrow::Create() {
-    return new(HeapIndex_2) ActorDroppedItem();
+ARM Actor *ActorProfileArrowDrop::Create() {
+    return new(HeapIndex_2) ActorItemDrop();
 }
 
-ARM ActorProfileDroppedArrow::ActorProfileDroppedArrow() :
-    ActorProfile(ActorId_SPAR) {
+ARM ActorProfileArrowDrop::ActorProfileArrowDrop() :
+    ActorProfile(ActorId_ArrowDrop) {
     this->mUnk_04.Init(0x400);
 }
 
-DECL_PROFILE(ActorProfileDroppedBomb);
+DECL_PROFILE(ActorProfileBombDrop);
 
-ARM Actor *ActorProfileDroppedBomb::Create() {
-    return new(HeapIndex_2) ActorDroppedItem();
+ARM Actor *ActorProfileBombDrop::Create() {
+    return new(HeapIndex_2) ActorItemDrop();
 }
 
-ARM ActorProfileDroppedBomb::ActorProfileDroppedBomb() :
-    ActorProfile(ActorId_SPBM) {
+ARM ActorProfileBombDrop::ActorProfileBombDrop() :
+    ActorProfile(ActorId_BombDrop) {
     this->mUnk_04.Init(0x400);
 }
 
-DECL_PROFILE(ActorProfileDroppedRedPotion);
+DECL_PROFILE(ActorProfileRedPotionDrop);
 
-ARM Actor *ActorProfileDroppedRedPotion::Create() {
-    return new(HeapIndex_2) ActorDroppedItem();
+ARM Actor *ActorProfileRedPotionDrop::Create() {
+    return new(HeapIndex_2) ActorItemDrop();
 }
 
-ARM ActorProfileDroppedRedPotion::ActorProfileDroppedRedPotion() :
-    ActorProfile(ActorId_SPDR) {
+ARM ActorProfileRedPotionDrop::ActorProfileRedPotionDrop() :
+    ActorProfile(ActorId_RedPotionDrop) {
     this->mUnk_04.Init(0x400);
 }
 
-DECL_PROFILE(ActorProfileDroppedTreasure);
+DECL_PROFILE(ActorProfileTreasureDrop);
 
-ARM Actor *ActorProfileDroppedTreasure::Create() {
-    return new(HeapIndex_2) ActorDroppedItem();
+ARM Actor *ActorProfileTreasureDrop::Create() {
+    return new(HeapIndex_2) ActorItemDrop();
 }
 
-ARM ActorProfileDroppedTreasure::ActorProfileDroppedTreasure() :
-    ActorProfile(ActorId_SPTR) {
+ARM ActorProfileTreasureDrop::ActorProfileTreasureDrop() :
+    ActorProfile(ActorId_TreasureDrop) {
     this->mUnk_04.Init(0x400);
 }
 
-ARM void ActorDroppedItem::func_ov031_020f9f8c(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref) {
+ARM void ActorItemDrop::func_ov031_020f9f8c(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref) {
     ActorParams actorParams;
 
     actorParams.mUnk_28.Reset();
@@ -86,10 +86,10 @@ ARM void ActorDroppedItem::func_ov031_020f9f8c(ActorRef *pOutRef, const VecFx32 
     actorParams.mUnk_28    = ref;
     actorParams.mParams[0] = params & 0xFF;
 
-    Actor::func_ov000_020973f4(pOutRef, &data_ov000_020b539c_eur, ActorId_SPTR, &actorParams, 0);
+    Actor::func_ov000_020973f4(pOutRef, &data_ov000_020b539c_eur, ActorId_TreasureDrop, &actorParams, 0);
 }
 
-ARM ActorDroppedItem::ActorDroppedItem() :
+ARM ActorItemDrop::ActorItemDrop() :
     mUnk_AE(0x0),
     mUnk_B0(0x6),
     mUnk_D8(FLOAT_TO_FX32(0.5f)),
@@ -105,7 +105,7 @@ ARM ActorDroppedItem::ActorDroppedItem() :
     this->mUnk_119   = false;
 
     switch (this->GetActorId()) {
-        case ActorId_SPAR:
+        case ActorId_ArrowDrop:
             if (GET_FLAG(data_027e0ce0->mUnk_2C->mFlags, ItemFlag_Bow)) {
                 this->mItemTypeId = ItemDropType_Arrow;
                 this->mUnk_D8     = FLOAT_TO_FX32(0.5f);
@@ -113,7 +113,7 @@ ARM ActorDroppedItem::ActorDroppedItem() :
                 this->mItemTypeId = ItemDropType_Unknown;
             }
             break;
-        case ActorId_SPBM:
+        case ActorId_BombDrop:
             if (GET_FLAG(data_027e0ce0->mUnk_2C->mFlags, ItemFlag_Bombs)) {
                 this->mItemTypeId = ItemDropType_Bomb;
                 this->mUnk_D8     = FLOAT_TO_FX32(0.3f);
@@ -121,12 +121,12 @@ ARM ActorDroppedItem::ActorDroppedItem() :
                 this->mItemTypeId = ItemDropType_Unknown;
             }
             break;
-        case ActorId_SPDR:
+        case ActorId_RedPotionDrop:
             this->mItemTypeId = ItemDropType_RedPotion;
             this->mUnk_D8     = FLOAT_TO_FX32(0.4f);
             this->mUnk_119    = true;
             break;
-        case ActorId_SPTR:
+        case ActorId_TreasureDrop:
             ItemDropType itemType;
 
             switch (this->mUnk_5C.mParams[0]) {
@@ -173,7 +173,7 @@ ARM ActorDroppedItem::ActorDroppedItem() :
     }
 }
 
-ARM bool ActorDroppedItem::vfunc_18(unk32 param1) {
+ARM bool ActorItemDrop::vfunc_18(unk32 param1) {
     if (this->mItemTypeId >= ItemDropType_Unknown) {
         return false;
     }
@@ -184,30 +184,30 @@ ARM bool ActorDroppedItem::vfunc_18(unk32 param1) {
     return true;
 }
 
-ARM void ActorDroppedItem::vfunc_20() {
+ARM void ActorItemDrop::vfunc_20() {
     this->func_ov031_020fa260();
 }
 
-ARM void ActorDroppedItem::vfunc_24() {
+ARM void ActorItemDrop::vfunc_24() {
     if (this->mUnk_4C == ActorDroppedItemState_6) {
         this->func_ov031_020fa260();
     }
 }
 
-static PTMF<ActorDroppedItem> data_ov031_02114bb0[ActorDroppedItemState_Max] = {
-    ActorDroppedItem::func_ov031_020fa46c, // ActorDroppedItemState_0
-    ActorDroppedItem::func_ov031_020fa4a0, // ActorDroppedItemState_1
-    ActorDroppedItem::func_ov031_020fa568, // ActorDroppedItemState_2
-    ActorDroppedItem::func_ov031_020fa5f0, // ActorDroppedItemState_3
-    ActorDroppedItem::func_ov031_020fa664, // ActorDroppedItemState_4
-    ActorDroppedItem::func_ov031_020fa678, // ActorDroppedItemState_5
-    ActorDroppedItem::func_ov031_020fa72c, // ActorDroppedItemState_6
+static PTMF<ActorItemDrop> data_ov031_02114bb0[ActorDroppedItemState_Max] = {
+    ActorItemDrop::func_ov031_020fa46c, // ActorDroppedItemState_0
+    ActorItemDrop::func_ov031_020fa4a0, // ActorDroppedItemState_1
+    ActorItemDrop::func_ov031_020fa568, // ActorDroppedItemState_2
+    ActorItemDrop::func_ov031_020fa5f0, // ActorDroppedItemState_3
+    ActorItemDrop::func_ov031_020fa664, // ActorDroppedItemState_4
+    ActorItemDrop::func_ov031_020fa678, // ActorDroppedItemState_5
+    ActorItemDrop::func_ov031_020fa72c, // ActorDroppedItemState_6
 };
 
-ARM void ActorDroppedItem::func_ov031_020fa260() {
+ARM void ActorItemDrop::func_ov031_020fa260() {
     this->mUnk_3C = &this->mUnk_B4;
 
-    CALL_PTMF(PTMF<ActorDroppedItem>, data_ov031_02114bb0[this->mUnk_4C]);
+    CALL_PTMF(PTMF<ActorItemDrop>, data_ov031_02114bb0[this->mUnk_4C]);
 
     if (this->IsTimerOut()) {
         this->func_ov000_020989e0();
@@ -263,17 +263,17 @@ ARM void ActorDroppedItem::func_ov031_020fa260() {
     this->mUnk_10C.z = FLOAT_TO_FX32(0.0f);
 }
 
-static PTMF<ActorDroppedItem> data_ov031_02114be8[ActorDroppedItemState_Max] = {
-    ActorDroppedItem::func_ov031_020fa468, // ActorDroppedItemState_0
-    ActorDroppedItem::func_ov031_020fa494, // ActorDroppedItemState_1
-    ActorDroppedItem::func_ov031_020fa524, // ActorDroppedItemState_2
-    ActorDroppedItem::func_ov031_020fa5d8, // ActorDroppedItemState_3
-    ActorDroppedItem::func_ov031_020fa650, // ActorDroppedItemState_4
-    ActorDroppedItem::func_ov031_020fa668, // ActorDroppedItemState_5
-    ActorDroppedItem::func_ov031_020fa6c8, // ActorDroppedItemState_6
+static PTMF<ActorItemDrop> data_ov031_02114be8[ActorDroppedItemState_Max] = {
+    ActorItemDrop::func_ov031_020fa468, // ActorDroppedItemState_0
+    ActorItemDrop::func_ov031_020fa494, // ActorDroppedItemState_1
+    ActorItemDrop::func_ov031_020fa524, // ActorDroppedItemState_2
+    ActorItemDrop::func_ov031_020fa5d8, // ActorDroppedItemState_3
+    ActorItemDrop::func_ov031_020fa650, // ActorDroppedItemState_4
+    ActorItemDrop::func_ov031_020fa668, // ActorDroppedItemState_5
+    ActorItemDrop::func_ov031_020fa6c8, // ActorDroppedItemState_6
 };
 
-ARM void ActorDroppedItem::func_ov031_020fa424(ActorState state) {
+ARM void ActorItemDrop::func_ov031_020fa424(ActorState state) {
 #if IS_JP
     if (this->mUnk_4C == ActorDroppedItemState_6 && state == ActorDroppedItemState_6) {
         return;
@@ -282,12 +282,12 @@ ARM void ActorDroppedItem::func_ov031_020fa424(ActorState state) {
 
     this->mUnk_4C = state;
     this->mUnk_44 = 0x9C;
-    CALL_PTMF(PTMF<ActorDroppedItem>, data_ov031_02114be8[this->mUnk_4C]);
+    CALL_PTMF(PTMF<ActorItemDrop>, data_ov031_02114be8[this->mUnk_4C]);
 }
 
-ARM void ActorDroppedItem::func_ov031_020fa468() {}
+ARM void ActorItemDrop::func_ov031_020fa468() {}
 
-ARM void ActorDroppedItem::func_ov031_020fa46c() {
+ARM void ActorItemDrop::func_ov031_020fa46c() {
     func_ov000_02098838();
 
     if (this->mVel.y > FLOAT_TO_FX32(0.0f)) {
@@ -297,11 +297,11 @@ ARM void ActorDroppedItem::func_ov031_020fa46c() {
     this->func_ov031_020fa424(ActorDroppedItemState_1);
 }
 
-ARM void ActorDroppedItem::func_ov031_020fa494() {
+ARM void ActorItemDrop::func_ov031_020fa494() {
     this->mUnk_44 = 0x9F;
 }
 
-ARM void ActorDroppedItem::func_ov031_020fa4a0() {
+ARM void ActorItemDrop::func_ov031_020fa4a0() {
     u32 stack;
 
     func_ov000_02098838();
@@ -320,7 +320,7 @@ ARM void ActorDroppedItem::func_ov031_020fa4a0() {
     this->func_ov031_020fa424(ActorDroppedItemState_2);
 }
 
-ARM void ActorDroppedItem::func_ov031_020fa524() {
+ARM void ActorItemDrop::func_ov031_020fa524() {
     this->mVel.x = FLOAT_TO_FX32(0.0f);
     this->mVel.y = FLOAT_TO_FX32(0.0f);
     this->mVel.z = FLOAT_TO_FX32(0.0f);
@@ -334,7 +334,7 @@ ARM void ActorDroppedItem::func_ov031_020fa524() {
 }
 
 // non-matching
-ARM void ActorDroppedItem::func_ov031_020fa568() {
+ARM void ActorItemDrop::func_ov031_020fa568() {
     if (this->mUnk_5C.mUnk_24 >= 0) {
         return;
     }
@@ -361,12 +361,12 @@ ARM void ActorDroppedItem::func_ov031_020fa568() {
     }
 }
 
-ARM void ActorDroppedItem::func_ov031_020fa5d8() {
+ARM void ActorItemDrop::func_ov031_020fa5d8() {
     func_ov017_020bf99c();
     this->mUnk_B4.func_ov000_02097bec();
 }
 
-ARM void ActorDroppedItem::func_ov031_020fa5f0() {
+ARM void ActorItemDrop::func_ov031_020fa5f0() {
     this->func_ov017_020bf9c8(gpActorManager->func_01fff3b4(this->mUnk_DC));
 
     if (GET_FLAG(this->mFlags, ActorFlag_5)) {
@@ -378,15 +378,15 @@ ARM void ActorDroppedItem::func_ov031_020fa5f0() {
     }
 }
 
-ARM void ActorDroppedItem::func_ov031_020fa650() {
+ARM void ActorItemDrop::func_ov031_020fa650() {
     this->mVel.x = FLOAT_TO_FX32(0.0f);
     this->mVel.y = FLOAT_TO_FX32(0.0f);
     this->mVel.z = FLOAT_TO_FX32(0.0f);
 }
 
-ARM void ActorDroppedItem::func_ov031_020fa664() {}
+ARM void ActorItemDrop::func_ov031_020fa664() {}
 
-ARM void ActorDroppedItem::func_ov031_020fa668() {
+ARM void ActorItemDrop::func_ov031_020fa668() {
     this->mVel.x = FLOAT_TO_FX32(0.0f);
     this->mVel.z = FLOAT_TO_FX32(0.0f);
 }
@@ -398,7 +398,7 @@ public:
     /* E8 */ VecFx32 mUnk_E8;
 };
 
-ARM void ActorDroppedItem::func_ov031_020fa678() {
+ARM void ActorItemDrop::func_ov031_020fa678() {
     UnkActor_ov031_020fa678 *actor = (UnkActor_ov031_020fa678 *) gpActorManager->func_01fff3b4(this->mUnk_E0);
 
     if (actor == NULL) {
@@ -409,7 +409,7 @@ ARM void ActorDroppedItem::func_ov031_020fa678() {
     VecFx32_Copy(&actor->mUnk_E8, &this->mPos);
 }
 
-ARM void ActorDroppedItem::func_ov031_020fa6c8() {
+ARM void ActorItemDrop::func_ov031_020fa6c8() {
     this->mUnk_52 = FLOAT_TO_FX32(15.9998f);
     this->mUnk_50 = FLOAT_TO_FX32(0.0f);
     this->mVel.x  = FLOAT_TO_FX32(0.0f);
@@ -423,7 +423,7 @@ ARM void ActorDroppedItem::func_ov031_020fa6c8() {
     data_027e09a8->func_ov000_02071b30(0x77, &this->mPos, 0x0);
 }
 
-ARM void ActorDroppedItem::func_ov031_020fa72c() {
+ARM void ActorItemDrop::func_ov031_020fa72c() {
     this->mUnk_3C = NULL;
 
     if (data_027e09b8->func_01ffd420()) {
@@ -469,7 +469,7 @@ ARM void ActorDroppedItem::func_ov031_020fa72c() {
     }
 }
 
-ARM void ActorDroppedItem::vfunc_2c(unk32 param1) {
+ARM void ActorItemDrop::vfunc_2c(unk32 param1) {
     VecFx32 vec1;
     VecFx32 vec2;
     unk32 value;
@@ -488,7 +488,7 @@ ARM void ActorDroppedItem::vfunc_2c(unk32 param1) {
     func_ov000_0205c204(&value, &vec2, 0x1000, 0x1000, 0x1F);
 }
 
-ARM void ActorDroppedItem::func_ov031_020fa900() {
+ARM void ActorItemDrop::func_ov031_020fa900() {
     bool var_r2 = true;
     bool var_r3 = true;
     bool var_ip = true;
@@ -532,12 +532,12 @@ ARM ActorDroppedItem_c4::ActorDroppedItem_c4(Actor *param_1) :
     this->mUnk_04 = 0x1;
 }
 
-#define GET_ACTOR_DROPPED_ITEM(pActor) ((ActorDroppedItem *) (pActor))
+#define GET_ACTOR_DROPPED_ITEM(pActor) ((ActorItemDrop *) (pActor))
 
 ARM bool ActorDroppedItem_c4::vfunc_00(ActorRef ref, unk32 param_2) {
     if (param_2 != 0) {
-        ActorDroppedItem *actorDroppedItem = GET_ACTOR_DROPPED_ITEM(this->mUnk_20);
-        actorDroppedItem->mUnk_E0          = ref;
+        ActorItemDrop *actorDroppedItem = GET_ACTOR_DROPPED_ITEM(this->mUnk_20);
+        actorDroppedItem->mUnk_E0       = ref;
         actorDroppedItem->func_ov031_020fa424(ActorDroppedItemState_4);
     }
 
@@ -559,4 +559,4 @@ ARM void ActorDroppedItem_c4::vfunc_08() {
     Actor_c4::vfunc_08();
 }
 
-ARM ActorDroppedItem::~ActorDroppedItem() {}
+ARM ActorItemDrop::~ActorItemDrop() {}

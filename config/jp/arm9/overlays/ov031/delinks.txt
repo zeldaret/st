@@ -151,7 +151,7 @@ src/031_Land/Actor/ActorUnkRLST.cpp:
     .ctor       start:0x02114584 end:0x02114588
     .bss        start:0x02118b24 end:0x02118c0c
 
-src/031_Land/Actor/ActorDroppedItem.cpp:
+src/031_Land/Actor/ActorItemDrop.cpp:
     complete
     .text       start:0x020fb810 end:0x020fc5b4
     .init       start:0x021135dc end:0x02113714

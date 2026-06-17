@@ -42,7 +42,7 @@ public:
     virtual void vfunc_0c(unk32 param1) override;
 };
 
-class ActorDroppedItem : public Actor_Derived2 {
+class ActorItemDrop : public Actor_Derived2 {
 public:
     /* 000 (base) */
     /* 0AE */ volatile u16 mUnk_AE;
@@ -74,13 +74,13 @@ public:
         return true;
     }
 
-    ActorDroppedItem();
+    ActorItemDrop();
 
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 2C */ virtual void vfunc_2c(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
-    /* 4C */ virtual ~ActorDroppedItem() override;
+    /* 4C */ virtual ~ActorItemDrop() override;
 
     void func_ov031_020fa260();
     void func_ov031_020fa424(ActorState state);
@@ -103,46 +103,46 @@ public:
     static void func_ov031_020f9f8c(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref);
 };
 
-class ActorProfileDroppedArrow : public ActorProfile {
+class ActorProfileArrowDrop : public ActorProfile {
 public:
     /* 00 (base) */
 
-    ActorProfileDroppedArrow();
+    ActorProfileArrowDrop();
 
     /* 0C */ virtual Actor *Create();
 
-    static ActorProfileDroppedArrow *GetProfile();
+    static ActorProfileArrowDrop *GetProfile();
 };
 
-class ActorProfileDroppedBomb : public ActorProfile {
+class ActorProfileBombDrop : public ActorProfile {
 public:
     /* 00 (base) */
 
-    ActorProfileDroppedBomb();
+    ActorProfileBombDrop();
 
     /* 0C */ virtual Actor *Create();
 
-    static ActorProfileDroppedBomb *GetProfile();
+    static ActorProfileBombDrop *GetProfile();
 };
 
-class ActorProfileDroppedRedPotion : public ActorProfile {
+class ActorProfileRedPotionDrop : public ActorProfile {
 public:
     /* 00 (base) */
 
-    ActorProfileDroppedRedPotion();
+    ActorProfileRedPotionDrop();
 
     /* 0C */ virtual Actor *Create();
 
-    static ActorProfileDroppedRedPotion *GetProfile();
+    static ActorProfileRedPotionDrop *GetProfile();
 };
 
-class ActorProfileDroppedTreasure : public ActorProfile {
+class ActorProfileTreasureDrop : public ActorProfile {
 public:
     /* 00 (base) */
 
-    ActorProfileDroppedTreasure();
+    ActorProfileTreasureDrop();
 
     /* 0C */ virtual Actor *Create();
 
-    static ActorProfileDroppedTreasure *GetProfile();
+    static ActorProfileTreasureDrop *GetProfile();
 };

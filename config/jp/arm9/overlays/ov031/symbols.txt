@@ -1154,52 +1154,52 @@ _ZN12ActorUnkRLST19func_ov031_020f9cf4Ev kind:function(arm,size=0x1c) addr:0x020
 _ZN12ActorUnkRLSTD1Ev kind:function(arm,size=0x50) addr:0x020fb754
 _ZN12ActorUnkRLST19func_ov031_020f9d60Ev kind:function(arm,size=0x58) addr:0x020fb7a4
 _ZN19ActorProfileUnkRLSTD1Ev kind:function(arm,size=0x14) addr:0x020fb7fc
-_ZN24ActorProfileDroppedArrow10GetProfileEv kind:function(arm,size=0xc) addr:0x020fb810
-_ZN24ActorProfileDroppedArrow6CreateEv kind:function(arm,size=0x24) addr:0x020fb81c
-_ZN24ActorProfileDroppedArrowC1Ev kind:function(arm,size=0x40) addr:0x020fb840
-_ZN23ActorProfileDroppedBomb10GetProfileEv kind:function(arm,size=0xc) addr:0x020fb880
-_ZN23ActorProfileDroppedBomb6CreateEv kind:function(arm,size=0x24) addr:0x020fb88c
-_ZN23ActorProfileDroppedBombC1Ev kind:function(arm,size=0x40) addr:0x020fb8b0
-_ZN28ActorProfileDroppedRedPotion10GetProfileEv kind:function(arm,size=0xc) addr:0x020fb8f0
-_ZN28ActorProfileDroppedRedPotion6CreateEv kind:function(arm,size=0x24) addr:0x020fb8fc
-_ZN28ActorProfileDroppedRedPotionC1Ev kind:function(arm,size=0x40) addr:0x020fb920
-_ZN27ActorProfileDroppedTreasure10GetProfileEv kind:function(arm,size=0xc) addr:0x020fb960
-_ZN27ActorProfileDroppedTreasure6CreateEv kind:function(arm,size=0x24) addr:0x020fb96c
-_ZN27ActorProfileDroppedTreasureC1Ev kind:function(arm,size=0x40) addr:0x020fb990
-_ZN16ActorDroppedItem19func_ov031_020f9f8cEP8ActorRefPK7VecFx32jS0_ kind:function(arm,size=0x80) addr:0x020fb9d0
-_ZN16ActorDroppedItemC1Ev kind:function(arm,size=0x200) addr:0x020fba50
-_ZN16ActorDroppedItem8vfunc_18Ei kind:function(arm,size=0x30) addr:0x020fbc50
-_ZN16ActorDroppedItem8vfunc_20Ev kind:function(arm,size=0xc) addr:0x020fbc80
-_ZN16ActorDroppedItem8vfunc_24Ev kind:function(arm,size=0x18) addr:0x020fbc8c
-_ZN16ActorDroppedItem19func_ov031_020fa260Ev kind:function(arm,size=0x1c4) addr:0x020fbca4
-_ZN16ActorDroppedItem19func_ov031_020fa424Es kind:function(arm,size=0x58) addr:0x020fbe68
-_ZN16ActorDroppedItem19func_ov031_020fa468Ev kind:function(arm,size=0x4) addr:0x020fbec0
-_ZN16ActorDroppedItem19func_ov031_020fa46cEv kind:function(arm,size=0x28) addr:0x020fbec4
-_ZN16ActorDroppedItem19func_ov031_020fa494Ev kind:function(arm,size=0xc) addr:0x020fbeec
-_ZN16ActorDroppedItem19func_ov031_020fa4a0Ev kind:function(arm,size=0x84) addr:0x020fbef8
-_ZN16ActorDroppedItem19func_ov031_020fa524Ev kind:function(arm,size=0x44) addr:0x020fbf7c
-_ZN16ActorDroppedItem19func_ov031_020fa568Ev kind:function(arm,size=0x70) addr:0x020fbfc0
-_ZN16ActorDroppedItem19func_ov031_020fa5d8Ev kind:function(arm,size=0x18) addr:0x020fc030
-_ZN16ActorDroppedItem19func_ov031_020fa5f0Ev kind:function(arm,size=0x60) addr:0x020fc048
-_ZN16ActorDroppedItem19func_ov031_020fa650Ev kind:function(arm,size=0x14) addr:0x020fc0a8
-_ZN16ActorDroppedItem19func_ov031_020fa664Ev kind:function(arm,size=0x4) addr:0x020fc0bc
-_ZN16ActorDroppedItem19func_ov031_020fa668Ev kind:function(arm,size=0x10) addr:0x020fc0c0
-_ZN16ActorDroppedItem19func_ov031_020fa678Ev kind:function(arm,size=0x50) addr:0x020fc0d0
-_ZN16ActorDroppedItem19func_ov031_020fa6c8Ev kind:function(arm,size=0x64) addr:0x020fc120
-_ZN16ActorDroppedItem19func_ov031_020fa72cEv kind:function(arm,size=0x110) addr:0x020fc184
-_ZN16ActorDroppedItem8vfunc_2cEi kind:function(arm,size=0xc4) addr:0x020fc294
-_ZN16ActorDroppedItem19func_ov031_020fa900Ev kind:function(arm,size=0xf8) addr:0x020fc358
+_ZN21ActorProfileArrowDrop10GetProfileEv kind:function(arm,size=0xc) addr:0x020fb810
+_ZN21ActorProfileArrowDrop6CreateEv kind:function(arm,size=0x24) addr:0x020fb81c
+_ZN21ActorProfileArrowDropC1Ev kind:function(arm,size=0x40) addr:0x020fb840
+_ZN20ActorProfileBombDrop10GetProfileEv kind:function(arm,size=0xc) addr:0x020fb880
+_ZN20ActorProfileBombDrop6CreateEv kind:function(arm,size=0x24) addr:0x020fb88c
+_ZN20ActorProfileBombDropC1Ev kind:function(arm,size=0x40) addr:0x020fb8b0
+_ZN25ActorProfileRedPotionDrop10GetProfileEv kind:function(arm,size=0xc) addr:0x020fb8f0
+_ZN25ActorProfileRedPotionDrop6CreateEv kind:function(arm,size=0x24) addr:0x020fb8fc
+_ZN25ActorProfileRedPotionDropC1Ev kind:function(arm,size=0x40) addr:0x020fb920
+_ZN24ActorProfileTreasureDrop10GetProfileEv kind:function(arm,size=0xc) addr:0x020fb960
+_ZN24ActorProfileTreasureDrop6CreateEv kind:function(arm,size=0x24) addr:0x020fb96c
+_ZN24ActorProfileTreasureDropC1Ev kind:function(arm,size=0x40) addr:0x020fb990
+_ZN13ActorItemDrop19func_ov031_020f9f8cEP8ActorRefPK7VecFx32jS0_ kind:function(arm,size=0x80) addr:0x020fb9d0
+_ZN13ActorItemDropC1Ev kind:function(arm,size=0x200) addr:0x020fba50
+_ZN13ActorItemDrop8vfunc_18Ei kind:function(arm,size=0x30) addr:0x020fbc50
+_ZN13ActorItemDrop8vfunc_20Ev kind:function(arm,size=0xc) addr:0x020fbc80
+_ZN13ActorItemDrop8vfunc_24Ev kind:function(arm,size=0x18) addr:0x020fbc8c
+_ZN13ActorItemDrop19func_ov031_020fa260Ev kind:function(arm,size=0x1c4) addr:0x020fbca4
+_ZN13ActorItemDrop19func_ov031_020fa424Es kind:function(arm,size=0x58) addr:0x020fbe68
+_ZN13ActorItemDrop19func_ov031_020fa468Ev kind:function(arm,size=0x4) addr:0x020fbec0
+_ZN13ActorItemDrop19func_ov031_020fa46cEv kind:function(arm,size=0x28) addr:0x020fbec4
+_ZN13ActorItemDrop19func_ov031_020fa494Ev kind:function(arm,size=0xc) addr:0x020fbeec
+_ZN13ActorItemDrop19func_ov031_020fa4a0Ev kind:function(arm,size=0x84) addr:0x020fbef8
+_ZN13ActorItemDrop19func_ov031_020fa524Ev kind:function(arm,size=0x44) addr:0x020fbf7c
+_ZN13ActorItemDrop19func_ov031_020fa568Ev kind:function(arm,size=0x70) addr:0x020fbfc0
+_ZN13ActorItemDrop19func_ov031_020fa5d8Ev kind:function(arm,size=0x18) addr:0x020fc030
+_ZN13ActorItemDrop19func_ov031_020fa5f0Ev kind:function(arm,size=0x60) addr:0x020fc048
+_ZN13ActorItemDrop19func_ov031_020fa650Ev kind:function(arm,size=0x14) addr:0x020fc0a8
+_ZN13ActorItemDrop19func_ov031_020fa664Ev kind:function(arm,size=0x4) addr:0x020fc0bc
+_ZN13ActorItemDrop19func_ov031_020fa668Ev kind:function(arm,size=0x10) addr:0x020fc0c0
+_ZN13ActorItemDrop19func_ov031_020fa678Ev kind:function(arm,size=0x50) addr:0x020fc0d0
+_ZN13ActorItemDrop19func_ov031_020fa6c8Ev kind:function(arm,size=0x64) addr:0x020fc120
+_ZN13ActorItemDrop19func_ov031_020fa72cEv kind:function(arm,size=0x110) addr:0x020fc184
+_ZN13ActorItemDrop8vfunc_2cEi kind:function(arm,size=0xc4) addr:0x020fc294
+_ZN13ActorItemDrop19func_ov031_020fa900Ev kind:function(arm,size=0xf8) addr:0x020fc358
 _ZN19ActorDroppedItem_c4C1EP5Actor kind:function(arm,size=0x38) addr:0x020fc450
 _ZN19ActorDroppedItem_c48vfunc_00E8ActorRefi kind:function(arm,size=0x44) addr:0x020fc488
 _ZN19ActorDroppedItem_c48vfunc_04Ev kind:function(arm,size=0x20) addr:0x020fc4cc
 _ZN19ActorDroppedItem_c48vfunc_0cEi kind:function(arm,size=0x28) addr:0x020fc4ec
 _ZN19ActorDroppedItem_c48vfunc_08Ev kind:function(arm,size=0x20) addr:0x020fc514
-_ZN16ActorDroppedItemD1Ev kind:function(arm,size=0x14) addr:0x020fc534
-_ZN16ActorDroppedItemD0Ev kind:function(arm,size=0x1c) addr:0x020fc548
-_ZN24ActorProfileDroppedArrowD1Ev kind:function(arm,size=0x14) addr:0x020fc564
-_ZN23ActorProfileDroppedBombD1Ev kind:function(arm,size=0x14) addr:0x020fc578
-_ZN28ActorProfileDroppedRedPotionD1Ev kind:function(arm,size=0x14) addr:0x020fc58c
-_ZN27ActorProfileDroppedTreasureD1Ev kind:function(arm,size=0x14) addr:0x020fc5a0
+_ZN13ActorItemDropD1Ev kind:function(arm,size=0x14) addr:0x020fc534
+_ZN13ActorItemDropD0Ev kind:function(arm,size=0x1c) addr:0x020fc548
+_ZN21ActorProfileArrowDropD1Ev kind:function(arm,size=0x14) addr:0x020fc564
+_ZN20ActorProfileBombDropD1Ev kind:function(arm,size=0x14) addr:0x020fc578
+_ZN25ActorProfileRedPotionDropD1Ev kind:function(arm,size=0x14) addr:0x020fc58c
+_ZN24ActorProfileTreasureDropD1Ev kind:function(arm,size=0x14) addr:0x020fc5a0
 _ZN19ActorProfileUnkMLCK10GetProfileEv kind:function(arm,size=0xc) addr:0x020fc5b4
 _ZN19ActorProfileUnkMLCK6CreateEv kind:function(arm,size=0x24) addr:0x020fc5c0
 _ZN19ActorProfileUnkMLCKC1Ev kind:function(arm,size=0x28) addr:0x020fc5e4
@@ -2091,7 +2091,7 @@ __sinit_ActorUnkSWON.cpp kind:function(arm,size=0x50) addr:0x0211349c local
 __sinit_ActorUnkNORE.cpp kind:function(arm,size=0x50) addr:0x021134ec
 __sinit_ActorUnkFLEN.cpp kind:function(arm,size=0x50) addr:0x0211353c
 __sinit_ActorUnkRLST.cpp kind:function(arm,size=0x50) addr:0x0211358c
-__sinit_ActorDroppedItem.cpp kind:function(arm,size=0x138) addr:0x021135dc local
+__sinit_ActorItemDrop.cpp kind:function(arm,size=0x138) addr:0x021135dc local
 __sinit_ActorUnkMLCK.cpp kind:function(arm,size=0x74) addr:0x02113714
 __sinit_ActorUnkCLLT.cpp kind:function(arm,size=0x50) addr:0x02113788
 __sinit_ActorUnkEFSB.cpp kind:function(arm,size=0x50) addr:0x021137d8
@@ -2155,7 +2155,7 @@ __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x021144b0
 .p__sinit_ActorUnkNORE.cpp kind:data(word) addr:0x0211457c
 .p__sinit_ActorUnkFLEN.cpp kind:data(word) addr:0x02114580
 .p__sinit_ActorUnkRLST.cpp kind:data(word) addr:0x02114584
-.p__sinit_ActorDroppedItem.cpp kind:data(word) addr:0x02114588 local
+.p__sinit_ActorItemDrop.cpp kind:data(word) addr:0x02114588 local
 .p__sinit_ActorUnkMLCK.cpp kind:data(word) addr:0x0211458c
 .p__sinit_ActorUnkCLLT.cpp kind:data(word) addr:0x02114590
 .p__sinit_ActorUnkEFSB.cpp kind:data(word) addr:0x02114594
@@ -2390,11 +2390,11 @@ data_ov031_02114ba0 kind:data(any) addr:0x02116914 local
 data_ov031_02114bb0 kind:data(any) addr:0x02116924 local
 data_ov031_02114be8 kind:data(any) addr:0x0211695c local
 _ZTV19ActorDroppedItem_c4 kind:data(any) addr:0x02116994
-_ZTV24ActorProfileDroppedArrow kind:data(any) addr:0x021169ac
-_ZTV27ActorProfileDroppedTreasure kind:data(any) addr:0x021169d0
-_ZTV28ActorProfileDroppedRedPotion kind:data(any) addr:0x021169f4
-_ZTV23ActorProfileDroppedBomb kind:data(any) addr:0x02116a18
-_ZTV16ActorDroppedItem kind:data(any) addr:0x02116a3c
+_ZTV21ActorProfileArrowDrop kind:data(any) addr:0x021169ac
+_ZTV24ActorProfileTreasureDrop kind:data(any) addr:0x021169d0
+_ZTV25ActorProfileRedPotionDrop kind:data(any) addr:0x021169f4
+_ZTV20ActorProfileBombDrop kind:data(any) addr:0x02116a18
+_ZTV13ActorItemDrop kind:data(any) addr:0x02116a3c
 data_ov031_02116a9c kind:data(any) addr:0x02116a9c
 data_ov031_02116ab0 kind:data(any) addr:0x02116ab0
 _ZTV19data_ov031_02116ac0 kind:data(any) addr:0x02116ac0
@@ -2592,18 +2592,18 @@ _ZN15ProfileInstanceI19ActorProfileUnkFLENE8sProfileE kind:bss addr:0x02118ae8
 _ZGVN15ProfileInstanceI19ActorProfileUnkRLSTE8sProfileE kind:bss addr:0x02118b24
 @30908 kind:bss addr:0x02118b28
 _ZN15ProfileInstanceI19ActorProfileUnkRLSTE8sProfileE kind:bss addr:0x02118b34
-_ZGVN15ProfileInstanceI27ActorProfileDroppedTreasureE8sProfileE kind:bss addr:0x02118c0c
-_ZGVN15ProfileInstanceI28ActorProfileDroppedRedPotionE8sProfileE kind:bss addr:0x02118c10
-_ZGVN15ProfileInstanceI23ActorProfileDroppedBombE8sProfileE kind:bss addr:0x02118c14
-_ZGVN15ProfileInstanceI24ActorProfileDroppedArrowE8sProfileE kind:bss addr:0x02118c18
+_ZGVN15ProfileInstanceI24ActorProfileTreasureDropE8sProfileE kind:bss addr:0x02118c0c
+_ZGVN15ProfileInstanceI25ActorProfileRedPotionDropE8sProfileE kind:bss addr:0x02118c10
+_ZGVN15ProfileInstanceI20ActorProfileBombDropE8sProfileE kind:bss addr:0x02118c14
+_ZGVN15ProfileInstanceI21ActorProfileArrowDropE8sProfileE kind:bss addr:0x02118c18
 @2630 kind:bss addr:0x02118c1c local
 @2591 kind:bss addr:0x02118c28 local
 @2604 kind:bss addr:0x02118c34 local
 @2617 kind:bss addr:0x02118c40 local
-_ZN15ProfileInstanceI28ActorProfileDroppedRedPotionE8sProfileE kind:bss addr:0x02118c4c
-_ZN15ProfileInstanceI27ActorProfileDroppedTreasureE8sProfileE kind:bss addr:0x02118c88
-_ZN15ProfileInstanceI24ActorProfileDroppedArrowE8sProfileE kind:bss addr:0x02118cc4
-_ZN15ProfileInstanceI23ActorProfileDroppedBombE8sProfileE kind:bss addr:0x02118d00
+_ZN15ProfileInstanceI25ActorProfileRedPotionDropE8sProfileE kind:bss addr:0x02118c4c
+_ZN15ProfileInstanceI24ActorProfileTreasureDropE8sProfileE kind:bss addr:0x02118c88
+_ZN15ProfileInstanceI21ActorProfileArrowDropE8sProfileE kind:bss addr:0x02118cc4
+_ZN15ProfileInstanceI20ActorProfileBombDropE8sProfileE kind:bss addr:0x02118d00
 _ZGVN15ProfileInstanceI19ActorProfileUnkMLCKE8sProfileE kind:bss addr:0x02118d3c
 @30920 kind:bss addr:0x02118d40
 _ZN15ProfileInstanceI19ActorProfileUnkMLCKE8sProfileE kind:bss addr:0x02118d4c
