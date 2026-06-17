@@ -84,23 +84,27 @@ public:
 
     void func_ov031_020fa260();
     void func_ov031_020fa424(ActorState state);
-    void func_ov031_020fa468();
-    void func_ov031_020fa46c();
-    void func_ov031_020fa494();
-    void func_ov031_020fa4a0();
-    void func_ov031_020fa524();
-    void func_ov031_020fa568();
-    void func_ov031_020fa5d8();
-    void func_ov031_020fa5f0();
-    void func_ov031_020fa650();
-    void func_ov031_020fa664();
-    void func_ov031_020fa668();
-    void func_ov031_020fa678();
-    void func_ov031_020fa6c8();
-    void func_ov031_020fa72c();
     void func_ov031_020fa900();
 
     static void func_ov031_020f9f8c(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref);
+
+    // data_ov031_02114bb0
+    void func_ov031_020fa46c();
+    void func_ov031_020fa4a0();
+    void func_ov031_020fa568();
+    void func_ov031_020fa5f0();
+    void func_ov031_020fa664();
+    void func_ov031_020fa678();
+    void func_ov031_020fa72c();
+
+    // data_ov031_02114be8
+    void func_ov031_020fa468();
+    void func_ov031_020fa494();
+    void func_ov031_020fa524();
+    void func_ov031_020fa5d8();
+    void func_ov031_020fa650();
+    void func_ov031_020fa668();
+    void func_ov031_020fa6c8();
 };
 
 class ActorProfileArrowDrop : public ActorProfile {

@@ -410,13 +410,13 @@ ARM void ActorItemDrop::func_ov031_020fa678() {
 }
 
 ARM void ActorItemDrop::func_ov031_020fa6c8() {
-    this->mUnk_52 = FLOAT_TO_FX32(15.9998f);
-    this->mUnk_50 = FLOAT_TO_FX32(0.0f);
-    this->mVel.x  = FLOAT_TO_FX32(0.0f);
-    this->mVel.y  = FLOAT_TO_FX32(0.0f);
-    this->mVel.z  = FLOAT_TO_FX32(0.0f);
-    this->mUnk_4A = 0x0;
-    this->mUnk_44 = 0x0;
+    this->mUnk_52    = FLOAT_TO_FX32(15.9998f);
+    this->mUnk_50    = FLOAT_TO_FX32(0.0f);
+    this->mVel.x     = FLOAT_TO_FX32(0.0f);
+    this->mVel.y     = FLOAT_TO_FX32(0.0f);
+    this->mVel.z     = FLOAT_TO_FX32(0.0f);
+    this->mUnk_4A[0] = 0x0;
+    this->mUnk_44    = 0x0;
 
     this->mUnk_B4.func_ov000_02097bec();
     UNSET_FLAG(this->mFlags, ActorFlag_Visible);
