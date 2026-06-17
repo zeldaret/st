@@ -169,7 +169,7 @@ THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param
 
             if (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower) {
                 UnkStruct_StackTitleScreen auStack_3c("Screen/tex2d.bin", 1);
-                auStack_3c.func_ov000_02059270(0x34, "baloon", 0x28a00000);
+                auStack_3c.func_ov000_02059270(0x34, "baloon", 0x28A00000);
                 auStack_3c.func_ov000_02059270(0x35, "dot", 0x28000000);
             }
 

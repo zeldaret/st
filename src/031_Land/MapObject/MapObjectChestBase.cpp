@@ -253,7 +253,7 @@ ARM bool MapObjectChestBase::vfunc_44() {
 ARM void MapObjectChestBase::func_ov031_02103f48() {
     VecFx32 local_10;
     VecFx32_Init(this->mPos.x, this->mPos.y + 0x800, this->mPos.z, &local_10);
-    data_027e0cec->func_ov000_0209feac(0x81f, &local_10, 4, 0, 0);
+    data_027e0cec->func_ov000_0209feac(0x81F, &local_10, 4, 0, 0);
 }
 
 ARM void MapObjectChestBase::vfunc_4C() {

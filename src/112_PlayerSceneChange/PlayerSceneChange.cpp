@@ -297,7 +297,7 @@ ARM void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1
             break;
         }
         case 0x3F:
-            if (param1->mUnk_00 != 0x3c) {
+            if (param1->mUnk_00 != 0x3C) {
                 this->mUnk_68 = data_027e09a4->func_ov000_02070554();
             }
 
@@ -545,11 +545,11 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     // s16 iVar3 = var_r1_2 >> 4;
                     // fx32 uVar6 = gSinCosTable[iVar3 * 2] * 0x2000;
                     // fx32 uVar5 = gSinCosTable[iVar3 * 2 + 1] * 0x2000;
-                    // fx32 iVar2 = (gSinCosTable[iVar3 * 2 + 1] >> 0x13) + (0xfffff7ff < uVar5);
+                    // fx32 iVar2 = (gSinCosTable[iVar3 * 2 + 1] >> 0x13) + (0xFFFFF7FF < uVar5);
 
                     // this->mUnk_70.x +=
-                    //     (((uVar6 + 0x800) >> 0xc) | (gSinCosTable[iVar3 * 2] >> 0x13) + (0xfffff7ff < uVar6)) * 0x100000;
-                    // this->mUnk_70.z += (((uVar5 + 0x800) >> 0xc) | iVar2 << 0x14);
+                    //     (((uVar6 + 0x800) >> 0xC) | (gSinCosTable[iVar3 * 2] >> 0x13) + (0xFFFFF7FF < uVar6)) * 0x100000;
+                    // this->mUnk_70.z += (((uVar5 + 0x800) >> 0xC) | iVar2 << 0x14);
 
                     s32 idx   = (((s32) var_r1_2) >> 4) << 1;
                     s32 sin16 = (s16) data_0203feb0[idx];

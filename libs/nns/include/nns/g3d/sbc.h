@@ -11,10 +11,10 @@ typedef enum {
     G3D_SBC_CMD_007 = 0x7,
     G3D_SBC_CMD_008 = 0x8,
     G3D_SBC_CMD_SKN = 0x9,
-    G3D_SBC_CMD_00A = 0xa,
-    G3D_SBC_CMD_SCL = 0xb,
-    G3D_SBC_CMD_00C = 0xc,
-    G3D_SBC_CMD_00D = 0xd
+    G3D_SBC_CMD_00A = 0xA,
+    G3D_SBC_CMD_SCL = 0xB,
+    G3D_SBC_CMD_00C = 0xC,
+    G3D_SBC_CMD_00D = 0xD
 } G3d_SBC_Commands;
 
 typedef enum {
@@ -91,7 +91,7 @@ static inline void G3d_RestoreMtx_inline(u32 idx) {
 }
 
 static inline void G3d_MtxMult33_inline(const Mat3p *m) {
-    PushGeometryCommand(0x1a, (u32 *) m, 9);
+    PushGeometryCommand(0x1A, (u32 *) m, 9);
 }
 
 static inline void G3d_MtxMult43_inline(const Mat4x3p *m) {
@@ -107,5 +107,5 @@ static inline void G3d_Scale_inline(fx32 x, fx32 y, fx32 z) {
     vec.x = x;
     vec.y = y;
     vec.z = z;
-    PushGeometryCommand(0x1b, (u32 *) &vec, 3);
+    PushGeometryCommand(0x1B, (u32 *) &vec, 3);
 }

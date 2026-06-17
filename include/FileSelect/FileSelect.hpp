@@ -75,7 +75,7 @@ public:
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
 };
 
-class FileSelectManager : public GameModeManagerBase { // 0x02262dbc
+class FileSelectManager : public GameModeManagerBase { // 0x02262DBC
 public:
     /* 000 (base) */
     /* 154 */ GameModeManagerBase_104 *mUnk_154;

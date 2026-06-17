@@ -595,7 +595,7 @@ ARM void FileSelectMain::func_ov019_020c72a0() {
         var_r7 = 6;
     }
 
-    this->mUnk_03E8[this->mSaveSlotIndex].func_ov000_0206415c(&local_5c, 0, 0xf, 0);
+    this->mUnk_03E8[this->mSaveSlotIndex].func_ov000_0206415c(&local_5c, 0, 0xF, 0);
     this->mUnk_07A0.mUnk_08 = var_r4;
     this->mUnk_0A80.mUnk_08 = var_r5;
     this->mUnk_0D60.mUnk_08 = var_r6;
@@ -785,7 +785,7 @@ ARM void FileSelectMain::func_ov019_020c78ac() {
 
 ARM void FileSelectMain::func_ov019_020c7910() {
     this->mUnk_03E8[this->mSaveSlotIndex].func_ov000_0206415c((void *) &UnkStruct_ov019_020d1e70::data_ov019_020d1e94.mUnk_00,
-                                                              0, 0x1e, 10);
+                                                              0, 0x1E, 10);
 
     this->mUnk_10BC.mUnk_0A = 1;
     this->mUnk_10BC.mUnk_0B = 0;

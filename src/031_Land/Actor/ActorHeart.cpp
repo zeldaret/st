@@ -110,7 +110,7 @@ void ActorHeart::vfunc_20() {
 
     stack.mUnk_02 = 0;
     stack.mUnk_04 = 0x666;
-    stack.mUnk_06 = 0xfb33;
+    stack.mUnk_06 = 0xFB33;
 
     func_01fff17c(&stack, data_027e0ce0, 0);
     func_02018114(&stack.mUnk_02, stack.mUnk_00);
@@ -169,7 +169,7 @@ void ActorHeart::vfunc_20() {
             }
         }
 
-        if (!(this->mUnk_A0 & 0x3ffff)) {
+        if (!(this->mUnk_A0 & 0x3FFFF)) {
             unk16 var = this->mUnk_B4;
             if (var != 0x8 && var == 0xC) {
                 this->mUnk_C0 = this->mUnk_A4;
@@ -402,13 +402,13 @@ ARM void ActorHeart::vfunc_2C(unk32 param1) {
 
     iStack_20 = this->mPos;
     iStack_20.y += FLOAT_TO_FX32(0.03113);
-    this->func_ov017_020bf5c4(&iStack_20, 0x400, 0x400, 0x1f, 0);
+    this->func_ov017_020bf5c4(&iStack_20, 0x400, 0x400, 0x1F, 0);
 
     func_ov000_0205c1f0(&auStack_30, 0x10);
 
     iStack_2c = this->mPos;
     iStack_2c.y += FLOAT_TO_FX32(0.33);
-    func_ov000_0205c204(&auStack_30, &iStack_2c, 0xccd, 0xccd, 0x1f);
+    func_ov000_0205c204(&auStack_30, &iStack_2c, 0xCCD, 0xCCD, 0x1F);
 }
 
 ARM void ActorHeart::func_ov031_020ef698() {

@@ -118,8 +118,8 @@ double x, y;
     lx = __LO(x);
     hy = __HI(y);
     ly = __LO(y);
-    ix = hx & 0x7fffffff;
-    iy = hy & 0x7fffffff;
+    ix = hx & 0x7FFFFFFF;
+    iy = hy & 0x7FFFFFFF;
 
     /* y==zero: x**0 = 1 */
     if ((iy | ly) == 0) {
@@ -127,7 +127,7 @@ double x, y;
     }
 
     /* +-NaN return x+y */
-    if (ix > 0x7ff00000 || ((ix == 0x7ff00000) && (lx != 0)) || iy > 0x7ff00000 || ((iy == 0x7ff00000) && (ly != 0))) {
+    if (ix > 0x7FF00000 || ((ix == 0x7FF00000) && (lx != 0)) || iy > 0x7FF00000 || ((iy == 0x7FF00000) && (ly != 0))) {
         return x + y;
 #ifdef __STDC__
         errno = EDOM; /* mf-- added to conform to old ANSI standard */
@@ -143,8 +143,8 @@ double x, y;
     if (hx < 0) {
         if (iy >= 0x43400000) {
             yisint = 2; /* even integer y */
-        } else if (iy >= 0x3ff00000) {
-            k = (iy >> 20) - 0x3ff; /* exponent */
+        } else if (iy >= 0x3FF00000) {
+            k = (iy >> 20) - 0x3FF; /* exponent */
             if (k > 20) {
                 j = ly >> (52 - k);
                 if ((j << (52 - k)) == ly) {
@@ -161,18 +161,18 @@ double x, y;
 
     /* special value of y */
     if (ly == 0) {
-        if (iy == 0x7ff00000) {
+        if (iy == 0x7FF00000) {
 
             /* y is +-inf */
-            if (((ix - 0x3ff00000) | lx) == 0) {
+            if (((ix - 0x3FF00000) | lx) == 0) {
                 return y - y;              /* inf**+-1 is NaN */
-            } else if (ix >= 0x3ff00000) { /* (|x|>1)**+-inf = inf,0 */
+            } else if (ix >= 0x3FF00000) { /* (|x|>1)**+-inf = inf,0 */
                 return (hy >= 0) ? y : zero;
             } else { /* (|x|<1)**-,+inf = inf,0 */
                 return (hy < 0) ? -y : zero;
             }
         }
-        if (iy == 0x3ff00000) {
+        if (iy == 0x3FF00000) {
             /* y is  +-1 */
             if (hy < 0) {
                 return one / x;
@@ -183,7 +183,7 @@ double x, y;
         if (hy == 0x40000000) {
             return x * x; /* y is  2 */
         }
-        if (hy == 0x3fe00000) { /* y is  0.5 */
+        if (hy == 0x3FE00000) { /* y is  0.5 */
             if (hx >= 0) {      /* x >= +0 */
                 return sqrt(x);
             }
@@ -193,13 +193,13 @@ double x, y;
     ax = fabs(x);
     /* special value of x */
     if (lx == 0) {
-        if (ix == 0x7ff00000 || ix == 0 || ix == 0x3ff00000) {
+        if (ix == 0x7FF00000 || ix == 0 || ix == 0x3FF00000) {
             z = ax; /*x is +-0,+-inf,+-1*/
             if (hy < 0) {
                 z = one / z; /* z = (1/|x|) */
             }
             if (hx < 0) {
-                if (((ix - 0x3ff00000) | yisint) == 0) {
+                if (((ix - 0x3FF00000) | yisint) == 0) {
                     z = (z - z) / (z - z); /* (-1)**non-int is NaN */
                 } else if (yisint == 1) {
                     z = -z; /* (x<0)**odd = -(|x|**odd) */
@@ -218,20 +218,20 @@ double x, y;
     }
 
     /* |y| is big */
-    if (iy > 0x41e00000) {     /* if |y| > 2**31 */
-        if (iy > 0x43f00000) { /* if |y| > 2**64, must o/uflow */
-            if (ix <= 0x3fefffff) {
+    if (iy > 0x41E00000) {     /* if |y| > 2**31 */
+        if (iy > 0x43F00000) { /* if |y| > 2**64, must o/uflow */
+            if (ix <= 0x3FEFFFFF) {
                 return (hy < 0) ? big * big : tiny * tiny;
             }
-            if (ix >= 0x3ff00000) {
+            if (ix >= 0x3FF00000) {
                 return (hy > 0) ? big * big : tiny * tiny;
             }
         }
         /* over/underflow if x is not close to one */
-        if (ix < 0x3fefffff) {
+        if (ix < 0x3FEFFFFF) {
             return (hy < 0) ? big * big : tiny * tiny;
         }
-        if (ix > 0x3ff00000) {
+        if (ix > 0x3FF00000) {
             return (hy > 0) ? big * big : tiny * tiny;
         }
         /* now |1-x| is tiny <= 2**-20, suffice to compute
@@ -252,10 +252,10 @@ double x, y;
             n -= 53;
             ix = __HI(ax);
         }
-        n += ((ix) >> 20) - 0x3ff;
-        j = ix & 0x000fffff;
+        n += ((ix) >> 20) - 0x3FF;
+        j = ix & 0x000FFFFF;
         /* determine interval */
-        ix = j | 0x3ff00000; /* normalize ix */
+        ix = j | 0x3FF00000; /* normalize ix */
         if (j <= 0x3988E) {
             k = 0; /* |x|<sqrt(3/2) */
         } else if (j < 0xBB67A) {
@@ -323,8 +323,8 @@ double x, y;
                 return s * big * big; /* overflow */
             }
         }
-    } else if ((j & 0x7fffffff) >= 0x4090cc00) { /* z <= -1075 */
-        if (((j - 0xc090cc00) | i) != 0) {       /* z < -1075 */
+    } else if ((j & 0x7FFFFFFF) >= 0x4090CC00) { /* z <= -1075 */
+        if (((j - 0xC090CC00) | i) != 0) {       /* z < -1075 */
             return s * tiny * tiny;              /* underflow */
         } else {
             if (p_l <= z - p_h) {
@@ -335,15 +335,15 @@ double x, y;
     /*
      * compute 2**(p_h+p_l)
      */
-    i = j & 0x7fffffff;
-    k = (i >> 20) - 0x3ff;
+    i = j & 0x7FFFFFFF;
+    k = (i >> 20) - 0x3FF;
     n = 0;
-    if (i > 0x3fe00000) { /* if |z| > 0.5, set n = [z+0.5] */
+    if (i > 0x3FE00000) { /* if |z| > 0.5, set n = [z+0.5] */
         n       = j + (0x00100000 >> (k + 1));
-        k       = ((n & 0x7fffffff) >> 20) - 0x3ff; /* new k for n */
+        k       = ((n & 0x7FFFFFFF) >> 20) - 0x3FF; /* new k for n */
         t       = zero;
-        __HI(t) = (n & ~(0x000fffff >> k));
-        n       = ((n & 0x000fffff) | 0x00100000) >> (20 - k);
+        __HI(t) = (n & ~(0x000FFFFF >> k));
+        n       = ((n & 0x000FFFFF) | 0x00100000) >> (20 - k);
         if (j < 0) {
             n = -n;
         }

@@ -160,7 +160,7 @@ void AdventureModeManager_174_Base::func_ov024_020c8b2c() {
     }
 
     data_ov000_020b504c.func_ov000_02068068(0);
-    data_0204a088->mUnk_120 = 0xffff;
+    data_0204a088->mUnk_120 = 0xFFFF;
     data_02049f8c.mUnk_00   = this->mUnk_AC;
     data_ov000_020b504c.func_ov000_02067b60();
 }

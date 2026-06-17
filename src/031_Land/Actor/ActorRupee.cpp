@@ -595,7 +595,7 @@ ARM void ActorRupee::vfunc_20() {
             this->func_ov000_020989e0();
             uVar3 = uStack_18;
 
-            if ((this->mUnk_A4 & 0x3ffff) != 0) {
+            if ((this->mUnk_A4 & 0x3FFFF) != 0) {
                 sVar1 = *(short *) &this->mUnk_B8;
 
                 switch (mUnk_B8) {
@@ -608,7 +608,7 @@ ARM void ActorRupee::vfunc_20() {
                         break;
                     case 0x0C:
                         this->mUnk_BC = this->mUnk_A8;
-                        this->mUnk_A0 &= 0xffffefff;
+                        this->mUnk_A0 &= 0xFFFFEFFF;
                         this->SetState(ActorRupeeState_6);
                         uVar3 = uStack_18;
                         break;
