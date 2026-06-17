@@ -129,7 +129,7 @@ public:
     /* 04 */ VecFx32 mPos;
     /* 10 */ VecFx32 mPrevPos;
     /* 1C */ VecFx32 mVel;
-    /* 28 */ s16 mAngle;
+    /* 28 */ fx16 mAngle;
     /* 2A */ unk16 mUnk_2A;
     /* 2C */ unk32 mUnk_2C; // gravity?
     /* 30 */ Cylinder *mUnk_30;
@@ -143,8 +143,8 @@ public:
     /* 4A */ u8 mUnk_4A[2];
     /* 4C */ ActorState mState;
     /* 4E */ fx16 mYOffset;
-    /* 50 */ volatile u16 mUnk_50;
-    /* 52 */ u16 mUnk_52;
+    /* 50 */ volatile u16 mUnk_50; // timer some actors are using
+    /* 52 */ u16 mUnk_52;          // maximum value for above timer
     /* 54 */ unk32 mUnk_54;
     /* 58 */ ActorFlags mFlags[1];
     /* 5C */ ActorParams mUnk_5C;
