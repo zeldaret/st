@@ -167,7 +167,6 @@ ARM void ActorDroppedItem::func_ov031_020fa424(s16 param_1) {
 
 ARM void ActorDroppedItem::func_ov031_020fa468() {}
 
-// non-matching
 ARM void ActorDroppedItem::func_ov031_020fa46c() {
     func_ov000_02098838();
     if (this->mVel.y > 0) {
