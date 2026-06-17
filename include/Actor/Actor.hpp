@@ -262,6 +262,10 @@ public:
     /* 0C */ virtual void vfunc_0c(unk32 param1);
     /* 10 */
 
+    template <typename T> T *GetActorPtr() {
+        return (T *) this->mUnk_20;
+    }
+
     Actor_c4(Actor *param1) :
         Actor_c4_Base(&param1->mRef, 0) {}
 };

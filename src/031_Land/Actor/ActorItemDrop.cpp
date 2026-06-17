@@ -532,11 +532,9 @@ ARM ActorItemDrop_c4::ActorItemDrop_c4(Actor *param_1) :
     this->mUnk_04 = 0x1;
 }
 
-#define GET_ACTOR_DROPPED_ITEM(pActor) ((ActorItemDrop *) (pActor))
-
 ARM bool ActorItemDrop_c4::vfunc_00(ActorRef ref, unk32 param_2) {
     if (param_2 != 0) {
-        ActorItemDrop *actorDroppedItem = GET_ACTOR_DROPPED_ITEM(this->mUnk_20);
+        ActorItemDrop *actorDroppedItem = this->GetActorPtr<ActorItemDrop>();
         actorDroppedItem->mUnk_E0       = ref;
         actorDroppedItem->SetState(ActorItemDropState_4);
     }
@@ -545,17 +543,17 @@ ARM bool ActorItemDrop_c4::vfunc_00(ActorRef ref, unk32 param_2) {
 }
 
 ARM void ActorItemDrop_c4::vfunc_04() {
-    GET_ACTOR_DROPPED_ITEM(this->mUnk_20)->SetState(ActorItemDropState_5);
+    this->GetActorPtr<ActorItemDrop>()->SetState(ActorItemDropState_5);
     Actor_c4::vfunc_04();
 }
 
 ARM void ActorItemDrop_c4::vfunc_0c(unk32 param_1) {
-    GET_ACTOR_DROPPED_ITEM(this->mUnk_20)->SetState(ActorItemDropState_1);
+    this->GetActorPtr<ActorItemDrop>()->SetState(ActorItemDropState_1);
     Actor_c4::vfunc_0c(param_1);
 }
 
 ARM void ActorItemDrop_c4::vfunc_08() {
-    GET_ACTOR_DROPPED_ITEM(this->mUnk_20)->SetState(ActorItemDropState_6);
+    this->GetActorPtr<ActorItemDrop>()->SetState(ActorItemDropState_6);
     Actor_c4::vfunc_08();
 }
 

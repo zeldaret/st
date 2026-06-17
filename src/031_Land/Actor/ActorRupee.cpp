@@ -814,8 +814,6 @@ ARM bool ActorRupee::func_ov031_020e9e5c() {
     return bVar7;
 }
 
-#define GET_ACTOR_RUPEE(pActor) ((ActorRupee *) (pActor))
-
 ARM ActorRupee_c4::ActorRupee_c4(Actor *param1) :
     Actor_c4(param1) {
     this->mUnk_20 = param1;
@@ -824,7 +822,7 @@ ARM ActorRupee_c4::ActorRupee_c4(Actor *param1) :
 
 ARM bool ActorRupee_c4::vfunc_00(ActorRef ref, unk32 param2) {
     if (param2 != 0) {
-        ActorRupee *pRupee = GET_ACTOR_RUPEE(this->mUnk_20);
+        ActorRupee *pRupee = this->GetActorPtr<ActorRupee>();
         pRupee->mUnk_C0    = ref.Get32();
         pRupee->SetState(ActorRupeeState_7);
     }
@@ -833,17 +831,17 @@ ARM bool ActorRupee_c4::vfunc_00(ActorRef ref, unk32 param2) {
 }
 
 ARM void ActorRupee_c4::vfunc_04() {
-    GET_ACTOR_RUPEE(this->mUnk_20)->SetState(ActorRupeeState_8);
+    this->GetActorPtr<ActorRupee>()->SetState(ActorRupeeState_8);
     this->Actor_c4::vfunc_04();
 }
 
 ARM void ActorRupee_c4::vfunc_0c(unk32 param1) {
-    GET_ACTOR_RUPEE(this->mUnk_20)->SetState(ActorRupeeState_1);
+    this->GetActorPtr<ActorRupee>()->SetState(ActorRupeeState_1);
     this->Actor_c4::vfunc_0c(param1);
 }
 
 ARM void ActorRupee_c4::vfunc_08() {
-    GET_ACTOR_RUPEE(this->mUnk_20)->func_ov031_020e9068();
+    this->GetActorPtr<ActorRupee>()->func_ov031_020e9068();
     this->Actor_c4::vfunc_08();
 }
 
