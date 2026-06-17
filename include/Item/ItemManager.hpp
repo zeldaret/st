@@ -27,11 +27,11 @@ public:
     /* 00 */ virtual void vfunc_00();                //! TODO: name symbol func_ov000_020667d8
     /* 04 */ virtual void vfunc_04();                //! TODO: name symbol func_ov000_020667f4
     /* 08 */ virtual void vfunc_08();                //! TODO: name symbol func_ov000_020673c8
-    /* 0C */ virtual void vfunc_0c();                //! TODO: name symbol func_ov000_02067434
+    /* 0C */ virtual void vfunc_0C();                //! TODO: name symbol func_ov000_02067434
     /* 10 */ virtual void vfunc_10();                //! TODO: name symbol func_ov000_02067474
     /* 14 */ virtual void vfunc_14();                //! TODO: name symbol func_ov000_02066dfc
     /* 18 */ virtual void vfunc_18();                //! TODO: name symbol func_ov000_020669d8
-    /* 1C */ virtual void vfunc_1c();                //! TODO: name symbol func_ov000_02067234
+    /* 1C */ virtual void vfunc_1C();                //! TODO: name symbol func_ov000_02067234
     /* 20 */ virtual void vfunc_20();                //! TODO: name symbol func_ov000_0206723c
     /* 24 */ virtual ~UnkStruct_ItemManager_20_14(); //! TODO: name symbols func_ov000_020672ac, func_ov000_020672f4
 

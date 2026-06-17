@@ -670,7 +670,7 @@ extern unk32 data_ov031_02113468[];
 extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
 
 // non-matching
-ARM void ActorRupee::vfunc_2c(unk32 param1) {
+ARM void ActorRupee::vfunc_2C(unk32 param1) {
     VecFx32 iStack_18;
     VecFx32 iStack_28;
     unk32 auStack_30[4];
@@ -835,9 +835,9 @@ ARM void ActorRupee_c4::vfunc_04() {
     this->Actor_c4::vfunc_04();
 }
 
-ARM void ActorRupee_c4::vfunc_0c(unk32 param1) {
+ARM void ActorRupee_c4::vfunc_0C(unk32 param1) {
     this->GetActorPtr<ActorRupee>()->SetState(ActorRupeeState_1);
-    this->Actor_c4::vfunc_0c(param1);
+    this->Actor_c4::vfunc_0C(param1);
 }
 
 ARM void ActorRupee_c4::vfunc_08() {

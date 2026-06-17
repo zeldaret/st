@@ -70,7 +70,7 @@ void UnkStruct_ov024_020d8660::func_ov024_020c4ba0() {
         }
 
         if (pActor != NULL) {
-            ActorUnk_vfunc_b0 auStack_60;
+            ActorUnk_vfunc_B0 auStack_60;
             auStack_60.mUnk_0C = this->mUnk_08;
             auStack_60.mUnk_14 = this->mUnk_0C.mUnk_00;
             auStack_60.mUnk_18 = this->mUnk_0C.mUnk_04;

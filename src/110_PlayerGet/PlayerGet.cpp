@@ -497,7 +497,7 @@ ARM bool PlayerGet::func_ov110_02186b8c() {
 #endif
 
 // https://decomp.me/scratch/ZAW2N
-ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
+ARM void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
     ItemId itemId;
     ItemManager *pItemManager;
     Actor *pActor;

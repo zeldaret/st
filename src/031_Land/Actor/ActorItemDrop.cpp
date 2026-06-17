@@ -469,7 +469,7 @@ ARM void ActorItemDrop::func_ov031_020fa72c() {
     }
 }
 
-ARM void ActorItemDrop::vfunc_2c(unk32 param1) {
+ARM void ActorItemDrop::vfunc_2C(unk32 param1) {
     VecFx32 vec1;
     VecFx32 vec2;
     unk32 value;
@@ -547,9 +547,9 @@ ARM void ActorItemDrop_c4::vfunc_04() {
     Actor_c4::vfunc_04();
 }
 
-ARM void ActorItemDrop_c4::vfunc_0c(unk32 param_1) {
+ARM void ActorItemDrop_c4::vfunc_0C(unk32 param_1) {
     this->GetActorPtr<ActorItemDrop>()->SetState(ActorItemDropState_1);
-    Actor_c4::vfunc_0c(param_1);
+    Actor_c4::vfunc_0C(param_1);
 }
 
 ARM void ActorItemDrop_c4::vfunc_08() {

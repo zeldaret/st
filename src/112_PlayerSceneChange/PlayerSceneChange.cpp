@@ -75,7 +75,7 @@ extern "C" bool func_ov000_02080998(VecFx32 *);
 extern "C" void func_01ff930c(UnkStruct_ov000_0208f820_40 *, unk16, unk32);
 
 // https://decomp.me/scratch/c7PhN
-ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
+ARM void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
     const fx16 *pSinCosTable = gSinCosTable;
     Vec2b stack4;
     s16 stack3;
@@ -723,7 +723,7 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
     }
 }
 
-ARM bool PlayerSceneChange::vfunc_1c(VecFx32 *param1) {
+ARM bool PlayerSceneChange::vfunc_1C(VecFx32 *param1) {
     if (data_027e0cdc->func_ov000_02082a28(1) == 0) {
         switch (this->mUnk_30->mUnk_68) {
             case 0x3C:
@@ -746,5 +746,5 @@ ARM bool PlayerSceneChange::vfunc_1c(VecFx32 *param1) {
         }
     }
 
-    return this->UnkStruct_ov000_0208f820::vfunc_1c(param1);
+    return this->UnkStruct_ov000_0208f820::vfunc_1C(param1);
 }

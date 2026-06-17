@@ -6,7 +6,7 @@
 #include "Unknown/UnkStruct_027e0960.hpp"
 #include "types.h"
 
-class ActorUnk_vfunc_b0 {
+class ActorUnk_vfunc_B0 {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
@@ -30,7 +30,7 @@ public:
     /* 40 */ VecFx32 mUnk_40;
     /* 4C */
 
-    ActorUnk_vfunc_b0();
+    ActorUnk_vfunc_B0();
 };
 
 class Actor_Derived1_94 {
@@ -127,37 +127,37 @@ public:
 
     /* 14 */ virtual void vfunc_14() override;
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1c() override;
+    /* 1C */ virtual void vfunc_1C() override;
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
-    /* 2C */ virtual void vfunc_2c(unk32 param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~Actor_Derived1();
     /* 54 */ virtual void vfunc_54(unk32 param1);
     /* 58 */ virtual void vfunc_58(unk32 param1) = 0;
-    /* 5C */ virtual void vfunc_5c();
+    /* 5C */ virtual void vfunc_5C();
     /* 60 */ virtual void vfunc_60();
     /* 64 */ virtual bool vfunc_64();
     /* 68 */ virtual void vfunc_68();
-    /* 6C */ virtual void vfunc_6c();
+    /* 6C */ virtual void vfunc_6C();
     /* 70 */ virtual void vfunc_70();
     /* 74 */ virtual void vfunc_74();
     /* 78 */ virtual void vfunc_78();
-    /* 7C */ virtual unk32 vfunc_7c();
+    /* 7C */ virtual unk32 vfunc_7C();
     /* 80 */ virtual unk32 vfunc_80();
     /* 84 */ virtual unk32 vfunc_84();
     /* 88 */ virtual unk32 vfunc_88();
-    /* 8C */ virtual unk32 vfunc_8c();
+    /* 8C */ virtual unk32 vfunc_8C();
     /* 90 */ virtual unk32 vfunc_90();
     /* 94 */ virtual void vfunc_94();
     /* 98 */ virtual void vfunc_98(unk32 param1);
-    /* 9C */ virtual void vfunc_9c();
-    /* A0 */ virtual unk32 vfunc_a0();
-    /* A4 */ virtual void vfunc_a4();
-    /* A8 */ virtual unk32 vfunc_a8();
-    /* AC */ virtual void vfunc_ac();
-    /* B0 */ virtual void vfunc_b0();
-    /* B4 */ virtual void vfunc_b4();
-    /* B8 */ virtual void vfunc_b8();
+    /* 9C */ virtual void vfunc_9C();
+    /* A0 */ virtual unk32 vfunc_A0();
+    /* A4 */ virtual void vfunc_A4();
+    /* A8 */ virtual unk32 vfunc_A8();
+    /* AC */ virtual void vfunc_Ac();
+    /* B0 */ virtual void vfunc_B0();
+    /* B4 */ virtual void vfunc_B4();
+    /* B8 */ virtual void vfunc_B8();
     /* BC */
 
     Actor_Derived1(ModelRender *param1, unk32 param2);

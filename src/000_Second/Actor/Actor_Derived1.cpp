@@ -64,7 +64,7 @@ ARM bool Actor_Derived1::vfunc_18(unk32 param1) {
 
 ARM void Actor_Derived1::vfunc_54(unk32 param1) {}
 
-ARM void Actor_Derived1::vfunc_1c() {
+ARM void Actor_Derived1::vfunc_1C() {
     this->func_ov031_020e3ca4();
 }
 
@@ -85,7 +85,7 @@ ARM void Actor_Derived1::func_ov000_020a8df0(ActorRef param1, unk32 param2) {
     }
 
     if (this->mRef != param1) {
-        this->vfunc_b4();
+        this->vfunc_B4();
         *(u32 *) &this->mUnk_0BC = param1.Get32();
         this->mUnk_0C0.x         = 0;
         this->mUnk_0C0.y         = 0;
@@ -94,7 +94,7 @@ ARM void Actor_Derived1::func_ov000_020a8df0(ActorRef param1, unk32 param2) {
     }
 }
 
-ARM void Actor_Derived1::vfunc_b4() {
+ARM void Actor_Derived1::vfunc_B4() {
     this->vfunc_58(0);
 }
 
@@ -110,9 +110,9 @@ ARM void Actor_Derived1::func_ov000_020a8e9c(VecFx32 *param1) {
     this->mUnk_0BC.Reset();
 }
 
-ARM void Actor_Derived1::vfunc_b0() {
+ARM void Actor_Derived1::vfunc_B0() {
     if (data_027e09b8->func_01ffd420() == 0) {
-        ActorUnk_vfunc_b0 auStack_60;
+        ActorUnk_vfunc_B0 auStack_60;
         auStack_60.mpActor = this;
         auStack_60.mUnk_0C = this->mUnk_5C.mUnk_20;
         auStack_60.mUnk_14 = 0;
@@ -131,7 +131,7 @@ ARM unk32 Actor_Derived1::vfunc_88() {
     return 1;
 }
 
-ARM unk32 Actor_Derived1::vfunc_8c() {
+ARM unk32 Actor_Derived1::vfunc_8C() {
     return 1;
 }
 
@@ -146,7 +146,7 @@ ARM void Actor_Derived1::vfunc_94() {
 ARM void Actor_Derived1::vfunc_60() {
     if (data_027e09b8->func_01ffd420() == 0) {
         if (this->vfunc_64()) {
-            this->vfunc_b0();
+            this->vfunc_B0();
             this->func_ov000_020a9200();
             this->vfunc_58(4);
         }
@@ -159,17 +159,17 @@ ARM bool Actor_Derived1::vfunc_64() {
 
 ARM void Actor_Derived1::func_ov000_020a8ff4() {}
 
-ARM void Actor_Derived1::vfunc_6c() {}
+ARM void Actor_Derived1::vfunc_6C() {}
 
 ARM void Actor_Derived1::vfunc_68() {
     UNSET_FLAG(this->mFlags, ActorFlag_Interacting);
     this->func_ov000_020a9200();
-    this->vfunc_ac();
+    this->vfunc_Ac();
     this->mUnk_0B0 &= ~0x01;
     this->mUnk_0B0 &= ~0x10;
 }
 
-ARM unk32 Actor_Derived1::vfunc_7c() {
+ARM unk32 Actor_Derived1::vfunc_7C() {
     return 1;
 }
 
@@ -204,21 +204,21 @@ ARM void Actor_Derived1::vfunc_70() {
 ARM void Actor_Derived1::vfunc_74() {}
 ARM void Actor_Derived1::vfunc_78() {}
 ARM void Actor_Derived1::func_ov000_020a9248() {}
-ARM void Actor_Derived1::vfunc_5c() {}
+ARM void Actor_Derived1::vfunc_5C() {}
 ARM void Actor_Derived1::vfunc_98(unk32 param1) {}
 ARM void Actor_Derived1::func_ov000_020a94b0() {}
-ARM void Actor_Derived1::vfunc_9c() {}
+ARM void Actor_Derived1::vfunc_9C() {}
 
-ARM unk32 Actor_Derived1::vfunc_a0() {
+ARM unk32 Actor_Derived1::vfunc_A0() {
     this->GetActorId();
     return 1;
 }
 
-ARM void Actor_Derived1::vfunc_ac() {}
+ARM void Actor_Derived1::vfunc_Ac() {}
 ARM void Actor_Derived1::func_ov000_020a95d8() {}
-ARM void Actor_Derived1::vfunc_a4() {}
+ARM void Actor_Derived1::vfunc_A4() {}
 
-ARM unk32 Actor_Derived1::vfunc_a8() {
+ARM unk32 Actor_Derived1::vfunc_A8() {
     return 1;
 }
 
@@ -239,16 +239,16 @@ ARM void Actor_Derived1::vfunc_24() {
 }
 
 // non-matching
-ARM void Actor_Derived1::vfunc_2c(unk32 param1) {
+ARM void Actor_Derived1::vfunc_2C(unk32 param1) {
     if (this->func_01fff5d0(param1, 0) == 0) {
         return;
     }
 
-    this->vfunc_b8();
+    this->vfunc_B8();
     this->mUnk_0A4.func_01ffc6d4(this->mAngle, &this->mPos);
 }
 
-ARM void Actor_Derived1::vfunc_b8() {
+ARM void Actor_Derived1::vfunc_B8() {
     this->func_ov017_020bf5c4(&this->mPos, 0x666, 0x666, 0x1F, 0);
 }
 

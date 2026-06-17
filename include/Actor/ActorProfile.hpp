@@ -34,7 +34,7 @@ public:
     /* 00 */ virtual Actor *Create() = 0;
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0c();
+    /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();

@@ -71,7 +71,7 @@ THUMB void ActorManager::func_ov001_020bafdc() {
         if (pActor != NULL) {
             // alive and uninitialized?
             if (GET_FLAG(pActor->mFlags, ActorFlag_Alive) && !GET_FLAG(pActor->mFlags, ActorFlag_4)) {
-                pActor->vfunc_1c();
+                pActor->vfunc_1C();
                 SET_FLAG(pActor->mFlags, ActorFlag_4);
             }
         }

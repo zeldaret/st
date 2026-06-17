@@ -50,7 +50,7 @@ ARM bool Actor::vfunc_18(unk32 param1) {
     return true;
 }
 
-ARM void Actor::vfunc_1c() {}
+ARM void Actor::vfunc_1C() {}
 
 ARM void Actor::vfunc_20() {}
 
@@ -58,7 +58,7 @@ ARM void Actor::vfunc_24() {}
 
 ARM void Actor::vfunc_28() {}
 
-ARM void Actor::vfunc_2c(unk32 param1) {}
+ARM void Actor::vfunc_2C(unk32 param1) {}
 
 ARM void Actor::vfunc_30() {}
 
@@ -99,7 +99,7 @@ ARM unk16 Actor::vfunc_08() {
     return this->mpProfile->mUnk_1A;
 }
 
-ARM unk8 Actor::vfunc_0c() {
+ARM unk8 Actor::vfunc_0C() {
     return this->mpProfile->mUnk_18;
 }
 

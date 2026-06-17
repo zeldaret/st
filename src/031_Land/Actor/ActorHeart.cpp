@@ -391,7 +391,7 @@ ARM void ActorHeart::func_ov031_020ef570() {
     }
 }
 
-ARM void ActorHeart::vfunc_2c(unk32 param1) {
+ARM void ActorHeart::vfunc_2C(unk32 param1) {
     VecFx32 iStack_20;
     VecFx32 iStack_2c;
     unk32 auStack_30;
@@ -452,9 +452,9 @@ ARM void ActorHeart_c4::vfunc_04() {
     this->Actor_c4::vfunc_04();
 }
 
-ARM void ActorHeart_c4::vfunc_0c(unk32 param1) {
+ARM void ActorHeart_c4::vfunc_0C(unk32 param1) {
     this->GetActorPtr<ActorHeart>()->SetState(ActorHeartState_1);
-    this->Actor_c4::vfunc_0c(param1);
+    this->Actor_c4::vfunc_0C(param1);
 }
 
 ARM void ActorHeart_c4::vfunc_08() {

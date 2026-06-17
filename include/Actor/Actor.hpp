@@ -155,15 +155,15 @@ public:
     /* 00 */ virtual void GetOffsetPos(VecFx32 *pPos) const;
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
-    /* 0C */ virtual unk8 vfunc_0c();
+    /* 0C */ virtual unk8 vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual bool vfunc_18(unk32 param1);
-    /* 1C */ virtual void vfunc_1c();
+    /* 1C */ virtual void vfunc_1C();
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28();
-    /* 2C */ virtual void vfunc_2c(unk32 param1);
+    /* 2C */ virtual void vfunc_2C(unk32 param1);
     /* 30 */ virtual void vfunc_30();
     /* 34 */ virtual unk32 vfunc_34();
     /* 38 */ virtual bool Grab(ActorGrabParams grabParams);
@@ -259,7 +259,7 @@ public:
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2);
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0c(unk32 param1);
+    /* 0C */ virtual void vfunc_0C(unk32 param1);
     /* 10 */
 
     template <typename T> T *GetActorPtr() {

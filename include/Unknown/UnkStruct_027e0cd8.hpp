@@ -83,15 +83,15 @@ public:
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0c();
+    /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
-    /* 1C */ virtual void vfunc_1c();
+    /* 1C */ virtual void vfunc_1C();
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual fx32 vfunc_28(VecFx32 *param1, unk32 param2, unk32 param3);
-    /* 2C */ virtual void vfunc_2c();
+    /* 2C */ virtual void vfunc_2C();
 
     fx32 func_01ffedf4(Vec2b *pPos);
 

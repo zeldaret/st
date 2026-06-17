@@ -37,9 +37,9 @@ public:
     s16 func_ov112_02184bbc(s16 param1);
 
     /* 04 */ virtual ~PlayerSceneChange() override;
-    /* 0C */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) override;
+    /* 0C */ virtual void vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) override;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 1C */ virtual bool vfunc_1c(VecFx32 *param1) override;
+    /* 1C */ virtual bool vfunc_1C(VecFx32 *param1) override;
 };
 
 class PlayerSceneChange2 : public UnkStruct_ov000_0208f820 {
@@ -54,6 +54,6 @@ public:
     PlayerSceneChange2();
 
     /* 04 */ virtual ~PlayerSceneChange2() override;
-    /* 0C */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) override;
+    /* 0C */ virtual void vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) override;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
 };
