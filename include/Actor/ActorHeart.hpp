@@ -15,9 +15,9 @@ enum ActorHeartState_ {
     ActorHeartState_Max,
 };
 
-class ActorHeart_c4 : public Actor_c4 {
+class ActorHeart_C4 : public Actor_C4 {
 public:
-    ActorHeart_c4(Actor *param1);
+    ActorHeart_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
@@ -30,7 +30,7 @@ public:
     /* 00 (base) */
     /* 94 */ u16 mUnk_94;
     /* 96 */ u16 mUnk_96;
-    /* 98 */ Actor_9c mUnk_98;
+    /* 98 */ Actor_9C mUnk_98;
     /* 9C */ unk32 mUnk_9C;
     /* A0 */ unk32 mUnk_A0;
     /* A4 */ unk32 mUnk_A4;
@@ -44,7 +44,7 @@ public:
     /* BF */ STRUCT_PAD(0xBF, 0xC0);
     /* C0 */ ActorRef mUnk_C0;
     /* C4 */ ActorRef mUnk_C4;
-    /* C8 */ ActorHeart_c4 mUnk_C8;
+    /* C8 */ ActorHeart_C4 mUnk_C8;
     /* EC */ VecFx32 mUnk_EC;
 
     ActorHeart();

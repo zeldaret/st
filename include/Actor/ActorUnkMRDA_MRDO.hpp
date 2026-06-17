@@ -9,9 +9,9 @@
 
 // --- Actor MRDA ---
 
-class ActorUnkMRDA_c4 : public Actor_c4 {
+class ActorUnkMRDA_C4 : public Actor_C4 {
 public:
-    ActorUnkMRDA_c4(Actor *param1);
+    ActorUnkMRDA_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
@@ -43,9 +43,9 @@ public:
 
 // --- Actor MRDO ---
 
-class ActorUnkMRDO_c4 : public Actor_c4 {
+class ActorUnkMRDO_C4 : public Actor_C4 {
 public:
-    ActorUnkMRDO_c4(Actor *param1);
+    ActorUnkMRDO_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;

@@ -9,9 +9,9 @@
 
 // --- Actor SIRO ---
 
-class ActorUnkSIRO_c4 : public Actor_c4 {
+class ActorUnkSIRO_C4 : public Actor_C4 {
 public:
-    ActorUnkSIRO_c4(Actor *param1);
+    ActorUnkSIRO_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
@@ -43,9 +43,9 @@ public:
 
 // --- Actor SIRS ---
 
-class ActorUnkSIRS_c4 : public Actor_c4 {
+class ActorUnkSIRS_C4 : public Actor_C4 {
 public:
-    ActorUnkSIRS_c4(Actor *param1);
+    ActorUnkSIRS_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
@@ -77,9 +77,9 @@ public:
 
 // --- Actor SRNM ---
 
-class ActorUnkSRNM_c4 : public Actor_c4 {
+class ActorUnkSRNM_C4 : public Actor_C4 {
 public:
-    ActorUnkSRNM_c4(Actor *param1);
+    ActorUnkSRNM_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
@@ -111,9 +111,9 @@ public:
 
 // --- Actor SRSL ---
 
-class ActorUnkSRSL_c4 : public Actor_c4 {
+class ActorUnkSRSL_C4 : public Actor_C4 {
 public:
-    ActorUnkSRSL_c4(Actor *param1);
+    ActorUnkSRSL_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;

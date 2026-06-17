@@ -9,9 +9,9 @@
 
 // --- Actor GOCA ---
 
-class ActorUnkGOCA_c4 : public Actor_c4 {
+class ActorUnkGOCA_C4 : public Actor_C4 {
 public:
-    ActorUnkGOCA_c4(Actor *param1);
+    ActorUnkGOCA_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
@@ -43,9 +43,9 @@ public:
 
 // --- Actor GOCB ---
 
-class ActorUnkGOCB_c4 : public Actor_c4 {
+class ActorUnkGOCB_C4 : public Actor_C4 {
 public:
-    ActorUnkGOCB_c4(Actor *param1);
+    ActorUnkGOCB_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
@@ -77,9 +77,9 @@ public:
 
 // --- Actor GORK ---
 
-class ActorUnkGORK_c4 : public Actor_c4 {
+class ActorUnkGORK_C4 : public Actor_C4 {
 public:
-    ActorUnkGORK_c4(Actor *param1);
+    ActorUnkGORK_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
@@ -111,9 +111,9 @@ public:
 
 // --- Actor GORM ---
 
-class ActorUnkGORM_c4 : public Actor_c4 {
+class ActorUnkGORM_C4 : public Actor_C4 {
 public:
-    ActorUnkGORM_c4(Actor *param1);
+    ActorUnkGORM_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;

@@ -9,9 +9,9 @@
 
 // --- Actor TCOW ---
 
-class ActorUnkTCOW_c4 : public Actor_c4 {
+class ActorUnkTCOW_C4 : public Actor_C4 {
 public:
-    ActorUnkTCOW_c4(Actor *param1);
+    ActorUnkTCOW_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
@@ -43,9 +43,9 @@ public:
 
 // --- Actor WCAS ---
 
-class ActorUnkWCAS_c4 : public Actor_c4 {
+class ActorUnkWCAS_C4 : public Actor_C4 {
 public:
-    ActorUnkWCAS_c4(Actor *param1);
+    ActorUnkWCAS_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;

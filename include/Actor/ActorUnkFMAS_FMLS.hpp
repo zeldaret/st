@@ -9,9 +9,9 @@
 
 // --- Actor FMAS ---
 
-class ActorUnkFMAS_c4 : public Actor_c4 {
+class ActorUnkFMAS_C4 : public Actor_C4 {
 public:
-    ActorUnkFMAS_c4(Actor *param1);
+    ActorUnkFMAS_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
@@ -43,9 +43,9 @@ public:
 
 // --- Actor FMLS ---
 
-class ActorUnkFMLS_c4 : public Actor_c4 {
+class ActorUnkFMLS_C4 : public Actor_C4 {
 public:
-    ActorUnkFMLS_c4(Actor *param1);
+    ActorUnkFMLS_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;

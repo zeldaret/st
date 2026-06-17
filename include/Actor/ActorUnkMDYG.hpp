@@ -7,9 +7,9 @@
 #include "global.h"
 #include "types.h"
 
-class ActorUnkMDYG_c4 : public Actor_c4 {
+class ActorUnkMDYG_C4 : public Actor_C4 {
 public:
-    ActorUnkMDYG_c4(Actor *param1);
+    ActorUnkMDYG_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;

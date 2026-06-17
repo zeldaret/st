@@ -31,10 +31,10 @@ enum ActorItemDropState_ {
     ActorItemDropState_Max,
 };
 
-class ActorItemDrop_c4 : public Actor_c4 {
+class ActorItemDrop_C4 : public Actor_C4 {
 public:
     // func_ov031_020fa9f8
-    ActorItemDrop_c4(Actor *param1);
+    ActorItemDrop_C4(Actor *param1);
 
     virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     virtual void vfunc_04() override;
@@ -48,7 +48,7 @@ public:
     /* 0AE */ volatile u16 mUnk_AE;
     /* 0B0 */ u16 mUnk_B0;
     /* 0B2 */ STRUCT_PAD(0xB2, 0xB4);
-    /* 0B4 */ Actor_9c mUnk_B4;
+    /* 0B4 */ Actor_9C mUnk_B4;
     /* 0B8 */ unk32 mUnk_B8;
     /* 0BC */ unk32 mUnk_BC;
     /* 0C0 */ ActorRef mUnk_C0;
@@ -58,7 +58,7 @@ public:
     /* 0D8 */ fx32 mUnk_D8;
     /* 0DC */ ActorRef mUnk_DC;
     /* 0E0 */ ActorRef mUnk_E0;
-    /* 0E4 */ ActorItemDrop_c4 mUnk_E4;
+    /* 0E4 */ ActorItemDrop_C4 mUnk_E4;
     /* 108 */ unk16 mUnk_108;
     /* 10A */ STRUCT_PAD(0x10A, 0x10C);
     /* 10C */ VecFx32 mUnk_10C;
