@@ -40,7 +40,7 @@ public:
     /* 050 */ MapObject_10 mUnk_050;
     /* 074 */ MapObjectTreasureSpawned_74 mUnk_074;
     /* 0D8 */ ItemId mItemId;
-    /* 0DC */ UnkSubStruct19 mUnk_0DC;
+    /* 0DC */ CellAnimObject mUnk_0DC;
     /* 154 */
 
     MapObjectChestBase(unk32 param1); // func_ov031_0210307c

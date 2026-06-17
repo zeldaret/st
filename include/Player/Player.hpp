@@ -197,9 +197,9 @@ public:
     /* 0B9 */ unk8 mUnk_B9;
     /* 0BA */ unk8 mUnk_BA;
     /* 0BB */ unk8 mUnk_BB;
-    /* 0BC */ UnkSubStruct19 mUnk_BC;
+    /* 0BC */ CellAnimObject mUnk_BC;
     /* 134 */ PlayerActor_134 *mUnk_134;
-    /* 138 */ UnkSubStruct19 mUnk_138; // sanctuary link icon animation
+    /* 138 */ CellAnimObject mUnk_138; // sanctuary link icon animation
     /* 1B0 */ PlayerActor_1B0 mUnk_1B0[3];
     /* 1D4 */
 

@@ -201,7 +201,7 @@ public:
     /* 174 */ UnkStruct_027e0ce0_38_174 mUnk_174;
     /* 19C */ UnkStruct_027e0ce0_38_19C mUnk_19C;
     /* 1C8 */ UnkStruct_027e0ce0_38_1C8 mUnk_1C8;
-    /* 1FC */ UnkSubStruct19 mUnk_1FC;
+    /* 1FC */ CellAnimObject mUnk_1FC;
     /* 274 */ UnkStruct_ov019_020d24c8_28_258_00 mUnk_274;
     /* 280 */
 

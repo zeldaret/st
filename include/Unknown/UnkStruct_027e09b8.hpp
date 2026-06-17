@@ -22,6 +22,8 @@ public:
 
     UnkStruct_027e09b8_00();
     ~UnkStruct_027e09b8_00();
+
+    void func_ov000_02073bc0();
 };
 
 class UnkStruct_027e09b8_04 {
@@ -87,6 +89,7 @@ public:
     unk32 func_ov000_02073470(void *param1, unk32 param2);
     unk32 func_ov000_02073388(void *param1, unk32 param2);
     void func_ov000_02073578(void *param1, unk32 param2);
+    void func_ov000_0207332c();
 
 #if IS_JP
     void func_ov000_02074d78(unk32 param1);

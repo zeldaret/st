@@ -16,7 +16,7 @@ extern "C" void func_ov001_020bd6a8();
 
 class FileSelect_UnkClass7_04 {
 public:
-    /* 000 */ UnkSubStruct19 mUnk_000[30];
+    /* 000 */ CellAnimObject mUnk_000[30];
     /* E10 */ Vec2us mUnk_E10[30];
     /* E88 */
 };

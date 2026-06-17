@@ -21,7 +21,7 @@ struct UnkStruct_ov031_02117c84 {
 
 static const Vec2pCpp data_ov031_02115830(0x800, 0x800);
 static const UnkStruct_ov031_02117c84 data_ov031_02117c84(0x3C);
-static const UnkSubStruct19 data_ov031_02115c84;
+static const CellAnimObject data_ov031_02115c84;
 
 ARM MapObjectTreasureSpawned_74::MapObjectTreasureSpawned_74(G3d_Model *param1) :
     ModelRender(param1),

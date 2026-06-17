@@ -55,8 +55,8 @@ ARM unk32 UnkSystem1_ov000_Base::vfunc_10(u16 *param1) {
     return -1;
 }
 
-ARM unk32 UnkSystem1_ov000_Base::vfunc_14(void *param1) {
-    return 1;
+ARM bool UnkSystem1_ov000_Base::vfunc_14(FLW1Instr *param1) {
+    return true;
 }
 
 ARM unk32 UnkSystem1_ov000_Base::vfunc_1C(u32 param1, unk32 param2, unk32 param3) {

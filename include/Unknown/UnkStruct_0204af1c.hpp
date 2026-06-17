@@ -2,7 +2,7 @@
 
 #include "types.h"
 
-class UnkSubStruct19;
+class CellAnimObject;
 
 class UnkStruct_0204af1c_00 {
 public:
@@ -22,7 +22,7 @@ public:
     UnkStruct_0204af1c();
     void func_0201a800();
     void func_0201aa44(UnkStruct_ov019_020d24c8_28_258_00 *param1, void *param2, unk32 param3, void *param4);
-    void func_0201aad0(UnkSubStruct19 *param1, void *param2, unk32 param3, void *param4);
+    void func_0201aad0(CellAnimObject *param1, void *param2, unk32 param3, void *param4);
     void func_0201aa8c(UnkStruct_ov019_020d24c8_28_258_00 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
 };
 

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Message/BMG.hpp"
 #include "Save/SaveManager.hpp"
 #include "System/SysNew.hpp"
 #include "global.h"
@@ -33,7 +34,7 @@ public:
     /* 08 */ virtual void vfunc_08(unk32 param1);                              // func_ov000_020669cc
     /* 0C */ virtual unk32 vfunc_0C();                                         // func_ov000_020669d0
     /* 10 */ virtual unk32 vfunc_10(u16 *param1);                              // func_ov000_02066a5c
-    /* 14 */ virtual unk32 vfunc_14(void *param1);                             // func_ov000_02066dfc
+    /* 14 */ virtual bool vfunc_14(FLW1Instr *param1);                         // func_ov000_02066dfc
     /* 18 */ virtual void vfunc_18();                                          // func_ov000_020669d8
     /* 1C */ virtual unk32 vfunc_1C(u32 param1, unk32 param2, unk32 param3);   // func_ov000_02067234
     /* 20 */ virtual unk32 vfunc_20(unk32 param1, unk32 param2, unk32 param3); // func_ov000_0206723c
