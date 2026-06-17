@@ -169,7 +169,7 @@ ARM ActorDroppedItem::ActorDroppedItem() :
     func_01ffedac(&sp0, &this->mPos);
 
     if (data_027e0cd8->mUnk_0C->func_ov000_02080180(&sp0) == 0x5) {
-        this->mUnk_34 = &data_ov031_02114ba0;
+        this->mUnk_34 = (Cylinder *) &data_ov031_02114ba0;
     }
 }
 

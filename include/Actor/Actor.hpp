@@ -126,7 +126,7 @@ public:
     /* 2A */ unk16 mUnk_2A;
     /* 2C */ unk32 mUnk_2C; // gravity?
     /* 30 */ Cylinder *mUnk_30;
-    /* 34 */ const Cylinder *mUnk_34;
+    /* 34 */ Cylinder *mUnk_34;
     /* 38 */ unk32 *mUnk_38;
     /* 3C */ Actor_9c *mUnk_3C;
     /* 40 */ Actor_c4 *mUnk_40;
@@ -270,6 +270,7 @@ public:
     Actor_Derived2();
 
     /* 30 */ virtual void vfunc_30();
+    /* 4C */ WEAK virtual ~Actor_Derived2() {}
     /* 54 */ virtual void vfunc_54();
 };
 
