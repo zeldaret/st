@@ -15,13 +15,18 @@ static PTMF<ActorDroppedItem> data_ov031_02114be8[] = {
     ActorDroppedItem::func_ov031_020fa5d8, ActorDroppedItem::func_ov031_020fa650, ActorDroppedItem::func_ov031_020fa668,
     ActorDroppedItem::func_ov031_020fa6c8};
 
+unk32 data_ov031_02114d28[0x5] = {};
+
 extern UnkStruct_027e09a8 *data_027e09a8;
 extern UnkStruct_027e0cd8 *data_027e0cd8;
+
+extern unk32 data_ov031_02110bc8[];
 extern Cylinder data_ov031_02114ba0;
-extern unk32 data_ov031_02114d28;
 
 extern "C" void func_01ffedac(u16 *, VecFx32 *);
 extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, VecFx32 *);
+extern "C" void func_ov000_0205c1f0(unk32 *, u16);
+extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
 extern "C" bool func_ov000_02098838();
 extern "C" void func_ov017_020bf99c();
 
@@ -131,7 +136,7 @@ ARM void ActorDroppedItem::func_ov031_020f9f8c(VecFx32 *param_1, unk32 test, Act
     this->func_ov000_020973f4(&data_ov000_020b539c_eur, ActorId_SPTR, &stack_04, 0);
 }
 
-ARM bool ActorDroppedItem::func_ov031_020fa20c() {
+ARM bool ActorDroppedItem::vfunc_18(unk32 param1) {
     if (this->itemTypeId >= (u32) 0x9) {
         return false;
     }
@@ -141,11 +146,11 @@ ARM bool ActorDroppedItem::func_ov031_020fa20c() {
     return true;
 }
 
-ARM void ActorDroppedItem::func_ov031_020fa23c() {
+ARM void ActorDroppedItem::vfunc_20() {
     this->func_ov031_020fa260();
 }
 
-ARM void ActorDroppedItem::func_ov031_020fa248() {
+ARM void ActorDroppedItem::vfunc_24() {
     if (this->mUnk_4C != 0x6) {
         return;
     }
@@ -338,8 +343,24 @@ ARM void ActorDroppedItem::func_ov031_020fa72c() {
     }
 }
 
-// non-matching
-ARM void ActorDroppedItem::func_ov031_020fa83c() {}
+ARM void ActorDroppedItem::vfunc_2c(unk32 param1) {
+    VecFx32 mUnk_18;
+    VecFx32 mUnk_0C;
+    unk32 mUnk_04;
+
+    if (!this->func_01fff5d0(param1, 0x0)) {
+        return;
+    }
+    mUnk_18 = this->mPos;
+    mUnk_18.y += FLOAT_TO_FX32(0.03113);
+    this->func_ov017_020bf5c4(&mUnk_18, 0x400, 0x400, 0x1F, 0x0);
+
+    func_ov000_0205c1f0(&mUnk_04, data_ov031_02110bc8[this->itemTypeId]);
+    mUnk_0C = this->mPos;
+    mUnk_0C.y += this->mUnk_D8;
+    func_ov000_0205c204(&mUnk_04, &mUnk_0C, 0x1000, 0x1000, 0x1F);
+}
+
 // non-matching
 ARM void ActorDroppedItem::func_ov031_020fa900() {}
 
@@ -352,26 +373,26 @@ ARM ActorDroppedItem_c4::ActorDroppedItem_c4(Actor *param_1) :
 #define GET_ACTOR_DROPPED_ITEM(pActor) ((ActorDroppedItem *) (pActor))
 
 // non-matching
-ARM void ActorDroppedItem_c4::func_ov031_020faa30(Actor_c4_stack param_1, unk32 param_2) {
+ARM unk32 ActorDroppedItem_c4::vfunc_00(Actor_c4_stack param_1, unk32 param_2) {
     if (param_2 != 0) {
         ActorDroppedItem *actorDroppedItem = GET_ACTOR_DROPPED_ITEM(this->mUnk_20);
         actorDroppedItem->mUnk_E0          = param_1.param1;
         actorDroppedItem->func_ov031_020fa424(0x4);
     }
-    Actor_c4::vfunc_00(param_1, param_2);
+    return Actor_c4::vfunc_00(param_1, param_2);
 }
 
-ARM void ActorDroppedItem_c4::func_ov031_020faa74() {
+ARM void ActorDroppedItem_c4::vfunc_04() {
     GET_ACTOR_DROPPED_ITEM(this->mUnk_20)->func_ov031_020fa424(0x5);
     Actor_c4::vfunc_04();
 }
 
-ARM void ActorDroppedItem_c4::func_ov031_020faa94(unk32 param_1) {
+ARM void ActorDroppedItem_c4::vfunc_0c(unk32 param_1) {
     GET_ACTOR_DROPPED_ITEM(this->mUnk_20)->func_ov031_020fa424(0x1);
     Actor_c4::vfunc_0c(param_1);
 }
 
-ARM void ActorDroppedItem_c4::func_ov031_020faabc() {
+ARM void ActorDroppedItem_c4::vfunc_08() {
     GET_ACTOR_DROPPED_ITEM(this->mUnk_20)->func_ov031_020fa424(0x6);
     Actor_c4::vfunc_08();
 }

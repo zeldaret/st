@@ -25,10 +25,10 @@ public:
     // func_ov031_020fa9f8
     ActorDroppedItem_c4(Actor *param1);
 
-    void func_ov031_020faa30(Actor_c4_stack param_1, unk32 param_2);
-    void func_ov031_020faa74();
-    void func_ov031_020faa94(unk32 param_1);
-    void func_ov031_020faabc();
+    virtual unk32 vfunc_00(Actor_c4_stack param_1, unk32 param_2) override;
+    virtual void vfunc_04() override;
+    virtual void vfunc_08() override;
+    virtual void vfunc_0c(unk32 param_1) override;
 };
 
 class ActorDroppedItem_Upperclass : public Actor {
@@ -48,7 +48,7 @@ public:
     /* 0B8 */ unk32 mUnk_B8;
     /* 0BC */ STRUCT_PAD(0x0BC, 0x0D4);
     /* 0D4 */ unk32 itemTypeId;
-    /* 0D8 */ unk32 mUnk_D8;
+    /* 0D8 */ fx32 mUnk_D8;
     /* 0DC */ unk32 mUnk_DC;
     /* 0E0 */ unk32 mUnk_E0;
     /* 0E4 */ ActorDroppedItem_c4 mUnk_E4;
@@ -63,11 +63,12 @@ public:
     ActorDroppedItem();
 
     virtual ~ActorDroppedItem() override;
+    virtual void vfunc_2c(unk32 param1);
 
     void func_ov031_020f9f8c(VecFx32 *param_1, unk32 test, ActorRef ref);
-    bool func_ov031_020fa20c();
-    void func_ov031_020fa23c();
-    void func_ov031_020fa248();
+    bool vfunc_18(unk32 param1);
+    void vfunc_20();
+    void vfunc_24();
     void func_ov031_020fa260();
     void func_ov031_020fa424(s16 param_1);
     void func_ov031_020fa468();
@@ -84,7 +85,6 @@ public:
     void func_ov031_020fa678();
     void func_ov031_020fa6c8();
     void func_ov031_020fa72c();
-    void func_ov031_020fa83c();
     void func_ov031_020fa900();
 };
 
