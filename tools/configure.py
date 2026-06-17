@@ -180,7 +180,7 @@ config.libs = [
             Object("000_Second/MapObject/MapObjectMiniBlocks.cpp"),
             Object("000_Second/Cutscene/Cutscene.cpp"),
             Object("000_Second/Item/ItemManager.cpp"),
-            Object("000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp"),
+            Object("000_Second/Actor/Actor_Derived1.cpp"),
             Object("000_Second/Item/TreasureManager.cpp"),
         ]
     ),
@@ -292,8 +292,8 @@ config.libs = [
             Object("024_MainGame/Train/UnkTrainSystem2_024.cpp"),
             Object("024_MainGame/Unknown/UnkStruct_027e0d08_024.cpp"),
             Object("024_MainGame/MiscAdvManager.cpp"),
-            Object("024_MainGame/Actor/ActorUnk_ov000_020a8bb0_EC_024.cpp"),
-            Object("024_MainGame/Train/data_ov024_020d8550.cpp", extra_cflags=["-ipa file", "-enc shift-jis"]),
+            Object("024_MainGame/Actor/Actor_Derived1_EC_024.cpp"),
+            Object("024_MainGame/Train/data_ov024_020d8550.cpp"),
             Object("024_MainGame/Actor/ActorUnkOBPC.cpp"),
         ]
     ),

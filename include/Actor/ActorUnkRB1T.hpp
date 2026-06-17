@@ -4,7 +4,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "Actor/ActorUnk_ov000_020a8bb0.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -18,7 +18,7 @@ public:
     /* 0C */ virtual void vfunc_0c(unk32 param1) override;
 };
 
-class ActorUnkRB1T : public ActorUnk_ov000_020a8bb0 {
+class ActorUnkRB1T : public Actor_Derived1 {
 public:
     /* 000 (base) */
     /* 120 */ unk32 mUnk_120;

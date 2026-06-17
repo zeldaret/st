@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Actor/ActorRef.hpp"
-#include "Actor/ActorUnk_ov000_020a8bb0.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "files.h"

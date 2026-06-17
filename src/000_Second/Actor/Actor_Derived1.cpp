@@ -1,10 +1,10 @@
-#include "Actor/ActorUnk_ov000_020a8bb0.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "flags.h"
 #include "global.h"
 
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8ae0(fx32 param1) {
+ARM void Actor_Derived1::func_ov000_020a8ae0(fx32 param1) {
     u32 posY = this->mVel.y;
 
     if (posY <= param1) {
@@ -14,7 +14,7 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8ae0(fx32 param1) {
     this->mVel.y = posY;
 }
 
-ARM ActorUnk_ov000_020a8bb0::ActorUnk_ov000_020a8bb0(ModelRender *param1, unk32 param2) :
+ARM Actor_Derived1::Actor_Derived1(ModelRender *param1, unk32 param2) :
     mUnk_094(param2),
     mUnk_0A4(param1),
     mUnk_0B0(0),
@@ -46,38 +46,38 @@ ARM ActorUnk_ov000_020a8bb0::ActorUnk_ov000_020a8bb0(ModelRender *param1, unk32 
     this->mUnk_0B0 |= 0x08;
 }
 
-ARM ActorUnk_ov000_020a8bb0::~ActorUnk_ov000_020a8bb0() {}
+ARM Actor_Derived1::~Actor_Derived1() {}
 
-ARM bool ActorUnk_ov000_020a8bb0::vfunc_18(unk32 param1) {
+ARM bool Actor_Derived1::vfunc_18(unk32 param1) {
     if (this->mUnk_5C.mParams[2] == 0 && this->func_ov000_020a8dd0()) {
         UNSET_FLAG(this->mFlags, ActorFlag_Alive);
     }
 
     if (this->mUnk_0B0 & 8) {
         this->mUnk_0A4.mpModelRender->func_ov000_02057c38(6, 2);
-        this->mUnk_0A4.mpModelRender->func_ov000_0209a7b8(this, ActorUnk_ov000_020a8bb0::func_ov000_020a9804);
+        this->mUnk_0A4.mpModelRender->func_ov000_0209a7b8(this, Actor_Derived1::func_ov000_020a9804);
     }
 
     this->vfunc_54(param1);
     return 1;
 }
 
-ARM void ActorUnk_ov000_020a8bb0::vfunc_54(unk32 param1) {}
+ARM void Actor_Derived1::vfunc_54(unk32 param1) {}
 
-ARM void ActorUnk_ov000_020a8bb0::vfunc_1c() {
+ARM void Actor_Derived1::vfunc_1c() {
     this->func_ov031_020e3ca4();
 }
 
-ARM bool ActorUnk_ov000_020a8bb0::func_ov000_020a8db0() {
+ARM bool Actor_Derived1::func_ov000_020a8db0() {
     return data_027e0cd8->func_ov000_02081e30(this->mUnk_5C.mUnk_1A, this->mUnk_5C.mUnk_18.x);
 }
 
-ARM bool ActorUnk_ov000_020a8bb0::func_ov000_020a8dd0() {
+ARM bool Actor_Derived1::func_ov000_020a8dd0() {
     return data_027e0cd8->func_ov000_02081e30(this->mUnk_5C.mUnk_1C_0, this->mUnk_5C.mUnk_18.y);
 }
 
 // non-matching
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8df0(ActorRef param1, unk32 param2) {
+ARM void Actor_Derived1::func_ov000_020a8df0(ActorRef param1, unk32 param2) {
     if (!((u32) (((param2 + 8) - param2) / 2) < 2)) {
         this->mUnk_0B0 |= 2;
     } else {
@@ -94,12 +94,12 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8df0(ActorRef param1, unk32 par
     }
 }
 
-ARM void ActorUnk_ov000_020a8bb0::vfunc_b4() {
+ARM void Actor_Derived1::vfunc_b4() {
     this->vfunc_58(0);
 }
 
 // non-matching
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8e9c(VecFx32 *param1) {
+ARM void Actor_Derived1::func_ov000_020a8e9c(VecFx32 *param1) {
     fx32 z = param1->x;
     fx32 y = param1->y;
     fx32 x = param1->z;
@@ -110,7 +110,7 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8e9c(VecFx32 *param1) {
     this->mUnk_0BC.Reset();
 }
 
-ARM void ActorUnk_ov000_020a8bb0::vfunc_b0() {
+ARM void Actor_Derived1::vfunc_b0() {
     if (data_027e09b8->func_01ffd420() == 0) {
         ActorUnk_vfunc_b0 auStack_60;
         auStack_60.mpActor = this;
@@ -127,23 +127,23 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_b0() {
     }
 }
 
-ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_88() {
+ARM unk32 Actor_Derived1::vfunc_88() {
     return 1;
 }
 
-ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_8c() {
+ARM unk32 Actor_Derived1::vfunc_8c() {
     return 1;
 }
 
-ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_90() {
+ARM unk32 Actor_Derived1::vfunc_90() {
     return 0x7B;
 }
 
-ARM void ActorUnk_ov000_020a8bb0::vfunc_94() {
+ARM void Actor_Derived1::vfunc_94() {
     this->mUnk_0A4.mUnk_08 = 0xF6;
 }
 
-ARM void ActorUnk_ov000_020a8bb0::vfunc_60() {
+ARM void Actor_Derived1::vfunc_60() {
     if (data_027e09b8->func_01ffd420() == 0) {
         if (this->vfunc_64()) {
             this->vfunc_b0();
@@ -153,15 +153,15 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_60() {
     }
 }
 
-ARM bool ActorUnk_ov000_020a8bb0::vfunc_64() {
+ARM bool Actor_Derived1::vfunc_64() {
     return GET_FLAG(this->mFlags, ActorFlag_Interacting);
 }
 
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8ff4() {}
+ARM void Actor_Derived1::func_ov000_020a8ff4() {}
 
-ARM void ActorUnk_ov000_020a8bb0::vfunc_6c() {}
+ARM void Actor_Derived1::vfunc_6c() {}
 
-ARM void ActorUnk_ov000_020a8bb0::vfunc_68() {
+ARM void Actor_Derived1::vfunc_68() {
     UNSET_FLAG(this->mFlags, ActorFlag_Interacting);
     this->func_ov000_020a9200();
     this->vfunc_ac();
@@ -169,19 +169,19 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_68() {
     this->mUnk_0B0 &= ~0x10;
 }
 
-ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_7c() {
+ARM unk32 Actor_Derived1::vfunc_7c() {
     return 1;
 }
 
-ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_80() {
+ARM unk32 Actor_Derived1::vfunc_80() {
     return -1;
 }
 
-ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_84() {
+ARM unk32 Actor_Derived1::vfunc_84() {
     return 1;
 }
 
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a91b8(VecFx32 *param1, unk32 param2) {
+ARM void Actor_Derived1::func_ov000_020a91b8(VecFx32 *param1, unk32 param2) {
     this->func_ov000_020a8e9c(param1);
 
     if (param2 != 0) {
@@ -193,40 +193,40 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a91b8(VecFx32 *param1, unk32 par
     this->vfunc_58(7);
 }
 
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a9200() {}
+ARM void Actor_Derived1::func_ov000_020a9200() {}
 
-ARM void ActorUnk_ov000_020a8bb0::vfunc_70() {
+ARM void Actor_Derived1::vfunc_70() {
     if (this->mState != 5) {
         this->vfunc_58(4);
     }
 }
 
-ARM void ActorUnk_ov000_020a8bb0::vfunc_74() {}
-ARM void ActorUnk_ov000_020a8bb0::vfunc_78() {}
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a9248() {}
-ARM void ActorUnk_ov000_020a8bb0::vfunc_5c() {}
-ARM void ActorUnk_ov000_020a8bb0::vfunc_98(unk32 param1) {}
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a94b0() {}
-ARM void ActorUnk_ov000_020a8bb0::vfunc_9c() {}
+ARM void Actor_Derived1::vfunc_74() {}
+ARM void Actor_Derived1::vfunc_78() {}
+ARM void Actor_Derived1::func_ov000_020a9248() {}
+ARM void Actor_Derived1::vfunc_5c() {}
+ARM void Actor_Derived1::vfunc_98(unk32 param1) {}
+ARM void Actor_Derived1::func_ov000_020a94b0() {}
+ARM void Actor_Derived1::vfunc_9c() {}
 
-ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_a0() {
+ARM unk32 Actor_Derived1::vfunc_a0() {
     this->GetActorId();
     return 1;
 }
 
-ARM void ActorUnk_ov000_020a8bb0::vfunc_ac() {}
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a95d8() {}
-ARM void ActorUnk_ov000_020a8bb0::vfunc_a4() {}
+ARM void Actor_Derived1::vfunc_ac() {}
+ARM void Actor_Derived1::func_ov000_020a95d8() {}
+ARM void Actor_Derived1::vfunc_a4() {}
 
-ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_a8() {
+ARM unk32 Actor_Derived1::vfunc_a8() {
     return 1;
 }
 
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a9804() {}
-ARM void ActorUnk_ov000_020a8bb0::vfunc_20() {}
+ARM void Actor_Derived1::func_ov000_020a9804() {}
+ARM void Actor_Derived1::vfunc_20() {}
 
 // non-matching
-ARM void ActorUnk_ov000_020a8bb0::vfunc_24() {
+ARM void Actor_Derived1::vfunc_24() {
     if (!data_027e09b8->func_ov000_020732dc(3) || !(this->mUnk_0B0 & 4)) {
         this->vfunc_20();
     }
@@ -239,7 +239,7 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_24() {
 }
 
 // non-matching
-ARM void ActorUnk_ov000_020a8bb0::vfunc_2c(unk32 param1) {
+ARM void Actor_Derived1::vfunc_2c(unk32 param1) {
     if (this->func_01fff5d0(param1, 0) == 0) {
         return;
     }
@@ -248,15 +248,15 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_2c(unk32 param1) {
     this->mUnk_0A4.func_01ffc6d4(this->mAngle, &this->mPos);
 }
 
-ARM void ActorUnk_ov000_020a8bb0::vfunc_b8() {
+ARM void Actor_Derived1::vfunc_b8() {
     this->func_ov017_020bf5c4(&this->mPos, 0x666, 0x666, 0x1F, 0);
 }
 
-ARM void ActorUnk_ov000_020a8bb0::vfunc_14() {}
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a9a20() {}
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a9a34() {}
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a9a50() {}
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a9a94() {}
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a9abc() {}
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a9ae0() {}
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a9afc() {}
+ARM void Actor_Derived1::vfunc_14() {}
+ARM void Actor_Derived1::func_ov000_020a9a20() {}
+ARM void Actor_Derived1::func_ov000_020a9a34() {}
+ARM void Actor_Derived1::func_ov000_020a9a50() {}
+ARM void Actor_Derived1::func_ov000_020a9a94() {}
+ARM void Actor_Derived1::func_ov000_020a9abc() {}
+ARM void Actor_Derived1::func_ov000_020a9ae0() {}
+ARM void Actor_Derived1::func_ov000_020a9afc() {}

@@ -1,6 +1,6 @@
 #include "Player/PlayerSceneChange.hpp"
 #include "Actor/ActorManager.hpp"
-#include "Actor/ActorUnk_ov000_020a8bb0.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "MapObject/MapObjectUnkDRTY.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -175,8 +175,8 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                         }
                     } else {
                         if (this->mUnk_2C->mUnk_150.type == ActorRefType_1) {
-                            ActorUnk_ov000_020a8bb0 *temp_r0_6 =
-                                (ActorUnk_ov000_020a8bb0 *) gpActorManager->func_01fff3b4(this->mUnk_2C->mUnk_150);
+                            Actor_Derived1 *temp_r0_6 =
+                                (Actor_Derived1 *) gpActorManager->func_01fff3b4(this->mUnk_2C->mUnk_150);
 
                             if (temp_r0_6 != NULL) {
                                 this->mUnk_70.x = temp_r0_6->mPos.x;

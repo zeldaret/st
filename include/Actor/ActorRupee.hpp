@@ -3,7 +3,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "Actor/ActorUnk_ov000_020a8bb0.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "Player/PlayerGet.hpp"
 #include "types.h"
 

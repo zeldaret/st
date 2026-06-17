@@ -16,7 +16,7 @@ ARM ActorProfileUnkRB1T::ActorProfileUnkRB1T() :
     ActorProfile_Derived1(ActorId_RB1T) {}
 
 ARM ActorUnkRB1T::ActorUnkRB1T() :
-    ActorUnk_ov000_020a8bb0(&this->mUnk_20C, this->mUnk_120),
+    Actor_Derived1(&this->mUnk_20C, this->mUnk_120),
     mUnk_20C(0) {}
 
 ARM void ActorUnkRB1T::func_ov026_0211e3cc(void) {}
@@ -27,7 +27,7 @@ bool ActorUnkRB1T::func_ov026_0211e3e0(int param1) {
         return true;
     }
 
-    this->ActorUnk_ov000_020a8bb0::vfunc_18(param1);
+    this->Actor_Derived1::vfunc_18(param1);
     this->mUnk_0E4 = ActorUnkRB1T::func_ov026_021208a0;
 
     int result = this->func_ov026_0211e6cc();
