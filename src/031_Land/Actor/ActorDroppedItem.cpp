@@ -145,8 +145,8 @@ ARM bool ActorDroppedItem::vfunc_18(unk32 param1) {
     if (this->itemTypeId >= (u32) DroppedItemTypeId_Unknown) {
         return false;
     }
-    this->mUnk_52 = 0x1E0;
-    this->mUnk_50 = 0x0;
+    this->mUnk_52 = FLOAT_TO_FX32(0.1173f);
+    this->mUnk_50 = FLOAT_TO_FX32(0.0f);
     this->func_ov031_020fa424(0x0);
     return true;
 }
@@ -230,7 +230,7 @@ ARM void ActorDroppedItem::func_ov031_020fa468() {}
 
 ARM void ActorDroppedItem::func_ov031_020fa46c() {
     func_ov000_02098838();
-    if (this->mVel.y > 0) {
+    if (this->mVel.y > FLOAT_TO_FX32(0.0f)) {
         return;
     }
     this->func_ov031_020fa424(0x1);
@@ -261,9 +261,9 @@ ARM void ActorDroppedItem::func_ov031_020fa524() {
     this->mVel.x = FLOAT_TO_FX32(0.0f);
     this->mVel.y = FLOAT_TO_FX32(0.0f);
     this->mVel.z = FLOAT_TO_FX32(0.0f);
-    if (!this->mUnk_118 && this->mUnk_52 - this->mUnk_50 > 0xB4) {
-        this->mUnk_52 = 0xB4;
-        this->mUnk_50 = 0x0;
+    if (!this->mUnk_118 && this->mUnk_52 - this->mUnk_50 > FLOAT_TO_FX32(0.044f)) {
+        this->mUnk_52 = FLOAT_TO_FX32(0.044f);
+        this->mUnk_50 = FLOAT_TO_FX32(0.0f);
     }
     this->mUnk_44 = 0x9F;
 }
@@ -346,8 +346,8 @@ ARM void ActorDroppedItem::func_ov031_020fa678() {
 }
 
 ARM void ActorDroppedItem::func_ov031_020fa6c8() {
-    this->mUnk_52 = 0xFFFF;
-    this->mUnk_50 = 0x0;
+    this->mUnk_52 = FLOAT_TO_FX32(15.9998f);
+    this->mUnk_50 = FLOAT_TO_FX32(0.0f);
     this->mVel.x  = FLOAT_TO_FX32(0.0f);
     this->mVel.y  = FLOAT_TO_FX32(0.0f);
     this->mVel.z  = FLOAT_TO_FX32(0.0f);
@@ -450,8 +450,8 @@ ARM void ActorDroppedItem::func_ov031_020fa900() {
             return;
         }
         this->mUnk_118 = true;
-        this->mUnk_52  = 0x3C;
-        this->mUnk_50  = 0;
+        this->mUnk_52  = FLOAT_TO_FX32(0.0147f);
+        this->mUnk_50  = FLOAT_TO_FX32(0.0f);
         return;
     }
 
