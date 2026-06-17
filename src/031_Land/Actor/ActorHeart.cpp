@@ -218,7 +218,6 @@ ARM void ActorHeart::func_ov031_020ef1b4(unk16 param_2) {
     CALL_PTMF(PTMF<ActorHeart>, data_ov031_02113da4[this->mUnk_4C]);
 }
 
-// non-matching (r1 and r2 swapped)
 ARM void ActorHeart::func_ov031_020ef208() {
     bool var2 = true;
     bool var1 = true;
@@ -236,18 +235,12 @@ ARM void ActorHeart::func_ov031_020ef208() {
         return;
     }
     if ((u8) this->mUnk_BE == 0) {
-        if (this->mUnk_50 < this->mUnk_52) {
-            this->mUnk_50++;
-            var2 = false;
-        } else {
-            var2 = true;
+        if (!this->isTimerOut()) {
+            return;
         }
-
-        if (var2) {
-            this->mUnk_BE = 0x01;
-            this->mUnk_50 = 0x00;
-            this->mUnk_52 = 0x3C;
-        }
+        this->mUnk_BE = 0x01;
+        this->mUnk_52 = 0x3C;
+        this->mUnk_50 = 0x00;
         return;
     }
 
@@ -257,15 +250,10 @@ ARM void ActorHeart::func_ov031_020ef208() {
         SET_FLAG(this->mFlags, ActorFlag_Visible);
     }
 
-    if (this->mUnk_50 < this->mUnk_52) {
-        this->mUnk_50++;
-        var2 = false;
-    } else {
-        var2 = true;
+    if (!this->isTimerOut()) {
+        return;
     }
-    if (var2) {
-        this->func_ov000_020984d0();
-    }
+    this->func_ov000_020984d0();
 }
 
 ARM void ActorHeart::func_ov031_020ef2ec() {

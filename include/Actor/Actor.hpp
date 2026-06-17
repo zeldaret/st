@@ -167,6 +167,14 @@ public:
 
     ActorId GetActorId();
 
+    bool isTimerOut() {
+        if (this->mUnk_50 < this->mUnk_52) {
+            ++this->mUnk_50;
+            return false;
+        }
+        return true;
+    }
+
     void func_ov000_0209848c(ActorProfile *param1);
     void func_ov000_020984b0();
     void func_ov000_020984b4();
@@ -177,6 +185,7 @@ public:
     unk32 func_ov000_020984c8();
     void func_ov000_020984d0();
     void func_ov000_020984f0();
+    bool func_ov000_02098838();
     unk32 func_ov000_02098910(unk32 param1, unk32 param2);
 
     s32 func_ov000_02098518(unk32 *param1);

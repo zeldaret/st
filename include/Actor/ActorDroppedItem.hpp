@@ -66,9 +66,10 @@ public:
     virtual void vfunc_2c(unk32 param1);
 
     void func_ov031_020f9f8c(VecFx32 *param_1, unk32 test, ActorRef ref);
-    bool vfunc_18(unk32 param1);
-    void vfunc_20();
-    void vfunc_24();
+    virtual bool vfunc_18(unk32 param1) override;
+    virtual void vfunc_20() override;
+    virtual void vfunc_24() override;
+
     void func_ov031_020fa260();
     void func_ov031_020fa424(s16 param_1);
     void func_ov031_020fa468();

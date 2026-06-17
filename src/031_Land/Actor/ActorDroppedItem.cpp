@@ -21,13 +21,12 @@ extern UnkStruct_027e09a8 *data_027e09a8;
 extern UnkStruct_027e0cd8 *data_027e0cd8;
 
 extern unk32 data_ov031_02110bc8[];
-extern Cylinder data_ov031_02114ba0;
+extern Cylinder data_ov031_02114ba0(0x800);
 
 extern "C" void func_01ffedac(u16 *, VecFx32 *);
 extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, VecFx32 *);
 extern "C" void func_ov000_0205c1f0(unk32 *, u16);
 extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
-extern "C" bool func_ov000_02098838();
 extern "C" void func_ov017_020bf99c();
 
 ARM ActorDroppedItem_Upperclass::ActorDroppedItem_Upperclass() {}
@@ -37,7 +36,7 @@ ARM ActorDroppedItem_Upperclass::~ActorDroppedItem_Upperclass() {}
 ARM ActorDroppedItem::ActorDroppedItem() :
     mUnk_AE(0x0),
     mUnk_B0(0x6),
-    mUnk_D8(0x800),
+    mUnk_D8(FLOAT_TO_FX32(0.5f)),
     mUnk_DC(0x0),
     mUnk_E0(0x0),
     mUnk_E4(this),
@@ -52,7 +51,7 @@ ARM ActorDroppedItem::ActorDroppedItem() :
         case ActorId_SPAR:
             if (data_027e0ce0->mUnk_2C->mFlags[0] & 0x8) {
                 this->itemTypeId = DroppedItemTypeId_Arrow;
-                this->mUnk_D8    = 0x800;
+                this->mUnk_D8    = FLOAT_TO_FX32(0.5f);
             } else {
                 this->itemTypeId = DroppedItemTypeId_Unknown;
             }
@@ -60,14 +59,14 @@ ARM ActorDroppedItem::ActorDroppedItem() :
         case ActorId_SPBM:
             if (data_027e0ce0->mUnk_2C->mFlags[0] & 0x10) {
                 this->itemTypeId = DroppedItemTypeId_Bomb;
-                this->mUnk_D8    = 0x4CD;
+                this->mUnk_D8    = FLOAT_TO_FX32(0.3f);
             } else {
                 this->itemTypeId = DroppedItemTypeId_Unknown;
             }
             break;
         case ActorId_SPDR:
             this->itemTypeId = DroppedItemTypeId_RedPotion;
-            this->mUnk_D8    = 0x666;
+            this->mUnk_D8    = FLOAT_TO_FX32(0.4f);
             this->mUnk_119   = true;
             break;
         case ActorId_SPTR:
@@ -100,7 +99,7 @@ ARM ActorDroppedItem::ActorDroppedItem() :
                     break;
             }
             this->itemTypeId = treasureType;
-            this->mUnk_D8    = 0x4CD;
+            this->mUnk_D8    = FLOAT_TO_FX32(0.3f);
             this->mUnk_119   = true;
             break;
         default:
@@ -189,7 +188,8 @@ ARM void ActorDroppedItem::func_ov031_020fa4a0() {
     }
 
     func_01fff05c(&stack, data_027e0cd8->mUnk_0C, &this->mPos);
-    if (((stack >> 0x5) & 0x3) == 0x2 && this->itemTypeId != 0x0 && this->itemTypeId != 0x1) {
+    if (((stack >> 0x5) & 0x3) == 0x2 && this->itemTypeId != DroppedItemTypeId_Arrow &&
+        this->itemTypeId != DroppedItemTypeId_Bomb) {
         this->func_ov000_020984d0();
         return;
     }
@@ -221,7 +221,7 @@ ARM void ActorDroppedItem::func_ov031_020fa568() {
             }
             break;
         case 0x1:
-            func_ov000_02098838();
+            this->func_ov000_02098838();
             if (!(this->mUnk_46 & 0x3)) {
                 break;
             }
@@ -362,7 +362,51 @@ ARM void ActorDroppedItem::vfunc_2c(unk32 param1) {
 }
 
 // non-matching
-ARM void ActorDroppedItem::func_ov031_020fa900() {}
+ARM void ActorDroppedItem::func_ov031_020fa900() {
+    bool var1 = true;
+    bool var2 = true;
+    bool var3 = true;
+    if (this->mUnk_4C != 0x3 && this->mUnk_4C != 0x4) {
+        var1 = false;
+    }
+    if (!var1) {
+        if (this->mUnk_4C != 0x5) {
+            var2 = false;
+        }
+    }
+    if (!var2) {
+        if (this->mUnk_4C != 0x6) {
+            var3 = false;
+        }
+    }
+
+    if (var3) {
+        SET_FLAG(this->mFlags, ActorFlag_Visible);
+        return;
+    }
+
+    if (!this->mUnk_118) {
+        if (!this->isTimerOut()) {
+            return;
+        }
+        this->mUnk_118 = true;
+        this->mUnk_52  = 0x3C;
+        this->mUnk_50  = 0;
+        return;
+    }
+
+    if ((this->mUnk_50 % 8) < 0x4) {
+        UNSET_FLAG(this->mFlags, ActorFlag_Visible);
+    } else {
+        SET_FLAG(this->mFlags, ActorFlag_Visible);
+    }
+
+    if (!this->isTimerOut()) {
+        return;
+    }
+
+    this->func_ov000_020984d0();
+}
 
 ARM ActorDroppedItem_c4::ActorDroppedItem_c4(Actor *param_1) :
     Actor_c4(param_1) {
