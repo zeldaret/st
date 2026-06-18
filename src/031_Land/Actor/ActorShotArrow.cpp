@@ -10,6 +10,7 @@
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
+#include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d30.hpp"
