@@ -8,6 +8,7 @@ public:
     /* 00 */ STRUCT_PAD(0x00, 0x34);
     /* 34 */ VecFx32 mUnk_34;
 
+    unk32 func_01ffd640(VecFx32 *param1);
     void func_ov000_02078230(unk32 param1);
     bool func_ov000_0207834c(VecFx32 *param1, unk32 param2, unk32 param3);
     bool func_ov000_02078764(VecFx32 *param1, void *param2, unk32 param3);

@@ -21,7 +21,7 @@ class ActorUnkGYAM : public Actor {
 public:
     /* 000 (base) */
     /* 094 */ STRUCT_PAD(0x94, 0x220);
-    /* 220 */ unk32 mUnk_220;
+    /* 220 */ Mat4x3p mUnk_220;
 
     ActorUnkGYAM();
 

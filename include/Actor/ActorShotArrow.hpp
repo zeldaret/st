@@ -24,14 +24,7 @@ class ActorShotArrow;
 class ActorShotArrow_140 : public Actor_9C {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk32 mUnk_1C;
-    /* 20 */ unk32 mUnk_20;
+    /* 20 */ STRUCT_PAD(0x20, 0x24);
     /* 24 */ bool mUnk_24;
     /* 25 */ unk8 mUnk_25;
     /* 26 */ unk8 mUnk_26;
@@ -95,7 +88,7 @@ public:
     /* 04 */
 
     ActorShotArrow_178_Base();
-    ~ActorShotArrow_178_Base();
+    virtual ~ActorShotArrow_178_Base();
 
     /* 00 */ virtual void vfunc_00();
 };
@@ -110,7 +103,7 @@ public:
     /* 1A */
 
     ActorShotArrow_178(ActorShotArrow *param1);
-    ~ActorShotArrow_178();
+    virtual ~ActorShotArrow_178();
 
     void func_ov031_020f3304();
     bool func_ov031_020f3310();
@@ -157,11 +150,8 @@ public:
     /* 1C8 */ ActorShotArrow_1C8 mUnk_1C8;
     /* 1DC */ ActorShotArrow_1DC mUnk_1DC;
     /* 1E0 */ STRUCT_PAD(0x1E8, 0x224);
-    /* 224 */ unk32 mUnk_224;
-    /* 228 */ STRUCT_PAD(0x228, 0x250);
-    /* 250 */ unk16 mUnk_250;
-    /* 252 */ unk16 mUnk_252;
-    /* 254 */ STRUCT_PAD(0x254, 0x258);
+    /* 224 */ Mat4x3p *mUnk_224;
+    /* 228 */ Mat4x3p mUnk_228;
     /* 258 */ u16 mUnk_258;
     /* 25A */ bool mUnk_25A;
     /* 25B */ bool mUnk_25B;
@@ -205,7 +195,7 @@ public:
     void func_ov031_020f229c();
     void func_ov031_020f22d4(Mat3p *param_1, VecFx32 *param_2);
     void func_ov031_020f2310();
-    void func_ov031_020f2654();
+    void func_ov031_020f2654(Mat3p *);
     void func_ov031_020f2794(unk16 param_1);
     void func_ov031_020f28ac();
     void func_ov031_020f2b8c();
@@ -217,7 +207,7 @@ public:
     void func_ov031_020f2f5c(VecFx32 *param_1);
     void func_ov031_020f2f9c();
     void func_ov031_020f3000();
-    void func_ov031_020f311c(unk32 param_1);
+    void func_ov031_020f311c(Mat4x3p *param_1);
     bool func_ov031_020f3210(u16);
     bool func_ov031_020f3258(u16 param_1);
     ActorShotArrow *func_ov031_020f32c4();
