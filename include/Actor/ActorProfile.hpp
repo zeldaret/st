@@ -3,6 +3,7 @@
 #include "Actor/ActorId.hpp"
 #include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/Common.hpp"
 #include "profile.hpp"
 #include "types.h"
 
@@ -47,6 +48,9 @@ public:
 class ActorProfile_Derived1 : public ActorProfile {
 public:
     /* 00 (base) */
+    /* 3C */ UnkActorFileSystem2 mUnk_3C;
+    /* D4 */ unk32 mUnk_D4;
+    /* D8 */
 
     ActorProfile_Derived1(ActorId actorId);
     ActorProfile_Derived1(ActorId actorId1, ActorId actorId2);

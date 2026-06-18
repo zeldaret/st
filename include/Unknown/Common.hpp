@@ -1230,6 +1230,19 @@ public:
     /* 08 */
 };
 
+class UnkActorFileSystem2 : public MapObjectProfile_Derived2_20_Base {
+public:
+    /* 00 (base) */
+    /* 94 */ unk16 mUnk_94;
+    /* 96 */ unk16 mUnk_96;
+    /* 98 */
+
+    UnkActorFileSystem2(u32 actorId2); // func_ov000_02097af8
+
+    // data_ov000_020b3084
+    /* 00 */ virtual ~UnkActorFileSystem2() override;
+};
+
 //! TODO: move to a better place
 enum TrainPresetType_ {
     TrainPresetType_Default                = 0, // normal overworld settings

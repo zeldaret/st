@@ -5,7 +5,6 @@
 #include "Render/ModelRender.hpp"
 #include "System/SysNew.hpp"
 
-extern "C" unk32 *func_0200f05c(unk32, char *);
 extern "C" void func_ov073_0215bb34(ActorUnkRMSD *);
 
 ARM DECL_PROFILE(ActorProfileUnkRMSD);
@@ -34,21 +33,13 @@ ARM void ActorUnkRMSD::func_ov063_0215c474(void) {
     this->vfunc_20();
 }
 
-#define ReturnLogic(data)                                       \
-    {                                                           \
-        unk32 var1 = GET_PROFILE(ActorProfileUnkRMSD)->mUnk_8C; \
-        if (var1 != 0) {                                        \
-            unk32 *var2 = func_0200f05c(var1 + 8, data);        \
-            if (var2 != nullptr) {                              \
-                return var1 + *var2;                            \
-            }                                                   \
-        }                                                       \
-        return 0;                                               \
-    }
+ARM void *ActorUnkRMSD::func_ov063_0215c488(void) {
+    return G3d_GetUnkPtr(GET_PROFILE(ActorProfileUnkRMSD)->mUnk_3C.mUnk_50, data_ov063_021625e8);
+}
 
-ARM unk32 ActorUnkRMSD::func_ov063_0215c488(void){ReturnLogic(data_ov063_021625e8)}
-
-ARM unk32 ActorUnkRMSD::func_ov063_0215c4c8(void){ReturnLogic(data_ov063_021625d8)}
+ARM void *ActorUnkRMSD::func_ov063_0215c4c8(void) {
+    return G3d_GetUnkPtr(GET_PROFILE(ActorProfileUnkRMSD)->mUnk_3C.mUnk_50, data_ov063_021625d8);
+}
 
 ARM ActorUnkRMSD::~ActorUnkRMSD() {}
 ARM ActorProfileUnkRMSD::~ActorProfileUnkRMSD() {}
