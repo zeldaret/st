@@ -752,12 +752,6 @@ bool ActorShotArrow::func_ov031_020f3258(u16 param_1) {
     return false;
 }
 
-ActorShotArrow *ActorShotArrow::func_ov031_020f32c4() {
-    this->mPos.y = FLOAT_TO_FX32(0.0f);
-    this->func_ov000_0207bffc();
-    return this;
-}
-
 ActorShotArrow_178::ActorShotArrow_178(ActorShotArrow *param1) {
     this->mUnk_08   = param1;
     this->mUnk_0C.x = FLOAT_TO_FX32(0.0f);
@@ -766,15 +760,23 @@ ActorShotArrow_178::ActorShotArrow_178(ActorShotArrow *param1) {
     this->mUnk_18   = 0;
 }
 
-ActorShotArrow_178::~ActorShotArrow_178() {}
+ActorShotArrow_178::~ActorShotArrow_178() {
+    this->mUnk_08 = NULL;
+}
 
 void ActorShotArrow_178::func_ov031_020f3304() {
     this->mUnk_18 = FLOAT_TO_FX32(0.0f);
 }
 
 // non-matching
-bool ActorShotArrow_178::func_ov031_020f3310() {
-    if ((this->mUnk_08->mUnk_178.mUnk_18 & 0x1) == 0) {
+bool ActorShotArrow_178::vfunc_00(UnkStruct_ov031_020f3310 *param1) {
+
+    u32 var = param1->mUnk_04->mUnk_24[param1->mUnk_00->mUnk_06];
+    if ((var >> 0x17 & 1) == 1) {
+        return false;
+    }
+
+    if ((this->mUnk_08->mUnk_178.mUnk_18 & 0x1) == 0 && (var >> 0x1F & 1) == 1) {
         this->mUnk_08->func_ov031_020f2b8c();
     } else if ((this->mUnk_08->mUnk_178.mUnk_18 & 0x2) == 0) {
         if (this->mUnk_08->mState == ActorShotArrowState_4) {
@@ -782,7 +784,7 @@ bool ActorShotArrow_178::func_ov031_020f3310() {
             return false;
         }
         this->mUnk_08->mUnk_178.mUnk_18 |= 0x1;
-        this->mUnk_08->mUnk_178.mUnk_0C.z = FLOAT_TO_FX32(0.0f);
+        VecFx32_Copy(&param1->mUnk_08, &this->mUnk_08->mUnk_178.mUnk_0C);
     }
     return true;
 }
@@ -790,6 +792,8 @@ bool ActorShotArrow_178::func_ov031_020f3310() {
 bool ActorShotArrow_178::func_ov031_020f33bc() {}
 
 ActorShotArrow_194_Base::~ActorShotArrow_194_Base() {}
+
+ActorShotArrow_194::~ActorShotArrow_194() {}
 
 ActorShotArrow_194::ActorShotArrow_194(ActorShotArrow *param_1) {
     this->mUnk_2C = param_1;
