@@ -4,6 +4,9 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "MainGame/AdventureMode.hpp"
+#include "Render/ModelRender.hpp"
+#include "Unknown/Common.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -20,7 +23,9 @@ public:
 class ActorUnkRMSD : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 94 */ unk8 mUnk_94;
+    /* 95 */ STRUCT_PAD(0x95, 0x158);
+    /* 158 */ Actor mUnk_158;
 
     ActorUnkRMSD();
 
@@ -29,13 +34,14 @@ public:
     void func_ov063_0215c408(void);
     void func_ov063_0215c45c(void);
     void func_ov063_0215c474(void);
-    void func_ov063_0215c488(void);
-    void func_ov063_0215c4c8(void);
+    void *func_ov063_0215c488(void); //! TODO: G3d_Model?
+    void *func_ov063_0215c4c8(void); //! TODO: G3d_Model?
 };
 
 class ActorProfileUnkRMSD : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
+    /* D8 */
 
     ActorProfileUnkRMSD();
     ~ActorProfileUnkRMSD();

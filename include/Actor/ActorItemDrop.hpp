@@ -49,11 +49,6 @@ public:
     /* 0B0 */ u16 mUnk_B0;
     /* 0B2 */ STRUCT_PAD(0xB2, 0xB4);
     /* 0B4 */ Actor_9C mUnk_B4;
-    /* 0B8 */ unk32 mUnk_B8;
-    /* 0BC */ unk32 mUnk_BC;
-    /* 0C0 */ ActorRef mUnk_C0;
-    /* 0C4 */ STRUCT_PAD(0x0C4, 0x0D0);
-    /* 0D0 */ u16 mUnk_D0;
     /* 0D4 */ ItemDropType mItemTypeId;
     /* 0D8 */ fx32 mUnk_D8;
     /* 0DC */ ActorRef mUnk_DC;
@@ -80,7 +75,6 @@ public:
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
-    /* 4C */ virtual ~ActorItemDrop() override;
 
     void func_ov031_020fa260();
     void SetState(ActorState state);
