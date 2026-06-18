@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkFLDK.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkFLDK);
+DECL_PROFILE(ActorProfileUnkFLDK);
 
-ARM Actor *ActorProfileUnkFLDK::Create() {
+Actor *ActorProfileUnkFLDK::Create() {
     return new(HeapIndex_2) ActorUnkFLDK();
 }
 
-ARM ActorProfileUnkFLDK::ActorProfileUnkFLDK() :
+ActorProfileUnkFLDK::ActorProfileUnkFLDK() :
     ActorProfile(ActorId_FLDK) {}
 
-ARM ActorUnkFLDK::ActorUnkFLDK() {}
+ActorUnkFLDK::ActorUnkFLDK() {}
 
-ARM void ActorUnkFLDK::func_ov047_021354a4(void) {}
-ARM void ActorUnkFLDK::func_ov047_02135570(void) {}
+void ActorUnkFLDK::func_ov047_021354a4(void) {}
+void ActorUnkFLDK::func_ov047_02135570(void) {}
 
-ARM ActorUnkFLDK::~ActorUnkFLDK() {}
-ARM ActorProfileUnkFLDK::~ActorProfileUnkFLDK() {}
+ActorUnkFLDK::~ActorUnkFLDK() {}
+ActorProfileUnkFLDK::~ActorProfileUnkFLDK() {}

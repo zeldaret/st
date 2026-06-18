@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkCLZN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkCLZN);
+DECL_PROFILE(ActorProfileUnkCLZN);
 
-ARM Actor *ActorProfileUnkCLZN::Create() {
+Actor *ActorProfileUnkCLZN::Create() {
     return new(HeapIndex_2) ActorUnkCLZN();
 }
 
-ARM ActorProfileUnkCLZN::ActorProfileUnkCLZN() :
+ActorProfileUnkCLZN::ActorProfileUnkCLZN() :
     ActorProfile(ActorId_CLZN) {}
 
-ARM ActorUnkCLZN::ActorUnkCLZN() {}
+ActorUnkCLZN::ActorUnkCLZN() {}
 
-ARM void ActorUnkCLZN::func_ov021_020f3940(void) {}
-ARM void ActorUnkCLZN::func_ov021_020f3964(void) {}
+void ActorUnkCLZN::func_ov021_020f3940(void) {}
+void ActorUnkCLZN::func_ov021_020f3964(void) {}
 
-ARM ActorUnkCLZN::~ActorUnkCLZN() {}
-ARM ActorProfileUnkCLZN::~ActorProfileUnkCLZN() {}
+ActorUnkCLZN::~ActorUnkCLZN() {}
+ActorProfileUnkCLZN::~ActorProfileUnkCLZN() {}

@@ -3,18 +3,18 @@
 #include "Actor/ActorUnkDSWT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkDSWT);
+DECL_PROFILE(ActorProfileUnkDSWT);
 
-ARM Actor *ActorProfileUnkDSWT::Create() {
+Actor *ActorProfileUnkDSWT::Create() {
     return new(HeapIndex_2) ActorUnkDSWT();
 }
 
-ARM ActorProfileUnkDSWT::ActorProfileUnkDSWT() :
+ActorProfileUnkDSWT::ActorProfileUnkDSWT() :
     ActorProfile_Derived1(ActorId_DSWT) {}
 
-ARM ActorUnkDSWT::ActorUnkDSWT() {}
+ActorUnkDSWT::ActorUnkDSWT() {}
 
-ARM void ActorUnkDSWT::func_ov082_02157ae8(void) {}
+void ActorUnkDSWT::func_ov082_02157ae8(void) {}
 
-ARM ActorUnkDSWT::~ActorUnkDSWT() {}
-ARM ActorProfileUnkDSWT::~ActorProfileUnkDSWT() {}
+ActorUnkDSWT::~ActorUnkDSWT() {}
+ActorProfileUnkDSWT::~ActorProfileUnkDSWT() {}

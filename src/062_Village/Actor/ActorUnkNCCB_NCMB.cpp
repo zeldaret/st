@@ -5,29 +5,29 @@
 
 // --- Actor NCCB ---
 
-ARM DECL_PROFILE(ActorProfileUnkNCCB);
+DECL_PROFILE(ActorProfileUnkNCCB);
 
-ARM Actor *ActorProfileUnkNCCB::Create() {
+Actor *ActorProfileUnkNCCB::Create() {
     return new(HeapIndex_2) ActorUnkNCCB();
 }
 
-ARM ActorProfileUnkNCCB::ActorProfileUnkNCCB() :
+ActorProfileUnkNCCB::ActorProfileUnkNCCB() :
     ActorProfile_Derived1(ActorId_NCCB) {}
 
-ARM ActorUnkNCCB::ActorUnkNCCB() {}
+ActorUnkNCCB::ActorUnkNCCB() {}
 
 // --- Actor NCMB ---
 
-ARM DECL_PROFILE(ActorProfileUnkNCMB);
+DECL_PROFILE(ActorProfileUnkNCMB);
 
-ARM Actor *ActorProfileUnkNCMB::Create() {
+Actor *ActorProfileUnkNCMB::Create() {
     return new(HeapIndex_2) ActorUnkNCMB();
 }
 
-ARM ActorProfileUnkNCMB::ActorProfileUnkNCMB() :
+ActorProfileUnkNCMB::ActorProfileUnkNCMB() :
     ActorProfile_Derived1(ActorId_NCMB) {}
 
-ARM ActorUnkNCMB::ActorUnkNCMB() {}
+ActorUnkNCMB::ActorUnkNCMB() {}
 
-ARM ActorProfileUnkNCCB::~ActorProfileUnkNCCB() {}
-ARM ActorProfileUnkNCMB::~ActorProfileUnkNCMB() {}
+ActorProfileUnkNCCB::~ActorProfileUnkNCCB() {}
+ActorProfileUnkNCMB::~ActorProfileUnkNCMB() {}

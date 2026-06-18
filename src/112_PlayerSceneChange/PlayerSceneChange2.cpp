@@ -12,13 +12,13 @@ extern "C" unk32 func_ov000_02093718(UnkStruct_ov000_0208f820_30 *);
 extern "C" unk32 func_ov000_0209378c(UnkStruct_ov000_0208f820_30 *);
 extern "C" void func_ov000_020830d4(unk32, u16, unk32, unk32, unk32);
 
-ARM PlayerSceneChange2::PlayerSceneChange2() {
+PlayerSceneChange2::PlayerSceneChange2() {
     this->mUnk_54 = *this->mUnk_34;
     this->mUnk_60 = *this->mUnk_34;
 }
 
 // non-matching
-ARM void PlayerSceneChange2::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
+void PlayerSceneChange2::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
     s16 auStack_18[12];
     s16 auStack_2c;
 
@@ -86,6 +86,6 @@ ARM void PlayerSceneChange2::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param
     }
 }
 
-ARM void PlayerSceneChange2::vfunc_10(unk32 param1, unk32 param2) {}
+void PlayerSceneChange2::vfunc_10(unk32 param1, unk32 param2) {}
 
-ARM PlayerSceneChange2::~PlayerSceneChange2() {}
+PlayerSceneChange2::~PlayerSceneChange2() {}

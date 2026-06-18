@@ -14,13 +14,13 @@ static const char data_ov000_020af560[] = "switchB";
 
 UnkStruct_ov019_020d24c8_28_258_00 MapObjectSwitchStep_data_020b6118(NULL, 0);
 
-ARM DECL_PROFILE(MapObjectProfileSwitchStep);
+DECL_PROFILE(MapObjectProfileSwitchStep);
 
-ARM MapObject *MapObjectProfileSwitchStep::Create() {
+MapObject *MapObjectProfileSwitchStep::Create() {
     return new(HeapIndex_ITCM) MapObjectSwitchStep();
 }
 
-ARM MapObjectProfileSwitchStep::MapObjectProfileSwitchStep() :
+MapObjectProfileSwitchStep::MapObjectProfileSwitchStep() :
     MapObjectProfileSwitchStep_Base(MapObjectId_SwitchStep) {
     this->mUnk_D4.mUnk_08 = 0x2DC04009;
 
@@ -37,14 +37,14 @@ ARM MapObjectProfileSwitchStep::MapObjectProfileSwitchStep() :
     this->mUnk_20.mUnk_15 = 1;
 }
 
-ARM MapObjectSwitchStep_40::MapObjectSwitchStep_40(void) :
+MapObjectSwitchStep_40::MapObjectSwitchStep_40(void) :
     ModelRender(NULL) {
     this->mUnk_60 = 0;
     this->mUnk_62 = true;
     this->func_ov000_0209dde0();
 }
 
-ARM void MapObjectSwitchStep_40::func_ov000_0209dde0(void) {
+void MapObjectSwitchStep_40::func_ov000_0209dde0(void) {
     if (!this->mUnk_62) {
         this->func_ov000_02057c38(2, 2);
         return;
@@ -53,7 +53,7 @@ ARM void MapObjectSwitchStep_40::func_ov000_0209dde0(void) {
     this->func_ov000_02057c38(6, 2);
 }
 
-ARM void MapObjectSwitchStep_40::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
+void MapObjectSwitchStep_40::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
     unk32 iVar1 = param1->mUnk_04[1];
     if (iVar1 != 0) {
         iVar1 += 0x40;
@@ -80,7 +80,7 @@ ARM void MapObjectSwitchStep_40::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
     }
 }
 
-ARM MapObjectSwitchStep::MapObjectSwitchStep() :
+MapObjectSwitchStep::MapObjectSwitchStep() :
     mUnk_A4(&mUnk_C4, NULL) {
     this->mUnk_E4 = 0;
     this->mUnk_E6 = 0;
@@ -98,14 +98,14 @@ ARM MapObjectSwitchStep::MapObjectSwitchStep() :
     this->mUnk_10 = GET_PROFILE_D4(MapObjectProfileSwitchStep);
 }
 
-ARM MapObjectSwitchStep::~MapObjectSwitchStep() {
+MapObjectSwitchStep::~MapObjectSwitchStep() {
     if (this->mUnk_20.mUnk_00[0] == 2) {
         this->func_ov000_0209e11c(0, 1);
         this->func_ov000_0209d2c4(0, false);
     }
 }
 
-ARM bool MapObjectSwitchStep::vfunc_00(void) {
+bool MapObjectSwitchStep::vfunc_00(void) {
     SET_FLAG(this->mFlags, MapObjFlag_9);
     this->mUnk_18[0] = 1;
 
@@ -126,7 +126,7 @@ ARM bool MapObjectSwitchStep::vfunc_00(void) {
     return true;
 }
 
-ARM void MapObjectSwitchStep::func_ov000_0209e11c(unk32 param1, unk32 param2) {
+void MapObjectSwitchStep::func_ov000_0209e11c(unk32 param1, unk32 param2) {
     this->mUnk_16 = param1;
     this->mUnk_E6 = -1;
     this->mUnk_E4 = 0;
@@ -175,7 +175,7 @@ ARM void MapObjectSwitchStep::func_ov000_0209e11c(unk32 param1, unk32 param2) {
     }
 }
 
-ARM void MapObjectSwitchStep::vfunc_20(void) {
+void MapObjectSwitchStep::vfunc_20(void) {
     switch (this->mUnk_16) {
         case 1:
         case 2:
@@ -198,7 +198,7 @@ struct stack_struct {
     /* 08 */
 };
 
-ARM void MapObjectSwitchStep::vfunc_18(s8 *param1, s8 param2) {
+void MapObjectSwitchStep::vfunc_18(s8 *param1, s8 param2) {
     if (!GET_FLAG(this->mFlags, MapObjFlag_5)) {
         return;
     }
@@ -221,7 +221,7 @@ ARM void MapObjectSwitchStep::vfunc_18(s8 *param1, s8 param2) {
     }
 }
 
-ARM void MapObjectSwitchStep::func_ov000_0209e38c(void) {
+void MapObjectSwitchStep::func_ov000_0209e38c(void) {
     if (this->mUnk_E6 - this->mUnk_E4 < 0x3C) {
         data_ov000_020b5214.func_ov000_0206e7e8(0x92);
     } else {

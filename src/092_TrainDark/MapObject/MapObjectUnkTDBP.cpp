@@ -3,19 +3,19 @@
 #include "MapObject/MapObjectUnkTDBP.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkTDBP);
+DECL_PROFILE(MapObjectProfileUnkTDBP);
 
-ARM MapObject *MapObjectProfileUnkTDBP::Create() {
+MapObject *MapObjectProfileUnkTDBP::Create() {
     return new(HeapIndex_2) MapObjectUnkTDBP();
 }
 
-ARM MapObjectProfileUnkTDBP::MapObjectProfileUnkTDBP() :
+MapObjectProfileUnkTDBP::MapObjectProfileUnkTDBP() :
     MapObjectProfile(MapObjectId_TDBP) {}
 
-ARM MapObjectUnkTDBP::MapObjectUnkTDBP() {}
+MapObjectUnkTDBP::MapObjectUnkTDBP() {}
 
-ARM void MapObjectUnkTDBP::func_ov092_0216651c(void) {}
-ARM void MapObjectUnkTDBP::func_ov092_02166534(void) {}
+void MapObjectUnkTDBP::func_ov092_0216651c(void) {}
+void MapObjectUnkTDBP::func_ov092_02166534(void) {}
 
-ARM MapObjectUnkTDBP::~MapObjectUnkTDBP() {}
-ARM MapObjectProfileUnkTDBP::~MapObjectProfileUnkTDBP() {}
+MapObjectUnkTDBP::~MapObjectUnkTDBP() {}
+MapObjectProfileUnkTDBP::~MapObjectProfileUnkTDBP() {}

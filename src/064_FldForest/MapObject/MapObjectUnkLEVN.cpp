@@ -3,18 +3,18 @@
 #include "MapObject/MapObjectUnkLEVN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkLEVN);
+DECL_PROFILE(MapObjectProfileUnkLEVN);
 
-ARM MapObject *MapObjectProfileUnkLEVN::Create() {
+MapObject *MapObjectProfileUnkLEVN::Create() {
     return new(HeapIndex_2) MapObjectUnkLEVN();
 }
 
-ARM MapObjectProfileUnkLEVN::MapObjectProfileUnkLEVN() :
+MapObjectProfileUnkLEVN::MapObjectProfileUnkLEVN() :
     MapObjectProfile(MapObjectId_LEVN) {}
 
-ARM MapObjectUnkLEVN::MapObjectUnkLEVN() {}
+MapObjectUnkLEVN::MapObjectUnkLEVN() {}
 
-ARM void MapObjectUnkLEVN::func_ov064_0215a260(void) {}
+void MapObjectUnkLEVN::func_ov064_0215a260(void) {}
 
-ARM MapObjectUnkLEVN::~MapObjectUnkLEVN() {}
-ARM MapObjectProfileUnkLEVN::~MapObjectProfileUnkLEVN() {}
+MapObjectUnkLEVN::~MapObjectUnkLEVN() {}
+MapObjectProfileUnkLEVN::~MapObjectProfileUnkLEVN() {}

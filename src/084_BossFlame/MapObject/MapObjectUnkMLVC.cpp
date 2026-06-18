@@ -3,21 +3,21 @@
 #include "MapObject/MapObjectUnkMLVC.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkMLVC);
+DECL_PROFILE(MapObjectProfileUnkMLVC);
 
-ARM MapObject *MapObjectProfileUnkMLVC::Create() {
+MapObject *MapObjectProfileUnkMLVC::Create() {
     return new(HeapIndex_2) MapObjectUnkMLVC();
 }
 
-ARM MapObjectProfileUnkMLVC::MapObjectProfileUnkMLVC() :
+MapObjectProfileUnkMLVC::MapObjectProfileUnkMLVC() :
     MapObjectProfile(MapObjectId_MLVC) {}
 
-ARM MapObjectUnkMLVC::MapObjectUnkMLVC() {}
+MapObjectUnkMLVC::MapObjectUnkMLVC() {}
 
-ARM void MapObjectUnkMLVC::func_ov084_0215dc7c(void) {}
-ARM void MapObjectUnkMLVC::func_ov084_0215de2c(void) {}
-ARM void MapObjectUnkMLVC::func_ov084_0215de80(void) {}
-ARM void MapObjectUnkMLVC::func_ov084_0215dec0(void) {}
+void MapObjectUnkMLVC::func_ov084_0215dc7c(void) {}
+void MapObjectUnkMLVC::func_ov084_0215de2c(void) {}
+void MapObjectUnkMLVC::func_ov084_0215de80(void) {}
+void MapObjectUnkMLVC::func_ov084_0215dec0(void) {}
 
-ARM MapObjectUnkMLVC::~MapObjectUnkMLVC() {}
-ARM MapObjectProfileUnkMLVC::~MapObjectProfileUnkMLVC() {}
+MapObjectUnkMLVC::~MapObjectUnkMLVC() {}
+MapObjectProfileUnkMLVC::~MapObjectProfileUnkMLVC() {}

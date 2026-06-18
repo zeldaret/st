@@ -1,18 +1,18 @@
 #include "Actor/ActorUnkSWON.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkSWON);
+DECL_PROFILE(ActorProfileUnkSWON);
 
-ARM Actor *ActorProfileUnkSWON::Create() {
+Actor *ActorProfileUnkSWON::Create() {
     return new(HeapIndex_2) ActorUnkSWON();
 }
 
-ARM ActorProfileUnkSWON::ActorProfileUnkSWON() :
+ActorProfileUnkSWON::ActorProfileUnkSWON() :
     ActorProfile(ActorId_SWON) {}
 
-ARM ActorUnkSWON::ActorUnkSWON() {}
+ActorUnkSWON::ActorUnkSWON() {}
 
-ARM bool ActorUnkSWON::vfunc_18(unk32 param_1) {
+bool ActorUnkSWON::vfunc_18(unk32 param_1) {
     switch (this->mUnk_5C.mParams[0]) {
         case 0x0:
             if (!this->func_ov000_02098a60(0x1)) {
@@ -35,5 +35,5 @@ ARM bool ActorUnkSWON::vfunc_18(unk32 param_1) {
     return true;
 }
 
-ARM ActorUnkSWON::~ActorUnkSWON() {}
-ARM ActorProfileUnkSWON::~ActorProfileUnkSWON() {}
+ActorUnkSWON::~ActorUnkSWON() {}
+ActorProfileUnkSWON::~ActorProfileUnkSWON() {}

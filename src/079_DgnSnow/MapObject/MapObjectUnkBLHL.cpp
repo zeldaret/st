@@ -3,21 +3,21 @@
 #include "MapObject/MapObjectUnkBLHL.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkBLHL);
+DECL_PROFILE(MapObjectProfileUnkBLHL);
 
-ARM MapObject *MapObjectProfileUnkBLHL::Create() {
+MapObject *MapObjectProfileUnkBLHL::Create() {
     return new(HeapIndex_2) MapObjectUnkBLHL();
 }
 
-ARM MapObjectProfileUnkBLHL::MapObjectProfileUnkBLHL() :
+MapObjectProfileUnkBLHL::MapObjectProfileUnkBLHL() :
     MapObjectProfile(MapObjectId_BLHL) {}
 
-ARM MapObjectUnkBLHL::MapObjectUnkBLHL() {}
+MapObjectUnkBLHL::MapObjectUnkBLHL() {}
 
-ARM void MapObjectUnkBLHL::func_ov079_0215673c(void) {}
-ARM void MapObjectUnkBLHL::func_ov079_02156780(void) {}
-ARM void MapObjectUnkBLHL::func_ov079_021567b8(void) {}
-ARM void MapObjectUnkBLHL::func_ov079_02156840(void) {}
+void MapObjectUnkBLHL::func_ov079_0215673c(void) {}
+void MapObjectUnkBLHL::func_ov079_02156780(void) {}
+void MapObjectUnkBLHL::func_ov079_021567b8(void) {}
+void MapObjectUnkBLHL::func_ov079_02156840(void) {}
 
-ARM MapObjectUnkBLHL::~MapObjectUnkBLHL() {}
-ARM MapObjectProfileUnkBLHL::~MapObjectProfileUnkBLHL() {}
+MapObjectUnkBLHL::~MapObjectUnkBLHL() {}
+MapObjectProfileUnkBLHL::~MapObjectProfileUnkBLHL() {}

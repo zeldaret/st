@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkRMC6.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRMC6);
+DECL_PROFILE(ActorProfileUnkRMC6);
 
-ARM Actor *ActorProfileUnkRMC6::Create() {
+Actor *ActorProfileUnkRMC6::Create() {
     return new(HeapIndex_2) ActorUnkRMC6();
 }
 
-ARM ActorProfileUnkRMC6::ActorProfileUnkRMC6() :
+ActorProfileUnkRMC6::ActorProfileUnkRMC6() :
     ActorProfile_Derived1(ActorId_RMC6) {}
 
-ARM ActorUnkRMC6::ActorUnkRMC6() {}
+ActorUnkRMC6::ActorUnkRMC6() {}
 
-ARM void ActorUnkRMC6::func_ov060_0215e104(void) {}
-ARM void ActorUnkRMC6::func_ov060_0215e108(void) {}
+void ActorUnkRMC6::func_ov060_0215e104(void) {}
+void ActorUnkRMC6::func_ov060_0215e108(void) {}
 
-ARM ActorUnkRMC6::~ActorUnkRMC6() {}
-ARM ActorProfileUnkRMC6::~ActorProfileUnkRMC6() {}
+ActorUnkRMC6::~ActorUnkRMC6() {}
+ActorProfileUnkRMC6::~ActorProfileUnkRMC6() {}

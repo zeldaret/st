@@ -43,23 +43,27 @@ void NNS_SndHandleInit(void *param1);
 void NNS_SndPlayerStopSeq(void *param1, unk32 param2);
 }
 
-ARM void func_ov018_020c4e8c(void) {
+void func_ov018_020c4e8c(void) {
     RTC_Init();
     gRandom.Init();
     data_0204999c.func_ov018_020c4980();
     data_02049984.func_ov018_020c4840();
 }
 
-THUMB UnkStruct_0204a060::UnkStruct_0204a060() {
+THUMB_BEGIN
+
+UnkStruct_0204a060::UnkStruct_0204a060() {
     this->createCallback = NULL;
 }
 
-ARM UnkStruct_ov000_020b4eec::UnkStruct_ov000_020b4eec() {
+THUMB_END
+
+UnkStruct_ov000_020b4eec::UnkStruct_ov000_020b4eec() {
     this->mUnk_00 = 0;
     MI_CpuFill32(0, this->mUnk_04, sizeof(this->mUnk_04));
 }
 
-ARM UnkStruct_ov000_020b4f84::UnkStruct_ov000_020b4f84() {
+UnkStruct_ov000_020b4f84::UnkStruct_ov000_020b4f84() {
     // fake match?
     int *arg0     = 0;
     this->mUnk_C0 = (int) arg0 + 1;
@@ -71,9 +75,9 @@ ARM UnkStruct_ov000_020b4f84::UnkStruct_ov000_020b4f84() {
     }
 }
 
-ARM UnkStruct_ov000_020b4f84_00::~UnkStruct_ov000_020b4f84_00() {}
+UnkStruct_ov000_020b4f84_00::~UnkStruct_ov000_020b4f84_00() {}
 
-ARM UnkStruct_ov000_020b504c::UnkStruct_ov000_020b504c() :
+UnkStruct_ov000_020b504c::UnkStruct_ov000_020b504c() :
     mUnk_008(NULL),
     mUnk_030(1) {
     MI_CpuFill32(0, this->mUnk_05C, sizeof(this->mUnk_05C));
@@ -111,7 +115,7 @@ struct stack_struct {
 };
 
 // non-matching
-ARM SaveManager::SaveManager() {
+SaveManager::SaveManager() {
     this->mUnk_210   = 0;
     this->mUnk_000   = NULL;
     this->mUnk_206   = 0xFFFF;
@@ -167,7 +171,7 @@ ARM SaveManager::SaveManager() {
     }
 }
 
-ARM UnkStruct_0204a110::UnkStruct_0204a110() :
+UnkStruct_0204a110::UnkStruct_0204a110() :
     mUnk_000(0),
     mUnk_008(-1),
     mUnk_00C(-1),
@@ -185,20 +189,20 @@ ARM UnkStruct_0204a110::UnkStruct_0204a110() :
     data_0204a090.func_020073ac(8);
 }
 
-ARM void UnkStruct_0204a110::func_ov018_020c5300() {
+void UnkStruct_0204a110::func_ov018_020c5300() {
     func_02018c90(2);
     this->mUnk_010.func_0201c890(0x0004800, 0x00016800, 1, 1, 0);
     GX_DispOn();
     GXS_DispOn();
 }
 
-ARM UnkStruct_0204e640::UnkStruct_0204e640() {
+UnkStruct_0204e640::UnkStruct_0204e640() {
     this->mUnk_00 = 0;
     this->mUnk_04 = 0;
     OS_SetIrqFunction(2, func_0201bdd0);
 }
 
-ARM UnkStruct_0204af1c::UnkStruct_0204af1c() {
+UnkStruct_0204af1c::UnkStruct_0204af1c() {
     MI_CpuFill16(0, (u16 *) this->mUnk_2920, sizeof(this->mUnk_2920));
 
     for (u32 i = 0; i < ARRAY_LEN(this->mUnk_0000); i++) {
@@ -208,7 +212,7 @@ ARM UnkStruct_0204af1c::UnkStruct_0204af1c() {
     this->func_0201a800();
 }
 
-ARM UnkStruct_0204e5f8::UnkStruct_0204e5f8() :
+UnkStruct_0204e5f8::UnkStruct_0204e5f8() :
     mUnk_18(0) {
     this->mUnk_10 = 0;
     this->mUnk_14 = 0;
@@ -221,7 +225,7 @@ ARM UnkStruct_0204e5f8::UnkStruct_0204e5f8() :
     REG_WINOUT_SUB = (REG_WINOUT_SUB & ~0x3F) | 0x30;
 }
 
-ARM UnkStruct_0204a110_Sub3::UnkStruct_0204a110_Sub3() {
+UnkStruct_0204a110_Sub3::UnkStruct_0204a110_Sub3() {
     for (u32 i = 0; i < ARRAY_LEN(this->mUnk_00); i++) {
         this->mUnk_400[i].mUnk_00 = 0;
         this->mUnk_400[i].mUnk_04 = 0;
@@ -231,7 +235,7 @@ ARM UnkStruct_0204a110_Sub3::UnkStruct_0204a110_Sub3() {
     }
 }
 
-ARM UnkStruct_0204a110_Sub2::UnkStruct_0204a110_Sub2() {
+UnkStruct_0204a110_Sub2::UnkStruct_0204a110_Sub2() {
     u32 i;
     int j;
     UnkStruct_0204a110_Sub2_158 *pUnk158;
@@ -256,7 +260,7 @@ ARM UnkStruct_0204a110_Sub2::UnkStruct_0204a110_Sub2() {
     }
 }
 
-ARM UnkStruct_0204a110_Sub6::UnkStruct_0204a110_Sub6() {
+UnkStruct_0204a110_Sub6::UnkStruct_0204a110_Sub6() {
     this->mUnk_04 = 1;
     this->mUnk_08 = 0;
     this->mUnk_0C = -1;
@@ -266,7 +270,7 @@ ARM UnkStruct_0204a110_Sub6::UnkStruct_0204a110_Sub6() {
     this->mUnk_13 = 0;
 }
 
-ARM UnkStruct_0204a110_Sub7::UnkStruct_0204a110_Sub7() {
+UnkStruct_0204a110_Sub7::UnkStruct_0204a110_Sub7() {
     this->mUnk_00 = 0;
     this->mUnk_01 = 0;
     this->mUnk_0C = data_027e0120;
@@ -274,19 +278,19 @@ ARM UnkStruct_0204a110_Sub7::UnkStruct_0204a110_Sub7() {
     this->mUnk_08 = new(HeapIndex_Main) UnkStruct_0204a110_Sub7_08();
 }
 
-ARM UnkStruct_0204a110_Sub8::UnkStruct_0204a110_Sub8() {
+UnkStruct_0204a110_Sub8::UnkStruct_0204a110_Sub8() {
     this->mUnk_00 = 1;
     this->mUnk_04 = 0;
     this->mUnk_08 = 0;
     this->mUnk_0C = new(HeapIndex_Main) UnkSystem2_UnkSubSystem9();
 }
 
-ARM UnkStruct_02049f04::UnkStruct_02049f04() {
+UnkStruct_02049f04::UnkStruct_02049f04() {
     MI_CpuFill32(0, this->mUnk_00, sizeof(this->mUnk_00));
     this->mUnk_80 = 0;
 }
 
-ARM UnkStruct_ov000_020b50c0::UnkStruct_ov000_020b50c0() {
+UnkStruct_ov000_020b50c0::UnkStruct_ov000_020b50c0() {
     this->mUnk_94 = 0;
     this->mUnk_98 = 0;
     this->mUnk_9C = 2;
@@ -313,7 +317,7 @@ ARM UnkStruct_ov000_020b50c0::UnkStruct_ov000_020b50c0() {
     NNS_SndArcInit(this, "SoundData/final_sound_data.sdat", data_0204999c.mUnk_24[0], 0);
 }
 
-ARM UnkStruct_ov018_020c5ac0 *UnkStruct_ov000_020b50c0::func_ov018_020c5718() {
+UnkStruct_ov018_020c5ac0 *UnkStruct_ov000_020b50c0::func_ov018_020c5718() {
     unk32 uVar1 = data_0204999c.mUnk_24[0];
 
     data_ov000_020b51b8.func_ov018_020c5940();
@@ -331,7 +335,7 @@ ARM UnkStruct_ov018_020c5ac0 *UnkStruct_ov000_020b50c0::func_ov018_020c5718() {
     return UnkStruct_ov018_020c5ac0::Create();
 }
 
-ARM UnkStruct_ov000_020b5340::UnkStruct_ov000_020b5340() :
+UnkStruct_ov000_020b5340::UnkStruct_ov000_020b5340() :
     mUnk_04(0),
     mUnk_05(0),
     mUnk_08(-1),
@@ -341,12 +345,12 @@ ARM UnkStruct_ov000_020b5340::UnkStruct_ov000_020b5340() :
     this->mUnk_00 = &data_ov000_020b5300;
 }
 
-ARM void UnkStruct_ov000_020b5340::func_ov018_020c57fc() {
+void UnkStruct_ov000_020b5340::func_ov018_020c57fc() {
     func_0202f910(1);
     func_0202f958(3);
 }
 
-ARM UnkStruct_ov000_020b5300::UnkStruct_ov000_020b5300() {
+UnkStruct_ov000_020b5300::UnkStruct_ov000_020b5300() {
     this->mUnk_1C = 0;
     this->mUnk_20 = 0;
     this->mUnk_24 = 0;
@@ -361,7 +365,7 @@ ARM UnkStruct_ov000_020b5300::UnkStruct_ov000_020b5300() {
 #endif
 }
 
-ARM void UnkStruct_ov000_020b5300::func_ov018_020c583c(void *param1) {
+void UnkStruct_ov000_020b5300::func_ov018_020c583c(void *param1) {
     this->mUnk_1C = param1;
     this->mUnk_00 = 0;
     this->mUnk_04 = param1;
@@ -372,7 +376,7 @@ ARM void UnkStruct_ov000_020b5300::func_ov018_020c583c(void *param1) {
     this->mUnk_18 = 0;
 }
 
-ARM UnkStruct_ov000_020b51b8::UnkStruct_ov000_020b51b8() {
+UnkStruct_ov000_020b51b8::UnkStruct_ov000_020b51b8() {
     this->mUnk_18 = 0x7F;
     this->mUnk_1C = 0;
     this->mUnk_1E = 0;
@@ -399,12 +403,12 @@ ARM UnkStruct_ov000_020b51b8::UnkStruct_ov000_020b51b8() {
     func_02005030(&this->mUnk_14);
 }
 
-ARM UnkStruct_ov000_020b51b8::~UnkStruct_ov000_020b51b8() {
+UnkStruct_ov000_020b51b8::~UnkStruct_ov000_020b51b8() {
     delete this->mUnk_00;
     delete this->mUnk_04;
 }
 
-ARM void UnkStruct_ov000_020b51b8::func_ov018_020c5940() {
+void UnkStruct_ov000_020b51b8::func_ov018_020c5940() {
     this->mUnk_00 = new(HeapIndex_1) UnkStruct_ov000_020b51b8_00(&this->mUnk_08[0]);
     this->mUnk_04 = new(HeapIndex_1) UnkStruct_ov000_020b51b8_04(&this->mUnk_08[1]);
 
@@ -412,7 +416,7 @@ ARM void UnkStruct_ov000_020b51b8::func_ov018_020c5940() {
     this->mUnk_04->vfunc_0C(0);
 }
 
-ARM UnkStruct_ov000_020b5214::UnkStruct_ov000_020b5214() {
+UnkStruct_ov000_020b5214::UnkStruct_ov000_020b5214() {
     this->mUnk_64 = 0;
     this->mUnk_66 = 0;
     this->mUnk_67 = 0;
@@ -430,7 +434,7 @@ ARM UnkStruct_ov000_020b5214::UnkStruct_ov000_020b5214() {
     }
 }
 
-ARM UnkStruct_ov000_020b52b4::UnkStruct_ov000_020b52b4() {
+UnkStruct_ov000_020b52b4::UnkStruct_ov000_020b52b4() {
     this->mUnk_00 = 0;
     this->mUnk_10 = 0;
     this->mUnk_18 = 0;
@@ -439,7 +443,7 @@ ARM UnkStruct_ov000_020b52b4::UnkStruct_ov000_020b52b4() {
     this->func_ov000_0206f6ac();
 }
 
-ARM UnkStruct_ov000_020b52e8::UnkStruct_ov000_020b52e8() :
+UnkStruct_ov000_020b52e8::UnkStruct_ov000_020b52e8() :
     mUnk_0C(-1),
     mUnk_10(0),
     mUnk_12(0),
@@ -449,21 +453,21 @@ ARM UnkStruct_ov000_020b52e8::UnkStruct_ov000_020b52e8() :
     this->mUnk_08 = 0;
 }
 
-ARM UnkStruct_ov000_020b52e8::~UnkStruct_ov000_020b52e8() {
+UnkStruct_ov000_020b52e8::~UnkStruct_ov000_020b52e8() {
     NNS_SndPlayerStopSeq(this, 1);
 }
 
-ARM UnkStruct_ov018_020c5ac0::UnkStruct_ov018_020c5ac0() {
+UnkStruct_ov018_020c5ac0::UnkStruct_ov018_020c5ac0() {
     this->SetInstance();
     this->mUnk_00 = 0;
     this->mUnk_01 = 0;
     this->mUnk_02 = 0;
 }
 
-ARM UnkStruct_ov018_020c5ac0 *UnkStruct_ov018_020c5ac0::Create() {
+UnkStruct_ov018_020c5ac0 *UnkStruct_ov018_020c5ac0::Create() {
     return new(HeapIndex_1) UnkStruct_ov018_020c5ac0();
 }
 
-ARM void UnkStruct_ov018_020c5ac0::SetInstance() {
+void UnkStruct_ov018_020c5ac0::SetInstance() {
     data_027e099c = this;
 }

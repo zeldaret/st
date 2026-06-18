@@ -3,26 +3,26 @@
 #include "Actor/ActorUnkTTET.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkTTET);
+DECL_PROFILE(ActorProfileUnkTTET);
 
-ARM Actor *ActorProfileUnkTTET::Create() {
+Actor *ActorProfileUnkTTET::Create() {
     return new(HeapIndex_2) ActorUnkTTET();
 }
 
-ARM ActorProfileUnkTTET::ActorProfileUnkTTET() :
+ActorProfileUnkTTET::ActorProfileUnkTTET() :
     ActorProfile(ActorId_TTET) {}
 
-ARM ActorUnkTTET::ActorUnkTTET() {}
+ActorUnkTTET::ActorUnkTTET() {}
 
-ARM void ActorUnkTTET::func_ov026_02122f14(void) {}
-ARM void ActorUnkTTET::func_ov026_02122f94(void) {}
-ARM void ActorUnkTTET::func_ov026_02122ff8(void) {}
-ARM void ActorUnkTTET::func_ov026_021230b0(void) {}
-ARM void ActorUnkTTET::func_ov026_02123110(void) {}
-ARM void ActorUnkTTET::func_ov026_0212344c(void) {}
-ARM void ActorUnkTTET::func_ov026_02123544(void) {}
-ARM void ActorUnkTTET::func_ov026_021235bc(void) {}
-ARM void ActorUnkTTET::func_ov026_021235c4(void) {}
+void ActorUnkTTET::func_ov026_02122f14(void) {}
+void ActorUnkTTET::func_ov026_02122f94(void) {}
+void ActorUnkTTET::func_ov026_02122ff8(void) {}
+void ActorUnkTTET::func_ov026_021230b0(void) {}
+void ActorUnkTTET::func_ov026_02123110(void) {}
+void ActorUnkTTET::func_ov026_0212344c(void) {}
+void ActorUnkTTET::func_ov026_02123544(void) {}
+void ActorUnkTTET::func_ov026_021235bc(void) {}
+void ActorUnkTTET::func_ov026_021235c4(void) {}
 
-ARM ActorUnkTTET::~ActorUnkTTET() {}
-ARM ActorProfileUnkTTET::~ActorProfileUnkTTET() {}
+ActorUnkTTET::~ActorUnkTTET() {}
+ActorProfileUnkTTET::~ActorProfileUnkTTET() {}

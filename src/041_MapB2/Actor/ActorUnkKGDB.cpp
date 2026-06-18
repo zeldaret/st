@@ -3,22 +3,22 @@
 #include "Actor/ActorUnkKGDB.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkKGDB);
+DECL_PROFILE(ActorProfileUnkKGDB);
 
-ARM Actor *ActorProfileUnkKGDB::Create() {
+Actor *ActorProfileUnkKGDB::Create() {
     return new(HeapIndex_2) ActorUnkKGDB();
 }
 
-ARM ActorProfileUnkKGDB::ActorProfileUnkKGDB() :
+ActorProfileUnkKGDB::ActorProfileUnkKGDB() :
     ActorProfile_Derived1(ActorId_KGDB) {}
 
-ARM ActorUnkKGDB::ActorUnkKGDB() {}
+ActorUnkKGDB::ActorUnkKGDB() {}
 
-ARM void ActorUnkKGDB::func_ov041_0212375c(void) {}
-ARM void ActorUnkKGDB::func_ov041_02123770(void) {}
-ARM void ActorUnkKGDB::func_ov041_021237e4(void) {}
-ARM void ActorUnkKGDB::func_ov041_0212382c(void) {}
-ARM void ActorUnkKGDB::func_ov041_02123a2c(void) {}
+void ActorUnkKGDB::func_ov041_0212375c(void) {}
+void ActorUnkKGDB::func_ov041_02123770(void) {}
+void ActorUnkKGDB::func_ov041_021237e4(void) {}
+void ActorUnkKGDB::func_ov041_0212382c(void) {}
+void ActorUnkKGDB::func_ov041_02123a2c(void) {}
 
-ARM ActorUnkKGDB::~ActorUnkKGDB() {}
-ARM ActorProfileUnkKGDB::~ActorProfileUnkKGDB() {}
+ActorUnkKGDB::~ActorUnkKGDB() {}
+ActorProfileUnkKGDB::~ActorProfileUnkKGDB() {}

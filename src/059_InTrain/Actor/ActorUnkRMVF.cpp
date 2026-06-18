@@ -3,26 +3,26 @@
 #include "Actor/ActorUnkRMVF.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRMVF);
+DECL_PROFILE(ActorProfileUnkRMVF);
 
-ARM Actor *ActorProfileUnkRMVF::Create() {
+Actor *ActorProfileUnkRMVF::Create() {
     return new(HeapIndex_2) ActorUnkRMVF();
 }
 
-ARM ActorProfileUnkRMVF::ActorProfileUnkRMVF() :
+ActorProfileUnkRMVF::ActorProfileUnkRMVF() :
     ActorProfile_Derived1(ActorId_RMVF) {}
 
-ARM ActorUnkRMVF::ActorUnkRMVF() {}
+ActorUnkRMVF::ActorUnkRMVF() {}
 
-ARM void ActorUnkRMVF::func_ov059_02161ce4(void) {}
-ARM void ActorUnkRMVF::func_ov059_02161cf8(void) {}
-ARM void ActorUnkRMVF::func_ov059_02161d98(void) {}
-ARM void ActorUnkRMVF::func_ov059_02161dc4(void) {}
-ARM void ActorUnkRMVF::func_ov059_02161e14(void) {}
-ARM void ActorUnkRMVF::func_ov059_02161e1c(void) {}
-ARM void ActorUnkRMVF::func_ov059_02161e40(void) {}
-ARM void ActorUnkRMVF::func_ov059_02161e50(void) {}
-ARM void ActorUnkRMVF::func_ov059_02161ea4(void) {}
+void ActorUnkRMVF::func_ov059_02161ce4(void) {}
+void ActorUnkRMVF::func_ov059_02161cf8(void) {}
+void ActorUnkRMVF::func_ov059_02161d98(void) {}
+void ActorUnkRMVF::func_ov059_02161dc4(void) {}
+void ActorUnkRMVF::func_ov059_02161e14(void) {}
+void ActorUnkRMVF::func_ov059_02161e1c(void) {}
+void ActorUnkRMVF::func_ov059_02161e40(void) {}
+void ActorUnkRMVF::func_ov059_02161e50(void) {}
+void ActorUnkRMVF::func_ov059_02161ea4(void) {}
 
-ARM ActorUnkRMVF::~ActorUnkRMVF() {}
-ARM ActorProfileUnkRMVF::~ActorProfileUnkRMVF() {}
+ActorUnkRMVF::~ActorUnkRMVF() {}
+ActorProfileUnkRMVF::~ActorProfileUnkRMVF() {}

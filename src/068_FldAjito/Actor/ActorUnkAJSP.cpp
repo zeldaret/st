@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkAJSP.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkAJSP);
+DECL_PROFILE(ActorProfileUnkAJSP);
 
-ARM Actor *ActorProfileUnkAJSP::Create() {
+Actor *ActorProfileUnkAJSP::Create() {
     return new(HeapIndex_2) ActorUnkAJSP();
 }
 
-ARM ActorProfileUnkAJSP::ActorProfileUnkAJSP() :
+ActorProfileUnkAJSP::ActorProfileUnkAJSP() :
     ActorProfile_Derived1(ActorId_AJSP) {}
 
-ARM ActorUnkAJSP::ActorUnkAJSP() {}
+ActorUnkAJSP::ActorUnkAJSP() {}
 
-ARM void ActorUnkAJSP::func_ov068_02160a08(void) {}
-ARM void ActorUnkAJSP::func_ov068_02160ad0(void) {}
+void ActorUnkAJSP::func_ov068_02160a08(void) {}
+void ActorUnkAJSP::func_ov068_02160ad0(void) {}
 
-ARM ActorUnkAJSP::~ActorUnkAJSP() {}
-ARM ActorProfileUnkAJSP::~ActorProfileUnkAJSP() {}
+ActorUnkAJSP::~ActorUnkAJSP() {}
+ActorProfileUnkAJSP::~ActorProfileUnkAJSP() {}

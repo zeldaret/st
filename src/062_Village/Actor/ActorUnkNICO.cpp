@@ -3,23 +3,23 @@
 #include "Actor/ActorUnkNICO.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkNICO);
+DECL_PROFILE(ActorProfileUnkNICO);
 
-ARM Actor *ActorProfileUnkNICO::Create() {
+Actor *ActorProfileUnkNICO::Create() {
     return new(HeapIndex_2) ActorUnkNICO();
 }
 
-ARM ActorProfileUnkNICO::ActorProfileUnkNICO() :
+ActorProfileUnkNICO::ActorProfileUnkNICO() :
     ActorProfile_Derived1(ActorId_NICO) {}
 
-ARM ActorUnkNICO::ActorUnkNICO() {}
+ActorUnkNICO::ActorUnkNICO() {}
 
-ARM void ActorUnkNICO::func_ov062_0215851c(void) {}
-ARM void ActorUnkNICO::func_ov062_02158530(void) {}
-ARM void ActorUnkNICO::func_ov062_0215866c(void) {}
-ARM void ActorUnkNICO::func_ov062_02158690(void) {}
-ARM void ActorUnkNICO::func_ov062_021586bc(void) {}
-ARM void ActorUnkNICO::func_ov062_021586d8(void) {}
+void ActorUnkNICO::func_ov062_0215851c(void) {}
+void ActorUnkNICO::func_ov062_02158530(void) {}
+void ActorUnkNICO::func_ov062_0215866c(void) {}
+void ActorUnkNICO::func_ov062_02158690(void) {}
+void ActorUnkNICO::func_ov062_021586bc(void) {}
+void ActorUnkNICO::func_ov062_021586d8(void) {}
 
-ARM ActorUnkNICO::~ActorUnkNICO() {}
-ARM ActorProfileUnkNICO::~ActorProfileUnkNICO() {}
+ActorUnkNICO::~ActorUnkNICO() {}
+ActorProfileUnkNICO::~ActorProfileUnkNICO() {}

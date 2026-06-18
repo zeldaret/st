@@ -3,18 +3,18 @@
 #include "Actor/ActorUnkDSSN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkDSSN);
+DECL_PROFILE(ActorProfileUnkDSSN);
 
-ARM Actor *ActorProfileUnkDSSN::Create() {
+Actor *ActorProfileUnkDSSN::Create() {
     return new(HeapIndex_2) ActorUnkDSSN();
 }
 
-ARM ActorProfileUnkDSSN::ActorProfileUnkDSSN() :
+ActorProfileUnkDSSN::ActorProfileUnkDSSN() :
     ActorProfile_Derived1(ActorId_DSSN) {}
 
-ARM ActorUnkDSSN::ActorUnkDSSN() {}
+ActorUnkDSSN::ActorUnkDSSN() {}
 
-ARM void ActorUnkDSSN::func_ov079_021559e4(void) {}
+void ActorUnkDSSN::func_ov079_021559e4(void) {}
 
-ARM ActorUnkDSSN::~ActorUnkDSSN() {}
-ARM ActorProfileUnkDSSN::~ActorProfileUnkDSSN() {}
+ActorUnkDSSN::~ActorUnkDSSN() {}
+ActorProfileUnkDSSN::~ActorProfileUnkDSSN() {}

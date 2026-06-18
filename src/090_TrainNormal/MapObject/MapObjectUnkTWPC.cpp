@@ -3,29 +3,29 @@
 #include "MapObject/MapObjectUnkTWPC.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkTWPC);
+DECL_PROFILE(MapObjectProfileUnkTWPC);
 
-ARM MapObject *MapObjectProfileUnkTWPC::Create() {
+MapObject *MapObjectProfileUnkTWPC::Create() {
     return new(HeapIndex_2) MapObjectUnkTWPC();
 }
 
-ARM MapObjectProfileUnkTWPC::MapObjectProfileUnkTWPC() :
+MapObjectProfileUnkTWPC::MapObjectProfileUnkTWPC() :
     MapObjectProfile(MapObjectId_TWPC) {}
 
-ARM MapObjectUnkTWPC::MapObjectUnkTWPC() {}
+MapObjectUnkTWPC::MapObjectUnkTWPC() {}
 
-ARM void MapObjectUnkTWPC::func_ov090_02172a64(void) {}
-ARM void MapObjectUnkTWPC::func_ov090_02172b48(void) {}
-ARM void MapObjectUnkTWPC::func_ov090_02172c2c(void) {}
-ARM void MapObjectUnkTWPC::func_ov090_02172c34(void) {}
-ARM void MapObjectUnkTWPC::func_ov090_02172c3c(void) {}
-ARM void MapObjectUnkTWPC::func_ov090_02172c40(void) {}
-ARM void MapObjectUnkTWPC::func_ov090_02172c44(void) {}
-ARM void MapObjectUnkTWPC::func_ov090_02172c80(void) {}
-ARM void MapObjectUnkTWPC::func_ov090_02172cac(void) {}
-ARM void MapObjectUnkTWPC::func_ov090_02172cd8(void) {}
-ARM void MapObjectUnkTWPC::func_ov090_02172d04(void) {}
-ARM void MapObjectUnkTWPC::func_ov090_02172d0c(void) {}
+void MapObjectUnkTWPC::func_ov090_02172a64(void) {}
+void MapObjectUnkTWPC::func_ov090_02172b48(void) {}
+void MapObjectUnkTWPC::func_ov090_02172c2c(void) {}
+void MapObjectUnkTWPC::func_ov090_02172c34(void) {}
+void MapObjectUnkTWPC::func_ov090_02172c3c(void) {}
+void MapObjectUnkTWPC::func_ov090_02172c40(void) {}
+void MapObjectUnkTWPC::func_ov090_02172c44(void) {}
+void MapObjectUnkTWPC::func_ov090_02172c80(void) {}
+void MapObjectUnkTWPC::func_ov090_02172cac(void) {}
+void MapObjectUnkTWPC::func_ov090_02172cd8(void) {}
+void MapObjectUnkTWPC::func_ov090_02172d04(void) {}
+void MapObjectUnkTWPC::func_ov090_02172d0c(void) {}
 
-ARM MapObjectUnkTWPC::~MapObjectUnkTWPC() {}
-ARM MapObjectProfileUnkTWPC::~MapObjectProfileUnkTWPC() {}
+MapObjectUnkTWPC::~MapObjectUnkTWPC() {}
+MapObjectProfileUnkTWPC::~MapObjectProfileUnkTWPC() {}

@@ -3,19 +3,19 @@
 #include "MapObject/MapObjectUnkGBDR.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkGBDR);
+DECL_PROFILE(MapObjectProfileUnkGBDR);
 
-ARM MapObject *MapObjectProfileUnkGBDR::Create() {
+MapObject *MapObjectProfileUnkGBDR::Create() {
     return new(HeapIndex_2) MapObjectUnkGBDR();
 }
 
-ARM MapObjectProfileUnkGBDR::MapObjectProfileUnkGBDR() :
+MapObjectProfileUnkGBDR::MapObjectProfileUnkGBDR() :
     MapObjectProfile(MapObjectId_GBDR) {}
 
-ARM MapObjectUnkGBDR::MapObjectUnkGBDR() {}
+MapObjectUnkGBDR::MapObjectUnkGBDR() {}
 
-ARM void MapObjectUnkGBDR::func_ov062_0215be70(void) {}
-ARM void MapObjectUnkGBDR::func_ov062_0215bfc8(void) {}
+void MapObjectUnkGBDR::func_ov062_0215be70(void) {}
+void MapObjectUnkGBDR::func_ov062_0215bfc8(void) {}
 
-ARM MapObjectUnkGBDR::~MapObjectUnkGBDR() {}
-ARM MapObjectProfileUnkGBDR::~MapObjectProfileUnkGBDR() {}
+MapObjectUnkGBDR::~MapObjectUnkGBDR() {}
+MapObjectProfileUnkGBDR::~MapObjectProfileUnkGBDR() {}

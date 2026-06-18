@@ -6,11 +6,13 @@
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 
-THUMB GameModeManagerBase *GameModeManagerBase::Create(unk32 param1) {
+THUMB_BEGIN
+
+GameModeManagerBase *GameModeManagerBase::Create(unk32 param1) {
     return new(HeapIndex_1) GameModeManagerBase(param1);
 }
 
-THUMB GameModeManagerBase::GameModeManagerBase(unk32 param1) :
+GameModeManagerBase::GameModeManagerBase(unk32 param1) :
     mUnk_100((void *) param1),
     mNextButtonID(BTN_ID_NONE),
     mButtonID(BTN_ID_NONE),
@@ -18,25 +20,27 @@ THUMB GameModeManagerBase::GameModeManagerBase(unk32 param1) :
     data_ov000_020b504c.mUnk_004 = &this->mUnk_004;
 }
 
-THUMB void GameModeManagerBase::func_02018550(void) {}
+void GameModeManagerBase::func_02018550(void) {}
 
-THUMB void GameModeManagerBase::func_02018554(void) {}
+void GameModeManagerBase::func_02018554(void) {}
 
-THUMB GameModeManagerBase::~GameModeManagerBase() {
+GameModeManagerBase::~GameModeManagerBase() {
     this->func_02018a8c();
 }
 
-THUMB void GameModeManagerBase::vfunc_10(unk32 param1, unk32 param2, unk32 param3) {}
+void GameModeManagerBase::vfunc_10(unk32 param1, unk32 param2, unk32 param3) {}
 
-THUMB void GameModeManagerBase::vfunc_14() {}
+void GameModeManagerBase::vfunc_14() {}
 
-THUMB void GameModeManagerBase::vfunc_18() {}
+void GameModeManagerBase::vfunc_18() {}
 
-THUMB void GameModeManagerBase::vfunc_1C() {}
+void GameModeManagerBase::vfunc_1C() {}
 
-THUMB void GameModeManagerBase::vfunc_20() {}
+void GameModeManagerBase::vfunc_20() {}
 
-ARM void GameModeManagerBase::vfunc_00() {
+THUMB_END
+
+void GameModeManagerBase::vfunc_00() {
     data_ov000_020b50c0.func_ov000_02069d3c(1);
 
     if (!this->mUnk_150) {
@@ -44,7 +48,7 @@ ARM void GameModeManagerBase::vfunc_00() {
     }
 }
 
-ARM void GameModeManagerBase::vfunc_04(unk32 param1) {
+void GameModeManagerBase::vfunc_04(unk32 param1) {
     data_ov000_020b50c0.func_ov000_02069d7c(param1);
 
     if (this->mUnk_150) {
@@ -52,29 +56,29 @@ ARM void GameModeManagerBase::vfunc_04(unk32 param1) {
     }
 }
 
-ARM void GameModeManagerBase::func_02018634(u16 speed) {
+void GameModeManagerBase::func_02018634(u16 speed) {
     this->mButtons.func_02013b24(this->mButtons.func_02013c08(data_02049b18.mUnk_28));
     this->mTouchControl.func_02014478(&data_02049b4c, speed);
 }
 
-ARM void GameModeManagerBase::vfunc_24() {
+void GameModeManagerBase::vfunc_24() {
     this->mButtonID = BTN_ID_NONE;
     this->mUnk_004.func_0201bf24();
 }
 
-ARM void GameModeManagerBase::vfunc_28(unk8 *param1) {
+void GameModeManagerBase::vfunc_28(unk8 *param1) {
     this->mUnk_004.func_0201bf54();
 }
 
-ARM void GameModeManagerBase::DrawUI(unk8 *param1) {}
+void GameModeManagerBase::DrawUI(unk8 *param1) {}
 
-ARM void GameModeManagerBase::vfunc_30(unk32 param1) {
+void GameModeManagerBase::vfunc_30(unk32 param1) {
     for (GameModeManagerBase_104::Iterator it = GetBeginIter(this->mUnk_104); it != GetEndIter(this->mUnk_104); it++) {
         it->vfunc_0C(param1);
     }
 }
 
-ARM void GameModeManagerBase::vfunc_34(unk32 param1, unk32 param2) {}
+void GameModeManagerBase::vfunc_34(unk32 param1, unk32 param2) {}
 
 struct UnkStruct3 {
     unk32 mUnk_00;
@@ -82,28 +86,28 @@ struct UnkStruct3 {
 };
 
 //! TODO: fake match
-ARM void *GameModeManagerBase::func_020186f8(unk32 param1) {
+void *GameModeManagerBase::func_020186f8(unk32 param1) {
     return ((UnkStruct3 *) (((u32 *) this) + param1))->mUnk_04;
 }
 
-ARM void GameModeManagerBase::func_02018704(void) {
+void GameModeManagerBase::func_02018704(void) {
     this->mUnk_004.func_0201c22c();
 }
 
-ARM void GameModeManagerBase::func_02018714(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5) {
+void GameModeManagerBase::func_02018714(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5) {
     this->mUnk_004.func_0201c124(param1, param2, param3, param4, param5);
 }
 
-ARM void GameModeManagerBase::func_0201873c(void) {
+void GameModeManagerBase::func_0201873c(void) {
     this->mUnk_004.func_0201c19c();
 }
 
-ARM void GameModeManagerBase::func_0201874c(void) {
+void GameModeManagerBase::func_0201874c(void) {
     this->mUnk_004.func_0201c1e4();
 }
 
 // non-matching
-ARM void GameModeManagerBase::func_0201875c(void) {
+void GameModeManagerBase::func_0201875c(void) {
     InputInformations local_30;
     local_30.unk_00 = &this->mNextButtonID;
     local_30.unk_04 = &this->mButtonID;
@@ -126,7 +130,7 @@ struct UnkStruct5 {
     unk32 b;
 };
 
-ARM void GameModeManagerBase::func_02018830(unk8 *param1) {
+void GameModeManagerBase::func_02018830(unk8 *param1) {
     unk32 id = this->mNextButtonID;
     UnkStruct5 local_28;
     local_28.a = param1;
@@ -145,7 +149,7 @@ ARM void GameModeManagerBase::func_02018830(unk8 *param1) {
     }
 }
 
-ARM void GameModeManagerBase::func_02018908() {
+void GameModeManagerBase::func_02018908() {
     for (GameModeManagerBase_104::Iterator it = GetBeginIter(this->mUnk_104); it != GetEndIter(this->mUnk_104); it++) {
         if (this->func_02018af0(it.operator->()) && this->func_02018b54(it.operator->())) {
             it->vfunc_08(&this->mButtons, &this->mTouchControl);
@@ -153,7 +157,7 @@ ARM void GameModeManagerBase::func_02018908() {
     }
 }
 
-ARM void GameModeManagerBase::func_02018984(unk8 *param1) {
+void GameModeManagerBase::func_02018984(unk8 *param1) {
     for (GameModeManagerBase_104::Iterator it = GetBeginIterReverse(this->mUnk_104); it != GetEndIter(this->mUnk_104); it--) {
         if (this->func_02018af0(it.operator->()) && this->func_02018b54(it.operator->()) &&
             this->func_02018b90(it.operator->(), param1)) {
@@ -162,7 +166,7 @@ ARM void GameModeManagerBase::func_02018984(unk8 *param1) {
     }
 }
 
-ARM void GameModeManagerBase::func_02018a14(unk8 *param1) {
+void GameModeManagerBase::func_02018a14(unk8 *param1) {
     for (GameModeManagerBase_104::Iterator it = GetBeginIter(this->mUnk_104); it != GetEndIter(this->mUnk_104); it++) {
         if (this->func_02018af0(it.operator->()) && this->func_02018b54(it.operator->())) {
             it->vfunc_14(param1);
@@ -170,7 +174,7 @@ ARM void GameModeManagerBase::func_02018a14(unk8 *param1) {
     }
 }
 
-ARM void GameModeManagerBase::func_02018a8c() {
+void GameModeManagerBase::func_02018a8c() {
     this->mUnk_004.func_0201bf90();
 }
 

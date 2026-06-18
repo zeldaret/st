@@ -3,24 +3,24 @@
 #include "MapObject/MapObjectUnkTRMA.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkTRMA);
+DECL_PROFILE(MapObjectProfileUnkTRMA);
 
-ARM MapObject *MapObjectProfileUnkTRMA::Create() {
+MapObject *MapObjectProfileUnkTRMA::Create() {
     return new(HeapIndex_2) MapObjectUnkTRMA();
 }
 
-ARM MapObjectProfileUnkTRMA::MapObjectProfileUnkTRMA() :
+MapObjectProfileUnkTRMA::MapObjectProfileUnkTRMA() :
     MapObjectProfile(MapObjectId_TRMA) {}
 
-ARM MapObjectUnkTRMA::MapObjectUnkTRMA() {}
+MapObjectUnkTRMA::MapObjectUnkTRMA() {}
 
-ARM void MapObjectUnkTRMA::func_ov028_02144bc4(void) {}
-ARM void MapObjectUnkTRMA::func_ov028_02144cb0(void) {}
-ARM void MapObjectUnkTRMA::func_ov028_02144d24(void) {}
-ARM void MapObjectUnkTRMA::func_ov028_02144d3c(void) {}
-ARM void MapObjectUnkTRMA::func_ov028_02144d7c(void) {}
-ARM void MapObjectUnkTRMA::func_ov028_02144d9c(void) {}
-ARM void MapObjectUnkTRMA::func_ov028_02144dbc(void) {}
+void MapObjectUnkTRMA::func_ov028_02144bc4(void) {}
+void MapObjectUnkTRMA::func_ov028_02144cb0(void) {}
+void MapObjectUnkTRMA::func_ov028_02144d24(void) {}
+void MapObjectUnkTRMA::func_ov028_02144d3c(void) {}
+void MapObjectUnkTRMA::func_ov028_02144d7c(void) {}
+void MapObjectUnkTRMA::func_ov028_02144d9c(void) {}
+void MapObjectUnkTRMA::func_ov028_02144dbc(void) {}
 
-ARM MapObjectUnkTRMA::~MapObjectUnkTRMA() {}
-ARM MapObjectProfileUnkTRMA::~MapObjectProfileUnkTRMA() {}
+MapObjectUnkTRMA::~MapObjectUnkTRMA() {}
+MapObjectProfileUnkTRMA::~MapObjectProfileUnkTRMA() {}

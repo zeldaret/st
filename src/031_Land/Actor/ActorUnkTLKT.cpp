@@ -3,24 +3,24 @@
 #include "Actor/ActorUnkTLKT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkTLKT);
+DECL_PROFILE(ActorProfileUnkTLKT);
 
-ARM Actor *ActorProfileUnkTLKT::Create() {
+Actor *ActorProfileUnkTLKT::Create() {
     return new(HeapIndex_2) ActorUnkTLKT();
 }
 
-ARM ActorProfileUnkTLKT::ActorProfileUnkTLKT() :
+ActorProfileUnkTLKT::ActorProfileUnkTLKT() :
     ActorProfile(ActorId_TLKT) {}
 
-ARM ActorUnkTLKT::ActorUnkTLKT() {}
+ActorUnkTLKT::ActorUnkTLKT() {}
 
-ARM void ActorUnkTLKT::func_ov031_020e41ec(void) {}
-ARM void ActorUnkTLKT::func_ov031_020e4238(void) {}
-ARM void ActorUnkTLKT::func_ov031_020e4274(void) {}
-ARM void ActorUnkTLKT::func_ov031_020e42ac(void) {}
-ARM void ActorUnkTLKT::func_ov031_020e42f0(void) {}
-ARM void ActorUnkTLKT::func_ov031_020e4320(void) {}
-ARM void ActorUnkTLKT::func_ov031_020e4514(void) {}
+void ActorUnkTLKT::func_ov031_020e41ec(void) {}
+void ActorUnkTLKT::func_ov031_020e4238(void) {}
+void ActorUnkTLKT::func_ov031_020e4274(void) {}
+void ActorUnkTLKT::func_ov031_020e42ac(void) {}
+void ActorUnkTLKT::func_ov031_020e42f0(void) {}
+void ActorUnkTLKT::func_ov031_020e4320(void) {}
+void ActorUnkTLKT::func_ov031_020e4514(void) {}
 
-ARM ActorUnkTLKT::~ActorUnkTLKT() {}
-ARM ActorProfileUnkTLKT::~ActorProfileUnkTLKT() {}
+ActorUnkTLKT::~ActorUnkTLKT() {}
+ActorProfileUnkTLKT::~ActorProfileUnkTLKT() {}

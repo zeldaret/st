@@ -3,19 +3,19 @@
 #include "MapObject/MapObjectUnkSTSV.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkSTSV);
+DECL_PROFILE(MapObjectProfileUnkSTSV);
 
-ARM MapObject *MapObjectProfileUnkSTSV::Create() {
+MapObject *MapObjectProfileUnkSTSV::Create() {
     return new(HeapIndex_2) MapObjectUnkSTSV();
 }
 
-ARM MapObjectProfileUnkSTSV::MapObjectProfileUnkSTSV() :
+MapObjectProfileUnkSTSV::MapObjectProfileUnkSTSV() :
     MapObjectProfile(MapObjectId_STSV) {}
 
-ARM MapObjectUnkSTSV::MapObjectUnkSTSV() {}
+MapObjectUnkSTSV::MapObjectUnkSTSV() {}
 
-ARM void MapObjectUnkSTSV::func_ov084_021606e4(void) {}
-ARM void MapObjectUnkSTSV::func_ov084_02160738(void) {}
+void MapObjectUnkSTSV::func_ov084_021606e4(void) {}
+void MapObjectUnkSTSV::func_ov084_02160738(void) {}
 
-ARM MapObjectUnkSTSV::~MapObjectUnkSTSV() {}
-ARM MapObjectProfileUnkSTSV::~MapObjectProfileUnkSTSV() {}
+MapObjectUnkSTSV::~MapObjectUnkSTSV() {}
+MapObjectProfileUnkSTSV::~MapObjectProfileUnkSTSV() {}

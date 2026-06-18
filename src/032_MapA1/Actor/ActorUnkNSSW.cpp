@@ -3,41 +3,41 @@
 #include "Actor/ActorUnkNSSW.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkNSSW);
+DECL_PROFILE(ActorProfileUnkNSSW);
 
-ARM Actor *ActorProfileUnkNSSW::Create() {
+Actor *ActorProfileUnkNSSW::Create() {
     return new(HeapIndex_2) ActorUnkNSSW();
 }
 
-ARM ActorProfileUnkNSSW::ActorProfileUnkNSSW() :
+ActorProfileUnkNSSW::ActorProfileUnkNSSW() :
     ActorProfile(ActorId_NSSW) {}
 
-ARM ActorUnkNSSW::ActorUnkNSSW() {}
+ActorUnkNSSW::ActorUnkNSSW() {}
 
-ARM void ActorUnkNSSW::func_ov032_0211fefc(void) {}
-ARM void ActorUnkNSSW::func_ov032_0211ff10(void) {}
-ARM void ActorUnkNSSW::func_ov032_0211ff38(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120118(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120190(void) {}
-ARM void ActorUnkNSSW::func_ov032_0212025c(void) {}
-ARM void ActorUnkNSSW::func_ov032_021202d8(void) {}
-ARM void ActorUnkNSSW::func_ov032_021203fc(void) {}
-ARM void ActorUnkNSSW::func_ov032_0212074c(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120880(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120894(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120b34(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120b6c(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120b7c(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120bc0(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120bfc(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120c64(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120cf0(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120d24(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120d60(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120d7c(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120dbc(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120df8(void) {}
-ARM void ActorUnkNSSW::func_ov032_02120e4c(void) {}
+void ActorUnkNSSW::func_ov032_0211fefc(void) {}
+void ActorUnkNSSW::func_ov032_0211ff10(void) {}
+void ActorUnkNSSW::func_ov032_0211ff38(void) {}
+void ActorUnkNSSW::func_ov032_02120118(void) {}
+void ActorUnkNSSW::func_ov032_02120190(void) {}
+void ActorUnkNSSW::func_ov032_0212025c(void) {}
+void ActorUnkNSSW::func_ov032_021202d8(void) {}
+void ActorUnkNSSW::func_ov032_021203fc(void) {}
+void ActorUnkNSSW::func_ov032_0212074c(void) {}
+void ActorUnkNSSW::func_ov032_02120880(void) {}
+void ActorUnkNSSW::func_ov032_02120894(void) {}
+void ActorUnkNSSW::func_ov032_02120b34(void) {}
+void ActorUnkNSSW::func_ov032_02120b6c(void) {}
+void ActorUnkNSSW::func_ov032_02120b7c(void) {}
+void ActorUnkNSSW::func_ov032_02120bc0(void) {}
+void ActorUnkNSSW::func_ov032_02120bfc(void) {}
+void ActorUnkNSSW::func_ov032_02120c64(void) {}
+void ActorUnkNSSW::func_ov032_02120cf0(void) {}
+void ActorUnkNSSW::func_ov032_02120d24(void) {}
+void ActorUnkNSSW::func_ov032_02120d60(void) {}
+void ActorUnkNSSW::func_ov032_02120d7c(void) {}
+void ActorUnkNSSW::func_ov032_02120dbc(void) {}
+void ActorUnkNSSW::func_ov032_02120df8(void) {}
+void ActorUnkNSSW::func_ov032_02120e4c(void) {}
 
-ARM ActorUnkNSSW::~ActorUnkNSSW() {}
-ARM ActorProfileUnkNSSW::~ActorProfileUnkNSSW() {}
+ActorUnkNSSW::~ActorUnkNSSW() {}
+ActorProfileUnkNSSW::~ActorProfileUnkNSSW() {}

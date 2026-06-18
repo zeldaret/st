@@ -3,20 +3,20 @@
 #include "MapObject/MapObjectUnkHOSO.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkHOSO);
+DECL_PROFILE(MapObjectProfileUnkHOSO);
 
-ARM MapObject *MapObjectProfileUnkHOSO::Create() {
+MapObject *MapObjectProfileUnkHOSO::Create() {
     return new(HeapIndex_2) MapObjectUnkHOSO();
 }
 
-ARM MapObjectProfileUnkHOSO::MapObjectProfileUnkHOSO() :
+MapObjectProfileUnkHOSO::MapObjectProfileUnkHOSO() :
     MapObjectProfile(MapObjectId_HOSO) {}
 
-ARM MapObjectUnkHOSO::MapObjectUnkHOSO() {}
+MapObjectUnkHOSO::MapObjectUnkHOSO() {}
 
-ARM void MapObjectUnkHOSO::func_ov065_02159d10(void) {}
-ARM void MapObjectUnkHOSO::func_ov065_02159d60(void) {}
-ARM void MapObjectUnkHOSO::func_ov065_02159d68(void) {}
+void MapObjectUnkHOSO::func_ov065_02159d10(void) {}
+void MapObjectUnkHOSO::func_ov065_02159d60(void) {}
+void MapObjectUnkHOSO::func_ov065_02159d68(void) {}
 
-ARM MapObjectUnkHOSO::~MapObjectUnkHOSO() {}
-ARM MapObjectProfileUnkHOSO::~MapObjectProfileUnkHOSO() {}
+MapObjectUnkHOSO::~MapObjectUnkHOSO() {}
+MapObjectProfileUnkHOSO::~MapObjectProfileUnkHOSO() {}

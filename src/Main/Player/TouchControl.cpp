@@ -4,7 +4,7 @@
 #include <nitro/pad.h>
 
 // non-matching
-ARM void TouchControl::UpdateState(TouchState *state, const TPData *data) {
+void TouchControl::UpdateState(TouchState *state, const TPData *data) {
     if (data->touch == 1) {
         if (data->validity == TP_VALIDITY_VALID) {
             state->touch = true;
@@ -39,7 +39,9 @@ ARM void TouchControl::UpdateState(TouchState *state, const TPData *data) {
     }
 }
 
-THUMB TouchControl::TouchControl() {
+THUMB_BEGIN
+
+TouchControl::TouchControl() {
     this->mSpeed              = 1;
     this->mTimeBetweenTouches = -1;
     this->mTimeSinceTouch     = -1;
@@ -64,13 +66,15 @@ THUMB TouchControl::TouchControl() {
     this->mFlags           = TouchFlag_None;
 }
 
-ARM void TouchControl::IncreaseSpeed(u16 increase) {
+THUMB_END
+
+void TouchControl::IncreaseSpeed(u16 increase) {
     this->mFlags = TouchFlag_None;
     this->mSpeed += increase;
 }
 
 // non-matching
-ARM void TouchControl::UpdateFlags(u16 speed) {
+void TouchControl::UpdateFlags(u16 speed) {
     this->mFlags = TouchFlag_None;
 
     if (this->mPrevState.unk_01 == false && this->mState.unk_01 == false) {
@@ -125,23 +129,23 @@ ARM void TouchControl::UpdateFlags(u16 speed) {
     }
 }
 
-ARM void TouchControl::UpdateWithStateFlags(TPData *state, u16 speed) {
+void TouchControl::UpdateWithStateFlags(TPData *state, u16 speed) {
     this->mPrevState = this->mState;
     this->UpdateState(&this->mState, state);
     this->UpdateFlags(speed);
 }
 
-ARM void TouchControl::Update(const TouchState *state, u16 speed) {
+void TouchControl::Update(const TouchState *state, u16 speed) {
     this->mPrevState = this->mState;
     this->mState     = *state;
     this->UpdateFlags(speed);
 }
 
-ARM bool TouchControl::func_020143f0() {
+bool TouchControl::func_020143f0() {
     return PAD_DetectFold() == 1;
 }
 
-ARM void TouchControl::func_02014414(u16 speedIncrease, bool shouldIncrease) {
+void TouchControl::func_02014414(u16 speedIncrease, bool shouldIncrease) {
     TPData data;
 
     if (shouldIncrease) {
@@ -158,7 +162,7 @@ ARM void TouchControl::func_02014414(u16 speedIncrease, bool shouldIncrease) {
     this->UpdateWithStateFlags(&data, speedIncrease);
 }
 
-ARM void TouchControl::func_02014478(TouchState *state, u16 speed) {
+void TouchControl::func_02014478(TouchState *state, u16 speed) {
     TouchControl::func_020143f0();
     this->Update(state, speed);
 }

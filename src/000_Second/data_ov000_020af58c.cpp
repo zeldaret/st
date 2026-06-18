@@ -122,6 +122,6 @@ const u32 data_ov000_020af58c[] = {
     GIModel_cloB, // ItemId_EngineerUniform
 };
 
-ARM u32 func_ov000_020a4c00(ItemId itemId) {
+u32 func_ov000_020a4c00(ItemId itemId) {
     return data_ov000_020af58c[itemId];
 }

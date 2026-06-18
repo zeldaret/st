@@ -3,18 +3,18 @@
 #include "Actor/ActorUnkNPWC.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkNPWC);
+DECL_PROFILE(ActorProfileUnkNPWC);
 
-ARM Actor *ActorProfileUnkNPWC::Create() {
+Actor *ActorProfileUnkNPWC::Create() {
     return new(HeapIndex_2) ActorUnkNPWC();
 }
 
-ARM ActorProfileUnkNPWC::ActorProfileUnkNPWC() :
+ActorProfileUnkNPWC::ActorProfileUnkNPWC() :
     ActorProfile(ActorId_NPWC) {}
 
-ARM ActorUnkNPWC::ActorUnkNPWC() {}
+ActorUnkNPWC::ActorUnkNPWC() {}
 
-ARM void ActorUnkNPWC::func_ov083_0215c3b4(void) {}
+void ActorUnkNPWC::func_ov083_0215c3b4(void) {}
 
-ARM ActorUnkNPWC::~ActorUnkNPWC() {}
-ARM ActorProfileUnkNPWC::~ActorProfileUnkNPWC() {}
+ActorUnkNPWC::~ActorUnkNPWC() {}
+ActorProfileUnkNPWC::~ActorProfileUnkNPWC() {}

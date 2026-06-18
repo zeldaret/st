@@ -3,23 +3,23 @@
 #include "Actor/ActorUnkFBSC.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkFBSC);
+DECL_PROFILE(ActorProfileUnkFBSC);
 
-ARM Actor *ActorProfileUnkFBSC::Create() {
+Actor *ActorProfileUnkFBSC::Create() {
     return new(HeapIndex_2) ActorUnkFBSC();
 }
 
-ARM ActorProfileUnkFBSC::ActorProfileUnkFBSC() :
+ActorProfileUnkFBSC::ActorProfileUnkFBSC() :
     ActorProfile(ActorId_FBSC) {}
 
-ARM ActorUnkFBSC::ActorUnkFBSC() {}
+ActorUnkFBSC::ActorUnkFBSC() {}
 
-ARM void ActorUnkFBSC::func_ov058_0214aab8(void) {}
-ARM void ActorUnkFBSC::func_ov058_0214aacc(void) {}
-ARM void ActorUnkFBSC::func_ov058_0214ab04(void) {}
-ARM void ActorUnkFBSC::func_ov058_0214ab34(void) {}
-ARM void ActorUnkFBSC::func_ov058_0214ab68(void) {}
-ARM void ActorUnkFBSC::func_ov058_0214ab78(void) {}
+void ActorUnkFBSC::func_ov058_0214aab8(void) {}
+void ActorUnkFBSC::func_ov058_0214aacc(void) {}
+void ActorUnkFBSC::func_ov058_0214ab04(void) {}
+void ActorUnkFBSC::func_ov058_0214ab34(void) {}
+void ActorUnkFBSC::func_ov058_0214ab68(void) {}
+void ActorUnkFBSC::func_ov058_0214ab78(void) {}
 
-ARM ActorUnkFBSC::~ActorUnkFBSC() {}
-ARM ActorProfileUnkFBSC::~ActorProfileUnkFBSC() {}
+ActorUnkFBSC::~ActorUnkFBSC() {}
+ActorProfileUnkFBSC::~ActorProfileUnkFBSC() {}

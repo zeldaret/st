@@ -70,7 +70,7 @@ static inline s16 GetItemFlag(ItemId itemId) {
     return ItemFlag_None;
 }
 
-ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
+bool ItemManager::func_ov110_02184a40(ItemId itemId) {
     switch (itemId) {
         case ItemId_NormalKey:
             this->GiveSmallKeys(1);
@@ -435,13 +435,13 @@ static const AdventureFlag sAdvFlagItemMap[] = {
 };
 
 // non-matching
-ARM void UnkStruct_PlayerGet_74::vfunc_00(unk32 param1, unk32 param2, unk32 param3) {
+void UnkStruct_PlayerGet_74::vfunc_00(unk32 param1, unk32 param2, unk32 param3) {
     PlayerGet *unk_14 = (PlayerGet *) this->mUnk_14;
 
     func_01ffc5a0(&unk_14->mUnk_8C, unk_14->mUnk_6C, unk_14->mUnk_70, &this->mUnk_04, param3);
 }
 
-ARM PlayerGet::PlayerGet() :
+PlayerGet::PlayerGet() :
     mUnk_54(0, 0, -1, ItemId_None),
     mUnk_64(mUnk_44, -1),
     mUnk_6C(0x1000),
@@ -451,7 +451,7 @@ ARM PlayerGet::PlayerGet() :
     mUnk_74(this),
     mUnk_8C(0) {}
 
-ARM PlayerGet::~PlayerGet() {
+PlayerGet::~PlayerGet() {
     func_ov000_0205ca74(this->mUnk_54.mUnk_08);
 
     UnkStruct_027e0cec *pData_027e0cec = data_027e0cec;
@@ -476,7 +476,7 @@ ARM PlayerGet::~PlayerGet() {
 }
 
 #if IS_JP
-ARM bool PlayerGet::func_ov110_02186b8c() {
+bool PlayerGet::func_ov110_02186b8c() {
     switch (this->mUnk_54.mItemId) {
         case ItemId_NormalShield:
             if (this->mUnk_28->pItemManager->mUnk_12 & 2) {
@@ -497,7 +497,7 @@ ARM bool PlayerGet::func_ov110_02186b8c() {
 #endif
 
 // https://decomp.me/scratch/ZAW2N
-ARM void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
+void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
     ItemId itemId;
     ItemManager *pItemManager;
     Actor *pActor;
@@ -725,7 +725,7 @@ ARM void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
 
 const UnkStruct_ov110_021861ec data_ov110_021861ec(0x5E3, 0x152D, 0xCD);
 
-ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
+void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
     unk32 var_r1;
     s32 temp_r5;
     bool temp_r6;
@@ -1000,7 +1000,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
     }
 }
 
-ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
+void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
     VecFx32 auStack_18;
 
     switch (param2) {
@@ -1018,10 +1018,12 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
     }
 }
 
-ARM UnkStruct_PlayerGet_ec::UnkStruct_PlayerGet_ec() :
+UnkStruct_PlayerGet_ec::UnkStruct_PlayerGet_ec() :
     UnkSystem7(NULL) {}
 
-THUMB void UnkStruct_027e0ce0_34::func_ov110_02185d3c(ItemId itemId) {
+THUMB_BEGIN
+
+void UnkStruct_027e0ce0_34::func_ov110_02185d3c(ItemId itemId) {
     s32 flagPos;
     s16 flagValue;
 
@@ -1049,10 +1051,12 @@ THUMB void UnkStruct_027e0ce0_34::func_ov110_02185d3c(ItemId itemId) {
     }
 }
 
-ARM u32 ItemManager::GetBmgIDFromItem(ItemId itemId) {
+THUMB_END
+
+u32 ItemManager::GetBmgIDFromItem(ItemId itemId) {
     return sBMGItemMap[itemId];
 }
 
-ARM AdventureFlag ItemManager::GetAdvFlagFromItem(ItemId itemId) {
+AdventureFlag ItemManager::GetAdvFlagFromItem(ItemId itemId) {
     return sAdvFlagItemMap[itemId];
 }

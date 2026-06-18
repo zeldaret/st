@@ -3,23 +3,23 @@
 #include "Actor/ActorUnkRMDO.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRMDO);
+DECL_PROFILE(ActorProfileUnkRMDO);
 
-ARM Actor *ActorProfileUnkRMDO::Create() {
+Actor *ActorProfileUnkRMDO::Create() {
     return new(HeapIndex_2) ActorUnkRMDO();
 }
 
-ARM ActorProfileUnkRMDO::ActorProfileUnkRMDO() :
+ActorProfileUnkRMDO::ActorProfileUnkRMDO() :
     ActorProfile(ActorId_RMDO) {}
 
-ARM ActorUnkRMDO::ActorUnkRMDO() {}
+ActorUnkRMDO::ActorUnkRMDO() {}
 
-ARM void ActorUnkRMDO::func_ov088_02171ab8(void) {}
-ARM void ActorUnkRMDO::func_ov088_02171ad8(void) {}
-ARM void ActorUnkRMDO::func_ov088_02171adc(void) {}
-ARM void ActorUnkRMDO::func_ov088_02171ae0(void) {}
-ARM void ActorUnkRMDO::func_ov088_02171af4(void) {}
-ARM void ActorUnkRMDO::func_ov088_02171af8(void) {}
+void ActorUnkRMDO::func_ov088_02171ab8(void) {}
+void ActorUnkRMDO::func_ov088_02171ad8(void) {}
+void ActorUnkRMDO::func_ov088_02171adc(void) {}
+void ActorUnkRMDO::func_ov088_02171ae0(void) {}
+void ActorUnkRMDO::func_ov088_02171af4(void) {}
+void ActorUnkRMDO::func_ov088_02171af8(void) {}
 
-ARM ActorUnkRMDO::~ActorUnkRMDO() {}
-ARM ActorProfileUnkRMDO::~ActorProfileUnkRMDO() {}
+ActorUnkRMDO::~ActorUnkRMDO() {}
+ActorProfileUnkRMDO::~ActorProfileUnkRMDO() {}

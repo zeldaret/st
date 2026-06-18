@@ -3,23 +3,23 @@
 #include "Actor/ActorUnkSGMG.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkSGMG);
+DECL_PROFILE(ActorProfileUnkSGMG);
 
-ARM Actor *ActorProfileUnkSGMG::Create() {
+Actor *ActorProfileUnkSGMG::Create() {
     return new(HeapIndex_2) ActorUnkSGMG();
 }
 
-ARM ActorProfileUnkSGMG::ActorProfileUnkSGMG() :
+ActorProfileUnkSGMG::ActorProfileUnkSGMG() :
     ActorProfile(ActorId_SGMG) {}
 
-ARM ActorUnkSGMG::ActorUnkSGMG() {}
+ActorUnkSGMG::ActorUnkSGMG() {}
 
-ARM void ActorUnkSGMG::func_ov030_0214d8d0(void) {}
-ARM void ActorUnkSGMG::func_ov030_0214d8e0(void) {}
-ARM void ActorUnkSGMG::func_ov030_0214dbb4(void) {}
-ARM void ActorUnkSGMG::func_ov030_0214dc30(void) {}
-ARM void ActorUnkSGMG::func_ov030_0214dc80(void) {}
-ARM void ActorUnkSGMG::func_ov030_0214dc90(void) {}
+void ActorUnkSGMG::func_ov030_0214d8d0(void) {}
+void ActorUnkSGMG::func_ov030_0214d8e0(void) {}
+void ActorUnkSGMG::func_ov030_0214dbb4(void) {}
+void ActorUnkSGMG::func_ov030_0214dc30(void) {}
+void ActorUnkSGMG::func_ov030_0214dc80(void) {}
+void ActorUnkSGMG::func_ov030_0214dc90(void) {}
 
-ARM ActorUnkSGMG::~ActorUnkSGMG() {}
-ARM ActorProfileUnkSGMG::~ActorProfileUnkSGMG() {}
+ActorUnkSGMG::~ActorUnkSGMG() {}
+ActorProfileUnkSGMG::~ActorProfileUnkSGMG() {}

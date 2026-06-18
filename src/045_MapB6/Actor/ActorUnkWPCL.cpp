@@ -3,18 +3,18 @@
 #include "Actor/ActorUnkWPCL.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkWPCL);
+DECL_PROFILE(ActorProfileUnkWPCL);
 
-ARM Actor *ActorProfileUnkWPCL::Create() {
+Actor *ActorProfileUnkWPCL::Create() {
     return new(HeapIndex_2) ActorUnkWPCL();
 }
 
-ARM ActorProfileUnkWPCL::ActorProfileUnkWPCL() :
+ActorProfileUnkWPCL::ActorProfileUnkWPCL() :
     ActorProfile(ActorId_WPCL) {}
 
-ARM ActorUnkWPCL::ActorUnkWPCL() {}
+ActorUnkWPCL::ActorUnkWPCL() {}
 
-ARM void ActorUnkWPCL::func_ov045_02128f58(void) {}
+void ActorUnkWPCL::func_ov045_02128f58(void) {}
 
-ARM ActorUnkWPCL::~ActorUnkWPCL() {}
-ARM ActorProfileUnkWPCL::~ActorProfileUnkWPCL() {}
+ActorUnkWPCL::~ActorUnkWPCL() {}
+ActorProfileUnkWPCL::~ActorProfileUnkWPCL() {}

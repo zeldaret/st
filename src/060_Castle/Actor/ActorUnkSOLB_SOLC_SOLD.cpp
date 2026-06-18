@@ -5,43 +5,43 @@
 
 // --- Actor SOLB ---
 
-ARM DECL_PROFILE(ActorProfileUnkSOLB);
+DECL_PROFILE(ActorProfileUnkSOLB);
 
-ARM Actor *ActorProfileUnkSOLB::Create() {
+Actor *ActorProfileUnkSOLB::Create() {
     return new(HeapIndex_2) ActorUnkSOLB();
 }
 
-ARM ActorProfileUnkSOLB::ActorProfileUnkSOLB() :
+ActorProfileUnkSOLB::ActorProfileUnkSOLB() :
     ActorProfile_Derived1(ActorId_SoldierBoy) {}
 
-ARM ActorUnkSOLB::ActorUnkSOLB() {}
+ActorUnkSOLB::ActorUnkSOLB() {}
 
 // --- Actor SOLC ---
 
-ARM DECL_PROFILE(ActorProfileUnkSOLC);
+DECL_PROFILE(ActorProfileUnkSOLC);
 
-ARM Actor *ActorProfileUnkSOLC::Create() {
+Actor *ActorProfileUnkSOLC::Create() {
     return new(HeapIndex_2) ActorUnkSOLC();
 }
 
-ARM ActorProfileUnkSOLC::ActorProfileUnkSOLC() :
+ActorProfileUnkSOLC::ActorProfileUnkSOLC() :
     ActorProfile_Derived1(ActorId_SOLC) {}
 
-ARM ActorUnkSOLC::ActorUnkSOLC() {}
+ActorUnkSOLC::ActorUnkSOLC() {}
 
 // --- Actor SOLD ---
 
-ARM DECL_PROFILE(ActorProfileUnkSOLD);
+DECL_PROFILE(ActorProfileUnkSOLD);
 
-ARM Actor *ActorProfileUnkSOLD::Create() {
+Actor *ActorProfileUnkSOLD::Create() {
     return new(HeapIndex_2) ActorUnkSOLD();
 }
 
-ARM ActorProfileUnkSOLD::ActorProfileUnkSOLD() :
+ActorProfileUnkSOLD::ActorProfileUnkSOLD() :
     ActorProfile_Derived1(ActorId_Soldier) {}
 
-ARM ActorUnkSOLD::ActorUnkSOLD() {}
+ActorUnkSOLD::ActorUnkSOLD() {}
 
-ARM ActorProfileUnkSOLB::~ActorProfileUnkSOLB() {}
-ARM ActorProfileUnkSOLC::~ActorProfileUnkSOLC() {}
-ARM ActorProfileUnkSOLD::~ActorProfileUnkSOLD() {}
+ActorProfileUnkSOLB::~ActorProfileUnkSOLB() {}
+ActorProfileUnkSOLC::~ActorProfileUnkSOLC() {}
+ActorProfileUnkSOLD::~ActorProfileUnkSOLD() {}

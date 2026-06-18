@@ -3,18 +3,18 @@
 #include "Actor/ActorUnkE3ST.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkE3ST);
+DECL_PROFILE(ActorProfileUnkE3ST);
 
-ARM Actor *ActorProfileUnkE3ST::Create() {
+Actor *ActorProfileUnkE3ST::Create() {
     return new(HeapIndex_2) ActorUnkE3ST();
 }
 
-ARM ActorProfileUnkE3ST::ActorProfileUnkE3ST() :
+ActorProfileUnkE3ST::ActorProfileUnkE3ST() :
     ActorProfile(ActorId_E3ST) {}
 
-ARM ActorUnkE3ST::ActorUnkE3ST() {}
+ActorUnkE3ST::ActorUnkE3ST() {}
 
-ARM void ActorUnkE3ST::func_ov090_02171510(void) {}
+void ActorUnkE3ST::func_ov090_02171510(void) {}
 
-ARM ActorUnkE3ST::~ActorUnkE3ST() {}
-ARM ActorProfileUnkE3ST::~ActorProfileUnkE3ST() {}
+ActorUnkE3ST::~ActorUnkE3ST() {}
+ActorProfileUnkE3ST::~ActorProfileUnkE3ST() {}

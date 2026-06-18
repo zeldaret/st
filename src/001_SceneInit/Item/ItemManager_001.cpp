@@ -4,7 +4,9 @@
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 
-THUMB void ItemManager::func_ov001_020bb9f8() {
+THUMB_BEGIN
+
+void ItemManager::func_ov001_020bb9f8() {
     if (data_027e09a4->IsNotCutscene() && gOverlayManager.mLoadedOverlays[OverlaySlot_10] != OverlayIndex_PlayerPhantom) {
         this->mTearsAmount = 0;
     }
@@ -21,3 +23,5 @@ THUMB void ItemManager::func_ov001_020bb9f8() {
         this->mKeyAmount = MAX_KEYS;
     }
 }
+
+THUMB_END

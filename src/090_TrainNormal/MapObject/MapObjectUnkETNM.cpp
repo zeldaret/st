@@ -3,18 +3,18 @@
 #include "MapObject/MapObjectUnkETNM.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkETNM);
+DECL_PROFILE(MapObjectProfileUnkETNM);
 
-ARM MapObject *MapObjectProfileUnkETNM::Create() {
+MapObject *MapObjectProfileUnkETNM::Create() {
     return new(HeapIndex_2) MapObjectUnkETNM();
 }
 
-ARM MapObjectProfileUnkETNM::MapObjectProfileUnkETNM() :
+MapObjectProfileUnkETNM::MapObjectProfileUnkETNM() :
     MapObjectProfile(MapObjectId_ETNM) {}
 
-ARM MapObjectUnkETNM::MapObjectUnkETNM() {}
+MapObjectUnkETNM::MapObjectUnkETNM() {}
 
-ARM void MapObjectUnkETNM::func_ov090_021752cc(void) {}
+void MapObjectUnkETNM::func_ov090_021752cc(void) {}
 
-ARM MapObjectUnkETNM::~MapObjectUnkETNM() {}
-ARM MapObjectProfileUnkETNM::~MapObjectProfileUnkETNM() {}
+MapObjectUnkETNM::~MapObjectUnkETNM() {}
+MapObjectProfileUnkETNM::~MapObjectProfileUnkETNM() {}

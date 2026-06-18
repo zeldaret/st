@@ -23,11 +23,11 @@ static const Vec2pCpp data_ov031_02115830(0x800, 0x800);
 static const UnkStruct_ov031_02117c84 data_ov031_02117c84(0x3C);
 static const CellAnimObject data_ov031_02115c84;
 
-ARM MapObjectTreasureSpawned_74::MapObjectTreasureSpawned_74(G3d_Model *param1) :
+MapObjectTreasureSpawned_74::MapObjectTreasureSpawned_74(G3d_Model *param1) :
     ModelRender(param1),
     mUnk_60(1) {}
 
-ARM void MapObjectTreasureSpawned_74::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
+void MapObjectTreasureSpawned_74::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
     unk32 iVar1;
     unk32 uVar2;
 
@@ -50,11 +50,11 @@ ARM void MapObjectTreasureSpawned_74::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
     }
 }
 
-ARM void MapObjectTreasureSpawned_74::func_ov031_0210306c() {
+void MapObjectTreasureSpawned_74::func_ov031_0210306c() {
     func_0200b58c(&this->mRenderObj);
 }
 
-ARM MapObjectChestBase::MapObjectChestBase(unk32 param1) :
+MapObjectChestBase::MapObjectChestBase(unk32 param1) :
     mUnk_040(0),
     mUnk_044(-1),
     mUnk_048(param1),
@@ -65,9 +65,9 @@ ARM MapObjectChestBase::MapObjectChestBase(unk32 param1) :
     this->mUnk_0DC.func_ov000_0206082c(0x5D, 0x05);
 }
 
-ARM MapObjectChestBase::~MapObjectChestBase() {}
+MapObjectChestBase::~MapObjectChestBase() {}
 
-ARM bool MapObjectChestBase::vfunc_00() {
+bool MapObjectChestBase::vfunc_00() {
     SET_FLAG(this->mFlags, MapObjFlag_9);
     this->mUnk_18[0] = 0x0D;
 
@@ -89,7 +89,7 @@ ARM bool MapObjectChestBase::vfunc_00() {
 }
 
 // non-matching
-ARM void MapObjectChestBase::vfunc_04() {
+void MapObjectChestBase::vfunc_04() {
     fx32 iVar2;
     UnkStruct_027e0cd8_0c *pUVar5;
     VecFx32 sp48;
@@ -194,17 +194,17 @@ ARM void MapObjectChestBase::vfunc_04() {
     this->mUnk_10          = &this->mUnk_050;
 }
 
-ARM void MapObjectChestBase::vfunc_08() {}
+void MapObjectChestBase::vfunc_08() {}
 
-ARM void MapObjectChestBase::vfunc_0C() {
+void MapObjectChestBase::vfunc_0C() {
     this->vfunc_08();
 }
 
-ARM unk32 MapObjectChestBase::vfunc_28() {
+unk32 MapObjectChestBase::vfunc_28() {
     return this->func_ov031_021037d0();
 }
 
-ARM ItemId MapObjectChestBase::func_ov031_021037d0() {
+ItemId MapObjectChestBase::func_ov031_021037d0() {
     switch (this->mUnk_16) {
         case 0:
         case 1:
@@ -229,41 +229,41 @@ ARM ItemId MapObjectChestBase::func_ov031_021037d0() {
     return this->mItemId;
 }
 
-ARM bool MapObjectChestBase::func_ov031_02103864() {
+bool MapObjectChestBase::func_ov031_02103864() {
     return this->mUnk_16 == 8 ? true : false;
 }
 
-ARM void MapObjectChestBase::func_ov031_02103878() {
+void MapObjectChestBase::func_ov031_02103878() {
     this->vfunc_38(8, 1);
 }
 
-ARM void MapObjectChestBase::vfunc_38(unk32 param1, unk32 param2) {}
-ARM void MapObjectChestBase::vfunc_18(s8 *param1, s8 param2) {}
-ARM void MapObjectChestBase::vfunc_14() {}
-ARM unk32 MapObjectChestBase::vfunc_3C() {}
+void MapObjectChestBase::vfunc_38(unk32 param1, unk32 param2) {}
+void MapObjectChestBase::vfunc_18(s8 *param1, s8 param2) {}
+void MapObjectChestBase::vfunc_14() {}
+unk32 MapObjectChestBase::vfunc_3C() {}
 
-ARM bool MapObjectChestBase::vfunc_40() {
+bool MapObjectChestBase::vfunc_40() {
     return true;
 }
 
-ARM bool MapObjectChestBase::vfunc_44() {
+bool MapObjectChestBase::vfunc_44() {
     return false;
 }
 
-ARM void MapObjectChestBase::func_ov031_02103f48() {
+void MapObjectChestBase::func_ov031_02103f48() {
     VecFx32 local_10;
     VecFx32_Init(this->mPos.x, this->mPos.y + 0x800, this->mPos.z, &local_10);
     data_027e0cec->func_ov000_0209feac(0x81F, &local_10, 4, 0, 0);
 }
 
-ARM void MapObjectChestBase::vfunc_4C() {
+void MapObjectChestBase::vfunc_4C() {
     data_027e09a8->func_ov000_02071b30(0x150, &this->mPos, 0);
 }
 
-ARM void MapObjectChestBase::vfunc_50() {
+void MapObjectChestBase::vfunc_50() {
     data_027e09a8->func_ov000_02071b30(0x151, &this->mPos, 0);
 }
 
-ARM Vec2p *MapObjectChestBase::vfunc_54() {
+Vec2p *MapObjectChestBase::vfunc_54() {
     return (Vec2p *) &data_ov031_02115830;
 }

@@ -3,29 +3,29 @@
 #include "MapObject/MapObjectUnkPRSH.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkPRSH);
+DECL_PROFILE(MapObjectProfileUnkPRSH);
 
-ARM MapObject *MapObjectProfileUnkPRSH::Create() {
+MapObject *MapObjectProfileUnkPRSH::Create() {
     return new(HeapIndex_2) MapObjectUnkPRSH();
 }
 
-ARM MapObjectProfileUnkPRSH::MapObjectProfileUnkPRSH() :
+MapObjectProfileUnkPRSH::MapObjectProfileUnkPRSH() :
     MapObjectProfile(MapObjectId_PRSH) {}
 
-ARM MapObjectUnkPRSH::MapObjectUnkPRSH() {}
+MapObjectUnkPRSH::MapObjectUnkPRSH() {}
 
-ARM void MapObjectUnkPRSH::func_ov081_021520ec(void) {}
-ARM void MapObjectUnkPRSH::func_ov081_021521cc(void) {}
-ARM void MapObjectUnkPRSH::func_ov081_02152334(void) {}
-ARM void MapObjectUnkPRSH::func_ov081_021523b4(void) {}
-ARM void MapObjectUnkPRSH::func_ov081_0215243c(void) {}
-ARM void MapObjectUnkPRSH::func_ov081_02152444(void) {}
-ARM void MapObjectUnkPRSH::func_ov081_02152570(void) {}
-ARM void MapObjectUnkPRSH::func_ov081_02152574(void) {}
-ARM void MapObjectUnkPRSH::func_ov081_021525e0(void) {}
-ARM void MapObjectUnkPRSH::func_ov081_02152600(void) {}
-ARM void MapObjectUnkPRSH::func_ov081_02152610(void) {}
-ARM void MapObjectUnkPRSH::func_ov081_02152698(void) {}
+void MapObjectUnkPRSH::func_ov081_021520ec(void) {}
+void MapObjectUnkPRSH::func_ov081_021521cc(void) {}
+void MapObjectUnkPRSH::func_ov081_02152334(void) {}
+void MapObjectUnkPRSH::func_ov081_021523b4(void) {}
+void MapObjectUnkPRSH::func_ov081_0215243c(void) {}
+void MapObjectUnkPRSH::func_ov081_02152444(void) {}
+void MapObjectUnkPRSH::func_ov081_02152570(void) {}
+void MapObjectUnkPRSH::func_ov081_02152574(void) {}
+void MapObjectUnkPRSH::func_ov081_021525e0(void) {}
+void MapObjectUnkPRSH::func_ov081_02152600(void) {}
+void MapObjectUnkPRSH::func_ov081_02152610(void) {}
+void MapObjectUnkPRSH::func_ov081_02152698(void) {}
 
-ARM MapObjectUnkPRSH::~MapObjectUnkPRSH() {}
-ARM MapObjectProfileUnkPRSH::~MapObjectProfileUnkPRSH() {}
+MapObjectUnkPRSH::~MapObjectUnkPRSH() {}
+MapObjectProfileUnkPRSH::~MapObjectProfileUnkPRSH() {}

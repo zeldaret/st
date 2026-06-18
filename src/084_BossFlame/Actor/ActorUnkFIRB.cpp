@@ -3,26 +3,26 @@
 #include "Actor/ActorUnkFIRB.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkFIRB);
+DECL_PROFILE(ActorProfileUnkFIRB);
 
-ARM Actor *ActorProfileUnkFIRB::Create() {
+Actor *ActorProfileUnkFIRB::Create() {
     return new(HeapIndex_2) ActorUnkFIRB();
 }
 
-ARM ActorProfileUnkFIRB::ActorProfileUnkFIRB() :
+ActorProfileUnkFIRB::ActorProfileUnkFIRB() :
     ActorProfile_Derived1(ActorId_FIRB) {}
 
-ARM ActorUnkFIRB::ActorUnkFIRB() {}
+ActorUnkFIRB::ActorUnkFIRB() {}
 
-ARM void ActorUnkFIRB::func_ov084_0215a564(void) {}
-ARM void ActorUnkFIRB::func_ov084_0215a59c(void) {}
-ARM void ActorUnkFIRB::func_ov084_0215a5c0(void) {}
-ARM void ActorUnkFIRB::func_ov084_0215a774(void) {}
-ARM void ActorUnkFIRB::func_ov084_0215a7a8(void) {}
-ARM void ActorUnkFIRB::func_ov084_0215a880(void) {}
-ARM void ActorUnkFIRB::func_ov084_0215ab68(void) {}
-ARM void ActorUnkFIRB::func_ov084_0215ab70(void) {}
-ARM void ActorUnkFIRB::func_ov084_0215aba0(void) {}
+void ActorUnkFIRB::func_ov084_0215a564(void) {}
+void ActorUnkFIRB::func_ov084_0215a59c(void) {}
+void ActorUnkFIRB::func_ov084_0215a5c0(void) {}
+void ActorUnkFIRB::func_ov084_0215a774(void) {}
+void ActorUnkFIRB::func_ov084_0215a7a8(void) {}
+void ActorUnkFIRB::func_ov084_0215a880(void) {}
+void ActorUnkFIRB::func_ov084_0215ab68(void) {}
+void ActorUnkFIRB::func_ov084_0215ab70(void) {}
+void ActorUnkFIRB::func_ov084_0215aba0(void) {}
 
-ARM ActorUnkFIRB::~ActorUnkFIRB() {}
-ARM ActorProfileUnkFIRB::~ActorProfileUnkFIRB() {}
+ActorUnkFIRB::~ActorUnkFIRB() {}
+ActorProfileUnkFIRB::~ActorProfileUnkFIRB() {}

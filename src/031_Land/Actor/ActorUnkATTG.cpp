@@ -3,22 +3,22 @@
 #include "Actor/ActorUnkATTG.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkATTG);
+DECL_PROFILE(ActorProfileUnkATTG);
 
-ARM Actor *ActorProfileUnkATTG::Create() {
+Actor *ActorProfileUnkATTG::Create() {
     return new(HeapIndex_2) ActorUnkATTG();
 }
 
-ARM ActorProfileUnkATTG::ActorProfileUnkATTG() :
+ActorProfileUnkATTG::ActorProfileUnkATTG() :
     ActorProfile(ActorId_ATTG) {}
 
-ARM ActorUnkATTG::ActorUnkATTG() {}
+ActorUnkATTG::ActorUnkATTG() {}
 
-ARM void ActorUnkATTG::func_ov031_020f3dfc(void) {}
-ARM void ActorUnkATTG::func_ov031_020f3e50(void) {}
-ARM void ActorUnkATTG::func_ov031_020f3eac(void) {}
-ARM void ActorUnkATTG::func_ov031_020f3eec(void) {}
-ARM void ActorUnkATTG::func_ov031_020f4014(void) {}
+void ActorUnkATTG::func_ov031_020f3dfc(void) {}
+void ActorUnkATTG::func_ov031_020f3e50(void) {}
+void ActorUnkATTG::func_ov031_020f3eac(void) {}
+void ActorUnkATTG::func_ov031_020f3eec(void) {}
+void ActorUnkATTG::func_ov031_020f4014(void) {}
 
-ARM ActorUnkATTG::~ActorUnkATTG() {}
-ARM ActorProfileUnkATTG::~ActorProfileUnkATTG() {}
+ActorUnkATTG::~ActorUnkATTG() {}
+ActorProfileUnkATTG::~ActorProfileUnkATTG() {}

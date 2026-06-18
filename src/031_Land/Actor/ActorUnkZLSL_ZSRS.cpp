@@ -5,29 +5,33 @@
 
 // --- Actor ZSRS ---
 
-THUMB DECL_PROFILE(ActorProfileUnkZSRS);
+THUMB_BEGIN
 
-THUMB Actor *ActorProfileUnkZSRS::Create() {
+DECL_PROFILE(ActorProfileUnkZSRS);
+
+Actor *ActorProfileUnkZSRS::Create() {
     return NULL;
 }
 
-THUMB ActorProfileUnkZSRS::ActorProfileUnkZSRS() :
+ActorProfileUnkZSRS::ActorProfileUnkZSRS() :
     ActorProfile_Derived1(ActorId_ZSRS, ActorId_ZSRS) {}
 
-THUMB ActorUnkZSRS::ActorUnkZSRS() {}
+ActorUnkZSRS::ActorUnkZSRS() {}
 
 // --- Actor ZLSL ---
 
-THUMB DECL_PROFILE(ActorProfileUnkZLSL);
+DECL_PROFILE(ActorProfileUnkZLSL);
 
-THUMB Actor *ActorProfileUnkZLSL::Create() {
+Actor *ActorProfileUnkZLSL::Create() {
     return new(HeapIndex_2) ActorUnkZLSL();
 }
 
-THUMB ActorProfileUnkZLSL::ActorProfileUnkZLSL() :
+ActorProfileUnkZLSL::ActorProfileUnkZLSL() :
     ActorProfile_Derived1(ActorId_ZLSL) {}
 
-THUMB ActorUnkZLSL::ActorUnkZLSL() {}
+ActorUnkZLSL::ActorUnkZLSL() {}
 
-ARM ActorProfileUnkZLSL::~ActorProfileUnkZLSL() {}
-ARM ActorProfileUnkZSRS::~ActorProfileUnkZSRS() {}
+THUMB_END
+
+ActorProfileUnkZLSL::~ActorProfileUnkZLSL() {}
+ActorProfileUnkZSRS::~ActorProfileUnkZSRS() {}

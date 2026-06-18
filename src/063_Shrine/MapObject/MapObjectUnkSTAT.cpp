@@ -3,24 +3,24 @@
 #include "MapObject/MapObjectUnkSTAT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkSTAT);
+DECL_PROFILE(MapObjectProfileUnkSTAT);
 
-ARM MapObject *MapObjectProfileUnkSTAT::Create() {
+MapObject *MapObjectProfileUnkSTAT::Create() {
     return new(HeapIndex_2) MapObjectUnkSTAT();
 }
 
-ARM MapObjectProfileUnkSTAT::MapObjectProfileUnkSTAT() :
+MapObjectProfileUnkSTAT::MapObjectProfileUnkSTAT() :
     MapObjectProfile(MapObjectId_STAT) {}
 
-ARM MapObjectUnkSTAT::MapObjectUnkSTAT() {}
+MapObjectUnkSTAT::MapObjectUnkSTAT() {}
 
-ARM void MapObjectUnkSTAT::func_ov063_0215f6d0(void) {}
-ARM void MapObjectUnkSTAT::func_ov063_0215f710(void) {}
-ARM void MapObjectUnkSTAT::func_ov063_0215f798(void) {}
-ARM void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {}
-ARM void MapObjectUnkSTAT::func_ov063_0215fc40(void) {}
-ARM void MapObjectUnkSTAT::func_ov063_0215fc88(void) {}
-ARM void MapObjectUnkSTAT::func_ov063_0215fce0(void) {}
+void MapObjectUnkSTAT::func_ov063_0215f6d0(void) {}
+void MapObjectUnkSTAT::func_ov063_0215f710(void) {}
+void MapObjectUnkSTAT::func_ov063_0215f798(void) {}
+void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {}
+void MapObjectUnkSTAT::func_ov063_0215fc40(void) {}
+void MapObjectUnkSTAT::func_ov063_0215fc88(void) {}
+void MapObjectUnkSTAT::func_ov063_0215fce0(void) {}
 
-ARM MapObjectUnkSTAT::~MapObjectUnkSTAT() {}
-ARM MapObjectProfileUnkSTAT::~MapObjectProfileUnkSTAT() {}
+MapObjectUnkSTAT::~MapObjectUnkSTAT() {}
+MapObjectProfileUnkSTAT::~MapObjectProfileUnkSTAT() {}

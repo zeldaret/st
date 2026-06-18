@@ -93,12 +93,12 @@ static PTMF<FileSelectOptions> data_ov019_020d2188[FSOptionsState_Max] = {
     FileSelectOptions::func_ov019_020cdcb8, // FSOptionsState_SaveSettings
 };
 
-ARM GameModeManagerBase_104 *FileSelectOptionsManager::Create(void *param1, s32 saveSlotIndex) {
+GameModeManagerBase_104 *FileSelectOptionsManager::Create(void *param1, s32 saveSlotIndex) {
     return new(HeapIndex_1) FileSelectOptionsManager(param1, saveSlotIndex);
 }
 
 //! TODO: move to class
-ARM FileSelectOptionsManager::FileSelectOptionsManager(void *param1, s32 saveSlotIndex) {
+FileSelectOptionsManager::FileSelectOptionsManager(void *param1, s32 saveSlotIndex) {
     this->mUnk_24   = (GameModeManagerBase_104 *) param1;
     this->mUnk_1C   = 0;
     this->mUnk_20   = 0;
@@ -110,12 +110,12 @@ ARM FileSelectOptionsManager::FileSelectOptionsManager(void *param1, s32 saveSlo
     var_r5->vfunc_18();
 }
 
-ARM FileSelectOptionsManager::~FileSelectOptionsManager() {
+FileSelectOptionsManager::~FileSelectOptionsManager() {
     DELETE(this->mpMicTest);
     DELETE(this->mpOptions);
 }
 
-ARM void FileSelectOptionsManager::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
+void FileSelectOptionsManager::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     if (this->mUnk_20 == 0) {
         return;
     }
@@ -145,18 +145,18 @@ ARM void FileSelectOptionsManager::vfunc_08(Input *pButtons, TouchControl *pTouc
     }
 }
 
-ARM void FileSelectOptionsManager::func_ov019_020cc85c(unk32 param1) {
+void FileSelectOptionsManager::func_ov019_020cc85c(unk32 param1) {
     if (this->mUnk_1C != param1) {
         this->mUnk_1C = param1;
         this->mUnk_20 = 1;
     }
 }
 
-ARM unk32 FileSelectOptionsManager::func_ov019_020cc874() {
+unk32 FileSelectOptionsManager::func_ov019_020cc874() {
     return this->mpOptions->mUnk_0020;
 }
 
-ARM FileSelectOptions::FileSelectOptions(s32 saveSlotIndex) :
+FileSelectOptions::FileSelectOptions(s32 saveSlotIndex) :
     mState(FSOptionsState_OptionsFromChooseMode),
     mUnk_0020(false),
     mUnk_0024(&this->mUnk_0C, saveSlotIndex),
@@ -190,22 +190,22 @@ ARM FileSelectOptions::FileSelectOptions(s32 saveSlotIndex) :
     this->func_ov019_020ccd40();
 }
 
-ARM FileSelectOptions::~FileSelectOptions() {
+FileSelectOptions::~FileSelectOptions() {
     this->mUnk_1AB8.mUnk_04.func_0201f498();
     this->mUnk_1794.mUnk_04.func_0201f498();
     this->mUnk_1470.mUnk_04.func_0201f498();
     this->mUnk_1108.mUnk_04.func_0201f498();
 }
 
-ARM void FileSelectOptions::func_ov019_020ccd40() {
+void FileSelectOptions::func_ov019_020ccd40() {
     CALL_PTMF(PTMF<FileSelectOptions>, data_ov019_020d21c0[this->mState]);
 }
 
-ARM void FileSelectOptions::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
+void FileSelectOptions::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     CALL_PTMF(PTMF<FileSelectOptions>, data_ov019_020d2188[this->mState]);
 }
 
-ARM void FileSelectOptions::vfunc_10(unk8 *param1) {
+void FileSelectOptions::vfunc_10(unk8 *param1) {
     this->mUnk_0024.func_ov019_020ce4dc();
     this->mUnk_1108.func_ov000_02062f30();
     this->mUnk_1794.func_ov000_02062f30();
@@ -213,11 +213,11 @@ ARM void FileSelectOptions::vfunc_10(unk8 *param1) {
     this->mUnk_1470.func_ov000_02062f30();
 }
 
-ARM void FileSelectOptions::func_ov019_020ccdf4() {
+void FileSelectOptions::func_ov019_020ccdf4() {
     this->func_ov019_020cde8c(FSOptionsState_OptionsToChooseMode);
 }
 
-ARM void FileSelectOptions::func_ov019_020cce04() {
+void FileSelectOptions::func_ov019_020cce04() {
     this->mUnk_0024.func_ov019_020ce7d4(1);
     this->mUnk_1388.mUnk_2A = true;
     this->mUnk_16AC.mUnk_2A = true;
@@ -226,7 +226,7 @@ ARM void FileSelectOptions::func_ov019_020cce04() {
 
 extern s16 data_ov019_020d215c_2[];
 
-ARM void FileSelectOptions::func_ov019_020cce30() {
+void FileSelectOptions::func_ov019_020cce30() {
     Vec2s local_48;
     func_ov000_02062e44(&local_48, &this->mUnk_10A8);
     Vec2us sVar2_1;
@@ -317,7 +317,7 @@ ARM void FileSelectOptions::func_ov019_020cce30() {
     this->mUnk_1A68.func_ov000_02064080(&auStack_84, &local_44, 0x14, 4);
 }
 
-ARM void FileSelectOptions::func_ov019_020cd16c() {
+void FileSelectOptions::func_ov019_020cd16c() {
     u16 uVar1;
     u16 uVar2;
     Vec2s local_6c;
@@ -384,7 +384,7 @@ ARM void FileSelectOptions::func_ov019_020cd16c() {
     this->mUnk_1A68.func_ov000_02064080(&local_44, &local_40, 0x14, 2);
 }
 
-ARM void FileSelectOptions::func_ov019_020cd41c() {
+void FileSelectOptions::func_ov019_020cd41c() {
     Vec2s local_40;
     Vec2us local_3c;
     UnkStruct_ov019_020d24c8_28_258 local_34(0x8C, 0x00);
@@ -424,11 +424,11 @@ ARM void FileSelectOptions::func_ov019_020cd41c() {
     this->mUnk_1A68.func_ov000_0206415c(&local_38, 0, 0x0C, 0);
 }
 
-ARM void FileSelectOptions::func_ov019_020cd5f8() {
+void FileSelectOptions::func_ov019_020cd5f8() {
     gpFSOptionsManager->func_ov019_020cc85c(1);
 }
 
-ARM void FileSelectOptions::func_ov019_020cd614() {
+void FileSelectOptions::func_ov019_020cd614() {
     Vec2us local_34;
     Vec2s local_38;
     Vec2us local_3c;
@@ -464,7 +464,7 @@ ARM void FileSelectOptions::func_ov019_020cd614() {
     this->mUnk_1A68.func_ov000_0206415c(&local_34, 0, 0xC, 0);
 }
 
-ARM void FileSelectOptions::func_ov019_020cd788() {
+void FileSelectOptions::func_ov019_020cd788() {
     data_ov000_020b504c.mUnk_030 = this->mUnk_0024.mUnk_FC0;
 
     UnkStruct_ov000_02067bc4::UnkStruct1 stack1;
@@ -476,7 +476,7 @@ ARM void FileSelectOptions::func_ov019_020cd788() {
     this->mUnk_19D0.mUnk_2A = false;
 }
 
-ARM void FileSelectOptions::func_ov019_020cd7f8() {
+void FileSelectOptions::func_ov019_020cd7f8() {
     switch (data_0204a110.func_01ff9b50()) {
         case BTN_ID_RETURN:
             SaveFile_00000_2600_Data *pSaveSub17 = gSaveManager.GetSaveSlot(this->mUnk_0024.mSaveSlotIndex)->Get2600Ptr();
@@ -501,7 +501,7 @@ ARM void FileSelectOptions::func_ov019_020cd7f8() {
     this->mUnk_0024.func_ov019_020ce414();
 }
 
-ARM void FileSelectOptions::func_ov019_020cd8d4() {
+void FileSelectOptions::func_ov019_020cd8d4() {
     this->mUnk_1064.Update(&this->mUnk_0024.mUnk_004);
     this->mUnk_1420.func_ov000_02063f64();
     this->mUnk_1744.func_ov000_02063f64();
@@ -509,7 +509,7 @@ ARM void FileSelectOptions::func_ov019_020cd8d4() {
     this->mUnk_1344.Update(&this->mUnk_10A8.mPos);
 }
 
-ARM bool FileSelectOptions::func_ov019_020cdbdc() {
+bool FileSelectOptions::func_ov019_020cdbdc() {
     if (!this->mUnk_1064.mUnk_0A && !this->mUnk_1420.mUnk_08 && !this->mUnk_1744.mUnk_08 && !this->mUnk_1A68.mUnk_08) {
         return true;
     }
@@ -517,7 +517,7 @@ ARM bool FileSelectOptions::func_ov019_020cdbdc() {
     return false;
 }
 
-ARM void FileSelectOptions::func_ov019_020cdc0c() {
+void FileSelectOptions::func_ov019_020cdc0c() {
     this->func_ov019_020cd8d4();
 
     if (this->func_ov019_020cdbdc()) {
@@ -525,7 +525,7 @@ ARM void FileSelectOptions::func_ov019_020cdc0c() {
     }
 }
 
-ARM void FileSelectOptions::func_ov019_020cdc38() {
+void FileSelectOptions::func_ov019_020cdc38() {
     this->func_ov019_020cd8d4();
 
     if (this->func_ov019_020cdbdc()) {
@@ -533,9 +533,9 @@ ARM void FileSelectOptions::func_ov019_020cdc38() {
     }
 }
 
-ARM void FileSelectOptions::func_ov019_020cdc5c() {}
+void FileSelectOptions::func_ov019_020cdc5c() {}
 
-ARM void FileSelectOptions::func_ov019_020cdc60() {
+void FileSelectOptions::func_ov019_020cdc60() {
     this->func_ov019_020cd8d4();
 
     if (this->func_ov019_020cdbdc()) {
@@ -543,7 +543,7 @@ ARM void FileSelectOptions::func_ov019_020cdc60() {
     }
 }
 
-ARM void FileSelectOptions::func_ov019_020cdc8c() {
+void FileSelectOptions::func_ov019_020cdc8c() {
     this->func_ov019_020cd8d4();
 
     if (this->func_ov019_020cdbdc()) {
@@ -551,7 +551,7 @@ ARM void FileSelectOptions::func_ov019_020cdc8c() {
     }
 }
 
-ARM void FileSelectOptions::func_ov019_020cdcb8() {
+void FileSelectOptions::func_ov019_020cdcb8() {
     if (this->mUnk_1CF5) {
         if (gSaveManager.mUnk_210 == 0 ? 1 : 0) {
             data_ov000_020b504c.func_ov000_02067e60(this->mUnk_1CF4, 0);
@@ -584,16 +584,16 @@ ARM void FileSelectOptions::func_ov019_020cdcb8() {
     }
 }
 
-ARM void FileSelectOptions::func_ov019_020cde8c(FSOptionsState state) {
+void FileSelectOptions::func_ov019_020cde8c(FSOptionsState state) {
     this->mState = state;
     this->func_ov019_020ccd40();
 }
 
-ARM void FileSelectOptions::func_ov019_020cde9c() {
+void FileSelectOptions::func_ov019_020cde9c() {
     this->func_ov019_020cde8c(FSOptionsState_OptionsFromMicTest);
 }
 
-ARM UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManagerBase_104_0C *param1, s32 saveSlotIndex) :
+UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManagerBase_104_0C *param1, s32 saveSlotIndex) :
     mSaveSlotIndex(saveSlotIndex),
     mUnk_004(0, 0),
     mUnk_008(0, 0),
@@ -701,7 +701,7 @@ ARM UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManag
     }
 }
 
-ARM UnkStruct_ov019_020d24c8_2C_24::~UnkStruct_ov019_020d24c8_2C_24() {
+UnkStruct_ov019_020d24c8_2C_24::~UnkStruct_ov019_020d24c8_2C_24() {
     this->mUnk_CB8.func_0201f498();
     this->mUnk_788.func_0201f498();
     this->mUnk_258.func_0201f498();
@@ -718,7 +718,7 @@ ARM UnkStruct_ov019_020d24c8_2C_24::~UnkStruct_ov019_020d24c8_2C_24() {
     }
 }
 
-ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce414() {
+void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce414() {
     switch (data_0204a110.func_01ff9b50()) {
         case BTN_ID_FILE_SELECT_MESG_SPEED_LEFT_ARROW:
             this->func_ov019_020ce61c(1);
@@ -756,7 +756,7 @@ struct stack_struct {
 };
 
 // non-matching
-ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce4dc() {
+void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce4dc() {
     for (int i = 0; i < ARRAY_LEN(this->mUnk_FB0->mUnk_00); i++) {
         UnkSystem2_UnkSubSystem5 *ptr = this->mUnk_FB0->mUnk_00[i];
         Vec2s local_2c;
@@ -804,7 +804,7 @@ ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce4dc() {
     data_0204af1c.func_0201aa44(&this->mUnk_008, &this->mUnk_004, 2, &sp8);
 }
 
-ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce61c(bool decrement) {
+void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce61c(bool decrement) {
     int uVar2;
 
     if (decrement) {
@@ -822,7 +822,7 @@ ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce61c(bool decrement) {
     this->mUnk_258.func_0201fa70(this->func_ov019_020ce704(this->mUnk_FC0 = uVar2));
 }
 
-ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce668(bool decrement) {
+void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce668(bool decrement) {
     int uVar2;
 
     if (decrement) {
@@ -841,12 +841,12 @@ ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce668(bool decrement) {
     data_ov000_020b50c0.func_ov000_0206a6a4(this->mUnk_FC1);
 }
 
-ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce6c8() {
+void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce6c8() {
     this->mUnk_FC2 = this->mUnk_FC2 == 0 ? 1 : 0;
     this->mUnk_CB8.func_0201fa70(this->func_ov019_020ce7a0(this->mUnk_FC2));
 }
 
-ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce704(u8 param1) {
+unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce704(u8 param1) {
     switch (param1) {
         case 0:
             return BMG_ID(BMGGroup_select, 0x4C);
@@ -861,7 +861,7 @@ ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce704(u8 param1) {
     return 0;
 }
 
-ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce74c(u8 param1) {
+unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce74c(u8 param1) {
     switch (param1) {
         case 0:
             return BMG_ID(BMGGroup_select, 0x50);
@@ -878,7 +878,7 @@ ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce74c(u8 param1) {
     return 0;
 }
 
-ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce7a0(u8 param1) {
+unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce7a0(u8 param1) {
     switch (param1) {
         case 0:
             return BMG_ID(BMGGroup_select, 0x49);
@@ -891,7 +891,7 @@ ARM unk32 UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce7a0(u8 param1) {
     return 0;
 }
 
-ARM void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce7d4(unk32 param1) {
+void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce7d4(unk32 param1) {
     if (param1 != 0) {
         for (int i = 0; i < ARRAY_LEN(this->mUnk_FB8->mUnk_00); i++) {
             this->mUnk_FB8->mUnk_00[i]->mUnk_2A = 1;

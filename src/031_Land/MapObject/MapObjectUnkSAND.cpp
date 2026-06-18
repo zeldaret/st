@@ -3,32 +3,32 @@
 #include "MapObject/MapObjectUnkSAND.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkSAND);
+DECL_PROFILE(MapObjectProfileUnkSAND);
 
-ARM MapObject *MapObjectProfileUnkSAND::Create() {
+MapObject *MapObjectProfileUnkSAND::Create() {
     return new(HeapIndex_2) MapObjectUnkSAND();
 }
 
-ARM MapObjectProfileUnkSAND::MapObjectProfileUnkSAND() :
+MapObjectProfileUnkSAND::MapObjectProfileUnkSAND() :
     MapObjectProfile(MapObjectId_SAND) {}
 
-ARM MapObjectUnkSAND::MapObjectUnkSAND() {}
+MapObjectUnkSAND::MapObjectUnkSAND() {}
 
-ARM void MapObjectUnkSAND::func_ov031_0210acd4(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210ad64(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210ae00(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210ae90(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210af50(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210b018(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210b028(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210b0ac(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210b0e4(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210b144(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210b17c(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210b1ec(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210b2cc(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210b32c(void) {}
-ARM void MapObjectUnkSAND::func_ov031_0210b34c(void) {}
+void MapObjectUnkSAND::func_ov031_0210acd4(void) {}
+void MapObjectUnkSAND::func_ov031_0210ad64(void) {}
+void MapObjectUnkSAND::func_ov031_0210ae00(void) {}
+void MapObjectUnkSAND::func_ov031_0210ae90(void) {}
+void MapObjectUnkSAND::func_ov031_0210af50(void) {}
+void MapObjectUnkSAND::func_ov031_0210b018(void) {}
+void MapObjectUnkSAND::func_ov031_0210b028(void) {}
+void MapObjectUnkSAND::func_ov031_0210b0ac(void) {}
+void MapObjectUnkSAND::func_ov031_0210b0e4(void) {}
+void MapObjectUnkSAND::func_ov031_0210b144(void) {}
+void MapObjectUnkSAND::func_ov031_0210b17c(void) {}
+void MapObjectUnkSAND::func_ov031_0210b1ec(void) {}
+void MapObjectUnkSAND::func_ov031_0210b2cc(void) {}
+void MapObjectUnkSAND::func_ov031_0210b32c(void) {}
+void MapObjectUnkSAND::func_ov031_0210b34c(void) {}
 
-ARM MapObjectUnkSAND::~MapObjectUnkSAND() {}
-ARM MapObjectProfileUnkSAND::~MapObjectProfileUnkSAND() {}
+MapObjectUnkSAND::~MapObjectUnkSAND() {}
+MapObjectProfileUnkSAND::~MapObjectProfileUnkSAND() {}

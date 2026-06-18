@@ -3,18 +3,18 @@
 #include "Actor/ActorUnkDSFR.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkDSFR);
+DECL_PROFILE(ActorProfileUnkDSFR);
 
-ARM Actor *ActorProfileUnkDSFR::Create() {
+Actor *ActorProfileUnkDSFR::Create() {
     return new(HeapIndex_2) ActorUnkDSFR();
 }
 
-ARM ActorProfileUnkDSFR::ActorProfileUnkDSFR() :
+ActorProfileUnkDSFR::ActorProfileUnkDSFR() :
     ActorProfile_Derived1(ActorId_DSFR) {}
 
-ARM ActorUnkDSFR::ActorUnkDSFR() {}
+ActorUnkDSFR::ActorUnkDSFR() {}
 
-ARM void ActorUnkDSFR::func_ov077_02158bf0(void) {}
+void ActorUnkDSFR::func_ov077_02158bf0(void) {}
 
-ARM ActorUnkDSFR::~ActorUnkDSFR() {}
-ARM ActorProfileUnkDSFR::~ActorProfileUnkDSFR() {}
+ActorUnkDSFR::~ActorUnkDSFR() {}
+ActorProfileUnkDSFR::~ActorProfileUnkDSFR() {}

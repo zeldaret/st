@@ -8,41 +8,41 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkSHIT);
+DECL_PROFILE(ActorProfileUnkSHIT);
 
-ARM Actor *ActorProfileUnkSHIT::Create() {
+Actor *ActorProfileUnkSHIT::Create() {
     return new(HeapIndex_2) ActorUnkSHIT();
 }
 
-ARM ActorProfileUnkSHIT::ActorProfileUnkSHIT() :
+ActorProfileUnkSHIT::ActorProfileUnkSHIT() :
     ActorProfile_Derived1(ActorId_SHIT) {}
 
-ARM ActorUnkSHIT::ActorUnkSHIT() {}
+ActorUnkSHIT::ActorUnkSHIT() {}
 
-ARM void ActorUnkSHIT::func_ov036_0211c1fc(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c21c(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c280(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c580(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c7dc(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c7e4(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c938(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c94c(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c96c(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c970(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c974(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c978(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c97c(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c980(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c984(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c994(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c998(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c9ac(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c9cc(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211c9d4(void) {}
-ARM unk32 ActorUnkSHIT::func_ov036_0211cddc(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211cdfc(void) {}
+void ActorUnkSHIT::func_ov036_0211c1fc(void) {}
+void ActorUnkSHIT::func_ov036_0211c21c(void) {}
+void ActorUnkSHIT::func_ov036_0211c280(void) {}
+void ActorUnkSHIT::func_ov036_0211c580(void) {}
+void ActorUnkSHIT::func_ov036_0211c7dc(void) {}
+void ActorUnkSHIT::func_ov036_0211c7e4(void) {}
+void ActorUnkSHIT::func_ov036_0211c938(void) {}
+void ActorUnkSHIT::func_ov036_0211c94c(void) {}
+void ActorUnkSHIT::func_ov036_0211c96c(void) {}
+void ActorUnkSHIT::func_ov036_0211c970(void) {}
+void ActorUnkSHIT::func_ov036_0211c974(void) {}
+void ActorUnkSHIT::func_ov036_0211c978(void) {}
+void ActorUnkSHIT::func_ov036_0211c97c(void) {}
+void ActorUnkSHIT::func_ov036_0211c980(void) {}
+void ActorUnkSHIT::func_ov036_0211c984(void) {}
+void ActorUnkSHIT::func_ov036_0211c994(void) {}
+void ActorUnkSHIT::func_ov036_0211c998(void) {}
+void ActorUnkSHIT::func_ov036_0211c9ac(void) {}
+void ActorUnkSHIT::func_ov036_0211c9cc(void) {}
+void ActorUnkSHIT::func_ov036_0211c9d4(void) {}
+unk32 ActorUnkSHIT::func_ov036_0211cddc(void) {}
+void ActorUnkSHIT::func_ov036_0211cdfc(void) {}
 
-ARM u16 ActorUnkSHIT::func_ov036_0211ceec(void) {
+u16 ActorUnkSHIT::func_ov036_0211ceec(void) {
     switch (this->mItemId) {
         case ItemId_NormalShield: {
             u16 param = this->mUnk_5C.mParams[3];
@@ -111,7 +111,7 @@ ARM u16 ActorUnkSHIT::func_ov036_0211ceec(void) {
     return 9999;
 }
 
-ARM unk32 ActorUnkSHIT::func_ov036_0211d0a8(void) {
+unk32 ActorUnkSHIT::func_ov036_0211d0a8(void) {
     if (this->mUnk_2D3) {
         return 0x12;
     }
@@ -166,13 +166,13 @@ ARM unk32 ActorUnkSHIT::func_ov036_0211d0a8(void) {
     return 0x0D;
 }
 
-ARM void ActorUnkSHIT::func_ov036_0211d22c(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211d254(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211d270(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211d28c(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211d2a8(void) {}
+void ActorUnkSHIT::func_ov036_0211d22c(void) {}
+void ActorUnkSHIT::func_ov036_0211d254(void) {}
+void ActorUnkSHIT::func_ov036_0211d270(void) {}
+void ActorUnkSHIT::func_ov036_0211d28c(void) {}
+void ActorUnkSHIT::func_ov036_0211d2a8(void) {}
 
-ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
+bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
     ItemManager *pIVar4 = data_027e0ce0->mUnk_2C;
 
     switch (this->mItemId) {
@@ -282,7 +282,7 @@ ARM bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
     return true;
 }
 
-ARM void ActorUnkSHIT::func_ov036_0211d570(unk32 param1) {
+void ActorUnkSHIT::func_ov036_0211d570(unk32 param1) {
     ItemManager *pIVar4 = data_027e0ce0->mUnk_2C;
 
     switch (this->mItemId) {
@@ -349,9 +349,9 @@ ARM void ActorUnkSHIT::func_ov036_0211d570(unk32 param1) {
     }
 }
 
-ARM void ActorUnkSHIT::func_ov036_0211d75c(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211d774(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211d790(void) {}
+void ActorUnkSHIT::func_ov036_0211d75c(void) {}
+void ActorUnkSHIT::func_ov036_0211d774(void) {}
+void ActorUnkSHIT::func_ov036_0211d790(void) {}
 
-ARM ActorUnkSHIT::~ActorUnkSHIT() {}
-ARM ActorProfileUnkSHIT::~ActorProfileUnkSHIT() {}
+ActorUnkSHIT::~ActorUnkSHIT() {}
+ActorProfileUnkSHIT::~ActorProfileUnkSHIT() {}

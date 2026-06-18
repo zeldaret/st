@@ -5,43 +5,43 @@
 
 // --- Actor YKAP ---
 
-ARM DECL_PROFILE(ActorProfileUnkYKAP);
+DECL_PROFILE(ActorProfileUnkYKAP);
 
-ARM Actor *ActorProfileUnkYKAP::Create() {
+Actor *ActorProfileUnkYKAP::Create() {
     return new(HeapIndex_2) ActorUnkYKAP();
 }
 
-ARM ActorProfileUnkYKAP::ActorProfileUnkYKAP() :
+ActorProfileUnkYKAP::ActorProfileUnkYKAP() :
     ActorProfile_Derived1(ActorId_YKAP) {}
 
-ARM ActorUnkYKAP::ActorUnkYKAP() {}
+ActorUnkYKAP::ActorUnkYKAP() {}
 
 // --- Actor YKCP ---
 
-ARM DECL_PROFILE(ActorProfileUnkYKCP);
+DECL_PROFILE(ActorProfileUnkYKCP);
 
-ARM Actor *ActorProfileUnkYKCP::Create() {
+Actor *ActorProfileUnkYKCP::Create() {
     return new(HeapIndex_2) ActorUnkYKCP();
 }
 
-ARM ActorProfileUnkYKCP::ActorProfileUnkYKCP() :
+ActorProfileUnkYKCP::ActorProfileUnkYKCP() :
     ActorProfile_Derived1(ActorId_YKCP) {}
 
-ARM ActorUnkYKCP::ActorUnkYKCP() {}
+ActorUnkYKCP::ActorUnkYKCP() {}
 
 // --- Actor YKEP ---
 
-ARM DECL_PROFILE(ActorProfileUnkYKEP);
+DECL_PROFILE(ActorProfileUnkYKEP);
 
-ARM Actor *ActorProfileUnkYKEP::Create() {
+Actor *ActorProfileUnkYKEP::Create() {
     return new(HeapIndex_2) ActorUnkYKEP();
 }
 
-ARM ActorProfileUnkYKEP::ActorProfileUnkYKEP() :
+ActorProfileUnkYKEP::ActorProfileUnkYKEP() :
     ActorProfile_Derived1(ActorId_YKEP) {}
 
-ARM ActorUnkYKEP::ActorUnkYKEP() {}
+ActorUnkYKEP::ActorUnkYKEP() {}
 
-ARM ActorProfileUnkYKAP::~ActorProfileUnkYKAP() {}
-ARM ActorProfileUnkYKCP::~ActorProfileUnkYKCP() {}
-ARM ActorProfileUnkYKEP::~ActorProfileUnkYKEP() {}
+ActorProfileUnkYKAP::~ActorProfileUnkYKAP() {}
+ActorProfileUnkYKCP::~ActorProfileUnkYKCP() {}
+ActorProfileUnkYKEP::~ActorProfileUnkYKEP() {}

@@ -3,22 +3,22 @@
 #include "Actor/ActorUnkYWIS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkYWIS);
+DECL_PROFILE(ActorProfileUnkYWIS);
 
-ARM Actor *ActorProfileUnkYWIS::Create() {
+Actor *ActorProfileUnkYWIS::Create() {
     return new(HeapIndex_2) ActorUnkYWIS();
 }
 
-ARM ActorProfileUnkYWIS::ActorProfileUnkYWIS() :
+ActorProfileUnkYWIS::ActorProfileUnkYWIS() :
     ActorProfile(ActorId_YWIS) {}
 
-ARM ActorUnkYWIS::ActorUnkYWIS() {}
+ActorUnkYWIS::ActorUnkYWIS() {}
 
-ARM void ActorUnkYWIS::func_ov065_021597bc(void) {}
-ARM void ActorUnkYWIS::func_ov065_021597c4(void) {}
-ARM void ActorUnkYWIS::func_ov065_021597f4(void) {}
-ARM void ActorUnkYWIS::func_ov065_02159808(void) {}
-ARM void ActorUnkYWIS::func_ov065_02159810(void) {}
+void ActorUnkYWIS::func_ov065_021597bc(void) {}
+void ActorUnkYWIS::func_ov065_021597c4(void) {}
+void ActorUnkYWIS::func_ov065_021597f4(void) {}
+void ActorUnkYWIS::func_ov065_02159808(void) {}
+void ActorUnkYWIS::func_ov065_02159810(void) {}
 
-ARM ActorUnkYWIS::~ActorUnkYWIS() {}
-ARM ActorProfileUnkYWIS::~ActorProfileUnkYWIS() {}
+ActorUnkYWIS::~ActorUnkYWIS() {}
+ActorProfileUnkYWIS::~ActorProfileUnkYWIS() {}

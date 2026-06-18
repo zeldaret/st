@@ -3,22 +3,22 @@
 #include "Actor/ActorUnkDMWS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkDMWS);
+DECL_PROFILE(ActorProfileUnkDMWS);
 
-ARM Actor *ActorProfileUnkDMWS::Create() {
+Actor *ActorProfileUnkDMWS::Create() {
     return new(HeapIndex_2) ActorUnkDMWS();
 }
 
-ARM ActorProfileUnkDMWS::ActorProfileUnkDMWS() :
+ActorProfileUnkDMWS::ActorProfileUnkDMWS() :
     ActorProfile_Derived1(ActorId_DMWS) {}
 
-ARM ActorUnkDMWS::ActorUnkDMWS() {}
+ActorUnkDMWS::ActorUnkDMWS() {}
 
-ARM void ActorUnkDMWS::func_ov088_021716d8(void) {}
-ARM void ActorUnkDMWS::func_ov088_0217172c(void) {}
-ARM void ActorUnkDMWS::func_ov088_0217173c(void) {}
-ARM void ActorUnkDMWS::func_ov088_02171750(void) {}
-ARM void ActorUnkDMWS::func_ov088_02171764(void) {}
+void ActorUnkDMWS::func_ov088_021716d8(void) {}
+void ActorUnkDMWS::func_ov088_0217172c(void) {}
+void ActorUnkDMWS::func_ov088_0217173c(void) {}
+void ActorUnkDMWS::func_ov088_02171750(void) {}
+void ActorUnkDMWS::func_ov088_02171764(void) {}
 
-ARM ActorUnkDMWS::~ActorUnkDMWS() {}
-ARM ActorProfileUnkDMWS::~ActorProfileUnkDMWS() {}
+ActorUnkDMWS::~ActorUnkDMWS() {}
+ActorProfileUnkDMWS::~ActorProfileUnkDMWS() {}

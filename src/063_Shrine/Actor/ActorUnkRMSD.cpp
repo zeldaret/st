@@ -7,39 +7,39 @@
 
 extern "C" void func_ov073_0215bb34(ActorUnkRMSD *);
 
-ARM DECL_PROFILE(ActorProfileUnkRMSD);
+DECL_PROFILE(ActorProfileUnkRMSD);
 
 char data_ov063_021625d8[0x10] = "RMSD_wall";
 char data_ov063_021625e8[0x10] = "RMSD";
 
-ARM Actor *ActorProfileUnkRMSD::Create() {
+Actor *ActorProfileUnkRMSD::Create() {
     return new(HeapIndex_2) ActorUnkRMSD();
 }
 
-ARM ActorProfileUnkRMSD::ActorProfileUnkRMSD() :
+ActorProfileUnkRMSD::ActorProfileUnkRMSD() :
     ActorProfile_Derived1(ActorId_RMSD) {}
 
-ARM ActorUnkRMSD::ActorUnkRMSD() {
+ActorUnkRMSD::ActorUnkRMSD() {
     ActorProfileUnkRMSD *r0 = GET_PROFILE(ActorProfileUnkRMSD);
     r0->vfunc_04();
 }
 
-ARM void ActorUnkRMSD::func_ov063_0215c408(void) {}
+void ActorUnkRMSD::func_ov063_0215c408(void) {}
 
-ARM void ActorUnkRMSD::func_ov063_0215c45c(void) {
+void ActorUnkRMSD::func_ov063_0215c45c(void) {
     this->mUnk_158.vfunc_34();
 }
-ARM void ActorUnkRMSD::func_ov063_0215c474(void) {
+void ActorUnkRMSD::func_ov063_0215c474(void) {
     this->vfunc_20();
 }
 
-ARM void *ActorUnkRMSD::func_ov063_0215c488(void) {
+void *ActorUnkRMSD::func_ov063_0215c488(void) {
     return G3d_GetUnkPtr(GET_PROFILE(ActorProfileUnkRMSD)->mUnk_3C.mUnk_50, data_ov063_021625e8);
 }
 
-ARM void *ActorUnkRMSD::func_ov063_0215c4c8(void) {
+void *ActorUnkRMSD::func_ov063_0215c4c8(void) {
     return G3d_GetUnkPtr(GET_PROFILE(ActorProfileUnkRMSD)->mUnk_3C.mUnk_50, data_ov063_021625d8);
 }
 
-ARM ActorUnkRMSD::~ActorUnkRMSD() {}
-ARM ActorProfileUnkRMSD::~ActorProfileUnkRMSD() {}
+ActorUnkRMSD::~ActorUnkRMSD() {}
+ActorProfileUnkRMSD::~ActorProfileUnkRMSD() {}

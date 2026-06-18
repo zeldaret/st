@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkBSTG.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkBSTG);
+DECL_PROFILE(ActorProfileUnkBSTG);
 
-ARM Actor *ActorProfileUnkBSTG::Create() {
+Actor *ActorProfileUnkBSTG::Create() {
     return new(HeapIndex_2) ActorUnkBSTG();
 }
 
-ARM ActorProfileUnkBSTG::ActorProfileUnkBSTG() :
+ActorProfileUnkBSTG::ActorProfileUnkBSTG() :
     ActorProfile(ActorId_BSTG) {}
 
-ARM ActorUnkBSTG::ActorUnkBSTG() {}
+ActorUnkBSTG::ActorUnkBSTG() {}
 
-ARM void ActorUnkBSTG::func_ov058_0214d794(void) {}
-ARM void ActorUnkBSTG::func_ov058_0214d79c(void) {}
+void ActorUnkBSTG::func_ov058_0214d794(void) {}
+void ActorUnkBSTG::func_ov058_0214d79c(void) {}
 
-ARM ActorUnkBSTG::~ActorUnkBSTG() {}
-ARM ActorProfileUnkBSTG::~ActorProfileUnkBSTG() {}
+ActorUnkBSTG::~ActorUnkBSTG() {}
+ActorProfileUnkBSTG::~ActorProfileUnkBSTG() {}

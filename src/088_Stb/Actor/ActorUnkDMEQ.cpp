@@ -3,20 +3,20 @@
 #include "Actor/ActorUnkDMEQ.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkDMEQ);
+DECL_PROFILE(ActorProfileUnkDMEQ);
 
-ARM Actor *ActorProfileUnkDMEQ::Create() {
+Actor *ActorProfileUnkDMEQ::Create() {
     return new(HeapIndex_2) ActorUnkDMEQ();
 }
 
-ARM ActorProfileUnkDMEQ::ActorProfileUnkDMEQ() :
+ActorProfileUnkDMEQ::ActorProfileUnkDMEQ() :
     ActorProfile(ActorId_DMEQ) {}
 
-ARM ActorUnkDMEQ::ActorUnkDMEQ() {}
+ActorUnkDMEQ::ActorUnkDMEQ() {}
 
-ARM void ActorUnkDMEQ::func_ov088_0216e31c(void) {}
-ARM void ActorUnkDMEQ::func_ov088_0216e718(void) {}
-ARM void ActorUnkDMEQ::func_ov088_0216e738(void) {}
+void ActorUnkDMEQ::func_ov088_0216e31c(void) {}
+void ActorUnkDMEQ::func_ov088_0216e718(void) {}
+void ActorUnkDMEQ::func_ov088_0216e738(void) {}
 
-ARM ActorUnkDMEQ::~ActorUnkDMEQ() {}
-ARM ActorProfileUnkDMEQ::~ActorProfileUnkDMEQ() {}
+ActorUnkDMEQ::~ActorUnkDMEQ() {}
+ActorProfileUnkDMEQ::~ActorProfileUnkDMEQ() {}

@@ -31,11 +31,13 @@ const u32 data_ov001_020c2638[] = {ActorId_FOMC, ActorId_FOMA, ActorId_FOMB, Act
 const u16 data_ov001_020c2624[] = {0x01AE, 0x01AF, 0x01B0, 0x01B1, 0x01B2};
 const u16 data_ov001_020c262e[] = {0x01CB, 0x01CC, 0x01CD, 0x01CE, 0x01CF};
 
-THUMB ActorManager *ActorManager::Create() {
+THUMB_BEGIN
+
+ActorManager *ActorManager::Create() {
     return new(1, 4) ActorManager();
 }
 
-THUMB ActorManager::ActorManager() {
+ActorManager::ActorManager() {
     this->mUnk_20         = 0;
     this->mUnk_21         = 0;
     this->mUnk_22         = 0;
@@ -56,13 +58,13 @@ THUMB ActorManager::ActorManager() {
     this->mUnk_34         = 0;
 }
 
-THUMB ActorManager::~ActorManager() {
+ActorManager::~ActorManager() {
     if (this->mActorTable != NULL) {
         delete this->mActorTable;
     }
 }
 
-THUMB void ActorManager::func_ov001_020bafdc() {
+void ActorManager::func_ov001_020bafdc() {
     Actor **ppActorTable = this->mActorTable;
 
     while (ppActorTable != this->mUnk_08) {
@@ -81,7 +83,7 @@ THUMB void ActorManager::func_ov001_020bafdc() {
 }
 
 // https://decomp.me/scratch/UywfM
-THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param2 *param1) {
+void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param2 *param1) {
     u16 unk_0A = param1->mUnk_0A;
     u16 unk_08 = param1->mUnk_08;
 
@@ -204,7 +206,7 @@ THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param
     }
 }
 
-THUMB void ActorManager::func_ov001_020bb414(ActorManager *instance) {
+void ActorManager::func_ov001_020bb414(ActorManager *instance) {
     func_ov001_020ba59c(&data_0204999c);
 
     if (data_027e09a4->UnkCheck(data_027e09a4->mUnk_00.mSceneIndex)) {
@@ -219,7 +221,7 @@ THUMB void ActorManager::func_ov001_020bb414(ActorManager *instance) {
     instance->mActorTableEnd = NULL;
 }
 
-THUMB void ActorManager::func_ov001_020bb488() {
+void ActorManager::func_ov001_020bb488() {
     if (data_027e09a4->IsNotCutscene()) {
         switch (data_027e09a4->GetCurrentCourseEntry()->unk_10) {
             case 0x00:
@@ -244,7 +246,7 @@ THUMB void ActorManager::func_ov001_020bb488() {
     }
 }
 
-THUMB void ActorManager::func_ov001_020bb548() {
+void ActorManager::func_ov001_020bb548() {
     Actor **ppActorTable = this->mActorTable;
     int i                = 0;
 
@@ -273,7 +275,7 @@ THUMB void ActorManager::func_ov001_020bb548() {
     }
 }
 
-THUMB void ActorManager::func_ov001_020bb630() {
+void ActorManager::func_ov001_020bb630() {
     ActorProfile **piVar2 = data_ov000_020b539c_eur.func_ov000_02073dc();
     ActorProfile **piVar3 = data_ov000_020b539c_eur.func_ov000_02073e8();
 
@@ -305,7 +307,7 @@ THUMB void ActorManager::func_ov001_020bb630() {
     }
 }
 
-THUMB void ActorManager::func_ov001_020bb6b0(UnkStruct_SceneChange1 *param1) {
+void ActorManager::func_ov001_020bb6b0(UnkStruct_SceneChange1 *param1) {
     ActorProfile **piVar1 = data_ov000_020b539c_eur.func_ov000_02073dc();
     ActorProfile **piVar2 = data_ov000_020b539c_eur.func_ov000_02073e8();
 
@@ -329,7 +331,7 @@ THUMB void ActorManager::func_ov001_020bb6b0(UnkStruct_SceneChange1 *param1) {
     }
 }
 
-THUMB bool ActorManager::func_ov001_020bb728(s32 param1) {
+bool ActorManager::func_ov001_020bb728(s32 param1) {
     UnkStruct_SceneChange1 *piVar1 = data_027e09a4->func_ov000_02070560();
 
     if (piVar1->mSceneIndex != SceneIndex_f_water || piVar1->mRoomIndex != 0) {
@@ -360,7 +362,7 @@ THUMB bool ActorManager::func_ov001_020bb728(s32 param1) {
     return false;
 }
 
-THUMB void ActorManager::func_ov001_020bb7b0(ZeldaObjectList *pObjList) {
+void ActorManager::func_ov001_020bb7b0(ZeldaObjectList *pObjList) {
     for (s32 i = 0; i < pObjList->nEntries; i++) {
         u32 id                      = pObjList->aIdList[i];
         ActorProfile *pActorProfile = data_ov000_020b539c_eur.GetProfileFromId(id);
@@ -371,7 +373,7 @@ THUMB void ActorManager::func_ov001_020bb7b0(ZeldaObjectList *pObjList) {
     }
 }
 
-THUMB void ActorManager::func_ov001_020bb7f0() {
+void ActorManager::func_ov001_020bb7f0() {
     ActorProfile **ptr1 = data_ov000_020b539c_eur.func_ov000_02073dc();
     ActorProfile **ptr2 = data_ov000_020b539c_eur.func_ov000_02073e8();
 
@@ -385,16 +387,18 @@ THUMB void ActorManager::func_ov001_020bb7f0() {
     }
 }
 
-THUMB void ActorManager::func_ov001_020bb824() {
+void ActorManager::func_ov001_020bb824() {
     if (data_027e0cf4 != NULL) {
         delete data_027e0cf4;
     }
 }
 
-THUMB void ActorManager::func_ov001_020bb844() {
+void ActorManager::func_ov001_020bb844() {
     if (data_027e0d70 != NULL) {
         delete data_027e0d70;
     }
 }
 
 DECL_INSTANCE(ActorManager, gpActorManager);
+
+THUMB_END

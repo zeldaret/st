@@ -2,7 +2,7 @@
 #include "Unknown/UnkStruct_02049bd4.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
-ARM UnkSystem1_ov019_Derived3::UnkSystem1_ov019_Derived3() :
+UnkSystem1_ov019_Derived3::UnkSystem1_ov019_Derived3() :
     UnkSystem1_ov019_3(0, 0) {
     this->mUnk_12 = -1;
     this->mUnk_13 = 0;
@@ -13,18 +13,18 @@ ARM UnkSystem1_ov019_Derived3::UnkSystem1_ov019_Derived3() :
     this->mUnk_21 = 0;
 }
 
-ARM void UnkSystem1_ov019_Derived3::vfunc_04() {
+void UnkSystem1_ov019_Derived3::vfunc_04() {
     this->mUnk_21 = 0;
     this->UnkSystem1_ov000_Base::vfunc_04();
 }
 
-ARM void UnkSystem1_ov019_Derived3::vfunc_08(unk32 param1) {
+void UnkSystem1_ov019_Derived3::vfunc_08(unk32 param1) {
     UnkStruct_ov000_02067bc4::UnkStruct1 stack;
     this->mUnk_06 = data_ov000_020b504c.func_ov000_02067cf8(param1, this->mUnk_10, &stack);
 }
 
 //! TODO: fake match?
-ARM unk32 UnkSystem1_ov019_Derived3::vfunc_1C(u32 param1, unk32 param2, unk32 param3) {
+unk32 UnkSystem1_ov019_Derived3::vfunc_1C(u32 param1, unk32 param2, unk32 param3) {
     unk32 ret = 0;
 
     if (param1 != 0) {

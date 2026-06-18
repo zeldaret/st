@@ -3,26 +3,26 @@
 #include "MapObject/MapObjectUnkETNL.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkETNL);
+DECL_PROFILE(MapObjectProfileUnkETNL);
 
-ARM MapObject *MapObjectProfileUnkETNL::Create() {
+MapObject *MapObjectProfileUnkETNL::Create() {
     return new(HeapIndex_2) MapObjectUnkETNL();
 }
 
-ARM MapObjectProfileUnkETNL::MapObjectProfileUnkETNL() :
+MapObjectProfileUnkETNL::MapObjectProfileUnkETNL() :
     MapObjectProfile(MapObjectId_ETNL) {}
 
-ARM MapObjectUnkETNL::MapObjectUnkETNL() {}
+MapObjectUnkETNL::MapObjectUnkETNL() {}
 
-ARM void MapObjectUnkETNL::func_ov026_0210ac24(void) {}
-ARM void MapObjectUnkETNL::func_ov026_0210ac7c(void) {}
-ARM void MapObjectUnkETNL::func_ov026_0210ad44(void) {}
-ARM void MapObjectUnkETNL::func_ov026_0210ad4c(void) {}
-ARM void MapObjectUnkETNL::func_ov026_0210ad54(void) {}
-ARM void MapObjectUnkETNL::func_ov026_0210ad5c(void) {}
-ARM void MapObjectUnkETNL::func_ov026_0210adac(void) {}
-ARM void MapObjectUnkETNL::func_ov026_0210ae10(void) {}
-ARM void MapObjectUnkETNL::func_ov026_0210ae18(void) {}
+void MapObjectUnkETNL::func_ov026_0210ac24(void) {}
+void MapObjectUnkETNL::func_ov026_0210ac7c(void) {}
+void MapObjectUnkETNL::func_ov026_0210ad44(void) {}
+void MapObjectUnkETNL::func_ov026_0210ad4c(void) {}
+void MapObjectUnkETNL::func_ov026_0210ad54(void) {}
+void MapObjectUnkETNL::func_ov026_0210ad5c(void) {}
+void MapObjectUnkETNL::func_ov026_0210adac(void) {}
+void MapObjectUnkETNL::func_ov026_0210ae10(void) {}
+void MapObjectUnkETNL::func_ov026_0210ae18(void) {}
 
-ARM MapObjectUnkETNL::~MapObjectUnkETNL() {}
-ARM MapObjectProfileUnkETNL::~MapObjectProfileUnkETNL() {}
+MapObjectUnkETNL::~MapObjectUnkETNL() {}
+MapObjectProfileUnkETNL::~MapObjectProfileUnkETNL() {}

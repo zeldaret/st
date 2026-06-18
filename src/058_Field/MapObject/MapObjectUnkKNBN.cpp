@@ -3,34 +3,34 @@
 #include "MapObject/MapObjectUnkKNBN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkKNBN);
+DECL_PROFILE(MapObjectProfileUnkKNBN);
 
-ARM MapObject *MapObjectProfileUnkKNBN::Create() {
+MapObject *MapObjectProfileUnkKNBN::Create() {
     return new(HeapIndex_2) MapObjectUnkKNBN();
 }
 
-ARM MapObjectProfileUnkKNBN::MapObjectProfileUnkKNBN() :
+MapObjectProfileUnkKNBN::MapObjectProfileUnkKNBN() :
     MapObjectProfile(MapObjectId_KNBN) {}
 
-ARM MapObjectUnkKNBN::MapObjectUnkKNBN() {}
+MapObjectUnkKNBN::MapObjectUnkKNBN() {}
 
-ARM void MapObjectUnkKNBN::func_ov058_02150a64(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02150ac4(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02150b38(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02150bd0(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02150cfc(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02150d84(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02150dac(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02150dc4(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02150ddc(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02150e74(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02150e88(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02150eb4(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02150eec(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02150fbc(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02151078(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02151098(void) {}
-ARM void MapObjectUnkKNBN::func_ov058_02151160(void) {}
+void MapObjectUnkKNBN::func_ov058_02150a64(void) {}
+void MapObjectUnkKNBN::func_ov058_02150ac4(void) {}
+void MapObjectUnkKNBN::func_ov058_02150b38(void) {}
+void MapObjectUnkKNBN::func_ov058_02150bd0(void) {}
+void MapObjectUnkKNBN::func_ov058_02150cfc(void) {}
+void MapObjectUnkKNBN::func_ov058_02150d84(void) {}
+void MapObjectUnkKNBN::func_ov058_02150dac(void) {}
+void MapObjectUnkKNBN::func_ov058_02150dc4(void) {}
+void MapObjectUnkKNBN::func_ov058_02150ddc(void) {}
+void MapObjectUnkKNBN::func_ov058_02150e74(void) {}
+void MapObjectUnkKNBN::func_ov058_02150e88(void) {}
+void MapObjectUnkKNBN::func_ov058_02150eb4(void) {}
+void MapObjectUnkKNBN::func_ov058_02150eec(void) {}
+void MapObjectUnkKNBN::func_ov058_02150fbc(void) {}
+void MapObjectUnkKNBN::func_ov058_02151078(void) {}
+void MapObjectUnkKNBN::func_ov058_02151098(void) {}
+void MapObjectUnkKNBN::func_ov058_02151160(void) {}
 
-ARM MapObjectUnkKNBN::~MapObjectUnkKNBN() {}
-ARM MapObjectProfileUnkKNBN::~MapObjectProfileUnkKNBN() {}
+MapObjectUnkKNBN::~MapObjectUnkKNBN() {}
+MapObjectProfileUnkKNBN::~MapObjectProfileUnkKNBN() {}

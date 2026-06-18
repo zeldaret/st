@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkDMZS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkDMZS);
+DECL_PROFILE(ActorProfileUnkDMZS);
 
-ARM Actor *ActorProfileUnkDMZS::Create() {
+Actor *ActorProfileUnkDMZS::Create() {
     return new(HeapIndex_2) ActorUnkDMZS();
 }
 
-ARM ActorProfileUnkDMZS::ActorProfileUnkDMZS() :
+ActorProfileUnkDMZS::ActorProfileUnkDMZS() :
     ActorProfile(ActorId_DMZS) {}
 
-ARM ActorUnkDMZS::ActorUnkDMZS() {}
+ActorUnkDMZS::ActorUnkDMZS() {}
 
-ARM void ActorUnkDMZS::func_ov088_0216c470(void) {}
-ARM void ActorUnkDMZS::func_ov088_0216c4d0(void) {}
+void ActorUnkDMZS::func_ov088_0216c470(void) {}
+void ActorUnkDMZS::func_ov088_0216c4d0(void) {}
 
-ARM ActorUnkDMZS::~ActorUnkDMZS() {}
-ARM ActorProfileUnkDMZS::~ActorProfileUnkDMZS() {}
+ActorUnkDMZS::~ActorUnkDMZS() {}
+ActorProfileUnkDMZS::~ActorProfileUnkDMZS() {}

@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkRMSS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRMSS);
+DECL_PROFILE(ActorProfileUnkRMSS);
 
-ARM Actor *ActorProfileUnkRMSS::Create() {
+Actor *ActorProfileUnkRMSS::Create() {
     return new(HeapIndex_2) ActorUnkRMSS();
 }
 
-ARM ActorProfileUnkRMSS::ActorProfileUnkRMSS() :
+ActorProfileUnkRMSS::ActorProfileUnkRMSS() :
     ActorProfile_Derived1(ActorId_RMSS) {}
 
-ARM ActorUnkRMSS::ActorUnkRMSS() {}
+ActorUnkRMSS::ActorUnkRMSS() {}
 
-ARM void ActorUnkRMSS::func_ov063_0215c5fc(void) {}
-ARM void ActorUnkRMSS::func_ov063_0215c63c(void) {}
+void ActorUnkRMSS::func_ov063_0215c5fc(void) {}
+void ActorUnkRMSS::func_ov063_0215c63c(void) {}
 
-ARM ActorUnkRMSS::~ActorUnkRMSS() {}
-ARM ActorProfileUnkRMSS::~ActorProfileUnkRMSS() {}
+ActorUnkRMSS::~ActorUnkRMSS() {}
+ActorProfileUnkRMSS::~ActorProfileUnkRMSS() {}

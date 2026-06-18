@@ -3,40 +3,40 @@
 #include "Actor/ActorUnkBBLE.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkBBLE);
+DECL_PROFILE(ActorProfileUnkBBLE);
 
-ARM Actor *ActorProfileUnkBBLE::Create() {
+Actor *ActorProfileUnkBBLE::Create() {
     return new(HeapIndex_2) ActorUnkBBLE();
 }
 
-ARM ActorProfileUnkBBLE::ActorProfileUnkBBLE() :
+ActorProfileUnkBBLE::ActorProfileUnkBBLE() :
     ActorProfile_Derived1(ActorId_BBLE) {}
 
-ARM ActorUnkBBLE::ActorUnkBBLE() {}
+ActorUnkBBLE::ActorUnkBBLE() {}
 
-ARM void ActorUnkBBLE::func_ov077_02157b48(void) {}
-ARM void ActorUnkBBLE::func_ov077_02157ba8(void) {}
-ARM void ActorUnkBBLE::func_ov077_02157bc8(void) {}
-ARM void ActorUnkBBLE::func_ov077_02157d14(void) {}
-ARM void ActorUnkBBLE::func_ov077_02157d48(void) {}
-ARM void ActorUnkBBLE::func_ov077_0215804c(void) {}
-ARM void ActorUnkBBLE::func_ov077_021580b8(void) {}
-ARM void ActorUnkBBLE::func_ov077_02158140(void) {}
-ARM void ActorUnkBBLE::func_ov077_0215816c(void) {}
-ARM void ActorUnkBBLE::func_ov077_02158220(void) {}
-ARM void ActorUnkBBLE::func_ov077_02158268(void) {}
-ARM void ActorUnkBBLE::func_ov077_02158348(void) {}
-ARM void ActorUnkBBLE::func_ov077_0215837c(void) {}
-ARM void ActorUnkBBLE::func_ov077_0215842c(void) {}
-ARM void ActorUnkBBLE::func_ov077_0215856c(void) {}
-ARM void ActorUnkBBLE::func_ov077_021586dc(void) {}
-ARM void ActorUnkBBLE::func_ov077_021587d4(void) {}
-ARM void ActorUnkBBLE::func_ov077_0215885c(void) {}
-ARM void ActorUnkBBLE::func_ov077_02158918(void) {}
-ARM void ActorUnkBBLE::func_ov077_021589c4(void) {}
-ARM void ActorUnkBBLE::func_ov077_02158a3c(void) {}
-ARM void ActorUnkBBLE::func_ov077_02158a54(void) {}
-ARM void ActorUnkBBLE::func_ov077_02158ad8(void) {}
+void ActorUnkBBLE::func_ov077_02157b48(void) {}
+void ActorUnkBBLE::func_ov077_02157ba8(void) {}
+void ActorUnkBBLE::func_ov077_02157bc8(void) {}
+void ActorUnkBBLE::func_ov077_02157d14(void) {}
+void ActorUnkBBLE::func_ov077_02157d48(void) {}
+void ActorUnkBBLE::func_ov077_0215804c(void) {}
+void ActorUnkBBLE::func_ov077_021580b8(void) {}
+void ActorUnkBBLE::func_ov077_02158140(void) {}
+void ActorUnkBBLE::func_ov077_0215816c(void) {}
+void ActorUnkBBLE::func_ov077_02158220(void) {}
+void ActorUnkBBLE::func_ov077_02158268(void) {}
+void ActorUnkBBLE::func_ov077_02158348(void) {}
+void ActorUnkBBLE::func_ov077_0215837c(void) {}
+void ActorUnkBBLE::func_ov077_0215842c(void) {}
+void ActorUnkBBLE::func_ov077_0215856c(void) {}
+void ActorUnkBBLE::func_ov077_021586dc(void) {}
+void ActorUnkBBLE::func_ov077_021587d4(void) {}
+void ActorUnkBBLE::func_ov077_0215885c(void) {}
+void ActorUnkBBLE::func_ov077_02158918(void) {}
+void ActorUnkBBLE::func_ov077_021589c4(void) {}
+void ActorUnkBBLE::func_ov077_02158a3c(void) {}
+void ActorUnkBBLE::func_ov077_02158a54(void) {}
+void ActorUnkBBLE::func_ov077_02158ad8(void) {}
 
-ARM ActorUnkBBLE::~ActorUnkBBLE() {}
-ARM ActorProfileUnkBBLE::~ActorProfileUnkBBLE() {}
+ActorUnkBBLE::~ActorUnkBBLE() {}
+ActorProfileUnkBBLE::~ActorProfileUnkBBLE() {}

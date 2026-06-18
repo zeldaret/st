@@ -11,13 +11,6 @@
 #include "types.h"
 #include "versions.h"
 
-// some functions use thumb mode on the japanese version (only in overlay 40?)
-#if IS_JP
-    #define OV040_ARM THUMB
-#else
-    #define OV040_ARM ARM
-#endif
-
 class ActorParams {
 public:
     /* 00 */ VecFx32 mInitialPos;

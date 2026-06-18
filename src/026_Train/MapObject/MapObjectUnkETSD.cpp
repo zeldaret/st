@@ -3,22 +3,22 @@
 #include "MapObject/MapObjectUnkETSD.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkETSD);
+DECL_PROFILE(MapObjectProfileUnkETSD);
 
-ARM MapObject *MapObjectProfileUnkETSD::Create() {
+MapObject *MapObjectProfileUnkETSD::Create() {
     return new(HeapIndex_2) MapObjectUnkETSD();
 }
 
-ARM MapObjectProfileUnkETSD::MapObjectProfileUnkETSD() :
+MapObjectProfileUnkETSD::MapObjectProfileUnkETSD() :
     MapObjectProfile(MapObjectId_ETSD) {}
 
-ARM MapObjectUnkETSD::MapObjectUnkETSD() {}
+MapObjectUnkETSD::MapObjectUnkETSD() {}
 
-ARM void MapObjectUnkETSD::func_ov026_0210edcc(void) {}
-ARM void MapObjectUnkETSD::func_ov026_0210f02c(void) {}
-ARM void MapObjectUnkETSD::func_ov026_0210f034(void) {}
-ARM void MapObjectUnkETSD::func_ov026_0210f098(void) {}
-ARM void MapObjectUnkETSD::func_ov026_0210f0ac(void) {}
+void MapObjectUnkETSD::func_ov026_0210edcc(void) {}
+void MapObjectUnkETSD::func_ov026_0210f02c(void) {}
+void MapObjectUnkETSD::func_ov026_0210f034(void) {}
+void MapObjectUnkETSD::func_ov026_0210f098(void) {}
+void MapObjectUnkETSD::func_ov026_0210f0ac(void) {}
 
-ARM MapObjectUnkETSD::~MapObjectUnkETSD() {}
-ARM MapObjectProfileUnkETSD::~MapObjectProfileUnkETSD() {}
+MapObjectUnkETSD::~MapObjectUnkETSD() {}
+MapObjectProfileUnkETSD::~MapObjectProfileUnkETSD() {}

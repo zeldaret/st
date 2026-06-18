@@ -5,40 +5,40 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkSZKU);
+DECL_PROFILE(ActorProfileUnkSZKU);
 
-ARM Actor *ActorProfileUnkSZKU::Create() {
+Actor *ActorProfileUnkSZKU::Create() {
     return new(HeapIndex_2) ActorUnkSZKU();
 }
 
-ARM ActorProfileUnkSZKU::ActorProfileUnkSZKU() :
+ActorProfileUnkSZKU::ActorProfileUnkSZKU() :
     ActorProfile_Derived1(ActorId_SZKU) {}
 
-ARM ActorUnkSZKU::ActorUnkSZKU() {}
+ActorUnkSZKU::ActorUnkSZKU() {}
 
-ARM void ActorUnkSZKU::func_ov071_0215f424(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215f530(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215f5dc(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215f608(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215f654(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215f714(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215f7dc(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215f7f4(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215f80c(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215f824(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215f92c(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215fc0c(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215fc54(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215fca4(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215fd04(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215fd80(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215fdd4(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215fe54(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215fe94(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215fed4(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215ff08(void) {}
+void ActorUnkSZKU::func_ov071_0215f424(void) {}
+void ActorUnkSZKU::func_ov071_0215f530(void) {}
+void ActorUnkSZKU::func_ov071_0215f5dc(void) {}
+void ActorUnkSZKU::func_ov071_0215f608(void) {}
+void ActorUnkSZKU::func_ov071_0215f654(void) {}
+void ActorUnkSZKU::func_ov071_0215f714(void) {}
+void ActorUnkSZKU::func_ov071_0215f7dc(void) {}
+void ActorUnkSZKU::func_ov071_0215f7f4(void) {}
+void ActorUnkSZKU::func_ov071_0215f80c(void) {}
+void ActorUnkSZKU::func_ov071_0215f824(void) {}
+void ActorUnkSZKU::func_ov071_0215f92c(void) {}
+void ActorUnkSZKU::func_ov071_0215fc0c(void) {}
+void ActorUnkSZKU::func_ov071_0215fc54(void) {}
+void ActorUnkSZKU::func_ov071_0215fca4(void) {}
+void ActorUnkSZKU::func_ov071_0215fd04(void) {}
+void ActorUnkSZKU::func_ov071_0215fd80(void) {}
+void ActorUnkSZKU::func_ov071_0215fdd4(void) {}
+void ActorUnkSZKU::func_ov071_0215fe54(void) {}
+void ActorUnkSZKU::func_ov071_0215fe94(void) {}
+void ActorUnkSZKU::func_ov071_0215fed4(void) {}
+void ActorUnkSZKU::func_ov071_0215ff08(void) {}
 
-ARM void ActorUnkSZKU::func_ov071_0215ff3c(void) {
+void ActorUnkSZKU::func_ov071_0215ff3c(void) {
     if (this->mUnk_50 < this->mUnk_52) {
         this->mUnk_50++;
     }
@@ -52,15 +52,15 @@ ARM void ActorUnkSZKU::func_ov071_0215ff3c(void) {
     }
 }
 
-ARM void ActorUnkSZKU::func_ov071_0215ffb8(void) {}
-ARM void ActorUnkSZKU::func_ov071_0215ffbc(void) {}
-ARM void ActorUnkSZKU::func_ov071_02160000(void) {}
-ARM void ActorUnkSZKU::func_ov071_02160038(void) {}
-ARM void ActorUnkSZKU::func_ov071_02160078(void) {}
-ARM void ActorUnkSZKU::func_ov071_02160094(void) {}
-ARM void ActorUnkSZKU::func_ov071_021600b8(void) {}
-ARM void ActorUnkSZKU::func_ov071_021600d4(void) {}
-ARM void ActorUnkSZKU::func_ov071_021600e8(void) {}
+void ActorUnkSZKU::func_ov071_0215ffb8(void) {}
+void ActorUnkSZKU::func_ov071_0215ffbc(void) {}
+void ActorUnkSZKU::func_ov071_02160000(void) {}
+void ActorUnkSZKU::func_ov071_02160038(void) {}
+void ActorUnkSZKU::func_ov071_02160078(void) {}
+void ActorUnkSZKU::func_ov071_02160094(void) {}
+void ActorUnkSZKU::func_ov071_021600b8(void) {}
+void ActorUnkSZKU::func_ov071_021600d4(void) {}
+void ActorUnkSZKU::func_ov071_021600e8(void) {}
 
-ARM ActorUnkSZKU::~ActorUnkSZKU() {}
-ARM ActorProfileUnkSZKU::~ActorProfileUnkSZKU() {}
+ActorUnkSZKU::~ActorUnkSZKU() {}
+ActorProfileUnkSZKU::~ActorProfileUnkSZKU() {}

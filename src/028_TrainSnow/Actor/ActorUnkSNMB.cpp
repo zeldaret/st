@@ -3,24 +3,24 @@
 #include "Actor/ActorUnkSNMB.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkSNMB);
+DECL_PROFILE(ActorProfileUnkSNMB);
 
-ARM Actor *ActorProfileUnkSNMB::Create() {
+Actor *ActorProfileUnkSNMB::Create() {
     return new(HeapIndex_2) ActorUnkSNMB();
 }
 
-ARM ActorProfileUnkSNMB::ActorProfileUnkSNMB() :
+ActorProfileUnkSNMB::ActorProfileUnkSNMB() :
     ActorProfile_Derived1(ActorId_SNMB) {}
 
-ARM ActorUnkSNMB::ActorUnkSNMB() {}
+ActorUnkSNMB::ActorUnkSNMB() {}
 
-ARM void ActorUnkSNMB::func_ov028_02143290(void) {}
-ARM void ActorUnkSNMB::func_ov028_021432b4(void) {}
-ARM void ActorUnkSNMB::func_ov028_021432e4(void) {}
-ARM void ActorUnkSNMB::func_ov028_02143440(void) {}
-ARM void ActorUnkSNMB::func_ov028_021434f0(void) {}
-ARM void ActorUnkSNMB::func_ov028_02143630(void) {}
-ARM void ActorUnkSNMB::func_ov028_021437a8(void) {}
+void ActorUnkSNMB::func_ov028_02143290(void) {}
+void ActorUnkSNMB::func_ov028_021432b4(void) {}
+void ActorUnkSNMB::func_ov028_021432e4(void) {}
+void ActorUnkSNMB::func_ov028_02143440(void) {}
+void ActorUnkSNMB::func_ov028_021434f0(void) {}
+void ActorUnkSNMB::func_ov028_02143630(void) {}
+void ActorUnkSNMB::func_ov028_021437a8(void) {}
 
-ARM ActorUnkSNMB::~ActorUnkSNMB() {}
-ARM ActorProfileUnkSNMB::~ActorProfileUnkSNMB() {}
+ActorUnkSNMB::~ActorUnkSNMB() {}
+ActorProfileUnkSNMB::~ActorProfileUnkSNMB() {}

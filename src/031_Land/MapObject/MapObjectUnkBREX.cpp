@@ -3,31 +3,31 @@
 #include "MapObject/MapObjectUnkBREX.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkBREX);
+DECL_PROFILE(MapObjectProfileUnkBREX);
 
-ARM MapObject *MapObjectProfileUnkBREX::Create() {
+MapObject *MapObjectProfileUnkBREX::Create() {
     return new(HeapIndex_2) MapObjectUnkBREX();
 }
 
-ARM MapObjectProfileUnkBREX::MapObjectProfileUnkBREX() :
+MapObjectProfileUnkBREX::MapObjectProfileUnkBREX() :
     MapObjectProfile(MapObjectId_BREX) {}
 
-ARM MapObjectUnkBREX::MapObjectUnkBREX() {}
+MapObjectUnkBREX::MapObjectUnkBREX() {}
 
-ARM void MapObjectUnkBREX::func_ov031_021076b8(void) {}
-ARM void MapObjectUnkBREX::func_ov031_02107b04(void) {}
-ARM void MapObjectUnkBREX::func_ov031_02107b40(void) {}
-ARM void MapObjectUnkBREX::func_ov031_02107f1c(void) {}
-ARM void MapObjectUnkBREX::func_ov031_02107f34(void) {}
-ARM void MapObjectUnkBREX::func_ov031_02107f98(void) {}
-ARM void MapObjectUnkBREX::func_ov031_02108258(void) {}
-ARM void MapObjectUnkBREX::func_ov031_02108314(void) {}
-ARM void MapObjectUnkBREX::func_ov031_02108420(void) {}
-ARM void MapObjectUnkBREX::func_ov031_02108648(void) {}
-ARM void MapObjectUnkBREX::func_ov031_021086a4(void) {}
-ARM void MapObjectUnkBREX::func_ov031_02108700(void) {}
-ARM void MapObjectUnkBREX::func_ov031_021087f8(void) {}
-ARM void MapObjectUnkBREX::func_ov031_02108834(void) {}
+void MapObjectUnkBREX::func_ov031_021076b8(void) {}
+void MapObjectUnkBREX::func_ov031_02107b04(void) {}
+void MapObjectUnkBREX::func_ov031_02107b40(void) {}
+void MapObjectUnkBREX::func_ov031_02107f1c(void) {}
+void MapObjectUnkBREX::func_ov031_02107f34(void) {}
+void MapObjectUnkBREX::func_ov031_02107f98(void) {}
+void MapObjectUnkBREX::func_ov031_02108258(void) {}
+void MapObjectUnkBREX::func_ov031_02108314(void) {}
+void MapObjectUnkBREX::func_ov031_02108420(void) {}
+void MapObjectUnkBREX::func_ov031_02108648(void) {}
+void MapObjectUnkBREX::func_ov031_021086a4(void) {}
+void MapObjectUnkBREX::func_ov031_02108700(void) {}
+void MapObjectUnkBREX::func_ov031_021087f8(void) {}
+void MapObjectUnkBREX::func_ov031_02108834(void) {}
 
-ARM MapObjectUnkBREX::~MapObjectUnkBREX() {}
-ARM MapObjectProfileUnkBREX::~MapObjectProfileUnkBREX() {}
+MapObjectUnkBREX::~MapObjectUnkBREX() {}
+MapObjectProfileUnkBREX::~MapObjectProfileUnkBREX() {}
