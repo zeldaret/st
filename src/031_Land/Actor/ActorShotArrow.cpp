@@ -606,6 +606,8 @@ ARM void ActorShotArrow::func_ov031_020f2310() {
 
         func_01ffa60c(&stack.mUnk_0C, &stack.mUnk_30, &stack.mUnk_30);
 
+        // do some magic with floats
+
         if (this->mUnk_25A) {
             this->func_ov031_020f22d4(&stack.mUnk_30, &stack.mUnk_54);
         }
