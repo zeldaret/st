@@ -399,6 +399,6 @@ void ActorManager::func_ov001_020bb844() {
     }
 }
 
-THUMB_END
-
 DECL_INSTANCE(ActorManager, gpActorManager);
+
+THUMB_END

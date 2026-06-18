@@ -31,7 +31,7 @@ ActorProfileUnkZLSL::ActorProfileUnkZLSL() :
 
 ActorUnkZLSL::ActorUnkZLSL() {}
 
+THUMB_END
+
 ActorProfileUnkZLSL::~ActorProfileUnkZLSL() {}
 ActorProfileUnkZSRS::~ActorProfileUnkZSRS() {}
-
-THUMB_END
