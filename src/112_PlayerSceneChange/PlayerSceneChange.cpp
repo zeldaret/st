@@ -12,7 +12,7 @@
 extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_ov000_0205d65c(void *, VecFx32 *, VecFx32 *, u32);
 
-ARM PlayerSceneChange::PlayerSceneChange() {
+PlayerSceneChange::PlayerSceneChange() {
     this->mUnk_68 = this->mUnk_2C->mUnk_14C;
     this->mUnk_6C = -1;
 
@@ -35,7 +35,7 @@ ARM PlayerSceneChange::PlayerSceneChange() {
     this->mUnk_AE            = 0x8000;
 }
 
-ARM PlayerSceneChange::~PlayerSceneChange() {
+PlayerSceneChange::~PlayerSceneChange() {
     UnkStruct_ov000_0208f820_28 *pUnk_28 = this->mUnk_28;
     pUnk_28->mUnk_38.mUnk_08 &= 0xFFFD;
 
@@ -46,7 +46,7 @@ ARM PlayerSceneChange::~PlayerSceneChange() {
     func_ov000_0205ca74(this->mUnk_98);
 }
 
-ARM s16 PlayerSceneChange::func_ov112_02184bbc(s16 param1) {
+s16 PlayerSceneChange::func_ov112_02184bbc(s16 param1) {
     if (this->mUnk_90.type == ActorRefType_1) {
         Actor *pActor = gpActorManager->func_01fff3b4(this->mUnk_90);
 
@@ -75,7 +75,7 @@ extern "C" bool func_ov000_02080998(VecFx32 *);
 extern "C" void func_01ff930c(UnkStruct_ov000_0208f820_40 *, unk16, unk32);
 
 // https://decomp.me/scratch/c7PhN
-ARM void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
+void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
     const fx16 *pSinCosTable = gSinCosTable;
     Vec2b stack4;
     s16 stack3;
@@ -458,7 +458,7 @@ ARM void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1
 }
 
 // https://decomp.me/scratch/gX5Rb
-ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
+void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
     switch (param1) {
         case 0x3C:
             if (this->mUnk_68 == 0x19) {
@@ -723,7 +723,7 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
     }
 }
 
-ARM bool PlayerSceneChange::vfunc_1C(VecFx32 *param1) {
+bool PlayerSceneChange::vfunc_1C(VecFx32 *param1) {
     if (data_027e0cdc->func_ov000_02082a28(1) == 0) {
         switch (this->mUnk_30->mUnk_68) {
             case 0x3C:

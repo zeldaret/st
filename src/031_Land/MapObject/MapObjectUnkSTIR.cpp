@@ -3,21 +3,21 @@
 #include "MapObject/MapObjectUnkSTIR.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkSTIR);
+DECL_PROFILE(MapObjectProfileUnkSTIR);
 
-ARM MapObject *MapObjectProfileUnkSTIR::Create() {
+MapObject *MapObjectProfileUnkSTIR::Create() {
     return new(HeapIndex_2) MapObjectUnkSTIR();
 }
 
-ARM MapObjectProfileUnkSTIR::MapObjectProfileUnkSTIR() :
+MapObjectProfileUnkSTIR::MapObjectProfileUnkSTIR() :
     MapObjectProfile(MapObjectId_STIR) {}
 
-ARM MapObjectUnkSTIR::MapObjectUnkSTIR() {}
+MapObjectUnkSTIR::MapObjectUnkSTIR() {}
 
-ARM void MapObjectUnkSTIR::func_ov031_02100bbc(void) {}
-ARM void MapObjectUnkSTIR::func_ov031_02100d70(void) {}
-ARM void MapObjectUnkSTIR::func_ov031_02100d74(void) {}
-ARM void MapObjectUnkSTIR::func_ov031_02100da4(void) {}
+void MapObjectUnkSTIR::func_ov031_02100bbc(void) {}
+void MapObjectUnkSTIR::func_ov031_02100d70(void) {}
+void MapObjectUnkSTIR::func_ov031_02100d74(void) {}
+void MapObjectUnkSTIR::func_ov031_02100da4(void) {}
 
-ARM MapObjectUnkSTIR::~MapObjectUnkSTIR() {}
-ARM MapObjectProfileUnkSTIR::~MapObjectProfileUnkSTIR() {}
+MapObjectUnkSTIR::~MapObjectUnkSTIR() {}
+MapObjectProfileUnkSTIR::~MapObjectProfileUnkSTIR() {}

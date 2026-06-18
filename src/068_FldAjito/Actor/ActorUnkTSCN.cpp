@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkTSCN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkTSCN);
+DECL_PROFILE(ActorProfileUnkTSCN);
 
-ARM Actor *ActorProfileUnkTSCN::Create() {
+Actor *ActorProfileUnkTSCN::Create() {
     return new(HeapIndex_2) ActorUnkTSCN();
 }
 
-ARM ActorProfileUnkTSCN::ActorProfileUnkTSCN() :
+ActorProfileUnkTSCN::ActorProfileUnkTSCN() :
     ActorProfile(ActorId_TSCN) {}
 
-ARM ActorUnkTSCN::ActorUnkTSCN() {}
+ActorUnkTSCN::ActorUnkTSCN() {}
 
-ARM void ActorUnkTSCN::func_ov068_0215a8c4(void) {}
-ARM void ActorUnkTSCN::func_ov068_0215a8e0(void) {}
+void ActorUnkTSCN::func_ov068_0215a8c4(void) {}
+void ActorUnkTSCN::func_ov068_0215a8e0(void) {}
 
-ARM ActorUnkTSCN::~ActorUnkTSCN() {}
-ARM ActorProfileUnkTSCN::~ActorProfileUnkTSCN() {}
+ActorUnkTSCN::~ActorUnkTSCN() {}
+ActorProfileUnkTSCN::~ActorProfileUnkTSCN() {}

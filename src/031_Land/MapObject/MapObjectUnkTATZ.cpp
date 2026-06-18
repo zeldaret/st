@@ -3,24 +3,24 @@
 #include "MapObject/MapObjectUnkTATZ.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkTATZ);
+DECL_PROFILE(MapObjectProfileUnkTATZ);
 
-ARM MapObject *MapObjectProfileUnkTATZ::Create() {
+MapObject *MapObjectProfileUnkTATZ::Create() {
     return new(HeapIndex_2) MapObjectUnkTATZ();
 }
 
-ARM MapObjectProfileUnkTATZ::MapObjectProfileUnkTATZ() :
+MapObjectProfileUnkTATZ::MapObjectProfileUnkTATZ() :
     MapObjectProfile(MapObjectId_TATZ) {}
 
-ARM MapObjectUnkTATZ::MapObjectUnkTATZ() {}
+MapObjectUnkTATZ::MapObjectUnkTATZ() {}
 
-ARM void MapObjectUnkTATZ::func_ov031_02108ae4(void) {}
-ARM void MapObjectUnkTATZ::func_ov031_02108c48(void) {}
-ARM void MapObjectUnkTATZ::func_ov031_021090d0(void) {}
-ARM void MapObjectUnkTATZ::func_ov031_02109120(void) {}
-ARM void MapObjectUnkTATZ::func_ov031_021093c4(void) {}
-ARM void MapObjectUnkTATZ::func_ov031_02109504(void) {}
-ARM void MapObjectUnkTATZ::func_ov031_02109574(void) {}
+void MapObjectUnkTATZ::func_ov031_02108ae4(void) {}
+void MapObjectUnkTATZ::func_ov031_02108c48(void) {}
+void MapObjectUnkTATZ::func_ov031_021090d0(void) {}
+void MapObjectUnkTATZ::func_ov031_02109120(void) {}
+void MapObjectUnkTATZ::func_ov031_021093c4(void) {}
+void MapObjectUnkTATZ::func_ov031_02109504(void) {}
+void MapObjectUnkTATZ::func_ov031_02109574(void) {}
 
-ARM MapObjectUnkTATZ::~MapObjectUnkTATZ() {}
-ARM MapObjectProfileUnkTATZ::~MapObjectProfileUnkTATZ() {}
+MapObjectUnkTATZ::~MapObjectUnkTATZ() {}
+MapObjectProfileUnkTATZ::~MapObjectProfileUnkTATZ() {}

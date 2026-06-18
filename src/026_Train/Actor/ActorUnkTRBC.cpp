@@ -3,27 +3,27 @@
 #include "Actor/ActorUnkTRBC.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkTRBC);
+DECL_PROFILE(ActorProfileUnkTRBC);
 
-ARM Actor *ActorProfileUnkTRBC::Create() {
+Actor *ActorProfileUnkTRBC::Create() {
     return new(HeapIndex_2) ActorUnkTRBC();
 }
 
-ARM ActorProfileUnkTRBC::ActorProfileUnkTRBC() :
+ActorProfileUnkTRBC::ActorProfileUnkTRBC() :
     ActorProfile_Derived1(ActorId_TRBC) {}
 
-ARM ActorUnkTRBC::ActorUnkTRBC() {}
+ActorUnkTRBC::ActorUnkTRBC() {}
 
-ARM void ActorUnkTRBC::func_ov026_0210fec0(void) {}
-ARM void ActorUnkTRBC::func_ov026_0210fed8(void) {}
-ARM void ActorUnkTRBC::func_ov026_0210ff24(void) {}
-ARM void ActorUnkTRBC::func_ov026_02110024(void) {}
-ARM void ActorUnkTRBC::func_ov026_0211006c(void) {}
-ARM void ActorUnkTRBC::func_ov026_021100ac(void) {}
-ARM void ActorUnkTRBC::func_ov026_02110140(void) {}
-ARM void ActorUnkTRBC::func_ov026_02110150(void) {}
-ARM void ActorUnkTRBC::func_ov026_021101c8(void) {}
-ARM void ActorUnkTRBC::func_ov026_021101cc(void) {}
+void ActorUnkTRBC::func_ov026_0210fec0(void) {}
+void ActorUnkTRBC::func_ov026_0210fed8(void) {}
+void ActorUnkTRBC::func_ov026_0210ff24(void) {}
+void ActorUnkTRBC::func_ov026_02110024(void) {}
+void ActorUnkTRBC::func_ov026_0211006c(void) {}
+void ActorUnkTRBC::func_ov026_021100ac(void) {}
+void ActorUnkTRBC::func_ov026_02110140(void) {}
+void ActorUnkTRBC::func_ov026_02110150(void) {}
+void ActorUnkTRBC::func_ov026_021101c8(void) {}
+void ActorUnkTRBC::func_ov026_021101cc(void) {}
 
-ARM ActorUnkTRBC::~ActorUnkTRBC() {}
-ARM ActorProfileUnkTRBC::~ActorProfileUnkTRBC() {}
+ActorUnkTRBC::~ActorUnkTRBC() {}
+ActorProfileUnkTRBC::~ActorProfileUnkTRBC() {}

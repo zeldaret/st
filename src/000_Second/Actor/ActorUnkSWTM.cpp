@@ -3,16 +3,16 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkSWTM);
+DECL_PROFILE(ActorProfileUnkSWTM);
 
-ARM Actor *ActorProfileUnkSWTM::Create() {
+Actor *ActorProfileUnkSWTM::Create() {
     return new(HeapIndex_2) ActorUnkSWTM();
 }
 
-ARM ActorProfileUnkSWTM::ActorProfileUnkSWTM() :
+ActorProfileUnkSWTM::ActorProfileUnkSWTM() :
     ActorProfile(ActorId_SWTM) {}
 
-ARM ActorUnkSWTM::ActorUnkSWTM() :
+ActorUnkSWTM::ActorUnkSWTM() :
     mUnk_94(0),
     mUnk_98(0),
     mUnk_9C(0),
@@ -22,14 +22,14 @@ ARM ActorUnkSWTM::ActorUnkSWTM() :
     mUnk_A4(0),
     mUnk_A8(0) {}
 
-ARM ActorUnkSWTM::~ActorUnkSWTM() {
+ActorUnkSWTM::~ActorUnkSWTM() {
     if (this->mState != ActorUnkSWTMState_2 && this->func_ov000_02098a60(0) == 0) {
         this->func_ov000_0209b184();
     }
 }
 
 // https://decomp.me/scratch/qkP8m
-ARM bool ActorUnkSWTM::vfunc_18(unk32 param1) {
+bool ActorUnkSWTM::vfunc_18(unk32 param1) {
     this->mUnk_9E = this->mUnk_5C.mUnk_1C_0;
     this->mUnk_98 = this->mUnk_5C.mParams[2];
     this->mUnk_A4 = this->mUnk_5C.mParams[1] * 30;
@@ -46,7 +46,7 @@ ARM bool ActorUnkSWTM::vfunc_18(unk32 param1) {
     return true;
 }
 
-ARM void ActorUnkSWTM::vfunc_20(void) {
+void ActorUnkSWTM::vfunc_20(void) {
     switch (this->mState) {
         case ActorUnkSWTMState_0:
             if (!this->func_ov000_0209afe4()) {
@@ -91,9 +91,9 @@ ARM void ActorUnkSWTM::vfunc_20(void) {
     }
 }
 
-ARM void ActorUnkSWTM::vfunc_24(void) {}
+void ActorUnkSWTM::vfunc_24(void) {}
 
-ARM void ActorUnkSWTM::SetState(ActorState state) {
+void ActorUnkSWTM::SetState(ActorState state) {
     this->mState  = state;
     this->mUnk_A8 = 0;
 
@@ -122,7 +122,7 @@ ARM void ActorUnkSWTM::SetState(ActorState state) {
     }
 }
 
-ARM bool ActorUnkSWTM::func_ov000_0209afe4(void) {
+bool ActorUnkSWTM::func_ov000_0209afe4(void) {
     for (int i = this->mUnk_9E; i < this->mUnk_A0; i++) {
         if (data_027e0cd8->func_ov000_02081e30(i, this->mUnk_A2)) {
             return true;
@@ -132,7 +132,7 @@ ARM bool ActorUnkSWTM::func_ov000_0209afe4(void) {
     return false;
 }
 
-ARM unk32 ActorUnkSWTM::func_ov000_0209b038(void) {
+unk32 ActorUnkSWTM::func_ov000_0209b038(void) {
     switch (this->mUnk_98) {
         case 1:
         case 2: {
@@ -176,19 +176,19 @@ ARM unk32 ActorUnkSWTM::func_ov000_0209b038(void) {
     return 1;
 }
 
-ARM void ActorUnkSWTM::func_ov000_0209b160(void) {
+void ActorUnkSWTM::func_ov000_0209b160(void) {
     if (this->mState != ActorUnkSWTMState_2) {
         data_ov000_020b5214.func_ov000_0206db44(0xA3);
     }
 }
 
-ARM void ActorUnkSWTM::func_ov000_0209b184(void) {
+void ActorUnkSWTM::func_ov000_0209b184(void) {
     for (int i = this->mUnk_9E; i < this->mUnk_A0; i++) {
         data_027e0cd8->func_ov000_02081d7c(i, this->mUnk_A2, false);
     }
 }
 
-ARM void ActorUnkSWTM::func_ov000_0209b1d0(void) {
+void ActorUnkSWTM::func_ov000_0209b1d0(void) {
     if (this->mUnk_98 == 2) {
         return;
     }

@@ -3,30 +3,30 @@
 #include "Actor/ActorUnkMAFI.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkMAFI);
+DECL_PROFILE(ActorProfileUnkMAFI);
 
-ARM Actor *ActorProfileUnkMAFI::Create() {
+Actor *ActorProfileUnkMAFI::Create() {
     return new(HeapIndex_2) ActorUnkMAFI();
 }
 
-ARM ActorProfileUnkMAFI::ActorProfileUnkMAFI() :
+ActorProfileUnkMAFI::ActorProfileUnkMAFI() :
     ActorProfile_Derived1(ActorId_MAFI) {}
 
-ARM ActorUnkMAFI::ActorUnkMAFI() {}
+ActorUnkMAFI::ActorUnkMAFI() {}
 
-ARM void ActorUnkMAFI::func_ov092_02176bf8(void) {}
-ARM void ActorUnkMAFI::func_ov092_02176c34(void) {}
-ARM void ActorUnkMAFI::func_ov092_02176c70(void) {}
-ARM void ActorUnkMAFI::func_ov092_02176d64(void) {}
-ARM void ActorUnkMAFI::func_ov092_02176da4(void) {}
-ARM void ActorUnkMAFI::func_ov092_02176de0(void) {}
-ARM void ActorUnkMAFI::func_ov092_02176de4(void) {}
-ARM void ActorUnkMAFI::func_ov092_02176eac(void) {}
-ARM void ActorUnkMAFI::func_ov092_02176eb0(void) {}
-ARM void ActorUnkMAFI::func_ov092_02176efc(void) {}
-ARM void ActorUnkMAFI::func_ov092_02176f78(void) {}
-ARM void ActorUnkMAFI::func_ov092_02177000(void) {}
-ARM void ActorUnkMAFI::func_ov092_02177040(void) {}
+void ActorUnkMAFI::func_ov092_02176bf8(void) {}
+void ActorUnkMAFI::func_ov092_02176c34(void) {}
+void ActorUnkMAFI::func_ov092_02176c70(void) {}
+void ActorUnkMAFI::func_ov092_02176d64(void) {}
+void ActorUnkMAFI::func_ov092_02176da4(void) {}
+void ActorUnkMAFI::func_ov092_02176de0(void) {}
+void ActorUnkMAFI::func_ov092_02176de4(void) {}
+void ActorUnkMAFI::func_ov092_02176eac(void) {}
+void ActorUnkMAFI::func_ov092_02176eb0(void) {}
+void ActorUnkMAFI::func_ov092_02176efc(void) {}
+void ActorUnkMAFI::func_ov092_02176f78(void) {}
+void ActorUnkMAFI::func_ov092_02177000(void) {}
+void ActorUnkMAFI::func_ov092_02177040(void) {}
 
-ARM ActorUnkMAFI::~ActorUnkMAFI() {}
-ARM ActorProfileUnkMAFI::~ActorProfileUnkMAFI() {}
+ActorUnkMAFI::~ActorUnkMAFI() {}
+ActorProfileUnkMAFI::~ActorProfileUnkMAFI() {}

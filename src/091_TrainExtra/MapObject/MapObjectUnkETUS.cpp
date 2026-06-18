@@ -3,22 +3,22 @@
 #include "MapObject/MapObjectUnkETUS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkETUS);
+DECL_PROFILE(MapObjectProfileUnkETUS);
 
-ARM MapObject *MapObjectProfileUnkETUS::Create() {
+MapObject *MapObjectProfileUnkETUS::Create() {
     return new(HeapIndex_2) MapObjectUnkETUS();
 }
 
-ARM MapObjectProfileUnkETUS::MapObjectProfileUnkETUS() :
+MapObjectProfileUnkETUS::MapObjectProfileUnkETUS() :
     MapObjectProfile(MapObjectId_ETUS) {}
 
-ARM MapObjectUnkETUS::MapObjectUnkETUS() {}
+MapObjectUnkETUS::MapObjectUnkETUS() {}
 
-ARM void MapObjectUnkETUS::func_ov091_021686a4(void) {}
-ARM void MapObjectUnkETUS::func_ov091_0216872c(void) {}
-ARM void MapObjectUnkETUS::func_ov091_02168730(void) {}
-ARM void MapObjectUnkETUS::func_ov091_02168744(void) {}
-ARM void MapObjectUnkETUS::func_ov091_02168784(void) {}
+void MapObjectUnkETUS::func_ov091_021686a4(void) {}
+void MapObjectUnkETUS::func_ov091_0216872c(void) {}
+void MapObjectUnkETUS::func_ov091_02168730(void) {}
+void MapObjectUnkETUS::func_ov091_02168744(void) {}
+void MapObjectUnkETUS::func_ov091_02168784(void) {}
 
-ARM MapObjectUnkETUS::~MapObjectUnkETUS() {}
-ARM MapObjectProfileUnkETUS::~MapObjectProfileUnkETUS() {}
+MapObjectUnkETUS::~MapObjectUnkETUS() {}
+MapObjectProfileUnkETUS::~MapObjectProfileUnkETUS() {}

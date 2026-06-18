@@ -3,18 +3,18 @@
 #include "Actor/ActorUnkBPAP.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkBPAP);
+DECL_PROFILE(ActorProfileUnkBPAP);
 
-ARM Actor *ActorProfileUnkBPAP::Create() {
+Actor *ActorProfileUnkBPAP::Create() {
     return new(HeapIndex_2) ActorUnkBPAP();
 }
 
-ARM ActorProfileUnkBPAP::ActorProfileUnkBPAP() :
+ActorProfileUnkBPAP::ActorProfileUnkBPAP() :
     ActorProfile(ActorId_BPAP) {}
 
-ARM ActorUnkBPAP::ActorUnkBPAP() {}
+ActorUnkBPAP::ActorUnkBPAP() {}
 
-ARM void ActorUnkBPAP::func_ov021_020f3858(void) {}
+void ActorUnkBPAP::func_ov021_020f3858(void) {}
 
-ARM ActorUnkBPAP::~ActorUnkBPAP() {}
-ARM ActorProfileUnkBPAP::~ActorProfileUnkBPAP() {}
+ActorUnkBPAP::~ActorUnkBPAP() {}
+ActorProfileUnkBPAP::~ActorProfileUnkBPAP() {}

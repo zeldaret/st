@@ -3,20 +3,20 @@
 #include "MapObject/MapObjectUnkGATE.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkGATE);
+DECL_PROFILE(MapObjectProfileUnkGATE);
 
-ARM MapObject *MapObjectProfileUnkGATE::Create() {
+MapObject *MapObjectProfileUnkGATE::Create() {
     return new(HeapIndex_2) MapObjectUnkGATE();
 }
 
-ARM MapObjectProfileUnkGATE::MapObjectProfileUnkGATE() :
+MapObjectProfileUnkGATE::MapObjectProfileUnkGATE() :
     MapObjectProfile(MapObjectId_GATE) {}
 
-ARM MapObjectUnkGATE::MapObjectUnkGATE() {}
+MapObjectUnkGATE::MapObjectUnkGATE() {}
 
-ARM void MapObjectUnkGATE::func_ov031_02100890(void) {}
-ARM void MapObjectUnkGATE::func_ov031_02100a28(void) {}
-ARM void MapObjectUnkGATE::func_ov031_02100a2c(void) {}
+void MapObjectUnkGATE::func_ov031_02100890(void) {}
+void MapObjectUnkGATE::func_ov031_02100a28(void) {}
+void MapObjectUnkGATE::func_ov031_02100a2c(void) {}
 
-ARM MapObjectUnkGATE::~MapObjectUnkGATE() {}
-ARM MapObjectProfileUnkGATE::~MapObjectProfileUnkGATE() {}
+MapObjectUnkGATE::~MapObjectUnkGATE() {}
+MapObjectProfileUnkGATE::~MapObjectProfileUnkGATE() {}

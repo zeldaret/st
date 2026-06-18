@@ -3,19 +3,19 @@
 #include "MapObject/MapObjectUnkRBMR.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkRBMR);
+DECL_PROFILE(MapObjectProfileUnkRBMR);
 
-ARM MapObject *MapObjectProfileUnkRBMR::Create() {
+MapObject *MapObjectProfileUnkRBMR::Create() {
     return new(HeapIndex_2) MapObjectUnkRBMR();
 }
 
-ARM MapObjectProfileUnkRBMR::MapObjectProfileUnkRBMR() :
+MapObjectProfileUnkRBMR::MapObjectProfileUnkRBMR() :
     MapObjectProfile(MapObjectId_RBMR) {}
 
-ARM MapObjectUnkRBMR::MapObjectUnkRBMR() {}
+MapObjectUnkRBMR::MapObjectUnkRBMR() {}
 
-ARM void MapObjectUnkRBMR::func_ov090_02174bf8(void) {}
-ARM void MapObjectUnkRBMR::func_ov090_02174c0c(void) {}
+void MapObjectUnkRBMR::func_ov090_02174bf8(void) {}
+void MapObjectUnkRBMR::func_ov090_02174c0c(void) {}
 
-ARM MapObjectUnkRBMR::~MapObjectUnkRBMR() {}
-ARM MapObjectProfileUnkRBMR::~MapObjectProfileUnkRBMR() {}
+MapObjectUnkRBMR::~MapObjectUnkRBMR() {}
+MapObjectProfileUnkRBMR::~MapObjectProfileUnkRBMR() {}

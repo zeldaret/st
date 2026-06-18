@@ -3,34 +3,34 @@
 #include "Actor/ActorUnkVCFT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkVCFT);
+DECL_PROFILE(ActorProfileUnkVCFT);
 
-ARM Actor *ActorProfileUnkVCFT::Create() {
+Actor *ActorProfileUnkVCFT::Create() {
     return new(HeapIndex_2) ActorUnkVCFT();
 }
 
-ARM ActorProfileUnkVCFT::ActorProfileUnkVCFT() :
+ActorProfileUnkVCFT::ActorProfileUnkVCFT() :
     ActorProfile_Derived1(ActorId_VCFT) {}
 
-ARM ActorUnkVCFT::ActorUnkVCFT() {}
+ActorUnkVCFT::ActorUnkVCFT() {}
 
-ARM void ActorUnkVCFT::func_ov066_02158e2c(void) {}
-ARM void ActorUnkVCFT::func_ov066_02158eb4(void) {}
-ARM void ActorUnkVCFT::func_ov066_02158ec8(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215ac68(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215ae50(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215b2f4(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215b448(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215b61c(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215b67c(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215b70c(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215b830(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215b848(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215b864(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215b8c4(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215b938(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215b9ac(void) {}
-ARM void ActorUnkVCFT::func_ov066_0215b9f4(void) {}
+void ActorUnkVCFT::func_ov066_02158e2c(void) {}
+void ActorUnkVCFT::func_ov066_02158eb4(void) {}
+void ActorUnkVCFT::func_ov066_02158ec8(void) {}
+void ActorUnkVCFT::func_ov066_0215ac68(void) {}
+void ActorUnkVCFT::func_ov066_0215ae50(void) {}
+void ActorUnkVCFT::func_ov066_0215b2f4(void) {}
+void ActorUnkVCFT::func_ov066_0215b448(void) {}
+void ActorUnkVCFT::func_ov066_0215b61c(void) {}
+void ActorUnkVCFT::func_ov066_0215b67c(void) {}
+void ActorUnkVCFT::func_ov066_0215b70c(void) {}
+void ActorUnkVCFT::func_ov066_0215b830(void) {}
+void ActorUnkVCFT::func_ov066_0215b848(void) {}
+void ActorUnkVCFT::func_ov066_0215b864(void) {}
+void ActorUnkVCFT::func_ov066_0215b8c4(void) {}
+void ActorUnkVCFT::func_ov066_0215b938(void) {}
+void ActorUnkVCFT::func_ov066_0215b9ac(void) {}
+void ActorUnkVCFT::func_ov066_0215b9f4(void) {}
 
-ARM ActorUnkVCFT::~ActorUnkVCFT() {}
-ARM ActorProfileUnkVCFT::~ActorProfileUnkVCFT() {}
+ActorUnkVCFT::~ActorUnkVCFT() {}
+ActorProfileUnkVCFT::~ActorProfileUnkVCFT() {}

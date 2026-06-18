@@ -3,22 +3,22 @@
 #include "MapObject/MapObjectUnkDFNC.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkDFNC);
+DECL_PROFILE(MapObjectProfileUnkDFNC);
 
-ARM MapObject *MapObjectProfileUnkDFNC::Create() {
+MapObject *MapObjectProfileUnkDFNC::Create() {
     return new(HeapIndex_2) MapObjectUnkDFNC();
 }
 
-ARM MapObjectProfileUnkDFNC::MapObjectProfileUnkDFNC() :
+MapObjectProfileUnkDFNC::MapObjectProfileUnkDFNC() :
     MapObjectProfile(MapObjectId_DFNC) {}
 
-ARM MapObjectUnkDFNC::MapObjectUnkDFNC() {}
+MapObjectUnkDFNC::MapObjectUnkDFNC() {}
 
-ARM void MapObjectUnkDFNC::func_ov060_02160664(void) {}
-ARM void MapObjectUnkDFNC::func_ov060_021606b4(void) {}
-ARM void MapObjectUnkDFNC::func_ov060_021608c4(void) {}
-ARM void MapObjectUnkDFNC::func_ov060_02160924(void) {}
-ARM void MapObjectUnkDFNC::func_ov060_02160968(void) {}
+void MapObjectUnkDFNC::func_ov060_02160664(void) {}
+void MapObjectUnkDFNC::func_ov060_021606b4(void) {}
+void MapObjectUnkDFNC::func_ov060_021608c4(void) {}
+void MapObjectUnkDFNC::func_ov060_02160924(void) {}
+void MapObjectUnkDFNC::func_ov060_02160968(void) {}
 
-ARM MapObjectUnkDFNC::~MapObjectUnkDFNC() {}
-ARM MapObjectProfileUnkDFNC::~MapObjectProfileUnkDFNC() {}
+MapObjectUnkDFNC::~MapObjectUnkDFNC() {}
+MapObjectProfileUnkDFNC::~MapObjectProfileUnkDFNC() {}

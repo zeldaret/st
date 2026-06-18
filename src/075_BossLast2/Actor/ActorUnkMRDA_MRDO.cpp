@@ -5,29 +5,29 @@
 
 // --- Actor MRDA ---
 
-ARM DECL_PROFILE(ActorProfileUnkMRDA);
+DECL_PROFILE(ActorProfileUnkMRDA);
 
-ARM Actor *ActorProfileUnkMRDA::Create() {
+Actor *ActorProfileUnkMRDA::Create() {
     return new(HeapIndex_2) ActorUnkMRDA();
 }
 
-ARM ActorProfileUnkMRDA::ActorProfileUnkMRDA() :
+ActorProfileUnkMRDA::ActorProfileUnkMRDA() :
     ActorProfile_Derived1(ActorId_MRDA) {}
 
-ARM ActorUnkMRDA::ActorUnkMRDA() {}
+ActorUnkMRDA::ActorUnkMRDA() {}
 
 // --- Actor MRDO ---
 
-ARM DECL_PROFILE(ActorProfileUnkMRDO);
+DECL_PROFILE(ActorProfileUnkMRDO);
 
-ARM Actor *ActorProfileUnkMRDO::Create() {
+Actor *ActorProfileUnkMRDO::Create() {
     return new(HeapIndex_2) ActorUnkMRDO();
 }
 
-ARM ActorProfileUnkMRDO::ActorProfileUnkMRDO() :
+ActorProfileUnkMRDO::ActorProfileUnkMRDO() :
     ActorProfile_Derived1(ActorId_MRDO) {}
 
-ARM ActorUnkMRDO::ActorUnkMRDO() {}
+ActorUnkMRDO::ActorUnkMRDO() {}
 
-ARM ActorProfileUnkMRDA::~ActorProfileUnkMRDA() {}
-ARM ActorProfileUnkMRDO::~ActorProfileUnkMRDO() {}
+ActorProfileUnkMRDA::~ActorProfileUnkMRDA() {}
+ActorProfileUnkMRDO::~ActorProfileUnkMRDO() {}

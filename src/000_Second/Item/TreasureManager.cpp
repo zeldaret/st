@@ -85,19 +85,19 @@ extern u16 data_ov000_020afe8c;
 extern u16 data_ov000_020afe90;
 extern u16 data_ov000_020afe94;
 
-ARM void TreasureManager::func_ov000_020a9b10(void *param1) {
+void TreasureManager::func_ov000_020a9b10(void *param1) {
     MI_CpuCopyFast(param1, this, sizeof(TreasureManager));
 }
 
-ARM unk32 TreasureManager::func_ov000_020a9b2c(unk32 param1) {
+unk32 TreasureManager::func_ov000_020a9b2c(unk32 param1) {
     return data_ov000_020afda8[param1];
 }
 
-ARM unk32 TreasureManager::func_ov000_020a9b3c(unk32 param1) {
+unk32 TreasureManager::func_ov000_020a9b3c(unk32 param1) {
     return data_ov000_020afd68[param1];
 }
 
-ARM unk32 TreasureManager::func_ov000_020a9b4c(unk32 param1) {
+unk32 TreasureManager::func_ov000_020a9b4c(unk32 param1) {
     for (int i = 0; i < data_ov000_020afe34; i++) {
         if (data_ov000_020afec4[i] == param1) {
             return data_ov000_020afe8c;
@@ -125,12 +125,12 @@ ARM unk32 TreasureManager::func_ov000_020a9b4c(unk32 param1) {
     return 0;
 }
 
-ARM bool TreasureManager::func_ov000_020a9c4c(TreasureType type) {
+bool TreasureManager::func_ov000_020a9c4c(TreasureType type) {
     return this->mUnk_3C[type] >= 0;
 }
 
 // hasAnyTreasure
-ARM bool TreasureManager::func_ov000_020a9c64() {
+bool TreasureManager::func_ov000_020a9c64() {
     for (s32 i = 0; i < ARRAY_LEN(this->mUnk_3C); i++) {
         if (this->mUnk_3C[i] >= 0) {
             return true;
@@ -141,7 +141,7 @@ ARM bool TreasureManager::func_ov000_020a9c64() {
 }
 
 // getTreasureAmount
-ARM unk32 TreasureManager::func_ov000_020a9c90(TreasureType type) {
+unk32 TreasureManager::func_ov000_020a9c90(TreasureType type) {
     if (this->mUnk_3C[type] >= 0) {
         return this->mUnk_3C[type];
     }
@@ -150,12 +150,12 @@ ARM unk32 TreasureManager::func_ov000_020a9c90(TreasureType type) {
 }
 
 // isTreasureAmountMaxed
-ARM bool TreasureManager::func_ov000_020a9ca4(TreasureType type) {
+bool TreasureManager::func_ov000_020a9ca4(TreasureType type) {
     return this->func_ov000_020a9c90(type) >= MAX_TREASURE;
 }
 
 // gainTreasure
-ARM void TreasureManager::func_ov000_020a9cbc(TreasureType type, s32 amount) {
+void TreasureManager::func_ov000_020a9cbc(TreasureType type, s32 amount) {
     s32 newAmount;
 
     if (this->mUnk_3C[type] < 0) {
@@ -173,7 +173,7 @@ ARM void TreasureManager::func_ov000_020a9cbc(TreasureType type, s32 amount) {
     this->mUnk_3C[type] = newAmount;
 }
 
-ARM u32 TreasureManager::func_ov000_020a9cfc(u8 *param1, u8 param2) {
+u32 TreasureManager::func_ov000_020a9cfc(u8 *param1, u8 param2) {
     s32 uVar2 = gRandom.Next32(100);
     s32 iVar1 = 0;
 
@@ -188,7 +188,7 @@ ARM u32 TreasureManager::func_ov000_020a9cfc(u8 *param1, u8 param2) {
     return param2;
 }
 
-ARM unk32 TreasureManager::func_ov000_020a9d78(unk32 param1) {
+unk32 TreasureManager::func_ov000_020a9d78(unk32 param1) {
     unk32 var_r0;
     if (param1 < 0) {
         var_r0 = gSaveManager.mUnk_21C.func_ov000_020a1000();
@@ -207,7 +207,7 @@ ARM unk32 TreasureManager::func_ov000_020a9d78(unk32 param1) {
     return data_ov000_020afec4[var_r3];
 }
 
-ARM unk32 TreasureManager::func_ov000_020a9e14(unk32 param1) {
+unk32 TreasureManager::func_ov000_020a9e14(unk32 param1) {
     unk32 var_r0;
     if (param1 < 0) {
         var_r0 = gSaveManager.mUnk_21C.func_ov000_020a1000();
@@ -226,7 +226,7 @@ ARM unk32 TreasureManager::func_ov000_020a9e14(unk32 param1) {
     return data_ov000_020afeb0[var_r3];
 }
 
-ARM unk32 TreasureManager::func_ov000_020a9eb0(unk32 param1) {
+unk32 TreasureManager::func_ov000_020a9eb0(unk32 param1) {
     unk32 var_r0;
     if (param1 < 0) {
         var_r0 = gSaveManager.mUnk_21C.func_ov000_020a1000();
@@ -245,7 +245,7 @@ ARM unk32 TreasureManager::func_ov000_020a9eb0(unk32 param1) {
     return data_ov000_020afea0[var_r3];
 }
 
-ARM unk32 TreasureManager::func_ov000_020a9f4c(unk32 param1) {
+unk32 TreasureManager::func_ov000_020a9f4c(unk32 param1) {
     if ((s32) gRandom.Next32(100) < 80) {
         return TreasureManager::func_ov000_020a9eb0(param1);
     }
@@ -268,7 +268,7 @@ ARM unk32 TreasureManager::func_ov000_020a9f4c(unk32 param1) {
     return data_ov000_020afe98[var_r3];
 }
 
-ARM ItemId TreasureManager::func_ov000_020aa02c(ItemId itemId) {
+ItemId TreasureManager::func_ov000_020aa02c(ItemId itemId) {
     switch (itemId) {
         case ItemId_RandCommonTreasure:
             return data_ov000_020afde8[TreasureManager::func_ov000_020a9d78(-1)];
@@ -286,7 +286,7 @@ ARM ItemId TreasureManager::func_ov000_020aa02c(ItemId itemId) {
 }
 
 // gainTreasureFromItem
-ARM void TreasureManager::func_ov000_020aa0ac(ItemId itemId) {
+void TreasureManager::func_ov000_020aa0ac(ItemId itemId) {
     switch (itemId) {
         case ItemId_DemonFossil:
             this->func_ov000_020a9cbc(TreasureType_DemonFossil, 1);

@@ -3,7 +3,7 @@
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include "Unknown/UnkStruct_ov003_020ba740.hpp"
 
-ARM UnkSystem1_ov019_Derived2::UnkSystem1_ov019_Derived2() :
+UnkSystem1_ov019_Derived2::UnkSystem1_ov019_Derived2() :
     UnkSystem1_ov019_2(0, 0) {
     this->mUnk_12 = -1;
     this->mUnk_13 = 0;
@@ -11,12 +11,12 @@ ARM UnkSystem1_ov019_Derived2::UnkSystem1_ov019_Derived2() :
     this->mUnk_15 = 0;
 }
 
-ARM void UnkSystem1_ov019_Derived2::vfunc_08(unk32 param1) {
+void UnkSystem1_ov019_Derived2::vfunc_08(unk32 param1) {
     UnkStruct_ov000_02067bc4::UnkStruct1 stack;
     this->mUnk_06 = data_ov000_020b504c.func_ov000_02067cf8(param1, this->mUnk_10, &stack);
 }
 
-ARM unk32 UnkSystem1_ov019_Derived2::vfunc_1C(u32 param1, unk32 param2, unk32 param3) {
+unk32 UnkSystem1_ov019_Derived2::vfunc_1C(u32 param1, unk32 param2, unk32 param3) {
     unk32 ret = 0;
 
     if (param1 != 0 && param1 != 1) {

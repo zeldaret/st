@@ -3,21 +3,21 @@
 #include "Actor/ActorUnkRMAJ.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRMAJ);
+DECL_PROFILE(ActorProfileUnkRMAJ);
 
-ARM Actor *ActorProfileUnkRMAJ::Create() {
+Actor *ActorProfileUnkRMAJ::Create() {
     return new(HeapIndex_2) ActorUnkRMAJ();
 }
 
-ARM ActorProfileUnkRMAJ::ActorProfileUnkRMAJ() :
+ActorProfileUnkRMAJ::ActorProfileUnkRMAJ() :
     ActorProfile(ActorId_RMAJ) {}
 
-ARM ActorUnkRMAJ::ActorUnkRMAJ() {}
+ActorUnkRMAJ::ActorUnkRMAJ() {}
 
-ARM void ActorUnkRMAJ::func_ov068_02157f18(void) {}
-ARM void ActorUnkRMAJ::func_ov068_02157f38(void) {}
-ARM void ActorUnkRMAJ::func_ov068_02157f54(void) {}
-ARM void ActorUnkRMAJ::func_ov068_02157f58(void) {}
+void ActorUnkRMAJ::func_ov068_02157f18(void) {}
+void ActorUnkRMAJ::func_ov068_02157f38(void) {}
+void ActorUnkRMAJ::func_ov068_02157f54(void) {}
+void ActorUnkRMAJ::func_ov068_02157f58(void) {}
 
-ARM ActorUnkRMAJ::~ActorUnkRMAJ() {}
-ARM ActorProfileUnkRMAJ::~ActorProfileUnkRMAJ() {}
+ActorUnkRMAJ::~ActorUnkRMAJ() {}
+ActorProfileUnkRMAJ::~ActorProfileUnkRMAJ() {}

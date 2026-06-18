@@ -3,21 +3,21 @@
 #include "Actor/ActorUnkQKTG.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkQKTG);
+DECL_PROFILE(ActorProfileUnkQKTG);
 
-ARM Actor *ActorProfileUnkQKTG::Create() {
+Actor *ActorProfileUnkQKTG::Create() {
     return new(HeapIndex_2) ActorUnkQKTG();
 }
 
-ARM ActorProfileUnkQKTG::ActorProfileUnkQKTG() :
+ActorProfileUnkQKTG::ActorProfileUnkQKTG() :
     ActorProfile(ActorId_QKTG) {}
 
-ARM ActorUnkQKTG::ActorUnkQKTG() {}
+ActorUnkQKTG::ActorUnkQKTG() {}
 
-ARM void ActorUnkQKTG::func_ov086_0215dd28(void) {}
-ARM void ActorUnkQKTG::func_ov086_0215dd68(void) {}
-ARM void ActorUnkQKTG::func_ov086_0215de08(void) {}
-ARM void ActorUnkQKTG::func_ov086_0215de1c(void) {}
+void ActorUnkQKTG::func_ov086_0215dd28(void) {}
+void ActorUnkQKTG::func_ov086_0215dd68(void) {}
+void ActorUnkQKTG::func_ov086_0215de08(void) {}
+void ActorUnkQKTG::func_ov086_0215de1c(void) {}
 
-ARM ActorUnkQKTG::~ActorUnkQKTG() {}
-ARM ActorProfileUnkQKTG::~ActorProfileUnkQKTG() {}
+ActorUnkQKTG::~ActorUnkQKTG() {}
+ActorProfileUnkQKTG::~ActorProfileUnkQKTG() {}

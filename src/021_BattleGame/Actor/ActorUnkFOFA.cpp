@@ -3,18 +3,18 @@
 #include "Actor/ActorUnkFOFA.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkFOFA);
+DECL_PROFILE(ActorProfileUnkFOFA);
 
-ARM Actor *ActorProfileUnkFOFA::Create() {
+Actor *ActorProfileUnkFOFA::Create() {
     return new(HeapIndex_2) ActorUnkFOFA();
 }
 
-ARM ActorProfileUnkFOFA::ActorProfileUnkFOFA() :
+ActorProfileUnkFOFA::ActorProfileUnkFOFA() :
     ActorProfile(ActorId_FOFA) {}
 
-ARM ActorUnkFOFA::ActorUnkFOFA() {}
+ActorUnkFOFA::ActorUnkFOFA() {}
 
-ARM void ActorUnkFOFA::func_ov021_020f3a34(void) {}
+void ActorUnkFOFA::func_ov021_020f3a34(void) {}
 
-ARM ActorUnkFOFA::~ActorUnkFOFA() {}
-ARM ActorProfileUnkFOFA::~ActorProfileUnkFOFA() {}
+ActorUnkFOFA::~ActorUnkFOFA() {}
+ActorProfileUnkFOFA::~ActorProfileUnkFOFA() {}

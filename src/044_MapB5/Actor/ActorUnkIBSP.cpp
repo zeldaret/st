@@ -3,21 +3,21 @@
 #include "Actor/ActorUnkIBSP.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkIBSP);
+DECL_PROFILE(ActorProfileUnkIBSP);
 
-ARM Actor *ActorProfileUnkIBSP::Create() {
+Actor *ActorProfileUnkIBSP::Create() {
     return new(HeapIndex_2) ActorUnkIBSP();
 }
 
-ARM ActorProfileUnkIBSP::ActorProfileUnkIBSP() :
+ActorProfileUnkIBSP::ActorProfileUnkIBSP() :
     ActorProfile(ActorId_IBSP) {}
 
-ARM ActorUnkIBSP::ActorUnkIBSP() {}
+ActorUnkIBSP::ActorUnkIBSP() {}
 
-ARM void ActorUnkIBSP::func_ov044_0212b84c(void) {}
-ARM void ActorUnkIBSP::func_ov044_0212b8a0(void) {}
-ARM void ActorUnkIBSP::func_ov044_0212b918(void) {}
-ARM void ActorUnkIBSP::func_ov044_0212bb74(void) {}
+void ActorUnkIBSP::func_ov044_0212b84c(void) {}
+void ActorUnkIBSP::func_ov044_0212b8a0(void) {}
+void ActorUnkIBSP::func_ov044_0212b918(void) {}
+void ActorUnkIBSP::func_ov044_0212bb74(void) {}
 
-ARM ActorUnkIBSP::~ActorUnkIBSP() {}
-ARM ActorProfileUnkIBSP::~ActorProfileUnkIBSP() {}
+ActorUnkIBSP::~ActorUnkIBSP() {}
+ActorProfileUnkIBSP::~ActorProfileUnkIBSP() {}

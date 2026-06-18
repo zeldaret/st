@@ -3,21 +3,21 @@
 #include "Actor/ActorUnkNCWA.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkNCWA);
+DECL_PROFILE(ActorProfileUnkNCWA);
 
-ARM Actor *ActorProfileUnkNCWA::Create() {
+Actor *ActorProfileUnkNCWA::Create() {
     return new(HeapIndex_2) ActorUnkNCWA();
 }
 
-ARM ActorProfileUnkNCWA::ActorProfileUnkNCWA() :
+ActorProfileUnkNCWA::ActorProfileUnkNCWA() :
     ActorProfile_Derived1(ActorId_NCWA) {}
 
-ARM ActorUnkNCWA::ActorUnkNCWA() {}
+ActorUnkNCWA::ActorUnkNCWA() {}
 
-ARM void ActorUnkNCWA::func_ov062_0215a084(void) {}
-ARM void ActorUnkNCWA::func_ov062_0215a220(void) {}
-ARM void ActorUnkNCWA::func_ov062_0215a238(void) {}
-ARM void ActorUnkNCWA::func_ov062_0215a28c(void) {}
+void ActorUnkNCWA::func_ov062_0215a084(void) {}
+void ActorUnkNCWA::func_ov062_0215a220(void) {}
+void ActorUnkNCWA::func_ov062_0215a238(void) {}
+void ActorUnkNCWA::func_ov062_0215a28c(void) {}
 
-ARM ActorUnkNCWA::~ActorUnkNCWA() {}
-ARM ActorProfileUnkNCWA::~ActorProfileUnkNCWA() {}
+ActorUnkNCWA::~ActorUnkNCWA() {}
+ActorProfileUnkNCWA::~ActorProfileUnkNCWA() {}

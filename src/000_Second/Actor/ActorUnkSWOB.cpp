@@ -9,18 +9,18 @@
 extern "C" void func_01ffedac(u16 *, VecFx32 *);
 extern "C" void func_01ffb9cc(void *, VecFx32 *);
 
-ARM DECL_PROFILE(ActorProfileUnkSWOB);
+DECL_PROFILE(ActorProfileUnkSWOB);
 
-ARM Actor *ActorProfileUnkSWOB::Create() {
+Actor *ActorProfileUnkSWOB::Create() {
     return new(HeapIndex_2) ActorUnkSWOB();
 }
 
-ARM ActorProfileUnkSWOB::ActorProfileUnkSWOB() :
+ActorProfileUnkSWOB::ActorProfileUnkSWOB() :
     ActorProfile(ActorId_SWOB) {}
 
-ARM ActorUnkSWOB::ActorUnkSWOB() {}
+ActorUnkSWOB::ActorUnkSWOB() {}
 
-ARM bool ActorUnkSWOB::vfunc_18(unk32 param1) {
+bool ActorUnkSWOB::vfunc_18(unk32 param1) {
     this->mUnk_9E = this->mUnk_5C.mUnk_1C_0;
     this->mUnk_94 = this->mUnk_5C.mParams[1];
     this->mUnk_98 = this->mUnk_5C.mParams[2];
@@ -37,7 +37,7 @@ ARM bool ActorUnkSWOB::vfunc_18(unk32 param1) {
     return true;
 }
 
-ARM void ActorUnkSWOB::SetState(ActorState state) {
+void ActorUnkSWOB::SetState(ActorState state) {
     this->mState = state;
 
     switch (this->mState) {
@@ -61,7 +61,7 @@ ARM void ActorUnkSWOB::SetState(ActorState state) {
     }
 }
 
-ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
+void ActorUnkSWOB::func_ov000_0209aa30(void) {
     if (this->mState == ActorUnkSWOBState_1) {
         return;
     }

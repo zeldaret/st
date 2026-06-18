@@ -3,27 +3,27 @@
 #include "Actor/ActorUnkOLDS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkOLDS);
+DECL_PROFILE(ActorProfileUnkOLDS);
 
-ARM Actor *ActorProfileUnkOLDS::Create() {
+Actor *ActorProfileUnkOLDS::Create() {
     return new(HeapIndex_2) ActorUnkOLDS();
 }
 
-ARM ActorProfileUnkOLDS::ActorProfileUnkOLDS() :
+ActorProfileUnkOLDS::ActorProfileUnkOLDS() :
     ActorProfile_Derived1(ActorId_OLDS) {}
 
-ARM ActorUnkOLDS::ActorUnkOLDS() {}
+ActorUnkOLDS::ActorUnkOLDS() {}
 
-ARM void ActorUnkOLDS::func_ov040_0212cd8c(void) {}
-ARM void ActorUnkOLDS::func_ov040_0212cee4(void) {}
-ARM void ActorUnkOLDS::func_ov040_0212cefc(void) {}
-ARM void ActorUnkOLDS::func_ov040_0212cf34(void) {}
-ARM void ActorUnkOLDS::func_ov040_0212cf5c(void) {}
-ARM void ActorUnkOLDS::func_ov040_0212cf74(void) {}
-ARM void ActorUnkOLDS::func_ov040_0212cfac(void) {}
-ARM void ActorUnkOLDS::func_ov040_0212cfb8(void) {}
-ARM void ActorUnkOLDS::func_ov040_0212cfd4(void) {}
-ARM void ActorUnkOLDS::func_ov040_0212d040(void) {}
+void ActorUnkOLDS::func_ov040_0212cd8c(void) {}
+void ActorUnkOLDS::func_ov040_0212cee4(void) {}
+void ActorUnkOLDS::func_ov040_0212cefc(void) {}
+void ActorUnkOLDS::func_ov040_0212cf34(void) {}
+void ActorUnkOLDS::func_ov040_0212cf5c(void) {}
+void ActorUnkOLDS::func_ov040_0212cf74(void) {}
+void ActorUnkOLDS::func_ov040_0212cfac(void) {}
+void ActorUnkOLDS::func_ov040_0212cfb8(void) {}
+void ActorUnkOLDS::func_ov040_0212cfd4(void) {}
+void ActorUnkOLDS::func_ov040_0212d040(void) {}
 
-ARM ActorUnkOLDS::~ActorUnkOLDS() {}
-ARM ActorProfileUnkOLDS::~ActorProfileUnkOLDS() {}
+ActorUnkOLDS::~ActorUnkOLDS() {}
+ActorProfileUnkOLDS::~ActorProfileUnkOLDS() {}

@@ -3,22 +3,22 @@
 #include "Actor/ActorUnkSPTT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkSPTT);
+DECL_PROFILE(ActorProfileUnkSPTT);
 
-ARM Actor *ActorProfileUnkSPTT::Create() {
+Actor *ActorProfileUnkSPTT::Create() {
     return new(HeapIndex_2) ActorUnkSPTT();
 }
 
-ARM ActorProfileUnkSPTT::ActorProfileUnkSPTT() :
+ActorProfileUnkSPTT::ActorProfileUnkSPTT() :
     ActorProfile(ActorId_SPTT) {}
 
-ARM ActorUnkSPTT::ActorUnkSPTT() {}
+ActorUnkSPTT::ActorUnkSPTT() {}
 
-ARM void ActorUnkSPTT::func_ov093_02176c70(void) {}
-ARM void ActorUnkSPTT::func_ov093_02176e18(void) {}
-ARM void ActorUnkSPTT::func_ov093_02176ea4(void) {}
-ARM void ActorUnkSPTT::func_ov093_02176ef8(void) {}
-ARM void ActorUnkSPTT::func_ov093_02176fa8(void) {}
+void ActorUnkSPTT::func_ov093_02176c70(void) {}
+void ActorUnkSPTT::func_ov093_02176e18(void) {}
+void ActorUnkSPTT::func_ov093_02176ea4(void) {}
+void ActorUnkSPTT::func_ov093_02176ef8(void) {}
+void ActorUnkSPTT::func_ov093_02176fa8(void) {}
 
-ARM ActorUnkSPTT::~ActorUnkSPTT() {}
-ARM ActorProfileUnkSPTT::~ActorProfileUnkSPTT() {}
+ActorUnkSPTT::~ActorUnkSPTT() {}
+ActorProfileUnkSPTT::~ActorProfileUnkSPTT() {}

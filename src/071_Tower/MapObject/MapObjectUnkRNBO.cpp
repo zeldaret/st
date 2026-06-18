@@ -3,19 +3,19 @@
 #include "MapObject/MapObjectUnkRNBO.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkRNBO);
+DECL_PROFILE(MapObjectProfileUnkRNBO);
 
-ARM MapObject *MapObjectProfileUnkRNBO::Create() {
+MapObject *MapObjectProfileUnkRNBO::Create() {
     return new(HeapIndex_2) MapObjectUnkRNBO();
 }
 
-ARM MapObjectProfileUnkRNBO::MapObjectProfileUnkRNBO() :
+MapObjectProfileUnkRNBO::MapObjectProfileUnkRNBO() :
     MapObjectProfile(MapObjectId_RNBO) {}
 
-ARM MapObjectUnkRNBO::MapObjectUnkRNBO() {}
+MapObjectUnkRNBO::MapObjectUnkRNBO() {}
 
-ARM void MapObjectUnkRNBO::func_ov071_02160b04(void) {}
-ARM void MapObjectUnkRNBO::func_ov071_02160b18(void) {}
+void MapObjectUnkRNBO::func_ov071_02160b04(void) {}
+void MapObjectUnkRNBO::func_ov071_02160b18(void) {}
 
-ARM MapObjectUnkRNBO::~MapObjectUnkRNBO() {}
-ARM MapObjectProfileUnkRNBO::~MapObjectProfileUnkRNBO() {}
+MapObjectUnkRNBO::~MapObjectUnkRNBO() {}
+MapObjectProfileUnkRNBO::~MapObjectProfileUnkRNBO() {}

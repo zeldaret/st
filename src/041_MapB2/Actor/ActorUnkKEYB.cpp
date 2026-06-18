@@ -3,20 +3,20 @@
 #include "Actor/ActorUnkKEYB.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkKEYB);
+DECL_PROFILE(ActorProfileUnkKEYB);
 
-ARM Actor *ActorProfileUnkKEYB::Create() {
+Actor *ActorProfileUnkKEYB::Create() {
     return new(HeapIndex_2) ActorUnkKEYB();
 }
 
-ARM ActorProfileUnkKEYB::ActorProfileUnkKEYB() :
+ActorProfileUnkKEYB::ActorProfileUnkKEYB() :
     ActorProfile_Derived1(ActorId_KEYB) {}
 
-ARM ActorUnkKEYB::ActorUnkKEYB() {}
+ActorUnkKEYB::ActorUnkKEYB() {}
 
-ARM void ActorUnkKEYB::func_ov041_021235b0(void) {}
-ARM void ActorUnkKEYB::func_ov041_021235e8(void) {}
-ARM void ActorUnkKEYB::func_ov041_02123630(void) {}
+void ActorUnkKEYB::func_ov041_021235b0(void) {}
+void ActorUnkKEYB::func_ov041_021235e8(void) {}
+void ActorUnkKEYB::func_ov041_02123630(void) {}
 
-ARM ActorUnkKEYB::~ActorUnkKEYB() {}
-ARM ActorProfileUnkKEYB::~ActorProfileUnkKEYB() {}
+ActorUnkKEYB::~ActorUnkKEYB() {}
+ActorProfileUnkKEYB::~ActorProfileUnkKEYB() {}

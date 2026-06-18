@@ -3,18 +3,18 @@
 #include "MapObject/MapObjectUnkDRBR.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkDRBR);
+DECL_PROFILE(MapObjectProfileUnkDRBR);
 
-ARM MapObject *MapObjectProfileUnkDRBR::Create() {
+MapObject *MapObjectProfileUnkDRBR::Create() {
     return new(HeapIndex_2) MapObjectUnkDRBR();
 }
 
-ARM MapObjectProfileUnkDRBR::MapObjectProfileUnkDRBR() :
+MapObjectProfileUnkDRBR::MapObjectProfileUnkDRBR() :
     MapObjectProfile(MapObjectId_DRBR) {}
 
-ARM MapObjectUnkDRBR::MapObjectUnkDRBR() {}
+MapObjectUnkDRBR::MapObjectUnkDRBR() {}
 
-ARM void MapObjectUnkDRBR::func_ov086_0215e1bc(void) {}
+void MapObjectUnkDRBR::func_ov086_0215e1bc(void) {}
 
-ARM MapObjectUnkDRBR::~MapObjectUnkDRBR() {}
-ARM MapObjectProfileUnkDRBR::~MapObjectProfileUnkDRBR() {}
+MapObjectUnkDRBR::~MapObjectUnkDRBR() {}
+MapObjectProfileUnkDRBR::~MapObjectProfileUnkDRBR() {}

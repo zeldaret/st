@@ -3,24 +3,24 @@
 #include "MapObject/MapObjectUnkCSTL.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkCSTL);
+DECL_PROFILE(MapObjectProfileUnkCSTL);
 
-ARM MapObject *MapObjectProfileUnkCSTL::Create() {
+MapObject *MapObjectProfileUnkCSTL::Create() {
     return new(HeapIndex_2) MapObjectUnkCSTL();
 }
 
-ARM MapObjectProfileUnkCSTL::MapObjectProfileUnkCSTL() :
+MapObjectProfileUnkCSTL::MapObjectProfileUnkCSTL() :
     MapObjectProfile(MapObjectId_CSTL) {}
 
-ARM MapObjectUnkCSTL::MapObjectUnkCSTL() {}
+MapObjectUnkCSTL::MapObjectUnkCSTL() {}
 
-ARM void MapObjectUnkCSTL::func_ov027_02143c70(void) {}
-ARM void MapObjectUnkCSTL::func_ov027_02143d5c(void) {}
-ARM void MapObjectUnkCSTL::func_ov027_02143dc8(void) {}
-ARM void MapObjectUnkCSTL::func_ov027_02143de0(void) {}
-ARM void MapObjectUnkCSTL::func_ov027_02143de8(void) {}
-ARM void MapObjectUnkCSTL::func_ov027_02143e28(void) {}
-ARM void MapObjectUnkCSTL::func_ov027_02143e48(void) {}
+void MapObjectUnkCSTL::func_ov027_02143c70(void) {}
+void MapObjectUnkCSTL::func_ov027_02143d5c(void) {}
+void MapObjectUnkCSTL::func_ov027_02143dc8(void) {}
+void MapObjectUnkCSTL::func_ov027_02143de0(void) {}
+void MapObjectUnkCSTL::func_ov027_02143de8(void) {}
+void MapObjectUnkCSTL::func_ov027_02143e28(void) {}
+void MapObjectUnkCSTL::func_ov027_02143e48(void) {}
 
-ARM MapObjectUnkCSTL::~MapObjectUnkCSTL() {}
-ARM MapObjectProfileUnkCSTL::~MapObjectProfileUnkCSTL() {}
+MapObjectUnkCSTL::~MapObjectUnkCSTL() {}
+MapObjectProfileUnkCSTL::~MapObjectProfileUnkCSTL() {}

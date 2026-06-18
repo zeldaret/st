@@ -3,23 +3,23 @@
 #include "Actor/ActorUnkTEVT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkTEVT);
+DECL_PROFILE(ActorProfileUnkTEVT);
 
-ARM Actor *ActorProfileUnkTEVT::Create() {
+Actor *ActorProfileUnkTEVT::Create() {
     return new(HeapIndex_2) ActorUnkTEVT();
 }
 
-ARM ActorProfileUnkTEVT::ActorProfileUnkTEVT() :
+ActorProfileUnkTEVT::ActorProfileUnkTEVT() :
     ActorProfile(ActorId_TEVT) {}
 
-ARM ActorUnkTEVT::ActorUnkTEVT() {}
+ActorUnkTEVT::ActorUnkTEVT() {}
 
-ARM void ActorUnkTEVT::func_ov092_02177df8(void) {}
-ARM void ActorUnkTEVT::func_ov092_02177fb4(void) {}
-ARM void ActorUnkTEVT::func_ov092_02178050(void) {}
-ARM void ActorUnkTEVT::func_ov092_02178054(void) {}
-ARM void ActorUnkTEVT::func_ov092_02178488(void) {}
-ARM void ActorUnkTEVT::func_ov092_02178498(void) {}
+void ActorUnkTEVT::func_ov092_02177df8(void) {}
+void ActorUnkTEVT::func_ov092_02177fb4(void) {}
+void ActorUnkTEVT::func_ov092_02178050(void) {}
+void ActorUnkTEVT::func_ov092_02178054(void) {}
+void ActorUnkTEVT::func_ov092_02178488(void) {}
+void ActorUnkTEVT::func_ov092_02178498(void) {}
 
-ARM ActorUnkTEVT::~ActorUnkTEVT() {}
-ARM ActorProfileUnkTEVT::~ActorProfileUnkTEVT() {}
+ActorUnkTEVT::~ActorUnkTEVT() {}
+ActorProfileUnkTEVT::~ActorProfileUnkTEVT() {}

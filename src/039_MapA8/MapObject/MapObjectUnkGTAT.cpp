@@ -3,20 +3,20 @@
 #include "MapObject/MapObjectUnkGTAT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkGTAT);
+DECL_PROFILE(MapObjectProfileUnkGTAT);
 
-ARM MapObject *MapObjectProfileUnkGTAT::Create() {
+MapObject *MapObjectProfileUnkGTAT::Create() {
     return new(HeapIndex_2) MapObjectUnkGTAT();
 }
 
-ARM MapObjectProfileUnkGTAT::MapObjectProfileUnkGTAT() :
+MapObjectProfileUnkGTAT::MapObjectProfileUnkGTAT() :
     MapObjectProfile(MapObjectId_GTAT) {}
 
-ARM MapObjectUnkGTAT::MapObjectUnkGTAT() {}
+MapObjectUnkGTAT::MapObjectUnkGTAT() {}
 
-ARM void MapObjectUnkGTAT::func_ov039_0211c7ac(void) {}
-ARM void MapObjectUnkGTAT::func_ov039_0211c960(void) {}
-ARM void MapObjectUnkGTAT::func_ov039_0211c964(void) {}
+void MapObjectUnkGTAT::func_ov039_0211c7ac(void) {}
+void MapObjectUnkGTAT::func_ov039_0211c960(void) {}
+void MapObjectUnkGTAT::func_ov039_0211c964(void) {}
 
-ARM MapObjectUnkGTAT::~MapObjectUnkGTAT() {}
-ARM MapObjectProfileUnkGTAT::~MapObjectProfileUnkGTAT() {}
+MapObjectUnkGTAT::~MapObjectUnkGTAT() {}
+MapObjectProfileUnkGTAT::~MapObjectProfileUnkGTAT() {}

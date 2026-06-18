@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkRMSF.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRMSF);
+DECL_PROFILE(ActorProfileUnkRMSF);
 
-ARM Actor *ActorProfileUnkRMSF::Create() {
+Actor *ActorProfileUnkRMSF::Create() {
     return new(HeapIndex_2) ActorUnkRMSF();
 }
 
-ARM ActorProfileUnkRMSF::ActorProfileUnkRMSF() :
+ActorProfileUnkRMSF::ActorProfileUnkRMSF() :
     ActorProfile_Derived1(ActorId_RMSF) {}
 
-ARM ActorUnkRMSF::ActorUnkRMSF() {}
+ActorUnkRMSF::ActorUnkRMSF() {}
 
-ARM void ActorUnkRMSF::func_ov063_0215c250(void) {}
-ARM void ActorUnkRMSF::func_ov063_0215c290(void) {}
+void ActorUnkRMSF::func_ov063_0215c250(void) {}
+void ActorUnkRMSF::func_ov063_0215c290(void) {}
 
-ARM ActorUnkRMSF::~ActorUnkRMSF() {}
-ARM ActorProfileUnkRMSF::~ActorProfileUnkRMSF() {}
+ActorUnkRMSF::~ActorUnkRMSF() {}
+ActorProfileUnkRMSF::~ActorProfileUnkRMSF() {}

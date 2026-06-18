@@ -3,28 +3,28 @@
 #include "MapObject/MapObjectUnkDRRS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkDRRS);
+DECL_PROFILE(MapObjectProfileUnkDRRS);
 
-ARM MapObject *MapObjectProfileUnkDRRS::Create() {
+MapObject *MapObjectProfileUnkDRRS::Create() {
     return new(HeapIndex_2) MapObjectUnkDRRS();
 }
 
-ARM MapObjectProfileUnkDRRS::MapObjectProfileUnkDRRS() :
+MapObjectProfileUnkDRRS::MapObjectProfileUnkDRRS() :
     MapObjectProfile(MapObjectId_DRRS) {}
 
-ARM MapObjectUnkDRRS::MapObjectUnkDRRS() {}
+MapObjectUnkDRRS::MapObjectUnkDRRS() {}
 
-ARM void MapObjectUnkDRRS::func_ov086_0215e778(void) {}
-ARM void MapObjectUnkDRRS::func_ov086_0215e78c(void) {}
-ARM void MapObjectUnkDRRS::func_ov086_0215e8b8(void) {}
-ARM void MapObjectUnkDRRS::func_ov086_0215e8fc(void) {}
-ARM void MapObjectUnkDRRS::func_ov086_0215e918(void) {}
-ARM void MapObjectUnkDRRS::func_ov086_0215e940(void) {}
-ARM void MapObjectUnkDRRS::func_ov086_0215e998(void) {}
-ARM void MapObjectUnkDRRS::func_ov086_0215e9c0(void) {}
-ARM void MapObjectUnkDRRS::func_ov086_0215e9cc(void) {}
-ARM void MapObjectUnkDRRS::func_ov086_0215ea3c(void) {}
-ARM void MapObjectUnkDRRS::func_ov086_0215eba0(void) {}
+void MapObjectUnkDRRS::func_ov086_0215e778(void) {}
+void MapObjectUnkDRRS::func_ov086_0215e78c(void) {}
+void MapObjectUnkDRRS::func_ov086_0215e8b8(void) {}
+void MapObjectUnkDRRS::func_ov086_0215e8fc(void) {}
+void MapObjectUnkDRRS::func_ov086_0215e918(void) {}
+void MapObjectUnkDRRS::func_ov086_0215e940(void) {}
+void MapObjectUnkDRRS::func_ov086_0215e998(void) {}
+void MapObjectUnkDRRS::func_ov086_0215e9c0(void) {}
+void MapObjectUnkDRRS::func_ov086_0215e9cc(void) {}
+void MapObjectUnkDRRS::func_ov086_0215ea3c(void) {}
+void MapObjectUnkDRRS::func_ov086_0215eba0(void) {}
 
-ARM MapObjectUnkDRRS::~MapObjectUnkDRRS() {}
-ARM MapObjectProfileUnkDRRS::~MapObjectProfileUnkDRRS() {}
+MapObjectUnkDRRS::~MapObjectUnkDRRS() {}
+MapObjectProfileUnkDRRS::~MapObjectProfileUnkDRRS() {}

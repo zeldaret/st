@@ -3,28 +3,28 @@
 #include "Actor/ActorUnkZSTG.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkZSTG);
+DECL_PROFILE(ActorProfileUnkZSTG);
 
-ARM Actor *ActorProfileUnkZSTG::Create() {
+Actor *ActorProfileUnkZSTG::Create() {
     return new(HeapIndex_2) ActorUnkZSTG();
 }
 
-ARM ActorProfileUnkZSTG::ActorProfileUnkZSTG() :
+ActorProfileUnkZSTG::ActorProfileUnkZSTG() :
     ActorProfile(ActorId_ZSTG) {}
 
-ARM ActorUnkZSTG::ActorUnkZSTG() {}
+ActorUnkZSTG::ActorUnkZSTG() {}
 
-ARM void ActorUnkZSTG::func_ov040_0212a83c(void) {}
-ARM void ActorUnkZSTG::func_ov040_0212a888(void) {}
-ARM void ActorUnkZSTG::func_ov040_0212a8c4(void) {}
-ARM void ActorUnkZSTG::func_ov040_0212a8c8(void) {}
-ARM void ActorUnkZSTG::func_ov040_0212a900(void) {}
-ARM void ActorUnkZSTG::func_ov040_0212a914(void) {}
-ARM void ActorUnkZSTG::func_ov040_0212a9bc(void) {}
-ARM void ActorUnkZSTG::func_ov040_0212a9dc(void) {}
-ARM void ActorUnkZSTG::func_ov040_0212aa74(void) {}
-ARM void ActorUnkZSTG::func_ov040_0212aa78(void) {}
-ARM void ActorUnkZSTG::func_ov040_0212aaa4(void) {}
+void ActorUnkZSTG::func_ov040_0212a83c(void) {}
+void ActorUnkZSTG::func_ov040_0212a888(void) {}
+void ActorUnkZSTG::func_ov040_0212a8c4(void) {}
+void ActorUnkZSTG::func_ov040_0212a8c8(void) {}
+void ActorUnkZSTG::func_ov040_0212a900(void) {}
+void ActorUnkZSTG::func_ov040_0212a914(void) {}
+void ActorUnkZSTG::func_ov040_0212a9bc(void) {}
+void ActorUnkZSTG::func_ov040_0212a9dc(void) {}
+void ActorUnkZSTG::func_ov040_0212aa74(void) {}
+void ActorUnkZSTG::func_ov040_0212aa78(void) {}
+void ActorUnkZSTG::func_ov040_0212aaa4(void) {}
 
-ARM ActorUnkZSTG::~ActorUnkZSTG() {}
-ARM ActorProfileUnkZSTG::~ActorProfileUnkZSTG() {}
+ActorUnkZSTG::~ActorUnkZSTG() {}
+ActorProfileUnkZSTG::~ActorProfileUnkZSTG() {}

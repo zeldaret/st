@@ -3,22 +3,22 @@
 #include "Actor/ActorUnkMOCT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkMOCT);
+DECL_PROFILE(ActorProfileUnkMOCT);
 
-ARM Actor *ActorProfileUnkMOCT::Create() {
+Actor *ActorProfileUnkMOCT::Create() {
     return new(HeapIndex_2) ActorUnkMOCT();
 }
 
-ARM ActorProfileUnkMOCT::ActorProfileUnkMOCT() :
+ActorProfileUnkMOCT::ActorProfileUnkMOCT() :
     ActorProfile(ActorId_MOCT) {}
 
-ARM ActorUnkMOCT::ActorUnkMOCT() {}
+ActorUnkMOCT::ActorUnkMOCT() {}
 
-ARM void ActorUnkMOCT::func_ov062_0215a588(void) {}
-ARM void ActorUnkMOCT::func_ov062_0215a590(void) {}
-ARM void ActorUnkMOCT::func_ov062_0215a5cc(void) {}
-ARM void ActorUnkMOCT::func_ov062_0215a634(void) {}
-ARM void ActorUnkMOCT::func_ov062_0215a670(void) {}
+void ActorUnkMOCT::func_ov062_0215a588(void) {}
+void ActorUnkMOCT::func_ov062_0215a590(void) {}
+void ActorUnkMOCT::func_ov062_0215a5cc(void) {}
+void ActorUnkMOCT::func_ov062_0215a634(void) {}
+void ActorUnkMOCT::func_ov062_0215a670(void) {}
 
-ARM ActorUnkMOCT::~ActorUnkMOCT() {}
-ARM ActorProfileUnkMOCT::~ActorProfileUnkMOCT() {}
+ActorUnkMOCT::~ActorUnkMOCT() {}
+ActorProfileUnkMOCT::~ActorProfileUnkMOCT() {}

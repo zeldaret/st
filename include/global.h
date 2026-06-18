@@ -5,10 +5,10 @@
 #ifdef __INTELLISENSE__
 #endif
 
-#define ARM _Pragma("thumb off")
-#define THUMB _Pragma("thumb on")
-
+// start of thumb region, using thumb instructions
 #define THUMB_BEGIN _Pragma("thumb on")
+
+// end of thumb region, using arm instructions
 #define THUMB_END _Pragma("thumb off")
 
 // `override` was added in C++11 before the DS, so we only use the keyword to indicate overriden functions

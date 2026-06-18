@@ -21,12 +21,12 @@ extern "C" void func_02013354();
 extern "C" void func_0201328c();
 extern Mat3p gGeomMatrix;
 
-ARM void Game::func_02013370(unk32 param1) {
+void Game::func_02013370(unk32 param1) {
     data_0204a110.func_02018c78(param1);
     data_ov000_020b50c0.mUnk_9C = param1;
 }
 
-ARM void Game::Run() {
+void Game::Run() {
     this->func_ov018_020c48a4();
 
     do {

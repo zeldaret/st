@@ -3,22 +3,22 @@
 #include "MapObject/MapObjectUnkTBSS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkTBSS);
+DECL_PROFILE(MapObjectProfileUnkTBSS);
 
-ARM MapObject *MapObjectProfileUnkTBSS::Create() {
+MapObject *MapObjectProfileUnkTBSS::Create() {
     return new(HeapIndex_2) MapObjectUnkTBSS();
 }
 
-ARM MapObjectProfileUnkTBSS::MapObjectProfileUnkTBSS() :
+MapObjectProfileUnkTBSS::MapObjectProfileUnkTBSS() :
     MapObjectProfile(MapObjectId_TBSS) {}
 
-ARM MapObjectUnkTBSS::MapObjectUnkTBSS() {}
+MapObjectUnkTBSS::MapObjectUnkTBSS() {}
 
-ARM void MapObjectUnkTBSS::func_ov029_02146070(void) {}
-ARM void MapObjectUnkTBSS::func_ov029_021460c8(void) {}
-ARM void MapObjectUnkTBSS::func_ov029_021460d4(void) {}
-ARM void MapObjectUnkTBSS::func_ov029_02146124(void) {}
-ARM void MapObjectUnkTBSS::func_ov029_02146130(void) {}
+void MapObjectUnkTBSS::func_ov029_02146070(void) {}
+void MapObjectUnkTBSS::func_ov029_021460c8(void) {}
+void MapObjectUnkTBSS::func_ov029_021460d4(void) {}
+void MapObjectUnkTBSS::func_ov029_02146124(void) {}
+void MapObjectUnkTBSS::func_ov029_02146130(void) {}
 
-ARM MapObjectUnkTBSS::~MapObjectUnkTBSS() {}
-ARM MapObjectProfileUnkTBSS::~MapObjectProfileUnkTBSS() {}
+MapObjectUnkTBSS::~MapObjectUnkTBSS() {}
+MapObjectProfileUnkTBSS::~MapObjectProfileUnkTBSS() {}

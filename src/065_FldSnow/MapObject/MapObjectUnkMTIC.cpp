@@ -3,20 +3,20 @@
 #include "MapObject/MapObjectUnkMTIC.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkMTIC);
+DECL_PROFILE(MapObjectProfileUnkMTIC);
 
-ARM MapObject *MapObjectProfileUnkMTIC::Create() {
+MapObject *MapObjectProfileUnkMTIC::Create() {
     return new(HeapIndex_2) MapObjectUnkMTIC();
 }
 
-ARM MapObjectProfileUnkMTIC::MapObjectProfileUnkMTIC() :
+MapObjectProfileUnkMTIC::MapObjectProfileUnkMTIC() :
     MapObjectProfile(MapObjectId_MTIC) {}
 
-ARM MapObjectUnkMTIC::MapObjectUnkMTIC() {}
+MapObjectUnkMTIC::MapObjectUnkMTIC() {}
 
-ARM void MapObjectUnkMTIC::func_ov065_02159f08(void) {}
-ARM void MapObjectUnkMTIC::func_ov065_02159f54(void) {}
-ARM void MapObjectUnkMTIC::func_ov065_02159f58(void) {}
+void MapObjectUnkMTIC::func_ov065_02159f08(void) {}
+void MapObjectUnkMTIC::func_ov065_02159f54(void) {}
+void MapObjectUnkMTIC::func_ov065_02159f58(void) {}
 
-ARM MapObjectUnkMTIC::~MapObjectUnkMTIC() {}
-ARM MapObjectProfileUnkMTIC::~MapObjectProfileUnkMTIC() {}
+MapObjectUnkMTIC::~MapObjectUnkMTIC() {}
+MapObjectProfileUnkMTIC::~MapObjectProfileUnkMTIC() {}

@@ -3,7 +3,7 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include <nitro/mi.h>
 
-ARM Actor::Actor() {
+Actor::Actor() {
     this->mVel.x  = 0;
     this->mVel.y  = 0;
     this->mVel.z  = 0;
@@ -32,10 +32,10 @@ ARM Actor::Actor() {
     this->func_ov000_0209848c(data_ov000_020b539c_eur.mUnk_30);
 }
 
-ARM Actor::~Actor() {}
+Actor::~Actor() {}
 
 // non-matching (equivalent)
-ARM void Actor::func_ov000_0209848c(ActorProfile *param1) {
+void Actor::func_ov000_0209848c(ActorProfile *param1) {
     Cylinder *temp_r3 = &param1->mUnk_04;
     unk32 unk_1c      = param1->mUnk_1C;
 
@@ -46,27 +46,27 @@ ARM void Actor::func_ov000_0209848c(ActorProfile *param1) {
     this->mYOffset = unk_1c;
 }
 
-ARM bool Actor::vfunc_18(unk32 param1) {
+bool Actor::vfunc_18(unk32 param1) {
     return true;
 }
 
-ARM void Actor::vfunc_1C() {}
+void Actor::vfunc_1C() {}
 
-ARM void Actor::vfunc_20() {}
+void Actor::vfunc_20() {}
 
-ARM void Actor::vfunc_24() {}
+void Actor::vfunc_24() {}
 
-ARM void Actor::vfunc_28() {}
+void Actor::vfunc_28() {}
 
-ARM void Actor::vfunc_2C(unk32 param1) {}
+void Actor::vfunc_2C(unk32 param1) {}
 
-ARM void Actor::vfunc_30() {}
+void Actor::vfunc_30() {}
 
-ARM unk32 Actor::vfunc_34() {
+unk32 Actor::vfunc_34() {
     return 1;
 }
 
-ARM void Actor::func_ov000_020984d0() {
+void Actor::func_ov000_020984d0() {
     UNSET_FLAG(this->mFlags, ActorFlag_Alive);
 
     if (GET_FLAG(this->mFlags, ActorFlag_16)) {
@@ -74,36 +74,36 @@ ARM void Actor::func_ov000_020984d0() {
     }
 }
 
-ARM void Actor::func_ov000_020984f0() {
+void Actor::func_ov000_020984f0() {
     if (this->mUnk_5C.mUnk_24 >= 0) {
         data_027e0cd8->func_ov000_02081ecc(this->mUnk_5C.mUnk_24, 1);
     }
 }
 
-ARM void Actor::GetOffsetPos(VecFx32 *pPos) const {
+void Actor::GetOffsetPos(VecFx32 *pPos) const {
     pPos->x = this->mPos.x;
     pPos->y = this->mPos.y;
     pPos->z = this->mPos.z;
     pPos->y += this->mYOffset;
 }
 
-ARM VecFx32 *Actor::func_ov000_0209853c(unk32 param1) {
+VecFx32 *Actor::func_ov000_0209853c(unk32 param1) {
     return data_027e0ce0->func_01fff148(param1);
 }
 
-ARM bool Actor::vfunc_04() {
+bool Actor::vfunc_04() {
     return this->mpProfile->mUnk_1E & 1;
 }
 
-ARM unk16 Actor::vfunc_08() {
+unk16 Actor::vfunc_08() {
     return this->mpProfile->mUnk_1A;
 }
 
-ARM unk8 Actor::vfunc_0C() {
+unk8 Actor::vfunc_0C() {
     return this->mpProfile->mUnk_18;
 }
 
-ARM bool Actor::Grab(ActorGrabParams grabParams) {
+bool Actor::Grab(ActorGrabParams grabParams) {
     // fake match?
     if (GET_FLAG((volatile ActorFlags *) this->mFlags, ActorFlag_Grabbed)) {
         return false;
@@ -130,7 +130,7 @@ ARM bool Actor::Grab(ActorGrabParams grabParams) {
     return true;
 }
 
-ARM bool Actor::Drop(ActorGrabParams param2, const VecFx32 *pVel) {
+bool Actor::Drop(ActorGrabParams param2, const VecFx32 *pVel) {
     // fake match?
     if (!GET_FLAG((volatile ActorFlags *) this->mFlags, ActorFlag_Grabbed)) {
         return false;
@@ -144,7 +144,7 @@ ARM bool Actor::Drop(ActorGrabParams param2, const VecFx32 *pVel) {
     return true;
 }
 
-ARM void Actor::func_ov000_0209862c(unk32 param1) {
+void Actor::func_ov000_0209862c(unk32 param1) {
     for (s8 i = 0; i < ARRAY_LEN(this->mUnk_4A); i++) {
         this->mUnk_4A[i] = param1;
     }

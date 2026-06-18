@@ -3,20 +3,20 @@
 #include "Actor/ActorUnkSWCH.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkSWCH);
+DECL_PROFILE(ActorProfileUnkSWCH);
 
-ARM Actor *ActorProfileUnkSWCH::Create() {
+Actor *ActorProfileUnkSWCH::Create() {
     return new(HeapIndex_2) ActorUnkSWCH();
 }
 
-ARM ActorProfileUnkSWCH::ActorProfileUnkSWCH() :
+ActorProfileUnkSWCH::ActorProfileUnkSWCH() :
     ActorProfile(ActorId_SWCH) {}
 
-ARM ActorUnkSWCH::ActorUnkSWCH() {}
+ActorUnkSWCH::ActorUnkSWCH() {}
 
-ARM void ActorUnkSWCH::func_ov031_020f7b0c(void) {}
-ARM void ActorUnkSWCH::func_ov031_020f7b20(void) {}
-ARM void ActorUnkSWCH::func_ov031_020f7b88(void) {}
+void ActorUnkSWCH::func_ov031_020f7b0c(void) {}
+void ActorUnkSWCH::func_ov031_020f7b20(void) {}
+void ActorUnkSWCH::func_ov031_020f7b88(void) {}
 
-ARM ActorUnkSWCH::~ActorUnkSWCH() {}
-ARM ActorProfileUnkSWCH::~ActorProfileUnkSWCH() {}
+ActorUnkSWCH::~ActorUnkSWCH() {}
+ActorProfileUnkSWCH::~ActorProfileUnkSWCH() {}

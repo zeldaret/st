@@ -3,30 +3,30 @@
 #include "MapObject/MapObjectUnkDRVC.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkDRVC);
+DECL_PROFILE(MapObjectProfileUnkDRVC);
 
-ARM MapObject *MapObjectProfileUnkDRVC::Create() {
+MapObject *MapObjectProfileUnkDRVC::Create() {
     return new(HeapIndex_2) MapObjectUnkDRVC();
 }
 
-ARM MapObjectProfileUnkDRVC::MapObjectProfileUnkDRVC() :
+MapObjectProfileUnkDRVC::MapObjectProfileUnkDRVC() :
     MapObjectProfile(MapObjectId_DRVC) {}
 
-ARM MapObjectUnkDRVC::MapObjectUnkDRVC() {}
+MapObjectUnkDRVC::MapObjectUnkDRVC() {}
 
-ARM void MapObjectUnkDRVC::func_ov068_02160be8(void) {}
-ARM void MapObjectUnkDRVC::func_ov068_02160c64(void) {}
-ARM void MapObjectUnkDRVC::func_ov068_02160c70(void) {}
-ARM void MapObjectUnkDRVC::func_ov068_02160de8(void) {}
-ARM void MapObjectUnkDRVC::func_ov068_02160ed4(void) {}
-ARM void MapObjectUnkDRVC::func_ov068_02160f20(void) {}
-ARM void MapObjectUnkDRVC::func_ov068_021611bc(void) {}
-ARM void MapObjectUnkDRVC::func_ov068_021613c8(void) {}
-ARM void MapObjectUnkDRVC::func_ov068_021613dc(void) {}
-ARM void MapObjectUnkDRVC::func_ov068_021613f0(void) {}
-ARM void MapObjectUnkDRVC::func_ov068_0216140c(void) {}
-ARM void MapObjectUnkDRVC::func_ov068_02161494(void) {}
-ARM void MapObjectUnkDRVC::func_ov068_021614cc(void) {}
+void MapObjectUnkDRVC::func_ov068_02160be8(void) {}
+void MapObjectUnkDRVC::func_ov068_02160c64(void) {}
+void MapObjectUnkDRVC::func_ov068_02160c70(void) {}
+void MapObjectUnkDRVC::func_ov068_02160de8(void) {}
+void MapObjectUnkDRVC::func_ov068_02160ed4(void) {}
+void MapObjectUnkDRVC::func_ov068_02160f20(void) {}
+void MapObjectUnkDRVC::func_ov068_021611bc(void) {}
+void MapObjectUnkDRVC::func_ov068_021613c8(void) {}
+void MapObjectUnkDRVC::func_ov068_021613dc(void) {}
+void MapObjectUnkDRVC::func_ov068_021613f0(void) {}
+void MapObjectUnkDRVC::func_ov068_0216140c(void) {}
+void MapObjectUnkDRVC::func_ov068_02161494(void) {}
+void MapObjectUnkDRVC::func_ov068_021614cc(void) {}
 
-ARM MapObjectUnkDRVC::~MapObjectUnkDRVC() {}
-ARM MapObjectProfileUnkDRVC::~MapObjectProfileUnkDRVC() {}
+MapObjectUnkDRVC::~MapObjectUnkDRVC() {}
+MapObjectProfileUnkDRVC::~MapObjectProfileUnkDRVC() {}

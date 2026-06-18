@@ -3,21 +3,21 @@
 #include "Actor/ActorUnkJOLN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkJOLN);
+DECL_PROFILE(ActorProfileUnkJOLN);
 
-ARM Actor *ActorProfileUnkJOLN::Create() {
+Actor *ActorProfileUnkJOLN::Create() {
     return new(HeapIndex_2) ActorUnkJOLN();
 }
 
-ARM ActorProfileUnkJOLN::ActorProfileUnkJOLN() :
+ActorProfileUnkJOLN::ActorProfileUnkJOLN() :
     ActorProfile_Derived1(ActorId_JOLN) {}
 
-ARM ActorUnkJOLN::ActorUnkJOLN() {}
+ActorUnkJOLN::ActorUnkJOLN() {}
 
-ARM void ActorUnkJOLN::func_ov061_02159048(void) {}
-ARM void ActorUnkJOLN::func_ov061_0215906c(void) {}
-ARM void ActorUnkJOLN::func_ov061_02159078(void) {}
-ARM void ActorUnkJOLN::func_ov061_02159080(void) {}
+void ActorUnkJOLN::func_ov061_02159048(void) {}
+void ActorUnkJOLN::func_ov061_0215906c(void) {}
+void ActorUnkJOLN::func_ov061_02159078(void) {}
+void ActorUnkJOLN::func_ov061_02159080(void) {}
 
-ARM ActorUnkJOLN::~ActorUnkJOLN() {}
-ARM ActorProfileUnkJOLN::~ActorProfileUnkJOLN() {}
+ActorUnkJOLN::~ActorUnkJOLN() {}
+ActorProfileUnkJOLN::~ActorProfileUnkJOLN() {}

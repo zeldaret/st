@@ -94,7 +94,7 @@ public:
     /* 00 */ VecFx32 mUnk_00;
     /* 0C */
 
-    ARM UnkStruct_ov110_021861ec(fx32 x, fx32 y, fx32 z) {
+    UnkStruct_ov110_021861ec(fx32 x, fx32 y, fx32 z) {
         this->mUnk_00.x = x;
         this->mUnk_00.y = y;
         this->mUnk_00.z = z;

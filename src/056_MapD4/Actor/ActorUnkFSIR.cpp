@@ -3,30 +3,30 @@
 #include "Actor/ActorUnkFSIR.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkFSIR);
+DECL_PROFILE(ActorProfileUnkFSIR);
 
-ARM Actor *ActorProfileUnkFSIR::Create() {
+Actor *ActorProfileUnkFSIR::Create() {
     return new(HeapIndex_2) ActorUnkFSIR();
 }
 
-ARM ActorProfileUnkFSIR::ActorProfileUnkFSIR() :
+ActorProfileUnkFSIR::ActorProfileUnkFSIR() :
     ActorProfile(ActorId_FSIR) {}
 
-ARM ActorUnkFSIR::ActorUnkFSIR() {}
+ActorUnkFSIR::ActorUnkFSIR() {}
 
-ARM void ActorUnkFSIR::func_ov056_0213af0c(void) {}
-ARM void ActorUnkFSIR::func_ov056_0213af70(void) {}
-ARM void ActorUnkFSIR::func_ov056_0213af9c(void) {}
-ARM void ActorUnkFSIR::func_ov056_0213b028(void) {}
-ARM void ActorUnkFSIR::func_ov056_0213b088(void) {}
-ARM void ActorUnkFSIR::func_ov056_0213b0e4(void) {}
-ARM void ActorUnkFSIR::func_ov056_0213b134(void) {}
-ARM void ActorUnkFSIR::func_ov056_0213b138(void) {}
-ARM void ActorUnkFSIR::func_ov056_0213b13c(void) {}
-ARM void ActorUnkFSIR::func_ov056_0213b140(void) {}
-ARM void ActorUnkFSIR::func_ov056_0213b144(void) {}
-ARM void ActorUnkFSIR::func_ov056_0213b148(void) {}
-ARM void ActorUnkFSIR::func_ov056_0213b234(void) {}
+void ActorUnkFSIR::func_ov056_0213af0c(void) {}
+void ActorUnkFSIR::func_ov056_0213af70(void) {}
+void ActorUnkFSIR::func_ov056_0213af9c(void) {}
+void ActorUnkFSIR::func_ov056_0213b028(void) {}
+void ActorUnkFSIR::func_ov056_0213b088(void) {}
+void ActorUnkFSIR::func_ov056_0213b0e4(void) {}
+void ActorUnkFSIR::func_ov056_0213b134(void) {}
+void ActorUnkFSIR::func_ov056_0213b138(void) {}
+void ActorUnkFSIR::func_ov056_0213b13c(void) {}
+void ActorUnkFSIR::func_ov056_0213b140(void) {}
+void ActorUnkFSIR::func_ov056_0213b144(void) {}
+void ActorUnkFSIR::func_ov056_0213b148(void) {}
+void ActorUnkFSIR::func_ov056_0213b234(void) {}
 
-ARM ActorUnkFSIR::~ActorUnkFSIR() {}
-ARM ActorProfileUnkFSIR::~ActorProfileUnkFSIR() {}
+ActorUnkFSIR::~ActorUnkFSIR() {}
+ActorProfileUnkFSIR::~ActorProfileUnkFSIR() {}

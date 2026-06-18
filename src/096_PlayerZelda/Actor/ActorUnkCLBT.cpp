@@ -3,25 +3,25 @@
 #include "Actor/ActorUnkCLBT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkCLBT);
+DECL_PROFILE(ActorProfileUnkCLBT);
 
-ARM Actor *ActorProfileUnkCLBT::Create() {
+Actor *ActorProfileUnkCLBT::Create() {
     return new(HeapIndex_2) ActorUnkCLBT();
 }
 
-ARM ActorProfileUnkCLBT::ActorProfileUnkCLBT() :
+ActorProfileUnkCLBT::ActorProfileUnkCLBT() :
     ActorProfile(ActorId_CLBT) {}
 
-ARM ActorUnkCLBT::ActorUnkCLBT() {}
+ActorUnkCLBT::ActorUnkCLBT() {}
 
-ARM void ActorUnkCLBT::func_ov096_0217a7cc(void) {}
-ARM void ActorUnkCLBT::func_ov096_0217a80c(void) {}
-ARM void ActorUnkCLBT::func_ov096_0217a858(void) {}
-ARM void ActorUnkCLBT::func_ov096_0217a894(void) {}
-ARM void ActorUnkCLBT::func_ov096_0217a8cc(void) {}
-ARM void ActorUnkCLBT::func_ov096_0217a910(void) {}
-ARM void ActorUnkCLBT::func_ov096_0217a948(void) {}
-ARM void ActorUnkCLBT::func_ov096_0217a9e4(void) {}
+void ActorUnkCLBT::func_ov096_0217a7cc(void) {}
+void ActorUnkCLBT::func_ov096_0217a80c(void) {}
+void ActorUnkCLBT::func_ov096_0217a858(void) {}
+void ActorUnkCLBT::func_ov096_0217a894(void) {}
+void ActorUnkCLBT::func_ov096_0217a8cc(void) {}
+void ActorUnkCLBT::func_ov096_0217a910(void) {}
+void ActorUnkCLBT::func_ov096_0217a948(void) {}
+void ActorUnkCLBT::func_ov096_0217a9e4(void) {}
 
-ARM ActorUnkCLBT::~ActorUnkCLBT() {}
-ARM ActorProfileUnkCLBT::~ActorProfileUnkCLBT() {}
+ActorUnkCLBT::~ActorUnkCLBT() {}
+ActorProfileUnkCLBT::~ActorProfileUnkCLBT() {}

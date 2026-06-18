@@ -3,21 +3,21 @@
 #include "Actor/ActorUnkTSMT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkTSMT);
+DECL_PROFILE(ActorProfileUnkTSMT);
 
-ARM Actor *ActorProfileUnkTSMT::Create() {
+Actor *ActorProfileUnkTSMT::Create() {
     return new(HeapIndex_2) ActorUnkTSMT();
 }
 
-ARM ActorProfileUnkTSMT::ActorProfileUnkTSMT() :
+ActorProfileUnkTSMT::ActorProfileUnkTSMT() :
     ActorProfile(ActorId_TSMT) {}
 
-ARM ActorUnkTSMT::ActorUnkTSMT() {}
+ActorUnkTSMT::ActorUnkTSMT() {}
 
-ARM void ActorUnkTSMT::func_ov091_0216efc4(void) {}
-ARM void ActorUnkTSMT::func_ov091_0216eff4(void) {}
-ARM void ActorUnkTSMT::func_ov091_0216f024(void) {}
-ARM void ActorUnkTSMT::func_ov091_0216f034(void) {}
+void ActorUnkTSMT::func_ov091_0216efc4(void) {}
+void ActorUnkTSMT::func_ov091_0216eff4(void) {}
+void ActorUnkTSMT::func_ov091_0216f024(void) {}
+void ActorUnkTSMT::func_ov091_0216f034(void) {}
 
-ARM ActorUnkTSMT::~ActorUnkTSMT() {}
-ARM ActorProfileUnkTSMT::~ActorProfileUnkTSMT() {}
+ActorUnkTSMT::~ActorUnkTSMT() {}
+ActorProfileUnkTSMT::~ActorProfileUnkTSMT() {}

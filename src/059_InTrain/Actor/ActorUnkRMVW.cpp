@@ -3,21 +3,21 @@
 #include "Actor/ActorUnkRMVW.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRMVW);
+DECL_PROFILE(ActorProfileUnkRMVW);
 
-ARM Actor *ActorProfileUnkRMVW::Create() {
+Actor *ActorProfileUnkRMVW::Create() {
     return new(HeapIndex_2) ActorUnkRMVW();
 }
 
-ARM ActorProfileUnkRMVW::ActorProfileUnkRMVW() :
+ActorProfileUnkRMVW::ActorProfileUnkRMVW() :
     ActorProfile_Derived1(ActorId_RMVW) {}
 
-ARM ActorUnkRMVW::ActorUnkRMVW() {}
+ActorUnkRMVW::ActorUnkRMVW() {}
 
-ARM void ActorUnkRMVW::func_ov059_021622c0(void) {}
-ARM void ActorUnkRMVW::func_ov059_02162360(void) {}
-ARM void ActorUnkRMVW::func_ov059_0216238c(void) {}
-ARM void ActorUnkRMVW::func_ov059_021623dc(void) {}
+void ActorUnkRMVW::func_ov059_021622c0(void) {}
+void ActorUnkRMVW::func_ov059_02162360(void) {}
+void ActorUnkRMVW::func_ov059_0216238c(void) {}
+void ActorUnkRMVW::func_ov059_021623dc(void) {}
 
-ARM ActorUnkRMVW::~ActorUnkRMVW() {}
-ARM ActorProfileUnkRMVW::~ActorProfileUnkRMVW() {}
+ActorUnkRMVW::~ActorUnkRMVW() {}
+ActorProfileUnkRMVW::~ActorProfileUnkRMVW() {}

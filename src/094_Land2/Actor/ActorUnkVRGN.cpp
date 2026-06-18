@@ -3,22 +3,22 @@
 #include "Actor/ActorUnkVRGN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkVRGN);
+DECL_PROFILE(ActorProfileUnkVRGN);
 
-ARM Actor *ActorProfileUnkVRGN::Create() {
+Actor *ActorProfileUnkVRGN::Create() {
     return new(HeapIndex_2) ActorUnkVRGN();
 }
 
-ARM ActorProfileUnkVRGN::ActorProfileUnkVRGN() :
+ActorProfileUnkVRGN::ActorProfileUnkVRGN() :
     ActorProfile(ActorId_VRGN) {}
 
-ARM ActorUnkVRGN::ActorUnkVRGN() {}
+ActorUnkVRGN::ActorUnkVRGN() {}
 
-ARM void ActorUnkVRGN::func_ov094_02168468(void) {}
-ARM void ActorUnkVRGN::func_ov094_0216849c(void) {}
-ARM void ActorUnkVRGN::func_ov094_02168588(void) {}
-ARM void ActorUnkVRGN::func_ov094_021685bc(void) {}
-ARM void ActorUnkVRGN::func_ov094_02168624(void) {}
+void ActorUnkVRGN::func_ov094_02168468(void) {}
+void ActorUnkVRGN::func_ov094_0216849c(void) {}
+void ActorUnkVRGN::func_ov094_02168588(void) {}
+void ActorUnkVRGN::func_ov094_021685bc(void) {}
+void ActorUnkVRGN::func_ov094_02168624(void) {}
 
-ARM ActorUnkVRGN::~ActorUnkVRGN() {}
-ARM ActorProfileUnkVRGN::~ActorProfileUnkVRGN() {}
+ActorUnkVRGN::~ActorUnkVRGN() {}
+ActorProfileUnkVRGN::~ActorProfileUnkVRGN() {}

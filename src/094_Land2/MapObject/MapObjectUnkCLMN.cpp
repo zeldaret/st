@@ -3,18 +3,18 @@
 #include "MapObject/MapObjectUnkCLMN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkCLMN);
+DECL_PROFILE(MapObjectProfileUnkCLMN);
 
-ARM MapObject *MapObjectProfileUnkCLMN::Create() {
+MapObject *MapObjectProfileUnkCLMN::Create() {
     return new(HeapIndex_2) MapObjectUnkCLMN();
 }
 
-ARM MapObjectProfileUnkCLMN::MapObjectProfileUnkCLMN() :
+MapObjectProfileUnkCLMN::MapObjectProfileUnkCLMN() :
     MapObjectProfile(MapObjectId_CLMN) {}
 
-ARM MapObjectUnkCLMN::MapObjectUnkCLMN() {}
+MapObjectUnkCLMN::MapObjectUnkCLMN() {}
 
-ARM void MapObjectUnkCLMN::func_ov094_0217195c(void) {}
+void MapObjectUnkCLMN::func_ov094_0217195c(void) {}
 
-ARM MapObjectUnkCLMN::~MapObjectUnkCLMN() {}
-ARM MapObjectProfileUnkCLMN::~MapObjectProfileUnkCLMN() {}
+MapObjectUnkCLMN::~MapObjectUnkCLMN() {}
+MapObjectProfileUnkCLMN::~MapObjectProfileUnkCLMN() {}

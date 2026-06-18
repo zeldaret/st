@@ -3,33 +3,33 @@
 #include "Actor/ActorUnkLAVA.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkLAVA);
+DECL_PROFILE(ActorProfileUnkLAVA);
 
-ARM Actor *ActorProfileUnkLAVA::Create() {
+Actor *ActorProfileUnkLAVA::Create() {
     return new(HeapIndex_2) ActorUnkLAVA();
 }
 
-ARM ActorProfileUnkLAVA::ActorProfileUnkLAVA() :
+ActorProfileUnkLAVA::ActorProfileUnkLAVA() :
     ActorProfile_Derived1(ActorId_LAVA) {}
 
-ARM ActorUnkLAVA::ActorUnkLAVA() {}
+ActorUnkLAVA::ActorUnkLAVA() {}
 
-ARM void ActorUnkLAVA::func_ov084_0215e178(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215e18c(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215e334(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215e498(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215e4ac(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215e54c(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215e5d0(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215e64c(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215e670(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215e674(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215e7fc(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215e988(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215e9e0(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215e9fc(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215ea14(void) {}
-ARM void ActorUnkLAVA::func_ov084_0215eae4(void) {}
+void ActorUnkLAVA::func_ov084_0215e178(void) {}
+void ActorUnkLAVA::func_ov084_0215e18c(void) {}
+void ActorUnkLAVA::func_ov084_0215e334(void) {}
+void ActorUnkLAVA::func_ov084_0215e498(void) {}
+void ActorUnkLAVA::func_ov084_0215e4ac(void) {}
+void ActorUnkLAVA::func_ov084_0215e54c(void) {}
+void ActorUnkLAVA::func_ov084_0215e5d0(void) {}
+void ActorUnkLAVA::func_ov084_0215e64c(void) {}
+void ActorUnkLAVA::func_ov084_0215e670(void) {}
+void ActorUnkLAVA::func_ov084_0215e674(void) {}
+void ActorUnkLAVA::func_ov084_0215e7fc(void) {}
+void ActorUnkLAVA::func_ov084_0215e988(void) {}
+void ActorUnkLAVA::func_ov084_0215e9e0(void) {}
+void ActorUnkLAVA::func_ov084_0215e9fc(void) {}
+void ActorUnkLAVA::func_ov084_0215ea14(void) {}
+void ActorUnkLAVA::func_ov084_0215eae4(void) {}
 
-ARM ActorUnkLAVA::~ActorUnkLAVA() {}
-ARM ActorProfileUnkLAVA::~ActorProfileUnkLAVA() {}
+ActorUnkLAVA::~ActorUnkLAVA() {}
+ActorProfileUnkLAVA::~ActorProfileUnkLAVA() {}

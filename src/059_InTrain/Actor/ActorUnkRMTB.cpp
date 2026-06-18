@@ -3,18 +3,18 @@
 #include "Actor/ActorUnkRMTB.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRMTB);
+DECL_PROFILE(ActorProfileUnkRMTB);
 
-ARM Actor *ActorProfileUnkRMTB::Create() {
+Actor *ActorProfileUnkRMTB::Create() {
     return new(HeapIndex_2) ActorUnkRMTB();
 }
 
-ARM ActorProfileUnkRMTB::ActorProfileUnkRMTB() :
+ActorProfileUnkRMTB::ActorProfileUnkRMTB() :
     ActorProfile_Derived1(ActorId_RMTB) {}
 
-ARM ActorUnkRMTB::ActorUnkRMTB() {}
+ActorUnkRMTB::ActorUnkRMTB() {}
 
-ARM void ActorUnkRMTB::func_ov059_02162bf0(void) {}
+void ActorUnkRMTB::func_ov059_02162bf0(void) {}
 
-ARM ActorUnkRMTB::~ActorUnkRMTB() {}
-ARM ActorProfileUnkRMTB::~ActorProfileUnkRMTB() {}
+ActorUnkRMTB::~ActorUnkRMTB() {}
+ActorProfileUnkRMTB::~ActorProfileUnkRMTB() {}

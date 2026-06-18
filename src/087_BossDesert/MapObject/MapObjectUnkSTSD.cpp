@@ -3,21 +3,21 @@
 #include "MapObject/MapObjectUnkSTSD.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkSTSD);
+DECL_PROFILE(MapObjectProfileUnkSTSD);
 
-ARM MapObject *MapObjectProfileUnkSTSD::Create() {
+MapObject *MapObjectProfileUnkSTSD::Create() {
     return new(HeapIndex_2) MapObjectUnkSTSD();
 }
 
-ARM MapObjectProfileUnkSTSD::MapObjectProfileUnkSTSD() :
+MapObjectProfileUnkSTSD::MapObjectProfileUnkSTSD() :
     MapObjectProfile(MapObjectId_STSD) {}
 
-ARM MapObjectUnkSTSD::MapObjectUnkSTSD() {}
+MapObjectUnkSTSD::MapObjectUnkSTSD() {}
 
-ARM void MapObjectUnkSTSD::func_ov087_02161b00(void) {}
-ARM void MapObjectUnkSTSD::func_ov087_02161b84(void) {}
-ARM void MapObjectUnkSTSD::func_ov087_02161bd8(void) {}
-ARM void MapObjectUnkSTSD::func_ov087_02161c38(void) {}
+void MapObjectUnkSTSD::func_ov087_02161b00(void) {}
+void MapObjectUnkSTSD::func_ov087_02161b84(void) {}
+void MapObjectUnkSTSD::func_ov087_02161bd8(void) {}
+void MapObjectUnkSTSD::func_ov087_02161c38(void) {}
 
-ARM MapObjectUnkSTSD::~MapObjectUnkSTSD() {}
-ARM MapObjectProfileUnkSTSD::~MapObjectProfileUnkSTSD() {}
+MapObjectUnkSTSD::~MapObjectUnkSTSD() {}
+MapObjectProfileUnkSTSD::~MapObjectProfileUnkSTSD() {}

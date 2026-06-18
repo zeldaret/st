@@ -3,24 +3,24 @@
 #include "MapObject/MapObjectUnkPLFA.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkPLFA);
+DECL_PROFILE(MapObjectProfileUnkPLFA);
 
-ARM MapObject *MapObjectProfileUnkPLFA::Create() {
+MapObject *MapObjectProfileUnkPLFA::Create() {
     return new(HeapIndex_2) MapObjectUnkPLFA();
 }
 
-ARM MapObjectProfileUnkPLFA::MapObjectProfileUnkPLFA() :
+MapObjectProfileUnkPLFA::MapObjectProfileUnkPLFA() :
     MapObjectProfile(MapObjectId_PLFA) {}
 
-ARM MapObjectUnkPLFA::MapObjectUnkPLFA() {}
+MapObjectUnkPLFA::MapObjectUnkPLFA() {}
 
-ARM void MapObjectUnkPLFA::func_ov026_02108ee8(void) {}
-ARM void MapObjectUnkPLFA::func_ov026_02109160(void) {}
-ARM void MapObjectUnkPLFA::func_ov026_021091d8(void) {}
-ARM void MapObjectUnkPLFA::func_ov026_021091ec(void) {}
-ARM void MapObjectUnkPLFA::func_ov026_02109228(void) {}
-ARM void MapObjectUnkPLFA::func_ov026_0210922c(void) {}
-ARM void MapObjectUnkPLFA::func_ov026_02109230(void) {}
+void MapObjectUnkPLFA::func_ov026_02108ee8(void) {}
+void MapObjectUnkPLFA::func_ov026_02109160(void) {}
+void MapObjectUnkPLFA::func_ov026_021091d8(void) {}
+void MapObjectUnkPLFA::func_ov026_021091ec(void) {}
+void MapObjectUnkPLFA::func_ov026_02109228(void) {}
+void MapObjectUnkPLFA::func_ov026_0210922c(void) {}
+void MapObjectUnkPLFA::func_ov026_02109230(void) {}
 
-ARM MapObjectUnkPLFA::~MapObjectUnkPLFA() {}
-ARM MapObjectProfileUnkPLFA::~MapObjectProfileUnkPLFA() {}
+MapObjectUnkPLFA::~MapObjectUnkPLFA() {}
+MapObjectProfileUnkPLFA::~MapObjectProfileUnkPLFA() {}

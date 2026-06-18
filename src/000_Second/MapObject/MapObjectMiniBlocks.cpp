@@ -17,23 +17,23 @@ static const u32 data_ov000_020af574[] = {
     'BLKF',
 };
 
-ARM DECL_PROFILE(MapObjectProfileMiniBlocks);
+DECL_PROFILE(MapObjectProfileMiniBlocks);
 
-ARM MapObject *MapObjectProfileMiniBlocks::Create() {
+MapObject *MapObjectProfileMiniBlocks::Create() {
     return new(HeapIndex_ITCM) MapObjectMiniBlocks();
 }
 
-ARM MapObjectProfileMiniBlocks::MapObjectProfileMiniBlocks() :
+MapObjectProfileMiniBlocks::MapObjectProfileMiniBlocks() :
     MapObjectProfile_Derived1(MapObjectId_MiniBlocks, -1, 0) {
     this->mUnk_06 = -1;
     this->mUnk_1E &= ~0x01;
 }
 
-ARM MapObjectMiniBlocks::MapObjectMiniBlocks() {
+MapObjectMiniBlocks::MapObjectMiniBlocks() {
     this->mUnk_48 = 1;
 }
 
-ARM bool MapObjectMiniBlocks::vfunc_00(void) {
+bool MapObjectMiniBlocks::vfunc_00(void) {
     GET_PROFILE(MapObjectProfileMiniBlocks)
         ->func_ov000_0209ccd8(this->mUnk_20.mUnk_00[1], data_ov000_020af574[this->mUnk_20.mUnk_00[1]]);
     UnkStruct_027e0cd8_0c *pUnkStruct_027e0cd8_0c = data_027e0cd8->mUnk_0C;
@@ -107,12 +107,12 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
     return true;
 }
 
-ARM void MapObjectMiniBlocks::vfunc_14(void) {
+void MapObjectMiniBlocks::vfunc_14(void) {
     Mat3p m;
     u16 unk_14 = this->mUnk_14;
     Mat3p_InitYRotation(&m, SIN(unk_14), COS(unk_14));
     this->mUnk_40.vfunc_14(&m, &this->mPos);
 }
 
-ARM MapObjectMiniBlocks::~MapObjectMiniBlocks() {}
-ARM MapObjectProfileMiniBlocks::~MapObjectProfileMiniBlocks() {}
+MapObjectMiniBlocks::~MapObjectMiniBlocks() {}
+MapObjectProfileMiniBlocks::~MapObjectProfileMiniBlocks() {}

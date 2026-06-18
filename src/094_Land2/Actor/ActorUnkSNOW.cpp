@@ -3,25 +3,25 @@
 #include "Actor/ActorUnkSNOW.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkSNOW);
+DECL_PROFILE(ActorProfileUnkSNOW);
 
-ARM Actor *ActorProfileUnkSNOW::Create() {
+Actor *ActorProfileUnkSNOW::Create() {
     return new(HeapIndex_2) ActorUnkSNOW();
 }
 
-ARM ActorProfileUnkSNOW::ActorProfileUnkSNOW() :
+ActorProfileUnkSNOW::ActorProfileUnkSNOW() :
     ActorProfile(ActorId_SNOW) {}
 
-ARM ActorUnkSNOW::ActorUnkSNOW() {}
+ActorUnkSNOW::ActorUnkSNOW() {}
 
-ARM void ActorUnkSNOW::func_ov094_0216db6c(void) {}
-ARM void ActorUnkSNOW::func_ov094_0216dc1c(void) {}
-ARM void ActorUnkSNOW::func_ov094_0216dc4c(void) {}
-ARM void ActorUnkSNOW::func_ov094_0216dd08(void) {}
-ARM void ActorUnkSNOW::func_ov094_0216dd1c(void) {}
-ARM void ActorUnkSNOW::func_ov094_0216dd30(void) {}
-ARM void ActorUnkSNOW::func_ov094_0216dd98(void) {}
-ARM void ActorUnkSNOW::func_ov094_0216dda8(void) {}
+void ActorUnkSNOW::func_ov094_0216db6c(void) {}
+void ActorUnkSNOW::func_ov094_0216dc1c(void) {}
+void ActorUnkSNOW::func_ov094_0216dc4c(void) {}
+void ActorUnkSNOW::func_ov094_0216dd08(void) {}
+void ActorUnkSNOW::func_ov094_0216dd1c(void) {}
+void ActorUnkSNOW::func_ov094_0216dd30(void) {}
+void ActorUnkSNOW::func_ov094_0216dd98(void) {}
+void ActorUnkSNOW::func_ov094_0216dda8(void) {}
 
-ARM ActorUnkSNOW::~ActorUnkSNOW() {}
-ARM ActorProfileUnkSNOW::~ActorProfileUnkSNOW() {}
+ActorUnkSNOW::~ActorUnkSNOW() {}
+ActorProfileUnkSNOW::~ActorProfileUnkSNOW() {}

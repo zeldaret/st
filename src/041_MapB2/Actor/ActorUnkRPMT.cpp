@@ -3,32 +3,32 @@
 #include "Actor/ActorUnkRPMT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRPMT);
+DECL_PROFILE(ActorProfileUnkRPMT);
 
-ARM Actor *ActorProfileUnkRPMT::Create() {
+Actor *ActorProfileUnkRPMT::Create() {
     return new(HeapIndex_2) ActorUnkRPMT();
 }
 
-ARM ActorProfileUnkRPMT::ActorProfileUnkRPMT() :
+ActorProfileUnkRPMT::ActorProfileUnkRPMT() :
     ActorProfile(ActorId_RPMT) {}
 
-ARM ActorUnkRPMT::ActorUnkRPMT() {}
+ActorUnkRPMT::ActorUnkRPMT() {}
 
-ARM void ActorUnkRPMT::func_ov041_0212a848(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212a850(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212a8c8(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212a90c(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212a94c(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212a984(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212a988(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212a9b8(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212ab18(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212b238(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212b3ac(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212b744(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212b898(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212b89c(void) {}
-ARM void ActorUnkRPMT::func_ov041_0212b924(void) {}
+void ActorUnkRPMT::func_ov041_0212a848(void) {}
+void ActorUnkRPMT::func_ov041_0212a850(void) {}
+void ActorUnkRPMT::func_ov041_0212a8c8(void) {}
+void ActorUnkRPMT::func_ov041_0212a90c(void) {}
+void ActorUnkRPMT::func_ov041_0212a94c(void) {}
+void ActorUnkRPMT::func_ov041_0212a984(void) {}
+void ActorUnkRPMT::func_ov041_0212a988(void) {}
+void ActorUnkRPMT::func_ov041_0212a9b8(void) {}
+void ActorUnkRPMT::func_ov041_0212ab18(void) {}
+void ActorUnkRPMT::func_ov041_0212b238(void) {}
+void ActorUnkRPMT::func_ov041_0212b3ac(void) {}
+void ActorUnkRPMT::func_ov041_0212b744(void) {}
+void ActorUnkRPMT::func_ov041_0212b898(void) {}
+void ActorUnkRPMT::func_ov041_0212b89c(void) {}
+void ActorUnkRPMT::func_ov041_0212b924(void) {}
 
-ARM ActorUnkRPMT::~ActorUnkRPMT() {}
-ARM ActorProfileUnkRPMT::~ActorProfileUnkRPMT() {}
+ActorUnkRPMT::~ActorUnkRPMT() {}
+ActorProfileUnkRPMT::~ActorProfileUnkRPMT() {}

@@ -3,27 +3,27 @@
 #include "Actor/ActorUnkRBSN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRBSN);
+DECL_PROFILE(ActorProfileUnkRBSN);
 
-ARM Actor *ActorProfileUnkRBSN::Create() {
+Actor *ActorProfileUnkRBSN::Create() {
     return new(HeapIndex_2) ActorUnkRBSN();
 }
 
-ARM ActorProfileUnkRBSN::ActorProfileUnkRBSN() :
+ActorProfileUnkRBSN::ActorProfileUnkRBSN() :
     ActorProfile_Derived1(ActorId_RBSN) {}
 
-ARM ActorUnkRBSN::ActorUnkRBSN() {}
+ActorUnkRBSN::ActorUnkRBSN() {}
 
-ARM void ActorUnkRBSN::func_ov080_0215ead8(void) {}
-ARM void ActorUnkRBSN::func_ov080_0215eaec(void) {}
-ARM void ActorUnkRBSN::func_ov080_0215eb54(void) {}
-ARM void ActorUnkRBSN::func_ov080_0215eb58(void) {}
-ARM void ActorUnkRBSN::func_ov080_0215eb6c(void) {}
-ARM void ActorUnkRBSN::func_ov080_0215eb80(void) {}
-ARM void ActorUnkRBSN::func_ov080_0215ebd0(void) {}
-ARM void ActorUnkRBSN::func_ov080_0215ebf4(void) {}
-ARM void ActorUnkRBSN::func_ov080_0215ec04(void) {}
-ARM void ActorUnkRBSN::func_ov080_0215ec50(void) {}
+void ActorUnkRBSN::func_ov080_0215ead8(void) {}
+void ActorUnkRBSN::func_ov080_0215eaec(void) {}
+void ActorUnkRBSN::func_ov080_0215eb54(void) {}
+void ActorUnkRBSN::func_ov080_0215eb58(void) {}
+void ActorUnkRBSN::func_ov080_0215eb6c(void) {}
+void ActorUnkRBSN::func_ov080_0215eb80(void) {}
+void ActorUnkRBSN::func_ov080_0215ebd0(void) {}
+void ActorUnkRBSN::func_ov080_0215ebf4(void) {}
+void ActorUnkRBSN::func_ov080_0215ec04(void) {}
+void ActorUnkRBSN::func_ov080_0215ec50(void) {}
 
-ARM ActorUnkRBSN::~ActorUnkRBSN() {}
-ARM ActorProfileUnkRBSN::~ActorProfileUnkRBSN() {}
+ActorUnkRBSN::~ActorUnkRBSN() {}
+ActorProfileUnkRBSN::~ActorProfileUnkRBSN() {}
