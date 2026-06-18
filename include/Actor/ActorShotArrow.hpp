@@ -7,21 +7,23 @@
 #include "global.h"
 #include "types.h"
 
-class ActorShotArrow;
-
-class ActorShotArrow_c4 : public Actor_c4 {
-public:
-    ActorShotArrow_c4(Actor *param1);
-
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+enum ActorShotArrowState_ {
+    ActorShotArrowState_0 = 0,
+    ActorShotArrowState_1 = 1,
+    ActorShotArrowState_2 = 2,
+    ActorShotArrowState_3 = 3,
+    ActorShotArrowState_4 = 4,
+    ActorShotArrowState_5 = 5,
+    ActorShotArrowState_6 = 6,
+    ActorShotArrowState_7 = 7,
+    ActorShotArrowState_Max,
 };
 
-class ActorShotArrow_140 {
+class ActorShotArrow;
+
+class ActorShotArrow_140 : public Actor_9C {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 (vtable) */
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
@@ -180,7 +182,7 @@ public:
     bool func_ov031_020f173c();
     void func_ov031_020f1868();
     void func_ov031_020f1874();
-    void func_ov031_020f1878(s16 param_1);
+    void func_ov031_020f1878(ActorShotArrowState_ state);
     void func_ov031_020f18bc();
     void func_ov031_020f1958();
     void func_ov031_020f195c();

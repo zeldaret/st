@@ -8,7 +8,7 @@
 #include "types.h"
 
 struct UnkStruct_027e0cf8_00_18_00 {
-    /* 00 */ UnkSubStruct19 mUnk_00;
+    /* 00 */ CellAnimObject mUnk_00;
     /* 78 */ unk32 mUnk_78;
     /* 7C */ unk32 mUnk_7C;
     /* 80 */ unk32 mUnk_80;

@@ -73,15 +73,15 @@ public:
     /* 021 */ u8 mUnk_021;
     /* 022 */ unk8 mUnk_022;
     /* 023 */ unk8 mUnk_023;
-    /* 024 */ UnkSubStruct19 mUnk_024; // feather
-    /* 09C */ UnkSubStruct19 mUnk_09C; // green rectangle
-    /* 114 */ UnkSubStruct19 mUnk_114; // "touch screen!" text
-    /* 18C */ UnkSubStruct19 mUnk_18C; // copyright text
+    /* 024 */ CellAnimObject mUnk_024; // feather
+    /* 09C */ CellAnimObject mUnk_09C; // green rectangle
+    /* 114 */ CellAnimObject mUnk_114; // "touch screen!" text
+    /* 18C */ CellAnimObject mUnk_18C; // copyright text
     /* 204 */ TitleScreen_Sub2 mUnk_204;
     /* 218 */ TitleScreen_Sub3 mUnk_218;
     /* 23C */ UnkStruct_ov019_020d24c8_28_258 mUnk_23C;
-    /* 254 */ UnkSubStruct19 mUnk_254; // logo shine
-    /* 2CC */ UnkSubStruct19 mUnk_2CC; // logo shine outline (it's barely visible)
+    /* 254 */ CellAnimObject mUnk_254; // logo shine
+    /* 2CC */ CellAnimObject mUnk_2CC; // logo shine outline (it's barely visible)
     /* 344 */ unk32 mUnk_344;
     /* 348 */
 

@@ -16,8 +16,6 @@ extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
 extern "C" void func_01ffecdc(unk32 param1, Cylinder *param2);
 extern "C" bool func_01ffd768(unk32, void *, void *, unk8);
 
-extern "C" void func_ov000_020973f4(void *, void *, u32, void *, int); //! TODO: solve oddity
-
 ARM MapObject::MapObject() {
     this->mUnk_10   = NULL;
     this->mUnk_16   = -1;
@@ -228,37 +226,30 @@ ARM void MapObject::func_ov000_0209d518(unk32 param1, unk32 param2, unk32 param3
     data_027e09b4->func_01fff60c(param1, param2, param3, param4, 0, 0);
 }
 
-struct TempStruct {
-    VecFx32 pos;
-    u16 param_r2;
-    s16 extra_s16;
-    u16 extra_u16;
-    STRUCT_PAD(0x16, 0x28);
-    unk32 mUnk_28;
-    void func_ov000_020975f8();
-};
+ARM void MapObject::func_ov000_0209d54c(ActorRef *param1, MapObject *thisx, u16 param2, const VecFx32 *pPos, s16 param3,
+                                        u16 param4) {
+    ActorParams params;
 
-// non-matching
-ARM void MapObject::func_ov000_0209d54c(void *param1, MapObject *thisx, unk32 param2, VecFx32 *param3, unk32 param4,
-                                        unk32 param5) {
-    TempStruct local_4c;
-    local_4c.mUnk_28 = 0;
-    local_4c.func_ov000_020975f8();
-    local_4c.pos.x     = param3->x;
-    local_4c.pos.y     = param3->y;
-    local_4c.pos.z     = param3->z;
-    local_4c.param_r2  = param4;
-    local_4c.extra_s16 = param5;
-    local_4c.extra_u16 = param2;
-    func_ov000_020973f4(param1, &data_ov000_020b539c_eur, ActorId_EventIcon, &local_4c, 0);
+    params.mUnk_28 = 0;
+    params.func_ov000_020975f8();
+
+    params.mInitialPos.x = pPos->x;
+    params.mInitialPos.y = pPos->y;
+    params.mInitialPos.z = pPos->z;
+
+    params.mParams[0] = param2;
+    params.mParams[1] = param3;
+    params.mParams[2] = param4;
+
+    Actor::func_ov000_020973f4(param1, &data_ov000_020b539c_eur, ActorId_EventIcon, &params, 0);
 }
 
 ARM void MapObject::func_ov000_0209d5c8(ActorRef ref) {
-    if (ref.index != 0) {
-        Actor *pActor = gpActorManager->func_01fff3b4(ref.Get32());
+    if (ref.type_index != 0) {
+        Actor *pActor = gpActorManager->func_01fff3b4(ref);
 
         if (pActor != NULL) {
-            UNSET_FLAG(pActor->mFlags, ActorFlag_Alive);
+            pActor->Kill();
         }
     }
 }

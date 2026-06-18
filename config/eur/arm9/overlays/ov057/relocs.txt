@@ -196,7 +196,7 @@ from:0x0213a3c0 kind:load to:0x0213bf60 module:overlay(57)
 from:0x0213a3c4 kind:load to:0x0213befa module:overlay(57)
 from:0x0213a3c8 kind:load to:0x0213bf04 module:overlay(57)
 from:0x0213a3cc kind:load to:0x0213b8ee module:overlay(57)
-from:0x0213a3dc kind:arm_call to:0x020f750c module:overlays(26,31)
+from:0x0213a3dc kind:arm_call to:0x020f750c module:overlay(31)
 from:0x0213a3ec kind:arm_call to:0x0213a1d4 module:overlay(57)
 from:0x0213a3f4 kind:arm_call to:0x0207f47c module:overlay(0)
 from:0x0213a410 kind:arm_call to:0x0203d160 module:main

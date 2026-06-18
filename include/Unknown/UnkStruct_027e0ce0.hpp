@@ -3,6 +3,7 @@
 #include "global.h"
 #include "types.h"
 
+#include "Actor/ActorRef.hpp"
 #include "Item/ItemManager.hpp"
 #include "LinkList.hpp"
 #include "Player/Player.hpp"
@@ -105,7 +106,10 @@ public:
 
 class UnkStruct_027e0ce0_38_58 {
 public:
-    /* 000 */ STRUCT_PAD(0x00, 0x3D4);
+    /* 000 */ STRUCT_PAD(0x00, 0x338);
+    /* 338 */ unk32 mUnk_338; // rope pulled timer
+    /* 33C */ unk32 mUnk_33C; // rope pull strength, 0 to 8
+    /* 340 */ STRUCT_PAD(0x340, 0x3D4);
     /* 3D4 */
 
     UnkStruct_027e0ce0_38_58();
@@ -175,7 +179,7 @@ public:
     /* 050 */ unk32 mUnk_050;
     /* 054 */ unk16 mUnk_054;
     /* 056 */ unk16 mUnk_056;
-    /* 058 */ UnkStruct_027e0ce0_38_58 *mUnk_058;
+    /* 058 */ UnkStruct_027e0ce0_38_58 *mUnk_058; // related to train invicibility state in the dark realm (+0x35C/+0x360)
     /* 05C */ UnkStruct_027e0ce0_38_5C *mUnk_05C;
     /* 060 */ UnkStruct_027e0ce0_38_60 mUnk_060;
     /* 138 */ unk32 mUnk_138;
@@ -197,7 +201,7 @@ public:
     /* 174 */ UnkStruct_027e0ce0_38_174 mUnk_174;
     /* 19C */ UnkStruct_027e0ce0_38_19C mUnk_19C;
     /* 1C8 */ UnkStruct_027e0ce0_38_1C8 mUnk_1C8;
-    /* 1FC */ UnkSubStruct19 mUnk_1FC;
+    /* 1FC */ CellAnimObject mUnk_1FC;
     /* 274 */ UnkStruct_ov019_020d24c8_28_258_00 mUnk_274;
     /* 280 */
 
@@ -243,7 +247,17 @@ public:
 
 class UnkStruct_027e0ce0_40_Base_94 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x5C);
+    /* 00 */ STRUCT_PAD(0x00, 0x14);
+    /* 14 */ ActorRef mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ ActorRef mUnk_1C;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ STRUCT_PAD(0x24, 0x48);
+    /* 48 */ ActorRef mUnk_48;
+    /* 4C */ unk32 mUnk_4C;
+    /* 50 */ unk32 mUnk_50;
+    /* 54 */ unk32 mUnk_54;
+    /* 58 */ unk32 mUnk_58;
     /* 5C */ unk32 mUnk_5C; // seems to be the walking speed of link??
     /* 60 */ unk32 mUnk_60;
     /* 64 */ unk32 mUnk_64;
@@ -394,6 +408,7 @@ public:
 
     VecFx32 *func_01fff148(unk32 param1);
     bool func_01fff1a4();
+    bool func_01fff1e0();
 
     // overlay 0
     void func_ov000_0208a318(unk32 param1, unk32 param2, unk32 param3);

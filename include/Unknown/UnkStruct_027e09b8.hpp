@@ -15,11 +15,15 @@ struct stack_ov000_02073578 {
 
 class UnkStruct_027e09b8_00 {
 public:
-    /* 000 */ STRUCT_PAD(0x000, 0xFD4);
+    /* 000 */ STRUCT_PAD(0x000, 0xFD0);
+    /* FD0 */ unk16 mUnk_FD0; // set to 1 when link has a blocking interaction?
+    /* FD2 */ unk16 mUnk_FD2;
     /* FD4 */
 
     UnkStruct_027e09b8_00();
     ~UnkStruct_027e09b8_00();
+
+    void func_ov000_02073bc0();
 };
 
 class UnkStruct_027e09b8_04 {
@@ -85,6 +89,7 @@ public:
     unk32 func_ov000_02073470(void *param1, unk32 param2);
     unk32 func_ov000_02073388(void *param1, unk32 param2);
     void func_ov000_02073578(void *param1, unk32 param2);
+    void func_ov000_0207332c();
 
 #if IS_JP
     void func_ov000_02074d78(unk32 param1);

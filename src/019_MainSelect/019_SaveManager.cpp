@@ -417,7 +417,7 @@ ARM void SaveFile::func_ov019_020d1aac(unk32 param1, const wchar_t *param2) {
 
     awStack_28[8] = L'\0';
     wcsncpy(awStack_28, param2, LENGTH_PLAYER_NAME);
-    MI_CpuCopy16((u16 *) awStack_28, (u16 *) this->mSlots[param1].mInfoData[0].mPlayerName,
+    MI_CpuCopy16((u16 *) awStack_28, (u16 *) this->mSlots[param1].mInfoData[0].unk_D9C.mPlayerName,
                  sizeof(wchar_t) * (LENGTH_PLAYER_NAME + 1));
     MI_CpuCopy16((u16 *) awStack_28, (u16 *) this->mSlots[param1].mUnk_1D00[0].unk_3C4,
                  sizeof(wchar_t) * (LENGTH_PLAYER_NAME + 1));

@@ -143,7 +143,7 @@ struct FLW1Instr {
         InstrBranch branch;
         InstrEvent event;
     };
-    /* 09 */
+    /* 08 */
 };
 
 struct SectionFLW1 {

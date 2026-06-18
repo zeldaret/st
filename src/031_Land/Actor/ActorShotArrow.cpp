@@ -30,7 +30,7 @@ typedef struct {
 
 typedef struct {
     /* 00 */ STRUCT_PAD(0x00, 0x04);
-    /* 04 */ unk32 mUnk_04;
+    /* 04 */ ActorRef mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ VecFx32 mUnk_10;
@@ -174,7 +174,7 @@ ARM bool ActorShotArrow::func_ov031_020f173c() {
             data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_1DC.mUnk_00);
         }
     }
-    this->func_ov031_020f1878(0x0);
+    this->func_ov031_020f1878(ActorShotArrowState_0);
 
     this->mUnk_194.mUnk_04 = this->mRef.Get32();
     VecFx32_Copy(&this->mPos, &this->mUnk_194.mUnk_0C);
@@ -189,16 +189,22 @@ ARM void ActorShotArrow::func_ov031_020f1868() {
 
 ARM void ActorShotArrow::func_ov031_020f1874() {}
 
-static PTMF<ActorShotArrow> data_ov031_021142c0[] = {ActorShotArrow::func_ov031_020f1a64, ActorShotArrow::func_ov031_020f1c24,
-                                                     ActorShotArrow::func_ov031_020f1dd4, ActorShotArrow::func_ov031_020f1f54,
-                                                     ActorShotArrow::func_ov031_020f206c, ActorShotArrow::func_ov031_020f2134,
-                                                     ActorShotArrow::func_ov031_020f21dc, ActorShotArrow::func_ov031_020f1874};
+static PTMF<ActorShotArrow> data_ov031_021142c0[ActorShotArrowState_Max] = {
+    ActorShotArrow::func_ov031_020f1a64, // ActorShotArrowState_0
+    ActorShotArrow::func_ov031_020f1c24, // ActorShotArrowState_1
+    ActorShotArrow::func_ov031_020f1dd4, // ActorShotArrowState_2
+    ActorShotArrow::func_ov031_020f1f54, // ActorShotArrowState_3
+    ActorShotArrow::func_ov031_020f206c, // ActorShotArrowState_4
+    ActorShotArrow::func_ov031_020f2134, // ActorShotArrowState_5
+    ActorShotArrow::func_ov031_020f21dc, // ActorShotArrowState_6
+    ActorShotArrow::func_ov031_020f1874  // ActorShotArrowState_7
+};
 
-ARM void ActorShotArrow::func_ov031_020f1878(s16 param_1) {
-    this->mUnk_4C = param_1;
+ARM void ActorShotArrow::func_ov031_020f1878(ActorShotArrowState_ state) {
+    this->mState = state;
     this->func_ov031_020f1868();
 
-    CALL_PTMF(PTMF<ActorShotArrow>, data_ov031_021142c0[this->mUnk_4C]);
+    CALL_PTMF(PTMF<ActorShotArrow>, data_ov031_021142c0[this->mState]);
 }
 
 ARM void ActorShotArrow::func_ov031_020f18bc() {
@@ -217,7 +223,8 @@ ARM void ActorShotArrow::func_ov031_020f18bc() {
         }
     }
 
-    if (this->mUnk_4C != 0x1 && this->mUnk_4C != 0x2 && this->mUnk_4C != 0x3) {
+    if (this->mState != ActorShotArrowState_1 && this->mState != ActorShotArrowState_2 &&
+        this->mState != ActorShotArrowState_3) {
         return;
     }
     this->func_ov031_020f3258(0x1);
@@ -226,14 +233,20 @@ ARM void ActorShotArrow::func_ov031_020f18bc() {
 
 ARM void ActorShotArrow::func_ov031_020f1958() {}
 
-static PTMF<ActorShotArrow> data_ov031_02114300[] = {ActorShotArrow::func_ov031_020f1b04, ActorShotArrow::func_ov031_020f1c7c,
-                                                     ActorShotArrow::func_ov031_020f1e3c, ActorShotArrow::func_ov031_020f2010,
-                                                     ActorShotArrow::func_ov031_020f20bc, ActorShotArrow::func_ov031_020f2160,
-                                                     ActorShotArrow::func_ov031_020f2214, ActorShotArrow::func_ov031_020f1958};
+static PTMF<ActorShotArrow> data_ov031_02114300[ActorShotArrowState_Max] = {
+    ActorShotArrow::func_ov031_020f1b04, // ActorShotArrowState_0
+    ActorShotArrow::func_ov031_020f1c7c, // ActorShotArrowState_1
+    ActorShotArrow::func_ov031_020f1e3c, // ActorShotArrowState_2
+    ActorShotArrow::func_ov031_020f2010, // ActorShotArrowState_3
+    ActorShotArrow::func_ov031_020f20bc, // ActorShotArrowState_4
+    ActorShotArrow::func_ov031_020f2160, // ActorShotArrowState_5
+    ActorShotArrow::func_ov031_020f2214, // ActorShotArrowState_6
+    ActorShotArrow::func_ov031_020f1958  // ActorShotArrowState_7
+};
 
 ARM void ActorShotArrow::func_ov031_020f195c() {
-    this->mUnk_3C = (unk32) & this->mUnk_140;
-    CALL_PTMF(PTMF<ActorShotArrow>, data_ov031_02114300[this->mUnk_4C]);
+    this->mUnk_3C = &this->mUnk_140;
+    CALL_PTMF(PTMF<ActorShotArrow>, data_ov031_02114300[this->mState]);
 
     if (this->mUnk_25A) {
         if (this->mUnk_25E < 0x1F) {
@@ -296,7 +309,7 @@ ARM void ActorShotArrow::func_ov031_020f1b04() {
         var2 = true;
     }
     if (var2) {
-        this->func_ov031_020f1878(0x6);
+        this->func_ov031_020f1878(ActorShotArrowState_6);
         return;
     }
     this->func_ov031_020f28ac();
@@ -576,26 +589,26 @@ ARM void ActorShotArrow::func_ov031_020f2794(unk16 param_1) {
 ARM void ActorShotArrow::func_ov031_020f28ac() {}
 
 ARM void ActorShotArrow::func_ov031_020f2b8c() {
-    if (!(this->mUnk_4C == 0x0 || this->mUnk_4C == 0x5)) {
+    if (!(this->mState == ActorShotArrowState_0 || this->mState == ActorShotArrowState_5)) {
         return;
     }
     this->mUnk_178.mUnk_18 |= 2;
-    this->func_ov031_020f1878(0x3);
+    this->func_ov031_020f1878(ActorShotArrowState_3);
 }
 
 ARM void ActorShotArrow::func_ov031_020f2bbc() {
-    if (!(this->mUnk_4C == 0x0 || this->mUnk_4C == 0x5)) {
+    if (!(this->mState == ActorShotArrowState_0 || this->mState == ActorShotArrowState_5)) {
         return;
     }
     this->mUnk_178.mUnk_18 |= 2;
-    this->func_ov031_020f1878(0x1);
+    this->func_ov031_020f1878(ActorShotArrowState_1);
 }
 
 ARM void ActorShotArrow::func_ov031_020f2bec() {
-    if (this->mUnk_4C != 0) {
+    if (this->mState != ActorShotArrowState_0) {
         return;
     }
-    this->func_ov031_020f1878(0x5);
+    this->func_ov031_020f1878(ActorShotArrowState_5);
 }
 
 // non-matching
@@ -691,7 +704,7 @@ ARM bool ActorShotArrow_178::func_ov031_020f3310() {
     if ((this->mUnk_08->mUnk_178.mUnk_18 & 0x1) == 0) {
         this->mUnk_08->func_ov031_020f2b8c();
     } else if ((this->mUnk_08->mUnk_178.mUnk_18 & 0x2) == 0) {
-        if (this->mUnk_08->mUnk_4C == 0x4) {
+        if (this->mUnk_08->mState == ActorShotArrowState_4) {
             UNSET_FLAG(this->mUnk_08->mFlags, ActorFlag_Alive);
             return false;
         }
@@ -751,7 +764,7 @@ ARM void ActorShotArrow_194::func_ov031_020f374c(Actor *actor) {
 ARM void ActorShotArrow_194::vfunc_10(Actor *actor) {
     UnkStruct_020f38b0 stack;
     if (this->mUnk_04 != actor->mRef.Get32() && actor->mUnk_34) {
-        if (this->mUnk_2C->mUnk_4C && this->mUnk_2C->mUnk_4C != 0x5) {
+        if (this->mUnk_2C->mState != ActorShotArrowState_0 && this->mUnk_2C->mState != ActorShotArrowState_5) {
             return;
         }
         if (actor->GetActorId() == ActorId_AROW) {
@@ -797,13 +810,13 @@ ARM void ActorShotArrow_194::vfunc_10(Actor *actor) {
                 return;
             }
             case ActorId_RYAW: {
-                this->mUnk_2C->func_ov031_020f1878(0x6);
+                this->mUnk_2C->func_ov031_020f1878(ActorShotArrowState_6);
                 UNSET_FLAG(this->mUnk_2C->mFlags, ActorFlag_Visible);
                 return;
             }
             case ActorId_LOCK: {
-                *&stack.mUnk_04 = actor->mUnk_5C.mUnk_28;
-                if (stack.mUnk_04 && (u32) (stack.mUnk_04 << 0x10) >> 0x1E) {
+                stack.mUnk_04 = actor->mUnk_5C.mUnk_28;
+                if (stack.mUnk_04.data && (stack.mUnk_04.Get32() << 0x10) >> 0x1E) {
                     ActorUnkGYAM *lockedActor = (ActorUnkGYAM *) gpActorManager->func_01fff3b4(actor->mUnk_5C.mUnk_28);
 
                     if (lockedActor && lockedActor->GetActorId() == ActorId_GYAM) {
@@ -842,7 +855,7 @@ ARM void ActorShotArrow_194::vfunc_10(Actor *actor) {
 ARM bool ActorShotArrow_194::vfunc_0C(Actor *actor, VecFx32 *vector) {
     UnkStruct_020f3c38 stack;
     if (!(actor->mRef.Get32() != this->mUnk_04 && actor->mUnk_34) ||
-        !(!this->mUnk_2C->mUnk_4C || this->mUnk_2C->mUnk_4C == 0x5)) {
+        !(this->mUnk_2C->mState == ActorShotArrowState_0 || this->mUnk_2C->mState == ActorShotArrowState_5)) {
         return false;
     }
     func_01ffb714(&actor->mVel, &this->mUnk_2C->mVel, &stack.mUnk_14);

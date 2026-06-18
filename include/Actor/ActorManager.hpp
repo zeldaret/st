@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Actor/ActorUnk_ov000_020a8bb0.hpp"
+#include "Actor/ActorRef.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "files.h"
@@ -43,8 +44,8 @@ public:
     ActorManager();
     ~ActorManager();
 
-    Actor *func_01fff3b4(unk32 param1);
     Actor **func_01fff350(void *param1, Actor **ppActorTable);
+    Actor *func_01fff3b4(ActorRef ref);
 
     void func_ov000_02096e44(int index);
     unk32 func_ov000_0209704c();

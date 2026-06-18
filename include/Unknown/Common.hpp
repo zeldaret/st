@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Animation/CellAnimObject.hpp"
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkFileSystem.hpp"
@@ -880,71 +881,6 @@ struct UnkResult {
     void func_02017520(const char *nscrPath, const char *ncgrPath, const char *nclrPath);
 };
 
-// used to draw the swords from the adventure and battle buttons
-class UnkSubStruct19 {
-public:
-    /* 00 */ void *mUnk_00;
-    /* 04 */ void *mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C; // pause the animation timer (in this context: pause the shiny animation on the sword)
-    /* 10 */ unk32 mUnk_10; // animation timer
-    /* 14 */ unk32 mUnk_14; // animation speed (also affects above timer)
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ void *mUnk_1C; // pointer to animation bank ("ABNK")
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ unk32 mUnk_24;
-    /* 28 */ u8 mUnk_28; // bool?
-    /* 29 */ unk8 mUnk_29;
-    /* 2A */ unk8 mUnk_2A;
-    /* 2B */ unk8 mUnk_2B;
-    /* 2C */ unk32 mUnk_2C;
-    /* 30 */ void *mUnk_30; // pointer to somewhere inside "CEBK"
-    /* 34 */ void *mUnk_34;
-    /* 38 */ unk32 mUnk_38;
-    /* 3C */ unk32 mUnk_3C;
-    /* 40 */ unk32 mUnk_40; // related to the width of the texture (scaling matrix?)
-    /* 44 */ unk32 mUnk_44; // related to the height of the texture
-    /* 48 */ Vec2us mUnk_48;
-    /* 4C */ unk32 mUnk_4C;
-    /* 50 */ unk32 mUnk_50;
-    /* 54 */ unk32 mUnk_54;
-    /* 58 */ unk32 mUnk_58; // another timer?
-    /* 5C */ Vec2s mUnk_5C; // position of the animated texture
-    /* 60 */ unk32 mUnk_60;
-    /* 64 */ unk32 mUnk_64;
-    /* 68 */ unk32 mUnk_68;
-    /* 6C */ unk16 mUnk_6C;
-    /* 6E */ bool mUnk_6E;
-    /* 6F */ unk8 mUnk_6F;
-    /* 70 */ unk32 mUnk_70;
-    /* 74 */ unk16 mUnk_74;
-    /* 76 */ unk16 mUnk_76;
-    /* 78 */
-
-    UnkSubStruct19();
-    UnkSubStruct19(unk32 param1, unk32 param2) {
-        this->mUnk_6E   = true;
-        this->mUnk_70   = 0;
-        this->mUnk_5C.x = 0;
-        this->mUnk_5C.y = 0;
-        this->mUnk_74   = 0;
-        this->func_ov000_0206082c(param1, param2);
-    }
-
-    void func_ov000_0206082c(s16 param1, unk32 param2);
-    void func_ov000_02060950();
-    void func_ov000_020609b0();
-    void func_ov000_020609c4(void);
-    bool func_ov000_02060a98(unk32 param1);
-    void func_ov000_02060ad0();
-    bool func_ov000_02060af8(void);
-    void func_ov000_02060b50();
-    void func_ov000_02060b64(void);
-    void func_ov000_02060bac();
-    unk32 func_ov000_02060c28(void);
-    void func_ov000_02060bd8(unk32 param1);
-};
-
 struct UnkStruct_StackTitleScreen {
     /* 00 */ unk32 pad[5];
     /* 14 */
@@ -1026,8 +962,8 @@ class UnkActorSystem2 : public GameModeManagerBase_104 {
 public:
     /* 000 (base) */
     /* 01B */ bool mUnk_01B;
-    /* 01C */ UnkSubStruct19 mUnk_01C;
-    /* 094 */ UnkSubStruct19 mUnk_094;
+    /* 01C */ CellAnimObject mUnk_01C;
+    /* 094 */ CellAnimObject mUnk_094;
     /* 10C */ bool mUnk_10C;
     /* 10C */ bool mUnk_10D;
 
@@ -1292,4 +1228,37 @@ public:
     // data_ov024_020d8350
     /* 00 */ virtual ~MapObjectProfile_Derived5() override;
     /* 08 */
+};
+
+//! TODO: move to a better place
+enum TrainPresetType_ {
+    TrainPresetType_Default                = 0, // normal overworld settings
+    TrainPresetType_DarkRealmNormal        = 1, // default dark realm settings (SceneIndex_t_dark)
+    TrainPresetType_DarkRealmLightTear     = 2, // dark realm when on a light tear (SceneIndex_t_dark)
+    TrainPresetType_DarkRealmLightTearRope = 3, // same as above but when pulling the rope (SceneIndex_t_dark)
+    TrainPresetType_DarkRealmFight         = 4, // (SceneIndex_t_eviltrain, SceneIndex_t_eviltrain2 & SceneIndex_t_eviltrain3)
+    TrainPresetType_5                      = 5, // unused?
+    TrainPresetType_Max,
+};
+
+struct TrainSpeedTarget {
+    /* 00 */ unk32 speed;
+    /* 04 */ unk32 unk_04;
+    /* 08 */
+};
+
+struct TrainSpeedPreset {
+    /* 00 */ TrainSpeedTarget reverse;
+    /* 08 */ TrainSpeedTarget stop;
+    /* 10 */ TrainSpeedTarget slow;
+    /* 18 */ TrainSpeedTarget fast;
+    /* 20 */ unk32 unk_20;
+    /* 24 */ unk32 unk_24;
+    /* 28 */ unk32 unk_28;
+    /* 2C */ unk32 unk_2C;
+    /* 30 */ unk32 unk_30;
+    /* 34 */ unk32 unk_34;
+    /* 38 */ unk32 unk_38; // related to the "emergency break" thing when you go to reverse while fast speed
+    /* 3C */ fx32 unk_3C;
+    /* 40 */
 };

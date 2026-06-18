@@ -3,6 +3,7 @@
 #include "Item/ItemManager.hpp"
 #include "MainGame/MiscAdvManager.hpp"
 #include "MainGame/PassengerManager.hpp"
+#include "flags.h"
 #include "math.hpp"
 #include "types.h"
 
@@ -37,10 +38,12 @@ struct SaveFile_00000_0000_Data_D8 {
     SaveFile_00000_0000_Data_D8();
 };
 
+// related to scene flags?
 struct SaveFile_00000_0000_Data_184 {
     /* 00 */ unk32 unk_00;
     /* 04 */ unk16 unk_04;
-    /* 06 */ unk16 unk_06;
+    /* 06 */ u8 keyAmount;
+    /* 07 */ unk8 unk_07;
     /* 08 */
 
     SaveFile_00000_0000_Data_184() :
@@ -126,22 +129,120 @@ struct SaveFile_00000_0000_Data_C84 {
     }
 };
 
-struct SaveFile_00000_0000_Data_D4C {
-    /* D24 */ unk32 unk_D4C;
-    /* D24 */ unk32 unk_D50;
-    /* D24 */ unk32 unk_D54;
-    /* D24 */ unk32 unk_D58;
-    /* D24 */ unk32 unk_D5C;
-    /* D24 */ unk32 unk_D60;
-    /* D24 */ unk32 unk_D64;
-    /* D24 */ unk32 unk_D68;
-    /* D6C */ unk8 unk_D6C[0x08];
-    /* D74 */ unk16 unk_D74;
+struct SaveFile_00000_0000_Data_D24 {
+    /* 00 */ unk32 unk_00;
+    /* 04 */ unk32 unk_04;
+    /* 08 */ unk32 unk_08;
+    /* 0C */ unk32 unk_0C;
+    /* 10 */ unk32 unk_10;
+    /* 14 */ unk32 unk_14;
+    /* 18 */ unk32 unk_18;
+    /* 1C */ unk32 unk_1C;
+    /* 20 */ unk32 unk_20;
+    /* 24 */ unk32 unk_24;
+    /* 28 */
+};
 
-    SaveFile_00000_0000_Data_D4C() {
-        MI_CpuFill32(0, this->unk_D6C, sizeof(this->unk_D6C));
-        this->unk_D74 = 0;
+typedef u32 RabbitFlag;
+enum RabbitFlag_ {
+    RabbitFlag_None        = -1,
+    RabbitFlag_Grass_01    = FLAG(0, 0),
+    RabbitFlag_Grass_02    = FLAG(0, 1),
+    RabbitFlag_Grass_03    = FLAG(0, 2),
+    RabbitFlag_Grass_04    = FLAG(0, 3),
+    RabbitFlag_Grass_05    = FLAG(0, 4),
+    RabbitFlag_Grass_06    = FLAG(0, 5),
+    RabbitFlag_Grass_07    = FLAG(0, 6),
+    RabbitFlag_Grass_08    = FLAG(0, 7),
+    RabbitFlag_Grass_09    = FLAG(0, 8),
+    RabbitFlag_Grass_10    = FLAG(0, 9),
+    RabbitFlag_Snow_01     = FLAG(0, 10),
+    RabbitFlag_Snow_02     = FLAG(0, 11),
+    RabbitFlag_Snow_03     = FLAG(0, 12),
+    RabbitFlag_Snow_04     = FLAG(0, 13),
+    RabbitFlag_Snow_05     = FLAG(0, 14),
+    RabbitFlag_Snow_06     = FLAG(0, 15),
+    RabbitFlag_Snow_07     = FLAG(0, 16),
+    RabbitFlag_Snow_08     = FLAG(0, 17),
+    RabbitFlag_Snow_09     = FLAG(0, 18),
+    RabbitFlag_Snow_10     = FLAG(0, 19),
+    RabbitFlag_Water_01    = FLAG(0, 20),
+    RabbitFlag_Water_02    = FLAG(0, 21),
+    RabbitFlag_Water_03    = FLAG(0, 22),
+    RabbitFlag_Water_04    = FLAG(0, 23),
+    RabbitFlag_Water_05    = FLAG(0, 24),
+    RabbitFlag_Water_06    = FLAG(0, 25),
+    RabbitFlag_Water_07    = FLAG(0, 26),
+    RabbitFlag_Water_08    = FLAG(0, 27),
+    RabbitFlag_Water_09    = FLAG(0, 28),
+    RabbitFlag_Water_10    = FLAG(0, 29),
+    RabbitFlag_Mountain_01 = FLAG(0, 30),
+    RabbitFlag_Mountain_02 = FLAG(0, 31),
+    RabbitFlag_Mountain_03 = FLAG(1, 0),
+    RabbitFlag_Mountain_04 = FLAG(1, 1),
+    RabbitFlag_Mountain_05 = FLAG(1, 2),
+    RabbitFlag_Mountain_06 = FLAG(1, 3),
+    RabbitFlag_Mountain_07 = FLAG(1, 4),
+    RabbitFlag_Mountain_08 = FLAG(1, 5),
+    RabbitFlag_Mountain_09 = FLAG(1, 6),
+    RabbitFlag_Mountain_10 = FLAG(1, 7),
+    RabbitFlag_Sand_01     = FLAG(1, 8),
+    RabbitFlag_Sand_02     = FLAG(1, 9),
+    RabbitFlag_Sand_03     = FLAG(1, 10),
+    RabbitFlag_Sand_04     = FLAG(1, 11),
+    RabbitFlag_Sand_05     = FLAG(1, 12),
+    RabbitFlag_Sand_06     = FLAG(1, 13),
+    RabbitFlag_Sand_07     = FLAG(1, 14),
+    RabbitFlag_Sand_08     = FLAG(1, 15),
+    RabbitFlag_Sand_09     = FLAG(1, 16),
+    RabbitFlag_Sand_10     = FLAG(1, 17),
+    RabbitFlag_Max,
+};
+
+struct SaveFile_00000_0000_Data_D4C {
+    /* 00 */ unk32 unk_00;
+    /* 04 */ unk32 unk_04;
+    /* 08 */ unk32 unk_08;
+    /* 0C */ unk32 unk_0C;
+    /* 10 */ unk32 unk_10;
+    /* 14 */ unk32 unk_14;
+    /* 18 */ unk32 unk_18;
+    /* 1C */ unk32 unk_1C;
+    /* 20 */ RabbitFlag rabbitFlags[2];
+    /* 28 */ unk16 unk_28;
+    /* 2A */ unk16 unk_2A;
+    /* 2C */ unk32 unk_2C;
+    /* 30 */ unk32 unk_30;
+    /* 34 */ unk32 unk_34;
+    /* 38 */ unk32 unk_38;
+    /* 3C */ unk32 unk_3C;
+    /* 40 */
+
+    SaveFile_00000_0000_Data_D4C() {}
+
+    SaveFile_00000_0000_Data_D4C(unk16 param1) {
+        MI_CpuFill32(0, this->rabbitFlags, sizeof(this->rabbitFlags));
+        this->unk_28 = param1;
     }
+};
+
+struct SaveFile_00000_0000_Data_D8C {
+    /* 00 */ unk32 unk_00;
+    /* 04 */ unk32 unk_04;
+    /* 08 */ unk32 unk_08;
+    /* 0C */ unk32 unk_0C;
+    /* 10 */
+};
+
+struct SaveFile_00000_0000_Data_D9C {
+    /* 00 */ unk32 unk_00;
+    /* 04 */ unk16 unk_04;
+    /* 06 */ wchar_t mPlayerName[LENGTH_PLAYER_NAME + 1];
+    /* 18 */ unk32 unk_18;
+    /* 1C */ unk32 unk_1C;
+    /* 20 */
+
+    unk32 func_ov000_020a1000();
 };
 
 struct SaveInfoData {
@@ -162,35 +263,14 @@ struct SaveInfoData {
     /* 040 */ SaveInventory inventory;
     /* 0D8 */ SaveFile_00000_0000_Data_D8 unk_0D8;
     /* 158 */ SaveFile_00000_0000_Data_158 unk_158;
-    /* 184 */ SaveFile_00000_0000_Data_184 unk_184[96];
+    /* 184 */ SaveFile_00000_0000_Data_184 unk_184[SaveCourseIndex_Max];
     /* 484 */ SaveFile_00000_0000_Data_484 unk_484[256];
     /* C84 */ SaveFile_00000_0000_Data_C84 unk_C84;
     /* C94 */ SaveMiscAdvManager miscAdvManager;
-    /* D24 */ unk32 unk_D24;
-    /* D24 */ unk32 unk_D28;
-    /* D24 */ unk32 unk_D2C;
-    /* D24 */ unk32 unk_D30;
-    /* D24 */ unk32 unk_D34;
-    /* D24 */ unk32 unk_D38;
-    /* D24 */ unk32 unk_D3C;
-    /* D24 */ unk32 unk_D40;
-    /* D24 */ unk32 unk_D44;
-    /* D24 */ unk32 unk_D48;
+    /* D24 */ SaveFile_00000_0000_Data_D24 unk_D24;
     /* D4C */ SaveFile_00000_0000_Data_D4C unk_D4C;
-    /* D78 */ unk32 unk_D78;
-    /* D7C */ unk32 unk_D7C;
-    /* D80 */ unk32 unk_D80;
-    /* D84 */ unk32 unk_D84;
-    /* D88 */ unk32 unk_D88;
-    /* D8C */ unk32 unk_D8C;
-    /* D90 */ unk32 unk_D90;
-    /* D94 */ unk32 unk_D94;
-    /* D98 */ unk32 unk_D98;
-    /* D9C */ unk32 unk_D9C;
-    /* DA0 */ unk16 unk_DA0;
-    /* DA2 */ wchar_t mPlayerName[LENGTH_PLAYER_NAME + 1];
-    /* DB4 */ unk32 unk_DB4;
-    /* DB8 */ unk32 unk_DB8;
+    /* D8C */ SaveFile_00000_0000_Data_D8C unk_D8C;
+    /* D9C */ SaveFile_00000_0000_Data_D9C unk_D9C;
     /* DBC */ unk32 unk_DBC;
     /* DC0 */ unk32 unk_DC0;
     /* DC4 */ unk32 unk_DC4;
@@ -212,7 +292,8 @@ struct SaveInfoData {
     /* E00 */
 
     SaveInfoData() :
-        unk_014(0) {}
+        unk_014(0),
+        unk_D4C(0) {}
 };
 
 struct SaveTreasureData {
@@ -267,11 +348,11 @@ public:
     }
 
     wchar_t *GetPlayerName() {
-        return this->mInfoData[0].mPlayerName;
+        return this->mInfoData[0].unk_D9C.mPlayerName;
     }
 
     bool IsPlayerNameSet() {
-        return this->mInfoData[0].mPlayerName[0] != L'\0';
+        return this->mInfoData[0].unk_D9C.mPlayerName[0] != L'\0';
     }
 
     SaveFile_00000_2600_Data *Get2600Ptr() {

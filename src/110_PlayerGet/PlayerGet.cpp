@@ -497,24 +497,24 @@ ARM bool PlayerGet::func_ov110_02186b8c() {
 #endif
 
 // https://decomp.me/scratch/ZAW2N
-ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
+ARM void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
     ItemId itemId;
     ItemManager *pItemManager;
-    Actor *iVar10;
+    Actor *pActor;
     VecFx32 *pUnk_38;
     VecFx32 *pUnk_3c;
 
     switch (param1->mUnk_04) {
         case 0x39:
             VecFx32 temp;
-            itemId                    = param1->mUnk_1C;
-            temp.x                    = param1->mUnk_10.x;
-            temp.y                    = param1->mUnk_10.y;
-            temp.z                    = param1->mUnk_10.z;
-            this->mUnk_54.mUnk_08     = temp.z;
-            this->mUnk_54.mUnk_00_s32 = temp.x;
-            this->mUnk_54.mUnk_04_s32 = temp.y;
-            pItemManager              = this->mUnk_28->pItemManager;
+            itemId                     = param1->mUnk_1C;
+            temp.x                     = param1->mUnk_10.x;
+            temp.y                     = param1->mUnk_10.y;
+            temp.z                     = param1->mUnk_10.z;
+            this->mUnk_54.mUnk_08      = temp.z;
+            this->mUnk_54.mUnk_00.data = temp.x;
+            this->mUnk_54.mUnk_04.data = temp.y;
+            pItemManager               = this->mUnk_28->pItemManager;
 
             switch (itemId) {
                 case ItemId_BombBag:
@@ -560,19 +560,19 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             pUnk_3c->y = 0;
             pUnk_3c->z = 0;
 
-            if (((u32) (u16) this->mUnk_54.mUnk_00_s16 << 16) >> 30 != 1) {
+            if (this->mUnk_54.mUnk_04.type != ActorRefType_1) {
                 return;
             }
 
-            iVar10 = gpActorManager->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
+            pActor = gpActorManager->func_01fff3b4(this->mUnk_54.mUnk_00);
 
-            if (iVar10 == NULL) {
+            if (pActor == NULL) {
                 return;
             }
 
-            if (iVar10->GetActorId() == ActorId_NormalShield) {
-                UNSET_FLAG(iVar10->mFlags, ActorFlag_Visible);
-                iVar10->mUnk_4A = 0;
+            if (pActor->GetActorId() == ActorId_NormalShield) {
+                UNSET_FLAG(pActor->mFlags, ActorFlag_Visible);
+                pActor->mUnk_4A[0] = 0;
             }
             break;
         case 0x3A:
@@ -857,8 +857,8 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                     case ItemId_AncientShield:
                         this->mUnk_30->func_ov000_020936ec();
 
-                        if (((*(u16 *) this->mUnk_54.mUnk_00 << 0x10) >> 0x1E) == 1) {
-                            temp_r0_3 = (ActorUnkNSHD *) gpActorManager->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
+                        if (this->mUnk_54.mUnk_04.type == ActorRefType_1) {
+                            temp_r0_3 = (ActorUnkNSHD *) gpActorManager->func_01fff3b4(this->mUnk_54.mUnk_00);
 
                             if ((temp_r0_3 != NULL) && (temp_r0_3->GetActorId() == ActorId_NormalShield)) {
                                 if (this->func_ov110_02186b8c()) {
@@ -896,10 +896,10 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                         break;
                 }
 
-                if (*(u16 *) this->mUnk_54.mUnk_00 == 0x1000) {
+                if (this->mUnk_54.mUnk_00.type_index == REF_TYPE_INDEX(ActorRefType_0, 0x1000)) {
                     Vec2b stack;
-                    stack.x = this->mUnk_54.mUnk_00[0];
-                    stack.y = this->mUnk_54.mUnk_00[1];
+                    stack.x = this->mUnk_54.mUnk_00.type_index;
+                    stack.y = this->mUnk_54.mUnk_00.unk_id;
 
                     MapObject *pMapObj = gpMapObjManager->func_01fff498(stack);
 
@@ -954,9 +954,8 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                     break;
                 }
 
-                if ((((u32) (*(u16 *) this->mUnk_54.mUnk_04 << 0x10) >> 0x1E) == 1) &&
-                    (data_027e09b8->func_ov000_020732dc(2) != 0)) {
-                    *(u32 *) this->mUnk_04.mUnk_00 = *(u32 *) this->mUnk_54.mUnk_04;
+                if (this->mUnk_54.mUnk_04.type == ActorRefType_1 && data_027e09b8->func_ov000_020732dc(2) != 0) {
+                    this->mUnk_04.mUnk_00 = this->mUnk_54.mUnk_04;
                     this->mUnk_30->func_ov000_020921e4(0x57);
                     break;
                 }

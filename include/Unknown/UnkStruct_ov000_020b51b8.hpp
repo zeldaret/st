@@ -68,7 +68,7 @@ public:
     void func_ov000_0206d0bc(unk32 param1);
     void func_ov000_0206d0ec(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
     void func_ov000_0206d134(unk32 param1);
-    void func_ov000_0206d274(unk32 param1);
+    void func_ov000_0206d274(unk32 param1); // play seq?
 
     void func_ov018_020c5940();
 };

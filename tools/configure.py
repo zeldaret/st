@@ -135,6 +135,7 @@ config.libs = [
     GameLib(
         "ITCM",
         [
+            Object("ITCM/ITCM_ActorManager.cpp"),
             Object("ITCM/ITCM_MapObjectManager.cpp"),
         ]
     ),
@@ -179,7 +180,7 @@ config.libs = [
             Object("000_Second/MapObject/MapObjectMiniBlocks.cpp"),
             Object("000_Second/Cutscene/Cutscene.cpp"),
             Object("000_Second/Item/ItemManager.cpp"),
-            Object("000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp"),
+            Object("000_Second/Actor/Actor_Derived1.cpp"),
             Object("000_Second/Item/TreasureManager.cpp"),
         ]
     ),
@@ -193,6 +194,7 @@ config.libs = [
             Object("001_SceneInit/UnkStruct_027e0cf8_08_00_001.cpp"),
             Object("001_SceneInit/Game/AdventureModeManager_001.cpp"),
             Object("001_SceneInit/Game/GameModeAdventure_001.cpp"),
+            Object("001_SceneInit/Save/SaveManager_001.cpp"),
         ]
     ),
     GameLib(
@@ -290,8 +292,8 @@ config.libs = [
             Object("024_MainGame/Train/UnkTrainSystem2_024.cpp"),
             Object("024_MainGame/Unknown/UnkStruct_027e0d08_024.cpp"),
             Object("024_MainGame/MiscAdvManager.cpp"),
-            Object("024_MainGame/Actor/ActorUnk_ov000_020a8bb0_EC_024.cpp"),
-            Object("024_MainGame/Train/data_ov024_020d8550.cpp", extra_cflags=["-ipa file", "-enc shift-jis"]),
+            Object("024_MainGame/Actor/Actor_Derived1_EC_024.cpp"),
+            Object("024_MainGame/Train/data_ov024_020d8550.cpp"),
             Object("024_MainGame/Actor/ActorUnkOBPC.cpp"),
         ]
     ),
@@ -306,6 +308,7 @@ config.libs = [
     GameLib(
         "Overlay 26",
         [
+            Object("026_Train/code_02102924.cpp"),
             Object("026_Train/Actor/ActorUnkBDEM.cpp"),
             Object("026_Train/Actor/ActorUnkCNBL.cpp"),
             Object("026_Train/Actor/ActorUnkDKCL.cpp"),
@@ -449,7 +452,7 @@ config.libs = [
             Object("031_Land/Actor/ActorUnkROCK.cpp"),
             Object("031_Land/Actor/ActorUnkSCCN.cpp"),
             Object("031_Land/Actor/ActorUnkSKDO.cpp"),
-            Object("031_Land/Actor/ActorUnkSPAR_SPBM_SPDR_SPTR.cpp"),
+            Object("031_Land/Actor/ActorItemDrop.cpp"),
             Object("031_Land/Actor/ActorUnkSWBM.cpp"),
             Object("031_Land/Actor/ActorUnkSWCH.cpp"),
             Object("031_Land/Actor/ActorUnkSWON.cpp"),

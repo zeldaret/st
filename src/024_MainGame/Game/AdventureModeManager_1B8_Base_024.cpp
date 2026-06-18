@@ -561,7 +561,7 @@ void AdventureModeManager_1B8::func_ov024_020d1364() {
     }
 
     gSaveManager.func_ov017_020c3040(this->mUnk_28, this->mUnk_24);
-    SET_FLAG(gSaveManager.mUnk_000->mUnk_B30, this->mUnk_24);
+    SET_FLAG(gSaveManager.mUnk_000->unk_B30.unk_00, this->mUnk_24);
 }
 
 void AdventureModeManager_1B8::func_ov024_020d13cc(s32 param1) {
@@ -576,7 +576,7 @@ void AdventureModeManager_1B8::func_ov024_020d13cc(s32 param1) {
         return;
     }
 
-    if (GET_FLAG(gSaveManager.mUnk_000->mUnk_B30, this->mUnk_24)) {
+    if (GET_FLAG(gSaveManager.mUnk_000->unk_B30.unk_00, this->mUnk_24)) {
         UnkDataStruct2 sp4(0x2290);
         void *unk_00 = sp4.unk_00;
 

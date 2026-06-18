@@ -18,7 +18,7 @@ ARM PlayerSceneChange2::PlayerSceneChange2() {
 }
 
 // non-matching
-ARM void PlayerSceneChange2::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
+ARM void PlayerSceneChange2::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
     s16 auStack_18[12];
     s16 auStack_2c;
 

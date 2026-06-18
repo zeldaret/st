@@ -1,7 +1,10 @@
 //! TODO: This file was generated automatically and might contain errors
 
 #include "Actor/ActorUnkRB1T.hpp"
+#include "Save/SaveManager.hpp"
 #include "System/SysNew.hpp"
+
+extern UnkActorDataStruct1 data_ov026_02137edc;
 
 ARM DECL_PROFILE(ActorProfileUnkRB1T);
 
@@ -12,13 +15,45 @@ ARM Actor *ActorProfileUnkRB1T::Create() {
 ARM ActorProfileUnkRB1T::ActorProfileUnkRB1T() :
     ActorProfile_Derived1(ActorId_RB1T) {}
 
-ARM ActorUnkRB1T::ActorUnkRB1T() {}
+ARM ActorUnkRB1T::ActorUnkRB1T() :
+    Actor_Derived1(&this->mUnk_20C, this->mUnk_120),
+    mUnk_20C(0) {}
 
 ARM void ActorUnkRB1T::func_ov026_0211e3cc(void) {}
-ARM void ActorUnkRB1T::func_ov026_0211e3e0(void) {}
+
+bool ActorUnkRB1T::func_ov026_0211e3e0(int param1) {
+    if (GET_FLAG(gSaveManager.GetUnk000()->unk_B78.rabbitFlags, this->mUnk_5C.mParams[1])) {
+        this->Kill();
+        return true;
+    }
+
+    this->Actor_Derived1::vfunc_18(param1);
+    this->mUnk_0E4 = ActorUnkRB1T::func_ov026_021208a0;
+
+    int result = this->func_ov026_0211e6cc();
+    func_ov000_02099ddc(&this->mUnk_300, data_ov026_02137edc, 0x1000, result << 12);
+
+    this->func_ov026_0211e554();
+
+    this->mUnk_36C = 0;
+    this->mUnk_36D = 0;
+    this->mUnk_36E = 0;
+    this->mUnk_36F = 0;
+    this->mUnk_370 = 0;
+    this->mUnk_371 = 0;
+    this->mUnk_372 = 0;
+    this->mUnk_373 = 0;
+    this->mUnk_374 = 0;
+    this->mUnk_375 = 0;
+    this->mUnk_376 = 0;
+    this->mUnk_377 = 0;
+
+    return true;
+}
+
 ARM void ActorUnkRB1T::func_ov026_0211e4c8(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211e554(void) {}
-ARM void ActorUnkRB1T::func_ov026_0211e6cc(void) {}
+ARM unk32 ActorUnkRB1T::func_ov026_0211e6cc(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211e6e4(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211e6f0(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211e748(void) {}
@@ -39,7 +74,13 @@ ARM void ActorUnkRB1T::func_ov026_0211f1a0(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211f20c(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211f28c(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211f2f0(void) {}
-ARM void ActorUnkRB1T::func_ov026_0211f394(void) {}
+
+ARM void ActorUnkRB1T::func_ov026_0211f394(void) {
+    SET_FLAG(gSaveManager.GetUnk000()->unk_B78.rabbitFlags, this->mUnk_5C.mParams[1]);
+    this->vfunc_98(4);
+    this->mUnk_280 = 0;
+}
+
 ARM void ActorUnkRB1T::func_ov026_0211f3e8(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211f430(void) {}
 ARM void ActorUnkRB1T::func_ov026_0211f470(void) {}

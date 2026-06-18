@@ -5,6 +5,14 @@
 #include "global.h"
 #include "types.h"
 
+enum ActorUnkSWTMState_ {
+    ActorUnkSWTMState_0 = 0,
+    ActorUnkSWTMState_1 = 1,
+    ActorUnkSWTMState_2 = 2,
+    ActorUnkSWTMState_3 = 3,
+    ActorUnkSWTMState_Max,
+};
+
 class ActorUnkSWTM_B0 {
 public:
     /* 00 */ unk32 mUnk_00;
@@ -39,7 +47,7 @@ public:
     /* 24 */ virtual void vfunc_24() override;
     /* 4C */ virtual ~ActorUnkSWTM() override;
 
-    void func_ov000_0209af54(unk32 param1);
+    void SetState(ActorState state);
     bool func_ov000_0209afe4(void);
     unk32 func_ov000_0209b038(void);
     void func_ov000_0209b160(void);
@@ -52,7 +60,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkSWTM();
-    ~ActorProfileUnkSWTM();
 
     /* 0C */ virtual Actor *Create();
 

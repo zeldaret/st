@@ -9,7 +9,7 @@
 class ActorEventIcon : public Actor {
 public:
     /* 000 (base) */
-    /* 094 */ UnkSubStruct19 mUnk_094; // event icon
+    /* 094 */ CellAnimObject mUnk_094; // event icon
     /* 10C */ unk16 mUnk_10C;
     /* 110 */ unk16 mUnk_10E; // pad?
 

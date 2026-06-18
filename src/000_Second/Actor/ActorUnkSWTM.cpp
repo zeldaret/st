@@ -23,7 +23,7 @@ ARM ActorUnkSWTM::ActorUnkSWTM() :
     mUnk_A8(0) {}
 
 ARM ActorUnkSWTM::~ActorUnkSWTM() {
-    if (this->mUnk_4C != 2 && this->func_ov000_02098a60(0) == 0) {
+    if (this->mState != ActorUnkSWTMState_2 && this->func_ov000_02098a60(0) == 0) {
         this->func_ov000_0209b184();
     }
 }
@@ -38,52 +38,52 @@ ARM bool ActorUnkSWTM::vfunc_18(unk32 param1) {
     this->mUnk_9C = this->mUnk_9E;
 
     if (this->func_ov000_02098a60(0)) {
-        this->func_ov000_0209af54(2);
+        this->SetState(ActorUnkSWTMState_2);
     } else {
-        this->func_ov000_0209af54(0);
+        this->SetState(ActorUnkSWTMState_0);
     }
 
     return true;
 }
 
 ARM void ActorUnkSWTM::vfunc_20(void) {
-    switch (this->mUnk_4C) {
-        case 0:
+    switch (this->mState) {
+        case ActorUnkSWTMState_0:
             if (!this->func_ov000_0209afe4()) {
                 return;
             }
 
-            this->func_ov000_0209af54(1);
+            this->SetState(ActorUnkSWTMState_1);
             break;
-        case 1:
+        case ActorUnkSWTMState_1:
             this->mUnk_A8++;
             this->func_ov000_0209b1d0();
 
             if (this->mUnk_A8 >= this->mUnk_A4) {
-                this->func_ov000_0209af54(3);
+                this->SetState(ActorUnkSWTMState_3);
             } else {
                 switch (this->func_ov000_0209b038()) {
                     case 1:
-                        this->func_ov000_0209af54(2);
+                        this->SetState(ActorUnkSWTMState_2);
                         break;
                     case 2:
-                        this->func_ov000_0209af54(3);
+                        this->SetState(ActorUnkSWTMState_3);
                         break;
                     default:
                         break;
                 }
             }
             break;
-        case 2:
+        case ActorUnkSWTMState_2:
             break;
-        case 3:
+        case ActorUnkSWTMState_3:
             if (this->mUnk_50 < this->mUnk_52) {
                 this->mUnk_50++;
             }
 
             if ((s32) this->mUnk_50 >= 15) {
                 this->func_ov000_0209b184();
-                this->func_ov000_0209af54(0);
+                this->SetState(ActorUnkSWTMState_0);
             }
             break;
         default:
@@ -93,26 +93,26 @@ ARM void ActorUnkSWTM::vfunc_20(void) {
 
 ARM void ActorUnkSWTM::vfunc_24(void) {}
 
-ARM void ActorUnkSWTM::func_ov000_0209af54(unk32 param1) {
-    this->mUnk_4C = param1;
+ARM void ActorUnkSWTM::SetState(ActorState state) {
+    this->mState  = state;
     this->mUnk_A8 = 0;
 
-    switch (this->mUnk_4C) {
-        case 0:
+    switch (this->mState) {
+        case ActorUnkSWTMState_0:
             this->func_ov000_02098a88(0, 0);
             break;
-        case 1:
+        case ActorUnkSWTMState_1:
             this->mUnk_AC = false;
             this->mUnk_9C = this->mUnk_9E;
             break;
-        case 2:
+        case ActorUnkSWTMState_2:
             this->func_ov000_02098a88(0, 1);
 
             if (this->mUnk_94 == 0) {
                 UNSET_FLAG(this->mFlags, ActorFlag_Alive);
             }
             break;
-        case 3:
+        case ActorUnkSWTMState_3:
             this->func_ov000_0209b160();
             this->mUnk_50 = 0;
             this->mUnk_52 = -1;
@@ -177,7 +177,7 @@ ARM unk32 ActorUnkSWTM::func_ov000_0209b038(void) {
 }
 
 ARM void ActorUnkSWTM::func_ov000_0209b160(void) {
-    if (this->mUnk_4C != 2) {
+    if (this->mState != ActorUnkSWTMState_2) {
         data_ov000_020b5214.func_ov000_0206db44(0xA3);
     }
 }
@@ -199,5 +199,3 @@ ARM void ActorUnkSWTM::func_ov000_0209b1d0(void) {
         data_ov000_020b5214.func_ov000_0206e7e8(0x91);
     }
 }
-
-ARM ActorProfileUnkSWTM::~ActorProfileUnkSWTM() {}

@@ -486,8 +486,8 @@ ARM void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
             this->vfunc_7C();
 
             if (this->mUnk_8A && this->mUnk_86 && param2 == 0) {
-                unk32 var_r5   = 1;
-                unk32 var_r1_2 = 2;
+                u16 var_r5   = 1;
+                s16 var_r1_2 = 2;
 
                 if (this->IsOrientedVertically()) {
                     var_r1_2 = -1;
@@ -498,7 +498,7 @@ ARM void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
                 }
 
                 if (this->mUnk_87) {
-                    unk32 sp8;
+                    ActorRef sp8;
                     MapObject::func_ov000_0209d54c(&sp8, this, 1, &this->mPos, var_r1_2, var_r5);
                 }
             }
