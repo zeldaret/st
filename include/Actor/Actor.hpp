@@ -203,6 +203,7 @@ public:
     }
 
     // overlay 0
+    unk32 func_ov000_0207e294(Cylinder *);
     void func_ov000_0209848c(ActorProfile *param1);
     void func_ov000_020984b0();
     void func_ov000_020984b4();
@@ -232,6 +233,7 @@ public:
                                     int param5);
 
     // overlay 17
+    unk32 func_ov017_020beeec(unk32);
     void func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_ov017_020bf9c8(Actor *param1);
 };

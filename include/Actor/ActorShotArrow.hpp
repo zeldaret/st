@@ -100,7 +100,7 @@ class UnkStruct_ov031_020f3310 {
 public:
     /* 00 */ UnkStruct_ov031_020f3310_00 *mUnk_00;
     /* 04 */ UnkStruct_ov031_020f3310_04 *mUnk_04;
-    /* 08 */ VecFx32 mUnk_08;
+    /* 08 */ VecFx16 mUnk_08;
     /* 20 */
 };
 
@@ -112,7 +112,7 @@ public:
     ActorShotArrow_178_Base();
     virtual ~ActorShotArrow_178_Base();
 
-    /* 00 */ virtual bool vfunc_00(UnkStruct_ov031_020f3310 *param1);
+    /* 00 */ virtual bool vfunc_00(const UnkStruct_ov031_020f3310 *param1);
 };
 
 class ActorShotArrow_178 : ActorShotArrow_178_Base {
@@ -127,7 +127,7 @@ public:
     ActorShotArrow_178(ActorShotArrow *param1);
 
     virtual ~ActorShotArrow_178() override;
-    virtual bool vfunc_00(UnkStruct_ov031_020f3310 *param1) override;
+    virtual bool vfunc_00(const UnkStruct_ov031_020f3310 *param1) override;
 
     void func_ov031_020f3304();
     bool func_ov031_020f33bc();
@@ -187,9 +187,6 @@ public:
     /* 00 */ virtual void func_ov000_0207b71c() override;
     /* 4C */ virtual ~ActorShotArrow() override;
 
-    unk32 func_ov000_0207e294(Cylinder *);
-    unk32 func_ov017_020beeec(unk32);
-
     ActorShotArrow *func_ov031_020f1608();
     bool func_ov031_020f173c();
     void func_ov031_020f1868();
@@ -227,7 +224,7 @@ public:
     void func_ov031_020f2cac(unk32 *, unk32);
     void func_ov031_020f2ef0();
     void func_ov031_020f2f5c(VecFx32 *param_1);
-    void func_ov031_020f2f9c();
+    bool func_ov031_020f2f9c();
     void func_ov031_020f3000();
     void func_ov031_020f311c(Mat4x3p *param_1);
     bool func_ov031_020f3210(u16);

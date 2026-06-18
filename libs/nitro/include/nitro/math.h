@@ -165,6 +165,12 @@ static inline void VecFx32_CopyXZ(VecFx32 *vec, VecFx32 *out) {
     out->z = z;
 }
 
+static inline void VecFx16_Copy2VecFx32(const VecFx16 *vec, VecFx32 *out) {
+    out->x = vec->x;
+    out->y = vec->y;
+    out->z = vec->z;
+}
+
 static inline void VecFx32_Copy(const VecFx32 *vec, VecFx32 *out) {
     out->x = vec->x;
     out->y = vec->y;

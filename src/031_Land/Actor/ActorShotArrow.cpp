@@ -54,6 +54,7 @@ typedef struct {
     /* 25C */
 } UnkStruct_ov060_02163ff4;
 
+extern "C" u8 data_ov031_02110b01[]       = {0x08, 0x02, 0x02, 0x0C, 0x04, 0x00};
 extern "C" char data_ov031_02110b3c[0x10] = "arrow";
 extern "C" char data_ov031_02110b4c[0x10] = "arrow_s";
 
@@ -644,7 +645,17 @@ void ActorShotArrow::func_ov031_020f2794(unk16 param_1) {
 }
 
 // non-matching
-void ActorShotArrow::func_ov031_020f28ac() {}
+void ActorShotArrow::func_ov031_020f28ac() {
+    this->func_ov000_020989e0();
+    if (this->mUnk_140.mUnk_08 == 0x3FFF) {
+        switch (this->mUnk_140.mUnk_1C) {
+            case 0x8:
+                if (this->mUnk_140.mUnk_0C.index == 0x102) {
+                }
+                break;
+        }
+    }
+}
 
 void ActorShotArrow::func_ov031_020f2b8c() {
     if (!(this->mState == ActorShotArrowState_0 || this->mState == ActorShotArrowState_5)) {
@@ -697,8 +708,13 @@ void ActorShotArrow::func_ov031_020f2f5c(VecFx32 *param_1) {
     func_01ffb714(&this->mPos, &this->mVel, &this->mPos);
 }
 
-// non-matching
-void ActorShotArrow::func_ov031_020f2f9c() {}
+bool ActorShotArrow::func_ov031_020f2f9c() {
+    VecFx32_Copy(&this->mPos, &this->mUnk_194.mUnk_0C);
+    this->mUnk_194.mUnk_18 = FLOAT_TO_FX32(0.2f);
+    data_027e09c0->func_ov000_0207e58c(this->mRef, 0x3, data_ov031_02110b01[this->mUnk_5C.mParams[1]], &this->mUnk_194);
+    return true;
+}
+
 // non-matching
 void ActorShotArrow::func_ov031_020f3000() {}
 
@@ -769,7 +785,7 @@ void ActorShotArrow_178::func_ov031_020f3304() {
 }
 
 // non-matching
-bool ActorShotArrow_178::vfunc_00(UnkStruct_ov031_020f3310 *param1) {
+bool ActorShotArrow_178::vfunc_00(const UnkStruct_ov031_020f3310 *param1) {
 
     u32 var = param1->mUnk_04->mUnk_24[param1->mUnk_00->mUnk_06];
     if ((var >> 0x17 & 1) == 1) {
@@ -784,7 +800,7 @@ bool ActorShotArrow_178::vfunc_00(UnkStruct_ov031_020f3310 *param1) {
             return false;
         }
         this->mUnk_08->mUnk_178.mUnk_18 |= 0x1;
-        VecFx32_Copy(&param1->mUnk_08, &this->mUnk_08->mUnk_178.mUnk_0C);
+        VecFx16_Copy2VecFx32(&param1->mUnk_08, &this->mUnk_08->mUnk_178.mUnk_0C);
     }
     return true;
 }
