@@ -80,8 +80,8 @@ ARM ActorHeart::ActorHeart() :
     this->mUnk_EC.y = FLOAT_TO_FX32(0.0);
     this->mUnk_EC.z = FLOAT_TO_FX32(0.0);
 
-    this->mUnk_9C = 0x13100;
-    this->mUnk_40 = &this->mUnk_C8;
+    this->mUnk_98.mUnk_04 = 0x13100;
+    this->mUnk_40         = &this->mUnk_C8;
     u16 sp0;
     func_01ffedac(&sp0, &this->mPos);
 
@@ -169,11 +169,11 @@ void ActorHeart::vfunc_20() {
             }
         }
 
-        if (!(this->mUnk_A0 & 0x3FFFF)) {
-            unk16 var = this->mUnk_B4;
+        if (!(this->mUnk_98.mUnk_08 & 0x3FFFF)) {
+            unk16 var = this->mUnk_98.mUnk_1C;
             if (var != 0x8 && var == 0xC) {
-                this->mUnk_C0 = this->mUnk_A4;
-                this->mUnk_9C &= ~0x1000;
+                this->mUnk_C0 = this->mUnk_98.mUnk_0C;
+                this->mUnk_98.mUnk_04 &= ~0x1000;
             }
         }
     }
@@ -313,7 +313,7 @@ ARM void ActorHeart::func_ov031_020ef3d0() {
     this->mVel.y = FLOAT_TO_FX32(0.0);
     this->mVel.z = FLOAT_TO_FX32(0.0);
 
-    this->mUnk_9C |= 0x1000;
+    this->mUnk_98.mUnk_04 |= 0x1000;
     this->SetState(ActorHeartState_1);
 }
 

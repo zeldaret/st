@@ -54,13 +54,6 @@ public:
     /* 98 */ u16 mUnk_98;
     /* 9A */ u16 mUnk_9A;
     /* 9C */ Actor_9C mUnk_9C;
-    /* A0 */ unk32 mUnk_A0;
-    /* A4 */ unk32 mUnk_A4;
-    /* A8 */ unk32 mUnk_A8;
-    /* AC */ unk32 mUnk_AC;
-    /* B0 */ unk32 mUnk_B0;
-    /* B4 */ unk32 mUnk_B4;
-    /* B8 */ unk32 mUnk_B8;
     /* BC */ ActorRef mUnk_BC;
     /* C0 */ ActorRef mUnk_C0;
     /* C4 */ ActorRupee_C4 mUnk_C4;

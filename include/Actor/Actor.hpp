@@ -110,7 +110,15 @@ struct ActorGrabParams {
 class Actor_9C {
 public:
     /* 00 (vtable) */
-    /* 04 */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ ActorRef mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ u16 mUnk_1C;
+    /* 1E */ u16 mUnk_1E;
+    /* 20 */
 
     /* 00 */ virtual void vfunc_00(); // corresponds to func_ov000_02097c14
     /* 04 */ virtual void vfunc_04(); // corresponds to func_ov000_02097c20

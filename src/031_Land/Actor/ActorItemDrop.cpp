@@ -162,8 +162,8 @@ ARM ActorItemDrop::ActorItemDrop() :
             break;
     }
 
-    this->mUnk_B8 = 0x13100;
-    this->mUnk_40 = &this->mUnk_E4;
+    this->mUnk_B4.mUnk_04 = 0x13100;
+    this->mUnk_40         = &this->mUnk_E4;
 
     u16 sp0;
     func_01ffedac(&sp0, &this->mPos);
@@ -212,28 +212,28 @@ ARM void ActorItemDrop::func_ov031_020fa260() {
     if (this->IsTimerOut()) {
         this->func_ov000_020989e0();
 
-        if (this->mUnk_BC & 0x3FFFF) {
-            switch (this->mUnk_D0) {
+        if (this->mUnk_B4.mUnk_08 & 0x3FFFF) {
+            switch (this->mUnk_B4.mUnk_1C) {
                 case 8:
                 case 16:
                     if (this->mUnk_119) {
                         bool var_r1_3 = false;
 
-                        if (this->mUnk_C0.type_index == 0x100 && this->mUnk_C0.unk_id == 0) {
+                        if (this->mUnk_B4.mUnk_0C.type_index == 0x100 && this->mUnk_B4.mUnk_0C.unk_id == 0) {
                             var_r1_3 = true;
                         }
 
-                        if (var_r1_3 || (this->mUnk_C0.type_index == 0x100 && this->mUnk_C0.unk_id == 1 &&
+                        if (var_r1_3 || (this->mUnk_B4.mUnk_0C.type_index == 0x100 && this->mUnk_B4.mUnk_0C.unk_id == 1 &&
                                          data_027e0ce0->func_01fff1e0())) {
                             this->SetState(ActorItemDropState_6);
                         }
-                    } else if (this->mUnk_C0.type_index & 0x100) {
+                    } else if (this->mUnk_B4.mUnk_0C.type_index & 0x100) {
                         this->SetState(ActorItemDropState_6);
                     }
                     break;
                 case 12:
-                    this->mUnk_DC = this->mUnk_C0;
-                    this->mUnk_B8 &= ~0x1000;
+                    this->mUnk_DC = this->mUnk_B4.mUnk_0C;
+                    this->mUnk_B4.mUnk_04 &= ~0x1000;
                     this->SetState(ActorItemDropState_3);
                     break;
                 default:
@@ -373,7 +373,7 @@ ARM void ActorItemDrop::func_ov031_020fa5f0() {
         this->mVel.x = FLOAT_TO_FX32(0.0f);
         this->mVel.y = FLOAT_TO_FX32(0.0f);
         this->mVel.z = FLOAT_TO_FX32(0.0f);
-        this->mUnk_B8 |= 0x1000;
+        this->mUnk_B4.mUnk_04 |= 0x1000;
         this->SetState(ActorItemDropState_1);
     }
 }
@@ -556,5 +556,3 @@ ARM void ActorItemDrop_C4::vfunc_08() {
     this->GetActorPtr<ActorItemDrop>()->SetState(ActorItemDropState_6);
     Actor_C4::vfunc_08();
 }
-
-ARM ActorItemDrop::~ActorItemDrop() {}

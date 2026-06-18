@@ -31,12 +31,6 @@ public:
     /* 94 */ u16 mUnk_94;
     /* 96 */ u16 mUnk_96;
     /* 98 */ Actor_9C mUnk_98;
-    /* 9C */ unk32 mUnk_9C;
-    /* A0 */ unk32 mUnk_A0;
-    /* A4 */ unk32 mUnk_A4;
-    /* A8 */ STRUCT_PAD(0xA8, 0xB4);
-    /* B4 */ unk16 mUnk_B4;
-    /* B6 */ STRUCT_PAD(0xB6, 0xB8);
     /* B8 */ s16 mUnk_B8;
     /* BA */ unk16 mUnk_BA;
     /* BC */ unk16 mUnk_BC;
