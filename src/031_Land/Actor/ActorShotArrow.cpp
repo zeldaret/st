@@ -608,7 +608,10 @@ void ActorShotArrow::func_ov031_020f2310() {
 
         func_01ffa60c(&stack.mUnk_0C, &stack.mUnk_30, &stack.mUnk_30);
 
-        // do some magic with floats
+        // should have if/else structure
+        stack.mUnk_54.y = MUL_FX32(FLOAT_TO_FX32(0.2f), SIN(this->mUnk_174 + this->mUnk_176));
+
+        this->mUnk_194.vfunc_14(&stack.mUnk_30, &stack.mUnk_54);
 
         if (this->mUnk_25A) {
             this->func_ov031_020f22d4(&stack.mUnk_30, &stack.mUnk_54);
@@ -622,8 +625,10 @@ void ActorShotArrow::func_ov031_020f2310() {
     data_027e09b4->func_ov017_020c08c4(&this->mPos, 0x7B, 0x666, var4, this->mAngle, 0x1);
 }
 
+extern "C" void GX_func_02024a84(Mat3p *param_1);
+
 // non-matching
-void ActorShotArrow::func_ov031_020f2654(Mat3p *) {}
+void ActorShotArrow::func_ov031_020f2654(Mat3p *param1) {}
 
 void ActorShotArrow::func_ov031_020f2794(unk16 param_1) {
     switch (param_1) {
@@ -645,17 +650,113 @@ void ActorShotArrow::func_ov031_020f2794(unk16 param_1) {
     }
 }
 
+typedef struct {
+    /* 10 */ VecFx32 mUnk_10;
+    /* 1C */ VecFx32 mUnk_1C;
+} UnkStack_ov031_020f28ac;
+
 // non-matching
-void ActorShotArrow::func_ov031_020f28ac() {
+u32 ActorShotArrow::func_ov031_020f28ac() {
+    UnkStack_ov031_020f28ac stack;
     this->func_ov000_020989e0();
+    bool notEarlyReturn = true;
+    u32 returnValue     = 0x3FFFF;
     if (this->mUnk_140.mUnk_08 == 0x3FFF) {
+        notEarlyReturn = false;
         switch (this->mUnk_140.mUnk_1C) {
             case 0x8:
                 if (this->mUnk_140.mUnk_0C.index == 0x102) {
+                    bool var = false;
+                    if (this->mUnk_140.mUnk_0C.index == 0x102) {
+                        if (this->mUnk_140.mUnk_0C.data == 0x1 || this->mUnk_140.mUnk_0C.data == 0x3) {
+                            var = true;
+                        }
+                    }
+                    bool var2 = false;
+                    if (!var) {
+                        var2 = true;
+                    }
+                    VecFx32 *result = this->func_ov000_0209853c(var2);
+                    func_01ffb714(&this->mPos, result, &stack.mUnk_1C);
+                    returnValue = this->func_ov031_020f2cac(&stack.mUnk_1C.x, 0x1);
+                    break;
+                }
+
+                if (!func_ov000_0205cbc4(this->mUnk_140.mUnk_0C.Get32(), &stack.mUnk_10)) {
+                    stack.mUnk_1C.x = FLOAT_TO_FX32(0.0f);
+                    stack.mUnk_1C.y = FLOAT_TO_FX32(0.0f);
+                    stack.mUnk_1C.z = FLOAT_TO_FX32(0.0f);
+                } else {
+                    func_01ffb714(&this->mPos, &stack.mUnk_10, &stack.mUnk_1C);
+                }
+
+                returnValue = this->func_ov031_020f2cac(&stack.mUnk_1C.x, 0x1);
+                break;
+            case 0x4:
+                Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_140.mUnk_0C);
+                if (actor) {
+                    func_01ffb714(&this->mPos, &actor->mPrevPos, &stack.mUnk_1C);
+                    returnValue = this->func_ov031_020f2cac(&stack.mUnk_1C.x, 0x1);
+                    break;
+                }
+                break;
+            case 0xE:
+                if (this->mUnk_140.mUnk_0C.index == 0x102) {
+                    bool var = false;
+                    if (this->mUnk_140.mUnk_0C.index == 0x102) {
+                        if (this->mUnk_140.mUnk_0C.data == 0x1 || this->mUnk_140.mUnk_0C.data == 0x3) {
+                            var = true;
+                        }
+                    }
+                    bool var2 = true;
+                    if (!var) {
+                        var2 = false;
+                    }
+                    returnValue = this->func_ov000_02098800(var2);
+                    if (returnValue) {
+                        notEarlyReturn = true;
+                    } else {
+                        data_027e0ce0->func_ov000_0208bd30(var2, 0xE6, 0, 0);
+                        func_01ffb714(&this->mPos, this->func_ov000_0209853c(0), &stack.mUnk_1C);
+                        returnValue = this->func_ov031_020f2cac(&stack.mUnk_1C.x, 0x1);
+                    }
+                }
+                break;
+            case 0xF:
+                if (this->mUnk_5C.mParams[1] == 0x0 || this->mUnk_5C.mParams[1] == 0x3) {
+                    data_027e0ce0->func_ov000_0208bc1c(1, 0, 0x18, 0, 0, 0);
+                }
+                VecFx32 *result = this->func_ov000_0209853c(0x1);
+                func_01ffb714(&this->mPos, result, &stack.mUnk_1C);
+                returnValue = this->func_ov031_020f2cac(&stack.mUnk_1C.x, 0x1);
+                break;
+            case 0x3:
+                if (this->mUnk_140.mUnk_0C.type) {
+                    Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_140.mUnk_0C.type);
+                    if (actor) {
+                        func_01ffb714(&actor->mPos, &actor->mPrevPos, &stack.mUnk_1C);
+                        VecFx32_TryNormalize(&stack.mUnk_1C);
+                        returnValue = this->func_ov031_020f2cac(&stack.mUnk_1C.x, 0x1);
+                        break;
+                    }
                 }
                 break;
         }
     }
+
+    if (!notEarlyReturn) {
+        return returnValue;
+    }
+
+    u32 val_020f2f9c = this->func_ov031_020f2f9c();
+    if ((this->mUnk_5C.mParams[1] != 0) && (this->mUnk_5C.mParams[1] != 3)) {
+        u32 var_r0 = this->func_ov000_02098ab4(data_ov031_02110b01[this->mUnk_5C.mParams[1]], 0, 1, &this->mVel);
+        if (var_r0) {
+            UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+        }
+        return var_r0;
+    }
+    return val_020f2f9c;
 }
 
 void ActorShotArrow::func_ov031_020f2b8c() {
@@ -684,23 +785,19 @@ void ActorShotArrow::func_ov031_020f2bec() {
 // non-matching
 void ActorShotArrow::func_ov031_020f2c08(unk16) {}
 // non-matching
-void ActorShotArrow::func_ov031_020f2cac(unk32 *, unk32) {}
-
-typedef struct {
-    /* 08 */ ActorShotArrow_178 *mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-} UnkStruct_ov031_020f28ac;
+u32 ActorShotArrow::func_ov031_020f2cac(unk32 *, unk32) {}
 
 extern "C" unk32 func_ov000_0207df88(unk32 *, Cylinder *, unk32);
 
 // non-matching
 void ActorShotArrow::func_ov031_020f2ef0() {
-    UnkStruct_ov031_020f28ac stack;
-    stack.mUnk_0C = 0;
-    stack.mUnk_08 = &this->mUnk_178;
-    func_01ffe6c4(&stack.mUnk_0C, this->mRef.Get32(), &this->mPos, &this->mVel, (s16) this->mUnk_44, &this->mPos, 0);
+    /* 0C */ unk32 mUnk_0C;
+    /* 08 */ ActorShotArrow_178 *mUnk_08;
+    mUnk_0C = 0;
+    mUnk_08 = &this->mUnk_178;
+    func_01ffe6c4(&mUnk_0C, this->mRef.Get32(), &this->mPos, &this->mVel, (s16) this->mUnk_44, &this->mPos, 0);
 
-    this->mUnk_46 = (s16) (func_ov000_0207df88(&stack.mUnk_0C, this->mUnk_30, 0x3) | func_ov000_0207e294(this->mUnk_30));
+    this->mUnk_46 = (s16) (func_ov000_0207df88(&mUnk_0C, this->mUnk_30, 0x3) | func_ov000_0207e294(this->mUnk_30));
 }
 
 void ActorShotArrow::func_ov031_020f2f5c(VecFx32 *param_1) {
@@ -912,7 +1009,7 @@ void ActorShotArrow_194::vfunc_10(Actor *actor) {
             }
             case ActorId_LOCK: {
                 stack.mUnk_04 = actor->mUnk_5C.mUnk_28;
-                if (stack.mUnk_04.data && (stack.mUnk_04.Get32() << 0x10) >> 0x1E) {
+                if (stack.mUnk_04.data && stack.mUnk_04.type) {
                     ActorUnkGYAM *lockedActor = (ActorUnkGYAM *) gpActorManager->func_01fff3b4(actor->mUnk_5C.mUnk_28);
 
                     if (lockedActor && lockedActor->GetActorId() == ActorId_GYAM) {

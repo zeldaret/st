@@ -78,6 +78,7 @@ public:
     /* 00 */ virtual ~ActorShotArrow_194() override;                   // func_ov031_020f1608 (D1) & func_ov031_020f3d4c (D0)
     /* 0C */ virtual bool vfunc_0C(Actor *, VecFx32 *vector) override; // func_ov031_020f3c38
     /* 10 */ virtual void vfunc_10(Actor *actor) override;             // func_ov031_020f38b0
+    /* 14 */ virtual void vfunc_14(Mat3p *, VecFx32 *);
 
     void func_ov031_020f374c(Actor *);
 };
@@ -216,12 +217,12 @@ public:
     void func_ov031_020f2310();
     void func_ov031_020f2654(Mat3p *);
     void func_ov031_020f2794(unk16 param_1);
-    void func_ov031_020f28ac();
+    u32 func_ov031_020f28ac();
     void func_ov031_020f2b8c();
     void func_ov031_020f2bbc();
     void func_ov031_020f2bec();
     void func_ov031_020f2c08(unk16);
-    void func_ov031_020f2cac(unk32 *, unk32);
+    u32 func_ov031_020f2cac(unk32 *, unk32);
     void func_ov031_020f2ef0();
     void func_ov031_020f2f5c(VecFx32 *param_1);
     bool func_ov031_020f2f9c();
