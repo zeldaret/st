@@ -2,7 +2,7 @@
 - [Project structure](#project-structure)
 - [Decompiling](#decompiling)
 - [Code style](#code-style)
-- [Creating new `.c`/`.cpp` files](#creating-new-ccpp-files)
+<!-- - [Creating new `.c`/`.cpp` files](#creating-new-ccpp-files) -->
 
 ## Project structure
 - `build/`: Build output
