@@ -124,9 +124,9 @@ public:
     static AdventureFlag GetAdvFlagFromItem(ItemId itemId);
 };
 
-class TreasureManager : public AutoInstance<TreasureManager>, public ItemManager {
+class TreasureManager : public AutoInstance<TreasureManager> {
 public:
-    /* 28 */ unk8 mUnk_28[0x3C - 0x28];
+    /* 28 */ unk8 mUnk_00[0x3C - 0x00];
     /* 3C */ s16 mUnk_3C[TreasureType_Max]; // treasures
     /* 5C */ unk16 mUnk_5C;
     /* 5E */ unk16 mUnk_5E;
@@ -137,6 +137,7 @@ public:
     TreasureManager();
     ~TreasureManager();
 
+    // overlay 0
     void func_ov000_020a9b10(void *param1);
     static unk32 func_ov000_020a9b2c(unk32 param1);
     static unk32 func_ov000_020a9b3c(unk32 param1);
@@ -153,6 +154,11 @@ public:
     static unk32 func_ov000_020a9f4c(unk32 param1);
     ItemId func_ov000_020aa02c(ItemId itemId);
     void func_ov000_020aa0ac(ItemId itemId);
+
+    static TreasureManager *Create();
+
+    // overlay 1
+    static void Destroy();
 };
 
 extern TreasureManager *gpTreasureManager;

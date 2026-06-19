@@ -5,9 +5,13 @@
 #include "Unknown/UnkStruct_0204a060.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "global.h"
+#include "iterator.hpp"
 #include "types.h"
 
 struct SaveFile;
+class UnkStruct_027e09a4;
+
+#define ROOM_INDEX_NONE 0xFF
 
 /*
 naming scheme:
@@ -20,6 +24,7 @@ naming scheme:
 */
 typedef u32 SceneIndex;
 typedef u16 SceneIndex_Half;
+typedef s16 SceneIndex_Halfs;
 enum SceneIndex_ {
     /*  -1 */ SceneIndex_None          = -1,
     /*   0 */ SceneIndex_test_trn      = 0x00, //
@@ -146,32 +151,27 @@ enum SceneIndex_ {
     /* 121 */ SceneIndex_Max           = 0x79
 };
 
-struct UnkStruct_SceneChange1_Base {
+struct UnkStruct_SceneChange1 {
     /* 00 */ unk32 mSceneIndex;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk16 mUnk_08;
     /* 0A */ u8 mRoomIndex;
     /* 0B */ u8 mSpawnIndex;
     /* 0C */ bool mIsCS;
-    /* 0D */ unk8 mUnk_0D;
+    /* 0D */ u8 mUnk_0D;
     /* 0E */ u8 mCutsceneIndex;
-    /* 0F */ unk8 mUnk_0F;
-};
-
-struct UnkStruct_SceneChange1 : public UnkStruct_SceneChange1_Base {
-    /* 10 */ unk8 mUnk_10;
-    /* 11 */ unk8 mUnk_11;
-    /* 12 */ unk8 mUnk_12;
-    /* 13 */ unk8 mUnk_13;
+    /* 0F */ u8 mUnk_0F;
+    /* 10 */ u8 mUnk_10;
+    /* 11 */ u8 mUnk_11;
+    /* 12 */ u16 mUnk_12;
     /* 14 */
 
     UnkStruct_SceneChange1() {
-        this->mSceneIndex = SceneIndex_Max;
-        this->mUnk_04     = 0;
-        this->mUnk_08     = 0;
-        this->mRoomIndex  = 0xFF; // this changes when you enter a house, it's not clear if it has another purpose yet
-        this->mSpawnIndex = 0;    // changing this then saving will change your spawn location after opening the save again
-                                  // (not the area)
+        this->mSceneIndex    = SceneIndex_Max;
+        this->mUnk_04        = 0;
+        this->mUnk_08        = 0;
+        this->mRoomIndex     = ROOM_INDEX_NONE;
+        this->mSpawnIndex    = 0;
         this->mIsCS          = false;
         this->mUnk_0D        = 0;
         this->mCutsceneIndex = CutsceneIndex_None;
@@ -198,29 +198,128 @@ struct UnkStruct_SceneChange1 : public UnkStruct_SceneChange1_Base {
     }
 };
 
+class UnkStruct_WarpUnk1_24 : public UnkStruct_0204a060_Base2 {
+public:
+    /* 00 (base) */
+    /* 14 */ STRUCT_PAD(0x14, 0x2A);
+    /* 2A */ bool mUnk_2A;
+    /* 2C */
+
+    UnkStruct_WarpUnk1_24();
+};
+
+class UnkStruct_WarpUnk1_50 : public UnkStruct_0204a060_Base2 {
+public:
+    /* 00 (base) */
+    /* 14 */ STRUCT_PAD(0x14, 0x28);
+    /* 28 */
+
+    UnkStruct_WarpUnk1_50();
+};
+
+class UnkStruct_WarpUnk1_A0 {
+public:
+    /* 00 */ SceneIndex_Halfs mSceneIndex;
+    /* 02 */ unk16 mUnk_02;
+    /* 04 */ VecFx32 mUnk_04;
+    /* 10 */ s16 mUnk_10;
+    /* 12 */ u16 mUnk_12;
+    /* 14 */
+};
+
 class UnkStruct_WarpUnk1 : public UnkStruct_0204a060_Base {
 public:
     /* 00 (base) */
-    /* 24 */ STRUCT_PAD(0x24, 0x78);
+    /* 24 */ UnkStruct_WarpUnk1_24 mUnk_24;
+    /* 50 */ UnkStruct_WarpUnk1_50 mUnk_50;
     /* 78 */ UnkStruct_SceneChange1 mUnk_78; // current scene?
     /* 8C */ UnkStruct_SceneChange1 mUnk_8C; // next scene
-    /* A0 */ STRUCT_PAD(0xA0, 0xB4);
+    /* A0 */ UnkStruct_WarpUnk1_A0 mUnk_A0;
     /* B4 */ unk32 mSpawnTransitionType; // the behavior of Link when entering a new scene
+    /* B8 */
+
+    UnkStruct_WarpUnk1();
+    ~UnkStruct_WarpUnk1() {}
+
+    void func_ov001_020b7144();
 };
 
-class UnkStruct_027e09a4 : public SysObject {
+struct UnkStruct_027e09a4_2C {
+    /* 00 */ SceneIndex_Halfs mSceneIndex;
+    /* 02 */ unk16 mUnk_02;
+    /* 04 */ VecFx32 mUnk_04;
+    /* 10 */ u16 mUnk_10;
+    /* 14 */
+};
+
+class UnkStruct_027e09a4_54_04 {
 public:
-    /* 00 */ UnkStruct_SceneChange1_Base mUnk_00; // the infos of the current area, this isn't saved when you save the game
-    /* 10 */ unk32 *mUnk_10;
+    /* 00 */ STRUCT_PAD(0x00, 0x10);
+    /* 10 */
+
+    ~UnkStruct_027e09a4_54_04() {}
+};
+
+class UnkStruct_027e09a4_54_Base {
+public:
+    /* 00 (vtable) */
+    /* 04 */ Iterator<UnkStruct_027e09a4_54_04> mUnk_04;
+    /* 0C */ unk16 mUnk_0C;
+    /* 0E */ STRUCT_PAD(0x0E, 0x1A);
+    /* 1A */ unk16 mUnk_1A;
+    /* 1C */ unk32 mUnk_1C[5];
+    /* 30 */ unk16 mUnk_30;
+    /* 32 */ bool mUnk_32;
+    /* 33 */ unk8 mUnk_33;
+    /* 34 */
+
+    UnkStruct_027e09a4_54_Base(unk32 *param1);
+
+    /* 00 */ virtual bool vfunc_00(void *param1);
+    /* 04 */ virtual ~UnkStruct_027e09a4_54_Base();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */
+
+    void func_ov001_020b6fa0(CourseEntry *pCourseEntry);
+    void func_ov001_020b7048();
+};
+
+class UnkStruct_027e09a4_54_Type1 : public UnkStruct_027e09a4_54_Base {
+public:
+    UnkStruct_027e09a4_54_Type1(UnkStruct_027e09a4 *param1);
+};
+
+class UnkStruct_027e09a4_54_Type2 : public UnkStruct_027e09a4_54_Base {
+public:
+    UnkStruct_027e09a4_54_Type2(UnkStruct_027e09a4 *param1);
+};
+
+class UnkStruct_027e09a4_54_Type3 : public UnkStruct_027e09a4_54_Base {
+public:
+    UnkStruct_027e09a4_54_Type3(UnkStruct_027e09a4 *param1);
+};
+
+class UnkStruct_027e09a4_54_Type4 : public UnkStruct_027e09a4_54_Base {
+public:
+    UnkStruct_027e09a4_54_Type4(UnkStruct_027e09a4 *param1);
+};
+
+class UnkStruct_027e09a4_54_Type5 : public UnkStruct_027e09a4_54_Base {
+public:
+    UnkStruct_027e09a4_54_Type5(UnkStruct_027e09a4 *param1);
+};
+
+class UnkStruct_027e09a4 : public AutoInstance<UnkStruct_027e09a4> {
+public:
+    /* 00 */ UnkStruct_SceneChange1 mUnk_00; // the infos of the current area, this isn't saved when you save the game
     /* 14 */ UnkStruct_SceneChange1 mUnk_14;
     /* 28 */ unk32 mUnk_28;
-    /* 2C */ s16 mUnk_2C;
-    /* 2C */ unk16 mUnk_2E;
-    /* 30 */ VecFx32 mUnk_30;
-    /* 3C */ STRUCT_PAD(0x3C, 0x54);
-    /* 54 */ void *mUnk_54; // vtable
+    /* 2C */ UnkStruct_027e09a4_2C mUnk_2C;
+    /* 40 */ UnkStruct_027e09a4_2C mUnk_40;
+    /* 54 */ UnkStruct_027e09a4_54_Base *mUnk_54;
     /* 58 */ UnkStruct_WarpUnk1 *mpWarpUnk1;
-    /* 5C */ unk32 mUnk_5C;
+    /* 5C */ unk16 mUnk_5C;
+    /* 5E */ unk16 mUnk_5E;
     /* 60 */ unk32 mUnk_60; // related to ds download?
     /* 64 */ unk32 mUnk_64;
     /* 68 */
@@ -298,6 +397,7 @@ public:
         return this->mUnk_00.mSceneIndex == SceneIndex_f_passenger;
     }
 
+    UnkStruct_027e09a4(unk32 param1);
     ~UnkStruct_027e09a4();
 
     // itcm
@@ -315,11 +415,21 @@ public:
     void func_ov000_02070938(unk32 param1);
     void func_ov000_02070a4c(unk32 param1);
     unk32 func_ov000_02070554();
-    unk16 *func_ov000_02070538();
+    UnkStruct_WarpUnk1_A0 *func_ov000_02070538();
     bool func_ov000_02070a9c(UnkStruct_SceneChange1 *param1);
     bool func_ov000_02072154(UnkStruct_SceneChange1 *param1, unk32 param2);
     bool func_ov000_0207056c();
     void func_ov000_020705e8(SaveFile *param1, unk32 param2);
+
+    // overlay 1
+    void func_ov001_020b662c();
+    void func_ov001_020b66dc();
+    void func_ov001_020b6758(const UnkStruct_SceneChange1 *param1, bool param2);
+    void func_ov001_020b68a4(bool param1, bool param2, bool param3);
+    void func_ov001_020b6924(const UnkStruct_SceneChange1 *param1, bool param2);
+    void func_ov001_020b69b4(const UnkStruct_SceneChange1 *param1, bool param2);
+
+    static UnkStruct_027e09a4 *Create(unk32 param1);
 
     // overlay 17
     void func_ov017_020bb994(void *param1);

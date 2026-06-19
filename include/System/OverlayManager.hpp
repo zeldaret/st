@@ -404,6 +404,7 @@ public:
     void LoadEquipItem(ItemFlag equipId);
 
     void func_020148d0(OverlayIndex index);
+    void func_02014918(OverlayIndex index);
     void func_02014994(unk32 param1);
 };
 

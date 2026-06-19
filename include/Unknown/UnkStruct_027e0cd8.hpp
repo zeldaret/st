@@ -130,7 +130,7 @@ public:
     UnkStruct_027e0cd8_04();
 };
 
-class UnkStruct_027e0cd8 {
+class UnkStruct_027e0cd8 : public AutoInstance<UnkStruct_027e0cd8> {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ UnkStruct_027e0cd8_04 *mUnk_04; // stage flags
@@ -142,6 +142,10 @@ public:
     /* 34 */ STRUCT_PAD(0x34, 0x4C);
     /* 4C */
 
+    UnkStruct_027e0cd8();
+    ~UnkStruct_027e0cd8();
+
+    // overlay 0
     bool func_ov000_02081e30(unk32 param1, unk32 param2);
     void func_ov000_02081d7c(unk32 flagValue, unk32 param2, bool doSet);
     void func_ov000_02081ecc(unk16 param1, unk32 param2);
@@ -150,6 +154,10 @@ public:
     u32 func_ov000_02081d5c(); // returns current room index?
     bool func_ov000_02082124();
     bool func_ov000_02081c28();
+
+    // overlay 1
+    static UnkStruct_027e0cd8 *Create();
+    static void Destroy();
 };
 
 extern UnkStruct_027e0cd8 *data_027e0cd8;

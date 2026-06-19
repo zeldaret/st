@@ -376,7 +376,7 @@ public:
 };
 
 // PlayerManager?
-class UnkStruct_027e0ce0 {
+class UnkStruct_027e0ce0 : public AutoInstance<UnkStruct_027e0ce0> {
 public:
     /* 00 */ unk8 mHealth;
     /* 01 */ unk8 mHealthMax;
@@ -400,6 +400,10 @@ public:
     /* 40 */ UnkStruct_027e0ce0_40 *mUnk_40; // pointer to data_027e0478 when not on the train
     /* 44 */
 
+    UnkStruct_027e0ce0();
+    ~UnkStruct_027e0ce0();
+
+    // itcm
     VecFx32 *func_01fff148(unk32 param1);
     bool func_01fff1a4();
     bool func_01fff1e0();
@@ -412,6 +416,13 @@ public:
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);
 
     static UnkStruct_027e0ce0_34 *func_ov000_0205c904();
+
+    // overlay 1
+    void func_ov001_020bc5f8();
+    void func_ov001_020bc524(bool param1);
+
+    static UnkStruct_027e0ce0 *Create();
+    static void Destroy();
 
     // overlay 17
     void func_ov017_020bd69c();

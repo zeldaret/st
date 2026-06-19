@@ -13,7 +13,7 @@ public:
     bool func_ov000_02078764(VecFx32 *param1, void *param2, unk32 param3);
 };
 
-class UnkStruct_027e09bc {
+class UnkStruct_027e09bc : public AutoInstance<UnkStruct_027e09bc> {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ UnkStruct_027e09bc_0C *mUnk_04;
@@ -22,6 +22,13 @@ public:
 
     UnkStruct_027e09bc();
     ~UnkStruct_027e09bc();
+
+    // overlay 1
+    void func_ov001_020babc8();
+    void func_ov001_020bab5c();
+
+    static UnkStruct_027e09bc *Create();
+    static void Destroy();
 };
 
 extern UnkStruct_027e09bc *data_027e09bc;

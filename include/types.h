@@ -50,14 +50,20 @@ public:
     ~AutoInstance() {}
 };
 
-    #define DECL_INSTANCE(T, gpInstance)                 \
-        template <typename T> Instance<T>::Instance() {  \
-            gpInstance = (T *) this;                     \
-        }                                                \
-        template <typename T> Instance<T>::~Instance() { \
-            gpInstance = NULL;                           \
-        }                                                \
-        template class Instance<T>
+    #define DECL_INSTANCE_CTOR(T, gpInstance)           \
+        template <typename T> Instance<T>::Instance() { \
+            gpInstance = (T *) this;                    \
+        }                                               \
+        template class Instance<T>;
+
+    #define DECL_INSTANCE_DTOR(T, gpInstance) \
+        Instance<T>::~Instance() {            \
+            gpInstance = NULL;                \
+        }
+
+    #define DECL_INSTANCE(T, gpInstance)  \
+        DECL_INSTANCE_CTOR(T, gpInstance) \
+        DECL_INSTANCE_DTOR(T, gpInstance)
 
 #endif
 

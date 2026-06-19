@@ -59,7 +59,7 @@ public:
     bool func_ov000_02059ccc(u8 param1, u8 param2);
 };
 
-class UnkStruct_027e0960 {
+class UnkStruct_027e0960 : public AutoInstance<UnkStruct_027e0960> {
 public:
     /* 00 */ Iterator<UnkStruct_027e0960_TableEntry> mTable;
     /* 08 */
@@ -67,8 +67,17 @@ public:
     UnkStruct_027e0960();
     ~UnkStruct_027e0960();
 
+    // overlay 0
     UnkStruct_027e0960_TableEntry *func_ov000_0205a390(u8 param1);
     UnkStruct_027e0960_TableEntry *func_ov000_0205a3fc(VecFx32 param1, unk32 param4);
+
+    static UnkStruct_027e0960 *Create();
+
+    // overlay 1
+    void func_ov000_0205a164();
+    void func_ov000_0205a160();
+
+    static void Destroy();
 };
 
 extern UnkStruct_027e0960 *data_027e0960;

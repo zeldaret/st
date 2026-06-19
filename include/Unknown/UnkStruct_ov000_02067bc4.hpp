@@ -148,6 +148,7 @@ public:
 
     UnkStruct_ov000_020b504c();
 
+    // overlay 0
     void *func_ov000_02067bb4(unk32 param1);
     UnkStruct_ov000_02067bc4 *func_ov000_02067bc4(unk32);
     unk8 func_ov000_02067cf8(unk32 param1, unk32 param2, UnkStruct_ov000_02067bc4::UnkStruct1 *param3); // ShowText?
@@ -161,9 +162,11 @@ public:
     bool func_ov000_0206807c(unk32 param1, void *param2);
     void func_ov000_02067b60();
 
+    // overlay 1
     void func_ov001_020be510();
     void func_ov001_020be668(void);
     void func_ov001_020be6f4(void);
+    void func_ov001_020be8e0(void);
 };
 
 // gMessageManager?

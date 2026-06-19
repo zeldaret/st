@@ -263,8 +263,10 @@ public:
 
     UnkStruct_0204a110();
 
+    // itcm
     unk32 func_01ff9b50();
 
+    // main
     void func_02018be0(unk32 param1);
     void func_02018c2c();
     void func_02018c78(unk32 param1);
@@ -284,9 +286,13 @@ public:
     bool func_02019548();
     UnkStruct_func_02019590 *func_02019590(unk16 param1, unk32 param2);
 
+    // overlay 1
     void func_ov001_020bd514(unk32 param1, void *param2, unk32 param3, unk32 param4);
     void func_ov001_020bd58c(void);
+    void func_ov001_020bd638(void);
+    void func_ov001_020bd5b0(void);
 
+    // overlay 18
     void func_ov018_020c5300(void);
 };
 

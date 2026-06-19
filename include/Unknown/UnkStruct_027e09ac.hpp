@@ -78,8 +78,16 @@ public:
     UnkStruct_027e09ac();
     ~UnkStruct_027e09ac();
 
+    // overlay 0
     void func_ov000_020726f0(unk32 param1, unk32 param2, unk32 param3);
     void func_ov000_020729c4(UnkStruct_027e09ac_14 *param1, u16 param2, u16 param3, s16 param4, s16 param5);
+
+    // overlay 1
+    void func_ov001_020bec8c();
+    void func_ov001_020bebb8();
+
+    static UnkStruct_027e09ac *Create();
+    static void Destroy();
 };
 
 extern UnkStruct_027e09ac *data_027e09ac;

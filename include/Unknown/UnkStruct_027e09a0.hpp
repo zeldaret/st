@@ -105,7 +105,7 @@ struct CourseEntry {
     /* 24 */ CourseRoomEntry roomEntries[];
 };
 
-class UnkStruct_027e09a0 {
+class UnkStruct_027e09a0 : public AutoInstance<UnkStruct_027e09a0> {
 public:
     /* 00 */ CourseEntry **mUnk_00; // elements from courselist.clb
 
@@ -118,6 +118,10 @@ public:
     CourseRoomEntry *GetRoomEntry(u32 sceneIndex, unk32 param2);
     u32 GetSceneIndexFromName(const char *sceneName);
     bool func_ov000_02070378(u32 param1);
+
+    // overlay 1
+    static UnkStruct_027e09a0 *Create();
+    static void Destroy();
 };
 
 extern UnkStruct_027e09a0 *data_027e09a0;

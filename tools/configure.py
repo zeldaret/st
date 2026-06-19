@@ -187,6 +187,8 @@ config.libs = [
     GameLib(
         "Overlay 1",
         [
+            Object("001_SceneInit/SceneInitializers_001.cpp"),
+            Object("001_SceneInit/CourseList.cpp"),
             Object("001_SceneInit/Actor/ActorManager_001.cpp"),
             Object("001_SceneInit/Item/ItemManager_001.cpp"),
             Object("001_SceneInit/CargoManager_001.cpp"),

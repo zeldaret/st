@@ -179,8 +179,6 @@ public:
     void func_ov000_020a9a50();
     void func_ov000_020a9a94();
     void func_ov000_020a9abc();
-    void func_ov000_020a9ae0();
-    void func_ov000_020a9afc();
 
     static void func_ov000_020a9804();
 
