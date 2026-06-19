@@ -5,7 +5,7 @@ Contents:
 - [Prerequisites](#prerequisites)
 - [Build the ROM](#build-the-rom)
     - [Matching the base ROM](#matching-the-base-rom)
-    - [Building with non-matching code](#building-with-non-matching-code)
+    <!-- - [Building with non-matching code](#building-with-non-matching-code) -->
 - [[Optional] LSP setup](#lsp-setup)
 
 ## Prerequisites
@@ -39,6 +39,8 @@ Now you can run `ninja` to build a ROM for the chosen version.
 
 > [!NOTE]
 > For Linux users: Wibo is used by default. If you want to use Wine instead, run `configure.py` with `-w <path/to/wine>`.
+
+## Build the ROM
 
 ### Matching the base ROM
 
