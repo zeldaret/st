@@ -13,7 +13,7 @@ class MapObject;
 class MapObject_20;
 class MapObjectProfile_Derived2_20;
 
-class MapObjectProfile : public SysObject {
+class MapObjectProfile {
 public:
     /* 00 (vtable) */
     /* 04 */ unk8 mUnk_04[2];

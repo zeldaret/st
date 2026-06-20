@@ -65,7 +65,7 @@ public:
     UnkSubStruct1_Methods;
 };
 
-class TitleScreen : public SysObject, public GameModeManagerBase_104 { // 0233c6d4
+class TitleScreen : public GameModeManagerBase_104 { // 0233c6d4
 public:
     /* 000 (base) */
     /* 01C */ TitleScreenState mState;

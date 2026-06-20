@@ -305,7 +305,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             if (eScene == SceneIndex_tekiya07) {
                 this->mUnk_68 = 0x18;
             } else {
-                switch (*data_027e09a4->func_ov000_02070538()) {
+                switch (data_027e09a4->func_ov000_02070538()->mSceneIndex) {
                     case SceneIndex_d_water27:
                         if (eScene == SceneIndex_b_water) {
                             this->mUnk_68 = 0x18;

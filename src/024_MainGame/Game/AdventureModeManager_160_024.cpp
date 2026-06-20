@@ -15,7 +15,7 @@ extern "C" void func_02019b3c();
 extern "C" AdventureModeManager_160_18 *func_ov006_020b6ab0(void *, void *);
 
 //! TODO: this is fake according to GameModeTitleScreen::GameModeTitleScreen()
-extern "C" AdventureModeManager_160_14 *func_ov001_020b6520(void *, void *, int);
+extern "C" AdventureModeManager_160_14 *func_ov002_020b6520(void *, void *, int);
 
 bool AdventureModeManager_160_4C::vfunc_0C() {
     return data_0204a088->func_ov000_02061224();
@@ -417,8 +417,7 @@ void AdventureModeManager_160::func_ov024_020c84c4() {
 void AdventureModeManager_160::func_ov024_020c851c(unk32 param1) {
     data_0204a088->func_ov000_02061248();
 
-    //! TODO: fake match
-    this->mUnk_14 = func_ov001_020b6520(&this->mUnk_10, this->mUnk_1C, param1);
+    this->mUnk_14 = func_ov002_020b6520(&this->mUnk_10, this->mUnk_1C, param1);
     this->mUnk_18 = func_ov006_020b6ab0(&this->mUnk_10, this->mUnk_1C);
 
     if (param1 == 1 || param1 == 6) {

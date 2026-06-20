@@ -5,6 +5,7 @@
 
 #include "Save/AdventureFlags.hpp"
 
+typedef u32 CutsceneIndex;
 enum CutsceneIndex_ {
     /*  0 */ CutsceneIndex_TitleScreen,
     /*  1 */ CutsceneIndex_Intro,

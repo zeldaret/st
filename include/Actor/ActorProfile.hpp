@@ -9,7 +9,7 @@
 
 class Actor;
 
-class ActorProfile : public SysObject {
+class ActorProfile {
 public:
     /* 00 (vtable) */
     /* 04 */ Cylinder mUnk_04;

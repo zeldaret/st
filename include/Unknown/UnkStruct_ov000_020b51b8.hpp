@@ -4,7 +4,7 @@
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include "types.h"
 
-class UnkStruct_ov000_020b51b8_00 : public SysObject {
+class UnkStruct_ov000_020b51b8_00 {
 public:
     /* 00 (vtable) */
     /* 04 */ STRUCT_PAD(0x04, 0xA0);
@@ -17,7 +17,7 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1);
 };
 
-class UnkStruct_ov000_020b51b8_04 : public SysObject {
+class UnkStruct_ov000_020b51b8_04 {
 public:
     /* 00 (vtable) */
     /* 04 */ STRUCT_PAD(0x04, 0x98);

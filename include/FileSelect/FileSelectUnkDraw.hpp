@@ -5,7 +5,7 @@
 #include "System/SysNew.hpp"
 #include "global.h"
 
-class FileSelectManager_UnkDrawBase : public SysObject {
+class FileSelectManager_UnkDrawBase {
 public:
     /* 00 (vtable) */
     /* 04 */ LinkListImpl mUnk_04;

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Cutscene/Cutscene.hpp"
 #include "MapObject/MapObject.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "types.h"
@@ -63,7 +64,7 @@ public:
     ~UnkStruct_027e09b8_10();
 };
 
-class UnkStruct_027e09b8 {
+class UnkStruct_027e09b8 : public AutoInstance<UnkStruct_027e09b8> {
 public:
     /* 00 */ UnkStruct_027e09b8_00 *mUnk_00;
     /* 04 */ UnkStruct_027e09b8_04 *mUnk_04;
@@ -80,8 +81,13 @@ public:
         return GET_FLAG(this->mAdventureFlags, flag);
     }
 
+    UnkStruct_027e09b8();
+    ~UnkStruct_027e09b8();
+
+    // itcm
     unk32 func_01ffd420();
 
+    // overlay 0
     unk32 func_ov000_020732ec(unk32 param1);
     unk32 func_ov000_020732fc(unk32 param1);
     bool func_ov000_020732dc(unk32 param1);
@@ -94,6 +100,13 @@ public:
 #if IS_JP
     void func_ov000_02074d78(unk32 param1);
 #endif
+
+    // overlay 1
+    void func_ov001_020b76c0(CutsceneIndex csIndex);
+    void func_ov001_020b7700();
+
+    static UnkStruct_027e09b8 *Create();
+    static void Destroy();
 };
 
 extern UnkStruct_027e09b8 *data_027e09b8;

@@ -119,11 +119,11 @@ def LibCPP(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
 
 
 # Helper function for overlays and similar modules
-def GameLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
+def GameLib(lib_name: str, objects: List[Object], extra_cflags=list()) -> Dict[str, Any]:
     return {
         "lib": lib_name,
         "mw_version": "dsi/1.2p1",
-        "cflags": [*config.cflags_base, "-str reuse"],
+        "cflags": [*config.cflags_base, *extra_cflags, "-str reuse"],
         "objects": objects,
     }
 
@@ -187,15 +187,35 @@ config.libs = [
     GameLib(
         "Overlay 1",
         [
+            Object("001_SceneInit/SceneInitializers_001.cpp"),
+            Object("001_SceneInit/CourseList.cpp"),
+            Object("001_SceneInit/UnkStruct_027e09b8_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cd8_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cd8_0C_148_154_001.cpp"),
+            Object("001_SceneInit/ZeldaArrangeBinary.cpp"),
+            Object("001_SceneInit/ZeldaMapBinary.cpp"),
+            Object("001_SceneInit/UnkStruct_027e095c_001.cpp"),
+            Object("001_SceneInit/SysNew_001.cpp"),
+            Object("001_SceneInit/Save/SaveManager_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e09bc_001.cpp"),
+            Object("001_SceneInit/MapObject/MapObjectManager_001.cpp"),
             Object("001_SceneInit/Actor/ActorManager_001.cpp"),
             Object("001_SceneInit/Item/ItemManager_001.cpp"),
+            Object("001_SceneInit/Player/PlayerActorBase_70_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0ce0_30_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0ce0_40_Base_001.cpp"),
+            Object("001_SceneInit/code_020bc234_001.cpp"),
+            Object("001_SceneInit/code_020bc2c8_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0ce0_001.cpp"),
+            Object("001_SceneInit/Player/Player_001.cpp"),
             Object("001_SceneInit/CargoManager_001.cpp"),
             Object("001_SceneInit/PassengerManager_001.cpp"),
             Object("001_SceneInit/UnkStruct_027e0cf8_08_00_001.cpp"),
             Object("001_SceneInit/Game/AdventureModeManager_001.cpp"),
             Object("001_SceneInit/Game/GameModeAdventure_001.cpp"),
-            Object("001_SceneInit/Save/SaveManager_001.cpp"),
-        ]
+        ],
+        extra_cflags=["-thumb"],
     ),
     GameLib(
         "Overlay 17",

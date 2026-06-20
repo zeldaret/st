@@ -16,7 +16,7 @@ struct UnkStruct5 {
 };
 
 // data_ov000_020b2078
-class UnkSystem1_ov000_Base : public SysObject {
+class UnkSystem1_ov000_Base {
 public:
     /* 00 (vtable) */
     /* 04 */ unk16 mUnk_04;

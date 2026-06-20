@@ -214,10 +214,11 @@ UnkStruct_0204af1c::UnkStruct_0204af1c() {
 
 UnkStruct_0204e5f8::UnkStruct_0204e5f8() :
     mUnk_18(0) {
-    this->mUnk_10 = 0;
-    this->mUnk_14 = 0;
-    this->mUnk_38 = 1;
-    this->mUnk_39 = 1;
+    //! TODO: fake match
+    *(u32 *) &this->mUnk_00.mUnk_10 = 0;
+    this->mUnk_14                   = 0;
+    this->mUnk_38                   = 1;
+    this->mUnk_39                   = 1;
 
     REG_WININ      = (REG_WININ & ~0x3F) | 0x3F;
     REG_WINOUT     = (REG_WINOUT & ~0x3F) | 0x30;

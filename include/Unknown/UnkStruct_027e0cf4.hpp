@@ -3,7 +3,7 @@
 #include "System/SysNew.hpp"
 #include "types.h"
 
-class UnkStruct_027e0cf4 : public SysObject {
+class UnkStruct_027e0cf4 {
 public:
     ~UnkStruct_027e0cf4();
     void func_ov021_020f8cdc();

@@ -124,7 +124,7 @@ public:
 typedef s16 ActorState;
 #define ActorState_None -1
 
-class Actor : public SysObject {
+class Actor {
 public:
     /* 00 (vtable) */
     /* 04 */ VecFx32 mPos;

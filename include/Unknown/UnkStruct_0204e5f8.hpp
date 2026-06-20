@@ -26,8 +26,7 @@ public:
 
 class UnkStruct_0204e5f8 {
 public:
-    /* 00 */ UnkStruct_0204a060_Base3 mUnk_00;
-    /* 10 */ unk32 mUnk_10;
+    /* 00 */ UnkStruct_0204a060_Base2 mUnk_00;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ bool mUnk_18;
     /* 19 */ unk8 mUnk_19;
