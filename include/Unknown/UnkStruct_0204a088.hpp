@@ -4,7 +4,7 @@
 #include "System/SysNew.hpp"
 #include "types.h"
 
-class UnkStruct_0204a088_Base : public SysObject {
+class UnkStruct_0204a088_Base {
 public:
     UnkStruct_0204a088_Base();
     ~UnkStruct_0204a088_Base(); //! TODO: most likely inlined but can't make it work for some reasons

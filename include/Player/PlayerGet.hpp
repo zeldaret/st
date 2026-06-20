@@ -101,7 +101,7 @@ public:
     }
 };
 
-class UnkStruct_PlayerGet_74_base : public SysObject {
+class UnkStruct_PlayerGet_74_base {
 public:
     /* 00 (vtable) */
 

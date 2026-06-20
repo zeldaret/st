@@ -49,7 +49,7 @@ void UnkDataStruct4::func_ov024_020d258c(u32 sceneIndex, u8 roomIndex) {
     wchar_t sp34[16];
     wchar_t sp10[2];
     FileInfos sp8;
-    CourseEntry *pEntry;
+    CourseListEntry *pEntry;
 
     this->mSceneIndex = sceneIndex;
 

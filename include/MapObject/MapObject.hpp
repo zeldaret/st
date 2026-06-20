@@ -114,7 +114,7 @@ public:
     static void func_ov000_0209c7ac(MapObjectId mapObjId);
 };
 
-class MapObject : public SysObject {
+class MapObject {
 public:
     /* 00 (vtable) */
     /* 04 */ VecFx32 mPos;

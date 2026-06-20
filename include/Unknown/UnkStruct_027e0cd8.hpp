@@ -156,6 +156,10 @@ public:
     bool func_ov000_02081c28();
 
     // overlay 1
+    void func_ov001_020b7a7c();
+    void func_ov001_020b7830(UnkStruct_SceneChange1 *param1);
+    void func_ov001_020b7c08(UnkStruct_SceneChange1 *param1, UnkStruct_WarpUnk1_A0 *param2);
+
     static UnkStruct_027e0cd8 *Create();
     static void Destroy();
 };

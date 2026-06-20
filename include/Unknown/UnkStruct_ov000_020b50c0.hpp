@@ -3,7 +3,9 @@
 #include "System/SysNew.hpp"
 #include "types.h"
 
-class UnkStruct_ov018_020c5ac0 : public SysObject {
+class UnkStruct_SceneChange1;
+
+class UnkStruct_ov018_020c5ac0 {
 public:
     /* 00 */ unk8 mUnk_00;
     /* 00 */ unk8 mUnk_01;
@@ -54,14 +56,15 @@ public:
     void func_ov000_0206a740(void);
     void func_ov000_0206a758(void);
     void func_ov000_0206a77c(void);
+    void func_ov000_0206a014(void);
 
     // overlay 1
     void func_ov001_020bd854();
     void func_ov001_020bd87c(void);
     void func_ov001_020bd8dc(void);
     void func_ov001_020bd8ac(void);
-    void func_ov001_020bde04(unk32 *param1);
-    void func_ov001_020bd970(unk32 *param1);
+    void func_ov001_020bde04(UnkStruct_SceneChange1 *param1);
+    void func_ov001_020bd970(UnkStruct_SceneChange1 *param1);
 
     // overlay 18
     UnkStruct_ov018_020c5ac0 *func_ov018_020c5718(void);

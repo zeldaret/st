@@ -646,8 +646,8 @@ _ZN29UnkStruct_020d8698_24_5C_Base19func_ov000_020659d0EPcP14UnkDataStruct1 kind
 _ZN24UnkStruct_020d8698_24_5CC1EiPKtti kind:function(arm,size=0x30) addr:0x02065b18
 _ZN24UnkStruct_020d8698_24_5C19func_ov000_02065b48Eii kind:function(arm,size=0x44) addr:0x02065b48
 _ZN24UnkStruct_020d8698_24_5C19func_ov000_02065b8cEv kind:function(arm,size=0x94) addr:0x02065b8c
-_ZN24UnkStruct_0204a060_Base2C2Ev kind:function(arm,size=0x4c) addr:0x02065c20
-func_ov000_02065c6c kind:function(arm,size=0x4c) addr:0x02065c6c
+_ZN24UnkStruct_0204a060_Base3C2Ev kind:function(arm,size=0x4c) addr:0x02065c20
+_ZN24UnkStruct_0204a060_Base3C1Ev kind:function(arm,size=0x4c) addr:0x02065c6c
 func_ov000_02065cb8 kind:function(arm,size=0x48) addr:0x02065cb8
 func_ov000_02065d00 kind:function(arm,size=0x48) addr:0x02065d00
 func_ov000_02065d48 kind:function(arm,size=0x13c) addr:0x02065d48
@@ -658,7 +658,7 @@ _ZN19func_ov000_02065eb0D0Ev kind:function(arm,size=0x1c) addr:0x02065eb0
 _ZN21UnkStruct_WarpUnk1_50C1Ev kind:function(arm,size=0x48) addr:0x02065ecc
 func_ov000_02065f14 kind:function(arm,size=0x30) addr:0x02065f14
 func_ov000_02065f44 kind:function(arm,size=0x24) addr:0x02065f44
-func_ov000_02065f68 kind:function(arm,size=0x2c) addr:0x02065f68
+_ZN21UnkStruct_WarpUnk1_5019func_ov000_02065f68Eiiiii kind:function(arm,size=0x2c) addr:0x02065f68
 func_ov000_02065f94 kind:function(arm,size=0x1f8) addr:0x02065f94
 func_ov000_0206618c kind:function(arm,size=0x4) addr:0x0206618c
 func_ov000_02066190 kind:function(arm,size=0x1c) addr:0x02066190
@@ -801,7 +801,7 @@ func_ov000_02069e9c kind:function(arm,size=0x78) addr:0x02069e9c
 func_ov000_02069f14 kind:function(arm,size=0x44) addr:0x02069f14
 _ZN24UnkStruct_ov000_020b50c019func_ov000_02069f58Ev kind:function(arm,size=0x6c) addr:0x02069f58
 func_ov000_02069fc4 kind:function(arm,size=0x50) addr:0x02069fc4
-func_ov000_0206a014 kind:function(arm,size=0x20) addr:0x0206a014
+_ZN24UnkStruct_ov000_020b50c019func_ov000_0206a014Ev kind:function(arm,size=0x20) addr:0x0206a014
 func_ov000_0206a034 kind:function(arm,size=0x50) addr:0x0206a034
 func_ov000_0206a084 kind:function(arm,size=0x158) addr:0x0206a084
 func_ov000_0206a1dc kind:function(arm,size=0x84) addr:0x0206a1dc
@@ -1029,7 +1029,7 @@ func_ov000_02070e44 kind:function(arm,size=0x14) addr:0x02070e44
 func_ov000_02070e58 kind:function(arm,size=0xc) addr:0x02070e58
 func_ov000_02070e64 kind:function(arm,size=0xb4) addr:0x02070e64
 func_ov000_02070f18 kind:function(arm,size=0x40) addr:0x02070f18
-func_ov000_02070f58 kind:function(arm,size=0x44) addr:0x02070f58
+_ZN21UnkStruct_WarpUnk1_2419func_ov000_02070f58Ei kind:function(arm,size=0x44) addr:0x02070f58
 func_ov000_02070f9c kind:function(arm,size=0x44) addr:0x02070f9c
 func_ov000_02070fe0 kind:function(arm,size=0x20) addr:0x02070fe0
 func_ov000_02071000 kind:function(arm,size=0x1b4) addr:0x02071000
@@ -3117,11 +3117,6 @@ data_ov000_020aa558 kind:data(any) addr:0x020aa558
 data_ov000_020aa7d4 kind:data(any) addr:0x020aa7d4
 data_ov000_020aa888 kind:data(any) addr:0x020aa888
 data_ov000_020aa88c kind:data(any) addr:0x020aa88c
-data_ov000_020aa88d kind:data(any) addr:0x020aa88d
-data_ov000_020aa88e kind:data(any) addr:0x020aa88e
-data_ov000_020aa88f kind:data(any) addr:0x020aa88f
-data_ov000_020aa890 kind:data(any) addr:0x020aa890
-data_ov000_020aa892 kind:data(any) addr:0x020aa892
 data_ov000_020aaa94 kind:data(any) addr:0x020aaa94
 data_ov000_020aac20 kind:data(any) addr:0x020aac20
 data_ov000_020aac28 kind:data(any) addr:0x020aac28

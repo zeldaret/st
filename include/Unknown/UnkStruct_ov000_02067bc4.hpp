@@ -96,7 +96,7 @@ public:
     /* 14 */
 };
 
-class UnkStruct_ov000_020b504c_Sub3 : public SysObject {
+class UnkStruct_ov000_020b504c_Sub3 {
 public:
     /* 00 */ BMGEntry **mpBMGTable;
     /* 04 */ BMGHeader **mUnk_04;

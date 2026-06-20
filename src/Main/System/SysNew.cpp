@@ -95,6 +95,6 @@ void operator delete(void *ptr) {
     SysDelete(ptr);
 }
 
-void SysObject::operator delete[](void *ptr) {
+void operator delete[](void *ptr) {
     SysDelete(ptr);
 }

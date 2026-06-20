@@ -65,6 +65,12 @@ public:
         DECL_INSTANCE_CTOR(T, gpInstance) \
         DECL_INSTANCE_DTOR(T, gpInstance)
 
+template <typename T> struct StaticInstance {
+    static T sInstance;
+};
+
+    #define DECL_STATIC_INSTANCE(T) T StaticInstance<T>::sInstance
+
 #endif
 
 #endif

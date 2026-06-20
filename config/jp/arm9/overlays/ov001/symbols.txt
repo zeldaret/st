@@ -30,18 +30,18 @@ _ZN26UnkStruct_027e09a4_54_BaseD1Ev kind:function(thumb,size=0x90) addr:0x020b85
 _ZN26UnkStruct_027e09a4_54_BaseD0Ev kind:function(thumb,size=0x98) addr:0x020b8634
 _ZN26UnkStruct_027e09a4_54_BaseD2Ev kind:function(thumb,size=0x90) addr:0x020b86cc
 _ZN26UnkStruct_027e09a4_54_Base8vfunc_0CEv kind:function(thumb,size=0x64) addr:0x020b875c
-_ZN26UnkStruct_027e09a4_54_Base19func_ov001_020b6fa0EP11CourseEntry kind:function(thumb,size=0xa8) addr:0x020b87c0
+_ZN26UnkStruct_027e09a4_54_Base19func_ov001_020b6fa0EP15CourseListEntry kind:function(thumb,size=0xa8) addr:0x020b87c0
 _ZN26UnkStruct_027e09a4_54_Base19func_ov001_020b7048Ev kind:function(thumb,size=0x10) addr:0x020b8868
 _ZN21UnkStruct_WarpUnk1_24C1Ev kind:function(thumb,size=0x1c) addr:0x020b8878
 _ZN18UnkStruct_WarpUnk1C1Ev kind:function(thumb,size=0xd0) addr:0x020b8894
 _ZN18UnkStruct_WarpUnk119func_ov001_020b7144Ev kind:function(thumb,size=0x2f4) addr:0x020b8964
-func_ov001_020b7430 kind:function(thumb,size=0x54) addr:0x020b8c58
-func_ov001_020b7484 kind:function(thumb,size=0x50) addr:0x020b8cac
+_ZN16CourseInitBinaryC1Ev kind:function(thumb,size=0x54) addr:0x020b8c58
+_ZN18UnkStruct_027e09a0C1Ev kind:function(thumb,size=0x50) addr:0x020b8cac
 _ZN18UnkStruct_027e09a0D1Ev kind:function(thumb,size=0x24) addr:0x020b8cfc
 _ZN18UnkStruct_027e09a06CreateEv kind:function(thumb,size=0x16) addr:0x020b8d20
-func_ov001_020b7510 kind:function(thumb,size=0x32) addr:0x020b8d38
-func_ov001_020b7544 kind:function(thumb,size=0xc) addr:0x020b8d6c
-func_ov001_020b7550 kind:function(thumb,size=0xc) addr:0x020b8d78
+_ZN18UnkStruct_027e09a015InitCourseTableEv kind:function(thumb,size=0x32) addr:0x020b8d38
+_ZN8InstanceI18UnkStruct_027e09a0EC2Ev kind:function(thumb,size=0xc) addr:0x020b8d6c
+_ZN8InstanceI18UnkStruct_027e09a0ED2Ev kind:function(thumb,size=0xc) addr:0x020b8d78
 _ZN18UnkStruct_027e09b86CreateEv kind:function(thumb,size=0x16) addr:0x020b8d84
 func_ov001_020b7574 kind:function(thumb,size=0xec) addr:0x020b8d9c
 _ZN18UnkStruct_027e09b8D1Ev kind:function(thumb,size=0x4c) addr:0x020b8e88
@@ -54,10 +54,10 @@ func_ov001_020b7760 kind:function(thumb,size=0xc) addr:0x020b8f88
 _ZN18UnkStruct_027e0cd86CreateEv kind:function(thumb,size=0x16) addr:0x020b8f94
 func_ov001_020b7784 kind:function(thumb,size=0x68) addr:0x020b8fac
 _ZN18UnkStruct_027e0cd8D1Ev kind:function(thumb,size=0x42) addr:0x020b9014
-func_ov001_020b7830 kind:function(thumb,size=0x24c) addr:0x020b9058
-func_ov001_020b7a7c kind:function(thumb,size=0xbc) addr:0x020b92a4
+_ZN18UnkStruct_027e0cd819func_ov001_020b7830EP22UnkStruct_SceneChange1 kind:function(thumb,size=0x24c) addr:0x020b9058
+_ZN18UnkStruct_027e0cd819func_ov001_020b7a7cEv kind:function(thumb,size=0xbc) addr:0x020b92a4
 func_ov001_020b7b38 kind:function(thumb,size=0xd0) addr:0x020b9360
-func_ov001_020b7c08 kind:function(thumb,size=0x174) addr:0x020b9430
+_ZN18UnkStruct_027e0cd819func_ov001_020b7c08EP22UnkStruct_SceneChange1P21UnkStruct_WarpUnk1_A0 kind:function(thumb,size=0x174) addr:0x020b9430
 func_ov001_020b7d64 kind:function(thumb,size=0xec) addr:0x020b95a4
 func_ov001_020b7e50 kind:function(thumb,size=0x16) addr:0x020b9690
 func_ov001_020b7e68 kind:function(thumb,size=0x1d4) addr:0x020b96a8
@@ -67,7 +67,7 @@ func_ov001_020b8120 kind:function(thumb,size=0x6c) addr:0x020b9960
 func_ov001_020b818c kind:function(thumb,size=0x3c) addr:0x020b99cc
 func_ov001_020b81c8 kind:function(thumb,size=0xc) addr:0x020b9a08
 func_ov001_020b81d4 kind:function(thumb,size=0xc) addr:0x020b9a14
-func_ov001_020b81e0 kind:function(thumb,size=0x218) addr:0x020b9a20
+_ZN21UnkStruct_027e0cd8_0cC1Ev kind:function(thumb,size=0x218) addr:0x020b9a20
 func_ov001_020b83f8 kind:function(thumb,size=0x98) addr:0x020b9c38
 func_ov001_020b8490 kind:function(thumb,size=0xa0) addr:0x020b9cd0
 func_ov001_020b8530 kind:function(thumb,size=0x98) addr:0x020b9d70
@@ -285,8 +285,8 @@ _ZN24UnkStruct_ov000_020b50c019func_ov001_020bd8dcEv kind:function(thumb,size=0x
 func_ov001_020bd8e8 kind:function(thumb,size=0x28) addr:0x020bf130
 func_ov001_020bd910 kind:function(thumb,size=0x30) addr:0x020bf158
 func_ov001_020bd934 kind:function(thumb,size=0x3c) addr:0x020bf188
-_ZN24UnkStruct_ov000_020b50c019func_ov001_020bd970EPi kind:function(thumb,size=0x494) addr:0x020bf1c4
-_ZN24UnkStruct_ov000_020b50c019func_ov001_020bde04EPi kind:function(thumb,size=0x48) addr:0x020bf658
+_ZN24UnkStruct_ov000_020b50c019func_ov001_020bd970EP22UnkStruct_SceneChange1 kind:function(thumb,size=0x494) addr:0x020bf1c4
+_ZN24UnkStruct_ov000_020b50c019func_ov001_020bde04EP22UnkStruct_SceneChange1 kind:function(thumb,size=0x48) addr:0x020bf658
 func_ov001_020bde4c kind:function(thumb,size=0x10) addr:0x020bf6a0
 func_ov001_020bde5c kind:function(thumb,size=0x10) addr:0x020bf6b0
 func_ov001_020bde6c kind:function(thumb,size=0xe) addr:0x020bf6c0
@@ -454,7 +454,7 @@ DSProt_DetectEmulator kind:function(arm,size=0x78,unknown) addr:0x020c2778
 DSProt_DetectNotEmulator kind:function(arm,size=0x78,unknown) addr:0x020c27f0
 DSProt_DetectDummy kind:function(arm,size=0x78,unknown) addr:0x020c2868
 DSProt_DetectNotDummy kind:function(arm,size=0x78,unknown) addr:0x020c28e0
-NitroStaticInit kind:function(arm,size=0x4c,unknown) addr:0x020c2958 local
+NitroStaticInit kind:function(arm,size=0x4c,unknown) addr:0x020c2958
 Integrity_MACOwner_IsBad kind:function(arm,size=0xd8,unknown) addr:0x020c29a4
 Integrity_MACOwner_IsGood kind:function(arm,size=0x114,unknown) addr:0x020c2a7c
 Integrity_ROMTest_IsBad kind:function(arm,size=0xd8,unknown) addr:0x020c2b90
@@ -463,13 +463,13 @@ RunEncrypted_Integrity_MACOwner_IsBad kind:function(arm,size=0x78,unknown) addr:
 RunEncrypted_Integrity_MACOwner_IsGood kind:function(arm,size=0x78,unknown) addr:0x020c2df4
 RunEncrypted_Integrity_ROMTest_IsBad kind:function(arm,size=0x78,unknown) addr:0x020c2e6c
 RunEncrypted_Integrity_ROMTest_IsGood kind:function(arm,size=0x78,unknown) addr:0x020c2ee4
-NitroStaticInit kind:function(arm,size=0x38,unknown) addr:0x020c2f5c local
+NitroStaticInit kind:function(arm,size=0x38,unknown) addr:0x020c2f5c
 clearDataAndInstructionCache kind:function(arm,size=0x20,unknown) addr:0x020c2f94
 Encryptor_CategorizeInstruction kind:function(arm,size=0x3c,unknown) addr:0x020c2fb4
 Encryptor_DecodeFunctionTable kind:function(arm,size=0x110,unknown) addr:0x020c2ff0
 Encryptor_DecryptFunction kind:function(arm,size=0x88,unknown) addr:0x020c3100
 Encryptor_EncryptFunction kind:function(arm,size=0x90,unknown) addr:0x020c3188
-NitroStaticInit kind:function(arm,size=0x28,unknown) addr:0x020c3218 local
+NitroStaticInit kind:function(arm,size=0x28,unknown) addr:0x020c3218
 MACOwner_IsBad kind:function(arm,size=0xb0,unknown) addr:0x020c3240
 MACOwner_IsGood kind:function(arm,size=0xb0,unknown) addr:0x020c32f0
 RunEncrypted_MACOwner_IsBad kind:function(arm,size=0x78,unknown) addr:0x020c33a0
@@ -482,7 +482,7 @@ ROMTest_IsBad kind:function(arm,size=0xc4,unknown) addr:0x020c375c
 ROMTest_IsGood kind:function(arm,size=0xc4,unknown) addr:0x020c3820
 RunEncrypted_ROMTest_IsBad kind:function(arm,size=0x78,unknown) addr:0x020c38e4
 RunEncrypted_ROMTest_IsGood kind:function(arm,size=0x78,unknown) addr:0x020c395c
-NitroStaticInit kind:function(arm,size=0x48,unknown) addr:0x020c39d4 local
+NitroStaticInit kind:function(arm,size=0x48,unknown) addr:0x020c39d4
 RC4_Init kind:function(arm,size=0x74,unknown) addr:0x020c3a1c
 RC4_Byte kind:function(arm,size=0x4c,unknown) addr:0x020c3a90
 RC4_InitSBox kind:function(arm,size=0x24,unknown) addr:0x020c3adc
@@ -490,7 +490,7 @@ RC4_EncryptInstructions kind:function(arm,size=0x108,unknown) addr:0x020c3b00
 RC4_DecryptInstructions kind:function(arm,size=0x10c,unknown) addr:0x020c3c08
 RC4_InitAndEncryptInstructions kind:function(arm,size=0x58,unknown) addr:0x020c3d14
 RC4_InitAndDecryptInstructions kind:function(arm,size=0x58,unknown) addr:0x020c3d6c
-NitroStaticInit kind:function(arm,size=0x50,unknown) addr:0x020c3dc4 local
+NitroStaticInit kind:function(arm,size=0x50,unknown) addr:0x020c3dc4
 data_ov001_020c25c0 kind:data(any) addr:0x020c3e14
 data_ov001_020c25d4 kind:data(any) addr:0x020c3e28
 data_ov001_020c25fc kind:data(any) addr:0x020c3e50
@@ -506,10 +506,10 @@ data_ov001_020c3fb2 kind:data(any) addr:0x020c3fb2
 data_ov001_020c3fc0 kind:data(any) addr:0x020c3fc0
 data_ov001_020c3ffc kind:data(any) addr:0x020c3ffc
 data_ov001_020c4060 kind:data(any) addr:0x020c4060
-__sinit_ov001_020c4068 kind:function(thumb,size=0x24) addr:0x020c4068
+__sinit_CourseList.cpp kind:function(thumb,size=0x24) addr:0x020c4068 local
 __sinit_ov001_020c408c kind:function(thumb,size=0xb8) addr:0x020c408c
 __sinit_ov001_020c4144 kind:function(thumb,size=0x10) addr:0x020c4144
-.p__sinit_ov001_020c4068 kind:data(word) addr:0x020c4154
+.p__sinit_CourseList.cpp kind:data(word) addr:0x020c4154 local
 .p__sinit_ov001_020c408c kind:data(word) addr:0x020c4158
 .p__sinit_ov001_020c4144 kind:data(word) addr:0x020c415c
 .p__sinit_ov001_020c2958 kind:data(word) addr:0x020c4160 local
@@ -517,8 +517,8 @@ __sinit_ov001_020c4144 kind:function(thumb,size=0x10) addr:0x020c4144
 .p__sinit_ov001_020c3218 kind:data(word) addr:0x020c4168 local
 .p__sinit_ov001_020c39d4 kind:data(word) addr:0x020c416c local
 .p__sinit_ov001_020c3dc4 kind:data(word) addr:0x020c4170 local
-data_ov001_020c4180 kind:data(any) addr:0x020c4180
-data_ov001_020c4198 kind:data(any) addr:0x020c4198
+@433 kind:data(byte[0x16]) addr:0x020c4180 local
+@450 kind:data(byte[0x16]) addr:0x020c4198 local
 data_ov001_020c41b0 kind:data(any) addr:0x020c41b0
 data_ov001_020c41c4 kind:data(any) addr:0x020c41c4
 data_ov001_020c41c8 kind:data(any) addr:0x020c41c8
@@ -637,30 +637,8 @@ data_ov001_020c47f4 kind:data(any) addr:0x020c47f4
 data_ov001_020c480c kind:data(any) addr:0x020c480c
 data_ov001_020c4814 kind:data(any) addr:0x020c4814
 data_ov001_020c4818 kind:data(any) addr:0x020c4818
-data_ov001_020c4820 kind:bss addr:0x020c4820
-data_ov001_020c4824 kind:bss addr:0x020c4824
-data_ov001_020c4890 kind:bss addr:0x020c4890
-data_ov001_020c49ac kind:bss addr:0x020c49ac ambiguous
-data_ov001_020c4a14 kind:bss addr:0x020c4a14
-data_ov001_020c4a6c kind:bss addr:0x020c4a6c
-data_ov001_020c4ae4 kind:bss addr:0x020c4ae4
-data_ov001_020c4b5c kind:bss addr:0x020c4b5c
-data_ov001_020c4c20 kind:bss addr:0x020c4c20
-data_ov001_020c4ce4 kind:bss addr:0x020c4ce4
-data_ov001_020c4d5c kind:bss addr:0x020c4d5c
-data_ov001_020c4e1c kind:bss addr:0x020c4e1c
-data_ov001_020c4e90 kind:bss addr:0x020c4e90
-data_ov001_020c4edc kind:bss addr:0x020c4edc
-data_ov001_020c4f00 kind:bss addr:0x020c4f00
-data_ov001_020c5008 kind:bss addr:0x020c5008
-data_ov001_020c5114 kind:bss addr:0x020c5114
-data_ov001_020c5138 kind:bss addr:0x020c5138 ambiguous
-data_ov001_020c516c kind:bss addr:0x020c516c
-data_ov001_020c51a8 kind:bss addr:0x020c51a8 ambiguous
-data_ov001_020c5200 kind:bss addr:0x020c5200 ambiguous
-data_ov001_020c5448 kind:bss addr:0x020c5448
-data_ov001_020c5758 kind:bss addr:0x020c5758
-data_ov001_020c5790 kind:bss addr:0x020c5790 ambiguous
+_ZGVN14StaticInstanceI16CourseInitBinaryE9sInstanceE kind:bss addr:0x020c4820
+_ZN14StaticInstanceI16CourseInitBinaryE9sInstanceE kind:bss addr:0x020c4824
 data_ov001_020c5928 kind:bss addr:0x020c5928
 data_ov001_020c5934 kind:bss addr:0x020c5934
 data_ov001_020c5f34 kind:bss addr:0x020c5f34

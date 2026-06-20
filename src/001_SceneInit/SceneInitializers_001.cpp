@@ -3,6 +3,7 @@
 THUMB_BEGIN
 
 #include "Actor/ActorManager.hpp"
+#include "Cutscene/Cutscene.hpp"
 #include "Game/GameModeManager.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "MainGame/MiscAdvManager.hpp"
@@ -10,6 +11,7 @@ THUMB_BEGIN
 #include "System/OverlayManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
+#include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_027e0954.hpp"
 #include "Unknown/UnkStruct_027e0958.hpp"
 #include "Unknown/UnkStruct_027e095c.hpp"
@@ -26,13 +28,42 @@ THUMB_BEGIN
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
+#include "versions.h"
 
 #include <nitro/mi.h>
+#include <string.h>
 
 extern "C" void func_ov001_020bed34();
+extern "C" void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
+extern "C" u16 func_ov026_02106564(void *);
 
 extern const OverlayIndex data_ov000_020b21c4[];
 extern const OverlayIndex data_ov000_020b21e0[];
+
+struct UnkStruct_ov000_020aa88c {
+    /* 00 */ bool mUnk_00;
+    /* 01 */ bool mUnk_01;
+    /* 02 */ bool mUnk_02;
+    /* 03 */ bool mUnk_03;
+    /* 04 */ unk16 mUnk_04;
+    /* 06 */ u16 mUnk_06;
+    /* 08 */
+};
+extern UnkStruct_ov000_020aa88c data_ov000_020aa88c[];
+
+static const SceneIndex_Halfs data_ov001_020c25c0[10] = {
+    SceneIndex_t_area1, SceneIndex_t_area0, SceneIndex_t_area0, SceneIndex_t_area0, SceneIndex_t_area0,
+    SceneIndex_t_area1, SceneIndex_t_area2, SceneIndex_t_area3, SceneIndex_t_area1, SceneIndex_t_area2,
+};
+
+static const u32 data_ov001_020c25fc[10] = {
+    0x11, 0x12, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x10, 0x1D,
+};
+
+static const SceneIndex data_ov001_020c25d4[10] = {
+    SceneIndex_f_bridge, SceneIndex_f_bridge2, SceneIndex_f_htown,  SceneIndex_f_first,  SceneIndex_f_forest1,
+    SceneIndex_f_snow,   SceneIndex_f_water,   SceneIndex_f_flame5, SceneIndex_f_tetsuo, SceneIndex_f_ajito,
+};
 
 UnkStruct_027e09a4 *UnkStruct_027e09a4::Create(unk32 param1) {
     return new(HeapIndex_1) UnkStruct_027e09a4(param1);
@@ -209,20 +240,6 @@ void UnkStruct_027e09a4::func_ov001_020b6924(const UnkStruct_SceneChange1 *param
     this->func_ov001_020b6758(param1, param2);
 }
 
-static const SceneIndex_Halfs data_ov001_020c25c0[10] = {
-    SceneIndex_t_area1, SceneIndex_t_area0, SceneIndex_t_area0, SceneIndex_t_area0, SceneIndex_t_area0,
-    SceneIndex_t_area1, SceneIndex_t_area2, SceneIndex_t_area3, SceneIndex_t_area1, SceneIndex_t_area2,
-};
-
-static const SceneIndex data_ov001_020c25d4[10] = {
-    SceneIndex_f_bridge, SceneIndex_f_bridge2, SceneIndex_f_htown,  SceneIndex_f_first,  SceneIndex_f_forest1,
-    SceneIndex_f_snow,   SceneIndex_f_water,   SceneIndex_f_flame5, SceneIndex_f_tetsuo, SceneIndex_f_ajito,
-};
-
-static const u32 data_ov001_020c25fc[10] = {
-    0x11, 0x12, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x10, 0x1D,
-};
-
 void UnkStruct_027e09a4::func_ov001_020b69b4(const UnkStruct_SceneChange1 *param1, bool param2) {
     VecFx32 vec1;
     VecFx32 vec2;
@@ -397,11 +414,12 @@ DECL_INSTANCE_DTOR(UnkStruct_027e095c, data_027e095c);
 DECL_INSTANCE_DTOR(UnkStruct_027e0958, data_027e0958);
 DECL_INSTANCE_DTOR(UnkStruct_027e0954, data_027e0954);
 
-UnkStruct_027e09a4_54_Base::UnkStruct_027e09a4_54_Base(unk32 *param1) {
+UnkStruct_027e09a4_54_Base::UnkStruct_027e09a4_54_Base(unk32 *param1) :
+    mUnk_1C((s32) 0) {
     this->mUnk_04.Clear();
-    this->mUnk_0C = 0;
-    this->mUnk_1A = 0;
-    MI_CpuCopy32(param1, this->mUnk_1C, sizeof(this->mUnk_1C));
+    this->mUnk_0C[0] = L'\0';
+    this->mUnk_0C[7] = L'\0';
+    MI_CpuCopy32(param1, &this->mUnk_1C, sizeof(this->mUnk_1C));
     this->mUnk_32 = false;
 }
 
@@ -414,13 +432,13 @@ UnkStruct_027e09a4_54_Base::~UnkStruct_027e09a4_54_Base() {
     data_027e0ce0->func_ov001_020bc5f8();
     data_027e09c0->func_ov001_020be3c4();
     data_0204a110.func_ov001_020bd638();
-    data_ov000_020b50c0.func_ov001_020bde04(this->mUnk_1C);
+    data_ov000_020b50c0.func_ov001_020bde04(&this->mUnk_1C);
     func_ov001_020bed34();
 }
 
 void UnkStruct_027e09a4_54_Base::vfunc_0C() {
     UnkStruct_027e0cec::Create();
-    data_ov000_020b50c0.func_ov001_020bd970(this->mUnk_1C);
+    data_ov000_020b50c0.func_ov001_020bd970(&this->mUnk_1C);
     data_0204a110.func_ov001_020bd5b0();
     data_027e09c0->func_ov001_020be394();
     data_027e0ce0->func_ov001_020bc524(this->mUnk_32);
@@ -429,8 +447,43 @@ void UnkStruct_027e09a4_54_Base::vfunc_0C() {
     data_027e0960->func_ov000_0205a160();
 }
 
-void UnkStruct_027e09a4_54_Base::func_ov001_020b6fa0(CourseEntry *pCourseEntry) {}
-void UnkStruct_027e09a4_54_Base::func_ov001_020b7048() {}
+void UnkStruct_027e09a4_54_Base::func_ov001_020b6fa0(CourseListEntry *pCourseEntry) {
+    if (this->mUnk_1C.mIsCS == true) {
+        data_0204a110.func_02018d78(Cutscene_GetParamEntry(this->mUnk_1C.mCutsceneIndex)->mUnk_14);
+    } else {
+        if (data_027e09a4->mUnk_60 == 0) {
+            if (data_027e09a4->IsDarkRealm()) {
+                GetAdventureModeManager()->func_ov024_020c555c(2);
+            } else {
+                if (data_027e09a4->IsTrain()) {
+                    GetAdventureModeManager()->func_ov024_020c555c(1);
+                } else {
+                    GetAdventureModeManager()->func_ov024_020c555c(0);
+                }
+            }
+        }
+
+        switch (pCourseEntry->unk_18) {
+            case 0:
+                data_0204a110.func_02018d78(0);
+                break;
+            case 1:
+                data_0204a110.func_02018d78(1);
+                break;
+            default:
+                break;
+        }
+    }
+
+    strncpy((char *) this->mUnk_0C, pCourseEntry->name, sizeof(this->mUnk_0C) - 1);
+    this->mUnk_30 = pCourseEntry->unk_1A;
+    this->vfunc_0C();
+    data_027e0cd8->func_ov001_020b7830(&this->mUnk_1C);
+}
+
+void UnkStruct_027e09a4_54_Base::func_ov001_020b7048() {
+    data_027e0cd8->func_ov001_020b7a7c();
+}
 
 UnkStruct_WarpUnk1_24::UnkStruct_WarpUnk1_24() {
     this->mUnk_2A = false;
@@ -443,10 +496,121 @@ UnkStruct_WarpUnk1::UnkStruct_WarpUnk1() {
     this->mUnk_A0.mUnk_04.z    = 0;
     this->mUnk_A0.mUnk_10      = 0;
     this->mUnk_A0.mSceneIndex  = SceneIndex_None;
-    this->mUnk_A0.mUnk_02      = -1;
+    this->mUnk_A0.mRoomIndex   = (s8) ROOM_INDEX_NONE;
     this->mUnk_A0.mUnk_12      = 0;
 }
 
-void UnkStruct_WarpUnk1::func_ov001_020b7144() {}
+// non-matching
+bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
+    bool iVar9;
+    u16 uVar1;
+    UnkStruct_027e0ce0_38 *pTrainPlayer;
+    unk16 local_18;
+    unk32 uVar8;
+    bool bVar2;
+
+    iVar9        = false;
+    uVar1        = data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_06;
+    pTrainPlayer = data_027e0ce0->mUnk_38;
+
+    if (pTrainPlayer == NULL) {
+        VecFx32 *pPos = data_027e0ce0->func_01fff148(0);
+        VecFx32_Copy(pPos, &this->mUnk_A0.mUnk_04);
+        func_01fff17c(&local_18, data_027e0ce0, 0);
+        this->mUnk_A0.mUnk_10 = local_18;
+    } else {
+        VecFx32 *pPos = &pTrainPlayer->mPos;
+        VecFx32_Copy(pPos, &this->mUnk_A0.mUnk_04);
+        this->mUnk_A0.mUnk_10 = pTrainPlayer->mUnk_056;
+        this->mUnk_A0.mUnk_12 = func_ov026_02106564(NULL);
+    }
+
+    this->mUnk_A0.mSceneIndex = this->mUnk_78.mSceneIndex;
+    this->mUnk_A0.mRoomIndex  = this->mUnk_78.mRoomIndex;
+
+    switch (this->mSpawnTransitionType) {
+        case 0x04:
+        case 0x05:
+            break;
+        case 0x02:
+        case 0x1D:
+#if IS_JP
+        case 0x29:
+#endif
+            iVar9 = true;
+            break;
+        default:
+            if (((this->mUnk_78.mSceneIndex != this->mUnk_8C.mSceneIndex) || (this->mUnk_8C.mIsCS == true) ||
+                 (this->mUnk_78.mIsCS == true))) {
+                iVar9 = true;
+            } else {
+                iVar9 = false;
+            }
+            break;
+    }
+
+    data_ov000_020b50c0.func_ov000_0206a014();
+    this->mUnk_78 = this->mUnk_8C;
+
+    if (iVar9) {
+        data_027e09a4->func_ov001_020b6924(&this->mUnk_8C, this->mSpawnTransitionType == 2);
+    } else {
+        data_027e0cd8->func_ov001_020b7c08(&this->mUnk_8C, &this->mUnk_A0);
+    }
+
+    uVar8 = 0;
+    bVar2 = false;
+
+    data_027e0cd8->mUnk_0C->func_ov001_020b8a5c(this->mUnk_8C.mSpawnIndex, 0);
+
+    this->Detach();
+    this->mUnk_0C = false;
+
+    //! TODO: find out why we need this
+    LinkListImpl::Detach((LinkListNode *) ((u8 *) &this->mUnk_24 + 4));
+    this->mUnk_24.mUnk_0C = false;
+
+    LinkListImpl::Detach((LinkListNode *) ((u8 *) &this->mUnk_50 + 4));
+    this->mUnk_50.mUnk_0C = false;
+
+    if (this->mUnk_8C.mIsCS == true) {
+        this->Detach();
+        this->mUnk_0C = false;
+    } else {
+        if (data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_00) {
+            if (data_027e09a4->GetCurrentCourseEntry()->unk_18 == 1) {
+                this->mUnk_50.mUnk_18 = 0x00130000;
+                this->mUnk_50.mUnk_1C = 0x00050000;
+                this->mUnk_50.mUnk_24 = 0x00004000;
+                this->mUnk_50.func_ov000_02065f68(0x02, 0x00, -0xE0, uVar1, 0x02);
+                data_0204e5f8.func_0201b9a8(&this->mUnk_50);
+                this->mUnk_1E = 0x02;
+                this->func_0201bba4(0x00, 0x02);
+                data_0204e5f8.func_0201b9a8(this);
+                bVar2 = true;
+            } else {
+                this->mUnk_24.func_ov000_02070f58(uVar1);
+                data_0204e5f8.func_0201b9a8(&this->mUnk_24);
+            }
+        }
+
+        if ((data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_01 ||
+             data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_02) &&
+            !bVar2) {
+            if (data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_03) {
+                this->mUnk_14 = 0x00010000;
+            } else {
+                this->mUnk_14 = 0xFFFF0000;
+            }
+
+            this->func_0201bba4(0x02, uVar1);
+            this->mUnk_18 = data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_01;
+            this->mUnk_19 = data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_02;
+            data_0204e5f8.func_0201b9a8(this);
+        }
+    }
+
+    return iVar9;
+}
 
 THUMB_END

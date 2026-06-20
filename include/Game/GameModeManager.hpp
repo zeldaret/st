@@ -15,7 +15,7 @@ class GameModeManagerBase;
 class GameModeManagerBase_104;
 class GameModeManagerBase_104_0C;
 
-class GameModeManagerBase_004 : public SysObject {
+class GameModeManagerBase_004 {
 public:
     unk32 *mUnk_00;
 
@@ -79,7 +79,7 @@ public:
     void func_ov088_0217230c();
 };
 
-class GameModeManagerBase : public SysObject {
+class GameModeManagerBase {
 public:
     /* 000 (vtable) */
     /* 004 */ GameModeManagerBase_004 mUnk_004;

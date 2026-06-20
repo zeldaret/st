@@ -54,7 +54,7 @@ public:
     bool func_ov031_020db8f8();
 };
 
-class ItemManager : public SysObject {
+class ItemManager {
 public:
     /* 00 */ ItemFlag mEquippedItem;
     /* 04 */ ItemFlag mForcedItem;

@@ -43,7 +43,7 @@ public:
     /* 00 */ virtual ~FileSelect_UnkClass2_Sub4_Base() override {}
 };
 
-class FileSelectSubScreen : public SysObject, public FileSelect_UnkClass2_Sub4_Base {
+class FileSelectSubScreen : public FileSelect_UnkClass2_Sub4_Base {
 public:
     /* 0000 (base) */
     /* 001C */ unk32 mUnk_001C;

@@ -33,13 +33,10 @@ enum HeapIndex_ {
     HeapIndex_Max  = 9
 };
 
-class SysObject {
-public:
-    void operator delete[](void *ptr);
-};
-
 void *operator new(size_t length, u32 id, u32 idLength = 4);
 void *operator new[](size_t length, u32 id, u32 idLength = 4);
+void operator delete[](void *ptr);
+
 inline void *operator new(size_t length, void *ptr = nullptr) {
 #pragma unused(length)
     return ptr;
@@ -61,7 +58,7 @@ public:
     /* 2C */ unk8 mUnk_2C[0x60 - 0x2C];
 };
 
-class UnkStruct_02011e10 : public SysObject {
+class UnkStruct_02011e10 {
 public:
     /* 00 */ UnkStruct_02011e10_Sub1 *mUnk_00[HeapIndex_Max]; // the pointer seems to match arena lo
     /* 24 */ unk32 mUnk_24[2];
