@@ -1069,7 +1069,7 @@ _ZN18UnkStruct_027e09a819func_ov000_02071d34EPviP7VecFx32i kind:function(arm,siz
 func_ov000_02071de4 kind:function(arm,size=0xa0) addr:0x02071de4
 func_ov000_02071e84 kind:function(arm,size=0x14) addr:0x02071e84
 func_ov000_02071e98 kind:function(arm,size=0x14) addr:0x02071e98
-func_ov000_02071eac kind:function(arm,size=0x8c) addr:0x02071eac
+_ZN18UnkStruct_027e09a819func_ov000_02071eacEP7VecFx32 kind:function(arm,size=0x8c) addr:0x02071eac
 func_ov000_02071f38 kind:function(arm,size=0x50) addr:0x02071f38
 func_ov000_02071f88 kind:function(arm,size=0x10) addr:0x02071f88
 _ZN21UnkStruct_027e09ac_1419func_ov000_02071f98Ev kind:function(arm,size=0x13c) addr:0x02071f98
@@ -2670,7 +2670,7 @@ func_ov000_0209fe6c kind:function(arm,size=0x18) addr:0x0209fe6c
 func_ov000_0209fe84 kind:function(arm,size=0x1c) addr:0x0209fe84
 func_ov000_0209fea0 kind:function(arm,size=0xc) addr:0x0209fea0
 _ZN18UnkStruct_027e0cec19func_ov000_0209feacEiP7VecFx32iii kind:function(arm,size=0x78) addr:0x0209feac
-func_ov000_0209ff24 kind:function(arm,size=0x28) addr:0x0209ff24
+_ZN18UnkStruct_027e0cec19func_ov000_0209ff24EiP7VecFx32P7VecFx16i kind:function(arm,size=0x28) addr:0x0209ff24
 func_ov000_0209ff4c kind:function(arm,size=0x40) addr:0x0209ff4c
 _ZN18UnkStruct_027e0cec19func_ov000_0209ff8cEP22UnkStruct_PlayerGet_eciP7VecFx32i kind:function(arm,size=0x74) addr:0x0209ff8c
 func_ov000_020a0000 kind:function(arm,size=0xa0) addr:0x020a0000

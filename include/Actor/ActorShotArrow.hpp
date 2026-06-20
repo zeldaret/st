@@ -32,6 +32,7 @@ public:
     /* 28 */
 
     ActorShotArrow_140(Actor *param1);
+    virtual ~ActorShotArrow_140();
 };
 
 class ActorShotArrow_194_Base {
@@ -216,24 +217,24 @@ public:
     unk32 func_ov031_020f2270();
     void func_ov031_020f2280();
     void func_ov031_020f229c();
-    void func_ov031_020f22d4(Mat3p *param_1, VecFx32 *param_2);
+    void func_ov031_020f22d4(Mat3p *param1, VecFx32 *param2);
     void func_ov031_020f2310();
     void func_ov031_020f2654(Mat3p *);
-    void func_ov031_020f2794(unk16 param_1);
-    u32 func_ov031_020f28ac();
+    void func_ov031_020f2794(unk16 param1);
+    void func_ov031_020f28ac();
     void func_ov031_020f2b8c();
     void func_ov031_020f2bbc();
     void func_ov031_020f2bec();
     void func_ov031_020f2c08(unk16);
-    u32 func_ov031_020f2cac(unk32 *, unk32);
+    void func_ov031_020f2cac(VecFx32 *, bool);
     void func_ov031_020f2ef0();
-    void func_ov031_020f2f5c(VecFx32 *param_1);
+    void func_ov031_020f2f5c(VecFx32 *param1);
     bool func_ov031_020f2f9c();
     void func_ov031_020f3000();
-    void func_ov031_020f311c(Mat4x3p *param_1);
+    void func_ov031_020f311c(Mat4x3p *param1);
     bool func_ov031_020f3210(u16);
-    bool func_ov031_020f3258(u16 param_1);
-    void func_ov031_020f3d04(unk16 param_1);
+    bool func_ov031_020f3258(u16 param1);
+    void func_ov031_020f3d04(unk16 param1);
 };
 
 class ActorProfileShotArrow : public ActorProfile {
