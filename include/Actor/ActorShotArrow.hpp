@@ -29,6 +29,7 @@ public:
     /* 25 */ unk8 mUnk_25;
     /* 26 */ unk8 mUnk_26;
     /* 27 */ unk8 mUnk_27;
+    /* 28 */
 
     ActorShotArrow_140(Actor *param1);
 };
@@ -139,7 +140,8 @@ public:
     /* 00 */ Actor *mUnk_00;
     /* 04 */ VecFx32 mUnk_04;
     /* 10 */ s16 mUnk_10;
-    /* 12 */ s16 mUnk_14;
+    /* 12 */ s16 mUnk_12;
+    /* 14 */
 
     ActorShotArrow_1C8();
 };
@@ -147,6 +149,7 @@ public:
 class ActorShotArrow_1DC {
 public:
     /* 00 */ VecFx32 mUnk_00;
+    /* 0C */
 
     ActorShotArrow_1DC(unk32 param1, unk32 param2);
     ~ActorShotArrow_1DC();
@@ -182,13 +185,13 @@ public:
     /* 25C */ bool mUnk_25C;
     /* 25D */ bool mUnk_25D;
     /* 25E */ u8 mUnk_25E;
+    /* 25F */
 
     ActorShotArrow();
 
     /* 00 */ virtual void func_ov000_0207b71c() override;
     /* 4C */ virtual ~ActorShotArrow() override;
 
-    ActorShotArrow *func_ov031_020f1608();
     bool func_ov031_020f173c();
     void func_ov031_020f1868();
     void func_ov031_020f1874();

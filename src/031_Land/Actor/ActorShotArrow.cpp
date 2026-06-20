@@ -71,6 +71,7 @@ extern "C" unk32 func_01ff9258(fx32, fx32);
 extern "C" void func_01ff93c0(VecFx32 *, unk32);
 extern "C" void func_01ff9638(VecFx32 *vec, s16 angle);
 extern "C" void func_01ff95a0(VecFx32 *, unk16);
+extern "C" void func_01ffa7a0(VecFx32 *, Mat3p *, VecFx32 *);
 extern "C" void func_01ffa9e8(Mat4x3p *, Mat4x3p *);
 extern "C" void func_01ffad5c(Mat4x3p *, Mat4x3p *, Mat4x3p *);
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
@@ -344,7 +345,7 @@ void ActorShotArrow::func_ov031_020f1c7c() {
         func_01ff9638(&vec_fx32, delta);
 
         VecFx32_Add(&this->mPos, &vec_fx32, &this->mPos);
-        this->mAngle = this->mUnk_1C8.mUnk_00->mAngle + (s16) (this->mUnk_1C8.mUnk_14 - this->mUnk_1C8.mUnk_10);
+        this->mAngle = this->mUnk_1C8.mUnk_00->mAngle + (s16) (this->mUnk_1C8.mUnk_12 - this->mUnk_1C8.mUnk_10);
     } else {
         this->func_ov031_020f2c08(0x400);
     }
@@ -804,8 +805,6 @@ bool ActorShotArrow::func_ov031_020f2f9c() {
     return true;
 }
 
-extern "C" void func_01ffa7a0(VecFx32 *, Mat3p *, VecFx32 *);
-
 // non-matching
 void ActorShotArrow::func_ov031_020f3000() {
     /* 48 */ VecFx32 mUnk_48;
@@ -928,7 +927,7 @@ ActorShotArrow_194::ActorShotArrow_194(ActorShotArrow *param_1) {
 
 inline ActorShotArrow_1C8::ActorShotArrow_1C8() {
     this->mUnk_10   = 0;
-    this->mUnk_14   = 0;
+    this->mUnk_12   = 0;
     this->mUnk_00   = NULL;
     this->mUnk_04.x = 0;
     this->mUnk_04.y = 0;
@@ -988,7 +987,7 @@ void ActorShotArrow_194::vfunc_10(Actor *actor) {
                 func_01ffb714(&this->mUnk_2C->mPos, &actor->mPos, &stack.mUnk_1C);
                 VecFx32_Copy(&stack.mUnk_1C, &this->mUnk_2C->mUnk_1C8.mUnk_04);
                 this->mUnk_2C->mUnk_1C8.mUnk_10 = actor->mAngle;
-                this->mUnk_2C->mUnk_1C8.mUnk_14 = result;
+                this->mUnk_2C->mUnk_1C8.mUnk_12 = result;
                 return;
             }
             case ActorId_IWTS: {
@@ -1045,7 +1044,7 @@ void ActorShotArrow_194::vfunc_10(Actor *actor) {
                         func_01ffb714(&this->mUnk_2C->mPos, &actor->mPos, &stack.mUnk_10);
                         VecFx32_Copy(&stack.mUnk_10, &this->mUnk_2C->mUnk_1C8.mUnk_04);
                         this->mUnk_2C->mUnk_1C8.mUnk_10 = actor->mAngle;
-                        this->mUnk_2C->mUnk_1C8.mUnk_14 = result;
+                        this->mUnk_2C->mUnk_1C8.mUnk_12 = result;
                     }
                 }
                 if (this->mUnk_2C->mUnk_25C) {
