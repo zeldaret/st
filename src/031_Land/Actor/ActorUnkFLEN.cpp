@@ -76,7 +76,8 @@ void ActorUnkFLEN::func_ov031_020f81b4(ActorUnkFLENState_ state) {
 
 unk32 ActorUnkFLEN::func_ov031_020f81f8() {
     /* 08 */ ActorParams mUnk_08;
-    /* 04 */ u16 mUnk_04;
+    /* 04 */ ActorRef mUnk_04;
+
     mUnk_08.mUnk_28 = 0;
     mUnk_08.func_ov000_020975f8();
     mUnk_08.mUnk_28       = this->mRef.Get32();
@@ -84,11 +85,14 @@ unk32 ActorUnkFLEN::func_ov031_020f81f8() {
 
     VecFx32_Copy(&this->mPos, &mUnk_08.mInitialPos);
     mUnk_08.mInitialPos.y += 0x5000;
-    u16 index          = this->mUnk_5C.mParams[0];
-    mUnk_08.mParams[0] = data_ov031_02110b90[index];
-    ((Actor *) &mUnk_04)->func_ov000_020973f4(&this->mRef, &data_ov000_020b539c_eur, data_ov031_02110b94[index], &mUnk_08, 0);
+    const u16 index    = this->mUnk_5C.mParams[0];
+    u16 mParams0       = data_ov031_02110b90[index];
+    const ActorId r2   = data_ov031_02110b94[index];
+    mUnk_08.mParams[0] = mParams0;
 
-    return mUnk_04 != 0;
+    Actor::func_ov000_020973f4(&mUnk_04, &data_ov000_020b539c_eur, r2, &mUnk_08, 0x0);
+
+    return mUnk_04.type_index != 0;
 }
 
 ActorUnkFLEN::~ActorUnkFLEN() {}

@@ -157,7 +157,7 @@ public:
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
     /* 0C */ virtual unk8 vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
+    /* 10 */ virtual void vfunc_10(VecFx32 *);
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual bool vfunc_18(unk32 param1);
     /* 1C */ virtual void vfunc_1C();
@@ -203,6 +203,8 @@ public:
     }
 
     // overlay 0
+    bool func_ov000_0205cbc4(u32 param1, VecFx32 *param2);
+    unk32 func_ov000_0207e294(Cylinder *);
     void func_ov000_0209848c(ActorProfile *param1);
     void func_ov000_020984b0();
     void func_ov000_020984b4();
@@ -213,6 +215,7 @@ public:
     unk32 func_ov000_020984c8();
     void func_ov000_020984d0();
     void func_ov000_020984f0();
+    u32 func_ov000_02098800(bool param1);
     bool func_ov000_02098838();
     unk32 func_ov000_02098910(unk32 param1, unk32 param2);
     void func_ov000_02098b8c(unk32 param1, unk32 param2);
@@ -227,11 +230,13 @@ public:
     void func_ov000_020989e0();
     bool func_ov000_02098a60(unk32 param1);
     void func_ov000_02098a88(unk32 param1, unk32 param2);
+    u32 func_ov000_02098ab4(bool param1, unk32 param2, unk32 param3, VecFx32 *param4);
 
     static void func_ov000_020973f4(ActorRef *pOutRef, UnkStruct_ov000_020b539c *param2, ActorId actorId, ActorParams *pParams,
                                     int param5);
 
     // overlay 17
+    unk32 func_ov017_020beeec(unk32);
     void func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_ov017_020bf9c8(Actor *param1);
 };
