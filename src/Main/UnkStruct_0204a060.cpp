@@ -5,6 +5,7 @@
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
+#include "versions.h"
 
 extern "C" void func_ov001_020be078();
 

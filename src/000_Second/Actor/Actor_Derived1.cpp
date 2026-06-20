@@ -258,5 +258,3 @@ void Actor_Derived1::func_ov000_020a9a34() {}
 void Actor_Derived1::func_ov000_020a9a50() {}
 void Actor_Derived1::func_ov000_020a9a94() {}
 void Actor_Derived1::func_ov000_020a9abc() {}
-void Actor_Derived1::func_ov000_020a9ae0() {}
-void Actor_Derived1::func_ov000_020a9afc() {}
