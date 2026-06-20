@@ -4,7 +4,6 @@
 #include "Actor/ActorUnkGYAM.hpp"
 #include "Actor/ActorUnkIWTS.hpp"
 #include "Actor/ActorUnkMRD2.hpp"
-#include "MapObject/MapObjectUnkHOLB.hpp"
 #include "System/OverlayManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -55,18 +54,14 @@ typedef struct {
     /* 25C */
 } UnkStruct_ov060_02163ff4;
 
-extern "C" u8 data_ov031_02110b01[]       = {0x08, 0x02, 0x02, 0x0C, 0x04, 0x00};
-extern "C" char data_ov031_02110b3c[0x10] = "arrow";
-extern "C" char data_ov031_02110b4c[0x10] = "arrow_s";
+extern "C" u8 data_ov031_02110b01[];       //       = {0x08, 0x02, 0x02, 0x0C, 0x04, 0x00};
+extern "C" char data_ov031_02110b3c[0x10]; // = "arrow";
+extern "C" char data_ov031_02110b4c[0x10]; // = "arrow_s";
 
-extern "C" char data_ov031_02110b5c[0x14] = "ef_arrowB";
-extern "C" char data_ov031_02110b08[0x34] = "ef_arrowB";
+extern "C" char data_ov031_02110b5c[0x14]; // = "ef_arrowB";
+extern "C" char data_ov031_02110b08[0x34]; // = "ef_arrowB";
 
 extern Mat4x3p data_027e0964;
-extern UnkStruct_027e09a8 *data_027e09a8;
-extern UnkStruct_027e0cd8 *data_027e0cd8;
-extern UnkStruct_027e0ce0 *data_027e0ce0;
-extern UnkStruct_027e0d30 *data_027e0d30;
 extern ActorUnkIWTS *data_027e0d80;
 extern bool data_ov060_02163fe0;
 extern UnkStruct_ov060_02163ff4 data_ov060_02163ff4;
@@ -603,8 +598,8 @@ void ActorShotArrow::func_ov031_020f2310() {
         VecFx32_Copy(&this->mPos, &stack.mUnk_30.zColumn);
 
         Mat3p_InitYRotation(&stack.mUnk_30, SIN((u16) this->mAngle), COS((u16) this->mAngle));
-        Mat3p_InitXRotation(&stack.mUnk_30, SIN((u16) this->mUnk_174 + this->mUnk_176),
-                            COS((u16) this->mUnk_174 + this->mUnk_176));
+        Mat3p_InitXRotation(&stack.mUnk_30, SIN((u16) (s16) (this->mUnk_174 + this->mUnk_176)),
+                            COS((u16) (s16) (this->mUnk_174 + this->mUnk_176)));
 
         func_01ffa60c(&stack.mUnk_0C, &stack.mUnk_30, &stack.mUnk_30);
 
@@ -650,14 +645,10 @@ void ActorShotArrow::func_ov031_020f2794(unk16 param_1) {
     }
 }
 
-typedef struct {
-    /* 10 */ VecFx32 mUnk_10;
-    /* 1C */ VecFx32 mUnk_1C;
-} UnkStack_ov031_020f28ac;
-
 // non-matching
 u32 ActorShotArrow::func_ov031_020f28ac() {
-    UnkStack_ov031_020f28ac stack;
+    /* 1C */ VecFx32 mUnk_1C;
+    /* 10 */ VecFx32 mUnk_10;
     this->func_ov000_020989e0();
     bool notEarlyReturn = true;
     u32 returnValue     = 0x3FFFF;
@@ -677,26 +668,26 @@ u32 ActorShotArrow::func_ov031_020f28ac() {
                         var2 = true;
                     }
                     VecFx32 *result = this->func_ov000_0209853c(var2);
-                    func_01ffb714(&this->mPos, result, &stack.mUnk_1C);
-                    returnValue = this->func_ov031_020f2cac(&stack.mUnk_1C.x, 0x1);
+                    func_01ffb714(&this->mPos, result, &mUnk_1C);
+                    returnValue = this->func_ov031_020f2cac(&mUnk_1C.x, 0x1);
                     break;
                 }
 
-                if (!func_ov000_0205cbc4(this->mUnk_140.mUnk_0C.Get32(), &stack.mUnk_10)) {
-                    stack.mUnk_1C.x = FLOAT_TO_FX32(0.0f);
-                    stack.mUnk_1C.y = FLOAT_TO_FX32(0.0f);
-                    stack.mUnk_1C.z = FLOAT_TO_FX32(0.0f);
+                if (!func_ov000_0205cbc4(this->mUnk_140.mUnk_0C.Get32(), &mUnk_10)) {
+                    mUnk_1C.x = FLOAT_TO_FX32(0.0f);
+                    mUnk_1C.y = FLOAT_TO_FX32(0.0f);
+                    mUnk_1C.z = FLOAT_TO_FX32(0.0f);
                 } else {
-                    func_01ffb714(&this->mPos, &stack.mUnk_10, &stack.mUnk_1C);
+                    func_01ffb714(&this->mPos, &mUnk_10, &mUnk_1C);
                 }
 
-                returnValue = this->func_ov031_020f2cac(&stack.mUnk_1C.x, 0x1);
+                returnValue = this->func_ov031_020f2cac(&mUnk_1C.x, 0x1);
                 break;
             case 0x4:
                 Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_140.mUnk_0C);
                 if (actor) {
-                    func_01ffb714(&this->mPos, &actor->mPrevPos, &stack.mUnk_1C);
-                    returnValue = this->func_ov031_020f2cac(&stack.mUnk_1C.x, 0x1);
+                    func_01ffb714(&this->mPos, &actor->mPrevPos, &mUnk_1C);
+                    returnValue = this->func_ov031_020f2cac(&mUnk_1C.x, 0x1);
                     break;
                 }
                 break;
@@ -717,8 +708,8 @@ u32 ActorShotArrow::func_ov031_020f28ac() {
                         notEarlyReturn = true;
                     } else {
                         data_027e0ce0->func_ov000_0208bd30(var2, 0xE6, 0, 0);
-                        func_01ffb714(&this->mPos, this->func_ov000_0209853c(0), &stack.mUnk_1C);
-                        returnValue = this->func_ov031_020f2cac(&stack.mUnk_1C.x, 0x1);
+                        func_01ffb714(&this->mPos, this->func_ov000_0209853c(0), &mUnk_1C);
+                        returnValue = this->func_ov031_020f2cac(&mUnk_1C.x, 0x1);
                     }
                 }
                 break;
@@ -727,16 +718,16 @@ u32 ActorShotArrow::func_ov031_020f28ac() {
                     data_027e0ce0->func_ov000_0208bc1c(1, 0, 0x18, 0, 0, 0);
                 }
                 VecFx32 *result = this->func_ov000_0209853c(0x1);
-                func_01ffb714(&this->mPos, result, &stack.mUnk_1C);
-                returnValue = this->func_ov031_020f2cac(&stack.mUnk_1C.x, 0x1);
+                func_01ffb714(&this->mPos, result, &mUnk_1C);
+                returnValue = this->func_ov031_020f2cac(&mUnk_1C.x, 0x1);
                 break;
             case 0x3:
                 if (this->mUnk_140.mUnk_0C.type) {
                     Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_140.mUnk_0C.type);
                     if (actor) {
-                        func_01ffb714(&actor->mPos, &actor->mPrevPos, &stack.mUnk_1C);
-                        VecFx32_TryNormalize(&stack.mUnk_1C);
-                        returnValue = this->func_ov031_020f2cac(&stack.mUnk_1C.x, 0x1);
+                        func_01ffb714(&actor->mPos, &actor->mPrevPos, &mUnk_1C);
+                        VecFx32_TryNormalize(&mUnk_1C);
+                        returnValue = this->func_ov031_020f2cac(&mUnk_1C.x, 0x1);
                         break;
                     }
                 }
@@ -813,8 +804,29 @@ bool ActorShotArrow::func_ov031_020f2f9c() {
     return true;
 }
 
+extern "C" void func_01ffa7a0(VecFx32 *, Mat3p *, VecFx32 *);
+
 // non-matching
-void ActorShotArrow::func_ov031_020f3000() {}
+void ActorShotArrow::func_ov031_020f3000() {
+    /* 48 */ VecFx32 mUnk_48;
+    /* 24 */ Mat3p mUnk_24;
+    /* 00 */ Mat3p mUnk_00;
+    mUnk_48.x = FLOAT_TO_FX32(0.0f);
+    mUnk_48.y = FLOAT_TO_FX32(0.0f);
+    mUnk_48.z = FLOAT_TO_FX32(0.4f);
+    Mat3p_InitYRotation(&mUnk_24, SIN((u16) this->mAngle), COS((u16) this->mAngle));
+    Mat3p_InitXRotation(&mUnk_00, SIN((u16) (s16) (this->mUnk_174 + this->mUnk_176)),
+                        COS((u16) (s16) (this->mUnk_174 + this->mUnk_176)));
+
+    func_01ffa60c(&mUnk_00, &mUnk_24, &mUnk_24);
+
+    func_01ffa7a0(&mUnk_48, &mUnk_24, &mUnk_48);
+
+    mUnk_48.y = MUL_FX32(mUnk_48.y, 0x800);
+
+    VecFx32_Add(&mUnk_48, &this->mPos, &mUnk_48);
+    VecFx32_Copy(&mUnk_48, &this->mUnk_1DC.mUnk_00);
+}
 
 void ActorShotArrow::func_ov031_020f311c(Mat4x3p *param_1) {
     /* 30 */ Mat4x3p mUnk_30;

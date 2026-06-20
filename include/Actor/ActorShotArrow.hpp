@@ -230,7 +230,6 @@ public:
     void func_ov031_020f311c(Mat4x3p *param_1);
     bool func_ov031_020f3210(u16);
     bool func_ov031_020f3258(u16 param_1);
-    bool func_ov031_020f33bc();
     void func_ov031_020f3d04(unk16 param_1);
 };
 
