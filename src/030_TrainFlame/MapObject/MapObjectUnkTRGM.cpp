@@ -3,25 +3,25 @@
 #include "MapObject/MapObjectUnkTRGM.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkTRGM);
+DECL_PROFILE(MapObjectProfileUnkTRGM);
 
-ARM MapObject *MapObjectProfileUnkTRGM::Create() {
+MapObject *MapObjectProfileUnkTRGM::Create() {
     return new(HeapIndex_2) MapObjectUnkTRGM();
 }
 
-ARM MapObjectProfileUnkTRGM::MapObjectProfileUnkTRGM() :
+MapObjectProfileUnkTRGM::MapObjectProfileUnkTRGM() :
     MapObjectProfile(MapObjectId_TRGM) {}
 
-ARM MapObjectUnkTRGM::MapObjectUnkTRGM() {}
+MapObjectUnkTRGM::MapObjectUnkTRGM() {}
 
-ARM void MapObjectUnkTRGM::func_ov030_02142edc(void) {}
-ARM void MapObjectUnkTRGM::func_ov030_02142fc4(void) {}
-ARM void MapObjectUnkTRGM::func_ov030_02143058(void) {}
-ARM void MapObjectUnkTRGM::func_ov030_02143070(void) {}
-ARM void MapObjectUnkTRGM::func_ov030_021430b0(void) {}
-ARM void MapObjectUnkTRGM::func_ov030_021430d0(void) {}
-ARM void MapObjectUnkTRGM::func_ov030_021430f0(void) {}
-ARM void MapObjectUnkTRGM::func_ov030_021430f8(void) {}
+void MapObjectUnkTRGM::func_ov030_02142edc(void) {}
+void MapObjectUnkTRGM::func_ov030_02142fc4(void) {}
+void MapObjectUnkTRGM::func_ov030_02143058(void) {}
+void MapObjectUnkTRGM::func_ov030_02143070(void) {}
+void MapObjectUnkTRGM::func_ov030_021430b0(void) {}
+void MapObjectUnkTRGM::func_ov030_021430d0(void) {}
+void MapObjectUnkTRGM::func_ov030_021430f0(void) {}
+void MapObjectUnkTRGM::func_ov030_021430f8(void) {}
 
-ARM MapObjectUnkTRGM::~MapObjectUnkTRGM() {}
-ARM MapObjectProfileUnkTRGM::~MapObjectProfileUnkTRGM() {}
+MapObjectUnkTRGM::~MapObjectUnkTRGM() {}
+MapObjectProfileUnkTRGM::~MapObjectProfileUnkTRGM() {}

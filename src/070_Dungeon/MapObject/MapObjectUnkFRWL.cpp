@@ -3,28 +3,28 @@
 #include "MapObject/MapObjectUnkFRWL.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkFRWL);
+DECL_PROFILE(MapObjectProfileUnkFRWL);
 
-ARM MapObject *MapObjectProfileUnkFRWL::Create() {
+MapObject *MapObjectProfileUnkFRWL::Create() {
     return new(HeapIndex_2) MapObjectUnkFRWL();
 }
 
-ARM MapObjectProfileUnkFRWL::MapObjectProfileUnkFRWL() :
+MapObjectProfileUnkFRWL::MapObjectProfileUnkFRWL() :
     MapObjectProfile(MapObjectId_FRWL) {}
 
-ARM MapObjectUnkFRWL::MapObjectUnkFRWL() {}
+MapObjectUnkFRWL::MapObjectUnkFRWL() {}
 
-ARM void MapObjectUnkFRWL::func_ov070_02149248(void) {}
-ARM void MapObjectUnkFRWL::func_ov070_021494a8(void) {}
-ARM void MapObjectUnkFRWL::func_ov070_021494dc(void) {}
-ARM void MapObjectUnkFRWL::func_ov070_021494f4(void) {}
-ARM void MapObjectUnkFRWL::func_ov070_02149a14(void) {}
-ARM void MapObjectUnkFRWL::func_ov070_02149a78(void) {}
-ARM void MapObjectUnkFRWL::func_ov070_02149ec4(void) {}
-ARM void MapObjectUnkFRWL::func_ov070_02149f00(void) {}
-ARM void MapObjectUnkFRWL::func_ov070_02149f30(void) {}
-ARM void MapObjectUnkFRWL::func_ov070_02149f68(void) {}
-ARM void MapObjectUnkFRWL::func_ov070_02149fa0(void) {}
+void MapObjectUnkFRWL::func_ov070_02149248(void) {}
+void MapObjectUnkFRWL::func_ov070_021494a8(void) {}
+void MapObjectUnkFRWL::func_ov070_021494dc(void) {}
+void MapObjectUnkFRWL::func_ov070_021494f4(void) {}
+void MapObjectUnkFRWL::func_ov070_02149a14(void) {}
+void MapObjectUnkFRWL::func_ov070_02149a78(void) {}
+void MapObjectUnkFRWL::func_ov070_02149ec4(void) {}
+void MapObjectUnkFRWL::func_ov070_02149f00(void) {}
+void MapObjectUnkFRWL::func_ov070_02149f30(void) {}
+void MapObjectUnkFRWL::func_ov070_02149f68(void) {}
+void MapObjectUnkFRWL::func_ov070_02149fa0(void) {}
 
-ARM MapObjectUnkFRWL::~MapObjectUnkFRWL() {}
-ARM MapObjectProfileUnkFRWL::~MapObjectProfileUnkFRWL() {}
+MapObjectUnkFRWL::~MapObjectUnkFRWL() {}
+MapObjectProfileUnkFRWL::~MapObjectProfileUnkFRWL() {}

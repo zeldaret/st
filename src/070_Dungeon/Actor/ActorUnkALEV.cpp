@@ -3,22 +3,22 @@
 #include "Actor/ActorUnkALEV.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkALEV);
+DECL_PROFILE(ActorProfileUnkALEV);
 
-ARM Actor *ActorProfileUnkALEV::Create() {
+Actor *ActorProfileUnkALEV::Create() {
     return new(HeapIndex_2) ActorUnkALEV();
 }
 
-ARM ActorProfileUnkALEV::ActorProfileUnkALEV() :
+ActorProfileUnkALEV::ActorProfileUnkALEV() :
     ActorProfile(ActorId_ALEV) {}
 
-ARM ActorUnkALEV::ActorUnkALEV() {}
+ActorUnkALEV::ActorUnkALEV() {}
 
-ARM void ActorUnkALEV::func_ov070_0213f828(void) {}
-ARM void ActorUnkALEV::func_ov070_0213f848(void) {}
-ARM void ActorUnkALEV::func_ov070_0213f858(void) {}
-ARM void ActorUnkALEV::func_ov070_0213f86c(void) {}
-ARM void ActorUnkALEV::func_ov070_0213f8dc(void) {}
+void ActorUnkALEV::func_ov070_0213f828(void) {}
+void ActorUnkALEV::func_ov070_0213f848(void) {}
+void ActorUnkALEV::func_ov070_0213f858(void) {}
+void ActorUnkALEV::func_ov070_0213f86c(void) {}
+void ActorUnkALEV::func_ov070_0213f8dc(void) {}
 
-ARM ActorUnkALEV::~ActorUnkALEV() {}
-ARM ActorProfileUnkALEV::~ActorProfileUnkALEV() {}
+ActorUnkALEV::~ActorUnkALEV() {}
+ActorProfileUnkALEV::~ActorProfileUnkALEV() {}

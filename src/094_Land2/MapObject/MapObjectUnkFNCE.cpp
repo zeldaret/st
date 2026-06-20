@@ -3,21 +3,21 @@
 #include "MapObject/MapObjectUnkFNCE.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkFNCE);
+DECL_PROFILE(MapObjectProfileUnkFNCE);
 
-ARM MapObject *MapObjectProfileUnkFNCE::Create() {
+MapObject *MapObjectProfileUnkFNCE::Create() {
     return new(HeapIndex_2) MapObjectUnkFNCE();
 }
 
-ARM MapObjectProfileUnkFNCE::MapObjectProfileUnkFNCE() :
+MapObjectProfileUnkFNCE::MapObjectProfileUnkFNCE() :
     MapObjectProfile(MapObjectId_FNCE) {}
 
-ARM MapObjectUnkFNCE::MapObjectUnkFNCE() {}
+MapObjectUnkFNCE::MapObjectUnkFNCE() {}
 
-ARM void MapObjectUnkFNCE::func_ov094_02170b14(void) {}
-ARM void MapObjectUnkFNCE::func_ov094_02170b58(void) {}
-ARM void MapObjectUnkFNCE::func_ov094_02170d54(void) {}
-ARM void MapObjectUnkFNCE::func_ov094_02170db4(void) {}
+void MapObjectUnkFNCE::func_ov094_02170b14(void) {}
+void MapObjectUnkFNCE::func_ov094_02170b58(void) {}
+void MapObjectUnkFNCE::func_ov094_02170d54(void) {}
+void MapObjectUnkFNCE::func_ov094_02170db4(void) {}
 
-ARM MapObjectUnkFNCE::~MapObjectUnkFNCE() {}
-ARM MapObjectProfileUnkFNCE::~MapObjectProfileUnkFNCE() {}
+MapObjectUnkFNCE::~MapObjectUnkFNCE() {}
+MapObjectProfileUnkFNCE::~MapObjectProfileUnkFNCE() {}

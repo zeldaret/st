@@ -143,7 +143,7 @@ struct FLW1Instr {
         InstrBranch branch;
         InstrEvent event;
     };
-    /* 09 */
+    /* 08 */
 };
 
 struct SectionFLW1 {
@@ -195,7 +195,7 @@ struct BMGFileInfo {
     /* 1C */
 };
 
-class BMGGroups : public SysObject {
+class BMGGroups {
 public:
     /* 00 */ BMGFileInfo *entries; // accessed with `groupId`
     /* 04 */ s32 numEntries;

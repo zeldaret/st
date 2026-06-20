@@ -12,12 +12,12 @@ extern "C" {
 #define CARD_BACKUP_TYPE_FRAM 3
 
 #define CARD_BACKUP_TYPE_EEPROM_4KBITS (0x900 | CARD_BACKUP_TYPE_EEPROM)
-#define CARD_BACKUP_TYPE_EEPROM_64KBITS (0xd00 | CARD_BACKUP_TYPE_EEPROM)
+#define CARD_BACKUP_TYPE_EEPROM_64KBITS (0xD00 | CARD_BACKUP_TYPE_EEPROM)
 #define CARD_BACKUP_TYPE_EEPROM_512KBITS (0x1000 | CARD_BACKUP_TYPE_EEPROM)
 #define CARD_BACKUP_TYPE_FLASH_2MBITS (0x1200 | CARD_BACKUP_TYPE_FLASH)
 #define CARD_BACKUP_TYPE_FLASH_4MBITS (0x1300 | CARD_BACKUP_TYPE_FLASH)
 #define CARD_BACKUP_TYPE_FLASH_8MBITS (0x1400 | CARD_BACKUP_TYPE_FLASH)
-#define CARD_BACKUP_TYPE_FRAM_256KBITS (0xf00 | CARD_BACKUP_TYPE_FRAM)
+#define CARD_BACKUP_TYPE_FRAM_256KBITS (0xF00 | CARD_BACKUP_TYPE_FRAM)
 
 // TODO: Find values for these
 #define CARD_RESULT_SUCCESS 0
@@ -36,9 +36,9 @@ void CARD_LockBackup(u16 cardId);
 void CARD_UnlockBackup(u16 cardId);
 BOOL CARD_IdentifyBackup(CARDBackupType type);
 CARDBackupType CARD_GetBackupType();
-#define CARD_IsBackupEeprom() (CARD_GetBackupType() & 0xff) == CARD_BACKUP_TYPE_EEPROM
-#define CARD_IsBackupFlash() (CARD_GetBackupType() & 0xff) == CARD_BACKUP_TYPE_FLASH
-#define CARD_IsBackupFram() (CARD_GetBackupType() & 0xff) == CARD_BACKUP_TYPE_FRAM
+#define CARD_IsBackupEeprom() (CARD_GetBackupType() & 0xFF) == CARD_BACKUP_TYPE_EEPROM
+#define CARD_IsBackupFlash() (CARD_GetBackupType() & 0xFF) == CARD_BACKUP_TYPE_FLASH
+#define CARD_IsBackupFram() (CARD_GetBackupType() & 0xFF) == CARD_BACKUP_TYPE_FRAM
 BOOL CARD_ReadWriteBackupAsync(u32 offset, void *buf, u32 size, void *, void *, u32, u32, u32, u32);
 void CARD_WaitBackupAsync(void);
 CARDResult CARD_GetResultCode(void);

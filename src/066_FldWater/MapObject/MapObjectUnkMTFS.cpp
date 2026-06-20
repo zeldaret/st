@@ -3,24 +3,24 @@
 #include "MapObject/MapObjectUnkMTFS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkMTFS);
+DECL_PROFILE(MapObjectProfileUnkMTFS);
 
-ARM MapObject *MapObjectProfileUnkMTFS::Create() {
+MapObject *MapObjectProfileUnkMTFS::Create() {
     return new(HeapIndex_2) MapObjectUnkMTFS();
 }
 
-ARM MapObjectProfileUnkMTFS::MapObjectProfileUnkMTFS() :
+MapObjectProfileUnkMTFS::MapObjectProfileUnkMTFS() :
     MapObjectProfile(MapObjectId_MTFS) {}
 
-ARM MapObjectUnkMTFS::MapObjectUnkMTFS() {}
+MapObjectUnkMTFS::MapObjectUnkMTFS() {}
 
-ARM void MapObjectUnkMTFS::func_ov066_0215d25c(void) {}
-ARM void MapObjectUnkMTFS::func_ov066_0215d270(void) {}
-ARM void MapObjectUnkMTFS::func_ov066_0215d328(void) {}
-ARM void MapObjectUnkMTFS::func_ov066_0215d474(void) {}
-ARM void MapObjectUnkMTFS::func_ov066_0215d488(void) {}
-ARM void MapObjectUnkMTFS::func_ov066_0215d4a8(void) {}
-ARM void MapObjectUnkMTFS::func_ov066_0215d764(void) {}
+void MapObjectUnkMTFS::func_ov066_0215d25c(void) {}
+void MapObjectUnkMTFS::func_ov066_0215d270(void) {}
+void MapObjectUnkMTFS::func_ov066_0215d328(void) {}
+void MapObjectUnkMTFS::func_ov066_0215d474(void) {}
+void MapObjectUnkMTFS::func_ov066_0215d488(void) {}
+void MapObjectUnkMTFS::func_ov066_0215d4a8(void) {}
+void MapObjectUnkMTFS::func_ov066_0215d764(void) {}
 
-ARM MapObjectUnkMTFS::~MapObjectUnkMTFS() {}
-ARM MapObjectProfileUnkMTFS::~MapObjectProfileUnkMTFS() {}
+MapObjectUnkMTFS::~MapObjectUnkMTFS() {}
+MapObjectProfileUnkMTFS::~MapObjectProfileUnkMTFS() {}

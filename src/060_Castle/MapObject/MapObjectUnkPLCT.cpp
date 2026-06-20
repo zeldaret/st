@@ -3,20 +3,20 @@
 #include "MapObject/MapObjectUnkPLCT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkPLCT);
+DECL_PROFILE(MapObjectProfileUnkPLCT);
 
-ARM MapObject *MapObjectProfileUnkPLCT::Create() {
+MapObject *MapObjectProfileUnkPLCT::Create() {
     return new(HeapIndex_2) MapObjectUnkPLCT();
 }
 
-ARM MapObjectProfileUnkPLCT::MapObjectProfileUnkPLCT() :
+MapObjectProfileUnkPLCT::MapObjectProfileUnkPLCT() :
     MapObjectProfile(MapObjectId_PLCT) {}
 
-ARM MapObjectUnkPLCT::MapObjectUnkPLCT() {}
+MapObjectUnkPLCT::MapObjectUnkPLCT() {}
 
-ARM void MapObjectUnkPLCT::func_ov060_021604ac(void) {}
-ARM void MapObjectUnkPLCT::func_ov060_021604b4(void) {}
-ARM void MapObjectUnkPLCT::func_ov060_021604b8(void) {}
+void MapObjectUnkPLCT::func_ov060_021604ac(void) {}
+void MapObjectUnkPLCT::func_ov060_021604b4(void) {}
+void MapObjectUnkPLCT::func_ov060_021604b8(void) {}
 
-ARM MapObjectUnkPLCT::~MapObjectUnkPLCT() {}
-ARM MapObjectProfileUnkPLCT::~MapObjectProfileUnkPLCT() {}
+MapObjectUnkPLCT::~MapObjectUnkPLCT() {}
+MapObjectProfileUnkPLCT::~MapObjectProfileUnkPLCT() {}

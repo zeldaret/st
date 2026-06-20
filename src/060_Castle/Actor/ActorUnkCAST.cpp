@@ -3,21 +3,21 @@
 #include "Actor/ActorUnkCAST.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkCAST);
+DECL_PROFILE(ActorProfileUnkCAST);
 
-ARM Actor *ActorProfileUnkCAST::Create() {
+Actor *ActorProfileUnkCAST::Create() {
     return new(HeapIndex_2) ActorUnkCAST();
 }
 
-ARM ActorProfileUnkCAST::ActorProfileUnkCAST() :
+ActorProfileUnkCAST::ActorProfileUnkCAST() :
     ActorProfile_Derived1(ActorId_CAST) {}
 
-ARM ActorUnkCAST::ActorUnkCAST() {}
+ActorUnkCAST::ActorUnkCAST() {}
 
-ARM void ActorUnkCAST::func_ov060_0215ec7c(void) {}
-ARM void ActorUnkCAST::func_ov060_0215eca4(void) {}
-ARM void ActorUnkCAST::func_ov060_0215eca8(void) {}
-ARM void ActorUnkCAST::func_ov060_0215ecbc(void) {}
+void ActorUnkCAST::func_ov060_0215ec7c(void) {}
+void ActorUnkCAST::func_ov060_0215eca4(void) {}
+void ActorUnkCAST::func_ov060_0215eca8(void) {}
+void ActorUnkCAST::func_ov060_0215ecbc(void) {}
 
-ARM ActorUnkCAST::~ActorUnkCAST() {}
-ARM ActorProfileUnkCAST::~ActorProfileUnkCAST() {}
+ActorUnkCAST::~ActorUnkCAST() {}
+ActorProfileUnkCAST::~ActorProfileUnkCAST() {}

@@ -3,34 +3,34 @@
 #include "Actor/ActorUnkNITF.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkNITF);
+DECL_PROFILE(ActorProfileUnkNITF);
 
-ARM Actor *ActorProfileUnkNITF::Create() {
+Actor *ActorProfileUnkNITF::Create() {
     return new(HeapIndex_2) ActorUnkNITF();
 }
 
-ARM ActorProfileUnkNITF::ActorProfileUnkNITF() :
+ActorProfileUnkNITF::ActorProfileUnkNITF() :
     ActorProfile(ActorId_NITF) {}
 
-ARM ActorUnkNITF::ActorUnkNITF() {}
+ActorUnkNITF::ActorUnkNITF() {}
 
-ARM void ActorUnkNITF::func_ov031_020f10c0(void) {}
-ARM void ActorUnkNITF::func_ov031_020f10d4(void) {}
-ARM void ActorUnkNITF::func_ov031_020f10fc(void) {}
-ARM void ActorUnkNITF::func_ov031_020f1140(void) {}
-ARM void ActorUnkNITF::func_ov031_020f1178(void) {}
-ARM void ActorUnkNITF::func_ov031_020f11a8(void) {}
-ARM void ActorUnkNITF::func_ov031_020f11b4(void) {}
-ARM void ActorUnkNITF::func_ov031_020f11c0(void) {}
-ARM void ActorUnkNITF::func_ov031_020f11cc(void) {}
-ARM void ActorUnkNITF::func_ov031_020f11d8(void) {}
-ARM void ActorUnkNITF::func_ov031_020f11e4(void) {}
-ARM void ActorUnkNITF::func_ov031_020f11f0(void) {}
-ARM void ActorUnkNITF::func_ov031_020f11fc(void) {}
-ARM void ActorUnkNITF::func_ov031_020f1208(void) {}
-ARM void ActorUnkNITF::func_ov031_020f121c(void) {}
-ARM void ActorUnkNITF::func_ov031_020f1230(void) {}
-ARM void ActorUnkNITF::func_ov031_020f1308(void) {}
+void ActorUnkNITF::func_ov031_020f10c0(void) {}
+void ActorUnkNITF::func_ov031_020f10d4(void) {}
+void ActorUnkNITF::func_ov031_020f10fc(void) {}
+void ActorUnkNITF::func_ov031_020f1140(void) {}
+void ActorUnkNITF::func_ov031_020f1178(void) {}
+void ActorUnkNITF::func_ov031_020f11a8(void) {}
+void ActorUnkNITF::func_ov031_020f11b4(void) {}
+void ActorUnkNITF::func_ov031_020f11c0(void) {}
+void ActorUnkNITF::func_ov031_020f11cc(void) {}
+void ActorUnkNITF::func_ov031_020f11d8(void) {}
+void ActorUnkNITF::func_ov031_020f11e4(void) {}
+void ActorUnkNITF::func_ov031_020f11f0(void) {}
+void ActorUnkNITF::func_ov031_020f11fc(void) {}
+void ActorUnkNITF::func_ov031_020f1208(void) {}
+void ActorUnkNITF::func_ov031_020f121c(void) {}
+void ActorUnkNITF::func_ov031_020f1230(void) {}
+void ActorUnkNITF::func_ov031_020f1308(void) {}
 
-ARM ActorUnkNITF::~ActorUnkNITF() {}
-ARM ActorProfileUnkNITF::~ActorProfileUnkNITF() {}
+ActorUnkNITF::~ActorUnkNITF() {}
+ActorProfileUnkNITF::~ActorProfileUnkNITF() {}

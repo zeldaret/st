@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkTMNC.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkTMNC);
+DECL_PROFILE(ActorProfileUnkTMNC);
 
-ARM Actor *ActorProfileUnkTMNC::Create() {
+Actor *ActorProfileUnkTMNC::Create() {
     return new(HeapIndex_2) ActorUnkTMNC();
 }
 
-ARM ActorProfileUnkTMNC::ActorProfileUnkTMNC() :
+ActorProfileUnkTMNC::ActorProfileUnkTMNC() :
     ActorProfile_Derived1(ActorId_TMNC) {}
 
-ARM ActorUnkTMNC::ActorUnkTMNC() {}
+ActorUnkTMNC::ActorUnkTMNC() {}
 
-ARM void ActorUnkTMNC::func_ov058_0214dde0(void) {}
-ARM void ActorUnkTMNC::func_ov058_0214de70(void) {}
+void ActorUnkTMNC::func_ov058_0214dde0(void) {}
+void ActorUnkTMNC::func_ov058_0214de70(void) {}
 
-ARM ActorUnkTMNC::~ActorUnkTMNC() {}
-ARM ActorProfileUnkTMNC::~ActorProfileUnkTMNC() {}
+ActorUnkTMNC::~ActorUnkTMNC() {}
+ActorProfileUnkTMNC::~ActorProfileUnkTMNC() {}

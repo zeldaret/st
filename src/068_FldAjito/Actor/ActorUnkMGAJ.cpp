@@ -3,23 +3,23 @@
 #include "Actor/ActorUnkMGAJ.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkMGAJ);
+DECL_PROFILE(ActorProfileUnkMGAJ);
 
-ARM Actor *ActorProfileUnkMGAJ::Create() {
+Actor *ActorProfileUnkMGAJ::Create() {
     return new(HeapIndex_2) ActorUnkMGAJ();
 }
 
-ARM ActorProfileUnkMGAJ::ActorProfileUnkMGAJ() :
+ActorProfileUnkMGAJ::ActorProfileUnkMGAJ() :
     ActorProfile_Derived1(ActorId_MGAJ) {}
 
-ARM ActorUnkMGAJ::ActorUnkMGAJ() {}
+ActorUnkMGAJ::ActorUnkMGAJ() {}
 
-ARM void ActorUnkMGAJ::func_ov068_0215e6d4(void) {}
-ARM void ActorUnkMGAJ::func_ov068_0215e76c(void) {}
-ARM void ActorUnkMGAJ::func_ov068_0215e7ac(void) {}
-ARM void ActorUnkMGAJ::func_ov068_0215e7b8(void) {}
-ARM void ActorUnkMGAJ::func_ov068_0215e7e4(void) {}
-ARM void ActorUnkMGAJ::func_ov068_0215e894(void) {}
+void ActorUnkMGAJ::func_ov068_0215e6d4(void) {}
+void ActorUnkMGAJ::func_ov068_0215e76c(void) {}
+void ActorUnkMGAJ::func_ov068_0215e7ac(void) {}
+void ActorUnkMGAJ::func_ov068_0215e7b8(void) {}
+void ActorUnkMGAJ::func_ov068_0215e7e4(void) {}
+void ActorUnkMGAJ::func_ov068_0215e894(void) {}
 
-ARM ActorUnkMGAJ::~ActorUnkMGAJ() {}
-ARM ActorProfileUnkMGAJ::~ActorProfileUnkMGAJ() {}
+ActorUnkMGAJ::~ActorUnkMGAJ() {}
+ActorProfileUnkMGAJ::~ActorProfileUnkMGAJ() {}

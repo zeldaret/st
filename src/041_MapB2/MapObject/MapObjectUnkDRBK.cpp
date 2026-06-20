@@ -3,33 +3,33 @@
 #include "MapObject/MapObjectUnkDRBK.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkDRBK);
+DECL_PROFILE(MapObjectProfileUnkDRBK);
 
-ARM MapObject *MapObjectProfileUnkDRBK::Create() {
+MapObject *MapObjectProfileUnkDRBK::Create() {
     return new(HeapIndex_2) MapObjectUnkDRBK();
 }
 
-ARM MapObjectProfileUnkDRBK::MapObjectProfileUnkDRBK() :
+MapObjectProfileUnkDRBK::MapObjectProfileUnkDRBK() :
     MapObjectProfile(MapObjectId_DRBK) {}
 
-ARM MapObjectUnkDRBK::MapObjectUnkDRBK() {}
+MapObjectUnkDRBK::MapObjectUnkDRBK() {}
 
-ARM void MapObjectUnkDRBK::func_ov041_0212ba90(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212bac8(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212bb18(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212bba4(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212bc1c(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212bdd0(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212be5c(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212bfa4(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212c084(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212c10c(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212c144(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212c544(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212c644(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212c6cc(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212c794(void) {}
-ARM void MapObjectUnkDRBK::func_ov041_0212c7b0(void) {}
+void MapObjectUnkDRBK::func_ov041_0212ba90(void) {}
+void MapObjectUnkDRBK::func_ov041_0212bac8(void) {}
+void MapObjectUnkDRBK::func_ov041_0212bb18(void) {}
+void MapObjectUnkDRBK::func_ov041_0212bba4(void) {}
+void MapObjectUnkDRBK::func_ov041_0212bc1c(void) {}
+void MapObjectUnkDRBK::func_ov041_0212bdd0(void) {}
+void MapObjectUnkDRBK::func_ov041_0212be5c(void) {}
+void MapObjectUnkDRBK::func_ov041_0212bfa4(void) {}
+void MapObjectUnkDRBK::func_ov041_0212c084(void) {}
+void MapObjectUnkDRBK::func_ov041_0212c10c(void) {}
+void MapObjectUnkDRBK::func_ov041_0212c144(void) {}
+void MapObjectUnkDRBK::func_ov041_0212c544(void) {}
+void MapObjectUnkDRBK::func_ov041_0212c644(void) {}
+void MapObjectUnkDRBK::func_ov041_0212c6cc(void) {}
+void MapObjectUnkDRBK::func_ov041_0212c794(void) {}
+void MapObjectUnkDRBK::func_ov041_0212c7b0(void) {}
 
-ARM MapObjectUnkDRBK::~MapObjectUnkDRBK() {}
-ARM MapObjectProfileUnkDRBK::~MapObjectProfileUnkDRBK() {}
+MapObjectUnkDRBK::~MapObjectUnkDRBK() {}
+MapObjectProfileUnkDRBK::~MapObjectProfileUnkDRBK() {}

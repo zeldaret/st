@@ -8,34 +8,34 @@
 
 extern unk32 data_ov000_020b3000;
 
-ARM DECL_PROFILE(ActorProfileUnkOBPC);
+DECL_PROFILE(ActorProfileUnkOBPC);
 
-ARM Actor *ActorProfileUnkOBPC::Create() {
+Actor *ActorProfileUnkOBPC::Create() {
     return new(HeapIndex_2) ActorUnkOBPC();
 }
 
-ARM ActorProfileUnkOBPC::ActorProfileUnkOBPC() :
+ActorProfileUnkOBPC::ActorProfileUnkOBPC() :
     ActorProfile(ActorId_OBPC) {}
 
-ARM ActorUnkOBPC::ActorUnkOBPC() :
+ActorUnkOBPC::ActorUnkOBPC() :
     mUnk_94(0),
     mUnk_98(0),
     mUnk_9C(0) {}
 
-ARM bool ActorUnkOBPC::vfunc_18(unk32 param1) {
+bool ActorUnkOBPC::vfunc_18(unk32 param1) {
     this->mUnk_94 = this->mUnk_5C.mParams[1];
     this->mUnk_98 = this->mUnk_5C.mParams[3];
 
     if (!this->func_ov024_020d6f74()) {
-        this->func_ov024_020d7064(0x00, 0x01);
+        this->SetState(ActorUnkOBPCState_0, 1);
     } else {
-        this->func_ov024_020d7064(0x01, 0x01);
+        this->SetState(ActorUnkOBPCState_1, 1);
     }
 
     return true;
 }
 
-ARM bool ActorUnkOBPC::func_ov024_020d6f74(void) {
+bool ActorUnkOBPC::func_ov024_020d6f74(void) {
     if (this->mUnk_5C.mUnk_1C_0 != 0) {
         return this->func_ov000_02098a60(1);
     }
@@ -43,20 +43,20 @@ ARM bool ActorUnkOBPC::func_ov024_020d6f74(void) {
     return false;
 }
 
-ARM void ActorUnkOBPC::vfunc_20(void) {
-    switch (this->mUnk_4C) {
+void ActorUnkOBPC::vfunc_20(void) {
+    switch (this->mState) {
         case 0:
             if (this->func_ov024_020d7154()) {
                 if (this->mUnk_5C.mUnk_20 == 0) {
-                    this->func_ov024_020d7064(0x01, 0x00);
+                    this->SetState(ActorUnkOBPCState_1, 0);
                 } else if (data_ov000_020b504c.func_ov000_0206807c(this->mUnk_5C.mUnk_20, &this->mUnk_9C)) {
-                    this->func_ov024_020d7064(0x01, 0x00);
+                    this->SetState(ActorUnkOBPCState_1, 0);
                 }
             }
             break;
         case 1:
             if (this->mUnk_5C.mParams[2] != 0 && !this->func_ov024_020d7154()) {
-                this->func_ov024_020d7064(0x00, 0x00);
+                this->SetState(ActorUnkOBPCState_0, 0);
             }
             break;
         default:
@@ -68,15 +68,15 @@ ARM void ActorUnkOBPC::vfunc_20(void) {
     }
 }
 
-ARM void ActorUnkOBPC::vfunc_24(void) {
+void ActorUnkOBPC::vfunc_24(void) {
     this->vfunc_20();
 }
 
-ARM void ActorUnkOBPC::func_ov024_020d7064(s16 param1, unk32 param2) {
-    this->mUnk_4C = param1;
+void ActorUnkOBPC::SetState(ActorState state, int param2) {
+    this->mState = state;
 
-    switch (this->mUnk_4C) {
-        case 0:
+    switch (this->mState) {
+        case ActorUnkOBPCState_0:
             if (this->mUnk_5C.mParams[2] == 0 || this->mUnk_5C.mParams[2] == 2) {
                 break;
             }
@@ -93,7 +93,7 @@ ARM void ActorUnkOBPC::func_ov024_020d7064(s16 param1, unk32 param2) {
                     break;
             }
             break;
-        case 1:
+        case ActorUnkOBPCState_1:
             switch (this->mUnk_98) {
                 case 1:
                     this->func_ov000_02098a88(0, 0);
@@ -116,7 +116,7 @@ ARM void ActorUnkOBPC::func_ov024_020d7064(s16 param1, unk32 param2) {
     }
 }
 
-ARM bool ActorUnkOBPC::func_ov024_020d7154(void) {
+bool ActorUnkOBPC::func_ov024_020d7154(void) {
     u8 temp_r4                     = this->mUnk_5C.mParams[0];
     UnkStruct_027e0cd8_0c *temp_r5 = data_027e0cd8->mUnk_0C;
     ActorManager *pActorMgr;
@@ -173,7 +173,3 @@ ARM bool ActorUnkOBPC::func_ov024_020d7154(void) {
     sp10.y = 0;
     return temp_r5->func_ov000_020802ec(temp_r4, &sp10);
 }
-
-ARM ActorUnkOBPC::~ActorUnkOBPC() {}
-
-ARM ActorProfileUnkOBPC::~ActorProfileUnkOBPC() {}

@@ -14,6 +14,8 @@ enum FileType_ {
     FileType_ZOB = 'BLOZ',
     FileType_ZTB = '1BTZ',
     FileType_ZMB = '1BMZ',
+    FileType_CIB = 'ZCIB',
+    FileType_CLB = 'ZCLB',
 };
 
 typedef struct FileInfos {
@@ -166,6 +168,53 @@ typedef struct ZMBSectionRALB {
     /* 00 */ ZMBSectionHeader header;
     /* 0C */ ZMBEntryRALB entries[];
 } ZMBSectionRALB;
+
+// .cib
+typedef struct CourseInitEntry {
+    /* 00 */ const char name[16];
+    /* 10 */ STRUCT_PAD(0x10, 0x24);
+} CourseInitEntry; // size = 0x24
+
+typedef struct CourseInitHeader {
+    /* 00 */ FileType type; // always "ZCIB"
+    /* 04 */ size_t nSize;
+    /* 08 */ u32 nEntries;
+    /* 0C */ u32 nEntries2; // same value as above?
+} CourseInitHeader;         // size = 0x10
+
+// .clb
+typedef struct CourseListRoomEntry {
+    /* 00 */ u8 roomIndex;
+    /* 01 */ u8 mapPaintIndex;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+} CourseListRoomEntry; // size = 0x08
+
+typedef struct CourseListEntry {
+    /* 00 */ const char name[16];
+    /* 10 */ unk32 unk_10;
+    /* 14 */ unk8 numRooms;
+    /* 15 */ unk8 unk_15;
+    /* 16 */ unk8 titleCardMsgIndex;
+    /* 17 */ u8 saveCourseIndex;
+    /* 18 */ u8 unk_18;
+    /* 19 */ u8 unk_19;
+    /* 1A */ u8 unk_1A;
+    /* 1B */ u8 unk_1B;
+    /* 1C */ u8 unk_1C;
+    /* 1D */ u8 unk_1D;
+    /* 1E */ u8 unk_1E;
+    /* 1F */ u8 unk_1F;
+    /* 20 */ u8 defaultMapPaintIndex;
+    /* 24 */ CourseListRoomEntry roomEntries[];
+} CourseListEntry; // size >= 0x28
+
+typedef struct CourseListHeader {
+    /* 00 */ FileType type; // always "ZCIB"
+    /* 04 */ size_t nSize;
+    /* 08 */ u32 nEntries;
+    /* 0C */ u32 nEntries2; // same value as above?
+} CourseListHeader;         // size = 0x10
 
 #ifdef __cplusplus
 } // extern "C"

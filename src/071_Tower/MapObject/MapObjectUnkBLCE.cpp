@@ -3,18 +3,18 @@
 #include "MapObject/MapObjectUnkBLCE.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkBLCE);
+DECL_PROFILE(MapObjectProfileUnkBLCE);
 
-ARM MapObject *MapObjectProfileUnkBLCE::Create() {
+MapObject *MapObjectProfileUnkBLCE::Create() {
     return new(HeapIndex_2) MapObjectUnkBLCE();
 }
 
-ARM MapObjectProfileUnkBLCE::MapObjectProfileUnkBLCE() :
+MapObjectProfileUnkBLCE::MapObjectProfileUnkBLCE() :
     MapObjectProfile(MapObjectId_BLCE) {}
 
-ARM MapObjectUnkBLCE::MapObjectUnkBLCE() {}
+MapObjectUnkBLCE::MapObjectUnkBLCE() {}
 
-ARM void MapObjectUnkBLCE::func_ov071_02161a40(void) {}
+void MapObjectUnkBLCE::func_ov071_02161a40(void) {}
 
-ARM MapObjectUnkBLCE::~MapObjectUnkBLCE() {}
-ARM MapObjectProfileUnkBLCE::~MapObjectProfileUnkBLCE() {}
+MapObjectUnkBLCE::~MapObjectUnkBLCE() {}
+MapObjectProfileUnkBLCE::~MapObjectProfileUnkBLCE() {}

@@ -3,22 +3,22 @@
 #include "MapObject/MapObjectUnkDRMC.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkDRMC);
+DECL_PROFILE(MapObjectProfileUnkDRMC);
 
-ARM MapObject *MapObjectProfileUnkDRMC::Create() {
+MapObject *MapObjectProfileUnkDRMC::Create() {
     return new(HeapIndex_2) MapObjectUnkDRMC();
 }
 
-ARM MapObjectProfileUnkDRMC::MapObjectProfileUnkDRMC() :
+MapObjectProfileUnkDRMC::MapObjectProfileUnkDRMC() :
     MapObjectProfile(MapObjectId_DRMC) {}
 
-ARM MapObjectUnkDRMC::MapObjectUnkDRMC() {}
+MapObjectUnkDRMC::MapObjectUnkDRMC() {}
 
-ARM void MapObjectUnkDRMC::func_ov041_0212d050(void) {}
-ARM void MapObjectUnkDRMC::func_ov041_0212d074(void) {}
-ARM void MapObjectUnkDRMC::func_ov041_0212d08c(void) {}
-ARM void MapObjectUnkDRMC::func_ov041_0212d184(void) {}
-ARM void MapObjectUnkDRMC::func_ov041_0212d1ec(void) {}
+void MapObjectUnkDRMC::func_ov041_0212d050(void) {}
+void MapObjectUnkDRMC::func_ov041_0212d074(void) {}
+void MapObjectUnkDRMC::func_ov041_0212d08c(void) {}
+void MapObjectUnkDRMC::func_ov041_0212d184(void) {}
+void MapObjectUnkDRMC::func_ov041_0212d1ec(void) {}
 
-ARM MapObjectUnkDRMC::~MapObjectUnkDRMC() {}
-ARM MapObjectProfileUnkDRMC::~MapObjectProfileUnkDRMC() {}
+MapObjectUnkDRMC::~MapObjectUnkDRMC() {}
+MapObjectProfileUnkDRMC::~MapObjectProfileUnkDRMC() {}

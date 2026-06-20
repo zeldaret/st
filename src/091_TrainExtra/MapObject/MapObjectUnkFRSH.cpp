@@ -3,18 +3,18 @@
 #include "MapObject/MapObjectUnkFRSH.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkFRSH);
+DECL_PROFILE(MapObjectProfileUnkFRSH);
 
-ARM MapObject *MapObjectProfileUnkFRSH::Create() {
+MapObject *MapObjectProfileUnkFRSH::Create() {
     return new(HeapIndex_2) MapObjectUnkFRSH();
 }
 
-ARM MapObjectProfileUnkFRSH::MapObjectProfileUnkFRSH() :
+MapObjectProfileUnkFRSH::MapObjectProfileUnkFRSH() :
     MapObjectProfile(MapObjectId_FRSH) {}
 
-ARM MapObjectUnkFRSH::MapObjectUnkFRSH() {}
+MapObjectUnkFRSH::MapObjectUnkFRSH() {}
 
-ARM void MapObjectUnkFRSH::func_ov091_02167a90(void) {}
+void MapObjectUnkFRSH::func_ov091_02167a90(void) {}
 
-ARM MapObjectUnkFRSH::~MapObjectUnkFRSH() {}
-ARM MapObjectProfileUnkFRSH::~MapObjectProfileUnkFRSH() {}
+MapObjectUnkFRSH::~MapObjectUnkFRSH() {}
+MapObjectProfileUnkFRSH::~MapObjectProfileUnkFRSH() {}

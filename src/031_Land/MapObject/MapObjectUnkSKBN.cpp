@@ -3,22 +3,22 @@
 #include "MapObject/MapObjectUnkSKBN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkSKBN);
+DECL_PROFILE(MapObjectProfileUnkSKBN);
 
-ARM MapObject *MapObjectProfileUnkSKBN::Create() {
+MapObject *MapObjectProfileUnkSKBN::Create() {
     return new(HeapIndex_2) MapObjectUnkSKBN();
 }
 
-ARM MapObjectProfileUnkSKBN::MapObjectProfileUnkSKBN() :
+MapObjectProfileUnkSKBN::MapObjectProfileUnkSKBN() :
     MapObjectProfile(MapObjectId_SKBN) {}
 
-ARM MapObjectUnkSKBN::MapObjectUnkSKBN() {}
+MapObjectUnkSKBN::MapObjectUnkSKBN() {}
 
-ARM void MapObjectUnkSKBN::func_ov031_0210556c(void) {}
-ARM void MapObjectUnkSKBN::func_ov031_02105648(void) {}
-ARM void MapObjectUnkSKBN::func_ov031_02105690(void) {}
-ARM void MapObjectUnkSKBN::func_ov031_021056bc(void) {}
-ARM void MapObjectUnkSKBN::func_ov031_021057b4(void) {}
+void MapObjectUnkSKBN::func_ov031_0210556c(void) {}
+void MapObjectUnkSKBN::func_ov031_02105648(void) {}
+void MapObjectUnkSKBN::func_ov031_02105690(void) {}
+void MapObjectUnkSKBN::func_ov031_021056bc(void) {}
+void MapObjectUnkSKBN::func_ov031_021057b4(void) {}
 
-ARM MapObjectUnkSKBN::~MapObjectUnkSKBN() {}
-ARM MapObjectProfileUnkSKBN::~MapObjectProfileUnkSKBN() {}
+MapObjectUnkSKBN::~MapObjectUnkSKBN() {}
+MapObjectProfileUnkSKBN::~MapObjectProfileUnkSKBN() {}

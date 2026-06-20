@@ -3,18 +3,18 @@
 #include "Actor/ActorUnkDSVC.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkDSVC);
+DECL_PROFILE(ActorProfileUnkDSVC);
 
-ARM Actor *ActorProfileUnkDSVC::Create() {
+Actor *ActorProfileUnkDSVC::Create() {
     return new(HeapIndex_2) ActorUnkDSVC();
 }
 
-ARM ActorProfileUnkDSVC::ActorProfileUnkDSVC() :
+ActorProfileUnkDSVC::ActorProfileUnkDSVC() :
     ActorProfile_Derived1(ActorId_DSVC) {}
 
-ARM ActorUnkDSVC::ActorUnkDSVC() {}
+ActorUnkDSVC::ActorUnkDSVC() {}
 
-ARM void ActorUnkDSVC::func_ov084_0215af5c(void) {}
+void ActorUnkDSVC::func_ov084_0215af5c(void) {}
 
-ARM ActorUnkDSVC::~ActorUnkDSVC() {}
-ARM ActorProfileUnkDSVC::~ActorProfileUnkDSVC() {}
+ActorUnkDSVC::~ActorUnkDSVC() {}
+ActorProfileUnkDSVC::~ActorProfileUnkDSVC() {}

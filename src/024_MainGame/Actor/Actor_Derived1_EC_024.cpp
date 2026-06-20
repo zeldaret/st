@@ -1,4 +1,4 @@
-#include "Actor/ActorUnk_ov000_020a8bb0.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "Unknown/UnkStruct_027e0960.hpp"
 
 struct UnkFuncStruct1 {
@@ -16,7 +16,7 @@ bool data_ov024_020d86b4 = false;
 
 THUMB_BEGIN
 
-ActorUnk_ov000_020a8bb0_EC::ActorUnk_ov000_020a8bb0_EC() {
+Actor_Derived1_EC::Actor_Derived1_EC() {
     this->mUnk_00   = 0;
     this->mUnk_04   = 0;
     this->mUnk_05   = 0;
@@ -30,17 +30,17 @@ ActorUnk_ov000_020a8bb0_EC::ActorUnk_ov000_020a8bb0_EC() {
 
 THUMB_END
 
-void ActorUnk_ov000_020a8bb0_EC::func_ov024_020d6680(const VecFx32 *param1, u8 *param2) {
+void Actor_Derived1_EC::func_ov024_020d6680(const VecFx32 *param1, u8 *param2) {
     this->mUnk_00 = data_027e0960->func_ov000_0205a390(*param2);
     VecFx32_Copy(param1, &this->mUnk_0C);
 }
 
-void ActorUnk_ov000_020a8bb0_EC::func_ov024_020d66c0(const VecFx32 *param1, unk32 param2) {
+void Actor_Derived1_EC::func_ov024_020d66c0(const VecFx32 *param1, unk32 param2) {
     this->mUnk_00 = data_027e0960->func_ov000_0205a3fc(*param1, param2);
     VecFx32_Copy(param1, &this->mUnk_0C);
 }
 
-bool ActorUnk_ov000_020a8bb0_EC::func_ov024_020d6704() {
+bool Actor_Derived1_EC::func_ov024_020d6704() {
     if (this->mUnk_08 & 0x10 || this->mUnk_08 & 0x08 || this->mUnk_08 & 0x04) {
         return true;
     }
@@ -48,7 +48,7 @@ bool ActorUnk_ov000_020a8bb0_EC::func_ov024_020d6704() {
     return false;
 }
 
-void ActorUnk_ov000_020a8bb0_EC::func_ov024_020d6730() {
+void Actor_Derived1_EC::func_ov024_020d6730() {
     BOOL var_r0;
 
     this->mUnk_08 |= 0x02;
@@ -166,8 +166,8 @@ void ActorUnk_ov000_020a8bb0_EC::func_ov024_020d6730() {
     }
 }
 
-u16 *ActorUnk_ov000_020a8bb0_EC::func_ov024_020d69d8(VecFx32 *pPos, s16 *pAngle, VecFx32 *pVel, unk32 param4, s16 param5,
-                                                     unk32 param6) {
+u16 *Actor_Derived1_EC::func_ov024_020d69d8(VecFx32 *pPos, s16 *pAngle, VecFx32 *pVel, unk32 param4, s16 param5,
+                                            unk32 param6) {
     VecFx32 sp1C;
     VecFx32 sp10;
     VecFx32 sp4;
@@ -215,8 +215,8 @@ u16 *ActorUnk_ov000_020a8bb0_EC::func_ov024_020d69d8(VecFx32 *pPos, s16 *pAngle,
     return &this->mUnk_08;
 }
 
-u16 *ActorUnk_ov000_020a8bb0_EC::func_ov024_020d6b7c(VecFx32 *pPos, s16 *pAngle, VecFx32 *pVel, unk32 param4, s16 param5,
-                                                     unk32 param6) {
+u16 *Actor_Derived1_EC::func_ov024_020d6b7c(VecFx32 *pPos, s16 *pAngle, VecFx32 *pVel, unk32 param4, s16 param5,
+                                            unk32 param6) {
     VecFx32 sp28;
     VecFx32 sp1C;
     VecFx32 sp10;
@@ -270,7 +270,7 @@ u16 *ActorUnk_ov000_020a8bb0_EC::func_ov024_020d6b7c(VecFx32 *pPos, s16 *pAngle,
     return &this->mUnk_08;
 }
 
-u16 *ActorUnk_ov000_020a8bb0_EC::func_ov024_020d6d80(VecFx32 *pPos, VecFx32 *pVel) {
+u16 *Actor_Derived1_EC::func_ov024_020d6d80(VecFx32 *pPos, VecFx32 *pVel) {
     VecFx32 sp18;
     VecFx32 spC;
     VecFx32 sp0;

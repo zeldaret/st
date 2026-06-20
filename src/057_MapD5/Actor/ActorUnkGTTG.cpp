@@ -3,18 +3,18 @@
 #include "Actor/ActorUnkGTTG.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkGTTG);
+DECL_PROFILE(ActorProfileUnkGTTG);
 
-ARM Actor *ActorProfileUnkGTTG::Create() {
+Actor *ActorProfileUnkGTTG::Create() {
     return new(HeapIndex_2) ActorUnkGTTG();
 }
 
-ARM ActorProfileUnkGTTG::ActorProfileUnkGTTG() :
+ActorProfileUnkGTTG::ActorProfileUnkGTTG() :
     ActorProfile(ActorId_GTTG) {}
 
-ARM ActorUnkGTTG::ActorUnkGTTG() {}
+ActorUnkGTTG::ActorUnkGTTG() {}
 
-ARM void ActorUnkGTTG::func_ov057_0213a8b8(void) {}
+void ActorUnkGTTG::func_ov057_0213a8b8(void) {}
 
-ARM ActorUnkGTTG::~ActorUnkGTTG() {}
-ARM ActorProfileUnkGTTG::~ActorProfileUnkGTTG() {}
+ActorUnkGTTG::~ActorUnkGTTG() {}
+ActorProfileUnkGTTG::~ActorProfileUnkGTTG() {}

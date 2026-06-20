@@ -3,23 +3,23 @@
 #include "Actor/ActorUnkRBDS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRBDS);
+DECL_PROFILE(ActorProfileUnkRBDS);
 
-ARM Actor *ActorProfileUnkRBDS::Create() {
+Actor *ActorProfileUnkRBDS::Create() {
     return new(HeapIndex_2) ActorUnkRBDS();
 }
 
-ARM ActorProfileUnkRBDS::ActorProfileUnkRBDS() :
+ActorProfileUnkRBDS::ActorProfileUnkRBDS() :
     ActorProfile_Derived1(ActorId_RBDS) {}
 
-ARM ActorUnkRBDS::ActorUnkRBDS() {}
+ActorUnkRBDS::ActorUnkRBDS() {}
 
-ARM void ActorUnkRBDS::func_ov087_02161244(void) {}
-ARM void ActorUnkRBDS::func_ov087_021612b4(void) {}
-ARM void ActorUnkRBDS::func_ov087_021612b8(void) {}
-ARM void ActorUnkRBDS::func_ov087_021612cc(void) {}
-ARM void ActorUnkRBDS::func_ov087_021612e0(void) {}
-ARM void ActorUnkRBDS::func_ov087_021612ec(void) {}
+void ActorUnkRBDS::func_ov087_02161244(void) {}
+void ActorUnkRBDS::func_ov087_021612b4(void) {}
+void ActorUnkRBDS::func_ov087_021612b8(void) {}
+void ActorUnkRBDS::func_ov087_021612cc(void) {}
+void ActorUnkRBDS::func_ov087_021612e0(void) {}
+void ActorUnkRBDS::func_ov087_021612ec(void) {}
 
-ARM ActorUnkRBDS::~ActorUnkRBDS() {}
-ARM ActorProfileUnkRBDS::~ActorProfileUnkRBDS() {}
+ActorUnkRBDS::~ActorUnkRBDS() {}
+ActorProfileUnkRBDS::~ActorProfileUnkRBDS() {}

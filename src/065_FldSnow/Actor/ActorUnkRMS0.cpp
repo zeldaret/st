@@ -3,18 +3,18 @@
 #include "Actor/ActorUnkRMS0.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRMS0);
+DECL_PROFILE(ActorProfileUnkRMS0);
 
-ARM Actor *ActorProfileUnkRMS0::Create() {
+Actor *ActorProfileUnkRMS0::Create() {
     return new(HeapIndex_2) ActorUnkRMS0();
 }
 
-ARM ActorProfileUnkRMS0::ActorProfileUnkRMS0() :
+ActorProfileUnkRMS0::ActorProfileUnkRMS0() :
     ActorProfile_Derived1(ActorId_RMS0) {}
 
-ARM ActorUnkRMS0::ActorUnkRMS0() {}
+ActorUnkRMS0::ActorUnkRMS0() {}
 
-ARM void ActorUnkRMS0::func_ov065_02158e08(void) {}
+void ActorUnkRMS0::func_ov065_02158e08(void) {}
 
-ARM ActorUnkRMS0::~ActorUnkRMS0() {}
-ARM ActorProfileUnkRMS0::~ActorProfileUnkRMS0() {}
+ActorUnkRMS0::~ActorUnkRMS0() {}
+ActorProfileUnkRMS0::~ActorProfileUnkRMS0() {}

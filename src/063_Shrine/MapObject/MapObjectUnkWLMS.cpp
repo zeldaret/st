@@ -3,33 +3,33 @@
 #include "MapObject/MapObjectUnkWLMS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkWLMS);
+DECL_PROFILE(MapObjectProfileUnkWLMS);
 
-ARM MapObject *MapObjectProfileUnkWLMS::Create() {
+MapObject *MapObjectProfileUnkWLMS::Create() {
     return new(HeapIndex_2) MapObjectUnkWLMS();
 }
 
-ARM MapObjectProfileUnkWLMS::MapObjectProfileUnkWLMS() :
+MapObjectProfileUnkWLMS::MapObjectProfileUnkWLMS() :
     MapObjectProfile(MapObjectId_WLMS) {}
 
-ARM MapObjectUnkWLMS::MapObjectUnkWLMS() {}
+MapObjectUnkWLMS::MapObjectUnkWLMS() {}
 
-ARM void MapObjectUnkWLMS::func_ov063_0215fe74(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_0215fe88(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_0215feb0(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_0215fff8(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_02160030(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_02160254(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_02160548(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_02160580(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_02160688(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_021606b4(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_02160780(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_02160880(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_021608a8(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_02160918(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_02160938(void) {}
-ARM void MapObjectUnkWLMS::func_ov063_0216095c(void) {}
+void MapObjectUnkWLMS::func_ov063_0215fe74(void) {}
+void MapObjectUnkWLMS::func_ov063_0215fe88(void) {}
+void MapObjectUnkWLMS::func_ov063_0215feb0(void) {}
+void MapObjectUnkWLMS::func_ov063_0215fff8(void) {}
+void MapObjectUnkWLMS::func_ov063_02160030(void) {}
+void MapObjectUnkWLMS::func_ov063_02160254(void) {}
+void MapObjectUnkWLMS::func_ov063_02160548(void) {}
+void MapObjectUnkWLMS::func_ov063_02160580(void) {}
+void MapObjectUnkWLMS::func_ov063_02160688(void) {}
+void MapObjectUnkWLMS::func_ov063_021606b4(void) {}
+void MapObjectUnkWLMS::func_ov063_02160780(void) {}
+void MapObjectUnkWLMS::func_ov063_02160880(void) {}
+void MapObjectUnkWLMS::func_ov063_021608a8(void) {}
+void MapObjectUnkWLMS::func_ov063_02160918(void) {}
+void MapObjectUnkWLMS::func_ov063_02160938(void) {}
+void MapObjectUnkWLMS::func_ov063_0216095c(void) {}
 
-ARM MapObjectUnkWLMS::~MapObjectUnkWLMS() {}
-ARM MapObjectProfileUnkWLMS::~MapObjectProfileUnkWLMS() {}
+MapObjectUnkWLMS::~MapObjectUnkWLMS() {}
+MapObjectProfileUnkWLMS::~MapObjectProfileUnkWLMS() {}

@@ -3,20 +3,20 @@
 #include "MapObject/MapObjectUnkFSPS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkFSPS);
+DECL_PROFILE(MapObjectProfileUnkFSPS);
 
-ARM MapObject *MapObjectProfileUnkFSPS::Create() {
+MapObject *MapObjectProfileUnkFSPS::Create() {
     return new(HeapIndex_2) MapObjectUnkFSPS();
 }
 
-ARM MapObjectProfileUnkFSPS::MapObjectProfileUnkFSPS() :
+MapObjectProfileUnkFSPS::MapObjectProfileUnkFSPS() :
     MapObjectProfile(MapObjectId_FSPS) {}
 
-ARM MapObjectUnkFSPS::MapObjectUnkFSPS() {}
+MapObjectUnkFSPS::MapObjectUnkFSPS() {}
 
-ARM void MapObjectUnkFSPS::func_ov070_02145200(void) {}
-ARM void MapObjectUnkFSPS::func_ov070_0214520c(void) {}
-ARM void MapObjectUnkFSPS::func_ov070_0214525c(void) {}
+void MapObjectUnkFSPS::func_ov070_02145200(void) {}
+void MapObjectUnkFSPS::func_ov070_0214520c(void) {}
+void MapObjectUnkFSPS::func_ov070_0214525c(void) {}
 
-ARM MapObjectUnkFSPS::~MapObjectUnkFSPS() {}
-ARM MapObjectProfileUnkFSPS::~MapObjectProfileUnkFSPS() {}
+MapObjectUnkFSPS::~MapObjectUnkFSPS() {}
+MapObjectProfileUnkFSPS::~MapObjectProfileUnkFSPS() {}

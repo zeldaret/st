@@ -3,22 +3,22 @@
 #include "MapObject/MapObjectUnkDRSN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkDRSN);
+DECL_PROFILE(MapObjectProfileUnkDRSN);
 
-ARM MapObject *MapObjectProfileUnkDRSN::Create() {
+MapObject *MapObjectProfileUnkDRSN::Create() {
     return new(HeapIndex_2) MapObjectUnkDRSN();
 }
 
-ARM MapObjectProfileUnkDRSN::MapObjectProfileUnkDRSN() :
+MapObjectProfileUnkDRSN::MapObjectProfileUnkDRSN() :
     MapObjectProfile(MapObjectId_DRSN) {}
 
-ARM MapObjectUnkDRSN::MapObjectUnkDRSN() {}
+MapObjectUnkDRSN::MapObjectUnkDRSN() {}
 
-ARM void MapObjectUnkDRSN::func_ov079_021569b4(void) {}
-ARM void MapObjectUnkDRSN::func_ov079_02156a90(void) {}
-ARM void MapObjectUnkDRSN::func_ov079_02156b9c(void) {}
-ARM void MapObjectUnkDRSN::func_ov079_02156c0c(void) {}
-ARM void MapObjectUnkDRSN::func_ov079_02156c24(void) {}
+void MapObjectUnkDRSN::func_ov079_021569b4(void) {}
+void MapObjectUnkDRSN::func_ov079_02156a90(void) {}
+void MapObjectUnkDRSN::func_ov079_02156b9c(void) {}
+void MapObjectUnkDRSN::func_ov079_02156c0c(void) {}
+void MapObjectUnkDRSN::func_ov079_02156c24(void) {}
 
-ARM MapObjectUnkDRSN::~MapObjectUnkDRSN() {}
-ARM MapObjectProfileUnkDRSN::~MapObjectProfileUnkDRSN() {}
+MapObjectUnkDRSN::~MapObjectUnkDRSN() {}
+MapObjectProfileUnkDRSN::~MapObjectProfileUnkDRSN() {}

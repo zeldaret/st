@@ -6,21 +6,21 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkGORY);
+DECL_PROFILE(ActorProfileUnkGORY);
 
-ARM Actor *ActorProfileUnkGORY::Create() {
+Actor *ActorProfileUnkGORY::Create() {
     return new(HeapIndex_2) ActorUnkGORY();
 }
 
-ARM ActorProfileUnkGORY::ActorProfileUnkGORY() :
+ActorProfileUnkGORY::ActorProfileUnkGORY() :
     ActorProfile_Derived1(ActorId_GORY) {}
 
-ARM ActorUnkGORY::ActorUnkGORY() {}
+ActorUnkGORY::ActorUnkGORY() {}
 
-ARM void ActorUnkGORY::func_ov036_0211bc20(void) {}
-ARM void ActorUnkGORY::func_ov036_0211bc84(void) {}
+void ActorUnkGORY::func_ov036_0211bc20(void) {}
+void ActorUnkGORY::func_ov036_0211bc84(void) {}
 
-ARM ItemId ActorUnkGORY::func_ov036_0211bcb0(unk32 param1) {
+ItemId ActorUnkGORY::func_ov036_0211bcb0(unk32 param1) {
     switch (param1) {
         case 0:
             return ItemId_BombsRefill;
@@ -50,5 +50,5 @@ ARM ItemId ActorUnkGORY::func_ov036_0211bcb0(unk32 param1) {
     return ItemId_Nothing;
 }
 
-ARM ActorUnkGORY::~ActorUnkGORY() {}
-ARM ActorProfileUnkGORY::~ActorProfileUnkGORY() {}
+ActorUnkGORY::~ActorUnkGORY() {}
+ActorProfileUnkGORY::~ActorProfileUnkGORY() {}

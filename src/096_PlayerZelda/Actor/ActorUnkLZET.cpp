@@ -3,16 +3,16 @@
 #include "Actor/ActorUnkLZET.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkLZET);
+DECL_PROFILE(ActorProfileUnkLZET);
 
-ARM Actor *ActorProfileUnkLZET::Create() {
+Actor *ActorProfileUnkLZET::Create() {
     return new(HeapIndex_2) ActorUnkLZET();
 }
 
-ARM ActorProfileUnkLZET::ActorProfileUnkLZET() :
+ActorProfileUnkLZET::ActorProfileUnkLZET() :
     ActorProfile(ActorId_LZET) {}
 
-ARM ActorUnkLZET::ActorUnkLZET() {}
+ActorUnkLZET::ActorUnkLZET() {}
 
-ARM ActorUnkLZET::~ActorUnkLZET() {}
-ARM ActorProfileUnkLZET::~ActorProfileUnkLZET() {}
+ActorUnkLZET::~ActorUnkLZET() {}
+ActorProfileUnkLZET::~ActorProfileUnkLZET() {}

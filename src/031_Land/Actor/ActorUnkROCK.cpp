@@ -3,24 +3,24 @@
 #include "Actor/ActorUnkROCK.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkROCK);
+DECL_PROFILE(ActorProfileUnkROCK);
 
-ARM Actor *ActorProfileUnkROCK::Create() {
+Actor *ActorProfileUnkROCK::Create() {
     return new(HeapIndex_2) ActorUnkROCK();
 }
 
-ARM ActorProfileUnkROCK::ActorProfileUnkROCK() :
+ActorProfileUnkROCK::ActorProfileUnkROCK() :
     ActorProfile_Derived1(ActorId_ROCK) {}
 
-ARM ActorUnkROCK::ActorUnkROCK() {}
+ActorUnkROCK::ActorUnkROCK() {}
 
-ARM void ActorUnkROCK::func_ov031_020e897c(void) {}
-ARM void ActorUnkROCK::func_ov031_020e89ac(void) {}
-ARM void ActorUnkROCK::func_ov031_020e8a48(void) {}
-ARM void ActorUnkROCK::func_ov031_020e8acc(void) {}
-ARM void ActorUnkROCK::func_ov031_020e8afc(void) {}
-ARM void ActorUnkROCK::func_ov031_020e8ba0(void) {}
-ARM void ActorUnkROCK::func_ov031_020e8c08(void) {}
+void ActorUnkROCK::func_ov031_020e897c(void) {}
+void ActorUnkROCK::func_ov031_020e89ac(void) {}
+void ActorUnkROCK::func_ov031_020e8a48(void) {}
+void ActorUnkROCK::func_ov031_020e8acc(void) {}
+void ActorUnkROCK::func_ov031_020e8afc(void) {}
+void ActorUnkROCK::func_ov031_020e8ba0(void) {}
+void ActorUnkROCK::func_ov031_020e8c08(void) {}
 
-ARM ActorUnkROCK::~ActorUnkROCK() {}
-ARM ActorProfileUnkROCK::~ActorProfileUnkROCK() {}
+ActorUnkROCK::~ActorUnkROCK() {}
+ActorProfileUnkROCK::~ActorProfileUnkROCK() {}

@@ -3,29 +3,29 @@
 #include "MapObject/MapObjectUnkTWGS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkTWGS);
+DECL_PROFILE(MapObjectProfileUnkTWGS);
 
-ARM MapObject *MapObjectProfileUnkTWGS::Create() {
+MapObject *MapObjectProfileUnkTWGS::Create() {
     return new(HeapIndex_2) MapObjectUnkTWGS();
 }
 
-ARM MapObjectProfileUnkTWGS::MapObjectProfileUnkTWGS() :
+MapObjectProfileUnkTWGS::MapObjectProfileUnkTWGS() :
     MapObjectProfile(MapObjectId_TWGS) {}
 
-ARM MapObjectUnkTWGS::MapObjectUnkTWGS() {}
+MapObjectUnkTWGS::MapObjectUnkTWGS() {}
 
-ARM void MapObjectUnkTWGS::func_ov090_02172314(void) {}
-ARM void MapObjectUnkTWGS::func_ov090_02172328(void) {}
-ARM void MapObjectUnkTWGS::func_ov090_02172370(void) {}
-ARM void MapObjectUnkTWGS::func_ov090_0217244c(void) {}
-ARM void MapObjectUnkTWGS::func_ov090_02172460(void) {}
-ARM void MapObjectUnkTWGS::func_ov090_02172734(void) {}
-ARM void MapObjectUnkTWGS::func_ov090_02172784(void) {}
-ARM void MapObjectUnkTWGS::func_ov090_021727bc(void) {}
-ARM void MapObjectUnkTWGS::func_ov090_021727f4(void) {}
-ARM void MapObjectUnkTWGS::func_ov090_02172808(void) {}
-ARM void MapObjectUnkTWGS::func_ov090_02172840(void) {}
-ARM void MapObjectUnkTWGS::func_ov090_021728d4(void) {}
+void MapObjectUnkTWGS::func_ov090_02172314(void) {}
+void MapObjectUnkTWGS::func_ov090_02172328(void) {}
+void MapObjectUnkTWGS::func_ov090_02172370(void) {}
+void MapObjectUnkTWGS::func_ov090_0217244c(void) {}
+void MapObjectUnkTWGS::func_ov090_02172460(void) {}
+void MapObjectUnkTWGS::func_ov090_02172734(void) {}
+void MapObjectUnkTWGS::func_ov090_02172784(void) {}
+void MapObjectUnkTWGS::func_ov090_021727bc(void) {}
+void MapObjectUnkTWGS::func_ov090_021727f4(void) {}
+void MapObjectUnkTWGS::func_ov090_02172808(void) {}
+void MapObjectUnkTWGS::func_ov090_02172840(void) {}
+void MapObjectUnkTWGS::func_ov090_021728d4(void) {}
 
-ARM MapObjectUnkTWGS::~MapObjectUnkTWGS() {}
-ARM MapObjectProfileUnkTWGS::~MapObjectProfileUnkTWGS() {}
+MapObjectUnkTWGS::~MapObjectUnkTWGS() {}
+MapObjectProfileUnkTWGS::~MapObjectProfileUnkTWGS() {}

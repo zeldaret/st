@@ -23,7 +23,7 @@ static unk8 data_ov019_020edccc[0xDC00];
 const u16 data_ov019_020d1bcc[] = {0x00, 0x01, 0x02};
 
 // https://decomp.me/scratch/LzPt6
-ARM FileSelectSubScreen::FileSelectSubScreen() :
+FileSelectSubScreen::FileSelectSubScreen() :
     mUnk_001C(0),
     mUnk_0020(0),
     mUnk_0028(1),
@@ -70,7 +70,7 @@ ARM FileSelectSubScreen::FileSelectSubScreen() :
     this->func_ov019_020cf73c(2, 1);
 }
 
-ARM void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
+void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     this->mUnk_0024 = this->mUnk_0020;
     this->mUnk_0020 += 0x800;
 
@@ -116,7 +116,7 @@ ARM void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchCont
     this->mUnk_002C.vfunc_00();
 }
 
-ARM void FileSelectSubScreen::func_ov019_020cf73c(unk32 param1, unk32 param2) {
+void FileSelectSubScreen::func_ov019_020cf73c(unk32 param1, unk32 param2) {
     unk32 arg0;
     unk32 arg7;
     unk32 arg8;
@@ -158,11 +158,11 @@ ARM void FileSelectSubScreen::func_ov019_020cf73c(unk32 param1, unk32 param2) {
     }
 }
 
-ARM void FileSelectSubScreen::vfunc_10(unk8 *param1) {
+void FileSelectSubScreen::vfunc_10(unk8 *param1) {
     this->mUnk_002C.vfunc_04();
 }
 
-ARM FileSelect_UnkClass7::FileSelect_UnkClass7() {
+FileSelect_UnkClass7::FileSelect_UnkClass7() {
     Random *pRandom = &gRandom;
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_004.mUnk_000); i++) {
@@ -181,7 +181,7 @@ ARM FileSelect_UnkClass7::FileSelect_UnkClass7() {
     }
 }
 
-ARM void FileSelect_UnkClass7::vfunc_00() {
+void FileSelect_UnkClass7::vfunc_00() {
     for (int i = 0; i < ARRAY_LEN(this->mUnk_004.mUnk_000); i++) {
         this->mUnk_004.mUnk_000[i].func_ov000_020609c4();
 
@@ -199,7 +199,7 @@ ARM void FileSelect_UnkClass7::vfunc_00() {
     }
 }
 
-ARM void FileSelect_UnkClass7::vfunc_04() {
+void FileSelect_UnkClass7::vfunc_04() {
     for (int i = 0; i < 0x1E; i++) {
         data_0204af1c.func_0201aad0(&this->mUnk_004.mUnk_000[i], &this->mUnk_004.mUnk_E10[i], 1, 0);
     }

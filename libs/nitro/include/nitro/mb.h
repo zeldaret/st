@@ -35,7 +35,7 @@ typedef struct MBGameRegistry {
     /* 10 */ const char *iconPaletteFile;
     /* 14 */ u32 ggid;
     /* 18 */ u8 numPlayers;
-    /* 19 */ u8 unk_19[0x3c - 0x19];
+    /* 19 */ u8 unk_19[0x3C - 0x19];
     /* 3c */
 } MBGameRegistry;
 

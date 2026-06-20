@@ -431,7 +431,7 @@ void UICounter_Health::func_ov024_020cdaac() {
 
             //! TODO: regalloc fix
             Vec2s *ptr2          = &sp4;
-            UnkSubStruct19 *ptr3 = &this->mUnk_3E4[1];
+            CellAnimObject *ptr3 = &this->mUnk_3E4[1];
 
             switch (this->GetIterValue(var_r8)) {
                 case 0:

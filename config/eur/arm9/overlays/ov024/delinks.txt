@@ -243,7 +243,7 @@ src/024_MainGame/MiscAdvManager.cpp:
     .text       start:0x020d62b4 end:0x020d6650
     .bss        start:0x020d86b0 end:0x020d86b4
 
-src/024_MainGame/Actor/ActorUnk_ov000_020a8bb0_EC_024.cpp:
+src/024_MainGame/Actor/Actor_Derived1_EC_024.cpp:
     complete
     .text       start:0x020d6650 end:0x020d6e9c
     .bss        start:0x020d86b4 end:0x020d86b8

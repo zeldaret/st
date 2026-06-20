@@ -25,15 +25,15 @@ public:
     /* 00A */ u8 mUnk_00A;
     /* 00B */ unk8 mUnk_00B;
     /* 000 */ UnkStruct_ov019_020d24c8_28_258 mUnk_00C;
-    /* 018 */ UnkSubStruct19 mUnk_024;
-    /* 090 */ UnkSubStruct19 mUnk_09C;
-    /* 108 */ UnkSubStruct19 mUnk_114;
-    /* 180 */ UnkSubStruct19 mUnk_18C;
-    /* 1F8 */ UnkSubStruct19 mUnk_204;
-    /* 270 */ UnkSubStruct19 mUnk_27C;
-    /* 2E8 */ UnkSubStruct19 mUnk_2F4;
-    /* 360 */ UnkSubStruct19 mUnk_36C;
-    /* 3E4 */ UnkSubStruct19 mUnk_3E4[2];
+    /* 018 */ CellAnimObject mUnk_024;
+    /* 090 */ CellAnimObject mUnk_09C;
+    /* 108 */ CellAnimObject mUnk_114;
+    /* 180 */ CellAnimObject mUnk_18C;
+    /* 1F8 */ CellAnimObject mUnk_204;
+    /* 270 */ CellAnimObject mUnk_27C;
+    /* 2E8 */ CellAnimObject mUnk_2F4;
+    /* 360 */ CellAnimObject mUnk_36C;
+    /* 3E4 */ CellAnimObject mUnk_3E4[2];
     /* 4D4 */ u8 mUnk_4D4;
     /* 4D5 */ u8 mUnk_4D5;
     /* 4D6 */ unk8 mUnk_4D6; // pad?
@@ -191,7 +191,7 @@ public:
 class UICounter_SmallKeys {
 public:
     /* 00 */ UnkStruct_ov019_020d24c8_28_258 mUnk_00;
-    /* 18 */ UnkSubStruct19 mUnk_18;
+    /* 18 */ CellAnimObject mUnk_18;
     /* 90 */ unk16 mUnk_90;
     /* 92 */ unk16 mUnk_92;
     /* 94 */

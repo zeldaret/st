@@ -3,30 +3,30 @@
 #include "Actor/ActorUnkTRER.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkTRER);
+DECL_PROFILE(ActorProfileUnkTRER);
 
-ARM Actor *ActorProfileUnkTRER::Create() {
+Actor *ActorProfileUnkTRER::Create() {
     return new(HeapIndex_2) ActorUnkTRER();
 }
 
-ARM ActorProfileUnkTRER::ActorProfileUnkTRER() :
+ActorProfileUnkTRER::ActorProfileUnkTRER() :
     ActorProfile_Derived1(ActorId_TRER) {}
 
-ARM ActorUnkTRER::ActorUnkTRER() {}
+ActorUnkTRER::ActorUnkTRER() {}
 
-ARM void ActorUnkTRER::func_ov027_02144944(void) {}
-ARM void ActorUnkTRER::func_ov027_021449dc(void) {}
-ARM void ActorUnkTRER::func_ov027_02144a18(void) {}
-ARM void ActorUnkTRER::func_ov027_02144cf0(void) {}
-ARM void ActorUnkTRER::func_ov027_02144d48(void) {}
-ARM void ActorUnkTRER::func_ov027_02144db8(void) {}
-ARM void ActorUnkTRER::func_ov027_02144ecc(void) {}
-ARM void ActorUnkTRER::func_ov027_02144ed0(void) {}
-ARM void ActorUnkTRER::func_ov027_02144f48(void) {}
-ARM void ActorUnkTRER::func_ov027_02144f4c(void) {}
-ARM void ActorUnkTRER::func_ov027_02144f58(void) {}
-ARM void ActorUnkTRER::func_ov027_02144f5c(void) {}
-ARM void ActorUnkTRER::func_ov027_02144f9c(void) {}
+void ActorUnkTRER::func_ov027_02144944(void) {}
+void ActorUnkTRER::func_ov027_021449dc(void) {}
+void ActorUnkTRER::func_ov027_02144a18(void) {}
+void ActorUnkTRER::func_ov027_02144cf0(void) {}
+void ActorUnkTRER::func_ov027_02144d48(void) {}
+void ActorUnkTRER::func_ov027_02144db8(void) {}
+void ActorUnkTRER::func_ov027_02144ecc(void) {}
+void ActorUnkTRER::func_ov027_02144ed0(void) {}
+void ActorUnkTRER::func_ov027_02144f48(void) {}
+void ActorUnkTRER::func_ov027_02144f4c(void) {}
+void ActorUnkTRER::func_ov027_02144f58(void) {}
+void ActorUnkTRER::func_ov027_02144f5c(void) {}
+void ActorUnkTRER::func_ov027_02144f9c(void) {}
 
-ARM ActorUnkTRER::~ActorUnkTRER() {}
-ARM ActorProfileUnkTRER::~ActorProfileUnkTRER() {}
+ActorUnkTRER::~ActorUnkTRER() {}
+ActorProfileUnkTRER::~ActorProfileUnkTRER() {}

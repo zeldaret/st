@@ -3,19 +3,19 @@
 #include "MapObject/MapObjectUnkMZFX.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkMZFX);
+DECL_PROFILE(MapObjectProfileUnkMZFX);
 
-ARM MapObject *MapObjectProfileUnkMZFX::Create() {
+MapObject *MapObjectProfileUnkMZFX::Create() {
     return new(HeapIndex_2) MapObjectUnkMZFX();
 }
 
-ARM MapObjectProfileUnkMZFX::MapObjectProfileUnkMZFX() :
+MapObjectProfileUnkMZFX::MapObjectProfileUnkMZFX() :
     MapObjectProfile(MapObjectId_MZFX) {}
 
-ARM MapObjectUnkMZFX::MapObjectUnkMZFX() {}
+MapObjectUnkMZFX::MapObjectUnkMZFX() {}
 
-ARM void MapObjectUnkMZFX::func_ov091_02167bfc(void) {}
-ARM void MapObjectUnkMZFX::func_ov091_02167c04(void) {}
+void MapObjectUnkMZFX::func_ov091_02167bfc(void) {}
+void MapObjectUnkMZFX::func_ov091_02167c04(void) {}
 
-ARM MapObjectUnkMZFX::~MapObjectUnkMZFX() {}
-ARM MapObjectProfileUnkMZFX::~MapObjectProfileUnkMZFX() {}
+MapObjectUnkMZFX::~MapObjectUnkMZFX() {}
+MapObjectProfileUnkMZFX::~MapObjectProfileUnkMZFX() {}

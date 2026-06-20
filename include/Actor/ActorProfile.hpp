@@ -3,12 +3,13 @@
 #include "Actor/ActorId.hpp"
 #include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/Common.hpp"
 #include "profile.hpp"
 #include "types.h"
 
 class Actor;
 
-class ActorProfile : public SysObject {
+class ActorProfile {
 public:
     /* 00 (vtable) */
     /* 04 */ Cylinder mUnk_04;
@@ -34,7 +35,7 @@ public:
     /* 00 */ virtual Actor *Create() = 0;
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0c();
+    /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
@@ -47,6 +48,9 @@ public:
 class ActorProfile_Derived1 : public ActorProfile {
 public:
     /* 00 (base) */
+    /* 3C */ UnkActorFileSystem2 mUnk_3C;
+    /* D4 */ unk32 mUnk_D4;
+    /* D8 */
 
     ActorProfile_Derived1(ActorId actorId);
     ActorProfile_Derived1(ActorId actorId1, ActorId actorId2);

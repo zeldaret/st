@@ -41,7 +41,9 @@ struct struct_aStack_2d8 {
     Font_UnkStruct1 *mUnk_20;
 };
 
-THUMB void SysFault::func_020127f0(unk32 param1) {
+THUMB_BEGIN
+
+void SysFault::func_020127f0(unk32 param1) {
     bool doDraw = false;
 
     func_02013214();
@@ -195,3 +197,5 @@ THUMB void SysFault::func_020127f0(unk32 param1) {
         OS_Panic();
     }
 }
+
+THUMB_END

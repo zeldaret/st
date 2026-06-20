@@ -1,6 +1,6 @@
 #include "Player/PlayerSceneChange.hpp"
 #include "Actor/ActorManager.hpp"
-#include "Actor/ActorUnk_ov000_020a8bb0.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "MapObject/MapObjectUnkDRTY.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -12,7 +12,7 @@
 extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_ov000_0205d65c(void *, VecFx32 *, VecFx32 *, u32);
 
-ARM PlayerSceneChange::PlayerSceneChange() {
+PlayerSceneChange::PlayerSceneChange() {
     this->mUnk_68 = this->mUnk_2C->mUnk_14C;
     this->mUnk_6C = -1;
 
@@ -22,7 +22,7 @@ ARM PlayerSceneChange::PlayerSceneChange() {
     this->mUnk_80.coords = this->mUnk_34->coords;
     this->mUnk_8C        = 0;
 
-    this->mUnk_90            = 0;
+    this->mUnk_90.Reset();
     *((u32 *) this->mUnk_94) = 0;
     this->mUnk_98            = -1;
     this->mUnk_9C.x          = 0;
@@ -35,7 +35,7 @@ ARM PlayerSceneChange::PlayerSceneChange() {
     this->mUnk_AE            = 0x8000;
 }
 
-ARM PlayerSceneChange::~PlayerSceneChange() {
+PlayerSceneChange::~PlayerSceneChange() {
     UnkStruct_ov000_0208f820_28 *pUnk_28 = this->mUnk_28;
     pUnk_28->mUnk_38.mUnk_08 &= 0xFFFD;
 
@@ -46,13 +46,12 @@ ARM PlayerSceneChange::~PlayerSceneChange() {
     func_ov000_0205ca74(this->mUnk_98);
 }
 
-ARM s16 PlayerSceneChange::func_ov112_02184bbc(s16 param1) {
-    // fake match?
-    if ((u32) (*(u16 *) &this->mUnk_90 << 0x10) >> 0x1E == 1) {
-        Actor *iVar1 = gpActorManager->func_01fff3b4(this->mUnk_90);
+s16 PlayerSceneChange::func_ov112_02184bbc(s16 param1) {
+    if (this->mUnk_90.type == ActorRefType_1) {
+        Actor *pActor = gpActorManager->func_01fff3b4(this->mUnk_90);
 
-        if (iVar1 != NULL) {
-            return iVar1->mAngle;
+        if (pActor != NULL) {
+            return pActor->mAngle;
         }
     } else if (this->mUnk_94[0] == 0x1000) {
         return this->mUnk_AE;
@@ -76,7 +75,7 @@ extern "C" bool func_ov000_02080998(VecFx32 *);
 extern "C" void func_01ff930c(UnkStruct_ov000_0208f820_40 *, unk16, unk32);
 
 // https://decomp.me/scratch/c7PhN
-ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
+void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
     const fx16 *pSinCosTable = gSinCosTable;
     Vec2b stack4;
     s16 stack3;
@@ -146,8 +145,8 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                     this->mUnk_70.z = temp_r8->z + MUL_FX32(data_0203f964[1], FLOAT_TO_FX32(2.0f));
                     break;
                 default:
-                    if (this->mUnk_2C->mUnk_150 == 0x1000) {
-                        stack2.y = this->mUnk_2C->mUnk_150 >> 0x10;
+                    if (this->mUnk_2C->mUnk_150.type_index == 0x1000) {
+                        stack2.y = this->mUnk_2C->mUnk_150.type_index;
                         stack2.x = 0;
 
                         MapObjectUnkDRTY *pDRTY = (MapObjectUnkDRTY *) gpMapObjManager->func_01fff498(stack2);
@@ -175,9 +174,9 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                             }
                         }
                     } else {
-                        if (((u32) ((u16) this->mUnk_2C->mUnk_150 << 0x10) >> 0x1E) == 1) {
-                            ActorUnk_ov000_020a8bb0 *temp_r0_6 =
-                                (ActorUnk_ov000_020a8bb0 *) gpActorManager->func_01fff3b4(this->mUnk_2C->mUnk_150);
+                        if (this->mUnk_2C->mUnk_150.type == ActorRefType_1) {
+                            Actor_Derived1 *temp_r0_6 =
+                                (Actor_Derived1 *) gpActorManager->func_01fff3b4(this->mUnk_2C->mUnk_150);
 
                             if (temp_r0_6 != NULL) {
                                 this->mUnk_70.x = temp_r0_6->mPos.x;
@@ -185,9 +184,9 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                                 this->mUnk_70.z = temp_r0_6->mPos.z;
 
                                 if (temp_r0_6->GetActorId() == ActorId_GTTG) {
-                                    this->mUnk_90 = temp_r0_6->mRef.index;
-                                    this->mUnk_AA = temp_r0_6->mAngle;
-                                    this->mUnk_A8 = temp_r0_6->mAngle;
+                                    this->mUnk_90.type_index = temp_r0_6->mRef.type_index;
+                                    this->mUnk_AA            = temp_r0_6->mAngle;
+                                    this->mUnk_A8            = temp_r0_6->mAngle;
                                 }
                             }
                         }
@@ -298,7 +297,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
             break;
         }
         case 0x3F:
-            if (param1->mUnk_00 != 0x3c) {
+            if (param1->mUnk_00 != 0x3C) {
                 this->mUnk_68 = data_027e09a4->func_ov000_02070554();
             }
 
@@ -306,7 +305,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
             if (eScene == SceneIndex_tekiya07) {
                 this->mUnk_68 = 0x18;
             } else {
-                switch (*data_027e09a4->func_ov000_02070538()) {
+                switch (data_027e09a4->func_ov000_02070538()->mSceneIndex) {
                     case SceneIndex_d_water27:
                         if (eScene == SceneIndex_b_water) {
                             this->mUnk_68 = 0x18;
@@ -459,7 +458,7 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
 }
 
 // https://decomp.me/scratch/gX5Rb
-ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
+void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
     switch (param1) {
         case 0x3C:
             if (this->mUnk_68 == 0x19) {
@@ -546,11 +545,11 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     // s16 iVar3 = var_r1_2 >> 4;
                     // fx32 uVar6 = gSinCosTable[iVar3 * 2] * 0x2000;
                     // fx32 uVar5 = gSinCosTable[iVar3 * 2 + 1] * 0x2000;
-                    // fx32 iVar2 = (gSinCosTable[iVar3 * 2 + 1] >> 0x13) + (0xfffff7ff < uVar5);
+                    // fx32 iVar2 = (gSinCosTable[iVar3 * 2 + 1] >> 0x13) + (0xFFFFF7FF < uVar5);
 
                     // this->mUnk_70.x +=
-                    //     (((uVar6 + 0x800) >> 0xc) | (gSinCosTable[iVar3 * 2] >> 0x13) + (0xfffff7ff < uVar6)) * 0x100000;
-                    // this->mUnk_70.z += (((uVar5 + 0x800) >> 0xc) | iVar2 << 0x14);
+                    //     (((uVar6 + 0x800) >> 0xC) | (gSinCosTable[iVar3 * 2] >> 0x13) + (0xFFFFF7FF < uVar6)) * 0x100000;
+                    // this->mUnk_70.z += (((uVar5 + 0x800) >> 0xC) | iVar2 << 0x14);
 
                     s32 idx   = (((s32) var_r1_2) >> 4) << 1;
                     s32 sin16 = (s16) data_0203feb0[idx];
@@ -724,7 +723,7 @@ ARM void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
     }
 }
 
-ARM bool PlayerSceneChange::vfunc_1c(VecFx32 *param1) {
+bool PlayerSceneChange::vfunc_1C(VecFx32 *param1) {
     if (data_027e0cdc->func_ov000_02082a28(1) == 0) {
         switch (this->mUnk_30->mUnk_68) {
             case 0x3C:
@@ -747,5 +746,5 @@ ARM bool PlayerSceneChange::vfunc_1c(VecFx32 *param1) {
         }
     }
 
-    return this->UnkStruct_ov000_0208f820::vfunc_1c(param1);
+    return this->UnkStruct_ov000_0208f820::vfunc_1C(param1);
 }

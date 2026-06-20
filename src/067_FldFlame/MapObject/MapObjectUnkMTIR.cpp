@@ -3,20 +3,20 @@
 #include "MapObject/MapObjectUnkMTIR.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkMTIR);
+DECL_PROFILE(MapObjectProfileUnkMTIR);
 
-ARM MapObject *MapObjectProfileUnkMTIR::Create() {
+MapObject *MapObjectProfileUnkMTIR::Create() {
     return new(HeapIndex_2) MapObjectUnkMTIR();
 }
 
-ARM MapObjectProfileUnkMTIR::MapObjectProfileUnkMTIR() :
+MapObjectProfileUnkMTIR::MapObjectProfileUnkMTIR() :
     MapObjectProfile(MapObjectId_MTIR) {}
 
-ARM MapObjectUnkMTIR::MapObjectUnkMTIR() {}
+MapObjectUnkMTIR::MapObjectUnkMTIR() {}
 
-ARM void MapObjectUnkMTIR::func_ov067_0215be74(void) {}
-ARM void MapObjectUnkMTIR::func_ov067_0215bec0(void) {}
-ARM void MapObjectUnkMTIR::func_ov067_0215bec4(void) {}
+void MapObjectUnkMTIR::func_ov067_0215be74(void) {}
+void MapObjectUnkMTIR::func_ov067_0215bec0(void) {}
+void MapObjectUnkMTIR::func_ov067_0215bec4(void) {}
 
-ARM MapObjectUnkMTIR::~MapObjectUnkMTIR() {}
-ARM MapObjectProfileUnkMTIR::~MapObjectProfileUnkMTIR() {}
+MapObjectUnkMTIR::~MapObjectUnkMTIR() {}
+MapObjectProfileUnkMTIR::~MapObjectProfileUnkMTIR() {}

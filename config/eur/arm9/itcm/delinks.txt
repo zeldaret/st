@@ -3,3 +3,6 @@
 
 src/ITCM/ITCM_MapObjectManager.cpp:
     .text       start:0x01fff498 end:0x01fff5d0
+
+src/ITCM/ITCM_ActorManager.cpp:
+    .text       start:0x01fff350 end:0x01fff440

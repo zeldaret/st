@@ -121,7 +121,7 @@ static PTMF<FileSelectMain> data_ov019_020d1edc[FileSelectState_Max] = {
 const unk32 data_ov019_020d1bbc[] = {0x00000000, 0x00000000, 0x00000000, 0x00000001};
 
 //! TODO: move to class
-ARM FileSelectMain::FileSelectMain() :
+FileSelectMain::FileSelectMain() :
     mState(FileSelectState_Unk_00),
     mExitMode(FileSelectExitMode_Unk_3),
     mSaveSlotIndex(-1),
@@ -193,49 +193,49 @@ ARM FileSelectMain::FileSelectMain() :
     this->func_ov019_020c6d10();
 }
 
-ARM FileSelectMain::~FileSelectMain() {
+FileSelectMain::~FileSelectMain() {
     this->mUnk_03E0.Reset();
 }
 
-ARM void FileSelectMain::func_ov019_020c6c14() {}
+void FileSelectMain::func_ov019_020c6c14() {}
 
-ARM void FileSelectMain::func_ov019_020c6c18() {
+void FileSelectMain::func_ov019_020c6c18() {
     this->mUnk_0C.Append(&this->mUnk_0488);
     this->mUnk_0C.Append(&this->mUnk_07E4);
     this->mUnk_0C.Append(&this->mUnk_0AC4);
 }
 
-ARM void FileSelectMain::func_ov019_020c6c54() {
+void FileSelectMain::func_ov019_020c6c54() {
     this->mUnk_0C.Append(&this->mUnk_0DA4);
     this->mUnk_0C.Append(&this->mUnk_11BC);
     this->mUnk_0C.Append(&this->mUnk_15D4);
     this->mUnk_0C.Append(&this->mUnk_18EC);
 }
 
-ARM void FileSelectMain::func_ov019_020c6c9c() {}
+void FileSelectMain::func_ov019_020c6c9c() {}
 
-ARM void FileSelectMain::func_ov019_020c6ca0() {
+void FileSelectMain::func_ov019_020c6ca0() {
     this->mUnk_0488.Detach();
     this->mUnk_07E4.Detach();
     this->mUnk_0AC4.Detach();
 }
 
-ARM void FileSelectMain::func_ov019_020c6cd0() {
+void FileSelectMain::func_ov019_020c6cd0() {
     this->mUnk_0DA4.Detach();
     this->mUnk_11BC.Detach();
     this->mUnk_15D4.Detach();
     this->mUnk_18EC.Detach();
 }
 
-ARM void FileSelectMain::func_ov019_020c6d08() {}
+void FileSelectMain::func_ov019_020c6d08() {}
 
-ARM void FileSelectMain::func_ov019_020c6d0c() {}
+void FileSelectMain::func_ov019_020c6d0c() {}
 
-ARM void FileSelectMain::func_ov019_020c6d10() {
+void FileSelectMain::func_ov019_020c6d10() {
     CALL_PTMF(PTMF<FileSelectMain>, data_ov019_020d1edc[this->mState]);
 }
 
-ARM void FileSelectMain::func_ov019_020c6d48() {
+void FileSelectMain::func_ov019_020c6d48() {
     Vec2us auStack_2c;
     volatile Vec2pCpp local_34;
     int value;
@@ -269,14 +269,14 @@ ARM void FileSelectMain::func_ov019_020c6d48() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c6e14() {
+void FileSelectMain::func_ov019_020c6e14() {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         this->GetUnk03E0(i).mUnk_004.mUnk_2A = 1;
     }
 }
 
 // non-matching
-ARM void FileSelectMain::func_ov019_020c6e3c() {
+void FileSelectMain::func_ov019_020c6e3c() {
     u16 var_r4;
     int var_r5;
     s32 var_r7;
@@ -335,7 +335,7 @@ ARM void FileSelectMain::func_ov019_020c6e3c() {
     this->mUnk_03E8[var_r5].func_ov000_02064080(&sp24, &sp1C, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_02, var_r4);
 }
 
-ARM void FileSelectMain::func_ov019_020c7000() {
+void FileSelectMain::func_ov019_020c7000() {
     unk32 var_r3;
     unk32 var_r4;
     unk32 var_r5;
@@ -427,7 +427,7 @@ ARM void FileSelectMain::func_ov019_020c7000() {
     this->mUnk_005C.mUnk_2A = false;
 }
 
-ARM void FileSelectMain::func_ov019_020c717c() {
+void FileSelectMain::func_ov019_020c717c() {
     this->mUnk_002C.func_0201ea68(0x28, 0, 8, 0);
     this->mUnk_002C.mUnk_0A = 1;
     this->mUnk_002C.mUnk_0B = 0;
@@ -441,19 +441,19 @@ ARM void FileSelectMain::func_ov019_020c717c() {
     this->func_ov019_020c6e3c();
 }
 
-ARM void FileSelectMain::func_ov019_020c71d0() {
+void FileSelectMain::func_ov019_020c71d0() {
     this->func_ov019_020c6c14();
     this->func_ov019_020c6ca0();
     this->func_ov019_020c6e3c();
 }
 
-ARM void FileSelectMain::func_ov019_020c71f0() {
+void FileSelectMain::func_ov019_020c71f0() {
     this->func_ov019_020c6c18();
     this->func_ov019_020c6c9c();
     this->func_ov019_020c7000();
 }
 
-ARM void FileSelectMain::func_ov019_020c7210() {
+void FileSelectMain::func_ov019_020c7210() {
     this->mUnk_002C.func_0201ea68(0x28, 8, 0, 0);
     this->mUnk_002C.mUnk_0A = 1;
     this->mUnk_002C.mUnk_0B = 0;
@@ -468,7 +468,7 @@ ARM void FileSelectMain::func_ov019_020c7210() {
     this->func_ov019_020c7000();
 }
 
-ARM void FileSelectMain::func_ov019_020c7274() {
+void FileSelectMain::func_ov019_020c7274() {
     this->GetUnk03E0().mUnk_004.mUnk_2A = true;
     this->mUnk_0488.mUnk_2A             = true;
     this->mUnk_07E4.mUnk_2A             = true;
@@ -476,7 +476,7 @@ ARM void FileSelectMain::func_ov019_020c7274() {
     this->mUnk_005C.mUnk_2A             = true;
 }
 
-ARM void FileSelectMain::func_ov019_020c72a0() {
+void FileSelectMain::func_ov019_020c72a0() {
     unk32 var_r4;
     unk32 var_r5;
     unk32 var_r6;
@@ -595,7 +595,7 @@ ARM void FileSelectMain::func_ov019_020c72a0() {
         var_r7 = 6;
     }
 
-    this->mUnk_03E8[this->mSaveSlotIndex].func_ov000_0206415c(&local_5c, 0, 0xf, 0);
+    this->mUnk_03E8[this->mSaveSlotIndex].func_ov000_0206415c(&local_5c, 0, 0xF, 0);
     this->mUnk_07A0.mUnk_08 = var_r4;
     this->mUnk_0A80.mUnk_08 = var_r5;
     this->mUnk_0D60.mUnk_08 = var_r6;
@@ -606,7 +606,7 @@ ARM void FileSelectMain::func_ov019_020c72a0() {
     this->mUnk_005C.mUnk_2A = false;
 }
 
-ARM void FileSelectMain::func_ov019_020c757c() {
+void FileSelectMain::func_ov019_020c757c() {
     unk32 var_r3;
     unk32 var_lr;
     unk32 var_r4;
@@ -719,7 +719,7 @@ ARM void FileSelectMain::func_ov019_020c757c() {
     this->mUnk_18EC.mUnk_2A = false;
 }
 
-ARM void FileSelectMain::func_ov019_020c7768() {
+void FileSelectMain::func_ov019_020c7768() {
     this->func_ov019_020c72a0();
     this->mUnk_002C.func_0201ea68(0x28, 8, 0x10, 0);
     this->mUnk_002C.mUnk_0A = 1;
@@ -732,7 +732,7 @@ ARM void FileSelectMain::func_ov019_020c7768() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c77b8() {
+void FileSelectMain::func_ov019_020c77b8() {
     this->func_ov019_020c6c54();
     this->func_ov019_020c6ca0();
     this->func_ov019_020c757c();
@@ -740,7 +740,7 @@ ARM void FileSelectMain::func_ov019_020c77b8() {
     this->mUnk_155C.func_ov000_0206082c(0x8B, 2);
 }
 
-ARM void FileSelectMain::func_ov019_020c7804() {
+void FileSelectMain::func_ov019_020c7804() {
     this->mUnk_002C.func_0201ea68(0x28, 0x10, 8, 0);
     this->mUnk_002C.mUnk_0A = 1;
     this->mUnk_002C.mUnk_0B = 0;
@@ -754,13 +754,13 @@ ARM void FileSelectMain::func_ov019_020c7804() {
     this->func_ov019_020c757c();
 }
 
-ARM void FileSelectMain::func_ov019_020c7858() {
+void FileSelectMain::func_ov019_020c7858() {
     this->func_ov019_020c6c18();
     this->func_ov019_020c6cd0();
     this->func_ov019_020c72a0();
 }
 
-ARM void FileSelectMain::func_ov019_020c7878() {
+void FileSelectMain::func_ov019_020c7878() {
     this->mUnk_0DA4.mUnk_2A = true;
     this->mUnk_11BC.mUnk_2A = true;
     this->mUnk_15D4.mUnk_2A = true;
@@ -769,7 +769,7 @@ ARM void FileSelectMain::func_ov019_020c7878() {
     G2_ChangeBlendAlpha(16, 16);
 }
 
-ARM void FileSelectMain::func_ov019_020c78ac() {
+void FileSelectMain::func_ov019_020c78ac() {
     if (this->mExitMode == FileSelectExitMode_AdventureMode) {
         this->mUnk_1144.func_ov000_0206082c(0x8B, 1);
     } else if (this->mExitMode == FileSelectExitMode_BattleMode) {
@@ -783,9 +783,9 @@ ARM void FileSelectMain::func_ov019_020c78ac() {
     this->mUnk_005C.mUnk_2A = false;
 }
 
-ARM void FileSelectMain::func_ov019_020c7910() {
+void FileSelectMain::func_ov019_020c7910() {
     this->mUnk_03E8[this->mSaveSlotIndex].func_ov000_0206415c((void *) &UnkStruct_ov019_020d1e70::data_ov019_020d1e94.mUnk_00,
-                                                              0, 0x1e, 10);
+                                                              0, 0x1E, 10);
 
     this->mUnk_10BC.mUnk_0A = 1;
     this->mUnk_10BC.mUnk_0B = 0;
@@ -839,7 +839,7 @@ ARM void FileSelectMain::func_ov019_020c7910() {
 }
 
 // non-matching
-ARM void FileSelectMain::func_ov019_020c7a44() {
+void FileSelectMain::func_ov019_020c7a44() {
     Vec2s local_54;
     Vec2s local_50;
     Vec2s local_44;
@@ -910,16 +910,16 @@ ARM void FileSelectMain::func_ov019_020c7a44() {
                                                    value1);
 }
 
-ARM void FileSelectMain::func_ov019_020c7c3c() {
+void FileSelectMain::func_ov019_020c7c3c() {
     this->func_ov019_020c7a44();
 }
 
-ARM void FileSelectMain::func_ov019_020c7c48() {
+void FileSelectMain::func_ov019_020c7c48() {
     this->GetUnk03E0().func_ov019_020cbb40();
     this->func_ov019_020c7a44();
 }
 
-ARM void FileSelectMain::func_ov019_020c7c70() {
+void FileSelectMain::func_ov019_020c7c70() {
     this->mUnk_075C.mUnk_0A = 0;
     this->mUnk_075C.mUnk_0B = 1;
     this->mUnk_075C.mUnk_0C = 0;
@@ -962,7 +962,7 @@ ARM void FileSelectMain::func_ov019_020c7c70() {
 }
 
 // non-matching
-ARM void FileSelectMain::func_ov019_020c7d3c() {
+void FileSelectMain::func_ov019_020c7d3c() {
     this->mUnk_1C04.mUnk_12 = this->mSaveSlotIndex;
 
     if (this->mUnk_1C04.mUnk_18 == 0) {
@@ -977,7 +977,7 @@ ARM void FileSelectMain::func_ov019_020c7d3c() {
 }
 
 // non-matching
-ARM void FileSelectMain::func_ov019_020c7dc8() {
+void FileSelectMain::func_ov019_020c7dc8() {
     unk32 var_r6;
     unk32 var_r7;
     unk32 var_r5;
@@ -1117,17 +1117,17 @@ ARM void FileSelectMain::func_ov019_020c7dc8() {
     this->mUnk_18EC.mUnk_2A = false;
 }
 
-ARM void FileSelectMain::func_ov019_020c80dc() {
+void FileSelectMain::func_ov019_020c80dc() {
     this->func_ov019_020c7dc8();
 }
 
-ARM void FileSelectMain::func_ov019_020c80e8() {
+void FileSelectMain::func_ov019_020c80e8() {
     this->func_ov019_020c7dc8();
 }
 
-ARM void FileSelectMain::func_ov019_020c80f4() {}
+void FileSelectMain::func_ov019_020c80f4() {}
 
-ARM void FileSelectMain::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
+void FileSelectMain::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         this->mUnk_03E8[i].func_ov000_02063f64();
         this->GetUnk03E0(i).func_ov019_020cbb94();
@@ -1138,13 +1138,13 @@ ARM void FileSelectMain::vfunc_08(Input *pButtons, TouchControl *pTouchControl) 
     G2_ChangeBlendAlpha(this->mUnk_002C.func_0201eaa0(), 16);
 }
 
-ARM void FileSelectMain::func_ov019_020c8290() {
+void FileSelectMain::func_ov019_020c8290() {
     if ((gGame.GetGameModeFileSelect()->mUnk_04.mUnk_08 & 0xFFFF) == 0xFFFF) {
         this->SetState(FileSelectState_Init);
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c82c4() {
+void FileSelectMain::func_ov019_020c82c4() {
     this->mUnk_039C.Update(&this->mUnk_0100.mPos);
 
     if (!this->func_ov019_020cb238() && this->mUnk_039C.mUnk_0C) {
@@ -1152,7 +1152,7 @@ ARM void FileSelectMain::func_ov019_020c82c4() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c8454() {
+void FileSelectMain::func_ov019_020c8454() {
     int iVar2;
 
     iVar2 = data_0204a110.func_01ff9b50();
@@ -1176,13 +1176,13 @@ ARM void FileSelectMain::func_ov019_020c8454() {
     data_ov000_020b5214.func_ov000_0206db44(0x14);
 }
 
-ARM void FileSelectMain::func_ov019_020c8524() {
+void FileSelectMain::func_ov019_020c8524() {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         this->GetUnk03E0(i).mUnk_004.mUnk_2A = false;
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c854c() {
+void FileSelectMain::func_ov019_020c854c() {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         this->GetUnk03E0(i).mUnk_004.mUnk_2A = false;
     }
@@ -1193,7 +1193,7 @@ ARM void FileSelectMain::func_ov019_020c854c() {
     this->mUnk_00BC.Update(&this->mUnk_005C.mPos);
 }
 
-ARM void FileSelectMain::func_ov019_020c8aac() {
+void FileSelectMain::func_ov019_020c8aac() {
     this->func_ov019_020c8524();
 
     if (!this->func_ov019_020cb238()) {
@@ -1201,7 +1201,7 @@ ARM void FileSelectMain::func_ov019_020c8aac() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c8ad8() {
+void FileSelectMain::func_ov019_020c8ad8() {
     this->func_ov019_020c854c();
 
     if (this->mUnk_075C.mUnk_0C && this->mUnk_0A80.mUnk_0C && this->mUnk_0D60.mUnk_0C) {
@@ -1209,7 +1209,7 @@ ARM void FileSelectMain::func_ov019_020c8ad8() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c8b10() {
+void FileSelectMain::func_ov019_020c8b10() {
     this->func_ov019_020c854c();
 
     if (this->mUnk_075C.mUnk_0C && this->mUnk_0A80.mUnk_0C && this->mUnk_0D60.mUnk_0C) {
@@ -1217,7 +1217,7 @@ ARM void FileSelectMain::func_ov019_020c8b10() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c8b48() {
+void FileSelectMain::func_ov019_020c8b48() {
     this->func_ov019_020c8524();
 
     if (!this->func_ov019_020cb238()) {
@@ -1225,7 +1225,7 @@ ARM void FileSelectMain::func_ov019_020c8b48() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c8b74() {
+void FileSelectMain::func_ov019_020c8b74() {
     switch (data_0204a110.func_01ff9b50()) {
         case BTN_ID_FILE_SELECT_FILE_1:
         case BTN_ID_FILE_SELECT_FILE_2:
@@ -1252,7 +1252,7 @@ ARM void FileSelectMain::func_ov019_020c8b74() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c8c4c() {
+void FileSelectMain::func_ov019_020c8c4c() {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         this->GetUnk03E0(i).mUnk_004.mUnk_2A = false;
     }
@@ -1264,7 +1264,7 @@ ARM void FileSelectMain::func_ov019_020c8c4c() {
     this->mUnk_00BC.Update(&this->mUnk_005C.mPos);
 }
 
-ARM void FileSelectMain::func_ov019_020c92dc() {
+void FileSelectMain::func_ov019_020c92dc() {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         this->GetUnk03E0(i).mUnk_004.mUnk_2A = false;
     }
@@ -1306,7 +1306,7 @@ ARM void FileSelectMain::func_ov019_020c92dc() {
     this->mUnk_155C.func_ov000_020609c4();
 }
 
-ARM void FileSelectMain::func_ov019_020c9b28() {
+void FileSelectMain::func_ov019_020c9b28() {
     this->func_ov019_020c8c4c();
 
     if (this->mUnk_039C.mUnk_0C && this->mUnk_07A0.mUnk_0C && this->mUnk_0A80.mUnk_0C && this->mUnk_0D60.mUnk_0C &&
@@ -1315,7 +1315,7 @@ ARM void FileSelectMain::func_ov019_020c9b28() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c9b70() {
+void FileSelectMain::func_ov019_020c9b70() {
     this->func_ov019_020c92dc();
 
     if (!this->func_ov019_020cb238() && this->mUnk_00BC.mUnk_0C && this->mUnk_1078.mUnk_0C && this->mUnk_1490.mUnk_0C &&
@@ -1324,7 +1324,7 @@ ARM void FileSelectMain::func_ov019_020c9b70() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c9bcc() {
+void FileSelectMain::func_ov019_020c9bcc() {
     this->func_ov019_020c92dc();
 
     if (this->mUnk_00BC.mUnk_0C && this->mUnk_1078.mUnk_0C && this->mUnk_1490.mUnk_0C && this->mUnk_18A8.mUnk_0C &&
@@ -1333,7 +1333,7 @@ ARM void FileSelectMain::func_ov019_020c9bcc() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c9c18() {
+void FileSelectMain::func_ov019_020c9c18() {
     this->func_ov019_020c8c4c();
 
     if (!this->func_ov019_020cb238() && this->mUnk_039C.mUnk_0C && this->mUnk_07A0.mUnk_0C && this->mUnk_0A80.mUnk_0C &&
@@ -1342,7 +1342,7 @@ ARM void FileSelectMain::func_ov019_020c9c18() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c9c70() {
+void FileSelectMain::func_ov019_020c9c70() {
     this->mUnk_1144.func_ov000_020609c4();
     this->mUnk_155C.func_ov000_020609c4();
 
@@ -1375,7 +1375,7 @@ ARM void FileSelectMain::func_ov019_020c9c70() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c9d88() {
+void FileSelectMain::func_ov019_020c9d88() {
     this->mUnk_1144.func_ov000_020609c4();
     this->mUnk_155C.func_ov000_020609c4();
 
@@ -1394,7 +1394,7 @@ ARM void FileSelectMain::func_ov019_020c9d88() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020c9e08() {
+void FileSelectMain::func_ov019_020c9e08() {
     this->mUnk_00BC.Update(&this->mUnk_005C.mPos);
 
     this->mUnk_1100.Update(&this->mUnk_0DA4.mPos);
@@ -1430,11 +1430,11 @@ ARM void FileSelectMain::func_ov019_020c9e08() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020ca6a4() {
+void FileSelectMain::func_ov019_020ca6a4() {
     this->mUnk_039C.Update(&this->mUnk_0100.mPos);
 }
 
-ARM void FileSelectMain::func_ov019_020ca80c() {
+void FileSelectMain::func_ov019_020ca80c() {
     this->func_ov019_020ca6a4();
 
     if (!this->func_ov019_020cb238() && this->mUnk_039C.mUnk_0C) {
@@ -1442,7 +1442,7 @@ ARM void FileSelectMain::func_ov019_020ca80c() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020ca844() {
+void FileSelectMain::func_ov019_020ca844() {
     this->func_ov019_020ca6a4();
 
     if (!this->func_ov019_020cb238() && this->mUnk_039C.mUnk_0C) {
@@ -1450,7 +1450,7 @@ ARM void FileSelectMain::func_ov019_020ca844() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020ca87c() {
+void FileSelectMain::func_ov019_020ca87c() {
     this->func_ov019_020c854c();
 
     if (this->mUnk_075C.mUnk_0C && this->mUnk_0A80.mUnk_0C && this->mUnk_0D60.mUnk_0C) {
@@ -1458,7 +1458,7 @@ ARM void FileSelectMain::func_ov019_020ca87c() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020ca8b4() {
+void FileSelectMain::func_ov019_020ca8b4() {
     this->mUnk_1C04.vfunc_04();
 
     if ((this->mUnk_1C04.mUnk_08 & 0xFFFF) == 0xFFFF) {
@@ -1477,7 +1477,7 @@ ARM void FileSelectMain::func_ov019_020ca8b4() {
 }
 
 // non-matching
-ARM void FileSelectMain::func_ov019_020ca940() {
+void FileSelectMain::func_ov019_020ca940() {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         this->GetUnk03E0(i).mUnk_004.mUnk_2A = false;
     }
@@ -1509,7 +1509,7 @@ ARM void FileSelectMain::func_ov019_020ca940() {
     this->mUnk_155C.func_ov000_020609c4();
 }
 
-ARM void FileSelectMain::func_ov019_020cb180() {
+void FileSelectMain::func_ov019_020cb180() {
     this->func_ov019_020ca940();
 
     if (!this->func_ov019_020cb238() && this->mUnk_00BC.mUnk_0C && this->mUnk_1100.mUnk_0C && this->mUnk_1518.mUnk_0C &&
@@ -1518,7 +1518,7 @@ ARM void FileSelectMain::func_ov019_020cb180() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020cb1dc() {
+void FileSelectMain::func_ov019_020cb1dc() {
     this->func_ov019_020ca940();
 
     if (!this->func_ov019_020cb238() && this->mUnk_00BC.mUnk_0C && this->mUnk_1100.mUnk_0C && this->mUnk_1518.mUnk_0C &&
@@ -1527,7 +1527,7 @@ ARM void FileSelectMain::func_ov019_020cb1dc() {
     }
 }
 
-ARM bool FileSelectMain::func_ov019_020cb238() {
+bool FileSelectMain::func_ov019_020cb238() {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         if (this->mUnk_03E8[i].mUnk_08) {
             return true;
@@ -1537,15 +1537,15 @@ ARM bool FileSelectMain::func_ov019_020cb238() {
     return false;
 }
 
-ARM void FileSelectMain::func_ov019_020cb268() {}
+void FileSelectMain::func_ov019_020cb268() {}
 
-ARM void FileSelectMain::func_ov019_020cb26c() {}
+void FileSelectMain::func_ov019_020cb26c() {}
 
-ARM void FileSelectMain::vfunc_10(unk8 *param1) {
+void FileSelectMain::vfunc_10(unk8 *param1) {
     CALL_PTMF(PTMF<FileSelectMain>, data_ov019_020d204c[this->mState]);
 }
 
-ARM void FileSelectMain::func_ov019_020cb2a8() {
+void FileSelectMain::func_ov019_020cb2a8() {
     this->mUnk_0160.func_ov000_02062f30();
 
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
@@ -1553,7 +1553,7 @@ ARM void FileSelectMain::func_ov019_020cb2a8() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020cb2dc() {
+void FileSelectMain::func_ov019_020cb2dc() {
     this->mUnk_0160.func_ov000_02062f30();
     this->GetUnk03E0().func_ov019_020cbc0c();
     this->mUnk_0520.func_ov000_02062f30();
@@ -1571,7 +1571,7 @@ struct stack_struct {
 };
 
 // non-matching
-ARM void FileSelectMain::func_ov019_020cb324() {
+void FileSelectMain::func_ov019_020cb324() {
     Vec2s local_34;
     Vec2s local_30;
     stack_struct auStack_24;
@@ -1615,95 +1615,95 @@ ARM void FileSelectMain::func_ov019_020cb324() {
     data_0204af1c.func_0201aad0(&this->mUnk_155C, (void *) &local_34, 0, &auStack_24);
 }
 
-ARM void FileSelectMain::func_ov019_020cb4bc() {
+void FileSelectMain::func_ov019_020cb4bc() {
     this->func_ov019_020cb2a8();
 }
 
-ARM void FileSelectMain::func_ov019_020cb4c8() {
+void FileSelectMain::func_ov019_020cb4c8() {
     this->func_ov019_020cb2a8();
 }
 
-ARM void FileSelectMain::func_ov019_020cb4d4() {
+void FileSelectMain::func_ov019_020cb4d4() {
     this->func_ov019_020cb2a8();
 }
 
-ARM void FileSelectMain::func_ov019_020cb4e0() {
+void FileSelectMain::func_ov019_020cb4e0() {
     this->func_ov019_020cb2dc();
 }
 
-ARM void FileSelectMain::func_ov019_020cb4ec() {
+void FileSelectMain::func_ov019_020cb4ec() {
     this->func_ov019_020cb2dc();
 }
 
-ARM void FileSelectMain::func_ov019_020cb4f8() {
+void FileSelectMain::func_ov019_020cb4f8() {
     this->func_ov019_020cb2a8();
 }
 
-ARM void FileSelectMain::func_ov019_020cb504() {
+void FileSelectMain::func_ov019_020cb504() {
     this->func_ov019_020cb2dc();
 }
 
-ARM void FileSelectMain::func_ov019_020cb510() {
+void FileSelectMain::func_ov019_020cb510() {
     this->func_ov019_020cb2dc();
 }
 
-ARM void FileSelectMain::func_ov019_020cb51c() {
+void FileSelectMain::func_ov019_020cb51c() {
     this->func_ov019_020cb324();
 }
 
-ARM void FileSelectMain::func_ov019_020cb528() {
+void FileSelectMain::func_ov019_020cb528() {
     this->func_ov019_020cb324();
 }
 
-ARM void FileSelectMain::func_ov019_020cb534() {
+void FileSelectMain::func_ov019_020cb534() {
     this->func_ov019_020cb2dc();
 }
 
-ARM void FileSelectMain::func_ov019_020cb540() {
+void FileSelectMain::func_ov019_020cb540() {
     this->func_ov019_020cb324();
 }
 
-ARM void FileSelectMain::func_ov019_020cb54c() {
+void FileSelectMain::func_ov019_020cb54c() {
     this->func_ov019_020cb324();
 }
 
-ARM void FileSelectMain::func_ov019_020cb558() {
+void FileSelectMain::func_ov019_020cb558() {
     this->func_ov019_020cb324();
 }
 
-ARM void FileSelectMain::func_ov019_020cb564() {
+void FileSelectMain::func_ov019_020cb564() {
     this->func_ov019_020cb2a8();
 }
 
-ARM void FileSelectMain::func_ov019_020cb570() {
+void FileSelectMain::func_ov019_020cb570() {
     this->func_ov019_020cb2a8();
 }
 
-ARM void FileSelectMain::func_ov019_020cb57c() {
+void FileSelectMain::func_ov019_020cb57c() {
     this->func_ov019_020cb2dc();
 }
 
-ARM void FileSelectMain::func_ov019_020cb588() {
+void FileSelectMain::func_ov019_020cb588() {
     this->mUnk_0160.func_ov000_02062f30();
     this->GetUnk03E0().func_ov019_020cbc0c();
 }
 
-ARM void FileSelectMain::func_ov019_020cb5b0() {
+void FileSelectMain::func_ov019_020cb5b0() {
     this->func_ov019_020cb324();
 }
 
-ARM void FileSelectMain::func_ov019_020cb5bc() {
+void FileSelectMain::func_ov019_020cb5bc() {
     this->func_ov019_020cb324();
 }
 
-ARM void FileSelectMain::SetState(FileSelectState state) {
+void FileSelectMain::SetState(FileSelectState state) {
     this->mState = state;
     this->func_ov019_020c6d10();
 }
 
-ARM void FileSelectMain::vfunc_18() {}
+void FileSelectMain::vfunc_18() {}
 
-ARM void FileSelectMain::func_ov019_020cb5dc() {
+void FileSelectMain::func_ov019_020cb5dc() {
     this->mUnk_0160.mUnk_04.func_0201f9c4();
     this->mUnk_0520.mUnk_04.func_0201f9c4();
     this->mUnk_0844.mUnk_04.func_0201f9c4();
@@ -1718,7 +1718,7 @@ ARM void FileSelectMain::func_ov019_020cb5dc() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020cb664() {
+void FileSelectMain::func_ov019_020cb664() {
     for (int i = 1; i >= 0; i--) {
         this->GetUnk03E0(i).mUnk_064.func_0201f498();
     }
@@ -1733,7 +1733,7 @@ ARM void FileSelectMain::func_ov019_020cb664() {
     this->mUnk_0160.mUnk_04.func_0201f498();
 }
 
-ARM void FileSelectMain::func_ov019_020cb6e8() {
+void FileSelectMain::func_ov019_020cb6e8() {
     if (this->mState == FileSelectState_SlotSelectIdle) {
         this->SetState(FileSelectState_SlotSelectToNewFile);
     } else if (this->mState == FileSelectState_ChooseModeIdle) {
@@ -1741,7 +1741,7 @@ ARM void FileSelectMain::func_ov019_020cb6e8() {
     }
 }
 
-ARM void FileSelectMain::func_ov019_020cb718() {
+void FileSelectMain::func_ov019_020cb718() {
     if (this->mState == FileSelectState_NewFileFromSlotSelect) {
         this->SetState(FileSelectState_NewFileToSlotSelect);
     } else if (this->mState == FileSelectState_OptionsFromChooseMode) {
@@ -1749,7 +1749,7 @@ ARM void FileSelectMain::func_ov019_020cb718() {
     }
 }
 
-ARM bool FileSelectMain::func_ov019_020cb748() {
+bool FileSelectMain::func_ov019_020cb748() {
     if (this->mState == FileSelectState_NewFileFromSlotSelect || this->mState == FileSelectState_SlotSelectIdle ||
         this->mState == FileSelectState_OptionsFromChooseMode || this->mState == FileSelectState_ChooseModeIdle) {
         return true;

@@ -23,20 +23,20 @@ extern UnkStruct_ov000_020b34c4_Callback data_ov000_020b4cc4;
 
 const UnkStruct_ov031_021150b0 data_ov031_021150b0(0x1E66);
 
-ARM DECL_PROFILE(MapObjectProfileDoorDangerSpawn);
+DECL_PROFILE(MapObjectProfileDoorDangerSpawn);
 
-ARM MapObject *MapObjectProfileDoorDangerSpawn::Create() {
+MapObject *MapObjectProfileDoorDangerSpawn::Create() {
     return new(HeapIndex_ITCM) MapObjectDoorDangerSpawn();
 }
 
-ARM MapObjectProfileDoorDangerSpawn::MapObjectProfileDoorDangerSpawn() :
+MapObjectProfileDoorDangerSpawn::MapObjectProfileDoorDangerSpawn() :
     MapObjectProfile_Derived2(MapObjectId_DoorDangerSpawn, MapObjectId_DoorDangerSpawn) {
     this->mUnk_0E = 1;
     this->mUnk_06 = -1;
     this->mUnk_1E &= ~0x01;
 }
 
-ARM MapObjectDoorDangerSpawn::MapObjectDoorDangerSpawn() :
+MapObjectDoorDangerSpawn::MapObjectDoorDangerSpawn() :
     mUnk_94(GetModelFromProfile<MapObjectProfileDoorDangerSpawn>()),
     mUnk_9C(1),
     mUnk_A0(0),
@@ -50,7 +50,7 @@ ARM MapObjectDoorDangerSpawn::MapObjectDoorDangerSpawn() :
     this->mUnk_89 = true;
 }
 
-ARM bool MapObjectDoorDangerSpawn::vfunc_00(void) {
+bool MapObjectDoorDangerSpawn::vfunc_00(void) {
     this->func_ov031_020fbf10(true, false);
     this->mUnk_78 = 0x23;
     this->mUnk_7A = 0x0F;
@@ -60,7 +60,7 @@ ARM bool MapObjectDoorDangerSpawn::vfunc_00(void) {
     return true;
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc_04(void) {
+void MapObjectDoorDangerSpawn::vfunc_04(void) {
     UnkStruct_027e0cd8_0c *ptr;
     VecFx32 auStack_20;
 
@@ -135,11 +135,11 @@ ARM void MapObjectDoorDangerSpawn::vfunc_04(void) {
     }
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc2_04(void) {
+void MapObjectDoorDangerSpawn::vfunc2_04(void) {
     this->MapObjectDoorBase::vfunc2_04();
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc2_08(void) {
+void MapObjectDoorDangerSpawn::vfunc2_08(void) {
     this->mUnk_8C = 1;
     this->vfunc_84(1, &this->mUnk_4C, &this->mUnk_4A);
     this->MapObjectDoorBase::vfunc2_08();
@@ -156,7 +156,7 @@ struct UnkStruct_Copy {
 };
 
 // https://decomp.me/scratch/KLkdU
-ARM void MapObjectDoorDangerSpawn::vfunc_08(void) {
+void MapObjectDoorDangerSpawn::vfunc_08(void) {
     UnkStruct_Copy sp3C;
     UnkStruct_Copy sp1C;
     VecFx32 sp10;
@@ -264,7 +264,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_08(void) {
     }
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc_0C(void) {
+void MapObjectDoorDangerSpawn::vfunc_0C(void) {
     this->MapObjectDoorBase::vfunc_0C();
 
     if ((u16) this->mUnk_16 <= 1) {
@@ -272,7 +272,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_0C(void) {
     }
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
+void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
     UnkStruct_027e0cd8 **ptr;
     s32 var_r6;
     u32 temp_r8;
@@ -402,7 +402,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
     }
 }
 
-ARM bool MapObjectDoorDangerSpawn::vfunc_64(void) {
+bool MapObjectDoorDangerSpawn::vfunc_64(void) {
     UnkStruct_027e0cd8_0c *pUVar4;
     unk32 var_r0;
     bool var_r5;
@@ -440,7 +440,7 @@ ARM bool MapObjectDoorDangerSpawn::vfunc_64(void) {
     return MapObjectDoorBase::vfunc_64();
 }
 
-ARM bool MapObjectDoorDangerSpawn::vfunc_68(void) {
+bool MapObjectDoorDangerSpawn::vfunc_68(void) {
     UnkStruct_027e0cd8_0c *pUVar2 = data_027e0cd8->mUnk_0C;
 
     if (this->mUnk_20.mUnk_00[2] == 1) {
@@ -465,7 +465,7 @@ ARM bool MapObjectDoorDangerSpawn::vfunc_68(void) {
     return gpActorManager->func_ov000_0209704c() == 0;
 }
 
-ARM bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
+bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
     UnkStruct_027e0cd8_0c *pUVar5;
 
     switch (this->mUnk_20.mUnk_00[1]) {
@@ -519,7 +519,7 @@ ARM bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
     return false;
 }
 
-ARM bool MapObjectDoorDangerSpawn::func_ov031_020fdec8(void) {
+bool MapObjectDoorDangerSpawn::func_ov031_020fdec8(void) {
     UnkStruct_027e0cd8_0c *pUVar4;
     VecFx32 *uVar3;
     int iVar1;
@@ -562,11 +562,11 @@ ARM bool MapObjectDoorDangerSpawn::func_ov031_020fdec8(void) {
     return false;
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc_18(s8 *param1, s8 param2) {
+void MapObjectDoorDangerSpawn::vfunc_18(s8 *param1, s8 param2) {
     this->func_ov031_020fcb78(param1, param2);
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc_14(void) {
+void MapObjectDoorDangerSpawn::vfunc_14(void) {
     Mat3p m;
     Mat3p_InitYRotation(&m, SIN((u16) this->mUnk_14), COS((u16) this->mUnk_14));
 
@@ -576,7 +576,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_14(void) {
     this->mUnk_94.vfunc_14(&m, &pos);
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc2_10(void) {
+void MapObjectDoorDangerSpawn::vfunc2_10(void) {
     switch (this->mUnk_16) {
         case 0:
         default:
@@ -601,7 +601,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc2_10(void) {
 }
 
 // https://decomp.me/scratch/DEJfq
-ARM void MapObjectDoorDangerSpawn::vfunc_74(void) {
+void MapObjectDoorDangerSpawn::vfunc_74(void) {
     VecFx32 local_28;
     VecFx32 local_34;
     VecFx32 local_40;
@@ -652,7 +652,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_74(void) {
     }
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc_7C(void) {
+void MapObjectDoorDangerSpawn::vfunc_7C(void) {
     this->MapObjectDoorBase::vfunc_7C();
 
     if (this->mUnk_A8.mUnk_00 != NULL) {
@@ -660,29 +660,29 @@ ARM void MapObjectDoorDangerSpawn::vfunc_7C(void) {
     }
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc_40(void) {
+void MapObjectDoorDangerSpawn::vfunc_40(void) {
     data_027e09a8->func_ov000_02071b30(0x138, &this->mPos, 0);
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc_44(void) {
+void MapObjectDoorDangerSpawn::vfunc_44(void) {
     unk32 local_c = *(u32 *) &this->mUnk_38;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x137, &this->mPos, 0);
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc_48(void) {
+void MapObjectDoorDangerSpawn::vfunc_48(void) {
     data_027e09a8->func_ov000_02071b30(0x13A, &this->mPos, 0);
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc_4C(void) {
+void MapObjectDoorDangerSpawn::vfunc_4C(void) {
     unk32 local_c = *(u32 *) &this->mUnk_38;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x139, &this->mPos, 0);
 }
 
-ARM bool MapObjectDoorDangerSpawn::vfunc_88(void) {
+bool MapObjectDoorDangerSpawn::vfunc_88(void) {
     return !data_027e09b8->func_01ffd420();
 }
 
-ARM unk32 MapObjectDoorDangerSpawn::vfunc_8C(void) {
+unk32 MapObjectDoorDangerSpawn::vfunc_8C(void) {
     if (this->mUnk_A2) {
         if (data_027e0ce0->func_01fff1a4()) {
             return 0x28;
@@ -694,7 +694,7 @@ ARM unk32 MapObjectDoorDangerSpawn::vfunc_8C(void) {
     return 0;
 }
 
-ARM void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param3) {
+void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param3) {
     s16 iVar1;
 
     if (!this->mUnk_58) {
@@ -734,7 +734,7 @@ ARM void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16
     VecFx32_Add(&this->mPos, &local_30, &this->mUnk_5C);
 }
 
-ARM void MapObjectDoorDangerSpawn::func_ov031_020fe5fc(VecFx32 *param1, MapObjectDoorDangerSpawn *thisx) {
+void MapObjectDoorDangerSpawn::func_ov031_020fe5fc(VecFx32 *param1, MapObjectDoorDangerSpawn *thisx) {
     if (data_027e0ce0->func_01fff1a4()) {
         VecFx32 *piVar2 = data_027e0ce0->func_01fff148(1);
         VecFx32 *piVar3 = data_027e0ce0->func_01fff148(0);
@@ -753,5 +753,5 @@ ARM void MapObjectDoorDangerSpawn::func_ov031_020fe5fc(VecFx32 *param1, MapObjec
     }
 }
 
-ARM MapObjectDoorDangerSpawn::~MapObjectDoorDangerSpawn() {}
-ARM MapObjectProfileDoorDangerSpawn::~MapObjectProfileDoorDangerSpawn() {}
+MapObjectDoorDangerSpawn::~MapObjectDoorDangerSpawn() {}
+MapObjectProfileDoorDangerSpawn::~MapObjectProfileDoorDangerSpawn() {}

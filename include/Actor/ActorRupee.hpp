@@ -3,7 +3,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "Actor/ActorUnk_ov000_020a8bb0.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "Player/PlayerGet.hpp"
 #include "types.h"
 
@@ -19,14 +19,31 @@ enum RupeeId_ {
     /* 7 */ RupeeId_7,
 };
 
-class ActorRupee_c4 : public Actor_c4 {
-public:
-    ActorRupee_c4(Actor *param1);
+enum ActorRupeeState_ {
+    ActorRupeeState_0  = 0,
+    ActorRupeeState_1  = 1,
+    ActorRupeeState_2  = 2,
+    ActorRupeeState_3  = 3,
+    ActorRupeeState_4  = 4,
+    ActorRupeeState_5  = 5,
+    ActorRupeeState_6  = 6,
+    ActorRupeeState_7  = 7,
+    ActorRupeeState_8  = 8,
+    ActorRupeeState_9  = 9,
+    ActorRupeeState_10 = 10,
+    ActorRupeeState_11 = 11,
+    ActorRupeeState_12 = 12,
+    ActorRupeeState_Max,
+};
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+class ActorRupee_C4 : public Actor_C4 {
+public:
+    ActorRupee_C4(Actor *param1);
+
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
 class ActorRupee : public Actor {
@@ -36,17 +53,10 @@ public:
     /* 96 */ u16 mUnk_96;
     /* 98 */ u16 mUnk_98;
     /* 9A */ u16 mUnk_9A;
-    /* 9C */ Actor_9c mUnk_9C;
-    /* A0 */ unk32 mUnk_A0;
-    /* A4 */ unk32 mUnk_A4;
-    /* A8 */ unk32 mUnk_A8;
-    /* AC */ unk32 mUnk_AC;
-    /* B0 */ unk32 mUnk_B0;
-    /* B4 */ unk32 mUnk_B4;
-    /* B8 */ unk32 mUnk_B8;
-    /* BC */ unk32 mUnk_BC;
-    /* C0 */ unk32 mUnk_C0;
-    /* C4 */ ActorRupee_c4 mUnk_C4;
+    /* 9C */ Actor_9C mUnk_9C;
+    /* BC */ ActorRef mUnk_BC;
+    /* C0 */ ActorRef mUnk_C0;
+    /* C4 */ ActorRupee_C4 mUnk_C4;
     /* E8 */ unk32 mUnk_E8;
     /* EC */ s16 mUnk_EC;
     /* F0 */ UnkStruct_PlayerGet_ec mUnk_F0;
@@ -60,10 +70,9 @@ public:
 
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
-    /* 2C */ virtual void vfunc_2c(unk32 param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorRupee() override;
 
-    void func_ov031_020e8d2c(VecFx32 *param1, u8 param2, unk32 param3, unk32 param4);
     void func_ov031_020e8fec();
     void func_ov031_020e9068();
     void func_ov031_020e9108();
@@ -92,12 +101,14 @@ public:
     void func_ov031_020e9740();
     void func_ov031_020e9838();
     void func_ov031_020e98c4();
-    void func_ov031_020e9904(unk32 param1);
+    void SetState(ActorState state);
     void func_ov031_020e9b88();
     void func_ov031_020e9be8();
     bool func_ov031_020e9d54();
     void func_ov031_020e9d94();
     bool func_ov031_020e9e5c();
+
+    static void func_ov031_020e8d2c(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, u32 unk_2C, ActorRef ref);
 };
 
 class ActorProfileRupee : public ActorProfile {

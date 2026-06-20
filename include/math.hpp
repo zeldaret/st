@@ -319,7 +319,7 @@ static inline void Vec2pCpp_Copy(const Vec2pCpp *a, Vec2pCpp *dst) {
 }
 
 //! TODO: remove
-extern "C" static inline Vec2s *Vec2s_New(s16 x, s16 y) {
+extern "C" inline Vec2s *Vec2s_New(s16 x, s16 y) {
     Vec2s vec;
     vec.x = x;
     vec.y = y;
@@ -327,7 +327,7 @@ extern "C" static inline Vec2s *Vec2s_New(s16 x, s16 y) {
 }
 
 //! TODO: remove
-extern "C" static inline Vec2s *Vec2s_GetCopy(Vec2s *src) {
+extern "C" inline Vec2s *Vec2s_GetCopy(Vec2s *src) {
     Vec2s vec;
     vec.x = src->x;
     vec.y = src->y;

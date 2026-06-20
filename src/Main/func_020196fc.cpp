@@ -58,7 +58,7 @@ extern "C" void func_020196fc() {
     GX_ResetBankForSubOBJExtPltt();
     func_02024264();
     func_02024278();
-    GX_SetBankForLCDC(0x1ff);
+    GX_SetBankForLCDC(0x1FF);
 
     MI_CpuClearFast(HW_LCDC_VRAM, HW_LCDC_VRAM_SIZE);
     GX_DisableBankForLCDC();

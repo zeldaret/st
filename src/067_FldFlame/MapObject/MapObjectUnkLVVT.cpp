@@ -3,30 +3,30 @@
 #include "MapObject/MapObjectUnkLVVT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkLVVT);
+DECL_PROFILE(MapObjectProfileUnkLVVT);
 
-ARM MapObject *MapObjectProfileUnkLVVT::Create() {
+MapObject *MapObjectProfileUnkLVVT::Create() {
     return new(HeapIndex_2) MapObjectUnkLVVT();
 }
 
-ARM MapObjectProfileUnkLVVT::MapObjectProfileUnkLVVT() :
+MapObjectProfileUnkLVVT::MapObjectProfileUnkLVVT() :
     MapObjectProfile(MapObjectId_LVVT) {}
 
-ARM MapObjectUnkLVVT::MapObjectUnkLVVT() {}
+MapObjectUnkLVVT::MapObjectUnkLVVT() {}
 
-ARM void MapObjectUnkLVVT::func_ov067_0215b408(void) {}
-ARM void MapObjectUnkLVVT::func_ov067_0215b460(void) {}
-ARM void MapObjectUnkLVVT::func_ov067_0215b490(void) {}
-ARM void MapObjectUnkLVVT::func_ov067_0215b55c(void) {}
-ARM void MapObjectUnkLVVT::func_ov067_0215b568(void) {}
-ARM void MapObjectUnkLVVT::func_ov067_0215b57c(void) {}
-ARM void MapObjectUnkLVVT::func_ov067_0215b6d4(void) {}
-ARM void MapObjectUnkLVVT::func_ov067_0215b774(void) {}
-ARM void MapObjectUnkLVVT::func_ov067_0215b788(void) {}
-ARM void MapObjectUnkLVVT::func_ov067_0215b79c(void) {}
-ARM void MapObjectUnkLVVT::func_ov067_0215b8c4(void) {}
-ARM void MapObjectUnkLVVT::func_ov067_0215b8e4(void) {}
-ARM void MapObjectUnkLVVT::func_ov067_0215ba18(void) {}
+void MapObjectUnkLVVT::func_ov067_0215b408(void) {}
+void MapObjectUnkLVVT::func_ov067_0215b460(void) {}
+void MapObjectUnkLVVT::func_ov067_0215b490(void) {}
+void MapObjectUnkLVVT::func_ov067_0215b55c(void) {}
+void MapObjectUnkLVVT::func_ov067_0215b568(void) {}
+void MapObjectUnkLVVT::func_ov067_0215b57c(void) {}
+void MapObjectUnkLVVT::func_ov067_0215b6d4(void) {}
+void MapObjectUnkLVVT::func_ov067_0215b774(void) {}
+void MapObjectUnkLVVT::func_ov067_0215b788(void) {}
+void MapObjectUnkLVVT::func_ov067_0215b79c(void) {}
+void MapObjectUnkLVVT::func_ov067_0215b8c4(void) {}
+void MapObjectUnkLVVT::func_ov067_0215b8e4(void) {}
+void MapObjectUnkLVVT::func_ov067_0215ba18(void) {}
 
-ARM MapObjectUnkLVVT::~MapObjectUnkLVVT() {}
-ARM MapObjectProfileUnkLVVT::~MapObjectProfileUnkLVVT() {}
+MapObjectUnkLVVT::~MapObjectUnkLVVT() {}
+MapObjectProfileUnkLVVT::~MapObjectProfileUnkLVVT() {}

@@ -27,11 +27,11 @@ public:
     /* 00 */ virtual void vfunc_00();                //! TODO: name symbol func_ov000_020667d8
     /* 04 */ virtual void vfunc_04();                //! TODO: name symbol func_ov000_020667f4
     /* 08 */ virtual void vfunc_08();                //! TODO: name symbol func_ov000_020673c8
-    /* 0C */ virtual void vfunc_0c();                //! TODO: name symbol func_ov000_02067434
+    /* 0C */ virtual void vfunc_0C();                //! TODO: name symbol func_ov000_02067434
     /* 10 */ virtual void vfunc_10();                //! TODO: name symbol func_ov000_02067474
     /* 14 */ virtual void vfunc_14();                //! TODO: name symbol func_ov000_02066dfc
     /* 18 */ virtual void vfunc_18();                //! TODO: name symbol func_ov000_020669d8
-    /* 1C */ virtual void vfunc_1c();                //! TODO: name symbol func_ov000_02067234
+    /* 1C */ virtual void vfunc_1C();                //! TODO: name symbol func_ov000_02067234
     /* 20 */ virtual void vfunc_20();                //! TODO: name symbol func_ov000_0206723c
     /* 24 */ virtual ~UnkStruct_ItemManager_20_14(); //! TODO: name symbols func_ov000_020672ac, func_ov000_020672f4
 
@@ -54,7 +54,7 @@ public:
     bool func_ov031_020db8f8();
 };
 
-class ItemManager : public SysObject {
+class ItemManager {
 public:
     /* 00 */ ItemFlag mEquippedItem;
     /* 04 */ ItemFlag mForcedItem;
@@ -124,9 +124,9 @@ public:
     static AdventureFlag GetAdvFlagFromItem(ItemId itemId);
 };
 
-class TreasureManager : public AutoInstance<TreasureManager>, public ItemManager {
+class TreasureManager : public AutoInstance<TreasureManager> {
 public:
-    /* 28 */ unk8 mUnk_28[0x3C - 0x28];
+    /* 28 */ unk8 mUnk_00[0x3C - 0x00];
     /* 3C */ s16 mUnk_3C[TreasureType_Max]; // treasures
     /* 5C */ unk16 mUnk_5C;
     /* 5E */ unk16 mUnk_5E;
@@ -137,6 +137,7 @@ public:
     TreasureManager();
     ~TreasureManager();
 
+    // overlay 0
     void func_ov000_020a9b10(void *param1);
     static unk32 func_ov000_020a9b2c(unk32 param1);
     static unk32 func_ov000_020a9b3c(unk32 param1);
@@ -153,6 +154,11 @@ public:
     static unk32 func_ov000_020a9f4c(unk32 param1);
     ItemId func_ov000_020aa02c(ItemId itemId);
     void func_ov000_020aa0ac(ItemId itemId);
+
+    static TreasureManager *Create();
+
+    // overlay 1
+    static void Destroy();
 };
 
 extern TreasureManager *gpTreasureManager;

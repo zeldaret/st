@@ -37,12 +37,12 @@ typedef struct G3d_BoneMtxStruct_ {
     /* 00 */ u32 flag;
     /* 04 */ u8 mUnk_04[0x24];
     /* 28 */ Mat3p rot;
-    /* 58 */ u8 mUnk_58[0xc];
+    /* 58 */ u8 mUnk_58[0xC];
     /* 64 */
 } G3d_BoneMtxStruct;
 
 typedef enum {
-    G3D_ANIMBIND_UNK    = 0xff,
+    G3D_ANIMBIND_UNK    = 0xFF,
     G3D_ANIMBIND_EXISTS = 0x100,
     G3D_ANIMBIND_OFF    = 0x200
 } G3d_AnimationBinds;
@@ -165,7 +165,7 @@ typedef struct G3d_MaterialAnimation_ {
     /* 38 */
 } G3d_MaterialAnimation;
 
-#define G3D_TEXIMAGE_PARM_TEX_COORD_MODE 0xc0000000
+#define G3D_TEXIMAGE_PARM_TEX_COORD_MODE 0xC0000000
 
 extern void *G3d_gScaleHandlers[3];
 extern void *G3d_gSRTTransformHandlers[3];
@@ -192,6 +192,8 @@ typedef struct BMDSectionModel {
     /* 08 */ G3d_NameList modelList;
 } BMDSectionModel;
 
+u32 *G3d_0200f05c(const G3d_NameList *pNameList, const char *pName);
+
 static inline u32 *G3d_GetModelOffsetPtr(const BMDSectionModel *pSection, u8 modelIndex) {
     const G3d_NameList *pList = &pSection->modelList;
 
@@ -217,6 +219,19 @@ static inline G3d_Model *G3d_GetModelVariantPtr(const BMDSectionModel *pSection,
 
 static inline G3d_Model *G3d_GetModelPtr(const BMDSectionModel *pSection) {
     return G3d_GetModelVariantPtr(pSection, 0);
+}
+
+//! TODO: returns `G3d_Model*`?
+static inline void *G3d_GetUnkPtr(const BMDSectionModel *pSection, const char *name) {
+    if (pSection != NULL) {
+        u32 *pOffset = G3d_0200f05c(&pSection->modelList, name);
+
+        if (pOffset != NULL) {
+            return (void *) ((u8 *) pSection + *pOffset);
+        }
+    }
+
+    return NULL;
 }
 
 #ifdef __cplusplus

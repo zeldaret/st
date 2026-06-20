@@ -5,57 +5,57 @@
 
 // --- Actor GOCA ---
 
-ARM DECL_PROFILE(ActorProfileUnkGOCA);
+DECL_PROFILE(ActorProfileUnkGOCA);
 
-ARM Actor *ActorProfileUnkGOCA::Create() {
+Actor *ActorProfileUnkGOCA::Create() {
     return new(HeapIndex_2) ActorUnkGOCA();
 }
 
-ARM ActorProfileUnkGOCA::ActorProfileUnkGOCA() :
+ActorProfileUnkGOCA::ActorProfileUnkGOCA() :
     ActorProfile_Derived1(ActorId_GOCA) {}
 
-ARM ActorUnkGOCA::ActorUnkGOCA() {}
+ActorUnkGOCA::ActorUnkGOCA() {}
 
 // --- Actor GOCB ---
 
-ARM DECL_PROFILE(ActorProfileUnkGOCB);
+DECL_PROFILE(ActorProfileUnkGOCB);
 
-ARM Actor *ActorProfileUnkGOCB::Create() {
+Actor *ActorProfileUnkGOCB::Create() {
     return new(HeapIndex_2) ActorUnkGOCB();
 }
 
-ARM ActorProfileUnkGOCB::ActorProfileUnkGOCB() :
+ActorProfileUnkGOCB::ActorProfileUnkGOCB() :
     ActorProfile_Derived1(ActorId_GOCB) {}
 
-ARM ActorUnkGOCB::ActorUnkGOCB() {}
+ActorUnkGOCB::ActorUnkGOCB() {}
 
 // --- Actor GORK ---
 
-ARM DECL_PROFILE(ActorProfileUnkGORK);
+DECL_PROFILE(ActorProfileUnkGORK);
 
-ARM Actor *ActorProfileUnkGORK::Create() {
+Actor *ActorProfileUnkGORK::Create() {
     return new(HeapIndex_2) ActorUnkGORK();
 }
 
-ARM ActorProfileUnkGORK::ActorProfileUnkGORK() :
+ActorProfileUnkGORK::ActorProfileUnkGORK() :
     ActorProfile_Derived1(ActorId_GORK) {}
 
-ARM ActorUnkGORK::ActorUnkGORK() {}
+ActorUnkGORK::ActorUnkGORK() {}
 
 // --- Actor GORM ---
 
-ARM DECL_PROFILE(ActorProfileUnkGORM);
+DECL_PROFILE(ActorProfileUnkGORM);
 
-ARM Actor *ActorProfileUnkGORM::Create() {
+Actor *ActorProfileUnkGORM::Create() {
     return new(HeapIndex_2) ActorUnkGORM();
 }
 
-ARM ActorProfileUnkGORM::ActorProfileUnkGORM() :
+ActorProfileUnkGORM::ActorProfileUnkGORM() :
     ActorProfile_Derived1(ActorId_GORM) {}
 
-ARM ActorUnkGORM::ActorUnkGORM() {}
+ActorUnkGORM::ActorUnkGORM() {}
 
-ARM ActorProfileUnkGOCA::~ActorProfileUnkGOCA() {}
-ARM ActorProfileUnkGOCB::~ActorProfileUnkGOCB() {}
-ARM ActorProfileUnkGORK::~ActorProfileUnkGORK() {}
-ARM ActorProfileUnkGORM::~ActorProfileUnkGORM() {}
+ActorProfileUnkGOCA::~ActorProfileUnkGOCA() {}
+ActorProfileUnkGOCB::~ActorProfileUnkGOCB() {}
+ActorProfileUnkGORK::~ActorProfileUnkGORK() {}
+ActorProfileUnkGORM::~ActorProfileUnkGORM() {}

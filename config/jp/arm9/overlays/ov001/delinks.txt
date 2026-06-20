@@ -5,13 +5,79 @@
     .data       start:0x020c4180 end:0x020c4820 kind:data align:32
     .bss        start:0x020c4820 end:0x020c5f60 kind:bss align:32
 
+src/001_SceneInit/SceneInitializers_001.cpp:
+    .text       start:0x020b7d40 end:0x020b8c58
+    .rodata     start:0x020c3e14 end:0x020c3e78
+
+src/001_SceneInit/CourseList.cpp:
+    complete
+    .text       start:0x020b8c58 end:0x020b8d84
+    .init       start:0x020c4068 end:0x020c408c
+    .ctor       start:0x020c4154 end:0x020c4158
+    .bss        start:0x020c4820 end:0x020c5928
+    .data       start:0x020c4180 end:0x020c41b0
+
+src/001_SceneInit/UnkStruct_027e09b8_001.cpp:
+    .text       start:0x020b8d84 end:0x020b8f94
+
+src/001_SceneInit/UnkStruct_027e0cd8_001.cpp:
+    .text       start:0x020b8f94 end:0x020b9a20
+
+src/001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp:
+    .text       start:0x020b9a20 end:0x020ba6b4
+
+src/001_SceneInit/UnkStruct_027e0cd8_0C_148_154_001.cpp:
+    .text       start:0x020ba6b4 end:0x020baab0
+
+src/001_SceneInit/ZeldaArrangeBinary.cpp:
+    .text       start:0x020baab0 end:0x020bacf0
+
+src/001_SceneInit/ZeldaMapBinary.cpp:
+    .text       start:0x020bacf0 end:0x020bbd4c
+
+src/001_SceneInit/UnkStruct_027e095c_001.cpp:
+    .text       start:0x020bbd4c end:0x020bbdc4
+
+src/001_SceneInit/SysNew_001.cpp:
+    .text       start:0x020bbdc4 end:0x020bbeac
+
+src/001_SceneInit/Save/SaveManager_001.cpp:
+    .text       start:0x020bbeac end:0x020bc1f4
+
+src/001_SceneInit/UnkStruct_027e09bc_001.cpp:
+    .text       start:0x020bc1f4 end:0x020bc47c
+
+src/001_SceneInit/MapObject/MapObjectManager_001.cpp:
+    .text       start:0x020bc47c end:0x020bc7ac
+
 src/001_SceneInit/Actor/ActorManager_001.cpp:
     .text       start:0x020bc7ac end:0x020bd0c4
     .rodata     start:0x020c3e78 end:0x020c3ea0
     .data       start:0x020c437c end:0x020c44b0
 
 src/001_SceneInit/Item/ItemManager_001.cpp:
-    .text       start:0x020bd240 end:0x020bd29c
+    .text       start:0x020bd0c4 end:0x020bd30c
+
+src/001_SceneInit/Player/PlayerActorBase_70_001.cpp:
+    .text       start:0x020bd30c end:0x020bd6ac
+
+src/001_SceneInit/UnkStruct_027e0ce0_30_001.cpp:
+    .text       start:0x020bd6ac end:0x020bd870
+
+src/001_SceneInit/UnkStruct_027e0ce0_40_Base_001.cpp:
+    .text       start:0x020bd870 end:0x020bda7c
+
+src/001_SceneInit/code_020bc234_001.cpp:
+    .text       start:0x020bda7c end:0x020bdb10
+
+src/001_SceneInit/code_020bc2c8_001.cpp:
+    .text       start:0x020bdb10 end:0x020bdb94
+
+src/001_SceneInit/UnkStruct_027e0ce0_001.cpp:
+    .text       start:0x020bdb94 end:0x020bdfb0
+
+src/001_SceneInit/Player/Player_001.cpp:
+    .text       start:0x020bdfb0 end:0x020be4e8
 
 src/001_SceneInit/CargoManager_001.cpp:
     complete

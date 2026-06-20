@@ -3,19 +3,19 @@
 #include "MapObject/MapObjectUnkHOW1.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkHOW1);
+DECL_PROFILE(MapObjectProfileUnkHOW1);
 
-ARM MapObject *MapObjectProfileUnkHOW1::Create() {
+MapObject *MapObjectProfileUnkHOW1::Create() {
     return new(HeapIndex_2) MapObjectUnkHOW1();
 }
 
-ARM MapObjectProfileUnkHOW1::MapObjectProfileUnkHOW1() :
+MapObjectProfileUnkHOW1::MapObjectProfileUnkHOW1() :
     MapObjectProfile(MapObjectId_HOW1) {}
 
-ARM MapObjectUnkHOW1::MapObjectUnkHOW1() {}
+MapObjectUnkHOW1::MapObjectUnkHOW1() {}
 
-ARM void MapObjectUnkHOW1::func_ov066_0215d008(void) {}
-ARM void MapObjectUnkHOW1::func_ov066_0215d058(void) {}
+void MapObjectUnkHOW1::func_ov066_0215d008(void) {}
+void MapObjectUnkHOW1::func_ov066_0215d058(void) {}
 
-ARM MapObjectUnkHOW1::~MapObjectUnkHOW1() {}
-ARM MapObjectProfileUnkHOW1::~MapObjectProfileUnkHOW1() {}
+MapObjectUnkHOW1::~MapObjectUnkHOW1() {}
+MapObjectProfileUnkHOW1::~MapObjectProfileUnkHOW1() {}

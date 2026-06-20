@@ -29,7 +29,9 @@ extern u32 *data_027e0ce0[];
 extern "C" void func_ov007_02102850(u32 **);
 extern "C" void func_ov007_021028a0(u32 **);
 
-THUMB void OverlayManager::LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index) {
+THUMB_BEGIN
+
+void OverlayManager::LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index) {
     OverlayIndex loadedIndex = gOverlayManager.mLoadedOverlays[slot];
 
     if (index != loadedIndex) {
@@ -38,7 +40,7 @@ THUMB void OverlayManager::LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index)
     }
 }
 
-THUMB void OverlayManager::Load(OverlaySlot slot, OverlayIndex index) {
+void OverlayManager::Load(OverlaySlot slot, OverlayIndex index) {
     if (index != OverlayIndex_None) {
         FS_LoadOverlay(NULL, data_0203e0e8[index]);
     }
@@ -46,7 +48,7 @@ THUMB void OverlayManager::Load(OverlaySlot slot, OverlayIndex index) {
     gOverlayManager.mLoadedOverlays[slot] = index;
 }
 
-THUMB void OverlayManager::Unload(OverlaySlot slot) {
+void OverlayManager::Unload(OverlaySlot slot) {
     OverlayManager *pOverlayManager = &gOverlayManager;
 
     if (pOverlayManager->mLoadedOverlays[slot] != OverlayIndex_None) {
@@ -55,7 +57,7 @@ THUMB void OverlayManager::Unload(OverlaySlot slot) {
     }
 }
 
-THUMB void OverlayManager::LoadOverlaySetup(s32 index) {
+void OverlayManager::LoadOverlaySetup(s32 index) {
     OverlayId overlayId;
     OverlaySetup *pSetup;
 
@@ -78,7 +80,7 @@ THUMB void OverlayManager::LoadOverlaySetup(s32 index) {
     }
 }
 
-THUMB void OverlayManager::UnloadOverlaySetup() {
+void OverlayManager::UnloadOverlaySetup() {
     this->Unload(OverlaySlot_12);
     this->Unload(OverlaySlot_3);
 
@@ -87,3 +89,5 @@ THUMB void OverlayManager::UnloadOverlaySetup() {
         this->Unload(OverlaySlot_2);
     }
 }
+
+THUMB_END

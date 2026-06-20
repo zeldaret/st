@@ -125,9 +125,11 @@ src/031_Land/Actor/ActorUnkSWCH.cpp:
     .bss        start:0x02116c54 end:0x02116ca0
 
 src/031_Land/Actor/ActorUnkSWON.cpp:
+    complete
     .text       start:0x020f7dbc end:0x020f7f14
     .init       start:0x02111710 end:0x02111760
     .ctor       start:0x021127ec end:0x021127f0
+    .data       start:0x021148b8 end:0x02114938
     .bss        start:0x02116ca0 end:0x02116cec
 
 src/031_Land/Actor/ActorUnkNORE.cpp:
@@ -148,13 +150,16 @@ src/031_Land/Actor/ActorUnkRLST.cpp:
     .text       start:0x020f82e0 end:0x020f9dcc
     .init       start:0x02111800 end:0x02111850
     .ctor       start:0x021127f8 end:0x021127fc
-    .bss        start:0x02116d84 end:0x02116e94
+    .bss        start:0x02116d84 end:0x02116e6c
 
-src/031_Land/Actor/ActorUnkSPAR_SPBM_SPDR_SPTR.cpp:
+src/031_Land/Actor/ActorItemDrop.cpp:
+    complete
     .text       start:0x020f9dcc end:0x020fab5c
     .init       start:0x02111850 end:0x02111988
     .ctor       start:0x021127fc end:0x02112800
-    .bss        start:0x02116e94 end:0x02116f9c
+    .rodata     start:0x02110bc8 end:0x02110bec
+    .data       start:0x02114ba0 end:0x02114d28
+    .bss        start:0x02116e6c end:0x02116f9c
 
 src/031_Land/Actor/ActorUnkMLCK.cpp:
     .text       start:0x020fab5c end:0x020fb2ac

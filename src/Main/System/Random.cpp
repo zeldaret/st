@@ -3,7 +3,7 @@
 extern "C" void func_02028450(void *param1);
 extern "C" u16 func_02032920(void *param1, size_t param2);
 
-ARM void Random::Init() {
+void Random::Init() {
     u64 auStack_38[4];
     u16 randomValue[4];
 

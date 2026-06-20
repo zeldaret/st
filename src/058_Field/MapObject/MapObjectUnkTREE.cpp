@@ -3,23 +3,23 @@
 #include "MapObject/MapObjectUnkTREE.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkTREE);
+DECL_PROFILE(MapObjectProfileUnkTREE);
 
-ARM MapObject *MapObjectProfileUnkTREE::Create() {
+MapObject *MapObjectProfileUnkTREE::Create() {
     return new(HeapIndex_2) MapObjectUnkTREE();
 }
 
-ARM MapObjectProfileUnkTREE::MapObjectProfileUnkTREE() :
+MapObjectProfileUnkTREE::MapObjectProfileUnkTREE() :
     MapObjectProfile(MapObjectId_TREE) {}
 
-ARM MapObjectUnkTREE::MapObjectUnkTREE() {}
+MapObjectUnkTREE::MapObjectUnkTREE() {}
 
-ARM void MapObjectUnkTREE::func_ov058_0214e09c(void) {}
-ARM void MapObjectUnkTREE::func_ov058_0214e23c(void) {}
-ARM void MapObjectUnkTREE::func_ov058_0214e2e8(void) {}
-ARM void MapObjectUnkTREE::func_ov058_0214e330(void) {}
-ARM void MapObjectUnkTREE::func_ov058_0214e338(void) {}
-ARM void MapObjectUnkTREE::func_ov058_0214e3e8(void) {}
+void MapObjectUnkTREE::func_ov058_0214e09c(void) {}
+void MapObjectUnkTREE::func_ov058_0214e23c(void) {}
+void MapObjectUnkTREE::func_ov058_0214e2e8(void) {}
+void MapObjectUnkTREE::func_ov058_0214e330(void) {}
+void MapObjectUnkTREE::func_ov058_0214e338(void) {}
+void MapObjectUnkTREE::func_ov058_0214e3e8(void) {}
 
-ARM MapObjectUnkTREE::~MapObjectUnkTREE() {}
-ARM MapObjectProfileUnkTREE::~MapObjectProfileUnkTREE() {}
+MapObjectUnkTREE::~MapObjectUnkTREE() {}
+MapObjectProfileUnkTREE::~MapObjectProfileUnkTREE() {}

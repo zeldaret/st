@@ -91,6 +91,7 @@ public:
         return this->GetNumPostcards() >= MAX_PRICECARDS ? true : false;
     }
 
+    // overlay 24
     void func_ov024_020d6310(MiscAdvManager *pSrc);
     void GiveLetterOrPriceCard(ItemId itemId);
     void GiveLetter(AdventureFlag_Half flag);
@@ -108,6 +109,9 @@ public:
     void func_ov024_020d6610();
 
     static MiscAdvManager *Create();
+
+    // overlay 1
+    static void Destroy();
 };
 
 extern MiscAdvManager *gpMiscAdvManager;

@@ -119,11 +119,11 @@ def LibCPP(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
 
 
 # Helper function for overlays and similar modules
-def GameLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
+def GameLib(lib_name: str, objects: List[Object], extra_cflags=list()) -> Dict[str, Any]:
     return {
         "lib": lib_name,
         "mw_version": "dsi/1.2p1",
-        "cflags": [*config.cflags_base, "-str reuse"],
+        "cflags": [*config.cflags_base, *extra_cflags, "-str reuse"],
         "objects": objects,
     }
 
@@ -135,6 +135,7 @@ config.libs = [
     GameLib(
         "ITCM",
         [
+            Object("ITCM/ITCM_ActorManager.cpp"),
             Object("ITCM/ITCM_MapObjectManager.cpp"),
         ]
     ),
@@ -179,21 +180,42 @@ config.libs = [
             Object("000_Second/MapObject/MapObjectMiniBlocks.cpp"),
             Object("000_Second/Cutscene/Cutscene.cpp"),
             Object("000_Second/Item/ItemManager.cpp"),
-            Object("000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp"),
+            Object("000_Second/Actor/Actor_Derived1.cpp"),
             Object("000_Second/Item/TreasureManager.cpp"),
         ]
     ),
     GameLib(
         "Overlay 1",
         [
+            Object("001_SceneInit/SceneInitializers_001.cpp"),
+            Object("001_SceneInit/CourseList.cpp"),
+            Object("001_SceneInit/UnkStruct_027e09b8_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cd8_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cd8_0C_148_154_001.cpp"),
+            Object("001_SceneInit/ZeldaArrangeBinary.cpp"),
+            Object("001_SceneInit/ZeldaMapBinary.cpp"),
+            Object("001_SceneInit/UnkStruct_027e095c_001.cpp"),
+            Object("001_SceneInit/SysNew_001.cpp"),
+            Object("001_SceneInit/Save/SaveManager_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e09bc_001.cpp"),
+            Object("001_SceneInit/MapObject/MapObjectManager_001.cpp"),
             Object("001_SceneInit/Actor/ActorManager_001.cpp"),
             Object("001_SceneInit/Item/ItemManager_001.cpp"),
+            Object("001_SceneInit/Player/PlayerActorBase_70_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0ce0_30_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0ce0_40_Base_001.cpp"),
+            Object("001_SceneInit/code_020bc234_001.cpp"),
+            Object("001_SceneInit/code_020bc2c8_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0ce0_001.cpp"),
+            Object("001_SceneInit/Player/Player_001.cpp"),
             Object("001_SceneInit/CargoManager_001.cpp"),
             Object("001_SceneInit/PassengerManager_001.cpp"),
             Object("001_SceneInit/UnkStruct_027e0cf8_08_00_001.cpp"),
             Object("001_SceneInit/Game/AdventureModeManager_001.cpp"),
             Object("001_SceneInit/Game/GameModeAdventure_001.cpp"),
-        ]
+        ],
+        extra_cflags=["-thumb"],
     ),
     GameLib(
         "Overlay 17",
@@ -290,8 +312,8 @@ config.libs = [
             Object("024_MainGame/Train/UnkTrainSystem2_024.cpp"),
             Object("024_MainGame/Unknown/UnkStruct_027e0d08_024.cpp"),
             Object("024_MainGame/MiscAdvManager.cpp"),
-            Object("024_MainGame/Actor/ActorUnk_ov000_020a8bb0_EC_024.cpp"),
-            Object("024_MainGame/Train/data_ov024_020d8550.cpp", extra_cflags=["-ipa file", "-enc shift-jis"]),
+            Object("024_MainGame/Actor/Actor_Derived1_EC_024.cpp"),
+            Object("024_MainGame/Train/data_ov024_020d8550.cpp"),
             Object("024_MainGame/Actor/ActorUnkOBPC.cpp"),
         ]
     ),
@@ -306,6 +328,7 @@ config.libs = [
     GameLib(
         "Overlay 26",
         [
+            Object("026_Train/code_02102924.cpp"),
             Object("026_Train/Actor/ActorUnkBDEM.cpp"),
             Object("026_Train/Actor/ActorUnkCNBL.cpp"),
             Object("026_Train/Actor/ActorUnkDKCL.cpp"),
@@ -449,7 +472,7 @@ config.libs = [
             Object("031_Land/Actor/ActorUnkROCK.cpp"),
             Object("031_Land/Actor/ActorUnkSCCN.cpp"),
             Object("031_Land/Actor/ActorUnkSKDO.cpp"),
-            Object("031_Land/Actor/ActorUnkSPAR_SPBM_SPDR_SPTR.cpp"),
+            Object("031_Land/Actor/ActorItemDrop.cpp"),
             Object("031_Land/Actor/ActorUnkSWBM.cpp"),
             Object("031_Land/Actor/ActorUnkSWCH.cpp"),
             Object("031_Land/Actor/ActorUnkSWON.cpp"),

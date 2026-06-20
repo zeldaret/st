@@ -45,7 +45,7 @@ struct RomBuildInfo {
 extern RomBuildInfo BuildInfo;
 
 // non-matching
-extern "C" ARM void Entry(void) {
+extern "C" void Entry(void) {
     unk32 *puVar1;
     unk32 *puVar2;
     u32 uVar3;
@@ -89,7 +89,7 @@ extern "C" ARM void Entry(void) {
 }
 
 // non-matching
-ARM void *func_0200093c(unk32 param1, u32 *param2, unk32 param3) {
+void *func_0200093c(unk32 param1, u32 *param2, unk32 param3) {
     u32 *p = param2 + param3;
 
     while (param2 < p) {

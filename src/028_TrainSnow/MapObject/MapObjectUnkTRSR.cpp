@@ -3,20 +3,20 @@
 #include "MapObject/MapObjectUnkTRSR.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkTRSR);
+DECL_PROFILE(MapObjectProfileUnkTRSR);
 
-ARM MapObject *MapObjectProfileUnkTRSR::Create() {
+MapObject *MapObjectProfileUnkTRSR::Create() {
     return new(HeapIndex_2) MapObjectUnkTRSR();
 }
 
-ARM MapObjectProfileUnkTRSR::MapObjectProfileUnkTRSR() :
+MapObjectProfileUnkTRSR::MapObjectProfileUnkTRSR() :
     MapObjectProfile(MapObjectId_TRSR) {}
 
-ARM MapObjectUnkTRSR::MapObjectUnkTRSR() {}
+MapObjectUnkTRSR::MapObjectUnkTRSR() {}
 
-ARM void MapObjectUnkTRSR::func_ov028_0214643c(void) {}
-ARM void MapObjectUnkTRSR::func_ov028_0214647c(void) {}
-ARM void MapObjectUnkTRSR::func_ov028_021464cc(void) {}
+void MapObjectUnkTRSR::func_ov028_0214643c(void) {}
+void MapObjectUnkTRSR::func_ov028_0214647c(void) {}
+void MapObjectUnkTRSR::func_ov028_021464cc(void) {}
 
-ARM MapObjectUnkTRSR::~MapObjectUnkTRSR() {}
-ARM MapObjectProfileUnkTRSR::~MapObjectProfileUnkTRSR() {}
+MapObjectUnkTRSR::~MapObjectUnkTRSR() {}
+MapObjectProfileUnkTRSR::~MapObjectProfileUnkTRSR() {}

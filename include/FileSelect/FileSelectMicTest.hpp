@@ -58,7 +58,7 @@ public:
     void func_0201e874(unk32 buttonID, void *param2, void *param3, unk32 param4);
 };
 
-// defines the mic test screen (0x022e9b84)
+// defines the mic test screen (0x022E9B84)
 class FileSelectMicTest : public GameModeManagerBase_104 {
 public:
     /* 000 (base) */

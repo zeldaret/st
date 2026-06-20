@@ -3,20 +3,20 @@
 #include "Actor/ActorUnkKIMA.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkKIMA);
+DECL_PROFILE(ActorProfileUnkKIMA);
 
-ARM Actor *ActorProfileUnkKIMA::Create() {
+Actor *ActorProfileUnkKIMA::Create() {
     return new(HeapIndex_2) ActorUnkKIMA();
 }
 
-ARM ActorProfileUnkKIMA::ActorProfileUnkKIMA() :
+ActorProfileUnkKIMA::ActorProfileUnkKIMA() :
     ActorProfile_Derived1(ActorId_KIMA) {}
 
-ARM ActorUnkKIMA::ActorUnkKIMA() {}
+ActorUnkKIMA::ActorUnkKIMA() {}
 
-ARM void ActorUnkKIMA::func_ov060_02160334(void) {}
-ARM void ActorUnkKIMA::func_ov060_02160340(void) {}
-ARM void ActorUnkKIMA::func_ov060_02160348(void) {}
+void ActorUnkKIMA::func_ov060_02160334(void) {}
+void ActorUnkKIMA::func_ov060_02160340(void) {}
+void ActorUnkKIMA::func_ov060_02160348(void) {}
 
-ARM ActorUnkKIMA::~ActorUnkKIMA() {}
-ARM ActorProfileUnkKIMA::~ActorProfileUnkKIMA() {}
+ActorUnkKIMA::~ActorUnkKIMA() {}
+ActorProfileUnkKIMA::~ActorProfileUnkKIMA() {}

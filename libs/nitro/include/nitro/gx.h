@@ -8,15 +8,15 @@ extern "C" {
 #include "nitro/reg.h"
 #include "nitro/types.h"
 
-#define GX_POWER_ALL 0x20e
+#define GX_POWER_ALL 0x20E
 
 #define GX_DISP_SELECT_MAIN_SUB 0x8000
 #define GX_DISP_SELECT_SUB_MAIN 0
 #define GX_DISPMODE_GRAPHICS 1
-#define GX_DISPMODE_VRAM_C 0xa
-#define GX_DISPMODE_VRAM_D 0xe
+#define GX_DISPMODE_VRAM_C 0xA
+#define GX_DISPMODE_VRAM_D 0xE
 
-#define GX_VRAM_LCDC_ALL 0x1ff
+#define GX_VRAM_LCDC_ALL 0x1FF
 #define GX_VRAM_LCDC_C 0x4
 #define GX_VRAM_LCDC_D 0x8
 
@@ -27,8 +27,8 @@ extern "C" {
 #define GX_VRAM_BG_128_D ((GXVRamBG) 0x8)
 #define GX_VRAM_BG_256_AB ((GXVRamBG) 0x3)
 #define GX_VRAM_BG_384_ABC ((GXVRamBG) 0x7)
-#define GX_VRAM_BG_384_ABD ((GXVRamBG) 0xb)
-#define GX_VRAM_BG_512_ABCD ((GXVRamBG) 0xf)
+#define GX_VRAM_BG_384_ABD ((GXVRamBG) 0xB)
+#define GX_VRAM_BG_512_ABCD ((GXVRamBG) 0xF)
 
 #define GX_VRAM_SUB_BG_NONE ((GXVRamBG) 0)
 #define GX_VRAM_SUB_BG_32_H ((GXVRamBG) 0x80)
@@ -140,7 +140,7 @@ extern "C" {
 
 #define GX_OAM_SHAPE_64x64 0x3
 
-#define GX_OAM_COLOR_16 0xf
+#define GX_OAM_COLOR_16 0xF
 
 #define GX_TEXSIZE_S8 0
 #define GX_TEXSIZE_S16 0x1
@@ -183,7 +183,7 @@ extern "C" {
 
 #define GX_BEGIN_QUADS 0x1
 
-#define GX_RGB(r, g, b) ((r) | ((g) << 0x5) | ((b) << 0xa))
+#define GX_RGB(r, g, b) ((r) | ((g) << 0x5) | ((b) << 0xA))
 
 #define GX_CAPTURE_SIZE_256x192 -1 // unknown value
 #define GX_CAPTURE_MODE_A -1       // unknown value
@@ -376,11 +376,11 @@ inline u16 GX_GetVCount(void) {
 }
 
 inline void GX_SetVisiblePlane(s32 plane) {
-    REG_DISPCNT = (REG_DISPCNT & ~0x1f00) | (plane << 8);
+    REG_DISPCNT = (REG_DISPCNT & ~0x1F00) | (plane << 8);
 }
 
 inline void GXS_SetVisiblePlane(s32 plane) {
-    REG_DISPCNT_SUB = (REG_DISPCNT_SUB & ~0x1f00) | (plane << 8);
+    REG_DISPCNT_SUB = (REG_DISPCNT_SUB & ~0x1F00) | (plane << 8);
 }
 
 inline void GX_SetBGCharOffset(u32 offset) {
@@ -405,7 +405,7 @@ inline void GX_SetCapture(u32 size, u32 mode, u32 srcA, GXCaptureSrcB srcB, u32 
 }
 
 inline void GXS_SetOBJVRamModeBmp(u32 mode) {
-    REG_DISPCNT_SUB = REG_DISPCNT_SUB & ~0x60 | ((mode & 0x3) << 5);
+    REG_DISPCNT_SUB = (REG_DISPCNT_SUB & ~0x60) | ((mode & 0x3) << 5);
 }
 
 inline void GX_SetVisibleWindows(s32 windows) {

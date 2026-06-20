@@ -25,7 +25,7 @@ const unk32 data_ov019_020d1be8[] = {
     offsetof(SaveSlot, mUnk_2500), offsetof(SaveSlot, mUnk_2600),
 };
 
-ARM void SaveManager::func_ov019_020d086c(u16 param1) {
+void SaveManager::func_ov019_020d086c(u16 param1) {
     CARD_LockBackup(gSaveManager.mUnk_204);
 
     STATIC_PTMFCALLBACK(PTMF<SaveFile>, gSaveManager.mUnk_23C, gSaveManager.mpSaveFile);
@@ -43,7 +43,7 @@ ARM void SaveManager::func_ov019_020d086c(u16 param1) {
     }
 }
 
-ARM void SaveManager::func_ov019_020d08fc(unk32 param1, PTMF<SaveFile>::PTMFCallback param2) {
+void SaveManager::func_ov019_020d08fc(unk32 param1, PTMF<SaveFile>::PTMFCallback param2) {
     this->mUnk_23C = param2;
 
     if (param1 == 2) {
@@ -54,7 +54,7 @@ ARM void SaveManager::func_ov019_020d08fc(unk32 param1, PTMF<SaveFile>::PTMFCall
     }
 }
 
-ARM bool SaveManager::func_ov019_020d0964() {
+bool SaveManager::func_ov019_020d0964() {
     this->mpSaveFile = new(HeapIndex_1) SaveFile();
     data_02049b80.func_02013ee8(0, 1);
 
@@ -66,17 +66,17 @@ ARM bool SaveManager::func_ov019_020d0964() {
     return false;
 }
 
-ARM void SaveManager::func_ov019_020d09dc(u16 saveSlotIndex) {
+void SaveManager::func_ov019_020d09dc(u16 saveSlotIndex) {
     this->mpSaveFile->mSaveSlotIndex = saveSlotIndex;
     this->func_ov019_020d08fc(2, SaveFile::func_ov019_020d1434);
 }
 
-ARM void SaveManager::func_ov019_020d0a04(u16 saveSlotIndex) {
+void SaveManager::func_ov019_020d0a04(u16 saveSlotIndex) {
     this->mpSaveFile->mSaveSlotIndex = saveSlotIndex;
     this->func_ov019_020d08fc(2, SaveFile::func_ov019_020d1538);
 }
 
-ARM void SaveManager::func_ov019_020d0a2c(u16 saveSlotIndex) {
+void SaveManager::func_ov019_020d0a2c(u16 saveSlotIndex) {
     data_02049bd4.mUnk_04++;
     gSaveManager.mpSaveFile->mSaveSlotIndex = saveSlotIndex;
     CARD_LockBackup(gSaveManager.mUnk_204);
@@ -102,7 +102,7 @@ ARM void SaveManager::func_ov019_020d0a2c(u16 saveSlotIndex) {
     data_02049bd4.mUnk_04--;
 }
 
-ARM void SaveManager::func_ov019_020d0ae0(unk32 param1) {
+void SaveManager::func_ov019_020d0ae0(unk32 param1) {
     data_02049b80.func_02013ecc(0, SaveManager::func_ov019_020d0a2c, param1);
 }
 
@@ -112,7 +112,7 @@ SaveFile::SaveFile() :
 
 #pragma optimization_level 2
 
-ARM unk16 SaveFile::func_ov019_020d0c4c(unk32 param1, unk32 param2) {
+unk16 SaveFile::func_ov019_020d0c4c(unk32 param1, unk32 param2) {
     s16 i = 0;
 
     do {
@@ -128,7 +128,7 @@ ARM unk16 SaveFile::func_ov019_020d0c4c(unk32 param1, unk32 param2) {
 
 #pragma optimization_level reset
 
-ARM unk16 SaveFile::func_ov019_020d0c90(unk32 param1) {
+unk16 SaveFile::func_ov019_020d0c90(unk32 param1) {
     unk16 var_r7;
     unk16 var_r8;
     bool isParam1;
@@ -180,7 +180,7 @@ struct stack_struct {
     unk32 mUnk_1C;
 };
 
-ARM void SaveFile::func_ov019_020d0d50() {
+void SaveFile::func_ov019_020d0d50() {
     stack_struct stack[MAX_SAVE_SLOTS];
 
     for (int i = 0; i < 2; i++) {
@@ -202,7 +202,7 @@ ARM void SaveFile::func_ov019_020d0d50() {
 }
 
 // https://decomp.me/scratch/gJJbb
-ARM void SaveFile::func_ov019_020d0e18(unk32 param1) {
+void SaveFile::func_ov019_020d0e18(unk32 param1) {
     size_t offset    = param1 * SAVE_DATA_SIZE;
     SaveSlot *puVar3 = &this->mSlots[param1];
 
@@ -228,14 +228,14 @@ ARM void SaveFile::func_ov019_020d0e18(unk32 param1) {
     }
 }
 
-ARM void SaveFile::func_ov019_020d0ea8() {}
+void SaveFile::func_ov019_020d0ea8() {}
 
-ARM void SaveFile::func_ov019_020d1108() {}
+void SaveFile::func_ov019_020d1108() {}
 
-ARM void SaveFile::func_ov019_020d127c() {}
+void SaveFile::func_ov019_020d127c() {}
 
 // https://decomp.me/scratch/lmC67
-ARM void SaveFile::func_ov019_020d13b8() {
+void SaveFile::func_ov019_020d13b8() {
     u16 saveSlotIndex = this->mSaveSlotIndex;
 
     SaveSlot::func_ov019_020d1400(this->mSlots[this->mSaveSlotIndex].mUnk_2600);
@@ -244,13 +244,13 @@ ARM void SaveFile::func_ov019_020d13b8() {
                         this->mSlots[this->mSaveSlotIndex].mUnk_2600, sizeof(this->mSlots->mUnk_2600));
 }
 
-ARM void SaveSlot::func_ov019_020d1400(SaveFile_00000_2600_Data *param1) {
+void SaveSlot::func_ov019_020d1400(SaveFile_00000_2600_Data *param1) {
     param1->unk_7E = func_020328c8(&gSaveManager.mUnk_004, param1, sizeof(SaveFile_00000_2600_Data) - sizeof(u16));
     MI_CpuCopyFast(param1, (u8 *) param1 + sizeof(SaveFile_00000_2600_Data), sizeof(SaveFile_00000_2600_Data));
 }
 
 // non-matching
-ARM void SaveFile::func_ov019_020d1434() {
+void SaveFile::func_ov019_020d1434() {
     size_t offset = this->mSaveSlotIndex * SAVE_DATA_SIZE;
 
     SaveSlot::func_ov019_020d14fc(this->mSlots[this->mSaveSlotIndex].mInfoData);
@@ -268,18 +268,18 @@ ARM void SaveFile::func_ov019_020d1434() {
     this->func_ov019_020d13b8();
 }
 
-ARM void SaveSlot::func_ov019_020d14c0(SaveFile_00000_1D00_Data *param1) {
+void SaveSlot::func_ov019_020d14c0(SaveFile_00000_1D00_Data *param1) {
     param1->unk_3FE = func_020328c8(&gSaveManager.mUnk_004, param1, offsetof(SaveFile_00000_1D00_Data, unk_3FE));
     MI_CpuCopyFast(param1, (u8 *) param1 + sizeof(SaveFile_00000_1D00_Data), sizeof(SaveFile_00000_1D00_Data));
 }
 
-ARM void SaveSlot::func_ov019_020d14fc(SaveInfoData *param1) {
+void SaveSlot::func_ov019_020d14fc(SaveInfoData *param1) {
     param1->unk_DFE = func_020328c8(&gSaveManager.mUnk_004, param1, offsetof(SaveInfoData, unk_DFE));
     MI_CpuCopyFast(param1, (u8 *) param1 + sizeof(SaveInfoData), sizeof(SaveInfoData));
 }
 
 //! TODO: weird sizeof
-ARM void SaveFile::func_ov019_020d1538() {
+void SaveFile::func_ov019_020d1538() {
     size_t offset;
 
     offset = this->mSaveSlotIndex * SAVE_DATA_SIZE;
@@ -298,18 +298,18 @@ ARM void SaveFile::func_ov019_020d1538() {
     this->func_ov019_020d1434();
 }
 
-ARM void SaveSlot::func_ov019_020d15cc(SaveFile_00000_2500_Data *param1) {
+void SaveSlot::func_ov019_020d15cc(SaveFile_00000_2500_Data *param1) {
     param1->unk_7E = func_020328c8(&gSaveManager.mUnk_004, param1, offsetof(SaveFile_00000_2500_Data, unk_7E));
     MI_CpuCopyFast(param1, (u8 *) param1 + sizeof(SaveFile_00000_2500_Data), sizeof(SaveFile_00000_2500_Data));
 }
 
-ARM void SaveSlot::func_ov019_020d1600(SaveTreasureData *param1) {
+void SaveSlot::func_ov019_020d1600(SaveTreasureData *param1) {
     param1->unk_7E = func_020328c8(&gSaveManager.mUnk_004, param1, offsetof(SaveTreasureData, unk_7E));
     MI_CpuCopyFast(param1, (u8 *) param1 + sizeof(SaveTreasureData), sizeof(SaveTreasureData));
 }
 
 // https://decomp.me/scratch/ibnQS
-ARM void SaveFile::func_ov019_020d1634() {
+void SaveFile::func_ov019_020d1634() {
     SaveSlot *pSlot = &this->mSlots[this->mSaveSlotIndex];
     size_t offset   = this->mSaveSlotIndex * SAVE_DATA_SIZE;
 
@@ -322,7 +322,7 @@ ARM void SaveFile::func_ov019_020d1634() {
 }
 
 // non-matching
-ARM void SaveFile::func_ov019_020d16d0() {
+void SaveFile::func_ov019_020d16d0() {
     u16 saveSlotIndex = this->mSaveSlotIndex == 0;
     SaveSlot *pSub2   = &this->mSlots[this->mSaveSlotIndex];
     SaveSlot *pSub3   = &this->mSlots[saveSlotIndex];
@@ -348,7 +348,7 @@ ARM void SaveFile::func_ov019_020d16d0() {
     }
 }
 
-ARM void SaveFile::func_ov019_020d17e0() {
+void SaveFile::func_ov019_020d17e0() {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         this->func_ov019_020d1808(i);
     }
@@ -361,7 +361,7 @@ struct stack_struct2 {
 };
 
 // non-matching
-ARM void SaveFile::func_ov019_020d1808(unk32 param1) {
+void SaveFile::func_ov019_020d1808(unk32 param1) {
     SaveSlot *pSub2 = &this->mSlots[param1];
     stack_struct2 stack1[5];
 
@@ -412,19 +412,19 @@ ARM void SaveFile::func_ov019_020d1808(unk32 param1) {
     }
 }
 
-ARM void SaveFile::func_ov019_020d1aac(unk32 param1, const wchar_t *param2) {
+void SaveFile::func_ov019_020d1aac(unk32 param1, const wchar_t *param2) {
     wchar_t awStack_28[LENGTH_PLAYER_NAME + 1];
 
     awStack_28[8] = L'\0';
     wcsncpy(awStack_28, param2, LENGTH_PLAYER_NAME);
-    MI_CpuCopy16((u16 *) awStack_28, (u16 *) this->mSlots[param1].mInfoData[0].mPlayerName,
+    MI_CpuCopy16((u16 *) awStack_28, (u16 *) this->mSlots[param1].mInfoData[0].unk_D9C.mPlayerName,
                  sizeof(wchar_t) * (LENGTH_PLAYER_NAME + 1));
     MI_CpuCopy16((u16 *) awStack_28, (u16 *) this->mSlots[param1].mUnk_1D00[0].unk_3C4,
                  sizeof(wchar_t) * (LENGTH_PLAYER_NAME + 1));
 }
 
 // https://decomp.me/scratch/34KCr
-ARM void SaveFile::func_ov019_020d1b14(unk32 param1) {
+void SaveFile::func_ov019_020d1b14(unk32 param1) {
     SaveSlot *pSVar3;
 
     pSVar3 = &this->mSlots[param1];

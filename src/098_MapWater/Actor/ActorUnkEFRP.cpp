@@ -3,24 +3,24 @@
 #include "Actor/ActorUnkEFRP.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkEFRP);
+DECL_PROFILE(ActorProfileUnkEFRP);
 
-ARM Actor *ActorProfileUnkEFRP::Create() {
+Actor *ActorProfileUnkEFRP::Create() {
     return new(HeapIndex_2) ActorUnkEFRP();
 }
 
-ARM ActorProfileUnkEFRP::ActorProfileUnkEFRP() :
+ActorProfileUnkEFRP::ActorProfileUnkEFRP() :
     ActorProfile_Derived1(ActorId_EFRP) {}
 
-ARM ActorUnkEFRP::ActorUnkEFRP() {}
+ActorUnkEFRP::ActorUnkEFRP() {}
 
-ARM void ActorUnkEFRP::func_ov098_02181910(void) {}
-ARM void ActorUnkEFRP::func_ov098_02181a30(void) {}
-ARM void ActorUnkEFRP::func_ov098_02181acc(void) {}
-ARM void ActorUnkEFRP::func_ov098_02181b1c(void) {}
-ARM void ActorUnkEFRP::func_ov098_02181b30(void) {}
-ARM void ActorUnkEFRP::func_ov098_02181b88(void) {}
-ARM void ActorUnkEFRP::func_ov098_02181ba4(void) {}
+void ActorUnkEFRP::func_ov098_02181910(void) {}
+void ActorUnkEFRP::func_ov098_02181a30(void) {}
+void ActorUnkEFRP::func_ov098_02181acc(void) {}
+void ActorUnkEFRP::func_ov098_02181b1c(void) {}
+void ActorUnkEFRP::func_ov098_02181b30(void) {}
+void ActorUnkEFRP::func_ov098_02181b88(void) {}
+void ActorUnkEFRP::func_ov098_02181ba4(void) {}
 
-ARM ActorUnkEFRP::~ActorUnkEFRP() {}
-ARM ActorProfileUnkEFRP::~ActorProfileUnkEFRP() {}
+ActorUnkEFRP::~ActorUnkEFRP() {}
+ActorProfileUnkEFRP::~ActorProfileUnkEFRP() {}

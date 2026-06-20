@@ -3,34 +3,39 @@
 #include "Actor/ActorUnkAJNP.hpp"
 #include "System/SysNew.hpp"
 
-THUMB DECL_PROFILE(ActorProfileUnkAJNP);
+THUMB_BEGIN
 
-THUMB Actor *ActorProfileUnkAJNP::Create() {
+DECL_PROFILE(ActorProfileUnkAJNP);
+
+Actor *ActorProfileUnkAJNP::Create() {
     return new(HeapIndex_2) ActorUnkAJNP();
 }
 
-THUMB ActorProfileUnkAJNP::ActorProfileUnkAJNP() :
+ActorProfileUnkAJNP::ActorProfileUnkAJNP() :
     ActorProfile_Derived1(ActorId_AJNP, ActorId_WAMA) {}
 
-THUMB ActorUnkAJNP::ActorUnkAJNP() {}
+ActorUnkAJNP::ActorUnkAJNP() {}
 
-THUMB void ActorUnkAJNP::func_ov068_0215d018(void) {}
-THUMB void ActorUnkAJNP::func_ov068_0215d104(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d160(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d268(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d294(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d2b4(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d30c(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d434(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d448(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d478(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d47c(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d500(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d590(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d620(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d68c(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d6e8(void) {}
-ARM void ActorUnkAJNP::func_ov068_0215d710(void) {}
+void ActorUnkAJNP::func_ov068_0215d018(void) {}
+void ActorUnkAJNP::func_ov068_0215d104(void) {}
 
-ARM ActorUnkAJNP::~ActorUnkAJNP() {}
-ARM ActorProfileUnkAJNP::~ActorProfileUnkAJNP() {}
+THUMB_END
+
+void ActorUnkAJNP::func_ov068_0215d160(void) {}
+void ActorUnkAJNP::func_ov068_0215d268(void) {}
+void ActorUnkAJNP::func_ov068_0215d294(void) {}
+void ActorUnkAJNP::func_ov068_0215d2b4(void) {}
+void ActorUnkAJNP::func_ov068_0215d30c(void) {}
+void ActorUnkAJNP::func_ov068_0215d434(void) {}
+void ActorUnkAJNP::func_ov068_0215d448(void) {}
+void ActorUnkAJNP::func_ov068_0215d478(void) {}
+void ActorUnkAJNP::func_ov068_0215d47c(void) {}
+void ActorUnkAJNP::func_ov068_0215d500(void) {}
+void ActorUnkAJNP::func_ov068_0215d590(void) {}
+void ActorUnkAJNP::func_ov068_0215d620(void) {}
+void ActorUnkAJNP::func_ov068_0215d68c(void) {}
+void ActorUnkAJNP::func_ov068_0215d6e8(void) {}
+void ActorUnkAJNP::func_ov068_0215d710(void) {}
+
+ActorUnkAJNP::~ActorUnkAJNP() {}
+ActorProfileUnkAJNP::~ActorProfileUnkAJNP() {}

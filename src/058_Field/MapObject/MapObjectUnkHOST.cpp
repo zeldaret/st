@@ -3,19 +3,19 @@
 #include "MapObject/MapObjectUnkHOST.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkHOST);
+DECL_PROFILE(MapObjectProfileUnkHOST);
 
-ARM MapObject *MapObjectProfileUnkHOST::Create() {
+MapObject *MapObjectProfileUnkHOST::Create() {
     return new(HeapIndex_2) MapObjectUnkHOST();
 }
 
-ARM MapObjectProfileUnkHOST::MapObjectProfileUnkHOST() :
+MapObjectProfileUnkHOST::MapObjectProfileUnkHOST() :
     MapObjectProfile(MapObjectId_HOST) {}
 
-ARM MapObjectUnkHOST::MapObjectUnkHOST() {}
+MapObjectUnkHOST::MapObjectUnkHOST() {}
 
-ARM void MapObjectUnkHOST::func_ov058_0214f838(void) {}
-ARM void MapObjectUnkHOST::func_ov058_0214f888(void) {}
+void MapObjectUnkHOST::func_ov058_0214f838(void) {}
+void MapObjectUnkHOST::func_ov058_0214f888(void) {}
 
-ARM MapObjectUnkHOST::~MapObjectUnkHOST() {}
-ARM MapObjectProfileUnkHOST::~MapObjectProfileUnkHOST() {}
+MapObjectUnkHOST::~MapObjectUnkHOST() {}
+MapObjectProfileUnkHOST::~MapObjectProfileUnkHOST() {}

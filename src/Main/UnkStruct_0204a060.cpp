@@ -5,22 +5,25 @@
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
+#include "versions.h"
 
 extern "C" void func_ov001_020be078();
 
-THUMB bool UnkStruct_0204a060::vfunc_0C(void) {
+THUMB_BEGIN
+
+bool UnkStruct_0204a060::vfunc_0C(void) {
     return gGame.TrySetCreateCallback(this->createCallback);
 }
 
-THUMB void UnkStruct_0204a060::func_020183b8(void) {
+void UnkStruct_0204a060::func_020183b8(void) {
     func_ov001_020be078();
 }
 
-THUMB void UnkStruct_0204a060::func_020183c0(void) {
+void UnkStruct_0204a060::func_020183c0(void) {
     this->func_020183d4(false, (GameModeCreateCallback) func_ov001_020be078, 1);
 }
 
-THUMB bool UnkStruct_0204a060::func_020183d4(bool param1, GameModeCreateCallback createFunc, unk32 param3) {
+bool UnkStruct_0204a060::func_020183d4(bool param1, GameModeCreateCallback createFunc, unk32 param3) {
     if (this->mUnk_0C) {
         return false;
     }
@@ -37,9 +40,11 @@ THUMB bool UnkStruct_0204a060::func_020183d4(bool param1, GameModeCreateCallback
     return true;
 }
 
-THUMB GameModeFileSelect *UnkStruct_0204a060::func_02018424(void) {
+GameModeFileSelect *UnkStruct_0204a060::func_02018424(void) {
     data_02049ba0.func_020148d0(OverlayIndex_MainSelect);
     return GameModeFileSelect::Create();
 }
 
-ARM UnkStruct_0204a060::~UnkStruct_0204a060() {}
+THUMB_END
+
+UnkStruct_0204a060::~UnkStruct_0204a060() {}

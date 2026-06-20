@@ -3,20 +3,20 @@
 #include "Actor/ActorUnkTTFT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkTTFT);
+DECL_PROFILE(ActorProfileUnkTTFT);
 
-ARM Actor *ActorProfileUnkTTFT::Create() {
+Actor *ActorProfileUnkTTFT::Create() {
     return new(HeapIndex_2) ActorUnkTTFT();
 }
 
-ARM ActorProfileUnkTTFT::ActorProfileUnkTTFT() :
+ActorProfileUnkTTFT::ActorProfileUnkTTFT() :
     ActorProfile(ActorId_TTFT) {}
 
-ARM ActorUnkTTFT::ActorUnkTTFT() {}
+ActorUnkTTFT::ActorUnkTTFT() {}
 
-ARM void ActorUnkTTFT::func_ov030_0214d6c0(void) {}
-ARM void ActorUnkTTFT::func_ov030_0214d710(void) {}
-ARM void ActorUnkTTFT::func_ov030_0214d724(void) {}
+void ActorUnkTTFT::func_ov030_0214d6c0(void) {}
+void ActorUnkTTFT::func_ov030_0214d710(void) {}
+void ActorUnkTTFT::func_ov030_0214d724(void) {}
 
-ARM ActorUnkTTFT::~ActorUnkTTFT() {}
-ARM ActorProfileUnkTTFT::~ActorProfileUnkTTFT() {}
+ActorUnkTTFT::~ActorUnkTTFT() {}
+ActorProfileUnkTTFT::~ActorProfileUnkTTFT() {}
