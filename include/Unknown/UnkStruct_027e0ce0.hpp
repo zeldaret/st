@@ -57,24 +57,37 @@ public:
     void func_ov110_02185d3c(ItemId itemId);
 };
 
+class UnkStruct_ov031_020f3310_00 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x06);
+    /* 06 */ u16 mUnk_06;
+    /* 0A */
+};
+
+class UnkStruct_ov031_020f3310_04 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x24);
+    /* 24 */ unk32 mUnk_24[4];
+    /* 34 */
+};
+
+class UnkStruct_ov031_020f3310 {
+public:
+    /* 00 */ UnkStruct_ov031_020f3310_00 *mUnk_00;
+    /* 04 */ UnkStruct_ov031_020f3310_04 *mUnk_04;
+    /* 08 */ VecFx16 mUnk_08;
+    /* 20 */
+};
+
 class UnkStruct_027e0ce0_38_Base {
 public:
     /* 00 (vtable) */
-    /* 04 */ void *mUnk_04;
-    /* 08 */ void *mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */
-
-    UnkStruct_027e0ce0_38_Base() {
-        this->mUnk_04 = NULL;
-        this->mUnk_08 = NULL;
-        this->mUnk_0C = 0;
-    }
+    /* 04 */
 
     // data_ov000_020b2838
     /* 00 */ virtual ~UnkStruct_027e0ce0_38_Base();
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C();
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1);
+    /* 0C */ virtual bool vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */
 };
@@ -169,6 +182,9 @@ public:
 class UnkStruct_027e0ce0_38 : public UnkStruct_027e0ce0_38_Base {
 public:
     /* 000 (base) */
+    /* 04 */ void *mUnk_04;
+    /* 08 */ void *mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
     /* 010 */ UnkStruct_027e0ce0_38_10 *mUnk_010;
     /* 014 */ Input mUnk_014;
     /* 01C */ VecFx32 mPos;
@@ -209,7 +225,7 @@ public:
 
     // data_ov026_0213562c
     /* 00 */ virtual ~UnkStruct_027e0ce0_38() override;
-    /* 0C */ virtual void vfunc_0C() override;
+    /* 0C */ virtual bool vfunc_0C() override;
 };
 
 class UnkStruct_027e0ce0_40_Base_14 {

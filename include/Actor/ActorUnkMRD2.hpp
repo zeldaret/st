@@ -115,7 +115,7 @@ public:
     void func_ov075_0215b578(void);
     void func_ov075_0215b914(void);
     void func_ov075_0215bbe8(void);
-    bool func_ov075_0215bbf0(ActorRef *param_1, unk32 *param_2);
+    bool func_ov075_0215bbf0(ActorRef *param1, unk32 *param2);
     void func_ov075_0215bc50(void);
     void func_ov075_0215bd40(void);
     void func_ov075_0215bd50(void);

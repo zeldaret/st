@@ -102,7 +102,7 @@ void ActorUnkMRD2::func_ov075_0215b4dc(void) {}
 void ActorUnkMRD2::func_ov075_0215b578(void) {}
 void ActorUnkMRD2::func_ov075_0215b914(void) {}
 void ActorUnkMRD2::func_ov075_0215bbe8(void) {}
-bool ActorUnkMRD2::func_ov075_0215bbf0(ActorRef *param_1, unk32 *param_2) {
+bool ActorUnkMRD2::func_ov075_0215bbf0(ActorRef *param1, unk32 *param2) {
     return false;
 }
 void ActorUnkMRD2::func_ov075_0215bc50(void) {}

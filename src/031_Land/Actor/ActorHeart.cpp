@@ -436,14 +436,14 @@ ActorHeart_C4::ActorHeart_C4(Actor *param1) :
     this->mUnk_04 = 1;
 }
 
-bool ActorHeart_C4::vfunc_00(ActorRef ref, unk32 param_3) {
-    if (param_3 != 0) {
+bool ActorHeart_C4::vfunc_00(ActorRef ref, unk32 param3) {
+    if (param3 != 0) {
         ActorHeart *pHeart = this->GetActorPtr<ActorHeart>();
         pHeart->mUnk_C4    = ref;
         pHeart->SetState(ActorHeartState_4);
     }
 
-    return this->Actor_C4::vfunc_00(ref, param_3);
+    return this->Actor_C4::vfunc_00(ref, param3);
 }
 
 void ActorHeart_C4::vfunc_04() {

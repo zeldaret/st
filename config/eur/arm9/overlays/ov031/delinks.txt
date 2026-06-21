@@ -98,7 +98,7 @@ src/031_Land/Actor/ActorShotArrow.cpp:
     .text       start:0x020f1390 end:0x020f3d7c
     .init       start:0x02111548 end:0x02111598
     .ctor       start:0x021127d4 end:0x021127d8
-    .data       start:0x02114264 end:0x021143c0
+    .data       start:0x02114264 end:0x0211439c
     .bss        start:0x02116a70 end:0x02116abc
 
 src/031_Land/Actor/ActorUnkATTG.cpp:
