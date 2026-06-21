@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Actor/ActorRef.hpp"
+#include "Actor/ActorShotArrow.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -9,6 +11,9 @@ public:
 
     UnkStruct_027e09c0();
     ~UnkStruct_027e09c0();
+
+    // overlay 0
+    void func_ov000_0207e58c(ActorRef param1, unk32 param2, u8 param3, ActorShotArrow_194 *param4);
 
     // overlay 1
     void func_ov001_020be3c4();

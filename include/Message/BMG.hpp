@@ -190,7 +190,7 @@ struct BMGFileInfo {
     /* 0C */ SectionFLI1 *pFLI1; // pointer to the message flow index table (FLI -> flow index table)
     /* 10 */ SectionDAT1 *pDAT1; // pointer to the data (DAT -> data)
     /* 14 */ BMGHeader *mUnk_14; // same as pHeader (?)
-    /* 18 */ s16 mUnk_18;        // stores `func_020372F0`->param_3 value (currently undetermined purpose)
+    /* 18 */ s16 mUnk_18;        // stores `func_020372F0`->param3 value (currently undetermined purpose)
     /* 1A */ s16 groupId;        // stores the group id
     /* 1C */
 };

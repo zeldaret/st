@@ -19,8 +19,9 @@ public:
 
 class ActorUnkMRD2 : public Actor {
 public:
-    /* 00 (base) */
-    /* 94 */
+    /* 000 (base) */
+    /* 094 */ STRUCT_PAD(0x094, 0x910);
+    /* 910 */ unk32 mUnk_910;
 
     ActorUnkMRD2();
 
@@ -114,7 +115,7 @@ public:
     void func_ov075_0215b578(void);
     void func_ov075_0215b914(void);
     void func_ov075_0215bbe8(void);
-    void func_ov075_0215bbf0(void);
+    bool func_ov075_0215bbf0(ActorRef *param1, unk32 *param2);
     void func_ov075_0215bc50(void);
     void func_ov075_0215bd40(void);
     void func_ov075_0215bd50(void);

@@ -12,7 +12,7 @@ public:
 
     ActorUnkSWON();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param_1) override;
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 4C */ virtual ~ActorUnkSWON() override;
 };
 

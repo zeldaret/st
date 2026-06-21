@@ -49,7 +49,7 @@ void ActorUnkIWTS::func_ov084_02152cd8(void) {}
 void ActorUnkIWTS::func_ov084_02152cec(void) {}
 void ActorUnkIWTS::func_ov084_02152d10(void) {}
 void ActorUnkIWTS::func_ov084_02153018(void) {}
-void ActorUnkIWTS::func_ov084_02153064(void) {}
+bool ActorUnkIWTS::func_ov084_02153064(ActorRef *, Mat4x3p **) {}
 void ActorUnkIWTS::func_ov084_021530d4(void) {}
 void ActorUnkIWTS::func_ov084_0215315c(void) {}
 void ActorUnkIWTS::func_ov084_02153194(void) {}

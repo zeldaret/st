@@ -61,7 +61,7 @@ public:
     void func_ov084_02152cec(void);
     void func_ov084_02152d10(void);
     void func_ov084_02153018(void);
-    void func_ov084_02153064(void);
+    bool func_ov084_02153064(ActorRef *pRef, Mat4x3p **param2);
     void func_ov084_021530d4(void);
     void func_ov084_0215315c(void);
     void func_ov084_02153194(void);

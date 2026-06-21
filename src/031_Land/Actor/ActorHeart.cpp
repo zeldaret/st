@@ -31,7 +31,6 @@ extern "C" void func_02097bb8(void);
 extern "C" void func_ov000_0205c1f0(unk32 *, unk16);
 extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
 extern "C" void func_ov000_0208bc00(UnkStruct_027e0ce0 *, unk16, unk16 *);
-extern "C" void func_ov000_02098838();
 extern "C" void func_ov017_020bf99c(void);
 extern "C" void func_ov017_02097bec(Actor_9C *);
 
@@ -261,7 +260,7 @@ void ActorHeart::func_ov031_020ef2ec() {
 }
 
 void ActorHeart::func_ov031_020ef2f8() {
-    func_ov000_02098838();
+    this->func_ov000_02098838();
     if (this->mVel.y > 0) {
         return;
     }
@@ -437,14 +436,14 @@ ActorHeart_C4::ActorHeart_C4(Actor *param1) :
     this->mUnk_04 = 1;
 }
 
-bool ActorHeart_C4::vfunc_00(ActorRef ref, unk32 param_3) {
-    if (param_3 != 0) {
+bool ActorHeart_C4::vfunc_00(ActorRef ref, unk32 param3) {
+    if (param3 != 0) {
         ActorHeart *pHeart = this->GetActorPtr<ActorHeart>();
         pHeart->mUnk_C4    = ref;
         pHeart->SetState(ActorHeartState_4);
     }
 
-    return this->Actor_C4::vfunc_00(ref, param_3);
+    return this->Actor_C4::vfunc_00(ref, param3);
 }
 
 void ActorHeart_C4::vfunc_04() {
