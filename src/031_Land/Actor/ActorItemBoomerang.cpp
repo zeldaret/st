@@ -23,10 +23,9 @@ void ActorItemBoomerang::func_ov031_020e45fc() {}
 void ActorItemBoomerang::func_ov031_020e4760() {}
 // non-matching
 void ActorItemBoomerang::func_ov031_020e4774() {}
+
 // non-matching
-void ActorItemBoomerang::func_ov031_020e4788() {}
-// non-matching
-void ActorItemBoomerang::func_ov031_020e48d0() {}
+bool ActorItemBoomerang::vfunc_18(unk32 param1) {}
 
 // non-matching
 void ActorItemBoomerang::SetState(ActorState state) {
@@ -52,7 +51,7 @@ void ActorItemBoomerang::func_ov031_020e49b0(unk32 param1) {
 }
 
 // non-matching
-void ActorItemBoomerang::func_ov031_020e4a20() {
+void ActorItemBoomerang::vfunc_20() {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
@@ -87,7 +86,7 @@ void ActorItemBoomerang::func_ov031_020e5220() {
 // non-matching
 void ActorItemBoomerang::func_ov031_020e52a0() {}
 // non-matching
-void ActorItemBoomerang::func_ov031_020e5354() {}
+void ActorItemBoomerang::vfunc_2C(unk32 param1) {}
 
 void ActorItemBoomerang::func_ov031_020e53c8(Actor *actor) {
     data_027e0d2c->func_ov031_020d95c8(actor->mRef);

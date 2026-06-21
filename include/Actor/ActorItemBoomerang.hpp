@@ -32,20 +32,19 @@ public:
 
     ActorItemBoomerang();
 
-    /* 4C */ virtual ~ActorItemBoomerang() override;
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 4C */ virtual ~ActorItemBoomerang() override; // func_ov031_020e4788
 
     void func_ov031_020e45fc();
     void func_ov031_020e4760();
     void func_ov031_020e4774();
-    void func_ov031_020e4788();
-    void func_ov031_020e48d0();
     void SetState(ActorState state);
     void func_ov031_020e49b0(unk32 param1);
-    void func_ov031_020e4a20();
     void func_ov031_020e5034();
     void func_ov031_020e5220();
     void func_ov031_020e52a0();
-    void func_ov031_020e5354();
     void func_ov031_020e53c8(Actor *actor);
     void func_ov031_020e53e4(Actor *actor);
     bool func_ov031_020e5400(Actor *actor);
