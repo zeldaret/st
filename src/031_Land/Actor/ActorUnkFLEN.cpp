@@ -18,7 +18,7 @@ ActorProfileUnkFLEN::ActorProfileUnkFLEN() :
 ActorUnkFLEN::ActorUnkFLEN() :
     mUnk_94(0) {}
 
-bool ActorUnkFLEN::vfunc_18(int param_1) {
+bool ActorUnkFLEN::vfunc_18(int param1) {
     this->mUnk_94 = this->mUnk_5C.mParams[1];
     if (this->mUnk_5C.mParams[1] >= (s16) 0x2) {
         this->mUnk_94 = 0;
@@ -75,24 +75,24 @@ void ActorUnkFLEN::SetState(ActorState state) {
 }
 
 unk32 ActorUnkFLEN::func_ov031_020f81f8() {
-    /* 08 */ ActorParams mUnk_08;
-    /* 04 */ ActorRef mUnk_04;
+    /* 08 */ ActorParams actorParams;
+    /* 04 */ ActorRef actorRef;
 
-    mUnk_08.mUnk_28 = 0;
-    mUnk_08.func_ov000_020975f8();
-    mUnk_08.mUnk_28       = this->mRef.Get32();
-    mUnk_08.mInitialAngle = this->mAngle;
+    actorParams.mUnk_28 = 0;
+    actorParams.func_ov000_020975f8();
+    actorParams.mUnk_28       = this->mRef.Get32();
+    actorParams.mInitialAngle = this->mAngle;
 
-    VecFx32_Copy(&this->mPos, &mUnk_08.mInitialPos);
-    mUnk_08.mInitialPos.y += 0x5000;
-    const u16 index    = this->mUnk_5C.mParams[0];
-    u16 mParams0       = data_ov031_02110b90[index];
-    const ActorId r2   = data_ov031_02110b94[index];
-    mUnk_08.mParams[0] = mParams0;
+    VecFx32_Copy(&this->mPos, &actorParams.mInitialPos);
+    actorParams.mInitialPos.y += 0x5000;
+    const u16 index        = this->mUnk_5C.mParams[0];
+    u16 mParams0           = data_ov031_02110b90[index];
+    const ActorId r2       = data_ov031_02110b94[index];
+    actorParams.mParams[0] = mParams0;
 
-    Actor::func_ov000_020973f4(&mUnk_04, &data_ov000_020b539c_eur, r2, &mUnk_08, 0x0);
+    Actor::func_ov000_020973f4(&actorRef, &data_ov000_020b539c_eur, r2, &actorParams, 0x0);
 
-    return mUnk_04.type_index != 0;
+    return actorRef.type_index != 0;
 }
 
 ActorUnkFLEN::~ActorUnkFLEN() {}
