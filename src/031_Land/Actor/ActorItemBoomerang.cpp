@@ -29,7 +29,7 @@ void ActorItemBoomerang::func_ov031_020e4788() {}
 void ActorItemBoomerang::func_ov031_020e48d0() {}
 
 // non-matching
-void ActorItemBoomerang::func_ov031_020e4994(ActorItemBoomerangState_ state) {
+void ActorItemBoomerang::SetState(ActorState state) {
     this->mState  = state;
     this->mUnk_52 = FLOAT_TO_FX32(0.0f);
     this->mUnk_50 = FLOAT_TO_FX32(15.9998f);
@@ -48,7 +48,7 @@ void ActorItemBoomerang::func_ov031_020e49b0(unk32 param1) {
     this->mVel.z = FLOAT_TO_FX32(0.0f);
 
     data_027e0d2c->func_ov031_020d95b4();
-    this->func_ov031_020e4994(ActorItemBoomerangState_1);
+    this->SetState(ActorItemBoomerangState_1);
 }
 
 // non-matching

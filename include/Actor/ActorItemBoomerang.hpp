@@ -39,7 +39,7 @@ public:
     void func_ov031_020e4774();
     void func_ov031_020e4788();
     void func_ov031_020e48d0();
-    void func_ov031_020e4994(ActorItemBoomerangState_ state);
+    void SetState(ActorState state);
     void func_ov031_020e49b0(unk32 param1);
     void func_ov031_020e4a20();
     void func_ov031_020e5034();
