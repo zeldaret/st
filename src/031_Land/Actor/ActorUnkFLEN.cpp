@@ -20,26 +20,28 @@ ActorUnkFLEN::ActorUnkFLEN() :
 
 bool ActorUnkFLEN::vfunc_18(int param1) {
     this->mUnk_94 = this->mUnk_5C.mParams[1];
+
     if (this->mUnk_5C.mParams[1] >= (s16) 0x2) {
         this->mUnk_94 = 0;
     }
+
     if (ActorProfile *profile = data_ov000_020b539c_eur.GetProfileFromId(data_ov031_02110b94[this->mUnk_5C.mParams[0]])) {
         profile->vfunc_08();
     }
+
     this->SetState(ActorUnkFLENState_0);
     return true;
 }
 
 void ActorUnkFLEN::vfunc_20() {
-    if (this->mUnk_50 < this->mUnk_52) {
-        ++this->mUnk_50;
-    }
+    this->IsTimerOut();
 
     switch (this->mState) {
         case ActorUnkFLENState_0:
             if (!this->func_ov000_02098a60(ActorUnkFLENState_0)) {
                 break;
             }
+
             this->SetState(ActorUnkFLENState_1);
             break;
         case ActorUnkFLENState_1:
@@ -55,7 +57,7 @@ void ActorUnkFLEN::vfunc_20() {
     }
 }
 
-void ActorUnkFLEN::SetState(ActorState state) {
+void ActorUnkFLEN::SetState(ActorUnkFLENState state) {
     this->mState = state;
 
     switch (state) {
@@ -66,7 +68,7 @@ void ActorUnkFLEN::SetState(ActorState state) {
             break;
         case ActorUnkFLENState_2:
             if (!this->mUnk_94) {
-                UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+                this->Kill();
             }
             break;
         default:
@@ -74,23 +76,22 @@ void ActorUnkFLEN::SetState(ActorState state) {
     }
 }
 
-unk32 ActorUnkFLEN::func_ov031_020f81f8() {
-    /* 08 */ ActorParams actorParams;
-    /* 04 */ ActorRef actorRef;
+bool ActorUnkFLEN::func_ov031_020f81f8() {
+    ActorParams actorParams;
+    ActorRef actorRef;
 
     actorParams.mUnk_28 = 0;
     actorParams.func_ov000_020975f8();
-    actorParams.mUnk_28       = this->mRef.Get32();
+    actorParams.mUnk_28       = this->mRef;
     actorParams.mInitialAngle = this->mAngle;
 
     VecFx32_Copy(&this->mPos, &actorParams.mInitialPos);
     actorParams.mInitialPos.y += 0x5000;
-    const u16 index        = this->mUnk_5C.mParams[0];
-    u16 mParams0           = data_ov031_02110b90[index];
-    const ActorId r2       = data_ov031_02110b94[index];
-    actorParams.mParams[0] = mParams0;
 
-    Actor::func_ov000_020973f4(&actorRef, &data_ov000_020b539c_eur, r2, &actorParams, 0x0);
+    u16 index              = this->mUnk_5C.mParams[0];
+    actorParams.mParams[0] = data_ov031_02110b90[index];
+
+    Actor::func_ov000_020973f4(&actorRef, &data_ov000_020b539c_eur, data_ov031_02110b94[index], &actorParams, 0x0);
 
     return actorRef.type_index != 0;
 }

@@ -144,14 +144,14 @@ src/031_Land/Actor/ActorUnkFLEN.cpp:
     .text       start:0x020f8024 end:0x020f82e0
     .init       start:0x021117b0 end:0x02111800
     .ctor       start:0x021127f4 end:0x021127f8
-    .data       start:0x021149b8 end:0x02114a40
+    .data       start:0x021149b8 end:0x02114a38
     .bss        start:0x02116d38 end:0x02116d84
 
 src/031_Land/Actor/ActorUnkRLST.cpp:
     .text       start:0x020f82e0 end:0x020f9dcc
     .init       start:0x02111800 end:0x02111850
     .ctor       start:0x021127f8 end:0x021127fc
-    .data       start:0x02114a40 end:0x02114ba0
+    .data       start:0x02114a38 end:0x02114ba0
     .bss        start:0x02116d84 end:0x02116e6c
 
 src/031_Land/Actor/ActorItemDrop.cpp:
