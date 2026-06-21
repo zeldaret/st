@@ -14,8 +14,8 @@ src/001_SceneInit/CourseList.cpp:
     .text       start:0x020b7430 end:0x020b755c
     .init       start:0x020c2814 end:0x020c2838
     .ctor       start:0x020c2900 end:0x020c2904
-    .bss        start:0x020c2fe0 end:0x020c40e8
     .data       start:0x020c2940 end:0x020c2970
+    .bss        start:0x020c2fe0 end:0x020c40e8
 
 src/001_SceneInit/UnkStruct_027e09b8_001.cpp:
     .text       start:0x020b755c end:0x020b776c

@@ -157,9 +157,9 @@ src/031_Land/Actor/ActorUnkRLST.cpp:
 src/031_Land/Actor/ActorItemDrop.cpp:
     complete
     .text       start:0x020f9dcc end:0x020fab5c
+    .rodata     start:0x02110bc8 end:0x02110bec
     .init       start:0x02111850 end:0x02111988
     .ctor       start:0x021127fc end:0x02112800
-    .rodata     start:0x02110bc8 end:0x02110bec
     .data       start:0x02114ba0 end:0x02114d28
     .bss        start:0x02116e6c end:0x02116f9c
 

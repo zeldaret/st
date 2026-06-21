@@ -517,8 +517,8 @@ __sinit_ov001_020c4144 kind:function(thumb,size=0x10) addr:0x020c4144
 .p__sinit_ov001_020c3218 kind:data(word) addr:0x020c4168 local
 .p__sinit_ov001_020c39d4 kind:data(word) addr:0x020c416c local
 .p__sinit_ov001_020c3dc4 kind:data(word) addr:0x020c4170 local
-@433 kind:data(byte[0x16]) addr:0x020c4180 local
-@450 kind:data(byte[0x16]) addr:0x020c4198 local
+@433 kind:data(byte[22]) addr:0x020c4180 local
+@450 kind:data(byte[22]) addr:0x020c4198 local
 data_ov001_020c41b0 kind:data(any) addr:0x020c41b0
 data_ov001_020c41c4 kind:data(any) addr:0x020c41c4
 data_ov001_020c41c8 kind:data(any) addr:0x020c41c8
