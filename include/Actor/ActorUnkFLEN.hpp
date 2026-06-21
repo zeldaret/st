@@ -35,7 +35,7 @@ public:
     /* 18 */ virtual bool vfunc_18(int param1) override;
     /* 20 */ virtual void vfunc_20() override;
 
-    void func_ov031_020f81b4(ActorUnkFLENState_ state);
+    void SetState(ActorState state);
     unk32 func_ov031_020f81f8();
 };
 

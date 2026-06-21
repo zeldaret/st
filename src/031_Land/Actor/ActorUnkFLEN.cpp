@@ -26,7 +26,7 @@ bool ActorUnkFLEN::vfunc_18(int param_1) {
     if (ActorProfile *profile = data_ov000_020b539c_eur.GetProfileFromId(data_ov031_02110b94[this->mUnk_5C.mParams[0]])) {
         profile->vfunc_08();
     }
-    this->func_ov031_020f81b4(ActorUnkFLENState_0);
+    this->SetState(ActorUnkFLENState_0);
     return true;
 }
 
@@ -40,14 +40,14 @@ void ActorUnkFLEN::vfunc_20() {
             if (!this->func_ov000_02098a60(ActorUnkFLENState_0)) {
                 break;
             }
-            this->func_ov031_020f81b4(ActorUnkFLENState_1);
+            this->SetState(ActorUnkFLENState_1);
             break;
         case ActorUnkFLENState_1:
-            this->func_ov031_020f81b4(ActorUnkFLENState_2);
+            this->SetState(ActorUnkFLENState_2);
             break;
         case ActorUnkFLENState_2:
             if (!this->func_ov000_02098a60(0x0)) {
-                this->func_ov031_020f81b4(ActorUnkFLENState_0);
+                this->SetState(ActorUnkFLENState_0);
             }
             break;
         default:
@@ -55,7 +55,7 @@ void ActorUnkFLEN::vfunc_20() {
     }
 }
 
-void ActorUnkFLEN::func_ov031_020f81b4(ActorUnkFLENState_ state) {
+void ActorUnkFLEN::SetState(ActorState state) {
     this->mState = state;
 
     switch (state) {
