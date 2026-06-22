@@ -22,7 +22,7 @@ We use the object diffing tool [`objdiff`](https://github.com/encounter/objdiff)
 1. In `objdiff`, set the project directory to the repository root (it should load `objdiff.json` itself).
    - [WSL only] If you're using WSL (which is possible to do, although a few things may not work), navigate to the project directory with window's directory picker tool and select it. Do not set the path manually unless you know what you're doing, `objdiff` may use different path format over time.
 1. Select your source file in the left sidebar:  
-![List of objects in objdiff](https://github.com/zeldaret/ph/blob/main/docs/images/objdiff_objects.png)
+![List of objects in objdiff](images/objdiff_objects.png)
 1. See the list of functions and data to decompile:  
 ![List of symbols in objdiff](images/objdiff_symbols.png)
 
