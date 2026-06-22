@@ -67,10 +67,12 @@ following:
     1. Paste your code into the "Source code" tab. Only the function you're currently decompiling should be necessary.
     1. Share the link with us! (Reminder [link to the ZeldaRET discord server](https://discord.gg/6tjntnU8hC).)
 
+> [!Note]
+> If the function is using THUMB mode you can use `THUMB_BEGIN` and `THUMB_END` before and after the function to create a THUMB region, anything outside of the region will use ARM.
+
 ## Decompiling `.init` functions
 > [!NOTE]
-> This section will be updated as we learn more about global objects. Feel free to contribute or provide us with more
-> information!
+> This section will be updated as we learn more about global objects. Feel free to contribute or provide us with more information!
 
 Functions in the `.init` section are static initializers. Their purpose is to call C++ constructors on global objects, and to
 register destructors so the global objects can be destroyed when their overlay unloads.
@@ -93,8 +95,8 @@ is 12 (`0xc`) bytes long and is also implicit, so we don't need to define it our
 > Feel free to contribute to this section or provide us with more information!
 
 Other than `.text` and `.init` which contain code, there are the following sections for data:
-- `.rodata`: Global or static constants
-- `.data`: Global or static variables
+- `.rodata`: Global or static constants (requires `const`)
+- `.data`: Global or static variables (requires not using `const` except if it's used in a static initializer, in which case all of the data will be set to zero)
 - `.bss`: Global or static uninitialized variables
 
 You can see examples of these data sections in the [compilation section in `build_system.md`](/docs/build_system.md#compiling-code).
