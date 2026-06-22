@@ -2262,7 +2262,7 @@ data_ov031_02112f20 kind:data(any) addr:0x02112f20
 data_ov031_02112f3c kind:data(any) addr:0x02112f3c
 _ZTV25ActorProfileItemBoomerang kind:data(any) addr:0x02112f50
 _ZTV18ActorItemBoomerang kind:data(any) addr:0x02112f74
-data_ov031_02112fd8 kind:data(any) addr:0x02112fd8
+_ZTV19data_ov031_02112fd8 kind:data(any) addr:0x02112fd0
 data_ov031_02112fdc kind:data(any) addr:0x02112fdc
 data_ov031_02112ff4 kind:data(any) addr:0x02112ff4
 _ZTV19data_ov031_02113008 kind:data(any) addr:0x02113008
