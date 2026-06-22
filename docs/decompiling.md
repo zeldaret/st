@@ -63,12 +63,13 @@ following:
 - Decompile a different function and come back later.
 - Export to [decomp.me](https://decomp.me/):
     1. Press the `decomp.me` button in `objdiff`.
-    1. Once you're sent to `decomp.me`, go to "Options" and change the preset to "Phantom Hourglass".
-    1. Paste your code into the "Source code" tab. Only the function you're currently decompiling should be necessary.
+    1. Paste your code into the "Source code" tab. The whole file may be needed to access defined globals.
+    1. On `decomp.me`, switch to the `objdiff` tab, you can check that you see what was expected from your local diff.
     1. Share the link with us! (Reminder [link to the ZeldaRET discord server](https://discord.gg/6tjntnU8hC).)
 
 > [!Note]
-> If the function is using THUMB mode you can use `THUMB_BEGIN` and `THUMB_END` before and after the function to create a THUMB region, anything outside of the region will use ARM.
+> If the function is using THUMB mode you can use `THUMB_BEGIN` and `THUMB_END` before and after the function to create a THUMB region, anything outside of the region will use ARM.  
+> If you have inlines in a header and `#include` the header outside of the region it will use ARM. But if you include it inside the thumb region it will use thumb.
 
 ## Decompiling `.init` functions
 > [!NOTE]
