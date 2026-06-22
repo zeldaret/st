@@ -10,22 +10,23 @@ stuck or need assistance.
 ## Pick a source file
 A reservation sheet exists for a list of delinked source files that are ready to be decompiled. This list grows as more source files are delinked from the rest of the base ROM. You can request access to the sheet in the ZeldaRet discord [channels for ST](https://discord.com/channels/688807550715560050/1453177153502969977) (you can join the server with [this invite link](https://discord.gg/6tjntnU8hC)).
 
-You can claim a source file (called an "actor") by filling in the "Reserved by" column. Once you started decompilation, create a PR on the ST repository for the actor you're decompiling. The decomp-dev bot will follow your PR and give information about the decompilation progress of your code.
+You can claim a source file (called an "actor") by changing its state to "reserved" in the "Reserved by" column. Once you started decompilation, create a PR on the ST repository for the actor you're decompiling. The decomp-dev bot will follow your PR and give information about the decompilation progress of your code.
 
-<!-- TODO -->
-If you want to unclaim the file, <!-- leave another comment so we can be certain that the source file is available to be claimed again. -->
+If you want to unclaim the file, leave a comment your the PR and mark the actor as "available" on the reservation sheet so we can be certain that the source file is available to be claimed again.
 Remember to make a pull request of any progress you made on the source file, whether it is just header files or partially decompiled code.
 
 ## Decompiling a source file
 We use the object diffing tool [`objdiff`](https://github.com/encounter/objdiff) to track differences between our decompiled C++ code and the base ROM's code.
 1. [Download the latest release.](https://github.com/encounter/objdiff/releases/latest)
-1. Run `configure.py <eur|usa>` and `ninja` to generate `objdiff.json` in the repository root (don't forget to follow the instructions in [INSTALL.md](../INSTALL.md) first).
+1. Run `configure.py [--version|-v <eur|jp>]` and `ninja` to generate `objdiff.json` in the repository root (don't forget to follow the instructions in [INSTALL.md](../INSTALL.md) first). Note: if `--version` isn't passed the project will be configured to use all supported versions (meaning all versions will be showed on objdiff.
 1. In `objdiff`, set the project directory to the repository root (it should load `objdiff.json` itself).
-   1. [WSL only] If you're using WSL (which is possible), navigate to the project directory with window's directory picker tool and select
+   - [WSL only] If you're using WSL (which is possible to do, although a few things may not work), navigate to the project directory with window's directory picker tool and select it. Do not set the path manually unless you know what you're doing, `objdiff` may use different path format over time.
 1. Select your source file in the left sidebar:  
 ![List of objects in objdiff](https://github.com/zeldaret/ph/blob/main/docs/images/objdiff_objects.png)
 1. See the list of functions and data to decompile:  
 ![List of symbols in objdiff](images/objdiff_symbols.png)
+
+The following sections explain how to decompile the different parts you see in `objdiff`.
 
 > [!NOTE]
 > If a source file is missing in `objdiff`, or `objdiff` fails to build a file, first rerun `ninja` to update `objdiff.json`.
@@ -43,7 +44,7 @@ As a starting point, we look at the decompiler output in Ghidra. You can request
 
 Looking at this output, we might try writing something like this:
 ```cpp
-ARM bool Actor::Drop(Vec3p *vel) {
+bool Actor::Drop(Vec3p *vel) {
     if (mGrabbed) {
         mVel     = *vel;
         mGrabbed = false;
@@ -63,8 +64,8 @@ following:
 - Export to [decomp.me](https://decomp.me/):
     1. Press the `decomp.me` button in `objdiff`.
     1. Once you're sent to `decomp.me`, go to "Options" and change the preset to "Phantom Hourglass".
-    1. Paste your code into the "Source code" tab.
-    1. Share the link with us!
+    1. Paste your code into the "Source code" tab. Only the function you're currently decompiling should be necessary.
+    1. Share the link with us! (Reminder [link to the ZeldaRET discord server](https://discord.gg/6tjntnU8hC).)
 
 ## Decompiling `.init` functions
 > [!NOTE]
@@ -94,7 +95,7 @@ is 12 (`0xc`) bytes long and is also implicit, so we don't need to define it our
 Other than `.text` and `.init` which contain code, there are the following sections for data:
 - `.rodata`: Global or static constants
 - `.data`: Global or static variables
-- `.bss`/`.sbss`: Global or static uninitialized variables
+- `.bss`: Global or static uninitialized variables
 
 You can see examples of these data sections in the [compilation section in `build_system.md`](/docs/build_system.md#compiling-code).
 
