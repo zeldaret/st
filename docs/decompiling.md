@@ -15,6 +15,9 @@ You can claim a source file (called an "actor") by changing its state to "reserv
 If you want to unclaim the file, leave a comment your the PR and mark the actor as "available" on the reservation sheet so we can be certain that the source file is available to be claimed again.
 Remember to make a pull request of any progress you made on the source file, whether it is just header files or partially decompiled code.
 
+> [!NOTE]
+> If you want to decompile a non-actor file, instead of filling an entry in the spreadsheet, open [an issue](https://github.com/zeldaret/st/issues) for it on top of the PR and mark it with appropriate labels ("decomp", "reserved", etc). You can find a detailed list of the labels [on github](https://github.com/zeldaret/st/labels).
+
 ## Decompiling a source file
 We use the object diffing tool [`objdiff`](https://github.com/encounter/objdiff) to track differences between our decompiled C++ code and the base ROM's code.
 1. [Download the latest release.](https://github.com/encounter/objdiff/releases/latest)
