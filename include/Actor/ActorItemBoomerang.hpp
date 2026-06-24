@@ -12,15 +12,19 @@ enum ActorItemBoomerangState_ {
     ActorItemBoomerangState_MAX
 };
 
-class ActorItemBoomerang_11C {
+class ActorItemBoomerang;
+
+class ActorItemBoomerang_11C : public ActorShotArrow_178_Base {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
+    /* 04 */ STRUCT_PAD(0x04, 0x08);
+    /* 08 */ ActorItemBoomerang *mUnk_08;
 
-    /* 00 */ virtual void vfunc_00(); // func_ov031_020e5474
-    /* 04 */ virtual void vfunc_04(); // func_ov031_020e5488
-    /* 08 */ virtual void vfunc_08(); // func_ov031_020e54a4
-    /* 0C */ virtual void vfunc_10(); // func_ov031_020e54d4
+    ActorItemBoomerang_11C(ActorItemBoomerang *param1); // func_ov031_020e544c
+
+    /* 00 */ virtual ~ActorItemBoomerang_11C(); // func_ov031_020e5474 && func_ov031_020e5488
+    /* 08 */ virtual void vfunc_08();           // func_ov031_020e54a4
+    /* 0C */ virtual void vfunc_10();           // func_ov031_020e54d4
     /* 10 */ virtual void func_ov000_0207c010();
 };
 
@@ -50,11 +54,13 @@ public:
     /* 0A0 */ ActorItemBoomerang_A0 mUnk_A0;
     /* 0A8 */ STRUCT_PAD(0xA4, 0xCC);
     /* 0CC */ ActorItemBoomerang_CC mUnk_CC;
-    /* 0A8 */ STRUCT_PAD(0xD0, 0x128);
+    /* 0A8 */ STRUCT_PAD(0xD0, 0x11C);
+    /* 11C */ ActorItemBoomerang_11C mUnk_11C;
+    /* 124 */ STRUCT_PAD(0x124, 0x128);
     /* 128 */ unk32 mUnk_128;
     /* 12C */ STRUCT_PAD(0x12C, 0x13C);
     /* 13C */ unk32 mUnk_13C;
-    /* 140 */ VecFx32 mUnk_140;
+    /* 140 */ ActorShotArrow_1DC mUnk_140;
 
     ActorItemBoomerang();
 
@@ -69,8 +75,7 @@ public:
     void func_ov031_020e5034();
     void func_ov031_020e5220();
     void func_ov031_020e52a0();
-    void func_ov031_020e544c();
-    void func_ov031_020e5704();
+    unk32 *func_ov031_020e5704();
 };
 
 class ActorProfileItemBoomerang : public ActorProfile {

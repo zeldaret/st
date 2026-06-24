@@ -16,7 +16,9 @@ ActorProfileItemBoomerang::ActorProfileItemBoomerang() :
     ActorProfile(ActorId_ITBM) {}
 
 ActorItemBoomerang::ActorItemBoomerang() :
-    mUnk_94(data_027e0ce0->func_ov000_0208ed30(0x0, 0x1, ItemManager::func_ov000_020a8974(0x1)->mUnk_10)) {
+    mUnk_94(data_027e0ce0->func_ov000_0208ed30(0x0, 0x1, ItemManager::func_ov000_020a8974(0x1)->mUnk_10)),
+    mUnk_11C(this),
+    mUnk_140(0x1000, 0x0) {
     this->mState  = ActorItemBoomerangState_0;
     this->mUnk_52 = 0xFFFF;
     this->mUnk_50 = 0x0;
@@ -61,7 +63,7 @@ void ActorItemBoomerang::vfunc_20() {
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (func_ov000_0205aeac() && this->mUnk_128 == 0x1 || this->mUnk_128 == 0x2) {
-        VecFx32_Copy(&this->mPos, &this->mUnk_140);
+        // VecFx32_Copy(&this->mPos, &this->mUnk_140);
     }
 
     this->IsTimerOut();
@@ -116,17 +118,16 @@ bool ActorItemBoomerang_CC::vfunc_0C(Actor *actor, VecFx32 *param2) {
 }
 
 // non-matching
-void ActorItemBoomerang::func_ov031_020e544c() {}
+ActorItemBoomerang_11C::ActorItemBoomerang_11C(ActorItemBoomerang *param1) :
+    mUnk_08(param1) {}
 // non-matching
-void ActorItemBoomerang_11C::vfunc_00() {}
-// non-matching
-void ActorItemBoomerang_11C::vfunc_04() {}
+ActorItemBoomerang_11C::~ActorItemBoomerang_11C() {}
 // non-matching
 void ActorItemBoomerang_11C::vfunc_08() {}
 // non-matching
 void ActorItemBoomerang_11C::vfunc_10() {}
 // non-matching
-void ActorItemBoomerang::func_ov031_020e5704() {}
+unk32 *ActorItemBoomerang::func_ov031_020e5704() {}
 
 ActorItemBoomerang::~ActorItemBoomerang() {}
 ActorProfileItemBoomerang::~ActorProfileItemBoomerang() {}
