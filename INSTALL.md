@@ -60,9 +60,9 @@ ARM7 BIOS in the root directory of this repository, and verify that your dumped 
 
 The repository contains a [`CMakeLists.txt`](CMakeLists.txt) that allows generating a compilation database. For now, the `CMakeLists.txt` can only be used to generate `compile_commands.json` and similar files, not compiling the project.  
 To generate the compilation database, run `cmake -S . -G "Unix Makefiles" -B cmake` from the root directory of the project. This will create a `cmake/` directory that contains the `compile_commands.json`.  
-Once the file is generated, you can dynamically link it to the root directory and let your LSP detect it (make sure not to `git add` it though), or edit your `.clangd` as follows for it to recognize the compilation database:
+Once the file is generated, you can dynamically link it to the root directory and let your LSP detect it (make sure not to `git add` it though, even though the project's `.gitignore` should prevent it), or edit your `.clangd` as follows for it to recognize the compilation database:
 ```clangd
 CompileFlags:
-    CompilationDatabase: "cmake"
+    CompilationDatabase: "cmake"  # path to the compilation database
 ```
 This setup is adapted from a [tutorial by Strus](https://gist.github.com/Strus/042a92a00070a943053006bf46912ae9), refer to his post for further details.

@@ -18,7 +18,7 @@ The Legend of Zelda: Spirit Tracks
 See [INSTALL.md](INSTALL.md) for instructions on how to install the project.
 
 ## Contribution
-A work in progress, but [CONTRIBUTING.md](CONTRIBUTING.md) has guidelines for how to contribute to the project.
+A work in progress, but [CONTRIBUTING.md](CONTRIBUTING.md) has guidelines for how to contribute to the project. Make sure to follow instructions on [installation](#how-to-install) first.
 
 ## Documentation
 See [/docs](/docs) for documentation about the game.
