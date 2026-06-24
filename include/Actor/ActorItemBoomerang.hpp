@@ -12,18 +12,19 @@ enum ActorItemBoomerangState_ {
     ActorItemBoomerangState_MAX
 };
 
-class ActorItemBoomerang_A0_CC_Base {
+class ActorItemBoomerang_11C {
 public:
     /* 00 (vtable) */
+    /* 04 */ unk32 mUnk_04;
 
-    /* 00 */ virtual ~ActorItemBoomerang_A0_CC_Base() override; // _ZN19func_ov000_0207b6c0D2Ev
-    /* 04 */ virtual void vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;             // func_ov000_0207b71c
-    /* 0C */ virtual void vfunc_0C(Actor *actor) override; // func_ov000_0207b754
-    /* 10 */ virtual void vfunc_10(Actor *actor) override;
+    /* 00 */ virtual void vfunc_00(); // func_ov031_020e5474
+    /* 04 */ virtual void vfunc_04(); // func_ov031_020e5488
+    /* 08 */ virtual void vfunc_08(); // func_ov031_020e54a4
+    /* 0C */ virtual void vfunc_10(); // func_ov031_020e54d4
+    /* 10 */ virtual void func_ov000_0207c010();
 };
 
-class ActorItemBoomerang_A0 : public ActorItemBoomerang_A0_CC_Base {
+class ActorItemBoomerang_A0 : public ActorShotArrow_194_Base {
 public:
     /* 00 (vtable) */
     /* 04 */
@@ -35,24 +36,11 @@ public:
 class ActorItemBoomerang_CC {
 public:
     /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x2C);
     /* 2C */ unk32 mUnk_2C;
 
-    /* 00 */ virtual ~ActorItemBoomerang_CC() override;    // func_ov031_020e4774
-    /* 0C */ virtual bool vfunc_0C(Actor *actor) override; // func_ov031_020e5400
-    /* 10 */ virtual void vfunc_10(Actor *actor) override; // func_ov031_020e53e4
-};
-
-class ActorItemBoomerang_11C {
-public:
-    /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
-
-    /* 00 */ virtual void vfunc_00(); // func_ov031_020e5474
-    /* 04 */ virtual void vfunc_04(); // func_ov031_020e5488
-    /* 08 */ virtual void vfunc_08(); // func_ov031_020e54a4
-    /* 0C */ virtual void vfunc_10(); // func_ov031_020e54d4
-    /* 10 */ virtual void func_ov000_0207c010();
+    /* 00 */ virtual ~ActorItemBoomerang_CC() override;                     // func_ov031_020e4774
+    /* 0C */ virtual bool vfunc_0C(Actor *actor, VecFx32 *param2) override; // func_ov031_020e5400
+    /* 10 */ virtual void vfunc_10(Actor *actor) override;                  // func_ov031_020e53e4
 };
 
 class ActorItemBoomerang : public Actor {

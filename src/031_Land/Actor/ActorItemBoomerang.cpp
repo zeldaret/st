@@ -104,12 +104,12 @@ void ActorItemBoomerang_CC::vfunc_10(Actor *actor) {
 extern "C" bool func_ov000_0207b754();
 
 // non-matching
-bool ActorItemBoomerang_CC::vfunc_0C(Actor *actor) {
+bool ActorItemBoomerang_CC::vfunc_0C(Actor *actor, VecFx32 *param2) {
     if (actor) {
         if (actor->mRef.Get32() == this->mUnk_2C && actor->mVel.x == FLOAT_TO_FX32(0.0f) &&
             actor->mVel.y == FLOAT_TO_FX32(0.0f) && actor->mVel.z == FLOAT_TO_FX32(0.0f)) {
             this->mUnk_2C = 0x0;
-            return func_ov000_0207b754();
+            return ActorShotArrow_194_Base::vfunc_0C(actor, param2);
         }
     }
     return false;
