@@ -45,7 +45,7 @@ You may have to create new classes, structs, member attributes or functions, etc
 Once you find out what something does, it helps to give it a meaningfull name (eg. `ModelRender` class, `Actor::isAlive()` function or `Actor.mPrevPos` member attribute).
 
 If you don't know yet what a piece of code does, try to follow this rough format: `{type}_ov{num}_{address}`.  
-- `type` is the kind of code you're naming, `UnkStruct` for a struct, `mUnk` for a member attribute, `UnkSystemX` for a class or group of functions (`X` would then be an arbitrary, unique identifier. Likely a number that would increase for every new `System` to name).
+- `type` is the kind of code you're naming, `UnkStruct` for a struct, `mUnk` for a member attribute, `Unk{O}System{X}` for a class or group of functions. In the last case, `X` would then be an arbitrary, unique identifier. Likely a number that would increase for every new `System` to name. `O` is optional and aimed to give more information about the context in which the system is used (eg. `File` or `Actor`).
 - `num` is the id of the overlay the code is part of.
 - `address` is the address of the data you're naming. This may not always be applicable, in which case you can ignore it (and remove the trailing `_` of the format given above).
 
