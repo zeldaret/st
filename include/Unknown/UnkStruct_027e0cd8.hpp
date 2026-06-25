@@ -83,15 +83,15 @@ public:
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0c();
+    /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
-    /* 1C */ virtual void vfunc_1c();
+    /* 1C */ virtual void vfunc_1C();
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual fx32 vfunc_28(VecFx32 *param1, unk32 param2, unk32 param3);
-    /* 2C */ virtual void vfunc_2c();
+    /* 2C */ virtual void vfunc_2C();
 
     fx32 func_01ffedf4(Vec2b *pPos);
 
@@ -102,7 +102,9 @@ public:
     void func_ov000_020801b0(Vec2b *param1, unk32 param2, unk32 param3);
     void func_ov000_0208053c(u16 param1);
     void func_ov000_020803ec(u16 param1);
-    unk32 func_ov000_020802ec(u16 param1, VecFx32 *param2);
+    bool func_ov000_020802ec(u16 param1, VecFx32 *param2);
+    void func_ov000_02080a5c(VecFx32 *param1);
+    void func_ov000_02080a78(VecFx32 *param1);
 
     VecFx32 *func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1);
 };
@@ -130,7 +132,7 @@ public:
     UnkStruct_027e0cd8_04();
 };
 
-class UnkStruct_027e0cd8 {
+class UnkStruct_027e0cd8 : public AutoInstance<UnkStruct_027e0cd8> {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ UnkStruct_027e0cd8_04 *mUnk_04; // stage flags
@@ -142,14 +144,26 @@ public:
     /* 34 */ STRUCT_PAD(0x34, 0x4C);
     /* 4C */
 
+    UnkStruct_027e0cd8();
+    ~UnkStruct_027e0cd8();
+
+    // overlay 0
     bool func_ov000_02081e30(unk32 param1, unk32 param2);
-    void func_ov000_02081d7c(unk32 param1, unk32 param2, unk32 param3);
+    void func_ov000_02081d7c(unk32 flagValue, unk32 param2, bool doSet);
     void func_ov000_02081ecc(unk16 param1, unk32 param2);
     void func_ov000_02081eec(unk16 param1, unk32 param2, unk32 param3);
     bool func_ov000_02081f3c(unk16 param1, unk32 param2);
     u32 func_ov000_02081d5c(); // returns current room index?
     bool func_ov000_02082124();
     bool func_ov000_02081c28();
+
+    // overlay 1
+    void func_ov001_020b7a7c();
+    void func_ov001_020b7830(UnkStruct_SceneChange1 *param1);
+    void func_ov001_020b7c08(UnkStruct_SceneChange1 *param1, UnkStruct_WarpUnk1_A0 *param2);
+
+    static UnkStruct_027e0cd8 *Create();
+    static void Destroy();
 };
 
 extern UnkStruct_027e0cd8 *data_027e0cd8;

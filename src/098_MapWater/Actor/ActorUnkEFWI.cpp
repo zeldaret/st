@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkEFWI.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkEFWI);
+DECL_PROFILE(ActorProfileUnkEFWI);
 
-ARM Actor *ActorProfileUnkEFWI::Create() {
+Actor *ActorProfileUnkEFWI::Create() {
     return new(HeapIndex_2) ActorUnkEFWI();
 }
 
-ARM ActorProfileUnkEFWI::ActorProfileUnkEFWI() :
+ActorProfileUnkEFWI::ActorProfileUnkEFWI() :
     ActorProfile_Derived1(ActorId_EFWI) {}
 
-ARM ActorUnkEFWI::ActorUnkEFWI() {}
+ActorUnkEFWI::ActorUnkEFWI() {}
 
-ARM void ActorUnkEFWI::func_ov098_02181738(void) {}
-ARM void ActorUnkEFWI::func_ov098_021817d4(void) {}
+void ActorUnkEFWI::func_ov098_02181738(void) {}
+void ActorUnkEFWI::func_ov098_021817d4(void) {}
 
-ARM ActorUnkEFWI::~ActorUnkEFWI() {}
-ARM ActorProfileUnkEFWI::~ActorProfileUnkEFWI() {}
+ActorUnkEFWI::~ActorUnkEFWI() {}
+ActorProfileUnkEFWI::~ActorProfileUnkEFWI() {}

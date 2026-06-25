@@ -8,22 +8,22 @@
 
 extern "C" void Unknown_func_ov000_0207fd7c(void *, void *, unk32);
 
-ARM DECL_PROFILE(ActorProfileUnkEFIK);
+DECL_PROFILE(ActorProfileUnkEFIK);
 
-ARM Actor *ActorProfileUnkEFIK::Create() {
+Actor *ActorProfileUnkEFIK::Create() {
     return new(HeapIndex_2) ActorUnkEFIK();
 }
 
-ARM ActorProfileUnkEFIK::ActorProfileUnkEFIK() :
+ActorProfileUnkEFIK::ActorProfileUnkEFIK() :
     ActorProfile(ActorId_EFIK) {}
 
-ARM ActorUnkEFIK::ActorUnkEFIK() :
+ActorUnkEFIK::ActorUnkEFIK() :
     mUnk_98(NULL) {
     this->mUnk_9C = -1;
     this->mUnk_A0 = 0;
 }
 
-ARM bool ActorUnkEFIK::vfunc_18(unk32 param1) {
+bool ActorUnkEFIK::vfunc_18(unk32 param1) {
     this->mUnk_9C = 0x86F;
     this->mUnk_A0 = 4;
     this->mUnk_98.func_ov000_020a0334();
@@ -31,7 +31,7 @@ ARM bool ActorUnkEFIK::vfunc_18(unk32 param1) {
     return true;
 }
 
-ARM void ActorUnkEFIK::vfunc_20() {
+void ActorUnkEFIK::vfunc_20() {
     if (this->mUnk_94 != 0) {
         return;
     }
@@ -67,7 +67,7 @@ ARM void ActorUnkEFIK::vfunc_20() {
                 bStack_40[1] = k;
 
                 if (pUVar5->func_ov000_02080180(bStack_40) == 0x38) {
-                    u16 random = gRandom.Next32(0, 6);
+                    u16 random = gRandom.Next32(6);
 
                     if (random == 0) {
                         VecFx32 vec;
@@ -80,14 +80,14 @@ ARM void ActorUnkEFIK::vfunc_20() {
     }
 }
 
-ARM void ActorUnkEFIK::vfunc_24() {
+void ActorUnkEFIK::vfunc_24() {
     this->vfunc_20();
 }
 
-ARM void ActorUnkEFIK::vfunc_54(unk32 param1) {
+void ActorUnkEFIK::vfunc_54(unk32 param1) {
     this->mUnk_94 = param1;
 }
 
-ARM ActorUnkEFIK::~ActorUnkEFIK() {}
+ActorUnkEFIK::~ActorUnkEFIK() {}
 
-ARM ActorProfileUnkEFIK::~ActorProfileUnkEFIK() {}
+ActorProfileUnkEFIK::~ActorProfileUnkEFIK() {}

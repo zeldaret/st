@@ -3,22 +3,22 @@
 #include "Actor/ActorUnkLOCK.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkLOCK);
+DECL_PROFILE(ActorProfileUnkLOCK);
 
-ARM Actor *ActorProfileUnkLOCK::Create() {
+Actor *ActorProfileUnkLOCK::Create() {
     return new(HeapIndex_2) ActorUnkLOCK();
 }
 
-ARM ActorProfileUnkLOCK::ActorProfileUnkLOCK() :
+ActorProfileUnkLOCK::ActorProfileUnkLOCK() :
     ActorProfile(ActorId_LOCK) {}
 
-ARM ActorUnkLOCK::ActorUnkLOCK() {}
+ActorUnkLOCK::ActorUnkLOCK() {}
 
-ARM void ActorUnkLOCK::func_ov094_02166128(void) {}
-ARM void ActorUnkLOCK::func_ov094_0216613c(void) {}
-ARM void ActorUnkLOCK::func_ov094_02166144(void) {}
-ARM void ActorUnkLOCK::func_ov094_02166150(void) {}
-ARM void ActorUnkLOCK::func_ov094_02166154(void) {}
+void ActorUnkLOCK::func_ov094_02166128(void) {}
+void ActorUnkLOCK::func_ov094_0216613c(void) {}
+void ActorUnkLOCK::func_ov094_02166144(void) {}
+void ActorUnkLOCK::func_ov094_02166150(void) {}
+void ActorUnkLOCK::func_ov094_02166154(void) {}
 
-ARM ActorUnkLOCK::~ActorUnkLOCK() {}
-ARM ActorProfileUnkLOCK::~ActorProfileUnkLOCK() {}
+ActorUnkLOCK::~ActorUnkLOCK() {}
+ActorProfileUnkLOCK::~ActorProfileUnkLOCK() {}

@@ -30,11 +30,11 @@ extern "C" {
 #define PAD_ALL (PAD_BUTTON_ALL | PAD_KEY_ALL)
 
 inline BOOL PAD_DetectFold(void) {
-    return (REG_PAD & 0x8000) >> 0xf;
+    return (REG_PAD & 0x8000) >> 0xF;
 }
 
 inline u16 PAD_Read(void) {
-    return ((REG_KEYINPUT | REG_PAD) ^ 0x2fff) & 0x2fff;
+    return ((REG_KEYINPUT | REG_PAD) ^ 0x2FFF) & 0x2FFF;
 }
 
 #ifdef __cplusplus

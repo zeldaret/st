@@ -3,21 +3,21 @@
 #include "Actor/ActorUnkTRUP.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkTRUP);
+DECL_PROFILE(ActorProfileUnkTRUP);
 
-ARM Actor *ActorProfileUnkTRUP::Create() {
+Actor *ActorProfileUnkTRUP::Create() {
     return new(HeapIndex_2) ActorUnkTRUP();
 }
 
-ARM ActorProfileUnkTRUP::ActorProfileUnkTRUP() :
+ActorProfileUnkTRUP::ActorProfileUnkTRUP() :
     ActorProfile(ActorId_TRUP) {}
 
-ARM ActorUnkTRUP::ActorUnkTRUP() {}
+ActorUnkTRUP::ActorUnkTRUP() {}
 
-ARM void ActorUnkTRUP::func_ov026_0211139c(void) {}
-ARM void ActorUnkTRUP::func_ov026_02111440(void) {}
-ARM void ActorUnkTRUP::func_ov026_02111498(void) {}
-ARM void ActorUnkTRUP::func_ov026_02111578(void) {}
+void ActorUnkTRUP::func_ov026_0211139c(void) {}
+void ActorUnkTRUP::func_ov026_02111440(void) {}
+void ActorUnkTRUP::func_ov026_02111498(void) {}
+void ActorUnkTRUP::func_ov026_02111578(void) {}
 
-ARM ActorUnkTRUP::~ActorUnkTRUP() {}
-ARM ActorProfileUnkTRUP::~ActorProfileUnkTRUP() {}
+ActorUnkTRUP::~ActorUnkTRUP() {}
+ActorProfileUnkTRUP::~ActorProfileUnkTRUP() {}

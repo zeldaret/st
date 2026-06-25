@@ -64,7 +64,10 @@ public:
     /* 00 */ u16 mStampDates[StampType_Max];
     /* 28 */ u16 mUnk_28;
     /* 2A */ u16 mPostDate;
-    /* 2C */ Vec2b mStampPositions[StampType_Max];
+    /* 2C */ union {
+        Vec2b mStampPositions[StampType_Max];
+        u16 mStampPos[StampType_Max];
+    };
     /* 54 */ s8 mObtainedLetters[LetterType_Max];
     /* 68 */ s8 mObtainedStamps[StampType_Max];
     /* 7C */ u8 mLastRandomNum;
@@ -88,6 +91,7 @@ public:
         return this->GetNumPostcards() >= MAX_PRICECARDS ? true : false;
     }
 
+    // overlay 24
     void func_ov024_020d6310(MiscAdvManager *pSrc);
     void GiveLetterOrPriceCard(ItemId itemId);
     void GiveLetter(AdventureFlag_Half flag);
@@ -97,7 +101,7 @@ public:
     unk32 GetStamp(unk32 index);
     u16 *GetStampDate(unk32 index);
     Vec2b *GetStampPos(unk32 index);
-    void func_ov024_020d64b4(unk32 param1, unk32 param2, u16 *param3);
+    void func_ov024_020d64b4(s8 param1, unk32 param2, const u16 *param3);
     void func_ov024_020d6530();
     unk32 GetNumPostcards();
     void GivePriceCard(unk32 amount);
@@ -105,6 +109,9 @@ public:
     void func_ov024_020d6610();
 
     static MiscAdvManager *Create();
+
+    // overlay 1
+    static void Destroy();
 };
 
 extern MiscAdvManager *gpMiscAdvManager;

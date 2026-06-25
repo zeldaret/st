@@ -16,7 +16,7 @@ extern "C" void func_ov001_020bd6a8();
 
 class FileSelect_UnkClass7_04 {
 public:
-    /* 000 */ UnkSubStruct19 mUnk_000[30];
+    /* 000 */ CellAnimObject mUnk_000[30];
     /* E10 */ Vec2us mUnk_E10[30];
     /* E88 */
 };
@@ -43,7 +43,7 @@ public:
     /* 00 */ virtual ~FileSelect_UnkClass2_Sub4_Base() override {}
 };
 
-class FileSelectSubScreen : public SysObject, public FileSelect_UnkClass2_Sub4_Base {
+class FileSelectSubScreen : public FileSelect_UnkClass2_Sub4_Base {
 public:
     /* 0000 (base) */
     /* 001C */ unk32 mUnk_001C;
@@ -75,7 +75,7 @@ public:
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
 };
 
-class FileSelectManager : public GameModeManagerBase { // 0x02262dbc
+class FileSelectManager : public GameModeManagerBase { // 0x02262DBC
 public:
     /* 000 (base) */
     /* 154 */ GameModeManagerBase_104 *mUnk_154;

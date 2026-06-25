@@ -5,29 +5,29 @@
 
 // --- Actor WAWB ---
 
-ARM DECL_PROFILE(ActorProfileUnkWAWB);
+DECL_PROFILE(ActorProfileUnkWAWB);
 
-ARM Actor *ActorProfileUnkWAWB::Create() {
+Actor *ActorProfileUnkWAWB::Create() {
     return new(HeapIndex_2) ActorUnkWAWB();
 }
 
-ARM ActorProfileUnkWAWB::ActorProfileUnkWAWB() :
+ActorProfileUnkWAWB::ActorProfileUnkWAWB() :
     ActorProfile_Derived1(ActorId_WAWB) {}
 
-ARM ActorUnkWAWB::ActorUnkWAWB() {}
+ActorUnkWAWB::ActorUnkWAWB() {}
 
 // --- Actor WAWS ---
 
-ARM DECL_PROFILE(ActorProfileUnkWAWS);
+DECL_PROFILE(ActorProfileUnkWAWS);
 
-ARM Actor *ActorProfileUnkWAWS::Create() {
+Actor *ActorProfileUnkWAWS::Create() {
     return new(HeapIndex_2) ActorUnkWAWS();
 }
 
-ARM ActorProfileUnkWAWS::ActorProfileUnkWAWS() :
+ActorProfileUnkWAWS::ActorProfileUnkWAWS() :
     ActorProfile_Derived1(ActorId_WAWS) {}
 
-ARM ActorUnkWAWS::ActorUnkWAWS() {}
+ActorUnkWAWS::ActorUnkWAWS() {}
 
-ARM ActorProfileUnkWAWB::~ActorProfileUnkWAWB() {}
-ARM ActorProfileUnkWAWS::~ActorProfileUnkWAWS() {}
+ActorProfileUnkWAWB::~ActorProfileUnkWAWB() {}
+ActorProfileUnkWAWS::~ActorProfileUnkWAWS() {}

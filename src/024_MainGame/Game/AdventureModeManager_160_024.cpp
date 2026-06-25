@@ -15,7 +15,7 @@ extern "C" void func_02019b3c();
 extern "C" AdventureModeManager_160_18 *func_ov006_020b6ab0(void *, void *);
 
 //! TODO: this is fake according to GameModeTitleScreen::GameModeTitleScreen()
-extern "C" AdventureModeManager_160_14 *func_ov001_020b6520(void *, void *, int);
+extern "C" AdventureModeManager_160_14 *func_ov002_020b6520(void *, void *, int);
 
 bool AdventureModeManager_160_4C::vfunc_0C() {
     return data_0204a088->func_ov000_02061224();
@@ -160,7 +160,7 @@ void AdventureModeManager_160::func_ov024_020c7d4c(unk32 param1) {
     this->mUnk_0C = 7;
 
     if (param1 == 6) {
-        if (data_027e09a4->func_01ffd3d8()) {
+        if (data_027e09a4->IsTrain()) {
             data_0204a110.func_02019538(4, 1);
         } else {
             data_0204a110.func_02019538(0, 1);
@@ -335,7 +335,7 @@ void AdventureModeManager_160::vfunc_20(unk32 param1, unk32 param2) {
         this->mUnk_70.mUnk_27 = false;
         SceneIndex sceneIndex = GetAdventureModeManager()->mUnk_1C4.sceneIndex;
 
-        if (data_027e09a4->func_01ffd3d8()) {
+        if (data_027e09a4->IsTrain()) {
             GetAdventureModeManager()->func_ov024_020c555c(1);
         } else {
             if (data_027e09a0->func_ov000_02070378(sceneIndex)) {
@@ -417,8 +417,7 @@ void AdventureModeManager_160::func_ov024_020c84c4() {
 void AdventureModeManager_160::func_ov024_020c851c(unk32 param1) {
     data_0204a088->func_ov000_02061248();
 
-    //! TODO: fake match
-    this->mUnk_14 = func_ov001_020b6520(&this->mUnk_10, this->mUnk_1C, param1);
+    this->mUnk_14 = func_ov002_020b6520(&this->mUnk_10, this->mUnk_1C, param1);
     this->mUnk_18 = func_ov006_020b6ab0(&this->mUnk_10, this->mUnk_1C);
 
     if (param1 == 1 || param1 == 6) {

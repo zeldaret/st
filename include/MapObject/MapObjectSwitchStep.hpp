@@ -2,11 +2,12 @@
 
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectProfile.hpp"
+#include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
 #include "global.h"
 #include "types.h"
 
-class MapObjectSwitchStep_40 : public UnkSystem4 {
+class MapObjectSwitchStep_40 : public ModelRender {
 public:
     /* 00 (base) */
     /* 60 */ unk16 mUnk_60;

@@ -96,7 +96,7 @@ public:
     /* 14 */
 };
 
-class UnkStruct_ov000_020b504c_Sub3 : public SysObject {
+class UnkStruct_ov000_020b504c_Sub3 {
 public:
     /* 00 */ BMGEntry **mpBMGTable;
     /* 04 */ BMGHeader **mUnk_04;
@@ -148,6 +148,7 @@ public:
 
     UnkStruct_ov000_020b504c();
 
+    // overlay 0
     void *func_ov000_02067bb4(unk32 param1);
     UnkStruct_ov000_02067bc4 *func_ov000_02067bc4(unk32);
     unk8 func_ov000_02067cf8(unk32 param1, unk32 param2, UnkStruct_ov000_02067bc4::UnkStruct1 *param3); // ShowText?
@@ -158,18 +159,14 @@ public:
     UnkStruct_ov000_020b504c_Sub4_00 *func_ov000_02067bf0();
     void func_ov000_02067b20();
     void func_ov000_02068068(unk32 param1);
-
-    //! TODO: figure this out
-    void func_ov000_0206807c(unk32 param1, void *param2, unk32 param3, unk32 param4);
-    void func_ov000_0206807c(unk32 param1, void *param2, unk32 param3);
-    void func_ov000_0206807c(unk32 param1, void *param2);
-    void func_ov000_0206807c(void *param1, void *param2);
-    void func_ov000_0206807c(void *param1, unk32 param2);
+    bool func_ov000_0206807c(unk32 param1, void *param2);
     void func_ov000_02067b60();
 
+    // overlay 1
     void func_ov001_020be510();
     void func_ov001_020be668(void);
     void func_ov001_020be6f4(void);
+    void func_ov001_020be8e0(void);
 };
 
 // gMessageManager?

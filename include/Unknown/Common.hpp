@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Animation/CellAnimObject.hpp"
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkFileSystem.hpp"
@@ -7,8 +8,9 @@
 #include "math.hpp"
 #include "profile.hpp"
 #include "types.h"
-#include <nitro/mi.h>
 
+#include <nitro/mi.h>
+#include <nns/g3d/g3d.h>
 #include <nns/text.h>
 
 class UnkDataStruct2;
@@ -838,20 +840,24 @@ public:
 
 class UnkSystem3 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
+    /* 00 */ void *mUnk_00;
+    /* 04 */ void *mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */
 
     UnkSystem3(const char *path, unk32 param2);
+    UnkSystem3(const char *path, unk32 param2, unk32 param3, unk32 param4);
     ~UnkSystem3();
+
     void func_02015410(const char *path, unk32 param2);
     void func_02015460(const char *param1, void *param2, unk32 param3);
 };
 
 class UnkStruct2 {
 public:
-    /* 00 */ unk8 pad[0x10];
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ const char *mUnk_04;
+    /* 08 */ STRUCT_PAD(0x08, 0x10);
     /* 10 */
 
     UnkStruct2(const char *path, unk32 param2);
@@ -875,71 +881,6 @@ struct UnkResult {
     void func_02017520(const char *nscrPath, const char *ncgrPath, const char *nclrPath);
 };
 
-// used to draw the swords from the adventure and battle buttons
-class UnkSubStruct19 {
-public:
-    /* 00 */ void *mUnk_00;
-    /* 04 */ void *mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C; // pause the animation timer (in this context: pause the shiny animation on the sword)
-    /* 10 */ unk32 mUnk_10; // animation timer
-    /* 14 */ unk32 mUnk_14; // animation speed (also affects above timer)
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ void *mUnk_1C; // pointer to animation bank ("ABNK")
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ unk32 mUnk_24;
-    /* 28 */ u8 mUnk_28; // bool?
-    /* 29 */ unk8 mUnk_29;
-    /* 2A */ unk8 mUnk_2A;
-    /* 2B */ unk8 mUnk_2B;
-    /* 2C */ unk32 mUnk_2C;
-    /* 30 */ void *mUnk_30; // pointer to somewhere inside "CEBK"
-    /* 34 */ void *mUnk_34;
-    /* 38 */ unk32 mUnk_38;
-    /* 3C */ unk32 mUnk_3C;
-    /* 40 */ unk32 mUnk_40; // related to the width of the texture (scaling matrix?)
-    /* 44 */ unk32 mUnk_44; // related to the height of the texture
-    /* 48 */ Vec2us mUnk_48;
-    /* 4C */ unk32 mUnk_4C;
-    /* 50 */ unk32 mUnk_50;
-    /* 54 */ unk32 mUnk_54;
-    /* 58 */ unk32 mUnk_58; // another timer?
-    /* 5C */ Vec2s mUnk_5C; // position of the animated texture
-    /* 60 */ unk32 mUnk_60;
-    /* 64 */ unk32 mUnk_64;
-    /* 68 */ unk32 mUnk_68;
-    /* 6C */ unk16 mUnk_6C;
-    /* 6E */ bool mUnk_6E;
-    /* 6F */ unk8 mUnk_6F;
-    /* 70 */ unk32 mUnk_70;
-    /* 74 */ unk16 mUnk_74;
-    /* 76 */ unk16 mUnk_76;
-    /* 78 */
-
-    UnkSubStruct19();
-    UnkSubStruct19(unk32 param1, unk32 param2) {
-        this->mUnk_6E   = true;
-        this->mUnk_70   = 0;
-        this->mUnk_5C.x = 0;
-        this->mUnk_5C.y = 0;
-        this->mUnk_74   = 0;
-        this->func_ov000_0206082c(param1, param2);
-    }
-
-    void func_ov000_0206082c(s16 param1, unk32 param2);
-    void func_ov000_02060950();
-    void func_ov000_020609b0();
-    void func_ov000_020609c4(void);
-    bool func_ov000_02060a98(unk32 param1);
-    void func_ov000_02060ad0();
-    bool func_ov000_02060af8(void);
-    void func_ov000_02060b50();
-    void func_ov000_02060b64(void);
-    void func_ov000_02060bac();
-    unk32 func_ov000_02060c28(void);
-    void func_ov000_02060bd8(unk32 param1);
-};
-
 struct UnkStruct_StackTitleScreen {
     /* 00 */ unk32 pad[5];
     /* 14 */
@@ -949,186 +890,6 @@ struct UnkStruct_StackTitleScreen {
 
     void func_ov000_02059270(unk32 param1, char *param2, unk32 param3);
     void func_ov000_02059288(unk32 param1, char *param2, unk32 param3);
-};
-
-typedef void (*UnkSystem4_UnkCallback)(void);
-
-class UnkSystem4_vfunc_1C_B4 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 00 */ STRUCT_PAD(0x04, 0x4C);
-    /* 4C */ unk32 mUnk_4C;
-    /* 50 */ unk32 mUnk_50;
-    /* 54 */ unk32 mUnk_54;
-};
-
-class UnkSystem4_vfunc_1C {
-public:
-    /* 00 */ u8 *mUnk_00;
-    /* 04 */ unk32 *mUnk_04;
-    /* 08 */ STRUCT_PAD(0x08, 0xB4);
-    /* B4 */ UnkSystem4_vfunc_1C_B4 *mUnk_B4;
-    /* 00 */ unk32 *mUnk_B8;
-};
-
-class UnkSystem4 {
-public:
-    /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 *mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 *mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 *mUnk_18;
-    /* 1C */ unk32 mUnk_1C;
-    /* 20 */ unk32 *mUnk_20;
-    /* 24 */ unk32 mUnk_24;
-    /* 28 */ unk32 *mUnk_28;
-    /* 2C */ unk32 mUnk_2C;
-    /* 30 */ unk32 mUnk_30;
-    /* 34 */ unk32 mUnk_34;
-    /* 38 */ unk32 mUnk_38;
-    /* 3C */ unk32 mUnk_3C;
-    /* 40 */ unk32 mUnk_40;
-    /* 44 */ unk32 mUnk_44;
-    /* 48 */ unk32 mUnk_48;
-    /* 4C */ unk32 mUnk_4C;
-    /* 50 */ unk32 mUnk_50;
-    /* 54 */ unk32 mUnk_54;
-    /* 58 */ unk32 mUnk_58;
-    /* 5C */ unk32 mUnk_5C;
-    /* 60 */
-
-    UnkSystem4(unk32 param1); // func_ov000_02057b54
-
-    // data_ov000_020b1a6c
-    /* 00 */ virtual ~UnkSystem4();
-    /* 08 */ virtual void vfunc_08(void *param1); // resource thing? (GetUnkPointer1_Impl as param1)
-    /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
-    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2);
-    /* 18 */ virtual void vfunc_18();
-    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1);
-    /* 20 */ virtual void vfunc_20();
-
-    void func_ov000_02057c38(unk32 param1, unk32 param2);
-    void func_ov000_0209a7b8(void *param1, UnkSystem4_UnkCallback param2);
-};
-
-struct UnkResourceStruct_Base {
-    /* 00 */ void *mUnk_00;
-    /* 04 */ void *mUnk_04;
-    /* 08 */ u8 mUnk_08;
-    /* 09 */ u8 mUnk_09;
-    /* 0A */ u8 mUnk_0A;
-    /* 0B */ u8 mUnk_0B;
-    /* 0C */
-};
-
-struct UnkResourceStruct : public UnkResourceStruct_Base {
-    /* 0C */ unk8 mUnk_0C;
-    /* 0D */ unk8 mUnk_0D;
-    /* 0E */ u16 mUnk_0E;
-    /* 10 */
-};
-
-static inline void *GetUnkPointer1_Impl(UnkResourceStruct *ptr) {
-    if (ptr != NULL) {
-        u8 *temp_r1 = (u8 *) ptr + 8;
-        u32 *var_r0;
-        u8 zero = 0;
-
-        if (temp_r1 != NULL && ptr->mUnk_09 > zero) {
-            var_r0 = (u32 *) (temp_r1 + *(u16 *) ((u8 *) ptr + 14) + 4);
-        } else {
-            var_r0 = NULL;
-        }
-
-        if (var_r0 != NULL) {
-            return (void *) ((u8 *) ptr + *var_r0);
-        }
-    }
-
-    return NULL;
-}
-
-template <typename T> static inline void *GetUnkPointer1() {
-    return GetUnkPointer1_Impl((UnkResourceStruct *) GET_PROFILE_20_50(T));
-}
-
-template <typename T> static inline void *GetUnkPointer2(unk32 param1, u32 resId) {
-    T *pProfile = GET_PROFILE(T);
-    pProfile->func_ov000_0209ccd8(param1, resId);
-    return GetUnkPointer1_Impl((UnkResourceStruct *) pProfile->mUnk_20[param1]->mUnk_50);
-}
-
-class UnkSystem5 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk32 mUnk_1C;
-    /* 20 */
-
-    UnkSystem5(void *param1, unk32 param2); // func_ov000_0205778c
-
-    void func_01ffc3b4();
-
-    void func_ov000_020577a4(unk32 param1, unk32 param2, unk32 param3);
-    void func_ov000_020577f8(unk32 param1);
-};
-
-// related to UnkSystem5?
-class UnkSystem6 {
-public:
-    /* 00 (vtable) */
-    /* 04 */
-
-    UnkSystem6() {}
-
-    // data_ov000_020b1a98
-    /* 00 */ virtual ~UnkSystem6();
-    /* 08 */ virtual void vfunc_08(void *param1); // resource thing like UnkSystem4?
-    /* 0C */ virtual void vfunc_0C()                               = 0;
-    /* 10 */ virtual void vfunc_10()                               = 0;
-    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) = 0;
-    /* 18 */ virtual void vfunc_18()                               = 0;
-    /* 1C */
-};
-
-class UnkSystem6_Derived1 : public UnkSystem6 {
-public:
-    /* 00 (base) */
-    /* 04 */ void *mUnk_04;
-
-    UnkSystem6_Derived1(void *ptr) :
-        mUnk_04(ptr) {}
-
-    // data_ov000_020b1a48
-    /* 00 */ virtual ~UnkSystem6_Derived1() override {}
-    /* 10 */ virtual void vfunc_10() override;
-    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) override;
-    /* 18 */ virtual void vfunc_18() override;
-};
-
-class UnkSystem6_Derived2 : public UnkSystem6_Derived1 {
-public:
-    /* 00 (base) */
-    /* 08 */
-
-    UnkSystem6_Derived2() :
-        UnkSystem6_Derived1(NULL) {}
-
-    UnkSystem6_Derived2(void *ptr) :
-        UnkSystem6_Derived1(ptr) {}
-
-    // data_ov000_020b1968
-    /* 00 */ virtual ~UnkSystem6_Derived2() {}
-    /* 0C */ virtual void vfunc_0C() override;
 };
 
 class MapObject;
@@ -1201,8 +962,8 @@ class UnkActorSystem2 : public GameModeManagerBase_104 {
 public:
     /* 000 (base) */
     /* 01B */ bool mUnk_01B;
-    /* 01C */ UnkSubStruct19 mUnk_01C;
-    /* 094 */ UnkSubStruct19 mUnk_094;
+    /* 01C */ CellAnimObject mUnk_01C;
+    /* 094 */ CellAnimObject mUnk_094;
     /* 10C */ bool mUnk_10C;
     /* 10C */ bool mUnk_10D;
 
@@ -1257,20 +1018,124 @@ struct UnkDataStruct1 {
     }
 };
 
+struct UnkDataStruct4_14_2;
 struct UnkDataStruct2 {
-    /* 00 */ void *unk_00;
+    /* 00 */ UnkDataStruct4_14_2 *unk_00;
     /* 04 */
 
     UnkDataStruct2(unk32 param1);
     ~UnkDataStruct2();
 };
 
+#define UnkDataStruct4_14_Unk_Max 20
+typedef u8 UnkArrayDataType1[UnkDataStruct4_14_Unk_Max][15];
+struct UnkDataStruct4_14 {
+    /* 00 */ unk8 mUnk_00;
+    /* 01 */ s8 mStationSceneIndex;
+    /* 02 */ s8 mUnk_02[3];
+    /* 05 */ unk8 mUnk_05;
+    /* 06 */ u16 mUnk_06[3];
+    /* 0C */ u8 mUnk_0C[3];
+    /* 0F */ u8 mUnk_0F[3];
+    /* 12 */ u8 mUnk_12;
+    /* 13 */ u8 mUnk_13;
+    /* 14 */
+
+    s32 func_ov024_020d1c3c(unk32 *param1, unk32 param2) const;
+    void func_ov024_020d1c84();
+    bool func_ov024_020d1cc8(unk32 param1, unk32 param2) const;
+    bool func_ov024_020d1cf4(unk32 param1) const;
+    bool func_ov024_020d1d30(unk32 param1, u16 param2) const;
+    u8 func_ov024_020d1d78() const;
+    u8 func_ov024_020d1da0() const;
+    bool func_ov024_020d1dc8(unk32 param1, unk32 param2) const;
+    bool func_ov024_020d1df4(unk32 param1) const;
+    void func_ov024_020d1f60(u32 param1);
+    unk32 func_ov024_020d1f70() const;
+    bool func_ov024_020d1fa4(unk32 param1) const;
+    void func_ov024_020d1fe8();
+    bool func_ov024_020d2030(unk32 param1, unk32 param2);
+    u8 func_ov024_020d208c(unk32 param1) const;
+    void func_ov024_020d2098(unk32 param1, unk32 param2);
+    unk32 func_ov024_020d20c0(unk32 param1, unk32 param2) const;
+    bool IsStationDungeon() const;
+    bool func_ov024_020d21d8() const;
+    bool func_ov024_020d223c() const;
+    bool func_ov024_020d2270(unk32 param1, unk32 param2) const;
+    unk32 func_ov024_020d22ac(unk32 param1) const;
+    bool func_ov024_020d2320(unk32 param1) const;
+    unk32 func_ov024_020d2348(unk32 param1) const;
+    bool func_ov024_020d23bc() const;
+    bool func_ov024_020d239c() const;
+    bool func_ov024_020d23ec() const;
+    bool func_ov024_020d243c() const;
+    bool func_ov024_020d2448() const;
+    bool func_ov024_020d2464(bool param1) const;
+
+    static const u8 func_ov024_020d1a18(unk32 param1);
+    static unk32 func_ov024_020d1a28(u8 param1);
+    static u8 func_ov024_020d1a98(unk32 param1, unk32 param2);
+    static void func_ov024_020d1ab8(unk32 param1, unk32 *param2, unk32 *param3);
+    static s32 func_ov024_020d1b98(unk32 *param1, unk32 param2);
+    static s32 func_ov024_020d1be0(s32 param1);
+    static void func_ov024_020d1e20(unk16 *param1, unk32 param2);
+    static u8 func_ov024_020d1eac(const unk32 param1);
+};
+
+struct UnkDataStruct4_14_2 {
+    /* 000 */ UnkDataStruct4_14 mUnk_00[15];
+    /* 12C */
+};
+
+struct UnkStruct_SceneChange1;
+struct UnkDataStruct4 {
+    /* 00 (vtable) */
+    /* 04 */ u16 mUnk_04;
+    /* 06 */ u16 mUnk_06;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ UnkDataStruct4_14_2 *mUnk_14[20];
+    /* 64 */ UnkDataStruct4_14_2 *mUnk_64;
+    /* 68 */ VecFx32 mUnk_68[8];
+    /* C8 */ VecFx32 *mUnk_C8;
+    /* CC */ u32 mSceneIndex;
+    /* D0 */
+
+    UnkDataStruct4();
+
+    // data_ov024_020d8260
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */
+
+    void func_ov024_020d2518();
+    void func_ov024_020d251c();
+    void func_ov024_020d2520(UnkStruct_SceneChange1 *param1);
+    void func_ov024_020d2538(u32 sceneIndex, u8 roomIndex, UnkDataStruct4_14_2 *param3);
+    void func_ov024_020d2564();
+    void func_ov024_020d258c(u32 sceneIndex, u8 roomIndex);
+    void func_ov024_020d26b0(unk32 param1);
+    void func_ov024_020d277c();
+    void func_ov024_020d27cc();
+    void func_ov024_020d280c();
+    void func_ov024_020d29b0(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+    bool func_ov024_020d2a18(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+    void func_ov024_020d2b08(unk32 param1, unk32 param2, VecFx32 *param3) const;
+    void func_ov024_020d2c54(UnkArrayDataType1 param1, unk32 param2);
+    void func_ov024_020d2cfc(UnkArrayDataType1 param1, unk32 param2, unk32 param3);
+    s32 func_ov024_020d3068() const;
+    bool func_ov024_020d308c(fx32 *param1, fx32 *param2, unk16 param3) const;
+    void func_ov024_020d3100();
+    void func_ov024_020d3140();
+
+    static void func_ov024_020d2b40(Vec2s *param1, const UnkDataStruct4 *thisx);
+    static void func_ov024_020d2bcc(Vec2s *param1, const UnkDataStruct4 *thisx);
+};
+
 struct UnkDataStruct3 {
     /* 00 */ UnkDataStruct2 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ STRUCT_PAD(0x08, 0xCC);
-    /* CC */ unk32 mUnk_CC;
-    /* D0 */ unk32 mUnk_D0;
+    /* 04 */ UnkDataStruct4 mUnk_04;
     /* D4 */
 
     UnkDataStruct3(unk32 param1) :
@@ -1282,4 +1147,131 @@ struct InputInformations {
     void *unk_04;
     void *unk_08;
     void *unk_0C;
+};
+
+class MapObjectProfile_Derived2_20_Base_18 {
+public:
+    /* 00 */ const char *mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */
+
+    MapObjectProfile_Derived2_20_Base_18(); // func_02016620
+    ~MapObjectProfile_Derived2_20_Base_18();
+};
+
+class MapObjectProfile_Derived2_20_Base_54 {
+public:
+    /* 00 (vtable) */
+    /* 04 */ const char *mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */
+
+    MapObjectProfile_Derived2_20_Base_54();
+    ~MapObjectProfile_Derived2_20_Base_54();
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08(unk32 param1);
+    /* 0C */ virtual void vfunc_0C();
+};
+
+class MapObjectProfile_Derived2_20_Base {
+public:
+    /* 00 (vtable) */
+    /* 04 */ const char *mDirName;
+    /* 08 */ const char *mArchiveName;
+    /* 0C */ void *mUnk_0C;
+    /* 10 */ void *mUnk_10;
+    /* 14 */ u8 mUnk_14;
+    /* 15 */ u8 mUnk_15;
+    /* 16 */ u8 mUnk_16;
+    /* 17 */ u8 mUnk_17;
+    /* 18 */ MapObjectProfile_Derived2_20_Base_18 mUnk_18;
+    /* 20 */ UnkSystem3 mUnk_20;
+    /* 2C */ UnkFileSystem3 mUnk_2C;
+    /* 3C */ UnkFileSystem5 mUnk_3C;
+    /* 50 */ BMDSectionModel *mUnk_50;
+    /* 54 */ MapObjectProfile_Derived2_20_Base_54 mUnk_54[4];
+    /* 94 */
+
+    MapObjectProfile_Derived2_20_Base(const char *directory, const char *archiveName, const char *param3, const char *param4,
+                                      unk32 param5,
+                                      unk32 param6); // func_ov000_02058540
+
+    // data_ov000_020b1b14
+    /* 00 */ virtual ~MapObjectProfile_Derived2_20_Base();
+    /* 08 */
+
+    void func_ov000_020586b4(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
+    void func_ov000_020588f0(void *param1, unk32 param2, unk32 param3, void *param4);
+    void func_ov000_02058900(void);
+    void func_ov000_02058914(void *param1);
+    void func_ov000_020589e4(void);
+    unk32 func_ov000_02058a24();
+    void unc_ov000_02058a58(void);
+    unk32 func_ov000_02058a84(unk32 param1, const char *param2);
+    void func_ov000_02058ab0(void);
+};
+
+class MapObjectProfile_Derived5 : public MapObjectProfile_Derived2_20_Base {
+public:
+    /* 00 (base) */
+    /* 94 */
+
+    MapObjectProfile_Derived5(s32 param1);
+    MapObjectProfile_Derived5(u32 param1);
+    MapObjectProfile_Derived5(const char *directory, const char *archiveName, const char *param3, const char *param4,
+                              unk32 param5, unk32 param6) :
+        MapObjectProfile_Derived2_20_Base(directory, archiveName, param3, param4, param5, param6) {}
+
+    // data_ov024_020d8350
+    /* 00 */ virtual ~MapObjectProfile_Derived5() override;
+    /* 08 */
+};
+
+class UnkActorFileSystem2 : public MapObjectProfile_Derived2_20_Base {
+public:
+    /* 00 (base) */
+    /* 94 */ unk16 mUnk_94;
+    /* 96 */ unk16 mUnk_96;
+    /* 98 */
+
+    UnkActorFileSystem2(u32 actorId2); // func_ov000_02097af8
+
+    // data_ov000_020b3084
+    /* 00 */ virtual ~UnkActorFileSystem2() override;
+};
+
+//! TODO: move to a better place
+enum TrainPresetType_ {
+    TrainPresetType_Default                = 0, // normal overworld settings
+    TrainPresetType_DarkRealmNormal        = 1, // default dark realm settings (SceneIndex_t_dark)
+    TrainPresetType_DarkRealmLightTear     = 2, // dark realm when on a light tear (SceneIndex_t_dark)
+    TrainPresetType_DarkRealmLightTearRope = 3, // same as above but when pulling the rope (SceneIndex_t_dark)
+    TrainPresetType_DarkRealmFight         = 4, // (SceneIndex_t_eviltrain, SceneIndex_t_eviltrain2 & SceneIndex_t_eviltrain3)
+    TrainPresetType_5                      = 5, // unused?
+    TrainPresetType_Max,
+};
+
+struct TrainSpeedTarget {
+    /* 00 */ unk32 speed;
+    /* 04 */ unk32 unk_04;
+    /* 08 */
+};
+
+struct TrainSpeedPreset {
+    /* 00 */ TrainSpeedTarget reverse;
+    /* 08 */ TrainSpeedTarget stop;
+    /* 10 */ TrainSpeedTarget slow;
+    /* 18 */ TrainSpeedTarget fast;
+    /* 20 */ unk32 unk_20;
+    /* 24 */ unk32 unk_24;
+    /* 28 */ unk32 unk_28;
+    /* 2C */ unk32 unk_2C;
+    /* 30 */ unk32 unk_30;
+    /* 34 */ unk32 unk_34;
+    /* 38 */ unk32 unk_38; // related to the "emergency break" thing when you go to reverse while fast speed
+    /* 3C */ fx32 unk_3C;
+    /* 40 */
 };

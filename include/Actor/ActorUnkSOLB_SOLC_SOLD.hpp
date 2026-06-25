@@ -9,14 +9,14 @@
 
 // --- Actor SOLB ---
 
-class ActorUnkSOLB_c4 : public Actor_c4 {
+class ActorUnkSOLB_C4 : public Actor_C4 {
 public:
-    ActorUnkSOLB_c4(Actor *param1);
+    ActorUnkSOLB_C4(Actor *param1);
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
 class ActorUnkSOLB : public Actor {
@@ -43,14 +43,14 @@ public:
 
 // --- Actor SOLC ---
 
-class ActorUnkSOLC_c4 : public Actor_c4 {
+class ActorUnkSOLC_C4 : public Actor_C4 {
 public:
-    ActorUnkSOLC_c4(Actor *param1);
+    ActorUnkSOLC_C4(Actor *param1);
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
 class ActorUnkSOLC : public Actor {
@@ -77,14 +77,14 @@ public:
 
 // --- Actor SOLD ---
 
-class ActorUnkSOLD_c4 : public Actor_c4 {
+class ActorUnkSOLD_C4 : public Actor_C4 {
 public:
-    ActorUnkSOLD_c4(Actor *param1);
+    ActorUnkSOLD_C4(Actor *param1);
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
 class ActorUnkSOLD : public Actor {

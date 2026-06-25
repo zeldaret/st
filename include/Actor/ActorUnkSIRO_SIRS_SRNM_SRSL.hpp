@@ -9,14 +9,14 @@
 
 // --- Actor SIRO ---
 
-class ActorUnkSIRO_c4 : public Actor_c4 {
+class ActorUnkSIRO_C4 : public Actor_C4 {
 public:
-    ActorUnkSIRO_c4(Actor *param1);
+    ActorUnkSIRO_C4(Actor *param1);
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
 class ActorUnkSIRO : public Actor {
@@ -43,14 +43,14 @@ public:
 
 // --- Actor SIRS ---
 
-class ActorUnkSIRS_c4 : public Actor_c4 {
+class ActorUnkSIRS_C4 : public Actor_C4 {
 public:
-    ActorUnkSIRS_c4(Actor *param1);
+    ActorUnkSIRS_C4(Actor *param1);
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
 class ActorUnkSIRS : public Actor {
@@ -77,14 +77,14 @@ public:
 
 // --- Actor SRNM ---
 
-class ActorUnkSRNM_c4 : public Actor_c4 {
+class ActorUnkSRNM_C4 : public Actor_C4 {
 public:
-    ActorUnkSRNM_c4(Actor *param1);
+    ActorUnkSRNM_C4(Actor *param1);
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
 class ActorUnkSRNM : public Actor {
@@ -111,14 +111,14 @@ public:
 
 // --- Actor SRSL ---
 
-class ActorUnkSRSL_c4 : public Actor_c4 {
+class ActorUnkSRSL_C4 : public Actor_C4 {
 public:
-    ActorUnkSRSL_c4(Actor *param1);
+    ActorUnkSRSL_C4(Actor *param1);
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
 class ActorUnkSRSL : public Actor {

@@ -23,7 +23,7 @@ const UnkStruct_ov031_021150b0 data_ov031_02114ffc(0x1E66);
 UnkStruct_ov031_02117210 data_ov031_02117210;
 UnkStruct_ov019_020d24c8_28_258_00 data_ov031_02117204(NULL, 0);
 
-ARM UnkStruct_ov031_02117210::UnkStruct_ov031_02117210() {
+UnkStruct_ov031_02117210::UnkStruct_ov031_02117210() {
     this->mUnk_00[0].mUnk_0C.x = -FLOAT_TO_FX32(1.0f);
     this->mUnk_00[0].mUnk_0C.y = FLOAT_TO_FX32(0.0f);
     this->mUnk_00[0].mUnk_0C.z = -FLOAT_TO_FX32(0.35f);
@@ -52,7 +52,7 @@ ARM UnkStruct_ov031_02117210::UnkStruct_ov031_02117210() {
     this->mUnk_00[2].mUnk_08 = 0x7009;
 }
 
-ARM MapObjectDoorBase::MapObjectDoorBase() :
+MapObjectDoorBase::MapObjectDoorBase() :
     mUnk_68(NULL) {
     this->mUnk_6C = 0;
     this->mUnk_70 = 0x148;
@@ -79,7 +79,7 @@ ARM MapObjectDoorBase::MapObjectDoorBase() :
     data_ov031_02117204.func_ov000_0205fc20(0x5D, 0x1F, NULL, NULL);
 }
 
-ARM void MapObjectDoorBase::func_ov031_020fbf10(bool param1, bool param2) {
+void MapObjectDoorBase::func_ov031_020fbf10(bool param1, bool param2) {
     if (this->IsOrientedVertically()) {
         this->mPos.z += FLOAT_TO_FX32(0.5f);
         Vec2b local_16(1, 2);
@@ -116,7 +116,7 @@ ARM void MapObjectDoorBase::func_ov031_020fbf10(bool param1, bool param2) {
     }
 }
 
-ARM void MapObjectDoorBase::vfunc_08() {
+void MapObjectDoorBase::vfunc_08() {
     this->vfunc_70();
 
     switch (this->mUnk_16) {
@@ -264,9 +264,9 @@ ARM void MapObjectDoorBase::vfunc_08() {
     this->vfunc_60();
 }
 
-ARM void MapObjectDoorBase::vfunc_40() {}
+void MapObjectDoorBase::vfunc_40() {}
 
-ARM void MapObjectDoorBase::vfunc_0C() {
+void MapObjectDoorBase::vfunc_0C() {
     if (this->mUnk_74 >= 0 && data_027e09b8->func_ov000_020732ec(this->mUnk_74)) {
         this->vfunc_08();
     } else if (this->mUnk_16 == 2 || this->mUnk_16 == 8) {
@@ -274,7 +274,7 @@ ARM void MapObjectDoorBase::vfunc_0C() {
     }
 }
 
-ARM void MapObjectDoorBase::vfunc_60() {
+void MapObjectDoorBase::vfunc_60() {
     switch (this->mUnk_16) {
         case 0:
             if (!this->mUnk_86 && !GET_FLAG(this->mFlags, MapObjFlag_1) && this->mUnk_6C <= FLOAT_TO_FX32(0.5f)) {
@@ -317,7 +317,7 @@ struct UnkStackStruct {
     u16 mUnk_1E;
 };
 
-ARM void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
+void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
     UnkStackStruct1 auStack_5c;
     UnkStackStruct1 auStack_9c;
     this->mUnk_16 = param1;
@@ -486,8 +486,8 @@ ARM void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
             this->vfunc_7C();
 
             if (this->mUnk_8A && this->mUnk_86 && param2 == 0) {
-                unk32 var_r5   = 1;
-                unk32 var_r1_2 = 2;
+                u16 var_r5   = 1;
+                s16 var_r1_2 = 2;
 
                 if (this->IsOrientedVertically()) {
                     var_r1_2 = -1;
@@ -498,7 +498,7 @@ ARM void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
                 }
 
                 if (this->mUnk_87) {
-                    unk32 sp8;
+                    ActorRef sp8;
                     MapObject::func_ov000_0209d54c(&sp8, this, 1, &this->mPos, var_r1_2, var_r5);
                 }
             }
@@ -530,17 +530,17 @@ ARM void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
     }
 }
 
-ARM void MapObjectDoorBase::vfunc_48() {}
+void MapObjectDoorBase::vfunc_48() {}
 
-ARM bool MapObjectDoorBase::vfunc_64() {
+bool MapObjectDoorBase::vfunc_64() {
     return this->func_ov000_0209d668();
 }
 
-ARM bool MapObjectDoorBase::vfunc_68() {
+bool MapObjectDoorBase::vfunc_68() {
     return this->func_ov000_0209d29c(0);
 }
 
-ARM bool MapObjectDoorBase::vfunc_6C() {
+bool MapObjectDoorBase::vfunc_6C() {
     return false;
 }
 
@@ -555,7 +555,7 @@ struct stack_struct {
 extern "C" void func_01ff9fbc(Mat2p *, unk32, Mat2p *);
 extern fx16 data_0203f964[];
 
-ARM void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1, s8 param2) {
+void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1, s8 param2) {
     Vec2s sp10;
     stack_struct sp8;
     u32 sp4;
@@ -596,15 +596,15 @@ ARM void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1, s8 param2) {
     }
 }
 
-ARM void MapObjectDoorBase::vfunc_74() {}
+void MapObjectDoorBase::vfunc_74() {}
 
-ARM void MapObjectDoorBase::vfunc_78() {}
+void MapObjectDoorBase::vfunc_78() {}
 
-ARM void MapObjectDoorBase::vfunc_7C() {
+void MapObjectDoorBase::vfunc_7C() {
     this->mUnk_68.func_ov000_020a0334();
 }
 
-ARM void MapObjectDoorBase::vfunc_80() {
+void MapObjectDoorBase::vfunc_80() {
     this->mUnk_74 = -1;
     this->func_ov031_020fcd40();
 
@@ -613,12 +613,12 @@ ARM void MapObjectDoorBase::vfunc_80() {
     }
 }
 
-ARM void MapObjectDoorBase::func_ov031_020fcd40() {
-    this->func_ov000_0209d2c4(1, 1);
+void MapObjectDoorBase::func_ov031_020fcd40() {
+    this->func_ov000_0209d2c4(1, true);
     this->func_ov000_0209d614(1);
 }
 
-ARM void MapObjectDoorBase::vfunc_70() {
+void MapObjectDoorBase::vfunc_70() {
     switch (this->mUnk_16) {
         case 5:
             if (this->mUnk_80 > 0) {
@@ -650,11 +650,11 @@ ARM void MapObjectDoorBase::vfunc_70() {
     }
 }
 
-ARM void MapObjectDoorBase::vfunc_44() {}
+void MapObjectDoorBase::vfunc_44() {}
 
-ARM void MapObjectDoorBase::vfunc_4C() {}
+void MapObjectDoorBase::vfunc_4C() {}
 
-ARM void MapObjectDoorBase::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param3) {
+void MapObjectDoorBase::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param3) {
     VecFx32 local_20;
     *param3 = this->mUnk_14;
 
@@ -673,7 +673,7 @@ ARM void MapObjectDoorBase::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param
     VecFx32_Add(&this->mPos, &local_20, param2);
 }
 
-ARM void MapObjectDoorBase::func_ov031_020fcf0c(unk32 param1) {
+void MapObjectDoorBase::func_ov031_020fcf0c(unk32 param1) {
     if (param1 != 0) {
         SET_FLAG(this->mFlags, MapObjFlag_1);
     } else {
@@ -681,7 +681,7 @@ ARM void MapObjectDoorBase::func_ov031_020fcf0c(unk32 param1) {
     }
 }
 
-ARM bool MapObjectDoorBase::func_ov031_020fcf30() {
+bool MapObjectDoorBase::func_ov031_020fcf30() {
     unk16 *plocal_10;
     unk16 local_10;
 
@@ -696,10 +696,10 @@ ARM bool MapObjectDoorBase::func_ov031_020fcf30() {
     return true;
 }
 
-ARM void MapObjectDoorBase::vfunc2_04() {}
+void MapObjectDoorBase::vfunc2_04() {}
 
 // https://decomp.me/scratch/JINmb
-ARM void MapObjectDoorBase::vfunc2_08() {
+void MapObjectDoorBase::vfunc2_08() {
     s32 temp_r0;
     s32 temp_r1;
     s32 temp_r2;
@@ -745,17 +745,17 @@ ARM void MapObjectDoorBase::vfunc2_08() {
     data_027e0ce0->func_ov000_0208bbd4(1, &this->mUnk_5C, this->mUnk_5A);
 }
 
-ARM bool MapObjectDoorBase::vfunc_88() {
+bool MapObjectDoorBase::vfunc_88() {
     return true;
 }
 
-ARM unk32 MapObjectDoorBase::vfunc_8C() {
+unk32 MapObjectDoorBase::vfunc_8C() {
     return 0;
 }
 
-ARM void MapObjectDoorBase::vfunc_50() {}
-ARM void MapObjectDoorBase::vfunc_54() {}
-ARM void MapObjectDoorBase::vfunc_58() {}
+void MapObjectDoorBase::vfunc_50() {}
+void MapObjectDoorBase::vfunc_54() {}
+void MapObjectDoorBase::vfunc_58() {}
 
 //! TODO: this is fake but we don't have any other choice currently to match the function order
-ARM MapObjectDoorBase::~MapObjectDoorBase() {}
+MapObjectDoorBase::~MapObjectDoorBase() {}

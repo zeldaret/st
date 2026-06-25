@@ -3,20 +3,20 @@
 #include "MapObject/MapObjectUnkPLFR.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkPLFR);
+DECL_PROFILE(MapObjectProfileUnkPLFR);
 
-ARM MapObject *MapObjectProfileUnkPLFR::Create() {
+MapObject *MapObjectProfileUnkPLFR::Create() {
     return new(HeapIndex_2) MapObjectUnkPLFR();
 }
 
-ARM MapObjectProfileUnkPLFR::MapObjectProfileUnkPLFR() :
+MapObjectProfileUnkPLFR::MapObjectProfileUnkPLFR() :
     MapObjectProfile(MapObjectId_PLFR) {}
 
-ARM MapObjectUnkPLFR::MapObjectUnkPLFR() {}
+MapObjectUnkPLFR::MapObjectUnkPLFR() {}
 
-ARM void MapObjectUnkPLFR::func_ov077_0215ad70(void) {}
-ARM void MapObjectUnkPLFR::func_ov077_0215add0(void) {}
-ARM void MapObjectUnkPLFR::func_ov077_0215add4(void) {}
+void MapObjectUnkPLFR::func_ov077_0215ad70(void) {}
+void MapObjectUnkPLFR::func_ov077_0215add0(void) {}
+void MapObjectUnkPLFR::func_ov077_0215add4(void) {}
 
-ARM MapObjectUnkPLFR::~MapObjectUnkPLFR() {}
-ARM MapObjectProfileUnkPLFR::~MapObjectProfileUnkPLFR() {}
+MapObjectUnkPLFR::~MapObjectUnkPLFR() {}
+MapObjectProfileUnkPLFR::~MapObjectProfileUnkPLFR() {}

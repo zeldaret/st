@@ -3,19 +3,19 @@
 #include "MapObject/MapObjectUnkFRAI.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkFRAI);
+DECL_PROFILE(MapObjectProfileUnkFRAI);
 
-ARM MapObject *MapObjectProfileUnkFRAI::Create() {
+MapObject *MapObjectProfileUnkFRAI::Create() {
     return new(HeapIndex_2) MapObjectUnkFRAI();
 }
 
-ARM MapObjectProfileUnkFRAI::MapObjectProfileUnkFRAI() :
+MapObjectProfileUnkFRAI::MapObjectProfileUnkFRAI() :
     MapObjectProfile(MapObjectId_FRAI) {}
 
-ARM MapObjectUnkFRAI::MapObjectUnkFRAI() {}
+MapObjectUnkFRAI::MapObjectUnkFRAI() {}
 
-ARM void MapObjectUnkFRAI::func_ov040_0212d81c(void) {}
-ARM void MapObjectUnkFRAI::func_ov040_0212d9a4(void) {}
+void MapObjectUnkFRAI::func_ov040_0212d81c(void) {}
+void MapObjectUnkFRAI::func_ov040_0212d9a4(void) {}
 
-ARM MapObjectUnkFRAI::~MapObjectUnkFRAI() {}
-ARM MapObjectProfileUnkFRAI::~MapObjectProfileUnkFRAI() {}
+MapObjectUnkFRAI::~MapObjectUnkFRAI() {}
+MapObjectProfileUnkFRAI::~MapObjectProfileUnkFRAI() {}

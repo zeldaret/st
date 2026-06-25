@@ -35,7 +35,7 @@ void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32
 
 static u8 data_ov018_020c5bc0;
 
-ARM void SysFault::func_ov018_020c4840() {
+void SysFault::func_ov018_020c4840() {
     this->mUnk_05 = 0;
     func_02027a28(func_0201245c, 0);
     DC_FlushAll();
@@ -43,15 +43,15 @@ ARM void SysFault::func_ov018_020c4840() {
     this->mUnk_04 = 0;
 }
 
-ARM Game::Game() :
+Game::Game() :
     mpCurrentGameMode(NULL),
     createCallback(NULL),
     mUnk_08(NULL),
-    mpSaveFile(NULL),
+    mpSaveSlot(NULL),
     mUnk_14(NULL),
     mUnk_18(NULL) {}
 
-ARM void Game::func_ov018_020c48a4() {
+void Game::func_ov018_020c48a4() {
     OS_SetIrqFunction(1, func_02013184);
     OS_EnableIrqMask(1);
     GX_VBlankIntr(1);
@@ -60,7 +60,7 @@ ARM void Game::func_ov018_020c48a4() {
     this->TrySetCreateCallback((GameModeCreateCallback) Game::func_ov018_020c4ba8);
 }
 
-ARM void Game::func_ov018_020c48f8() {
+void Game::func_ov018_020c48f8() {
     if (gOverlayManager.mLoadedOverlays[OverlaySlot_Second] != OverlayIndex_Second) {
         data_02049ba0.LoadIfNotLoaded(OverlaySlot_Second, OverlayIndex_Second);
         data_0204999c.func_ov018_020c4a5c();
@@ -69,13 +69,13 @@ ARM void Game::func_ov018_020c48f8() {
     }
 }
 
-ARM UnkStruct_02049b18::UnkStruct_02049b18() {
+UnkStruct_02049b18::UnkStruct_02049b18() {
     this->mUnk_58 = 0;
     this->mUnk_5A = 0;
     this->func_02013768();
 }
 
-ARM void UnkStruct_02011e10::func_ov018_020c4980() {
+void UnkStruct_02011e10::func_ov018_020c4980() {
     unk32 arenaLo = OS_GetMainArenaLo();
     unk32 arenaHi = OS_GetMainArenaHi();
 
@@ -106,7 +106,7 @@ ARM void UnkStruct_02011e10::func_ov018_020c4980() {
     this->mUnk_7C    = 0;
 }
 
-ARM void UnkStruct_02011e10::func_ov018_020c4a5c() {
+void UnkStruct_02011e10::func_ov018_020c4a5c() {
     UnkStruct_02011e10_Sub1 *temp_r2;
     int temp_r5;
     int temp_r7;
@@ -126,9 +126,9 @@ ARM void UnkStruct_02011e10::func_ov018_020c4a5c() {
     this->mUnk_74 = 1;
 }
 
-ARM UnkStruct_ov000_020b4ec4::UnkStruct_ov000_020b4ec4() {}
+UnkStruct_ov000_020b4ec4::UnkStruct_ov000_020b4ec4() {}
 
-ARM UnkStruct_02049b80::UnkStruct_02049b80() {
+UnkStruct_02049b80::UnkStruct_02049b80() {
     this->mUnk_08 = this;
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_0C); i++) {
@@ -137,7 +137,7 @@ ARM UnkStruct_02049b80::UnkStruct_02049b80() {
     }
 }
 
-ARM UnkStruct_02049b18_06::UnkStruct_02049b18_06() {
+UnkStruct_02049b18_06::UnkStruct_02049b18_06() {
     TPCalibrateParam params;
 
     TP_Init();
@@ -149,7 +149,7 @@ ARM UnkStruct_02049b18_06::UnkStruct_02049b18_06() {
     }
 }
 
-ARM UnkStruct_0204e64c_00::UnkStruct_0204e64c_00() {
+UnkStruct_0204e64c_00::UnkStruct_0204e64c_00() {
     this->mUnk_04 = 0;
     this->mUnk_06 = 0;
     this->mUnk_08 = 0;
@@ -158,16 +158,16 @@ ARM UnkStruct_0204e64c_00::UnkStruct_0204e64c_00() {
     this->mUnk_0C = 0;
 }
 
-ARM UnkStruct_0204e64c::UnkStruct_0204e64c() {
+UnkStruct_0204e64c::UnkStruct_0204e64c() {
     this->mUnk_16 = 0;
 }
 
-ARM GameModeStartUp *Game::func_ov018_020c4ba8() {
+GameModeStartUp *Game::func_ov018_020c4ba8() {
     static GameModeStartUp data_ov018_020c5bd4;
     return &data_ov018_020c5bd4;
 }
 
-ARM GameModeStartUp::GameModeStartUp() {
+GameModeStartUp::GameModeStartUp() {
     this->mUnk_28 = 0;
     this->mUnk_2A = 0;
     data_0204a110.func_02018c78(1);
@@ -191,7 +191,7 @@ ARM GameModeStartUp::GameModeStartUp() {
     data_0204e5f8.func_0201b9a8(&this->mUnk_04);
 }
 
-ARM void GameModeStartUp::vfunc_0C() {
+void GameModeStartUp::vfunc_0C() {
     if (this->mUnk_04.mUnk_0D == this->mUnk_04.mUnk_10) {
         if (this->mUnk_28 == 0) {
             this->mUnk_2C = REG_FRAME_COUNTER;
@@ -208,4 +208,4 @@ ARM void GameModeStartUp::vfunc_0C() {
     }
 }
 
-ARM void GameModeStartUp::vfunc_20() {}
+void GameModeStartUp::vfunc_20() {}

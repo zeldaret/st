@@ -4,19 +4,19 @@
 
 extern u8 data_ov000_020b64b0[8]; // bool?
 
-ARM UnkSystem1_ov019_Derived1::UnkSystem1_ov019_Derived1() :
+UnkSystem1_ov019_Derived1::UnkSystem1_ov019_Derived1() :
     UnkSystem1_ov019_1(0, 0) {
     this->mUnk_14 = 0;
     this->mUnk_18 = -1;
     this->mUnk_1B = 0;
 }
 
-ARM void UnkSystem1_ov019_Derived1::vfunc_08(unk32 param1) {
+void UnkSystem1_ov019_Derived1::vfunc_08(unk32 param1) {
     UnkStruct_ov000_02067bc4::UnkStruct1 stack;
     this->mUnk_06 = data_ov000_020b504c.func_ov000_02067cf8(param1, this->mUnk_10, &stack);
 }
 
-ARM unk32 UnkSystem1_ov019_Derived1::vfunc_1C(u32 param1, unk32 param2, unk32 param3) {
+unk32 UnkSystem1_ov019_Derived1::vfunc_1C(u32 param1, unk32 param2, unk32 param3) {
     if (param1 < 4) {
         if (this->mUnk_04 <= 0) {
             this->func_ov019_020c5590(BMG_ID(BMGGroup_select, 0x1B), param2, param3);
@@ -74,7 +74,7 @@ ARM unk32 UnkSystem1_ov019_Derived1::vfunc_1C(u32 param1, unk32 param2, unk32 pa
     return 1;
 }
 
-ARM unk32 UnkSystem1_ov019_Derived1::vfunc_20(unk32 param1, unk32 param2, unk32 param3) {
+unk32 UnkSystem1_ov019_Derived1::vfunc_20(unk32 param1, unk32 param2, unk32 param3) {
     bool isParam3 = false;
 
     if (param3 != 0) {
@@ -109,7 +109,7 @@ ARM unk32 UnkSystem1_ov019_Derived1::vfunc_20(unk32 param1, unk32 param2, unk32 
     return -1;
 }
 
-ARM unk32 UnkSystem1_ov019_Derived1::func_ov019_020c5540(bool param1, unk16 param2) {
+unk32 UnkSystem1_ov019_Derived1::func_ov019_020c5540(bool param1, unk16 param2) {
     if (param2 >= 0) {
         if (param1 != 1 || this->mUnk_18 != 0) {
             this->mUnk_18                   = param2;
@@ -124,7 +124,7 @@ ARM unk32 UnkSystem1_ov019_Derived1::func_ov019_020c5540(bool param1, unk16 para
     return 0;
 }
 
-ARM void UnkSystem1_ov019_Derived1::func_ov019_020c5590(unk32 param1, unk32 param2, unk32 param3) {
+void UnkSystem1_ov019_Derived1::func_ov019_020c5590(unk32 param1, unk32 param2, unk32 param3) {
     data_02049bd4.mUnk_04++;
     UnkStruct_ov000_02067bc4::UnkStruct1 auStack_20(-1, param3);
     this->mUnk_1A = data_ov000_020b504c.func_ov000_02067cf8(param1, this->mUnk_10, &auStack_20);

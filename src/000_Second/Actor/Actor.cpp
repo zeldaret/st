@@ -3,16 +3,16 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include <nitro/mi.h>
 
-ARM Actor::Actor() {
+Actor::Actor() {
     this->mVel.x  = 0;
     this->mVel.y  = 0;
     this->mVel.z  = 0;
     this->mUnk_2C = 0xCD;
     this->mUnk_38 = 0;
-    this->mUnk_3C = 0;
+    this->mUnk_3C = NULL;
     this->mUnk_40 = 0;
     this->mUnk_48 = 4;
-    this->mUnk_4C = -1;
+    this->mState  = ActorState_None;
     this->mUnk_50 = 0;
     this->mUnk_52 = 0;
     this->mUnk_54 = 0;
@@ -32,42 +32,41 @@ ARM Actor::Actor() {
     this->func_ov000_0209848c(data_ov000_020b539c_eur.mUnk_30);
 }
 
-ARM Actor::~Actor() {}
+Actor::~Actor() {}
 
 // non-matching (equivalent)
-ARM void Actor::func_ov000_0209848c(ActorProfile *param1) {
-    s16 unk_1c;
-    Cylinder *temp_r3;
-
-    unk_1c  = param1->mUnk_1C;
-    temp_r3 = &param1->mUnk_04;
+void Actor::func_ov000_0209848c(ActorProfile *param1) {
+    Cylinder *temp_r3 = &param1->mUnk_04;
+    unk32 unk_1c      = param1->mUnk_1C;
 
     this->mpProfile = param1;
-    this->mUnk_30 = this->mUnk_34 = temp_r3;
-    this->mUnk_4E                 = unk_1c;
+
+    this->mUnk_34  = &param1->mUnk_04;
+    this->mUnk_30  = &param1->mUnk_04;
+    this->mYOffset = unk_1c;
 }
 
-ARM bool Actor::vfunc_18(unk32 param1) {
+bool Actor::vfunc_18(unk32 param1) {
     return true;
 }
 
-ARM void Actor::vfunc_1c() {}
+void Actor::vfunc_1C() {}
 
-ARM void Actor::vfunc_20() {}
+void Actor::vfunc_20() {}
 
-ARM void Actor::vfunc_24() {}
+void Actor::vfunc_24() {}
 
-ARM void Actor::vfunc_28() {}
+void Actor::vfunc_28() {}
 
-ARM void Actor::vfunc_2c(unk32 param1) {}
+void Actor::vfunc_2C(unk32 param1) {}
 
-ARM void Actor::vfunc_30() {}
+void Actor::vfunc_30() {}
 
-ARM unk32 Actor::vfunc_34() {
+unk32 Actor::vfunc_34() {
     return 1;
 }
 
-ARM void Actor::func_ov000_020984d0() {
+void Actor::func_ov000_020984d0() {
     UNSET_FLAG(this->mFlags, ActorFlag_Alive);
 
     if (GET_FLAG(this->mFlags, ActorFlag_16)) {
@@ -75,94 +74,78 @@ ARM void Actor::func_ov000_020984d0() {
     }
 }
 
-ARM void Actor::func_ov000_020984f0() {
+void Actor::func_ov000_020984f0() {
     if (this->mUnk_5C.mUnk_24 >= 0) {
         data_027e0cd8->func_ov000_02081ecc(this->mUnk_5C.mUnk_24, 1);
     }
 }
 
-// non-matching
-ARM void Actor::vfunc_00(VecFx32 *param1) {
-    *param1 = mPos;
-    param1->y += mUnk_4E;
-    // short sVar1;
-    // int iVar2;
-    // int iVar3;
-
-    // param1->x = this->mPos.x;
-    // param1->y = this->mPos.y + this->mUnk_4E;
-    // param1->z = this->mPos.z;
+void Actor::GetOffsetPos(VecFx32 *pPos) const {
+    pPos->x = this->mPos.x;
+    pPos->y = this->mPos.y;
+    pPos->z = this->mPos.z;
+    pPos->y += this->mYOffset;
 }
 
-ARM VecFx32 *Actor::func_ov000_0209853c(unk32 param1) {
+VecFx32 *Actor::func_ov000_0209853c(unk32 param1) {
     return data_027e0ce0->func_01fff148(param1);
 }
 
-ARM bool Actor::vfunc_04() {
+bool Actor::vfunc_04() {
     return this->mpProfile->mUnk_1E & 1;
 }
 
-ARM unk16 Actor::vfunc_08() {
+unk16 Actor::vfunc_08() {
     return this->mpProfile->mUnk_1A;
 }
 
-ARM unk8 Actor::vfunc_0c() {
+unk8 Actor::vfunc_0C() {
     return this->mpProfile->mUnk_18;
 }
 
-// non-matching
-ARM unk32 Actor::vfunc_38(unk32 param1) {
-    u16 var_r3;
-    short stack_c;
-
-    var_r3 = param1 >> 16;
-
-    if (GET_FLAG(this->mFlags, ActorFlag_Grabbed)) {
-        return 0;
+bool Actor::Grab(ActorGrabParams grabParams) {
+    // fake match?
+    if (GET_FLAG((volatile ActorFlags *) this->mFlags, ActorFlag_Grabbed)) {
+        return false;
     }
 
     SET_FLAG(this->mFlags, ActorFlag_Grabbed);
-    stack_c = this->mFlags[0];
 
-    switch (stack_c) {
+    switch (grabParams.unk_00) {
         case 0x100:
-        case 0x101:
-            if (stack_c == 0x101) {
+        case 0x101: {
+            u16 var_r3 = grabParams.unk_02;
+
+            if (grabParams.unk_00 == 0x101) {
                 var_r3 = 0;
             }
 
-            // ???
-            *(&this->mUnk_4A + var_r3) = 0;
+            this->mUnk_4A[var_r3] = 0;
             break;
+        }
         default:
             break;
     }
 
-    return 1;
+    return true;
 }
 
-// non-matching
-ARM bool Actor::vfunc_3c(unk32 param2, VecFx32 *param3) {
-    if (!GET_FLAG(this->mFlags, ActorFlag_Grabbed)) {
+bool Actor::Drop(ActorGrabParams param2, const VecFx32 *pVel) {
+    // fake match?
+    if (!GET_FLAG((volatile ActorFlags *) this->mFlags, ActorFlag_Grabbed)) {
         return false;
     }
 
-    this->mVel.x = param3->x;
-    this->mVel.y = param3->y;
-    this->mVel.z = param3->z;
+    this->mVel.x = pVel->x;
+    this->mVel.y = pVel->y;
+    this->mVel.z = pVel->z;
 
     UNSET_FLAG(this->mFlags, ActorFlag_Grabbed);
     return true;
 }
 
-// non-matching
-ARM void Actor::func_ov000_0209862c(unk32 param1) {
-    s8 var_ip;
-    void *temp_r2;
-
-    var_ip = 0;
-    do {
-        var_ip += 1;
-        (&this->mUnk_4A)[var_ip] = param1;
-    } while (var_ip < 2);
+void Actor::func_ov000_0209862c(unk32 param1) {
+    for (s8 i = 0; i < ARRAY_LEN(this->mUnk_4A); i++) {
+        this->mUnk_4A[i] = param1;
+    }
 }

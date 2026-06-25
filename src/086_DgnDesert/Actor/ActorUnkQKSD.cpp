@@ -3,23 +3,23 @@
 #include "Actor/ActorUnkQKSD.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkQKSD);
+DECL_PROFILE(ActorProfileUnkQKSD);
 
-ARM Actor *ActorProfileUnkQKSD::Create() {
+Actor *ActorProfileUnkQKSD::Create() {
     return new(HeapIndex_2) ActorUnkQKSD();
 }
 
-ARM ActorProfileUnkQKSD::ActorProfileUnkQKSD() :
+ActorProfileUnkQKSD::ActorProfileUnkQKSD() :
     ActorProfile_Derived1(ActorId_QKSD) {}
 
-ARM ActorUnkQKSD::ActorUnkQKSD() {}
+ActorUnkQKSD::ActorUnkQKSD() {}
 
-ARM void ActorUnkQKSD::func_ov086_0215bc50(void) {}
-ARM void ActorUnkQKSD::func_ov086_0215bc64(void) {}
-ARM void ActorUnkQKSD::func_ov086_0215bcc8(void) {}
-ARM void ActorUnkQKSD::func_ov086_0215bcdc(void) {}
-ARM void ActorUnkQKSD::func_ov086_0215bcf0(void) {}
-ARM void ActorUnkQKSD::func_ov086_0215bd54(void) {}
+void ActorUnkQKSD::func_ov086_0215bc50(void) {}
+void ActorUnkQKSD::func_ov086_0215bc64(void) {}
+void ActorUnkQKSD::func_ov086_0215bcc8(void) {}
+void ActorUnkQKSD::func_ov086_0215bcdc(void) {}
+void ActorUnkQKSD::func_ov086_0215bcf0(void) {}
+void ActorUnkQKSD::func_ov086_0215bd54(void) {}
 
-ARM ActorUnkQKSD::~ActorUnkQKSD() {}
-ARM ActorProfileUnkQKSD::~ActorProfileUnkQKSD() {}
+ActorUnkQKSD::~ActorUnkQKSD() {}
+ActorProfileUnkQKSD::~ActorProfileUnkQKSD() {}

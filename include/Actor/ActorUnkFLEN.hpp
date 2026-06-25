@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
@@ -7,34 +5,35 @@
 #include "global.h"
 #include "types.h"
 
-class ActorUnkFLEN_c4 : public Actor_c4 {
-public:
-    ActorUnkFLEN_c4(Actor *param1);
-
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+typedef u32 ActorUnkFLENState;
+enum ActorUnkFLENState_ {
+    ActorUnkFLENState_0 = 0,
+    ActorUnkFLENState_1 = 1,
+    ActorUnkFLENState_2 = 2,
+    ActorUnkFLENState_Max,
 };
 
 class ActorUnkFLEN : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 94 */ unk32 mUnk_94;
+    /* 98 */
 
     ActorUnkFLEN();
 
     /* 4C */ virtual ~ActorUnkFLEN() override;
 
-    void func_ov031_020f80b8(void);
-    void func_ov031_020f8118(void);
-    void func_ov031_020f81b4(void);
-    void func_ov031_020f81f8(void);
+    /* 18 */ virtual bool vfunc_18(int param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+
+    void SetState(ActorUnkFLENState state);
+    bool func_ov031_020f81f8();
 };
 
 class ActorProfileUnkFLEN : public ActorProfile {
 public:
     /* 00 (base) */
+    /* 3C */
 
     ActorProfileUnkFLEN();
     ~ActorProfileUnkFLEN();

@@ -1,5 +1,8 @@
 build/
 .vscode/
+.clangd
+cmake/
+compile_commands.json
 ph_*/
 *.nds
 *bios.bin
@@ -22,3 +25,4 @@ m2c*.c
 nonmatchings/
 .venv/
 venv/
+tools/*.exe

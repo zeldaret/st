@@ -3,8 +3,8 @@
 #include "MainGame/AdventureMode.hpp"
 #include "Save/SaveManager.hpp"
 #include "System/OverlayManager.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
@@ -105,7 +105,7 @@ void AdventureModeManager::vfunc_14() {
     data_027e09a4->func_ov000_0207056c();
     UnkStruct_027e0cf8::Create();
 
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsTrain()) {
         this->mUnk_004.func_ov001_020bd734(&data_ov001_020c276c);
 
         if (data_027e09a4->IsNotCutscene()) {
@@ -122,7 +122,7 @@ void AdventureModeManager::vfunc_14() {
         }
     }
 
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsTrain()) {
         if (DSProt_DetectEmulator(AdventureModeManager::func_ov001_020c0194) == 0) {
             AdventureModeManager::func_ov001_020c0104();
         }
@@ -175,11 +175,11 @@ void AdventureModeManager::vfunc_14() {
         func_ov000_02066294();
     }
 
-    UnkStruct_020d8698::Create();
+    UICounterManager::Create();
 
     if (data_027e09a4->IsNotCutscene()) {
         GameModeManagerBase_104 *pList = GetLinkListRef(this->mUnk_104);
-        UnkStruct_020d8698 *ptr        = data_ov024_020d8698;
+        UICounterManager *ptr          = gpUICounterManager;
         pList->Append(ptr);
         ptr->vfunc_18();
 
@@ -199,87 +199,53 @@ void AdventureModeManager::vfunc_14() {
 }
 
 void AdventureModeManager::vfunc_18() {
-    delete this->mUnk_1B8;
-    this->mUnk_1B8 = NULL;
-
-    delete this->mUnk_160;
-    this->mUnk_160 = NULL;
-
-    delete this->mUnk_190;
-    this->mUnk_190 = NULL;
-
-    delete this->mUnk_18C;
-    this->mUnk_18C = NULL;
-
-    delete this->mUnk_180;
-    this->mUnk_180 = NULL;
-
-    delete this->mUnk_17C;
-    this->mUnk_17C = NULL;
-
-    delete this->mUnk_178;
-    this->mUnk_178 = NULL;
-
-    delete this->mUnk_174;
-    this->mUnk_174 = NULL;
-
-    delete this->mUnk_184;
-    this->mUnk_184 = NULL;
+    DELETE(this->mUnk_1B8);
+    DELETE(this->mUnk_160);
+    DELETE(this->mUnk_190);
+    DELETE(this->mUnk_18C);
+    DELETE(this->mUnk_180);
+    DELETE(this->mUnk_17C);
+    DELETE(this->mUnk_178);
+    DELETE(this->mUnk_174);
+    DELETE(this->mUnk_184);
 
     AdventureModeManager::func_ov001_020c083c();
-    if (data_ov024_020d8698 != NULL) {
+    if (gpUICounterManager != NULL) {
         AdventureModeManager::func_ov001_020c0894();
         this->mUnk_1B4 = false;
     }
 
-    if (data_027e09a4->func_01ffd3d8()) {
-        delete this->mUnk_16C;
-        this->mUnk_16C = NULL;
-
-        delete this->mUnk_19C;
-        this->mUnk_19C = NULL;
-
-        delete this->mUnk_164;
-        this->mUnk_164 = NULL;
+    if (data_027e09a4->IsTrain()) {
+        DELETE(this->mUnk_16C);
+        DELETE(this->mUnk_19C);
+        DELETE(this->mUnk_164);
     } else {
         if (data_027e09a4->IsCutscene()) {
             AdventureModeManager::func_ov001_020c0824();
         }
 
-        delete this->mUnk_1B0;
-        this->mUnk_1B0 = NULL;
+        DELETE(this->mUnk_1B0);
         this->mUnk_1B5 = false;
 
         if (this->mUnk_168 != NULL) {
-            delete this->mUnk_168;
-            this->mUnk_168 = NULL;
+            DELETE(this->mUnk_168);
         }
 
-        delete this->mUnk_188;
-        this->mUnk_188 = NULL;
+        DELETE(this->mUnk_188);
 
         AdventureModeManager::func_ov001_020c0854();
 
-        delete this->mUnk_1BC;
-        this->mUnk_1BC = NULL;
-
-        delete this->mUnk_198;
-        this->mUnk_198 = NULL;
-
-        delete this->mUnk_194;
-        this->mUnk_194 = NULL;
+        DELETE(this->mUnk_1BC);
+        DELETE(this->mUnk_198);
+        DELETE(this->mUnk_194);
 
         if (gOverlayManager.mLoadedOverlays[8] == OverlayIndex_Village) {
-            delete this->mUnk_1A0;
-            this->mUnk_1A0 = NULL;
-
-            delete this->mUnk_1A4;
-            this->mUnk_1A4 = NULL;
+            DELETE(this->mUnk_1A0);
+            DELETE(this->mUnk_1A4);
         }
 
         if (data_027e09a4->IsCutscene()) {
-            delete this->mUnk_1A8;
-            this->mUnk_1A8 = NULL;
+            DELETE(this->mUnk_1A8);
         }
     }
 
@@ -292,10 +258,10 @@ void AdventureModeManager::vfunc_1C() {
         this->mUnk_1BC->func_ov093_02175514();
     }
 
-    data_ov024_020d8698->func_ov024_020cd094();
-    data_ov024_020d8698->func_ov024_020cd150();
+    gpUICounterManager->func_ov024_020cd094();
+    gpUICounterManager->func_ov024_020cd150();
 
-    if (!data_027e09a4->func_01ffd3d8()) {
+    if (!data_027e09a4->IsTrain()) {
         this->mUnk_1B0->func_ov031_0210fad0();
     }
 }
@@ -334,8 +300,8 @@ void AdventureModeManager::func_ov001_020c0874() {
 }
 
 void AdventureModeManager::func_ov001_020c0894() {
-    if (data_ov024_020d8698 != NULL) {
-        delete data_ov024_020d8698;
+    if (gpUICounterManager != NULL) {
+        delete gpUICounterManager;
     }
 }
 

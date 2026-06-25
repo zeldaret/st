@@ -3,22 +3,22 @@
 #include "MapObject/MapObjectUnkITFL.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkITFL);
+DECL_PROFILE(MapObjectProfileUnkITFL);
 
-ARM MapObject *MapObjectProfileUnkITFL::Create() {
+MapObject *MapObjectProfileUnkITFL::Create() {
     return new(HeapIndex_2) MapObjectUnkITFL();
 }
 
-ARM MapObjectProfileUnkITFL::MapObjectProfileUnkITFL() :
+MapObjectProfileUnkITFL::MapObjectProfileUnkITFL() :
     MapObjectProfile(MapObjectId_ITFL) {}
 
-ARM MapObjectUnkITFL::MapObjectUnkITFL() {}
+MapObjectUnkITFL::MapObjectUnkITFL() {}
 
-ARM void MapObjectUnkITFL::func_ov031_021059b8(void) {}
-ARM void MapObjectUnkITFL::func_ov031_02105be4(void) {}
-ARM void MapObjectUnkITFL::func_ov031_02105cbc(void) {}
-ARM void MapObjectUnkITFL::func_ov031_02105dac(void) {}
-ARM void MapObjectUnkITFL::func_ov031_02105f54(void) {}
+void MapObjectUnkITFL::func_ov031_021059b8(void) {}
+void MapObjectUnkITFL::func_ov031_02105be4(void) {}
+void MapObjectUnkITFL::func_ov031_02105cbc(void) {}
+void MapObjectUnkITFL::func_ov031_02105dac(void) {}
+void MapObjectUnkITFL::func_ov031_02105f54(void) {}
 
-ARM MapObjectUnkITFL::~MapObjectUnkITFL() {}
-ARM MapObjectProfileUnkITFL::~MapObjectProfileUnkITFL() {}
+MapObjectUnkITFL::~MapObjectUnkITFL() {}
+MapObjectProfileUnkITFL::~MapObjectProfileUnkITFL() {}

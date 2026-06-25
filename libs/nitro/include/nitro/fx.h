@@ -16,6 +16,16 @@ extern "C" {
 typedef s32 fx32;
 typedef s16 fx16;
 
+typedef union VecFx16 {
+    struct {
+        /* 00 */ fx16 x;
+        /* 02 */ fx16 y;
+        /* 04 */ fx16 z;
+        /* 06 */
+    };
+    fx16 coords[3];
+} VecFx16;
+
 typedef union VecFx32 {
     struct {
         /* 00 */ fx32 x;

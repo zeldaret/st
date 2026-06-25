@@ -7,9 +7,7 @@
 class UnkStruct_027e0998_Base {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk16 mUnk_04;
-    /* 06 */ STRUCT_PAD(0x06, 0x42);
-    /* 42 */ unk16 mUnk_42;
+    /* 04 */ char mUnk_04[64]; // path to current scene's mapXX.bin
     /* 44 */ unk32 mUnk_44;
     /* 48 */ unk16 mUnk_48;
     /* 4A */ unk16 mUnk_4A; // pad?
@@ -25,6 +23,7 @@ public:
     void func_ov000_02061764();
     void func_ov000_02061768();
     void func_ov000_02061850(unk32 param1);
+    bool func_ov000_02061a48(VecFx32 *param1, Vec2s *param2, Vec2s *param3);
     unk32 func_ov000_02061a70();
 
     static void SetInstance(UnkStruct_027e0998_Base *pInstance);

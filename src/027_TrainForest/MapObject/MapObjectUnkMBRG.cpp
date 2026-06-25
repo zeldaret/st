@@ -3,21 +3,21 @@
 #include "MapObject/MapObjectUnkMBRG.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkMBRG);
+DECL_PROFILE(MapObjectProfileUnkMBRG);
 
-ARM MapObject *MapObjectProfileUnkMBRG::Create() {
+MapObject *MapObjectProfileUnkMBRG::Create() {
     return new(HeapIndex_2) MapObjectUnkMBRG();
 }
 
-ARM MapObjectProfileUnkMBRG::MapObjectProfileUnkMBRG() :
+MapObjectProfileUnkMBRG::MapObjectProfileUnkMBRG() :
     MapObjectProfile(MapObjectId_MBRG) {}
 
-ARM MapObjectUnkMBRG::MapObjectUnkMBRG() {}
+MapObjectUnkMBRG::MapObjectUnkMBRG() {}
 
-ARM void MapObjectUnkMBRG::func_ov027_02143f7c(void) {}
-ARM void MapObjectUnkMBRG::func_ov027_02144014(void) {}
-ARM void MapObjectUnkMBRG::func_ov027_0214409c(void) {}
-ARM void MapObjectUnkMBRG::func_ov027_021441a8(void) {}
+void MapObjectUnkMBRG::func_ov027_02143f7c(void) {}
+void MapObjectUnkMBRG::func_ov027_02144014(void) {}
+void MapObjectUnkMBRG::func_ov027_0214409c(void) {}
+void MapObjectUnkMBRG::func_ov027_021441a8(void) {}
 
-ARM MapObjectUnkMBRG::~MapObjectUnkMBRG() {}
-ARM MapObjectProfileUnkMBRG::~MapObjectProfileUnkMBRG() {}
+MapObjectUnkMBRG::~MapObjectUnkMBRG() {}
+MapObjectProfileUnkMBRG::~MapObjectProfileUnkMBRG() {}

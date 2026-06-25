@@ -3,19 +3,19 @@
 #include "MapObject/MapObjectUnkEBRD.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkEBRD);
+DECL_PROFILE(MapObjectProfileUnkEBRD);
 
-ARM MapObject *MapObjectProfileUnkEBRD::Create() {
+MapObject *MapObjectProfileUnkEBRD::Create() {
     return new(HeapIndex_2) MapObjectUnkEBRD();
 }
 
-ARM MapObjectProfileUnkEBRD::MapObjectProfileUnkEBRD() :
+MapObjectProfileUnkEBRD::MapObjectProfileUnkEBRD() :
     MapObjectProfile(MapObjectId_EBRD) {}
 
-ARM MapObjectUnkEBRD::MapObjectUnkEBRD() {}
+MapObjectUnkEBRD::MapObjectUnkEBRD() {}
 
-ARM void MapObjectUnkEBRD::func_ov026_0210aa20(void) {}
-ARM void MapObjectUnkEBRD::func_ov026_0210ab3c(void) {}
+void MapObjectUnkEBRD::func_ov026_0210aa20(void) {}
+void MapObjectUnkEBRD::func_ov026_0210ab3c(void) {}
 
-ARM MapObjectUnkEBRD::~MapObjectUnkEBRD() {}
-ARM MapObjectProfileUnkEBRD::~MapObjectProfileUnkEBRD() {}
+MapObjectUnkEBRD::~MapObjectUnkEBRD() {}
+MapObjectProfileUnkEBRD::~MapObjectProfileUnkEBRD() {}

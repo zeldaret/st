@@ -1,0 +1,146 @@
+#pragma once
+
+#include "Actor/Actor.hpp"
+#include "Actor/ActorProfile.hpp"
+#include "global.h"
+#include "types.h"
+
+typedef u32 ItemDropType;
+enum ItemDropType_ {
+    ItemDropType_Arrow          = 0,
+    ItemDropType_Bomb           = 1,
+    ItemDropType_RedPotion      = 2,
+    ItemDropType_DemonFossil    = 3,
+    ItemDropType_StalfosSkull   = 4,
+    ItemDropType_StarFragment   = 5,
+    ItemDropType_BeeLarvae      = 6,
+    ItemDropType_WoodHeart      = 7,
+    ItemDropType_PirateNecklace = 8,
+    ItemDropType_Unknown        = 9,
+    ItemDropType_Max            = 10,
+};
+
+enum ActorItemDropState_ {
+    ActorItemDropState_0 = 0,
+    ActorItemDropState_1 = 1,
+    ActorItemDropState_2 = 2,
+    ActorItemDropState_3 = 3,
+    ActorItemDropState_4 = 4,
+    ActorItemDropState_5 = 5,
+    ActorItemDropState_6 = 6,
+    ActorItemDropState_Max,
+};
+
+class ActorItemDrop_C4 : public Actor_C4 {
+public:
+    // func_ov031_020fa9f8
+    ActorItemDrop_C4(Actor *param1);
+
+    virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
+    virtual void vfunc_04() override;
+    virtual void vfunc_08() override;
+    virtual void vfunc_0C(unk32 param1) override;
+};
+
+class ActorItemDrop : public Actor_Derived2 {
+public:
+    /* 000 (base) */
+    /* 0AE */ volatile u16 mUnk_AE;
+    /* 0B0 */ u16 mUnk_B0;
+    /* 0B2 */ STRUCT_PAD(0xB2, 0xB4);
+    /* 0B4 */ Actor_9C mUnk_B4;
+    /* 0D4 */ ItemDropType mItemTypeId;
+    /* 0D8 */ fx32 mUnk_D8;
+    /* 0DC */ ActorRef mUnk_DC;
+    /* 0E0 */ ActorRef mUnk_E0;
+    /* 0E4 */ ActorItemDrop_C4 mUnk_E4;
+    /* 108 */ unk16 mUnk_108;
+    /* 10A */ STRUCT_PAD(0x10A, 0x10C);
+    /* 10C */ VecFx32 mUnk_10C;
+    /* 118 */ bool mUnk_118;
+    /* 119 */ bool mUnk_119;
+
+    bool IsTimerOut() {
+        if (this->mUnk_AE < this->mUnk_B0) {
+            this->mUnk_AE++;
+            return false;
+        }
+
+        return true;
+    }
+
+    ActorItemDrop();
+
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+
+    void func_ov031_020fa260();
+    void SetState(ActorState state);
+    void func_ov031_020fa900();
+
+    static void func_ov031_020f9f8c(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref);
+
+    // data_ov031_02114bb0
+    void func_ov031_020fa46c();
+    void func_ov031_020fa4a0();
+    void func_ov031_020fa568();
+    void func_ov031_020fa5f0();
+    void func_ov031_020fa664();
+    void func_ov031_020fa678();
+    void func_ov031_020fa72c();
+
+    // data_ov031_02114be8
+    void func_ov031_020fa468();
+    void func_ov031_020fa494();
+    void func_ov031_020fa524();
+    void func_ov031_020fa5d8();
+    void func_ov031_020fa650();
+    void func_ov031_020fa668();
+    void func_ov031_020fa6c8();
+};
+
+class ActorProfileArrowDrop : public ActorProfile {
+public:
+    /* 00 (base) */
+
+    ActorProfileArrowDrop();
+
+    /* 0C */ virtual Actor *Create();
+
+    static ActorProfileArrowDrop *GetProfile();
+};
+
+class ActorProfileBombDrop : public ActorProfile {
+public:
+    /* 00 (base) */
+
+    ActorProfileBombDrop();
+
+    /* 0C */ virtual Actor *Create();
+
+    static ActorProfileBombDrop *GetProfile();
+};
+
+class ActorProfileRedPotionDrop : public ActorProfile {
+public:
+    /* 00 (base) */
+
+    ActorProfileRedPotionDrop();
+
+    /* 0C */ virtual Actor *Create();
+
+    static ActorProfileRedPotionDrop *GetProfile();
+};
+
+class ActorProfileTreasureDrop : public ActorProfile {
+public:
+    /* 00 (base) */
+
+    ActorProfileTreasureDrop();
+
+    /* 0C */ virtual Actor *Create();
+
+    static ActorProfileTreasureDrop *GetProfile();
+};

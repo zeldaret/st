@@ -3,32 +3,32 @@
 #include "Actor/ActorUnkMTWP.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkMTWP);
+DECL_PROFILE(ActorProfileUnkMTWP);
 
-ARM Actor *ActorProfileUnkMTWP::Create() {
+Actor *ActorProfileUnkMTWP::Create() {
     return new(HeapIndex_2) ActorUnkMTWP();
 }
 
-ARM ActorProfileUnkMTWP::ActorProfileUnkMTWP() :
+ActorProfileUnkMTWP::ActorProfileUnkMTWP() :
     ActorProfile(ActorId_MTWP) {}
 
-ARM ActorUnkMTWP::ActorUnkMTWP() {}
+ActorUnkMTWP::ActorUnkMTWP() {}
 
-ARM void ActorUnkMTWP::func_ov092_0216f7dc(void) {}
-ARM void ActorUnkMTWP::func_ov092_0216f820(void) {}
-ARM void ActorUnkMTWP::func_ov092_0216f874(void) {}
-ARM void ActorUnkMTWP::func_ov092_0216f8cc(void) {}
-ARM void ActorUnkMTWP::func_ov092_0216f8ec(void) {}
-ARM void ActorUnkMTWP::func_ov092_0216f90c(void) {}
-ARM void ActorUnkMTWP::func_ov092_0216f944(void) {}
-ARM void ActorUnkMTWP::func_ov092_0216f984(void) {}
-ARM void ActorUnkMTWP::func_ov092_0216fce0(void) {}
-ARM void ActorUnkMTWP::func_ov092_0216fd24(void) {}
-ARM void ActorUnkMTWP::func_ov092_0217006c(void) {}
-ARM void ActorUnkMTWP::func_ov092_021700bc(void) {}
-ARM void ActorUnkMTWP::func_ov092_021700e4(void) {}
-ARM void ActorUnkMTWP::func_ov092_02170118(void) {}
-ARM void ActorUnkMTWP::func_ov092_02170230(void) {}
+void ActorUnkMTWP::func_ov092_0216f7dc(void) {}
+void ActorUnkMTWP::func_ov092_0216f820(void) {}
+void ActorUnkMTWP::func_ov092_0216f874(void) {}
+void ActorUnkMTWP::func_ov092_0216f8cc(void) {}
+void ActorUnkMTWP::func_ov092_0216f8ec(void) {}
+void ActorUnkMTWP::func_ov092_0216f90c(void) {}
+void ActorUnkMTWP::func_ov092_0216f944(void) {}
+void ActorUnkMTWP::func_ov092_0216f984(void) {}
+void ActorUnkMTWP::func_ov092_0216fce0(void) {}
+void ActorUnkMTWP::func_ov092_0216fd24(void) {}
+void ActorUnkMTWP::func_ov092_0217006c(void) {}
+void ActorUnkMTWP::func_ov092_021700bc(void) {}
+void ActorUnkMTWP::func_ov092_021700e4(void) {}
+void ActorUnkMTWP::func_ov092_02170118(void) {}
+void ActorUnkMTWP::func_ov092_02170230(void) {}
 
-ARM ActorUnkMTWP::~ActorUnkMTWP() {}
-ARM ActorProfileUnkMTWP::~ActorProfileUnkMTWP() {}
+ActorUnkMTWP::~ActorUnkMTWP() {}
+ActorProfileUnkMTWP::~ActorProfileUnkMTWP() {}

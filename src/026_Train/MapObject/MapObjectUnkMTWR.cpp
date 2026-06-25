@@ -3,20 +3,20 @@
 #include "MapObject/MapObjectUnkMTWR.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkMTWR);
+DECL_PROFILE(MapObjectProfileUnkMTWR);
 
-ARM MapObject *MapObjectProfileUnkMTWR::Create() {
+MapObject *MapObjectProfileUnkMTWR::Create() {
     return new(HeapIndex_2) MapObjectUnkMTWR();
 }
 
-ARM MapObjectProfileUnkMTWR::MapObjectProfileUnkMTWR() :
+MapObjectProfileUnkMTWR::MapObjectProfileUnkMTWR() :
     MapObjectProfile(MapObjectId_MTWR) {}
 
-ARM MapObjectUnkMTWR::MapObjectUnkMTWR() {}
+MapObjectUnkMTWR::MapObjectUnkMTWR() {}
 
-ARM void MapObjectUnkMTWR::func_ov026_0210a744(void) {}
-ARM void MapObjectUnkMTWR::func_ov026_0210a85c(void) {}
-ARM void MapObjectUnkMTWR::func_ov026_0210a878(void) {}
+void MapObjectUnkMTWR::func_ov026_0210a744(void) {}
+void MapObjectUnkMTWR::func_ov026_0210a85c(void) {}
+void MapObjectUnkMTWR::func_ov026_0210a878(void) {}
 
-ARM MapObjectUnkMTWR::~MapObjectUnkMTWR() {}
-ARM MapObjectProfileUnkMTWR::~MapObjectProfileUnkMTWR() {}
+MapObjectUnkMTWR::~MapObjectUnkMTWR() {}
+MapObjectProfileUnkMTWR::~MapObjectProfileUnkMTWR() {}

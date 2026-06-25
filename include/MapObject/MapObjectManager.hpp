@@ -8,7 +8,7 @@
 
 typedef void (*UnkCallback_func_01fff4cc)(void *, void *);
 
-class MapObjectManager {
+class MapObjectManager : public AutoInstance<MapObjectManager> {
 public:
     /* 00 */ MapObject **mMapObjTable;
     /* 04 */ MapObject **mMapObjTableEnd;
@@ -26,20 +26,25 @@ public:
     /* 6C */ void *mUnk_6C;
     /* 70 */
 
+    MapObjectManager();
+    ~MapObjectManager();
+
+    // itcm
     MapObject *func_01fff498(Vec2b param1);
     void func_01fff4cc(UnkCallback_func_01fff4cc param1, void *param2);
     MapObject **func_01fff520(UnkStruct_ov000_020b34c4 *param1, MapObject **param2);
     void func_01fff6d0(VecFx32 *param1, s32 *param2, s32 *param3);
 
+    // overlay 0
     MapObjectId func_ov000_0209c3a8(Vec2b *param1);
     void func_ov000_0209c3e8();
     void func_ov000_0209c444();
 
-    void SetInstance();   // func_ov001_020baf4c
-    void ClearInstance(); // func_ov001_020baf58
-
     static void func_ov000_0209c490();
-    static MapObjectManager *Create(); // func_ov001_020bac40
+
+    // overlay 1
+    static MapObjectManager *Create();
+    static void Destroy();
 };
 
 extern MapObjectManager *gpMapObjManager;

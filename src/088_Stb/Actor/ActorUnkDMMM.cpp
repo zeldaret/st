@@ -3,23 +3,23 @@
 #include "Actor/ActorUnkDMMM.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkDMMM);
+DECL_PROFILE(ActorProfileUnkDMMM);
 
-ARM Actor *ActorProfileUnkDMMM::Create() {
+Actor *ActorProfileUnkDMMM::Create() {
     return new(HeapIndex_2) ActorUnkDMMM();
 }
 
-ARM ActorProfileUnkDMMM::ActorProfileUnkDMMM() :
+ActorProfileUnkDMMM::ActorProfileUnkDMMM() :
     ActorProfile_Derived1(ActorId_DMMM) {}
 
-ARM ActorUnkDMMM::ActorUnkDMMM() {}
+ActorUnkDMMM::ActorUnkDMMM() {}
 
-ARM void ActorUnkDMMM::func_ov088_02171e3c(void) {}
-ARM void ActorUnkDMMM::func_ov088_02171e90(void) {}
-ARM void ActorUnkDMMM::func_ov088_02171ea0(void) {}
-ARM void ActorUnkDMMM::func_ov088_02171eb4(void) {}
-ARM void ActorUnkDMMM::func_ov088_02171ec8(void) {}
-ARM void ActorUnkDMMM::func_ov088_02171f18(void) {}
+void ActorUnkDMMM::func_ov088_02171e3c(void) {}
+void ActorUnkDMMM::func_ov088_02171e90(void) {}
+void ActorUnkDMMM::func_ov088_02171ea0(void) {}
+void ActorUnkDMMM::func_ov088_02171eb4(void) {}
+void ActorUnkDMMM::func_ov088_02171ec8(void) {}
+void ActorUnkDMMM::func_ov088_02171f18(void) {}
 
-ARM ActorUnkDMMM::~ActorUnkDMMM() {}
-ARM ActorProfileUnkDMMM::~ActorProfileUnkDMMM() {}
+ActorUnkDMMM::~ActorUnkDMMM() {}
+ActorProfileUnkDMMM::~ActorProfileUnkDMMM() {}

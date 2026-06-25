@@ -40,15 +40,15 @@ static PTMF<FileSelectMicTest> data_ov019_020d225c[FSMicTestState_Max] = {
     FileSelectMicTest::func_ov019_020cea6c,
 };
 
-ARM OptionsManagerAssessor::OptionsManagerAssessor() {
+OptionsManagerAssessor::OptionsManagerAssessor() {
     gpFSOptionsManager = (FileSelectOptionsManager *) this;
 }
 
-ARM OptionsManagerAssessor::~OptionsManagerAssessor() {
+OptionsManagerAssessor::~OptionsManagerAssessor() {
     gpFSOptionsManager = NULL;
 }
 
-ARM FileSelectMicTest::FileSelectMicTest() :
+FileSelectMicTest::FileSelectMicTest() :
     mState(FSMicTestState_OptionsIdle),
     mUnk_020(0x8D, 0x00),
     mUnk_258(0x8D, 0x00),
@@ -71,21 +71,21 @@ ARM FileSelectMicTest::FileSelectMicTest() :
     this->func_ov019_020cea74();
 }
 
-ARM FileSelectMicTest::~FileSelectMicTest() {
+FileSelectMicTest::~FileSelectMicTest() {
     this->mUnk_3F8.func_0201f498();
     this->mUnk_020.func_0201f498();
 }
 
-ARM void FileSelectMicTest::func_ov019_020cea6c() {}
+void FileSelectMicTest::func_ov019_020cea6c() {}
 
-ARM void FileSelectMicTest::func_ov019_020cea70() {}
+void FileSelectMicTest::func_ov019_020cea70() {}
 
-ARM void FileSelectMicTest::func_ov019_020cea74() {
+void FileSelectMicTest::func_ov019_020cea74() {
     CALL_PTMF(PTMF<FileSelectMicTest>, data_ov019_020d225c[this->mState]);
 }
 
 // non-matching
-ARM void FileSelectMicTest::func_ov019_020ceaac() {
+void FileSelectMicTest::func_ov019_020ceaac() {
     Vec2s local_34;
     Vec2s local_38;
 
@@ -125,7 +125,7 @@ ARM void FileSelectMicTest::func_ov019_020ceaac() {
     this->mUnk_304.mUnk_0A4.func_ov000_0206415c(&local_44, 6, data_ov019_020d2248.mUnk_00, 0);
 }
 
-ARM void FileSelectMicTest::func_ov019_020cebcc() {
+void FileSelectMicTest::func_ov019_020cebcc() {
     this->mUnk_304.mUnk_000.mUnk_0A = false;
     this->mUnk_304.mUnk_000.mUnk_0B = true;
     this->mUnk_304.mUnk_000.mUnk_0C = false;
@@ -147,7 +147,7 @@ ARM void FileSelectMicTest::func_ov019_020cebcc() {
     this->mUnk_304.mUnk_0A4.func_ov000_0206415c((void *) &result, 7, data_ov019_020d2248.mUnk_00, 0);
 }
 
-ARM void FileSelectMicTest::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
+void FileSelectMicTest::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     switch (this->mState) {
         case FSMicTestState_MicTestIdle:
             this->mUnk_270.func_ov019_020cf168();
@@ -189,7 +189,7 @@ ARM void FileSelectMicTest::vfunc_08(Input *pButtons, TouchControl *pTouchContro
     data_ov000_020b51b8.func_ov000_0206c608(8, 0, 0x1000);
 }
 
-ARM void FileSelectMicTest::vfunc_10(unk8 *param1) {
+void FileSelectMicTest::vfunc_10(unk8 *param1) {
     this->mUnk_270.func_ov019_020cf21c();
     data_0204af1c.func_0201aa44(&this->mUnk_258, &this->mUnk_258.mPos, 0, 0);
     this->mUnk_020.func_0201f4b4(0);
@@ -201,7 +201,7 @@ ARM void FileSelectMicTest::vfunc_10(unk8 *param1) {
 
 extern u8 data_ov000_020b5340[]; // bool?
 
-ARM void FileSelectMicTest::vfunc_14(unk8 *param1) {
+void FileSelectMicTest::vfunc_14(unk8 *param1) {
     if (this->mUnk_630 != 0) {
         if (data_ov000_020b5340[5] == 0) {
             this->mUnk_630 = 0;
@@ -216,17 +216,17 @@ ARM void FileSelectMicTest::vfunc_14(unk8 *param1) {
     }
 }
 
-ARM void FileSelectMicTest::func_ov019_020cefe4() {
+void FileSelectMicTest::func_ov019_020cefe4() {
     this->mState = FSMicTestState_OptionsToMicTest;
     this->func_ov019_020cea74();
 }
 
-ARM void FileSelectMicTest::func_ov019_020ceff8() {
+void FileSelectMicTest::func_ov019_020ceff8() {
     this->mState = FSMicTestState_MicTestToOptions;
     this->func_ov019_020cea74();
 }
 
-ARM UnkStruct_ov019_020d24c8_28_270::UnkStruct_ov019_020d24c8_28_270() :
+UnkStruct_ov019_020d24c8_28_270::UnkStruct_ov019_020d24c8_28_270() :
     mUnk_8C(0) {
     this->mUnk_00.func_ov000_0205fc20(0x8D, 0x01, &this->mUnk_00.mPos, &this->mUnk_00.mUnk_0E);
     this->mUnk_00.mUnk_12 = 0x8D;
@@ -255,7 +255,7 @@ ARM UnkStruct_ov019_020d24c8_28_270::UnkStruct_ov019_020d24c8_28_270() :
     this->func_ov019_020cf130();
 }
 
-ARM void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf130() {
+void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf130() {
     for (int i = 0; i < ARRAY_LEN(this->mUnk_78); i++) {
         this->mUnk_78[i] = 0;
     }
@@ -265,7 +265,7 @@ ARM void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf130() {
     }
 }
 
-ARM void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf168() {
+void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf168() {
     u8 *ptr = &this->mUnk_7C[this->mUnk_8C];
     int iVar4_2;
     int iVar4;
@@ -309,7 +309,7 @@ ARM void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf168() {
     }
 }
 
-ARM void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf21c() {
+void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf21c() {
     data_0204af1c.func_0201aa44(&this->mUnk_00, &this->mUnk_8E, 0, 0);
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_18.mUnk_00); i++) {

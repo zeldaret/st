@@ -3,20 +3,20 @@
 #include "Actor/ActorUnkTTUT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkTTUT);
+DECL_PROFILE(ActorProfileUnkTTUT);
 
-ARM Actor *ActorProfileUnkTTUT::Create() {
+Actor *ActorProfileUnkTTUT::Create() {
     return new(HeapIndex_2) ActorUnkTTUT();
 }
 
-ARM ActorProfileUnkTTUT::ActorProfileUnkTTUT() :
+ActorProfileUnkTTUT::ActorProfileUnkTTUT() :
     ActorProfile(ActorId_TTUT) {}
 
-ARM ActorUnkTTUT::ActorUnkTTUT() {}
+ActorUnkTTUT::ActorUnkTTUT() {}
 
-ARM void ActorUnkTTUT::func_ov091_02175868(void) {}
-ARM void ActorUnkTTUT::func_ov091_02175944(void) {}
-ARM void ActorUnkTTUT::func_ov091_02175bbc(void) {}
+void ActorUnkTTUT::func_ov091_02175868(void) {}
+void ActorUnkTTUT::func_ov091_02175944(void) {}
+void ActorUnkTTUT::func_ov091_02175bbc(void) {}
 
-ARM ActorUnkTTUT::~ActorUnkTTUT() {}
-ARM ActorProfileUnkTTUT::~ActorProfileUnkTTUT() {}
+ActorUnkTTUT::~ActorUnkTTUT() {}
+ActorProfileUnkTTUT::~ActorProfileUnkTTUT() {}

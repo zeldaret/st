@@ -3,21 +3,21 @@
 #include "Actor/ActorUnkSWDS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkSWDS);
+DECL_PROFILE(ActorProfileUnkSWDS);
 
-ARM Actor *ActorProfileUnkSWDS::Create() {
+Actor *ActorProfileUnkSWDS::Create() {
     return new(HeapIndex_2) ActorUnkSWDS();
 }
 
-ARM ActorProfileUnkSWDS::ActorProfileUnkSWDS() :
+ActorProfileUnkSWDS::ActorProfileUnkSWDS() :
     ActorProfile(ActorId_SWDS) {}
 
-ARM ActorUnkSWDS::ActorUnkSWDS() {}
+ActorUnkSWDS::ActorUnkSWDS() {}
 
-ARM void ActorUnkSWDS::func_ov070_02143a50(void) {}
-ARM void ActorUnkSWDS::func_ov070_02143adc(void) {}
-ARM void ActorUnkSWDS::func_ov070_02143bd4(void) {}
-ARM void ActorUnkSWDS::func_ov070_02143be8(void) {}
+void ActorUnkSWDS::func_ov070_02143a50(void) {}
+void ActorUnkSWDS::func_ov070_02143adc(void) {}
+void ActorUnkSWDS::func_ov070_02143bd4(void) {}
+void ActorUnkSWDS::func_ov070_02143be8(void) {}
 
-ARM ActorUnkSWDS::~ActorUnkSWDS() {}
-ARM ActorProfileUnkSWDS::~ActorProfileUnkSWDS() {}
+ActorUnkSWDS::~ActorUnkSWDS() {}
+ActorProfileUnkSWDS::~ActorProfileUnkSWDS() {}

@@ -3,20 +3,20 @@
 #include "Actor/ActorUnkWAWY.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkWAWY);
+DECL_PROFILE(ActorProfileUnkWAWY);
 
-ARM Actor *ActorProfileUnkWAWY::Create() {
+Actor *ActorProfileUnkWAWY::Create() {
     return new(HeapIndex_2) ActorUnkWAWY();
 }
 
-ARM ActorProfileUnkWAWY::ActorProfileUnkWAWY() :
+ActorProfileUnkWAWY::ActorProfileUnkWAWY() :
     ActorProfile_Derived1(ActorId_WAWY) {}
 
-ARM ActorUnkWAWY::ActorUnkWAWY() {}
+ActorUnkWAWY::ActorUnkWAWY() {}
 
-ARM void ActorUnkWAWY::func_ov036_0211b954(void) {}
-ARM void ActorUnkWAWY::func_ov036_0211b9bc(void) {}
-ARM void ActorUnkWAWY::func_ov036_0211b9e8(void) {}
+void ActorUnkWAWY::func_ov036_0211b954(void) {}
+void ActorUnkWAWY::func_ov036_0211b9bc(void) {}
+void ActorUnkWAWY::func_ov036_0211b9e8(void) {}
 
-ARM ActorUnkWAWY::~ActorUnkWAWY() {}
-ARM ActorProfileUnkWAWY::~ActorProfileUnkWAWY() {}
+ActorUnkWAWY::~ActorUnkWAWY() {}
+ActorProfileUnkWAWY::~ActorProfileUnkWAWY() {}

@@ -124,7 +124,7 @@ public:
     // adventure mode animated sword icon
     /* 10BC */ UnkSystem2_UnkSubSystem9 mUnk_10BC;
     /* 1100 */ UnkSystem2_UnkSubSystem9 mUnk_1100;
-    /* 1144 */ UnkSubStruct19 mUnk_1144;
+    /* 1144 */ CellAnimObject mUnk_1144;
 
     // "battle" button
     /* 11BC */ UnkSystem2_UnkSubSystem1_Derived2 mUnk_11BC;
@@ -135,7 +135,7 @@ public:
     // battle mode animated sword icon
     /* 14D4 */ UnkSystem2_UnkSubSystem9 mUnk_14D4;
     /* 1518 */ UnkSystem2_UnkSubSystem9 mUnk_1518;
-    /* 155C */ UnkSubStruct19 mUnk_155C;
+    /* 155C */ CellAnimObject mUnk_155C;
 
     // "contact mode" button
     /* 15D4 */ UnkSystem2_UnkSubSystem1_Derived2 mUnk_15D4;

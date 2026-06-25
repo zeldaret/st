@@ -3,20 +3,20 @@
 #include "Actor/ActorUnkL2MT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkL2MT);
+DECL_PROFILE(ActorProfileUnkL2MT);
 
-ARM Actor *ActorProfileUnkL2MT::Create() {
+Actor *ActorProfileUnkL2MT::Create() {
     return new(HeapIndex_2) ActorUnkL2MT();
 }
 
-ARM ActorProfileUnkL2MT::ActorProfileUnkL2MT() :
+ActorProfileUnkL2MT::ActorProfileUnkL2MT() :
     ActorProfile_Derived1(ActorId_L2MT) {}
 
-ARM ActorUnkL2MT::ActorUnkL2MT() {}
+ActorUnkL2MT::ActorUnkL2MT() {}
 
-ARM void ActorUnkL2MT::func_ov044_0212c954(void) {}
-ARM void ActorUnkL2MT::func_ov044_0212c974(void) {}
-ARM void ActorUnkL2MT::func_ov044_0212c978(void) {}
+void ActorUnkL2MT::func_ov044_0212c954(void) {}
+void ActorUnkL2MT::func_ov044_0212c974(void) {}
+void ActorUnkL2MT::func_ov044_0212c978(void) {}
 
-ARM ActorUnkL2MT::~ActorUnkL2MT() {}
-ARM ActorProfileUnkL2MT::~ActorProfileUnkL2MT() {}
+ActorUnkL2MT::~ActorUnkL2MT() {}
+ActorProfileUnkL2MT::~ActorProfileUnkL2MT() {}

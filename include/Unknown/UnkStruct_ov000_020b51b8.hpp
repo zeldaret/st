@@ -4,7 +4,7 @@
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include "types.h"
 
-class UnkStruct_ov000_020b51b8_00 : public SysObject {
+class UnkStruct_ov000_020b51b8_00 {
 public:
     /* 00 (vtable) */
     /* 04 */ STRUCT_PAD(0x04, 0xA0);
@@ -17,7 +17,7 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1);
 };
 
-class UnkStruct_ov000_020b51b8_04 : public SysObject {
+class UnkStruct_ov000_020b51b8_04 {
 public:
     /* 00 (vtable) */
     /* 04 */ STRUCT_PAD(0x04, 0x98);
@@ -68,7 +68,7 @@ public:
     void func_ov000_0206d0bc(unk32 param1);
     void func_ov000_0206d0ec(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
     void func_ov000_0206d134(unk32 param1);
-    void func_ov000_0206d274(unk32 param1);
+    void func_ov000_0206d274(unk32 param1); // play seq?
 
     void func_ov018_020c5940();
 };

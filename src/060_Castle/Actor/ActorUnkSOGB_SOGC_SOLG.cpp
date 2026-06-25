@@ -5,43 +5,43 @@
 
 // --- Actor SOGB ---
 
-ARM DECL_PROFILE(ActorProfileUnkSOGB);
+DECL_PROFILE(ActorProfileUnkSOGB);
 
-ARM Actor *ActorProfileUnkSOGB::Create() {
+Actor *ActorProfileUnkSOGB::Create() {
     return new(HeapIndex_2) ActorUnkSOGB();
 }
 
-ARM ActorProfileUnkSOGB::ActorProfileUnkSOGB() :
+ActorProfileUnkSOGB::ActorProfileUnkSOGB() :
     ActorProfile(ActorId_SOGB) {}
 
-ARM ActorUnkSOGB::ActorUnkSOGB() {}
+ActorUnkSOGB::ActorUnkSOGB() {}
 
 // --- Actor SOGC ---
 
-ARM DECL_PROFILE(ActorProfileUnkSOGC);
+DECL_PROFILE(ActorProfileUnkSOGC);
 
-ARM Actor *ActorProfileUnkSOGC::Create() {
+Actor *ActorProfileUnkSOGC::Create() {
     return new(HeapIndex_2) ActorUnkSOGC();
 }
 
-ARM ActorProfileUnkSOGC::ActorProfileUnkSOGC() :
+ActorProfileUnkSOGC::ActorProfileUnkSOGC() :
     ActorProfile(ActorId_SOGC) {}
 
-ARM ActorUnkSOGC::ActorUnkSOGC() {}
+ActorUnkSOGC::ActorUnkSOGC() {}
 
 // --- Actor SOLG ---
 
-ARM DECL_PROFILE(ActorProfileUnkSOLG);
+DECL_PROFILE(ActorProfileUnkSOLG);
 
-ARM Actor *ActorProfileUnkSOLG::Create() {
+Actor *ActorProfileUnkSOLG::Create() {
     return new(HeapIndex_2) ActorUnkSOLG();
 }
 
-ARM ActorProfileUnkSOLG::ActorProfileUnkSOLG() :
+ActorProfileUnkSOLG::ActorProfileUnkSOLG() :
     ActorProfile(ActorId_SOLG) {}
 
-ARM ActorUnkSOLG::ActorUnkSOLG() {}
+ActorUnkSOLG::ActorUnkSOLG() {}
 
-ARM ActorProfileUnkSOGB::~ActorProfileUnkSOGB() {}
-ARM ActorProfileUnkSOGC::~ActorProfileUnkSOGC() {}
-ARM ActorProfileUnkSOLG::~ActorProfileUnkSOLG() {}
+ActorProfileUnkSOGB::~ActorProfileUnkSOGB() {}
+ActorProfileUnkSOGC::~ActorProfileUnkSOGC() {}
+ActorProfileUnkSOLG::~ActorProfileUnkSOLG() {}

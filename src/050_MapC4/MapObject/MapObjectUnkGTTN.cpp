@@ -3,25 +3,25 @@
 #include "MapObject/MapObjectUnkGTTN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkGTTN);
+DECL_PROFILE(MapObjectProfileUnkGTTN);
 
-ARM MapObject *MapObjectProfileUnkGTTN::Create() {
+MapObject *MapObjectProfileUnkGTTN::Create() {
     return new(HeapIndex_2) MapObjectUnkGTTN();
 }
 
-ARM MapObjectProfileUnkGTTN::MapObjectProfileUnkGTTN() :
+MapObjectProfileUnkGTTN::MapObjectProfileUnkGTTN() :
     MapObjectProfile(MapObjectId_GTTN) {}
 
-ARM MapObjectUnkGTTN::MapObjectUnkGTTN() {}
+MapObjectUnkGTTN::MapObjectUnkGTTN() {}
 
-ARM void MapObjectUnkGTTN::func_ov050_021363c4(void) {}
-ARM void MapObjectUnkGTTN::func_ov050_021363d8(void) {}
-ARM void MapObjectUnkGTTN::func_ov050_02136638(void) {}
-ARM void MapObjectUnkGTTN::func_ov050_02136658(void) {}
-ARM void MapObjectUnkGTTN::func_ov050_0213666c(void) {}
-ARM void MapObjectUnkGTTN::func_ov050_0213668c(void) {}
-ARM void MapObjectUnkGTTN::func_ov050_021366bc(void) {}
-ARM void MapObjectUnkGTTN::func_ov050_02136770(void) {}
+void MapObjectUnkGTTN::func_ov050_021363c4(void) {}
+void MapObjectUnkGTTN::func_ov050_021363d8(void) {}
+void MapObjectUnkGTTN::func_ov050_02136638(void) {}
+void MapObjectUnkGTTN::func_ov050_02136658(void) {}
+void MapObjectUnkGTTN::func_ov050_0213666c(void) {}
+void MapObjectUnkGTTN::func_ov050_0213668c(void) {}
+void MapObjectUnkGTTN::func_ov050_021366bc(void) {}
+void MapObjectUnkGTTN::func_ov050_02136770(void) {}
 
-ARM MapObjectUnkGTTN::~MapObjectUnkGTTN() {}
-ARM MapObjectProfileUnkGTTN::~MapObjectProfileUnkGTTN() {}
+MapObjectUnkGTTN::~MapObjectUnkGTTN() {}
+MapObjectProfileUnkGTTN::~MapObjectProfileUnkGTTN() {}

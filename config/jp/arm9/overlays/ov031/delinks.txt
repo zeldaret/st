@@ -94,10 +94,11 @@ src/031_Land/Actor/ActorUnkNITF.cpp:
     .ctor       start:0x0211455c end:0x02114560
     .bss        start:0x021187c4 end:0x02118810
 
-src/031_Land/Actor/ActorUnkAROW.cpp:
+src/031_Land/Actor/ActorShotArrow.cpp:
     .text       start:0x020f2d8c end:0x020f5820
     .init       start:0x021132b8 end:0x02113308
     .ctor       start:0x02114560 end:0x02114564
+    .data       start:0x02116004 end:0x0211613c
     .bss        start:0x02118810 end:0x0211885c
 
 src/031_Land/Actor/ActorUnkATTG.cpp:
@@ -125,9 +126,11 @@ src/031_Land/Actor/ActorUnkSWCH.cpp:
     .bss        start:0x021189f4 end:0x02118a40
 
 src/031_Land/Actor/ActorUnkSWON.cpp:
+    complete
     .text       start:0x020f9800 end:0x020f9958
     .init       start:0x0211349c end:0x021134ec
     .ctor       start:0x02114578 end:0x0211457c
+    .data       start:0x0211662c end:0x021166ac
     .bss        start:0x02118a40 end:0x02118a8c
 
 src/031_Land/Actor/ActorUnkNORE.cpp:
@@ -141,19 +144,23 @@ src/031_Land/Actor/ActorUnkFLEN.cpp:
     .text       start:0x020f9a68 end:0x020f9d24
     .init       start:0x0211353c end:0x0211358c
     .ctor       start:0x02114580 end:0x02114584
+    .data       start:0x0211672c end:0x021167ac
     .bss        start:0x02118ad8 end:0x02118b24
 
 src/031_Land/Actor/ActorUnkRLST.cpp:
     .text       start:0x020f9d24 end:0x020fb810
     .init       start:0x0211358c end:0x021135dc
     .ctor       start:0x02114584 end:0x02114588
-    .bss        start:0x02118b24 end:0x02118c34
+    .bss        start:0x02118b24 end:0x02118c0c
 
-src/031_Land/Actor/ActorUnkSPAR_SPBM_SPDR_SPTR.cpp:
+src/031_Land/Actor/ActorItemDrop.cpp:
+    complete
     .text       start:0x020fb810 end:0x020fc5b4
+    .rodata     start:0x02112938 end:0x0211295c
     .init       start:0x021135dc end:0x02113714
     .ctor       start:0x02114588 end:0x0211458c
-    .bss        start:0x02118c34 end:0x02118d3c
+    .data       start:0x02116914 end:0x02116a9c
+    .bss        start:0x02118c0c end:0x02118d3c
 
 src/031_Land/Actor/ActorUnkMLCK.cpp:
     .text       start:0x020fc5b4 end:0x020fcd04

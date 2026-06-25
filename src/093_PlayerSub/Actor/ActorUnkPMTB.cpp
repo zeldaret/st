@@ -3,16 +3,16 @@
 #include "Actor/ActorUnkPMTB.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkPMTB);
+DECL_PROFILE(ActorProfileUnkPMTB);
 
-ARM Actor *ActorProfileUnkPMTB::Create() {
+Actor *ActorProfileUnkPMTB::Create() {
     return new(HeapIndex_2) ActorUnkPMTB();
 }
 
-ARM ActorProfileUnkPMTB::ActorProfileUnkPMTB() :
+ActorProfileUnkPMTB::ActorProfileUnkPMTB() :
     ActorProfile_Derived1(ActorId_PMTB) {}
 
-ARM ActorUnkPMTB::ActorUnkPMTB() {}
+ActorUnkPMTB::ActorUnkPMTB() {}
 
-ARM ActorUnkPMTB::~ActorUnkPMTB() {}
-ARM ActorProfileUnkPMTB::~ActorProfileUnkPMTB() {}
+ActorUnkPMTB::~ActorUnkPMTB() {}
+ActorProfileUnkPMTB::~ActorProfileUnkPMTB() {}

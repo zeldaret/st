@@ -23,7 +23,7 @@ static unk8 data_ov019_020edccc[0xDC00];
 const u16 data_ov019_020d1bcc[] = {0x00, 0x01, 0x02};
 
 // https://decomp.me/scratch/LzPt6
-ARM FileSelectSubScreen::FileSelectSubScreen() :
+FileSelectSubScreen::FileSelectSubScreen() :
     mUnk_001C(0),
     mUnk_0020(0),
     mUnk_0028(1),
@@ -70,7 +70,7 @@ ARM FileSelectSubScreen::FileSelectSubScreen() :
     this->func_ov019_020cf73c(2, 1);
 }
 
-ARM void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
+void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     this->mUnk_0024 = this->mUnk_0020;
     this->mUnk_0020 += 0x800;
 
@@ -116,7 +116,7 @@ ARM void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchCont
     this->mUnk_002C.vfunc_00();
 }
 
-ARM void FileSelectSubScreen::func_ov019_020cf73c(unk32 param1, unk32 param2) {
+void FileSelectSubScreen::func_ov019_020cf73c(unk32 param1, unk32 param2) {
     unk32 arg0;
     unk32 arg7;
     unk32 arg8;
@@ -158,22 +158,22 @@ ARM void FileSelectSubScreen::func_ov019_020cf73c(unk32 param1, unk32 param2) {
     }
 }
 
-ARM void FileSelectSubScreen::vfunc_10(unk8 *param1) {
+void FileSelectSubScreen::vfunc_10(unk8 *param1) {
     this->mUnk_002C.vfunc_04();
 }
 
-ARM FileSelect_UnkClass7::FileSelect_UnkClass7() {
+FileSelect_UnkClass7::FileSelect_UnkClass7() {
     Random *pRandom = &gRandom;
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_004.mUnk_000); i++) {
-        this->mUnk_004.mUnk_000[i].func_ov000_0206082c(0x8F, data_ov019_020d1bcc[gRandom.Next32(0, 3)]);
+        this->mUnk_004.mUnk_000[i].func_ov000_0206082c(0x8F, data_ov019_020d1bcc[gRandom.Next32(3)]);
 
-        u16 value = gRandom.ConditionalNext16(this->mUnk_004.mUnk_000[i].func_ov000_02060c28());
+        u16 value = gRandom.Next32(this->mUnk_004.mUnk_000[i].func_ov000_02060c28());
         this->mUnk_004.mUnk_000[i].func_ov000_02060bd8(value);
 
         Vec2us pos;
-        pos.x = pRandom->Next32(0, SUBSCREEN_WIDTH);
-        pos.y = pRandom->Next32(0, SUBSCREEN_HEIGHT);
+        pos.x = pRandom->Next32(SUBSCREEN_WIDTH);
+        pos.y = pRandom->Next32(SUBSCREEN_HEIGHT);
 
         Vec2us *pVec = &this->mUnk_004.mUnk_E10[i];
         pVec->x      = pos.x;
@@ -181,7 +181,7 @@ ARM FileSelect_UnkClass7::FileSelect_UnkClass7() {
     }
 }
 
-ARM void FileSelect_UnkClass7::vfunc_00() {
+void FileSelect_UnkClass7::vfunc_00() {
     for (int i = 0; i < ARRAY_LEN(this->mUnk_004.mUnk_000); i++) {
         this->mUnk_004.mUnk_000[i].func_ov000_020609c4();
 
@@ -189,8 +189,8 @@ ARM void FileSelect_UnkClass7::vfunc_00() {
             this->mUnk_004.mUnk_000[i].func_ov000_02060b64();
 
             Vec2us pos;
-            pos.x = gRandom.Next32(0, SUBSCREEN_WIDTH);
-            pos.y = gRandom.Next32(0, SUBSCREEN_HEIGHT);
+            pos.x = gRandom.Next32(SUBSCREEN_WIDTH);
+            pos.y = gRandom.Next32(SUBSCREEN_HEIGHT);
 
             Vec2us *pVec = &this->mUnk_004.mUnk_E10[i];
             pVec->x      = pos.x;
@@ -199,7 +199,7 @@ ARM void FileSelect_UnkClass7::vfunc_00() {
     }
 }
 
-ARM void FileSelect_UnkClass7::vfunc_04() {
+void FileSelect_UnkClass7::vfunc_04() {
     for (int i = 0; i < 0x1E; i++) {
         data_0204af1c.func_0201aad0(&this->mUnk_004.mUnk_000[i], &this->mUnk_004.mUnk_E10[i], 1, 0);
     }

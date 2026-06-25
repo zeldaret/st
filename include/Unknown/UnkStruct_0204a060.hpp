@@ -10,7 +10,7 @@
 
 class GameModeFileSelect;
 
-class UnkStruct_0204a060_Base3 : public LinkList<UnkStruct_0204a060_Base3> {
+class UnkStruct_0204a060_Base2 : public LinkList<UnkStruct_0204a060_Base2> {
 public:
     /* 00 (vtable) */
     /* 04 (base) */
@@ -18,28 +18,25 @@ public:
     /* 0D */ unk8 mUnk_0D;
     /* 0E */ unk8 mUnk_0E;
     /* 0F */ unk8 mUnk_0F;
-    /* 10 */
-
-    UnkStruct_0204a060_Base3();
-
-    // data_020440f4 vtable
-    /* 00 */ virtual ~UnkStruct_0204a060_Base3();
-    /* 08 */ virtual bool vfunc_08(unk32 param1);
-    /* 0C */
-};
-
-class UnkStruct_0204a060_Base2 : public UnkStruct_0204a060_Base3 {
-public:
-    /* 00 (vtable) */
     /* 10 */ unk16 mUnk_10;
     /* 12 */ unk16 mUnk_12;
     /* 14 */
 
     UnkStruct_0204a060_Base2();
 
+    // data_020440f4 vtable
     /* 00 */ virtual ~UnkStruct_0204a060_Base2() override;
+    /* 08 */ virtual bool vfunc_08(unk32 param1);
+    /* 0C */
 
     void func_0201ba68();
+};
+
+class UnkStruct_0204a060_Base3 : public UnkStruct_0204a060_Base2 {
+public:
+    /* 00 (base) */
+
+    UnkStruct_0204a060_Base3();
 };
 
 class UnkStruct_0204a060_Base : public UnkStruct_0204a060_Base2 {

@@ -3,18 +3,18 @@
 #include "Actor/ActorUnkRMBC.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRMBC);
+DECL_PROFILE(ActorProfileUnkRMBC);
 
-ARM Actor *ActorProfileUnkRMBC::Create() {
+Actor *ActorProfileUnkRMBC::Create() {
     return new(HeapIndex_2) ActorUnkRMBC();
 }
 
-ARM ActorProfileUnkRMBC::ActorProfileUnkRMBC() :
+ActorProfileUnkRMBC::ActorProfileUnkRMBC() :
     ActorProfile_Derived1(ActorId_RMBC) {}
 
-ARM ActorUnkRMBC::ActorUnkRMBC() {}
+ActorUnkRMBC::ActorUnkRMBC() {}
 
-ARM void ActorUnkRMBC::func_ov062_0215a464(void) {}
+void ActorUnkRMBC::func_ov062_0215a464(void) {}
 
-ARM ActorUnkRMBC::~ActorUnkRMBC() {}
-ARM ActorProfileUnkRMBC::~ActorProfileUnkRMBC() {}
+ActorUnkRMBC::~ActorUnkRMBC() {}
+ActorProfileUnkRMBC::~ActorProfileUnkRMBC() {}

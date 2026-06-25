@@ -1,9 +1,9 @@
-func_ov058_0213efc0 kind:function(arm,size=0x110) addr:0x0213efc0
+_ZN27UnkStruct_027e09a4_54_Type1C1EP18UnkStruct_027e09a4 kind:function(arm,size=0x110) addr:0x0213efc0
 func_ov058_0213f0d0 kind:function(arm,size=0x20) addr:0x0213f0d0
 func_ov058_0213f0f0 kind:function(arm,size=0x38) addr:0x0213f0f0
 _ZN19func_ov058_0213f128D1Ev kind:function(arm,size=0x14) addr:0x0213f128
 _ZN19func_ov058_0213f13cD0Ev kind:function(arm,size=0x1c) addr:0x0213f13c
-func_ov058_0213f158 kind:function(arm,size=0x68) addr:0x0213f158
+_ZN27UnkStruct_027e09a4_54_Type4C1EP18UnkStruct_027e09a4 kind:function(arm,size=0x68) addr:0x0213f158
 func_ov058_0213f1c0 kind:function(arm,size=0x20) addr:0x0213f1c0
 func_ov058_0213f1e0 kind:function(arm,size=0x3c) addr:0x0213f1e0
 func_ov058_0213f21c kind:function(arm,size=0x8) addr:0x0213f21c

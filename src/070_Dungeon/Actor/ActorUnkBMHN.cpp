@@ -3,16 +3,16 @@
 #include "Actor/ActorUnkBMHN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkBMHN);
+DECL_PROFILE(ActorProfileUnkBMHN);
 
-ARM Actor *ActorProfileUnkBMHN::Create() {
+Actor *ActorProfileUnkBMHN::Create() {
     return new(HeapIndex_2) ActorUnkBMHN();
 }
 
-ARM ActorProfileUnkBMHN::ActorProfileUnkBMHN() :
+ActorProfileUnkBMHN::ActorProfileUnkBMHN() :
     ActorProfile(ActorId_BMHN) {}
 
-ARM ActorUnkBMHN::ActorUnkBMHN() {}
+ActorUnkBMHN::ActorUnkBMHN() {}
 
-ARM ActorUnkBMHN::~ActorUnkBMHN() {}
-ARM ActorProfileUnkBMHN::~ActorProfileUnkBMHN() {}
+ActorUnkBMHN::~ActorUnkBMHN() {}
+ActorProfileUnkBMHN::~ActorProfileUnkBMHN() {}

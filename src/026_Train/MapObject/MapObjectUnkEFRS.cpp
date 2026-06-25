@@ -3,25 +3,25 @@
 #include "MapObject/MapObjectUnkEFRS.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkEFRS);
+DECL_PROFILE(MapObjectProfileUnkEFRS);
 
-ARM MapObject *MapObjectProfileUnkEFRS::Create() {
+MapObject *MapObjectProfileUnkEFRS::Create() {
     return new(HeapIndex_2) MapObjectUnkEFRS();
 }
 
-ARM MapObjectProfileUnkEFRS::MapObjectProfileUnkEFRS() :
+MapObjectProfileUnkEFRS::MapObjectProfileUnkEFRS() :
     MapObjectProfile(MapObjectId_EFRS) {}
 
-ARM MapObjectUnkEFRS::MapObjectUnkEFRS() {}
+MapObjectUnkEFRS::MapObjectUnkEFRS() {}
 
-ARM void MapObjectUnkEFRS::func_ov026_0210e944(void) {}
-ARM void MapObjectUnkEFRS::func_ov026_0210e9bc(void) {}
-ARM void MapObjectUnkEFRS::func_ov026_0210ea0c(void) {}
-ARM void MapObjectUnkEFRS::func_ov026_0210ec24(void) {}
-ARM void MapObjectUnkEFRS::func_ov026_0210ec30(void) {}
-ARM void MapObjectUnkEFRS::func_ov026_0210ec4c(void) {}
-ARM void MapObjectUnkEFRS::func_ov026_0210ec54(void) {}
-ARM void MapObjectUnkEFRS::func_ov026_0210ecb8(void) {}
+void MapObjectUnkEFRS::func_ov026_0210e944(void) {}
+void MapObjectUnkEFRS::func_ov026_0210e9bc(void) {}
+void MapObjectUnkEFRS::func_ov026_0210ea0c(void) {}
+void MapObjectUnkEFRS::func_ov026_0210ec24(void) {}
+void MapObjectUnkEFRS::func_ov026_0210ec30(void) {}
+void MapObjectUnkEFRS::func_ov026_0210ec4c(void) {}
+void MapObjectUnkEFRS::func_ov026_0210ec54(void) {}
+void MapObjectUnkEFRS::func_ov026_0210ecb8(void) {}
 
-ARM MapObjectUnkEFRS::~MapObjectUnkEFRS() {}
-ARM MapObjectProfileUnkEFRS::~MapObjectProfileUnkEFRS() {}
+MapObjectUnkEFRS::~MapObjectUnkEFRS() {}
+MapObjectProfileUnkEFRS::~MapObjectProfileUnkEFRS() {}

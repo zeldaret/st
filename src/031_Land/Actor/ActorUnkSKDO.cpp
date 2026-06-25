@@ -3,22 +3,22 @@
 #include "Actor/ActorUnkSKDO.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkSKDO);
+DECL_PROFILE(ActorProfileUnkSKDO);
 
-ARM Actor *ActorProfileUnkSKDO::Create() {
+Actor *ActorProfileUnkSKDO::Create() {
     return new(HeapIndex_2) ActorUnkSKDO();
 }
 
-ARM ActorProfileUnkSKDO::ActorProfileUnkSKDO() :
+ActorProfileUnkSKDO::ActorProfileUnkSKDO() :
     ActorProfile(ActorId_SKDO) {}
 
-ARM ActorUnkSKDO::ActorUnkSKDO() {}
+ActorUnkSKDO::ActorUnkSKDO() {}
 
-ARM void ActorUnkSKDO::func_ov031_02106de0(void) {}
-ARM void ActorUnkSKDO::func_ov031_02106de8(void) {}
-ARM void ActorUnkSKDO::func_ov031_02106e58(void) {}
-ARM void ActorUnkSKDO::func_ov031_02106e90(void) {}
-ARM void ActorUnkSKDO::func_ov031_02106e98(void) {}
+void ActorUnkSKDO::func_ov031_02106de0(void) {}
+void ActorUnkSKDO::func_ov031_02106de8(void) {}
+void ActorUnkSKDO::func_ov031_02106e58(void) {}
+void ActorUnkSKDO::func_ov031_02106e90(void) {}
+void ActorUnkSKDO::func_ov031_02106e98(void) {}
 
-ARM ActorUnkSKDO::~ActorUnkSKDO() {}
-ARM ActorProfileUnkSKDO::~ActorProfileUnkSKDO() {}
+ActorUnkSKDO::~ActorUnkSKDO() {}
+ActorProfileUnkSKDO::~ActorProfileUnkSKDO() {}

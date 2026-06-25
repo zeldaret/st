@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkAJCR.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkAJCR);
+DECL_PROFILE(ActorProfileUnkAJCR);
 
-ARM Actor *ActorProfileUnkAJCR::Create() {
+Actor *ActorProfileUnkAJCR::Create() {
     return new(HeapIndex_2) ActorUnkAJCR();
 }
 
-ARM ActorProfileUnkAJCR::ActorProfileUnkAJCR() :
+ActorProfileUnkAJCR::ActorProfileUnkAJCR() :
     ActorProfile(ActorId_AJCR) {}
 
-ARM ActorUnkAJCR::ActorUnkAJCR() {}
+ActorUnkAJCR::ActorUnkAJCR() {}
 
-ARM void ActorUnkAJCR::func_ov068_0215d7f4(void) {}
-ARM void ActorUnkAJCR::func_ov068_0215d8d8(void) {}
+void ActorUnkAJCR::func_ov068_0215d7f4(void) {}
+void ActorUnkAJCR::func_ov068_0215d8d8(void) {}
 
-ARM ActorUnkAJCR::~ActorUnkAJCR() {}
-ARM ActorProfileUnkAJCR::~ActorProfileUnkAJCR() {}
+ActorUnkAJCR::~ActorUnkAJCR() {}
+ActorProfileUnkAJCR::~ActorProfileUnkAJCR() {}

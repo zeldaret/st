@@ -3,20 +3,20 @@
 #include "MapObject/MapObjectUnkGRSV.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkGRSV);
+DECL_PROFILE(MapObjectProfileUnkGRSV);
 
-ARM MapObject *MapObjectProfileUnkGRSV::Create() {
+MapObject *MapObjectProfileUnkGRSV::Create() {
     return new(HeapIndex_2) MapObjectUnkGRSV();
 }
 
-ARM MapObjectProfileUnkGRSV::MapObjectProfileUnkGRSV() :
+MapObjectProfileUnkGRSV::MapObjectProfileUnkGRSV() :
     MapObjectProfile(MapObjectId_GRSV) {}
 
-ARM MapObjectUnkGRSV::MapObjectUnkGRSV() {}
+MapObjectUnkGRSV::MapObjectUnkGRSV() {}
 
-ARM void MapObjectUnkGRSV::func_ov058_02151558(void) {}
-ARM void MapObjectUnkGRSV::func_ov058_02151874(void) {}
-ARM void MapObjectUnkGRSV::func_ov058_021518e8(void) {}
+void MapObjectUnkGRSV::func_ov058_02151558(void) {}
+void MapObjectUnkGRSV::func_ov058_02151874(void) {}
+void MapObjectUnkGRSV::func_ov058_021518e8(void) {}
 
-ARM MapObjectUnkGRSV::~MapObjectUnkGRSV() {}
-ARM MapObjectProfileUnkGRSV::~MapObjectProfileUnkGRSV() {}
+MapObjectUnkGRSV::~MapObjectUnkGRSV() {}
+MapObjectProfileUnkGRSV::~MapObjectProfileUnkGRSV() {}

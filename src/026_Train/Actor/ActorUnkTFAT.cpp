@@ -3,23 +3,23 @@
 #include "Actor/ActorUnkTFAT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkTFAT);
+DECL_PROFILE(ActorProfileUnkTFAT);
 
-ARM Actor *ActorProfileUnkTFAT::Create() {
+Actor *ActorProfileUnkTFAT::Create() {
     return new(HeapIndex_2) ActorUnkTFAT();
 }
 
-ARM ActorProfileUnkTFAT::ActorProfileUnkTFAT() :
+ActorProfileUnkTFAT::ActorProfileUnkTFAT() :
     ActorProfile(ActorId_TFAT) {}
 
-ARM ActorUnkTFAT::ActorUnkTFAT() {}
+ActorUnkTFAT::ActorUnkTFAT() {}
 
-ARM void ActorUnkTFAT::func_ov026_02116668(void) {}
-ARM void ActorUnkTFAT::func_ov026_0211667c(void) {}
-ARM void ActorUnkTFAT::func_ov026_02116680(void) {}
-ARM void ActorUnkTFAT::func_ov026_0211670c(void) {}
-ARM void ActorUnkTFAT::func_ov026_02116720(void) {}
-ARM void ActorUnkTFAT::func_ov026_02116728(void) {}
+void ActorUnkTFAT::func_ov026_02116668(void) {}
+void ActorUnkTFAT::func_ov026_0211667c(void) {}
+void ActorUnkTFAT::func_ov026_02116680(void) {}
+void ActorUnkTFAT::func_ov026_0211670c(void) {}
+void ActorUnkTFAT::func_ov026_02116720(void) {}
+void ActorUnkTFAT::func_ov026_02116728(void) {}
 
-ARM ActorUnkTFAT::~ActorUnkTFAT() {}
-ARM ActorProfileUnkTFAT::~ActorProfileUnkTFAT() {}
+ActorUnkTFAT::~ActorUnkTFAT() {}
+ActorProfileUnkTFAT::~ActorProfileUnkTFAT() {}

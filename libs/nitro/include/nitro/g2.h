@@ -51,103 +51,103 @@ inline void G2S_SetBG3Priority(u32 value) {
 }
 
 inline void G2_SetBG0Offset(u32 x, u32 y) {
-    REG_BG0OFS = (x & 0x1ff) | ((y << 16) & 0x1ff0000);
+    REG_BG0OFS = (x & 0x1FF) | ((y << 16) & 0x1FF0000);
 }
 
 inline void G2_SetBG1Offset(u32 x, u32 y) {
-    REG_BG1OFS = (x & 0x1ff) | ((y << 16) & 0x1ff0000);
+    REG_BG1OFS = (x & 0x1FF) | ((y << 16) & 0x1FF0000);
 }
 
 inline void G2_SetBG2Offset(u32 x, u32 y) {
-    REG_BG2OFS = (x & 0x1ff) | ((y << 16) & 0x1ff0000);
+    REG_BG2OFS = (x & 0x1FF) | ((y << 16) & 0x1FF0000);
 }
 
 inline void G2_SetBG3Offset(u32 x, u32 y) {
-    REG_BG3OFS = (x & 0x1ff) | ((y << 16) & 0x1ff0000);
+    REG_BG3OFS = (x & 0x1FF) | ((y << 16) & 0x1FF0000);
 }
 
 inline void G2S_SetBG0Offset(u32 x, u32 y) {
-    REG_BG0OFS_SUB = (x & 0x1ff) | ((y << 16) & 0x1ff0000);
+    REG_BG0OFS_SUB = (x & 0x1FF) | ((y << 16) & 0x1FF0000);
 }
 
 inline void G2S_SetBG1Offset(u32 x, u32 y) {
-    REG_BG1OFS_SUB = (x & 0x1ff) | ((y << 16) & 0x1ff0000);
+    REG_BG1OFS_SUB = (x & 0x1FF) | ((y << 16) & 0x1FF0000);
 }
 
 inline void G2S_SetBG2Offset(u32 x, u32 y) {
-    REG_BG2OFS_SUB = (x & 0x1ff) | ((y << 16) & 0x1ff0000);
+    REG_BG2OFS_SUB = (x & 0x1FF) | ((y << 16) & 0x1FF0000);
 }
 
 inline void G2S_SetBG3Offset(u32 x, u32 y) {
-    REG_BG3OFS_SUB = (x & 0x1ff) | ((y << 16) & 0x1ff0000);
+    REG_BG3OFS_SUB = (x & 0x1FF) | ((y << 16) & 0x1FF0000);
 }
 
 inline void G2_SetBG0Control(GXBGScrSizeText scrSize, GXBGColorMode colMode, GXBGScrBase scrBase, GXBGCharBase charBase, u32) {
-    REG_BG0CNT = (REG_BG0CNT & 0x43) | (scrSize << 0xe) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
+    REG_BG0CNT = (REG_BG0CNT & 0x43) | (scrSize << 0xE) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
 }
 
 inline void G2_SetBG1Control(GXBGScrSizeText scrSize, GXBGColorMode colMode, GXBGScrBase scrBase, GXBGCharBase charBase, u32) {
-    REG_BG1CNT = (REG_BG1CNT & 0x43) | (scrSize << 0xe) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
+    REG_BG1CNT = (REG_BG1CNT & 0x43) | (scrSize << 0xE) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
 }
 
 inline void G2_SetBG2Control(GXBGScrSizeText scrSize, GXBGColorMode colMode, GXBGScrBase scrBase, GXBGCharBase charBase, u32) {
-    REG_BG2CNT = (REG_BG2CNT & 0x43) | (scrSize << 0xe) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
+    REG_BG2CNT = (REG_BG2CNT & 0x43) | (scrSize << 0xE) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
 }
 
 inline void G2_SetBG3Control(GXBGScrSizeText scrSize, GXBGColorMode colMode, GXBGScrBase scrBase, GXBGCharBase charBase, u32) {
-    REG_BG3CNT = (REG_BG3CNT & 0x43) | (scrSize << 0xe) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
+    REG_BG3CNT = (REG_BG3CNT & 0x43) | (scrSize << 0xE) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
 }
 
 inline void G2S_SetBG0Control(GXBGScrSizeText scrSize, GXBGColorMode colMode, GXBGScrBase scrBase, GXBGCharBase charBase,
                               u32) {
-    REG_BG0CNT_SUB = (REG_BG0CNT_SUB & 0x43) | (scrSize << 0xe) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
+    REG_BG0CNT_SUB = (REG_BG0CNT_SUB & 0x43) | (scrSize << 0xE) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
 }
 
 inline void G2S_SetBG1Control(GXBGScrSizeText scrSize, GXBGColorMode colMode, GXBGScrBase scrBase, GXBGCharBase charBase,
                               u32) {
-    REG_BG1CNT_SUB = (REG_BG1CNT_SUB & 0x43) | (scrSize << 0xe) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
+    REG_BG1CNT_SUB = (REG_BG1CNT_SUB & 0x43) | (scrSize << 0xE) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
 }
 
 inline void G2S_SetBG2Control(GXBGScrSizeText scrSize, GXBGColorMode colMode, GXBGScrBase scrBase, GXBGCharBase charBase,
                               u32) {
-    REG_BG2CNT_SUB = (REG_BG2CNT_SUB & 0x43) | (scrSize << 0xe) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
+    REG_BG2CNT_SUB = (REG_BG2CNT_SUB & 0x43) | (scrSize << 0xE) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
 }
 
 inline void G2S_SetBG3Control(GXBGScrSizeText scrSize, GXBGColorMode colMode, GXBGScrBase scrBase, GXBGCharBase charBase,
                               u32) {
-    REG_BG3CNT_SUB = (REG_BG3CNT_SUB & 0x43) | (scrSize << 0xe) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
+    REG_BG3CNT_SUB = (REG_BG3CNT_SUB & 0x43) | (scrSize << 0xE) | (colMode << 0x7) | (scrBase << 0x8) | (charBase << 0x2);
 }
 
 inline void G2_SetBG2Control256Bmp(GXBGScrSize256Bmp scrSize, GXBGAreaOver areaOver, GXBGBmpScrBase scrBase) {
-    REG_BG2CNT = (REG_BG2CNT & 0x43) | (scrSize << 0xe) | 0x80 | (scrBase << 0x8) | (areaOver << 0xd);
+    REG_BG2CNT = (REG_BG2CNT & 0x43) | (scrSize << 0xE) | 0x80 | (scrBase << 0x8) | (areaOver << 0xD);
 }
 
 inline void G2_SetBG3Control256Bmp(GXBGScrSize256Bmp scrSize, GXBGAreaOver areaOver, GXBGBmpScrBase scrBase) {
-    REG_BG3CNT = (REG_BG3CNT & 0x43) | (scrSize << 0xe) | 0x80 | (scrBase << 0x8) | (areaOver << 0xd);
+    REG_BG3CNT = (REG_BG3CNT & 0x43) | (scrSize << 0xE) | 0x80 | (scrBase << 0x8) | (areaOver << 0xD);
 }
 
 inline void G2S_SetBG2Control256Bmp(GXBGScrSize256Bmp scrSize, GXBGAreaOver areaOver, GXBGBmpScrBase scrBase) {
-    REG_BG2CNT_SUB = (REG_BG2CNT_SUB & 0x43) | (scrSize << 0xe) | 0x80 | (scrBase << 0x8) | (areaOver << 0xd);
+    REG_BG2CNT_SUB = (REG_BG2CNT_SUB & 0x43) | (scrSize << 0xE) | 0x80 | (scrBase << 0x8) | (areaOver << 0xD);
 }
 
 inline void G2S_SetBG3Control256Bmp(GXBGScrSize256Bmp scrSize, GXBGAreaOver areaOver, GXBGBmpScrBase scrBase) {
-    REG_BG3CNT_SUB = (REG_BG3CNT_SUB & 0x43) | (scrSize << 0xe) | 0x80 | (scrBase << 0x8) | (areaOver << 0xd);
+    REG_BG3CNT_SUB = (REG_BG3CNT_SUB & 0x43) | (scrSize << 0xE) | 0x80 | (scrBase << 0x8) | (areaOver << 0xD);
 }
 
 inline void G2_SetBG2ControlDCBmp(GXBGScrSizeDcBmp scrSize, GXBGAreaOver areaOver, GXBGBmpScrBase scrBase) {
-    REG_BG2CNT = (REG_BG2CNT & 0x43) | (scrSize << 0xe) | 0x84 | (scrBase << 0x8) | (areaOver << 0xd);
+    REG_BG2CNT = (REG_BG2CNT & 0x43) | (scrSize << 0xE) | 0x84 | (scrBase << 0x8) | (areaOver << 0xD);
 }
 
 inline void G2_SetBG3ControlDCBmp(GXBGScrSizeDcBmp scrSize, GXBGAreaOver areaOver, GXBGBmpScrBase scrBase) {
-    REG_BG3CNT = (REG_BG3CNT & 0x43) | (scrSize << 0xe) | 0x84 | (scrBase << 0x8) | (areaOver << 0xd);
+    REG_BG3CNT = (REG_BG3CNT & 0x43) | (scrSize << 0xE) | 0x84 | (scrBase << 0x8) | (areaOver << 0xD);
 }
 
 inline void G2S_SetBG2ControlDCBmp(GXBGScrSizeDcBmp scrSize, GXBGAreaOver areaOver, GXBGBmpScrBase scrBase) {
-    REG_BG2CNT_SUB = (REG_BG2CNT_SUB & 0x43) | (scrSize << 0xe) | 0x84 | (scrBase << 0x8) | (areaOver << 0xd);
+    REG_BG2CNT_SUB = (REG_BG2CNT_SUB & 0x43) | (scrSize << 0xE) | 0x84 | (scrBase << 0x8) | (areaOver << 0xD);
 }
 
 inline void G2S_SetBG3ControlDCBmp(GXBGScrSizeDcBmp scrSize, GXBGAreaOver areaOver, GXBGBmpScrBase scrBase) {
-    REG_BG3CNT_SUB = (REG_BG3CNT_SUB & 0x43) | (scrSize << 0xe) | 0x84 | (scrBase << 0x8) | (areaOver << 0xd);
+    REG_BG3CNT_SUB = (REG_BG3CNT_SUB & 0x43) | (scrSize << 0xE) | 0x84 | (scrBase << 0x8) | (areaOver << 0xD);
 }
 
 inline void G2_SetBG2ControlText(GXBGScrSizeText scrSize, GXBGColorMode colMode, GXBGScrBase scrBase, GXBGCharBase charBase) {
@@ -287,16 +287,16 @@ inline void G2S_SetBlendAlpha(u32 srcPlane, u32 dstPlane, u32 srcAlpha, u32 dstA
 }
 
 inline void G2_GetOBJPosition(GXOamAttr *oam, u32 *x, u32 *y) {
-    *x = (oam->attr01 & 0x1ff0000) >> 16;
-    *y = oam->attr01 & 0xff;
+    *x = (oam->attr01 & 0x1FF0000) >> 16;
+    *y = oam->attr01 & 0xFF;
 }
 
 inline void G2_SetOBJPosition(GXOamAttr *oam, u32 x, u32 y) {
-    oam->attr01 = (oam->attr01 & 0xfe00ff00) | (y & 0xff) | (x << 0x17 >> 0x7);
+    oam->attr01 = (oam->attr01 & 0xFE00FF00) | (y & 0xFF) | (x << 0x17 >> 0x7);
 }
 
 inline u32 G2_GetOBJCharName(GXOamAttr *oam) {
-    return oam->attr2 & 0x3ff;
+    return oam->attr2 & 0x3FF;
 }
 
 inline void G2_SetOBJCharName(volatile GXOamAttr *oam, u32 name) {
@@ -304,18 +304,18 @@ inline void G2_SetOBJCharName(volatile GXOamAttr *oam, u32 name) {
 }
 
 inline u32 G2_GetOBJColorParam(GXOamAttr *oam) {
-    return (oam->attr2 & 0xf000) >> 0xc;
+    return (oam->attr2 & 0xF000) >> 0xC;
 }
 
 // Defined as macro as sometimes `oam` is volatile and other times not
-#define G2_GetOBJMode(oam) (GXOamMode)(((oam)->attr01 & 0xc00) >> 0xa)
+#define G2_GetOBJMode(oam) (GXOamMode)(((oam)->attr01 & 0xC00) >> 0xA)
 // inline GXOamMode G2_GetOBJMode(volatile GXOamAttr *oam) {
-//     return ((oam)->attr01 & 0xc00) >> 0xa;
+//     return ((oam)->attr01 & 0xC00) >> 0xA;
 // }
 
 inline void G2_SetOBJMode(GXOamAttr *oam, GXOamMode mode, u32 color) {
-    oam->attr01 = (oam->attr01 & ~0xc00) | (mode << 0xa);
-    oam->attr2  = (oam->attr2 & ~0xf000) | (color << 0xc);
+    oam->attr01 = (oam->attr01 & ~0xC00) | (mode << 0xA);
+    oam->attr2  = (oam->attr2 & ~0xF000) | (color << 0xC);
 }
 
 inline void G2_SetOBJPriority(GXOamAttr *oam, u32 prio) {
@@ -328,12 +328,12 @@ inline void G2_SetOBJAttr(GXOamAttr *oam, u32 x, u32 y, u32 param4, GXOamMode mo
 
     // c1ff0cff
     // 3 bits at 0x8
-    // 4 bits at 0xc
+    // 4 bits at 0xC
     // 5 bits at 0x19
-    oam->attr01 = (y & 0xff) | (mode << 0xa) | (shape << 0x1e) | ((x << 0x17) >> 0x7);
+    oam->attr01 = (y & 0xFF) | (mode << 0xA) | (shape << 0x1E) | ((x << 0x17) >> 0x7);
     // f3ff
-    // 2 bits at 0xa
-    oam->attr2 = param10 | (color << 0xc);
+    // 2 bits at 0xA
+    oam->attr2 = param10 | (color << 0xC);
 }
 
 #ifdef __cplusplus

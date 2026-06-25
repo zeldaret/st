@@ -1,5 +1,5 @@
 #include "Item/ItemManager.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "global.h"
 
 const u8 gQuiverCapacities[UpgradeCapacity_Max] = {
@@ -14,19 +14,19 @@ const u8 gBombBagCapacities[UpgradeCapacity_Max] = {
     CAPACITY_BOMB_BAG_TIER_3,
 };
 
-ARM void ItemManager::SetFlag(ItemFlag itemFlag) {
+void ItemManager::SetFlag(ItemFlag itemFlag) {
     SET_FLAG(this->mFlags, itemFlag);
 }
 
-ARM void ItemManager::ClearFlag(ItemFlag itemFlag) {
+void ItemManager::ClearFlag(ItemFlag itemFlag) {
     UNSET_FLAG(this->mFlags, itemFlag);
 }
 
-ARM bool ItemManager::HasRecruitUniform() {
+bool ItemManager::HasRecruitUniform() {
     return GET_FLAG(this->mFlags, ItemFlag_RecruitUniform) && (this->mUnk_12 & 1);
 }
 
-ARM unk32 ItemManager::func_ov000_020a86a4() {
+unk32 ItemManager::func_ov000_020a86a4() {
     if (GET_FLAG(this->mFlags, ItemFlag_AncientShield) && (this->mUnk_12 & 2)) {
         return 1;
     }
@@ -38,7 +38,7 @@ ARM unk32 ItemManager::func_ov000_020a86a4() {
     return -1;
 }
 
-ARM u32 ItemManager::GetItemAmount(ItemFlag itemFlag) {
+u32 ItemManager::GetItemAmount(ItemFlag itemFlag) {
     bool canUse = GET_FLAG(this->mFlags, itemFlag);
 
     switch (itemFlag) {
@@ -53,7 +53,7 @@ ARM u32 ItemManager::GetItemAmount(ItemFlag itemFlag) {
     return canUse;
 }
 
-ARM u8 ItemManager::GetQuiverCapacity() {
+u8 ItemManager::GetQuiverCapacity() {
     if (GET_FLAG(this->mFlags, ItemFlag_Bow) == 0) {
         return 0;
     }
@@ -61,7 +61,7 @@ ARM u8 ItemManager::GetQuiverCapacity() {
     return gQuiverCapacities[this->mQuiverCapacity];
 }
 
-ARM u8 ItemManager::GetBombBagCapacity() {
+u8 ItemManager::GetBombBagCapacity() {
     if (GET_FLAG(this->mFlags, ItemFlag_Bombs) == 0) {
         return 0;
     }
@@ -69,7 +69,7 @@ ARM u8 ItemManager::GetBombBagCapacity() {
     return gBombBagCapacities[this->mBombBagCapacity];
 }
 
-ARM void ItemManager::GiveRupees(s32 amount, bool param2, bool param3) {
+void ItemManager::GiveRupees(s32 amount, bool param2, bool param3) {
     u16 prevNumRupees = this->mNumRupees;
     s32 newAmount     = this->mNumRupees + amount;
 
@@ -82,11 +82,11 @@ ARM void ItemManager::GiveRupees(s32 amount, bool param2, bool param3) {
     this->mNumRupees = newAmount;
 
     if (param3) {
-        data_ov024_020d8698->func_ov024_020cd368(param2 && prevNumRupees != this->mNumRupees, true);
+        gpUICounterManager->func_ov024_020cd368(param2 && prevNumRupees != this->mNumRupees, true);
     }
 }
 
-ARM void ItemManager::GiveSmallKeys(s32 amount) {
+void ItemManager::GiveSmallKeys(s32 amount) {
     s32 newAmount = this->mKeyAmount + amount;
 
     if (newAmount > MAX_KEYS) {
@@ -98,7 +98,7 @@ ARM void ItemManager::GiveSmallKeys(s32 amount) {
     this->mKeyAmount = newAmount;
 }
 
-ARM void ItemManager::GiveArrows(s32 amount) {
+void ItemManager::GiveArrows(s32 amount) {
     s32 maxArrows = this->GetQuiverCapacity();
     s32 newAmount = this->mArrowAmount + amount;
 
@@ -111,7 +111,7 @@ ARM void ItemManager::GiveArrows(s32 amount) {
     this->mArrowAmount = newAmount;
 }
 
-ARM void ItemManager::GiveBombs(s32 amount) {
+void ItemManager::GiveBombs(s32 amount) {
     s32 maxBombs  = this->GetBombBagCapacity();
     s32 newAmount = this->mBombAmount + amount;
 
@@ -124,18 +124,18 @@ ARM void ItemManager::GiveBombs(s32 amount) {
     this->mBombAmount = newAmount;
 }
 
-ARM bool ItemManager::TryEquipForcedItem() {
+bool ItemManager::TryEquipForcedItem() {
     if (this->mForcedItem != ItemFlag_None) {
         this->mEquippedItem = this->mForcedItem;
         this->mForcedItem   = ItemFlag_None;
-        data_ov024_020d8698->func_ov024_020cd458(this->mEquippedItem, false);
+        gpUICounterManager->func_ov024_020cd458(this->mEquippedItem, false);
         return true;
     }
 
     return false;
 }
 
-ARM void ItemManager::GivePotion(PotionType type) {
+void ItemManager::GivePotion(PotionType type) {
     switch (type) {
         case PotionType_Red:
         case PotionType_Purple:
@@ -152,7 +152,7 @@ ARM void ItemManager::GivePotion(PotionType type) {
     }
 }
 
-ARM bool ItemManager::HasPotion() {
+bool ItemManager::HasPotion() {
     for (u32 i = 0; i < ARRAY_LEN(this->mPotions); i++) {
         if (this->mPotions[i] != PotionType_None) {
             return true;
@@ -162,7 +162,7 @@ ARM bool ItemManager::HasPotion() {
     return false;
 }
 
-ARM bool ItemManager::HasPurplePotion() {
+bool ItemManager::HasPurplePotion() {
     for (u32 i = 0; i < ARRAY_LEN(this->mPotions); i++) {
         if (this->mPotions[i] == PotionType_Purple) {
             return true;
@@ -172,7 +172,7 @@ ARM bool ItemManager::HasPurplePotion() {
     return false;
 }
 
-ARM void ItemManager::RemovePurplePotion() {
+void ItemManager::RemovePurplePotion() {
     for (s32 i = ARRAY_LEN(this->mPotions) - 1; i >= 0; i--) {
         if (this->mPotions[i] == PotionType_Purple) {
             this->mPotions[i] = PotionType_None;
@@ -181,7 +181,7 @@ ARM void ItemManager::RemovePurplePotion() {
     }
 }
 
-ARM bool ItemManager::PotionSlotsFull() {
+bool ItemManager::PotionSlotsFull() {
     for (u32 i = 0; i < ARRAY_LEN(this->mPotions); i++) {
         if (this->mPotions[i] == PotionType_None) {
             return false;
@@ -191,11 +191,11 @@ ARM bool ItemManager::PotionSlotsFull() {
     return true;
 }
 
-ARM UnkStruct_ov000_020afc48 *ItemManager::func_ov000_020a8974(ItemFlag itemFlag) {
+UnkStruct_ov000_020afc48 *ItemManager::func_ov000_020a8974(ItemFlag itemFlag) {
     return &data_ov000_020afc48[itemFlag];
 }
 
-ARM ItemFlag ItemManager::GetEquippedItemFlag(ItemId itemId) {
+ItemFlag ItemManager::GetEquippedItemFlag(ItemId itemId) {
     ItemFlag itemFlag;
 
     for (itemFlag = 0; itemFlag < ItemFlag_EQUIP_COUNT; itemFlag++) {
@@ -209,13 +209,17 @@ ARM ItemFlag ItemManager::GetEquippedItemFlag(ItemId itemId) {
     return ItemFlag_None;
 }
 
-THUMB void ItemManager::func_ov000_020a89bc() {
+THUMB_BEGIN
+
+void ItemManager::func_ov000_020a89bc() {
     if (this->mUnk_20->mUnk_14.func_ov053_0213caf0() != 0) {
         this->mUnk_24 = 0;
     }
 }
 
-ARM bool ItemManager::func_ov000_020a89d4() {
+THUMB_END
+
+bool ItemManager::func_ov000_020a89d4() {
     if (this->mUnk_20 != NULL) {
         return (this->mUnk_20->mUnk_14.mUnk_08 & 0xFFFF) != 0xFFFF;
     }
@@ -223,7 +227,7 @@ ARM bool ItemManager::func_ov000_020a89d4() {
     return false;
 }
 
-ARM bool ItemManager::func_ov000_020a8a0c() {
+bool ItemManager::func_ov000_020a8a0c() {
     if (this->mUnk_20 == NULL || this->mEquippedItem == ItemFlag_None ||
         IS_ITEM_RESTRICTED(this->mItemRestrictions, this->mEquippedItem) || this->GetItemAmount(this->mEquippedItem) == 0) {
         return false;
@@ -232,7 +236,7 @@ ARM bool ItemManager::func_ov000_020a8a0c() {
     return this->mUnk_20->func_ov031_020db874(this->mEquippedItem);
 }
 
-ARM void ItemManager::func_ov000_020a8a5c() {
+void ItemManager::func_ov000_020a8a5c() {
     if (this->mUnk_20 == NULL) {
         return;
     }
@@ -240,7 +244,7 @@ ARM void ItemManager::func_ov000_020a8a5c() {
     this->mUnk_20->func_ov031_020db8cc();
 }
 
-ARM bool ItemManager::func_ov000_020a8a74() {
+bool ItemManager::func_ov000_020a8a74() {
     if (this->mUnk_20 == NULL) {
         return false;
     }
@@ -248,18 +252,18 @@ ARM bool ItemManager::func_ov000_020a8a74() {
     return this->mUnk_20->func_ov031_020db8f8();
 }
 
-ARM unk32 ItemManager::func_ov000_020a8a90() {
+unk32 ItemManager::func_ov000_020a8a90() {
     return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_00 : 0;
 }
 
-ARM unk32 ItemManager::func_ov000_020a8aa4() {
+unk32 ItemManager::func_ov000_020a8aa4() {
     return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_04 : 0;
 }
 
-ARM unk32 ItemManager::func_ov000_020a8ab8() {
+unk32 ItemManager::func_ov000_020a8ab8() {
     return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_0C : 0;
 }
 
-ARM unk32 ItemManager::func_ov000_020a8acc() {
+unk32 ItemManager::func_ov000_020a8acc() {
     return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_10 : 0;
 }

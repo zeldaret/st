@@ -9,18 +9,18 @@
 extern "C" void func_01ffedac(u16 *, VecFx32 *);
 extern "C" void func_01ffb9cc(void *, VecFx32 *);
 
-ARM DECL_PROFILE(ActorProfileUnkSWOB);
+DECL_PROFILE(ActorProfileUnkSWOB);
 
-ARM Actor *ActorProfileUnkSWOB::Create() {
+Actor *ActorProfileUnkSWOB::Create() {
     return new(HeapIndex_2) ActorUnkSWOB();
 }
 
-ARM ActorProfileUnkSWOB::ActorProfileUnkSWOB() :
+ActorProfileUnkSWOB::ActorProfileUnkSWOB() :
     ActorProfile(ActorId_SWOB) {}
 
-ARM ActorUnkSWOB::ActorUnkSWOB() {}
+ActorUnkSWOB::ActorUnkSWOB() {}
 
-ARM bool ActorUnkSWOB::vfunc_18(unk32 param1) {
+bool ActorUnkSWOB::vfunc_18(unk32 param1) {
     this->mUnk_9E = this->mUnk_5C.mUnk_1C_0;
     this->mUnk_94 = this->mUnk_5C.mParams[1];
     this->mUnk_98 = this->mUnk_5C.mParams[2];
@@ -29,29 +29,29 @@ ARM bool ActorUnkSWOB::vfunc_18(unk32 param1) {
     this->mUnk_9C = this->mUnk_9E;
 
     if (this->func_ov000_02098a60(0)) {
-        this->func_ov000_0209a9b4(1);
+        this->SetState(ActorUnkSWOBState_1);
     } else {
-        this->func_ov000_0209a9b4(0);
+        this->SetState(ActorUnkSWOBState_0);
     }
 
     return true;
 }
 
-ARM void ActorUnkSWOB::func_ov000_0209a9b4(unk32 param1) {
-    this->mUnk_4C = param1;
+void ActorUnkSWOB::SetState(ActorState state) {
+    this->mState = state;
 
-    switch (this->mUnk_4C) {
-        case 0:
+    switch (this->mState) {
+        case ActorUnkSWOBState_0:
             this->func_ov000_02098a88(0, 0);
             break;
-        case 1:
+        case ActorUnkSWOBState_1:
             this->func_ov000_02098a88(0, 1);
 
             if (this->mUnk_94 == 0) {
                 UNSET_FLAG(this->mFlags, ActorFlag_Alive);
             }
             break;
-        case 2:
+        case ActorUnkSWOBState_2:
             this->func_ov000_0209aa30();
             this->mUnk_52 = -1;
             this->mUnk_50 = 0;
@@ -61,8 +61,8 @@ ARM void ActorUnkSWOB::func_ov000_0209a9b4(unk32 param1) {
     }
 }
 
-ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
-    if (this->mUnk_4C == 1) {
+void ActorUnkSWOB::func_ov000_0209aa30(void) {
+    if (this->mState == ActorUnkSWOBState_1) {
         return;
     }
 
@@ -75,7 +75,7 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
 
             s16 unk_78 = this->mUnk_5C.mUnk_1C_0;
             if (unk_78 > 0) {
-                data_027e0cd8->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_5C.mUnk_18.y, 1);
+                data_027e0cd8->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_5C.mUnk_18.y, true);
             }
             break;
         case 2: {
@@ -97,12 +97,12 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
             AStack_7c.func_ov000_020975f8();
 
             for (j = 0, i = 0; i < ARRAY_LEN(this->mUnk_A4); i++) {
-                if (gpActorManager->func_01fff3b4(this->mUnk_A4[i].mUnk_00) == NULL) {
-                    this->mUnk_A4[i].mUnk_00 = 0;
+                if (gpActorManager->func_01fff3b4(this->mUnk_A4[i].ref) == NULL) {
+                    this->mUnk_A4[i].ref.Reset();
 
-                    vec.x = INT_TO_FX32(gRandom.Next32(0, 11) - 5);
+                    vec.x = INT_TO_FX32(gRandom.Next32(11) - 5);
                     vec.y = 0;
-                    vec.z = INT_TO_FX32(gRandom.Next32(0, 11) - 5);
+                    vec.z = INT_TO_FX32(gRandom.Next32(11) - 5);
 
                     VecFx32_Add(&vec, &vec2, &vec);
 
@@ -120,6 +120,3 @@ ARM void ActorUnkSWOB::func_ov000_0209aa30(void) {
             break;
     }
 }
-
-ARM ActorUnkSWOB::~ActorUnkSWOB() {}
-ARM ActorProfileUnkSWOB::~ActorProfileUnkSWOB() {}

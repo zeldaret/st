@@ -5,6 +5,10 @@
     .data       start:0x02137600 end:0x0213b060 kind:data align:32
     .bss        start:0x0213b060 end:0x02143d60 kind:bss align:32
 
+src/026_Train/code_02102924.cpp:
+    .text       start:0x02104b74 end:0x02104b84
+    .data       start:0x0213836c end:0x021384ec
+
 src/026_Train/Actor/ActorUnkDKCL.cpp:
     .text       start:0x02107150 end:0x0210731c
     .init       start:0x021363b0 end:0x02136400

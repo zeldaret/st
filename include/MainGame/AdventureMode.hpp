@@ -834,7 +834,7 @@ public:
         return 0;
     }
 
-    AdventureModeManager_1B8_Base(u8 bgType, bool param2, const AdventureModeManager_1B8_Base_1C *param3, bool param4,
+    AdventureModeManager_1B8_Base(u8 bgType, bool param2, const AdventureModeManager_1B8_Base_1C &param3, bool param4,
                                   bool param5);
     ~AdventureModeManager_1B8_Base();
 
@@ -979,7 +979,7 @@ public:
     void func_ov024_020c6770(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4);
     bool func_ov024_020c681c();
     void func_ov024_020c6840(SceneIndex sceneIndex);
-    void func_ov024_020c68d4();
+    void func_ov024_020c68d4(Vec2s *param1, unk32 param2);
     bool func_ov024_020c68ec(unk32 param1, unk32 param2);
     void func_ov024_020c6930();
     bool func_ov024_020c6940(unk32 param1, unk32 param2);
@@ -1010,3 +1010,34 @@ public:
     static void func_ov001_020c0874();
     static void func_ov001_020c0894();
 };
+
+typedef struct UnkStruct_ov024_020d86a8 {
+    union {
+        struct {
+            /* 00 */ u8 mUnk_00_0 : 1;
+            /* 00 */ u8 mUnk_00_1 : 1;
+        };
+        u32 data;
+    };
+} UnkStruct_ov024_020d86a8;
+
+extern const UnkStruct_ov024_020d86a8 data_ov024_020d78b8;
+
+extern void SetCreditsEndingType(u16 value);
+extern u16 GetCreditsEndingType();
+
+extern void func_ov024_020d51dc(Vec2s *param1, SceneIndex sceneIndex);
+extern void func_ov024_020d524c(Vec2s *param1, SceneIndex sceneIndex);
+extern bool func_ov024_020d5304(SceneIndex sceneIndex);
+extern bool func_ov024_020d5340(SceneIndex sceneIndex);
+extern bool func_ov024_020d5354(s32 *pFlagPos, s16 *pFlagValue, ItemId itemId);
+extern bool func_ov024_020d5410(SceneIndex sceneIndex);
+extern bool func_ov024_020d5434(SceneIndex sceneIndex);
+extern bool func_ov024_020d5458(SceneIndex sceneIndex);
+extern bool func_ov024_020d547c(SceneIndex sceneIndex);
+extern const u16 data_ov024_020d7684[5][6];
+
+extern const int data_ov024_020d7318;
+extern const int data_ov024_020d731c;
+extern const int data_ov024_020d7320;
+extern const int data_ov024_020d7324;

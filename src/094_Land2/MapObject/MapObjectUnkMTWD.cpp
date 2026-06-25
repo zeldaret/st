@@ -3,21 +3,21 @@
 #include "MapObject/MapObjectUnkMTWD.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkMTWD);
+DECL_PROFILE(MapObjectProfileUnkMTWD);
 
-ARM MapObject *MapObjectProfileUnkMTWD::Create() {
+MapObject *MapObjectProfileUnkMTWD::Create() {
     return new(HeapIndex_2) MapObjectUnkMTWD();
 }
 
-ARM MapObjectProfileUnkMTWD::MapObjectProfileUnkMTWD() :
+MapObjectProfileUnkMTWD::MapObjectProfileUnkMTWD() :
     MapObjectProfile(MapObjectId_MTWD) {}
 
-ARM MapObjectUnkMTWD::MapObjectUnkMTWD() {}
+MapObjectUnkMTWD::MapObjectUnkMTWD() {}
 
-ARM void MapObjectUnkMTWD::func_ov094_02175c90(void) {}
-ARM void MapObjectUnkMTWD::func_ov094_02175d1c(void) {}
-ARM void MapObjectUnkMTWD::func_ov094_02175ea4(void) {}
-ARM void MapObjectUnkMTWD::func_ov094_02175eb8(void) {}
+void MapObjectUnkMTWD::func_ov094_02175c90(void) {}
+void MapObjectUnkMTWD::func_ov094_02175d1c(void) {}
+void MapObjectUnkMTWD::func_ov094_02175ea4(void) {}
+void MapObjectUnkMTWD::func_ov094_02175eb8(void) {}
 
-ARM MapObjectUnkMTWD::~MapObjectUnkMTWD() {}
-ARM MapObjectProfileUnkMTWD::~MapObjectProfileUnkMTWD() {}
+MapObjectUnkMTWD::~MapObjectUnkMTWD() {}
+MapObjectProfileUnkMTWD::~MapObjectProfileUnkMTWD() {}

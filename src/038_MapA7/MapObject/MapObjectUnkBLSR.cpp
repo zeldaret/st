@@ -3,21 +3,21 @@
 #include "MapObject/MapObjectUnkBLSR.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkBLSR);
+DECL_PROFILE(MapObjectProfileUnkBLSR);
 
-ARM MapObject *MapObjectProfileUnkBLSR::Create() {
+MapObject *MapObjectProfileUnkBLSR::Create() {
     return new(HeapIndex_2) MapObjectUnkBLSR();
 }
 
-ARM MapObjectProfileUnkBLSR::MapObjectProfileUnkBLSR() :
+MapObjectProfileUnkBLSR::MapObjectProfileUnkBLSR() :
     MapObjectProfile(MapObjectId_BLSR) {}
 
-ARM MapObjectUnkBLSR::MapObjectUnkBLSR() {}
+MapObjectUnkBLSR::MapObjectUnkBLSR() {}
 
-ARM void MapObjectUnkBLSR::func_ov038_0211e548(void) {}
-ARM void MapObjectUnkBLSR::func_ov038_0211e6a0(void) {}
-ARM void MapObjectUnkBLSR::func_ov038_0211e6a4(void) {}
-ARM void MapObjectUnkBLSR::func_ov038_0211e6ec(void) {}
+void MapObjectUnkBLSR::func_ov038_0211e548(void) {}
+void MapObjectUnkBLSR::func_ov038_0211e6a0(void) {}
+void MapObjectUnkBLSR::func_ov038_0211e6a4(void) {}
+void MapObjectUnkBLSR::func_ov038_0211e6ec(void) {}
 
-ARM MapObjectUnkBLSR::~MapObjectUnkBLSR() {}
-ARM MapObjectProfileUnkBLSR::~MapObjectProfileUnkBLSR() {}
+MapObjectUnkBLSR::~MapObjectUnkBLSR() {}
+MapObjectProfileUnkBLSR::~MapObjectProfileUnkBLSR() {}

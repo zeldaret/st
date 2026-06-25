@@ -3,22 +3,22 @@
 #include "Actor/ActorUnkFCHL.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkFCHL);
+DECL_PROFILE(ActorProfileUnkFCHL);
 
-ARM Actor *ActorProfileUnkFCHL::Create() {
+Actor *ActorProfileUnkFCHL::Create() {
     return new(HeapIndex_2) ActorUnkFCHL();
 }
 
-ARM ActorProfileUnkFCHL::ActorProfileUnkFCHL() :
+ActorProfileUnkFCHL::ActorProfileUnkFCHL() :
     ActorProfile_Derived1(ActorId_FCHL) {}
 
-ARM ActorUnkFCHL::ActorUnkFCHL() {}
+ActorUnkFCHL::ActorUnkFCHL() {}
 
-ARM void ActorUnkFCHL::func_ov034_02119ff0(void) {}
-ARM void ActorUnkFCHL::func_ov034_0211a004(void) {}
-ARM void ActorUnkFCHL::func_ov034_0211a208(void) {}
-ARM void ActorUnkFCHL::func_ov034_0211a21c(void) {}
-ARM void ActorUnkFCHL::func_ov034_0211a288(void) {}
+void ActorUnkFCHL::func_ov034_02119ff0(void) {}
+void ActorUnkFCHL::func_ov034_0211a004(void) {}
+void ActorUnkFCHL::func_ov034_0211a208(void) {}
+void ActorUnkFCHL::func_ov034_0211a21c(void) {}
+void ActorUnkFCHL::func_ov034_0211a288(void) {}
 
-ARM ActorUnkFCHL::~ActorUnkFCHL() {}
-ARM ActorProfileUnkFCHL::~ActorProfileUnkFCHL() {}
+ActorUnkFCHL::~ActorUnkFCHL() {}
+ActorProfileUnkFCHL::~ActorProfileUnkFCHL() {}

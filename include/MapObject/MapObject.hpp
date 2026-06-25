@@ -4,6 +4,7 @@
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectProfile.hpp"
 #include "Physics/Cylinder.hpp"
+#include "Render/ModelRender.hpp"
 #include "System/SysNew.hpp"
 #include "flags.h"
 #include "global.h"
@@ -113,7 +114,7 @@ public:
     static void func_ov000_0209c7ac(MapObjectId mapObjId);
 };
 
-class MapObject : public SysObject {
+class MapObject {
 public:
     /* 00 (vtable) */
     /* 04 */ VecFx32 mPos;
@@ -173,7 +174,7 @@ public:
     bool func_ov000_0209d144(Vec2s *param1, unk32 param2, unk32 param3);
     void func_ov000_0209d274(unk32 param1);
     bool func_ov000_0209d29c(unk32 param1);
-    void func_ov000_0209d2c4(unk32 param1, unk32 param2);
+    void func_ov000_0209d2c4(unk32 param1, bool param2);
     void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2b *param3);
     void func_ov000_0209d3b4(unk32 param1, fx32 size);
     void func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_00 *param2, unk32 param3);
@@ -185,5 +186,6 @@ public:
 
     static void func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx);
     static void func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2);
-    static void func_ov000_0209d54c(void *param1, MapObject *thisx, unk32 param2, VecFx32 *param3, unk32 param4, unk32 param5);
+    static void func_ov000_0209d54c(ActorRef *param1, MapObject *thisx, u16 param2, const VecFx32 *pPos, s16 param3,
+                                    u16 param4);
 };

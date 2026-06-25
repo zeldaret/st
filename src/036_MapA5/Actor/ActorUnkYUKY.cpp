@@ -3,20 +3,20 @@
 #include "Actor/ActorUnkYUKY.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkYUKY);
+DECL_PROFILE(ActorProfileUnkYUKY);
 
-ARM Actor *ActorProfileUnkYUKY::Create() {
+Actor *ActorProfileUnkYUKY::Create() {
     return new(HeapIndex_2) ActorUnkYUKY();
 }
 
-ARM ActorProfileUnkYUKY::ActorProfileUnkYUKY() :
+ActorProfileUnkYUKY::ActorProfileUnkYUKY() :
     ActorProfile_Derived1(ActorId_YUKY) {}
 
-ARM ActorUnkYUKY::ActorUnkYUKY() {}
+ActorUnkYUKY::ActorUnkYUKY() {}
 
-ARM void ActorUnkYUKY::func_ov036_0211b668(void) {}
-ARM void ActorUnkYUKY::func_ov036_0211b6cc(void) {}
-ARM void ActorUnkYUKY::func_ov036_0211b6f8(void) {}
+void ActorUnkYUKY::func_ov036_0211b668(void) {}
+void ActorUnkYUKY::func_ov036_0211b6cc(void) {}
+void ActorUnkYUKY::func_ov036_0211b6f8(void) {}
 
-ARM ActorUnkYUKY::~ActorUnkYUKY() {}
-ARM ActorProfileUnkYUKY::~ActorProfileUnkYUKY() {}
+ActorUnkYUKY::~ActorUnkYUKY() {}
+ActorProfileUnkYUKY::~ActorProfileUnkYUKY() {}

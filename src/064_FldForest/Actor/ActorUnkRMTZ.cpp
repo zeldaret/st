@@ -3,20 +3,20 @@
 #include "Actor/ActorUnkRMTZ.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkRMTZ);
+DECL_PROFILE(ActorProfileUnkRMTZ);
 
-ARM Actor *ActorProfileUnkRMTZ::Create() {
+Actor *ActorProfileUnkRMTZ::Create() {
     return new(HeapIndex_2) ActorUnkRMTZ();
 }
 
-ARM ActorProfileUnkRMTZ::ActorProfileUnkRMTZ() :
+ActorProfileUnkRMTZ::ActorProfileUnkRMTZ() :
     ActorProfile_Derived1(ActorId_RMTZ) {}
 
-ARM ActorUnkRMTZ::ActorUnkRMTZ() {}
+ActorUnkRMTZ::ActorUnkRMTZ() {}
 
-ARM void ActorUnkRMTZ::func_ov064_0215958c(void) {}
-ARM void ActorUnkRMTZ::func_ov064_021595c8(void) {}
-ARM void ActorUnkRMTZ::func_ov064_02159610(void) {}
+void ActorUnkRMTZ::func_ov064_0215958c(void) {}
+void ActorUnkRMTZ::func_ov064_021595c8(void) {}
+void ActorUnkRMTZ::func_ov064_02159610(void) {}
 
-ARM ActorUnkRMTZ::~ActorUnkRMTZ() {}
-ARM ActorProfileUnkRMTZ::~ActorProfileUnkRMTZ() {}
+ActorUnkRMTZ::~ActorUnkRMTZ() {}
+ActorProfileUnkRMTZ::~ActorProfileUnkRMTZ() {}

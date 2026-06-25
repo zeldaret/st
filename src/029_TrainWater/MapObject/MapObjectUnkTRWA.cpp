@@ -3,22 +3,22 @@
 #include "MapObject/MapObjectUnkTRWA.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkTRWA);
+DECL_PROFILE(MapObjectProfileUnkTRWA);
 
-ARM MapObject *MapObjectProfileUnkTRWA::Create() {
+MapObject *MapObjectProfileUnkTRWA::Create() {
     return new(HeapIndex_2) MapObjectUnkTRWA();
 }
 
-ARM MapObjectProfileUnkTRWA::MapObjectProfileUnkTRWA() :
+MapObjectProfileUnkTRWA::MapObjectProfileUnkTRWA() :
     MapObjectProfile(MapObjectId_TRWA) {}
 
-ARM MapObjectUnkTRWA::MapObjectUnkTRWA() {}
+MapObjectUnkTRWA::MapObjectUnkTRWA() {}
 
-ARM void MapObjectUnkTRWA::func_ov029_02142390(void) {}
-ARM void MapObjectUnkTRWA::func_ov029_0214247c(void) {}
-ARM void MapObjectUnkTRWA::func_ov029_0214249c(void) {}
-ARM void MapObjectUnkTRWA::func_ov029_021424bc(void) {}
-ARM void MapObjectUnkTRWA::func_ov029_021424dc(void) {}
+void MapObjectUnkTRWA::func_ov029_02142390(void) {}
+void MapObjectUnkTRWA::func_ov029_0214247c(void) {}
+void MapObjectUnkTRWA::func_ov029_0214249c(void) {}
+void MapObjectUnkTRWA::func_ov029_021424bc(void) {}
+void MapObjectUnkTRWA::func_ov029_021424dc(void) {}
 
-ARM MapObjectUnkTRWA::~MapObjectUnkTRWA() {}
-ARM MapObjectProfileUnkTRWA::~MapObjectProfileUnkTRWA() {}
+MapObjectUnkTRWA::~MapObjectUnkTRWA() {}
+MapObjectProfileUnkTRWA::~MapObjectProfileUnkTRWA() {}

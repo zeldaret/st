@@ -3,20 +3,20 @@
 #include "MapObject/MapObjectUnkBOGN.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkBOGN);
+DECL_PROFILE(MapObjectProfileUnkBOGN);
 
-ARM MapObject *MapObjectProfileUnkBOGN::Create() {
+MapObject *MapObjectProfileUnkBOGN::Create() {
     return new(HeapIndex_2) MapObjectUnkBOGN();
 }
 
-ARM MapObjectProfileUnkBOGN::MapObjectProfileUnkBOGN() :
+MapObjectProfileUnkBOGN::MapObjectProfileUnkBOGN() :
     MapObjectProfile(MapObjectId_BOGN) {}
 
-ARM MapObjectUnkBOGN::MapObjectUnkBOGN() {}
+MapObjectUnkBOGN::MapObjectUnkBOGN() {}
 
-ARM void MapObjectUnkBOGN::func_ov091_021688e0(void) {}
-ARM void MapObjectUnkBOGN::func_ov091_02168910(void) {}
-ARM void MapObjectUnkBOGN::func_ov091_02168994(void) {}
+void MapObjectUnkBOGN::func_ov091_021688e0(void) {}
+void MapObjectUnkBOGN::func_ov091_02168910(void) {}
+void MapObjectUnkBOGN::func_ov091_02168994(void) {}
 
-ARM MapObjectUnkBOGN::~MapObjectUnkBOGN() {}
-ARM MapObjectProfileUnkBOGN::~MapObjectProfileUnkBOGN() {}
+MapObjectUnkBOGN::~MapObjectUnkBOGN() {}
+MapObjectProfileUnkBOGN::~MapObjectProfileUnkBOGN() {}

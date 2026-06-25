@@ -2,6 +2,17 @@
 
 #include <nitro/math.h>
 
+//! TODO: find a way to make VecFx32 work in ctor init lists
+struct Vec3p {
+    fx32 x, y, z;
+
+    Vec3p(fx32 X, fx32 Y, fx32 Z) {
+        x = X;
+        y = Y;
+        z = Z;
+    }
+};
+
 extern "C" {
 //! TODO: find a way to remove that
 typedef union Vec2sC {
@@ -57,6 +68,22 @@ static inline void Vec2s_Add(const Vec2s *a, const Vec2s *b, Vec2s *dst) {
 
     dst->x = x;
     dst->y = y;
+}
+
+//! TODO: probably fake
+static inline void Vec2s_Add2(const Vec2s *a, Vec2s *dst) {
+    s16 x1, y1, x2, y2;
+
+    x1 = a->x;
+    x2 = dst->x;
+    y2 = dst->y;
+    y1 = a->y;
+
+    x2 += x1;
+    dst->x = x2;
+
+    dst->y = (s16) dst->y;
+    dst->y += y1;
 }
 
 static inline void Vec2s_Sub(const Vec2s *a, const Vec2s *b, Vec2s *dst) {
@@ -292,7 +319,7 @@ static inline void Vec2pCpp_Copy(const Vec2pCpp *a, Vec2pCpp *dst) {
 }
 
 //! TODO: remove
-extern "C" static inline Vec2s *Vec2s_New(s16 x, s16 y) {
+extern "C" inline Vec2s *Vec2s_New(s16 x, s16 y) {
     Vec2s vec;
     vec.x = x;
     vec.y = y;
@@ -300,9 +327,29 @@ extern "C" static inline Vec2s *Vec2s_New(s16 x, s16 y) {
 }
 
 //! TODO: remove
-extern "C" static inline Vec2s *Vec2s_GetCopy(Vec2s *src) {
+extern "C" inline Vec2s *Vec2s_GetCopy(Vec2s *src) {
     Vec2s vec;
     vec.x = src->x;
     vec.y = src->y;
     return &vec;
 }
+
+union Vec2sb {
+    struct {
+        /* 0 */ s8 x;
+        /* 2 */ s8 y;
+        /* 4 */
+    };
+    s8 coords[2];
+
+    void operator=(const Vec2sb &from) {
+        this->x = from.x;
+        this->y = from.y;
+    }
+
+    Vec2sb() {}
+    Vec2sb(u8 X, u8 Y) {
+        x = X;
+        y = Y;
+    }
+};

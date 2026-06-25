@@ -3,21 +3,21 @@
 #include "Actor/ActorUnkVOLV.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkVOLV);
+DECL_PROFILE(ActorProfileUnkVOLV);
 
-ARM Actor *ActorProfileUnkVOLV::Create() {
+Actor *ActorProfileUnkVOLV::Create() {
     return new(HeapIndex_2) ActorUnkVOLV();
 }
 
-ARM ActorProfileUnkVOLV::ActorProfileUnkVOLV() :
+ActorProfileUnkVOLV::ActorProfileUnkVOLV() :
     ActorProfile_Derived1(ActorId_VOLV) {}
 
-ARM ActorUnkVOLV::ActorUnkVOLV() {}
+ActorUnkVOLV::ActorUnkVOLV() {}
 
-ARM void ActorUnkVOLV::func_ov099_021819fc(void) {}
-ARM void ActorUnkVOLV::func_ov099_02181ae8(void) {}
-ARM void ActorUnkVOLV::func_ov099_02181b14(void) {}
-ARM void ActorUnkVOLV::func_ov099_02181b28(void) {}
+void ActorUnkVOLV::func_ov099_021819fc(void) {}
+void ActorUnkVOLV::func_ov099_02181ae8(void) {}
+void ActorUnkVOLV::func_ov099_02181b14(void) {}
+void ActorUnkVOLV::func_ov099_02181b28(void) {}
 
-ARM ActorUnkVOLV::~ActorUnkVOLV() {}
-ARM ActorProfileUnkVOLV::~ActorProfileUnkVOLV() {}
+ActorUnkVOLV::~ActorUnkVOLV() {}
+ActorProfileUnkVOLV::~ActorProfileUnkVOLV() {}

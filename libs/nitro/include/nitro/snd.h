@@ -10,7 +10,7 @@ extern "C" {
 #define SND_COMMAND_NOBLOCK 0
 #define SND_COMMAND_BLOCK 1
 
-#define SND_TIMER_CLOCK 0xffb0ff
+#define SND_TIMER_CLOCK 0xFFB0FF
 
 #define SND_WAVE_FORMAT_PCM16 1
 
@@ -22,13 +22,13 @@ typedef void (*SNDAlarmCallback)(void *arg);
 
 typedef u32 SNDCommandType;
 enum SNDCommandType_ {
-    SNDCommandType_StartTimer       = 0xc,
-    SNDCommandType_SetupChannelPcm  = 0xe,
+    SNDCommandType_StartTimer       = 0xC,
+    SNDCommandType_SetupChannelPcm  = 0xE,
     SNDCommandType_SetupAlarm       = 0x12,
     SNDCommandType_SetChannelVolume = 0x14,
     SNDCommandType_SetChannelPan    = 0x15,
-    SNDCommandType_LockChannel      = 0x1a,
-    SNDCommandType_Unk_1d           = 0x1d,
+    SNDCommandType_LockChannel      = 0x1A,
+    SNDCommandType_Unk_1d           = 0x1D,
 };
 
 typedef struct SNDCommand {
@@ -62,6 +62,8 @@ void SND_StartTimer(u32 channel, u32, u32 num, u32);
 
 u32 SND_GetCurrentCommandTag(void);
 void SND_WaitForCommandProc(u32 tag);
+
+void SND_func_0013(int, int, int, int);
 
 #ifdef __cplusplus
 } // extern "C"

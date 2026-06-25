@@ -395,6 +395,10 @@ public:
         return this->mLoadedOverlays[OverlaySlot_13] == OverlayIndex_MapA6;
     }
 
+    bool IsPirateHideout() {
+        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_FldAjito;
+    }
+
     void Load(OverlaySlot slot, OverlayIndex index);
     void LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index);
     void Unload(OverlaySlot slot);
@@ -404,6 +408,7 @@ public:
     void LoadEquipItem(ItemFlag equipId);
 
     void func_020148d0(OverlayIndex index);
+    void func_02014918(OverlayIndex index);
     void func_02014994(unk32 param1);
 };
 

@@ -4,6 +4,7 @@
 #include "types.h"
 #include "versions.h"
 
+#include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
@@ -93,14 +94,14 @@ public:
     /* 00 */ VecFx32 mUnk_00;
     /* 0C */
 
-    ARM UnkStruct_ov110_021861ec(fx32 x, fx32 y, fx32 z) {
+    UnkStruct_ov110_021861ec(fx32 x, fx32 y, fx32 z) {
         this->mUnk_00.x = x;
         this->mUnk_00.y = y;
         this->mUnk_00.z = z;
     }
 };
 
-class UnkStruct_PlayerGet_74_base : public SysObject {
+class UnkStruct_PlayerGet_74_base {
 public:
     /* 00 (vtable) */
 
@@ -168,13 +169,13 @@ public:
     /* 070 */ u8 mUnk_72;    // probably bools
     /* 070 */ u8 mUnk_73;    // probably bools
     /* 074 */ UnkStruct_PlayerGet_74 mUnk_74;
-    /* 08C */ UnkSystem4 mUnk_8C;
+    /* 08C */ ModelRender mUnk_8C;
     /* 0EC */ UnkStruct_PlayerGet_ec mUnk_EC[4];
     /* 0FC */ void *mUnk_FC;
     /* 100 */
 
     /* 04 */ virtual ~PlayerGet() override;
-    /* 0C */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) override;
+    /* 0C */ virtual void vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) override;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3) override;
 

@@ -28,7 +28,7 @@ inline void G3_TexImageParam(GXTexFmt fmt, u32 gen, GXTexSizeS sizeS, GXTexSizeT
     // S: sizeS
     // A: addr
     REG_GFX_FIFO_TEXTURE_PARAM =
-        (fmt << 0x1a) | (addr << 0x3) | (gen << 0x1e) | (sizeS << 0x14) | (sizeT << 0x17) | (color0 << 0x1d);
+        (fmt << 0x1A) | (addr << 0x3) | (gen << 0x1E) | (sizeS << 0x14) | (sizeT << 0x17) | (color0 << 0x1D);
 }
 inline void G3_TexPlttBase(u32 addr, GXTexFmt fmt) {
     REG_GFX_FIFO_TEXTURE_PALETTE = addr >> (4 - (fmt == 2));
@@ -54,7 +54,7 @@ inline void G3_Translate(fx32 x, fx32 y, fx32 z) {
 inline void G3_ViewPort(u32 left, u32 top, u32 right, u32 bottom) {
     // Unclear how to combine the arguments
     // left = 0, top = 0, right = 255, bottom = 191 => 0x8000
-    REG_GFX_FIFO_VIEWPORT = 0xbfff0000;
+    REG_GFX_FIFO_VIEWPORT = 0xBFFF0000;
 }
 void _G3_Ortho(fx32 top, fx32 bottom, fx32 left, fx32 right, fx32 near, fx32 far, fx32 param7, BOOL param8, void *param9);
 inline void G3_Ortho(fx32 top, fx32 bottom, fx32 left, fx32 right, fx32 near, fx32 far, void *param7) {

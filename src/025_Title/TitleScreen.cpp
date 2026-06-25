@@ -343,7 +343,7 @@ void TitleScreen::vfunc_0C(unk32 param1) {
     if (param1 == 1 && this->mShowUI) {
         UnkStruct_027e0954 *ptr = data_027e0954;
         TitleScreen_Sub2 *pList = GetLinkListRef(this->mUnk_204);
-        ptr->mUnk_14.Prepend(pList);
+        ptr->mUnk_00[1].mUnk_04.Prepend(pList);
     }
 }
 

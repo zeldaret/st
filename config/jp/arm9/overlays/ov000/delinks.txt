@@ -74,6 +74,7 @@ src/000_Second/MapObject/MapObjectProfile_Derived2_20.cpp:
     .data       start:0x020b4d60 end:0x020b4d88
 
 src/000_Second/MapObject/MapObject.cpp:
+    complete
     .text       start:0x0209e7a4 end:0x0209eec4
     .data       start:0x020b4d88 end:0x020b4dc8
 
@@ -108,9 +109,9 @@ src/000_Second/Item/ItemManager.cpp:
     .text       start:0x020a9e3c end:0x020aa2e0
     .rodata     start:0x020b1450 end:0x020b1458
 
-src/000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp:
-    .text       start:0x020aa2e0 end:0x020ab310
+src/000_Second/Actor/Actor_Derived1.cpp:
+    .text       start:0x020aa2e0 end:0x020ab2bc
     .data       start:0x020b6588 end:0x020b664c
 
 src/000_Second/Item/TreasureManager.cpp:
-    .text       start:0x020ab310 end:0x020aba00
+    .text       start:0x020ab2bc end:0x020aba00

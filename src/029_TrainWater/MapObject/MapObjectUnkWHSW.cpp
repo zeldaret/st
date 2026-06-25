@@ -3,23 +3,23 @@
 #include "MapObject/MapObjectUnkWHSW.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(MapObjectProfileUnkWHSW);
+DECL_PROFILE(MapObjectProfileUnkWHSW);
 
-ARM MapObject *MapObjectProfileUnkWHSW::Create() {
+MapObject *MapObjectProfileUnkWHSW::Create() {
     return new(HeapIndex_2) MapObjectUnkWHSW();
 }
 
-ARM MapObjectProfileUnkWHSW::MapObjectProfileUnkWHSW() :
+MapObjectProfileUnkWHSW::MapObjectProfileUnkWHSW() :
     MapObjectProfile(MapObjectId_WHSW) {}
 
-ARM MapObjectUnkWHSW::MapObjectUnkWHSW() {}
+MapObjectUnkWHSW::MapObjectUnkWHSW() {}
 
-ARM void MapObjectUnkWHSW::func_ov029_02145500(void) {}
-ARM void MapObjectUnkWHSW::func_ov029_021455b4(void) {}
-ARM void MapObjectUnkWHSW::func_ov029_021458fc(void) {}
-ARM void MapObjectUnkWHSW::func_ov029_02145910(void) {}
-ARM void MapObjectUnkWHSW::func_ov029_02145a0c(void) {}
-ARM void MapObjectUnkWHSW::func_ov029_02145a7c(void) {}
+void MapObjectUnkWHSW::func_ov029_02145500(void) {}
+void MapObjectUnkWHSW::func_ov029_021455b4(void) {}
+void MapObjectUnkWHSW::func_ov029_021458fc(void) {}
+void MapObjectUnkWHSW::func_ov029_02145910(void) {}
+void MapObjectUnkWHSW::func_ov029_02145a0c(void) {}
+void MapObjectUnkWHSW::func_ov029_02145a7c(void) {}
 
-ARM MapObjectUnkWHSW::~MapObjectUnkWHSW() {}
-ARM MapObjectProfileUnkWHSW::~MapObjectProfileUnkWHSW() {}
+MapObjectUnkWHSW::~MapObjectUnkWHSW() {}
+MapObjectProfileUnkWHSW::~MapObjectProfileUnkWHSW() {}

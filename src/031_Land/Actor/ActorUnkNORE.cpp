@@ -5,18 +5,18 @@
 
 extern "C" void func_01ffedac(Vec2b *, VecFx32 *);
 
-ARM DECL_PROFILE(ActorProfileUnkNORE);
+DECL_PROFILE(ActorProfileUnkNORE);
 
-ARM Actor *ActorProfileUnkNORE::Create() {
+Actor *ActorProfileUnkNORE::Create() {
     return new(HeapIndex_2) ActorUnkNORE();
 }
 
-ARM ActorProfileUnkNORE::ActorProfileUnkNORE() :
+ActorProfileUnkNORE::ActorProfileUnkNORE() :
     ActorProfile(ActorId_NORE) {}
 
-ARM ActorUnkNORE::ActorUnkNORE() {}
+ActorUnkNORE::ActorUnkNORE() {}
 
-ARM bool ActorUnkNORE::vfunc_18(unk32 param1) {
+bool ActorUnkNORE::vfunc_18(unk32 param1) {
     Vec2b local_vec;
 
     UnkStruct_027e0cd8_0c *unk_obj = data_027e0cd8->mUnk_0C;
@@ -30,5 +30,5 @@ ARM bool ActorUnkNORE::vfunc_18(unk32 param1) {
     return true;
 }
 
-ARM ActorUnkNORE::~ActorUnkNORE() {}
-ARM ActorProfileUnkNORE::~ActorProfileUnkNORE() {}
+ActorUnkNORE::~ActorUnkNORE() {}
+ActorProfileUnkNORE::~ActorProfileUnkNORE() {}

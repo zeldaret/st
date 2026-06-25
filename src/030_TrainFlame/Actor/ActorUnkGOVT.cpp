@@ -3,30 +3,30 @@
 #include "Actor/ActorUnkGOVT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkGOVT);
+DECL_PROFILE(ActorProfileUnkGOVT);
 
-ARM Actor *ActorProfileUnkGOVT::Create() {
+Actor *ActorProfileUnkGOVT::Create() {
     return new(HeapIndex_2) ActorUnkGOVT();
 }
 
-ARM ActorProfileUnkGOVT::ActorProfileUnkGOVT() :
+ActorProfileUnkGOVT::ActorProfileUnkGOVT() :
     ActorProfile(ActorId_GOVT) {}
 
-ARM ActorUnkGOVT::ActorUnkGOVT() {}
+ActorUnkGOVT::ActorUnkGOVT() {}
 
-ARM void ActorUnkGOVT::func_ov030_0214cf58(void) {}
-ARM void ActorUnkGOVT::func_ov030_0214cf9c(void) {}
-ARM void ActorUnkGOVT::func_ov030_0214cfe0(void) {}
-ARM void ActorUnkGOVT::func_ov030_0214d018(void) {}
-ARM void ActorUnkGOVT::func_ov030_0214d050(void) {}
-ARM void ActorUnkGOVT::func_ov030_0214d054(void) {}
-ARM void ActorUnkGOVT::func_ov030_0214d078(void) {}
-ARM void ActorUnkGOVT::func_ov030_0214d278(void) {}
-ARM void ActorUnkGOVT::func_ov030_0214d594(void) {}
-ARM void ActorUnkGOVT::func_ov030_0214d5d4(void) {}
-ARM void ActorUnkGOVT::func_ov030_0214d5d8(void) {}
-ARM void ActorUnkGOVT::func_ov030_0214d604(void) {}
-ARM void ActorUnkGOVT::func_ov030_0214d624(void) {}
+void ActorUnkGOVT::func_ov030_0214cf58(void) {}
+void ActorUnkGOVT::func_ov030_0214cf9c(void) {}
+void ActorUnkGOVT::func_ov030_0214cfe0(void) {}
+void ActorUnkGOVT::func_ov030_0214d018(void) {}
+void ActorUnkGOVT::func_ov030_0214d050(void) {}
+void ActorUnkGOVT::func_ov030_0214d054(void) {}
+void ActorUnkGOVT::func_ov030_0214d078(void) {}
+void ActorUnkGOVT::func_ov030_0214d278(void) {}
+void ActorUnkGOVT::func_ov030_0214d594(void) {}
+void ActorUnkGOVT::func_ov030_0214d5d4(void) {}
+void ActorUnkGOVT::func_ov030_0214d5d8(void) {}
+void ActorUnkGOVT::func_ov030_0214d604(void) {}
+void ActorUnkGOVT::func_ov030_0214d624(void) {}
 
-ARM ActorUnkGOVT::~ActorUnkGOVT() {}
-ARM ActorProfileUnkGOVT::~ActorProfileUnkGOVT() {}
+ActorUnkGOVT::~ActorUnkGOVT() {}
+ActorProfileUnkGOVT::~ActorProfileUnkGOVT() {}

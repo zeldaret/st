@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkSMCT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkSMCT);
+DECL_PROFILE(ActorProfileUnkSMCT);
 
-ARM Actor *ActorProfileUnkSMCT::Create() {
+Actor *ActorProfileUnkSMCT::Create() {
     return new(HeapIndex_2) ActorUnkSMCT();
 }
 
-ARM ActorProfileUnkSMCT::ActorProfileUnkSMCT() :
+ActorProfileUnkSMCT::ActorProfileUnkSMCT() :
     ActorProfile(ActorId_SMCT) {}
 
-ARM ActorUnkSMCT::ActorUnkSMCT() {}
+ActorUnkSMCT::ActorUnkSMCT() {}
 
-ARM void ActorUnkSMCT::func_ov091_02169c9c(void) {}
-ARM void ActorUnkSMCT::func_ov091_02169cd8(void) {}
+void ActorUnkSMCT::func_ov091_02169c9c(void) {}
+void ActorUnkSMCT::func_ov091_02169cd8(void) {}
 
-ARM ActorUnkSMCT::~ActorUnkSMCT() {}
-ARM ActorProfileUnkSMCT::~ActorProfileUnkSMCT() {}
+ActorUnkSMCT::~ActorUnkSMCT() {}
+ActorProfileUnkSMCT::~ActorProfileUnkSMCT() {}

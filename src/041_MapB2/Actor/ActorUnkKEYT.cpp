@@ -3,26 +3,26 @@
 #include "Actor/ActorUnkKEYT.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkKEYT);
+DECL_PROFILE(ActorProfileUnkKEYT);
 
-ARM Actor *ActorProfileUnkKEYT::Create() {
+Actor *ActorProfileUnkKEYT::Create() {
     return new(HeapIndex_2) ActorUnkKEYT();
 }
 
-ARM ActorProfileUnkKEYT::ActorProfileUnkKEYT() :
+ActorProfileUnkKEYT::ActorProfileUnkKEYT() :
     ActorProfile(ActorId_KEYT) {}
 
-ARM ActorUnkKEYT::ActorUnkKEYT() {}
+ActorUnkKEYT::ActorUnkKEYT() {}
 
-ARM void ActorUnkKEYT::func_ov041_02123c7c(void) {}
-ARM void ActorUnkKEYT::func_ov041_02123cf8(void) {}
-ARM void ActorUnkKEYT::func_ov041_02123d40(void) {}
-ARM void ActorUnkKEYT::func_ov041_02123d88(void) {}
-ARM void ActorUnkKEYT::func_ov041_02123eb8(void) {}
-ARM void ActorUnkKEYT::func_ov041_02123ff8(void) {}
-ARM void ActorUnkKEYT::func_ov041_02124094(void) {}
-ARM void ActorUnkKEYT::func_ov041_021240c0(void) {}
-ARM void ActorUnkKEYT::func_ov041_02124164(void) {}
+void ActorUnkKEYT::func_ov041_02123c7c(void) {}
+void ActorUnkKEYT::func_ov041_02123cf8(void) {}
+void ActorUnkKEYT::func_ov041_02123d40(void) {}
+void ActorUnkKEYT::func_ov041_02123d88(void) {}
+bool ActorUnkKEYT::Grab(ActorGrabParams grabParams) {}
+void ActorUnkKEYT::func_ov041_02123ff8(void) {}
+void ActorUnkKEYT::func_ov041_02124094(void) {}
+void ActorUnkKEYT::func_ov041_021240c0(void) {}
+void ActorUnkKEYT::func_ov041_02124164(void) {}
 
-ARM ActorUnkKEYT::~ActorUnkKEYT() {}
-ARM ActorProfileUnkKEYT::~ActorProfileUnkKEYT() {}
+ActorUnkKEYT::~ActorUnkKEYT() {}
+ActorProfileUnkKEYT::~ActorProfileUnkKEYT() {}

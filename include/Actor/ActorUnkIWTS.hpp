@@ -7,14 +7,14 @@
 #include "global.h"
 #include "types.h"
 
-class ActorUnkIWTS_c4 : public Actor_c4 {
+class ActorUnkIWTS_C4 : public Actor_C4 {
 public:
-    ActorUnkIWTS_c4(Actor *param1);
+    ActorUnkIWTS_C4(Actor *param1);
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
 class ActorUnkIWTS : public Actor {
@@ -61,7 +61,7 @@ public:
     void func_ov084_02152cec(void);
     void func_ov084_02152d10(void);
     void func_ov084_02153018(void);
-    void func_ov084_02153064(void);
+    bool func_ov084_02153064(ActorRef *pRef, Mat4x3p **param2);
     void func_ov084_021530d4(void);
     void func_ov084_0215315c(void);
     void func_ov084_02153194(void);

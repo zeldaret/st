@@ -3,19 +3,19 @@
 #include "Actor/ActorUnkEFRI.hpp"
 #include "System/SysNew.hpp"
 
-ARM DECL_PROFILE(ActorProfileUnkEFRI);
+DECL_PROFILE(ActorProfileUnkEFRI);
 
-ARM Actor *ActorProfileUnkEFRI::Create() {
+Actor *ActorProfileUnkEFRI::Create() {
     return new(HeapIndex_2) ActorUnkEFRI();
 }
 
-ARM ActorProfileUnkEFRI::ActorProfileUnkEFRI() :
+ActorProfileUnkEFRI::ActorProfileUnkEFRI() :
     ActorProfile_Derived1(ActorId_EFRI) {}
 
-ARM ActorUnkEFRI::ActorUnkEFRI() {}
+ActorUnkEFRI::ActorUnkEFRI() {}
 
-ARM void ActorUnkEFRI::func_ov098_02181e3c(void) {}
-ARM void ActorUnkEFRI::func_ov098_02181ed8(void) {}
+void ActorUnkEFRI::func_ov098_02181e3c(void) {}
+void ActorUnkEFRI::func_ov098_02181ed8(void) {}
 
-ARM ActorUnkEFRI::~ActorUnkEFRI() {}
-ARM ActorProfileUnkEFRI::~ActorProfileUnkEFRI() {}
+ActorUnkEFRI::~ActorUnkEFRI() {}
+ActorProfileUnkEFRI::~ActorProfileUnkEFRI() {}
