@@ -1,15 +1,11 @@
 //! TODO: This file was generated automatically and might contain errors
 
 #include "Actor/ActorUnkRMSF.hpp"
-#include "System/SysNew.hpp"
+#include "nns/g3d/g3d.h"
 #include "profile.hpp"
-#include "types.h"
 
-extern "C" unk32 *func_0200f05c(unk32, char *);
-extern "C" void func_0x02057b8c(unk32 *);
-
-char data_ov063_021625b8[0x10] = "RMSF_wall";
-char data_ov063_021625c8[0x10] = "RMSF";
+const char data_ov063_021625b8[0x10] = "RMSF_wall";
+const char data_ov063_021625c8[0x10] = "RMSF";
 
 DECL_PROFILE(ActorProfileUnkRMSF);
 
@@ -22,22 +18,22 @@ ActorProfileUnkRMSF::ActorProfileUnkRMSF() :
 
 ActorUnkRMSF::ActorUnkRMSF() {}
 
-unk32 ActorUnkRMSF::func_ov063_0215c250(void) {
-    unk32 var1 = GET_PROFILE(ActorProfileUnkRMSF)->mUnk_8C;
-    unk32 *var2;
-    if (var1 != 0 && (var2 = func_0200f05c(var1 + 8, data_ov063_021625c8), var2 != 0)) {
-        return var1 + *var2;
+G3d_Model *ActorUnkRMSF::func_ov063_0215c250(void) {
+    BMDSectionModel *section = GET_PROFILE(ActorProfileUnkRMSF)->mUnk_3C.mUnk_50;
+    u32 *offset;
+    if (section != 0 && (offset = G3d_0200f05c(&section->modelList, data_ov063_021625c8), offset != 0)) {
+        return (G3d_Model *) ((u8 *) section + *offset);
     }
-    return 0;
+    return NULL;
 }
 
-unk32 ActorUnkRMSF::func_ov063_0215c290(void) {
-    unk32 var1 = GET_PROFILE(ActorProfileUnkRMSF)->mUnk_8C;
-    unk32 *var2;
-    if (var1 != 0 && (var2 = func_0200f05c(var1 + 8, data_ov063_021625b8), var2 != 0)) {
-        return var1 + *var2;
+G3d_Model *ActorUnkRMSF::func_ov063_0215c290(void) {
+    BMDSectionModel *section = GET_PROFILE(ActorProfileUnkRMSF)->mUnk_3C.mUnk_50;
+    u32 *offset;
+    if (section != 0 && (offset = G3d_0200f05c(&section->modelList, data_ov063_021625b8), offset != 0)) {
+        return (G3d_Model *) ((u8 *) section + *offset);
     }
-    return 0;
+    return NULL;
 }
 
 ActorUnkRMSF::~ActorUnkRMSF() {}

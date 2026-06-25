@@ -5,6 +5,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "global.h"
+#include "nns/g3d/g3d.h"
 #include "types.h"
 
 class ActorUnkRMSF_C4 : public Actor_C4 {
@@ -28,15 +29,13 @@ public:
 
     /* 4C */ virtual ~ActorUnkRMSF() override;
 
-    unk32 func_ov063_0215c250(void);
-    unk32 func_ov063_0215c290(void);
+    G3d_Model *func_ov063_0215c250(void);
+    G3d_Model *func_ov063_0215c290(void);
 };
 
 class ActorProfileUnkRMSF : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
-    /* 3A */ STRUCT_PAD(0x3A, 0x8C);
-    /* 8C */ unk32 mUnk_8C;
 
     ActorProfileUnkRMSF();
     ~ActorProfileUnkRMSF();
