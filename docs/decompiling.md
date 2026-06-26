@@ -33,6 +33,7 @@ The following sections explain how to decompile the different parts you see in `
 
 > [!NOTE]
 > If a source file is missing in `objdiff`, or `objdiff` fails to build a file, first rerun `ninja` to update `objdiff.json`.
+> You can see more details on a `objdiff` error by looking for a context window called "Jobs" at the top of the window (hoverring on the red text should show a full description of the run command and the error).
 > If the problem persists, feel free to ask for help.
 
 ## Decompiling a function
