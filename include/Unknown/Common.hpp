@@ -946,10 +946,25 @@ public:
     void func_ov000_020a0334();
 };
 
+class UnkStruct_PlayerGet_ec_20 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x04);
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */
+};
+
 class UnkStruct_PlayerGet_ec : public UnkSystem7 {
 public:
     /* 00 (base) */
-    /* 04 */
+    /* 04 */ STRUCT_PAD(0x04, 0x20);
+    /* 20 */ UnkStruct_PlayerGet_ec_20 *mUnk_20[0x1];
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ unk32 mUnk_28;
+    /* 2C */ unk32 mUnk_2C;
+    /* 30 */ unk32 mUnk_30;
+    /* 34 */
 
     UnkStruct_PlayerGet_ec(UnkSystem7_UnkStruct_00 *param1) :
         UnkSystem7(param1) {}

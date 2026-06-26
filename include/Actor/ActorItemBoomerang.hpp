@@ -38,7 +38,7 @@ public:
 
     /* 00 */ virtual ~ActorItemBoomerang_11C() override; // func_ov031_020e5474 && func_ov031_020e5488
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override; // func_ov031_020e54a4
-    /* 0C */ virtual void vfunc_10();                                                // func_ov031_020e54d4
+    ///* 0C */ virtual void vfunc_10();                                                // func_ov031_020e54d4
     ///* 10 */ virtual void func_ov000_0207c010();
 };
 
@@ -47,7 +47,7 @@ public:
     /* 00 (vtable) */
     /* 04 */
 
-    /* 00 */ virtual ~ActorItemBoomerang_A0() override;    // func_ov031_020e4760 && func_ov031_020e5710
+    ///* 00 */ virtual ~ActorItemBoomerang_A0() override;    // func_ov031_020e4760 && func_ov031_020e5710
     /* 10 */ virtual void vfunc_10(Actor *actor) override; // func_ov031_020e53c8
 };
 
@@ -60,7 +60,7 @@ public:
     ActorItemBoomerang_CC() :
         mUnk_2C(0x0) {}
 
-    /* 00 */ virtual ~ActorItemBoomerang_CC() override;                     // func_ov031_020e4774
+    ///* 00 */ virtual ~ActorItemBoomerang_CC() override;                     // func_ov031_020e4774
     /* 0C */ virtual bool vfunc_0C(Actor *actor, VecFx32 *param2) override; // func_ov031_020e5400
     /* 10 */ virtual void vfunc_10(Actor *actor) override;                  // func_ov031_020e53e4
 };
@@ -73,11 +73,11 @@ public:
     /* 09D */ STRUCT_PAD(0x9D, 0xA0);
     /* 0A0 */ ActorItemBoomerang_A0 mUnk_A0;
     /* 0CC */ ActorItemBoomerang_CC mUnk_CC;
-    /* 104 */ STRUCT_PAD(0x10C, 0x11C);
+    /* 10C */ VecFx32 mUnk_10C;
+    /* 118 */ unk32 mUnk_118;
     /* 11C */ ActorItemBoomerang_11C mUnk_11C;
     /* 128 */ unk32 mUnk_128;
-    /* 12C */ UnkSystem7 *mUnk_12C;
-    /* 130 */ STRUCT_PAD(0x130, 0x138);
+    /* 12C */ UnkStruct_PlayerGet_ec mUnk_12C[0x3];
     /* 138 */ u16 mUnk_138;
     /* 13A */ u16 mUnk_13A;
     /* 13C */ u16 mUnk_13C;
@@ -94,7 +94,7 @@ public:
     void func_ov031_020e45fc();
     void SetState(ActorState state);
     void func_ov031_020e49b0(unk32 param1);
-    void func_ov031_020e5034();
+    void func_ov031_020e5034(unk32 param1);
     void func_ov031_020e5220();
     void func_ov031_020e52a0();
 };
