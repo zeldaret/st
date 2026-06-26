@@ -14,18 +14,31 @@ enum ActorItemBoomerangState_ {
 
 class ActorItemBoomerang;
 
+class ActorItemBoomerang_Unknown {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ VecFx32 mUnk_04;
+    /* 10 */
+
+    ActorItemBoomerang_Unknown() {}
+
+    void func_ov031_020e45fc();
+    void func_ov031_020e5704();
+};
+
 class ActorItemBoomerang_11C : public ActorShotArrow_178_Base {
 public:
     /* 00 (vtable) */
     /* 04 */ STRUCT_PAD(0x04, 0x08);
     /* 08 */ ActorItemBoomerang *mUnk_08;
+    /* 0C */
 
     ActorItemBoomerang_11C(ActorItemBoomerang *param1); // func_ov031_020e544c
 
-    /* 00 */ virtual ~ActorItemBoomerang_11C(); // func_ov031_020e5474 && func_ov031_020e5488
-    /* 08 */ virtual void vfunc_08();           // func_ov031_020e54a4
-    /* 0C */ virtual void vfunc_10();           // func_ov031_020e54d4
-    /* 10 */ virtual void func_ov000_0207c010();
+    /* 00 */ virtual ~ActorItemBoomerang_11C() override; // func_ov031_020e5474 && func_ov031_020e5488
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override; // func_ov031_020e54a4
+    /* 0C */ virtual void vfunc_10();                                                // func_ov031_020e54d4
+    ///* 10 */ virtual void func_ov000_0207c010();
 };
 
 class ActorItemBoomerang_A0 : public ActorShotArrow_194_Base {
@@ -41,6 +54,10 @@ class ActorItemBoomerang_CC {
 public:
     /* 00 (vtable) */
     /* 2C */ unk32 mUnk_2C;
+    /* 30 */ ActorItemBoomerang_Unknown mUnk_30;
+
+    ActorItemBoomerang_CC() :
+        mUnk_2C(0x0) {}
 
     /* 00 */ virtual ~ActorItemBoomerang_CC() override;                     // func_ov031_020e4774
     /* 0C */ virtual bool vfunc_0C(Actor *actor, VecFx32 *param2) override; // func_ov031_020e5400
@@ -51,15 +68,19 @@ class ActorItemBoomerang : public Actor {
 public:
     /* 000 (base) */
     /* 094 */ UnkSystem6_Derived2 mUnk_94;
+    /* 09C */ bool mUnk_9C;
+    /* 09D */ STRUCT_PAD(0x9D, 0xA0);
     /* 0A0 */ ActorItemBoomerang_A0 mUnk_A0;
-    /* 0A8 */ STRUCT_PAD(0xA4, 0xCC);
     /* 0CC */ ActorItemBoomerang_CC mUnk_CC;
-    /* 0A8 */ STRUCT_PAD(0xD0, 0x11C);
+    /* 104 */ STRUCT_PAD(0x10C, 0x11C);
     /* 11C */ ActorItemBoomerang_11C mUnk_11C;
-    /* 124 */ STRUCT_PAD(0x124, 0x128);
     /* 128 */ unk32 mUnk_128;
-    /* 12C */ STRUCT_PAD(0x12C, 0x13C);
-    /* 13C */ unk32 mUnk_13C;
+    /* 12C */ UnkSystem7 *mUnk_12C;
+    /* 130 */ STRUCT_PAD(0x130, 0x138);
+    /* 138 */ u16 mUnk_138;
+    /* 13A */ u16 mUnk_13A;
+    /* 13C */ u16 mUnk_13C;
+    /* 13E */ STRUCT_PAD(0x13E, 0x140);
     /* 140 */ ActorShotArrow_1DC mUnk_140;
 
     ActorItemBoomerang();
@@ -75,7 +96,6 @@ public:
     void func_ov031_020e5034();
     void func_ov031_020e5220();
     void func_ov031_020e52a0();
-    unk32 *func_ov031_020e5704();
 };
 
 class ActorProfileItemBoomerang : public ActorProfile {

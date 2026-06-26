@@ -1,6 +1,7 @@
 #include "Actor/ActorItemBoomerang.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
+#include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d2c.hpp"
 
@@ -17,15 +18,17 @@ ActorProfileItemBoomerang::ActorProfileItemBoomerang() :
 
 ActorItemBoomerang::ActorItemBoomerang() :
     mUnk_94(data_027e0ce0->func_ov000_0208ed30(0x0, 0x1, ItemManager::func_ov000_020a8974(0x1)->mUnk_10)),
+    mUnk_9C(true),
     mUnk_11C(this),
+    mUnk_138(0x0),
+    mUnk_13A(0x0),
+    mUnk_13C((u16) 0x8D71),
     mUnk_140(0x1000, 0x0) {
     this->mState  = ActorItemBoomerangState_0;
     this->mUnk_52 = 0xFFFF;
     this->mUnk_50 = 0x0;
 }
 
-// non-matching
-void ActorItemBoomerang::func_ov031_020e45fc() {}
 // non-matching
 ActorItemBoomerang_A0::~ActorItemBoomerang_A0() {}
 // non-matching
@@ -91,9 +94,17 @@ void ActorItemBoomerang::func_ov031_020e5220() {
 }
 
 // non-matching
-void ActorItemBoomerang::func_ov031_020e52a0() {}
+void ActorItemBoomerang::func_ov031_020e52a0() {
+    this->mUnk_12C->func_ov000_020a0334();
+}
 // non-matching
-void ActorItemBoomerang::vfunc_2C(unk32 param1) {}
+void ActorItemBoomerang::vfunc_2C(unk32 param1) {
+    if (!Actor::func_01fff5d0(param1, 0x0)) {
+        return;
+    }
+    this->mUnk_94.func_01ffc6d4((u16) this->mAngle, &this->mPos);
+    data_027e09b4->func_ov017_020c08c4(&this->mPos, 0x400, 0x400, 0x1F, 0x0, 0x1);
+}
 
 void ActorItemBoomerang_A0::vfunc_10(Actor *actor) {
     data_027e0d2c->func_ov031_020d95c8(actor->mRef);
@@ -102,8 +113,6 @@ void ActorItemBoomerang_A0::vfunc_10(Actor *actor) {
 void ActorItemBoomerang_CC::vfunc_10(Actor *actor) {
     data_027e0d2c->func_ov031_020d95c8(actor->mRef);
 }
-
-extern "C" bool func_ov000_0207b754();
 
 // non-matching
 bool ActorItemBoomerang_CC::vfunc_0C(Actor *actor, VecFx32 *param2) {
@@ -117,17 +126,26 @@ bool ActorItemBoomerang_CC::vfunc_0C(Actor *actor, VecFx32 *param2) {
     return false;
 }
 
+void ActorItemBoomerang_Unknown::func_ov031_020e45fc() {
+    this->mUnk_00   = 0x0;
+    this->mUnk_04.x = FLOAT_TO_FX32(-0.1003f);
+    this->mUnk_04.y = FLOAT_TO_FX32(0.0f);
+    this->mUnk_04.z = FLOAT_TO_FX32(0.3f);
+}
+
 // non-matching
 ActorItemBoomerang_11C::ActorItemBoomerang_11C(ActorItemBoomerang *param1) :
     mUnk_08(param1) {}
 // non-matching
 ActorItemBoomerang_11C::~ActorItemBoomerang_11C() {}
 // non-matching
-void ActorItemBoomerang_11C::vfunc_08() {}
+bool ActorItemBoomerang_11C::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {}
 // non-matching
 void ActorItemBoomerang_11C::vfunc_10() {}
-// non-matching
-unk32 *ActorItemBoomerang::func_ov031_020e5704() {}
+
+void ActorItemBoomerang_Unknown::func_ov031_020e5704() {
+    this->mUnk_00 = 0;
+}
 
 ActorItemBoomerang::~ActorItemBoomerang() {}
 ActorProfileItemBoomerang::~ActorProfileItemBoomerang() {}
