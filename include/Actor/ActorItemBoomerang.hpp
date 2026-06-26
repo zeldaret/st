@@ -15,13 +15,19 @@ enum ActorItemBoomerangState_ {
 
 class ActorItemBoomerang;
 
+///* 04 */ STRUCT_PAD(0x04, 0x20);
+///* 20 */ UnkStruct_PlayerGet_ec_20 *mUnk_20[0x1];
+///* 24 */ unk32 mUnk_24;
+///* 28 */ unk32 mUnk_28;
+///* 2C */ unk32 mUnk_2C;
+///* 30 */ unk32 mUnk_30;
+///* 34 */
+
 class ActorItemBoomerang_Unknown {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ VecFx32 mUnk_04;
     /* 10 */
-
-    ActorItemBoomerang_Unknown() {}
 
     void func_ov031_020e45fc();
     void func_ov031_020e5704();

@@ -125,9 +125,9 @@ void ActorItemBoomerang::func_ov031_020e52a0() {
         do {
             UnkStruct_PlayerGet_ec *var = *ptr;
             if (var) {
-                var->mUnk_28 = this->mPos.x + var->mUnk_20[0]->mUnk_04;
+                /* var->mUnk_28 = this->mPos.x + var->mUnk_20[0]->mUnk_04;
                 var->mUnk_2C = this->mPos.y + var->mUnk_20[0]->mUnk_08;
-                var->mUnk_30 = this->mPos.z + var->mUnk_20[0]->mUnk_0C;
+                var->mUnk_30 = this->mPos.z + var->mUnk_20[0]->mUnk_0C; */
             }
             ptr += 4;
         } while (ptr != nextVarAddress);
