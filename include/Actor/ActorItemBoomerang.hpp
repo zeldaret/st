@@ -38,6 +38,7 @@ public:
 
     /* 00 */ virtual ~ActorItemBoomerang_11C() override; // func_ov031_020e5474 && func_ov031_020e5488
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override; // func_ov031_020e54a4
+    /* 0C */ virtual bool vfunc_0C() override;
     ///* 0C */ virtual void vfunc_10();                                                // func_ov031_020e54d4
     ///* 10 */ virtual void func_ov000_0207c010();
 };
