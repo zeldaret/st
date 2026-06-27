@@ -24,7 +24,8 @@ public:
     /* 00 (base) */
     /* 94 */ ModelRender mUnk_94;
     /* F4 */ ModelRender mUnk_F4;
-    /* 154 */
+    /* 154 */ unk32 mUnk_154;
+    /* 158 */
 
     ActorUnkRMSF_Base();
 };
@@ -32,7 +33,7 @@ public:
 class ActorUnkRMSF : public ActorUnkRMSF_Base {
 public:
     /* 00 (base) */
-    /* 154 */
+    /* 158 */
 
     ActorUnkRMSF();
 
