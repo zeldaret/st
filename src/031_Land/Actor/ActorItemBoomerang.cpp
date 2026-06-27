@@ -129,8 +129,7 @@ void ActorItemBoomerang::func_ov031_020e52a0() {
                 var->mUnk_2C = this->mPos.y + var->mUnk_20[0]->mUnk_08;
                 var->mUnk_30 = this->mPos.z + var->mUnk_20[0]->mUnk_0C; */
             }
-            ptr += 4;
-        } while (ptr != nextVarAddress);
+        } while (++ptr != nextVarAddress);
         return;
     }
     UnkStruct_PlayerGet_ec **ptr = (UnkStruct_PlayerGet_ec **) &this->mUnk_12C;
@@ -140,8 +139,7 @@ void ActorItemBoomerang::func_ov031_020e52a0() {
     }
     do {
         (*ptr)->func_ov000_020a0334();
-        ptr += 4;
-    } while (ptr != nextVarAddress);
+    } while (++ptr != nextVarAddress);
 }
 // non-matching
 void ActorItemBoomerang::vfunc_2C(unk32 param1) {
@@ -193,6 +191,10 @@ bool ActorItemBoomerang_11C::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
     }
 
     return func_ov000_020982d8();
+}
+
+bool ActorItemBoomerang_11C::vfunc_0C(UnkStruct_ov031_020e54d4 *param1) {
+    return true;
 }
 
 void ActorItemBoomerang_Unknown::func_ov031_020e5704() {

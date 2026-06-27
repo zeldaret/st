@@ -15,14 +15,6 @@ enum ActorItemBoomerangState_ {
 
 class ActorItemBoomerang;
 
-///* 04 */ STRUCT_PAD(0x04, 0x20);
-///* 20 */ UnkStruct_PlayerGet_ec_20 *mUnk_20[0x1];
-///* 24 */ unk32 mUnk_24;
-///* 28 */ unk32 mUnk_28;
-///* 2C */ unk32 mUnk_2C;
-///* 30 */ unk32 mUnk_30;
-///* 34 */
-
 class ActorItemBoomerang_Unknown {
 public:
     /* 00 */ unk32 mUnk_00;
@@ -40,13 +32,11 @@ public:
     /* 08 */ ActorItemBoomerang *mUnk_08;
     /* 0C */
 
-    ActorItemBoomerang_11C(ActorItemBoomerang *param1); // func_ov031_020e544c
+    ActorItemBoomerang_11C(ActorItemBoomerang *param1);
 
-    /* 00 */ virtual ~ActorItemBoomerang_11C() override; // func_ov031_020e5474 && func_ov031_020e5488
-    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override; // func_ov031_020e54a4
-    /* 0C */ virtual bool vfunc_0C() override;
-    ///* 0C */ virtual void vfunc_10();                                                // func_ov031_020e54d4
-    ///* 10 */ virtual void func_ov000_0207c010();
+    /* 00 */ virtual ~ActorItemBoomerang_11C() override;
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
+    /* 0C */ virtual bool vfunc_0C(UnkStruct_ov031_020e54d4 *param1) override;
 };
 
 class ActorItemBoomerang_A0 : public UnkStruct_ov031_Items_01 {
@@ -54,8 +44,7 @@ public:
     /* 00 (vtable) */
     /* 04 */
 
-    ///* 00 */ virtual ~ActorItemBoomerang_A0() override;    // func_ov031_020e4760 && func_ov031_020e5710
-    /* 10 */ virtual void vfunc_10(Actor *actor) override; // func_ov031_020e53c8
+    /* 10 */ virtual void vfunc_10(Actor *actor) override;
 };
 
 class ActorItemBoomerang_CC : public UnkStruct_ov031_Items_01 {
@@ -63,13 +52,13 @@ public:
     /* 00 (vtable) */
     /* 2C */ unk32 mUnk_2C;
     /* 30 */ ActorItemBoomerang_Unknown mUnk_30;
+    /* 40 */
 
     ActorItemBoomerang_CC() :
         mUnk_2C(0x0) {}
 
-    ///* 00 */ virtual ~ActorItemBoomerang_CC() override;                     // func_ov031_020e4774
-    /* 0C */ virtual bool vfunc_0C(Actor *actor, VecFx32 *param2) override; // func_ov031_020e5400
-    /* 10 */ virtual void vfunc_10(Actor *actor) override;                  // func_ov031_020e53e4
+    /* 0C */ virtual bool vfunc_0C(Actor *actor, VecFx32 *param2) override;
+    /* 10 */ virtual void vfunc_10(Actor *actor) override;
 };
 
 class ActorItemBoomerang : public Actor {
@@ -83,22 +72,22 @@ public:
     /* 10C */ VecFx32 mUnk_10C;
     /* 118 */ unk32 mUnk_118;
     /* 11C */ ActorItemBoomerang_11C mUnk_11C;
-    /* 128 */ unk32 mUnk_128;
+    /* 128 */ u32 mUnk_128;
     /* 12C */ UnkStruct_PlayerGet_ec mUnk_12C[0x3];
     /* 138 */ u16 mUnk_138;
     /* 13A */ u16 mUnk_13A;
     /* 13C */ u16 mUnk_13C;
     /* 13E */ STRUCT_PAD(0x13E, 0x140);
     /* 140 */ UnkStruct_ov031_Items_02 mUnk_140;
+    /* 14B */
 
     ActorItemBoomerang();
 
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
-    /* 4C */ virtual ~ActorItemBoomerang() override; // func_ov031_020e4788
+    /* 4C */ virtual ~ActorItemBoomerang() override;
 
-    void func_ov031_020e45fc();
     void SetState(ActorState state);
     void func_ov031_020e49b0(unk32 param1);
     void func_ov031_020e5034(unk32 param1);

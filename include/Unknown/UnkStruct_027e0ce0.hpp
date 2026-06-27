@@ -79,6 +79,11 @@ public:
     /* 20 */
 };
 
+class UnkStruct_ov031_020e54d4 {
+    /* 00 */ STRUCT_PAD(0x00, 0x08);
+    /* 08 */ unk32 mUnk_08;
+};
+
 class UnkStruct_027e0ce0_38_Base {
 public:
     /* 00 (vtable) */
@@ -87,7 +92,7 @@ public:
     // data_ov000_020b2838
     /* 00 */ virtual ~UnkStruct_027e0ce0_38_Base();
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1);
-    /* 0C */ virtual bool vfunc_0C();
+    /* 0C */ virtual bool vfunc_0C(UnkStruct_ov031_020e54d4 *param1);
     /* 10 */ virtual void vfunc_10();
     /* 14 */
 };
