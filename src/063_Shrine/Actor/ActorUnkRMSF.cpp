@@ -35,15 +35,5 @@ G3d_Model *ActorUnkRMSF::func_ov063_0215c290(void) {
     return GetResource(data_ov063_021625b8);
 }
 
-#if IS_JP
-G3d_Model *ActorUnkRMSF::func_ov063_0215dfe4(void) {
-    return GetResource(data_ov063_021625c8);
-}
-
-G3d_Model *ActorUnkRMSF::func_ov063_0215e024(void) {
-    return GetResource(data_ov063_021625b8);
-}
-#endif
-
 ActorUnkRMSF::~ActorUnkRMSF() {}
 ActorProfileUnkRMSF::~ActorProfileUnkRMSF() {}
