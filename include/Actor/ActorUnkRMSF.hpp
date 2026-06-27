@@ -21,16 +21,16 @@ public:
 class ActorUnkRMSF : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */ unk32 mUnk_94;
-    /* 98 */ STRUCT_PAD(0x98, 0xF4);
-    /* F4 */ unk32 mUnk_F4;
+    /* 94 */ unk32 mUnk_94;          // ModelRender
+    /* 98 */ STRUCT_PAD(0x98, 0xF4); // Discard when assigning type ModelRenderer
+    /* F4 */ unk32 mUnk_F4;          // ModelRender
 
     ActorUnkRMSF();
 
     /* 4C */ virtual ~ActorUnkRMSF() override;
 
-    G3d_Model *func_ov063_0215c250(void);
-    G3d_Model *func_ov063_0215c290(void);
+    virtual G3d_Model *func_ov063_0215c250(void);
+    virtual G3d_Model *func_ov063_0215c290(void);
 };
 
 class ActorProfileUnkRMSF : public ActorProfile_Derived1 {
