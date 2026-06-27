@@ -23,6 +23,11 @@ Actor *ActorProfileUnkRMSF::Create() {
 ActorProfileUnkRMSF::ActorProfileUnkRMSF() :
     ActorProfile_Derived1(ActorId_RMSF) {}
 
+ActorUnkRMSF_Base::ActorUnkRMSF_Base() :
+    mUnk_94(0), // Placeholder
+    mUnk_F4(0)  // Placeholder
+{}
+
 ActorUnkRMSF::ActorUnkRMSF() {}
 
 G3d_Model *ActorUnkRMSF::func_ov063_0215c250(void) {

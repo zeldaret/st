@@ -4,6 +4,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Render/ModelRender.hpp"
 #include "global.h"
 #include "nns/g3d/g3d.h"
 #include "types.h"
@@ -18,12 +19,20 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkRMSF : public Actor {
+class ActorUnkRMSF_Base : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */ unk32 mUnk_94;          // ModelRender
-    /* 98 */ STRUCT_PAD(0x98, 0xF4); // Discard when assigning type ModelRenderer
-    /* F4 */ unk32 mUnk_F4;          // ModelRender
+    /* 94 */ ModelRender mUnk_94;
+    /* F4 */ ModelRender mUnk_F4;
+    /* 154 */
+
+    ActorUnkRMSF_Base();
+};
+
+class ActorUnkRMSF : public ActorUnkRMSF_Base {
+public:
+    /* 00 (base) */
+    /* 154 */
 
     ActorUnkRMSF();
 
