@@ -41,8 +41,17 @@ public:
     virtual G3d_Model *func_ov063_0215c250(void);
     virtual G3d_Model *func_ov063_0215c290(void);
 
+#if IS_JP
     virtual G3d_Model *func_ov063_0215dfe4(void);
     virtual G3d_Model *func_ov063_0215e024(void);
+#else
+    virtual G3d_Model *func_ov063_0215dfe4(void) {
+        return NULL;
+    };
+    virtual G3d_Model *func_ov063_0215e024(void) {
+        return NULL;
+    };
+#endif
 };
 
 class ActorProfileUnkRMSF : public ActorProfile_Derived1 {
