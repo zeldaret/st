@@ -27,11 +27,11 @@ ActorUnkRMSF_Base::ActorUnkRMSF_Base() :
 
 ActorUnkRMSF::ActorUnkRMSF() {}
 
-G3d_Model *ActorUnkRMSF::func_ov063_0215c250(void) {
+G3d_Model *ActorUnkRMSF::vfunc_50(void) {
     return GetResource(data_ov063_021625c8);
 }
 
-G3d_Model *ActorUnkRMSF::func_ov063_0215c290(void) {
+G3d_Model *ActorUnkRMSF::vfunc_54(void) {
     return GetResource(data_ov063_021625b8);
 }
 

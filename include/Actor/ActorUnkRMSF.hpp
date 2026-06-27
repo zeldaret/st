@@ -37,9 +37,8 @@ public:
     ActorUnkRMSF();
 
     /* 4C */ virtual ~ActorUnkRMSF() override;
-
-    virtual G3d_Model *func_ov063_0215c250(void);
-    virtual G3d_Model *func_ov063_0215c290(void);
+    /* 50 */ virtual G3d_Model *vfunc_50(void);
+    /* 54 */ virtual G3d_Model *vfunc_54(void);
 };
 
 class ActorProfileUnkRMSF : public ActorProfile_Derived1 {
