@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkRMSF.hpp"
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
