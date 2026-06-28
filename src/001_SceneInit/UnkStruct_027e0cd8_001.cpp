@@ -331,7 +331,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7e50() {
     DELETE(this->mUnk_0C);
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b7e68(const UnkStruct_SceneChange1 *param1, unk32 param2) {
+void UnkStruct_027e0cd8::func_ov001_020b7e68(const UnkStruct_SceneChange1 *param1, bool param2) {
     if (this->mUnk_10 != NULL) {
         this->mUnk_10->func_ov024_020d2520((UnkStruct_SceneChange1 *) param1);
     }
@@ -356,13 +356,13 @@ void UnkStruct_027e0cd8::func_ov001_020b7e68(const UnkStruct_SceneChange1 *param
 
     if (data_027e09a4->mUnk_60 == 1) {
         for (int i = 0; i < 4; i++) {
-            UnkStruct_027e0ce0 *ptr = data_027e0ce0;
-            VecFx32 *arg            = this->mUnk_0C->func_ov001_020b8a5c(i, 0x00);
+            UnkStruct_027e0ce0 *ptr             = data_027e0ce0;
+            const UnkStruct_ov001_020c40f4 *arg = this->mUnk_0C->func_ov001_020b8a5c(i, 0x00);
             ptr->func_ov001_020bc6d8(i, arg);
         }
     } else if (unk_10 == 2 || unk_10 == 4) {
-        UnkStruct_027e0ce0 *ptr = data_027e0ce0;
-        VecFx32 *arg            = this->mUnk_0C->func_ov001_020b8a5c(param1->mSpawnIndex, 0x00);
+        UnkStruct_027e0ce0 *ptr             = data_027e0ce0;
+        const UnkStruct_ov001_020c40f4 *arg = this->mUnk_0C->func_ov001_020b8a5c(param1->mSpawnIndex, 0x00);
         ptr->func_ov001_020bc6e8(arg);
     } else {
         UnkStruct_027e0cd8_0C_Base *temp_pUnkC = this->mUnk_0C;
@@ -370,7 +370,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7e68(const UnkStruct_SceneChange1 *param
         u8 temp_spawn                          = param1->mSpawnIndex;
         UnkStruct_027e0ce0 *ptr                = data_027e0ce0;
 
-        VecFx32 *spC = temp_pUnkC->func_ov001_020b8a5c(param1->mSpawnIndex, 0);
+        const UnkStruct_ov001_020c40f4 *spC = temp_pUnkC->func_ov001_020b8a5c(param1->mSpawnIndex, 0);
 
         ptr->func_ov001_020bc6fc(spC, temp_pUnkC->func_ov001_020b8a5c(temp_spawn, 1), temp_pUnkC->mUnk_11C, temp_unk118);
     }

@@ -275,6 +275,7 @@ namespace std {
         cap() = n;
     }
 
+    // https://decomp.me/scratch/Yw4fn
     template <typename T, typename Allocator> void __vec_deleter<T, Allocator>::append_realloc(size_t n, const_reference x) {
         __vec_deleter_helper<T, Allocator> tmp(alloc());
 

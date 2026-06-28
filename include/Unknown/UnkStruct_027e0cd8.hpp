@@ -46,10 +46,7 @@ public:
 
 class UnkStruct_ov001_020c40f4 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ fx32 mUnk_04;
-    /* 08 */ unk16 mUnk_08;
-    /* 0A */ unk16 mUnk_0A;
+    /* 00 */ VecFx32 mUnk_00;
     /* 0C */ unk16 mUnk_0C;
     /* 0E */ u8 mUnk_0E;
     /* 0F */ u8 mUnk_0F;
@@ -213,7 +210,7 @@ public:
     /* 1C */ virtual void vfunc_1C(const UnkStruct_SceneChange1 *param1, bool param2, bool param3);
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
-    /* 28 */ virtual fx32 vfunc_28(const UnkStruct_ov001_020c40f4 *param1, unk32 param2, unk32 param3);
+    /* 28 */ virtual fx32 vfunc_28(VecFx32 *param1, unk32 param2, unk32 param3);
     /* 2C */ virtual void vfunc_2C();
     /* 30 */ virtual void LoadSceneModel(const UnkStruct_SceneChange1 *param1);
     /* 34 */ virtual void vfunc_34(unk32 param1);
@@ -278,14 +275,14 @@ public:
 class UnkStruct_027e0cd8_0C_Derived2 : public UnkStruct_027e0cd8_0C_Base {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x120, 0x4F8);
+    /* 04 */ STRUCT_PAD(0x160, 0x4F8);
     UnkStruct_027e0cd8_0C_Derived2(UnkStruct_027e0cd8 *param1);
 };
 
 class UnkStruct_027e0cd8_0C_Derived3 : public UnkStruct_027e0cd8_0C_Base {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x120, 0x160);
+
     UnkStruct_027e0cd8_0C_Derived3(UnkStruct_027e0cd8 *param1);
 };
 
@@ -304,7 +301,7 @@ public:
 class UnkStruct_027e0cd8_04 {
 public:
     /* 00 */ unk8 mUnk_00;
-    /* 00 */ u8 mUnk_01;
+    /* 00 */ bool mUnk_01;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ UnkStruct_027e0cd8_04_0C *mUnk_0C;
@@ -375,7 +372,7 @@ public:
     void func_ov001_020b7c08(const UnkStruct_SceneChange1 *param1, const UnkStruct_WarpUnk1_A0 *param2);
     void func_ov001_020b7d64(const UnkStruct_SceneChange1 *param1);
     void func_ov001_020b7e50();
-    void func_ov001_020b7e68(const UnkStruct_SceneChange1 *param1, unk32 param2);
+    void func_ov001_020b7e68(const UnkStruct_SceneChange1 *param1, bool param2);
     void func_ov001_020b803c();
     bool func_ov001_020b80fc(SceneIndex sceneIndex);
     void func_ov001_020b8120(SceneIndex sceneIndex);

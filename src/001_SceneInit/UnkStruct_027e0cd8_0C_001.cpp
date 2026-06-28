@@ -281,7 +281,7 @@ const UnkStruct_ov001_020c40f4 *UnkStruct_027e0cd8_0C_Base::func_ov001_020b8a5c(
         }
 
         if (result->mUnk_0F == 0) {
-            result->mUnk_04 = this->vfunc_28(result, 1, 0);
+            result->mUnk_00.y = this->vfunc_28(&result->mUnk_00, 1, 0);
         }
 
         return result;
@@ -291,7 +291,7 @@ const UnkStruct_ov001_020c40f4 *UnkStruct_027e0cd8_0C_Base::func_ov001_020b8a5c(
         }
 
         if (result->mUnk_0F == 0) {
-            result->mUnk_04 = this->vfunc_28(result, 1, 0);
+            result->mUnk_00.y = this->vfunc_28(&result->mUnk_00, 1, 0);
         }
 
         return result;

@@ -60,7 +60,7 @@ _ZN18UnkStruct_027e0cd819func_ov001_020b7b38EPK15CourseListEntryPK29UnkStruct_fu
 _ZN18UnkStruct_027e0cd819func_ov001_020b7c08EPK22UnkStruct_SceneChange1PK21UnkStruct_WarpUnk1_A0 kind:function(thumb,size=0x15c) addr:0x020b7c08
 _ZN18UnkStruct_027e0cd819func_ov001_020b7d64EPK22UnkStruct_SceneChange1 kind:function(thumb,size=0xec) addr:0x020b7d64
 _ZN18UnkStruct_027e0cd819func_ov001_020b7e50Ev kind:function(thumb,size=0x16) addr:0x020b7e50
-_ZN18UnkStruct_027e0cd819func_ov001_020b7e68EPK22UnkStruct_SceneChange1i kind:function(thumb,size=0x1d4) addr:0x020b7e68
+_ZN18UnkStruct_027e0cd819func_ov001_020b7e68EPK22UnkStruct_SceneChange1b kind:function(thumb,size=0x1d4) addr:0x020b7e68
 _ZN18UnkStruct_027e0cd819func_ov001_020b803cEv kind:function(thumb,size=0xc0) addr:0x020b803c
 _ZN18UnkStruct_027e0cd819func_ov001_020b80fcEj kind:function(thumb,size=0x24) addr:0x020b80fc
 _ZN18UnkStruct_027e0cd819func_ov001_020b8120Ej kind:function(thumb,size=0x6c) addr:0x020b8120
@@ -169,7 +169,7 @@ _ZN16MapObjectManager19func_ov001_020badb4Ev kind:function(thumb,size=0x2c) addr
 _ZN16MapObjectManager19func_ov001_020bade0Ev kind:function(thumb,size=0x60) addr:0x020bade0
 _ZN16MapObjectManager19func_ov001_020bae40EP15ZeldaObjectList kind:function(thumb,size=0x2c) addr:0x020bae40
 _ZN16MapObjectManager19func_ov001_020bae6cEv kind:function(thumb,size=0x34) addr:0x020bae6c
-func_ov001_020baea0 kind:function(thumb,size=0x88) addr:0x020baea0
+_ZN16MapObjectManager19func_ov001_020baea0EP5Vec2s kind:function(thumb,size=0x88) addr:0x020baea0
 _ZN16MapObjectManager19func_ov001_020baf28Ev kind:function(thumb,size=0x22) addr:0x020baf28
 func_ov001_020baf4c kind:function(thumb,size=0xc) addr:0x020baf4c
 func_ov001_020baf58 kind:function(thumb,size=0xc) addr:0x020baf58
@@ -227,9 +227,9 @@ _ZN18UnkStruct_027e0ce019func_ov001_020bc524Eb kind:function(thumb,size=0xd4) ad
 _ZN18UnkStruct_027e0ce019func_ov001_020bc5f8Ev kind:function(thumb,size=0x62) addr:0x020bc5f8
 _ZN18UnkStruct_027e0ce019func_ov001_020bc65cEv kind:function(thumb,size=0x40) addr:0x020bc65c
 _ZN18UnkStruct_027e0ce019func_ov001_020bc69cEv kind:function(thumb,size=0x3c) addr:0x020bc69c
-_ZN18UnkStruct_027e0ce019func_ov001_020bc6d8EiP7VecFx32 kind:function(thumb,size=0xe) addr:0x020bc6d8
-_ZN18UnkStruct_027e0ce019func_ov001_020bc6e8EP7VecFx32 kind:function(thumb,size=0x14) addr:0x020bc6e8
-_ZN18UnkStruct_027e0ce019func_ov001_020bc6fcEP7VecFx32S1_ii kind:function(thumb,size=0x52) addr:0x020bc6fc
+_ZN18UnkStruct_027e0ce019func_ov001_020bc6d8EiPK24UnkStruct_ov001_020c40f4 kind:function(thumb,size=0xe) addr:0x020bc6d8
+_ZN18UnkStruct_027e0ce019func_ov001_020bc6e8EPK24UnkStruct_ov001_020c40f4 kind:function(thumb,size=0x14) addr:0x020bc6e8
+_ZN18UnkStruct_027e0ce019func_ov001_020bc6fcEPK24UnkStruct_ov001_020c40f4S2_ii kind:function(thumb,size=0x52) addr:0x020bc6fc
 func_ov001_020bc750 kind:function(thumb,size=0xc) addr:0x020bc750
 func_ov001_020bc75c kind:function(thumb,size=0xc) addr:0x020bc75c
 func_ov001_020bc768 kind:function(thumb,size=0x20) addr:0x020bc768
@@ -638,8 +638,8 @@ data_ov001_020c2fcc kind:data(any) addr:0x020c2fcc
 data_ov001_020c2fd4 kind:data(any) addr:0x020c2fd4
 _ZGVN14StaticInstanceI16CourseInitBinaryE9sInstanceE kind:bss addr:0x020c2fe0
 _ZN14StaticInstanceI16CourseInitBinaryE9sInstanceE kind:bss addr:0x020c2fe4
-data_ov001_020c40e8 kind:bss addr:0x020c40e8
-data_ov001_020c40f4 kind:bss addr:0x020c40f4
+@4613 kind:bss addr:0x020c40e8 local
+data_ov001_020c40f4 kind:bss addr:0x020c40f4 local
 data_ov001_020c46f4 kind:bss addr:0x020c46f4
 data_ov001_020c46f8 kind:bss addr:0x020c46f8
 data_ov001_020c46fc kind:bss addr:0x020c46fc

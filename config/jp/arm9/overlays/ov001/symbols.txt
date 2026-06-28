@@ -60,7 +60,7 @@ _ZN18UnkStruct_027e0cd819func_ov001_020b7b38EPK15CourseListEntryPK29UnkStruct_fu
 _ZN18UnkStruct_027e0cd819func_ov001_020b7c08EPK22UnkStruct_SceneChange1PK21UnkStruct_WarpUnk1_A0 kind:function(thumb,size=0x174) addr:0x020b9430
 _ZN18UnkStruct_027e0cd819func_ov001_020b7d64EPK22UnkStruct_SceneChange1 kind:function(thumb,size=0xec) addr:0x020b95a4
 _ZN18UnkStruct_027e0cd819func_ov001_020b7e50Ev kind:function(thumb,size=0x16) addr:0x020b9690
-_ZN18UnkStruct_027e0cd819func_ov001_020b7e68EPK22UnkStruct_SceneChange1i kind:function(thumb,size=0x1d4) addr:0x020b96a8
+_ZN18UnkStruct_027e0cd819func_ov001_020b7e68EPK22UnkStruct_SceneChange1b kind:function(thumb,size=0x1d4) addr:0x020b96a8
 _ZN18UnkStruct_027e0cd819func_ov001_020b803cEv kind:function(thumb,size=0xc0) addr:0x020b987c
 _ZN18UnkStruct_027e0cd819func_ov001_020b80fcEj kind:function(thumb,size=0x24) addr:0x020b993c
 _ZN18UnkStruct_027e0cd819func_ov001_020b8120Ej kind:function(thumb,size=0x6c) addr:0x020b9960
@@ -169,7 +169,7 @@ _ZN16MapObjectManager19func_ov001_020badb4Ev kind:function(thumb,size=0x2c) addr
 _ZN16MapObjectManager19func_ov001_020bade0Ev kind:function(thumb,size=0x60) addr:0x020bc628
 _ZN16MapObjectManager19func_ov001_020bae40EP15ZeldaObjectList kind:function(thumb,size=0x2c) addr:0x020bc688
 _ZN16MapObjectManager19func_ov001_020bae6cEv kind:function(thumb,size=0x34) addr:0x020bc6b4
-func_ov001_020baea0 kind:function(thumb,size=0x88) addr:0x020bc6e8
+_ZN16MapObjectManager19func_ov001_020baea0EP5Vec2s kind:function(thumb,size=0x88) addr:0x020bc6e8
 _ZN16MapObjectManager19func_ov001_020baf28Ev kind:function(thumb,size=0x22) addr:0x020bc770
 func_ov001_020baf4c kind:function(thumb,size=0xc) addr:0x020bc794
 func_ov001_020baf58 kind:function(thumb,size=0xc) addr:0x020bc7a0
@@ -227,9 +227,9 @@ _ZN18UnkStruct_027e0ce019func_ov001_020bc524Eb kind:function(thumb,size=0xd4) ad
 _ZN18UnkStruct_027e0ce019func_ov001_020bc5f8Ev kind:function(thumb,size=0x62) addr:0x020bde40
 _ZN18UnkStruct_027e0ce019func_ov001_020bc65cEv kind:function(thumb,size=0x40) addr:0x020bdea4
 _ZN18UnkStruct_027e0ce019func_ov001_020bc69cEv kind:function(thumb,size=0x3c) addr:0x020bdee4
-_ZN18UnkStruct_027e0ce019func_ov001_020bc6d8EiP7VecFx32 kind:function(thumb,size=0xe) addr:0x020bdf20
-_ZN18UnkStruct_027e0ce019func_ov001_020bc6e8EP7VecFx32 kind:function(thumb,size=0x14) addr:0x020bdf30
-_ZN18UnkStruct_027e0ce019func_ov001_020bc6fcEP7VecFx32S1_ii kind:function(thumb,size=0x52) addr:0x020bdf44
+_ZN18UnkStruct_027e0ce019func_ov001_020bc6d8EiPK24UnkStruct_ov001_020c40f4 kind:function(thumb,size=0xe) addr:0x020bdf20
+_ZN18UnkStruct_027e0ce019func_ov001_020bc6e8EPK24UnkStruct_ov001_020c40f4 kind:function(thumb,size=0x14) addr:0x020bdf30
+_ZN18UnkStruct_027e0ce019func_ov001_020bc6fcEPK24UnkStruct_ov001_020c40f4S2_ii kind:function(thumb,size=0x52) addr:0x020bdf44
 func_ov001_020bc750 kind:function(thumb,size=0xc) addr:0x020bdf98
 func_ov001_020bc75c kind:function(thumb,size=0xc) addr:0x020bdfa4
 func_ov001_020bc768 kind:function(thumb,size=0x20) addr:0x020bdfb0
@@ -527,19 +527,18 @@ __sinit_ov001_020c4144 kind:function(thumb,size=0x10) addr:0x020c4144
 @3575 kind:data(byte[0x17]) addr:0x020c4218 local
 @3576 kind:data(byte[0x04]) addr:0x020c4230 local
 _ZTV26UnkStruct_027e0cd8_0C_Base kind:data(any) addr:0x020c4234
-data_ov001_020c4280 kind:data(any) addr:0x020c4280
-data_ov001_020c4294 kind:data(any) addr:0x020c4294
-data_ov001_020c42a8 kind:data(any) addr:0x020c42a8
-data_ov001_020c42bc kind:data(any) addr:0x020c42bc
+data_ov001_020c2a40 kind:data(any) addr:0x020c4280
+data_ov001_020c2a54 kind:data(any) addr:0x020c4294
+data_ov001_020c2a68 kind:data(any) addr:0x020c42a8
+data_ov001_020c2a7c kind:data(any) addr:0x020c42bc
 @3283 kind:data(byte[0x6]) addr:0x020c42d0 local
 @3284 kind:data(byte[0x13]) addr:0x020c42d8 local
-@3285 kind:data(byte[0x13]) addr:0x020c42e4 local
-@3286 kind:data(byte[0x13]) addr:0x020c42ec local
-@3287 kind:data(byte[0x1b]) addr:0x020c4300 local
-@3288 kind:data(byte[0x1c]) addr:0x020c4314 local
-@3292 kind:data(byte[0x17]) addr:0x020c4330 local
-@3293 kind:data(byte[0x15]) addr:0x020c434c local
-data_ov001_020c4364 kind:data(any) addr:0x020c4364
+@3285 kind:data(byte[0x13]) addr:0x020c42ec local
+@3286 kind:data(byte[0x13]) addr:0x020c4300 local
+@3287 kind:data(byte[0x1b]) addr:0x020c4314 local
+@3288 kind:data(byte[0x1c]) addr:0x020c4330 local
+@3292 kind:data(byte[0x17]) addr:0x020c434c local
+@3293 kind:data(byte[0x15]) addr:0x020c4364 local
 data_ov001_020c437c kind:data(any) addr:0x020c437c
 data_ov001_020c4388 kind:data(any) addr:0x020c4388
 data_ov001_020c4398 kind:data(any) addr:0x020c4398
@@ -637,8 +636,8 @@ data_ov001_020c4814 kind:data(any) addr:0x020c4814
 data_ov001_020c4818 kind:data(any) addr:0x020c4818
 _ZGVN14StaticInstanceI16CourseInitBinaryE9sInstanceE kind:bss addr:0x020c4820
 _ZN14StaticInstanceI16CourseInitBinaryE9sInstanceE kind:bss addr:0x020c4824
-data_ov001_020c5928 kind:bss addr:0x020c5928
-data_ov001_020c5934 kind:bss addr:0x020c5934
+@4613 kind:bss addr:0x020c5928 local
+data_ov001_020c40f4 kind:bss addr:0x020c5934 local
 data_ov001_020c5f34 kind:bss addr:0x020c5f34
 data_ov001_020c5f38 kind:bss addr:0x020c5f38
 data_ov001_020c5f3c kind:bss addr:0x020c5f3c
