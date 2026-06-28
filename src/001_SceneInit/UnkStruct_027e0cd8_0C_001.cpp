@@ -24,6 +24,41 @@ extern int data_ov089_02171540;
 
 static UnkStruct_ov001_020c40f4 data_ov001_020c40f4[0x40];
 
+struct UnkStruct_ov001_020c2a40 {
+    /* 00 */ unk32 unk_00;
+    /* 04 */ unk32 unk_04;
+    /* 08 */ unk16 unk_08;
+    /* 0A */ u8 unk_0A;
+    /* 0B */ u8 unk_0B;
+    /* 0C */ u8 unk_0C;
+    /* 0D */ u8 unk_0D;
+    /* 0E */ u8 unk_0E;
+    /* 0F */ u8 unk_0F;
+    /* 10 */ u8 unk_10;
+    /* 11 */ STRUCT_PAD(0x11, 0x14); // pad?
+    /* 14 */
+
+    UnkStruct_ov001_020c2a40(unk32 param1, unk32 param2, unk16 param3, unk8 param4, unk8 param5, unk8 param6, unk8 param7) {
+        this->unk_00 = param1;
+        this->unk_04 = param2;
+        this->unk_08 = param3;
+        this->unk_0A = param4;
+        this->unk_0B = param5;
+        this->unk_0C = param6;
+        this->unk_0D = param7;
+        this->unk_0E = 0x2B;
+        this->unk_0F = 0;
+        this->unk_10 = 0;
+    }
+};
+
+static const UnkStruct_ov001_020c2a40 data_ov001_020c2a40[] = {
+    UnkStruct_ov001_020c2a40(0x36, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3C),
+    UnkStruct_ov001_020c2a40(0x29, 0x00, 0x00, 0x0B, 0x01, 0x00, 0x3D),
+    UnkStruct_ov001_020c2a40(0x35, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3E),
+    UnkStruct_ov001_020c2a40(0x04, 0x00, 0x00, 0x00, 0xFA, 0x00, 0x3F),
+};
+
 // https://decomp.me/scratch/JcRNn
 UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param1) :
     mUnk_004(NULL, 0x9B, 0x01, 0x01),
@@ -321,14 +356,8 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c30(const UnkStruct_027e0cd8_0C
     this->mUnk_154.push_back(param1);
 }
 
-struct UnkStruct_ov001_020c2a40 {
-    /* 00 */ STRUCT_PAD(0x00, 0x14);
-    /* 14 */
-};
-extern UnkStruct_ov001_020c2a40 data_ov001_020c2a40[];
-
 void *UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c80(unk32 param1) {
-    return &data_ov001_020c2a40[param1 - 0x3C];
+    return (void *) &data_ov001_020c2a40[param1 - 0x3C];
 }
 
 void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c90(unk32 param1) {
@@ -343,15 +372,59 @@ void UnkStruct_027e0cd8_0C_Base::vfunc_34(unk32 param1) {
     this->mUnk_130 = param1;
 }
 
-UnkStruct_ov001_020c40f4::~UnkStruct_ov001_020c40f4() {}
+void UnkStruct_027e0cd8_0C_Base::vfunc_40(u8 spawnIndex) {
+    switch (spawnIndex) {
+        case 0xFB:
+        case 0xFC:
+        case 0xFD:
+        case 0xFE: {
+            UnkStruct_ov001_020c40f4 stack_elem;
+            UnkStruct_WarpUnk1_A0 *pEntry = data_027e09a4->func_ov000_02070538();
+            VecFx32 pos                   = pEntry->mUnk_04;
+            fx16 angle                    = DEG_TO_ANG(0);
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_40(u8 spawnIndex) {}
+            switch (spawnIndex) {
+                case 0xFB:
+                    pos.z = data_027e0c90.max.z - FLOAT_TO_FX32(0.5f);
+                    angle = DEG_TO_ANG(180);
+                    break;
+                case 0xFC:
+                    pos.z = data_027e0c90.min.z + FLOAT_TO_FX32(0.5f);
+                    angle = DEG_TO_ANG(0);
+                    break;
+                case 0xFD:
+                    pos.x = data_027e0c90.max.x - FLOAT_TO_FX32(0.5f);
+                    angle = DEG_TO_ANG(270);
+                    break;
+                case 0xFE:
+                    pos.x = data_027e0c90.min.x + FLOAT_TO_FX32(0.5f);
+                    angle = DEG_TO_ANG(90);
+                    break;
+                default:
+                    break;
+            }
 
-UnkStruct_ov001_020c40f4::UnkStruct_ov001_020c40f4() {
-    this->mUnk_0E = -1;
-    this->mUnk_0F = 0;
-    this->mUnk_10 = 0;
-    this->mUnk_14 = 0;
+            stack_elem.mUnk_0E = spawnIndex;
+            VecFx32_Copy(&pos, &stack_elem.mUnk_00);
+            stack_elem.mUnk_0C = angle;
+            stack_elem.mUnk_10 = 0xFD;
+
+            UnkStruct_ov001_020c40f4 *pEnd = this->mUnk_13C.end();
+            if (pEnd != NULL) {
+                pEnd->mUnk_00 = stack_elem.mUnk_00;
+                pEnd->mUnk_0C = stack_elem.mUnk_0C;
+                pEnd->mUnk_0E = stack_elem.mUnk_0E;
+                pEnd->mUnk_0F = stack_elem.mUnk_0F;
+                pEnd->mUnk_10 = stack_elem.mUnk_10;
+                pEnd->mUnk_14 = stack_elem.mUnk_14;
+            }
+
+            this->mUnk_13C.grow_by(1);
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8db8() {

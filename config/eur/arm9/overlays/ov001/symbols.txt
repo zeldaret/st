@@ -527,9 +527,6 @@ __sinit_ov001_020c28f0 kind:function(thumb,size=0x10) addr:0x020c28f0
 @3576 kind:data(byte[0x04]) addr:0x020c29f0 local
 _ZTV26UnkStruct_027e0cd8_0C_Base kind:data(any) addr:0x020c29f4
 data_ov001_020c2a40 kind:data(any) addr:0x020c2a40
-data_ov001_020c2a54 kind:data(any) addr:0x020c2a54
-data_ov001_020c2a68 kind:data(any) addr:0x020c2a68
-data_ov001_020c2a7c kind:data(any) addr:0x020c2a7c
 @3283 kind:data(byte[0x6]) addr:0x020c2a90 local
 @3284 kind:data(byte[0x13]) addr:0x020c2a98 local
 @3285 kind:data(byte[0x13]) addr:0x020c2aac local

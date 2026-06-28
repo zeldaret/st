@@ -42,6 +42,10 @@ public:
     T *end() {
         return this->mpEnd;
     }
+
+    void grow_by(int n) {
+        this->mpEnd += n;
+    }
 };
 
 class UnkStruct_ov001_020c40f4 {
@@ -54,8 +58,14 @@ public:
     /* 14 */ unk32 mUnk_14;
     /* 18 */
 
-    UnkStruct_ov001_020c40f4();
-    ~UnkStruct_ov001_020c40f4();
+    UnkStruct_ov001_020c40f4() {
+        this->mUnk_0E = -1;
+        this->mUnk_0F = 0;
+        this->mUnk_10 = 0;
+        this->mUnk_14 = 0;
+    }
+
+    ~UnkStruct_ov001_020c40f4() {}
 
 public:
     struct Predicate {
