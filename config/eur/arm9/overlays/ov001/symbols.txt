@@ -109,10 +109,10 @@ _ZNSt13__vec_deleterIP38UnkStruct_027e0cd8_0C_Base_148_00_BaseSaIS1_EED2Ev kind:
 _ZNSt13__vec_deleterI33UnkStruct_027e0cd8_0C_Base_154_00SaIS0_EE8allocateEmN10Metrowerks8int2typeILi1EEE kind:function(thumb,size=0x28) addr:0x020b9214
 _ZNSt13__vec_deleterI33UnkStruct_027e0cd8_0C_Base_154_00SaIS0_EED2Ev kind:function(thumb,size=0x1c) addr:0x020b923c
 __arraydtor$4129 kind:function(thumb,size=0x18) addr:0x020b9258 local
-func_ov001_020b9270 kind:function(thumb,size=0x70) addr:0x020b9270
-func_ov001_020b92e0 kind:function(thumb,size=0x18c) addr:0x020b92e0
-func_ov001_020b946c kind:function(thumb,size=0x4) addr:0x020b946c
-func_ov001_020b9470 kind:function(thumb,size=0x3e) addr:0x020b9470
+ZAB_ParseFile kind:function(thumb,size=0x70) addr:0x020b9270
+ZAB_ParseCAMB kind:function(thumb,size=0x18c) addr:0x020b92e0
+ZAB_ParseCABI kind:function(thumb,size=0x4) addr:0x020b946c
+ZAB_GetRoomEntry kind:function(thumb,size=0x3e) addr:0x020b9470
 ZMB_ParseFile kind:function(thumb,size=0x164) addr:0x020b94b0
 func_ov001_020b9614 kind:function(thumb,size=0xe) addr:0x020b9614
 func_ov001_020b9624 kind:function(thumb,size=0xfc) addr:0x020b9624

@@ -316,8 +316,15 @@ public:
     /* 08 */ unk32 mUnk_08;
     /* 0C */ UnkStruct_027e0cd8_04_0C *mUnk_0C;
     /* 10 */ u8 mUnk_10;
-    /* 11 */ u8 mUnk_11;
-    /* 12 */ STRUCT_PAD(0x12, 0x40);
+    /* 10 */ u8 mUnk_11;
+    /* 12 */ u8 mUnk_12;
+    /* 12 */ u8 mUnk_13;
+    /* 14 */ u8 mUnk_14;
+    /* 14 */ u8 mUnk_15;
+    /* 16 */ u8 mUnk_16;
+    /* 16 */ u8 mUnk_17;
+    /* 18 */ Vec2p mUnk_18;
+    /* 20 */ STRUCT_PAD(0x20, 0x40);
     /* 40 */ u8 mUnk_40[1][10]; // at least one
     STRUCT_PAD(0x4C, 0xB4);
     /* B4 */
@@ -327,6 +334,10 @@ public:
 
     void func_ov000_02081354(const CourseListEntry *pEntry, const UnkStruct_func_ov000_020702a8 *pUnk1,
                              SaveFile_00000_0000_Data_184 *param3, bool param4);
+    void func_ov000_02081874(u16 nEntries);
+    void func_ov000_020819a4(const UnkStruct_func_ov000_020702a8 *pUnk1);
+    void func_ov000_020818d0(CourseListRoomEntry *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+    void func_ov000_0208199c(SceneIndex sceneIndex, void *param2, unk32 param3);
 };
 
 class UnkStruct_027e0cd8_10 : public UnkDataStruct4 {

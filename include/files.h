@@ -13,6 +13,7 @@ typedef u32 FileType;
 enum FileType_ {
     FileType_ZOB = 'BLOZ',
     FileType_ZTB = '1BTZ',
+    FileType_ZAB = 'ZCAB',
     FileType_ZMB = '1BMZ',
     FileType_CIB = 'ZCIB',
     FileType_CLB = 'ZCLB',
@@ -22,6 +23,55 @@ typedef struct FileInfos {
     /* 00 */ void *pFile;
     /* 04 */ size_t size;
 } FileInfos;
+
+// .cib
+typedef struct CourseInitEntry {
+    /* 00 */ const char name[16];
+    /* 10 */ STRUCT_PAD(0x10, 0x24);
+} CourseInitEntry; // size = 0x24
+
+typedef struct CourseInitHeader {
+    /* 00 */ FileType type; // always "ZCIB"
+    /* 04 */ size_t nSize;
+    /* 08 */ u32 nEntries;
+    /* 0C */ u32 nEntries2; // same value as above?
+} CourseInitHeader;         // size = 0x10
+
+// .clb
+typedef struct CourseListRoomEntry {
+    /* 00 */ u8 roomIndex;
+    /* 01 */ u8 mapPaintIndex;
+    /* 02 */ u16 unk_02;
+} CourseListRoomEntry; // size = 0x08
+
+typedef struct CourseListEntry {
+    /* 00 */ const char name[16];
+    /* 10 */ unk32 unk_10;
+    /* 14 */ u8 numRooms;
+    /* 15 */ unk8 unk_15;
+    /* 16 */ unk8 titleCardMsgIndex;
+    /* 17 */ u8 saveCourseIndex;
+    /* 18 */ u8 unk_18;
+    /* 19 */ u8 unk_19;
+    /* 1A */ u8 unk_1A;
+    /* 1B */ u8 unk_1B;
+    /* 1C */ u8 unk_1C;
+    /* 1D */ u8 unk_1D;
+    /* 1E */ u8 unk_1E;
+    /* 1F */ u8 unk_1F;
+    /* 20 */ u8 defaultMapPaintIndex;
+    /* 21 */ s8 unk_21;   // scene index but unknown purpose
+    /* 22 */ unk8 unk_22; // pad?
+    /* 23 */ unk8 unk_23; // pad?
+    /* 24 */ CourseListRoomEntry roomEntries[];
+} CourseListEntry; // size >= 0x28
+
+typedef struct CourseListHeader {
+    /* 00 */ FileType type; // always "ZCIB"
+    /* 04 */ size_t nSize;
+    /* 08 */ u32 nEntries;
+    /* 0C */ u32 nEntries2; // same value as above?
+} CourseListHeader;         // size = 0x10
 
 // .zob
 typedef struct ZOBHeader {
@@ -51,7 +101,7 @@ typedef struct ZTBHeader {
     /* 00 */ u32 magic;     // 'MTRB'
     /* 04 */ FileType type; // always "ZTB1"
     /* 08 */ size_t nSize;
-    /* 0C */ u32 nEntries;
+    /* 0C */ u32 nSections;
     /* 10 */ u8 unused[0x10];
 } ZTBHeader; // size = 0x20
 
@@ -129,6 +179,60 @@ extern BOOL ZTB_ParseGRRL(FileInfos *pFileInfos, UnkDataStruct4 *pDst, ZTBSectio
 extern BOOL ZTB_ParseSTAB(FileInfos *pFileInfos, UnkDataStruct4 *pDst, ZTBSectionSTAB *pSTAB);
 extern BOOL ZTB_ParseLDMK(FileInfos *pFileInfos, UnkDataStruct4 *pDst, ZTBSectionLDMK *pLDMK);
 
+// .zab
+typedef u32 ZABSectionType;
+enum ZABSectionType_ {
+    ZABSectionType_CABM = 'CABM',
+    ZABSectionType_CABI = 'CABI',
+};
+
+typedef struct ZABHeader {
+    /* 00 */ FileType type; // always "ZCAB" (probably "Zelda Course Arrange Binary"?)
+    /* 04 */ size_t nSize;
+    /* 08 */ u32 nSections;
+    /* 0C */ unk32 unk_0C;
+} ZABHeader; // size = 0x10
+
+typedef struct ZABEntryCABM {
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 unk_01;
+    /* 02 */ u8 unk_02;
+    /* 03 */ s8 unk_03;
+    /* 04 */ u32 unk_04;
+} ZABEntryCABM; // size = 0x08
+
+typedef struct ZABSectionHeader {
+    /* 00 */ ZABSectionType type;
+    /* 04 */ size_t nSize;
+    /* 08 */ u8 unk_08;
+    /* 09 */ u8 unk_09;
+    /* 0A */ u8 unk_0A;
+    /* 0B */ u8 unk_0B;
+    /* 0C */ u8 unk_0C;
+    /* 0D */ u8 unk_0D;
+    /* 0E */ u16 nEntries;
+} ZABSectionHeader; // size = 0x10
+
+typedef struct ZABSectionCABM {
+    /* 00 */ ZABSectionHeader header;
+    /* 10 */ ZABEntryCABM entries[];
+} ZABSectionCABM;
+
+typedef struct ZABSectionCABI {
+    /* 00 */ ZABSectionHeader header;
+    /* 10 */ // unknown
+} ZABSectionCABI;
+
+struct UnkStruct_027e0cd8_04;
+struct UnkStruct_func_ov000_020702a8;
+
+extern BOOL ZAB_ParseFile(FileInfos *pFileInfos, u32 sceneIndex, UnkStruct_027e0cd8_04 *pDst, const CourseListEntry *pEntry,
+                          const UnkStruct_func_ov000_020702a8 *pUnk1, BOOL param6);
+extern BOOL ZAB_ParseCAMB(FileInfos *pFileInfos, ZABSectionCABM *pCABM, u32 sceneIndex, UnkStruct_027e0cd8_04 *pDst,
+                          const CourseListEntry *pEntry, const UnkStruct_func_ov000_020702a8 *pUnk1, BOOL param6);
+extern BOOL ZAB_ParseCABI(FileInfos *pFileInfos, ZABSectionCABI *pCABI, BOOL param3);
+extern BOOL ZAB_GetRoomEntry(FileInfos *pFileInfos, u8 param2, const CourseListEntry *pEntry, CourseListRoomEntry *param4);
+
 // .zmb
 typedef u32 ZMBSectionType;
 enum ZMBSectionType_ {
@@ -157,7 +261,7 @@ typedef struct ZMBHeader {
     /* 00 */ u32 magic;     // 'MAPB'
     /* 04 */ FileType type; // always "ZMB1"
     /* 08 */ size_t nSize;
-    /* 0C */ u32 nEntries;
+    /* 0C */ u32 nSections;
     /* 10 */ u8 unused[0x10];
 } ZMBHeader; // size = 0x20
 
@@ -168,19 +272,6 @@ typedef struct ZMBSectionHeader {
     /* 0A */ u8 unk_0A;
     /* 0B */ u8 unk_0B;
 } ZMBSectionHeader; // size = 0x0C
-
-typedef struct ZMBEntryRALB {
-    /* 00 */ u8 unk_00;
-    /* 01 */ u8 unk_01;
-    /* 02 */ u8 unk_02;
-    /* 03 */ u8 unk_03;
-    /* 04 */ unk32 unk_04;
-} ZMBEntryRALB; // size = 0x08
-
-typedef struct ZMBSectionRALB {
-    /* 00 */ ZMBSectionHeader header;
-    /* 0C */ ZMBEntryRALB entries[];
-} ZMBSectionRALB;
 
 typedef struct ZMBEntryARAB {
     /* 00 */ u8 unk_00;
@@ -195,57 +286,17 @@ typedef struct ZMBEntryARAB {
     /* 0F */ unk8 unk_0F;
 } ZMBEntryARAB; // size = 0x10
 
+typedef struct ZMBEntryRALB {
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 unk_01;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+    /* 04 */ unk32 unk_04;
+} ZMBEntryRALB; // size = 0x08
+
 struct UnkStruct_027e0cd8_0C_Base;
 
 extern BOOL ZMB_ParseFile(ZMBFileInfos *pFileInfos, UnkStruct_027e0cd8_0C_Base *pDst, BOOL param3);
-
-// .cib
-typedef struct CourseInitEntry {
-    /* 00 */ const char name[16];
-    /* 10 */ STRUCT_PAD(0x10, 0x24);
-} CourseInitEntry; // size = 0x24
-
-typedef struct CourseInitHeader {
-    /* 00 */ FileType type; // always "ZCIB"
-    /* 04 */ size_t nSize;
-    /* 08 */ u32 nEntries;
-    /* 0C */ u32 nEntries2; // same value as above?
-} CourseInitHeader;         // size = 0x10
-
-// .clb
-typedef struct CourseListRoomEntry {
-    /* 00 */ u8 roomIndex;
-    /* 01 */ u8 mapPaintIndex;
-    /* 02 */ u8 unk_02;
-    /* 03 */ u8 unk_03;
-} CourseListRoomEntry; // size = 0x08
-
-typedef struct CourseListEntry {
-    /* 00 */ const char name[16];
-    /* 10 */ unk32 unk_10;
-    /* 14 */ unk8 numRooms;
-    /* 15 */ unk8 unk_15;
-    /* 16 */ unk8 titleCardMsgIndex;
-    /* 17 */ u8 saveCourseIndex;
-    /* 18 */ u8 unk_18;
-    /* 19 */ u8 unk_19;
-    /* 1A */ u8 unk_1A;
-    /* 1B */ u8 unk_1B;
-    /* 1C */ u8 unk_1C;
-    /* 1D */ u8 unk_1D;
-    /* 1E */ u8 unk_1E;
-    /* 1F */ u8 unk_1F;
-    /* 20 */ u8 defaultMapPaintIndex;
-    /* 21 */ s8 unk_21; // scene index but unknown purpose
-    /* 24 */ CourseListRoomEntry roomEntries[];
-} CourseListEntry; // size >= 0x28
-
-typedef struct CourseListHeader {
-    /* 00 */ FileType type; // always "ZCIB"
-    /* 04 */ size_t nSize;
-    /* 08 */ u32 nEntries;
-    /* 0C */ u32 nEntries2; // same value as above?
-} CourseListHeader;         // size = 0x10
 
 #ifdef __cplusplus
 } // extern "C"

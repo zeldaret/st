@@ -34,6 +34,7 @@ src/001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp:
     .ctor       start:0x020c4158 end:0x020c415c
 
 src/001_SceneInit/ZeldaArrangeBinary.cpp:
+    complete
     .text       start:0x020baab0 end:0x020bacf0
 
 src/001_SceneInit/ZeldaMapBinary.cpp:
