@@ -2,6 +2,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Actor/ActorUnkRMSD.hpp"
 #include "Render/ModelRender.hpp"
 #include "global.h"
 #include "nns/g3d/g3d.h"
@@ -28,7 +29,7 @@ public:
     ActorUnkRMSF_Base();
 };
 
-class ActorUnkRMSF : public ActorUnkRMSF_Base {
+class ActorUnkRMSF : public ActorUnkRMSBase {
 public:
     /* 00 (base) */
     /* 158 */
