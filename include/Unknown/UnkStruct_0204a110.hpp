@@ -291,6 +291,8 @@ public:
     void func_ov001_020bd58c(void);
     void func_ov001_020bd638(void);
     void func_ov001_020bd5b0(void);
+    void func_ov001_020bd678(void);
+    void func_ov001_020bd68c(void);
 
     // overlay 18
     void func_ov018_020c5300(void);

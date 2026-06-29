@@ -192,6 +192,7 @@ typedef struct BMDSectionModel {
     /* 08 */ G3d_NameList modelList;
 } BMDSectionModel;
 
+void G3d_0200e6a0(const G3d_Model *pModel, s32 param2, s32 param3);
 u32 *G3d_0200f05c(const G3d_NameList *pNameList, const char *pName);
 
 static inline u32 *G3d_GetModelOffsetPtr(const BMDSectionModel *pSection, u8 modelIndex) {

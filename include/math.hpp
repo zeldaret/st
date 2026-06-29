@@ -39,6 +39,16 @@ union Vec2s {
     }
 
     Vec2s() {}
+
+    Vec2s(Vec2s *from) {
+#if __MWERKS__
+        this->coords = from->coords;
+#else
+        this->x = from->x;
+        this->y = from->y;
+#endif
+    }
+
     Vec2s(s16 X, s16 Y) {
         x = X;
         y = Y;

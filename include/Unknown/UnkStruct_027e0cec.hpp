@@ -15,6 +15,7 @@ public:
     void func_ov000_020a0000(UnkStruct_PlayerGet_ec *param1, void *param2, unk32 *param3, VecFx32 *param4, unk32 param5);
     void func_ov000_020a0110(UnkStruct_PlayerGet_ec *param1);
     void func_ov000_020a0220(void *param1, void *param2);
+    void func_ov001_020bf028();
 
     // overlay 1
     static UnkStruct_027e0cec *Create();

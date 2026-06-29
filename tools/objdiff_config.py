@@ -39,6 +39,7 @@ class ConfigVersion:
         self.objdiff_json["watch_patterns"].append("*symbols.txt")
         self.objdiff_json["watch_patterns"].append("*delinks.txt")
         self.objdiff_json["watch_patterns"].append("*relocs.txt")
+        self.objdiff_json["watch_patterns"].append("libs/cpp/include/*")
 
         for i, unit_dict in enumerate(objdiff_json["units"]):
             if "name" in unit_dict:

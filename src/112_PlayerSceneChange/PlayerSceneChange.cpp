@@ -416,7 +416,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 case 0x1E:
                 case 0x1F:
                 default:
-                    UnkStruct_027e0cd8_0c *ptr = data_027e0cd8->mUnk_0C;
+                    UnkStruct_027e0cd8_0C_Base *ptr = data_027e0cd8->mUnk_0C;
 
                     switch (this->mUnk_68) {
                         case 0x0F:
@@ -682,9 +682,9 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                 case 0x11:
                 case 0x13:
                 case 0x24: {
-                    UnkStruct_027e0cd8_0c *temp_r0_13 = data_027e0cd8->mUnk_0C;
-                    fx32 temp_r0_14                   = temp_r0_13->vfunc_28(this->mUnk_34, 0, 0);
-                    VecFx32 *temp_r2_9                = this->mUnk_34;
+                    UnkStruct_027e0cd8_0C_Base *temp_r0_13 = data_027e0cd8->mUnk_0C;
+                    fx32 temp_r0_14                        = temp_r0_13->vfunc_28(this->mUnk_34, 0, 0);
+                    VecFx32 *temp_r2_9                     = this->mUnk_34;
 
                     if (temp_r2_9->y < temp_r0_14) {
                         temp_r2_9->y = temp_r0_14;

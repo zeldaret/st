@@ -166,7 +166,7 @@ public:
     // data_ov000_020b1d14 vtable
     /* 08 */ virtual ~TitleScreenManager_Base() override;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2, unk32 param3) override;
-    /* 38 */ virtual void vfunc_38(u32 param1, u8 param2, unk16 param3, unk16 param4);
+    /* 38 */ virtual void vfunc_38(u32 sceneIndex, u8 roomIndex, unk16 param3, unk16 param4);
     /* 3C */ virtual void vfunc_3C();
     /* 40 */ virtual void vfunc_40();
     /* 44 */ virtual void vfunc_44();

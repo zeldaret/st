@@ -2,6 +2,7 @@
 
 #include "MapObject/MapObject.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
+#include "files.h"
 #include "types.h"
 
 #include "math.hpp"
@@ -33,7 +34,6 @@ public:
     MapObject *func_01fff498(Vec2b param1);
     void func_01fff4cc(UnkCallback_func_01fff4cc param1, void *param2);
     MapObject **func_01fff520(UnkStruct_ov000_020b34c4 *param1, MapObject **param2);
-    void func_01fff6d0(VecFx32 *param1, s32 *param2, s32 *param3);
 
     // overlay 0
     MapObjectId func_ov000_0209c3a8(Vec2b *param1);
@@ -43,6 +43,17 @@ public:
     static void func_ov000_0209c490();
 
     // overlay 1
+    void func_ov001_020bac9c();
+    void func_ov001_020bacd8(ZOBHeader *pHeader);
+    void func_ov001_020bad80();
+    void func_ov001_020bada0();
+    void func_ov001_020badb4();
+    void func_ov001_020bade0();
+    void func_ov001_020baea0(Vec2s *param1);
+    void func_ov001_020bae40(ZeldaObjectList *pObjList);
+    void func_ov001_020bae6c();
+    void func_ov001_020baf28();
+
     static MapObjectManager *Create();
     static void Destroy();
 };

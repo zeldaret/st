@@ -4,6 +4,7 @@
 #include "global.h"
 #include "types.h"
 
+#include <new>
 #include <stddef.h>
 
 #define GAME_ASSERT(cond, line, msg, ...)                                                      \
@@ -35,12 +36,6 @@ enum HeapIndex_ {
 
 void *operator new(size_t length, u32 id, u32 idLength = 4);
 void *operator new[](size_t length, u32 id, u32 idLength = 4);
-void operator delete[](void *ptr);
-
-inline void *operator new(size_t length, void *ptr = nullptr) {
-#pragma unused(length)
-    return ptr;
-}
 
 class UnkStruct_02011e10_Sub1 {
 public:
