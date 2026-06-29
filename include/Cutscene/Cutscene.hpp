@@ -76,7 +76,7 @@ struct CutsceneParamsEntry {
 };
 
 CutsceneParamsEntry *Cutscene_GetParamEntry(s32 csIndex);
-s32 func_ov000_020a7840(unk32 param1);
+s32 func_ov000_020a7840(unk32 param1, unk32 param2);
 bool Cutscene_IsAdventureFlagSet(s32 csIndex);
 
 extern const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max];

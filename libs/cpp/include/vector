@@ -195,7 +195,7 @@ namespace std {
             return alloc().max_size();
         }
 
-        size_t capacity() const {
+        volatile size_t capacity() const {
             return capacity_.first();
         }
 
@@ -465,7 +465,7 @@ namespace std {
         typedef _Constructor::const_iterator const_iterator;
 
         vector() {}
-        ~vector() { }
+        ~vector() {}
 
         void push_back(const_reference x) {
             _Constructor::push_back(x);

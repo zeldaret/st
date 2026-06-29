@@ -89,7 +89,7 @@ UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param
     mUnk_12C(false),
     mUnk_12D(false),
     mUnk_12E(false),
-    mUnk_130(0),
+    mpROMB(NULL),
     mUnk_134(0),
     mUnk_138(0) {
     Vec2s local_30;
@@ -132,7 +132,7 @@ UnkStruct_027e0cd8_0C_Base::~UnkStruct_027e0cd8_0C_Base() {
     data_027e095c->func_ov000_020592ec();
     gpMapObjManager->func_ov001_020baf28();
     DELETE(this->mUnk_098);
-    this->mUnk_130 = 0;
+    this->mpROMB   = NULL;
     this->mUnk_138 = 0;
     this->mUnk_134 = 0;
     this->mUnk_154.clear();
@@ -352,7 +352,7 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8b94(ZMBEntryARAB *pARAB) {
     this->mUnk_148.push_back(ptr);
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c30(const UnkStruct_027e0cd8_0C_Base_154_00 &param1) {
+void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c30(const UnkStruct_SceneChange1 &param1) {
     this->mUnk_154.push_back(param1);
 }
 
@@ -368,8 +368,8 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c98(unk32 param1) {
     this->mUnk_134 = param1;
 }
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_34(unk32 param1) {
-    this->mUnk_130 = param1;
+void UnkStruct_027e0cd8_0C_Base::ZMB_ParseROMB(ZMBSectionROMB *pROMB) {
+    this->mpROMB = pROMB;
 }
 
 void UnkStruct_027e0cd8_0C_Base::vfunc_40(u8 spawnIndex) {

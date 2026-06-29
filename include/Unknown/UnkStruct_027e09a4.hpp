@@ -5,6 +5,7 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
+#include "files.h"
 #include "global.h"
 #include "iterator.hpp"
 #include "types.h"
@@ -17,7 +18,7 @@ class UnkStruct_027e09a4;
 #define ROOM_INDEX_NONE 0xFF
 
 struct UnkStruct_SceneChange1 {
-    /* 00 */ unk32 mSceneIndex;
+    /* 00 */ SceneIndex mSceneIndex;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk16 mUnk_08;
     /* 0A */ u8 mRoomIndex;
@@ -62,8 +63,38 @@ struct UnkStruct_SceneChange1 {
         this->mUnk_10        = 0;
     }
 
+    UnkStruct_SceneChange1(const ZMBEntryWARP *pEntry) {
+        SceneIndex sceneIndex = data_027e09a0->GetSceneIndexFromName(pEntry->destName);
+        u8 unk_04             = pEntry->unk_01;
+        s32 cutsceneIndex     = CutsceneIndex_None;
+
+        if (pEntry->unk_14 != 0 || pEntry->unk_15 != 0) {
+            cutsceneIndex = func_ov000_020a7840(pEntry->unk_14, pEntry->unk_15);
+        }
+
+        u8 unk_10     = pEntry->unk_17;
+        u8 unk_00     = pEntry->unk_00;
+        u8 spawnIndex = pEntry->spawnIndex;
+        u8 roomIndex  = pEntry->roomIndex;
+
+        this->mSceneIndex    = sceneIndex;
+        this->mUnk_04        = unk_04;
+        this->mUnk_08        = 0;
+        this->mRoomIndex     = roomIndex;
+        this->mSpawnIndex    = spawnIndex;
+        this->mIsCS          = false;
+        this->mUnk_0D        = unk_00;
+        this->mCutsceneIndex = cutsceneIndex;
+        this->mUnk_0F        = 0;
+        this->mUnk_10        = unk_10;
+    }
+
     UnkStruct_SceneChange1(const UnkStruct_SceneChange1 *pSource) {
         MI_CpuCopy32((void *) pSource, this, sizeof(UnkStruct_SceneChange1));
+    }
+
+    UnkStruct_SceneChange1(const UnkStruct_SceneChange1 &refSource) {
+        MI_CpuCopy32((void *) &refSource, this, sizeof(UnkStruct_SceneChange1));
     }
 
     UnkStruct_SceneChange1(s32) {}

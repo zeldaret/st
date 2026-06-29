@@ -2062,7 +2062,7 @@ func_02039f94 kind:function(arm,size=0x10) addr:0x02039f94
 func_02039fa4 kind:function(arm,size=0x1b0) addr:0x02039fa4
 _ll_udiv kind:function(arm,size=0xc) addr:0x0203a154
 _ull_mod kind:function(arm,size=0x3c) addr:0x0203a160
-func_0203a19c kind:function(arm,size=0x20) addr:0x0203a19c
+_ull_mul kind:function(arm,size=0x20) addr:0x0203a19c
 _s32_div_f kind:function(arm,size=0x20c) addr:0x0203a1bc
 _u32_div_f kind:function(arm,size=0x1e4) addr:0x0203a3c8
 .L_0203a3d0 kind:label(arm) addr:0x0203a3d0

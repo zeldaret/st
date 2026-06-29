@@ -2083,7 +2083,7 @@ func_0203b4c4 kind:function(arm,size=0x10) addr:0x0203b4c4
 func_0203b4d4 kind:function(arm,size=0x1b0) addr:0x0203b4d4
 _ll_udiv kind:function(arm,size=0xc) addr:0x0203b684
 _ull_mod kind:function(arm,size=0x3c) addr:0x0203b690
-func_0203b6cc kind:function(arm,size=0x20) addr:0x0203b6cc
+_ull_mul kind:function(arm,size=0x20) addr:0x0203b6cc
 _s32_div_f kind:function(arm,size=0x20c) addr:0x0203b6ec
 _u32_div_f kind:function(arm,size=0x1e4) addr:0x0203b8f8
 .L_0203b900 kind:label(arm) addr:0x0203b900

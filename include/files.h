@@ -11,12 +11,13 @@ extern "C" {
 
 typedef u32 FileType;
 enum FileType_ {
-    FileType_ZOB = 'BLOZ',
-    FileType_ZTB = '1BTZ',
-    FileType_ZAB = 'ZCAB',
-    FileType_ZMB = '1BMZ',
-    FileType_CIB = 'ZCIB',
-    FileType_CLB = 'ZCLB',
+    FileType_ZOB   = 'BLOZ',
+    FileType_ZTB   = '1BTZ',
+    FileType_ZAB   = 'ZCAB',
+    FileType_ZMBv1 = 'ZMB1',
+    FileType_ZMBv2 = 'ZMB2',
+    FileType_CIB   = 'ZCIB',
+    FileType_CLB   = 'ZCLB',
 };
 
 typedef struct FileInfos {
@@ -236,16 +237,17 @@ extern BOOL ZAB_GetRoomEntry(FileInfos *pFileInfos, u8 param2, const CourseListE
 // .zmb
 typedef u32 ZMBSectionType;
 enum ZMBSectionType_ {
-    ZMBSectionType_LDLB = 'LDLB', // related to script triggers
     ZMBSectionType_ROMB = 'ROMB', // unknown
-    ZMBSectionType_ROOB = 'ROOM', // room settings
+    ZMBSectionType_ROOM = 'ROOM', // room settings
+    ZMBSectionType_LDLB = 'LDLB', // related to script triggers
+    ZMBSectionType_MPOB = 'MPOB', // map object list, parameters are stored here
     ZMBSectionType_ARAB = 'ARAB', // locations? (?)
     ZMBSectionType_RALB = 'RALB', // paths?
+    ZMBSectionType_NPCA = 'NPCA', // actor list, same as above
+    ZMBSectionType_PLYR = 'PLYR', // player entrances?
     ZMBSectionType_WARP = 'WARP', // exits?
     ZMBSectionType_CAME = 'CAME', // camera settings?
-    ZMBSectionType_PLYR = 'PLYR', // player entrances?
-    ZMBSectionType_MPOB = 'MPOB', // map object list, parameters are stored here
-    ZMBSectionType_NPCA = 'NPCA', // actor list, same as above
+    ZMBSectionType_CMPT = 'CMPT', // ?
 };
 
 typedef struct ZMBFileInfos {
@@ -273,6 +275,35 @@ typedef struct ZMBSectionHeader {
     /* 0B */ u8 unk_0B;
 } ZMBSectionHeader; // size = 0x0C
 
+typedef struct ZMBSectionROMB {
+    /* 00 */ ZMBSectionHeader header;
+    /* 0C */
+} ZMBSectionROMB;
+
+typedef struct ZMBSectionROOM {
+    /* 00 */ ZMBSectionHeader header;
+    /* 0C */
+} ZMBSectionROOM;
+
+typedef struct ZMBEntryLBLB {
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 unk_01;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+    /* 04 */ u16 unk_04;
+    /* 06 */ unk16 unk_06;
+} ZMBEntryLBLB; // size = 0x08
+
+typedef struct ZMBSectionLDLB {
+    /* 00 */ ZMBSectionHeader header;
+    /* 0C */ ZMBEntryLBLB entries[];
+} ZMBSectionLDLB;
+
+typedef struct ZMBSectionMPOB {
+    /* 00 */ ZMBSectionHeader header;
+    /* 0C */
+} ZMBSectionMPOB;
+
 typedef struct ZMBEntryARAB {
     /* 00 */ u8 unk_00;
     /* 01 */ u8 unk_01;
@@ -286,17 +317,87 @@ typedef struct ZMBEntryARAB {
     /* 0F */ unk8 unk_0F;
 } ZMBEntryARAB; // size = 0x10
 
-typedef struct ZMBEntryRALB {
+typedef struct ZMBSectionARAB {
+    /* 00 */ ZMBSectionHeader header;
+    /* 0C */ ZMBEntryARAB entries[];
+} ZMBSectionARAB;
+
+// ZMBPathPoint?
+typedef struct ZMBRALBPoint {
     /* 00 */ u8 unk_00;
     /* 01 */ u8 unk_01;
+    /* 02 */ fx16 angle;
+    /* 04 */ VecFx32 pos;
+    /* 10 */ unk16 unk_10;
+    /* 12 */ u16 unk_12;
+    /* 14 */ unk32 unk_14;
+} ZMBRALBPoint; // size = 0x18
+
+// ZMBPathEntry?
+typedef struct ZMBEntryRALB {
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 numPoints;
     /* 02 */ u8 unk_02;
     /* 03 */ u8 unk_03;
     /* 04 */ unk32 unk_04;
 } ZMBEntryRALB; // size = 0x08
 
+typedef struct ZMBSectionRALB {
+    /* 00 */ ZMBSectionHeader header;
+    /* 0C */ ZMBEntryRALB entries[];
+} ZMBSectionRALB;
+
+typedef struct ZMBSectionNPCA {
+    /* 00 */ ZMBSectionHeader header;
+    /* 0C */
+} ZMBSectionNPCA;
+
+typedef struct ZMBSectionPLYR {
+    /* 00 */ ZMBSectionHeader header;
+    /* 0C */
+} ZMBSectionPLYR;
+
+typedef struct ZMBEntryWARP {
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 unk_01;
+    /* 02 */ u8 roomIndex;
+    /* 03 */ u8 spawnIndex;
+    /* 04 */ const char destName[16];
+    /* 14 */ u8 unk_14;
+    /* 15 */ u8 unk_15;
+    /* 16 */ u8 unk_16;
+    /* 17 */ u8 unk_17;
+} ZMBEntryWARP; // size = 0x18
+
+typedef struct ZMBSectionWARP {
+    /* 00 */ ZMBSectionHeader header;
+    /* 0C */ ZMBEntryWARP entries[];
+} ZMBSectionWARP;
+
+typedef struct ZMBSectionCAME {
+    /* 00 */ ZMBSectionHeader header;
+    /* 0C */
+} ZMBSectionCAME;
+
+typedef struct ZMBSectionCMPT {
+    /* 00 */ ZMBSectionHeader header;
+    /* 0C */
+} ZMBSectionCMPT;
+
 struct UnkStruct_027e0cd8_0C_Base;
 
-extern BOOL ZMB_ParseFile(ZMBFileInfos *pFileInfos, UnkStruct_027e0cd8_0C_Base *pDst, BOOL param3);
+extern BOOL ZMB_ParseFile(ZMBFileInfos *pFileInfos, UnkStruct_027e0cd8_0C_Base *pDst, bool param3);
+extern BOOL ZMB_ParseROMB(ZMBFileInfos *pFileInfos, ZMBSectionROMB *pROMB, UnkStruct_027e0cd8_0C_Base *pDst);
+extern BOOL ZMB_ParseLDLB(ZMBFileInfos *pFileInfos, ZMBSectionLDLB *pLDLB, UnkStruct_027e0cd8_0C_Base *pDst);
+extern BOOL ZMB_ParseARAB(ZMBFileInfos *pFileInfos, ZMBSectionARAB *pARAB, UnkStruct_027e0cd8_0C_Base *pDst);
+extern BOOL ZMB_ParseRALB(ZMBFileInfos *pFileInfos, ZMBSectionRALB *pRALB, UnkStruct_027e0cd8_0C_Base *pDst);
+extern BOOL ZMB_ParseWARP(ZMBFileInfos *pFileInfos, ZMBSectionWARP *pWARP, UnkStruct_027e0cd8_0C_Base *pDst);
+extern BOOL ZMB_ParseMPOB(ZMBFileInfos *pFileInfos, ZMBSectionMPOB *pMPOB, UnkStruct_027e0cd8_0C_Base *pDst);
+extern BOOL ZMB_ParseNPCA(ZMBFileInfos *pFileInfos, ZMBSectionNPCA *pNPCA, UnkStruct_027e0cd8_0C_Base *pDst);
+extern BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pROOM, UnkStruct_027e0cd8_0C_Base *pDst);
+extern BOOL ZMB_ParsePLYR(ZMBFileInfos *pFileInfos, ZMBSectionPLYR *pPLYR, UnkStruct_027e0cd8_0C_Base *pDst);
+extern BOOL ZMB_ParseCAME(ZMBFileInfos *pFileInfos, ZMBSectionCAME *pCAME, UnkStruct_027e0cd8_0C_Base *pDst);
+extern BOOL ZMB_ParseCMPT(ZMBFileInfos *pFileInfos, ZMBSectionCMPT *pCMPT, UnkStruct_027e0cd8_0C_Base *pDst);
 
 #ifdef __cplusplus
 } // extern "C"

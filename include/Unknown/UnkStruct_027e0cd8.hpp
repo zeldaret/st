@@ -145,15 +145,17 @@ public:
     ~UnkStruct_027e0cd8_0C_Base_148_02();
 };
 
-// UnkStruct_ov001_020c2a40 ?
-class UnkStruct_027e0cd8_0C_Base_154_00 {
-public:
-    /* 00 */ STRUCT_PAD(0x00, 0x14);
-    /* 14 */
-
-    UnkStruct_027e0cd8_0C_Base_154_00(const UnkStruct_027e0cd8_0C_Base_154_00 &ref) {
-        MI_CpuCopy32((void *) &ref, this, sizeof(UnkStruct_027e0cd8_0C_Base_154_00));
-    }
+typedef u16 UnkFlags1;
+enum UnkFlags1_ {
+    UnkFlags1_None = 0,
+    UnkFlags1_1    = 1,
+    UnkFlags1_2    = 2,
+    UnkFlags1_3    = 3,
+    UnkFlags1_4    = 4,
+    UnkFlags1_5    = 5,
+    UnkFlags1_6    = 6,
+    UnkFlags1_7    = 7,
+    UnkFlags1_Max  = 8,
 };
 
 class UnkStruct_027e0cd8_0C_Base {
@@ -186,7 +188,7 @@ public:
     /* 0DC */ ZeldaObjectList *mUnk_0DC[8]; // actors
     /* 0FC */ unk32 mUnk_0FC;
     /* 100 */ volatile BOOL mIsCS;
-    /* 104 */ unk16 mUnk_104;
+    /* 104 */ UnkFlags1 mUnk_104;
     /* 108 */ unk32 mUnk_108;
     /* 10C */ unk32 mUnk_10C;
     /* 110 */ unk32 mUnk_110;
@@ -201,12 +203,12 @@ public:
     /* 12C */ bool mUnk_12C;
     /* 12D */ bool mUnk_12D;
     /* 12E */ bool mUnk_12E;
-    /* 130 */ unk32 mUnk_130;
+    /* 130 */ ZMBSectionROMB *mpROMB;
     /* 134 */ unk32 mUnk_134;
     /* 138 */ unk32 mUnk_138;
-    /* 13C */ FixedVector<UnkStruct_ov001_020c40f4> mUnk_13C;
-    /* 148 */ CustomVector<UnkStruct_027e0cd8_0C_Base_148_00_Base *> mUnk_148;
-    /* 154 */ CustomVector<UnkStruct_027e0cd8_0C_Base_154_00> mUnk_154;
+    /* 13C */ FixedVector<UnkStruct_ov001_020c40f4> mUnk_13C;                  // related to player
+    /* 148 */ CustomVector<UnkStruct_027e0cd8_0C_Base_148_00_Base *> mUnk_148; // related to "arrange" stuff
+    /* 154 */ CustomVector<UnkStruct_SceneChange1> mUnk_154;                   // exit list?
     /* 160 */
 
     UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param1);
@@ -223,7 +225,7 @@ public:
     /* 28 */ virtual fx32 vfunc_28(VecFx32 *param1, unk32 param2, unk32 param3);
     /* 2C */ virtual void vfunc_2C();
     /* 30 */ virtual void LoadSceneModel(const UnkStruct_SceneChange1 *param1);
-    /* 34 */ virtual void vfunc_34(unk32 param1);
+    /* 34 */ virtual void ZMB_ParseROMB(ZMBSectionROMB *pROMB);
     /* 38 */ virtual void vfunc_38();
     /* 3C */ virtual void vfunc_3C();
     /* 40 */ virtual void vfunc_40(u8 spawnIndex);
@@ -250,7 +252,7 @@ public:
     const UnkStruct_ov001_020c40f4 *func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1);
     void func_ov001_020b8aec();
     void func_ov001_020b8b94(ZMBEntryARAB *pARAB);
-    void func_ov001_020b8c30(const UnkStruct_027e0cd8_0C_Base_154_00 &param1);
+    void func_ov001_020b8c30(const UnkStruct_SceneChange1 &param1);
     void *func_ov001_020b8c80(unk32 param1);
     void func_ov001_020b8c90(unk32 param1);
     void func_ov001_020b8c98(unk32 param1);
