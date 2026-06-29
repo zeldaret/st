@@ -2,6 +2,11 @@
 
 #include "Actor/ActorUnkRMSS.hpp"
 #include "System/SysNew.hpp"
+#include "nns/g3d/g3d.h"
+#include "profile.hpp"
+
+extern char data_ov063_021625f8[0x10]; // =
+extern char data_ov063_02162608[0x10]; // =
 
 DECL_PROFILE(ActorProfileUnkRMSS);
 
@@ -14,8 +19,13 @@ ActorProfileUnkRMSS::ActorProfileUnkRMSS() :
 
 ActorUnkRMSS::ActorUnkRMSS() {}
 
-void ActorUnkRMSS::func_ov063_0215c5fc(void) {}
-void ActorUnkRMSS::func_ov063_0215c63c(void) {}
+G3d_Model *ActorUnkRMSS::vfunc_54(void) {
+    return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSS)->mUnk_3C, data_ov063_02162608);
+}
+
+G3d_Model *ActorUnkRMSS::vfunc_58(void) {
+    return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSS)->mUnk_3C, data_ov063_021625f8);
+}
 
 ActorUnkRMSS::~ActorUnkRMSS() {}
 ActorProfileUnkRMSS::~ActorProfileUnkRMSS() {}

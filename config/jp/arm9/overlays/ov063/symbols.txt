@@ -158,8 +158,8 @@ _ZN12ActorUnkRMSDC1Ev kind:function(arm,size=0x74) addr:0x0215e128
 _ZN12ActorUnkRMSD19func_ov063_0215c408Ev kind:function(arm,size=0x54) addr:0x0215e19c
 _ZN12ActorUnkRMSD19func_ov063_0215c45cEv kind:function(arm,size=0x18) addr:0x0215e1f0
 _ZN12ActorUnkRMSD19func_ov063_0215c474Ev kind:function(arm,size=0x14) addr:0x0215e208
-_ZN12ActorUnkRMSD19func_ov063_0215c488Ev kind:function(arm,size=0x40) addr:0x0215e21c
-_ZN12ActorUnkRMSD19func_ov063_0215c4c8Ev kind:function(arm,size=0x40) addr:0x0215e25c
+_ZN12ActorUnkRMSD8vfunc_54Ev kind:function(arm,size=0x40) addr:0x0215e21c
+_ZN12ActorUnkRMSD8vfunc_58Ev kind:function(arm,size=0x40) addr:0x0215e25c
 _ZN12ActorUnkRMSDD1Ev kind:function(arm,size=0x30) addr:0x0215e29c
 _ZN12ActorUnkRMSDD0Ev kind:function(arm,size=0x38) addr:0x0215e2cc
 _ZN19ActorProfileUnkRMSDD1Ev kind:function(arm,size=0x14) addr:0x0215e304
@@ -167,8 +167,8 @@ _ZN19ActorProfileUnkRMSS10GetProfileEv kind:function(arm,size=0xc) addr:0x0215e3
 _ZN19ActorProfileUnkRMSS6CreateEv kind:function(arm,size=0x24) addr:0x0215e324
 _ZN19ActorProfileUnkRMSSC1Ev kind:function(arm,size=0x28) addr:0x0215e348
 _ZN12ActorUnkRMSSC1Ev kind:function(arm,size=0x20) addr:0x0215e370
-_ZN12ActorUnkRMSS19func_ov063_0215e390Ev kind:function(arm,size=0x40) addr:0x0215e390
-_ZN12ActorUnkRMSS19func_ov063_0215e3d0Ev kind:function(arm,size=0x40) addr:0x0215e3d0
+_ZN12ActorUnkRMSS8vfunc_54Ev kind:function(arm,size=0x40) addr:0x0215e390
+_ZN12ActorUnkRMSS8vfunc_58Ev kind:function(arm,size=0x40) addr:0x0215e3d0
 _ZN12ActorUnkRMSSD1Ev kind:function(arm,size=0x28) addr:0x0215e410
 _ZN12ActorUnkRMSSD0Ev kind:function(arm,size=0x30) addr:0x0215e438
 _ZN19ActorProfileUnkRMSSD1Ev kind:function(arm,size=0x14) addr:0x0215e468
@@ -374,8 +374,8 @@ data_ov063_021643d0 kind:data(any) addr:0x021643d0
 data_ov063_021643e0 kind:data(any) addr:0x021643e0
 data_ov063_021625d8 kind:data(any) addr:0x021643f0
 data_ov063_021625e8 kind:data(any) addr:0x02164400
-data_ov063_02164410 kind:data(any) addr:0x02164410
-data_ov063_02164420 kind:data(any) addr:0x02164420
+data_ov063_021625f8 kind:data(any) addr:0x02164410
+data_ov063_02162608 kind:data(any) addr:0x02164420
 data_ov063_0216443c kind:data(any) addr:0x0216443c
 data_ov063_02164443 kind:data(any) addr:0x02164443
 data_ov063_0216444a kind:data(any) addr:0x0216444a
@@ -451,8 +451,8 @@ _ZTV19data_ov063_0216526c kind:data(any) addr:0x0216526c
 data_ov063_021652d0 kind:data(any) addr:0x021652d0
 _ZTV19ActorProfileUnkRMSD kind:data(any) addr:0x021652e8
 _ZTV12ActorUnkRMSD kind:data(any) addr:0x0216530c
-_ZTV19data_ov063_02165370 kind:data(any) addr:0x02165370
-_ZTV19data_ov063_02165394 kind:data(any) addr:0x02165394
+_ZTV19ActorProfileUnkRMSS kind:data(any) addr:0x02165370
+_ZTV12ActorUnkRMSS kind:data(any) addr:0x02165394
 _ZTV19data_ov063_021653f8 kind:data(any) addr:0x021653f8
 data_ov063_0216541c kind:data(any) addr:0x0216541c
 data_ov063_02165438 kind:data(any) addr:0x02165438
