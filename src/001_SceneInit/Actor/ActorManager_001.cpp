@@ -95,7 +95,7 @@ void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
     int aligned0A = ALIGN_NEXT(unk_0A, 8);
     int aligned08 = ALIGN_NEXT(unk_08, 8);
 
-    int iVar5 = data_027e09a0->func_ov000_020702a8(data_027e09a4->mUnk_00.mSceneIndex)->mUnk_20;
+    int iVar5 = data_027e09a0->func_ov000_020702a8(data_027e09a4->CurrentSceneIndex())->mUnk_20;
 
     s32 allocCount;
     if (data_027e09a4->mUnk_60 == 0) {
@@ -121,7 +121,7 @@ void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
         unk32 iVar5;
 
         if (data_027e09a4->IsLand() != 0) {
-            iVar5 = data_027e09a4->mUnk_00.mSceneIndex;
+            iVar5 = data_027e09a4->CurrentSceneIndex();
 
             if (iVar5 == SceneIndex_f_rabbit) {
                 this->mUnk_34 = 0xFFFFECCD; // ~0x1332
@@ -196,7 +196,7 @@ void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
         }
     }
 
-    if (data_027e09a4->UnkCheck(data_027e09a4->mUnk_00.mSceneIndex)) {
+    if (data_027e09a4->UnkCheck(data_027e09a4->CurrentSceneIndex())) {
         func_ov071_0215e8d4();
     }
 
@@ -209,7 +209,7 @@ void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
 void ActorManager::func_ov001_020bb414() {
     func_ov001_020ba59c(&data_0204999c);
 
-    if (data_027e09a4->UnkCheck(data_027e09a4->mUnk_00.mSceneIndex)) {
+    if (data_027e09a4->UnkCheck(data_027e09a4->CurrentSceneIndex())) {
         this->func_ov001_020bb844();
     }
 
@@ -241,7 +241,7 @@ void ActorManager::func_ov001_020bb488() {
         data_027e0cf4->func_ov021_020f8cdc();
     }
 
-    if (data_027e09a4->UnkCheck(data_027e09a4->mUnk_00.mSceneIndex)) {
+    if (data_027e09a4->UnkCheck(data_027e09a4->CurrentSceneIndex())) {
         data_027e0d70->func_ov071_0215e8f8();
     }
 }
@@ -261,7 +261,7 @@ void ActorManager::func_ov001_020bb548() {
         i++;
     }
 
-    unk32 value = data_027e09a4->mUnk_00.mSceneIndex;
+    unk32 value = data_027e09a4->CurrentSceneIndex();
     if (data_027e09a4->UnkCheck(value)) {
         data_027e0d70->func_ov071_0215e9ac();
 
@@ -307,7 +307,7 @@ void ActorManager::func_ov001_020bb630() {
     }
 }
 
-void ActorManager::func_ov001_020bb6b0(UnkStruct_SceneChange1 *param1) {
+void ActorManager::func_ov001_020bb6b0(EntranceInfo *param1) {
     ActorProfile **piVar1 = data_ov000_020b539c_eur.func_ov000_02073dc();
     ActorProfile **piVar2 = data_ov000_020b539c_eur.func_ov000_02073e8();
 
@@ -318,8 +318,8 @@ void ActorManager::func_ov001_020bb6b0(UnkStruct_SceneChange1 *param1) {
             for (int i = 0; i < ARRAY_LEN(data_ov000_020ab1ac); i++) {
                 UnkStruct_ov000_020ab1ac *pEntry = &data_ov000_020ab1ac[i];
 
-                if (pEntry->mUnk_00 == iVar5->mActorId && pEntry->mUnk_04 == param1->mSceneIndex &&
-                    pEntry->mUnk_08 == param1->mRoomIndex) {
+                if (pEntry->mUnk_00 == iVar5->mActorId && pEntry->mUnk_04 == param1->sceneIndex &&
+                    pEntry->mUnk_08 == param1->roomIndex) {
                     (*piVar1)->mUnk_39 = 1;
                     (*piVar1)->vfunc_08();
                 }
@@ -332,9 +332,9 @@ void ActorManager::func_ov001_020bb6b0(UnkStruct_SceneChange1 *param1) {
 }
 
 bool ActorManager::func_ov001_020bb728(s32 param1) {
-    UnkStruct_SceneChange1 *piVar1 = data_027e09a4->func_ov000_02070560();
+    EntranceInfo *piVar1 = data_027e09a4->func_ov000_02070560();
 
-    if (piVar1->mSceneIndex != SceneIndex_f_water || piVar1->mRoomIndex != 0) {
+    if (piVar1->sceneIndex != SceneIndex_f_water || piVar1->roomIndex != 0) {
         return false;
     }
 

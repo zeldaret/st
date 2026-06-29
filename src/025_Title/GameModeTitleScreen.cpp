@@ -25,7 +25,7 @@ GameModeTitleScreen::~GameModeTitleScreen() {
 
 void GameModeTitleScreen::vfunc_08() {
     this->GameModeBase::vfunc_08();
-    UnkStruct_SceneChange1 stack(Cutscene_GetParamEntry(CutsceneIndex_TitleScreen), true);
+    EntranceInfo stack(Cutscene_GetParamEntry(CutsceneIndex_TitleScreen), true);
     data_027e09a4->func_ov000_020707a8(&stack);
 }
 

@@ -7,7 +7,7 @@
 #include "files.h"
 #include "types.h"
 
-class UnkStruct_SceneChange1;
+class EntranceInfo;
 
 class ActorManager : public AutoInstance<ActorManager> {
 public:
@@ -54,7 +54,7 @@ public:
     void func_ov001_020bb488();
     void func_ov001_020bb548();
     void func_ov001_020bb630();
-    void func_ov001_020bb6b0(UnkStruct_SceneChange1 *param1);
+    void func_ov001_020bb6b0(EntranceInfo *param1);
     void func_ov001_020bb7b0(ZeldaObjectList *pObjList);
     void func_ov001_020bb7f0();
 

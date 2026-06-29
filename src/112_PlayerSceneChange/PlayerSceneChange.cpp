@@ -86,7 +86,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
         case 0x3C: {
             int iVar19 = data_027e0cd8->mUnk_0C->func_ov000_02080658((this->mUnk_2C->mUnk_148 >> 16) & 0x3F, &this->mUnk_54);
             if (iVar19 != 0 && this->mUnk_28->mUnk_94 != 0 && func_ov096_02179c14()) {
-                this->mUnk_54.mUnk_10 = 1;
+                this->mUnk_54.unk_10 = 1;
             }
 
             switch (this->mUnk_68) {
@@ -301,7 +301,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 this->mUnk_68 = data_027e09a4->func_ov000_02070554();
             }
 
-            SceneIndex eScene = data_027e09a4->mUnk_00.mSceneIndex;
+            SceneIndex eScene = data_027e09a4->CurrentSceneIndex();
             if (eScene == SceneIndex_tekiya07) {
                 this->mUnk_68 = 0x18;
             } else {

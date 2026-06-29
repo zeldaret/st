@@ -3,7 +3,7 @@
 #include "System/SysNew.hpp"
 #include "types.h"
 
-class UnkStruct_SceneChange1;
+class EntranceInfo;
 
 class UnkStruct_ov018_020c5ac0 {
 public:
@@ -63,10 +63,10 @@ public:
     void func_ov001_020bd87c(void);
     void func_ov001_020bd8dc(void);
     void func_ov001_020bd8ac(void);
-    void func_ov001_020bd970(UnkStruct_SceneChange1 *param1);
+    void func_ov001_020bd970(EntranceInfo *param1);
     void func_ov001_020bde5c(void);
-    void func_ov001_020bde04(UnkStruct_SceneChange1 *param1);
-    void func_ov001_020bde4c(const UnkStruct_SceneChange1 *param1);
+    void func_ov001_020bde04(EntranceInfo *param1);
+    void func_ov001_020bde4c(const EntranceInfo *param1);
 
     // overlay 18
     UnkStruct_ov018_020c5ac0 *func_ov018_020c5718(void);

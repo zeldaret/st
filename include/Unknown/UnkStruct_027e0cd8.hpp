@@ -208,7 +208,7 @@ public:
     /* 138 */ unk32 mUnk_138;
     /* 13C */ FixedVector<UnkStruct_ov001_020c40f4> mUnk_13C;                  // related to player
     /* 148 */ CustomVector<UnkStruct_027e0cd8_0C_Base_148_00_Base *> mUnk_148; // related to "arrange" stuff
-    /* 154 */ CustomVector<UnkStruct_SceneChange1> mUnk_154;                   // exit list?
+    /* 154 */ CustomVector<EntranceInfo> mUnk_154;                             // exit list?
     /* 160 */
 
     UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param1);
@@ -219,12 +219,12 @@ public:
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
-    /* 1C */ virtual void vfunc_1C(const UnkStruct_SceneChange1 *param1, bool param2, bool param3);
+    /* 1C */ virtual void vfunc_1C(const EntranceInfo *param1, bool param2, bool param3);
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual fx32 vfunc_28(VecFx32 *param1, unk32 param2, unk32 param3);
     /* 2C */ virtual void vfunc_2C();
-    /* 30 */ virtual void LoadSceneModel(const UnkStruct_SceneChange1 *param1);
+    /* 30 */ virtual void LoadSceneModel(const EntranceInfo *param1);
     /* 34 */ virtual void ZMB_ParseROMB(ZMBSectionROMB *pROMB);
     /* 38 */ virtual void vfunc_38();
     /* 3C */ virtual void vfunc_3C();
@@ -239,20 +239,20 @@ public:
     bool func_ov000_020802ec(u16 param1, VecFx32 *param2);
     void func_ov000_020803ec(u16 param1);
     void func_ov000_0208053c(u16 param1);
-    bool func_ov000_02080658(unk32 param1, UnkStruct_SceneChange1 *param2);
+    bool func_ov000_02080658(unk32 param1, EntranceInfo *param2);
     void func_ov000_020808f4(void *param1, void *param2, unk32 param3);
     unk32 func_ov000_02080a44();
     void func_ov000_02080a5c(VecFx32 *param1);
     void func_ov000_02080a78(VecFx32 *param1);
 
     // overlay 1
-    void func_ov001_020b85d0(const UnkStruct_SceneChange1 *param1);
+    void func_ov001_020b85d0(const EntranceInfo *param1);
     void func_ov001_020b88c0(unk32 param1);
     void func_ov001_020b88ec();
     const UnkStruct_ov001_020c40f4 *func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1);
     void func_ov001_020b8aec();
     void func_ov001_020b8b94(ZMBEntryARAB *pARAB);
-    void func_ov001_020b8c30(const UnkStruct_SceneChange1 &param1);
+    void func_ov001_020b8c30(const EntranceInfo &param1);
     void *func_ov001_020b8c80(unk32 param1);
     void func_ov001_020b8c90(unk32 param1);
     void func_ov001_020b8c98(unk32 param1);
@@ -277,7 +277,7 @@ public:
     /* 10 */ virtual void vfunc_10() override;
     /* 14 */ virtual void vfunc_14() override;
     /* 18 */ virtual void vfunc_18() override;
-    /* 1C */ virtual void vfunc_1C(const UnkStruct_SceneChange1 *param1, bool param2, bool param3) override;
+    /* 1C */ virtual void vfunc_1C(const EntranceInfo *param1, bool param2, bool param3) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
     /* 28 */ virtual fx32 vfunc_28(VecFx32 *param1, unk32 param2, unk32 param3) override;
@@ -389,13 +389,13 @@ public:
     void func_ov000_02081ca0();
 
     // overlay 1
-    void func_ov001_020b7830(const UnkStruct_SceneChange1 *param1);
+    void func_ov001_020b7830(const EntranceInfo *param1);
     void func_ov001_020b7a7c();
     void func_ov001_020b7b38(const CourseListEntry *pEntry, const UnkStruct_func_ov000_020702a8 *pUnk1);
-    void func_ov001_020b7c08(const UnkStruct_SceneChange1 *param1, const UnkStruct_WarpUnk1_A0 *param2);
-    void func_ov001_020b7d64(const UnkStruct_SceneChange1 *param1);
+    void func_ov001_020b7c08(const EntranceInfo *param1, const UnkStruct_WarpUnk1_A0 *param2);
+    void func_ov001_020b7d64(const EntranceInfo *param1);
     void func_ov001_020b7e50();
-    void func_ov001_020b7e68(const UnkStruct_SceneChange1 *param1, bool param2);
+    void func_ov001_020b7e68(const EntranceInfo *param1, bool param2);
     void func_ov001_020b803c();
     bool func_ov001_020b80fc(SceneIndex sceneIndex);
     void func_ov001_020b8120(SceneIndex sceneIndex);

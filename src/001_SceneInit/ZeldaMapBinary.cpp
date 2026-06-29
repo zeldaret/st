@@ -83,7 +83,7 @@ BOOL ZMB_ParseROMB(ZMBFileInfos *pFileInfos, ZMBSectionROMB *pROMB, UnkStruct_02
 
 BOOL ZMB_ParseLDLB(ZMBFileInfos *pFileInfos, ZMBSectionLDLB *pLDLB, UnkStruct_027e0cd8_0C_Base *pDst) {
     pDst->mUnk_104 = UnkFlags1_None;
-    bool isCs      = data_027e09a4->mUnk_00.mIsCS;
+    bool isCs      = data_027e09a4->mUnk_00.isCS;
 
     for (u16 i = 0; i < pLDLB->header.nEntries; i++) {
         ZMBEntryLBLB *pEntry = &pLDLB->entries[i];
@@ -182,7 +182,7 @@ BOOL ZMB_ParseWARP(ZMBFileInfos *pFileInfos, ZMBSectionWARP *pWARP, UnkStruct_02
         ZMBEntryWARP *pEntry = &pWARP->entries[i];
 
         if (func_ov001_020ba350(pFileInfos, pEntry->unk_16, pDst)) {
-            pDst->func_ov001_020b8c30(UnkStruct_SceneChange1(pEntry));
+            pDst->func_ov001_020b8c30(EntranceInfo(pEntry));
         }
     }
 

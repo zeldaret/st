@@ -888,7 +888,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                         break;
                     case ItemId_RecruitUniform2:
                     case ItemId_EngineerUniform:
-                        if (data_027e09a4->mUnk_00.mSceneIndex == SceneIndex_f_first) {
+                        if (data_027e09a4->CurrentSceneIndex() == SceneIndex_f_first) {
                             this->mUnk_28->func_ov058_02152a24();
                         }
                         break;

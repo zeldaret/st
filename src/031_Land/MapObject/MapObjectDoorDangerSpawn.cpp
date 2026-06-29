@@ -364,7 +364,7 @@ void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
             this->MapObjectDoorBase::vfunc_5C(param1, param2);
 
             var_r6  = 1;
-            temp_r8 = data_027e09a4->mUnk_00.mSceneIndex;
+            temp_r8 = data_027e09a4->CurrentSceneIndex();
 
             if (param2 != 0 && (temp_r8 - SceneIndex_tekiya00) > 4) {
                 var_r6 = 0;
@@ -548,7 +548,7 @@ bool MapObjectDoorDangerSpawn::func_ov031_020fdec8(void) {
             }
 
             pUVar4 = data_027e0cd8->mUnk_0C;
-            uVar3  = (VecFx32 *) &pUVar4->func_ov001_020b8a5c(data_027e09a4->func_ov000_02070560()->mSpawnIndex, 0)->mUnk_00;
+            uVar3  = (VecFx32 *) &pUVar4->func_ov001_020b8a5c(data_027e09a4->func_ov000_02070560()->spawnIndex, 0)->mUnk_00;
 
             if (pUVar4->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], uVar3)) {
                 return true;

@@ -118,7 +118,7 @@ bool MapObjectSwitchStep::vfunc_00(void) {
         this->func_ov000_0209e11c(0, 1);
     }
 
-    if (data_027e09a4->mUnk_00.mSceneIndex >= SceneIndex_battle01 && data_027e09a4->mUnk_00.mSceneIndex < SceneIndex_Max) {
+    if (data_027e09a4->CurrentSceneIndex() >= SceneIndex_battle01 && data_027e09a4->CurrentSceneIndex() < SceneIndex_Max) {
         MapObjectSwitchStep_data_020b6118.func_ov000_0205fc20(0x78, 0x0C, NULL, NULL);
         SET_FLAG(this->mFlags, MapObjFlag_5);
     }
@@ -203,7 +203,7 @@ void MapObjectSwitchStep::vfunc_18(s8 *param1, s8 param2) {
         return;
     }
 
-    if (data_027e09a4->mUnk_00.mSceneIndex >= SceneIndex_battle01 && data_027e09a4->mUnk_00.mSceneIndex < SceneIndex_Max) {
+    if (data_027e09a4->CurrentSceneIndex() >= SceneIndex_battle01 && data_027e09a4->CurrentSceneIndex() < SceneIndex_Max) {
         Vec2s sp10;
         stack_struct sp8;
         u32 sp4;
