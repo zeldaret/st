@@ -1,12 +1,11 @@
 //! TODO: This file was generated automatically and might contain errors
 
 #include "Actor/ActorUnkRMSS.hpp"
-#include "System/SysNew.hpp"
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
 
-extern char data_ov063_021625f8[0x10]; // =
-extern char data_ov063_02162608[0x10]; // =
+extern char data_ov063_021625f8[0x10]; // = "RMSS_wall";
+extern char data_ov063_02162608[0x10]; // = "RMSS";
 
 DECL_PROFILE(ActorProfileUnkRMSS);
 

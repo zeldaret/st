@@ -28,8 +28,8 @@ public:
 
     /* 4C */ virtual ~ActorUnkRMSS() override;
 
-    /* 54 */ G3d_Model *vfunc_54(void);
-    /* 58 */ G3d_Model *vfunc_58(void);
+    /* 54 */ virtual G3d_Model *vfunc_54(void);
+    /* 58 */ virtual G3d_Model *vfunc_58(void);
 };
 
 class ActorProfileUnkRMSS : public ActorProfile_Derived1 {

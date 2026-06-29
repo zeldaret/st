@@ -29,20 +29,20 @@ ActorUnkRMSD::ActorUnkRMSD() {
     r0->vfunc_04();
 }
 
-void ActorUnkRMSD::func_ov063_0215c408(void) {}
+void ActorUnkRMSD::vfunc_18(void) {}
 
-void ActorUnkRMSD::func_ov063_0215c45c(void) {
+void ActorUnkRMSD::vfunc_20(void) {
     (*(Actor *) &this->mUnk_158).vfunc_34(); // Not an Actor
 }
-void ActorUnkRMSD::func_ov063_0215c474(void) {
+void ActorUnkRMSD::vfunc_24(void) {
     this->vfunc_20();
 }
 
-G3d_Model *ActorUnkRMSD::func_ov063_0215c488(void) {
+G3d_Model *ActorUnkRMSD::vfunc_54(void) {
     return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSD)->mUnk_3C, data_ov063_021625e8);
 }
 
-G3d_Model *ActorUnkRMSD::func_ov063_0215c4c8(void) {
+G3d_Model *ActorUnkRMSD::vfunc_58(void) {
     return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSD)->mUnk_3C, data_ov063_021625d8);
 }
 
