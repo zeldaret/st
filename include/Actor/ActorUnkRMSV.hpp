@@ -5,6 +5,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "global.h"
+#include "nns/g3d/g3d.h"
 #include "types.h"
 
 class ActorUnkRMSV_C4 : public Actor_C4 {
@@ -17,25 +18,27 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkRMSV : public Actor {
+class ActorUnkRMSV : public Actor { //! INFO: ActorUnkRMSBase ? -> weirdly doesn't match first dtor
 public:
     /* 00 (base) */
     /* 94 */
 
     ActorUnkRMSV();
 
+    /* 18 */ virtual void vfunc_18(void);
+    /* 20 */ virtual void vfunc_20(void);
+    /* 24 */ virtual void vfunc_24(void);
+
     /* 4C */ virtual ~ActorUnkRMSV() override;
+    /* 50 */ virtual void vfunc_50(void); // dtor, override?
+
+    /* 54 */ virtual G3d_Model *vfunc_54(void);
+    /* 58 */ virtual G3d_Model *vfunc_58(void);
 
     void func_ov063_0215bd44(void);
-    void func_ov063_0215bd58(void);
     void func_ov063_0215bdec(void);
-    void func_ov063_0215be10(void);
-    void func_ov063_0215be3c(void);
-    void func_ov063_0215be50(void);
-    void func_ov063_0215be90(void);
     void func_ov063_0215bed0(void);
     void func_ov063_0215bee0(void);
-    void func_ov063_0215bf3c(void);
 };
 
 class ActorProfileUnkRMSV : public ActorProfile_Derived1 {
