@@ -8,6 +8,7 @@
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
 #include "global.h"
+#include "nns/g3d/g3d.h"
 #include "types.h"
 
 class ActorUnkRMSD_C4 : public Actor_C4 {
@@ -20,12 +21,23 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkRMSD : public Actor {
+class ActorUnkRMSBase : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */ unk8 mUnk_94;
-    /* 95 */ STRUCT_PAD(0x95, 0x158);
-    /* 158 */ Actor mUnk_158;
+    /* 94 */ ModelRender mUnk_94;
+    /* F4 */ ModelRender mUnk_F4;
+    /* 154 */ unk32 mUnk_154;
+    /* 158 */
+
+    ActorUnkRMSBase();
+};
+
+class ActorUnkRMSD : public ActorUnkRMSBase {
+public:
+    /* 00 (base) */
+    /* 158 */ unk32 mUnk_158;           //! INFO: Some class with a vfunc_34
+    /* 15C */ STRUCT_PAD(0x15C, 0x1D4); //! INFO: Force alignment to match ::Create
+    /* 1D4 */
 
     ActorUnkRMSD();
 
@@ -34,8 +46,8 @@ public:
     void func_ov063_0215c408(void);
     void func_ov063_0215c45c(void);
     void func_ov063_0215c474(void);
-    void *func_ov063_0215c488(void); //! TODO: G3d_Model?
-    void *func_ov063_0215c4c8(void); //! TODO: G3d_Model?
+    G3d_Model *func_ov063_0215c488(void); //! INFO: G3d_Model deduced from RMSF
+    G3d_Model *func_ov063_0215c4c8(void); //! INFO: same as above
 };
 
 class ActorProfileUnkRMSD : public ActorProfile_Derived1 {

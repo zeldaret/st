@@ -449,8 +449,8 @@ data_ov063_02165248 kind:data(any) addr:0x02165248 ambiguous
 _ZTV19data_ov063_02165248 kind:data(any) addr:0x02165248
 _ZTV19data_ov063_0216526c kind:data(any) addr:0x0216526c
 data_ov063_021652d0 kind:data(any) addr:0x021652d0
-_ZTV19data_ov063_021652e8 kind:data(any) addr:0x021652e8
-_ZTV19data_ov063_0216530c kind:data(any) addr:0x0216530c
+_ZTV19ActorProfileUnkRMSD kind:data(any) addr:0x021652e8
+_ZTV12ActorUnkRMSD kind:data(any) addr:0x0216530c
 _ZTV19data_ov063_02165370 kind:data(any) addr:0x02165370
 _ZTV19data_ov063_02165394 kind:data(any) addr:0x02165394
 _ZTV19data_ov063_021653f8 kind:data(any) addr:0x021653f8

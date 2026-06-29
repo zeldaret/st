@@ -222,13 +222,12 @@ static inline G3d_Model *G3d_GetModelPtr(const BMDSectionModel *pSection) {
     return G3d_GetModelVariantPtr(pSection, 0);
 }
 
-//! TODO: returns `G3d_Model*`?
-static inline void *G3d_GetUnkPtr(const BMDSectionModel *pSection, const char *name) {
+static inline G3d_Model *G3d_GetUnkPtr(const BMDSectionModel *pSection, const char *name) {
     if (pSection != NULL) {
         u32 *pOffset = G3d_0200f05c(&pSection->modelList, name);
 
         if (pOffset != NULL) {
-            return (void *) ((u8 *) pSection + *pOffset);
+            return (G3d_Model *) ((u8 *) pSection + *pOffset);
         }
     }
 
