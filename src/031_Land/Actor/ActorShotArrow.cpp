@@ -112,14 +112,6 @@ MapObjectProfile_Derived2_20_Base *func_ov031_020f1404() {
     return data_027e0ce0->mUnk_1C->mUnk_0C;
 }
 
-inline G3d_Model *GetResource(char *str) {
-    return (G3d_Model *) G3d_GetUnkPtr(func_ov031_020f1404()->mUnk_50, str);
-}
-
-inline G3d_Model *GetResource() {
-    return (G3d_Model *) G3d_GetUnkPtr(func_ov031_020f1404()->mUnk_50, data_ov031_02110b5c);
-}
-
 DECL_PROFILE(ActorProfileShotArrow);
 
 Actor *ActorProfileShotArrow::Create() {
@@ -133,8 +125,9 @@ ActorProfileShotArrow::ActorProfileShotArrow() :
 
 ActorShotArrow::ActorShotArrow() :
     mUnk_9C(true),
-    mUnk_A0(GetResource()),
-    mUnk_100(&this->mUnk_120, GetResource(), func_ov031_020f1404()->func_ov000_02058a84(0, data_ov031_02110b08)),
+    mUnk_A0(GetModelFromProfile3(func_ov031_020f1404(), data_ov031_02110b5c)),
+    mUnk_100(&this->mUnk_120, GetModelFromProfile3(func_ov031_020f1404(), data_ov031_02110b5c),
+             func_ov031_020f1404()->func_ov000_02058a84(0, data_ov031_02110b08)),
     mUnk_140(this),
     mUnk_168(0),
     mUnk_16C(0),
@@ -639,15 +632,15 @@ void ActorShotArrow::func_ov031_020f2654(Mat3p *param1) {}
 void ActorShotArrow::func_ov031_020f2794(unk16 param1) {
     switch (param1) {
         case 0x0:
-            this->mUnk_94.vfunc_08(GetResource(data_ov031_02110b3c));
+            this->mUnk_94.vfunc_08(GetModelFromProfile3(func_ov031_020f1404(), data_ov031_02110b3c));
             this->mUnk_25A = false;
             break;
         case 0x1:
-            this->mUnk_94.vfunc_08(GetResource(data_ov031_02110b4c));
+            this->mUnk_94.vfunc_08(GetModelFromProfile3(func_ov031_020f1404(), data_ov031_02110b4c));
             this->mUnk_25A = false;
             break;
         case 0x2:
-            this->mUnk_94.vfunc_08(GetResource(data_ov031_02110b4c));
+            this->mUnk_94.vfunc_08(GetModelFromProfile3(func_ov031_020f1404(), data_ov031_02110b4c));
             this->mUnk_25A = true;
             func_ov000_02057c98(&this->mUnk_A0, &this->mUnk_100);
             break;
