@@ -3,19 +3,15 @@
 #include "Actor/ActorUnkRMSD.hpp"
 
 #include "Render/ModelRender.hpp"
-#include "System/SysNew.hpp"
 #include "nns/g3d/g3d.h"
+#include "profile.hpp"
 
 extern "C" void func_ov073_0215bb34(ActorUnkRMSD *);
 
 DECL_PROFILE(ActorProfileUnkRMSD);
 
-char data_ov063_021625d8[0x10] = "RMSD_wall";
-char data_ov063_021625e8[0x10] = "RMSD";
-
-inline G3d_Model *GetResource(char *str) {
-    return (G3d_Model *) G3d_GetUnkPtr(GET_PROFILE(ActorProfileUnkRMSD)->mUnk_3C.mUnk_50, str);
-}
+char data_ov063_021625d8[0x10]; // = "RMSD_wall";
+char data_ov063_021625e8[0x10]; // = "RMSD";
 
 Actor *ActorProfileUnkRMSD::Create() {
     return new(HeapIndex_2) ActorUnkRMSD();
@@ -44,11 +40,11 @@ void ActorUnkRMSD::func_ov063_0215c474(void) {
 }
 
 G3d_Model *ActorUnkRMSD::func_ov063_0215c488(void) {
-    return GetResource(data_ov063_021625e8);
+    return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSD)->mUnk_3C, data_ov063_021625e8);
 }
 
 G3d_Model *ActorUnkRMSD::func_ov063_0215c4c8(void) {
-    return GetResource(data_ov063_021625d8);
+    return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSD)->mUnk_3C, data_ov063_021625d8);
 }
 
 ActorUnkRMSD::~ActorUnkRMSD() {}
