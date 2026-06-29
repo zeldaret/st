@@ -22,8 +22,7 @@ ActorProfileUnkRMSD::ActorProfileUnkRMSD() :
 
 ActorUnkRMSD_Base::ActorUnkRMSD_Base() :
     mUnk_94(NULL),
-    mUnk_F4(NULL)
-{}
+    mUnk_F4(NULL) {}
 
 ActorUnkRMSD::ActorUnkRMSD() {
     ActorProfileUnkRMSD *r0 = GET_PROFILE(ActorProfileUnkRMSD);
