@@ -134,11 +134,11 @@ _ZN19ActorProfileUnkRMSW10GetProfileEv kind:function(arm,size=0xc) addr:0x0215dd
 _ZN19ActorProfileUnkRMSW6CreateEv kind:function(arm,size=0x24) addr:0x0215dd30
 _ZN19ActorProfileUnkRMSWC1Ev kind:function(arm,size=0x28) addr:0x0215dd54
 _ZN12ActorUnkRMSWC1Ev kind:function(arm,size=0x74) addr:0x0215dd7c
-_ZN12ActorUnkRMSW19func_ov063_0215ddf0Ev kind:function(arm,size=0x54) addr:0x0215ddf0
-_ZN12ActorUnkRMSW19func_ov063_0215de44Ev kind:function(arm,size=0x18) addr:0x0215de44
-_ZN12ActorUnkRMSW19func_ov063_0215de5cEv kind:function(arm,size=0x14) addr:0x0215de5c
-_ZN12ActorUnkRMSW19func_ov063_0215de70Ev kind:function(arm,size=0x40) addr:0x0215de70
-_ZN12ActorUnkRMSW19func_ov063_0215deb0Ev kind:function(arm,size=0x40) addr:0x0215deb0
+_ZN12ActorUnkRMSW8vfunc_18Ev kind:function(arm,size=0x54) addr:0x0215ddf0
+_ZN12ActorUnkRMSW8vfunc_20Ev kind:function(arm,size=0x18) addr:0x0215de44
+_ZN12ActorUnkRMSW8vfunc_24Ev kind:function(arm,size=0x14) addr:0x0215de5c
+_ZN12ActorUnkRMSW8vfunc_54Ev kind:function(arm,size=0x40) addr:0x0215de70
+_ZN12ActorUnkRMSW8vfunc_58Ev kind:function(arm,size=0x40) addr:0x0215deb0
 _ZN12ActorUnkRMSWD1Ev kind:function(arm,size=0x30) addr:0x0215def0
 _ZN12ActorUnkRMSWD0Ev kind:function(arm,size=0x38) addr:0x0215df20
 _ZN19ActorProfileUnkRMSWD1Ev kind:function(arm,size=0x14) addr:0x0215df58
@@ -368,8 +368,8 @@ data_ov063_02164370 kind:data(any) addr:0x02164370
 data_ov063_02164380 kind:data(any) addr:0x02164380
 data_ov063_02162578 kind:data(any) addr:0x02164390
 data_ov063_02162588 kind:data(any) addr:0x021643a0
-data_ov063_021643b0 kind:data(any) addr:0x021643b0
-data_ov063_021643c0 kind:data(any) addr:0x021643c0
+data_ov063_02162598 kind:data(any) addr:0x021643b0
+data_ov063_021625a8 kind:data(any) addr:0x021643c0
 data_ov063_021643d0 kind:data(any) addr:0x021643d0
 data_ov063_021643e0 kind:data(any) addr:0x021643e0
 data_ov063_021625d8 kind:data(any) addr:0x021643f0
@@ -443,7 +443,7 @@ data_ov063_02165104 kind:data(any) addr:0x02165104
 _ZTV19data_ov063_02165144 kind:data(any) addr:0x02165144
 _ZTV19data_ov063_0216518c kind:data(any) addr:0x0216518c ambiguous
 data_ov063_021651a8 kind:data(any) addr:0x021651a8
-_ZTV19data_ov063_021651c0 kind:data(any) addr:0x021651c0
+_ZTV19ActorProfileUnkRMSW kind:data(any) addr:0x021651c0
 _ZTV19data_ov063_021651e4 kind:data(any) addr:0x021651e4
 data_ov063_02165248 kind:data(any) addr:0x02165248 ambiguous
 _ZTV19data_ov063_02165248 kind:data(any) addr:0x02165248
