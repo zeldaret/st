@@ -21,7 +21,7 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkRMSD_Base : public Actor {
+class ActorUnkRMSBase : public Actor {
 public:
     /* 00 (base) */
     /* 94 */ ModelRender mUnk_94;
@@ -29,10 +29,10 @@ public:
     /* 154 */ unk32 mUnk_154;
     /* 158 */
 
-    ActorUnkRMSD_Base();
+    ActorUnkRMSBase();
 };
 
-class ActorUnkRMSD : public ActorUnkRMSD_Base {
+class ActorUnkRMSD : public ActorUnkRMSBase {
 public:
     /* 00 (base) */
     /* 158 */ unk32 mUnk_158;           //! INFO: Some class with a vfunc_34

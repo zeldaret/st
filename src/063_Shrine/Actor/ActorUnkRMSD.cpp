@@ -20,7 +20,7 @@ Actor *ActorProfileUnkRMSD::Create() {
 ActorProfileUnkRMSD::ActorProfileUnkRMSD() :
     ActorProfile_Derived1(ActorId_RMSD) {}
 
-ActorUnkRMSD_Base::ActorUnkRMSD_Base() :
+ActorUnkRMSBase::ActorUnkRMSBase() :
     mUnk_94(NULL),
     mUnk_F4(NULL) {}
 
