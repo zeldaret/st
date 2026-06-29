@@ -69,7 +69,9 @@ UnkStruct_027e09a4 *UnkStruct_027e09a4::Create(unk32 param1) {
     return new(HeapIndex_1) UnkStruct_027e09a4(param1);
 }
 
-UnkStruct_027e09a4::UnkStruct_027e09a4(unk32 param1) {
+UnkStruct_027e09a4::UnkStruct_027e09a4(unk32 param1) :
+    mUnk_00(false),
+    mUnk_14(false) {
     this->mUnk_28    = 0;
     this->mUnk_54    = NULL;
     this->mpWarpUnk1 = NULL;
@@ -414,8 +416,7 @@ DECL_INSTANCE_DTOR(UnkStruct_027e095c, data_027e095c);
 DECL_INSTANCE_DTOR(UnkStruct_027e0958, data_027e0958);
 DECL_INSTANCE_DTOR(UnkStruct_027e0954, data_027e0954);
 
-UnkStruct_027e09a4_54_Base::UnkStruct_027e09a4_54_Base(unk32 *param1) :
-    mUnk_1C((s32) 0) {
+UnkStruct_027e09a4_54_Base::UnkStruct_027e09a4_54_Base(unk32 *param1) {
     this->mUnk_04.Clear();
     this->mUnk_0C[0] = L'\0';
     this->mUnk_0C[7] = L'\0';
@@ -489,7 +490,9 @@ UnkStruct_WarpUnk1_24::UnkStruct_WarpUnk1_24() {
     this->mUnk_2A = false;
 }
 
-UnkStruct_WarpUnk1::UnkStruct_WarpUnk1() {
+UnkStruct_WarpUnk1::UnkStruct_WarpUnk1() :
+    mCurEntrance(false),
+    mNextEntrance(false) {
     this->mSpawnTransitionType = 0;
     this->mUnk_A0.mUnk_04.x    = 0;
     this->mUnk_A0.mUnk_04.y    = 0;

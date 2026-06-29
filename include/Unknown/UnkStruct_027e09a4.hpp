@@ -32,20 +32,22 @@ struct EntranceInfo {
     /* 12 */ u16 unk_12;
     /* 14 */
 
-    EntranceInfo() {
+    EntranceInfo() {}
+
+    EntranceInfo(bool isCS) {
         this->sceneIndex = SceneIndex_Max;
         this->unk_04     = 0;
         this->unk_08     = 0;
         this->roomIndex  = ROOM_INDEX_NONE;
         this->spawnIndex = 0;
-        this->isCS       = false;
+        this->isCS       = isCS;
         this->unk_0D     = 0;
         this->csIndex    = CutsceneIndex_None;
         this->unk_0F     = 0;
         this->unk_10     = 0;
     }
 
-    EntranceInfo(CutsceneParamsEntry *pEntry, bool nextIsCS) {
+    EntranceInfo(CutsceneParamsEntry *pEntry, bool isCS) {
         u8 sceneIndex    = pEntry->mSceneIndex;
         u8 cutsceneIndex = pEntry->mCutsceneIndex;
         u8 spawnIndex    = pEntry->mSpawnIndex;
@@ -56,7 +58,7 @@ struct EntranceInfo {
         this->unk_08     = 0;
         this->roomIndex  = roomIndex;
         this->spawnIndex = spawnIndex;
-        this->isCS       = nextIsCS;
+        this->isCS       = isCS;
         this->unk_0D     = 0;
         this->csIndex    = cutsceneIndex;
         this->unk_0F     = 0;
@@ -96,8 +98,6 @@ struct EntranceInfo {
     EntranceInfo(const EntranceInfo &refSource) {
         MI_CpuCopy32((void *) &refSource, this, sizeof(EntranceInfo));
     }
-
-    EntranceInfo(s32) {}
 };
 
 class UnkStruct_WarpUnk1_24 : public UnkStruct_0204a060_Base3 {

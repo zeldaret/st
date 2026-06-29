@@ -12,7 +12,8 @@
 extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_ov000_0205d65c(void *, VecFx32 *, VecFx32 *, u32);
 
-PlayerSceneChange::PlayerSceneChange() {
+PlayerSceneChange::PlayerSceneChange() :
+    mUnk_54(false) {
     this->mUnk_68 = this->mUnk_2C->mUnk_14C;
     this->mUnk_6C = -1;
 
