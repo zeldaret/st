@@ -21,8 +21,8 @@ ActorProfileUnkRMSD::ActorProfileUnkRMSD() :
     ActorProfile_Derived1(ActorId_RMSD) {}
 
 ActorUnkRMSD_Base::ActorUnkRMSD_Base() :
-    mUnk_94(0), // Placeholder
-    mUnk_F4(0)  // Placeholder
+    mUnk_94(NULL),
+    mUnk_F4(NULL)
 {}
 
 ActorUnkRMSD::ActorUnkRMSD() {
