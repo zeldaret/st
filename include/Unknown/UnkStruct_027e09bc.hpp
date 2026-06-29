@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Unknown/Common.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -20,13 +21,20 @@ public:
     /* 04 */ UnkStruct_027e09bc_0C *mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ UnkStruct_027e09bc_0C *mUnk_0C;
+    /* 10 */ STRUCT_PAD(0x10, 0x48);
+    /* 48 */ UnkSystem8 mUnk_48;
 
     UnkStruct_027e09bc();
     ~UnkStruct_027e09bc();
 
+    // overlay 0
+    void func_ov000_020771c8();
+
     // overlay 1
-    void func_ov001_020babc8();
     void func_ov001_020bab5c();
+    void func_ov001_020babc8();
+    void func_ov001_020babe8();
+    void func_ov001_020bac08();
 
     static UnkStruct_027e09bc *Create();
     static void Destroy();

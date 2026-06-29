@@ -10,7 +10,7 @@
 #include "versions.h"
 
 extern "C" void func_01ffedac(u16 *, VecFx32 *);
-extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, VecFx32 *);
+extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0C_Base *, VecFx32 *);
 extern "C" void func_ov000_0205c1f0(unk32 *, u16);
 extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
 extern "C" void func_ov017_020bf99c();

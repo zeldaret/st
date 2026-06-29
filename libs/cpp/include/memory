@@ -1,0 +1,51 @@
+#ifndef _STD_MEMORY
+#define _STD_MEMORY
+
+#include <new>
+#include <limits>
+
+// from rb3 decomp
+
+namespace std {
+    template <class T> class allocator {
+    public:
+        typedef T value_type;
+        typedef T *pointer;
+        typedef const T *const_pointer;
+        typedef T &reference;
+        typedef const T &const_reference;
+        typedef size_t size_type;
+        typedef ptrdiff_t difference_type;
+
+        template <class U> struct rebind {
+            typedef allocator<U> other;
+        };
+
+        allocator() {}
+        allocator(const allocator<T> &) {}
+        template <class U> allocator(const allocator<U> &) {}
+        ~allocator() {}
+
+        size_type max_size() const throw() {
+            return std::numeric_limits<size_t>::max() / sizeof(T);
+        }
+
+        pointer allocate(size_type count, const void *hint = 0) {
+            return reinterpret_cast<pointer>(::operator new(count * sizeof(T), 1, 4));
+        }
+
+        void deallocate(pointer p, size_type n) {
+            ::operator delete(p);
+        }
+
+        void construct(pointer p, const_reference val) {
+            new(p) T(val);
+        }
+
+        void destroy(pointer p) {
+            p->~T();
+        }
+    };
+}; // namespace std
+
+#endif // _STD_MEMORY

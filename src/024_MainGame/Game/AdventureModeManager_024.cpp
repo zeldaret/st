@@ -601,8 +601,8 @@ void AdventureModeManager::vfunc_34(unk32 param1, unk32 param2) {
     }
 }
 
-void AdventureModeManager::vfunc_38(u32 param1, u8 param2, unk16 param3, unk16 param4) {
-    this->func_ov024_020c6514(param1, param2, param3, param4);
+void AdventureModeManager::vfunc_38(u32 sceneIndex, u8 roomIndex, unk16 param3, unk16 param4) {
+    this->func_ov024_020c6514(sceneIndex, roomIndex, param3, param4);
 }
 
 void AdventureModeManager::func_ov024_020c6514(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4) {

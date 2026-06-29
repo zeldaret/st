@@ -9,12 +9,6 @@
 
 class UnkStruct_SceneChange1;
 
-struct UnkStruct_func_ov001_020bb018_param2 {
-    /* 00 */ STRUCT_PAD(0x00, 0x08);
-    /* 08 */ u16 mUnk_08;
-    /* 08 */ u16 mUnk_0A;
-};
-
 class ActorManager : public AutoInstance<ActorManager> {
 public:
     /* 00 */ Actor **mActorTable;
@@ -55,7 +49,8 @@ public:
 
     // overlay 1
     void func_ov001_020bafdc();
-    void func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param2 *param1);
+    void func_ov001_020bb018(ZOBHeader *pHeader);
+    void func_ov001_020bb414();
     void func_ov001_020bb488();
     void func_ov001_020bb548();
     void func_ov001_020bb630();
@@ -65,7 +60,6 @@ public:
 
     static ActorManager *Create();
     static void Destroy();
-    static void func_ov001_020bb414(ActorManager *instance);
     static bool func_ov001_020bb728(s32 param1);
     static void func_ov001_020bb824();
     static void func_ov001_020bb844();

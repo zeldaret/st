@@ -14,6 +14,8 @@
 
 #include <nitro/math.h>
 
+class UnkStruct_ov001_020c40f4;
+
 class UnkStruct_027e0ce0_34 {
 public:
     /* 00 */ unk32 mUnk_00[4];
@@ -442,8 +444,14 @@ public:
     static UnkStruct_027e0ce0_34 *func_ov000_0205c904();
 
     // overlay 1
-    void func_ov001_020bc5f8();
     void func_ov001_020bc524(bool param1);
+    void func_ov001_020bc5f8();
+    void func_ov001_020bc65c();
+    void func_ov001_020bc69c();
+    void func_ov001_020bc6d8(unk32 param1, const UnkStruct_ov001_020c40f4 *param2);
+    void func_ov001_020bc6e8(const UnkStruct_ov001_020c40f4 *param1);
+    void func_ov001_020bc6fc(const UnkStruct_ov001_020c40f4 *param1, const UnkStruct_ov001_020c40f4 *param2, unk32 param3,
+                             unk32 param4);
 
     static UnkStruct_027e0ce0 *Create();
     static void Destroy();

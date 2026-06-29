@@ -4,7 +4,8 @@
 #include "Unknown/UnkStruct_027e0d00.hpp"
 // clang-format on
 
-extern "C" void func_02026800(void *, int, const char *, ...);
+#include <printf.h>
+
 extern const char *data_ov000_020aa244; // ".narc"
 extern const char *data_ov000_020aa24c; // ".bin"
 extern const char *data_ov000_020aa250[4];
@@ -24,11 +25,11 @@ DATA_ALIGN_FIX();
 
 void UnkStruct_027e0d00_20::func_ov024_020d4e9c(wchar_t *param1, unk32 param2, bool param3) {
     const char *fileExt = param3 ? data_ov000_020aa24c : data_ov000_020aa244;
-    func_02026800(param1, 0x40, "%s/anim%s", data_ov024_020d8474[param2], fileExt);
+    snprintf((char *) param1, 0x40, "%s/anim%s", data_ov024_020d8474[param2], fileExt);
 }
 
 void UnkStruct_027e0d00_20::func_ov024_020d4edc(wchar_t *param1, wchar_t *param2, unk32 param3) {
-    func_02026800(param1, 0x40, "%s:/anm%s", param2, data_ov000_020aa250[param3]);
+    snprintf((char *) param1, 0x40, "%s:/anm%s", param2, data_ov000_020aa250[param3]);
 }
 
 UnkStruct_027e0d00_20::UnkStruct_027e0d00_20(unk32 param1, unk32 param2) :

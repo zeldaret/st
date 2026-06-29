@@ -79,7 +79,7 @@ public:
     ~UnkStruct_027e09ac();
 
     // overlay 0
-    void func_ov000_020726f0(unk32 param1, unk32 param2, unk32 param3);
+    void func_ov000_020726f0(u16 param1, unk32 param2, unk32 param3);
     void func_ov000_020729c4(UnkStruct_027e09ac_14 *param1, u16 param2, u16 param3, s16 param4, s16 param5);
 
     // overlay 1

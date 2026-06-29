@@ -85,6 +85,23 @@ public:
     /* 24 */ virtual ~UnkSystem1_ov000_Derived2() override;
 };
 
+// data_ov000_020b23a0
+class UnkSystem1_ov000_Derived3 : public UnkSystem1_ov000_Derived1 {
+public:
+    /* 00 (base) */
+    /* 14 */
+
+    UnkSystem1_ov000_Derived3();
+
+    /* 00 */ virtual void vfunc_00(unk32 param1) override;
+    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 10 */ virtual unk32 vfunc_10(u16 *param1) override;
+    /* 14 */ virtual bool vfunc_14(FLW1Instr *param1) override;
+    /* 1C */ virtual unk32 vfunc_1C(u32 param1, unk32 param2, unk32 param3) override;
+    /* 20 */ virtual unk32 vfunc_20(unk32 param1, unk32 param2, unk32 param3) override;
+    /* 24 */ virtual ~UnkSystem1_ov000_Derived3() override;
+};
+
 // data_ov010_020b8e10
 class UnkSystem1_ov010 : public UnkSystem1_ov000_Derived1 {
 public:

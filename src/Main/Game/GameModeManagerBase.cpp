@@ -125,14 +125,14 @@ void GameModeManagerBase::func_0201875c(void) {
     }
 }
 
-struct UnkStruct5 {
+struct UnkStruct6 {
     void *a;
     unk32 b;
 };
 
 void GameModeManagerBase::func_02018830(unk8 *param1) {
     unk32 id = this->mNextButtonID;
-    UnkStruct5 local_28;
+    UnkStruct6 local_28;
     local_28.a = param1;
     local_28.b = id;
 

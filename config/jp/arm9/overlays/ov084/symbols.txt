@@ -385,8 +385,8 @@ _ZN12ActorUnkLBRC19func_ov084_021632e0Ev kind:function(arm,size=0xbc) addr:0x021
 _ZN12ActorUnkLBRCD1Ev kind:function(arm,size=0x38) addr:0x0216339c
 _ZN12ActorUnkLBRCD0Ev kind:function(arm,size=0x40) addr:0x021633d4
 _ZN19ActorProfileUnkLBRCD1Ev kind:function(arm,size=0x14) addr:0x02163414
-func_ov084_02163428 kind:function(arm,size=0x80) addr:0x02163428
-func_ov084_021634a8 kind:function(arm,size=0x1c) addr:0x021634a8
+func_ov084_0216122c kind:function(arm,size=0x80) addr:0x02163428
+func_ov084_021612ac kind:function(arm,size=0x1c) addr:0x021634a8
 _ZN23MapObjectProfileUnkPLV210GetProfileEv kind:function(arm,size=0xc) addr:0x021634c4
 _ZN23MapObjectProfileUnkPLV26CreateEv kind:function(arm,size=0x24) addr:0x021634d0
 _ZN23MapObjectProfileUnkPLV2C1Ev kind:function(arm,size=0xa4) addr:0x021634f4
@@ -663,7 +663,7 @@ _ZN15ProfileInstanceI23MapObjectProfileUnkSTSVE8sProfileE kind:bss addr:0x021667
 _ZGVN15ProfileInstanceI19ActorProfileUnkLBRCE8sProfileE kind:bss addr:0x02166808
 @33823 kind:bss addr:0x0216680c
 _ZN15ProfileInstanceI19ActorProfileUnkLBRCE8sProfileE kind:bss addr:0x02166818
-data_ov084_021668f0 kind:bss addr:0x021668f0
+data_ov084_02164690 kind:bss addr:0x021668f0
 _ZGVN15ProfileInstanceI23MapObjectProfileUnkPLV2E8sProfileE kind:bss addr:0x021668f4
 @33267 kind:bss addr:0x021668f8
 _ZN15ProfileInstanceI23MapObjectProfileUnkPLV2E8sProfileE kind:bss addr:0x02166904

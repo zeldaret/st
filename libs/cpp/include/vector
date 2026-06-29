@@ -1,10 +1,549 @@
-#pragma once
+#ifndef _STD_VECTOR
+#define _STD_VECTOR
+
+#include <algorithm>
+#include <cstddef>
+#include <iterator>
+#include <memory>
+#include <stdexcept>
+
+#include <compressed_pair.hpp>
+#include <msl_unk.hpp>
+
+#define TAG_UNK 0
+
+// from key decomp
 
 namespace std {
-    template <class T> class vector {
+    template <bool> class __vector_common {
     public:
-        T *elements;
-        int size;
-        int capacity;
+        static void throw_length_error();
     };
+
+    template <typename T, class Allocator> class __vec_deleter_helper;
+
+    template <typename T, class Allocator> class __vec_deleter {
+    public:
+        typedef typename Metrowerks::compressed_pair<size_t, Allocator>::second_param allocator_param;
+        typedef T value_type;
+        typedef Allocator allocator_type;
+        typedef size_t size_type;
+        typedef value_type &reference;
+        typedef const value_type &const_reference;
+        typedef T *iterator;
+        typedef const T *const_iterator;
+        typedef T *pointer;
+        typedef const pointer const_pointer;
+
+        __vec_deleter() :
+            data_(nullptr),
+            size_(0),
+            capacity_(0) {}
+
+        explicit __vec_deleter(allocator_param a) :
+            data_(nullptr),
+            size_(0),
+            capacity_(0, a) {}
+
+        ~__vec_deleter();
+
+        reference operator[](size_t n) {
+            return data_[n];
+        }
+
+        const_reference operator[](size_t n) const {
+            return data_[n];
+        }
+
+        pointer data() {
+            return data_;
+        }
+
+        iterator begin() {
+            return data_;
+        }
+
+        iterator end() {
+            return data_ + size_;
+        }
+
+        reference front() {
+            return data_[0];
+        }
+
+        const_reference front() const {
+            return data_[0];
+        }
+
+        reference back() {
+            return data_[size_ - 1];
+        }
+
+        const_reference back() const {
+            return data_[size_ - 1];
+        }
+
+        void throw_length_error();
+
+#if DONT_INLINE_STD
+        void clear() {
+            bool _b[4];
+            size_t size = size_;
+            _b[0]       = false;
+            erase_at_end(size, _b[0]);
+        }
+        void erase_at_end(size_t, bool &);
+#else
+        void erase_at_end(const size_t n) {
+            // erase_at_end(n, Metrowerks::int2type<true>());
+            size_ -= n;
+        }
+        void clear() {
+            erase_at_end(size());
+        }
+#endif
+
+        // void erase_at_end(size_t n, Metrowerks::int2type<true>) DONT_INLINE_CLASS {
+        //     T* e = end();
+        //     size_ -= n;
+
+        //     while (n != 0) {
+        //         e--;
+        //         e->~T();
+        //         n--;
+        //     }
+        // }
+
+        size_t &cap() {
+            return capacity_.first();
+        }
+
+        Allocator alloc() const {
+            return capacity_.second();
+        }
+
+        iterator erase(iterator __first, iterator __last, UnkMSLStruct1);
+
+        void sub_push_back(const_reference x, Metrowerks::int2type<false>);
+        void sub_push_back(const_reference x, Metrowerks::int2type<true>);
+
+        void sub_push_back(const_reference x) {
+            sub_push_back(x, Metrowerks::int2type<Metrowerks::has_trivial_copy_ctor<T>::value &&
+                                                  Metrowerks::has_trivial_assignment<T>::value>());
+        }
+
+        void push_back(const_reference x, Metrowerks::int2type<false>) {
+            if (size_ < cap()) {
+                alloc().construct(end(), x);
+                size_++;
+            } else {
+                sub_push_back(x);
+            }
+        }
+
+        void push_back(const_reference x, Metrowerks::int2type<true>) {
+            if (size_ < cap()) {
+                size_++;
+                back() = x;
+            } else {
+                sub_push_back(x);
+            }
+        }
+
+        void push_back(const_reference x) {
+            push_back(x, Metrowerks::int2type<Metrowerks::has_trivial_copy_ctor<T>::value &&
+                                              Metrowerks::has_trivial_assignment<T>::value>());
+        }
+
+        void allocate(size_t min, size_t max) {
+            allocate(min, max, Metrowerks::int2type<true>());
+        }
+
+        void allocate(size_t min, size_t max, Metrowerks::int2type<true> t) {
+            allocate(max, t);
+        }
+
+        void allocate(size_t n) {
+            allocate(n, Metrowerks::int2type<true>());
+        }
+
+        void allocate(size_t n, Metrowerks::int2type<true> t);
+
+        void optimize_after_moved_from() {
+            optimize_after_moved_from(Metrowerks::int2type<true>());
+        }
+
+        void optimize_after_moved_from(Metrowerks::int2type<true>) {
+            size_ = 0;
+        }
+
+        bool expand_by(size_t n) {
+            size_t max_cap = 0;
+            return expand_by(n, max_cap, Metrowerks::int2type<true>());
+        }
+
+        bool expand_by(size_t n, size_t &max_cap, Metrowerks::int2type<true>) {
+            max_cap = grow_by(n);
+            return false;
+        }
+
+        size_t grow_by(size_t n);
+
+        void append_realloc(size_t n, const_reference x);
+
+        size_t max_size() const {
+            return alloc().max_size();
+        }
+
+        size_t capacity() const {
+            return capacity_.first();
+        }
+
+        volatile size_t size() {
+            return size_;
+        }
+
+        void resize(size_t n) {
+            size_ = n;
+        }
+
+        void move_construct_to_end(iterator begin, iterator end);
+
+        void reallocate_copy(size_t n) {
+            __vec_deleter<T, Allocator> tmp(alloc());
+            tmp.allocate(n);
+            tmp.move_construct_to_end(begin(), end());
+            optimize_after_moved_from();
+            swap(cap(), tmp.cap());
+            swap(data_, tmp.data_);
+            swap(size_, tmp.size_);
+        }
+
+        void reserve(size_t n) {
+            if (n > cap()) {
+                reallocate_copy(n);
+            }
+        }
+
+        bool empty() const {
+            return size_ == 0;
+        }
+
+    public:
+        T *data_;
+        size_t size_;
+        Metrowerks::compressed_pair<size_t, Allocator> capacity_;
+    };
+
+    template <typename T, typename Allocator> __vec_deleter<T, Allocator>::~__vec_deleter() {
+        UnkMSLStruct1 unk = UnkMSLStruct1(); // somehow needed
+
+        if (data_ != nullptr) {
+            clear();
+            alloc().deallocate(data_, cap());
+        }
+    }
+
+    template <typename T, typename Allocator> size_t __vec_deleter<T, Allocator>::grow_by(size_t n) {
+        size_t max = max_size();
+        size_t c   = cap();
+
+        if (n > max - c) {
+            __vector_common<true>::throw_length_error();
+        }
+
+        size_t a = max / 3;
+
+        if (c < a) {
+            return c + std::max((c + 1) * 3 / 5, n);
+        } else if (c < a * 2) {
+            return c + std::max((c + 1) / 2, n);
+        }
+
+        return max;
+    }
+
+    template <typename T, typename Allocator>
+    void __vec_deleter<T, Allocator>::allocate(size_t n, Metrowerks::int2type<true> t) {
+        size_t max = max_size();
+
+        if (max < n) {
+            __vector_common<true>::throw_length_error();
+        }
+
+        data_ = alloc().allocate(n);
+        cap() = n;
+    }
+
+    // https://decomp.me/scratch/Yw4fn
+    template <typename T, typename Allocator> void __vec_deleter<T, Allocator>::append_realloc(size_t n, const_reference x) {
+        __vec_deleter_helper<T, Allocator> tmp(alloc());
+
+        size_t max = tmp.grow_by((size_ + n) - cap());
+        tmp.allocate(size_ + n, max);
+        tmp.start_ = size_;
+        tmp.construct_at_end(n, x);
+        tmp.move_construct_to_begin(begin(), end());
+        optimize_after_moved_from();
+
+        std::swap(cap(), tmp.cap());
+        std::swap(data_, tmp.data_);
+        std::swap(size_, tmp.size_);
+    }
+
+    template <typename T, typename Allocator>
+    void __vec_deleter<T, Allocator>::sub_push_back(const_reference x, Metrowerks::int2type<TAG_UNK>) {
+        if (expand_by(1)) {
+            size_++;
+            back() = x;
+        } else {
+            append_realloc(1, x);
+        }
+    }
+
+    template <typename T, typename Allocator>
+    void __vec_deleter<T, Allocator>::sub_push_back(const_reference x, Metrowerks::int2type<true>) {
+        if (expand_by(1)) {
+            size_++;
+            back() = x;
+        } else {
+            append_realloc(1, x);
+        }
+    }
+
+    template <typename T, typename Allocator>
+    __vec_deleter<T, Allocator>::iterator __vec_deleter<T, Allocator>::erase(iterator __first, iterator __last,
+                                                                             UnkMSLStruct1) {
+        // adapted from https://github.com/matta/sgi-stl/blob/635eaeef4533214ec140fb17411558ad441d2996/stl/stl_vector.h#L420
+
+        if (__first != __last) {
+            std::memmove(__first, __last, (end() - __last) * sizeof(value_type));
+            this->size_ -= __last - __first;
+        }
+
+        return __first;
+    }
+
+    template <typename T, class Allocator> class __vec_deleter_helper : public __vec_deleter<T, Allocator> {
+    protected:
+        typedef __vec_deleter<T, Allocator> _Base;
+        typedef _Base::allocator_param allocator_param;
+        typedef _Base::value_type value_type;
+        typedef _Base::allocator_type allocator_type;
+        typedef _Base::size_type size_type;
+        typedef _Base::reference reference;
+        typedef _Base::const_reference const_reference;
+        typedef _Base::pointer pointer;
+        typedef _Base::const_pointer const_pointer;
+        typedef _Base::iterator iterator;
+        typedef _Base::const_iterator const_iterator;
+
+    public:
+        __vec_deleter_helper(allocator_param a) :
+            _Base(a),
+            start_(0) {}
+
+        ~__vec_deleter_helper();
+
+        void construct_at_end(size_t n, const_reference x) {
+            construct_at_end(n, x, Metrowerks::int2type<Metrowerks::has_trivial_copy_ctor<T>::value>());
+        }
+
+        void construct_at_end(size_t n, const_reference x, Metrowerks::int2type<TAG_UNK>) {
+            for (pointer p = _Base::data_ + _Base::size_; n; n--, p++, _Base::size_++) {
+                _Base::alloc().construct(p, x);
+            }
+        }
+
+        void construct_at_end(size_t n, const_reference x, Metrowerks::int2type<true>) {
+            std::fill_n(_Base::data_ + start_ + _Base::size_, n, x);
+            _Base::size_ += n;
+        }
+
+        void move_construct_to_begin(pointer first, pointer last) {
+            move_construct_to_begin(first, last, Metrowerks::int2type<Metrowerks::has_trivial_copy_ctor<T>::value ? 2 : 0>());
+        }
+
+        void move_construct_to_begin(pointer first, pointer last, Metrowerks::int2type<TAG_UNK>) {
+            for (pointer ptr = _Base::data_ + start_; first < last; start_--, _Base::size_++) {
+                _Base::alloc().construct(--ptr, std::move(*--last));
+            }
+        }
+
+        void move_construct_to_begin(pointer first, pointer last, Metrowerks::int2type<2>) {
+            size_t n = last - first;
+            start_ -= n;
+            memcpy(_Base::data_ + start_, first, n * sizeof(value_type));
+            memset(first, 0, n * sizeof(value_type));
+            _Base::size_ += n;
+        }
+
+        size_t start_;
+    };
+
+    template <typename T, class Allocator> __vec_deleter_helper<T, Allocator>::~__vec_deleter_helper() {
+        T *start = _Base::data_ + start_;
+        T *end   = start + _Base::size_;
+
+        while (start < end) {
+            _Base::alloc().destroy(end);
+            end--;
+        }
+
+        _Base::size_ = 0;
+    }
+
+    template <typename T, class Allocator, bool I> class __vec_constructor : public __vec_deleter<T, Allocator> {
+    protected:
+        typedef __vec_deleter<T, Allocator> _Base;
+        typedef _Base::allocator_param allocator_param;
+        typedef _Base::value_type value_type;
+        typedef _Base::allocator_type allocator_type;
+        typedef _Base::size_type size_type;
+        typedef _Base::reference reference;
+        typedef _Base::const_reference const_reference;
+        typedef _Base::pointer pointer;
+        typedef _Base::const_pointer const_pointer;
+        typedef _Base::iterator iterator;
+        typedef _Base::const_iterator const_iterator;
+
+    public:
+        __vec_constructor() {}
+        // ~__vec_constructor();
+    };
+
+    template <typename T, class Allocator>
+    class __vec_constructor<T, Allocator, true> : public __vec_constructor<T, Allocator, false> {
+    protected:
+        typedef __vec_deleter<T, Allocator> _Deleter;
+        typedef __vec_constructor<T, Allocator, false> _Constructor;
+        typedef _Constructor::allocator_param allocator_param;
+        typedef _Constructor::value_type value_type;
+        typedef _Constructor::allocator_type allocator_type;
+        typedef _Constructor::size_type size_type;
+        typedef _Constructor::reference reference;
+        typedef _Constructor::const_reference const_reference;
+        typedef _Constructor::pointer pointer;
+        typedef _Constructor::const_pointer const_pointer;
+        typedef _Constructor::iterator iterator;
+        typedef _Constructor::const_iterator const_iterator;
+
+        __vec_constructor() {}
+        // ~__vec_constructor() { }
+
+    public:
+        void push_back(const_reference x) {
+            _Constructor::push_back(x);
+        }
+
+        reference operator[](size_t n) {
+            return _Deleter::operator[](n);
+        }
+
+        const_reference operator[](size_t n) const {
+            return _Deleter::operator[](n);
+        }
+    };
+
+    // clang-format off
+    template <typename T, typename Allocator = allocator<T> > class vector : public __vec_constructor<T, Allocator, true> {
+        // clang-format on
+    protected:
+        typedef __vec_constructor<T, Allocator, true> _Constructor;
+        typedef __vec_deleter<T, Allocator> _Deleter;
+        typedef _Constructor::allocator_param allocator_param;
+        typedef _Constructor::value_type value_type;
+        typedef _Constructor::allocator_type allocator_type;
+        typedef _Constructor::size_type size_type;
+        typedef _Constructor::reference reference;
+        typedef _Constructor::const_reference const_reference;
+        typedef _Constructor::pointer pointer;
+        typedef _Constructor::const_pointer const_pointer;
+
+    public:
+        typedef _Constructor::iterator iterator;
+        typedef _Constructor::const_iterator const_iterator;
+
+        vector() {}
+        ~vector() { }
+
+        void push_back(const_reference x) {
+            _Constructor::push_back(x);
+        }
+
+        void clear() {
+            _Deleter::clear();
+        }
+
+        reference operator[](size_t n) {
+            return _Deleter::operator[](n);
+        }
+
+        const_reference operator[](size_t n) const {
+            return _Deleter::operator[](n);
+        }
+
+        iterator erase(iterator __first, iterator __last) {
+            return _Deleter::erase(__first, __last, UnkMSLStruct1());
+        }
+    };
+
 } // namespace std
+
+template <typename T> class CustomVector : public std::vector<T> {
+public:
+protected:
+    typedef std::vector<T> _Vector;
+    typedef _Vector::allocator_param allocator_param;
+    typedef _Vector::value_type value_type;
+    typedef _Vector::allocator_type allocator_type;
+    typedef _Vector::size_type size_type;
+    typedef _Vector::reference reference;
+    typedef _Vector::const_reference const_reference;
+    typedef _Vector::pointer pointer;
+    typedef _Vector::const_pointer const_pointer;
+
+public:
+    typedef _Vector::iterator iterator;
+    typedef _Vector::const_iterator const_iterator;
+
+    ~CustomVector();
+
+    iterator unk_action2(iterator begin, iterator end, UnkMSLStruct1) {
+        iterator it = begin;
+
+        while (it != end) {
+            T *ptr = (T *) *it;
+
+            if (ptr != NULL) {
+                if (*((u8 *) ptr + 4)) {
+                    ::operator delete(ptr);
+                }
+
+                *it = NULL;
+            }
+
+            it++;
+            begin = this->begin();
+            end   = this->end();
+        }
+
+        return std::remove(begin, end, (T) NULL);
+    }
+
+    void unk_action1() {
+        this->erase(this->unk_action2(this->begin(), this->end(), UnkMSLStruct1()), this->end());
+        this->clear();
+    }
+};
+
+template <typename T> CustomVector<T>::~CustomVector() {
+    UnkMSLStruct1 unk = UnkMSLStruct1(); // somehow needed
+
+    if (_Vector::begin() != nullptr) {
+        _Vector::clear();
+        _Vector::alloc().deallocate(_Vector::begin(), _Vector::cap());
+    }
+}
+
+#endif

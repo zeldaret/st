@@ -7,6 +7,8 @@
 extern "C" {
 #endif
 
+struct mbstate_t {};
+
 size_t wcslen(const wchar_t *str);
 wchar_t *wcscpy(wchar_t *dest, const wchar_t *src);
 wchar_t *wcsncpy(wchar_t *dest, const wchar_t *src, size_t n);

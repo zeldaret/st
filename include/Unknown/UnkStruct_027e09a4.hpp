@@ -9,6 +9,8 @@
 #include "iterator.hpp"
 #include "types.h"
 
+#include <nitro/mi.h>
+
 struct SaveFile;
 class UnkStruct_027e09a4;
 
@@ -58,6 +60,10 @@ struct UnkStruct_SceneChange1 {
         this->mCutsceneIndex = cutsceneIndex;
         this->mUnk_0F        = 0;
         this->mUnk_10        = 0;
+    }
+
+    UnkStruct_SceneChange1(const UnkStruct_SceneChange1 *pSource) {
+        MI_CpuCopy32((void *) pSource, this, sizeof(UnkStruct_SceneChange1));
     }
 
     UnkStruct_SceneChange1(s32) {}
