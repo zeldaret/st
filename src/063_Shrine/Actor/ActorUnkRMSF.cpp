@@ -16,11 +16,11 @@ ActorProfileUnkRMSF::ActorProfileUnkRMSF() :
 
 ActorUnkRMSF::ActorUnkRMSF() {}
 
-G3d_Model *ActorUnkRMSF::vfunc_50(void) {
+G3d_Model *ActorUnkRMSF::vfunc_54(void) {
     return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSF)->mUnk_3C, data_ov063_021625c8);
 }
 
-G3d_Model *ActorUnkRMSF::vfunc_54(void) {
+G3d_Model *ActorUnkRMSF::vfunc_58(void) {
     return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSF)->mUnk_3C, data_ov063_021625b8);
 }
 
