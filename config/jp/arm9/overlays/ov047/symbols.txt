@@ -1,5 +1,5 @@
-func_ov047_02131ec0 kind:function(arm,size=0x64) addr:0x02131ec0
-func_ov047_02131f24 kind:function(arm,size=0x28) addr:0x02131f24
+_ZN29UnkStruct_027e0cd8_0C_Base_98C1Ev kind:function(arm,size=0x64) addr:0x02131ec0
+_ZN29UnkStruct_027e0cd8_0C_Base_98D1Ev kind:function(arm,size=0x28) addr:0x02131f24
 func_ov047_02131f4c kind:function(arm,size=0x30) addr:0x02131f4c
 func_ov047_02131f7c kind:function(arm,size=0x200) addr:0x02131f7c
 func_ov047_0213217c kind:function(arm,size=0x39c) addr:0x0213217c

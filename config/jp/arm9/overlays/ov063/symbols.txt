@@ -146,8 +146,8 @@ _ZN19ActorProfileUnkRMSF10GetProfileEv kind:function(arm,size=0xc) addr:0x0215df
 _ZN19ActorProfileUnkRMSF6CreateEv kind:function(arm,size=0x24) addr:0x0215df78
 _ZN19ActorProfileUnkRMSFC1Ev kind:function(arm,size=0x28) addr:0x0215df9c
 _ZN12ActorUnkRMSFC1Ev kind:function(arm,size=0x20) addr:0x0215dfc4
-_ZN12ActorUnkRMSF19func_ov063_0215dfe4Ev kind:function(arm,size=0x40) addr:0x0215dfe4
-_ZN12ActorUnkRMSF19func_ov063_0215e024Ev kind:function(arm,size=0x40) addr:0x0215e024
+_ZN12ActorUnkRMSF8vfunc_54Ev kind:function(arm,size=0x40) addr:0x0215dfe4
+_ZN12ActorUnkRMSF8vfunc_58Ev kind:function(arm,size=0x40) addr:0x0215e024
 _ZN12ActorUnkRMSFD1Ev kind:function(arm,size=0x28) addr:0x0215e064
 _ZN12ActorUnkRMSFD0Ev kind:function(arm,size=0x30) addr:0x0215e08c
 _ZN19ActorProfileUnkRMSFD1Ev kind:function(arm,size=0x14) addr:0x0215e0bc
@@ -370,8 +370,8 @@ data_ov063_02164390 kind:data(any) addr:0x02164390
 data_ov063_021643a0 kind:data(any) addr:0x021643a0
 data_ov063_021643b0 kind:data(any) addr:0x021643b0
 data_ov063_021643c0 kind:data(any) addr:0x021643c0
-data_ov063_021643d0 kind:data(any) addr:0x021643d0
-data_ov063_021643e0 kind:data(any) addr:0x021643e0
+data_ov063_021625b8 kind:data(any) addr:0x021643d0
+data_ov063_021625c8 kind:data(any) addr:0x021643e0
 data_ov063_021625d8 kind:data(any) addr:0x021643f0
 data_ov063_021625e8 kind:data(any) addr:0x02164400
 data_ov063_02164410 kind:data(any) addr:0x02164410
@@ -445,12 +445,11 @@ _ZTV19data_ov063_0216518c kind:data(any) addr:0x0216518c ambiguous
 data_ov063_021651a8 kind:data(any) addr:0x021651a8
 _ZTV19data_ov063_021651c0 kind:data(any) addr:0x021651c0
 _ZTV19data_ov063_021651e4 kind:data(any) addr:0x021651e4
-data_ov063_02165248 kind:data(any) addr:0x02165248 ambiguous
-_ZTV19data_ov063_02165248 kind:data(any) addr:0x02165248
-_ZTV19data_ov063_0216526c kind:data(any) addr:0x0216526c
+_ZTV19ActorProfileUnkRMSF kind:data(any) addr:0x02165248
+_ZTV12ActorUnkRMSF kind:data(any) addr:0x0216526c
 data_ov063_021652d0 kind:data(any) addr:0x021652d0
-_ZTV19data_ov063_021652e8 kind:data(any) addr:0x021652e8
-_ZTV19data_ov063_0216530c kind:data(any) addr:0x0216530c
+_ZTV19ActorProfileUnkRMSD kind:data(any) addr:0x021652e8
+_ZTV12ActorUnkRMSD kind:data(any) addr:0x0216530c
 _ZTV19data_ov063_02165370 kind:data(any) addr:0x02165370
 _ZTV19data_ov063_02165394 kind:data(any) addr:0x02165394
 _ZTV19data_ov063_021653f8 kind:data(any) addr:0x021653f8

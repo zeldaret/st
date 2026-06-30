@@ -123,7 +123,7 @@ SaveManager::SaveManager() {
     this->mUnk_20A   = 0;
     this->mUnk_214   = 0;
     this->mpSaveFile = NULL;
-    this->mUnk_244   = 0;
+    this->mUnk_244   = NULL;
 
     func_020327c8(&this->mUnk_004, 0x1021);
 

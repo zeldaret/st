@@ -9,6 +9,8 @@
 #include "types.h"
 #include <nitro/pad.h>
 
+class UnkStruct_027e0cd8_04_0C;
+
 class UnkStruct_ov000_02067bc4_Sub1 {
 public:
     unk32 func_02022128(void);
@@ -163,10 +165,14 @@ public:
     void func_ov000_02067b60();
 
     // overlay 1
+    void func_ov001_020be504(void);
     void func_ov001_020be510();
     void func_ov001_020be668(void);
     void func_ov001_020be6f4(void);
     void func_ov001_020be8e0(void);
+    void func_ov001_020be92c(UnkStruct_027e0cd8_04_0C *param1);
+    void func_ov001_020be94c(void);
+    void func_ov001_020be998(void);
 };
 
 // gMessageManager?

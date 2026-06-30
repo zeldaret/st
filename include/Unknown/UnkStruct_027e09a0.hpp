@@ -4,10 +4,13 @@
 #include "Unknown/UnkFileSystem.hpp"
 #include "files.h"
 #include "global.h"
+#include "math.hpp"
 #include "types.h"
 
 struct UnkStruct_func_ov000_020702a8 {
-    /* 00 */ STRUCT_PAD(0x00, 0x20);
+    /* 00 */ STRUCT_PAD(0x00, 0x10);
+    /* 10 */ Vec2s mUnk_10;
+    /* 14 */ STRUCT_PAD(0x14, 0x20);
     /* 20 */ unk16 mUnk_20;
 };
 
@@ -30,11 +33,12 @@ public:
     ~UnkStruct_027e09a0();
 
     CourseListEntry *GetCourseEntry(u32 sceneIndex);
-    UnkStruct_func_ov000_020702a8 *func_ov000_020702a8(unk32 param1);
+    UnkStruct_func_ov000_020702a8 *func_ov000_020702a8(u32 sceneIndex);
     unk32 GetRoomEntryIndex();
     CourseListRoomEntry *GetRoomEntry(u32 sceneIndex, unk32 param2);
     u32 GetSceneIndexFromName(const char *sceneName);
     bool func_ov000_02070378(u32 param1);
+    void func_ov000_02070310(u32 sceneIndex, u8 roomIndex, void *param3);
 
     // overlay 1
     void InitCourseTable();

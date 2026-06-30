@@ -192,7 +192,6 @@ config.libs = [
             Object("001_SceneInit/UnkStruct_027e09b8_001.cpp"),
             Object("001_SceneInit/UnkStruct_027e0cd8_001.cpp"),
             Object("001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp"),
-            Object("001_SceneInit/UnkStruct_027e0cd8_0C_148_154_001.cpp"),
             Object("001_SceneInit/ZeldaArrangeBinary.cpp"),
             Object("001_SceneInit/ZeldaMapBinary.cpp"),
             Object("001_SceneInit/UnkStruct_027e095c_001.cpp"),

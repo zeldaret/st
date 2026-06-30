@@ -52,7 +52,7 @@ public:
     /* 218 */ SaveFile *mpSaveFile;
     /* 21C */ SaveFile_00000_0000_Data_D9C mUnk_21C;
     /* 23C */ PTMF<SaveFile>::PTMFCallback mUnk_23C;
-    /* 244 */ unk32 mUnk_244;
+    /* 244 */ void *mUnk_244;
 
     bool IsUnk20A() {
         return this->mUnk_20A == 0;

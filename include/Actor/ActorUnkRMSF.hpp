@@ -1,10 +1,11 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Actor/ActorUnkRMSD.hpp"
+#include "Render/ModelRender.hpp"
 #include "global.h"
+#include "nns/g3d/g3d.h"
 #include "types.h"
 
 class ActorUnkRMSF_C4 : public Actor_C4 {
@@ -17,17 +18,29 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkRMSF : public Actor {
+class ActorUnkRMSF_Base : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 94 */ ModelRender mUnk_94;
+    /* F4 */ ModelRender mUnk_F4;
+    /* 154 */ unk32 mUnk_154;
+    /* 158 */
+
+    ActorUnkRMSF_Base();
+};
+
+class ActorUnkRMSF : public ActorUnkRMSBase {
+public:
+    /* 00 (base) */
+    /* 158 */
 
     ActorUnkRMSF();
 
     /* 4C */ virtual ~ActorUnkRMSF() override;
+    /* 50 */
 
-    void func_ov063_0215c250(void);
-    void func_ov063_0215c290(void);
+    /* 54 */ virtual G3d_Model *vfunc_54(void);
+    /* 58 */ virtual G3d_Model *vfunc_58(void);
 };
 
 class ActorProfileUnkRMSF : public ActorProfile_Derived1 {

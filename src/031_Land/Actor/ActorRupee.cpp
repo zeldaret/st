@@ -8,7 +8,7 @@
 #include "Unknown/UnkStruct_027e0d34.hpp"
 
 extern "C" void func_01ffedac(u16 *, VecFx32 *);
-extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, VecFx32 *);
+extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0C_Base *, VecFx32 *);
 extern "C" unk32 func_02017158();
 extern "C" void func_ov017_020bf99c();
 extern "C" void func_ov031_0210acd4(u8);
@@ -472,7 +472,7 @@ void ActorRupee::func_ov031_020e9740() {
     unk32 sp4;
     unk32 *psp4;
     s32 temp_r2;
-    UnkStruct_027e0cd8_0c *temp_r0;
+    UnkStruct_027e0cd8_0C_Base *temp_r0;
 
     func_01ffedac(&sp0, &this->mPos);
     sp4 = 0;

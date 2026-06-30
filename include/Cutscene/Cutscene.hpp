@@ -67,7 +67,7 @@ struct CutsceneParamsEntry {
     /* 0B */ u8 mNextCutsceneIndex;
     /* 0C */ bool mNextIsCS; // doesn't makes sense with the array's data
     /* 0C */ bool mUnk_0D;
-    /* 0E */ unk16 mUnk_0E;
+    /* 0E */ u16 mUnk_0E;
     /* 10 */ AdventureFlag_Half mFlag;
     /* 12 */ unk16 mUnk_12; // pad?
     /* 14 */ u32 mUnk_14;

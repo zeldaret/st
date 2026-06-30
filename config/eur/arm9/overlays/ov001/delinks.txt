@@ -18,16 +18,20 @@ src/001_SceneInit/CourseList.cpp:
     .bss        start:0x020c2fe0 end:0x020c40e8
 
 src/001_SceneInit/UnkStruct_027e09b8_001.cpp:
+    complete
     .text       start:0x020b755c end:0x020b776c
 
 src/001_SceneInit/UnkStruct_027e0cd8_001.cpp:
+    complete
     .text       start:0x020b776c end:0x020b81e0
+    .data       start:0x020c2970 end:0x020c29f4
 
 src/001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp:
-    .text       start:0x020b81e0 end:0x020b8e74
-
-src/001_SceneInit/UnkStruct_027e0cd8_0C_148_154_001.cpp:
-    .text       start:0x020b8e74 end:0x020b9270
+    .text       start:0x020b81e0 end:0x020b9270
+    .init       start:0x020c2838 end:0x020c28f0
+    .ctor       start:0x020c2904 end:0x020c2908
+    .bss       start:0x020c40e8 end:0x020c46f4
+    .data       start:0x020c29f4 end:0x020c2b3c
 
 src/001_SceneInit/ZeldaArrangeBinary.cpp:
     .text       start:0x020b9270 end:0x020b94b0

@@ -83,9 +83,9 @@ void ActorManager::func_ov001_020bafdc() {
 }
 
 // https://decomp.me/scratch/UywfM
-void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param2 *param1) {
-    u16 unk_0A = param1->mUnk_0A;
-    u16 unk_08 = param1->mUnk_08;
+void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
+    u16 unk_0A = pHeader->unk_0A;
+    u16 unk_08 = pHeader->unk_08;
 
     this->mActorCount  = 0;
     this->mNextActorId = 0;
@@ -206,19 +206,19 @@ void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param2 *par
     }
 }
 
-void ActorManager::func_ov001_020bb414(ActorManager *instance) {
+void ActorManager::func_ov001_020bb414() {
     func_ov001_020ba59c(&data_0204999c);
 
     if (data_027e09a4->UnkCheck(data_027e09a4->mUnk_00.mSceneIndex)) {
-        instance->func_ov001_020bb844();
+        this->func_ov001_020bb844();
     }
 
-    if (instance->mActorTable != 0) {
-        delete instance->mActorTable;
+    if (this->mActorTable != 0) {
+        delete this->mActorTable;
     }
 
-    instance->mActorTable    = NULL;
-    instance->mActorTableEnd = NULL;
+    this->mActorTable    = NULL;
+    this->mActorTableEnd = NULL;
 }
 
 void ActorManager::func_ov001_020bb488() {
@@ -228,7 +228,7 @@ void ActorManager::func_ov001_020bb488() {
             case 0x01:
             case 0x03:
             case 0x06:
-                if (data_027e0cd8->mUnk_0C->mUnk_128 & 0x800) {
+                if (data_027e0cd8->GetUnk0C()->mUnk_128 & 0x800) {
                     func_ov031_020ea100();
                 }
                 break;
@@ -363,7 +363,7 @@ bool ActorManager::func_ov001_020bb728(s32 param1) {
 }
 
 void ActorManager::func_ov001_020bb7b0(ZeldaObjectList *pObjList) {
-    for (s32 i = 0; i < pObjList->nEntries; i++) {
+    for (s32 i = 0; i < pObjList->header.nEntries; i++) {
         u32 id                      = pObjList->aIdList[i];
         ActorProfile *pActorProfile = data_ov000_020b539c_eur.GetProfileFromId(id);
 

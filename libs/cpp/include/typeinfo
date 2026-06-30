@@ -1,0 +1,56 @@
+#ifndef _STD_TYPEINFO
+#define _STD_TYPEINFO
+
+// from rb3 decomp
+
+#include <cstddef>
+#include <cstring>
+#include <exception>
+
+namespace std {
+
+    class type_info {
+    public:
+        /*virtual*/ ~type_info();
+        bool operator==(const type_info &rhs) const {
+            return strcmp((char *) this->m_Name, (char *) rhs.m_Name) == 0;
+        }
+
+        bool before(const type_info &rhs) const throw();
+        size_t hash_code() const throw() {
+            return m_HashCode;
+        }
+        const char *name() const throw() {
+            return m_Name;
+        }
+
+    private:
+        // These constructors are normally deleted, but our C++ version
+        // doesn't support that, so they're privated as a workaround
+        type_info();
+        type_info(const type_info &);
+        type_info &operator=(const type_info &);
+
+        const char *m_Name;
+        size_t m_HashCode;
+    };
+
+    class bad_cast : public exception {
+    public:
+        virtual ~bad_cast() {}
+        virtual const char *what() const {
+            return "bad_cast";
+        }
+    };
+
+    class bad_typeid : public exception {
+    public:
+        virtual ~bad_typeid() {}
+        virtual const char *what() const {
+            return "bad_typeid";
+        }
+    };
+
+} // namespace std
+
+#endif

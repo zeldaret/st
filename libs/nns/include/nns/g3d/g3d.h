@@ -192,6 +192,7 @@ typedef struct BMDSectionModel {
     /* 08 */ G3d_NameList modelList;
 } BMDSectionModel;
 
+void G3d_0200e6a0(const G3d_Model *pModel, s32 param2, s32 param3);
 u32 *G3d_0200f05c(const G3d_NameList *pNameList, const char *pName);
 
 static inline u32 *G3d_GetModelOffsetPtr(const BMDSectionModel *pSection, u8 modelIndex) {
@@ -221,13 +222,12 @@ static inline G3d_Model *G3d_GetModelPtr(const BMDSectionModel *pSection) {
     return G3d_GetModelVariantPtr(pSection, 0);
 }
 
-//! TODO: returns `G3d_Model*`?
-static inline void *G3d_GetUnkPtr(const BMDSectionModel *pSection, const char *name) {
+static inline G3d_Model *G3d_GetUnkPtr(const BMDSectionModel *pSection, const char *name) {
     if (pSection != NULL) {
         u32 *pOffset = G3d_0200f05c(&pSection->modelList, name);
 
         if (pOffset != NULL) {
-            return (void *) ((u8 *) pSection + *pOffset);
+            return (G3d_Model *) ((u8 *) pSection + *pOffset);
         }
     }
 

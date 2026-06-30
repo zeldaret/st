@@ -40,7 +40,7 @@ void AdventureModeManager_184::vfunc_0C(unk32 param1) {
         }
 
         data_0204a088->func_ov000_02061248();
-        MapObjectId mapObjId = data_027e09b8->mUnk_0C->mMapObjId;
+        MapObjectId mapObjId = data_027e09b8->GetUnk0C()->mMapObjId;
 
         if (data_027e09a4->IsTrain() || (data_027e09b8->func_ov000_020732dc(2) &&
                                          (mapObjId != MapObjectId_WDST ||
@@ -77,7 +77,7 @@ void AdventureModeManager_184::func_ov024_020c979c(unk32 param1) {
         return;
     }
 
-    MapObjectId mapObjId = data_027e09b8->mUnk_0C->mMapObjId;
+    MapObjectId mapObjId = data_027e09b8->GetUnk0C()->mMapObjId;
 
     if (data_027e09a4->IsTrain()) {
         if (data_027e09a4->IsDarkRealm()) {

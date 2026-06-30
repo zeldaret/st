@@ -1,7 +1,9 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkRMSF.hpp"
-#include "System/SysNew.hpp"
+#include "nns/g3d/g3d.h"
+#include "profile.hpp"
+
+extern char data_ov063_021625b8[0x10]; // = "RMSF_wall";
+extern char data_ov063_021625c8[0x10]; // = "RMSF";
 
 DECL_PROFILE(ActorProfileUnkRMSF);
 
@@ -14,8 +16,13 @@ ActorProfileUnkRMSF::ActorProfileUnkRMSF() :
 
 ActorUnkRMSF::ActorUnkRMSF() {}
 
-void ActorUnkRMSF::func_ov063_0215c250(void) {}
-void ActorUnkRMSF::func_ov063_0215c290(void) {}
+G3d_Model *ActorUnkRMSF::vfunc_54(void) {
+    return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSF)->mUnk_3C, data_ov063_021625c8);
+}
+
+G3d_Model *ActorUnkRMSF::vfunc_58(void) {
+    return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSF)->mUnk_3C, data_ov063_021625b8);
+}
 
 ActorUnkRMSF::~ActorUnkRMSF() {}
 ActorProfileUnkRMSF::~ActorProfileUnkRMSF() {}

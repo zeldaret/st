@@ -71,7 +71,7 @@ bool MapObjectChestBase::vfunc_00() {
     SET_FLAG(this->mFlags, MapObjFlag_9);
     this->mUnk_18[0] = 0x0D;
 
-    UnkStruct_027e0cd8_0c *pUVar2 = data_027e0cd8->mUnk_0C;
+    UnkStruct_027e0cd8_0C_Base *pUVar2 = data_027e0cd8->mUnk_0C;
 
     if (this->mUnk_20.mUnk_00[3] == 1) {
         this->mPos.x += 0x7FC;
@@ -91,7 +91,7 @@ bool MapObjectChestBase::vfunc_00() {
 // non-matching
 void MapObjectChestBase::vfunc_04() {
     fx32 iVar2;
-    UnkStruct_027e0cd8_0c *pUVar5;
+    UnkStruct_027e0cd8_0C_Base *pUVar5;
     VecFx32 sp48;
     VecFx32 sp3C;
     VecFx32 local_38;

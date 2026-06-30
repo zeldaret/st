@@ -48,7 +48,7 @@ void ActorUnkEFIK::vfunc_20() {
     for (int i = 0; i < length; i++) {
         u8 j;
         u8 k;
-        UnkStruct_027e0cd8_0c *pUVar5 = data_027e0cd8->mUnk_0C;
+        UnkStruct_027e0cd8_0C_Base *pUVar5 = data_027e0cd8->mUnk_0C;
 
         u8 bStack_3c[2];
         bStack_3c[0] = 0;
