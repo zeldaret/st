@@ -141,7 +141,7 @@ public:
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2);
-    /* 1C */ virtual bool vfunc_1C();
+    /* 1C */ virtual bool vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3);
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual unk32 vfunc_28();

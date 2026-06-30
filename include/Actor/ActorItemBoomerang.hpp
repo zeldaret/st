@@ -15,7 +15,7 @@ enum ActorItemBoomerangState_ {
 
 class ActorItemBoomerang;
 
-class ActorItemBoomerang_Unknown {
+class ActorItemBoomerang_Unknown { // inherits from UnkStruct_PlayerGet_ec ?
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ VecFx32 mUnk_04;
@@ -36,7 +36,7 @@ public:
 
     /* 00 */ virtual ~ActorItemBoomerang_11C() override;
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
-    /* 0C */ virtual bool vfunc_0C(UnkStruct_ov031_020e54d4 *param1) override;
+    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) override;
 };
 
 class ActorItemBoomerang_A0 : public UnkStruct_ov031_Items_01 {

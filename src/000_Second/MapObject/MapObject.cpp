@@ -102,7 +102,7 @@ bool MapObject::func_ov000_0209d144(Vec2s *param1, unk32 param2, unk32 param3) {
     return false;
 }
 
-bool MapObject::vfunc_1C() {
+bool MapObject::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
     return true;
 }
 
