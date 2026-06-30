@@ -9,6 +9,15 @@
 #include "nns/g3d/g3d.h"
 #include "types.h"
 
+struct UnkStruct_data_ov063_02163388 {
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+};
+
 class ActorUnkRMSW_C4 : public Actor_C4 {
 public:
     ActorUnkRMSW_C4(Actor *param1);
