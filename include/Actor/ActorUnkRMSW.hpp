@@ -28,7 +28,7 @@ public:
 
     ActorUnkRMSW();
 
-    /* 18 */ virtual void vfunc_18(void);
+    /* 18 */ virtual unk32 vfunc_18(void);
     /* 20 */ virtual void vfunc_20(void);
     /* 24 */ virtual void vfunc_24(void);
 

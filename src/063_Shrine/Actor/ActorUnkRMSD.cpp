@@ -6,8 +6,6 @@
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
 
-extern "C" void func_ov073_0215bb34(ActorUnkRMSD *);
-
 DECL_PROFILE(ActorProfileUnkRMSD);
 
 char data_ov063_021625d8[0x10]; // = "RMSD_wall";

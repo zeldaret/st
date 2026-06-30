@@ -2,9 +2,16 @@
 
 #include "Actor/ActorUnkRMSW.hpp"
 #include "nns/g3d/g3d.h"
+#include "types.h"
 
 char data_ov063_02162598[0x10]; // = "RMSW_wall";
 char data_ov063_021625a8[0x10]; // = "RMSW";
+
+unk32 data_ov063_02163388[] = {0, 0x57534D52, 0, 0, 0, 0};
+
+extern "C" void func_ov000_02099ff8(unk32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6,
+                                    unk32 param7, unk32 param8);
+extern "C" unk32 func_ov063_0215bb34(ActorUnkRMSW *);
 
 DECL_PROFILE(ActorProfileUnkRMSW);
 
@@ -17,7 +24,13 @@ ActorProfileUnkRMSW::ActorProfileUnkRMSW() :
 
 ActorUnkRMSW::ActorUnkRMSW() {}
 
-void ActorUnkRMSW::vfunc_18(void) {}
+unk32 ActorUnkRMSW::vfunc_18(void) {
+    unk32 res    = func_ov063_0215bb34(this);
+    unk32 param8 = 0x1000;
+    func_ov000_02099ff8(&this->mUnk_158, param8, data_ov063_02163388[0], data_ov063_02163388[1], data_ov063_02163388[2],
+                        data_ov063_02163388[3], data_ov063_02163388[4], data_ov063_02163388[5]);
+    return res;
+}
 
 void ActorUnkRMSW::vfunc_20(void) {
     (*(Actor *) &this->mUnk_158).vfunc_34(); // Not an Actor
