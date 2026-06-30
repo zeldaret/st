@@ -73,10 +73,10 @@ bool MapObjectChestBase::vfunc_00() {
 
     UnkStruct_027e0cd8_0C_Base *pUVar2 = data_027e0cd8->mUnk_0C;
 
-    if (this->mUnk_20.mUnk_00[3] == 1) {
+    if (this->mUnk_20.mParams[3] == 1) {
         this->mPos.x += 0x7FC;
 
-        Vec2b sp48(this->mUnk_3A.x, this->mUnk_3A.y);
+        Vec2bCpp sp48(this->mUnk_3A.x, this->mUnk_3A.y);
         pUVar2->func_ov000_020801b0(&sp48, 7, 1);
 
         sp48.x++;
@@ -84,7 +84,7 @@ bool MapObjectChestBase::vfunc_00() {
     }
 
     this->vfunc_38(this->vfunc_3C(), 1);
-    this->mItemId = this->mUnk_20.mUnk_00[0];
+    this->mItemId = this->mUnk_20.mParams[0];
     return true;
 }
 
@@ -98,11 +98,11 @@ void MapObjectChestBase::vfunc_04() {
     VecFx32 local_44;
     VecFx32 sp18;
     VecFx32 spC;
-    Vec2b local_5e;
-    Vec2b local_62;
-    Vec2b local_64;
-    Vec2b local_66;
-    Vec2b local_68;
+    Vec2bCpp local_5e;
+    Vec2bCpp local_62;
+    Vec2bCpp local_64;
+    Vec2bCpp local_66;
+    Vec2bCpp local_68;
     Vec2us local_6c;
 
     pUVar5 = data_027e0cd8->mUnk_0C;
@@ -129,22 +129,22 @@ void MapObjectChestBase::vfunc_04() {
 
     local_68.x = this->mUnk_3A.x;
     local_68.y = this->mUnk_3A.y;
-    iVar2      = pUVar5->func_01ffedf4((Vec2b *) &local_68);
+    iVar2      = pUVar5->func_01ffedf4((Vec2bCpp *) &local_68);
 
-    if (this->mUnk_20.mUnk_00[3] == 1) {
-        Vec2b temp_r0(this->mUnk_3A.x, this->mUnk_3A.y);
+    if (this->mUnk_20.mParams[3] == 1) {
+        Vec2bCpp temp_r0(this->mUnk_3A.x, this->mUnk_3A.y);
         temp_r0.x--;
 
-        if (pUVar5->func_01ffedf4((Vec2b *) &temp_r0) > iVar2 || gpMapObjManager->func_01fff498(local_5e) != NULL) {
+        if (pUVar5->func_01ffedf4((Vec2bCpp *) &temp_r0) > iVar2 || gpMapObjManager->func_01fff498(local_5e) != NULL) {
             sp48.x -= FLOAT_TO_FX32(0.5f);
         }
 
         temp_r0.x += 3;
-        if (pUVar5->func_01ffedf4((Vec2b *) &temp_r0) > iVar2 || gpMapObjManager->func_01fff498(local_5e) != NULL) {
+        if (pUVar5->func_01ffedf4((Vec2bCpp *) &temp_r0) > iVar2 || gpMapObjManager->func_01fff498(local_5e) != NULL) {
             sp3C.x += FLOAT_TO_FX32(0.5f);
         }
     } else {
-        Vec2b temp_r0(this->mUnk_3A.x, this->mUnk_3A.y);
+        Vec2bCpp temp_r0(this->mUnk_3A.x, this->mUnk_3A.y);
         temp_r0.x--;
         temp_r0.y += 2;
         // local_5e.y = this->mUnk_3A.y + (this->mUnk_3A.x - 1);

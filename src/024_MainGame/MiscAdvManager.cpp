@@ -109,8 +109,8 @@ u16 *MiscAdvManager::GetStampDate(unk32 index) {
     return (u16 *) &this->mStampDates[index];
 }
 
-Vec2b *MiscAdvManager::GetStampPos(unk32 index) {
-    return (Vec2b *) &this->mStampPositions[index];
+Vec2bCpp *MiscAdvManager::GetStampPos(unk32 index) {
+    return (Vec2bCpp *) &this->mStampPositions[index];
 }
 
 void MiscAdvManager::func_ov024_020d64b4(s8 param1, unk32 param2, const u16 *param3) {

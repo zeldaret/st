@@ -30,8 +30,8 @@ src/001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp:
     .text       start:0x020b81e0 end:0x020b9270
     .init       start:0x020c2838 end:0x020c28f0
     .ctor       start:0x020c2904 end:0x020c2908
-    .bss       start:0x020c40e8 end:0x020c46f4
     .data       start:0x020c29f4 end:0x020c2b3c
+    .bss        start:0x020c40e8 end:0x020c46f4
 
 src/001_SceneInit/ZeldaArrangeBinary.cpp:
     complete

@@ -27,9 +27,9 @@ struct UnkStruct_ov000_020ab1ac {
 };
 extern UnkStruct_ov000_020ab1ac data_ov000_020ab1ac[30];
 
-const u32 data_ov001_020c2638[] = {ActorId_FOMC, ActorId_FOMA, ActorId_FOMB, ActorId_FOPD, ActorId_FOMR};
-const u16 data_ov001_020c2624[] = {0x01AE, 0x01AF, 0x01B0, 0x01B1, 0x01B2};
-const u16 data_ov001_020c262e[] = {0x01CB, 0x01CC, 0x01CD, 0x01CE, 0x01CF};
+const ActorId data_ov001_020c2638[] = {ActorId_FOMC, ActorId_FOMA, ActorId_FOMB, ActorId_FOPD, ActorId_FOMR};
+const u16 data_ov001_020c2624[]     = {0x01AE, 0x01AF, 0x01B0, 0x01B1, 0x01B2};
+const u16 data_ov001_020c262e[]     = {0x01CB, 0x01CC, 0x01CD, 0x01CE, 0x01CF};
 
 THUMB_BEGIN
 
@@ -331,7 +331,7 @@ void ActorManager::func_ov001_020bb6b0(EntranceInfo *param1) {
     }
 }
 
-bool ActorManager::func_ov001_020bb728(s32 param1) {
+bool ActorManager::func_ov001_020bb728(ActorId actorId) {
     EntranceInfo *piVar1 = data_027e09a4->func_ov000_02070560();
 
     if (piVar1->sceneIndex != SceneIndex_f_water || piVar1->roomIndex != 0) {
@@ -342,7 +342,7 @@ bool ActorManager::func_ov001_020bb728(s32 param1) {
         int value;
         int value2;
 
-        if (param1 == data_ov001_020c2638[i]) {
+        if (actorId == data_ov001_020c2638[i]) {
             value  = data_ov001_020c2624[i] & 0x1F;
             value2 = data_027e09b8->mAdventureFlags[(u32) data_ov001_020c2624[i] >> 5];
 

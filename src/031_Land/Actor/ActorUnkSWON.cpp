@@ -20,7 +20,7 @@ bool ActorUnkSWON::vfunc_18(unk32 param1) {
             }
             this->func_ov000_020984d0();
             this->func_ov000_020984f0();
-            if (this->mUnk_5C.mUnk_1C_0) {
+            if (this->mUnk_5C.mUnk_1A[1]) {
                 this->func_ov000_02098a88(0x1, 0x1);
             }
             break;

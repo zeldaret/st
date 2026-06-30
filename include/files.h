@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Actor/ActorId.hpp"
+#include "Actor/ActorRef.hpp"
 #include "Map/MapObjectId.hpp"
 #include "types.h"
 
@@ -237,27 +239,27 @@ extern BOOL ZAB_GetRoomEntry(FileInfos *pFileInfos, u8 param2, const CourseListE
 // .zmb
 typedef u32 ZMBSectionType;
 enum ZMBSectionType_ {
-    ZMBSectionType_ROMB = 'ROMB', // unknown
-    ZMBSectionType_ROOM = 'ROOM', // room settings
-    ZMBSectionType_LDLB = 'LDLB', // related to script triggers
-    ZMBSectionType_MPOB = 'MPOB', // map object list, parameters are stored here
-    ZMBSectionType_ARAB = 'ARAB', // locations? (?)
-    ZMBSectionType_RALB = 'RALB', // paths?
-    ZMBSectionType_NPCA = 'NPCA', // actor list, same as above
-    ZMBSectionType_PLYR = 'PLYR', // player entrances?
-    ZMBSectionType_WARP = 'WARP', // exits?
-    ZMBSectionType_CAME = 'CAME', // camera settings?
-    ZMBSectionType_CMPT = 'CMPT', // ?
+    ZMBSectionType_ROMB       = 'ROMB', // unknown
+    ZMBSectionType_ROOM       = 'ROOM', // room settings
+    ZMBSectionType_LDLB       = 'LDLB', // related to script triggers
+    ZMBSectionType_MapObjects = 'MPOB', // map object list, parameters are stored here
+    ZMBSectionType_ARAB       = 'ARAB', // locations? (?)
+    ZMBSectionType_RALB       = 'RALB', // paths?
+    ZMBSectionType_NPCA       = 'NPCA', // actor list, same as above
+    ZMBSectionType_PLYR       = 'PLYR', // player entrances?
+    ZMBSectionType_WARP       = 'WARP', // exits?
+    ZMBSectionType_CAME       = 'CAME', // camera settings?
+    ZMBSectionType_CMPT       = 'CMPT', // ?
 };
 
 typedef struct ZMBFileInfos {
     /* 00 */ void *pFile;
     /* 04 */ size_t size;
     /* 08 */ unk16 unk_08;
+    /* 0A */ unk16 unk_0A;
     /* 0C */ unk16 unk_0C;
-    /* 10 */ unk16 unk_10;
-    /* 14 */ unk16 unk_14;
-} ZMBFileInfos;
+    /* 0E */ s16 unk_0E;
+} ZMBFileInfos; // size = 0x10
 
 typedef struct ZMBHeader {
     /* 00 */ u32 magic;     // 'MAPB'
@@ -299,10 +301,23 @@ typedef struct ZMBSectionLDLB {
     /* 0C */ ZMBEntryLBLB entries[];
 } ZMBSectionLDLB;
 
-typedef struct ZMBSectionMPOB {
+typedef struct ZMBMapObjEntry {
+    /* 00 */ u32 id;
+    /* 04 */ Vec2b pos;
+    /* 06 */ u16 angle;
+    /* 08 */ u16 params[4];
+    /* 10 */ u16 unk_10[2];
+    /* 14 */ unk32 unk_14;
+    /* 18 */ u8 unk_18;
+    /* 19 */ u8 unk_19;
+    /* 1A */ u8 unk_1A;
+    /* 1B */ u8 unk_1B;
+} ZMBMapObjEntry; // size = 0x1C
+
+typedef struct ZMBSectionMapObjectList {
     /* 00 */ ZMBSectionHeader header;
-    /* 0C */
-} ZMBSectionMPOB;
+    /* 0C */ ZMBMapObjEntry entries[];
+} ZMBSectionMapObjectList;
 
 typedef struct ZMBEntryARAB {
     /* 00 */ u8 unk_00;
@@ -347,10 +362,27 @@ typedef struct ZMBSectionRALB {
     /* 0C */ ZMBEntryRALB entries[];
 } ZMBSectionRALB;
 
-typedef struct ZMBSectionNPCA {
+typedef struct ZMBActorEntry {
+    /* 00 */ u32 id;
+    /* 04 */ struct {
+        u16 x, y;
+    } pos;
+    /* 08 */ s8 unk_08;
+    /* 08 */ s8 unk_09;
+    /* 0A */ u16 angle;
+    /* 0C */ u16 params[4];
+    /* 14 */ u16 unk_14[2];
+    /* 18 */ u32 unk_18;
+    /* 1C */ u8 unk_1C;
+    /* 1D */ u8 unk_1D;
+    /* 1E */ u8 unk_1E;
+    /* 1F */ u8 unk_1F;
+} ZMBActorEntry; // size = 0x20
+
+typedef struct ZMBSectionActorList {
     /* 00 */ ZMBSectionHeader header;
-    /* 0C */
-} ZMBSectionNPCA;
+    /* 0C */ ZMBActorEntry entries[];
+} ZMBSectionActorList;
 
 typedef struct ZMBSectionPLYR {
     /* 00 */ ZMBSectionHeader header;
@@ -392,8 +424,8 @@ extern BOOL ZMB_ParseLDLB(ZMBFileInfos *pFileInfos, ZMBSectionLDLB *pLDLB, UnkSt
 extern BOOL ZMB_ParseARAB(ZMBFileInfos *pFileInfos, ZMBSectionARAB *pARAB, UnkStruct_027e0cd8_0C_Base *pDst);
 extern BOOL ZMB_ParseRALB(ZMBFileInfos *pFileInfos, ZMBSectionRALB *pRALB, UnkStruct_027e0cd8_0C_Base *pDst);
 extern BOOL ZMB_ParseWARP(ZMBFileInfos *pFileInfos, ZMBSectionWARP *pWARP, UnkStruct_027e0cd8_0C_Base *pDst);
-extern BOOL ZMB_ParseMPOB(ZMBFileInfos *pFileInfos, ZMBSectionMPOB *pMPOB, UnkStruct_027e0cd8_0C_Base *pDst);
-extern BOOL ZMB_ParseNPCA(ZMBFileInfos *pFileInfos, ZMBSectionNPCA *pNPCA, UnkStruct_027e0cd8_0C_Base *pDst);
+extern BOOL ZMB_ParseMapObjList(ZMBFileInfos *pFileInfos, ZMBSectionMapObjectList *pMapObjs, UnkStruct_027e0cd8_0C_Base *pDst);
+extern BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pNPCA, UnkStruct_027e0cd8_0C_Base *pDst);
 extern BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pROOM, UnkStruct_027e0cd8_0C_Base *pDst);
 extern BOOL ZMB_ParsePLYR(ZMBFileInfos *pFileInfos, ZMBSectionPLYR *pPLYR, UnkStruct_027e0cd8_0C_Base *pDst);
 extern BOOL ZMB_ParseCAME(ZMBFileInfos *pFileInfos, ZMBSectionCAME *pCAME, UnkStruct_027e0cd8_0C_Base *pDst);

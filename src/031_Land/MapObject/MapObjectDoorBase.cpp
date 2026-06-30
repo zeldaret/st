@@ -82,12 +82,12 @@ MapObjectDoorBase::MapObjectDoorBase() :
 void MapObjectDoorBase::func_ov031_020fbf10(bool param1, bool param2) {
     if (this->IsOrientedVertically()) {
         this->mPos.z += FLOAT_TO_FX32(0.5f);
-        Vec2b local_16(1, 2);
+        Vec2bCpp local_16(1, 2);
         this->func_ov000_0209d2f0(5, 1, &local_16);
 
     } else {
         this->mPos.x += FLOAT_TO_FX32(0.5f);
-        Vec2b local_18(2, 1);
+        Vec2bCpp local_18(2, 1);
         this->func_ov000_0209d2f0(5, 1, &local_18);
     }
 

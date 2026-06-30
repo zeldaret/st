@@ -4,6 +4,7 @@
 #include "math.hpp"
 #include "types.h"
 
+#include "Actor/Actor.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Render/ModelRender.hpp"
 #include "Save/SaveFile.hpp"
@@ -173,7 +174,7 @@ public:
     };
     /* 088 */ UnkStruct_027e0cd8_0C_Base_88 mUnk_088;
     /* 098 */ UnkStruct_027e0cd8_0C_Base_98 *mUnk_098;
-    /* 09C */ Vec2s mUnk_09C;
+    /* 09C */ Vec2us mUnk_09C;
     /* 0A0 */ unk32 mUnk_0A0;
     /* 0A4 */ unk32 mUnk_0A4;
     /* 0A8 */ unk32 mUnk_0A8;
@@ -231,16 +232,16 @@ public:
     /* 40 */ virtual void vfunc_40(u8 spawnIndex);
 
     // itcm
-    fx32 func_01ffedf4(Vec2b *pPos);
+    fx32 func_01ffedf4(Vec2bCpp *pPos);
 
     // overlay 0
     unk32 func_ov000_02080180(void *param1);
-    void func_ov000_020801b0(Vec2b *param1, unk32 param2, unk32 param3);
+    void func_ov000_020801b0(Vec2bCpp *param1, unk32 param2, unk32 param3);
     bool func_ov000_020802ec(u16 param1, VecFx32 *param2);
     void func_ov000_020803ec(u16 param1);
     void func_ov000_0208053c(u16 param1);
     bool func_ov000_02080658(unk32 param1, EntranceInfo *param2);
-    void func_ov000_020808f4(void *param1, void *param2, unk32 param3);
+    void func_ov000_020808f4(void *param1, void *param2, u8 param3);
     unk32 func_ov000_02080a44();
     void func_ov000_02080a5c(VecFx32 *param1);
     void func_ov000_02080a78(VecFx32 *param1);
@@ -387,6 +388,7 @@ public:
     bool func_ov000_02082124();
     bool func_ov000_02081c28();
     void func_ov000_02081ca0();
+    bool func_ov000_02081edc(u16 param1);
 
     // overlay 1
     void func_ov001_020b7830(const EntranceInfo *param1);

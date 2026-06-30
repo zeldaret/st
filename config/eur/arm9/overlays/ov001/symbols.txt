@@ -119,8 +119,8 @@ ZMB_ParseLDLB kind:function(thumb,size=0xfc) addr:0x020b9624
 ZMB_ParseARAB kind:function(thumb,size=0x40) addr:0x020b9720
 ZMB_ParseRALB kind:function(thumb,size=0xe0) addr:0x020b9760
 ZMB_ParseWARP kind:function(thumb,size=0xc4) addr:0x020b9840
-ZMB_ParseMPOB kind:function(thumb,size=0x140) addr:0x020b9904
-ZMB_ParseNPCA kind:function(thumb,size=0x22c) addr:0x020b9a44
+ZMB_ParseMapObjList kind:function(thumb,size=0x140) addr:0x020b9904
+ZMB_ParseActorList kind:function(thumb,size=0x22c) addr:0x020b9a44
 ZMB_ParseROOM kind:function(thumb,size=0x460) addr:0x020b9c70
 ZMB_ParsePLYR kind:function(thumb,size=0x17c) addr:0x020ba0d0
 ZMB_ParseCAME kind:function(thumb,size=0xa4) addr:0x020ba24c
@@ -183,7 +183,7 @@ _ZN12ActorManager19func_ov001_020bb488Ev kind:function(thumb,size=0xc0) addr:0x0
 _ZN12ActorManager19func_ov001_020bb548Ev kind:function(thumb,size=0xe8) addr:0x020bb548
 _ZN12ActorManager19func_ov001_020bb630Ev kind:function(thumb,size=0x80) addr:0x020bb630
 _ZN12ActorManager19func_ov001_020bb6b0EP12EntranceInfo kind:function(thumb,size=0x78) addr:0x020bb6b0
-_ZN12ActorManager19func_ov001_020bb728Ei kind:function(thumb,size=0x88) addr:0x020bb728
+_ZN12ActorManager19func_ov001_020bb728Ej kind:function(thumb,size=0x88) addr:0x020bb728
 _ZN12ActorManager19func_ov001_020bb7b0EP15ZeldaObjectList kind:function(thumb,size=0x40) addr:0x020bb7b0
 _ZN12ActorManager19func_ov001_020bb7f0Ev kind:function(thumb,size=0x34) addr:0x020bb7f0
 _ZN12ActorManager19func_ov001_020bb824Ev kind:function(thumb,size=0x20) addr:0x020bb824
@@ -518,23 +518,23 @@ __sinit_ov001_020c28f0 kind:function(thumb,size=0x10) addr:0x020c28f0
 .p__sinit_ov001_020c2570 kind:data(word) addr:0x020c291c local
 @433 kind:data(byte[22]) addr:0x020c2940 local
 @450 kind:data(byte[22]) addr:0x020c2958 local
-@3570 kind:data(byte[0x12]) addr:0x020c2970 local
-@3571 kind:data(byte[0x04]) addr:0x020c2984 local
-@3572 kind:data(byte[0x1a]) addr:0x020c2988 local
-@3573 kind:data(byte[0x18]) addr:0x020c29a4 local
-@3574 kind:data(byte[0x19]) addr:0x020c29bc local
-@3575 kind:data(byte[0x17]) addr:0x020c29d8 local
-@3576 kind:data(byte[0x04]) addr:0x020c29f0 local
+@3570 kind:data(byte[18]) addr:0x020c2970 local
+@3571 kind:data(byte[4]) addr:0x020c2984 local
+@3572 kind:data(byte[26]) addr:0x020c2988 local
+@3573 kind:data(byte[24]) addr:0x020c29a4 local
+@3574 kind:data(byte[25]) addr:0x020c29bc local
+@3575 kind:data(byte[23]) addr:0x020c29d8 local
+@3576 kind:data(byte[4]) addr:0x020c29f0 local
 _ZTV26UnkStruct_027e0cd8_0C_Base kind:data(any) addr:0x020c29f4
 data_ov001_020c2a40 kind:data(any) addr:0x020c2a40
-@3283 kind:data(byte[0x6]) addr:0x020c2a90 local
-@3284 kind:data(byte[0x13]) addr:0x020c2a98 local
-@3285 kind:data(byte[0x13]) addr:0x020c2aac local
-@3286 kind:data(byte[0x13]) addr:0x020c2ac0 local
-@3287 kind:data(byte[0x1b]) addr:0x020c2ad4 local
-@3288 kind:data(byte[0x1c]) addr:0x020c2af0 local
-@3292 kind:data(byte[0x17]) addr:0x020c2b0c local
-@3293 kind:data(byte[0x15]) addr:0x020c2b24 local
+@3283 kind:data(byte[6]) addr:0x020c2a90 local
+@3284 kind:data(byte[19]) addr:0x020c2a98 local
+@3285 kind:data(byte[19]) addr:0x020c2aac local
+@3286 kind:data(byte[19]) addr:0x020c2ac0 local
+@3287 kind:data(byte[27]) addr:0x020c2ad4 local
+@3288 kind:data(byte[28]) addr:0x020c2af0 local
+@3292 kind:data(byte[23]) addr:0x020c2b0c local
+@3293 kind:data(byte[21]) addr:0x020c2b24 local
 data_ov001_020c2b3c kind:data(any) addr:0x020c2b3c
 data_ov001_020c2b48 kind:data(any) addr:0x020c2b48
 data_ov001_020c2b58 kind:data(any) addr:0x020c2b58

@@ -67,7 +67,7 @@ UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param
     mUnk_084_00(0),
     mUnk_084_01(0),
     mUnk_098(0),
-    mUnk_09C(&param1->mUnk_00),
+    mUnk_09C((Vec2us *) &param1->mUnk_00),
     mUnk_0AC(false),
     mUnk_0AD(false),
     mUnk_0AE(false),
@@ -123,7 +123,7 @@ UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param
 
     this->mUnk_13C.Init(data_ov001_020c40f4, 0x40);
 
-    Vec2s_Copy(&this->mUnk_09C, &local_30);
+    Vec2s_Copy((Vec2s *) &this->mUnk_09C, &local_30);
     gpMapObjManager->func_ov001_020baea0(&local_30);
     data_027e095c->func_ov000_020592a0();
 }
@@ -180,9 +180,9 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const EntranceInfo *param1)
     zmbFileInfos.pFile  = local_74.mpFile;
     zmbFileInfos.size   = local_74.mFileSize;
     zmbFileInfos.unk_08 = 0;
+    zmbFileInfos.unk_0A = 0;
     zmbFileInfos.unk_0C = 0;
-    zmbFileInfos.unk_10 = 0;
-    zmbFileInfos.unk_14 = 0;
+    zmbFileInfos.unk_0E = 0;
     ZMB_ParseFile(&zmbFileInfos, this, true);
 
     gpMapObjManager->func_ov001_020bade0();

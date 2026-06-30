@@ -78,9 +78,9 @@ extern "C" void func_01ff930c(UnkStruct_ov000_0208f820_40 *, unk16, unk32);
 // https://decomp.me/scratch/c7PhN
 void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
     const fx16 *pSinCosTable = gSinCosTable;
-    Vec2b stack4;
+    Vec2bCpp stack4;
     s16 stack3;
-    Vec2b stack2;
+    Vec2bCpp stack2;
     UnkStackStruct1 stack;
 
     switch (param1->mUnk_04) {

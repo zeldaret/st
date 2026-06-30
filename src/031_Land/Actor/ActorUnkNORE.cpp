@@ -3,7 +3,7 @@
 
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 
-extern "C" void func_01ffedac(Vec2b *, VecFx32 *);
+extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
 
 DECL_PROFILE(ActorProfileUnkNORE);
 
@@ -17,7 +17,7 @@ ActorProfileUnkNORE::ActorProfileUnkNORE() :
 ActorUnkNORE::ActorUnkNORE() {}
 
 bool ActorUnkNORE::vfunc_18(unk32 param1) {
-    Vec2b local_vec;
+    Vec2bCpp local_vec;
 
     UnkStruct_027e0cd8_0C_Base *unk_obj = data_027e0cd8->mUnk_0C;
 

@@ -9,6 +9,15 @@
 
 typedef void (*UnkCallback_func_01fff4cc)(void *, void *);
 
+struct UnkStruct_MapObjCreateData {
+    /* 00 */ u16 unk_00;
+    /* 02 */ union {
+        Vec2b pos;
+        u16 raw_pos;
+    };
+    /* 04 */
+};
+
 class MapObjectManager : public AutoInstance<MapObjectManager> {
 public:
     /* 00 */ MapObject **mMapObjTable;
@@ -31,14 +40,15 @@ public:
     ~MapObjectManager();
 
     // itcm
-    MapObject *func_01fff498(Vec2b param1);
+    MapObject *func_01fff498(Vec2bCpp param1);
     void func_01fff4cc(UnkCallback_func_01fff4cc param1, void *param2);
     MapObject **func_01fff520(UnkStruct_ov000_020b34c4 *param1, MapObject **param2);
 
     // overlay 0
-    MapObjectId func_ov000_0209c3a8(Vec2b *param1);
+    MapObjectId func_ov000_0209c3a8(Vec2bCpp *param1);
     void func_ov000_0209c3e8();
     void func_ov000_0209c444();
+    MapObject *AllocateMapObject(MapObjectId mapObjId, Vec2b param2, u16 param3, unk32 param4, u8 param5);
 
     static void func_ov000_0209c490();
 

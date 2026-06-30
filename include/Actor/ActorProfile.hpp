@@ -13,7 +13,10 @@ class ActorProfile {
 public:
     /* 00 (vtable) */
     /* 04 */ Cylinder mUnk_04;
-    /* 14 */ unk8 mUnk_14[0x18 - 0x14];
+    /* 14 */ unk8 mUnk_14;
+    /* 15 */ bool mUnk_15;
+    /* 16 */ unk8 mUnk_16;
+    /* 17 */ unk8 mUnk_17;
     /* 18 */ unk8 mUnk_18;
     /* 19 */ unk8 mUnk_19;
     /* 1A */ unk16 mUnk_1A;

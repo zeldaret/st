@@ -60,7 +60,7 @@ public:
 
     static ActorManager *Create();
     static void Destroy();
-    static bool func_ov001_020bb728(s32 param1);
+    static bool func_ov001_020bb728(ActorId actorId);
     static void func_ov001_020bb824();
     static void func_ov001_020bb844();
 };
