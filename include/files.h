@@ -282,9 +282,30 @@ typedef struct ZMBSectionROMB {
     /* 0C */
 } ZMBSectionROMB;
 
+typedef struct ZMBEntryROOM {
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 unk_01;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+    /* 04 */ u8 unk_04;
+    /* 05 */ u8 unk_05;
+    /* 06 */ u8 unk_06;
+    /* 07 */ u8 unk_07;
+    /* 08 */ u32 unk_08;
+    /* 0C */ u8 unk_0C;
+    /* 0D */ union {
+        u8 unk_0D;
+        bool unk_0D_bool;
+    };
+    /* 0E */ u8 unk_0E;
+    /* 0F */ u8 unk_0F;
+    /* 10 */ u16 unk_10;
+    /* 12 */ unk16 unk_12; // pad?
+} ZMBEntryROOM;
+
 typedef struct ZMBSectionROOM {
     /* 00 */ ZMBSectionHeader header;
-    /* 0C */
+    /* 0C */ ZMBEntryROOM entries[];
 } ZMBSectionROOM;
 
 typedef struct ZMBEntryLBLB {

@@ -48,7 +48,7 @@ public:
     ActorProfile **func_ov000_02073dc();
     ActorProfile **func_ov000_02073e8();
     ActorProfile *GetProfileFromId(ActorId actorId);
-    void func_ov000_0207444(ActorId actorId, ActorParams *pParams, unk32 param3);
+    void func_ov000_02097444(ActorId actorId, ActorParams *pParams, unk32 param3);
 };
 
 class Actor_C4;

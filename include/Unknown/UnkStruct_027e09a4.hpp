@@ -174,7 +174,7 @@ public:
     /* 04 */ Iterator<UnkStruct_027e09a4_54_04> mUnk_04;
     /* 0C */ wchar_t mUnk_0C[8];
     /* 1C */ EntranceInfo mUnk_1C;
-    /* 30 */ unk16 mUnk_30;
+    /* 30 */ u16 mUnk_30;
     /* 32 */ bool mUnk_32;
     /* 33 */ unk8 mUnk_33;
     /* 34 */

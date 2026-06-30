@@ -58,7 +58,7 @@ extern "C" {
 #define UNK_FX_OPERATION_1(a) (MUL_FX32_FX64((u64) (a), 0xB60B60B60BLL) >> FX32_SHIFT)
 
 #define MUL_FX32_U(a, b) (fx32)((((u64) (a)) * ((u64) (b)) + 0x800) >> FX32_SHIFT)
-#define UNK_FX_OPERATION_2(a) MUL_FX32_U((u64) (a), 0x1333)
+#define UNK_FX_OPERATION_2(a) MUL_FX32_U((u64) (a), FLOAT_TO_FX32(1.2f))
 
 #define DEG_TO_ANG(n) ((n) * 0x10000 / 360)
 #define DEG_TO_ANG_ALT(n) DEG_TO_ANG((u64) (n))

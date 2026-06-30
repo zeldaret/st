@@ -159,6 +159,24 @@ enum UnkFlags1_ {
     UnkFlags1_Max  = 8,
 };
 
+typedef u16 UnkFlags2;
+enum UnkFlags2_ {
+    UnkFlags2_None = 0,
+    UnkFlags2_0    = 0,
+    UnkFlags2_1    = 1,
+    UnkFlags2_2    = 2,
+    UnkFlags2_3    = 3,
+    UnkFlags2_4    = 4,
+    UnkFlags2_5    = 5,
+    UnkFlags2_6    = 6,
+    UnkFlags2_7    = 7,
+    UnkFlags2_8    = 8,
+    UnkFlags2_9    = 9,
+    UnkFlags2_10   = 10,
+    UnkFlags2_11   = 11,
+    UnkFlags2_Max  = 12,
+};
+
 class UnkStruct_027e0cd8_0C_Base {
 public:
     /* 000 (vtable) */
@@ -182,7 +200,10 @@ public:
     /* 0AC */ bool mUnk_0AD;
     /* 0AC */ bool mUnk_0AE;
     /* 0AC */ bool mUnk_0AF;
-    /* 0B0 */ unk32 mUnk_0B0;
+    /* 0B0 */ u8 mUnk_0B0;
+    /* 0B1 */ u8 mUnk_0B1;
+    /* 0B2 */ u8 mUnk_0B2;
+    /* 0B3 */ u8 mUnk_0B3;
     /* 0B4 */ ZeldaObjectList *mUnk_0B4;
     /* 0B8 */ ZeldaObjectList *mUnk_0B8[8]; // map objects
     /* 0D8 */ ZeldaObjectList *mUnk_0D8;
@@ -198,7 +219,7 @@ public:
     /* 11C */ unk32 mUnk_11C;
     /* 120 */ unk32 mUnk_120;
     /* 124 */ unk32 mUnk_124;
-    /* 128 */ u16 mUnk_128;
+    /* 128 */ UnkFlags2 mUnk_128;
     /* 12A */ bool mUnk_12A;
     /* 12B */ bool mUnk_12B;
     /* 12C */ bool mUnk_12C;

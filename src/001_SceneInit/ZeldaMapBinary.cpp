@@ -1,19 +1,24 @@
 #include "Actor/ActorManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Physics/AABB.hpp"
+#include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_027e0960.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
+#include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
 #include "files.h"
 
 extern AABB data_027e0c90;
+extern int data_ov089_02171540;
 
 extern "C" BOOL func_ov001_020ba350(ZMBFileInfos *pFileInfos, u8 param2, UnkStruct_027e0cd8_0C_Base *pDst);
 extern "C" void func_ov001_020ba388(void *, int);
 extern "C" void func_ov001_020ba408(void *);
 extern "C" fx32 func_ov000_02080068(fx32 x);
 extern "C" fx32 func_ov000_02080080(fx32 x);
+extern "C" void func_ov089_02165b18(void *);
 
 BOOL ZMB_ParseFile(ZMBFileInfos *pFileInfos, UnkStruct_027e0cd8_0C_Base *pDst, bool param3) {
     bool isVersion2;
@@ -293,10 +298,10 @@ BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection,
                 if (!iVar6 || pProfile->mUnk_15) {
                     VecFx32 local_24;
                     local_24.x = func_ov000_02080068(posX);
-                    local_24.x += (fx32) ((((s64) (INT_TO_FX32(xMod16)) << 8) + 0x800) >> 12);
+                    local_24.x += MUL_FX32(INT_TO_FX32(xMod16), 256);
 
                     local_24.z = func_ov000_02080080(posY);
-                    local_24.z += (fx32) ((((s64) (INT_TO_FX32(yMod16)) << 8) + 0x800) >> 12);
+                    local_24.z += MUL_FX32(INT_TO_FX32(yMod16), 256);
 
                     local_24.y = 0x7FFFEFFF;
                     local_24.y = pDst->vfunc_28(&local_24, 0x01, 0x00);
@@ -324,12 +329,12 @@ BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection,
                     }
 
                     for (int j = 0; j < ARRAY_LEN(pEntry->unk_14); j++) {
-                        actorParams.mUnk_18[j] = (pEntry->unk_14[j] >> 12) & 0xF;
+                        actorParams.mUnk_18[j] = (pEntry->unk_14[j] >> 12) & 0x0F;
                         actorParams.mUnk_1A[j] = (pEntry->unk_14[j] & 0xFFF);
                     }
 
                     actorParams.mUnk_0E = pEntry->unk_09;
-                    actorParams.mUnk_20 = *(u32 *) &pEntry->unk_18;
+                    actorParams.mUnk_20 = pEntry->unk_18;
 
                     if (pEntry->unk_1D == 0) {
                         actorParams.mUnk_0F = false;
@@ -342,7 +347,7 @@ BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection,
                     actorParams.mUnk_26_0     = pEntry->unk_1C;
 
                     if (!ActorManager::func_ov001_020bb728(pEntry->id)) {
-                        data_ov000_020b539c_eur.func_ov000_0207444(pEntry->id, &actorParams, 0x00);
+                        data_ov000_020b539c_eur.func_ov000_02097444(pEntry->id, &actorParams, 0x00);
                     }
                 }
             }
@@ -355,6 +360,195 @@ BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection,
 }
 
 BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+    for (u16 i = 0; i < pSection->header.nEntries; i++) {
+        ZMBEntryROOM *pEntry = &pSection->entries[i];
+
+        pDst->mUnk_108 = pEntry->unk_00;
+
+        if (pEntry->unk_01 == 0xFF) {
+            pDst->mUnk_110 = 0xFF;
+        } else {
+            pDst->mUnk_110 = pEntry->unk_01;
+        }
+
+        if (pEntry->unk_06 == 0xFF) {
+            pDst->mUnk_10C = data_027e09a4->mUnk_54->mUnk_30;
+        } else {
+            pDst->mUnk_10C = pEntry->unk_06;
+        }
+
+        u8 var_r1_3 = pEntry->unk_07;
+        if (pEntry->unk_07 == 0xFF) {
+            switch (data_027e09a4->GetCurrentCourseEntry()->unk_10) {
+                case 0x00:
+                    var_r1_3 = 0x00;
+                    break;
+                case 0x02:
+                case 0x04:
+                    var_r1_3 = 0x02;
+                    break;
+                case 0x05:
+                    var_r1_3 = 0x0F;
+                    break;
+                default:
+                    var_r1_3 = 0x01;
+                    break;
+            }
+        } else {
+            var_r1_3 = pEntry->unk_07;
+        }
+
+        pDst->mUnk_114 = var_r1_3;
+
+        fx32 var_r7 = UNK_FX_OPERATION_2(INT_TO_FX32(pEntry->unk_02));
+
+        switch (pEntry->unk_03) {
+            case 1:
+                data_027e0cd8->mUnk_16 = true;
+                break;
+            case 2:
+                data_027e0cd8->mUnk_16 = false;
+                break;
+            default:
+                break;
+        }
+
+        pDst->mUnk_0B0 = pEntry->unk_04;
+        pDst->mUnk_0B2 = pEntry->unk_04;
+        pDst->mUnk_0B1 = pEntry->unk_05;
+        pDst->mUnk_0B3 = pEntry->unk_05;
+        pDst->mUnk_0FC = pEntry->unk_08;
+        pDst->mUnk_118 = pEntry->unk_0C;
+
+        switch (data_027e09a4->CurrentSceneIndex()) {
+            case SceneIndex_b_deago:
+                if (data_027e09b8->HasAdventureFlag(AdventureFlag_WatchedStavenPostBattleCS) &&
+                    !data_027e09b8->HasAdventureFlag(AdventureFlag_WatchedMalladusOnTOSSummitCS)) {
+                    pDst->mUnk_118 = 0x01;
+                }
+                break;
+            case SceneIndex_d_main_s:
+                if (data_027e09b8->HasAdventureFlag(AdventureFlag_WatchedStavenPostBattleCS) &&
+                    !data_027e09b8->HasAdventureFlag(AdventureFlag_WatchedMalladusOnTOSSummitCS)) {
+                    pDst->mUnk_118 = 0x01;
+                }
+                break;
+            case SceneIndex_d_main:
+                if (data_027e09a4->func_ov000_02070560()->roomIndex == 20 &&
+                    !data_027e09b8->HasAdventureFlag(AdventureFlag_WatchedStavenPostBattleCS)) {
+                    pDst->mUnk_118 = 0x01;
+                }
+                break;
+            default:
+                break;
+        }
+
+        if (pEntry->unk_0D == 0xFF) {
+            UNSET_FLAG2(pDst->mUnk_128, UnkFlags2_1);
+        } else {
+            SET_FLAG2(pDst->mUnk_128, UnkFlags2_1);
+            pDst->mUnk_0AF = pEntry->unk_0D_bool;
+        }
+
+        if (pEntry->unk_10 & 0x001) {
+            SET_FLAG2(pDst->mUnk_128, UnkFlags2_0);
+        } else {
+            UNSET_FLAG2(pDst->mUnk_128, UnkFlags2_0);
+        }
+
+        if (pEntry->unk_10 & 0x002) {
+            SET_FLAG2(pDst->mUnk_128, UnkFlags2_5);
+        } else {
+            UNSET_FLAG2(pDst->mUnk_128, UnkFlags2_5);
+        }
+
+        if (pEntry->unk_10 & 0x004) {
+            SET_FLAG2(pDst->mUnk_128, UnkFlags2_6);
+        } else {
+            UNSET_FLAG2(pDst->mUnk_128, UnkFlags2_6);
+        }
+
+        if (pEntry->unk_10 & 0x008) {
+            SET_FLAG2(pDst->mUnk_128, UnkFlags2_8);
+            var_r7 += FLOAT_TO_FX32(1.2f);
+        } else {
+            UNSET_FLAG2(pDst->mUnk_128, UnkFlags2_8);
+        }
+
+        if (pEntry->unk_10 & 0x010) {
+            SET_FLAG2(pDst->mUnk_128, UnkFlags2_2);
+        } else {
+            UNSET_FLAG2(pDst->mUnk_128, UnkFlags2_2);
+        }
+
+        if (pEntry->unk_10 & 0x020) {
+            SET_FLAG2(pDst->mUnk_128, UnkFlags2_3);
+        } else {
+            UNSET_FLAG2(pDst->mUnk_128, UnkFlags2_3);
+        }
+
+        if (pEntry->unk_10 & 0x040) {
+            SET_FLAG2(pDst->mUnk_128, UnkFlags2_4);
+        } else {
+            UNSET_FLAG2(pDst->mUnk_128, UnkFlags2_4);
+        }
+
+        if (pEntry->unk_10 & 0x080) {
+            SET_FLAG2(pDst->mUnk_128, UnkFlags2_7);
+        } else {
+            UNSET_FLAG2(pDst->mUnk_128, UnkFlags2_7);
+        }
+
+        if (pEntry->unk_10 & 0x100) {
+            SET_FLAG2(pDst->mUnk_128, UnkFlags2_9);
+        } else {
+            UNSET_FLAG2(pDst->mUnk_128, UnkFlags2_9);
+        }
+
+        if (pEntry->unk_10 & 0x200) {
+            SET_FLAG2(pDst->mUnk_128, UnkFlags2_10);
+        } else {
+            UNSET_FLAG2(pDst->mUnk_128, UnkFlags2_10);
+        }
+
+        pDst->mUnk_11C = pEntry->unk_0E + 1;
+
+        if (pEntry->unk_0F == 0) {
+            UNSET_FLAG2(pDst->mUnk_128, UnkFlags2_11);
+        } else {
+            SET_FLAG2(pDst->mUnk_128, UnkFlags2_11);
+        }
+
+        data_027e0c90.max.y = pDst->mUnk_0A4 + var_r7;
+    }
+
+    if (data_027e09a4->IsLand() || data_027e09a4->GetCurrentCourseEntry()->unk_10 == 0x05) {
+        if (GET_FLAG2(pDst->mUnk_128, UnkFlags2_4)) {
+            data_02049ba0.Unload(OverlaySlot_12);
+        } else if (GET_FLAG2(pDst->mUnk_128, UnkFlags2_2) || data_027e09a4->CurrentSceneIndex() == SceneIndex_b_flame ||
+                   data_027e09a4->CurrentSceneIndex() == SceneIndex_tekiya08 ||
+                   data_027e09a4->CurrentSceneIndex() == SceneIndex_battle03 ||
+                   data_027e09a4->CurrentSceneIndex() == SceneIndex_battle05 ||
+                   data_027e09a4->CurrentSceneIndex() == SceneIndex_battle09 ||
+                   data_027e09a4->CurrentSceneIndex() == SceneIndex_battle11) {
+            data_02049ba0.LoadIfNotLoaded(OverlaySlot_12, OverlayIndex_MapLava);
+        } else if (GET_FLAG2(pDst->mUnk_128, UnkFlags2_3)) {
+            data_02049ba0.LoadIfNotLoaded(OverlaySlot_12, OverlayIndex_MapWater);
+        } else {
+            data_02049ba0.Unload(OverlaySlot_12);
+        }
+    }
+
+    data_027e0ce0->mUnk_1C->func_ov001_020bd0a4(GET_FLAG2(pDst->mUnk_128, UnkFlags2_11));
+
+    if (GET_FLAG2(pDst->mUnk_128, UnkFlags2_9) ? true : false) {
+        data_02049ba0.Unload(OverlaySlot_10);
+        data_02049ba0.LoadIfNotLoaded(OverlaySlot_9, OverlayIndex_ASR);
+        func_ov089_02165b18(&data_ov089_02171540);
+    } else if (gOverlayManager.IsASR()) {
+        data_02049ba0.LoadIfNotLoaded(OverlaySlot_9, OverlayIndex_Land2);
+    }
+
     return true;
 }
 
