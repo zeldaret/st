@@ -90,8 +90,8 @@ UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param
     mUnk_12D(false),
     mUnk_12E(false),
     mpROMB(NULL),
-    mUnk_134(0),
-    mUnk_138(0) {
+    mpCAME(NULL),
+    mpCMPT(NULL) {
     Vec2s local_30;
     VecFx32 sp18;
     VecFx32 spC;
@@ -132,9 +132,9 @@ UnkStruct_027e0cd8_0C_Base::~UnkStruct_027e0cd8_0C_Base() {
     data_027e095c->func_ov000_020592ec();
     gpMapObjManager->func_ov001_020baf28();
     DELETE(this->mUnk_098);
-    this->mpROMB   = NULL;
-    this->mUnk_138 = 0;
-    this->mUnk_134 = 0;
+    this->mpROMB = NULL;
+    this->mpCMPT = NULL;
+    this->mpCAME = NULL;
     this->mUnk_154.clear();
     this->func_ov001_020b8aec();
 }
@@ -360,12 +360,12 @@ void *UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c80(unk32 param1) {
     return (void *) &data_ov001_020c2a40[param1 - 0x3C];
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c90(unk32 param1) {
-    this->mUnk_138 = param1;
+void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c90(ZMBSectionCMPT *pCMPT) {
+    this->mpCMPT = pCMPT;
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c98(unk32 param1) {
-    this->mUnk_134 = param1;
+void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c98(ZMBSectionCAME *pCAME) {
+    this->mpCAME = pCAME;
 }
 
 void UnkStruct_027e0cd8_0C_Base::ZMB_ParseROMB(ZMBSectionROMB *pROMB) {

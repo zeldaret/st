@@ -59,6 +59,7 @@ public:
     /* 14 */ unk32 mUnk_14;
     /* 18 */
 
+    UnkStruct_ov001_020c40f4(int) {}
     UnkStruct_ov001_020c40f4() {
         this->mUnk_0E = -1;
         this->mUnk_0F = 0;
@@ -226,8 +227,8 @@ public:
     /* 12D */ bool mUnk_12D;
     /* 12E */ bool mUnk_12E;
     /* 130 */ ZMBSectionROMB *mpROMB;
-    /* 134 */ unk32 mUnk_134;
-    /* 138 */ unk32 mUnk_138;
+    /* 134 */ ZMBSectionCAME *mpCAME;
+    /* 138 */ ZMBSectionCMPT *mpCMPT;
     /* 13C */ FixedVector<UnkStruct_ov001_020c40f4> mUnk_13C;                  // related to player
     /* 148 */ CustomVector<UnkStruct_027e0cd8_0C_Base_148_00_Base *> mUnk_148; // related to "arrange" stuff
     /* 154 */ CustomVector<EntranceInfo> mUnk_154;                             // exit list?
@@ -276,8 +277,8 @@ public:
     void func_ov001_020b8b94(ZMBEntryARAB *pARAB);
     void func_ov001_020b8c30(const EntranceInfo &param1);
     void *func_ov001_020b8c80(unk32 param1);
-    void func_ov001_020b8c90(unk32 param1);
-    void func_ov001_020b8c98(unk32 param1);
+    void func_ov001_020b8c90(ZMBSectionCMPT *pCMPT);
+    void func_ov001_020b8c98(ZMBSectionCAME *pCAME);
     void func_ov001_020b8db8();
     void func_ov001_020b8e24();
     void func_ov001_020b8e54();

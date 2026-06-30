@@ -300,8 +300,8 @@ typedef struct ZMBEntryROOM {
     /* 0E */ u8 unk_0E;
     /* 0F */ u8 unk_0F;
     /* 10 */ u16 unk_10;
-    /* 12 */ unk16 unk_12; // pad?
-} ZMBEntryROOM;
+    /* 12 */ unk16 unk_12; // pad
+} ZMBEntryROOM;            // size = 0x14
 
 typedef struct ZMBSectionROOM {
     /* 00 */ ZMBSectionHeader header;
@@ -405,9 +405,20 @@ typedef struct ZMBSectionActorList {
     /* 0C */ ZMBActorEntry entries[];
 } ZMBSectionActorList;
 
+typedef struct ZMBEntryPLYR {
+    /* 00 */ VecFx32 unk_00;
+    /* 0C */ u16 unk_0C;
+    /* 0E */ u8 unk_0E;
+    /* 0F */ u8 unk_0F;
+    /* 10 */ u8 unk_10;
+    /* 11 */ u8 unk_11;
+    /* 12 */ u8 unk_12;
+    /* 13 */ u8 unk_13;
+} ZMBEntryPLYR; // size = 0x14
+
 typedef struct ZMBSectionPLYR {
     /* 00 */ ZMBSectionHeader header;
-    /* 0C */
+    /* 0C */ ZMBEntryPLYR entries[];
 } ZMBSectionPLYR;
 
 typedef struct ZMBEntryWARP {
@@ -427,14 +438,30 @@ typedef struct ZMBSectionWARP {
     /* 0C */ ZMBEntryWARP entries[];
 } ZMBSectionWARP;
 
+typedef struct ZMBEntryCAME {
+    /* 00 */ fx32 unk_00;
+    /* 04 */ VecFx32 unk_04;
+    /* 10 */ s16 unk_10;
+    /* 12 */ s16 unk_12;
+    /* 14 */ unk32 unk_14; // pad
+    /* 18 */ unk32 unk_18; // pad
+} ZMBEntryCAME;            // size = 0x1C
+
 typedef struct ZMBSectionCAME {
     /* 00 */ ZMBSectionHeader header;
-    /* 0C */
+    /* 0C */ ZMBEntryCAME entries[];
 } ZMBSectionCAME;
+
+typedef struct ZMBEntryCMPT {
+    /* 04 */ VecFx32 unk_00;
+    /* 10 */ u8 unk_0C;
+    /* 12 */ u8 unk_0D;
+    /* 14 */ unk16 unk_0E; // pad
+} ZMBEntryCMPT;            // size = 0x10
 
 typedef struct ZMBSectionCMPT {
     /* 00 */ ZMBSectionHeader header;
-    /* 0C */
+    /* 0C */ ZMBEntryCMPT entries[];
 } ZMBSectionCMPT;
 
 struct UnkStruct_027e0cd8_0C_Base;

@@ -19,6 +19,7 @@ extern "C" void func_ov001_020ba408(void *);
 extern "C" fx32 func_ov000_02080068(fx32 x);
 extern "C" fx32 func_ov000_02080080(fx32 x);
 extern "C" void func_ov089_02165b18(void *);
+extern "C" fx32 func_ov000_020775d8(fx32);
 
 BOOL ZMB_ParseFile(ZMBFileInfos *pFileInfos, UnkStruct_027e0cd8_0C_Base *pDst, bool param3) {
     bool isVersion2;
@@ -553,13 +554,96 @@ BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pSection, UnkStruct
 }
 
 BOOL ZMB_ParsePLYR(ZMBFileInfos *pFileInfos, ZMBSectionPLYR *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+    for (u16 i = 0; i < pSection->header.nEntries; i++) {
+        ZMBEntryPLYR *pEntry = &pSection->entries[i];
+
+        if (func_ov001_020ba350(pFileInfos, pEntry->unk_11, pDst)) {
+            s32 unk_00 = ROUND_FX32(pEntry->unk_00.x);
+            s32 unk_08 = ROUND_FX32(pEntry->unk_00.z);
+
+            s32 tile_x = unk_00 / 16;
+            s32 tile_z = unk_08 / 16;
+
+            s32 xMod16 = unk_00 % 16;
+            s32 zMod16 = unk_08 % 16;
+
+            fx32 z = func_ov000_02080080(tile_z);
+            z += MUL_FX32(INT_TO_FX32(zMod16), 256);
+
+            fx32 x = func_ov000_02080068(tile_x);
+            x += MUL_FX32(INT_TO_FX32(xMod16), 256);
+
+            VecFx32 local_20;
+            local_20.x = x;
+            local_20.y = 0x7FFFEFFF;
+            local_20.z = z;
+
+            fx16 unk_0C = (u16) UNK_FX_OPERATION_1(INT_TO_FX32(pEntry->unk_0C));
+            u8 unk_0E   = pEntry->unk_0E;
+            u8 unk_12;
+            u8 unk_0F = pEntry->unk_0F;
+            u8 unk_10 = pEntry->unk_10;
+            unk_12    = pEntry->unk_12;
+
+            if (unk_12 != 0) {
+                local_20.y = pEntry->unk_00.y;
+            }
+
+            UnkStruct_ov001_020c40f4 unkData(0); //! TODO: solve ctor oddities
+            unkData.mUnk_00 = local_20;
+            unkData.mUnk_0C = unk_0C;
+            unkData.mUnk_0E = unk_0E;
+            unkData.mUnk_0F = unk_12;
+            unkData.mUnk_10 = unk_0F;
+            unkData.mUnk_14 = unk_10;
+
+            UnkStruct_ov001_020c40f4 *pEnd    = pDst->mUnk_13C.end();
+            UnkStruct_ov001_020c40f4 *new_var = &unkData;
+            if (pEnd != NULL) {
+                pEnd->mUnk_00 = new_var->mUnk_00;
+                pEnd->mUnk_0C = new_var->mUnk_0C;
+                pEnd->mUnk_0E = new_var->mUnk_0E;
+                pEnd->mUnk_0F = new_var->mUnk_0F;
+                pEnd->mUnk_10 = new_var->mUnk_10;
+                pEnd->mUnk_14 = new_var->mUnk_14;
+            }
+
+            pDst->mUnk_13C.grow_by(1);
+        }
+    }
+
     return true;
 }
 
 BOOL ZMB_ParseCAME(ZMBFileInfos *pFileInfos, ZMBSectionCAME *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+    for (u16 i = 0; i < pSection->header.nEntries; i++) {
+        ZMBEntryCAME *pEntry = &pSection->entries[i];
+
+        pEntry->unk_00 = func_ov000_020775d8(pEntry->unk_00);
+
+        VecFx32 vec;
+        VecFx32_Copy(&pEntry->unk_04, &vec);
+
+        pEntry->unk_04.y += pDst->vfunc_28(&vec, 0x01, 0x00);
+        pEntry->unk_10 = UNK_FX_OPERATION_1(INT_TO_FX32(pEntry->unk_10));
+        pEntry->unk_12 = UNK_FX_OPERATION_1(INT_TO_FX32(pEntry->unk_12));
+    }
+
+    pDst->func_ov001_020b8c98(pSection);
     return true;
 }
 
 BOOL ZMB_ParseCMPT(ZMBFileInfos *pFileInfos, ZMBSectionCMPT *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+    for (u16 i = 0; i < pSection->header.nEntries; i++) {
+        ZMBEntryCMPT *pEntry = &pSection->entries[i];
+
+        if (pEntry->unk_0D != 0) {
+            VecFx32 vec;
+            VecFx32_Copy(&pEntry->unk_00, &vec);
+            pEntry->unk_00.y += pDst->vfunc_28(&vec, 0x01, 0x00);
+        }
+    }
+
+    pDst->func_ov001_020b8c90(pSection);
     return true;
 }
