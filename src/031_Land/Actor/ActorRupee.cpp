@@ -182,7 +182,7 @@ void ActorRupee::func_ov031_020e9068() {
         }
     }
 
-    if (this->mUnk_5C.mUnk_24 >= 0 && this->mUnk_5C.mUnk_1A != 0) {
+    if (this->mUnk_5C.mUnk_24 >= 0 && this->mUnk_5C.mUnk_1A[0] != 0) {
         this->func_ov000_02098a88(0, 1);
     }
 
