@@ -287,7 +287,7 @@ bool ActorItemBoomerang_11C::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, un
         return false;
     }
 
-    Vec2b pos;
+    Vec2bCpp pos;
     if (this->mUnk_08->mState == ActorItemBoomerangState_1) {
         if (param2 & 0x1000) {
             pos.x = (u8) param2 >> 16;
