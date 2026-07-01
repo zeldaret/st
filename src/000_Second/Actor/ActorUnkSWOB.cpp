@@ -21,11 +21,11 @@ ActorProfileUnkSWOB::ActorProfileUnkSWOB() :
 ActorUnkSWOB::ActorUnkSWOB() {}
 
 bool ActorUnkSWOB::vfunc_18(unk32 param1) {
-    this->mUnk_9E = this->mUnk_5C.mUnk_1C_0;
+    this->mUnk_9E = this->mUnk_5C.mUnk_1A[1];
     this->mUnk_94 = this->mUnk_5C.mParams[1];
     this->mUnk_98 = this->mUnk_5C.mParams[2];
     this->mUnk_A0 = this->mUnk_9E + this->mUnk_5C.mParams[0];
-    this->mUnk_A2 = this->mUnk_5C.mUnk_18.y;
+    this->mUnk_A2 = this->mUnk_5C.mUnk_18[1];
     this->mUnk_9C = this->mUnk_9E;
 
     if (this->func_ov000_02098a60(0)) {
@@ -73,9 +73,9 @@ void ActorUnkSWOB::func_ov000_0209aa30(void) {
         case 3:
             data_ov000_020b5214.func_ov000_0206db44(0xA3);
 
-            s16 unk_78 = this->mUnk_5C.mUnk_1C_0;
+            s16 unk_78 = this->mUnk_5C.mUnk_1A[1];
             if (unk_78 > 0) {
-                data_027e0cd8->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_5C.mUnk_18.y, true);
+                data_027e0cd8->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_5C.mUnk_18[1], true);
             }
             break;
         case 2: {

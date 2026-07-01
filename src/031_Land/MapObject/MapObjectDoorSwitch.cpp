@@ -41,12 +41,12 @@ bool MapObjectDoorSwitch::vfunc_00(void) {
     this->mUnk_094.vfunc_08(this->GetModel());
     this->func_ov031_020fbf10(true, true);
 
-    if (this->mUnk_20.mUnk_00[3] == 1) {
+    if (this->mUnk_20.mParams[3] == 1) {
         this->mUnk_8F = false;
     }
 
 #if IS_JP
-    if (this->mUnk_20.mUnk_00[2] == 1) {
+    if (this->mUnk_20.mParams[2] == 1) {
         this->mUnk_141 = true;
     }
 #endif
@@ -91,7 +91,7 @@ bool MapObjectDoorSwitch::vfunc_00(void) {
 }
 
 void MapObjectDoorSwitch::vfunc_08(void) {
-    if (this->mUnk_20.mUnk_00[3] == 2 && data_027e09b8->func_01ffd420()) {
+    if (this->mUnk_20.mParams[3] == 2 && data_027e09b8->func_01ffd420()) {
         this->MapObjectDoorBase::vfunc_08();
     } else if (this->mUnk_16 == 5 && this->vfunc_6C()) {
         this->vfunc_5C(0, 0);

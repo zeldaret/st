@@ -65,7 +65,7 @@ public:
     /* 28 */ u16 mUnk_28;
     /* 2A */ u16 mPostDate;
     /* 2C */ union {
-        Vec2b mStampPositions[StampType_Max];
+        Vec2bCpp mStampPositions[StampType_Max];
         u16 mStampPos[StampType_Max];
     };
     /* 54 */ s8 mObtainedLetters[LetterType_Max];
@@ -100,7 +100,7 @@ public:
     unk32 func_ov024_020d6468();
     unk32 GetStamp(unk32 index);
     u16 *GetStampDate(unk32 index);
-    Vec2b *GetStampPos(unk32 index);
+    Vec2bCpp *GetStampPos(unk32 index);
     void func_ov024_020d64b4(s8 param1, unk32 param2, const u16 *param3);
     void func_ov024_020d6530();
     unk32 GetNumPostcards();

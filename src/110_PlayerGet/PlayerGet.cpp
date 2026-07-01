@@ -888,7 +888,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                         break;
                     case ItemId_RecruitUniform2:
                     case ItemId_EngineerUniform:
-                        if (data_027e09a4->mUnk_00.mSceneIndex == SceneIndex_f_first) {
+                        if (data_027e09a4->CurrentSceneIndex() == SceneIndex_f_first) {
                             this->mUnk_28->func_ov058_02152a24();
                         }
                         break;
@@ -897,7 +897,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                 }
 
                 if (this->mUnk_54.mUnk_00.type_index == REF_TYPE_INDEX(ActorRefType_0, 0x1000)) {
-                    Vec2b stack;
+                    Vec2bCpp stack;
                     stack.x = this->mUnk_54.mUnk_00.type_index;
                     stack.y = this->mUnk_54.mUnk_00.unk_id;
 

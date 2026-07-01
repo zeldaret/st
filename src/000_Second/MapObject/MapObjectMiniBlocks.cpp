@@ -35,12 +35,12 @@ MapObjectMiniBlocks::MapObjectMiniBlocks() {
 
 bool MapObjectMiniBlocks::vfunc_00(void) {
     GET_PROFILE(MapObjectProfileMiniBlocks)
-        ->func_ov000_0209ccd8(this->mUnk_20.mUnk_00[1], data_ov000_020af574[this->mUnk_20.mUnk_00[1]]);
+        ->func_ov000_0209ccd8(this->mUnk_20.mParams[1], data_ov000_020af574[this->mUnk_20.mParams[1]]);
     UnkStruct_027e0cd8_0C_Base *pUnkStruct_027e0cd8_0C = data_027e0cd8->mUnk_0C;
     u8 uVar6;
 
-    if (this->mUnk_20.mUnk_00[1] != MiniBlocksVariant_BLKF) {
-        Vec2b vec(this->mUnk_3A.x, this->mUnk_3A.y);
+    if (this->mUnk_20.mParams[1] != MiniBlocksVariant_BLKF) {
+        Vec2bCpp vec(this->mUnk_3A.x, this->mUnk_3A.y);
         this->mPos.y = pUnkStruct_027e0cd8_0C->func_01ffedf4(&vec);
     }
 
@@ -50,7 +50,7 @@ bool MapObjectMiniBlocks::vfunc_00(void) {
     vec.z = FLOAT_TO_FX32(0.0f);
     uVar6 = 0;
 
-    switch (this->mUnk_20.mUnk_00[0]) {
+    switch (this->mUnk_20.mParams[0]) {
         case 4:
         case 5:
         case 6:
@@ -64,7 +64,7 @@ bool MapObjectMiniBlocks::vfunc_00(void) {
             uVar6 = 2;
             break;
         default:
-            if (this->mUnk_20.mUnk_00[1] == MiniBlocksVariant_BLKF) {
+            if (this->mUnk_20.mParams[1] == MiniBlocksVariant_BLKF) {
                 vec.x = FLOAT_TO_FX32(0.0f);
                 vec.y = FLOAT_TO_FX32(0.0f);
                 vec.z = -FLOAT_TO_FX32(0.375f);
@@ -76,12 +76,12 @@ bool MapObjectMiniBlocks::vfunc_00(void) {
             break;
     }
 
-    BMDSectionModel *pSectionModel = GET_PROFILE(MapObjectProfileMiniBlocks)->vfunc_1C(this->mUnk_20.mUnk_00[1])->mUnk_50;
+    BMDSectionModel *pSectionModel = GET_PROFILE(MapObjectProfileMiniBlocks)->vfunc_1C(this->mUnk_20.mParams[1])->mUnk_50;
     this->mUnk_40.vfunc_08(G3d_GetModelVariantPtr(pSectionModel, uVar6));
 
     unk32 var_r0_2;
     unk32 var_r0;
-    switch (this->mUnk_20.mUnk_00[0]) {
+    switch (this->mUnk_20.mParams[0]) {
         case 1:
         case 6:
         case 8:

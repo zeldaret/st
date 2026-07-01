@@ -399,6 +399,10 @@ public:
         return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_FldAjito;
     }
 
+    bool IsASR() {
+        return this->mLoadedOverlays[OverlaySlot_9] == OverlayIndex_ASR;
+    }
+
     void Load(OverlaySlot slot, OverlayIndex index);
     void LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index);
     void Unload(OverlaySlot slot);

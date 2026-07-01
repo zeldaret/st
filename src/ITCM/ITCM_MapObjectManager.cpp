@@ -9,7 +9,7 @@ struct UnkStruct {
 
 extern "C" void func_01ffecdc(int, void *);
 
-MapObject *MapObjectManager::func_01fff498(Vec2b param1) {
+MapObject *MapObjectManager::func_01fff498(Vec2bCpp param1) {
     if (this->mUnk_0C[param1.y][param1.x] < 0) {
         return NULL;
     }

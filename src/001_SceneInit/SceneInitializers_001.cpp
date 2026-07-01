@@ -69,7 +69,9 @@ UnkStruct_027e09a4 *UnkStruct_027e09a4::Create(unk32 param1) {
     return new(HeapIndex_1) UnkStruct_027e09a4(param1);
 }
 
-UnkStruct_027e09a4::UnkStruct_027e09a4(unk32 param1) {
+UnkStruct_027e09a4::UnkStruct_027e09a4(unk32 param1) :
+    mUnk_00(false),
+    mUnk_14(false) {
     this->mUnk_28    = 0;
     this->mUnk_54    = NULL;
     this->mpWarpUnk1 = NULL;
@@ -108,7 +110,7 @@ UnkStruct_027e09a4::UnkStruct_027e09a4(unk32 param1) {
 
 void UnkStruct_027e09a4::func_ov001_020b662c() {
     UnkStruct_WarpUnk1 *ptr = this->mpWarpUnk1;
-    ptr->mUnk_78            = this->mUnk_00;
+    ptr->mCurEntrance       = this->mUnk_00;
     this->mUnk_14           = this->mUnk_00;
     this->func_ov001_020b6758(&this->mUnk_00, false);
 }
@@ -144,7 +146,7 @@ void UnkStruct_027e09a4::func_ov001_020b66dc() {
     UnkStruct_027e09a0::Destroy();
 }
 
-void UnkStruct_027e09a4::func_ov001_020b6758(const UnkStruct_SceneChange1 *param1, bool param2) {
+void UnkStruct_027e09a4::func_ov001_020b6758(const EntranceInfo *param1, bool param2) {
     OverlayIndex index;
     unk32 unk_10;
 
@@ -191,7 +193,7 @@ void UnkStruct_027e09a4::func_ov001_020b6758(const UnkStruct_SceneChange1 *param
     }
 
     if (this->IsCutscene()) {
-        data_027e09b8->func_ov001_020b76c0(param1->mCutsceneIndex);
+        data_027e09b8->func_ov001_020b76c0(param1->csIndex);
     }
 
     this->mUnk_54->func_ov001_020b6fa0(this->GetCurrentCourseEntry());
@@ -223,16 +225,16 @@ void UnkStruct_027e09a4::func_ov001_020b68a4(bool param1, bool param2, bool para
     UnkStruct_027e095c::Destroy();
 }
 
-void UnkStruct_027e09a4::func_ov001_020b6924(const UnkStruct_SceneChange1 *param1, bool param2) {
+void UnkStruct_027e09a4::func_ov001_020b6924(const EntranceInfo *param1, bool param2) {
     unk32 iVar5;
     unk32 iVar6;
     u8 cVar1;
     u8 cVar2;
 
     iVar6 = this->GetCurrentCourseEntry()->unk_10;
-    iVar5 = data_027e09a0->GetCourseEntry(param1->mSceneIndex)->unk_10;
+    iVar5 = data_027e09a0->GetCourseEntry(param1->sceneIndex)->unk_10;
     cVar1 = data_027e09a0->GetCourseEntry(this->CurrentSceneIndex())->unk_1C;
-    cVar2 = data_027e09a0->GetCourseEntry(param1->mSceneIndex)->unk_1C;
+    cVar2 = data_027e09a0->GetCourseEntry(param1->sceneIndex)->unk_1C;
 
     this->func_ov001_020b69b4(param1, param2);
     this->func_ov001_020b68a4(data_ov000_020b21c4[iVar5] != data_ov000_020b21c4[iVar6],
@@ -240,7 +242,7 @@ void UnkStruct_027e09a4::func_ov001_020b6924(const UnkStruct_SceneChange1 *param
     this->func_ov001_020b6758(param1, param2);
 }
 
-void UnkStruct_027e09a4::func_ov001_020b69b4(const UnkStruct_SceneChange1 *param1, bool param2) {
+void UnkStruct_027e09a4::func_ov001_020b69b4(const EntranceInfo *param1, bool param2) {
     VecFx32 vec1;
     VecFx32 vec2;
     unk32 local_34;
@@ -253,7 +255,7 @@ void UnkStruct_027e09a4::func_ov001_020b69b4(const UnkStruct_SceneChange1 *param
     for (int i = 0; i < ARRAY_LEN(data_ov001_020c25d4); i++) {
         SceneIndex sceneIndex = data_ov001_020c25d4[i];
 
-        if (sceneIndex == param1->mSceneIndex) {
+        if (sceneIndex == param1->sceneIndex) {
             bVar1 = true;
             index = i;
         }
@@ -285,11 +287,11 @@ void UnkStruct_027e09a4::func_ov001_020b69b4(const UnkStruct_SceneChange1 *param
         this->mUnk_2C.mUnk_10   = this->func_ov000_02070538()->mUnk_12;
     } else {
         if (this->GetCurrentCourseEntry()->unk_10 == 4) {
-            switch (param1->mSceneIndex) {
+            switch (param1->sceneIndex) {
                 case SceneIndex_d_water27:
                 case SceneIndex_f_forest2:
                 case SceneIndex_f_snow2:
-                    switch (param1->mSceneIndex) {
+                    switch (param1->sceneIndex) {
                         case SceneIndex_d_water27:
                             this->mUnk_2C.mSceneIndex = SceneIndex_t_area2;
                             local_34                  = 0x0D;
@@ -414,8 +416,7 @@ DECL_INSTANCE_DTOR(UnkStruct_027e095c, data_027e095c);
 DECL_INSTANCE_DTOR(UnkStruct_027e0958, data_027e0958);
 DECL_INSTANCE_DTOR(UnkStruct_027e0954, data_027e0954);
 
-UnkStruct_027e09a4_54_Base::UnkStruct_027e09a4_54_Base(unk32 *param1) :
-    mUnk_1C((s32) 0) {
+UnkStruct_027e09a4_54_Base::UnkStruct_027e09a4_54_Base(unk32 *param1) {
     this->mUnk_04.Clear();
     this->mUnk_0C[0] = L'\0';
     this->mUnk_0C[7] = L'\0';
@@ -448,8 +449,8 @@ void UnkStruct_027e09a4_54_Base::vfunc_0C() {
 }
 
 void UnkStruct_027e09a4_54_Base::func_ov001_020b6fa0(CourseListEntry *pCourseEntry) {
-    if (this->mUnk_1C.mIsCS == true) {
-        data_0204a110.func_02018d78(Cutscene_GetParamEntry(this->mUnk_1C.mCutsceneIndex)->mUnk_14);
+    if (this->mUnk_1C.isCS == true) {
+        data_0204a110.func_02018d78(Cutscene_GetParamEntry(this->mUnk_1C.csIndex)->mUnk_14);
     } else {
         if (data_027e09a4->mUnk_60 == 0) {
             if (data_027e09a4->IsDarkRealm()) {
@@ -489,7 +490,9 @@ UnkStruct_WarpUnk1_24::UnkStruct_WarpUnk1_24() {
     this->mUnk_2A = false;
 }
 
-UnkStruct_WarpUnk1::UnkStruct_WarpUnk1() {
+UnkStruct_WarpUnk1::UnkStruct_WarpUnk1() :
+    mCurEntrance(false),
+    mNextEntrance(false) {
     this->mSpawnTransitionType = 0;
     this->mUnk_A0.mUnk_04.x    = 0;
     this->mUnk_A0.mUnk_04.y    = 0;
@@ -525,8 +528,8 @@ bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
         this->mUnk_A0.mUnk_12 = func_ov026_02106564(NULL);
     }
 
-    this->mUnk_A0.mSceneIndex = this->mUnk_78.mSceneIndex;
-    this->mUnk_A0.mRoomIndex  = this->mUnk_78.mRoomIndex;
+    this->mUnk_A0.mSceneIndex = this->mCurEntrance.sceneIndex;
+    this->mUnk_A0.mRoomIndex  = this->mCurEntrance.roomIndex;
 
     switch (this->mSpawnTransitionType) {
         case 0x04:
@@ -540,8 +543,8 @@ bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
             iVar9 = true;
             break;
         default:
-            if (((this->mUnk_78.mSceneIndex != this->mUnk_8C.mSceneIndex) || (this->mUnk_8C.mIsCS == true) ||
-                 (this->mUnk_78.mIsCS == true))) {
+            if (((this->mCurEntrance.sceneIndex != this->mNextEntrance.sceneIndex) || (this->mNextEntrance.isCS == true) ||
+                 (this->mCurEntrance.isCS == true))) {
                 iVar9 = true;
             } else {
                 iVar9 = false;
@@ -550,18 +553,18 @@ bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
     }
 
     data_ov000_020b50c0.func_ov000_0206a014();
-    this->mUnk_78 = this->mUnk_8C;
+    this->mCurEntrance = this->mNextEntrance;
 
     if (iVar9) {
-        data_027e09a4->func_ov001_020b6924(&this->mUnk_8C, this->mSpawnTransitionType == 2);
+        data_027e09a4->func_ov001_020b6924(&this->mNextEntrance, this->mSpawnTransitionType == 2);
     } else {
-        data_027e0cd8->func_ov001_020b7c08(&this->mUnk_8C, &this->mUnk_A0);
+        data_027e0cd8->func_ov001_020b7c08(&this->mNextEntrance, &this->mUnk_A0);
     }
 
     uVar8 = 0;
     bVar2 = false;
 
-    data_027e0cd8->mUnk_0C->func_ov001_020b8a5c(this->mUnk_8C.mSpawnIndex, 0);
+    data_027e0cd8->mUnk_0C->func_ov001_020b8a5c(this->mNextEntrance.spawnIndex, 0);
 
     this->Detach();
     this->mUnk_0C = false;
@@ -573,7 +576,7 @@ bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
     LinkListImpl::Detach((LinkListNode *) ((u8 *) &this->mUnk_50 + 4));
     this->mUnk_50.mUnk_0C = false;
 
-    if (this->mUnk_8C.mIsCS == true) {
+    if (this->mNextEntrance.isCS == true) {
         this->Detach();
         this->mUnk_0C = false;
     } else {

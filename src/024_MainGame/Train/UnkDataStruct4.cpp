@@ -28,8 +28,8 @@ void UnkDataStruct4::func_ov024_020d2518() {}
 
 void UnkDataStruct4::func_ov024_020d251c() {}
 
-void UnkDataStruct4::func_ov024_020d2520(UnkStruct_SceneChange1 *param1) {
-    this->func_ov024_020d2538(param1->mSceneIndex, param1->mRoomIndex, NULL);
+void UnkDataStruct4::func_ov024_020d2520(EntranceInfo *param1) {
+    this->func_ov024_020d2538(param1->sceneIndex, param1->roomIndex, NULL);
 }
 
 void UnkDataStruct4::func_ov024_020d2538(u32 sceneIndex, u8 roomIndex, UnkDataStruct4_14_2 *param3) {

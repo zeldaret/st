@@ -403,6 +403,8 @@ class UnkStruct_027e0ce0_1C {
 public:
     /* 00 */ STRUCT_PAD(0x00, 0x0C);
     /* 0C */ MapObjectProfile_Derived2_20_Base *mUnk_0C;
+
+    void func_ov001_020bd0a4(bool param1);
 };
 
 // PlayerManager?

@@ -53,7 +53,15 @@ extern "C" {
 #define MUL_FX32(a, b) (fx32)((((s64) (a)) * ((s64) (b)) + 0x800) >> FX32_SHIFT)
 #define DIV_FX32(a, b) (((a) << FX32_SHIFT) / (b))
 
+// some kind of angle conversion? only used for angle values so far
+#define MUL_FX32_FX64(a, b) (fx32)(((((a) * (b)) + 0x80000000000LL) >> 32))
+#define UNK_FX_OPERATION_1(a) (MUL_FX32_FX64((u64) (a), 0xB60B60B60BLL) >> FX32_SHIFT)
+
+#define MUL_FX32_U(a, b) (fx32)((((u64) (a)) * ((u64) (b)) + 0x800) >> FX32_SHIFT)
+#define UNK_FX_OPERATION_2(a) MUL_FX32_U((u64) (a), FLOAT_TO_FX32(1.2f))
+
 #define DEG_TO_ANG(n) ((n) * 0x10000 / 360)
+#define DEG_TO_ANG_ALT(n) DEG_TO_ANG((u64) (n))
 #define SIN(n) (gSinCosTable[2 * ((n) >> 4)])
 #define COS(n) (gSinCosTable[2 * ((n) >> 4) + 1])
 
@@ -81,6 +89,15 @@ static inline void Vec2p_Copy(const Vec2p *src, Vec2p *dst) {
     dst->y = src->y;
 #endif
 }
+
+typedef union Vec2b {
+    struct {
+        /* 0 */ u8 x;
+        /* 4 */ u8 y;
+        /* 8 */
+    };
+    u8 coords[2];
+} Vec2b;
 
 typedef struct Mat2p {
     /* 00 */ Vec2p xColumn;

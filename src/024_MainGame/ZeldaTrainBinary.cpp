@@ -8,7 +8,7 @@ BOOL ZTB_ParseFile(FileInfos *pFileInfos, UnkDataStruct4 *pDst) {
     ZTBHeader *pHeader         = (ZTBHeader *) pFileInfos->pFile;
     ZTBSectionHeader *pSection = (ZTBSectionHeader *) ((u8 *) pHeader + sizeof(ZTBHeader));
 
-    for (int i = 0; i < pHeader->nEntries; i++) {
+    for (int i = 0; i < pHeader->nSections; i++) {
         switch (pSection->type) {
             case ZTBSectionType_GRDB:
                 ZTB_ParseGRDB(pFileInfos, pDst, (ZTBSectionGRDB *) pSection);

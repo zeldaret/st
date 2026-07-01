@@ -96,19 +96,17 @@ public:
 
 class MapObject_20 {
 public:
-    /* 00 */ u16 mUnk_00[4]; // parameters
+    /* 00 */ u16 mParams[4]; // parameters
     /* 08 */ u8 mUnk_08[2];
     /* 0A */ u16 mUnk_0A[2];
     /* 0E */ unk16 mUnk_0E;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ s16 mUnk_14;
     /* 16 */ bool mUnk_16;
-    /* 16 */ unk8 mUnk_17;
+    /* 17 */ s8 mUnk_17;
     /* 18 */
 
-    MapObject_20() {}
-
-    void func_ov000_0209c7c8();
+    void Init();
 
     static void func_ov000_0209c790(MapObjectId mapObjId, MapObjectProfile *pProfile);
     static void func_ov000_0209c7ac(MapObjectId mapObjId);
@@ -129,7 +127,7 @@ public:
     /* 20 */ MapObject_20 mUnk_20; // parameters
     /* 38 */ unk8 mUnk_38;
     /* 39 */ unk8 mUnk_39;
-    /* 3A */ Vec2b mUnk_3A;
+    /* 3A */ Vec2bCpp mUnk_3A;
     /* 3C */ MapObjectProfile *mpProfile;
     /* 40 */
 
@@ -175,7 +173,7 @@ public:
     void func_ov000_0209d274(unk32 param1);
     bool func_ov000_0209d29c(unk32 param1);
     void func_ov000_0209d2c4(unk32 param1, bool param2);
-    void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2b *param3);
+    void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3);
     void func_ov000_0209d3b4(unk32 param1, fx32 size);
     void func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_00 *param2, unk32 param3);
     void func_ov000_0209d518(unk32 param1, unk32 param2, unk32 param3, u8 param4);
@@ -184,7 +182,7 @@ public:
     bool func_ov000_0209d668();
     void func_ov000_0209d6ac(VecFx32 *param1);
 
-    static void func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx);
+    static void func_ov000_0209d0bc(Vec2bCpp *param1, MapObject *thisx);
     static void func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2);
     static void func_ov000_0209d54c(ActorRef *param1, MapObject *thisx, u16 param2, const VecFx32 *pPos, s16 param3,
                                     u16 param4);

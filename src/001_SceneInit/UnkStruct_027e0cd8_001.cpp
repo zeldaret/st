@@ -67,12 +67,12 @@ UnkStruct_027e0cd8::~UnkStruct_027e0cd8() {
     DELETE(this->mUnk_08);
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b7830(const UnkStruct_SceneChange1 *param1) {
+void UnkStruct_027e0cd8::func_ov001_020b7830(const EntranceInfo *param1) {
     CourseListEntry *pEntry;
     UnkStruct_func_ov000_020702a8 *pUnk1;
 
-    pEntry = data_027e09a0->GetCourseEntry(param1->mSceneIndex);
-    pUnk1  = data_027e09a0->func_ov000_020702a8(param1->mSceneIndex);
+    pEntry = data_027e09a0->GetCourseEntry(param1->sceneIndex);
+    pUnk1  = data_027e09a0->func_ov000_020702a8(param1->sceneIndex);
 
     wchar_t sp80[16];
     sp80[0]                    = L'\0';
@@ -83,7 +83,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7830(const UnkStruct_SceneChange1 *param
     sp70.func_020154ec("MCS");
 
     bool isCS = true;
-    if (param1->mIsCS != true) {
+    if (param1->isCS != true) {
         isCS = false;
     }
 
@@ -119,7 +119,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7830(const UnkStruct_SceneChange1 *param
         }
     }
 
-    this->func_ov001_020b8120(param1->mSceneIndex);
+    this->func_ov001_020b8120(param1->sceneIndex);
 
     if (pEntry->unk_21 != -1) {
         wchar_t sp30[16];
@@ -135,12 +135,12 @@ void UnkStruct_027e0cd8::func_ov001_020b7830(const UnkStruct_SceneChange1 *param
         this->func_ov001_020b7b38(pEntry, pUnk1);
     }
 
-    UnkStruct_SceneChange1 sceneChange(param1);
-    if (sceneChange.mRoomIndex != 0xFF) {
-        func_ov000_02081520(&sp4, this->mUnk_04, sceneChange.mRoomIndex);
+    EntranceInfo sceneChange(param1);
+    if (sceneChange.roomIndex != 0xFF) {
+        func_ov000_02081520(&sp4, this->mUnk_04, sceneChange.roomIndex);
         func_ov000_020814ec(this->mUnk_04, &sp4);
     } else {
-        sceneChange.mRoomIndex = this->mUnk_04->mUnk_40[this->mUnk_04->mUnk_10][this->mUnk_04->mUnk_11];
+        sceneChange.roomIndex = this->mUnk_04->mUnk_40[this->mUnk_04->mUnk_10][this->mUnk_04->mUnk_11];
     }
 
     this->func_ov001_020b7d64(&sceneChange);
@@ -203,22 +203,22 @@ void UnkStruct_027e0cd8::func_ov001_020b7b38(const CourseListEntry *pEntry, cons
     }
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b7c08(const UnkStruct_SceneChange1 *param1, const UnkStruct_WarpUnk1_A0 *param2) {
-    UnkStruct_SceneChange1 sceneChange(param1);
+void UnkStruct_027e0cd8::func_ov001_020b7c08(const EntranceInfo *param1, const UnkStruct_WarpUnk1_A0 *param2) {
+    EntranceInfo sceneChange(param1);
     Vec2s sp4;
 
-    if (this->mUnk_30 == param1->mSceneIndex && DSProt_DetectNotFlashcart(NULL) != 0) {
+    if (this->mUnk_30 == param1->sceneIndex && DSProt_DetectNotFlashcart(NULL) != 0) {
         data_ov084_02164690 = &sceneChange;
     }
 
     if (!this->func_ov000_02082124() &&
-        (param1->mSceneIndex < SceneIndex_tekiya00 || param1->mSceneIndex > SceneIndex_tekiya09)) {
+        (param1->sceneIndex < SceneIndex_tekiya00 || param1->sceneIndex > SceneIndex_tekiya09)) {
 #if IS_JP
         VecFx32_Copy(&param2->mUnk_04, &this->mUnk_24);
 #endif
 
-        if (param1->mSceneIndex == SceneIndex_f_water) {
-            switch (param1->mRoomIndex) {
+        if (param1->sceneIndex == SceneIndex_f_water) {
+            switch (param1->roomIndex) {
                 case 1:
                     this->mUnk_24.x = 0x16000;
                     this->mUnk_24.z = 0xFFFF6000;
@@ -240,7 +240,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7c08(const UnkStruct_SceneChange1 *param
             }
         } else {
 #if IS_JP
-            if (param1->mSceneIndex == SceneIndex_f_snow2 && param1->mRoomIndex == 2) {
+            if (param1->sceneIndex == SceneIndex_f_snow2 && param1->roomIndex == 2) {
                 this->mUnk_24.x = 0xFFFFF000;
                 this->mUnk_24.z = 0xFFFF0000;
             }
@@ -253,15 +253,15 @@ void UnkStruct_027e0cd8::func_ov001_020b7c08(const UnkStruct_SceneChange1 *param
     this->func_ov001_020b803c();
     this->func_ov001_020b7e50();
 
-    if (sceneChange.mRoomIndex != ROOM_INDEX_NONE) {
-        if (this->mUnk_30 == sceneChange.mSceneIndex && DSProt_DetectNotEmulator(func_ov084_0216122c) == 0) {
+    if (sceneChange.roomIndex != ROOM_INDEX_NONE) {
+        if (this->mUnk_30 == sceneChange.sceneIndex && DSProt_DetectNotEmulator(func_ov084_0216122c) == 0) {
             func_ov084_021612ac();
         }
 
-        func_ov000_02081520(&sp4, this->mUnk_04, sceneChange.mRoomIndex);
+        func_ov000_02081520(&sp4, this->mUnk_04, sceneChange.roomIndex);
         func_ov000_020814ec(this->mUnk_04, &sp4);
     } else {
-        sceneChange.mRoomIndex = this->mUnk_04->mUnk_40[this->mUnk_04->mUnk_10][this->mUnk_04->mUnk_11];
+        sceneChange.roomIndex = this->mUnk_04->mUnk_40[this->mUnk_04->mUnk_10][this->mUnk_04->mUnk_11];
     }
 
     this->func_ov001_020b7d64(&sceneChange);
@@ -276,7 +276,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7c08(const UnkStruct_SceneChange1 *param
     }
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b7d64(const UnkStruct_SceneChange1 *param1) {
+void UnkStruct_027e0cd8::func_ov001_020b7d64(const EntranceInfo *param1) {
     UnkStruct_027e0cd8_04_0C *iVar7;
     u32 temp_r1;
     u16 uVar5;
@@ -286,7 +286,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7d64(const UnkStruct_SceneChange1 *param
 
     iVar7 = this->mUnk_04->mUnk_0C;
 
-    switch (data_027e09a0->GetCourseEntry(param1->mSceneIndex)->unk_10) {
+    switch (data_027e09a0->GetCourseEntry(param1->sceneIndex)->unk_10) {
         case 0:
         case 1:
         case 3:
@@ -331,9 +331,9 @@ void UnkStruct_027e0cd8::func_ov001_020b7e50() {
     DELETE(this->mUnk_0C);
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b7e68(const UnkStruct_SceneChange1 *param1, bool param2) {
+void UnkStruct_027e0cd8::func_ov001_020b7e68(const EntranceInfo *param1, bool param2) {
     if (this->mUnk_10 != NULL) {
-        this->mUnk_10->func_ov024_020d2520((UnkStruct_SceneChange1 *) param1);
+        this->mUnk_10->func_ov024_020d2520((EntranceInfo *) param1);
     }
 
     data_ov000_020b504c.func_ov001_020be92c(this->mUnk_04->mUnk_0C);
@@ -352,7 +352,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7e68(const UnkStruct_SceneChange1 *param
         data_ov024_020d8660->func_ov024_020c4ba0();
     }
 
-    unk32 unk_10 = data_027e09a0->GetCourseEntry(param1->mSceneIndex)->unk_10;
+    unk32 unk_10 = data_027e09a0->GetCourseEntry(param1->sceneIndex)->unk_10;
 
     if (data_027e09a4->mUnk_60 == 1) {
         for (int i = 0; i < 4; i++) {
@@ -362,21 +362,21 @@ void UnkStruct_027e0cd8::func_ov001_020b7e68(const UnkStruct_SceneChange1 *param
         }
     } else if (unk_10 == 2 || unk_10 == 4) {
         UnkStruct_027e0ce0 *ptr             = data_027e0ce0;
-        const UnkStruct_ov001_020c40f4 *arg = this->mUnk_0C->func_ov001_020b8a5c(param1->mSpawnIndex, 0x00);
+        const UnkStruct_ov001_020c40f4 *arg = this->mUnk_0C->func_ov001_020b8a5c(param1->spawnIndex, 0x00);
         ptr->func_ov001_020bc6e8(arg);
     } else {
         UnkStruct_027e0cd8_0C_Base *temp_pUnkC = this->mUnk_0C;
         u32 temp_unk118                        = temp_pUnkC->mUnk_118;
-        u8 temp_spawn                          = param1->mSpawnIndex;
+        u8 temp_spawn                          = param1->spawnIndex;
         UnkStruct_027e0ce0 *ptr                = data_027e0ce0;
 
-        const UnkStruct_ov001_020c40f4 *spC = temp_pUnkC->func_ov001_020b8a5c(param1->mSpawnIndex, 0);
+        const UnkStruct_ov001_020c40f4 *spC = temp_pUnkC->func_ov001_020b8a5c(param1->spawnIndex, 0);
 
         ptr->func_ov001_020bc6fc(spC, temp_pUnkC->func_ov001_020b8a5c(temp_spawn, 1), temp_pUnkC->mUnk_11C, temp_unk118);
     }
 
     data_027e09bc->func_ov000_020771c8();
-    unk32 iVar7 = data_027e09a0->GetCourseEntry(param1->mSceneIndex)->unk_10;
+    unk32 iVar7 = data_027e09a0->GetCourseEntry(param1->sceneIndex)->unk_10;
     data_027e09c0->func_ov000_0207da40();
     this->mUnk_0C->vfunc_08();
 
@@ -390,7 +390,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7e68(const UnkStruct_SceneChange1 *param
     if (data_027e09a4->mUnk_60 == 0) {
         SaveManager_00 *ptr = gSaveManager.mUnk_000;
         u16 auStack_18[2];
-        data_027e09a0->func_ov000_02070310(param1->mSceneIndex, param1->mRoomIndex, &auStack_18);
+        data_027e09a0->func_ov000_02070310(param1->sceneIndex, param1->roomIndex, &auStack_18);
 
         if (auStack_18[1] < 0x100) {
             SET_FLAG(ptr->unk_004.unk_0C, auStack_18[1]);

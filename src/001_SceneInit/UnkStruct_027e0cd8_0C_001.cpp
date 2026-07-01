@@ -67,7 +67,7 @@ UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param
     mUnk_084_00(0),
     mUnk_084_01(0),
     mUnk_098(0),
-    mUnk_09C(&param1->mUnk_00),
+    mUnk_09C((Vec2us *) &param1->mUnk_00),
     mUnk_0AC(false),
     mUnk_0AD(false),
     mUnk_0AE(false),
@@ -89,9 +89,9 @@ UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param
     mUnk_12C(false),
     mUnk_12D(false),
     mUnk_12E(false),
-    mUnk_130(0),
-    mUnk_134(0),
-    mUnk_138(0) {
+    mpROMB(NULL),
+    mpCAME(NULL),
+    mpCMPT(NULL) {
     Vec2s local_30;
     VecFx32 sp18;
     VecFx32 spC;
@@ -123,7 +123,7 @@ UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param
 
     this->mUnk_13C.Init(data_ov001_020c40f4, 0x40);
 
-    Vec2s_Copy(&this->mUnk_09C, &local_30);
+    Vec2s_Copy((Vec2s *) &this->mUnk_09C, &local_30);
     gpMapObjManager->func_ov001_020baea0(&local_30);
     data_027e095c->func_ov000_020592a0();
 }
@@ -132,9 +132,9 @@ UnkStruct_027e0cd8_0C_Base::~UnkStruct_027e0cd8_0C_Base() {
     data_027e095c->func_ov000_020592ec();
     gpMapObjManager->func_ov001_020baf28();
     DELETE(this->mUnk_098);
-    this->mUnk_130 = 0;
-    this->mUnk_138 = 0;
-    this->mUnk_134 = 0;
+    this->mpROMB = NULL;
+    this->mpCMPT = NULL;
+    this->mpCAME = NULL;
     this->mUnk_154.clear();
     this->func_ov001_020b8aec();
 }
@@ -143,36 +143,36 @@ void UnkStruct_027e0cd8_0C_Base::vfunc_38() {}
 
 void UnkStruct_027e0cd8_0C_Base::vfunc_08() {}
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const UnkStruct_SceneChange1 *param1) {
-    this->mIsCS = param1->mIsCS;
+void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const EntranceInfo *param1) {
+    this->mIsCS = param1->isCS;
 
     wchar_t local_c8[2];
     local_c8[0]                        = L'\0';
     local_c8[sizeof(local_c8) / 2 - 1] = L'\0';
-    snprintf((char *) local_c8, sizeof(local_c8), "M%02d", param1->mRoomIndex);
+    snprintf((char *) local_c8, sizeof(local_c8), "M%02d", param1->roomIndex);
     this->mUnk_084[0] = local_c8[0];
     this->mUnk_084[1] = local_c8[1];
 
-    CourseListEntry *pEntry = data_027e09a0->GetCourseEntry(param1->mSceneIndex);
+    CourseListEntry *pEntry = data_027e09a0->GetCourseEntry(param1->sceneIndex);
 
     wchar_t local_34[16];
     local_34[0]                        = L'\0';
     local_34[sizeof(local_34) / 2 - 1] = L'\0';
-    snprintf((char *) local_34, sizeof(local_34), "Map/%s/map%02d.bin", pEntry->name, param1->mRoomIndex);
+    snprintf((char *) local_34, sizeof(local_34), "Map/%s/map%02d.bin", pEntry->name, param1->roomIndex);
 
     this->mUnk_004.~UnkSystem3();
     this->mUnk_004.mUnk_00 = local_34;
     this->mUnk_004.func_0201541c((char *) local_c8, 0x10);
     this->LoadSceneModel(param1);
 
-    snprintf((char *) local_34, sizeof(local_34), "%s:zcb/%s_%02d.zcb", local_c8, pEntry->name, param1->mRoomIndex);
+    snprintf((char *) local_34, sizeof(local_34), "%s:zcb/%s_%02d.zcb", local_c8, pEntry->name, param1->roomIndex);
     UnkFileSystem3 local_44((char *) local_34);
     data_027e09c0->func_ov001_020be3dc(&local_44, this);
 
     wchar_t local_64[16];
     local_64[0]                        = L'\0';
     local_64[sizeof(local_64) / 2 - 1] = L'\0';
-    snprintf((char *) local_64, sizeof(local_64), "%s:zmb/%s_%02d.zmb", local_c8, pEntry->name, param1->mRoomIndex);
+    snprintf((char *) local_64, sizeof(local_64), "%s:zmb/%s_%02d.zmb", local_c8, pEntry->name, param1->roomIndex);
     UnkFileSystem3 local_74((char *) local_64);
     local_74.vfunc_08(0x10);
 
@@ -180,53 +180,53 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const UnkStruct_SceneChange
     zmbFileInfos.pFile  = local_74.mpFile;
     zmbFileInfos.size   = local_74.mFileSize;
     zmbFileInfos.unk_08 = 0;
+    zmbFileInfos.unk_0A = 0;
     zmbFileInfos.unk_0C = 0;
-    zmbFileInfos.unk_10 = 0;
-    zmbFileInfos.unk_14 = 0;
+    zmbFileInfos.unk_0E = 0;
     ZMB_ParseFile(&zmbFileInfos, this, true);
 
     gpMapObjManager->func_ov001_020bade0();
     gpActorManager->func_ov001_020bb630();
 
-    if (param1->mIsCS == false) {
-        gpActorManager->func_ov001_020bb6b0((UnkStruct_SceneChange1 *) param1);
+    if (param1->isCS == false) {
+        gpActorManager->func_ov001_020bb6b0((EntranceInfo *) param1);
     }
 
     data_027e095c->func_ov000_020592a0();
 
     u32 isCs = this->mIsCS;
-    snprintf((char *) local_34, sizeof(local_34), "%s:zob/motype_%02d_%1d.zob", local_c8, param1->mRoomIndex, isCs);
+    snprintf((char *) local_34, sizeof(local_34), "%s:zob/motype_%02d_%1d.zob", local_c8, param1->roomIndex, isCs);
     UnkFileSystem3 local_94((char *) local_34);
     this->mUnk_0B4 = (ZeldaObjectList *) local_94.vfunc_08(sizeof(ZOBHeader));
     gpMapObjManager->func_ov001_020bae40(this->mUnk_0B4);
     for (int i = 0; i < ARRAY_LEN(this->mUnk_0B8); i++) {
         // i + 2 because 0 is the default one and 1 is the cutscene one
-        snprintf((char *) local_34, sizeof(local_34), "%s:zob/motype_%02d_%1d.zob", local_c8, param1->mRoomIndex, i + 2);
+        snprintf((char *) local_34, sizeof(local_34), "%s:zob/motype_%02d_%1d.zob", local_c8, param1->roomIndex, i + 2);
         UnkFileSystem3 local_a4((char *) local_34);
         this->mUnk_0B8[i] = (ZeldaObjectList *) local_a4.vfunc_08(sizeof(ZOBHeader));
     }
 
     isCs = this->mIsCS;
-    snprintf((char *) local_34, sizeof(local_34), "%s:zob/npctype_%02d_%1d.zob", local_c8, param1->mRoomIndex, isCs);
+    snprintf((char *) local_34, sizeof(local_34), "%s:zob/npctype_%02d_%1d.zob", local_c8, param1->roomIndex, isCs);
     UnkFileSystem3 local_b4((char *) local_34);
     this->mUnk_0D8 = (ZeldaObjectList *) local_b4.vfunc_08(sizeof(ZOBHeader));
     gpActorManager->func_ov001_020bb7b0(this->mUnk_0D8);
     for (int i = 0; i < ARRAY_LEN(this->mUnk_0DC); i++) {
         // i + 2 because 0 is the default one and 1 is the cutscene one
-        snprintf((char *) local_34, sizeof(local_34), "%s:zob/npctype_%02d_%1d.zob", local_c8, param1->mRoomIndex, i + 2);
+        snprintf((char *) local_34, sizeof(local_34), "%s:zob/npctype_%02d_%1d.zob", local_c8, param1->roomIndex, i + 2);
         UnkFileSystem3 local_c4((char *) local_34);
         this->mUnk_0DC[i] = (ZeldaObjectList *) local_c4.vfunc_08(sizeof(ZOBHeader));
     }
 
     data_027e09b0->func_ov000_02072cc4(0x0000, 0x7FFF);
     ZMB_ParseFile(&zmbFileInfos, this, false);
-    this->vfunc_40(param1->mSpawnIndex);
+    this->vfunc_40(param1->spawnIndex);
 
-    if (param1->mSceneIndex == SceneIndex_t_area1) {
+    if (param1->sceneIndex == SceneIndex_t_area1) {
         if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_ObtainedSnowSource)) {
             this->mUnk_110 = 0x0A;
         }
-    } else if (param1->mSceneIndex == SceneIndex_t_area3) {
+    } else if (param1->sceneIndex == SceneIndex_t_area3) {
         if (GET_FLAG(data_027e09b8->mAdventureFlags, AdventureFlag_ObtainedFireSource)) {
             this->mUnk_110 = 0x10;
             this->mUnk_114 = 0x1F;
@@ -236,8 +236,8 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const UnkStruct_SceneChange
     this->func_ov001_020b8db8();
     this->func_ov001_020b8e24();
 
-    if (param1->mIsCS == true) {
-        this->mUnk_114 = Cutscene_GetParamEntry(param1->mCutsceneIndex)->mUnk_0E;
+    if (param1->isCS == true) {
+        this->mUnk_114 = Cutscene_GetParamEntry(param1->csIndex)->mUnk_0E;
     }
 
     data_027e09ac->func_ov000_020726f0(this->mUnk_114, 0x00, 0x00);
@@ -263,20 +263,20 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b88ec() {
     }
 }
 
-void UnkStruct_027e0cd8_0C_Base::LoadSceneModel(const UnkStruct_SceneChange1 *param1) {
-    const char *pName = data_027e09a0->GetCourseEntry(param1->mSceneIndex)->name;
+void UnkStruct_027e0cd8_0C_Base::LoadSceneModel(const EntranceInfo *param1) {
+    const char *pName = data_027e09a0->GetCourseEntry(param1->sceneIndex)->name;
 
     wchar_t local_40[20];
     local_40[0]                        = L'\0';
     local_40[sizeof(local_40) / 2 - 1] = L'\0';
-    snprintf((char *) local_40, sizeof(local_40), "%s:nsbmd/%s_%02d.nsbmd", this->mUnk_084, pName, param1->mRoomIndex);
+    snprintf((char *) local_40, sizeof(local_40), "%s:nsbmd/%s_%02d.nsbmd", this->mUnk_084, pName, param1->roomIndex);
     UnkFileSystem3 local_50((char *) local_40);
 
     wchar_t local_78[20];
     local_78[0]                        = L'\0';
     local_78[sizeof(local_78) / 2 - 1] = L'\0';
     const char *path                   = "Map/%s/map%02d.nsbtx";
-    snprintf((char *) local_78, sizeof(local_78), path, pName, param1->mRoomIndex);
+    snprintf((char *) local_78, sizeof(local_78), path, pName, param1->roomIndex);
 
     this->mUnk_070.vfunc_0C();
     this->mUnk_070.mUnk_04 = (char *) local_78;
@@ -289,9 +289,9 @@ void UnkStruct_027e0cd8_0C_Base::LoadSceneModel(const UnkStruct_SceneChange1 *pa
     this->mSceneRender.vfunc_08(pModel);
 }
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_1C(const UnkStruct_SceneChange1 *param1, bool param2, bool param3) {
-    SceneIndex sceneIndex = param1->mSceneIndex;
-    u8 roomIndex          = param1->mRoomIndex;
+void UnkStruct_027e0cd8_0C_Base::vfunc_1C(const EntranceInfo *param1, bool param2, bool param3) {
+    SceneIndex sceneIndex = param1->sceneIndex;
+    u8 roomIndex          = param1->roomIndex;
 
     if (param2 != 0) {
         if (param3 == 0) {
@@ -352,7 +352,7 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8b94(ZMBEntryARAB *pARAB) {
     this->mUnk_148.push_back(ptr);
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c30(const UnkStruct_027e0cd8_0C_Base_154_00 &param1) {
+void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c30(const EntranceInfo &param1) {
     this->mUnk_154.push_back(param1);
 }
 
@@ -360,16 +360,16 @@ void *UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c80(unk32 param1) {
     return (void *) &data_ov001_020c2a40[param1 - 0x3C];
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c90(unk32 param1) {
-    this->mUnk_138 = param1;
+void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c90(ZMBSectionCMPT *pCMPT) {
+    this->mpCMPT = pCMPT;
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c98(unk32 param1) {
-    this->mUnk_134 = param1;
+void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c98(ZMBSectionCAME *pCAME) {
+    this->mpCAME = pCAME;
 }
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_34(unk32 param1) {
-    this->mUnk_130 = param1;
+void UnkStruct_027e0cd8_0C_Base::ZMB_ParseROMB(ZMBSectionROMB *pROMB) {
+    this->mpROMB = pROMB;
 }
 
 void UnkStruct_027e0cd8_0C_Base::vfunc_40(u8 spawnIndex) {

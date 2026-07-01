@@ -12,7 +12,8 @@
 extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_ov000_0205d65c(void *, VecFx32 *, VecFx32 *, u32);
 
-PlayerSceneChange::PlayerSceneChange() {
+PlayerSceneChange::PlayerSceneChange() :
+    mUnk_54(false) {
     this->mUnk_68 = this->mUnk_2C->mUnk_14C;
     this->mUnk_6C = -1;
 
@@ -77,16 +78,16 @@ extern "C" void func_01ff930c(UnkStruct_ov000_0208f820_40 *, unk16, unk32);
 // https://decomp.me/scratch/c7PhN
 void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
     const fx16 *pSinCosTable = gSinCosTable;
-    Vec2b stack4;
+    Vec2bCpp stack4;
     s16 stack3;
-    Vec2b stack2;
+    Vec2bCpp stack2;
     UnkStackStruct1 stack;
 
     switch (param1->mUnk_04) {
         case 0x3C: {
             int iVar19 = data_027e0cd8->mUnk_0C->func_ov000_02080658((this->mUnk_2C->mUnk_148 >> 16) & 0x3F, &this->mUnk_54);
             if (iVar19 != 0 && this->mUnk_28->mUnk_94 != 0 && func_ov096_02179c14()) {
-                this->mUnk_54.mUnk_10 = 1;
+                this->mUnk_54.unk_10 = 1;
             }
 
             switch (this->mUnk_68) {
@@ -301,7 +302,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 this->mUnk_68 = data_027e09a4->func_ov000_02070554();
             }
 
-            SceneIndex eScene = data_027e09a4->mUnk_00.mSceneIndex;
+            SceneIndex eScene = data_027e09a4->CurrentSceneIndex();
             if (eScene == SceneIndex_tekiya07) {
                 this->mUnk_68 = 0x18;
             } else {

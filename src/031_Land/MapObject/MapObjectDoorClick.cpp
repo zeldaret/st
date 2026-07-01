@@ -60,7 +60,7 @@ bool MapObjectDoorClick::vfunc_00(void) {
     this->mUnk_8D = false;
     this->mUnk_88 = false;
     this->mUnk_78 = 10;
-    this->mUnk_A4 = this->mUnk_20.mUnk_00[1];
+    this->mUnk_A4 = this->mUnk_20.mParams[1];
     this->vfunc2_10();
 
     local_1c.x = -0x1000;
@@ -70,9 +70,9 @@ bool MapObjectDoorClick::vfunc_00(void) {
     local_28.x = 0x1000;
     local_28.z = 0x266;
 
-    unk32 value = ((this->mUnk_20.mUnk_00[2] & 0xFF) << 8) | 0x21C07006;
+    unk32 value = ((this->mUnk_20.mParams[2] & 0xFF) << 8) | 0x21C07006;
     unk32 uVar2;
-    if (this->mUnk_20.mUnk_00[3] == 0) {
+    if (this->mUnk_20.mParams[3] == 0) {
         uVar2 = 0x1B;
     } else {
         uVar2 = 0x1C;
@@ -273,7 +273,7 @@ void MapObjectDoorClick::vfunc_5C(unk32 param1, unk32 param2) {
 
             break;
         case 8:
-            if (this->mUnk_20.mUnk_00[2] & 0xFF) {
+            if (this->mUnk_20.mParams[2] & 0xFF) {
                 this->MapObjectDoorBase::vfunc_5C(param1, param2);
                 this->func_ov031_020fcf0c(1);
                 this->mUnk_10 = this->vfunc2_14();
@@ -405,7 +405,7 @@ void MapObjectDoorClick::vfunc_78(void) {
 }
 
 void MapObjectDoorClick::vfunc2_10(void) {
-    unk32 index = this->mUnk_20.mUnk_00[0];
+    unk32 index = this->mUnk_20.mParams[0];
     this->mUnk_94.vfunc_08(GetModelFromProfile2<MapObjectProfileDoorClick>(index, data_ov031_02110c1c[index]));
 }
 

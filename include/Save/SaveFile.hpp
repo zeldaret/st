@@ -67,7 +67,7 @@ struct SaveMiscAdvManager {
     /* 28 */ u16 unk_28;
     /* 2A */ u16 postDate;
     /* 2C */ union {
-        Vec2b stampPositions[StampType_Max];
+        Vec2bCpp stampPositions[StampType_Max];
         u16 stampPos[StampType_Max];
     };
     /* 54 */ s8 obtainedLetters[LetterType_Max];
@@ -327,7 +327,7 @@ struct SaveFile_00000_2600_Data {
     /* 00 */ u8 unk_00;
     /* 01 */ u8 unk_01;
     /* 02 */ u8 unk_02;
-    /* 03 */ Vec2b unk_03[61];
+    /* 03 */ Vec2bCpp unk_03[61];
     /* 7E */ u16 unk_7E;
     /* 80 */
 };

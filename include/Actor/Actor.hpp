@@ -18,13 +18,9 @@ public:
     /* 0E */ s8 mUnk_0E;
     /* 0F */ bool mUnk_0F;
     /* 10 */ u16 mParams[4];
-    /* 18 */ Vec2b mUnk_18;
-    /* 1A */ u16 mUnk_1A;
-    /* 1C */ union {
-        unk32 mUnk_1C;
-        u16 mUnk_1C_0;
-        u16 mUnk_1C_2;
-    };
+    /* 18 */ u8 mUnk_18[2];
+    /* 1A */ u16 mUnk_1A[2];
+    /* 1E */ u16 mUnk_1E;
     /* 20 */ union {
         unk32 mUnk_20;
         unk16 mUnk_20_0;
@@ -52,6 +48,7 @@ public:
     ActorProfile **func_ov000_02073dc();
     ActorProfile **func_ov000_02073e8();
     ActorProfile *GetProfileFromId(ActorId actorId);
+    void func_ov000_02097444(ActorId actorId, ActorParams *pParams, unk32 param3);
 };
 
 class Actor_C4;

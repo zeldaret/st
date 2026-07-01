@@ -173,6 +173,7 @@ config.libs = [
             Object("000_Second/Actor/ActorUnkSWTM.cpp"),
             Object("000_Second/Actor/ActorEventIcon.cpp"),
             Object("000_Second/Actor/ActorUnkEFIK.cpp"),
+            Object("000_Second/MapObject/MapObjectManager_000.cpp"),
             Object("000_Second/MapObject/MapObjectProfile.cpp"),
             Object("000_Second/MapObject/MapObjectProfile_Derived2_20.cpp"),
             Object("000_Second/MapObject/MapObject.cpp"),

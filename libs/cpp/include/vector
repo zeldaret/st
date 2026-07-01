@@ -9,6 +9,7 @@
 
 #include <compressed_pair.hpp>
 #include <msl_unk.hpp>
+#include <mem.h>
 
 #define TAG_UNK 0
 
@@ -195,7 +196,7 @@ namespace std {
             return alloc().max_size();
         }
 
-        size_t capacity() const {
+        volatile size_t capacity() const {
             return capacity_.first();
         }
 
@@ -207,12 +208,44 @@ namespace std {
             size_ = n;
         }
 
-        void move_construct_to_end(iterator begin, iterator end);
+        void move_construct_to_end(iterator begin, iterator end) {
+            for (iterator it = this->end(); begin < end; begin++) {
+                new(it) T(*begin);
+                it++;
+                size_++;
+            }
+        }
 
+        //! TODO: probably a fake match?
         void reallocate_copy(size_t n) {
-            __vec_deleter<T, Allocator> tmp(alloc());
+            UnkMSLStruct1 unk = UnkMSLStruct1();
+            UnkMSLStruct1 unk2 = UnkMSLStruct1();
+            __vec_deleter<T, Allocator> tmp;
             tmp.allocate(n);
             tmp.move_construct_to_end(begin(), end());
+            optimize_after_moved_from();
+            swap(cap(), tmp.cap());
+            swap(data_, tmp.data_);
+            swap(size_, tmp.size_);
+        }
+
+        void move_construct_to_end_alt(iterator begin, iterator end) {
+            move_construct_to_end_alt(begin, end, UnkMSLStruct1());
+        }
+
+        void move_construct_to_end_alt(iterator begin, iterator end, UnkMSLStruct1) {
+            size_t diff = end - begin;
+            memcpy(this->end(), begin, sizeof(T) * diff);
+            memset(begin, 0, sizeof(T) * diff);
+            size_ += diff;
+        }
+
+        //! TODO: non-matching (stack issues :)))))
+        void reallocate_copy_alt(size_t n) {
+            UnkMSLStruct1 unk2 = UnkMSLStruct1();
+            __vec_deleter<T, Allocator> tmp;
+            tmp.allocate(n);
+            tmp.move_construct_to_end_alt(begin(), end());
             optimize_after_moved_from();
             swap(cap(), tmp.cap());
             swap(data_, tmp.data_);
@@ -465,7 +498,7 @@ namespace std {
         typedef _Constructor::const_iterator const_iterator;
 
         vector() {}
-        ~vector() { }
+        ~vector() {}
 
         void push_back(const_reference x) {
             _Constructor::push_back(x);

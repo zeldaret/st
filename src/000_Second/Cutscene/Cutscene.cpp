@@ -826,7 +826,7 @@ CutsceneParamsEntry *Cutscene_GetParamEntry(s32 csIndex) {
     return (CutsceneParamsEntry *) &gCSParamsEntries[csIndex];
 }
 
-s32 func_ov000_020a7840(unk32 param1) {}
+s32 func_ov000_020a7840(unk32 param1, unk32 param2) {}
 
 bool Cutscene_IsAdventureFlagSet(s32 csIndex) {
     CutsceneParamsEntry *pEntry = Cutscene_GetParamEntry(csIndex);

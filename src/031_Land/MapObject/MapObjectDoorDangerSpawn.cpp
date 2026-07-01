@@ -64,21 +64,21 @@ void MapObjectDoorDangerSpawn::vfunc_04(void) {
     UnkStruct_027e0cd8_0C_Base *ptr;
     VecFx32 auStack_20;
 
-    if (this->mUnk_20.mUnk_00[1] == 2) {
+    if (this->mUnk_20.mParams[1] == 2) {
         this->mUnk_6C = 0;
 
         ptr = data_027e0cd8->mUnk_0C;
-        ptr->func_ov000_0208053c(this->mUnk_20.mUnk_00[0]);
-        ptr->func_ov000_020803ec(this->mUnk_20.mUnk_00[0]);
+        ptr->func_ov000_0208053c(this->mUnk_20.mParams[0]);
+        ptr->func_ov000_020803ec(this->mUnk_20.mParams[0]);
         this->vfunc_5C(2, 1);
         return;
     }
 
-    if (this->mUnk_20.mUnk_00[1] == 3) {
+    if (this->mUnk_20.mParams[1] == 3) {
         this->mUnk_8C = 0;
     }
 
-    if (this->mUnk_20.mUnk_00[1] == 4) {
+    if (this->mUnk_20.mParams[1] == 4) {
         if (this->func_ov000_0209d29c(0) != 0) {
             this->mUnk_6C = 0;
             this->MapObjectDoorBase::vfunc_5C(2, 1);
@@ -114,10 +114,10 @@ void MapObjectDoorDangerSpawn::vfunc_04(void) {
     }
 
     if (run) {
-        data_027e0cd8->mUnk_0C->func_ov000_0208053c(this->mUnk_20.mUnk_00[0]);
+        data_027e0cd8->mUnk_0C->func_ov000_0208053c(this->mUnk_20.mParams[0]);
     }
 #else
-    data_027e0cd8->mUnk_0C->func_ov000_0208053c(this->mUnk_20.mUnk_00[0]);
+    data_027e0cd8->mUnk_0C->func_ov000_0208053c(this->mUnk_20.mParams[0]);
 #endif
 
     ptr = data_027e0cd8->mUnk_0C;
@@ -125,7 +125,7 @@ void MapObjectDoorDangerSpawn::vfunc_04(void) {
     if (this->func_ov031_020fdec8()) {
         this->mUnk_A2 = true;
         this->mUnk_8C = 0;
-        ptr->func_ov000_020803ec(this->mUnk_20.mUnk_00[0]);
+        ptr->func_ov000_020803ec(this->mUnk_20.mParams[0]);
         this->vfunc_5C(0, 0);
 
         UnkStruct_027e09bc_0C *uVar5 = data_027e09bc->mUnk_0C;
@@ -148,7 +148,7 @@ void MapObjectDoorDangerSpawn::vfunc2_08(void) {
         data_027e09bc->mUnk_0C->func_ov000_02078230(0);
     }
 
-    data_ov000_020b51b8.func_ov000_0206c96c(data_ov031_02110c00[this->mUnk_20.mUnk_00[3]]);
+    data_ov000_020b51b8.func_ov000_0206c96c(data_ov031_02110c00[this->mUnk_20.mParams[3]]);
 }
 
 struct UnkStruct_Copy {
@@ -229,7 +229,7 @@ void MapObjectDoorDangerSpawn::vfunc_08(void) {
             }
             break;
         case 2:
-            if (this->mUnk_20.mUnk_00[1] == 4 && this->func_ov000_0209d29c(0) != 0) {
+            if (this->mUnk_20.mParams[1] == 4 && this->func_ov000_0209d29c(0) != 0) {
                 if (this->func_ov000_0209d29c(1) != 0) {
                     return;
                 }
@@ -364,7 +364,7 @@ void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
             this->MapObjectDoorBase::vfunc_5C(param1, param2);
 
             var_r6  = 1;
-            temp_r8 = data_027e09a4->mUnk_00.mSceneIndex;
+            temp_r8 = data_027e09a4->CurrentSceneIndex();
 
             if (param2 != 0 && (temp_r8 - SceneIndex_tekiya00) > 4) {
                 var_r6 = 0;
@@ -378,7 +378,7 @@ void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
             }
 
             if (var_r6 != 0) {
-                data_ov000_020b51b8.func_ov000_0206c9a8(data_ov031_02110c00[this->mUnk_20.mUnk_00[3]], 0, 0x7F, 0);
+                data_ov000_020b51b8.func_ov000_0206c9a8(data_ov031_02110c00[this->mUnk_20.mParams[3]], 0, 0x7F, 0);
             }
 
             break;
@@ -388,7 +388,7 @@ void MapObjectDoorDangerSpawn::vfunc_5C(unk32 param1, unk32 param2) {
             this->func_ov000_0209d2c4(0, false);
 
             if (param2 == 0) {
-                (*ptr)->mUnk_0C->func_ov000_0208053c(this->mUnk_20.mUnk_00[0]);
+                (*ptr)->mUnk_0C->func_ov000_0208053c(this->mUnk_20.mParams[0]);
             }
 
             if (param2 == 0) {
@@ -407,7 +407,7 @@ bool MapObjectDoorDangerSpawn::vfunc_64(void) {
     unk32 var_r0;
     bool var_r5;
 
-    switch (this->mUnk_20.mUnk_00[1]) {
+    switch (this->mUnk_20.mParams[1]) {
         case 1:
         case 4:
             if (MapObjectDoorBase::vfunc_64()) {
@@ -415,15 +415,15 @@ bool MapObjectDoorDangerSpawn::vfunc_64(void) {
             }
 
             pUVar4 = data_027e0cd8->mUnk_0C;
-            if (!pUVar4->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], data_027e0ce0->func_01fff148(0))) {
+            if (!pUVar4->func_ov000_020802ec(this->mUnk_20.mParams[0], data_027e0ce0->func_01fff148(0))) {
                 return true;
             }
 
             var_r0 = 0;
             var_r5 = false;
 
-            if (this->mUnk_20.mUnk_00[0] != 0) {
-                var_r0 = gpActorManager->func_ov000_020970c8(this->mUnk_20.mUnk_00[0], NULL);
+            if (this->mUnk_20.mParams[0] != 0) {
+                var_r0 = gpActorManager->func_ov000_020970c8(this->mUnk_20.mParams[0], NULL);
             } else {
                 var_r0 = gpActorManager->func_ov000_0209704c();
             }
@@ -443,7 +443,7 @@ bool MapObjectDoorDangerSpawn::vfunc_64(void) {
 bool MapObjectDoorDangerSpawn::vfunc_68(void) {
     UnkStruct_027e0cd8_0C_Base *pUVar2 = data_027e0cd8->mUnk_0C;
 
-    if (this->mUnk_20.mUnk_00[2] == 1) {
+    if (this->mUnk_20.mParams[2] == 1) {
         if (func_ov000_0209d29c(1)) {
             return true;
         }
@@ -453,9 +453,9 @@ bool MapObjectDoorDangerSpawn::vfunc_68(void) {
         }
     }
 
-    if (this->mUnk_20.mUnk_00[0] != 0) {
-        if (gpActorManager->func_ov000_020970c8(this->mUnk_20.mUnk_00[0], &this->mUnk_A4) == 0) {
-            pUVar2->func_ov000_0208053c(this->mUnk_20.mUnk_00[0]);
+    if (this->mUnk_20.mParams[0] != 0) {
+        if (gpActorManager->func_ov000_020970c8(this->mUnk_20.mParams[0], &this->mUnk_A4) == 0) {
+            pUVar2->func_ov000_0208053c(this->mUnk_20.mParams[0]);
             return true;
         }
 
@@ -468,12 +468,12 @@ bool MapObjectDoorDangerSpawn::vfunc_68(void) {
 bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
     UnkStruct_027e0cd8_0C_Base *pUVar5;
 
-    switch (this->mUnk_20.mUnk_00[1]) {
+    switch (this->mUnk_20.mParams[1]) {
         case 1:
         case 4:
             pUVar5 = data_027e0cd8->mUnk_0C;
 
-            if (this->mUnk_20.mUnk_00[2] == 1) {
+            if (this->mUnk_20.mParams[2] == 1) {
                 if (this->func_ov000_0209d29c(1) != 0) {
                     return false;
                 }
@@ -483,8 +483,8 @@ bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
                 }
             }
 
-            if (this->mUnk_20.mUnk_00[0] != 0) {
-                if (gpActorManager->func_ov000_020970c8(this->mUnk_20.mUnk_00[0], NULL) == 0) {
+            if (this->mUnk_20.mParams[0] != 0) {
+                if (gpActorManager->func_ov000_020970c8(this->mUnk_20.mParams[0], NULL) == 0) {
                     return false;
                 }
             } else {
@@ -493,8 +493,8 @@ bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
                 }
             }
 
-            if (pUVar5->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], data_027e0ce0->func_01fff148(0))) {
-                pUVar5->func_ov000_020803ec(this->mUnk_20.mUnk_00[0]);
+            if (pUVar5->func_ov000_020802ec(this->mUnk_20.mParams[0], data_027e0ce0->func_01fff148(0))) {
+                pUVar5->func_ov000_020803ec(this->mUnk_20.mParams[0]);
                 return true;
             }
 
@@ -503,12 +503,12 @@ bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
             break;
     }
 
-    if (this->mUnk_20.mUnk_00[1] == 3) {
+    if (this->mUnk_20.mParams[1] == 3) {
         if (this->func_ov000_0209d29c(0) != 0) {
-            u16 uVar4 = this->mUnk_20.mUnk_00[0];
+            u16 uVar4 = this->mUnk_20.mParams[0];
 
             if (uVar4 != 0 && gpActorManager->func_ov000_020970c8(uVar4, 0) != 0) {
-                data_027e0cd8->mUnk_0C->func_ov000_020803ec(this->mUnk_20.mUnk_00[0]);
+                data_027e0cd8->mUnk_0C->func_ov000_020803ec(this->mUnk_20.mParams[0]);
                 return true;
             }
         }
@@ -524,10 +524,10 @@ bool MapObjectDoorDangerSpawn::func_ov031_020fdec8(void) {
     VecFx32 *uVar3;
     int iVar1;
 
-    switch (this->mUnk_20.mUnk_00[1]) {
+    switch (this->mUnk_20.mParams[1]) {
         case 1:
         case 4:
-            if (this->mUnk_20.mUnk_00[2] == 1) {
+            if (this->mUnk_20.mParams[2] == 1) {
                 if (this->func_ov000_0209d29c(1) != 0) {
                     return false;
                 }
@@ -537,8 +537,8 @@ bool MapObjectDoorDangerSpawn::func_ov031_020fdec8(void) {
                 }
             }
 
-            if (this->mUnk_20.mUnk_00[0] != 0) {
-                if (gpActorManager->func_ov000_020970c8(this->mUnk_20.mUnk_00[0], 0) == 0) {
+            if (this->mUnk_20.mParams[0] != 0) {
+                if (gpActorManager->func_ov000_020970c8(this->mUnk_20.mParams[0], 0) == 0) {
                     return false;
                 }
             } else {
@@ -548,9 +548,9 @@ bool MapObjectDoorDangerSpawn::func_ov031_020fdec8(void) {
             }
 
             pUVar4 = data_027e0cd8->mUnk_0C;
-            uVar3  = (VecFx32 *) &pUVar4->func_ov001_020b8a5c(data_027e09a4->func_ov000_02070560()->mSpawnIndex, 0)->mUnk_00;
+            uVar3  = (VecFx32 *) &pUVar4->func_ov001_020b8a5c(data_027e09a4->func_ov000_02070560()->spawnIndex, 0)->mUnk_00;
 
-            if (pUVar4->func_ov000_020802ec(this->mUnk_20.mUnk_00[0], uVar3)) {
+            if (pUVar4->func_ov000_020802ec(this->mUnk_20.mParams[0], uVar3)) {
                 return true;
             }
 

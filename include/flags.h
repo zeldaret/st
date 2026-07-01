@@ -11,10 +11,13 @@
  */
 
 #define GET_FLAG(arr, pos) (((arr)[((u32) (pos)) >> 5] & (1 << ((pos) & 0x1F))) != 0)
-#define GET_FLAG2(var, pos) ((var) & (1 << pos))
 #define SET_FLAG(arr, pos) ((arr)[((u32) (pos)) >> 5] |= 1 << ((pos) & 0x1F))
 #define UNSET_FLAG(arr, pos) ((arr)[((u32) (pos)) >> 5] &= ~(1 << ((pos) & 0x1F)))
 #define FLAG(index, pos) (((index) << 5) | ((pos) & 0x1F))
+
+#define GET_FLAG2(var, pos) (((var) & (1 << (pos))) != 0)
+#define SET_FLAG2(var, pos) ((var) |= 1 << (pos))
+#define UNSET_FLAG2(var, pos) ((var) &= ~(1 << (pos)))
 
 #define GET_FLAG_ALT(arr, pos) (((arr)[(pos) >> 5] & (1 << ((0x1F - ((pos) & 0x1F))))) != 0)
 #define SET_FLAG_ALT(arr, pos) ((arr)[(pos) >> 5] |= 1 << ((0x1F - ((pos) & 0x1F))))

@@ -36,7 +36,7 @@ bool ActorUnkOBPC::vfunc_18(unk32 param1) {
 }
 
 bool ActorUnkOBPC::func_ov024_020d6f74(void) {
-    if (this->mUnk_5C.mUnk_1C_0 != 0) {
+    if (this->mUnk_5C.mUnk_1A[1] != 0) {
         return this->func_ov000_02098a60(1);
     }
 

@@ -5,6 +5,7 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
+#include "files.h"
 #include "global.h"
 #include "iterator.hpp"
 #include "types.h"
@@ -16,57 +17,87 @@ class UnkStruct_027e09a4;
 
 #define ROOM_INDEX_NONE 0xFF
 
-struct UnkStruct_SceneChange1 {
-    /* 00 */ unk32 mSceneIndex;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk16 mUnk_08;
-    /* 0A */ u8 mRoomIndex;
-    /* 0B */ u8 mSpawnIndex;
-    /* 0C */ bool mIsCS;
-    /* 0D */ u8 mUnk_0D;
-    /* 0E */ u8 mCutsceneIndex;
-    /* 0F */ u8 mUnk_0F;
-    /* 10 */ u8 mUnk_10;
-    /* 11 */ u8 mUnk_11;
-    /* 12 */ u16 mUnk_12;
+struct EntranceInfo {
+    /* 00 */ s32 sceneIndex;
+    /* 04 */ unk32 unk_04;
+    /* 08 */ unk16 unk_08;
+    /* 0A */ u8 roomIndex;
+    /* 0B */ u8 spawnIndex;
+    /* 0C */ bool isCS;
+    /* 0D */ u8 unk_0D;
+    /* 0E */ u8 csIndex;
+    /* 0F */ u8 unk_0F;
+    /* 10 */ u8 unk_10;
+    /* 11 */ u8 unk_11;
+    /* 12 */ u16 unk_12;
     /* 14 */
 
-    UnkStruct_SceneChange1() {
-        this->mSceneIndex    = SceneIndex_Max;
-        this->mUnk_04        = 0;
-        this->mUnk_08        = 0;
-        this->mRoomIndex     = ROOM_INDEX_NONE;
-        this->mSpawnIndex    = 0;
-        this->mIsCS          = false;
-        this->mUnk_0D        = 0;
-        this->mCutsceneIndex = CutsceneIndex_None;
-        this->mUnk_0F        = 0;
-        this->mUnk_10        = 0;
+    EntranceInfo() {}
+
+    EntranceInfo(bool isCS) {
+        this->sceneIndex = SceneIndex_Max;
+        this->unk_04     = 0;
+        this->unk_08     = 0;
+        this->roomIndex  = ROOM_INDEX_NONE;
+        this->spawnIndex = 0;
+        this->isCS       = isCS;
+        this->unk_0D     = 0;
+        this->csIndex    = CutsceneIndex_None;
+        this->unk_0F     = 0;
+        this->unk_10     = 0;
     }
 
-    UnkStruct_SceneChange1(CutsceneParamsEntry *pEntry, bool nextIsCS) {
+    EntranceInfo(CutsceneParamsEntry *pEntry, bool isCS) {
         u8 sceneIndex    = pEntry->mSceneIndex;
         u8 cutsceneIndex = pEntry->mCutsceneIndex;
         u8 spawnIndex    = pEntry->mSpawnIndex;
         u8 roomIndex     = pEntry->mRoomIndex;
 
-        this->mSceneIndex    = sceneIndex;
-        this->mUnk_04        = 0;
-        this->mUnk_08        = 0;
-        this->mRoomIndex     = roomIndex;
-        this->mSpawnIndex    = spawnIndex;
-        this->mIsCS          = nextIsCS;
-        this->mUnk_0D        = 0;
-        this->mCutsceneIndex = cutsceneIndex;
-        this->mUnk_0F        = 0;
-        this->mUnk_10        = 0;
+        this->sceneIndex = sceneIndex;
+        this->unk_04     = 0;
+        this->unk_08     = 0;
+        this->roomIndex  = roomIndex;
+        this->spawnIndex = spawnIndex;
+        this->isCS       = isCS;
+        this->unk_0D     = 0;
+        this->csIndex    = cutsceneIndex;
+        this->unk_0F     = 0;
+        this->unk_10     = 0;
     }
 
-    UnkStruct_SceneChange1(const UnkStruct_SceneChange1 *pSource) {
-        MI_CpuCopy32((void *) pSource, this, sizeof(UnkStruct_SceneChange1));
+    EntranceInfo(const ZMBEntryWARP *pEntry) {
+        SceneIndex sceneIndex = data_027e09a0->GetSceneIndexFromName(pEntry->destName);
+        u8 unk_04             = pEntry->unk_01;
+        s32 cutsceneIndex     = CutsceneIndex_None;
+
+        if (pEntry->unk_14 != 0 || pEntry->unk_15 != 0) {
+            cutsceneIndex = func_ov000_020a7840(pEntry->unk_14, pEntry->unk_15);
+        }
+
+        u8 unk_10     = pEntry->unk_17;
+        u8 unk_00     = pEntry->unk_00;
+        u8 spawnIndex = pEntry->spawnIndex;
+        u8 roomIndex  = pEntry->roomIndex;
+
+        this->sceneIndex = sceneIndex;
+        this->unk_04     = unk_04;
+        this->unk_08     = 0;
+        this->roomIndex  = roomIndex;
+        this->spawnIndex = spawnIndex;
+        this->isCS       = false;
+        this->unk_0D     = unk_00;
+        this->csIndex    = cutsceneIndex;
+        this->unk_0F     = 0;
+        this->unk_10     = unk_10;
     }
 
-    UnkStruct_SceneChange1(s32) {}
+    EntranceInfo(const EntranceInfo *pSource) {
+        MI_CpuCopy32((void *) pSource, this, sizeof(EntranceInfo));
+    }
+
+    EntranceInfo(const EntranceInfo &refSource) {
+        MI_CpuCopy32((void *) &refSource, this, sizeof(EntranceInfo));
+    }
 };
 
 class UnkStruct_WarpUnk1_24 : public UnkStruct_0204a060_Base3 {
@@ -109,8 +140,8 @@ public:
     /* 00 (base) */
     /* 24 */ UnkStruct_WarpUnk1_24 mUnk_24;
     /* 50 */ UnkStruct_WarpUnk1_50 mUnk_50;
-    /* 78 */ UnkStruct_SceneChange1 mUnk_78; // current scene?
-    /* 8C */ UnkStruct_SceneChange1 mUnk_8C; // next scene
+    /* 78 */ EntranceInfo mCurEntrance;
+    /* 8C */ EntranceInfo mNextEntrance;
     /* A0 */ UnkStruct_WarpUnk1_A0 mUnk_A0;
     /* B4 */ unk32 mSpawnTransitionType; // the behavior of Link when entering a new scene
     /* B8 */
@@ -142,8 +173,8 @@ public:
     /* 00 (vtable) */
     /* 04 */ Iterator<UnkStruct_027e09a4_54_04> mUnk_04;
     /* 0C */ wchar_t mUnk_0C[8];
-    /* 1C */ UnkStruct_SceneChange1 mUnk_1C;
-    /* 30 */ unk16 mUnk_30;
+    /* 1C */ EntranceInfo mUnk_1C;
+    /* 30 */ u16 mUnk_30;
     /* 32 */ bool mUnk_32;
     /* 33 */ unk8 mUnk_33;
     /* 34 */
@@ -186,8 +217,8 @@ public:
 
 class UnkStruct_027e09a4 : public AutoInstance<UnkStruct_027e09a4> {
 public:
-    /* 00 */ UnkStruct_SceneChange1 mUnk_00; // the infos of the current area, this isn't saved when you save the game
-    /* 14 */ UnkStruct_SceneChange1 mUnk_14;
+    /* 00 */ EntranceInfo mUnk_00; // the infos of the current area, this isn't saved when you save the game
+    /* 14 */ EntranceInfo mUnk_14;
     /* 28 */ unk32 mUnk_28;
     /* 2C */ UnkStruct_027e09a4_2C mUnk_2C;
     /* 40 */ UnkStruct_027e09a4_2C mUnk_40;
@@ -200,15 +231,15 @@ public:
     /* 68 */
 
     bool IsCutscene() {
-        return this->mUnk_00.mIsCS == true;
+        return this->mUnk_00.isCS == true;
     }
 
     bool IsNotCutscene() {
-        return this->mUnk_00.mIsCS != true;
+        return this->mUnk_00.isCS != true;
     }
 
     u8 CurrentCSIndex() {
-        return this->mUnk_00.mCutsceneIndex;
+        return this->mUnk_00.csIndex;
     }
 
     bool UnkCheck(unk32 sceneIndex) {
@@ -245,31 +276,31 @@ public:
     }
 
     SceneIndex CurrentSceneIndex() {
-        return this->mUnk_00.mSceneIndex;
+        return this->mUnk_00.sceneIndex;
     }
 
     bool IsDarkRealm() {
-        return this->mUnk_00.mSceneIndex <= SceneIndex_t_eviltrain3 && this->mUnk_00.mSceneIndex >= SceneIndex_t_eviltrain;
+        return this->mUnk_00.sceneIndex <= SceneIndex_t_eviltrain3 && this->mUnk_00.sceneIndex >= SceneIndex_t_eviltrain;
     }
 
     bool IsDungeonTower() {
-        return this->mUnk_00.mSceneIndex == SceneIndex_d_main;
+        return this->mUnk_00.sceneIndex == SceneIndex_d_main;
     }
 
     bool IsPirate() {
-        return this->mUnk_00.mSceneIndex == SceneIndex_f_pirate;
+        return this->mUnk_00.sceneIndex == SceneIndex_f_pirate;
     }
 
     bool IsWater3() {
-        return this->mUnk_00.mSceneIndex == SceneIndex_f_water3;
+        return this->mUnk_00.sceneIndex == SceneIndex_f_water3;
     }
 
     bool IsSnowdriftStation() {
-        return this->mUnk_00.mSceneIndex == SceneIndex_f_kakushi1;
+        return this->mUnk_00.sceneIndex == SceneIndex_f_kakushi1;
     }
 
     bool IsPassenger() {
-        return this->mUnk_00.mSceneIndex == SceneIndex_f_passenger;
+        return this->mUnk_00.sceneIndex == SceneIndex_f_passenger;
     }
 
     UnkStruct_027e09a4(unk32 param1);
@@ -282,7 +313,7 @@ public:
 
     // overlay 0
     unk8 func_ov000_02070bd0(unk32 csIndex, unk32 param2);
-    UnkStruct_SceneChange1 *func_ov000_02070560();
+    EntranceInfo *func_ov000_02070560();
     void func_ov000_020707a8(void *param1);
     void func_ov000_02070834(void *param1);
     void func_ov000_0207087c(unk32 param1);
@@ -291,18 +322,18 @@ public:
     void func_ov000_02070a4c(unk32 param1);
     unk32 func_ov000_02070554();
     UnkStruct_WarpUnk1_A0 *func_ov000_02070538();
-    bool func_ov000_02070a9c(UnkStruct_SceneChange1 *param1);
-    bool func_ov000_02072154(UnkStruct_SceneChange1 *param1, unk32 param2);
+    bool func_ov000_02070a9c(EntranceInfo *param1);
+    bool func_ov000_02072154(EntranceInfo *param1, unk32 param2);
     bool func_ov000_0207056c();
     void func_ov000_020705e8(SaveFile *param1, unk32 param2);
 
     // overlay 1
     void func_ov001_020b662c();
     void func_ov001_020b66dc();
-    void func_ov001_020b6758(const UnkStruct_SceneChange1 *param1, bool param2);
+    void func_ov001_020b6758(const EntranceInfo *param1, bool param2);
     void func_ov001_020b68a4(bool param1, bool param2, bool param3);
-    void func_ov001_020b6924(const UnkStruct_SceneChange1 *param1, bool param2);
-    void func_ov001_020b69b4(const UnkStruct_SceneChange1 *param1, bool param2);
+    void func_ov001_020b6924(const EntranceInfo *param1, bool param2);
+    void func_ov001_020b69b4(const EntranceInfo *param1, bool param2);
 
     static UnkStruct_027e09a4 *Create(unk32 param1);
 

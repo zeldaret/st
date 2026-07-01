@@ -21,7 +21,7 @@ MapObject::MapObject() {
     this->mUnk_10   = NULL;
     this->mUnk_16   = -1;
     this->mFlags[0] = 0;
-    this->mUnk_20.func_ov000_0209c7c8();
+    this->mUnk_20.Init();
     *(u32 *) &this->mUnk_38 = 0;
 
     UnkStruct_ov000_020b5d34 *ptr1 = &data_ov000_020b5d34;
@@ -54,7 +54,7 @@ bool MapObject::vfunc_00() {
 
 void MapObject::vfunc_04() {}
 
-void MapObject::func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx) {
+void MapObject::func_ov000_0209d0bc(Vec2bCpp *param1, MapObject *thisx) {
     VecFx32 pos;
     Vec2p out;
 
@@ -71,13 +71,13 @@ void MapObject::func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx) {
 
 bool MapObject::func_ov000_0209d114() {
     bool result[2];
-    MapObject::func_ov000_0209d0bc((Vec2b *) &result, this);
+    MapObject::func_ov000_0209d0bc((Vec2bCpp *) &result, this);
     return result[0];
 }
 
 bool MapObject::func_ov000_0209d12c() {
     bool result[2];
-    MapObject::func_ov000_0209d0bc((Vec2b *) &result, this);
+    MapObject::func_ov000_0209d0bc((Vec2bCpp *) &result, this);
     return result[1];
 }
 
@@ -145,9 +145,9 @@ void MapObject::func_ov000_0209d2c4(unk32 param1, bool param2) {
     data_027e0cd8->func_ov000_02081d7c(this->mUnk_20.mUnk_0A[param1], this->mUnk_20.mUnk_08[param1], param2);
 }
 
-void MapObject::func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2b *param3) {
+void MapObject::func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3) {
     UnkStruct_027e0cd8_0C_Base *temp_r5 = data_027e0cd8->mUnk_0C;
-    Vec2b sp0(0, 0);
+    Vec2bCpp sp0(0, 0);
 
     sp0.x = this->mUnk_3A.x;
 
