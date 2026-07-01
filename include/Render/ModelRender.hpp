@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "nitro/fx.h"
 #include "types.h"
 
 #include <nns/g3d/g3d.h>
@@ -40,7 +41,7 @@ public:
     /* 0C */ virtual void vfunc_0C()                                                = 0;
     /* 10 */ virtual void vfunc_10(VecFx32 *param1, Mat3p *param2, VecFx32 *param3) = 0;
     /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2)                  = 0;
-    /* 18 */ virtual void vfunc_18()                                                = 0;
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1)                                 = 0;
     /* 1C */
 };
 
@@ -59,7 +60,7 @@ public:
     /* 0C */ virtual void vfunc_0C() override;
     /* 10 */ virtual void vfunc_10(VecFx32 *param1, Mat3p *param2, VecFx32 *param3) override; // SetTransform?
     /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) override;                  // SetRotationTranslation?
-    /* 18 */ virtual void vfunc_18() override;
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1) override;
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1);
     /* 20 */ virtual void vfunc_20();
 
