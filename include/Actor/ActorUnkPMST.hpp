@@ -26,7 +26,6 @@ public:
 
     /* 4C */ virtual ~ActorUnkPMST() override;
 
-    void func_ov077_02159db4(void);
     void func_ov077_02159ddc(void);
     void func_ov077_02159e14(void);
     void func_ov077_02159e40(void);
@@ -47,6 +46,8 @@ public:
     void func_ov077_0215aa20(void);
     void func_ov077_0215aa44(void);
     void func_ov077_0215aa88(void);
+
+    static void func_ov077_02159db4(void);
 };
 
 class ActorProfileUnkPMST : public ActorProfile_Derived1 {

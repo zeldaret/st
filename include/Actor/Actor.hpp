@@ -156,9 +156,9 @@ public:
     /* 0C */ virtual unk8 vfunc_0C();
     /* 10 */ virtual void vfunc_10(VecFx32 *param1);
     /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual bool vfunc_18(unk32 param1);
-    /* 1C */ virtual void vfunc_1C();
-    /* 20 */ virtual void vfunc_20();
+    /* 18 */ virtual bool vfunc_18(unk32 param1); // Init?
+    /* 1C */ virtual void vfunc_1C();             // Setup
+    /* 20 */ virtual void vfunc_20();             // Update?
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28();
     /* 2C */ virtual void vfunc_2C(unk32 param1);

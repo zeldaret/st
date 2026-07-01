@@ -1206,3 +1206,13 @@ public:
     // data_ov000_020b2940
     /* 00 */ virtual void vfunc_00();
 };
+
+class UnkSystem9 : public LinkList<UnkSystem9> {
+public:
+    /* 00 (vtable) */
+    /* 04 (base) */
+    /* 0C */
+
+    // data_ov000_020b24c4
+    /* 00 */ virtual void vfunc_00();
+};

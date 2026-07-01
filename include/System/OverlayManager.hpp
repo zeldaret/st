@@ -403,6 +403,34 @@ public:
         return this->mLoadedOverlays[OverlaySlot_9] == OverlayIndex_ASR;
     }
 
+    bool IsBossDeago() {
+        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossDeago;
+    }
+
+    bool IsBossLast1() {
+        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossLast1;
+    }
+
+    bool IsBossLast2() {
+        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossLast2;
+    }
+
+    bool IsTower() {
+        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower;
+    }
+
+    bool IsBossDesert() {
+        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossDesert;
+    }
+
+    bool IsDungeonForest() {
+        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_DgnForest;
+    }
+
+    bool IsMapB3() {
+        return this->mLoadedOverlays[OverlaySlot_14] == OverlayIndex_MapB3;
+    }
+
     void Load(OverlaySlot slot, OverlayIndex index);
     void LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index);
     void Unload(OverlaySlot slot);

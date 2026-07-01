@@ -23,8 +23,6 @@ void *func_ov000_02066294();
 extern int data_ov001_020c27a8;
 extern int data_ov001_020c276c;
 
-THUMB_BEGIN
-
 AdventureModeManager *AdventureModeManager::Create(unk32 param1) {
     return new(HeapIndex_1) AdventureModeManager(param1);
 }
@@ -325,5 +323,3 @@ AdventureModeManager_15C::AdventureModeManager_15C() :
 AdventureModeManager_15C::~AdventureModeManager_15C() {
     delete this->mUnk_20.mUnk_00;
 }
-
-THUMB_END

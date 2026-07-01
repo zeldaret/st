@@ -132,8 +132,8 @@ public:
     /* 40 */
 
     // data_ov000_020b3590
-    /* 00 */ virtual bool vfunc_00(); // Init? the newly-created map object is deleted if this returns false
-    /* 04 */ virtual void vfunc_04();
+    /* 00 */ virtual bool vfunc_00(); // Init
+    /* 04 */ virtual void vfunc_04(); // Setup
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();

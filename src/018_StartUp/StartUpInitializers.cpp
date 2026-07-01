@@ -127,9 +127,9 @@ SaveManager::SaveManager() {
 
     func_020327c8(&this->mUnk_004, 0x1021);
 
-    this->mUnk_204 = OS_GetLockID();
-    int uVar8      = 1;
-    CARD_LockBackup(this->mUnk_204);
+    this->mCardId = OS_GetLockID();
+    int uVar8     = 1;
+    CARD_LockBackup(this->mCardId);
 
     if (CARD_IdentifyBackup(CARD_BACKUP_TYPE_FLASH_8MBITS)) {
         stack_struct stack[MAX_SAVE_SLOTS];
@@ -163,10 +163,10 @@ SaveManager::SaveManager() {
         }
     }
 
-    this->mUnk_20C = CARD_GetResultCode();
-    CARD_UnlockBackup(this->mUnk_204);
+    this->mResultCode = CARD_GetResultCode();
+    CARD_UnlockBackup(this->mCardId);
 
-    if (this->mUnk_20C != 0) {
+    if (this->mResultCode != CARD_RESULT_SUCCESS) {
         this->mUnk_214 = uVar8;
     }
 }
