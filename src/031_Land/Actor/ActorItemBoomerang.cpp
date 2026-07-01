@@ -104,15 +104,8 @@ void ActorItemBoomerang::vfunc_20() {
     }
 }
 
-typedef struct {
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ VecFx32 *mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-} UnkStack_ov031_020e5034;
-
 // non-matching
 void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
-    UnkStack_ov031_020e5034 stack;
     if (this->mUnk_128 == param1) {
         return;
     }
@@ -153,15 +146,10 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
             if (ptr != nextVarAddress) {
                 do {
                     (*ptr)->func_ov000_020a0334();
-                    ++ptr;
-                } while (ptr != nextVarAddress);
+                } while (++ptr != nextVarAddress);
             }
 
-            stack.mUnk_00 = 0x817;
-            stack.mUnk_04 = &this->mVel;
-            stack.mUnk_08 = 0x2;
-
-            data_027e0cec->func_ov000_020a00d4(&this->mUnk_12C[0], 0x815, 0x816, 0x817);
+            data_027e0cec->func_ov000_020a00d4(&this->mUnk_12C[0], 0x815, 0x816, 0x817, &this->mPos, 0x2);
             if (!func_ov000_0205aeac()) {
                 return;
             }
