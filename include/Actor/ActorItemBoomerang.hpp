@@ -74,7 +74,7 @@ public:
     /* 11C */ ActorItemBoomerang_11C mUnk_11C;
     /* 128 */ u32 mUnk_128;
     /* 12C */ UnkStruct_PlayerGet_ec mUnk_12C[0x3];
-    /* 138 */ u16 mUnk_138;
+    /* 138 */ u16 mUnk_138; // timer ?
     /* 13A */ u16 mUnk_13A;
     /* 13C */ u16 mUnk_13C;
     /* 13E */ STRUCT_PAD(0x13E, 0x140);

@@ -1,11 +1,21 @@
 #include "Actor/ActorItemBoomerang.hpp"
+
+#include "MapObject/MapObjectUnkICEB.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
+#include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d2c.hpp"
 
+extern "C" void func_01ff916c(void *, int, int);
+extern "C" void func_01ff93c0(VecFx32 *, unk32);
+extern "C" void func_01ff97c8(VecFx32 *, int);
+extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
+extern "C" unk32 func_01ffb9cc(VecFx32 *, VecFx32 *);
+extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, UnkStruct_ov031_Items_00 *);
+extern "C" void func_01ffedac(u16 *, VecFx32 *);
 extern "C" unk32 func_ov000_0205aeac();
 extern "C" bool func_ov000_020982d8();
 
@@ -86,7 +96,7 @@ void ActorItemBoomerang::vfunc_20() {
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (func_ov000_0205aeac() && this->mUnk_128 == 0x1 || this->mUnk_128 == 0x2) {
-        // VecFx32_Copy(&this->mPos, &this->mUnk_140);
+        VecFx32_Copy(&this->mPos, &this->mUnk_140.mUnk_00);
     }
 
     this->IsTimerOut();
@@ -94,10 +104,134 @@ void ActorItemBoomerang::vfunc_20() {
     this->func_ov031_020e52a0();
     data_027e09a8->func_ov000_02071d34(&this->mRef, this->mUnk_13C, &this->mPos, 0x0);
 
+    bool var2 = false;
     switch (this->mState) {
         case ActorItemBoomerangState_0:
+            this->mUnk_A0.mUnk_0C.z = this->mPos.z;
+            this->mUnk_A0.mUnk_0C.y = this->mPos.y + FLOAT_TO_FX32(-0.1003f);
+            this->mUnk_A0.mUnk_0C.x = this->mPos.x;
+            this->mUnk_A0.mUnk_18   = FLOAT_TO_FX32(0.3f);
+
+            data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_A0);
+
+            bool var1 = false;
+            if (data_027e0ce0->func_ov000_0208bc1c(0x1, 0x0, 0x16, 0x0, 0x0, 0x0)) {
+                var1           = true;
+                this->mUnk_13A = 0x14;
+                this->mUnk_138 = 0x0;
+            }
+
+            Actor *sp54; /* actor* ? */
+            func_01ffe6c4(&sp54, this->mRef, &this->mPos, &this->mPrevPos, 0x1C, NULL, &this->mUnk_11C);
+            unk32 tmp = sp54->func_ov000_0207df88((Cylinder *) &this->mUnk_CC.mUnk_30.mUnk_00, 0xC);
+            func_01ffe6c4(&sp54, this->mRef, &this->mPos, &this->mPrevPos, 0x1F, NULL, &this->mUnk_11C);
+
+            if ((tmp | sp54->func_ov000_0207e294((Cylinder *) &this->mUnk_10C)) == 0 && !var1) {
+                if (data_027e0ce0->mUnk_2C->mEquippedItem != ItemFlag_Boomerang) {
+                    this->SetState(ActorItemBoomerangState_1);
+                    return;
+                }
+
+                VecFx32 sp6C;
+                u16 sp14;
+                if (!data_027e0d2c->func_ov031_020d962c(&this->mPos, 0x4CD, &sp6C, &sp14)) {
+                    this->SetState(ActorItemBoomerangState_1);
+                } else {
+                    unk32 vecLength      = VecFx32_Length(&this->mVel);
+                    unk32 lengthModified = (vecLength << 0xA) + 0x800;
+                    unk32 sp18           = lengthModified;
+                    func_01ff916c(&sp18, 0x0, MUL_FX32(vecLength, lengthModified));
+                    func_01ffb714(&sp6C, &this->mPos, &this->mVel);
+                    func_01ff97c8(&this->mPos, sp18 + 0x200);
+                }
+
+                if ((u32) (sp14 << 0x10) >> 0x1E != 0) {
+                    this->mUnk_CC.mUnk_0C.z = this->mPos.z;
+                    this->mUnk_CC.mUnk_0C.y = this->mPos.y + FLOAT_TO_FX32(-0.1003f);
+                    this->mUnk_CC.mUnk_18   = 0xA000;
+                    this->mUnk_CC.mUnk_0C.x = this->mPos.x;
+                    data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_CC);
+                    return;
+                }
+                if (!(sp14 & 0x1000)) {
+                    return;
+                }
+
+                Vec2bCpp pos;
+                pos.x             = 0x0;
+                pos.y             = 0x0;
+                MapObject *object = gpMapObjManager->func_01fff498(pos);
+                if (object == NULL) {
+                    return;
+                }
+                object->vfunc_1C(this->mRef, 0xC, &this->mVel);
+                if (object->mUnk_10 != NULL) {
+                    unk32 val = object->mUnk_10->mUnk_0C.y;
+                    if (val == 0x2) {
+                        this->func_ov031_020e5034(0x1);
+                    } else if (val == 0x4) {
+                        this->func_ov031_020e5034(0x2);
+                    }
+                }
+                MapObjectId objectId = object->GetMapObjectId();
+                if (objectId != MapObjectId_SKDI && objectId != MapObjectId_SWHT && objectId != MapObjectId_TSUB) {
+                    this->func_ov031_020e49b0(0x8D70);
+                }
+                return;
+            }
+            this->func_ov031_020e49b0(0x8D70);
             break;
         case ActorItemBoomerangState_1:
+            this->mUnk_A0.mUnk_0C.z = this->mPos.z;
+            this->mUnk_A0.mUnk_0C.y = this->mPos.y + FLOAT_TO_FX32(-0.1003f);
+            this->mUnk_A0.mUnk_0C.x = this->mPos.x;
+            this->mUnk_A0.mUnk_18   = FLOAT_TO_FX32(0.3f);
+
+            data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_A0);
+            Actor *sp24; /* actor* ? */
+            func_01ffe6c4(&sp24, this->mRef, &this->mPos, &this->mPrevPos, 0x1C, NULL, &this->mUnk_11C);
+            sp24->func_ov000_0207df88((Cylinder *) &this->mUnk_CC.mUnk_30.mUnk_00, 0xC);
+
+            bool var3 = false;
+            if ((u32) this->mUnk_138 < (u32) this->mUnk_13A) {
+                ++this->mUnk_138;
+            } else {
+                var2 = true;
+            }
+            if (var2 && data_027e0ce0->func_ov000_0208bc1c(0x1, 0x0, 0x16, 0x0, 0x0, 0x0)) {
+                var3 = true;
+            }
+            if (var3) {
+                this->mUnk_13A = 0x14;
+                this->mUnk_138 = 0x0;
+                this->func_ov031_020e49b0(0x8D70);
+            }
+
+            u16 spC;
+            VecFx32 sp3C;
+            VecFx32_Copy(data_027e0ce0->func_01fff148(0x0), &sp3C);
+
+            if (func_01ffb9cc(&sp3C, &this->mPos) <= 0x800) {
+                if (this->mUnk_128 == 0x2) {
+                    func_01ffedac(&spC, &sp3C);
+
+                    Vec2bCpp pos;
+                    pos.x             = 0x0;
+                    pos.y             = 0x0;
+                    MapObject *object = gpMapObjManager->func_01fff498(pos);
+                    if (object != NULL && object->GetMapObjectId() == MapObjectId_ICEB) {
+                        ((MapObjectUnkICEB *) object)->func_ov094_02174870();
+                    }
+                }
+                data_027e0d2c->func_ov031_020d95b4();
+                this->Kill();
+                return;
+            }
+            VecFx32 sp48;
+            func_01ff93c0(&this->mVel, 0xC00);
+            func_01ffb714(&sp3C, &this->mPos, &sp48);
+            func_01ff97c8(&sp48, 0x200);
+            VecFx32_Add(&this->mVel, &sp48, &this->mVel);
             break;
         default:
             break;
