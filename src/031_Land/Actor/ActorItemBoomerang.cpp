@@ -287,9 +287,11 @@ bool ActorItemBoomerang_11C::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, un
         return false;
     }
 
+    Vec2b pos;
     if (this->mUnk_08->mState == ActorItemBoomerangState_1) {
         if (param2 & 0x1000) {
-            Vec2b pos((u8) param2 >> 16, (u8) param2 >> 24);
+            pos.x = (u8) param2 >> 16;
+            pos.y = (u8) param2 >> 24;
 
             MapObject *mapObject = gpMapObjManager->func_01fff498(pos);
             if (mapObject != NULL) {
@@ -302,7 +304,9 @@ bool ActorItemBoomerang_11C::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, un
     }
 
     if (param2 & 0x1000) {
-        Vec2b pos((u8) param2 >> 16, (u8) param2 >> 24);
+        pos.x = (u8) param2 >> 16;
+        pos.y = (u8) param2 >> 24;
+
         MapObject *mapObject = gpMapObjManager->func_01fff498(pos);
         if (mapObject != NULL) {
             switch (mapObject->GetMapObjectId()) {
