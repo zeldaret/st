@@ -13,13 +13,14 @@
 extern AABB data_027e0c90;
 extern int data_ov089_02171540;
 
-extern "C" BOOL func_ov001_020ba350(ZMBFileInfos *pFileInfos, u8 param2, UnkStruct_027e0cd8_0C_Base *pDst);
-extern "C" void func_ov001_020ba388(void *, int);
-extern "C" void func_ov001_020ba408(void *);
 extern "C" fx32 func_ov000_02080068(fx32 x);
 extern "C" fx32 func_ov000_02080080(fx32 x);
 extern "C" void func_ov089_02165b18(void *);
 extern "C" fx32 func_ov000_020775d8(fx32);
+
+extern "C" BOOL ZMB_020ba350(ZMBFileInfos *pFileInfos, u8 param2, UnkStruct_027e0cd8_0C_Base *pDst);
+extern "C" void ZMB_020ba388(CustomVector<EntranceInfo> *pVector, size_t param2);
+extern "C" void ZMB_020ba408(CustomVector<UnkStruct_027e0cd8_0C_Base_148_00_Base *> *pVector, size_t param2);
 
 BOOL ZMB_ParseFile(ZMBFileInfos *pFileInfos, UnkStruct_027e0cd8_0C_Base *pDst, bool param3) {
     bool isVersion2;
@@ -137,7 +138,7 @@ BOOL ZMB_ParseARAB(ZMBFileInfos *pFileInfos, ZMBSectionARAB *pSection, UnkStruct
     size_t capacity = pDst->mUnk_148.capacity();
 
     if (pSection->header.nEntries > capacity) {
-        func_ov001_020ba408(&pDst->mUnk_148);
+        ZMB_020ba408(&pDst->mUnk_148, pSection->header.nEntries);
     }
 
     for (u16 i = 0; i < pSection->header.nEntries; i++) {
@@ -189,13 +190,13 @@ BOOL ZMB_ParseRALB(ZMBFileInfos *pFileInfos, ZMBSectionRALB *pSection, UnkStruct
 
 BOOL ZMB_ParseWARP(ZMBFileInfos *pFileInfos, ZMBSectionWARP *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
     if (pSection->header.nEntries + 8 > pDst->mUnk_154.cap()) {
-        func_ov001_020ba388(&pDst->mUnk_154, pSection->header.nEntries + 8);
+        ZMB_020ba388(&pDst->mUnk_154, pSection->header.nEntries + 8);
     }
 
     for (u16 i = 0; i < pSection->header.nEntries; i++) {
         ZMBEntryWARP *pEntry = &pSection->entries[i];
 
-        if (func_ov001_020ba350(pFileInfos, pEntry->unk_16, pDst)) {
+        if (ZMB_020ba350(pFileInfos, pEntry->unk_16, pDst)) {
             pDst->func_ov001_020b8c30(EntranceInfo(pEntry));
         }
     }
@@ -261,7 +262,7 @@ BOOL ZMB_ParseMapObjList(ZMBFileInfos *pFileInfos, ZMBSectionMapObjectList *pSec
                 break;
         }
 
-        if (func_ov001_020ba350(pFileInfos, pEntry->unk_18, pDst)) {
+        if (ZMB_020ba350(pFileInfos, pEntry->unk_18, pDst)) {
             allocData.angle = UNK_FX_OPERATION_1(INT_TO_FX32(pEntry->angle));
             gpMapObjManager->AllocateMapObject(pEntry->id, allocData.pos, allocData.angle, (int) &local_30, 1);
         }
@@ -289,7 +290,7 @@ BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection,
         if (posX < somePos.x && posY < somePos.y) {
             bool iVar6 = data_027e0cd8->func_ov000_02081edc(pFileInfos->unk_0E);
 
-            if (func_ov001_020ba350(pFileInfos, pEntry->unk_1C, pDst)) {
+            if (ZMB_020ba350(pFileInfos, pEntry->unk_1C, pDst)) {
                 ActorProfile *pProfile = data_ov000_020b539c_eur.GetProfileFromId(pEntry->id);
 
                 if (pProfile == NULL) {
@@ -557,7 +558,7 @@ BOOL ZMB_ParsePLYR(ZMBFileInfos *pFileInfos, ZMBSectionPLYR *pSection, UnkStruct
     for (u16 i = 0; i < pSection->header.nEntries; i++) {
         ZMBEntryPLYR *pEntry = &pSection->entries[i];
 
-        if (func_ov001_020ba350(pFileInfos, pEntry->unk_11, pDst)) {
+        if (ZMB_020ba350(pFileInfos, pEntry->unk_11, pDst)) {
             s32 unk_00 = ROUND_FX32(pEntry->unk_00.x);
             s32 unk_08 = ROUND_FX32(pEntry->unk_00.z);
 
@@ -646,4 +647,30 @@ BOOL ZMB_ParseCMPT(ZMBFileInfos *pFileInfos, ZMBSectionCMPT *pSection, UnkStruct
 
     pDst->func_ov001_020b8c90(pSection);
     return true;
+}
+
+BOOL ZMB_020ba350(ZMBFileInfos *pFileInfos, u8 param2, UnkStruct_027e0cd8_0C_Base *pDst) {
+    BOOL isCS = pDst->mIsCS;
+
+    if (param2 == 0xFF) {
+        return true;
+    }
+
+    if (param2 < 2) {
+        return (param2 == isCS);
+    }
+
+    if (GET_FLAG2(pDst->mUnk_104, (u8) (param2 - 2))) {
+        return true;
+    }
+
+    return false;
+}
+
+void ZMB_020ba388(CustomVector<EntranceInfo> *pVector, size_t param2) {
+    pVector->reallocate_copy(param2);
+}
+
+void ZMB_020ba408(CustomVector<UnkStruct_027e0cd8_0C_Base_148_00_Base *> *pVector, size_t param2) {
+    pVector->reallocate_copy_alt(param2);
 }

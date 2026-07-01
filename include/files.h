@@ -443,9 +443,8 @@ typedef struct ZMBEntryCAME {
     /* 04 */ VecFx32 unk_04;
     /* 10 */ s16 unk_10;
     /* 12 */ s16 unk_12;
-    /* 14 */ unk32 unk_14; // pad
-    /* 18 */ unk32 unk_18; // pad
-} ZMBEntryCAME;            // size = 0x1C
+    /* 14 */ unk32 unk_14[2]; // pad
+} ZMBEntryCAME;               // size = 0x1C
 
 typedef struct ZMBSectionCAME {
     /* 00 */ ZMBSectionHeader header;
