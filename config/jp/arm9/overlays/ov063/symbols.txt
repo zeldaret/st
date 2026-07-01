@@ -447,7 +447,7 @@ _ZTV19ActorProfileUnkRMSW kind:data(any) addr:0x021651c0
 _ZTV19data_ov063_021651e4 kind:data(any) addr:0x021651e4
 _ZTV19ActorProfileUnkRMSF kind:data(any) addr:0x02165248
 _ZTV12ActorUnkRMSF kind:data(any) addr:0x0216526c
-data_ov063_021652d0 kind:data(any) addr:0x021652d0
+data_ov063_021634b0 kind:data(any) addr:0x021652d0
 _ZTV19ActorProfileUnkRMSD kind:data(any) addr:0x021652e8
 _ZTV12ActorUnkRMSD kind:data(any) addr:0x0216530c
 _ZTV19ActorProfileUnkRMSS kind:data(any) addr:0x02165370

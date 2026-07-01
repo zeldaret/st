@@ -39,7 +39,7 @@ public:
 
     ActorUnkRMSD();
 
-    /* 18 */ virtual void vfunc_18(void) override;
+    /* 18 */ virtual unk32 vfunc_18(void) override;
     /* 20 */ virtual void vfunc_20(void) override;
     /* 24 */ virtual void vfunc_24(void) override;
 
