@@ -5,6 +5,7 @@
 #include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "nitro/fx.h"
+#include "nitro/math.h"
 
 extern UnkStruct_data_ov063_02163740 data_ov063_02163740; // = {0, 0x534C4252, 0, 0, 0, 0};
 
@@ -24,11 +25,12 @@ ActorUnkRBLS::ActorUnkRBLS() :
     mUnk_110(&mUnk_130, NULL) {}
 
 unk32 ActorUnkRBLS::vfunc_18(void) {
-    this->mPos.x -= 0x800;
-    this->mPos.z -= 0x800;
+    this->mPos.x -= FLOAT_TO_FX32(0.5f);
+    this->mPos.z -= FLOAT_TO_FX32(0.5f);
     this->mPos.y = 0;
     func_ov000_02099f64(&this->mUnk_F4, data_ov063_02163740, 0x1000);
     (*(MapObjectTreasureSpawned *) &this->mUnk_F4).vfunc_3C();
+
     data_027e0cd8->mUnk_0C->mUnk_12A = 0;
     return 1; //! INFO: bool?
 }
