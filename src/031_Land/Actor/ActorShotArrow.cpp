@@ -67,7 +67,7 @@ typedef struct {
 } UnkStack_ov031_020f2310;
 
 struct UnkStruct_020f1b04 {
-    /* 0C */ unk32 mUnk_0C;
+    /* 0C */ Actor *mUnk_0C;
     /* 10 */ STRUCT_PAD(0x10, 0x24);
     /* 24 */
 };
@@ -96,7 +96,7 @@ extern "C" void func_01ffad5c(Mat4x3p *, Mat4x3p *, Mat4x3p *);
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
 extern "C" fx16 func_01ffbbe0(fx32, fx32);
 extern "C" bool func_01ffccf4(VecFx32 *, VecFx32 *, VecFx32 *, unk32 *);
-extern "C" void func_01ffe6c4(unk32 *, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, unk32);
+extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, unk32);
 extern "C" void func_0200eab0(G3d_Model *, unk16, u8);
 extern "C" UnkResourceStruct2 *func_0200f05c(G3d_NameList *, char *);
 extern "C" void func_ov000_02057c98(ModelRender *param1, UnkSystem5 *param2);
@@ -330,7 +330,7 @@ void ActorShotArrow::func_ov031_020f1b04() {
     }
 
     if (!this->func_ov017_020beeec(0x0)) {
-        stack.mUnk_0C = 0;
+        stack.mUnk_0C = NULL;
         VecFx32 *mPos = &this->mPos;
         func_01ffe6c4(&stack.mUnk_0C, this->mRef, mPos, &this->mPrevPos, (s16) this->mUnk_44, mPos, 0);
 
@@ -846,14 +846,13 @@ void ActorShotArrow::func_ov031_020f2cac(VecFx32 *param1, bool param2) {
 
 // non-matching
 void ActorShotArrow::func_ov031_020f2ef0() {
-    unk32 value;
+    Actor *value = NULL;
     ActorShotArrow_178 *unk_178;
 
-    value   = 0;
     unk_178 = &this->mUnk_178;
     func_01ffe6c4(&value, this->mRef.Get32(), &this->mPos, &this->mVel, (s16) this->mUnk_44, &this->mPos, 0);
 
-    this->mUnk_46 = (s16) (func_ov000_0207df88(&value, this->mUnk_30, 0x3) | func_ov000_0207e294(this->mUnk_30));
+    this->mUnk_46 = (s16) (value->func_ov000_0207df88(this->mUnk_30, 0x3) | func_ov000_0207e294(this->mUnk_30));
 }
 
 void ActorShotArrow::func_ov031_020f2f5c(VecFx32 *param1) {
@@ -990,7 +989,7 @@ bool ActorShotArrow_178::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
 }
 
 // non-matching
-bool ActorShotArrow_178::vfunc_0C() {}
+bool ActorShotArrow_178::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) {}
 
 ActorShotArrow_194::ActorShotArrow_194(ActorShotArrow *param1) {
     this->mUnk_2C = param1;
