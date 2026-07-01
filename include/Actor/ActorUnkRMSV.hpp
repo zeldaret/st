@@ -21,11 +21,16 @@ public:
 class ActorUnkRMSV : public Actor { //! INFO: ActorUnkRMSBase ? -> weirdly doesn't match first dtor
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 94 */ STRUCT_PAD(0x94, 0x158);
+    /* 158 */ unk32 mUnk_158;           //! INFO: Some class with a vfunc_34
+    /* 15C */ STRUCT_PAD(0x15C, 0x1D4); //! INFO: Force alignment to match ::Create
+    /* 1D4 */ unk32 mUnk_1D4;           //! INFO: Some class with a vfunc_34
+    /* 1D8 */ STRUCT_PAD(0x1D8, 0x250); //! INFO: Force alignment to match ::Create
+    /* 250 */
 
     ActorUnkRMSV();
 
-    /* 18 */ virtual void vfunc_18(void);
+    /* 18 */ virtual unk32 vfunc_18(void);
     /* 20 */ virtual void vfunc_20(void);
     /* 24 */ virtual void vfunc_24(void);
 
