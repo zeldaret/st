@@ -24,7 +24,24 @@ ActorProfileUnkMLCK::ActorProfileUnkMLCK() :
 
 // non-matching
 ActorUnkMLCK::ActorUnkMLCK() :
-    mUnk_B4(mUnk_A0) {}
+    mUnk_B4(mUnk_A0),
+    mUnk_BC(0x4),
+    mUnk_C0(0x0),
+    mUnk_C2(0x0),
+    mUnk_C4(NULL),
+    mUnk_C8(0x0),
+    mUnk_CC(-1),
+    mUnk_D0(0x0),
+    mUnk_D2(0x0),
+    mUnk_D4(0x0),
+    mUnk_D6(0x0),
+    mUnk_D8(this),
+    mUnk_E4(this),
+    mUnk_F0(false),
+    mUnk_F1(false),
+    mUnk_F2(false),
+    mUnk_F3(true),
+    mUnk_F4(-1) {}
 
 bool ActorUnkMLCK::vfunc_18(unk32 param1) {
     this->mUnk_B8 = this->mUnk_5C.mParams[0];
@@ -176,8 +193,8 @@ void ActorUnkMLCK::func_ov031_020faf24() {
         if (var) {
             var9 = false;
         }
-        this->mUnk_D8.mUnk_10    = 0x0;
-        this->mUnk_D8.mUnk_11    = var9;
+        this->mUnk_E4.mUnk_04    = 0x0;
+        this->mUnk_E4.mUnk_05    = var9;
         ActorUnk_vfunc_B0 actor2 = ActorUnk_vfunc_B0();
         actor2.mUnk_00           = 0x1;
         actor2.mUnk_0C           = (u16) (this->mUnk_B8 + 0x88) | 0x10000;
@@ -185,7 +202,7 @@ void ActorUnkMLCK::func_ov031_020faf24() {
         actor2.mUnk_32           = 0x0;
 
         VecFx32_Copy(data_027e0ce0->func_01fff148(0x0), &actor2.mUnk_34);
-        actor2.mUnk_04 = (unk32) & this->mUnk_D8.mUnk_0C;
+        actor2.mUnk_04 = (unk32) & this->mUnk_E4;
 
         data_027e09b8->func_ov000_02073470(&actor2, 0x0);
     }
