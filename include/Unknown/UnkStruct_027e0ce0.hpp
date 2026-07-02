@@ -81,6 +81,12 @@ public:
     /* 20 */
 };
 
+class UnkStruct_ov031_020e54d4 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x08);
+    /* 08 */ u32 mUnk_08;
+};
+
 class UnkStruct_027e0ce0_38_Base {
 public:
     /* 00 (vtable) */
@@ -89,7 +95,7 @@ public:
     // data_ov000_020b2838
     /* 00 */ virtual ~UnkStruct_027e0ce0_38_Base();
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1);
-    /* 0C */ virtual bool vfunc_0C();
+    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2);
     /* 10 */ virtual void vfunc_10();
     /* 14 */
 };
@@ -439,9 +445,11 @@ public:
     void func_ov000_0208bbd4(unk32 param1, VecFx32 *param2, u16 param3);
 
     void func_ov000_0208bbd4(unk32 param1, VecFx32 *param2, void *param3);
-    void func_ov000_0208bc1c(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
+    bool func_ov000_0208bc1c(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);
     void func_ov000_0208bd30(bool param1, unk32 param2, unk32 param3, unk32 param4);
+
+    G3d_Model *func_ov000_0208ed30(unk32 param1, unk32 param2, char *param3);
 
     static UnkStruct_027e0ce0_34 *func_ov000_0205c904();
 
