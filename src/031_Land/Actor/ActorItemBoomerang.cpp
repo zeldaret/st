@@ -16,7 +16,7 @@ extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
 extern "C" unk32 func_01ffb9cc(VecFx32 *, VecFx32 *);
 extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, UnkStruct_ov031_Items_00 *);
 extern "C" void func_01ffedac(u16 *, VecFx32 *);
-extern "C" unk32 func_ov000_0205aeac();
+extern "C" bool func_ov000_0205aeac();
 extern "C" bool func_ov000_020982d8();
 
 DECL_PROFILE(ActorProfileItemBoomerang);
