@@ -5,14 +5,14 @@
 #include "global.h"
 #include "types.h"
 
-class MapObjectUnkTSUB : public MapObject {
+class MapObjectPot : public MapObject {
 public:
     /* 00 (base) */
     /* 40 */
 
-    MapObjectUnkTSUB();
+    MapObjectPot();
 
-    /* 30 */ virtual ~MapObjectUnkTSUB() override;
+    /* 30 */ virtual ~MapObjectPot() override;
 
     void func_ov031_02105088();
     void func_ov031_021050b4();
@@ -24,14 +24,14 @@ public:
     void func_ov031_021053fc();
 };
 
-class MapObjectProfileUnkTSUB : public MapObjectProfile {
+class MapObjectProfilePot : public MapObjectProfile {
 public:
     /* 00 (base) */
 
-    MapObjectProfileUnkTSUB();
-    ~MapObjectProfileUnkTSUB();
+    MapObjectProfilePot();
+    ~MapObjectProfilePot();
 
     /* 0C */ virtual MapObject *Create();
 
-    static MapObjectProfileUnkTSUB *GetProfile();
+    static MapObjectProfilePot *GetProfile();
 };
