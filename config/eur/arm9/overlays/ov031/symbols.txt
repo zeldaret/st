@@ -2463,8 +2463,8 @@ data_ov031_021159f4 kind:data(any) addr:0x021159f4
 data_ov031_02115a50 kind:data(any) addr:0x02115a50
 data_ov031_02115a6c kind:data(any) addr:0x02115a6c
 data_ov031_02115ad8 kind:data(any) addr:0x02115ad8
-data_ov031_02115aec kind:data(any) addr:0x02115aec
-data_ov031_02115b08 kind:data(any) addr:0x02115b08
+_ZTV19MapObjectProfilePot kind:data(any) addr:0x02115ae4
+_ZTV12MapObjectPot kind:data(any) addr:0x02115b00
 data_ov031_02115b60 kind:data(any) addr:0x02115b60
 data_ov031_02115b74 kind:data(any) addr:0x02115b74
 data_ov031_02115b8c kind:data(any) addr:0x02115b8c

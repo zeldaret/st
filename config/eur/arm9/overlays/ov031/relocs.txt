@@ -4944,10 +4944,10 @@ from:0x02104f70 kind:arm_call to:0x0209c9a8 module:overlay(0)
 from:0x02104f80 kind:arm_call to:0x0207c018 module:overlay(0)
 from:0x02104fd8 kind:load to:0x02115624 module:overlay(31)
 from:0x02104fdc kind:load to:0x02112a78 module:overlay(31)
-from:0x02104fe0 kind:load to:0x02115aec module:overlay(31)
+from:0x02104fe0 kind:load to:0x02115ae4 module:overlay(31) add:0x8
 from:0x02104ff4 kind:arm_call to:0x0209d700 module:overlay(0)
 from:0x02105050 kind:arm_call_thumb to:0x020578e8 module:overlay(0)
-from:0x02105078 kind:load to:0x02115b08 module:overlay(31)
+from:0x02105078 kind:load to:0x02115b00 module:overlay(31) add:0x8
 from:0x0210507c kind:load to:0x02117f3c module:overlay(31)
 from:0x02105084 kind:load to:0x02118010 module:overlay(31)
 from:0x021050a4 kind:arm_call to:0x01ffe868 module:itcm
