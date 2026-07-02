@@ -23,11 +23,12 @@ public:
 
 class ActorUnkMLCK_D8 {
 public:
-    /* 00 (base) */
+    /* 00 (vtable) */
     /* 04 */ u8 mUnk_04;
     /* 05 */ u8 mUnk_05;
     /* 08 */ ActorUnkMLCK *mUnk_08;
-    /* 0C */
+    /* 0C */ STRUCT_PAD(0x0C, 0x18);
+    /* 18 */
 
     /* 00 */ virtual void vfunc2_00() override; // func_ov031_020fb1b0
     /* 04 */ virtual void vfunc2_04() override; // func_ov031_020fb1cc
@@ -39,6 +40,8 @@ public:
     /* 04 */
 
     /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
 };
 
 class ActorUnkMLCK_B4 {
@@ -49,6 +52,9 @@ public:
 
 class Actor_ov102_02184950 : public Actor {
 public:
+    /* 00 (base) */
+    /* 94 */
+
     /* 20 */ virtual void vfunc_20() override; // func_ov102_02184644
     /* 24 */ virtual void vfunc_24() override; // func_ov102_021847d4
 
@@ -66,8 +72,7 @@ class ActorUnkMLCK : public Actor_ov102_02184950 {
 public:
     /* 00 (base) */
     /* 94 */ ActorUnkMLCK_94 mUnk_94;
-    /* A0 */ ActorUnkMLCK_B4 mUnk_A0;
-    /* A4 */ STRUCT_PAD(0xA4, 0xB4);
+    /* A0 */ ActorUnkMLCK_B4 mUnk_A0[0x5];
     /* B4 */ ActorUnkMLCK_B4 *mUnk_B4;
     /* B8 */ unk32 mUnk_B8;
     /* BC */ unk32 mUnk_BC;
@@ -98,7 +103,7 @@ public:
     void func_ov031_020fb104();
     void func_ov031_020fb11c();
     void func_ov031_020fb184();
-    void func_ov031_020fb1e8(unk32 param1);
+    void func_ov031_020fb1e8(ActorUnkMLCK_B4_00 *param1);
     void func_ov031_020fb204();
 };
 
