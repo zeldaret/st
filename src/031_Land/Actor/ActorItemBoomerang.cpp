@@ -356,10 +356,9 @@ void ActorItemBoomerang_Unknown::func_ov031_020e45fc() {
     this->mUnk_04.z = FLOAT_TO_FX32(0.3f);
 }
 
-// non-matching
 ActorItemBoomerang_11C::ActorItemBoomerang_11C(ActorItemBoomerang *param1) :
     mUnk_08(param1) {}
-// non-matching
+
 ActorItemBoomerang_11C::~ActorItemBoomerang_11C() {}
 
 // non-matching
