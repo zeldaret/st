@@ -238,25 +238,18 @@ void ActorItemBoomerang::vfunc_20() {
     }
 }
 
-// non-matching
 void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
     if (this->mUnk_128 == param1) {
         return;
     }
-    this->mUnk_128               = param1;
-    UnkStruct_PlayerGet_ec **ptr = NULL;
-    void *nextVarAddress         = NULL;
+    this->mUnk_128              = param1;
+    UnkStruct_PlayerGet_ec *ptr = NULL;
 
     switch (this->mUnk_128) {
         case 0x1:
             this->mUnk_13C = 0x8d72;
-            ptr            = (UnkStruct_PlayerGet_ec **) &this->mUnk_12C;
-            nextVarAddress = &this->mUnk_138;
-            if (ptr != nextVarAddress) {
-                do {
-                    (*ptr)->func_ov000_020a0334();
-                    ++ptr;
-                } while (ptr != nextVarAddress);
+            for (ptr = (UnkStruct_PlayerGet_ec *) &this->mUnk_12C; ptr != (void *) &this->mUnk_138; ++ptr) {
+                ptr->func_ov000_020a0334();
             }
 
             data_027e0cec->func_ov000_0209ff8c(&this->mUnk_12C[0], 0x818, &this->mPos, 0x2);
@@ -275,12 +268,8 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
             return;
         case 0x2:
             this->mUnk_13C = 0x8D73;
-            ptr            = (UnkStruct_PlayerGet_ec **) &this->mUnk_12C;
-            nextVarAddress = &this->mUnk_138;
-            if (ptr != nextVarAddress) {
-                do {
-                    (*ptr)->func_ov000_020a0334();
-                } while (++ptr != nextVarAddress);
+            for (ptr = (UnkStruct_PlayerGet_ec *) &this->mUnk_12C; ptr != (void *) &this->mUnk_138; ++ptr) {
+                ptr->func_ov000_020a0334();
             }
 
             data_027e0cec->func_ov000_020a00d4(&this->mUnk_12C[0], 0x815, 0x816, 0x817, &this->mPos, 0x2);
