@@ -150,7 +150,14 @@ void ActorUnkMLCK::func_ov031_020fb11c() {
 }
 
 // non-matching
-void ActorUnkMLCK::func_ov031_020fb184() {}
+void ActorUnkMLCK_B4_00::func_ov031_020fb184() {
+    this->mUnk_04 = 0x0;
+    this->mUnk_08 = -1;
+    this->mUnk_0E = 0xFFFF;
+    this->mUnk_0C = 0x0;
+    this->mUnk_12 = 0xFFFF;
+    this->mUnk_10 = 0x0;
+}
 
 void ActorUnkMLCK_D8::vfunc2_00() {
     if (!this->mUnk_04) {
@@ -173,8 +180,14 @@ void ActorUnkMLCK::func_ov031_020fb1e8(ActorUnkMLCK_B4_00 *param1) {
     ++this->mUnk_B4;
 }
 
-// non-matching
-void ActorUnkMLCK::func_ov031_020fb204() {}
+bool ActorUnkMLCK::func_ov031_020fb204() {
+    for (ActorUnkMLCK_B4 *ptr = this->mUnk_A0; ptr != this->mUnk_B4; ++ptr) {
+        if (ptr->mUnk_00->vfunc_04()) {
+            return true;
+        }
+    }
+    return false;
+}
 
 ActorUnkMLCK::~ActorUnkMLCK() {}
 ActorProfileUnkMLCK::~ActorProfileUnkMLCK() {}

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Actor/ActorUnkMLCK.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -17,7 +18,7 @@ public:
     ~UnkStruct_ov000_020b52e8();
 
     // overlay 0
-    ActorUnkMLCK *func_ov000_0206f980(unk32 param1);
+    ActorUnkMLCK_B4_00 *func_ov000_0206f980(unk32 param1);
 };
 
 extern UnkStruct_ov000_020b52e8 data_ov000_020b52e8;

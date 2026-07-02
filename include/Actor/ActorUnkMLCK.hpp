@@ -3,7 +3,6 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "FileSelect/FileSelectUnkDraw.hpp"
-#include "MapObject/MapObjectDoorBase.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -37,11 +36,19 @@ public:
 class ActorUnkMLCK_B4_00 {
 public:
     /* 00 (vtable) */
-    /* 04 */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ u16 mUnk_0C;
+    /* 0E */ u16 mUnk_0E;
+    /* 10 */ u16 mUnk_10;
+    /* 12 */ u16 mUnk_12;
+    /* 14 */
 
     /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
+    /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual void vfunc_08();
+
+    void func_ov031_020fb184();
 };
 
 class ActorUnkMLCK_B4 {
@@ -78,7 +85,7 @@ public:
     /* BC */ unk32 mUnk_BC;
     /* C0 */ u16 mUnk_C0;
     /* C2 */ u16 mUnk_C2;
-    /* C4 */ ActorUnkMLCK *mUnk_C4;
+    /* C4 */ ActorUnkMLCK_B4_00 *mUnk_C4;
     /* C8 */ STRUCT_PAD(0xC8, 0xD8);
     /* D8 */ ActorUnkMLCK_D8 mUnk_D8;
     /* F0 */ bool mUnk_F0;
@@ -102,9 +109,8 @@ public:
     void func_ov031_020faf24();
     void func_ov031_020fb104();
     void func_ov031_020fb11c();
-    void func_ov031_020fb184();
     void func_ov031_020fb1e8(ActorUnkMLCK_B4_00 *param1);
-    void func_ov031_020fb204();
+    bool func_ov031_020fb204();
 };
 
 class ActorProfileUnkMLCK : public ActorProfile {
