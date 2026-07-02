@@ -134,7 +134,7 @@ void ActorItemBoomerang::vfunc_20() {
                 }
 
                 VecFx32 sp6C;
-                u16 sp14;
+                ActorRef sp14;
                 if (!data_027e0d2c->func_ov031_020d962c(&this->mPos, 0x4CD, &sp6C, &sp14)) {
                     this->SetState(ActorItemBoomerangState_1);
                 } else {
@@ -146,7 +146,7 @@ void ActorItemBoomerang::vfunc_20() {
                     func_01ff97c8(&this->mPos, sp18 + 0x200);
                 }
 
-                if ((u32) (sp14 << 0x10) >> 0x1E != 0) {
+                if (sp14.type != 0) {
                     this->mUnk_CC.mUnk_0C.z = this->mPos.z;
                     this->mUnk_CC.mUnk_0C.y = this->mPos.y + FLOAT_TO_FX32(-0.1003f);
                     this->mUnk_CC.mUnk_18   = 0xA000;
@@ -154,7 +154,7 @@ void ActorItemBoomerang::vfunc_20() {
                     data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_CC);
                     return;
                 }
-                if (!(sp14 & 0x1000)) {
+                if (!(sp14.data & 0x1000)) {
                     return;
                 }
 
