@@ -33,10 +33,8 @@ public:
     /* 18 */ virtual unk32 vfunc_18(void);
     /* 20 */ virtual void vfunc_20(void);
     /* 24 */ virtual void vfunc_24(void);
-
     /* 4C */ virtual ~ActorUnkRMSV() override;
     /* 50 */ virtual void vfunc_50(void); // dtor, override?
-
     /* 54 */ virtual G3d_Model *vfunc_54(void);
     /* 58 */ virtual G3d_Model *vfunc_58(void);
 

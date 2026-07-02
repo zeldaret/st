@@ -49,6 +49,7 @@ void ActorUnkRMSV::vfunc_50(void) {}
 G3d_Model *ActorUnkRMSV::vfunc_54(void) {
     return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSV)->mUnk_3C, data_ov063_02162578);
 }
+
 G3d_Model *ActorUnkRMSV::vfunc_58(void) {
     return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSV)->mUnk_3C, data_ov063_02162588);
 }
