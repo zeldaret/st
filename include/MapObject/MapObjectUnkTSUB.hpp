@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "MapObject/MapObject.hpp"
@@ -16,14 +14,14 @@ public:
 
     /* 30 */ virtual ~MapObjectUnkTSUB() override;
 
-    void func_ov031_02105088(void);
-    void func_ov031_021050b4(void);
-    void func_ov031_021051d4(void);
-    void func_ov031_021052cc(void);
-    void func_ov031_02105310(void);
-    void func_ov031_02105348(void);
-    void func_ov031_021053b4(void);
-    void func_ov031_021053fc(void);
+    void func_ov031_02105088();
+    void func_ov031_021050b4();
+    void func_ov031_021051d4();
+    void func_ov031_021052cc();
+    void func_ov031_02105310();
+    void func_ov031_02105348();
+    void func_ov031_021053b4();
+    void func_ov031_021053fc();
 };
 
 class MapObjectProfileUnkTSUB : public MapObjectProfile {

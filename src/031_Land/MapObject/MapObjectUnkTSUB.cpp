@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "MapObject/MapObjectUnkTSUB.hpp"
 #include "System/SysNew.hpp"
 
@@ -14,14 +12,22 @@ MapObjectProfileUnkTSUB::MapObjectProfileUnkTSUB() :
 
 MapObjectUnkTSUB::MapObjectUnkTSUB() {}
 
-void MapObjectUnkTSUB::func_ov031_02105088(void) {}
-void MapObjectUnkTSUB::func_ov031_021050b4(void) {}
-void MapObjectUnkTSUB::func_ov031_021051d4(void) {}
-void MapObjectUnkTSUB::func_ov031_021052cc(void) {}
-void MapObjectUnkTSUB::func_ov031_02105310(void) {}
-void MapObjectUnkTSUB::func_ov031_02105348(void) {}
-void MapObjectUnkTSUB::func_ov031_021053b4(void) {}
-void MapObjectUnkTSUB::func_ov031_021053fc(void) {}
+// non-matching
+void MapObjectUnkTSUB::func_ov031_02105088() {}
+// non-matching
+void MapObjectUnkTSUB::func_ov031_021050b4() {}
+// non-matching
+void MapObjectUnkTSUB::func_ov031_021051d4() {}
+// non-matching
+void MapObjectUnkTSUB::func_ov031_021052cc() {}
+// non-matching
+void MapObjectUnkTSUB::func_ov031_02105310() {}
+// non-matching
+void MapObjectUnkTSUB::func_ov031_02105348() {}
+// non-matching
+void MapObjectUnkTSUB::func_ov031_021053b4() {}
+// non-matching
+void MapObjectUnkTSUB::func_ov031_021053fc() {}
 
 MapObjectUnkTSUB::~MapObjectUnkTSUB() {}
 MapObjectProfileUnkTSUB::~MapObjectProfileUnkTSUB() {}
