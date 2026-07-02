@@ -26,11 +26,7 @@ public:
     /* 04 */ u8 mUnk_04;
     /* 05 */ u8 mUnk_05;
     /* 08 */ ActorUnkMLCK *mUnk_08;
-    /* 0C */ // unk32 mUnk_0C;
-    ///* 10 */ u8 mUnk_10;
-    ///* 11 */ u8 mUnk_11;
-    ///* 14 */ ActorUnkMLCK *mUnk_14;
-    ////* 18 */
+    /* 0C */
 
     ActorUnkMLCK_D8(ActorUnkMLCK *actor) :
         mUnk_04(0x01),
