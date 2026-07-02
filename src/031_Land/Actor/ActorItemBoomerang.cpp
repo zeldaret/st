@@ -128,7 +128,7 @@ void ActorItemBoomerang::vfunc_20() {
             func_01ffe6c4(&sp54, this->mRef, &this->mPos, &this->mPrevPos, 0x1F, NULL, &this->mUnk_11C);
 
             if ((tmp | sp54->func_ov000_0207e294((Cylinder *) &this->mUnk_10C)) == 0 && !var1) {
-                if (data_027e0ce0->mUnk_2C->mEquippedItem != ItemFlag_Boomerang) {
+                if (data_027e0ce0->mUnk_2C->GetCurrentItem() != ItemFlag_Boomerang) {
                     this->SetState(ActorItemBoomerangState_1);
                     return;
                 }
