@@ -4,9 +4,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "MainGame/AdventureMode.hpp"
 #include "Render/ModelRender.hpp"
-#include "Unknown/Common.hpp"
 #include "global.h"
 #include "nns/g3d/g3d.h"
 #include "types.h"
@@ -41,13 +39,12 @@ public:
 
     ActorUnkRMSD();
 
+    /* 18 */ virtual unk32 vfunc_18(void) override;
+    /* 20 */ virtual void vfunc_20(void) override;
+    /* 24 */ virtual void vfunc_24(void) override;
     /* 4C */ virtual ~ActorUnkRMSD() override;
-
-    void func_ov063_0215c408(void);
-    void func_ov063_0215c45c(void);
-    void func_ov063_0215c474(void);
-    G3d_Model *func_ov063_0215c488(void); //! INFO: G3d_Model deduced from RMSF
-    G3d_Model *func_ov063_0215c4c8(void); //! INFO: same as above
+    /* 54 */ virtual G3d_Model *vfunc_54(void);
+    /* 58 */ virtual G3d_Model *vfunc_58(void);
 };
 
 class ActorProfileUnkRMSD : public ActorProfile_Derived1 {

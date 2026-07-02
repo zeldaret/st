@@ -26,7 +26,7 @@ src/031_Land/Actor/ActorUnkTLKT.cpp:
     .ctor       start:0x02114530 end:0x02114534
     .bss        start:0x0211823c end:0x02118288
 
-src/031_Land/Actor/ActorUnkITBM.cpp:
+src/031_Land/Actor/ActorItemBoomerang.cpp:
     .text       start:0x020e5f90 end:0x020e7148
     .init       start:0x02112e58 end:0x02112ea8
     .ctor       start:0x02114534 end:0x02114538

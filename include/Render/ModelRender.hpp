@@ -96,6 +96,8 @@ public:
     // data_ov000_020b1968
     /* 00 */ virtual ~UnkSystem6_Derived2() {}
     /* 0C */ virtual void vfunc_0C() override;
+
+    void func_01ffc6d4(u16 angle, VecFx32 *pos);
 };
 
 class UnkSystem5 {

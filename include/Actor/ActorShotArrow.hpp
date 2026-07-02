@@ -4,6 +4,7 @@
 #include "Actor/ActorProfile.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -35,19 +36,7 @@ public:
     ActorShotArrow_140(Actor *param1);
 };
 
-class ActorShotArrow_178_Base : public UnkStruct_027e0ce0_38_Base {
-public:
-    /* 00 (vtable) */
-    /* 04 */
-
-    ActorShotArrow_178_Base();
-
-    // data_ov000_020b30d0
-    /* 00 */ virtual ~ActorShotArrow_178_Base();
-    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
-};
-
-class ActorShotArrow_178 : public ActorShotArrow_178_Base {
+class ActorShotArrow_178 : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (vtable) */
     /* 04 */ STRUCT_PAD(0x04, 0x08);
@@ -61,44 +50,12 @@ public:
     // data_ov031_02114288
     /* 00 */ virtual ~ActorShotArrow_178() override;
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
-    /* 0C */ virtual bool vfunc_0C() override;
+    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) override;
 
     void func_ov031_020f3304();
 };
 
-class ActorShotArrow_194_Base {
-public:
-    /* 00 (vtable) */
-    /* 04 */ ActorRef mUnk_04;
-    /* 08 */ unk16 mUnk_08;
-    /* 08 */ unk16 mUnk_0A;
-    /* 0C */ VecFx32 mUnk_0C;
-    /* 18 */ fx32 mUnk_18;
-    /* 1C */ unk32 mUnk_1C;
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ unk32 mUnk_24;
-    /* 28 */ unk32 mUnk_28;
-    /* 2C */
-
-    ActorShotArrow_194_Base() {
-        this->mUnk_04 = 0;
-        this->mUnk_08 = 0;
-        VecFx32_Init(0, 0, 0, &this->mUnk_0C);
-        this->mUnk_18 = 0;
-        this->mUnk_1C = 0;
-        this->mUnk_20 = 0;
-        this->mUnk_24 = 0;
-        this->mUnk_28 = 0;
-    }
-
-    // data_ov000_020b27c8
-    /* 00 */ virtual ~ActorShotArrow_194_Base();
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual bool vfunc_0C(Actor *param1, VecFx32 *vector);
-    /* 10 */ virtual void vfunc_10(Actor *actor);
-};
-
-class ActorShotArrow_194 : public ActorShotArrow_194_Base {
+class ActorShotArrow_194 : public UnkStruct_ov031_Items_01 {
 public:
     /* 00 (base) */
     /* 2C */ ActorShotArrow *mUnk_2C;
@@ -138,15 +95,6 @@ public:
     }
 };
 
-class ActorShotArrow_1DC {
-public:
-    /* 00 */ VecFx32 mUnk_00;
-    /* 0C */
-
-    ActorShotArrow_1DC(unk32 param1, unk32 param2);
-    ~ActorShotArrow_1DC();
-};
-
 class ActorShotArrow : public Actor {
 public:
     /* 000 (base) */
@@ -167,7 +115,7 @@ public:
     /* 178 */ ActorShotArrow_178 mUnk_178;
     /* 194 */ ActorShotArrow_194 mUnk_194;
     /* 1C8 */ ActorShotArrow_1C8 mUnk_1C8;
-    /* 1DC */ ActorShotArrow_1DC mUnk_1DC;
+    /* 1DC */ UnkStruct_ov031_Items_02 mUnk_1DC;
     /* 1E0 */ STRUCT_PAD(0x1E8, 0x224);
     /* 224 */ Mat4x3p *mUnk_224;
     /* 228 */ Mat4x3p mUnk_228;
