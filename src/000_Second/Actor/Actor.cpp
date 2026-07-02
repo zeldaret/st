@@ -58,7 +58,7 @@ void Actor::vfunc_24() {}
 
 void Actor::vfunc_28() {}
 
-bool Actor::vfunc_2C(unk32 param1) {}
+void Actor::vfunc_2C(unk32 param1) {}
 
 void Actor::vfunc_30() {}
 

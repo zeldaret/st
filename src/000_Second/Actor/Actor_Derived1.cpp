@@ -239,7 +239,7 @@ void Actor_Derived1::vfunc_24() {
 }
 
 // non-matching
-bool Actor_Derived1::vfunc_2C(unk32 param1) {
+void Actor_Derived1::vfunc_2C(unk32 param1) {
     if (this->func_01fff5d0(param1, 0) == 0) {
         return;
     }

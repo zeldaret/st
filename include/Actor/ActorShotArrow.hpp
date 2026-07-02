@@ -132,7 +132,7 @@ public:
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
-    /* 2C */ virtual bool vfunc_2C(unk32 param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorShotArrow() override;
 
     void func_ov031_020f1868();

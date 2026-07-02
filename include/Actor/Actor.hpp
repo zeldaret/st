@@ -161,7 +161,7 @@ public:
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28();
-    /* 2C */ virtual bool vfunc_2C(unk32 param1);
+    /* 2C */ virtual void vfunc_2C(unk32 param1);
     /* 30 */ virtual void vfunc_30();
     /* 34 */ virtual unk32 vfunc_34();
     /* 38 */ virtual bool Grab(ActorGrabParams grabParams);
@@ -172,7 +172,7 @@ public:
     /* 4C */ virtual ~Actor();
     /* 54 */
 
-    unk32 func_01fff5d0(unk32 param1, unk32 param2);
+    bool func_01fff5d0(unk32 param1, unk32 param2);
 
     void ResetFlags() {
         *(u32 *) this->mFlags = 0;
