@@ -28,6 +28,7 @@ Actor *ActorProfileItemBoomerang::Create() {
 ActorProfileItemBoomerang::ActorProfileItemBoomerang() :
     ActorProfile(ActorId_ITBM) {}
 
+// non-matching
 ActorItemBoomerang::ActorItemBoomerang() :
     mUnk_94(data_027e0ce0->func_ov000_0208ed30(0x0, 0x1, ItemManager::func_ov000_020a8974(0x1)->mUnk_10)),
     mUnk_9C(true),
@@ -100,7 +101,7 @@ void ActorItemBoomerang::vfunc_20() {
     }
 
     this->IsTimerOut();
-    this->mAngle += 0x2000;
+    this->mAngle += DEG_TO_ANG(45);
     this->func_ov031_020e52a0();
     data_027e09a8->func_ov000_02071d34(&this->mRef, this->mUnk_13C, &this->mPos, 0x0);
 
