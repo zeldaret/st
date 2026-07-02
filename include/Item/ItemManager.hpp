@@ -75,7 +75,7 @@ private:
     /* 04 */ ItemFlag mForcedItem;
     /* 08 */ u32 mFlags[2]; // inventory items bitfield & collection/equipment bitfield
     /* 10 */ u16 mNumRupees;
-    /* 12 */ vu16 mUnk_12;          // "toggle bitfield"
+    /* 12 */ u16 mUnk_12;           // "toggle bitfield"
     /* 14 */ u16 mItemRestrictions; // bitfield
     /* 16 */ u8 mTearsAmount;       // number of tears of light
     /* 17 */ u8 mKeyAmount;         // number of small keys
@@ -93,6 +93,7 @@ public:
     const bool HasItem(int flag) const { return GET_FLAG(this->mFlags, flag); }
     const u16 GetNumRupees() const { return this->mNumRupees; }
     const u16 GetRestrictions() const { return this->mItemRestrictions; }
+    const bool HasUnk12(int value) const { return (this->mUnk_12 & value) != 0; }
     const bool HasRestriction(int flag) const { return IS_ITEM_RESTRICTED(this->mItemRestrictions, flag); }
     const u8 GetTearsAmount() const { return this->mTearsAmount; }
     const u8 GetKeyAmount() const { return this->mKeyAmount; }
@@ -174,6 +175,7 @@ public:
     const bool HasItem(int flag) const { return this->GetInventory()->HasItem(flag); }
     const u16 GetNumRupees() const { return this->GetInventory()->GetNumRupees(); }
     const u16 GetRestrictions() const { return this->GetInventory()->GetRestrictions(); }
+    const bool HasUnk12(int value) const { return this->GetInventory()->HasUnk12(value); }
     const bool HasRestriction(int flag) const { return this->GetInventory()->HasRestriction(flag); }
     const u8 GetTearsAmount() const { return this->GetInventory()->GetTearsAmount(); }
     const u8 GetKeyAmount() const { return this->GetInventory()->GetKeyAmount(); }

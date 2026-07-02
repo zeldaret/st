@@ -471,12 +471,12 @@ PlayerGet::~PlayerGet() {
 bool PlayerGet::func_ov110_02186b8c() {
     switch (this->mUnk_54.mItemId) {
         case ItemId_NormalShield:
-            if (this->mUnk_28->pItemManager->HasRestriction(1)) {
+            if (this->mUnk_28->pItemManager->HasUnk12(2)) {
                 return true;
             }
             break;
         case ItemId_AncientShield:
-            if (!(this->mUnk_28->pItemManager->HasRestriction(1))) {
+            if (!(this->mUnk_28->pItemManager->HasUnk12(2))) {
                 return true;
             }
             break;

@@ -73,11 +73,11 @@ void Inventory::func_ov001_020bb8bc(const InvImportData *pSrc) {
         this->mNumRupees = MAX_RUPEES;
     }
 
-    if ((this->mUnk_12 & 0x01) && !GET_FLAG(this->mFlags, ItemFlag_RecruitUniform)) {
+    if ((*(vu16 *) &this->mUnk_12 & 0x01) && !GET_FLAG(this->mFlags, ItemFlag_RecruitUniform)) {
         this->mUnk_12 &= ~0x01;
     }
 
-    if ((this->mUnk_12 & 0x02) && !GET_FLAG(this->mFlags, ItemFlag_AncientShield)) {
+    if ((*(vu16 *) &this->mUnk_12 & 0x02) && !GET_FLAG(this->mFlags, ItemFlag_AncientShield)) {
         this->mUnk_12 &= ~0x02;
     }
 
