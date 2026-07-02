@@ -247,7 +247,7 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
 
     switch (this->mUnk_128) {
         case 0x1:
-            this->mUnk_13C = 0x8d72;
+            this->mUnk_13C = 0x8D72;
             for (ptr = this->mUnk_12C; ptr != (void *) &this->mUnk_138; ++ptr) {
                 ptr->func_ov000_020a0334();
             }
