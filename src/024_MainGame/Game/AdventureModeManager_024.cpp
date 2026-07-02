@@ -889,7 +889,7 @@ bool AdventureModeManager::func_ov024_020c6ce4() {
     return false;
 }
 
-unk32 AdventureModeManager::func_ov024_020c6d04() {
+AdventureModeManager_194_0C *AdventureModeManager::func_ov024_020c6d04() {
     return this->mUnk_194->mUnk_0C;
 }
 

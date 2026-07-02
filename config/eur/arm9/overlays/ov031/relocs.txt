@@ -3772,7 +3772,7 @@ from:0x020fab98 kind:arm_call to:0x0209767c module:overlay(0)
 from:0x020fabb0 kind:load to:0x02114d4c add:0x8 module:overlay(31)
 from:0x020fabbc kind:arm_call to:0x02098388 module:overlay(0)
 from:0x020fabc4 kind:arm_call to:0x02061648 module:overlay(0)
-from:0x020fac58 kind:load to:0x02114d3c module:overlay(31)
+from:0x020fac58 kind:load to:0x02114d34 module:overlay(31) add:0x8
 from:0x020fac5c kind:load to:0x02114d70 add:0x8 module:overlay(31)
 from:0x020fac60 kind:load to:0x02114dec add:0x8 module:overlay(31)
 from:0x020fac9c kind:arm_call to:0x01fff350 module:itcm
