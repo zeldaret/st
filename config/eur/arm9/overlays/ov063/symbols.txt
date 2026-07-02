@@ -465,7 +465,7 @@ data_ov063_021636f0 kind:data(any) addr:0x021636f0
 data_ov063_02163704 kind:data(any) addr:0x02163704
 _ZTV19data_ov063_0216370c kind:data(any) addr:0x0216370c
 data_ov063_02163740 kind:data(any) addr:0x02163740
-_ZTV19data_ov063_02163758 kind:data(any) addr:0x02163758
+_ZTV19ActorProfileUnkRBLS kind:data(any) addr:0x02163758
 data_ov063_02163784 kind:data(any) addr:0x02163784
 _ZTV19data_ov063_021637c4 kind:data(any) addr:0x021637c4
 data_ov063_02163828 kind:data(any) addr:0x02163828
