@@ -469,7 +469,7 @@ void ActorItemDrop::func_ov031_020fa72c() {
     }
 }
 
-void ActorItemDrop::vfunc_2C(unk32 param1) {
+bool ActorItemDrop::vfunc_2C(unk32 param1) {
     VecFx32 vec1;
     VecFx32 vec2;
     unk32 value;

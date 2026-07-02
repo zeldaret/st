@@ -556,7 +556,7 @@ void ActorShotArrow::func_ov031_020f22d4(Mat3p *param1, VecFx32 *param2) {
 }
 
 // non-matching
-void ActorShotArrow::vfunc_2C(unk32 param1) {
+bool ActorShotArrow::vfunc_2C(unk32 param1) {
     UnkStack_ov031_020f2310 stack;
 
     VecFx32_Copy(&this->mPos, &stack.mUnk_E4);
