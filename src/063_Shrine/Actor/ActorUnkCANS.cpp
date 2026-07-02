@@ -1,7 +1,11 @@
 //! TODO: This file was generated automatically and might contain errors
 
 #include "Actor/ActorUnkCANS.hpp"
-#include "System/SysNew.hpp"
+#include "Physics/Cylinder.hpp"
+#include "nitro/fx.h"
+#include "nitro/math.h"
+
+extern "C" void func_01ff9638(VecFx32 *param1, fx16 param2);
 
 DECL_PROFILE(ActorProfileUnkCANS);
 
@@ -12,7 +16,23 @@ Actor *ActorProfileUnkCANS::Create() {
 ActorProfileUnkCANS::ActorProfileUnkCANS() :
     ActorProfile_Derived1(ActorId_CANS) {}
 
-ActorUnkCANS::ActorUnkCANS() {}
+ActorUnkCANS::ActorUnkCANS() :
+    mUnk_154(&mUnk_174, NULL),
+    mUnk_1A4(&mUnk_1C4, NULL) {}
+
+void ActorUnkCANS::func_ov063_0215a5f8(Cylinder *param1) {
+    Cylinder *cylinder = this->mUnk_34;
+    param1->pos        = cylinder->pos;
+    param1->size       = cylinder->size;
+    VecFx32_Add(&param1->pos, &this->mPos, &param1->pos);
+    if (this->mUnk_268 != 0) {
+        VecFx32 pos = {FLOAT_TO_FX32(0.25f), 0, 0};
+        func_01ff9638(&pos, this->mAngle);
+        VecFx32_Add(&param1->pos, &pos, &param1->pos);
+    }
+
+    return;
+}
 
 void ActorUnkCANS::func_ov063_02157f20(void) {}
 void ActorUnkCANS::func_ov063_02157f7c(void) {}
@@ -60,7 +80,6 @@ void ActorUnkCANS::func_ov063_0215a56c(void) {}
 void ActorUnkCANS::func_ov063_0215a5a0(void) {}
 void ActorUnkCANS::func_ov063_0215a5bc(void) {}
 void ActorUnkCANS::func_ov063_0215a5d8(void) {}
-void ActorUnkCANS::func_ov063_0215a5f8(void) {}
 void ActorUnkCANS::func_ov063_0215a678(void) {}
 void ActorUnkCANS::func_ov063_0215a7d4(void) {}
 void ActorUnkCANS::func_ov063_0215a834(void) {}

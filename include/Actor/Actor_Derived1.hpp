@@ -40,6 +40,7 @@ public:
     /* 08 */ unk16 mUnk_08;
     /* 0A */ unk16 mUnk_0A;
     /* 0C */ unk32 mUnk_0C;
+    /* 10 */
 
     Actor_Derived1_94();
     ~Actor_Derived1_94();

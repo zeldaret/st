@@ -4,7 +4,12 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Actor/Actor_Derived1.hpp"
+#include "Physics/Cylinder.hpp"
+#include "Render/ModelRender.hpp"
 #include "global.h"
+#include "math.hpp"
+#include "nitro/fx.h"
 #include "types.h"
 
 class ActorUnkCANS_C4 : public Actor_C4 {
@@ -17,28 +22,44 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkCANS : public Actor {
+class ActorUnkCANS : public Actor_Derived2 {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* AE */ STRUCT_PAD(0xAE, 0x154);
+    /* 154 */ UnkSystem5 mUnk_154;
+    /* 174 */ unk32 mUnk_174;
+    /* 178 */ STRUCT_PAD(0x178, 0x1A4);
+    /* 1A4 */ UnkSystem5 mUnk_1A4;
+    /* 1C4 */ unk32 mUnk_1C4;
+    /* 1C8 */ STRUCT_PAD(0x1C8, 0x1F4);
+    /* 1F4 */ Actor_Derived1_94 mUnk_1F4;
+    /* 204 */ STRUCT_PAD(0x204, 0x23C);
+    /* 23C */ Actor_Derived1_94 mUnk_23C;
+    /* 24C */ STRUCT_PAD(0x24C, 0x268);
+    /* 268 */ unk32 mUnk_268;
+    /* 26C */ STRUCT_PAD(0x26C, 0x278);
+    /* 278 */
 
     ActorUnkCANS();
 
+    /* 10 */ virtual void func_ov063_0215a5f8(Cylinder *param1);
+    /* 18 */ virtual void func_ov063_02158320(void);
+    /* 1C */ virtual void func_ov063_02158388(void);
+    /* 20 */ virtual void func_ov063_021584f0(void);
+    /* 24 */ virtual void func_ov063_021584c4(void);
+    /* 2C */ virtual void func_ov063_02158a2c(void);
     /* 4C */ virtual ~ActorUnkCANS() override;
+    /* 4C */ void func_ov063_0215a9d4(void);
+    /* 50 */ void func_ov063_0215aa58(void);
 
     void func_ov063_02157f20(void);
     void func_ov063_02157f7c(void);
     void func_ov063_02157fa4(void);
     void func_ov063_021582f8(void);
     void func_ov063_0215830c(void);
-    void func_ov063_02158320(void);
-    void func_ov063_02158388(void);
     void func_ov063_02158424(void);
     void func_ov063_02158448(void);
     void func_ov063_02158490(void);
-    void func_ov063_021584c4(void);
-    void func_ov063_021584f0(void);
-    void func_ov063_02158a2c(void);
     void func_ov063_02158b0c(void);
     void func_ov063_02158b34(void);
     void func_ov063_02158b98(void);
@@ -72,7 +93,6 @@ public:
     void func_ov063_0215a5a0(void);
     void func_ov063_0215a5bc(void);
     void func_ov063_0215a5d8(void);
-    void func_ov063_0215a5f8(void);
     void func_ov063_0215a678(void);
     void func_ov063_0215a7d4(void);
     void func_ov063_0215a834(void);
@@ -81,8 +101,6 @@ public:
     void func_ov063_0215a970(void);
     void func_ov063_0215a99c(void);
     void func_ov063_0215a9b8(void);
-    void func_ov063_0215a9d4(void);
-    void func_ov063_0215aa58(void);
 };
 
 class ActorProfileUnkCANS : public ActorProfile_Derived1 {
