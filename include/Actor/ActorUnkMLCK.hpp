@@ -26,7 +26,10 @@ public:
     /* 04 */ u8 mUnk_04;
     /* 05 */ u8 mUnk_05;
     /* 08 */ ActorUnkMLCK *mUnk_08;
-    /* 0C */ STRUCT_PAD(0x0C, 0x18);
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ u8 mUnk_10;
+    /* 11 */ u8 mUnk_11;
+    /* 14 */ STRUCT_PAD(0x14, 0x18);
     /* 18 */
 
     /* 00 */ virtual void vfunc2_00() override; // func_ov031_020fb1b0
@@ -91,6 +94,7 @@ public:
     /* F0 */ bool mUnk_F0;
     /* F1 */ bool mUnk_F1;
     /* F2 */ bool mUnk_F2;
+    /* F4 */ unk32 mUnk_F4;
 
     ActorUnkMLCK();
 
@@ -110,7 +114,7 @@ public:
     void func_ov031_020fb104();
     void func_ov031_020fb11c();
     void func_ov031_020fb1e8(ActorUnkMLCK_B4_00 *param1);
-    bool func_ov031_020fb204();
+    bool func_ov031_020fb204(unk32 param1);
 };
 
 class ActorProfileUnkMLCK : public ActorProfile {

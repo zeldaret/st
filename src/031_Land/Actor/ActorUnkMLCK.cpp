@@ -4,6 +4,8 @@
 #include "MainGame/AdventureMode.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
+#include "Unknown/UnkStruct_027e09b8.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b52e8.hpp"
@@ -20,6 +22,7 @@ Actor *ActorProfileUnkMLCK::Create() {
 ActorProfileUnkMLCK::ActorProfileUnkMLCK() :
     ActorProfile(ActorId_MLCK) {}
 
+// non-matching
 ActorUnkMLCK::ActorUnkMLCK() :
     mUnk_B4(mUnk_A0) {}
 
@@ -113,7 +116,6 @@ void ActorUnkMLCK::vfunc_68() {
     this->vfunc_6C();
 }
 
-// non-matching
 void ActorUnkMLCK::func_ov031_020faeb0() {}
 
 void ActorUnkMLCK::vfunc_6C() {
@@ -133,13 +135,69 @@ void ActorUnkMLCK::vfunc_70() {
 }
 
 // non-matching
-void ActorUnkMLCK::func_ov031_020faf24() {}
+void ActorUnkMLCK::func_ov031_020faf24() {
+    UnkStackStruct1 stack;
+    if (this->mUnk_C0 != 0xF) {
+        return;
+    }
+    if (!this->mUnk_F2) {
+        return;
+    }
+    bool var1 = this->func_ov031_020fb204(this->mUnk_B8);
+    bool var9 = true;
+    bool var  = data_0204a088->func_ov000_020611fc(0x1);
+
+    GetAdventureModeManager()->func_ov024_020c6d10();
+
+    func_ov000_02072fd0(&stack);
+
+    stack.mUnk_00 = 0x1;
+    stack.mUnk_3A = 0x0;
+    stack.mUnk_3B = 0x0;
+
+    VecFx32_Copy(data_027e0ce0->func_01fff148(0x0), &stack.mUnk_0C);
+
+    this->mUnk_F4 = data_027e09b8->func_ov000_02073388(&stack, 0x0);
+
+    this->mUnk_D8.mUnk_04   = 0x1;
+    this->mUnk_D8.mUnk_05   = var1;
+    ActorUnk_vfunc_B0 actor = ActorUnk_vfunc_B0();
+    actor.mUnk_0C           = (u16) (this->mUnk_B8 + 0x28) | 0x10000;
+    actor.mUnk_00           = 0x1;
+    actor.mUnk_14           = 0x0;
+    actor.mUnk_32           = 0x0;
+
+    VecFx32_Copy(data_027e0ce0->func_01fff148(0x0), &actor.mUnk_34);
+    actor.mUnk_04 = (unk32) & this->mUnk_D8;
+
+    data_027e09b8->func_ov000_02073470(&actor, 0x0);
+
+    if (!var) {
+        if (var) {
+            var9 = false;
+        }
+        this->mUnk_D8.mUnk_10    = 0x0;
+        this->mUnk_D8.mUnk_11    = var9;
+        ActorUnk_vfunc_B0 actor2 = ActorUnk_vfunc_B0();
+        actor2.mUnk_00           = 0x1;
+        actor2.mUnk_0C           = (u16) (this->mUnk_B8 + 0x88) | 0x10000;
+        actor2.mUnk_14           = 0x0;
+        actor2.mUnk_32           = 0x0;
+
+        VecFx32_Copy(data_027e0ce0->func_01fff148(0x0), &actor2.mUnk_34);
+        actor2.mUnk_04 = (unk32) & this->mUnk_D8.mUnk_0C;
+
+        data_027e09b8->func_ov000_02073470(&actor2, 0x0);
+    }
+
+    this->mUnk_F0 = false;
+    this->mUnk_F1 = true;
+}
 
 void ActorUnkMLCK::func_ov031_020fb104() {
     this->vfunc_64(0x3);
 }
 
-// non-matching
 void ActorUnkMLCK::func_ov031_020fb11c() {
     this->vfunc_6C();
     data_027e0d34->func_ov031_020d996c();
@@ -149,7 +207,6 @@ void ActorUnkMLCK::func_ov031_020fb11c() {
     }
 }
 
-// non-matching
 void ActorUnkMLCK_B4_00::func_ov031_020fb184() {
     this->mUnk_04 = 0x0;
     this->mUnk_08 = -1;
@@ -180,7 +237,7 @@ void ActorUnkMLCK::func_ov031_020fb1e8(ActorUnkMLCK_B4_00 *param1) {
     ++this->mUnk_B4;
 }
 
-bool ActorUnkMLCK::func_ov031_020fb204() {
+bool ActorUnkMLCK::func_ov031_020fb204(unk32 param1) {
     for (ActorUnkMLCK_B4 *ptr = this->mUnk_A0; ptr != this->mUnk_B4; ++ptr) {
         if (ptr->mUnk_00->vfunc_04()) {
             return true;
