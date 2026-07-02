@@ -98,7 +98,7 @@ void MapObjectDoorKey::vfunc_5C(unk32 param1, unk32 param2) {
     switch (this->mUnk_16) {
         case 3:
             if (param2 == 0) {
-                data_027e0ce0->mUnk_2C->GiveSmallKeys(-1);
+                data_027e0ce0->mUnk_2C->GetInventory()->GiveSmallKeys(-1);
             }
 
             UNSET_FLAG(this->mFlags, MapObjFlag_9);
@@ -117,7 +117,7 @@ bool MapObjectDoorKey::func_ov031_020fea88(void) {
         return false;
     }
 
-    if (data_027e0ce0->mUnk_2C->mKeyAmount != 0) {
+    if (data_027e0ce0->mUnk_2C->GetKeyAmount() != 0) {
         return true;
     }
 
@@ -129,7 +129,7 @@ unk32 MapObjectDoorKey::vfunc_28(void) {
         return -1;
     }
 
-    if (data_027e0ce0->mUnk_2C->mKeyAmount == 0) {
+    if (data_027e0ce0->mUnk_2C->GetKeyAmount() == 0) {
         return -1;
     }
 

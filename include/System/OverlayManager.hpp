@@ -387,49 +387,24 @@ public:
     /* 00 */ OverlayIndex mLoadedOverlays[OverlaySlot_COUNT];
     /* 48 */
 
-    bool IsPlayerSub() {
-        return this->mLoadedOverlays[OverlaySlot_9] == OverlayIndex_PlayerSub;
-    }
+    // clang-format off
+    const bool IsTower() const { return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower; }
+    const bool IsBossDesert() const { return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossDesert; }
+    const bool IsBossDeago() const { return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossDeago; }
+    const bool IsBossLast1() const { return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossLast1; }
+    const bool IsBossLast2() const { return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossLast2; }
+    const bool IsDungeonForest() const { return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_DgnForest; }
+    const bool IsPirateHideout() const { return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_FldAjito; }
 
-    bool IsMapA6() {
-        return this->mLoadedOverlays[OverlaySlot_13] == OverlayIndex_MapA6;
-    }
+    const bool IsASR() const { return this->mLoadedOverlays[OverlaySlot_9] == OverlayIndex_ASR; }
+    const bool IsPlayerSub() const { return this->mLoadedOverlays[OverlaySlot_9] == OverlayIndex_PlayerSub; }
 
-    bool IsPirateHideout() {
-        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_FldAjito;
-    }
+    const bool IsPlayerZelda() const { return this->mLoadedOverlays[OverlaySlot_10] == OverlayIndex_PlayerZelda; }
 
-    bool IsASR() {
-        return this->mLoadedOverlays[OverlaySlot_9] == OverlayIndex_ASR;
-    }
+    const bool IsMapA6() const { return this->mLoadedOverlays[OverlaySlot_13] == OverlayIndex_MapA6; }
 
-    bool IsBossDeago() {
-        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossDeago;
-    }
-
-    bool IsBossLast1() {
-        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossLast1;
-    }
-
-    bool IsBossLast2() {
-        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossLast2;
-    }
-
-    bool IsTower() {
-        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower;
-    }
-
-    bool IsBossDesert() {
-        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossDesert;
-    }
-
-    bool IsDungeonForest() {
-        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_DgnForest;
-    }
-
-    bool IsMapB3() {
-        return this->mLoadedOverlays[OverlaySlot_14] == OverlayIndex_MapB3;
-    }
+    const bool IsMapB3() const { return this->mLoadedOverlays[OverlaySlot_14] == OverlayIndex_MapB3; }
+    // clang-format on
 
     void Load(OverlaySlot slot, OverlayIndex index);
     void LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index);

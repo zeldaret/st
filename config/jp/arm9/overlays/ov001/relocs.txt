@@ -1137,7 +1137,7 @@ from:0x020bd28c kind:load to:0x027e09a4 module:dtcm
 from:0x020bd290 kind:load to:0x020453b0 module:main
 from:0x020bd294 kind:load to:0x027e09a0 module:dtcm
 from:0x020bd298 kind:load to:0x020b7ab8 module:overlay(0)
-from:0x020bd2aa kind:thumb_call_arm to:0x0217bde0 module:overlays(95,96)
+from:0x020bd2aa kind:thumb_call_arm to:0x0217bde0 module:overlay(96)
 from:0x020bd2b0 kind:load to:0x020453b0 module:main
 from:0x020bd2ca kind:thumb_call_arm to:0x01fff350 module:itcm
 from:0x020bd2e4 kind:thumb_call_arm to:0x02099c98 module:overlay(0)

@@ -54,13 +54,28 @@ public:
     bool func_ov031_020db8f8();
 };
 
-class ItemManager {
-public:
+struct InvImportData {
+    /* 00 */ u32 quiverCapacity : 2;
+    /*    */ u32 bombBagCapacity : 2;
+    /*    */ u32 arrowAmount : 6;
+    /*    */ u32 bombsAmount : 6;
+    /*    */ u32 pad : 12;
+    /*    */ u32 potion1 : 2;
+    /*    */ u32 potion2 : 2;
+    /* 04 */ u32 flags[2];
+    /* 0C */ u16 numRupees;
+    /* 0E */ u16 unk_0E;
+    /* 10 */ s8 equippedItem;
+    /* 14 */
+};
+
+class Inventory {
+private:
     /* 00 */ ItemFlag mEquippedItem;
     /* 04 */ ItemFlag mForcedItem;
     /* 08 */ u32 mFlags[2]; // inventory items bitfield & collection/equipment bitfield
     /* 10 */ u16 mNumRupees;
-    /* 12 */ u16 mUnk_12;           // "toggle bitfield"
+    /* 12 */ vu16 mUnk_12;          // "toggle bitfield"
     /* 14 */ u16 mItemRestrictions; // bitfield
     /* 16 */ u8 mTearsAmount;       // number of tears of light
     /* 17 */ u8 mKeyAmount;         // number of small keys
@@ -69,25 +84,46 @@ public:
     /* 1A */ u8 mArrowAmount;
     /* 1B */ u8 mBombAmount;
     /* 1C */ u8 mPotions[MAX_POTIONS];
-    /* 1E */ unk16 mUnk_1E;
-    /* 20 */ UnkStruct_ItemManager_20 *mUnk_20;
-    /* 24 */ unk8 mUnk_24;
-    /* 24 */ unk8 mUnk_25;
-    /* 24 */ unk8 mUnk_26;
-    /* 24 */ unk8 mUnk_27;
-    /* 28 */
+    /* 1E */ unk16 mUnk_1E; // pad?
+    /* 20 */
 
-    u8 GetTearsAmount() const {
-        return this->mTearsAmount;
+public:
+    // clang-format off
+    const ItemFlag GetCurrentItem() const { return this->mEquippedItem; }
+    const bool HasItem(int flag) const { return GET_FLAG(this->mFlags, flag); }
+    const u16 GetNumRupees() const { return this->mNumRupees; }
+    const u16 GetRestrictions() const { return this->mItemRestrictions; }
+    const bool HasRestriction(int flag) const { return IS_ITEM_RESTRICTED(this->mItemRestrictions, flag); }
+    const u8 GetTearsAmount() const { return this->mTearsAmount; }
+    const u8 GetKeyAmount() const { return this->mKeyAmount; }
+    const UpgradeCapacity GetQuiverCap() const { return this->mQuiverCapacity; }
+    const UpgradeCapacity GetBombsCap() const { return this->mBombBagCapacity; }
+    const UpgradeCapacity GetArrowAmount() const { return this->mArrowAmount; }
+    const UpgradeCapacity GetBombAmount() const { return this->mBombAmount; }
+
+    void FlipUnk12(int value) { this->mUnk_12 ^= value; }
+    // clang-format on
+
+    void SetNextQuiverCapacity() {
+        if (this->mQuiverCapacity < UpgradeCapacity_Tier3) {
+            this->mQuiverCapacity++;
+        }
+
+        this->mArrowAmount = this->GetQuiverCapacity();
     }
 
-    u8 GetKeyAmount() const {
-        return this->mKeyAmount;
+    void SetNextBombBagCapacity() {
+        if (this->mBombBagCapacity < UpgradeCapacity_Tier3) {
+            this->mBombBagCapacity++;
+        }
+
+        this->mBombAmount = this->GetBombBagCapacity();
     }
 
-    ItemManager();
-    ~ItemManager();
+    Inventory();
+    ~Inventory();
 
+    // overlay 0
     void SetFlag(ItemFlag itemFlag);
     void ClearFlag(ItemFlag itemFlag);
     bool HasRecruitUniform();
@@ -105,8 +141,54 @@ public:
     bool HasPurplePotion();
     void RemovePurplePotion();
     bool PotionSlotsFull();
-    static UnkStruct_ov000_020afc48 *func_ov000_020a8974(ItemFlag itemFlag);
-    static ItemFlag GetEquippedItemFlag(ItemId itemId);
+
+    // overlay 1
+    void func_ov001_020bb8bc(const InvImportData *pSrc);
+    void func_ov001_020bb9f8();
+    void func_ov001_020bba54();
+    void func_ov001_020bba6c();
+
+    // overlay 96
+    void func_ov096_02179b20();
+
+    // overlay 110
+    bool func_ov110_02184a40(ItemId itemId);
+};
+
+class ItemManager {
+private:
+    /* 00 */ Inventory mInventory;
+    /* 20 */ UnkStruct_ItemManager_20 *mUnk_20;
+    /* 24 */ unk8 mUnk_24;
+    /* 24 */ unk8 mUnk_25;
+    /* 24 */ unk8 mUnk_26;
+    /* 24 */ unk8 mUnk_27;
+    /* 28 */
+
+public:
+    // clang-format off
+    Inventory* GetInventory() { return &this->mInventory; }
+    const Inventory* GetInventory() const { return &this->mInventory; }
+
+    const ItemFlag GetCurrentItem() const { return this->GetInventory()->GetCurrentItem(); }
+    const bool HasItem(int flag) const { return this->GetInventory()->HasItem(flag); }
+    const u16 GetNumRupees() const { return this->GetInventory()->GetNumRupees(); }
+    const u16 GetRestrictions() const { return this->GetInventory()->GetRestrictions(); }
+    const bool HasRestriction(int flag) const { return this->GetInventory()->HasRestriction(flag); }
+    const u8 GetTearsAmount() const { return this->GetInventory()->GetTearsAmount(); }
+    const u8 GetKeyAmount() const { return this->GetInventory()->GetKeyAmount(); }
+    const UpgradeCapacity GetQuiverCap() const { return this->GetInventory()->GetQuiverCap(); }
+    const UpgradeCapacity GetBombsCap() const { return this->GetInventory()->GetBombsCap(); }
+    const UpgradeCapacity GetArrowAmount() const { return this->GetInventory()->GetArrowAmount(); }
+    const UpgradeCapacity GetBombAmount() const { return this->GetInventory()->GetBombAmount(); }
+
+    void FlipUnk12(int value) { this->GetInventory()->FlipUnk12(value); }
+    // clang-format on
+
+    ItemManager();
+    ~ItemManager() {}
+
+    // overlay 0
     void func_ov000_020a89bc();
     bool func_ov000_020a89d4();
     bool func_ov000_020a8a0c();
@@ -117,9 +199,10 @@ public:
     unk32 func_ov000_020a8ab8();
     unk32 func_ov000_020a8acc();
 
-    void func_ov001_020bb9f8();
+    static UnkStruct_ov000_020afc48 *func_ov000_020a8974(ItemFlag itemFlag);
+    static ItemFlag GetEquippedItemFlag(ItemId itemId);
 
-    bool func_ov110_02184a40(ItemId itemId);
+    // overlay 110
     static u32 GetBmgIDFromItem(ItemId itemId);
     static AdventureFlag GetAdvFlagFromItem(ItemId itemId);
 };

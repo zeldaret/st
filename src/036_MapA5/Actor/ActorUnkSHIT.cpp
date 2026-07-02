@@ -108,7 +108,7 @@ u16 ActorUnkSHIT::func_ov036_0211ceec(void) {
             break;
     }
 
-    return 9999;
+    return MAX_RUPEES;
 }
 
 unk32 ActorUnkSHIT::func_ov036_0211d0a8(void) {
@@ -177,7 +177,7 @@ bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
 
     switch (this->mItemId) {
         case ItemId_NormalShield:
-            if (GET_FLAG(pIVar4->mFlags, ItemFlag_Shield)) {
+            if (pIVar4->HasItem(ItemFlag_Shield)) {
                 return false;
             }
 
@@ -185,7 +185,7 @@ bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
         case ItemId_RedPotion:
         case ItemId_PurplePotion:
         case ItemId_YellowPotion:
-            if (pIVar4->PotionSlotsFull()) {
+            if (pIVar4->GetInventory()->PotionSlotsFull()) {
                 return false;
             }
 
@@ -231,26 +231,26 @@ bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
 
             break;
         case ItemId_BombsRefill:
-            if (!GET_FLAG(pIVar4->mFlags, ItemFlag_Bombs)) {
+            if (!pIVar4->HasItem(ItemFlag_Bombs)) {
                 return false;
             }
 
             {
-                u8 amount = pIVar4->mBombAmount;
-                if (amount >= pIVar4->GetBombBagCapacity()) {
+                u8 amount = pIVar4->GetBombAmount();
+                if (amount >= pIVar4->GetInventory()->GetBombBagCapacity()) {
                     return false;
                 }
             }
 
             break;
         case ItemId_ArrowsRefill:
-            if (!GET_FLAG(pIVar4->mFlags, ItemFlag_Bow)) {
+            if (!pIVar4->HasItem(ItemFlag_Bow)) {
                 return false;
             }
 
             {
-                u8 amount = pIVar4->mArrowAmount;
-                if (amount >= pIVar4->GetQuiverCapacity()) {
+                u8 amount = pIVar4->GetArrowAmount();
+                if (amount >= pIVar4->GetInventory()->GetQuiverCapacity()) {
                     return false;
                 }
             }
@@ -258,7 +258,7 @@ bool ActorUnkSHIT::func_ov036_0211d2dc(void) {
             break;
         case ItemId_QuiverMedium:
         case ItemId_QuiverLarge:
-            if (!GET_FLAG(pIVar4->mFlags, ItemFlag_Bow)) {
+            if (!pIVar4->HasItem(ItemFlag_Bow)) {
                 return false;
             }
 
@@ -324,10 +324,10 @@ void ActorUnkSHIT::func_ov036_0211d570(unk32 param1) {
             this->mUnk_2D3 = true;
             break;
         case ItemId_BombsRefill:
-            pIVar4->GiveBombs(10);
+            pIVar4->GetInventory()->GiveBombs(10);
             break;
         case ItemId_ArrowsRefill:
-            pIVar4->GiveArrows(10);
+            pIVar4->GetInventory()->GiveArrows(10);
             break;
         case ItemId_QuiverMedium:
         case ItemId_QuiverLarge:
@@ -345,7 +345,7 @@ void ActorUnkSHIT::func_ov036_0211d570(unk32 param1) {
     }
 
     if (param1 == 0) {
-        pIVar4->GiveRupees(-this->func_ov036_0211cddc(), false, false);
+        pIVar4->GetInventory()->GiveRupees(-this->func_ov036_0211cddc(), false, false);
     }
 }
 

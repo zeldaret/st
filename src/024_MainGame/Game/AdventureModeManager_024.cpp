@@ -424,7 +424,7 @@ void AdventureModeManager::func_ov024_020c5cec() {
     gpUICounterManager->func_ov024_020cd420();
 
     if (!data_027e09a4->IsTrain()) {
-        gpUICounterManager->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
+        gpUICounterManager->func_ov024_020cd458(data_027e0ce0->mUnk_2C->GetCurrentItem(), true);
 
         if (gOverlayManager.IsPlayerSub() && data_0204a088->mUnk_00 == OverlayIndex_SceneInit) {
             this->mUnk_168->func_ov031_0210df60(1);

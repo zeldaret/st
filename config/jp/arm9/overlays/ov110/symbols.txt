@@ -1,4 +1,4 @@
-_ZN11ItemManager19func_ov110_02184a40Ei kind:function(arm,size=0x36c) addr:0x021865c0
+_ZN9Inventory19func_ov110_02184a40Ei kind:function(arm,size=0x36c) addr:0x021865c0
 _ZN22UnkStruct_PlayerGet_748vfunc_00Eiii kind:function(arm,size=0x30) addr:0x0218692c
 _ZN9PlayerGetC2Ev kind:function(arm,size=0xa0) addr:0x0218695c
 _ZN9PlayerGetD1Ev kind:function(arm,size=0xc4) addr:0x021869fc

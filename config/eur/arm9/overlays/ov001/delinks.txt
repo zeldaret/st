@@ -66,6 +66,7 @@ src/001_SceneInit/Actor/ActorManager_001.cpp:
     .data       start:0x020c2b3c end:0x020c2c70
 
 src/001_SceneInit/Item/ItemManager_001.cpp:
+    complete
     .text       start:0x020bb87c end:0x020bbac4
 
 src/001_SceneInit/Player/PlayerActorBase_70_001.cpp:

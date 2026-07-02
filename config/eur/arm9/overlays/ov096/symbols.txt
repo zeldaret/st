@@ -1,4 +1,4 @@
-func_ov096_02179b20 kind:function(arm,size=0x9c) addr:0x02179b20
+_ZN9Inventory19func_ov096_02179b20Ev kind:function(arm,size=0x9c) addr:0x02179b20
 func_ov096_02179bbc kind:function(thumb,size=0x20) addr:0x02179bbc
 func_ov096_02179bdc kind:function(thumb,size=0x20) addr:0x02179bdc
 func_ov096_02179bfc kind:function(thumb,size=0xc) addr:0x02179bfc
