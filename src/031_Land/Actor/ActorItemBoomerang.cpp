@@ -259,11 +259,11 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
             if (!func_ov000_0205aeac()) {
                 return;
             }
-            if ((this->mUnk_12C + 0)->mUnk_00 != NULL) {
-                this->mUnk_12C->mUnk_00->mUnk_A0 = 0;
+            if (this->mUnk_12C[0].mUnk_00 != NULL) {
+                this->mUnk_12C[0].mUnk_00->mUnk_A0 = 0;
             }
-            if ((this->mUnk_12C + 1)->mUnk_00 != NULL) {
-                (this->mUnk_12C + 1)->mUnk_00->mUnk_A0 = 0;
+            if (this->mUnk_12C[1].mUnk_00 != NULL) {
+                this->mUnk_12C[1].mUnk_00->mUnk_A0 = 0;
             }
             data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_140.mUnk_00);
             return;
@@ -277,14 +277,14 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
             if (!func_ov000_0205aeac()) {
                 return;
             }
-            if ((this->mUnk_12C + 0)->mUnk_00 != NULL) {
-                this->mUnk_12C->mUnk_00->mUnk_A0 = 0;
+            if (this->mUnk_12C[0].mUnk_00 != NULL) {
+                this->mUnk_12C[0].mUnk_00->mUnk_A0 = 0;
             }
-            if ((this->mUnk_12C + 1)->mUnk_00 != NULL) {
-                (this->mUnk_12C + 1)->mUnk_00->mUnk_A0 = 0;
+            if (this->mUnk_12C[1].mUnk_00 != NULL) {
+                this->mUnk_12C[1].mUnk_00->mUnk_A0 = 0;
             }
-            if ((this->mUnk_12C + 2)->mUnk_00 != NULL) {
-                (this->mUnk_12C + 2)->mUnk_00->mUnk_A0 = 0;
+            if (this->mUnk_12C[2].mUnk_00 != NULL) {
+                this->mUnk_12C[2].mUnk_00->mUnk_A0 = 0;
             }
             data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_140.mUnk_00);
             return;
