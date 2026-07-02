@@ -339,7 +339,7 @@ void ActorItemBoomerang_CC::vfunc_10(Actor *actor) {
 
 // non-matching
 bool ActorItemBoomerang_CC::vfunc_0C(Actor *actor, VecFx32 *param2) {
-    if (actor) {
+    if (actor != NULL) {
         if (actor->mRef.Get32() == this->mUnk_2C && actor->mVel.x == FLOAT_TO_FX32(0.0f) &&
             actor->mVel.y == FLOAT_TO_FX32(0.0f) && actor->mVel.z == FLOAT_TO_FX32(0.0f)) {
             this->mUnk_2C = 0x0;
@@ -365,7 +365,7 @@ ActorItemBoomerang_11C::~ActorItemBoomerang_11C() {}
 bool ActorItemBoomerang_11C::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
     u32 var = param1->mUnk_04->mUnk_24[param1->mUnk_00->mUnk_06];
 
-    if ((var >> 0x18 & 1) == 1) {
+    if (((var >> 0x18) & 1) == 1) {
         return false;
     }
 
@@ -373,7 +373,7 @@ bool ActorItemBoomerang_11C::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
 }
 
 bool ActorItemBoomerang_11C::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) {
-    u32 val = param1->mUnk_08 >> 9 & 7;
+    u32 val = (param1->mUnk_08 >> 9) & 7;
     if (val == 0x2) {
         this->mUnk_08->func_ov031_020e5034(0x1);
     }
