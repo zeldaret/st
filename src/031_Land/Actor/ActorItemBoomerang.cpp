@@ -70,8 +70,8 @@ bool ActorItemBoomerang::vfunc_18(unk32 param1) {
 // non-matching
 void ActorItemBoomerang::SetState(ActorState state) {
     this->mState  = state;
-    this->mUnk_52 = FLOAT_TO_FX32(0.0f);
-    this->mUnk_50 = FLOAT_TO_FX32(15.9998f);
+    this->mUnk_52 = 0xFFFF;
+    this->mUnk_50 = 0;
 }
 
 void ActorItemBoomerang::func_ov031_020e49b0(unk32 param1) {
