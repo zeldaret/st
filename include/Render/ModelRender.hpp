@@ -80,7 +80,7 @@ public:
     /* 00 */ virtual ~UnkSystem6_Derived1() override {}
     /* 10 */ virtual void vfunc_10(VecFx32 *param1, Mat3p *param2, VecFx32 *param3) override;
     /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) override;
-    /* 18 */ virtual void vfunc_18() override;
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1) override;
 };
 
 class UnkSystem6_Derived2 : public UnkSystem6_Derived1 {
