@@ -90,11 +90,11 @@ bool MapObjectPot::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
     }
 }
 
-void MapObjectPot::vfunc_24(MapObjectPot_Base *param1, VecFx32 param2) {
-    this->func_ov000_0209d8e8(param1, param2.x);
+void MapObjectPot::vfunc_24(MapObject *param1, VecFx32 param2) {
+    this->func_ov000_0209d8e8((MapObjectPot_Base *) param1, param2.x);
     param1->func_ov000_0209d614(0x1);
 
-    if (param1->func_ov000_0209da64() != 0x65) {
+    if (((MapObjectPot_Base *) param1)->func_ov000_0209da64() != 0x65) {
         return;
     }
 
