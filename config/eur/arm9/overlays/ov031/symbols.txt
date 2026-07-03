@@ -2339,7 +2339,7 @@ _ZTV19data_ov031_02113f38 kind:data(any) addr:0x02113f38
 data_ov031_02113f9c kind:data(any) addr:0x02113f9c
 data_ov031_02113fb8 kind:data(any) addr:0x02113fb8
 _ZTV19data_ov031_02113fcc kind:data(any) addr:0x02113fcc
-_ZTV19data_ov031_0211403c kind:data(any) addr:0x0211403c
+_ZTV15ActorProfilePot kind:data(any) addr:0x0211403c
 data_ov031_02114060 kind:data(any) addr:0x02114060
 data_ov031_021140a0 kind:data(any) addr:0x021140a0
 _ZTV19data_ov031_021140e0 kind:data(any) addr:0x021140e0
