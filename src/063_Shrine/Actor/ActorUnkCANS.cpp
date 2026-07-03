@@ -22,12 +22,16 @@ ActorUnkCANS::ActorUnkCANS() :
 
 void ActorUnkCANS::func_ov063_0215a5f8(Cylinder *param1) {
     Cylinder *cylinder = this->mUnk_34;
-    param1->pos        = cylinder->pos;
-    param1->size       = cylinder->size;
+    *param1            = *cylinder;
     VecFx32_Add(&param1->pos, &this->mPos, &param1->pos);
+
     if (this->mUnk_268 != 0) {
-        VecFx32 pos = {FLOAT_TO_FX32(0.25f), 0, 0};
-        func_01ff9638(&pos, this->mAngle);
+        fx16 angle = this->mAngle;
+        VecFx32 pos; // = {FLOAT_TO_FX32(0.25f), 0, 0};
+        pos.x = FLOAT_TO_FX32(0.25f);
+        pos.y = 0;
+        pos.z = 0;
+        func_01ff9638(&pos, angle);
         VecFx32_Add(&param1->pos, &pos, &param1->pos);
     }
 
