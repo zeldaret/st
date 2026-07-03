@@ -17,14 +17,14 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkNTUB : public Actor {
+class ActorPot : public Actor {
 public:
     /* 00 (base) */
     /* 94 */
 
-    ActorUnkNTUB();
+    ActorPot();
 
-    /* 4C */ virtual ~ActorUnkNTUB() override;
+    /* 4C */ virtual ~ActorPot() override;
 
     void func_ov031_020f0cf0(void);
     void func_ov031_020f0d04(void);
@@ -45,14 +45,14 @@ public:
     void func_ov031_020f0f44(void);
 };
 
-class ActorProfileUnkNTUB : public ActorProfile {
+class ActorProfilePot : public ActorProfile {
 public:
     /* 00 (base) */
 
-    ActorProfileUnkNTUB();
-    ~ActorProfileUnkNTUB();
+    ActorProfilePot();
+    ~ActorProfilePot();
 
     /* 0C */ virtual Actor *Create();
 
-    static ActorProfileUnkNTUB *GetProfile();
+    static ActorProfilePot *GetProfile();
 };

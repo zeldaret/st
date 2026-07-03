@@ -466,7 +466,7 @@ config.libs = [
             Object("031_Land/Actor/ActorUnkNITF.cpp"),
             Object("031_Land/Actor/ActorUnkNORE.cpp"),
             Object("031_Land/Actor/ActorUnkNTTZ.cpp"),
-            Object("031_Land/Actor/ActorUnkNTUB.cpp"),
+            Object("031_Land/Actor/ActorPot.cpp"),
             Object("031_Land/Actor/ActorUnkRLST.cpp"),
             Object("031_Land/Actor/ActorUnkRMTG.cpp"),
             Object("031_Land/Actor/ActorUnkROCK.cpp"),
