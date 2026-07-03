@@ -1220,3 +1220,12 @@ public:
     // data_ov000_020b24c4
     /* 00 */ virtual void vfunc_00();
 };
+
+class UnkStruct_PlayerGet_74_base {
+public:
+    /* 00 (vtable) */
+
+    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3);
+
+    UnkStruct_PlayerGet_74_base();
+};

@@ -5,6 +5,8 @@
 
 #include <nns/g3d/g3d.h>
 
+extern "C" void *func_ov000_02057750(size_t allocSize);
+
 typedef void (*UnkSystem4_UnkCallback)(void);
 
 class UnkSystem4_vfunc_1C_B4 {
@@ -42,6 +44,8 @@ public:
     /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2)                  = 0;
     /* 18 */ virtual void vfunc_18()                                                = 0;
     /* 1C */
+
+    unk32 func_ov000_02057f18(const void *param1);
 };
 
 class ModelRender : public ModelRenderBase {
@@ -164,4 +168,23 @@ public:
 
     // data_ov024_020d84bc
     /* 00 */ virtual ~ModelRender_Derived2() override {}
+};
+
+class ModelRender_UnkSystem1 {
+public:
+    /* 00 */ UnkSystem5 mUnk_00;
+    /* 20 */
+
+    ModelRender_UnkSystem1(G3d_Model *pModel, size_t allocSize) :
+        mUnk_00(func_ov000_02057750(allocSize), pModel) {}
+
+    ~ModelRender_UnkSystem1();
+};
+
+class ModelRender_UnkSystem1_Derived1 : public ModelRender_UnkSystem1 {
+public:
+    /* 00 (base) */
+    /* 20 */
+
+    ModelRender_UnkSystem1_Derived1(G3d_Model *pModel, size_t allocSize);
 };
