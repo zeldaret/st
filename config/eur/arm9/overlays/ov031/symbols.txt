@@ -101,7 +101,7 @@ func_ov031_020d9bb4 kind:function(thumb,size=0xc) addr:0x020d9bb4
 func_ov031_020d9bc0 kind:function(arm,size=0x10) addr:0x020d9bc0
 func_ov031_020d9bd0 kind:function(thumb,size=0x1a) addr:0x020d9bd0
 func_ov031_020d9bec kind:function(arm,size=0x18) addr:0x020d9bec
-func_ov031_020d9c04 kind:function(arm,size=0x10) addr:0x020d9c04
+_ZN18UnkStruct_027e0d3819func_ov031_020d9c04Eiii kind:function(arm,size=0x10) addr:0x020d9c04
 func_ov031_020d9c14 kind:function(arm,size=0x20) addr:0x020d9c14
 func_ov031_020d9c34 kind:function(arm,size=0x10) addr:0x020d9c34
 _ZN18UnkStruct_027e0d3819func_ov031_020d9c44Ei kind:function(arm,size=0x10) addr:0x020d9c44
@@ -1630,7 +1630,7 @@ _ZN12MapObjectPot8vfunc_1CE8ActorRefiP7VecFx32 kind:function(arm,size=0x120) add
 _ZN12MapObjectPot8vfunc_48Ev kind:function(arm,size=0xf8) addr:0x021051d4
 _ZN12MapObjectPot8vfunc_14Ev kind:function(arm,size=0x44) addr:0x021052cc
 _ZN12MapObjectPot8vfunc_54Ev kind:function(arm,size=0x38) addr:0x02105310
-_ZN12MapObjectPot8vfunc_24Ev kind:function(arm,size=0x6c) addr:0x02105348
+_ZN12MapObjectPot8vfunc_24EP17MapObjectPot_Base7VecFx32 kind:function(arm,size=0x6c) addr:0x02105348
 _ZN12MapObjectPot8vfunc_3CEv kind:function(arm,size=0x48) addr:0x021053b4
 _ZN12MapObjectPot8vfunc_40Ev kind:function(arm,size=0x44) addr:0x021053fc
 _ZN12MapObjectPotD1Ev kind:function(arm,size=0x20) addr:0x02105440
@@ -2227,7 +2227,7 @@ data_ov031_021129ec kind:data(any) addr:0x021129ec
 data_ov031_02112a0c kind:data(any) addr:0x02112a0c ambiguous
 data_ov031_02112a50 kind:data(any) addr:0x02112a50
 data_ov031_02112a64 kind:data(any) addr:0x02112a64
-data_ov031_02112a78 kind:data(any) addr:0x02112a78
+_ZTV16MapObject_10_Pot kind:data(any) addr:0x02112a70
 data_ov031_02112aa0 kind:data(any) addr:0x02112aa0
 data_ov031_02112ad4 kind:data(any) addr:0x02112ad4
 data_ov031_02112ae0 kind:data(any) addr:0x02112ae0
@@ -2435,7 +2435,7 @@ data_ov031_02115560 kind:data(any) addr:0x02115560
 data_ov031_02115588 kind:data(any) addr:0x02115588
 data_ov031_021155c8 kind:data(any) addr:0x021155c8
 data_ov031_021155e4 kind:data(any) addr:0x021155e4
-data_ov031_02115624 kind:data(any) addr:0x02115624
+_ZTV24MapObjectProfilePot_Base kind:data(any) addr:0x0211561c
 data_ov031_02115640 kind:data(any) addr:0x02115640
 data_ov031_0211565c kind:data(any) addr:0x0211565c
 data_ov031_0211569c kind:data(any) addr:0x0211569c
