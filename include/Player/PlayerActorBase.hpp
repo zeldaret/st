@@ -373,7 +373,8 @@ public:
     /* 70 */ PlayerActorBase_70 *mUnk_70;
     /* 74 */ PlayerActorBase_74 *mUnk_74;
     /* 78 */ PlayerActorBase_78 mUnk_78;
-    /* 84 */ UnkStruct_ov019_020d24c8_28_258_00_Derived1 mUnk_84;
+    /* 84 */ UnkStruct_ov019_020d24c8_28_258_00 mUnk_84;
+    /* 8C */ unk32 mUnk_8C;
     /* 90 */ unk32 mUnk_90;
     /* 94 */ unk32 mUnk_94;
     /* 98 */ unk32 mUnk_98;

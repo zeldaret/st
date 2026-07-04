@@ -237,9 +237,8 @@ struct UnkStruct_ov019_020d24c8_28_258_00_Derived1 : public UnkStruct_ov019_020d
     /* 08 */ unk32 mUnk_08;
     /* 0C */
 
-    UnkStruct_ov019_020d24c8_28_258_00_Derived1() {}
-    UnkStruct_ov019_020d24c8_28_258_00_Derived1(void *param1, unk32 param2) :
-        UnkStruct_ov019_020d24c8_28_258_00(param1, param2) {}
+    UnkStruct_ov019_020d24c8_28_258_00_Derived1() :
+        UnkStruct_ov019_020d24c8_28_258_00(NULL, 0) {}
 };
 
 class UnkStruct_ov019_020d24c8_28_258 : public UnkStruct_ov019_020d24c8_28_258_00 {
