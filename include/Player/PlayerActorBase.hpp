@@ -357,6 +357,18 @@ public:
     void func_ov000_0205c584(volatile unk32 param1, volatile unk32 param2);
 };
 
+class PlayerLinkActor_9C {
+public:
+    /* 000 (vtable) */
+    /* 004 */ STRUCT_PAD(0x04, 0x154);
+    /* 154 */
+
+    PlayerLinkActor_9C(UnkStruct_027e0ce0_40 *param1, u32 rawGrabParams, PlayerCharacter character);
+
+    // data_ov000_020b2a8c
+    /* 00 */ virtual ~PlayerLinkActor_9C();
+};
+
 class PlayerActorBase {
 public:
     /* 00 */ VecFx32 mPos;
@@ -380,10 +392,8 @@ public:
     /* 78 */ PlayerActorBase_78 mUnk_78;
     /* 84 */ UnkStruct_ov019_020d24c8_28_258_00 mUnk_84;
     /* 8C */ unk32 mUnk_8C;
-    /* 90 */ unk32 mUnk_90;
-    /* 94 */ unk32 mUnk_94;
-    /* 98 */ unk32 mUnk_98;
-    /* 9C */
+    /* 90 */ PlayerLinkActor_9C *mUnk_90;
+    /* 94 */
 
     PlayerActorBase(PlayerCharacter character, unk32 param2, unk32 param3, UnkStruct_027e0ce0_40 *param4);
     ~PlayerActorBase();

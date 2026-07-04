@@ -42,7 +42,7 @@ PlayerActorBase::PlayerActorBase(PlayerCharacter character, unk32 param2, unk32 
     mInvincibilityIconTimer(0),
     mGrabActor(0),
     mUnk_38(&this->mGrabActor),
-    mUnk_44(character != 0),
+    mUnk_44(PlayerCharacter_IsNotLink(character)),
     mCharacter(character),
     mUnk_4C(param2),
     mUnk_50(param2, this->mUnk_44),
