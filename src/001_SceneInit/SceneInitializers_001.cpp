@@ -1,7 +1,3 @@
-#include "global.h"
-
-THUMB_BEGIN
-
 #include "Actor/ActorManager.hpp"
 #include "Cutscene/Cutscene.hpp"
 #include "Game/GameModeManager.hpp"
@@ -615,5 +611,3 @@ bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
 
     return iVar9;
 }
-
-THUMB_END

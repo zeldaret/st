@@ -70,7 +70,7 @@ static inline s16 GetItemFlag(ItemId itemId) {
     return ItemFlag_None;
 }
 
-bool ItemManager::func_ov110_02184a40(ItemId itemId) {
+bool Inventory::func_ov110_02184a40(ItemId itemId) {
     switch (itemId) {
         case ItemId_NormalKey:
             this->GiveSmallKeys(1);
@@ -98,19 +98,11 @@ bool ItemManager::func_ov110_02184a40(ItemId itemId) {
             break;
         case ItemId_QuiverMedium:
         case ItemId_QuiverLarge:
-            if (this->mQuiverCapacity < UpgradeCapacity_Tier3) {
-                this->mQuiverCapacity++;
-            }
-
-            this->mArrowAmount = this->GetQuiverCapacity();
+            this->SetNextQuiverCapacity();
             break;
         case ItemId_BombBagMedium:
         case ItemId_BombBagLarge:
-            if (this->mBombBagCapacity < UpgradeCapacity_Tier3) {
-                this->mBombBagCapacity++;
-            }
-
-            this->mBombAmount = this->GetBombBagCapacity();
+            this->SetNextBombBagCapacity();
             break;
         case ItemId_RedPotion:
             this->GivePotion(PotionType_Red);
@@ -479,12 +471,12 @@ PlayerGet::~PlayerGet() {
 bool PlayerGet::func_ov110_02186b8c() {
     switch (this->mUnk_54.mItemId) {
         case ItemId_NormalShield:
-            if (this->mUnk_28->pItemManager->mUnk_12 & 2) {
+            if (this->mUnk_28->pItemManager->HasUnk12(2)) {
                 return true;
             }
             break;
         case ItemId_AncientShield:
-            if (!(this->mUnk_28->pItemManager->mUnk_12 & 2)) {
+            if (!(this->mUnk_28->pItemManager->HasUnk12(2))) {
                 return true;
             }
             break;
@@ -520,22 +512,22 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 case ItemId_BombBag:
                 case ItemId_BombBagMedium:
                 case ItemId_BombBagLarge:
-                    if (GET_FLAG(pItemManager->mFlags, ItemFlag_Bombs) == 0) {
+                    if (!pItemManager->HasItem(ItemFlag_Bombs)) {
                         itemId = ItemId_BombBag;
-                    } else if (pItemManager->mBombBagCapacity == UpgradeCapacity_Tier1) {
+                    } else if (pItemManager->GetBombsCap() == UpgradeCapacity_Tier1) {
                         itemId = ItemId_BombBagMedium;
-                    } else if (pItemManager->mBombBagCapacity == UpgradeCapacity_Tier2) {
+                    } else if (pItemManager->GetBombsCap() == UpgradeCapacity_Tier2) {
                         itemId = ItemId_BombBagLarge;
                     }
                     break;
                 case ItemId_NormalBow:
                 case ItemId_QuiverMedium:
                 case ItemId_QuiverLarge:
-                    if (GET_FLAG(pItemManager->mFlags, ItemFlag_Bow) == 0) {
+                    if (!pItemManager->HasItem(ItemFlag_Bow)) {
                         itemId = ItemId_NormalBow;
-                    } else if (pItemManager->mQuiverCapacity == UpgradeCapacity_Tier1) {
+                    } else if (pItemManager->GetQuiverCap() == UpgradeCapacity_Tier1) {
                         itemId = ItemId_QuiverMedium;
-                    } else if (pItemManager->mQuiverCapacity == UpgradeCapacity_Tier2) {
+                    } else if (pItemManager->GetQuiverCap() == UpgradeCapacity_Tier2) {
                         itemId = ItemId_QuiverLarge;
                     }
                     break;
@@ -850,7 +842,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
             }
 
             if (this->mUnk_72 == 0 && var_r1_2) {
-                temp_r6 = this->mUnk_28->pItemManager->func_ov110_02184a40(this->mUnk_54.mItemId);
+                temp_r6 = this->mUnk_28->pItemManager->GetInventory()->func_ov110_02184a40(this->mUnk_54.mItemId);
 
                 switch (this->mUnk_54.mItemId) {
                     case ItemId_NormalShield:
@@ -862,7 +854,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
 
                             if ((temp_r0_3 != NULL) && (temp_r0_3->GetActorId() == ActorId_NormalShield)) {
                                 if (this->func_ov110_02186b8c()) {
-                                    this->mUnk_28->pItemManager->mUnk_12 ^= 2;
+                                    this->mUnk_28->pItemManager->FlipUnk12(2);
                                 }
 
                                 temp_r0_3->func_ov062_02158ce8();
@@ -870,11 +862,11 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                         } else {
                             if (this->mUnk_54.mItemId == ItemId_AncientShield) {
                                 if (this->func_ov110_02186b8c()) {
-                                    this->mUnk_28->pItemManager->mUnk_12 ^= 2;
+                                    this->mUnk_28->pItemManager->FlipUnk12(2);
                                 }
                             } else if (this->mUnk_54.mItemId == ItemId_NormalShield) {
                                 if (this->func_ov110_02186b8c()) {
-                                    this->mUnk_28->pItemManager->mUnk_12 ^= 2;
+                                    this->mUnk_28->pItemManager->FlipUnk12(2);
                                 }
                             }
                         }

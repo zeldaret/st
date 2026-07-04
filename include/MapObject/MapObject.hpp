@@ -132,14 +132,14 @@ public:
     /* 40 */
 
     // data_ov000_020b3590
-    /* 00 */ virtual bool vfunc_00(); // Init? the newly-created map object is deleted if this returns false
-    /* 04 */ virtual void vfunc_04();
+    /* 00 */ virtual bool vfunc_00(); // Init
+    /* 04 */ virtual void vfunc_04(); // Setup
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2);
-    /* 1C */ virtual bool vfunc_1C();
+    /* 1C */ virtual bool vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3);
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual unk32 vfunc_28();

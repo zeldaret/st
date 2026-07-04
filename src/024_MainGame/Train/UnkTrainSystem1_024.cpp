@@ -125,9 +125,9 @@ void UnkTrainSystem1::func_ov024_020d562c(const VecFx32 *param1, fx32 param2) {
         UnkStruct_027e09bc_0C *temp_r8_2 = data_027e09bc->mUnk_0C;
 #endif
 
-        temp_r1_3.x = temp_r8_2->mUnk_34.x;
-        temp_r1_3.z = temp_r8_2->mUnk_34.z;
-        temp_r1_3.y = temp_r8_2->mUnk_34.y;
+        temp_r1_3.x = temp_r8_2->mUnk_034.x;
+        temp_r1_3.z = temp_r8_2->mUnk_034.z;
+        temp_r1_3.y = temp_r8_2->mUnk_034.y;
 
         fx32 x      = temp_r1_3.x - param1->x;
         temp_r1_3.x = x;

@@ -41,26 +41,32 @@ src/001_SceneInit/ZeldaMapBinary.cpp:
     .text       start:0x020bacf0 end:0x020bbd4c
 
 src/001_SceneInit/UnkStruct_027e095c_001.cpp:
+    complete
     .text       start:0x020bbd4c end:0x020bbdc4
 
 src/001_SceneInit/SysNew_001.cpp:
+    complete
     .text       start:0x020bbdc4 end:0x020bbeac
 
 src/001_SceneInit/Save/SaveManager_001.cpp:
     .text       start:0x020bbeac end:0x020bc1f4
 
 src/001_SceneInit/UnkStruct_027e09bc_001.cpp:
+    complete
     .text       start:0x020bc1f4 end:0x020bc47c
 
 src/001_SceneInit/MapObject/MapObjectManager_001.cpp:
+    complete
     .text       start:0x020bc47c end:0x020bc7ac
 
 src/001_SceneInit/Actor/ActorManager_001.cpp:
+    complete
     .text       start:0x020bc7ac end:0x020bd0c4
     .rodata     start:0x020c3e78 end:0x020c3ea0
     .data       start:0x020c437c end:0x020c44b0
 
 src/001_SceneInit/Item/ItemManager_001.cpp:
+    complete
     .text       start:0x020bd0c4 end:0x020bd30c
 
 src/001_SceneInit/Player/PlayerActorBase_70_001.cpp:

@@ -1,7 +1,5 @@
 #include "MainGame/PassengerManager.hpp"
 
-THUMB_BEGIN
-
 inline bool Test(s32 val) {
     bool ret = false;
 
@@ -79,5 +77,3 @@ bool PassengerManager::func_ov001_020bfa1c() {
 }
 
 DECL_INSTANCE(PassengerManager, gpPassengerManager);
-
-THUMB_END

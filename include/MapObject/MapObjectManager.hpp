@@ -24,8 +24,8 @@ public:
     /* 04 */ MapObject **mMapObjTableEnd;
     /* 08 */ MapObject **mUnk_08; // pointer to first available slot?
     /* 0C */ s16 **mUnk_0C;       // unknown table
-    /* 10 */ void **mUnk_10;      // unknown table end
-    /* 14 */ void *mUnk_14;
+    /* 10 */ s16 **mUnk_10;       // unknown table end
+    /* 14 */ s16 *mUnk_14;
     /* 18 */ unk16 mUnk_18;
     /* 1A */ unk16 mUnk_1A;
     /* 1C */ unk16 mUnk_1C;
@@ -47,7 +47,7 @@ public:
     // overlay 0
     MapObjectId func_ov000_0209c3a8(Vec2bCpp *param1);
     void func_ov000_0209c3e8();
-    void func_ov000_0209c444();
+    void func_ov000_0209c444(unk32 param1);
     MapObject *AllocateMapObject(MapObjectId mapObjId, Vec2b param2, u16 param3, unk32 param4, u8 param5);
 
     static void func_ov000_0209c490();
@@ -59,9 +59,9 @@ public:
     void func_ov001_020bada0();
     void func_ov001_020badb4();
     void func_ov001_020bade0();
-    void func_ov001_020baea0(Vec2s *param1);
     void func_ov001_020bae40(ZeldaObjectList *pObjList);
     void func_ov001_020bae6c();
+    void func_ov001_020baea0(u16 *param1);
     void func_ov001_020baf28();
 
     static MapObjectManager *Create();

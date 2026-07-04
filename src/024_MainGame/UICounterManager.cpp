@@ -78,7 +78,7 @@ UICounterManager::UICounterManager() :
         }
     }
 
-    if (data_027e09a4->IsDungeonTower() && !GET_FLAG(data_027e0ce0->mUnk_2C->mFlags, ItemFlag_LokomoSword)) {
+    if (data_027e09a4->IsDungeonTower() && !data_027e0ce0->mUnk_2C->HasItem(ItemFlag_LokomoSword)) {
         this->mpTears = new(HeapIndex_1) UICounter_TearsOfLight();
     }
 
@@ -144,7 +144,7 @@ void UICounterManager::func_ov024_020cd150() {
     if (!data_027e09a4->IsTrain()) {
         this->mpKeys->func_ov024_020cf698();
         this->mpItems->func_ov031_0210eeb4();
-        gpUICounterManager->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
+        gpUICounterManager->func_ov024_020cd458(data_027e0ce0->mUnk_2C->GetCurrentItem(), true);
     }
 
     if (this->mpTears != NULL) {
@@ -793,7 +793,7 @@ UICounter_Rupees::UICounter_Rupees() :
 
     Vec2s_CopySub(&local_30.mPos, &local_60.mPos, &this->mUnk_0FC);
 
-    this->mUnk_05C.func_ov000_02065b48(data_027e0ce0->mUnk_2C->mNumRupees, 0);
+    this->mUnk_05C.func_ov000_02065b48(data_027e0ce0->mUnk_2C->GetNumRupees(), 0);
 
     UnkStruct_ov019_020d24c8_28_258 local_78((volatile s32) sVar2, 4);
     s16 temp_r0 = local_78.mPos.x + local_78.mUnk_0E.x;
@@ -826,7 +826,7 @@ UICounter_Rupees::UICounter_Rupees() :
 void UICounter_Rupees::func_ov024_020ce518() {
     this->mUnk_018.Subprocess2_UnkValueSets();
     this->mUnk_018.UnkOperations3();
-    this->mUnk_05C.func_ov000_02065b48(data_027e0ce0->mUnk_2C->mNumRupees, 0);
+    this->mUnk_05C.func_ov000_02065b48(data_027e0ce0->mUnk_2C->GetNumRupees(), 0);
     this->mUnk_104 = false;
 }
 
@@ -864,7 +864,7 @@ void UICounter_Rupees::func_ov024_020ce5cc() {
     }
 
     this->mUnk_018.UpdateLogic();
-    this->mUnk_05C.func_ov000_02065b48(data_027e0ce0->mUnk_2C->mNumRupees, 1);
+    this->mUnk_05C.func_ov000_02065b48(data_027e0ce0->mUnk_2C->GetNumRupees(), 1);
 
     if (data_0204a110.mUnk_000 == 1) {
         switch (func_02015788(this->mUnk_05C.mUnk_94)) {

@@ -322,7 +322,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 }
             }
 
-            if ((this->mUnk_24->mUnk_104 & 0x10) || this->mUnk_28->pItemManager->mTearsAmount == 3) {
+            if ((this->mUnk_24->mUnk_104 & 0x10) || this->mUnk_28->pItemManager->GetTearsAmount() == MAX_TEARS_OF_LIGHT) {
                 struct {
                     unk32 actorId;
                     void *ptr;

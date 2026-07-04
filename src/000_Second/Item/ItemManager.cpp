@@ -14,19 +14,19 @@ const u8 gBombBagCapacities[UpgradeCapacity_Max] = {
     CAPACITY_BOMB_BAG_TIER_3,
 };
 
-void ItemManager::SetFlag(ItemFlag itemFlag) {
+void Inventory::SetFlag(ItemFlag itemFlag) {
     SET_FLAG(this->mFlags, itemFlag);
 }
 
-void ItemManager::ClearFlag(ItemFlag itemFlag) {
+void Inventory::ClearFlag(ItemFlag itemFlag) {
     UNSET_FLAG(this->mFlags, itemFlag);
 }
 
-bool ItemManager::HasRecruitUniform() {
+bool Inventory::HasRecruitUniform() {
     return GET_FLAG(this->mFlags, ItemFlag_RecruitUniform) && (this->mUnk_12 & 1);
 }
 
-unk32 ItemManager::func_ov000_020a86a4() {
+unk32 Inventory::func_ov000_020a86a4() {
     if (GET_FLAG(this->mFlags, ItemFlag_AncientShield) && (this->mUnk_12 & 2)) {
         return 1;
     }
@@ -38,7 +38,7 @@ unk32 ItemManager::func_ov000_020a86a4() {
     return -1;
 }
 
-u32 ItemManager::GetItemAmount(ItemFlag itemFlag) {
+u32 Inventory::GetItemAmount(ItemFlag itemFlag) {
     bool canUse = GET_FLAG(this->mFlags, itemFlag);
 
     switch (itemFlag) {
@@ -53,7 +53,7 @@ u32 ItemManager::GetItemAmount(ItemFlag itemFlag) {
     return canUse;
 }
 
-u8 ItemManager::GetQuiverCapacity() {
+u8 Inventory::GetQuiverCapacity() {
     if (GET_FLAG(this->mFlags, ItemFlag_Bow) == 0) {
         return 0;
     }
@@ -61,7 +61,7 @@ u8 ItemManager::GetQuiverCapacity() {
     return gQuiverCapacities[this->mQuiverCapacity];
 }
 
-u8 ItemManager::GetBombBagCapacity() {
+u8 Inventory::GetBombBagCapacity() {
     if (GET_FLAG(this->mFlags, ItemFlag_Bombs) == 0) {
         return 0;
     }
@@ -69,12 +69,12 @@ u8 ItemManager::GetBombBagCapacity() {
     return gBombBagCapacities[this->mBombBagCapacity];
 }
 
-void ItemManager::GiveRupees(s32 amount, bool param2, bool param3) {
+void Inventory::GiveRupees(s32 amount, bool param2, bool param3) {
     u16 prevNumRupees = this->mNumRupees;
     s32 newAmount     = this->mNumRupees + amount;
 
-    if (newAmount > 9999) {
-        newAmount = 9999;
+    if (newAmount > MAX_RUPEES) {
+        newAmount = MAX_RUPEES;
     } else if (newAmount < 0) {
         newAmount = 0;
     }
@@ -86,7 +86,7 @@ void ItemManager::GiveRupees(s32 amount, bool param2, bool param3) {
     }
 }
 
-void ItemManager::GiveSmallKeys(s32 amount) {
+void Inventory::GiveSmallKeys(s32 amount) {
     s32 newAmount = this->mKeyAmount + amount;
 
     if (newAmount > MAX_KEYS) {
@@ -98,7 +98,7 @@ void ItemManager::GiveSmallKeys(s32 amount) {
     this->mKeyAmount = newAmount;
 }
 
-void ItemManager::GiveArrows(s32 amount) {
+void Inventory::GiveArrows(s32 amount) {
     s32 maxArrows = this->GetQuiverCapacity();
     s32 newAmount = this->mArrowAmount + amount;
 
@@ -111,7 +111,7 @@ void ItemManager::GiveArrows(s32 amount) {
     this->mArrowAmount = newAmount;
 }
 
-void ItemManager::GiveBombs(s32 amount) {
+void Inventory::GiveBombs(s32 amount) {
     s32 maxBombs  = this->GetBombBagCapacity();
     s32 newAmount = this->mBombAmount + amount;
 
@@ -124,7 +124,7 @@ void ItemManager::GiveBombs(s32 amount) {
     this->mBombAmount = newAmount;
 }
 
-bool ItemManager::TryEquipForcedItem() {
+bool Inventory::TryEquipForcedItem() {
     if (this->mForcedItem != ItemFlag_None) {
         this->mEquippedItem = this->mForcedItem;
         this->mForcedItem   = ItemFlag_None;
@@ -135,7 +135,7 @@ bool ItemManager::TryEquipForcedItem() {
     return false;
 }
 
-void ItemManager::GivePotion(PotionType type) {
+void Inventory::GivePotion(PotionType type) {
     switch (type) {
         case PotionType_Red:
         case PotionType_Purple:
@@ -152,7 +152,7 @@ void ItemManager::GivePotion(PotionType type) {
     }
 }
 
-bool ItemManager::HasPotion() {
+bool Inventory::HasPotion() {
     for (u32 i = 0; i < ARRAY_LEN(this->mPotions); i++) {
         if (this->mPotions[i] != PotionType_None) {
             return true;
@@ -162,7 +162,7 @@ bool ItemManager::HasPotion() {
     return false;
 }
 
-bool ItemManager::HasPurplePotion() {
+bool Inventory::HasPurplePotion() {
     for (u32 i = 0; i < ARRAY_LEN(this->mPotions); i++) {
         if (this->mPotions[i] == PotionType_Purple) {
             return true;
@@ -172,7 +172,7 @@ bool ItemManager::HasPurplePotion() {
     return false;
 }
 
-void ItemManager::RemovePurplePotion() {
+void Inventory::RemovePurplePotion() {
     for (s32 i = ARRAY_LEN(this->mPotions) - 1; i >= 0; i--) {
         if (this->mPotions[i] == PotionType_Purple) {
             this->mPotions[i] = PotionType_None;
@@ -181,7 +181,7 @@ void ItemManager::RemovePurplePotion() {
     }
 }
 
-bool ItemManager::PotionSlotsFull() {
+bool Inventory::PotionSlotsFull() {
     for (u32 i = 0; i < ARRAY_LEN(this->mPotions); i++) {
         if (this->mPotions[i] == PotionType_None) {
             return false;
@@ -228,12 +228,13 @@ bool ItemManager::func_ov000_020a89d4() {
 }
 
 bool ItemManager::func_ov000_020a8a0c() {
-    if (this->mUnk_20 == NULL || this->mEquippedItem == ItemFlag_None ||
-        IS_ITEM_RESTRICTED(this->mItemRestrictions, this->mEquippedItem) || this->GetItemAmount(this->mEquippedItem) == 0) {
+    if (this->mUnk_20 == NULL || this->GetCurrentItem() == ItemFlag_None ||
+        IS_ITEM_RESTRICTED(this->GetRestrictions(), this->GetCurrentItem()) ||
+        this->mInventory.GetItemAmount(this->GetCurrentItem()) == 0) {
         return false;
     }
 
-    return this->mUnk_20->func_ov031_020db874(this->mEquippedItem);
+    return this->mUnk_20->func_ov031_020db874(this->GetCurrentItem());
 }
 
 void ItemManager::func_ov000_020a8a5c() {

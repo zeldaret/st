@@ -176,7 +176,7 @@ void ActorRupee::func_ov031_020e9068() {
             break;
         default: {
             ItemManager *pItemManager = data_027e0ce0->mUnk_2C;
-            pItemManager->GiveRupees(func_02017158(), false, true);
+            pItemManager->GetInventory()->GiveRupees(func_02017158(), false, true);
             var_r4 = true;
             break;
         }

@@ -106,7 +106,7 @@ ActorItemDrop::ActorItemDrop() :
 
     switch (this->GetActorId()) {
         case ActorId_ArrowDrop:
-            if (GET_FLAG(data_027e0ce0->mUnk_2C->mFlags, ItemFlag_Bow)) {
+            if (data_027e0ce0->mUnk_2C->HasItem(ItemFlag_Bow)) {
                 this->mItemTypeId = ItemDropType_Arrow;
                 this->mUnk_D8     = FLOAT_TO_FX32(0.5f);
             } else {
@@ -114,7 +114,7 @@ ActorItemDrop::ActorItemDrop() :
             }
             break;
         case ActorId_BombDrop:
-            if (GET_FLAG(data_027e0ce0->mUnk_2C->mFlags, ItemFlag_Bombs)) {
+            if (data_027e0ce0->mUnk_2C->HasItem(ItemFlag_Bombs)) {
                 this->mItemTypeId = ItemDropType_Bomb;
                 this->mUnk_D8     = FLOAT_TO_FX32(0.3f);
             } else {
@@ -433,10 +433,10 @@ void ActorItemDrop::func_ov031_020fa72c() {
     bool executeFunction = true;
     switch (this->mItemTypeId) {
         case ItemDropType_Arrow:
-            data_027e0ce0->mUnk_2C->GiveArrows(5);
+            data_027e0ce0->mUnk_2C->GetInventory()->GiveArrows(5);
             break;
         case ItemDropType_Bomb:
-            data_027e0ce0->mUnk_2C->GiveBombs(3);
+            data_027e0ce0->mUnk_2C->GetInventory()->GiveBombs(3);
             break;
         case ItemDropType_RedPotion:
             executeFunction = data_027e0d34->TryItemGive(ItemId_RedPotion);

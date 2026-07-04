@@ -909,7 +909,11 @@ extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
 struct UnkSystem7_UnkStruct_00 {
     /* 00 */ STRUCT_PAD(0x00, 0x24);
     /* 24 */ unk32 mUnk_24;
-    /* 28 */ STRUCT_PAD(0x28, 0xA4);
+    /* 28 */ unk32 mUnk_28;
+    /* 2C */ unk32 mUnk_2C;
+    /* 30 */ unk32 mUnk_30;
+    /* 34 */ STRUCT_PAD(0x34, 0xA0);
+    /* A0 */ unk32 mUnk_A0;
     /* A4 */ unk16 mUnk_A4;
 
     void func_ov000_02052c48(VecFx32 *param1, VecFx32 *param2);
@@ -1204,5 +1208,15 @@ public:
     /* 0C */
 
     // data_ov000_020b2940
+    /* 00 */ virtual void vfunc_00();
+};
+
+class UnkSystem9 : public LinkList<UnkSystem9> {
+public:
+    /* 00 (vtable) */
+    /* 04 (base) */
+    /* 0C */
+
+    // data_ov000_020b24c4
     /* 00 */ virtual void vfunc_00();
 };

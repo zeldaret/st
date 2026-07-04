@@ -9,6 +9,7 @@
 #include "global.h"
 #include "types.h"
 
+#include <nitro/card.h>
 #include <nitro/mi.h>
 
 #define SAVE_DATA_SIZE (sizeof(SaveSlot) + sizeof(u8) * NUM_UNK_BLOCKS * SIZE_UNK_BLOCK)
@@ -36,23 +37,37 @@ struct SaveManager_00 {
         unk_B78(param1) {}
 };
 
+class SaveManager_244 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x7E);
+    /* 7E */ u16 mUnk_7E;
+    /* 80 */
+
+    SaveManager_244();
+};
+
 class SaveManager {
 public:
     /* 000 */ SaveManager_00 *mUnk_000; // related to mUnk_184, allocated from func_ov001_020ba670
     /* 004 */ unk32 mUnk_004;
     /* 008 */ STRUCT_PAD(0x08, 0x204);
-    /* 204 */ unk16 mUnk_204;
-    /* 206 */ unk16 mUnk_206;
+    /* 204 */ u16 mCardId;
+    /* 206 */ s16 mUnk_206; // this is a save slot index?
     /* 208 */ unk16 mUnk_208;
     /* 20A */ u8 mUnk_20A; // bool?
     /* 20B */ unk8 mUnk_20B;
-    /* 20C */ unk32 mUnk_20C;
+    /* 20C */ CARDResult mResultCode;
     /* 210 */ unk32 mUnk_210;
     /* 214 */ unk32 mUnk_214;
     /* 218 */ SaveFile *mpSaveFile;
     /* 21C */ SaveFile_00000_0000_Data_D9C mUnk_21C;
     /* 23C */ PTMF<SaveFile>::PTMFCallback mUnk_23C;
-    /* 244 */ void *mUnk_244;
+    /* 244 */ SaveManager_244 *mUnk_244;
+    /* 248 */
+
+    const size_t GetOffset() const {
+        return mUnk_206 * 0x7A700;
+    }
 
     bool IsUnk20A() {
         return this->mUnk_20A == 0;
@@ -94,6 +109,7 @@ public:
     void func_ov019_020d09dc(u16 saveSlotIndex);
     void func_ov019_020d0a04(u16 saveSlotIndex);
     void func_ov019_020d0ae0(unk32 param1);
+    void func_ov001_020ba858(void);
 
     static void func_ov019_020d086c(u16 param1);
     static void func_ov019_020d0a2c(u16 param1);

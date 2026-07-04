@@ -332,6 +332,14 @@ struct SaveFile_00000_2600_Data {
     /* 80 */
 };
 
+struct GameSaveSlot {
+    /* 0000 */ SaveInfoData mInfoData;
+    /* 0E00 */ SaveTreasureData mTreasureData;
+    /* 0E80 */ SaveFile_00000_2600_Data mUnk_2600;
+    /* 0F00 */ SaveFile_00000_1D00_Data mUnk_1D00;
+    /* 1300 */
+};
+
 class SaveSlot {
 public:
     /* 0000 */ SaveInfoData mInfoData[COUNT_DATA];

@@ -222,7 +222,7 @@ ItemId MapObjectChestBase::func_ov031_021037d0() {
 
     this->vfunc_38(7, 0);
 
-    if ((u32) this->mItemId - ItemId_RedPotion <= 2 && data_027e0ce0->mUnk_2C->PotionSlotsFull()) {
+    if ((u32) this->mItemId - ItemId_RedPotion <= 2 && data_027e0ce0->mUnk_2C->GetInventory()->PotionSlotsFull()) {
         return ItemId_BigGreenRupee;
     }
 

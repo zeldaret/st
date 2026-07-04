@@ -26,7 +26,7 @@ public:
     /* 10 */ MapObjectId mMapObjId;
     /* 14 */ MapObjectId mUnk_14;
     /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk8 mUnk_1C;
+    /* 1C */ u8 mUnk_1C;
     /* 1D */ unk8 mUnk_1D;
     /* 1E */ u16 mUnk_1E;
     /* 20 */
@@ -48,6 +48,7 @@ public:
 
     static unk32 func_ov000_0209c820();
     static void func_ov000_0209c8ec(MapObjectProfile *thisx);
+    void func_ov000_0209c8ec();
 };
 
 class MapObjectProfile_Derived1 : public MapObjectProfile {

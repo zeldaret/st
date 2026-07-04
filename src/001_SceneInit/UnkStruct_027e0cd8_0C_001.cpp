@@ -124,7 +124,7 @@ UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param
     this->mUnk_13C.Init(data_ov001_020c40f4, 0x40);
 
     Vec2s_Copy((Vec2s *) &this->mUnk_09C, &local_30);
-    gpMapObjManager->func_ov001_020baea0(&local_30);
+    gpMapObjManager->func_ov001_020baea0((u16 *) &local_30);
     data_027e095c->func_ov000_020592a0();
 }
 

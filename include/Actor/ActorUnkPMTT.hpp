@@ -26,7 +26,6 @@ public:
 
     /* 4C */ virtual ~ActorUnkPMTT() override;
 
-    void func_ov042_0212d8a4(void);
     void func_ov042_0212d8cc(void);
     void func_ov042_0212d904(void);
     void func_ov042_0212d930(void);
@@ -44,6 +43,8 @@ public:
     void func_ov042_0212e4d8(void);
     void func_ov042_0212e4f8(void);
     void func_ov042_0212e53c(void);
+
+    static void func_ov042_0212d8a4(void);
 };
 
 class ActorProfileUnkPMTT : public ActorProfile {

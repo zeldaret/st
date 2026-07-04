@@ -12,6 +12,7 @@ struct UnkStruct_func_ov000_020702a8 {
     /* 10 */ Vec2s mUnk_10;
     /* 14 */ STRUCT_PAD(0x14, 0x20);
     /* 20 */ unk16 mUnk_20;
+    /* 22 */ unk16 mUnk_22;
 };
 
 class CourseInitBinary {

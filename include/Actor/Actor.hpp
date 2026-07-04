@@ -156,9 +156,9 @@ public:
     /* 0C */ virtual unk8 vfunc_0C();
     /* 10 */ virtual void vfunc_10(VecFx32 *param1);
     /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual bool vfunc_18(unk32 param1);
-    /* 1C */ virtual void vfunc_1C();
-    /* 20 */ virtual void vfunc_20();
+    /* 18 */ virtual bool vfunc_18(unk32 param1); // Init?
+    /* 1C */ virtual void vfunc_1C();             // Setup
+    /* 20 */ virtual void vfunc_20();             // Update?
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28();
     /* 2C */ virtual void vfunc_2C(unk32 param1);
@@ -172,7 +172,7 @@ public:
     /* 4C */ virtual ~Actor();
     /* 54 */
 
-    unk32 func_01fff5d0(unk32 param1, unk32 param2);
+    bool func_01fff5d0(unk32 param1, unk32 param2);
 
     void ResetFlags() {
         *(u32 *) this->mFlags = 0;
@@ -201,6 +201,7 @@ public:
 
     // overlay 0
     bool func_ov000_0205cbc4(u32 param1, VecFx32 *param2);
+    unk32 func_ov000_0207df88(Cylinder *param1, unk32 param2);
     unk32 func_ov000_0207e294(Cylinder *param1);
     void func_ov000_0209848c(ActorProfile *param1);
     void func_ov000_020984b0();

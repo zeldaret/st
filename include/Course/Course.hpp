@@ -94,8 +94,8 @@ enum SceneIndex_ {
     /*  75 */ SceneIndex_tekiya05      = 0x4B, // take em all on?
     /*  76 */ SceneIndex_tekiya06      = 0x4C, // take em all on?
     /*  77 */ SceneIndex_tekiya07      = 0x4D, // take em all on?
-    /*  78 */ SceneIndex_tekiya08      = 0x4E, // take em all on?
-    /*  79 */ SceneIndex_tekiya09      = 0x4F, // take em all on?
+    /*  78 */ SceneIndex_tekiya08      = 0x4E, // take em all on - fire boss
+    /*  79 */ SceneIndex_tekiya09      = 0x4F, // take em all on - sand boss
     /*  80 */ SceneIndex_demo_train    = 0x50, // title screen?
     /*  81 */ SceneIndex_e3_train      = 0x51, // ?
     /*  82 */ SceneIndex_e3_dungeon    = 0x52, // ?

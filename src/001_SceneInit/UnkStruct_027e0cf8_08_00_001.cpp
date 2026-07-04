@@ -3,8 +3,6 @@
 extern s16 data_ov001_020c2750[];
 extern s16 data_ov001_020c275e[];
 
-THUMB_BEGIN
-
 UnkStruct_027e0cf8_08_00::UnkStruct_027e0cf8_08_00(u8 bgType) :
     AdventureModeManager_1B8_Base(bgType, true, AdventureModeManager_1B8_Base_1C(0x00, 0x00, 0x100, 0xC0), true, true) {
     this->func_ov001_020bfb20();
@@ -71,5 +69,3 @@ void UnkStruct_027e0cf8_08_00::func_ov001_020bfb20() {
         Vec2s_Copy(&this->mUnk_13C[i], &this->mUnk_094[iVar2]);
     }
 }
-
-THUMB_END
