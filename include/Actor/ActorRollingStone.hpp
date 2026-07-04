@@ -28,7 +28,6 @@ public:
 
     // data_ov031_02114a5c
 
-    /* 00 */ virtual ~ActorRollingStone_104() override;                                            // func_ov031_020f8688 & ?
     /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) override; // func_ov031_020f8354
     /* 10 */ virtual void vfunc_10() override;                                                     // func_ov031_020f83e4
     /* 14 */
@@ -41,7 +40,6 @@ public:
 
     // data_ov031_02114a40
 
-    /* 00 */ virtual ~ActorRollingStone_D4() override;      // func_ov031_020f8674 & func_ov031_020f9cf4
     /* 10 */ virtual void vfunc_10(Actor *param1) override; // func_ov031_020f849c
 };
 

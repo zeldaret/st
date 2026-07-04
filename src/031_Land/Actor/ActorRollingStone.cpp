@@ -48,10 +48,6 @@ void ActorRollingStone_104::vfunc_10() {}
 // non-matching
 void ActorRollingStone_D4::vfunc_10(Actor *param1) {}
 
-ActorRollingStone_104::~ActorRollingStone_104() {}
-
-ActorRollingStone_D4::~ActorRollingStone_D4() {}
-
 // non-matching
 ActorRollingStone::ActorRollingStone() {}
 
