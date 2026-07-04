@@ -17,14 +17,14 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkRLST : public Actor {
+class ActorRollingStone : public Actor {
 public:
     /* 00 (base) */
     /* 94 */
 
-    ActorUnkRLST();
+    ActorRollingStone();
 
-    /* 4C */ virtual ~ActorUnkRLST() override;
+    /* 4C */ virtual ~ActorRollingStone() override;
 
     void func_ov031_020f8354(void);
     void func_ov031_020f83e4(void);
@@ -69,14 +69,14 @@ public:
     void func_ov031_020f9d60(void);
 };
 
-class ActorProfileUnkRLST : public ActorProfile_Derived1 {
+class ActorProfileRollingStone : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
-    ActorProfileUnkRLST();
-    ~ActorProfileUnkRLST();
+    ActorProfileRollingStone();
+    ~ActorProfileRollingStone();
 
     /* 0C */ virtual Actor *Create();
 
-    static ActorProfileUnkRLST *GetProfile();
+    static ActorProfileRollingStone *GetProfile();
 };
