@@ -118,6 +118,12 @@ public:
     void func_ov000_02097bec();
 };
 
+class Actor_38 {
+public:
+    /* 00 (base) */ STRUCT_PAD(0x00, 0x08);
+    /* 08 */ unk16 mUnk_08;
+};
+
 typedef s16 ActorState;
 #define ActorState_None -1
 
@@ -132,7 +138,7 @@ public:
     /* 2C */ unk32 mUnk_2C; // gravity?
     /* 30 */ Cylinder *mUnk_30;
     /* 34 */ Cylinder *mUnk_34;
-    /* 38 */ unk32 *mUnk_38;
+    /* 38 */ Actor_38 *mUnk_38;
     /* 3C */ Actor_9C *mUnk_3C;
     /* 40 */ Actor_C4 *mUnk_40;
     /* 44 */ u16 mUnk_44;

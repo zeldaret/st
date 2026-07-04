@@ -10,7 +10,7 @@ public:
 
     // data_ov000_020b30d0
     /* 00 */ virtual ~UnkStruct_ov031_Items_00();
-    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override; // func_ov000_020982d8
 };
 
 class UnkStruct_ov031_Items_01 {

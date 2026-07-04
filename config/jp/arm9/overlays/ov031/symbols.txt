@@ -1109,17 +1109,17 @@ _ZN19ActorProfileUnkFLEND1Ev kind:function(arm,size=0x14) addr:0x020f9d10
 _ZN24ActorProfileRollingStone10GetProfileEv kind:function(arm,size=0xc) addr:0x020f9d24
 _ZN24ActorProfileRollingStone6CreateEv kind:function(arm,size=0x24) addr:0x020f9d30
 _ZN24ActorProfileRollingStoneC1Ev kind:function(arm,size=0x44) addr:0x020f9d54
-_ZN17ActorRollingStone19func_ov031_020f8354Ev kind:function(arm,size=0x90) addr:0x020f9d98
-_ZN17ActorRollingStone19func_ov031_020f83e4Ev kind:function(arm,size=0xb8) addr:0x020f9e28
-_ZN17ActorRollingStone19func_ov031_020f849cEv kind:function(arm,size=0x44) addr:0x020f9ee0
+_ZN21ActorRollingStone_1048vfunc_0CEPK24UnkStruct_ov031_020e54d4i kind:function(arm,size=0x90) addr:0x020f9d98
+_ZN21ActorRollingStone_1048vfunc_10Ev kind:function(arm,size=0xb8) addr:0x020f9e28
+_ZN20ActorRollingStone_D48vfunc_10EP5Actor kind:function(arm,size=0x44) addr:0x020f9ee0
 _ZN17ActorRollingStoneC1Ev kind:function(arm,size=0x194) addr:0x020f9f24
-_ZN17ActorRollingStone19func_ov031_020f8674Ev kind:function(arm,size=0x14) addr:0x020fa0b8
-_ZN17ActorRollingStone19func_ov031_020f8688Ev kind:function(arm,size=0x14) addr:0x020fa0cc
-_ZN17ActorRollingStone19func_ov031_020f869cEv kind:function(arm,size=0xf0) addr:0x020fa0e0
-_ZN17ActorRollingStone19func_ov031_020f878cEv kind:function(arm,size=0x98) addr:0x020fa1d0
-_ZN17ActorRollingStone19func_ov031_020f8824Ev kind:function(arm,size=0x5c) addr:0x020fa268
+_ZN20ActorRollingStone_D4D1Ev kind:function(arm,size=0x14) addr:0x020fa0b8
+_ZN21ActorRollingStone_104D1Ev kind:function(arm,size=0x14) addr:0x020fa0cc
+_ZN17ActorRollingStone8vfunc_18Ei kind:function(arm,size=0xf0) addr:0x020fa0e0
+_ZN17ActorRollingStone8vfunc_20Ev kind:function(arm,size=0x98) addr:0x020fa1d0
+_ZN17ActorRollingStone19func_ov031_020f8824Es kind:function(arm,size=0x5c) addr:0x020fa268
 _ZN17ActorRollingStone19func_ov031_020f8880Ev kind:function(arm,size=0xc8) addr:0x020fa2c4
-_ZN17ActorRollingStone19func_ov031_020f8948Ev kind:function(arm,size=0xac) addr:0x020fa38c
+_ZN17ActorRollingStone8vfunc_2CEi kind:function(arm,size=0xac) addr:0x020fa38c
 _ZN17ActorRollingStone19func_ov031_020f89f4Ev kind:function(arm,size=0x10) addr:0x020fa438
 _ZN17ActorRollingStone19func_ov031_020f8a04Ev kind:function(arm,size=0x28) addr:0x020fa448
 _ZN17ActorRollingStone19func_ov031_020f8a2cEv kind:function(arm,size=0xc) addr:0x020fa470
@@ -1149,10 +1149,10 @@ _ZN17ActorRollingStone19func_ov031_020f9af4Ev kind:function(arm,size=0x4) addr:0
 _ZN17ActorRollingStone19func_ov031_020f9af8Ev kind:function(arm,size=0xac) addr:0x020fb53c
 _ZN17ActorRollingStone19func_ov031_020f9ba4Ev kind:function(arm,size=0x11c) addr:0x020fb5e8
 _ZN17ActorRollingStone19func_ov031_020f9cc0Ev kind:function(arm,size=0x18) addr:0x020fb704
-_ZN17ActorRollingStoneD0Ev kind:function(arm,size=0x1c) addr:0x020fb71c
-_ZN17ActorRollingStone19func_ov031_020f9cf4Ev kind:function(arm,size=0x1c) addr:0x020fb738
+_ZN21ActorRollingStone_104D0Ev kind:function(arm,size=0x1c) addr:0x020fb71c
+_ZN20ActorRollingStone_D4D0Ev kind:function(arm,size=0x1c) addr:0x020fb738
 _ZN17ActorRollingStoneD1Ev kind:function(arm,size=0x50) addr:0x020fb754
-_ZN17ActorRollingStone19func_ov031_020f9d60Ev kind:function(arm,size=0x58) addr:0x020fb7a4
+_ZN17ActorRollingStoneD0Ev kind:function(arm,size=0x58) addr:0x020fb7a4
 _ZN24ActorProfileRollingStoneD1Ev kind:function(arm,size=0x14) addr:0x020fb7fc
 _ZN21ActorProfileArrowDrop10GetProfileEv kind:function(arm,size=0xc) addr:0x020fb810
 _ZN21ActorProfileArrowDrop6CreateEv kind:function(arm,size=0x24) addr:0x020fb81c
@@ -2090,7 +2090,7 @@ __sinit_ActorUnkSWCH.cpp kind:function(arm,size=0x50) addr:0x0211344c
 __sinit_ActorUnkSWON.cpp kind:function(arm,size=0x50) addr:0x0211349c local
 __sinit_ActorUnkNORE.cpp kind:function(arm,size=0x50) addr:0x021134ec
 __sinit_ActorUnkFLEN.cpp kind:function(arm,size=0x50) addr:0x0211353c
-__sinit_ActorUnkRLST.cpp kind:function(arm,size=0x50) addr:0x0211358c
+__sinit_ActorRollingStone.cpp kind:function(arm,size=0x50) addr:0x0211358c
 __sinit_ActorItemDrop.cpp kind:function(arm,size=0x138) addr:0x021135dc local
 __sinit_ActorUnkMLCK.cpp kind:function(arm,size=0x74) addr:0x02113714
 __sinit_ActorUnkCLLT.cpp kind:function(arm,size=0x50) addr:0x02113788
@@ -2154,7 +2154,7 @@ __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x021144b0
 .p__sinit_ActorUnkSWON.cpp kind:data(word) addr:0x02114578 local
 .p__sinit_ActorUnkNORE.cpp kind:data(word) addr:0x0211457c
 .p__sinit_ActorUnkFLEN.cpp kind:data(word) addr:0x02114580
-.p__sinit_ActorUnkRLST.cpp kind:data(word) addr:0x02114584
+.p__sinit_ActorRollingStone.cpp kind:data(word) addr:0x02114584
 .p__sinit_ActorItemDrop.cpp kind:data(word) addr:0x02114588 local
 .p__sinit_ActorUnkMLCK.cpp kind:data(word) addr:0x0211458c
 .p__sinit_ActorUnkCLLT.cpp kind:data(word) addr:0x02114590
