@@ -46,6 +46,8 @@ public:
     /* 1C */
 
     unk32 func_ov000_02057f18(const void *param1);
+    unk32 func_ov000_02057f40(const void *param1);
+    const G3d_Model_14 *func_ov000_02057ee0() const;
 };
 
 class ModelRender : public ModelRenderBase {
@@ -68,6 +70,8 @@ public:
     /* 20 */ virtual void vfunc_20();
 
     void func_ov000_02057c38(unk32 param1, unk32 param2);
+    void func_ov000_02057d20(u8 numBones);
+    void func_ov000_02057d3c(G3d_BoneMtxStruct *pCacheJntAnm);
     void func_ov000_0209a7b8(void *param1, UnkSystem4_UnkCallback param2);
 };
 

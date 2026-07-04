@@ -32,7 +32,7 @@ public:
     /* 0A */ unk16 mUnk_0A;
     /* 0C */
 
-    UnkStruct_PlayerGet_64(void *param1, unk32 param2);
+    UnkStruct_PlayerGet_64(void *param1);
     ~UnkStruct_PlayerGet_64();
 
     void func_ov000_0208a100();

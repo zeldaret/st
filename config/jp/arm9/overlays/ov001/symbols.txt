@@ -232,10 +232,10 @@ _ZN18UnkStruct_027e0ce019func_ov001_020bc6e8EPK24UnkStruct_ov001_020c40f4 kind:f
 _ZN18UnkStruct_027e0ce019func_ov001_020bc6fcEPK24UnkStruct_ov001_020c40f4S2_ii kind:function(thumb,size=0x52) addr:0x020bdf44
 func_ov001_020bc750 kind:function(thumb,size=0xc) addr:0x020bdf98
 func_ov001_020bc75c kind:function(thumb,size=0xc) addr:0x020bdfa4
-func_ov001_020bc768 kind:function(thumb,size=0x20) addr:0x020bdfb0
-func_ov001_020bc788 kind:function(thumb,size=0xc) addr:0x020bdfd0
+_ZN18UnkStruct_027e0cdc7DestroyEv kind:function(thumb,size=0x20) addr:0x020bdfb0
+_ZN8InstanceI18UnkStruct_027e0cdcED2Ev kind:function(thumb,size=0xc) addr:0x020bdfd0
 _ZN20ModelRender_Derived4C1EiiP10G3d_Model_P18G3d_BoneMtxStruct_ kind:function(thumb,size=0x8c) addr:0x020bdfdc
-_ZN15PlayerActorBaseC2Ev kind:function(thumb,size=0x124) addr:0x020be068
+_ZN15PlayerActorBaseC1EiiiP21UnkStruct_027e0ce0_40 kind:function(thumb,size=0x124) addr:0x020be068
 func_ov001_020bc944 kind:function(thumb,size=0x28) addr:0x020be18c
 func_ov001_020bc96c kind:function(thumb,size=0x2e) addr:0x020be1b4
 _ZN15PlayerLinkActorC1Ev kind:function(thumb,size=0x138) addr:0x020be1e4

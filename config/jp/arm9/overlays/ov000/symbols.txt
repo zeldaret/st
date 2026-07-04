@@ -104,8 +104,8 @@ func_ov000_02059218 kind:function(arm,size=0x18) addr:0x02059218
 func_ov000_02059230 kind:function(arm,size=0x18) addr:0x02059230
 func_ov000_02059248 kind:function(arm,size=0x2c) addr:0x02059248
 func_ov000_02059274 kind:function(arm,size=0x2c) addr:0x02059274
-func_ov000_020592a0 kind:function(thumb,size=0x1c) addr:0x020592a0
-func_ov000_020592bc kind:function(arm,size=0x30) addr:0x020592bc
+_ZN11ModelRender19func_ov000_02057d20Eh kind:function(thumb,size=0x1c) addr:0x020592a0
+_ZN11ModelRender19func_ov000_02057d3cEP18G3d_BoneMtxStruct_ kind:function(arm,size=0x30) addr:0x020592bc
 func_ov000_020592ec kind:function(arm,size=0x18) addr:0x020592ec
 _ZN11ModelRender8vfunc_20Ev kind:function(arm,size=0x18) addr:0x02059304
 func_ov000_0205931c kind:function(arm,size=0x2c) addr:0x0205931c
@@ -116,10 +116,10 @@ _ZN15ModelRenderBaseD1Ev kind:function(thumb,size=0x2) addr:0x02059444
 _ZN15ModelRenderBaseD0Ev kind:function(thumb,size=0xc) addr:0x02059448
 _ZN15ModelRenderBaseD2Ev kind:function(thumb,size=0x2) addr:0x02059454
 func_ov000_02059458 kind:function(arm,size=0x8) addr:0x02059458
-func_ov000_02059460 kind:function(arm,size=0x14) addr:0x02059460
+_ZNK15ModelRenderBase19func_ov000_02057ee0Ev kind:function(arm,size=0x14) addr:0x02059460
 func_ov000_02059474 kind:function(arm,size=0x24) addr:0x02059474
 _ZN15ModelRenderBase19func_ov000_02057f18EPKv kind:function(arm,size=0x28) addr:0x02059498
-func_ov000_020594c0 kind:function(arm,size=0x34) addr:0x020594c0
+_ZN15ModelRenderBase19func_ov000_02057f40EPKv kind:function(arm,size=0x34) addr:0x020594c0
 func_ov000_020594f4 kind:function(arm,size=0x24) addr:0x020594f4
 func_ov000_02059518 kind:function(arm,size=0x28) addr:0x02059518
 func_ov000_02059540 kind:function(arm,size=0x28) addr:0x02059540
@@ -1857,7 +1857,7 @@ func_ov000_0208b22c kind:function(arm,size=0x64) addr:0x0208b22c
 func_ov000_0208b290 kind:function(arm,size=0x64) addr:0x0208b290
 func_ov000_0208b2f4 kind:function(arm,size=0xbc) addr:0x0208b2f4
 func_ov000_0208b3b0 kind:function(arm,size=0xe8) addr:0x0208b3b0
-func_ov000_0208b498 kind:function(arm,size=0x28) addr:0x0208b498
+_ZN18PlayerActorBase_5C19func_ov000_02089dc4Ev kind:function(arm,size=0x28) addr:0x0208b498
 func_ov000_0208b4c0 kind:function(arm,size=0x68) addr:0x0208b4c0
 func_ov000_0208b528 kind:function(arm,size=0x88) addr:0x0208b528
 func_ov000_0208b5b0 kind:function(arm,size=0x30) addr:0x0208b5b0
@@ -1867,7 +1867,7 @@ func_ov000_0208b648 kind:function(arm,size=0x24) addr:0x0208b648
 func_ov000_0208b66c kind:function(arm,size=0x18) addr:0x0208b66c
 func_ov000_0208b684 kind:function(arm,size=0xe0) addr:0x0208b684
 _ZN22PlayerActorBase_70_134C1Ev kind:function(arm,size=0x60) addr:0x0208b764
-_ZN22UnkStruct_PlayerGet_64C1EPii kind:function(arm,size=0x10) addr:0x0208b7c4
+_ZN22UnkStruct_PlayerGet_64C1EPv kind:function(arm,size=0x10) addr:0x0208b7c4
 func_ov000_0208b7d4 kind:function(arm,size=0x64) addr:0x0208b7d4
 _ZN22UnkStruct_PlayerGet_64D1Ev kind:function(arm,size=0x64) addr:0x0208b838
 func_ov000_0208b89c kind:function(thumb,size=0x48) addr:0x0208b89c
@@ -1954,9 +1954,9 @@ func_ov000_0208d660 kind:function(arm,size=0x24) addr:0x0208d660
 func_ov000_0208d684 kind:function(arm,size=0x10) addr:0x0208d684
 func_ov000_0208d694 kind:function(arm,size=0x14) addr:0x0208d694
 func_ov000_0208d6a8 kind:function(arm,size=0x14) addr:0x0208d6a8
-func_ov000_0208d6bc kind:function(thumb,size=0x3c) addr:0x0208d6bc
+_ZN20ModelRender_Derived3C2EiP10G3d_Model_ kind:function(thumb,size=0x3c) addr:0x0208d6bc
 func_ov000_0208d6f8 kind:function(thumb,size=0x38) addr:0x0208d6f8
-func_ov000_0208d730 kind:function(thumb,size=0x48) addr:0x0208d730
+_ZN20ModelRender_Derived319func_ov000_0208c058Ei kind:function(thumb,size=0x48) addr:0x0208d730
 func_ov000_0208d778 kind:function(arm,size=0x40) addr:0x0208d778
 func_ov000_0208d7b8 kind:function(arm,size=0x28) addr:0x0208d7b8
 func_ov000_0208d7e0 kind:function(arm,size=0x74) addr:0x0208d7e0
@@ -1977,7 +1977,7 @@ func_ov000_0208dee4 kind:function(arm,size=0x68) addr:0x0208dee4
 _ZN21PlayerActorBase_70_E4C1Ev kind:function(thumb,size=0x18) addr:0x0208df4c
 func_ov000_0208df64 kind:function(arm,size=0x6c) addr:0x0208df64
 func_ov000_0208dfd0 kind:function(thumb,size=0x1a) addr:0x0208dfd0
-func_ov000_0208dfec kind:function(thumb,size=0x4c) addr:0x0208dfec
+_ZN15PlayerActorBase19func_ov000_0208c914Ev kind:function(thumb,size=0x4c) addr:0x0208dfec
 func_ov000_0208e038 kind:function(thumb,size=0x3c) addr:0x0208e038
 func_ov000_0208e074 kind:function(arm,size=0x6c) addr:0x0208e074
 func_ov000_0208e0e0 kind:function(arm,size=0xc0) addr:0x0208e0e0
@@ -3579,7 +3579,7 @@ data_ov000_020b4328 kind:data(any) addr:0x020b4328
 data_ov000_020b432c kind:data(any) addr:0x020b432c
 data_ov000_020b4338 kind:data(any) addr:0x020b4338
 data_ov000_020b4344 kind:data(any) addr:0x020b4344
-data_ov000_020b4370 kind:data(any) addr:0x020b4370
+_ZTV20ModelRender_Derived4 kind:data(any) addr:0x020b4368
 data_ov000_020b439c kind:data(any) addr:0x020b439c
 data_ov000_020b43a0 kind:data(any) addr:0x020b43a0
 data_ov000_020b43b0 kind:data(any) addr:0x020b43b0

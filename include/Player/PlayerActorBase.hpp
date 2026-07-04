@@ -4,6 +4,7 @@
 #include "LinkList.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
+#include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
 #include "math.hpp"
 #include "types.h"
@@ -28,15 +29,24 @@ struct UnkStruct_ov000_020ab4dc {
     /* 24 */ const char mUnk_24[16];
     /* 34 */ const char mUnk_34[16];
     /* 44 */ const char mUnk_44[16];
-    /* 54 */ STRUCT_PAD(0x54, 0x9C);
+    /* 54 */ STRUCT_PAD(0x54, 0x66);
+    /* 66 */ s16 mUnk_66;
+    /* 66 */ unk16 mUnk_68;
+    /* 66 */ unk16 mUnk_6A;
+    /* 66 */ unk16 mUnk_6C;
+    /* 66 */ unk16 mUnk_6E;
+    /* 66 */ unk16 mUnk_70;
+    /* 66 */ unk16 mUnk_72;
+    /* 74 */ s16 mUnk_74;
+    /* 78 */ STRUCT_PAD(0x78, 0x9C);
     /* 9C */
 };
-extern UnkStruct_ov000_020ab4dc data_ov000_020ab4dc[PlayerCharacter_Max];
+extern const UnkStruct_ov000_020ab4dc data_ov000_020ab4dc[PlayerCharacter_Max];
 
 extern "C" G3d_Model *func_ov000_0208eadc(PlayerCharacter, unk32, bool);
 extern "C" G3d_Model *func_ov000_0208eb44(PlayerCharacter, unk32, bool);
 
-static inline bool PlayerCharacter_IsNotLink(PlayerCharacter character) {
+inline bool PlayerCharacter_IsNotLink(PlayerCharacter character) {
     bool ret = false;
 
     if (character != PlayerCharacter_Link) {
@@ -61,23 +71,27 @@ public:
     /* 00 (base) */
     /* 60 */
 
-    ModelRender_Derived3(PlayerCharacter character, G3d_Model *pModel) :
-        ModelRender(pModel) {}
+    ModelRender_Derived3(PlayerCharacter character, G3d_Model *pModel);
 
     // data_ov000_020b2b44
     /* 00 */ virtual ~ModelRender_Derived3() override {}
+
+    void func_ov000_0208c058(unk32 param1);
 };
 
 class ModelRender_Derived4 : public ModelRender_Derived3 {
 public:
     /* 00 (base) */
-    /* 60 */ STRUCT_PAD(0x60, 0xC0);
+    /* 60 */ STRUCT_PAD(0x60, 0x78);
+    /* 78 */ unk32 mUnk_78;
+    /* 7C */ unk32 mUnk_7C[9];
+    /* A0 */ unk32 mUnk_A0[7];
+    /* BC */ unk32 mUnk_BC;
     /* C0 */
 
-    ModelRender_Derived4(PlayerCharacter character, unk32 param2, G3d_Model *pModel, G3d_BoneMtxStruct *cacheJntAnm);
+    ModelRender_Derived4(PlayerCharacter character, unk32 param2, G3d_Model *pModel, G3d_BoneMtxStruct *pCacheJntAnm);
 
     // data_ov000_020b2b70
-    /* 00 */ virtual ~ModelRender_Derived4() override {}
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
 };
 
@@ -87,21 +101,34 @@ public:
     /* 60 */ STRUCT_PAD(0x60, 0xA8);
     /* A8 */
 
-    ModelRender_Derived5(PlayerCharacter character, G3d_Model *pModel, G3d_BoneMtxStruct *cacheJntAnm);
+    ModelRender_Derived5(PlayerCharacter character, G3d_Model *pModel, G3d_BoneMtxStruct *pCacheJntAnm);
 
     // data_ov093_021787e8
     /* 00 */ virtual ~ModelRender_Derived5() override {}
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
 };
 
-class PlayerActorBase_5C {
+class PlayerActorBase_38 {
 private:
+    /* 00 */ UnkStruct_PlayerGet_64 mUnk_00;
+
+public:
+    PlayerActorBase_38(void *param1) :
+        mUnk_00(param1) {
+        this->mUnk_00.mUnk_08 = 0;
+    }
+};
+
+class PlayerActorBase_5C {
+public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ void *mUnk_10;
     /* 14 */
+
+    void func_ov000_02089dc4();
 };
 
 class PlayerActorBase_70_0C {
@@ -298,11 +325,31 @@ public:
 };
 
 class PlayerActorBase_74 {
-public:
+private:
     /* 00 */ STRUCT_PAD(0x00, 0x34);
     /* 34 */
 
-    PlayerActorBase_74();
+public:
+    PlayerActorBase_74() {
+        this->func_ov001_020db190();
+    }
+
+    void func_ov001_020db190();
+};
+
+struct PlayerActorBase_78_04 {
+    STRUCT_PAD(0x00, 0x0C);
+
+    void func_ov000_0205c584(unk32 param1, unk32 param2);
+};
+
+class PlayerActorBase_78 {
+private:
+    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+    /* 0C */
+
+public:
+    void func_ov000_0205c584(volatile unk32 param1, volatile unk32 param2);
 };
 
 class PlayerActorBase {
@@ -315,9 +362,9 @@ public:
     /* 32 */ u8 mInvincibilityTimer;
     /* 33 */ u8 mInvincibilityIconTimer; // the blinking icon on top-screen
     /* 34 */ ActorRef mGrabActor;
-    /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
+    /* 38 */ PlayerActorBase_38 mUnk_38;
     /* 44 */ unk32 mUnk_44;
-    /* 48 */ unk32 mUnk_48;
+    /* 48 */ PlayerCharacter mCharacter;
     /* 4C */ unk32 mUnk_4C;
     /* 50 */ ActorGrabParams mUnk_50;
     /* 54 */ unk32 mUnk_54;
@@ -325,9 +372,15 @@ public:
     /* 5C */ PlayerActorBase_5C mUnk_5C;
     /* 70 */ PlayerActorBase_70 *mUnk_70;
     /* 74 */ PlayerActorBase_74 *mUnk_74;
-    /* 78 */ STRUCT_PAD(0x78, 0x84);
-    /* 84 */ UnkStruct_ov019_020d24c8_28_258 mUnk_84;
+    /* 78 */ PlayerActorBase_78 mUnk_78;
+    /* 84 */ UnkStruct_ov019_020d24c8_28_258_00_Derived1 mUnk_84;
+    /* 90 */ unk32 mUnk_90;
+    /* 94 */ unk32 mUnk_94;
+    /* 98 */ unk32 mUnk_98;
     /* 9C */
 
-    PlayerActorBase();
+    PlayerActorBase(PlayerCharacter character, unk32 param2, unk32 param3, UnkStruct_027e0ce0_40 *param4);
+
+    void func_ov000_0208c914();
+    void func_ov000_0208c914(int);
 };

@@ -1343,7 +1343,7 @@ from:0x020be010 kind:thumb_call_arm to:0x020592bc module:overlay(0)
 from:0x020be01e kind:thumb_call_arm to:0x02059498 module:overlay(0)
 from:0x020be038 kind:thumb_call_arm to:0x020594c0 module:overlay(0)
 from:0x020be052 kind:thumb_call to:0x0208d730 module:overlay(0)
-from:0x020be05c kind:load to:0x020b4370 module:overlay(0)
+from:0x020be05c kind:load to:0x020b4368 module:overlay(0) add:0x8
 from:0x020be060 kind:load to:0x020c3f10 module:overlay(1)
 from:0x020be064 kind:load to:0x020c3ea0 module:overlay(1)
 from:0x020be0a8 kind:thumb_call_arm to:0x0208b7c4 module:overlay(0)
