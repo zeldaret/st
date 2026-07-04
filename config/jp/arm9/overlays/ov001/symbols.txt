@@ -236,8 +236,8 @@ _ZN18UnkStruct_027e0cdc7DestroyEv kind:function(thumb,size=0x20) addr:0x020bdfb0
 _ZN8InstanceI18UnkStruct_027e0cdcED2Ev kind:function(thumb,size=0xc) addr:0x020bdfd0
 _ZN20ModelRender_Derived4C1EiiP10G3d_Model_P18G3d_BoneMtxStruct_ kind:function(thumb,size=0x8c) addr:0x020bdfdc
 _ZN15PlayerActorBaseC1EiiiP21UnkStruct_027e0ce0_40 kind:function(thumb,size=0x124) addr:0x020be068
-func_ov001_020bc944 kind:function(thumb,size=0x28) addr:0x020be18c
-func_ov001_020bc96c kind:function(thumb,size=0x2e) addr:0x020be1b4
+_ZN15PlayerActorBaseD2Ev kind:function(thumb,size=0x28) addr:0x020be18c
+_ZN15PlayerActorBase19func_ov001_020bc96cEv kind:function(thumb,size=0x2e) addr:0x020be1b4
 _ZN15PlayerLinkActorC1Ev kind:function(thumb,size=0x138) addr:0x020be1e4
 _ZN19PlayerLinkActor_1B0D1Ev kind:function(thumb,size=0xc) addr:0x020be31c
 func_ov001_020bcae0 kind:function(thumb,size=0x80) addr:0x020be328
@@ -497,8 +497,8 @@ data_ov001_020c25fc kind:data(any) addr:0x020c3e50
 data_ov001_020c2624 kind:data(any) addr:0x020c3e78 local
 data_ov001_020c262e kind:data(any) addr:0x020c3e82 local
 data_ov001_020c2638 kind:data(any) addr:0x020c3e8c local
-data_ov001_020c3ea0 kind:data(any) addr:0x020c3ea0
-data_ov001_020c3f10 kind:data(any) addr:0x020c3f10
+data_ov001_020c264c kind:data(any) addr:0x020c3ea0
+data_ov001_020c26bc kind:data(any) addr:0x020c3f10
 data_ov001_020c3f90 kind:data(any) addr:0x020c3f90
 data_ov001_020c3fa4 kind:data(any) addr:0x020c3fa4
 data_ov001_020c3fb2 kind:data(any) addr:0x020c3fb2

@@ -117,6 +117,11 @@ public:
         mUnk_00(param1) {
         this->mUnk_00.mUnk_08 = 0;
     }
+
+    void Reset() {
+        this->mUnk_00.~UnkStruct_PlayerGet_64();
+        this->mUnk_00.mUnk_08 = 0;
+    }
 };
 
 class PlayerActorBase_5C {
@@ -381,7 +386,11 @@ public:
     /* 9C */
 
     PlayerActorBase(PlayerCharacter character, unk32 param2, unk32 param3, UnkStruct_027e0ce0_40 *param4);
+    ~PlayerActorBase();
 
+    // overlay 0
     void func_ov000_0208c914();
-    void func_ov000_0208c914(int);
+
+    // overlay 1
+    void func_ov001_020bc96c();
 };

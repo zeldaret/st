@@ -3,20 +3,11 @@
 #include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
-#include "Unknown/UnkStruct_027e0cdc.hpp"
 
 extern const char data_ov001_020c264c[][16];
 extern const char data_ov001_020c26bc[][16];
 extern "C" u16 *func_ov021_020ea868(int);
 extern "C" void func_ov000_0205c584(void *, int, int);
-
-void UnkStruct_027e0cdc::Destroy() {
-    if (data_027e0cdc != NULL) {
-        delete data_027e0cdc;
-    }
-}
-
-DECL_INSTANCE_DTOR(UnkStruct_027e0cdc, data_027e0cdc);
 
 ModelRender_Derived4::ModelRender_Derived4(PlayerCharacter character, unk32 param2, G3d_Model *pModel,
                                            G3d_BoneMtxStruct *pCacheJntAnm) :
@@ -78,4 +69,17 @@ PlayerActorBase::PlayerActorBase(PlayerCharacter character, unk32 param2, unk32 
         u16 temp = func_ov021_020ea868(this->mUnk_4C)[8];
         this->mUnk_84.func_ov000_0205fc20(0x78, temp, NULL, NULL);
     }
+}
+
+PlayerActorBase::~PlayerActorBase() {
+    delete this->mUnk_74;
+    delete this->mUnk_70;
+}
+
+void PlayerActorBase::func_ov001_020bc96c() {
+    STACK_PAD(0x04);
+    this->mUnk_38.Reset();
+    this->mUnk_5C.func_ov000_02089dc4();
+    new(this->mUnk_74) PlayerActorBase_74();
+    this->mGrabActor.Reset();
 }
