@@ -1,21 +1,9 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "global.h"
 #include "types.h"
-
-class ActorUnkRLST_C4 : public Actor_C4 {
-public:
-    ActorUnkRLST_C4(Actor *param1);
-
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-};
 
 class ActorRollingStone : public Actor {
 public:
@@ -26,47 +14,47 @@ public:
 
     /* 4C */ virtual ~ActorRollingStone() override;
 
-    void func_ov031_020f8354(void);
-    void func_ov031_020f83e4(void);
-    void func_ov031_020f849c(void);
-    void func_ov031_020f8674(void);
-    void func_ov031_020f8688(void);
-    void func_ov031_020f869c(void);
-    void func_ov031_020f878c(void);
-    void func_ov031_020f8824(void);
-    void func_ov031_020f8880(void);
-    void func_ov031_020f8948(void);
-    void func_ov031_020f89f4(void);
-    void func_ov031_020f8a04(void);
-    void func_ov031_020f8a2c(void);
-    void func_ov031_020f8a38(void);
-    void func_ov031_020f8a3c(void);
-    void func_ov031_020f8a58(void);
-    void func_ov031_020f8b58(void);
-    void func_ov031_020f8bc4(void);
-    void func_ov031_020f8de8(void);
-    void func_ov031_020f8ed4(void);
-    void func_ov031_020f8f0c(void);
-    void func_ov031_020f8f10(void);
-    void func_ov031_020f8f30(void);
-    void func_ov031_020f9018(void);
-    void func_ov031_020f9050(void);
-    void func_ov031_020f916c(void);
-    void func_ov031_020f91ac(void);
-    void func_ov031_020f9250(void);
-    void func_ov031_020f92cc(void);
-    void func_ov031_020f9340(void);
-    void func_ov031_020f93bc(void);
-    void func_ov031_020f9494(void);
-    void func_ov031_020f9554(void);
-    void func_ov031_020f97cc(void);
-    void func_ov031_020f98e4(void);
-    void func_ov031_020f9af4(void);
-    void func_ov031_020f9af8(void);
-    void func_ov031_020f9ba4(void);
-    void func_ov031_020f9cc0(void);
-    void func_ov031_020f9cf4(void);
-    void func_ov031_020f9d60(void);
+    void func_ov031_020f8354();
+    void func_ov031_020f83e4();
+    void func_ov031_020f849c();
+    void func_ov031_020f8674();
+    void func_ov031_020f8688();
+    void func_ov031_020f869c();
+    void func_ov031_020f878c();
+    void func_ov031_020f8824();
+    void func_ov031_020f8880();
+    void func_ov031_020f8948();
+    void func_ov031_020f89f4();
+    void func_ov031_020f8a04();
+    void func_ov031_020f8a2c();
+    void func_ov031_020f8a38();
+    void func_ov031_020f8a3c();
+    void func_ov031_020f8a58();
+    void func_ov031_020f8b58();
+    void func_ov031_020f8bc4();
+    void func_ov031_020f8de8();
+    void func_ov031_020f8ed4();
+    void func_ov031_020f8f0c();
+    void func_ov031_020f8f10();
+    void func_ov031_020f8f30();
+    void func_ov031_020f9018();
+    void func_ov031_020f9050();
+    void func_ov031_020f916c();
+    void func_ov031_020f91ac();
+    void func_ov031_020f9250();
+    void func_ov031_020f92cc();
+    void func_ov031_020f9340();
+    void func_ov031_020f93bc();
+    void func_ov031_020f9494();
+    void func_ov031_020f9554();
+    void func_ov031_020f97cc();
+    void func_ov031_020f98e4();
+    void func_ov031_020f9af4();
+    void func_ov031_020f9af8();
+    void func_ov031_020f9ba4();
+    void func_ov031_020f9cc0();
+    void func_ov031_020f9cf4();
+    void func_ov031_020f9d60();
 };
 
 class ActorProfileRollingStone : public ActorProfile_Derived1 {
