@@ -111,7 +111,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7830(const EntranceInfo *param1) {
     if (this->mUnk_14 == 0x02 || this->mUnk_14 == 0x04) {
         this->mUnk_10 = new(HeapIndex_1) UnkStruct_027e0cd8_10();
         func_ov026_020e9208();
-    } else if (data_027e09a4->mUnk_60 == 0 && data_ov024_020d8694 != NULL) {
+    } else if (data_027e09a4->IsSceneModeAdventure() && data_ov024_020d8694 != NULL) {
         if (data_027e09a4->CurrentSceneIndex() == SceneIndex_d_main) {
             data_ov024_020d8694->func_ov024_020cb000(20);
         } else {
@@ -160,7 +160,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7a7c() {
     this->func_ov001_020b7e50();
     this->mUnk_30 = -1;
 
-    if (data_027e09a4->mUnk_60 == 0) {
+    if (data_027e09a4->IsSceneModeAdventure()) {
         this->func_ov000_02081ca0();
     }
 
@@ -267,7 +267,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7c08(const EntranceInfo *param1, const U
     this->func_ov001_020b7d64(&sceneChange);
     this->func_ov001_020b7e68(&sceneChange, 0x00);
 
-    if (data_027e09a4->mUnk_60 == 0 && data_ov024_020d8694 != NULL) {
+    if (data_027e09a4->IsSceneModeAdventure() && data_ov024_020d8694 != NULL) {
         if (data_027e09a4->CurrentSceneIndex() == SceneIndex_f_first && this->func_ov000_02081d5c() == 0) {
             data_ov024_020d8694->func_ov024_020cafd8(20);
         } else {
@@ -348,13 +348,13 @@ void UnkStruct_027e0cd8::func_ov001_020b7e68(const EntranceInfo *param1, bool pa
     gpMapObjManager->func_ov001_020bada0();
     data_0204a110.func_ov001_020bd678();
 
-    if (data_027e09a4->mUnk_60 == 0) {
+    if (data_027e09a4->IsSceneModeAdventure()) {
         data_ov024_020d8660->func_ov024_020c4ba0();
     }
 
     unk32 unk_10 = data_027e09a0->GetCourseEntry(param1->sceneIndex)->unk_10;
 
-    if (data_027e09a4->mUnk_60 == 1) {
+    if (data_027e09a4->IsSceneModeBattle()) {
         for (int i = 0; i < 4; i++) {
             UnkStruct_027e0ce0 *ptr             = data_027e0ce0;
             const UnkStruct_ov001_020c40f4 *arg = this->mUnk_0C->func_ov001_020b8a5c(i, 0x00);
@@ -387,7 +387,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7e68(const EntranceInfo *param1, bool pa
     gpMapObjManager->func_ov001_020bac9c();
     gpActorManager->func_ov001_020bafdc();
 
-    if (data_027e09a4->mUnk_60 == 0) {
+    if (data_027e09a4->IsSceneModeAdventure()) {
         SaveManager_00 *ptr = gSaveManager.mUnk_000;
         u16 auStack_18[2];
         data_027e09a0->func_ov000_02070310(param1->sceneIndex, param1->roomIndex, &auStack_18);
@@ -401,7 +401,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7e68(const EntranceInfo *param1, bool pa
 void UnkStruct_027e0cd8::func_ov001_020b803c() {
     this->mUnk_0C->vfunc_20();
 
-    if (data_027e09a4->mUnk_60 == 0 && data_ov024_020d8660 != NULL) {
+    if (data_027e09a4->IsSceneModeAdventure() && data_ov024_020d8660 != NULL) {
         data_ov024_020d8660->func_ov024_020c4cc8();
     }
 

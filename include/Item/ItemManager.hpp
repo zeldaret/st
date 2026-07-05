@@ -3,6 +3,7 @@
 #include "Item/Item.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_027e09a4.hpp"
 #include "global.h"
 #include "types.h"
 

@@ -215,6 +215,14 @@ public:
     UnkStruct_027e09a4_54_Type5(UnkStruct_027e09a4 *param1);
 };
 
+// loaded scene's game mode
+typedef s32 SceneMode;
+enum SceneMode_ {
+    SceneMode_AdventureMode = 0,
+    SceneMode_BattleMode    = 1,
+    SceneMode_TitleScreen   = 2,
+};
+
 class UnkStruct_027e09a4 : public AutoInstance<UnkStruct_027e09a4> {
 public:
     /* 00 */ EntranceInfo mUnk_00; // the infos of the current area, this isn't saved when you save the game
@@ -226,21 +234,31 @@ public:
     /* 58 */ UnkStruct_WarpUnk1 *mpWarpUnk1;
     /* 5C */ unk16 mUnk_5C;
     /* 5E */ unk16 mUnk_5E;
-    /* 60 */ unk32 mUnk_60; // related to ds download?
+    /* 60 */ SceneMode mSceneMode;
     /* 64 */ unk32 mUnk_64;
     /* 68 */
 
-    bool IsCutscene() {
-        return this->mUnk_00.isCS == true;
+    // clang-format off
+    const bool IsCutscene() const { return this->mUnk_00.isCS == true; }
+    const bool IsNotCutscene() const { return this->mUnk_00.isCS != true; }
+    const u8 CurrentCSIndex() const { return this->mUnk_00.csIndex; }
+    const SceneIndex CurrentSceneIndex() const { return this->mUnk_00.sceneIndex; }
+
+    const bool IsDarkRealm() const  {
+        return this->mUnk_00.sceneIndex <= SceneIndex_t_eviltrain3 && this->mUnk_00.sceneIndex >= SceneIndex_t_eviltrain;
     }
 
-    bool IsNotCutscene() {
-        return this->mUnk_00.isCS != true;
-    }
+    const bool IsDungeonTower() const { return this->mUnk_00.sceneIndex == SceneIndex_d_main; }
+    const bool IsPirate() const { return this->mUnk_00.sceneIndex == SceneIndex_f_pirate; }
+    const bool IsWater3() const { return this->mUnk_00.sceneIndex == SceneIndex_f_water3; }
+    const bool IsSnowdriftStation() const { return this->mUnk_00.sceneIndex == SceneIndex_f_kakushi1; }
+    const bool IsPassenger() const { return this->mUnk_00.sceneIndex == SceneIndex_f_passenger; }
 
-    u8 CurrentCSIndex() {
-        return this->mUnk_00.csIndex;
-    }
+    const bool IsSceneModeAdventure() const { return this->mSceneMode == SceneMode_AdventureMode; }
+    const bool IsSceneModeBattle() const { return this->mSceneMode == SceneMode_BattleMode; }
+    const bool IsSceneModeTitleScreen() const { return this->mSceneMode == SceneMode_TitleScreen; }
+    const bool IsSceneAdvOrTitle() const { return this->IsSceneModeAdventure() || this->IsSceneModeTitleScreen(); }
+    // clang-format on
 
     bool UnkCheck(unk32 sceneIndex) {
         switch (sceneIndex) {
@@ -275,35 +293,7 @@ public:
         return result;
     }
 
-    SceneIndex CurrentSceneIndex() {
-        return this->mUnk_00.sceneIndex;
-    }
-
-    bool IsDarkRealm() {
-        return this->mUnk_00.sceneIndex <= SceneIndex_t_eviltrain3 && this->mUnk_00.sceneIndex >= SceneIndex_t_eviltrain;
-    }
-
-    bool IsDungeonTower() {
-        return this->mUnk_00.sceneIndex == SceneIndex_d_main;
-    }
-
-    bool IsPirate() {
-        return this->mUnk_00.sceneIndex == SceneIndex_f_pirate;
-    }
-
-    bool IsWater3() {
-        return this->mUnk_00.sceneIndex == SceneIndex_f_water3;
-    }
-
-    bool IsSnowdriftStation() {
-        return this->mUnk_00.sceneIndex == SceneIndex_f_kakushi1;
-    }
-
-    bool IsPassenger() {
-        return this->mUnk_00.sceneIndex == SceneIndex_f_passenger;
-    }
-
-    UnkStruct_027e09a4(unk32 param1);
+    UnkStruct_027e09a4(SceneMode mode);
     ~UnkStruct_027e09a4();
 
     // itcm

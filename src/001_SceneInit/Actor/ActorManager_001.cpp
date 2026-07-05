@@ -94,7 +94,7 @@ void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
     int iVar5 = data_027e09a0->func_ov000_020702a8(data_027e09a4->CurrentSceneIndex())->mUnk_20;
 
     s32 allocCount;
-    if (data_027e09a4->mUnk_60 == 0) {
+    if (data_027e09a4->IsSceneModeAdventure()) {
         allocCount = aligned0A + 0x40;
     } else {
         allocCount = aligned0A + 0x80;
@@ -111,8 +111,7 @@ void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
     this->mUnk_08 = this->mActorTable;
     data_0204999c.func_ov001_020ba588(aligned08 + iVar5, 0x100);
 
-    // it's 2 when we are on the title screen and 0 during normal gameplay, is it the game mode ?
-    if (data_027e09a4->mUnk_60 != 2) {
+    if (!data_027e09a4->IsSceneModeTitleScreen()) {
         if (data_027e09a4->IsLand() != 0) {
             unk32 iVar5 = data_027e09a4->CurrentSceneIndex();
             OverlayManager *pMgr;
@@ -200,7 +199,7 @@ void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
     }
 
     // 1 for battle mode
-    if (data_027e09a4->mUnk_60 == 1) {
+    if (data_027e09a4->IsSceneModeBattle()) {
         func_ov021_020f8818();
     }
 }
@@ -236,7 +235,7 @@ void ActorManager::func_ov001_020bb488() {
         }
     }
 
-    if (data_027e09a4->mUnk_60 == 1) {
+    if (data_027e09a4->IsSceneModeBattle()) {
         data_027e0cf4->func_ov021_020f8cdc();
     }
 
@@ -269,7 +268,7 @@ void ActorManager::func_ov001_020bb548() {
         }
     }
 
-    if (data_027e09a4->mUnk_60 == 1) {
+    if (data_027e09a4->IsSceneModeBattle()) {
         ActorManager::func_ov001_020bb824();
     }
 }
@@ -301,7 +300,7 @@ void ActorManager::func_ov001_020bb630() {
         piVar3 = data_ov000_020b539c_eur.func_ov000_02073e8();
     }
 
-    if (data_027e09a4->mUnk_60 == 1) {
+    if (data_027e09a4->IsSceneModeBattle()) {
         data_027e0cf4->func_ov021_020f8d20();
     }
 }

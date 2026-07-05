@@ -1666,7 +1666,7 @@ func_ov000_02082748 kind:function(arm,size=0x14) addr:0x02082748
 func_ov000_0208275c kind:function(arm,size=0xa8) addr:0x0208275c
 func_ov000_02082804 kind:function(arm,size=0xc8) addr:0x02082804
 func_ov000_020828cc kind:function(arm,size=0xfc) addr:0x020828cc
-func_ov000_020829c8 kind:function(thumb,size=0x1a) addr:0x020829c8
+_ZN18UnkStruct_027e0cdc6CreateEP21UnkStruct_027e0ce0_30 kind:function(thumb,size=0x1a) addr:0x020829c8
 func_ov000_020829e4 kind:function(thumb,size=0x14) addr:0x020829e4
 func_ov000_020829f8 kind:function(arm,size=0x10) addr:0x020829f8
 func_ov000_02082a08 kind:function(arm,size=0x10) addr:0x02082a08
@@ -1847,8 +1847,8 @@ _ZN19func_ov000_02089848D1Ev kind:function(arm,size=0x2c) addr:0x02089848
 _ZN19func_ov000_02089874D0Ev kind:function(arm,size=0x34) addr:0x02089874
 _ZN19func_ov000_020898a8D2Ev kind:function(arm,size=0x2c) addr:0x020898a8
 func_ov000_020898d4 kind:function(arm,size=0x4) addr:0x020898d4
-func_ov000_020898d8 kind:function(arm,size=0x24) addr:0x020898d8
-func_ov000_020898fc kind:function(arm,size=0x14) addr:0x020898fc
+_ZN21UnkStruct_027e0ce0_20C1Ev kind:function(arm,size=0x24) addr:0x020898d8
+_ZN21UnkStruct_027e0ce0_20D1Ev kind:function(arm,size=0x14) addr:0x020898fc
 func_ov000_02089910 kind:function(arm,size=0x2c) addr:0x02089910
 func_ov000_0208993c kind:function(arm,size=0x4c) addr:0x0208993c
 _ZN18PlayerLinkActor_A4C1EP15PlayerActorBaseP18PlayerLinkActor_A0 kind:function(thumb,size=0xa) addr:0x02089988
@@ -1873,15 +1873,15 @@ _ZN22UnkStruct_PlayerGet_64C1EPv kind:function(arm,size=0x10) addr:0x0208a0f0
 func_ov000_0208a100 kind:function(arm,size=0x64) addr:0x0208a100
 _ZN22UnkStruct_PlayerGet_64D1Ev kind:function(arm,size=0x64) addr:0x0208a164
 func_ov000_0208a1c8 kind:function(thumb,size=0x48) addr:0x0208a1c8
-func_ov000_0208a210 kind:function(thumb,size=0x8) addr:0x0208a210
-func_ov000_0208a218 kind:function(thumb,size=0x36) addr:0x0208a218
+_ZN23UnkStruct_027e0ce0_BaseC2Ev kind:function(thumb,size=0x8) addr:0x0208a210
+_ZN18UnkStruct_027e0ce019func_ov000_0208a218EP13InvImportData kind:function(thumb,size=0x36) addr:0x0208a218
 func_ov000_0208a250 kind:function(thumb,size=0x74) addr:0x0208a250
 func_ov000_0208a2c4 kind:function(arm,size=0x54) addr:0x0208a2c4
 _ZN18UnkStruct_027e0ce019func_ov000_0208a318Eiii kind:function(arm,size=0x74) addr:0x0208a318
 func_ov000_0208a38c kind:function(arm,size=0x30) addr:0x0208a38c
 func_ov000_0208a3bc kind:function(arm,size=0x328) addr:0x0208a3bc
 func_ov000_0208a6e4 kind:function(arm,size=0x48) addr:0x0208a6e4
-func_ov000_0208a72c kind:function(thumb,size=0xe) addr:0x0208a72c
+_ZN37UnkStruct_027e0ce0_40_Base_94_50_BaseC2EiiP12ActorRefElemi kind:function(thumb,size=0xe) addr:0x0208a72c
 func_ov000_0208a73c kind:function(arm,size=0x68) addr:0x0208a73c
 func_ov000_0208a7a4 kind:function(arm,size=0x28) addr:0x0208a7a4
 func_ov000_0208a7cc kind:function(arm,size=0x60) addr:0x0208a7cc
@@ -1896,7 +1896,7 @@ func_ov000_0208ad14 kind:function(arm,size=0xa0) addr:0x0208ad14
 func_ov000_0208adb4 kind:function(arm,size=0x88) addr:0x0208adb4
 func_ov000_0208ae3c kind:function(arm,size=0x48) addr:0x0208ae3c
 func_ov000_0208ae84 kind:function(arm,size=0x14) addr:0x0208ae84
-func_ov000_0208ae98 kind:function(thumb,size=0x4c) addr:0x0208ae98
+_ZN34UnkStruct_027e0ce0_40_Base_94_BaseC2Ei kind:function(thumb,size=0x4c) addr:0x0208ae98
 _ZN29UnkStruct_027e0ce0_40_Base_9419func_ov000_0208aee4Ev kind:function(thumb,size=0x28) addr:0x0208aee4
 func_ov000_0208af0c kind:function(arm,size=0x1fc) addr:0x0208af0c
 func_ov000_0208b108 kind:function(arm,size=0x7c) addr:0x0208b108
@@ -3577,7 +3577,7 @@ data_ov000_020b2b10 kind:data(any) addr:0x020b2b10
 data_ov000_020b2b1c kind:data(any) addr:0x020b2b1c
 data_ov000_020b2b28 kind:data(any) addr:0x020b2b28
 data_ov000_020b2b2c kind:data(any) addr:0x020b2b2c
-data_ov000_020b2b38 kind:data(any) addr:0x020b2b38
+_ZTV21UnkStruct_027e0ce0_0C kind:data(any) addr:0x020b2b30
 data_ov000_020b2b44 kind:data(any) addr:0x020b2b44
 _ZTV20ModelRender_Derived4 kind:data(any) addr:0x020b2b68
 data_ov000_020b2b9c kind:data(any) addr:0x020b2b9c
