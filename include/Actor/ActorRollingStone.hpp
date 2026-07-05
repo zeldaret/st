@@ -68,7 +68,7 @@ public:
     /* 138 */ unk16 mUnk_138;
     /* 13C */ Cylinder mUnk_13C;
     /* 14C */ unk32 mUnk_14C;
-    /* 150 */ unk16 mUnk_150;
+    /* 150 */ u16 mUnk_150;
     /* 152 */ u16 mUnk_152;
     /* 154 */ unk16 mUnk_154;
     /* 156 */ unk16 mUnk_156;
@@ -85,6 +85,15 @@ public:
     /* 20 */ virtual void vfunc_20() override;             // func_ov031_020f878c
     /* 2C */ virtual void vfunc_2C(unk32 param1) override; // func_ov031_020f8948
     /* 54 */
+
+    bool IsInternalTimerOut() {
+        if ((u32) this->mUnk_150 < (u32) this->mUnk_152) {
+            ++this->mUnk_150;
+            return false;
+        }
+
+        return true;
+    }
 
     void SetState(ActorState state);
     void func_ov031_020f8880();

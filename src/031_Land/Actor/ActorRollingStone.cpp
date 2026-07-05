@@ -5,6 +5,7 @@
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
+#include "Unknown/UnkStruct_027e0d8c.hpp"
 #include "limits.h"
 
 extern "C" unk32 data_ov000_020aecf8;
@@ -269,13 +270,61 @@ void ActorRollingStone::func_ov031_020f8f10() {
 }
 
 // non-matching
-void ActorRollingStone::func_ov031_020f8f30() {}
-// non-matching
-void ActorRollingStone::func_ov031_020f9018() {}
+void ActorRollingStone::func_ov031_020f8f30() {
+    if (this->mUnk_5C.mUnk_1A[0] != 0x0 && !this->func_ov000_02098a60(0x0)) {
+        return;
+    }
+
+    if (!this->IsInternalTimerOut()) {
+        return;
+    }
+    ActorParams sp14;
+    sp14.mUnk_28 = 0x0;
+    sp14.func_ov000_020975f8();
+
+    sp14.mUnk_28 = this->mRef;
+    VecFx32 vec  = this->mPos;
+    VecFx32_Copy(&vec, &sp14.mInitialPos);
+
+    sp14.mInitialAngle = this->mAngle;
+    sp14.mParams[0]    = 0x1;
+
+    ActorRef ref;
+    this->func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_RLST, &sp14, 0x0);
+    this->mUnk_150 = 0;
+    this->mUnk_152 = this->mUnk_5C.mParams[1];
+}
+
+void ActorRollingStone::func_ov031_020f9018() {
+    this->mUnk_2C = 0x0;
+
+    fx32 angle = ((u32) (this->mAngle + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
+    if (angle == 0x1 || angle == 0x3) {
+        this->mVel.y = FLOAT_TO_FX32(0.0f);
+        this->mVel.z = FLOAT_TO_FX32(0.0f);
+    } else {
+        this->mVel.x = FLOAT_TO_FX32(0.0f);
+        this->mVel.y = FLOAT_TO_FX32(0.0f);
+    }
+}
+
 // non-matching
 void ActorRollingStone::func_ov031_020f9050() {}
-// non-matching
-void ActorRollingStone::func_ov031_020f916c() {}
+
+void ActorRollingStone::func_ov031_020f916c() {
+    this->mUnk_2C = 0x0;
+    this->mVel.x  = FLOAT_TO_FX32(0.0f);
+    this->mVel.y  = FLOAT_TO_FX32(0.0f);
+    this->mVel.z  = FLOAT_TO_FX32(0.0f);
+    this->mUnk_44 = 0xBF;
+
+    if (!this->mUnk_159) {
+        return;
+    }
+
+    data_027e0d8c->func_ov093_02166220();
+}
+
 // non-matching
 void ActorRollingStone::func_ov031_020f91ac() {}
 // non-matching
