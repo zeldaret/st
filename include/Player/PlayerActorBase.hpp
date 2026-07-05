@@ -357,10 +357,24 @@ public:
     void func_ov000_0205c584(volatile unk32 param1, volatile unk32 param2);
 };
 
+class PlayerLinkActor_9C_34 {
+private:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ VecFx32 mUnk_04;
+    /* 10 */ VecFx32 mUnk_10;
+
+public:
+    void func_ov000_0208efd0(VecFx32 *pVec);
+};
+
 class PlayerLinkActor_9C {
 public:
     /* 000 (vtable) */
-    /* 004 */ STRUCT_PAD(0x04, 0x154);
+    /* 004 */ STRUCT_PAD(0x04, 0x34);
+    /* 034 */ PlayerLinkActor_9C_34 mUnk_34;
+    /* 004 */ STRUCT_PAD(0x50, 0xF4);
+    /* 0F4 */ unk32 mUnk_0F4;
+    /* 0F8 */ STRUCT_PAD(0xF8, 0x154);
     /* 154 */
 
     PlayerLinkActor_9C(UnkStruct_027e0ce0_40 *param1, u32 rawGrabParams, PlayerCharacter character);
@@ -375,7 +389,10 @@ public:
     /* 0C */ VecFx32 mPrevPos;
     /* 18 */ VecFx32 mVel;
     /* 24 */ VecFx32 mAccel;
-    /* 30 */ u16 mAngle;
+    /* 30 */ union {
+        u16 mAngle;
+        UnkStruct_func_ov001_020bbe18 mAngleStruct;
+    };
     /* 32 */ u8 mInvincibilityTimer;
     /* 33 */ u8 mInvincibilityIconTimer; // the blinking icon on top-screen
     /* 34 */ ActorRef mGrabActor;
@@ -399,8 +416,11 @@ public:
     ~PlayerActorBase();
 
     // overlay 0
+    void func_ov000_0208c8f8(VecFx32 *pVec);
     void func_ov000_0208c914();
+    void func_ov000_0208d3fc();
+    void func_ov000_0208d7f0(bool param1);
 
     // overlay 1
-    void func_ov001_020bc96c();
+    void func_ov001_020bc96c(); // ResetState? or just Reset? idk
 };

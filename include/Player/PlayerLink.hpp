@@ -74,31 +74,49 @@ public:
     /* 94 */
 
     PlayerLinkActor_A0(unk32 param1, UnkStruct_027e0ce0_40 *param2, PlayerActorBase *pPlayer, PlayerLinkActor_9C *param4);
+    ~PlayerLinkActor_A0();
+
+    // overlay 0
+    u32 func_ov000_02093718();
+    u8 func_ov000_0209378c(); // bool?
+
+    // overlay 1
+    void func_ov001_020bd2e0();
+    void func_ov001_020bd358();
+    void func_ov001_020bd388(bool param1, bool param2);
 };
 
 class PlayerLinkActor_A4 {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk8 mUnk_08;
+    /* 08 */ bool mUnk_08;
     /* 09 */ unk8 mUnk_09;
     /* 0A */ unk8 mUnk_0A;
     /* 0B */ unk8 mUnk_0B;
     /* 0C */
 
     PlayerLinkActor_A4(PlayerActorBase *pPlayer, PlayerLinkActor_A0 *param2);
+    ~PlayerLinkActor_A4();
 };
 
 class PlayerLinkActor_134 {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ UnkStruct_PlayerGet_ec mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */
 
-    PlayerLinkActor_134() {
-        this->mUnk_00 = 0;
+    PlayerLinkActor_134() :
+        mUnk_00(NULL) {
         this->mUnk_04 = 0;
     }
+
+    ~PlayerLinkActor_134() {
+        this->func_ov031_020db0fc();
+    }
+
+    // overlay 31
+    void func_ov031_020db0fc();
 };
 
 class PlayerLinkActor_1B0 : public UnkSystem7 {
@@ -109,33 +127,40 @@ public:
     /* 0C */
 
     PlayerLinkActor_1B0();
-    ~PlayerLinkActor_1B0();
+    // ~PlayerLinkActor_1B0() {}
 };
 
 class PlayerLinkActor : public PlayerActorBase {
 public:
     /* 000 (base) */
-    /* 094 */ unk32 mUnk_94;
-    /* 098 */ unk32 mUnk_98;
-    /* 09C */ PlayerLinkActor_9C *mUnk_9C;
-    /* 0A0 */ PlayerLinkActor_A0 *mUnk_A0;
-    /* 0A4 */ PlayerLinkActor_A4 mUnk_A4;
-    /* 0B0 */ u32 mUnk_B0;
-    /* 0B4 */ bool mUnk_B4;
-    /* 0B5 */ bool mUnk_B5;
-    /* 0B6 */ bool mUnk_B6;
-    /* 0B7 */ bool mUnk_B7;
-    /* 0B8 */ bool mUnk_B8;
-    /* 0B9 */ bool mUnk_B9;
-    /* 0BA */ bool mUnk_BA;
-    /* 0BB */ bool mUnk_BB;
-    /* 0BC */ CellAnimObject mUnk_BC;
+    /* 094 */ bool *mUnk_094;
+    /* 098 */ unk32 mUnk_098;
+    /* 09C */ PlayerLinkActor_9C *mUnk_09C;
+    /* 0A0 */ PlayerLinkActor_A0 *mUnk_0A0;
+    /* 0A4 */ PlayerLinkActor_A4 mUnk_0A4;
+    /* 0B0 */ u32 mUnk_0B0;
+    /* 0B4 */ bool mUnk_0B4;
+    /* 0B5 */ bool mUnk_0B5;
+    /* 0B6 */ bool mUnk_0B6;
+    /* 0B7 */ bool mUnk_0B7;
+    /* 0B8 */ bool mUnk_0B8;
+    /* 0B9 */ bool mUnk_0B9;
+    /* 0BA */ bool mUnk_0BA;
+    /* 0BB */ bool mUnk_0BB;
+    /* 0BC */ CellAnimObject mUnk_0BC;
     /* 134 */ PlayerLinkActor_134 *mUnk_134;
     /* 138 */ CellAnimObject mUnk_138; // sanctuary link icon animation
     /* 1B0 */ PlayerLinkActor_1B0 mUnk_1B0[3];
     /* 1D4 */
 
-    PlayerLinkActor(unk32 param1, unk32 param2, UnkStruct_027e0ce0_40 *param3, unk32 param4);
+    PlayerLinkActor(unk32 param1, unk32 param2, UnkStruct_027e0ce0_40 *param3, bool *param4);
+    ~PlayerLinkActor();
+
+    // overlay 1
+    void func_ov001_020bcb60(unk32 param1);
+    void func_ov001_020bcb70();
+    void func_ov001_020bcba8();
+    void func_ov001_020bcbd0(VecFx32 *pVec);
 
     // overlay 21
     void func_ov021_020ebda0();

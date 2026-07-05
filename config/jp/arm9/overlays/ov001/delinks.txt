@@ -97,6 +97,7 @@ src/001_SceneInit/Player/PlayerActorBase_001.cpp:
     .text       start:0x020bdfdc end:0x020be1e4
 
 src/001_SceneInit/Player/PlayerLinkActor_001.cpp:
+    complete
     .text       start:0x020be1e4 end:0x020be4e8
 
 src/001_SceneInit/CargoManager_001.cpp:
