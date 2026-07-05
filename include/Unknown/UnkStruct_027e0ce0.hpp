@@ -6,7 +6,7 @@
 #include "Actor/ActorRef.hpp"
 #include "Item/ItemManager.hpp"
 #include "LinkList.hpp"
-#include "Player/Player.hpp"
+#include "Player/PlayerLink.hpp"
 #include "Player/TouchControl.hpp"
 #include "Save/SaveManager.hpp"
 #include "System/SysNew.hpp"
@@ -367,9 +367,9 @@ public:
     /* 148 */ void *mUnk_148;
     /* 14C */ UnkStruct_027e0ce0_40_14C *mUnk_14C;
     /* 150 */ UnkStruct_027e0ce0_40_150 *mUnk_150;
-    /* 154 */ PlayerActor mPlayer;
+    /* 154 */ PlayerLinkActor mPlayer;
     /* 328 */ UnkStruct_027e0ce0_40_328 *mUnk_328;
-    /* 32C */ PlayerActor *mpPlayer;               // set to mPlayer
+    /* 32C */ PlayerLinkActor *mpPlayer;           // set to mPlayer
     /* 330 */ UnkStruct_027e0ce0_40_328 *mUnk_330; // set to mUnk_328
     /* 334 */ ItemFlag mEquippedItem;
     /* 338 */ bool mIsSceneTowerInteriorStairs;

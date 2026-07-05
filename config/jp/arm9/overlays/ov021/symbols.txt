@@ -45,7 +45,7 @@ _ZN30UnkStruct_027e0cd8_0C_Derived3C1EP18UnkStruct_027e0cd8 kind:function(arm,si
 func_ov021_020ec090 kind:function(arm,size=0x28) addr:0x020ec090
 _ZN19func_ov021_020ec0b8D1Ev kind:function(arm,size=0x14) addr:0x020ec0b8
 _ZN19func_ov021_020ec0ccD0Ev kind:function(arm,size=0x1c) addr:0x020ec0cc
-func_ov021_020ec0e8 kind:function(arm,size=0x14) addr:0x020ec0e8
+func_ov021_020ea868 kind:function(arm,size=0x14) addr:0x020ec0e8
 func_ov021_020ec0fc kind:function(arm,size=0x1c) addr:0x020ec0fc
 func_ov021_020ec118 kind:function(arm,size=0x40) addr:0x020ec118
 func_ov021_020ec158 kind:function(arm,size=0x28) addr:0x020ec158
@@ -85,7 +85,7 @@ func_ov021_020ed4bc kind:function(thumb,size=0x28) addr:0x020ed4bc
 func_ov021_020ed4e4 kind:function(thumb,size=0x2) addr:0x020ed4e4
 func_ov021_020ed4e8 kind:function(arm,size=0x4c) addr:0x020ed4e8
 func_ov021_020ed534 kind:function(arm,size=0xec) addr:0x020ed534
-func_ov021_020ed620 kind:function(arm,size=0x50) addr:0x020ed620
+_ZN15PlayerLinkActor19func_ov021_020ebda0Ev kind:function(arm,size=0x50) addr:0x020ed620
 func_ov021_020ed670 kind:function(arm,size=0x58) addr:0x020ed670
 func_ov021_020ed6c8 kind:function(arm,size=0x24) addr:0x020ed6c8
 func_ov021_020ed6ec kind:function(arm,size=0x178) addr:0x020ed6ec

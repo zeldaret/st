@@ -424,7 +424,9 @@ void UnkStruct_027e0cf8_0C_00::func_ov024_020cff1c() {
     this->mUnk_1B   = false;
 }
 
-UnkStruct_027e0cf8_0C::UnkStruct_027e0cf8_0C() {
+UnkStruct_027e0cf8_0C::UnkStruct_027e0cf8_0C() :
+    mUnk_150(NULL, 0),
+    mUnk_15C(NULL, 0) {
     this->mUnk_168.x = 0;
     this->mUnk_168.y = 0;
     this->mUnk_16C   = 0;

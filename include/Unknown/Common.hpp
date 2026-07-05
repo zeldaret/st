@@ -218,14 +218,17 @@ struct UnkStruct_ov019_020d24c8_28_258_00 {
     /* 04 */ unk32 mUnk_04;
     /* 08 */
 
-    UnkStruct_ov019_020d24c8_28_258_00() {
-        this->mUnk_00 = NULL;
-        this->mUnk_04 = 0;
-    }
+    UnkStruct_ov019_020d24c8_28_258_00() {}
 
     UnkStruct_ov019_020d24c8_28_258_00(void *param1, unk32 param2) :
         mUnk_00(param1),
         mUnk_04(param2) {}
+
+    void Init() {
+        this->mUnk_00 = NULL;
+        this->mUnk_04 = 0;
+    }
+
     void func_ov000_0205fc20(unk32 param1, unk32 param2, void *param3, void *param4);
 };
 
@@ -233,6 +236,9 @@ struct UnkStruct_ov019_020d24c8_28_258_00_Derived1 : public UnkStruct_ov019_020d
     /* 00 (base) */
     /* 08 */ unk32 mUnk_08;
     /* 0C */
+
+    UnkStruct_ov019_020d24c8_28_258_00_Derived1() :
+        UnkStruct_ov019_020d24c8_28_258_00(NULL, 0) {}
 };
 
 class UnkStruct_ov019_020d24c8_28_258 : public UnkStruct_ov019_020d24c8_28_258_00 {
@@ -248,12 +254,14 @@ public:
     /* 16 */ unk16 mUnk_16;
     /* 18 */
 
-    UnkStruct_ov019_020d24c8_28_258() {
+    UnkStruct_ov019_020d24c8_28_258() :
+        UnkStruct_ov019_020d24c8_28_258_00(NULL, 0) {
         this->mPos.x = 0;
         this->mPos.y = 0;
     };
 
-    UnkStruct_ov019_020d24c8_28_258(s16 param1, unk32 param2) {
+    UnkStruct_ov019_020d24c8_28_258(s16 param1, unk32 param2) :
+        UnkStruct_ov019_020d24c8_28_258_00(NULL, 0) {
         this->UnknownAction(param1, param2);
     }
 
@@ -1219,4 +1227,13 @@ public:
 
     // data_ov000_020b24c4
     /* 00 */ virtual void vfunc_00();
+};
+
+class UnkStruct_PlayerGet_74_base {
+public:
+    /* 00 (vtable) */
+
+    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3);
+
+    UnkStruct_PlayerGet_74_base();
 };

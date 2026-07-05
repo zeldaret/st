@@ -34,6 +34,15 @@ typedef union VecFx32 {
         /* 0c */
     };
     fx32 coords[3];
+
+//! TODO: figure out a better way...
+#ifdef VECFX32_CTORS
+    VecFx32(fx32 _x, fx32 _y, fx32 _z) :
+        x(_x),
+        y(_y),
+        z(_z) {}
+    VecFx32() {}
+#endif
 } VecFx32;
 
 typedef union MtxFx22 {
