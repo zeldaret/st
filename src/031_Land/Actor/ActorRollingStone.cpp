@@ -78,7 +78,8 @@ ActorRollingStone::ActorRollingStone() :
     mUnk_159(false),
     mUnk_15A(-0x1),
     mUnk_15B(0x0) {
-    this->mUnk_4A[1] = true, this->mUnk_B0.mUnk_24 = true;
+    this->mUnk_4A[1]      = true;
+    this->mUnk_B0.mUnk_24 = true;
 
     this->mUnk_44 = 0x9F;
 
