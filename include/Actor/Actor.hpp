@@ -91,10 +91,26 @@ enum ActorFlag_ {
 
 class Actor_C4;
 
+struct ActorGrabParams;
+extern "C" void func_ov000_0205d500(ActorGrabParams *, unk32, unk32);
+bool PlayerCharacter_IsNotLink(s32 character);
+
 struct ActorGrabParams {
     /* 00 */ u16 unk_00;
     /* 02 */ u16 unk_02;
     /* 04 */
+
+    ActorGrabParams() {}
+
+    ActorGrabParams(unk32 param2, unk32 param3) {
+        ActorGrabParams local_1c;
+        func_ov000_0205d500(&local_1c, param3, param2);
+        *this = local_1c;
+    }
+
+    void operator=(ActorGrabParams &from) {
+        *(u32 *) this = *(u32 *) &from;
+    }
 };
 
 class Actor_9C {

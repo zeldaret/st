@@ -70,6 +70,7 @@ src/001_SceneInit/Item/ItemManager_001.cpp:
     .text       start:0x020bb87c end:0x020bbac4
 
 src/001_SceneInit/Player/PlayerActorBase_70_001.cpp:
+    complete
     .text       start:0x020bbac4 end:0x020bbe64
 
 src/001_SceneInit/UnkStruct_027e0ce0_30_001.cpp:
@@ -87,8 +88,17 @@ src/001_SceneInit/code_020bc2c8_001.cpp:
 src/001_SceneInit/UnkStruct_027e0ce0_001.cpp:
     .text       start:0x020bc34c end:0x020bc768
 
-src/001_SceneInit/Player/Player_001.cpp:
-    .text       start:0x020bc768 end:0x020bcca0
+src/001_SceneInit/UnkStruct_027e0cdc_001.cpp:
+    complete
+    .text       start:0x020bc768 end:0x020bc794
+
+src/001_SceneInit/Player/PlayerActorBase_001.cpp:
+    complete
+    .text       start:0x020bc794 end:0x020bc99c
+
+src/001_SceneInit/Player/PlayerLinkActor_001.cpp:
+    complete
+    .text       start:0x020bc99c end:0x020bcca0
 
 src/001_SceneInit/CargoManager_001.cpp:
     complete
