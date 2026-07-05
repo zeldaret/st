@@ -64,12 +64,63 @@ void ActorRollingStone_D4::vfunc_10(Actor *param1) {
 
 // non-matching
 ActorRollingStone::ActorRollingStone() :
+    mUnk_94(G3d_GetModelPtr(GET_PROFILE(ActorProfileRollingStone)->mUnk_3C.mUnk_50)),
     mUnk_9C(0x1),
     mUnk_B0(this),
-    mUnk_D4(this) {}
+    mUnk_D4(this),
+    mUnk_138(0x0),
+    mUnk_14C(0x0),
+    mUnk_150(0x0),
+    mUnk_152(0x0),
+    mUnk_154(0x0),
+    mUnk_156(0x0),
+    mUnk_158(true),
+    mUnk_159(false),
+    mUnk_15A(-0x1),
+    mUnk_15B(0x0) {
+    this->mUnk_4A[1] = true, this->mUnk_B0.mUnk_24 = true;
 
-// non-matching
-bool ActorRollingStone::vfunc_18(unk32 param1) {}
+    this->mUnk_44 = 0x9F;
+
+    this->mUnk_38          = &this->mUnk_A0.mUnk_00;
+    this->mUnk_38->mUnk_08 = 0x3;
+}
+
+bool ActorRollingStone::vfunc_18(unk32 param1) {
+    this->mUnk_13C.Init(FLOAT_TO_FX32(0.8f));
+
+    if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_f_flame) {
+        this->mUnk_13C.Init(FLOAT_TO_FX32(0.75f));
+    }
+
+    this->mUnk_34  = &this->mUnk_13C;
+    this->mUnk_30  = &this->mUnk_13C;
+    this->mUnk_15A = this->mUnk_5C.mUnk_0E;
+
+    this->mUnk_14C = this->mUnk_5C.mParams[0];
+
+    switch (this->mUnk_5C.mParams[0]) {
+        case 0x1:
+            this->mPos.y += 0x399A;
+            if (this->mUnk_5C.mUnk_1A[0] == 0) {
+                this->SetState(ActorRollingStoneState_2);
+                break;
+            }
+            if (!this->func_ov000_02098a60(0x0)) {
+                this->SetState(ActorRollingStoneState_0);
+                break;
+            }
+            return false;
+        case 0x2:
+            this->SetState(ActorRollingStoneState_7);
+            break;
+        case 0x0:
+        default:
+            this->SetState(ActorRollingStoneState_2);
+            break;
+    }
+    return true;
+}
 
 void ActorRollingStone::vfunc_20() {
     this->IsTimerOut();
@@ -198,8 +249,13 @@ void ActorRollingStone::func_ov031_020f8b58() {
 void ActorRollingStone::func_ov031_020f8bc4() {}
 // non-matching
 void ActorRollingStone::func_ov031_020f8de8() {}
-// non-matching
-void ActorRollingStone::func_ov031_020f8ed4() {}
+
+void ActorRollingStone::func_ov031_020f8ed4() {
+    for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_130; ptr != (void *) &this->mUnk_138; ++ptr) {
+        ptr->func_ov000_020a0334();
+    }
+    this->func_ov031_020f8880();
+}
 
 void ActorRollingStone::func_ov031_020f8f0c() {}
 

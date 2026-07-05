@@ -63,10 +63,14 @@ public:
     /* 104 */ ActorRollingStone_104 mUnk_104;
     /* 108 */ STRUCT_PAD(0x108, 0x10C);
     /* 10C */ Mat3p mUnk_10C;
-    /* 130 */ STRUCT_PAD(0x130, 0x150);
+    /* 130 */ UnkStruct_PlayerGet_ec mUnk_130[0x2];
+    /* 138 */ unk16 mUnk_138;
+    /* 13C */ Cylinder mUnk_13C;
+    /* 14C */ unk32 mUnk_14C;
     /* 150 */ unk16 mUnk_150;
-    /* 150 */ unk16 mUnk_152;
-    /* 154 */ STRUCT_PAD(0x154, 0x158);
+    /* 152 */ unk16 mUnk_152;
+    /* 154 */ unk16 mUnk_154;
+    /* 156 */ unk16 mUnk_156;
     /* 158 */ bool mUnk_158;
     /* 159 */ bool mUnk_159;
     /* 15A */ s8 mUnk_15A;
