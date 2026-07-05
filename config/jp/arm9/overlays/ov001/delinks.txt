@@ -82,6 +82,7 @@ src/001_SceneInit/UnkStruct_027e0ce0_40_Base_001.cpp:
     .text       start:0x020bd870 end:0x020bda7c
 
 src/001_SceneInit/Item/ItemManager_001.cpp:
+    complete
     .text       start:0x020bda7c end:0x020bdb10
 
 src/001_SceneInit/code_020bc2c8_001.cpp:

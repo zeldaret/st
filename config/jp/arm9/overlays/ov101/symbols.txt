@@ -1,8 +1,8 @@
 func_ov101_021847a0 kind:function(thumb,size=0x16) addr:0x021847a0
 func_ov101_021847b8 kind:function(thumb,size=0xe) addr:0x021847b8
-func_ov101_021847c8 kind:function(thumb,size=0xb8) addr:0x021847c8
-func_ov101_02184880 kind:function(thumb,size=0x5a) addr:0x02184880
-func_ov101_021848dc kind:function(thumb,size=0x2c) addr:0x021848dc
+_ZN24UnkStruct_ItemManager_20C1Ev kind:function(thumb,size=0xb8) addr:0x021847c8
+_ZN24UnkStruct_ItemManager_20D1Ev kind:function(thumb,size=0x5a) addr:0x02184880
+_ZN24UnkStruct_ItemManager_2019func_ov101_02182d5cEv kind:function(thumb,size=0x2c) addr:0x021848dc
 func_ov101_02184908 kind:function(thumb,size=0x20) addr:0x02184908
 func_ov101_02184928 kind:function(thumb,size=0x20) addr:0x02184928
 func_ov101_02184948 kind:function(thumb,size=0x20) addr:0x02184948
