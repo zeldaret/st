@@ -23,14 +23,14 @@ public:
 class ActorUnkMLCK_D8 {
 public:
     /* 00 (vtable) */
-    /* 04 */ u8 mUnk_04;
-    /* 05 */ u8 mUnk_05;
+    /* 04 */ bool mUnk_04;
+    /* 05 */ bool mUnk_05;
     /* 08 */ ActorUnkMLCK *mUnk_08;
     /* 0C */
 
     ActorUnkMLCK_D8(ActorUnkMLCK *actor) :
-        mUnk_04(0x01),
-        mUnk_05(0x01),
+        mUnk_04(true),
+        mUnk_05(true),
         mUnk_08(actor) {}
 
     /* 00 */ virtual void vfunc2_00() override; // func_ov031_020fb1b0

@@ -82,7 +82,7 @@ bool ActorUnkMLCK::vfunc_18(unk32 param1) {
 }
 
 void ActorUnkMLCK::vfunc_54(unk32 param1, unk32 param2) {
-    if (!param2) {
+    if (param2 != 0) {
         return;
     }
     this->vfunc_64(0x1);
@@ -176,7 +176,7 @@ void ActorUnkMLCK::func_ov031_020faf24() {
 
     this->mUnk_F4 = data_027e09b8->func_ov000_02073388(&stack, 0x0);
 
-    this->mUnk_D8.mUnk_04   = 0x1;
+    this->mUnk_D8.mUnk_04   = true;
     this->mUnk_D8.mUnk_05   = var1;
     ActorUnk_vfunc_B0 actor = ActorUnk_vfunc_B0();
     actor.mUnk_0C           = (u16) (this->mUnk_B8 + 0x28) | 0x10000;
@@ -193,7 +193,7 @@ void ActorUnkMLCK::func_ov031_020faf24() {
         if (var) {
             var9 = false;
         }
-        this->mUnk_E4.mUnk_04    = 0x0;
+        this->mUnk_E4.mUnk_04    = false;
         this->mUnk_E4.mUnk_05    = var9;
         ActorUnk_vfunc_B0 actor2 = ActorUnk_vfunc_B0();
         actor2.mUnk_00           = 0x1;
