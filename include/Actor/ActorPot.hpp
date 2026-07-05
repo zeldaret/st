@@ -21,7 +21,6 @@ enum ActorPotState_ {
 class UnkStruct_ov000_020b2838 {
 public:
     // data_ov000_020b2838
-
     /* 00 */ virtual void vfunc_00();             // func_ov000_0207bfe4
     /* 04 */ virtual ~UnkStruct_ov000_020b2838(); // func_ov000_0207bfe8
     /* 08 */ virtual void vfunc_08();             // func_ov000_0207c000
@@ -31,7 +30,6 @@ public:
 class UnkStruct_ov031_02113fb8 : UnkStruct_ov000_020b2838 {
 public:
     // data_ov031_02113fb8
-
     /* 00 */ virtual ~UnkStruct_ov031_02113fb8() override; // func_ov031_020f09f8 & func_ov031_020f0a14
     /* 08 */ virtual void vfunc_08() override;             // func_ov031_020f0aa8
     /* 0C */ virtual void vfunc_0C() override;             // func_ov031_020f0a38
@@ -51,7 +49,6 @@ public:
     Actor_ov031_02113fd4();
 
     // data_ov031_02113fd4
-
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;                                // func_ov031_020efd6c
     /* 20 */ virtual void vfunc_20() override;                                            // func_ov031_020f005c
     /* 24 */ virtual void vfunc_24() override;                                            // func_ov031_020f0060
@@ -59,9 +56,8 @@ public:
     /* 3C */ virtual bool Drop(ActorGrabParams grabParams, const VecFx32 *pVel) override; // func_ov031_020efe08
     /* 40 */ virtual void vfunc_40() override;                                            // func_ov031_020f02a8
     /* 44 */ virtual void vfunc_44() override;                                            // func_ov031_020f02c8
-    // /* 4C */ virtual ~Actor_ov031_02113fd4() override; // func_ov031_020f0ba8 & func_ov031_020f0bd0
-    /* 54 */ virtual void vfunc_54(); // func_ov031_020f064c
-    /* 58 */ virtual void vfunc_58(); // func_ov031_020f0654
+    /* 54 */ virtual void vfunc_54();                                                     // func_ov031_020f064c
+    /* 58 */ virtual void vfunc_58();                                                     // func_ov031_020f0654
     /* 5C */ virtual void vfunc_5C(ActorState param1) = 0;
     /* 60 */ virtual void vfunc_60(); // func_ov031_020f0090
     /* 64 */ virtual void vfunc_64(); // func_ov031_020f065c
