@@ -512,7 +512,7 @@ config.libs = [
             Object("031_Land/MapObject/MapObjectChestBase.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTREW.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTRWS.cpp"),
-            Object("031_Land/MapObject/MapObjectUnkTSUB.cpp"),
+            Object("031_Land/MapObject/MapObjectPot.cpp"),
         ]
     ),
     GameLib(
