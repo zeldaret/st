@@ -102,7 +102,7 @@ bool ActorRollingStone::vfunc_18(unk32 param1) {
 
     switch (this->mUnk_5C.mParams[0]) {
         case 0x1:
-            this->mPos.y += 0x399A;
+            this->mPos.y += FLOAT_TO_FX32(3.6f);
             if (this->mUnk_5C.mUnk_1A[0] == 0) {
                 this->SetState(ActorRollingStoneState_2);
                 break;
@@ -248,6 +248,7 @@ void ActorRollingStone::func_ov031_020f8b58() {
 
 // non-matching
 void ActorRollingStone::func_ov031_020f8bc4() {}
+
 // non-matching
 void ActorRollingStone::func_ov031_020f8de8() {}
 
@@ -295,8 +296,22 @@ void ActorRollingStone::func_ov031_020f97cc() {}
 void ActorRollingStone::func_ov031_020f98e4() {}
 // non-matching
 void ActorRollingStone::func_ov031_020f9af4() {}
+
 // non-matching
-void ActorRollingStone::func_ov031_020f9af8() {}
+void ActorRollingStone::func_ov031_020f9af8() {
+    fx32 y = this->mPos.y + 0x666;
+    fx32 x = this->mPos.x;
+    fx32 z = this->mVel.z;
+    for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_130; ptr != (void *) &this->mUnk_138; ++ptr) {
+        if (ptr->mUnk_00 != NULL) {
+            ptr->mUnk_00->mUnk_28 = x + ptr->mUnk_00->mUnk_20->mUnk_04.x;
+            ptr->mUnk_00->mUnk_2C = y + ptr->mUnk_00->mUnk_20->mUnk_04.y;
+            ptr->mUnk_00->mUnk_30 = z + ptr->mUnk_00->mUnk_20->mUnk_04.z;
+        }
+    }
+    data_027e09a8->func_ov000_02071d34(&this->mRef, 0x989F, &this->mPos, 0x0);
+}
+
 // non-matching
 bool ActorRollingStone::func_ov031_020f9ba4() {
     if (!data_027e0ce0->func_01fff1a4()) {

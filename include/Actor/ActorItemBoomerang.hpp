@@ -15,11 +15,13 @@ enum ActorItemBoomerangState_ {
 
 class ActorItemBoomerang;
 
-class ActorItemBoomerang_Unknown { // inherits from UnkStruct_PlayerGet_ec ?
+class ActorItemBoomerang_Unknown : public UnkStruct_PlayerGet_ec { // inherits from UnkStruct_PlayerGet_ec ?
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 (base) */
     /* 04 */ VecFx32 mUnk_04;
     /* 10 */
+
+    ActorItemBoomerang_Unknown();
 
     void func_ov031_020e45fc();
     void func_ov031_020e5704();

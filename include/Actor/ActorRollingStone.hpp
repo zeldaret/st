@@ -2,6 +2,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "ActorItemBoomerang.hpp"
 #include "ActorShotArrow.hpp"
 #include "Actor_Derived1.hpp"
 #include "Render/ModelRender.hpp"
@@ -68,7 +69,7 @@ public:
     /* 13C */ Cylinder mUnk_13C;
     /* 14C */ unk32 mUnk_14C;
     /* 150 */ unk16 mUnk_150;
-    /* 152 */ unk16 mUnk_152;
+    /* 152 */ u16 mUnk_152;
     /* 154 */ unk16 mUnk_154;
     /* 156 */ unk16 mUnk_156;
     /* 158 */ bool mUnk_158;
