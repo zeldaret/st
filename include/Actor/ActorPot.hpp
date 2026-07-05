@@ -46,8 +46,7 @@ public:
     /* 0EE */ STRUCT_PAD(0x0EE, 0xF0);
     /* 0F0 */ UnkStruct_ov031_02113fb8 mUnk_F0;
     /* 0F4 */ STRUCT_PAD(0xF4, 0x110);
-    /* 110 */ ModelRender_ov000_020b198c mUnk_110;
-    /* 120 */
+    /* 110 */
 
     Actor_ov031_02113fd4();
 
@@ -86,6 +85,7 @@ public:
 class ActorPot : public Actor_ov031_02113fd4 {
 public:
     /* 00 (base) */
+    /* 110 */ ModelRender_ov000_020b198c mUnk_110;
     /* 120 */
 
     ActorPot();

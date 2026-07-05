@@ -39,13 +39,8 @@ ActorProfilePot::ActorProfilePot() :
     this->mUnk_04.size = FLOAT_TO_FX32(0.5f);
 }
 
-// non-matching
-ActorPot::ActorPot() {
-    MapObjectProfile *objectProfile = data_ov000_020b5d34.GetProfileFromId(MapObjectId_TSUB);
-    BMDSectionModel *model          = objectProfile->vfunc_04()->mUnk_50;
-
-    // magic stuff to get a G3d_Model * for ModelRender
-}
+ActorPot::ActorPot() :
+    mUnk_110(G3d_GetModelPtr(data_ov000_020b5d34.GetProfileFromId(MapObjectId_TSUB)->vfunc_04()->mUnk_50), 0x01) {}
 
 bool ActorPot::vfunc_18(unk32 param1) {
     Actor_ov031_02113fd4::vfunc_18(param1);
