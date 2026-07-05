@@ -116,8 +116,6 @@ public:
     /* 00 */ virtual ~ModelRender_ov000_020b198c() override {}
     /* 08 */ virtual void vfunc_08(G3d_Model *pModel) override; // func_ov000_02057908
     /* 0C */ virtual void vfunc_0C() override;                  // func_ov000_0205793c
-
-    //
     /* 10 */ virtual void vfunc_10(VecFx32 *param1, Mat3p *param2, VecFx32 *param3) override;
     /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) override;
     /* 18 */ virtual void vfunc_18(VecFx32 *param1) override;
