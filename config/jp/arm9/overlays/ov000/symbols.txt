@@ -2025,7 +2025,7 @@ func_ov000_0208f364 kind:function(arm,size=0x10) addr:0x0208f364
 func_ov000_0208f374 kind:function(arm,size=0x58) addr:0x0208f374
 func_ov000_0208f3cc kind:function(arm,size=0x60) addr:0x0208f3cc
 func_ov000_0208f42c kind:function(arm,size=0x10) addr:0x0208f42c
-func_ov000_0208f43c kind:function(arm,size=0x10) addr:0x0208f43c
+func_ov000_0208dd60 kind:function(arm,size=0x10) addr:0x0208f43c
 func_ov000_0208f44c kind:function(arm,size=0x70c) addr:0x0208f44c
 func_ov000_0208fb58 kind:function(arm,size=0xbc) addr:0x0208fb58
 func_ov000_0208fc14 kind:function(arm,size=0x10) addr:0x0208fc14
@@ -3277,7 +3277,7 @@ data_ov000_020afc48 kind:data(any) addr:0x020b1458
 data_ov000_020b1518 kind:data(any) addr:0x020b1518
 data_ov000_020b151c kind:data(any) addr:0x020b151c
 data_ov000_020b1520 kind:data(any) addr:0x020b1520
-data_ov000_020b1524 kind:data(any) addr:0x020b1524
+data_ov000_020afd14 kind:data(any) addr:0x020b1524
 data_ov000_020b1528 kind:data(any) addr:0x020b1528
 data_ov000_020b152c kind:data(any) addr:0x020b152c
 data_ov000_020b153c kind:data(any) addr:0x020b153c

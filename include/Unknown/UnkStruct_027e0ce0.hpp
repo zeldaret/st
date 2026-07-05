@@ -407,6 +407,66 @@ public:
     void func_ov001_020bd0a4(bool param1);
 };
 
+class UnkStruct_027e0ce0_30_00 {
+private:
+    /* 00 */ VecFx32 mUnk_00;
+    /* 0C */ VecFx32 mUnk_0C;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ bool mUnk_28;
+    /* 2C */ VecFx32 *mUnk_2C;
+    /* 30 */ VecFx32 *mUnk_30;
+    /* 34 */ unk32 mUnk_34;
+    /* 38 */ unk32 *mUnk_38;
+    /* 38 */ unk32 mUnk_3C;
+    /* 40 */
+
+public:
+    UnkStruct_027e0ce0_30_00(VecFx32 *param1, VecFx32 *param2, unk32 param3, unk32 *param4, unk32 param5);
+    ~UnkStruct_027e0ce0_30_00();
+};
+
+class UnkStruct_027e0ce0_30_04 {
+private:
+    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+    /* 0C */
+
+public:
+    UnkStruct_027e0ce0_30_04();
+    ~UnkStruct_027e0ce0_30_04();
+};
+
+class UnkStruct_027e0ce0_30_08 {
+private:
+    /* 00 */ STRUCT_PAD(0x00, 0x24);
+    /* 24 */
+
+public:
+    UnkStruct_027e0ce0_30_08(unk32 param1);
+    ~UnkStruct_027e0ce0_30_08();
+};
+
+class UnkStruct_027e0ce0_30 {
+private:
+    /* 00 */ UnkStruct_027e0ce0_30_00 *mUnk_00;    // only used for adventure mode?
+    /* 04 */ UnkStruct_027e0ce0_30_04 *mUnk_04;    // only used for adventure mode?
+    /* 08 */ UnkStruct_027e0ce0_30_08 *mUnk_08[4]; // only used for battle mode?
+    /* 18 */
+
+public:
+    UnkStruct_027e0ce0_30();
+    ~UnkStruct_027e0ce0_30();
+
+    // overlay 1
+    void func_ov001_020bbf00(int index, unk32 param2);
+    void func_ov001_020bbf24(VecFx32 *param1);
+    void func_ov001_020bbf50(VecFx32 *param1);
+    void func_ov001_020bbf7c(unk32 param1, unk32 *param2, unk32 param3);
+    void func_ov001_020bbfcc();
+};
+
 // PlayerManager?
 class UnkStruct_027e0ce0 : public AutoInstance<UnkStruct_027e0ce0> {
 public:
@@ -425,7 +485,7 @@ public:
     /* 24 */ unk32 mUnk_24;
     /* 28 */ ItemManager *mUnk_28;
     /* 2C */ ItemManager *mUnk_2C; // same as above
-    /* 30 */ unk32 *mUnk_30;       // ?
+    /* 30 */ UnkStruct_027e0ce0_30 *mUnk_30;
     /* 34 */ UnkStruct_027e0ce0_34 *mUnk_34;
     /* 38 */ UnkStruct_027e0ce0_38 *mUnk_38; // pointer to data_027e0478 when on the train
     /* 3C */ UnkStruct_027e0ce0_3C *mUnk_3C; // cutscene related

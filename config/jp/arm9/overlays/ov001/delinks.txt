@@ -74,6 +74,7 @@ src/001_SceneInit/Player/PlayerActorBase_70_001.cpp:
     .text       start:0x020bd30c end:0x020bd6ac
 
 src/001_SceneInit/UnkStruct_027e0ce0_30_001.cpp:
+    complete
     .text       start:0x020bd6ac end:0x020bd870
 
 src/001_SceneInit/UnkStruct_027e0ce0_40_Base_001.cpp:
