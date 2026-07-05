@@ -7,6 +7,8 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
 
+#include "limits.h"
+
 extern "C" MapObject_10 data_ov031_02118010;
 
 extern "C" fx32 func_01ffe868(VecFx32 *, unk32, unk32);
@@ -48,8 +50,7 @@ MapObjectPot::MapObjectPot() :
 }
 
 void MapObjectPot::vfunc_04() {
-    // 0x7FFFF000 = FLOAT_TO_FX32(524286.984375f) & 0x7FFFEF80 = FLOAT_TO_FX32(524286.9843749f)
-    this->mPos.y = 0x7FFFEFFF;
+    this->mPos.y = INT_MAX - FLOAT_TO_FX32(1.0f);
     this->mPos.y = func_01ffe868(&this->mPos, 0x1, 0x0);
 }
 
