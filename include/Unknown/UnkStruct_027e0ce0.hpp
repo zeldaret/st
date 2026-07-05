@@ -242,7 +242,14 @@ public:
     /* 22 */ STRUCT_PAD(0x22, 0x60);
     /* 60 */
 
-    UnkStruct_027e0ce0_40_Base_14();
+    UnkStruct_027e0ce0_40_Base_14() :
+        mTouchControl(false) {
+        UnkStruct_027e0ce0_40_Base_14 *ptr = this;
+        ptr->mTouchControl.Init();
+        ptr->func_ov000_02096a9c();
+    }
+
+    void func_ov000_02096a9c();
 };
 
 class UnkStruct_027e0ce0_40_Base_74 {
@@ -250,15 +257,20 @@ public:
     /* 00 */ STRUCT_PAD(0x00, 0x5C);
     /* 5C */
 
-    UnkStruct_027e0ce0_40_Base_74();
+    UnkStruct_027e0ce0_40_Base_74() {
+        this->func_ov031_020e0c34();
+    }
+
+    void func_ov031_020e0c34();
 };
 
 class UnkStruct_027e0ce0_40_Base_78 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x04);
+    /* 00 */ unk32 mUnk_00;
     /* 04 */
 
     UnkStruct_027e0ce0_40_Base_78();
+    ~UnkStruct_027e0ce0_40_Base_78();
 };
 
 class UnkStruct_027e0ce0_40_Base_7C {
@@ -266,7 +278,22 @@ public:
     /* 00 */ STRUCT_PAD(0x00, 0x18);
     /* 18 */
 
-    UnkStruct_027e0ce0_40_Base_7C();
+    UnkStruct_027e0ce0_40_Base_7C(unk32 param1);
+    ~UnkStruct_027e0ce0_40_Base_7C();
+
+    // overlay 0
+    void func_ov000_020968e0();
+};
+
+struct UnkStruct_027e0ce0_40_Base_94_50 {
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ STRUCT_PAD(0x10, 0x24);
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ unk32 mUnk_28;
+    /* 2C */ unk32 *mUnk_2C;
 };
 
 class UnkStruct_027e0ce0_40_Base_94 {
@@ -279,17 +306,45 @@ public:
     /* 24 */ STRUCT_PAD(0x24, 0x48);
     /* 48 */ ActorRef mUnk_48;
     /* 4C */ unk32 mUnk_4C;
-    /* 50 */ unk32 mUnk_50;
+    /* 50 */ UnkStruct_027e0ce0_40_Base_94_50 *mUnk_50;
     /* 54 */ unk32 mUnk_54;
     /* 58 */ unk32 mUnk_58;
     /* 5C */ unk32 mUnk_5C; // seems to be the walking speed of link??
-    /* 60 */ unk32 mUnk_60;
-    /* 64 */ unk32 mUnk_64;
-    /* 68 */ unk32 mUnk_68;
+    /* 60 */ unk16 mUnk_60;
+    /* 62 */ unk16 mUnk_62;
+    /* 64 */ unk8 mUnk_64;
+    /* 65 */ unk8 mUnk_65;
+    /* 66 */ unk8 mUnk_66;
+    /* 67 */ unk8 mUnk_67;
+    /* 68 */ unk8 mUnk_68;
+    /* 69 */ unk8 mUnk_69;
+    /* 6A */ unk8 mUnk_6A;
     /* 6C */ unk32 mUnk_6C;
     /* 70 */
 
-    UnkStruct_027e0ce0_40_Base_94();
+    UnkStruct_027e0ce0_40_Base_94(unk32 param1);
+    ~UnkStruct_027e0ce0_40_Base_94();
+
+    // overlay 0
+    void func_ov000_0208aee4();
+};
+
+typedef u16 UnkFlags3;
+enum UnkFlags3_ {
+    UnkFlags3_None = 0,
+    UnkFlags3_0    = 0,
+    UnkFlags3_1    = 1,
+    UnkFlags3_2    = 2,
+    UnkFlags3_3    = 3,
+    UnkFlags3_4    = 4,
+    UnkFlags3_5    = 5,
+    UnkFlags3_6    = 6,
+    UnkFlags3_7    = 7,
+    UnkFlags3_8    = 8,
+    UnkFlags3_9    = 9,
+    UnkFlags3_10   = 10,
+    UnkFlags3_11   = 11,
+    UnkFlags3_Max  = 12,
 };
 
 class UnkStruct_027e0ce0_40_Base {
@@ -304,12 +359,15 @@ public:
     /* 078 */ UnkStruct_027e0ce0_40_Base_78 *mUnk_078;
     /* 07C */ UnkStruct_027e0ce0_40_Base_7C mUnk_07C;
     /* 094 */ UnkStruct_027e0ce0_40_Base_94 mUnk_094;
-    /* 104 */ unk16 mUnk_104; // set to 0 on idle, set to 3 when pulling out an item
+    /* 104 */ UnkFlags3 mUnk_104; // set to 0 on idle, set to 3 when pulling out an item
     /* 106 */ unk8 mUnk_106;
     /* 107 */ unk8 mUnk_107;
     /* 108 */
 
-    UnkStruct_027e0ce0_40_Base(unk32 param1, void *param2, ItemManager *param3);
+    UnkStruct_027e0ce0_40_Base(unk32 param1, void *param2, ItemManager *pItemMgr);
+    ~UnkStruct_027e0ce0_40_Base();
+
+    void func_ov001_020bc0e0(bool param1);
 };
 
 class UnkStruct_027e0ce0_40_108_Base : public LinkList<UnkStruct_027e0ce0_40_108_Base> {
@@ -487,9 +545,9 @@ public:
     /* 2C */ ItemManager *mUnk_2C; // same as above
     /* 30 */ UnkStruct_027e0ce0_30 *mUnk_30;
     /* 34 */ UnkStruct_027e0ce0_34 *mUnk_34;
-    /* 38 */ UnkStruct_027e0ce0_38 *mUnk_38; // pointer to data_027e0478 when on the train
+    /* 38 */ UnkStruct_027e0ce0_38 *mUnk_38; // pointer to data_027e0478 when on train
     /* 3C */ UnkStruct_027e0ce0_3C *mUnk_3C; // cutscene related
-    /* 40 */ UnkStruct_027e0ce0_40 *mUnk_40; // pointer to data_027e0478 when not on the train
+    /* 40 */ UnkStruct_027e0ce0_40 *mUnk_40; // pointer to data_027e0478 when on land
     /* 44 */
 
     UnkStruct_027e0ce0();

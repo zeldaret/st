@@ -78,6 +78,7 @@ src/001_SceneInit/UnkStruct_027e0ce0_30_001.cpp:
     .text       start:0x020bbe64 end:0x020bc028
 
 src/001_SceneInit/UnkStruct_027e0ce0_40_Base_001.cpp:
+    complete
     .text       start:0x020bc028 end:0x020bc234
 
 src/001_SceneInit/code_020bc234_001.cpp:
