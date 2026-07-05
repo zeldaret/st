@@ -55,7 +55,7 @@ public:
     /* 38 */ virtual bool Grab(ActorGrabParams grabParams) override;                      // func_ov031_020efdcc
     /* 3C */ virtual bool Drop(ActorGrabParams grabParams, const VecFx32 *pVel) override; // func_ov031_020efe08
     /* 40 */ virtual void vfunc_40() override;                                            // func_ov031_020f02a8
-    /* 44 */ virtual void vfunc_44() override;                                            // func_ov031_020f02c8
+    /* 44 */ virtual void vfunc_44() override;                                            // func_ov031_020f02c
     /* 54 */ virtual void vfunc_54();                                                     // func_ov031_020f064c
     /* 58 */ virtual void vfunc_58();                                                     // func_ov031_020f0654
     /* 5C */ virtual void vfunc_5C(ActorState param1) = 0;
@@ -86,10 +86,9 @@ public:
 
     ActorPot();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override; // func_ov031_020f0d04
-    /* 20 */ virtual void vfunc_20() override;             // func_ov031_020f0d80
-    /* 2C */ virtual void vfunc_2C(unk32 param1) override; // func_ov031_020f0db8
-    /* 4C */ virtual ~ActorPot() override;
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;      // func_ov031_020f0d04
+    /* 20 */ virtual void vfunc_20() override;                  // func_ov031_020f0d80
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;      // func_ov031_020f0db8
     /* 5C */ virtual void vfunc_5C(ActorState param1) override; // func_ov031_020f0d2c
 
     void func_ov031_020f0cf0();
@@ -112,7 +111,6 @@ public:
     /* 00 (base) */
 
     ActorProfilePot();
-    ~ActorProfilePot();
 
     /* 0C */ virtual Actor *Create();
 

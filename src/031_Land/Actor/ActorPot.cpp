@@ -126,6 +126,3 @@ void ActorPot::func_ov031_020f0e70() {
 void ActorPot::func_ov031_020f0f44() {
     this->func_ov031_020f04a8();
 }
-
-ActorPot::~ActorPot() {}
-ActorProfilePot::~ActorProfilePot() {}
