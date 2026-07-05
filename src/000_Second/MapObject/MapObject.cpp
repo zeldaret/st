@@ -109,7 +109,7 @@ bool MapObject::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
 
 void MapObject::vfunc_20() {}
 
-void MapObject::vfunc_24() {
+void MapObject::vfunc_24(MapObject *param1, VecFx32 param2) {
     *(u32 *) this = 0; // ????
 }
 

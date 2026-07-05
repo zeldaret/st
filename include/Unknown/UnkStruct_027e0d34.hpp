@@ -17,9 +17,12 @@ public:
     UnkStruct_027e0d34();
     ~UnkStruct_027e0d34();
 
+    // overlay 31
     bool func_ov031_020d97e4();
     bool func_ov031_020d97f4();
     void func_ov031_020d9844();
+    void func_ov031_020d994c();
+    void func_ov031_020d996c();
     bool TryItemGive(ItemId itemId);
 };
 
