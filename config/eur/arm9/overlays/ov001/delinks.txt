@@ -65,7 +65,7 @@ src/001_SceneInit/Actor/ActorManager_001.cpp:
     .rodata     start:0x020c2624 end:0x020c264c
     .data       start:0x020c2b3c end:0x020c2c70
 
-src/001_SceneInit/Item/ItemManager_001.cpp:
+src/001_SceneInit/Item/Inventory_001.cpp:
     complete
     .text       start:0x020bb87c end:0x020bbac4
 
@@ -81,7 +81,7 @@ src/001_SceneInit/UnkStruct_027e0ce0_40_Base_001.cpp:
     complete
     .text       start:0x020bc028 end:0x020bc234
 
-src/001_SceneInit/code_020bc234_001.cpp:
+src/001_SceneInit/Item/ItemManager_001.cpp:
     .text       start:0x020bc234 end:0x020bc2c8
 
 src/001_SceneInit/code_020bc2c8_001.cpp:
