@@ -84,7 +84,6 @@ public:
     /* 18 */ virtual bool vfunc_18(unk32 param1) override; // func_ov031_020f869c
     /* 20 */ virtual void vfunc_20() override;             // func_ov031_020f878c
     /* 2C */ virtual void vfunc_2C(unk32 param1) override; // func_ov031_020f8948
-    /* 4C */ virtual ~ActorRollingStone() override;        // ? & func_ov031_020f9d60
     /* 54 */
 
     void SetState(ActorState state);
@@ -125,7 +124,6 @@ public:
     /* 00 (base) */
 
     ActorProfileRollingStone();
-    ~ActorProfileRollingStone();
 
     /* 0C */ virtual Actor *Create();
 
