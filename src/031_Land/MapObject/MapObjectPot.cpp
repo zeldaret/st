@@ -31,7 +31,7 @@ MapObjectProfilePot::MapObjectProfilePot() :
     this->mUnk_0C           = 0x1000;
 }
 
-ModelRender2::ModelRender2(G3d_Model *pModel, unk8 param2) :
+ModelRender_ov000_020b198c::ModelRender_ov000_020b198c(G3d_Model *pModel, unk8 param2) :
     ModelRenderBase(pModel),
     mUnk_08(param2),
     mUnk_0A(0x0),

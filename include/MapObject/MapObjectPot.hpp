@@ -12,7 +12,7 @@ public:
     /* 00 (base) */
     /* 40 */ ActorId mUnk_40;
     /* 44 */ STRUCT_PAD(0x44, 0x48);
-    /* 48 */ ModelRender2 mUnk_48;
+    /* 48 */ ModelRender_ov000_020b198c mUnk_48;
 
     MapObjectPot();
 

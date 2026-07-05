@@ -100,7 +100,7 @@ public:
     void func_01ffc6d4(u16 angle, VecFx32 *pos);
 };
 
-class ModelRender2 : public ModelRenderBase {
+class ModelRender_ov000_020b198c : public ModelRenderBase {
 public:
     /* 00 (base) */
     /* 08 */ unk8 mUnk_08;
@@ -110,11 +110,10 @@ public:
     /* 0E */
 
     // func_ov000_020578e8
-    ModelRender2(G3d_Model *pModel, unk8 param2);
+    ModelRender_ov000_020b198c(G3d_Model *pModel, unk8 param2);
 
     // data_ov000_020b198c
-
-    /* 00 */ virtual ~ModelRender2() override {}
+    /* 00 */ virtual ~ModelRender_ov000_020b198c() override {}
     /* 08 */ virtual void vfunc_08(G3d_Model *pModel) override; // func_ov000_02057908
     /* 0C */ virtual void vfunc_0C() override;                  // func_ov000_0205793c
 
