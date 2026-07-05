@@ -122,6 +122,7 @@ class Actor_38 {
 public:
     /* 00 (base) */ STRUCT_PAD(0x00, 0x08);
     /* 08 */ unk16 mUnk_08;
+    /* 0A */
 };
 
 typedef s16 ActorState;

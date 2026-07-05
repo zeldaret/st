@@ -35,9 +35,7 @@ public:
 
 class Actor_Derived1_94 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk16 mUnk_08;
+    /* 00 */ Actor_38 mUnk_00;
     /* 0A */ unk16 mUnk_0A;
     /* 0C */
 
