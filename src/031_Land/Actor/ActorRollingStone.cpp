@@ -1,5 +1,7 @@
 #include "Actor/ActorRollingStone.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_027e09a8.hpp"
+#include "Unknown/UnkStruct_027e0cec.hpp"
 
 static PTMF<ActorRollingStone> data_ov031_02114aec[0xB] = {
     ActorRollingStone::func_ov031_020f89f4, // ActorRollingStoneState_0
@@ -45,8 +47,13 @@ bool ActorRollingStone_104::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk
 // non-matching
 void ActorRollingStone_104::vfunc_10() {}
 
-// non-matching
-void ActorRollingStone_D4::vfunc_10(Actor *param1) {}
+void ActorRollingStone_D4::vfunc_10(Actor *param1) {
+    if (param1->GetActorId() != ActorId_RLST) {
+        return;
+    }
+    this->mUnk_2C->SetState(ActorRollingStoneState_6);
+    ((ActorRollingStone *) param1)->SetState(ActorRollingStoneState_6);
+}
 
 // non-matching
 ActorRollingStone::ActorRollingStone() {}
@@ -70,7 +77,7 @@ void ActorRollingStone::vfunc_20() {
     this->func_ov031_020f97cc();
 }
 
-void ActorRollingStone::func_ov031_020f8824(ActorState state) {
+void ActorRollingStone::SetState(ActorState state) {
     this->mState           = state;
     this->mUnk_52          = 0xFFFF;
     this->mUnk_50          = 0x0;
@@ -78,8 +85,19 @@ void ActorRollingStone::func_ov031_020f8824(ActorState state) {
     CALL_PTMF(PTMF<ActorRollingStone>, data_ov031_02114aec[this->mState]);
 }
 
-// non-matching
-void ActorRollingStone::func_ov031_020f8880() {}
+void ActorRollingStone::func_ov031_020f8880() {
+    VecFx32 vec = this->mPos;
+    vec.y += FLOAT_TO_FX32(0.8f);
+
+    data_027e0cec->func_ov000_0209feac(0x8AF, &vec, 0x4, 0x0, 0x0);
+    data_027e0cec->func_ov000_0209feac(0x8B0, &vec, 0x4, 0x0, 0x0);
+    data_027e0cec->func_ov000_0209feac(0x8B1, &vec, 0x4, 0x0, 0x0);
+
+    data_027e09a8->func_ov000_02071b30(0x98A0, &this->mPos, 0x0);
+
+    this->func_ov000_020984d0();
+}
+
 // non-matching
 void ActorRollingStone::vfunc_2C(unk32 param1) {}
 // non-matching

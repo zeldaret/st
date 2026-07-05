@@ -21,6 +21,8 @@ enum ActorRollingStoneState_ {
     ActorRollingStoneState_MAX
 };
 
+class ActorRollingStone;
+
 class ActorRollingStone_104 : UnkStruct_ov031_Items_00 {
 public:
     /* 00 (vtable) */
@@ -36,7 +38,8 @@ public:
 class ActorRollingStone_D4 : UnkStruct_ov031_Items_01 {
 public:
     /* 00 (vtable) */
-    /* 04 */
+    /* 2C */ ActorRollingStone *mUnk_2C;
+    /* 30 */
 
     // data_ov031_02114a40
 
@@ -59,7 +62,7 @@ public:
     /* 4C */ virtual ~ActorRollingStone() override;        // ? & func_ov031_020f9d60
     /* 54 */
 
-    void func_ov031_020f8824(ActorState state);
+    void SetState(ActorState state);
     void func_ov031_020f8880();
     void func_ov031_020f89f4();
     void func_ov031_020f8a04();
