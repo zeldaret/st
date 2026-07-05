@@ -304,7 +304,7 @@ src/031_Land/MapObject/MapObjectUnkTRWS.cpp:
     .ctor       start:0x021145e0 end:0x021145e4
     .bss        start:0x02119be8 end:0x02119ccc
 
-src/031_Land/MapObject/MapObjectUnkTSUB.cpp:
+src/031_Land/MapObject/MapObjectPot.cpp:
     .text       start:0x02106c8c end:0x021071f8
     .init       start:0x02113f04 end:0x02113f54
     .ctor       start:0x021145e4 end:0x021145e8

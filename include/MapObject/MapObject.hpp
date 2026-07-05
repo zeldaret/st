@@ -141,7 +141,7 @@ public:
     /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2);
     /* 1C */ virtual bool vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3);
     /* 20 */ virtual void vfunc_20();
-    /* 24 */ virtual void vfunc_24();
+    /* 24 */ virtual void vfunc_24(MapObject *param1, VecFx32 param2);
     /* 28 */ virtual unk32 vfunc_28();
     /* 2C */ virtual bool vfunc_2C(VecFx32 *param1);
     /* 30 */ virtual ~MapObject();
@@ -176,7 +176,7 @@ public:
     void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3);
     void func_ov000_0209d3b4(unk32 param1, fx32 size);
     void func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_00 *param2, unk32 param3);
-    void func_ov000_0209d518(unk32 param1, unk32 param2, unk32 param3, u8 param4);
+    void func_ov000_0209d518(VecFx32 *param1, unk32 param2, unk32 param3, u8 param4);
     void func_ov000_0209d5c8(ActorRef ref);
     void func_ov000_0209d614(unk32 param1);
     bool func_ov000_0209d668();
