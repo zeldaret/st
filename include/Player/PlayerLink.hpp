@@ -2,6 +2,7 @@
 
 #include "Player/PlayerActorBase.hpp"
 
+class UnkStruct_027e0ce0_40;
 class PlayerLinkActor_A0_38;
 
 class PlayerLinkActor_A0_38_04_Base : public LinkList<PlayerLinkActor_A0_38_04_Base> {

@@ -56,7 +56,7 @@ inline bool PlayerCharacter_IsNotLink(PlayerCharacter character) {
     return ret;
 }
 
-static inline bool PlayerCharacter_IsNotLink2(PlayerCharacter character) {
+inline bool PlayerCharacter_IsNotLink2(PlayerCharacter character) {
     bool ret = true;
 
     if (character == PlayerCharacter_Link) {
