@@ -85,11 +85,8 @@ src/001_SceneInit/Item/ItemManager_001.cpp:
     complete
     .text       start:0x020bda7c end:0x020bdb10
 
-src/001_SceneInit/code_020bc2c8_001.cpp:
-    .text       start:0x020bdb10 end:0x020bdb94
-
 src/001_SceneInit/UnkStruct_027e0ce0_001.cpp:
-    .text       start:0x020bdb94 end:0x020bdfb0
+    .text       start:0x020bdb10 end:0x020bdfb0
 
 src/001_SceneInit/UnkStruct_027e0cdc_001.cpp:
     complete

@@ -206,7 +206,6 @@ config.libs = [
             Object("001_SceneInit/UnkStruct_027e0ce0_30_001.cpp"),
             Object("001_SceneInit/UnkStruct_027e0ce0_40_Base_001.cpp"),
             Object("001_SceneInit/Item/ItemManager_001.cpp"),
-            Object("001_SceneInit/code_020bc2c8_001.cpp"),
             Object("001_SceneInit/UnkStruct_027e0ce0_001.cpp"),
             Object("001_SceneInit/UnkStruct_027e0cdc_001.cpp"),
             Object("001_SceneInit/Player/PlayerActorBase_001.cpp"),
