@@ -223,7 +223,7 @@ void MapObject::func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_
     }
 }
 
-void MapObject::func_ov000_0209d518(unk32 param1, unk32 param2, unk32 param3, u8 param4) {
+void MapObject::func_ov000_0209d518(VecFx32 *param1, unk32 param2, unk32 param3, u8 param4) {
     data_027e09b4->func_01fff60c(param1, param2, param3, param4, 0, 0);
 }
 

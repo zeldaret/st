@@ -176,7 +176,7 @@ public:
     void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3);
     void func_ov000_0209d3b4(unk32 param1, fx32 size);
     void func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_00 *param2, unk32 param3);
-    void func_ov000_0209d518(unk32 param1, unk32 param2, unk32 param3, u8 param4);
+    void func_ov000_0209d518(VecFx32 *param1, unk32 param2, unk32 param3, u8 param4);
     void func_ov000_0209d5c8(ActorRef ref);
     void func_ov000_0209d614(unk32 param1);
     bool func_ov000_0209d668();

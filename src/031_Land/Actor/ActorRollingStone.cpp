@@ -1,7 +1,13 @@
 #include "Actor/ActorRollingStone.hpp"
+
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
+#include "Unknown/UnkStruct_027e09b4.hpp"
+#include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
+#include "limits.h"
+
+extern "C" unk32 data_ov000_020aecf8;
 
 static PTMF<ActorRollingStone> data_ov031_02114aec[0xB] = {
     ActorRollingStone::func_ov031_020f89f4, // ActorRollingStoneState_0
@@ -37,9 +43,10 @@ Actor *ActorProfileRollingStone::Create() {
     return new(HeapIndex_2) ActorRollingStone();
 }
 
-// non-matching
 ActorProfileRollingStone::ActorProfileRollingStone() :
-    ActorProfile_Derived1(ActorId_RLST) {}
+    ActorProfile_Derived1(ActorId_RLST) {
+    this->mUnk_04.Init(FLOAT_TO_FX32(0.8f));
+}
 
 // non-matching
 bool ActorRollingStone_104::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) {}
@@ -56,7 +63,10 @@ void ActorRollingStone_D4::vfunc_10(Actor *param1) {
 }
 
 // non-matching
-ActorRollingStone::ActorRollingStone() {}
+ActorRollingStone::ActorRollingStone() :
+    mUnk_9C(0x1),
+    mUnk_B0(this),
+    mUnk_D4(this) {}
 
 // non-matching
 bool ActorRollingStone::vfunc_18(unk32 param1) {}
@@ -98,32 +108,108 @@ void ActorRollingStone::func_ov031_020f8880() {
     this->func_ov000_020984d0();
 }
 
-// non-matching
-void ActorRollingStone::vfunc_2C(unk32 param1) {}
-// non-matching
-void ActorRollingStone::func_ov031_020f89f4() {}
-// non-matching
-void ActorRollingStone::func_ov031_020f8a04() {}
-// non-matching
-void ActorRollingStone::func_ov031_020f8a2c() {}
-// non-matching
+void ActorRollingStone::vfunc_2C(unk32 param1) {
+    if (!this->func_01fff5d0(param1, 0x0) || !this->mUnk_158) {
+        return;
+    }
+    VecFx32 sp18;
+    VecFx32_Init(this->mPos.x, this->mPos.y + FLOAT_TO_FX32(0.8f), this->mPos.z, &sp18);
+
+    VecFx32 spC;
+    VecFx32_Init(FLOAT_TO_FX32(1.0f), FLOAT_TO_FX32(1.0f), FLOAT_TO_FX32(1.0f), &spC);
+
+    this->mUnk_94.vfunc_10(&spC, &this->mUnk_10C, &sp18);
+
+    data_027e09b4->func_01fff60c(&this->mPos, 0x99A, 0x99A, 0x1F, 0x0, 0x0);
+}
+
+void ActorRollingStone::func_ov031_020f89f4() {
+    this->mUnk_2C  = 0x0;
+    this->mUnk_158 = false;
+}
+
+void ActorRollingStone::func_ov031_020f8a04() {
+    if (!this->func_ov000_02098a60(0x0)) {
+        return;
+    }
+    this->SetState(ActorRollingStoneState_2);
+}
+
+void ActorRollingStone::func_ov031_020f8a2c() {
+    this->mUnk_158 = true;
+}
+
 void ActorRollingStone::func_ov031_020f8a38() {}
+
+void ActorRollingStone::func_ov031_020f8a3c() {
+    unk32 data     = data_ov000_020aecf8;
+    this->mUnk_158 = true;
+    this->mUnk_2C  = data;
+}
+
 // non-matching
-void ActorRollingStone::func_ov031_020f8a3c() {}
-// non-matching
-void ActorRollingStone::func_ov031_020f8a58() {}
-// non-matching
-void ActorRollingStone::func_ov031_020f8b58() {}
+void ActorRollingStone::func_ov031_020f8a58() {
+    this->func_ov000_02098910(0x0, 0x10);
+    if ((this->mUnk_46 & 0x1) != 0) {
+        if (this->mUnk_15A > 0x0) {
+            this->SetState(ActorRollingStoneState_10);
+        } else {
+            this->SetState(ActorRollingStoneState_3);
+        }
+        data_027e09a8->func_ov000_02071b30(0x989E, &this->mPos, 0x0);
+        return;
+    }
+
+    if (this->mPos.y <= -0x5000) {
+        this->func_ov000_020984d0();
+        return;
+    }
+
+    this->func_ov000_02098ab4(0x2, 0x5, 0x1, &this->mVel);
+
+    data_027e09c0->func_ov000_0207de98(this->mRef, &this->mPos, this->mUnk_38, &this->mVel, this->mPos.x, this->mPos.y,
+                                       this->mPos.z, 0xB33, 0x1000);
+}
+
+void ActorRollingStone::func_ov031_020f8b58() {
+    this->mUnk_2C = 0x0;
+
+    switch (((u32) (this->mUnk_5C.mInitialAngle + 0x2000) << 0x10) >> 0x1E) {
+        case 0x1:
+            this->mVel.y = FLOAT_TO_FX32(0.0f);
+            this->mVel.x = FLOAT_TO_FX32(0.105f);
+            this->mVel.z = FLOAT_TO_FX32(0.0f);
+            break;
+        case 0x3:
+            this->mVel.y = FLOAT_TO_FX32(0.0f);
+            this->mVel.x = -FLOAT_TO_FX32(0.105f);
+            this->mVel.z = FLOAT_TO_FX32(0.0f);
+            break;
+        default:
+            this->mVel.x = FLOAT_TO_FX32(0.0f);
+            this->mVel.y = FLOAT_TO_FX32(0.0f);
+            this->mVel.z = FLOAT_TO_FX32(0.105f);
+            break;
+    }
+    this->func_ov031_020f9af4();
+}
+
 // non-matching
 void ActorRollingStone::func_ov031_020f8bc4() {}
 // non-matching
 void ActorRollingStone::func_ov031_020f8de8() {}
 // non-matching
 void ActorRollingStone::func_ov031_020f8ed4() {}
-// non-matching
+
 void ActorRollingStone::func_ov031_020f8f0c() {}
-// non-matching
-void ActorRollingStone::func_ov031_020f8f10() {}
+
+void ActorRollingStone::func_ov031_020f8f10() {
+    this->mUnk_158 = false;
+    this->mUnk_2C  = 0x0;
+    this->mUnk_152 = this->mUnk_5C.mParams[1];
+    this->mUnk_150 = 0x0;
+}
+
 // non-matching
 void ActorRollingStone::func_ov031_020f8f30() {}
 // non-matching
@@ -155,9 +241,44 @@ void ActorRollingStone::func_ov031_020f9af4() {}
 // non-matching
 void ActorRollingStone::func_ov031_020f9af8() {}
 // non-matching
-void ActorRollingStone::func_ov031_020f9ba4() {}
-// non-matching
-void ActorRollingStone::func_ov031_020f9cc0() {}
+bool ActorRollingStone::func_ov031_020f9ba4() {
+    if (!data_027e0ce0->func_01fff1a4()) {
+        VecFx32 *pVec = data_027e0ce0->func_01fff148(0x0);
+        VecFx32 sp18;
+        sp18.x = this->mPos.x - pVec->x;
+        sp18.y = this->mPos.y - pVec->y;
+        sp18.z = this->mPos.z - pVec->z;
+        return VecFx32_Length(&sp18) > 0x8000;
+    }
+    VecFx32 *pVec1 = data_027e0ce0->func_01fff148(0x0);
+    VecFx32 *pVec2 = data_027e0ce0->func_01fff148(0x1);
+    VecFx32 sp18;
+    sp18.z  = this->mPos.z - pVec1->z;
+    float z = this->mPos.z - pVec2->z;
+    sp18.y  = this->mPos.y - pVec1->y;
+    float y = this->mPos.y - pVec2->y;
+    sp18.x  = this->mPos.x - pVec1->x;
+    float x = this->mPos.x - pVec2->x;
+
+    if (data_027e0ce0->func_ov000_0208be70(0x0, 0x0, sp18)) {
+        sp18.x = x;
+        sp18.y = y;
+        sp18.z = z;
+    }
+
+    bool var2;
+    if (VecFx32_Length(&sp18) > 0x8000) {
+        var2 = true;
+    } else {
+        var2 = false;
+    }
+    return var2;
+}
+
+void ActorRollingStone::func_ov031_020f9cc0() {
+    this->mUnk_159 = true;
+    this->SetState(ActorRollingStoneState_8);
+}
 
 ActorRollingStone::~ActorRollingStone() {}
 ActorProfileRollingStone::~ActorProfileRollingStone() {}

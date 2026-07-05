@@ -2,6 +2,9 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "ActorShotArrow.hpp"
+#include "Actor_Derived1.hpp"
+#include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
 #include "types.h"
@@ -29,7 +32,6 @@ public:
     /* 04 */
 
     // data_ov031_02114a5c
-
     /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) override; // func_ov031_020f8354
     /* 10 */ virtual void vfunc_10() override;                                                     // func_ov031_020f83e4
     /* 14 */
@@ -41,18 +43,36 @@ public:
     /* 2C */ ActorRollingStone *mUnk_2C;
     /* 30 */
 
-    // data_ov031_02114a40
+    ActorRollingStone_D4(ActorRollingStone *param1) {
+        this->mUnk_2C = param1;
+    }
 
+    // data_ov031_02114a40
     /* 10 */ virtual void vfunc_10(Actor *param1) override; // func_ov031_020f849c
 };
 
 class ActorRollingStone : public Actor {
 public:
     /* 000 (base) */
-    /* 094 */ STRUCT_PAD(0x94, 0xD4);
+    /* 094 */ UnkSystem6_Derived2 mUnk_94;
+    /* 09C */ unk8 mUnk_9C;
+    /* 09D */ STRUCT_PAD(0x9D, 0xA0);
+    /* 0A0 */ Actor_Derived1_94 mUnk_A0;
+    /* 0B0 */ ActorShotArrow_140 mUnk_B0;
     /* 0D4 */ ActorRollingStone_D4 mUnk_D4;
-    /* 100 */ STRUCT_PAD(0x100, 0x104);
     /* 104 */ ActorRollingStone_104 mUnk_104;
+    /* 108 */ STRUCT_PAD(0x108, 0x10C);
+    /* 10C */ Mat3p mUnk_10C;
+    /* 130 */ STRUCT_PAD(0x130, 0x150);
+    /* 150 */ unk16 mUnk_150;
+    /* 150 */ unk16 mUnk_152;
+    /* 154 */ STRUCT_PAD(0x154, 0x158);
+    /* 158 */ bool mUnk_158;
+    /* 159 */ bool mUnk_159;
+    /* 15A */ s8 mUnk_15A;
+    /* 15B */ s8 mUnk_15B;
+    /* 15C */ Actor_Derived1_EC mUnk_15C;
+    /* 17C */
 
     ActorRollingStone();
 
@@ -91,7 +111,7 @@ public:
     void func_ov031_020f98e4();
     void func_ov031_020f9af4();
     void func_ov031_020f9af8();
-    void func_ov031_020f9ba4();
+    bool func_ov031_020f9ba4();
     void func_ov031_020f9cc0();
 };
 

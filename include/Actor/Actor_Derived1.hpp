@@ -39,7 +39,7 @@ public:
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk16 mUnk_08;
     /* 0A */ unk16 mUnk_0A;
-    /* 0C */ unk32 mUnk_0C;
+    /* 0C */
 
     Actor_Derived1_94();
     ~Actor_Derived1_94();
@@ -48,6 +48,8 @@ public:
 class Actor_Derived1_94_Derived1 : public Actor_Derived1_94 {
 public:
     /* 00 (base) */
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */
 
     Actor_Derived1_94_Derived1(unk32 param1) {
         this->mUnk_0C = param1;

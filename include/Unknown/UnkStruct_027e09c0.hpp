@@ -18,6 +18,8 @@ public:
     // overlay 0
     void func_ov000_0207da40();
     void func_ov000_0207e58c(ActorRef param1, unk32 param2, u8 param3, UnkStruct_ov031_Items_01 *param4);
+    void func_ov000_0207de98(ActorRef param1, VecFx32 *param2, Actor_38 *param3, VecFx32 *param4, unk32 param5, unk32 param6,
+                             unk32 param7, unk32 param8, unk32 param9);
 
     // overlay 1
     void func_ov001_020be394();
