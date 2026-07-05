@@ -42,11 +42,10 @@ ActorProfilePot::ActorProfilePot() :
 // non-matching
 ActorPot::ActorPot() {
     MapObjectProfile *objectProfile = data_ov000_020b5d34.GetProfileFromId(MapObjectId_TSUB);
-    objectProfile->vfunc_04();
-}
+    BMDSectionModel *model          = objectProfile->vfunc_04()->mUnk_50;
 
-// non-matching
-void ActorPot::func_ov031_020f0cf0() {}
+    // magic stuff to get a G3d_Model * for ModelRender
+}
 
 bool ActorPot::vfunc_18(unk32 param1) {
     Actor_ov031_02113fd4::vfunc_18(param1);
@@ -69,12 +68,11 @@ void ActorPot::vfunc_20() {
     CALL_PTMF(PTMF<ActorPot>, data_ov031_021140a0[this->mState]);
 }
 
-// non-matching
 void ActorPot::vfunc_2C(unk32 param1) {
     if (!this->func_01fff5d0(param1, 0x0)) {
         return;
     }
-    this->vfunc_18((unk32) & this->mPos);
+    this->mUnk_110.vfunc_18(&this->mPos);
 }
 
 void ActorPot::func_ov031_020f0de8() {
@@ -122,7 +120,7 @@ void ActorPot::func_ov031_020f0e70() {
     data_027e09a8->func_ov000_02071eac(&this->mPos);
 
     VecFx32 sp8;
-    VecFx32_Init(this->mPos.x, this->mPos.y + this->mUnk_11C, this->mPos.z, &sp8);
+    VecFx32_Init(this->mPos.x, this->mPos.y + this->mUnk_110.mUnk_0C, this->mPos.z, &sp8);
     data_027e0cec->func_ov000_0209feac(0x8FF, &sp8, 0x4, 0x0, 0x0);
     data_027e0cec->func_ov000_0209feac(0x900, &sp8, 0x4, 0x0, 0x0);
     data_027e0cec->func_ov000_0209feac(0x822, &sp8, 0x4, 0x0, 0x0);

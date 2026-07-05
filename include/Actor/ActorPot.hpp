@@ -45,8 +45,8 @@ public:
     /* 0EC */ u16 mUnk_EC;
     /* 0EE */ STRUCT_PAD(0x0EE, 0xF0);
     /* 0F0 */ UnkStruct_ov031_02113fb8 mUnk_F0;
-    /* 110 */ STRUCT_PAD(0xF4, 0x11C);
-    /* 11C */ s16 mUnk_11C;
+    /* 0F4 */ STRUCT_PAD(0xF4, 0x110);
+    /* 110 */ ModelRender_ov000_020b198c mUnk_110;
     /* 120 */
 
     Actor_ov031_02113fd4();
