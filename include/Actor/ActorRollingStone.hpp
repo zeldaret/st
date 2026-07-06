@@ -38,7 +38,7 @@ public:
     /* 14 */
 };
 
-class ActorRollingStone_D4 : UnkStruct_ov031_Items_01 {
+class ActorRollingStone_D4 : public UnkStruct_ov031_Items_01 {
 public:
     /* 00 (vtable) */
     /* 2C */ ActorRollingStone *mUnk_2C;
@@ -59,7 +59,7 @@ public:
     /* 09C */ unk8 mUnk_9C;
     /* 09D */ STRUCT_PAD(0x9D, 0xA0);
     /* 0A0 */ Actor_Derived1_94 mUnk_A0;
-    /* 0B0 */ ActorShotArrow_140 mUnk_B0;
+    /* 0AC */ ActorShotArrow_140 mUnk_AC;
     /* 0D4 */ ActorRollingStone_D4 mUnk_D4;
     /* 104 */ ActorRollingStone_104 mUnk_104;
     /* 108 */ STRUCT_PAD(0x108, 0x10C);
@@ -68,10 +68,10 @@ public:
     /* 138 */ unk16 mUnk_138;
     /* 13C */ Cylinder mUnk_13C;
     /* 14C */ unk32 mUnk_14C;
-    /* 150 */ u16 mUnk_150;
-    /* 152 */ u16 mUnk_152;
-    /* 154 */ unk16 mUnk_154;
-    /* 156 */ unk16 mUnk_156;
+    /* 150 */ volatile u16 mUnk_150;
+    /* 152 */ volatile u16 mUnk_152;
+    /* 154 */ volatile u16 mUnk_154;
+    /* 156 */ volatile u16 mUnk_156;
     /* 158 */ bool mUnk_158;
     /* 159 */ bool mUnk_159;
     /* 15A */ s8 mUnk_15A;
@@ -86,9 +86,18 @@ public:
     /* 2C */ virtual void vfunc_2C(unk32 param1) override; // func_ov031_020f8948
     /* 54 */
 
-    bool IsInternalTimerOut() {
-        if ((u32) this->mUnk_150 < (u32) this->mUnk_152) {
-            ++this->mUnk_150;
+    bool IsInternalTimerOut1() {
+        if (this->mUnk_150 < this->mUnk_152) {
+            this->mUnk_150++;
+            return false;
+        }
+
+        return true;
+    }
+
+    bool IsInternalTimerOut2() {
+        if (this->mUnk_154 < this->mUnk_156) {
+            this->mUnk_154++;
             return false;
         }
 

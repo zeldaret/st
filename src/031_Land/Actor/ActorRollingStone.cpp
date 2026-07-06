@@ -5,6 +5,7 @@
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
+#include "Unknown/UnkStruct_027e0d38.hpp"
 #include "Unknown/UnkStruct_027e0d8c.hpp"
 #include "limits.h"
 
@@ -67,7 +68,7 @@ void ActorRollingStone_D4::vfunc_10(Actor *param1) {
 ActorRollingStone::ActorRollingStone() :
     mUnk_94(G3d_GetModelPtr(GET_PROFILE(ActorProfileRollingStone)->mUnk_3C.mUnk_50)),
     mUnk_9C(0x1),
-    mUnk_B0(this),
+    mUnk_AC(this),
     mUnk_D4(this),
     mUnk_138(0x0),
     mUnk_14C(0x0),
@@ -80,7 +81,7 @@ ActorRollingStone::ActorRollingStone() :
     mUnk_15A(-0x1),
     mUnk_15B(0x0) {
     this->mUnk_4A[1]      = true;
-    this->mUnk_B0.mUnk_24 = true;
+    this->mUnk_AC.mUnk_24 = true;
 
     this->mUnk_44 = 0x9F;
 
@@ -248,10 +249,92 @@ void ActorRollingStone::func_ov031_020f8b58() {
 }
 
 // non-matching
-void ActorRollingStone::func_ov031_020f8bc4() {}
+void ActorRollingStone::func_ov031_020f8bc4() {
+    this->mUnk_3C = &this->mUnk_AC;
+    this->func_ov031_020f9af8();
 
-// non-matching
-void ActorRollingStone::func_ov031_020f8de8() {}
+    ActorRollingStone_104 spC = ActorRollingStone_104();
+
+    this->func_ov000_02098910((unk32) &spC, 0x10);
+
+    s16 value = this->mUnk_46;
+    if ((value & 0x1C) == 0 && (value & 0x80) == 0) {
+        if ((value & 1) == 0) {
+            this->SetState(ActorRollingStoneState_5);
+            return;
+        }
+    } else if ((value & 0x10) == 0) {
+        this->SetState(ActorRollingStoneState_6);
+        return;
+    }
+
+    this->func_ov031_020f8de8();
+    VecFx32 sp38;
+    unk16 sinValue = SIN((u16) this->mAngle);
+    unk16 cosValue = SIN((u16) this->mAngle);
+
+    sp38.x = MUL_FX32(sinValue, FLOAT_TO_FX32(sinValue));
+    sp38.y = FLOAT_TO_FX32(0.0f);
+    sp38.z = MUL_FX32(cosValue, FLOAT_TO_FX32(cosValue));
+
+    VecFx32 sp28;
+    this->vfunc_10(&sp28);
+
+    sp28.z += 0xCD;
+
+    if (!data_027e09c0->func_ov000_0207e458(0x2, 0x1B, &sp28, 0x2, &sp38, this->mRef)) {
+        return;
+    }
+    this->func_ov000_02098ab4(0x2, 0x5, 0x1, &this->mVel);
+
+    this->vfunc_10(&this->mUnk_D4.mUnk_0C);
+
+    VecFx32 sp14;
+    VecFx32_Copy(&this->mPos, &sp14);
+
+    data_027e09c0->func_ov000_0207e58c(this->mRef, 0xB, 0x4, &this->mUnk_D4);
+    data_027e09c0->func_ov000_0207de98(this->mRef, &sp14, this->mUnk_38, &this->mVel, 0xB33, 0x1000, 0x0, 0x0, 0x0);
+}
+
+void ActorRollingStone::func_ov031_020f8de8() {
+    this->IsInternalTimerOut2();
+    this->func_ov000_020989e0();
+
+    if ((this->mUnk_AC.mUnk_08 & 0x3FFFF) == 0) {
+        return;
+    }
+
+    switch (this->mUnk_AC.mUnk_1C) {
+        case 0x4:
+            data_027e0d38->func_ov031_020d9c44(0x4);
+            return;
+        case 0xC:
+            if ((u32) this->mUnk_154 < (u32) this->mUnk_156) {
+                return;
+            }
+            this->mUnk_156 = 0x14;
+            this->mUnk_154 = 0x0;
+        case 0x8:
+        case 0xD:
+            this->func_ov017_020bfb18(&this->mUnk_AC);
+            return;
+        case 0x1:
+            this->SetState(ActorRollingStoneState_6);
+            return;
+        case 0x0:
+        case 0x2:
+        case 0x3:
+        case 0x5:
+        case 0x6:
+        case 0x7:
+        case 0x9:
+        case 0xA:
+        case 0xB:
+        case 0xE:
+        case 0xF:
+            return;
+    }
+}
 
 void ActorRollingStone::func_ov031_020f8ed4() {
     for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_130; ptr != (void *) &this->mUnk_138; ++ptr) {
@@ -262,20 +345,20 @@ void ActorRollingStone::func_ov031_020f8ed4() {
 
 void ActorRollingStone::func_ov031_020f8f0c() {}
 
+// non-matching
 void ActorRollingStone::func_ov031_020f8f10() {
-    this->mUnk_158 = false;
     this->mUnk_2C  = 0x0;
+    this->mUnk_158 = false;
     this->mUnk_152 = this->mUnk_5C.mParams[1];
     this->mUnk_150 = 0x0;
 }
 
-// non-matching
 void ActorRollingStone::func_ov031_020f8f30() {
     if (this->mUnk_5C.mUnk_1A[0] != 0x0 && !this->func_ov000_02098a60(0x0)) {
         return;
     }
 
-    if (!this->IsInternalTimerOut()) {
+    if (!this->IsInternalTimerOut1()) {
         return;
     }
     ActorParams sp14;
@@ -327,8 +410,29 @@ void ActorRollingStone::func_ov031_020f916c() {
 
 // non-matching
 void ActorRollingStone::func_ov031_020f91ac() {}
+
 // non-matching
-void ActorRollingStone::func_ov031_020f9250() {}
+void ActorRollingStone::func_ov031_020f9250() {
+    this->vfunc_40();
+
+    this->mUnk_2C = 0x0;
+    for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_130; ptr != (void *) &this->mUnk_138; ++ptr) {
+        ptr->func_ov000_020a0334();
+    }
+
+    this->mUnk_AC.func_ov000_02097bec();
+    this->mVel.x = FLOAT_TO_FX32(0.0f);
+    this->mVel.y = FLOAT_TO_FX32(0.0f);
+    this->mVel.z = FLOAT_TO_FX32(0.0f);
+
+    this->mUnk_13C.pos.x = FLOAT_TO_FX32(0.0f);
+    this->mUnk_13C.pos.y = FLOAT_TO_FX32(0.5f);
+    this->mUnk_13C.pos.z = FLOAT_TO_FX32(0.0f);
+    this->mUnk_13C.size  = FLOAT_TO_FX32(0.5f);
+
+    this->mUnk_44 = (s16) this->mUnk_44 & ~0x20;
+}
+
 // non-matching
 void ActorRollingStone::func_ov031_020f92cc() {}
 // non-matching
