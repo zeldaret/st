@@ -4,6 +4,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Actor/ActorUnkCASE.hpp"
 #include "Actor/Actor_Derived1.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
@@ -25,7 +26,9 @@ public:
     /* 00 (base) */
     /* AE */ STRUCT_PAD(0xAE, 0xB0);
     /* B0 */ ModelRender mUnk_B0;
-    /* 110 */ STRUCT_PAD(0x110, 0x154);
+    /* 110 */ STRUCT_PAD(0x110, 0x128);
+    /* 128 */ void *mUnk_128; //! INFO: has vfunc_34
+    /* 12C */ STRUCT_PAD(0x12C, 0x154);
     /* 154 */ UnkSystem5 mUnk_154;
     /* 174 */ unk32 mUnk_174;
     /* 178 */ STRUCT_PAD(0x178, 0x1A4);
@@ -33,13 +36,29 @@ public:
     /* 1C4 */ unk32 mUnk_1C4;
     /* 1C8 */ STRUCT_PAD(0x1C8, 0x1F4);
     /* 1F4 */ Actor_Derived1_94 mUnk_1F4;
-    /* 204 */ STRUCT_PAD(0x204, 0x23C);
+    /* 204 */ STRUCT_PAD(0x204, 0x208);
+    /* 208 */ unk16 mUnk_208;
+    /* 20A */ unk16 mUnk_20A;
+    /* 20C */ unk16 mUnk_20C;
+    /* 20E */ unk16 mUnk_20E;
+    /* 210 */ unk16 mUnk_210;
+    /* 212 */ STRUCT_PAD(0x212, 0x218);
+    /* 218 */ unk32 mUnk_218;
+    /* 21C */ unk32 mUnk_21C;
+    /* 220 */ STRUCT_PAD(0x220, 0x224);
+    /* 224 */ unk32 mUnk_224;
+    /* 228 */ STRUCT_PAD(0x228, 0x234);
+    /* 234 */ unk16 mUnk_234;
+    /* 236 */ unk16 mUnk_236;
+    /* 238 */ u16 mUnk_238;
+    /* 23A */ u16 mUnk_23A;
     /* 23C */ Actor_Derived1_94 mUnk_23C;
-    /* 24C */ STRUCT_PAD(0x24C, 0x268);
-    /* 268 */ Actor *mUnk_268;
-    /* 26C */ s16 mUnk_26C;
-    /* 26E */ STRUCT_PAD(0x26E, 0x278);
-    /* 278 */
+    /* 24C */ unk32 mUnk_24C;
+    /* 250 */ unk32 mUnk_250;
+    /* 254 */ STRUCT_PAD(0x254, 0x268);
+    /* 268 */ ActorUnkCASE *mUnk_268;
+    /* 26C */ fx16 mUnk_26C;
+    /* 270 */
 
     ActorUnkCANS();
 
@@ -90,7 +109,7 @@ public:
     void func_ov063_0215a428(void);
     void func_ov063_0215a474(void);
     void func_ov063_0215a514(void);
-    void func_ov063_0215a56c(void);
+    unk32 func_ov063_0215a56c(unk32 param1);
     void func_ov063_0215a5a0(void);
     void func_ov063_0215a5bc(void);
     void func_ov063_0215a5d8(void);
