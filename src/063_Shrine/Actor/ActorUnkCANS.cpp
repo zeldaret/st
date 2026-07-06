@@ -44,8 +44,6 @@ void ActorUnkCANS::vfunc_10(Cylinder *param1) {
         func_01ff9638(&pos, angle);
         VecFx32_Add(&param1->pos, &pos, &param1->pos);
     }
-
-    return;
 }
 
 unk32 ActorUnkCANS::vfunc_18(void) {
