@@ -7,7 +7,6 @@
 class UnkStruct_0204a088_Base {
 public:
     UnkStruct_0204a088_Base();
-    ~UnkStruct_0204a088_Base(); //! TODO: most likely inlined but can't make it work for some reasons
 };
 
 // members 00 04 and 08 are used in data_ov000_020b1d74 to figure out which overlay to load next in slot 1

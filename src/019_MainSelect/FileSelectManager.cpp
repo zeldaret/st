@@ -116,6 +116,4 @@ void FileSelectManager::func_ov019_020c51a8() {
     delete data_0204a088;
 }
 
-UnkStruct_0204a088_Base::~UnkStruct_0204a088_Base() {
-    data_0204a088 = NULL;
-}
+DECL_INSTANCE_DTOR(UnkStruct_0204a088, data_0204a088);
