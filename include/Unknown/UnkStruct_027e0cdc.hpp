@@ -7,6 +7,7 @@
 class UnkStruct_027e0cdc : public AutoInstance<UnkStruct_027e0cdc> {
 public:
     /* 00 */ unk32 mUnk_00;
+    /* 04 */ UnkStruct_027e0ce0_40 *mUnk_04;
 
     UnkStruct_027e0cdc();
 

@@ -14,8 +14,127 @@
 
 #include <nitro/math.h>
 
-class UnkStruct_ov001_020c40f4;
 class UnkStruct_027e0ce0;
+class UnkStruct_027e0ce0_30;
+class UnkStruct_027e0ce0_38;
+class UnkStruct_027e0ce0_3C;
+class UnkStruct_ov001_020c40f4;
+
+class UnkStruct_027e0ce0_0C : public LinkList<UnkStruct_027e0ce0_0C> {
+public:
+    /* 00 (vtable) */
+    /* 04 (base) */
+    /* 0C */ UnkStruct_027e0ce0 *mUnk_0C;
+    /* 10 */
+
+    UnkStruct_027e0ce0_0C(UnkStruct_027e0ce0 *param1) :
+        mUnk_0C(param1) {}
+
+    // data_ov000_020b2b38
+    /* 00 */ virtual void vfunc_00(unk32 param1);
+};
+
+class UnkStruct_027e0ce0_1C {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+    /* 0C */ MapObjectProfile_Derived2_20_Base *mUnk_0C;
+    /* 10 */ STRUCT_PAD(0x10, 0xDC);
+    /* DC */
+
+    UnkStruct_027e0ce0_1C();
+    ~UnkStruct_027e0ce0_1C();
+
+    // overlay 1
+    void func_ov001_020bccec();
+    void func_ov001_020bcfec();
+    void func_ov001_020bd0a4(bool param1);
+    void func_ov001_020bd1ec();
+};
+
+class UnkStruct_027e0ce0_20 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+    /* 0C */
+
+    UnkStruct_027e0ce0_20();
+    ~UnkStruct_027e0ce0_20();
+};
+
+class UnkStruct_027e0ce0_24 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x88);
+    /* 88 */
+
+    UnkStruct_027e0ce0_24();
+    ~UnkStruct_027e0ce0_24();
+
+    // overlay 21
+    void func_ov021_020eaa08(UnkStruct_027e0ce0_20 *param1);
+    void func_ov021_020eaac4();
+    void func_ov021_020eab14(unk32 param1, const UnkStruct_ov001_020c40f4 *param2, UnkStruct_027e0ce0_30 *param3);
+};
+
+class UnkStruct_027e0ce0_30_00 {
+private:
+    /* 00 */ VecFx32 mUnk_00;
+    /* 0C */ VecFx32 mUnk_0C;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ bool mUnk_28;
+    /* 2C */ UnkStruct_027e0ce0_38 *mUnk_2C;
+    /* 30 */ UnkStruct_027e0ce0_3C *mUnk_30;
+    /* 34 */ unk32 mUnk_34;
+    /* 38 */ unk32 *mUnk_38;
+    /* 38 */ unk32 mUnk_3C;
+    /* 40 */
+
+public:
+    UnkStruct_027e0ce0_30_00(UnkStruct_027e0ce0_38 *param1, UnkStruct_027e0ce0_3C *param2, unk32 param3, unk32 *param4,
+                             unk32 param5);
+    ~UnkStruct_027e0ce0_30_00();
+};
+
+class UnkStruct_027e0ce0_30_04 {
+private:
+    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+    /* 0C */
+
+public:
+    UnkStruct_027e0ce0_30_04();
+    ~UnkStruct_027e0ce0_30_04();
+};
+
+class UnkStruct_027e0ce0_30_08 {
+private:
+    /* 00 */ STRUCT_PAD(0x00, 0x24);
+    /* 24 */
+
+public:
+    UnkStruct_027e0ce0_30_08(unk32 param1);
+    ~UnkStruct_027e0ce0_30_08();
+};
+
+class UnkStruct_027e0ce0_30 {
+private:
+    /* 00 */ UnkStruct_027e0ce0_30_00 *mUnk_00;    // only used for adventure mode?
+    /* 04 */ UnkStruct_027e0ce0_30_04 *mUnk_04;    // only used for adventure mode?
+    /* 08 */ UnkStruct_027e0ce0_30_08 *mUnk_08[4]; // only used for battle mode?
+    /* 18 */
+
+public:
+    UnkStruct_027e0ce0_30();
+    ~UnkStruct_027e0ce0_30();
+
+    // overlay 1
+    void func_ov001_020bbf00(int index, unk32 param2);
+    void func_ov001_020bbf24(UnkStruct_027e0ce0_38 *param1);
+    void func_ov001_020bbf50(UnkStruct_027e0ce0_3C *param1);
+    void func_ov001_020bbf7c(unk32 param1, unk32 *param2, unk32 param3);
+    void func_ov001_020bbfcc();
+    void func_ov001_020bbff4(UnkStruct_027e0ce0_38 *param1);
+};
 
 class UnkStruct_027e0ce0_34 {
 public:
@@ -36,6 +155,10 @@ public:
 
     // overlay 1
     void func_ov001_020bf22c(unk32 param1, unk32 param2);
+    void func_ov001_020bf2b8(bool param1);
+    void func_ov001_020bf378();
+    void func_ov001_020bf3bc();
+    void func_ov001_020bf3cc();
 
     // overlay 8
     void func_ov008_020b6a50();
@@ -65,6 +188,19 @@ public:
 
     // overlay 110
     void func_ov110_02185d3c(ItemId itemId);
+};
+
+class UnkStruct_027e0ce0_3C {
+public:
+    /* 00 */ VecFx32 mUnk_00;
+    /* 0C */ STRUCT_PAD(0x0C, 0x98);
+    /* 98 */
+
+    UnkStruct_027e0ce0_3C();
+    ~UnkStruct_027e0ce0_3C();
+
+    // overlay 88
+    void func_ov088_0216fbc4(unk32 param1, const UnkStruct_ov001_020c40f4 *param2);
 };
 
 class UnkStruct_ov031_020f3310_00 {
@@ -237,11 +373,18 @@ public:
     /* 274 */ UnkStruct_ov019_020d24c8_28_258_00 mUnk_274;
     /* 280 */
 
-    UnkStruct_027e0ce0_38();
+    UnkStruct_027e0ce0_38(unk32 param1);
 
     // data_ov026_0213562c
     /* 00 */ virtual ~UnkStruct_027e0ce0_38() override;
     /* 0C */ virtual bool vfunc_0C() override;
+
+    // overlay 26
+    void func_ov026_020dc8f0();
+    void func_ov026_020de908(UnkStruct_027e0ce0_30_00 *param1);
+    void func_ov026_020dc918();
+    void func_ov026_020dc9b0();
+    void func_ov026_020dc9bc(const UnkStruct_ov001_020c40f4 *param1);
 };
 
 class UnkStruct_027e0ce0_40_Base_14 {
@@ -468,10 +611,14 @@ public:
     /* 33B */ unk8 mUnk_33B;
     /* 33C */
 
-    // param2 is UnkStruct_027e0ce0::mUnk_20
-    // param3 is UnkStruct_027e0ce0::mUnk_04
-    // param4 is UnkStruct_027e0ce0::mUnk_28
-    UnkStruct_027e0ce0_40(unk32 param1, void *param2, void *param3, ItemManager *param4);
+    UnkStruct_027e0ce0_40(bool param1, UnkStruct_027e0ce0_20 *param2, unk32 **param3, ItemManager *pItemMgr);
+    ~UnkStruct_027e0ce0_40();
+
+    // overlay 101
+    bool func_ov101_02182fb4(bool param1);
+    void func_ov101_02183004();
+    void func_ov101_02183024(const UnkStruct_ov001_020c40f4 *param1, const UnkStruct_ov001_020c40f4 *param2, unk32 param3,
+                             unk32 param4, ItemManager *pItemMgr, UnkStruct_027e0ce0_30 *param6, bool param7, bool param8);
 };
 
 union UnkStruct_027e0478 {
@@ -481,135 +628,22 @@ union UnkStruct_027e0478 {
 
 extern UnkStruct_027e0478 data_027e0478;
 
-class UnkStruct_027e0ce0_3C {
-public:
-    /* 00 */ STRUCT_PAD(0x00, 0x98);
-    /* 98 */
-
-    UnkStruct_027e0ce0_3C();
-};
-
-class UnkStruct_027e0ce0_1C {
-public:
-    /* 00 */ STRUCT_PAD(0x00, 0x0C);
-    /* 0C */ MapObjectProfile_Derived2_20_Base *mUnk_0C;
-    /* 10 */ STRUCT_PAD(0x10, 0xDC);
-    /* DC */
-
-    UnkStruct_027e0ce0_1C();
-    ~UnkStruct_027e0ce0_1C();
-
-    void func_ov001_020bd0a4(bool param1);
-};
-
-class UnkStruct_027e0ce0_30_00 {
-private:
-    /* 00 */ VecFx32 mUnk_00;
-    /* 0C */ VecFx32 mUnk_0C;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk32 mUnk_1C;
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ unk32 mUnk_24;
-    /* 28 */ bool mUnk_28;
-    /* 2C */ VecFx32 *mUnk_2C;
-    /* 30 */ VecFx32 *mUnk_30;
-    /* 34 */ unk32 mUnk_34;
-    /* 38 */ unk32 *mUnk_38;
-    /* 38 */ unk32 mUnk_3C;
-    /* 40 */
-
-public:
-    UnkStruct_027e0ce0_30_00(VecFx32 *param1, VecFx32 *param2, unk32 param3, unk32 *param4, unk32 param5);
-    ~UnkStruct_027e0ce0_30_00();
-};
-
-class UnkStruct_027e0ce0_30_04 {
-private:
-    /* 00 */ STRUCT_PAD(0x00, 0x0C);
-    /* 0C */
-
-public:
-    UnkStruct_027e0ce0_30_04();
-    ~UnkStruct_027e0ce0_30_04();
-};
-
-class UnkStruct_027e0ce0_30_08 {
-private:
-    /* 00 */ STRUCT_PAD(0x00, 0x24);
-    /* 24 */
-
-public:
-    UnkStruct_027e0ce0_30_08(unk32 param1);
-    ~UnkStruct_027e0ce0_30_08();
-};
-
-class UnkStruct_027e0ce0_30 {
-private:
-    /* 00 */ UnkStruct_027e0ce0_30_00 *mUnk_00;    // only used for adventure mode?
-    /* 04 */ UnkStruct_027e0ce0_30_04 *mUnk_04;    // only used for adventure mode?
-    /* 08 */ UnkStruct_027e0ce0_30_08 *mUnk_08[4]; // only used for battle mode?
-    /* 18 */
-
-public:
-    UnkStruct_027e0ce0_30();
-    ~UnkStruct_027e0ce0_30();
-
-    // overlay 1
-    void func_ov001_020bbf00(int index, unk32 param2);
-    void func_ov001_020bbf24(VecFx32 *param1);
-    void func_ov001_020bbf50(VecFx32 *param1);
-    void func_ov001_020bbf7c(unk32 param1, unk32 *param2, unk32 param3);
-    void func_ov001_020bbfcc();
-};
-
 class UnkStruct_027e0ce0_Base {
 public:
-    /* 00 */ unk8 mHealth;
-    /* 01 */ unk8 mHealthMax;
+    /* 00 */ u8 mHealth;
+    /* 01 */ u8 mHealthMax;
     /* 02 */
 
     UnkStruct_027e0ce0_Base();
 };
 
-class UnkStruct_027e0ce0_0C : public LinkList<UnkStruct_027e0ce0_0C> {
-public:
-    /* 00 (vtable) */
-    /* 04 (base) */
-    /* 0C */ UnkStruct_027e0ce0 *mUnk_0C;
-    /* 10 */
-
-    UnkStruct_027e0ce0_0C(UnkStruct_027e0ce0 *param1) :
-        mUnk_0C(param1) {}
-
-    // data_ov000_020b2b38
-    /* 00 */ virtual void vfunc_00(unk32 param1);
-};
-
-class UnkStruct_027e0ce0_20 {
-public:
-    /* 00 */ STRUCT_PAD(0x00, 0x0C);
-    /* 0C */
-
-    UnkStruct_027e0ce0_20();
-    ~UnkStruct_027e0ce0_20();
-};
-
-class UnkStruct_027e0ce0_24 {
-public:
-    /* 00 */ STRUCT_PAD(0x00, 0x88);
-    /* 88 */
-
-    UnkStruct_027e0ce0_24();
-    ~UnkStruct_027e0ce0_24();
-};
-
 // PlayerManager?
 class UnkStruct_027e0ce0 : public AutoInstance<UnkStruct_027e0ce0>, public UnkStruct_027e0ce0_Base {
 public:
-    /* 02 */ unk8 mUnk_02;
-    /* 03 */ unk8 mUnk_03;
+    /* 02 */ bool mUnk_02;
+    /* 03 */ bool mUnk_03;
     /* 04 */ unk32 *mUnk_04;
-    /* 08 */ unk8 mUnk_08;
+    /* 08 */ bool mUnk_08;
     /* 0C */ UnkStruct_027e0ce0_0C mUnk_0C;
     /* 1C */ UnkStruct_027e0ce0_1C *mUnk_1C;
     /* 20 */ UnkStruct_027e0ce0_20 *mUnk_20;
@@ -633,12 +667,13 @@ public:
 
     // overlay 0
     void func_ov000_0208a218(InvImportData *pInvData);
+    void func_ov000_0208a2c4(unk32 param1, unk32 param2);
     void func_ov000_0208a318(unk32 param1, unk32 param2, unk32 param3);
-    G3d_Model *func_ov000_0208ed30(unk32 param1, unk32 param2, char *param3);
     void func_ov000_0208bbd4(unk32 param1, VecFx32 *param2, u16 param3);
     bool func_ov000_0208bc1c(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);
     void func_ov000_0208bd30(bool param1, unk32 param2, unk32 param3, unk32 param4);
+    G3d_Model *func_ov000_0208ed30(unk32 param1, unk32 param2, char *param3);
 
     static UnkStruct_027e0ce0_34 *func_ov000_0205c904();
 

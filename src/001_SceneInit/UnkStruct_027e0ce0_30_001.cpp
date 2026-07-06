@@ -4,12 +4,11 @@
 #include <nitro/mi.h>
 
 extern "C" void func_ov000_0208dd60(void *, UnkStruct_027e0ce0_30_00 *);
-extern "C" void func_ov026_020de908(VecFx32 *, UnkStruct_027e0ce0_30_00 *);
 
 extern fx32 data_ov000_020afd14;
 
-UnkStruct_027e0ce0_30_00::UnkStruct_027e0ce0_30_00(VecFx32 *param1, VecFx32 *param2, unk32 param3, unk32 *param4,
-                                                   unk32 param5) {
+UnkStruct_027e0ce0_30_00::UnkStruct_027e0ce0_30_00(UnkStruct_027e0ce0_38 *param1, UnkStruct_027e0ce0_3C *param2, unk32 param3,
+                                                   unk32 *param4, unk32 param5) {
     this->mUnk_00.x = 0;
     this->mUnk_00.y = 0;
     this->mUnk_00.z = 0;
@@ -30,11 +29,11 @@ UnkStruct_027e0ce0_30_00::UnkStruct_027e0ce0_30_00(VecFx32 *param1, VecFx32 *par
     this->mUnk_3C = param5;
 
     if (param1 != NULL) {
-        func_ov026_020de908(param1, this);
+        param1->func_ov026_020de908(this);
         this->mUnk_18 = 0x10;
     } else {
         if (param2 != NULL) {
-            VecFx32_Copy(param2, &this->mUnk_00);
+            VecFx32_Copy(&param2->mUnk_00, &this->mUnk_00);
         } else {
             //! TODO: fake match
             func_ov000_0208dd60(*(unk32 *volatile *) &param4, this);
@@ -62,11 +61,11 @@ void UnkStruct_027e0ce0_30::func_ov001_020bbf00(int index, unk32 param2) {
     this->mUnk_08[index] = new(HeapIndex_1) UnkStruct_027e0ce0_30_08(param2);
 }
 
-void UnkStruct_027e0ce0_30::func_ov001_020bbf24(VecFx32 *param1) {
+void UnkStruct_027e0ce0_30::func_ov001_020bbf24(UnkStruct_027e0ce0_38 *param1) {
     this->mUnk_00 = new(HeapIndex_1) UnkStruct_027e0ce0_30_00(param1, NULL, 0x00, NULL, 0x00);
 }
 
-void UnkStruct_027e0ce0_30::func_ov001_020bbf50(VecFx32 *param1) {
+void UnkStruct_027e0ce0_30::func_ov001_020bbf50(UnkStruct_027e0ce0_3C *param1) {
     this->mUnk_00 = new(HeapIndex_1) UnkStruct_027e0ce0_30_00(NULL, param1, 0x00, NULL, 0x00);
 }
 
