@@ -8,8 +8,6 @@
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
 #include "global.h"
-#include "math.hpp"
-#include "nitro/fx.h"
 #include "types.h"
 
 class ActorUnkCANS_C4 : public Actor_C4 {
@@ -25,7 +23,9 @@ public:
 class ActorUnkCANS : public Actor_Derived2 {
 public:
     /* 00 (base) */
-    /* AE */ STRUCT_PAD(0xAE, 0x154);
+    /* AE */ STRUCT_PAD(0xAE, 0xB0);
+    /* B0 */ ModelRender mUnk_B0;
+    /* 110 */ STRUCT_PAD(0x110, 0x154);
     /* 154 */ UnkSystem5 mUnk_154;
     /* 174 */ unk32 mUnk_174;
     /* 178 */ STRUCT_PAD(0x178, 0x1A4);
@@ -36,20 +36,21 @@ public:
     /* 204 */ STRUCT_PAD(0x204, 0x23C);
     /* 23C */ Actor_Derived1_94 mUnk_23C;
     /* 24C */ STRUCT_PAD(0x24C, 0x268);
-    /* 268 */ unk32 mUnk_268;
-    /* 26C */ STRUCT_PAD(0x26C, 0x278);
+    /* 268 */ Actor *mUnk_268;
+    /* 26C */ s16 mUnk_26C;
+    /* 26E */ STRUCT_PAD(0x26E, 0x278);
     /* 278 */
 
     ActorUnkCANS();
 
-    /* 10 */ virtual void func_ov063_0215a5f8(Cylinder *param1);
-    /* 18 */ virtual void func_ov063_02158320(void);
-    /* 1C */ virtual void func_ov063_02158388(void);
-    /* 20 */ virtual void func_ov063_021584f0(void);
-    /* 24 */ virtual void func_ov063_021584c4(void);
-    /* 2C */ virtual void func_ov063_02158a2c(void);
+    /* 10 */ virtual void vfunc_10(Cylinder *param1);
+    /* 18 */ virtual unk32 vfunc_18(void);
+    /* 1C */ virtual void vfunc_1C(void);
+    /* 20 */ virtual void vfunc_20(void);
+    /* 24 */ virtual void vfunc_24(void);
+    /* 2C */ virtual void vfunc_2C(void);
     /* 4C */ virtual ~ActorUnkCANS() override;
-    /* 4C */ void func_ov063_0215a9d4(void);
+    /* 4C */ void func_ov063_0215a9d4(void); // vfunc_4C conflict ???
     /* 50 */ void func_ov063_0215aa58(void);
 
     void func_ov063_02157f20(void);
@@ -58,7 +59,7 @@ public:
     void func_ov063_021582f8(void);
     void func_ov063_0215830c(void);
     void func_ov063_02158424(void);
-    void func_ov063_02158448(void);
+    void func_ov063_02158448(unk32 param1);
     void func_ov063_02158490(void);
     void func_ov063_02158b0c(void);
     void func_ov063_02158b34(void);
@@ -93,7 +94,7 @@ public:
     void func_ov063_0215a5a0(void);
     void func_ov063_0215a5bc(void);
     void func_ov063_0215a5d8(void);
-    void func_ov063_0215a678(void);
+    static void func_ov063_0215a678(void);
     void func_ov063_0215a7d4(void);
     void func_ov063_0215a834(void);
     void func_ov063_0215a880(void);

@@ -1,6 +1,7 @@
 //! TODO: This file was generated automatically and might contain errors
 
 #include "Actor/ActorUnkCASE.hpp"
+#include "Actor/ActorRef.hpp"
 #include "System/SysNew.hpp"
 
 DECL_PROFILE(ActorProfileUnkCASE);
@@ -21,7 +22,7 @@ void ActorUnkCASE::func_ov063_0215ac4c(void) {}
 void ActorUnkCASE::func_ov063_0215ac68(void) {}
 void ActorUnkCASE::func_ov063_0215ac8c(void) {}
 void ActorUnkCASE::func_ov063_0215acc8(void) {}
-void ActorUnkCASE::func_ov063_0215acec(void) {}
+void ActorUnkCASE::func_ov063_0215acec(ActorRef *ref1, ActorRef ref2) {};
 void ActorUnkCASE::func_ov063_0215ae6c(void) {}
 void ActorUnkCASE::func_ov063_0215ae80(void) {}
 void ActorUnkCASE::func_ov063_0215ae94(void) {}

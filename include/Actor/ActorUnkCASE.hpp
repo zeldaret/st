@@ -4,6 +4,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Actor/ActorRef.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -33,7 +34,7 @@ public:
     void func_ov063_0215ac68(void);
     void func_ov063_0215ac8c(void);
     void func_ov063_0215acc8(void);
-    void func_ov063_0215acec(void);
+    static void func_ov063_0215acec(ActorRef *ref1, ActorRef ref2); // copy ?
     void func_ov063_0215ae6c(void);
     void func_ov063_0215ae80(void);
     void func_ov063_0215ae94(void);
