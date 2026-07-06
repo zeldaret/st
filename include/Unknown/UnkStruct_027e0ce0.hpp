@@ -6,7 +6,7 @@
 #include "Actor/ActorRef.hpp"
 #include "Item/ItemManager.hpp"
 #include "LinkList.hpp"
-#include "Player/Player.hpp"
+#include "Player/PlayerLink.hpp"
 #include "Player/TouchControl.hpp"
 #include "Save/SaveManager.hpp"
 #include "System/SysNew.hpp"
@@ -14,7 +14,127 @@
 
 #include <nitro/math.h>
 
+class UnkStruct_027e0ce0;
+class UnkStruct_027e0ce0_30;
+class UnkStruct_027e0ce0_38;
+class UnkStruct_027e0ce0_3C;
 class UnkStruct_ov001_020c40f4;
+
+class UnkStruct_027e0ce0_0C : public LinkList<UnkStruct_027e0ce0_0C> {
+public:
+    /* 00 (vtable) */
+    /* 04 (base) */
+    /* 0C */ UnkStruct_027e0ce0 *mUnk_0C;
+    /* 10 */
+
+    UnkStruct_027e0ce0_0C(UnkStruct_027e0ce0 *param1) :
+        mUnk_0C(param1) {}
+
+    // data_ov000_020b2b38
+    /* 00 */ virtual void vfunc_00(unk32 param1);
+};
+
+class UnkStruct_027e0ce0_1C {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+    /* 0C */ MapObjectProfile_Derived2_20_Base *mUnk_0C;
+    /* 10 */ STRUCT_PAD(0x10, 0xDC);
+    /* DC */
+
+    UnkStruct_027e0ce0_1C();
+    ~UnkStruct_027e0ce0_1C();
+
+    // overlay 1
+    void func_ov001_020bccec();
+    void func_ov001_020bcfec();
+    void func_ov001_020bd0a4(bool param1);
+    void func_ov001_020bd1ec();
+};
+
+class UnkStruct_027e0ce0_20 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+    /* 0C */
+
+    UnkStruct_027e0ce0_20();
+    ~UnkStruct_027e0ce0_20();
+};
+
+class UnkStruct_027e0ce0_24 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x88);
+    /* 88 */
+
+    UnkStruct_027e0ce0_24();
+    ~UnkStruct_027e0ce0_24();
+
+    // overlay 21
+    void func_ov021_020eaa08(UnkStruct_027e0ce0_20 *param1);
+    void func_ov021_020eaac4();
+    void func_ov021_020eab14(unk32 param1, const UnkStruct_ov001_020c40f4 *param2, UnkStruct_027e0ce0_30 *param3);
+};
+
+class UnkStruct_027e0ce0_30_00 {
+private:
+    /* 00 */ VecFx32 mUnk_00;
+    /* 0C */ VecFx32 mUnk_0C;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ bool mUnk_28;
+    /* 2C */ UnkStruct_027e0ce0_38 *mUnk_2C;
+    /* 30 */ UnkStruct_027e0ce0_3C *mUnk_30;
+    /* 34 */ unk32 mUnk_34;
+    /* 38 */ unk32 *mUnk_38;
+    /* 38 */ unk32 mUnk_3C;
+    /* 40 */
+
+public:
+    UnkStruct_027e0ce0_30_00(UnkStruct_027e0ce0_38 *param1, UnkStruct_027e0ce0_3C *param2, unk32 param3, unk32 *param4,
+                             unk32 param5);
+    ~UnkStruct_027e0ce0_30_00();
+};
+
+class UnkStruct_027e0ce0_30_04 {
+private:
+    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+    /* 0C */
+
+public:
+    UnkStruct_027e0ce0_30_04();
+    ~UnkStruct_027e0ce0_30_04();
+};
+
+class UnkStruct_027e0ce0_30_08 {
+private:
+    /* 00 */ STRUCT_PAD(0x00, 0x24);
+    /* 24 */
+
+public:
+    UnkStruct_027e0ce0_30_08(unk32 param1);
+    ~UnkStruct_027e0ce0_30_08();
+};
+
+class UnkStruct_027e0ce0_30 {
+private:
+    /* 00 */ UnkStruct_027e0ce0_30_00 *mUnk_00;    // only used for adventure mode?
+    /* 04 */ UnkStruct_027e0ce0_30_04 *mUnk_04;    // only used for adventure mode?
+    /* 08 */ UnkStruct_027e0ce0_30_08 *mUnk_08[4]; // only used for battle mode?
+    /* 18 */
+
+public:
+    UnkStruct_027e0ce0_30();
+    ~UnkStruct_027e0ce0_30();
+
+    // overlay 1
+    void func_ov001_020bbf00(int index, unk32 param2);
+    void func_ov001_020bbf24(UnkStruct_027e0ce0_38 *param1);
+    void func_ov001_020bbf50(UnkStruct_027e0ce0_3C *param1);
+    void func_ov001_020bbf7c(unk32 param1, unk32 *param2, unk32 param3);
+    void func_ov001_020bbfcc();
+    void func_ov001_020bbff4(UnkStruct_027e0ce0_38 *param1);
+};
 
 class UnkStruct_027e0ce0_34 {
 public:
@@ -27,7 +147,18 @@ public:
     /* 30 */ u32 mSpiritTrackFlags;
     /* 34 */ unk32 mUnk_34;
     /* 38 */ u32 mTrackFlags[3];
-    /* 44 */
+    /* 44 */ STRUCT_PAD(0x44, 0xF4);
+    /* F4 */
+
+    UnkStruct_027e0ce0_34();
+    ~UnkStruct_027e0ce0_34();
+
+    // overlay 1
+    void func_ov001_020bf22c(unk32 param1, unk32 param2);
+    void func_ov001_020bf2b8(bool param1);
+    void func_ov001_020bf378();
+    void func_ov001_020bf3bc();
+    void func_ov001_020bf3cc();
 
     // overlay 8
     void func_ov008_020b6a50();
@@ -57,6 +188,19 @@ public:
 
     // overlay 110
     void func_ov110_02185d3c(ItemId itemId);
+};
+
+class UnkStruct_027e0ce0_3C {
+public:
+    /* 00 */ VecFx32 mUnk_00;
+    /* 0C */ STRUCT_PAD(0x0C, 0x98);
+    /* 98 */
+
+    UnkStruct_027e0ce0_3C();
+    ~UnkStruct_027e0ce0_3C();
+
+    // overlay 88
+    void func_ov088_0216fbc4(unk32 param1, const UnkStruct_ov001_020c40f4 *param2);
 };
 
 class UnkStruct_ov031_020f3310_00 {
@@ -229,11 +373,18 @@ public:
     /* 274 */ UnkStruct_ov019_020d24c8_28_258_00 mUnk_274;
     /* 280 */
 
-    UnkStruct_027e0ce0_38();
+    UnkStruct_027e0ce0_38(unk32 param1);
 
     // data_ov026_0213562c
     /* 00 */ virtual ~UnkStruct_027e0ce0_38() override;
     /* 0C */ virtual bool vfunc_0C() override;
+
+    // overlay 26
+    void func_ov026_020dc8f0();
+    void func_ov026_020de908(UnkStruct_027e0ce0_30_00 *param1);
+    void func_ov026_020dc918();
+    void func_ov026_020dc9b0();
+    void func_ov026_020dc9bc(const UnkStruct_ov001_020c40f4 *param1);
 };
 
 class UnkStruct_027e0ce0_40_Base_14 {
@@ -242,7 +393,14 @@ public:
     /* 22 */ STRUCT_PAD(0x22, 0x60);
     /* 60 */
 
-    UnkStruct_027e0ce0_40_Base_14();
+    UnkStruct_027e0ce0_40_Base_14() :
+        mTouchControl(false) {
+        UnkStruct_027e0ce0_40_Base_14 *ptr = this;
+        ptr->mTouchControl.Init();
+        ptr->func_ov000_02096a9c();
+    }
+
+    void func_ov000_02096a9c();
 };
 
 class UnkStruct_027e0ce0_40_Base_74 {
@@ -250,15 +408,20 @@ public:
     /* 00 */ STRUCT_PAD(0x00, 0x5C);
     /* 5C */
 
-    UnkStruct_027e0ce0_40_Base_74();
+    UnkStruct_027e0ce0_40_Base_74() {
+        this->func_ov031_020e0c34();
+    }
+
+    void func_ov031_020e0c34();
 };
 
 class UnkStruct_027e0ce0_40_Base_78 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x04);
+    /* 00 */ unk32 mUnk_00;
     /* 04 */
 
     UnkStruct_027e0ce0_40_Base_78();
+    ~UnkStruct_027e0ce0_40_Base_78();
 };
 
 class UnkStruct_027e0ce0_40_Base_7C {
@@ -266,12 +429,43 @@ public:
     /* 00 */ STRUCT_PAD(0x00, 0x18);
     /* 18 */
 
-    UnkStruct_027e0ce0_40_Base_7C();
+    UnkStruct_027e0ce0_40_Base_7C(unk32 param1);
+    ~UnkStruct_027e0ce0_40_Base_7C();
+
+    // overlay 0
+    void func_ov000_020968e0();
 };
 
-class UnkStruct_027e0ce0_40_Base_94 {
+class UnkStruct_027e0ce0_40_Base_94_50_Base {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x14);
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */
+
+    UnkStruct_027e0ce0_40_Base_94_50_Base(unk32 param1, unk32 param2, ActorRefElem *param3, unk32 param4);
+};
+
+class UnkStruct_027e0ce0_40_Base_94_50 : public UnkStruct_027e0ce0_40_Base_94_50_Base {
+public:
+    /* 00 (base) */
+    /* 14 */ ActorRefElem mUnk_14[4];
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ unk32 mUnk_28;
+    /* 2C */ unk32 *mUnk_2C;
+
+    UnkStruct_027e0ce0_40_Base_94_50(unk32 param1) :
+        UnkStruct_027e0ce0_40_Base_94_50_Base(0x01, param1, this->mUnk_14, 0x04),
+        mUnk_2C(&this->mUnk_24) {}
+
+    ~UnkStruct_027e0ce0_40_Base_94_50() {}
+};
+
+class UnkStruct_027e0ce0_40_Base_94_Base : public UnkStruct_027e0ce0_40_Base_94_50_Base {
+public:
+    /* 00 (base) */
     /* 14 */ ActorRef mUnk_14;
     /* 18 */ unk32 mUnk_18;
     /* 1C */ ActorRef mUnk_1C;
@@ -279,17 +473,53 @@ public:
     /* 24 */ STRUCT_PAD(0x24, 0x48);
     /* 48 */ ActorRef mUnk_48;
     /* 4C */ unk32 mUnk_4C;
-    /* 50 */ unk32 mUnk_50;
-    /* 54 */ unk32 mUnk_54;
-    /* 58 */ unk32 mUnk_58;
+    /* 50 */
+
+    UnkStruct_027e0ce0_40_Base_94_Base(unk32 param1);
+};
+
+class UnkStruct_027e0ce0_40_Base_94 : public UnkStruct_027e0ce0_40_Base_94_Base {
+public:
+    /* 00 (base) */
+    /* 50 */ UnkStruct_027e0ce0_40_Base_94_50 *mUnk_50;
+    /* 54 */ UnkStruct_027e0ce0_40_Base_94 *mUnk_54;
+    /* 58 */ UnkStruct_027e0ce0_40_Base_94_50 *mUnk_58;
     /* 5C */ unk32 mUnk_5C; // seems to be the walking speed of link??
-    /* 60 */ unk32 mUnk_60;
-    /* 64 */ unk32 mUnk_64;
-    /* 68 */ unk32 mUnk_68;
+    /* 60 */ unk16 mUnk_60;
+    /* 62 */ unk16 mUnk_62;
+    /* 64 */ unk8 mUnk_64;
+    /* 65 */ unk8 mUnk_65;
+    /* 66 */ unk8 mUnk_66;
+    /* 67 */ unk8 mUnk_67;
+    /* 68 */ unk8 mUnk_68;
+    /* 69 */ unk8 mUnk_69;
+    /* 6A */ unk8 mUnk_6A;
     /* 6C */ unk32 mUnk_6C;
     /* 70 */
 
-    UnkStruct_027e0ce0_40_Base_94();
+    UnkStruct_027e0ce0_40_Base_94(unk32 param1);
+    ~UnkStruct_027e0ce0_40_Base_94();
+
+    // overlay 0
+    void func_ov000_0208aee4();
+};
+
+typedef u16 UnkFlags3;
+enum UnkFlags3_ {
+    UnkFlags3_None = 0,
+    UnkFlags3_0    = 0,
+    UnkFlags3_1    = 1,
+    UnkFlags3_2    = 2,
+    UnkFlags3_3    = 3,
+    UnkFlags3_4    = 4,
+    UnkFlags3_5    = 5,
+    UnkFlags3_6    = 6,
+    UnkFlags3_7    = 7,
+    UnkFlags3_8    = 8,
+    UnkFlags3_9    = 9,
+    UnkFlags3_10   = 10,
+    UnkFlags3_11   = 11,
+    UnkFlags3_Max  = 12,
 };
 
 class UnkStruct_027e0ce0_40_Base {
@@ -304,12 +534,15 @@ public:
     /* 078 */ UnkStruct_027e0ce0_40_Base_78 *mUnk_078;
     /* 07C */ UnkStruct_027e0ce0_40_Base_7C mUnk_07C;
     /* 094 */ UnkStruct_027e0ce0_40_Base_94 mUnk_094;
-    /* 104 */ unk16 mUnk_104; // set to 0 on idle, set to 3 when pulling out an item
+    /* 104 */ UnkFlags3 mUnk_104; // set to 0 on idle, set to 3 when pulling out an item
     /* 106 */ unk8 mUnk_106;
     /* 107 */ unk8 mUnk_107;
     /* 108 */
 
-    UnkStruct_027e0ce0_40_Base(unk32 param1, void *param2, ItemManager *param3);
+    UnkStruct_027e0ce0_40_Base(unk32 param1, void *param2, ItemManager *pItemMgr);
+    ~UnkStruct_027e0ce0_40_Base();
+
+    void func_ov001_020bc0e0(bool param1);
 };
 
 class UnkStruct_027e0ce0_40_108_Base : public LinkList<UnkStruct_027e0ce0_40_108_Base> {
@@ -367,9 +600,9 @@ public:
     /* 148 */ void *mUnk_148;
     /* 14C */ UnkStruct_027e0ce0_40_14C *mUnk_14C;
     /* 150 */ UnkStruct_027e0ce0_40_150 *mUnk_150;
-    /* 154 */ PlayerActor mPlayer;
+    /* 154 */ PlayerLinkActor mPlayer;
     /* 328 */ UnkStruct_027e0ce0_40_328 *mUnk_328;
-    /* 32C */ PlayerActor *mpPlayer;               // set to mPlayer
+    /* 32C */ PlayerLinkActor *mpPlayer;           // set to mPlayer
     /* 330 */ UnkStruct_027e0ce0_40_328 *mUnk_330; // set to mUnk_328
     /* 334 */ ItemFlag mEquippedItem;
     /* 338 */ bool mIsSceneTowerInteriorStairs;
@@ -378,10 +611,14 @@ public:
     /* 33B */ unk8 mUnk_33B;
     /* 33C */
 
-    // param2 is UnkStruct_027e0ce0::mUnk_20
-    // param3 is UnkStruct_027e0ce0::mUnk_04
-    // param4 is UnkStruct_027e0ce0::mUnk_28
-    UnkStruct_027e0ce0_40(unk32 param1, void *param2, void *param3, ItemManager *param4);
+    UnkStruct_027e0ce0_40(bool param1, UnkStruct_027e0ce0_20 *param2, unk32 **param3, ItemManager *pItemMgr);
+    ~UnkStruct_027e0ce0_40();
+
+    // overlay 101
+    bool func_ov101_02182fb4(bool param1);
+    void func_ov101_02183004();
+    void func_ov101_02183024(const UnkStruct_ov001_020c40f4 *param1, const UnkStruct_ov001_020c40f4 *param2, unk32 param3,
+                             unk32 param4, ItemManager *pItemMgr, UnkStruct_027e0ce0_30 *param6, bool param7, bool param8);
 };
 
 union UnkStruct_027e0478 {
@@ -391,45 +628,33 @@ union UnkStruct_027e0478 {
 
 extern UnkStruct_027e0478 data_027e0478;
 
-class UnkStruct_027e0ce0_3C {
+class UnkStruct_027e0ce0_Base {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x98);
-    /* 98 */
+    /* 00 */ u8 mHealth;
+    /* 01 */ u8 mHealthMax;
+    /* 02 */
 
-    UnkStruct_027e0ce0_3C();
-};
-
-class UnkStruct_027e0ce0_1C {
-public:
-    /* 00 */ STRUCT_PAD(0x00, 0x0C);
-    /* 0C */ MapObjectProfile_Derived2_20_Base *mUnk_0C;
-
-    void func_ov001_020bd0a4(bool param1);
+    UnkStruct_027e0ce0_Base();
 };
 
 // PlayerManager?
-class UnkStruct_027e0ce0 : public AutoInstance<UnkStruct_027e0ce0> {
+class UnkStruct_027e0ce0 : public AutoInstance<UnkStruct_027e0ce0>, public UnkStruct_027e0ce0_Base {
 public:
-    /* 00 */ unk8 mHealth;
-    /* 01 */ unk8 mHealthMax;
-    /* 02 */ unk8 mUnk_02;
-    /* 03 */ unk8 mUnk_03;
+    /* 02 */ bool mUnk_02;
+    /* 03 */ bool mUnk_03;
     /* 04 */ unk32 *mUnk_04;
-    /* 08 */ unk32 *mUnk_08;
-    /* 0C */ unk32 *mUnk_0C; // vtable
-    /* 10 */ unk32 *mUnk_10;
-    /* 14 */ unk32 *mUnk_14;
-    /* 18 */ unk32 *mUnk_18;
+    /* 08 */ bool mUnk_08;
+    /* 0C */ UnkStruct_027e0ce0_0C mUnk_0C;
     /* 1C */ UnkStruct_027e0ce0_1C *mUnk_1C;
-    /* 20 */ unk32 *mUnk_20;
-    /* 24 */ unk32 mUnk_24;
-    /* 28 */ ItemManager *mUnk_28;
-    /* 2C */ ItemManager *mUnk_2C; // same as above
-    /* 30 */ unk32 *mUnk_30;       // ?
-    /* 34 */ UnkStruct_027e0ce0_34 *mUnk_34;
-    /* 38 */ UnkStruct_027e0ce0_38 *mUnk_38; // pointer to data_027e0478 when on the train
+    /* 20 */ UnkStruct_027e0ce0_20 *mUnk_20;
+    /* 24 */ UnkStruct_027e0ce0_24 *mUnk_24; // only for battle mode
+    /* 28 */ ItemManager *mUnk_28;           // only for title screen or adventure mode
+    /* 2C */ ItemManager *mUnk_2C;           // same as above
+    /* 30 */ UnkStruct_027e0ce0_30 *mUnk_30;
+    /* 34 */ UnkStruct_027e0ce0_34 *mUnk_34; // only for adventure mode
+    /* 38 */ UnkStruct_027e0ce0_38 *mUnk_38; // pointer to data_027e0478 when on train
     /* 3C */ UnkStruct_027e0ce0_3C *mUnk_3C; // cutscene related
-    /* 40 */ UnkStruct_027e0ce0_40 *mUnk_40; // pointer to data_027e0478 when not on the train
+    /* 40 */ UnkStruct_027e0ce0_40 *mUnk_40; // pointer to data_027e0478 when on land
     /* 44 */
 
     UnkStruct_027e0ce0();
@@ -441,19 +666,19 @@ public:
     bool func_01fff1e0();
 
     // overlay 0
+    void func_ov000_0208a218(InvImportData *pInvData);
+    void func_ov000_0208a2c4(unk32 param1, unk32 param2);
     void func_ov000_0208a318(unk32 param1, unk32 param2, unk32 param3);
     void func_ov000_0208bbd4(unk32 param1, VecFx32 *param2, u16 param3);
-
-    void func_ov000_0208bbd4(unk32 param1, VecFx32 *param2, void *param3);
     bool func_ov000_0208bc1c(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);
     void func_ov000_0208bd30(bool param1, unk32 param2, unk32 param3, unk32 param4);
-
     G3d_Model *func_ov000_0208ed30(unk32 param1, unk32 param2, char *param3);
 
     static UnkStruct_027e0ce0_34 *func_ov000_0205c904();
 
     // overlay 1
+    void func_ov001_020bc4d8(InvImportData *pInvData, unk32 param2, unk32 param3);
     void func_ov001_020bc524(bool param1);
     void func_ov001_020bc5f8();
     void func_ov001_020bc65c();

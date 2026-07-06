@@ -40,8 +40,8 @@ typedef void (*UnkCallback)(u16 param1);
 
 template <typename T> class Instance {
 public:
-    Instance();
-    ~Instance();
+    Instance();  //! TODO: should this be inlined?
+    ~Instance(); //! TODO: should this be inlined?
 };
 
 template <typename T> class AutoInstance : public Instance<T> {

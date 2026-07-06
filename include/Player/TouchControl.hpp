@@ -40,7 +40,14 @@ public:
     /* 20 */ TouchFlags mFlags;
     /* 22 */
 
-    TouchControl();
+    //! TODO: solve the temp oddity in `UnkStruct_027e0ce0_40_Base`
+    TouchControl(bool autocallInit = true) {
+        if (autocallInit) {
+            this->Init();
+        }
+    }
+
+    void Init();
     void IncreaseSpeed(u16 increase);
     void UpdateFlags(u16 speed);
     void UpdateWithStateFlags(TPData *state, u16 speed);

@@ -1,9 +1,12 @@
 #pragma once
 
 #include "global.h"
+#include "nitro/fx.h"
 #include "types.h"
 
 #include <nns/g3d/g3d.h>
+
+extern "C" void *func_ov000_02057750(size_t allocSize);
 
 typedef void (*UnkSystem4_UnkCallback)(void);
 
@@ -40,8 +43,12 @@ public:
     /* 0C */ virtual void vfunc_0C()                                                = 0;
     /* 10 */ virtual void vfunc_10(VecFx32 *param1, Mat3p *param2, VecFx32 *param3) = 0;
     /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2)                  = 0;
-    /* 18 */ virtual void vfunc_18()                                                = 0;
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1)                                 = 0;
     /* 1C */
+
+    unk32 func_ov000_02057f18(const void *param1);
+    unk32 func_ov000_02057f40(const void *param1);
+    const G3d_Model_14 *func_ov000_02057ee0() const;
 };
 
 class ModelRender : public ModelRenderBase {
@@ -59,11 +66,13 @@ public:
     /* 0C */ virtual void vfunc_0C() override;
     /* 10 */ virtual void vfunc_10(VecFx32 *param1, Mat3p *param2, VecFx32 *param3) override; // SetTransform?
     /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) override;                  // SetRotationTranslation?
-    /* 18 */ virtual void vfunc_18() override;
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1) override;
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1);
     /* 20 */ virtual void vfunc_20();
 
     void func_ov000_02057c38(unk32 param1, unk32 param2);
+    void func_ov000_02057d20(u8 numBones);
+    void func_ov000_02057d3c(G3d_BoneMtxStruct *pCacheJntAnm);
     void func_ov000_0209a7b8(void *param1, UnkSystem4_UnkCallback param2);
 };
 
@@ -79,7 +88,7 @@ public:
     /* 00 */ virtual ~UnkSystem6_Derived1() override {}
     /* 10 */ virtual void vfunc_10(VecFx32 *param1, Mat3p *param2, VecFx32 *param3) override;
     /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) override;
-    /* 18 */ virtual void vfunc_18() override;
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1) override;
 };
 
 class UnkSystem6_Derived2 : public UnkSystem6_Derived1 {
@@ -98,6 +107,30 @@ public:
     /* 0C */ virtual void vfunc_0C() override;
 
     void func_01ffc6d4(u16 angle, VecFx32 *pos);
+};
+
+class ModelRender_ov000_020b198c : public ModelRenderBase {
+public:
+    /* 00 (base) */
+    /* 08 */ unk8 mUnk_08;
+    /* 09 */ STRUCT_PAD(0x09, 0x0A);
+    /* 0A */ unk16 mUnk_0A;
+    /* 0C */ unk16 mUnk_0C;
+    /* 0E */
+
+    // func_ov000_020578e8
+    ModelRender_ov000_020b198c(G3d_Model *pModel, unk8 param2);
+
+    // data_ov000_020b198c
+    /* 00 */ virtual ~ModelRender_ov000_020b198c() override {}
+    /* 08 */ virtual void vfunc_08(G3d_Model *pModel) override; // func_ov000_02057908
+    /* 0C */ virtual void vfunc_0C() override;                  // func_ov000_0205793c
+    /* 10 */ virtual void vfunc_10(VecFx32 *param1, Mat3p *param2, VecFx32 *param3) override;
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, VecFx32 *param2) override;
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1) override;
+
+    void func_ov000_02057ed8(G3d_Model *pModel);
+    unk32 func_ov000_02057ef4();
 };
 
 class UnkSystem5 {
@@ -164,4 +197,23 @@ public:
 
     // data_ov024_020d84bc
     /* 00 */ virtual ~ModelRender_Derived2() override {}
+};
+
+class ModelRender_UnkSystem1 {
+public:
+    /* 00 */ UnkSystem5 mUnk_00;
+    /* 20 */
+
+    ModelRender_UnkSystem1(G3d_Model *pModel, size_t allocSize) :
+        mUnk_00(func_ov000_02057750(allocSize), pModel) {}
+
+    ~ModelRender_UnkSystem1();
+};
+
+class ModelRender_UnkSystem1_Derived1 : public ModelRender_UnkSystem1 {
+public:
+    /* 00 (base) */
+    /* 20 */
+
+    ModelRender_UnkSystem1_Derived1(G3d_Model *pModel, size_t allocSize);
 };

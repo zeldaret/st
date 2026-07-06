@@ -82,7 +82,7 @@ src/031_Land/Actor/ActorUnkSCCN.cpp:
     .ctor       start:0x02114554 end:0x02114558
     .bss        start:0x0211872c end:0x02118778
 
-src/031_Land/Actor/ActorUnkNTUB.cpp:
+src/031_Land/Actor/ActorPot.cpp:
     .text       start:0x020f25fc end:0x020f29c8
     .init       start:0x02113218 end:0x02113268
     .ctor       start:0x02114558 end:0x0211455c
@@ -304,7 +304,7 @@ src/031_Land/MapObject/MapObjectUnkTRWS.cpp:
     .ctor       start:0x021145e0 end:0x021145e4
     .bss        start:0x02119be8 end:0x02119ccc
 
-src/031_Land/MapObject/MapObjectUnkTSUB.cpp:
+src/031_Land/MapObject/MapObjectPot.cpp:
     .text       start:0x02106c8c end:0x021071f8
     .init       start:0x02113f04 end:0x02113f54
     .ctor       start:0x021145e4 end:0x021145e8

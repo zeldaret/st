@@ -1,4 +1,4 @@
-#include "Player/Player.hpp"
+#include "Player/PlayerLink.hpp"
 
 extern "C" void func_ov000_0205be34(void *thisx, unk16 param1);
 extern "C" void func_ov000_0205be44(void *thisx, Vec2s *param1, Vec2s *param2, bool param3, bool param4);
@@ -16,7 +16,7 @@ static const Vec2s data_ov024_020d822c(0x20, 0x10);
 static const Vec2s data_ov024_020d8228(0x20, 0x40);
 static const Vec2s data_ov024_020d8224(0x40, 0x40);
 
-void PlayerActor_A0_38_04::vfunc_00() {
+void PlayerLinkActor_A0_38_04::vfunc_00() {
     UnkStruct_auStack_14 spC;
     Vec2s sp8;
     Vec2s sp4;
@@ -46,7 +46,7 @@ void PlayerActor_A0_38_04::vfunc_00() {
     func_ov000_0205be44(&spC, &sp8, &sp4, var_r3, var_r4);
 }
 
-void PlayerActor_A0_38_18::vfunc_00() {
+void PlayerLinkActor_A0_38_18::vfunc_00() {
     UnkStruct_auStack_14 sp3C;
     UnkStruct_auStack_14 sp38;
     UnkStruct_auStack_14 sp34;
@@ -119,7 +119,7 @@ void PlayerActor_A0_38_18::vfunc_00() {
 
 THUMB_BEGIN
 
-PlayerActor_A0_38::PlayerActor_A0_38() :
+PlayerLinkActor_A0_38::PlayerLinkActor_A0_38() :
     mUnk_00(0xC0),
     mUnk_02(0x80),
     mUnk_04(this),
@@ -127,9 +127,9 @@ PlayerActor_A0_38::PlayerActor_A0_38() :
     this->func_ov024_020d19d8();
 }
 
-PlayerActor_A0_38::~PlayerActor_A0_38() {}
+PlayerLinkActor_A0_38::~PlayerLinkActor_A0_38() {}
 
-void PlayerActor_A0_38::func_ov024_020d19d8() {
+void PlayerLinkActor_A0_38::func_ov024_020d19d8() {
     this->mUnk_2C.x = 0x8000;
     this->mUnk_2C.y = 0x8000;
     this->mUnk_30   = 0;

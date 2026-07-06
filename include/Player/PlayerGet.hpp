@@ -101,15 +101,6 @@ public:
     }
 };
 
-class UnkStruct_PlayerGet_74_base {
-public:
-    /* 00 (vtable) */
-
-    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3);
-
-    UnkStruct_PlayerGet_74_base();
-};
-
 class UnkStruct_PlayerGet_74 : public UnkStruct_PlayerGet_74_base {
 public:
     /* 00 (base) */
