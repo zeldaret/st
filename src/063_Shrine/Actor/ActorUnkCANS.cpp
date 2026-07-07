@@ -3,6 +3,7 @@
 #include "Actor/ActorUnkCANS.hpp"
 #include "Actor/ActorItemBoomerang.hpp"
 #include "Actor/ActorManager.hpp"
+#include "Actor/ActorRef.hpp"
 #include "Actor/ActorUnkCASE.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
@@ -21,19 +22,21 @@ static PTMF<ActorUnkCANS> data_ov063_02162fb0[0xA] = {
     ActorUnkCANS::func_ov063_02159ec0,
 };
 
+extern void *data_027e09c0;
 extern unk16 *data_ov000_020aed00;
 
 extern "C" void func_01ff9638(VecFx32 *param1, fx16 param2);
 extern "C" unk32 func_01ffbbe0(unk32 param1, unk32 param2);
+extern "C" void func_ov000_0207de98(void *param1, ActorRef param2, VecFx32 *param3, unk32 *param4);
 extern "C" void func_ov000_0208bd20(UnkStruct_027e0ce0 *param1, unk32 param2, unk32 param3, unk32 param4);
 extern "C" void func_ov000_020986b4(s16 *var, ActorUnkCANS *param2, unk32 param3);
 extern "C" void func_ov000_02098838(ActorUnkCANS *param1);
 extern "C" unk32 func_ov000_020987dc(ActorUnkCANS *param1, unk32 *param2);
 extern "C" unk32 func_ov000_02099a0c(unk32 *param1);
 extern "C" void func_ov017_020bf178(ActorUnkCANS *param1, unk32 *param2, unk32 param3);
-extern "C" void func_ov017_020bf894(ActorUnkCANS *param1, unk32 param2);
+extern "C" void func_ov017_020bf894(ActorUnkCANS *param1, unk32 *param2);
 extern "C" void func_ov017_020bfb18(ActorUnkCANS *param1, unk32 *param2);
-extern "C" unk32 func_ov017_020ebf4c(ActorUnkCANS *param1, unk32 param2);
+extern "C" unk32 func_ov017_020bef4c(ActorUnkCANS *param1, unk32 param2);
 extern "C" unk32 func_ov031_020d9c04(UnkStruct_027e0d38 *param1, unk32 param2, unk32 param3, unk32 param4);
 
 DECL_PROFILE(ActorProfileUnkCANS);
@@ -107,28 +110,27 @@ void ActorUnkCANS::vfunc_1C(void) {
 
 void ActorUnkCANS::vfunc_20(void) {
     if (mUnk_238 < mUnk_23A) {
-        mUnk_238++;
+        (*(volatile u16 *) &mUnk_238)++;
     }
 
-    unk32 res = func_ov017_020ebf4c(this, 0x4000);
-    if (res == 0 && mUnk_48 != 0 && mUnk_4A[1] != 4) {
+    unk32 res = func_ov017_020bef4c(this, 0x4000);
+    if (res == 0 && mUnk_48 != 0 && mState != 4) {
         return;
     }
     mUnk_3C = (Actor_9C *) &mUnk_1F4.mUnk_0C;
 
-    // if (CALL_PTMF(PTMF<ActorUnkCANS>, data_) & 1 == 0) {
-    // }
-    //
-    func_ov017_020bf894(this, mUnk_224);
+    CALL_PTMF(PTMF<ActorUnkCANS>, data_ov063_02162fb0[mState]);
+
+    func_ov017_020bf894(this, &mUnk_224);
     this->func_ov000_02098838();
 
-    mPrevPos = mPos;
+    VecFx32_Copy(&mPos, &mPrevPos);
 
     VecFx32_Add(&mPos, &mVel, &mPos);
 
     if (mUnk_268 != NULL) {
-        fx16 angle = mAngle;
-        mUnk_268->func_ov063_0215b6c8(mUnk_250, angle);
+        u16 angle = mAngle; //! TODO: Force on stack
+        mUnk_268->func_ov063_0215b6c8(&mUnk_250, angle);
     }
 
     this->func_ov000_02098b8c(1, &mUnk_23C);
@@ -234,7 +236,7 @@ void ActorUnkCANS::vfunc_20(void) {
             if (iVar5 != 0) {
                 Actor *iVar6 = gpActorManager->func_01fff3b4(mUnk_20C);
                 if (iVar6 != 0) {
-                    ((ActorItemBoomerang *) iVar6)->func_ov031_020e49b0(0x8d70);
+                    ((ActorItemBoomerang *) iVar6)->func_ov031_020e49b0(0x8D70);
                 }
                 sVar2 = mState;
                 return; // TODO some goto
@@ -260,10 +262,47 @@ void ActorUnkCANS::vfunc_20(void) {
             this->func_ov063_02158448(uVar9);
         }
     }
-    if (mUnk_268 != 0) {
+    char cVar13 = '\0';
+    if (mUnk_268 != NULL) {
         *(char *) ((*(int **) mUnk_268) + 500) = (char) iVar5;
     }
     ((Actor *) mUnk_128)->vfunc_34(); //! INFO: NOT an Actor
+    unk32 uVar7  = mFlags[0];
+    unk32 bVar14 = (uVar7 & 1) != 0;
+    if (bVar14) {
+        uVar7  = mUnk_48;
+        cVar13 = '\0';
+    }
+    unk32 bVar12 = bVar14 && (int) uVar7 < 0;
+    if ((!bVar14 || uVar7 == 0) || bVar12 != cVar13) {
+        return;
+    }
+
+    unk32 puVar11[0xF];
+    if (mUnk_268 != NULL) {
+        VecFx32 *a = (VecFx32 *) &puVar11[0xD];
+        VecFx32 *b = (VecFx32 *) &puVar11[8];
+
+        VecFx32_Init(0x4CD, 0, 0, a);
+
+        func_01ff9638(a, mAngle);
+        VecFx32_Add(a, &mPos, a);
+
+        VecFx32_Copy(a, b);
+        puVar11[0xB] = 0xF33;
+        puVar11[0xC] = 0x1000;
+
+        func_ov000_0207de98(data_027e09c0, mRef, b, mUnk_38);
+    } else {
+        VecFx32 *a = (VecFx32 *) &puVar11[0x5];
+        VecFx32 *b = (VecFx32 *) &puVar11[0];
+        VecFx32_Copy(&mPos, a);
+        VecFx32_Copy(a, b);
+        puVar11[3] = 0xA66;
+        puVar11[4] = 0x1000;
+
+        func_ov000_0207de98(data_027e09c0, mRef, b, mUnk_38);
+    }
 }
 
 void ActorUnkCANS::vfunc_24(void) {}
