@@ -31,7 +31,7 @@ extern "C" void func_ov000_0207de98(void *param1, ActorRef param2, VecFx32 *para
 extern "C" void func_ov000_0208bd20(UnkStruct_027e0ce0 *param1, unk32 param2, unk32 param3, unk32 param4);
 extern "C" void func_ov000_020986b4(s16 *var, ActorUnkCANS *param2, unk32 param3);
 extern "C" void func_ov000_02098838(ActorUnkCANS *param1);
-extern "C" unk32 func_ov000_020987dc(ActorUnkCANS *param1, unk32 *param2);
+extern "C" unk32 func_ov000_02098d7c(ActorUnkCANS *param1, unk32 *param2);
 extern "C" unk32 func_ov000_02099a0c(unk32 *param1);
 extern "C" void func_ov017_020bf178(ActorUnkCANS *param1, unk32 *param2, unk32 param3);
 extern "C" void func_ov017_020bf894(ActorUnkCANS *param1, unk32 *param2);
@@ -136,7 +136,7 @@ void ActorUnkCANS::vfunc_20(void) {
     this->func_ov000_02098b8c(1, &mUnk_23C);
     unk16 res1 = func_01ffbbe0(*(unk32 *) &mUnk_23C.mUnk_08, mUnk_24C);
     unk16 res2 = func_01ffbbe0(mVel.x, mVel.z);
-    unk32 res3 = (res2 - res1 - 0x8000) * 0x10000 >> 0x10;
+    unk32 res3 = (unk16) (res2 - res1 - 0x8000);
 
     if ((mUnk_46 & 1) != 0) {
         mVel.y = 0;
@@ -146,126 +146,128 @@ void ActorUnkCANS::vfunc_20(void) {
         res3 = ABS(res3);
 
         if (res3 < 0x2000) {
-            mVel.x = mVel.y = mVel.z = 0;
-            mPos                     = mPrevPos;
+            VecFx32_Init(0, 0, 0, &mVel);
+            VecFx32_Copy(&mPrevPos, &mPos);
         }
     }
+    unk32 iVar5;
 
-    if (mUnk_48 < 1) {
-        return; // TODO some goto
-    }
-
-    if ((u16) mUnk_234 < (u16) mUnk_236) {
+    if (mUnk_48 <= 1) {
+        // return; // TODO some goto
+    } else if (((u16) mUnk_234 < (u16) mUnk_236)) {
         mUnk_234++;
+        // (*(volatile u16 *) &mUnk_234)++;
         if (mUnk_268 != NULL) {
-            *(char *) ((*(int **) mUnk_268) + 500) = 0;
+            *(char *) &mUnk_1F4 = 0;
         }
-        return; // TODO some goto (same as above)
-    }
-
-    this->func_ov000_020989e0();
-
-    if ((mUnk_208 & 0x3FFFF) == 0) {
-        return; // TODO some goto (not the same)
-    }
-
-    unk32 res4 = func_ov000_020987dc(this, &mUnk_1F4.mUnk_0C);
-    mUnk_236   = res4;
-    mUnk_234   = 0;
-
-    unk32 sVar2 = func_01ffbbe0(mUnk_210, mUnk_218);
-    unk32 iVar5 = this->func_ov063_0215a56c(sVar2);
-
-    unk32 uVar9;
-    switch (mUnk_21C) {
-        case 0:
-            break;
-        case 1:
-            break;
-        case 2:
-            break;
-        case 3:
-            if (iVar5) {
-                return; // TODO some goto
-            }
-            if (mState == 4) {
-                return; // TODO some goto
-            }
-            return; // TODO some goto
-        case 4: {
-            if (mUnk_268 != NULL) {
-                data_027e0d38->func_ov031_020d9c44(*data_ov000_020aed00);
-                sVar2 = mState;
-                return; // TODO some goto
-            }
-            unk32 iVar6 = func_ov031_020d9c04(data_027e0d38, 1, 0, 0);
-            if (iVar6 != 0) {
-                uVar9 = 10;
-                return; // TODO some goto
-            }
-            return; // TODO some goto
-        }
-        case 5:
-            break;
-        case 6:
-            break;
-        case 7:
-            break;
-        case 8:
-            if (iVar5 == 0) {
-                return; // TODO some goto
-            }
-            if (mUnk_20C != 0x102) {
-                data_027e09a8->func_ov000_02071b30(0x8c98, &mPos, 0);
-            } else {
-                unk32 param2 = 0;
-                if (mUnk_20C == 102 && (mUnk_20E == 1 || mUnk_20E == 3)) {
-                    unk32 param2 = 1;
-                }
-                func_ov000_0208bd20(data_027e0ce0, param2, 0x8c98, 0);
-            }
-            sVar2 = mState;
-            return; // TODO some goto
-        case 9:
-            break;
-        case 10:
-            break;
-        case 11:
-            break;
-        case 12:
-            if (iVar5 != 0) {
-                Actor *iVar6 = gpActorManager->func_01fff3b4(mUnk_20C);
-                if (iVar6 != 0) {
-                    ((ActorItemBoomerang *) iVar6)->func_ov031_020e49b0(0x8D70);
-                }
-                sVar2 = mState;
-                return; // TODO some goto
-            }
-            func_ov017_020bf178(this, &mUnk_1F4.mUnk_0C, 1);
-            func_ov000_02099a0c(&mUnk_224);
-            uVar9 = 4;
-            return; // TODO some goto
-        case 13:
-            if (iVar5 == 0) {
-                return; // TODO some goto
-            }
-            return; // TODO some goto
-    }
-
-    if (iVar5 == 0) {
-        this->func_ov063_02158490();
+        // return; // TODO some goto (same as above)
     } else {
-        func_ov017_020bfb18(this, &mUnk_1F4.mUnk_0C);
-        sVar2 = mState;
-        if (sVar2 != 4) {
-            uVar9 = 5;
-            this->func_ov063_02158448(uVar9);
+
+        this->func_ov000_020989e0();
+
+        if (((*(u32 *) &mUnk_208) & 0x3FFFF) == 0) {
+            // return; // TODO some goto (not the same)
+        } else {
+
+            unk32 res4 = func_ov000_02098d7c(this, &mUnk_1F4.mUnk_0C);
+            mUnk_236   = res4;
+            mUnk_234   = 0;
+
+            unk16 sVar2 = func_01ffbbe0(*(u32 *) &mUnk_210, mUnk_218);
+            iVar5       = this->func_ov063_0215a56c(sVar2);
+
+            unk32 uVar9;
+            switch (*(u16 *) &mUnk_21C) {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    if (iVar5 == 0) {
+                        return; // TODO some goto
+                    }
+                    if (mState == 4) {
+                        return; // TODO some goto
+                    }
+                    return; // TODO some goto
+                case 4: {
+                    if (mUnk_268 != NULL) {
+                        data_027e0d38->func_ov031_020d9c44(*data_ov000_020aed00);
+                        sVar2 = mState;
+                        return; // TODO some goto
+                    }
+                    unk32 iVar6 = func_ov031_020d9c04(data_027e0d38, 1, 0, 0);
+                    if (iVar6 != 0) {
+                        uVar9 = 10;
+                        return; // TODO some goto
+                    }
+                    return; // TODO some goto
+                }
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    if (iVar5 == 0) {
+                        return; // TODO some goto
+                    }
+                    if (mUnk_20C != 0x102) {
+                        data_027e09a8->func_ov000_02071b30(0x8c98, &mPos, 0);
+                    } else {
+                        unk32 param2 = 0;
+                        if (mUnk_20C == 102 && (mUnk_20E == 1 || mUnk_20E == 3)) {
+                            unk32 param2 = 1;
+                        }
+                        func_ov000_0208bd20(data_027e0ce0, param2, 0x8c98, 0);
+                    }
+                    sVar2 = mState;
+                    return; // TODO some goto
+                case 9:
+                    break;
+                case 10:
+                    break;
+                case 11:
+                    break;
+                case 12:
+                    if (iVar5 != 0) {
+                        Actor *iVar6 = gpActorManager->func_01fff3b4(mUnk_20C);
+                        if (iVar6 != 0) {
+                            ((ActorItemBoomerang *) iVar6)->func_ov031_020e49b0(0x8D70);
+                        }
+                        sVar2 = mState;
+                        return; // TODO some goto
+                    }
+                    func_ov017_020bf178(this, &mUnk_1F4.mUnk_0C, 1);
+                    func_ov000_02099a0c(&mUnk_224);
+                    uVar9 = 4;
+                    return; // TODO some goto
+                case 13:
+                    if (iVar5 == 0) {
+                        return; // TODO some goto
+                    }
+                    return; // TODO some goto
+            }
+
+            if (iVar5 == 0) {
+                this->func_ov063_02158490();
+            } else {
+                func_ov017_020bfb18(this, &mUnk_1F4.mUnk_0C);
+                sVar2 = mState;
+                if (sVar2 != 4) {
+                    uVar9 = 5;
+                    this->func_ov063_02158448(uVar9);
+                }
+            }
+        }
+        if (mUnk_268 != NULL) {
+            *(char *) ((*(int **) mUnk_268) + 500) = (char) iVar5;
         }
     }
     char cVar13 = '\0';
-    if (mUnk_268 != NULL) {
-        *(char *) ((*(int **) mUnk_268) + 500) = (char) iVar5;
-    }
     ((Actor *) mUnk_128)->vfunc_34(); //! INFO: NOT an Actor
     unk32 uVar7  = mFlags[0];
     unk32 bVar14 = (uVar7 & 1) != 0;
