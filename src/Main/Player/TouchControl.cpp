@@ -41,7 +41,7 @@ void TouchControl::UpdateState(TouchState *state, const TPData *data) {
 
 THUMB_BEGIN
 
-TouchControl::TouchControl() {
+void TouchControl::Init() {
     this->mSpeed              = 1;
     this->mTimeBetweenTouches = -1;
     this->mTimeSinceTouch     = -1;

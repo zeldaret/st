@@ -36,7 +36,7 @@ PlayerLinkActor::PlayerLinkActor(unk32 param1, unk32 param2, UnkStruct_027e0ce0_
 }
 
 PlayerLinkActor::~PlayerLinkActor() {
-    if (data_027e09a4->mUnk_60 == 0) {
+    if (data_027e09a4->IsSceneModeAdventure()) {
         UnkStruct_027e0d34::Destroy();
     }
 

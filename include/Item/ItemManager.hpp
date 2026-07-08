@@ -3,6 +3,7 @@
 #include "Item/Item.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_027e09a4.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -37,6 +38,10 @@ public:
 
     UnkStruct_ItemManager_20_14();
 
+    // overlay 31
+    void func_ov031_020db7d8();
+
+    // overlay 53
     unk32 func_ov053_0213caf0();
 };
 
@@ -48,10 +53,19 @@ public:
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ UnkStruct_ItemManager_20_14 mUnk_14;
+    /* 20 */ STRUCT_PAD(0x20, 0x2C);
+    /* 2C */
 
+    UnkStruct_ItemManager_20();
+    ~UnkStruct_ItemManager_20();
+
+    // overlay 31
     bool func_ov031_020db874(ItemFlag itemFlag);
     void func_ov031_020db8cc();
     bool func_ov031_020db8f8();
+
+    // overlay 101
+    void func_ov101_02182d5c();
 };
 
 struct InvImportData {
@@ -203,6 +217,12 @@ public:
 
     static UnkStruct_ov000_020afc48 *func_ov000_020a8974(ItemFlag itemFlag);
     static ItemFlag GetEquippedItemFlag(ItemId itemId);
+
+    // overlay 1
+    void func_ov001_020bc24c();
+    void func_ov001_020bc27c();
+    void func_ov001_020bc29c();
+    void func_ov001_020bc2b8();
 
     // overlay 110
     static u32 GetBmgIDFromItem(ItemId itemId);

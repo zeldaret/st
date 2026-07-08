@@ -1268,7 +1268,7 @@ from:0x020bc40c kind:thumb_call to:0x020bbee4 module:overlay(1)
 from:0x020bc422 kind:thumb_call_arm to:0x02011f3c module:main
 from:0x020bc42a kind:thumb_call to:0x020bf1b8 module:overlay(1)
 from:0x020bc43e kind:thumb_call to:0x020829c8 module:overlay(0)
-from:0x020bc448 kind:load to:0x020b2b38 module:overlay(0)
+from:0x020bc448 kind:load to:0x020b2b30 module:overlay(0) add:0x8
 from:0x020bc44c kind:load to:0x027e09a4 module:dtcm
 from:0x020bc454 kind:thumb_call to:0x020bc768 module:overlay(1)
 from:0x020bc460 kind:thumb_call to:0x020bf218 module:overlay(1)

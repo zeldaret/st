@@ -1269,7 +1269,7 @@ from:0x020bdc54 kind:thumb_call to:0x020bd72c module:overlay(1)
 from:0x020bdc6a kind:thumb_call_arm to:0x02011f3c module:main
 from:0x020bdc72 kind:thumb_call to:0x020c0a0c module:overlay(1)
 from:0x020bdc86 kind:thumb_call to:0x02084084 module:overlay(0)
-from:0x020bdc90 kind:load to:0x020b4338 module:overlay(0)
+from:0x020bdc90 kind:load to:0x020b4330 module:overlay(0) add:0x8
 from:0x020bdc94 kind:load to:0x027e09a4 module:dtcm
 from:0x020bdc9c kind:thumb_call to:0x020bdfb0 module:overlay(1)
 from:0x020bdca8 kind:thumb_call to:0x020c0a6c module:overlay(1)

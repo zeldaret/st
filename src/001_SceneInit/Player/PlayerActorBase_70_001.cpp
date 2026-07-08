@@ -7,7 +7,7 @@ extern "C" void *func_ov000_0208ea70(PlayerCharacter, unk32, bool); // returns p
 extern unk16 data_ov000_020ab314;
 
 ModelRender_UnkSystem1 *func_ov001_020bbac4(BOOL isNotLink, G3d_Model *pModel, unk32 param3, bool param4) {
-    if (param4 && data_027e09a4->mUnk_60 == 1) {
+    if (param4 && data_027e09a4->IsSceneModeBattle()) {
         return NULL;
     }
 

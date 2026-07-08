@@ -65,14 +65,14 @@ UnkStruct_027e09a4 *UnkStruct_027e09a4::Create(unk32 param1) {
     return new(HeapIndex_1) UnkStruct_027e09a4(param1);
 }
 
-UnkStruct_027e09a4::UnkStruct_027e09a4(unk32 param1) :
+UnkStruct_027e09a4::UnkStruct_027e09a4(SceneMode mode) :
     mUnk_00(false),
     mUnk_14(false) {
     this->mUnk_28    = 0;
     this->mUnk_54    = NULL;
     this->mpWarpUnk1 = NULL;
     this->mUnk_5C    = 0;
-    this->mUnk_60    = param1;
+    this->mSceneMode = mode;
     this->mUnk_64    = 0;
 
     UnkStruct_027e09a0::Create();
@@ -88,7 +88,7 @@ UnkStruct_027e09a4::UnkStruct_027e09a4(unk32 param1) :
     UnkStruct_027e0954::Create();
     UnkStruct_027e0958::Create();
 
-    if (this->mUnk_60 == 0) {
+    if (this->IsSceneModeAdventure()) {
         MiscAdvManager::Create();
     }
 
@@ -124,7 +124,7 @@ void UnkStruct_027e09a4::func_ov001_020b66dc() {
 
     TreasureManager::Destroy();
 
-    if (this->mUnk_60 == 0) {
+    if (this->IsSceneModeAdventure()) {
         MiscAdvManager::Destroy();
     }
 
@@ -448,7 +448,7 @@ void UnkStruct_027e09a4_54_Base::func_ov001_020b6fa0(CourseListEntry *pCourseEnt
     if (this->mUnk_1C.isCS == true) {
         data_0204a110.func_02018d78(Cutscene_GetParamEntry(this->mUnk_1C.csIndex)->mUnk_14);
     } else {
-        if (data_027e09a4->mUnk_60 == 0) {
+        if (data_027e09a4->IsSceneModeAdventure()) {
             if (data_027e09a4->IsDarkRealm()) {
                 GetAdventureModeManager()->func_ov024_020c555c(2);
             } else {
