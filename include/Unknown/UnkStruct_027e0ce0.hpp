@@ -448,7 +448,7 @@ public:
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);
     void func_ov000_0208bd30(bool param1, unk32 param2, unk32 param3, unk32 param4);
 
-    bool func_ov000_0208be70(unk32 param1, unk32 param2, VecFx32 param3);
+    bool func_ov000_0208be70(VecFx32 param1);
 
     G3d_Model *func_ov000_0208ed30(unk32 param1, unk32 param2, char *param3);
 

@@ -749,34 +749,33 @@ void ActorRollingStone::func_ov031_020f9af8() {
 // non-matching
 bool ActorRollingStone::func_ov031_020f9ba4() {
     if (!data_027e0ce0->func_01fff1a4()) {
-        VecFx32 *pVec = data_027e0ce0->func_01fff148(0);
+        VecFx32 *pVec = data_027e0ce0->func_01fff148(0x0);
         VecFx32 sp18;
+
         sp18.x = this->mPos.x - pVec->x;
         sp18.y = this->mPos.y - pVec->y;
         sp18.z = this->mPos.z - pVec->z;
+
         return VecFx32_Length(&sp18) > 0x8000;
     }
 
-    VecFx32 *pVec1 = data_027e0ce0->func_01fff148(0);
-    VecFx32 *pVec2 = data_027e0ce0->func_01fff148(1);
+    VecFx32 *pVec1 = data_027e0ce0->func_01fff148(0x0);
+    VecFx32 *pVec2 = data_027e0ce0->func_01fff148(0x1);
 
     VecFx32 sp18;
-    fx32 dx1 = this->mPos.x - pVec1->x;
-    fx32 dy1 = this->mPos.y - pVec1->y;
-    fx32 dz1 = this->mPos.z - pVec1->z;
+    sp18.x = this->mPos.x - pVec1->x;
+    sp18.y = this->mPos.y - pVec1->y;
+    sp18.z = this->mPos.z - pVec1->z;
 
-    fx32 dx2 = this->mPos.x - pVec2->x;
-    fx32 dy2 = this->mPos.y - pVec2->y;
-    fx32 dz2 = this->mPos.z - pVec2->z;
+    fx32 x = this->mPos.x - pVec2->x;
+    fx32 y = this->mPos.y - pVec2->y;
+    fx32 z = this->mPos.z - pVec2->z;
 
-    sp18.x = dx1;
-    sp18.y = dy1;
-    sp18.z = dz1;
-
-    if (data_027e0ce0->func_ov000_0208be70(0, 0, sp18)) {
-        sp18.x = dx2;
-        sp18.y = dy2;
-        sp18.z = dz2;
+    // sp18 is passed by value here
+    if (data_027e0ce0->func_ov000_0208be70(sp18)) {
+        sp18.x = x;
+        sp18.y = y;
+        sp18.z = z;
     }
 
     return VecFx32_Length(&sp18) > 0x8000;
