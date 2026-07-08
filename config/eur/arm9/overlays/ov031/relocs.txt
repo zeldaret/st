@@ -1897,7 +1897,7 @@ from:0x020ea07e kind:thumb_call_arm to:0x0209767c module:overlay(0)
 from:0x020ea0ac kind:load to:0x02113620 add:0x8 module:overlay(31)
 from:0x020ea0bc kind:thumb_call_arm to:0x01fff458 module:itcm
 from:0x020ea0e8 kind:thumb_call_arm to:0x020a8b48 module:overlay(0)
-from:0x020ea0f4 kind:load to:0x02113670 module:overlay(31)
+from:0x020ea0f4 kind:load to:0x02113668 module:overlay(31) add:0x8
 from:0x020ea0fc kind:load to:0x01ffc57c module:itcm
 from:0x020ea114 kind:thumb_call_arm to:0x020975f8 module:overlay(0)
 from:0x020ea12c kind:thumb_call_arm to:0x020973f4 module:overlay(0)
@@ -1923,10 +1923,10 @@ from:0x020ea476 kind:thumb_call_arm to:0x020eeb58 module:overlay(31)
 from:0x020ea480 kind:load to:0x027e0ce0 module:dtcm
 from:0x020ea484 kind:load to:0x02116780 module:overlay(31)
 from:0x020ea48c kind:load to:0x02113944 add:0x8 module:overlay(31)
-from:0x020ea490 kind:load to:0x0211372c module:overlay(31)
+from:0x020ea490 kind:load to:0x02113724 module:overlay(31) add:0x8
 from:0x020ea494 kind:load to:0x02113880 add:0x8 module:overlay(31)
-from:0x020ea49c kind:load to:0x021136e4 module:overlay(31)
-from:0x020ea4a4 kind:load to:0x0211369c module:overlay(31)
+from:0x020ea49c kind:load to:0x021136dc module:overlay(31) add:0x8
+from:0x020ea4a4 kind:load to:0x02113694 module:overlay(31) add:0x8
 from:0x020ea4ac kind:load to:0x020e17f4 module:overlay(31)
 from:0x020ea4b0 kind:load to:0x020e33ac module:overlay(31)
 from:0x020ea4b8 kind:load to:0x027e0d3c module:dtcm
@@ -3853,7 +3853,7 @@ from:0x020fb5d8 kind:arm_call_thumb to:0x02099a28 module:overlay(0)
 from:0x020fb5f0 kind:arm_call_thumb to:0x0205778c module:overlay(0)
 from:0x020fb608 kind:load to:0x02114f00 add:0x8 module:overlay(31)
 from:0x020fb60c kind:load to:0x02117044 module:overlay(31)
-from:0x020fb610 kind:load to:0x0211369c module:overlay(31)
+from:0x020fb610 kind:load to:0x02113694 module:overlay(31) add:0x8
 from:0x020fb690 kind:arm_call to:0x02099ff8 module:overlay(0)
 from:0x020fb6c8 kind:load to:0x02114ed0 module:overlay(31)
 from:0x020fb744 kind:arm_call to:0x01ffb428 module:itcm

@@ -1,7 +1,10 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "System/SysNew.hpp"
+
+ModelRender_ov031_02113670::~ModelRender_ov031_02113670() {}
+UnkStruct_ov031_0211369c::~UnkStruct_ov031_0211369c() {}
+UnkStruct_ov031_021136e4::~UnkStruct_ov031_021136e4() {}
+UnkStruct_ov031_0211372c::~UnkStruct_ov031_0211372c() {}
 
 // --- Actor ZSRS ---
 
@@ -14,7 +17,7 @@ Actor *ActorProfileUnkZSRS::Create() {
 }
 
 ActorProfileUnkZSRS::ActorProfileUnkZSRS() :
-    ActorProfile_Derived1(ActorId_ZSRS, ActorId_ZSRS) {}
+    ActorProfile_Derived2(ActorId_ZSRS, ActorId_ZSRS) {}
 
 ActorUnkZSRS::ActorUnkZSRS() {}
 
@@ -27,7 +30,7 @@ Actor *ActorProfileUnkZLSL::Create() {
 }
 
 ActorProfileUnkZLSL::ActorProfileUnkZLSL() :
-    ActorProfile_Derived1(ActorId_ZLSL) {}
+    ActorProfile(ActorId_ZLSL) {}
 
 ActorUnkZLSL::ActorUnkZLSL() {}
 

@@ -164,7 +164,7 @@ void Actor_Derived1::vfunc_6C() {}
 void Actor_Derived1::vfunc_68() {
     UNSET_FLAG(this->mFlags, ActorFlag_Interacting);
     this->func_ov000_020a9200();
-    this->vfunc_Ac();
+    this->vfunc_AC();
     this->mUnk_0B0 &= ~0x01;
     this->mUnk_0B0 &= ~0x10;
 }
@@ -214,7 +214,7 @@ unk32 Actor_Derived1::vfunc_A0() {
     return 1;
 }
 
-void Actor_Derived1::vfunc_Ac() {}
+void Actor_Derived1::vfunc_AC() {}
 void Actor_Derived1::func_ov000_020a95d8() {}
 void Actor_Derived1::vfunc_A4() {}
 

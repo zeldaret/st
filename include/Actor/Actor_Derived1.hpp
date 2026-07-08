@@ -154,7 +154,7 @@ public:
     /* A0 */ virtual unk32 vfunc_A0();
     /* A4 */ virtual void vfunc_A4();
     /* A8 */ virtual unk32 vfunc_A8();
-    /* AC */ virtual void vfunc_Ac();
+    /* AC */ virtual void vfunc_AC();
     /* B0 */ virtual void vfunc_B0();
     /* B4 */ virtual void vfunc_B4();
     /* B8 */ virtual void vfunc_B8();

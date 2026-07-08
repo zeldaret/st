@@ -65,4 +65,18 @@ public:
     /* 18 */ virtual void vfunc_18() override;
 };
 
+class ActorProfile_Derived2 : public ActorProfile_Derived1 {
+public:
+    /* 00 (base) */
+    /* D8 */
+
+    ActorProfile_Derived2(ActorId actorId1, ActorId actorId2) :
+        ActorProfile_Derived1(actorId1, actorId2) {}
+
+    /* 04 */ virtual void vfunc_04() override; // func_ov000_02097944
+    /* 10 */ virtual void vfunc_10() override; // func_ov000_0209794c
+    /* 14 */ virtual void vfunc_14() override; // func_ov000_0209796c
+    /* 18 */ virtual void vfunc_18() override; // func_ov000_02097998
+};
+
 // typedef ActorProfile *(*GetActorProfile)();
