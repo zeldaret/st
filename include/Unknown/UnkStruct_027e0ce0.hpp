@@ -9,7 +9,6 @@
 #include "Player/PlayerLink.hpp"
 #include "Player/TouchControl.hpp"
 #include "Save/SaveManager.hpp"
-#include "System/SysNew.hpp"
 #include "input.hpp"
 
 #include <nitro/math.h>

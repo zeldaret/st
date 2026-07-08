@@ -8,6 +8,12 @@
 
 class UnkStruct_027e0cd8_0C_Base;
 
+struct UnkStruct_ov000_0207de98 {
+    VecFx32 vec;
+    unk32 param1;
+    unk32 param2;
+};
+
 class UnkStruct_027e09c0 : public AutoInstance<UnkStruct_027e09c0> {
 public:
     /* 00 */ unk32 mUnk_00;
@@ -17,6 +23,7 @@ public:
 
     // overlay 0
     void func_ov000_0207da40();
+    void func_ov000_0207de98(ActorRef param1, UnkStruct_ov000_0207de98 *param2, Actor_38 *param3);
     void func_ov000_0207e58c(ActorRef param1, unk32 param2, u8 param3, UnkStruct_ov031_Items_01 *param4);
     void func_ov000_0207de98(ActorRef param1, VecFx32 *param2, Actor_38 *param3, VecFx32 *param4, unk32 param5, unk32 param6,
                              unk32 param7, unk32 param8, unk32 param9);

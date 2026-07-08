@@ -5,6 +5,7 @@
 #include "Actor/ActorRef.hpp"
 #include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "flags.h"
 #include "global.h"
 #include "math.hpp"
@@ -87,30 +88,6 @@ enum ActorFlag_ {
     ActorFlag_29          = FLAG(0, 29),
     ActorFlag_30          = FLAG(0, 30),
     ActorFlag_31          = FLAG(0, 31),
-};
-
-class Actor_C4;
-
-struct ActorGrabParams;
-extern "C" void func_ov000_0205d500(ActorGrabParams *, unk32, unk32);
-bool PlayerCharacter_IsNotLink(s32 character);
-
-struct ActorGrabParams {
-    /* 00 */ u16 unk_00;
-    /* 02 */ u16 unk_02;
-    /* 04 */
-
-    ActorGrabParams() {}
-
-    ActorGrabParams(unk32 param2, unk32 param3) {
-        ActorGrabParams local_1c;
-        func_ov000_0205d500(&local_1c, param3, param2);
-        *this = local_1c;
-    }
-
-    void operator=(ActorGrabParams &from) {
-        *(u32 *) this = *(u32 *) &from;
-    }
 };
 
 class Actor_9C {
@@ -238,7 +215,7 @@ public:
     void func_ov000_020984f0();
     u32 func_ov000_02098800(bool param1);
     bool func_ov000_02098838();
-    unk32 func_ov000_02098910(unk32 param1, unk32 param2);
+    unk32 func_ov000_02098910(UnkStruct_ov031_Items_00 *param1, unk32 param2);
     void func_ov000_02098b8c(unk32 param1, unk32 param2);
     s32 func_ov000_02098518(unk32 *param1);
     VecFx32 *func_ov000_0209853c(unk32 param1);

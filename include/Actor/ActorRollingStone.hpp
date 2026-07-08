@@ -27,7 +27,7 @@ enum ActorRollingStoneState_ {
 
 class ActorRollingStone;
 
-class ActorRollingStone_104 : UnkStruct_ov031_Items_00 {
+class ActorRollingStone_104 : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (vtable) */
     /* 04 */
@@ -62,7 +62,8 @@ public:
     /* 0AC */ ActorShotArrow_140 mUnk_AC;
     /* 0D4 */ ActorRollingStone_D4 mUnk_D4;
     /* 104 */ ActorRollingStone_104 mUnk_104;
-    /* 108 */ STRUCT_PAD(0x108, 0x10C);
+    /* 108 */ u16 mUnk_108;
+    /* 10A */ STRUCT_PAD(0x10A, 0x10C);
     /* 10C */ Mat3p mUnk_10C;
     /* 130 */ UnkStruct_PlayerGet_ec mUnk_130[0x2];
     /* 138 */ unk16 mUnk_138;
