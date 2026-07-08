@@ -1013,6 +1013,15 @@ void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
 UnkStruct_PlayerGet_ec::UnkStruct_PlayerGet_ec() :
     UnkSystem7(NULL) {}
 
+UnkStruct_PlayerGet_ec::~UnkStruct_PlayerGet_ec() {
+    if (this->mUnk_00 == NULL) {
+        return;
+    }
+    this->mUnk_00->mUnk_24 &= ~0x4;
+    this->mUnk_00->mUnk_24 = (this->mUnk_00->mUnk_24 & ~0x1) | 0x1;
+    this->mUnk_00          = NULL;
+}
+
 THUMB_BEGIN
 
 void UnkStruct_027e0ce0_34::func_ov110_02185d3c(ItemId itemId) {
