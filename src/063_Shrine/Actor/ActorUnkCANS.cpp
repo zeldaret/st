@@ -23,7 +23,7 @@ static PTMF<ActorUnkCANS> data_ov063_02162fb0[0xA] = {
 };
 
 extern void *data_027e09c0;
-extern unk16 *data_ov000_020aed00;
+extern u16 data_ov000_020aed00;
 
 extern "C" void func_01ff9638(VecFx32 *param1, fx16 param2);
 extern "C" unk32 func_01ffbbe0(unk32 param1, unk32 param2);
@@ -60,10 +60,8 @@ void ActorUnkCANS::vfunc_10(Cylinder *param1) {
 
     if (this->mUnk_268 != NULL) {
         fx16 angle = this->mAngle;
-        VecFx32 pos; // = {FLOAT_TO_FX32(0.25f), 0, 0};
-        pos.x = FLOAT_TO_FX32(0.25f);
-        pos.y = 0;
-        pos.z = 0;
+        VecFx32 pos;
+        VecFx32_Init(FLOAT_TO_FX32(0.25f), 0, 0, &pos);
         func_01ff9638(&pos, angle);
         VecFx32_Add(&param1->pos, &pos, &param1->pos);
     }
@@ -153,157 +151,180 @@ void ActorUnkCANS::vfunc_20(void) {
     unk32 iVar5;
 
     if (mUnk_48 <= 1) {
-        // return; // TODO some goto
+        // return; // INFO some goto
     } else if (((u16) mUnk_234 < (u16) mUnk_236)) {
         mUnk_234++;
         // (*(volatile u16 *) &mUnk_234)++;
         if (mUnk_268 != NULL) {
             *(char *) &mUnk_1F4 = 0;
         }
-        // return; // TODO some goto (same as above)
+        // return; // INFO some goto (same as above)
     } else {
 
         this->func_ov000_020989e0();
 
         if (((*(u32 *) &mUnk_208) & 0x3FFFF) == 0) {
-            // return; // TODO some goto (not the same)
+            // return; // INFO some goto (not the same)
         } else {
 
-            unk32 res4 = func_ov000_02098d7c(this, &mUnk_1F4.mUnk_0C);
-            mUnk_236   = res4;
-            mUnk_234   = 0;
+            unk32 res4  = func_ov000_02098d7c(this, &mUnk_1F4.mUnk_0C);
+            mUnk_236    = res4;
+            unk32 uVar1 = 0;
+            mUnk_234    = uVar1;
 
             unk16 sVar2 = func_01ffbbe0(*(u32 *) &mUnk_210, mUnk_218);
             iVar5       = this->func_ov063_0215a56c(sVar2);
 
             unk32 uVar9;
+            bool skip_post_cond = false;
+
             switch (*(u16 *) &mUnk_21C) {
-                case 0:
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    if (iVar5 == 0) {
-                        return; // TODO some goto
-                    }
-                    if (mState == 4) {
-                        return; // TODO some goto
-                    }
-                    return; // TODO some goto
-                case 4: {
-                    if (mUnk_268 != NULL) {
-                        data_027e0d38->func_ov031_020d9c44(*data_ov000_020aed00);
-                        sVar2 = mState;
-                        return; // TODO some goto
-                    }
-                    unk32 iVar6 = func_ov031_020d9c04(data_027e0d38, 1, 0, 0);
-                    if (iVar6 != 0) {
-                        uVar9 = 10;
-                        return; // TODO some goto
-                    }
-                    return; // TODO some goto
-                }
-                case 5:
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    break;
-                case 8:
-                    if (iVar5 == 0) {
-                        return; // TODO some goto
-                    }
-                    if (mUnk_20C != 0x102) {
-                        data_027e09a8->func_ov000_02071b30(0x8c98, &mPos, 0);
-                    } else {
-                        unk32 param2 = 0;
-                        if (mUnk_20C == 102 && (mUnk_20E == 1 || mUnk_20E == 3)) {
-                            unk32 param2 = 1;
-                        }
-                        func_ov000_0208bd20(data_027e0ce0, param2, 0x8c98, 0);
-                    }
-                    sVar2 = mState;
-                    return; // TODO some goto
-                case 9:
-                    break;
-                case 10:
-                    break;
-                case 11:
-                    break;
                 case 12:
                     if (iVar5 != 0) {
-                        Actor *iVar6 = gpActorManager->func_01fff3b4(mUnk_20C);
+                        Actor *iVar6 = gpActorManager->func_01fff3b4(*(unk32 *) &mUnk_20C);
                         if (iVar6 != 0) {
                             ((ActorItemBoomerang *) iVar6)->func_ov031_020e49b0(0x8D70);
                         }
                         sVar2 = mState;
-                        return; // TODO some goto
+                        if (sVar2 == 4) {
+                            skip_post_cond = true;
+                            break;
+                        } else {
+                            uVar9 = 5;
+                        }
+                    } else {
+                        func_ov017_020bf178(this, &mUnk_1F4.mUnk_0C, 1);
+                        func_ov000_02099a0c(&mUnk_224);
+                        uVar9 = 4;
                     }
-                    func_ov017_020bf178(this, &mUnk_1F4.mUnk_0C, 1);
-                    func_ov000_02099a0c(&mUnk_224);
-                    uVar9 = 4;
-                    return; // TODO some goto
+                    this->func_ov063_02158448(uVar9);
+                    skip_post_cond = true;
+                    break; // INFO some goto
+                case 4: {
+                    if (mUnk_268 == NULL) {
+                        unk32 iVar6 = func_ov031_020d9c04(data_027e0d38, 1, 0, 0);
+                        if (iVar6 != 0) {
+                            uVar9 = 10;
+                            this->func_ov063_02158448(uVar9);
+                            skip_post_cond = true;
+                        }
+                        break; // INFO some goto
+                    } else {
+                        data_027e0d38->func_ov031_020d9c44(data_ov000_020aed00);
+                        sVar2 = mState;
+                        if (sVar2 != 4) {
+                            uVar9 = 5;
+                            this->func_ov063_02158448(uVar9);
+                            skip_post_cond = true;
+                        }
+                        break; // INFO some goto
+                    }
+                }
                 case 13:
                     if (iVar5 == 0) {
-                        return; // TODO some goto
+                        break; // INFO some goto
                     }
-                    return; // TODO some goto
-            }
-
-            if (iVar5 == 0) {
-                this->func_ov063_02158490();
-            } else {
-                func_ov017_020bfb18(this, &mUnk_1F4.mUnk_0C);
-                sVar2 = mState;
-                if (sVar2 != 4) {
+                    skip_post_cond = true;
+                    break; // INFO some goto
+                case 8:
+                    if (iVar5 == 0) {
+                        break; // INFO some goto
+                    }
+                    if ((u16) mUnk_20C == 0x102) {
+                        if ((u16) mUnk_20E == 1 || (u16) mUnk_20E == 3) {
+                            uVar1 = 1;
+                        };
+                        func_ov000_0208bd20(data_027e0ce0, uVar1 != 0, 0x8c98, 0);
+                    } else {
+                        data_027e09a8->func_ov000_02071b30(0x8c98, &mPos, 0);
+                    }
+                    sVar2 = mState;
+                    if (sVar2 != 4) {
+                        uVar9 = 5;
+                        this->func_ov063_02158448(uVar9);
+                    }
+                    skip_post_cond = true;
+                    break; // INFO some goto
+                case 3:
+                    if (iVar5 == 0) {
+                        break; // INFO some goto
+                    }
+                    skip_post_cond = true;
+                    if (mState == 4) {
+                        break; // INFO some goto
+                    }
                     uVar9 = 5;
                     this->func_ov063_02158448(uVar9);
+                    break; // INFO some goto
+                default:   // cases 0, 1, 2, 5, 6, 7, 9, 10, 11
+                    break;
+            }
+
+            if (!skip_post_cond) {
+                if (iVar5 != 0) {
+                    func_ov017_020bfb18(this, &mUnk_1F4.mUnk_0C);
+                    sVar2 = mState;
+                    if (sVar2 != 4) {
+                        uVar9 = 5;
+                        this->func_ov063_02158448(uVar9);
+                    }
+                } else {
+                    this->func_ov063_02158490();
                 }
             }
         }
         if (mUnk_268 != NULL) {
-            *(char *) ((*(int **) mUnk_268) + 500) = (char) iVar5;
+            *(char *) &mUnk_1F4 = (char) iVar5;
         }
     }
-    char cVar13 = '\0';
-    ((Actor *) mUnk_128)->vfunc_34(); //! INFO: NOT an Actor
-    unk32 uVar7  = mFlags[0];
-    unk32 bVar14 = (uVar7 & 1) != 0;
-    if (bVar14) {
-        uVar7  = mUnk_48;
-        cVar13 = '\0';
-    }
-    unk32 bVar12 = bVar14 && (int) uVar7 < 0;
-    if ((!bVar14 || uVar7 == 0) || bVar12 != cVar13) {
-        return;
+    ((Actor *) &mUnk_128)->vfunc_34(); //! INFO: NOT an Actor
+
+    if ((mFlags[0] & 1) != 0) {
+        if (mUnk_48 <= 0) {
+            return;
+        }
     }
 
-    unk32 puVar11[0xF];
+    // unk32 puVar11[0xF];
+    struct UnkStruct_b {
+        /* 00 */ VecFx32 pos;
+        /* 0C */ unk32 mUnk_0C;
+        /* 10 */ unk32 mUnk_10;
+    };
+
+    VecFx32 a;
+    UnkStruct_b b;
+
     if (mUnk_268 != NULL) {
-        VecFx32 *a = (VecFx32 *) &puVar11[0xD];
-        VecFx32 *b = (VecFx32 *) &puVar11[8];
+        // VecFx32 *a = (VecFx32 *) &puVar11[0xD];
+        // VecFx32 *b = (VecFx32 *) &puVar11[8];
 
-        VecFx32_Init(0x4CD, 0, 0, a);
+        VecFx32_Init(0x4CD, 0, 0, &a);
 
-        func_01ff9638(a, mAngle);
-        VecFx32_Add(a, &mPos, a);
+        func_01ff9638(&a, mAngle);
+        VecFx32_Add(&a, &mPos, &a);
 
-        VecFx32_Copy(a, b);
-        puVar11[0xB] = 0xF33;
-        puVar11[0xC] = 0x1000;
+        VecFx32_Copy(&a, &b.pos);
 
-        func_ov000_0207de98(data_027e09c0, mRef, b, mUnk_38);
+        // puVar11[0xB] = 0xF33;
+        // puVar11[0xC] = 0x1000;
+        b.mUnk_0C = 0xF33;
+        b.mUnk_10 = 0x1000;
+
+        func_ov000_0207de98(data_027e09c0, mRef, &b.pos, mUnk_38);
     } else {
-        VecFx32 *a = (VecFx32 *) &puVar11[0x5];
-        VecFx32 *b = (VecFx32 *) &puVar11[0];
-        VecFx32_Copy(&mPos, a);
-        VecFx32_Copy(a, b);
-        puVar11[3] = 0xA66;
-        puVar11[4] = 0x1000;
+        // VecFx32 *a = (VecFx32 *) &puVar11[0x5];
+        // VecFx32 *b = (VecFx32 *) &puVar11[0];
 
-        func_ov000_0207de98(data_027e09c0, mRef, b, mUnk_38);
+        a = mPos;
+        VecFx32_Copy(&a, &b.pos);
+
+        // puVar11[3] = 0xA66;
+        // puVar11[4] = 0x1000;
+        b.mUnk_0C = 0xA66;
+        b.mUnk_10 = 0x1000;
+
+        func_ov000_0207de98(data_027e09c0, mRef, &b.pos, mUnk_38);
     }
 }
 
