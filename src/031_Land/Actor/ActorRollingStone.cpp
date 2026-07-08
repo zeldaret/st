@@ -7,7 +7,6 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "Unknown/UnkStruct_027e0d8c.hpp"
-#include "limits.h"
 
 extern "C" Mat3p data_027e0130;
 extern "C" unk32 data_ov000_020aecf8;
@@ -283,9 +282,9 @@ void ActorRollingStone::func_ov031_020f8bc4() {
     unk16 sinValue = SIN((u16) this->mAngle);
     unk16 cosValue = COS((u16) this->mAngle);
 
-    sp38.x = MUL_FX32(sinValue, 0x800);
+    sp38.x = MUL_FX32(sinValue, FLOAT_TO_FX32(0.25f));
     sp38.y = FLOAT_TO_FX32(0.0f);
-    sp38.z = MUL_FX32(cosValue, 0x800);
+    sp38.z = MUL_FX32(cosValue, FLOAT_TO_FX32(0.25f));
 
     VecFx32 sp28;
     this->vfunc_10(&sp28);
@@ -616,9 +615,9 @@ void ActorRollingStone::func_ov031_020f9554() {
     unk16 sinValue = SIN((u16) this->mAngle);
     unk16 cosValue = COS((u16) this->mAngle);
 
-    sp38.x = MUL_FX32(sinValue, 0x800);
+    sp38.x = MUL_FX32(sinValue, FLOAT_TO_FX32(0.25f));
     sp38.y = FLOAT_TO_FX32(0.0f);
-    sp38.z = MUL_FX32(cosValue, 0x800);
+    sp38.z = MUL_FX32(cosValue, FLOAT_TO_FX32(0.25f));
 
     VecFx32 sp28;
     this->vfunc_10(&sp28);
@@ -655,14 +654,14 @@ void ActorRollingStone::func_ov031_020f97cc() {
         case 0x1:
         case 0x3: {
             fx32 diffX  = this->mPos.x - this->mPrevPos.x;
-            fx32 angleX = -MUL_FX32(diffX, 0x2AAB);
+            fx32 angleX = -MUL_FX32(diffX, FLOAT_TO_FX32(2.6668f));
             Mat3p_InitZRotation(&sp00, SIN((u16) angleX), COS((u16) angleX));
             break;
         }
         case 0x0:
         case 0x2: {
             fx32 diffZ  = this->mPos.z - this->mPrevPos.z;
-            fx32 angleZ = MUL_FX32(diffZ, 0x2AAB);
+            fx32 angleZ = MUL_FX32(diffZ, FLOAT_TO_FX32(2.6668f));
             Mat3p_InitXRotation(&sp00, SIN((u16) angleZ), COS((u16) angleZ));
             break;
         }
@@ -680,20 +679,20 @@ void ActorRollingStone::func_ov031_020f98e4() {
         case 0x2:
         case 0x6:
             fx32 diffX  = this->mPos.x - this->mPrevPos.x;
-            fx32 angleX = -MUL_FX32(diffX, 0x2AAB);
+            fx32 angleX = -MUL_FX32(diffX, FLOAT_TO_FX32(2.6668f));
             Mat3p_InitZRotation(&sp34, SIN((u16) angleX), COS((u16) angleX));
             break;
         case 0x0:
         case 0x4:
             fx32 diffZ  = this->mPos.z - this->mPrevPos.z;
-            fx32 angleZ = MUL_FX32(diffZ, 0x2AAB);
+            fx32 angleZ = MUL_FX32(diffZ, FLOAT_TO_FX32(2.6668f));
             Mat3p_InitXRotation(&sp34, SIN((u16) angleZ), COS((u16) angleZ));
             break;
         case 0x5:
             VecFx32 sp28 = data_ov031_02110b98;
 
             unk32 ret      = func_01ffb9cc(&this->mPrevPos, &this->mPos);
-            fx32 angleRet1 = -MUL_FX32(ret, 0x2AAB);
+            fx32 angleRet1 = -MUL_FX32(ret, FLOAT_TO_FX32(2.6668f));
 
             Mat3p_func_01ff8248(&sp34, &sp28, SIN((u16) angleRet1), COS((u16) angleRet1));
             break;
@@ -701,7 +700,7 @@ void ActorRollingStone::func_ov031_020f98e4() {
             VecFx32 sp1C = data_ov031_02110ba4;
 
             unk32 ret2     = func_01ffb9cc(&this->mPrevPos, &this->mPos);
-            fx32 angleRet2 = MUL_FX32(ret2, 0x2AAB);
+            fx32 angleRet2 = MUL_FX32(ret2, FLOAT_TO_FX32(2.6668f));
 
             Mat3p_func_01ff8248(&sp34, &sp1C, SIN((u16) angleRet2), COS((u16) angleRet2));
             break;
@@ -709,7 +708,7 @@ void ActorRollingStone::func_ov031_020f98e4() {
             VecFx32 sp10 = data_ov031_02110bb0;
 
             unk32 ret3     = func_01ffb9cc(&this->mPrevPos, &this->mPos);
-            fx32 angleRet3 = MUL_FX32(ret3, 0x2AAB);
+            fx32 angleRet3 = MUL_FX32(ret3, FLOAT_TO_FX32(2.6668f));
 
             Mat3p_func_01ff8248(&sp34, &sp10, SIN((u16) angleRet3), COS((u16) angleRet3));
             break;
@@ -717,7 +716,7 @@ void ActorRollingStone::func_ov031_020f98e4() {
             VecFx32 sp04 = data_ov031_02110bbc;
 
             unk32 ret4     = func_01ffb9cc(&this->mPrevPos, &this->mPos);
-            fx32 angleRet4 = -MUL_FX32(ret4, 0x2AAB);
+            fx32 angleRet4 = -MUL_FX32(ret4, FLOAT_TO_FX32(2.6668f));
 
             Mat3p_func_01ff8248(&sp34, &sp04, SIN((u16) angleRet4), COS((u16) angleRet4));
             break;
@@ -756,7 +755,7 @@ bool ActorRollingStone::func_ov031_020f9ba4() {
         sp18.y = this->mPos.y - pVec->y;
         sp18.z = this->mPos.z - pVec->z;
 
-        return VecFx32_Length(&sp18) > 0x8000;
+        return VecFx32_Length(&sp18) > FLOAT_TO_FX32(8.0f);
     }
 
     VecFx32 *pVec1 = data_027e0ce0->func_01fff148(0x0);
@@ -771,14 +770,13 @@ bool ActorRollingStone::func_ov031_020f9ba4() {
     fx32 y = this->mPos.y - pVec2->y;
     fx32 z = this->mPos.z - pVec2->z;
 
-    // sp18 is passed by value here
     if (data_027e0ce0->func_ov000_0208be70(sp18)) {
         sp18.x = x;
         sp18.y = y;
         sp18.z = z;
     }
 
-    return VecFx32_Length(&sp18) > 0x8000;
+    return VecFx32_Length(&sp18) > FLOAT_TO_FX32(8.0f);
 }
 
 void ActorRollingStone::func_ov031_020f9cc0() {
