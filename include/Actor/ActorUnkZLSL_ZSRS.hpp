@@ -166,7 +166,6 @@ public:
 
     // data_ov031_02113944
     /* 4C */ virtual ~ActorUnkZSRS() override;
-    /* 58 */ virtual void vfunc_58(unk32 param1) = 0 override;
 };
 
 class ActorProfileUnkZSRS : public ActorProfile_Derived2 {

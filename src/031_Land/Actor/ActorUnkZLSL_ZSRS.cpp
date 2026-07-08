@@ -19,7 +19,8 @@ Actor *ActorProfileUnkZSRS::Create() {
 ActorProfileUnkZSRS::ActorProfileUnkZSRS() :
     ActorProfile_Derived2(ActorId_ZSRS, ActorId_ZSRS) {}
 
-ActorUnkZSRS::ActorUnkZSRS() {}
+ActorUnkZSRS::ActorUnkZSRS() :
+    Actor_Derived1(NULL, 0x0) {}
 
 // --- Actor ZLSL ---
 
@@ -32,7 +33,8 @@ Actor *ActorProfileUnkZLSL::Create() {
 ActorProfileUnkZLSL::ActorProfileUnkZLSL() :
     ActorProfile(ActorId_ZLSL) {}
 
-ActorUnkZLSL::ActorUnkZLSL() {}
+ActorUnkZLSL::ActorUnkZLSL() :
+    Actor_Derived1(NULL, 0x0) {}
 
 THUMB_END
 
