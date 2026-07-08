@@ -123,12 +123,17 @@ void ActorUnkCANS::vfunc_20(void) {
     this->func_ov000_02098838();
 
     VecFx32_Copy(&mPos, &mPrevPos);
-
     VecFx32_Add(&mPos, &mVel, &mPos);
 
+    struct HackStruct_angle {
+        u32 angle;
+    };
+    HackStruct_angle stackHack;
+
     if (mUnk_268 != NULL) {
-        u16 angle = mAngle; //! TODO: Force on stack
-        mUnk_268->func_ov063_0215b6c8(&mUnk_250, angle);
+        u32 *stackHackAnglePtr     = &stackHack.angle;
+        *(u16 *) stackHackAnglePtr = *(u16 *) &mAngle; //! TODO: Force on stack
+        mUnk_268->func_ov063_0215b6c8(&mUnk_250, *stackHackAnglePtr);
     }
 
     this->func_ov000_02098b8c(1, &mUnk_23C);
@@ -150,139 +155,129 @@ void ActorUnkCANS::vfunc_20(void) {
     }
     unk32 iVar5;
 
-    if (mUnk_48 <= 1) {
+    if (mUnk_48 <= 0) {
+        // Just skip the switch case
         // return; // INFO some goto
-    } else if (((u16) mUnk_234 < (u16) mUnk_236)) {
-        mUnk_234++;
-        // (*(volatile u16 *) &mUnk_234)++;
-        if (mUnk_268 != NULL) {
-            *(char *) &mUnk_1F4 = 0;
-        }
-        // return; // INFO some goto (same as above)
     } else {
-
-        this->func_ov000_020989e0();
-
-        if (((*(u32 *) &mUnk_208) & 0x3FFFF) == 0) {
-            // return; // INFO some goto (not the same)
+        unk32 var;
+        if (((u16) mUnk_234 < (u16) mUnk_236)) {
+            (*(volatile u16 *) &mUnk_234)++;
+            var = 0;
+            // return; // INFO some goto (same as above)
+        } else {
+            var = 1;
+        }
+        if (var == 0) {
+            if (mUnk_268 != NULL) {
+                *(char *) &mUnk_1F4 = 0;
+            }
         } else {
 
-            unk32 res4  = func_ov000_02098d7c(this, &mUnk_1F4.mUnk_0C);
-            mUnk_236    = res4;
-            unk32 uVar1 = 0;
-            mUnk_234    = uVar1;
+            this->func_ov000_020989e0();
 
-            unk16 sVar2 = func_01ffbbe0(*(u32 *) &mUnk_210, mUnk_218);
-            iVar5       = this->func_ov063_0215a56c(sVar2);
+            if (((*(u32 *) &mUnk_208) & 0x3FFFF) == 0) {
+                // return; // INFO some goto (not the same)
+            } else {
 
-            unk32 uVar9;
-            bool skip_post_cond = false;
+                unk32 res4  = func_ov000_02098d7c(this, &mUnk_1F4.mUnk_0C);
+                mUnk_236    = res4;
+                unk32 uVar1 = 0;
+                mUnk_234    = uVar1;
 
-            switch (*(u16 *) &mUnk_21C) {
-                case 12:
-                    if (iVar5 != 0) {
-                        Actor *iVar6 = gpActorManager->func_01fff3b4(*(unk32 *) &mUnk_20C);
-                        if (iVar6 != 0) {
-                            ((ActorItemBoomerang *) iVar6)->func_ov031_020e49b0(0x8D70);
-                        }
-                        sVar2 = mState;
-                        if (sVar2 == 4) {
-                            skip_post_cond = true;
-                            break;
+                unk16 sVar2 = func_01ffbbe0(*(u32 *) &mUnk_210, mUnk_218);
+                iVar5       = this->func_ov063_0215a56c(sVar2);
+
+                unk32 uVar9;
+
+                switch (*(u16 *) &mUnk_21C) {
+                    case 12:
+                        if (iVar5 != 0) {
+                            Actor *iVar6 = gpActorManager->func_01fff3b4(*(unk32 *) &mUnk_20C);
+                            if (iVar6 != 0) {
+                                ((ActorItemBoomerang *) iVar6)->func_ov031_020e49b0(0x8D70);
+                            }
+                            // INFO some goto
+                            if (mState != 4) {
+                                this->func_ov063_02158448(5);
+                            }
                         } else {
-                            uVar9 = 5;
-                        }
-                    } else {
-                        func_ov017_020bf178(this, &mUnk_1F4.mUnk_0C, 1);
-                        func_ov000_02099a0c(&mUnk_224);
-                        uVar9 = 4;
-                    }
-                    this->func_ov063_02158448(uVar9);
-                    skip_post_cond = true;
-                    break; // INFO some goto
-                case 4: {
-                    if (mUnk_268 == NULL) {
-                        unk32 iVar6 = func_ov031_020d9c04(data_027e0d38, 1, 0, 0);
-                        if (iVar6 != 0) {
-                            uVar9 = 10;
-                            this->func_ov063_02158448(uVar9);
-                            skip_post_cond = true;
+                            func_ov017_020bf178(this, &mUnk_1F4.mUnk_0C, 1);
+                            func_ov000_02099a0c(&mUnk_224);
+                            this->func_ov063_02158448(4);
                         }
                         break; // INFO some goto
-                    } else {
-                        data_027e0d38->func_ov031_020d9c44(data_ov000_020aed00);
-                        sVar2 = mState;
-                        if (sVar2 != 4) {
-                            uVar9 = 5;
-                            this->func_ov063_02158448(uVar9);
-                            skip_post_cond = true;
+                    case 4: {
+                        if (mUnk_268 == NULL) {
+                            unk32 iVar6 = func_ov031_020d9c04(data_027e0d38, 1, 0, 0);
+                            if (iVar6 != 0) {
+                                this->func_ov063_02158448(10);
+                            }
+                            break; // INFO some goto
+                        } else {
+                            data_027e0d38->func_ov031_020d9c44(data_ov000_020aed00);
+                            if (mState != 4) {
+                                this->func_ov063_02158448(5);
+                            }
+                            break; // INFO some goto
+                        }
+                    }
+                    case 13:
+                        if (iVar5 == 0) {
+                            this->func_ov063_02158490();
                         }
                         break; // INFO some goto
-                    }
-                }
-                case 13:
-                    if (iVar5 == 0) {
+                    case 8:
+                        if (iVar5 != 0) {
+                            if ((u16) mUnk_20C == 0x102) {
+                                unk32 uVar1 = 0;
+                                if ((u16) mUnk_20C == 0x102) {
+                                    if ((u16) mUnk_20E == 1 || (u16) mUnk_20E == 3) {
+                                        uVar1 = 1;
+                                    };
+                                }
+                                func_ov000_0208bd20(data_027e0ce0, uVar1 != 0, 0x8c98, 0);
+                            } else {
+                                data_027e09a8->func_ov000_02071b30(0x8c98, &mPos, 0);
+                            }
+                            if (mState != 4) {
+                                this->func_ov063_02158448(5);
+                            }
+                            break; // INFO some goto
+                        } else {
+                            this->func_ov063_02158490();
+                            break; // INFO some goto
+                        }
+                    case 3:
+                        if (iVar5 != 0) {
+                            if (mState != 4) {
+                                this->func_ov063_02158448(5);
+                            }
+                            break; // INFO some goto
+                        }
+                        this->func_ov063_02158490();
                         break; // INFO some goto
-                    }
-                    skip_post_cond = true;
-                    break; // INFO some goto
-                case 8:
-                    if (iVar5 == 0) {
-                        break; // INFO some goto
-                    }
-                    if ((u16) mUnk_20C == 0x102) {
-                        if ((u16) mUnk_20E == 1 || (u16) mUnk_20E == 3) {
-                            uVar1 = 1;
-                        };
-                        func_ov000_0208bd20(data_027e0ce0, uVar1 != 0, 0x8c98, 0);
-                    } else {
-                        data_027e09a8->func_ov000_02071b30(0x8c98, &mPos, 0);
-                    }
-                    sVar2 = mState;
-                    if (sVar2 != 4) {
-                        uVar9 = 5;
-                        this->func_ov063_02158448(uVar9);
-                    }
-                    skip_post_cond = true;
-                    break; // INFO some goto
-                case 3:
-                    if (iVar5 == 0) {
-                        break; // INFO some goto
-                    }
-                    skip_post_cond = true;
-                    if (mState == 4) {
-                        break; // INFO some goto
-                    }
-                    uVar9 = 5;
-                    this->func_ov063_02158448(uVar9);
-                    break; // INFO some goto
-                default:   // cases 0, 1, 2, 5, 6, 7, 9, 10, 11
-                    break;
-            }
 
-            if (!skip_post_cond) {
-                if (iVar5 != 0) {
-                    func_ov017_020bfb18(this, &mUnk_1F4.mUnk_0C);
-                    sVar2 = mState;
-                    if (sVar2 != 4) {
-                        uVar9 = 5;
-                        this->func_ov063_02158448(uVar9);
-                    }
-                } else {
-                    this->func_ov063_02158490();
+                    default: // cases 0, 1, 2, 5, 6, 7, 9, 10, 11
+                        if (iVar5 != 0) {
+                            func_ov017_020bfb18(this, &mUnk_1F4.mUnk_0C);
+                            if (mState != 4) {
+                                this->func_ov063_02158448(5);
+                            }
+                        } else {
+                            this->func_ov063_02158490();
+                        }
+                        break;
                 }
             }
-        }
-        if (mUnk_268 != NULL) {
-            *(char *) &mUnk_1F4 = (char) iVar5;
+            if (mUnk_268 != NULL) {
+                *(char *) &mUnk_1F4 = (char) iVar5;
+            }
         }
     }
     ((Actor *) &mUnk_128)->vfunc_34(); //! INFO: NOT an Actor
 
-    if ((mFlags[0] & 1) != 0) {
-        if (mUnk_48 <= 0) {
-            return;
-        }
+    if ((mFlags[0] & 1) != 0 && mUnk_48 <= 0) {
+        return;
     }
 
     // unk32 puVar11[0xF];
@@ -292,10 +287,9 @@ void ActorUnkCANS::vfunc_20(void) {
         /* 10 */ unk32 mUnk_10;
     };
 
-    VecFx32 a;
-    UnkStruct_b b;
-
     if (mUnk_268 != NULL) {
+        VecFx32 a;
+        UnkStruct_b b;
         // VecFx32 *a = (VecFx32 *) &puVar11[0xD];
         // VecFx32 *b = (VecFx32 *) &puVar11[8];
 
@@ -313,6 +307,8 @@ void ActorUnkCANS::vfunc_20(void) {
 
         func_ov000_0207de98(data_027e09c0, mRef, &b.pos, mUnk_38);
     } else {
+        VecFx32 a;
+        UnkStruct_b b;
         // VecFx32 *a = (VecFx32 *) &puVar11[0x5];
         // VecFx32 *b = (VecFx32 *) &puVar11[0];
 
