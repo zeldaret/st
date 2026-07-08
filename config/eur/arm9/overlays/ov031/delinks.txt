@@ -55,14 +55,14 @@ src/031_Land/Actor/ActorRupee.cpp:
     .text       start:0x020e8cb8 end:0x020ea02c
     .init       start:0x02111270 end:0x02111308
     .ctor       start:0x021127b8 end:0x021127bc
-    .data       start:0x02113488 end:0x0211361c
+    .data       start:0x02113488 end:0x021135f0
     .bss        start:0x021166e8 end:0x0211672c
 
 src/031_Land/Actor/ActorUnkZLSL_ZSRS.cpp:
     .text       start:0x020ea02c end:0x020ee8cc
     .init       start:0x02111308 end:0x0211139c
     .ctor       start:0x021127bc end:0x021127c0
-    .data       start:0x0211361c end:0x02113d64
+    .data       start:0x021135f0 end:0x02113d64
     .bss        start:0x0211672c end:0x02116858
 
 src/031_Land/Actor/ActorHeart.cpp:
