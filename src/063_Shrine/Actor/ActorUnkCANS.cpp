@@ -125,15 +125,8 @@ void ActorUnkCANS::vfunc_20(void) {
     VecFx32_Copy(&mPos, &mPrevPos);
     VecFx32_Add(&mPos, &mVel, &mPos);
 
-    struct HackStruct_angle {
-        u32 angle;
-    };
-    HackStruct_angle stackHack;
-
     if (mUnk_268 != NULL) {
-        u32 *stackHackAnglePtr     = &stackHack.angle;
-        *(u16 *) stackHackAnglePtr = *(u16 *) &mAngle; //! TODO: Force on stack
-        mUnk_268->func_ov063_0215b6c8(&mUnk_250, *stackHackAnglePtr);
+        mUnk_268->func_ov063_0215b6c8(&mUnk_250, mAngleStruct);
     }
 
     this->func_ov000_02098b8c(1, &mUnk_23C);

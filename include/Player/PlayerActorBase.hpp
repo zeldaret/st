@@ -272,10 +272,6 @@ struct UnkStruct_func_ov000_020830d4 {
     u32 mUnk_0C;
 };
 
-struct UnkStruct_func_ov001_020bbe18 {
-    u16 mUnk_00;
-};
-
 class PlayerActorBase_70 {
 private:
     /* 000 */ BOOL mIsNotLink;
@@ -323,10 +319,10 @@ public:
 
     // overlay 0
     void func_ov000_02082e78(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-    void func_ov000_020830d4(UnkStruct_func_ov001_020bbe18 param1, u32 param2, u8 param3, unk32 param4);
+    void func_ov000_020830d4(UnkAngleStruct param1, u32 param2, u8 param3, unk32 param4);
 
     // overlay 1
-    void func_ov001_020bbe18(unk32 param1, UnkStruct_func_ov001_020bbe18 param2, u32 param3, u8 param4);
+    void func_ov001_020bbe18(unk32 param1, UnkAngleStruct param2, u32 param3, u8 param4);
 };
 
 class PlayerActorBase_74 {
@@ -391,7 +387,7 @@ public:
     /* 24 */ VecFx32 mAccel;
     /* 30 */ union {
         u16 mAngle;
-        UnkStruct_func_ov001_020bbe18 mAngleStruct;
+        UnkAngleStruct mAngleStruct;
     };
     /* 32 */ u8 mInvincibilityTimer;
     /* 33 */ u8 mInvincibilityIconTimer; // the blinking icon on top-screen

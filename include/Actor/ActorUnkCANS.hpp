@@ -8,6 +8,7 @@
 #include "Actor/Actor_Derived1.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
+#include "System/OverlayManager.hpp"
 #include "global.h"
 #include "types.h"
 
