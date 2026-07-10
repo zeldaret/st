@@ -7,7 +7,9 @@
 #include "Actor/ActorUnkCASE.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
+#include "Save/AdventureFlags.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
+#include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "nitro/fx.h"
@@ -316,7 +318,12 @@ void ActorUnkCANS::vfunc_20(void) {
     }
 }
 
-void ActorUnkCANS::vfunc_24(void) {}
+void ActorUnkCANS::vfunc_24(void) {
+    if (data_027e09b8->HasAdventureFlag(AdventureFlag_VisitedIslandSanctuaryFirstTime)) {
+        vfunc_20();
+    }
+}
+
 void ActorUnkCANS::vfunc_2C(void) {}
 
 void ActorUnkCANS::func_ov063_02157f20(void) {}
