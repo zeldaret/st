@@ -67,7 +67,7 @@ public:
     /* 1C */ virtual void vfunc_1C(void);
     /* 20 */ virtual void vfunc_20(void);
     /* 24 */ virtual void vfunc_24(void);
-    /* 2C */ virtual void vfunc_2C(void);
+    /* 2C */ virtual void vfunc_2C(unk32 param1);
     /* 4C */ virtual ~ActorUnkCANS() override;
     /* 4C */ void func_ov063_0215a9d4(void); // vfunc_4C conflict ???
     /* 50 */ void func_ov063_0215aa58(void);

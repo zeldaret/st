@@ -1,6 +1,7 @@
 //! TODO: This file was generated automatically and might contain errors
 
 #include "Actor/ActorUnkCANS.hpp"
+#include "Actor/Actor.hpp"
 #include "Actor/ActorItemBoomerang.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorRef.hpp"
@@ -29,6 +30,7 @@ extern u16 data_ov000_020aed00;
 
 extern "C" void func_01ff9638(VecFx32 *param1, fx16 param2);
 extern "C" unk32 func_01ffbbe0(unk32 param1, unk32 param2);
+extern "C" void func_01ffc6d4(ModelRender *param1, UnkAngleStruct param2, VecFx32 *param3);
 extern "C" void func_ov000_0207de98(void *param1, ActorRef param2, VecFx32 *param3, unk32 *param4);
 extern "C" void func_ov000_0208bd20(UnkStruct_027e0ce0 *param1, unk32 param2, unk32 param3, unk32 param4);
 extern "C" void func_ov000_020986b4(s16 *var, ActorUnkCANS *param2, unk32 param3);
@@ -320,11 +322,30 @@ void ActorUnkCANS::vfunc_20(void) {
 
 void ActorUnkCANS::vfunc_24(void) {
     if (data_027e09b8->HasAdventureFlag(AdventureFlag_VisitedIslandSanctuaryFirstTime)) {
-        vfunc_20();
+        this->vfunc_20();
     }
 }
 
-void ActorUnkCANS::vfunc_2C(void) {}
+void ActorUnkCANS::vfunc_2C(unk32 param1) {
+    bool cond = this->func_01fff5d0(param1, 0);
+    if (!cond) {
+        return;
+    }
+
+    func_01ffc6d4(&mUnk_B0, mAngleStruct, &mPos);
+
+    if (mUnk_268 != NULL) {
+        VecFx32 vec;
+        VecFx32_Init(0, 0x4CD, 0, &vec);
+
+        func_01ff9638(&vec, mAngle);
+        VecFx32_Add(&vec, &mPos, &vec);
+
+        this->func_ov017_020bf5c4(&vec, 0xD9A, 0x930 - 0x1F, 0x1F, mAngle);
+    } else {
+        this->func_ov017_020bf5c4(&mPos, 0x800, 0x555, 0x1F, mAngle);
+    }
+}
 
 void ActorUnkCANS::func_ov063_02157f20(void) {}
 void ActorUnkCANS::func_ov063_02157f7c(void) {}
