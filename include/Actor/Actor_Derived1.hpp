@@ -33,13 +33,35 @@ public:
     ActorUnk_vfunc_B0();
 };
 
+class Actor_Derived1_94_vfunc_10 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x04);
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ STRUCT_PAD(0x04, 0x08);
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */
+};
+
+class Actor_Derived1_94_0C {
+public:
+    /* 00 (vtable) */
+    /* 04 */
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual Actor_Derived1_94_vfunc_10 *vfunc_10();
+};
+
 class Actor_Derived1_94 {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk16 mUnk_08;
     /* 0A */ unk16 mUnk_0A;
-    /* 0C */ unk32 mUnk_0C;
+    /* 0C */ Actor_Derived1_94_0C *mUnk_0C;
+    /* 10 */
 
     Actor_Derived1_94();
     ~Actor_Derived1_94();
@@ -49,7 +71,7 @@ class Actor_Derived1_94_Derived1 : public Actor_Derived1_94 {
 public:
     /* 00 (base) */
 
-    Actor_Derived1_94_Derived1(unk32 param1) {
+    Actor_Derived1_94_Derived1(Actor_Derived1_94_0C *param1) {
         this->mUnk_0C = param1;
     }
 };
@@ -133,7 +155,7 @@ public:
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~Actor_Derived1();
     /* 54 */ virtual void vfunc_54(unk32 param1);
-    /* 58 */ virtual void vfunc_58(unk32 param1) = 0;
+    /* 58 */ virtual void vfunc_58(s16 param1) = 0;
     /* 5C */ virtual void vfunc_5C();
     /* 60 */ virtual void vfunc_60();
     /* 64 */ virtual bool vfunc_64();
@@ -145,8 +167,8 @@ public:
     /* 7C */ virtual unk32 vfunc_7C();
     /* 80 */ virtual unk32 vfunc_80();
     /* 84 */ virtual unk32 vfunc_84();
-    /* 88 */ virtual unk32 vfunc_88();
-    /* 8C */ virtual unk32 vfunc_8C();
+    /* 88 */ virtual bool vfunc_88();
+    /* 8C */ virtual bool vfunc_8C();
     /* 90 */ virtual unk32 vfunc_90();
     /* 94 */ virtual void vfunc_94();
     /* 98 */ virtual void vfunc_98(unk32 param1);
@@ -160,7 +182,7 @@ public:
     /* B8 */ virtual void vfunc_B8();
     /* BC */
 
-    Actor_Derived1(ModelRender *param1, unk32 param2);
+    Actor_Derived1(ModelRender *param1, Actor_Derived1_94_0C *param2);
 
     // overlay 0
     void func_ov000_020a8ae0(fx32 param1);
@@ -171,7 +193,7 @@ public:
     void func_ov000_020a8ff4();
     void func_ov000_020a91b8(VecFx32 *param1, unk32 param2);
     void func_ov000_020a9200();
-    void func_ov000_020a9248();
+    bool func_ov000_020a9248(unk32 param1);
     void func_ov000_020a94b0();
     void func_ov000_020a95d8();
     void func_ov000_020a9a20();

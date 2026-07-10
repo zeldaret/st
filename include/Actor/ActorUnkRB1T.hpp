@@ -21,7 +21,8 @@ public:
 class ActorUnkRB1T : public Actor_Derived1 {
 public:
     /* 000 (base) */
-    /* 120 */ unk32 mUnk_120;
+    /* 120 */
+    Actor_Derived1_94_0C *mUnk_120;
     /* 124 */ STRUCT_PAD(0x124, 0x20C);
     /* 20C */ ModelRender mUnk_20C; // actually a derived class of a derived class
     /* 26C */ STRUCT_PAD(0x26C, 0x280);
@@ -45,7 +46,7 @@ public:
     ActorUnkRB1T();
 
     /* 4C */ virtual ~ActorUnkRB1T() override;
-    /* 58 */ virtual void vfunc_58(unk32 param1);
+    /* 58 */ virtual void vfunc_58(s16 param1);
 
     void func_ov026_0211e3cc(void);
     bool func_ov026_0211e3e0(unk32 param1);
