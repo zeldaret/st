@@ -242,14 +242,15 @@ enum ZMBSectionType_ {
     ZMBSectionType_ROMB       = 'ROMB', // unknown
     ZMBSectionType_ROOM       = 'ROOM', // room settings
     ZMBSectionType_LDLB       = 'LDLB', // related to script triggers
-    ZMBSectionType_MapObjects = 'MPOB', // map object list, parameters are stored here
-    ZMBSectionType_ARAB       = 'ARAB', // locations? (?)
-    ZMBSectionType_RALB       = 'RALB', // paths?
-    ZMBSectionType_NPCA       = 'NPCA', // actor list, same as above
-    ZMBSectionType_PLYR       = 'PLYR', // player entrances?
-    ZMBSectionType_WARP       = 'WARP', // exits?
-    ZMBSectionType_CAME       = 'CAME', // camera settings?
-    ZMBSectionType_CMPT       = 'CMPT', // ?
+    ZMBSectionType_MapObjects = 'MPOB', // map object list
+    ZMBSectionType_ARAB =
+        'ARAB', // "area block", used to define an area (X1-X2-Y1-Y2 for a cubic area, or can simply be a radius)
+    ZMBSectionType_RALB = 'RALB', // "rail block", paths
+    ZMBSectionType_NPCA = 'NPCA', // actor list
+    ZMBSectionType_PLYR = 'PLYR', // player entrances?
+    ZMBSectionType_WARP = 'WARP', // exits?
+    ZMBSectionType_CAME = 'CAME', // camera settings (like fixed camera points used by shops for instance)
+    ZMBSectionType_CMPT = 'CMPT', // ?
 };
 
 typedef struct ZMBFileInfos {

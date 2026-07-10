@@ -48,7 +48,7 @@ extern "C" void func_020156c8(char *, char *, unk32);
 extern "C" void func_020156f4(char *);
 extern "C" void func_02015644(char *);
 
-extern "C" BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, unk32);
+extern "C" BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, void *);
 extern "C" unk32 func_ov000_02077590(unk32);
 
 static const unk32 data_ov110_02185dc4[1] = {8};

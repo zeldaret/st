@@ -568,8 +568,8 @@ data_ov001_020c2a40 kind:data(any) addr:0x020c4280
 @5645 kind:data(byte[9]) addr:0x020c4490 local
 @5646 kind:data(byte[12]) addr:0x020c449c local
 @5647 kind:data(byte[6]) addr:0x020c44a8 local
-data_ov001_020c44b0 kind:data(any) addr:0x020c44b0
-data_ov001_020c44b8 kind:data(any) addr:0x020c44b8
+@4095 kind:data(byte[6]) addr:0x020c44b0 local
+@4096 kind:data(byte[7]) addr:0x020c44b8 local
 data_ov001_020c44c0 kind:data(any) addr:0x020c44c0
 data_ov001_020c44c8 kind:data(any) addr:0x020c44c8
 data_ov001_020c44d0 kind:data(any) addr:0x020c44d0

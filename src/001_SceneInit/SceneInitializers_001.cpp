@@ -6,6 +6,7 @@
 #include "MapObject/MapObjectManager.hpp"
 #include "System/OverlayManager.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_027e0954.hpp"
@@ -35,17 +36,6 @@ extern "C" u16 func_ov026_02106564(void *);
 
 extern const OverlayIndex data_ov000_020b21c4[];
 extern const OverlayIndex data_ov000_020b21e0[];
-
-struct UnkStruct_ov000_020aa88c {
-    /* 00 */ bool mUnk_00;
-    /* 01 */ bool mUnk_01;
-    /* 02 */ bool mUnk_02;
-    /* 03 */ bool mUnk_03;
-    /* 04 */ unk16 mUnk_04;
-    /* 06 */ u16 mUnk_06;
-    /* 08 */
-};
-extern UnkStruct_ov000_020aa88c data_ov000_020aa88c[];
 
 static const SceneIndex_Halfs data_ov001_020c25c0[10] = {
     SceneIndex_t_area1, SceneIndex_t_area0, SceneIndex_t_area0, SceneIndex_t_area0, SceneIndex_t_area0,

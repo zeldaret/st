@@ -120,10 +120,10 @@ _ZN12ActorUnkDLTG19func_ov047_02135878Ev kind:function(arm,size=0x2c) addr:0x021
 _ZN12ActorUnkDLTG19func_ov047_021358a4Ev kind:function(arm,size=0x1c) addr:0x0213734c
 _ZN12ActorUnkDLTG19func_ov047_021358c0Ev kind:function(arm,size=0x1d4) addr:0x02137368
 _ZN19ActorProfileUnkDLTGD1Ev kind:function(arm,size=0x14) addr:0x0213753c
-func_ov047_02137550 kind:function(arm,size=0x10) addr:0x02137550
+_ZN21PlayerLinkActor_A0_28C1EP21PlayerLinkActor_A0_10P21PlayerLinkActor_A0_14 kind:function(arm,size=0x10) addr:0x02137550
 func_ov047_02137560 kind:function(arm,size=0x8c) addr:0x02137560
 func_ov047_021375ec kind:function(arm,size=0x8c) addr:0x021375ec
-func_ov047_02137678 kind:function(arm,size=0x98) addr:0x02137678
+_ZN21PlayerLinkActor_A0_28D1Ev kind:function(arm,size=0x98) addr:0x02137678
 func_ov047_02137710 kind:function(arm,size=0x70) addr:0x02137710
 data_ov047_02137780 kind:data(any) addr:0x02137780
 data_ov047_02137790 kind:data(any) addr:0x02137790

@@ -103,6 +103,7 @@ src/001_SceneInit/Player/PlayerLinkActor_001.cpp:
 
 src/001_SceneInit/UnkStruct_027e0ce0_1C_001.cpp:
     .text       start:0x020be4e8 end:0x020bed5c
+    .data       start:0x020c44b0 end:0x020c44c0
 
 src/001_SceneInit/UnkStruct_0204a110_001.cpp:
     .text       start:0x020bed5c end:0x020bf010
