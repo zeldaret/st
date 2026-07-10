@@ -20,14 +20,14 @@ void *func_ov024_020d1658();
 void *func_ov000_02066294();
 }
 
-extern int data_ov001_020c27a8;
-extern int data_ov001_020c276c;
+extern s16 data_ov001_020c27a8;
+extern s16 data_ov001_020c276c;
 
-AdventureModeManager *AdventureModeManager::Create(unk32 param1) {
+GameModeManagerBase *AdventureModeManager::Create(UnkStruct_0204a110_Sub2 *param1) {
     return new(HeapIndex_1) AdventureModeManager(param1);
 }
 
-AdventureModeManager::AdventureModeManager(unk32 param1) {
+AdventureModeManager::AdventureModeManager(UnkStruct_0204a110_Sub2 *param1) {
     this->mUnk_154       = 0;
     this->mUnk_158       = &this->mUnk_104;
     this->mUnk_15C       = new(HeapIndex_1) AdventureModeManager_15C();

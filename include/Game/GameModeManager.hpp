@@ -14,14 +14,26 @@
 class GameModeManagerBase;
 class GameModeManagerBase_104;
 class GameModeManagerBase_104_0C;
+class UnkStruct_0204a110_Sub2;
+
+class GameModeManagerBase_004_00 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x38);
+    /* 38 */
+
+    GameModeManagerBase_004_00(s16 param1);
+    ~GameModeManagerBase_004_00();
+};
 
 class GameModeManagerBase_004 {
 public:
-    unk32 *mUnk_00;
+    /* 00 */ GameModeManagerBase_004_00 *mUnk_00[60];
+    /* F0 */
 
     GameModeManagerBase_004();
     ~GameModeManagerBase_004();
 
+    // main
     void func_0201bf24();
     void func_0201bf54();
     void func_0201bf90();
@@ -36,7 +48,8 @@ public:
     void func_0201c22c();
     bool func_0201c2b0(unk32 param1);
 
-    void func_ov001_020bd734(unk32 *param1);
+    // overlay 1
+    void func_ov001_020bd734(const s16 *param1);
     void func_ov001_020bd784();
 };
 
@@ -83,22 +96,13 @@ class GameModeManagerBase {
 public:
     /* 000 (vtable) */
     /* 004 */ GameModeManagerBase_004 mUnk_004;
-    /* 008 */ void *mUnk_008;
-    /* 00C */ STRUCT_PAD(0x0C, 0x1A);
-    /* 01A */ bool mUnk_01A;
-    /* 01C */ STRUCT_PAD(0x1C, 0xE0);
-    /* 0E0 */ void *mUnk_0E0;
-    /* 0E4 */ void *mUnk_0E4;
-    /* 0E8 */ void *mUnk_0E8;
-    /* 0EC */ unk32 mUnk_0EC;
-    /* 0F0 */ unk32 mUnk_0F0;
     /* 0F4 */ bool mUnk_0F4;
     /* 0F4 */ bool mUnk_0F5;
     /* 0F4 */ unk8 mUnk_0F6;
     /* 0F4 */ unk8 mUnk_0F7;
     /* 0F8 */ unk32 mUnk_0F8;
     /* 0FC */ unk32 mUnk_0FC;
-    /* 100 */ void *mUnk_100;
+    /* 100 */ UnkStruct_0204a110_Sub2 *mUnk_100;
     /* 104 */ GameModeManagerBase_104 mUnk_104;
     /* 120 */ Input mButtons;
     /* 126 */ TouchControl mTouchControl;
@@ -114,7 +118,7 @@ public:
         return this->mUnk_150;
     }
 
-    GameModeManagerBase(unk32 param1);
+    GameModeManagerBase(UnkStruct_0204a110_Sub2 *param1);
     void func_02018550(void);
     void func_02018554(void);
     void func_02018634(u16 speed);
@@ -153,7 +157,7 @@ public:
     /* 30 */ virtual void vfunc_30(unk32 param1);
     /* 34 */ virtual void vfunc_34(unk32 param1, unk32 param2);
 
-    static GameModeManagerBase *Create(unk32 param1);
+    static GameModeManagerBase *Create(UnkStruct_0204a110_Sub2 *param1);
 };
 
 class TitleScreenManager_Base : public GameModeManagerBase {

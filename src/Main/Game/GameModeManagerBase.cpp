@@ -8,12 +8,12 @@
 
 THUMB_BEGIN
 
-GameModeManagerBase *GameModeManagerBase::Create(unk32 param1) {
+GameModeManagerBase *GameModeManagerBase::Create(UnkStruct_0204a110_Sub2 *param1) {
     return new(HeapIndex_1) GameModeManagerBase(param1);
 }
 
-GameModeManagerBase::GameModeManagerBase(unk32 param1) :
-    mUnk_100((void *) param1),
+GameModeManagerBase::GameModeManagerBase(UnkStruct_0204a110_Sub2 *param1) :
+    mUnk_100(param1),
     mNextButtonID(BTN_ID_NONE),
     mButtonID(BTN_ID_NONE),
     mUnk_150(false) {

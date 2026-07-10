@@ -11,7 +11,7 @@
 #include "types.h"
 #include <nitro/reg.h>
 
-extern const unk16 data_ov019_020d1bb0[];
+extern const s16 data_ov019_020d1bb0[];
 extern "C" void func_ov001_020bd6a8();
 
 class FileSelect_UnkClass7_04 {
@@ -87,7 +87,7 @@ public:
     /* 180 */
 
     // clang-format off
-    FileSelectManager(unk32 param1) NO_INLINE :
+    FileSelectManager(UnkStruct_0204a110_Sub2* param1) NO_INLINE :
         GameModeManagerBase(param1),
         mUnk_154(&this->mUnk_104),
         mUnk_158(NULL),
@@ -100,7 +100,7 @@ public:
         REG_DISPCNT_SUB &= 0xFFCFFFEF;
         REG_DISPCNT_SUB |= 0x00200010;
 
-        this->mUnk_004.func_ov001_020bd734((unk32*)data_ov019_020d1bb0);
+        this->mUnk_004.func_ov001_020bd734(data_ov019_020d1bb0);
         func_ov001_020bd6a8();
     }
     // clang-format on
@@ -116,7 +116,7 @@ public:
     /* 28 */ virtual void vfunc_28(unk8 *param1) override;
     /* 2C */ virtual void DrawUI(unk8 *param1) override;
 
-    static GameModeManagerBase *Create(unk32 param1);
+    static GameModeManagerBase *Create(UnkStruct_0204a110_Sub2 *param1);
 };
 
 // static initializers classes

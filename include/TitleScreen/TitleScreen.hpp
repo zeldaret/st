@@ -117,7 +117,7 @@ public:
     /* 154 */ GameModeBase *mpGameMode;
     /* 158 */
 
-    TitleScreenManager(unk32 param1) NO_INLINE {
+    TitleScreenManager(UnkStruct_0204a110_Sub2 *param1) NO_INLINE {
         this->mpGameMode = NULL;
         GX_SetGraphicsMode(1, 0, 1);
         GXS_SetGraphicsMode(5);
@@ -136,5 +136,5 @@ public:
     /* 2C */ virtual void DrawUI(unk8 *param1) override;
     /* 38 */ virtual void vfunc_38(u32 sceneIndex, u8 roomIndex, unk16 param3, unk16 param4) override;
 
-    static TitleScreenManager *Create(unk32 param1);
+    static GameModeManagerBase *Create(UnkStruct_0204a110_Sub2 *param1);
 };

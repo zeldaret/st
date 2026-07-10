@@ -175,7 +175,7 @@ UnkStruct_0204a110::UnkStruct_0204a110() :
     mUnk_000(0),
     mUnk_008(-1),
     mUnk_00C(-1),
-    mUnk_DEC(NULL),
+    mpManager(NULL),
     mUnk_DF2(-1),
     mUnk_DF3(-1),
     mUnk_DFC(0),
@@ -191,7 +191,7 @@ UnkStruct_0204a110::UnkStruct_0204a110() :
 
 void UnkStruct_0204a110::func_ov018_020c5300() {
     func_02018c90(2);
-    this->mUnk_010.func_0201c890(0x0004800, 0x00016800, 1, 1, 0);
+    this->mUnk_010.func_0201c890(0x0004800, 0x00016800, true, true, false);
     GX_DispOn();
     GXS_DispOn();
 }
