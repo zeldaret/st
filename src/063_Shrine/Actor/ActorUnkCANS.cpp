@@ -332,11 +332,11 @@ void ActorUnkCANS::vfunc_2C(unk32 param1) {
         return;
     }
 
-    func_01ffc6d4(&mUnk_B0, mAngleStruct, &mPos);
+    ((UnkSystem6_Derived2 *) &mUnk_B0)->func_01ffc6d4(mAngleStruct, &mPos);
 
     if (mUnk_268 != NULL) {
         VecFx32 vec;
-        VecFx32_Init(0, 0x4CD, 0, &vec);
+        VecFx32_Init(0x4CD, 0, 0, &vec);
 
         func_01ff9638(&vec, mAngle);
         VecFx32_Add(&vec, &mPos, &vec);
