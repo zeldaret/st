@@ -148,34 +148,30 @@ void ActorUnkCANS::vfunc_20(void) {
     }
     unk32 iVar5;
 
-    if (mUnk_48 <= 0) {
-        // Just skip the switch case
-        // return; // INFO some goto
-    } else {
+    if (mUnk_48 > 0) {
         unk32 var;
         if (((u16) mUnk_234 < (u16) mUnk_236)) {
             (*(volatile u16 *) &mUnk_234)++;
             var = 0;
-            // return; // INFO some goto (same as above)
         } else {
             var = 1;
         }
+
         if (var == 0) {
             if (mUnk_268 != NULL) {
-                *(char *) &mUnk_1F4 = 0;
+                //! INFO: mUnk_268 is NOT an ActorUnkCANS*, this is a placeholder as mUnk_1F4 is not yet defined in
+                //! ActorUnkCASE (current type of *mUnk_268)
+                *(char *) &((ActorUnkCANS *) mUnk_268)->mUnk_1F4 = 0;
             }
         } else {
 
             this->func_ov000_020989e0();
 
-            if (((*(u32 *) &mUnk_208) & 0x3FFFF) == 0) {
-                // return; // INFO some goto (not the same)
-            } else {
+            if (((*(u32 *) &mUnk_208) & 0x3FFFF) != 0) {
 
-                unk32 res4  = func_ov000_02098d7c(this, &mUnk_1F4.mUnk_0C);
-                mUnk_236    = res4;
-                unk32 uVar1 = 0;
-                mUnk_234    = uVar1;
+                unk32 res4 = func_ov000_02098d7c(this, &mUnk_1F4.mUnk_0C);
+                mUnk_236   = res4;
+                mUnk_234   = 0;
 
                 unk16 sVar2 = func_01ffbbe0(*(u32 *) &mUnk_210, mUnk_218);
                 iVar5       = this->func_ov063_0215a56c(sVar2);
@@ -189,7 +185,6 @@ void ActorUnkCANS::vfunc_20(void) {
                             if (iVar6 != 0) {
                                 ((ActorItemBoomerang *) iVar6)->func_ov031_020e49b0(0x8D70);
                             }
-                            // INFO some goto
                             if (mState != 4) {
                                 this->func_ov063_02158448(5);
                             }
@@ -198,27 +193,26 @@ void ActorUnkCANS::vfunc_20(void) {
                             func_ov000_02099a0c(&mUnk_224);
                             this->func_ov063_02158448(4);
                         }
-                        break; // INFO some goto
+                        break;
                     case 4: {
                         if (mUnk_268 == NULL) {
                             unk32 iVar6 = func_ov031_020d9c04(data_027e0d38, 1, 0, 0);
                             if (iVar6 != 0) {
                                 this->func_ov063_02158448(10);
                             }
-                            break; // INFO some goto
                         } else {
                             data_027e0d38->func_ov031_020d9c44(data_ov000_020aed00);
                             if (mState != 4) {
                                 this->func_ov063_02158448(5);
                             }
-                            break; // INFO some goto
                         }
+                        break;
                     }
                     case 13:
                         if (iVar5 == 0) {
                             this->func_ov063_02158490();
                         }
-                        break; // INFO some goto
+                        break;
                     case 8:
                         if (iVar5 != 0) {
                             if ((u16) mUnk_20C == 0x102) {
@@ -235,20 +229,19 @@ void ActorUnkCANS::vfunc_20(void) {
                             if (mState != 4) {
                                 this->func_ov063_02158448(5);
                             }
-                            break; // INFO some goto
                         } else {
                             this->func_ov063_02158490();
-                            break; // INFO some goto
                         }
+                        break;
                     case 3:
                         if (iVar5 != 0) {
                             if (mState != 4) {
                                 this->func_ov063_02158448(5);
                             }
-                            break; // INFO some goto
+                            break;
                         }
                         this->func_ov063_02158490();
-                        break; // INFO some goto
+                        break;
 
                     default: // cases 0, 1, 2, 5, 6, 7, 9, 10, 11
                         if (iVar5 != 0) {
@@ -263,7 +256,9 @@ void ActorUnkCANS::vfunc_20(void) {
                 }
             }
             if (mUnk_268 != NULL) {
-                *(char *) &mUnk_1F4 = (char) iVar5;
+                //! INFO: mUnk_268 is NOT an ActorUnkCANS*, this is a placeholder as mUnk_1F4 is not yet defined in
+                //! ActorUnkCASE (current type of *mUnk_268)
+                *(char *) &((ActorUnkCANS *) mUnk_268)->mUnk_1F4 = (char) iVar5;
             }
         }
     }
@@ -283,37 +278,41 @@ void ActorUnkCANS::vfunc_20(void) {
     if (mUnk_268 != NULL) {
         VecFx32 a;
         UnkStruct_b b;
-        // VecFx32 *a = (VecFx32 *) &puVar11[0xD];
-        // VecFx32 *b = (VecFx32 *) &puVar11[8];
+        VecFx32 *aPtr     = &a;
+        UnkStruct_b *bPtr = &b;
+        // VecFx32 *aPtr     = (VecFx32 *) &puVar11[0xD];
+        // UnkStruct_b *bPtr = (UnkStruct_b *) &puVar11[8];
 
-        VecFx32_Init(0x4CD, 0, 0, &a);
+        VecFx32_Init(0x4CD, 0, 0, aPtr);
 
-        func_01ff9638(&a, mAngle);
-        VecFx32_Add(&a, &mPos, &a);
+        func_01ff9638(aPtr, mAngle);
+        VecFx32_Add(aPtr, &mPos, aPtr);
 
-        VecFx32_Copy(&a, &b.pos);
+        VecFx32_Copy(aPtr, &bPtr->pos);
 
         // puVar11[0xB] = 0xF33;
         // puVar11[0xC] = 0x1000;
-        b.mUnk_0C = 0xF33;
-        b.mUnk_10 = 0x1000;
+        bPtr->mUnk_0C = 0xF33;
+        bPtr->mUnk_10 = 0x1000;
 
-        func_ov000_0207de98(data_027e09c0, mRef, &b.pos, mUnk_38);
+        func_ov000_0207de98(data_027e09c0, mRef, &bPtr->pos, mUnk_38);
     } else {
         VecFx32 a;
         UnkStruct_b b;
-        // VecFx32 *a = (VecFx32 *) &puVar11[0x5];
-        // VecFx32 *b = (VecFx32 *) &puVar11[0];
+        VecFx32 *aPtr     = &a;
+        UnkStruct_b *bPtr = &b;
+        // VecFx32 *aPtr     = (VecFx32 *) &puVar11[0x5];
+        // UnkStruct_b *bPtr = (UnkStruct_b *) &puVar11[0];
 
-        a = mPos;
-        VecFx32_Copy(&a, &b.pos);
+        *aPtr = mPos;
+        VecFx32_Copy(aPtr, &bPtr->pos);
 
         // puVar11[3] = 0xA66;
         // puVar11[4] = 0x1000;
-        b.mUnk_0C = 0xA66;
-        b.mUnk_10 = 0x1000;
+        bPtr->mUnk_0C = 0xA66;
+        bPtr->mUnk_10 = 0x1000;
 
-        func_ov000_0207de98(data_027e09c0, mRef, &b.pos, mUnk_38);
+        func_ov000_0207de98(data_027e09c0, mRef, &bPtr->pos, mUnk_38);
     }
 }
 
