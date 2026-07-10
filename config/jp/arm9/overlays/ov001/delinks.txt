@@ -110,6 +110,7 @@ src/001_SceneInit/UnkStruct_0204a110_001.cpp:
     .text       start:0x020bed5c end:0x020bf010
 
 src/001_SceneInit/UnkStruct_ov024_020d86a0_001.cpp:
+    complete
     .text       start:0x020bf010 end:0x020bf09c
 
 src/001_SceneInit/UnkStruct_ov000_020b50c0_001.cpp:

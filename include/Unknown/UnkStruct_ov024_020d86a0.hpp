@@ -24,11 +24,11 @@ public:
     /* 00 */ UnkStruct_ov024_020d86a0_00 *mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk8 mUnk_0C;
-    /* 0D */ unk8 mUnk_0D;
-    /* 0E */ unk8 mUnk_0E;
+    /* 0C */ bool mUnk_0C;
+    /* 0D */ bool mUnk_0D;
+    /* 0E */ bool mUnk_0E;
     /* 0F */ bool mUnk_0F;
-    /* 10 */ unk8 mUnk_10;
+    /* 10 */ bool mUnk_10;
     /* 11 */ bool mUnk_11;
     /* 14 */
 
