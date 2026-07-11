@@ -15,10 +15,7 @@
 
 #include <dsprot.h>
 
-extern "C" {
-void *func_ov024_020d1658();
-void *func_ov000_02066294();
-}
+extern "C" void *func_ov000_02066294();
 
 extern s16 data_ov001_020c27a8;
 extern s16 data_ov001_020c276c;
@@ -59,7 +56,7 @@ AdventureModeManager::AdventureModeManager(UnkStruct_0204a110_Sub2 *param1) {
     this->mAllowMapPaint = false;
 
     UnkStruct_027e0998::Create();
-    func_ov024_020d1658();
+    UnkStruct_ov024_020d86a0::Create();
 
     this->mUnk_170 = new(HeapIndex_1) AdventureModeManager_170(&this->mUnk_104);
 

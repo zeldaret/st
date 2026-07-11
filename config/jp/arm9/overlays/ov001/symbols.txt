@@ -502,8 +502,8 @@ data_ov001_020c26bc kind:data(any) addr:0x020c3f10
 data_ov001_020c3f90 kind:data(any) addr:0x020c3f90
 data_ov001_020c3fa4 kind:data(any) addr:0x020c3fa4
 data_ov001_020c3fb2 kind:data(any) addr:0x020c3fb2
-data_ov001_020c3fc0 kind:data(any) addr:0x020c3fc0
-data_ov001_020c3ffc kind:data(any) addr:0x020c3ffc
+data_ov001_020c276c kind:data(any) addr:0x020c3fc0
+data_ov001_020c27a8 kind:data(any) addr:0x020c3ffc
 data_ov001_020c4060 kind:data(any) addr:0x020c4060
 __sinit_CourseList.cpp kind:function(thumb,size=0x24) addr:0x020c4068 local
 __sinit_UnkStruct_027e0cd8_0C_001.cpp kind:function(thumb,size=0xb8) addr:0x020c408c
