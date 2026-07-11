@@ -264,7 +264,7 @@ void ActorUnkZLSL::vfunc_70() {
 unk32 ActorUnkZLSL::vfunc_7C() {}
 
 // non-matching
-bool ActorUnkZLSL::vfunc_80(unk32 param1, unk32 param2) {
+unk32 ActorUnkZLSL::vfunc_80(unk32 param1, unk32 param2) {
     u32 value = (u16) ((u8) (param1 + 1) | param2 << 0x8);
     if (value == 0x201) {
         ActorUnkRPMT *actor = func_02016fbc(ActorId_RPMT, &this->mPos.x, 0x0);
