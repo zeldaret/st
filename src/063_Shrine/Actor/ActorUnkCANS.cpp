@@ -8,6 +8,7 @@
 #include "Actor/ActorShotArrow.hpp"
 #include "Actor/ActorUnkCASE.hpp"
 #include "Physics/Cylinder.hpp"
+#include "Player/PlayerGet.hpp"
 #include "Render/ModelRender.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -33,10 +34,37 @@ static PTMF<ActorUnkCANS> data_ov063_02162f58[0xA] = {
     ActorUnkCANS::func_ov063_02159e20,
 };
 
+struct UnkStruct_data_ov063_02163068 {
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+};
+
+extern UnkStruct_data_ov063_02163068 data_ov063_02163068; // = {0, 0x6B6C6177, 0x41, 0, 0, 0};
+
+class UnkStruct_func_ov063_02158b34 {
+public:
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10();
+    /* 14 */ virtual void vfunc_14();
+    /* 18 */ virtual void vfunc_18();
+    /* 1C */ virtual void vfunc_1C(UnkStruct_data_ov063_02163068, unk32, unk32, unk32) override;
+    /* 20 */ virtual void vfunc_20();
+    /* 24 */ virtual void vfunc_24();
+    /* 28 */ virtual UnkStruct_PlayerGet_50 *vfunc_28();
+};
+
 extern void *data_027e09c0;
 extern u16 data_ov000_020aed00;
 extern Cylinder data_ov063_02162e90;
 
+extern "C" void func_01ff916c(unk32 *param1, unk32 param2);
 extern "C" void func_01ff9638(VecFx32 *param1, fx16 param2);
 extern "C" unk32 func_01ffbbe0(unk32 param1, unk32 param2);
 extern "C" void func_01ffc6d4(ModelRender *param1, UnkAngleStruct param2, VecFx32 *param3);
@@ -436,34 +464,42 @@ void ActorUnkCANS::func_ov063_02158b0c(void) {
     mUnk_30              = &data_ov063_02162e90;
 }
 
-struct UnkStruct_data_ov063_02163068 {
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-};
-
-extern UnkStruct_data_ov063_02163068 data_ov063_02163068; // = {0, 0x6B6C6177, 0x41, 0, 0, 0};
-
-class UnkStruct_func_ov063_02158b34 {
-public:
-    /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
-    /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual void vfunc_18();
-    /* 1C */ void virtual vfunc_1C(UnkStruct_data_ov063_02163068, unk32, unk32, unk32) override;
-};
-
 void ActorUnkCANS::func_ov063_02158b34(void) {
     ((UnkStruct_func_ov063_02158b34 *) &mUnk_128)->vfunc_1C(data_ov063_02163068, 0x1000, 0x19A, 0);
 }
 
-void ActorUnkCANS::func_ov063_02158b98(void) {}
+void ActorUnkCANS::func_ov063_02158b98(void) {
+    if (((UnkStruct_func_ov063_02158b34 *) &mUnk_128)->vfunc_28()->func_02015080(0x1000) != 0 ||
+        ((UnkStruct_func_ov063_02158b34 *) &mUnk_128)->vfunc_28()->func_02015080(0x11000) != 0 ||
+        ((UnkStruct_func_ov063_02158b34 *) &mUnk_128)->vfunc_28()->func_02015080(0x21000) != 0) {
+        data_027e09a8->func_ov000_02071b30(0x985F, &mPos, 0);
+    }
+
+    if ((mUnk_46 & 0x3C) != 0) {
+        unk16 ret2  = func_01ffbbe0(*(unk32 *) &mUnk_23C.mUnk_08, mUnk_24C);
+        unk32 iVar5 = (unk16) ((mUnk_26C * 0x4000 + mUnk_276) - ret2);
+        iVar5       = ABS(iVar5);
+
+        if (0x4000 < iVar5) {
+            mUnk_276 *= -1;
+        }
+    }
+
+    func_01ff916c(&mUnk_270, mUnk_276 * 0xCD);
+    u16 angle = (fx16) (fx32) (mUnk_26C + 0x4000);
+    mVel.x    = MUL_FX32(SIN(angle), mUnk_270);
+    mVel.z    = MUL_FX32(COS(angle), mUnk_270);
+
+    if (this->func_ov063_0215a514() != 0) {
+        this->func_ov063_02158448(8);
+        return;
+    }
+
+    if (this->func_ov063_02159f3c(0x3000) != 0) {
+        this->func_ov063_02158448(1);
+    }
+}
+
 void ActorUnkCANS::func_ov063_02158d40(void) {}
 void ActorUnkCANS::func_ov063_02158db0(void) {}
 void ActorUnkCANS::func_ov063_021590c8(void) {}
@@ -484,12 +520,12 @@ void ActorUnkCANS::func_ov063_02159dfc(void) {}
 void ActorUnkCANS::func_ov063_02159e1c(void) {}
 void ActorUnkCANS::func_ov063_02159e20(void) {}
 void ActorUnkCANS::func_ov063_02159ec0(void) {}
-void ActorUnkCANS::func_ov063_02159f3c(void) {}
+unk32 ActorUnkCANS::func_ov063_02159f3c(unk32 param1) {}
 void ActorUnkCANS::func_ov063_0215a0f0(void) {}
 void ActorUnkCANS::func_ov063_0215a2c0(void) {}
 void ActorUnkCANS::func_ov063_0215a428(void) {}
 void ActorUnkCANS::func_ov063_0215a474(void) {}
-void ActorUnkCANS::func_ov063_0215a514(void) {}
+unk32 ActorUnkCANS::func_ov063_0215a514(void) {}
 unk32 ActorUnkCANS::func_ov063_0215a56c(unk32 param1) {}
 void ActorUnkCANS::func_ov063_0215a5a0(void) {}
 void ActorUnkCANS::func_ov063_0215a5bc(void) {}

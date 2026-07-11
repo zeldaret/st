@@ -10,6 +10,7 @@
 #include "Render/ModelRender.hpp"
 #include "global.h"
 #include "nitro/fx.h"
+#include "nitro/types.h"
 #include "types.h"
 
 class ActorUnkCANS_C4 : public Actor_C4 {
@@ -28,7 +29,7 @@ public:
     /* AE */ STRUCT_PAD(0xAE, 0xB0);
     /* B0 */ ModelRender mUnk_B0;
     /* 110 */ STRUCT_PAD(0x110, 0x128);
-    /* 128 */ void *mUnk_128; //! INFO: has vfunc_34
+    /* 128 */ unk32 mUnk_128; //! INFO: Some kind of Actor, has vfunc_34, 1C (many args) and 28
     /* 12C */ STRUCT_PAD(0x12C, 0x154);
     /* 154 */ UnkSystem5 mUnk_154;
     /* 174 */ unk32 mUnk_174;
@@ -60,9 +61,12 @@ public:
     /* 254 */ STRUCT_PAD(0x254, 0x268);
     /* 268 */ ActorUnkCASE *mUnk_268;
     /* 26C */ fx16 mUnk_26C;
-    /* 26E */ STRUCT_PAD(0x26E, 0x274);
+    /* 26E */ STRUCT_PAD(0x26E, 0x270);
+    /* 270 */ unk32 mUnk_270;
     /* 274 */ u16 mUnk_274;
-    /* 276 */
+    /* 276 */ s8 mUnk_276;
+    /* 277 */ s8 mUnk_277;
+    /* 278 */
 
     ActorUnkCANS();
 
@@ -107,12 +111,12 @@ public:
     void func_ov063_02159e1c(void);
     void func_ov063_02159e20(void);
     void func_ov063_02159ec0(void);
-    void func_ov063_02159f3c(void);
+    unk32 func_ov063_02159f3c(unk32 param1);
     void func_ov063_0215a0f0(void);
     void func_ov063_0215a2c0(void);
     void func_ov063_0215a428(void);
     void func_ov063_0215a474(void);
-    void func_ov063_0215a514(void);
+    unk32 func_ov063_0215a514(void);
     unk32 func_ov063_0215a56c(unk32 param1);
     void func_ov063_0215a5a0(void);
     void func_ov063_0215a5bc(void);
