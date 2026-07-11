@@ -59,7 +59,9 @@ public:
     /* 254 */ STRUCT_PAD(0x254, 0x268);
     /* 268 */ ActorUnkCASE *mUnk_268;
     /* 26C */ fx16 mUnk_26C;
-    /* 270 */
+    /* 26E */ STRUCT_PAD(0x26E, 0x274);
+    /* 274 */ u16 mUnk_274;
+    /* 276 */
 
     ActorUnkCANS();
 

@@ -399,7 +399,15 @@ unk32 ActorUnkCANS::func_ov063_02157fa4(ActorRef param1, unk32 param2, unk32 par
 
 void ActorUnkCANS::func_ov063_021582f8(void) {}
 void ActorUnkCANS::func_ov063_0215830c(void) {}
-void ActorUnkCANS::func_ov063_02158424(void) {}
+
+void ActorUnkCANS::func_ov063_02158424(void) {
+    mUnk_274 = 0;
+    if (mState == 6) {
+        mUnk_23A = 0x14;
+        mUnk_238 = 0;
+    }
+}
+
 void ActorUnkCANS::func_ov063_02158448(unk32 param1) {}
 void ActorUnkCANS::func_ov063_02158490(void) {}
 void ActorUnkCANS::func_ov063_02158b0c(void) {}
