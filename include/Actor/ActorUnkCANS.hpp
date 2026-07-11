@@ -45,7 +45,8 @@ public:
     /* 210 */ unk16 mUnk_210;
     /* 212 */ STRUCT_PAD(0x212, 0x218);
     /* 218 */ unk32 mUnk_218;
-    /* 21C */ unk32 mUnk_21C;
+    /* 21C */ u16 mUnk_21C;
+    /* 21E */ unk16 mUnk_21E;
     /* 220 */ STRUCT_PAD(0x220, 0x224);
     /* 224 */ unk32 mUnk_224;
     /* 228 */ STRUCT_PAD(0x228, 0x234);

@@ -46,6 +46,7 @@ extern "C" void func_ov000_02098838(ActorUnkCANS *param1);
 extern "C" unk32 func_ov000_02098d7c(ActorUnkCANS *param1, unk32 *param2);
 extern "C" unk32 func_ov000_02099a0c(unk32 *param1);
 extern "C" unk32 func_ov000_02097c20(ActorUnkCANS *param1, ActorRef param2, unk32 param3, unk32 param4, unk32 *param5);
+extern "C" void func_ov017_020bf050(ActorUnkCANS *param1, unk32 *param2, unk32 param3);
 extern "C" void func_ov017_020bf178(ActorUnkCANS *param1, unk32 *param2, unk32 param3);
 extern "C" void func_ov017_020bf894(ActorUnkCANS *param1, unk32 *param2);
 extern "C" void func_ov017_020bfb18(ActorUnkCANS *param1, unk32 *param2);
@@ -191,7 +192,7 @@ void ActorUnkCANS::vfunc_20(void) {
 
                 unk32 uVar9;
 
-                switch (*(u16 *) &mUnk_21C) {
+                switch (mUnk_21C) {
                     case 12:
                         if (iVar5 != 0) {
                             Actor *iVar6 = gpActorManager->func_01fff3b4(*(unk32 *) &mUnk_20C);
@@ -421,7 +422,12 @@ void ActorUnkCANS::func_ov063_02158448(unk32 param1) {
     CALL_PTMF(PTMF<ActorUnkCANS>, data_ov063_02162f58[mState]);
 }
 
-void ActorUnkCANS::func_ov063_02158490(void) {}
+void ActorUnkCANS::func_ov063_02158490(void) {
+    mUnk_48 -= mUnk_21E;
+    func_ov017_020bf050(this, &mUnk_1F4.mUnk_0C, 1);
+    this->func_ov063_02158448(2);
+}
+
 void ActorUnkCANS::func_ov063_02158b0c(void) {}
 void ActorUnkCANS::func_ov063_02158b34(void) {}
 void ActorUnkCANS::func_ov063_02158b98(void) {}
