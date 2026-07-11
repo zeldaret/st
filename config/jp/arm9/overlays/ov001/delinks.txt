@@ -165,6 +165,7 @@ src/001_SceneInit/code_020bfdd0.cpp:
     .text       start:0x020c1624 end:0x020c17c8
 
 src/001_SceneInit/Game/AdventureModeManager_001.cpp:
+    complete
     .text       start:0x020c17c8 end:0x020c2198
 
 src/001_SceneInit/Game/GameModeAdventure_001.cpp:

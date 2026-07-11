@@ -169,6 +169,7 @@ src/001_SceneInit/Game/AdventureModeManager_001.cpp:
     .text       start:0x020bff74 end:0x020c0944
 
 src/001_SceneInit/Game/GameModeAdventure_001.cpp:
+    complete
     .text       start:0x020c0944 end:0x020c099c
 
 src/001_SceneInit/code_020c099c.cpp:
