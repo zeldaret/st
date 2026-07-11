@@ -184,7 +184,15 @@ public:
     /* 28BC */ unk32 mUnk_28BC;
     /* 28C0 */ unk32 mUnk_28C0;
     /* 28C4 */ unk32 mUnk_28C4;
-    /* 2894 */ STRUCT_PAD(0x28C8, 0x2900);
+    /* 28C8 */ unk32 mUnk_28C8;
+    /* 2894 */ STRUCT_PAD(0x28CC, 0x28DC);
+    /* 28DC */ ActorRef mUnk_28DC;
+    /* 28E0 */ STRUCT_PAD(0x28E0, 0x28E4);
+    /* 28E4 */ unk16 mUnk_28E4;
+    /* 28E6 */ STRUCT_PAD(0x28E6, 0x28E8);
+    /* 28E8 */ unk32 mUnk_28E8;
+    /* 28EC */ STRUCT_PAD(0x28EC, 0x28F4);
+    /* 28F4 */ VecFx32 mUnk_28F4;
     /* 2900 */ u16 mUnk_2900;
     /* 2902 */ STRUCT_PAD(0x2902, 0x2908);
     /* 2908 */
@@ -192,24 +200,24 @@ public:
     ActorUnkZLSL();
 
     // data_ov031_02113880
-    /* 00 */ virtual void GetOffsetPos(VecFx32 *pPos) const override; // func_ov031_020edfdc
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;            // func_ov031_020ea698
-    /* 20 */ virtual void vfunc_20() override;                        // func_ov031_020ea8cc
-    /* 2C */ virtual void vfunc_2C(unk32 param1) override;            // func_ov031_020ec1d4
-    /* 4C */ virtual ~ActorUnkZLSL() override;                        // func_ov031_020ea524 (T) & func_ov031_020ea5c8 (T)
-    /* 58 */ virtual void vfunc_58(s16 state) override;               // func_ov031_020ea870
-    /* 68 */ virtual void vfunc_68() override;                        // func_ov031_020ec7e4
-    /* 6C */ virtual void vfunc_6C() override;                        // func_ov031_020ec764
-    /* 70 */ virtual void vfunc_70() override;                        // func_ov031_020ec7a4
-    /* 7C */ virtual unk32 vfunc_7C() override;                       // func_ov031_020ec2d0
-    /* 80 */ virtual unk32 vfunc_80() override;                       // func_ov031_020ee6d0
-    /* 88 */ virtual bool vfunc_88() override;                        // func_ov031_020ec860
-    /* 8C */ virtual bool vfunc_8C() override;                        // func_ov031_020ec8bc
-    /* 98 */ virtual void vfunc_98(unk32 param1) override;            // func_ov031_020ec970
-    /* A4 */ virtual void vfunc_A4() override;                        // func_ov031_020ee000
-    /* AC */ virtual void vfunc_AC() override;                        // func_ov031_020ea7a4
-    /* B0 */ virtual void vfunc_B0() override;                        // func_ov031_020ec5f0
-    /* B4 */ virtual void vfunc_B4() override;                        // func_ov031_020ee3e8
+    /* 00 */ virtual void GetOffsetPos(VecFx32 *pPos) const override;    // func_ov031_020edfdc
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;               // func_ov031_020ea698
+    /* 20 */ virtual void vfunc_20() override;                           // func_ov031_020ea8cc
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;               // func_ov031_020ec1d4
+    /* 4C */ virtual ~ActorUnkZLSL() override;                           // func_ov031_020ea524 (T) & func_ov031_020ea5c8 (T)
+    /* 58 */ virtual void vfunc_58(s16 state) override;                  // func_ov031_020ea870
+    /* 68 */ virtual void vfunc_68() override;                           // func_ov031_020ec7e4
+    /* 6C */ virtual void vfunc_6C() override;                           // func_ov031_020ec764
+    /* 70 */ virtual void vfunc_70() override;                           // func_ov031_020ec7a4
+    /* 7C */ virtual unk32 vfunc_7C() override;                          // func_ov031_020ec2d0
+    /* 80 */ virtual bool vfunc_80(unk32 param1, unk32 param2) override; // func_ov031_020ee6d0
+    /* 88 */ virtual bool vfunc_88() override;                           // func_ov031_020ec860
+    /* 8C */ virtual bool vfunc_8C() override;                           // func_ov031_020ec8bc
+    /* 98 */ virtual void vfunc_98(unk32 param1) override;               // func_ov031_020ec970
+    /* A4 */ virtual void vfunc_A4() override;                           // func_ov031_020ee000
+    /* AC */ virtual void vfunc_AC() override;                           // func_ov031_020ea7a4
+    /* B0 */ virtual void vfunc_B0() override;                           // func_ov031_020ec5f0
+    /* B4 */ virtual void vfunc_B4() override;                           // func_ov031_020ee3e8
 
     bool func_ov031_020ea0b4(Actor *param1);
     void func_ov031_020ea674();
@@ -260,21 +268,21 @@ public:
     void func_ov031_020ec54c();
     void func_ov031_020ec6d8(bool param1);
     bool func_ov031_020ec8c4();
-    void func_ov031_020ecc68();
+    void func_ov031_020ecc68(unk32 param1);
     void func_ov031_020ecea8();
     void func_ov031_020ed0b0();
     void func_ov031_020ed3c0();
     void func_ov031_020ed47c();
-    void func_ov031_020ed4e4();
+    void func_ov031_020ed4e4(unk32 param1, unk32 param2);
     void func_ov031_020ed55c();
     bool func_ov031_020ed6cc(unk32 param1);
     bool func_ov031_020ed8ac(unk32 param1);
     void func_ov031_020edc80();
-    void func_ov031_020edd14();
+    void func_ov031_020edd14(VecFx32 *param1);
     void func_ov031_020edd54();
     void func_ov031_020ede30();
     void func_ov031_020edf98();
-    void func_ov031_020ee2c8();
+    unk16 func_ov031_020ee2c8();
     void func_ov031_020ee41c();
     void func_ov031_020ee4c4(UnkAngleStruct angle);
     void func_ov031_020ee654();

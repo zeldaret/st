@@ -12,6 +12,7 @@ public:
 
     void func_ov093_02166058();
     void func_ov093_02166068();
+    void func_ov093_021660a8(ActorRef param1);
 };
 
 extern UnkStruct_027e0d8c *data_027e0d8c;

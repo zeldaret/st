@@ -31,6 +31,7 @@ public:
     void func_ov000_02078230(unk32 param1);
     bool func_ov000_0207834c(VecFx32 *param1, unk32 param2, unk32 param3);
     bool func_ov000_02078764(VecFx32 *param1, void *param2, unk32 param3);
+    void func_ov000_02078834(VecFx32 *param1, unk32 *param2, unk32 param3, unk32 param4);
     void func_ov000_02078ba4();
     void func_ov000_02078cec();
 };

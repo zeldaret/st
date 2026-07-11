@@ -669,6 +669,7 @@ public:
     void func_ov000_0208a218(InvImportData *pInvData);
     void func_ov000_0208a2c4(unk32 param1, unk32 param2);
     void func_ov000_0208a318(unk32 param1, unk32 param2, unk32 param3);
+    void func_ov000_0208ba94(unk32 param1, VecFx32 *param2);
     void func_ov000_0208bbd4(unk32 param1, VecFx32 *param2, u16 param3);
     bool func_ov000_0208bc1c(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);

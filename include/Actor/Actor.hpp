@@ -260,6 +260,8 @@ public:
     bool func_ov017_020beeec(unk32 param1);
     void func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_ov017_020bf9c8(Actor *param1);
+    void func_ov071_021540ac(unk32 param1);
+    void func_ov071_0215414c();
 };
 
 class Actor_C4_Base {
