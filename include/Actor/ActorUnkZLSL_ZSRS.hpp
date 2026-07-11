@@ -175,7 +175,7 @@ public:
     /* 2898 */ fx32 mUnk_2898;
     /* 289C */ unk32 mUnk_289C;
     /* 28A0 */ fx32 mUnk_28A0;
-    /* 28A4 */ unk32 mUnk_28A4;
+    /* 28A4 */ unk32 mUnk_28A4; // maybe a VecFx32
     /* 28A8 */ unk32 mUnk_28A8;
     /* 28AC */ unk32 mUnk_28AC;
     /* 28B0 */ unk32 mUnk_28B0;

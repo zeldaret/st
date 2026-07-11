@@ -735,7 +735,7 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
             }
             this->mAngle = func_02016958(&this->mPos, &vec);
             VecFx32_Copy(&this->mPos, &vec);
-            vec.y += 0x800;
+            vec.y += FLOAT_TO_FX32(0.5f);
             VecFx32_Copy(&vec, &this->mUnk_28F4);
 
             this->func_ov031_020ed4e4(0x5, 0x93F);
@@ -747,14 +747,14 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
                 this->func_ov031_020eb188();
             }
             VecFx32_Copy(&this->mPos, &vec);
-            vec.y += 0x800;
+            vec.y += FLOAT_TO_FX32(0.5f);
             VecFx32_Copy(&vec, &this->mUnk_28F4);
 
             this->func_ov031_020ed4e4(0x5, 0x93F);
             break;
         case 0x4:
             if (this->func_ov031_020eb2b0(&actor->mPos, 0xA000)) {
-                data_027e09a8->func_ov000_02071bd4(0x8d5b, &this->mPos, 0x0);
+                data_027e09a8->func_ov000_02071bd4(0x8D5B, &this->mPos, 0x0);
                 this->mUnk_28A4 = 0x0;
                 this->mUnk_28A8 = 0x0;
                 this->mUnk_28AC = 0x0;
