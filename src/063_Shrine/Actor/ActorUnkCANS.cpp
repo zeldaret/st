@@ -5,6 +5,7 @@
 #include "Actor/ActorItemBoomerang.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorRef.hpp"
+#include "Actor/ActorShotArrow.hpp"
 #include "Actor/ActorUnkCASE.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
@@ -37,6 +38,7 @@ extern "C" void func_ov000_020986b4(s16 *var, ActorUnkCANS *param2, unk32 param3
 extern "C" void func_ov000_02098838(ActorUnkCANS *param1);
 extern "C" unk32 func_ov000_02098d7c(ActorUnkCANS *param1, unk32 *param2);
 extern "C" unk32 func_ov000_02099a0c(unk32 *param1);
+extern "C" unk32 func_ov000_02097c20(ActorUnkCANS *param1, ActorRef param2, unk32 param3, unk32 param4, unk32 *param5);
 extern "C" void func_ov017_020bf178(ActorUnkCANS *param1, unk32 *param2, unk32 param3);
 extern "C" void func_ov017_020bf894(ActorUnkCANS *param1, unk32 *param2);
 extern "C" void func_ov017_020bfb18(ActorUnkCANS *param1, unk32 *param2);
@@ -246,7 +248,6 @@ void ActorUnkCANS::vfunc_20(void) {
                         }
                         this->func_ov063_02158490();
                         break;
-
                     case 0:
                     case 1:
                     case 2:
@@ -358,7 +359,44 @@ void ActorUnkCANS::vfunc_2C(unk32 param1) {
 
 void ActorUnkCANS::func_ov063_02157f20(void) {}
 void ActorUnkCANS::func_ov063_02157f7c(void) {}
-void ActorUnkCANS::func_ov063_02157fa4(void) {}
+
+unk32 ActorUnkCANS::func_ov063_02157fa4(ActorRef param1, unk32 param2, unk32 param3, unk32 *param4) {
+    //! INFO: not an ActorUnkCANS method (hence `this` is wrong hereafter)
+
+    unk32 ret1 = func_ov000_02097c20(this, param1, param2, param3, param4);
+
+    if (ret1 == 0) {
+        return ret1;
+    }
+
+    if (param2 != 3) {
+        return ret1;
+    }
+
+    unk16 ret2 = func_01ffbbe0(param4[0], param4[2]);
+    u32 ret3   = (*(ActorUnkCANS **) &this->mVel.y)->func_ov063_0215a56c(ret2);
+
+    if (ret3 != 0 && param1.type != 0) {
+        Actor *ret4 = gpActorManager->func_01fff3b4(param1);
+
+        if (ret4 != NULL && ret4->GetActorId() == 0x41524f57) {
+            u16 angle    = (*(ActorUnkCANS **) &mVel.y)->mAngle;
+            fx32 sin_val = MUL_FX32(SIN(angle), FLOAT_TO_FX32(1.f));
+            fx32 cos_val = MUL_FX32(COS(angle), FLOAT_TO_FX32(1.f));
+            VecFx32 vec;
+            vec.x = sin_val;
+            vec.z = cos_val;
+            vec.y = 0;
+            // VecFx32_Init doesn't match
+            ((ActorShotArrow *) ret4)->func_ov031_020f2cac(&vec, true);
+            return 0;
+        }
+
+        return 1;
+    }
+    return ret1;
+}
+
 void ActorUnkCANS::func_ov063_021582f8(void) {}
 void ActorUnkCANS::func_ov063_0215830c(void) {}
 void ActorUnkCANS::func_ov063_02158424(void) {}

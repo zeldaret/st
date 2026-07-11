@@ -9,6 +9,7 @@
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
 #include "global.h"
+#include "nitro/fx.h"
 #include "types.h"
 
 class ActorUnkCANS_C4 : public Actor_C4 {
@@ -74,7 +75,7 @@ public:
 
     void func_ov063_02157f20(void);
     void func_ov063_02157f7c(void);
-    void func_ov063_02157fa4(void);
+    unk32 func_ov063_02157fa4(ActorRef param1, unk32 param2, unk32 param3, unk32 *param4);
     void func_ov063_021582f8(void);
     void func_ov063_0215830c(void);
     void func_ov063_02158424(void);
