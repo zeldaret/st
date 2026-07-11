@@ -52,6 +52,14 @@ public:
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual Actor_Derived1_94_vfunc_10 *vfunc_10();
+    /* 14 */ virtual void vfunc_14();
+    /* 18 */ virtual void vfunc_18();
+    /* 1C */ virtual void vfunc_1C();
+    /* 20 */ virtual void vfunc_20();
+    /* 24 */ virtual void vfunc_24();
+    /* 28 */ virtual void vfunc_28();
+    /* 2C */ virtual void vfunc_2C();
+    /* 30 */ virtual unk32 vfunc_30();
 };
 
 class Actor_Derived1_94 {

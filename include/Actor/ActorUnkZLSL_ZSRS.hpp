@@ -39,33 +39,37 @@ public:
     /* 04 */
 
     // data_ov000_020b31a8
-    /* 00 */ virtual ~UnkStruct_ov000_020b31a8(); // func_ov000_02099aec (T) & func_ov000_02099af0 (T)
-    /* 08 */ virtual void vfunc_08();             // func_ov000_02099b00
-    /* 0C */ virtual void vfunc_0C();             // func_ov000_02099b38
-    /* 10 */ virtual void vfunc_10();             // func_ov000_0209a13c
-    /* 14 */ virtual void vfunc_14();             // func_ov000_0209a144
-    /* 18 */ virtual void vfunc_18();             // func_ov000_0209a0e4
-    /* 1C */ virtual void vfunc_1C();             // func_ov000_02099cb0
-    /* 20 */ virtual void vfunc_20();             // func_ov000_02099ba0
-    /* 24 */ virtual void vfunc_24();             // func_ov000_0209a06c
-    /* 28 */ virtual void vfunc_28();             // func_ov000_0209a0f4
-    /* 2C */ virtual void vfunc_2C();             // func_ov000_0209a10c
-    /* 30 */ virtual void vfunc_30();             // func_ov000_0209a180
-    /* 34 */ virtual void vfunc_34();             // func_ov000_0209a124
-    /* 38 */ virtual void vfunc_38();             // func_ov000_0209a170
-    /* 3C */ virtual void vfunc_3C();             // func_ov000_0209a14c
+    /* 00 */ virtual ~UnkStruct_ov000_020b31a8();               // func_ov000_02099aec (T) & func_ov000_02099af0 (T)
+    /* 08 */ virtual void vfunc_08();                           // func_ov000_02099b00
+    /* 0C */ virtual void vfunc_0C();                           // func_ov000_02099b38
+    /* 10 */ virtual UnkSystem5 *vfunc_10();                    // func_ov000_0209a13c
+    /* 14 */ virtual void vfunc_14();                           // func_ov000_0209a144
+    /* 18 */ virtual void vfunc_18();                           // func_ov000_0209a0e4
+    /* 1C */ virtual void vfunc_1C();                           // func_ov000_02099cb0
+    /* 20 */ virtual void vfunc_20();                           // func_ov000_02099ba0
+    /* 24 */ virtual void vfunc_24();                           // func_ov000_0209a06c
+    /* 28 */ virtual void vfunc_28();                           // func_ov000_0209a0f4
+    /* 2C */ virtual void vfunc_2C();                           // func_ov000_0209a10c
+    /* 30 */ virtual s8 vfunc_30();                             // func_ov000_0209a180
+    /* 34 */ virtual void vfunc_34();                           // func_ov000_0209a124
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2); // func_ov000_0209a170
+    /* 3C */ virtual void vfunc_3C();                           // func_ov000_0209a14c
 };
 
 class UnkStruct_ov031_0211369c : public UnkStruct_ov000_020b31a8 {
 public:
     /* 00 (base) */
-    /* 04 */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ ModelRender *mUnk_08;
+    /* 0C */ STRUCT_PAD(0x0C, 0x18);
+    /* 18 */ s8 mUnk_18;
+    /* 19 */
 
     // data_ov031_0211369c
-    /* 00 */ virtual ~UnkStruct_ov031_0211369c() override; // func_ov031_020ea518 (T) & func_ov031_020ee7d4
-    /* 30 */ virtual void vfunc_30() override;             // func_ov031_020ee794
-    /* 38 */ virtual void vfunc_38() override;             // func_ov031_020ee784
-    /* 3C */ virtual void vfunc_3C() override;             // func_ov031_020ee760
+    /* 00 */ virtual ~UnkStruct_ov031_0211369c() override;               // func_ov031_020ea518 (T) & func_ov031_020ee7d4
+    /* 30 */ virtual s8 vfunc_30() override;                             // func_ov031_020ee794
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override; // func_ov031_020ee784
+    /* 3C */ virtual void vfunc_3C() override;                           // func_ov031_020ee760
 };
 
 class UnkStruct_ov031_021136e4 : public UnkStruct_ov031_0211369c {
@@ -83,33 +87,36 @@ public:
     /* 04 */
 
     // data_ov000_020b31f0
-    /* 00 */ virtual ~UnkStruct_ov000_020b31f0() override; // func_ov000_0209a228 (T) & func_ov000_0209a234 (T)
-    /* 08 */ virtual void vfunc_08() override;             // func_ov000_0209a254
-    /* 0C */ virtual void vfunc_0C() override;             // func_ov000_0209a288
-    /* 10 */ virtual void vfunc_10() override;             // func_ov000_0209a320
-    /* 14 */ virtual void vfunc_14() override;             // func_ov000_0209a334
-    /* 1C */ virtual void vfunc_1C() override;             // func_ov000_0209a35c
-    /* 20 */ virtual void vfunc_20() override;             // func_ov000_0209a3e4
-    /* 28 */ virtual void vfunc_28() override;             // func_ov000_0209a2f0
-    /* 2C */ virtual void vfunc_2C() override;             // func_ov000_0209a308
-    /* 30 */ virtual void vfunc_30() override;             // func_ov000_0209a348
-    /* 34 */ virtual void vfunc_34() override;             // func_ov000_0209a6d4
-    /* 38 */ virtual void vfunc_38() override;             // func_ov000_0209a738
-    /* 3C */ virtual void vfunc_3C() override;             // func_ov000_0209a714
-    /* 40 */ virtual void vfunc_40();                      // func_ov000_0209a70c
+    /* 00 */ virtual ~UnkStruct_ov000_020b31f0() override;               // func_ov000_0209a228 (T) & func_ov000_0209a234 (T)
+    /* 08 */ virtual void vfunc_08() override;                           // func_ov000_0209a254
+    /* 0C */ virtual void vfunc_0C() override;                           // func_ov000_0209a288
+    /* 10 */ virtual UnkSystem5 *vfunc_10() override;                    // func_ov000_0209a320
+    /* 14 */ virtual void vfunc_14() override;                           // func_ov000_0209a334
+    /* 1C */ virtual void vfunc_1C() override;                           // func_ov000_0209a35c
+    /* 20 */ virtual void vfunc_20() override;                           // func_ov000_0209a3e4
+    /* 28 */ virtual void vfunc_28() override;                           // func_ov000_0209a2f0
+    /* 2C */ virtual void vfunc_2C() override;                           // func_ov000_0209a308
+    /* 30 */ virtual s8 vfunc_30() override;                             // func_ov000_0209a348
+    /* 34 */ virtual void vfunc_34() override;                           // func_ov000_0209a6d4
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override; // func_ov000_0209a738
+    /* 3C */ virtual void vfunc_3C() override;                           // func_ov000_0209a714
+    /* 40 */ virtual void vfunc_40();                                    // func_ov000_0209a70c
 };
 
 class UnkStruct_ov031_0211372c : public UnkStruct_ov000_020b31f0 {
 public:
     /* 00 (base) */
-    /* 04 */
+    /* 04 */ UnkSystem5 *mUnk_04;
+    /* 08 */ ModelRender *mUnk_08;
+    /* 0C */ STRUCT_PAD(0x0C, 0x1C);
+    /* 1C */ UnkSystem5 *mUnk_1C;
 
     // data_ov031_0211372c
-    /* 00 */ virtual ~UnkStruct_ov031_0211372c() override; // func_ov031_020ea4f4 (T) & func_ov031_020ee840
-    /* 18 */ virtual void vfunc_18() override;             // func_ov031_020ee968
-    /* 38 */ virtual void vfunc_38() override;             // func_ov031_020ee814
-    /* 3C */ virtual void vfunc_3C() override;             // func_ov031_020ee7f0
-    /* 40 */ virtual void vfunc_40() override;             // func_ov031_020eeae4
+    /* 00 */ virtual ~UnkStruct_ov031_0211372c() override;               // func_ov031_020ea4f4 (T) & func_ov031_020ee840
+    /* 18 */ virtual void vfunc_18() override;                           // func_ov031_020ee968
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override; // func_ov031_020ee814
+    /* 3C */ virtual void vfunc_3C() override;                           // func_ov031_020ee7f0
+    /* 40 */ virtual void vfunc_40() override;                           // func_ov031_020eeae4
 };
 
 // --- Actor ZLSL ---
@@ -135,28 +142,49 @@ enum ActorUnkZLSLState_ {
     ActorUnkZLSLState_MAX
 };
 
+class ActorUnkZLSL_1690 {
+public:
+    /* 00 */ unk32 mUnk_00;
+
+    void func_ov031_020eeca8();
+};
+
 class ActorUnkZLSL : public Actor_Derived1 {
 public:
     /* 0000 (base) */
-    /* 0120 */ STRUCT_PAD(0x120, 0x2800);
+    /* 0120 */ STRUCT_PAD(0x120, 0x1690);
+    /* 1690 */ ActorUnkZLSL_1690 mUnk_1690;
+    /* 1694 */ STRUCT_PAD(0x1694, 0x2800);
     /* 2800 */ unk32 mUnk_2800;
     /* 2804 */ STRUCT_PAD(0x2804, 0x2828);
     /* 2828 */ UnkStruct_PlayerGet_ec mUnk_2828;
-    /* 282C */ STRUCT_PAD(0x282C, 0x286E);
+    /* 282C */ STRUCT_PAD(0x282C, 0x286A);
+    /* 286A */ unk16 mUnk_286A;
+    /* 286C */ unk16 mUnk_286C;
     /* 286E */ unk16 mUnk_286E;
-    /* 2870 */ STRUCT_PAD(0x2870, 0x2874);
+    /* 2870 */ unk16 mUnk_2870;
+    /* 2872 */ s16 mUnk_2872;
     /* 2874 */ bool mUnk_2874;
     /* 2875 */ STRUCT_PAD(0x2875, 0x2878);
     /* 2878 */ VecFx32 mUnk_2878;
     /* 2884 */ unk32 mUnk_2884;
     /* 2888 */ fx32 mUnk_2888;
-    /* 288C */ STRUCT_PAD(0x288C, 0x2890);
-    /* 2890 */ unk32 mUnk_2890;
-    /* 2894 */ STRUCT_PAD(0x2894, 0x28A4);
+    /* 288C */ unk32 mUnk_288C;
+    /* 2890 */ fx32 mUnk_2890;
+    /* 2894 */ unk32 mUnk_2894;
+    /* 2898 */ fx32 mUnk_2898;
+    /* 289C */ unk32 mUnk_289C;
+    /* 28A0 */ fx32 mUnk_28A0;
     /* 28A4 */ unk32 mUnk_28A4;
     /* 28A8 */ unk32 mUnk_28A8;
     /* 28AC */ unk32 mUnk_28AC;
-    /* 2894 */ STRUCT_PAD(0x28B0, 0x2900);
+    /* 28B0 */ unk32 mUnk_28B0;
+    /* 28B4 */ unk32 mUnk_28B4;
+    /* 28B8 */ unk32 mUnk_28B8;
+    /* 28BC */ unk32 mUnk_28BC;
+    /* 28C0 */ unk32 mUnk_28C0;
+    /* 28C4 */ unk32 mUnk_28C4;
+    /* 2894 */ STRUCT_PAD(0x28C8, 0x2900);
     /* 2900 */ u16 mUnk_2900;
     /* 2902 */ STRUCT_PAD(0x2902, 0x2908);
     /* 2908 */
@@ -227,7 +255,7 @@ public:
     void func_ov031_020ec0a8();
     void func_ov031_020ec12c();
     void func_ov031_020ec170();
-    void func_ov031_020ec3d0();
+    bool func_ov031_020ec3d0();
     void func_ov031_020ec49c();
     void func_ov031_020ec54c();
     void func_ov031_020ec6d8(bool param1);
@@ -248,7 +276,7 @@ public:
     void func_ov031_020edf98();
     void func_ov031_020ee2c8();
     void func_ov031_020ee41c();
-    void func_ov031_020ee4c4();
+    void func_ov031_020ee4c4(UnkAngleStruct angle);
     void func_ov031_020ee654();
 };
 

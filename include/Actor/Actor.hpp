@@ -11,6 +11,10 @@
 #include "types.h"
 #include "versions.h"
 
+struct UnkAngleStruct {
+    s16 angle;
+};
+
 class ActorParams {
 public:
     /* 00 */ VecFx32 mInitialPos;
@@ -143,7 +147,10 @@ public:
     /* 04 */ VecFx32 mPos;
     /* 10 */ VecFx32 mPrevPos;
     /* 1C */ VecFx32 mVel;
-    /* 28 */ fx16 mAngle;
+    /* 28 */ union {
+        s16 mAngle;
+        UnkAngleStruct mAngleStruct;
+    };
     /* 2A */ unk16 mUnk_2A;
     /* 2C */ unk32 mUnk_2C; // gravity?
     /* 30 */ Cylinder *mUnk_30;

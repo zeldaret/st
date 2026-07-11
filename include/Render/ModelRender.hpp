@@ -151,6 +151,7 @@ public:
 
     void func_ov000_020577a4(unk32 param1, unk32 param2, unk32 param3);
     void func_ov000_020577f8(unk32 param1);
+    void func_ov000_020578a4(unk32 param1, unk32 param2);
 };
 
 class UnkSystem5_Derived1 : public UnkSystem5 {
