@@ -35,6 +35,7 @@ static PTMF<ActorUnkCANS> data_ov063_02162f58[0xA] = {
 
 extern void *data_027e09c0;
 extern u16 data_ov000_020aed00;
+extern Cylinder data_ov063_02162e90;
 
 extern "C" void func_01ff9638(VecFx32 *param1, fx16 param2);
 extern "C" unk32 func_01ffbbe0(unk32 param1, unk32 param2);
@@ -428,7 +429,13 @@ void ActorUnkCANS::func_ov063_02158490(void) {
     this->func_ov063_02158448(2);
 }
 
-void ActorUnkCANS::func_ov063_02158b0c(void) {}
+void ActorUnkCANS::func_ov063_02158b0c(void) {
+    mUnk_268             = NULL;
+    ((u16 *) mUnk_38)[4] = 1;
+    mUnk_34              = &data_ov063_02162e90;
+    mUnk_30              = &data_ov063_02162e90;
+}
+
 void ActorUnkCANS::func_ov063_02158b34(void) {}
 void ActorUnkCANS::func_ov063_02158b98(void) {}
 void ActorUnkCANS::func_ov063_02158d40(void) {}
