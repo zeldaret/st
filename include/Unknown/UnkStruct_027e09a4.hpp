@@ -12,7 +12,7 @@
 
 #include <nitro/mi.h>
 
-struct SaveFile;
+struct GameSaveSlot;
 class UnkStruct_027e09a4;
 
 #define ROOM_INDEX_NONE 0xFF
@@ -316,7 +316,7 @@ public:
     bool func_ov000_02072154(EntranceInfo *param1, unk32 param2);
     bool func_ov000_0207056c();
     bool func_ov000_0207059c();
-    void func_ov000_020705e8(SaveFile *param1, unk32 param2);
+    void func_ov000_020705e8(GameSaveSlot *param1, unk32 param2);
 
     // overlay 1
     void func_ov001_020b662c();

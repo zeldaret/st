@@ -1,4 +1,4 @@
-func_ov021_020e9a40 kind:function(arm,size=0x234) addr:0x020e9a40
+_ZN14GameModeBattleC1Ei kind:function(arm,size=0x234) addr:0x020e9a40
 func_ov021_020e9c74 kind:function(arm,size=0x14) addr:0x020e9c74
 func_ov021_020e9c88 kind:function(arm,size=0xa4) addr:0x020e9c88
 _ZN19func_ov021_020e9d2cD0Ev kind:function(arm,size=0xac) addr:0x020e9d2c

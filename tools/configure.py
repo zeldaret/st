@@ -214,7 +214,7 @@ config.libs = [
             Object("001_SceneInit/UnkStruct_0204a110_001.cpp"),
             Object("001_SceneInit/UnkStruct_ov024_020d86a0_001.cpp"),
             Object("001_SceneInit/UnkStruct_ov000_020b50c0_001.cpp"),
-            Object("001_SceneInit/code_020be054.cpp"),
+            Object("001_SceneInit/Game/GameModeCreate.cpp"),
             Object("001_SceneInit/ZeldaCollisionBinary.cpp"),
             Object("001_SceneInit/UnkStruct_027e09c0_001.cpp"),
             Object("001_SceneInit/UnkStruct_ov000_020b504c_001.cpp"),

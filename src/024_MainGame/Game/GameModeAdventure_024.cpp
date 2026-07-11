@@ -29,10 +29,10 @@ void GameModeAdventure::vfunc_08() {
     data_ov000_020b504c.func_ov001_020be510();
     data_ov000_020b50c0.func_ov001_020bd854();
 
-    SaveFile *pSaveFile = data_ov000_020b4eec.func_ov001_020be12c();
+    GameSaveSlot *pSaveFile = data_ov000_020b4eec.func_ov001_020be12c();
 
 #if IS_JP
-    SaveInfoData *pSaveInfoData = &pSaveFile->mSlots[0].mInfoData[0];
+    SaveInfoData *pSaveInfoData = &pSaveFile->mInfoData;
 
     if (pSaveInfoData->sceneIndex == SceneIndex_f_ajito2) {
         pSaveInfoData->sceneIndex = SceneIndex_f_ajito;

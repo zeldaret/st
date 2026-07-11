@@ -29,10 +29,10 @@ Each overlay is tied to an index which is used to access the overlay in two diff
 `018` | StartUp           | `021`   | `4`  | Exists briefly on game startup. Initializes RNG, messages, and more.
 `019` | MainSelect        | `024`   | `4`  | File Select
 `020` | WirelessCommon    | `025`   | `4`  |
-`021` | BattleGame        | `026`   | `5`  |
+`021` | BattleGame        | `026`   | `5`  | Battle Mode
 `022` | Download          | `027`   | `5`  | Handles DS download play.
-`023` | Wxc               | `028`   | `5`  |
-`024` | MainGame          | `022`   | `4`  |
+`023` | Wxc               | `028`   | `5`  | Contact Mode ("Wireless Exchange")
+`024` | MainGame          | `022`   | `4`  | Adventure Mode
 `025` | Title             | `023`   | `4`  | Title Screen
 `026` | Train             | `030`   | `6`  |
 `027` | TrainForest       | `058`   | `8`  |

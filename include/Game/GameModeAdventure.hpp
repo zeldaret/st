@@ -1,12 +1,14 @@
 #pragma once
 
 #include "Game/GameMode.hpp"
-// #include "Unknown/UnkStruct_0204a060.hpp"
 #include "global.h"
 #include "types.h"
 
 class GameModeAdventure : public GameModeBase {
 public:
+    /* 00 (base) */
+    /* 04 */
+
     GameModeAdventure();
 
     // data_ov024_020d7b68 vtable
@@ -18,4 +20,7 @@ public:
     /* 18 */ virtual void vfunc_18() override;
     /* 1C */ virtual void vfunc_1C() override;
     /* 20 */ virtual void vfunc_20() override;
+
+    // overlay 1
+    static GameModeBase *Create();
 };

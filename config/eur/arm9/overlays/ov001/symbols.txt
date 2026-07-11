@@ -296,11 +296,11 @@ _ZN24UnkStruct_ov018_020c5ac019func_ov001_020bdfa0EPK12EntranceInfo kind:functio
 _ZN24UnkStruct_ov018_020c5ac019func_ov001_020bdfb8EPK12EntranceInfo kind:function(thumb,size=0x78) addr:0x020bdfb8
 _ZN24UnkStruct_ov018_020c5ac019func_ov001_020be030Ev kind:function(thumb,size=0x2) addr:0x020be030
 _ZN18UnkStruct_027e0d087DestroyEv kind:function(thumb,size=0x20) addr:0x020be034
-func_ov001_020be054 kind:function(thumb,size=0x24) addr:0x020be054
-func_ov001_020be078 kind:function(thumb,size=0x60) addr:0x020be078
-func_ov001_020be0d8 kind:function(thumb,size=0x14) addr:0x020be0d8
-func_ov001_020be0ec kind:function(thumb,size=0x14) addr:0x020be0ec
-func_ov001_020be100 kind:function(thumb,size=0x2c) addr:0x020be100
+_ZN17GameModeAdventure6CreateEv kind:function(thumb,size=0x24) addr:0x020be054
+_ZN19GameModeTitleScreen6CreateEv kind:function(thumb,size=0x60) addr:0x020be078
+_ZN19GameModeContactMode6CreateEv kind:function(thumb,size=0x14) addr:0x020be0d8
+_ZN20GameModeDownloadPlay6CreateEv kind:function(thumb,size=0x14) addr:0x020be0ec
+_ZN14GameModeBattle6CreateEv kind:function(thumb,size=0x2c) addr:0x020be100
 _ZN24UnkStruct_ov000_020b4eec19func_ov001_020be12cEv kind:function(thumb,size=0xc) addr:0x020be12c
 func_ov001_020be138 kind:function(thumb,size=0xc0) addr:0x020be138
 func_ov001_020be1f8 kind:function(thumb,size=0x96) addr:0x020be1f8
