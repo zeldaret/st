@@ -26,6 +26,13 @@ static PTMF<ActorUnkCANS> data_ov063_02162fb0[0xA] = {
     ActorUnkCANS::func_ov063_02159ec0,
 };
 
+static PTMF<ActorUnkCANS> data_ov063_02162f58[0xA] = {
+    ActorUnkCANS::func_ov063_02158d40, ActorUnkCANS::func_ov063_021590c8, ActorUnkCANS::func_ov063_021591f4,
+    ActorUnkCANS::func_ov063_02159408, ActorUnkCANS::func_ov063_021595a4, ActorUnkCANS::func_ov063_02159714,
+    ActorUnkCANS::func_ov063_021598fc, ActorUnkCANS::func_ov063_02159ca8, ActorUnkCANS::func_ov063_02159dfc,
+    ActorUnkCANS::func_ov063_02159e20,
+};
+
 extern void *data_027e09c0;
 extern u16 data_ov000_020aed00;
 
@@ -408,7 +415,12 @@ void ActorUnkCANS::func_ov063_02158424(void) {
     }
 }
 
-void ActorUnkCANS::func_ov063_02158448(unk32 param1) {}
+void ActorUnkCANS::func_ov063_02158448(unk32 param1) {
+    this->func_ov063_02158424();
+    mState = param1;
+    CALL_PTMF(PTMF<ActorUnkCANS>, data_ov063_02162f58[mState]);
+}
+
 void ActorUnkCANS::func_ov063_02158490(void) {}
 void ActorUnkCANS::func_ov063_02158b0c(void) {}
 void ActorUnkCANS::func_ov063_02158b34(void) {}
