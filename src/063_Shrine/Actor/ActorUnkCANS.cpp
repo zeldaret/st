@@ -436,7 +436,33 @@ void ActorUnkCANS::func_ov063_02158b0c(void) {
     mUnk_30              = &data_ov063_02162e90;
 }
 
-void ActorUnkCANS::func_ov063_02158b34(void) {}
+struct UnkStruct_data_ov063_02163068 {
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+};
+
+extern UnkStruct_data_ov063_02163068 data_ov063_02163068; // = {0, 0x6B6C6177, 0x41, 0, 0, 0};
+
+class UnkStruct_func_ov063_02158b34 {
+public:
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10();
+    /* 14 */ virtual void vfunc_14();
+    /* 18 */ virtual void vfunc_18();
+    /* 1C */ void virtual vfunc_1C(UnkStruct_data_ov063_02163068, unk32, unk32, unk32) override;
+};
+
+void ActorUnkCANS::func_ov063_02158b34(void) {
+    ((UnkStruct_func_ov063_02158b34 *) &mUnk_128)->vfunc_1C(data_ov063_02163068, 0x1000, 0x19A, 0);
+}
+
 void ActorUnkCANS::func_ov063_02158b98(void) {}
 void ActorUnkCANS::func_ov063_02158d40(void) {}
 void ActorUnkCANS::func_ov063_02158db0(void) {}
