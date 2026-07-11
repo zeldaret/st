@@ -247,7 +247,16 @@ void ActorUnkCANS::vfunc_20(void) {
                         this->func_ov063_02158490();
                         break;
 
-                    default: // cases 0, 1, 2, 5, 6, 7, 9, 10, 11
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 9:
+                    case 10:
+                    case 11:
+                    default:
                         if (iVar5 != 0) {
                             func_ov017_020bfb18(this, &mUnk_1F4.mUnk_0C);
                             if (mState != 4) {
