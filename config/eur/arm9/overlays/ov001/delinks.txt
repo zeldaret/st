@@ -126,6 +126,7 @@ src/001_SceneInit/ZeldaCollisionBinary.cpp:
     .text       start:0x020be138 end:0x020be2d0
 
 src/001_SceneInit/UnkStruct_027e09c0_001.cpp:
+    complete
     .text       start:0x020be2d0 end:0x020be504
 
 src/001_SceneInit/UnkStruct_ov000_020b504c_001.cpp:

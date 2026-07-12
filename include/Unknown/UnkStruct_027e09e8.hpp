@@ -20,14 +20,17 @@ public:
     /* 44 */ u32 mNumNormals;
     /* 48 */ VecFx32 mUnk_48;
     /* 54 */ VecFx32 mUnk_54;
+    /* 60 */
 
     UnkStruct_027e09e8();
     ~UnkStruct_027e09e8();
 
     // overlay 0
-    void func_ov000_0207e99c(ZCBSectionGRDB *pSection, UnkStruct_027e0cd8_0C_Base *param2);
+    void func_ov000_0207ba84(UnkFileSystem1 *param1, UnkStruct_027e0cd8_0C_Base *param2); // calls `ZCB_ParseFile`
+    void func_ov000_0207baa0();
     void func_ov000_0207bab4(ZCBEntryTRIB *pEntries, u16 nEntries);
+    void func_ov000_0207e99c(ZCBSectionGRDB *pSection, UnkStruct_027e0cd8_0C_Base *param2);
 };
 
-// gpCollisionManager?
-extern UnkStruct_027e09e8 *data_027e09e8;
+//! TODO: gCollisionManager? also not a pointer?
+extern UnkStruct_027e09e8 data_027e09e8;
