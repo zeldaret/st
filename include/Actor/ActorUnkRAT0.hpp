@@ -68,7 +68,7 @@ public:
     void func_ov053_0213c910(void);
     void func_ov053_0213c91c(void);
     void func_ov053_0213c940(void);
-    void func_ov053_0213c984(void);
+    static void func_ov053_0213c984(void);
     void func_ov053_0213c9b0(void);
     void func_ov053_0213c9cc(void);
     void func_ov053_0213ca50(void);

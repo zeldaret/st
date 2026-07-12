@@ -31,7 +31,7 @@ Actor_Derived1::Actor_Derived1(ModelRender *param1, Actor_Derived1_94_0C *param2
     mUnk_0DC(0x2AAB),
     mUnk_0DE(0xEAAB),
     mUnk_0E0(0x1555),
-    mUnk_0E4(0),
+    mUnk_0E4(NULL),
     mUnk_0E8(0),
     mUnk_0EA(0),
     mUnk_104(this->mUnk_34->size),
@@ -157,7 +157,7 @@ bool Actor_Derived1::vfunc_64() {
     return GET_FLAG(this->mFlags, ActorFlag_Interacting);
 }
 
-void Actor_Derived1::func_ov000_020a8ff4() {}
+bool Actor_Derived1::func_ov000_020a8ff4(VecFx32 *param1) {}
 
 void Actor_Derived1::vfunc_6C() {}
 
@@ -169,7 +169,7 @@ void Actor_Derived1::vfunc_68() {
     this->mUnk_0B0 &= ~0x10;
 }
 
-unk32 Actor_Derived1::vfunc_7C() {
+unk32 Actor_Derived1::vfunc_7C(unk32 param1) {
     return 1;
 }
 

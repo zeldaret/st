@@ -2387,7 +2387,7 @@ from:0x020ee8ac kind:arm_call to:0x0209790c module:overlay(0)
 from:0x020ee8c0 kind:arm_call to:0x02097724 module:overlay(0)
 from:0x020ee906 kind:thumb_call to:0x0209a1ec module:overlay(0)
 from:0x020ee91e kind:thumb_call_arm to:0x02034060 module:main
-from:0x020ee930 kind:load to:0x02113d14 module:overlay(31)
+from:0x020ee930 kind:load to:0x02113d0c module:overlay(31) add:0x8
 from:0x020ee938 kind:load to:0x02113d08 module:overlay(31)
 from:0x020ee940 kind:thumb_call to:0x0209a248 module:overlay(0)
 from:0x020ee94c kind:thumb_call to:0x0209a248 module:overlay(0)

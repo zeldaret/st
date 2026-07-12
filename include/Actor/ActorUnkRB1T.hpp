@@ -46,7 +46,7 @@ public:
     ActorUnkRB1T();
 
     /* 4C */ virtual ~ActorUnkRB1T() override;
-    /* 58 */ virtual void vfunc_58(s16 param1);
+    /* 58 */ virtual void vfunc_58(ActorState param1);
 
     void func_ov026_0211e3cc(void);
     bool func_ov026_0211e3e0(unk32 param1);

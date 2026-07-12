@@ -59,7 +59,7 @@ public:
     void func_ov040_02125f70(void);
     void func_ov040_0212602c(void);
     void func_ov040_02126090(void);
-    void func_ov040_021260dc(void);
+    void func_ov040_021260dc(unk32 param1);
     void func_ov040_021260fc(void);
     void func_ov040_02126144(void);
     void func_ov040_02126214(void);
