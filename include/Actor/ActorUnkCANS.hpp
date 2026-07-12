@@ -5,12 +5,15 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "Actor/ActorUnkCASE.hpp"
+#include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "Actor/Actor_Derived1.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
+#include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
 #include "nitro/fx.h"
 #include "nitro/types.h"
+#include "nns/g3d/g3d.h"
 #include "types.h"
 
 class ActorUnkCANS_C4 : public Actor_C4 {
@@ -21,6 +24,39 @@ public:
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+};
+
+class UnkStruct_ov063_02162ea8 : public UnkStruct_ov031_Items_00 {
+public:
+    UnkStruct_ov063_02162ea8();
+
+    /* 00 (base) */ virtual void vfunc_00(void) override;
+    /* 04 */ virtual void vfunc_04(void) override;
+    /* 08 */ virtual void vfunc_08(void) override;
+    /* 0C */ virtual void vfunc_0C(void) override;
+};
+
+//! NOTE: Not the actual parent class, there are two classes in between this one and ModelRender
+class UnkStruct_ov063_02162ee8 : public ModelRender {
+public:
+    UnkStruct_ov063_02162ee8(G3d_Model *pModel);
+
+    /* 00 (base) */ virtual void vfunc_00(void) override;
+    /* 04 */ virtual void vfunc_04(void) override;
+};
+
+class UnkStruct_ov063_02162f14 : public UnkStruct_ov000_020b31f0 {
+public:
+    /* 04 */ UnkSystem5 *mUnk_04;
+    /* 08 */ ModelRender *mUnk_08;
+    /* 0C */ STRUCT_PAD(0xC, 0x1C);
+    /* 1C */ UnkSystem5 *mUnk_1C;
+
+    UnkStruct_ov063_02162f14();
+
+    /* 00 (base) */ virtual ~UnkStruct_ov063_02162f14() override;
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override;
+    /* 3C */ virtual void vfunc_3C(void) override;
 };
 
 class ActorUnkCANS : public Actor_Derived2 {
@@ -77,14 +113,11 @@ public:
     /* 24 */ virtual void vfunc_24(void);
     /* 2C */ virtual void vfunc_2C(unk32 param1);
     /* 4C */ virtual ~ActorUnkCANS() override;
-    /* 4C */ void func_ov063_0215a9d4(void); // vfunc_4C conflict ???
-    /* 50 */ void func_ov063_0215aa58(void);
+    /* 4C */ void vfunc_4C(void); // vfunc_4C conflict ???
+    /* 50 */ void vfunc_50(void);
 
-    void func_ov063_02157f20(void);
     void func_ov063_02157f7c(void);
     unk32 func_ov063_02157fa4(ActorRef param1, unk32 param2, unk32 param3, unk32 *param4);
-    void func_ov063_021582f8(void);
-    void func_ov063_0215830c(void);
     void func_ov063_02158424(void);
     void func_ov063_02158448(unk32 param1);
     void func_ov063_02158490(void);
@@ -122,13 +155,6 @@ public:
     void func_ov063_0215a5bc(void);
     void func_ov063_0215a5d8(void);
     static void func_ov063_0215a678(void);
-    void func_ov063_0215a7d4(void);
-    void func_ov063_0215a834(void);
-    void func_ov063_0215a880(void);
-    void func_ov063_0215a94c(void);
-    void func_ov063_0215a970(void);
-    void func_ov063_0215a99c(void);
-    void func_ov063_0215a9b8(void);
 };
 
 class ActorProfileUnkCANS : public ActorProfile_Derived1 {

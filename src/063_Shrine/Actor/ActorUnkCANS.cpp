@@ -18,6 +18,7 @@
 #include "nitro/fx.h"
 #include "nitro/math.h"
 #include "nitro/types.h"
+#include "nns/g3d/g3d.h"
 #include "types.h"
 
 static PTMF<ActorUnkCANS> data_ov063_02162fb0[0xA] = {
@@ -68,6 +69,8 @@ extern "C" void func_01ff916c(unk32 *param1, unk32 param2);
 extern "C" void func_01ff9638(VecFx32 *param1, fx16 param2);
 extern "C" unk32 func_01ffbbe0(unk32 param1, unk32 param2);
 extern "C" void func_01ffc6d4(ModelRender *param1, UnkAngleStruct param2, VecFx32 *param3);
+extern "C" void func_ov000_020578a4(UnkSystem5 *param1, unk32 param2, unk32 param3);
+extern "C" void func_ov000_02057c98(ModelRender *param1, UnkSystem5 *param2);
 extern "C" void func_ov000_0207de98(void *param1, ActorRef param2, VecFx32 *param3, unk32 *param4);
 extern "C" void func_ov000_0208bd20(UnkStruct_027e0ce0 *param1, unk32 param2, unk32 param3, unk32 param4);
 extern "C" void func_ov000_020986b4(s16 *var, ActorUnkCANS *param2, unk32 param3);
@@ -90,6 +93,30 @@ Actor *ActorProfileUnkCANS::Create() {
 
 ActorProfileUnkCANS::ActorProfileUnkCANS() :
     ActorProfile_Derived1(ActorId_CANS) {}
+
+UnkStruct_ov063_02162ea8::UnkStruct_ov063_02162ea8() {}
+void UnkStruct_ov063_02162ea8::vfunc_00() {}
+void UnkStruct_ov063_02162ea8::vfunc_04() {}
+void UnkStruct_ov063_02162ea8::vfunc_08() {}
+void UnkStruct_ov063_02162ea8::vfunc_0C() {}
+
+UnkStruct_ov063_02162ee8::UnkStruct_ov063_02162ee8(G3d_Model *pModel) :
+    ModelRender(pModel) {}
+void UnkStruct_ov063_02162ee8::vfunc_00() {}
+void UnkStruct_ov063_02162ee8::vfunc_04() {}
+
+UnkStruct_ov063_02162f14::UnkStruct_ov063_02162f14() {}
+UnkStruct_ov063_02162f14::~UnkStruct_ov063_02162f14() {}
+
+void UnkStruct_ov063_02162f14::vfunc_38(unk32 param1, unk32 param2) {
+    func_ov000_020578a4(mUnk_04, param1, param2);
+    func_ov000_020578a4(mUnk_1C, param1, param2);
+}
+
+void UnkStruct_ov063_02162f14::vfunc_3C() {
+    func_ov000_02057c98(mUnk_08, mUnk_04);
+    func_ov000_02057c98(mUnk_08, mUnk_1C);
+}
 
 ActorUnkCANS::ActorUnkCANS() :
     mUnk_B0(NULL), //! INFO: Not the actual ctor
@@ -394,7 +421,6 @@ void ActorUnkCANS::vfunc_2C(unk32 param1) {
     }
 }
 
-void ActorUnkCANS::func_ov063_02157f20(void) {}
 void ActorUnkCANS::func_ov063_02157f7c(void) {}
 
 unk32 ActorUnkCANS::func_ov063_02157fa4(ActorRef param1, unk32 param2, unk32 param3, unk32 *param4) {
@@ -433,9 +459,6 @@ unk32 ActorUnkCANS::func_ov063_02157fa4(ActorRef param1, unk32 param2, unk32 par
     }
     return ret1;
 }
-
-void ActorUnkCANS::func_ov063_021582f8(void) {}
-void ActorUnkCANS::func_ov063_0215830c(void) {}
 
 void ActorUnkCANS::func_ov063_02158424(void) {
     mUnk_274 = 0;
@@ -531,15 +554,8 @@ void ActorUnkCANS::func_ov063_0215a5a0(void) {}
 void ActorUnkCANS::func_ov063_0215a5bc(void) {}
 void ActorUnkCANS::func_ov063_0215a5d8(void) {}
 void ActorUnkCANS::func_ov063_0215a678(void) {}
-void ActorUnkCANS::func_ov063_0215a7d4(void) {}
-void ActorUnkCANS::func_ov063_0215a834(void) {}
-void ActorUnkCANS::func_ov063_0215a880(void) {}
-void ActorUnkCANS::func_ov063_0215a94c(void) {}
-void ActorUnkCANS::func_ov063_0215a970(void) {}
-void ActorUnkCANS::func_ov063_0215a99c(void) {}
-void ActorUnkCANS::func_ov063_0215a9b8(void) {}
-void ActorUnkCANS::func_ov063_0215a9d4(void) {}
-void ActorUnkCANS::func_ov063_0215aa58(void) {}
+void ActorUnkCANS::vfunc_4C(void) {}
+void ActorUnkCANS::vfunc_50(void) {}
 
 ActorUnkCANS::~ActorUnkCANS() {}
 ActorProfileUnkCANS::~ActorProfileUnkCANS() {}
