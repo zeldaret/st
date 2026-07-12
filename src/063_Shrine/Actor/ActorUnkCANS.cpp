@@ -94,16 +94,17 @@ Actor *ActorProfileUnkCANS::Create() {
 ActorProfileUnkCANS::ActorProfileUnkCANS() :
     ActorProfile_Derived1(ActorId_CANS) {}
 
-UnkStruct_ov063_02162ea8::UnkStruct_ov063_02162ea8() {}
-void UnkStruct_ov063_02162ea8::vfunc_00() {}
-void UnkStruct_ov063_02162ea8::vfunc_04() {}
+UnkStruct_ov063_02162ea8::UnkStruct_ov063_02162ea8() :
+    mUnk_08(0),
+    mUnk_0C(0),
+    mUnk_10(0) {}
+UnkStruct_ov063_02162ea8::~UnkStruct_ov063_02162ea8() {}
 void UnkStruct_ov063_02162ea8::vfunc_08() {}
 void UnkStruct_ov063_02162ea8::vfunc_0C() {}
 
 UnkStruct_ov063_02162ee8::UnkStruct_ov063_02162ee8(G3d_Model *pModel) :
     ModelRender(pModel) {}
-void UnkStruct_ov063_02162ee8::vfunc_00() {}
-void UnkStruct_ov063_02162ee8::vfunc_04() {}
+UnkStruct_ov063_02162ee8::~UnkStruct_ov063_02162ee8() {}
 
 UnkStruct_ov063_02162f14::UnkStruct_ov063_02162f14() {}
 UnkStruct_ov063_02162f14::~UnkStruct_ov063_02162f14() {}

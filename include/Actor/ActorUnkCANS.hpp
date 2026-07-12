@@ -28,10 +28,15 @@ public:
 
 class UnkStruct_ov063_02162ea8 : public UnkStruct_ov031_Items_00 {
 public:
+    /* 00 (base) */
+    /* 04 */ STRUCT_PAD(0x4, 0x8);
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+
     UnkStruct_ov063_02162ea8();
 
-    /* 00 (base) */ virtual void vfunc_00(void) override;
-    /* 04 */ virtual void vfunc_04(void) override;
+    /* 00 (base) */ virtual ~UnkStruct_ov063_02162ea8();
     /* 08 */ virtual void vfunc_08(void) override;
     /* 0C */ virtual void vfunc_0C(void) override;
 };
@@ -39,10 +44,11 @@ public:
 //! NOTE: Not the actual parent class, there are two classes in between this one and ModelRender
 class UnkStruct_ov063_02162ee8 : public ModelRender {
 public:
+    /* 00 (base) */
+
     UnkStruct_ov063_02162ee8(G3d_Model *pModel);
 
-    /* 00 (base) */ virtual void vfunc_00(void) override;
-    /* 04 */ virtual void vfunc_04(void) override;
+    /* 00 (base) */ ~UnkStruct_ov063_02162ee8();
 };
 
 class UnkStruct_ov063_02162f14 : public UnkStruct_ov000_020b31f0 {
