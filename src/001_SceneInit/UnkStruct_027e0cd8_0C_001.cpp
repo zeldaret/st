@@ -96,9 +96,9 @@ UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param
     VecFx32 sp18;
     VecFx32 spC;
 
-    this->mUnk_0A0 = 0;
-    this->mUnk_0A4 = 0;
-    this->mUnk_0A8 = 0;
+    this->mUnk_0A0.x = 0;
+    this->mUnk_0A0.y = 0;
+    this->mUnk_0A0.z = 0;
 
     fx32 y = (this->mUnk_11C << 14);
     fx32 z = ((u32) (u16) this->mUnk_09C.y >> 1) << 12;

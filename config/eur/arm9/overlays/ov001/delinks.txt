@@ -122,6 +122,7 @@ src/001_SceneInit/Game/GameModeCreate.cpp:
     .text       start:0x020be054 end:0x020be138
 
 src/001_SceneInit/ZeldaCollisionBinary.cpp:
+    complete
     .text       start:0x020be138 end:0x020be2d0
 
 src/001_SceneInit/UnkStruct_027e09c0_001.cpp:

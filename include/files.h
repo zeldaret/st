@@ -20,6 +20,7 @@ enum FileType_ {
     FileType_ZMBv2 = 'ZMB2',
     FileType_CIB   = 'ZCIB',
     FileType_CLB   = 'ZCLB',
+    FileType_ZCB   = 'ZCB1',
 };
 
 typedef struct FileInfos {
@@ -238,20 +239,19 @@ extern BOOL ZAB_GetRoomEntry(FileInfos *pFileInfos, u8 param2, const CourseListE
 
 // .zmb
 typedef u32 ZMBSectionType;
-enum ZMBSectionType_ {
+enum ZMBSectionType_ { // clang-format off
     ZMBSectionType_ROMB       = 'ROMB', // unknown
     ZMBSectionType_ROOM       = 'ROOM', // room settings
     ZMBSectionType_LDLB       = 'LDLB', // related to script triggers
     ZMBSectionType_MapObjects = 'MPOB', // map object list
-    ZMBSectionType_ARAB =
-        'ARAB', // "area block", used to define an area (X1-X2-Y1-Y2 for a cubic area, or can simply be a radius)
+    ZMBSectionType_ARAB = 'ARAB', // "area block", used to define an area (X1-X2-Y1-Y2 for a cubic area, or can simply be a radius)
     ZMBSectionType_RALB = 'RALB', // "rail block", paths
     ZMBSectionType_NPCA = 'NPCA', // actor list
     ZMBSectionType_PLYR = 'PLYR', // player entrances?
     ZMBSectionType_WARP = 'WARP', // exits?
     ZMBSectionType_CAME = 'CAME', // camera settings (like fixed camera points used by shops for instance)
     ZMBSectionType_CMPT = 'CMPT', // ?
-};
+}; // clang-format on
 
 typedef struct ZMBFileInfos {
     /* 00 */ void *pFile;
@@ -478,6 +478,87 @@ extern BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pROOM, UnkSt
 extern BOOL ZMB_ParsePLYR(ZMBFileInfos *pFileInfos, ZMBSectionPLYR *pPLYR, UnkStruct_027e0cd8_0C_Base *pDst);
 extern BOOL ZMB_ParseCAME(ZMBFileInfos *pFileInfos, ZMBSectionCAME *pCAME, UnkStruct_027e0cd8_0C_Base *pDst);
 extern BOOL ZMB_ParseCMPT(ZMBFileInfos *pFileInfos, ZMBSectionCMPT *pCMPT, UnkStruct_027e0cd8_0C_Base *pDst);
+
+// .zcb
+struct UnkStruct_027e09e8;
+struct UnkFileSystem1;
+
+typedef u32 ZCBSectionType;
+enum ZCBSectionType_ {
+    ZCBSectionType_VTXB = 'VTXB', // vertices
+    ZCBSectionType_NRMB = 'NRMB', // normals
+    ZCBSectionType_PCLB = 'PCLB', // polygon classes
+    ZCBSectionType_TRIB = 'TRIB', // triangles
+    ZCBSectionType_GRDB = 'GRDB', // grid
+};
+
+typedef struct ZCBFileInfos {
+    /* 00 */ UnkFileSystem1 *pFile;
+    /* 04 */ size_t size;
+} ZCBFileInfos;
+
+typedef struct ZCBHeader {
+    /* 00 */ u32 magic;     // 'BLCM'
+    /* 04 */ FileType type; // always "ZCB1"
+    /* 08 */ size_t nSize;
+    /* 0C */ u32 nSections;
+    /* 10 */ u8 unused[0x10];
+} ZCBHeader; // size = 0x20
+
+typedef struct ZCBSectionHeader {
+    /* 00 */ ZCBSectionType type;
+    /* 04 */ size_t nSize;
+    /* 08 */ u16 nEntries;
+    /* 0A */ u8 unk_0A;
+    /* 0B */ u8 unk_0B;
+} ZCBSectionHeader; // size = 0x0C
+
+typedef struct ZCBSectionVTXB {
+    /* 00 */ ZCBSectionHeader header;
+    /* 0C */ VecFx32 entries[];
+} ZCBSectionVTXB;
+
+typedef struct ZCBEntryNRMB {
+    /* 00 */ unk32 unk_00;
+    /* 04 */ unk16 unk_04;
+} ZCBEntryNRMB; // size = 0x06
+
+typedef struct ZCBSectionNRMB {
+    /* 00 */ ZCBSectionHeader header;
+    /* 0C */ ZCBEntryNRMB entries[];
+} ZCBSectionNRMB;
+
+typedef struct ZCBEntryPLCB {
+    /* 00 */ unk32 unk_00;
+} ZCBEntryPLCB; // size = 0x04
+
+typedef struct ZCBSectionPCLB {
+    /* 00 */ ZCBSectionHeader header;
+    /* 0C */ ZCBEntryPLCB entries[];
+} ZCBSectionPCLB;
+
+typedef struct ZCBEntryTRIB {
+    /* 00 */ unk32 unk_00;
+} ZCBEntryTRIB; // size = ?
+
+typedef struct ZCBSectionTRIB {
+    /* 00 */ ZCBSectionHeader header;
+    /* 0C */ ZCBEntryTRIB entries[];
+} ZCBSectionTRIB;
+
+typedef struct ZCBSectionGRDB {
+    /* 00 */ ZCBSectionHeader header;
+    /* 0C */
+} ZCBSectionGRDB;
+
+extern BOOL ZCB_ParseFile(ZCBFileInfos *pFileInfos, UnkStruct_027e09e8 *pDst, UnkStruct_027e0cd8_0C_Base *param3);
+extern void ZCB_ParseVTXB(ZCBFileInfos *pFileInfos, ZCBSectionVTXB *pSection, UnkStruct_027e09e8 *pDst,
+                          UnkStruct_027e0cd8_0C_Base *param3);
+extern void ZCB_ParseNRMB(ZCBFileInfos *pFileInfos, ZCBSectionNRMB *pSection, UnkStruct_027e09e8 *pDst);
+extern void ZCB_ParsePCLB(ZCBFileInfos *pFileInfos, ZCBSectionPCLB *pSection, UnkStruct_027e09e8 *pDst);
+extern void ZCB_ParseTRIB(ZCBFileInfos *pFileInfos, ZCBSectionTRIB *pSection, UnkStruct_027e09e8 *pDst);
+extern void ZCB_ParseGRDB(ZCBFileInfos *pFileInfos, ZCBSectionGRDB *pSection, UnkStruct_027e09e8 *pDst,
+                          UnkStruct_027e0cd8_0C_Base *param3);
 
 #ifdef __cplusplus
 } // extern "C"
