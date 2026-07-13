@@ -1410,6 +1410,12 @@ config.libs = [
         ]
     ),
     GameLib(
+        "Overlay 100",
+        [
+            Object("100_CollectMsg/CollectMsg.cpp"),
+        ]
+    ),
+    GameLib(
         "Overlay 105",
         [
             Object("105_PlayerWhip/Actor/ActorUnkITWP.cpp"),
