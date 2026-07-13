@@ -7,8 +7,8 @@
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
-#include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f84.hpp"
+#include "Unknown/UnkStruct_ov000_020b504c.hpp"
 #include "Unknown/UnkStruct_ov024_020d8694.hpp"
 #include <nitro/mi.h>
 

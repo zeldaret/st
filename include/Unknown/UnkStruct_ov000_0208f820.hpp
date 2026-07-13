@@ -5,8 +5,10 @@
 
 #include "Actor/ActorRef.hpp"
 #include "Item/ItemManager.hpp"
-#include "System/SysNew.hpp"
+#include "Player/PlayerActorBase.hpp"
 #include "math.hpp"
+
+class PlayerLinkActor_A0;
 
 class UnkStruct_ov000_0208f820_14 {
 public:
@@ -22,20 +24,6 @@ public:
     /* 88 */ unk32 mUnk_88;
     /* 8C */ unk32 mUnk_8C;
     /* 90 */
-};
-
-class UnkStruct_PlayerGet_64 {
-public:
-    /* 00 */ ActorRef *mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ u16 mUnk_08; // makes link invisible when set
-    /* 0A */ unk16 mUnk_0A;
-    /* 0C */
-
-    UnkStruct_PlayerGet_64(void *param1);
-    ~UnkStruct_PlayerGet_64();
-
-    void func_ov000_0208a100();
 };
 
 class UnkStruct_PlayerGet_64_2 {
@@ -98,33 +86,6 @@ public:
     /* 150 */ ActorRef mUnk_150;
 };
 
-class UnkStruct_ov000_0208f820_30_10 {
-public:
-    void func_ov031_020e076c();
-};
-
-class UnkStruct_ov000_0208f820_30 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ UnkStruct_ov000_0208f820_30_10 *mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk32 mUnk_1C;
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ unk32 mUnk_24;
-    /* 28 */ STRUCT_PAD(0x28, 0x68);
-    /* 68 */ unk32 mUnk_68;
-    /* 6C */ unk32 mUnk_6C;
-    /* 70 */ u32 mUnk_70;
-
-    void func_ov000_020921e4(unk32 param1);
-    void func_ov000_020936ec();
-    void func_ov000_02093a04();
-};
-
 class UnkStruct_ov000_0208f820_40 {
 public:
     /* 00 */ u16 mUnk_00;
@@ -174,7 +135,7 @@ public:
         this->mItemId      = itemId;
     }
 
-    UnkStruct_ov000_0208f820_04() {}
+    UnkStruct_ov000_0208f820_04() {};
 };
 
 class UnkStruct_ov000_0208f820_44 {
@@ -196,7 +157,7 @@ public:
     /* 24 */ UnkStruct_ov000_0208f820_24 *mUnk_24;
     /* 28 */ UnkStruct_ov000_0208f820_28 *mUnk_28;
     /* 2C */ UnkStruct_ov000_0208f820_2c *mUnk_2C;
-    /* 30 */ UnkStruct_ov000_0208f820_30 *mUnk_30;
+    /* 30 */ PlayerLinkActor_A0 *mUnk_30;
     /* 34 */ VecFx32 *mUnk_34;
     /* 38 */ VecFx32 *mUnk_38;
     /* 3C */ VecFx32 *mUnk_3C;

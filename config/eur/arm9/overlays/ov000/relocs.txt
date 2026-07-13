@@ -1870,7 +1870,7 @@ from:0x02067a78 kind:arm_call to:0x02067a2c module:overlay(0)
 from:0x02067ae0 kind:arm_call to:0x0206757c module:overlay(0)
 from:0x02067b50 kind:arm_call to:0x02067804 module:overlay(0)
 from:0x02067b58 kind:load to:0x020b20e4 module:overlay(0)
-from:0x02067b5c kind:load to:0x02182c40 module:overlays(100,97)
+from:0x02067b5c kind:load to:0x02182c40 module:overlay(100)
 from:0x02067b78 kind:arm_call to:0x02067970 module:overlay(0)
 from:0x02067b84 kind:arm_call to:0x01ffd3d8 module:itcm
 from:0x02067ba0 kind:arm_call to:0x02067804 module:overlay(0)

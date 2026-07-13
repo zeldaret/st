@@ -1,5 +1,5 @@
 func_ov023_020e9a40 kind:function(arm,size=0x3c) addr:0x020e9a40
-func_ov023_020e9a7c kind:function(arm,size=0x24) addr:0x020e9a7c
+_ZN19GameModeContactMode14CreateInstanceEv kind:function(arm,size=0x24) addr:0x020e9a7c
 func_ov023_020e9aa0 kind:function(arm,size=0x10) addr:0x020e9aa0
 func_ov023_020e9ab0 kind:function(arm,size=0xe8) addr:0x020e9ab0
 _ZN19func_ov023_020e9b98D1Ev kind:function(arm,size=0x6c) addr:0x020e9b98

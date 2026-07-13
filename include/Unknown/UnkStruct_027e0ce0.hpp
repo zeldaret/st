@@ -9,7 +9,6 @@
 #include "Player/PlayerLink.hpp"
 #include "Player/TouchControl.hpp"
 #include "Save/SaveManager.hpp"
-#include "System/SysNew.hpp"
 #include "input.hpp"
 
 #include <nitro/math.h>
@@ -34,11 +33,57 @@ public:
     /* 00 */ virtual void vfunc_00(unk32 param1);
 };
 
+class UnkStruct_027e0ce0_1C_00 {
+public:
+    /* 00 */ u16 mUnk_00;
+
+    UnkStruct_027e0ce0_1C_00() {
+        this->mUnk_00 = 0;
+    }
+};
+
+class UnkStruct_027e0ce0_1C_08 : public MapObjectProfile_Derived2_20_Base {
+public:
+    /* 00 (base) */
+    /* 94 */
+
+    UnkStruct_027e0ce0_1C_08(unk32 param1, unk32 param2, unk32 param3);
+};
+
+class UnkStruct_027e0ce0_1C_C8 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x20);
+    /* 20 */
+
+    UnkStruct_027e0ce0_1C_C8(unk32 param1, unk32 param2);
+    ~UnkStruct_027e0ce0_1C_C8();
+};
+
+class UnkStruct_027e0ce0_1C_D4 {
+public:
+    /* 0000 */ STRUCT_PAD(0x00, 0x6AD8);
+    /* 6AD8 */
+
+    UnkStruct_027e0ce0_1C_D4();
+};
+
+class UnkStruct_027e0ce0_1C_D8 {
+public:
+    /* 0000 */ STRUCT_PAD(0x00, 0x6AB0);
+    /* 6AB0 */
+
+    UnkStruct_027e0ce0_1C_D8();
+};
+
 class UnkStruct_027e0ce0_1C {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x0C);
-    /* 0C */ MapObjectProfile_Derived2_20_Base *mUnk_0C;
-    /* 10 */ STRUCT_PAD(0x10, 0xDC);
+    /* 00 */ UnkStruct_027e0ce0_1C_00 mUnk_00[PlayerCharacter_Max];
+    /* 06 */ unk16 mUnk_06; // pad?
+    /* 08 */ UnkStruct_027e0ce0_1C_08 *mUnk_08[PlayerCharacter_Max][7];
+    /* 5C */ UnkFileSystem5 *mUnk_5C[PlayerCharacter_Max][9];
+    /* C8 */ UnkStruct_027e0ce0_1C_C8 *mUnk_C8[PlayerCharacter_Max];
+    /* D4 */ UnkStruct_027e0ce0_1C_D4 *mUnk_D4;
+    /* D8 */ UnkStruct_027e0ce0_1C_D8 *mUnk_D8;
     /* DC */
 
     UnkStruct_027e0ce0_1C();
@@ -424,9 +469,21 @@ public:
     ~UnkStruct_027e0ce0_40_Base_78();
 };
 
+class UnkStruct_027e0ce0_40_Base_7C_04 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0xB4);
+    /* B4 */
+
+    UnkStruct_027e0ce0_40_Base_7C_04();
+    ~UnkStruct_027e0ce0_40_Base_7C_04();
+};
+
 class UnkStruct_027e0ce0_40_Base_7C {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x18);
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ UnkStruct_027e0ce0_40_Base_7C_04 *mUnk_04;
+    /* 08 */ UnkSystem7_Derived2 mUnk_08;
+    /* 14 */ unk32 mUnk_14;
     /* 18 */
 
     UnkStruct_027e0ce0_40_Base_7C(unk32 param1);
@@ -674,6 +731,7 @@ public:
     bool func_ov000_0208bc1c(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);
     void func_ov000_0208bd30(bool param1, unk32 param2, unk32 param3, unk32 param4);
+    bool func_ov000_0208be70(VecFx32 param1);
     G3d_Model *func_ov000_0208ed30(unk32 param1, unk32 param2, char *param3);
 
     static UnkStruct_027e0ce0_34 *func_ov000_0205c904();

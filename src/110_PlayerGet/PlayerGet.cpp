@@ -17,8 +17,8 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
-#include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
+#include "Unknown/UnkStruct_ov000_020b504c.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b51c0.hpp"
 #include "versions.h"
@@ -48,7 +48,7 @@ extern "C" void func_020156c8(char *, char *, unk32);
 extern "C" void func_020156f4(char *);
 extern "C" void func_02015644(char *);
 
-extern "C" BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, unk32);
+extern "C" BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, void *);
 extern "C" unk32 func_ov000_02077590(unk32);
 
 static const unk32 data_ov110_02185dc4[1] = {8};
@@ -707,7 +707,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             }
 
             data_027e0cf8->func_ov024_020c7828(this->mUnk_54.mItemId);
-            UnkStruct_ov000_02067bc4::UnkStruct1 auStack_30;
+            UnkTextStruct1 auStack_30(-1, 0);
             data_ov000_020b504c.func_ov000_02067cf8(ItemManager::GetBmgIDFromItem(this->mUnk_54.mItemId), 0, &auStack_30);
             break;
         default:

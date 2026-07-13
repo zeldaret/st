@@ -109,7 +109,7 @@ extern "C" void CopySingle288(Mat4x3p *, Mat3p *);
 extern "C" void func_01ffa60c(const Mat3p *, Mat3p *, Mat3p *);
 
 MapObjectProfile_Derived2_20_Base *func_ov031_020f1404() {
-    return data_027e0ce0->mUnk_1C->mUnk_0C;
+    return data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Link][1];
 }
 
 DECL_PROFILE(ActorProfileShotArrow);

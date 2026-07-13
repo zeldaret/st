@@ -194,9 +194,7 @@ public:
     /* 088 */ UnkStruct_027e0cd8_0C_Base_88 mUnk_088;
     /* 098 */ UnkStruct_027e0cd8_0C_Base_98 *mUnk_098;
     /* 09C */ Vec2us mUnk_09C;
-    /* 0A0 */ unk32 mUnk_0A0;
-    /* 0A4 */ unk32 mUnk_0A4;
-    /* 0A8 */ unk32 mUnk_0A8;
+    /* 0A0 */ VecFx32 mUnk_0A0;
     /* 0AC */ bool mUnk_0AC;
     /* 0AC */ bool mUnk_0AD;
     /* 0AC */ bool mUnk_0AE;

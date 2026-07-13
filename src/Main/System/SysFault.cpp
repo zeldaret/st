@@ -2,8 +2,8 @@
 #include "System/OverlayManager.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_02049b18.hpp"
-#include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f84.hpp"
+#include "Unknown/UnkStruct_ov000_020b504c.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "global.h"
 #include <nitro/mi.h>

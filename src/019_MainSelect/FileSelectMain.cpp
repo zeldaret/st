@@ -966,10 +966,10 @@ void FileSelectMain::func_ov019_020c7d3c() {
     this->mUnk_1C04.mUnk_12 = this->mSaveSlotIndex;
 
     if (this->mUnk_1C04.mUnk_18 == 0) {
-        int uVar5                             = this->mSaveSlotIndex == 0 ? 2 : 1;
-        UnkStruct_ov000_02067bc4_Sub2 *puVar3 = data_ov000_020b504c.func_ov000_02067bc4(0)->mUnk_008;
-        unk32 uVar2                           = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_10;
-        puVar3->mUnk_54                       = uVar5;
+        int uVar5                           = this->mSaveSlotIndex == 0 ? 2 : 1;
+        UnkStruct_ov000_020b504c_08 *puVar3 = data_ov000_020b504c.func_ov000_02067bc4(0)->mUnk_08;
+        unk32 uVar2                         = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_10;
+        puVar3->mUnk_020.mCellAnim.unk_34   = (void *) uVar5; //! TODO: real?
         data_ov000_020b504c.func_ov000_0206807c(uVar2, &this->mUnk_1C04);
     } else if (this->mUnk_1C04.mUnk_18 == 1) {
         data_ov000_020b504c.func_ov000_0206807c(data_ov019_020d1e70.mUnk_0C, &this->mUnk_1C04);

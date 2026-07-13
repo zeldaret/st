@@ -5,6 +5,7 @@
 #include "Actor/ActorUnkRAT0.hpp"
 #include "Actor/ActorUnkRPMT.hpp"
 #include "Actor/ActorUnkZSTG.hpp"
+#include "Player/PlayerGet.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -216,7 +217,6 @@ bool ActorUnkZLSL::vfunc_18(unk32 param1) {
     return true;
 }
 
-// non-matching
 void ActorUnkZLSL::vfunc_20() {
     UnkAngleStruct angleTmp = {.angle = this->mAngle};
     CALL_PTMF(PTMF<ActorUnkZLSL>, data_ov031_021137f8[this->mState]);
@@ -241,16 +241,20 @@ void ActorUnkZLSL::vfunc_20() {
     if (GET_FLAG(this->mFlags, ActorFlag_Alive) && (this->mUnk_2900 & 0x1)) {
         func_01ff916c(&this->mUnk_2890, 0x666, 0x29);
 
-        VecFx32 vec   = this->mPos;
-        VecFx32 *oVec = this->func_ov000_0209853c(0);
+        VecFx32 vec = this->mPos;
+        fx32 val    = this->mUnk_2890;
+        fx32 offset = this->func_ov000_0209853c(0)->y;
+        vec.y       = val + offset;
 
-        VecFx32 lastVec;
-        vec.x     = this->mUnk_2890;
-        vec.y     = 0x1000;
-        lastVec.y = oVec->y;
-        lastVec.z = vec.z;
+        UnkStruct_ov000_0207de98 unk;
 
-        data_027e09c0->func_ov000_0207de98(this->mRef, &lastVec, this->mUnk_38);
+        unk.vec.x  = vec.x;
+        unk.vec.y  = vec.y;
+        unk.vec.z  = vec.z;
+        unk.param1 = val;
+        unk.param2 = 0x1000;
+
+        data_027e09c0->func_ov000_0207de98(this->mRef, &unk, this->mUnk_38);
     }
 
     this->mUnk_2894.Init(this->mUnk_2890);

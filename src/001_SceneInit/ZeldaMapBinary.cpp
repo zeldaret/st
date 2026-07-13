@@ -521,7 +521,7 @@ BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pSection, UnkStruct
             SET_FLAG2(pDst->mUnk_128, UnkFlags2_11);
         }
 
-        data_027e0c90.max.y = pDst->mUnk_0A4 + var_r7;
+        data_027e0c90.max.y = pDst->mUnk_0A0.y + var_r7;
     }
 
     if (data_027e09a4->IsLand() || data_027e09a4->GetCurrentCourseEntry()->unk_10 == 0x05) {
