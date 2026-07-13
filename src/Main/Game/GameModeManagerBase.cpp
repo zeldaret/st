@@ -3,7 +3,7 @@
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_ov000_02067bc4.hpp"
+#include "Unknown/UnkStruct_ov000_020b504c.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 
 THUMB_BEGIN
