@@ -352,18 +352,18 @@ _ZN8InstanceI18UnkStruct_027e09acEC2Ev kind:function(thumb,size=0xc) addr:0x020b
 _ZN8InstanceI18UnkStruct_027e09acED2Ev kind:function(thumb,size=0xc) addr:0x020becfc
 _ZN8InstanceI18UnkStruct_027e09a8ED2Ev kind:function(thumb,size=0xc) addr:0x020bed08
 _ZN18UnkStruct_027e0cec6CreateEv kind:function(thumb,size=0x20) addr:0x020bed14
-func_ov001_020bed34 kind:function(thumb,size=0x1c) addr:0x020bed34
-func_ov001_020bed50 kind:function(thumb,size=0x248) addr:0x020bed50
-func_ov001_020bef98 kind:function(thumb,size=0x7c) addr:0x020bef98
-func_ov001_020bf014 kind:function(thumb,size=0x14) addr:0x020bf014
+_ZN18UnkStruct_027e0cec19func_ov001_020bed34Ev kind:function(thumb,size=0x1c) addr:0x020bed34
+_ZN18UnkStruct_027e0cecC1Ev kind:function(thumb,size=0x248) addr:0x020bed50
+_ZN18UnkStruct_027e0cec19func_ov001_020bef98Ev kind:function(thumb,size=0x7c) addr:0x020bef98
+_ZN18UnkStruct_027e0cecD1Ev kind:function(thumb,size=0x14) addr:0x020bf014
 _ZN18UnkStruct_027e0cec19func_ov001_020bf028Ev kind:function(thumb,size=0x1c) addr:0x020bf028
-func_ov001_020bf044 kind:function(arm,size=0x38) addr:0x020bf044
-func_ov001_020bf07c kind:function(arm,size=0x10) addr:0x020bf07c
-func_ov001_020bf08c kind:function(arm,size=0x14) addr:0x020bf08c
+_ZN21UnkStruct_027e0cec_00C1EPv kind:function(arm,size=0x38) addr:0x020bf044
+_ZN8InstanceI18UnkStruct_027e0cecEC2Ev kind:function(arm,size=0x10) addr:0x020bf07c
+_ZN8InstanceI18UnkStruct_027e0cecED2Ev kind:function(arm,size=0x14) addr:0x020bf08c
 func_ov001_020bf0a0 kind:function(thumb,size=0x14) addr:0x020bf0a0
-func_ov001_020bf0b4 kind:function(thumb,size=0xf4) addr:0x020bf0b4
-func_ov001_020bf1a8 kind:function(thumb,size=0x2) addr:0x020bf1a8
-_ZN19func_ov001_020bf1acD0Ev kind:function(thumb,size=0xc) addr:0x020bf1ac
+_ZN21UnkStruct_027e0cec_18C1EP14UnkFileSystem1bi kind:function(thumb,size=0xf4) addr:0x020bf0b4
+_ZN21UnkStruct_027e0cec_18D1Ev kind:function(thumb,size=0x2) addr:0x020bf1a8
+_ZN21UnkStruct_027e0cec_18D0Ev kind:function(thumb,size=0xc) addr:0x020bf1ac
 _ZN21UnkStruct_027e0ce0_34C1Ev kind:function(thumb,size=0x60) addr:0x020bf1b8
 _ZN21UnkStruct_027e0ce0_34D1Ev kind:function(thumb,size=0x14) addr:0x020bf218
 _ZN21UnkStruct_027e0ce0_3419func_ov001_020bf22cEii kind:function(thumb,size=0x8c) addr:0x020bf22c
@@ -608,28 +608,25 @@ data_ov001_020c2cf4 kind:data(any) addr:0x020c2cf4 local
 @2667 kind:data(byte[6]) addr:0x020c2e10 local
 @2668 kind:data(byte[6]) addr:0x020c2e18 local
 @2669 kind:data(byte[9]) addr:0x020c2e20 local
-data_ov001_020c2e2c kind:data(any) addr:0x020c2e2c
-data_ov001_020c2e40 kind:data(any) addr:0x020c2e40
-data_ov001_020c2e54 kind:data(any) addr:0x020c2e54
-data_ov001_020c2e68 kind:data(any) addr:0x020c2e68
-data_ov001_020c2e80 kind:data(any) addr:0x020c2e80
-data_ov001_020c2e98 kind:data(any) addr:0x020c2e98
-data_ov001_020c2e9c kind:data(any) addr:0x020c2e9c
-data_ov001_020c2eb0 kind:data(any) addr:0x020c2eb0
-data_ov001_020c2ec8 kind:data(any) addr:0x020c2ec8
-data_ov001_020c2ee0 kind:data(any) addr:0x020c2ee0
-data_ov001_020c2ef8 kind:data(any) addr:0x020c2ef8
-data_ov001_020c2f10 kind:data(any) addr:0x020c2f10
-data_ov001_020c2f28 kind:data(any) addr:0x020c2f28
-data_ov001_020c2f4c kind:data(any) addr:0x020c2f4c
-data_ov001_020c2f58 kind:data(any) addr:0x020c2f58
-data_ov001_020c2f70 kind:data(any) addr:0x020c2f70
-data_ov001_020c2f84 kind:data(any) addr:0x020c2f84
-data_ov001_020c2f9c kind:data(any) addr:0x020c2f9c
-data_ov001_020c2fac kind:data(any) addr:0x020c2fac
-data_ov001_020c2fb4 kind:data(any) addr:0x020c2fb4
-data_ov001_020c2fc4 kind:data(any) addr:0x020c2fc4
-data_ov001_020c2fcc kind:data(any) addr:0x020c2fcc
+@0 kind:data(byte[0x11]) addr:0x020c2e2c local
+@1 kind:data(byte[0x12]) addr:0x020c2e40 local
+@2 kind:data(byte[0x13]) addr:0x020c2e54 local
+@3 kind:data(byte[0x15]) addr:0x020c2e68 local
+@4 kind:data(byte[0x16]) addr:0x020c2e80 local
+@5 kind:data(byte[0x16]) addr:0x020c2e98 local
+@7 kind:data(byte[0x16]) addr:0x020c2eb0 local
+@8 kind:data(byte[0x16]) addr:0x020c2ec8 local
+@9 kind:data(byte[0x16]) addr:0x020c2ee0 local
+@10 kind:data(byte[0x17]) addr:0x020c2ef8 local
+@11 kind:data(byte[0x17]) addr:0x020c2f10 local
+data_ov001_020c2f28 kind:data(any) addr:0x020c2f28 local
+@13 kind:data(byte[0x15]) addr:0x020c2f58 local
+@14 kind:data(byte[0x11]) addr:0x020c2f70 local
+@15 kind:data(byte[0x16]) addr:0x020c2f84 local
+@16 kind:data(byte[0xd]) addr:0x020c2f9c local
+@17 kind:data(byte[0x5]) addr:0x020c2fac local
+@18 kind:data(byte[0x10]) addr:0x020c2fb4 local
+_ZTV19data_ov001_020c2fcc kind:data(any) addr:0x020c2fc4
 data_ov001_020c2fd4 kind:data(any) addr:0x020c2fd4
 _ZGVN14StaticInstanceI16CourseInitBinaryE9sInstanceE kind:bss addr:0x020c2fe0
 _ZN14StaticInstanceI16CourseInitBinaryE9sInstanceE kind:bss addr:0x020c2fe4

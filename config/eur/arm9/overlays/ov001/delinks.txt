@@ -144,9 +144,11 @@ src/001_SceneInit/UnkStruct_027e09ac_001.cpp:
     .data       start:0x020c2dec end:0x020c2e2c
 
 src/001_SceneInit/UnkStruct_027e0cec_001.cpp:
+    complete
     .text       start:0x020bed14 end:0x020bf0a0
+    .data       start:0x020c2e2c end:0x020c2fc4
 
-src/001_SceneInit/code_020bf0a0.cpp:
+src/001_SceneInit/UnkStruct_027e0cec_18_001.cpp:
     .text       start:0x020bf0a0 end:0x020bf1b8
 
 src/001_SceneInit/UnkStruct_027e0ce0_34_001.cpp:

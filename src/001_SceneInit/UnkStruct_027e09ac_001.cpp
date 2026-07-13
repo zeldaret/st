@@ -57,10 +57,10 @@ void UnkStruct_027e09ac::func_ov001_020bebb8() {
     auStack_28.func_ov000_02059270(0x02, "wipeA", 0x39BF0000);
 
     switch ((s32) data_027e09a4->CurrentSceneIndex()) {
-        case 0x13:
-        case 0x3D:
-        case 0x3F:
-        case 0x42:
+        case SceneIndex_d_main:
+        case SceneIndex_f_flame4:
+        case SceneIndex_f_kakushi1:
+        case SceneIndex_f_kakushi4:
             auStack_28.func_ov000_02059270(0x03, "light", 0x25BF0000);
             break;
         default:

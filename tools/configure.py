@@ -221,7 +221,7 @@ config.libs = [
             Object("001_SceneInit/UnkStruct_027e09b4_001.cpp"),
             Object("001_SceneInit/UnkStruct_027e09ac_001.cpp"),
             Object("001_SceneInit/UnkStruct_027e0cec_001.cpp"),
-            Object("001_SceneInit/code_020bf0a0.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cec_18_001.cpp"),
             Object("001_SceneInit/UnkStruct_027e0ce0_34_001.cpp"),
             Object("001_SceneInit/UnkStruct_027e0d00_001.cpp"),
             Object("001_SceneInit/CargoManager_001.cpp"),
