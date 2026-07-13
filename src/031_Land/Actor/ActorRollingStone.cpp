@@ -212,7 +212,6 @@ void ActorRollingStone::func_ov031_020f8a3c() {
     this->mUnk_2C  = data;
 }
 
-// non-matching
 void ActorRollingStone::func_ov031_020f8a58() {
     this->func_ov000_02098910(NULL, 0x10);
     if ((this->mUnk_46 & 0x1) != 0) {
@@ -232,8 +231,11 @@ void ActorRollingStone::func_ov031_020f8a58() {
 
     this->func_ov000_02098ab4(0x2, 0x5, 0x1, &this->mVel);
 
-    data_027e09c0->func_ov000_0207de98(this->mRef, &this->mPos, this->mUnk_38, &this->mVel, this->mPos.x, this->mPos.y,
-                                       this->mPos.z, 0xB33, 0x1000);
+    UnkStruct_ov000_0207de98 param;
+    VecFx32_Copy(&this->mPos, &param.vec);
+    param.param1 = 0xB33;
+    param.param2 = 0x1000;
+    data_027e09c0->func_ov000_0207de98(this->mRef, &param, this->mUnk_38);
 }
 
 void ActorRollingStone::func_ov031_020f8b58() {
@@ -282,9 +284,9 @@ void ActorRollingStone::func_ov031_020f8bc4() {
     unk16 sinValue = SIN((u16) this->mAngle);
     unk16 cosValue = COS((u16) this->mAngle);
 
-    sp38.x = MUL_FX32(sinValue, FLOAT_TO_FX32(0.25f));
+    sp38.x = MUL_FX32(sinValue, FLOAT_TO_FX32(1.0f));
+    sp38.z = MUL_FX32(cosValue, FLOAT_TO_FX32(1.0f));
     sp38.y = FLOAT_TO_FX32(0.0f);
-    sp38.z = MUL_FX32(cosValue, FLOAT_TO_FX32(0.25f));
 
     VecFx32 sp28;
     this->vfunc_10(&sp28);
@@ -302,7 +304,11 @@ void ActorRollingStone::func_ov031_020f8bc4() {
     VecFx32_Copy(&this->mPos, &sp14);
 
     data_027e09c0->func_ov000_0207e58c(this->mRef, 0xB, 0x4, &this->mUnk_D4);
-    data_027e09c0->func_ov000_0207de98(this->mRef, &sp14, this->mUnk_38, &this->mVel, 0xB33, 0x1000, 0x0, 0x0, 0x0);
+    UnkStruct_ov000_0207de98 param;
+    VecFx32_Copy(&this->mPos, &param.vec);
+    param.param1 = 0xB33;
+    param.param2 = 0x1000;
+    data_027e09c0->func_ov000_0207de98(this->mRef, &param, this->mUnk_38);
 }
 
 void ActorRollingStone::func_ov031_020f8de8() {
