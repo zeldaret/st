@@ -6,7 +6,7 @@
 #include <nitro/mi.h>
 
 extern "C" void *func_02022884(unk32);
-extern u8 data_ov097_02181060[];
+extern u8 gBufferTrainMsg[0x8C00];
 
 static const char *data_ov001_020c2cf4[] = {
     NULL,   "tower", "tower_lobby", "intrain",   "castle", "castle_town", "forest",
@@ -132,7 +132,7 @@ void UnkStruct_ov000_020b504c::func_ov001_020be880(SceneIndex sceneIndex) {
     MI_CpuFill32(0, this->mUnk_05C, sizeof(this->mUnk_05C));
 
     this->mUnk_000->mUnk_10++;
-    this->mUnk_000->func_ov000_02067804("train", data_ov097_02181060, 0x8C00);
+    this->mUnk_000->func_ov000_02067804("train", gBufferTrainMsg, sizeof(gBufferTrainMsg));
 
     if (data_027e09a0->GetCourseEntry(sceneIndex)->unk_10 == 4 || sceneIndex == SceneIndex_t_tutorial ||
         sceneIndex == SceneIndex_e3_train) {

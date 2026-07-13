@@ -1385,6 +1385,12 @@ config.libs = [
         ]
     ),
     GameLib(
+        "Overlay 97",
+        [
+            Object("097_TrainMsg/TrainMsg.cpp"),
+        ]
+    ),
+    GameLib(
         "Overlay 98",
         [
             Object("098_MapWater/Actor/ActorUnkEFRI.cpp"),
