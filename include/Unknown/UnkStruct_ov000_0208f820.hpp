@@ -135,7 +135,7 @@ public:
         this->mItemId      = itemId;
     }
 
-    UnkStruct_ov000_0208f820_04() = default;
+    UnkStruct_ov000_0208f820_04() {};
 };
 
 class UnkStruct_ov000_0208f820_44 {
