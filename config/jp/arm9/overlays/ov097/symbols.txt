@@ -1,1 +1,1 @@
-gBufferTrainMsg kind:bss(size=0x8C00) addr:0x02182be0
+gBufferTrainMsg kind:bss(size=0x8c00) addr:0x02182be0
