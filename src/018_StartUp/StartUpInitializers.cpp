@@ -96,7 +96,7 @@ UnkStruct_ov000_020b504c::UnkStruct_ov000_020b504c() :
     this->mUnk_06E = 0;
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_00C); i++) {
-        this->mUnk_00C[i].mUnk_00 = 0;
+        this->mUnk_00C[i] = NULL;
     }
 
     this->mUnk_028 = 0;

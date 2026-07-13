@@ -146,7 +146,7 @@ void AdventureModeManager_160::vfunc_14(unk32 param1) {
 void AdventureModeManager_160::func_ov024_020c7cfc() {
     this->mUnk_0C = 6;
 
-    UnkStruct_ov000_02067bc4::UnkStruct1 stack;
+    UnkTextStruct1 stack(-1, 0);
     stack.mUnk_0D = 1;
     data_ov000_020b504c.func_ov000_02067cf8(BMG_ID(BMGGroup_maingame, MsgIndex_MapPaintNotAllowed), 1, &stack);
 }

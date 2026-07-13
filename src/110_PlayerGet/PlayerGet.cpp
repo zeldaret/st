@@ -707,7 +707,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             }
 
             data_027e0cf8->func_ov024_020c7828(this->mUnk_54.mItemId);
-            UnkStruct_ov000_02067bc4::UnkStruct1 auStack_30;
+            UnkTextStruct1 auStack_30(-1, 0);
             data_ov000_020b504c.func_ov000_02067cf8(ItemManager::GetBmgIDFromItem(this->mUnk_54.mItemId), 0, &auStack_30);
             break;
         default:

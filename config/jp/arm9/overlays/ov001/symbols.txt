@@ -322,19 +322,19 @@ _ZN18UnkStruct_027e0b4819func_ov001_020be474Ev kind:function(thumb,size=0x70) ad
 _ZN18UnkStruct_027e0b4819func_ov001_020be4e4Ev kind:function(thumb,size=0x1e) addr:0x020bfd38
 _ZN24UnkStruct_ov000_020b504c19func_ov001_020be504Ev kind:function(thumb,size=0xc) addr:0x020bfd58
 _ZN24UnkStruct_ov000_020b504c19func_ov001_020be510Ev kind:function(thumb,size=0xd8) addr:0x020bfd64
-func_ov001_020be5e8 kind:function(thumb,size=0x80) addr:0x020bfe3c
+_ZN24UnkStruct_ov000_020b504c19func_ov001_020be5e8Ev kind:function(thumb,size=0x80) addr:0x020bfe3c
 _ZN24UnkStruct_ov000_020b504c19func_ov001_020be668Ev kind:function(thumb,size=0x70) addr:0x020bfebc
-func_ov001_020be6d8 kind:function(thumb,size=0x1c) addr:0x020bff2c
+_ZN24UnkStruct_ov000_020b504c19func_ov001_020be6d8Ev kind:function(thumb,size=0x1c) addr:0x020bff2c
 _ZN24UnkStruct_ov000_020b504c19func_ov001_020be6f4Ev kind:function(thumb,size=0xa8) addr:0x020bff48
-func_ov001_020be79c kind:function(thumb,size=0x90) addr:0x020bfff0
-func_ov001_020be82c kind:function(thumb,size=0x54) addr:0x020c0080
-func_ov001_020be880 kind:function(thumb,size=0x60) addr:0x020c00d4
+_ZN24UnkStruct_ov000_020b504c19func_ov001_020be79cEj kind:function(thumb,size=0x90) addr:0x020bfff0
+_ZN24UnkStruct_ov000_020b504c19func_ov001_020be82cEj kind:function(thumb,size=0x54) addr:0x020c0080
+_ZN24UnkStruct_ov000_020b504c19func_ov001_020be880Ej kind:function(thumb,size=0x60) addr:0x020c00d4
 _ZN24UnkStruct_ov000_020b504c19func_ov001_020be8e0Ev kind:function(thumb,size=0x4c) addr:0x020c0134
 _ZN24UnkStruct_ov000_020b504c19func_ov001_020be92cEP24UnkStruct_027e0cd8_04_0C kind:function(thumb,size=0x20) addr:0x020c0180
 _ZN24UnkStruct_ov000_020b504c19func_ov001_020be94cEv kind:function(thumb,size=0x4c) addr:0x020c01a0
 _ZN24UnkStruct_ov000_020b504c19func_ov001_020be998Ev kind:function(thumb,size=0x64) addr:0x020c01ec
-func_ov001_020be9fc kind:function(thumb,size=0x30) addr:0x020c0250
-func_ov001_020bea2c kind:function(thumb,size=0x14) addr:0x020c0280
+_ZN24UnkStruct_ov000_020b504c19func_ov001_020be9fcEv kind:function(thumb,size=0x30) addr:0x020c0250
+_ZN24UnkStruct_ov000_020b504c19func_ov001_020bea2cEv kind:function(thumb,size=0x14) addr:0x020c0280
 func_ov001_020bea40 kind:function(thumb,size=0x18) addr:0x020c0294
 func_ov001_020bea58 kind:function(thumb,size=0x2c) addr:0x020c02ac
 func_ov001_020bea84 kind:function(thumb,size=0x48) addr:0x020c02d8
@@ -570,38 +570,38 @@ data_ov001_020c2a40 kind:data(any) addr:0x020c4280
 @5647 kind:data(byte[6]) addr:0x020c44a8 local
 @4095 kind:data(byte[6]) addr:0x020c44b0 local
 @4096 kind:data(byte[7]) addr:0x020c44b8 local
-data_ov001_020c44c0 kind:data(any) addr:0x020c44c0
-data_ov001_020c44c8 kind:data(any) addr:0x020c44c8
-data_ov001_020c44d0 kind:data(any) addr:0x020c44d0
-data_ov001_020c44d8 kind:data(any) addr:0x020c44d8
-data_ov001_020c44e0 kind:data(any) addr:0x020c44e0
-data_ov001_020c44e8 kind:data(any) addr:0x020c44e8
-data_ov001_020c44f0 kind:data(any) addr:0x020c44f0
-data_ov001_020c44f8 kind:data(any) addr:0x020c44f8
-data_ov001_020c4500 kind:data(any) addr:0x020c4500
-data_ov001_020c4508 kind:data(any) addr:0x020c4508
-data_ov001_020c4510 kind:data(any) addr:0x020c4510
-data_ov001_020c451c kind:data(any) addr:0x020c451c
-data_ov001_020c4528 kind:data(any) addr:0x020c4528
-data_ov001_020c4534 kind:data(any) addr:0x020c4534
-data_ov001_020c456c kind:data(any) addr:0x020c456c
-data_ov001_020c4578 kind:data(any) addr:0x020c4578
-data_ov001_020c4588 kind:data(any) addr:0x020c4588
-data_ov001_020c4598 kind:data(any) addr:0x020c4598
-data_ov001_020c45a0 kind:data(any) addr:0x020c45a0
-data_ov001_020c45a8 kind:data(any) addr:0x020c45a8
-data_ov001_020c45b0 kind:data(any) addr:0x020c45b0
-data_ov001_020c45bc kind:data(any) addr:0x020c45bc
-data_ov001_020c45c4 kind:data(any) addr:0x020c45c4
-data_ov001_020c45cc kind:data(any) addr:0x020c45cc
-data_ov001_020c45d8 kind:data(any) addr:0x020c45d8
-data_ov001_020c45e0 kind:data(any) addr:0x020c45e0
-data_ov001_020c45ec kind:data(any) addr:0x020c45ec
-data_ov001_020c45f8 kind:data(any) addr:0x020c45f8
-data_ov001_020c4604 kind:data(any) addr:0x020c4604
-data_ov001_020c4610 kind:data(any) addr:0x020c4610
-data_ov001_020c461c kind:data(any) addr:0x020c461c
-data_ov001_020c4624 kind:data(any) addr:0x020c4624
+@2191 kind:data(byte[5]) addr:0x020c44c0 local
+@2192 kind:data(byte[6]) addr:0x020c44c8 local
+@2193 kind:data(byte[6]) addr:0x020c44d0 local
+@2194 kind:data(byte[6]) addr:0x020c44d8 local
+@2195 kind:data(byte[7]) addr:0x020c44e0 local
+@2196 kind:data(byte[7]) addr:0x020c44e8 local
+@2197 kind:data(byte[7]) addr:0x020c44f0 local
+@2198 kind:data(byte[8]) addr:0x020c44f8 local
+@2199 kind:data(byte[8]) addr:0x020c4500 local
+@2200 kind:data(byte[8]) addr:0x020c4508 local
+@2201 kind:data(byte[10]) addr:0x020c4510 local
+@2202 kind:data(byte[12]) addr:0x020c451c local
+@2203 kind:data(byte[12]) addr:0x020c4528 local
+data_ov001_020c2cf4 kind:data(any) addr:0x020c4534 local
+@1725 kind:data(byte[9]) addr:0x020c456c local
+@1756 kind:data(byte[14]) addr:0x020c4578 local
+@1757 kind:data(byte[14]) addr:0x020c4588 local
+@1758 kind:data(byte[7]) addr:0x020c4598 local
+@1759 kind:data(byte[8]) addr:0x020c45a0 local
+@2363 kind:data(byte[6]) addr:0x020c45a8 local
+@2364 kind:data(byte[10]) addr:0x020c45b0 local
+@2365 kind:data(byte[8]) addr:0x020c45bc local
+@2366 kind:data(byte[6]) addr:0x020c45c4 local
+@2367 kind:data(byte[12]) addr:0x020c45cc local
+@2368 kind:data(byte[5]) addr:0x020c45d8 local
+@2369 kind:data(byte[10]) addr:0x020c45e0 local
+@2370 kind:data(byte[10]) addr:0x020c45ec local
+@2371 kind:data(byte[10]) addr:0x020c45f8 local
+@2372 kind:data(byte[10]) addr:0x020c4604 local
+@2373 kind:data(byte[10]) addr:0x020c4610 local
+@2374 kind:data(byte[5]) addr:0x020c461c local
+@2375 kind:data(byte[5]) addr:0x020c4624 local
 data_ov001_020c462c kind:data(any) addr:0x020c462c
 data_ov001_020c4640 kind:data(any) addr:0x020c4640
 data_ov001_020c4648 kind:data(any) addr:0x020c4648

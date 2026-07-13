@@ -109,12 +109,12 @@ void UICounterManager::func_ov024_020cd094() {
         return;
     }
 
-    UnkStruct_ov000_02067bc4::UnkStruct1 local;
+    UnkTextStruct1 local;
 
 #if __MWERKS__
     local.data = data_ov000_020b504c.func_ov000_02067bc4(0)->mUnk_028.data;
 #else
-    UnkStruct_ov000_02067bc4::UnkStruct1 *pData = &data_ov000_020b504c.func_ov000_02067bc4(0)->mUnk_028;
+    UnkTextStruct1 *pData = &data_ov000_020b504c.func_ov000_02067bc4(0)->mUnk_028;
 
     local.mUnk_00 = pData->mUnk_00;
     local.mUnk_02 = pData->mUnk_02;

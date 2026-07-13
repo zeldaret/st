@@ -130,7 +130,9 @@ src/001_SceneInit/UnkStruct_027e09c0_001.cpp:
     .text       start:0x020be2d0 end:0x020be504
 
 src/001_SceneInit/UnkStruct_ov000_020b504c_001.cpp:
+    complete
     .text       start:0x020be504 end:0x020bea40
+    .data       start:0x020c2c80 end:0x020c2dec
 
 src/001_SceneInit/UnkStruct_027e09b4_001.cpp:
     .text       start:0x020bea40 end:0x020beae4
