@@ -210,11 +210,28 @@ config.libs = [
             Object("001_SceneInit/UnkStruct_027e0cdc_001.cpp"),
             Object("001_SceneInit/Player/PlayerActorBase_001.cpp"),
             Object("001_SceneInit/Player/PlayerLinkActor_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0ce0_1C_001.cpp"),
+            Object("001_SceneInit/UnkStruct_0204a110_001.cpp"),
+            Object("001_SceneInit/UnkStruct_ov024_020d86a0_001.cpp"),
+            Object("001_SceneInit/UnkStruct_ov000_020b50c0_001.cpp"),
+            Object("001_SceneInit/Game/GameModeCreate.cpp"),
+            Object("001_SceneInit/ZeldaCollisionBinary.cpp"),
+            Object("001_SceneInit/UnkStruct_027e09c0_001.cpp"),
+            Object("001_SceneInit/UnkStruct_ov000_020b504c_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e09b4_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e09ac_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cec_001.cpp"),
+            Object("001_SceneInit/code_020bf0a0.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0ce0_34_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0d00_001.cpp"),
             Object("001_SceneInit/CargoManager_001.cpp"),
             Object("001_SceneInit/PassengerManager_001.cpp"),
             Object("001_SceneInit/UnkStruct_027e0cf8_08_00_001.cpp"),
+            Object("001_SceneInit/UnkStruct_ov020_020e8544_001.cpp"),
+            Object("001_SceneInit/code_020bfdd0.cpp"),
             Object("001_SceneInit/Game/AdventureModeManager_001.cpp"),
             Object("001_SceneInit/Game/GameModeAdventure_001.cpp"),
+            Object("001_SceneInit/code_020c099c.cpp"),
         ],
         extra_cflags=["-thumb"],
     ),
@@ -1368,6 +1385,12 @@ config.libs = [
         ]
     ),
     GameLib(
+        "Overlay 97",
+        [
+            Object("097_TrainMsg/TrainMsg.cpp"),
+        ]
+    ),
+    GameLib(
         "Overlay 98",
         [
             Object("098_MapWater/Actor/ActorUnkEFRI.cpp"),
@@ -1384,6 +1407,12 @@ config.libs = [
             Object("099_MapLava/Actor/ActorUnkEFRL.cpp"),
             Object("099_MapLava/Actor/ActorUnkEFWL.cpp"),
             Object("099_MapLava/Actor/ActorUnkVOLV.cpp"),
+        ]
+    ),
+    GameLib(
+        "Overlay 100",
+        [
+            Object("100_CollectMsg/CollectMsg.cpp"),
         ]
     ),
     GameLib(

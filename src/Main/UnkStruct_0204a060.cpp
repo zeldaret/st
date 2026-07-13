@@ -2,12 +2,11 @@
 #include "Game/Game.hpp"
 #include "Game/GameMode.hpp"
 #include "Game/GameModeFileSelect.hpp"
+#include "Game/GameModeTitleScreen.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "versions.h"
-
-extern "C" void func_ov001_020be078();
 
 THUMB_BEGIN
 
@@ -16,11 +15,11 @@ bool UnkStruct_0204a060::vfunc_0C(void) {
 }
 
 void UnkStruct_0204a060::func_020183b8(void) {
-    func_ov001_020be078();
+    GameModeTitleScreen::Create();
 }
 
 void UnkStruct_0204a060::func_020183c0(void) {
-    this->func_020183d4(false, (GameModeCreateCallback) func_ov001_020be078, 1);
+    this->func_020183d4(false, GameModeTitleScreen::Create, 1);
 }
 
 bool UnkStruct_0204a060::func_020183d4(bool param1, GameModeCreateCallback createFunc, unk32 param3) {

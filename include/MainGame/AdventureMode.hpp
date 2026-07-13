@@ -947,7 +947,7 @@ public:
     /* 1C4 */ SceneInfos mUnk_1CC;
     /* 1D4 */
 
-    AdventureModeManager(unk32 param1);
+    AdventureModeManager(UnkStruct_0204a110_Sub2 *param1);
 
     // data_ov024_020d7c18 vtable
     /* 08 */ virtual ~AdventureModeManager() override;
@@ -1007,7 +1007,7 @@ public:
     bool func_ov024_020c6dec();
     void func_ov024_020c699c();
 
-    static AdventureModeManager *Create(unk32 param1);
+    static GameModeManagerBase *Create(UnkStruct_0204a110_Sub2 *param1);
     static void func_ov001_020c00d4();
     static void func_ov001_020c0104();
     static void func_ov001_020c0194();

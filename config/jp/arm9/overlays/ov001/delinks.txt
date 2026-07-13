@@ -101,6 +101,57 @@ src/001_SceneInit/Player/PlayerLinkActor_001.cpp:
     complete
     .text       start:0x020be1e4 end:0x020be4e8
 
+src/001_SceneInit/UnkStruct_027e0ce0_1C_001.cpp:
+    .text       start:0x020be4e8 end:0x020bed5c
+    .data       start:0x020c44b0 end:0x020c44c0
+
+src/001_SceneInit/UnkStruct_0204a110_001.cpp:
+    complete
+    .text       start:0x020bed5c end:0x020bf010
+
+src/001_SceneInit/UnkStruct_ov024_020d86a0_001.cpp:
+    complete
+    .text       start:0x020bf010 end:0x020bf09c
+
+src/001_SceneInit/UnkStruct_ov000_020b50c0_001.cpp:
+    complete
+    .text       start:0x020bf09c end:0x020bf8a8
+
+src/001_SceneInit/Game/GameModeCreate.cpp:
+    complete
+    .text       start:0x020bf8a8 end:0x020bf98c
+
+src/001_SceneInit/ZeldaCollisionBinary.cpp:
+    complete
+    .text       start:0x020bf98c end:0x020bfb24
+
+src/001_SceneInit/UnkStruct_027e09c0_001.cpp:
+    complete
+    .text       start:0x020bfb24 end:0x020bfd58
+
+src/001_SceneInit/UnkStruct_ov000_020b504c_001.cpp:
+    complete
+    .text       start:0x020bfd58 end:0x020c0294
+    .data       start:0x020c44c0 end:0x020c462c
+
+src/001_SceneInit/UnkStruct_027e09b4_001.cpp:
+    .text       start:0x020c0294 end:0x020c0338
+
+src/001_SceneInit/UnkStruct_027e09ac_001.cpp:
+    .text       start:0x020c0338 end:0x020c0568
+
+src/001_SceneInit/UnkStruct_027e0cec_001.cpp:
+    .text       start:0x020c0568 end:0x020c08f4
+
+src/001_SceneInit/code_020bf0a0.cpp:
+    .text       start:0x020c08f4 end:0x020c0a0c
+
+src/001_SceneInit/UnkStruct_027e0ce0_34_001.cpp:
+    .text       start:0x020c0a0c end:0x020c0d00
+
+src/001_SceneInit/UnkStruct_027e0d00_001.cpp:
+    .text       start:0x020c0d00 end:0x020c1054
+
 src/001_SceneInit/CargoManager_001.cpp:
     complete
     .text       start:0x020c1054 end:0x020c10c4
@@ -111,8 +162,18 @@ src/001_SceneInit/PassengerManager_001.cpp:
 src/001_SceneInit/UnkStruct_027e0cf8_08_00_001.cpp:
     .text       start:0x020c12a4 end:0x020c1514
 
+src/001_SceneInit/UnkStruct_ov020_020e8544_001.cpp:
+    .text       start:0x020c1514 end:0x020c1624
+
+src/001_SceneInit/code_020bfdd0.cpp:
+    .text       start:0x020c1624 end:0x020c17c8
+
 src/001_SceneInit/Game/AdventureModeManager_001.cpp:
     .text       start:0x020c17c8 end:0x020c2198
 
 src/001_SceneInit/Game/GameModeAdventure_001.cpp:
+    complete
     .text       start:0x020c2198 end:0x020c21f0
+
+src/001_SceneInit/code_020c099c.cpp:
+    .text       start:0x020c21f0 end:0x020c2278

@@ -15,7 +15,7 @@
 #include <printf.h>
 #include <vector>
 
-extern "C" BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, unk32);
+extern "C" BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, void *);
 extern "C" void func_ov089_02165c34(void *);
 extern AABB data_027e0ca8;
 extern AABB data_027e0cc0;
@@ -96,9 +96,9 @@ UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param
     VecFx32 sp18;
     VecFx32 spC;
 
-    this->mUnk_0A0 = 0;
-    this->mUnk_0A4 = 0;
-    this->mUnk_0A8 = 0;
+    this->mUnk_0A0.x = 0;
+    this->mUnk_0A0.y = 0;
+    this->mUnk_0A0.z = 0;
 
     fx32 y = (this->mUnk_11C << 14);
     fx32 z = ((u32) (u16) this->mUnk_09C.y >> 1) << 12;
@@ -282,7 +282,7 @@ void UnkStruct_027e0cd8_0C_Base::LoadSceneModel(const EntranceInfo *param1) {
     this->mUnk_070.mUnk_04 = (char *) local_78;
     this->mUnk_070.vfunc_08(0x10);
 
-    BMDSectionModel *pBMD = func_ov000_0205abcc(&local_50, &this->mUnk_070, 0x01, 0x00, 0x00);
+    BMDSectionModel *pBMD = func_ov000_0205abcc(&local_50, &this->mUnk_070, 0x01, 0x00, NULL);
     G3d_Model *pModel     = G3d_GetModelPtr(pBMD);
     G3d_0200e6a0(pModel, 0x00, 0x40);
     G3d_0200e6a0(pModel, 0x00, 0x80);

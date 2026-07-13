@@ -8,6 +8,9 @@
 #include <nitro/mi.h>
 
 class GameModeManagerBase;
+class UnkStruct_0204a110_Sub2;
+
+typedef GameModeManagerBase *(*GameModeMgrCreateCallback)(UnkStruct_0204a110_Sub2 *param1);
 
 struct UnkStruct_0204a110_Sub2_000_158 {
     u32 mUnk_00[3];
@@ -60,8 +63,13 @@ public:
     /* 360 */
 
     UnkStruct_0204a110_Sub2();
-    void func_0201c890(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+
+    // main
+    void func_0201c890(unk32 param1, unk32 param2, bool param3, bool param4, bool param5);
     void func_0201ca28(unk32 param1);
+
+    // overlay 1
+    void func_ov001_020bd7c0();
 };
 
 class UnkStruct_0204a110_Sub3_00 {
@@ -197,6 +205,7 @@ public:
 
     UnkStruct_0204a110_Sub8();
 
+    void func_0201de24(void);
     void func_0201e588(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_0201e698(void);
 };
@@ -236,7 +245,7 @@ public:
     /* DBC */ STRUCT_PAD(0xDBC, 0xDC0);
     /* DC0 */ UnkStruct_0204a110_Sub7 mUnk_DC0;
     /* DDC */ UnkStruct_0204a110_Sub8 mUnk_DDC;
-    /* DEC */ GameModeManagerBase *mUnk_DEC;
+    /* DEC */ GameModeManagerBase *mpManager;
     /* DF0 */ u16 mUnk_DF0;
     /* DF2 */ unk8 mUnk_DF2;
     /* DF3 */ unk8 mUnk_DF3;
@@ -287,10 +296,10 @@ public:
     UnkStruct_func_02019590 *func_02019590(unk16 param1, unk32 param2);
 
     // overlay 1
-    void func_ov001_020bd514(unk32 param1, void *param2, unk32 param3, unk32 param4);
+    void func_ov001_020bd514(unk32 param1, GameModeMgrCreateCallback createCallback, bool param3, bool param4);
     void func_ov001_020bd58c(void);
-    void func_ov001_020bd638(void);
     void func_ov001_020bd5b0(void);
+    void func_ov001_020bd638(void);
     void func_ov001_020bd678(void);
     void func_ov001_020bd68c(void);
 

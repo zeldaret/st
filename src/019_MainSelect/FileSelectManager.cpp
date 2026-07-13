@@ -5,11 +5,11 @@
 #include "Unknown/UnkStruct_ov003_020ba740.hpp"
 #include <nitro/reg.h>
 
-const unk16 data_ov019_020d1bb0[] = {0x01, 0x37, 0x38, 0x39, 0x3C, 0x00};
+const s16 data_ov019_020d1bb0[] = {0x01, 0x37, 0x38, 0x39, 0x3C, 0x00};
 
 static const UnkStruct_ov019_020d1d80 data_ov019_020d1db4(0x00020002);
 
-GameModeManagerBase *FileSelectManager::Create(unk32 param1) {
+GameModeManagerBase *FileSelectManager::Create(UnkStruct_0204a110_Sub2 *param1) {
     return new(HeapIndex_1) FileSelectManager(param1);
 }
 
@@ -116,6 +116,4 @@ void FileSelectManager::func_ov019_020c51a8() {
     delete data_0204a088;
 }
 
-UnkStruct_0204a088_Base::~UnkStruct_0204a088_Base() {
-    data_0204a088 = NULL;
-}
+DECL_INSTANCE_DTOR(UnkStruct_0204a088, data_0204a088);

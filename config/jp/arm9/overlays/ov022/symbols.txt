@@ -1,7 +1,7 @@
 func_ov022_020eb2c0 kind:function(arm,size=0x24) addr:0x020eb2c0
 func_ov022_020eb2e4 kind:function(arm,size=0x24) addr:0x020eb2e4
 func_ov022_020eb308 kind:function(arm,size=0xc) addr:0x020eb308
-func_ov022_020eb314 kind:function(arm,size=0x24) addr:0x020eb314
+_ZN20GameModeDownloadPlay14CreateInstanceEv kind:function(arm,size=0x24) addr:0x020eb314
 func_ov022_020eb338 kind:function(arm,size=0x124) addr:0x020eb338
 func_ov022_020eb45c kind:function(arm,size=0xb8) addr:0x020eb45c
 _ZN19func_ov022_020eb514D0Ev kind:function(arm,size=0xc0) addr:0x020eb514

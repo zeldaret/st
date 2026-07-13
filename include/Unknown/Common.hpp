@@ -950,6 +950,19 @@ public:
     void func_ov000_020a0334();
 };
 
+class UnkSystem7_Derived2 : public UnkSystem7 {
+public:
+    /* 00 (base) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */
+
+    UnkSystem7_Derived2(UnkSystem7_UnkStruct_00 *param1, unk32 param2, unk32 param3) :
+        UnkSystem7(param1),
+        mUnk_04(param2),
+        mUnk_08(param3) {}
+};
+
 class UnkStruct_PlayerGet_ec : public UnkSystem7 {
 public:
     /* 00 (base) */
@@ -1243,3 +1256,15 @@ public:
 
     UnkStruct_PlayerGet_74_base();
 };
+
+struct UnkStruct_ov000_020aa88c {
+    /* 00 */ bool mUnk_00;
+    /* 01 */ bool mUnk_01;
+    /* 02 */ bool mUnk_02;
+    /* 03 */ bool mUnk_03;
+    /* 04 */ bool mUnk_04;
+    /* 05 */ unk8 mUnk_05;
+    /* 06 */ u16 mUnk_06;
+    /* 08 */
+};
+extern UnkStruct_ov000_020aa88c data_ov000_020aa88c[];

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Save/SaveFile.hpp"
 #include "types.h"
 
 class UnkStruct_ov000_020b4eec {
@@ -10,7 +11,7 @@ public:
 
     UnkStruct_ov000_020b4eec();
 
-    SaveFile *func_ov001_020be12c();
+    GameSaveSlot *func_ov001_020be12c();
 };
 
 extern UnkStruct_ov000_020b4eec data_ov000_020b4eec;

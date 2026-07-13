@@ -5,7 +5,7 @@
 #include "LinkList.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
-#include "Unknown/UnkStruct_ov000_02067bc4.hpp"
+#include "Unknown/UnkStruct_ov000_020b504c.hpp"
 #include "types.h"
 
 class GameModeFileSelect;
