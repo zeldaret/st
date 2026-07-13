@@ -79,13 +79,15 @@ public:
     /* 3C */ virtual void vfunc_3C() override;                           // func_ov031_020ee760
 };
 
-class UnkStruct_ov031_021136e4 : public ActorUnkZLSL_27CC {
+class ActorUnkZLSL_2700 : public ActorUnkZLSL_27CC {
 public:
     /* 00 (base) */
     /* 04 */
 
     // data_ov031_021136e4
-    /* 00 */ virtual ~UnkStruct_ov031_021136e4() override; // func_ov031_020ea50c (T) & func_ov031_020ee7b8
+    /* 00 */ virtual ~ActorUnkZLSL_2700() override; // func_ov031_020ea50c (T) & func_ov031_020ee7b8
+
+    void func_ov000_02099ddc(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3);
 };
 
 class UnkStruct_ov000_020b31f0 : public UnkStruct_ov000_020b31a8 {
@@ -174,7 +176,9 @@ public:
     /* 1620 */ ModelRender_ov031_02113670 mUnk_1620;
     /* 1680 */ STRUCT_PAD(0x1680, 0x1690);
     /* 1690 */ ActorUnkZLSL_1690 mUnk_1690;
-    /* 1694 */ STRUCT_PAD(0x1694, 0x276C);
+    /* 1694 */ STRUCT_PAD(0x1694, 0x2700);
+    /* 2700 */ ActorUnkZLSL_2700 mUnk_2700;
+    /* 2704 */ STRUCT_PAD(0x271C, 0x276C);
     /* 276C */ ModelRender_ov031_02113670 mUnk_276C;
     /* 27CC */ ActorUnkZLSL_27CC mUnk_27CC;
     /* 1694 */ STRUCT_PAD(0x27E8, 0x2800);

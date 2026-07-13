@@ -54,7 +54,7 @@ public:
     /* 10 */ virtual Actor_Derived1_94_vfunc_10 *vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
-    /* 1C */ virtual void vfunc_1C();
+    /* 1C */ virtual void vfunc_1C(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28();
@@ -147,8 +147,8 @@ public:
     /* 0E0 */ unk16 mUnk_0E0;
     /* 0E0 */ unk16 mUnk_0E2;
     /* 0E4 */ void (*mUnk_0E4)(); // callback
-    /* 0E8 */ unk16 mUnk_0E8;
-    /* 0E8 */ unk16 mUnk_0EA;
+    /* 0E8 */ volatile u16 mUnk_0E8;
+    /* 0E8 */ volatile u16 mUnk_0EA;
     /* 0EC */ Actor_Derived1_EC mUnk_0EC;
     /* 104 */ Cylinder mUnk_104;
     /* 114 */ unk32 mUnk_114;
