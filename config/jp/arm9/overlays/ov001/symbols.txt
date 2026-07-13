@@ -360,7 +360,7 @@ _ZN18UnkStruct_027e0cec19func_ov001_020bf028Ev kind:function(thumb,size=0x1c) ad
 _ZN21UnkStruct_027e0cec_00C1EPv kind:function(arm,size=0x38) addr:0x020c0898
 _ZN8InstanceI18UnkStruct_027e0cecEC2Ev kind:function(arm,size=0x10) addr:0x020c08d0
 _ZN8InstanceI18UnkStruct_027e0cecED2Ev kind:function(arm,size=0x14) addr:0x020c08e0
-func_ov001_020bf0a0 kind:function(thumb,size=0x14) addr:0x020c08f4
+_ZN21UnkStruct_027e0cec_1819func_ov001_020bf0a0Em kind:function(thumb,size=0x14) addr:0x020c08f4
 _ZN21UnkStruct_027e0cec_18C1EP14UnkFileSystem1bi kind:function(thumb,size=0xf4) addr:0x020c0908
 _ZN21UnkStruct_027e0cec_18D1Ev kind:function(thumb,size=0x2) addr:0x020c09fc
 _ZN21UnkStruct_027e0cec_18D0Ev kind:function(thumb,size=0xc) addr:0x020c0a00
@@ -626,7 +626,7 @@ data_ov001_020c2f28 kind:data(any) addr:0x020c4768 local
 @16 kind:data(byte[0xd]) addr:0x020c47dc local
 @17 kind:data(byte[0x5]) addr:0x020c47ec local
 @18 kind:data(byte[0x10]) addr:0x020c47f4 local
-_ZTV19data_ov001_020c480c kind:data(any) addr:0x020c4804
+_ZTV21UnkStruct_027e0cec_18 kind:data(any) addr:0x020c4804
 data_ov001_020c4814 kind:data(any) addr:0x020c4814
 data_ov001_020c4818 kind:data(any) addr:0x020c4818
 _ZGVN14StaticInstanceI16CourseInitBinaryE9sInstanceE kind:bss addr:0x020c4820

@@ -2,6 +2,7 @@
 
 #include "LinkList.hpp"
 #include "Player/PlayerGet.hpp"
+#include "Unknown/UnkFileSystem.hpp"
 #include "math.hpp"
 #include "types.h"
 
@@ -27,10 +28,23 @@ public:
     /* 00 */ virtual void vfunc_00();
 };
 
+struct UnkStruct_027e0cec_18_04 {
+    /* 00 */ STRUCT_PAD(0x00, 0x3C);
+    /* 3C */ unk32 mUnk_3C;
+    /* 40 */ unk32 mUnk_40;
+    /* 44 */ void *mUnk_44;
+
+    // overlay 0
+    void func_ov000_02054a78();
+    void func_ov000_02054a88();
+    void func_ov000_0205498c(void *pFile);
+    void func_ov000_02054998(void *param1);
+};
+
 class UnkStruct_027e0cec_18 {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
+    /* 04 */ UnkStruct_027e0cec_18_04 *mUnk_04;
     /* 08 */ unk16 mUnk_08;
     /* 0A */ unk16 mUnk_0A; // pad?
     /* 0C */
@@ -43,6 +57,9 @@ public:
 
     // overlay 0
     void func_ov000_020a0460();
+
+    // overlay 1
+    static void *func_ov001_020bf0a0(size_t length);
 };
 
 class UnkStruct_027e0cec : public AutoInstance<UnkStruct_027e0cec> {
