@@ -9,7 +9,6 @@
 #include "Player/PlayerLink.hpp"
 #include "Player/TouchControl.hpp"
 #include "Save/SaveManager.hpp"
-#include "System/SysNew.hpp"
 #include "input.hpp"
 
 #include <nitro/math.h>
@@ -731,6 +730,7 @@ public:
     bool func_ov000_0208bc1c(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);
     void func_ov000_0208bd30(bool param1, unk32 param2, unk32 param3, unk32 param4);
+    bool func_ov000_0208be70(VecFx32 param1);
     G3d_Model *func_ov000_0208ed30(unk32 param1, unk32 param2, char *param3);
 
     static UnkStruct_027e0ce0_34 *func_ov000_0205c904();

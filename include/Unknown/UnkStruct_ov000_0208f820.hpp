@@ -5,9 +5,10 @@
 
 #include "Actor/ActorRef.hpp"
 #include "Item/ItemManager.hpp"
-#include "Player/PlayerLink.hpp"
-#include "System/SysNew.hpp"
+#include "Player/PlayerActorBase.hpp"
 #include "math.hpp"
+
+class PlayerLinkActor_A0;
 
 class UnkStruct_ov000_0208f820_14 {
 public:
@@ -134,7 +135,7 @@ public:
         this->mItemId      = itemId;
     }
 
-    UnkStruct_ov000_0208f820_04() {}
+    UnkStruct_ov000_0208f820_04() {};
 };
 
 class UnkStruct_ov000_0208f820_44 {

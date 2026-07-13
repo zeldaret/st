@@ -1,8 +1,5 @@
 #pragma once
 
-#include "Actor/ActorId.hpp"
-#include "Actor/ActorRef.hpp"
-#include "Map/MapObjectId.hpp"
 #include "types.h"
 
 #include <nitro/math.h>

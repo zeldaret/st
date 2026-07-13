@@ -8,6 +8,12 @@
 
 class UnkStruct_027e0cd8_0C_Base;
 
+struct UnkStruct_ov000_0207de98 {
+    VecFx32 vec;
+    unk32 param1;
+    unk32 param2;
+};
+
 class UnkStruct_027e09c0_60 {
 public:
     /* 00 */ unk32 mUnk_00;
@@ -61,7 +67,9 @@ public:
 
     // overlay 0
     void func_ov000_0207da40();
+    void func_ov000_0207de98(ActorRef param1, UnkStruct_ov000_0207de98 *param2, Actor_38 *param3);
     void func_ov000_0207e58c(ActorRef param1, unk32 param2, u8 param3, UnkStruct_ov031_Items_01 *param4);
+    bool func_ov000_0207e458(unk32 param1, unk32 param2, VecFx32 *param3, unk32 param4, VecFx32 *param5, ActorRef param6);
 
     // overlay 1
     void func_ov001_020be394();
