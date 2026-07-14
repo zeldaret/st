@@ -1,0 +1,21 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#include "Actor/ActorUnkE3TT.hpp"
+#include "System/SysNew.hpp"
+
+DECL_PROFILE(ActorProfileUnkE3TT);
+
+Actor *ActorProfileUnkE3TT::Create() {
+    return new(HeapIndex_2) ActorUnkE3TT();
+}
+
+ActorProfileUnkE3TT::ActorProfileUnkE3TT() :
+    ActorProfile(ActorId_E3TT) {}
+
+ActorUnkE3TT::ActorUnkE3TT() {}
+
+void ActorUnkE3TT::func_ov090_021711a4(void) {}
+void ActorUnkE3TT::func_ov090_021711d4(void) {}
+
+ActorUnkE3TT::~ActorUnkE3TT() {}
+ActorProfileUnkE3TT::~ActorProfileUnkE3TT() {}

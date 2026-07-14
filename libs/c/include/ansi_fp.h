@@ -8,14 +8,6 @@ extern "C" {
 #define FLOATDECIMAL ((char) (0))
 #define FIXEDDECIMAL ((char) (1))
 
-#define DBL_MIN 0x1.0000000000000P-1022
-#define DBL_EPSILON 0x1.0000000000000P-52
-#define DBL_MAX 0x1.fffffffffffffP1023
-
-#define LDBL_MIN 0x1.0000000000000P-1022L
-#define LDBL_EPSILON 0x1.0000000000000P-52L
-#define LDBL_MAX 0x1.fffffffffffffP1023L
-
 typedef struct decimal {
     unsigned char sgn;
     char unused;

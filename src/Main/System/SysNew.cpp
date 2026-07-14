@@ -16,7 +16,7 @@ unk32 func_020011f4(void *);
 extern char *data_0204372c[];
 
 // non-matching
-ARM void *SysNew(UnkStruct_02011e10_Sub1 *param1, s32 length, s32 param3) {
+void *SysNew(UnkStruct_02011e10_Sub1 *param1, s32 length, s32 param3) {
     void *newPtr = NULL;
 
     switch (param1->mId) {
@@ -39,7 +39,7 @@ ARM void *SysNew(UnkStruct_02011e10_Sub1 *param1, s32 length, s32 param3) {
     return newPtr;
 }
 
-ARM void SysDelete(void *ptr) {
+void SysDelete(void *ptr) {
     UnkId *pUnkId;
 
     if (ptr != NULL) {
@@ -61,15 +61,15 @@ ARM void SysDelete(void *ptr) {
     }
 }
 
-ARM void *func_02011f10(s32 length) {
+void *func_02011f10(s32 length) {
     return SysNew(data_0204999c.mUnk_00[1], length, 4);
 }
 
-ARM void *func_02011f30(s32 length) {
+void *func_02011f30(s32 length) {
     return func_02011f10(length);
 }
 
-ARM void *operator new(unsigned long length, u32 id, u32 idLength) {
+void *operator new(unsigned long length, u32 id, u32 idLength) {
     void *pvVar1;
     UnkStruct_02011e10_Sub1 *pUVar5;
 
@@ -91,10 +91,10 @@ ARM void *operator new(unsigned long length, u32 id, u32 idLength) {
     return pvVar1;
 }
 
-ARM void operator delete(void *ptr) {
+void operator delete(void *ptr) {
     SysDelete(ptr);
 }
 
-ARM void SysObject::operator delete[](void *ptr) {
+void operator delete[](void *ptr) {
     SysDelete(ptr);
 }

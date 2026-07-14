@@ -2,14 +2,19 @@
 
 #include "types.h"
 
-#include "nitro/math.h"
+#include "math.hpp"
 
 struct Cylinder {
-    Vec3p pos;
-    q20 size; // height and radius
+    /* 00 */ VecFx32 pos;
+    /* 0C */ fx32 size; // height and radius
+    /* 10 */
 
-    inline Cylinder() {}
-    inline Cylinder(q20 size) {
+    Cylinder() {}
+    Cylinder(fx32 size) {
+        this->Init(size);
+    }
+
+    void Init(fx32 size) {
         pos.x = 0;
         pos.y = size;
         pos.z = 0;
@@ -17,8 +22,8 @@ struct Cylinder {
         this->size = size;
     }
 
-    inline void MakeEmpty() {
-        pos  = gVec3p_ZERO;
+    void MakeEmpty() {
+        pos  = gVecFx32_ZERO;
         size = -1;
     }
 };

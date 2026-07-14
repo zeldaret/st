@@ -1,6 +1,6 @@
 func_ov002_020b6520 kind:function(thumb,size=0x14) addr:0x020b6520
 func_ov002_020b6534 kind:function(thumb,size=0x2) addr:0x020b6534
-func_ov002_020b6538 kind:function(thumb,size=0xc) addr:0x020b6538
+_ZN19func_ov002_020b6538D0Ev kind:function(thumb,size=0xc) addr:0x020b6538
 func_ov002_020b6544 kind:function(thumb,size=0x94) addr:0x020b6544
 func_ov002_020b65d8 kind:function(thumb,size=0x14) addr:0x020b65d8
 func_ov002_020b65ec kind:function(thumb,size=0x8) addr:0x020b65ec
@@ -32,7 +32,7 @@ func_ov002_020b6d50 kind:function(thumb,size=0x18) addr:0x020b6d50
 func_ov002_020b6d68 kind:function(thumb,size=0x18) addr:0x020b6d68
 func_ov002_020b6d80 kind:function(thumb,size=0x70) addr:0x020b6d80
 func_ov002_020b6df0 kind:function(thumb,size=0x50) addr:0x020b6df0
-func_ov002_020b6e40 kind:function(thumb,size=0x54) addr:0x020b6e40
+_ZN19func_ov002_020b6e40D0Ev kind:function(thumb,size=0x54) addr:0x020b6e40
 func_ov002_020b6e94 kind:function(thumb,size=0x58) addr:0x020b6e94
 func_ov002_020b6eec kind:function(thumb,size=0x26) addr:0x020b6eec
 func_ov002_020b6f14 kind:function(thumb,size=0xe) addr:0x020b6f14
@@ -221,15 +221,15 @@ data_ov002_020bcd8c kind:data(any) addr:0x020bcd8c
 data_ov002_020bcd94 kind:data(any) addr:0x020bcd94
 data_ov002_020bcd9c kind:data(any) addr:0x020bcd9c
 data_ov002_020bcda4 kind:data(any) addr:0x020bcda4
-data_ov002_020bcdb4 kind:data(any) addr:0x020bcdb4
+_ZTV19data_ov002_020bcdac kind:data(any) addr:0x020bcdac
 data_ov002_020bcdc4 kind:data(any) addr:0x020bcdc4
 data_ov002_020bcdcc kind:data(any) addr:0x020bcdcc
 data_ov002_020bcde0 kind:data(any) addr:0x020bcde0
 data_ov002_020bcdec kind:data(any) addr:0x020bcdec
 data_ov002_020bcdf8 kind:data(any) addr:0x020bcdf8
 data_ov002_020bce10 kind:data(any) addr:0x020bce10
-data_ov002_020bce28 kind:data(any) addr:0x020bce28
-data_ov002_020bce40 kind:data(any) addr:0x020bce40
+_ZTV19data_ov002_020bce20 kind:data(any) addr:0x020bce20
+_ZTV19data_ov002_020bce38 kind:data(any) addr:0x020bce38
 data_ov002_020bce50 kind:data(any) addr:0x020bce50
 data_ov002_020bce68 kind:data(any) addr:0x020bce68
 data_ov002_020bce6c kind:data(any) addr:0x020bce6c

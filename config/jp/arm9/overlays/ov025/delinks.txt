@@ -1,7 +1,7 @@
     .text       start:0x020c6060 end:0x020c7294 kind:code align:32
     .rodata     start:0x020c7294 end:0x020c7298 kind:rodata align:4
     .init       start:0x020c7298 end:0x020c72f0 kind:code align:4
-    .ctor       start:0x020c72f0 end:0x020c72f8 kind:rodata align:4
+    .ctor       start:0x020c72f0 end:0x020c72f4 kind:rodata align:4
     .data       start:0x020c7300 end:0x020c7420 kind:data align:32
     .bss        start:0x020c7420 end:0x020c7420 kind:bss align:32
 
@@ -19,5 +19,5 @@ src/025_Title/TitleScreenManager.cpp:
 src/025_Title/TitleScreen.cpp:
     .text       start:0x020c6490 end:0x020c7294
     .init       start:0x020c7298 end:0x020c72f0
-    .ctor       start:0x020c72f0 end:0x020c72f8
+    .ctor       start:0x020c72f0 end:0x020c72f4
     .data       start:0x020c7380 end:0x020c7420

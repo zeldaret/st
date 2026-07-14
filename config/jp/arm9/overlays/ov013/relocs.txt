@@ -20,7 +20,7 @@ from:0x020b7fe8 kind:arm_call to:0x020611a8 module:overlay(0)
 from:0x020b8098 kind:arm_call to:0x020611a8 module:overlay(0)
 from:0x020b8128 kind:arm_call to:0x01ff9258 module:itcm
 from:0x020b812c kind:arm_call to:0x01ffb474 module:itcm
-from:0x020b8218 kind:load to:0x020b8868 module:overlay(13)
+from:0x020b8218 kind:load to:0x020b8860 add:0x8 module:overlay(13)
 from:0x020b821c kind:load to:0x020b885c module:overlay(13)
 from:0x020b8220 kind:load to:0x0204b164 module:main
 from:0x020b8224 kind:load to:0x020b6b48 module:overlay(0)

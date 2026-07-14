@@ -1,7 +1,7 @@
     .text       start:0x020c6060 end:0x020d33d0 kind:code align:32
     .rodata     start:0x020d33d0 end:0x020d341c kind:rodata align:4
     .init       start:0x020d341c end:0x020d3584 kind:code align:4
-    .ctor       start:0x020d3584 end:0x020d359c kind:rodata align:4
+    .ctor       start:0x020d3584 end:0x020d3598 kind:rodata align:4
     .data       start:0x020d35a0 end:0x020d3ce0 kind:data align:32
     .bss        start:0x020d3ce0 end:0x02118900 kind:bss align:32
 
@@ -13,8 +13,8 @@ src/019_MainSelect/GameModeFileSelect.cpp:
 
 src/019_MainSelect/FileSelectManager.cpp:
     .text       start:0x020c639c end:0x020c6a20
-    .init       start:0x020d3434 end:0x020d344c
     .rodata     start:0x020d33d0 end:0x020d33dc
+    .init       start:0x020d3434 end:0x020d344c
     .ctor       start:0x020d3588 end:0x020d358c
     .data       start:0x020d35d4 end:0x020d3618
 
@@ -24,8 +24,8 @@ src/019_MainSelect/019_UnkSystem1_ov019_Derived1.cpp:
 
 src/019_MainSelect/FileSelectMain.cpp:
     .text       start:0x020c6e50 end:0x020ccf88
-    .init       start:0x020d344c end:0x020d34f4
     .rodata     start:0x020d33dc end:0x020d33ec
+    .init       start:0x020d344c end:0x020d34f4
     .ctor       start:0x020d358c end:0x020d3590
     .data       start:0x020d366c end:0x020d397c
     .bss        start:0x020d3ce0 end:0x020d3ce8
@@ -42,7 +42,7 @@ src/019_MainSelect/FileSelectOptions.cpp:
 src/019_MainSelect/FileSelectMicTest.cpp:
     .text       start:0x020d0040 end:0x020d0aac
     .init       start:0x020d355c end:0x020d3584
-    .ctor       start:0x020d3594 end:0x020d359c
+    .ctor       start:0x020d3594 end:0x020d3598
     .data       start:0x020d3a68 end:0x020d3ac0
 
 src/019_MainSelect/FileSelectSubScreen.cpp:

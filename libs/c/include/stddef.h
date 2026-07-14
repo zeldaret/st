@@ -28,10 +28,7 @@ typedef unsigned int size_t;
 #endif
 
 #ifndef __cplusplus
-typedef int bool;
 typedef unsigned short wchar_t;
-    #define true 1
-    #define false 0
 #endif
 
 #ifdef __cplusplus

@@ -1,0 +1,28 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#include "Actor/ActorUnkRBD2.hpp"
+#include "System/SysNew.hpp"
+
+DECL_PROFILE(ActorProfileUnkRBD2);
+
+Actor *ActorProfileUnkRBD2::Create() {
+    return new(HeapIndex_2) ActorUnkRBD2();
+}
+
+ActorProfileUnkRBD2::ActorProfileUnkRBD2() :
+    ActorProfile_Derived1(ActorId_RBD2) {}
+
+ActorUnkRBD2::ActorUnkRBD2() {}
+
+void ActorUnkRBD2::func_ov087_021615bc(void) {}
+void ActorUnkRBD2::func_ov087_021616cc(void) {}
+void ActorUnkRBD2::func_ov087_021616d0(void) {}
+void ActorUnkRBD2::func_ov087_0216174c(void) {}
+void ActorUnkRBD2::func_ov087_0216176c(void) {}
+void ActorUnkRBD2::func_ov087_021617e8(void) {}
+void ActorUnkRBD2::func_ov087_02161828(void) {}
+void ActorUnkRBD2::func_ov087_02161880(void) {}
+void ActorUnkRBD2::func_ov087_0216193c(void) {}
+
+ActorUnkRBD2::~ActorUnkRBD2() {}
+ActorProfileUnkRBD2::~ActorProfileUnkRBD2() {}

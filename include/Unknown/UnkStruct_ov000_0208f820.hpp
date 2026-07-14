@@ -3,49 +3,64 @@
 #include "global.h"
 #include "types.h"
 
+#include "Actor/ActorRef.hpp"
 #include "Item/ItemManager.hpp"
+#include "Player/PlayerLink.hpp"
 #include "System/SysNew.hpp"
-#include "nitro/math.h"
+#include "math.hpp"
 
 class UnkStruct_ov000_0208f820_14 {
 public:
     /* 00 */ unk8 mUnk_00[0x6C];
-    /* 6c */ unk32 mUnk_6c;
+    /* 6C */ unk32 mUnk_6C;
     /* 70 */ u16 mUnk_70;
     /* 72 */ unk16 mUnk_72;
     /* 74 */ unk32 mUnk_74;
     /* 78 */ unk32 mUnk_78;
-    /* 7c */ unk32 mUnk_7c;
+    /* 7C */ unk32 mUnk_7C;
     /* 80 */ unk32 mUnk_80;
     /* 84 */ unk32 mUnk_84;
     /* 88 */ unk32 mUnk_88;
-    /* 8c */ unk32 mUnk_8c;
+    /* 8C */ unk32 mUnk_8C;
     /* 90 */
 };
 
-class UnkStruct_PlayerGet_64 {
+class UnkStruct_PlayerGet_64_2 {
 public:
-    UnkStruct_PlayerGet_64(unk32 *param1, unk32 param2);
-    ~UnkStruct_PlayerGet_64();
+    /* 00 */ unk32 mUnk_00;
+
+    UnkStruct_PlayerGet_64_2(void *param1, unk32 param2);
+    ~UnkStruct_PlayerGet_64_2();
 
     void func_ov000_0208a100();
 };
 
 class UnkStruct_ov000_0208f820_28_98 {
 public:
-    /* 00 */ unk8 mUnk_00[0x38];
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ u16 mUnk_08;
+    /* 0C */ STRUCT_PAD(0x0C, 0x38);
     /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
-    /* 3c */ unk32 mUnk_3c;
-    /* 40 */ u16 mUnk_40;
+
+    void func_ov093_0216f76c(VecFx32 *param1, unk32 param2);
 };
 
 class UnkStruct_ov000_0208f820_28 {
 public:
-    /* 00 */ unk8 mUnk_00[0x54];
+    /* 00 */ STRUCT_PAD(0x00, 0x38);
+    /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
+    /* 42 */ STRUCT_PAD(0x44, 0x48);
+    /* 48 */ unk32 mUnk_48;
+    /* 48 */ unk32 mUnk_4C;
+    /* 48 */ unk32 mUnk_50;
     /* 54 */ ItemManager *pItemManager;
-    /* 58 */ unk8 mUnk_58[0x98 - 0x58];
+    /* 58 */ STRUCT_PAD(0x58, 0x94);
+    /* 94 */ unk32 mUnk_94;
     /* 98 */ UnkStruct_ov000_0208f820_28_98 *mUnk_98;
 
+    void func_ov000_0208cf20(unk32 param1, unk32 param2);
+    void func_ov000_0208d12c();
     void func_ov058_02152a24();
 };
 
@@ -54,66 +69,36 @@ public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
+    /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk8 mUnk_14[0x58 - 0x14];
+    /* 14 */ unk16 mUnk_14;
+    /* 16 */ unk16 mUnk_16;
+    /* 18 */ STRUCT_PAD(0x18, 0x26);
+    /* 26 */ unk16 mUnk_26;
+    /* 28 */ STRUCT_PAD(0x28, 0x58);
     /* 58 */ unk16 mUnk_58;
-};
-
-class UnkStruct_ov000_0208f820_30_10 {
-public:
-    void func_ov031_020e076c();
-};
-
-class UnkStruct_ov000_0208f820_30 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
-    /* 10 */ UnkStruct_ov000_0208f820_30_10 *mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1c */ unk32 mUnk_1c;
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ unk32 mUnk_24;
-    /* 28 */ unk8 mUnk_28[0x70 - 0x28];
-    /* 70 */ u32 mUnk_70;
-
-    void func_ov000_020921e4(unk32 param1);
-    void func_ov000_020936ec();
-    void func_ov000_02093a04();
-};
-
-class UnkStruct_ov000_0208f820_38 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-};
-
-class UnkStruct_ov000_0208f820_3c {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
+    /* 5A */ STRUCT_PAD(0x5A, 0x9C);
+    /* 9C */ unk32 mUnk_9C;
+    /* A0 */ STRUCT_PAD(0xA0, 0x148);
+    /* 148 */ u32 mUnk_148;
+    /* 14C */ unk32 mUnk_14C;
+    /* 150 */ ActorRef mUnk_150;
 };
 
 class UnkStruct_ov000_0208f820_40 {
 public:
-    /* 00 */ unk16 mUnk_00;
+    /* 00 */ u16 mUnk_00;
+    /* 00 */ s16 mUnk_02;
 };
 
-class UnkStruct_PlayerGet_vfunc_0c_param1 {
+class UnkStruct_PlayerGet_vfunc_0C_param1 {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1c */ ItemId mUnk_1c;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ VecFx32 mUnk_10;
+    /* 1C */ ItemId mUnk_1C;
 };
 
 class UnkStruct_ov000_0208f820_24 {
@@ -121,56 +106,75 @@ public:
     /* 00 */ unk8 mUnk_00[0x24];
     /* 24 */ unk8 mUnk_24;
     /* 25 */ unk8 mUnk_25;
+    /* 26 */ STRUCT_PAD(0x26, 0x78);
+    /* 78 */ void **mUnk_78;
+    /* 7C */ STRUCT_PAD(0x7C, 0x94);
+    /* 94 */ unk32 mUnk_94;
+    /* 98 */ unk32 mUnk_98;
+    /* 9C */ unk32 mUnk_9C;
+    /* A0 */ STRUCT_PAD(0xA0, 0xFE);
+    /* FE */ unk8 mUnk_FE;
+    /* FF */ unk8 mUnk_FF;
+    /* 100 */ unk32 mUnk_100;
+    /* 104 */ u16 mUnk_104;
 };
 
 class UnkStruct_ov000_0208f820_04 {
 public:
-    /* 00 */ u8 mUnk_00[4];
-    /* 04 */ u8 mUnk_04[4];
+    /* 00 */ ActorRef mUnk_00;
+    /* 04 */ ActorRef mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0c */ ItemId mItemId;
-    /* 14 */
+    /* 0C */ ItemId mItemId;
+    /* 10 */
 
     UnkStruct_ov000_0208f820_04(unk32 param1, unk32 param2, unk32 param3, ItemId itemId) {
-        *(u32 *) this->mUnk_00 = param1;
-        *(u32 *) this->mUnk_04 = param2;
-        this->mUnk_08          = param3;
-        this->mItemId          = itemId;
+        this->mUnk_00.data = param1;
+        this->mUnk_04.data = param2;
+        this->mUnk_08      = param3;
+        this->mItemId      = itemId;
     }
 
     UnkStruct_ov000_0208f820_04() {}
 };
 
-class UnkStruct_ov000_0208f820 : public SysObject {
+class UnkStruct_ov000_0208f820_44 {
+public:
+    void *mUnk_00;
+};
+
+class UnkStruct_ov000_0208f820 {
 public:
     /* 00 (vtable) */
     /* 04 */ UnkStruct_ov000_0208f820_04 mUnk_04;
     /* 14 */ UnkStruct_ov000_0208f820_14 *mUnk_14;
     /* 18 */ unk8 mUnk_18;
     /* 19 */ unk8 mUnk_19;
-    /* 1a */ unk8 mUnk_1a;
-    /* 1b */ unk8 mUnk_1b;
-    /* 1c */ unk32 mUnk_1c;
+    /* 1A */ unk8 mUnk_1A;
+    /* 1B */ unk8 mUnk_1B;
+    /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk32 mUnk_20;
     /* 24 */ UnkStruct_ov000_0208f820_24 *mUnk_24;
     /* 28 */ UnkStruct_ov000_0208f820_28 *mUnk_28;
-    /* 2c */ UnkStruct_ov000_0208f820_2c *mUnk_2c;
-    /* 30 */ UnkStruct_ov000_0208f820_30 *mUnk_30;
-    /* 34 */ Vec3p *mUnk_34;
-    /* 38 */ UnkStruct_ov000_0208f820_38 *mUnk_38;
-    /* 3c */ UnkStruct_ov000_0208f820_3c *mUnk_3c;
+    /* 2C */ UnkStruct_ov000_0208f820_2c *mUnk_2C;
+    /* 30 */ PlayerLinkActor_A0 *mUnk_30;
+    /* 34 */ VecFx32 *mUnk_34;
+    /* 38 */ VecFx32 *mUnk_38;
+    /* 3C */ VecFx32 *mUnk_3C;
     /* 40 */ UnkStruct_ov000_0208f820_40 *mUnk_40;
-    /* 44 */ unk32 *mUnk_44;
+    /* 44 */ UnkStruct_ov000_0208f820_44 *mUnk_44;
     /* 48 */
 
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual ~UnkStruct_ov000_0208f820();
-    /* 0c */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1);
-    /* 10 */ virtual void vfunc_10(unk32 param1);
+    /* 0C */ virtual void vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) = 0;
+    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2)                  = 0;
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3);
-    /* 1c */ virtual void vfunc_1c();
+    /* 1C */ virtual bool vfunc_1C(VecFx32 *param1);
     /* 20 */
 
     UnkStruct_ov000_0208f820();
+
+    bool func_ov000_020914b0(unk32 param1, VecFx32 *param2, unk32 param3);
+    bool func_ov000_02091e68(unk32 param1);
 };

@@ -1,0 +1,76 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#pragma once
+
+#include "Actor/Actor.hpp"
+#include "Actor/ActorProfile.hpp"
+#include "global.h"
+#include "types.h"
+
+// --- Actor NCCB ---
+
+class ActorUnkNCCB_C4 : public Actor_C4 {
+public:
+    ActorUnkNCCB_C4(Actor *param1);
+
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+};
+
+class ActorUnkNCCB : public Actor {
+public:
+    /* 00 (base) */
+    /* 94 */
+
+    ActorUnkNCCB();
+
+    /* 4C */ virtual ~ActorUnkNCCB() override;
+};
+
+class ActorProfileUnkNCCB : public ActorProfile_Derived1 {
+public:
+    /* 00 (base) */
+
+    ActorProfileUnkNCCB();
+    ~ActorProfileUnkNCCB();
+
+    /* 0C */ virtual Actor *Create();
+
+    static ActorProfileUnkNCCB *GetProfile();
+};
+
+// --- Actor NCMB ---
+
+class ActorUnkNCMB_C4 : public Actor_C4 {
+public:
+    ActorUnkNCMB_C4(Actor *param1);
+
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+};
+
+class ActorUnkNCMB : public Actor {
+public:
+    /* 00 (base) */
+    /* 94 */
+
+    ActorUnkNCMB();
+
+    /* 4C */ virtual ~ActorUnkNCMB() override;
+};
+
+class ActorProfileUnkNCMB : public ActorProfile_Derived1 {
+public:
+    /* 00 (base) */
+
+    ActorProfileUnkNCMB();
+    ~ActorProfileUnkNCMB();
+
+    /* 0C */ virtual Actor *Create();
+
+    static ActorProfileUnkNCMB *GetProfile();
+};

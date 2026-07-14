@@ -1,7 +1,7 @@
 func_ov003_020b6520 kind:function(arm,size=0x84) addr:0x020b6520
 func_ov003_020b65a4 kind:function(arm,size=0x11c) addr:0x020b65a4
-func_ov003_020b66c0 kind:function(arm,size=0x38) addr:0x020b66c0
-func_ov003_020b66f8 kind:function(arm,size=0x40) addr:0x020b66f8
+_ZN19func_ov003_020b66c0D1Ev kind:function(arm,size=0x38) addr:0x020b66c0
+_ZN19func_ov003_020b66f8D0Ev kind:function(arm,size=0x40) addr:0x020b66f8
 func_ov003_020b6738 kind:function(arm,size=0xd4) addr:0x020b6738
 func_ov003_020b680c kind:function(arm,size=0x94) addr:0x020b680c
 func_ov003_020b68a0 kind:function(arm,size=0x98) addr:0x020b68a0
@@ -11,8 +11,8 @@ func_ov003_020b69f8 kind:function(arm,size=0x28) addr:0x020b69f8
 func_ov003_020b6a20 kind:function(arm,size=0x48) addr:0x020b6a20
 func_ov003_020b6a68 kind:function(arm,size=0x2f8) addr:0x020b6a68
 func_ov003_020b6d60 kind:function(arm,size=0x14) addr:0x020b6d60
-func_ov003_020b6d74 kind:function(arm,size=0xc8) addr:0x020b6d74
-func_ov003_020b6e3c kind:function(arm,size=0xd0) addr:0x020b6e3c
+_ZN19func_ov003_020b6d74D1Ev kind:function(arm,size=0xc8) addr:0x020b6d74
+_ZN19func_ov003_020b6e3cD0Ev kind:function(arm,size=0xd0) addr:0x020b6e3c
 func_ov003_020b6f0c kind:function(arm,size=0x44) addr:0x020b6f0c
 func_ov003_020b6f50 kind:function(arm,size=0x44) addr:0x020b6f50
 func_ov003_020b6f94 kind:function(arm,size=0x94) addr:0x020b6f94
@@ -115,11 +115,11 @@ __sinit_ov003_020b9eb4 kind:function(arm,size=0x4c) addr:0x020b9eb4
 __sinit_ov003_020b9f00 kind:function(arm,size=0x1c) addr:0x020b9f00
 .p__sinit_ov003_020b9eb4 kind:data(word) addr:0x020b9f1c
 .p__sinit_ov003_020b9f00 kind:data(word) addr:0x020b9f20
-data_ov003_020b9f48 kind:data(any) addr:0x020b9f48
+_ZTV19data_ov003_020b9f40 kind:data(any) addr:0x020b9f40
 data_ov003_020b9f64 kind:data(any) addr:0x020b9f64
 data_ov003_020b9f8c kind:data(any) addr:0x020b9f8c
 data_ov003_020b9fc4 kind:data(any) addr:0x020b9fc4
-data_ov003_020ba004 kind:data(any) addr:0x020ba004
+_ZTV19data_ov003_020b9ffc kind:data(any) addr:0x020b9ffc
 data_ov003_020ba020 kind:data(any) addr:0x020ba020
 data_ov003_020ba024 kind:data(any) addr:0x020ba024
 data_ov003_020ba064 kind:data(any) addr:0x020ba064

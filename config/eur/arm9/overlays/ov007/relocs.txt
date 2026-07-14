@@ -192,7 +192,7 @@ from:0x020b7530 kind:arm_call to:0x02012fd0 module:main
 from:0x020b753c kind:arm_call to:0x020166cc module:main
 from:0x020b7548 kind:arm_call to:0x020166cc module:main
 from:0x020b7554 kind:arm_call to:0x020166cc module:main
-from:0x020b7564 kind:load to:0x020b8410 module:overlay(7)
+from:0x020b7564 kind:load to:0x020b8408 add:0x8 module:overlay(7)
 from:0x020b7568 kind:load to:0x0204a110 module:main
 from:0x020b756c kind:load to:0x0204999c module:main
 from:0x020b7570 kind:load to:0x020b8848 module:overlay(7)

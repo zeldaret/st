@@ -1,0 +1,45 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#pragma once
+
+#include "Actor/Actor.hpp"
+#include "Actor/ActorProfile.hpp"
+#include "global.h"
+#include "types.h"
+
+class ActorUnkSWDS_C4 : public Actor_C4 {
+public:
+    ActorUnkSWDS_C4(Actor *param1);
+
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+};
+
+class ActorUnkSWDS : public Actor {
+public:
+    /* 00 (base) */
+    /* 94 */
+
+    ActorUnkSWDS();
+
+    /* 4C */ virtual ~ActorUnkSWDS() override;
+
+    void func_ov070_02143a50(void);
+    void func_ov070_02143adc(void);
+    void func_ov070_02143bd4(void);
+    void func_ov070_02143be8(void);
+};
+
+class ActorProfileUnkSWDS : public ActorProfile {
+public:
+    /* 00 (base) */
+
+    ActorProfileUnkSWDS();
+    ~ActorProfileUnkSWDS();
+
+    /* 0C */ virtual Actor *Create();
+
+    static ActorProfileUnkSWDS *GetProfile();
+};

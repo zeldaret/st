@@ -2,7 +2,7 @@
 #include "Unknown/UnkStruct_02049bd4.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
-ARM UnkSystem1_ov019_Derived3::UnkSystem1_ov019_Derived3() :
+UnkSystem1_ov019_Derived3::UnkSystem1_ov019_Derived3() :
     UnkSystem1_ov019_3(0, 0) {
     this->mUnk_12 = -1;
     this->mUnk_13 = 0;
@@ -13,18 +13,18 @@ ARM UnkSystem1_ov019_Derived3::UnkSystem1_ov019_Derived3() :
     this->mUnk_21 = 0;
 }
 
-ARM void UnkSystem1_ov019_Derived3::vfunc_04() {
+void UnkSystem1_ov019_Derived3::vfunc_04() {
     this->mUnk_21 = 0;
     this->UnkSystem1_ov000_Base::vfunc_04();
 }
 
-ARM void UnkSystem1_ov019_Derived3::vfunc_08(unk32 param1) {
-    UnkStruct_ov000_02067bc4::UnkStruct1 stack;
+void UnkSystem1_ov019_Derived3::vfunc_08(unk32 param1) {
+    UnkTextStruct1 stack(-1, 0);
     this->mUnk_06 = data_ov000_020b504c.func_ov000_02067cf8(param1, this->mUnk_10, &stack);
 }
 
 //! TODO: fake match?
-ARM unk32 UnkSystem1_ov019_Derived3::vfunc_1C(u32 param1, unk32 param2, unk32 param3) {
+unk32 UnkSystem1_ov019_Derived3::vfunc_1C(u32 param1, unk32 param2, unk32 param3) {
     unk32 ret = 0;
 
     if (param1 != 0) {
@@ -37,18 +37,18 @@ ARM unk32 UnkSystem1_ov019_Derived3::vfunc_1C(u32 param1, unk32 param2, unk32 pa
 
         if (this->mUnk_04 <= 0) {
             data_02049bd4.mUnk_04++;
-            UnkStruct_ov000_02067bc4::UnkStruct1 stack1;
+            UnkTextStruct1 stack1(-1, 0);
 
             if (this->mUnk_18 == 0) {
-                this->mUnk_13 = data_ov000_020b504c.func_ov000_02067cf8(0x0002001E, 0, &stack1);
+                this->mUnk_13 = data_ov000_020b504c.func_ov000_02067cf8(BMG_ID(BMGGroup_select, 0x1E), 0, &stack1);
             } else {
-                this->mUnk_13 = data_ov000_020b504c.func_ov000_02067cf8(0x00020028, 0, &stack1);
+                this->mUnk_13 = data_ov000_020b504c.func_ov000_02067cf8(BMG_ID(BMGGroup_select, 0x28), 0, &stack1);
             }
 
             data_ov000_020b504c.func_ov000_02067bc4(0)->func_02021bec(1);
             data_ov000_020b504c.func_ov000_02067bc4(this->mUnk_10)->func_02021c08();
             this->mUnk_04++;
-        } else if (data_ov000_020b504c.func_ov000_02067bc4(this->mUnk_10)->vfunc_08() != 0) {
+        } else if (data_ov000_020b504c.func_ov000_02067bc4(this->mUnk_10)->vfunc_08()) {
             if (this->mUnk_04 == 0x1E) {
                 if (this->mUnk_18 == 0) {
                     gSaveManager.func_ov019_020d0ae0(this->mUnk_12);

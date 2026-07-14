@@ -75,31 +75,31 @@ static double
         {
             0.0,
             1.35003920212974897128e-08,
-}, /* 0x3E4CFDEB, 0x43CFD006 */
+},                                                                /* 0x3E4CFDEB, 0x43CFD006 */
     zero = 0.0, one = 1.0, two = 2.0, two53 = 9007199254740992.0, /* 0x43400000, 0x00000000 */
     big = 1.0e300, tiny = 1.0e-300,
     /* poly coefs for (3/2)*(log(x)-2s-2/3*s**3 */
-    L1      = 5.99999999999994648725e-01, /* 0x3FE33333, 0x33333303 */
-    L2      = 4.28571428578550184252e-01, /* 0x3FDB6DB6, 0xDB6FABFF */
-    L3      = 3.33333329818377432918e-01, /* 0x3FD55555, 0x518F264D */
-    L4      = 2.72728123808534006489e-01, /* 0x3FD17460, 0xA91D4101 */
-    L5      = 2.30660745775561754067e-01, /* 0x3FCD864A, 0x93C9DB65 */
-    L6      = 2.06975017800338417784e-01, /* 0x3FCA7E28, 0x4A454EEF */
-    P1      = 1.66666666666666019037e-01, /* 0x3FC55555, 0x5555553E */
+    L1      = 5.99999999999994648725e-01,  /* 0x3FE33333, 0x33333303 */
+    L2      = 4.28571428578550184252e-01,  /* 0x3FDB6DB6, 0xDB6FABFF */
+    L3      = 3.33333329818377432918e-01,  /* 0x3FD55555, 0x518F264D */
+    L4      = 2.72728123808534006489e-01,  /* 0x3FD17460, 0xA91D4101 */
+    L5      = 2.30660745775561754067e-01,  /* 0x3FCD864A, 0x93C9DB65 */
+    L6      = 2.06975017800338417784e-01,  /* 0x3FCA7E28, 0x4A454EEF */
+    P1      = 1.66666666666666019037e-01,  /* 0x3FC55555, 0x5555553E */
     P2      = -2.77777777770155933842e-03, /* 0xBF66C16C, 0x16BEBD93 */
-    P3      = 6.61375632143793436117e-05, /* 0x3F11566A, 0xAF25DE2C */
+    P3      = 6.61375632143793436117e-05,  /* 0x3F11566A, 0xAF25DE2C */
     P4      = -1.65339022054652515390e-06, /* 0xBEBBBD41, 0xC5D26BF1 */
-    P5      = 4.13813679705723846039e-08, /* 0x3E663769, 0x72BEA4D0 */
-    lg2     = 6.93147180559945286227e-01, /* 0x3FE62E42, 0xFEFA39EF */
-    lg2_h   = 6.93147182464599609375e-01, /* 0x3FE62E43, 0x00000000 */
+    P5      = 4.13813679705723846039e-08,  /* 0x3E663769, 0x72BEA4D0 */
+    lg2     = 6.93147180559945286227e-01,  /* 0x3FE62E42, 0xFEFA39EF */
+    lg2_h   = 6.93147182464599609375e-01,  /* 0x3FE62E43, 0x00000000 */
     lg2_l   = -1.90465429995776804525e-09, /* 0xBE205C61, 0x0CA86C39 */
     ovt     = 8.0085662595372944372e-0017, /* -(1024-log2(ovfl+.5ulp)) */
-    cp      = 9.61796693925975554329e-01, /* 0x3FEEC709, 0xDC3A03FD =2/(3ln2) */
-    cp_h    = 9.61796700954437255859e-01, /* 0x3FEEC709, 0xE0000000 =(float)cp */
+    cp      = 9.61796693925975554329e-01,  /* 0x3FEEC709, 0xDC3A03FD =2/(3ln2) */
+    cp_h    = 9.61796700954437255859e-01,  /* 0x3FEEC709, 0xE0000000 =(float)cp */
     cp_l    = -7.02846165095275826516e-09, /* 0xBE3E2FE0, 0x145B01F5 =tail of cp_h*/
-    ivln2   = 1.44269504088896338700e+00, /* 0x3FF71547, 0x652B82FE =1/ln2 */
-    ivln2_h = 1.44269502162933349609e+00, /* 0x3FF71547, 0x60000000 =24b 1/ln2*/
-    ivln2_l = 1.92596299112661746887e-08; /* 0x3E54AE0B, 0xF85DDF44 =1/ln2 tail*/
+    ivln2   = 1.44269504088896338700e+00,  /* 0x3FF71547, 0x652B82FE =1/ln2 */
+    ivln2_h = 1.44269502162933349609e+00,  /* 0x3FF71547, 0x60000000 =24b 1/ln2*/
+    ivln2_l = 1.92596299112661746887e-08;  /* 0x3E54AE0B, 0xF85DDF44 =1/ln2 tail*/
 
 #ifdef __STDC__
 double __ieee754_pow(double x, double y)
@@ -118,8 +118,8 @@ double x, y;
     lx = __LO(x);
     hy = __HI(y);
     ly = __LO(y);
-    ix = hx & 0x7fffffff;
-    iy = hy & 0x7fffffff;
+    ix = hx & 0x7FFFFFFF;
+    iy = hy & 0x7FFFFFFF;
 
     /* y==zero: x**0 = 1 */
     if ((iy | ly) == 0) {
@@ -127,7 +127,7 @@ double x, y;
     }
 
     /* +-NaN return x+y */
-    if (ix > 0x7ff00000 || ((ix == 0x7ff00000) && (lx != 0)) || iy > 0x7ff00000 || ((iy == 0x7ff00000) && (ly != 0))) {
+    if (ix > 0x7FF00000 || ((ix == 0x7FF00000) && (lx != 0)) || iy > 0x7FF00000 || ((iy == 0x7FF00000) && (ly != 0))) {
         return x + y;
 #ifdef __STDC__
         errno = EDOM; /* mf-- added to conform to old ANSI standard */
@@ -143,8 +143,8 @@ double x, y;
     if (hx < 0) {
         if (iy >= 0x43400000) {
             yisint = 2; /* even integer y */
-        } else if (iy >= 0x3ff00000) {
-            k = (iy >> 20) - 0x3ff; /* exponent */
+        } else if (iy >= 0x3FF00000) {
+            k = (iy >> 20) - 0x3FF; /* exponent */
             if (k > 20) {
                 j = ly >> (52 - k);
                 if ((j << (52 - k)) == ly) {
@@ -161,18 +161,18 @@ double x, y;
 
     /* special value of y */
     if (ly == 0) {
-        if (iy == 0x7ff00000) {
+        if (iy == 0x7FF00000) {
 
             /* y is +-inf */
-            if (((ix - 0x3ff00000) | lx) == 0) {
-                return y - y; /* inf**+-1 is NaN */
-            } else if (ix >= 0x3ff00000) { /* (|x|>1)**+-inf = inf,0 */
+            if (((ix - 0x3FF00000) | lx) == 0) {
+                return y - y;              /* inf**+-1 is NaN */
+            } else if (ix >= 0x3FF00000) { /* (|x|>1)**+-inf = inf,0 */
                 return (hy >= 0) ? y : zero;
             } else { /* (|x|<1)**-,+inf = inf,0 */
                 return (hy < 0) ? -y : zero;
             }
         }
-        if (iy == 0x3ff00000) {
+        if (iy == 0x3FF00000) {
             /* y is  +-1 */
             if (hy < 0) {
                 return one / x;
@@ -183,8 +183,8 @@ double x, y;
         if (hy == 0x40000000) {
             return x * x; /* y is  2 */
         }
-        if (hy == 0x3fe00000) { /* y is  0.5 */
-            if (hx >= 0) { /* x >= +0 */
+        if (hy == 0x3FE00000) { /* y is  0.5 */
+            if (hx >= 0) {      /* x >= +0 */
                 return sqrt(x);
             }
         }
@@ -193,13 +193,13 @@ double x, y;
     ax = fabs(x);
     /* special value of x */
     if (lx == 0) {
-        if (ix == 0x7ff00000 || ix == 0 || ix == 0x3ff00000) {
+        if (ix == 0x7FF00000 || ix == 0 || ix == 0x3FF00000) {
             z = ax; /*x is +-0,+-inf,+-1*/
             if (hy < 0) {
                 z = one / z; /* z = (1/|x|) */
             }
             if (hx < 0) {
-                if (((ix - 0x3ff00000) | yisint) == 0) {
+                if (((ix - 0x3FF00000) | yisint) == 0) {
                     z = (z - z) / (z - z); /* (-1)**non-int is NaN */
                 } else if (yisint == 1) {
                     z = -z; /* (x<0)**odd = -(|x|**odd) */
@@ -218,20 +218,20 @@ double x, y;
     }
 
     /* |y| is big */
-    if (iy > 0x41e00000) { /* if |y| > 2**31 */
-        if (iy > 0x43f00000) { /* if |y| > 2**64, must o/uflow */
-            if (ix <= 0x3fefffff) {
+    if (iy > 0x41E00000) {     /* if |y| > 2**31 */
+        if (iy > 0x43F00000) { /* if |y| > 2**64, must o/uflow */
+            if (ix <= 0x3FEFFFFF) {
                 return (hy < 0) ? big * big : tiny * tiny;
             }
-            if (ix >= 0x3ff00000) {
+            if (ix >= 0x3FF00000) {
                 return (hy > 0) ? big * big : tiny * tiny;
             }
         }
         /* over/underflow if x is not close to one */
-        if (ix < 0x3fefffff) {
+        if (ix < 0x3FEFFFFF) {
             return (hy < 0) ? big * big : tiny * tiny;
         }
-        if (ix > 0x3ff00000) {
+        if (ix > 0x3FF00000) {
             return (hy > 0) ? big * big : tiny * tiny;
         }
         /* now |1-x| is tiny <= 2**-20, suffice to compute
@@ -252,10 +252,10 @@ double x, y;
             n -= 53;
             ix = __HI(ax);
         }
-        n += ((ix) >> 20) - 0x3ff;
-        j = ix & 0x000fffff;
+        n += ((ix) >> 20) - 0x3FF;
+        j = ix & 0x000FFFFF;
         /* determine interval */
-        ix = j | 0x3ff00000; /* normalize ix */
+        ix = j | 0x3FF00000; /* normalize ix */
         if (j <= 0x3988E) {
             k = 0; /* |x|<sqrt(3/2) */
         } else if (j < 0xBB67A) {
@@ -315,17 +315,17 @@ double x, y;
     z        = p_l + p_h;
     j        = __HI(z);
     i        = __LO(z);
-    if (j >= 0x40900000) { /* z >= 1024 */
+    if (j >= 0x40900000) {                 /* z >= 1024 */
         if (((j - 0x40900000) | i) != 0) { /* if z > 1024 */
-            return s * big * big; /* overflow */
+            return s * big * big;          /* overflow */
         } else {
             if (p_l + ovt > z - p_h) {
                 return s * big * big; /* overflow */
             }
         }
-    } else if ((j & 0x7fffffff) >= 0x4090cc00) { /* z <= -1075 */
-        if (((j - 0xc090cc00) | i) != 0) { /* z < -1075 */
-            return s * tiny * tiny; /* underflow */
+    } else if ((j & 0x7FFFFFFF) >= 0x4090CC00) { /* z <= -1075 */
+        if (((j - 0xC090CC00) | i) != 0) {       /* z < -1075 */
+            return s * tiny * tiny;              /* underflow */
         } else {
             if (p_l <= z - p_h) {
                 return s * tiny * tiny; /* underflow */
@@ -335,15 +335,15 @@ double x, y;
     /*
      * compute 2**(p_h+p_l)
      */
-    i = j & 0x7fffffff;
-    k = (i >> 20) - 0x3ff;
+    i = j & 0x7FFFFFFF;
+    k = (i >> 20) - 0x3FF;
     n = 0;
-    if (i > 0x3fe00000) { /* if |z| > 0.5, set n = [z+0.5] */
+    if (i > 0x3FE00000) { /* if |z| > 0.5, set n = [z+0.5] */
         n       = j + (0x00100000 >> (k + 1));
-        k       = ((n & 0x7fffffff) >> 20) - 0x3ff; /* new k for n */
+        k       = ((n & 0x7FFFFFFF) >> 20) - 0x3FF; /* new k for n */
         t       = zero;
-        __HI(t) = (n & ~(0x000fffff >> k));
-        n       = ((n & 0x000fffff) | 0x00100000) >> (20 - k);
+        __HI(t) = (n & ~(0x000FFFFF >> k));
+        n       = ((n & 0x000FFFFF) | 0x00100000) >> (20 - k);
         if (j < 0) {
             n = -n;
         }

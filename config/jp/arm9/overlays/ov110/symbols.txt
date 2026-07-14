@@ -1,20 +1,20 @@
-_ZN11ItemManager19func_ov110_02184a40Ei kind:function(arm,size=0x36c) addr:0x021865c0
+_ZN9Inventory19func_ov110_02184a40Ei kind:function(arm,size=0x36c) addr:0x021865c0
 _ZN22UnkStruct_PlayerGet_748vfunc_00Eiii kind:function(arm,size=0x30) addr:0x0218692c
 _ZN9PlayerGetC2Ev kind:function(arm,size=0xa0) addr:0x0218695c
 _ZN9PlayerGetD1Ev kind:function(arm,size=0xc4) addr:0x021869fc
 _ZN9PlayerGetD0Ev kind:function(arm,size=0xcc) addr:0x02186ac0
 _ZN9PlayerGet19func_ov110_02186b8cEv kind:function(arm,size=0x54) addr:0x02186b8c
-_ZN9PlayerGet8vfunc_0cEP35UnkStruct_PlayerGet_vfunc_0c_param1 kind:function(arm,size=0x5d8) addr:0x02186be0
-_ZN9PlayerGet8vfunc_10Ei kind:function(arm,size=0x6fc) addr:0x021871b8
+_ZN9PlayerGet8vfunc_0CEP35UnkStruct_PlayerGet_vfunc_0C_param1 kind:function(arm,size=0x5d8) addr:0x02186be0
+_ZN9PlayerGet8vfunc_10Eii kind:function(arm,size=0x6fc) addr:0x021871b8
 _ZN9PlayerGet8vfunc_18Eiii kind:function(arm,size=0x7c) addr:0x021878b4
 _ZN22UnkStruct_PlayerGet_ecC1Ev kind:function(arm,size=0xc) addr:0x02187930
 _ZN21UnkStruct_027e0ce0_3419func_ov110_02185d3cEi kind:function(thumb,size=0x66) addr:0x0218793c
-_ZN11ItemManager19func_ov110_02185da4Ei kind:function(arm,size=0x10) addr:0x021879a4
-_ZN11ItemManager19func_ov110_02185db4Ei kind:function(arm,size=0x10) addr:0x021879b4
+_ZN11ItemManager16GetBmgIDFromItemEi kind:function(arm,size=0x10) addr:0x021879a4
+_ZN11ItemManager18GetAdvFlagFromItemEi kind:function(arm,size=0x10) addr:0x021879b4
 data_ov110_021879c8 kind:data(any) addr:0x021879c8
 data_ov110_021879ca kind:data(any) addr:0x021879ca
-data_ov110_021879e8 kind:data(any) addr:0x021879e8
-data_ov110_02187bbc kind:data(any) addr:0x02187bbc
+sBMGItemMap kind:data(any) addr:0x021879e8
+sAdvFlagItemMap kind:data(any) addr:0x02187bbc
 data_ov110_02187c44 kind:data(any) addr:0x02187c44 ambiguous
 __sinit_PlayerGet.cpp kind:function(arm,size=0x2c) addr:0x02187d90
 .p__sinit_PlayerGet.cpp kind:data(word) addr:0x02187dbc

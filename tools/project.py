@@ -112,6 +112,7 @@ class ProjectConfig:
         self.dsd_tag: Optional[str] = None
         self.wibo_tag: Optional[str] = None
         self.objdiff_tag: Optional[str] = None
+        self.sjiswrap_tag: Optional[str] = None
         self.mwcc_tag = mwcc_tag
         self.mwcc_root = Path(mwcc_root).resolve() if mwcc_root is not None else self.tools_path / "mwccarm"
         self.cfg_script = cfg_script
@@ -125,6 +126,7 @@ class ProjectConfig:
         self.wine_path = wine if self.platform.system != "windows" else ""
         self.dsd_path = (Path(dsd) if dsd is not None else (self.root_path / f"dsd{self.platform.exe}")).resolve()
         self.objdiff_path = (self.root_path / f"objdiff-cli{self.platform.exe}").resolve()
+        self.sjiswrap_path = (self.root_path / "tools" / "sjiswrap.exe").resolve()
         self.cc_path = (self.mwcc_path / "mwccarm.exe").resolve()
         self.ld_path = (self.mwcc_path / "mwldarm.exe").resolve()
         self.python_path = Path(sys.executable).resolve()
@@ -305,7 +307,9 @@ class ProjectConfig:
 
     def delink_files(self, version: str) -> list[str]:
         delink_files = [file['delink_file'] for file in self.files(version)]
-        return list(set(delink_files))
+        delink_files = list(set(delink_files))
+        delink_files.sort()
+        return delink_files
 
     def arm9_lcf_file(self, version: str) -> str:
         if self.delinks_jsons[version] is None:
@@ -318,12 +322,14 @@ class ProjectConfig:
         return self.delinks_jsons[version]['arm9_objects_file']
 
     def get_config_files(self, version: str, name: str) -> list[str]:
-        return [
+        files = [
             f"{root}/{file}"
             for root, _, files in os.walk(self.get_game_config(version))
             for file in files
             if file == name
         ]
+        files.sort()
+        return files
 
     def get_decompme_compiler(self):
         return COMPILER_MAP[self.mwcc_version]
@@ -408,6 +414,18 @@ def add_download_tool_builds(cfg: ProjectConfig, n: ninja_syntax.Writer, args: A
             },
         )
         n.newline()
+
+    if cfg.sjiswrap_tag is not None:
+        downloads.append(str(cfg.sjiswrap_path))
+        n.build(
+            rule="download_tool",
+            outputs=str(cfg.sjiswrap_path),
+            variables={
+                "tool": "sjiswrap",
+                "tag": cfg.sjiswrap_tag,
+                "path": str(cfg.sjiswrap_path),
+            }
+        )
 
     n.build(
         inputs=downloads,
@@ -535,6 +553,7 @@ def add_mwcc_builds(cfg: ProjectConfig, version: str, objects: Dict[str, Object]
                 "basedir": str(src_obj_path.parent),
                 "basefile": str(src_obj_path.with_suffix("")),
             },
+            # order_only="objdiff",
         )
         n.newline()
 
@@ -743,6 +762,10 @@ def process_project(cfg: ProjectConfig, args: Any):
 
     create_objdiff_fixup_config(cfg, objects)
 
+    rust_log = "RUST_LOG=ds_rom::rom::rom=warn"
+    if cfg.platform.system == "windows":
+        rust_log = f"set {rust_log} &&"
+
     with cfg.build_ninja_path.open("w") as file:
         n = ninja_syntax.Writer(file)
 
@@ -760,7 +783,7 @@ def process_project(cfg: ProjectConfig, args: Any):
 
         n.rule(
             name="extract",
-            command=f"{cfg.dsd_path} {cfg.dsd_flags} rom extract --rom $in --output-path $output_path $arm7_bios_flag"
+            command=f"{rust_log} {cfg.dsd_path} {cfg.dsd_flags} rom extract --rom $in --output-path $output_path $arm7_bios_flag"
         )
         n.newline()
 
@@ -777,8 +800,8 @@ def process_project(cfg: ProjectConfig, args: Any):
         n.newline()
 
         # -MMD excludes all includes instead of just system includes for some reason, so use -MD instead.
-        mwcc_cmd = f'{cfg.wine_path} "{cfg.cc_path}" $cc_flags {cfg.includes} -DVERSION=$game_version -MD -c $in -o $basedir'
-        mwcc_implicit = [str(cfg.cc_path)]
+        mwcc_cmd = f'{cfg.wine_path} {cfg.sjiswrap_path} "{cfg.cc_path}" $cc_flags {cfg.includes} -DVERSION=$game_version -MD -c $in -o $basedir'
+        mwcc_implicit = [str(cfg.cc_path), str(cfg.sjiswrap_path)]
         if cfg.platform.system != "windows":
             transform_dep = "tools/transform_dep.py"
             mwcc_cmd += f" && $python {transform_dep} $basefile.d $basefile.d"
@@ -806,13 +829,13 @@ def process_project(cfg: ProjectConfig, args: Any):
 
         n.rule(
             name="rom_config",
-            command=f"{cfg.dsd_path} {cfg.dsd_flags} rom config --elf $in --config $config_path"
+            command=f"{rust_log} {cfg.dsd_path} {cfg.dsd_flags} rom config --elf $in --config $config_path"
         )
         n.newline()
 
         n.rule(
             name="rom_build",
-            command=f"{cfg.dsd_path} {cfg.dsd_flags} rom build --config $in --rom $out $arm7_bios_flag"
+            command=f"{rust_log} {cfg.dsd_path} {cfg.dsd_flags} rom build --config $in --rom $out $arm7_bios_flag"
         )
         n.newline()
 
@@ -874,8 +897,8 @@ def process_project(cfg: ProjectConfig, args: Any):
         n.newline()
 
         n.rule(
-            name="format_delinks",
-            command=f"{cfg.python_path} tools/format_delinks.py"
+            name="format",
+            command=f"{cfg.dsd_path} format --config-path $config_path",
         )
         n.newline()
 
@@ -890,31 +913,67 @@ def process_project(cfg: ProjectConfig, args: Any):
 
         if cfg.check_can_run_dsd():
             defaults = []
+            cmds_map: dict[str, list] = {
+                "delink": list(),
+                "dis": list(),
+                "sha1": list(),
+                "check": list(),
+                "apply": list(),
+                "format": list(),
+            }
 
             for version in cfg.game_versions:
                 add_extract_build(cfg, version, n, args)
+
                 add_delink_and_lcf_builds(cfg, version, n)
+                cmds_map["delink"].append(f"delink_{version}")
+
                 add_disassemble_builds(cfg, version, n)
+                cmds_map["dis"].append(f"dis_{version}")
+
                 add_mwcc_builds(cfg, version, objects, n, mwcc_implicit)
+
                 add_mwld_and_rom_builds(cfg, version, n)
+                cmds_map["sha1"].append(f"sha1_{version}")
+
                 add_check_builds(cfg, version, n)
+                cmds_map["check"].append(f"check_{version}")
+
                 add_objdiff_builds(cfg, version, n)
+
                 add_apply_build(cfg, version, n)
+                cmds_map["apply"].append(f"apply_{version}")
+
+                n.build(
+                    rule="format",
+                    outputs=f"format_{version}",
+                    variables={
+                        "config_path": str(cfg.arm9_config_yaml(version)),
+                    }
+                )
+                n.newline()
+                cmds_map["format"].append(f"format_{version}")
+
                 defaults.extend([f"check_{version}", f"sha1_{version}"])
 
             n.build(
                 rule="post_objdiff",
                 implicit=[f"objdiff_{version}.json" for version in cfg.game_versions],
-                outputs="objdiff"
+                outputs="objdiff",
+                order_only=cmds_map["delink"],
             )
             n.newline()
 
-            n.build(
-                rule="format_delinks",
-                outputs="format_delinks"
-            )
-            n.newline()
+            for rule, cmds in cmds_map.items():
+                cmds.sort()
 
-            n.default(["format_delinks", "objdiff", *defaults])
+                n.build(
+                    rule="phony",
+                    outputs=rule,
+                    implicit=cmds,
+                )
+
+            # n.default(["format", "objdiff", *defaults])
+            n.default(["objdiff", *defaults])
         else:
             n.default(["download_tools"])

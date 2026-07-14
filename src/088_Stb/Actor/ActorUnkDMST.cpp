@@ -1,0 +1,25 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#include "Actor/ActorUnkDMST.hpp"
+#include "System/SysNew.hpp"
+
+DECL_PROFILE(ActorProfileUnkDMST);
+
+Actor *ActorProfileUnkDMST::Create() {
+    return new(HeapIndex_2) ActorUnkDMST();
+}
+
+ActorProfileUnkDMST::ActorProfileUnkDMST() :
+    ActorProfile_Derived1(ActorId_DMST) {}
+
+ActorUnkDMST::ActorUnkDMST() {}
+
+void ActorUnkDMST::func_ov088_02171274(void) {}
+void ActorUnkDMST::func_ov088_021712c8(void) {}
+void ActorUnkDMST::func_ov088_021712d8(void) {}
+void ActorUnkDMST::func_ov088_021712ec(void) {}
+void ActorUnkDMST::func_ov088_02171300(void) {}
+void ActorUnkDMST::func_ov088_02171350(void) {}
+
+ActorUnkDMST::~ActorUnkDMST() {}
+ActorProfileUnkDMST::~ActorProfileUnkDMST() {}

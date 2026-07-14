@@ -80,7 +80,7 @@ __sinit_ov012_020b82e8 kind:function(thumb,size=0x74) addr:0x020b82e8
 data_ov012_020b8380 kind:data(any) addr:0x020b8380
 data_ov012_020b8390 kind:data(any) addr:0x020b8390
 data_ov012_020b83a0 kind:data(any) addr:0x020b83a0
-data_ov012_020b83d0 kind:data(any) addr:0x020b83d0
+_ZTV19data_ov012_020b83c8 kind:data(any) addr:0x020b83c8
 data_ov012_020b83ec kind:data(any) addr:0x020b83ec
 data_ov012_020b8400 kind:data(any) addr:0x020b8400
 data_ov012_020b8404 kind:data(any) addr:0x020b8404

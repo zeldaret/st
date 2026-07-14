@@ -1,0 +1,55 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#pragma once
+
+#include "Actor/Actor.hpp"
+#include "Actor/ActorProfile.hpp"
+#include "global.h"
+#include "types.h"
+
+class ActorUnkTVLR_C4 : public Actor_C4 {
+public:
+    ActorUnkTVLR_C4(Actor *param1);
+
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+};
+
+class ActorUnkTVLR : public Actor {
+public:
+    /* 00 (base) */
+    /* 94 */
+
+    ActorUnkTVLR();
+
+    /* 4C */ virtual ~ActorUnkTVLR() override;
+
+    void func_ov026_021223c8(void);
+    void func_ov026_021223d0(void);
+    void func_ov026_02122404(void);
+    void func_ov026_02122750(void);
+    void func_ov026_021227a4(void);
+    void func_ov026_02122a10(void);
+    void func_ov026_02122a6c(void);
+    void func_ov026_02122b34(void);
+    void func_ov026_02122b90(void);
+    void func_ov026_02122cec(void);
+    void func_ov026_02122d60(void);
+    void func_ov026_02122dd8(void);
+    void func_ov026_02122dec(void);
+    void func_ov026_02122e3c(void);
+};
+
+class ActorProfileUnkTVLR : public ActorProfile_Derived1 {
+public:
+    /* 00 (base) */
+
+    ActorProfileUnkTVLR();
+    ~ActorProfileUnkTVLR();
+
+    /* 0C */ virtual Actor *Create();
+
+    static ActorProfileUnkTVLR *GetProfile();
+};

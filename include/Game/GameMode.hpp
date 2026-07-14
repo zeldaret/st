@@ -3,7 +3,7 @@
 #include "System/SysNew.hpp"
 #include "types.h"
 
-class GameModeBase : public SysObject {
+class GameModeBase {
 public:
     /* 00 (vtable) */
     /* 04 */
@@ -12,7 +12,7 @@ public:
 
     // data_02044018 vtable
     /* 00 */ virtual ~GameModeBase();
-    /* 08 */ virtual void vfunc_08(); // Init
+    /* 08 */ virtual void vfunc_08();     // Init
     /* 0C */ virtual void vfunc_0C() = 0; // Update
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();

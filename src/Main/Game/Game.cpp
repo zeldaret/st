@@ -7,34 +7,26 @@
 #include "Unknown/UnkStruct_0204e64c.hpp"
 #include "Unknown/UnkStruct_027e0208.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
-#include "regs.h"
 #include "versions.h"
 
+#include <nitro/card.h>
+#include <nitro/os.h>
+#include <nitro/reg.h>
+
 extern "C" void func_020196fc();
-extern "C" unk32 func_02031e58();
-extern "C" void func_02031e68();
-extern "C" void func_01ff8d38();
+extern "C" void FlushGfxQueue();
 extern "C" void func_020132c8();
 extern "C" void func_020132dc();
 extern "C" void func_02013354();
 extern "C" void func_0201328c();
-extern "C" int func_020280ec();
-extern "C" void func_02028100(int enabled);
-extern Mat3p data_027e02c4;
+extern Mat3p gGeomMatrix;
 
-struct SomeSaveFileStruct {
-    /* 00 */ SaveFile *mpSaveFiles[MAX_SAVE_SLOTS];
-
-    SomeSaveFileStruct(unk32 param1);
-    ~SomeSaveFileStruct();
-};
-
-ARM void Game::func_02013370(unk32 param1) {
+void Game::func_02013370(unk32 param1) {
     data_0204a110.func_02018c78(param1);
     data_ov000_020b50c0.mUnk_9C = param1;
 }
 
-ARM void Game::Run() {
+void Game::Run() {
     this->func_ov018_020c48a4();
 
     do {
@@ -43,8 +35,8 @@ ARM void Game::Run() {
             data_0204999c.func_02013014();
 
             {
-                SomeSaveFileStruct local_28(0x1300);
-                this->mpSaveFile = local_28.mpSaveFiles[0];
+                UnkDataStruct2 local_28(sizeof(GameSaveSlot));
+                this->mpSaveSlot = (GameSaveSlot *) local_28.unk_00;
 
                 if (this->mpCurrentGameMode != NULL) {
                     delete this->mpCurrentGameMode;
@@ -57,7 +49,7 @@ ARM void Game::Run() {
                 this->mpCurrentGameMode = this->createCallback();
                 this->createCallback    = NULL;
                 this->mpCurrentGameMode->vfunc_08();
-                this->mpSaveFile = NULL;
+                this->mpSaveSlot = NULL;
             }
 
             data_0204999c.func_02013070();
@@ -70,8 +62,8 @@ ARM void Game::Run() {
                 this->mUnk_08 = NULL;
             }
 
-            if (func_02031e58() != 0) {
-                func_02031e68();
+            if (CARD_func_0033()) {
+                CARD_func_0034();
             }
 
             data_02049bd4.func_02014d98();
@@ -103,9 +95,9 @@ ARM void Game::Run() {
             data_027e0208.mUnk_0E4 = 0;
             data_027e0208.mUnk_0E8 = 0;
 
-            Mat3p_InitIdentity(&data_027e02c4);
+            Mat3p_InitIdentity(&gGeomMatrix);
             data_027e0208.mUnk_0FC = 0;
-            func_01ff8d38();
+            FlushGfxQueue();
             this->mpCurrentGameMode->vfunc_18();
             data_0204a110.func_020194dc();
 
@@ -114,7 +106,7 @@ ARM void Game::Run() {
             }
 
 #if IS_JP
-            func_01ff8d38();
+            FlushGfxQueue();
 #endif
 
             if (data_0204e64c.mUnk_00.mUnk_0B == 0) {
@@ -122,7 +114,7 @@ ARM void Game::Run() {
             }
 
             this->mpCurrentGameMode->vfunc_1C();
-            func_01ff8d38();
+            FlushGfxQueue();
             data_0204a110.func_02019454();
             this->mpCurrentGameMode->vfunc_20();
 
@@ -141,10 +133,10 @@ ARM void Game::Run() {
         }
 
         {
-            int enabled = func_020280ec();
+            int enabled = OS_DisableInterrupts_Irq();
             this->mUnk_1C.func_02013e18(func_020132dc, 0);
-            REG_SWAP_BUFFERS = 3;
-            func_02028100(enabled);
+            REG_GFX_FIFO_SWAP_BUFFERS = 3;
+            OS_RestoreInterrupts(enabled);
         }
 
         func_020132c8();

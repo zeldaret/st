@@ -14,7 +14,7 @@ int __fpclassifyd(double x) {
             }
             break;
         case 0:
-            if ((__HI(x) & 0x000FFFFf) || (__LO(x) & 0xFFFFFFFF)) {
+            if ((__HI(x) & 0x000FFFFF) || (__LO(x) & 0xFFFFFFFF)) {
                 return 5;
             } else {
                 return 3;

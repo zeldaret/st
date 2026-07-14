@@ -39,7 +39,7 @@ void *memset(void *dest, int val, int n) {
 void *memchr(const void *src, int val, int n) {
     const unsigned char *p;
 
-    unsigned int v = (val & 0xff);
+    unsigned int v = (val & 0xFF);
 
     for (p = (unsigned char *) src, n++; --n;) {
         if (*p++ == v) {

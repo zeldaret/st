@@ -6,10 +6,10 @@
 #include "Unknown/UnkSystem1.hpp"
 #include "global.h"
 #include "iterator.hpp"
-#include "nitro/math.h"
+#include "math.hpp"
 #include "types.h"
 
-typedef Iterator<UnkSubStruct9, MAX_SAVE_SLOTS> FileSlotIterator;
+typedef Iterator<UnkSubStruct9> FileSlotIterator;
 
 /*
     - "Slot Select" refers to the screen where you choose which file to use
@@ -55,6 +55,26 @@ enum FileSelectExitMode_ {
     /* 0x03 */ FileSelectExitMode_Unk_3         = 3,
 };
 
+class FileSelectMain_UnkSubStruct1 : public UnkSubStruct1_Base {
+public:
+    /* 00 (base) */
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ unk32 mUnk_28;
+    /* 2C */ unk32 mUnk_2C;
+    /* 30 */
+
+    void Subprocess1_UnkValueSets() {
+        this->mUnk_10 = this->mUnk_18;
+    }
+
+    void Subprocess2_UnkValueSets() {
+        this->mUnk_10 = this->mUnk_14;
+    }
+
+    UnkSubStruct1_Methods;
+};
+
 class FileSelectMain : public GameModeManagerBase_104 { // 022E5F70
 public:
     /* 0000 (base) */
@@ -65,7 +85,7 @@ public:
     /* 0026 */ unk8 mUnk_0026;
     /* 0027 */ unk8 mUnk_0027;
     /* 0028 */ unk32 mUnk_0028;
-    /* 002C */ UnkSubStruct1 mUnk_002C;
+    /* 002C */ FileSelectMain_UnkSubStruct1 mUnk_002C;
     /* 005C */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_005C;
     /* 00BC */ UnkSystem2_UnkSubSystem9 mUnk_00BC;
 
@@ -104,7 +124,7 @@ public:
     // adventure mode animated sword icon
     /* 10BC */ UnkSystem2_UnkSubSystem9 mUnk_10BC;
     /* 1100 */ UnkSystem2_UnkSubSystem9 mUnk_1100;
-    /* 1144 */ UnkSubStruct19 mUnk_1144;
+    /* 1144 */ CellAnimObject mUnk_1144;
 
     // "battle" button
     /* 11BC */ UnkSystem2_UnkSubSystem1_Derived2 mUnk_11BC;
@@ -115,7 +135,7 @@ public:
     // battle mode animated sword icon
     /* 14D4 */ UnkSystem2_UnkSubSystem9 mUnk_14D4;
     /* 1518 */ UnkSystem2_UnkSubSystem9 mUnk_1518;
-    /* 155C */ UnkSubStruct19 mUnk_155C;
+    /* 155C */ CellAnimObject mUnk_155C;
 
     // "contact mode" button
     /* 15D4 */ UnkSystem2_UnkSubSystem1_Derived2 mUnk_15D4;
@@ -133,19 +153,11 @@ public:
     /* 1C28 */
 
     UnkSubStruct9 &GetUnk03E0(int saveSlotIndex) {
-        return this->mUnk_03E0.GetRef(saveSlotIndex);
+        return this->mUnk_03E0.Get(saveSlotIndex);
     }
 
     UnkSubStruct9 &GetUnk03E0() {
         return this->GetUnk03E0(this->mSaveSlotIndex);
-    }
-
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (this != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
     }
 
     FileSelectMain();

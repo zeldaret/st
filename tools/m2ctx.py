@@ -24,7 +24,11 @@ CXX_FLAGS = [
     '-Ilibs/c/include',
     '-Ilibs/cpp/include',
     '-Ilibs/runtime/include',
+    '-Ilibs/nitro/include',
+    '-Ilibs/nns/include',
+    '-Ilibs/dsprotect/include',
     f'-DVERSION={args.version}',
+    '-D__MWERKS__',
 ]
 
 script_dir = Path(os.path.dirname(os.path.realpath(__file__)))

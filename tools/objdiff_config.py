@@ -4,7 +4,6 @@ import json
 import copy
 
 from pathlib import Path
-from typing import Optional
 
 
 class ConfigUnit:
@@ -19,20 +18,31 @@ class ConfigUnit:
 
 
 class ConfigVersion:
-    def __init__(self, name: Optional[str], options: dict[str, str], units: list[ConfigUnit], root_path: Path):
+    def __init__(self, name: str, options: dict[str, str], units: list[ConfigUnit], root_path: Path):
         self.name = name
         self.objdiff_path = Path(options["objdiff"]).resolve()
 
         objdiff_json = json.loads(self.objdiff_path.read_text())
         self.objdiff_json: dict = copy.copy(objdiff_json)
 
-        # deprecated options
+        # remove deprecated options
         self.objdiff_json.pop("target_dir")
         self.objdiff_json.pop("base_dir")
         self.objdiff_json.pop("build_base")
 
+        # fix watch patterns, remove yaml, json and all txt files
+        # except symbols, delinks and relocs
+        self.objdiff_json["watch_patterns"].remove("*.yml")
+        self.objdiff_json["watch_patterns"].remove("*.yaml")
+        self.objdiff_json["watch_patterns"].remove("*.json")
+        self.objdiff_json["watch_patterns"].remove("*.txt")
+        self.objdiff_json["watch_patterns"].append("*symbols.txt")
+        self.objdiff_json["watch_patterns"].append("*delinks.txt")
+        self.objdiff_json["watch_patterns"].append("*relocs.txt")
+        self.objdiff_json["watch_patterns"].append("libs/cpp/include/*")
+
         for i, unit_dict in enumerate(objdiff_json["units"]):
-            if "name" in unit_dict and self.name is not None:
+            if "name" in unit_dict:
                 unit_dict["name"] = f"{self.name}/{unit_dict['name']}"
 
             def get_cleaned_path(base_path: Path):
@@ -97,9 +107,8 @@ class ObjdiffConfig:
         for name, options in cfg_json["units"].items():
             units.append(ConfigUnit(name, options))
 
-        multi_version = len(cfg_json["versions"].items()) > 1
         for name, options in cfg_json["versions"].items():
-            cfg.versions.append(ConfigVersion(name if multi_version else None, options, units, cfg.root_path))
+            cfg.versions.append(ConfigVersion(name, options, units, cfg.root_path))
 
         return cfg
 

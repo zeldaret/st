@@ -3,12 +3,15 @@
     .exceptix   start:0x0203eb2c end:0x0203ed54 kind:rodata align:4
     .init       start:0x0203ed54 end:0x0203f1d4 kind:code align:4
     .rodata     start:0x0203f1d4 end:0x0204470c kind:rodata align:4
-    .ctor       start:0x0204470c end:0x02044768 kind:rodata align:4
+    .ctor       start:0x0204470c end:0x02044764 kind:rodata align:4
     .data       start:0x02044780 end:0x02046340 kind:data align:32
     .bss        start:0x02046340 end:0x02053060 kind:bss align:32
 
 src/Main/Main.cpp:
     .text       start:0x02000800 end:0x02000bdc
+
+libs/nns/src/g3d/sbc.c:
+    .text       start:0x0200c8cc end:0x0200e2ec
 
 src/Main/System/SysNew.cpp:
     .text       start:0x02011e10 end:0x0201200c
@@ -25,17 +28,16 @@ src/Main/Player/TouchControl.cpp:
 src/Main/System/OverlayManager.cpp:
     .text       start:0x02014800 end:0x02014948
 
-src/Main/UnkStruct_ov000_020b4f84_00_Base.cpp:
-    complete
-    .text       start:0x020154c0 end:0x020155c0
-    .data       start:0x02045444 end:0x02045460
+src/Main/UnkFileSystem.cpp:
+    .text       start:0x020154b0 end:0x02015720
+    .data       start:0x02045444 end:0x020454d0
 
 src/Main/System/Random.cpp:
     .text       start:0x0201631c end:0x0201639c
 
-src/Main/Game/GameModeLinkListNode.cpp:
+src/Main/LinkList.cpp:
     complete
-    .text       start:0x02016614 end:0x020166b8
+    .text       start:0x02016614 end:0x02016730
 
 src/Main/func_02017ea4.cpp:
     .text       start:0x02017e3c end:0x02017ed0
@@ -51,6 +53,7 @@ src/Main/UnkStruct_0204a060.cpp:
     .data       start:0x02045584 end:0x020455a0
 
 src/Main/Game/GameModeManagerBase.cpp:
+    complete
     .text       start:0x02018414 end:0x02018b5c
     .data       start:0x020455a0 end:0x020455e0
 

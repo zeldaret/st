@@ -2,7 +2,7 @@
 
 #include "Player/TouchControl.hpp"
 #include "global.h"
-#include "nitro/button.h"
+#include "input.hpp"
 #include "types.h"
 
 class UnkStruct_02049b18_06 {

@@ -7,16 +7,16 @@
 #include "Unknown/UnkSystem1.hpp"
 #include "global.h"
 #include "iterator.hpp"
-#include "nitro/math.h"
-#include "regs.h"
+#include "math.hpp"
 #include "types.h"
+#include <nitro/reg.h>
 
-extern const unk16 data_ov019_020d1bb0[];
+extern const s16 data_ov019_020d1bb0[];
 extern "C" void func_ov001_020bd6a8();
 
 class FileSelect_UnkClass7_04 {
 public:
-    /* 000 */ UnkSubStruct19 mUnk_000[30];
+    /* 000 */ CellAnimObject mUnk_000[30];
     /* E10 */ Vec2us mUnk_E10[30];
     /* E88 */
 };
@@ -43,7 +43,7 @@ public:
     /* 00 */ virtual ~FileSelect_UnkClass2_Sub4_Base() override {}
 };
 
-class FileSelectSubScreen : public SysObject, public FileSelect_UnkClass2_Sub4_Base {
+class FileSelectSubScreen : public FileSelect_UnkClass2_Sub4_Base {
 public:
     /* 0000 (base) */
     /* 001C */ unk32 mUnk_001C;
@@ -66,14 +66,6 @@ public:
     /* 0FE4 */ UnkResult mUnk_0FE4;
     /* 1020 */
 
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (this != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
-    }
-
     FileSelectSubScreen();
     void func_ov019_020cf73c(unk32 param1, unk32 param2);
 
@@ -83,7 +75,7 @@ public:
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
 };
 
-class FileSelectManager : public GameModeManagerBase { // 0x02262dbc
+class FileSelectManager : public GameModeManagerBase { // 0x02262DBC
 public:
     /* 000 (base) */
     /* 154 */ GameModeManagerBase_104 *mUnk_154;
@@ -95,7 +87,7 @@ public:
     /* 180 */
 
     // clang-format off
-    FileSelectManager(unk32 param1) NO_INLINE :
+    FileSelectManager(UnkStruct_0204a110_Sub2* param1) NO_INLINE :
         GameModeManagerBase(param1),
         mUnk_154(&this->mUnk_104),
         mUnk_158(NULL),
@@ -108,7 +100,7 @@ public:
         REG_DISPCNT_SUB &= 0xFFCFFFEF;
         REG_DISPCNT_SUB |= 0x00200010;
 
-        this->mUnk_004.func_ov001_020bd734((unk32*)data_ov019_020d1bb0);
+        this->mUnk_004.func_ov001_020bd734(data_ov019_020d1bb0);
         func_ov001_020bd6a8();
     }
     // clang-format on
@@ -122,9 +114,9 @@ public:
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2, unk32 param3) override;
     /* 24 */ virtual void vfunc_24() override;
     /* 28 */ virtual void vfunc_28(unk8 *param1) override;
-    /* 2C */ virtual void vfunc_2C(unk8 *param1) override;
+    /* 2C */ virtual void DrawUI(unk8 *param1) override;
 
-    static GameModeManagerBase *Create(unk32 param1);
+    static GameModeManagerBase *Create(UnkStruct_0204a110_Sub2 *param1);
 };
 
 // static initializers classes
@@ -148,7 +140,7 @@ public:
     /* 10 */ unk32 mUnk_10;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
-    /* 1C */ Vec2s mUnk_1C;
+    /* 1C */ Vec2sC mUnk_1C;
     /* 20 */ volatile unk32 mUnk_20;
 };
 

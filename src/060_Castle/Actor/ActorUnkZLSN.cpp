@@ -1,0 +1,44 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#include "Actor/ActorUnkZLSN.hpp"
+#include "System/SysNew.hpp"
+
+DECL_PROFILE(ActorProfileUnkZLSN);
+
+Actor *ActorProfileUnkZLSN::Create() {
+    return new(HeapIndex_2) ActorUnkZLSN();
+}
+
+ActorProfileUnkZLSN::ActorProfileUnkZLSN() :
+    ActorProfile_Derived1(ActorId_ZLSN) {}
+
+ActorUnkZLSN::ActorUnkZLSN() {}
+
+void ActorUnkZLSN::func_ov060_0215f148(void) {}
+void ActorUnkZLSN::func_ov060_0215f15c(void) {}
+void ActorUnkZLSN::func_ov060_0215f170(void) {}
+void ActorUnkZLSN::func_ov060_0215f184(void) {}
+void ActorUnkZLSN::func_ov060_0215f2ec(void) {}
+void ActorUnkZLSN::func_ov060_0215f330(void) {}
+void ActorUnkZLSN::func_ov060_0215f4ec(void) {}
+void ActorUnkZLSN::func_ov060_0215f55c(void) {}
+void ActorUnkZLSN::func_ov060_0215f5d0(void) {}
+void ActorUnkZLSN::func_ov060_0215f78c(void) {}
+void ActorUnkZLSN::func_ov060_0215f7c4(void) {}
+void ActorUnkZLSN::func_ov060_0215f7d0(void) {}
+void ActorUnkZLSN::func_ov060_0215f80c(void) {}
+void ActorUnkZLSN::func_ov060_0215f814(void) {}
+void ActorUnkZLSN::func_ov060_0215f924(void) {}
+void ActorUnkZLSN::func_ov060_0215f9e0(void) {}
+void ActorUnkZLSN::func_ov060_0215fba8(void) {}
+void ActorUnkZLSN::func_ov060_0215fc80(void) {}
+void ActorUnkZLSN::func_ov060_0215fd38(void) {}
+void ActorUnkZLSN::func_ov060_0215fe7c(void) {}
+void ActorUnkZLSN::func_ov060_0215ff48(void) {}
+void ActorUnkZLSN::func_ov060_021600c0(void) {}
+void ActorUnkZLSN::func_ov060_021600cc(void) {}
+void ActorUnkZLSN::func_ov060_021600e8(void) {}
+void ActorUnkZLSN::func_ov060_02160104(void) {}
+
+ActorUnkZLSN::~ActorUnkZLSN() {}
+ActorProfileUnkZLSN::~ActorProfileUnkZLSN() {}

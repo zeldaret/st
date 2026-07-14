@@ -136,7 +136,7 @@ from:0x0217aa60 kind:arm_call to:0x0207bffc module:overlay(0)
 from:0x0217aa78 kind:load to:0x0203e964 module:main
 from:0x0217aa7c kind:load to:0x027e0cd8 module:dtcm
 from:0x0217aac4 kind:arm_call to:0x0208f820 module:overlay(0)
-from:0x0217aae8 kind:load to:0x02180e14 module:overlay(95)
+from:0x0217aae8 kind:load to:0x02180e0c add:0x8 module:overlay(95)
 from:0x0217ab44 kind:arm_call to:0x01ffb428 module:itcm
 from:0x0217abf8 kind:arm_call to:0x0216e8d4 module:overlay(93)
 from:0x0217ac24 kind:arm_call to:0x02087ee8 module:overlay(0)
@@ -545,7 +545,7 @@ from:0x0217db98 kind:arm_call to:0x01ff930c module:itcm
 from:0x0217dbc4 kind:arm_call to:0x02082c58 module:overlay(0)
 from:0x0217dbd0 kind:load to:0x027e0ce4 module:dtcm
 from:0x0217dbd4 kind:load to:0x027e0ce0 module:dtcm
-from:0x0217dbd8 kind:load to:0x02177d00 module:overlays(89,90,91,92,93,94)
+from:0x0217dbd8 kind:load to:0x02177d00 module:overlays(89,90,92,93,94)
 from:0x0217dc54 kind:arm_call to:0x0208b9f0 module:overlay(0)
 from:0x0217dc70 kind:arm_call to:0x01fff3b4 module:itcm
 from:0x0217dc8c kind:arm_call to:0x021695a8 module:overlay(93)
@@ -898,14 +898,14 @@ from:0x02180c60 kind:arm_call to:0x0200e260 module:main
 from:0x02180c70 kind:arm_call to:0x01ff8e58 module:itcm
 from:0x02180c80 kind:arm_call to:0x01ffad5c module:itcm
 from:0x02180cac kind:arm_call to:0x02058fc4 module:overlay(0)
-from:0x02180cb8 kind:load to:0x027e0254 module:dtcm
+from:0x02180cb8 kind:load to:0x027e0208 add:0x4c module:dtcm
 from:0x02180cbc kind:load to:0x027e0964 module:dtcm
 from:0x02180cc0 kind:load to:0x027e0958 module:dtcm
 from:0x02180ccc kind:arm_call to:0x02180b70 module:overlay(95)
 from:0x02180ce4 kind:arm_call to:0x01ff8e58 module:itcm
 from:0x02180ce8 kind:arm_call to:0x0205accc module:overlay(0)
 from:0x02180d08 kind:arm_call to:0x01ff8e58 module:itcm
-from:0x02180d10 kind:load to:0x027e0254 module:dtcm
+from:0x02180d10 kind:load to:0x027e0208 add:0x4c module:dtcm
 from:0x02180da8 kind:load to:0x0217a220 module:overlay(95)
 from:0x02180dcc kind:load to:0x02179e20 module:overlay(95)
 from:0x02180dd0 kind:load to:0x0217a280 module:overlay(95)

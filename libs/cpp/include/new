@@ -1,0 +1,27 @@
+#ifndef _STD_NEW
+#define _STD_NEW
+
+#include <stddef.h>
+
+// from rb3 decomp
+
+void *operator new(size_t size);
+void *operator new[](size_t size);
+void operator delete(void *ptr);
+void operator delete[](void *ptr);
+
+inline void *operator new(size_t length, void *ptr) {
+#pragma unused(length)
+    return ptr;
+}
+
+inline void *operator new[](size_t length, void *ptr) {
+#pragma unused(length)
+    return ptr;
+}
+
+inline void operator delete(void *ptr, void *place) {}
+
+inline void operator delete[](void *ptr, void *place) {}
+
+#endif // _STD_NEW

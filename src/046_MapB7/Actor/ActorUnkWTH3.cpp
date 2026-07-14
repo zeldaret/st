@@ -1,0 +1,46 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#include "Actor/ActorUnkWTH3.hpp"
+#include "System/SysNew.hpp"
+
+DECL_PROFILE(ActorProfileUnkWTH3);
+
+Actor *ActorProfileUnkWTH3::Create() {
+    return new(HeapIndex_2) ActorUnkWTH3();
+}
+
+ActorProfileUnkWTH3::ActorProfileUnkWTH3() :
+    ActorProfile_Derived1(ActorId_WTH3) {}
+
+ActorUnkWTH3::ActorUnkWTH3() {}
+
+void ActorUnkWTH3::func_ov046_021267b8(void) {}
+void ActorUnkWTH3::func_ov046_021268a0(void) {}
+void ActorUnkWTH3::func_ov046_0212699c(void) {}
+void ActorUnkWTH3::func_ov046_021269f8(void) {}
+void ActorUnkWTH3::func_ov046_02126a74(void) {}
+void ActorUnkWTH3::func_ov046_02126aa4(void) {}
+void ActorUnkWTH3::func_ov046_02126b24(void) {}
+void ActorUnkWTH3::func_ov046_02126c1c(void) {}
+void ActorUnkWTH3::func_ov046_02126c38(void) {}
+void ActorUnkWTH3::func_ov046_02126c98(void) {}
+void ActorUnkWTH3::func_ov046_02126ca8(void) {}
+void ActorUnkWTH3::func_ov046_02126d2c(void) {}
+void ActorUnkWTH3::func_ov046_02126db8(void) {}
+void ActorUnkWTH3::func_ov046_02126df8(void) {}
+void ActorUnkWTH3::func_ov046_02126e54(void) {}
+void ActorUnkWTH3::func_ov046_02126e9c(void) {}
+void ActorUnkWTH3::func_ov046_02126f3c(void) {}
+void ActorUnkWTH3::func_ov046_02126f78(void) {}
+void ActorUnkWTH3::func_ov046_02127008(void) {}
+void ActorUnkWTH3::func_ov046_02127190(void) {}
+void ActorUnkWTH3::func_ov046_02127218(void) {}
+void ActorUnkWTH3::func_ov046_021273a8(void) {}
+void ActorUnkWTH3::func_ov046_021276a0(void) {}
+void ActorUnkWTH3::func_ov046_021276cc(void) {}
+void ActorUnkWTH3::func_ov046_0212771c(void) {}
+void ActorUnkWTH3::func_ov046_02127750(void) {}
+void ActorUnkWTH3::func_ov046_021277b4(void) {}
+
+ActorUnkWTH3::~ActorUnkWTH3() {}
+ActorProfileUnkWTH3::~ActorProfileUnkWTH3() {}

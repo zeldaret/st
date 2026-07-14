@@ -1,43 +1,57 @@
 #pragma once
 
 #include "Actor/ActorId.hpp"
+#include "Actor/ActorProfile.hpp"
 #include "Actor/ActorRef.hpp"
-#include "Actor/ActorType.hpp"
 #include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
 #include "flags.h"
 #include "global.h"
-#include "nitro/math.h"
+#include "math.hpp"
 #include "types.h"
+#include "versions.h"
 
-class Actor_5c_Base {
+class ActorParams {
 public:
-    /* 00 */ Vec3p mUnk_00;
-    /* 0c */ s16 mUnk_0c;
-    /* 0e */ unk16 mUnk_0e; // padding?
-    /* 10 */
+    /* 00 */ VecFx32 mInitialPos;
+    /* 0C */ s16 mInitialAngle;
+    /* 0E */ s8 mUnk_0E;
+    /* 0F */ bool mUnk_0F;
+    /* 10 */ u16 mParams[4];
+    /* 18 */ u8 mUnk_18[2];
+    /* 1A */ u16 mUnk_1A[2];
+    /* 1E */ u16 mUnk_1E;
+    /* 20 */ union {
+        unk32 mUnk_20;
+        unk16 mUnk_20_0;
+        unk16 mUnk_20_2;
+    };
+    /* 24 */ unk16 mUnk_24;
+    /* 26 */ union {
+        unk16 mUnk_26;
+        unk8 mUnk_26_0;
+        unk8 mUnk_26_1;
+    };
+    /* 28 */ ActorRef mUnk_28;
+    /* 2C */ u32 mUnk_2C;
+    /* 30 */
 
-    Actor_5c_Base() {};
-};
-
-class Actor_5c : public Actor_5c_Base {
-public:
-    /* 00 (base) */
-
-    Actor_5c() {};
     void func_ov000_020975f8();
 };
 
 class UnkStruct_ov000_020b539c {
 public:
-    /* 00 */ Actor_5c_Base mUnk_00[3];
-    /* 30 */ ActorType *mUnk_30;
+    /* 00 */ ActorParams mUnk_00;
+    /* 30 */ ActorProfile *mUnk_30;
     /* 34 */
 
-    ActorType **func_ov000_02073dc();
-    ActorType **func_ov000_02073e8();
-    ActorType *func_ov000_020974dc(u32 id);
+    ActorProfile **func_ov000_02073dc();
+    ActorProfile **func_ov000_02073e8();
+    ActorProfile *GetProfileFromId(ActorId actorId);
+    void func_ov000_02097444(ActorId actorId, ActorParams *pParams, unk32 param3);
 };
+
+class Actor_C4;
 
 typedef u32 ActorFlags;
 enum ActorFlag_ {
@@ -75,80 +89,137 @@ enum ActorFlag_ {
     ActorFlag_31          = FLAG(0, 31),
 };
 
-class Actor : public SysObject {
+class Actor_C4;
+
+struct ActorGrabParams;
+extern "C" void func_ov000_0205d500(ActorGrabParams *, unk32, unk32);
+bool PlayerCharacter_IsNotLink(s32 character);
+
+struct ActorGrabParams {
+    /* 00 */ u16 unk_00;
+    /* 02 */ u16 unk_02;
+    /* 04 */
+
+    ActorGrabParams() {}
+
+    ActorGrabParams(unk32 param2, unk32 param3) {
+        ActorGrabParams local_1c;
+        func_ov000_0205d500(&local_1c, param3, param2);
+        *this = local_1c;
+    }
+
+    void operator=(ActorGrabParams &from) {
+        *(u32 *) this = *(u32 *) &from;
+    }
+};
+
+class Actor_9C {
 public:
     /* 00 (vtable) */
-    /* 04 */ Vec3p mPos;
-    /* 10 */ Vec3p mPrevPos;
-    /* 1c */ Vec3p mVel;
-    /* 28 */ u16 mAngle;
-    /* 2a */ unk16 mUnk_2a;
-    /* 2c */ unk32 mUnk_2c; // gravity?
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ ActorRef mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ u16 mUnk_1C;
+    /* 1E */ u16 mUnk_1E;
+    /* 20 */
+
+    /* 00 */ virtual void vfunc_00(); // corresponds to func_ov000_02097c14
+    /* 04 */ virtual void vfunc_04(); // corresponds to func_ov000_02097c20
+    /* 08 */
+
+    Actor_9C();
+    void func_ov000_02097bec();
+};
+
+typedef s16 ActorState;
+#define ActorState_None -1
+
+class Actor {
+public:
+    /* 00 (vtable) */
+    /* 04 */ VecFx32 mPos;
+    /* 10 */ VecFx32 mPrevPos;
+    /* 1C */ VecFx32 mVel;
+    /* 28 */ fx16 mAngle;
+    /* 2A */ unk16 mUnk_2A;
+    /* 2C */ unk32 mUnk_2C; // gravity?
     /* 30 */ Cylinder *mUnk_30;
     /* 34 */ Cylinder *mUnk_34;
     /* 38 */ unk32 *mUnk_38;
-    /* 3c */ unk32 mUnk_3c;
-    /* 40 */ void *mUnk_40; // pointer to `Actor_c4`
+    /* 3C */ Actor_9C *mUnk_3C;
+    /* 40 */ Actor_C4 *mUnk_40;
     /* 44 */ u16 mUnk_44;
     /* 46 */ unk16 mUnk_46;
     /* 48 */ unk16 mUnk_48;
-    /* 4a */ unk8 mUnk_4a;
-    /* 4a */ unk8 mUnk_4b;
-    /* 4c */ unk16 mUnk_4c;
-    /* 4e */ s16 mUnk_4e;
-    /* 50 */ volatile u16 mUnk_50;
-    /* 52 */ u16 mUnk_52;
+    /* 4A */ u8 mUnk_4A[2];
+    /* 4C */ ActorState mState;
+    /* 4E */ fx16 mYOffset;
+    /* 50 */ volatile u16 mUnk_50; // timer some actors are using
+    /* 52 */ u16 mUnk_52;          // maximum value for above timer
     /* 54 */ unk32 mUnk_54;
     /* 58 */ ActorFlags mFlags[1];
-    /* 5c */ Actor_5c mUnk_5c;
-    /* 6c */ u16 mUnk_6c; // actor user id?
-    /* 6e */ u16 mUnk_6e;
-    /* 70 */ u16 mUnk_70;
-    /* 70 */ unk16 mUnk_72;
-    /* 74 */ u8 mUnk_74;
-    /* 74 */ u8 mUnk_75;
-    /* 76 */ u16 mUnk_76;
-    /* 78 */ u16 mUnk_78;
-    /* 78 */ unk16 mUnk_7a;
-    /* 7c */ unk32 mUnk_7c;
-    /* 80 */ s16 mUnk_80;
-    /* 80 */ unk16 mUnk_82;
-    /* 84 */ unk32 mUnk_84;
-    /* 88 */ unk32 mUnk_88;
-    /* 8c */ ActorRef mRef;
-    /* 90 */ ActorType *mType;
+    /* 5C */ ActorParams mUnk_5C;
+    /* 8C */ ActorRef mRef;
+    /* 90 */ ActorProfile *mpProfile;
     /* 94 */
 
-    /* 00 */ virtual void vfunc_00(Vec3p *param1);
+    /* 00 */ virtual void GetOffsetPos(VecFx32 *pPos) const;
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
-    /* 0c */ virtual unk8 vfunc_0c();
-    /* 10 */ virtual void vfunc_10();
+    /* 0C */ virtual unk8 vfunc_0C();
+    /* 10 */ virtual void vfunc_10(VecFx32 *param1);
     /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual bool vfunc_18(unk32 param1);
-    /* 1c */ virtual void vfunc_1c();
-    /* 20 */ virtual void vfunc_20();
+    /* 18 */ virtual bool vfunc_18(unk32 param1); // Init?
+    /* 1C */ virtual void vfunc_1C();             // Setup
+    /* 20 */ virtual void vfunc_20();             // Update?
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28();
-    /* 2c */ virtual void vfunc_2c(unk32 param1);
+    /* 2C */ virtual void vfunc_2C(unk32 param1);
     /* 30 */ virtual void vfunc_30();
     /* 34 */ virtual unk32 vfunc_34();
-    /* 38 */ virtual unk32 vfunc_38(unk32 param1);
-    /* 3c */ virtual bool vfunc_3c(unk32 param2, Vec3p *param3);
+    /* 38 */ virtual bool Grab(ActorGrabParams grabParams);
+    /* 3C */ virtual bool Drop(ActorGrabParams grabParams, const VecFx32 *pVel);
     /* 40 */ virtual void vfunc_40();
     /* 44 */ virtual void vfunc_44();
     /* 48 */ virtual void vfunc_48();
-    /* 4c */ virtual ~Actor();
+    /* 4C */ virtual ~Actor();
     /* 54 */
 
-    unk32 func_01fff5d0(unk32 param1, unk32 param2);
+    bool func_01fff5d0(unk32 param1, unk32 param2);
 
     void ResetFlags() {
         *(u32 *) this->mFlags = 0;
     }
 
+    void Kill() {
+        UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+    }
+
+    bool IsAlive() {
+        return GET_FLAG(this->mFlags, ActorFlag_Alive);
+    }
+
     Actor();
-    void func_ov000_0209848c(ActorType *param1);
+
+    ActorId GetActorId();
+
+    bool IsTimerOut() {
+        if (this->mUnk_50 < this->mUnk_52) {
+            this->mUnk_50++;
+            return false;
+        }
+
+        return true;
+    }
+
+    // overlay 0
+    bool func_ov000_0205cbc4(u32 param1, VecFx32 *param2);
+    unk32 func_ov000_0207df88(Cylinder *param1, unk32 param2);
+    unk32 func_ov000_0207e294(Cylinder *param1);
+    void func_ov000_0209848c(ActorProfile *param1);
     void func_ov000_020984b0();
     void func_ov000_020984b4();
     void func_ov000_020984b8();
@@ -158,25 +229,91 @@ public:
     unk32 func_ov000_020984c8();
     void func_ov000_020984d0();
     void func_ov000_020984f0();
+    u32 func_ov000_02098800(bool param1);
+    bool func_ov000_02098838();
     unk32 func_ov000_02098910(unk32 param1, unk32 param2);
-
+    void func_ov000_02098b8c(unk32 param1, unk32 param2);
     s32 func_ov000_02098518(unk32 *param1);
-    void func_ov000_0209853c();
+    VecFx32 *func_ov000_0209853c(unk32 param1);
     s32 func_ov000_02098554();
     s16 func_ov000_0209856c();
     s8 func_ov000_02098578();
     s32 func_ov000_02098584();
     s32 func_ov000_020985f0(void *param1);
     void func_ov000_0209862c(unk32 param1);
-
-    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c *param3, unk32 param4);
-    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c *param3);
-    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c param3);
     void func_ov000_020989e0();
+    bool func_ov000_02098a60(unk32 param1);
+    void func_ov000_02098a88(unk32 param1, unk32 param2);
+    u32 func_ov000_02098ab4(bool param1, unk32 param2, unk32 param3, VecFx32 *param4);
 
-    unk32 func_ov000_02098a60(unk32 param1);
+    static void func_ov000_020973f4(ActorRef *pOutRef, UnkStruct_ov000_020b539c *param2, ActorId actorId, ActorParams *pParams,
+                                    int param5);
 
-    void func_ov017_020bf5c4(Vec3p *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+    // overlay 17
+    bool func_ov017_020beeec(unk32 param1);
+    void func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+    void func_ov017_020bf9c8(Actor *param1);
 };
 
-extern UnkStruct_ov000_020b539c data_ov000_020b539c;
+class Actor_C4_Base {
+public:
+    Actor_C4_Base(void *param1, unk32 param2);
+};
+
+class Actor_C4 : public Actor_C4_Base {
+public:
+    /* 00 (vtable) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk16 mUnk_08;
+    /* 08 */ unk16 mUnk_0A;
+    /* 0C */ unk16 mUnk_0C;
+    /* 0C */ unk16 mUnk_0E;
+    /* 10 */ unk16 mUnk_10;
+    /* 10 */ unk16 mUnk_12;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ Actor *mUnk_20;
+    /* 24 */
+
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2);
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C(unk32 param1);
+    /* 10 */
+
+    template <typename T> T *GetActorPtr() {
+        return (T *) this->mUnk_20;
+    }
+
+    Actor_C4(Actor *param1) :
+        Actor_C4_Base(&param1->mRef, 0) {}
+};
+
+class Actor_Derived2 : public Actor {
+public:
+    /* 00 (base) */
+    /* 94 */ unk32 mUnk_94;
+    /* 98 */ VecFx32 mUnk_98;
+    /* A4 */ unk32 mUnk_A4;
+    /* A8 */ void *mUnk_A8;
+    /* AC */ unk8 mUnk_AC;
+    /* AD */ unk8 mUnk_AD;
+    /* AE */
+
+    Actor_Derived2();
+
+    /* 30 */ virtual void vfunc_30();
+    /* 4C */ WEAK virtual ~Actor_Derived2() {}
+    /* 54 */ virtual void vfunc_54();
+};
+
+extern UnkStruct_ov000_020b539c data_ov000_020b539c_eur;
+
+struct UnkActorDataStruct1 {
+    /* 00 */ unk32 unk_00[4];
+    /* 10 */ unk32 unk_10;
+    /* 14 */ unk32 unk_14;
+    /* 18 */
+};
+extern "C" void func_ov000_02099ddc(void *thisx, UnkActorDataStruct1 param1, unk32 param2, unk32 param3);

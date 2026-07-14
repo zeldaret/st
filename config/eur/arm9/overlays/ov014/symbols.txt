@@ -61,7 +61,7 @@ data_ov014_020b85cd kind:data(any) addr:0x020b85cd ambiguous
 data_ov014_020b85d4 kind:data(any) addr:0x020b85d4
 __sinit_ov014_020b8624 kind:function(thumb,size=0x20) addr:0x020b8624
 .p__sinit_ov014_020b8625 kind:data(word) addr:0x020b8644
-data_ov014_020b8668 kind:data(any) addr:0x020b8668
+_ZTV19data_ov014_020b8660 kind:data(any) addr:0x020b8660
 data_ov014_020b8684 kind:data(any) addr:0x020b8684
 data_ov014_020b869c kind:data(any) addr:0x020b869c
 data_ov014_020b86a0 kind:data(any) addr:0x020b86a0

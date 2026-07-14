@@ -1,11 +1,12 @@
 #include "FileSelect/FileSelect.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
-#include "regs.h"
+
+#include <nitro/gx.h>
 
 extern "C" GameModeManagerBase_104 *func_ov003_020b6520(void *param1, void *param2);
 
-ARM FileSelectManager_160::FileSelectManager_160(GameModeManagerBase_104 *param1, FileSelectMain *param2) {
+FileSelectManager_160::FileSelectManager_160(GameModeManagerBase_104 *param1, FileSelectMain *param2) {
     this->mUnk_10 = param2;
     this->mUnk_14 = NULL;
     this->mUnk_18 = param1;
@@ -13,9 +14,9 @@ ARM FileSelectManager_160::FileSelectManager_160(GameModeManagerBase_104 *param1
     data_0204a088->func_ov000_020611dc(this, 0x0F);
 }
 
-ARM FileSelectManager_160::~FileSelectManager_160() {}
+FileSelectManager_160::~FileSelectManager_160() {}
 
-ARM void FileSelectManager_160::vfunc_08(unk32 param1) {
+void FileSelectManager_160::vfunc_08(unk32 param1) {
     if (param1 == 0) {
         this->mUnk_0C = 0;
         this->mUnk_10->func_ov019_020cb6e8();
@@ -23,7 +24,7 @@ ARM void FileSelectManager_160::vfunc_08(unk32 param1) {
     }
 }
 
-ARM void FileSelectManager_160::vfunc_0C(unk32 param1) {
+void FileSelectManager_160::vfunc_0C(unk32 param1) {
     if (param1 == 0) {
         switch (this->mUnk_0C) {
             case 0:
@@ -41,28 +42,27 @@ ARM void FileSelectManager_160::vfunc_0C(unk32 param1) {
     }
 }
 
-ARM void FileSelectManager_160::vfunc_14() {}
+void FileSelectManager_160::vfunc_14(unk32 param1) {}
 
-ARM void FileSelectManager_160::vfunc_10() {
+void FileSelectManager_160::vfunc_10(unk32 param1, unk32 param2) {
     data_0204999c.func_02013014();
     data_0204999c.mUnk_60 = 0xD6D8;
     data_0204a088->func_ov000_02061248();
     data_0204a110.func_02019538(0x27, 1);
-    GameModeLinkListNode::func_020166ac(&this->mUnk_10->mList);
+    this->mUnk_10->Detach();
     this->mUnk_10->func_ov019_020cb664();
     this->mUnk_14 = func_ov003_020b6520(&this->mUnk_18, this->mUnk_1C);
-    REG_DISPCNT &= 0xFFFFE0FF;
-    REG_DISPCNT |= 0x1F00;
+    GX_SetVisiblePlane(31);
     data_0204999c.func_02013070();
 }
 
-ARM void FileSelectManager_160::vfunc_18(unk32 param1) {
+void FileSelectManager_160::vfunc_18(unk32 param1) {
     if (param1 == 0) {
         this->mUnk_0C = 1;
     }
 }
 
-ARM void FileSelectManager_160::vfunc_1C(unk32 param1) {
+void FileSelectManager_160::vfunc_1C(unk32 param1) {
     if (param1 == 0) {
         switch (this->mUnk_0C) {
             case 0:
@@ -80,7 +80,7 @@ ARM void FileSelectManager_160::vfunc_1C(unk32 param1) {
     }
 }
 
-ARM void FileSelectManager_160::vfunc_20() {
+void FileSelectManager_160::vfunc_20(unk32 param1, unk32 param2) {
     data_0204999c.func_02013014();
     data_0204999c.mUnk_60 = 0xD6D8;
     this->mUnk_14         = NULL;
@@ -88,18 +88,17 @@ ARM void FileSelectManager_160::vfunc_20() {
     data_0204a110.func_02019538(0x25, 1);
 
     FileSelectMain *temp_r4 = this->mUnk_10;
-    this->mUnk_18->mList.func_020166cc(temp_r4->GetNode());
+    this->mUnk_18->Append(temp_r4);
     temp_r4->vfunc_18();
 
     this->mUnk_10->func_ov019_020cb5dc();
     this->mUnk_10->func_ov019_020cb718();
 
-    REG_DISPCNT &= 0xFFFFE0FF;
-    REG_DISPCNT |= 0x1C00;
+    GX_SetVisiblePlane(28);
 
     data_0204999c.func_02013070();
 }
 
-ARM void FileSelectManager_160::vfunc_24() {
+void FileSelectManager_160::vfunc_24() {
     data_0204a110.func_0201967c(0, 0, 1, 0, 3);
 }

@@ -9,40 +9,33 @@
 #include "Unknown/UnkStruct_0204e64c.hpp"
 #include "Unknown/UnkStruct_ov000_020b4ec4.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
-#include "regs.h"
+
+#include <nitro/dc.h>
+#include <nitro/gx.h>
+#include <nitro/os.h>
+#include <nitro/reg.h>
+#include <nitro/tp.h>
 
 extern "C" {
-void func_020261f0(unk32 param1, void *param2);
 void func_0201245c();
 void func_02027a28(void *param1, unk32 param2);
-void DC_FlushAll();
 void func_02013184();
 void func_020131b0();
-void func_020263bc(unk32 param1);
-void func_020234d4(unk32 param1);
 void func_02031e48(void *param1);
-void func_02026ef0(void *param1);
-unk32 func_02027818(unk32 param1);
-unk32 func_0202780c(unk32 param1);
+
 UnkStruct_02011e10_Sub1 *func_020012e0(unk32 param1, unk32 param2, unk32 param3);
 unk32 func_0202d624(void *param1, unk32 param2);
 void *func_02001fd4(void *param1, size_t param2);
 void func_020013ac(void *param1);
 UnkStruct_02011e10_Sub1 *func_02001098(unk32 param1, unk32 param2, unk32 param3);
 unk32 func_020011f4();
-void func_0202793c(unk32 param1, unk32 param2);
-void func_0202e820();
-unk32 func_020271b0();
-unk32 func_0202e864(void *param1);
-void func_0202e8f8(void *param1);
-
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
 }
 
 static u8 data_ov018_020c5bc0;
 
-ARM void SysFault::func_ov018_020c4840() {
+void SysFault::func_ov018_020c4840() {
     this->mUnk_05 = 0;
     func_02027a28(func_0201245c, 0);
     DC_FlushAll();
@@ -50,24 +43,24 @@ ARM void SysFault::func_ov018_020c4840() {
     this->mUnk_04 = 0;
 }
 
-ARM Game::Game() :
+Game::Game() :
     mpCurrentGameMode(NULL),
     createCallback(NULL),
     mUnk_08(NULL),
-    mpSaveFile(NULL),
+    mpSaveSlot(NULL),
     mUnk_14(NULL),
     mUnk_18(NULL) {}
 
-ARM void Game::func_ov018_020c48a4() {
-    func_020261f0(1, func_02013184);
-    func_020263bc(1);
-    func_020234d4(1);
-    func_02026ef0(&this->mUnk_1C.mUnk_04);
+void Game::func_ov018_020c48a4() {
+    OS_SetIrqFunction(1, func_02013184);
+    OS_EnableIrqMask(1);
+    GX_VBlankIntr(1);
+    OS_WakeupThreadDirect(&this->mUnk_1C.mUnk_04);
     func_02031e48(func_020131b0);
     this->TrySetCreateCallback((GameModeCreateCallback) Game::func_ov018_020c4ba8);
 }
 
-ARM void Game::func_ov018_020c48f8() {
+void Game::func_ov018_020c48f8() {
     if (gOverlayManager.mLoadedOverlays[OverlaySlot_Second] != OverlayIndex_Second) {
         data_02049ba0.LoadIfNotLoaded(OverlaySlot_Second, OverlayIndex_Second);
         data_0204999c.func_ov018_020c4a5c();
@@ -76,15 +69,15 @@ ARM void Game::func_ov018_020c48f8() {
     }
 }
 
-ARM UnkStruct_02049b18::UnkStruct_02049b18() {
+UnkStruct_02049b18::UnkStruct_02049b18() {
     this->mUnk_58 = 0;
     this->mUnk_5A = 0;
     this->func_02013768();
 }
 
-ARM void UnkStruct_02011e10::func_ov018_020c4980() {
-    unk32 arenaLo = func_02027818(0);
-    unk32 arenaHi = func_0202780c(0);
+void UnkStruct_02011e10::func_ov018_020c4980() {
+    unk32 arenaLo = OS_GetMainArenaLo();
+    unk32 arenaHi = OS_GetMainArenaHi();
 
     for (int i = 0; i < HeapIndex_Max; i++) {
         this->mUnk_00[i] = NULL;
@@ -96,9 +89,9 @@ ARM void UnkStruct_02011e10::func_ov018_020c4980() {
 
     this->mUnk_00[HeapIndex_Main] = func_020012e0(arenaLo, arenaHi - arenaLo, 2);
     unk32 length                  = func_0202d624(NULL, 0);
-    void *ptr                     = ::operator new(length, 0);
+    void *ptr                     = ::operator new(length, 0, 4);
     func_0202d624(ptr, length);
-    ptr         = ::operator new(0xBE000, 0);
+    ptr         = ::operator new(0xBE000, 0, 4);
     void *uVar3 = func_02001fd4(ptr, 0xBE000);
 
     this->mUnk_24[0] = (unk32) uVar3;
@@ -113,7 +106,7 @@ ARM void UnkStruct_02011e10::func_ov018_020c4980() {
     this->mUnk_7C    = 0;
 }
 
-ARM void UnkStruct_02011e10::func_ov018_020c4a5c() {
+void UnkStruct_02011e10::func_ov018_020c4a5c() {
     UnkStruct_02011e10_Sub1 *temp_r2;
     int temp_r5;
     int temp_r7;
@@ -123,19 +116,19 @@ ARM void UnkStruct_02011e10::func_ov018_020c4a5c() {
     temp_r2 = this->mUnk_00[0];
 
     temp_r5 = ((uintptr_t) temp_r2->mUnk_1C - (uintptr_t) temp_r2); //! TODO: fake match?
-    temp_r7 = func_02027818(0);
+    temp_r7 = OS_GetArenaLo(0);
     temp_r7 += temp_r5;
 
-    temp_r0          = func_0202780c(0);
+    temp_r0          = OS_GetMainArenaHi();
     this->mUnk_00[1] = func_02001098(temp_r7, temp_r0 - temp_r7, 2);
     this->mUnk_5C    = func_020011f4();
-    func_0202793c(0, temp_r0);
+    OS_SetMainArenaLo((void *) temp_r0);
     this->mUnk_74 = 1;
 }
 
-ARM UnkStruct_ov000_020b4ec4::UnkStruct_ov000_020b4ec4() {}
+UnkStruct_ov000_020b4ec4::UnkStruct_ov000_020b4ec4() {}
 
-ARM UnkStruct_02049b80::UnkStruct_02049b80() {
+UnkStruct_02049b80::UnkStruct_02049b80() {
     this->mUnk_08 = this;
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_0C); i++) {
@@ -144,19 +137,19 @@ ARM UnkStruct_02049b80::UnkStruct_02049b80() {
     }
 }
 
-ARM UnkStruct_02049b18_06::UnkStruct_02049b18_06() {
-    unk8 auStack_18[8];
+UnkStruct_02049b18_06::UnkStruct_02049b18_06() {
+    TPCalibrateParam params;
 
-    func_0202e820();
+    TP_Init();
 
-    if (func_020271b0() != 0) {
-        func_0202e8f8(NULL);
-    } else if (func_0202e864(auStack_18) != 0) {
-        func_0202e8f8(auStack_18);
+    if (OS_func_0065()) {
+        TP_SetCalibrateParam(NULL);
+    } else if (TP_GetUserInfo(&params)) {
+        TP_SetCalibrateParam(&params);
     }
 }
 
-ARM UnkStruct_0204e64c_00::UnkStruct_0204e64c_00() {
+UnkStruct_0204e64c_00::UnkStruct_0204e64c_00() {
     this->mUnk_04 = 0;
     this->mUnk_06 = 0;
     this->mUnk_08 = 0;
@@ -165,16 +158,16 @@ ARM UnkStruct_0204e64c_00::UnkStruct_0204e64c_00() {
     this->mUnk_0C = 0;
 }
 
-ARM UnkStruct_0204e64c::UnkStruct_0204e64c() {
+UnkStruct_0204e64c::UnkStruct_0204e64c() {
     this->mUnk_16 = 0;
 }
 
-ARM GameModeStartUp *Game::func_ov018_020c4ba8() {
+GameModeStartUp *Game::func_ov018_020c4ba8() {
     static GameModeStartUp data_ov018_020c5bd4;
     return &data_ov018_020c5bd4;
 }
 
-ARM GameModeStartUp::GameModeStartUp() {
+GameModeStartUp::GameModeStartUp() {
     this->mUnk_28 = 0;
     this->mUnk_2A = 0;
     data_0204a110.func_02018c78(1);
@@ -198,7 +191,7 @@ ARM GameModeStartUp::GameModeStartUp() {
     data_0204e5f8.func_0201b9a8(&this->mUnk_04);
 }
 
-ARM void GameModeStartUp::vfunc_0C() {
+void GameModeStartUp::vfunc_0C() {
     if (this->mUnk_04.mUnk_0D == this->mUnk_04.mUnk_10) {
         if (this->mUnk_28 == 0) {
             this->mUnk_2C = REG_FRAME_COUNTER;
@@ -215,4 +208,4 @@ ARM void GameModeStartUp::vfunc_0C() {
     }
 }
 
-ARM void GameModeStartUp::vfunc_20() {}
+void GameModeStartUp::vfunc_20() {}

@@ -1,6 +1,6 @@
 func_ov109_021865c0 kind:function(arm,size=0xc4) addr:0x021865c0
 func_ov109_02186684 kind:function(arm,size=0x124) addr:0x02186684
 func_ov109_021867a8 kind:function(arm,size=0x108) addr:0x021867a8
-func_ov109_021868b0 kind:function(arm,size=0x14) addr:0x021868b0
-func_ov109_021868c4 kind:function(arm,size=0x1c) addr:0x021868c4
+_ZN19func_ov109_021868b0D1Ev kind:function(arm,size=0x14) addr:0x021868b0
+_ZN19func_ov109_021868c4D0Ev kind:function(arm,size=0x1c) addr:0x021868c4
 data_ov109_02186908 kind:data(any) addr:0x02186908 ambiguous

@@ -1,0 +1,62 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#include "Actor/ActorUnkFIML.hpp"
+#include "System/SysNew.hpp"
+
+DECL_PROFILE(ActorProfileUnkFIML);
+
+Actor *ActorProfileUnkFIML::Create() {
+    return new(HeapIndex_2) ActorUnkFIML();
+}
+
+ActorProfileUnkFIML::ActorProfileUnkFIML() :
+    ActorProfile_Derived1(ActorId_FIML) {}
+
+ActorUnkFIML::ActorUnkFIML() {}
+
+void ActorUnkFIML::func_ov035_0211bdf8(void) {}
+void ActorUnkFIML::func_ov035_0211be0c(void) {}
+void ActorUnkFIML::func_ov035_0211bf40(void) {}
+void ActorUnkFIML::func_ov035_0211bf74(void) {}
+void ActorUnkFIML::func_ov035_0211bfe8(void) {}
+void ActorUnkFIML::func_ov035_0211c55c(void) {}
+void ActorUnkFIML::func_ov035_0211c594(void) {}
+void ActorUnkFIML::func_ov035_0211c5c4(void) {}
+void ActorUnkFIML::func_ov035_0211c5e8(void) {}
+void ActorUnkFIML::func_ov035_0211c68c(void) {}
+void ActorUnkFIML::func_ov035_0211c754(void) {}
+void ActorUnkFIML::func_ov035_0211c768(void) {}
+void ActorUnkFIML::func_ov035_0211c780(void) {}
+void ActorUnkFIML::func_ov035_0211c8f0(void) {}
+void ActorUnkFIML::func_ov035_0211cc70(void) {}
+void ActorUnkFIML::func_ov035_0211ccd8(void) {}
+void ActorUnkFIML::func_ov035_0211cd0c(void) {}
+void ActorUnkFIML::func_ov035_0211cdd0(void) {}
+void ActorUnkFIML::func_ov035_0211d128(void) {}
+void ActorUnkFIML::func_ov035_0211d1a8(void) {}
+void ActorUnkFIML::func_ov035_0211d270(void) {}
+void ActorUnkFIML::func_ov035_0211d2d8(void) {}
+void ActorUnkFIML::func_ov035_0211d37c(void) {}
+void ActorUnkFIML::func_ov035_0211d430(void) {}
+void ActorUnkFIML::func_ov035_0211d5a0(void) {}
+void ActorUnkFIML::func_ov035_0211d620(void) {}
+void ActorUnkFIML::func_ov035_0211d7b8(void) {}
+void ActorUnkFIML::func_ov035_0211d7f4(void) {}
+void ActorUnkFIML::func_ov035_0211d814(void) {}
+void ActorUnkFIML::func_ov035_0211d870(void) {}
+void ActorUnkFIML::func_ov035_0211d8fc(void) {}
+void ActorUnkFIML::func_ov035_0211db34(void) {}
+void ActorUnkFIML::func_ov035_0211db48(void) {}
+void ActorUnkFIML::func_ov035_0211db74(void) {}
+void ActorUnkFIML::func_ov035_0211dc10(void) {}
+void ActorUnkFIML::func_ov035_0211dc68(void) {}
+void ActorUnkFIML::func_ov035_0211dcc4(void) {}
+void ActorUnkFIML::func_ov035_0211dd10(void) {}
+void ActorUnkFIML::func_ov035_0211dd2c(void) {}
+void ActorUnkFIML::func_ov035_0211e050(void) {}
+void ActorUnkFIML::func_ov035_0211e05c(void) {}
+void ActorUnkFIML::func_ov035_0211e370(void) {}
+void ActorUnkFIML::func_ov035_0211e460(void) {}
+
+ActorUnkFIML::~ActorUnkFIML() {}
+ActorProfileUnkFIML::~ActorProfileUnkFIML() {}

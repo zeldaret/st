@@ -3,13 +3,13 @@
 #include "System/Random.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "global.h"
-#include "regs.h"
+
+#include <nitro/dc.h>
+#include <nitro/g2.h>
 
 extern "C" {
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
-void func_020249d4(void *pReg, unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-void DC_FlushAll();
 };
 
 FileSelectOptionsManager *gpFSOptionsManager = NULL;
@@ -23,7 +23,7 @@ static unk8 data_ov019_020edccc[0xDC00];
 const u16 data_ov019_020d1bcc[] = {0x00, 0x01, 0x02};
 
 // https://decomp.me/scratch/LzPt6
-ARM FileSelectSubScreen::FileSelectSubScreen() :
+FileSelectSubScreen::FileSelectSubScreen() :
     mUnk_001C(0),
     mUnk_0020(0),
     mUnk_0028(1),
@@ -47,9 +47,8 @@ ARM FileSelectSubScreen::FileSelectSubScreen() :
     this->mUnk_0FA8.func_02017520("TPD:Tape_d", "TPD:Tape_d", NULL);
     this->mUnk_0FE4.func_02017520("TPE:Tape_e", "TPE:Tape_e", NULL);
 
-    REG_DISPCNT_SUB &= ~0x00001F00;
-    REG_DISPCNT_SUB |= 0x00001F00;
-    func_020249d4(&REG_BLDCNT_SUB, 0x01, 0x1E, 0x08, 0x0A);
+    GXS_SetVisiblePlane(31);
+    G2S_SetBlendAlpha(1, 30, 8, 10);
 
     {
         UnkStruct2 stack_narc("Screen/Bg/Cover.bin", 1);
@@ -71,15 +70,15 @@ ARM FileSelectSubScreen::FileSelectSubScreen() :
     this->func_ov019_020cf73c(2, 1);
 }
 
-ARM void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
+void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     this->mUnk_0024 = this->mUnk_0020;
     this->mUnk_0020 += 0x800;
 
-    REG_BG1OFS_SUB = ROUND_Q20(this->mUnk_0020) & 0x1FF;
-    REG_BG2OFS_SUB = (ROUND_Q20(this->mUnk_0020) + 0x100) & 0x1FF;
-    REG_BG3OFS_SUB = (ROUND_Q20(this->mUnk_0020) / 2) & 0x1FF;
+    G2S_SetBG1Offset(ROUND_FX32(this->mUnk_0020), 0);
+    G2S_SetBG2Offset(ROUND_FX32(this->mUnk_0020) + 0x100, 0);
+    G2S_SetBG3Offset(ROUND_FX32(this->mUnk_0020) / 2, 0);
 
-    if (!(ROUND_Q20(this->mUnk_0020) % 256) && (ROUND_Q20(this->mUnk_0024) % 256)) {
+    if (!(ROUND_FX32(this->mUnk_0020) % 256) && (ROUND_FX32(this->mUnk_0024) % 256)) {
         switch (this->mUnk_001C) {
             case 0:
                 this->mUnk_001C = 1;
@@ -117,7 +116,7 @@ ARM void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchCont
     this->mUnk_002C.vfunc_00();
 }
 
-ARM void FileSelectSubScreen::func_ov019_020cf73c(unk32 param1, unk32 param2) {
+void FileSelectSubScreen::func_ov019_020cf73c(unk32 param1, unk32 param2) {
     unk32 arg0;
     unk32 arg7;
     unk32 arg8;
@@ -159,40 +158,48 @@ ARM void FileSelectSubScreen::func_ov019_020cf73c(unk32 param1, unk32 param2) {
     }
 }
 
-ARM void FileSelectSubScreen::vfunc_10(unk8 *param1) {
+void FileSelectSubScreen::vfunc_10(unk8 *param1) {
     this->mUnk_002C.vfunc_04();
 }
 
-ARM FileSelect_UnkClass7::FileSelect_UnkClass7() {
+FileSelect_UnkClass7::FileSelect_UnkClass7() {
     Random *pRandom = &gRandom;
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_004.mUnk_000); i++) {
-        this->mUnk_004.mUnk_000[i].func_ov000_0206082c(0x8F, data_ov019_020d1bcc[gRandom.Next32(0, 3)]);
+        this->mUnk_004.mUnk_000[i].func_ov000_0206082c(0x8F, data_ov019_020d1bcc[gRandom.Next32(3)]);
 
-        u16 value = gRandom.ConditionalNext32(this->mUnk_004.mUnk_000[i].func_ov000_02060c28());
+        u16 value = gRandom.Next32(this->mUnk_004.mUnk_000[i].func_ov000_02060c28());
         this->mUnk_004.mUnk_000[i].func_ov000_02060bd8(value);
 
-        Vec2us pos   = pRandom->NextPos(SUBSCREEN_WIDTH, SUBSCREEN_HEIGHT);
+        Vec2us pos;
+        pos.x = pRandom->Next32(SUBSCREEN_WIDTH);
+        pos.y = pRandom->Next32(SUBSCREEN_HEIGHT);
+
         Vec2us *pVec = &this->mUnk_004.mUnk_E10[i];
-        *pVec        = pos;
+        pVec->x      = pos.x;
+        pVec->y      = pos.y;
     }
 }
 
-ARM void FileSelect_UnkClass7::vfunc_00() {
+void FileSelect_UnkClass7::vfunc_00() {
     for (int i = 0; i < ARRAY_LEN(this->mUnk_004.mUnk_000); i++) {
         this->mUnk_004.mUnk_000[i].func_ov000_020609c4();
 
-        if (this->mUnk_004.mUnk_000[i].func_ov000_02060af8() != 0) {
+        if (this->mUnk_004.mUnk_000[i].func_ov000_02060af8()) {
             this->mUnk_004.mUnk_000[i].func_ov000_02060b64();
 
-            Vec2us pos   = gRandom.NextPos(SUBSCREEN_WIDTH, SUBSCREEN_HEIGHT);
+            Vec2us pos;
+            pos.x = gRandom.Next32(SUBSCREEN_WIDTH);
+            pos.y = gRandom.Next32(SUBSCREEN_HEIGHT);
+
             Vec2us *pVec = &this->mUnk_004.mUnk_E10[i];
-            *pVec        = pos;
+            pVec->x      = pos.x;
+            pVec->y      = pos.y;
         }
     }
 }
 
-ARM void FileSelect_UnkClass7::vfunc_04() {
+void FileSelect_UnkClass7::vfunc_04() {
     for (int i = 0; i < 0x1E; i++) {
         data_0204af1c.func_0201aad0(&this->mUnk_004.mUnk_000[i], &this->mUnk_004.mUnk_E10[i], 1, 0);
     }

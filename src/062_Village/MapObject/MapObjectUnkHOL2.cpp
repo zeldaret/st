@@ -1,0 +1,23 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#include "MapObject/MapObjectUnkHOL2.hpp"
+#include "System/SysNew.hpp"
+
+DECL_PROFILE(MapObjectProfileUnkHOL2);
+
+MapObject *MapObjectProfileUnkHOL2::Create() {
+    return new(HeapIndex_2) MapObjectUnkHOL2();
+}
+
+MapObjectProfileUnkHOL2::MapObjectProfileUnkHOL2() :
+    MapObjectProfile(MapObjectId_HOL2) {}
+
+MapObjectUnkHOL2::MapObjectUnkHOL2() {}
+
+void MapObjectUnkHOL2::func_ov062_0215b660(void) {}
+void MapObjectUnkHOL2::func_ov062_0215b6e4(void) {}
+void MapObjectUnkHOL2::func_ov062_0215b784(void) {}
+void MapObjectUnkHOL2::func_ov062_0215b798(void) {}
+
+MapObjectUnkHOL2::~MapObjectUnkHOL2() {}
+MapObjectProfileUnkHOL2::~MapObjectProfileUnkHOL2() {}

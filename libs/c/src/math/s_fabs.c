@@ -24,6 +24,6 @@ double fabs(x)
 double x;
 #endif
 {
-    __HI(x) &= 0x7fffffff;
+    __HI(x) &= 0x7FFFFFFF;
     return x;
 }

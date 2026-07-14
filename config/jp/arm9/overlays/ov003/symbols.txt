@@ -1,7 +1,7 @@
-func_ov003_020b6520 kind:function(arm,size=0x84) addr:0x020b7d40
+func_ov003_020b7d40 kind:function(arm,size=0x84) addr:0x020b7d40
 func_ov003_020b7dc4 kind:function(arm,size=0x11c) addr:0x020b7dc4
-func_ov003_020b7ee0 kind:function(arm,size=0x38) addr:0x020b7ee0
-func_ov003_020b7f18 kind:function(arm,size=0x40) addr:0x020b7f18
+_ZN19func_ov003_020b7ee0D1Ev kind:function(arm,size=0x38) addr:0x020b7ee0
+_ZN19func_ov003_020b7f18D0Ev kind:function(arm,size=0x40) addr:0x020b7f18
 func_ov003_020b7f58 kind:function(arm,size=0xd4) addr:0x020b7f58
 func_ov003_020b802c kind:function(arm,size=0x94) addr:0x020b802c
 func_ov003_020b80c0 kind:function(arm,size=0x98) addr:0x020b80c0
@@ -11,8 +11,8 @@ func_ov003_020b8218 kind:function(arm,size=0x28) addr:0x020b8218
 func_ov003_020b8240 kind:function(arm,size=0x48) addr:0x020b8240
 func_ov003_020b8288 kind:function(arm,size=0x2f8) addr:0x020b8288
 func_ov003_020b8580 kind:function(arm,size=0x14) addr:0x020b8580
-func_ov003_020b8594 kind:function(arm,size=0xc8) addr:0x020b8594
-func_ov003_020b865c kind:function(arm,size=0xd0) addr:0x020b865c
+_ZN19func_ov003_020b8594D1Ev kind:function(arm,size=0xc8) addr:0x020b8594
+_ZN19func_ov003_020b865cD0Ev kind:function(arm,size=0xd0) addr:0x020b865c
 func_ov003_020b872c kind:function(arm,size=0x44) addr:0x020b872c
 func_ov003_020b8770 kind:function(arm,size=0x44) addr:0x020b8770
 func_ov003_020b87b4 kind:function(arm,size=0x94) addr:0x020b87b4
@@ -115,11 +115,11 @@ __sinit_ov003_020bb6d4 kind:function(arm,size=0x4c) addr:0x020bb6d4
 __sinit_ov003_020bb720 kind:function(arm,size=0x1c) addr:0x020bb720
 .p__sinit_ov003_020bb6d4 kind:data(word) addr:0x020bb73c
 .p__sinit_ov003_020bb720 kind:data(word) addr:0x020bb740
-data_ov003_020bb768 kind:data(any) addr:0x020bb768
+_ZTV19data_ov003_020bb760 kind:data(any) addr:0x020bb760
 data_ov003_020bb784 kind:data(any) addr:0x020bb784
 data_ov003_020bb7ac kind:data(any) addr:0x020bb7ac
 data_ov003_020bb7e4 kind:data(any) addr:0x020bb7e4
-data_ov003_020bb824 kind:data(any) addr:0x020bb824
+_ZTV19data_ov003_020bb81c kind:data(any) addr:0x020bb81c
 data_ov003_020bb840 kind:data(any) addr:0x020bb840
 data_ov003_020bb844 kind:data(any) addr:0x020bb844
 data_ov003_020bb884 kind:data(any) addr:0x020bb884
@@ -156,6 +156,6 @@ data_ov003_020bbec0 kind:data(any) addr:0x020bbec0
 data_ov003_020bbef8 kind:data(any) addr:0x020bbef8
 data_ov003_020bbefc kind:data(any) addr:0x020bbefc
 data_ov003_020bbf18 kind:data(any) addr:0x020bbf18
-data_ov003_020ba740 kind:bss addr:0x020bbf60
+data_ov003_020bbf60 kind:bss addr:0x020bbf60
 data_ov003_020bbf68 kind:bss addr:0x020bbf68
 data_ov003_020bbf74 kind:bss addr:0x020bbf74

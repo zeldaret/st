@@ -3,7 +3,7 @@
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "global.h"
-#include "nitro/math.h"
+#include "math.hpp"
 #include "types.h"
 
 class FileSelectOptions;
@@ -28,14 +28,6 @@ public:
     /* 28 */ FileSelectMicTest *mpMicTest;
     /* 2C */ FileSelectOptions *mpOptions;
     /* 30 */
-
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (this != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
-    }
 
     FileSelectOptionsManager(void *param1, unk32 param2);
     void func_ov019_020cc85c(unk32 param1);
