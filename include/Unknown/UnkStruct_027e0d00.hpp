@@ -16,6 +16,8 @@ struct UnkStruct_027e0d00_00 {
     /* 20 */ unk32 mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */
+
+    UnkStruct_027e0d00_00(unk32 param1, unk32 param2, unk32 param3, u8 param4);
 };
 
 struct UnkStruct_027e0d00_10 {
@@ -38,11 +40,29 @@ public:
 
     /* 00 */ virtual ~UnkStruct_027e0d00_20() override {}
 
-    void func_ov024_020d4fa0(unk32 param1, unk32 param2);
+    void func_ov024_020d4fa0(void *param1, unk32 param2);
     void func_ov024_020d5174();
 
     static void func_ov024_020d4e9c(wchar_t *param1, unk32 param2, bool param3);
     static void func_ov024_020d4edc(wchar_t *param1, wchar_t *param2, unk32 param3);
+};
+
+class UnkStruct_027e0d00_E0 : public MapObjectProfile_Derived2_20_Base {
+public:
+    /* 00 (base) */
+    /* 94 */ STRUCT_PAD(0x94, 0xA8);
+    /* A8 */
+
+    UnkStruct_027e0d00_E0(bool hasRecruitUniform);
+
+    // overlay 26
+    void func_ov026_020fb964();
+    void func_ov026_020fba3c();
+};
+
+struct UnkStruct_027e0d00_FC {
+    /* 000 */ STRUCT_PAD(0x00, 0xD30);
+    /* D30 */
 };
 
 class UnkStruct_027e0d00 : public AutoInstance<UnkStruct_027e0d00> {
@@ -50,13 +70,13 @@ public:
     /* 000 */ UnkStruct_027e0d00_00 *mUnk_000[MAX_TRAIN_PARTS];
     /* 010 */ UnkStruct_027e0d00_10 *mUnk_010[MAX_TRAIN_PARTS];
     /* 020 */ UnkStruct_027e0d00_20 *mUnk_020[MAX_TRAIN_PARTS][MAX_TRAIN_SETS];
-    /* 0A0 */ unk32 mUnk_0A0[MAX_TRAIN_PARTS];
+    /* 0A0 */ void *mUnk_0A0[MAX_TRAIN_PARTS];
     /* 0B0 */ MapObjectProfile_Derived5 *mUnk_0B0[12]; // train parts models
-    /* 0E0 */ unk32 mUnk_0E0;
+    /* 0E0 */ UnkStruct_027e0d00_E0 *mUnk_0E0;
     /* 0E4 */ UnkStruct_027e0d00_20 *mUnk_0E4[MAX_TRAIN_PARTS];
     /* 0F4 */ MapObjectProfile_Derived5 *mUnk_0F4; // cargo models
     /* 0F8 */ UnkStruct_027e0d00_00 *mUnk_0F8;
-    /* 0FC */ void *mUnk_0FC;
+    /* 0FC */ UnkStruct_027e0d00_FC *mUnk_0FC;
     /* 100 */ MapObjectProfile_Derived5 *mUnk_100;
     /* 104 */ bool mUnk_104;
     /* 104 */ unk8 mUnk_105;
@@ -84,12 +104,17 @@ public:
     UnkStruct_027e0d00();
     ~UnkStruct_027e0d00();
 
-    // overlay 0
     static UnkStruct_027e0d00 *GetInstance();
 
     // overlay 1
     void func_ov001_020bf530();
     void func_ov001_020bf568();
+    void func_ov001_020bf590();
+    void func_ov001_020bf69c();
+    void func_ov001_020bf730();
+    void func_ov001_020bf750();
+    void func_ov001_020bf768();
+    void func_ov001_020bf7b8();
 
     static void Destroy();
 

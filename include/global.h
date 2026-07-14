@@ -112,4 +112,11 @@
     }                     \
     (void) 0
 
+#define DELETE_ARRAY2(ptr)        \
+    {                             \
+        ::operator delete[](ptr); \
+        ptr = NULL;               \
+    }                             \
+    (void) 0
+
 #endif

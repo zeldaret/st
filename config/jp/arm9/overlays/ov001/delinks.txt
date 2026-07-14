@@ -158,6 +158,7 @@ src/001_SceneInit/UnkStruct_027e0ce0_34_001.cpp:
     .text       start:0x020c0a0c end:0x020c0d00
 
 src/001_SceneInit/UnkStruct_027e0d00_001.cpp:
+    complete
     .text       start:0x020c0d00 end:0x020c1054
 
 src/001_SceneInit/CargoManager_001.cpp:
