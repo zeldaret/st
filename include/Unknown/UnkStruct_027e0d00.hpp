@@ -87,6 +87,12 @@ public:
     // overlay 0
     static UnkStruct_027e0d00 *GetInstance();
 
+    // overlay 1
+    void func_ov001_020bf530();
+    void func_ov001_020bf568();
+
+    static void Destroy();
+
     // overlay 24
     unk32 func_ov024_020d485c(unk32 param1, unk32 param2);
     u8 func_ov024_020d48c8(unk32 param1);

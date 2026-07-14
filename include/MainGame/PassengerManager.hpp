@@ -56,6 +56,7 @@ public:
     void func_ov001_020bf910();
     bool func_ov001_020bfa1c();
 
+    static void Destroy();
     static bool func_ov001_020bf870();
 
     // overlay 24

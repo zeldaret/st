@@ -154,6 +154,7 @@ src/001_SceneInit/UnkStruct_027e0cec_18_001.cpp:
     .data       start:0x020c2fc4 end:0x020c2fd4
 
 src/001_SceneInit/UnkStruct_027e0ce0_34_001.cpp:
+    complete
     .text       start:0x020bf1b8 end:0x020bf4ac
 
 src/001_SceneInit/UnkStruct_027e0d00_001.cpp:

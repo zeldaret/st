@@ -1968,7 +1968,7 @@ from:0x020bf320 kind:thumb_call_arm to:0x01ffd3d8 module:itcm
 from:0x020bf32a kind:thumb_call to:0x020d3d20 module:overlay(24)
 from:0x020bf332 kind:thumb_call to:0x020d3d80 module:overlay(24)
 from:0x020bf33e kind:thumb_call_arm to:0x0205c984 module:overlay(0)
-from:0x020bf342 kind:thumb_call_arm to:0x020f4c9c module:overlays(21,26)
+from:0x020bf342 kind:thumb_call_arm to:0x020f4c9c module:overlay(26)
 from:0x020bf354 kind:thumb_call_arm to:0x02011f3c module:main
 from:0x020bf35c kind:thumb_call_arm to:0x020eb4d0 module:overlay(26)
 from:0x020bf364 kind:load to:0x027e09b8 module:dtcm
