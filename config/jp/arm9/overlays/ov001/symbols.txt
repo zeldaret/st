@@ -439,9 +439,9 @@ _ZN24UnkStruct_ov000_020b4f70D1Ev kind:function(thumb,size=0xc) addr:0x020c2100
 _ZN24AdventureModeManager_15CC1Ev kind:function(thumb,size=0x68) addr:0x020c210c
 _ZN24AdventureModeManager_15CD1Ev kind:function(thumb,size=0x22) addr:0x020c2174
 _ZN17GameModeAdventureC1Ev kind:function(thumb,size=0x58) addr:0x020c2198
-func_ov001_020c099c kind:function(thumb,size=0x24) addr:0x020c21f0
-func_ov001_020c09c0 kind:function(thumb,size=0x1c) addr:0x020c2214
-func_ov001_020c09dc kind:function(thumb,size=0x48) addr:0x020c2230
+_Z19func_ov001_020c099cv kind:function(thumb,size=0x24) addr:0x020c21f0
+_Z19func_ov001_020c09c0v kind:function(thumb,size=0x1c) addr:0x020c2214
+_ZN20GameModeDownloadPlay19func_ov001_020c09dcEv kind:function(thumb,size=0x48) addr:0x020c2230
 DetectFlashcart kind:function(arm,size=0xb8,unknown) addr:0x020c2278
 DetectNotFlashcart kind:function(arm,size=0xb8,unknown) addr:0x020c2330
 DetectEmulator kind:function(arm,size=0xb8,unknown) addr:0x020c23e8
@@ -635,6 +635,6 @@ _ZN14StaticInstanceI16CourseInitBinaryE9sInstanceE kind:bss addr:0x020c4824
 data_ov001_020c40f4 kind:bss addr:0x020c5934 local
 data_ov001_020c46f4 kind:bss addr:0x020c5f34
 data_ov001_020c46f8 kind:bss addr:0x020c5f38
-data_ov001_020c5f3c kind:bss addr:0x020c5f3c
+data_ov001_020c46fc kind:bss addr:0x020c5f3c
 data_ov001_020c5f40 kind:bss addr:0x020c5f40
 data_ov001_020c5f41 kind:bss addr:0x020c5f41
