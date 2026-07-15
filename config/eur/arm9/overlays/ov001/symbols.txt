@@ -497,20 +497,20 @@ data_ov001_020c25fc kind:data(any) addr:0x020c25fc
 data_ov001_020c2624 kind:data(any) addr:0x020c2624 local
 data_ov001_020c262e kind:data(any) addr:0x020c262e local
 data_ov001_020c2638 kind:data(any) addr:0x020c2638 local
-data_ov001_020c264c kind:data(any) addr:0x020c264c
-data_ov001_020c26bc kind:data(any) addr:0x020c26bc
-data_ov001_020c273c kind:data(any) addr:0x020c273c
-data_ov001_020c2750 kind:data(any) addr:0x020c2750
-data_ov001_020c275e kind:data(any) addr:0x020c275e
+data_ov001_020c264c kind:data(any) addr:0x020c264c local
+data_ov001_020c26bc kind:data(any) addr:0x020c26bc local
+data_ov001_020c274c kind:data(any) addr:0x020c274c local
+data_ov001_020c2750 kind:data(any) addr:0x020c2750 local
+data_ov001_020c275e kind:data(any) addr:0x020c275e local
 data_ov001_020c276c kind:data(any) addr:0x020c276c
 data_ov001_020c27a8 kind:data(any) addr:0x020c27a8
-data_ov001_020c280c kind:data(any) addr:0x020c280c
+bad_mac_addr kind:data(any) addr:0x020c280c
 __sinit_CourseList.cpp kind:function(thumb,size=0x24) addr:0x020c2814 local
 __sinit_UnkStruct_027e0cd8_0C_001.cpp kind:function(thumb,size=0xb8) addr:0x020c2838
-__sinit_ov001_020c28f0 kind:function(thumb,size=0x10) addr:0x020c28f0
+__sinit_code_020c099c.cpp kind:function(thumb,size=0x10) addr:0x020c28f0 local
 .p__sinit_CourseList.cpp kind:data(word) addr:0x020c2900 local
 .p__sinit_UnkStruct_027e0cd8_0C_001.cpp kind:data(word) addr:0x020c2904
-.p__sinit_ov001_020c28f0 kind:data(word) addr:0x020c2908
+.p__sinit_code_020c099c.cpp kind:data(word) addr:0x020c2908 local
 .p__sinit_ov001_020c1104 kind:data(word) addr:0x020c290c local
 .p__sinit_ov001_020c1708 kind:data(word) addr:0x020c2910 local
 .p__sinit_ov001_020c19c4 kind:data(word) addr:0x020c2914 local
@@ -627,13 +627,13 @@ data_ov001_020c2f28 kind:data(any) addr:0x020c2f28 local
 @17 kind:data(byte[0x5]) addr:0x020c2fac local
 @18 kind:data(byte[0x10]) addr:0x020c2fb4 local
 _ZTV21UnkStruct_027e0cec_18 kind:data(any) addr:0x020c2fc4
-data_ov001_020c2fd4 kind:data(any) addr:0x020c2fd4
+data_ov001_020c2fd4 kind:data(byte[4]) addr:0x020c2fd4 local
 _ZGVN14StaticInstanceI16CourseInitBinaryE9sInstanceE kind:bss addr:0x020c2fe0
 _ZN14StaticInstanceI16CourseInitBinaryE9sInstanceE kind:bss addr:0x020c2fe4
 @4613 kind:bss addr:0x020c40e8 local
 data_ov001_020c40f4 kind:bss addr:0x020c40f4 local
-data_ov001_020c46f4 kind:bss addr:0x020c46f4
-data_ov001_020c46f8 kind:bss addr:0x020c46f8
-data_ov001_020c46fc kind:bss addr:0x020c46fc
+data_ov001_020c46f4 kind:bss addr:0x020c46f4 local
+data_ov001_020c46f8 kind:bss addr:0x020c46f8 local
+data_ov001_020c46fc kind:bss addr:0x020c46fc local
 data_ov001_020c4700 kind:bss addr:0x020c4700
 data_ov001_020c4701 kind:bss addr:0x020c4701

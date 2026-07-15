@@ -16,8 +16,6 @@ public:
     /* 00 */ virtual ~UnkStruct_ov001_020c46fc();
 };
 
-extern UnkStruct_ov001_020c46fc *data_ov001_020c46fc;
-
 class GameModeDownloadPlay : public GameModeBase {
 public:
     /* 00 (base) */

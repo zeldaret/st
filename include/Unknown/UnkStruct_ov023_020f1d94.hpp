@@ -47,8 +47,6 @@ public:
     /* 0C */ virtual void vfunc_0C() override;
 };
 
-extern UnkStruct_ov001_020c46f4_Base *data_ov001_020c46f4;
-
 class UnkStruct_ov023_020f1d94 {
 public:
     /* 00 */ unk32 mUnk_00;

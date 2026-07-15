@@ -5,6 +5,8 @@
 
 #include <dsprot.h>
 
+static UnkStruct_ov001_020c46f4_Base *data_ov001_020c46f4 = NULL;
+
 void func_ov001_020bfdd0() {
     if (data_ov001_020c46f4 != NULL) {
         DELETE(data_ov001_020c46f4);

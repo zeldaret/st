@@ -3,7 +3,7 @@
 
 #include <dsprot.h>
 
-extern ActorUnkLBCK *data_ov001_020c46f8;
+static ActorUnkLBCK *data_ov001_020c46f8 = NULL;
 
 void func_ov001_020bfeec(void) {
     data_ov001_020c46f8->func_ov000_020984d0();
