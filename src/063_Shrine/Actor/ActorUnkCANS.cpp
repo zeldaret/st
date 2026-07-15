@@ -84,6 +84,7 @@ extern "C" unk32 func_ov000_02099a0c(unk32 *param1);
 extern "C" unk32 func_ov000_02097c20(ActorUnkCANS *param1, ActorRef param2, unk32 param3, unk32 param4, unk32 *param5);
 extern "C" void func_ov017_020bf050(ActorUnkCANS *param1, unk32 *param2, unk32 param3);
 extern "C" void func_ov017_020bf178(ActorUnkCANS *param1, unk32 *param2, unk32 param3);
+extern "C" void func_ov017_020bf634(ActorUnkCANS *param1, unk16 *param2, unk32 param3, unk32 param4);
 extern "C" void func_ov017_020bf894(ActorUnkCANS *param1, unk32 *param2);
 extern "C" void func_ov017_020bfb18(ActorUnkCANS *param1, unk32 *param2);
 extern "C" unk32 func_ov017_020bef4c(ActorUnkCANS *param1, unk32 param2);
@@ -533,7 +534,14 @@ void ActorUnkCANS::func_ov063_02158b98(void) {
 
 void ActorUnkCANS::func_ov063_02158d40(void) {}
 void ActorUnkCANS::func_ov063_02158db0(void) {}
-void ActorUnkCANS::func_ov063_021590c8(void) {}
+
+void ActorUnkCANS::func_ov063_021590c8(void) {
+    unk32 ret1 = this->func_ov063_0215a5bc();
+    unk32 ret2 = this->func_ov063_0215a5d8();
+    func_ov017_020bf634(this, &mUnk_210, ret1, ret2);
+    ((Actor_9C *) &mUnk_1F4.mUnk_0C)->func_ov000_02097bec();
+}
+
 void ActorUnkCANS::func_ov063_02159100(void) {}
 void ActorUnkCANS::func_ov063_021591f4(void) {}
 void ActorUnkCANS::func_ov063_02159258(void) {}
@@ -559,8 +567,8 @@ void ActorUnkCANS::func_ov063_0215a474(void) {}
 unk32 ActorUnkCANS::func_ov063_0215a514(void) {}
 unk32 ActorUnkCANS::func_ov063_0215a56c(unk32 param1) {}
 void ActorUnkCANS::func_ov063_0215a5a0(void) {}
-void ActorUnkCANS::func_ov063_0215a5bc(void) {}
-void ActorUnkCANS::func_ov063_0215a5d8(void) {}
+unk32 ActorUnkCANS::func_ov063_0215a5bc(void) {}
+unk32 ActorUnkCANS::func_ov063_0215a5d8(void) {}
 void ActorUnkCANS::func_ov063_0215a678(void) {}
 void ActorUnkCANS::vfunc_4C(void) {}
 void ActorUnkCANS::vfunc_50(void) {}
