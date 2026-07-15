@@ -385,59 +385,55 @@ bool ActorUnkZLSL::vfunc_8C() {
 }
 
 // non-matching
-void ActorUnkZLSL::vfunc_98(unk32 param1) {
+void ActorUnkZLSL::vfunc_98(u32 param1) {
     if (param1 < 0x12) {
         bool flag = (this->mUnk_2900 & 0x40) != 0;
-        this->mUnk_094.mUnk_0C->vfunc_1C(this->mUnk_0B8 + param1, 0x1000, 0x19A, flag);
+
+        this->mUnk_094.mUnk_0C->vfunc_1C(*(ActorUnkZLSL_AnimationTag *) (this->mUnk_0B8 + 0x18 * param1), 0x1000, 0x19A, flag);
 
         switch (param1) {
             case 0x0:
             case 0x7:
-                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a38, 0x1000, 0);
+            case 0x12:
+                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a38, 0x1000);
                 break;
             case 0x1:
             case 0x2:
-                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a08, 0x1000, 0);
+                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a08, 0x1000);
                 break;
             case 0x5:
             case 0x9:
-                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a20, 0x1000, 0);
+                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a20, 0x1000);
                 break;
             case 0x8:
-                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a50, 0x1000, 0);
+                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a50, 0x1000);
                 break;
             case 0xA:
-                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a68, 0x1000, 0);
+                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a68, 0x1000);
                 break;
             case 0xB:
-                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a80, 0x1000, 0);
+                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a80, 0x1000);
                 break;
             case 0xC:
-                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a98, 0x1000, 0);
+                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113a98, 0x1000);
                 break;
             case 0xD:
-                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113ab0, 0x1000, 0);
+                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113ab0, 0x1000);
                 break;
             case 0xE:
-                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113ac8, 0x1000, 0);
+                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113ac8, 0x1000);
                 break;
             case 0xF:
-                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113ae0, 0x1000, 0);
+                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113ae0, 0x1000);
                 break;
             case 0x11:
-                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113af8[0], 0x1000, 0);
+                this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113af8[0], 0x1000);
                 break;
-            case 0x3:
-            case 0x4:
-            case 0x6:
-            case 0x10:
             default:
-                break; // no second call for these states
+                break;
         }
     } else if (param1 >= 0x32 && param1 < 0x40) {
-        // treats the 10 named globals + the 4-entry array as ONE contiguous
-        // 14-element table, indexed directly by (param1 - 0x32)
-        this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113af8[param1 - 0x32], 0x1000, 0);
+        this->mUnk_2700.func_ov000_02099ddc(data_ov031_02113af8[param1 - 0x32], 0x1000);
     }
 
     this->mUnk_2900 &= ~0x40;
@@ -1303,8 +1299,73 @@ bool ActorUnkZLSL::func_ov031_020ec8c4() {
     return func_01ff930c(&this->mAngle, angleStruct.angle, 0x71C);
 }
 
+extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
+extern "C" unk32 func_01ffb9cc(VecFx32 *, VecFx32 *);
+
+class ActorUnkZLSL_020ecc68 : public Actor {
+public:
+    /* 000 (base) */
+    /* 094 */ STRUCT_PAD(0x94, 0x530);
+    /* 530 */ unk32 mUnk_530;
+};
+
 // non-matching
-void ActorUnkZLSL::func_ov031_020ecc68(unk32 param1) {}
+void ActorUnkZLSL::func_ov031_020ecc68(unk32 param1) {
+    UnkStruct_ov031_020ecc68 stack;
+    Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_28DC);
+    if (param1 != 0x0) {
+        VecFx32 *vec = this->func_ov000_0209853c(0x1);
+        if (func_01ff9258(actor->mPos.x - vec->x, actor->mPos.z - vec->z) > 0x3000) {
+            this->func_ov031_020ed0b0();
+        } else {
+            UnkAngleStruct angleStruct = this->mAngleStruct;
+            angleStruct.angle          = 0x2000;
+            this->func_ov031_020ecea8(angleStruct, 0x6000, 0x4800, 0x0);
+        }
+    } else {
+        UnkAngleStruct angleStruct = this->mAngleStruct;
+        angleStruct.angle          = 0x2000;
+        this->func_ov031_020ecea8(angleStruct, 0x6000, 0x4800, 0x0);
+    }
+    func_ov000_02072fd0(&stack.sp_34);
+    stack.sp_34.mUnk_08 = -0x1;
+    stack.sp_34.mUnk_00 = 0x80;
+    stack.sp_34.mUnk_3B = 0x4;
+    stack.sp_34.mUnk_38 |= 0x80;
+    stack.sp_34.mUnk_3A = 0x2;
+
+    VecFx32_Copy(&this->mUnk_28F4, &stack.sp_34.mUnk_0C);
+
+    stack.func_ov031_020ed47c(this, 0x93F);
+
+    stack.sp_34.mUnk_18 = stack.sp_08;
+    stack.sp_34.mUnk_1A = stack.sp_0A;
+    stack.sp_34.mUnk_1C = stack.sp_0C;
+    stack.sp_34.mUnk_1E = stack.sp_0E;
+    stack.sp_34.mUnk_20 = stack.sp_10;
+    stack.sp_34.mUnk_24 = stack.sp_14;
+    stack.sp_34.mUnk_30 = stack.sp_20;
+    stack.sp_34.mUnk_32 = stack.sp_22;
+    stack.sp_34.mUnk_34 = stack.sp_24;
+    stack.sp_34.mUnk_36 = stack.sp_26;
+
+    this->mUnk_28C8 = data_027e09b8->func_ov000_02073388(&stack.sp_34, 0x0);
+
+    unk32 val = func_01ffb9cc(&this->mUnk_28F4, &this->mUnk_28E8);
+    func_01ffb714(&this->mUnk_28E8, &this->mUnk_28F4, &stack.sp_28);
+
+    VecFx32_TryNormalize(&stack.sp_28);
+
+    func_01ff93c0(&stack.sp_28, val - 0x1000);
+
+    VecFx32_Copy(&this->mUnk_28F4, &this->mUnk_28E8);
+    VecFx32_Add(&this->mUnk_28E8, &stack.sp_28, &this->mUnk_28E8);
+
+    actor = gpActorManager->func_01fff3b4(this->mUnk_28DC);
+    if (actor != NULL) {
+        ((ActorUnkZLSL_020ecc68 *) actor)->mUnk_530 = this->mUnk_28C8;
+    }
+}
 
 // non-matching
 void ActorUnkZLSL::func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk32 param3, unk32 param4) {}
@@ -1332,7 +1393,7 @@ void ActorUnkZLSL::func_ov031_020ed3c0() {
 }
 
 // non-matching
-void ActorUnkZLSL::func_ov031_020ed47c() {}
+void UnkStruct_ov031_020ecc68::func_ov031_020ed47c(ActorUnkZLSL *param1, unk32 param2) {}
 
 void ActorUnkZLSL::func_ov031_020ed4e4(unk32 param1, unk32 param2) {
     if (this->mUnk_28C8 < 0x0) {

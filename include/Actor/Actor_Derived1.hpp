@@ -42,6 +42,11 @@ public:
     /* 10 */
 };
 
+struct ActorUnkZLSL_AnimationTag {
+    unk32 index;
+    char name[0x14];
+};
+
 class Actor_Derived1_94_0C {
 public:
     /* 00 (vtable) */
@@ -54,7 +59,7 @@ public:
     /* 10 */ virtual Actor_Derived1_94_vfunc_10 *vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
-    /* 1C */ virtual void vfunc_1C(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
+    /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4);
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28();
@@ -178,7 +183,7 @@ public:
     /* 8C */ virtual bool vfunc_8C();
     /* 90 */ virtual unk32 vfunc_90();
     /* 94 */ virtual void vfunc_94();
-    /* 98 */ virtual void vfunc_98(unk32 param1);
+    /* 98 */ virtual void vfunc_98(u32 param1);
     /* 9C */ virtual void vfunc_9C();
     /* A0 */ virtual unk32 vfunc_A0();
     /* A4 */ virtual void vfunc_A4();

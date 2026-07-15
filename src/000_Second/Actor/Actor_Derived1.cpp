@@ -205,7 +205,7 @@ void Actor_Derived1::vfunc_74() {}
 void Actor_Derived1::vfunc_78() {}
 bool Actor_Derived1::func_ov000_020a9248(unk32 param1) {}
 void Actor_Derived1::vfunc_5C() {}
-void Actor_Derived1::vfunc_98(unk32 param1) {}
+void Actor_Derived1::vfunc_98(u32 param1) {}
 void Actor_Derived1::func_ov000_020a94b0() {}
 void Actor_Derived1::vfunc_9C() {}
 
