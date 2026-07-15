@@ -555,7 +555,14 @@ void ActorUnkCANS::func_ov063_021598fc(void) {}
 void ActorUnkCANS::func_ov063_021599e4(void) {}
 void ActorUnkCANS::func_ov063_02159ca8(void) {}
 void ActorUnkCANS::func_ov063_02159d68(void) {}
-void ActorUnkCANS::func_ov063_02159dfc(void) {}
+
+void ActorUnkCANS::func_ov063_02159dfc(void) {
+    mVel.x   = 0;
+    mVel.z   = 0;
+    mUnk_270 = 0;
+    ((Actor_9C *) &mUnk_1F4.mUnk_0C)->func_ov000_02097bec();
+}
+
 void ActorUnkCANS::func_ov063_02159e1c(void) {}
 void ActorUnkCANS::func_ov063_02159e20(void) {}
 void ActorUnkCANS::func_ov063_02159ec0(void) {}
