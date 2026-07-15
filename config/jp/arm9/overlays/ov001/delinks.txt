@@ -166,6 +166,7 @@ src/001_SceneInit/CargoManager_001.cpp:
     .text       start:0x020c1054 end:0x020c10c4
 
 src/001_SceneInit/PassengerManager_001.cpp:
+    complete
     .text       start:0x020c10c4 end:0x020c12a4
 
 src/001_SceneInit/UnkStruct_027e0cf8_08_00_001.cpp:

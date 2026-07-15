@@ -244,7 +244,7 @@ public:
     const u8 CurrentCSIndex() const { return this->mUnk_00.csIndex; }
     const SceneIndex CurrentSceneIndex() const { return this->mUnk_00.sceneIndex; }
 
-    const bool IsDarkRealm() const  {
+    const bool IsDarkRealm() {
         return this->mUnk_00.sceneIndex <= SceneIndex_t_eviltrain3 && this->mUnk_00.sceneIndex >= SceneIndex_t_eviltrain;
     }
 
