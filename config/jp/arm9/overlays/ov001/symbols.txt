@@ -500,8 +500,8 @@ data_ov001_020c2638 kind:data(any) addr:0x020c3e8c local
 data_ov001_020c264c kind:data(any) addr:0x020c3ea0
 data_ov001_020c26bc kind:data(any) addr:0x020c3f10
 data_ov001_020c3f90 kind:data(any) addr:0x020c3f90
-data_ov001_020c3fa4 kind:data(any) addr:0x020c3fa4
-data_ov001_020c3fb2 kind:data(any) addr:0x020c3fb2
+data_ov001_020c2750 kind:data(any) addr:0x020c3fa4
+data_ov001_020c275e kind:data(any) addr:0x020c3fb2
 data_ov001_020c276c kind:data(any) addr:0x020c3fc0
 data_ov001_020c27a8 kind:data(any) addr:0x020c3ffc
 data_ov001_020c4060 kind:data(any) addr:0x020c4060
