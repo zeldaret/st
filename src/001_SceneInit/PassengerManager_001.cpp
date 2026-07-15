@@ -134,7 +134,7 @@ void PassengerManager::func_ov001_020bf910() {
             spC_10[0] = new_var7[var_r7];
             spC_10[1] = new_var7[var_r2];
 
-            if (stack.spB4 != 0) {
+            if (stack.spB4 != NULL) {
                 stack.spB4->data = spC_10;
             }
 

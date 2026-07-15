@@ -174,6 +174,7 @@ src/001_SceneInit/UnkStruct_027e0cf8_08_00_001.cpp:
     .text       start:0x020bfa50 end:0x020bfcc0
 
 src/001_SceneInit/UnkStruct_ov020_020e8544_001.cpp:
+    complete
     .text       start:0x020bfcc0 end:0x020bfdd0
 
 src/001_SceneInit/code_020bfdd0.cpp:
