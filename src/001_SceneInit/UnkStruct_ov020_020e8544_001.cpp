@@ -1,9 +1,10 @@
+#include "Game/GameModeBattle.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_ov020_020e8544.hpp"
 
 #include <dsprot.h>
 
-void UnkStruct_ov020_020e8544_Base::func_ov001_020bfcc0() {
+void func_ov001_020bfcc0() {
     BOOL status;
 
     if (data_ov020_020e8544 == NULL) {
@@ -17,7 +18,7 @@ void UnkStruct_ov020_020e8544_Base::func_ov001_020bfcc0() {
     }
 }
 
-void UnkStruct_ov020_020e8544_Base::func_ov001_020bfcf0() {
+void func_ov001_020bfcf0() {
     BOOL status;
 
     if (data_ov020_020e8544 == NULL) {
@@ -31,7 +32,7 @@ void UnkStruct_ov020_020e8544_Base::func_ov001_020bfcf0() {
     }
 }
 
-void UnkStruct_ov020_020e8544_Base::func_ov001_020bfd20() {
+void func_ov001_020bfd20() {
     BOOL status;
 
     if (data_ov020_020e8544 == NULL) {
@@ -45,7 +46,7 @@ void UnkStruct_ov020_020e8544_Base::func_ov001_020bfd20() {
     }
 }
 
-void UnkStruct_ov020_020e8544_Base::func_ov001_020bfd54() {
+void func_ov001_020bfd54() {
     BOOL status;
 
     if (data_ov020_020e8544 == NULL) {
@@ -59,13 +60,13 @@ void UnkStruct_ov020_020e8544_Base::func_ov001_020bfd54() {
     }
 }
 
-void UnkStruct_ov020_020e8544_Base::func_ov001_020bfd84(unk32 param1) {
+void GameModeBattle::func_ov001_020bfd84(unk32 param1) {
     switch (param1) {
         case 0:
-            DSProt_DetectEmulator(UnkStruct_ov020_020e8544_Base::func_ov001_020bfcc0);
-            DSProt_DetectFlashcart(UnkStruct_ov020_020e8544_Base::func_ov001_020bfcf0);
-            DSProt_DetectNotDummy(UnkStruct_ov020_020e8544_Base::func_ov001_020bfd20);
-            UnkStruct_ov020_020e8544_Base::func_ov001_020bfd54();
+            DSProt_DetectEmulator(func_ov001_020bfcc0);
+            DSProt_DetectFlashcart(func_ov001_020bfcf0);
+            DSProt_DetectNotDummy(func_ov001_020bfd20);
+            func_ov001_020bfd54();
             break;
         case 1:
             data_ov020_020e8544 = new(HeapIndex_1) UnkStruct_ov020_020e8544_Derived1();

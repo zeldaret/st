@@ -229,6 +229,7 @@ config.libs = [
             Object("001_SceneInit/UnkStruct_027e0cf8_08_00_001.cpp"),
             Object("001_SceneInit/UnkStruct_ov020_020e8544_001.cpp"),
             Object("001_SceneInit/code_020bfdd0.cpp"),
+            Object("001_SceneInit/code_020bfeec.cpp"),
             Object("001_SceneInit/Game/AdventureModeManager_001.cpp"),
             Object("001_SceneInit/Game/GameModeAdventure_001.cpp"),
             Object("001_SceneInit/code_020c099c.cpp"),

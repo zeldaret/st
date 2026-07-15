@@ -178,7 +178,12 @@ src/001_SceneInit/UnkStruct_ov020_020e8544_001.cpp:
     .text       start:0x020c1514 end:0x020c1624
 
 src/001_SceneInit/code_020bfdd0.cpp:
-    .text       start:0x020c1624 end:0x020c17c8
+    complete
+    .text       start:0x020c1624 end:0x020c1740
+
+src/001_SceneInit/code_020bfeec.cpp:
+    complete
+    .text       start:0x020c1740 end:0x020c17c8
 
 src/001_SceneInit/Game/AdventureModeManager_001.cpp:
     .text       start:0x020c17c8 end:0x020c2198

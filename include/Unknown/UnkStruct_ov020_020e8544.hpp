@@ -17,14 +17,6 @@ public:
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C();
     /* 20 */ virtual unk32 vfunc_20();
-
-    // overlay 1
-    void func_ov001_020bfd84(unk32 param1);
-
-    static void func_ov001_020bfcc0();
-    static void func_ov001_020bfcf0();
-    static void func_ov001_020bfd20();
-    static void func_ov001_020bfd54();
 };
 
 class UnkStruct_ov020_020e8544_Derived1 : public UnkStruct_ov020_020e8544_Base {
