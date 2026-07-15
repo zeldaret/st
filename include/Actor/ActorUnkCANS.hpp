@@ -45,6 +45,11 @@ public:
 class UnkStruct_ov063_02162ee8 : public ModelRender {
 public:
     /* 00 (base) */
+    /* 60 */ STRUCT_PAD(0x60, 0x6C);
+    /* 6C */ unk32 mUnk_6C;
+    /* 70 */ unk32 mUnk_70;
+    /* 74 */ unk32 mUnk_74;
+    /* 78 */
 
     UnkStruct_ov063_02162ee8(G3d_Model *pModel);
 

@@ -21,6 +21,10 @@
 #include "nns/g3d/g3d.h"
 #include "types.h"
 
+extern const char data_ov063_02162528[0x10]; // = "mCANS1";
+extern const char data_ov063_02162538[0x10]; // = "Rarm1";
+extern const char data_ov063_02162548[0x10]; // = "locator1";
+
 static PTMF<ActorUnkCANS> data_ov063_02162fb0[0xA] = {
     ActorUnkCANS::func_ov063_02158db0, ActorUnkCANS::func_ov063_02159100, ActorUnkCANS::func_ov063_02159258,
     ActorUnkCANS::func_ov063_02159494, ActorUnkCANS::func_ov063_02159618, ActorUnkCANS::func_ov063_02159784,
@@ -103,7 +107,10 @@ void UnkStruct_ov063_02162ea8::vfunc_08() {}
 void UnkStruct_ov063_02162ea8::vfunc_0C() {}
 
 UnkStruct_ov063_02162ee8::UnkStruct_ov063_02162ee8(G3d_Model *pModel) :
-    ModelRender(pModel) {}
+    ModelRender(pModel),
+    mUnk_6C(ModelRenderBase::func_ov000_02057f40(data_ov063_02162528)),
+    mUnk_70(ModelRenderBase::func_ov000_02057f18(data_ov063_02162538)),
+    mUnk_74(ModelRenderBase::func_ov000_02057f18(data_ov063_02162548)) {}
 UnkStruct_ov063_02162ee8::~UnkStruct_ov063_02162ee8() {}
 
 UnkStruct_ov063_02162f14::UnkStruct_ov063_02162f14() {}
