@@ -104,6 +104,7 @@ private:
 public:
     // clang-format off
     const ItemFlag GetCurrentItem() const { return this->mEquippedItem; }
+    void SetCurrentItem(ItemFlag item) { this->mEquippedItem = item; }
     const bool HasItem(int flag) const { return GET_FLAG(this->mFlags, flag); }
     const u16 GetNumRupees() const { return this->mNumRupees; }
     const u16 GetRestrictions() const { return this->mItemRestrictions; }
@@ -192,6 +193,7 @@ public:
     const Inventory* GetInventory() const { return &this->mInventory; }
 
     const ItemFlag GetCurrentItem() const { return this->GetInventory()->GetCurrentItem(); }
+    void SetCurrentItem(ItemFlag item) { this->GetInventory()->SetCurrentItem(ItemFlag); }
     const bool HasItem(int flag) const { return this->GetInventory()->HasItem(flag); }
     const u16 GetNumRupees() const { return this->GetInventory()->GetNumRupees(); }
     const u16 GetRestrictions() const { return this->GetInventory()->GetRestrictions(); }
