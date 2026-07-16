@@ -193,7 +193,7 @@ public:
     const Inventory* GetInventory() const { return &this->mInventory; }
 
     const ItemFlag GetCurrentItem() const { return this->GetInventory()->GetCurrentItem(); }
-    void SetCurrentItem(ItemFlag item) { this->GetInventory()->SetCurrentItem(ItemFlag); }
+    void SetCurrentItem(ItemFlag item) { this->GetInventory()->SetCurrentItem(item); }
     const bool HasItem(int flag) const { return this->GetInventory()->HasItem(flag); }
     const u16 GetNumRupees() const { return this->GetInventory()->GetNumRupees(); }
     const u16 GetRestrictions() const { return this->GetInventory()->GetRestrictions(); }
