@@ -114,9 +114,13 @@ public:
     const u8 GetKeyAmount() const { return this->mKeyAmount; }
     void SetKeyAmount(u8 amount) { this->mKeyAmount = amount; }
     const UpgradeCapacity GetQuiverCap() const { return this->mQuiverCapacity; }
+    void SetQuiverCap(UpgradeCapacity value) { this->mQuiverCapacity = value; }
     const UpgradeCapacity GetBombsCap() const { return this->mBombBagCapacity; }
+    void SetBombsCap(UpgradeCapacity value) { this->mBombBagCapacity = value; }
     const UpgradeCapacity GetArrowAmount() const { return this->mArrowAmount; }
+    void SetArrowAmount(UpgradeCapacity value) { this->mArrowAmount = value; }
     const UpgradeCapacity GetBombAmount() const { return this->mBombAmount; }
+    void SetBombAmount(UpgradeCapacity value) { this->mBombAmount = value; }
 
     void FlipUnk12(int value) { this->mUnk_12 ^= value; }
     // clang-format on
@@ -198,9 +202,13 @@ public:
     void SetTearsAmount(u8 amount) { this->GetInventory()->SetTearsAmount(amount); }
     void SetKeyAmount(u8 amount) { this->GetInventory()->SetKeyAmount(amount); }
     const UpgradeCapacity GetQuiverCap() const { return this->GetInventory()->GetQuiverCap(); }
+    void SetQuiverCap(UpgradeCapacity value) { this->GetInventory()->SetQuiverCap(value); }
     const UpgradeCapacity GetBombsCap() const { return this->GetInventory()->GetBombsCap(); }
+    void SetBombsCap(UpgradeCapacity value) { this->GetInventory()->SetBombsCap(value); }
     const UpgradeCapacity GetArrowAmount() const { return this->GetInventory()->GetArrowAmount(); }
+    void SetArrowAmount(UpgradeCapacity value) { this->GetInventory()->SetArrowAmount(value); }
     const UpgradeCapacity GetBombAmount() const { return this->GetInventory()->GetBombAmount(); }
+    void SetBombAmount(UpgradeCapacity value) { this->GetInventory()->SetBombAmount(value); }
 
     void FlipUnk12(int value) { this->GetInventory()->FlipUnk12(value); }
     // clang-format on
