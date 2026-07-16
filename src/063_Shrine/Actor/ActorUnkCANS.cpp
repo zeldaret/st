@@ -15,6 +15,7 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
+#include "flags.h"
 #include "nitro/fx.h"
 #include "nitro/math.h"
 #include "nitro/types.h"
@@ -67,7 +68,9 @@ public:
 
 extern void *data_027e09c0;
 extern u16 data_ov000_020aed00;
+extern u16 data_ov000_020aecf0[];
 extern Cylinder data_ov063_02162e90;
+extern VecFx32 data_027e07d4;
 
 extern "C" void func_01ff916c(unk32 *param1, unk32 param2);
 extern "C" void func_01ff9638(VecFx32 *param1, fx16 param2);
@@ -77,14 +80,16 @@ extern "C" void func_ov000_020578a4(UnkSystem5 *param1, unk32 param2, unk32 para
 extern "C" void func_ov000_02057c98(ModelRender *param1, UnkSystem5 *param2);
 extern "C" void func_ov000_0207de98(void *param1, ActorRef param2, VecFx32 *param3, unk32 *param4);
 extern "C" void func_ov000_0208bd20(UnkStruct_027e0ce0 *param1, unk32 param2, unk32 param3, unk32 param4);
+extern "C" unk32 func_ov000_02097c20(ActorUnkCANS *param1, ActorRef param2, unk32 param3, unk32 param4, unk32 *param5);
 extern "C" void func_ov000_020986b4(s16 *var, ActorUnkCANS *param2, unk32 param3);
 extern "C" void func_ov000_02098838(ActorUnkCANS *param1);
 extern "C" unk32 func_ov000_02098d7c(ActorUnkCANS *param1, unk32 *param2);
+extern "C" unk32 func_ov000_02099450(ActorUnkCANS *param1, unk32 *param2, VecFx32 *param3, unk32 param4, u16 param5);
 extern "C" unk32 func_ov000_02099a0c(unk32 *param1);
-extern "C" unk32 func_ov000_02097c20(ActorUnkCANS *param1, ActorRef param2, unk32 param3, unk32 param4, unk32 *param5);
 extern "C" void func_ov017_020bf050(ActorUnkCANS *param1, unk32 *param2, unk32 param3);
 extern "C" void func_ov017_020bf178(ActorUnkCANS *param1, unk32 *param2, unk32 param3);
 extern "C" void func_ov017_020bf634(ActorUnkCANS *param1, unk16 *param2, unk32 param3, unk32 param4);
+extern "C" void func_ov017_020bf688(ActorUnkCANS *param1);
 extern "C" void func_ov017_020bf894(ActorUnkCANS *param1, unk32 *param2);
 extern "C" void func_ov017_020bfb18(ActorUnkCANS *param1, unk32 *param2);
 extern "C" unk32 func_ov017_020bef4c(ActorUnkCANS *param1, unk32 param2);
@@ -532,7 +537,12 @@ void ActorUnkCANS::func_ov063_02158b98(void) {
     }
 }
 
-void ActorUnkCANS::func_ov063_02158d40(void) {}
+void ActorUnkCANS::func_ov063_02158d40(void) {
+    ((UnkStruct_func_ov063_02158b34 *) &mUnk_128)->vfunc_1C(data_ov063_02163068, 0x1800, 0x19A, 0);
+    mUnk_23A = 0;
+    mUnk_238 = 0;
+}
+
 void ActorUnkCANS::func_ov063_02158db0(void) {}
 
 void ActorUnkCANS::func_ov063_021590c8(void) {
@@ -542,10 +552,61 @@ void ActorUnkCANS::func_ov063_021590c8(void) {
     ((Actor_9C *) &mUnk_1F4.mUnk_0C)->func_ov000_02097bec();
 }
 
-void ActorUnkCANS::func_ov063_02159100(void) {}
-void ActorUnkCANS::func_ov063_021591f4(void) {}
+void ActorUnkCANS::func_ov063_02159100(void) {
+    func_ov017_020bf688(this);
+
+    if (!GET_FLAG(this->mFlags, 5)) {
+        return;
+    }
+
+    if (mUnk_48 <= 0) {
+        if (mUnk_268 != NULL) {
+            mUnk_268->func_ov000_020984d0();
+        }
+        this->vfunc_54(0);
+        return;
+    }
+
+    if ((u16) mUnk_22C < (u16) mUnk_22E) {
+        this->func_ov063_02158448(4);
+        return;
+    }
+
+    if (this->func_ov063_0215a514() != 0) {
+        this->func_ov063_02158448(8);
+        return;
+    }
+
+    if (mAngle != mUnk_26C) {
+        mState = 8;
+        return;
+    }
+
+    if (mUnk_268 == NULL) {
+        this->func_ov063_02158448(7);
+        return;
+    }
+
+    if (this->func_ov063_02159f3c(0x3000)) {
+        this->func_ov063_02158448(1);
+        return;
+    }
+
+    this->func_ov063_02158448(0);
+}
+
+void ActorUnkCANS::func_ov063_021591f4(void) {
+    ((UnkStruct_func_ov063_02158b34 *) &mUnk_128)->vfunc_1C(data_ov063_02163068, 0x1000, 0x19A, 0);
+}
+
 void ActorUnkCANS::func_ov063_02159258(void) {}
-void ActorUnkCANS::func_ov063_02159408(void) {}
+
+void ActorUnkCANS::func_ov063_02159408(void) {
+    func_ov000_02099450(this, &mUnk_224, &data_027e07d4, 0, data_ov000_020aecf0[0]);
+    ((UnkStruct_func_ov063_02158b34 *) &mUnk_128)->vfunc_1C(data_ov063_02163068, 0, 0x19A, 0);
+    ((Actor_9C *) &mUnk_1F4.mUnk_0C)->func_ov000_02097bec();
+}
+
 void ActorUnkCANS::func_ov063_02159494(void) {}
 void ActorUnkCANS::func_ov063_021595a4(void) {}
 void ActorUnkCANS::func_ov063_02159618(void) {}

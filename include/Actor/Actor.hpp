@@ -312,7 +312,7 @@ public:
 
     /* 30 */ virtual void vfunc_30();
     /* 4C */ WEAK virtual ~Actor_Derived2() {}
-    /* 54 */ virtual void vfunc_54();
+    /* 54 */ virtual void vfunc_54(unk32 param1);
 };
 
 extern UnkStruct_ov000_020b539c data_ov000_020b539c_eur;
