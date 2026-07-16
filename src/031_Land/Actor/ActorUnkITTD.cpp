@@ -32,9 +32,20 @@ ActorProfileUnkITTD::ActorProfileUnkITTD() :
 ActorUnkITTD::ActorUnkITTD() :
     mUnk_94(data_027e0ce0->func_ov000_0208ed30(0x0, 0x1, data_ov031_02110a88)),
     mUnk_F4(&this->mUnk_114, this->mUnk_94.mpModel),
-    mUnk_134(&this->mUnk_154, this->mUnk_94.mpModel) {
+    mUnk_134(&this->mUnk_154, this->mUnk_94.mpModel),
+    mUnk_1CC(0x0),
+    mUnk_1D1(this->mUnk_94.func_ov000_02057ee0()->numMat),
+    mUnk_1D2(0x4),
+    mUnk_1D4(0x2),
+    mUnk_1D6(0x4),
+    mUnk_1D8(0x0),
+    mUnk_1DC(0x0) {
     this->mUnk_94.func_ov000_02057c98(&this->mUnk_F4);
     this->mUnk_94.func_ov000_02057c98(&this->mUnk_134);
+
+    this->mUnk_52 = 0xFFFF;
+    this->mState  = ActorUnkITTDState_0;
+    this->mUnk_50 = 0x0;
 }
 
 bool ActorUnkITTD::vfunc_18(unk32 param1) {
@@ -79,13 +90,18 @@ void ActorUnkITTD::SetState(ActorState state) {
     this->mUnk_50 = 0x0;
 }
 
+struct UnkStruct_ov031_020e5d18_00 {
+    Actor *mUnk_00;
+    u8 mUnk_04[0x14];
+};
+
 extern "C" void func_01ff916c(void *, unk32, unk32);
 extern "C" void func_01ff993c(VecFx32 *, VecFx32 *, unk32);
 extern "C" fx32 func_01ffb66c(unk32, u16);
-extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, unk32);
+extern "C" void func_01ffe6c4(UnkStruct_ov031_020e5d18_00 *, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *,
+                              UnkStruct_ov031_Items_00 *);
 extern "C" bool func_ov000_02080998(VecFx32 *);
 
-// non-matching
 void ActorUnkITTD::func_ov031_020e5d18(unk32 param1) {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
@@ -112,7 +128,7 @@ void ActorUnkITTD::func_ov031_020e5d18(unk32 param1) {
             this->SetState(ActorUnkITTDState_1);
             break;
         case ActorUnkITTDState_1:
-            data_027e09a8->func_ov000_02071d34(&this->mRef, 0x8D6D, &this->mPos, 0x0);
+            data_027e09a8->func_ov000_02071d34(&this->mRef, 0x8D6C, &this->mPos, 0x0);
 
             for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_1E0; ptr != this->mUnk_1E0 + 0x3; ++ptr) {
                 UnkSystem7_UnkStruct_00 *data = ptr->mUnk_00;
@@ -181,28 +197,29 @@ void ActorUnkITTD::func_ov031_020e5d18(unk32 param1) {
             data_027e09c0->func_ov000_0207e58c(this->mRef, 0x4, 0x0, &this->mUnk_194);
         }
     }
-    unk16 var_r0;
+    unk32 var_r0;
     if (this->mUnk_1D4 != 0) {
-        var_r0 = 0;
+        var_r0 = 0x0;
     } else {
-        Actor *actor = NULL;
-        func_01ffe6c4(&actor, this->mRef, &this->mPos, &this->mPrevPos, (s32) (s16) this->mUnk_44, &this->mPos,
-                      (unk32) & this->mUnk_174);
-        unk16 temp_r5 = actor->func_ov000_0207df88(this->mUnk_30, 4);
+        UnkStruct_ov031_020e5d18_00 var_sp0C;
+        var_sp0C.mUnk_00 = NULL;
+        func_01ffe6c4(&var_sp0C, this->mRef, &this->mPos, &this->mPrevPos, (s32) (s16) this->mUnk_44, &this->mPos,
+                      &this->mUnk_174);
+        Actor *actor  = var_sp0C.mUnk_00;
+        unk32 temp_r5 = actor->func_ov000_0207df88(this->mUnk_30, 4);
         var_r0        = temp_r5 | actor->func_ov000_0207e294(this->mUnk_30);
         this->mUnk_46 = var_r0;
     }
-    if (var_r0 == 0) {
+    if (var_r0 == 0x0) {
         return;
     }
-    if (this->mUnk_1CC == 0) {
+    if (this->mUnk_1CC == 0x0) {
         this->mVel.x   = FLOAT_TO_FX32(0.0f);
         this->mVel.y   = FLOAT_TO_FX32(0.0f);
         this->mVel.z   = FLOAT_TO_FX32(0.0f);
         this->mUnk_1CC = 0x1;
     }
 }
-
 void ActorUnkITTD::vfunc_20() {
     this->func_ov031_020e5d18(0x0);
 }

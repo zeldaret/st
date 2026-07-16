@@ -57,6 +57,10 @@ public:
     /* 2C */ virtual void vfunc_2C(unk32 param1) override; // func_ov031_020e619c
     /* 4C */ virtual ~ActorUnkITTD() override;             // func_ov031_020e6474
 
+    unk16 UnkFunc(Actor *actor) {
+        return actor->func_ov000_0207df88(this->mUnk_30, 0x4) | actor->func_ov000_0207e294(this->mUnk_30);
+    }
+
     void SetState(ActorState state);
     void func_ov031_020e5d18(unk32 param1);
     bool func_ov031_020e62c0();
