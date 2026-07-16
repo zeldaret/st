@@ -439,7 +439,7 @@ public:
 
     // data_ov026_0213562c
     /* 00 */ virtual ~UnkStruct_027e0ce0_38() override;
-    /* 0C */ virtual bool vfunc_0C() override;
+    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) override;
 
     // overlay 26
     void func_ov026_020dc8f0();
