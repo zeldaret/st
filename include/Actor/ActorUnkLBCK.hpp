@@ -2,8 +2,8 @@
 
 #pragma once
 
-#include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -17,7 +17,7 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkLBCK : public Actor {
+class ActorUnkLBCK : public Actor_Derived1 {
 public:
     /* 00 (base) */
     /* 94 */
@@ -25,7 +25,12 @@ public:
     ActorUnkLBCK();
 
     /* 4C */ virtual ~ActorUnkLBCK() override;
+    /* 58 */ virtual void vfunc_58(unk32 param1) override;
 
+    // overlay 1
+    void func_ov001_020bff34();
+
+    // overlay 62
     void func_ov062_02159044(void);
     void func_ov062_02159078(void);
     void func_ov062_02159248(void);

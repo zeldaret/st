@@ -1,7 +1,7 @@
-#include "Unknown/UnkStruct_ov000_02067bc4.hpp"
+#include "Unknown/UnkStruct_ov000_020b504c.hpp"
 #include "Unknown/UnkSystem1.hpp"
 
-UnkSystem1_ov000_Derived1::UnkSystem1_ov000_Derived1(unk32 param1, UnkStruct_ov000_02067bc4::UnkStruct1 *param2) :
+UnkSystem1_ov000_Derived1::UnkSystem1_ov000_Derived1(unk32 param1, UnkTextStruct1 *param2) :
     UnkSystem1_ov000_Base(-1) {
     this->mUnk_0C = param2;
     this->mUnk_10 = param1;
@@ -27,7 +27,7 @@ void UnkSystem1_ov000_Derived1::vfunc_08(unk32 param1) {
     if (this->mUnk_0C != 0) {
         this->mUnk_06 = data_ov000_020b504c.func_ov000_02067cf8(param1, this->mUnk_10, this->mUnk_0C);
     } else {
-        UnkStruct_ov000_02067bc4::UnkStruct1 local_18(-1);
+        UnkTextStruct1 local_18(-1);
         this->mUnk_06 = data_ov000_020b504c.func_ov000_02067cf8(param1, this->mUnk_10, &local_18);
     }
 }

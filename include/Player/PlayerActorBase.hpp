@@ -1,15 +1,37 @@
 #pragma once
 
-#include "Actor/Actor.hpp"
-#include "LinkList.hpp"
+#include "Actor/ActorRef.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
-#include "Unknown/UnkStruct_027e09a4.hpp"
-#include "Unknown/UnkStruct_ov000_0208f820.hpp"
 #include "math.hpp"
+
 #include "types.h"
 
 #include <nns/g3d/g3d.h>
+
+class Actor_C4;
+
+struct ActorGrabParams;
+extern "C" void func_ov000_0205d500(ActorGrabParams *, unk32, unk32);
+bool PlayerCharacter_IsNotLink(s32 character);
+
+struct ActorGrabParams {
+    /* 00 */ u16 unk_00;
+    /* 02 */ u16 unk_02;
+    /* 04 */
+
+    ActorGrabParams() {}
+
+    ActorGrabParams(unk32 param2, unk32 param3) {
+        ActorGrabParams local_1c;
+        func_ov000_0205d500(&local_1c, param3, param2);
+        *this = local_1c;
+    }
+
+    void operator=(ActorGrabParams &from) {
+        *(u32 *) this = *(u32 *) &from;
+    }
+};
 
 class UnkStruct_027e0ce0_40;
 class PlayerActorBase_70;
@@ -38,7 +60,10 @@ struct UnkStruct_ov000_020ab4dc {
     /* 66 */ unk16 mUnk_70;
     /* 66 */ unk16 mUnk_72;
     /* 74 */ s16 mUnk_74;
-    /* 78 */ STRUCT_PAD(0x78, 0x9C);
+    /* 78 */ STRUCT_PAD(0x76, 0x86);
+    /* 86 */ u8 mUnk_86[7];
+    /* 8D */ STRUCT_PAD(0x8D, 0x98);
+    /* 98 */ unk32 mUnk_98;
     /* 9C */
 };
 extern const UnkStruct_ov000_020ab4dc data_ov000_020ab4dc[PlayerCharacter_Max];
@@ -65,6 +90,20 @@ inline bool PlayerCharacter_IsNotLink2(PlayerCharacter character) {
 
     return ret;
 }
+
+class UnkStruct_PlayerGet_64 {
+public:
+    /* 00 */ ActorRef *mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ u16 mUnk_08; // makes link invisible when set
+    /* 0A */ unk16 mUnk_0A;
+    /* 0C */
+
+    UnkStruct_PlayerGet_64(void *param1);
+    ~UnkStruct_PlayerGet_64();
+
+    void func_ov000_0208a100();
+};
 
 class ModelRender_Derived3 : public ModelRender {
 public:

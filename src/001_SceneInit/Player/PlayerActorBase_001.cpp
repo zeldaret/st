@@ -4,10 +4,16 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 
-extern const char data_ov001_020c264c[][16];
-extern const char data_ov001_020c26bc[][16];
 extern "C" u16 *func_ov021_020ea868(int);
 extern "C" void func_ov000_0205c584(void *, int, int);
+
+static const char data_ov001_020c264c[][16] = {
+    "swA", "sheath", "swB", "sheathB", "belt", "cap", "body_all",
+};
+
+static const char data_ov001_020c26bc[][16] = {
+    "center", "body_chn", "waist_chn", "cl_podA", "cl_LhandA", "cl_RhandA", "LlegB_jnt", "RlegB_jnt", "head_jnt",
+};
 
 ModelRender_Derived4::ModelRender_Derived4(PlayerCharacter character, unk32 param2, G3d_Model *pModel,
                                            G3d_BoneMtxStruct *pCacheJntAnm) :

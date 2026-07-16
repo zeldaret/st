@@ -1,14 +1,15 @@
 #include "TitleScreen/TitleScreen.hpp"
+
 #include <nitro/reg.h>
 
-const unk16 data_ov025_020c5a0c[] = {0x0016, 0x003C};
+const s16 data_ov025_020c5a0c[] = {0x0016, 0x003C};
 
-TitleScreenManager *TitleScreenManager::Create(unk32 param1) {
+GameModeManagerBase *TitleScreenManager::Create(UnkStruct_0204a110_Sub2 *param1) {
     return new(HeapIndex_1) TitleScreenManager(param1);
 }
 
 void TitleScreenManager::vfunc_14() {
-    this->mUnk_004.func_ov001_020bd734((unk32 *) data_ov025_020c5a0c);
+    this->mUnk_004.func_ov001_020bd734(data_ov025_020c5a0c);
     this->mUnk_004.func_0201c00c(0x24, 1);
 
     TitleScreen *pTitleScreen = new(HeapIndex_1) TitleScreen();

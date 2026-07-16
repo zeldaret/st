@@ -40,7 +40,7 @@ UnkStruct_027e0d00_20::UnkStruct_027e0d00_20(unk32 param1, unk32 param2) :
     mUnk_B0(0),
     mUnk_B4(0) {}
 
-void UnkStruct_027e0d00_20::func_ov024_020d4fa0(unk32 param1, unk32 param2) {
+void UnkStruct_027e0d00_20::func_ov024_020d4fa0(void *param1, unk32 param2) {
     u8 unknown[0x90];
     ModelRender_Derived2 local_120(G3d_GetModelPtr(this->mUnk_50), 0x0C, unknown);
     void *iVar2;
@@ -62,7 +62,7 @@ void UnkStruct_027e0d00_20::func_ov024_020d4fa0(unk32 param1, unk32 param2) {
         UnkStruct_027e0d00_20::func_ov024_020d4e9c(local_160, this->mUnk_94, true);
         this->mUnk_A4.~UnkSystem3();
         this->mUnk_A4.mUnk_00 = local_160;
-        this->mUnk_A4.func_02015460((const char *) &this->mUnk_9C.mUnk_00, (void *) param1, param2);
+        this->mUnk_A4.func_02015460((const char *) &this->mUnk_9C.mUnk_00, param1, param2);
 
         for (int i = 0; i < ARRAY_LEN(data_ov000_020aa250); i++) {
             UnkStruct_027e0d00_20::func_ov024_020d4edc(local_160, (wchar_t *) &this->mUnk_9C.mUnk_00, i);

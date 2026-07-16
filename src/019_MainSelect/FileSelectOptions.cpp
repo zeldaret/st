@@ -467,7 +467,7 @@ void FileSelectOptions::func_ov019_020cd614() {
 void FileSelectOptions::func_ov019_020cd788() {
     data_ov000_020b504c.mUnk_030 = this->mUnk_0024.mUnk_FC0;
 
-    UnkStruct_ov000_02067bc4::UnkStruct1 stack1;
+    UnkTextStruct1 stack1(-1, 0);
     data_ov000_020b504c.func_ov000_02067cf8(0x00020025, 0, &stack1);
 
     this->mUnk_0024.func_ov019_020ce7d4(0);
@@ -559,9 +559,9 @@ void FileSelectOptions::func_ov019_020cdcb8() {
             data_ov000_020b5214.func_ov000_0206db44(0x1F);
         }
     } else {
-        UnkStruct_ov000_02067bc4 *ptr = data_ov000_020b504c.func_ov000_02067bc4(0);
+        UnkStruct_ov000_020b504c_0C_Base *ptr = data_ov000_020b504c.func_ov000_02067bc4(0);
 
-        if (ptr->vfunc_08() == 0 ? true : false) {
+        if (!ptr->vfunc_08() ? true : false) {
             if (data_ov000_020b504c.func_ov000_020682c0(0) == 0) {
                 SaveFile_00000_2600_Data *pSaveSub17 = gSaveManager.GetSaveSlot(this->mUnk_0024.mSaveSlotIndex)->Get2600Ptr();
                 pSaveSub17->unk_00                   = this->mUnk_0024.mUnk_FC0;
@@ -570,7 +570,7 @@ void FileSelectOptions::func_ov019_020cdcb8() {
                 gSaveManager.mpSaveFile->mSaveSlotIndex = this->mUnk_0024.mSaveSlotIndex;
                 gSaveManager.func_ov019_020d08fc(2, SaveFile::func_ov019_020d13b8);
 
-                UnkStruct_ov000_02067bc4::UnkStruct1 stack1;
+                UnkTextStruct1 stack1(-1, 0);
                 this->mUnk_1CF4 = data_ov000_020b504c.func_ov000_02067cf8(0x00020032, 0, &stack1);
 
                 data_ov000_020b504c.func_ov000_02067bc4(0)->func_02021bec(1);

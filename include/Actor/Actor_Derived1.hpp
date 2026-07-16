@@ -35,9 +35,7 @@ public:
 
 class Actor_Derived1_94 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk16 mUnk_08;
+    /* 00 */ Actor_38 mUnk_00;
     /* 0A */ unk16 mUnk_0A;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */
@@ -49,6 +47,8 @@ public:
 class Actor_Derived1_94_Derived1 : public Actor_Derived1_94 {
 public:
     /* 00 (base) */
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */
 
     Actor_Derived1_94_Derived1(unk32 param1) {
         this->mUnk_0C = param1;
@@ -182,6 +182,9 @@ public:
     void func_ov000_020a9abc();
 
     static void func_ov000_020a9804();
+
+    // overlay 1
+    void func_ov001_020bff2c();
 
     // overlay 31
     void func_ov031_020e3ca4();

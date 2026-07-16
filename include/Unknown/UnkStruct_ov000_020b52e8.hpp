@@ -19,6 +19,7 @@ public:
 
     // overlay 0
     ActorUnkMLCK_B4_00 *func_ov000_0206f980(unk32 param1);
+    void func_ov000_0206f994();
 };
 
 extern UnkStruct_ov000_020b52e8 data_ov000_020b52e8;

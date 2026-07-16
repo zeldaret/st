@@ -15,19 +15,25 @@
 
 #include <dsprot.h>
 
-extern "C" {
-void *func_ov024_020d1658();
-void *func_ov000_02066294();
-}
+extern "C" void *func_ov000_02066294();
 
-extern int data_ov001_020c27a8;
-extern int data_ov001_020c276c;
+static const s16 data_ov001_020c27a8[] = {
+    0x0000, 0x0001, 0x0002, 0x0003, 0x0004, 0x0005, 0x0006, 0x0009, 0x000A, 0x000B, 0x000C, 0x000D, 0x000E,
+    0x000F, 0x0010, 0x0011, 0x0012, 0x0014, 0x0015, 0x0018, 0x001C, 0x0019, 0x001A, 0x001D, 0x001E, 0x001F,
+    0x0020, 0x0021, 0x0022, 0x0023, 0x0024, 0x0025, 0x0026, 0x0027, 0x0017, 0x0028, 0x003C, 0x0000, 0x0114,
+    0xEBAA, 0x4EB7, 0x4006, 0x3696, 0x5F01, 0x1F83, 0xE521, 0x335B, 0xE7EF, 0x197C, 0xE84B,
+};
 
-AdventureModeManager *AdventureModeManager::Create(unk32 param1) {
+static const s16 data_ov001_020c276c[] = {
+    0x0000, 0x0002, 0x0003, 0x0004, 0x0005, 0x0006, 0x0007, 0x0008, 0x000A, 0x000B, 0x000C, 0x000D, 0x000E, 0x0012, 0x0013,
+    0x0014, 0x0015, 0x0018, 0x0019, 0x001A, 0x001B, 0x001E, 0x001F, 0x0020, 0x0021, 0x0022, 0x0026, 0x0027, 0x003C, 0x0000,
+};
+
+GameModeManagerBase *AdventureModeManager::Create(UnkStruct_0204a110_Sub2 *param1) {
     return new(HeapIndex_1) AdventureModeManager(param1);
 }
 
-AdventureModeManager::AdventureModeManager(unk32 param1) {
+AdventureModeManager::AdventureModeManager(UnkStruct_0204a110_Sub2 *param1) {
     this->mUnk_154       = 0;
     this->mUnk_158       = &this->mUnk_104;
     this->mUnk_15C       = new(HeapIndex_1) AdventureModeManager_15C();
@@ -59,7 +65,7 @@ AdventureModeManager::AdventureModeManager(unk32 param1) {
     this->mAllowMapPaint = false;
 
     UnkStruct_027e0998::Create();
-    func_ov024_020d1658();
+    UnkStruct_ov024_020d86a0::Create();
 
     this->mUnk_170 = new(HeapIndex_1) AdventureModeManager_170(&this->mUnk_104);
 
@@ -104,7 +110,7 @@ void AdventureModeManager::vfunc_14() {
     UnkStruct_027e0cf8::Create();
 
     if (data_027e09a4->IsTrain()) {
-        this->mUnk_004.func_ov001_020bd734(&data_ov001_020c276c);
+        this->mUnk_004.func_ov001_020bd734(data_ov001_020c276c);
 
         if (data_027e09a4->IsNotCutscene()) {
             if (data_027e09a4->IsDarkRealm()) {
@@ -114,7 +120,7 @@ void AdventureModeManager::vfunc_14() {
             }
         }
     } else {
-        this->mUnk_004.func_ov001_020bd734(&data_ov001_020c27a8);
+        this->mUnk_004.func_ov001_020bd734(data_ov001_020c27a8);
         if (data_027e09a4->IsNotCutscene()) {
             this->mUnk_004.func_0201c00c(0, 1);
         }

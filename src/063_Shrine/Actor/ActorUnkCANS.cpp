@@ -91,7 +91,6 @@ extern "C" void func_ov017_020bf178(ActorUnkCANS *param1, unk32 *param2, unk32 p
 extern "C" void func_ov017_020bf634(ActorUnkCANS *param1, unk16 *param2, unk32 param3, unk32 param4);
 extern "C" void func_ov017_020bf688(ActorUnkCANS *param1);
 extern "C" void func_ov017_020bf894(ActorUnkCANS *param1, unk32 *param2);
-extern "C" void func_ov017_020bfb18(ActorUnkCANS *param1, unk32 *param2);
 extern "C" unk32 func_ov017_020bef4c(ActorUnkCANS *param1, unk32 param2);
 extern "C" unk32 func_ov031_020d9c04(UnkStruct_027e0d38 *param1, unk32 param2, unk32 param3, unk32 param4);
 
@@ -337,7 +336,7 @@ void ActorUnkCANS::vfunc_20(void) {
                     case 11:
                     default:
                         if (iVar5 != 0) {
-                            func_ov017_020bfb18(this, &mUnk_1F4.mUnk_0C);
+                            this->func_ov017_020bfb18(&mUnk_1F4.mUnk_0C);
                             if (mState != 4) {
                                 this->func_ov063_02158448(5);
                             }

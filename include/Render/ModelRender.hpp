@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Actor/Actor.hpp"
 #include "global.h"
 #include "nitro/fx.h"
+#include "profile.hpp"
 #include "types.h"
 
 #include <nns/g3d/g3d.h>

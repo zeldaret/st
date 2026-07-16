@@ -78,7 +78,7 @@ func_ov017_020bf99c kind:function(arm,size=0x2c) addr:0x020bf99c
 _ZN5Actor19func_ov017_020bf9c8EPS_ kind:function(arm,size=0x88) addr:0x020bf9c8
 func_ov017_020bfa50 kind:function(arm,size=0x84) addr:0x020bfa50
 func_ov017_020bfad4 kind:function(arm,size=0x44) addr:0x020bfad4
-func_ov017_020bfb18 kind:function(arm,size=0x238) addr:0x020bfb18
+_ZN5Actor19func_ov017_020bfb18EP8Actor_9C kind:function(arm,size=0x238) addr:0x020bfb18
 _ZN5Actor8vfunc_14Ev kind:function(arm,size=0x4c) addr:0x020bfd50
 func_ov017_020bfd9c kind:function(arm,size=0x130) addr:0x020bfd9c
 _ZN5Actor8vfunc_48Ev kind:function(arm,size=0x80) addr:0x020bfecc
@@ -177,7 +177,7 @@ __sinit_ov017_020c3ec8 kind:function(arm,size=0x18) addr:0x020c3ec8
 .p__sinit_ov017_020c3ec8 kind:data(word) addr:0x020c3ee8
 data_ov017_020c3f08 kind:data(any) addr:0x020c3f08
 data_ov017_020c3f14 kind:data(any) addr:0x020c3f14
-data_ov017_020c3f38 kind:data(any) addr:0x020c3f38
+_ZTV21UnkStruct_027e0cec_00 kind:data(any) addr:0x020c3f30
 data_ov017_020c3f3c kind:data(any) addr:0x020c3f3c
 data_ov017_020c3f40 kind:data(any) addr:0x020c3f40
 data_ov017_020c3f60 kind:bss addr:0x020c3f60

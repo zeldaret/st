@@ -5,13 +5,26 @@
 
 class EntranceInfo;
 
+//! TODO: use AutoInstance
 class UnkStruct_ov018_020c5ac0 {
 public:
-    /* 00 */ unk8 mUnk_00;
-    /* 00 */ unk8 mUnk_01;
-    /* 00 */ unk16 mUnk_02;
+    /* 00 */ bool mUnk_00;
+    /* 00 */ bool mUnk_01;
+    /* 00 */ u16 mUnk_02;
     /* 04 */
 
+    // overlay 0
+    void func_ov000_0206f61c(unk32 param1);
+
+    // overlay 1
+    void func_ov001_020bde6c();
+    void func_ov001_020bde7c();
+    void func_ov001_020bde90(const EntranceInfo *param1);
+    void func_ov001_020bdfa0(const EntranceInfo *param1);
+    void func_ov001_020bdfb8(const EntranceInfo *param1);
+    void func_ov001_020be030();
+
+    // overlay 18
     UnkStruct_ov018_020c5ac0();
     void SetInstance();
 
@@ -46,26 +59,33 @@ public:
     UnkStruct_ov000_020b50c0();
 
     // overlay 0
+    void func_ov000_02069c78(void);
     void func_ov000_02069d3c(unk32 param1);
     void func_ov000_02069d7c(unk32 param1);
     void func_ov000_02069f58(void);
+    void func_ov000_0206a014(void);
+    void func_ov000_0206a260(unk32 param1, unk32 param2, unk32 param3);
+    void func_ov000_0206a52c(unk32 param1);
     bool func_ov000_0206a5cc(unk32 param1);
     void *func_ov000_0206a5d8(unk32 param1);
     void func_ov000_0206a5fc(void);
     void func_ov000_0206a6a4(unk32 param1);
+    void func_ov000_0206a704(unk32 param1);
     void func_ov000_0206a740(void);
     void func_ov000_0206a758(void);
     void func_ov000_0206a77c(void);
-    void func_ov000_0206a014(void);
 
     // overlay 1
-    void func_ov001_020bd854();
+    void func_ov001_020bd854(void);
     void func_ov001_020bd87c(void);
-    void func_ov001_020bd8dc(void);
     void func_ov001_020bd8ac(void);
-    void func_ov001_020bd970(EntranceInfo *param1);
+    void func_ov001_020bd8dc(void);
+    void func_ov001_020bd8e8(void);
+    void func_ov001_020bd910(void);
+    void func_ov001_020bd934(bool param1);
+    void func_ov001_020bd970(const EntranceInfo *param1);
     void func_ov001_020bde5c(void);
-    void func_ov001_020bde04(EntranceInfo *param1);
+    void func_ov001_020bde04(const EntranceInfo *param1);
     void func_ov001_020bde4c(const EntranceInfo *param1);
 
     // overlay 18

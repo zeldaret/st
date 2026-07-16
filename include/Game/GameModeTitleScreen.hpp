@@ -21,6 +21,9 @@ public:
     /* 18 */ virtual void vfunc_18() override;
     /* 1C */ virtual void vfunc_1C() override;
     /* 20 */ virtual void vfunc_20() override;
+
+    // overlay 1
+    static GameModeBase *Create();
 };
 
 extern void func_ov018_020c4b08(unk16 *param1);

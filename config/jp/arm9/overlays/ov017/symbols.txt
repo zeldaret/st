@@ -36,7 +36,7 @@ func_ov017_020bf774 kind:function(arm,size=0x150) addr:0x020bf774
 func_ov017_020bf8c4 kind:function(arm,size=0x10) addr:0x020bf8c4
 func_ov017_020bf8d4 kind:function(arm,size=0x38) addr:0x020bf8d4
 func_ov017_020bf90c kind:function(arm,size=0x20c) addr:0x020bf90c
-func_ov017_020bfb18_jp kind:function(arm,size=0x148) addr:0x020bfb18
+_ZN5Actor19func_ov017_020bfb18EP8Actor_9C kind:function(arm,size=0x148) addr:0x020bfb18
 func_ov017_020bfc60 kind:function(arm,size=0x18) addr:0x020bfc60
 func_ov017_020bfc78 kind:function(arm,size=0x45c) addr:0x020bfc78
 func_ov017_020c00d4 kind:function(arm,size=0x124) addr:0x020c00d4
@@ -177,7 +177,7 @@ __sinit_ov017_020c56f4 kind:function(arm,size=0x18) addr:0x020c56f4
 .p__sinit_ov017_020c56f4 kind:data(word) addr:0x020c5714
 data_ov017_020c5728 kind:data(any) addr:0x020c5728
 data_ov017_020c5734 kind:data(any) addr:0x020c5734
-data_ov017_020c5758 kind:data(any) addr:0x020c5758
+_ZTV21UnkStruct_027e0cec_00 kind:data(any) addr:0x020c5750
 data_ov017_020c575c kind:data(any) addr:0x020c575c
 data_ov017_020c5760 kind:data(any) addr:0x020c5760
 data_ov017_020c5780 kind:bss addr:0x020c5780

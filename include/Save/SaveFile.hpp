@@ -36,6 +36,9 @@ struct SaveFile_00000_0000_Data_D8 {
     /* 80 */
 
     SaveFile_00000_0000_Data_D8();
+
+    // overlay 0
+    s32 func_ov000_020a0cf4();
 };
 
 // related to scene flags?
@@ -92,20 +95,25 @@ struct SaveMiscAdvManager {
         songs(0) {}
 };
 
+struct SaveInventoryData {
+    /* 00 */ unk32 unk_00;
+    /* 04 */ u32 unk_04[2];
+    /* 0C */ u16 numRupees;
+    /* 0E */ u16 unk_0E;
+    /* 10 */ ItemFlag equippedItem;
+    /* 14 */ unk32 unk_14;
+    /* 18 */
+};
+
 struct SaveInventory {
     /* 00 */ u32 adventureFlags[32];
-    /* 80 */ unk32 unk_80;
-    /* 84 */ u32 unk_84[2];
-    /* 8C */ u16 numRupees;
-    /* 8E */ u16 unk_8E;
-    /* 90 */ ItemFlag equippedItem;
-    /* 94 */ unk32 unk_94;
+    /* 80 */ SaveInventoryData data;
     /* 98 */
 
     SaveInventory() {
         MI_CpuFill32(0, this->adventureFlags, sizeof(this->adventureFlags));
-        MI_CpuFill32(0, this->unk_84, sizeof(this->unk_84));
-        this->unk_8E = 0;
+        MI_CpuFill32(0, this->data.unk_04, sizeof(this->data.unk_04));
+        this->data.unk_0E = 0;
     }
 };
 

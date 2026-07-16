@@ -62,6 +62,7 @@ public:
     UnkStruct_ov000_020b51b8();
     ~UnkStruct_ov000_020b51b8();
 
+    // overlay 0
     void func_ov000_0206c608(unk32 param1, unk32 param2, unk32 param3);
     void func_ov000_0206c96c(unk32 param1);
     void func_ov000_0206c9a8(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
@@ -70,6 +71,11 @@ public:
     void func_ov000_0206d134(unk32 param1);
     void func_ov000_0206d274(unk32 param1); // play seq?
 
+    // overlay 1
+    void func_ov000_0206bbfc(unk32 param1);
+    void func_ov000_0206c4ec(unk32 param1);
+
+    // overlay 18
     void func_ov018_020c5940();
 };
 

@@ -28,9 +28,9 @@ public:
     }
 
     // allocate the list and run the constructors for each element
-    void Init(size_t arrayLength) {
+    void Init(size_t arrayLength, size_t factor = 4) {
         this->Destroy();
-        this->Set(arrayLength * 4);
+        this->Set(arrayLength * factor);
 
         if (this->begin != this->end) {
             T *it = (T *) this->begin;
