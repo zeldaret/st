@@ -69,7 +69,7 @@ public:
 
     void func_ov001_020bf830();
 
-    static void Destroy(); // func_ov001_020bf428
+    static void Destroy();
 
     // overlay 17
     void Update();

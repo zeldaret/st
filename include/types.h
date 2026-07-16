@@ -73,4 +73,21 @@ template <typename T> struct StaticInstance {
 
 #endif
 
+//! TODO: move elsewhere
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef struct SPAHeader {
+    /* 00 */ u32 magic; // always 'SPA '
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ u16 mUnk_08;
+    /* 0A */ char pad[0x18 - 0x0A];
+    /* 18 */ unk32 mUnk_18;
+} SPAHeader;
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif

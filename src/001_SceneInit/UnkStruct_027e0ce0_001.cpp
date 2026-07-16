@@ -63,7 +63,7 @@ UnkStruct_027e0ce0::~UnkStruct_027e0ce0() {
     delete this->mUnk_1C;
 }
 
-void UnkStruct_027e0ce0::func_ov001_020bc4d8(InvImportData *pInvData, unk32 param2, unk32 param3) {
+void UnkStruct_027e0ce0::func_ov001_020bc4d8(InvImportData *pInvData, SaveFile_00000_0000_Data_D8 *param2, unk32 param3) {
     UnkStruct_027e09bc *ptr      = data_027e09bc;
     UnkStruct_027e0ce0_0C *pList = GetLinkListRef(this->mUnk_0C);
     ptr->mUnk_48.Prepend(pList);

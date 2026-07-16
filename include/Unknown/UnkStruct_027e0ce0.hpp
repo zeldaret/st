@@ -181,29 +181,46 @@ public:
     void func_ov001_020bbff4(UnkStruct_027e0ce0_38 *param1);
 };
 
+class UnkStruct_027e0ce0_34_20 {
+public:
+    /* 000 */ STRUCT_PAD(0x00, 0x960);
+    /* 960 */
+
+    UnkStruct_027e0ce0_34_20();
+    ~UnkStruct_027e0ce0_34_20();
+
+    // overlay 26
+    void func_ov026_020eb5b8();
+    void func_ov026_020eb6a8();
+};
+
 class UnkStruct_027e0ce0_34 {
 public:
     /* 00 */ unk32 mUnk_00[4];
     /* 10 */ unk32 mUnk_10[4];
-    /* 20 */ unk32 mUnk_20;
+    /* 20 */ UnkStruct_027e0ce0_34_20 *mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ unk32 mUnk_28;
     /* 2C */ s32 mUnk_2C;
-    /* 30 */ u32 mSpiritTrackFlags;
+    /* 30 */ u32 mSpiritTrackFlags; //! TODO: rename (actually handles train parts?)
     /* 34 */ unk32 mUnk_34;
     /* 38 */ u32 mTrackFlags[3];
-    /* 44 */ STRUCT_PAD(0x44, 0xF4);
+    /* 44 */ STRUCT_PAD(0x44, 0xE8);
+    /* E8 */ unk32 mUnk_E8;
+    /* EC */ unk32 mUnk_EC;
+    /* F0 */ unk32 mUnk_F0;
     /* F4 */
 
     UnkStruct_027e0ce0_34();
     ~UnkStruct_027e0ce0_34();
 
     // overlay 1
-    void func_ov001_020bf22c(unk32 param1, unk32 param2);
+    void func_ov001_020bf22c(SaveFile_00000_0000_Data_D8 *param1, unk32 param2);
     void func_ov001_020bf2b8(bool param1);
     void func_ov001_020bf378();
     void func_ov001_020bf3bc();
     void func_ov001_020bf3cc();
+    void func_ov001_020bf3fc();
 
     // overlay 8
     void func_ov008_020b6a50();
@@ -736,7 +753,7 @@ public:
     static UnkStruct_027e0ce0_34 *func_ov000_0205c904();
 
     // overlay 1
-    void func_ov001_020bc4d8(InvImportData *pInvData, unk32 param2, unk32 param3);
+    void func_ov001_020bc4d8(InvImportData *pInvData, SaveFile_00000_0000_Data_D8 *param2, unk32 param3);
     void func_ov001_020bc524(bool param1);
     void func_ov001_020bc5f8();
     void func_ov001_020bc65c();

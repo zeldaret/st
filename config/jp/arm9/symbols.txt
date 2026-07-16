@@ -601,7 +601,7 @@ func_02011c04 kind:function(arm,size=0x40) addr:0x02011c04
 func_02011c44 kind:function(arm,size=0x24) addr:0x02011c44
 func_02011c68 kind:function(arm,size=0x138) addr:0x02011c68
 func_02011da0 kind:function(arm,size=0x70) addr:0x02011da0
-_Z6SysNewP23UnkStruct_02011e10_Sub1ii kind:function(arm,size=0x94) addr:0x02011e10
+_Z6SysNewP23UnkStruct_02011e10_Sub1jj kind:function(arm,size=0x94) addr:0x02011e10
 _Z9SysDeletePv kind:function(arm,size=0x6c) addr:0x02011ea4
 _Z13func_02011f10i kind:function(arm,size=0x20) addr:0x02011f10
 _Z13func_02011f30i kind:function(arm,size=0xc) addr:0x02011f30
@@ -699,10 +699,10 @@ func_020144b4 kind:function(thumb,size=0x1c) addr:0x020144b4
 _ZN21UnkStruct_02011e10_2C13func_020144ccEiii kind:function(thumb,size=0x6c) addr:0x020144d0
 _ZN21UnkStruct_02011e10_2C13func_02014538Ev kind:function(thumb,size=0x34) addr:0x0201453c
 func_02014570 kind:function(arm,size=0x44) addr:0x02014570
-func_020145b4 kind:function(arm,size=0x80) addr:0x020145b4
-func_02014634 kind:function(arm,size=0x58) addr:0x02014634
+func_020145b0 kind:function(arm,size=0x80) addr:0x020145b4
+func_02014630 kind:function(arm,size=0x58) addr:0x02014634
 func_0201468c kind:function(arm,size=0x7c) addr:0x0201468c
-func_02014708 kind:function(arm,size=0x28) addr:0x02014708
+func_02014704 kind:function(arm,size=0x28) addr:0x02014708
 _ZN21UnkStruct_02049a2c_1CC1Ev kind:function(arm,size=0x4c) addr:0x02014730
 func_0201477c kind:function(arm,size=0x14) addr:0x0201477c
 _ZN13func_02014790D0Ev kind:function(arm,size=0x1c) addr:0x02014790
@@ -718,7 +718,7 @@ _ZN14OverlayManager13func_02014918Ej kind:function(thumb,size=0x2c) addr:0x02014
 func_02014948 kind:function(thumb,size=0x50) addr:0x02014948
 _ZN14OverlayManager13func_02014994Ei kind:function(thumb,size=0x7c) addr:0x02014998
 func_02014a14 kind:function(arm,size=0x24) addr:0x02014a14
-_ZN18UnkStruct_02049bac13func_02014a34EPv kind:function(arm,size=0xcc) addr:0x02014a38
+_ZN18UnkStruct_02049bac13func_02014a34EP4Date kind:function(arm,size=0xcc) addr:0x02014a38
 _ZN18UnkStruct_02049bac13func_02014b00Ev kind:function(arm,size=0x54) addr:0x02014b04
 func_02014b58 kind:function(arm,size=0x10) addr:0x02014b58
 func_02014b68 kind:function(arm,size=0x1c) addr:0x02014b68
@@ -1402,7 +1402,7 @@ func_02026294 kind:function(arm,size=0x30) addr:0x02026294
 func_020262c4 kind:function(arm,size=0x30) addr:0x020262c4
 func_020262f4 kind:function(arm,size=0x18) addr:0x020262f4
 func_0202630c kind:function(arm,size=0x14) addr:0x0202630c
-func_02026320 kind:function(arm,size=0x18) addr:0x02026320
+func_02024df0 kind:function(arm,size=0x18) addr:0x02026320
 func_02026338 kind:function(arm,size=0x28) addr:0x02026338
 func_02026360 kind:function(arm,size=0xa8) addr:0x02026360
 func_02026408 kind:function(arm,size=0x2c) addr:0x02026408
@@ -2372,9 +2372,9 @@ data_020449f4 kind:data(any) addr:0x020449f4
 data_02044a18 kind:data(any) addr:0x02044a18
 data_02044a24 kind:data(any) addr:0x02044a24
 data_02044a30 kind:data(any) addr:0x02044a30
-data_02044a50 kind:data(any) addr:0x02044a50
-data_02044a5c kind:data(any) addr:0x02044a5c
-data_02044a8c kind:data(any) addr:0x02044a8c
+@171 kind:data(byte[0xb]) kind:data(any) addr:0x02044a50 local
+@172 kind:data(byte[0x2d]) kind:data(any) addr:0x02044a5c local
+@173 kind:data(byte[0x22]) kind:data(any) addr:0x02044a8c local
 data_02044ab0 kind:data(any) addr:0x02044ab0
 data_02044ab8 kind:data(any) addr:0x02044ab8
 data_02044ac0 kind:data(any) addr:0x02044ac0
@@ -2410,7 +2410,7 @@ data_02044c34 kind:data(any) addr:0x02044c34
 data_02044c48 kind:data(any) addr:0x02044c48
 data_02044c5c kind:data(any) addr:0x02044c5c
 data_02044c74 kind:data(any) addr:0x02044c74
-data_02044c8c kind:data(any) addr:0x02044c8c
+data_0204372c kind:data(any) addr:0x02044c8c
 data_02044cb0 kind:data(any) addr:0x02044cb0
 data_02044cb1 kind:data(any) addr:0x02044cb1
 data_02044cbc kind:data(any) addr:0x02044cbc
@@ -2740,7 +2740,7 @@ data_02049014 kind:bss addr:0x02049014
 data_02049600 kind:bss addr:0x02049600
 data_02049640 kind:bss addr:0x02049640
 data_0204af00 kind:bss addr:0x0204af00
-data_0204af04 kind:bss addr:0x0204af04
+data_02049984 kind:bss addr:0x0204af04
 data_0204af0c kind:bss addr:0x0204af0c
 data_0204af10 kind:bss addr:0x0204af10
 data_0204999c kind:bss addr:0x0204af1c

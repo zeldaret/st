@@ -1,7 +1,7 @@
 #include "MainGame/MiscAdvManager.hpp"
 #include "Item/ItemManager.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkStruct_02049bac.hpp"
+
 #include <nitro/mi.h>
 
 extern "C" u8 func_ov000_020a9a50();
@@ -21,7 +21,7 @@ MiscAdvManager::MiscAdvManager() {
 MiscAdvManager::~MiscAdvManager() {}
 
 void MiscAdvManager::func_ov024_020d6310(MiscAdvManager *pSrc) {
-    u16 local_10;
+    Date local_10;
 
     MI_CpuCopyFast(pSrc, this, sizeof(MiscAdvManager));
     data_02049bac.func_02014a34(&local_10);
@@ -129,16 +129,18 @@ void MiscAdvManager::func_ov024_020d64b4(s8 param1, unk32 param2, const u16 *par
         }
     }
 
-    u16 local_18;
+    Date local_18;
     data_02049bac.func_02014a34(&local_18);
 
     this->mObtainedStamps[param2] = param1;
 
-    u16 new_var2              = this->mStampDates[param2];
-    u16 temp                  = local_18;
-    this->mStampDates[param2] = temp;
-    this->mStampDates[param2] = new_var2;
-    this->mStampDates[param2] = temp;
+    Date new_var2;
+    Date temp;
+    new_var2.data[0]                  = this->mStampDates[param2].data[0];
+    temp.data[0]                      = local_18.data[0];
+    this->mStampDates[param2].data[0] = temp.data[0];
+    this->mStampDates[param2].data[0] = new_var2.data[0];
+    this->mStampDates[param2].data[0] = temp.data[0];
 
     u16 new_var3            = this->mStampPos[param2];
     u16 temp2               = *param3;
@@ -188,7 +190,7 @@ void MiscAdvManager::PostPriceCard(unk32 amount, unk32 param2) {
         this->mNumPostedPriceCards += amount;
     }
 
-    u16 date;
+    Date date;
     data_02049bac.func_02014a34(&date);
     this->mPostDate = date;
 

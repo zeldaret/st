@@ -7,9 +7,11 @@
 
 // start of thumb region, using thumb instructions
 #define THUMB_BEGIN _Pragma("thumb on")
+#define ARM_END THUMB_BEGIN
 
 // end of thumb region, using arm instructions
 #define THUMB_END _Pragma("thumb off")
+#define ARM_BEGIN THUMB_END
 
 // `override` was added in C++11 before the DS, so we only use the keyword to indicate overriden functions
 #define override
@@ -51,6 +53,13 @@
 // sometimes we need something in .bss
 // to force things in .data to align properly
 #define DATA_ALIGN_FIX() int DF_UNIQUE_IDENT(__data_align_fix)
+
+// for cases where `DATA_ALIGN_FIX` doesn't work
+#define DATA_ALIGN_FIX2()                                   \
+    static const int DF_UNIQUE_IDENT(__data_align_fix) = 0; \
+    void DF_UNIQUE_IDENT(__data_align_fix_func)() {         \
+        *(int *) &DF_UNIQUE_IDENT(__data_align_fix) = 0;    \
+    }
 
 #ifndef typeof
     #define typeof __typeof__
@@ -101,6 +110,13 @@
         delete[] ptr;     \
         ptr = NULL;       \
     }                     \
+    (void) 0
+
+#define DELETE_ARRAY2(ptr)        \
+    {                             \
+        ::operator delete[](ptr); \
+        ptr = NULL;               \
+    }                             \
     (void) 0
 
 #endif

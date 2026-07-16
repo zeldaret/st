@@ -11,8 +11,11 @@ struct UnkStruct_func_ov000_020702a8 {
     /* 00 */ STRUCT_PAD(0x00, 0x10);
     /* 10 */ Vec2s mUnk_10;
     /* 14 */ u8 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk32 mUnk_1C;
+    /* 15 */ STRUCT_PAD(0x15, 0x18);
+    /* 18 */ u16 mUnk_18;
+    /* 1A */ u16 mUnk_1A;
+    /* 1C */ u16 mUnk_1C;
+    /* 1E */ u16 mUnk_1E;
     /* 20 */ unk16 mUnk_20;
     /* 22 */ unk16 mUnk_22;
 };

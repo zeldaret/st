@@ -12,7 +12,8 @@ Actor *ActorProfileUnkLBCK::Create() {
 ActorProfileUnkLBCK::ActorProfileUnkLBCK() :
     ActorProfile_Derived1(ActorId_LBCK) {}
 
-ActorUnkLBCK::ActorUnkLBCK() {}
+ActorUnkLBCK::ActorUnkLBCK() :
+    Actor_Derived1(NULL, 0) {}
 
 void ActorUnkLBCK::func_ov062_02159044(void) {}
 void ActorUnkLBCK::func_ov062_02159078(void) {}

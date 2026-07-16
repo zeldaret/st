@@ -58,7 +58,7 @@ inline void G3_ViewPort(u32 left, u32 top, u32 right, u32 bottom) {
 }
 void _G3_Ortho(fx32 top, fx32 bottom, fx32 left, fx32 right, fx32 near, fx32 far, fx32 param7, BOOL param8, void *param9);
 inline void G3_Ortho(fx32 top, fx32 bottom, fx32 left, fx32 right, fx32 near, fx32 far, void *param7) {
-    _G3_Ortho(top, bottom, left, right, near, far, FX32_ONE, TRUE, param7);
+    _G3_Ortho(top, bottom, left, right, near, far, FX32_ONE, true, param7);
 }
 inline void G3_StoreMtx(u32 param1) {
     REG_GFX_FIFO_MATRIX_STORE = param1;
@@ -109,10 +109,19 @@ inline BOOL G3X_IsGeometryBusy(void) {
 }
 
 inline void G3X_AntiAlias(BOOL param1) {
-    REG_DISP3DCNT = REG_DISP3DCNT & ~0x3000 | (param1 << 0x4);
+    REG_DISP3DCNT = REG_DISP3DCNT & ~0x3000 | (param1 << 4);
 }
+
 inline void G3X_AlphaBlend(BOOL param1) {
-    REG_DISP3DCNT = REG_DISP3DCNT & ~0x3000 | (param1 << 0x3);
+    REG_DISP3DCNT = REG_DISP3DCNT & ~0x3000 | (param1 << 3);
+}
+
+inline void G3X_Unk1(unk32 param1) {
+    REG_DISP3DCNT = REG_DISP3DCNT & ~(0x3000 | (param1 << 1));
+}
+
+inline void G3X_Unk2(unk32 param1) {
+    REG_DISP3DCNT &= ~(0x3000 | (param1 << 5));
 }
 
 #ifdef __cplusplus

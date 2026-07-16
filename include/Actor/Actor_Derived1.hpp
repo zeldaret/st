@@ -182,6 +182,9 @@ public:
 
     static void func_ov000_020a9804();
 
+    // overlay 1
+    void func_ov001_020bff2c();
+
     // overlay 31
     void func_ov031_020e3ca4();
 };

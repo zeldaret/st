@@ -23,5 +23,7 @@ public:
     /* 24 */ virtual unk32 vfunc_24() override;
 
     // overlay 1
+    void func_ov001_020bfd84(unk32 param1);
+
     static GameModeBase *Create();
 };
