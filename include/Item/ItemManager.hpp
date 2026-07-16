@@ -110,7 +110,9 @@ public:
     const bool HasUnk12(int value) const { return (this->mUnk_12 & value) != 0; }
     const bool HasRestriction(int flag) const { return IS_ITEM_RESTRICTED(this->mItemRestrictions, flag); }
     const u8 GetTearsAmount() const { return this->mTearsAmount; }
+    void SetTearsAmount(u8 amount) { this->mTearsAmount = amount; }
     const u8 GetKeyAmount() const { return this->mKeyAmount; }
+    void SetKeyAmount(u8 amount) { this->mKeyAmount = amount; }
     const UpgradeCapacity GetQuiverCap() const { return this->mQuiverCapacity; }
     const UpgradeCapacity GetBombsCap() const { return this->mBombBagCapacity; }
     const UpgradeCapacity GetArrowAmount() const { return this->mArrowAmount; }
@@ -193,6 +195,8 @@ public:
     const bool HasRestriction(int flag) const { return this->GetInventory()->HasRestriction(flag); }
     const u8 GetTearsAmount() const { return this->GetInventory()->GetTearsAmount(); }
     const u8 GetKeyAmount() const { return this->GetInventory()->GetKeyAmount(); }
+    void SetTearsAmount(u8 amount) { this->GetInventory()->SetTearsAmount(amount); }
+    void SetKeyAmount(u8 amount) { this->GetInventory()->SetKeyAmount(amount); }
     const UpgradeCapacity GetQuiverCap() const { return this->GetInventory()->GetQuiverCap(); }
     const UpgradeCapacity GetBombsCap() const { return this->GetInventory()->GetBombsCap(); }
     const UpgradeCapacity GetArrowAmount() const { return this->GetInventory()->GetArrowAmount(); }
