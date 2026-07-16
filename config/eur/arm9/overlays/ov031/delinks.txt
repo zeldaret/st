@@ -37,6 +37,7 @@ src/031_Land/Actor/ActorUnkITTD.cpp:
     .text       start:0x020e58c8 end:0x020e64d8
     .init       start:0x02111138 end:0x021111ac
     .ctor       start:0x021127ac end:0x021127b0
+    .data       start:0x02112fec end:0x02113088
     .bss        start:0x02116534 end:0x02116580
 
 src/031_Land/Actor/ActorUnkSWBM.cpp:

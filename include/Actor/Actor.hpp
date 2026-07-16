@@ -201,8 +201,8 @@ public:
 
     // overlay 0
     bool func_ov000_0205cbc4(u32 param1, VecFx32 *param2);
-    unk32 func_ov000_0207df88(Cylinder *param1, unk32 param2);
-    unk32 func_ov000_0207e294(Cylinder *param1);
+    unk16 func_ov000_0207df88(Cylinder *param1, unk32 param2);
+    unk16 func_ov000_0207e294(Cylinder *param1);
     void func_ov000_0209848c(ActorProfile *param1);
     void func_ov000_020984b0();
     void func_ov000_020984b4();

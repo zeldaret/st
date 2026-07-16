@@ -95,7 +95,7 @@ extern "C" void func_01ffa9e8(Mat4x3p *, Mat4x3p *);
 extern "C" void func_01ffad5c(Mat4x3p *, Mat4x3p *, Mat4x3p *);
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
 extern "C" fx16 func_01ffbbe0(fx32, fx32);
-extern "C" bool func_01ffccf4(VecFx32 *, VecFx32 *, VecFx32 *, unk32 *);
+extern "C" bool func_01ffccf4(Cylinder *, VecFx32 *, VecFx32 *, unk32 *);
 extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, unk32);
 extern "C" void func_0200eab0(G3d_Model *, unk16, u8);
 extern "C" UnkResourceStruct2 *func_0200f05c(G3d_NameList *, char *);
@@ -192,9 +192,9 @@ bool ActorShotArrow::vfunc_18(unk32 param1) {
     this->SetState(ActorShotArrowState_0);
 
     this->mUnk_194.mUnk_04 = this->mRef.Get32();
-    VecFx32_Copy(&this->mPos, &this->mUnk_194.mUnk_0C);
-    this->mUnk_194.mUnk_18 = FLOAT_TO_FX32(0.20f);
-    this->mUnk_44          = 0x1F;
+    VecFx32_Copy(&this->mPos, &this->mUnk_194.mUnk_0C.pos);
+    this->mUnk_194.mUnk_0C.size = FLOAT_TO_FX32(0.20f);
+    this->mUnk_44               = 0x1F;
     return true;
 }
 
@@ -862,8 +862,8 @@ void ActorShotArrow::func_ov031_020f2f5c(VecFx32 *param1) {
 }
 
 bool ActorShotArrow::func_ov031_020f2f9c() {
-    VecFx32_Copy(&this->mPos, &this->mUnk_194.mUnk_0C);
-    this->mUnk_194.mUnk_18 = FLOAT_TO_FX32(0.2f);
+    VecFx32_Copy(&this->mPos, &this->mUnk_194.mUnk_0C.pos);
+    this->mUnk_194.mUnk_0C.size = FLOAT_TO_FX32(0.2f);
     data_027e09c0->func_ov000_0207e58c(this->mRef, 0x3, data_ov031_02110b01[this->mUnk_5C.mParams[1]], &this->mUnk_194);
     return true;
 }
@@ -1001,7 +1001,7 @@ void ActorShotArrow_194::func_ov031_020f374c(Actor *actor) {
 
     stack.mUnk_28 = this->mUnk_2C->mVel;
     func_01ff93c0(&stack.mUnk_28, this->mUnk_30);
-    stack.mUnk_1C = this->mUnk_0C;
+    stack.mUnk_1C = this->mUnk_0C.pos;
     VecFx32_Add(&stack.mUnk_1C, &stack.mUnk_28, &stack.mUnk_1C);
 
     func_01ffb714(&stack.mUnk_1C, &actor->mVel, &stack.mUnk_1C);
@@ -1015,7 +1015,7 @@ void ActorShotArrow_194::func_ov031_020f374c(Actor *actor) {
     //! @bug: stack.mUnk_18 is used uninitialized?
     if (temp > stack.mUnk_18 && stack.mUnk_18 > FLOAT_TO_FX32(0.15f)) {
         fx32 temp_r5 = (temp - stack.mUnk_18) + FLOAT_TO_FX32(0.15f);
-        u16 value    = (u32) (s16) func_01ffbbe0(stack.mUnk_00.x, stack.mUnk_00.z);
+        u16 value    = (u32) (s16) (s32) func_01ffbbe0(stack.mUnk_00.x, stack.mUnk_00.z);
 
         fx16 sin = SIN(value);
         fx16 cos = COS(value);
