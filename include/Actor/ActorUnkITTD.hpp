@@ -8,7 +8,6 @@
 class UnkStruct_ov031_02112ff4 : public UnkStruct_ov031_Items_00 {
 public:
     // data_ov031_02112ff4
-    /* 00 */ virtual ~UnkStruct_ov031_02112ff4() {}                                       // func_ov031_020e5b20 & ?
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1);               // func_ov031_020e575c
     /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2); // func_ov031_020e5784
 };
@@ -55,7 +54,6 @@ public:
     /* 20 */ virtual void vfunc_20() override;             // func_ov031_020e6148
     /* 24 */ virtual void vfunc_24() override;             // func_ov031_020e6158
     /* 2C */ virtual void vfunc_2C(unk32 param1) override; // func_ov031_020e619c
-    /* 4C */ virtual ~ActorUnkITTD() override;             // func_ov031_020e6474
 
     unk16 UnkFunc(Actor *actor) {
         return actor->func_ov000_0207df88(this->mUnk_30, 0x4) | actor->func_ov000_0207e294(this->mUnk_30);
@@ -74,7 +72,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkITTD();
-    ~ActorProfileUnkITTD();
 
     /* 0C */ virtual Actor *Create();
 

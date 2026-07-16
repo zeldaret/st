@@ -7,12 +7,24 @@
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "Unknown/UnkStruct_ov000_020b4ec4.hpp"
 
+struct UnkStruct_ov031_020e5d18_00 {
+    Actor *mUnk_00;
+    u8 mUnk_04[0x14];
+};
+
 extern "C" char *data_ov031_02110a88;
 extern "C" Cylinder data_ov031_02112fdc;
 
+extern "C" void func_01ff916c(void *, unk32, unk32);
 extern "C" void func_01ff93c0(VecFx32 *, unk32);
+extern "C" void func_01ff993c(VecFx32 *, VecFx32 *, unk32);
+extern "C" fx32 func_01ffb66c(unk32, u16);
+extern "C" void func_01ffe6c4(UnkStruct_ov031_020e5d18_00 *, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *,
+                              UnkStruct_ov031_Items_00 *);
 extern "C" void func_0200ea38(G3d_Model *, unk32, unk32);
 extern "C" void func_0200ef9c(G3d_Model *);
+
+extern "C" bool func_ov000_02080998(VecFx32 *);
 
 DECL_PROFILE(ActorProfileUnkITTD);
 
@@ -90,18 +102,7 @@ void ActorUnkITTD::SetState(ActorState state) {
     this->mUnk_50 = 0x0;
 }
 
-struct UnkStruct_ov031_020e5d18_00 {
-    Actor *mUnk_00;
-    u8 mUnk_04[0x14];
-};
-
-extern "C" void func_01ff916c(void *, unk32, unk32);
-extern "C" void func_01ff993c(VecFx32 *, VecFx32 *, unk32);
-extern "C" fx32 func_01ffb66c(unk32, u16);
-extern "C" void func_01ffe6c4(UnkStruct_ov031_020e5d18_00 *, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *,
-                              UnkStruct_ov031_Items_00 *);
-extern "C" bool func_ov000_02080998(VecFx32 *);
-
+// non-matching
 void ActorUnkITTD::func_ov031_020e5d18(unk32 param1) {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
@@ -324,6 +325,3 @@ bool ActorUnkITTD::func_ov031_020e6398() {
     }
     return false;
 }
-
-ActorUnkITTD::~ActorUnkITTD() {}
-ActorProfileUnkITTD::~ActorProfileUnkITTD() {}
