@@ -213,7 +213,7 @@ void ActorUnkCANS::vfunc_20(void) {
     }
 
     this->func_ov000_02098b8c(1, &mUnk_23C);
-    unk16 res1 = func_01ffbbe0(*(unk32 *) &mUnk_23C.mUnk_08, mUnk_24C);
+    unk16 res1 = func_01ffbbe0(*(unk32 *) &mUnk_23C.mUnk_00.mUnk_08, mUnk_24C);
     unk16 res2 = func_01ffbbe0(mVel.x, mVel.z);
     unk32 res3 = (unk16) (res2 - res1 - 0x8000);
 
@@ -512,7 +512,7 @@ void ActorUnkCANS::func_ov063_02158b98(void) {
     }
 
     if ((mUnk_46 & 0x3C) != 0) {
-        unk16 ret2  = func_01ffbbe0(*(unk32 *) &mUnk_23C.mUnk_08, mUnk_24C);
+        unk16 ret2  = func_01ffbbe0(*(unk32 *) &mUnk_23C.mUnk_00.mUnk_08, mUnk_24C);
         unk32 iVar5 = (unk16) ((mUnk_26C * 0x4000 + mUnk_276) - ret2);
         iVar5       = ABS(iVar5);
 
