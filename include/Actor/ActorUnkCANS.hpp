@@ -85,6 +85,7 @@ public:
     /* 1C4 */ unk32 mUnk_1C4;
     /* 1C8 */ STRUCT_PAD(0x1C8, 0x1F4);
     /* 1F4 */ Actor_Derived1_94 mUnk_1F4;
+    /* 200 */ unk32 mUnk_200;
     /* 204 */ STRUCT_PAD(0x204, 0x208);
     /* 208 */ unk16 mUnk_208;
     /* 20A */ unk16 mUnk_20A;
