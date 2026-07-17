@@ -2761,7 +2761,7 @@ data_02049ba0 kind:bss addr:0x0204b120
 data_0204b128 kind:bss addr:0x0204b128
 data_02049bac kind:bss addr:0x0204b12c
 data_0204b150 kind:bss addr:0x0204b150
-data_0204b154 kind:bss addr:0x0204b154
+data_02049bd4 kind:bss addr:0x0204b154
 data_02049be0 kind:bss addr:0x0204b15c
 gRandom kind:bss addr:0x0204b164
 data_0204b17c kind:bss addr:0x0204b17c
