@@ -19,8 +19,7 @@ public:
     /* 04 */ ActorRef mUnk_04;
     /* 08 */ unk16 mUnk_08;
     /* 08 */ unk16 mUnk_0A;
-    /* 0C */ VecFx32 mUnk_0C;
-    /* 18 */ fx32 mUnk_18;
+    /* 0C */ Cylinder mUnk_0C;
     /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk32 mUnk_20;
     /* 24 */ unk32 mUnk_24;
@@ -30,8 +29,7 @@ public:
     UnkStruct_ov031_Items_01() {
         this->mUnk_04 = 0;
         this->mUnk_08 = 0;
-        VecFx32_Init(0, 0, 0, &this->mUnk_0C);
-        this->mUnk_18 = 0;
+        this->mUnk_0C.Init(FLOAT_TO_FX32(0.0f));
         this->mUnk_1C = 0;
         this->mUnk_20 = 0;
         this->mUnk_24 = 0;

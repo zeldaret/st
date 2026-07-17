@@ -914,9 +914,14 @@ struct UnkStackStruct1 {
 };
 extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
 
-struct UnkSystem7_UnkStruct_00_20 {
+struct UnkSystem7_UnkStruct_00_20_00 {
     /* 00 */ STRUCT_PAD(0x00, 0x04);
     /* 04 */ VecFx32 mUnk_04;
+};
+
+struct UnkSystem7_UnkStruct_00_20 {
+    /* 00 */ UnkSystem7_UnkStruct_00_20_00 *mUnk_00;
+    /* 04 */ VecFx32 *mUnk_04;
 };
 
 struct UnkSystem7_UnkStruct_00 {

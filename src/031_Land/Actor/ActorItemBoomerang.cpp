@@ -46,10 +46,7 @@ ActorItemBoomerang::ActorItemBoomerang() :
 bool ActorItemBoomerang::vfunc_18(unk32 param1) {
     this->mUnk_CC.mUnk_30.func_ov031_020e45fc();
 
-    this->mUnk_A0.mUnk_0C.x = FLOAT_TO_FX32(0.0f);
-    this->mUnk_A0.mUnk_0C.y = FLOAT_TO_FX32(-0.1003f);
-    this->mUnk_A0.mUnk_0C.z = FLOAT_TO_FX32(0.0f);
-    this->mUnk_A0.mUnk_18   = FLOAT_TO_FX32(0.4f);
+    this->mUnk_A0.mUnk_0C.Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(-0.1003f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.4f));
 
     this->mUnk_10C.x = FLOAT_TO_FX32(0.0f);
     this->mUnk_10C.y = FLOAT_TO_FX32(-0.1003f);
@@ -108,10 +105,7 @@ void ActorItemBoomerang::vfunc_20() {
     bool var2 = false;
     switch (this->mState) {
         case ActorItemBoomerangState_0:
-            this->mUnk_A0.mUnk_0C.z = this->mPos.z;
-            this->mUnk_A0.mUnk_0C.y = this->mPos.y + FLOAT_TO_FX32(-0.1003f);
-            this->mUnk_A0.mUnk_0C.x = this->mPos.x;
-            this->mUnk_A0.mUnk_18   = FLOAT_TO_FX32(0.3f);
+            this->mUnk_A0.mUnk_0C.Init(this->mPos.x, this->mPos.y, this->mPos.z, FLOAT_TO_FX32(0.3f));
 
             data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_A0);
 
@@ -147,10 +141,10 @@ void ActorItemBoomerang::vfunc_20() {
                 }
 
                 if (sp14.type != 0) {
-                    this->mUnk_CC.mUnk_0C.z = this->mPos.z;
-                    this->mUnk_CC.mUnk_0C.y = this->mPos.y + FLOAT_TO_FX32(-0.1003f);
-                    this->mUnk_CC.mUnk_18   = 0xA000;
-                    this->mUnk_CC.mUnk_0C.x = this->mPos.x;
+                    this->mUnk_CC.mUnk_0C.pos.z = this->mPos.z;
+                    this->mUnk_CC.mUnk_0C.pos.y = this->mPos.y + FLOAT_TO_FX32(-0.1003f);
+                    this->mUnk_CC.mUnk_0C.size  = 0xA000;
+                    this->mUnk_CC.mUnk_0C.pos.x = this->mPos.x;
                     data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_CC);
                     return;
                 }
@@ -183,10 +177,7 @@ void ActorItemBoomerang::vfunc_20() {
             this->func_ov031_020e49b0(0x8D70);
             break;
         case ActorItemBoomerangState_1:
-            this->mUnk_A0.mUnk_0C.z = this->mPos.z;
-            this->mUnk_A0.mUnk_0C.y = this->mPos.y + FLOAT_TO_FX32(-0.1003f);
-            this->mUnk_A0.mUnk_0C.x = this->mPos.x;
-            this->mUnk_A0.mUnk_18   = FLOAT_TO_FX32(0.3f);
+            this->mUnk_A0.mUnk_0C.Init(this->mPos.x, this->mPos.y, this->mPos.z, FLOAT_TO_FX32(0.3f));
 
             data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_A0);
             Actor *sp24; /* actor* ? */
@@ -307,15 +298,18 @@ void ActorItemBoomerang::func_ov031_020e5220() {
 // non-matching
 void ActorItemBoomerang::func_ov031_020e52a0() {
     if (this->mUnk_128 == 0x1 || this->mUnk_128 == 0x2) {
-        for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_12C; ptr != (void *) &this->mUnk_138; ++ptr) {
-            // non sense
-            ptr->mUnk_00->mUnk_28 = this->mPos.x + ptr->mUnk_00->mUnk_24;
-            ptr->mUnk_00->mUnk_2C = this->mPos.y + ptr->mUnk_00->mUnk_28;
-            ptr->mUnk_00->mUnk_30 = this->mPos.z + ptr->mUnk_00->mUnk_2C;
+        for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_12C; ptr != this->mUnk_12C + 0x3; ++ptr) {
+            UnkSystem7_UnkStruct_00 *data = ptr->mUnk_00;
+            if (data == NULL) {
+                continue;
+            }
+            data->mUnk_28 = this->mPos.x + data->mUnk_20->mUnk_00->mUnk_04.x;
+            data->mUnk_2C = this->mPos.y + data->mUnk_20->mUnk_00->mUnk_04.y;
+            data->mUnk_30 = this->mPos.z + data->mUnk_20->mUnk_00->mUnk_04.z;
         }
         return;
     }
-    for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_12C; ptr != (void *) &this->mUnk_138; ++ptr) {
+    for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_12C; ptr != this->mUnk_12C + 0x3; ++ptr) {
         ptr->func_ov000_020a0334();
     }
 }
