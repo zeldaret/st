@@ -13,14 +13,14 @@ public:
     /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2);
 };
 
-enum ActorUnkITTDState_ {
-    ActorUnkITTDState_0 = 0,
-    ActorUnkITTDState_1 = 1,
-    ActorUnkITTDState_2 = 2,
-    ActorUnkITTDState_MAX,
+enum ActorItemTornadoState_ {
+    ActorItemTornadoState_0 = 0,
+    ActorItemTornadoState_1 = 1,
+    ActorItemTornadoState_2 = 2,
+    ActorItemTornadoState_MAX,
 };
 
-class ActorUnkITTD : public Actor {
+class ActorItemTornado : public Actor {
 public:
     /* 000 (base) */
     /* 094 */ ModelRender mUnk_94;
@@ -48,7 +48,7 @@ public:
     /* 1E0 */ UnkStruct_PlayerGet_ec mUnk_1E0[0x3];
     /* 1EC */
 
-    ActorUnkITTD();
+    ActorItemTornado();
 
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
@@ -63,13 +63,13 @@ public:
     bool func_ov031_020e6398();
 };
 
-class ActorProfileUnkITTD : public ActorProfile {
+class ActorProfileItemTornado : public ActorProfile {
 public:
     /* 00 (base) */
 
-    ActorProfileUnkITTD();
+    ActorProfileItemTornado();
 
     /* 0C */ virtual Actor *Create();
 
-    static ActorProfileUnkITTD *GetProfile();
+    static ActorProfileItemTornado *GetProfile();
 };

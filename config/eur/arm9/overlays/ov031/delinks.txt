@@ -33,7 +33,7 @@ src/031_Land/Actor/ActorItemBoomerang.cpp:
     .data       start:0x02112efc end:0x02112fd0
     .bss        start:0x021164e8 end:0x02116534
 
-src/031_Land/Actor/ActorUnkITTD.cpp:
+src/031_Land/Actor/ActorItemTornado.cpp:
     .text       start:0x020e58c8 end:0x020e64d8
     .init       start:0x02111138 end:0x021111ac
     .ctor       start:0x021127ac end:0x021127b0

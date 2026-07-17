@@ -1,4 +1,4 @@
-#include "Actor/ActorUnkITTD.hpp"
+#include "Actor/ActorItemTornado.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e0958.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -26,19 +26,19 @@ extern "C" void func_0200ef9c(G3d_Model *);
 
 extern "C" bool func_ov000_02080998(VecFx32 *);
 
-DECL_PROFILE(ActorProfileUnkITTD);
+DECL_PROFILE(ActorProfileItemTornado);
 
-Actor *ActorProfileUnkITTD::Create() {
-    return new(HeapIndex_2) ActorUnkITTD();
+Actor *ActorProfileItemTornado::Create() {
+    return new(HeapIndex_2) ActorItemTornado();
 }
 
-ActorProfileUnkITTD::ActorProfileUnkITTD() :
+ActorProfileItemTornado::ActorProfileItemTornado() :
     ActorProfile(ActorId_ITTD) {
     this->mUnk_04.Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.25f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.20f));
 }
 
 // non-matching
-ActorUnkITTD::ActorUnkITTD() :
+ActorItemTornado::ActorItemTornado() :
     mUnk_94(data_027e0ce0->func_ov000_0208ed30(0x0, 0x1, data_ov031_02110a88)),
     mUnk_F4(&this->mUnk_114, this->mUnk_94.mpModel),
     mUnk_134(&this->mUnk_154, this->mUnk_94.mpModel),
@@ -54,11 +54,11 @@ ActorUnkITTD::ActorUnkITTD() :
     this->mUnk_94.func_ov000_02057c98(&this->mUnk_134);
 
     this->mUnk_52 = 0xFFFF;
-    this->mState  = ActorUnkITTDState_0;
+    this->mState  = ActorItemTornadoState_0;
     this->mUnk_50 = 0x0;
 }
 
-bool ActorUnkITTD::vfunc_18(unk32 param1) {
+bool ActorItemTornado::vfunc_18(unk32 param1) {
     u16 tmp = (u16) this->mAngle;
 
     this->mUnk_44 = 0x1F;
@@ -75,13 +75,13 @@ bool ActorUnkITTD::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorUnkITTD::SetState(ActorState state) {
+void ActorItemTornado::SetState(ActorState state) {
     switch (state) {
-        case ActorUnkITTDState_1:
+        case ActorItemTornadoState_1:
             this->mUnk_1DC = 0x1000;
             data_027e0cec->func_ov000_020a00d4(this->mUnk_1E0, 0x8FD, 0x8FB, 0x8FC, &this->mPos, 0x2);
             break;
-        case ActorUnkITTDState_2:
+        case ActorItemTornadoState_2:
             data_027e09a8->func_ov000_02071b30(0x8D6D, &this->mPos, 0x0);
 
             for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_1E0; ptr != this->mUnk_1E0 + 0x3; ++ptr) {
@@ -101,7 +101,7 @@ void ActorUnkITTD::SetState(ActorState state) {
 }
 
 // non-matching
-void ActorUnkITTD::func_ov031_020e5d18(unk32 param1) {
+void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
@@ -118,15 +118,15 @@ void ActorUnkITTD::func_ov031_020e5d18(unk32 param1) {
     this->IsTimerOut();
 
     switch (this->mState) {
-        case ActorUnkITTDState_0:
+        case ActorItemTornadoState_0:
             data_027e09a8->func_ov000_02071d34(&this->mRef, 0x8D6C, &this->mPos, 0x0);
             if (this->mUnk_50 < (s16) 0xA) {
                 this->mUnk_1DC += 0x199;
                 break;
             }
-            this->SetState(ActorUnkITTDState_1);
+            this->SetState(ActorItemTornadoState_1);
             break;
-        case ActorUnkITTDState_1:
+        case ActorItemTornadoState_1:
             data_027e09a8->func_ov000_02071d34(&this->mRef, 0x8D6C, &this->mPos, 0x0);
 
             for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_1E0; ptr != this->mUnk_1E0 + 0x3; ++ptr) {
@@ -160,7 +160,7 @@ void ActorUnkITTD::func_ov031_020e5d18(unk32 param1) {
                 }
             }
             break;
-        case ActorUnkITTDState_2:
+        case ActorItemTornadoState_2:
             if ((u32) this->mUnk_50 >= (u32) this->mUnk_1D6) {
                 UNSET_FLAG(this->mFlags, ActorFlag_Alive);
             } else if (this->mUnk_1D6 != 0) {
@@ -179,7 +179,7 @@ void ActorUnkITTD::func_ov031_020e5d18(unk32 param1) {
     this->mUnk_F4.func_01ffc3b4();
     this->mUnk_134.func_01ffc3b4();
 
-    if (this->mState != ActorUnkITTDState_0 && this->mState != ActorUnkITTDState_1) {
+    if (this->mState != ActorItemTornadoState_0 && this->mState != ActorItemTornadoState_1) {
         return;
     }
     if (this->mUnk_1CC != 0x0) {
@@ -219,12 +219,12 @@ void ActorUnkITTD::func_ov031_020e5d18(unk32 param1) {
         this->mUnk_1CC = 0x1;
     }
 }
-void ActorUnkITTD::vfunc_20() {
+void ActorItemTornado::vfunc_20() {
     this->func_ov031_020e5d18(0x0);
 }
 
-void ActorUnkITTD::vfunc_24() {
-    if (!this->mUnk_1CE && this->mState != ActorUnkITTDState_2 &&
+void ActorItemTornado::vfunc_24() {
+    if (!this->mUnk_1CE && this->mState != ActorItemTornadoState_2 &&
         (this->mVel.x != FLOAT_TO_FX32(0.0f) || this->mVel.y != FLOAT_TO_FX32(0.0f) || this->mVel.z != FLOAT_TO_FX32(0.0f))) {
         return;
     }
@@ -232,11 +232,11 @@ void ActorUnkITTD::vfunc_24() {
 }
 
 // non-matching
-void ActorUnkITTD::vfunc_2C(unk32 param1) {
+void ActorItemTornado::vfunc_2C(unk32 param1) {
     if (this->mUnk_1DC <= 0x0) {
         return;
     }
-    if (this->mState != ActorUnkITTDState_0 && !this->func_01fff5d0(param1, 0x0)) {
+    if (this->mState != ActorItemTornadoState_0 && !this->func_01fff5d0(param1, 0x0)) {
         return;
     }
     unk32 var_r0 = this->mUnk_1DC;
@@ -267,14 +267,14 @@ void ActorUnkITTD::vfunc_2C(unk32 param1) {
 
     VecFx32 vec = this->mPos;
 
-    if (this->mState == ActorUnkITTDState_0) {
+    if (this->mState == ActorItemTornadoState_0) {
         vec.y += (((FLOAT_TO_FX32(1.0f) - this->mUnk_1DC) << 0xC) + FLOAT_TO_FX32(0.5f)) >> 0xC;
     }
     data_027e0958->func_ov000_02058fc4(&this->mUnk_17C, &vec);
 }
 
-bool ActorUnkITTD::func_ov031_020e62c0() {
-    if (this->mState != ActorUnkITTDState_2 && !this->mUnk_1CF) {
+bool ActorItemTornado::func_ov031_020e62c0() {
+    if (this->mState != ActorItemTornadoState_2 && !this->mUnk_1CF) {
         this->mUnk_1CF = true;
         if (VecFx32_TryNormalize(&this->mVel)) {
             func_01ff93c0(&this->mVel, 0x400);
@@ -284,18 +284,18 @@ bool ActorUnkITTD::func_ov031_020e62c0() {
     return false;
 }
 
-bool ActorUnkITTD::func_ov031_020e6314(u16 param1) {
-    if (this->mState == ActorUnkITTDState_2) {
+bool ActorItemTornado::func_ov031_020e6314(u16 param1) {
+    if (this->mState == ActorItemTornadoState_2) {
         return false;
     }
     this->mUnk_1D6 = param1;
-    this->SetState(ActorUnkITTDState_2);
+    this->SetState(ActorItemTornadoState_2);
     return true;
 }
 
 // non-matching
-bool ActorUnkITTD::func_ov031_020e6340(VecFx32 *param1, unk16 param2, unk16 param3) {
-    if (this->mState == ActorUnkITTDState_2) {
+bool ActorItemTornado::func_ov031_020e6340(VecFx32 *param1, unk16 param2, unk16 param3) {
+    if (this->mState == ActorItemTornadoState_2) {
         return false;
     }
 
@@ -308,8 +308,8 @@ bool ActorUnkITTD::func_ov031_020e6340(VecFx32 *param1, unk16 param2, unk16 para
     return true;
 }
 
-bool ActorUnkITTD::func_ov031_020e6398() {
-    if (this->mState == ActorUnkITTDState_1) {
+bool ActorItemTornado::func_ov031_020e6398() {
+    if (this->mState == ActorItemTornadoState_1) {
         if (VecFx32_TryNormalize(&this->mVel)) {
             func_01ff93c0(&this->mVel, -0x266);
         }
