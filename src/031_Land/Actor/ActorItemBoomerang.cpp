@@ -106,10 +106,6 @@ void ActorItemBoomerang::vfunc_20() {
     switch (this->mState) {
         case ActorItemBoomerangState_0:
             this->mUnk_A0.mUnk_0C.Init(this->mPos.x, this->mPos.y, this->mPos.z, FLOAT_TO_FX32(0.3f));
-            /*this->mUnk_A0.mUnk_0C.pos.z = this->mPos.z;
-            this->mUnk_A0.mUnk_0C.pos.y = this->mPos.y;
-            this->mUnk_A0.mUnk_0C.pos.x = this->mPos.x;
-            this->mUnk_A0.mUnk_0C.size  = FLOAT_TO_FX32(0.3f);*/
 
             data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_A0);
 
@@ -181,10 +177,7 @@ void ActorItemBoomerang::vfunc_20() {
             this->func_ov031_020e49b0(0x8D70);
             break;
         case ActorItemBoomerangState_1:
-            this->mUnk_A0.mUnk_0C.pos.z = this->mPos.z;
-            this->mUnk_A0.mUnk_0C.pos.y = this->mPos.y;
-            this->mUnk_A0.mUnk_0C.pos.x = this->mPos.x;
-            this->mUnk_A0.mUnk_0C.size  = FLOAT_TO_FX32(0.3f);
+            this->mUnk_A0.mUnk_0C.Init(this->mPos.x, this->mPos.y, this->mPos.z, FLOAT_TO_FX32(0.3f));
 
             data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_A0);
             Actor *sp24; /* actor* ? */

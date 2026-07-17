@@ -99,7 +99,6 @@ extern "C" bool func_01ffccf4(Cylinder *, VecFx32 *, VecFx32 *, unk32 *);
 extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, unk32);
 extern "C" void func_0200eab0(G3d_Model *, unk16, u8);
 extern "C" UnkResourceStruct2 *func_0200f05c(G3d_NameList *, char *);
-extern "C" void func_ov000_02057c98(ModelRender *param1, UnkSystem5 *param2);
 extern "C" bool func_ov000_0205aeac();
 extern "C" void func_ov000_0207b6c0();
 extern "C" unk32 func_ov000_0207df88(unk32 *, Cylinder *, unk32);
@@ -642,7 +641,7 @@ void ActorShotArrow::func_ov031_020f2794(unk16 param1) {
         case 0x2:
             this->mUnk_94.vfunc_08(GetModelFromProfile3(func_ov031_020f1404(), data_ov031_02110b4c));
             this->mUnk_25A = true;
-            func_ov000_02057c98(&this->mUnk_A0, &this->mUnk_100);
+            this->mUnk_A0.func_ov000_02057c98(&this->mUnk_100);
             break;
         default:
             break;

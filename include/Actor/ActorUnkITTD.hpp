@@ -2,14 +2,15 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Player/PlayerGet.hpp"
 #include "global.h"
 #include "types.h"
 
 class UnkStruct_ov031_02112ff4 : public UnkStruct_ov031_Items_00 {
 public:
     // data_ov031_02112ff4
-    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1);               // func_ov031_020e575c
-    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2); // func_ov031_020e5784
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1);
+    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2);
 };
 
 enum ActorUnkITTDState_ {
@@ -31,8 +32,7 @@ public:
     /* 158 */ STRUCT_PAD(0x158, 0x174);
     /* 174 */ UnkStruct_ov031_02112ff4 mUnk_174;
     /* 178 */ STRUCT_PAD(0x178, 0x17C);
-    /* 17C */ VecFx32 mUnk_17C;
-    /* 188 */ STRUCT_PAD(0x188, 0x194);
+    /* 17C */ UnkStruct_PlayerGet_74 mUnk_17C;
     /* 194 */ UnkStruct_ov031_Items_01 mUnk_194;
     /* 1C0 */ VecFx32 mUnk_1C0;
     /* 1CC */ u16 mUnk_1CC;
@@ -50,14 +50,10 @@ public:
 
     ActorUnkITTD();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override; // func_ov031_020e5b34
-    /* 20 */ virtual void vfunc_20() override;             // func_ov031_020e6148
-    /* 24 */ virtual void vfunc_24() override;             // func_ov031_020e6158
-    /* 2C */ virtual void vfunc_2C(unk32 param1) override; // func_ov031_020e619c
-
-    unk16 UnkFunc(Actor *actor) {
-        return actor->func_ov000_0207df88(this->mUnk_30, 0x4) | actor->func_ov000_0207e294(this->mUnk_30);
-    }
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
 
     void SetState(ActorState state);
     void func_ov031_020e5d18(unk32 param1);

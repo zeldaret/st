@@ -34,10 +34,7 @@ Actor *ActorProfileUnkITTD::Create() {
 
 ActorProfileUnkITTD::ActorProfileUnkITTD() :
     ActorProfile(ActorId_ITTD) {
-    this->mUnk_04.pos.x = FLOAT_TO_FX32(0.0f);
-    this->mUnk_04.pos.y = FLOAT_TO_FX32(0.25f);
-    this->mUnk_04.pos.z = FLOAT_TO_FX32(0.0f);
-    this->mUnk_04.size  = FLOAT_TO_FX32(0.20f);
+    this->mUnk_04.Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.25f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.20f));
 }
 
 // non-matching
@@ -45,6 +42,7 @@ ActorUnkITTD::ActorUnkITTD() :
     mUnk_94(data_027e0ce0->func_ov000_0208ed30(0x0, 0x1, data_ov031_02110a88)),
     mUnk_F4(&this->mUnk_114, this->mUnk_94.mpModel),
     mUnk_134(&this->mUnk_154, this->mUnk_94.mpModel),
+    mUnk_17C(NULL),
     mUnk_1CC(0x0),
     mUnk_1D1(this->mUnk_94.func_ov000_02057ee0()->numMat),
     mUnk_1D2(0x4),
