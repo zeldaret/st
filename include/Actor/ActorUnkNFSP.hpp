@@ -40,7 +40,7 @@ public:
     /* 54 */ virtual void vfunc_54(unk32 param1);
 
     void func_ov031_020fb988();
-    void func_ov031_020fb994();
+    Actor *func_ov031_020fb994();
     void func_ov031_020fb9b4();
     void func_ov031_020fba60();
     void func_ov031_020fbb8c();

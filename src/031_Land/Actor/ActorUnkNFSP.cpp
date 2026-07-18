@@ -120,9 +120,14 @@ void ActorUnkNFSP::func_ov031_020fb988() {
     this->func_ov031_020fbb8c();
 }
 
-// non-matching
-void ActorUnkNFSP::func_ov031_020fb994() {
-    gpActorManager->func_01fff3b4(this->mUnk_E4);
+Actor *ActorUnkNFSP::func_ov031_020fb994() {
+    Actor *pActor = gpActorManager->func_01fff3b4(this->mUnk_E4);
+
+    if (pActor != NULL) {
+        return pActor;
+    }
+
+    //! @bug: missing return
 }
 
 void ActorUnkNFSP::func_ov031_020fb9b4() {
