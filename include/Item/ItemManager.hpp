@@ -4,6 +4,7 @@
 #include "Save/AdventureFlags.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
+#include "Unknown/UnkSystem1.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -17,6 +18,54 @@ struct UnkStruct_ov000_020afc48 {
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ char mUnk_10[16];
     /* 20 */
+};
+
+class UnkStruct_ItemManager_20_00_08 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ bool mUnk_08;
+    /* 09 */ bool mUnk_09;
+    /* 0A */ unk16 mUnk_0A;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk16 mUnk_10;
+    /* 12 */ unk16 mUnk_12;
+    /* 14 */
+
+    UnkStruct_ItemManager_20_00_08();
+};
+
+class UnkStruct_ItemManager_20_00_20 {
+public:
+    /* 00 */ unk32 mUnk_00;
+
+    // overlay 31
+    void func_ov031_020e096c();
+};
+
+class UnkStruct_ItemManager_20_00 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ UnkStruct_ItemManager_20_00_08 mUnk_08;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ UnkStruct_ItemManager_20_00_20 mUnk_20;
+    /* 24 */ STRUCT_PAD(0x24, 0x2C);
+    /* 2C */ unk16 mUnk_2C;
+    /* 2E */ unk16 mUnk_2E; // pad?
+    /* 30 */
+
+    UnkStruct_ItemManager_20_00() :
+        mUnk_00(0),
+        mUnk_04(0),
+        mUnk_2C(0) {
+        this->mUnk_20.func_ov031_020e096c();
+        this->func_ov031_020dba40();
+    }
+
+    // overlay 31
+    void func_ov031_020d9bd0();
+    void func_ov031_020dba40();
 };
 
 class UnkStruct_ItemManager_20_04_08_310 {
@@ -49,6 +98,7 @@ public:
     /* 3D4 */
 
     UnkStruct_ItemManager_20_04_08();
+    ~UnkStruct_ItemManager_20_04_08();
 
     // data_ov031_02112b6c
     /* 00 */ virtual void vfunc_00();
@@ -67,26 +117,85 @@ public:
 
     UnkStruct_ItemManager_20_04();
     ~UnkStruct_ItemManager_20_04();
+
+    // overlay 31
+    void func_ov031_020d9598();
+    void func_ov031_020db338();
+};
+
+class UnkStruct_ItemManager_20_08 {
+public:
+    /* 00 */ unk16 mUnk_00;
+    /* 02 */ unk16 mUnk_02;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk16 mUnk_10;
+    /* 12 */ bool mUnk_12;
+    /* 13 */ bool mUnk_13;
+    /* 14 */
+
+    UnkStruct_ItemManager_20_08() {
+        this->mUnk_10 = 0;
+        this->mUnk_00 = 0;
+        this->mUnk_02 = 0x01;
+        this->func_ov031_020db5b4();
+    }
+
+    // overlay 31
+    void func_ov031_020d9658();
+    void func_ov031_020db5b4();
+};
+
+class UnkStruct_ItemManager_20_0C {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk8 mUnk_04;
+    /* 05 */ unk8 mUnk_05;
+    /* 06 */ unk8 mUnk_06;
+    /* 07 */ unk8 mUnk_07;
+    /* 08 */ unk16 mUnk_08;
+    /* 0A */ unk16 mUnk_0A; // pad?
+    /* 0C */
+
+    UnkStruct_ItemManager_20_0C();
+    ~UnkStruct_ItemManager_20_0C();
+
+    // overlay 31
+    void func_ov031_020db954();
+};
+
+struct UnkStruct_ItemManager_20_10_00 {
+    /* 00 */ unk32 unk_00;
+    /* 04 */
+
+    UnkStruct_ItemManager_20_10_00() :
+        unk_00(0) {}
+};
+
+class UnkStruct_ItemManager_20_10 {
+public:
+    /* 00 */ UnkStruct_ItemManager_20_10_00 mUnk_00[3];
+
+    UnkStruct_ItemManager_20_10() {
+        this->func_ov031_020db2b0();
+    }
+
+    // overlay 31
+    void func_ov031_020db2b0();
 };
 
 class UnkStruct_ItemManager_20_14 {
 public:
-    /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-
-    /* 00 */ virtual void vfunc_00();                //! TODO: name symbol func_ov000_020667d8
-    /* 04 */ virtual void vfunc_04();                //! TODO: name symbol func_ov000_020667f4
-    /* 08 */ virtual void vfunc_08();                //! TODO: name symbol func_ov000_020673c8
-    /* 0C */ virtual void vfunc_0C();                //! TODO: name symbol func_ov000_02067434
-    /* 10 */ virtual void vfunc_10();                //! TODO: name symbol func_ov000_02067474
-    /* 14 */ virtual void vfunc_14();                //! TODO: name symbol func_ov000_02066dfc
-    /* 18 */ virtual void vfunc_18();                //! TODO: name symbol func_ov000_020669d8
-    /* 1C */ virtual void vfunc_1C();                //! TODO: name symbol func_ov000_02067234
-    /* 20 */ virtual void vfunc_20();                //! TODO: name symbol func_ov000_0206723c
-    /* 24 */ virtual ~UnkStruct_ItemManager_20_14(); //! TODO: name symbols func_ov000_020672ac, func_ov000_020672f4
+    /* 00 */ UnkSystem1_ov000_Derived1 mUnk_00;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */
 
     UnkStruct_ItemManager_20_14();
+
+    ~UnkStruct_ItemManager_20_14() {
+        this->func_ov031_020db7d8();
+    }
 
     // overlay 31
     void func_ov031_020db7d8();
@@ -97,13 +206,12 @@ public:
 
 class UnkStruct_ItemManager_20 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
+    /* 00 */ UnkStruct_ItemManager_20_00 *mUnk_00;
+    /* 04 */ UnkStruct_ItemManager_20_04 *mUnk_04;
+    /* 08 */ UnkStruct_ItemManager_20_08 *mUnk_08;
+    /* 0C */ UnkStruct_ItemManager_20_0C *mUnk_0C;
+    /* 10 */ UnkStruct_ItemManager_20_10 *mUnk_10;
     /* 14 */ UnkStruct_ItemManager_20_14 mUnk_14;
-    /* 20 */ STRUCT_PAD(0x20, 0x2C);
     /* 2C */
 
     UnkStruct_ItemManager_20();
@@ -274,10 +382,10 @@ public:
     bool func_ov000_020a8a0c();
     void func_ov000_020a8a5c();
     bool func_ov000_020a8a74();
-    unk32 func_ov000_020a8a90();
-    unk32 func_ov000_020a8aa4();
-    unk32 func_ov000_020a8ab8();
-    unk32 func_ov000_020a8acc();
+    UnkStruct_ItemManager_20_00 *func_ov000_020a8a90();
+    UnkStruct_ItemManager_20_04 *func_ov000_020a8aa4();
+    UnkStruct_ItemManager_20_0C *func_ov000_020a8ab8();
+    UnkStruct_ItemManager_20_10 *func_ov000_020a8acc();
 
     static UnkStruct_ov000_020afc48 *func_ov000_020a8974(ItemFlag itemFlag);
     static ItemFlag GetEquippedItemFlag(ItemId itemId);

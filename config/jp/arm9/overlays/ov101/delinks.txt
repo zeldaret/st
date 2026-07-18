@@ -5,6 +5,7 @@
     .bss        start:0x02185580 end:0x02185580 kind:bss align:32
 
 src/101_SceneInitLand/Item/ItemManager_101.cpp:
+    complete
     .text       start:0x021847a0 end:0x0218498c
 
 src/101_SceneInitLand/UnkStruct_027e0ce0_40_101.cpp:

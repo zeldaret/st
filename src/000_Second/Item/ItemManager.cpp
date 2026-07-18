@@ -221,7 +221,7 @@ THUMB_END
 
 bool ItemManager::func_ov000_020a89d4() {
     if (this->mUnk_20 != NULL) {
-        return (this->mUnk_20->mUnk_14.mUnk_08 & 0xFFFF) != 0xFFFF;
+        return (this->mUnk_20->mUnk_14.mUnk_00.mUnk_08 & 0xFFFF) != 0xFFFF;
     }
 
     return false;
@@ -253,18 +253,18 @@ bool ItemManager::func_ov000_020a8a74() {
     return this->mUnk_20->func_ov031_020db8f8();
 }
 
-unk32 ItemManager::func_ov000_020a8a90() {
-    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_00 : 0;
+UnkStruct_ItemManager_20_00 *ItemManager::func_ov000_020a8a90() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_00 : NULL;
 }
 
-unk32 ItemManager::func_ov000_020a8aa4() {
-    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_04 : 0;
+UnkStruct_ItemManager_20_04 *ItemManager::func_ov000_020a8aa4() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_04 : NULL;
 }
 
-unk32 ItemManager::func_ov000_020a8ab8() {
-    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_0C : 0;
+UnkStruct_ItemManager_20_0C *ItemManager::func_ov000_020a8ab8() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_0C : NULL;
 }
 
-unk32 ItemManager::func_ov000_020a8acc() {
-    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_10 : 0;
+UnkStruct_ItemManager_20_10 *ItemManager::func_ov000_020a8acc() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_10 : NULL;
 }
