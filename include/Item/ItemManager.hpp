@@ -19,6 +19,56 @@ struct UnkStruct_ov000_020afc48 {
     /* 20 */
 };
 
+class UnkStruct_ItemManager_20_04_08_310 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ bool mUnk_0C;
+    /* 0D */ STRUCT_PAD(0x0D, 0x10);
+    /* 10 */
+
+    UnkStruct_ItemManager_20_04_08_310(); //! TODO: params
+};
+
+class UnkStruct_ItemManager_20_04_08 : public LinkList<UnkStruct_ItemManager_20_04_08> {
+public:
+    /* 000 (vtable) */
+    /* 004 (base) */
+    /* 00C */ unk32 mUnk_00C;
+    /* 010 */ STRUCT_PAD(0x10, 0x310);
+    /* 310 */ UnkStruct_ItemManager_20_04_08_310 mUnk_310;
+    /* 320 */ unk32 mUnk_320;
+    /* 324 */ unk16 mUnk_324;
+    /* 326 */ bool mUnk_326;
+    /* 327 */ bool mUnk_327;
+    /* 328 */ unk32 mUnk_328;
+    /* 32C */ STRUCT_PAD(0x32C, 0x3CC);
+    /* 3CC */ void *mUnk_3CC;
+    /* 3D0 */ unk32 mUnk_3D0;
+    /* 3D4 */
+
+    UnkStruct_ItemManager_20_04_08();
+
+    // data_ov031_02112b6c
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */
+};
+
+class UnkStruct_ItemManager_20_04 {
+public:
+    /* 000 */ unk32 mUnk_000;
+    /* 004 */ bool mUnk_004;
+    /* 005 */ unk8 mUnk_005; // pad?
+    /* 006 */ unk8 mUnk_006; // pad?
+    /* 007 */ unk8 mUnk_007; // pad?
+    /* 008 */ UnkStruct_ItemManager_20_04_08 mUnk_008;
+    /* 3DC */
+
+    UnkStruct_ItemManager_20_04();
+    ~UnkStruct_ItemManager_20_04();
+};
+
 class UnkStruct_ItemManager_20_14 {
 public:
     /* 00 (vtable) */

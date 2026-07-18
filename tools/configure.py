@@ -1417,6 +1417,17 @@ config.libs = [
         ]
     ),
     GameLib(
+        "Overlay 101",
+        [
+            Object("101_SceneInitLand/Item/ItemManager_101.cpp"),
+            Object("101_SceneInitLand/UnkStruct_027e0ce0_40_101.cpp"),
+            Object("101_SceneInitLand/Player/PlayerLinkActor_A0_1C_101.cpp"),
+            Object("101_SceneInitLand/UnkStruct_027e09a4_54_101.cpp"),
+            Object("101_SceneInitLand/UnkStruct_027e0cd8_0C_101.cpp"),
+        ],
+        extra_cflags=["-thumb"],
+    ),
+    GameLib(
         "Overlay 105",
         [
             Object("105_PlayerWhip/Actor/ActorUnkITWP.cpp"),
