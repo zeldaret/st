@@ -2095,7 +2095,7 @@ __sinit_ActorItemDrop.cpp kind:function(arm,size=0x138) addr:0x021135dc local
 __sinit_ActorUnkMLCK.cpp kind:function(arm,size=0x74) addr:0x02113714
 __sinit_ActorUnkCLLT.cpp kind:function(arm,size=0x50) addr:0x02113788
 __sinit_ActorUnkEFSB.cpp kind:function(arm,size=0x50) addr:0x021137d8
-__sinit_ActorUnkNFSP.cpp kind:function(arm,size=0x50) addr:0x02113828
+__sinit_ActorUnkNFSP.cpp kind:function(arm,size=0x50) addr:0x02113828 local
 __sinit_MapObjectDoorBase.cpp kind:function(arm,size=0x3c) addr:0x02113878 local
 __sinit_MapObjectDoorDangerSpawn.cpp kind:function(arm,size=0x64) addr:0x021138b4
 __sinit_MapObjectDoorKey.cpp kind:function(arm,size=0x64) addr:0x02113918
@@ -2159,7 +2159,7 @@ __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x021144b0
 .p__sinit_ActorUnkMLCK.cpp kind:data(word) addr:0x0211458c
 .p__sinit_ActorUnkCLLT.cpp kind:data(word) addr:0x02114590
 .p__sinit_ActorUnkEFSB.cpp kind:data(word) addr:0x02114594
-.p__sinit_ActorUnkNFSP.cpp kind:data(word) addr:0x02114598
+.p__sinit_ActorUnkNFSP.cpp kind:data(word) addr:0x02114598 local
 .p__sinit_MapObjectDoorBase.cpp kind:data(word) addr:0x0211459c local
 .p__sinit_MapObjectDoorDangerSpawn.cpp kind:data(word) addr:0x021145a0
 .p__sinit_MapObjectDoorKey.cpp kind:data(word) addr:0x021145a4
@@ -2614,7 +2614,7 @@ _ZGVN15ProfileInstanceI19ActorProfileUnkEFSBE8sProfileE kind:bss addr:0x02118dd4
 @30932 kind:bss addr:0x02118dd8
 _ZN15ProfileInstanceI19ActorProfileUnkEFSBE8sProfileE kind:bss addr:0x02118de4
 _ZGVN15ProfileInstanceI19ActorProfileUnkNFSPE8sProfileE kind:bss addr:0x02118ebc
-@30938 kind:bss addr:0x02118ec0
+@30938 kind:bss addr:0x02118ec0 local
 _ZN15ProfileInstanceI19ActorProfileUnkNFSPE8sProfileE kind:bss addr:0x02118ecc
 data_ov031_02117204 kind:bss(size=0x8) addr:0x02118fa4
 data_ov031_02117210 kind:bss addr:0x02118fb0

@@ -84,38 +84,6 @@ void ActorUnkNFSP::vfunc_20() {
     }
 }
 
-void ActorUnkNFSP::vfunc_2C(unk32 param1) {}
-
-void ActorUnkNFSP::vfunc_54(unk32 param1) {
-    this->mUnk_94 = param1;
-    this->mUnk_9A = 0xFFFF;
-    this->mUnk_98 = 0x0;
-
-    switch (param1) {
-        case 0x0:
-            this->mUnk_40 = &this->mUnk_C0;
-            break;
-        case 0x1:
-            this->mUnk_40 = &this->mUnk_C0;
-            break;
-        case 0x2:
-            this->mUnk_40 = &this->mUnk_C0;
-            break;
-        case 0x3:
-            ActorUnkNFSP_vfunc_54 *actor = (ActorUnkNFSP_vfunc_54 *) gpActorManager->func_01fff3b4(this->mUnk_E4);
-            if (actor != NULL) {
-                actor->mUnk_2B0 = 0x0;
-            }
-            this->mUnk_E4 = 0x0;
-            this->mUnk_40 = NULL;
-            if (this->mUnk_9C == NULL) {
-                break;
-            }
-            this->mUnk_9C->func_ov031_0210d750();
-            break;
-    }
-}
-
 void ActorUnkNFSP::func_ov031_020fb988() {
     this->func_ov031_020fbb8c();
 }
@@ -170,6 +138,38 @@ void ActorUnkNFSP::func_ov031_020fba60() {
     this->vfunc_54(0x0);
 #endif
 }
+
+void ActorUnkNFSP::vfunc_54(unk32 param1) {
+    this->mUnk_94 = param1;
+    this->mUnk_9A = 0xFFFF;
+    this->mUnk_98 = 0x0;
+
+    switch (param1) {
+        case 0x0:
+            this->mUnk_40 = &this->mUnk_C0;
+            break;
+        case 0x1:
+            this->mUnk_40 = &this->mUnk_C0;
+            break;
+        case 0x2:
+            this->mUnk_40 = &this->mUnk_C0;
+            break;
+        case 0x3:
+            ActorUnkNFSP_vfunc_54 *actor = (ActorUnkNFSP_vfunc_54 *) gpActorManager->func_01fff3b4(this->mUnk_E4);
+            if (actor != NULL) {
+                actor->mUnk_2B0 = 0x0;
+            }
+            this->mUnk_E4 = 0x0;
+            this->mUnk_40 = NULL;
+            if (this->mUnk_9C == NULL) {
+                break;
+            }
+            this->mUnk_9C->func_ov031_0210d750();
+            break;
+    }
+}
+
+void ActorUnkNFSP::vfunc_2C(unk32 param1) {}
 
 void ActorUnkNFSP::func_ov031_020fbb8c() {
     this->mUnk_3C = &this->mUnk_A0;
