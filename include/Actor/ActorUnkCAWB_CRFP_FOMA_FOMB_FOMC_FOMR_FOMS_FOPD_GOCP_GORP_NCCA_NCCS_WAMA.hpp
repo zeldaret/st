@@ -14,7 +14,7 @@ public:
     ActorUnkCAWB_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -48,7 +48,7 @@ public:
     ActorUnkCRFP_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -82,7 +82,7 @@ public:
     ActorUnkFOMA_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -116,7 +116,7 @@ public:
     ActorUnkFOMB_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -150,7 +150,7 @@ public:
     ActorUnkFOMC_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -184,7 +184,7 @@ public:
     ActorUnkFOMR_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -218,7 +218,7 @@ public:
     ActorUnkFOMS_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -252,7 +252,7 @@ public:
     ActorUnkFOPD_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -286,7 +286,7 @@ public:
     ActorUnkGOCP_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -320,7 +320,7 @@ public:
     ActorUnkGORP_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -354,7 +354,7 @@ public:
     ActorUnkNCCA_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -388,7 +388,7 @@ public:
     ActorUnkNCCS_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -422,7 +422,7 @@ public:
     ActorUnkWAMA_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };

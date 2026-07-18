@@ -28,7 +28,7 @@ void MapObjectUnkSWFS::func_ov031_0210d5c4(void) {}
 void MapObjectUnkSWFS::func_ov031_0210d664(void) {}
 void MapObjectUnkSWFS::func_ov031_0210d710(void) {}
 void MapObjectUnkSWFS::func_ov031_0210d750(void) {}
-void MapObjectUnkSWFS::func_ov031_0210d794(void) {}
+void MapObjectUnkSWFS::func_ov031_0210d794(VecFx32 *param1, unk32 param2, unk32 param3) {}
 void MapObjectUnkSWFS::func_ov031_0210d924(void) {}
 void MapObjectUnkSWFS::func_ov031_0210d968(void) {}
 

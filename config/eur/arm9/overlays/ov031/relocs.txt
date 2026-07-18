@@ -3897,7 +3897,7 @@ from:0x020fbb84 kind:load to:0x027e0ce4 module:dtcm
 from:0x020fbb9c kind:load to:0x020989e0 module:overlay(0)
 from:0x020fbbfc kind:arm_call to:0x0210d710 module:overlay(31)
 from:0x020fbc18 kind:arm_call to:0x020f6284 module:overlay(31)
-from:0x020fbc38 kind:load to:0x02114f68 module:overlay(31)
+from:0x020fbc38 kind:load to:0x02114f60 module:overlay(31) add:0x8
 from:0x020fbc74 kind:arm_call to:0x020fbba0 module:overlay(31)
 from:0x020fbc84 kind:arm_call to:0x020f62e4 module:overlay(31)
 from:0x020fbcb0 kind:arm_call to:0x020fbbe0 module:overlay(31)
