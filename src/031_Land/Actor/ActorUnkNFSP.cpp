@@ -138,20 +138,32 @@ void ActorUnkNFSP::func_ov031_020fb9b4() {
     vec.z -= FLOAT_TO_FX32(1.0f);
     VecFx32_Copy(&vec, &this->mPos);
 
+#if IS_JP
+    this->mUnk_9C->func_ov031_0210d794(&this->mPos, 0x1);
+#else
     this->mUnk_9C->func_ov031_0210d794(&this->mPos, 0x0, 0x0);
+#endif
 }
 
 void ActorUnkNFSP::func_ov031_020fba60() {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     func_01ff993c(&this->mPos, &this->mUnk_5C.mInitialPos, 0x666);
 
+#if IS_JP
+    this->mUnk_9C->func_ov031_0210d794(&this->mPos, 0x0);
+#else
     this->mUnk_9C->func_ov031_0210d794(&this->mPos, 0x0, 0x0);
+#endif
 
     if (this->mPos.x != this->mUnk_5C.mInitialPos.x || this->mPos.y != this->mUnk_5C.mInitialPos.y ||
         this->mPos.z != this->mUnk_5C.mInitialPos.z) {
         return;
     }
+#if IS_JP
+    this->vfunc_54(0x4);
+#else
     this->vfunc_54(0x0);
+#endif
 }
 
 void ActorUnkNFSP::func_ov031_020fbb8c() {
