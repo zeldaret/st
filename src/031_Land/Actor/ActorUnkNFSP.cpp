@@ -64,8 +64,6 @@ void ActorUnkNFSP::vfunc_20() {
     this->mUnk_C0.mUnk_1C = 0x1;
 
     switch (this->mUnk_94) {
-        default:
-            break;
         case 0:
             this->func_ov031_020fb988();
             break;
@@ -77,6 +75,8 @@ void ActorUnkNFSP::vfunc_20() {
             break;
         case 3:
             this->func_ov031_020fba60();
+            break;
+        default:
             break;
     }
     if (this->mUnk_98 < this->mUnk_9A) {
