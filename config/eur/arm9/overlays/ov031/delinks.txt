@@ -186,9 +186,11 @@ src/031_Land/Actor/ActorUnkEFSB.cpp:
     .bss        start:0x02117034 end:0x0211711c
 
 src/031_Land/Actor/ActorUnkNFSP.cpp:
+    complete
     .text       start:0x020fb80c end:0x020fbd6c
     .init       start:0x02111a9c end:0x02111aec
     .ctor       start:0x0211280c end:0x02112810
+    .data       start:0x02114f60 end:0x02114ffc
     .bss        start:0x0211711c end:0x02117204
 
 src/031_Land/MapObject/MapObjectDoorBase.cpp:

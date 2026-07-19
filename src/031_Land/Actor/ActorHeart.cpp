@@ -446,9 +446,9 @@ bool ActorHeart_C4::vfunc_00(ActorRef ref, unk32 param3) {
     return this->Actor_C4::vfunc_00(ref, param3);
 }
 
-void ActorHeart_C4::vfunc_04() {
+bool ActorHeart_C4::vfunc_04() {
     this->GetActorPtr<ActorHeart>()->SetState(ActorHeartState_5);
-    this->Actor_C4::vfunc_04();
+    return this->Actor_C4::vfunc_04();
 }
 
 void ActorHeart_C4::vfunc_0C(unk32 param1) {

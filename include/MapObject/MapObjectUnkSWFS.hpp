@@ -30,7 +30,11 @@ public:
     void func_ov031_0210d664(void);
     void func_ov031_0210d710(void);
     void func_ov031_0210d750(void);
-    void func_ov031_0210d794(void);
+#if IS_JP
+    void func_ov031_0210d794(VecFx32 *param1, unk32 param2);
+#else
+    void func_ov031_0210d794(VecFx32 *param1, unk32 param2, unk32 param3);
+#endif
     void func_ov031_0210d924(void);
     void func_ov031_0210d968(void);
 };
