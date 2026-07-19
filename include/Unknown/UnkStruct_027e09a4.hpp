@@ -99,6 +99,19 @@ struct EntranceInfo {
     EntranceInfo(const EntranceInfo &refSource) {
         MI_CpuCopy32((void *) &refSource, this, sizeof(EntranceInfo));
     }
+
+    EntranceInfo(s32 sceneIndex, unk32 param2, unk16 param3, u8 roomIndex, u8 spawnIndex, bool isCS, u8 param7) {
+        this->sceneIndex = sceneIndex;
+        this->unk_04     = param2;
+        this->unk_08     = param3;
+        this->roomIndex  = roomIndex;
+        this->spawnIndex = spawnIndex;
+        this->isCS       = isCS;
+        this->unk_0D     = param7;
+        this->csIndex    = CutsceneIndex_None;
+        this->unk_0F     = 0;
+        this->unk_10     = 0;
+    }
 };
 
 class UnkStruct_WarpUnk1_24 : public UnkStruct_0204a060_Base3 {

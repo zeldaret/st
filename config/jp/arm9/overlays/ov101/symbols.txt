@@ -22,18 +22,18 @@ _ZN30UnkStruct_027e09a4_54_Derived18vfunc_10EP26UnkStruct_StackTitleScreen kind:
 _ZN30UnkStruct_027e09a4_54_Derived1D1Ev kind:function(thumb,size=0xc) addr:0x02184fe0
 _ZN30UnkStruct_027e09a4_54_Derived1D0Ev kind:function(thumb,size=0x12) addr:0x02184fec
 _ZN21UnkStruct_027e0cd8_0CC1EP18UnkStruct_027e0cd8 kind:function(thumb,size=0x68) addr:0x02185000
-func_ov101_021834e8 kind:function(thumb,size=0xd8) addr:0x02185068
-func_ov101_021835c0 kind:function(thumb,size=0xe0) addr:0x02185140
-func_ov101_021836a0 kind:function(thumb,size=0xd0) addr:0x02185220
-func_ov101_02183770 kind:function(thumb,size=0x12) addr:0x021852f0
-func_ov101_02183784 kind:function(thumb,size=0xc) addr:0x02185304
-func_ov101_02183790 kind:function(thumb,size=0x2) addr:0x02185310
-_ZN19func_ov101_02183794D0Ev kind:function(thumb,size=0xc) addr:0x02185314
-func_ov101_021837a0 kind:function(thumb,size=0xe4) addr:0x02185320
-func_ov101_02183884 kind:function(thumb,size=0x38) addr:0x02185404
-func_ov101_021838bc kind:function(thumb,size=0x14) addr:0x0218543c
-__sinit_ov101_02185450 kind:function(thumb,size=0x18) addr:0x02185450
-.p__sinit_ov101_02185450 kind:data(word) addr:0x02185468
+_ZN21UnkStruct_027e0cd8_0CD1Ev kind:function(thumb,size=0xd8) addr:0x02185068
+_ZN21UnkStruct_027e0cd8_0CD0Ev kind:function(thumb,size=0xe0) addr:0x02185140
+_ZN21UnkStruct_027e0cd8_0C8vfunc_38Ev kind:function(thumb,size=0xd0) addr:0x02185220
+_ZN21UnkStruct_027e0cd8_0C8vfunc_08Ev kind:function(thumb,size=0x12) addr:0x021852f0
+_ZN25UnkStruct_027e0cd8_0C_1D0C1Ev kind:function(thumb,size=0xc) addr:0x02185304
+_ZN25UnkStruct_027e0cd8_0C_1D0D1Ev kind:function(thumb,size=0x2) addr:0x02185310
+_ZN25UnkStruct_027e0cd8_0C_1D0D0Ev kind:function(thumb,size=0xc) addr:0x02185314
+_ZN25UnkStruct_027e0cd8_0C_1D019func_ov101_021837a0Ev kind:function(thumb,size=0xe4) addr:0x02185320
+_Z19func_ov101_02183884iii kind:function(thumb,size=0x38) addr:0x02185404
+_ZN25MapObjectProfile_Derived68vfunc_10Ev kind:function(thumb,size=0x14) addr:0x0218543c
+__sinit_MapObjectProfile_Derived6_101.cpp kind:function(thumb,size=0x18) addr:0x02185450 local
+.p__sinit_MapObjectProfile_Derived6_101.cpp kind:data(word) addr:0x02185468 local
 _ZTV30UnkStruct_027e0ce0_40_108_Base kind:data(any) addr:0x02185480
 _ZTV30UnkStruct_027e09a4_54_Derived1 kind:data(any) addr:0x0218548c
 @0 kind:data(byte[0x11]) addr:0x021854a8 local
@@ -46,6 +46,6 @@ _ZTV30UnkStruct_027e09a4_54_Derived1 kind:data(any) addr:0x0218548c
 @7 kind:data(byte[0x7]) addr:0x02185510 local
 @8 kind:data(byte[0x12]) addr:0x02185518 local
 @9 kind:data(byte[0xc]) addr:0x0218552c local
-_ZTV19data_ov101_021839c0 kind:data(any) addr:0x02185538
-data_ov101_02185548 kind:data(any) addr:0x02185548
-data_ov101_0218555c kind:data(any) addr:0x0218555c ambiguous
+_ZTV25UnkStruct_027e0cd8_0C_1D0 kind:data(any) addr:0x02185538
+data_ov101_021839c8 kind:data(any) addr:0x02185548 local
+_ZTV25MapObjectProfile_Derived6 kind:data(byte[0x1c]) addr:0x02185554

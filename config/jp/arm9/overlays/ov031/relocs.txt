@@ -5598,7 +5598,7 @@ from:0x0210c9d4 kind:arm_call to:0x02080bb4 module:overlay(0)
 from:0x0210c9f8 kind:arm_call to:0x0202a17c module:main
 from:0x0210ca18 kind:load to:0x02117900 module:overlay(31)
 from:0x0210ca1c kind:load to:0x02115cb0 add:0x8 module:overlay(31)
-from:0x0210ca20 kind:load to:0x0218555c module:overlay(101)
+from:0x0210ca20 kind:load to:0x02185554 module:overlay(101) add:0x8
 from:0x0210ca2c kind:load to:0x02117da0 module:overlay(31)
 from:0x0210ca30 kind:load to:0x0211a6b8 module:overlay(31)
 from:0x0210ca34 kind:load to:0x0211a680 module:overlay(31)

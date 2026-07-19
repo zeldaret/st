@@ -1424,6 +1424,7 @@ config.libs = [
             Object("101_SceneInitLand/Player/PlayerLinkActor_A0_1C_101.cpp"),
             Object("101_SceneInitLand/UnkStruct_027e09a4_54_101.cpp"),
             Object("101_SceneInitLand/UnkStruct_027e0cd8_0C_101.cpp"),
+            Object("101_SceneInitLand/MapObjectProfile_Derived6_101.cpp"),
         ],
         extra_cflags=["-thumb"],
     ),
