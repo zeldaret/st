@@ -37,7 +37,7 @@ UnkStruct_027e0ce0 *UnkStruct_027e0ce0::Create() {
 UnkStruct_027e0ce0::UnkStruct_027e0ce0() :
     mUnk_02(false),
     mUnk_03(false),
-    mUnk_04(NULL),
+    mEquippedItem(ItemFlag_Nothing),
     mUnk_08(false),
     mUnk_0C(this),
     mUnk_1C(new(HeapIndex_1) UnkStruct_027e0ce0_1C()),
@@ -100,9 +100,9 @@ void UnkStruct_027e0ce0::func_ov001_020bc524(bool param1) {
         this->mUnk_24->func_ov021_020eaa08(this->mUnk_20);
     } else {
         if (data_027e09a4->IsTrain()) {
-            this->mUnk_03 = false;
-            this->mUnk_04 = NULL;
-            this->mUnk_38 = &data_027e0478.train;
+            this->mUnk_03       = false;
+            this->mEquippedItem = ItemFlag_Nothing;
+            this->mUnk_38       = &data_027e0478.train;
             new(this->mUnk_38) UnkStruct_027e0ce0_38(0);
             this->mUnk_38->func_ov026_020dc8f0();
         } else {
@@ -111,7 +111,7 @@ void UnkStruct_027e0ce0::func_ov001_020bc524(bool param1) {
                     this->func_ov000_0208a2c4(0x0C, 0);
                 }
 
-                this->mUnk_04 = NULL;
+                this->mEquippedItem = ItemFlag_Nothing;
             } else if (this->mHealth == 0) {
                 this->func_ov000_0208a2c4(0x01, 0);
             }
@@ -120,7 +120,7 @@ void UnkStruct_027e0ce0::func_ov001_020bc524(bool param1) {
                 this->mUnk_3C = new(HeapIndex_1) UnkStruct_027e0ce0_3C();
             } else {
                 this->mUnk_40 = &data_027e0478.land;
-                new(this->mUnk_40) UnkStruct_027e0ce0_40(param1, this->mUnk_20, &this->mUnk_04, this->mUnk_28);
+                new(this->mUnk_40) UnkStruct_027e0ce0_40(param1, this->mUnk_20, &this->mEquippedItem, this->mUnk_28);
                 uVar3 = this->mUnk_40;
             }
         }

@@ -248,11 +248,17 @@ public:
         return this->mUnk_00.sceneIndex <= SceneIndex_t_eviltrain3 && this->mUnk_00.sceneIndex >= SceneIndex_t_eviltrain;
     }
 
+    const bool IsBossByrne() const { return this->mUnk_00.sceneIndex == SceneIndex_b_deago; }
     const bool IsDungeonTower() const { return this->mUnk_00.sceneIndex == SceneIndex_d_main; }
-    const bool IsPirate() const { return this->mUnk_00.sceneIndex == SceneIndex_f_pirate; }
+    const bool IsTowerOutsideStairs() const { return this->mUnk_00.sceneIndex == SceneIndex_d_main_s; }
+    const bool IsTowerInsideStairs() const { return this->mUnk_00.sceneIndex == SceneIndex_d_main_w; }
     const bool IsWater3() const { return this->mUnk_00.sceneIndex == SceneIndex_f_water3; }
     const bool IsSnowdriftStation() const { return this->mUnk_00.sceneIndex == SceneIndex_f_kakushi1; }
+    const bool IsPirate() const { return this->mUnk_00.sceneIndex == SceneIndex_f_pirate; }
     const bool IsPassenger() const { return this->mUnk_00.sceneIndex == SceneIndex_f_passenger; }
+    const bool IsHyruleCastle() const { return this->mUnk_00.sceneIndex == SceneIndex_f_hyral; }
+    const bool IsCastleTown() const { return this->mUnk_00.sceneIndex == SceneIndex_f_htown; }
+    const BOOL IsCastleOrTown() const { return this->IsHyruleCastle() || this->IsCastleTown(); }
 
     const bool IsSceneModeAdventure() const { return this->mSceneMode == SceneMode_AdventureMode; }
     const bool IsSceneModeBattle() const { return this->mSceneMode == SceneMode_BattleMode; }

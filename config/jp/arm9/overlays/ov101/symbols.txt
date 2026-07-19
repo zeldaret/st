@@ -9,7 +9,7 @@ _ZN18UnkStruct_027e0d387DestroyEv kind:function(thumb,size=0x20) addr:0x02184948
 _ZN8InstanceI18UnkStruct_027e0d30ED2Ev kind:function(thumb,size=0xc) addr:0x02184968
 _ZN8InstanceI18UnkStruct_027e0d2cED2Ev kind:function(thumb,size=0xc) addr:0x02184974
 _ZN8InstanceI18UnkStruct_027e0d38ED2Ev kind:function(thumb,size=0xc) addr:0x02184980
-_ZN21UnkStruct_027e0ce0_40C1EbP21UnkStruct_027e0ce0_20PPiP11ItemManager kind:function(thumb,size=0x154) addr:0x0218498c
+_ZN21UnkStruct_027e0ce0_40C1EbP21UnkStruct_027e0ce0_20PjP11ItemManager kind:function(thumb,size=0x154) addr:0x0218498c
 _ZN21UnkStruct_027e0ce0_40D1Ev kind:function(thumb,size=0x54) addr:0x02184ae0
 _ZN21UnkStruct_027e0ce0_4019func_ov101_02182fb4Eb kind:function(thumb,size=0x50) addr:0x02184b34
 _ZN21UnkStruct_027e0ce0_4019func_ov101_02183004Ev kind:function(thumb,size=0x1e) addr:0x02184b84
@@ -34,8 +34,8 @@ func_ov101_02183884 kind:function(thumb,size=0x38) addr:0x02185404
 func_ov101_021838bc kind:function(thumb,size=0x14) addr:0x0218543c
 __sinit_ov101_02185450 kind:function(thumb,size=0x18) addr:0x02185450
 .p__sinit_ov101_02185450 kind:data(word) addr:0x02185468
-data_ov101_02185488 kind:data(any) addr:0x02185488
-data_ov101_02185494 kind:data(any) addr:0x02185494
+_ZTV30UnkStruct_027e0ce0_40_108_Base kind:data(any) addr:0x02185480
+_ZTV19data_ov101_02183914 kind:data(any) addr:0x0218548c
 data_ov101_021854a8 kind:data(any) addr:0x021854a8
 data_ov101_021854bc kind:data(any) addr:0x021854bc
 data_ov101_021854cc kind:data(any) addr:0x021854cc

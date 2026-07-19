@@ -52,7 +52,7 @@ public:
 class UnkStruct_ov001_020c40f4 {
 public:
     /* 00 */ VecFx32 mUnk_00;
-    /* 0C */ unk16 mUnk_0C;
+    /* 0C */ s16 mUnk_0C;
     /* 0E */ u8 mUnk_0E;
     /* 0F */ u8 mUnk_0F;
     /* 10 */ unk32 mUnk_10;

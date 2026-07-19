@@ -2233,7 +2233,7 @@ data_ov031_021148b8 kind:data(any) addr:0x021148b8
 data_ov031_021148c4 kind:data(any) addr:0x021148c4
 data_ov031_021148e0 kind:data(any) addr:0x021148e0
 data_ov031_021148f4 kind:data(any) addr:0x021148f4
-data_ov031_02114900 kind:data(any) addr:0x02114900 ambiguous
+_ZTV25UnkStruct_027e0ce0_40_108 kind:data(any) addr:0x021148f8 ambiguous
 data_ov031_0211490c kind:data(any) addr:0x0211490c
 data_ov031_02114918 kind:data(any) addr:0x02114918
 _ZTV19data_ov031_02114924 kind:data(any) addr:0x02114924
