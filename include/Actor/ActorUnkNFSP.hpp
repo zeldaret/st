@@ -11,13 +11,12 @@ class ActorUnkNFSP;
 
 class ActorUnkNFSP_C0 : public Actor_C4 {
 public:
-    ActorUnkNFSP_C0(ActorUnkNFSP *param1); // func_ov031_020fbc04
+    ActorUnkNFSP_C0(ActorUnkNFSP *param1);
 
-    // data_ov031_02114f68
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override; // func_ov031_020fbc3c
-    /* 04 */ virtual bool vfunc_04() override;                           // func_ov031_020fbc94
-    /* 08 */ virtual void vfunc_08() override;                           // func_ov031_020fbcc0
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;               // func_ov031_020fbcf0
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
+    /* 04 */ virtual bool vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
 class ActorUnkNFSP : public Actor {

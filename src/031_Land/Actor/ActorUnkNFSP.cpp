@@ -4,7 +4,7 @@
 #include "MapObject/MapObjectUnkSWFS.hpp"
 #include "System/SysNew.hpp"
 
-struct ActorUnkNFSP_vfunc_54 : public Actor {
+class ActorUnkNFSP_vfunc_54 : public Actor {
 public:
     /* 000 (base) */
     /* 094 */ STRUCT_PAD(0x94, 0x2B0);
@@ -12,12 +12,12 @@ public:
     /* 2B4 */
 };
 
-struct ActorUnkNFSP_ov031_020fb9b4 : public Actor {
+class ActorUnkNFSP_ov031_020fb9b4 : public Actor {
 public:
-    /* 000 (base) */
-    /* 094 */ STRUCT_PAD(0x94, 0xE8);
-    /* 0E8 */ VecFx32 mUnk_E8;
-    /* 0F4 */
+    /* 00 (base) */
+    /* 94 */ STRUCT_PAD(0x94, 0xE8);
+    /* E8 */ VecFx32 mUnk_E8;
+    /* F4 */
 };
 
 extern "C" void func_01ff993c(VecFx32 *, VecFx32 *, unk32);
@@ -165,6 +165,8 @@ void ActorUnkNFSP::vfunc_54(unk32 param1) {
                 break;
             }
             this->mUnk_9C->func_ov031_0210d750();
+            break;
+        default:
             break;
     }
 }
