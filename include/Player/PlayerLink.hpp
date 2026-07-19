@@ -47,6 +47,13 @@ public:
 class PlayerLinkActor_A0_1C {
 public:
     /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk16 mUnk_04;
+    /* 06 */ bool mUnk_06;
+    /* 07 */ STRUCT_PAD(0x07, 0x0C);
+    /* 0C */ ActorRef mUnk_0C;
+    /* 10 */
+
+    PlayerLinkActor_A0_1C(unk32 param1);
 
     // overlay 101
     void func_ov101_02183290();
