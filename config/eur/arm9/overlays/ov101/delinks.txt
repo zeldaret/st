@@ -18,7 +18,9 @@ src/101_SceneInitLand/Player/PlayerLinkActor_A0_1C_101.cpp:
     .text       start:0x02183284 end:0x021832d8
 
 src/101_SceneInitLand/UnkStruct_027e09a4_54_101.cpp:
+    complete
     .text       start:0x021832d8 end:0x02183480
+    .data       start:0x0218390c end:0x021839b8
 
 src/101_SceneInitLand/UnkStruct_027e0cd8_0C_101.cpp:
     .text       start:0x02183480 end:0x021838d0
