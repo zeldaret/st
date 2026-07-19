@@ -29,7 +29,6 @@ data_027e0200 kind:bss addr:0x027e0200
 data_027e0204 kind:bss addr:0x027e0204
 data_027e0208 kind:bss addr:0x027e0208
 data_027e0210 kind:bss addr:0x027e0210
-data_027e0254 kind:bss addr:0x027e0254
 data_027e0288 kind:bss addr:0x027e0288
 data_027e02b0 kind:bss addr:0x027e02b0
 gGeomMatrix kind:bss addr:0x027e02c4
