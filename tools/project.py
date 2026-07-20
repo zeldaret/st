@@ -1024,7 +1024,7 @@ def process_project(cfg: ProjectConfig, args: Any):
         n.newline()
 
         # -MMD excludes all includes instead of just system includes for some reason, so use -MD instead.
-        includes = " ".join(f"-i {include}" for include in cfg.includes)
+        includes = " ".join(include for include in cfg.includes)
         mwcc_cmd = f'{cfg.wine_path} {cfg.sjiswrap_path} "{cfg.cc_path}" $cc_flags {includes} -DVERSION=$game_version -MD -c $in -o $basedir'
         mwcc_implicit = [str(cfg.cc_path), str(cfg.sjiswrap_path)]
         if cfg.platform and cfg.platform.system != "windows":
