@@ -371,7 +371,7 @@ bool ActorItemBoomerang_11C::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
     return func_ov000_020982d8();
 }
 
-bool ActorItemBoomerang_11C::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) {
+bool ActorItemBoomerang_11C::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2, unk32 param3) {
     u32 val = (param1->mUnk_08 >> 9) & 7;
     if (val == 0x2) {
         this->mUnk_08->func_ov031_020e5034(0x1);
@@ -418,7 +418,7 @@ bool ActorItemBoomerang_11C::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, un
         }
     }
 
-    UnkStruct_027e0ce0_38_Base::vfunc_0C(param1, param2);
+    UnkStruct_027e0ce0_38_Base::vfunc_0C(param1, param2, param3);
 }
 
 void ActorItemBoomerang_Unknown::func_ov031_020e5704() {

@@ -27,19 +27,42 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
+struct UnkStruct_02162ea8_vfunc_0C {
+    /* 00 */ union {
+        unk32 mUnk_00;
+        Vec2bCpp vec;
+    };
+    /* 04 */ union {
+        unk32 mUnk_04;
+        struct {
+            u8 mUnk_04_0;
+            u8 mUnk_04_1;
+            u8 mUnk_04_2;
+            u8 mUnk_04_3;
+        };
+    };
+};
+
 class UnkStruct_ov063_02162ea8 : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (base) */
     /* 04 */ STRUCT_PAD(0x4, 0x8);
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
+    /* 08 */ union {
+        struct {
+            unk16 mUnk_08;
+            unk16 mUnk_0A;
+            unk16 mUnk_0C;
+        };
+        unk16 mUnk_08_array[3];
+    };
+    /* 0E */ STRUCT_PAD(0xE, 0x10);
     /* 10 */ unk32 mUnk_10;
 
     UnkStruct_ov063_02162ea8();
 
     /* 00 (base) */ virtual ~UnkStruct_ov063_02162ea8();
-    /* 08 */ virtual void vfunc_08(void) override;
-    /* 0C */ virtual void vfunc_0C(void) override;
+    /* 08 */ virtual bool vfunc_08(Actor *param1) override;
+    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2, unk32 param3) override;
 };
 
 //! NOTE: Not the actual parent class, there are two classes in between this one and ModelRender

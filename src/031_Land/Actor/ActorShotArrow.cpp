@@ -989,7 +989,7 @@ bool ActorShotArrow_178::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
 }
 
 // non-matching
-bool ActorShotArrow_178::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) {}
+bool ActorShotArrow_178::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2, unk32 param3) {}
 
 ActorShotArrow_194::ActorShotArrow_194(ActorShotArrow *param1) {
     this->mUnk_2C = param1;

@@ -7,6 +7,9 @@
 #include "Actor/ActorRef.hpp"
 #include "Actor/ActorShotArrow.hpp"
 #include "Actor/ActorUnkCASE.hpp"
+#include "Map/MapObjectId.hpp"
+#include "MapObject/MapObject.hpp"
+#include "MapObject/MapObjectManager.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Player/PlayerGet.hpp"
 #include "Render/ModelRender.hpp"
@@ -16,6 +19,7 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "flags.h"
+#include "math.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
 #include "nitro/types.h"
@@ -49,6 +53,7 @@ extern u16 data_ov000_020aecf0[];
 extern Cylinder data_ov063_02162e90;
 extern VecFx32 data_027e07d4;
 extern "C" void func_01ff916c(unk32 *param1, unk32 param2, unk32 param3);
+extern "C" unk32 func_01ff9258(unk16, unk16);
 extern "C" void func_01ff9638(VecFx32 *param1, fx16 param2);
 extern "C" fx32 func_01ff9a5c(VecFx32 *, VecFx32 *, VecFx32 *);
 extern "C" fx32 func_01ffb428(unk32, unk32);
@@ -60,6 +65,7 @@ extern "C" void func_ov000_0207de98(void *param1, ActorRef param2, VecFx32 *para
 extern "C" void func_ov000_0208bd20(UnkStruct_027e0ce0 *param1, unk32 param2, unk32 param3, unk32 param4);
 extern "C" unk32 func_ov000_02097c20(ActorUnkCANS *param1, ActorRef param2, unk32 param3, unk32 param4, unk32 *param5);
 extern "C" void func_ov000_020986b4(s16 *param1, ActorUnkCANS *param2, unk32 param3);
+extern "C" bool func_ov000_020982d8();
 extern "C" void func_ov000_02098838(ActorUnkCANS *param1);
 extern "C" unk32 func_ov000_02098d7c(ActorUnkCANS *param1, unk32 *param2);
 extern "C" unk32 func_ov000_02099450(ActorUnkCANS *param1, unk32 *param2, VecFx32 *param3, unk32 param4, u16 param5);
@@ -86,8 +92,43 @@ UnkStruct_ov063_02162ea8::UnkStruct_ov063_02162ea8() :
     mUnk_0C(0),
     mUnk_10(0) {}
 UnkStruct_ov063_02162ea8::~UnkStruct_ov063_02162ea8() {}
-void UnkStruct_ov063_02162ea8::vfunc_08() {}
-void UnkStruct_ov063_02162ea8::vfunc_0C() {}
+
+bool UnkStruct_ov063_02162ea8::vfunc_08(Actor *param1) {
+    //! INFO: param1 is NOT an Actor *
+    bool retVal;
+    if ((retVal = func_ov000_020982d8()) && func_01ff9258(mUnk_08, mUnk_0C) > 0) {
+        unk16 tmp1         = mUnk_08;
+        unk16 tmp3         = mUnk_0C;
+        unk16 tmp2         = mUnk_0A;
+        param1->mPos.y     = tmp1;
+        param1->mPos.z     = tmp2;
+        param1->mPrevPos.x = tmp3;
+    }
+    return retVal;
+}
+
+bool UnkStruct_ov063_02162ea8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2, unk32 param3) {
+    UnkStruct_02162ea8_vfunc_0C *param2Struct = (UnkStruct_02162ea8_vfunc_0C *) &param2;
+    if ((*(u16 *) &param2Struct->mUnk_04 & 0x1000) != 0) {
+        UnkStruct_02162ea8_vfunc_0C tmp;
+        tmp.mUnk_04 = *(volatile unk32 *) &param2Struct->mUnk_04;
+
+        UnkStructVec vec;
+        vec.mUnk_00 = tmp.mUnk_04;
+
+        MapObject *mapObject = gpMapObjManager->func_01fff498(vec.vec);
+
+        if (mapObject != NULL) {
+            MapObjectId id = mapObject->GetMapObjectId();
+            bool idMatch   = id == 0x47525353 || id == 0x4c455653 || id == 0x53545348;
+            if (idMatch) {
+                return false;
+            }
+        }
+    }
+    return UnkStruct_027e0ce0_38_Base::vfunc_0C((const UnkStruct_ov031_020e54d4 *) param2Struct->mUnk_04, param2,
+                                                param2Struct->mUnk_04);
+}
 
 UnkStruct_ov063_02162ee8::UnkStruct_ov063_02162ee8(G3d_Model *pModel) :
     ModelRender(pModel),
