@@ -54,12 +54,9 @@ ARM7 BIOS in the root directory of this repository, and verify that your dumped 
 
 ## LSP setup
 
-You can run the following command to generate the clangd config:
-```shell
-python tools/configure.py [--clangd | -c]
-```
+By default `configure.py` will create the config file for clangd (at the root folder of the project), if you want to use the alternative setup you can run `configure.py` with `--noclangd | -c` to disable the creation of the file.
 
-Alternatively we also have another way to do it using CMake:
+If you wish to use CMake:
 
 **This is likely not necessary.** Most C++ editors usually have their one LSP (Language Server Protocol, a tool for code completion and more) configuration that should recognize the project structure and work out of the box. This section is about how to setup your LSP yourself **if the need be**.
 

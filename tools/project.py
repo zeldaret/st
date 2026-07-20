@@ -981,9 +981,8 @@ def create_compile_commands(cfg: ProjectConfig):
 def process_project(cfg: ProjectConfig, args: Any):
     objects = cfg.objects()
 
-    if args.clangd:
+    if not args.noclangd:
         create_compile_commands(cfg)
-        return
 
     create_objdiff_fixup_config(cfg, objects)
 
