@@ -14,6 +14,7 @@
 
 struct GameSaveSlot;
 class UnkStruct_027e09a4;
+class UnkStruct_StackTitleScreen;
 
 #define ROOM_INDEX_NONE 0xFF
 
@@ -98,6 +99,19 @@ struct EntranceInfo {
     EntranceInfo(const EntranceInfo &refSource) {
         MI_CpuCopy32((void *) &refSource, this, sizeof(EntranceInfo));
     }
+
+    EntranceInfo(s32 sceneIndex, unk32 param2, unk16 param3, u8 roomIndex, u8 spawnIndex, bool isCS, u8 param7) {
+        this->sceneIndex = sceneIndex;
+        this->unk_04     = param2;
+        this->unk_08     = param3;
+        this->roomIndex  = roomIndex;
+        this->spawnIndex = spawnIndex;
+        this->isCS       = isCS;
+        this->unk_0D     = param7;
+        this->csIndex    = CutsceneIndex_None;
+        this->unk_0F     = 0;
+        this->unk_10     = 0;
+    }
 };
 
 class UnkStruct_WarpUnk1_24 : public UnkStruct_0204a060_Base3 {
@@ -162,9 +176,14 @@ struct UnkStruct_027e09a4_2C {
 
 class UnkStruct_027e09a4_54_04 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x10);
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
     /* 10 */
 
+    UnkStruct_027e09a4_54_04() :
+        mUnk_00(-1) {}
     ~UnkStruct_027e09a4_54_04() {}
 };
 
@@ -190,7 +209,20 @@ public:
     void func_ov001_020b7048();
 };
 
-class UnkStruct_027e09a4_54_Type1 : public UnkStruct_027e09a4_54_Base {
+class UnkStruct_027e09a4_54_Derived1 : public UnkStruct_027e09a4_54_Base {
+public:
+    /* 00 (base) */
+    /* 34 */
+
+    UnkStruct_027e09a4_54_Derived1(unk32 *param1);
+
+    // data_ov101_02183914
+    /* 0C */ virtual void vfunc_0C() override;
+    /* 10 */ virtual void vfunc_10(UnkStruct_StackTitleScreen *param1);
+    /* 14 */
+};
+
+class UnkStruct_027e09a4_54_Type1 : public UnkStruct_027e09a4_54_Derived1 {
 public:
     UnkStruct_027e09a4_54_Type1(UnkStruct_027e09a4 *param1);
 };
@@ -205,12 +237,12 @@ public:
     UnkStruct_027e09a4_54_Type3(UnkStruct_027e09a4 *param1);
 };
 
-class UnkStruct_027e09a4_54_Type4 : public UnkStruct_027e09a4_54_Base {
+class UnkStruct_027e09a4_54_Type4 : public UnkStruct_027e09a4_54_Derived1 {
 public:
     UnkStruct_027e09a4_54_Type4(UnkStruct_027e09a4 *param1);
 };
 
-class UnkStruct_027e09a4_54_Type5 : public UnkStruct_027e09a4_54_Base {
+class UnkStruct_027e09a4_54_Type5 : public UnkStruct_027e09a4_54_Derived1 {
 public:
     UnkStruct_027e09a4_54_Type5(UnkStruct_027e09a4 *param1);
 };
@@ -248,11 +280,17 @@ public:
         return this->mUnk_00.sceneIndex <= SceneIndex_t_eviltrain3 && this->mUnk_00.sceneIndex >= SceneIndex_t_eviltrain;
     }
 
+    const bool IsBossByrne() const { return this->mUnk_00.sceneIndex == SceneIndex_b_deago; }
     const bool IsDungeonTower() const { return this->mUnk_00.sceneIndex == SceneIndex_d_main; }
-    const bool IsPirate() const { return this->mUnk_00.sceneIndex == SceneIndex_f_pirate; }
+    const bool IsTowerOutsideStairs() const { return this->mUnk_00.sceneIndex == SceneIndex_d_main_s; }
+    const bool IsTowerInsideStairs() const { return this->mUnk_00.sceneIndex == SceneIndex_d_main_w; }
     const bool IsWater3() const { return this->mUnk_00.sceneIndex == SceneIndex_f_water3; }
     const bool IsSnowdriftStation() const { return this->mUnk_00.sceneIndex == SceneIndex_f_kakushi1; }
+    const bool IsPirate() const { return this->mUnk_00.sceneIndex == SceneIndex_f_pirate; }
     const bool IsPassenger() const { return this->mUnk_00.sceneIndex == SceneIndex_f_passenger; }
+    const bool IsHyruleCastle() const { return this->mUnk_00.sceneIndex == SceneIndex_f_hyral; }
+    const bool IsCastleTown() const { return this->mUnk_00.sceneIndex == SceneIndex_f_htown; }
+    const BOOL IsCastleOrTown() const { return this->IsHyruleCastle() || this->IsCastleTown(); }
 
     const bool IsSceneModeAdventure() const { return this->mSceneMode == SceneMode_AdventureMode; }
     const bool IsSceneModeBattle() const { return this->mSceneMode == SceneMode_BattleMode; }

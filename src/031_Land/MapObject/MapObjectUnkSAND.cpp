@@ -10,9 +10,7 @@ MapObject *MapObjectProfileUnkSAND::Create() {
 }
 
 MapObjectProfileUnkSAND::MapObjectProfileUnkSAND() :
-    MapObjectProfile(MapObjectId_SAND) {}
-
-MapObjectUnkSAND::MapObjectUnkSAND() {}
+    MapObjectProfile_Derived6(MapObjectId_SAND, MapObjectId_SAND) {}
 
 void MapObjectUnkSAND::func_ov031_0210acd4(void) {}
 void MapObjectUnkSAND::func_ov031_0210ad64(void) {}
