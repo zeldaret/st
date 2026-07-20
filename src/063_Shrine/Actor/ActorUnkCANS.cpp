@@ -113,10 +113,10 @@ bool UnkStruct_ov063_02162ea8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, 
         UnkStruct_02162ea8_vfunc_0C tmp;
         tmp.mUnk_04 = *(volatile unk32 *) &param2Struct->mUnk_04;
 
-        UnkStructVec vec;
-        vec.mUnk_00 = tmp.mUnk_04;
+        Vec2bCpp vec;
+        *(unk32 *) &vec = tmp.mUnk_04;
 
-        MapObject *mapObject = gpMapObjManager->func_01fff498(vec.vec);
+        MapObject *mapObject = gpMapObjManager->func_01fff498(vec);
 
         if (mapObject != NULL) {
             MapObjectId id = mapObject->GetMapObjectId();
