@@ -7,6 +7,7 @@
 
 #include <nns/g3d/g3d.h>
 
+class UnkSystem5;
 extern "C" void *func_ov000_02057750(size_t allocSize);
 
 typedef void (*UnkSystem4_UnkCallback)(void);
@@ -75,6 +76,7 @@ public:
     void func_ov000_02057d20(u8 numBones);
     void func_ov000_02057d3c(G3d_BoneMtxStruct *pCacheJntAnm);
     void func_ov000_0209a7b8(void *param1, UnkSystem4_UnkCallback param2);
+    void func_ov000_02057c98(UnkSystem5 *param1);
 };
 
 class UnkSystem6_Derived1 : public ModelRenderBase {

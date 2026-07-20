@@ -27,6 +27,7 @@ typedef u32 ItemFlag;
 typedef u16 ItemFlag_u16;
 enum ItemFlag_ {
     ItemFlag_None        = -1,
+    ItemFlag_Nothing     = 0,
     ItemFlag_Whirlwind   = FLAG(0, 0),
     ItemFlag_Boomerang   = FLAG(0, 1),
     ItemFlag_Whip        = FLAG(0, 2),

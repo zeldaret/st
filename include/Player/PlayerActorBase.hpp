@@ -10,6 +10,8 @@
 #include <nns/g3d/g3d.h>
 
 class Actor_C4;
+class UnkStruct_027e0ce0_40_328;
+class ItemManager;
 
 struct ActorGrabParams;
 extern "C" void func_ov000_0205d500(ActorGrabParams *, unk32, unk32);
@@ -408,7 +410,7 @@ public:
     /* 004 */ STRUCT_PAD(0x04, 0x34);
     /* 034 */ PlayerLinkActor_9C_34 mUnk_34;
     /* 004 */ STRUCT_PAD(0x50, 0xF4);
-    /* 0F4 */ unk32 mUnk_0F4;
+    /* 0F4 */ UnkStruct_027e0ce0_40_328 *mUnk_0F4;
     /* 0F8 */ STRUCT_PAD(0xF8, 0x154);
     /* 154 */
 
@@ -436,7 +438,7 @@ public:
     /* 48 */ PlayerCharacter mCharacter;
     /* 4C */ unk32 mUnk_4C;
     /* 50 */ ActorGrabParams mUnk_50;
-    /* 54 */ unk32 mUnk_54;
+    /* 54 */ ItemManager *mUnk_54;
     /* 58 */ UnkStruct_027e0ce0_40 *mUnk_58;
     /* 5C */ PlayerActorBase_5C mUnk_5C;
     /* 70 */ PlayerActorBase_70 *mUnk_70;
@@ -447,7 +449,7 @@ public:
     /* 90 */ PlayerLinkActor_9C *mUnk_90;
     /* 94 */
 
-    PlayerActorBase(PlayerCharacter character, unk32 param2, unk32 param3, UnkStruct_027e0ce0_40 *param4);
+    PlayerActorBase(PlayerCharacter character, unk32 param2, ItemManager *pItemMgr, UnkStruct_027e0ce0_40 *param4);
     ~PlayerActorBase();
 
     // overlay 0

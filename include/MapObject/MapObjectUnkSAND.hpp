@@ -33,14 +33,15 @@ public:
     void func_ov031_0210b34c(void);
 };
 
-class MapObjectProfileUnkSAND : public MapObjectProfile {
+class MapObjectProfileUnkSAND : public MapObjectProfile_Derived6 {
 public:
     /* 00 (base) */
 
     MapObjectProfileUnkSAND();
     ~MapObjectProfileUnkSAND();
 
-    /* 0C */ virtual MapObject *Create();
+    /* 00 */ virtual MapObject *Create();
+    /* 10 */ virtual void vfunc_10() override;
 
     static MapObjectProfileUnkSAND *GetProfile();
 };

@@ -516,8 +516,9 @@ typedef struct ZCBSectionVTXB {
 } ZCBSectionVTXB;
 
 typedef struct ZCBEntryNRMB {
-    /* 00 */ unk32 unk_00;
-    /* 04 */ unk16 unk_04;
+    /* 00 */ s16 unk_00;
+    /* 02 */ s16 unk_02;
+    /* 04 */ s16 unk_04;
 } ZCBEntryNRMB; // size = 0x06
 
 typedef struct ZCBSectionNRMB {
@@ -535,8 +536,12 @@ typedef struct ZCBSectionPCLB {
 } ZCBSectionPCLB;
 
 typedef struct ZCBEntryTRIB {
-    /* 00 */ unk32 unk_00;
-} ZCBEntryTRIB; // size = ?
+    /* 00 */ u16 nIndexPosX;
+    /* 02 */ u16 nIndexPosY;
+    /* 04 */ u16 nIndexPosZ;
+    /* 06 */ u16 nIndexPolyClass;
+    /* 08 */ u16 unk_06;
+} ZCBEntryTRIB; // size = 0x10
 
 typedef struct ZCBSectionTRIB {
     /* 00 */ ZCBSectionHeader header;

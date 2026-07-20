@@ -24,39 +24,11 @@ extern int data_ov089_02171540;
 
 static UnkStruct_ov001_020c40f4 data_ov001_020c40f4[0x40];
 
-struct UnkStruct_ov001_020c2a40 {
-    /* 00 */ unk32 unk_00;
-    /* 04 */ unk32 unk_04;
-    /* 08 */ unk16 unk_08;
-    /* 0A */ u8 unk_0A;
-    /* 0B */ u8 unk_0B;
-    /* 0C */ u8 unk_0C;
-    /* 0D */ u8 unk_0D;
-    /* 0E */ u8 unk_0E;
-    /* 0F */ u8 unk_0F;
-    /* 10 */ u8 unk_10;
-    /* 11 */ STRUCT_PAD(0x11, 0x14); // pad?
-    /* 14 */
-
-    UnkStruct_ov001_020c2a40(unk32 param1, unk32 param2, unk16 param3, unk8 param4, unk8 param5, unk8 param6, unk8 param7) {
-        this->unk_00 = param1;
-        this->unk_04 = param2;
-        this->unk_08 = param3;
-        this->unk_0A = param4;
-        this->unk_0B = param5;
-        this->unk_0C = param6;
-        this->unk_0D = param7;
-        this->unk_0E = 0x2B;
-        this->unk_0F = 0;
-        this->unk_10 = 0;
-    }
-};
-
-static const UnkStruct_ov001_020c2a40 data_ov001_020c2a40[] = {
-    UnkStruct_ov001_020c2a40(0x36, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3C),
-    UnkStruct_ov001_020c2a40(0x29, 0x00, 0x00, 0x0B, 0x01, 0x00, 0x3D),
-    UnkStruct_ov001_020c2a40(0x35, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3E),
-    UnkStruct_ov001_020c2a40(0x04, 0x00, 0x00, 0x00, 0xFA, 0x00, 0x3F),
+static const EntranceInfo data_ov001_020c2a40[] = {
+    EntranceInfo(SceneIndex_f_bridge, 0x00, 0x00, 0, 0, false, 0x3C),
+    EntranceInfo(SceneIndex_f_htown, 0x00, 0x00, 11, 1, false, 0x3D),
+    EntranceInfo(SceneIndex_f_tetsuo, 0x00, 0x00, 0, 0, false, 0x3E),
+    EntranceInfo(SceneIndex_t_area0, 0x00, 0x00, 0, 0xFA, false, 0x3F),
 };
 
 // https://decomp.me/scratch/JcRNn
@@ -356,8 +328,8 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c30(const EntranceInfo &param1)
     this->mUnk_154.push_back(param1);
 }
 
-void *UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c80(unk32 param1) {
-    return (void *) &data_ov001_020c2a40[param1 - 0x3C];
+const EntranceInfo *UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c80(unk32 param1) {
+    return &data_ov001_020c2a40[param1 - 0x3C];
 }
 
 void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c90(ZMBSectionCMPT *pCMPT) {

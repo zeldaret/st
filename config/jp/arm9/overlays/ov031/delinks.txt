@@ -32,7 +32,7 @@ src/031_Land/Actor/ActorItemBoomerang.cpp:
     .ctor       start:0x02114534 end:0x02114538
     .bss        start:0x02118288 end:0x021182d4
 
-src/031_Land/Actor/ActorUnkITTD.cpp:
+src/031_Land/Actor/ActorItemTornado.cpp:
     .text       start:0x020e72b4 end:0x020e7ec4
     .init       start:0x02112ea8 end:0x02112f1c
     .ctor       start:0x02114538 end:0x0211453c
@@ -182,9 +182,11 @@ src/031_Land/Actor/ActorUnkEFSB.cpp:
     .bss        start:0x02118dd4 end:0x02118ebc
 
 src/031_Land/Actor/ActorUnkNFSP.cpp:
+    complete
     .text       start:0x020fd264 end:0x020fd7b4
     .init       start:0x02113828 end:0x02113878
     .ctor       start:0x02114598 end:0x0211459c
+    .data       start:0x02116cd4 end:0x02116d70
     .bss        start:0x02118ebc end:0x02118fa4
 
 src/031_Land/MapObject/MapObjectDoorBase.cpp:

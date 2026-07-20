@@ -12,7 +12,11 @@ union Date {
     u16 data[1];
 
     void operator=(Date &from) {
+#if __MWERKS__
         this->data = from.data;
+#else
+        this->data[0] = from.data[0];
+#endif
     }
 
     void operator=(s16 from) {

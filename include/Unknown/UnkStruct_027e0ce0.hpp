@@ -440,7 +440,7 @@ public:
 
     // data_ov026_0213562c
     /* 00 */ virtual ~UnkStruct_027e0ce0_38() override;
-    /* 0C */ virtual bool vfunc_0C() override;
+    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) override;
 
     // overlay 26
     void func_ov026_020dc8f0();
@@ -624,10 +624,10 @@ class UnkStruct_027e0ce0_40_108_Base : public LinkList<UnkStruct_027e0ce0_40_108
 public:
     /* 00 (vtable) */
     /* 04 (base) */
-    /* 0C */
+    /* 0C */ unk32 mUnk_0C;
 
     UnkStruct_027e0ce0_40_108_Base() {
-        this->SetPrev(NULL);
+        this->mUnk_0C = 0;
     }
 
     // data_ov101_02183908
@@ -637,34 +637,58 @@ public:
 class UnkStruct_027e0ce0_40_108 : public UnkStruct_027e0ce0_40_108_Base {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x40);
-    /* 40 */
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ STRUCT_PAD(0x14, 0x40);
+    /* 40 */ void *mUnk_40;
+    /* 44 */
 
-    UnkStruct_027e0ce0_40_108() {}
+    UnkStruct_027e0ce0_40_108() :
+        mUnk_40(&this->mUnk_10) {}
 
     // data_ov031_02112b60
     /* 00 */ virtual void vfunc_00() override;
 };
 
 class UnkStruct_027e0ce0_40_14C {
+public:
     /* 00 */ STRUCT_PAD(0x00, 0x94);
     /* 94 */
 
     UnkStruct_027e0ce0_40_14C();
+    ~UnkStruct_027e0ce0_40_14C();
+
+    // overlay 93
+    void func_ov093_02168850();
 };
 
 class UnkStruct_027e0ce0_40_150 {
-    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+public:
+    /* 00 */ bool mUnk_00;
+    /* 01 */ bool mUnk_01;
+    /* 02 */ STRUCT_PAD(0x02, 0x0C);
     /* 0C */
 
     UnkStruct_027e0ce0_40_150();
+
+    // overlay 96
+    bool func_ov096_02179c54(bool param1, bool param2);
 };
 
 class UnkStruct_027e0ce0_40_328 {
-    /* 000 */ STRUCT_PAD(0x00, 0x154);
+public:
+    /* 000 */ STRUCT_PAD(0x00, 0x98);
+    /* 098 */ PlayerActorBase *mpPlayer;
+    /* 09C */ STRUCT_PAD(0x9C, 0x154);
     /* 154 */
 
-    UnkStruct_027e0ce0_40_328();
+    UnkStruct_027e0ce0_40_328(void *param1, UnkStruct_027e0ce0_40 *param2, UnkStruct_027e0ce0_40_150 *param3,
+                              ItemFlag *pEquippedItem);
+    ~UnkStruct_027e0ce0_40_328();
+
+    // overlay 93
+    void func_ov093_0216d0d4();
+    void func_ov093_0216d160();
+    void func_ov093_0216d1cc(unk32 param1, const UnkStruct_ov001_020c40f4 *param2, bool param3, bool param4);
 };
 
 // land player stuff
@@ -672,7 +696,6 @@ class UnkStruct_027e0ce0_40 : public UnkStruct_027e0ce0_40_Base {
 public:
     /* 000 (base) */
     /* 108 */ UnkStruct_027e0ce0_40_108 mUnk_108;
-    /* 148 */ void *mUnk_148;
     /* 14C */ UnkStruct_027e0ce0_40_14C *mUnk_14C;
     /* 150 */ UnkStruct_027e0ce0_40_150 *mUnk_150;
     /* 154 */ PlayerLinkActor mPlayer;
@@ -680,14 +703,17 @@ public:
     /* 32C */ PlayerLinkActor *mpPlayer;           // set to mPlayer
     /* 330 */ UnkStruct_027e0ce0_40_328 *mUnk_330; // set to mUnk_328
     /* 334 */ ItemFlag mEquippedItem;
-    /* 338 */ bool mIsSceneTowerInteriorStairs;
-    /* 339 */ bool mIsSceneTowerExteriorStairs;
+    /* 338 */ bool mIsSceneTowerInsideStairs;
+    /* 339 */ bool mIsSceneTowerOutsideStairs;
     /* 33A */ bool mIsSceneBossByrne;
-    /* 33B */ unk8 mUnk_33B;
+    /* 33B */ bool mUnk_33B;
     /* 33C */
 
-    UnkStruct_027e0ce0_40(bool param1, UnkStruct_027e0ce0_20 *param2, unk32 **param3, ItemManager *pItemMgr);
+    UnkStruct_027e0ce0_40(bool param1, UnkStruct_027e0ce0_20 *param2, ItemFlag *pEquippedItem, ItemManager *pItemMgr);
     ~UnkStruct_027e0ce0_40();
+
+    // overlay 0
+    void func_ov000_02088060(bool param1);
 
     // overlay 101
     bool func_ov101_02182fb4(bool param1);
@@ -717,7 +743,7 @@ class UnkStruct_027e0ce0 : public AutoInstance<UnkStruct_027e0ce0>, public UnkSt
 public:
     /* 02 */ bool mUnk_02;
     /* 03 */ bool mUnk_03;
-    /* 04 */ unk32 *mUnk_04;
+    /* 04 */ ItemFlag mEquippedItem;
     /* 08 */ bool mUnk_08;
     /* 0C */ UnkStruct_027e0ce0_0C mUnk_0C;
     /* 1C */ UnkStruct_027e0ce0_1C *mUnk_1C;

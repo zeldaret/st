@@ -3,6 +3,12 @@
 #include "Actor/ActorUnkOLDS.hpp"
 #include "System/SysNew.hpp"
 
+#include "versions.h"
+
+#if IS_JP
+THUMB_BEGIN
+#endif
+
 DECL_PROFILE(ActorProfileUnkOLDS);
 
 Actor *ActorProfileUnkOLDS::Create() {
@@ -15,6 +21,11 @@ ActorProfileUnkOLDS::ActorProfileUnkOLDS() :
 ActorUnkOLDS::ActorUnkOLDS() {}
 
 void ActorUnkOLDS::func_ov040_0212cd8c(void) {}
+
+#if IS_JP
+THUMB_END
+#endif
+
 void ActorUnkOLDS::func_ov040_0212cee4(void) {}
 void ActorUnkOLDS::func_ov040_0212cefc(void) {}
 void ActorUnkOLDS::func_ov040_0212cf34(void) {}

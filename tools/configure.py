@@ -479,7 +479,7 @@ config.libs = [
             Object("031_Land/Actor/ActorUnkFLEN.cpp"),
             Object("031_Land/Actor/ActorHeart.cpp"),
             Object("031_Land/Actor/ActorItemBoomerang.cpp"),
-            Object("031_Land/Actor/ActorUnkITTD.cpp"),
+            Object("031_Land/Actor/ActorItemTornado.cpp"),
             Object("031_Land/Actor/ActorUnkMLCK.cpp"),
             Object("031_Land/Actor/ActorUnkNFSP.cpp"),
             Object("031_Land/Actor/ActorUnkNITF.cpp"),
@@ -1415,6 +1415,18 @@ config.libs = [
         [
             Object("100_CollectMsg/CollectMsg.cpp"),
         ]
+    ),
+    GameLib(
+        "Overlay 101",
+        [
+            Object("101_SceneInitLand/Item/ItemManager_101.cpp"),
+            Object("101_SceneInitLand/UnkStruct_027e0ce0_40_101.cpp"),
+            Object("101_SceneInitLand/Player/PlayerLinkActor_A0_1C_101.cpp"),
+            Object("101_SceneInitLand/UnkStruct_027e09a4_54_101.cpp"),
+            Object("101_SceneInitLand/UnkStruct_027e0cd8_0C_101.cpp"),
+            Object("101_SceneInitLand/MapObjectProfile_Derived6_101.cpp"),
+        ],
+        extra_cflags=["-thumb"],
     ),
     GameLib(
         "Overlay 105",
