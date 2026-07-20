@@ -5,7 +5,7 @@ import subprocess
 import ninja_syntax
 
 from pathlib import Path
-from typing import Any, Optional, Dict, List
+from typing import Iterable, Any, Dict, List, Optional, Set, Tuple
 from get_platform import get_platform
 
 
@@ -48,11 +48,14 @@ def get_c_cpp_files(dirs: list[Path]):
 
 
 def is_cpp(name: str | Path):
-    return Path(name).suffix in [".cpp"]
+    return Path(name).suffix in [".cc", ".cp", ".cpp", ".cxx", ".pch++"]
 
 
 def is_c(name: str | Path):
     return Path(name).suffix in [".c"]
+
+def is_c_cpp(name: str | Path):
+    return is_c(name) or is_cpp(name)
 
 class Object:
     def __init__(self, name: str, **options: Any):
@@ -65,6 +68,7 @@ class Object:
             "extra_asflags": [],
             "cflags": None,
             "extra_cflags": [],
+            "extra_clang_flags": [],
             "asm_dir": None,
             "src_dir": None,
         }
@@ -171,7 +175,7 @@ class ProjectConfig:
                 if dir == "include":
                     includes.append(Path(root) / dir)
 
-        self.includes = " ".join(f"-i {include}" for include in includes)
+        self.includes = [f"-i {include}" for include in includes]
         """C/C++ includes"""
 
         self.auto_add_sources: bool = False
@@ -179,6 +183,12 @@ class ProjectConfig:
 
         self.warn_missing_source: bool = True
         """Warn on missing source file"""
+
+        self.generate_compile_commands: bool = True
+        """Generate compile_commands.json for clangd"""
+
+        self.extra_clang_flags: List[str] = []
+        """Extra flags for clangd"""
 
     def get_game_config(self, version: str):
         """Root directory for dsd configs"""
@@ -297,13 +307,14 @@ class ProjectConfig:
     def arm9_disassembly_dir(self, version: str) -> Path:
         return self.get_game_build(version) / "asm"
 
-    def objdiff_report(self, version: str) -> Path:
+    def objdiff_report(self, version: str) -> str:
         return f"report_{version}.json"
 
     def files(self, version: str) -> list[dict[str, str]]:
-        if self.delinks_jsons[version] is None:
+        delinks = self.delinks_jsons[version]
+        if delinks is None:
             return []
-        return self.delinks_jsons[version]['files']
+        return delinks['files']
 
     def delink_files(self, version: str) -> list[str]:
         delink_files = [file['delink_file'] for file in self.files(version)]
@@ -312,14 +323,16 @@ class ProjectConfig:
         return delink_files
 
     def arm9_lcf_file(self, version: str) -> str:
-        if self.delinks_jsons[version] is None:
+        delinks = self.delinks_jsons[version]
+        if delinks is None:
             return ""
-        return self.delinks_jsons[version]['arm9_lcf_file']
+        return delinks['arm9_lcf_file']
 
     def arm9_objects_file(self, version: str) -> str:
-        if self.delinks_jsons[version] is None:
+        delinks = self.delinks_jsons[version]
+        if delinks is None:
             return ""
-        return self.delinks_jsons[version]['arm9_objects_file']
+        return delinks['arm9_objects_file']
 
     def get_config_files(self, version: str, name: str) -> list[str]:
         files = [
@@ -372,7 +385,7 @@ def add_download_tool_builds(cfg: ProjectConfig, n: ninja_syntax.Writer, args: A
             variables={
                 "tool": "dsd",
                 "tag": cfg.dsd_version,
-                "path": cfg.dsd_path,
+                "path": str(cfg.dsd_path),
             },
         )
         n.newline()
@@ -402,7 +415,7 @@ def add_download_tool_builds(cfg: ProjectConfig, n: ninja_syntax.Writer, args: A
         )
         n.newline()
 
-    if cfg.platform.system != "windows" and cfg.wine_path == cfg.default_wibo_path:
+    if cfg.platform is not None and cfg.platform.system != "windows" and cfg.wine_path == cfg.default_wibo_path:
         downloads.append(str(cfg.wine_path))
         n.build(
             rule="download_tool",
@@ -519,7 +532,7 @@ def add_disassemble_builds(cfg: ProjectConfig, version: str, n: ninja_syntax.Wri
 
 
 def add_mwcc_builds(cfg: ProjectConfig, version: str, objects: Dict[str, Object], n: ninja_syntax.Writer, mwcc_implicit: list[str]):
-    file_map: dict[str, list[str]] = {}
+    file_map: dict[str, list[str] | None] = {}
 
     for object in objects.values():
         file_map[str(object.src_path)] = object.options["cflags"] + object.options["extra_cflags"]
@@ -536,7 +549,8 @@ def add_mwcc_builds(cfg: ProjectConfig, version: str, objects: Dict[str, Object]
         if cfg.warn_missing_source and not source_file.exists():
             print(f"WARNING: path not found for `{source_file}`")
 
-        if "-lang=c++" not in cc_flags or "-lang=c" not in cc_flags:
+        assert cc_flags is not None, "cc_flags is None"
+        if  "-lang=c++" not in cc_flags or "-lang=c" not in cc_flags:
             if is_cpp(source_file):
                 cc_flags.append("-lang=c++")
             elif is_c(source_file):
@@ -757,13 +771,224 @@ def create_objdiff_fixup_config(cfg: ProjectConfig, objects: Dict[str, Object]):
         json.dump(out_json, f, indent=2)
 
 
+def create_compile_commands(cfg: ProjectConfig):
+    if not cfg.generate_compile_commands:
+        return
+
+    objects: Dict[str, Object] = cfg.objects()
+
+    # The following code attempts to convert mwcc flags to clang flags
+    # for use with clangd.
+    #
+    # Adapted from: https://github.com/encounter/dtk-template/blob/95a941f755919ebe50c1725a4ce73524470e7a02/tools/project.py#L1781
+
+    # Flags to ignore explicitly
+    CFLAG_IGNORE: Set[str] = {
+        # Search order modifier
+        # Has a different meaning to Clang, and would otherwise
+        # be picked up by the include passthrough prefix
+        "-I-",
+        "-i-",
+    }
+    CFLAG_IGNORE_PREFIX: Tuple[str, ...] = (
+        # Recursive includes are not supported by modern compilers
+        "-ir ",
+    )
+
+    # Flags to replace
+    CFLAG_REPLACE: Dict[str, str] = {}
+    CFLAG_REPLACE_PREFIX: Tuple[Tuple[str, str], ...] = (
+        # Includes
+        ("-i ", "-I"),
+        ("-I ", "-I"),
+        ("-I+", "-I"),
+        # Defines
+        ("-d ", "-D"),
+        ("-D ", "-D"),
+        ("-D+", "-D"),
+    )
+
+    # Flags with a finite set of options
+    CFLAG_REPLACE_OPTIONS: Tuple[Tuple[str, Dict[str, Tuple[str, ...]]], ...] = (
+        # Exceptions
+        (
+            "-Cpp_exceptions",
+            {
+                "off": ("-fno-cxx-exceptions",),
+                "on": ("-fcxx-exceptions",),
+            },
+        ),
+        # RTTI
+        (
+            "-RTTI",
+            {
+                "off": ("-fno-rtti",),
+                "on": ("-frtti",),
+            },
+        ),
+        # Language configuration
+        (
+            "-lang",
+            {
+                "c": ("--language=c", "--std=c99"),
+                "c99": ("--language=c", "--std=c99"),
+                "c++": ("--language=c++", "--std=c++98"),
+                "cplus": ("--language=c++", "--std=c++98"),
+            },
+        ),
+        # Enum size
+        (
+            "-enum",
+            {
+                "min": ("-fshort-enums",),
+                "int": ("-fno-short-enums",),
+            },
+        ),
+        # Common BSS
+        (
+            "-common",
+            {
+                "off": ("-fno-common",),
+                "on": ("-fcommon",),
+            },
+        ),
+    )
+
+    # Flags to pass through
+    CFLAG_PASSTHROUGH: Set[str] = set()
+    CFLAG_PASSTHROUGH_PREFIX: Tuple[str, ...] = (
+        "-I",  # includes
+        "-D",  # defines
+    )
+
+    clangd_config = []
+
+    def add_unit(obj: Object):
+        # Skip unresolved objects
+        if (
+            obj.src_path is None
+            or obj.src_obj_path is None
+            or not is_c_cpp(obj.src_path)
+        ):
+            return
+
+        # Gather cflags for source file
+        cflags: list[str] = []
+
+        def append_cflags(flags: Iterable[str]) -> None:
+            # Match a flag against either a set of concrete flags, or a set of prefixes.
+            def flag_match(
+                flag: str, concrete: Set[str], prefixes: Tuple[str, ...]
+            ) -> bool:
+                if flag in concrete:
+                    return True
+
+                for prefix in prefixes:
+                    if flag.startswith(prefix):
+                        return True
+
+                return False
+
+            # Determine whether a flag should be ignored.
+            def should_ignore(flag: str) -> bool:
+                return flag_match(flag, CFLAG_IGNORE, CFLAG_IGNORE_PREFIX)
+
+            # Determine whether a flag should be passed through.
+            def should_passthrough(flag: str) -> bool:
+                return flag_match(flag, CFLAG_PASSTHROUGH, CFLAG_PASSTHROUGH_PREFIX)
+
+            # Attempts replacement for the given flag.
+            def try_replace(flag: str) -> bool:
+                replacement = CFLAG_REPLACE.get(flag)
+                if replacement is not None:
+                    cflags.append(replacement)
+                    return True
+
+                for prefix, replacement in CFLAG_REPLACE_PREFIX:
+                    if flag.startswith(prefix):
+                        cflags.append(flag.replace(prefix, replacement, 1))
+                        return True
+
+                for prefix, options in CFLAG_REPLACE_OPTIONS:
+                    if not flag.startswith(prefix):
+                        continue
+
+                    # "-lang c99" and "-lang=c99" are both generally valid option forms
+                    option = flag.removeprefix(prefix).removeprefix("=").lstrip()
+                    replacements = options.get(option)
+                    if replacements is not None:
+                        cflags.extend(replacements)
+
+                    return True
+
+                return False
+
+            for flag in flags:
+                # Ignore flags first
+                if should_ignore(flag):
+                    continue
+
+                # Then find replacements
+                if try_replace(flag):
+                    continue
+
+                # Pass flags through last
+                if should_passthrough(flag):
+                    cflags.append(flag)
+                    continue
+
+        append_cflags(cfg.includes)
+        append_cflags(obj.options["cflags"])
+        append_cflags(obj.options["extra_cflags"])
+        cflags.extend(cfg.extra_clang_flags)
+        cflags.extend(obj.options["extra_clang_flags"])
+
+        unit_config = {
+            "directory": Path.cwd(),
+            "file": obj.src_path,
+            "output": obj.src_obj_path,
+            "arguments": [
+                "clang",
+                "-nostdinc",
+                "-fno-builtin",
+                "--target=arm-none-eabi",
+                "-march=armv5te",
+                "-mfloat-abi=soft",
+                *cflags,
+                "-c",
+                obj.src_path,
+                "-o",
+                obj.src_obj_path,
+            ],
+        }
+        clangd_config.append(unit_config)
+
+    # Add units
+    for name, object in objects.items():
+        add_unit(object)
+
+    # Write compile_commands.json
+    with open("compile_commands.json", "w", encoding="utf-8") as w:
+
+        def default_format(o):
+            if isinstance(o, Path):
+                return o.resolve().as_posix()
+            return str(o)
+
+        json.dump(clangd_config, w, indent=2, default=default_format)
+
+
 def process_project(cfg: ProjectConfig, args: Any):
     objects = cfg.objects()
+
+    if args.clangd:
+        create_compile_commands(cfg)
+        return
 
     create_objdiff_fixup_config(cfg, objects)
 
     rust_log = "RUST_LOG=ds_rom::rom::rom=warn"
-    if cfg.platform.system == "windows":
+    if cfg.platform is not None and cfg.platform.system == "windows":
         rust_log = f"set {rust_log} &&"
 
     with cfg.build_ninja_path.open("w") as file:
@@ -800,9 +1025,10 @@ def process_project(cfg: ProjectConfig, args: Any):
         n.newline()
 
         # -MMD excludes all includes instead of just system includes for some reason, so use -MD instead.
-        mwcc_cmd = f'{cfg.wine_path} {cfg.sjiswrap_path} "{cfg.cc_path}" $cc_flags {cfg.includes} -DVERSION=$game_version -MD -c $in -o $basedir'
+        includes = " ".join(f"-i {include}" for include in cfg.includes)
+        mwcc_cmd = f'{cfg.wine_path} {cfg.sjiswrap_path} "{cfg.cc_path}" $cc_flags {includes} -DVERSION=$game_version -MD -c $in -o $basedir'
         mwcc_implicit = [str(cfg.cc_path), str(cfg.sjiswrap_path)]
-        if cfg.platform.system != "windows":
+        if cfg.platform and cfg.platform.system != "windows":
             transform_dep = "tools/transform_dep.py"
             mwcc_cmd += f" && $python {transform_dep} $basefile.d $basefile.d"
             mwcc_implicit.append(transform_dep)
@@ -821,9 +1047,10 @@ def process_project(cfg: ProjectConfig, args: Any):
         )
         n.newline()
 
+        ldflags = " ".join(cfg.ldflags) if cfg.ldflags is not None else ""
         n.rule(
             name="mwld",
-            command=f'{cfg.wine_path} "{cfg.ld_path}" {' '.join(cfg.ldflags)} $extra_ld_flags @$objects_file $lcf_file -o $out'
+            command=f'{cfg.wine_path} "{cfg.ld_path}" {ldflags} $extra_ld_flags @$objects_file $lcf_file -o $out'
         )
         n.newline()
 
@@ -839,7 +1066,7 @@ def process_project(cfg: ProjectConfig, args: Any):
         )
         n.newline()
 
-        cflags = " ".join(cfg.cflags_base)
+        cflags = " ".join(cfg.cflags_base) if cfg.cflags_base is not None else ""
         dsd_objdiff_args = " ".join([
             "--scratch",                                 # Metadata for creating decomp.me scratches
             f"--compiler {cfg.get_decompme_compiler()}", # decomp.me compiler name

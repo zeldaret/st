@@ -1,6 +1,5 @@
 build/
 .vscode/
-.clangd
 cmake/
 compile_commands.json
 ph_*/
