@@ -8,11 +8,27 @@
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 
+struct UnkStruct_ov000_02077590 {
+    /* 00 */ s16 mUnk_00;
+    /* 02 */ s16 mUnk_02;
+    /* 04 */ s16 mUnk_04;
+    /* 06 */ s16 mUnk_06;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ VecFx32 mUnk_0C;
+    /* 18 */ u16 mUnk_18;
+    /* 1A */ u16 mUnk_1A;
+    /* 1C */ u16 mUnk_1C;
+    /* 1E */ u16 mUnk_1E;
+};
+
 extern "C" VecFx32 data_ov031_02116344;
+extern "C" UnkStruct_ov019_020d24c8_28_258_00 data_ov031_02116b58;
 
 extern "C" bool func_01ff916c(void *, int, int);
 extern "C" void func_01ff9638(VecFx32 *, s16);
 extern "C" void func_01ffa7a0(VecFx32 *, Mat3p *, VecFx32 *);
+extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
+extern "C" UnkStruct_ov000_02077590 *func_ov000_02077590(unk32);
 
 DECL_PROFILE(ActorProfileUnkTGTZ);
 
@@ -32,7 +48,7 @@ ActorProfileUnkTGTZ::ActorProfileUnkTGTZ() :
 // non-matching
 ActorUnkTGTZ::ActorUnkTGTZ() :
 #if IS_JP
-    mUnk_094(0),
+    mUnk_094(NULL),
     mUnk_09C(true),
 #else
     mUnk_094(NULL, 0xC, NULL),
@@ -56,8 +72,6 @@ ActorUnkTGTZ::ActorUnkTGTZ() :
 
 // non-matching
 void ActorUnkTGTZ::func_ov031_020f6984() {}
-
-extern "C" UnkStruct_ov019_020d24c8_28_258_00 data_ov031_02116b58;
 
 // non-matching
 bool ActorUnkTGTZ::vfunc_18(unk32 param1) {
@@ -94,23 +108,6 @@ bool ActorUnkTGTZ::vfunc_18(unk32 param1) {
 
     return true;
 }
-
-extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
-
-struct UnkStruct_ov000_02077590 {
-    /* 00 */ s16 mUnk_00;
-    /* 02 */ s16 mUnk_02;
-    /* 04 */ s16 mUnk_04;
-    /* 06 */ s16 mUnk_06;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ VecFx32 mUnk_0C;
-    /* 18 */ u16 mUnk_18;
-    /* 1A */ u16 mUnk_1A;
-    /* 1C */ u16 mUnk_1C;
-    /* 1E */ u16 mUnk_1E;
-};
-
-extern "C" UnkStruct_ov000_02077590 *func_ov000_02077590(unk32);
 
 // non-matching
 void ActorUnkTGTZ::vfunc_20() {
