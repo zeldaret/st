@@ -19,6 +19,7 @@ Diagnostics:
     - "warn_char_constant_too_large"
     - "illegal_union_or_anon_struct_member"
     - "main_returns_nonint"
+    - "template_spec_needs_header"
 Documentation:
   CommentFormat: Doxygen
 ---

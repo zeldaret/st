@@ -69,7 +69,7 @@ template <typename T> struct StaticInstance {
     static T sInstance;
 };
 
-    #define DECL_STATIC_INSTANCE(T) template <> T StaticInstance<T>::sInstance
+    #define DECL_STATIC_INSTANCE(T) T StaticInstance<T>::sInstance
 
 #endif
 
