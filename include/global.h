@@ -2,7 +2,7 @@
 #define GLOBAL_H
 
 // Prevent the IDE from reporting errors that the compiler/linker won't report
-#ifdef __INTELLISENSE__
+#ifndef __MWERKS__
 #endif
 
 // start of thumb region, using thumb instructions

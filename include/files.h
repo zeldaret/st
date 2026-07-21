@@ -27,7 +27,7 @@ typedef struct FileInfos {
 
 // .cib
 typedef struct CourseInitEntry {
-    /* 00 */ const char name[16];
+    /* 00 */ char name[16];
     /* 10 */ STRUCT_PAD(0x10, 0x24);
 } CourseInitEntry; // size = 0x24
 

@@ -50,26 +50,26 @@ public:
     ~AutoInstance() {}
 };
 
-    #define DECL_INSTANCE_CTOR(T, gpInstance)           \
+    #define DECL_INSTANCE_CTOR(type, gpInstance)        \
         template <typename T> Instance<T>::Instance() { \
-            gpInstance = (T *) this;                    \
+            gpInstance = (type *) this;                 \
         }                                               \
-        template class Instance<T>;
+        template class Instance<type>;
 
-    #define DECL_INSTANCE_DTOR(T, gpInstance) \
-        Instance<T>::~Instance() {            \
-            gpInstance = NULL;                \
+    #define DECL_INSTANCE_DTOR(type, gpInstance)  \
+        template <> Instance<type>::~Instance() { \
+            gpInstance = NULL;                    \
         }
 
-    #define DECL_INSTANCE(T, gpInstance)  \
-        DECL_INSTANCE_CTOR(T, gpInstance) \
-        DECL_INSTANCE_DTOR(T, gpInstance)
+    #define DECL_INSTANCE(type, gpInstance)  \
+        DECL_INSTANCE_CTOR(type, gpInstance) \
+        DECL_INSTANCE_DTOR(type, gpInstance)
 
 template <typename T> struct StaticInstance {
     static T sInstance;
 };
 
-    #define DECL_STATIC_INSTANCE(T) T StaticInstance<T>::sInstance
+    #define DECL_STATIC_INSTANCE(T) template <> T StaticInstance<T>::sInstance
 
 #endif
 
