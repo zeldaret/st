@@ -21,7 +21,6 @@ struct UnkStruct_ov000_02077590 {
     /* 1E */ u16 mUnk_1E;
 };
 
-extern "C" VecFx32 data_ov031_02116344;
 extern "C" UnkStruct_ov019_020d24c8_28_258_00 data_ov031_02116b58;
 
 extern "C" bool func_01ff916c(void *, int, int);
@@ -30,11 +29,14 @@ extern "C" void func_01ffa7a0(VecFx32 *, Mat3p *, VecFx32 *);
 extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
 extern "C" UnkStruct_ov000_02077590 *func_ov000_02077590(unk32);
 
-DECL_PROFILE(ActorProfileUnkTGTZ);
+#if IS_JP
+static const Vec3p data_ov031_02116344(FLOAT_TO_FX32(1.5f), FLOAT_TO_FX32(2.0f), FLOAT_TO_FX32(0.0f));
+#else
+static unk32 data_ov031_02114584[0x2]  = {0};
+static const char *data_ov031_021145a4 = "target";
+#endif
 
-static unk32 data_ov031_02114584[0x2] = {};
-static char data_ov031_021145a8[0x8]  = "target";
-static char *data_ov031_021145a4      = data_ov031_021145a8;
+DECL_PROFILE(ActorProfileUnkTGTZ);
 
 Actor *ActorProfileUnkTGTZ::Create() {
     return new(HeapIndex_2) ActorUnkTGTZ();
@@ -288,7 +290,7 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
 
             VecFx32 vec1;
 #if IS_JP
-            func_01ffa7a0(&data_ov031_02116344, &this->mUnk_190, &vec1);
+            func_01ffa7a0((VecFx32 *) &data_ov031_02116344, &this->mUnk_190, &vec1);
 #else
             this->mUnk_094.func_ov000_02057d9c();
             VecFx32 *pVec = this->mUnk_094.func_ov000_0205a7a8(this->mUnk_094.func_ov000_0205a778(data_ov031_021145a4));

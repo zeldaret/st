@@ -2364,7 +2364,7 @@ _ZTV12ActorUnkNTTZ kind:data(any) addr:0x02114528
 data_ov031_02114584 kind:data(any) addr:0x02114584
 _ZTV19data_ov031_02114594 kind:data(any) addr:0x0211458c
 data_ov031_021145a4 kind:data(any) addr:0x021145a4
-data_ov031_021145a8 kind:data(any) addr:0x021145a8
+@3969 kind:data(byte[7]) addr:0x021145a8
 _ZTV19ActorProfileUnkTGTZ kind:data(any) addr:0x021145b0
 _ZTV24ActorUnkTGTZ_ModelRender kind:data(any) addr:0x021145d4
 _ZTV12ActorUnkTGTZ kind:data(any) addr:0x02114600
