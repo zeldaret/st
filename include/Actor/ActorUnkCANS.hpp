@@ -213,7 +213,7 @@ public:
     void func_ov063_02159ec0(void);
     unk32 func_ov063_02159f3c(unk32 param1);
     unk32 func_ov063_0215a0f0(void);
-    void func_ov063_0215a2c0(void);
+    unk32 func_ov063_0215a2c0(void);
     void func_ov063_0215a428(void);
     unk32 func_ov063_0215a474(void);
     unk32 func_ov063_0215a514(void);
