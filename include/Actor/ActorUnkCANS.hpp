@@ -95,6 +95,7 @@ public:
 };
 
 struct UnkStruct_data_ov063_02163068 {
+    /* Contains a string somewhere with info such as "attack" or "guard" */
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;

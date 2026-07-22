@@ -45,8 +45,10 @@ static PTMF<ActorUnkCANS> data_ov063_02162f58[0xA] = {
     ActorUnkCANS::func_ov063_02159e20,
 };
 
+/* Contains a string somewhere with info such as "attack" or "guard" */
 extern UnkStruct_data_ov063_02163068 data_ov063_02163068; // = {0, 0x6B6C6177, 0x41, 0, 0, 0};
 extern UnkStruct_data_ov063_02163068 data_ov063_021630b0;
+extern UnkStruct_data_ov063_02163068 data_ov063_02163098;
 
 extern void *data_027e09c0;
 extern u16 data_ov000_020aed00;
@@ -766,7 +768,13 @@ void ActorUnkCANS::func_ov063_02159618(void) {
     }
 }
 
-void ActorUnkCANS::func_ov063_02159714(void) {}
+void ActorUnkCANS::func_ov063_02159714(void) {
+    mVel.x   = 0;
+    mVel.z   = 0;
+    mUnk_270 = 0;
+    mUnk_128.vfunc_1C(data_ov063_02163098, 0x1000, 0x19A, 0);
+}
+
 void ActorUnkCANS::func_ov063_02159784(void) {}
 void ActorUnkCANS::func_ov063_021598fc(void) {}
 void ActorUnkCANS::func_ov063_021599e4(void) {}
