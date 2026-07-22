@@ -746,7 +746,26 @@ void ActorUnkCANS::func_ov063_021595a4(void) {
     ((Actor_9C *) &mUnk_200)->func_ov000_02097bec();
 }
 
-void ActorUnkCANS::func_ov063_02159618(void) {}
+void ActorUnkCANS::func_ov063_02159618(void) {
+    if (!mUnk_128.vfunc_28()->func_01ff8fa8()) {
+        return;
+    }
+
+    if (mAngle != mUnk_26C) {
+        mUnk_128.vfunc_1C(data_ov063_02163068, 0x1333, 0x19A, 0);
+        mState = 8;
+        return;
+    }
+
+    if (this->func_ov063_0215a474()) {
+        this->func_ov063_02158448(6);
+    } else if (this->func_ov063_02159f3c(0x3000)) {
+        this->func_ov063_02158448(1);
+    } else {
+        this->func_ov063_02158448(0);
+    }
+}
+
 void ActorUnkCANS::func_ov063_02159714(void) {}
 void ActorUnkCANS::func_ov063_02159784(void) {}
 void ActorUnkCANS::func_ov063_021598fc(void) {}
