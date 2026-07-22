@@ -21,8 +21,6 @@ struct UnkStruct_ov000_02077590 {
     /* 1E */ u16 mUnk_1E;
 };
 
-extern "C" UnkStruct_ov019_020d24c8_28_258_00 data_ov031_02116b58;
-
 extern "C" bool func_01ff916c(void *, int, int);
 extern "C" void func_01ff9638(VecFx32 *, s16);
 extern "C" void func_01ffa7a0(VecFx32 *, Mat3p *, VecFx32 *);
@@ -35,6 +33,8 @@ static const Vec3p data_ov031_02116344(FLOAT_TO_FX32(1.5f), FLOAT_TO_FX32(2.0f),
 static unk32 data_ov031_02114584[0x2]  = {0};
 static const char *data_ov031_021145a4 = "target";
 #endif
+extern unk32 data_ov031_02116b54 = 0x0;
+extern UnkStruct_ov019_020d24c8_28_258_00 data_ov031_02116b58(NULL, 0);
 
 DECL_PROFILE(ActorProfileUnkTGTZ);
 
