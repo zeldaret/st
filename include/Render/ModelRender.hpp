@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "math.hpp"
 #include "nitro/fx.h"
 #include "profile.hpp"
 #include "types.h"

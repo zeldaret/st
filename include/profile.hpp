@@ -4,11 +4,6 @@
 #include "types.h"
 #include <nns/g3d/g3d.h>
 
-//! TODO: doesn't belong here but causes circular imports when placed in Actor.hpp
-struct UnkAngleStruct {
-    u16 angle;
-};
-
 //! TODO: doesn't belong here but since we don't know what it is...
 class UnkSystem3 {
 public:

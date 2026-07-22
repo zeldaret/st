@@ -367,3 +367,7 @@ union Vec2sb {
         y = Y;
     }
 };
+
+struct UnkAngleStruct {
+    u16 angle;
+};
