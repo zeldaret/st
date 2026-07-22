@@ -69,6 +69,7 @@ extern "C" bool func_ov000_020982d8();
 extern "C" void func_ov000_02098838(ActorUnkCANS *param1);
 extern "C" unk32 func_ov000_02098d7c(ActorUnkCANS *param1, unk32 *param2);
 extern "C" unk32 func_ov000_02099450(ActorUnkCANS *param1, unk32 *param2, VecFx32 *param3, unk32 param4, u16 param5);
+extern "C" void func_ov000_020994a0(ActorUnkCANS *);
 extern "C" unk32 func_ov000_02099a0c(unk32 *param1);
 extern "C" void func_ov017_020bf050(ActorUnkCANS *param1, unk32 *param2, unk32 param3);
 extern "C" void func_ov017_020bf178(ActorUnkCANS *param1, unk32 *param2, unk32 param3);
@@ -706,7 +707,36 @@ void ActorUnkCANS::func_ov063_02159408(void) {
     ((Actor_9C *) &mUnk_200)->func_ov000_02097bec();
 }
 
-void ActorUnkCANS::func_ov063_02159494(void) {}
+void ActorUnkCANS::func_ov063_02159494(void) {
+    func_ov000_020994a0(this);
+
+    if (GET_FLAG(mFlags, ActorFlag_5) == 0) {
+        return;
+    }
+
+    if (this->func_ov063_0215a514()) {
+        this->func_ov063_02158448(8);
+        return;
+    }
+
+    if (mAngle != mUnk_26C) {
+        mUnk_128.vfunc_1C(data_ov063_02163068, 0x1333, 0x19A, 0);
+        mState = 8;
+        return;
+    }
+
+    if (mUnk_268 == NULL) {
+        this->func_ov063_02158448(7);
+    } else {
+        if (this->func_ov063_02159f3c(0x3000)) {
+            this->func_ov063_02158448(1);
+        } else {
+
+            this->func_ov063_02158448(0);
+        }
+    }
+}
+
 void ActorUnkCANS::func_ov063_021595a4(void) {}
 void ActorUnkCANS::func_ov063_02159618(void) {}
 void ActorUnkCANS::func_ov063_02159714(void) {}
