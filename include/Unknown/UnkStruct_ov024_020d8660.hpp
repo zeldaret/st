@@ -26,6 +26,16 @@ public:
     /* 30 */
 };
 
+class UnkActorSystem1_Derived1 : public UnkActorSystem1 {
+public:
+    /* 00 (base) */
+    /* 05 */
+
+    // ?
+    /* 24 */ virtual unk32 vfunc_24() override;
+    /* 28 */ virtual unk32 vfunc_28() override;
+};
+
 struct UnkActorSystem_Infos1 {
     /* 0C */ s16 mUnk_00;
     /* 0E */ unk16 mUnk_02;

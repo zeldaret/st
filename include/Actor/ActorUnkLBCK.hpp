@@ -25,7 +25,7 @@ public:
     ActorUnkLBCK();
 
     /* 4C */ virtual ~ActorUnkLBCK() override;
-    /* 58 */ virtual void vfunc_58(unk32 param1) override;
+    /* 58 */ virtual void vfunc_58(ActorState param1) override;
 
     // overlay 1
     void func_ov001_020bff34();

@@ -265,6 +265,7 @@ public:
     void func_ov000_0208053c(u16 param1);
     bool func_ov000_02080658(unk32 param1, EntranceInfo *param2);
     void func_ov000_020808f4(void *param1, void *param2, u8 param3);
+    void func_ov000_020809d8(unk32 param1, unk32 param2);
     unk32 func_ov000_02080a44();
     void func_ov000_02080a5c(VecFx32 *param1);
     void func_ov000_02080a78(VecFx32 *param1);

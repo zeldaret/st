@@ -17,10 +17,18 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
+enum ActorUnkRPMTState_ {
+    ActorUnkRPMTState_0 = 0,
+    ActorUnkRPMTState_1 = 1,
+    ActorUnkRPMTState_MAX
+};
+
 class ActorUnkRPMT : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 94 */ STRUCT_PAD(0x94, 0xA4);
+    /* A4 */ bool mUnk_A4;
+    /* A5 */
 
     ActorUnkRPMT();
 

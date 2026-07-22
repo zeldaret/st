@@ -33,6 +33,40 @@ public:
     ActorUnk_vfunc_B0();
 };
 
+class Actor_Derived1_94_vfunc_10 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x04);
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ STRUCT_PAD(0x04, 0x08);
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */
+};
+
+struct ActorUnkZLSL_AnimationTag {
+    unk32 index;
+    char name[0x14];
+};
+
+class Actor_Derived1_94_0C {
+public:
+    /* 00 (vtable) */
+    /* 04 */
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual Actor_Derived1_94_vfunc_10 *vfunc_10();
+    /* 14 */ virtual void vfunc_14();
+    /* 18 */ virtual void vfunc_18();
+    /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4);
+    /* 20 */ virtual void vfunc_20();
+    /* 24 */ virtual void vfunc_24();
+    /* 28 */ virtual void vfunc_28();
+    /* 2C */ virtual void vfunc_2C();
+    /* 30 */ virtual unk32 vfunc_30();
+};
+
 class Actor_Derived1_94 {
 public:
     /* 00 */ Actor_38 mUnk_00;
@@ -46,10 +80,10 @@ public:
 class Actor_Derived1_94_Derived1 : public Actor_Derived1_94 {
 public:
     /* 00 (base) */
-    /* 0C */ unk32 mUnk_0C;
+    /* 0C */ Actor_Derived1_94_0C *mUnk_0C;
     /* 10 */
 
-    Actor_Derived1_94_Derived1(unk32 param1) {
+    Actor_Derived1_94_Derived1(Actor_Derived1_94_0C *param1) {
         this->mUnk_0C = param1;
     }
 };
@@ -116,9 +150,9 @@ public:
     /* 0DC */ unk16 mUnk_0DE;
     /* 0E0 */ unk16 mUnk_0E0;
     /* 0E0 */ unk16 mUnk_0E2;
-    /* 0E4 */ void *mUnk_0E4; // callback
-    /* 0E8 */ unk16 mUnk_0E8;
-    /* 0E8 */ unk16 mUnk_0EA;
+    /* 0E4 */ void (*mUnk_0E4)(); // callback
+    /* 0E8 */ volatile u16 mUnk_0E8;
+    /* 0E8 */ volatile u16 mUnk_0EA;
     /* 0EC */ Actor_Derived1_EC mUnk_0EC;
     /* 104 */ Cylinder mUnk_104;
     /* 114 */ unk32 mUnk_114;
@@ -133,7 +167,7 @@ public:
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~Actor_Derived1();
     /* 54 */ virtual void vfunc_54(unk32 param1);
-    /* 58 */ virtual void vfunc_58(unk32 param1) = 0;
+    /* 58 */ virtual void vfunc_58(ActorState param1) = 0;
     /* 5C */ virtual void vfunc_5C();
     /* 60 */ virtual void vfunc_60();
     /* 64 */ virtual bool vfunc_64();
@@ -142,25 +176,25 @@ public:
     /* 70 */ virtual void vfunc_70();
     /* 74 */ virtual void vfunc_74();
     /* 78 */ virtual void vfunc_78();
-    /* 7C */ virtual unk32 vfunc_7C();
-    /* 80 */ virtual unk32 vfunc_80();
+    /* 7C */ virtual unk32 vfunc_7C(unk32 param1);
+    /* 80 */ virtual unk32 vfunc_80(unk32 param1, unk32 param2);
     /* 84 */ virtual unk32 vfunc_84();
-    /* 88 */ virtual unk32 vfunc_88();
-    /* 8C */ virtual unk32 vfunc_8C();
+    /* 88 */ virtual bool vfunc_88();
+    /* 8C */ virtual bool vfunc_8C();
     /* 90 */ virtual unk32 vfunc_90();
     /* 94 */ virtual void vfunc_94();
-    /* 98 */ virtual void vfunc_98(unk32 param1);
+    /* 98 */ virtual void vfunc_98(u32 param1);
     /* 9C */ virtual void vfunc_9C();
     /* A0 */ virtual unk32 vfunc_A0();
     /* A4 */ virtual void vfunc_A4();
     /* A8 */ virtual unk32 vfunc_A8();
-    /* AC */ virtual void vfunc_Ac();
+    /* AC */ virtual void vfunc_AC();
     /* B0 */ virtual void vfunc_B0();
     /* B4 */ virtual void vfunc_B4();
     /* B8 */ virtual void vfunc_B8();
     /* BC */
 
-    Actor_Derived1(ModelRender *param1, unk32 param2);
+    Actor_Derived1(ModelRender *param1, Actor_Derived1_94_0C *param2);
 
     // overlay 0
     void func_ov000_020a8ae0(fx32 param1);
@@ -168,10 +202,10 @@ public:
     bool func_ov000_020a8dd0();
     void func_ov000_020a8df0(ActorRef param1, unk32 param2);
     void func_ov000_020a8e9c(VecFx32 *param1);
-    void func_ov000_020a8ff4();
+    bool func_ov000_020a8ff4(VecFx32 *param1);
     void func_ov000_020a91b8(VecFx32 *param1, unk32 param2);
     void func_ov000_020a9200();
-    void func_ov000_020a9248();
+    bool func_ov000_020a9248(unk32 param1);
     void func_ov000_020a94b0();
     void func_ov000_020a95d8();
     void func_ov000_020a9a20();

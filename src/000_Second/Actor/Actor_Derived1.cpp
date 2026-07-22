@@ -14,7 +14,7 @@ void Actor_Derived1::func_ov000_020a8ae0(fx32 param1) {
     this->mVel.y = posY;
 }
 
-Actor_Derived1::Actor_Derived1(ModelRender *param1, unk32 param2) :
+Actor_Derived1::Actor_Derived1(ModelRender *param1, Actor_Derived1_94_0C *param2) :
     mUnk_094(param2),
     mUnk_0A4(param1),
     mUnk_0B0(0),
@@ -31,7 +31,7 @@ Actor_Derived1::Actor_Derived1(ModelRender *param1, unk32 param2) :
     mUnk_0DC(0x2AAB),
     mUnk_0DE(0xEAAB),
     mUnk_0E0(0x1555),
-    mUnk_0E4(0),
+    mUnk_0E4(NULL),
     mUnk_0E8(0),
     mUnk_0EA(0),
     mUnk_104(this->mUnk_34->size),
@@ -127,11 +127,11 @@ void Actor_Derived1::vfunc_B0() {
     }
 }
 
-unk32 Actor_Derived1::vfunc_88() {
+bool Actor_Derived1::vfunc_88() {
     return 1;
 }
 
-unk32 Actor_Derived1::vfunc_8C() {
+bool Actor_Derived1::vfunc_8C() {
     return 1;
 }
 
@@ -157,23 +157,23 @@ bool Actor_Derived1::vfunc_64() {
     return GET_FLAG(this->mFlags, ActorFlag_Interacting);
 }
 
-void Actor_Derived1::func_ov000_020a8ff4() {}
+bool Actor_Derived1::func_ov000_020a8ff4(VecFx32 *param1) {}
 
 void Actor_Derived1::vfunc_6C() {}
 
 void Actor_Derived1::vfunc_68() {
     UNSET_FLAG(this->mFlags, ActorFlag_Interacting);
     this->func_ov000_020a9200();
-    this->vfunc_Ac();
+    this->vfunc_AC();
     this->mUnk_0B0 &= ~0x01;
     this->mUnk_0B0 &= ~0x10;
 }
 
-unk32 Actor_Derived1::vfunc_7C() {
+unk32 Actor_Derived1::vfunc_7C(unk32 param1) {
     return 1;
 }
 
-unk32 Actor_Derived1::vfunc_80() {
+unk32 Actor_Derived1::vfunc_80(unk32 param1, unk32 param2) {
     return -1;
 }
 
@@ -203,9 +203,9 @@ void Actor_Derived1::vfunc_70() {
 
 void Actor_Derived1::vfunc_74() {}
 void Actor_Derived1::vfunc_78() {}
-void Actor_Derived1::func_ov000_020a9248() {}
+bool Actor_Derived1::func_ov000_020a9248(unk32 param1) {}
 void Actor_Derived1::vfunc_5C() {}
-void Actor_Derived1::vfunc_98(unk32 param1) {}
+void Actor_Derived1::vfunc_98(u32 param1) {}
 void Actor_Derived1::func_ov000_020a94b0() {}
 void Actor_Derived1::vfunc_9C() {}
 
@@ -214,7 +214,7 @@ unk32 Actor_Derived1::vfunc_A0() {
     return 1;
 }
 
-void Actor_Derived1::vfunc_Ac() {}
+void Actor_Derived1::vfunc_AC() {}
 void Actor_Derived1::func_ov000_020a95d8() {}
 void Actor_Derived1::vfunc_A4() {}
 

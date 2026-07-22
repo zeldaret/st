@@ -12,6 +12,10 @@
 #include "types.h"
 #include "versions.h"
 
+struct UnkAngleStruct {
+    s16 angle;
+};
+
 class ActorParams {
 public:
     /* 00 */ VecFx32 mInitialPos;
@@ -127,7 +131,10 @@ public:
     /* 04 */ VecFx32 mPos;
     /* 10 */ VecFx32 mPrevPos;
     /* 1C */ VecFx32 mVel;
-    /* 28 */ fx16 mAngle;
+    /* 28 */ union {
+        s16 mAngle;
+        UnkAngleStruct mAngleStruct;
+    };
     /* 2A */ unk16 mUnk_2A;
     /* 2C */ unk32 mUnk_2C; // gravity?
     /* 30 */ Cylinder *mUnk_30;
@@ -238,6 +245,10 @@ public:
     void func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_ov017_020bf9c8(Actor *param1);
     void func_ov017_020bfb18(Actor_9C *param1);
+
+    // overlay 71 (might be temporary)
+    void func_ov071_021540ac(unk32 param1);
+    void func_ov071_0215414c();
 };
 
 class Actor_C4_Base {

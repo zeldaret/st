@@ -889,7 +889,7 @@ struct UnkStruct_StackTitleScreen {
 class MapObject;
 
 struct UnkStackStruct1 {
-    /* 00 */ unk8 mUnk_00;
+    /* 00 */ u8 mUnk_00;
     /* 01 */ unk8 mUnk_01;
     /* 02 */ unk8 mUnk_02;
     /* 03 */ unk8 mUnk_03;

@@ -7,6 +7,11 @@
 #include "global.h"
 #include "types.h"
 
+enum ActorUnkRAT0State_ {
+    ActorUnkRAT0State_0,
+    ActorUnkRAT0State_MAX
+};
+
 class ActorUnkRAT0_C4 : public Actor_C4 {
 public:
     ActorUnkRAT0_C4(Actor *param1);
@@ -63,7 +68,7 @@ public:
     void func_ov053_0213c910(void);
     void func_ov053_0213c91c(void);
     void func_ov053_0213c940(void);
-    void func_ov053_0213c984(void);
+    static void func_ov053_0213c984(void);
     void func_ov053_0213c9b0(void);
     void func_ov053_0213c9cc(void);
     void func_ov053_0213ca50(void);

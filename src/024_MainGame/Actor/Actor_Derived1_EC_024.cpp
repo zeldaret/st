@@ -7,7 +7,7 @@ struct UnkFuncStruct1 {
 
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
 extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
-extern "C" void func_01ff930c(s16 *, unk16, unk32);
+extern "C" unk32 func_01ff930c(s16 *, unk16, unk32);
 extern "C" unk32 func_01ff9258(int, int);
 extern "C" fx32 func_02017f54(s16 *pAngle, UnkFuncStruct1);
 

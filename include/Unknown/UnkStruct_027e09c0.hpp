@@ -67,6 +67,7 @@ public:
 
     // overlay 0
     void func_ov000_0207da40();
+    s16 func_ov000_0207dc88(Actor **, Actor_38 *);
     void func_ov000_0207de98(ActorRef param1, UnkStruct_ov000_0207de98 *param2, Actor_38 *param3);
     void func_ov000_0207e58c(ActorRef param1, unk32 param2, u8 param3, UnkStruct_ov031_Items_01 *param4);
     bool func_ov000_0207e458(unk32 param1, unk32 param2, VecFx32 *param3, unk32 param4, VecFx32 *param5, ActorRef param6);
