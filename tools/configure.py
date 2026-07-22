@@ -16,6 +16,7 @@ parser.add_argument("--compiler", type=Path, required=False, help="Path to pre-i
 parser.add_argument("--no-extract", action="store_true", help="Skip extract step")
 parser.add_argument("--dsd", type=Path, required=False, help="Path to pre-installed dsd CLI")
 parser.add_argument("--version", "-v", help='Game version', required=False)
+parser.add_argument("--noclangd", "-c", help='Do not create clangd config', required=False, action="store_true")
 args = parser.parse_args()
 
 config = ProjectConfig("st", args.compiler, "dsi/1.2p1", args.wine, args.dsd, Path(__file__).resolve())
@@ -1415,6 +1416,18 @@ config.libs = [
         [
             Object("100_CollectMsg/CollectMsg.cpp"),
         ]
+    ),
+    GameLib(
+        "Overlay 101",
+        [
+            Object("101_SceneInitLand/Item/ItemManager_101.cpp"),
+            Object("101_SceneInitLand/UnkStruct_027e0ce0_40_101.cpp"),
+            Object("101_SceneInitLand/Player/PlayerLinkActor_A0_1C_101.cpp"),
+            Object("101_SceneInitLand/UnkStruct_027e09a4_54_101.cpp"),
+            Object("101_SceneInitLand/UnkStruct_027e0cd8_0C_101.cpp"),
+            Object("101_SceneInitLand/MapObjectProfile_Derived6_101.cpp"),
+        ],
+        extra_cflags=["-thumb"],
     ),
     GameLib(
         "Overlay 105",

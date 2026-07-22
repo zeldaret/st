@@ -858,9 +858,9 @@ bool ActorRupee_C4::vfunc_00(ActorRef ref, unk32 param2) {
     return this->Actor_C4::vfunc_00(ref, param2);
 }
 
-void ActorRupee_C4::vfunc_04() {
+bool ActorRupee_C4::vfunc_04() {
     this->GetActorPtr<ActorRupee>()->SetState(ActorRupeeState_8);
-    this->Actor_C4::vfunc_04();
+    return this->Actor_C4::vfunc_04();
 }
 
 void ActorRupee_C4::vfunc_0C(unk32 param1) {

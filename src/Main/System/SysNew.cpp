@@ -1,5 +1,4 @@
 #include "System/SysNew.hpp"
-#include "global.h"
 
 extern "C" {
 void *func_02001654(void *);
@@ -68,7 +67,7 @@ void *func_02011f30(s32 length) {
     return func_02011f10(length);
 }
 
-void *operator new(unsigned long length, u32 id, u32 idLength) {
+void *operator new(size_t length, u32 id, u32 idLength) {
     void *pvVar1;
     UnkStruct_02011e10_Sub1 *pUVar5;
 

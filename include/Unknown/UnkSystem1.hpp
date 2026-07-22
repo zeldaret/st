@@ -1,10 +1,11 @@
 #pragma once
 
 #include "Message/BMG.hpp"
-#include "Save/SaveManager.hpp"
 #include "System/SysNew.hpp"
 #include "global.h"
 #include "types.h"
+
+struct SaveFile;
 
 struct UnkStruct5 {
     unk8 mUnk_00;

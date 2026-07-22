@@ -54,6 +54,10 @@ ARM7 BIOS in the root directory of this repository, and verify that your dumped 
 
 ## LSP setup
 
+By default `configure.py` will create the config file for clangd (at the root folder of the project), if you want to use the alternative setup you can run `configure.py` with `--noclangd | -c` to disable the creation of the file.
+
+If you wish to use CMake:
+
 **This is likely not necessary.** Most C++ editors usually have their one LSP (Language Server Protocol, a tool for code completion and more) configuration that should recognize the project structure and work out of the box. This section is about how to setup your LSP yourself **if the need be**.
 
 The repository contains a [`CMakeLists.txt`](CMakeLists.txt) that allows generating a compilation database. For now, the `CMakeLists.txt` can only be used to generate `compile_commands.json` and similar files, not compiling the project.  

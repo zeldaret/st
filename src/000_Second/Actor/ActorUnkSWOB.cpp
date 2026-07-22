@@ -34,6 +34,7 @@ bool ActorUnkSWOB::vfunc_18(unk32 param1) {
         this->SetState(ActorUnkSWOBState_0);
     }
 
+#pragma unused(param1)
     return true;
 }
 
@@ -70,7 +71,7 @@ void ActorUnkSWOB::func_ov000_0209aa30(void) {
         case 1:
             data_ov000_020b5214.func_ov000_0206db44(0xA3);
             break;
-        case 3:
+        case 3: {
             data_ov000_020b5214.func_ov000_0206db44(0xA3);
 
             s16 unk_78 = this->mUnk_5C.mUnk_1A[1];
@@ -78,6 +79,7 @@ void ActorUnkSWOB::func_ov000_0209aa30(void) {
                 data_027e0cd8->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_5C.mUnk_18[1], true);
             }
             break;
+        }
         case 2: {
             VecFx32 temp;
             VecFx32 vec2;

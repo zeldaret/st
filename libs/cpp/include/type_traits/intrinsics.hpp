@@ -11,7 +11,9 @@ namespace Metrowerks {
 
     namespace detail {
 
-#ifdef DECOMP_IDE_FLAG
+#if __MWERKS__
+        typedef short double short_double;
+#else
     #define __builtin_ntype(T) (detail::ntype) 0
     #define __builtin_align(T) 0
     #define __builtin_is_pod(T) 0
@@ -29,8 +31,6 @@ namespace Metrowerks {
     #define __builtin_has_virtual_destructor(T) 0
         typedef double short_double;
         typedef double __vec2x32float__;
-#else
-        typedef short double short_double;
 #endif
 
         enum trivial_member {
