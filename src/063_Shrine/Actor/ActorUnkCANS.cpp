@@ -46,6 +46,7 @@ static PTMF<ActorUnkCANS> data_ov063_02162f58[0xA] = {
 };
 
 extern UnkStruct_data_ov063_02163068 data_ov063_02163068; // = {0, 0x6B6C6177, 0x41, 0, 0, 0};
+extern UnkStruct_data_ov063_02163068 data_ov063_021630b0;
 
 extern void *data_027e09c0;
 extern u16 data_ov000_020aed00;
@@ -737,7 +738,14 @@ void ActorUnkCANS::func_ov063_02159494(void) {
     }
 }
 
-void ActorUnkCANS::func_ov063_021595a4(void) {}
+void ActorUnkCANS::func_ov063_021595a4(void) {
+    mVel.x   = 0;
+    mVel.z   = 0;
+    mUnk_270 = 0;
+    mUnk_128.vfunc_1C(data_ov063_021630b0, 0x1000, 0x400, 0);
+    ((Actor_9C *) &mUnk_200)->func_ov000_02097bec();
+}
+
 void ActorUnkCANS::func_ov063_02159618(void) {}
 void ActorUnkCANS::func_ov063_02159714(void) {}
 void ActorUnkCANS::func_ov063_02159784(void) {}
