@@ -219,7 +219,7 @@ public:
     unk32 func_ov063_0215a474(void);
     unk32 func_ov063_0215a514(void);
     unk32 func_ov063_0215a56c(unk32 param1);
-    void func_ov063_0215a5a0(void);
+    void func_ov063_0215a5a0(Cylinder *param1, unk32 param2);
     unk32 func_ov063_0215a5bc(void);
     unk32 func_ov063_0215a5d8(void);
     static void func_ov063_0215a678(void);
