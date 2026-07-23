@@ -3055,7 +3055,7 @@ from:0x020f4130 kind:load to:0x02114438 add:0x8 module:overlay(31)
 from:0x020f4134 kind:load to:0x027e0ce0 module:dtcm
 from:0x020f4138 kind:load to:0x02110b70 module:overlay(31)
 from:0x020f413c kind:load to:0x020b1960 add:0x8 module:overlay(0)
-from:0x020f4140 kind:load to:0x02114424 module:overlay(31)
+from:0x020f4140 kind:load to:0x0211441c module:overlay(31) add:0x8
 from:0x020f4154 kind:arm_call to:0x020f4790 module:overlay(31)
 from:0x020f4170 kind:arm_call to:0x020f5b7c module:overlay(31)
 from:0x020f41bc kind:arm_call_thumb to:0x0208ed30 module:overlay(0)

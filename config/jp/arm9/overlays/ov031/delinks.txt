@@ -105,6 +105,7 @@ src/031_Land/Actor/ActorUnkATTG.cpp:
     .text       start:0x020f5820 end:0x020f5b40
     .init       start:0x02113308 end:0x02113358
     .ctor       start:0x02114564 end:0x02114568
+    .data       start:0x0211613c end:0x021161bc
     .bss        start:0x0211885c end:0x021188a8
 
 src/031_Land/Actor/ActorUnkNTTZ.cpp:
