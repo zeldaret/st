@@ -333,9 +333,11 @@ src/031_Land/MapObject/MapObjectUnkSKDI.cpp:
     .bss        start:0x02119fbc end:0x0211a0a0
 
 src/031_Land/Actor/ActorUnkSKDO.cpp:
+    complete
     .text       start:0x02108abc end:0x02108c74
     .init       start:0x02114068 end:0x021140b8
     .ctor       start:0x021145f4 end:0x021145f8
+    .data       start:0x02117a54 end:0x02117ae4
     .bss        start:0x0211a0a0 end:0x0211a0ec
 
 src/031_Land/MapObject/MapObjectUnkCRWL.cpp:

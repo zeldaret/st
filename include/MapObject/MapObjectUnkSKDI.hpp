@@ -15,6 +15,9 @@ public:
     MapObjectUnkSKDI();
 
     /* 30 */ virtual ~MapObjectUnkSKDI() override;
+    /* 38 */ virtual void vfunc_38();
+    /* 3C */ virtual void vfunc_3C();
+    /* 40 */ virtual unk32 vfunc_40();
 
     void func_ov031_02106190(void);
     void func_ov031_021061dc(void);
@@ -27,9 +30,6 @@ public:
     void func_ov031_02106a70(void);
     void func_ov031_02106a84(void);
     void func_ov031_02106c78(void);
-    void func_ov031_02106c98(void);
-    void func_ov031_02106ca0(void);
-    void func_ov031_02106ca8(void);
     void func_ov031_02106cb0(void);
 };
 

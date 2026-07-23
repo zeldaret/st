@@ -25,9 +25,9 @@ void MapObjectUnkSKDI::func_ov031_02106678(void) {}
 void MapObjectUnkSKDI::func_ov031_02106a70(void) {}
 void MapObjectUnkSKDI::func_ov031_02106a84(void) {}
 void MapObjectUnkSKDI::func_ov031_02106c78(void) {}
-void MapObjectUnkSKDI::func_ov031_02106c98(void) {}
-void MapObjectUnkSKDI::func_ov031_02106ca0(void) {}
-void MapObjectUnkSKDI::func_ov031_02106ca8(void) {}
+void MapObjectUnkSKDI::vfunc_38(void) {}
+void MapObjectUnkSKDI::vfunc_3C(void) {}
+unk32 MapObjectUnkSKDI::vfunc_40(void) {}
 void MapObjectUnkSKDI::func_ov031_02106cb0(void) {}
 
 MapObjectUnkSKDI::~MapObjectUnkSKDI() {}

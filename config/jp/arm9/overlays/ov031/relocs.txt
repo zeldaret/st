@@ -5165,7 +5165,7 @@ from:0x02108b10 kind:load to:0x02117a60 add:0x8 module:overlay(31)
 from:0x02108b1c kind:arm_call to:0x02099b30 module:overlay(0)
 from:0x02108b38 kind:load to:0x02117a84 add:0x8 module:overlay(31)
 from:0x02108b88 kind:arm_call to:0x01fff520 module:itcm
-from:0x02108bac kind:load to:0x02117a5c module:overlay(31)
+from:0x02108bac kind:load to:0x02117a54 module:overlay(31) add:0x8
 from:0x02108bb0 kind:load to:0x027e0ce8 module:dtcm
 from:0x02108be4 kind:arm_call to:0x0209a230 module:overlay(0)
 from:0x02108c00 kind:arm_call to:0x0209db14 module:overlay(0)

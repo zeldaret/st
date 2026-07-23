@@ -19,7 +19,6 @@ extern "C" unk32 func_01ffb428(unk32, unk32);
 extern "C" void func_01ffaf74(VecFx32 *, Mat4x3p *, VecFx32 *);
 extern "C" void func_01ff93c0(VecFx32 *, fx32);
 extern unk32 data_ov031_02110c00[];
-extern UnkStruct_ov000_020b34c4_Callback data_ov000_020b4cc4;
 
 const UnkStruct_ov031_021150b0 data_ov031_021150b0(0x1E66);
 
@@ -90,13 +89,10 @@ void MapObjectDoorDangerSpawn::vfunc_04(void) {
 
 #if IS_JP
     //! TODO: non-matching
-    UnkStruct_ov000_020b34c4 stack;
-    bool run      = true;
-    stack.mUnk_00 = &data_ov000_020b4cc4;
-    stack.mUnk_04 = MapObjectId_DoorDangerSpawn;
+    MapObjectDoorDangerSpawn_ov031_02116e24 stack(MapObjectId_DoorDangerSpawn);
+    bool run = true;
 
-    MapObject **ppMapObject =
-        gpMapObjManager->func_01fff520((UnkStruct_ov000_020b34c4 *) &stack.mUnk_00, gpMapObjManager->mMapObjTable);
+    MapObject **ppMapObject = gpMapObjManager->func_01fff520(&stack, gpMapObjManager->mMapObjTable);
 
     if (ppMapObject != gpMapObjManager->mUnk_08) {
         MapObjectDoorDangerSpawn *pMapObject = (MapObjectDoorDangerSpawn *) *ppMapObject;

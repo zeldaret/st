@@ -1,12 +1,19 @@
 #pragma once
 
-#include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectDoorBase.hpp"
 #include "MapObject/MapObjectProfile.hpp"
-#include "Player/PlayerGet.hpp"
 #include "Unknown/Common.hpp"
+#include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "global.h"
 #include "types.h"
+
+class MapObjectDoorDangerSpawn_ov031_02116e24 : public UnkStruct_ov000_020b34c4 {
+public:
+    MapObjectDoorDangerSpawn_ov031_02116e24(MapObjectId mapObjectId) :
+        UnkStruct_ov000_020b34c4(mapObjectId) {}
+
+    bool vfunc_00(MapObject *param1) override;
+};
 
 class MapObjectProfileDoorDangerSpawn : public MapObjectProfile_Derived2 {
 public:
