@@ -3060,7 +3060,7 @@ from:0x020f5bd4 kind:load to:0x021161d8 add:0x8 module:overlay(31)
 from:0x020f5bd8 kind:load to:0x027e0ce0 module:dtcm
 from:0x020f5bdc kind:load to:0x021128e0 module:overlay(31)
 from:0x020f5be0 kind:load to:0x020b3160 add:0x8 module:overlay(0)
-from:0x020f5be4 kind:load to:0x021161c4 module:overlay(31)
+from:0x020f5be4 kind:load to:0x021161bc module:overlay(31) add:0x8
 from:0x020f5bf8 kind:arm_call to:0x020f6234 module:overlay(31)
 from:0x020f5c14 kind:arm_call to:0x020f761c module:overlay(31)
 from:0x020f5c60 kind:arm_call_thumb to:0x0209040c module:overlay(0)

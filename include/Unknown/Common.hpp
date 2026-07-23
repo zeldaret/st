@@ -906,7 +906,7 @@ struct UnkStackStruct1 {
     /* 32 */ unk16 mUnk_32;
     /* 34 */ unk16 mUnk_34;
     /* 36 */ unk16 mUnk_36;
-    /* 38 */ u16 mUnk_38;
+    /* 38 */ unk16 mUnk_38;
     /* 3A */ unk8 mUnk_3A;
     /* 3B */ unk8 mUnk_3B;
     /* 3C */ unk32 mUnk_3C;
