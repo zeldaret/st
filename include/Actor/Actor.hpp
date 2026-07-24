@@ -118,6 +118,12 @@ public:
     /* 0A */
 };
 
+class Actor_vfunc_30 {
+public:
+    /* 00 */ s8 mUnk_00;
+    /* 01 */ s8 mUnk_01;
+};
+
 typedef s16 ActorState;
 #define ActorState_None -1
 
@@ -162,7 +168,7 @@ public:
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28();
     /* 2C */ virtual void vfunc_2C(unk32 param1);
-    /* 30 */ virtual void vfunc_30();
+    /* 30 */ virtual void vfunc_30(Actor_vfunc_30 *param1);
     /* 34 */ virtual unk32 vfunc_34();
     /* 38 */ virtual bool Grab(ActorGrabParams grabParams);
     /* 3C */ virtual bool Drop(ActorGrabParams grabParams, const VecFx32 *pVel);
@@ -288,7 +294,7 @@ public:
 
     Actor_Derived2();
 
-    /* 30 */ virtual void vfunc_30();
+    /* 30 */ virtual void vfunc_30(Actor_vfunc_30 *param1);
     /* 4C */ WEAK virtual ~Actor_Derived2() {}
     /* 54 */ virtual void vfunc_54();
 };
