@@ -7,6 +7,18 @@
 #include "global.h"
 #include "types.h"
 
+class ActorUnkBOMB_unk : public UnkStruct_PlayerGet_ec {
+public:
+    /* 00 (base) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */
+
+    ActorUnkBOMB_unk(); // ActorUnkBOMB::func_ov031_020e33ac()
+
+    // ActorUnkBOMB::func_ov031_020e17f4() dtor ?
+};
+
 class ActorUnkBOMB_C4 : public Actor_C4 {
 public:
     ActorUnkBOMB_C4(Actor *param1);

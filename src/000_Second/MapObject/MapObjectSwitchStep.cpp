@@ -113,9 +113,9 @@ bool MapObjectSwitchStep::vfunc_00(void) {
     this->mUnk_18[1] = 1;
 
     if (this->func_ov000_0209d29c(0)) {
-        this->func_ov000_0209e11c(2, 1);
+        this->func_ov000_0209e11c(MapObjSwitchStepState_2, 1);
     } else {
-        this->func_ov000_0209e11c(0, 1);
+        this->func_ov000_0209e11c(MapObjSwitchStepState_0, 1);
     }
 
     if (data_027e09a4->mUnk_00.sceneIndex >= SceneIndex_battle01 && data_027e09a4->mUnk_00.sceneIndex < SceneIndex_Max) {
@@ -126,14 +126,14 @@ bool MapObjectSwitchStep::vfunc_00(void) {
     return true;
 }
 
-void MapObjectSwitchStep::func_ov000_0209e11c(unk32 param1, unk32 param2) {
-    this->mUnk_16 = param1;
+void MapObjectSwitchStep::func_ov000_0209e11c(MapObjState state, unk32 param2) {
+    this->mState  = state;
     this->mUnk_E6 = -1;
     this->mUnk_E4 = 0;
     this->mUnk_A4.func_01ffc3b4();
 
-    switch (this->mUnk_16) {
-        case 0:
+    switch (this->mState) {
+        case MapObjSwitchStepState_0:
             if (param2 == 0) {
                 this->func_ov000_0209d2c4(0, false);
                 data_027e09a8->func_ov000_02071b30(0x123, &this->mPos, 0);
@@ -143,13 +143,13 @@ void MapObjectSwitchStep::func_ov000_0209e11c(unk32 param1, unk32 param2) {
             this->mUnk_40.mUnk_60 = 0;
             this->mUnk_A4.func_ov000_020577f8(0);
             break;
-        case 1:
+        case MapObjSwitchStepState_1:
             this->mUnk_E8 = 0;
             data_027e09a8->func_ov000_02071b30(0x121, &this->mPos, 0);
             this->mUnk_A4.func_ov000_020577f8(0);
             this->func_ov000_0209e11c(2, 0);
             break;
-        case 2:
+        case MapObjSwitchStepState_2:
             this->mUnk_40.mUnk_60 = -0x19A;
             this->func_ov000_0209d2c4(0, true);
             this->mUnk_40.mUnk_62 = 0;
@@ -167,7 +167,7 @@ void MapObjectSwitchStep::func_ov000_0209e11c(unk32 param1, unk32 param2) {
 
             this->mUnk_A4.func_ov000_020577f8(0x1000);
             break;
-        case 3:
+        case MapObjSwitchStepState_3:
             this->func_ov000_0209d2c4(0, false);
             break;
         default:
@@ -176,10 +176,10 @@ void MapObjectSwitchStep::func_ov000_0209e11c(unk32 param1, unk32 param2) {
 }
 
 void MapObjectSwitchStep::vfunc_20(void) {
-    switch (this->mUnk_16) {
-        case 1:
-        case 2:
-        case 3:
+    switch (this->mState) {
+        case MapObjSwitchStepState_1:
+        case MapObjSwitchStepState_2:
+        case MapObjSwitchStepState_3:
             break;
         default:
             this->func_ov000_0209e11c(1, 0);

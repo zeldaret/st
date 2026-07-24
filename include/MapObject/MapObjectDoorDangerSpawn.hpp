@@ -27,6 +27,19 @@ public:
     static MapObjectProfileDoorDangerSpawn *GetProfile();
 };
 
+enum MapObjDoorDangerSpawnState_ {
+    MapObjDoorDangerSpawnState_0 = 0,
+    MapObjDoorDangerSpawnState_1 = 1,
+    MapObjDoorDangerSpawnState_2 = 2,
+    MapObjDoorDangerSpawnState_3 = 3,
+    MapObjDoorDangerSpawnState_4 = 4,
+    MapObjDoorDangerSpawnState_5 = 5,
+    MapObjDoorDangerSpawnState_6 = 6,
+    MapObjDoorDangerSpawnState_7 = 7,
+    MapObjDoorDangerSpawnState_8 = 8,
+    MapObjDoorDangerSpawnState_MAX
+};
+
 class MapObjectDoorDangerSpawn : public MapObjectDoorBase {
 public:
     /* 00 (base) */
@@ -64,7 +77,7 @@ public:
     /* 44 */ virtual void vfunc_44() override;
     /* 48 */ virtual void vfunc_48() override;
     /* 4C */ virtual void vfunc_4C() override;
-    /* 5C */ virtual void vfunc_5C(unk32 param1, unk32 param2) override;
+    /* 5C */ virtual void vfunc_5C(MapObjState state, unk32 param2) override;
     /* 64 */ virtual bool vfunc_64() override;
     /* 68 */ virtual bool vfunc_68() override;
     /* 6C */ virtual bool vfunc_6C() override;

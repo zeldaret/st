@@ -93,7 +93,7 @@ bool MapObjectDoorSwitch::vfunc_00(void) {
 void MapObjectDoorSwitch::vfunc_08(void) {
     if (this->mUnk_20.mParams[3] == 2 && data_027e09b8->func_01ffd420()) {
         this->MapObjectDoorBase::vfunc_08();
-    } else if (this->mUnk_16 == 5 && this->vfunc_6C()) {
+    } else if (this->mState == MapObjDoorSwitchState_5 && this->vfunc_6C()) {
         this->vfunc_5C(0, 0);
     } else {
         this->MapObjectDoorBase::vfunc_08();

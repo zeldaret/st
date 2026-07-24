@@ -91,12 +91,12 @@ void MapObjectDoorKey::vfunc_14(void) {
     this->mUnk_94.vfunc_14(&m, &local_48);
 }
 
-void MapObjectDoorKey::vfunc_5C(unk32 param1, unk32 param2) {
+void MapObjectDoorKey::vfunc_5C(MapObjState state, unk32 param2) {
     this->mUnk_8D = true;
-    this->MapObjectDoorBase::vfunc_5C(param1, param2);
+    this->MapObjectDoorBase::vfunc_5C(state, param2);
 
-    switch (this->mUnk_16) {
-        case 3:
+    switch (this->mState) {
+        case MapObjDoorKeyState_3:
             if (param2 == 0) {
                 data_027e0ce0->mUnk_2C->GetInventory()->GiveSmallKeys(-1);
             }
@@ -104,7 +104,7 @@ void MapObjectDoorKey::vfunc_5C(unk32 param1, unk32 param2) {
             UNSET_FLAG(this->mFlags, MapObjFlag_9);
             data_027e09a8->func_ov000_02071b30(0x134, &this->mPos, 0);
             break;
-        case 8:
+        case MapObjDoorKeyState_8:
             UNSET_FLAG(this->mFlags, MapObjFlag_9);
             break;
         default:
@@ -133,16 +133,16 @@ unk32 MapObjectDoorKey::vfunc_28(void) {
         return -1;
     }
 
-    switch (this->mUnk_16) {
-        case 3:
-        case 4:
-        case 5:
-        case 6:
-        case 7:
-        case 8:
+    switch (this->mState) {
+        case MapObjDoorKeyState_3:
+        case MapObjDoorKeyState_4:
+        case MapObjDoorKeyState_5:
+        case MapObjDoorKeyState_6:
+        case MapObjDoorKeyState_7:
+        case MapObjDoorKeyState_8:
             return -1;
         default:
-            this->vfunc_5C(3, 0);
+            this->vfunc_5C(MapObjDoorKeyState_3, 0);
             break;
     }
 

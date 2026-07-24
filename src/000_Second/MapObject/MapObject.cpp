@@ -13,13 +13,13 @@
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
 extern "C" void func_01ffb9cc(VecFx32 *, VecFx32 *);
 extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
-extern "C" void func_01ffecdc(unk32 param1, Cylinder *param2);
+extern "C" unk32 func_01ffecdc(unk32 param1, Cylinder *param2);
 extern "C" bool func_01ffd768(unk32, void *, void *, unk8);
 extern "C" void func_01fff6d0(void *, VecFx32 *param1, s32 *param2, s32 *param3);
 
 MapObject::MapObject() {
     this->mUnk_10   = NULL;
-    this->mUnk_16   = -1;
+    this->mState    = MapObjState_None;
     this->mFlags[0] = 0;
     this->mUnk_20.Init();
     *(u32 *) &this->mUnk_38 = 0;
@@ -170,7 +170,7 @@ void MapObject::func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3
     }
 }
 
-void MapObject::func_ov000_0209d3b4(unk32 param1, fx32 size) {
+unk32 MapObject::func_ov000_0209d3b4(unk32 param1, fx32 size) {
     Cylinder spC;
 
     if (this->mUnk_10 != NULL) {
@@ -182,7 +182,7 @@ void MapObject::func_ov000_0209d3b4(unk32 param1, fx32 size) {
     VecFx32_Add(&spC.pos, &this->mPos, &spC.pos);
     spC.size += size;
 
-    func_01ffecdc(param1, &spC);
+    return func_01ffecdc(param1, &spC);
 }
 
 struct stack_struct {

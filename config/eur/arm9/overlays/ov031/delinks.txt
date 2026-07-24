@@ -12,6 +12,7 @@ src/031_Land/Actor/ActorUnkBOMB.cpp:
     .text       start:0x020e14c4 end:0x020e34b4
     .init       start:0x02110ff8 end:0x02111048
     .ctor       start:0x0211279c end:0x021127a0
+    .data       start:0x02112be8 end:0x02112d44
     .bss        start:0x02116404 end:0x02116450
 
 src/031_Land/Actor/ActorUnkBLST.cpp:
@@ -336,6 +337,7 @@ src/031_Land/MapObject/MapObjectUnkSKDI.cpp:
     .text       start:0x02106000 end:0x02106d60
     .init       start:0x0211228c end:0x021122dc
     .ctor       start:0x02112864 end:0x02112868
+    .data       start:0x02115c78 end:0x02115ce0
     .bss        start:0x0211821c end:0x02118300
 
 src/031_Land/Actor/ActorUnkSKDO.cpp:

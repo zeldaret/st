@@ -7,7 +7,7 @@ struct UnkStruct {
     unk32 four;
 };
 
-extern "C" void func_01ffecdc(int, void *);
+extern "C" unk32 func_01ffecdc(int, void *);
 
 MapObject *MapObjectManager::func_01fff498(Vec2bCpp param1) {
     if (this->mUnk_0C[param1.y][param1.x] < 0) {
@@ -50,7 +50,7 @@ MapObjectId MapObject::GetMapObjectId() {
     return this->mpProfile->mMapObjId;
 }
 
-void MapObject::func_01fff590(unk32 param2) {
+unk32 MapObject::func_01fff590(unk32 param2) {
     UnkStruct stack;
     unk32 one;
     unk32 two;
@@ -66,5 +66,5 @@ void MapObject::func_01fff590(unk32 param2) {
     stack.two   = two;
     stack.three = three;
     stack.four  = four;
-    func_01ffecdc(param2, &stack);
+    return func_01ffecdc(param2, &stack);
 }

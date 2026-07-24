@@ -1,6 +1,8 @@
 #pragma once
 #include "UnkStruct_027e0ce0.hpp"
 
+class Actor;
+
 class UnkStruct_ov031_Items_00 : public UnkStruct_027e0ce0_38_Base {
 public:
     /* 00 (vtable) */

@@ -79,6 +79,7 @@ public:
     void func_ov000_020a00d4(UnkStruct_PlayerGet_ec *param1, unk32 param2, unk32 param3, unk32 param4, VecFx32 *param5,
                              unk32 param6);
     void func_ov000_020a0110(UnkStruct_PlayerGet_ec *param1);
+    void func_ov000_020a0140(UnkSystem7 *param1, VecFx32 *param2);
     void func_ov000_020a0220(void *param1, void *param2);
 
     // overlay 1

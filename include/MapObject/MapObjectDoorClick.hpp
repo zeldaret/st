@@ -17,6 +17,19 @@ public:
     static MapObjectProfileDoorClick *GetProfile();
 };
 
+enum MapObjDoorClickState_ {
+    MapObjDoorClickState_0 = 0,
+    MapObjDoorClickState_1 = 1,
+    MapObjDoorClickState_2 = 2,
+    MapObjDoorClickState_3 = 3,
+    MapObjDoorClickState_4 = 4,
+    MapObjDoorClickState_5 = 5,
+    MapObjDoorClickState_6 = 6,
+    MapObjDoorClickState_7 = 7,
+    MapObjDoorClickState_8 = 8,
+    MapObjDoorClickState_MAX,
+};
+
 class MapObjectDoorClick : public MapObjectDoorBase {
 public:
     /* 00 (base) */
@@ -42,7 +55,7 @@ public:
     /* 44 */ virtual void vfunc_44() override;
     /* 48 */ virtual void vfunc_48() override;
     /* 4C */ virtual void vfunc_4C() override;
-    /* 5C */ virtual void vfunc_5C(unk32 param1, unk32 param2) override;
+    /* 5C */ virtual void vfunc_5C(MapObjState state, unk32 param2) override;
     /* 64 */ virtual bool vfunc_64() override;
     /* 68 */ virtual bool vfunc_68() override;
     /* 6C */ virtual bool vfunc_6C() override;
