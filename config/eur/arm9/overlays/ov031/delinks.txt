@@ -128,9 +128,11 @@ src/031_Land/Actor/ActorUnkTGTZ.cpp:
     .bss        start:0x02116b64 end:0x02116c54
 
 src/031_Land/Actor/ActorUnkSWCH.cpp:
+    complete
     .text       start:0x020f7a84 end:0x020f7bdc
     .init       start:0x021116c0 end:0x02111710
     .ctor       start:0x021127e8 end:0x021127ec
+    .data       start:0x02114818 end:0x02114898
     .bss        start:0x02116c54 end:0x02116ca0
 
 src/031_Land/Actor/ActorUnkSWON.cpp:
