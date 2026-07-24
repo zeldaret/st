@@ -133,7 +133,10 @@ public:
     /* 04 */ VecFx32 mPos;
     /* 10 */ VecFx32 mPrevPos;
     /* 1C */ VecFx32 mVel;
-    /* 28 */ fx16 mAngle;
+    /* 28 */ union {
+        fx16 mAngle;
+        UnkAngleStruct mAngleStruct;
+    };
     /* 2A */ unk16 mUnk_2A;
     /* 2C */ unk32 mUnk_2C; // gravity?
     /* 30 */ Cylinder *mUnk_30;
@@ -222,7 +225,7 @@ public:
     u32 func_ov000_02098800(bool param1);
     bool func_ov000_02098838();
     unk32 func_ov000_02098910(UnkStruct_ov031_Items_00 *param1, unk32 param2);
-    void func_ov000_02098b8c(unk32 param1, unk32 param2);
+    void func_ov000_02098b8c(unk32 param1, void *param2);
     s32 func_ov000_02098518(unk32 *param1);
     VecFx32 *func_ov000_0209853c(unk32 param1);
     s32 func_ov000_02098554();
@@ -296,7 +299,7 @@ public:
 
     /* 30 */ virtual void vfunc_30(Actor_vfunc_30 *param1);
     /* 4C */ WEAK virtual ~Actor_Derived2() {}
-    /* 54 */ virtual void vfunc_54();
+    /* 54 */ virtual void vfunc_54(unk32 param1);
 };
 
 extern UnkStruct_ov000_020b539c data_ov000_020b539c_eur;

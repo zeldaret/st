@@ -61,7 +61,7 @@ ActorProfileRollingStone::ActorProfileRollingStone() :
 }
 
 // non-matching
-bool ActorRollingStone_104::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) {}
+bool ActorRollingStone_104::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2, unk32 param3) {}
 
 // non-matching
 void ActorRollingStone_104::vfunc_10() {}

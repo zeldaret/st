@@ -1,7 +1,9 @@
 #pragma once
 
 #include "global.h"
+#include "math.hpp"
 #include "nitro/fx.h"
+#include "profile.hpp"
 #include "types.h"
 
 #include <nns/g3d/g3d.h>
@@ -109,7 +111,7 @@ public:
     /* 00 */ virtual ~UnkSystem6_Derived2() {}
     /* 0C */ virtual void vfunc_0C() override;
 
-    void func_01ffc6d4(u16 angle, VecFx32 *pos);
+    void func_01ffc6d4(UnkAngleStruct angleStruct, VecFx32 *pos);
 };
 
 class ModelRender_ov000_020b198c : public ModelRenderBase {
