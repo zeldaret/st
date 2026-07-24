@@ -68,9 +68,9 @@ extern fx16 data_0203e964[];
 extern fx16 data_02041964[];
 extern fx16 data_0203f964[];
 extern fx16 data_0203feb0[];
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
-extern "C" void func_01ff9638(void *, s16);
-extern "C" void func_01ff9770(void *);
+extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
+extern "C" void func_01ff9638(VecFx32 *, s16);
+extern "C" void func_01ff9770(VecFx32 *);
 extern unk32 data_ov000_020b3000;
 extern "C" bool func_ov000_02080998(VecFx32 *);
 extern "C" void func_01ff930c(UnkStruct_ov000_0208f820_40 *, unk16, unk32);
@@ -213,11 +213,11 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                         this->mUnk_AC = true;
                     }
 
-                    unk32 sp78;
+                    VecFx32 sp78;
                     unk16 temp_r8_2 = this->mUnk_A8 - 0x8000;
                     func_01ffb714(this->mUnk_34, (VecFx32 *) &this->mUnk_70, &sp78);
                     func_01ff9638(&sp78, -temp_r8_2);
-                    this->mUnk_9C.x = -sp78;
+                    this->mUnk_9C.x = -sp78.x;
                     this->mUnk_9C.y = 0;
                     this->mUnk_9C.z = 0;
                     func_01ff9638(&this->mUnk_9C, temp_r8_2);

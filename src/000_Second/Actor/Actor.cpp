@@ -60,7 +60,7 @@ void Actor::vfunc_28() {}
 
 void Actor::vfunc_2C(unk32 param1) {}
 
-void Actor::vfunc_30() {}
+void Actor::vfunc_30(Actor_vfunc_30 *param1) {}
 
 unk32 Actor::vfunc_34() {
     return 1;

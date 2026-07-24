@@ -112,15 +112,18 @@ src/031_Land/Actor/ActorUnkATTG.cpp:
     .bss        start:0x02116abc end:0x02116b08
 
 src/031_Land/Actor/ActorUnkNTTZ.cpp:
+    complete
     .text       start:0x020f6108 end:0x020f6284
     .init       start:0x021115e8 end:0x02111638
     .ctor       start:0x021127dc end:0x021127e0
+    .data       start:0x02114504 end:0x02114584
     .bss        start:0x02116b08 end:0x02116b64
 
 src/031_Land/Actor/ActorUnkTGTZ.cpp:
     .text       start:0x020f6834 end:0x020f7474
     .init       start:0x0211165c end:0x021116c0
     .ctor       start:0x021127e4 end:0x021127e8
+    .data       start:0x021145a4 end:0x0211465c
     .bss        start:0x02116b64 end:0x02116c54
 
 src/031_Land/Actor/ActorUnkSWCH.cpp:
