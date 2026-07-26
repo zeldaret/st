@@ -1,4 +1,6 @@
 #include "MapObject/MapObjectUnkSKDI.hpp"
+
+#include "Actor/ActorManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -18,7 +20,6 @@ MapObjectProfileUnkSKDI::MapObjectProfileUnkSKDI() :
     this->mUnk_1E &= 0xFFFE;
 }
 
-// non-matching
 MapObjectUnkSKDI::MapObjectUnkSKDI() :
     mUnk_040(GetModelFromProfile<MapObjectProfileUnkSKDI>()),
     mUnk_048(0x1),
@@ -79,19 +80,16 @@ bool MapObjectUnkSKDI::vfunc_00() {
         var1 = 0x0;
     }
     this->mUnk_07C = var1;
-    unk32 var_r0_2 = var1;
-    unk32 temp_z   = var_r0_2 == 1;
-    if (var_r0_2 == 1) {
-        var_r0_2 = 0x7806;
-    }
-
+    bool temp_z    = var1 == 1;
     VecFx32_Copy(&this->mPos, &this->mUnk_08C.mUnk_00);
-    if (!temp_z) {
-        var_r0_2 = 0x7406;
+    if (temp_z) {
+        var1 = 0x7806;
+    } else {
+        var1 = 0x7406;
     }
 
-    this->mUnk_0D4.mUnk_08 = (var_r0_2 & ~0x7000) | 0x7000;
-    VecFx32_Init(-FLOAT_TO_FX32(0.5f), FLOAT_TO_FX32(0.0f), -FLOAT_TO_FX32(0.5f), &this->mUnk_0D4.mUnk_0C);
+    this->mUnk_0D4.mUnk_08 = (var1 & ~0x7000) | 0x7000;
+    VecFx32_Init(FLOAT_TO_FX32(-0.5002f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(-0.5002f), &this->mUnk_0D4.mUnk_0C);
     VecFx32_Init(FLOAT_TO_FX32(0.5f), FLOAT_TO_FX32(1.2f), FLOAT_TO_FX32(0.5f), &this->mUnk_0D4.mUnk_18);
 
     if (this->mUnk_07C == 0x0) {
@@ -241,9 +239,9 @@ void MapObjectUnkSKDI::func_ov031_02106678(MapObjState state, unk32 param2) {
                 UnkStackStruct1 stack;
 
                 func_ov000_02072fd0(&stack);
-                stack.mUnk_08          = 0x3C;
-                *(u8 *) &stack.mUnk_00 = 0x80;
-                stack.mUnk_3A          = 0x7;
+                stack.mUnk_08 = 0x3C;
+                stack.mUnk_00 = 0x80;
+                stack.mUnk_3A = 0x07;
                 stack.mUnk_38 |= 0x80;
 
                 VecFx32_Copy(&this->mPos, &stack.mUnk_0C);
@@ -317,8 +315,93 @@ void MapObjectUnkSKDI::func_ov031_02106a70() {
     this->func_ov031_02106678(MapObjUnkSKDIState_2, 0x0);
 }
 
+// ActorItemBoomerang?
+class ActorUnk_MapObjectUnkSKDI_vfunc_1C : public Actor {
+public:
+    /* 000 (base) */
+    /* 094 */ STRUCT_PAD(0x094, 0x128);
+    /* 128 */ unk32 mUnk_128;
+    /* 12C */
+};
+
 // non-matching
-bool MapObjectUnkSKDI::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {}
+bool MapObjectUnkSKDI::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
+    bool var_r1 = false;
+    if (param1.type_index == 0x102) {
+        if (param1.unk_id == 1 || param1.unk_id == 3) {
+            var_r1 = true;
+        }
+    }
+    if (var_r1 != 0 && param1.unk_id == 1) {
+        if (data_027e0ce0->mEquippedItem != ActorId_PMTB) {
+            return false;
+        }
+        this->func_ov031_02106678(MapObjUnkSKDIState_0, 0x0);
+        return true;
+    }
+
+    switch (param2) {
+        case 0x4:
+            if (this->mState != MapObjUnkSKDIState_2) {
+                this->func_ov031_02106678(MapObjUnkSKDIState_2, 0x0);
+                this->mUnk_0F8 = 0;
+                unk32 var      = 0x28;
+                if (this->mUnk_20.mParams[3] != 0) {
+                    var = this->mUnk_20.mParams[3];
+                }
+                this->mUnk_0FA = var;
+            }
+            return false;
+        case 0x3:
+            return false;
+        case 0xC:
+            var_r1 = true;
+            if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_d_snow26 && this->mUnk_0FA != 0x0) {
+                var_r1 = false;
+            }
+            if (this->mState == MapObjUnkSKDIState_2 && var_r1) {
+                ActorUnk_MapObjectUnkSKDI_vfunc_1C *actor =
+                    (ActorUnk_MapObjectUnkSKDI_vfunc_1C *) gpActorManager->func_01fff3b4(param1);
+                if (actor != NULL) {
+                    switch (actor->mUnk_128) {
+                        case 0x1:
+                            switch (this->mUnk_07C) {
+                                case 0x0:
+                                    this->func_ov031_02106190();
+                                    this->func_ov031_02106678(MapObjUnkSKDIState_0, 0);
+                                    break;
+                                case 0x1:
+                                    this->func_ov031_02106190();
+                                    this->func_ov031_02106678(MapObjUnkSKDIState_0, 0);
+                                    break;
+                                default:
+                                    break;
+                            }
+                            break;
+                        case 0x2:
+                            switch (this->mUnk_07C) {
+                                case 0x0:
+                                    this->func_ov031_021061dc();
+                                    this->func_ov031_02106678(MapObjUnkSKDIState_0, 0);
+                                    break;
+                                case 0x1:
+                                    this->func_ov031_021061dc();
+                                    this->func_ov031_02106678(MapObjUnkSKDIState_0, 0);
+                                    break;
+                                default:
+                                    break;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            return false;
+        default:
+            return true;
+    }
+}
 
 void MapObjectUnkSKDI::vfunc_14() {
     this->mUnk_040.vfunc_18(&this->mPos);
