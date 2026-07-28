@@ -1,32 +1,36 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "MapObject/MapObject.hpp"
 #include "global.h"
 #include "types.h"
 
-class ActorUnkSCCN_C4 : public Actor_C4 {
+class ActorUnkSCCN_B8 {
 public:
-    ActorUnkSCCN_C4(Actor *param1);
+    /* 00 (vtable) */
+    /* 04 */ ActorRef mUnk_04;
+    /* 08 */ VecFx32 *mUnk_08;
+    /* 0C */ MapObject_10 *mUnk_0C;
+    /* 10 */
 
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual bool vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    ActorUnkSCCN_B8(); // func_ov000_0207ec88 set all fields to 0
+
+    // data_ov000_020b287c
+    /* 00 */ virtual ~ActorUnkSCCN_B8(); // func_ov000_0207eca8 & func_ov000_0207ecd8
+    /* 08 */ virtual void vfunc_08();    // func_ov000_0207ed84
 };
 
 class ActorUnkSCCN : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 94 */ MapObject_10 mUnk_94;
+    /* B8 */ ActorUnkSCCN_B8 mUnk_B8;
+    /* C8 */
 
     ActorUnkSCCN();
 
-    /* 4C */ virtual ~ActorUnkSCCN() override;
-
-    void func_ov031_020efaa0(void);
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
 };
 
 class ActorProfileUnkSCCN : public ActorProfile {
@@ -34,7 +38,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkSCCN();
-    ~ActorProfileUnkSCCN();
 
     /* 0C */ virtual Actor *Create();
 

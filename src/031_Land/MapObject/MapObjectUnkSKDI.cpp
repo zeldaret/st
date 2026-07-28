@@ -80,9 +80,8 @@ bool MapObjectUnkSKDI::vfunc_00() {
         var1 = 0x0;
     }
     this->mUnk_07C = var1;
-    bool temp_z    = var1 == 1;
     VecFx32_Copy(&this->mPos, &this->mUnk_08C.mUnk_00);
-    if (temp_z) {
+    if (var1 == 1) {
         var1 = 0x7806;
     } else {
         var1 = 0x7406;

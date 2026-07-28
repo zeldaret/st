@@ -181,6 +181,18 @@ enum UnkFlags2_ {
     UnkFlags2_Max  = 12,
 };
 
+class UnkStruct_func_ov000_02080620 {
+public:
+    /* 00 (vtable) */
+    /* 04 */ STRUCT_PAD(0x04, 0x14);
+    /* 14 */ VecFx32 mUnk_14;
+    /* 20 */ VecFx32 mUnk_20;
+    /* 2C */
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual bool vfunc_04();
+};
+
 class UnkStruct_027e0cd8_0C_Base {
 public:
     /* 000 (vtable) */
@@ -263,6 +275,7 @@ public:
     bool func_ov000_020802ec(u16 param1, VecFx32 *param2);
     void func_ov000_020803ec(u16 param1);
     void func_ov000_0208053c(u16 param1);
+    UnkStruct_func_ov000_02080620 *func_ov000_02080620();
     bool func_ov000_02080658(unk32 param1, EntranceInfo *param2);
     void func_ov000_020808f4(void *param1, void *param2, u8 param3);
     unk32 func_ov000_02080a44();
