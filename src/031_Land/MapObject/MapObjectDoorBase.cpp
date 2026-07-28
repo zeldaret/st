@@ -725,7 +725,7 @@ void MapObjectDoorBase::vfunc2_08() {
 
         // temp_r3     = sp - 4;
         // *temp_r3    = this->mUnk_4A;
-        data_027e0ce0->func_ov000_0208bbd4(this->mUnk_44, &this->mUnk_4C, this->mUnk_4A);
+        data_027e0ce0->func_ov000_0208bbd4(this->mUnk_04, &this->mUnk_4C, this->mUnk_4A);
         return;
     }
 
@@ -735,7 +735,7 @@ void MapObjectDoorBase::vfunc2_08() {
 
     // temp_r3_2   = sp - 4;
     // *temp_r3_2  = this->mUnk_4A;
-    data_027e0ce0->func_ov000_0208bbd4(this->mUnk_44, &this->mUnk_4C, this->mUnk_4A);
+    data_027e0ce0->func_ov000_0208bbd4(this->mUnk_04, &this->mUnk_4C, this->mUnk_4A);
 
     this->mUnk_5C.x = this->mPos.x + FLOAT_TO_FX32(1.0f);
     this->mUnk_5C.y = this->mPos.y;

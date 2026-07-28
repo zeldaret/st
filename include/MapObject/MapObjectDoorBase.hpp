@@ -6,13 +6,10 @@
 class MapObject_UnkStruct1 {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_44;
-    /* 08 */ unk16 mUnk_48;
-    /* 0A */ s16 mUnk_4A;
-    /* 0C */ VecFx32 mUnk_4C;
-    /* 18 */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */
 
-    MapObject_UnkStruct1(); // func_ov000_02073194 & func_ov000_020731c4
+    // MapObject_UnkStruct1(); // func_ov000_02073194 & func_ov000_020731c4
 
     // data_ov000_020b2290
     /* 00 */ virtual void vfunc2_00();
@@ -24,6 +21,9 @@ public:
 class MapObject_UnkStruct1_Derived1 : public MapObject_UnkStruct1 {
 public:
     /* 00 (base) */
+    /* 08 */ unk16 mUnk_48;
+    /* 0A */ s16 mUnk_4A;
+    /* 0C */ VecFx32 mUnk_4C;
     /* 18 */ bool mUnk_58;
     /* 19 */ unk8 mUnk_59;
     /* 1A */ s16 mUnk_5A;
