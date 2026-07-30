@@ -80,6 +80,7 @@ src/031_Land/Actor/ActorUnkSCCN.cpp:
     .text       start:0x020f1408 end:0x020f16d0
     .init       start:0x021131c8 end:0x02113218
     .ctor       start:0x02114554 end:0x02114558
+    .data       start:0x02115c8c end:0x02115d34
     .bss        start:0x0211872c end:0x02118778
 
 src/031_Land/Actor/ActorPot.cpp:

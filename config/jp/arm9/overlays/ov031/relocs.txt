@@ -2603,7 +2603,7 @@ from:0x020f1fd0 kind:arm_call to:0x01ffe6c4 module:itcm
 from:0x020f1fe0 kind:arm_call to:0x0207f640 module:overlay(0)
 from:0x020f1fec kind:arm_call to:0x0207f94c module:overlay(0)
 from:0x020f2020 kind:arm_call to:0x0207d6b4 module:overlay(0)
-from:0x020f2030 kind:load to:0x02115d3c module:overlay(31)
+from:0x020f2030 kind:load to:0x02115d34 module:overlay(31) add:0x8
 from:0x020f203c kind:arm_call to:0x0207d6b4 module:overlay(0)
 from:0x020f206c kind:arm_call to:0x020f213c module:overlay(31)
 from:0x020f2074 kind:arm_call to:0x020f207c module:overlay(31)
