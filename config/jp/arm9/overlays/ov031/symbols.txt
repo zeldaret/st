@@ -766,9 +766,9 @@ _ZN19ActorProfileUnkRMTG10GetProfileEv kind:function(arm,size=0xc) addr:0x020f12
 _ZN19ActorProfileUnkRMTG6CreateEv kind:function(arm,size=0x24) addr:0x020f1224
 _ZN19ActorProfileUnkRMTGC1Ev kind:function(arm,size=0x28) addr:0x020f1248
 _ZN12ActorUnkRMTGC1Ev kind:function(arm,size=0x2c) addr:0x020f1270
-_ZN12ActorUnkRMTG19func_ov031_020ef8a0Ev kind:function(arm,size=0xb8) addr:0x020f129c
-_ZN12ActorUnkRMTG19func_ov031_020ef958Ev kind:function(arm,size=0x38) addr:0x020f1354
-_ZN12ActorUnkRMTG19func_ov031_020ef990Ev kind:function(arm,size=0x20) addr:0x020f138c
+_ZN12ActorUnkRMTG8vfunc_18Ei kind:function(arm,size=0xb8) addr:0x020f129c
+_ZN12ActorUnkRMTG8vfunc_1CEv kind:function(arm,size=0x38) addr:0x020f1354
+_ZN12ActorUnkRMTG8vfunc_2CEi kind:function(arm,size=0x20) addr:0x020f138c
 _ZN12ActorUnkRMTGD1Ev kind:function(arm,size=0x20) addr:0x020f13ac
 _ZN12ActorUnkRMTGD0Ev kind:function(arm,size=0x28) addr:0x020f13cc
 _ZN19ActorProfileUnkRMTGD1Ev kind:function(arm,size=0x14) addr:0x020f13f4
@@ -2011,7 +2011,7 @@ data_ov031_02112810 kind:data(any) addr:0x02112810
 data_ov031_02112830 kind:data(any) addr:0x02112830
 data_ov031_02112834 kind:data(any) addr:0x02112834
 data_ov031_0211283c kind:data(any) addr:0x0211283c
-data_ov031_02112840 kind:data(any) addr:0x02112840
+data_ov031_02110ad0 kind:data(any) addr:0x02112840
 data_ov031_02112871 kind:data(any) addr:0x02112871
 data_ov031_02112878 kind:data(any) addr:0x02112878
 data_ov031_021128ac kind:data(any) addr:0x021128ac
@@ -2327,8 +2327,8 @@ data_ov031_02113da4 kind:data(any) addr:0x02115b44
 _ZTV13ActorHeart_C4 kind:data(any) addr:0x02115b74
 _ZTV17ActorProfileHeart kind:data(any) addr:0x02115b8c
 _ZTV10ActorHeart kind:data(any) addr:0x02115bb0
-_ZTV19data_ov031_02115c0c kind:data(any) addr:0x02115c0c
-_ZTV19data_ov031_02115c30 kind:data(any) addr:0x02115c30
+_ZTV19ActorProfileUnkRMTG kind:data(any) addr:0x02115c0c
+_ZTV12ActorUnkRMTG kind:data(any) addr:0x02115c30
 _ZTV19ActorProfileUnkSCCN kind:data(any) addr:0x02115c8c
 _ZTV12MapObject_10 kind:data(any) addr:0x02115cb0
 _ZTV12ActorUnkSCCN kind:data(any) addr:0x02115cd8

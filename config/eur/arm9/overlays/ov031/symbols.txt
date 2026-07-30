@@ -766,9 +766,9 @@ _ZN19ActorProfileUnkRMTG10GetProfileEv kind:function(arm,size=0xc) addr:0x020ef8
 _ZN19ActorProfileUnkRMTG6CreateEv kind:function(arm,size=0x24) addr:0x020ef828
 _ZN19ActorProfileUnkRMTGC1Ev kind:function(arm,size=0x28) addr:0x020ef84c
 _ZN12ActorUnkRMTGC1Ev kind:function(arm,size=0x2c) addr:0x020ef874
-_ZN12ActorUnkRMTG19func_ov031_020ef8a0Ev kind:function(arm,size=0xb8) addr:0x020ef8a0
-_ZN12ActorUnkRMTG19func_ov031_020ef958Ev kind:function(arm,size=0x38) addr:0x020ef958
-_ZN12ActorUnkRMTG19func_ov031_020ef990Ev kind:function(arm,size=0x20) addr:0x020ef990
+_ZN12ActorUnkRMTG8vfunc_18Ei kind:function(arm,size=0xb8) addr:0x020ef8a0
+_ZN12ActorUnkRMTG8vfunc_1CEv kind:function(arm,size=0x38) addr:0x020ef958
+_ZN12ActorUnkRMTG8vfunc_2CEi kind:function(arm,size=0x20) addr:0x020ef990
 _ZN12ActorUnkRMTGD1Ev kind:function(arm,size=0x20) addr:0x020ef9b0
 _ZN12ActorUnkRMTGD0Ev kind:function(arm,size=0x28) addr:0x020ef9d0
 _ZN19ActorProfileUnkRMTGD1Ev kind:function(arm,size=0x14) addr:0x020ef9f8
@@ -2331,8 +2331,8 @@ data_ov031_02113da4 kind:data(any) addr:0x02113da4
 _ZTV13ActorHeart_C4 kind:data(any) addr:0x02113dd4
 _ZTV17ActorProfileHeart kind:data(any) addr:0x02113dec
 _ZTV10ActorHeart kind:data(any) addr:0x02113e10
-_ZTV19data_ov031_02113e6c kind:data(any) addr:0x02113e6c
-_ZTV19data_ov031_02113e90 kind:data(any) addr:0x02113e90
+_ZTV19ActorProfileUnkRMTG kind:data(any) addr:0x02113e6c
+_ZTV12ActorUnkRMTG kind:data(any) addr:0x02113e90
 _ZTV19ActorProfileUnkSCCN kind:data(any) addr:0x02113eec
 _ZTV12MapObject_10 kind:data(any) addr:0x02113f10
 _ZTV12ActorUnkSCCN kind:data(any) addr:0x02113f38

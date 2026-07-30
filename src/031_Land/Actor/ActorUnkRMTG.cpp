@@ -1,7 +1,10 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkRMTG.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_027e09bc.hpp"
+#include "Unknown/UnkStruct_027e0cd8.hpp"
+
+extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
+extern "C" unk32 func_ov000_02077590(unk32);
 
 DECL_PROFILE(ActorProfileUnkRMTG);
 
@@ -12,11 +15,47 @@ Actor *ActorProfileUnkRMTG::Create() {
 ActorProfileUnkRMTG::ActorProfileUnkRMTG() :
     ActorProfile_Derived1(ActorId_RMTG) {}
 
-ActorUnkRMTG::ActorUnkRMTG() {}
+ActorUnkRMTG::ActorUnkRMTG() :
+    mUnk_94(NULL) {}
 
-void ActorUnkRMTG::func_ov031_020ef8a0(void) {}
-void ActorUnkRMTG::func_ov031_020ef958(void) {}
-void ActorUnkRMTG::func_ov031_020ef990(void) {}
+extern "C" const char data_ov031_02110ad0;
 
-ActorUnkRMTG::~ActorUnkRMTG() {}
-ActorProfileUnkRMTG::~ActorProfileUnkRMTG() {}
+bool ActorUnkRMTG::vfunc_18(unk32 param1) {
+    this->mPos.x -= FLOAT_TO_FX32(0.5f);
+    this->mPos.z -= FLOAT_TO_FX32(0.5f);
+
+    UnkStruct_027e0cd8_0C_Base *data = data_027e0cd8->mUnk_0C;
+
+    Vec2bCpp sp0;
+    func_01ffedac(&sp0, &this->mPos);
+
+    this->mPos.y   = data->func_01ffedf4(&sp0);
+    data->mUnk_12D = true;
+
+    G3d_Model *param;
+    u16 var_6C                    = this->mUnk_5C.mParams[0];
+    BMDSectionModel *sectionModel = GET_PROFILE(ActorProfileUnkRMTG)->mUnk_3C.mUnk_50;
+    if (sectionModel != NULL) {
+        G3d_Model **val = (G3d_Model **) G3d_0200f05c(&sectionModel->modelList, &data_ov031_02110ad0 + (var_6C << 4));
+        if (val != NULL) {
+            param = *val;
+        } else {
+            param = NULL;
+        }
+    } else {
+        param = NULL;
+    }
+
+    this->mUnk_94.vfunc_08(param);
+
+    return true;
+}
+
+void ActorUnkRMTG::vfunc_1C() {
+    UnkStruct_027e09bc_0C *data = data_027e09bc->mUnk_0C;
+    data->func_ov000_0207834c(&this->mPos, func_ov000_02077590(0x7), 0x0);
+}
+
+void ActorUnkRMTG::vfunc_2C(unk32 param1) {
+    this->mUnk_94.vfunc_18(&this->mPos);
+}

@@ -23,7 +23,7 @@ typedef struct {
 
 extern "C" void func_01ffce1c(unk16 *, unk16 *);
 extern "C" int func_01ffcea0(unk32, UnkStruct_ov031_020eeee8 *);
-extern "C" void func_01ffedac(u16 *, VecFx32 *);
+extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
 extern "C" void func_01fff17c(UnkStruct_ov031_020eeee8 *, UnkStruct_027e0ce0 *, unk32);
 extern "C" void func_02018114(unk16 *, unk16);
 extern "C" void func_02098388(void);
@@ -81,7 +81,7 @@ ActorHeart::ActorHeart() :
 
     this->mUnk_98.mUnk_04 = 0x13100;
     this->mUnk_40         = &this->mUnk_C8;
-    u16 sp0;
+    Vec2bCpp sp0;
     func_01ffedac(&sp0, &this->mPos);
 
     if (data_027e0cd8->mUnk_0C->func_ov000_02080180(&sp0) == 0x5) {
