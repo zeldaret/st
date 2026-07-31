@@ -14,7 +14,7 @@ src/031_Land/Actor/ActorUnkBOMB.cpp:
     .ctor       start:0x02114528 end:0x0211452c
     .bss        start:0x021181a4 end:0x021181f0
 
-src/031_Land/Actor/ActorUnkBLST.cpp:
+src/031_Land/Actor/ActorBlast.cpp:
     .text       start:0x020e4ea0 end:0x020e5690
     .init       start:0x02112db8 end:0x02112e08
     .ctor       start:0x0211452c end:0x02114530

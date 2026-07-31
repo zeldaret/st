@@ -1,4 +1,4 @@
-#include "Actor/ActorUnkBLST.hpp"
+#include "Actor/ActorBlast.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "System/SysNew.hpp"
@@ -19,27 +19,27 @@ extern "C" VecFx32 data_027e07d4;
 extern "C" void func_01ffe6c4(UnkStruct_ov031_020e5d18_00 *, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *,
                               UnkStruct_ov031_Items_00_Base *);
 
-DECL_PROFILE(ActorProfileUnkBLST);
+DECL_PROFILE(ActorProfileBlast);
 
-Actor *ActorProfileUnkBLST::Create() {
-    return new(HeapIndex_2) ActorUnkBLST();
+Actor *ActorProfileBlast::Create() {
+    return new(HeapIndex_2) ActorBlast();
 }
 
-ActorProfileUnkBLST::ActorProfileUnkBLST() :
-    ActorProfile(ActorId_BLST) {
+ActorProfileBlast::ActorProfileBlast() :
+    ActorProfile(ActorId_Blast) {
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_04.pos);
 }
 
-ActorUnkBLST::ActorUnkBLST() :
+// non-matching
+bool ActorBlast_E8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) {}
+
+ActorBlast::ActorBlast() :
     mUnk_94(FLOAT_TO_FX32(0.625f)),
     mUnk_98(0x0),
     mUnk_9A(0x18),
     mUnk_E8(this) {}
 
-// non-matching
-bool ActorUnkBLST_E8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) {}
-
-bool ActorUnkBLST::vfunc_18(unk32 param1) {
+bool ActorBlast::vfunc_18(unk32 param1) {
     this->mPos.y += FLOAT_TO_FX32(0.5f);
 
     this->mUnk_C8 = *this->mUnk_34;
@@ -90,7 +90,7 @@ bool ActorUnkBLST::vfunc_18(unk32 param1) {
 }
 
 // non-matching
-void ActorUnkBLST::vfunc_20() {
+void ActorBlast::vfunc_20() {
     fx32 f0       = this->mUnk_F0;
     fx32 newVal   = this->mUnk_94 + this->mUnk_F4;
     this->mUnk_94 = newVal;
@@ -129,7 +129,7 @@ void ActorUnkBLST::vfunc_20() {
     data_027e09c0->func_ov000_0207e458(0x2, 0x1A, &this->mUnk_C8.pos, 0x2, NULL, 0x0);
 }
 
-void ActorUnkBLST::vfunc_24() {
+void ActorBlast::vfunc_24() {
     fx32 f0     = this->mUnk_F0;
     fx32 newVal = this->mUnk_94 + this->mUnk_F4;
     if (newVal >= f0) {
@@ -142,11 +142,11 @@ void ActorUnkBLST::vfunc_24() {
     this->func_ov000_020984d0();
 }
 
-unk32 ActorUnkBLST::func_ov031_020e3b94() {
+unk32 ActorBlast::func_ov031_020e3b94() {
     return 0x800;
 }
 
-void ActorUnkBLST::func_ov031_020e3b9c(unk16 param1, unk16 param2) {
+void ActorBlast::func_ov031_020e3b9c(unk16 param1, unk16 param2) {
     ActorParams actorParams;
     ActorRef ref;
 
@@ -160,5 +160,5 @@ void ActorUnkBLST::func_ov031_020e3b9c(unk16 param1, unk16 param2) {
     actorParams.mParams[0] = param1;
     actorParams.mParams[1] = param2;
 
-    this->func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_BLST, &actorParams, 0x0);
+    this->func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_Blast, &actorParams, 0x0);
 }
