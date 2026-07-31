@@ -219,6 +219,7 @@ public:
     unk32 func_ov000_020984c8();
     void func_ov000_020984d0();
     void func_ov000_020984f0();
+    unk32 func_ov000_0209867c(unk32 param1);
     u32 func_ov000_02098800(bool param1);
     bool func_ov000_02098838();
     unk32 func_ov000_02098910(UnkStruct_ov031_Items_00 *param1, unk32 param2);

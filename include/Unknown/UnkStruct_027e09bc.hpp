@@ -33,6 +33,7 @@ public:
     bool func_ov000_02078764(VecFx32 *param1, void *param2, unk32 param3);
     void func_ov000_02078ba4();
     void func_ov000_02078cec();
+    void func_ov000_0207a1e0(unk32 param1);
 };
 
 class UnkStruct_027e09bc_24 : public UnkStruct_0204a060_Base {

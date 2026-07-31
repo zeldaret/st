@@ -14,6 +14,7 @@ ActorProfileUnkTLKT::ActorProfileUnkTLKT() :
 
 ActorUnkTLKT::ActorUnkTLKT() {}
 
+// non-matching
 ActorUnkTLKT::~ActorUnkTLKT() {
     if (this->mState == ActorUnkTLKTState_2) {
         this->func_ov031_020e4514();
@@ -63,6 +64,7 @@ void ActorUnkTLKT::vfunc_64() {
     }
 }
 
+// non-matching
 void ActorUnkTLKT::vfunc_68() {
     if (this->mState == ActorUnkTLKTState_2) {
         this->func_ov031_020e4514();
@@ -73,8 +75,10 @@ void ActorUnkTLKT::vfunc_68() {
     this->func_ov031_020e3e6c();
 }
 
+// non-matching
 void ActorUnkTLKT::vfunc_60(ActorState state) {}
 
+// non-matching
 void ActorUnkTLKT::func_ov031_020e4514() {
     u16 param = this->mUnk_5C.mParams[2];
     switch (param - (0xA * ((param >> 0x1F) + (param / 10)))) {

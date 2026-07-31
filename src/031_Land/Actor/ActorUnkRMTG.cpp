@@ -3,6 +3,8 @@
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 
+extern "C" const char data_ov031_02110ad0;
+
 extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
 extern "C" unk32 func_ov000_02077590(unk32);
 
@@ -18,8 +20,7 @@ ActorProfileUnkRMTG::ActorProfileUnkRMTG() :
 ActorUnkRMTG::ActorUnkRMTG() :
     mUnk_94(NULL) {}
 
-extern "C" const char data_ov031_02110ad0;
-
+// non-matching
 bool ActorUnkRMTG::vfunc_18(unk32 param1) {
     this->mPos.x -= FLOAT_TO_FX32(0.5f);
     this->mPos.z -= FLOAT_TO_FX32(0.5f);
