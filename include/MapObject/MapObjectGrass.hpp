@@ -5,15 +5,15 @@
 #include "global.h"
 #include "types.h"
 
-enum MapObjUnkGRSSState_ {
-    MapObjUnkGRSSState_0,
-    MapObjUnkGRSSState_1,
-    MapObjUnkGRSSState_2,
-    MapObjUnkGRSSState_3,
-    MapObjUnkGRSSState_MAX
+enum MapObjGrassState_ {
+    MapObjGrassState_0,
+    MapObjGrassState_1,
+    MapObjGrassState_2,
+    MapObjGrassState_3,
+    MapObjGrassState_MAX
 };
 
-class MapObjectUnkGRSS : public MapObject {
+class MapObjectGrass : public MapObject {
 public:
     /* 00 (base) */
     /* 40 */ VecFx32 mUnk_40[2];
@@ -24,7 +24,7 @@ public:
     /* 64 */ unk32 mUnk_64;
     /* 68 */
 
-    MapObjectUnkGRSS();
+    MapObjectGrass();
 
     /* 00 */ virtual bool vfunc_00() override;
     /* 08 */ virtual void vfunc_08() override;
@@ -41,14 +41,14 @@ public:
     void func_ov031_02101978(unk32 param1, VecFx32 *param2);
 };
 
-class MapObjectProfileUnkGRSS : public MapObjectProfile_Derived2 {
+class MapObjectProfileGrass : public MapObjectProfile_Derived2 {
 public:
     /* 00 (base) */
     /* D4 */ MapObject_10 mUnk_D4;
 
-    MapObjectProfileUnkGRSS();
+    MapObjectProfileGrass();
 
     /* 0C */ virtual MapObject *Create();
 
-    static MapObjectProfileUnkGRSS *GetProfile();
+    static MapObjectProfileGrass *GetProfile();
 };

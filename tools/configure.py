@@ -511,7 +511,7 @@ config.libs = [
             Object("031_Land/MapObject/MapObjectDoorTouch.cpp"),
             Object("031_Land/MapObject/MapObjectUnkEXIT.cpp"),
             Object("031_Land/MapObject/MapObjectUnkGATE.cpp"),
-            Object("031_Land/MapObject/MapObjectUnkGRSS.cpp"),
+            Object("031_Land/MapObject/MapObjectGrass.cpp"),
             Object("031_Land/MapObject/MapObjectUnkGSST.cpp"),
             Object("031_Land/MapObject/MapObjectUnkITFL.cpp"),
             Object("031_Land/MapObject/MapObjectUnkRLSG.cpp"),

@@ -261,7 +261,7 @@ src/031_Land/MapObject/MapObjectUnkSTIR.cpp:
     .ctor       start:0x021145bc end:0x021145c0
     .bss        start:0x02119514 end:0x02119608
 
-src/031_Land/MapObject/MapObjectUnkGRSS.cpp:
+src/031_Land/MapObject/MapObjectGrass.cpp:
     .text       start:0x02102d54 end:0x02103724
     .init       start:0x02113b84 end:0x02113c14
     .ctor       start:0x021145c0 end:0x021145c4
