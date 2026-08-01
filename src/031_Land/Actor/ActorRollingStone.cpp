@@ -56,7 +56,7 @@ Actor *ActorProfileRollingStone::Create() {
 }
 
 ActorProfileRollingStone::ActorProfileRollingStone() :
-    ActorProfile_Derived1(ActorId_RLST) {
+    ActorProfile_Derived1(ActorId_RollingStone) {
     this->mUnk_04.Init(FLOAT_TO_FX32(0.8f));
 }
 
@@ -67,7 +67,7 @@ bool ActorRollingStone_104::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk
 void ActorRollingStone_104::vfunc_10() {}
 
 void ActorRollingStone_D4::vfunc_10(Actor *param1) {
-    if (param1->GetActorId() != ActorId_RLST) {
+    if (param1->GetActorId() != ActorId_RollingStone) {
         return;
     }
     this->mUnk_2C->SetState(ActorRollingStoneState_6);
@@ -388,7 +388,7 @@ void ActorRollingStone::func_ov031_020f8f30() {
     sp14.mParams[0]    = 0x1;
 
     ActorRef ref;
-    this->func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_RLST, &sp14, 0x0);
+    this->func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_RollingStone, &sp14, 0x0);
     this->mUnk_150 = 0;
     this->mUnk_152 = this->mUnk_5C.mParams[1];
 }

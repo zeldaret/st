@@ -118,7 +118,7 @@ Actor *ActorProfileShotArrow::Create() {
 }
 
 ActorProfileShotArrow::ActorProfileShotArrow() :
-    ActorProfile(ActorId_AROW) {
+    ActorProfile(ActorId_ShotArrow) {
     this->mUnk_04.Init(FLOAT_TO_FX32(0.2f));
 }
 
@@ -1039,7 +1039,7 @@ void ActorShotArrow_194::vfunc_10(Actor *actor) {
         return;
     }
 
-    if (actor->GetActorId() == ActorId_AROW) {
+    if (actor->GetActorId() == ActorId_ShotArrow) {
         return;
     }
 
