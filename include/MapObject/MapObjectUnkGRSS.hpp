@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "MapObject/MapObject.hpp"
@@ -7,36 +5,48 @@
 #include "global.h"
 #include "types.h"
 
+enum MapObjUnkGRSSState_ {
+    MapObjUnkGRSSState_0,
+    MapObjUnkGRSSState_1,
+    MapObjUnkGRSSState_2,
+    MapObjUnkGRSSState_3,
+    MapObjUnkGRSSState_MAX
+};
+
 class MapObjectUnkGRSS : public MapObject {
 public:
     /* 00 (base) */
-    /* 40 */
+    /* 40 */ VecFx32 mUnk_40[2];
+    /* 58 */ u16 mUnk_58;
+    /* 5C */ fx32 mUnk_5C;
+    /* 60 */ unk16 mUnk_60;
+    /* 62 */ unk16 mUnk_62;
+    /* 64 */ unk32 mUnk_64;
+    /* 68 */
 
     MapObjectUnkGRSS();
 
-    /* 30 */ virtual ~MapObjectUnkGRSS() override;
+    /* 00 */ virtual bool vfunc_00() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 1C */ virtual bool vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) override;
+    /* 38 */ virtual bool vfunc_38(MapObjState state, unk32 param2);
+    /* 3C */ virtual void vfunc_3C(VecFx32 *param1);
 
-    void func_ov031_021010e0(void);
-    void func_ov031_02101170(void);
-    void func_ov031_0210148c(void);
-    void func_ov031_02101504(void);
-    void func_ov031_02101578(void);
-    void func_ov031_021016b4(void);
-    void func_ov031_0210173c(void);
-    void func_ov031_02101778(void);
-    void func_ov031_021017ec(void);
-    void func_ov031_021018a4(void);
-    void func_ov031_02101950(void);
-    void func_ov031_02101968(void);
-    void func_ov031_02101978(void);
+    bool func_ov031_021016b4();
+    bool func_ov031_02101778();
+    void func_ov031_021018a4(unk16 param1);
+    unk32 func_ov031_02101950();
+    void func_ov031_02101968(unk32 param1);
+    void func_ov031_02101978(unk32 param1, VecFx32 *param2);
 };
 
-class MapObjectProfileUnkGRSS : public MapObjectProfile {
+class MapObjectProfileUnkGRSS : public MapObjectProfile_Derived2 {
 public:
     /* 00 (base) */
+    /* D4 */ MapObject_10 mUnk_D4;
 
     MapObjectProfileUnkGRSS();
-    ~MapObjectProfileUnkGRSS();
 
     /* 0C */ virtual MapObject *Create();
 
