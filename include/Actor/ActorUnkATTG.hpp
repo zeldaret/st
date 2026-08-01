@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
@@ -7,38 +5,34 @@
 #include "global.h"
 #include "types.h"
 
-class ActorUnkATTG_C4 : public Actor_C4 {
-public:
-    ActorUnkATTG_C4(Actor *param1);
-
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual bool vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+enum ActorUnkATTGState_ {
+    ActorUnkATTGState_0 = 0,
+    ActorUnkATTGState_1 = 1,
+    ActorUnkATTGState_2 = 2,
+    ActorUnkATTGState_MAX
 };
 
 class ActorUnkATTG : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 94 */ unk32 mUnk_94;
+    /* 98 */
 
     ActorUnkATTG();
 
-    /* 4C */ virtual ~ActorUnkATTG() override;
-
-    void func_ov031_020f3dfc(void);
-    void func_ov031_020f3e50(void);
-    void func_ov031_020f3eac(void);
-    void func_ov031_020f3eec(void);
-    void func_ov031_020f4014(void);
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+    void func_ov031_020f3eec(ActorState state, unk32 param2);
+    bool func_ov031_020f4014();
 };
 
 class ActorProfileUnkATTG : public ActorProfile {
 public:
     /* 00 (base) */
+    /* 3A */
 
     ActorProfileUnkATTG();
-    ~ActorProfileUnkATTG();
 
     /* 0C */ virtual Actor *Create();
 

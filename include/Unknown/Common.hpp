@@ -216,7 +216,7 @@ public:
 struct UnkStruct_ov019_020d24c8_28_258_00 {
     /* 00 */ void *mUnk_00;
     /* 04 */ unk32 mUnk_04;
-    /* 08 */
+    /* 0C */
 
     UnkStruct_ov019_020d24c8_28_258_00() {}
 
@@ -902,10 +902,10 @@ struct UnkStackStruct1 {
     /* 1E */ unk16 mUnk_1E;
     /* 20 */ unk32 mUnk_20;
     /* 24 */ VecFx32 mUnk_24;
-    /* 30 */ unk16 mUnk_30;
-    /* 32 */ unk16 mUnk_32;
-    /* 34 */ unk16 mUnk_34;
-    /* 36 */ unk16 mUnk_36;
+    /* 30 */ u16 mUnk_30;
+    /* 32 */ u16 mUnk_32;
+    /* 34 */ u16 mUnk_34;
+    /* 36 */ u16 mUnk_36;
     /* 38 */ u16 mUnk_38;
     /* 3A */ unk8 mUnk_3A;
     /* 3B */ unk8 mUnk_3B;

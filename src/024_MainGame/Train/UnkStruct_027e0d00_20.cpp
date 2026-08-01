@@ -43,18 +43,18 @@ UnkStruct_027e0d00_20::UnkStruct_027e0d00_20(unk32 param1, unk32 param2) :
 void UnkStruct_027e0d00_20::func_ov024_020d4fa0(void *param1, unk32 param2) {
     u8 unknown[0x90];
     ModelRender_Derived2 local_120(G3d_GetModelPtr(this->mUnk_50), 0x0C, unknown);
-    void *iVar2;
-    void *iVar3;
-    s32 temp;
+    VecFx32 *iVar2;
+    VecFx32 *iVar3;
+    fx32 temp;
 
     iVar2         = local_120.func_ov000_0205a7a8(local_120.func_ov000_0205a778("rear_point"));
     iVar3         = local_120.func_ov000_0205a7a8(local_120.func_ov000_0205a778("front_point"));
-    temp          = (*(u32 *) ((u8 *) iVar3 + 8)) - (*(u32 *) ((u8 *) iVar2 + 8));
+    temp          = iVar3->z - iVar2->z;
     this->mUnk_B0 = temp;
 
     iVar2         = local_120.func_ov000_0205a7a8(local_120.func_ov000_0205a778("rear_point"));
     iVar3         = local_120.func_ov000_0205a7a8(local_120.func_ov000_0205a778("front_point"));
-    temp          = (*(u32 *) ((u8 *) iVar3 + 8)) + (*(u32 *) ((u8 *) iVar2 + 8));
+    temp          = iVar3->z + iVar2->z;
     this->mUnk_B4 = temp / 2;
 
     if (*(volatile unk32 *) &this->mUnk_94 != 0) {
