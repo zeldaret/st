@@ -39,12 +39,11 @@ extern "C" Actor *func_02016fbc(ActorId, VecFx32 *, unk32);
 extern "C" void func_ov000_020578a4(unk32);
 extern "C" void func_ov000_02057c98(ModelRender *, UnkSystem5 *);
 
-static char data_ov031_021135f0[0x4]                            = "\x00 ";
-static char data_ov031_021135f4[0x4]                            = "3\x03";
-static char data_ov031_021135f8[0x4]                            = "\x00\x10";
-static ActorUnkZLSL_AnimationTag data_ov031_021135fc            = {0, "wait"};
-static bool (ActorUnkZLSL::*data_ov031_0211361c)(Actor *param1) = ActorUnkZLSL::func_ov031_020ea0b4;
-static PTMF<ActorUnkZLSL> data_ov031_021137f8[0x11]             = {
+static char data_ov031_021135f0[0x4]                 = "\x00 ";
+static char data_ov031_021135f4[0x4]                 = "3\x03";
+static char data_ov031_021135f8[0x4]                 = "\x00\x10";
+static ActorUnkZLSL_AnimationTag data_ov031_021135fc = {0, "wait"};
+static PTMF<ActorUnkZLSL> data_ov031_021137f8[0x11]  = {
     ActorUnkZLSL::func_ov031_020eaa88, // ActorUnkZLSLState_0
     ActorUnkZLSL::func_ov031_020ea8c8, // ActorUnkZLSLState_1
     ActorUnkZLSL::func_ov031_020ea8c4, // ActorUnkZLSLState_2
@@ -109,10 +108,6 @@ static unk32 data_ov031_02113d08 = 0;
 // data_ov031_02113d3c
 static char data_ov031_02113d58[0x0B] = "Npc/ZLDA/";
 
-ActorUnkZLSL_27CC::~ActorUnkZLSL_27CC() {}
-ActorUnkZLSL_2700::~ActorUnkZLSL_2700() {}
-UnkStruct_ov031_0211372c::~UnkStruct_ov031_0211372c() {}
-
 // --- Actor ZSRS ---
 
 THUMB_BEGIN
@@ -157,11 +152,9 @@ ActorUnkZLSL::ActorUnkZLSL() :
     mUnk_1620(NULL),
     mUnk_276C(NULL) {}
 
-ActorUnkZLSL::~ActorUnkZLSL() {}
-
 void func_ov031_020ea100() {}
 
-bool ActorUnkZLSL::func_ov031_020ea0b4(Actor *param1) {
+bool UnkStruct_ov031_0211361c::func_ov031_020ea0b4(Actor *param1) {
     if (param1 != NULL && param1->GetActorId() == ActorId_RAT0 && param1->mState == ActorUnkRAT0State_0 &&
         param1->mUnk_5C.mParams[1] == 0x1) {
         return true;
@@ -1418,12 +1411,9 @@ unk32 ActorUnkZLSL::vfunc_80(unk32 param1, unk32 param2) {
 }
 
 bool ActorUnkZLSL::func_ov031_020ee724() {
-    struct {
-        bool (ActorUnkZLSL::*ptr)(Actor *);
-    } sp0;
-    sp0.ptr = data_ov031_0211361c;
+    UnkStruct_ov031_0211361c stack;
 
-    Actor **actor = gpActorManager->func_01fff350(&sp0, gpActorManager->mActorTable);
+    Actor **actor = gpActorManager->func_01fff350(&stack, gpActorManager->mActorTable);
     return *actor != NULL;
 }
 
@@ -1448,6 +1438,3 @@ void UnkStruct_ov031_0211372c::vfunc_38(unk32 param1, unk32 param2) {
     this->mUnk_04->func_ov000_020578a4(param1, param2);
     this->mUnk_1C->func_ov000_020578a4(param1, param2);
 }
-
-ActorProfileUnkZLSL::~ActorProfileUnkZLSL() {}
-ActorProfileUnkZSRS::~ActorProfileUnkZSRS() {}

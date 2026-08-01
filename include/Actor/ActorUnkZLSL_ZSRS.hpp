@@ -7,6 +7,12 @@
 #include "global.h"
 #include "types.h"
 
+class UnkStruct_ov031_0211361c {
+public:
+    // data_ov031_0211361c
+    virtual bool func_ov031_020ea0b4(Actor *param1);
+};
+
 // NPC Renderer ?
 class ModelRender_ov000_020b4d64 : public ModelRender {
 public:
@@ -17,8 +23,8 @@ public:
         ModelRender(pModel) {}
 
     // data_ov000_020b4d64
-    /* 0C */ virtual void vfunc_0C() override;                            // func_ov000_02057a88
-    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override; // func_ov000_0209a79c
+    /* 0C */ virtual void vfunc_0C() override;
+    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
 };
 
 class ModelRender_ov031_02113670 : public ModelRender_ov000_020b4d64 {
@@ -30,8 +36,7 @@ public:
         ModelRender_ov000_020b4d64(pModel) {}
 
     // data_ov031_02113670
-    /* 00 */ virtual ~ModelRender_ov031_02113670() override; // func_ov031_020ea500 (T) & _ZN19func_ov031_020ee79cD0Ev
-    /* 0C */ virtual void vfunc_0C() override;               // func_ov031_020ea0f8 (T)
+    /* 0C */ virtual void vfunc_0C() override;
 };
 
 class UnkStruct_ov000_020b31a8 {
@@ -40,22 +45,21 @@ public:
     /* 04 */
 
     // data_ov000_020b31a8
-    /* 00 */ virtual ~UnkStruct_ov000_020b31a8(); // func_ov000_02099aec (T) & func_ov000_02099af0 (T)
-    /* 08 */ virtual void vfunc_08();             // func_ov000_02099b00
-    /* 0C */ virtual void vfunc_0C();             // func_ov000_02099b38
-    /* 10 */ virtual UnkSystem5 *vfunc_10();      // func_ov000_0209a13c
-    /* 14 */ virtual void vfunc_14();             // func_ov000_0209a144
-    /* 18 */ virtual void vfunc_18();             // func_ov000_0209a0e4
-    /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3,
-                                   unk32 param4);               // func_ov000_02099cb0
-    /* 20 */ virtual void vfunc_20();                           // func_ov000_02099ba0
-    /* 24 */ virtual void vfunc_24();                           // func_ov000_0209a06c
-    /* 28 */ virtual void vfunc_28();                           // func_ov000_0209a0f4
-    /* 2C */ virtual void vfunc_2C();                           // func_ov000_0209a10c
-    /* 30 */ virtual s8 vfunc_30();                             // func_ov000_0209a180
-    /* 34 */ virtual void vfunc_34();                           // func_ov000_0209a124
-    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2); // func_ov000_0209a170
-    /* 3C */ virtual void vfunc_3C();                           // func_ov000_0209a14c
+    /* 00 */ virtual ~UnkStruct_ov000_020b31a8();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual UnkSystem5 *vfunc_10();
+    /* 14 */ virtual void vfunc_14();
+    /* 18 */ virtual void vfunc_18();
+    /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4);
+    /* 20 */ virtual void vfunc_20();
+    /* 24 */ virtual void vfunc_24();
+    /* 28 */ virtual void vfunc_28();
+    /* 2C */ virtual void vfunc_2C();
+    /* 30 */ virtual s8 vfunc_30();
+    /* 34 */ virtual void vfunc_34();
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2);
+    /* 3C */ virtual void vfunc_3C();
 };
 
 class ActorUnkZLSL_27CC : public UnkStruct_ov000_020b31a8 {
@@ -68,10 +72,9 @@ public:
     /* 19 */
 
     // data_ov031_0211369c
-    /* 00 */ virtual ~ActorUnkZLSL_27CC() override;                      // func_ov031_020ea518 (T) & func_ov031_020ee7d4
-    /* 30 */ virtual s8 vfunc_30() override;                             // func_ov031_020ee794
-    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override; // func_ov031_020ee784
-    /* 3C */ virtual void vfunc_3C() override;                           // func_ov031_020ee760
+    /* 30 */ virtual s8 vfunc_30() override;
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override;
+    /* 3C */ virtual void vfunc_3C() override;
 };
 
 class ActorUnkZLSL_2700 : public ActorUnkZLSL_27CC {
@@ -80,7 +83,6 @@ public:
     /* 04 */
 
     // data_ov031_021136e4
-    /* 00 */ virtual ~ActorUnkZLSL_2700() override; // func_ov031_020ea50c (T) & func_ov031_020ee7b8
 
     void func_ov000_02099ddc(ActorUnkZLSL_AnimationTag param1, unk32 param2);
 };
@@ -91,21 +93,20 @@ public:
     /* 04 */
 
     // data_ov000_020b31f0
-    /* 00 */ virtual ~UnkStruct_ov000_020b31f0() override; // func_ov000_0209a228 (T) & func_ov000_0209a234 (T)
-    /* 08 */ virtual void vfunc_08() override;             // func_ov000_0209a254
-    /* 0C */ virtual void vfunc_0C() override;             // func_ov000_0209a288
-    /* 10 */ virtual UnkSystem5 *vfunc_10() override;      // func_ov000_0209a320
-    /* 14 */ virtual void vfunc_14() override;             // func_ov000_0209a334
-    /* 1C */ virtual void vfunc_1C(char param1[], unk32 param2, unk32 param3,
-                                   unk32 param4) override;               // func_ov000_0209a35c
-    /* 20 */ virtual void vfunc_20() override;                           // func_ov000_0209a3e4
-    /* 28 */ virtual void vfunc_28() override;                           // func_ov000_0209a2f0
-    /* 2C */ virtual void vfunc_2C() override;                           // func_ov000_0209a308
-    /* 30 */ virtual s8 vfunc_30() override;                             // func_ov000_0209a348
-    /* 34 */ virtual void vfunc_34() override;                           // func_ov000_0209a6d4
-    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override; // func_ov000_0209a738
-    /* 3C */ virtual void vfunc_3C() override;                           // func_ov000_0209a714
-    /* 40 */ virtual void vfunc_40();                                    // func_ov000_0209a70c
+    /* 00 */ virtual ~UnkStruct_ov000_020b31f0() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C() override;
+    /* 10 */ virtual UnkSystem5 *vfunc_10() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 1C */ virtual void vfunc_1C(char param1[], unk32 param2, unk32 param3, unk32 param4) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 28 */ virtual void vfunc_28() override;
+    /* 2C */ virtual void vfunc_2C() override;
+    /* 30 */ virtual s8 vfunc_30() override;
+    /* 34 */ virtual void vfunc_34() override;
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override;
+    /* 3C */ virtual void vfunc_3C() override;
+    /* 40 */ virtual void vfunc_40();
 };
 
 class UnkStruct_ov031_0211372c : public UnkStruct_ov000_020b31f0 {
@@ -118,11 +119,10 @@ public:
     /* 20 */
 
     // data_ov031_0211372c
-    /* 00 */ virtual ~UnkStruct_ov031_0211372c() override;               // func_ov031_020ea4f4 (T) & func_ov031_020ee840
-    /* 18 */ virtual void vfunc_18() override;                           // func_ov031_020ee968
-    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override; // func_ov031_020ee814
-    /* 3C */ virtual void vfunc_3C() override;                           // func_ov031_020ee7f0
-    /* 40 */ virtual void vfunc_40() override;                           // func_ov031_020eeae4
+    /* 18 */ virtual void vfunc_18() override;
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override;
+    /* 3C */ virtual void vfunc_3C() override;
+    /* 40 */ virtual void vfunc_40() override;
 };
 
 class UnkStruct_ov031_02113d14 : public UnkStruct_ov031_0211372c {
@@ -131,7 +131,7 @@ public:
     /* 20 */
 
     // data_ov031_02113d14
-    /* 00 */ virtual ~UnkStruct_ov031_02113d14(); // func_ov031_020ee93c (T) & func_ov031_020ee948 (T)
+    /* 00 */ virtual ~UnkStruct_ov031_02113d14();
 };
 
 class ActorUnkZLSL;
@@ -250,26 +250,25 @@ public:
     ActorUnkZLSL();
 
     // data_ov031_02113880
-    /* 00 */ virtual void GetOffsetPos(VecFx32 *pPos) const override;     // func_ov031_020edfdc
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;                // func_ov031_020ea698
-    /* 20 */ virtual void vfunc_20() override;                            // func_ov031_020ea8cc
-    /* 2C */ virtual void vfunc_2C(unk32 param1) override;                // func_ov031_020ec1d4
-    /* 4C */ virtual ~ActorUnkZLSL() override;                            // func_ov031_020ea524 (T) & func_ov031_020ea5c8 (T)
-    /* 58 */ virtual void vfunc_58(ActorState state) override;            // func_ov031_020ea870
-    /* 68 */ virtual void vfunc_68() override;                            // func_ov031_020ec7e4
-    /* 6C */ virtual void vfunc_6C() override;                            // func_ov031_020ec764
-    /* 70 */ virtual void vfunc_70() override;                            // func_ov031_020ec7a4
-    /* 7C */ virtual unk32 vfunc_7C(unk32 param1) override;               // func_ov031_020ec2d0
-    /* 80 */ virtual unk32 vfunc_80(unk32 param1, unk32 param2) override; // func_ov031_020ee6d0
-    /* 88 */ virtual bool vfunc_88() override;                            // func_ov031_020ec860
-    /* 8C */ virtual bool vfunc_8C() override;                            // func_ov031_020ec8bc
-    /* 98 */ virtual void vfunc_98(u32 param1) override;                  // func_ov031_020ec970
-    /* A4 */ virtual void vfunc_A4() override;                            // func_ov031_020ee000
-    /* AC */ virtual void vfunc_AC() override;                            // func_ov031_020ea7a4
-    /* B0 */ virtual void vfunc_B0() override;                            // func_ov031_020ec5f0
-    /* B4 */ virtual void vfunc_B4() override;                            // func_ov031_020ee3e8
+    /* 00 */ virtual void GetOffsetPos(VecFx32 *pPos) const override;
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 4C */ virtual ~ActorUnkZLSL() override;
+    /* 58 */ virtual void vfunc_58(ActorState state) override;
+    /* 68 */ virtual void vfunc_68() override;
+    /* 6C */ virtual void vfunc_6C() override;
+    /* 70 */ virtual void vfunc_70() override;
+    /* 7C */ virtual unk32 vfunc_7C(unk32 param1) override;
+    /* 80 */ virtual unk32 vfunc_80(unk32 param1, unk32 param2) override;
+    /* 88 */ virtual bool vfunc_88() override;
+    /* 8C */ virtual bool vfunc_8C() override;
+    /* 98 */ virtual void vfunc_98(u32 param1) override;
+    /* A4 */ virtual void vfunc_A4() override;
+    /* AC */ virtual void vfunc_AC() override;
+    /* B0 */ virtual void vfunc_B0() override;
+    /* B4 */ virtual void vfunc_B4() override;
 
-    bool func_ov031_020ea0b4(Actor *param1);
     void func_ov031_020ea674();
     void func_ov031_020ea7a8();
     void func_ov031_020ecbe0();
@@ -342,7 +341,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkZLSL();
-    ~ActorProfileUnkZLSL();
 
     /* 0C */ virtual Actor *Create();
 
@@ -360,7 +358,6 @@ public:
     ActorUnkZSRS();
 
     // data_ov031_02113944
-    /* 4C */ virtual ~ActorUnkZSRS() override;
 };
 
 class ActorProfileUnkZSRS : public ActorProfile_Derived2 {
@@ -368,7 +365,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkZSRS();
-    ~ActorProfileUnkZSRS();
 
     /* 0C */ virtual Actor *Create();
 
