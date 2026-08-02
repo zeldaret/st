@@ -29,8 +29,8 @@ bool MapObjectGrass::vfunc_00() {}
 
 void MapObjectGrass::vfunc_08() {
     MapObjState state = this->mState;
-    if (state != 1) {
-        if ((state == 2) && (this->func_ov031_021016b4())) {
+    if (state != MapObjGrassState_1) {
+        if (state == MapObjGrassState_2 && this->func_ov031_021016b4()) {
             this->vfunc_38(MapObjGrassState_3, 0x0);
         }
     } else if (this->func_ov031_02101778()) {
@@ -44,7 +44,7 @@ void MapObjectGrass::vfunc_08() {
 // non-matching
 void MapObjectGrass::vfunc_14() {
     VecFx32 vec;
-    for (unk32 i = 0; i < 2; ++i) {
+    for (unk32 i = 0; i < ARRAY_LEN(this->mUnk_40); ++i) {
         VecFx32_Add(&this->mUnk_40[i], &this->mPos, &vec);
         vec.x += this->mUnk_5C;
     }
@@ -67,7 +67,7 @@ bool MapObjectGrass::vfunc_38(MapObjState state, unk32 param2) {
             this->mUnk_5C = FLOAT_TO_FX32(0.0f);
 
             VecFx32 vec;
-            for (unk32 i = 0; i < 2; ++i) {
+            for (unk32 i = 0; i < ARRAY_LEN(this->mUnk_40); ++i) {
                 VecFx32_Init(this->mUnk_40[i].x, this->mUnk_40[i].y + FLOAT_TO_FX32(0.35f), this->mUnk_40[i].z, &vec);
                 VecFx32_Add(&vec, &this->mPos, &vec);
                 this->vfunc_3C(&vec);
