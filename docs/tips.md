@@ -100,7 +100,7 @@ During development, you may want to run checks with re-compiling the whole proje
 
 ### Github CI/CD's rules
 
-For each supported version (as of now, EUR and JP), the CI/CD runs the following command: `ninja check_<ver> sha1_<ver> report_<ver>`. \
+For each supported version (as of now, EUR and JP), the CI/CD runs the following command: `ninja arm9_<ver> report_<ver> check_<ver>`. \
 You may run that command locally before pushing to your branch to see if CI/CD should pass or not. (Note that differences in the command result may still be observed because of non-committed changes or changes to the local configuration.)
 
 # Github
