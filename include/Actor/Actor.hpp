@@ -12,10 +12,6 @@
 #include "types.h"
 #include "versions.h"
 
-struct UnkAngleStruct {
-    s16 angle;
-};
-
 class ActorParams {
 public:
     /* 00 */ VecFx32 mInitialPos;
