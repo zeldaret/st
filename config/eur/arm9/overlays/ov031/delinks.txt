@@ -76,6 +76,7 @@ src/031_Land/Actor/ActorHeart.cpp:
     .bss        start:0x02116858 end:0x021168a4
 
 src/031_Land/Actor/ActorUnkRMTG.cpp:
+    complete
     .text       start:0x020ef81c end:0x020efa0c
     .init       start:0x02111408 end:0x02111458
     .ctor       start:0x021127c4 end:0x021127c8

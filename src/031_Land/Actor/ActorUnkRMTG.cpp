@@ -20,7 +20,6 @@ ActorProfileUnkRMTG::ActorProfileUnkRMTG() :
 ActorUnkRMTG::ActorUnkRMTG() :
     mUnk_94(NULL) {}
 
-// non-matching
 bool ActorUnkRMTG::vfunc_18(unk32 param1) {
     this->mPos.x -= FLOAT_TO_FX32(0.5f);
     this->mPos.z -= FLOAT_TO_FX32(0.5f);
@@ -33,21 +32,9 @@ bool ActorUnkRMTG::vfunc_18(unk32 param1) {
     this->mPos.y   = data->func_01ffedf4(&sp0);
     data->mUnk_12D = true;
 
-    G3d_Model *param;
-    u16 var_6C                    = this->mUnk_5C.mParams[0];
-    BMDSectionModel *sectionModel = GET_PROFILE(ActorProfileUnkRMTG)->mUnk_3C.mUnk_50;
-    if (sectionModel != NULL) {
-        G3d_Model **val = (G3d_Model **) G3d_0200f05c(&sectionModel->modelList, &data_ov031_02110ad0 + (var_6C << 4));
-        if (val != NULL) {
-            param = *val;
-        } else {
-            param = NULL;
-        }
-    } else {
-        param = NULL;
-    }
-
-    this->mUnk_94.vfunc_08(param);
+    u16 var_6C = this->mUnk_5C.mParams[0];
+    this->mUnk_94.vfunc_08(
+        GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMTG)->mUnk_3C, &data_ov031_02110ad0 + (var_6C << 4)));
 
     return true;
 }
