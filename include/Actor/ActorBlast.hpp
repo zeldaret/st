@@ -48,7 +48,7 @@ public:
         return true;
     }
 
-    unk32 func_ov031_020e3b94();
+    fx32 func_ov031_020e3b94();
     void func_ov031_020e3b9c(unk16 param1, unk16 param2);
 };
 

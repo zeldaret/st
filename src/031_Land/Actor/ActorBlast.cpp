@@ -142,8 +142,8 @@ void ActorBlast::vfunc_24() {
     this->func_ov000_020984d0();
 }
 
-unk32 ActorBlast::func_ov031_020e3b94() {
-    return 0x800;
+fx32 ActorBlast::func_ov031_020e3b94() {
+    return FLOAT_TO_FX32(0.5f);
 }
 
 void ActorBlast::func_ov031_020e3b9c(unk16 param1, unk16 param2) {
