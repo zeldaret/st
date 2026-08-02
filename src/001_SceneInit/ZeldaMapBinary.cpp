@@ -308,10 +308,10 @@ BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection,
                     local_24.y = 0x7FFFEFFF;
                     local_24.y = pDst->vfunc_28(&local_24, 0x01, 0x00);
 
-                    u8 bStack_40[2];
-                    bStack_40[0] = posX;
-                    bStack_40[1] = posY;
-                    unk32 value  = pDst->func_ov000_02080180(bStack_40);
+                    Vec2bCpp bStack_40;
+                    bStack_40.x = posX;
+                    bStack_40.y = posY;
+                    unk32 value = pDst->func_ov000_02080180(&bStack_40);
 
                     if (value == 0x14 || value == 0x47) {
                         local_24.y = 0;

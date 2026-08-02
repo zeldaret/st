@@ -205,17 +205,17 @@ unk32 MapObjectChestBase::vfunc_28() {
 }
 
 ItemId MapObjectChestBase::func_ov031_021037d0() {
-    switch (this->mUnk_16) {
-        case 0:
-        case 1:
-        case 4:
-        case 5:
-        case 6:
-        case 7:
-        case 8:
+    switch (this->mState) {
+        case MapObjChestBaseState_0:
+        case MapObjChestBaseState_1:
+        case MapObjChestBaseState_4:
+        case MapObjChestBaseState_5:
+        case MapObjChestBaseState_6:
+        case MapObjChestBaseState_7:
+        case MapObjChestBaseState_8:
             return ItemId_None;
-        case 2:
-        case 3:
+        case MapObjChestBaseState_2:
+        case MapObjChestBaseState_3:
         default:
             break;
     }
@@ -230,7 +230,7 @@ ItemId MapObjectChestBase::func_ov031_021037d0() {
 }
 
 bool MapObjectChestBase::func_ov031_02103864() {
-    return this->mUnk_16 == 8 ? true : false;
+    return this->mState == MapObjChestBaseState_8 ? true : false;
 }
 
 void MapObjectChestBase::func_ov031_02103878() {

@@ -8,6 +8,16 @@
 #include "types.h"
 #include "versions.h"
 
+enum MapObjDoorSwitchState_ {
+    MapObjDoorSwitchState_0 = 0,
+    MapObjDoorSwitchState_1 = 1,
+    MapObjDoorSwitchState_2 = 2,
+    MapObjDoorSwitchState_3 = 3,
+    MapObjDoorSwitchState_4 = 4,
+    MapObjDoorSwitchState_5 = 5,
+    MapObjDoorSwitchState_MAX,
+};
+
 class MapObjectDoorSwitch : public MapObjectDoorBase {
 public:
     /* 000 (base) */

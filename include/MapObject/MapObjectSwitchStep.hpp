@@ -24,6 +24,14 @@ public:
     void func_ov000_0209dde0(void);
 };
 
+enum MapObjSwitchStepState_ {
+    MapObjSwitchStepState_0 = 0,
+    MapObjSwitchStepState_1 = 1,
+    MapObjSwitchStepState_2 = 2,
+    MapObjSwitchStepState_3 = 3,
+    MapObjSwitchStepState_MAX
+};
+
 class MapObjectSwitchStep : public MapObject {
 public:
     /* 00 (base) */
@@ -49,7 +57,7 @@ public:
 
     void func_ov000_0209dda4(void);
 
-    void func_ov000_0209e11c(unk32 param1, unk32 param2);
+    void func_ov000_0209e11c(MapObjState state, unk32 param2);
     void func_ov000_0209e38c(void);
 };
 

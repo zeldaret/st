@@ -33,7 +33,7 @@ Actor *ActorProfileItemTornado::Create() {
 }
 
 ActorProfileItemTornado::ActorProfileItemTornado() :
-    ActorProfile(ActorId_ITTD) {
+    ActorProfile(ActorId_ItemTornado) {
     this->mUnk_04.Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.25f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.20f));
 }
 

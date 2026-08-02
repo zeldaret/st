@@ -1,7 +1,19 @@
 #pragma once
 #include "UnkStruct_027e0ce0.hpp"
 
-class UnkStruct_ov031_Items_00 : public UnkStruct_027e0ce0_38_Base {
+class Actor;
+
+class UnkStruct_ov031_Items_00_Base : public UnkStruct_027e0ce0_38_Base {
+public:
+    /* 00 (vtable) */
+    /* 04 */
+
+    UnkStruct_ov031_Items_00_Base() {}
+
+    /* 00 */ virtual ~UnkStruct_ov031_Items_00_Base();
+};
+
+class UnkStruct_ov031_Items_00 : public UnkStruct_ov031_Items_00_Base {
 public:
     /* 00 (vtable) */
     /* 04 */
@@ -9,15 +21,26 @@ public:
     UnkStruct_ov031_Items_00();
 
     // data_ov000_020b30d0
-    /* 00 */ virtual ~UnkStruct_ov031_Items_00();
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override; // func_ov000_020982d8
 };
 
-class UnkStruct_ov031_Items_01 {
+class UnkStruct_ov031_Items_01_Base {
 public:
     /* 00 (vtable) */
     /* 04 */ ActorRef mUnk_04;
     /* 08 */ unk16 mUnk_08;
+    /* 0C */
+
+    UnkStruct_ov031_Items_01_Base() :
+        mUnk_04(0x0),
+        mUnk_08(0x0) {}
+
+    /* 00 */ virtual ~UnkStruct_ov031_Items_01_Base();
+};
+
+class UnkStruct_ov031_Items_01 : public UnkStruct_ov031_Items_01_Base {
+public:
+    /* 00 (vtable) */
     /* 08 */ unk16 mUnk_0A;
     /* 0C */ Cylinder mUnk_0C;
     /* 1C */ unk32 mUnk_1C;
@@ -27,8 +50,6 @@ public:
     /* 2C */
 
     UnkStruct_ov031_Items_01() {
-        this->mUnk_04 = 0;
-        this->mUnk_08 = 0;
         this->mUnk_0C.Init(FLOAT_TO_FX32(0.0f));
         this->mUnk_1C = 0;
         this->mUnk_20 = 0;

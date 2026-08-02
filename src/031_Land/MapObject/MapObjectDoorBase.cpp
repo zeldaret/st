@@ -108,21 +108,21 @@ void MapObjectDoorBase::func_ov031_020fbf10(bool param1, bool param2) {
     SET_FLAG(this->mFlags, MapObjFlag_5);
 
     if (this->vfunc_64()) {
-        this->vfunc_5C(8, 1);
+        this->vfunc_5C(MapObjDoorBaseState_8, 1);
 
         if (param2) {
             this->func_ov031_020fcd40();
         }
     } else {
-        this->vfunc_5C(2, 1);
+        this->vfunc_5C(MapObjDoorBaseState_2, 1);
     }
 }
 
 void MapObjectDoorBase::vfunc_08() {
     this->vfunc_70();
 
-    switch (this->mUnk_16) {
-        case 0:
+    switch (this->mState) {
+        case MapObjDoorBaseState_0:
             if (this->mUnk_80 > 0) {
                 this->mUnk_80--;
             }
@@ -132,7 +132,7 @@ void MapObjectDoorBase::vfunc_08() {
             }
 
             if (this->mUnk_80 == 0) {
-                this->vfunc_5C(1, 0);
+                this->vfunc_5C(MapObjDoorBaseState_1, 0);
                 break;
             }
 
@@ -143,65 +143,65 @@ void MapObjectDoorBase::vfunc_08() {
             }
 
             if (!this->mUnk_86 && this->vfunc_68()) {
-                this->vfunc_5C(3, 0);
+                this->vfunc_5C(MapObjDoorBaseState_3, 0);
             }
 
             break;
-        case 1:
+        case MapObjDoorBaseState_1:
             this->mUnk_82++;
 
             if (this->mUnk_82 >= this->mUnk_7A + this->mUnk_7C && this->vfunc_88()) {
                 this->vfunc_58();
-                this->vfunc_5C(2, 0);
+                this->vfunc_5C(MapObjDoorBaseState_2, 0);
                 break;
             }
 
             if (!this->mUnk_86 && this->vfunc_68()) {
-                this->vfunc_5C(3, 0);
+                this->vfunc_5C(MapObjDoorBaseState_3, 0);
             }
 
             break;
-        case 2:
+        case MapObjDoorBaseState_2:
             if (this->vfunc_68()) {
-                this->vfunc_5C(3, 0);
+                this->vfunc_5C(MapObjDoorBaseState_3, 0);
             }
 
             break;
-        case 3:
+        case MapObjDoorBaseState_3:
             this->mUnk_84++;
 
             if (!this->mUnk_86 && this->vfunc_6C()) {
-                this->vfunc_5C(0, 0);
+                this->vfunc_5C(MapObjDoorBaseState_0, 0);
                 break;
             }
 
             this->mUnk_82++;
 
             if (this->mUnk_82 >= 0x1D) {
-                this->vfunc_5C(4, 0);
+                this->vfunc_5C(MapObjDoorBaseState_4, 0);
             }
 
             break;
-        case 4:
+        case MapObjDoorBaseState_4:
             this->mUnk_84++;
 
             if (!this->mUnk_86 && this->vfunc_6C()) {
-                this->vfunc_5C(0, 0);
+                this->vfunc_5C(MapObjDoorBaseState_0, 0);
                 break;
             }
 
             this->mUnk_82++;
 
             if (this->mUnk_82 >= 0x28) {
-                this->vfunc_5C(5, 0);
+                this->vfunc_5C(MapObjDoorBaseState_5, 0);
             }
 
             break;
-        case 5:
+        case MapObjDoorBaseState_5:
             this->mUnk_84++;
 
             if (!this->mUnk_86 && this->vfunc_6C()) {
-                this->vfunc_5C(0, 0);
+                this->vfunc_5C(MapObjDoorBaseState_0, 0);
                 break;
             }
 
@@ -228,36 +228,36 @@ void MapObjectDoorBase::vfunc_08() {
 
                 if (this->mUnk_82 >= 0x32) {
                     this->mUnk_82 = 0x32;
-                    this->vfunc_5C(6, 0);
+                    this->vfunc_5C(MapObjDoorBaseState_6, 0);
                 }
             }
 
             break;
-        case 6:
+        case MapObjDoorBaseState_6:
             this->mUnk_82++;
             this->mUnk_84++;
 
             if (this->mUnk_82 >= 0x32) {
                 this->mUnk_82 = 0x32;
-                this->vfunc_5C(7, 0);
+                this->vfunc_5C(MapObjDoorBaseState_7, 0);
             }
 
             break;
-        case 7:
+        case MapObjDoorBaseState_7:
             this->mUnk_82++;
             this->mUnk_84++;
 
             if (this->mUnk_82 >= 0x50) {
-                this->vfunc_5C(8, 0);
+                this->vfunc_5C(MapObjDoorBaseState_8, 0);
             }
 
             // fallthrough
-        case 8:
+        case MapObjDoorBaseState_8:
             if (!this->vfunc_6C()) {
                 break;
             }
 
-            this->vfunc_5C(0, 0);
+            this->vfunc_5C(MapObjDoorBaseState_0, 0);
             break;
         default:
             break;
@@ -271,31 +271,31 @@ void MapObjectDoorBase::vfunc_40() {}
 void MapObjectDoorBase::vfunc_0C() {
     if (this->mUnk_74 >= 0 && data_027e09b8->func_ov000_020732ec(this->mUnk_74)) {
         this->vfunc_08();
-    } else if (this->mUnk_16 == 2 || this->mUnk_16 == 8) {
+    } else if (this->mState == MapObjDoorBaseState_2 || this->mState == MapObjDoorBaseState_8) {
         this->vfunc_08();
     }
 }
 
 void MapObjectDoorBase::vfunc_60() {
-    switch (this->mUnk_16) {
-        case 0:
+    switch (this->mState) {
+        case MapObjDoorBaseState_0:
             if (!this->mUnk_86 && !GET_FLAG(this->mFlags, MapObjFlag_1) && this->mUnk_6C <= FLOAT_TO_FX32(0.5f)) {
                 this->func_ov031_020fcf0c(1);
             }
             this->vfunc_54();
             break;
-        case 2:
+        case MapObjDoorBaseState_2:
             if (this->mUnk_86 && !GET_FLAG(this->mFlags, MapObjFlag_1) && this->mUnk_6C <= FLOAT_TO_FX32(0.5f)) {
                 this->func_ov031_020fcf0c(1);
                 this->vfunc_58();
             }
             break;
-        case 5:
+        case MapObjDoorBaseState_5:
             if (GET_FLAG(this->mFlags, MapObjFlag_1) && this->mUnk_6C >= FLOAT_TO_FX32(0.5f)) {
                 this->func_ov031_020fcf0c(0);
             }
             break;
-        case 1:
+        case MapObjDoorBaseState_1:
             if (this->mUnk_86) {
                 this->func_ov031_020fcf0c(1);
                 this->vfunc_58();
@@ -319,13 +319,13 @@ struct UnkStackStruct {
     u16 mUnk_1E;
 };
 
-void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
+void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
     UnkStackStruct1 auStack_5c;
     UnkStackStruct1 auStack_9c;
-    this->mUnk_16 = param1;
+    this->mState = state;
 
-    switch (this->mUnk_16) {
-        case 0:
+    switch (this->mState) {
+        case MapObjDoorBaseState_0:
             if (this->mUnk_88) {
                 this->vfunc_74();
             }
@@ -395,7 +395,7 @@ void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
                 this->func_ov000_0209d614(0);
             }
             break;
-        case 1:
+        case MapObjDoorBaseState_1:
             if (this->mUnk_91) {
                 this->vfunc_48();
             }
@@ -403,11 +403,11 @@ void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
             this->mUnk_82 = 0;
             this->vfunc_7C();
             break;
-        case 2:
+        case MapObjDoorBaseState_2:
             this->mUnk_84 = 0x0D;
             this->func_ov031_020fcf0c(1);
             break;
-        case 3:
+        case MapObjDoorBaseState_3:
             this->vfunc_7C();
 
             this->mUnk_80 =
@@ -484,7 +484,7 @@ void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
             }
 
             break;
-        case 4:
+        case MapObjDoorBaseState_4:
             this->vfunc_7C();
 
             if (this->mUnk_8A && this->mUnk_86 && param2 == 0) {
@@ -505,17 +505,17 @@ void MapObjectDoorBase::vfunc_5C(unk32 param1, unk32 param2) {
                 }
             }
             break;
-        case 5:
+        case MapObjDoorBaseState_5:
             if (this->mUnk_88) {
                 this->vfunc_74();
             }
             break;
-        case 6:
+        case MapObjDoorBaseState_6:
             this->vfunc_7C();
             break;
-        case 7:
+        case MapObjDoorBaseState_7:
             break;
-        case 8:
+        case MapObjDoorBaseState_8:
             this->vfunc_7C();
 
             if (param2 == 0) {
@@ -621,30 +621,30 @@ void MapObjectDoorBase::func_ov031_020fcd40() {
 }
 
 void MapObjectDoorBase::vfunc_70() {
-    switch (this->mUnk_16) {
-        case 5:
+    switch (this->mState) {
+        case MapObjDoorBaseState_5:
             if (this->mUnk_80 > 0) {
                 this->vfunc_44();
             }
             break;
-        case 0:
+        case MapObjDoorBaseState_0:
             if (this->mUnk_80 > 0) {
                 this->vfunc_4C();
             }
             break;
-        case 1:
+        case MapObjDoorBaseState_1:
             break;
-        case 2:
+        case MapObjDoorBaseState_2:
             break;
-        case 3:
+        case MapObjDoorBaseState_3:
             break;
-        case 4:
+        case MapObjDoorBaseState_4:
             break;
-        case 6:
+        case MapObjDoorBaseState_6:
             break;
-        case 7:
+        case MapObjDoorBaseState_7:
             break;
-        case 8:
+        case MapObjDoorBaseState_8:
             break;
         default:
             this->vfunc_44();
@@ -709,7 +709,7 @@ void MapObjectDoorBase::vfunc2_08() {
     u16 *temp_r3;
     u16 *temp_r3_2;
 
-    if (this->mUnk_16 != 1 || !this->mUnk_8C || (u16) (this->mUnk_14 + 0x2000) / DEG_TO_ANG(90) != 2) {
+    if (this->mState != MapObjDoorBaseState_1 || !this->mUnk_8C || (u16) (this->mUnk_14 + 0x2000) / DEG_TO_ANG(90) != 2) {
         return;
     }
 
@@ -725,7 +725,7 @@ void MapObjectDoorBase::vfunc2_08() {
 
         // temp_r3     = sp - 4;
         // *temp_r3    = this->mUnk_4A;
-        data_027e0ce0->func_ov000_0208bbd4(this->mUnk_44, &this->mUnk_4C, this->mUnk_4A);
+        data_027e0ce0->func_ov000_0208bbd4(this->mUnk_04, &this->mUnk_4C, this->mUnk_4A);
         return;
     }
 
@@ -735,7 +735,7 @@ void MapObjectDoorBase::vfunc2_08() {
 
     // temp_r3_2   = sp - 4;
     // *temp_r3_2  = this->mUnk_4A;
-    data_027e0ce0->func_ov000_0208bbd4(this->mUnk_44, &this->mUnk_4C, this->mUnk_4A);
+    data_027e0ce0->func_ov000_0208bbd4(this->mUnk_04, &this->mUnk_4C, this->mUnk_4A);
 
     this->mUnk_5C.x = this->mPos.x + FLOAT_TO_FX32(1.0f);
     this->mUnk_5C.y = this->mPos.y;

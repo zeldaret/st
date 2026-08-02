@@ -169,7 +169,7 @@ void ActorItemBoomerang::vfunc_20() {
                     }
                 }
                 MapObjectId objectId = object->GetMapObjectId();
-                if (objectId != MapObjectId_SKDI && objectId != MapObjectId_SWHT && objectId != MapObjectId_TSUB) {
+                if (objectId != MapObjectId_SKDI && objectId != MapObjectId_SWHT && objectId != MapObjectId_Pot) {
                     this->func_ov031_020e49b0(0x8D70);
                 }
                 return;
@@ -405,7 +405,7 @@ bool ActorItemBoomerang_11C::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, un
                 case MapObjectId_SKDI:
                 case MapObjectId_SWHT:
                     data_027e0d2c->func_ov031_020d95c8(param2);
-                case MapObjectId_TSUB:
+                case MapObjectId_Pot:
                     mapObject->vfunc_1C(this->mUnk_08->mRef, 0xC, &this->mUnk_08->mVel);
                     return false;
             }

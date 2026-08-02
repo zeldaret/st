@@ -9,7 +9,7 @@
 #include "Unknown/UnkStruct_027e0d34.hpp"
 #include "versions.h"
 
-extern "C" void func_01ffedac(u16 *, VecFx32 *);
+extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
 extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0C_Base *, VecFx32 *);
 extern "C" void func_ov000_0205c1f0(unk32 *, u16);
 extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
@@ -165,7 +165,7 @@ ActorItemDrop::ActorItemDrop() :
     this->mUnk_B4.mUnk_04 = 0x13100;
     this->mUnk_40         = &this->mUnk_E4;
 
-    u16 sp0;
+    Vec2bCpp sp0;
     func_01ffedac(&sp0, &this->mPos);
 
     if (data_027e0cd8->mUnk_0C->func_ov000_02080180(&sp0) == 0x5) {

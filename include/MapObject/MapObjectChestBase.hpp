@@ -27,6 +27,19 @@ public:
     void func_ov031_0210306c(void);
 };
 
+enum MapObjectChestBaseState {
+    MapObjChestBaseState_0 = 0,
+    MapObjChestBaseState_1 = 1,
+    MapObjChestBaseState_2 = 2,
+    MapObjChestBaseState_3 = 3,
+    MapObjChestBaseState_4 = 4,
+    MapObjChestBaseState_5 = 5,
+    MapObjChestBaseState_6 = 6,
+    MapObjChestBaseState_7 = 7,
+    MapObjChestBaseState_8 = 8,
+    MapObjChestBaseState_MAX
+};
+
 class MapObjectChestBase : public MapObject {
 public:
     /* 000 (base) */

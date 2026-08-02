@@ -20,6 +20,7 @@ public:
     static void Destroy();
 
     // overlay 31
+    bool func_ov031_020d9758();
     bool func_ov031_020d97e4();
     bool func_ov031_020d97f4();
     void func_ov031_020d9844();

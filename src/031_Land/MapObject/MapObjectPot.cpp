@@ -21,7 +21,7 @@ MapObject *MapObjectProfilePot::Create() {
 }
 
 MapObjectProfilePot::MapObjectProfilePot() :
-    MapObjectProfilePot_Base(MapObjectId_TSUB, MapObjectId_TSUB) {
+    MapObjectProfilePot_Base(MapObjectId_Pot, MapObjectId_Pot) {
     this->mUnk_0E           = 0x0;
     this->mUnk_D4.mUnk_08   = 0x7007;
     this->mUnk_D4.mUnk_0C.x = FLOAT_TO_FX32(0.0f);
