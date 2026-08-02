@@ -40,6 +40,9 @@ There are two macros `SIN(n)` and `COS(n)` that compute the expected trigonometr
 
 [^sincos]: You can usually spot these operations by seing a lookup to the table in ghidra.
 
+`Actor.mAngle` sometime is unexpectedly saved onto the stack when used in function calls. It's default type is `fx16`, but this type usually doesn't lead to the stack save. The member's type is actually an union, also including `mAngleStruct` of type `UnkAngleStruct`, using this type usually solves the stack save pattern.
+
+
 ## Random
 
 Random operations are handled by the `gRandom` class. The most common operation is `gRandom.Next32(u32 factor)`, with `factor=0` being a very common value. \
