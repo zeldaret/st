@@ -21,4 +21,4 @@ See [INSTALL.md](INSTALL.md) for instructions on how to install the project.
 A work in progress, but [CONTRIBUTING.md](CONTRIBUTING.md) has guidelines for how to contribute to the project. Make sure to follow instructions on [installation](#how-to-install) first.
 
 ## Documentation
-See [/docs](/docs) for documentation about the game.
+See [/docs](/docs) for documentation about the game and other useful information about the project.

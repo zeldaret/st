@@ -36,7 +36,7 @@ See [/docs/decompiling.md](/docs/decompiling.md).
 This project has a `.clang-format` file and all C/C++ files in this project should follow it. We recommend using an editor
 compatible with `clang-format` to format the code as you save.
 
-As a rule of thumb, try to mimick the style that can be observed in already decompiled files. Please write hexadecimal numbers in upper case (`0x9ABCDEF` instead of `0x9abcdef`).
+As a rule of thumb, try to mimick the style that can be observed in already decompiled files. Please write hexadecimal numbers in upper case (`0x9ABCDEF` instead of `0x9abcdef`). Lowercase is used for global names (functions, data, etc), class members use uppercase too (e.g., `mUnk_04` for a member placed at position `0x4`).
 
 ### Naming new things
 
@@ -45,9 +45,11 @@ You may have to create new classes, structs, member attributes or functions, etc
 Once you find out what something does, it helps to give it a meaningfull name (eg. `ModelRender` class, `Actor::isAlive()` function or `Actor.mPrevPos` member attribute).
 
 If you don't know yet what a piece of code does, try to follow this rough format: `{type}_ov{num}_{address}`.  
-- `type` is the kind of code you're naming, `UnkStruct` for a struct, `mUnk` for a member attribute, `Unk{O}System{X}` for a class or group of functions. In the last case, `X` would then be an arbitrary, unique identifier. Likely a number that would increase for every new `System` to name. `O` is optional and aimed to give more information about the context in which the system is used (eg. `File` or `Actor`).
+- `type` is the kind of code you're naming, `UnkStruct` for a struct, `mUnk` for a member attribute, `Unk{D}System{X}` for a class or group of functions. In the last case, `X` would then be an arbitrary, unique identifier. Likely a number that would increase for every new `System` to name. `D` is optional and aimed to give more information about the context in which the system is used (eg. `File` or `Actor`).
 - `num` is the id of the overlay the code is part of.
 - `address` is the address of the data you're naming. This may not always be applicable, in which case you can ignore it (and remove the trailing `_` of the format given above).
+
+You can also name thing based on where they are used. Say that some class `ActorP` has a member `mUnk_{X}` that needs it class, you can call the class `UnkStruct_ActorP_{X}`. Same goes for functions (but try to rather name things with their vtable address when applicable, so that they are easier to find and merge later on).
 
 ### Creating a class
 If you are to create a new class, try to follow this structure:
@@ -58,11 +60,11 @@ public:
     /* 04 */
 
     Foo();
-    ~Foo();
 
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual void vfunc_04();
-    /* 08 */
+    /* 08 */ virtual ~Foo();
+    /* 0C */
 
     // itcm
     bool func_01fff1e0();
@@ -87,8 +89,8 @@ public:
 
 In order, the parts are:
 - Member attributes.
-- Constructor (ctor) and destructor (dtor).
-- Virtual functions.
+- Constructor (ctor).
+- Virtual functions (the placement of the destructor (dtor), if there is any, can vary).
 - Other methods, grouped by overlay with a comment indicating which one.
 
 Using `private` may sometime be required to enable some inlining, so feel free to when use it you feel like you should.
