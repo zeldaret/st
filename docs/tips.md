@@ -8,6 +8,8 @@ Some miscellaneous information are also reported here, for example about the bui
   - [Fx32](#fx32)
   - [Angles](#Angles)
   - [Random operations](#random)
+- [Symbols](#symbols)
+  - [Updating a vtable symbol](#updating-a-vtable-symbol)
 - [Ghidra](#ghidra)
   - [Finding a function in Ghidra](#finding-a-function-in-ghidra)
 - [Ninja](#ninja)
@@ -47,6 +49,30 @@ There are two macros `SIN(n)` and `COS(n)` that compute the expected trigonometr
 
 Random operations are handled by the `gRandom` class. The most common operation is `gRandom.Next32(u32 factor)`, with `factor=0` being a very common value. \
 Such calls can be tricky to find because they are usually inlined, but if you see lots of computations involving `gRandom` and it's members, chances are that it's a `Next32` computation (the argument may vary though, but starting by setting `0` may help to spot the actual `factor` used).
+
+# Symbols
+
+An introduction about symbols is already given in [decompiling.md](decompiling.md#about-symbols), more specific information are available here.
+
+## Updating a vtable symbol
+
+When creating a symbol for a class vtable, you may encounter the following situation:
+
+![Vtable symbol mismatch](images/symbol_vtable_rename.png)
+
+We can notice that a `+0x8` is missing on the left. A realignment (and possibly a rename) of the symbol is needed to fully match this pattern. This can be done using [`tools/vtable_sym.py`](../tools/vtable_sym.py) (run with `-h` to get a detailed explanation of the usage). \
+It is used to rename and place a vtable symbol, simply call `tools/vtable_sym.py old_name new_name` with the mangled namesto do both these things. In the example, the call would be `tools/vtable_sym.py data_ov063_02163174 _ZTV19ActorProfileUnkCASE`. \
+The tool will explicitly give all changes applied, which should include the name change and multiple `add: 0x{X}` (`X` can vary, in the case above it's `8`). Make sure to check them as sometime address matches may not target the same symbol accross overlays.
+
+Once the tool has been applied, update your symbols and you should see that the vtable now matches:
+
+![Vtable symbom match](images/symbol_vtable_rename_completed.png)
+
+> [!NOTE]
+> By default, the tool works for the EUR version. You can apply the same changes to the JP versions by adding the arguments `[-v | --version] jp` when running the tool.
+
+> [!IMPORTANT]
+> Be mindful, [`tools/vtable_sym.py`](../tools/vtable_sym.py) should ONLY be used when a realignment is needed. In other cases (renames), simply edit the `symbols.txt` file manually (see [decompiling.md](decompiling.md#about-symbols)).
 
 # Ghidra
 
