@@ -13,27 +13,28 @@ Contents:
 1. Use one of these platforms:
     - Windows (recommended)
     - Linux
-2. Install the following:
+1. Install the following:
     - Python 3.11+ and pip
     - GCC 9+
     - Ninja
-3. Install the Python dependencies:
-```shell
-python -m pip install -r tools/requirements.txt
-```
-4. Install pre-commit hooks:
-```shell
-pre-commit install
-```
-5. Run the Ninja configure script:
-```shell
-python tools/configure.py
-```
-By default this will configure for any version that has a baserom in the `extract` folder (see below), to configure for one specific version:
-```shell
-python tools/configure.py [--version | -v] <eur|jp>
-```
-6. Put one or more base ROMs in the [`/extract/`](/extract/README.md) directory of this repository.
+1. Clone the Github repository on your machine and go to the root of the project.
+1. Install the Python dependencies:
+    ```shell
+    python -m pip install -r tools/requirements.txt
+    ```
+1. Install pre-commit hooks:
+    ```shell
+    pre-commit install
+    ```
+1. Run the Ninja configure script:
+    ```shell
+    python tools/configure.py
+    ```
+    By default this will configure for any version that has a baserom in the `extract` folder (see below), to configure for one specific version:
+    ```shell
+    python tools/configure.py [--version | -v] <eur|jp>
+    ```
+1. Put one or more base ROMs in the [`/extract/`](/extract/README.md) directory of this repository. See the [README.md](/extract/README.md) of that directory for file naming instructions.
 
 Now you can run `ninja` to build a ROM for the chosen version.
 
