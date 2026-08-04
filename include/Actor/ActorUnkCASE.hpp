@@ -5,23 +5,76 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "Actor/ActorRef.hpp"
+#include "Actor/ActorShotArrow.hpp"
+#include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
 #include "types.h"
 
-class ActorUnkCASE_C4 : public Actor_C4 {
+class UnkStruct_ov000_020b19f0 : public ModelRender {
 public:
-    ActorUnkCASE_C4(Actor *param1);
+    UnkStruct_ov000_020b19f0(G3d_Model *pModel);
+};
+
+class UnkStruct_ov000_020b3268 : public UnkStruct_ov000_020b19f0 {
+public:
+    UnkStruct_ov000_020b3268(G3d_Model *pModel);
+};
+
+class UnkStruct_ov063_021631a0 : public UnkStruct_ov000_020b3268 {
+public:
+    /* 00 (base) */
+    /* 60 */ STRUCT_PAD(0x60, 0x6C);
+    /* 6C */ unk32 mUnk_6C;
+    /* 70 */
+
+    UnkStruct_ov063_021631a0(G3d_Model *pModel);
+
+    /* 00 */ virtual ~UnkStruct_ov063_021631a0();
+};
+
+class ActorUnkCASE_150 : public Actor_C4 {
+public:
+    /* 00 (base) */
+    /* 24 */
+
+    ActorUnkCASE_150(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual bool vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkCASE : public Actor {
+class ActorUnkCASE_174 : public UnkStruct_ov031_Items_01 {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 2C */ Actor *mUnk_2C;
+    /* 30 */
+
+    ActorUnkCASE_174(Actor *param1);
+
+    /* 00 */ virtual ~ActorUnkCASE_174() override;
+    /* 10 */ virtual void vfunc_10(Actor *actor) override;
+};
+
+class ActorUnkCASE : public Actor_Derived2 {
+public:
+    /* 000 (base) */
+    /* 0AE */ STRUCT_PAD(0xAE, 0xB0);
+    /* 0B0 */ UnkStruct_ov063_021631a0 mUnk_B0;
+    /* 120 */ unk32 mUnk_120;
+    /* 124 */ ActorShotArrow_140 mUnk_124;
+    /* 14C */ unk32 mUnk_14C;
+    /* 150 */ ActorUnkCASE_150 mUnk_150;
+    /* 174 */ ActorUnkCASE_174 mUnk_174;
+    /* 1A4 */ STRUCT_PAD(0x1A4, 0x1C8);
+    /* 1C8 */ unk32 mUnk_1C8;
+    /* 1CC */ unk32 mUnk_1CC;
+    /* 1D0 */ unk32 mUnk_1D0;
+    /* 1D4 */ unk32 mUnk_1D4;
+    /* 1D8 */ unk32 mUnk_1D8;
+    /* 1DC */ unk32 mUnk_1DC;
+    /* 1E0 */ unk32 mUnk_1E0;
+    /* 1E4 */ unk32 mUnk_1E4;
 
     ActorUnkCASE();
 
