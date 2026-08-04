@@ -8,6 +8,8 @@ stuck or need assistance.
 - [About symbols](#about-symbols)
 - [The Ghidra project](#the-ghidra-project)
 
+[tips.md](tips.md) has extra information that is not required to get started, but may help you get familiar with the project's code. Check it out when needed!
+
 ## Pick a source file
 For actors and map objects, a reservation sheet exists for a list of delinked source files that are ready to be decompiled. This list grows as more source files are delinked from the rest of the base ROM. You can request access to the sheet in the ZeldaRET discord [channels for ST](https://discord.com/channels/688807550715560050/1453177153502969977) (you can join the server with [this invite link](https://discord.gg/6tjntnU8hC)).
 

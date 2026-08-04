@@ -6,6 +6,11 @@
   - [Creating a class](#creating-a-class)
 <!-- - [Creating new `.c`/`.cpp` files](#creating-new-ccpp-files) -->
 
+## Decompiling
+[/docs/decompiling.md](/docs/decompiling.md) has most information as to how to approach decompilation and how to get started.
+
+Reading the rest of this file gives information on the structure of the project and coding style, it is highly recommended to read it.
+
 ## Project structure
 - `build/`: Build output
     - `eur|jp/`: Target version
@@ -27,10 +32,8 @@
     - `mangle.py`: Shows mangled symbol names in a given C/C++ file
     - `requirements.txt`: Python libraries
     - `setup.py`: Sets up the project
+    - `vtable_sym.py`: Renames and relocates vtable symbols
 - `*.sha1`: SHA-1 digests of different versions of the game
-
-## Decompiling
-See [/docs/decompiling.md](/docs/decompiling.md).
 
 ## Code style
 This project has a `.clang-format` file and all C/C++ files in this project should follow it. We recommend using an editor
