@@ -212,7 +212,7 @@ unk32 UnkStruct_ov063_02162e88::vfunc_04(ActorRef param1, unk32 param2, unk32 pa
 
 ActorUnkCANS::ActorUnkCANS() :
     mUnk_0B0(G3d_GetModelPtr(((MapObjectProfile_Derived2_20 *) GET_PROFILE(ActorProfileUnkCANS)->vfunc_04())->mUnk_50)),
-    mUnk_128(&mUnk_B0, GET_PROFILE(ActorProfileUnkCANS)->vfunc_04()),
+    mUnk_128(&mUnk_0B0, GET_PROFILE(ActorProfileUnkCANS)->vfunc_04()),
     mUnk_1F4(),
     mUnk_200(this),
     mUnk_224(),

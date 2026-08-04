@@ -46,7 +46,7 @@ ActorUnkCASE_174::~ActorUnkCASE_174() {}
 void ActorUnkCASE_174::vfunc_10(Actor *actor) {}
 
 ActorUnkCASE::ActorUnkCASE() :
-    mUnk_B0(G3d_GetModelPtr(((MapObjectProfile_Derived2_20 *) GET_PROFILE(ActorProfileUnkCASE)->vfunc_04())->mUnk_50)),
+    mUnk_0B0(G3d_GetModelPtr(((MapObjectProfile_Derived2_20 *) GET_PROFILE(ActorProfileUnkCASE)->vfunc_04())->mUnk_50)),
     mUnk_120(0),
     mUnk_124(this),
     mUnk_14C(0),
