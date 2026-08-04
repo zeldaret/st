@@ -25,13 +25,16 @@ Remember to make a pull request of any progress you made on the source file, whe
 We use the object diffing tool [`objdiff`](https://github.com/encounter/objdiff) to track differences between our decompiled C++ code and the base ROM's code. [`ghidra`](https://github.com/NationalSecurityAgency/ghidra) is a popular software for decompiling and is the one used in this project. You can use any tool you're familiar with, but these are the ones used by other members and the ones we'll be able to provide help with.
 
 1. Download the latest releases: [`objdiff`](https://github.com/encounter/objdiff/releases/latest), [`ghidra`](https://github.com/NationalSecurityAgency/ghidra/releases/latest) (only `objdiff` is needed in this section).
-1. Run `tools/configure.py [--version|-v <eur|jp>]` and `ninja` to generate `objdiff.json` in the repository root (don't forget to follow the instructions in [INSTALL.md](../INSTALL.md) first). Note: if `--version` isn't passed the project will be configured to use all supported versions (meaning all versions will be showed on objdiff.
+1. Run `tools/configure.py [--version|-v <eur|jp>]` and `ninja` to generate `objdiff.json` in the repository root (don't forget to follow the instructions in [INSTALL.md](../INSTALL.md) first). Note: if `--version` isn't passed the project will be configured to use all supported versions (meaning all versions will be showed on objdiff).
 1. Open `objdiff`. There, set the project directory to the repository root (it should load `objdiff.json` itself, if present in the directory, it should have been generated at the previous step).
-   - [WSL only] If you're using WSL (which is possible to do, although a few things may not work perfectly), navigate to the project directory with window's directory picker tool and select it. Do not set the path manually unless you know what you're doing, `objdiff` may use different path format over time.
+   - [WSL only] If you're using WSL (which is possible to do, although a few things may not work perfectly), navigate to the project directory with window's directory picker tool and select it. Do not type the path manually unless you know what you're doing, `objdiff` may use different path format over time.
 1. Select your source file in the left sidebar:  
+An example can be `src/000_Second/Actor/Actor`[^objdiff_src_path]  
 ![List of objects in objdiff](images/objdiff_objects.png)
 1. See the list of functions and data to decompile:  
 ![List of symbols in objdiff](images/objdiff_symbols.png)
+
+[^objdiff_src_path]: This path was valid when this doc was written, the project structure may have changed since.
 
 The following sections explain how to decompile the different parts you see in `objdiff`.
 
@@ -46,7 +49,7 @@ with a small function if you're unfamiliar with decompilation. Here's an example
 
 ![Function in objdiff](images/objdiff_function.png)
 
-As a starting point, we look at the decompiler output in `ghidra` (search for the function name there first, if you don't find it [see common tips](tips.md)). You can request access to our shared `ghidra` project [in this section](#the-ghidra-project), it will provide you with prepared files for decompilation and avoid having to setup ghidra yourself. \
+As a starting point, we look at the decompiler output in `ghidra` (search for the function name there first, if you don't find it [see common tips](tips.md#finding-a-function-in-ghidra)). You can request access to our shared `ghidra` project [in this section](#the-ghidra-project), it will provide you with prepared files for decompilation and avoid having to setup ghidra yourself. \
 We get this code from ghidra (in the rightmost window):
 
 ![Decompiler in Ghidra](images/ghidra_decomp.png)
@@ -142,7 +145,7 @@ After you updated the symbols, you can run `ninja objdiff` to re-generate `objdi
 
 ### Already existing symbols
 
-In some other cases, the symbol shown in `objdiff` can have more information that in your compiled code:
+In some other cases, the symbol shown in `objdiff` can have more information than your compiled code:
 
 ![When a symbol already exists](images/symbol_exists.png)
 
