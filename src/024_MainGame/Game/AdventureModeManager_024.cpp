@@ -27,8 +27,8 @@
 #include "Unknown/UnkStruct_ov031_02118fa4.hpp"
 #include "versions.h"
 
-#include <nitro/dc.h>
 #include <nitro/g2.h>
+#include <nitro/os.h>
 
 extern "C" {
 void func_02019b3c();

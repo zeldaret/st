@@ -2,7 +2,7 @@
 #include "Unknown/UnkStruct_027e0d08.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 
-#include <nitro/dc.h>
+#include <nitro/os.h>
 #include <nitro/snd.h>
 
 extern "C" BOOL func_0200169c(void *, int, int, int, int, void *, int);
@@ -193,8 +193,8 @@ void UnkStruct_027e0d08::func_ov024_020d5fe4(s16 *param1, s16 *param2, u32 param
         this->mUnk_14 -= 0x1000;
     }
 
-    DC_func_0004(param1, param3);
-    DC_func_0004(param2, param3);
+    DC_FlushRange(param1, param3);
+    DC_FlushRange(param2, param3);
 }
 
 DECL_INSTANCE(UnkStruct_027e0d08, data_027e0d08);

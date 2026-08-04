@@ -7,8 +7,8 @@
 #include "Unknown/UnkStruct_ov017_020c3f70.hpp"
 #include <nitro/mi.h>
 
-#include <nitro/dc.h>
 #include <nitro/gx.h>
+#include <nitro/os.h>
 
 extern "C" {
 void func_ov000_0205a950(u8 bgType, bool isTopScreen, bool);
@@ -397,7 +397,7 @@ bool AdventureModeManager_1B8_Base::func_ov024_020d0df8(unk32 param1, unk32 para
 }
 
 void AdventureModeManager_1B8_Base::func_ov024_020d0e64(void *ptr, u32 size) {
-    DC_func_0004(ptr, size * 2);
+    DC_FlushRange(ptr, size * 2);
     GXS_BeginLoadBGExtPltt();
     GXS_LoadBGExtPltt(ptr, 0x4000, size * 2);
     GXS_EndLoadBGExtPltt();

@@ -1,7 +1,7 @@
 #ifndef _NITRO_CONTEXT_H
 #define _NITRO_CONTEXT_H
 
-#include <types.h>
+#include "nitro/types.h"
 
 typedef struct OSContext {
     /* 0x00 */ u32 cpsr;

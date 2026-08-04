@@ -464,7 +464,7 @@ RunEncrypted_Integrity_MACOwner_IsGood kind:function(arm,size=0x78,dsprot=0x68) 
 RunEncrypted_Integrity_ROMTest_IsBad kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c2e6c
 RunEncrypted_Integrity_ROMTest_IsGood kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c2ee4
 NitroStaticInit kind:function(arm,size=0x38) addr:0x020c2f5c local
-clearDataAndInstructionCache kind:function(arm,size=0x20) addr:0x020c2f94
+clearDataAndInstructionCache kind:function(arm,size=0x20) addr:0x020c2f94 local
 Encryptor_CategorizeInstruction kind:function(arm,size=0x3c) addr:0x020c2fb4
 Encryptor_DecodeFunctionTable kind:function(arm,size=0x110) addr:0x020c2ff0
 Encryptor_DecryptFunction kind:function(arm,size=0x88,dsprot=0x84) addr:0x020c3100
@@ -503,19 +503,19 @@ data_ov001_020c3fa4 kind:data(any) addr:0x020c3fa4
 data_ov001_020c3fb2 kind:data(any) addr:0x020c3fb2
 data_ov001_020c276c kind:data(any) addr:0x020c3fc0
 data_ov001_020c27a8 kind:data(any) addr:0x020c3ffc
-data_ov001_020c4048 kind:data(any) addr:0x020c4048
-data_ov001_020c4060 kind:data(any) addr:0x020c4060
+DSProt_Garbage kind:data(any) addr:0x020c4048
+bad_mac_addr kind:data(any) addr:0x020c4060 local
 __sinit_CourseList.cpp kind:function(thumb,size=0x24) addr:0x020c4068 local
 __sinit_UnkStruct_027e0cd8_0C_001.cpp kind:function(thumb,size=0xb8) addr:0x020c408c
 __sinit_ov001_020c4144 kind:function(thumb,size=0x10) addr:0x020c4144
 .p__sinit_CourseList.cpp kind:data(word) addr:0x020c4154 local
 .p__sinit_UnkStruct_027e0cd8_0C_001.cpp kind:data(word) addr:0x020c4158
 .p__sinit_ov001_020c4144 kind:data(word) addr:0x020c415c
-.p__sinit_ov001_020c2958 kind:data(word) addr:0x020c4160 local
-.p__sinit_ov001_020c2f5c kind:data(word) addr:0x020c4164 local
-.p__sinit_ov001_020c3218 kind:data(word) addr:0x020c4168 local
-.p__sinit_ov001_020c39d4 kind:data(word) addr:0x020c416c local
-.p__sinit_ov001_020c3dc4 kind:data(word) addr:0x020c4170 local
+NitroStaticInit_11 kind:data(word) addr:0x020c4160 local
+NitroStaticInit_8 kind:data(word) addr:0x020c4164 local
+NitroStaticInit_6 kind:data(word) addr:0x020c4168 local
+NitroStaticInit_10 kind:data(word) addr:0x020c416c local
+NitroStaticInit_11 kind:data(word) addr:0x020c4170 local
 @433 kind:data(byte[22]) addr:0x020c4180 local
 @450 kind:data(byte[22]) addr:0x020c4198 local
 @3570 kind:data(byte[18]) addr:0x020c41b0 local

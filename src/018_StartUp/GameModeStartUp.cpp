@@ -10,7 +10,6 @@
 #include "Unknown/UnkStruct_ov000_020b4ec4.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 
-#include <nitro/dc.h>
 #include <nitro/gx.h>
 #include <nitro/os.h>
 #include <nitro/reg.h>
