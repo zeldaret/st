@@ -22,7 +22,10 @@ Actor *ActorProfileUnkCASE::Create() {
 }
 
 ActorProfileUnkCASE::ActorProfileUnkCASE() :
-    ActorProfile_Derived1(ActorId_CASE) {}
+    ActorProfile_Derived1(ActorId_CASE) {
+    VecFx32_Init(0, 0x666, 0, &mUnk_04.pos);
+    mUnk_04.size = 0x800;
+}
 
 UnkStruct_ov000_020b19f0::UnkStruct_ov000_020b19f0(G3d_Model *pModel) :
     ModelRender(pModel) {}

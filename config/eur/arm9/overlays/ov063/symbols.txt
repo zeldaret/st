@@ -431,7 +431,7 @@ data_ov063_021630e0 kind:data(any) addr:0x021630e0
 data_ov063_02163110 kind:data(any) addr:0x02163110
 _ZTV16ActorUnkCASE_150 kind:data(any) addr:0x02163140
 _ZTV16ActorUnkCASE_174 kind:data(any) addr:0x02163158
-_ZTV19data_ov063_02163174 kind:data(any) addr:0x02163174
+_ZTV19ActorProfileUnkCASE kind:data(any) addr:0x02163174
 _ZTV24UnkStruct_ov063_021631a0 kind:data(any) addr:0x02163198
 _ZTV12ActorUnkCASE kind:data(any) addr:0x021631c4
 _ZTV19data_ov063_02163224 kind:data(any) addr:0x02163224
