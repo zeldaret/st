@@ -70,7 +70,7 @@ extern "C" void func_01ff9638(VecFx32 *param1, fx16 param2);
 extern "C" fx32 func_01ff9a5c(VecFx32 *, VecFx32 *, VecFx32 *);
 extern "C" void func_01ffad5c(Mat4x3p *, Mat4x3p *, Mat4x3p *);
 extern "C" fx32 func_01ffb428(unk32, unk32);
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
+extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
 extern "C" unk32 func_01ffbbe0(unk32 param1, unk32 param2);
 extern "C" void func_01ffc6d4(ModelRender *param1, UnkAngleStruct param2, VecFx32 *param3);
 extern "C" void func_0200eab0(G3d_Model *, unk32, u8);

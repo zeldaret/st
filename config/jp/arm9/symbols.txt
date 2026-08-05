@@ -2318,7 +2318,7 @@ __ctype_mapC kind:data(any) addr:0x020445d4
 dp_h kind:data(any) addr:0x020446d4 local
 bp kind:data(any) addr:0x020446e4 local
 dp_l kind:data(any) addr:0x020446f4 local
-data_02044704 kind:data(any) addr:0x02044704
+data_020431b8 kind:data(any) addr:0x02044704
 .p__sinit_0203ed54 kind:data(word) addr:0x0204470c
 .p__sinit_0203ed70 kind:data(word) addr:0x02044710
 .p__sinit_0203edd0 kind:data(word) addr:0x02044714

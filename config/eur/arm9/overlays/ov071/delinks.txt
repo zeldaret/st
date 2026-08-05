@@ -9,6 +9,7 @@ src/071_Tower/Actor/ActorUnkSZKU.cpp:
     .text       start:0x0215f210 end:0x02160118
     .init       start:0x02163dd0 end:0x02163e44
     .ctor       start:0x021640bc end:0x021640c0
+    .data       start:0x02164be0 end:0x02164d10
     .bss        start:0x02165150 end:0x02165240
 
 src/071_Tower/Actor/ActorUnkKMSO.cpp:

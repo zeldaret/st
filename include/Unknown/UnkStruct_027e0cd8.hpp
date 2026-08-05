@@ -272,7 +272,6 @@ public:
     // overlay 0
     unk32 func_ov000_02080180(Vec2bCpp *param1);
     void func_ov000_020801b0(Vec2bCpp *param1, unk32 param2, unk32 param3);
-    bool func_ov000_0208217c(VecFx32 *param1, unk32 param2);
     bool func_ov000_020802ec(u16 param1, VecFx32 *param2);
     void func_ov000_020803ec(u16 param1);
     void func_ov000_0208053c(u16 param1);
@@ -283,6 +282,8 @@ public:
     unk32 func_ov000_02080a44();
     void func_ov000_02080a5c(VecFx32 *param1);
     void func_ov000_02080a78(VecFx32 *param1);
+    bool func_ov000_02082008(Vec2bCpp *param1);
+    bool func_ov000_0208217c(VecFx32 *param1, unk32 param2);
 
     // overlay 1
     void func_ov001_020b85d0(const EntranceInfo *param1);
