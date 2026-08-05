@@ -36,7 +36,6 @@ UnkStruct_ov000_020b3268::UnkStruct_ov000_020b3268(G3d_Model *pModel) :
 UnkStruct_ov063_021631a0::UnkStruct_ov063_021631a0(G3d_Model *pModel) :
     UnkStruct_ov000_020b3268(pModel),
     mUnk_6C(ModelRender::func_ov000_02057f18(&data_ov063_02162568)) {}
-UnkStruct_ov063_021631a0::~UnkStruct_ov063_021631a0() {}
 
 ActorUnkCASE_150::ActorUnkCASE_150(Actor *param1) :
     Actor_C4(param1, 1) {
@@ -48,7 +47,6 @@ ActorUnkCASE_174::ActorUnkCASE_174(Actor *param1) {
     mUnk_04 = 0;
     mUnk_2C = param1;
 }
-ActorUnkCASE_174::~ActorUnkCASE_174() {}
 
 void ActorUnkCASE_174::vfunc_10(Actor *actor) {
     ((ActorUnkCASE *) mUnk_2C)->func_ov063_0215b724();
@@ -81,6 +79,12 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_A8          = &data_ov063_02162558;
 }
 
+void ActorUnkCASE::vfunc_10(VecFx32 *param1) {}
+bool ActorUnkCASE::vfunc_18(unk32 param1) {}
+void ActorUnkCASE::vfunc_20() {}
+void ActorUnkCASE::vfunc_24() {}
+void ActorUnkCASE::vfunc_2C(unk32 param1) {}
+
 void ActorUnkCASE::func_ov063_0215ab70(void) {}
 void ActorUnkCASE::func_ov063_0215aba4(void) {}
 void ActorUnkCASE::func_ov063_0215abd8(void) {}
@@ -91,7 +95,6 @@ void ActorUnkCASE::func_ov063_0215acc8(void) {}
 void ActorUnkCASE::func_ov063_0215acec(ActorRef *ref1, ActorRef ref2) {};
 void ActorUnkCASE::func_ov063_0215ae6c(void) {}
 void ActorUnkCASE::func_ov063_0215ae80(void) {}
-void ActorUnkCASE::func_ov063_0215ae94(void) {}
 void ActorUnkCASE::func_ov063_0215aefc(void) {}
 void ActorUnkCASE::func_ov063_0215af54(void) {}
 void ActorUnkCASE::func_ov063_0215af58(void) {}
@@ -105,18 +108,13 @@ void ActorUnkCASE::func_ov063_0215b1bc(void) {}
 void ActorUnkCASE::func_ov063_0215b244(void) {}
 void ActorUnkCASE::func_ov063_0215b2b0(void) {}
 void ActorUnkCASE::func_ov063_0215b2c4(void) {}
-void ActorUnkCASE::func_ov063_0215b2c8(void) {}
-void ActorUnkCASE::func_ov063_0215b2ec(void) {}
-void ActorUnkCASE::func_ov063_0215b624(void) {}
 void ActorUnkCASE::func_ov063_0215b6c8(VecFx32 *param1, UnkAngleStruct angle) {}
 void ActorUnkCASE::func_ov063_0215b724(void) {}
-void ActorUnkCASE::func_ov063_0215b7cc(void) {}
 void ActorUnkCASE::func_ov063_0215b814(void) {}
 void ActorUnkCASE::func_ov063_0215b854(void) {}
 void ActorUnkCASE::func_ov063_0215b8e8(void) {}
 void ActorUnkCASE::func_ov063_0215b99c(void) {}
 void ActorUnkCASE::func_ov063_0215ba64(void) {}
-void ActorUnkCASE::func_ov063_0215bab0(void) {}
 
 ActorUnkCASE::~ActorUnkCASE() {}
 ActorProfileUnkCASE::~ActorProfileUnkCASE() {}

@@ -9,6 +9,7 @@
 #include "Actor/Actor_Derived1.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
+#include "nitro/fx.h"
 #include "types.h"
 
 class UnkStruct_ov000_020b19f0 : public ModelRender {
@@ -30,7 +31,7 @@ public:
 
     UnkStruct_ov063_021631a0(G3d_Model *pModel);
 
-    /* 00 */ virtual ~UnkStruct_ov063_021631a0();
+    /* 00 */ virtual ~UnkStruct_ov063_021631a0() override {};
 };
 
 class ActorUnkCASE_150 : public Actor_C4 {
@@ -53,7 +54,7 @@ public:
 
     ActorUnkCASE_174(Actor *param1);
 
-    /* 00 */ virtual ~ActorUnkCASE_174() override;
+    /* 00 */ virtual ~ActorUnkCASE_174() override {};
     /* 10 */ virtual void vfunc_10(Actor *actor) override;
 };
 
@@ -84,6 +85,11 @@ public:
 
     ActorUnkCASE();
 
+    /* 10 */ virtual void vfunc_10(VecFx32 *param1) override;
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorUnkCASE() override;
 
     void func_ov063_0215ab70(void);
@@ -96,7 +102,6 @@ public:
     static void func_ov063_0215acec(ActorRef *ref1, ActorRef ref2); // copy ?
     void func_ov063_0215ae6c(void);
     void func_ov063_0215ae80(void);
-    void func_ov063_0215ae94(void);
     void func_ov063_0215aefc(void);
     void func_ov063_0215af54(void);
     void func_ov063_0215af58(void);
@@ -110,18 +115,13 @@ public:
     void func_ov063_0215b244(void);
     void func_ov063_0215b2b0(void);
     void func_ov063_0215b2c4(void);
-    void func_ov063_0215b2c8(void);
-    void func_ov063_0215b2ec(void);
-    void func_ov063_0215b624(void);
     void func_ov063_0215b6c8(VecFx32 *param1, UnkAngleStruct angle);
     void func_ov063_0215b724(void);
-    void func_ov063_0215b7cc(void);
     void func_ov063_0215b814(void);
     void func_ov063_0215b854(void);
     void func_ov063_0215b8e8(void);
     void func_ov063_0215b99c(void);
     void func_ov063_0215ba64(void);
-    void func_ov063_0215bab0(void);
 };
 
 class ActorProfileUnkCASE : public ActorProfile_Derived1 {
