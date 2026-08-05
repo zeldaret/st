@@ -2,6 +2,7 @@
 
 #include "Actor/ActorUnkCASE.hpp"
 #include "Actor/Actor.hpp"
+#include "Actor/ActorManager.hpp"
 #include "Actor/ActorRef.hpp"
 #include "MapObject/MapObjectProfile_Derived2_20.hpp"
 #include "Physics/Cylinder.hpp"
@@ -90,7 +91,19 @@ void ActorUnkCASE::vfunc_10(Cylinder *param1) {
     param1->size = 0x800;
 }
 
-bool ActorUnkCASE::vfunc_18(unk32 param1) {}
+bool ActorUnkCASE::vfunc_18(unk32 param1) {
+    mUnk_14C = gpActorManager->func_01fff3b4(mUnk_5C.mUnk_28);
+
+    mUnk_0B0.func_ov000_02057c38(6, 2);
+    mUnk_0B0.func_ov000_0209a7b8(this, (UnkSystem4_UnkCallback) ActorUnkCASE::func_ov063_0215b99c);
+
+    this->func_ov063_0215aefc(0);
+
+    VecFx32_Init(0, 0, 0, &mVel);
+
+    return true;
+}
+
 void ActorUnkCASE::vfunc_20() {}
 
 void ActorUnkCASE::vfunc_24() {
@@ -113,7 +126,7 @@ void ActorUnkCASE::func_ov063_0215acc8(void) {}
 void ActorUnkCASE::func_ov063_0215acec(ActorRef *ref1, ActorRef ref2) {};
 void ActorUnkCASE::func_ov063_0215ae6c(void) {}
 void ActorUnkCASE::func_ov063_0215ae80(void) {}
-void ActorUnkCASE::func_ov063_0215aefc(void) {}
+void ActorUnkCASE::func_ov063_0215aefc(unk32 param1) {}
 void ActorUnkCASE::func_ov063_0215af54(void) {}
 void ActorUnkCASE::func_ov063_0215af58(void) {}
 void ActorUnkCASE::func_ov063_0215af5c(void) {}

@@ -102,7 +102,7 @@ public:
     static void func_ov063_0215acec(ActorRef *ref1, ActorRef ref2); // copy ?
     void func_ov063_0215ae6c(void);
     void func_ov063_0215ae80(void);
-    void func_ov063_0215aefc(void);
+    void func_ov063_0215aefc(unk32 param2);
     void func_ov063_0215af54(void);
     void func_ov063_0215af58(void);
     void func_ov063_0215af5c(void);
@@ -120,7 +120,7 @@ public:
     void func_ov063_0215b814(void);
     void func_ov063_0215b854(void);
     void func_ov063_0215b8e8(void);
-    void func_ov063_0215b99c(void);
+    static void func_ov063_0215b99c(void);
     void func_ov063_0215ba64(void);
 };
 
