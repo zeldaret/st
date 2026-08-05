@@ -36,7 +36,7 @@ UnkStruct_ov063_021631a0::UnkStruct_ov063_021631a0(G3d_Model *pModel) :
 UnkStruct_ov063_021631a0::~UnkStruct_ov063_021631a0() {}
 
 ActorUnkCASE_150::ActorUnkCASE_150(Actor *param1) :
-    Actor_C4(param1) {
+    Actor_C4(param1, 1) {
     mUnk_20 = param1;
     mUnk_04 = 1;
 }

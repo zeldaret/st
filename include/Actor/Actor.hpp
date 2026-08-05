@@ -288,6 +288,9 @@ public:
 
     Actor_C4(Actor *param1) :
         Actor_C4_Base(&param1->mRef, 0) {}
+
+    Actor_C4(Actor *param1, unk32 param2) :
+        Actor_C4_Base(&param1->mRef, param2) {}
 };
 
 class Actor_Derived2 : public Actor {
