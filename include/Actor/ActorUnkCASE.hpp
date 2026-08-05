@@ -66,7 +66,7 @@ public:
     /* 120 */ unk16 mUnk_120;
     /* 122 */ STRUCT_PAD(0x122, 0x124);
     /* 124 */ ActorShotArrow_140 mUnk_124;
-    /* 14C */ unk32 mUnk_14C;
+    /* 14C */ void *mUnk_14C;
     /* 150 */ ActorUnkCASE_150 mUnk_150;
     /* 174 */ ActorUnkCASE_174 mUnk_174;
     /* 1A4 */ STRUCT_PAD(0x1A4, 0x1C8);
@@ -85,7 +85,7 @@ public:
 
     ActorUnkCASE();
 
-    /* 10 */ virtual void vfunc_10(VecFx32 *param1) override;
+    /* 10 */ virtual void vfunc_10(Cylinder *param1) override;
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;

@@ -164,7 +164,7 @@ public:
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
     /* 0C */ virtual unk8 vfunc_0C();
-    /* 10 */ virtual void vfunc_10(VecFx32 *param1);
+    /* 10 */ virtual void vfunc_10(Cylinder *param1);
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual bool vfunc_18(unk32 param1); // Init?
     /* 1C */ virtual void vfunc_1C();             // Setup

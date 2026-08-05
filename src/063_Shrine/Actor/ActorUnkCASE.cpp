@@ -4,10 +4,12 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorRef.hpp"
 #include "MapObject/MapObjectProfile_Derived2_20.hpp"
+#include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
 #include "System/SysNew.hpp"
 #include "flags.h"
 #include "nitro/fx.h"
+#include "nitro/math.h"
 #include "nns/g3d/g3d.h"
 
 extern const void *data_ov063_02162558;
@@ -57,7 +59,7 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_0B0(G3d_GetModelPtr(((MapObjectProfile_Derived2_20 *) GET_PROFILE(ActorProfileUnkCASE)->vfunc_04())->mUnk_50)),
     mUnk_120(0),
     mUnk_124(this),
-    mUnk_14C(0),
+    mUnk_14C(NULL),
     mUnk_150(this),
     mUnk_174(this),
     mUnk_1C8(0),
@@ -79,7 +81,15 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_A8          = &data_ov063_02162558;
 }
 
-void ActorUnkCASE::vfunc_10(VecFx32 *param1) {}
+void ActorUnkCASE::vfunc_10(Cylinder *param1) {
+    if (mUnk_14C != NULL) {
+        ((ActorUnkCASE *) mUnk_14C)->vfunc_10(param1);
+        return;
+    }
+    VecFx32_Copy(&mPos, &param1->pos); // doesn't match
+    param1->size = 0x800;
+}
+
 bool ActorUnkCASE::vfunc_18(unk32 param1) {}
 void ActorUnkCASE::vfunc_20() {}
 

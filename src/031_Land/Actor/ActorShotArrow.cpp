@@ -4,6 +4,7 @@
 #include "Actor/ActorUnkGYAM.hpp"
 #include "Actor/ActorUnkIWTS.hpp"
 #include "Actor/ActorUnkMRD2.hpp"
+#include "Physics/Cylinder.hpp"
 #include "System/OverlayManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -24,8 +25,7 @@ typedef struct UnkResourceStruct2 {
 
 typedef struct {
     /* 00 */ VecFx32 mUnk_00;
-    /* 0C */ VecFx32 mUnk_0C;
-    /* 18 */ unk32 mUnk_18;
+    /* 0C */ Cylinder mUnk_0C;
     /* 1C */ VecFx32 mUnk_1C;
     /* 28 */ VecFx32 mUnk_28;
     /* 34 */
@@ -43,8 +43,7 @@ typedef struct {
 
 typedef struct {
     /* 00 */ STRUCT_PAD(0x00, 0x04);
-    /* 04 */ VecFx32 mUnk_04;
-    /* 10 */ STRUCT_PAD(0x10, 0x14);
+    /* 04 */ Cylinder mUnk_04;
     /* 14 */ VecFx32 mUnk_14;
     /* 20 */
 } UnkStruct_020f3c38;
@@ -1006,14 +1005,14 @@ void ActorShotArrow_194::func_ov031_020f374c(Actor *actor) {
     func_01ffb714(&stack.mUnk_1C, &actor->mVel, &stack.mUnk_1C);
     actor->vfunc_10(&stack.mUnk_0C);
 
-    stack.mUnk_00 = stack.mUnk_0C;
+    stack.mUnk_00 = stack.mUnk_0C.pos;
     func_01ffb714(&stack.mUnk_00, &stack.mUnk_1C, &stack.mUnk_00);
 
     unk32 temp = func_01ff9258(stack.mUnk_00.x, stack.mUnk_00.z);
 
     //! @bug: stack.mUnk_18 is used uninitialized?
-    if (temp > stack.mUnk_18 && stack.mUnk_18 > FLOAT_TO_FX32(0.15f)) {
-        fx32 temp_r5 = (temp - stack.mUnk_18) + FLOAT_TO_FX32(0.15f);
+    if (temp > stack.mUnk_0C.size && stack.mUnk_0C.size > FLOAT_TO_FX32(0.15f)) {
+        fx32 temp_r5 = (temp - stack.mUnk_0C.size) + FLOAT_TO_FX32(0.15f);
         u16 value    = (u32) (s16) (s32) func_01ffbbe0(stack.mUnk_00.x, stack.mUnk_00.z);
 
         fx16 sin = SIN(value);
@@ -1130,7 +1129,7 @@ bool ActorShotArrow_194::vfunc_0C(Actor *actor, VecFx32 *vector) {
 
     func_01ffb714(&actor->mVel, &this->mUnk_2C->mVel, &stack.mUnk_14);
     actor->vfunc_10(&stack.mUnk_04);
-    if (!func_01ffccf4(&this->mUnk_0C, &stack.mUnk_04, &stack.mUnk_14, &this->mUnk_30)) {
+    if (!func_01ffccf4(&this->mUnk_0C, &stack.mUnk_04.pos, &stack.mUnk_14, &this->mUnk_30)) {
         return false;
     }
 
