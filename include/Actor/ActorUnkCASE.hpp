@@ -73,9 +73,7 @@ public:
     /* 1A4 */ Mat3p mUnk_1A4;
     /* 1C8 */ unk16 mUnk_1C8;
     /* 1CA */ STRUCT_PAD(0x1CA, 0x1CC);
-    /* 1CC */ unk32 mUnk_1CC;
-    /* 1D0 */ unk32 mUnk_1D0;
-    /* 1D4 */ unk32 mUnk_1D4;
+    /* 1CC */ VecFx32 mUnk_1CC;
     /* 1D8 */ unk32 mUnk_1D8;
     /* 1DC */ unk32 mUnk_1DC;
     /* 1E0 */ unk32 mUnk_1E0;

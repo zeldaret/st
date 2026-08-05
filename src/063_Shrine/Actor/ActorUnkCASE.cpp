@@ -1,13 +1,19 @@
 //! TODO: This file was generated automatically and might contain errors
+#define VECFX32_CTORS //! TODO: remove this hack
 
 #include "Actor/ActorUnkCASE.hpp"
 #include "Actor/Actor.hpp"
+#include "Actor/ActorId.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorRef.hpp"
+#include "Actor/ActorShotArrow.hpp"
 #include "MapObject/MapObjectProfile_Derived2_20.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_027e09c0.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "Unknown/UnkStruct_027e0d38.hpp"
 #include "flags.h"
 #include "nitro/fx.h"
 #include "nitro/math.h"
@@ -16,8 +22,21 @@
 extern const void *data_ov063_02162558;
 extern const void *data_ov063_02162568;
 
+static PTMF<ActorUnkCASE> data_ov063_021630e0[0x6] = {ActorUnkCASE::func_ov063_0215af58, ActorUnkCASE::func_ov063_0215af60,
+                                                      ActorUnkCASE::func_ov063_0215afb8, ActorUnkCASE::func_ov063_0215b090,
+                                                      ActorUnkCASE::func_ov063_0215b244, ActorUnkCASE::func_ov063_0215b2c4};
+
 extern "C" void func_01ffa60c(const Mat3p *, Mat3p *, Mat3p *);
+extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
+extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
+
+// Overlay 0
+extern unk32 *data_ov000_020aed00;
 extern "C" void func_ov000_0207b70c(ActorUnkCASE_174 *param1, Actor *param2);
+extern "C" void func_ov000_020990c0(ActorUnkCASE *param1, ActorShotArrow_140 *param2, unk32 param3, unk32 param4);
+
+// Overlay 17
+extern "C" unk32 func_ov017_020bef4c(ActorUnkCASE *param1, unk32 param2);
 
 DECL_PROFILE(ActorProfileUnkCASE);
 
@@ -65,9 +84,7 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_150(this),
     mUnk_174(this),
     mUnk_1C8(0),
-    mUnk_1CC(0),
-    mUnk_1D0(0),
-    mUnk_1D4(0),
+    mUnk_1CC(0, 0, 0),
     mUnk_1D8(0),
     mUnk_1DC(0),
     mUnk_1E0(0),
@@ -105,7 +122,99 @@ bool ActorUnkCASE::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorUnkCASE::vfunc_20() {}
+void ActorUnkCASE::vfunc_20() {
+    mUnk_150.mUnk_1C = 1;
+
+    if (!func_ov017_020bef4c(this, 0x4000) && mUnk_48 != 0) {
+        unk32 val1 = 1;
+        if (mState != 1 && mState != 2) {
+            val1 = 0;
+        }
+
+        if (val1 == 0) {
+            return;
+        }
+
+        if (mState == 3) {
+            this->func_ov063_0215b724();
+            return;
+        }
+    }
+
+    mUnk_3C = &mUnk_124;
+
+    CALL_PTMF(PTMF<ActorUnkCASE>, data_ov063_021630e0[mState]);
+
+    if (mUnk_14C != 0) {
+        VecFx32 vec1;
+        VecFx32 *mUnk_14C_vec = (VecFx32 *) (((u8 *) mUnk_14C) + 0x25C);
+        vec1                  = *mUnk_14C_vec;
+        func_01ffb714(&vec1, &mPos, &vec1);
+        u16 x, y, z;
+        x = (s16) (u32) vec1.x;
+        y = (s16) (u32) vec1.y;
+        z = (s16) (u32) vec1.z;
+
+        ((VecFx16 *) &mUnk_150.mUnk_0E)->x = x;
+        ((VecFx16 *) &mUnk_150.mUnk_0E)->y = y;
+        ((VecFx16 *) &mUnk_150.mUnk_0E)->z = z;
+
+        VecFx32 *vec2    = data_027e0ce0->func_01fff148(0);
+        u16 ret1         = func_01ffbbe0(mUnk_14C_vec->x - vec2->x, mUnk_14C_vec->z - vec2->z);
+        fx16 sin_val     = SIN(ret1);
+        fx16 cos_val     = COS(ret1);
+        mUnk_150.mUnk_08 = x + (((1 - sin_val) * 0x8000) >> 0x10);
+        mUnk_150.mUnk_0A = y;
+        mUnk_150.mUnk_0C = z + (((1 - cos_val) * 0x8000) >> 0x10);
+
+    } else {
+        if (mState == 5) {
+            VecFx32 vec1;
+            vec1 = mUnk_1CC;
+            func_01ffb714(&vec1, &mPos, &vec1);
+            u16 x, y, z;
+            x = (s16) (u32) vec1.x;
+            y = (s16) (u32) vec1.y;
+            z = (s16) (u32) vec1.z;
+
+            ((VecFx16 *) &mUnk_150.mUnk_0E)->x = x;
+            ((VecFx16 *) &mUnk_150.mUnk_0E)->y = y;
+            ((VecFx16 *) &mUnk_150.mUnk_0E)->z = z;
+
+            VecFx32 *vec2    = data_027e0ce0->func_01fff148(0);
+            u16 ret1         = func_01ffbbe0(mUnk_1CC.x - vec2->x, mUnk_1CC.z - vec2->z);
+            fx16 sin_val     = SIN((u16) (s16) ret1);
+            fx16 cos_val     = COS((u16) (s16) ret1);
+            mUnk_150.mUnk_08 = x + (((1 - sin_val) * 0x8000) >> 0x10);
+            mUnk_150.mUnk_0A = y;
+            mUnk_150.mUnk_0C = z + (((1 - cos_val) * 0x8000) >> 0x10);
+        }
+    }
+
+    this->func_ov000_020989e0();
+
+    if ((mState == 5 || mState == 4) && (mUnk_124.mUnk_08 & 0x3FFFF) != 0) {
+        if (mUnk_124.mUnk_18 == 4) {
+            data_027e0d38->func_ov031_020d9c44(*data_ov000_020aed00);
+        } else if (mUnk_124.mUnk_18 == 11) {
+            if (gpActorManager->func_01fff3b4(mUnk_124.mUnk_08)->GetActorId() == ActorId_RollingStone) {
+                this->func_ov063_0215b724();
+            }
+        } else if (mUnk_124.mUnk_18 == 13) {
+            func_ov000_020990c0(this, &mUnk_124, 1, 0);
+        }
+    }
+
+    if (GET_FLAG(mFlags, ActorFlag_Visible)) {
+        if (mState == 5) {
+            UnkStruct_ov000_0207de98 param2;
+            VecFx32_Copy(&mPos, &param2.vec);
+            param2.param2 = 0x548;
+            param2.param1 = 0x1000;
+            data_027e09c0->func_ov000_0207de98(mRef, &param2, mUnk_38);
+        }
+    }
+}
 
 void ActorUnkCASE::vfunc_24() {
     u32 state = mState;
