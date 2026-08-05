@@ -223,12 +223,12 @@ ActorUnkCANS::ActorUnkCANS() :
     mUnk_250(mUnk_5C.mInitialPos),
     mUnk_274(0),
     mUnk_270(0xCD) {
-    mFlags[0] |= 0x40;
+    SET_FLAG(mFlags, ActorFlag_6);
     Actor_38 *actor_38 = (Actor_38 *) &mUnk_1F4;
     mUnk_38            = actor_38;
     actor_38->mUnk_08  = 4;
     this->func_ov000_0209862c(4);
-    mUnk_200.mUnk_04 &= 0xFFFFBFFF;
+    UNSET_FLAG(&mUnk_200.mUnk_04, ActorFlag_14);
     mUnk_276 = gRandom.Next32(0) & 0x80000000 ? 1 : -1;
     mUnk_48  = 4;
     mUnk_270 *= mUnk_276;

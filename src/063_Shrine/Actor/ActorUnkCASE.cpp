@@ -6,6 +6,7 @@
 #include "MapObject/MapObjectProfile_Derived2_20.hpp"
 #include "Render/ModelRender.hpp"
 #include "System/SysNew.hpp"
+#include "flags.h"
 #include "nitro/fx.h"
 #include "nns/g3d/g3d.h"
 
@@ -67,9 +68,10 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_1E0(0),
     mUnk_1E4(0),
     mUnk_1F4(0) {
-    mFlags[0] &= 0xFFFFFFBF;
-    mUnk_40          = &mUnk_150;
-    mUnk_124.mUnk_04 = 0 | 0x2000; // doesn't match
+    UNSET_FLAG(mFlags, ActorFlag_6);
+    mUnk_40 = &mUnk_150;
+    // SET_FLAG(&mUnk_124.mUnk_04, ActorFlag_13);
+    mUnk_124.mUnk_04 = 0 | (1 << ActorFlag_13); // doesn't match
     mUnk_124.mUnk_24 = 1;
     mUnk_38          = (Actor_38 *) &mUnk_1E8;
     mUnk_38->mUnk_08 = 4;
