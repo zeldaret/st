@@ -12,6 +12,8 @@
 extern const void *data_ov063_02162558;
 extern const void *data_ov063_02162568;
 
+extern "C" void func_ov000_0207b70c(ActorUnkCASE_174 *param1, Actor *param2);
+
 DECL_PROFILE(ActorProfileUnkCASE);
 
 Actor *ActorProfileUnkCASE::Create() {
@@ -44,7 +46,10 @@ ActorUnkCASE_174::ActorUnkCASE_174(Actor *param1) {
 }
 ActorUnkCASE_174::~ActorUnkCASE_174() {}
 
-void ActorUnkCASE_174::vfunc_10(Actor *actor) {}
+void ActorUnkCASE_174::vfunc_10(Actor *actor) {
+    ((ActorUnkCASE *) mUnk_2C)->func_ov063_0215b724();
+    func_ov000_0207b70c(this, actor);
+}
 
 ActorUnkCASE::ActorUnkCASE() :
     mUnk_0B0(G3d_GetModelPtr(((MapObjectProfile_Derived2_20 *) GET_PROFILE(ActorProfileUnkCASE)->vfunc_04())->mUnk_50)),
