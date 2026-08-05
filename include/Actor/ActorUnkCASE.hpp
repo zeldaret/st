@@ -10,6 +10,7 @@
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
 #include "nitro/fx.h"
+#include "nitro/math.h"
 #include "types.h"
 
 class UnkStruct_ov000_020b19f0 : public ModelRender {
@@ -69,7 +70,7 @@ public:
     /* 14C */ void *mUnk_14C;
     /* 150 */ ActorUnkCASE_150 mUnk_150;
     /* 174 */ ActorUnkCASE_174 mUnk_174;
-    /* 1A4 */ STRUCT_PAD(0x1A4, 0x1C8);
+    /* 1A4 */ Mat3p mUnk_1A4;
     /* 1C8 */ unk16 mUnk_1C8;
     /* 1CA */ STRUCT_PAD(0x1CA, 0x1CC);
     /* 1CC */ unk32 mUnk_1CC;

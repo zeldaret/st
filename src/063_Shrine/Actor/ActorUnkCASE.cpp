@@ -16,6 +16,7 @@
 extern const void *data_ov063_02162558;
 extern const void *data_ov063_02162568;
 
+extern "C" void func_01ffa60c(const Mat3p *, Mat3p *, Mat3p *);
 extern "C" void func_ov000_0207b70c(ActorUnkCASE_174 *param1, Actor *param2);
 
 DECL_PROFILE(ActorProfileUnkCASE);
@@ -114,7 +115,24 @@ void ActorUnkCASE::vfunc_24() {
     this->vfunc_20();
 }
 
-void ActorUnkCASE::vfunc_2C(unk32 param1) {}
+void ActorUnkCASE::vfunc_2C(unk32 param1) {
+    if (!this->func_01fff5d0(param1, 0)) {
+        return;
+    }
+
+    if (mUnk_14C == NULL || ((u32 *) mUnk_14C)[0x268 >> 2] == NULL // .mUnk_268
+    ) {
+        fx32 sin_val = SIN((u16) mUnk_1C8);
+        fx32 cos_val = COS((u16) mUnk_1C8);
+
+        Mat3p mat2;
+        Mat3p mat1;
+        Mat3p_InitZRotation(&mat1, sin_val, cos_val);
+
+        func_01ffa60c(&mat1, &mUnk_1A4, &mat2);
+        mUnk_0B0.vfunc_14(&mat2, &mPos);
+    }
+}
 
 void ActorUnkCASE::func_ov063_0215ab70(void) {}
 void ActorUnkCASE::func_ov063_0215aba4(void) {}
