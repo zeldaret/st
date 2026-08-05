@@ -82,7 +82,15 @@ ActorUnkCASE::ActorUnkCASE() :
 void ActorUnkCASE::vfunc_10(VecFx32 *param1) {}
 bool ActorUnkCASE::vfunc_18(unk32 param1) {}
 void ActorUnkCASE::vfunc_20() {}
-void ActorUnkCASE::vfunc_24() {}
+
+void ActorUnkCASE::vfunc_24() {
+    u32 state = mState;
+    if (state != 1 && state != 2) {
+        return;
+    }
+    this->vfunc_20();
+}
+
 void ActorUnkCASE::vfunc_2C(unk32 param1) {}
 
 void ActorUnkCASE::func_ov063_0215ab70(void) {}
