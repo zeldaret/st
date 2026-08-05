@@ -9,6 +9,7 @@
 #include "nitro/fx.h"
 #include "nns/g3d/g3d.h"
 
+extern const void *data_ov063_02162558;
 extern const void *data_ov063_02162568;
 
 DECL_PROFILE(ActorProfileUnkCASE);
@@ -59,7 +60,16 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_1D8(0),
     mUnk_1DC(0),
     mUnk_1E0(0),
-    mUnk_1E4(0) {}
+    mUnk_1E4(0),
+    mUnk_1F4(0) {
+    mFlags[0] &= 0xFFFFFFBF;
+    mUnk_40          = &mUnk_150;
+    mUnk_124.mUnk_04 = 0 | 0x2000; // doesn't match
+    mUnk_124.mUnk_24 = 1;
+    mUnk_38          = (Actor_38 *) &mUnk_1E8;
+    mUnk_38->mUnk_08 = 4;
+    mUnk_A8          = &data_ov063_02162558;
+}
 
 void ActorUnkCASE::func_ov063_0215ab70(void) {}
 void ActorUnkCASE::func_ov063_0215aba4(void) {}

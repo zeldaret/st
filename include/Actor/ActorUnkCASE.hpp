@@ -6,6 +6,7 @@
 #include "Actor/ActorProfile.hpp"
 #include "Actor/ActorRef.hpp"
 #include "Actor/ActorShotArrow.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
 #include "types.h"
@@ -61,13 +62,15 @@ public:
     /* 000 (base) */
     /* 0AE */ STRUCT_PAD(0xAE, 0xB0);
     /* 0B0 */ UnkStruct_ov063_021631a0 mUnk_0B0;
-    /* 120 */ unk32 mUnk_120;
+    /* 120 */ unk16 mUnk_120;
+    /* 122 */ STRUCT_PAD(0x122, 0x124);
     /* 124 */ ActorShotArrow_140 mUnk_124;
     /* 14C */ unk32 mUnk_14C;
     /* 150 */ ActorUnkCASE_150 mUnk_150;
     /* 174 */ ActorUnkCASE_174 mUnk_174;
     /* 1A4 */ STRUCT_PAD(0x1A4, 0x1C8);
-    /* 1C8 */ unk32 mUnk_1C8;
+    /* 1C8 */ unk16 mUnk_1C8;
+    /* 1CA */ STRUCT_PAD(0x1CA, 0x1CC);
     /* 1CC */ unk32 mUnk_1CC;
     /* 1D0 */ unk32 mUnk_1D0;
     /* 1D4 */ unk32 mUnk_1D4;
@@ -75,6 +78,9 @@ public:
     /* 1DC */ unk32 mUnk_1DC;
     /* 1E0 */ unk32 mUnk_1E0;
     /* 1E4 */ unk32 mUnk_1E4;
+    /* 1E8 */ Actor_Derived1_94 mUnk_1E8;
+    /* 1F4 */ u8 mUnk_1F4;
+    /* 1F5 */
 
     ActorUnkCASE();
 
