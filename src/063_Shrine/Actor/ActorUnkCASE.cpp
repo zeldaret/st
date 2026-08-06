@@ -91,9 +91,9 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_1E4(0),
     mUnk_1F4(0) {
     UNSET_FLAG(mFlags, ActorFlag_6);
-    mUnk_40 = &mUnk_150;
-    // SET_FLAG(&mUnk_124.mUnk_04, ActorFlag_13);
-    mUnk_124.mUnk_04 = 0 | (1 << ActorFlag_13); // doesn't match
+    mUnk_40          = &mUnk_150;
+    mUnk_124.mUnk_04 = 0;
+    SET_FLAG2(mUnk_124.mUnk_04, ActorFlag_13);
     mUnk_124.mUnk_24 = 1;
     mUnk_38          = (Actor_38 *) &mUnk_1E8;
     mUnk_38->mUnk_08 = 4;
