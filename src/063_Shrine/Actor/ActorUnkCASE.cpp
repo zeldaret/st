@@ -276,9 +276,22 @@ void ActorUnkCASE::func_ov063_0215af54(void) {}
 void ActorUnkCASE::func_ov063_0215af58(void) {}
 void ActorUnkCASE::func_ov063_0215af5c(void) {}
 void ActorUnkCASE::func_ov063_0215af60(void) {}
-void ActorUnkCASE::func_ov063_0215afa4(void) {}
+
+void ActorUnkCASE::func_ov063_0215afa4(void) {
+    mUnk_2C = 0;
+    mVel.x  = 0;
+    mVel.z  = 0;
+}
+
 void ActorUnkCASE::func_ov063_0215afb8(void) {}
-void ActorUnkCASE::func_ov063_0215b054(void) {}
+
+void ActorUnkCASE::func_ov063_0215b054(void) {
+    VecFx32_Init(mUnk_1D8, 0, mUnk_1E0, &mVel);
+    UNSET_FLAG2(*(s16 *) &mUnk_44, ActorFlag_5);
+    mUnk_52 = -1;
+    mUnk_50 = 0;
+}
+
 void ActorUnkCASE::func_ov063_0215b090(void) {}
 void ActorUnkCASE::func_ov063_0215b1bc(void) {}
 void ActorUnkCASE::func_ov063_0215b244(void) {}
