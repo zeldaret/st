@@ -4,6 +4,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "ActorUnkZLSL_ZSRS.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -17,10 +18,21 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
+class ActorUnkEFSB_F8 : public ActorUnkZLSL_27CC {
+public:
+};
+
 class ActorUnkEFSB : public Actor {
 public:
-    /* 00 (base) */
-    /* 94 */
+    /* 000 (base) */
+    /* 094 */ unk32 mUnk_094;
+    /* 098 */ ModelRender mUnk_098;
+    /* 0A4 */ STRUCT_PAD(0x0A4, 0x0F8);
+    /* 0F8 */ ActorUnkEFSB_F8 mUnk_0F8;
+    /* 114 */ STRUCT_PAD(0x114, 0x154);
+    /* 154 */ ActorUnkEFSB_F8 mUnk_154;
+    /* 170 */ STRUCT_PAD(0x170, 0x1B0);
+    /* 1B0 */ unk32 mUnk_1B0;
 
     ActorUnkEFSB();
 
@@ -29,7 +41,7 @@ public:
     void func_ov031_020fb614(void);
     void func_ov031_020fb6cc(void);
     void func_ov031_020fb704(void);
-    void func_ov031_020fb718(void);
+    void func_ov031_020fb718(unk32 param1);
     void func_ov031_020fb720(void);
 };
 
