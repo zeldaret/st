@@ -1,4 +1,4 @@
-#include "Actor/ActorUnkSZKU.hpp"
+#include "Actor/ActorTearLight.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "System/SysNew.hpp"
@@ -37,33 +37,33 @@ extern "C" fx32 func_ov000_02080068(fx32 x);
 extern "C" fx32 func_ov000_02080080(fx32 x);
 
 static ActorUnkZLSL_AnimationTag data_ov071_02164be0 = {0x0, "szku"};
-static ActorUnkZSKU_UnkStruct data_ov071_02164cd8    = {.fct = 0x0};
-static ActorUnkZSKU_UnkStruct data_ov071_02164ce0    = {.fct = ActorUnkSZKU::func_ov071_0215fed4};
-static ActorUnkZSKU_UnkStruct data_ov071_02164ce8    = {.fct = ActorUnkSZKU::func_ov071_0215ff08};
-static ActorUnkZSKU_UnkStruct data_ov071_02164cf0    = {.fct = ActorUnkSZKU::func_ov071_0215ff3c};
-static ActorUnkZSKU_UnkStruct data_ov071_02164cf8    = {.fct = ActorUnkSZKU::func_ov071_0215ff3c};
-static ActorUnkZSKU_UnkStruct data_ov071_02164d00    = {.fct = ActorUnkSZKU::func_ov071_0215ffb8};
-static ActorUnkZSKU_UnkStruct data_ov071_02164d08    = {.fct = ActorUnkSZKU::func_ov071_0215ffbc};
+static ActorTearLight_UnkStruct data_ov071_02164cd8  = {.fct = 0x0};
+static ActorTearLight_UnkStruct data_ov071_02164ce0  = {.fct = ActorTearLight::func_ov071_0215fed4};
+static ActorTearLight_UnkStruct data_ov071_02164ce8  = {.fct = ActorTearLight::func_ov071_0215ff08};
+static ActorTearLight_UnkStruct data_ov071_02164cf0  = {.fct = ActorTearLight::func_ov071_0215ff3c};
+static ActorTearLight_UnkStruct data_ov071_02164cf8  = {.fct = ActorTearLight::func_ov071_0215ff3c};
+static ActorTearLight_UnkStruct data_ov071_02164d00  = {.fct = ActorTearLight::func_ov071_0215ffb8};
+static ActorTearLight_UnkStruct data_ov071_02164d08  = {.fct = ActorTearLight::func_ov071_0215ffbc};
 
-DECL_PROFILE(ActorProfileUnkSZKU);
+DECL_PROFILE(ActorProfileTearLight);
 
-Actor *ActorProfileUnkSZKU::Create() {
-    return new(HeapIndex_2) ActorUnkSZKU();
+Actor *ActorProfileTearLight::Create() {
+    return new(HeapIndex_2) ActorTearLight();
 }
 
-ActorProfileUnkSZKU::ActorProfileUnkSZKU() :
-    ActorProfile_Derived1(ActorId_SZKU) {
+ActorProfileTearLight::ActorProfileTearLight() :
+    ActorProfile_Derived1(ActorId_TearLight) {
     this->mUnk_18 = 0x0;
     this->mUnk_1A = 0x1000;
     this->mUnk_04.Init(FLOAT_TO_FX32(0.4f));
 }
 
 // non-matching
-ActorUnkSZKU::ActorUnkSZKU() :
-    mUnk_0A4(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkSZKU)->mUnk_3C.mUnk_50)),
-    mUnk_104(&this->mUnk_120, &this->mUnk_0A4, GET_PROFILE(ActorProfileUnkSZKU)->vfunc_04()),
+ActorTearLight::ActorTearLight() :
+    mUnk_0A4(G3d_GetModelPtr(GET_PROFILE(ActorProfileTearLight)->mUnk_3C.mUnk_50)),
+    mUnk_104(&this->mUnk_120, &this->mUnk_0A4, GET_PROFILE(ActorProfileTearLight)->vfunc_04()),
     mUnk_120(&this->mUnk_140, NULL),
-    mUnk_160(*(ActorUnkZSKU_UnkStruct *) &data_020431b8),
+    mUnk_160(*(ActorTearLight_UnkStruct *) &data_020431b8),
     mUnk_188(0x0),
     mUnk_18C(0x1),
     mUnk_18D(false),
@@ -79,7 +79,7 @@ ActorUnkSZKU::ActorUnkSZKU() :
 }
 
 // non-matching
-bool ActorUnkSZKU::vfunc_18(unk32 param1) {
+bool ActorTearLight::vfunc_18(unk32 param1) {
     SET_FLAG(this->mFlags, ActorFlag_11);
     this->mItemId = ItemId_ForceGem_60;
 
@@ -95,14 +95,14 @@ bool ActorUnkSZKU::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorUnkSZKU::vfunc_1C() {
+void ActorTearLight::vfunc_1C() {
     if (this->mUnk_5C.mParams[0] != 0x1) {
         return;
     }
     data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_1BC.mUnk_00);
 }
 
-void ActorUnkSZKU::vfunc_20() {
+void ActorTearLight::vfunc_20() {
     this->func_ov071_0215f92c();
     this->func_ov071_0215f824();
 
@@ -115,7 +115,7 @@ void ActorUnkSZKU::vfunc_20() {
     VecFx32_Copy(&this->mPos, &this->mUnk_1BC.mUnk_00);
 }
 
-void ActorUnkSZKU::vfunc_24() {
+void ActorTearLight::vfunc_24() {
     if (this->mState == ActorUnkSZKUState_3) {
         this->func_ov071_0215f92c();
     }
@@ -143,7 +143,7 @@ void ActorUnkSZKU::vfunc_24() {
     this->mUnk_104.vfunc_34();
 }
 
-void ActorUnkSZKU::vfunc_2C(unk32 param1) {
+void ActorTearLight::vfunc_2C(unk32 param1) {
     if (!this->func_01fff5d0(param1, 0x0)) {
         return;
     }
@@ -159,26 +159,26 @@ void ActorUnkSZKU::vfunc_2C(unk32 param1) {
 }
 
 // non-matching
-void ActorUnkSZKU::vfunc_30(Actor_vfunc_30 *param1) {
-    this->func_ov017_020bef88(param1, GET_PROFILE(ActorProfileUnkSZKU), 0x1);
+void ActorTearLight::vfunc_30(Actor_vfunc_30 *param1) {
+    this->func_ov017_020bef88(param1, GET_PROFILE(ActorProfileTearLight), 0x1);
 }
 
-void ActorUnkSZKU::func_ov071_0215f7f4(ActorState state) {
+void ActorTearLight::func_ov071_0215f7f4(ActorState state) {
     this->mState  = state;
     this->mUnk_2C = data_ov000_020aecf8;
 }
 
-void ActorUnkSZKU::func_ov071_0215f80c() {
+void ActorTearLight::func_ov071_0215f80c() {
     UNSET_FLAG(this->mFlags, ActorFlag_5);
     this->func_ov071_0215fca4();
 }
 
-void ActorUnkSZKU::func_ov071_0215f824() {
+void ActorTearLight::func_ov071_0215f824() {
     switch (this->mState) {
         case ActorUnkSZKUState_3:
         case ActorUnkSZKUState_8: {
             UnkStruct_027e0cec *data = data_027e0cec;
-            for (ActorUnkSZKU_204 *playerGet = this->mUnk_204; playerGet != this->mUnk_204 + ARRAY_LEN(this->mUnk_204);
+            for (ActorTearLight_204 *playerGet = this->mUnk_204; playerGet != this->mUnk_204 + ARRAY_LEN(this->mUnk_204);
                  ++playerGet) {
                 data->func_ov000_020a0110(playerGet);
             }
@@ -189,14 +189,14 @@ void ActorUnkSZKU::func_ov071_0215f824() {
                 VecFx32 vec = this->mPos;
                 vec.y += FLOAT_TO_FX32(0.5f);
                 UnkStruct_027e0cec *data = data_027e0cec;
-                for (ActorUnkSZKU_204 *playerGet = this->mUnk_204; playerGet != this->mUnk_204 + ARRAY_LEN(this->mUnk_204);
+                for (ActorTearLight_204 *playerGet = this->mUnk_204; playerGet != this->mUnk_204 + ARRAY_LEN(this->mUnk_204);
                      ++playerGet) {
                     data->func_ov000_020a0140(playerGet, &vec);
                 }
                 break;
             }
             UnkStruct_027e0cec *data = data_027e0cec;
-            for (ActorUnkSZKU_204 *playerGet = this->mUnk_204; playerGet != this->mUnk_204 + ARRAY_LEN(this->mUnk_204);
+            for (ActorTearLight_204 *playerGet = this->mUnk_204; playerGet != this->mUnk_204 + ARRAY_LEN(this->mUnk_204);
                  ++playerGet) {
                 data->func_ov000_020a0110(playerGet);
             }
@@ -205,7 +205,7 @@ void ActorUnkSZKU::func_ov071_0215f824() {
 }
 
 // non-matching
-void ActorUnkSZKU::func_ov071_0215f92c() {
+void ActorTearLight::func_ov071_0215f92c() {
     if (this->mState != ActorUnkSZKUState_8 && !this->func_ov017_020beeec(0x4000)) {
         return;
     }
@@ -281,16 +281,17 @@ void ActorUnkSZKU::func_ov071_0215f92c() {
     }
 }
 
-void ActorUnkSZKU::func_ov071_0215fc0c() {
+void ActorTearLight::func_ov071_0215fc0c() {
     UnkStruct_027e0cec *data = data_027e0cec;
-    for (ActorUnkSZKU_204 *playerGet = this->mUnk_204; playerGet != this->mUnk_204 + ARRAY_LEN(this->mUnk_204); ++playerGet) {
+    for (ActorTearLight_204 *playerGet = this->mUnk_204; playerGet != this->mUnk_204 + ARRAY_LEN(this->mUnk_204);
+         ++playerGet) {
         data->func_ov000_020a0110(playerGet);
     }
     this->func_ov071_0215fd80();
 }
 
 // non-matching
-void ActorUnkSZKU::func_ov071_0215fc54() {
+void ActorTearLight::func_ov071_0215fc54() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_0);
 
     this->mUnk_18D = false;
@@ -304,7 +305,7 @@ void ActorUnkSZKU::func_ov071_0215fc54() {
 }
 
 // non-matching
-void ActorUnkSZKU::func_ov071_0215fca4() {
+void ActorTearLight::func_ov071_0215fca4() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_1);
 
     this->mUnk_52 = 0xFFFF;
@@ -320,7 +321,7 @@ void ActorUnkSZKU::func_ov071_0215fca4() {
 }
 
 // non-matching
-void ActorUnkSZKU::func_ov071_0215fd04() {
+void ActorTearLight::func_ov071_0215fd04() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_2);
 
     bool temp_r0 = this->mUnk_5C.mUnk_0F;
@@ -345,7 +346,7 @@ void ActorUnkSZKU::func_ov071_0215fd04() {
 }
 
 // non-matching
-void ActorUnkSZKU::func_ov071_0215fd80() {
+void ActorTearLight::func_ov071_0215fd80() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_3);
 
     this->mUnk_52 = 0xFFFF;
@@ -359,7 +360,7 @@ void ActorUnkSZKU::func_ov071_0215fd80() {
 }
 
 // non-matching
-void ActorUnkSZKU::func_ov071_0215fdd4() {
+void ActorTearLight::func_ov071_0215fdd4() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_4);
 
     this->mUnk_52 = 0xFFFF;
@@ -380,7 +381,7 @@ void ActorUnkSZKU::func_ov071_0215fdd4() {
 }
 
 // non-matching
-void ActorUnkSZKU::func_ov071_0215fe54() {
+void ActorTearLight::func_ov071_0215fe54() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_6);
     this->mUnk_2C = 0x0;
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);
@@ -389,7 +390,7 @@ void ActorUnkSZKU::func_ov071_0215fe54() {
 }
 
 // non-matching
-void ActorUnkSZKU::func_ov071_0215fe94() {
+void ActorTearLight::func_ov071_0215fe94() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_7);
     this->mUnk_2C = 0x0;
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);
@@ -397,19 +398,19 @@ void ActorUnkSZKU::func_ov071_0215fe94() {
     this->mUnk_160 = data_ov071_02164d08;
 }
 
-void ActorUnkSZKU::func_ov071_0215fed4() {
+void ActorTearLight::func_ov071_0215fed4() {
     this->IsTimerOut();
     this->func_ov000_02098838();
     this->mUnk_3C = &this->mUnk_168;
 }
 
-void ActorUnkSZKU::func_ov071_0215ff08() {
+void ActorTearLight::func_ov071_0215ff08() {
     this->IsTimerOut();
     this->mAngle += 0x222; // TODO DEG_ANGLE
     this->mUnk_3C = &this->mUnk_168;
 }
 
-void ActorUnkSZKU::func_ov071_0215ff3c() {
+void ActorTearLight::func_ov071_0215ff3c() {
     this->IsTimerOut();
 
     if (!data_027e09b8->func_01ffd420()) {
@@ -421,9 +422,9 @@ void ActorUnkSZKU::func_ov071_0215ff3c() {
     }
 }
 
-void ActorUnkSZKU::func_ov071_0215ffb8() {}
+void ActorTearLight::func_ov071_0215ffb8() {}
 
-void ActorUnkSZKU::func_ov071_0215ffbc() {
+void ActorTearLight::func_ov071_0215ffbc() {
     UnkActor_ov071_0215ffbc *actor = (UnkActor_ov071_0215ffbc *) gpActorManager->func_01fff3b4(this->mUnk_190);
     if (actor == NULL) {
         this->func_ov071_0215fca4();
@@ -432,41 +433,39 @@ void ActorUnkSZKU::func_ov071_0215ffbc() {
     func_01ffb714(&actor->mUnk_E8, &this->mPos, &this->mVel);
 }
 
-ActorUnkSZKU_194::ActorUnkSZKU_194(ActorUnkSZKU *param1) :
+ActorTearLight_194::ActorTearLight_194(ActorTearLight *param1) :
     Actor_C4(param1) {
     this->mUnk_20 = param1;
     this->mUnk_04 = 0x1;
 }
 
-bool ActorUnkSZKU_194::vfunc_00(ActorRef ref, unk32 param2) {
+bool ActorTearLight_194::vfunc_00(ActorRef ref, unk32 param2) {
     if (param2 != 0x0) {
-        ActorUnkSZKU *actor = this->GetActorPtr<ActorUnkSZKU>();
-        actor->mUnk_190     = ref;
+        ActorTearLight *actor = this->GetActorPtr<ActorTearLight>();
+        actor->mUnk_190       = ref;
         actor->func_ov071_0215fe54();
     }
     return this->Actor_C4::vfunc_00(ref, param2);
 }
 
-bool ActorUnkSZKU_194::vfunc_04() {
-    this->GetActorPtr<ActorUnkSZKU>()->func_ov071_0215fe94();
+bool ActorTearLight_194::vfunc_04() {
+    this->GetActorPtr<ActorTearLight>()->func_ov071_0215fe94();
     return this->Actor_C4::vfunc_04();
 }
 
-void ActorUnkSZKU_194::vfunc_0C(unk32 param1) {
-    this->GetActorPtr<ActorUnkSZKU>()->func_ov071_0215fca4();
+void ActorTearLight_194::vfunc_0C(unk32 param1) {
+    this->GetActorPtr<ActorTearLight>()->func_ov071_0215fca4();
     return this->Actor_C4::vfunc_0C(param1);
 }
 
-void ActorUnkSZKU_194::vfunc_08() {
-    this->GetActorPtr<ActorUnkSZKU>()->func_ov071_0215fc0c();
+void ActorTearLight_194::vfunc_08() {
+    this->GetActorPtr<ActorTearLight>()->func_ov071_0215fc0c();
     return this->Actor_C4::vfunc_08();
 }
 
-ActorUnkSZKU_204::ActorUnkSZKU_204() :
+ActorTearLight_204::ActorTearLight_204() :
     UnkStruct_PlayerGet_ec(NULL),
     mUnk_04(-0x1),
     mUnk_08(0x0) {}
 
-ActorUnkSZKU::~ActorUnkSZKU() {}
-ActorProfileUnkSZKU::~ActorProfileUnkSZKU() {}
-ActorUnkSKZU_104::~ActorUnkSKZU_104() {}
+ActorTearLight_104::~ActorTearLight_104() {}
