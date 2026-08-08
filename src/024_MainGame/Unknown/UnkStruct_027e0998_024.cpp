@@ -126,9 +126,9 @@ bool UnkStruct_027e0998::func_ov024_020c727c(Vec2s *param1, u16 *param2) {
         return false;
     }
 
-    bool temp_r4 = this->UnkStruct_027e0998_Base::vfunc_00(&data_027e09a4->mUnk_30, param1, param2);
+    bool temp_r4 = this->UnkStruct_027e0998_Base::vfunc_00(&data_027e09a4->mUnk_2C.mUnk_04, param1, param2);
     Vec2s sp0;
-    func_ov024_020d51dc(&sp0, data_027e09a4->mUnk_2C);
+    func_ov024_020d51dc(&sp0, data_027e09a4->mUnk_2C.mSceneIndex);
 
     param1->x += sp0.x;
     param1->y += sp0.y;

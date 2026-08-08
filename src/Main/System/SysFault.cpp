@@ -2,8 +2,8 @@
 #include "System/OverlayManager.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_02049b18.hpp"
-#include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f84.hpp"
+#include "Unknown/UnkStruct_ov000_020b504c.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "global.h"
 #include <nitro/mi.h>
@@ -85,7 +85,7 @@ void SysFault::func_020127f0(unk32 param1) {
 
         switch (param1) {
             case 0:
-            case 1:
+            case 1: {
                 data_02049b18.mButtons.func_02013b24(data_02049b18.mButtons.func_02013bbc());
                 u16 expected = data_0203e0c4[this->mUnk_04];
 
@@ -108,6 +108,7 @@ void SysFault::func_020127f0(unk32 param1) {
 
                 doDraw = false;
                 break;
+            }
             case 2:
             case 3:
             default:

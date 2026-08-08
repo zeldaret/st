@@ -30,6 +30,8 @@ public:
 
     MapObjectProfile *GetProfileFromId(MapObjectId mapObjId);
     MapObject *CreateMapObject(MapObjectId mapObjId);
+    MapObjectProfile **func_ov000_0209c6a0();
+    MapObjectProfile **func_ov000_0209c6ac();
 
     static unk32 func_ov000_0209c718(u32 param1);
 };

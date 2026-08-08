@@ -28,7 +28,7 @@ public:
     UnkStruct_ov019_020d24c8_2C_24_FC3() {}
 };
 
-class UnkStruct_ov019_020d24c8_2C_24_FB0 : public SysObject {
+class UnkStruct_ov019_020d24c8_2C_24_FB0 {
 public:
     /* 00 */ UnkSystem2_UnkSubSystem5 *mUnk_00[6];
     /* 18 */
@@ -36,7 +36,7 @@ public:
     UnkStruct_ov019_020d24c8_2C_24_FB0() {}
 };
 
-class UnkStruct_ov019_020d24c8_2C_24_FB8 : public SysObject {
+class UnkStruct_ov019_020d24c8_2C_24_FB8 {
 public:
     /* 00 */ UnkSystem2_UnkSubSystem1_Derived1 *mUnk_00[6];
     /* 18 */

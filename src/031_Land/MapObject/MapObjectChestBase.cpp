@@ -71,12 +71,12 @@ bool MapObjectChestBase::vfunc_00() {
     SET_FLAG(this->mFlags, MapObjFlag_9);
     this->mUnk_18[0] = 0x0D;
 
-    UnkStruct_027e0cd8_0c *pUVar2 = data_027e0cd8->mUnk_0C;
+    UnkStruct_027e0cd8_0C_Base *pUVar2 = data_027e0cd8->mUnk_0C;
 
-    if (this->mUnk_20.mUnk_00[3] == 1) {
+    if (this->mUnk_20.mParams[3] == 1) {
         this->mPos.x += 0x7FC;
 
-        Vec2b sp48(this->mUnk_3A.x, this->mUnk_3A.y);
+        Vec2bCpp sp48(this->mUnk_3A.x, this->mUnk_3A.y);
         pUVar2->func_ov000_020801b0(&sp48, 7, 1);
 
         sp48.x++;
@@ -84,25 +84,25 @@ bool MapObjectChestBase::vfunc_00() {
     }
 
     this->vfunc_38(this->vfunc_3C(), 1);
-    this->mItemId = this->mUnk_20.mUnk_00[0];
+    this->mItemId = this->mUnk_20.mParams[0];
     return true;
 }
 
 // non-matching
 void MapObjectChestBase::vfunc_04() {
     fx32 iVar2;
-    UnkStruct_027e0cd8_0c *pUVar5;
+    UnkStruct_027e0cd8_0C_Base *pUVar5;
     VecFx32 sp48;
     VecFx32 sp3C;
     VecFx32 local_38;
     VecFx32 local_44;
     VecFx32 sp18;
     VecFx32 spC;
-    Vec2b local_5e;
-    Vec2b local_62;
-    Vec2b local_64;
-    Vec2b local_66;
-    Vec2b local_68;
+    Vec2bCpp local_5e;
+    Vec2bCpp local_62;
+    Vec2bCpp local_64;
+    Vec2bCpp local_66;
+    Vec2bCpp local_68;
     Vec2us local_6c;
 
     pUVar5 = data_027e0cd8->mUnk_0C;
@@ -129,22 +129,22 @@ void MapObjectChestBase::vfunc_04() {
 
     local_68.x = this->mUnk_3A.x;
     local_68.y = this->mUnk_3A.y;
-    iVar2      = pUVar5->func_01ffedf4((Vec2b *) &local_68);
+    iVar2      = pUVar5->func_01ffedf4((Vec2bCpp *) &local_68);
 
-    if (this->mUnk_20.mUnk_00[3] == 1) {
-        Vec2b temp_r0(this->mUnk_3A.x, this->mUnk_3A.y);
+    if (this->mUnk_20.mParams[3] == 1) {
+        Vec2bCpp temp_r0(this->mUnk_3A.x, this->mUnk_3A.y);
         temp_r0.x--;
 
-        if (pUVar5->func_01ffedf4((Vec2b *) &temp_r0) > iVar2 || gpMapObjManager->func_01fff498(local_5e) != NULL) {
+        if (pUVar5->func_01ffedf4((Vec2bCpp *) &temp_r0) > iVar2 || gpMapObjManager->func_01fff498(local_5e) != NULL) {
             sp48.x -= FLOAT_TO_FX32(0.5f);
         }
 
         temp_r0.x += 3;
-        if (pUVar5->func_01ffedf4((Vec2b *) &temp_r0) > iVar2 || gpMapObjManager->func_01fff498(local_5e) != NULL) {
+        if (pUVar5->func_01ffedf4((Vec2bCpp *) &temp_r0) > iVar2 || gpMapObjManager->func_01fff498(local_5e) != NULL) {
             sp3C.x += FLOAT_TO_FX32(0.5f);
         }
     } else {
-        Vec2b temp_r0(this->mUnk_3A.x, this->mUnk_3A.y);
+        Vec2bCpp temp_r0(this->mUnk_3A.x, this->mUnk_3A.y);
         temp_r0.x--;
         temp_r0.y += 2;
         // local_5e.y = this->mUnk_3A.y + (this->mUnk_3A.x - 1);
@@ -168,7 +168,7 @@ void MapObjectChestBase::vfunc_04() {
         sp48.z -= FLOAT_TO_FX32(0.5f);
     }
 
-    if (data_027e09a4->mUnk_00.mSceneIndex == SceneIndex_d_flame) {
+    if (data_027e09a4->CurrentSceneIndex() == SceneIndex_d_flame) {
         local_64.x = this->mUnk_3A.x;
         local_66.y = this->mUnk_3A.y;
 
@@ -205,24 +205,24 @@ unk32 MapObjectChestBase::vfunc_28() {
 }
 
 ItemId MapObjectChestBase::func_ov031_021037d0() {
-    switch (this->mUnk_16) {
-        case 0:
-        case 1:
-        case 4:
-        case 5:
-        case 6:
-        case 7:
-        case 8:
+    switch (this->mState) {
+        case MapObjChestBaseState_0:
+        case MapObjChestBaseState_1:
+        case MapObjChestBaseState_4:
+        case MapObjChestBaseState_5:
+        case MapObjChestBaseState_6:
+        case MapObjChestBaseState_7:
+        case MapObjChestBaseState_8:
             return ItemId_None;
-        case 2:
-        case 3:
+        case MapObjChestBaseState_2:
+        case MapObjChestBaseState_3:
         default:
             break;
     }
 
     this->vfunc_38(7, 0);
 
-    if ((u32) this->mItemId - ItemId_RedPotion <= 2 && data_027e0ce0->mUnk_2C->PotionSlotsFull()) {
+    if ((u32) this->mItemId - ItemId_RedPotion <= 2 && data_027e0ce0->mUnk_2C->GetInventory()->PotionSlotsFull()) {
         return ItemId_BigGreenRupee;
     }
 
@@ -230,7 +230,7 @@ ItemId MapObjectChestBase::func_ov031_021037d0() {
 }
 
 bool MapObjectChestBase::func_ov031_02103864() {
-    return this->mUnk_16 == 8 ? true : false;
+    return this->mState == MapObjChestBaseState_8 ? true : false;
 }
 
 void MapObjectChestBase::func_ov031_02103878() {

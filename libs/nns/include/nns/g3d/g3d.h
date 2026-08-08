@@ -56,6 +56,27 @@ typedef struct G3d_Animation_ {
     /* 1C */
 } G3d_Animation;
 
+typedef struct G3d_Model_14_ {
+    /* 00 */ u8 unk_14;
+    /* 01 */ u8 scalingHandler; // Determines which of the G3d_gScaleHandlers to use for this model
+    /* 02 */ u8 textureHandler; // Determines which of the G3d_gTextureHandlers to use for this model
+    /* 03 */ u8 numBones;       // number of nodes
+    /* 04 */ u8 numMat;         // number of materials
+    /* 05 */ u8 numMesh;        // number of meshes
+    /* 06 */ u8 unk_1A;
+    /* 07 */ u8 unk_1B;
+    /* 08 */ fx32 upScale;
+    /* 0C */ fx32 downScale;
+    /* 10 */ u16 numVertex;          // number of vertices
+    /* 12 */ u16 numPolygon;         // number of polygons
+    /* 14 */ u16 numTriangle;        // number of triangles
+    /* 16 */ u16 numQuad;            // number of quads
+    /* 18 */ fx16 boundingBoxMin[3]; // bounding box lower vertex
+    /* 1E */ fx16 boundingBoxMax[3]; // bounding box upper vertex
+    /* 24 */ s32 unk_38;
+    /* 28 */ s32 unk_3C;
+} G3d_Model_14; // size = 0x2C
+
 // Structure representing the NSBMD model file
 typedef struct G3d_Model_ {
     /* 00 */ u32 size;       // size of the model in bytes
@@ -63,25 +84,9 @@ typedef struct G3d_Model_ {
     /* 08 */ u32 offMat;     // offset of the material list
     /* 0C */ u32 offMesh;    // offset of the mesh list
     /* 10 */ u32 offInvBMtx; // offset of the InvBindMatrix list
-    /* 14 */ u8 dummy1;
-    /* 15 */ u8 scalingHandler; // Determines which of the G3d_gScaleHandlers to use for this model
-    /* 16 */ u8 textureHandler; // Determines which of the G3d_gTextureHandlers to use for this model
-    /* 17 */ u8 numBones;       // number of nodes
-    /* 18 */ u8 numMat;         // number of materials
-    /* 19 */ u8 numMesh;        // number of meshes
-    /* 1A */ u8 dummy2[2];
-    /* 1C */ fx32 upScale;
-    /* 20 */ fx32 downScale;
-    /* 24 */ u16 numVertex;          // number of vertices
-    /* 26 */ u16 numPolygon;         // number of polygons
-    /* 28 */ u16 numTriangle;        // number of triangles
-    /* 2A */ u16 numQuad;            // number of quads
-    /* 2C */ fx16 boundingBoxMin[3]; // bounding box lower vertex
-    /* 32 */ fx16 boundingBoxMax[3]; // bounding box upper vertex
-    /* 38 */ u8 dummy3[8];
+    /* 14 */ G3d_Model_14 unk_14;
     /* 40 */ G3d_NameList boneList; // bone list
-    /* 4C */
-} G3d_Model;
+} G3d_Model;                        // size = 0x4C
 
 static inline G3d_NameList *G3d_GetBoneList(const G3d_Model *mdl) {
     return mdl != NULL ? (G3d_NameList *) &mdl->boneList : NULL;
@@ -192,6 +197,7 @@ typedef struct BMDSectionModel {
     /* 08 */ G3d_NameList modelList;
 } BMDSectionModel;
 
+void G3d_0200e6a0(const G3d_Model *pModel, s32 param2, s32 param3);
 u32 *G3d_0200f05c(const G3d_NameList *pNameList, const char *pName);
 
 static inline u32 *G3d_GetModelOffsetPtr(const BMDSectionModel *pSection, u8 modelIndex) {
@@ -221,13 +227,12 @@ static inline G3d_Model *G3d_GetModelPtr(const BMDSectionModel *pSection) {
     return G3d_GetModelVariantPtr(pSection, 0);
 }
 
-//! TODO: returns `G3d_Model*`?
-static inline void *G3d_GetUnkPtr(const BMDSectionModel *pSection, const char *name) {
+static inline G3d_Model *G3d_GetUnkPtr(const BMDSectionModel *pSection, const char *name) {
     if (pSection != NULL) {
         u32 *pOffset = G3d_0200f05c(&pSection->modelList, name);
 
         if (pOffset != NULL) {
-            return (void *) ((u8 *) pSection + *pOffset);
+            return (G3d_Model *) ((u8 *) pSection + *pOffset);
         }
     }
 

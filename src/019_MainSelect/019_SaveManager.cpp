@@ -26,13 +26,13 @@ const unk32 data_ov019_020d1be8[] = {
 };
 
 void SaveManager::func_ov019_020d086c(u16 param1) {
-    CARD_LockBackup(gSaveManager.mUnk_204);
+    CARD_LockBackup(gSaveManager.mCardId);
 
     STATIC_PTMFCALLBACK(PTMF<SaveFile>, gSaveManager.mUnk_23C, gSaveManager.mpSaveFile);
-    gSaveManager.mUnk_20C = CARD_GetResultCode();
-    CARD_UnlockBackup(gSaveManager.mUnk_204);
+    gSaveManager.mResultCode = CARD_GetResultCode();
+    CARD_UnlockBackup(gSaveManager.mCardId);
 
-    if (gSaveManager.mUnk_20C != 0) {
+    if (gSaveManager.mResultCode != CARD_RESULT_SUCCESS) {
         gSaveManager.mUnk_214 = gSaveManager.mUnk_210;
     }
 
@@ -79,25 +79,25 @@ void SaveManager::func_ov019_020d0a04(u16 saveSlotIndex) {
 void SaveManager::func_ov019_020d0a2c(u16 saveSlotIndex) {
     data_02049bd4.mUnk_04++;
     gSaveManager.mpSaveFile->mSaveSlotIndex = saveSlotIndex;
-    CARD_LockBackup(gSaveManager.mUnk_204);
+    CARD_LockBackup(gSaveManager.mCardId);
     gSaveManager.mUnk_210 = 1;
     gSaveManager.mpSaveFile->func_ov019_020d1634();
-    gSaveManager.mUnk_20C = CARD_GetResultCode();
+    gSaveManager.mResultCode = CARD_GetResultCode();
 
-    if (gSaveManager.mUnk_20C != 0) {
+    if (gSaveManager.mResultCode != CARD_RESULT_SUCCESS) {
         gSaveManager.mUnk_214 = gSaveManager.mUnk_210;
         return;
     }
 
     gSaveManager.mUnk_210 = 2;
     gSaveManager.mpSaveFile->func_ov019_020d16d0();
-    gSaveManager.mUnk_20C = CARD_GetResultCode();
+    gSaveManager.mResultCode = CARD_GetResultCode();
 
-    if (gSaveManager.mUnk_20C != 0) {
+    if (gSaveManager.mResultCode != CARD_RESULT_SUCCESS) {
         gSaveManager.mUnk_214 = gSaveManager.mUnk_210;
     }
 
-    CARD_UnlockBackup(gSaveManager.mUnk_204);
+    CARD_UnlockBackup(gSaveManager.mCardId);
     gSaveManager.mUnk_210 = 0;
     data_02049bd4.mUnk_04--;
 }

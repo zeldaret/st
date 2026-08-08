@@ -12,7 +12,7 @@ public:
     ActorUnkPMST_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -26,7 +26,6 @@ public:
 
     /* 4C */ virtual ~ActorUnkPMST() override;
 
-    void func_ov077_02159db4(void);
     void func_ov077_02159ddc(void);
     void func_ov077_02159e14(void);
     void func_ov077_02159e40(void);
@@ -47,6 +46,8 @@ public:
     void func_ov077_0215aa20(void);
     void func_ov077_0215aa44(void);
     void func_ov077_0215aa88(void);
+
+    static void func_ov077_02159db4(void);
 };
 
 class ActorProfileUnkPMST : public ActorProfile_Derived1 {

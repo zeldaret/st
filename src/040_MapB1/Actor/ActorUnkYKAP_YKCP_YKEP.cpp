@@ -2,8 +2,13 @@
 
 #include "Actor/ActorUnkYKAP_YKCP_YKEP.hpp"
 #include "System/SysNew.hpp"
+#include "versions.h"
 
 // --- Actor YKAP ---
+
+#if IS_JP
+THUMB_BEGIN
+#endif
 
 DECL_PROFILE(ActorProfileUnkYKAP);
 
@@ -39,6 +44,10 @@ Actor *ActorProfileUnkYKEP::Create() {
 
 ActorProfileUnkYKEP::ActorProfileUnkYKEP() :
     ActorProfile_Derived1(ActorId_YKEP) {}
+
+#if IS_JP
+THUMB_END
+#endif
 
 ActorUnkYKEP::ActorUnkYKEP() {}
 

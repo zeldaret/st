@@ -656,7 +656,7 @@ from:0x020c84dc kind:arm_call to:0x0201bb84 module:main
 from:0x020c8508 kind:arm_call to:0x0201b9a8 module:main
 from:0x020c8518 kind:load to:0x0204e5f8 module:main
 from:0x020c8530 kind:arm_call to:0x02061248 module:overlay(0)
-from:0x020c8540 kind:arm_call_thumb to:0x020b6520 module:overlays(1,2,6,10,12,14)
+from:0x020c8540 kind:arm_call_thumb to:0x020b6520 module:overlays(2,6,10,12,14)
 from:0x020c8550 kind:arm_call_thumb to:0x020b6ab0 module:overlay(6)
 from:0x020c8568 kind:arm_call_thumb to:0x020b6bcc module:overlay(6)
 from:0x020c8590 kind:arm_call_thumb to:0x020b6938 module:overlay(6)

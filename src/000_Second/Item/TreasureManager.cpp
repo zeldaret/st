@@ -85,6 +85,16 @@ extern u16 data_ov000_020afe8c;
 extern u16 data_ov000_020afe90;
 extern u16 data_ov000_020afe94;
 
+TreasureManager *TreasureManager::Create() {
+    return new(HeapIndex_1) TreasureManager();
+}
+
+TreasureManager::TreasureManager() {
+    this->mUnk_5C = 0;
+}
+
+TreasureManager::~TreasureManager() {}
+
 void TreasureManager::func_ov000_020a9b10(void *param1) {
     MI_CpuCopyFast(param1, this, sizeof(TreasureManager));
 }

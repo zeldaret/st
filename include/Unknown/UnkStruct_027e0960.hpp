@@ -59,7 +59,7 @@ public:
     bool func_ov000_02059ccc(u8 param1, u8 param2);
 };
 
-class UnkStruct_027e0960 {
+class UnkStruct_027e0960 : public AutoInstance<UnkStruct_027e0960> {
 public:
     /* 00 */ Iterator<UnkStruct_027e0960_TableEntry> mTable;
     /* 08 */
@@ -67,8 +67,24 @@ public:
     UnkStruct_027e0960();
     ~UnkStruct_027e0960();
 
+    // overlay 0
+    void func_ov000_0205a11c();
+    void func_ov000_0205a120();
+    void func_ov000_0205a160();
+    void func_ov000_0205a164();
+    void func_ov000_0205a1a4();
+    void func_ov000_0205a1fc(u8 nEntries);
+    void func_ov000_0205a288(unk32 index, const ZMBEntryRALB *pEntry);
+    void func_ov000_0205a2a4(volatile unk32 index, ZMBRALBPoint *pPoint);
+    void func_ov000_0205a2c8();
     UnkStruct_027e0960_TableEntry *func_ov000_0205a390(u8 param1);
     UnkStruct_027e0960_TableEntry *func_ov000_0205a3fc(VecFx32 param1, unk32 param4);
+
+    static UnkStruct_027e0960 *Create();
+
+    // overlay 1
+    static void Destroy();
 };
 
+// path manager?
 extern UnkStruct_027e0960 *data_027e0960;

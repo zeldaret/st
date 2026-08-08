@@ -9,8 +9,8 @@
 #include "Unknown/UnkStruct_027e0d34.hpp"
 #include "versions.h"
 
-extern "C" void func_01ffedac(u16 *, VecFx32 *);
-extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, VecFx32 *);
+extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
+extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0C_Base *, VecFx32 *);
 extern "C" void func_ov000_0205c1f0(unk32 *, u16);
 extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
 extern "C" void func_ov017_020bf99c();
@@ -106,7 +106,7 @@ ActorItemDrop::ActorItemDrop() :
 
     switch (this->GetActorId()) {
         case ActorId_ArrowDrop:
-            if (GET_FLAG(data_027e0ce0->mUnk_2C->mFlags, ItemFlag_Bow)) {
+            if (data_027e0ce0->mUnk_2C->HasItem(ItemFlag_Bow)) {
                 this->mItemTypeId = ItemDropType_Arrow;
                 this->mUnk_D8     = FLOAT_TO_FX32(0.5f);
             } else {
@@ -114,7 +114,7 @@ ActorItemDrop::ActorItemDrop() :
             }
             break;
         case ActorId_BombDrop:
-            if (GET_FLAG(data_027e0ce0->mUnk_2C->mFlags, ItemFlag_Bombs)) {
+            if (data_027e0ce0->mUnk_2C->HasItem(ItemFlag_Bombs)) {
                 this->mItemTypeId = ItemDropType_Bomb;
                 this->mUnk_D8     = FLOAT_TO_FX32(0.3f);
             } else {
@@ -165,7 +165,7 @@ ActorItemDrop::ActorItemDrop() :
     this->mUnk_B4.mUnk_04 = 0x13100;
     this->mUnk_40         = &this->mUnk_E4;
 
-    u16 sp0;
+    Vec2bCpp sp0;
     func_01ffedac(&sp0, &this->mPos);
 
     if (data_027e0cd8->mUnk_0C->func_ov000_02080180(&sp0) == 0x5) {
@@ -433,10 +433,10 @@ void ActorItemDrop::func_ov031_020fa72c() {
     bool executeFunction = true;
     switch (this->mItemTypeId) {
         case ItemDropType_Arrow:
-            data_027e0ce0->mUnk_2C->GiveArrows(5);
+            data_027e0ce0->mUnk_2C->GetInventory()->GiveArrows(5);
             break;
         case ItemDropType_Bomb:
-            data_027e0ce0->mUnk_2C->GiveBombs(3);
+            data_027e0ce0->mUnk_2C->GetInventory()->GiveBombs(3);
             break;
         case ItemDropType_RedPotion:
             executeFunction = data_027e0d34->TryItemGive(ItemId_RedPotion);
@@ -526,30 +526,30 @@ void ActorItemDrop::func_ov031_020fa900() {
     }
 }
 
-ActorItemDrop_C4::ActorItemDrop_C4(Actor *param_1) :
-    Actor_C4(param_1) {
-    this->mUnk_20 = param_1;
+ActorItemDrop_C4::ActorItemDrop_C4(Actor *param1) :
+    Actor_C4(param1) {
+    this->mUnk_20 = param1;
     this->mUnk_04 = 0x1;
 }
 
-bool ActorItemDrop_C4::vfunc_00(ActorRef ref, unk32 param_2) {
-    if (param_2 != 0) {
+bool ActorItemDrop_C4::vfunc_00(ActorRef ref, unk32 param2) {
+    if (param2 != 0) {
         ActorItemDrop *actorDroppedItem = this->GetActorPtr<ActorItemDrop>();
         actorDroppedItem->mUnk_E0       = ref;
         actorDroppedItem->SetState(ActorItemDropState_4);
     }
 
-    return Actor_C4::vfunc_00(ref, param_2);
+    return Actor_C4::vfunc_00(ref, param2);
 }
 
-void ActorItemDrop_C4::vfunc_04() {
+bool ActorItemDrop_C4::vfunc_04() {
     this->GetActorPtr<ActorItemDrop>()->SetState(ActorItemDropState_5);
-    Actor_C4::vfunc_04();
+    return Actor_C4::vfunc_04();
 }
 
-void ActorItemDrop_C4::vfunc_0C(unk32 param_1) {
+void ActorItemDrop_C4::vfunc_0C(unk32 param1) {
     this->GetActorPtr<ActorItemDrop>()->SetState(ActorItemDropState_1);
-    Actor_C4::vfunc_0C(param_1);
+    Actor_C4::vfunc_0C(param1);
 }
 
 void ActorItemDrop_C4::vfunc_08() {

@@ -13,14 +13,15 @@
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
 extern "C" void func_01ffb9cc(VecFx32 *, VecFx32 *);
 extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
-extern "C" void func_01ffecdc(unk32 param1, Cylinder *param2);
+extern "C" unk32 func_01ffecdc(unk32 param1, Cylinder *param2);
 extern "C" bool func_01ffd768(unk32, void *, void *, unk8);
+extern "C" void func_01fff6d0(void *, VecFx32 *param1, s32 *param2, s32 *param3);
 
 MapObject::MapObject() {
     this->mUnk_10   = NULL;
-    this->mUnk_16   = -1;
+    this->mState    = MapObjState_None;
     this->mFlags[0] = 0;
-    this->mUnk_20.func_ov000_0209c7c8();
+    this->mUnk_20.Init();
     *(u32 *) &this->mUnk_38 = 0;
 
     UnkStruct_ov000_020b5d34 *ptr1 = &data_ov000_020b5d34;
@@ -53,13 +54,13 @@ bool MapObject::vfunc_00() {
 
 void MapObject::vfunc_04() {}
 
-void MapObject::func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx) {
+void MapObject::func_ov000_0209d0bc(Vec2bCpp *param1, MapObject *thisx) {
     VecFx32 pos;
     Vec2p out;
 
-    MapObjectManager *t = data_027e0cd8->mUnk_10;
-    pos                 = thisx->mPos;
-    t->func_01fff6d0(&pos, (fx32 *) &out.y, (fx32 *) &out.x);
+    UnkStruct_027e0cd8_10 *ptr = data_027e0cd8->mUnk_10;
+    pos                        = thisx->mPos;
+    func_01fff6d0(ptr, &pos, (fx32 *) &out.y, (fx32 *) &out.x);
 
     Vec2p temp;
     temp.y    = out.x;
@@ -70,13 +71,13 @@ void MapObject::func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx) {
 
 bool MapObject::func_ov000_0209d114() {
     bool result[2];
-    MapObject::func_ov000_0209d0bc((Vec2b *) &result, this);
+    MapObject::func_ov000_0209d0bc((Vec2bCpp *) &result, this);
     return result[0];
 }
 
 bool MapObject::func_ov000_0209d12c() {
     bool result[2];
-    MapObject::func_ov000_0209d0bc((Vec2b *) &result, this);
+    MapObject::func_ov000_0209d0bc((Vec2bCpp *) &result, this);
     return result[1];
 }
 
@@ -102,13 +103,13 @@ bool MapObject::func_ov000_0209d144(Vec2s *param1, unk32 param2, unk32 param3) {
     return false;
 }
 
-bool MapObject::vfunc_1C() {
+bool MapObject::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
     return true;
 }
 
 void MapObject::vfunc_20() {}
 
-void MapObject::vfunc_24() {
+void MapObject::vfunc_24(MapObject *param1, VecFx32 param2) {
     *(u32 *) this = 0; // ????
 }
 
@@ -144,9 +145,9 @@ void MapObject::func_ov000_0209d2c4(unk32 param1, bool param2) {
     data_027e0cd8->func_ov000_02081d7c(this->mUnk_20.mUnk_0A[param1], this->mUnk_20.mUnk_08[param1], param2);
 }
 
-void MapObject::func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2b *param3) {
-    UnkStruct_027e0cd8_0c *temp_r5 = data_027e0cd8->mUnk_0C;
-    Vec2b sp0(0, 0);
+void MapObject::func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3) {
+    UnkStruct_027e0cd8_0C_Base *temp_r5 = data_027e0cd8->mUnk_0C;
+    Vec2bCpp sp0(0, 0);
 
     sp0.x = this->mUnk_3A.x;
 
@@ -169,7 +170,7 @@ void MapObject::func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2b *param3) {
     }
 }
 
-void MapObject::func_ov000_0209d3b4(unk32 param1, fx32 size) {
+unk32 MapObject::func_ov000_0209d3b4(unk32 param1, fx32 size) {
     Cylinder spC;
 
     if (this->mUnk_10 != NULL) {
@@ -181,7 +182,7 @@ void MapObject::func_ov000_0209d3b4(unk32 param1, fx32 size) {
     VecFx32_Add(&spC.pos, &this->mPos, &spC.pos);
     spC.size += size;
 
-    func_01ffecdc(param1, &spC);
+    return func_01ffecdc(param1, &spC);
 }
 
 struct stack_struct {
@@ -222,7 +223,7 @@ void MapObject::func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_
     }
 }
 
-void MapObject::func_ov000_0209d518(unk32 param1, unk32 param2, unk32 param3, u8 param4) {
+void MapObject::func_ov000_0209d518(VecFx32 *param1, unk32 param2, unk32 param3, u8 param4) {
     data_027e09b4->func_01fff60c(param1, param2, param3, param4, 0, 0);
 }
 

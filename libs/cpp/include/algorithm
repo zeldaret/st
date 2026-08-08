@@ -1,0 +1,83 @@
+#ifndef _STD_ALGORITHM_H
+#define _STD_ALGORITHM_H
+
+// from rb3/key decomp
+
+#include <msl_unk.hpp>
+
+namespace std {
+
+    template <class T> inline const T &min(const T &a, const T &b) {
+        return b < a ? b : a;
+    }
+
+    template <class T> inline const T &max(const T &a, const T &b) {
+        return a < b ? b : a;
+    }
+
+    template <class T, class _Compare> inline const T &min(const T &a, const T &b, _Compare comp) {
+        return comp(b, a) ? b : a;
+    }
+
+    template <class T, class _Compare> inline const T &max(const T &a, const T &b, _Compare comp) {
+        return comp(a, b) ? b : a;
+    }
+
+    template <typename InputIterator, typename Predicate>
+    inline InputIterator find_if(InputIterator first, InputIterator last, Predicate p) {
+        for (; first != last && !p(*first); ++first) {
+        }
+        return first;
+    }
+
+    template <typename It, typename T> inline It find(It first, It last, const T &value) {
+        while (first != last && *first != value) {
+            first++;
+        }
+
+        return first;
+    }
+
+    // adapted from https://github.com/matta/sgi-stl/blob/635eaeef4533214ec140fb17411558ad441d2996/stl/stl_algo.h#L638
+    template <typename It, typename T> inline It remove(It first, It last, const T &value) {
+        first = find(first, last, value);
+
+        if (first != last) {
+            It it = first;
+
+            for (it++; it != last; it++) {
+                if (*it != value) {
+                    *first = *it;
+                    first++;
+                }
+            }
+        }
+
+        return first;
+    }
+
+    template <typename T, typename Size, bool V /* ? */> struct __fill_n {
+        static inline void fill_n(T *first, Size n, const T &value) {
+            for (; n != 0; first++, n--) {
+                *first = value;
+            }
+        }
+    };
+
+    template <typename OutputIt /* ? */, typename Size, typename T>
+    inline void fill_n(OutputIt *first, Size n, const T &value) {
+        __fill_n<OutputIt, Size, false>::fill_n(first, n, value);
+    }
+
+    template <typename T> inline T &move(T &p) {
+        return p;
+    }
+
+    template <typename T> inline void swap(T &a, T &b) {
+        T temp = move(a);
+        a       = move(b);
+        b       = move(temp);
+    }
+} // namespace std
+
+#endif

@@ -6,13 +6,10 @@
 class MapObject_UnkStruct1 {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_44;
-    /* 08 */ unk16 mUnk_48;
-    /* 0A */ s16 mUnk_4A;
-    /* 0C */ VecFx32 mUnk_4C;
-    /* 18 */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */
 
-    MapObject_UnkStruct1(); // func_ov000_02073194 & func_ov000_020731c4
+    // MapObject_UnkStruct1(); // func_ov000_02073194 & func_ov000_020731c4
 
     // data_ov000_020b2290
     /* 00 */ virtual void vfunc2_00();
@@ -24,6 +21,9 @@ public:
 class MapObject_UnkStruct1_Derived1 : public MapObject_UnkStruct1 {
 public:
     /* 00 (base) */
+    /* 08 */ unk16 mUnk_48;
+    /* 0A */ s16 mUnk_4A;
+    /* 0C */ VecFx32 mUnk_4C;
     /* 18 */ bool mUnk_58;
     /* 19 */ unk8 mUnk_59;
     /* 1A */ s16 mUnk_5A;
@@ -44,6 +44,19 @@ public:
     // data_ov031_021150a0
     /* 04 */ virtual void vfunc2_04() override;
     /* 08 */ virtual void vfunc2_08() override;
+};
+
+enum MapObjectDoorBaseState {
+    MapObjDoorBaseState_0 = 0,
+    MapObjDoorBaseState_1 = 1,
+    MapObjDoorBaseState_2 = 2,
+    MapObjDoorBaseState_3 = 3,
+    MapObjDoorBaseState_4 = 4,
+    MapObjDoorBaseState_5 = 5,
+    MapObjDoorBaseState_6 = 6,
+    MapObjDoorBaseState_7 = 7,
+    MapObjDoorBaseState_8 = 8,
+    MapObjDoorBaseState_MAX
 };
 
 class MapObjectDoorBase : public MapObject, public MapObject_UnkStruct1_Derived2 {
@@ -102,7 +115,7 @@ public:
     /* 50 */ virtual void vfunc_50();
     /* 54 */ virtual void vfunc_54();
     /* 58 */ virtual void vfunc_58();
-    /* 5C */ virtual void vfunc_5C(unk32 param1, unk32 param2);
+    /* 5C */ virtual void vfunc_5C(MapObjState state, unk32 param2);
     /* 60 */ virtual void vfunc_60();
     /* 64 */ virtual bool vfunc_64();
     /* 68 */ virtual bool vfunc_68();

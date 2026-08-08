@@ -26,6 +26,16 @@ public:
     /* 30 */
 };
 
+class UnkActorSystem1_Derived1 : public UnkActorSystem1 {
+public:
+    /* 00 (base) */
+    /* 05 */
+
+    // ?
+    /* 24 */ virtual unk32 vfunc_24() override;
+    /* 28 */ virtual unk32 vfunc_28() override;
+};
+
 struct UnkActorSystem_Infos1 {
     /* 0C */ s16 mUnk_00;
     /* 0E */ unk16 mUnk_02;
@@ -49,7 +59,6 @@ public:
     ~UnkStruct_ov024_020d8660();
 
     void func_ov024_020c4a8c(UnkActorSystem1 *param1);
-    void func_ov024_020c4ac0();
     void func_ov024_020c4b10();
     void func_ov024_020c4b24();
     void func_ov024_020c4b4c(unk32 param1);
@@ -59,6 +68,7 @@ public:
     void func_ov024_020c4d88(ActorId actorId, unk32 param2);
     void func_ov024_020c4dac(ActorId actorId, unk32 param2, UnkActorSystem_Infos1 *param3);
 
+    static void func_ov024_020c4ac0();
     static void SetInstance(UnkStruct_ov024_020d8660 *pInstance);
     static bool ClearInstance();
 };

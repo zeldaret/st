@@ -37,7 +37,7 @@ public:
     ActorItemDrop_C4(Actor *param1);
 
     virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    virtual void vfunc_04() override;
+    virtual bool vfunc_04() override;
     virtual void vfunc_08() override;
     virtual void vfunc_0C(unk32 param1) override;
 };

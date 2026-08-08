@@ -96,31 +96,32 @@ public:
 
 class MapObject_20 {
 public:
-    /* 00 */ u16 mUnk_00[4]; // parameters
+    /* 00 */ u16 mParams[4]; // parameters
     /* 08 */ u8 mUnk_08[2];
     /* 0A */ u16 mUnk_0A[2];
     /* 0E */ unk16 mUnk_0E;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ s16 mUnk_14;
     /* 16 */ bool mUnk_16;
-    /* 16 */ unk8 mUnk_17;
+    /* 17 */ s8 mUnk_17;
     /* 18 */
 
-    MapObject_20() {}
-
-    void func_ov000_0209c7c8();
+    void Init();
 
     static void func_ov000_0209c790(MapObjectId mapObjId, MapObjectProfile *pProfile);
     static void func_ov000_0209c7ac(MapObjectId mapObjId);
 };
 
-class MapObject : public SysObject {
+typedef s16 MapObjState;
+#define MapObjState_None -1
+
+class MapObject {
 public:
     /* 00 (vtable) */
     /* 04 */ VecFx32 mPos;
     /* 10 */ MapObject_10 *mUnk_10;
     /* 14 */ s16 mUnk_14;
-    /* 16 */ s16 mUnk_16;
+    /* 16 */ MapObjState mState;
     /* 18 */ unk8 mUnk_18[2]; // related to Link walking to the map object when touched
     /* 1A */ unk8 mUnk_1A;
     /* 1B */ unk8 mUnk_1B;
@@ -129,21 +130,21 @@ public:
     /* 20 */ MapObject_20 mUnk_20; // parameters
     /* 38 */ unk8 mUnk_38;
     /* 39 */ unk8 mUnk_39;
-    /* 3A */ Vec2b mUnk_3A;
+    /* 3A */ Vec2bCpp mUnk_3A;
     /* 3C */ MapObjectProfile *mpProfile;
     /* 40 */
 
     // data_ov000_020b3590
-    /* 00 */ virtual bool vfunc_00(); // Init? the newly-created map object is deleted if this returns false
-    /* 04 */ virtual void vfunc_04();
+    /* 00 */ virtual bool vfunc_00(); // Init
+    /* 04 */ virtual void vfunc_04(); // Setup
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2);
-    /* 1C */ virtual bool vfunc_1C();
+    /* 1C */ virtual bool vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3);
     /* 20 */ virtual void vfunc_20();
-    /* 24 */ virtual void vfunc_24();
+    /* 24 */ virtual void vfunc_24(MapObject *param1, VecFx32 param2);
     /* 28 */ virtual unk32 vfunc_28();
     /* 2C */ virtual bool vfunc_2C(VecFx32 *param1);
     /* 30 */ virtual ~MapObject();
@@ -167,7 +168,7 @@ public:
     MapObject();
 
     MapObjectId GetMapObjectId();
-    void func_01fff590(unk32 param2);
+    unk32 func_01fff590(unk32 param2);
 
     bool func_ov000_0209d114();
     bool func_ov000_0209d12c();
@@ -175,16 +176,16 @@ public:
     void func_ov000_0209d274(unk32 param1);
     bool func_ov000_0209d29c(unk32 param1);
     void func_ov000_0209d2c4(unk32 param1, bool param2);
-    void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2b *param3);
-    void func_ov000_0209d3b4(unk32 param1, fx32 size);
+    void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3);
+    unk32 func_ov000_0209d3b4(unk32 param1, fx32 size);
     void func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_00 *param2, unk32 param3);
-    void func_ov000_0209d518(unk32 param1, unk32 param2, unk32 param3, u8 param4);
+    void func_ov000_0209d518(VecFx32 *param1, unk32 param2, unk32 param3, u8 param4);
     void func_ov000_0209d5c8(ActorRef ref);
     void func_ov000_0209d614(unk32 param1);
     bool func_ov000_0209d668();
     void func_ov000_0209d6ac(VecFx32 *param1);
 
-    static void func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx);
+    static void func_ov000_0209d0bc(Vec2bCpp *param1, MapObject *thisx);
     static void func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2);
     static void func_ov000_0209d54c(ActorRef *param1, MapObject *thisx, u16 param2, const VecFx32 *pPos, s16 param3,
                                     u16 param4);

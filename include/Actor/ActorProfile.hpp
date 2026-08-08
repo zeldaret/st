@@ -9,11 +9,14 @@
 
 class Actor;
 
-class ActorProfile : public SysObject {
+class ActorProfile {
 public:
     /* 00 (vtable) */
     /* 04 */ Cylinder mUnk_04;
-    /* 14 */ unk8 mUnk_14[0x18 - 0x14];
+    /* 14 */ unk8 mUnk_14;
+    /* 15 */ bool mUnk_15;
+    /* 16 */ unk8 mUnk_16;
+    /* 17 */ unk8 mUnk_17;
     /* 18 */ unk8 mUnk_18;
     /* 19 */ unk8 mUnk_19;
     /* 1A */ unk16 mUnk_1A;
@@ -33,7 +36,7 @@ public:
     ~ActorProfile();
 
     /* 00 */ virtual Actor *Create() = 0;
-    /* 04 */ virtual void vfunc_04();
+    /* 04 */ virtual unk32 vfunc_04();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
@@ -56,10 +59,24 @@ public:
     ActorProfile_Derived1(ActorId actorId1, ActorId actorId2);
     ~ActorProfile_Derived1();
 
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual unk32 vfunc_04() override;
     /* 10 */ virtual void vfunc_10() override;
     /* 14 */ virtual void vfunc_14() override;
     /* 18 */ virtual void vfunc_18() override;
+};
+
+class ActorProfile_Derived2 : public ActorProfile_Derived1 {
+public:
+    /* 00 (base) */
+    /* D8 */
+
+    ActorProfile_Derived2(ActorId actorId1, ActorId actorId2) :
+        ActorProfile_Derived1(actorId1, actorId2) {}
+
+    /* 04 */ virtual unk32 vfunc_04() override; // func_ov000_02097944
+    /* 10 */ virtual void vfunc_10() override;  // func_ov000_0209794c
+    /* 14 */ virtual void vfunc_14() override;  // func_ov000_0209796c
+    /* 18 */ virtual void vfunc_18() override;  // func_ov000_02097998
 };
 
 // typedef ActorProfile *(*GetActorProfile)();

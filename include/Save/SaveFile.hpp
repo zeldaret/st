@@ -36,6 +36,9 @@ struct SaveFile_00000_0000_Data_D8 {
     /* 80 */
 
     SaveFile_00000_0000_Data_D8();
+
+    // overlay 0
+    s32 func_ov000_020a0cf4();
 };
 
 // related to scene flags?
@@ -67,7 +70,7 @@ struct SaveMiscAdvManager {
     /* 28 */ u16 unk_28;
     /* 2A */ u16 postDate;
     /* 2C */ union {
-        Vec2b stampPositions[StampType_Max];
+        Vec2bCpp stampPositions[StampType_Max];
         u16 stampPos[StampType_Max];
     };
     /* 54 */ s8 obtainedLetters[LetterType_Max];
@@ -92,26 +95,31 @@ struct SaveMiscAdvManager {
         songs(0) {}
 };
 
+struct SaveInventoryData {
+    /* 00 */ unk32 unk_00;
+    /* 04 */ u32 unk_04[2];
+    /* 0C */ u16 numRupees;
+    /* 0E */ u16 unk_0E;
+    /* 10 */ ItemFlag equippedItem;
+    /* 14 */ unk32 unk_14;
+    /* 18 */
+};
+
 struct SaveInventory {
     /* 00 */ u32 adventureFlags[32];
-    /* 80 */ unk32 unk_80;
-    /* 84 */ u32 unk_84[2];
-    /* 8C */ u16 numRupees;
-    /* 8E */ u16 unk_8E;
-    /* 90 */ ItemFlag equippedItem;
-    /* 94 */ unk32 unk_94;
+    /* 80 */ SaveInventoryData data;
     /* 98 */
 
     SaveInventory() {
         MI_CpuFill32(0, this->adventureFlags, sizeof(this->adventureFlags));
-        MI_CpuFill32(0, this->unk_84, sizeof(this->unk_84));
-        this->unk_8E = 0;
+        MI_CpuFill32(0, this->data.unk_04, sizeof(this->data.unk_04));
+        this->data.unk_0E = 0;
     }
 };
 
 struct SaveFile_00000_0000_Data_158 {
-    /* 00 */ unk8 unk_00[0x0C];
-    /* 0C */ unk8 unk_0C[0x20];
+    /* 00 */ u32 unk_00[3];
+    /* 0C */ u32 unk_0C[8];
     /* 2C */
 
     SaveFile_00000_0000_Data_158() {
@@ -327,9 +335,17 @@ struct SaveFile_00000_2600_Data {
     /* 00 */ u8 unk_00;
     /* 01 */ u8 unk_01;
     /* 02 */ u8 unk_02;
-    /* 03 */ Vec2b unk_03[61];
+    /* 03 */ Vec2bCpp unk_03[61];
     /* 7E */ u16 unk_7E;
     /* 80 */
+};
+
+struct GameSaveSlot {
+    /* 0000 */ SaveInfoData mInfoData;
+    /* 0E00 */ SaveTreasureData mTreasureData;
+    /* 0E80 */ SaveFile_00000_2600_Data mUnk_2600;
+    /* 0F00 */ SaveFile_00000_1D00_Data mUnk_1D00;
+    /* 1300 */
 };
 
 class SaveSlot {

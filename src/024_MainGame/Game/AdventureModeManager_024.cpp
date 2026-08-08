@@ -424,7 +424,7 @@ void AdventureModeManager::func_ov024_020c5cec() {
     gpUICounterManager->func_ov024_020cd420();
 
     if (!data_027e09a4->IsTrain()) {
-        gpUICounterManager->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
+        gpUICounterManager->func_ov024_020cd458(data_027e0ce0->mUnk_2C->GetCurrentItem(), true);
 
         if (gOverlayManager.IsPlayerSub() && data_0204a088->mUnk_00 == OverlayIndex_SceneInit) {
             this->mUnk_168->func_ov031_0210df60(1);
@@ -458,7 +458,7 @@ bool AdventureModeManager::func_ov024_020c5dac() {
 
 bool AdventureModeManager::func_ov024_020c5ecc() {
     if (data_ov026_02138d10->func_ov026_020e13f4() != 0 && data_027e09b8->func_01ffd420() == 0 &&
-        func_ov024_020d5304(data_027e09a4->mUnk_00.mSceneIndex) &&
+        func_ov024_020d5304(data_027e09a4->mUnk_00.sceneIndex) &&
         (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == NULL) && this->func_ov024_020c6a20() != 0 &&
         data_ov026_0213f590.func_ov026_020f7cc0() == 0) {
         return true;
@@ -515,7 +515,7 @@ bool AdventureModeManager::func_ov024_020c60f4() {
 }
 
 bool AdventureModeManager::func_ov024_020c623c() {
-    u32 scene = data_027e09a4->mUnk_00.mSceneIndex;
+    u32 scene = data_027e09a4->mUnk_00.sceneIndex;
 
     if ((gOverlayManager.IsMapA6() && ActorUnkTUTO::func_ov037_02120a64() != 0) ||
         (data_027e09a4->GetCurrentCourseEntry()->unk_10 == 6 && scene == SceneIndex_f_trnnpc) ||
@@ -601,8 +601,8 @@ void AdventureModeManager::vfunc_34(unk32 param1, unk32 param2) {
     }
 }
 
-void AdventureModeManager::vfunc_38(u32 param1, u8 param2, unk16 param3, unk16 param4) {
-    this->func_ov024_020c6514(param1, param2, param3, param4);
+void AdventureModeManager::vfunc_38(u32 sceneIndex, u8 roomIndex, unk16 param3, unk16 param4) {
+    this->func_ov024_020c6514(sceneIndex, roomIndex, param3, param4);
 }
 
 void AdventureModeManager::func_ov024_020c6514(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4) {
@@ -889,7 +889,7 @@ bool AdventureModeManager::func_ov024_020c6ce4() {
     return false;
 }
 
-unk32 AdventureModeManager::func_ov024_020c6d04() {
+AdventureModeManager_194_0C *AdventureModeManager::func_ov024_020c6d04() {
     return this->mUnk_194->mUnk_0C;
 }
 
@@ -911,7 +911,7 @@ void AdventureModeManager::func_ov024_020c6d2c(unk32 param1) {
 
 bool AdventureModeManager::func_ov024_020c6d64() {
     if (data_027e09a4 != NULL && data_ov000_020b64f8 != NULL) {
-        if (data_027e09a4->IsCutscene() && Cutscene_GetParamEntry(data_027e09a4->mUnk_00.mCutsceneIndex)->mUnk_18 == 1) {
+        if (data_027e09a4->IsCutscene() && Cutscene_GetParamEntry(data_027e09a4->mUnk_00.csIndex)->mUnk_18 == 1) {
             return true;
         }
     }
@@ -928,8 +928,8 @@ void AdventureModeManager::func_ov024_020c6db8(unk32 param1) {
 }
 
 bool AdventureModeManager::func_ov024_020c6dec() {
-    if (this->mUnk_1CC.sceneIndex == data_027e09a4->mUnk_00.mSceneIndex) {
-        if (this->mUnk_1CC.sceneIndex == data_027e09a4->mUnk_00.mSceneIndex) {
+    if (this->mUnk_1CC.sceneIndex == data_027e09a4->mUnk_00.sceneIndex) {
+        if (this->mUnk_1CC.sceneIndex == data_027e09a4->mUnk_00.sceneIndex) {
             if (this->mUnk_1CC.unk_04 == data_027e0cd8->func_ov000_02081d5c()) {
                 return true;
             }

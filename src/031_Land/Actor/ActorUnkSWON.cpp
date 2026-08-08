@@ -12,7 +12,7 @@ ActorProfileUnkSWON::ActorProfileUnkSWON() :
 
 ActorUnkSWON::ActorUnkSWON() {}
 
-bool ActorUnkSWON::vfunc_18(unk32 param_1) {
+bool ActorUnkSWON::vfunc_18(unk32 param1) {
     switch (this->mUnk_5C.mParams[0]) {
         case 0x0:
             if (!this->func_ov000_02098a60(0x1)) {
@@ -20,7 +20,7 @@ bool ActorUnkSWON::vfunc_18(unk32 param_1) {
             }
             this->func_ov000_020984d0();
             this->func_ov000_020984f0();
-            if (this->mUnk_5C.mUnk_1C_0) {
+            if (this->mUnk_5C.mUnk_1A[1]) {
                 this->func_ov000_02098a88(0x1, 0x1);
             }
             break;

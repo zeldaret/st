@@ -12,7 +12,8 @@ Actor *ActorProfileUnkRPMT::Create() {
 ActorProfileUnkRPMT::ActorProfileUnkRPMT() :
     ActorProfile(ActorId_RPMT) {}
 
-ActorUnkRPMT::ActorUnkRPMT() {}
+ActorUnkRPMT::ActorUnkRPMT() :
+    mUnk_A4(false) {}
 
 void ActorUnkRPMT::func_ov041_0212a848(void) {}
 void ActorUnkRPMT::func_ov041_0212a850(void) {}

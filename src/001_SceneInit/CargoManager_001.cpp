@@ -2,8 +2,6 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "global.h"
 
-THUMB_BEGIN
-
 CargoManager::CargoManager() {
     this->mUnk_18 = 0;
     this->mUnk_1C = 0;
@@ -21,5 +19,3 @@ void CargoManager::func_ov001_020bf830() {
 }
 
 DECL_INSTANCE(CargoManager, gpCargoManager);
-
-THUMB_END

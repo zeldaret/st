@@ -16,6 +16,16 @@ extern "C" {
 typedef s32 fx32;
 typedef s16 fx16;
 
+typedef union VecFx16 {
+    struct {
+        /* 00 */ fx16 x;
+        /* 02 */ fx16 y;
+        /* 04 */ fx16 z;
+        /* 06 */
+    };
+    fx16 coords[3];
+} VecFx16;
+
 typedef union VecFx32 {
     struct {
         /* 00 */ fx32 x;
@@ -24,6 +34,15 @@ typedef union VecFx32 {
         /* 0c */
     };
     fx32 coords[3];
+
+//! TODO: figure out a better way...
+#ifdef VECFX32_CTORS
+    VecFx32(fx32 _x, fx32 _y, fx32 _z) :
+        x(_x),
+        y(_y),
+        z(_z) {}
+    VecFx32() {}
+#endif
 } VecFx32;
 
 typedef union MtxFx22 {

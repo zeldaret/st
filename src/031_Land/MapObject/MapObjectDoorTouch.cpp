@@ -29,7 +29,7 @@ bool MapObjectDoorTouch::vfunc_00(void) {
 
 void MapObjectDoorTouch::vfunc2_10(void) {
     MapObjectProfileDoorTouch *p = GET_PROFILE(MapObjectProfileDoorTouch);
-    unk32 index                  = this->mUnk_20.mUnk_00[0];
+    unk32 index                  = this->mUnk_20.mParams[0];
     this->mUnk_94.vfunc_08(GetModelFromProfile2<MapObjectProfileDoorTouch>(index, data_ov031_02110c3c[index]));
 }
 

@@ -5,6 +5,7 @@
 
 #define MAX_KEYS 8
 #define MAX_TEARS_OF_LIGHT 3
+#define MAX_RUPEES 9999
 
 #define CAPACITY_QUIVER_TIER_1 20
 #define CAPACITY_QUIVER_TIER_2 30
@@ -26,6 +27,7 @@ typedef u32 ItemFlag;
 typedef u16 ItemFlag_u16;
 enum ItemFlag_ {
     ItemFlag_None        = -1,
+    ItemFlag_Nothing     = 0,
     ItemFlag_Whirlwind   = FLAG(0, 0),
     ItemFlag_Boomerang   = FLAG(0, 1),
     ItemFlag_Whip        = FLAG(0, 2),

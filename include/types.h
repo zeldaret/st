@@ -40,8 +40,8 @@ typedef void (*UnkCallback)(u16 param1);
 
 template <typename T> class Instance {
 public:
-    Instance();
-    ~Instance();
+    Instance();  //! TODO: should this be inlined?
+    ~Instance(); //! TODO: should this be inlined?
 };
 
 template <typename T> class AutoInstance : public Instance<T> {
@@ -50,15 +50,44 @@ public:
     ~AutoInstance() {}
 };
 
-    #define DECL_INSTANCE(T, gpInstance)                 \
-        template <typename T> Instance<T>::Instance() {  \
-            gpInstance = (T *) this;                     \
-        }                                                \
-        template <typename T> Instance<T>::~Instance() { \
-            gpInstance = NULL;                           \
-        }                                                \
-        template class Instance<T>
+    #define DECL_INSTANCE_CTOR(type, gpInstance)        \
+        template <typename T> Instance<T>::Instance() { \
+            gpInstance = (type *) this;                 \
+        }                                               \
+        template class Instance<type>;
 
+    #define DECL_INSTANCE_DTOR(type, gpInstance)  \
+        template <> Instance<type>::~Instance() { \
+            gpInstance = NULL;                    \
+        }
+
+    #define DECL_INSTANCE(type, gpInstance)  \
+        DECL_INSTANCE_CTOR(type, gpInstance) \
+        DECL_INSTANCE_DTOR(type, gpInstance)
+
+template <typename T> struct StaticInstance {
+    static T sInstance;
+};
+
+    #define DECL_STATIC_INSTANCE(T) T StaticInstance<T>::sInstance
+
+#endif
+
+//! TODO: move elsewhere
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef struct SPAHeader {
+    /* 00 */ u32 magic; // always 'SPA '
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ u16 mUnk_08;
+    /* 0A */ char pad[0x18 - 0x0A];
+    /* 18 */ unk32 mUnk_18;
+} SPAHeader;
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

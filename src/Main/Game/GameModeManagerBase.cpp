@@ -3,17 +3,17 @@
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_ov000_02067bc4.hpp"
+#include "Unknown/UnkStruct_ov000_020b504c.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 
 THUMB_BEGIN
 
-GameModeManagerBase *GameModeManagerBase::Create(unk32 param1) {
+GameModeManagerBase *GameModeManagerBase::Create(UnkStruct_0204a110_Sub2 *param1) {
     return new(HeapIndex_1) GameModeManagerBase(param1);
 }
 
-GameModeManagerBase::GameModeManagerBase(unk32 param1) :
-    mUnk_100((void *) param1),
+GameModeManagerBase::GameModeManagerBase(UnkStruct_0204a110_Sub2 *param1) :
+    mUnk_100(param1),
     mNextButtonID(BTN_ID_NONE),
     mButtonID(BTN_ID_NONE),
     mUnk_150(false) {
@@ -125,14 +125,14 @@ void GameModeManagerBase::func_0201875c(void) {
     }
 }
 
-struct UnkStruct5 {
+struct UnkStruct6 {
     void *a;
     unk32 b;
 };
 
 void GameModeManagerBase::func_02018830(unk8 *param1) {
     unk32 id = this->mNextButtonID;
-    UnkStruct5 local_28;
+    UnkStruct6 local_28;
     local_28.a = param1;
     local_28.b = id;
 

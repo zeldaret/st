@@ -16,6 +16,7 @@ parser.add_argument("--compiler", type=Path, required=False, help="Path to pre-i
 parser.add_argument("--no-extract", action="store_true", help="Skip extract step")
 parser.add_argument("--dsd", type=Path, required=False, help="Path to pre-installed dsd CLI")
 parser.add_argument("--version", "-v", help='Game version', required=False)
+parser.add_argument("--noclangd", "-c", help='Do not create clangd config', required=False, action="store_true")
 args = parser.parse_args()
 
 config = ProjectConfig("st", args.compiler, "dsi/1.2p1", args.wine, args.dsd, Path(__file__).resolve())
@@ -119,11 +120,11 @@ def LibCPP(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
 
 
 # Helper function for overlays and similar modules
-def GameLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
+def GameLib(lib_name: str, objects: List[Object], extra_cflags=list()) -> Dict[str, Any]:
     return {
         "lib": lib_name,
         "mw_version": "dsi/1.2p1",
-        "cflags": [*config.cflags_base, "-str reuse"],
+        "cflags": [*config.cflags_base, *extra_cflags, "-str reuse"],
         "objects": objects,
     }
 
@@ -173,6 +174,7 @@ config.libs = [
             Object("000_Second/Actor/ActorUnkSWTM.cpp"),
             Object("000_Second/Actor/ActorEventIcon.cpp"),
             Object("000_Second/Actor/ActorUnkEFIK.cpp"),
+            Object("000_Second/MapObject/MapObjectManager_000.cpp"),
             Object("000_Second/MapObject/MapObjectProfile.cpp"),
             Object("000_Second/MapObject/MapObjectProfile_Derived2_20.cpp"),
             Object("000_Second/MapObject/MapObject.cpp"),
@@ -187,15 +189,53 @@ config.libs = [
     GameLib(
         "Overlay 1",
         [
+            Object("001_SceneInit/SceneInitializers_001.cpp"),
+            Object("001_SceneInit/CourseList.cpp"),
+            Object("001_SceneInit/UnkStruct_027e09b8_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cd8_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp"),
+            Object("001_SceneInit/ZeldaArrangeBinary.cpp"),
+            Object("001_SceneInit/ZeldaMapBinary.cpp"),
+            Object("001_SceneInit/UnkStruct_027e095c_001.cpp"),
+            Object("001_SceneInit/SysNew_001.cpp"),
+            Object("001_SceneInit/Save/SaveManager_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e09bc_001.cpp"),
+            Object("001_SceneInit/MapObject/MapObjectManager_001.cpp"),
             Object("001_SceneInit/Actor/ActorManager_001.cpp"),
+            Object("001_SceneInit/Item/Inventory_001.cpp"),
+            Object("001_SceneInit/Player/PlayerActorBase_70_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0ce0_30_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0ce0_40_Base_001.cpp"),
             Object("001_SceneInit/Item/ItemManager_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0ce0_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cdc_001.cpp"),
+            Object("001_SceneInit/Player/PlayerActorBase_001.cpp"),
+            Object("001_SceneInit/Player/PlayerLinkActor_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0ce0_1C_001.cpp"),
+            Object("001_SceneInit/UnkStruct_0204a110_001.cpp"),
+            Object("001_SceneInit/UnkStruct_ov024_020d86a0_001.cpp"),
+            Object("001_SceneInit/UnkStruct_ov000_020b50c0_001.cpp"),
+            Object("001_SceneInit/Game/GameModeCreate.cpp"),
+            Object("001_SceneInit/ZeldaCollisionBinary.cpp"),
+            Object("001_SceneInit/UnkStruct_027e09c0_001.cpp"),
+            Object("001_SceneInit/UnkStruct_ov000_020b504c_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e09b4_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e09ac_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cec_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0cec_18_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0ce0_34_001.cpp"),
+            Object("001_SceneInit/UnkStruct_027e0d00_001.cpp"),
             Object("001_SceneInit/CargoManager_001.cpp"),
             Object("001_SceneInit/PassengerManager_001.cpp"),
             Object("001_SceneInit/UnkStruct_027e0cf8_08_00_001.cpp"),
+            Object("001_SceneInit/UnkStruct_ov020_020e8544_001.cpp"),
+            Object("001_SceneInit/code_020bfdd0.cpp"),
+            Object("001_SceneInit/code_020bfeec.cpp"),
             Object("001_SceneInit/Game/AdventureModeManager_001.cpp"),
             Object("001_SceneInit/Game/GameModeAdventure_001.cpp"),
-            Object("001_SceneInit/Save/SaveManager_001.cpp"),
-        ]
+            Object("001_SceneInit/code_020c099c.cpp"),
+        ],
+        extra_cflags=["-thumb"],
     ),
     GameLib(
         "Overlay 17",
@@ -431,23 +471,23 @@ config.libs = [
         [
             Object("031_Land/UnkStruct_027e0d34.cpp"),
             Object("031_Land/Actor/ActorRupee.cpp"),
-            Object("031_Land/Actor/ActorUnkAROW.cpp"),
+            Object("031_Land/Actor/ActorShotArrow.cpp"),
             Object("031_Land/Actor/ActorUnkATTG.cpp"),
-            Object("031_Land/Actor/ActorUnkBLST.cpp"),
+            Object("031_Land/Actor/ActorBlast.cpp"),
             Object("031_Land/Actor/ActorUnkBOMB.cpp"),
             Object("031_Land/Actor/ActorUnkCLLT.cpp"),
             Object("031_Land/Actor/ActorUnkEFSB.cpp"),
             Object("031_Land/Actor/ActorUnkFLEN.cpp"),
             Object("031_Land/Actor/ActorHeart.cpp"),
-            Object("031_Land/Actor/ActorUnkITBM.cpp"),
-            Object("031_Land/Actor/ActorUnkITTD.cpp"),
+            Object("031_Land/Actor/ActorItemBoomerang.cpp"),
+            Object("031_Land/Actor/ActorItemTornado.cpp"),
             Object("031_Land/Actor/ActorUnkMLCK.cpp"),
             Object("031_Land/Actor/ActorUnkNFSP.cpp"),
             Object("031_Land/Actor/ActorUnkNITF.cpp"),
             Object("031_Land/Actor/ActorUnkNORE.cpp"),
             Object("031_Land/Actor/ActorUnkNTTZ.cpp"),
-            Object("031_Land/Actor/ActorUnkNTUB.cpp"),
-            Object("031_Land/Actor/ActorUnkRLST.cpp"),
+            Object("031_Land/Actor/ActorPot.cpp"),
+            Object("031_Land/Actor/ActorRollingStone.cpp"),
             Object("031_Land/Actor/ActorUnkRMTG.cpp"),
             Object("031_Land/Actor/ActorUnkROCK.cpp"),
             Object("031_Land/Actor/ActorUnkSCCN.cpp"),
@@ -471,7 +511,7 @@ config.libs = [
             Object("031_Land/MapObject/MapObjectDoorTouch.cpp"),
             Object("031_Land/MapObject/MapObjectUnkEXIT.cpp"),
             Object("031_Land/MapObject/MapObjectUnkGATE.cpp"),
-            Object("031_Land/MapObject/MapObjectUnkGRSS.cpp"),
+            Object("031_Land/MapObject/MapObjectGrass.cpp"),
             Object("031_Land/MapObject/MapObjectUnkGSST.cpp"),
             Object("031_Land/MapObject/MapObjectUnkITFL.cpp"),
             Object("031_Land/MapObject/MapObjectUnkRLSG.cpp"),
@@ -490,7 +530,7 @@ config.libs = [
             Object("031_Land/MapObject/MapObjectChestBase.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTREW.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTRWS.cpp"),
-            Object("031_Land/MapObject/MapObjectUnkTSUB.cpp"),
+            Object("031_Land/MapObject/MapObjectPot.cpp"),
         ]
     ),
     GameLib(
@@ -1013,7 +1053,7 @@ config.libs = [
         "Overlay 71",
         [
             Object("071_Tower/Actor/ActorUnkKMSO.cpp"),
-            Object("071_Tower/Actor/ActorUnkSZKU.cpp"),
+            Object("071_Tower/Actor/ActorTearLight.cpp"),
             Object("071_Tower/MapObject/MapObjectUnkBLCE.cpp"),
             Object("071_Tower/MapObject/MapObjectUnkBLCT.cpp"),
             Object("071_Tower/MapObject/MapObjectUnkBRGS.cpp"),
@@ -1347,6 +1387,12 @@ config.libs = [
         ]
     ),
     GameLib(
+        "Overlay 97",
+        [
+            Object("097_TrainMsg/TrainMsg.cpp"),
+        ]
+    ),
+    GameLib(
         "Overlay 98",
         [
             Object("098_MapWater/Actor/ActorUnkEFRI.cpp"),
@@ -1364,6 +1410,24 @@ config.libs = [
             Object("099_MapLava/Actor/ActorUnkEFWL.cpp"),
             Object("099_MapLava/Actor/ActorUnkVOLV.cpp"),
         ]
+    ),
+    GameLib(
+        "Overlay 100",
+        [
+            Object("100_CollectMsg/CollectMsg.cpp"),
+        ]
+    ),
+    GameLib(
+        "Overlay 101",
+        [
+            Object("101_SceneInitLand/Item/ItemManager_101.cpp"),
+            Object("101_SceneInitLand/UnkStruct_027e0ce0_40_101.cpp"),
+            Object("101_SceneInitLand/Player/PlayerLinkActor_A0_1C_101.cpp"),
+            Object("101_SceneInitLand/UnkStruct_027e09a4_54_101.cpp"),
+            Object("101_SceneInitLand/UnkStruct_027e0cd8_0C_101.cpp"),
+            Object("101_SceneInitLand/MapObjectProfile_Derived6_101.cpp"),
+        ],
+        extra_cflags=["-thumb"],
     ),
     GameLib(
         "Overlay 105",

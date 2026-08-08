@@ -1,4 +1,4 @@
-func_ov002_020b7d40 kind:function(thumb,size=0x14) addr:0x020b7d40
+func_ov002_020b6520 kind:function(thumb,size=0x14) addr:0x020b7d40
 func_ov002_020b7d54 kind:function(thumb,size=0x2) addr:0x020b7d54
 _ZN19func_ov002_020b7d58D0Ev kind:function(thumb,size=0xc) addr:0x020b7d58
 func_ov002_020b7d64 kind:function(thumb,size=0x94) addr:0x020b7d64

@@ -142,7 +142,8 @@ public:
     /* 1B */ bool mUnk_1B;
     /* 1C */
 
-    UnkStruct_027e0cf8_0C_00() {}
+    UnkStruct_027e0cf8_0C_00() :
+        mUnk_00(NULL, 0) {}
 
     void func_ov024_020cff1c();
 };

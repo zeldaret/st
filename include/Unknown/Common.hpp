@@ -2,6 +2,7 @@
 
 #include "Animation/CellAnimObject.hpp"
 #include "Game/GameModeManager.hpp"
+#include "LinkList.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "global.h"
@@ -215,16 +216,19 @@ public:
 struct UnkStruct_ov019_020d24c8_28_258_00 {
     /* 00 */ void *mUnk_00;
     /* 04 */ unk32 mUnk_04;
-    /* 08 */
+    /* 0C */
 
-    UnkStruct_ov019_020d24c8_28_258_00() {
-        this->mUnk_00 = NULL;
-        this->mUnk_04 = 0;
-    }
+    UnkStruct_ov019_020d24c8_28_258_00() {}
 
     UnkStruct_ov019_020d24c8_28_258_00(void *param1, unk32 param2) :
         mUnk_00(param1),
         mUnk_04(param2) {}
+
+    void Init() {
+        this->mUnk_00 = NULL;
+        this->mUnk_04 = 0;
+    }
+
     void func_ov000_0205fc20(unk32 param1, unk32 param2, void *param3, void *param4);
 };
 
@@ -232,6 +236,9 @@ struct UnkStruct_ov019_020d24c8_28_258_00_Derived1 : public UnkStruct_ov019_020d
     /* 00 (base) */
     /* 08 */ unk32 mUnk_08;
     /* 0C */
+
+    UnkStruct_ov019_020d24c8_28_258_00_Derived1() :
+        UnkStruct_ov019_020d24c8_28_258_00(NULL, 0) {}
 };
 
 class UnkStruct_ov019_020d24c8_28_258 : public UnkStruct_ov019_020d24c8_28_258_00 {
@@ -247,12 +254,14 @@ public:
     /* 16 */ unk16 mUnk_16;
     /* 18 */
 
-    UnkStruct_ov019_020d24c8_28_258() {
+    UnkStruct_ov019_020d24c8_28_258() :
+        UnkStruct_ov019_020d24c8_28_258_00(NULL, 0) {
         this->mPos.x = 0;
         this->mPos.y = 0;
     };
 
-    UnkStruct_ov019_020d24c8_28_258(s16 param1, unk32 param2) {
+    UnkStruct_ov019_020d24c8_28_258(s16 param1, unk32 param2) :
+        UnkStruct_ov019_020d24c8_28_258_00(NULL, 0) {
         this->UnknownAction(param1, param2);
     }
 
@@ -838,21 +847,6 @@ public:
     /* 04 */ virtual void vfunc_04() override;
 };
 
-class UnkSystem3 {
-public:
-    /* 00 */ void *mUnk_00;
-    /* 04 */ void *mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */
-
-    UnkSystem3(const char *path, unk32 param2);
-    UnkSystem3(const char *path, unk32 param2, unk32 param3, unk32 param4);
-    ~UnkSystem3();
-
-    void func_02015410(const char *path, unk32 param2);
-    void func_02015460(const char *param1, void *param2, unk32 param3);
-};
-
 class UnkStruct2 {
 public:
     /* 00 */ unk32 mUnk_00;
@@ -895,7 +889,7 @@ struct UnkStruct_StackTitleScreen {
 class MapObject;
 
 struct UnkStackStruct1 {
-    /* 00 */ unk8 mUnk_00;
+    /* 00 */ u8 mUnk_00;
     /* 01 */ unk8 mUnk_01;
     /* 02 */ unk8 mUnk_02;
     /* 03 */ unk8 mUnk_03;
@@ -908,10 +902,10 @@ struct UnkStackStruct1 {
     /* 1E */ unk16 mUnk_1E;
     /* 20 */ unk32 mUnk_20;
     /* 24 */ VecFx32 mUnk_24;
-    /* 30 */ unk16 mUnk_30;
-    /* 32 */ unk16 mUnk_32;
-    /* 34 */ unk16 mUnk_34;
-    /* 36 */ unk16 mUnk_36;
+    /* 30 */ u16 mUnk_30;
+    /* 32 */ u16 mUnk_32;
+    /* 34 */ u16 mUnk_34;
+    /* 36 */ u16 mUnk_36;
     /* 38 */ u16 mUnk_38;
     /* 3A */ unk8 mUnk_3A;
     /* 3B */ unk8 mUnk_3B;
@@ -920,10 +914,25 @@ struct UnkStackStruct1 {
 };
 extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
 
+struct UnkSystem7_UnkStruct_00_20_00 {
+    /* 00 */ STRUCT_PAD(0x00, 0x04);
+    /* 04 */ VecFx32 mUnk_04;
+};
+
+struct UnkSystem7_UnkStruct_00_20 {
+    /* 00 */ UnkSystem7_UnkStruct_00_20_00 *mUnk_00;
+    /* 04 */ VecFx32 *mUnk_04;
+};
+
 struct UnkSystem7_UnkStruct_00 {
-    /* 00 */ STRUCT_PAD(0x00, 0x24);
+    /* 00 */ STRUCT_PAD(0x00, 0x20);
+    /* 20 */ UnkSystem7_UnkStruct_00_20 *mUnk_20;
     /* 24 */ unk32 mUnk_24;
-    /* 28 */ STRUCT_PAD(0x28, 0xA4);
+    /* 28 */ unk32 mUnk_28;
+    /* 2C */ unk32 mUnk_2C;
+    /* 30 */ unk32 mUnk_30;
+    /* 34 */ STRUCT_PAD(0x34, 0xA0);
+    /* A0 */ unk32 mUnk_A0;
     /* A4 */ unk16 mUnk_A4;
 
     void func_ov000_02052c48(VecFx32 *param1, VecFx32 *param2);
@@ -944,6 +953,19 @@ public:
 
     void func_ov000_020a0304(void);
     void func_ov000_020a0334();
+};
+
+class UnkSystem7_Derived2 : public UnkSystem7 {
+public:
+    /* 00 (base) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */
+
+    UnkSystem7_Derived2(UnkSystem7_UnkStruct_00 *param1, unk32 param2, unk32 param3) :
+        UnkSystem7(param1),
+        mUnk_04(param2),
+        mUnk_08(param3) {}
 };
 
 class UnkStruct_PlayerGet_ec : public UnkSystem7 {
@@ -1087,7 +1109,7 @@ struct UnkDataStruct4_14_2 {
     /* 12C */
 };
 
-struct UnkStruct_SceneChange1;
+struct EntranceInfo;
 struct UnkDataStruct4 {
     /* 00 (vtable) */
     /* 04 */ u16 mUnk_04;
@@ -1111,7 +1133,7 @@ struct UnkDataStruct4 {
 
     void func_ov024_020d2518();
     void func_ov024_020d251c();
-    void func_ov024_020d2520(UnkStruct_SceneChange1 *param1);
+    void func_ov024_020d2520(EntranceInfo *param1);
     void func_ov024_020d2538(u32 sceneIndex, u8 roomIndex, UnkDataStruct4_14_2 *param3);
     void func_ov024_020d2564();
     void func_ov024_020d258c(u32 sceneIndex, u8 roomIndex);
@@ -1147,71 +1169,6 @@ struct InputInformations {
     void *unk_04;
     void *unk_08;
     void *unk_0C;
-};
-
-class MapObjectProfile_Derived2_20_Base_18 {
-public:
-    /* 00 */ const char *mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */
-
-    MapObjectProfile_Derived2_20_Base_18(); // func_02016620
-    ~MapObjectProfile_Derived2_20_Base_18();
-};
-
-class MapObjectProfile_Derived2_20_Base_54 {
-public:
-    /* 00 (vtable) */
-    /* 04 */ const char *mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */
-
-    MapObjectProfile_Derived2_20_Base_54();
-    ~MapObjectProfile_Derived2_20_Base_54();
-
-    /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
-    /* 08 */ virtual void vfunc_08(unk32 param1);
-    /* 0C */ virtual void vfunc_0C();
-};
-
-class MapObjectProfile_Derived2_20_Base {
-public:
-    /* 00 (vtable) */
-    /* 04 */ const char *mDirName;
-    /* 08 */ const char *mArchiveName;
-    /* 0C */ void *mUnk_0C;
-    /* 10 */ void *mUnk_10;
-    /* 14 */ u8 mUnk_14;
-    /* 15 */ u8 mUnk_15;
-    /* 16 */ u8 mUnk_16;
-    /* 17 */ u8 mUnk_17;
-    /* 18 */ MapObjectProfile_Derived2_20_Base_18 mUnk_18;
-    /* 20 */ UnkSystem3 mUnk_20;
-    /* 2C */ UnkFileSystem3 mUnk_2C;
-    /* 3C */ UnkFileSystem5 mUnk_3C;
-    /* 50 */ BMDSectionModel *mUnk_50;
-    /* 54 */ MapObjectProfile_Derived2_20_Base_54 mUnk_54[4];
-    /* 94 */
-
-    MapObjectProfile_Derived2_20_Base(const char *directory, const char *archiveName, const char *param3, const char *param4,
-                                      unk32 param5,
-                                      unk32 param6); // func_ov000_02058540
-
-    // data_ov000_020b1b14
-    /* 00 */ virtual ~MapObjectProfile_Derived2_20_Base();
-    /* 08 */
-
-    void func_ov000_020586b4(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-    void func_ov000_020588f0(void *param1, unk32 param2, unk32 param3, void *param4);
-    void func_ov000_02058900(void);
-    void func_ov000_02058914(void *param1);
-    void func_ov000_020589e4(void);
-    unk32 func_ov000_02058a24();
-    void unc_ov000_02058a58(void);
-    unk32 func_ov000_02058a84(unk32 param1, const char *param2);
-    void func_ov000_02058ab0(void);
 };
 
 class MapObjectProfile_Derived5 : public MapObjectProfile_Derived2_20_Base {
@@ -1275,3 +1232,44 @@ struct TrainSpeedPreset {
     /* 3C */ fx32 unk_3C;
     /* 40 */
 };
+
+class UnkSystem8 : public LinkList<UnkSystem8> {
+public:
+    /* 00 (vtable) */
+    /* 04 (base) */
+    /* 0C */
+
+    // data_ov000_020b2940
+    /* 00 */ virtual void vfunc_00();
+};
+
+class UnkSystem9 : public LinkList<UnkSystem9> {
+public:
+    /* 00 (vtable) */
+    /* 04 (base) */
+    /* 0C */
+
+    // data_ov000_020b24c4
+    /* 00 */ virtual void vfunc_00();
+};
+
+class UnkStruct_PlayerGet_74_base {
+public:
+    /* 00 (vtable) */
+
+    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3);
+
+    UnkStruct_PlayerGet_74_base();
+};
+
+struct UnkStruct_ov000_020aa88c {
+    /* 00 */ bool mUnk_00;
+    /* 01 */ bool mUnk_01;
+    /* 02 */ bool mUnk_02;
+    /* 03 */ bool mUnk_03;
+    /* 04 */ bool mUnk_04;
+    /* 05 */ unk8 mUnk_05;
+    /* 06 */ u16 mUnk_06;
+    /* 08 */
+};
+extern UnkStruct_ov000_020aa88c data_ov000_020aa88c[];

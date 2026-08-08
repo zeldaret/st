@@ -6,7 +6,6 @@
 
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
-#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
 #include "math.hpp"
 
@@ -99,15 +98,6 @@ public:
         this->mUnk_00.y = y;
         this->mUnk_00.z = z;
     }
-};
-
-class UnkStruct_PlayerGet_74_base : public SysObject {
-public:
-    /* 00 (vtable) */
-
-    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3);
-
-    UnkStruct_PlayerGet_74_base();
 };
 
 class UnkStruct_PlayerGet_74 : public UnkStruct_PlayerGet_74_base {

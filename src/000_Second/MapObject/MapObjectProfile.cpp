@@ -18,10 +18,10 @@ void MapObject_20::func_ov000_0209c7ac(MapObjectId mapObjId) {
     data_ov000_020b5d3c[UnkStruct_ov000_020b5d34::func_ov000_0209c718(mapObjId)] = NULL;
 }
 
-void MapObject_20::func_ov000_0209c7c8() {
+void MapObject_20::Init() {
     this->mUnk_16 = 0;
     this->mUnk_10 = 0;
-    MI_CpuFill32(0, this->mUnk_00, sizeof(this->mUnk_00));
+    MI_CpuFill32(0, this->mParams, sizeof(this->mParams));
     MI_CpuFill16(0, this->mUnk_08, sizeof(this->mUnk_08));
     MI_CpuFill16(0, this->mUnk_0A, sizeof(this->mUnk_0A));
     this->mUnk_14 = -1;

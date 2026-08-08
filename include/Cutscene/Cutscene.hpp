@@ -5,6 +5,7 @@
 
 #include "Save/AdventureFlags.hpp"
 
+typedef u32 CutsceneIndex;
 enum CutsceneIndex_ {
     /*  0 */ CutsceneIndex_TitleScreen,
     /*  1 */ CutsceneIndex_Intro,
@@ -66,7 +67,7 @@ struct CutsceneParamsEntry {
     /* 0B */ u8 mNextCutsceneIndex;
     /* 0C */ bool mNextIsCS; // doesn't makes sense with the array's data
     /* 0C */ bool mUnk_0D;
-    /* 0E */ unk16 mUnk_0E;
+    /* 0E */ u16 mUnk_0E;
     /* 10 */ AdventureFlag_Half mFlag;
     /* 12 */ unk16 mUnk_12; // pad?
     /* 14 */ u32 mUnk_14;
@@ -75,7 +76,7 @@ struct CutsceneParamsEntry {
 };
 
 CutsceneParamsEntry *Cutscene_GetParamEntry(s32 csIndex);
-s32 func_ov000_020a7840(unk32 param1);
+s32 func_ov000_020a7840(unk32 param1, unk32 param2);
 bool Cutscene_IsAdventureFlagSet(s32 csIndex);
 
 extern const CutsceneParamsEntry gCSParamsEntries[CutsceneIndex_Max];

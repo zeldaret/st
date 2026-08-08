@@ -23,7 +23,7 @@ typedef struct {
 
 extern "C" void func_01ffce1c(unk16 *, unk16 *);
 extern "C" int func_01ffcea0(unk32, UnkStruct_ov031_020eeee8 *);
-extern "C" void func_01ffedac(u16 *, VecFx32 *);
+extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
 extern "C" void func_01fff17c(UnkStruct_ov031_020eeee8 *, UnkStruct_027e0ce0 *, unk32);
 extern "C" void func_02018114(unk16 *, unk16);
 extern "C" void func_02098388(void);
@@ -31,7 +31,6 @@ extern "C" void func_02097bb8(void);
 extern "C" void func_ov000_0205c1f0(unk32 *, unk16);
 extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
 extern "C" void func_ov000_0208bc00(UnkStruct_027e0ce0 *, unk16, unk16 *);
-extern "C" void func_ov000_02098838();
 extern "C" void func_ov017_020bf99c(void);
 extern "C" void func_ov017_02097bec(Actor_9C *);
 
@@ -82,7 +81,7 @@ ActorHeart::ActorHeart() :
 
     this->mUnk_98.mUnk_04 = 0x13100;
     this->mUnk_40         = &this->mUnk_C8;
-    u16 sp0;
+    Vec2bCpp sp0;
     func_01ffedac(&sp0, &this->mPos);
 
     if (data_027e0cd8->mUnk_0C->func_ov000_02080180(&sp0) == 0x5) {
@@ -261,7 +260,7 @@ void ActorHeart::func_ov031_020ef2ec() {
 }
 
 void ActorHeart::func_ov031_020ef2f8() {
-    func_ov000_02098838();
+    this->func_ov000_02098838();
     if (this->mVel.y > 0) {
         return;
     }
@@ -437,19 +436,19 @@ ActorHeart_C4::ActorHeart_C4(Actor *param1) :
     this->mUnk_04 = 1;
 }
 
-bool ActorHeart_C4::vfunc_00(ActorRef ref, unk32 param_3) {
-    if (param_3 != 0) {
+bool ActorHeart_C4::vfunc_00(ActorRef ref, unk32 param3) {
+    if (param3 != 0) {
         ActorHeart *pHeart = this->GetActorPtr<ActorHeart>();
         pHeart->mUnk_C4    = ref;
         pHeart->SetState(ActorHeartState_4);
     }
 
-    return this->Actor_C4::vfunc_00(ref, param_3);
+    return this->Actor_C4::vfunc_00(ref, param3);
 }
 
-void ActorHeart_C4::vfunc_04() {
+bool ActorHeart_C4::vfunc_04() {
     this->GetActorPtr<ActorHeart>()->SetState(ActorHeartState_5);
-    this->Actor_C4::vfunc_04();
+    return this->Actor_C4::vfunc_04();
 }
 
 void ActorHeart_C4::vfunc_0C(unk32 param1) {

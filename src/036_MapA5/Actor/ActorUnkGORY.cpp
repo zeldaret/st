@@ -35,9 +35,9 @@ ItemId ActorUnkGORY::func_ov036_0211bcb0(unk32 param1) {
                 return ItemId_TenPriceCard;
             }
 
-            if (data_027e0ce0->mUnk_2C->mQuiverCapacity == UpgradeCapacity_Tier1) {
+            if (data_027e0ce0->mUnk_2C->GetQuiverCap() == UpgradeCapacity_Tier1) {
                 return ItemId_QuiverMedium;
-            } else if (data_027e0ce0->mUnk_2C->mQuiverCapacity == UpgradeCapacity_Tier2) {
+            } else if (data_027e0ce0->mUnk_2C->GetQuiverCap() == UpgradeCapacity_Tier2) {
                 return ItemId_QuiverLarge;
             } else {
                 return ItemId_TenPriceCard;

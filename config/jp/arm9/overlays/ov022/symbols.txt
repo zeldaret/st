@@ -1,7 +1,7 @@
 func_ov022_020eb2c0 kind:function(arm,size=0x24) addr:0x020eb2c0
 func_ov022_020eb2e4 kind:function(arm,size=0x24) addr:0x020eb2e4
 func_ov022_020eb308 kind:function(arm,size=0xc) addr:0x020eb308
-func_ov022_020eb314 kind:function(arm,size=0x24) addr:0x020eb314
+_ZN20GameModeDownloadPlay14CreateInstanceEv kind:function(arm,size=0x24) addr:0x020eb314
 func_ov022_020eb338 kind:function(arm,size=0x124) addr:0x020eb338
 func_ov022_020eb45c kind:function(arm,size=0xb8) addr:0x020eb45c
 _ZN19func_ov022_020eb514D0Ev kind:function(arm,size=0xc0) addr:0x020eb514
@@ -114,7 +114,7 @@ func_ov022_020ee860 kind:function(arm,size=0x20) addr:0x020ee860
 func_ov022_020ee880 kind:function(arm,size=0x10) addr:0x020ee880
 _ZN19func_ov022_020ee890D0Ev kind:function(arm,size=0x1c) addr:0x020ee890
 _ZN19func_ov022_020ee8acD0Ev kind:function(arm,size=0x1c) addr:0x020ee8ac
-func_ov022_020ee8c8 kind:function(arm,size=0x80) addr:0x020ee8c8
+_ZN24UnkStruct_ov001_020c46fcC1Ev kind:function(arm,size=0x80) addr:0x020ee8c8
 func_ov022_020ee948 kind:function(arm,size=0x14) addr:0x020ee948
 _ZN19func_ov022_020ee95cD0Ev kind:function(arm,size=0x24) addr:0x020ee95c
 func_ov022_020ee980 kind:function(arm,size=0x30) addr:0x020ee980

@@ -4,6 +4,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Actor/ActorRef.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -12,7 +13,7 @@ public:
     ActorUnkCASE_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
@@ -33,7 +34,7 @@ public:
     void func_ov063_0215ac68(void);
     void func_ov063_0215ac8c(void);
     void func_ov063_0215acc8(void);
-    void func_ov063_0215acec(void);
+    static void func_ov063_0215acec(ActorRef *ref1, ActorRef ref2); // copy ?
     void func_ov063_0215ae6c(void);
     void func_ov063_0215ae80(void);
     void func_ov063_0215ae94(void);
@@ -53,7 +54,7 @@ public:
     void func_ov063_0215b2c8(void);
     void func_ov063_0215b2ec(void);
     void func_ov063_0215b624(void);
-    void func_ov063_0215b6c8(void);
+    void func_ov063_0215b6c8(VecFx32 *param1, UnkAngleStruct angle);
     void func_ov063_0215b724(void);
     void func_ov063_0215b7cc(void);
     void func_ov063_0215b814(void);

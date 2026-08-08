@@ -33,7 +33,7 @@ public:
     /* 04 */ GameModeCreateCallback createCallback;
     /* 08 */ GameUnkCallback1 mUnk_08; // seems related to entering and leaving houses/grottos??
     /* 0C */ unk32 mFrameCounter;
-    /* 10 */ SaveSlot *mpSaveSlot;
+    /* 10 */ GameSaveSlot *mpSaveSlot;
     /* 14 */ GameUnkCallback2 mUnk_14; // only set for wireless stuff?
     /* 18 */ GameUnkCallback3 mUnk_18; // same as above
     /* 1C */ UnkStruct_02049a2c_1C mUnk_1C;

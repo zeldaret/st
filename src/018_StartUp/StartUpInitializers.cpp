@@ -96,7 +96,7 @@ UnkStruct_ov000_020b504c::UnkStruct_ov000_020b504c() :
     this->mUnk_06E = 0;
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_00C); i++) {
-        this->mUnk_00C[i].mUnk_00 = 0;
+        this->mUnk_00C[i] = NULL;
     }
 
     this->mUnk_028 = 0;
@@ -123,13 +123,13 @@ SaveManager::SaveManager() {
     this->mUnk_20A   = 0;
     this->mUnk_214   = 0;
     this->mpSaveFile = NULL;
-    this->mUnk_244   = 0;
+    this->mUnk_244   = NULL;
 
     func_020327c8(&this->mUnk_004, 0x1021);
 
-    this->mUnk_204 = OS_GetLockID();
-    int uVar8      = 1;
-    CARD_LockBackup(this->mUnk_204);
+    this->mCardId = OS_GetLockID();
+    int uVar8     = 1;
+    CARD_LockBackup(this->mCardId);
 
     if (CARD_IdentifyBackup(CARD_BACKUP_TYPE_FLASH_8MBITS)) {
         stack_struct stack[MAX_SAVE_SLOTS];
@@ -163,10 +163,10 @@ SaveManager::SaveManager() {
         }
     }
 
-    this->mUnk_20C = CARD_GetResultCode();
-    CARD_UnlockBackup(this->mUnk_204);
+    this->mResultCode = CARD_GetResultCode();
+    CARD_UnlockBackup(this->mCardId);
 
-    if (this->mUnk_20C != 0) {
+    if (this->mResultCode != CARD_RESULT_SUCCESS) {
         this->mUnk_214 = uVar8;
     }
 }
@@ -175,7 +175,7 @@ UnkStruct_0204a110::UnkStruct_0204a110() :
     mUnk_000(0),
     mUnk_008(-1),
     mUnk_00C(-1),
-    mUnk_DEC(NULL),
+    mpManager(NULL),
     mUnk_DF2(-1),
     mUnk_DF3(-1),
     mUnk_DFC(0),
@@ -191,7 +191,7 @@ UnkStruct_0204a110::UnkStruct_0204a110() :
 
 void UnkStruct_0204a110::func_ov018_020c5300() {
     func_02018c90(2);
-    this->mUnk_010.func_0201c890(0x0004800, 0x00016800, 1, 1, 0);
+    this->mUnk_010.func_0201c890(0x0004800, 0x00016800, true, true, false);
     GX_DispOn();
     GXS_DispOn();
 }
@@ -214,10 +214,11 @@ UnkStruct_0204af1c::UnkStruct_0204af1c() {
 
 UnkStruct_0204e5f8::UnkStruct_0204e5f8() :
     mUnk_18(0) {
-    this->mUnk_10 = 0;
-    this->mUnk_14 = 0;
-    this->mUnk_38 = 1;
-    this->mUnk_39 = 1;
+    //! TODO: fake match
+    *(u32 *) &this->mUnk_00.mUnk_10 = 0;
+    this->mUnk_14                   = 0;
+    this->mUnk_38                   = 1;
+    this->mUnk_39                   = 1;
 
     REG_WININ      = (REG_WININ & ~0x3F) | 0x3F;
     REG_WINOUT     = (REG_WINOUT & ~0x3F) | 0x30;

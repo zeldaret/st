@@ -1,6 +1,9 @@
 #include "Game/GameModeFileSelect.hpp"
 #include "FileSelect/FileSelect.hpp"
 #include "Game/Game.hpp"
+#include "Game/GameModeAdventure.hpp"
+#include "Game/GameModeContactMode.hpp"
+#include "Game/GameModeDownloadPlay.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "Unknown/UnkStruct_02049bd4.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
@@ -8,12 +11,6 @@
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
-
-extern "C" {
-void func_ov001_020be054();
-void func_ov001_020be0d8();
-void func_ov001_020be0ec();
-};
 
 static const UnkStruct_ov019_020d1d80 data_ov019_020d1d80(0x00020001);
 
@@ -58,15 +55,16 @@ void GameModeFileSelect::vfunc_20() {}
 void GameModeFileSelect::LoadAdventureMode(u16 saveSlotIndex) {
     this->mSaveSlotIndex = saveSlotIndex;
     data_0204a060.func_020183d4(gSaveManager.GetSaveSlot(saveSlotIndex)->GetAdventureFlag(AdventureFlag_WatchedIntroCS),
-                                (GameModeCreateCallback) func_ov001_020be054, 1);
+                                GameModeAdventure::Create, 1);
 }
 
 void GameModeFileSelect::LoadBattleMode(u16 saveSlotIndex) {
     this->mSaveSlotIndex = saveSlotIndex;
-    data_0204a060.func_020183d4(true, (GameModeCreateCallback) func_ov001_020be0ec, 1);
+    // note: GameModeDownloadPlay::Create calls GameModeBattle::Create at some point
+    data_0204a060.func_020183d4(true, GameModeDownloadPlay::Create, 1);
 }
 
 void GameModeFileSelect::LoadContactMode(u16 saveSlotIndex) {
     this->mSaveSlotIndex = saveSlotIndex;
-    data_0204a060.func_020183d4(true, (GameModeCreateCallback) func_ov001_020be0d8, 1);
+    data_0204a060.func_020183d4(true, GameModeContactMode::Create, 1);
 }

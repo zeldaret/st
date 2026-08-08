@@ -1,0 +1,39 @@
+#ifndef _STD_CSTRING_H
+#define _STD_CSTRING_H
+
+// from rb3 decomp
+
+#include <string.h>
+#include <mem.h>
+
+namespace std {
+    using ::size_t;
+
+    using ::memchr;
+    using ::memcmp;
+    using ::memcpy;
+    using ::memmove;
+    using ::memset;
+
+    // using ::strcat;
+    using ::strcpy;
+    // using ::strncat;
+    using ::strncpy;
+    // using ::strxfrm;
+
+    // using ::strchr;
+    using ::strcmp;
+    // using ::strcoll;
+    // using ::strcspn;
+    using ::strlen;
+    using ::strncmp;
+    // using ::strpbrk;
+    // using ::strrchr;
+    // using ::strspn;
+    // using ::strstr;
+    // using ::strtok;
+
+    // using ::strerror;
+} // namespace std
+
+#endif

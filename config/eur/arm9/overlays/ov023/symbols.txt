@@ -1,5 +1,5 @@
 func_ov023_020e9a40 kind:function(arm,size=0x3c) addr:0x020e9a40
-func_ov023_020e9a7c kind:function(arm,size=0x24) addr:0x020e9a7c
+_ZN19GameModeContactMode14CreateInstanceEv kind:function(arm,size=0x24) addr:0x020e9a7c
 func_ov023_020e9aa0 kind:function(arm,size=0x10) addr:0x020e9aa0
 func_ov023_020e9ab0 kind:function(arm,size=0xe8) addr:0x020e9ab0
 _ZN19func_ov023_020e9b98D1Ev kind:function(arm,size=0x6c) addr:0x020e9b98
@@ -221,8 +221,8 @@ data_ov023_020f1b28 kind:data(any) addr:0x020f1b28
 data_ov023_020f1b30 kind:data(any) addr:0x020f1b30
 data_ov023_020f1b38 kind:data(any) addr:0x020f1b38
 data_ov023_020f1b4c kind:data(any) addr:0x020f1b4c
-data_ov023_020f1b5c kind:data(any) addr:0x020f1b5c ambiguous
-data_ov023_020f1b74 kind:data(any) addr:0x020f1b74 ambiguous
+_ZTV33UnkStruct_ov001_020c46f4_Derived1 kind:data(any) addr:0x020f1b54 ambiguous
+_ZTV33UnkStruct_ov001_020c46f4_Derived2 kind:data(any) addr:0x020f1b6c ambiguous
 data_ov023_020f1b84 kind:data(any) addr:0x020f1b84
 data_ov023_020f1b88 kind:data(any) addr:0x020f1b88
 data_ov023_020f1bc0 kind:bss addr:0x020f1bc0

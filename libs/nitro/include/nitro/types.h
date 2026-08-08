@@ -34,7 +34,7 @@ typedef volatile s8 vs8;
 typedef volatile f32 vf32;
 typedef volatile f64 vf64;
 
-typedef u32 BOOL;
+typedef s32 BOOL;
 
 #define ATTRIBUTE_ALIGN(x) __attribute__((aligned(x)))
 

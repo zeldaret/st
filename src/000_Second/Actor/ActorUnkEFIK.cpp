@@ -48,7 +48,7 @@ void ActorUnkEFIK::vfunc_20() {
     for (int i = 0; i < length; i++) {
         u8 j;
         u8 k;
-        UnkStruct_027e0cd8_0c *pUVar5 = data_027e0cd8->mUnk_0C;
+        UnkStruct_027e0cd8_0C_Base *pUVar5 = data_027e0cd8->mUnk_0C;
 
         u8 bStack_3c[2];
         bStack_3c[0] = 0;
@@ -62,16 +62,16 @@ void ActorUnkEFIK::vfunc_20() {
 
         for (j = bStack_3c[0]; j < bStack_3e[0]; j++) {
             for (k = bStack_3c[1]; k < bStack_3e[1]; k++) {
-                u8 bStack_40[2];
-                bStack_40[0] = j;
-                bStack_40[1] = k;
+                Vec2bCpp bStack_40;
+                bStack_40.x = j;
+                bStack_40.y = k;
 
-                if (pUVar5->func_ov000_02080180(bStack_40) == 0x38) {
+                if (pUVar5->func_ov000_02080180(&bStack_40) == 0x38) {
                     u16 random = gRandom.Next32(6);
 
                     if (random == 0) {
                         VecFx32 vec;
-                        pUVar5->func_ov000_020808f4(&vec, bStack_40, 0);
+                        pUVar5->func_ov000_020808f4(&vec, &bStack_40, 0);
                         data_027e0cec->func_ov000_020a0220(&this->mUnk_98, &vec);
                     }
                 }

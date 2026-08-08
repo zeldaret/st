@@ -3,7 +3,7 @@
 #include "System/SysNew.hpp"
 #include "types.h"
 
-class GameModeBase : public SysObject {
+class GameModeBase {
 public:
     /* 00 (vtable) */
     /* 04 */

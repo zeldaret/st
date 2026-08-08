@@ -267,7 +267,7 @@ bool PassengerManager::CanCompleteTrip() {
     bool result = false;
 
     if (this->mPassenger.mActorId != ActorId_None && this->mPassenger.mUnk_04 == 0 &&
-        data_027e09a4->mUnk_00.mSceneIndex != SceneIndex_t_minigame) {
+        data_027e09a4->CurrentSceneIndex() != SceneIndex_t_minigame) {
         result = true;
     }
 
@@ -320,9 +320,9 @@ bool PassengerManager::IsDateUnset() {
 }
 
 s16 PassengerManager::GetDate() {
-    u16 date;
+    Date date;
     data_02049bac.func_02014a34(&date);
-    return date;
+    return date.data[0];
 }
 
 u32 PassengerManager::GetRandomIndex(u32 param1, u32 seed) {

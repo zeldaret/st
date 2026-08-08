@@ -84,11 +84,11 @@ void G3d_InitRenderState(G3d_RenderState *renderState, G3d_RenderObject *renderO
     renderState->boneList          = G3d_GetBoneList(renderObj->model);
     renderState->materialList      = G3d_GetMat(renderObj->model);
     renderState->meshList          = G3d_GetMesh(renderObj->model);
-    renderState->jntScalingHandler = G3d_gScaleHandlers[renderObj->model->scalingHandler];
-    renderState->jntSRTHandler     = G3d_gSRTTransformHandlers[renderObj->model->scalingHandler];
-    renderState->textureHandler    = G3d_gTextureHandlers[renderObj->model->textureHandler];
-    renderState->upScale           = renderObj->model->upScale;
-    renderState->downScale         = renderObj->model->downScale;
+    renderState->jntScalingHandler = G3d_gScaleHandlers[renderObj->model->unk_14.scalingHandler];
+    renderState->jntSRTHandler     = G3d_gSRTTransformHandlers[renderObj->model->unk_14.scalingHandler];
+    renderState->textureHandler    = G3d_gTextureHandlers[renderObj->model->unk_14.textureHandler];
+    renderState->upScale           = renderObj->model->unk_14.upScale;
+    renderState->downScale         = renderObj->model->unk_14.downScale;
 
     if (renderObj->callbackFunction && renderObj->callbackIdx < 32) {
         renderState->callbackFuncs[renderObj->callbackIdx]   = renderObj->callbackFunction;

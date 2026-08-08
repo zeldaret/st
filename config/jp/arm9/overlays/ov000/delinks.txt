@@ -23,6 +23,7 @@ src/000_Second/UnkSystem1_Base.cpp:
     .data       start:0x020b3870 end:0x020b389c
 
 src/000_Second/UnkSystem1_Derived1.cpp:
+    complete
     .text       start:0x020687e0 end:0x02068a44
     .data       start:0x020b389c end:0x020b38d0
 
@@ -31,6 +32,7 @@ src/000_Second/Actor/Actor.cpp:
     .data       start:0x020b48e4 end:0x020b4940
 
 src/000_Second/Actor/ActorUnkSWOB.cpp:
+    complete
     .text       start:0x0209c084 end:0x0209c474
     .init       start:0x020b1ff8 end:0x020b2048
     .ctor       start:0x020b3118 end:0x020b311c
@@ -59,6 +61,9 @@ src/000_Second/Actor/ActorUnkEFIK.cpp:
     .ctor       start:0x020b3124 end:0x020b3128
     .data       start:0x020b4c2c end:0x020b4cb0
     .bss        start:0x020b74f4 end:0x020b7540
+
+src/000_Second/MapObject/MapObjectManager_000.cpp:
+    .text       start:0x0209db74 end:0x0209de6c
 
 src/000_Second/MapObject/MapObjectProfile.cpp:
     complete
@@ -110,8 +115,8 @@ src/000_Second/Item/ItemManager.cpp:
     .rodata     start:0x020b1450 end:0x020b1458
 
 src/000_Second/Actor/Actor_Derived1.cpp:
-    .text       start:0x020aa2e0 end:0x020ab310
+    .text       start:0x020aa2e0 end:0x020ab2bc
     .data       start:0x020b6588 end:0x020b664c
 
 src/000_Second/Item/TreasureManager.cpp:
-    .text       start:0x020ab310 end:0x020aba00
+    .text       start:0x020ab2bc end:0x020aba00

@@ -8,7 +8,7 @@
 #include "types.h"
 
 // file tab manager?
-class UnkSubStruct9 : public SysObject {
+class UnkSubStruct9 {
 public:
     /* 000 */ u8 mSaveSlotIndex; // save slot index, 0 for file 1 and 1 for file 2
     /* 001 */ unk8 mUnk_001;

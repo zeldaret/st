@@ -13,7 +13,7 @@ class MapObject;
 class MapObject_20;
 class MapObjectProfile_Derived2_20;
 
-class MapObjectProfile : public SysObject {
+class MapObjectProfile {
 public:
     /* 00 (vtable) */
     /* 04 */ unk8 mUnk_04[2];
@@ -26,7 +26,7 @@ public:
     /* 10 */ MapObjectId mMapObjId;
     /* 14 */ MapObjectId mUnk_14;
     /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk8 mUnk_1C;
+    /* 1C */ u8 mUnk_1C;
     /* 1D */ unk8 mUnk_1D;
     /* 1E */ u16 mUnk_1E;
     /* 20 */
@@ -48,6 +48,7 @@ public:
 
     static unk32 func_ov000_0209c820();
     static void func_ov000_0209c8ec(MapObjectProfile *thisx);
+    void func_ov000_0209c8ec();
 };
 
 class MapObjectProfile_Derived1 : public MapObjectProfile {
@@ -112,6 +113,15 @@ class MapObjectProfile_Derived4 : public MapObjectProfile_Derived2 {
     // data_ov000_020b34d0
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
+};
+
+class MapObjectProfile_Derived6 : public MapObjectProfile_Derived2 {
+public:
+    MapObjectProfile_Derived6(MapObjectId mapObjId1, MapObjectId mapObjId2) :
+        MapObjectProfile_Derived2(mapObjId1, mapObjId2) {}
+    ~MapObjectProfile_Derived6();
+
+    /* 0C */ virtual void vfunc_10() override;
 };
 
 typedef MapObjectProfile *(*GetMapObjectProfile)();

@@ -4,7 +4,7 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
-#include "Unknown/UnkStruct_ov000_02067bc4.hpp"
+#include "Unknown/UnkStruct_ov000_020b504c.hpp"
 
 extern unk32 data_ov000_020b3000;
 
@@ -36,7 +36,7 @@ bool ActorUnkOBPC::vfunc_18(unk32 param1) {
 }
 
 bool ActorUnkOBPC::func_ov024_020d6f74(void) {
-    if (this->mUnk_5C.mUnk_1C_0 != 0) {
+    if (this->mUnk_5C.mUnk_1A[1] != 0) {
         return this->func_ov000_02098a60(1);
     }
 
@@ -117,8 +117,8 @@ void ActorUnkOBPC::SetState(ActorState state, int param2) {
 }
 
 bool ActorUnkOBPC::func_ov024_020d7154(void) {
-    u8 temp_r4                     = this->mUnk_5C.mParams[0];
-    UnkStruct_027e0cd8_0c *temp_r5 = data_027e0cd8->mUnk_0C;
+    u8 temp_r4                          = this->mUnk_5C.mParams[0];
+    UnkStruct_027e0cd8_0C_Base *temp_r5 = data_027e0cd8->mUnk_0C;
     ActorManager *pActorMgr;
     VecFx32 sp10;
 

@@ -39,6 +39,16 @@ union Vec2s {
     }
 
     Vec2s() {}
+
+    Vec2s(Vec2s *from) {
+#if __MWERKS__
+        this->coords = from->coords;
+#else
+        this->x = from->x;
+        this->y = from->y;
+#endif
+    }
+
     Vec2s(s16 X, s16 Y) {
         x = X;
         y = Y;
@@ -150,6 +160,10 @@ union Vec2us {
         x = X;
         y = Y;
     }
+    Vec2us(Vec2us *pFrom) {
+        x = pFrom->x;
+        y = pFrom->y;
+    }
 };
 
 #define Vec2us_CopyAdd(a, b, dst) Vec2_CopyAdd(Vec2us, a, b, dst)
@@ -194,7 +208,7 @@ static inline void Vec2us_Copy(const Vec2us *a, Vec2us *dst) {
 #endif
 }
 
-union Vec2b {
+union Vec2bCpp {
     struct {
         /* 0 */ u8 x;
         /* 2 */ u8 y;
@@ -202,24 +216,24 @@ union Vec2b {
     };
     u8 coords[2];
 
-    void operator=(const Vec2b &from) {
+    void operator=(const Vec2bCpp &from) {
         this->x = from.x;
         this->y = from.y;
     }
 
-    Vec2b() {}
-    Vec2b(u8 X, u8 Y) {
+    Vec2bCpp() {}
+    Vec2bCpp(u8 X, u8 Y) {
         x = X;
         y = Y;
     }
 };
 
-#define Vec2b_CopyAdd(a, b, dst) Vec2_CopyAdd(Vec2b, a, b, dst)
-#define Vec2b_CopySub(a, b, dst) Vec2_CopySub(Vec2b, a, b, dst)
+#define Vec2b_CopyAdd(a, b, dst) Vec2_CopyAdd(Vec2bCpp, a, b, dst)
+#define Vec2b_CopySub(a, b, dst) Vec2_CopySub(Vec2bCpp, a, b, dst)
 #define Vec2b_Set(a, dst) Vec2_Set(a, dst)
 
-static inline void Vec2b_Clear(Vec2b *dst) {
-    Vec2b empty;
+static inline void Vec2b_Clear(Vec2bCpp *dst) {
+    Vec2bCpp empty;
     empty.x = 0;
     empty.y = 0;
 
@@ -231,7 +245,7 @@ static inline void Vec2b_Clear(Vec2b *dst) {
 #endif
 }
 
-static inline void Vec2b_Add(const Vec2b *a, const Vec2b *b, Vec2b *dst) {
+static inline void Vec2b_Add(const Vec2bCpp *a, const Vec2bCpp *b, Vec2bCpp *dst) {
     u8 x = a->x + b->x;
     u8 y = a->y + b->y;
 
@@ -239,7 +253,7 @@ static inline void Vec2b_Add(const Vec2b *a, const Vec2b *b, Vec2b *dst) {
     dst->y = y;
 }
 
-static inline void Vec2b_Sub(const Vec2b *a, const Vec2b *b, Vec2b *dst) {
+static inline void Vec2b_Sub(const Vec2bCpp *a, const Vec2bCpp *b, Vec2bCpp *dst) {
     u8 x = a->x - b->x;
     u8 y = a->y - b->y;
 
@@ -247,7 +261,7 @@ static inline void Vec2b_Sub(const Vec2b *a, const Vec2b *b, Vec2b *dst) {
     dst->y = y;
 }
 
-static inline void Vec2b_Copy(const Vec2b *a, Vec2b *dst) {
+static inline void Vec2b_Copy(const Vec2bCpp *a, Vec2bCpp *dst) {
 #if __MWERKS__
     dst->coords = a->coords;
 #else
@@ -352,4 +366,8 @@ union Vec2sb {
         x = X;
         y = Y;
     }
+};
+
+struct UnkAngleStruct {
+    u16 angle;
 };

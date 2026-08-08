@@ -1,0 +1,13 @@
+#ifndef _STD_CSTDDEF_H
+#define _STD_CSTDDEF_H
+
+// from rb3 decomp
+
+#include <stddef.h>
+
+namespace std {
+    using ::ptrdiff_t;
+    using ::size_t;
+}
+
+#endif

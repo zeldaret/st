@@ -9,14 +9,13 @@
 extern "C" {
 void func_0201659c();
 void func_0200e234();
-void *func_ov001_020b6520(unk32 param1);
 }
 
 GameModeTitleScreen::GameModeTitleScreen() {
     func_0201659c();
     gGame.func_02013370(2);
     data_0204a110.func_ov001_020bd514(0, TitleScreenManager::Create, 0, 1);
-    func_ov001_020b6520(2);
+    UnkStruct_027e09a4::Create(2);
 }
 
 GameModeTitleScreen::~GameModeTitleScreen() {
@@ -26,7 +25,7 @@ GameModeTitleScreen::~GameModeTitleScreen() {
 
 void GameModeTitleScreen::vfunc_08() {
     this->GameModeBase::vfunc_08();
-    UnkStruct_SceneChange1 stack(Cutscene_GetParamEntry(CutsceneIndex_TitleScreen), true);
+    EntranceInfo stack(Cutscene_GetParamEntry(CutsceneIndex_TitleScreen), true);
     data_027e09a4->func_ov000_020707a8(&stack);
 }
 

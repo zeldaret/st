@@ -1,9 +1,15 @@
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 
-extern s16 data_ov001_020c2750[];
-extern s16 data_ov001_020c275e[];
+static const int data_ov001_020c274c[] = {0x0C};
+DECOMP_FORCE(data_ov001_020c274c);
 
-THUMB_BEGIN
+static const s16 data_ov001_020c2750[] = {
+    0, 0, -1, -1, -3, -4, -6,
+};
+
+static const s16 data_ov001_020c275e[] = {
+    -6, -4, -3, -2, -1, 0, 0,
+};
 
 UnkStruct_027e0cf8_08_00::UnkStruct_027e0cf8_08_00(u8 bgType) :
     AdventureModeManager_1B8_Base(bgType, true, AdventureModeManager_1B8_Base_1C(0x00, 0x00, 0x100, 0xC0), true, true) {
@@ -71,5 +77,3 @@ void UnkStruct_027e0cf8_08_00::func_ov001_020bfb20() {
         Vec2s_Copy(&this->mUnk_13C[i], &this->mUnk_094[iVar2]);
     }
 }
-
-THUMB_END

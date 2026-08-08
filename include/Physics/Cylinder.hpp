@@ -22,6 +22,14 @@ struct Cylinder {
         this->size = size;
     }
 
+    void Init(fx32 x, fx32 y, fx32 z, fx32 size) {
+        this->pos.x = x;
+        this->pos.y = y;
+        this->pos.z = z;
+
+        this->size = size;
+    }
+
     void MakeEmpty() {
         pos  = gVecFx32_ZERO;
         size = -1;

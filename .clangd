@@ -1,0 +1,39 @@
+CompileFlags:
+  Add: [
+    "-Wno-c++11-compat-deprecated-writable-strings",
+    "-Wno-multichar",
+    "-fdeclspec",
+    "-Wno-c++11-extensions",
+    "-Wuninitialized",
+    "-Wsometimes-uninitialized",
+    "-Wlogical-op-parentheses",
+    "-Wbitwise-op-parentheses",
+    # "-Wunused-variable",
+    # "-Wunused-but-set-variable",
+    "-Wunused-parameter",
+    "-Wunused-but-set-parameter",
+    "-Wself-assign",
+  ]
+Diagnostics:
+  Suppress:
+    - "warn_char_constant_too_large"
+    - "illegal_union_or_anon_struct_member"
+    - "main_returns_nonint"
+    - "template_spec_needs_header"
+Documentation:
+  CommentFormat: Doxygen
+---
+If:
+  PathMatch: .*/*.inc
+Diagnostics:
+  Suppress:
+    - "undeclared_var_use"
+    - "undeclared_var_use_suggest"
+    - "bound_member_function"
+    - "typecheck_subscript_value"
+    - "unknown_typename"
+---
+If:
+  PathMatch: .*\.pch
+CompileFlags:
+  Add: ["--language=c++", "--std=c++98"]
