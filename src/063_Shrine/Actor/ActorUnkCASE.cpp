@@ -7,10 +7,10 @@
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorRef.hpp"
 #include "Actor/ActorShotArrow.hpp"
+#include "Actor/ActorUnkCANS.hpp"
 #include "MapObject/MapObjectProfile_Derived2_20.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
-#include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
@@ -275,7 +275,18 @@ void ActorUnkCASE::func_ov063_0215aefc(unk32 param1) {}
 void ActorUnkCASE::func_ov063_0215af54(void) {}
 void ActorUnkCASE::func_ov063_0215af58(void) {}
 void ActorUnkCASE::func_ov063_0215af5c(void) {}
-void ActorUnkCASE::func_ov063_0215af60(void) {}
+
+void ActorUnkCASE::func_ov063_0215af60(void) {
+    if (gpActorManager->func_01fff3b4(mUnk_1E4)) {
+        return;
+    }
+
+    if (mUnk_14C != NULL) {
+        ((ActorUnkCANS *) mUnk_14C)->func_ov063_0215a428();
+    }
+
+    this->func_ov063_0215aefc(0);
+}
 
 void ActorUnkCASE::func_ov063_0215afa4(void) {
     mUnk_2C = 0;

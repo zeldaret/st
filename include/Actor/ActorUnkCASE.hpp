@@ -77,7 +77,7 @@ public:
     /* 1D8 */ unk32 mUnk_1D8;
     /* 1DC */ unk32 mUnk_1DC;
     /* 1E0 */ unk32 mUnk_1E0;
-    /* 1E4 */ unk32 mUnk_1E4;
+    /* 1E4 */ ActorRef mUnk_1E4;
     /* 1E8 */ Actor_Derived1_94 mUnk_1E8;
     /* 1F4 */ u8 mUnk_1F4;
     /* 1F5 */
