@@ -26,7 +26,12 @@ static PTMF<ActorUnkCASE> data_ov063_021630e0[0x6] = {ActorUnkCASE::func_ov063_0
                                                       ActorUnkCASE::func_ov063_0215afb8, ActorUnkCASE::func_ov063_0215b090,
                                                       ActorUnkCASE::func_ov063_0215b244, ActorUnkCASE::func_ov063_0215b2c4};
 
+static PTMF<ActorUnkCASE> data_ov063_02163110[0x6] = {ActorUnkCASE::func_ov063_0215af54, ActorUnkCASE::func_ov063_0215af5c,
+                                                      ActorUnkCASE::func_ov063_0215afa4, ActorUnkCASE::func_ov063_0215b054,
+                                                      ActorUnkCASE::func_ov063_0215b1bc, ActorUnkCASE::func_ov063_0215b2b0};
+
 extern "C" void func_01ffa60c(const Mat3p *, Mat3p *, Mat3p *);
+extern "C" void func_01ffa7a0(VecFx32 *, Mat3p *, VecFx32 *);
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
 extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
 
@@ -272,8 +277,14 @@ void ActorUnkCASE::func_ov063_0215acec(ActorRef *ref1, ActorRef ref2) {};
 void ActorUnkCASE::func_ov063_0215ae6c(void) {}
 void ActorUnkCASE::func_ov063_0215ae80(void) {}
 void ActorUnkCASE::func_ov063_0215aefc(unk32 param1) {}
+
+// Matched
 void ActorUnkCASE::func_ov063_0215af54(void) {}
+
+// Matched
 void ActorUnkCASE::func_ov063_0215af58(void) {}
+
+// Matched
 void ActorUnkCASE::func_ov063_0215af5c(void) {}
 
 void ActorUnkCASE::func_ov063_0215af60(void) {
@@ -347,7 +358,17 @@ void ActorUnkCASE::func_ov063_0215b090(void) {
     }
 }
 
-void ActorUnkCASE::func_ov063_0215b1bc(void) {}
+void ActorUnkCASE::func_ov063_0215b1bc(void) {
+    mVel.x = 0;
+    mVel.z = 0;
+
+    VecFx32 vec;
+    VecFx32_Init(0, 0, FLOAT_TO_FX32(1.0f), &vec);
+    func_01ffa7a0(&vec, &mUnk_1A4, &vec);
+
+    s16 angle = func_01ffbbe0(vec.x, vec.z);
+    Mat3p_InitYRotation(&mUnk_1A4, SIN((u16) angle), COS((u16) angle));
+}
 
 void ActorUnkCASE::func_ov063_0215b244(void) {
     mVel.y -= mUnk_2C;
