@@ -316,7 +316,37 @@ void ActorUnkCASE::func_ov063_0215b054(void) {
     mUnk_50 = 0;
 }
 
-void ActorUnkCASE::func_ov063_0215b090(void) {}
+void ActorUnkCASE::func_ov063_0215b090(void) {
+    if (mUnk_50 < 4) {
+        this->func_ov063_0215afb8();
+
+        if (mUnk_50 < mUnk_52) {
+            mUnk_50++;
+        }
+
+        this->vfunc_10(&mUnk_174.mUnk_0C);
+        data_027e09c0->func_ov000_0207e58c(mRef, 3, 4, &mUnk_174);
+        return;
+    }
+
+    mUnk_1C8 += DEG_TO_ANG(45);
+    VecFx32_Copy(&mPos, &mPrevPos);
+    VecFx32_Add(&mPos, &mVel, &mPos);
+
+    if (mVel.x == 0 && mVel.z == 0) {
+        mVel.y -= mUnk_2C;
+    }
+
+    this->func_ov000_02098910(NULL, 16);
+    this->vfunc_10(&mUnk_174.mUnk_0C);
+
+    data_027e09c0->func_ov000_0207e58c(mRef, 3, 4, &mUnk_174);
+
+    if (mUnk_46) {
+        this->func_ov063_0215b724();
+    }
+}
+
 void ActorUnkCASE::func_ov063_0215b1bc(void) {}
 void ActorUnkCASE::func_ov063_0215b244(void) {}
 void ActorUnkCASE::func_ov063_0215b2b0(void) {}
