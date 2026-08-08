@@ -294,7 +294,20 @@ void ActorUnkCASE::func_ov063_0215afa4(void) {
     mVel.z  = 0;
 }
 
-void ActorUnkCASE::func_ov063_0215afb8(void) {}
+void ActorUnkCASE::func_ov063_0215afb8(void) {
+    Actor *otherActor = gpActorManager->func_01fff3b4(mUnk_1E4);
+    if (otherActor == NULL) {
+        this->func_ov063_0215aefc(4);
+        return;
+    }
+
+    Mat3p *matSrc = (Mat3p *) ((u8 *) otherActor + 0x154);
+    mUnk_1A4      = *matSrc;
+
+    VecFx32 vec = *(VecFx32 *) ((u8 *) otherActor + 0xE8);
+    VecFx32_Copy(&vec, &mPos);
+    VecFx32_Copy(&vec, &mPrevPos);
+}
 
 void ActorUnkCASE::func_ov063_0215b054(void) {
     VecFx32_Init(mUnk_1D8, 0, mUnk_1E0, &mVel);
