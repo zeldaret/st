@@ -348,7 +348,18 @@ void ActorUnkCASE::func_ov063_0215b090(void) {
 }
 
 void ActorUnkCASE::func_ov063_0215b1bc(void) {}
-void ActorUnkCASE::func_ov063_0215b244(void) {}
+
+void ActorUnkCASE::func_ov063_0215b244(void) {
+    mVel.y -= mUnk_2C;
+    VecFx32_Copy(&mPos, &mPrevPos);
+    VecFx32_Add(&mPos, &mVel, &mPos);
+
+    this->func_ov000_02098b8c(1, NULL);
+
+    if ((mUnk_46 & 3) != 0) {
+        this->func_ov063_0215aefc(5);
+    }
+}
 
 void ActorUnkCASE::func_ov063_0215b2b0(void) {
     mVel.x  = 0;
