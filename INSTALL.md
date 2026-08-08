@@ -57,12 +57,14 @@ ARM7 BIOS in the root directory of this repository, and verify that your dumped 
 
 ## LSP setup
 
-By default `configure.py` will create the config file for clangd (at the root folder of the project), if you want to use the alternative setup you can run `configure.py` with `--noclangd | -c` to disable the creation of the file.
-
-If you wish to use CMake:
-
 **This is likely not necessary.** Most C++ editors usually have their one LSP (Language Server Protocol, a tool for code completion and more) configuration that should recognize the project structure and work out of the box. This section is about how to setup your LSP yourself **if the need be**.
 
+### Already included
+The repository now comes with a `.clangd` at the root. \
+By default `configure.py` will create `compile_commands.json` (at the root folder of the project), if you want to use the alternative setup you can run `configure.py` with `--noclangd | -c` to disable the creation of the file. \
+With both these files at the root of the project, any usual LSP should be able to detect them and work out of the box.
+
+### If you wish to use CMake
 The repository contains a [`CMakeLists.txt`](CMakeLists.txt) that allows generating a compilation database. For now, the `CMakeLists.txt` can only be used to generate `compile_commands.json` and similar files, not compiling the project.  
 To generate the compilation database, run `cmake -S . -G "Unix Makefiles" -B cmake` from the root directory of the project. This will create a `cmake/` directory that contains the `compile_commands.json`.  
 Once the file is generated, you can dynamically link it to the root directory and let your LSP detect it (make sure not to `git add` it though, even though the project's `.gitignore` should prevent it), or edit your `.clangd` as follows for it to recognize the compilation database:
@@ -70,4 +72,6 @@ Once the file is generated, you can dynamically link it to the root directory an
 CompileFlags:
     CompilationDatabase: "cmake"  # path to the compilation database
 ```
+Since the project already includes a `.clangd`, make sure not to stage and commit any of those local changes to the repository.
+
 This setup is adapted from a [tutorial by Strus](https://gist.github.com/Strus/042a92a00070a943053006bf46912ae9), refer to his post for further details.

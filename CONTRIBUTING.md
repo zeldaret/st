@@ -39,13 +39,16 @@ Reading the rest of this file gives information on the structure of the project 
 This project has a `.clang-format` file and all C/C++ files in this project should follow it. We recommend using an editor
 compatible with `clang-format` to format the code as you save.
 
-As a rule of thumb, try to mimick the style that can be observed in already decompiled files. Please write hexadecimal numbers in upper case (`0x9ABCDEF` instead of `0x9abcdef`). Lowercase is used for global names (functions, data, etc), class members use uppercase too (e.g., `mUnk_04` for a member placed at position `0x4`).
+As a rule of thumb, try to mimick the style that can be observed in already decompiled files. \
+Please write hexadecimal numbers in upper case (`0x9ABCDEF` instead of `0x9abcdef`). Lowercase numbers are used for global names (old functions names like `func_ovxxx_xxxxxxx`, data, etc).
+Class members use uppercase numbers too (e.g., `mUnk_0C` for a member placed at position `0xC`).
+New function names should follow `PascalCase`, even if they include numbers.
 
 ### Naming new things
 
 You may have to create new classes, structs, member attributes or functions, etc. Here is described how to name them according to what they are.
 
-Once you find out what something does, it helps to give it a meaningfull name (eg. `ModelRender` class, `Actor::isAlive()` function or `Actor.mPrevPos` member attribute).
+Once you find out what something does, it helps to give it a meaningfull name (eg. `ModelRender` class, `Actor::IsAlive()` function or `Actor.mPrevPos` member attribute).
 
 If you don't know yet what a piece of code does, try to follow this rough format: `{type}_ov{num}_{address}`.  
 - `type` is the kind of code you're naming, `UnkStruct` for a struct, `mUnk` for a member attribute, `Unk{D}System{X}` for a class or group of functions. In the last case, `X` would then be an arbitrary, unique identifier. Likely a number that would increase for every new `System` to name. `D` is optional and aimed to give more information about the context in which the system is used (eg. `File` or `Actor`).
