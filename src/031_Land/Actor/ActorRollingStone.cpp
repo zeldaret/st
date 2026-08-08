@@ -1,5 +1,6 @@
 #include "Actor/ActorRollingStone.hpp"
 
+#include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
@@ -288,17 +289,17 @@ void ActorRollingStone::func_ov031_020f8bc4() {
     sp38.z = MUL_FX32(cosValue, FLOAT_TO_FX32(1.0f));
     sp38.y = FLOAT_TO_FX32(0.0f);
 
-    VecFx32 sp28;
+    Cylinder sp28;
     this->vfunc_10(&sp28);
 
-    sp28.z += FLOAT_TO_FX32(0.05f);
+    sp28.pos.z += FLOAT_TO_FX32(0.05f);
 
-    if (data_027e09c0->func_ov000_0207e458(0x2, 0x1B, &sp28, 0x2, &sp38, this->mRef)) {
+    if (data_027e09c0->func_ov000_0207e458(0x2, 0x1B, &sp28.pos, 0x2, &sp38, this->mRef)) {
         return;
     }
     this->func_ov000_02098ab4(0x2, 0x5, 0x1, &this->mVel);
 
-    this->vfunc_10(&this->mUnk_D4.mUnk_0C.pos);
+    this->vfunc_10(&this->mUnk_D4.mUnk_0C);
 
     VecFx32 sp14;
     VecFx32_Copy(&this->mPos, &sp14);
@@ -625,17 +626,17 @@ void ActorRollingStone::func_ov031_020f9554() {
     sp38.y = FLOAT_TO_FX32(0.0f);
     sp38.z = MUL_FX32(cosValue, FLOAT_TO_FX32(0.25f));
 
-    VecFx32 sp28;
+    Cylinder sp28;
     this->vfunc_10(&sp28);
 
-    sp28.z += FLOAT_TO_FX32(0.05f);
+    sp28.pos.z += FLOAT_TO_FX32(0.05f);
 
-    if (data_027e09c0->func_ov000_0207e458(0x2, 0x1B, &sp28, 0x2, &sp38, this->mRef)) {
+    if (data_027e09c0->func_ov000_0207e458(0x2, 0x1B, &sp28.pos, 0x2, &sp38, this->mRef)) {
         return;
     }
     this->func_ov000_02098ab4(0x2, 0x5, 0x1, 0x0);
 
-    this->vfunc_10(&this->mUnk_D4.mUnk_0C.pos);
+    this->vfunc_10(&this->mUnk_D4.mUnk_0C);
 
     data_027e09c0->func_ov000_0207e58c(this->mRef, 0xB, 0x4, &this->mUnk_D4);
 

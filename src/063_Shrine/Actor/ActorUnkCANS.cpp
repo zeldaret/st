@@ -152,11 +152,6 @@ bool UnkStruct_ov063_02162ea8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, 
     return UnkStruct_027e0ce0_38_Base::vfunc_0C((const UnkStruct_ov031_020e54d4 *) param2Struct->mUnk_04, param2,
                                                 param2Struct->mUnk_04);
 }
-UnkStruct_ov000_020b19f0::UnkStruct_ov000_020b19f0(G3d_Model *pModel) :
-    ModelRender(pModel) {}
-
-UnkStruct_ov000_020b3268::UnkStruct_ov000_020b3268(G3d_Model *pModel) :
-    UnkStruct_ov000_020b19f0(pModel) {}
 
 UnkStruct_ov063_02162ee8::UnkStruct_ov063_02162ee8(G3d_Model *pModel) :
     UnkStruct_ov000_020b3268(pModel),
@@ -216,8 +211,8 @@ unk32 UnkStruct_ov063_02162e88::vfunc_04(ActorRef param1, unk32 param2, unk32 pa
 }
 
 ActorUnkCANS::ActorUnkCANS() :
-    mUnk_B0(G3d_GetModelPtr(((MapObjectProfile_Derived2_20 *) GET_PROFILE(ActorProfileUnkCANS)->vfunc_04())->mUnk_50)),
-    mUnk_128(&mUnk_B0, GET_PROFILE(ActorProfileUnkCANS)->vfunc_04()),
+    mUnk_0B0(G3d_GetModelPtr(((MapObjectProfile_Derived2_20 *) GET_PROFILE(ActorProfileUnkCANS)->vfunc_04())->mUnk_50)),
+    mUnk_128(&mUnk_0B0, GET_PROFILE(ActorProfileUnkCANS)->vfunc_04()),
     mUnk_1F4(),
     mUnk_200(this),
     mUnk_224(),
@@ -228,12 +223,12 @@ ActorUnkCANS::ActorUnkCANS() :
     mUnk_250(mUnk_5C.mInitialPos),
     mUnk_274(0),
     mUnk_270(0xCD) {
-    mFlags[0] |= 0x40;
+    SET_FLAG(mFlags, ActorFlag_6);
     Actor_38 *actor_38 = (Actor_38 *) &mUnk_1F4;
     mUnk_38            = actor_38;
     actor_38->mUnk_08  = 4;
     this->func_ov000_0209862c(4);
-    mUnk_200.mUnk_04 &= 0xFFFFBFFF;
+    UNSET_FLAG(&mUnk_200.mUnk_04, ActorFlag_14);
     mUnk_276 = gRandom.Next32(0) & 0x80000000 ? 1 : -1;
     mUnk_48  = 4;
     mUnk_270 *= mUnk_276;
@@ -255,8 +250,8 @@ void ActorUnkCANS::vfunc_10(Cylinder *param1) {
 
 // return bool ?
 unk32 ActorUnkCANS::vfunc_18(void) {
-    this->mUnk_B0.func_ov000_02057c38(6, 2);
-    this->mUnk_B0.func_ov000_0209a7b8(this, (UnkSystem4_UnkCallback) ActorUnkCANS::func_ov063_0215a678);
+    this->mUnk_0B0.func_ov000_02057c38(6, 2);
+    this->mUnk_0B0.func_ov000_0209a7b8(this, (UnkSystem4_UnkCallback) ActorUnkCANS::func_ov063_0215a678);
 
     ActorRef var;
     ActorManager *actorManager = gpActorManager;
@@ -506,7 +501,7 @@ void ActorUnkCANS::vfunc_2C(unk32 param1) {
         return;
     }
 
-    ((UnkSystem6_Derived2 *) &mUnk_B0)->func_01ffc6d4(mAngleStruct, &mPos);
+    ((UnkSystem6_Derived2 *) &mUnk_0B0)->func_01ffc6d4(mAngleStruct, &mPos);
 
     if (mUnk_268 != NULL) {
         VecFx32 vec;
@@ -1202,10 +1197,10 @@ void ActorUnkCANS::func_ov063_0215a678(ActorUnkCANS *actor, UnkStruct_func_ov063
     } else {
         var1 = 0x1F;
     }
-    func_0200eab0(modelRender->mpModel, actor->mUnk_B0.mUnk_6C, var1);
+    func_0200eab0(modelRender->mpModel, actor->mUnk_0B0.mUnk_6C, var1);
 
     unk32 var2 = param2->mUnk_08 & 0x10 ? param2->mUnk_AE : -1;
-    if (var2 == actor->mUnk_B0.mUnk_70) {
+    if (var2 == actor->mUnk_0B0.mUnk_70) {
         if (((u8 *) &modelRender->mRenderObj.mUnk_1C)[1] == 2) {
             param2->mUnk_92                              = 3;
             ((u8 *) &modelRender->mRenderObj.mUnk_1C)[1] = 3;
@@ -1236,7 +1231,7 @@ void ActorUnkCANS::func_ov063_0215a678(ActorUnkCANS *actor, UnkStruct_func_ov063
     }
 
     unk32 var3 = param2->mUnk_08 & 0x10 ? param2->mUnk_AE : -1;
-    if (var3 == actor->mUnk_B0.mUnk_74) {
+    if (var3 == actor->mUnk_0B0.mUnk_74) {
         if (((u8 *) &modelRender->mRenderObj.mUnk_1C)[1] == 2) {
             param2->mUnk_92                              = 3;
             ((u8 *) &modelRender->mRenderObj.mUnk_1C)[1] = 3;
