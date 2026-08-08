@@ -40,7 +40,7 @@ This project has a `.clang-format` file and all C/C++ files in this project shou
 compatible with `clang-format` to format the code as you save.
 
 As a rule of thumb, try to mimick the style that can be observed in already decompiled files. \
-Please write hexadecimal numbers in upper case (`0x9ABCDEF` instead of `0x9abcdef`). Lowercase numbers are used for global names (old functions names like `func_ovxxx_xxxxxxx`, data, etc).
+Please write hexadecimal numbers in upper case (`0x9ABCDEF` instead of `0x9abcdef`). Lowercase numbers are used for global names (old functions names like `func_ovxxx_02xxxxxx`, data, etc).
 Class members use uppercase numbers too (e.g., `mUnk_0C` for a member placed at position `0xC`).
 New function names should follow `PascalCase`, even if they include numbers.
 
