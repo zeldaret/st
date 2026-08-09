@@ -321,27 +321,26 @@ data_ov019_020d225c kind:data(any) addr:0x020d225c
 _ZTV17FileSelectMicTest kind:data(any) addr:0x020d227c
 _ZTV20FileSelect_UnkClass7 kind:data(any) addr:0x020d22a0
 _ZTV19FileSelectSubScreen kind:data(any) addr:0x020d22b0
-@3993 kind:data(any) addr:0x020d22d4
-data_ov019_020d22ea kind:data(any) addr:0x020d22ea
-@3994 kind:data(any) addr:0x020d22ec
-@3995 kind:data(any) addr:0x020d2304
-@3996 kind:data(any) addr:0x020d231c
-@3997 kind:data(any) addr:0x020d2334
-@3998 kind:data(any) addr:0x020d234c
-@3999 kind:data(any) addr:0x020d2350
-@4000 kind:data(any) addr:0x020d2354
-@4001 kind:data(any) addr:0x020d2358
-@4002 kind:data(any) addr:0x020d235c
-@4003 kind:data(any) addr:0x020d2360
-@4004 kind:data(any) addr:0x020d236c
-@4005 kind:data(any) addr:0x020d2378
-@4006 kind:data(any) addr:0x020d2384
-@4007 kind:data(any) addr:0x020d2390
-@4008 kind:data(any) addr:0x020d239c
-@4009 kind:data(any) addr:0x020d23b0
-@4010 kind:data(any) addr:0x020d23b4
-@4011 kind:data(any) addr:0x020d23c0
-@4012 kind:data(any) addr:0x020d23cc
+@3993 kind:data(byte[21]) addr:0x020d22d4 local
+@3994 kind:data(byte[21]) addr:0x020d22ec local
+@3995 kind:data(byte[21]) addr:0x020d2304 local
+@3996 kind:data(byte[21]) addr:0x020d231c local
+@3997 kind:data(byte[21]) addr:0x020d2334 local
+@3998 kind:data(byte[4])  addr:0x020d234c local
+@3999 kind:data(byte[4])  addr:0x020d2350 local
+@4000 kind:data(byte[4])  addr:0x020d2354 local
+@4001 kind:data(byte[4])  addr:0x020d2358 local
+@4002 kind:data(byte[4])  addr:0x020d235c local
+@4003 kind:data(byte[11]) addr:0x020d2360 local
+@4004 kind:data(byte[11]) addr:0x020d236c local
+@4005 kind:data(byte[11]) addr:0x020d2378 local
+@4006 kind:data(byte[11]) addr:0x020d2384 local
+@4007 kind:data(byte[11]) addr:0x020d2390 local
+@4008 kind:data(byte[20]) addr:0x020d239c local
+@4009 kind:data(byte[4])  addr:0x020d23b0 local
+@4010 kind:data(byte[10]) addr:0x020d23b4 local
+@4011 kind:data(byte[9])  addr:0x020d23c0 local
+@4012 kind:data(byte[9])  addr:0x020d23cc local
 _ZTV21FileSelectManager_160 kind:data(any) addr:0x020d23d8
 _ZTV21FileSelectManager_164 kind:data(any) addr:0x020d2408
 _ZTV25UnkSystem1_ov019_Derived2 kind:data(any) addr:0x020d2438

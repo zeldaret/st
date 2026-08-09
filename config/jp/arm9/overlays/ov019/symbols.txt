@@ -321,29 +321,26 @@ data_ov019_020d3a7c kind:data(any) addr:0x020d3a7c
 _ZTV17FileSelectMicTest kind:data(any) addr:0x020d3a9c
 _ZTV20FileSelect_UnkClass7 kind:data(any) addr:0x020d3ac0
 _ZTV19FileSelectSubScreen kind:data(any) addr:0x020d3ad0
-data_ov019_020d3af4 kind:data(any) addr:0x020d3af4
-data_ov019_020d3b0c kind:data(any) addr:0x020d3b0c
-data_ov019_020d3b24 kind:data(any) addr:0x020d3b24
-data_ov019_020d3b2a kind:data(any) addr:0x020d3b2a
-data_ov019_020d3b2c kind:data(any) addr:0x020d3b2c ambiguous
-data_ov019_020d3b3c kind:data(any) addr:0x020d3b3c
-data_ov019_020d3b54 kind:data(any) addr:0x020d3b54
-data_ov019_020d3b6c kind:data(any) addr:0x020d3b6c
-data_ov019_020d3b70 kind:data(any) addr:0x020d3b70
-data_ov019_020d3b74 kind:data(any) addr:0x020d3b74
-data_ov019_020d3b78 kind:data(any) addr:0x020d3b78
-data_ov019_020d3b7c kind:data(any) addr:0x020d3b7c
-data_ov019_020d3b80 kind:data(any) addr:0x020d3b80
-data_ov019_020d3b8c kind:data(any) addr:0x020d3b8c
-data_ov019_020d3b90 kind:data(any) addr:0x020d3b90 ambiguous
-data_ov019_020d3b98 kind:data(any) addr:0x020d3b98
-data_ov019_020d3ba4 kind:data(any) addr:0x020d3ba4
-data_ov019_020d3bb0 kind:data(any) addr:0x020d3bb0
-data_ov019_020d3bbc kind:data(any) addr:0x020d3bbc
-data_ov019_020d3bd0 kind:data(any) addr:0x020d3bd0
-data_ov019_020d3bd4 kind:data(any) addr:0x020d3bd4
-data_ov019_020d3be0 kind:data(any) addr:0x020d3be0
-data_ov019_020d3bec kind:data(any) addr:0x020d3bec
+@3993 kind:data(byte[21]) addr:0x020d3af4 local
+@3994 kind:data(byte[21]) addr:0x020d3b0c local
+@3995 kind:data(byte[21]) addr:0x020d3b24 local
+@3996 kind:data(byte[21]) addr:0x020d3b3c local
+@3997 kind:data(byte[21]) addr:0x020d3b54 local
+@3998 kind:data(byte[4])  addr:0x020d3b6c local
+@3999 kind:data(byte[4])  addr:0x020d3b70 local
+@4000 kind:data(byte[4])  addr:0x020d3b74 local
+@4001 kind:data(byte[4])  addr:0x020d3b78 local
+@4002 kind:data(byte[4])  addr:0x020d3b7c local
+@4003 kind:data(byte[11]) addr:0x020d3b80 local
+@4004 kind:data(byte[11]) addr:0x020d3b8c local
+@4005 kind:data(byte[11]) addr:0x020d3b98 local
+@4006 kind:data(byte[11]) addr:0x020d3ba4 local
+@4007 kind:data(byte[11]) addr:0x020d3bb0 local
+@4008 kind:data(byte[20]) addr:0x020d3bbc local
+@4009 kind:data(byte[4])  addr:0x020d3bd0 local
+@4010 kind:data(byte[10]) addr:0x020d3bd4 local
+@4011 kind:data(byte[9])  addr:0x020d3be0 local
+@4012 kind:data(byte[9])  addr:0x020d3bec local
 _ZTV21FileSelectManager_160 kind:data(any) addr:0x020d3bf8
 _ZTV21FileSelectManager_164 kind:data(any) addr:0x020d3c28
 _ZTV25UnkSystem1_ov019_Derived2 kind:data(any) addr:0x020d3c58
