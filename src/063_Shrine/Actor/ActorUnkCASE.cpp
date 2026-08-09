@@ -36,6 +36,7 @@ extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
 extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
 
 // Overlay 0
+extern unk32 data_ov000_020aecf8[0x2]; //! INFO: Unsure about the size and type
 extern u16 data_ov000_020aed00;
 extern "C" void func_ov000_0207b70c(ActorUnkCASE_174 *param1, Actor *param2);
 extern "C" void func_ov000_020990c0(ActorUnkCASE *param1, ActorShotArrow_140 *param2, unk32 param3, unk32 param4);
@@ -296,7 +297,14 @@ void ActorUnkCASE::vfunc_2C(unk32 param1) {
 }
 
 void ActorUnkCASE::func_ov063_0215acec(ActorRef *ref1, ActorRef ref2) {};
-void ActorUnkCASE::func_ov063_0215aefc(unk32 param1) {}
+
+void ActorUnkCASE::func_ov063_0215aefc(ActorState param1) {
+    mState   = param1;
+    mUnk_2C  = data_ov000_020aecf8[0];
+    mUnk_120 = 0;
+
+    CALL_PTMF(PTMF<ActorUnkCASE>, data_ov063_02163110[mState]);
+}
 
 // Matched
 void ActorUnkCASE::func_ov063_0215af54(void) {}

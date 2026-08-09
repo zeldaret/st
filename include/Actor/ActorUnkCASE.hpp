@@ -101,7 +101,7 @@ public:
     static void func_ov063_0215acec(ActorRef *ref1, ActorRef ref2); // copy ?
     void func_ov063_0215ae6c(void);
     void func_ov063_0215ae80(void);
-    void func_ov063_0215aefc(unk32 param2);
+    void func_ov063_0215aefc(ActorState param2);
     void func_ov063_0215af54(void);
     void func_ov063_0215af58(void);
     void func_ov063_0215af5c(void);
