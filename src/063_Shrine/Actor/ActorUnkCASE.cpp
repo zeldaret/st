@@ -71,6 +71,28 @@ ActorUnkCASE_150::ActorUnkCASE_150(Actor *param1) :
     mUnk_04 = 1;
 }
 
+bool ActorUnkCASE_150::vfunc_00(ActorRef ref, unk32 param2) {
+    ActorUnkCASE *actor = (ActorUnkCASE *) mUnk_20;
+    if (actor->mUnk_1F4 == 0) {
+        bool cond = true;
+        if ((u32) actor->mState != 5 && actor->mState != 4) {
+            cond = false;
+        }
+        if (!cond) {
+            return false;
+        }
+    }
+
+    if (param2 != 0) {
+        actor->func_ov063_0215b814(ref);
+    }
+
+    return Actor_C4::vfunc_00(ref, param2);
+}
+
+bool ActorUnkCASE_150::vfunc_04() {}
+void ActorUnkCASE_150::vfunc_0C(unk32 param1) {}
+
 ActorUnkCASE_174::ActorUnkCASE_174(Actor *param1) {
     mUnk_04 = 0;
     mUnk_2C = param1;
@@ -266,16 +288,7 @@ void ActorUnkCASE::vfunc_2C(unk32 param1) {
     }
 }
 
-void ActorUnkCASE::func_ov063_0215ab70(void) {}
-void ActorUnkCASE::func_ov063_0215aba4(void) {}
-void ActorUnkCASE::func_ov063_0215abd8(void) {}
-void ActorUnkCASE::func_ov063_0215ac4c(void) {}
-void ActorUnkCASE::func_ov063_0215ac68(void) {}
-void ActorUnkCASE::func_ov063_0215ac8c(void) {}
-void ActorUnkCASE::func_ov063_0215acc8(void) {}
 void ActorUnkCASE::func_ov063_0215acec(ActorRef *ref1, ActorRef ref2) {};
-void ActorUnkCASE::func_ov063_0215ae6c(void) {}
-void ActorUnkCASE::func_ov063_0215ae80(void) {}
 void ActorUnkCASE::func_ov063_0215aefc(unk32 param1) {}
 
 // Matched
@@ -388,10 +401,12 @@ void ActorUnkCASE::func_ov063_0215b2b0(void) {
     mUnk_2C = 0;
 }
 
+// Matched
 void ActorUnkCASE::func_ov063_0215b2c4(void) {}
+
 void ActorUnkCASE::func_ov063_0215b6c8(VecFx32 *param1, UnkAngleStruct angle) {}
 void ActorUnkCASE::func_ov063_0215b724(void) {}
-void ActorUnkCASE::func_ov063_0215b814(void) {}
+void ActorUnkCASE::func_ov063_0215b814(ActorRef param1) {}
 void ActorUnkCASE::func_ov063_0215b854(void) {}
 void ActorUnkCASE::func_ov063_0215b8e8(void) {}
 void ActorUnkCASE::func_ov063_0215b99c(void) {}
