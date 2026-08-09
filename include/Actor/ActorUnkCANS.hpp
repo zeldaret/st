@@ -90,17 +90,6 @@ public:
     /* 04 */ virtual unk32 vfunc_04(ActorRef param1, unk32 param2, unk32 param3, unk32 *param4) override;
 };
 
-class UnkStruct_func_ov063_0215a678 {
-public:
-    /* 00 */ STRUCT_PAD(0x00, 0x04);
-    /* 04 */ ModelRender *mUnk_04; //! INFO: Placeholder that matches
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ STRUCT_PAD(0x0C, 0x92);
-    /* 92 */ s8 mUnk_92;
-    /* 93 */ STRUCT_PAD(0x93, 0xAE);
-    /* AE */ u8 mUnk_AE;
-};
-
 class UnkStruct_ActorUnkCANS_224 {
 public:
     /* 00 (base) */

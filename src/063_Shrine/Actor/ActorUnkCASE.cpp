@@ -30,8 +30,10 @@ static PTMF<ActorUnkCASE> data_ov063_02163110[0x6] = {ActorUnkCASE::func_ov063_0
                                                       ActorUnkCASE::func_ov063_0215afa4, ActorUnkCASE::func_ov063_0215b054,
                                                       ActorUnkCASE::func_ov063_0215b1bc, ActorUnkCASE::func_ov063_0215b2b0};
 
+extern Mat4x3p data_027e0964;
 extern "C" void func_01ffa60c(const Mat3p *, Mat3p *, Mat3p *);
 extern "C" void func_01ffa7a0(VecFx32 *, Mat3p *, VecFx32 *);
+extern "C" void func_01ffad5c(Mat4x3p *, Mat4x3p *, Mat4x3p *);
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
 extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
 
@@ -43,6 +45,9 @@ extern "C" void func_ov000_020990c0(ActorUnkCASE *param1, ActorShotArrow_140 *pa
 
 // Overlay 17
 extern "C" unk32 func_ov017_020bef4c(ActorUnkCASE *param1, unk32 param2);
+
+// Other
+extern "C" void G3d_GetCurrentMtx(Mat4x3p *mtx1, Mat3p *mtx2);
 
 DECL_PROFILE(ActorProfileUnkCASE);
 
@@ -474,8 +479,46 @@ void ActorUnkCASE::func_ov063_0215b854(void) {
 }
 
 void ActorUnkCASE::func_ov063_0215b8e8(void) {}
-void ActorUnkCASE::func_ov063_0215b99c(void) {}
-void ActorUnkCASE::func_ov063_0215ba64(void) {}
+
+void ActorUnkCASE::func_ov063_0215b99c(ActorUnkCASE *param1, UnkStruct_func_ov063_0215a678 *param2) {
+    unk32 var1;
+    if ((param2->mUnk_08 & 0x10) != 0) {
+        var1 = param2->mUnk_AE;
+    } else {
+        var1 = -1;
+    }
+
+    u8 *var2 = ((u8 *) param2->mUnk_04);
+
+    // Can probably use a ternary instead of var1
+    if (var1 != param1->mUnk_0B0.mUnk_6C) {
+        return;
+    }
+
+    if (var2[0x25] == 2) {
+        param2->mUnk_92 = 3;
+        var2[0x25]      = 3;
+        return;
+    }
+
+    if (var2[0x25] != 3) {
+        return;
+    }
+
+    Mat4x3p matx1, matx2;
+    G3d_GetCurrentMtx(&matx1, NULL);
+    func_01ffad5c(&matx1, &data_027e0964, &matx2);
+    // VecFx32_Copy(&matx2.wColumn, &param1->mUnk_1CC);
+    fx32 x             = matx2.wColumn.x;
+    fx32 z             = matx2.wColumn.z;
+    fx32 y             = matx2.wColumn.y;
+    param1->mUnk_1CC.x = x;
+    param1->mUnk_1CC.y = y;
+    param1->mUnk_1CC.z = z;
+
+    param2->mUnk_92 = 2;
+    var2[0x25]      = 2;
+}
 
 ActorUnkCASE::~ActorUnkCASE() {}
 ActorProfileUnkCASE::~ActorProfileUnkCASE() {}

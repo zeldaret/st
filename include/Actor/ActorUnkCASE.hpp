@@ -35,6 +35,19 @@ public:
     /* 00 */ virtual ~UnkStruct_ov063_021631a0() override {};
 };
 
+class UnkStruct_func_ov063_0215a678 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0x04);
+    /* 04 */ ModelRender *mUnk_04; //! INFO: Placeholder that matches
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ STRUCT_PAD(0x0C, 0x25);
+    /* 25 */ u8 mUnk_25;
+    /* 26 */ STRUCT_PAD(0x26, 0x92);
+    /* 92 */ s8 mUnk_92;
+    /* 93 */ STRUCT_PAD(0x93, 0xAE);
+    /* AE */ u8 mUnk_AE;
+};
+
 class ActorUnkCASE_150 : public Actor_C4 {
 public:
     /* 00 (base) */
@@ -62,7 +75,7 @@ public:
 class ActorUnkCASE : public Actor_Derived2 {
 public:
     /* 000 (base) */
-    /* 0AE */ STRUCT_PAD(0xAE, 0xB0);
+    /* 0AE */ unk16 mUnk_AE;
     /* 0B0 */ UnkStruct_ov063_021631a0 mUnk_0B0;
     /* 120 */ unk16 mUnk_120;
     /* 122 */ STRUCT_PAD(0x122, 0x124);
@@ -119,7 +132,7 @@ public:
     void func_ov063_0215b814(ActorRef ref);
     void func_ov063_0215b854(void);
     void func_ov063_0215b8e8(void);
-    static void func_ov063_0215b99c(void);
+    static void func_ov063_0215b99c(ActorUnkCASE *param1, UnkStruct_func_ov063_0215a678 *param2);
     void func_ov063_0215ba64(void);
 };
 
