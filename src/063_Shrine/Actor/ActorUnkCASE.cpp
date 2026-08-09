@@ -184,7 +184,7 @@ void ActorUnkCASE::vfunc_20() {
     fx16 x, y, z;
     fx32 x_pos, x_neg, z_pos, z_neg;
 
-    if (mUnk_14C != 0) {
+    if (mUnk_14C != NULL) {
         VecFx32 vec1;
         VecFx32 *mUnk_14C_vec = (VecFx32 *) (((u8 *) mUnk_14C) + 0x25C);
         vec1                  = *mUnk_14C_vec;
@@ -424,7 +424,29 @@ void ActorUnkCASE::func_ov063_0215b814(ActorRef ref) {
     this->func_ov063_0215aefc(1);
 }
 
-void ActorUnkCASE::func_ov063_0215b854(void) {}
+void ActorUnkCASE::func_ov063_0215b854(void) {
+    if (mUnk_14C != NULL) {
+        ActorUnkCANS *actorCans = (ActorUnkCANS *) mUnk_14C;
+
+        VecFx32 vec = actorCans->mPos;
+        VecFx32_Copy(&vec, &mPos);
+        VecFx32_Copy(&vec, &mPrevPos);
+
+        actorCans->mUnk_236 = 20;
+        actorCans->mUnk_234 = 0;
+
+        actorCans = (ActorUnkCANS *) mUnk_14C;
+        actorCans->func_ov063_02158b0c();
+
+        actorCans = (ActorUnkCANS *) mUnk_14C;
+        actorCans->func_ov063_0215a428();
+        mUnk_124.mUnk_04 = ~0x38000;
+        mUnk_14C         = NULL;
+    }
+
+    this->func_ov063_0215aefc(2);
+}
+
 void ActorUnkCASE::func_ov063_0215b8e8(void) {}
 void ActorUnkCASE::func_ov063_0215b99c(void) {}
 void ActorUnkCASE::func_ov063_0215ba64(void) {}

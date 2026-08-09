@@ -67,7 +67,7 @@ public:
     /* 120 */ unk16 mUnk_120;
     /* 122 */ STRUCT_PAD(0x122, 0x124);
     /* 124 */ ActorShotArrow_140 mUnk_124;
-    /* 14C */ void *mUnk_14C;
+    /* 14C */ Actor *mUnk_14C;
     /* 150 */ ActorUnkCASE_150 mUnk_150;
     /* 174 */ ActorUnkCASE_174 mUnk_174;
     /* 1A4 */ Mat3p mUnk_1A4;
