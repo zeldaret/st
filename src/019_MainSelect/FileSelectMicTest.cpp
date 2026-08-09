@@ -9,7 +9,6 @@
 extern "C" {
 unk32 func_01ffb428(unk32, unk32);
 
-void func_ov000_02062e44(Vec2s *param1, void *param2);
 unk8 func_ov000_02070164(void *); //! TODO: turn to a class
 };
 
@@ -28,7 +27,7 @@ struct UnkStruct_ov019_020d2248 {
 };
 
 static UnkStruct_ov019_020d2248 data_ov019_020d2248 = {
-    0x0C, { 0, 0 }, { 0, -71 }, { -1, 641 }, 0, { 0, 0 },
+    0x0C, {0, 0}, {0, -71}, {-1, 641}, 0, {0, 0},
 };
 
 struct UnkStruct_ov019_020d2248_Init {

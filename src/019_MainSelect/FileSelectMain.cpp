@@ -18,7 +18,6 @@ void _ZN14CellAnimObject19func_ov000_02060950Ev(CellAnimObject *object, s16 para
 };
 extern UnkStruct_ov019_020d1e70 data_ov019_020d1e70;
 
-
 class UnkStruct_ov019_020d24c0 {
 public:
     Vec2s mUnk_00;
@@ -65,12 +64,11 @@ public:
         data_ov019_020d1e70.mUnk_00.y = 0x32;
 
         UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_10 = 0x20003;
-        data_ov019_020d1e70.mUnk_0C                              = 0x20004;
+        data_ov019_020d1e70.mUnk_0C                           = 0x20004;
     }
 };
 
 UnkStruct_ov019_020d24c0 data_ov019_020d24c0(-0x100, 0, 0x100, 0);
-
 
 #pragma explicit_zero_data on
 UnkStruct_ov019_020d1e70 data_ov019_020d1e70 = {};
@@ -194,7 +192,7 @@ FileSelectMain::FileSelectMain() :
     } params                 = *(const typeof(params) *) data_ov019_020d1bbc;
     params.entries[0].param1 = &this->mUnk_0C;
     params.entries[1].param1 = &this->mUnk_0C;
-    stack_struct1 *entries = params.entries;
+    stack_struct1 *entries   = params.entries;
     this->mUnk_03E0.Init(sizeof(FileSlot) * MAX_SAVE_SLOTS, entries);
 
     this->mUnk_0C.Append(&this->mUnk_0100);
@@ -217,8 +215,8 @@ FileSelectMain::FileSelectMain() :
     s16 y0100 = pFetch0100->y;
     y0100 += data_ov019_020d1e70.mUnk_1C.y;
 
-    pos0100.x = x0100;
-    pos0100.y = y0100;
+    pos0100.x                   = x0100;
+    pos0100.y                   = y0100;
     this->mUnk_0100.mPos.coords = pos0100.coords;
 
     Vec2s posSlot0, fetchSlot0;
@@ -276,8 +274,8 @@ FileSelectMain::FileSelectMain() :
 
     s16 y11BC = pFetch11BC->y;
     y11BC += data_ov019_020d24c0.mUnk_04.y;
-    pos11BC.x = x11BC;
-    pos11BC.y = y11BC;
+    pos11BC.x                   = x11BC;
+    pos11BC.y                   = y11BC;
     this->mUnk_11BC.mPos.coords = pos11BC.coords;
 
     func_ov000_02062e44(pFetch15D4, &this->mUnk_15D4);
@@ -442,13 +440,13 @@ void FileSelectMain::func_ov019_020c63dc() {
 
     Vec2s *startFetch = &frame.startFetchTarget;
     func_ov000_02062e44(startFetch, &this->mUnk_0488);
-    targetX = startFetch->x + data_ov019_020d24c0.mUnk_04.x;
-    targetY = startFetch->y + data_ov019_020d24c0.mUnk_04.y;
+    targetX                = startFetch->x + data_ov019_020d24c0.mUnk_04.x;
+    targetY                = startFetch->y + data_ov019_020d24c0.mUnk_04.y;
     frame.startSharedPos.x = targetX;
     frame.startSharedPos.y = targetY;
     func_ov000_02062e44(&frame.startSharedTarget, &this->mUnk_0488);
-    frame.startCopyBase.x = frame.startSharedTarget.x;
-    frame.startCopyBase.y = frame.startSharedTarget.y;
+    frame.startCopyBase.x    = frame.startSharedTarget.x;
+    frame.startCopyBase.y    = frame.startSharedTarget.y;
     frame.startFinalTarget.x = frame.startSharedPos.x;
     frame.startFinalTarget.y = frame.startSharedPos.y;
     func_0201e754(&this->mUnk_075C, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_02, &frame.startFinalTarget,
@@ -456,15 +454,15 @@ void FileSelectMain::func_ov019_020c63dc() {
                   UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_0C);
 
     func_ov000_02062e44(&frame.startSecondaryFetchPos, &this->mUnk_0488);
-    frame.startSharedPos.x = frame.startSecondaryFetchPos.x;
-    frame.startSharedPos.y = frame.startSecondaryFetchPos.y;
+    frame.startSharedPos.x    = frame.startSecondaryFetchPos.x;
+    frame.startSharedPos.y    = frame.startSecondaryFetchPos.y;
     Vec2s *startSecondaryBase = &frame.startSecondaryFetchBase;
     func_ov000_02062e44(startSecondaryBase, &this->mUnk_0488);
-    frame.startSecondaryTarget.x = startSecondaryBase->x + data_ov019_020d24c0.mUnk_00.x;
-    frame.startSecondaryTarget.y = data_ov019_020d24c0.mUnk_00.y + startSecondaryBase->y;
-    frame.startSharedTarget.coords = frame.startSecondaryTarget.coords;
-    frame.startSecondaryFinalPos.x = frame.startSharedPos.x;
-    frame.startSecondaryFinalPos.y = frame.startSharedPos.y;
+    frame.startSecondaryTarget.x      = startSecondaryBase->x + data_ov019_020d24c0.mUnk_00.x;
+    frame.startSecondaryTarget.y      = data_ov019_020d24c0.mUnk_00.y + startSecondaryBase->y;
+    frame.startSharedTarget.coords    = frame.startSecondaryTarget.coords;
+    frame.startSecondaryFinalPos.x    = frame.startSharedPos.x;
+    frame.startSecondaryFinalPos.y    = frame.startSharedPos.y;
     frame.startSecondaryFinalTarget.x = frame.startSharedTarget.x;
     frame.startSecondaryFinalTarget.y = frame.startSharedTarget.y;
     func_0201e754(&this->mUnk_07A0, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_02, &frame.startSecondaryFinalPos,
@@ -505,13 +503,13 @@ void FileSelectMain::func_ov019_020c63dc() {
 
     Vec2s *adventureFetch = &frame.adventureFetchTarget;
     func_ov000_02062e44(adventureFetch, &this->mUnk_0DA4);
-    targetX = adventureFetch->x + data_ov019_020d24c0.mUnk_04.x;
-    targetY = adventureFetch->y + data_ov019_020d24c0.mUnk_04.y;
+    targetX                    = adventureFetch->x + data_ov019_020d24c0.mUnk_04.x;
+    targetY                    = adventureFetch->y + data_ov019_020d24c0.mUnk_04.y;
     frame.adventureSharedPos.x = targetX;
     frame.adventureSharedPos.y = targetY;
     func_ov000_02062e44(&frame.adventureSharedTarget, &this->mUnk_0DA4);
-    frame.adventureCopyBase.x = frame.adventureSharedTarget.x;
-    frame.adventureCopyBase.y = frame.adventureSharedTarget.y;
+    frame.adventureCopyBase.x    = frame.adventureSharedTarget.x;
+    frame.adventureCopyBase.y    = frame.adventureSharedTarget.y;
     frame.adventureFinalTarget.x = frame.adventureSharedPos.x;
     frame.adventureFinalTarget.y = frame.adventureSharedPos.y;
     func_0201e754(&this->mUnk_1078, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_02, &frame.adventureFinalTarget,
@@ -521,7 +519,7 @@ void FileSelectMain::func_ov019_020c63dc() {
     func_ov000_02062e44(&frame.adventureLeftFetchPos, &this->mUnk_0DA4);
     frame.adventureSharedPos.x = frame.adventureLeftFetchPos.x;
     frame.adventureSharedPos.y = frame.adventureLeftFetchPos.y;
-    Vec2s *adventureLeftBase = &frame.adventureLeftFetchBase;
+    Vec2s *adventureLeftBase   = &frame.adventureLeftFetchBase;
     func_ov000_02062e44(adventureLeftBase, &this->mUnk_0DA4);
     s16 adventureLeftX = data_ov019_020d24c0.mUnk_00.x;
     adventureLeftX += adventureLeftBase->x;
@@ -529,19 +527,19 @@ void FileSelectMain::func_ov019_020c63dc() {
     s16 adventureLeftY = data_ov019_020d24c0.mUnk_00.y;
     adventureLeftY += adventureLeftBase->y;
 
-    frame.adventureLeftTarget.x = adventureLeftX;
-    frame.adventureLeftTarget.y = adventureLeftY;
+    frame.adventureLeftTarget.x        = adventureLeftX;
+    frame.adventureLeftTarget.y        = adventureLeftY;
     frame.adventureSharedTarget.coords = frame.adventureLeftTarget.coords;
     frame.adventureLeftFinalPos.coords = frame.adventureSharedPos.coords;
-    frame.adventureLeftFinalTarget.x = frame.adventureSharedTarget.x;
-    frame.adventureLeftFinalTarget.y = frame.adventureSharedTarget.y;
+    frame.adventureLeftFinalTarget.x   = frame.adventureSharedTarget.x;
+    frame.adventureLeftFinalTarget.y   = frame.adventureSharedTarget.y;
     func_0201e754(&this->mUnk_10BC, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_02, &frame.adventureLeftFinalPos,
                   &frame.adventureLeftFinalTarget, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18,
                   UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_14);
 
     func_ov000_02062e44(&frame.adventureVerticalFetchPos, &this->mUnk_0DA4);
     frame.adventureVerticalCopyA.coords = frame.adventureVerticalFetchPos.coords;
-    Vec2s *adventureVerticalBase = &frame.adventureVerticalFetchBase;
+    Vec2s *adventureVerticalBase        = &frame.adventureVerticalFetchBase;
     func_ov000_02062e44(adventureVerticalBase, &this->mUnk_0DA4);
     s16 adventureVerticalX = adventureVerticalBase->x;
     adventureVerticalX += UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_1C.x;
@@ -549,11 +547,11 @@ void FileSelectMain::func_ov019_020c63dc() {
     s16 adventureVerticalY = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_1C.y;
     adventureVerticalY += adventureVerticalBase->y;
 
-    frame.adventureVerticalTarget.x = adventureVerticalX;
-    frame.adventureVerticalTarget.y = adventureVerticalY;
-    frame.adventureSharedTarget.coords = frame.adventureVerticalTarget.coords;
-    frame.adventureVerticalFinalPos.x = frame.adventureVerticalCopyA.x;
-    frame.adventureVerticalFinalPos.y = frame.adventureVerticalCopyA.y;
+    frame.adventureVerticalTarget.x      = adventureVerticalX;
+    frame.adventureVerticalTarget.y      = adventureVerticalY;
+    frame.adventureSharedTarget.coords   = frame.adventureVerticalTarget.coords;
+    frame.adventureVerticalFinalPos.x    = frame.adventureVerticalCopyA.x;
+    frame.adventureVerticalFinalPos.y    = frame.adventureVerticalCopyA.y;
     frame.adventureVerticalFinalTarget.x = frame.adventureSharedTarget.x;
     frame.adventureVerticalFinalTarget.y = frame.adventureSharedTarget.y;
     func_0201e754(&this->mUnk_1100, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_00, &frame.adventureVerticalFinalPos,
@@ -571,8 +569,8 @@ void FileSelectMain::func_ov019_020c63dc() {
     frame.battleSharedPos.x = battleX;
     frame.battleSharedPos.y = battleY;
     func_ov000_02062e44(&frame.battleSharedBase, &this->mUnk_11BC);
-    frame.battleCopyBase.x = frame.battleSharedBase.x;
-    frame.battleCopyBase.y = frame.battleSharedBase.y;
+    frame.battleCopyBase.x    = frame.battleSharedBase.x;
+    frame.battleCopyBase.y    = frame.battleSharedBase.y;
     frame.battleFinalTarget.x = frame.battleSharedPos.x;
     frame.battleFinalTarget.y = frame.battleSharedPos.y;
     func_0201e754(&this->mUnk_1490, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_02, &frame.battleFinalTarget,
@@ -581,7 +579,7 @@ void FileSelectMain::func_ov019_020c63dc() {
 
     func_ov000_02062e44(&frame.battleLeftFetchPos, &this->mUnk_11BC);
     frame.battleSharedPos.coords = frame.battleLeftFetchPos.coords;
-    Vec2s *battleLeftBase = &frame.battleLeftFetchBase;
+    Vec2s *battleLeftBase        = &frame.battleLeftFetchBase;
     func_ov000_02062e44(battleLeftBase, &this->mUnk_11BC);
     s16 battleLeftTargetX = battleLeftBase->x;
     battleLeftTargetX += data_ov019_020d24c0.mUnk_00.x;
@@ -589,11 +587,11 @@ void FileSelectMain::func_ov019_020c63dc() {
     s16 battleLeftTargetY = data_ov019_020d24c0.mUnk_00.y;
     battleLeftTargetY += battleLeftBase->y;
 
-    frame.battleLeftTarget.x = battleLeftTargetX;
-    frame.battleLeftTarget.y = battleLeftTargetY;
-    frame.battleLeftFinalPos.coords = frame.battleSharedPos.coords;
-    frame.battleSharedBase.x = frame.battleLeftTarget.x;
-    frame.battleSharedBase.y = frame.battleLeftTarget.y;
+    frame.battleLeftTarget.x           = battleLeftTargetX;
+    frame.battleLeftTarget.y           = battleLeftTargetY;
+    frame.battleLeftFinalPos.coords    = frame.battleSharedPos.coords;
+    frame.battleSharedBase.x           = frame.battleLeftTarget.x;
+    frame.battleSharedBase.y           = frame.battleLeftTarget.y;
     frame.battleLeftFinalTarget.coords = frame.battleSharedBase.coords;
     func_0201e754(&this->mUnk_14D4, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_02, &frame.battleLeftFinalPos,
                   &frame.battleLeftFinalTarget, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18,
@@ -602,14 +600,14 @@ void FileSelectMain::func_ov019_020c63dc() {
     func_ov000_02062e44(&frame.battleVerticalFetchPos, &this->mUnk_11BC);
     frame.battleVerticalCopyA.x = frame.battleVerticalFetchPos.x;
     frame.battleVerticalCopyA.y = frame.battleVerticalFetchPos.y;
-    Vec2s *battleVerticalBase = &frame.battleVerticalFetchBase;
+    Vec2s *battleVerticalBase   = &frame.battleVerticalFetchBase;
     func_ov000_02062e44(battleVerticalBase, &this->mUnk_11BC);
-    frame.battleVerticalTarget.x = data_ov019_020d1e70.mUnk_08.x + battleVerticalBase->x;
-    frame.battleVerticalTarget.y = data_ov019_020d1e70.mUnk_08.y + battleVerticalBase->y;
-    frame.battleSharedBase.coords = frame.battleVerticalTarget.coords;
+    frame.battleVerticalTarget.x        = data_ov019_020d1e70.mUnk_08.x + battleVerticalBase->x;
+    frame.battleVerticalTarget.y        = data_ov019_020d1e70.mUnk_08.y + battleVerticalBase->y;
+    frame.battleSharedBase.coords       = frame.battleVerticalTarget.coords;
     frame.battleVerticalFinalPos.coords = frame.battleVerticalCopyA.coords;
-    frame.battleVerticalFinalTarget.x = frame.battleSharedBase.x;
-    frame.battleVerticalFinalTarget.y = frame.battleSharedBase.y;
+    frame.battleVerticalFinalTarget.x   = frame.battleSharedBase.x;
+    frame.battleVerticalFinalTarget.y   = frame.battleSharedBase.y;
     func_0201e754(&this->mUnk_1518, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_00, &frame.battleVerticalFinalPos,
                   &frame.battleVerticalFinalTarget, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18,
                   UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_14);
@@ -1307,21 +1305,21 @@ void FileSelectMain::func_ov019_020c7a44() {
         Vec2s added2;
         Vec2s local_4c;
         func_ov000_02062e44(&local_44, &this->GetUnk03E0().mUnk_004);
-        added1.x = local_44.x + data_ov019_020d1e70.mUnk_20.x;
-        added1.y = local_44.y + data_ov019_020d1e70.mUnk_20.y;
+        added1.x        = local_44.x + data_ov019_020d1e70.mUnk_20.x;
+        added1.y        = local_44.y + data_ov019_020d1e70.mUnk_20.y;
         local_28.coords = added1.coords;
 
         unaff_r11 = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18;
         unaff_r4  = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_14;
-        value1      = 0x0F;
+        value1    = 0x0F;
 
         func_ov000_02062e44(&local_4c, &this->GetUnk03E0(fileIndex).mUnk_004);
-        added2.x = local_4c.x + data_ov019_020d24c0.mUnk_04.x;
-        added2.y = local_4c.y + data_ov019_020d24c0.mUnk_04.y;
+        added2.x        = local_4c.x + data_ov019_020d24c0.mUnk_04.x;
+        added2.y        = local_4c.y + data_ov019_020d24c0.mUnk_04.y;
         local_2c.coords = added2.coords;
-        unaff_r5 = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18;
-        unaff_r6 = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_14;
-        value2     = 0;
+        unaff_r5        = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18;
+        unaff_r6        = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_14;
+        value2          = 0;
 
         this->mUnk_039C.mUnk_0B = 1;
         this->mUnk_039C.mUnk_0C = 0;
@@ -1339,14 +1337,14 @@ void FileSelectMain::func_ov019_020c7a44() {
 
         unaff_r11 = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_14;
         unaff_r4  = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18;
-        value1      = 0;
+        value1    = 0;
 
         func_ov000_02062e44(&local_54, &this->GetUnk03E0(fileIndex).mUnk_004);
         local_2c.coords = local_54.coords;
 
         unaff_r5 = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_14;
         unaff_r6 = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18;
-        value2     = 0x0F;
+        value2   = 0x0F;
 
         this->mUnk_039C.mUnk_0A = 1;
         this->mUnk_039C.mUnk_0C = 0;
@@ -1453,10 +1451,10 @@ void FileSelectMain::func_ov019_020c7dc8() {
 
     if (this->mState == FileSelectState_ChooseModeToContactMode) {
         UnkSystem2_UnkSubSystem1_Base *pUVar5 = this->mUnk_03E8[this->mSaveSlotIndex].mUnk_04;
-        sum.x = pUVar5->mPos.x + data_ov019_020d1e70.mUnk_20.x;
-        sum.y = pUVar5->mPos.y + data_ov019_020d1e70.mUnk_20.y;
-        sp10_sp12.x = sum.x;
-        sp10_sp12.y = sum.y;
+        sum.x                                 = pUVar5->mPos.x + data_ov019_020d1e70.mUnk_20.x;
+        sum.y                                 = pUVar5->mPos.y + data_ov019_020d1e70.mUnk_20.y;
+        sp10_sp12.x                           = sum.x;
+        sp10_sp12.y                           = sum.y;
 
         var_r1 = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_18;
         var_r2 = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_14;
@@ -1513,8 +1511,8 @@ void FileSelectMain::func_ov019_020c7dc8() {
 
         sp10_sp12.x = local_3c.mPosU.x;
         sp10_sp12.y = local_3c.mPosU.y;
-        var_r1 = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_20;
-        var_r2 = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_0C;
+        var_r1      = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_20;
+        var_r2      = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_0C;
 
         this->mUnk_1100.mUnk_0A = 0;
         this->mUnk_1100.mUnk_0B = 1;
@@ -1725,7 +1723,6 @@ void FileSelectMain::func_ov019_020c8c4c() {
     this->mUnk_0D60.Update(&this->mUnk_0AC4.mPos);
     this->mUnk_00BC.Update(&this->mUnk_005C.mPos);
 }
-
 
 void FileSelectMain::func_ov019_020c92dc() {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {

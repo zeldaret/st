@@ -837,8 +837,7 @@ public:
     void func_0201e874(unk32 buttonID, void *param2, void *param3, unk32 param4);
 };
 
-inline void CellAnimObject::UpdatePosition(UnkSystem2_UnkSubSystem1_Derived2 *button,
-                                           UnkSystem2_UnkSubSystem9 *slider,
+inline void CellAnimObject::UpdatePosition(UnkSystem2_UnkSubSystem1_Derived2 *button, UnkSystem2_UnkSubSystem9 *slider,
                                            const UnkStruct_ov019_020d24c8_28_258 &offset) {
     Vec2s buttonPos;
     Vec2s sliderPos;

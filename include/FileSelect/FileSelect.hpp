@@ -36,7 +36,6 @@ public:
     /* 04 */ virtual void vfunc_04();
 };
 
-
 class FileSelectSubScreen : public GameModeManagerBase_104 {
 public:
     /* 0000 (base) */
@@ -176,7 +175,6 @@ public:
 
     static UnkStruct_ov019_020d1e4c data_ov019_020d1e4c;
     static UnkStruct_ov019_020d1e94 data_ov019_020d1e94;
-
 };
 
 extern UnkStruct_ov019_020d1e70 data_ov019_020d1e70;

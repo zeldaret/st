@@ -277,17 +277,17 @@ data_ov019_020d1bbc kind:data(any) addr:0x020d33dc
 data_ov019_020d1bcc kind:data(byte[6]) addr:0x020d33ec
 data_ov019_020d1bd4 kind:data(any) addr:0x020d33f4
 data_ov019_020d1be8 kind:data(any) addr:0x020d3408
-__sinit_GameModeFileSelect.cpp kind:function(arm,size=0x18) addr:0x020d341c
+__sinit_GameModeFileSelect.cpp kind:function(arm,size=0x18) addr:0x020d341c local
 __sinit_FileSelectManager.cpp kind:function(arm,size=0x18) addr:0x020d3434
 __sinit_FileSelectMain.cpp kind:function(arm,size=0xa8) addr:0x020d344c
 __sinit_FileSelectOptions.cpp kind:function(arm,size=0x68) addr:0x020d34f4
 __sinit_FileSelectMicTest.cpp kind:function(arm,size=0x28) addr:0x020d355c
-.p__sinit_GameModeFileSelect.cpp kind:data(word) addr:0x020d3584
+.p__sinit_GameModeFileSelect.cpp kind:data(word) addr:0x020d3584 local
 .p__sinit_FileSelectManager.cpp kind:data(word) addr:0x020d3588
 .p__sinit_FileSelectMain.cpp kind:data(word) addr:0x020d358c
 .p__sinit_FileSelectOptions.cpp kind:data(word) addr:0x020d3590
 .p__sinit_FileSelectMicTest.cpp kind:data(word) addr:0x020d3594
-data_ov019_020d1d80 kind:data(any) addr:0x020d35a0
+data_ov019_020d1d80 kind:data(any) addr:0x020d35a0 local
 _ZTV18GameModeFileSelect kind:data(any) addr:0x020d35a4
 data_ov019_020d1db4 kind:data(any) addr:0x020d35d4
 _ZTV17FileSelectManager kind:data(any) addr:0x020d35d8

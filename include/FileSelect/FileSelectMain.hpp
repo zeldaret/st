@@ -15,7 +15,8 @@ public:
     /* 000 (base) */
     /* 780 */
 
-    FileSlot(stack_struct1 param1) : UnkSubStruct9(param1) {}
+    FileSlot(stack_struct1 param1) :
+        UnkSubStruct9(param1) {}
 };
 
 typedef Iterator<FileSlot> FileSlotIterator;
@@ -74,7 +75,6 @@ enum FileSelectExitMode_ {
     /* 0x02 */ FileSelectExitMode_Unk_2         = 2,
     /* 0x03 */ FileSelectExitMode_Unk_3         = 3,
 };
-
 
 class FileSelectMain : public GameModeManagerBase_104 { // 022E5F70
 public:

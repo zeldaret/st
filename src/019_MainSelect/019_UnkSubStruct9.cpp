@@ -88,17 +88,15 @@ struct struct_auStack_c0 {
     /* 08 */
 };
 
-inline void init_pos(Vec2s *pos, Vec2s *fetch, Vec2s *delta, UnkSubStruct9 *thisx,
-                     UnkStruct_ov019_020d24c8_28_258 *pUnkSub258, Vec2s *pLocal_c4, s16 iVar12,
-                     s16 iVar11) {
+inline void init_pos(Vec2s *pos, Vec2s *fetch, Vec2s *delta, UnkSubStruct9 *thisx, UnkStruct_ov019_020d24c8_28_258 *pUnkSub258,
+                     Vec2s *pLocal_c4, s16 iVar12, s16 iVar11) {
     func_ov000_02062e44(fetch, &thisx->mUnk_004);
     delta->y = pUnkSub258->mPos.x - fetch->y;
     delta->x = pUnkSub258->mPos.y - fetch->x;
-    Vec2s d = *delta;
-    pos->y = pLocal_c4->y + (s16) (thisx->mUnk_77C.y + (s16) (iVar12 + d.y));
-    pos->x = pLocal_c4->x + (s16) (thisx->mUnk_77C.x + (s16) (iVar11 + d.x));
+    Vec2s d  = *delta;
+    pos->y   = pLocal_c4->y + (s16) (thisx->mUnk_77C.y + (s16) (iVar12 + d.y));
+    pos->x   = pLocal_c4->x + (s16) (thisx->mUnk_77C.x + (s16) (iVar11 + d.x));
 }
-
 
 // non-matching
 void UnkSubStruct9::func_ov019_020cbc0c() {
@@ -122,8 +120,8 @@ void UnkSubStruct9::func_ov019_020cbc0c() {
     local_c4.y = 0;
 
     if (this->mUnk_004.mUnk_28 != 0) {
-        offs.x = this->mUnk_004.mPosOffset.x;
-        offs.y = this->mUnk_004.mPosOffset.y;
+        offs.x          = this->mUnk_004.mPosOffset.x;
+        offs.y          = this->mUnk_004.mPosOffset.y;
         local_c4.coords = offs.coords;
     }
 
@@ -133,8 +131,8 @@ void UnkSubStruct9::func_ov019_020cbc0c() {
     func_ov000_02062e44(local_d0, (void *) &this->mUnk_004);
 
     unk16 sVar4 = this->mUnk_77C.y;
-    test_s.x = local_c4.x + (s16) (this->mUnk_77C.x + (s16) (posX + (s16) (this->mUnk_064.mUnk_144 - local_d0[0])));
-    test_s.y = local_c4.y + (s16) (sVar4 + (s16) (posY + (s16) (this->mUnk_064.mUnk_146 - local_d0[1])));
+    test_s.x    = local_c4.x + (s16) (this->mUnk_77C.x + (s16) (posX + (s16) (this->mUnk_064.mUnk_144 - local_d0[0])));
+    test_s.y    = local_c4.y + (s16) (sVar4 + (s16) (posY + (s16) (this->mUnk_064.mUnk_146 - local_d0[1])));
 
     test.coords = test_s.coords;
 
@@ -156,7 +154,7 @@ void UnkSubStruct9::func_ov019_020cbc0c() {
     }
 
     unk32 uVar10 = 0;
-    u32 uVar6  = ((u32) pSlot->mInfoData[0].inventory.data.unk_00 << 4) >> 26;
+    u32 uVar6    = ((u32) pSlot->mInfoData[0].inventory.data.unk_00 << 4) >> 26;
 
     if (uVar6 == 0) {
         uVar6 = 0x40;
@@ -168,13 +166,14 @@ void UnkSubStruct9::func_ov019_020cbc0c() {
     }
 
     u32 uVar1 = uVar13 >> 2;
-    uVar13      = uVar13 & 3;
+    uVar13    = uVar13 & 3;
 
     if ((uVar6 >> 2) != 0) {
         u32 i = 0;
         do {
             s16 sStack_e0[2];
-            UnkStruct_ov019_020d24c8_28_258 uStack_40(0x89, ((s16 *) &UnkStruct_ov019_020d1e70::data_ov019_020d1e94.mUnk_04)[i]);
+            UnkStruct_ov019_020d24c8_28_258 uStack_40(0x89,
+                                                      ((s16 *) &UnkStruct_ov019_020d1e70::data_ov019_020d1e94.mUnk_04)[i]);
             func_ov000_02062e44(&sStack_e0, (void *) &this->mUnk_004);
 
             unk16 iVar5 = uStack_40.mPos.x - sStack_e0[0];
@@ -198,28 +197,28 @@ void UnkSubStruct9::func_ov019_020cbc0c() {
                 if (i == uVar1 && uVar13 != 0) {
                     switch (uVar13) {
                         case 1: {
-                        unk16 sStack_ec[2];
+                            unk16 sStack_ec[2];
 
-                        sStack_ec[0] = (s16) (local_c4.x + this->mUnk_77C.x) + (s16) (posX + iVar5);
-                        sStack_ec[1] = (s16) (local_c4.y + this->mUnk_77C.y) + (s16) (posY + iVar2);
-                        data_0204af1c.func_0201aad0(&this->mUnk_344, sStack_ec, 0, &auStack_c0);
-                    break;
+                            sStack_ec[0] = (s16) (local_c4.x + this->mUnk_77C.x) + (s16) (posX + iVar5);
+                            sStack_ec[1] = (s16) (local_c4.y + this->mUnk_77C.y) + (s16) (posY + iVar2);
+                            data_0204af1c.func_0201aad0(&this->mUnk_344, sStack_ec, 0, &auStack_c0);
+                            break;
                         }
                         case 2: {
-                        unk16 sStack_f0[2];
+                            unk16 sStack_f0[2];
 
-                        sStack_f0[0] = (s16) (local_c4.x + this->mUnk_77C.x) + (s16) (posX + iVar5);
-                        sStack_f0[1] = local_c4.y + (this->mUnk_77C.y + (posY + iVar2));
-                        data_0204af1c.func_0201aad0(&this->mUnk_3BC, sStack_f0, 0, &auStack_c0);
-                    break;
+                            sStack_f0[0] = (s16) (local_c4.x + this->mUnk_77C.x) + (s16) (posX + iVar5);
+                            sStack_f0[1] = local_c4.y + (this->mUnk_77C.y + (posY + iVar2));
+                            data_0204af1c.func_0201aad0(&this->mUnk_3BC, sStack_f0, 0, &auStack_c0);
+                            break;
                         }
                         case 3: {
-                        unk16 sStack_f4[2];
+                            unk16 sStack_f4[2];
 
-                        sStack_f4[1] = (s16) (local_c4.y + this->mUnk_77C.y) + (s16) (posY + iVar2);
-                        sStack_f4[0] = (local_c4.x + this->mUnk_77C.x) + (posX + iVar5);
-                        data_0204af1c.func_0201aad0(&this->mUnk_434, sStack_f4, 0, &auStack_c0);
-                    break;
+                            sStack_f4[1] = (s16) (local_c4.y + this->mUnk_77C.y) + (s16) (posY + iVar2);
+                            sStack_f4[0] = (local_c4.x + this->mUnk_77C.x) + (posX + iVar5);
+                            data_0204af1c.func_0201aad0(&this->mUnk_434, sStack_f4, 0, &auStack_c0);
+                            break;
                         }
                     }
                 } else {
