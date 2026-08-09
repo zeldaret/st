@@ -192,6 +192,19 @@ public:
     UnkSubStruct1_Methods;
 };
 
+class UnkSubStruct2 : public UnkSubStruct1_Base {
+public:
+    void Subprocess1_UnkValueSets() {
+        this->mUnk_10 = this->mUnk_18;
+    }
+
+    void Subprocess2_UnkValueSets() {
+        this->mUnk_10 = this->mUnk_14;
+    }
+
+    UnkSubStruct1_Methods;
+};
+
 class UnkSubStruct1_Derived1 : public UnkSubStruct1_Base {
 public:
     /* 20 */ unk32 mUnk_20;

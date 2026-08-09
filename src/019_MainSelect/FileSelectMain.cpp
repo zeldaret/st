@@ -1597,55 +1597,7 @@ void FileSelectMain::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     }
 
     CALL_PTMF(PTMF<FileSelectMain>, data_ov019_020d1f94[this->mState]);
-    if (this->mUnk_002C.mUnk_08 != 0) {
-        s32 diff = this->mUnk_002C.mUnk_08 - this->mUnk_002C.mUnk_0D;
-
-        if (diff > 0xFFFF) {
-            diff = 0xFFFF;
-        } else if (diff < 0) {
-            diff = 0;
-        }
-
-        this->mUnk_002C.mUnk_08 = diff;
-    } else if (this->mUnk_002C.mUnk_0A) {
-        if (this->mUnk_002C.mUnk_04 < this->mUnk_002C.mUnk_06) {
-            int nextValue = this->mUnk_002C.mUnk_04 + this->mUnk_002C.mUnk_0D;
-            int targetLimit = this->mUnk_002C.mUnk_06;
-
-            if (nextValue > targetLimit) {
-                nextValue = targetLimit;
-            } else if (nextValue < 0) {
-                nextValue = 0;
-            }
-
-            this->mUnk_002C.mUnk_04 = nextValue;
-            this->mUnk_002C.vfunc_00();
-
-            if (this->mUnk_002C.mUnk_04 >= this->mUnk_002C.mUnk_06) {
-                this->mUnk_002C.mUnk_10 = this->mUnk_002C.mUnk_18;
-                this->mUnk_002C.mUnk_0A = false;
-                this->mUnk_002C.mUnk_0C = true;
-            }
-        }
-    } else if (this->mUnk_002C.mUnk_0B && this->mUnk_002C.mUnk_04 != 0) {
-        int targetLimit = this->mUnk_002C.mUnk_06;
-        int nextValue = this->mUnk_002C.mUnk_04 - this->mUnk_002C.mUnk_0D;
-
-        if (nextValue > targetLimit) {
-            nextValue = targetLimit;
-        } else if (nextValue < 0) {
-            nextValue = 0;
-        }
-
-        this->mUnk_002C.mUnk_04 = nextValue;
-        this->mUnk_002C.vfunc_04();
-
-        if (this->mUnk_002C.mUnk_04 == 0) {
-            this->mUnk_002C.mUnk_10 = this->mUnk_002C.mUnk_14;
-            this->mUnk_002C.mUnk_0B = false;
-            this->mUnk_002C.mUnk_0C = true;
-        }
-    }
+    this->mUnk_002C.UpdateLogic();
     G2_ChangeBlendAlpha(this->mUnk_002C.func_0201eaa0(), 16);
 }
 

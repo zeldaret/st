@@ -86,7 +86,7 @@ public:
     /* 0026 */ unk8 mUnk_0026;
     /* 0027 */ unk8 mUnk_0027;
     /* 0028 */ unk32 mUnk_0028;
-    /* 002C */ UnkSubStruct1_Base mUnk_002C;
+    /* 002C */ UnkSubStruct2 mUnk_002C;
     /* 004C */ unk32 mUnk_004C[4];
     /* 005C */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_005C;
     /* 00BC */ UnkSystem2_UnkSubSystem9 mUnk_00BC;
