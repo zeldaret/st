@@ -296,7 +296,14 @@ void ActorUnkCASE::vfunc_2C(unk32 param1) {
     }
 }
 
-void ActorUnkCASE::func_ov063_0215acec(ActorRef *ref1, ActorRef ref2) {};
+void ActorUnkCASE::func_ov063_0215acec(ActorRef *ref1, ActorRef ref2) {
+    ActorParams params;
+
+    params.mUnk_28 = 0;
+    params.func_ov000_020975f8();
+    params.mUnk_28 = ref2;
+    Actor::func_ov000_020973f4(ref1, &data_ov000_020b539c_eur, ActorId_CASE, &params, 0);
+}
 
 void ActorUnkCASE::func_ov063_0215aefc(ActorState param1) {
     mState   = param1;
