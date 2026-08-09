@@ -12,7 +12,7 @@
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 
-extern const UnkStruct_ov019_020d1d80 data_ov019_020d1d80(0x00020001);
+static const UnkStruct_ov019_020d1d80 data_ov019_020d1d80(0x00020001);
 
 GameModeFileSelect *GameModeFileSelect::Create() {
     return new(HeapIndex_1) GameModeFileSelect();
