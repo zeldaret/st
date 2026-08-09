@@ -227,10 +227,6 @@ void FileSelectOptions::func_ov019_020cce04() {
 extern s16 data_ov019_020d215c_2[];
 
 void FileSelectOptions::func_ov019_020cce30() {
-    // Declared in ascending order of their ROM frame offsets: MWCC assigns
-    // stack slots in declaration order, so this is the order that reproduces
-    // the ROM's frame (local_3c at 0x4c down to auStack_84 at 0x04), except
-    // where measurement disagreed: local_5c/local_58 and local_64/local_58.
     u32 local_44[2];
     Vec2s local_48;
     Vec2s local_4c;
@@ -251,8 +247,6 @@ void FileSelectOptions::func_ov019_020cce30() {
     Vec2s auStack_84;
 
 
-    // The cast is load-bearing: it makes MWCC keep &local_48 in a callee-saved
-    // register across the call, as the ROM does, instead of re-deriving from sp.
     Vec2s *p48 = (Vec2s *) &local_48;
     func_ov000_02062e44(p48, &this->mUnk_10A8);
     Vec2us sVar2_1;
@@ -314,9 +308,6 @@ void FileSelectOptions::func_ov019_020cce30() {
     func_ov000_02062e44(p_local_74, &this->mUnk_16AC);
     local_70.x                 = p_local_74->x + data_ov019_020d215c_2[16];
     local_70.y                 = p_local_74->y + data_ov019_020d215c_2[17];
-    // Whole-object copy, as the ROM does it: assigning the two halves
-    // separately lets MWCC scalarise local_70 into registers, which drops the
-    // store/reload pair and its 4-byte slot (the ROM reserves 0x68, pads r3).
     this->mUnk_16AC.mPos.coords = local_70.coords;
     func_ov000_02062e44(&auStack_78, &this->mUnk_16AC);
     this->mUnk_1744.func_ov000_02064080(&auStack_78, local_44, 0x14, 6);
@@ -336,8 +327,6 @@ void FileSelectOptions::func_ov019_020cce30() {
 }
 
 void FileSelectOptions::func_ov019_020cd16c() {
-    // Ordered by ROM frame offsets: local_38 0x38, local_40 0x30, local_44 0x2c
-    // .. local_5c 0x14, cs0 0x10, local_64 0x0c.
     Vec2s local_38;
     u32 local_40[2];
 
@@ -662,8 +651,6 @@ UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManagerBa
     this->mUnk_FC0                       = pSaveSub17->unk_00;
     this->mUnk_FC2                       = pSaveSub17->unk_02;
 
-    // Declared ahead of src/dst: MWCC allocates in declaration order, and the
-    // ROM keeps the counter in the low register with src/dst above it.
     u32 i;
     u8 *src = (u8 *) pSaveSub17->unk_03;
     u8 *dst = (u8 *) &this->mUnk_FC3[0];
@@ -806,8 +793,6 @@ void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce4dc() {
         Vec2s local_2c;
 
         Vec2s delta;
-        // The ROM keeps &mUnk_144 in its own base register (add r6, r0, #0x144)
-        // rather than indexing off the object base.
         Vec2s *p144 = (Vec2s *) &ptr->mUnk_144;
         delta.x     = p144->x - this->mUnk_008.mPos.x;
         delta.y     = p144->y - this->mUnk_008.mPos.y;
@@ -815,9 +800,6 @@ void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce4dc() {
         local_2c.x = this->mUnk_004.x + delta.x;
         local_2c.y = this->mUnk_004.y + delta.y;
 
-        // Read back through the cast, unsigned as the ROM's ldrh shows: plain
-        // field reads let MWCC forward the values and drop the ROM's
-        // store/reload pair, and a separate copy object adds a fourth slot.
         ptr->mUnk_140 = ((Vec2us *) &local_2c)->x;
         ptr->mUnk_142 = ((Vec2us *) &local_2c)->y;
 

@@ -27,13 +27,10 @@ struct UnkStruct_ov019_020d2248 {
     Vec2sPod mUnk_10;
 };
 
-// The ROM keeps the constant fields in .data and writes mUnk_02 and mUnk_10
-// from __sinit, which a type with a constructor cannot express.
 static UnkStruct_ov019_020d2248 data_ov019_020d2248 = {
     0x0C, { 0, 0 }, { 0, -71 }, { -1, 641 }, 0, { 0, 0 },
 };
 
-// The ROM's __sinit writes these four halfwords at startup.
 struct UnkStruct_ov019_020d2248_Init {
     UnkStruct_ov019_020d2248_Init() {
         data_ov019_020d2248.mUnk_10.x = 0x100;
@@ -101,9 +98,6 @@ void FileSelectMicTest::func_ov019_020ceaac() {
     Vec2s local_38;
     Vec2s local_34;
 
-    // The local_34.y store really does sit between the two local_38 stores:
-    // the ROM interleaves them, and hoisting it back next to local_34.x costs
-    // 0.74%. The two are independent, so the order is only a scheduling hint.
     local_34.x = data_ov019_020d2248.mUnk_10.x;
 
     local_38.x = 0;

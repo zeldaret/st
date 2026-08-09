@@ -207,7 +207,6 @@ void SaveFile::func_ov019_020d0d50() {
     CARD_WriteAndVerifyFlashAsync((u32) stack, (void *) (SAVE_DATA_SIZE * 2), sizeof(stack_struct) * 2, NULL, NULL);
 }
 
-// https://decomp.me/scratch/gJJbb
 void SaveFile::func_ov019_020d0e18(unk32 param1) {
     size_t offset    = SAVE_SLOT_OFFSET(param1);
     SaveSlot *puVar3 = &this->mSlots[param1];
@@ -340,7 +339,6 @@ void SaveFile::func_ov019_020d127c() {
     this->mUnk_04E00[slotIndex][1].unk_00 &= ~0x10;
 }
 
-// https://decomp.me/scratch/lmC67
 void SaveFile::func_ov019_020d13b8() {
     u16 saveSlotIndex = (unsigned long)this->mSaveSlotIndex;
 
@@ -355,7 +353,6 @@ void SaveSlot::func_ov019_020d1400(SaveFile_00000_2600_Data *param1) {
     MI_CpuCopyFast(param1, (u8 *) param1 + sizeof(SaveFile_00000_2600_Data), sizeof(SaveFile_00000_2600_Data));
 }
 
-// non-matching
 void SaveFile::func_ov019_020d1434() {
     size_t offset = SAVE_SLOT_OFFSET(this->mSaveSlotIndex);
 
@@ -414,7 +411,6 @@ void SaveSlot::func_ov019_020d1600(SaveTreasureData *param1) {
     MI_CpuCopyFast(param1, (u8 *) param1 + sizeof(SaveTreasureData), sizeof(SaveTreasureData));
 }
 
-// https://decomp.me/scratch/ibnQS
 void SaveFile::func_ov019_020d1634() {
     SaveSlot *pSlot = &this->mSlots[this->mSaveSlotIndex];
     size_t offset   = SAVE_SLOT_OFFSET(this->mSaveSlotIndex);
@@ -427,7 +423,6 @@ void SaveFile::func_ov019_020d1634() {
     }
 }
 
-// non-matching
 void SaveFile::func_ov019_020d16d0() {
     void *pTreasure;
     SaveSlot *pSub3;
@@ -475,7 +470,6 @@ struct stack_struct2 {
     bool mUnk_04;
 };
 
-// non-matching
 void SaveFile::func_ov019_020d1808(unk32 param1) {
     SaveSlot *pSub2 = &this->mSlots[param1];
     u16 sums[5][2];
@@ -538,7 +532,6 @@ void SaveFile::func_ov019_020d1aac(unk32 param1, const wchar_t *param2) {
                  sizeof(wchar_t) * (LENGTH_PLAYER_NAME + 1));
 }
 
-// https://decomp.me/scratch/34KCr
 void SaveFile::func_ov019_020d1b14(unk32 param1) {
     SaveSlot *pSVar3 = &this->mSlots[param1];
 
@@ -549,10 +542,9 @@ void SaveFile::func_ov019_020d1b14(unk32 param1) {
 
     SaveSlot(*pSlots)[MAX_SAVE_SLOTS] = &this->mSlots;
     SaveSlot *slots                   = *pSlots;
-    int zero                          = 0;
 
-    for (int i = zero; i < TreasureType_Max; i++) {
-        pSVar3->mTreasureData[zero].unk_3C[i] = TreasureType_None;
+    for (int i = 0; i < TreasureType_Max; i++) {
+        pSVar3->mTreasureData[0].unk_3C[i] = TreasureType_None;
     }
 
     SaveFile_00000_1D00_Data(*p1D00)[2] = &slots[param1].mUnk_1D00;
@@ -562,7 +554,7 @@ void SaveFile::func_ov019_020d1b14(unk32 param1) {
     SaveSlot::func_ov000_020a12a0(*p1D00);
     SaveSlot::func_ov019_020d14c0(*p1D00);
 
-    _MI_CpuFill(zero, slots[param1].mUnk_2500, sizeof(SaveFile_00000_2500_Data));
+    _MI_CpuFill(0, slots[param1].mUnk_2500, sizeof(SaveFile_00000_2500_Data));
     SaveSlot::func_ov019_020d15cc(slots[param1].mUnk_2500);
 
     SaveSlot::func_ov000_020a10f4(slots[param1].mUnk_2600);

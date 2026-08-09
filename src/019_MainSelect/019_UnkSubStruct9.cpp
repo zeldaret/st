@@ -11,7 +11,6 @@ void func_ov000_02062e44(void *param1, void *param2);
 UnkSubStruct9::UnkSubStruct9(stack_struct1 param1) :
     mSaveSlotIndex(param1.arg2),
     mUnk_064(0x89, 0x01),
-    // ROM indexes the pair starting at data_ov019_020d1e4c+0x6, i.e. from mUnk_04[1].
     mUnk_29C(0x89, (&UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_04[1])[param1.arg2]),
     mUnk_2B4(0x89, 0x15),
     mUnk_2CC(0x89, 0x00),
@@ -89,14 +88,6 @@ struct struct_auStack_c0 {
     /* 08 */
 };
 
-// The ROM keeps three separate 4-byte Vec2s locals here, not one 12-byte
-// object: MWCC allocates locals larger than 8 bytes in a separate, higher
-// region of the frame, so a combined struct lands among the
-// UnkStruct_ov019_020d24c8_28_258 objects instead of below them. Splitting it
-// reproduces the ROM's frame exactly - the six uStack objects pack onto
-// 0xb0..0x128, auStack_c0 onto 0xa8 (see the ROM's `add r1, sp, #0xa8`), and
-// these onto 0x34..0x64. Only `pos` is passed on; `fetch` and `delta` are
-// scratch, and func_0201aad0 reads just the 4-byte Vec2s.
 inline void init_pos(Vec2s *pos, Vec2s *fetch, Vec2s *delta, UnkSubStruct9 *thisx,
                      UnkStruct_ov019_020d24c8_28_258 *pUnkSub258, Vec2s *pLocal_c4, s16 iVar12,
                      s16 iVar11) {
@@ -119,8 +110,6 @@ void UnkSubStruct9::func_ov019_020cbc0c() {
     auStack_c0.mUnk_05 = -1;
     auStack_c0.mUnk_06 |= 0x04;
 
-    // Ordered by their ROM frame offsets: local_c4 0xa4, test 0xa0, offs
-    // 0x9c, local_d0 0x98, test_s 0x94, local_d8 0x90, local_dc 0x8c.
     Vec2s local_c4;
     Vec2s test;
     Vec2s offs;
@@ -138,8 +127,6 @@ void UnkSubStruct9::func_ov019_020cbc0c() {
         local_c4.coords = offs.coords;
     }
 
-    // ROM reads these as signed halfwords (ldrsh); a whole-Vec2s copy would
-    // emit unsigned ldrh instead.
     s16 posY = this->mUnk_004.mPos.y;
     s16 posX = this->mUnk_004.mPos.x;
 
@@ -187,9 +174,6 @@ void UnkSubStruct9::func_ov019_020cbc0c() {
         u32 i = 0;
         do {
             s16 sStack_e0[2];
-            // ROM's literal pool holds data_ov019_020d1e94+0x4, so the table base must be
-            // the address of mUnk_04 itself rather than the struct with a folded offset.
-            // The table is read signed; s16 measures better than u16 here.
             UnkStruct_ov019_020d24c8_28_258 uStack_40(0x89, ((s16 *) &UnkStruct_ov019_020d1e70::data_ov019_020d1e94.mUnk_04)[i]);
             func_ov000_02062e44(&sStack_e0, (void *) &this->mUnk_004);
 
@@ -212,8 +196,6 @@ void UnkSubStruct9::func_ov019_020cbc0c() {
                 }
             } else {
                 if (i == uVar1 && uVar13 != 0) {
-                    // ROM dispatches with a forward cmp/beq cascade, which is MWCC's switch
-                    // shape; an if/else-if chain emits bne instead.
                     switch (uVar13) {
                         case 1: {
                         unk16 sStack_ec[2];
