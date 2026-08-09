@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Unknown/UnkStruct_0204a088.hpp"
+
 #include "FileSelect/FileSelectMain.hpp"
 #include "FileSelect/FileSelectUnkDraw.hpp"
 #include "Game/GameModeManager.hpp"
@@ -34,16 +36,8 @@ public:
     /* 04 */ virtual void vfunc_04();
 };
 
-class FileSelect_UnkClass2_Sub4_Base : public GameModeManagerBase_104 {
-public:
-    /* 0000 (vtable) */
 
-    FileSelect_UnkClass2_Sub4_Base() {}
-
-    /* 00 */ virtual ~FileSelect_UnkClass2_Sub4_Base() override {}
-};
-
-class FileSelectSubScreen : public FileSelect_UnkClass2_Sub4_Base {
+class FileSelectSubScreen : public GameModeManagerBase_104 {
 public:
     /* 0000 (base) */
     /* 001C */ unk32 mUnk_001C;
@@ -101,7 +95,7 @@ public:
         REG_DISPCNT_SUB |= 0x00200010;
 
         this->mUnk_004.func_ov001_020bd734(data_ov019_020d1bb0);
-        func_ov001_020bd6a8();
+        UnkStruct_0204a088::Create();
     }
     // clang-format on
 
@@ -132,7 +126,7 @@ public:
 
 class UnkStruct_ov019_020d1e4c {
 public:
-    /* 00 */ unk16 mUnk_00;
+    /* 00 */ u16 mUnk_00;
     /* 00 */ u16 mUnk_02;
     /* 04 */ u16 mUnk_04[2];
     /* 08 */ unk32 mUnk_08;
@@ -183,43 +177,6 @@ public:
     static UnkStruct_ov019_020d1e4c data_ov019_020d1e4c;
     static UnkStruct_ov019_020d1e94 data_ov019_020d1e94;
 
-    UnkStruct_ov019_020d1e70() {
-        this->mUnk_00.x = 0x80;
-        this->mUnk_00.y = 0x60;
-
-        data_ov019_020d1e94.mUnk_00 = 0x80;
-        data_ov019_020d1e94.mUnk_02 = 0x60;
-
-        this->mUnk_20.x = 0x00;
-        this->mUnk_20.y = 0x100;
-
-        this->mUnk_1C.x = 0x00;
-        this->mUnk_1C.y = -0x1E;
-
-        this->mUnk_18.x = 0x00;
-        this->mUnk_18.y = 0x64;
-
-        this->mUnk_14.x = 0x00;
-        this->mUnk_14.y = 0x64;
-
-        this->mUnk_10.x = 0x00;
-        this->mUnk_10.y = 0x32;
-
-        data_ov019_020d1e4c.mUnk_1C.x = 0x00;
-        data_ov019_020d1e4c.mUnk_1C.y = 0x100;
-
-        this->mUnk_08.x = 0x00;
-        this->mUnk_08.y = 0x100;
-
-        this->mUnk_04.x = 0x00;
-        this->mUnk_04.y = 0x32;
-
-        this->mUnk_00.x = 0x00;
-        this->mUnk_00.y = 0x32;
-
-        data_ov019_020d1e4c.mUnk_10 = 0x20003;
-        this->mUnk_0C               = 0x20004;
-    }
 };
 
-extern const UnkStruct_ov019_020d1e70 data_ov019_020d1e70;
+extern UnkStruct_ov019_020d1e70 data_ov019_020d1e70;

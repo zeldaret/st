@@ -6,6 +6,7 @@
     .bss        start:0x020d24c0 end:0x021170e0 kind:bss align:32
 
 src/019_MainSelect/GameModeFileSelect.cpp:
+    complete
     .text       start:0x020c4840 end:0x020c4b7c
     .init       start:0x020d1bfc end:0x020d1c14
     .ctor       start:0x020d1d64 end:0x020d1d68
@@ -73,6 +74,7 @@ src/019_MainSelect/019_UnkSystem1_ov019_Derived3.cpp:
     .data       start:0x020d246c end:0x020d24a0
 
 src/019_MainSelect/019_SaveManager.cpp:
+    complete
     .text       start:0x020d086c end:0x020d1bb0
     .rodata     start:0x020d1bd4 end:0x020d1bfc
     .data       start:0x020d24a0 end:0x020d24c0

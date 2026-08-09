@@ -227,19 +227,42 @@ void FileSelectOptions::func_ov019_020cce04() {
 extern s16 data_ov019_020d215c_2[];
 
 void FileSelectOptions::func_ov019_020cce30() {
+    // Declared in ascending order of their ROM frame offsets: MWCC assigns
+    // stack slots in declaration order, so this is the order that reproduces
+    // the ROM's frame (local_3c at 0x4c down to auStack_84 at 0x04), except
+    // where measurement disagreed: local_5c/local_58 and local_64/local_58.
+    u32 local_44[2];
     Vec2s local_48;
-    func_ov000_02062e44(&local_48, &this->mUnk_10A8);
-    Vec2us sVar2_1;
-    sVar2_1.x = local_48.x + data_ov019_020d215c_2[2];
-    sVar2_1.y = local_48.y + data_ov019_020d215c_2[3];
-
+    Vec2s local_4c;
     Vec2s local_3c;
+    Vec2us local_54;
+    Vec2s local_5c;
+    Vec2s local_50;
+    Vec2us local_7c_d86;
+    Vec2us local_60;
+    Vec2s local_58;
+    Vec2s local_68;
+    Vec2s auStack_6c;
+    Vec2s local_70;
+    Vec2s local_74;
+    Vec2us auStack_78;
+    Vec2us local_64;
+    Vec2s local_80;
+    Vec2s auStack_84;
+
+
+    // The cast is load-bearing: it makes MWCC keep &local_48 in a callee-saved
+    // register across the call, as the ROM does, instead of re-deriving from sp.
+    Vec2s *p48 = (Vec2s *) &local_48;
+    func_ov000_02062e44(p48, &this->mUnk_10A8);
+    Vec2us sVar2_1;
+    sVar2_1.y = p48->y + data_ov019_020d215c_2[3];
+    sVar2_1.x = p48->x + data_ov019_020d215c_2[2];
+
     func_ov000_02062e44(&local_3c, &this->mUnk_10A8);
 
-    Vec2s local_50;
     local_50 = local_3c;
 
-    Vec2s local_4c;
     local_4c.x = sVar2_1.x;
     local_4c.y = sVar2_1.y;
 
@@ -252,17 +275,14 @@ void FileSelectOptions::func_ov019_020cce30() {
         this->mUnk_1344.mUnk_0C = true;
     }
 
-    Vec2us local_54;
     func_0201e8d4(&local_54, &this->mUnk_1344);
-    this->mUnk_10A8.mPos.x = local_54.x;
     this->mUnk_10A8.mPos.y = local_54.y;
+    this->mUnk_10A8.mPos.x = local_54.x;
 
     UnkStruct_ov019_020d24c8_28_258 local_38(0x8C, 0x00);
-    Vec2s local_58;
-    Vec2s local_5c;
-    local_58.x = local_38.mPos.x + data_ov019_020d215c_2[4];
-    local_58.y = local_38.mPos.y + data_ov019_020d215c_2[5];
     local_5c.x = local_38.mPos.x;
+    local_58.y = local_38.mPos.y + data_ov019_020d215c_2[5];
+    local_58.x = local_38.mPos.x + data_ov019_020d215c_2[4];
     local_5c.y = local_38.mPos.y;
 
     this->mUnk_1064.func_0201e874(BTN_ID_FILE_SELECT_UNK_14, &local_58, &local_5c, 6);
@@ -274,87 +294,91 @@ void FileSelectOptions::func_ov019_020cce30() {
         this->mUnk_1064.mUnk_0C = true;
     }
 
-    Vec2s local_60;
     func_0201e8d4(&local_60, &this->mUnk_1064);
-    this->mUnk_0024.mUnk_004.x = local_60.x;
+    local_44[0] = *(u32 *) &data_ov019_020d215c_2[8];
     this->mUnk_0024.mUnk_004.y = local_60.y;
+    this->mUnk_0024.mUnk_004.x = local_60.x;
 
-    Vec2s local_44;
-    local_44.x = data_ov019_020d215c_2[6];
-    local_44.y = data_ov019_020d215c_2[7];
-    Vec2s local_68;
-    func_ov000_02062e44(&local_68, &this->mUnk_1388);
+    local_44[1] = *(u32 *) &data_ov019_020d215c_2[6];
+    Vec2s *p_local_68 = (Vec2s *) &local_68;
+    func_ov000_02062e44(p_local_68, &this->mUnk_1388);
 
-    Vec2s local_64;
-    local_64.x             = local_68.x + data_ov019_020d215c_2[8];
-    local_64.y             = local_68.y + data_ov019_020d215c_2[9];
+    local_64.x             = data_ov019_020d215c_2[20] + p_local_68->x;
+    local_64.y             = data_ov019_020d215c_2[21] + p_local_68->y;
     this->mUnk_1388.mPos.x = local_64.x;
     this->mUnk_1388.mPos.y = local_64.y;
-    Vec2s auStack_6c;
     func_ov000_02062e44(&auStack_6c, &this->mUnk_1388);
-    this->mUnk_1420.func_ov000_02064080(&auStack_6c, &local_44, 0x14, 2);
+    this->mUnk_1420.func_ov000_02064080(&auStack_6c, local_44, 0x14, 2);
 
-    Vec2s local_74;
-    func_ov000_02062e44(&local_74, &this->mUnk_16AC);
-    Vec2s local_70;
-    local_70.x             = local_74.x + data_ov019_020d215c_2[10];
-    local_70.y             = local_74.y + data_ov019_020d215c_2[11];
-    this->mUnk_16AC.mPos.x = local_70.x;
-    this->mUnk_16AC.mPos.y = local_70.y;
-    Vec2s auStack_78;
+    Vec2s *p_local_74 = (Vec2s *) &local_74;
+    func_ov000_02062e44(p_local_74, &this->mUnk_16AC);
+    local_70.x                 = p_local_74->x + data_ov019_020d215c_2[16];
+    local_70.y                 = p_local_74->y + data_ov019_020d215c_2[17];
+    // Whole-object copy, as the ROM does it: assigning the two halves
+    // separately lets MWCC scalarise local_70 into registers, which drops the
+    // store/reload pair and its 4-byte slot (the ROM reserves 0x68, pads r3).
+    this->mUnk_16AC.mPos.coords = local_70.coords;
     func_ov000_02062e44(&auStack_78, &this->mUnk_16AC);
-    this->mUnk_1744.func_ov000_02064080(&auStack_78, &local_44, 0x14, 6);
+    this->mUnk_1744.func_ov000_02064080(&auStack_78, local_44, 0x14, 6);
 
-    Vec2s local_80;
-    func_ov000_02062e44(&local_80, &this->mUnk_19D0);
-    Vec2s local_7c;
-    local_7c.x             = local_80.x + data_ov019_020d215c_2[12];
-    local_7c.y             = local_80.y + data_ov019_020d215c_2[13];
-    this->mUnk_19D0.mPos.x = local_7c.x;
-    this->mUnk_19D0.mPos.y = local_7c.y;
-    Vec2s auStack_84;
+    Vec2s *p_local_80 = (Vec2s *) &local_80;
+    func_ov000_02062e44(p_local_80, &this->mUnk_19D0);
+    local_64.x             = p_local_80->x + data_ov019_020d215c_2[12];
+    local_64.y             = p_local_80->y + data_ov019_020d215c_2[13];
+    // Read back through the cast: a whole-object .coords copy emits two extra
+    // stores, while plain field reads let MWCC forward and drop the reload.
+    local_7c_d86.x         = ((Vec2us *) &local_64)->x;
+    local_7c_d86.y         = ((Vec2us *) &local_64)->y;
+    this->mUnk_19D0.mPos.y = local_7c_d86.y;
+    this->mUnk_19D0.mPos.x = local_64.x;
     func_ov000_02062e44(&auStack_84, &this->mUnk_19D0);
-    this->mUnk_1A68.func_ov000_02064080(&auStack_84, &local_44, 0x14, 4);
+    this->mUnk_1A68.func_ov000_02064080(&auStack_84, local_44, 0x14, 4);
 }
 
 void FileSelectOptions::func_ov019_020cd16c() {
-    u16 uVar1;
-    u16 uVar2;
-    Vec2s local_6c;
-    Vec2s local_64;
-    Vec2s local_5c;
-    Vec2s local_58;
-    Vec2s local_54;
-    Vec2s local_50;
-    Vec2s local_4c;
-    Vec2s local_48;
-    Vec2s local_44;
-    Vec2s local_40;
+    // Ordered by ROM frame offsets: local_38 0x38, local_40 0x30, local_44 0x2c
+    // .. local_5c 0x14, cs0 0x10, local_64 0x0c.
     Vec2s local_38;
+    u32 local_40[2];
+
+    int uVar1;
+    int uVar2;
+
+    Vec2s local_44;
+    Vec2s local_48;
+    Vec2s local_4c;
+    Vec2s local_50;
+    Vec2s local_54;
+    Vec2s local_58;
+    Vec2s local_5c;
+    Vec2s cs0;
+    Vec2s local_64;
 
     func_ov000_02062e44(&local_38, &this->mUnk_10A8);
-    func_ov000_02062e44(&local_48, &this->mUnk_10A8);
-    local_50.x = local_48.x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_04.x;
-    local_50.y = local_48.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_04.y;
+    Vec2s *p48 = (Vec2s *) &local_48;
+    func_ov000_02062e44(p48, &this->mUnk_10A8);
+    local_50.y = p48->y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_04.y;
+    local_50.x = p48->x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_04.x;
     local_4c.x = local_38.x;
     local_4c.y = local_38.y;
     this->mUnk_1344.func_0201e874(BTN_ID_FILE_SELECT_UNK_0F, &local_4c, &local_50, 7);
-    uVar1                   = this->mUnk_1344.mUnk_04;
-    uVar2                   = this->mUnk_1344.mUnk_06;
     this->mUnk_1344.mUnk_0A = true;
     this->mUnk_1344.mUnk_0C = false;
+    uVar1                   = this->mUnk_1344.mUnk_04;
+    uVar2                   = this->mUnk_1344.mUnk_06;
     this->mUnk_1344.mUnk_0B = false;
     if (uVar1 == uVar2) {
-        this->mUnk_1344.mUnk_0A = false;
         this->mUnk_1344.mUnk_0C = true;
+        this->mUnk_1344.mUnk_0A = false;
     }
 
     UnkStruct_ov019_020d24c8_28_258 local_34(0x8C, 0x00);
-    local_58.x = local_34.mPosU.x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_08.x;
-    local_58.y = local_34.mPosU.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_08.y;
-    local_54.y = local_34.mPosU.y;
-    local_54.x = local_34.mPosU.x;
+    local_58.x = local_34.mPos.x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_08.x;
+    local_58.y = local_34.mPos.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_08.y;
+    local_54.y = local_34.mPos.y;
+    local_54.x = local_34.mPos.x;
     this->mUnk_1064.func_0201e874(BTN_ID_FILE_SELECT_UNK_14, &local_54, &local_58, 7);
+    Vec2s *p_local_5c = (Vec2s *) &local_5c;
 
     this->mUnk_1064.mUnk_0A = true;
     this->mUnk_1064.mUnk_0B = false;
@@ -365,34 +389,47 @@ void FileSelectOptions::func_ov019_020cd16c() {
     }
 
     this->mUnk_1064.mUnk_08 = 6;
-    local_40.x              = UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_0C.x;
-    local_40.y              = UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_0C.y;
+    local_40[0] = *(u32 *) &UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_0C;
+    local_40[1] = *(u32 *) &UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_10;
 
-    func_ov000_02062e44(&local_5c, &this->mUnk_1388);
-    local_44.x = local_5c.x + data_ov019_020d2170.mUnk_14.x;
-    local_44.y = local_5c.y + data_ov019_020d2170.mUnk_14.y;
-    this->mUnk_1420.func_ov000_02064080(&local_44, &local_40, 0x14, 4);
+    func_ov000_02062e44(p_local_5c, &this->mUnk_1388);
+    local_44.y = p_local_5c->y + data_ov019_020d2170.mUnk_14.y;
+    local_44.x = p_local_5c->x + data_ov019_020d2170.mUnk_14.x;
+    this->mUnk_1420.func_ov000_02064080(&local_44, local_40, 0x14, 4);
 
-    func_ov000_02062e44(&local_64, &this->mUnk_16AC);
-    local_44.x = local_64.x + data_ov019_020d2170.mUnk_0C.x;
-    local_44.y = local_64.y + data_ov019_020d2170.mUnk_0C.y;
-    this->mUnk_1744.func_ov000_02064080(&local_44, &local_40, 0x14, 0);
+    Vec2s *p_local_64 = (Vec2s *) &local_64;
+    func_ov000_02062e44(p_local_64, &this->mUnk_16AC);
+    Vec2s cs1;
+    Vec2s t2;
+    Vec2s local_6c;
+    cs0.x = p_local_64->x + data_ov019_020d2170.mUnk_0C.x;
+    cs0.y = p_local_64->y + data_ov019_020d2170.mUnk_0C.y;
+    t2.coords = cs0.coords;
+    local_44.coords = t2.coords;
+    this->mUnk_1744.func_ov000_02064080(&local_44, local_40, 0x14, 0);
 
-    func_ov000_02062e44(&local_6c, &this->mUnk_19D0);
-    local_44.x = local_6c.x + data_ov019_020d2170.mUnk_04.x;
-    local_44.y = local_6c.y + data_ov019_020d2170.mUnk_04.y;
-    this->mUnk_1A68.func_ov000_02064080(&local_44, &local_40, 0x14, 2);
+    Vec2s *p_local_6c = (Vec2s *) &local_6c;
+    func_ov000_02062e44(p_local_6c, &this->mUnk_19D0);
+    Vec2s t3;
+    cs1.x = p_local_6c->x + data_ov019_020d2170.mUnk_04.x;
+    cs1.y = p_local_6c->y + data_ov019_020d2170.mUnk_04.y;
+    t3.coords = cs1.coords;
+    local_44.coords = t3.coords;
+    this->mUnk_1A68.func_ov000_02064080(&local_44, local_40, 0x14, 2);
 }
 
 void FileSelectOptions::func_ov019_020cd41c() {
-    Vec2s local_40;
+    Vec2s out;
+
     Vec2us local_3c;
+    Vec2s local_40;
+
     UnkStruct_ov019_020d24c8_28_258 local_34(0x8C, 0x00);
 
-    local_40.x = local_34.mPosU.x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.x;
-    local_40.y = local_34.mPosU.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.y;
-    local_3c.x = local_34.mPosU.x;
-    local_3c.y = local_34.mPosU.y;
+    local_40.x = local_34.mPos.x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.x;
+    local_40.y = local_34.mPos.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.y;
+    local_3c.y = local_34.mPos.y;
+    local_3c.x = local_34.mPos.x;
     this->mUnk_1064.func_0201e874(BTN_ID_UNK_0C, &local_3c, &local_40, 0);
     this->mUnk_1064.mUnk_0A = true;
     this->mUnk_1064.mUnk_0C = false;
@@ -402,26 +439,31 @@ void FileSelectOptions::func_ov019_020cd41c() {
         this->mUnk_1064.mUnk_0C = true;
     }
 
+
     Vec2s local_44;
-    Vec2s local_30;
-    func_ov000_02062e44(&local_44, &this->mUnk_1388);
-    local_30.x = local_44.x + data_ov019_020d2170.mUnk_10.x;
-    local_30.y = local_44.y + data_ov019_020d2170.mUnk_10.y;
-    this->mUnk_1420.func_ov000_0206415c(&local_30, 0, 0x0C, 0);
+    Vec2s *p44 = (Vec2s *) &local_44;
+    func_ov000_02062e44(p44, &this->mUnk_1388);
+    out.x = p44->x + data_ov019_020d2170.mUnk_10.x;
+    out.y = p44->y + data_ov019_020d2170.mUnk_10.y;
+    this->mUnk_1420.func_ov000_0206415c(&out, 0, 0x0C, 0);
 
-    Vec2s local_4c;
-    Vec2s local_2c;
-    func_ov000_02062e44(&local_4c, &this->mUnk_16AC);
-    local_2c.x = local_4c.x + data_ov019_020d2170.mUnk_08.x;
-    local_2c.y = local_4c.y + data_ov019_020d2170.mUnk_08.y;
-    this->mUnk_1744.func_ov000_0206415c(&local_2c, 0, 0x0C, 0);
+    Vec2s t2;
+    Vec2s local_44b;
+    Vec2s *p44b = (Vec2s *) &local_44b;
+    func_ov000_02062e44(p44b, &this->mUnk_16AC);
+    t2.x = p44b->x + data_ov019_020d2170.mUnk_08.x;
+    t2.y = p44b->y + data_ov019_020d2170.mUnk_08.y;
+    out.coords = t2.coords;
+    this->mUnk_1744.func_ov000_0206415c(&out, 0, 0x0C, 0);
 
-    Vec2s local_54;
-    Vec2s local_38;
-    func_ov000_02062e44(&local_54, &this->mUnk_19D0);
-    local_38.x = local_54.x + data_ov019_020d2170.mUnk_00.x;
-    local_38.y = local_54.y + data_ov019_020d2170.mUnk_00.y;
-    this->mUnk_1A68.func_ov000_0206415c(&local_38, 0, 0x0C, 0);
+    Vec2s cs1;
+    Vec2s local_44c;
+    Vec2s *p44c = (Vec2s *) &local_44c;
+    func_ov000_02062e44(p44c, &this->mUnk_19D0);
+    cs1.x = p44c->x + data_ov019_020d2170.mUnk_00.x;
+    cs1.y = p44c->y + data_ov019_020d2170.mUnk_00.y;
+    out.coords = cs1.coords;
+    this->mUnk_1A68.func_ov000_0206415c(&out, 0, 0x0C, 0);
 }
 
 void FileSelectOptions::func_ov019_020cd5f8() {
@@ -439,8 +481,8 @@ void FileSelectOptions::func_ov019_020cd614() {
 
     local_38.x = local_30.mPos.x + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.x;
     local_38.y = local_30.mPos.y + UnkStruct_ov019_020d2170::data_ov019_020d215c.mUnk_00.y;
-    local_3c.x = local_30.mPos.x;
     local_3c.y = local_30.mPos.y;
+    local_3c.x = local_30.mPos.x;
 
     this->mUnk_1064.func_0201e874(BTN_ID_UNK_0C, &local_38, &local_3c, 0);
     this->mUnk_1064.mUnk_0A = true;
@@ -596,7 +638,7 @@ void FileSelectOptions::func_ov019_020cde9c() {
 UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManagerBase_104_0C *param1, s32 saveSlotIndex) :
     mSaveSlotIndex(saveSlotIndex),
     mUnk_004(0, 0),
-    mUnk_008(0, 0),
+    mUnk_008(0x8C, 0),
     mUnk_020(0x8C, 1),
     mUnk_258(0x8C, 4),
     mUnk_490(BTN_ID_FILE_SELECT_MESG_SPEED_LEFT_ARROW, 0x8C, 0x03, 0x0A, 0x8C, 0x06),
@@ -614,21 +656,25 @@ UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManagerBa
     mUnk_FB8(NULL),
     mUnk_FBC(NULL) {
 
-    SaveSlot *pSlot                      = gSaveManager.GetSaveSlot(this->mSaveSlotIndex);
+    SaveSlot *pSlot                      = gSaveManager.GetSaveSlot(saveSlotIndex);
     SaveFile_00000_2600_Data *pSaveSub17 = pSlot->Get2600Ptr();
-    this->mUnk_FC0                       = pSaveSub17->unk_00;
     this->mUnk_FC1                       = pSaveSub17->unk_01;
+    this->mUnk_FC0                       = pSaveSub17->unk_00;
     this->mUnk_FC2                       = pSaveSub17->unk_02;
 
+    // Declared ahead of src/dst: MWCC allocates in declaration order, and the
+    // ROM keeps the counter in the low register with src/dst above it.
+    u32 i;
     u8 *src = (u8 *) pSaveSub17->unk_03;
     u8 *dst = (u8 *) &this->mUnk_FC3[0];
-    for (u32 i = ARRAY_LEN(this->mUnk_FC3); i != 0; i--) {
-        u8 b1                     = *src++;
-        u8 b2                     = *src++;
-        this->mUnk_FC3[i].mUnk_00 = b1;
-        this->mUnk_FC3[i].mUnk_01 = b2;
+    for (i = ARRAY_LEN(this->mUnk_FC3); i != 0; i--) {
+        u8 b1  = *src++;
+        u8 b2  = *src++;
+        dst[1] = b2;
+        dst[0] = b1;
+        dst += 2;
     }
-    this->mUnk_FC3[0].mUnk_00 = *src;
+    *dst = *src;
     this->mUnk_103E           = pSaveSub17->unk_7E;
 
     param1->Append(&this->mUnk_490);
@@ -638,28 +684,25 @@ UnkStruct_ov019_020d24c8_2C_24::UnkStruct_ov019_020d24c8_2C_24(GameModeManagerBa
     param1->Append(&this->mUnk_EF0);
     param1->Append(&this->mUnk_F50);
 
-    this->mUnk_490.mPosOffset.x = 0;
-    this->mUnk_490.mPosOffset.y = 0;
+    Vec2s zero;
+    zero.x = 0;
+    zero.y = 0;
+    this->mUnk_490.mPosOffset.coords = zero.coords;
     this->mUnk_490.mUnk_2C      = true;
 
-    this->mUnk_4F0.mPosOffset.x = 0;
-    this->mUnk_4F0.mPosOffset.y = 0;
+    this->mUnk_4F0.mPosOffset.coords = zero.coords;
     this->mUnk_4F0.mUnk_2C      = true;
 
-    this->mUnk_9C0.mPosOffset.x = 0;
-    this->mUnk_9C0.mPosOffset.y = 0;
+    this->mUnk_9C0.mPosOffset.coords = zero.coords;
     this->mUnk_9C0.mUnk_2C      = true;
 
-    this->mUnk_A20.mPosOffset.x = 0;
-    this->mUnk_A20.mPosOffset.y = 0;
+    this->mUnk_A20.mPosOffset.coords = zero.coords;
     this->mUnk_A20.mUnk_2C      = true;
 
-    this->mUnk_EF0.mPosOffset.x = 0;
-    this->mUnk_EF0.mPosOffset.y = 0;
+    this->mUnk_EF0.mPosOffset.coords = zero.coords;
     this->mUnk_EF0.mUnk_2C      = true;
 
-    this->mUnk_F50.mPosOffset.x = 0;
-    this->mUnk_F50.mPosOffset.y = 0;
+    this->mUnk_F50.mPosOffset.coords = zero.coords;
     this->mUnk_F50.mUnk_2C      = true;
 
     if (this->mUnk_FB0 != NULL) {
@@ -757,21 +800,26 @@ struct stack_struct {
 
 // non-matching
 void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce4dc() {
+    stack_struct sp8;
     for (int i = 0; i < ARRAY_LEN(this->mUnk_FB0->mUnk_00); i++) {
         UnkSystem2_UnkSubSystem5 *ptr = this->mUnk_FB0->mUnk_00[i];
         Vec2s local_2c;
 
-        local_2c.x = this->mUnk_004.x;
-        local_2c.y = this->mUnk_004.y;
+        Vec2s delta;
+        // The ROM keeps &mUnk_144 in its own base register (add r6, r0, #0x144)
+        // rather than indexing off the object base.
+        Vec2s *p144 = (Vec2s *) &ptr->mUnk_144;
+        delta.x     = p144->x - this->mUnk_008.mPos.x;
+        delta.y     = p144->y - this->mUnk_008.mPos.y;
 
-        local_2c.x += ptr->mUnk_144;
-        local_2c.y += ptr->mUnk_146;
+        local_2c.x = this->mUnk_004.x + delta.x;
+        local_2c.y = this->mUnk_004.y + delta.y;
 
-        local_2c.x -= this->mUnk_008.mPos.x;
-        local_2c.y -= this->mUnk_008.mPos.y;
-
-        ptr->mUnk_140 = local_2c.x;
-        ptr->mUnk_142 = local_2c.y;
+        // Read back through the cast, unsigned as the ROM's ldrh shows: plain
+        // field reads let MWCC forward the values and drop the ROM's
+        // store/reload pair, and a separate copy object adds a fourth slot.
+        ptr->mUnk_140 = ((Vec2us *) &local_2c)->x;
+        ptr->mUnk_142 = ((Vec2us *) &local_2c)->y;
 
         ptr->func_0201f4b4(0);
     }
@@ -783,19 +831,15 @@ void UnkStruct_ov019_020d24c8_2C_24::func_ov019_020ce4dc() {
         sVar1_2.x = this->mUnk_008.mPos.x;
         sVar1_2.y = this->mUnk_008.mPos.y;
 
-        volatile Vec2s result;
         Vec2s fetch;
 
         func_ov000_02062e44(&fetch, ptr);
 
-        result.x = this->mUnk_004.x;
-        result.y = this->mUnk_004.y;
-
-        ptr->mPos.x = result.x + fetch.x - sVar1_2.x;
-        ptr->mPos.y = result.y + fetch.y - sVar1_2.y;
+        fetch.x = this->mUnk_004.x + (s16) (fetch.x - sVar1_2.x);
+        fetch.y = this->mUnk_004.y + (s16) (fetch.y - sVar1_2.y);
+        ptr->mPos.coords = fetch.coords;
     }
 
-    stack_struct sp8;
     sp8.mUnk_06 = 0x00;
     MI_CpuFill32(0, &sp8, sizeof(sp8));
     sp8.mUnk_05 = -1;

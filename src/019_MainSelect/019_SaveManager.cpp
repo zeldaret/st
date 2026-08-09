@@ -12,6 +12,7 @@ bool func_ov000_020a0a90(size_t param1, void *param2, size_t param3);
 void func_ov000_020a0b58();
 };
 
+extern const size_t data_ov019_020d1bd4[];
 const size_t data_ov019_020d1bd4[] = {
     sizeof(SaveInfoData),
     sizeof(SaveTreasureData),
@@ -20,6 +21,7 @@ const size_t data_ov019_020d1bd4[] = {
     sizeof(SaveFile_00000_2600_Data),
 };
 
+extern const unk32 data_ov019_020d1be8[];
 const unk32 data_ov019_020d1be8[] = {
     offsetof(SaveSlot, mInfoData), offsetof(SaveSlot, mTreasureData), offsetof(SaveSlot, mUnk_1D00),
     offsetof(SaveSlot, mUnk_2500), offsetof(SaveSlot, mUnk_2600),
@@ -43,6 +45,10 @@ void SaveManager::func_ov019_020d086c(u16 param1) {
     }
 }
 
+PTMF<SaveFile>::PTMFCallback data_ov019_020d24a8 = SaveFile::func_ov019_020d1434;
+PTMF<SaveFile>::PTMFCallback data_ov019_020d24a0 = SaveFile::func_ov019_020d17e0;
+PTMF<SaveFile>::PTMFCallback data_ov019_020d24b0[2] = { SaveFile::func_ov019_020d1538 };
+
 void SaveManager::func_ov019_020d08fc(unk32 param1, PTMF<SaveFile>::PTMFCallback param2) {
     this->mUnk_23C = param2;
 
@@ -59,7 +65,7 @@ bool SaveManager::func_ov019_020d0964() {
     data_02049b80.func_02013ee8(0, 1);
 
     if (this->mUnk_20A == 0) {
-        this->func_ov019_020d08fc(1, SaveFile::func_ov019_020d17e0);
+        this->func_ov019_020d08fc(1, data_ov019_020d24a0);
         return true;
     }
 
@@ -68,12 +74,12 @@ bool SaveManager::func_ov019_020d0964() {
 
 void SaveManager::func_ov019_020d09dc(u16 saveSlotIndex) {
     this->mpSaveFile->mSaveSlotIndex = saveSlotIndex;
-    this->func_ov019_020d08fc(2, SaveFile::func_ov019_020d1434);
+    this->func_ov019_020d08fc(2, data_ov019_020d24a8);
 }
 
 void SaveManager::func_ov019_020d0a04(u16 saveSlotIndex) {
     this->mpSaveFile->mSaveSlotIndex = saveSlotIndex;
-    this->func_ov019_020d08fc(2, SaveFile::func_ov019_020d1538);
+    this->func_ov019_020d08fc(2, data_ov019_020d24b0[0]);
 }
 
 void SaveManager::func_ov019_020d0a2c(u16 saveSlotIndex) {
@@ -203,7 +209,7 @@ void SaveFile::func_ov019_020d0d50() {
 
 // https://decomp.me/scratch/gJJbb
 void SaveFile::func_ov019_020d0e18(unk32 param1) {
-    size_t offset    = param1 * SAVE_DATA_SIZE;
+    size_t offset    = SAVE_SLOT_OFFSET(param1);
     SaveSlot *puVar3 = &this->mSlots[param1];
 
     if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mInfoData), &puVar3->mInfoData, sizeof(puVar3->mInfoData))) {
@@ -228,15 +234,115 @@ void SaveFile::func_ov019_020d0e18(unk32 param1) {
     }
 }
 
-void SaveFile::func_ov019_020d0ea8() {}
+void SaveFile::func_ov019_020d0ea8() {
+    bool infoBad[MAX_SAVE_SLOTS][COUNT_DATA];
+    bool treasureBad[MAX_SAVE_SLOTS][COUNT_DATA];
 
-void SaveFile::func_ov019_020d1108() {}
+    infoBad[0][0]     = (this->mUnk_04E00[0][0].unk_00 & 1) != 0;
+    infoBad[0][1]     = (this->mUnk_04E00[0][1].unk_00 & 1) != 0;
+    infoBad[1][0]     = (this->mUnk_04E00[1][0].unk_00 & 1) != 0;
+    infoBad[1][1]     = (this->mUnk_04E00[1][1].unk_00 & 1) != 0;
+    treasureBad[0][0] = (this->mUnk_04E00[0][0].unk_00 & 2) != 0;
+    treasureBad[0][1] = (this->mUnk_04E00[0][1].unk_00 & 2) != 0;
+    treasureBad[1][0] = (this->mUnk_04E00[1][0].unk_00 & 2) != 0;
+    treasureBad[1][1] = (this->mUnk_04E00[1][1].unk_00 & 2) != 0;
 
-void SaveFile::func_ov019_020d127c() {}
+    u32 slotIndex = (!infoBad[0][0] && !infoBad[0][1] && !treasureBad[0][0] && !treasureBad[0][1]) ? 1 : 0;
+
+    if ((infoBad[slotIndex][0] && infoBad[slotIndex][1]) ||
+        (treasureBad[slotIndex][0] && treasureBad[slotIndex][1])) {
+        this->mSlots[slotIndex].func_ov000_020a1124();
+    } else {
+
+        if (infoBad[slotIndex][0] || treasureBad[slotIndex][0]) {
+            MI_CpuCopyFast(&this->mSlots[slotIndex].mInfoData[1], &this->mSlots[slotIndex].mInfoData[0], sizeof(SaveInfoData));
+            MI_CpuCopyFast(&this->mSlots[slotIndex].mTreasureData[1], &this->mSlots[slotIndex].mTreasureData[0], sizeof(SaveTreasureData));
+            MI_CpuCopyFast(&this->mSlots[slotIndex].mUnk_1D00[1], &this->mSlots[slotIndex].mUnk_1D00[0], sizeof(SaveFile_00000_1D00_Data));
+            MI_CpuCopyFast(&this->mSlots[slotIndex].mUnk_2500[1], &this->mSlots[slotIndex].mUnk_2500[0], sizeof(SaveFile_00000_2500_Data));
+            MI_CpuCopyFast(&this->mSlots[slotIndex].mUnk_2600[1], &this->mSlots[slotIndex].mUnk_2600[0], sizeof(SaveFile_00000_2600_Data));
+        } else {
+            MI_CpuCopyFast(&this->mSlots[slotIndex].mInfoData[0], &this->mSlots[slotIndex].mInfoData[1], sizeof(SaveInfoData));
+            MI_CpuCopyFast(&this->mSlots[slotIndex].mTreasureData[0], &this->mSlots[slotIndex].mTreasureData[1], sizeof(SaveTreasureData));
+            MI_CpuCopyFast(&this->mSlots[slotIndex].mUnk_1D00[0], &this->mSlots[slotIndex].mUnk_1D00[1], sizeof(SaveFile_00000_1D00_Data));
+            MI_CpuCopyFast(&this->mSlots[slotIndex].mUnk_2500[0], &this->mSlots[slotIndex].mUnk_2500[1], sizeof(SaveFile_00000_2500_Data));
+            MI_CpuCopyFast(&this->mSlots[slotIndex].mUnk_2600[0], &this->mSlots[slotIndex].mUnk_2600[1], sizeof(SaveFile_00000_2600_Data));
+        }
+    }
+
+    this->func_ov019_020d0e18(slotIndex);
+
+    for (int i = 0; i < COUNT_DATA; i++) {
+        this->mUnk_04E00[slotIndex][i].unk_00 &= ~1;
+        this->mUnk_04E00[slotIndex][i].unk_00 &= ~2;
+        this->mUnk_04E00[slotIndex][i].unk_00 &= ~4;
+        this->mUnk_04E00[slotIndex][i].unk_00 &= ~8;
+        this->mUnk_04E00[slotIndex][i].unk_00 &= ~0x10;
+    }
+}
+
+void SaveFile::func_ov019_020d1108() {
+    bool bad[MAX_SAVE_SLOTS][COUNT_DATA];
+
+    bad[0][0] = (this->mUnk_04E00[0][0].unk_00 & 4) != 0;
+    bad[0][1] = (this->mUnk_04E00[0][1].unk_00 & 4) != 0;
+    bad[1][0] = (this->mUnk_04E00[1][0].unk_00 & 4) != 0;
+    bad[1][1] = (this->mUnk_04E00[1][1].unk_00 & 4) != 0;
+
+    u32 slotIndex = (!bad[0][0] && !bad[0][1]) ? 1 : 0;
+    size_t base = SAVE_SLOT_OFFSET(slotIndex);
+
+    if (bad[slotIndex][0] && bad[slotIndex][1]) {
+
+        SaveSlot::func_ov000_020a12a0(&this->mSlots[slotIndex].mUnk_1D00[0]);
+        this->mSlots[slotIndex].mUnk_1D00[0].unk_3FE = func_020328c8(&gSaveManager.mUnk_004, &this->mSlots[slotIndex].mUnk_1D00[0],
+                                                   sizeof(SaveFile_00000_1D00_Data) - sizeof(u16));
+        MI_CpuCopyFast(&this->mSlots[slotIndex].mUnk_1D00[0], &this->mSlots[slotIndex].mUnk_1D00[1], sizeof(SaveFile_00000_1D00_Data));
+    }
+
+    for (int i = 0; i < COUNT_DATA; i++) {
+        if (bad[slotIndex][i]) {
+            if (!func_ov000_020a0a90(base + (i * sizeof(SaveFile_00000_1D00_Data) + offsetof(SaveSlot, mUnk_1D00)),
+                                     &this->mSlots[slotIndex].mUnk_1D00[i],
+                                     sizeof(SaveFile_00000_1D00_Data))) {
+                return;
+            }
+
+            this->mUnk_04E00[slotIndex][i].unk_00 &= ~4;
+        }
+    }
+}
+
+void SaveFile::func_ov019_020d127c() {
+    bool bad[MAX_SAVE_SLOTS][COUNT_DATA];
+
+    bad[0][0] = (this->mUnk_04E00[0][0].unk_00 & 0x10) != 0;
+    bad[0][1] = (this->mUnk_04E00[0][1].unk_00 & 0x10) != 0;
+    bad[1][0] = (this->mUnk_04E00[1][0].unk_00 & 0x10) != 0;
+    bad[1][1] = (this->mUnk_04E00[1][1].unk_00 & 0x10) != 0;
+
+    u32 slotIndex = (!bad[0][0] && !bad[0][1]) ? 1 : 0;
+    size_t offset = slotIndex * SAVE_DATA_SIZE;
+
+    if (bad[slotIndex][0] && bad[slotIndex][1]) {
+
+        SaveSlot::func_ov000_020a10f4(&this->mSlots[slotIndex].mUnk_2600[0]);
+        this->mSlots[slotIndex].mUnk_2600[0].unk_7E = func_020328c8(&gSaveManager.mUnk_004, &this->mSlots[slotIndex].mUnk_2600[0],
+                                                  sizeof(SaveFile_00000_2600_Data) - sizeof(u16));
+        MI_CpuCopyFast(&this->mSlots[slotIndex].mUnk_2600[0], &this->mSlots[slotIndex].mUnk_2600[1], sizeof(SaveFile_00000_2600_Data));
+    }
+
+    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mUnk_2600), &this->mSlots[slotIndex].mUnk_2600,
+                             sizeof(this->mSlots[slotIndex].mUnk_2600))) {
+        return;
+    }
+
+    this->mUnk_04E00[slotIndex][0].unk_00 &= ~0x10;
+    this->mUnk_04E00[slotIndex][1].unk_00 &= ~0x10;
+}
 
 // https://decomp.me/scratch/lmC67
 void SaveFile::func_ov019_020d13b8() {
-    u16 saveSlotIndex = this->mSaveSlotIndex;
+    u16 saveSlotIndex = (unsigned long)this->mSaveSlotIndex;
 
     SaveSlot::func_ov019_020d1400(this->mSlots[this->mSaveSlotIndex].mUnk_2600);
 
@@ -251,7 +357,7 @@ void SaveSlot::func_ov019_020d1400(SaveFile_00000_2600_Data *param1) {
 
 // non-matching
 void SaveFile::func_ov019_020d1434() {
-    size_t offset = this->mSaveSlotIndex * SAVE_DATA_SIZE;
+    size_t offset = SAVE_SLOT_OFFSET(this->mSaveSlotIndex);
 
     SaveSlot::func_ov019_020d14fc(this->mSlots[this->mSaveSlotIndex].mInfoData);
     if (!func_ov000_020a0a90(offset, &this->mSlots[this->mSaveSlotIndex].mInfoData,
@@ -311,7 +417,7 @@ void SaveSlot::func_ov019_020d1600(SaveTreasureData *param1) {
 // https://decomp.me/scratch/ibnQS
 void SaveFile::func_ov019_020d1634() {
     SaveSlot *pSlot = &this->mSlots[this->mSaveSlotIndex];
-    size_t offset   = this->mSaveSlotIndex * SAVE_DATA_SIZE;
+    size_t offset   = SAVE_SLOT_OFFSET(this->mSaveSlotIndex);
 
     for (int i = 0; i < NUM_UNK_BLOCKS; i++) {
         if (GET_FLAG(pSlot->mInfoData[0].unk_C84.unk_00, i)) {
@@ -323,26 +429,35 @@ void SaveFile::func_ov019_020d1634() {
 
 // non-matching
 void SaveFile::func_ov019_020d16d0() {
-    u16 saveSlotIndex = this->mSaveSlotIndex == 0;
-    SaveSlot *pSub2   = &this->mSlots[this->mSaveSlotIndex];
-    SaveSlot *pSub3   = &this->mSlots[saveSlotIndex];
+    void *pTreasure;
+    SaveSlot *pSub3;
+    void *pNext1D00;
+    SaveSlot *pCur;
+    u16 saveSlotIndex = this->mSaveSlotIndex == 0 ? 1 : 0;
+    SaveSlot *pSub2;
 
-    MI_CpuCopyFast(&pSub2->mInfoData, &pSub3->mInfoData, sizeof(SaveInfoData));
-    MI_CpuCopyFast(&pSub2->mTreasureData, &pSub3->mTreasureData, sizeof(SaveTreasureData));
-    MI_CpuCopyFast(&pSub2->mUnk_2600, &pSub3->mUnk_2600, sizeof(SaveFile_00000_2600_Data));
+    pCur  = &this->mSlots[this->mSaveSlotIndex];
+    pSub2 = pCur;
+    pSub3 = &this->mSlots[saveSlotIndex];
 
+    MI_CpuCopyFast(&pSub2->mInfoData, &pSub3->mInfoData, sizeof(pSub2->mInfoData));
+    pTreasure = &pSub3->mTreasureData;
+    MI_CpuCopyFast(&pSub2->mTreasureData, pTreasure, sizeof(pSub2->mTreasureData));
+    MI_CpuCopyFast(&pSub2->mUnk_2600, &pSub3->mUnk_2600, sizeof(pSub2->mUnk_2600));
+
+    pNext1D00 = &pSub3->mUnk_1D00[1];
     SaveSlot::func_ov000_020a12a0(pSub3->mUnk_1D00);
-    MI_CpuCopyFast(&pSub2->mUnk_1D00, &pSub3->mUnk_1D00, sizeof(SaveFile_00000_1D00_Data));
+    MI_CpuCopyFast(&pSub3->mUnk_1D00[0], pNext1D00, sizeof(SaveFile_00000_1D00_Data));
 
     MI_CpuClearFast(&pSub3->mUnk_2500, sizeof(SaveFile_00000_2500_Data));
-    MI_CpuCopyFast(&pSub2->mUnk_2500, &pSub3->mUnk_2500, sizeof(SaveFile_00000_2500_Data));
+    MI_CpuCopyFast(&pSub3->mUnk_2500[0], &pSub3->mUnk_2500[1], sizeof(SaveFile_00000_2500_Data));
 
     this->mSaveSlotIndex = saveSlotIndex;
     this->func_ov019_020d1538();
 
     for (int i = 0; i < NUM_UNK_BLOCKS; i++) {
-        if (pSub2->mInfoData[i >> 5].unk_C84.unk_00[0] & (1 << (i & 0x1F))) {
-            func_ov000_020a0a90(saveSlotIndex * SAVE_DATA_SIZE + i * SIZE_UNK_BLOCK + sizeof(SaveSlot),
+        if (GET_FLAG(pSub2->mInfoData[0].unk_C84.unk_00, i)) {
+            func_ov000_020a0a90(SAVE_SLOT_OFFSET(saveSlotIndex) + (i * SIZE_UNK_BLOCK + sizeof(SaveSlot)),
                                 &this->mUnk_04E0C[i * SIZE_UNK_BLOCK], SIZE_UNK_BLOCK);
         }
     }
@@ -363,50 +478,50 @@ struct stack_struct2 {
 // non-matching
 void SaveFile::func_ov019_020d1808(unk32 param1) {
     SaveSlot *pSub2 = &this->mSlots[param1];
-    stack_struct2 stack1[5];
+    u16 sums[5][2];
+    bool matches[5][2];
 
-    if (CARD_ReadFlashAsync((u32) pSub2, (void *) (param1 * SAVE_DATA_SIZE), sizeof(SaveSlot), NULL, NULL) == 0) {
+    if (CARD_ReadFlashAsync(SAVE_SLOT_OFFSET(param1), pSub2, sizeof(SaveSlot), NULL, NULL) == 0) {
         return;
     }
 
     for (int i = 0; i < COUNT_DATA; i++) {
-        stack1[SaveDataIndex_SaveInfo].mUnk_00 =
-            func_020328c8(&gSaveManager.mUnk_004, &pSub2->mInfoData[i], sizeof(SaveInfoData) - sizeof(u16));
-        stack1[SaveDataIndex_SaveInfo].mUnk_04 = pSub2->mInfoData[i].unk_DFE == stack1[SaveDataIndex_SaveInfo].mUnk_00;
+        sums[0][i] = func_020328c8(&gSaveManager.mUnk_004, &pSub2->mInfoData[i], sizeof(SaveInfoData) - sizeof(u16));
+        matches[0][i] = pSub2->mInfoData[i].unk_DFE == sums[0][i];
 
-        stack1[SaveDataIndex_Treasures].mUnk_00 =
+        sums[1][i] =
             func_020328c8(&gSaveManager.mUnk_004, &pSub2->mTreasureData[i], sizeof(SaveTreasureData) - sizeof(u16));
-        stack1[SaveDataIndex_Treasures].mUnk_04 =
-            pSub2->mTreasureData[i].unk_7E == stack1[SaveDataIndex_Treasures].mUnk_00 ? true : false;
+        matches[1][i] = pSub2->mTreasureData[i].unk_7E == sums[1][i];
 
-        stack1[SaveDataIndex_02].mUnk_00 =
-            func_020328c8(&gSaveManager.mUnk_004, &pSub2->mUnk_1D00[i], sizeof(SaveFile_00000_1D00_Data) - sizeof(u16));
-        stack1[SaveDataIndex_02].mUnk_04 = pSub2->mUnk_1D00[i].unk_3FE == stack1[SaveDataIndex_02].mUnk_00 ? true : false;
+        sums[2][i] = func_020328c8(&gSaveManager.mUnk_004, &pSub2->mUnk_1D00[i],
+                                    sizeof(SaveFile_00000_1D00_Data) - sizeof(u16));
+        matches[2][i] = pSub2->mUnk_1D00[i].unk_3FE == sums[2][i];
 
-        stack1[SaveDataIndex_03].mUnk_00 =
-            func_020328c8(&gSaveManager.mUnk_004, &pSub2->mUnk_2500[i], sizeof(SaveFile_00000_2500_Data) - sizeof(u16));
-        stack1[SaveDataIndex_03].mUnk_04 = pSub2->mUnk_2500[i].unk_7E == stack1[SaveDataIndex_03].mUnk_00 ? true : false;
+        sums[3][i] = func_020328c8(&gSaveManager.mUnk_004, &pSub2->mUnk_2500[i],
+                                    sizeof(SaveFile_00000_2500_Data) - sizeof(u16));
+        matches[3][i] = pSub2->mUnk_2500[i].unk_7E == sums[3][i];
 
-        stack1[SaveDataIndex_04].mUnk_00 =
-            func_020328c8(&gSaveManager.mUnk_004, &pSub2->mUnk_2600[i], sizeof(SaveFile_00000_2600_Data) - sizeof(u16));
-        stack1[SaveDataIndex_04].mUnk_04 = pSub2->mUnk_2600[i].unk_7E == stack1[SaveDataIndex_04].mUnk_00 ? true : false;
+        sums[4][i] = func_020328c8(&gSaveManager.mUnk_004, &pSub2->mUnk_2600[i],
+                                    sizeof(SaveFile_00000_2600_Data) - sizeof(u16));
+        matches[4][i] = pSub2->mUnk_2600[i].unk_7E == sums[4][i];
     }
 
     for (u32 i = 0; i < 5; i++) {
+        size_t len = data_ov019_020d1bd4[i];
         u8 *puVar5 = &((u8 *) pSub2)[data_ov019_020d1be8[i]];
 
-        if (stack1[i].mUnk_00 != 0) {
-            if (stack1[i].mUnk_04 == 0 || stack1[i].mUnk_00 != stack1[i * 2].mUnk_04) {
-                MI_CpuCopyFast(puVar5, puVar5 + data_ov019_020d1bd4[i], data_ov019_020d1bd4[i]);
-                this->mUnk_04E00[param1][1].unk_00 |= 1 << (i & 0xFF);
+        if (matches[i][0]) {
+            if (!matches[i][1] || sums[i][0] != sums[i][1]) {
+                MI_CpuCopyFast(puVar5, puVar5 + len, len);
+                this->mUnk_04E00[param1][1].unk_00 |= 1 << i;
             }
         } else {
-            this->mUnk_04E00[param1][0].unk_00 |= 1 << (i & 0xFF);
+            this->mUnk_04E00[param1][0].unk_00 |= 1 << i;
 
-            if (stack1[i * 2].mUnk_04 == 0) {
-                this->mUnk_04E00[param1][1].unk_00 |= 1 << (i & 0xFF);
+            if (!matches[i][1]) {
+                this->mUnk_04E00[param1][1].unk_00 |= 1 << i;
             } else {
-                MI_CpuCopyFast(puVar5 + data_ov019_020d1bd4[i], puVar5, data_ov019_020d1bd4[i]);
+                MI_CpuCopyFast(puVar5 + len, puVar5, len);
             }
         }
     }
@@ -425,24 +540,31 @@ void SaveFile::func_ov019_020d1aac(unk32 param1, const wchar_t *param2) {
 
 // https://decomp.me/scratch/34KCr
 void SaveFile::func_ov019_020d1b14(unk32 param1) {
-    SaveSlot *pSVar3;
+    SaveSlot *pSVar3 = &this->mSlots[param1];
 
-    pSVar3 = &this->mSlots[param1];
-    SaveSlot::func_ov000_020a1028(pSVar3->mInfoData);
-    SaveSlot::func_ov019_020d14fc(pSVar3->mInfoData);
+    SaveSlot::func_ov000_020a1028(this->mSlots[param1].mInfoData);
+    SaveSlot::func_ov019_020d14fc(this->mSlots[param1].mInfoData);
 
-    MI_CpuClearFast(pSVar3->mTreasureData, sizeof(SaveTreasureData));
-    for (int i = 0; i < TreasureType_Max; i++) {
-        pSVar3->mTreasureData[0].unk_3C[i] = TreasureType_None;
+    _MI_CpuFill(0, this->mSlots[param1].mTreasureData, sizeof(SaveTreasureData));
+
+    SaveSlot(*pSlots)[MAX_SAVE_SLOTS] = &this->mSlots;
+    SaveSlot *slots                   = *pSlots;
+    int zero                          = 0;
+
+    for (int i = zero; i < TreasureType_Max; i++) {
+        pSVar3->mTreasureData[zero].unk_3C[i] = TreasureType_None;
     }
+
+    SaveFile_00000_1D00_Data(*p1D00)[2] = &slots[param1].mUnk_1D00;
+
     SaveSlot::func_ov019_020d1600(pSVar3->mTreasureData);
 
-    SaveSlot::func_ov000_020a12a0(this->mSlots[param1].mUnk_1D00);
-    SaveSlot::func_ov019_020d14c0(this->mSlots[param1].mUnk_1D00);
+    SaveSlot::func_ov000_020a12a0(*p1D00);
+    SaveSlot::func_ov019_020d14c0(*p1D00);
 
-    MI_CpuClearFast(this->mSlots[param1].mUnk_2500, sizeof(SaveFile_00000_2500_Data));
-    SaveSlot::func_ov019_020d15cc(this->mSlots[param1].mUnk_2500);
+    _MI_CpuFill(zero, slots[param1].mUnk_2500, sizeof(SaveFile_00000_2500_Data));
+    SaveSlot::func_ov019_020d15cc(slots[param1].mUnk_2500);
 
-    SaveSlot::func_ov000_020a10f4(this->mSlots[param1].mUnk_2600);
-    SaveSlot::func_ov019_020d1400(this->mSlots[param1].mUnk_2600);
+    SaveSlot::func_ov000_020a10f4(slots[param1].mUnk_2600);
+    SaveSlot::func_ov019_020d1400(slots[param1].mUnk_2600);
 }

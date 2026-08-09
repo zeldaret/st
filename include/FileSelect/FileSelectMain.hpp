@@ -9,7 +9,27 @@
 #include "math.hpp"
 #include "types.h"
 
-typedef Iterator<UnkSubStruct9> FileSlotIterator;
+// A save slot, as stored in FileSelectMain's slot array.
+class FileSlot : public UnkSubStruct9 {
+public:
+    /* 000 (base) */
+    /* 780 */
+
+    FileSlot(stack_struct1 param1) : UnkSubStruct9(param1) {}
+};
+
+typedef Iterator<FileSlot> FileSlotIterator;
+
+// The two save-slot number icons ("1" and "2").
+class FileSelectSlotIcons {
+public:
+    /* 00 */ UnkSystem2_UnkSubSystem8 mIcons[MAX_SAVE_SLOTS];
+    /* A0 */
+
+    UnkSystem2_UnkSubSystem8 &operator[](int index) {
+        return this->mIcons[index];
+    }
+};
 
 /*
     - "Slot Select" refers to the screen where you choose which file to use
@@ -55,25 +75,6 @@ enum FileSelectExitMode_ {
     /* 0x03 */ FileSelectExitMode_Unk_3         = 3,
 };
 
-class FileSelectMain_UnkSubStruct1 : public UnkSubStruct1_Base {
-public:
-    /* 00 (base) */
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ unk32 mUnk_24;
-    /* 28 */ unk32 mUnk_28;
-    /* 2C */ unk32 mUnk_2C;
-    /* 30 */
-
-    void Subprocess1_UnkValueSets() {
-        this->mUnk_10 = this->mUnk_18;
-    }
-
-    void Subprocess2_UnkValueSets() {
-        this->mUnk_10 = this->mUnk_14;
-    }
-
-    UnkSubStruct1_Methods;
-};
 
 class FileSelectMain : public GameModeManagerBase_104 { // 022E5F70
 public:
@@ -85,7 +86,8 @@ public:
     /* 0026 */ unk8 mUnk_0026;
     /* 0027 */ unk8 mUnk_0027;
     /* 0028 */ unk32 mUnk_0028;
-    /* 002C */ FileSelectMain_UnkSubStruct1 mUnk_002C;
+    /* 002C */ UnkSubStruct1_Base mUnk_002C;
+    /* 004C */ unk32 mUnk_004C[4];
     /* 005C */ UnkSystem2_UnkSubSystem1_Derived1 mUnk_005C;
     /* 00BC */ UnkSystem2_UnkSubSystem9 mUnk_00BC;
 
@@ -95,7 +97,7 @@ public:
     /* 039C */ UnkSystem2_UnkSubSystem9 mUnk_039C;
 
     /* 03E0 */ FileSlotIterator mUnk_03E0;
-    /* 03E8 */ UnkSystem2_UnkSubSystem8 mUnk_03E8[2]; // "1" and "2" icons
+    /* 03E8 */ FileSelectSlotIcons mUnk_03E8; // "1" and "2" icons
 
     // "start" button
     /* 0488 */ UnkSystem2_UnkSubSystem1_Derived2 mUnk_0488;

@@ -28,7 +28,7 @@ public:
     /* 614 */ CellAnimObject mUnk_614; // ocean dungeon icon
     /* 68C */ CellAnimObject mUnk_68C; // fire dungeon icon
     /* 704 */ CellAnimObject mUnk_704; // desert dungeon icon
-    /* 77C */ Vec2us mUnk_77C;
+    /* 77C */ Vec2s mUnk_77C;
     /* 780 */
 
     struct stack_struct2 {

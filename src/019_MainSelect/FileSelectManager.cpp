@@ -78,8 +78,9 @@ void FileSelectManager::func_ov019_020c503c() {
                 data_ov003_020ba740->func_ov003_020b69d8(3);
 
                 UnkStruct_ov019_020d1d80 *uVar2 = (UnkStruct_ov019_020d1d80 *) &data_ov019_020d1db4;
+                unk32 arg                       = uVar2->mUnk_00;
                 this->mUnk_168.mUnk_12          = this->mUnk_158->mSaveSlotIndex;
-                data_ov000_020b504c.func_ov000_0206807c(uVar2->mUnk_00, &this->mUnk_168);
+                data_ov000_020b504c.func_ov000_0206807c(arg, &this->mUnk_168);
 
                 ((UnkStruct *) data_ov000_020b504c.func_ov000_02067bb4(0))->mUnk_3AC = 1;
                 data_ov000_020b5214.func_ov000_0206db44(0x12);

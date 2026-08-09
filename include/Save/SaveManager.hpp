@@ -14,6 +14,11 @@
 
 #define SAVE_DATA_SIZE (sizeof(SaveSlot) + sizeof(u8) * NUM_UNK_BLOCKS * SIZE_UNK_BLOCK)
 
+// Byte offset of a save slot within the backup flash. The cast through a null
+// pointer is deliberate: the game computes this as address arithmetic, and
+// MWCC only emits the ROM's instruction sequence for the pointer form.
+#define SAVE_SLOT_OFFSET(slotIndex) ((size_t) ((u8 *) NULL + (slotIndex) * SAVE_DATA_SIZE))
+
 enum {
     SaveDataIndex_SaveInfo,
     SaveDataIndex_Treasures,

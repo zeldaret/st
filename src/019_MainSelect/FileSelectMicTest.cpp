@@ -13,25 +13,37 @@ void func_ov000_02062e44(Vec2s *param1, void *param2);
 unk8 func_ov000_02070164(void *); //! TODO: turn to a class
 };
 
-class UnkStruct_ov019_020d2248 {
-public:
+struct Vec2sPod {
+    s16 x;
+    s16 y;
+};
+
+struct UnkStruct_ov019_020d2248 {
     u16 mUnk_00;
-    Vec2s mUnk_02;
-    Vec2s mUnk_06;
-    Vec2s mUnk_0A;
+    Vec2sPod mUnk_02;
+    Vec2sPod mUnk_06;
+    Vec2sPod mUnk_0A;
     s16 mUnk_0E;
-    Vec2s mUnk_10;
+    Vec2sPod mUnk_10;
+};
 
-    UnkStruct_ov019_020d2248(s16 x1, s16 y1, s16 x2, s16 y2) {
-        this->mUnk_10.x = x2;
-        this->mUnk_10.y = y2;
+// The ROM keeps the constant fields in .data and writes mUnk_02 and mUnk_10
+// from __sinit, which a type with a constructor cannot express.
+static UnkStruct_ov019_020d2248 data_ov019_020d2248 = {
+    0x0C, { 0, 0 }, { 0, -71 }, { -1, 641 }, 0, { 0, 0 },
+};
 
-        this->mUnk_02.x = x1;
-        this->mUnk_02.y = y1;
+// The ROM's __sinit writes these four halfwords at startup.
+struct UnkStruct_ov019_020d2248_Init {
+    UnkStruct_ov019_020d2248_Init() {
+        data_ov019_020d2248.mUnk_10.x = 0x100;
+        data_ov019_020d2248.mUnk_10.y = 0;
+        data_ov019_020d2248.mUnk_02.x = 0;
+        data_ov019_020d2248.mUnk_02.y = 0x32;
     }
 };
 
-static const UnkStruct_ov019_020d2248 data_ov019_020d2248(0, 0x32, 0x100, 0);
+static UnkStruct_ov019_020d2248_Init data_ov019_020d2248_init;
 
 static PTMF<FileSelectMicTest> data_ov019_020d225c[FSMicTestState_Max] = {
     FileSelectMicTest::func_ov019_020cea70,
@@ -86,16 +98,19 @@ void FileSelectMicTest::func_ov019_020cea74() {
 
 // non-matching
 void FileSelectMicTest::func_ov019_020ceaac() {
-    Vec2s local_34;
     Vec2s local_38;
+    Vec2s local_34;
 
+    // The local_34.y store really does sit between the two local_38 stores:
+    // the ROM interleaves them, and hoisting it back next to local_34.x costs
+    // 0.74%. The two are independent, so the order is only a scheduling hint.
     local_34.x = data_ov019_020d2248.mUnk_10.x;
-    local_34.y = data_ov019_020d2248.mUnk_10.y;
 
     local_38.x = 0;
+    local_34.y = data_ov019_020d2248.mUnk_10.y;
     local_38.y = 0;
 
-    this->mUnk_304.func_0201e874(BTN_ID_UNK_0C, (void *) &local_34, (void *) &local_38, 0);
+    this->mUnk_304.mUnk_000.func_0201e874(BTN_ID_UNK_0C, (void *) &local_34, (void *) &local_38, 0);
 
     this->mUnk_304.mUnk_000.mUnk_0A = true;
     this->mUnk_304.mUnk_000.mUnk_0B = false;
@@ -142,7 +157,7 @@ void FileSelectMicTest::func_ov019_020cebcc() {
     Vec2s *pFetch = (Vec2s *) &fetch;
 
     func_ov000_02062e44(pFetch, &this->mUnk_304.mUnk_044);
-    Vec2s_Add(pFetch, &data_ov019_020d2248.mUnk_02, &result);
+    Vec2s_Add(pFetch, (const Vec2s *) &data_ov019_020d2248.mUnk_02, &result);
 
     this->mUnk_304.mUnk_0A4.func_ov000_0206415c((void *) &result, 7, data_ov019_020d2248.mUnk_00, 0);
 }

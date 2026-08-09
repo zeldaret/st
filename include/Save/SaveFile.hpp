@@ -335,7 +335,7 @@ struct SaveFile_00000_2600_Data {
     /* 00 */ u8 unk_00;
     /* 01 */ u8 unk_01;
     /* 02 */ u8 unk_02;
-    /* 03 */ Vec2bCpp unk_03[61];
+    /* 03 */ u8 unk_03[61][2];
     /* 7E */ u16 unk_7E;
     /* 80 */
 };

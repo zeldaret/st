@@ -16,6 +16,12 @@ FileSelectOptionsManager *gpFSOptionsManager = NULL;
 
 static unk8 data_ov019_020fb8cc[0xDC00];
 static unk8 data_ov019_021094cc[0xDC00];
+// Exported to overlay ov001 (see ov001 relocs -> 0x020d22ea); the ROM places it
+// in .data between the Tape_a and Tape_b string literals.
+#pragma explicit_zero_data on
+u16 data_ov019_020d22ea = 0;
+#pragma explicit_zero_data reset
+
 static unk8 data_ov019_020d24cc[0xDC00];
 static unk8 data_ov019_020e00cc[0xDC00];
 static unk8 data_ov019_020edccc[0xDC00];

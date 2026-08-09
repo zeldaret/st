@@ -12,7 +12,7 @@
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 
-static const UnkStruct_ov019_020d1d80 data_ov019_020d1d80(0x00020001);
+extern const UnkStruct_ov019_020d1d80 data_ov019_020d1d80(0x00020001);
 
 GameModeFileSelect *GameModeFileSelect::Create() {
     return new(HeapIndex_1) GameModeFileSelect();
@@ -33,8 +33,9 @@ void GameModeFileSelect::vfunc_08() {
     this->GameModeBase::vfunc_08();
 
     const UnkStruct_ov019_020d1d80 *ptr2 = &data_ov019_020d1d80;
+    unk32 arg                            = ptr2->mUnk_00;
     this->mUnk_04.mUnk_14                = gSaveManager.mpSaveFile;
-    data_ov000_020b504c.func_ov000_0206807c(ptr2->mUnk_00, &this->mUnk_04);
+    data_ov000_020b504c.func_ov000_0206807c(arg, &this->mUnk_04);
 
     data_ov000_020b50c0.func_ov001_020bd8ac();
     data_ov000_020b51b8.func_ov000_0206c9a8(3, 0, 0x7F, 0);
