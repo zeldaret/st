@@ -41,7 +41,7 @@ UnkSubStruct9::UnkSubStruct9(stack_struct1 param1) :
         this->mUnk_77C.coords = stackDelta.coords;
     }
 
-    ((LinkListImpl *) ((u8 *) param1.param1 + 4))->Append((LinkListNode *) &this->mUnk_004);
+    ((GameModeManagerBase_104_0C *) param1.param1)->Append(&this->mUnk_004);
     this->mUnk_004.mUnk_2C = 1;
 }
 
