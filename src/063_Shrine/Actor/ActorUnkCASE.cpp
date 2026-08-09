@@ -413,7 +413,17 @@ void ActorUnkCASE::func_ov063_0215b2c4(void) {}
 
 void ActorUnkCASE::func_ov063_0215b6c8(VecFx32 *param1, UnkAngleStruct angle) {}
 void ActorUnkCASE::func_ov063_0215b724(void) {}
-void ActorUnkCASE::func_ov063_0215b814(ActorRef param1) {}
+
+void ActorUnkCASE::func_ov063_0215b814(ActorRef ref) {
+    mUnk_1E4 = ref;
+
+    if (mUnk_14C != NULL) {
+        ((ActorUnkCANS *) mUnk_14C)->func_ov063_02158448(9);
+    }
+
+    this->func_ov063_0215aefc(1);
+}
+
 void ActorUnkCASE::func_ov063_0215b854(void) {}
 void ActorUnkCASE::func_ov063_0215b8e8(void) {}
 void ActorUnkCASE::func_ov063_0215b99c(void) {}

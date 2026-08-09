@@ -116,7 +116,7 @@ public:
     void func_ov063_0215b2c4(void);
     void func_ov063_0215b6c8(VecFx32 *param1, UnkAngleStruct angle);
     void func_ov063_0215b724(void);
-    void func_ov063_0215b814(ActorRef param1);
+    void func_ov063_0215b814(ActorRef ref);
     void func_ov063_0215b854(void);
     void func_ov063_0215b8e8(void);
     static void func_ov063_0215b99c(void);
