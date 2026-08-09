@@ -2,6 +2,9 @@
 
 #include <math.hpp>
 #include <nns/anim.h>
+class UnkSystem2_UnkSubSystem1_Derived2;
+class UnkSystem2_UnkSubSystem9;
+class UnkStruct_ov019_020d24c8_28_258;
 
 // assumed to be the only original name, from an assert inside `func_ov000_020609c4`
 class CellAnimObject {
@@ -38,6 +41,8 @@ public:
     void func_ov000_020609c4(void);
     bool func_ov000_02060a98(unk32 param1);
     void func_ov000_02060ad0();
+    void UpdatePosition(UnkSystem2_UnkSubSystem1_Derived2 *button, UnkSystem2_UnkSubSystem9 *slider,
+                        const UnkStruct_ov019_020d24c8_28_258 &offset);
     bool func_ov000_02060af8(void);
     void func_ov000_02060b50();
     void func_ov000_02060b64(void);

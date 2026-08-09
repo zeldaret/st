@@ -16,6 +16,7 @@
 
 class UnkDataStruct2;
 extern "C" void func_0201e8d4(void *param1, void *param2);
+extern "C" void func_ov000_02062e44(void *param1, void *param2);
 
 //! TODO: make this work with templates?
 #define UnkSubStruct1_Methods                                   \
@@ -835,6 +836,22 @@ public:
     //! TODO: conflict with UnkStruct_ov019_020d24c8_28_304
     void func_0201e874(unk32 buttonID, void *param2, void *param3, unk32 param4);
 };
+
+inline void CellAnimObject::UpdatePosition(UnkSystem2_UnkSubSystem1_Derived2 *button,
+                                           UnkSystem2_UnkSubSystem9 *slider,
+                                           const UnkStruct_ov019_020d24c8_28_258 &offset) {
+    Vec2s buttonPos;
+    Vec2s sliderPos;
+    Vec2s pos;
+
+    func_ov000_02062e44(&buttonPos, button);
+
+    Vec2s *ptr = (Vec2s *) &sliderPos;
+    func_0201e8d4(ptr, slider);
+
+    Vec2s_OffsetSub(ptr, &offset.mPos, &buttonPos, &pos);
+    Vec2s_Set(&pos, &this->mUnk_5C);
+}
 
 class UnkSystem2_UnkSubSystem8 : public UnkSystem2_UnkSubSystem8_Base {
 public:

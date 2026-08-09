@@ -104,6 +104,20 @@ static inline void Vec2s_Sub(const Vec2s *a, const Vec2s *b, Vec2s *dst) {
     dst->y = y;
 }
 
+static inline void Vec2s_OffsetSub(const Vec2s *a, const Vec2s *b, const Vec2s *c, Vec2s *dst) {
+    s16 y;
+    s16 x;
+
+    y = a->y + b->y;
+    x = a->x + b->x;
+
+    x -= c->x;
+    y -= c->y;
+
+    dst->x = x;
+    dst->y = y;
+}
+
 //! TODO: Vec2s_OffsetAdd and Vec2s_OffsetAdd2 are probably fake?
 static inline void Vec2s_OffsetAdd(Vec2s *a, Vec2s *b, Vec2s *c, Vec2s *dst) {
     s16 y;

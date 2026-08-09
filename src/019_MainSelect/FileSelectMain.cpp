@@ -11,7 +11,6 @@
 #include <nitro/g2.h>
 
 extern "C" {
-void func_ov000_02062e44(void *param1, void *param2);
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
 void func_0201e754(UnkSystem2_UnkSubSystem9 *anim, u32 id, Vec2s *to, Vec2s *from, u32 value1, u32 value2);
@@ -1727,35 +1726,6 @@ void FileSelectMain::func_ov019_020c8c4c() {
     this->mUnk_00BC.Update(&this->mUnk_005C.mPos);
 }
 
-static inline void Vec2s_OffsetSub(const Vec2s *a, const Vec2s *b, const Vec2s *c, Vec2s *dst) {
-    s16 y;
-    s16 x;
-
-    y = a->y + b->y;
-    x = a->x + b->x;
-
-    x -= c->x;
-    y -= c->y;
-
-    dst->x = x;
-    dst->y = y;
-}
-
-static inline void UpdateCellAnimPos(CellAnimObject *cellAnim, UnkSystem2_UnkSubSystem1_Derived2 *button,
-                                     UnkSystem2_UnkSubSystem9 *slider,
-                                     const UnkStruct_ov019_020d24c8_28_258 &offset) {
-    Vec2s buttonPos;
-    Vec2s sliderPos;
-    Vec2s pos;
-
-    func_ov000_02062e44(&buttonPos, button);
-
-    Vec2s *ptr = (Vec2s *) &sliderPos;
-    func_0201e8d4(ptr, slider);
-
-    Vec2s_OffsetSub(ptr, &offset.mPos, &buttonPos, &pos);
-    Vec2s_Set(&pos, &cellAnim->mUnk_5C);
-}
 
 void FileSelectMain::func_ov019_020c92dc() {
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
@@ -1766,11 +1736,11 @@ void FileSelectMain::func_ov019_020c92dc() {
 
     this->mUnk_1078.Update(&this->mUnk_0DA4.mPos);
     UnkStruct_ov019_020d24c8_28_258 local_30(0x8B, 0x06);
-    UpdateCellAnimPos(&this->mUnk_1144, &this->mUnk_0DA4, &this->mUnk_1078, local_30);
+    this->mUnk_1144.UpdatePosition(&this->mUnk_0DA4, &this->mUnk_1078, local_30);
 
     this->mUnk_1490.Update(&this->mUnk_11BC.mPos);
     UnkStruct_ov019_020d24c8_28_258 local_48(0x8B, 0x05);
-    UpdateCellAnimPos(&this->mUnk_155C, &this->mUnk_11BC, &this->mUnk_1490, local_48);
+    this->mUnk_155C.UpdatePosition(&this->mUnk_11BC, &this->mUnk_1490, local_48);
 
     this->mUnk_18A8.Update(&this->mUnk_15D4.mPos);
     this->mUnk_1BC0.Update(&this->mUnk_18EC.mPos);
@@ -1872,11 +1842,11 @@ void FileSelectMain::func_ov019_020c9e08() {
 
     this->mUnk_10BC.Update(&this->mUnk_0DA4.mPos);
     UnkStruct_ov019_020d24c8_28_258 local_30(0x8B, 0x06);
-    UpdateCellAnimPos(&this->mUnk_1144, &this->mUnk_0DA4, &this->mUnk_10BC, local_30);
+    this->mUnk_1144.UpdatePosition(&this->mUnk_0DA4, &this->mUnk_10BC, local_30);
 
     this->mUnk_14D4.Update(&this->mUnk_11BC.mPos);
     UnkStruct_ov019_020d24c8_28_258 local_48(0x8B, 0x05);
-    UpdateCellAnimPos(&this->mUnk_155C, &this->mUnk_11BC, &this->mUnk_14D4, local_48);
+    this->mUnk_155C.UpdatePosition(&this->mUnk_11BC, &this->mUnk_14D4, local_48);
 
     this->mUnk_18A8.Update(&this->mUnk_15D4.mPos);
     this->mUnk_1BC0.Update(&this->mUnk_18EC.mPos);
@@ -1948,11 +1918,11 @@ void FileSelectMain::func_ov019_020ca940() {
 
     this->mUnk_1100.Update(&this->mUnk_0DA4.mPos);
     UnkStruct_ov019_020d24c8_28_258 local_30(0x8B, 0x06);
-    UpdateCellAnimPos(&this->mUnk_1144, &this->mUnk_0DA4, &this->mUnk_1100, local_30);
+    this->mUnk_1144.UpdatePosition(&this->mUnk_0DA4, &this->mUnk_1100, local_30);
 
     this->mUnk_1518.Update(&this->mUnk_11BC.mPos);
     UnkStruct_ov019_020d24c8_28_258 local_48(0x8B, 0x05);
-    UpdateCellAnimPos(&this->mUnk_155C, &this->mUnk_11BC, &this->mUnk_1518, local_48);
+    this->mUnk_155C.UpdatePosition(&this->mUnk_11BC, &this->mUnk_1518, local_48);
 
     this->mUnk_18A8.Update(&this->mUnk_15D4.mPos);
     this->mUnk_1BC0.Update(&this->mUnk_18EC.mPos);
