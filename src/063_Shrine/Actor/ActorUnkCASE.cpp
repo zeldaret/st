@@ -90,7 +90,11 @@ bool ActorUnkCASE_150::vfunc_00(ActorRef ref, unk32 param2) {
     return Actor_C4::vfunc_00(ref, param2);
 }
 
-bool ActorUnkCASE_150::vfunc_04() {}
+bool ActorUnkCASE_150::vfunc_04() {
+    ((ActorUnkCASE *) mUnk_20)->func_ov063_0215b854();
+    return Actor_C4::vfunc_04();
+}
+
 void ActorUnkCASE_150::vfunc_0C(unk32 param1) {}
 
 ActorUnkCASE_174::ActorUnkCASE_174(Actor *param1) {
