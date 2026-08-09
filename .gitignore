@@ -25,3 +25,5 @@ nonmatchings/
 .venv/
 venv/
 tools/*.exe
+
+.worktrees/
