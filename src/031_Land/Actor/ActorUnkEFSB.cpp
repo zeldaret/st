@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkEFSB.hpp"
 #include "System/SysNew.hpp"
 
@@ -13,11 +11,13 @@ ActorProfileUnkEFSB::ActorProfileUnkEFSB() :
     ActorProfile_Derived1(ActorId_EFSB) {}
 
 ActorUnkEFSB::ActorUnkEFSB() :
-    mUnk_098(NULL) {}
+    mUnk_098(NULL),
+    mUnk_0F8((unk32) & this->mUnk_0F8.mUnk_1C, (unk32) & this->mUnk_098, 0x0),
+    mUnk_154((unk32) & this->mUnk_154.mUnk_1C, (unk32) & this->mUnk_098, 0x0) {}
 
-void ActorUnkEFSB::func_ov031_020fb614(void) {}
+bool ActorUnkEFSB::vfunc_18(unk32 param1) {}
 
-void ActorUnkEFSB::func_ov031_020fb6cc(void) {
+void ActorUnkEFSB::vfunc_20() {
     if (this->mUnk_094 != 0x0) {
         return;
     }
@@ -25,18 +25,18 @@ void ActorUnkEFSB::func_ov031_020fb6cc(void) {
     this->mUnk_154.vfunc_34();
 }
 
-void ActorUnkEFSB::func_ov031_020fb704(void) {
+void ActorUnkEFSB::vfunc_24() {
     this->vfunc_20();
 }
 
-void ActorUnkEFSB::func_ov031_020fb718(unk32 param1) {
+void ActorUnkEFSB::vfunc_54(unk32 param1) {
     this->mUnk_094 = param1;
 }
 
 extern "C" unk32 func_01ffb428(unk32, unk32);
 extern "C" void func_01ffc634(ModelRender *, VecFx32 *, UnkAngleStruct, VecFx32 *);
 
-void ActorUnkEFSB::func_ov031_020fb720(void) {
+void ActorUnkEFSB::vfunc_2C(unk32 param1) {
     VecFx32 vec;
 
     VecFx32_Init(FLOAT_TO_FX32(1.0f), FLOAT_TO_FX32(1.0f), FLOAT_TO_FX32(1.0f), &vec);
@@ -47,6 +47,3 @@ void ActorUnkEFSB::func_ov031_020fb720(void) {
 
     func_01ffc634(&this->mUnk_098, &vec, this->mAngleStruct, &sp0);
 }
-
-ActorUnkEFSB::~ActorUnkEFSB() {}
-ActorProfileUnkEFSB::~ActorProfileUnkEFSB() {}

@@ -77,9 +77,12 @@ public:
 class ActorUnkZLSL_27CC : public UnkStruct_ov000_020b31a8 {
 public:
     /* 00 (base) */
-    /* 1C */
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ STRUCT_PAD(0x20, 0x5C);
+    /* 5C */
 
-    ActorUnkZLSL_27CC();
+    ActorUnkZLSL_27CC(unk32 param1, unk32 param2, unk32 param3) :
+        UnkStruct_ov000_020b31a8(param1, param2, param3) {}
 
     // data_ov031_0211369c
     /* 30 */ virtual s8 vfunc_30() override;
@@ -92,8 +95,10 @@ public:
     /* 00 (base) */
     /* 04 */
 
-    // data_ov031_021136e4
+    ActorUnkZLSL_2700(unk32 param1, unk32 param2, unk32 param3) :
+        ActorUnkZLSL_27CC(param1, param2, param3) {}
 
+    // data_ov031_021136e4
     void func_ov000_02099ddc(ActorUnkZLSL_AnimationTag param1, unk32 param2);
 };
 
@@ -216,12 +221,9 @@ public:
     /* 1690 */ ActorUnkZLSL_1690 mUnk_1690;
     /* 1694 */ STRUCT_PAD(0x1694, 0x2700);
     /* 2700 */ ActorUnkZLSL_2700 mUnk_2700;
-    /* 2704 */ STRUCT_PAD(0x271C, 0x276C);
+    /* 2704 */ STRUCT_PAD(0x275C, 0x276C);
     /* 276C */ ModelRender_ov031_02113670 mUnk_276C;
     /* 27CC */ ActorUnkZLSL_27CC mUnk_27CC;
-    /* 1694 */ STRUCT_PAD(0x27E8, 0x2800);
-    /* 2800 */ unk32 mUnk_2800;
-    /* 2804 */ STRUCT_PAD(0x2804, 0x2828);
     /* 2828 */ UnkStruct_PlayerGet_ec mUnk_2828;
     /* 282C */ unk32 mUnk_282C;
     /* 2830 */ unk32 mUnk_2830;

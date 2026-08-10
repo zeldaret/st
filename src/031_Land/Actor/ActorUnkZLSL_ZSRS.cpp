@@ -150,7 +150,9 @@ ActorProfileUnkZLSL::ActorProfileUnkZLSL() :
 ActorUnkZLSL::ActorUnkZLSL() :
     Actor_Derived1(NULL, 0x0),
     mUnk_1620(NULL),
-    mUnk_276C(NULL) {}
+    mUnk_2700(0, 0, 0),
+    mUnk_276C(NULL),
+    mUnk_27CC(0, 0, 0) {}
 
 void func_ov031_020ea100() {}
 
@@ -496,7 +498,7 @@ void ActorUnkZLSL::func_ov031_020eb218() {
 
 // non-matching
 bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
-    func_01ff916c(&this->mUnk_2800, param1->y, 0xCD);
+    func_01ff916c(&this->mUnk_27CC.mUnk_1C, param1->y, 0xCD);
     unk16 res = func_02016958(&this->mPos, param1);
     func_01ff930c(&this->mAngle, res, 0x71C);
 
@@ -504,7 +506,7 @@ bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
     vec.y += 0x800;
     if (!this->mUnk_2874) {
         if (this->mUnk_094.mUnk_0C->vfunc_10()->mUnk_0C < 0xA000) {
-            func_01ff916c(&this->mUnk_2800, 0xCD - 0x400, 0xCD + 0xCD);
+            func_01ff916c(&this->mUnk_27CC.mUnk_1C, 0xCD - 0x400, 0xCD + 0xCD);
         }
     }
 }
