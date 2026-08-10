@@ -131,7 +131,7 @@ public:
     void func_ov063_0215b724(void);
     void func_ov063_0215b814(ActorRef ref);
     void func_ov063_0215b854(void);
-    void func_ov063_0215b8e8(void);
+    void func_ov063_0215b8e8(unk32 param1);
     static void func_ov063_0215b99c(ActorUnkCASE *param1, UnkStruct_func_ov063_0215a678 *param2);
     void func_ov063_0215ba64(void);
 };
