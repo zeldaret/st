@@ -93,7 +93,7 @@ public:
     }
 
     // data_ov031_0211369c
-    /* 00 */ WEAK virtual ~ActorUnkZLSL_27CC() override {}
+    /* 00 */ WEAK virtual ~ActorUnkZLSL_27CC() override {} // TODO : to be updated in next dsd release
     /* 30 */ virtual s8 vfunc_30() override;
     /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override;
     /* 3C */ virtual void vfunc_3C() override;
