@@ -48,7 +48,7 @@ public:
     /* 04 */ UnkSystem5 *mUnk_04;
     /* 08 */ ModelRender *mUnk_08;
     /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
+    /* 10 */ G3d_Model *mUnk_10;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk8 mUnk_18; // deduced from strb [..., 0x18]
     /* 19 */ STRUCT_PAD(0x19, 0x1C);
@@ -72,19 +72,28 @@ public:
     /* 34 */ virtual void vfunc_34();
     /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2);
     /* 3C */ virtual void vfunc_3C();
+
+    void func_ov000_02099f8(ActorUnkZLSL_AnimationTag param1, unk32 param2);
 };
 
 class ActorUnkZLSL_27CC : public UnkStruct_ov000_020b31a8 {
 public:
     /* 00 (base) */
-    /* 1C */ unk32 mUnk_1C;
-    /* 20 */ STRUCT_PAD(0x20, 0x5C);
-    /* 5C */
+    /* 1C */ UnkSystem5 mUnk_1C;
+    /* 5C */ unk32 mUnk_5C;
+    /* 60 */ STRUCT_PAD(0x60, 0x7C);
+    /* 7C */
 
-    ActorUnkZLSL_27CC(unk32 param1, unk32 param2, unk32 param3) :
-        UnkStruct_ov000_020b31a8(param1, param2, param3) {}
+    ActorUnkZLSL_27CC(UnkSystem5 *param1, ModelRender *param2, unk32 param3) :
+        UnkStruct_ov000_020b31a8(param1, param2, param3),
+        mUnk_1C(&mUnk_5C, NULL) {
+        if (param3 != 0x0) {
+            this->mUnk_1C.mpModel = this->mUnk_10;
+        }
+    }
 
     // data_ov031_0211369c
+    /* 00 */ WEAK virtual ~ActorUnkZLSL_27CC() override {}
     /* 30 */ virtual s8 vfunc_30() override;
     /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override;
     /* 3C */ virtual void vfunc_3C() override;
@@ -95,7 +104,7 @@ public:
     /* 00 (base) */
     /* 04 */
 
-    ActorUnkZLSL_2700(unk32 param1, unk32 param2, unk32 param3) :
+    ActorUnkZLSL_2700(UnkSystem5 *param1, ModelRender *param2, unk32 param3) :
         ActorUnkZLSL_27CC(param1, param2, param3) {}
 
     // data_ov031_021136e4

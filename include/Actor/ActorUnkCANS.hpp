@@ -81,8 +81,8 @@ public:
         mUnk_2C(&mUnk_4C, NULL),
         mUnk_7C(&mUnk_9C, NULL) {
         if (param4 != 0) {
-            *(unk32 *) &mUnk_7C = mUnk_10;
-            *(unk32 *) &mUnk_2C = mUnk_10;
+            mUnk_7C.mpModel = mUnk_10;
+            mUnk_2C.mpModel = mUnk_10;
         }
     }
 
