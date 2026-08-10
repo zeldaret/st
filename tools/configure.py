@@ -1053,7 +1053,7 @@ config.libs = [
         "Overlay 71",
         [
             Object("071_Tower/Actor/ActorUnkKMSO.cpp"),
-            Object("071_Tower/Actor/ActorUnkSZKU.cpp"),
+            Object("071_Tower/Actor/ActorTearLight.cpp"),
             Object("071_Tower/MapObject/MapObjectUnkBLCE.cpp"),
             Object("071_Tower/MapObject/MapObjectUnkBLCT.cpp"),
             Object("071_Tower/MapObject/MapObjectUnkBRGS.cpp"),

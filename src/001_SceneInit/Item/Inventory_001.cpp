@@ -130,7 +130,7 @@ void Inventory::func_ov001_020bba6c() {
         unk32 actorId;
     } uStack_18;
     uStack_18.ptr     = &data_ov000_020b3000;
-    uStack_18.actorId = ActorId_SZKU;
+    uStack_18.actorId = ActorId_TearLight;
 
     Actor **ppActor = gpActorManager->func_01fff350(&uStack_18, gpActorManager->mActorTable);
     while (ppActor != gpActorManager->mUnk_08) {

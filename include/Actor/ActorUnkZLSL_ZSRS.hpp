@@ -54,7 +54,7 @@ public:
     /* 19 */ STRUCT_PAD(0x19, 0x1C);
     /* 1C */
 
-    UnkStruct_ov000_020b31a8(unk32 param1, unk32 param2, unk32 param3);
+    UnkStruct_ov000_020b31a8(UnkSystem5 *param1, ModelRender *param2, unk32 param3);
 
     // data_ov000_020b31a8
     /* 00 */ virtual ~UnkStruct_ov000_020b31a8();
