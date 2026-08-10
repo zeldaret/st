@@ -191,16 +191,16 @@ void ActorUnkCASE::vfunc_20() {
         vec1                  = *mUnk_14C_vec;
         func_01ffb714(&vec1, &mPos, &vec1);
 
-        x = vec1.x;
-        y = vec1.y;
         z = vec1.z;
+        y = vec1.y;
+        x = vec1.x;
 
         ((VecFx16 *) &mUnk_150.mUnk_0E)->x = x;
         ((VecFx16 *) &mUnk_150.mUnk_0E)->y = y;
         ((VecFx16 *) &mUnk_150.mUnk_0E)->z = z;
 
         vec2     = data_027e0ce0->func_01fff148(0);
-        vec_base = mUnk_14C_vec;
+        vec_base = (VecFx32 *) (((u8 *) mUnk_14C) + 0x25C);
         z_neg    = vec2->z;
         z_pos    = vec_base->z;
         x_pos    = vec_base->x;
@@ -210,9 +210,9 @@ void ActorUnkCASE::vfunc_20() {
         vec1 = mUnk_1CC;
         func_01ffb714(&vec1, &mPos, &vec1);
 
-        x = vec1.x;
-        y = vec1.y;
         z = vec1.z;
+        y = vec1.y;
+        x = vec1.x;
 
         ((VecFx16 *) &mUnk_150.mUnk_0E)->x = x;
         ((VecFx16 *) &mUnk_150.mUnk_0E)->y = y;
@@ -228,14 +228,15 @@ void ActorUnkCASE::vfunc_20() {
         goto post;
     }
 
-    ret1         = func_01ffbbe0(x_pos - x_neg, z_pos - z_neg);
-    fx16 sin_val = SIN((u16) (s16) ret1);
-    fx16 cos_val = COS((u16) (s16) ret1);
+    ret1        = func_01ffbbe0(x_pos - x_neg, z_pos - z_neg);
+    s16 sin_val = SIN((u16) (s16) ret1);
+    s16 cos_val = COS((u16) (s16) ret1);
 
-    VecFx16 *out_vec = (VecFx16 *) &mUnk_150.mUnk_08;
-    out_vec->x       = x + (((1 - sin_val) * 0x8000) >> 0x10);
-    out_vec->y       = y;
-    out_vec->z       = z + (((1 - cos_val) * 0x8000) >> 0x10);
+    ((VecFx16 *) &mUnk_150.mUnk_08)->y = y;
+    // ((VecFx16 *) &mUnk_150.mUnk_08)->x = x + (((1 - sin_val) * 0x8000) >> 0x10);
+    // ((VecFx16 *) &mUnk_150.mUnk_08)->z = z + (((1 - cos_val) * 0x8000) >> 0x10);
+    ((VecFx16 *) &mUnk_150.mUnk_08)->x = x + (s16) ((1 - sin_val) >> 1);
+    ((VecFx16 *) &mUnk_150.mUnk_08)->z = z + (s16) ((1 - cos_val) >> 1);
 post:
 
     this->func_ov000_020989e0();
@@ -347,16 +348,26 @@ void ActorUnkCASE::func_ov063_0215afb8(void) {
         return;
     }
 
-    Mat3p *matSrc = (Mat3p *) ((u8 *) otherActor + 0x154);
-    mUnk_1A4      = *matSrc;
+    struct Fx32Array9 {
+        fx32 array[9];
+    };
+
+    Mat3p *matSrc             = (Mat3p *) ((u8 *) otherActor + 0x154);
+    *(Fx32Array9 *) &mUnk_1A4 = *(Fx32Array9 *) matSrc;
 
     VecFx32 vec = *(VecFx32 *) ((u8 *) otherActor + 0xE8);
-    VecFx32_Copy(&vec, &mPos);
-    VecFx32_Copy(&vec, &mPrevPos);
+    mPos.x      = vec.x;
+    mPos.y      = vec.y;
+    mPos.z      = vec.z;
+    mPrevPos.x  = vec.x;
+    mPrevPos.y  = vec.y;
+    mPrevPos.z  = vec.z;
 }
 
 void ActorUnkCASE::func_ov063_0215b054(void) {
-    VecFx32_Init(mUnk_1D8, 0, mUnk_1E0, &mVel);
+    mVel.x = mUnk_1D8;
+    mVel.y = 0;
+    mVel.z = mUnk_1E0;
     UNSET_FLAG2(*(s16 *) &mUnk_44, ActorFlag_5);
     mUnk_52 = -1;
     mUnk_50 = 0;
