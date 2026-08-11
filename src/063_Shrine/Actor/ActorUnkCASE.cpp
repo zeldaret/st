@@ -513,10 +513,12 @@ void ActorUnkCASE::func_ov063_0215b8e8(unk32 *param1) {
     if (VecFx32_IsZero((VecFx32 *) param1)) {
         this->func_ov063_0215aefc(4);
     } else {
-        unk32 x          = param1[0];
-        unk32 y          = param1[1];
-        unk32 z          = param1[2];
+        unk32 x = param1[0];
+        unk32 y = param1[1];
+        unk32 z = param1[2];
+#if !IS_JP
         mUnk_150.mUnk_04 = 0;
+#endif
         VecFx32_Init(x, y, z, (VecFx32 *) &mUnk_1D8);
         this->func_ov063_0215aefc(3);
     }
