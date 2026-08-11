@@ -7,21 +7,12 @@
 #include "Actor/ActorRef.hpp"
 #include "Actor/ActorShotArrow.hpp"
 #include "Actor/Actor_Derived1.hpp"
+#include "Unknown/UnkStruct_ov000_020b3268.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
 #include "nitro/fx.h"
 #include "nitro/math.h"
 #include "types.h"
-
-class UnkStruct_ov000_020b19f0 : public ModelRender {
-public:
-    UnkStruct_ov000_020b19f0(G3d_Model *pModel);
-};
-
-class UnkStruct_ov000_020b3268 : public UnkStruct_ov000_020b19f0 {
-public:
-    UnkStruct_ov000_020b3268(G3d_Model *pModel);
-};
 
 class UnkStruct_ov063_021631a0 : public UnkStruct_ov000_020b3268 {
 public:
@@ -57,7 +48,7 @@ public:
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual bool vfunc_04() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 *param1) override;
 };
 
 class ActorUnkCASE_174 : public UnkStruct_ov031_Items_01 {

@@ -23,14 +23,6 @@
 extern const void *data_ov063_02162558;
 extern const void *data_ov063_02162568;
 
-static PTMF<ActorUnkCASE> data_ov063_021630e0[0x6] = {ActorUnkCASE::func_ov063_0215af58, ActorUnkCASE::func_ov063_0215af60,
-                                                      ActorUnkCASE::func_ov063_0215afb8, ActorUnkCASE::func_ov063_0215b090,
-                                                      ActorUnkCASE::func_ov063_0215b244, ActorUnkCASE::func_ov063_0215b2c4};
-
-static PTMF<ActorUnkCASE> data_ov063_02163110[0x6] = {ActorUnkCASE::func_ov063_0215af54, ActorUnkCASE::func_ov063_0215af5c,
-                                                      ActorUnkCASE::func_ov063_0215afa4, ActorUnkCASE::func_ov063_0215b054,
-                                                      ActorUnkCASE::func_ov063_0215b1bc, ActorUnkCASE::func_ov063_0215b2b0};
-
 extern Mat4x3p data_027e0964;
 extern "C" void func_01ffa60c(const Mat3p *, Mat3p *, Mat3p *);
 extern "C" void func_01ffa7a0(VecFx32 *, Mat3p *, VecFx32 *);
@@ -50,6 +42,14 @@ extern "C" unk32 func_ov017_020bef4c(ActorUnkCASE *param1, unk32 param2);
 // Other
 extern "C" void G3d_GetCurrentMtx(Mat4x3p *mtx1, Mat3p *mtx2);
 
+extern PTMF<ActorUnkCASE> data_ov063_021630e0[0x6]; //= {ActorUnkCASE::func_ov063_0215af58, ActorUnkCASE::func_ov063_0215af60,
+                                                    // ActorUnkCASE::func_ov063_0215afb8, ActorUnkCASE::func_ov063_0215b090,
+                                                    // ActorUnkCASE::func_ov063_0215b244, ActorUnkCASE::func_ov063_0215b2c4};
+                                                    //
+extern PTMF<ActorUnkCASE> data_ov063_02163110[0x6]; //= {ActorUnkCASE::func_ov063_0215af54, ActorUnkCASE::func_ov063_0215af5c,
+                                                    // ActorUnkCASE::func_ov063_0215afa4, ActorUnkCASE::func_ov063_0215b054,
+                                                    // ActorUnkCASE::func_ov063_0215b1bc, ActorUnkCASE::func_ov063_0215b2b0};
+
 DECL_PROFILE(ActorProfileUnkCASE);
 
 Actor *ActorProfileUnkCASE::Create() {
@@ -61,12 +61,6 @@ ActorProfileUnkCASE::ActorProfileUnkCASE() :
     VecFx32_Init(0, 0x666, 0, &mUnk_04.pos);
     mUnk_04.size = 0x800;
 }
-
-UnkStruct_ov000_020b19f0::UnkStruct_ov000_020b19f0(G3d_Model *pModel) :
-    ModelRender(pModel) {}
-
-UnkStruct_ov000_020b3268::UnkStruct_ov000_020b3268(G3d_Model *pModel) :
-    UnkStruct_ov000_020b19f0(pModel) {}
 
 UnkStruct_ov063_021631a0::UnkStruct_ov063_021631a0(G3d_Model *pModel) :
     UnkStruct_ov000_020b3268(pModel),
@@ -102,8 +96,8 @@ bool ActorUnkCASE_150::vfunc_04() {
     return Actor_C4::vfunc_04();
 }
 
-void ActorUnkCASE_150::vfunc_0C(unk32 param1) {
-    ((ActorUnkCASE *) mUnk_20)->func_ov063_0215b8e8(*(unk32 **) &param1);
+void ActorUnkCASE_150::vfunc_0C(unk32 *param1) {
+    ((ActorUnkCASE *) mUnk_20)->func_ov063_0215b8e8(param1);
     Actor_C4::vfunc_0C(param1);
 }
 
@@ -139,6 +133,13 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_38          = (Actor_38 *) &mUnk_1E8;
     mUnk_38->mUnk_08 = 4;
     mUnk_A8          = &data_ov063_02162558;
+}
+
+static inline void Cylinder_Init(VecFx32 *vec, fx32 size, Cylinder *cylinder) {
+    cylinder->pos.x = vec->x;
+    cylinder->pos.y = vec->y;
+    cylinder->pos.z = vec->z;
+    cylinder->size  = size;
 }
 
 void ActorUnkCASE::vfunc_10(Cylinder *param1) {

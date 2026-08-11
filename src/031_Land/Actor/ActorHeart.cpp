@@ -451,7 +451,7 @@ bool ActorHeart_C4::vfunc_04() {
     return this->Actor_C4::vfunc_04();
 }
 
-void ActorHeart_C4::vfunc_0C(unk32 param1) {
+void ActorHeart_C4::vfunc_0C(unk32 *param1) {
     this->GetActorPtr<ActorHeart>()->SetState(ActorHeartState_1);
     this->Actor_C4::vfunc_0C(param1);
 }

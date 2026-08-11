@@ -547,7 +547,7 @@ bool ActorItemDrop_C4::vfunc_04() {
     return Actor_C4::vfunc_04();
 }
 
-void ActorItemDrop_C4::vfunc_0C(unk32 param1) {
+void ActorItemDrop_C4::vfunc_0C(unk32 *param1) {
     this->GetActorPtr<ActorItemDrop>()->SetState(ActorItemDropState_1);
     Actor_C4::vfunc_0C(param1);
 }

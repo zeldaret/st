@@ -453,7 +453,7 @@ bool ActorTearLight_194::vfunc_04() {
     return this->Actor_C4::vfunc_04();
 }
 
-void ActorTearLight_194::vfunc_0C(unk32 param1) {
+void ActorTearLight_194::vfunc_0C(unk32 *param1) {
     this->GetActorPtr<ActorTearLight>()->func_ov071_0215fca4();
     return this->Actor_C4::vfunc_0C(param1);
 }
