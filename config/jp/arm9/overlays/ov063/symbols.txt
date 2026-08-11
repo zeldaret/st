@@ -427,7 +427,7 @@ data_ov063_02163068 kind:data(any) addr:0x02164e88
 data_ov063_02163080 kind:data(any) addr:0x02164ea0
 data_ov063_02163098 kind:data(any) addr:0x02164eb8
 data_ov063_021630b0 kind:data(any) addr:0x02164ed0
-data_ov063_02164ee8 kind:data(any) addr:0x02164ee8
+data_ov063_021630c8 kind:data(any) addr:0x02164ee8
 data_ov063_021630e0 kind:data(any) addr:0x02164f00
 data_ov063_02163110 kind:data(any) addr:0x02164f30
 _ZTV16ActorUnkCASE_150 kind:data(any) addr:0x02164f60

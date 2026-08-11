@@ -42,13 +42,33 @@ extern "C" unk32 func_ov017_020bef4c(ActorUnkCASE *param1, unk32 param2);
 // Other
 extern "C" void G3d_GetCurrentMtx(Mat4x3p *mtx1, Mat3p *mtx2);
 
-extern PTMF<ActorUnkCASE> data_ov063_021630e0[0x6]; //= {ActorUnkCASE::func_ov063_0215af58, ActorUnkCASE::func_ov063_0215af60,
-                                                    // ActorUnkCASE::func_ov063_0215afb8, ActorUnkCASE::func_ov063_0215b090,
-                                                    // ActorUnkCASE::func_ov063_0215b244, ActorUnkCASE::func_ov063_0215b2c4};
-                                                    //
-extern PTMF<ActorUnkCASE> data_ov063_02163110[0x6]; //= {ActorUnkCASE::func_ov063_0215af54, ActorUnkCASE::func_ov063_0215af5c,
-                                                    // ActorUnkCASE::func_ov063_0215afa4, ActorUnkCASE::func_ov063_0215b054,
-                                                    // ActorUnkCASE::func_ov063_0215b1bc, ActorUnkCASE::func_ov063_0215b2b0};
+struct UnkStruct_data_ov063_021630c8 {
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+
+    UnkStruct_data_ov063_021630c8(unk32 a, unk32 b, unk32 c, unk32 d, unk32 e, unk32 f) {
+        mUnk_00 = a;
+        mUnk_04 = b;
+        mUnk_08 = c;
+        mUnk_0C = d;
+        mUnk_10 = e;
+        mUnk_14 = f;
+    }
+};
+
+const UnkStruct_data_ov063_021630c8 data_ov063_021630c8(0x5EC, 0x785, 0xFFFFFD48, 0x7AE, 0x112, 0xFFFFECA4);
+
+static PTMF<ActorUnkCASE> data_ov063_021630e0[0x6] = {ActorUnkCASE::func_ov063_0215af58, ActorUnkCASE::func_ov063_0215af60,
+                                                      ActorUnkCASE::func_ov063_0215afb8, ActorUnkCASE::func_ov063_0215b090,
+                                                      ActorUnkCASE::func_ov063_0215b244, ActorUnkCASE::func_ov063_0215b2c4};
+
+static PTMF<ActorUnkCASE> data_ov063_02163110[0x6] = {ActorUnkCASE::func_ov063_0215af54, ActorUnkCASE::func_ov063_0215af5c,
+                                                      ActorUnkCASE::func_ov063_0215afa4, ActorUnkCASE::func_ov063_0215b054,
+                                                      ActorUnkCASE::func_ov063_0215b1bc, ActorUnkCASE::func_ov063_0215b2b0};
 
 DECL_PROFILE(ActorProfileUnkCASE);
 
