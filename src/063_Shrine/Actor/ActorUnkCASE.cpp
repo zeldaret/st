@@ -1,4 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
 #define VECFX32_CTORS //! TODO: remove this hack
 
 #include "Actor/ActorUnkCASE.hpp"
@@ -11,8 +10,10 @@
 #include "MapObject/MapObjectProfile_Derived2_20.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
+#include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "flags.h"
 #include "nitro/fx.h"
@@ -102,7 +103,7 @@ bool ActorUnkCASE_150::vfunc_04() {
 }
 
 void ActorUnkCASE_150::vfunc_0C(unk32 param1) {
-    ((ActorUnkCASE *) mUnk_20)->func_ov063_0215b8e8(param1);
+    ((ActorUnkCASE *) mUnk_20)->func_ov063_0215b8e8(*(unk32 **) &param1);
     Actor_C4::vfunc_0C(param1);
 }
 
@@ -442,8 +443,20 @@ void ActorUnkCASE::func_ov063_0215b2b0(void) {
 // Matched
 void ActorUnkCASE::func_ov063_0215b2c4(void) {}
 
-void ActorUnkCASE::func_ov063_0215b6c8(VecFx32 *param1, UnkAngleStruct angle) {}
-void ActorUnkCASE::func_ov063_0215b724(void) {}
+void ActorUnkCASE::func_ov063_0215b6c8(VecFx32 *param1, UnkAngleStruct angle) {
+    VecFx32 vec = *param1;
+    VecFx32_Copy(&vec, &mPos);
+    VecFx32_Copy(&vec, &mPrevPos);
+    mAngle = *(s16 *) &angle.angle;
+}
+
+void ActorUnkCASE::func_ov063_0215b724(void) {
+    this->func_ov000_020984d0();
+    data_027e0cec->func_ov000_0209feac(0xCC06, &mPos, 2, 0, 0);
+    data_027e0cec->func_ov000_0209feac(0xCC07, &mPos, 2, 0, 0);
+    data_027e0cec->func_ov000_0209feac(0x823, &mPos, 2, 0, 0);
+    data_027e09a8->func_ov000_02071b30(0x9865, &mPos, 0);
+}
 
 void ActorUnkCASE::func_ov063_0215b814(ActorRef ref) {
     mUnk_1E4 = ref;
@@ -478,13 +491,16 @@ void ActorUnkCASE::func_ov063_0215b854(void) {
     this->func_ov063_0215aefc(2);
 }
 
-void ActorUnkCASE::func_ov063_0215b8e8(unk32 param1) {
-    unk32 *param1Array = *(unk32 **) &param1;
+static inline bool VecFx32_IsZero(VecFx32 *vec) {
+    return vec->x == 0 && vec->y == 0 && vec->z == 0;
+}
+
+void ActorUnkCASE::func_ov063_0215b8e8(unk32 *param1) {
 
     if (mUnk_14C != NULL) {
         ((ActorUnkCANS *) mUnk_14C)->func_ov063_0215a428();
 
-        if (param1Array[0] == 0 && param1Array[1] == 0 && param1Array[2] == 0) {
+        if (param1[0] == 0 && param1[1] == 0 && param1[2] == 0) {
             this->func_ov063_0215aefc(0);
             return;
         }
@@ -493,13 +509,14 @@ void ActorUnkCASE::func_ov063_0215b8e8(unk32 param1) {
         mUnk_14C = NULL;
     }
 
-    if (param1Array[0] == 0 && param1Array[1] == 0 && param1Array[2] == 0) {
+    if (VecFx32_IsZero((VecFx32 *) param1)) {
         this->func_ov063_0215aefc(4);
     } else {
+        unk32 x          = param1[0];
+        unk32 y          = param1[1];
+        unk32 z          = param1[2];
         mUnk_150.mUnk_04 = 0;
-        mUnk_1D8         = param1Array[0];
-        mUnk_1DC         = param1Array[1];
-        mUnk_1E0         = param1Array[2];
+        VecFx32_Init(x, y, z, (VecFx32 *) &mUnk_1D8);
         this->func_ov063_0215aefc(3);
     }
 }
