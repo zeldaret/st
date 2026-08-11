@@ -1246,11 +1246,11 @@ _ZN19ActorProfileUnkEFSB10GetProfileEv kind:function(arm,size=0xc) addr:0x020fb4
 _ZN19ActorProfileUnkEFSB6CreateEv kind:function(arm,size=0x24) addr:0x020fb4b8
 _ZN19ActorProfileUnkEFSBC1Ev kind:function(arm,size=0x28) addr:0x020fb4dc
 _ZN12ActorUnkEFSBC1Ev kind:function(arm,size=0x110) addr:0x020fb504
-_ZN12ActorUnkEFSB19func_ov031_020fb614Ev kind:function(arm,size=0xb8) addr:0x020fb614
-_ZN12ActorUnkEFSB19func_ov031_020fb6ccEv kind:function(arm,size=0x38) addr:0x020fb6cc
-_ZN12ActorUnkEFSB19func_ov031_020fb704Ev kind:function(arm,size=0x14) addr:0x020fb704
-_ZN12ActorUnkEFSB19func_ov031_020fb718Ev kind:function(arm,size=0x8) addr:0x020fb718
-_ZN12ActorUnkEFSB19func_ov031_020fb720Ev kind:function(arm,size=0x70) addr:0x020fb720
+_ZN12ActorUnkEFSB8vfunc_18Ei kind:function(arm,size=0xb8) addr:0x020fb614
+_ZN12ActorUnkEFSB8vfunc_20Ev kind:function(arm,size=0x38) addr:0x020fb6cc
+_ZN12ActorUnkEFSB8vfunc_24Ev kind:function(arm,size=0x14) addr:0x020fb704
+_ZN12ActorUnkEFSB8vfunc_54Ei kind:function(arm,size=0x8) addr:0x020fb718
+_ZN12ActorUnkEFSB8vfunc_2CEi kind:function(arm,size=0x70) addr:0x020fb720
 _ZN12ActorUnkEFSBD1Ev kind:function(arm,size=0x30) addr:0x020fb790
 _ZN12ActorUnkEFSBD0Ev kind:function(arm,size=0x38) addr:0x020fb7c0
 _ZN19ActorProfileUnkEFSBD1Ev kind:function(arm,size=0x14) addr:0x020fb7f8
@@ -2097,7 +2097,7 @@ __sinit_ActorRollingStone.cpp kind:function(arm,size=0x50) addr:0x02111800
 __sinit_ActorItemDrop.cpp kind:function(arm,size=0x138) addr:0x02111850 local
 __sinit_ActorUnkMLCK.cpp kind:function(arm,size=0x74) addr:0x02111988
 __sinit_ActorUnkCLLT.cpp kind:function(arm,size=0x50) addr:0x021119fc
-__sinit_ActorUnkEFSB.cpp kind:function(arm,size=0x50) addr:0x02111a4c
+__sinit_ActorUnkEFSB.cpp kind:function(arm,size=0x50) addr:0x02111a4c local
 __sinit_ActorUnkNFSP.cpp kind:function(arm,size=0x50) addr:0x02111a9c local
 __sinit_MapObjectDoorBase.cpp kind:function(arm,size=0x3c) addr:0x02111aec local
 __sinit_MapObjectDoorDangerSpawn.cpp kind:function(arm,size=0x64) addr:0x02111b28
@@ -2161,7 +2161,7 @@ __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x02112724
 .p__sinit_ActorItemDrop.cpp kind:data(word) addr:0x021127fc local
 .p__sinit_ActorUnkMLCK.cpp kind:data(word) addr:0x02112800
 .p__sinit_ActorUnkCLLT.cpp kind:data(word) addr:0x02112804
-.p__sinit_ActorUnkEFSB.cpp kind:data(word) addr:0x02112808
+.p__sinit_ActorUnkEFSB.cpp kind:data(word) addr:0x02112808 local
 .p__sinit_ActorUnkNFSP.cpp kind:data(word) addr:0x0211280c local
 .p__sinit_MapObjectDoorBase.cpp kind:data(word) addr:0x02112810 local
 .p__sinit_MapObjectDoorDangerSpawn.cpp kind:data(word) addr:0x02112814
@@ -2407,9 +2407,9 @@ _ZTV12ActorUnkMLCK kind:data(any) addr:0x02114d70
 _ZTV15ActorUnkMLCK_94 kind:data(any) addr:0x02114dec
 _ZTV19data_ov031_02114e1c kind:data(any) addr:0x02114e1c
 _ZTV19data_ov031_02114e40 kind:data(any) addr:0x02114e40
-_ZTV19data_ov031_02114eac kind:data(any) addr:0x02114eac
-data_ov031_02114ed0 kind:data(any) addr:0x02114ed0
-_ZTV19data_ov031_02114f00 kind:data(any) addr:0x02114f00
+_ZTV19ActorProfileUnkEFSB kind:data(any) addr:0x02114eac
+data_ov031_02114ed0 kind:data(any) addr:0x02114ed0 local
+_ZTV12ActorUnkEFSB kind:data(any) addr:0x02114f00
 _ZTV15ActorUnkNFSP_C0 kind:data(any) addr:0x02114f60
 _ZTV19ActorProfileUnkNFSP kind:data(any) addr:0x02114f78
 _ZTV12ActorUnkNFSP kind:data(any) addr:0x02114f9c
@@ -2615,7 +2615,7 @@ _ZGVN15ProfileInstanceI19ActorProfileUnkCLLTE8sProfileE kind:bss addr:0x02116fe8
 @10926 kind:bss addr:0x02116fec
 _ZN15ProfileInstanceI19ActorProfileUnkCLLTE8sProfileE kind:bss addr:0x02116ff8
 _ZGVN15ProfileInstanceI19ActorProfileUnkEFSBE8sProfileE kind:bss addr:0x02117034
-@10932 kind:bss addr:0x02117038
+@10932 kind:bss addr:0x02117038 local
 _ZN15ProfileInstanceI19ActorProfileUnkEFSBE8sProfileE kind:bss addr:0x02117044
 _ZGVN15ProfileInstanceI19ActorProfileUnkNFSPE8sProfileE kind:bss addr:0x0211711c
 @10938 kind:bss addr:0x02117120 local
