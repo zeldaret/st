@@ -106,8 +106,7 @@ public:
 
     ActorUnkMLCK();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override; // func_ov031_020fac64
-    /* 4C */ virtual ~ActorUnkMLCK() override;
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;               // func_ov031_020fac64
     /* 54 */ virtual void vfunc_54(unk32 param1, unk32 param2) override; // func_ov031_020fad88
     /* 58 */ virtual void vfunc_58() override;                           // func_ov031_020fada8
     /* 5C */ virtual void vfunc_5C() override;                           // func_ov031_020fadb4
@@ -130,7 +129,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkMLCK();
-    ~ActorProfileUnkMLCK();
 
     /* 0C */ virtual Actor *Create();
 

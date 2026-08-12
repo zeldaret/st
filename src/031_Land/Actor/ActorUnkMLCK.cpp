@@ -262,6 +262,3 @@ bool ActorUnkMLCK::func_ov031_020fb204(unk32 param1) {
     }
     return false;
 }
-
-ActorUnkMLCK::~ActorUnkMLCK() {}
-ActorProfileUnkMLCK::~ActorProfileUnkMLCK() {}
