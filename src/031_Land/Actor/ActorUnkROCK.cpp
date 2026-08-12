@@ -14,6 +14,7 @@ Actor *ActorProfileUnkROCK::Create() {
     return new(HeapIndex_2) ActorUnkROCK();
 }
 
+// non-matching
 ActorProfileUnkROCK::ActorProfileUnkROCK() :
     ActorProfileUnkROCK_Base(ActorId_ROCK) {
     this->mUnk_04.Init(FLOAT_TO_FX32(0.5f));
@@ -104,6 +105,7 @@ void ActorUnkROCK::vfunc_2C(unk32 param1) {
     data_027e09b4->func_01fff60c(&this->mPos, 0xC00, 0xC00, 0x1F, 0x0, 0x0);
 }
 
+// non-matching
 bool ActorUnkROCK::Grab(ActorGrabParams param1) {
     if (param1.unk_00 != 0x100 || param1.unk_02 != 1) {
         return false;
@@ -115,6 +117,7 @@ bool ActorUnkROCK::Grab(ActorGrabParams param1) {
     return true;
 }
 
+// non-matching
 bool ActorUnkROCK::Drop(ActorGrabParams param1, const VecFx32 *param2) {
     if (!this->Actor::Drop(param1, param2)) {
         return false;
