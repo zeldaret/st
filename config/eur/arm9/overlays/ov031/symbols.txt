@@ -846,30 +846,30 @@ _ZN8ActorPot19func_ov031_020f0f44Ev kind:function(arm,size=0xc) addr:0x020f0f44
 _ZN8ActorPotD1Ev kind:function(arm,size=0x30) addr:0x020f0f50
 _ZN8ActorPotD0Ev kind:function(arm,size=0x38) addr:0x020f0f80
 _ZN15ActorProfilePotD1Ev kind:function(arm,size=0x14) addr:0x020f0fb8
-_ZN19ActorProfileUnkNITF10GetProfileEv kind:function(arm,size=0xc) addr:0x020f0fcc
-_ZN19ActorProfileUnkNITF6CreateEv kind:function(arm,size=0x24) addr:0x020f0fd8
-_ZN19ActorProfileUnkNITFC1Ev kind:function(arm,size=0x30) addr:0x020f0ffc
-_ZN12ActorUnkNITFC1Ev kind:function(arm,size=0x94) addr:0x020f102c
+_ZN22ActorProfileItemFlower10GetProfileEv kind:function(arm,size=0xc) addr:0x020f0fcc
+_ZN22ActorProfileItemFlower6CreateEv kind:function(arm,size=0x24) addr:0x020f0fd8
+_ZN22ActorProfileItemFlowerC1Ev kind:function(arm,size=0x30) addr:0x020f0ffc
+_ZN15ActorItemFlowerC1Ev kind:function(arm,size=0x94) addr:0x020f102c
 _ZN26ModelRender_ov031_0211578cD1Ev kind:function(arm,size=0x14) addr:0x020f10c0
-_ZN12ActorUnkNITF8vfunc_18Ei kind:function(arm,size=0x28) addr:0x020f10d4
-_ZN12ActorUnkNITF8vfunc_5CEs kind:function(arm,size=0x44) addr:0x020f10fc
-_ZN12ActorUnkNITF8vfunc_20Ev kind:function(arm,size=0x38) addr:0x020f1140
-_ZN12ActorUnkNITF8vfunc_2CEi kind:function(arm,size=0x30) addr:0x020f1178
-_ZN12ActorUnkNITF19func_ov031_020f11a8Ev kind:function(arm,size=0xc) addr:0x020f11a8
-_ZN12ActorUnkNITF19func_ov031_020f11b4Ev kind:function(arm,size=0xc) addr:0x020f11b4
-_ZN12ActorUnkNITF19func_ov031_020f11c0Ev kind:function(arm,size=0xc) addr:0x020f11c0
-_ZN12ActorUnkNITF19func_ov031_020f11ccEv kind:function(arm,size=0xc) addr:0x020f11cc
-_ZN12ActorUnkNITF19func_ov031_020f11d8Ev kind:function(arm,size=0xc) addr:0x020f11d8
-_ZN12ActorUnkNITF19func_ov031_020f11e4Ev kind:function(arm,size=0xc) addr:0x020f11e4
-_ZN12ActorUnkNITF19func_ov031_020f11f0Ev kind:function(arm,size=0xc) addr:0x020f11f0
-_ZN12ActorUnkNITF19func_ov031_020f11fcEv kind:function(arm,size=0xc) addr:0x020f11fc
-_ZN12ActorUnkNITF19func_ov031_020f1208Ev kind:function(arm,size=0x14) addr:0x020f1208
-_ZN12ActorUnkNITF19func_ov031_020f121cEv kind:function(arm,size=0x14) addr:0x020f121c
-_ZN12ActorUnkNITF19func_ov031_020f1230Ev kind:function(arm,size=0xd8) addr:0x020f1230
-_ZN12ActorUnkNITF19func_ov031_020f1308Ev kind:function(arm,size=0xc) addr:0x020f1308
-_ZN12ActorUnkNITFD1Ev kind:function(arm,size=0x30) addr:0x020f1314
-_ZN12ActorUnkNITFD0Ev kind:function(arm,size=0x38) addr:0x020f1344
-_ZN19ActorProfileUnkNITFD1Ev kind:function(arm,size=0x14) addr:0x020f137c
+_ZN15ActorItemFlower8vfunc_18Ei kind:function(arm,size=0x28) addr:0x020f10d4
+_ZN15ActorItemFlower8vfunc_5CEs kind:function(arm,size=0x44) addr:0x020f10fc
+_ZN15ActorItemFlower8vfunc_20Ev kind:function(arm,size=0x38) addr:0x020f1140
+_ZN15ActorItemFlower8vfunc_2CEi kind:function(arm,size=0x30) addr:0x020f1178
+_ZN15ActorItemFlower19func_ov031_020f11a8Ev kind:function(arm,size=0xc) addr:0x020f11a8
+_ZN15ActorItemFlower19func_ov031_020f11b4Ev kind:function(arm,size=0xc) addr:0x020f11b4
+_ZN15ActorItemFlower19func_ov031_020f11c0Ev kind:function(arm,size=0xc) addr:0x020f11c0
+_ZN15ActorItemFlower19func_ov031_020f11ccEv kind:function(arm,size=0xc) addr:0x020f11cc
+_ZN15ActorItemFlower19func_ov031_020f11d8Ev kind:function(arm,size=0xc) addr:0x020f11d8
+_ZN15ActorItemFlower19func_ov031_020f11e4Ev kind:function(arm,size=0xc) addr:0x020f11e4
+_ZN15ActorItemFlower19func_ov031_020f11f0Ev kind:function(arm,size=0xc) addr:0x020f11f0
+_ZN15ActorItemFlower19func_ov031_020f11fcEv kind:function(arm,size=0xc) addr:0x020f11fc
+_ZN15ActorItemFlower19func_ov031_020f1208Ev kind:function(arm,size=0x14) addr:0x020f1208
+_ZN15ActorItemFlower19func_ov031_020f121cEv kind:function(arm,size=0x14) addr:0x020f121c
+_ZN15ActorItemFlower19func_ov031_020f1230Ev kind:function(arm,size=0xd8) addr:0x020f1230
+_ZN15ActorItemFlower19func_ov031_020f1308Ev kind:function(arm,size=0xc) addr:0x020f1308
+_ZN15ActorItemFlowerD1Ev kind:function(arm,size=0x30) addr:0x020f1314
+_ZN15ActorItemFlowerD0Ev kind:function(arm,size=0x38) addr:0x020f1344
+_ZN22ActorProfileItemFlowerD1Ev kind:function(arm,size=0x14) addr:0x020f137c
 _ZN21ActorProfileShotArrow10GetProfileEv kind:function(arm,size=0xc) addr:0x020f1390
 _ZN21ActorProfileShotArrow6CreateEv kind:function(arm,size=0x24) addr:0x020f139c
 _ZN21ActorProfileShotArrowC1Ev kind:function(arm,size=0x44) addr:0x020f13c0
@@ -2083,7 +2083,7 @@ __sinit_ActorHeart.cpp kind:function(arm,size=0x6c) addr:0x0211139c
 __sinit_ActorUnkRMTG.cpp kind:function(arm,size=0x50) addr:0x02111408 local
 __sinit_ActorUnkSCCN.cpp kind:function(arm,size=0x50) addr:0x02111458
 __sinit_ActorPot.cpp kind:function(arm,size=0x50) addr:0x021114a8 local
-__sinit_ActorUnkNITF.cpp kind:function(arm,size=0x50) addr:0x021114f8 local
+__sinit_ActorItemFlower.cpp kind:function(arm,size=0x50) addr:0x021114f8 local
 __sinit_ActorShotArrow.cpp kind:function(arm,size=0x50) addr:0x02111548
 __sinit_ActorUnkATTG.cpp kind:function(arm,size=0x50) addr:0x02111598
 __sinit_ActorUnkNTTZ.cpp kind:function(arm,size=0x50) addr:0x021115e8 local
@@ -2147,7 +2147,7 @@ __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x02112724
 .p__sinit_ActorUnkRMTG.cpp kind:data(word) addr:0x021127c4 local
 .p__sinit_ActorUnkSCCN.cpp kind:data(word) addr:0x021127c8
 .p__sinit_ActorPot.cpp kind:data(word) addr:0x021127cc local
-.p__sinit_ActorUnkNITF.cpp kind:data(word) addr:0x021127d0 local
+.p__sinit_ActorItemFlower.cpp kind:data(word) addr:0x021127d0 local
 .p__sinit_ActorShotArrow.cpp kind:data(word) addr:0x021127d4
 .p__sinit_ActorUnkATTG.cpp kind:data(word) addr:0x021127d8
 .p__sinit_ActorUnkNTTZ.cpp kind:data(word) addr:0x021127dc local
@@ -2343,10 +2343,10 @@ _ZTV15ActorProfilePot kind:data(any) addr:0x0211403c
 data_ov031_02114060 kind:data(any) addr:0x02114060 local
 data_ov031_021140a0 kind:data(any) addr:0x021140a0 local
 _ZTV8ActorPot kind:data(any) addr:0x021140e0
-_ZTV19ActorProfileUnkNITF kind:data(any) addr:0x02114150
+_ZTV22ActorProfileItemFlower kind:data(any) addr:0x02114150
 data_ov031_02114174 kind:data(any) addr:0x02114174 local
 data_ov031_021141b4 kind:data(any) addr:0x021141b4 local
-_ZTV12ActorUnkNITF kind:data(any) addr:0x021141f4
+_ZTV15ActorItemFlower kind:data(any) addr:0x021141f4
 _ZTV18ActorShotArrow_194 kind:data(any) addr:0x02114264
 _ZTV18ActorShotArrow_178 kind:data(any) addr:0x02114280
 _ZTV21ActorProfileShotArrow kind:data(any) addr:0x0211429c
@@ -2564,9 +2564,9 @@ _ZN15ProfileInstanceI19ActorProfileUnkSCCNE8sProfileE kind:bss addr:0x0211699c
 _ZGVN15ProfileInstanceI15ActorProfilePotE8sProfileE kind:bss addr:0x021169d8
 @10848 kind:bss addr:0x021169dc local
 _ZN15ProfileInstanceI15ActorProfilePotE8sProfileE kind:bss addr:0x021169e8
-_ZGVN15ProfileInstanceI19ActorProfileUnkNITFE8sProfileE kind:bss addr:0x02116a24
+_ZGVN15ProfileInstanceI22ActorProfileItemFlowerE8sProfileE kind:bss addr:0x02116a24
 @10854 kind:bss addr:0x02116a28 local
-_ZN15ProfileInstanceI19ActorProfileUnkNITFE8sProfileE kind:bss addr:0x02116a34
+_ZN15ProfileInstanceI22ActorProfileItemFlowerE8sProfileE kind:bss addr:0x02116a34
 _ZGVN15ProfileInstanceI21ActorProfileShotArrowE8sProfileE kind:bss addr:0x02116a70
 @10860 kind:bss addr:0x02116a74
 _ZN15ProfileInstanceI21ActorProfileShotArrowE8sProfileE kind:bss addr:0x02116a80

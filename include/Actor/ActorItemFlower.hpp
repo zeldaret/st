@@ -17,26 +17,26 @@ public:
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override; // func_ov031_02102c30
 };
 
-enum ActorUnkNITFState_ {
-    ActorUnkNITFState_0 = 0,
-    ActorUnkNITFState_1 = 1,
-    ActorUnkNITFState_2 = 2,
-    ActorUnkNITFState_3 = 3,
-    ActorUnkNITFState_4 = 4,
-    ActorUnkNITFState_5 = 5,
-    ActorUnkNITFState_6 = 6,
-    ActorUnkNITFState_7 = 7,
-    ActorUnkNITFState_Max,
+enum ActorItemFlowerState_ {
+    ActorItemFlowerState_0 = 0,
+    ActorItemFlowerState_1 = 1,
+    ActorItemFlowerState_2 = 2,
+    ActorItemFlowerState_3 = 3,
+    ActorItemFlowerState_4 = 4,
+    ActorItemFlowerState_5 = 5,
+    ActorItemFlowerState_6 = 6,
+    ActorItemFlowerState_7 = 7,
+    ActorItemFlowerState_Max,
 };
 
-class ActorUnkNITF : public Actor_ov031_02113fd4 {
+class ActorItemFlower : public Actor_ov031_02113fd4 {
 public:
     /* 000 (base) */
     /* 110 */ ModelRender_ov031_0211578c mUnk_110;
     /* 170 */ STRUCT_PAD(0x170, 0x17C);
     /* 17C */
 
-    ActorUnkNITF();
+    ActorItemFlower();
 
     /* 18 */ bool vfunc_18(unk32 param1);
     /* 20 */ virtual void vfunc_20() override;
@@ -57,13 +57,13 @@ public:
     void func_ov031_020f1308();
 };
 
-class ActorProfileUnkNITF : public ActorProfile {
+class ActorProfileItemFlower : public ActorProfile {
 public:
     /* 00 (base) */
 
-    ActorProfileUnkNITF();
+    ActorProfileItemFlower();
 
     /* 0C */ virtual Actor *Create();
 
-    static ActorProfileUnkNITF *GetProfile();
+    static ActorProfileItemFlower *GetProfile();
 };

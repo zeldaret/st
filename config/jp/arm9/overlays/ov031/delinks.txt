@@ -98,7 +98,7 @@ src/031_Land/Actor/ActorPot.cpp:
     .data       start:0x02115ddc end:0x02115ef0
     .bss        start:0x02118778 end:0x021187c4
 
-src/031_Land/Actor/ActorUnkNITF.cpp:
+src/031_Land/Actor/ActorItemFlower.cpp:
     complete
     .text       start:0x020f29c8 end:0x020f2d8c
     .init       start:0x02113268 end:0x021132b8

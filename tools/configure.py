@@ -483,7 +483,7 @@ config.libs = [
             Object("031_Land/Actor/ActorItemTornado.cpp"),
             Object("031_Land/Actor/ActorUnkMLCK.cpp"),
             Object("031_Land/Actor/ActorUnkNFSP.cpp"),
-            Object("031_Land/Actor/ActorUnkNITF.cpp"),
+            Object("031_Land/Actor/ActorItemFlower.cpp"),
             Object("031_Land/Actor/ActorUnkNORE.cpp"),
             Object("031_Land/Actor/ActorUnkNTTZ.cpp"),
             Object("031_Land/Actor/ActorPot.cpp"),
