@@ -69,7 +69,7 @@ MapObjectUnkSTAT::MapObjectUnkSTAT() :
 }
 
 bool MapObjectUnkSTAT::vfunc_00(void) {
-    this->func_ov063_0215fc40(mUnk_20.mParams[0]);
+    this->func_ov063_0215fc40(mUnk_20.mParams[0] ? 1 : 0);
 
     if (mUnk_20.mParams[2] == 1) {
         mPos.x += FLOAT_TO_FX32(.5f);
