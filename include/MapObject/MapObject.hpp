@@ -120,7 +120,10 @@ public:
     /* 00 (vtable) */
     /* 04 */ VecFx32 mPos;
     /* 10 */ MapObject_10 *mUnk_10;
-    /* 14 */ s16 mUnk_14;
+    /* 14 */ union {
+        s16 mUnk_14;
+        UnkAngleStruct mUnk_14_AngleStruct;
+    };
     /* 16 */ MapObjState mState;
     /* 18 */ unk8 mUnk_18[2]; // related to Link walking to the map object when touched
     /* 1A */ unk8 mUnk_1A;

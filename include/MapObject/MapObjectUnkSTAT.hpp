@@ -19,8 +19,8 @@ public:
     /* 50 */ unk32 mUnk_50;
     /* 54 */ unk32 mUnk_54;
     /* 58 */ unk16 mUnk_58;
-    /* 5A */ unk16 mUnk_5A;
-    /* 5C */ unk16 mUnk_5C;
+    /* 5A */ volatile u16 mUnk_5A;
+    /* 5C */ u16 mUnk_5C;
     /* 5E */ STRUCT_PAD(0x5E, 0x60);
     /* 60 */ unk32 mUnk_60;
     /* 64 */ unk32 mUnk_64;
@@ -38,9 +38,9 @@ public:
     void func_ov063_0215f710(void);
     void func_ov063_0215f798(void);
     void func_ov063_0215f7ac(void);
-    void func_ov063_0215fc40(void);
+    void func_ov063_0215fc40(bool param1);
     void func_ov063_0215fc88(void);
-    void func_ov063_0215fce0(void);
+    unk32 func_ov063_0215fce0(void);
 };
 
 class MapObjectProfileUnkSTAT_Base_D4 : public MapObject_10 {

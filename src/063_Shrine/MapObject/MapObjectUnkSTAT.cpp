@@ -8,10 +8,12 @@
 
 extern MapObject_10 data_ov063_021644e4;
 
+extern "C" fx32 func_01ffb428(unk32, unk32);
+
 DECL_PROFILE(MapObjectProfileUnkSTAT);
 
 MapObject *MapObjectProfileUnkSTAT::Create() {
-    return new(HeapIndex_2) MapObjectUnkSTAT();
+    return new(HeapIndex_ITCM) MapObjectUnkSTAT();
 }
 
 MapObjectProfileUnkSTAT::MapObjectProfileUnkSTAT() :
@@ -40,14 +42,54 @@ MapObjectUnkSTAT::MapObjectUnkSTAT() :
     mUnk_10 = &data_ov063_021644e4;
 }
 
-bool MapObjectUnkSTAT::vfunc_00(void) {}
-void MapObjectUnkSTAT::vfunc_08(void) {}
-void MapObjectUnkSTAT::vfunc_0C(void) {}
-void MapObjectUnkSTAT::vfunc_14(void) {}
+bool MapObjectUnkSTAT::vfunc_00(void) {
+    this->func_ov063_0215fc40((bool) mUnk_20.mParams[0]);
+
+    if (mUnk_20.mParams[2] == 1) {
+        mPos.x += FLOAT_TO_FX32(.5f);
+    }
+
+    return true;
+}
+
+void MapObjectUnkSTAT::vfunc_08(void) {
+    if (mUnk_20.mParams[1]) {
+        mUnk_54 = func_01ffb428(mUnk_20.mParams[1] << 0xC, 0xA000);
+    }
+
+    switch (mUnk_4C) {
+        case 1:
+            this->func_ov063_0215f7ac();
+            break;
+        case 3:
+            if (!this->func_ov063_0215fce0()) {
+                this->func_ov063_0215fc40(true);
+            }
+            break;
+        case 0:
+        case 2:
+        default:
+            break;
+    }
+
+    if (mUnk_5A < mUnk_5C) {
+        mUnk_5A++;
+    }
+}
+
+void MapObjectUnkSTAT::vfunc_0C(void) {
+    this->vfunc_08();
+}
+
+void MapObjectUnkSTAT::vfunc_14(void) {
+    VecFx32 vec;
+    VecFx32_Init(mPos.x + mUnk_60, mPos.y + mUnk_64, mPos.z + mUnk_68, &vec);
+    mUnk_40.func_01ffc6d4(mUnk_14_AngleStruct, &vec);
+}
 
 void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {}
-void MapObjectUnkSTAT::func_ov063_0215fc40(void) {}
-void MapObjectUnkSTAT::func_ov063_0215fce0(void) {}
+void MapObjectUnkSTAT::func_ov063_0215fc40(bool param1) {}
+unk32 MapObjectUnkSTAT::func_ov063_0215fce0(void) {}
 
 MapObjectUnkSTAT::~MapObjectUnkSTAT() {}
 MapObjectProfileUnkSTAT::~MapObjectProfileUnkSTAT() {}
