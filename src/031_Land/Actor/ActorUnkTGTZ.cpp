@@ -53,7 +53,7 @@ ActorUnkTGTZ::ActorUnkTGTZ() :
     mUnk_094(NULL),
     mUnk_09C(true),
 #else
-    mUnk_094(NULL, 0xC, NULL),
+    mUnk_094(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkTGTZ)->mUnk_3C.mUnk_50), 0xC, &this->mUnk_100),
 #endif
     mUnk_1B4(NULL),
     mUnk_1B8(0x0),

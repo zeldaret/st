@@ -23,7 +23,8 @@ public:
     /* 09C */ bool mUnk_09C;
 #else
     /* 094 */ ActorUnkTGTZ_ModelRender mUnk_094;
-    /* 100 */ STRUCT_PAD(0x100, 0x190);
+    /* 100 */ unk32 mUnk_100;
+    /* 104 */ STRUCT_PAD(0x104, 0x190);
 #endif
     /* 190 */ Mat3p mUnk_190;
     /* 1B4 */ ActorUnkNTTZ *mUnk_1B4;
