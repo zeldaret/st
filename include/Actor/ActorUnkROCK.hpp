@@ -13,7 +13,7 @@ enum ActorUnkROCKState_ {
     ActorUnkROCKState_2 = 2,
     ActorUnkROCKState_3 = 3,
     ActorUnkROCKState_4 = 4,
-    ActorUnkROCKState_MAX,
+    ActorUnkROCKState_Max,
 };
 
 class ActorUnkROCK : public Actor {
