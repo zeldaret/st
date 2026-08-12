@@ -91,15 +91,19 @@ src/031_Land/Actor/ActorUnkSCCN.cpp:
     .bss        start:0x0211872c end:0x02118778
 
 src/031_Land/Actor/ActorPot.cpp:
+    complete
     .text       start:0x020f25fc end:0x020f29c8
     .init       start:0x02113218 end:0x02113268
     .ctor       start:0x02114558 end:0x0211455c
+    .data       start:0x02115ddc end:0x02115ef0
     .bss        start:0x02118778 end:0x021187c4
 
 src/031_Land/Actor/ActorUnkNITF.cpp:
+    complete
     .text       start:0x020f29c8 end:0x020f2d8c
     .init       start:0x02113268 end:0x021132b8
     .ctor       start:0x0211455c end:0x02114560
+    .data       start:0x02115ef0 end:0x02116004
     .bss        start:0x021187c4 end:0x02118810
 
 src/031_Land/Actor/ActorShotArrow.cpp:

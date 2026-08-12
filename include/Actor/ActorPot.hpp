@@ -27,7 +27,7 @@ public:
     /* 0C */ virtual void vfunc_0C();             // func_ov000_0207c008
 };
 
-class UnkStruct_ov031_02113fb8 : UnkStruct_ov000_020b2838 {
+class UnkStruct_ov031_02113fb8 : public UnkStruct_ov000_020b2838 {
 public:
     // data_ov031_02113fb8
     /* 00 */ virtual ~UnkStruct_ov031_02113fb8() override; // func_ov031_020f09f8 & func_ov031_020f0a14

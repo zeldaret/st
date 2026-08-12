@@ -58,7 +58,6 @@ public:
     }
 
     // data_ov000_020b27c8
-    /* 00 */ virtual ~UnkStruct_ov031_Items_01();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual bool vfunc_0C(Actor *param1, VecFx32 *vector);
     /* 10 */ virtual void vfunc_10(Actor *actor);

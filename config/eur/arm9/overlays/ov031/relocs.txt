@@ -4663,7 +4663,7 @@ from:0x02102ba0 kind:arm_call to:0x02011ff4 module:main
 from:0x02102bb4 kind:arm_call to:0x0209c9d8 module:overlay(0)
 from:0x02102bd0 kind:arm_call_thumb to:0x02057b54 module:overlay(0)
 from:0x02102bf0 kind:arm_call to:0x02102c00 module:overlay(31)
-from:0x02102bfc kind:load to:0x0211578c module:overlay(31)
+from:0x02102bfc kind:load to:0x02115784 module:overlay(31) add:0x8
 from:0x02102c18 kind:arm_call to:0x02057c38 module:overlay(0)
 from:0x02102c28 kind:arm_call to:0x02057c38 module:overlay(0)
 from:0x02102c88 kind:arm_call to:0x0200f218 module:main
