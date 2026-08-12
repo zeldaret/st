@@ -29,6 +29,3 @@ bool ActorUnkNORE::vfunc_18(unk32 param1) {
 
     return true;
 }
-
-ActorUnkNORE::~ActorUnkNORE() {}
-ActorProfileUnkNORE::~ActorProfileUnkNORE() {}
