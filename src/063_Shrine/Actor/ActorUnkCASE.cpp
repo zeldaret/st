@@ -188,12 +188,12 @@ void ActorUnkCASE::vfunc_20() {
     mUnk_150.mUnk_1C = 1;
 
     if (!func_ov017_020bef4c(this, 0x4000) && mUnk_48 != 0) {
-        unk32 val1 = 1;
+        bool cond = true;
         if (mState != 1 && mState != 2) {
-            val1 = 0;
+            cond = false;
         }
 
-        if (val1 == 0) {
+        if (!cond) {
             return;
         }
 
@@ -264,8 +264,8 @@ void ActorUnkCASE::vfunc_20() {
     // ((VecFx16 *) &mUnk_150.mUnk_08)->z = z + (((1 - cos_val) * 0x8000) >> 0x10);
     ((VecFx16 *) &mUnk_150.mUnk_08)->x = x + (s16) ((1 - sin_val) >> 1);
     ((VecFx16 *) &mUnk_150.mUnk_08)->z = z + (s16) ((1 - cos_val) >> 1);
-post:
 
+post:
     this->func_ov000_020989e0();
 
     if (((u32) mState == 5 || mState == 4) && (mUnk_124.mUnk_08 & 0x3FFFF) != 0) {
@@ -298,8 +298,7 @@ post:
 }
 
 void ActorUnkCASE::vfunc_24() {
-    u32 state = mState;
-    if (state != 1 && state != 2) {
+    if (mState != 1 && mState != 2) {
         return;
     }
     this->vfunc_20();
@@ -324,6 +323,7 @@ void ActorUnkCASE::vfunc_2C(unk32 param1) {
     }
 }
 
+// Static
 void ActorUnkCASE::func_ov063_0215acec(ActorRef *ref1, ActorRef ref2) {
     ActorParams params;
 
