@@ -2630,7 +2630,7 @@ from:0x020f09b4 kind:arm_call to:0x020984d0 module:overlay(0)
 from:0x020f09c4 kind:load to:0x027e0c90 module:dtcm
 from:0x020f09cc kind:load to:0x027e09a8 module:dtcm
 from:0x020f09dc kind:arm_call to:0x020982a8 module:overlay(0)
-from:0x020f09f4 kind:load to:0x02113fb8 module:overlay(31)
+from:0x020f09f4 kind:load to:0x02113fb0 module:overlay(31) add:0x8
 from:0x020f0a08 kind:arm_call to:0x0207bffc module:overlay(0)
 from:0x020f0a24 kind:arm_call to:0x0207bffc module:overlay(0)
 from:0x020f0a2c kind:arm_call to:0x02011ff4 module:main

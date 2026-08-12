@@ -788,7 +788,7 @@ func_ov031_020efec0 kind:function(arm,size=0x18) addr:0x020efec0
 func_ov031_020efed8 kind:function(arm,size=0x2c) addr:0x020efed8
 func_ov031_020eff04 kind:function(arm,size=0xb8) addr:0x020eff04
 func_ov031_020effbc kind:function(arm,size=0xa0) addr:0x020effbc
-func_ov031_020f005c kind:function(arm,size=0x4) addr:0x020f005c
+_ZN20Actor_ov031_02113fd48vfunc_20Ev kind:function(arm,size=0x4) addr:0x020f005c
 _ZN20Actor_ov031_02113fd48vfunc_24Ev kind:function(arm,size=0x30) addr:0x020f0060
 _ZN20Actor_ov031_02113fd48vfunc_60Ev kind:function(arm,size=0x4) addr:0x020f0090
 _ZN20Actor_ov031_02113fd419func_ov031_020f0094Ev kind:function(arm,size=0x4) addr:0x020f0094
@@ -815,9 +815,9 @@ func_ov031_020f0740 kind:function(arm,size=0xe0) addr:0x020f0740
 func_ov031_020f0820 kind:function(arm,size=0x1b0) addr:0x020f0820
 func_ov031_020f09d0 kind:function(arm,size=0x28) addr:0x020f09d0
 _ZN24UnkStruct_ov031_02113fb8D1Ev kind:function(arm,size=0x1c) addr:0x020f09f8
-_ZN19func_ov031_020f0a14D0Ev kind:function(arm,size=0x24) addr:0x020f0a14
-func_ov031_020f0a38 kind:function(arm,size=0x70) addr:0x020f0a38
-func_ov031_020f0aa8 kind:function(arm,size=0xb4) addr:0x020f0aa8
+_ZN24UnkStruct_ov031_02113fb8D0Ev kind:function(arm,size=0x24) addr:0x020f0a14
+_ZN24UnkStruct_ov031_02113fb88vfunc_0CEv kind:function(arm,size=0x70) addr:0x020f0a38
+_ZN24UnkStruct_ov031_02113fb88vfunc_08Ev kind:function(arm,size=0xb4) addr:0x020f0aa8
 func_ov031_020f0b5c kind:function(arm,size=0x30) addr:0x020f0b5c
 _ZN19func_ov031_020f0b8cD0Ev kind:function(arm,size=0x1c) addr:0x020f0b8c
 _ZN19func_ov031_020f0ba8D1Ev kind:function(arm,size=0x28) addr:0x020f0ba8
@@ -2337,7 +2337,7 @@ _ZTV19ActorProfileUnkSCCN kind:data(any) addr:0x02113eec
 _ZTV12MapObject_10 kind:data(any) addr:0x02113f10
 _ZTV12ActorUnkSCCN kind:data(any) addr:0x02113f38
 _ZTV19data_ov031_02113f9c kind:data(any) addr:0x02113f94
-data_ov031_02113fb8 kind:data(any) addr:0x02113fb8
+_ZTV19data_ov031_02113fb8 kind:data(any) addr:0x02113fb0
 _ZTV19data_ov031_02113fcc kind:data(any) addr:0x02113fcc
 _ZTV15ActorProfilePot kind:data(any) addr:0x0211403c
 data_ov031_02114060 kind:data(any) addr:0x02114060 local

@@ -50,9 +50,9 @@ bool ActorPot::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorPot::vfunc_5C(ActorState param1) {
+void ActorPot::vfunc_5C(ActorState state) {
     this->mUnk_EC = 0x0;
-    this->mState  = param1;
+    this->mState  = state;
 
     this->vfunc_60();
 

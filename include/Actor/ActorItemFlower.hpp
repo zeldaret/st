@@ -9,12 +9,12 @@
 class ModelRender_ov031_0211578c : public ModelRender {
 public:
     /* 00 (base) */
+    /* 60 */
 
-    ModelRender_ov031_0211578c(const G3d_Model *model, unk32 param1, unk32 param2); // func_ov031_02102bc0
+    ModelRender_ov031_0211578c(const G3d_Model *model, unk32 param1, unk32 param2);
 
     // data_ov031_0211578c
-    /* 00 */ // destructor @ func_ov031_020f10c0 & func_ov031_02102e54
-    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override; // func_ov031_02102c30
+    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
 };
 
 enum ActorItemFlowerState_ {
@@ -41,7 +41,7 @@ public:
     /* 18 */ bool vfunc_18(unk32 param1);
     /* 20 */ virtual void vfunc_20() override;
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
-    /* 5C */ virtual void vfunc_5C(ActorState param1) override;
+    /* 5C */ virtual void vfunc_5C(ActorState state) override;
 
     void func_ov031_020f11a8();
     void func_ov031_020f11b4();
@@ -60,6 +60,7 @@ public:
 class ActorProfileItemFlower : public ActorProfile {
 public:
     /* 00 (base) */
+    /* 3A */
 
     ActorProfileItemFlower();
 
