@@ -48,7 +48,7 @@ public:
     /* 04 */ UnkSystem5 *mUnk_04;
     /* 08 */ ModelRender *mUnk_08;
     /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
+    /* 10 */ G3d_Model *mUnk_10;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk8 mUnk_18; // deduced from strb [..., 0x18]
     /* 19 */ STRUCT_PAD(0x19, 0x1C);
@@ -72,16 +72,28 @@ public:
     /* 34 */ virtual void vfunc_34();
     /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2);
     /* 3C */ virtual void vfunc_3C();
+
+    void func_ov000_02099f8(ActorUnkZLSL_AnimationTag param1, unk32 param2);
 };
 
 class ActorUnkZLSL_27CC : public UnkStruct_ov000_020b31a8 {
 public:
     /* 00 (base) */
-    /* 1C */
+    /* 1C */ UnkSystem5 mUnk_1C;
+    /* 5C */ unk32 mUnk_5C;
+    /* 60 */ STRUCT_PAD(0x60, 0x7C);
+    /* 7C */
 
-    ActorUnkZLSL_27CC();
+    ActorUnkZLSL_27CC(UnkSystem5 *param1, ModelRender *param2, unk32 param3) :
+        UnkStruct_ov000_020b31a8(param1, param2, param3),
+        mUnk_1C(&mUnk_5C, NULL) {
+        if (param3 != 0x0) {
+            this->mUnk_1C.mpModel = this->mUnk_10;
+        }
+    }
 
     // data_ov031_0211369c
+    /* 00 */ WEAK virtual ~ActorUnkZLSL_27CC() override {} // TODO : to be updated in next dsd release
     /* 30 */ virtual s8 vfunc_30() override;
     /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override;
     /* 3C */ virtual void vfunc_3C() override;
@@ -92,8 +104,10 @@ public:
     /* 00 (base) */
     /* 04 */
 
-    // data_ov031_021136e4
+    ActorUnkZLSL_2700(UnkSystem5 *param1, ModelRender *param2, unk32 param3) :
+        ActorUnkZLSL_27CC(param1, param2, param3) {}
 
+    // data_ov031_021136e4
     void func_ov000_02099ddc(ActorUnkZLSL_AnimationTag param1, unk32 param2);
 };
 
@@ -216,12 +230,9 @@ public:
     /* 1690 */ ActorUnkZLSL_1690 mUnk_1690;
     /* 1694 */ STRUCT_PAD(0x1694, 0x2700);
     /* 2700 */ ActorUnkZLSL_2700 mUnk_2700;
-    /* 2704 */ STRUCT_PAD(0x271C, 0x276C);
+    /* 2704 */ STRUCT_PAD(0x275C, 0x276C);
     /* 276C */ ModelRender_ov031_02113670 mUnk_276C;
     /* 27CC */ ActorUnkZLSL_27CC mUnk_27CC;
-    /* 1694 */ STRUCT_PAD(0x27E8, 0x2800);
-    /* 2800 */ unk32 mUnk_2800;
-    /* 2804 */ STRUCT_PAD(0x2804, 0x2828);
     /* 2828 */ UnkStruct_PlayerGet_ec mUnk_2828;
     /* 282C */ unk32 mUnk_282C;
     /* 2830 */ unk32 mUnk_2830;

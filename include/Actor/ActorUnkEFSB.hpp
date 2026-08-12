@@ -1,36 +1,28 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "ActorUnkZLSL_ZSRS.hpp"
 #include "global.h"
 #include "types.h"
 
-class ActorUnkEFSB_C4 : public Actor_C4 {
-public:
-    ActorUnkEFSB_C4(Actor *param1);
-
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual bool vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-};
-
 class ActorUnkEFSB : public Actor {
 public:
-    /* 00 (base) */
-    /* 94 */
+    /* 000 (base) */
+    /* 094 */ unk32 mUnk_094;
+    /* 098 */ ModelRender mUnk_098;
+    /* 0F8 */ ActorUnkZLSL_27CC mUnk_0F8;
+    /* 154 */ ActorUnkZLSL_27CC mUnk_154;
+    /* 1B0 */ unk32 mUnk_1B0;
+    /* 1B4 */
 
     ActorUnkEFSB();
 
-    /* 4C */ virtual ~ActorUnkEFSB() override;
-
-    void func_ov031_020fb614(void);
-    void func_ov031_020fb6cc(void);
-    void func_ov031_020fb704(void);
-    void func_ov031_020fb718(void);
-    void func_ov031_020fb720(void);
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 54 */ virtual void vfunc_54(unk32 param1);
 };
 
 class ActorProfileUnkEFSB : public ActorProfile_Derived1 {
@@ -38,7 +30,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkEFSB();
-    ~ActorProfileUnkEFSB();
 
     /* 0C */ virtual Actor *Create();
 
