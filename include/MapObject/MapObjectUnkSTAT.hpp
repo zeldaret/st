@@ -38,7 +38,7 @@ public:
     void func_ov063_0215f710(void);
     void func_ov063_0215f798(void);
     void func_ov063_0215f7ac(void);
-    void func_ov063_0215fc40(bool param1);
+    void func_ov063_0215fc40(unk32 param1);
     void func_ov063_0215fc88(void);
     unk32 func_ov063_0215fce0(void);
 };

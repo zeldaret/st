@@ -2,13 +2,39 @@
 
 #include "MapObject/MapObjectUnkSTAT.hpp"
 #include "MapObject/MapObjectProfile.hpp"
+#include "System/Random.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/Common.hpp"
+#include "Unknown/UnkStruct_027e09a8.hpp"
+#include "Unknown/UnkStruct_027e09b8.hpp"
+#include "Unknown/UnkStruct_027e0cec.hpp"
 #include "flags.h"
+#include "nitro/fx.h"
 #include "nitro/math.h"
 
 extern MapObject_10 data_ov063_021644e4;
 
+extern "C" void func_02039d60(f32, unk32);
+extern "C" f32 func_0203ab58(unk32, f32);
+extern "C" f32 func_0203ad88(f32, unk32);
+extern "C" f32 func_02039f04(unk32);
 extern "C" fx32 func_01ffb428(unk32, unk32);
+
+// Overlay 0
+struct UnkStruct_ov000_02077590 {
+    /* 00 */ s16 mUnk_00;
+    /* 02 */ s16 mUnk_02;
+    /* 04 */ s16 mUnk_04;
+    /* 06 */ s16 mUnk_06;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ VecFx32 mUnk_0C;
+    /* 18 */ u16 mUnk_18;
+    /* 1A */ u16 mUnk_1A;
+    /* 1C */ u16 mUnk_1C;
+    /* 1E */ u16 mUnk_1E;
+};
+
+extern "C" UnkStruct_ov000_02077590 *func_ov000_02077590(unk32);
 
 DECL_PROFILE(MapObjectProfileUnkSTAT);
 
@@ -43,7 +69,7 @@ MapObjectUnkSTAT::MapObjectUnkSTAT() :
 }
 
 bool MapObjectUnkSTAT::vfunc_00(void) {
-    this->func_ov063_0215fc40((bool) mUnk_20.mParams[0]);
+    this->func_ov063_0215fc40(mUnk_20.mParams[0]);
 
     if (mUnk_20.mParams[2] == 1) {
         mPos.x += FLOAT_TO_FX32(.5f);
@@ -63,7 +89,7 @@ void MapObjectUnkSTAT::vfunc_08(void) {
             break;
         case 3:
             if (!this->func_ov063_0215fce0()) {
-                this->func_ov063_0215fc40(true);
+                this->func_ov063_0215fc40(1);
             }
             break;
         case 0:
@@ -87,8 +113,94 @@ void MapObjectUnkSTAT::vfunc_14(void) {
     mUnk_40.func_01ffc6d4(mUnk_14_AngleStruct, &vec);
 }
 
-void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {}
-void MapObjectUnkSTAT::func_ov063_0215fc40(bool param1) {}
+void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
+    if (!this->func_ov000_0209d29c(0) || this->func_ov000_0209d29c(1)) {
+        return;
+    }
+
+    if (mUnk_50 != -1) {
+        if (data_027e09b8->func_ov000_020732ec(mUnk_50) == 0) {
+            this->func_ov000_0209d2c4(0, 0);
+            this->func_ov063_0215fc40(3);
+        }
+
+        if (mUnk_5A == 35) {
+            VecFx32 vec;
+            VecFx32_Copy(&mPos, &vec);
+
+            data_027e0cec->func_ov000_0209feac(0x87D, &vec, 4, 0, 0);
+            data_027e0cec->func_ov000_0209feac(0x21, &vec, 4, 0, 0);
+            data_027e09a8->func_ov000_02071b30(0x127, &vec, 0);
+        }
+
+        if (30 < mUnk_5A && mUnk_5A < 50) {
+            f32 res2 = func_02039f04(gRandom.Next32(0x15));
+            func_02039d60(res2 * ((float) 0x3b83126F), 0);
+
+            fx32 z;
+            if (gRandom.Next32(0) != 0) {
+                f32 res3 = func_02039f04(gRandom.Next32(0x15));
+                res3 *= (float) 0x3b83126f;
+                res3 *= (float) 0x45800000;
+                z = func_0203ab58(0x3F000000, res3);
+            } else {
+                f32 res3 = func_02039f04(gRandom.Next32(0x15));
+                res3 *= (float) 0x3b83126f;
+                res3 *= (float) 0x45800000;
+                z = func_0203ad88(res3, 0x3F000000);
+            }
+
+            func_02039d60(((float) 0x3b83126f) * func_02039f04(gRandom.Next32(0x15)), 0);
+
+            fx32 x;
+            if (gRandom.Next32(0) != 0) {
+                f32 res3 = func_02039f04(gRandom.Next32(0x15));
+                res3 *= (float) 0x3b83126f;
+                res3 *= (float) 0x45800000;
+                x = func_0203ab58(0x3F000000, res3);
+            } else {
+                f32 res3 = func_02039f04(gRandom.Next32(0x15));
+                res3 *= (float) 0x3b83126f;
+                res3 *= (float) 0x45800000;
+                x = func_0203ad88(res3, 0x3F000000);
+            }
+
+            VecFx32_Init(x, 0, z, (VecFx32 *) &mUnk_60);
+        }
+    } else {
+        if (this->func_ov063_0215fce0()) {
+            UnkStackStruct1 stackStruct;
+            func_ov000_02072fd0(&stackStruct);
+            stackStruct.mUnk_08 = 0x3C;
+            stackStruct.mUnk_00 = 0x80;
+            stackStruct.mUnk_3A = 7;
+            stackStruct.mUnk_3B = 7;
+
+            UnkStruct_ov000_02077590 *res1 = func_ov000_02077590(1);
+
+            stackStruct.mUnk_18 = res1->mUnk_00;
+            stackStruct.mUnk_1A = res1->mUnk_02;
+            stackStruct.mUnk_1C = res1->mUnk_04;
+            stackStruct.mUnk_1E = res1->mUnk_06;
+            stackStruct.mUnk_20 = res1->mUnk_08;
+            VecFx32_Copy(&res1->mUnk_0C, &stackStruct.mUnk_24);
+            stackStruct.mUnk_30 = res1->mUnk_18;
+            stackStruct.mUnk_32 = res1->mUnk_1A;
+            stackStruct.mUnk_34 = res1->mUnk_1C;
+            stackStruct.mUnk_36 = res1->mUnk_1E;
+            stackStruct.mUnk_38 |= 0x80;
+            VecFx32_Copy(&mPos, &stackStruct.mUnk_0C);
+
+            mUnk_50 = data_027e09b8->func_ov000_02073388(&stackStruct, 0);
+            mUnk_5C = -1;
+            mUnk_5A = 0;
+            data_027e09a8->func_ov000_02071bd4(0x126, &mPos, 0);
+            return;
+        }
+    }
+}
+
+void MapObjectUnkSTAT::func_ov063_0215fc40(unk32 param1) {}
 unk32 MapObjectUnkSTAT::func_ov063_0215fce0(void) {}
 
 MapObjectUnkSTAT::~MapObjectUnkSTAT() {}
