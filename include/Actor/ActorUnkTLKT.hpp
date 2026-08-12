@@ -12,7 +12,8 @@ enum ActorUnkTLKTState_ {
     ActorUnkTLKTState_2 = 2,
     ActorUnkTLKTState_3 = 3,
     ActorUnkTLKTState_4 = 4,
-    ActorUnkTLKTState_MAX
+    ActorUnkTLKTState_5 = 5,
+    ActorUnkTLKTState_Max
 };
 
 class ActorUnkTLKT_Base : public Actor {
@@ -32,6 +33,7 @@ public:
     /* 5C */ virtual void vfunc_5C();                 // func_ov031_020e4078
     /* 60 */ virtual void vfunc_60(ActorState state); // func_ov031_020e407c
 
+    Actor *func_ov031_020e3df8();
     void func_ov031_020e3e6c();
 };
 
