@@ -14,7 +14,7 @@
 
 extern MapObject_10 data_ov063_021644e4;
 
-extern "C" void func_02039d60(f32, unk32);
+extern "C" unk32 func_02039d60(f32, unk32);
 extern "C" f32 func_0203ab58(unk32, f32);
 extern "C" f32 func_0203ad88(f32, unk32);
 extern "C" f32 func_02039f04(unk32);
@@ -125,44 +125,31 @@ void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
         }
 
         if (mUnk_5A == 35) {
-            VecFx32 vec;
-            VecFx32_Copy(&mPos, &vec);
+            VecFx32 vec = mPos;
 
             data_027e0cec->func_ov000_0209feac(0x87D, &vec, 4, 0, 0);
-            data_027e0cec->func_ov000_0209feac(0x21, &vec, 4, 0, 0);
+            data_027e0cec->func_ov000_0209feac(0x821, &vec, 4, 0, 0);
             data_027e09a8->func_ov000_02071b30(0x127, &vec, 0);
         }
 
-        if (30 < mUnk_5A && mUnk_5A < 50) {
-            f32 res2 = func_02039f04(gRandom.Next32(0x15));
-            func_02039d60(res2 * ((float) 0x3b83126F), 0);
+        u16 counter = mUnk_5A;
+        if (30 < counter && counter < 50) {
+            func_02039d60(func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f, 0);
 
             fx32 z;
-            if (gRandom.Next32(0) != 0) {
-                f32 res3 = func_02039f04(gRandom.Next32(0x15));
-                res3 *= (float) 0x3b83126f;
-                res3 *= (float) 0x45800000;
-                z = func_0203ab58(0x3F000000, res3);
+            if (((s32) gRandom.mRandomValue[0]) >= 0) {
+                z = func_0203ab58(0x3F000000, func_02039f04(gRandom.Next32(0x15)) * 0.004f * 4096.f);
             } else {
-                f32 res3 = func_02039f04(gRandom.Next32(0x15));
-                res3 *= (float) 0x3b83126f;
-                res3 *= (float) 0x45800000;
-                z = func_0203ad88(res3, 0x3F000000);
+                z = func_0203ad88(func_02039f04(gRandom.Next32(0x15)) * 0.004f * 4096.f, 0x3F000000);
             }
 
-            func_02039d60(((float) 0x3b83126f) * func_02039f04(gRandom.Next32(0x15)), 0);
+            func_02039d60(func_02039f04(gRandom.Next32(0x15)) * 0.004f, 0);
 
             fx32 x;
             if (gRandom.Next32(0) != 0) {
-                f32 res3 = func_02039f04(gRandom.Next32(0x15));
-                res3 *= (float) 0x3b83126f;
-                res3 *= (float) 0x45800000;
-                x = func_0203ab58(0x3F000000, res3);
+                x = func_0203ab58(0x3F000000, func_02039f04(gRandom.Next32(0x15)) * 0.004f * 4096.f);
             } else {
-                f32 res3 = func_02039f04(gRandom.Next32(0x15));
-                res3 *= (float) 0x3b83126f;
-                res3 *= (float) 0x45800000;
-                x = func_0203ad88(res3, 0x3F000000);
+                x = func_0203ad88(func_02039f04(gRandom.Next32(0x15)) * 0.004f * 4096.f, 0x3F000000);
             }
 
             VecFx32_Init(x, 0, z, (VecFx32 *) &mUnk_60);
