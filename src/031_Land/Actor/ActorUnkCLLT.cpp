@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkCLLT.hpp"
 #include "System/SysNew.hpp"
 
