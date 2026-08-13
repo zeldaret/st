@@ -249,6 +249,8 @@ void ActorUnkCASE::vfunc_20() {
         goto post;
     }
 
+    // Unsuccessful tries to remove the goto: duplicating raw code, duplicating an inline of the code, wrapping the code in an
+    // "if (cond1 || cond2) { code }"
     ret1        = func_01ffbbe0(x_pos - x_neg, z_pos - z_neg);
     s16 sin_val = SIN((u16) (s16) ret1);
     s16 cos_val = COS((u16) (s16) ret1);
