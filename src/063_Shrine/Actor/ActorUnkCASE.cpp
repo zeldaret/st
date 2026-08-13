@@ -117,7 +117,7 @@ bool ActorUnkCASE_150::vfunc_04() {
     return Actor_C4::vfunc_04();
 }
 
-void ActorUnkCASE_150::vfunc_0C(unk32 *param1) {
+void ActorUnkCASE_150::vfunc_0C(VecFx32 *param1) {
     ((ActorUnkCASE *) mUnk_20)->func_ov063_0215b8e8(param1);
     Actor_C4::vfunc_0C(param1);
 }
@@ -519,12 +519,12 @@ static inline bool VecFx32_IsZero(VecFx32 *vec) {
     return vec->x == 0 && vec->y == 0 && vec->z == 0;
 }
 
-void ActorUnkCASE::func_ov063_0215b8e8(unk32 *param1) {
+void ActorUnkCASE::func_ov063_0215b8e8(VecFx32 *param1) {
 
     if (mUnk_14C != NULL) {
         ((ActorUnkCANS *) mUnk_14C)->func_ov063_0215a428();
 
-        if (param1[0] == 0 && param1[1] == 0 && param1[2] == 0) {
+        if (param1->x == 0 && param1->y == 0 && param1->z == 0) {
             this->func_ov063_0215aefc(0);
             return;
         }
@@ -536,9 +536,9 @@ void ActorUnkCASE::func_ov063_0215b8e8(unk32 *param1) {
     if (VecFx32_IsZero((VecFx32 *) param1)) {
         this->func_ov063_0215aefc(4);
     } else {
-        unk32 x = param1[0];
-        unk32 y = param1[1];
-        unk32 z = param1[2];
+        unk32 x = param1->x;
+        unk32 y = param1->y;
+        unk32 z = param1->z;
 #if !IS_JP
         mUnk_150.mUnk_04 = 0;
 #endif

@@ -48,7 +48,7 @@ public:
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual bool vfunc_04() override;
-    /* 0C */ virtual void vfunc_0C(unk32 *param1) override;
+    /* 0C */ virtual void vfunc_0C(VecFx32 *param1) override;
 };
 
 class ActorUnkCASE_174 : public UnkStruct_ov031_Items_01 {
@@ -122,7 +122,7 @@ public:
     void func_ov063_0215b724(void);
     void func_ov063_0215b814(ActorRef ref);
     void func_ov063_0215b854(void);
-    void func_ov063_0215b8e8(unk32 *param1);
+    void func_ov063_0215b8e8(VecFx32 *param1);
     static void func_ov063_0215b99c(ActorUnkCASE *param1, UnkStruct_func_ov063_0215a678 *param2);
     void func_ov063_0215ba64(void);
 };

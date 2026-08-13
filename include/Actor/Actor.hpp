@@ -9,6 +9,7 @@
 #include "flags.h"
 #include "global.h"
 #include "math.hpp"
+#include "nitro/fx.h"
 #include "types.h"
 #include "versions.h"
 
@@ -281,7 +282,7 @@ public:
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2);
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C(unk32 *param1);
+    /* 0C */ virtual void vfunc_0C(VecFx32 *param1);
     /* 10 */
 
     template <typename T> T *GetActorPtr() {
