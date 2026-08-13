@@ -2,6 +2,7 @@
 
 #include "Item/Item.hpp"
 #include "global.h"
+#include "nitro/fx.h"
 #include "types.h"
 
 class UnkStruct_027e0d34_04 {
