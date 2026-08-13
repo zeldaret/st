@@ -151,10 +151,8 @@ void ActorUnkTLKT::vfunc_60(ActorState state) {
     this->mState = state;
 }
 
-// non-matching
 void ActorUnkTLKT::func_ov031_020e4514() {
-    u16 param = this->mUnk_5C.mParams[2];
-    switch (param - (0xA * ((param >> 0x1F) + (param / 10)))) {
+    switch (this->mUnk_5C.mParams[2] % 10) {
         case 0:
             this->func_ov000_02098a88(0x1, 0x1);
             return;

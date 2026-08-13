@@ -22,17 +22,18 @@ src/031_Land/Actor/ActorBlast.cpp:
     .bss        start:0x021181f0 end:0x0211823c
 
 src/031_Land/Actor/ActorUnkTLKT.cpp:
+    complete
     .text       start:0x020e5ac4 end:0x020e5f70
     .init       start:0x02112e08 end:0x02112e58
     .ctor       start:0x02114530 end:0x02114534
-    .data       start:0x02114b80 end:0x02114c84
+    .data       start:0x02114bec end:0x02114c9c
     .bss        start:0x0211823c end:0x02118288
 
 src/031_Land/Actor/ActorItemBoomerang.cpp:
     .text       start:0x020e5f90 end:0x020e7148
     .init       start:0x02112e58 end:0x02112ea8
     .ctor       start:0x02114534 end:0x02114538
-    .data       start:0x02114c84 end:0x02114d70
+    .data       start:0x02114c9c end:0x02114d70
     .bss        start:0x02118288 end:0x021182d4
 
 src/031_Land/Actor/ActorItemTornado.cpp:

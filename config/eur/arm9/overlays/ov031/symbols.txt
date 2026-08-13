@@ -2072,7 +2072,7 @@ __sinit_ov031_02110fd0 kind:function(arm,size=0x18) addr:0x02110fd0
 __sinit_ov031_02110fe8 kind:function(arm,size=0x10) addr:0x02110fe8
 __sinit_ActorUnkBOMB.cpp kind:function(arm,size=0x50) addr:0x02110ff8
 __sinit_ActorBlast.cpp kind:function(arm,size=0x50) addr:0x02111048
-__sinit_ActorUnkTLKT.cpp kind:function(arm,size=0x50) addr:0x02111098
+__sinit_ActorUnkTLKT.cpp kind:function(arm,size=0x50) addr:0x02111098 local
 __sinit_ActorItemBoomerang.cpp kind:function(arm,size=0x50) addr:0x021110e8
 __sinit_ActorItemTornado.cpp kind:function(arm,size=0x74) addr:0x02111138
 __sinit_ActorUnkSWBM.cpp kind:function(arm,size=0x74) addr:0x021111ac
@@ -2136,7 +2136,7 @@ __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x02112724
 .p__sinit_ov031_02110fe8 kind:data(word) addr:0x02112798
 .p__sinit_ActorUnkBOMB.cpp kind:data(word) addr:0x0211279c
 .p__sinit_ActorBlast.cpp kind:data(word) addr:0x021127a0
-.p__sinit_ActorUnkTLKT.cpp kind:data(word) addr:0x021127a4
+.p__sinit_ActorUnkTLKT.cpp kind:data(word) addr:0x021127a4 local
 .p__sinit_ActorItemBoomerang.cpp kind:data(word) addr:0x021127a8
 .p__sinit_ActorItemTornado.cpp kind:data(word) addr:0x021127ac
 .p__sinit_ActorUnkSWBM.cpp kind:data(word) addr:0x021127b0
@@ -2526,7 +2526,7 @@ _ZGVN15ProfileInstanceI17ActorProfileBlastE8sProfileE kind:bss addr:0x02116450
 @10781 kind:bss addr:0x02116454
 _ZN15ProfileInstanceI17ActorProfileBlastE8sProfileE kind:bss addr:0x02116460
 _ZGVN15ProfileInstanceI19ActorProfileUnkTLKTE8sProfileE kind:bss addr:0x0211649c
-@10787 kind:bss addr:0x021164a0
+@10787 kind:bss addr:0x021164a0 local
 _ZN15ProfileInstanceI19ActorProfileUnkTLKTE8sProfileE kind:bss addr:0x021164ac
 _ZGVN15ProfileInstanceI25ActorProfileItemBoomerangE8sProfileE kind:bss addr:0x021164e8
 @10793 kind:bss addr:0x021164ec
