@@ -81,6 +81,20 @@ bool ActorUnkMLCK::vfunc_18(unk32 param1) {
     return true;
 }
 
+// non-matching
+void ActorUnkMLCK::vfunc_64(unk32 param1) {
+    this->mUnk_BC = param1;
+    this->mUnk_C2 = 0xFFFF;
+    this->mUnk_C0 = 0x0;
+    if (param1 != 0x1) {
+        return;
+    }
+
+    this->mUnk_F1 = false;
+    this->mUnk_C4 = data_ov000_020b52e8.func_ov000_0206f980(this->mUnk_B8);
+    this->mUnk_C4->func_ov031_020fb184();
+}
+
 void ActorUnkMLCK::vfunc_54(unk32 param1, unk32 param2) {
     if (param2 == 0) {
         return;
@@ -103,20 +117,6 @@ void ActorUnkMLCK::vfunc_5C() {
 
 void ActorUnkMLCK::vfunc_60() {
     this->vfunc_64(0x0);
-}
-
-// non-matching
-void ActorUnkMLCK::vfunc_64(unk32 param1) {
-    this->mUnk_BC = param1;
-    this->mUnk_C2 = 0xFFFF;
-    this->mUnk_C0 = 0x0;
-    if (param1 != 0x1) {
-        return;
-    }
-
-    this->mUnk_F1 = false;
-    this->mUnk_C4 = data_ov000_020b52e8.func_ov000_0206f980(this->mUnk_B8);
-    this->mUnk_C4->func_ov031_020fb184();
 }
 
 void ActorUnkMLCK::vfunc_68() {
@@ -185,7 +185,7 @@ void ActorUnkMLCK::func_ov031_020faf24() {
     actor.mUnk_32           = 0x0;
 
     VecFx32_Copy(data_027e0ce0->func_01fff148(0x0), &actor.mUnk_34);
-    actor.mUnk_04 = (unk32) & this->mUnk_D8;
+    actor.mUnk_04 = &this->mUnk_D8;
 
     data_027e09b8->func_ov000_02073470(&actor, 0x0);
 
@@ -202,7 +202,7 @@ void ActorUnkMLCK::func_ov031_020faf24() {
         actor2.mUnk_32           = 0x0;
 
         VecFx32_Copy(data_027e0ce0->func_01fff148(0x0), &actor2.mUnk_34);
-        actor2.mUnk_04 = (unk32) & this->mUnk_E4;
+        actor2.mUnk_04 = &this->mUnk_E4;
 
         data_027e09b8->func_ov000_02073470(&actor2, 0x0);
     }
@@ -234,7 +234,7 @@ void ActorUnkMLCK_B4_00::func_ov031_020fb184() {
 }
 
 void ActorUnkMLCK_D8::vfunc2_00() {
-    if (!this->mUnk_04) {
+    if (!this->mUnk_04b) {
         return;
     }
     this->mUnk_08->func_ov031_020fb104();

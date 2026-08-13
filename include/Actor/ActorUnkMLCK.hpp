@@ -2,6 +2,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "ActorUnkTLKT.hpp"
 #include "FileSelect/FileSelectUnkDraw.hpp"
 #include "global.h"
 #include "types.h"
@@ -20,18 +21,17 @@ public:
     /* 24 */ virtual void vfunc_24() override;                           // func_ov031_020fb2bc
 };
 
-class ActorUnkMLCK_D8 {
+class ActorUnkMLCK_D8 : public ActorUnkTLKT_9C_Base {
 public:
     /* 00 (vtable) */
-    /* 04 */ bool mUnk_04;
-    /* 05 */ bool mUnk_05;
     /* 08 */ ActorUnkMLCK *mUnk_08;
     /* 0C */
 
-    ActorUnkMLCK_D8(ActorUnkMLCK *actor) :
-        mUnk_04(true),
-        mUnk_05(true),
-        mUnk_08(actor) {}
+    ActorUnkMLCK_D8(ActorUnkMLCK *actor) {
+        this->mUnk_04b = true;
+        this->mUnk_05  = true;
+        this->mUnk_08  = actor;
+    }
 
     /* 00 */ virtual void vfunc2_00() override; // func_ov031_020fb1b0
     /* 04 */ virtual void vfunc2_04() override; // func_ov031_020fb1cc
@@ -79,6 +79,8 @@ public:
     /* 70 */ virtual void vfunc_70() override;
 };
 
+// multiple inheritance ?
+// ActorUnkMLCK_D8 ?
 class ActorUnkMLCK : public Actor_ov102_02184950 {
 public:
     /* 00 (base) */

@@ -889,7 +889,13 @@ class MapObject;
 class MapObject_UnkStruct1 {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
+    /* 04 */ union {
+        struct {
+            bool mUnk_04b;
+            bool mUnk_05;
+        };
+        unk32 mUnk_04;
+    };
     /* 08 */
 
     // MapObject_UnkStruct1(); // func_ov000_02073194 & func_ov000_020731c4
