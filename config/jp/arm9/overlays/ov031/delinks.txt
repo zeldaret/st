@@ -43,7 +43,7 @@ src/031_Land/Actor/ActorItemTornado.cpp:
     .bss        start:0x021182d4 end:0x02118320
 
 src/031_Land/Actor/ActorUnkSWBM.cpp:
-    .text       start:0x020e8520 end:0x020e8d64
+    .text       start:0x020e82c4 end:0x020e8d64
     .init       start:0x02112f1c end:0x02112f90
     .ctor       start:0x0211453c end:0x02114540
     .data       start:0x02114ea8 end:0x02114f7c
