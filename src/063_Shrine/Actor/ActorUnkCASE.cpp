@@ -309,8 +309,7 @@ void ActorUnkCASE::vfunc_2C(unk32 param1) {
         return;
     }
 
-    if (mUnk_14C == NULL || ((u32 *) mUnk_14C)[0x268 >> 2] == NULL // .mUnk_268
-    ) {
+    if (mUnk_14C == NULL || ((u32 *) mUnk_14C)[0x268 >> 2] == NULL) {
         fx32 sin_val = SIN((u16) mUnk_1C8);
         fx32 cos_val = COS((u16) mUnk_1C8);
 

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Actor/ActorUnkZLSL_ZSRS.hpp"
 
 class UnkStruct_ov000_020b19f0 : public ModelRender_ov000_020b4d64 {
