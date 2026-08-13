@@ -70,7 +70,7 @@ public:
 
     // (MapObject_UnkStruct1_Derived1)
     /* 04 */ virtual void vfunc2_04() override;
-    /* 08 */ virtual void vfunc2_0C() override;
+    /* 08 */ virtual void vfunc2_08() override;
 
     // (MapObject)
     /* 40 */ virtual void vfunc_40() override;
