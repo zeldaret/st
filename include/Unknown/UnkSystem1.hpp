@@ -1,7 +1,7 @@
 #pragma once
 
+#include "Actor/ActorRef.hpp"
 #include "Message/BMG.hpp"
-#include "System/SysNew.hpp"
 #include "global.h"
 #include "types.h"
 

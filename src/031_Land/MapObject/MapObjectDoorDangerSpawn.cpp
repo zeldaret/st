@@ -135,10 +135,10 @@ void MapObjectDoorDangerSpawn::vfunc2_04(void) {
     this->MapObjectDoorBase::vfunc2_04();
 }
 
-void MapObjectDoorDangerSpawn::vfunc2_08(void) {
+void MapObjectDoorDangerSpawn::vfunc2_0C(void) {
     this->mUnk_8C = 1;
     this->vfunc_84(1, &this->mUnk_4C, &this->mUnk_4A);
-    this->MapObjectDoorBase::vfunc2_08();
+    this->MapObjectDoorBase::vfunc2_0C();
 
     if (this->mUnk_A2) {
         data_027e09bc->mUnk_0C->func_ov000_02078230(0);

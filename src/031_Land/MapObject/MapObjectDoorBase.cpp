@@ -701,7 +701,7 @@ bool MapObjectDoorBase::func_ov031_020fcf30() {
 void MapObjectDoorBase::vfunc2_04() {}
 
 // https://decomp.me/scratch/JINmb
-void MapObjectDoorBase::vfunc2_08() {
+void MapObjectDoorBase::vfunc2_0C() {
     s32 temp_r0;
     s32 temp_r1;
     s32 temp_r2;

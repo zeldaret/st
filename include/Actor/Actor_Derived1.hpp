@@ -9,8 +9,8 @@
 class ActorUnk_vfunc_B0 {
 public:
     /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
+    /* 04 */ MapObject_UnkStruct1 *mUnk_04;
+    /* 08 */ u16 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ unk16 mUnk_14;
@@ -23,7 +23,7 @@ public:
     /* 23 */ unk8 mUnk_23;
     /* 24 */ Actor *mpActor;
     /* 28 */ unk32 mUnk_28;
-    /* 2C */ unk32 mUnk_2C;
+    /* 2C */ Actor *mUnk_2C;
     /* 30 */ unk16 mUnk_30;
     /* 32 */ unk16 mUnk_32;
     /* 34 */ VecFx32 mUnk_34;

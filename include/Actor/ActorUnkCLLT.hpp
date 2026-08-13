@@ -4,7 +4,6 @@
 #include "Actor/ActorProfile.hpp"
 #include "ActorUnkTLKT.hpp"
 #include "global.h"
-#include "types.h"
 
 enum ActorUnkCLLTState_ {
     ActorUnkCLLTState_0 = 0,
@@ -16,10 +15,9 @@ enum ActorUnkCLLTState_ {
     ActorUnkCLLTState_Max,
 };
 
-class ActorUnkCLLT : public ActorUnkTLKT_Base {
+class ActorUnkCLLT : public ActorUnkTLKTnCLLT_Base {
 public:
     /* 00 (base) */
-    /* 94 */ STRUCT_PAD(0x94, 0x9C);
     /* 9C */ UnkSystem1_ov000_Derived2 mUnk_9C;
     /* D0 */
 
