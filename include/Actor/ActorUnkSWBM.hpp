@@ -42,7 +42,12 @@ public:
 class ActorUnkSWBM_C8 : public UnkStruct_PlayerGet_74_base {
 public:
     /* 00 (base) */
-    /* 04 */
+    /* 04 */ STRUCT_PAD(0x04, 0x14);
+    /* 14 */ ActorUnkSWBM *mUnk_14;
+    /* 18 */
+
+    ActorUnkSWBM_C8(ActorUnkSWBM *param1) :
+        mUnk_14(param1) {}
 
     // data_ov031_02113110
     /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3) override; // func_ov031_020e69cc
@@ -54,10 +59,8 @@ public:
     /* 094 */ ActorUnkSWBM_94 mUnk_094;
     /* 098 */ ActorUnkSWBM_98 mUnk_098;
     /* 0C8 */ ActorUnkSWBM_C8 mUnk_0C8;
-    /* 0CC */ STRUCT_PAD(0xCC, 0xDC);
-    /* 0DC */ Actor *mUnk_0DC;
     /* 0E0 */ unk16 mUnk_0E0;
-    /* 0E4 */ unk32 mUnk_0E4[0x9];
+    /* 0E4 */ VecFx32 mUnk_0E4[0x3];
     /* 108 */ unk16 mUnk_108;
     /* 10A */ unk16 mUnk_10A;
     /* 10C */
@@ -72,7 +75,7 @@ public:
     void func_ov031_020e6d48();
     void func_ov031_020e6d80(unk32 param1);
     void func_ov031_020e6e84(ActorState state);
-    void func_ov031_020e718c();
+    static void func_ov031_020e718c(VecFx32 *param1, Mat3p *param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
 };
 
 class ActorProfileUnkSWBM : public ActorProfile {
