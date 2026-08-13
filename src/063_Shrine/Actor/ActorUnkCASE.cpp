@@ -16,6 +16,7 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "flags.h"
+#include "global.h"
 #include "nitro/fx.h"
 #include "nitro/math.h"
 #include "nns/g3d/g3d.h"
@@ -153,13 +154,6 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_38          = (Actor_38 *) &mUnk_1E8;
     mUnk_38->mUnk_08 = 4;
     mUnk_A8          = &data_ov063_02162558;
-}
-
-static inline void Cylinder_Init(VecFx32 *vec, fx32 size, Cylinder *cylinder) {
-    cylinder->pos.x = vec->x;
-    cylinder->pos.y = vec->y;
-    cylinder->pos.z = vec->z;
-    cylinder->size  = size;
 }
 
 void ActorUnkCASE::vfunc_10(Cylinder *param1) {
@@ -368,20 +362,28 @@ void ActorUnkCASE::func_ov063_0215afa4(void) {
 }
 
 void ActorUnkCASE::func_ov063_0215afb8(void) {
-    Actor *otherActor = gpActorManager->func_01fff3b4(mUnk_1E4);
+    //! INFO: Actually a Mat3p, this is only used to allow a "batched" copy (all 9 elements at a time, not 3 by 3)
+    struct Fx32Array9 {
+        fx32 array[9];
+    };
+
+    // Fake struct because it is unknown at the time which Actor otherActor is
+    struct UnkStruct_otherActor {
+        /* 000 */ STRUCT_PAD(0x000, 0xE8);
+        /* 0E8 */ VecFx32 mUnk_0E8;
+        /* 0F4 */ STRUCT_PAD(0xF4, 0x154);
+        /* 154 */ Fx32Array9 mUnk_154;
+    };
+
+    UnkStruct_otherActor *otherActor = (UnkStruct_otherActor *) gpActorManager->func_01fff3b4(mUnk_1E4);
     if (otherActor == NULL) {
         this->func_ov063_0215aefc(4);
         return;
     }
 
-    struct Fx32Array9 {
-        fx32 array[9];
-    };
+    *(Fx32Array9 *) &mUnk_1A4 = otherActor->mUnk_154;
 
-    Mat3p *matSrc             = (Mat3p *) ((u8 *) otherActor + 0x154);
-    *(Fx32Array9 *) &mUnk_1A4 = *(Fx32Array9 *) matSrc;
-
-    VecFx32 vec = *(VecFx32 *) ((u8 *) otherActor + 0xE8);
+    VecFx32 vec = otherActor->mUnk_0E8;
     mPos.x      = vec.x;
     mPos.y      = vec.y;
     mPos.z      = vec.z;
