@@ -14,7 +14,7 @@ public:
     static UnkStruct_027e0958 *Create();
     static void Destroy();
 
-    void func_ov000_02058fc4(UnkStruct_PlayerGet_74 *param1, VecFx32 *param2);
+    void func_ov000_02058fc4(UnkStruct_PlayerGet_74_base *param1, VecFx32 *param2);
 };
 
 extern UnkStruct_027e0958 *data_027e0958;

@@ -365,7 +365,7 @@ bool ActorItemBoomerang_11C::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
     return func_ov000_020982d8();
 }
 
-bool ActorItemBoomerang_11C::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2, unk32 param3) {
+bool ActorItemBoomerang_11C::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {
     u32 val = (param1->mUnk_08 >> 9) & 7;
     if (val == 0x2) {
         this->mUnk_08->func_ov031_020e5034(0x1);
@@ -381,9 +381,9 @@ bool ActorItemBoomerang_11C::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, un
 
     Vec2bCpp pos;
     if (this->mUnk_08->mState == ActorItemBoomerangState_1) {
-        if (param2 & 0x1000) {
-            pos.x = (u8) param2 >> 16;
-            pos.y = (u8) param2 >> 24;
+        if (*param2 & 0x1000) {
+            pos.x = (u8) *param2 >> 16;
+            pos.y = (u8) *param2 >> 24;
 
             MapObject *mapObject = gpMapObjManager->func_01fff498(pos);
             if (mapObject != NULL) {
@@ -395,16 +395,16 @@ bool ActorItemBoomerang_11C::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, un
         return false;
     }
 
-    if (param2 & 0x1000) {
-        pos.x = (u8) param2 >> 16;
-        pos.y = (u8) param2 >> 24;
+    if (*param2 & 0x1000) {
+        pos.x = (u8) *param2 >> 16;
+        pos.y = (u8) *param2 >> 24;
 
         MapObject *mapObject = gpMapObjManager->func_01fff498(pos);
         if (mapObject != NULL) {
             switch (mapObject->GetMapObjectId()) {
                 case MapObjectId_SKDI:
                 case MapObjectId_SWHT:
-                    data_027e0d2c->func_ov031_020d95c8(param2);
+                    data_027e0d2c->func_ov031_020d95c8(*param2);
                 case MapObjectId_Pot:
                     mapObject->vfunc_1C(this->mUnk_08->mRef, 0xC, &this->mUnk_08->mVel);
                     return false;

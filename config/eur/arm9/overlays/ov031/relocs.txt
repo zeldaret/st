@@ -1579,9 +1579,9 @@ from:0x020e6bb0 kind:arm_call to:0x02098388 module:overlay(0)
 from:0x020e6c00 kind:arm_call to:0x020590e4 module:overlay(0)
 from:0x020e6c30 kind:arm_call to:0x02028c4c module:main
 from:0x020e6c4c kind:load to:0x02113180 add:0x8 module:overlay(31)
-from:0x020e6c50 kind:load to:0x02113148 module:overlay(31)
-from:0x020e6c54 kind:load to:0x0211312c module:overlay(31)
-from:0x020e6c58 kind:load to:0x02113110 module:overlay(31)
+from:0x020e6c50 kind:load to:0x02113140 module:overlay(31) add:0x8
+from:0x020e6c54 kind:load to:0x02113124 module:overlay(31) add:0x8
+from:0x020e6c58 kind:load to:0x02113108 module:overlay(31) add:0x8
 from:0x020e6c68 kind:arm_call to:0x0207bffc module:overlay(0)
 from:0x020e6c7c kind:arm_call to:0x0207b6c0 module:overlay(0)
 from:0x020e6d38 kind:load to:0x0203e964 module:main

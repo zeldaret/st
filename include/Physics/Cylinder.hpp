@@ -13,6 +13,9 @@ struct Cylinder {
     Cylinder(fx32 size) {
         this->Init(size);
     }
+    Cylinder(fx32 x, fx32 y, fx32 z, fx32 size) {
+        this->Init(x, y, z, size);
+    }
 
     void Init(fx32 size) {
         pos.x = 0;

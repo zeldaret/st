@@ -131,8 +131,8 @@ bool UnkStruct_ov063_02162ea8::vfunc_08(UnkStruct_ov031_020f3310 *param1) {
     return retVal;
 }
 
-bool UnkStruct_ov063_02162ea8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2, unk32 param3) {
-    UnkStruct_02162ea8_vfunc_0C *param2Struct = (UnkStruct_02162ea8_vfunc_0C *) &param2;
+bool UnkStruct_ov063_02162ea8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {
+    UnkStruct_02162ea8_vfunc_0C *param2Struct = (UnkStruct_02162ea8_vfunc_0C *) param2;
     if ((*(u16 *) &param2Struct->mUnk_04 & 0x1000) != 0) {
         UnkStruct_02162ea8_vfunc_0C tmp;
         tmp.mUnk_04 = *(volatile unk32 *) &param2Struct->mUnk_04;
