@@ -1,24 +1,23 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "MapObject/MapObjectUnkSTAT.hpp"
 #include "MapObject/MapObjectProfile.hpp"
 #include "System/Random.hpp"
-#include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "flags.h"
+#include "math.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
-
-extern MapObject_10 data_ov063_021644e4;
+#include "profile.hpp"
 
 extern "C" unk32 func_02039d60(f32, unk32);
 extern "C" f32 func_0203ab58(unk32, f32);
 extern "C" f32 func_0203ad88(f32, unk32);
 extern "C" f32 func_02039f04(unk32);
 extern "C" fx32 func_01ffb428(unk32, unk32);
+extern "C" unk32 func_02016b8c(VecFx32 *, VecFx32 *, unk32, UnkAngleStruct, u16, unk32);
 
 // Overlay 0
 struct UnkStruct_ov000_02077590 {
@@ -37,6 +36,7 @@ struct UnkStruct_ov000_02077590 {
 extern "C" UnkStruct_ov000_02077590 *func_ov000_02077590(unk32);
 
 DECL_PROFILE(MapObjectProfileUnkSTAT);
+unk32 data_ov063_02164508[3]; // Is probably part of the profile?
 
 MapObject *MapObjectProfileUnkSTAT::Create() {
     return new(HeapIndex_ITCM) MapObjectUnkSTAT();
@@ -65,7 +65,7 @@ MapObjectUnkSTAT::MapObjectUnkSTAT() :
     mUnk_60(0),
     mUnk_64(0),
     mUnk_68(0) {
-    mUnk_10 = &data_ov063_021644e4;
+    mUnk_10 = GET_PROFILE_D4(MapObjectProfileUnkSTAT);
 }
 
 bool MapObjectUnkSTAT::vfunc_00(void) {
@@ -191,8 +191,27 @@ void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
     }
 }
 
-void MapObjectUnkSTAT::func_ov063_0215fc40(unk32 param1) {}
-unk32 MapObjectUnkSTAT::func_ov063_0215fce0(void) {}
+void MapObjectUnkSTAT::func_ov063_0215fc40(unk32 param1) {
+    mUnk_4C = param1;
+    mUnk_5C = -1;
+    mUnk_5A = 0;
+    mUnk_60 = 0;
+    mUnk_64 = 0;
+    mUnk_68 = 0;
+
+    switch (param1) {
+        case 0:
+            this->mUnk_50 = -1;
+            break;
+        case 1:
+            this->mUnk_50 = -1;
+            break;
+    }
+}
+
+unk32 MapObjectUnkSTAT::func_ov063_0215fce0(void) {
+    return func_02016b8c(&mPos, data_027e0ce0->func_01fff148(0), mUnk_54, mUnk_14_AngleStruct, mUnk_58, 1);
+}
 
 MapObjectUnkSTAT::~MapObjectUnkSTAT() {}
 MapObjectProfileUnkSTAT::~MapObjectProfileUnkSTAT() {}

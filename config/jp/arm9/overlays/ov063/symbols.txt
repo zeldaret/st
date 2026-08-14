@@ -265,12 +265,12 @@ _ZN23MapObjectProfileUnkSTAT10GetProfileEv kind:function(arm,size=0xc) addr:0x02
 _ZN23MapObjectProfileUnkSTAT6CreateEv kind:function(arm,size=0x24) addr:0x02161324
 _ZN23MapObjectProfileUnkSTATC1Ev kind:function(arm,size=0x94) addr:0x02161348
 _ZN16MapObjectUnkSTATC1Ev kind:function(arm,size=0xc8) addr:0x021613dc
-_ZN16MapObjectUnkSTAT19func_ov063_0215f6d0Ev kind:function(arm,size=0x40) addr:0x021614a4
-_ZN16MapObjectUnkSTAT19func_ov063_0215f710Ev kind:function(arm,size=0x88) addr:0x021614e4
-_ZN16MapObjectUnkSTAT19func_ov063_0215f798Ev kind:function(arm,size=0x14) addr:0x0216156c
+_ZN16MapObjectUnkSTAT8vfunc_00Ev kind:function(arm,size=0x40) addr:0x021614a4
+_ZN16MapObjectUnkSTAT8vfunc_08Ev kind:function(arm,size=0x88) addr:0x021614e4
+_ZN16MapObjectUnkSTAT8vfunc_0CEv kind:function(arm,size=0x14) addr:0x0216156c
 _ZN16MapObjectUnkSTAT19func_ov063_0215f7acEv kind:function(arm,size=0x494) addr:0x02161580
 _ZN16MapObjectUnkSTAT19func_ov063_0215fc40Ei kind:function(arm,size=0x48) addr:0x02161a14
-_ZN16MapObjectUnkSTAT19func_ov063_0215fc88Ev kind:function(arm,size=0x58) addr:0x02161a5c
+_ZN16MapObjectUnkSTAT8vfunc_14Ev kind:function(arm,size=0x58) addr:0x02161a5c
 _ZN16MapObjectUnkSTAT19func_ov063_0215fce0Ev kind:function(arm,size=0x58) addr:0x02161ab4
 _ZN16MapObjectUnkSTATD1Ev kind:function(arm,size=0x20) addr:0x02161b0c
 _ZN16MapObjectUnkSTATD0Ev kind:function(arm,size=0x28) addr:0x02161b2c
@@ -469,10 +469,10 @@ data_ov063_02165560 kind:data(any) addr:0x02165560
 _ZTV19ActorProfileUnkRBLS kind:data(any) addr:0x02165578
 data_ov063_021655a4 kind:data(any) addr:0x021655a4
 _ZTV19data_ov063_021655e4 kind:data(any) addr:0x021655e4
-data_ov063_02165648 kind:data(any) addr:0x02165648
-data_ov063_02165664 kind:data(any) addr:0x02165664
-data_ov063_02165680 kind:data(any) addr:0x02165680
-data_ov063_021656a8 kind:data(any) addr:0x021656a8
+_ZTV28MapObjectProfileUnkSTAT_Base kind:data(any) addr:0x02165640
+_ZTV23MapObjectProfileUnkSTAT kind:data(any) addr:0x0216565c
+_ZTV31MapObjectProfileUnkSTAT_Base_D4 kind:data(any) addr:0x02165678
+_ZTV16MapObjectUnkSTAT kind:data(any) addr:0x021656a0
 data_ov063_021656e0 kind:data(any) addr:0x021656e0
 data_ov063_021656e8 kind:data(any) addr:0x021656e8
 data_ov063_021656f4 kind:data(any) addr:0x021656f4
@@ -533,9 +533,7 @@ _ZN15ProfileInstanceI19ActorProfileUnkRBLSE8sProfileE kind:bss addr:0x02166148
 _ZGVN15ProfileInstanceI23MapObjectProfileUnkSTATE8sProfileE kind:bss addr:0x02166220
 @32251 kind:bss addr:0x02166224
 _ZN15ProfileInstanceI23MapObjectProfileUnkSTATE8sProfileE kind:bss addr:0x02166230
-data_ov063_02166304 kind:bss addr:0x02166304
-data_ov063_02166324 kind:bss addr:0x02166324
-data_ov063_02166328 kind:bss addr:0x02166328
+data_ov063_02164508 kind:bss addr:0x02166328
 data_ov063_02166334 kind:bss addr:0x02166334
 _ZGVN15ProfileInstanceI23MapObjectProfileUnkWLMSE8sProfileE kind:bss addr:0x021663a4 ambiguous
 @32257 kind:bss addr:0x021663ac

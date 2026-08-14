@@ -6,7 +6,6 @@
 #include "MapObject/MapObjectProfile.hpp"
 #include "Render/ModelRender.hpp"
 #include "global.h"
-#include "nns/g3d/g3d.h"
 #include "types.h"
 
 class MapObjectUnkSTAT : public MapObject {
