@@ -69,7 +69,16 @@ MapObjectUnkSTAT::MapObjectUnkSTAT() :
 }
 
 bool MapObjectUnkSTAT::vfunc_00(void) {
-    this->func_ov063_0215fc40(mUnk_20.mParams[0] ? 1 : 0);
+    unk32 val;
+    switch (mUnk_20.mParams[0]) {
+        case 0:
+            val = 0;
+            break;
+        default:
+            val = 1;
+            break;
+    }
+    this->func_ov063_0215fc40(val);
 
     if (mUnk_20.mParams[2] == 1) {
         mPos.x += FLOAT_TO_FX32(.5f);
@@ -142,18 +151,19 @@ void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
             // if (((s32) gRandom.mRandomValue[0]) >= 0) {
             // bls on gRandomVal (u32)
             if (gRandomVal >= 0) {
-                z = func_0203ab58(0x3F000000, func_02039f04(gRandom.Next32(0x15)) * 0.004f * 4096.f);
+                z = func_0203ab58(0x3F000000, func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f * 4096.f);
             } else {
-                z = func_0203ad88(func_02039f04(gRandom.Next32(0x15)) * 0.004f * 4096.f, 0x3F000000);
+                z = func_0203ad88(func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f * 4096.f, 0x3F000000);
             }
 
-            func_02039d60(func_02039f04(gRandom.Next32(0x15)) * 0.004f, 0);
+            func_02039d60(func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f, 0);
+            gRandomVal = ((u32 *) gRandom.mRandomValue)[0];
 
             fx32 x;
-            if (gRandom.Next32(0) != 0) {
-                x = func_0203ab58(0x3F000000, func_02039f04(gRandom.Next32(0x15)) * 0.004f * 4096.f);
+            if (gRandomVal >= 0) {
+                x = func_0203ab58(0x3F000000, func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f * 4096.f);
             } else {
-                x = func_0203ad88(func_02039f04(gRandom.Next32(0x15)) * 0.004f * 4096.f, 0x3F000000);
+                x = func_0203ad88(func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f * 4096.f, 0x3F000000);
             }
 
             VecFx32_Init(x, 0, z, (VecFx32 *) &mUnk_60);
@@ -174,7 +184,7 @@ void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
             stackStruct.mUnk_1C = res1->mUnk_04;
             stackStruct.mUnk_1E = res1->mUnk_06;
             stackStruct.mUnk_20 = res1->mUnk_08;
-            VecFx32_Copy(&res1->mUnk_0C, &stackStruct.mUnk_24);
+            stackStruct.mUnk_24 = res1->mUnk_0C;
             stackStruct.mUnk_30 = res1->mUnk_18;
             stackStruct.mUnk_32 = res1->mUnk_1A;
             stackStruct.mUnk_34 = res1->mUnk_1C;
