@@ -28,7 +28,6 @@ public:
     /* 1C */ virtual void vfunc_1C() override;
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
-    // /* 4C */ virtual ~ActorUnkTLKT_Base() override; // func_ov031_020e40a8 & func_ov031_020e40bc
     /* 54 */ virtual void vfunc_54();
     /* 58 */ virtual void vfunc_58();
     /* 5C */ virtual void vfunc_5C();
