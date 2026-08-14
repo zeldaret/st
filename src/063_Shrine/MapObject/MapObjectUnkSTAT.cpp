@@ -134,10 +134,14 @@ void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
 
         u16 counter = mUnk_5A;
         if (30 < counter && counter < 50) {
-            func_02039d60(func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f, 0);
+            u32 randomVal  = gRandom.Next32(0x15);
+            s32 gRandomVal = ((u32 *) gRandom.mRandomValue)[0];
+            func_02039d60(func_02039f04(randomVal - 10) * 0.004f, 0);
 
             fx32 z;
-            if (((s32) gRandom.mRandomValue[0]) >= 0) {
+            // if (((s32) gRandom.mRandomValue[0]) >= 0) {
+            // bls on gRandomVal (u32)
+            if (gRandomVal >= 0) {
                 z = func_0203ab58(0x3F000000, func_02039f04(gRandom.Next32(0x15)) * 0.004f * 4096.f);
             } else {
                 z = func_0203ad88(func_02039f04(gRandom.Next32(0x15)) * 0.004f * 4096.f, 0x3F000000);
