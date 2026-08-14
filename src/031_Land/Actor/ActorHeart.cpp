@@ -3,6 +3,7 @@
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "nitro/fx.h"
 
 typedef struct {
     unk16 mUnk_00;
@@ -451,7 +452,7 @@ bool ActorHeart_C4::vfunc_04() {
     return this->Actor_C4::vfunc_04();
 }
 
-void ActorHeart_C4::vfunc_0C(unk32 param1) {
+void ActorHeart_C4::vfunc_0C(VecFx32 *param1) {
     this->GetActorPtr<ActorHeart>()->SetState(ActorHeartState_1);
     this->Actor_C4::vfunc_0C(param1);
 }

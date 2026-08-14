@@ -15,6 +15,7 @@ src/063_Shrine/Actor/ActorUnkCASE.cpp:
     .text       start:0x0215c894 end:0x0215d890
     .init       start:0x021645b8 end:0x0216464c
     .ctor       start:0x02164c5c end:0x02164c60
+    .data       start:0x02164ee8 end:0x02165044
     .bss        start:0x02165a68 end:0x02165b50
 
 src/063_Shrine/Actor/ActorUnkRMSV.cpp:

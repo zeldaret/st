@@ -57,7 +57,7 @@ void ActorUnkFLEN::vfunc_20() {
     }
 }
 
-void ActorUnkFLEN::SetState(ActorUnkFLENState state) {
+void ActorUnkFLEN::SetState(ActorState state) {
     this->mState = state;
 
     switch (state) {
@@ -86,7 +86,7 @@ bool ActorUnkFLEN::func_ov031_020f81f8() {
     actorParams.mInitialAngle = this->mAngle;
 
     VecFx32_Copy(&this->mPos, &actorParams.mInitialPos);
-    actorParams.mInitialPos.y += 0x5000;
+    actorParams.mInitialPos.y += FLOAT_TO_FX32(5.0f);
 
     u16 index              = this->mUnk_5C.mParams[0];
     actorParams.mParams[0] = data_ov031_02110b90[index];
@@ -95,6 +95,3 @@ bool ActorUnkFLEN::func_ov031_020f81f8() {
 
     return actorRef.type_index != 0;
 }
-
-ActorUnkFLEN::~ActorUnkFLEN() {}
-ActorProfileUnkFLEN::~ActorProfileUnkFLEN() {}

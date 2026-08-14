@@ -12,57 +12,63 @@ enum ActorUnkTLKTState_ {
     ActorUnkTLKTState_2 = 2,
     ActorUnkTLKTState_3 = 3,
     ActorUnkTLKTState_4 = 4,
-    ActorUnkTLKTState_MAX
+    ActorUnkTLKTState_5 = 5,
+    ActorUnkTLKTState_Max
 };
 
-class ActorUnkTLKT_Base : public Actor {
+class ActorUnkTLKTnCLLT_Base : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 94 */ STRUCT_PAD(0x94, 0x9C);
+    /* 9C */
 
-    ActorUnkTLKT_Base(); // func_ov031_020e3da0
+    ActorUnkTLKTnCLLT_Base();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override; // func_ov031_020e3e18
-    /* 1C */ virtual void vfunc_1C() override;             // func_ov031_020e3e44
-    /* 20 */ virtual void vfunc_20() override;             // func_ov031_020e3e84
-    /* 24 */ virtual void vfunc_24() override;             // func_ov031_020e3ed8
-    // /* 4C */ virtual ~ActorUnkTLKT_Base() override; // func_ov031_020e40a8 & func_ov031_020e40bc
-    /* 54 */ virtual void vfunc_54();                 // func_ov031_020e3f50
-    /* 58 */ virtual void vfunc_58();                 // func_ov031_020e4074
-    /* 5C */ virtual void vfunc_5C();                 // func_ov031_020e4078
-    /* 60 */ virtual void vfunc_60(ActorState state); // func_ov031_020e407c
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C() override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+    /* 54 */ virtual void vfunc_54();
+    /* 58 */ virtual void vfunc_58();
+    /* 5C */ virtual void vfunc_5C();
+    /* 60 */ virtual void vfunc_60(ActorState state);
 
+    Actor *func_ov031_020e3df8();
     void func_ov031_020e3e6c();
 };
 
-class ActorUnkTLKT_9C : public MapObject_UnkStruct1 {
+class ActorUnkTLKT_9C_Base : public MapObject_UnkStruct1 {
 public:
     /* 00 (base) */
     /* 08 */
 
-    ActorUnkTLKT_9C() {
-        this->mUnk_04 = 0xFFFFFFFF;
-    }
+    /* 00 */ virtual void vfunc2_0C() override;
+};
+
+class ActorUnkTLKT_9C : public ActorUnkTLKT_9C_Base {
+public:
+    /* 00 (base) */
+    /* 08 */
 
     // data_ov031_02112eec
     /* 00 */ virtual void vfunc2_00() override;
+    /* 00 */ virtual void vfunc2_08() override;
 };
 
-class ActorUnkTLKT : public ActorUnkTLKT_Base {
+class ActorUnkTLKT : public ActorUnkTLKTnCLLT_Base, public ActorUnkTLKT_9C {
 public:
-    /* 00 (base) */
-    /* 94 */ STRUCT_PAD(0x94, 0x9C);
-    /* 9C */ ActorUnkTLKT_9C mUnk_9C;
+    /* 00 (base ActorUnkTLKTnCLLT_Base) */
+    /* 9C (base ActorUnkTLKT_9C) */
     /* A4 */
 
     ActorUnkTLKT();
 
-    /* 24 */ virtual void vfunc_24() override; // func_ov031_020e41ec
+    /* 24 */ virtual void vfunc_24() override;
     /* 4C */ virtual ~ActorUnkTLKT() override;
-    /* 58 */ virtual void vfunc_58() override;                 // func_ov031_020e4238
-    /* 60 */ virtual void vfunc_60(ActorState state) override; // func_ov031_020e4320
-    /* 64 */ virtual void vfunc_64();                          // func_ov031_020e42ac
-    /* 68 */ virtual void vfunc_68();                          // func_ov031_020e42f0
+    /* 58 */ virtual void vfunc_58() override;
+    /* 60 */ virtual void vfunc_60(ActorState state) override;
+    /* 64 */ virtual void vfunc_64();
+    /* 68 */ virtual void vfunc_68();
 
     void func_ov031_020e4274();
     void func_ov031_020e4514();

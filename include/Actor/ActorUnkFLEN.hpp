@@ -5,7 +5,6 @@
 #include "global.h"
 #include "types.h"
 
-typedef u32 ActorUnkFLENState;
 enum ActorUnkFLENState_ {
     ActorUnkFLENState_0 = 0,
     ActorUnkFLENState_1 = 1,
@@ -21,12 +20,10 @@ public:
 
     ActorUnkFLEN();
 
-    /* 4C */ virtual ~ActorUnkFLEN() override;
-
     /* 18 */ virtual bool vfunc_18(int param1) override;
     /* 20 */ virtual void vfunc_20() override;
 
-    void SetState(ActorUnkFLENState state);
+    void SetState(ActorState state);
     bool func_ov031_020f81f8();
 };
 
@@ -36,7 +33,6 @@ public:
     /* 3C */
 
     ActorProfileUnkFLEN();
-    ~ActorProfileUnkFLEN();
 
     /* 0C */ virtual Actor *Create();
 

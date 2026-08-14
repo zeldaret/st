@@ -2,6 +2,7 @@
 
 #include "Item/Item.hpp"
 #include "global.h"
+#include "nitro/fx.h"
 #include "types.h"
 
 class UnkStruct_027e0d34_04 {
@@ -20,10 +21,12 @@ public:
     static void Destroy();
 
     // overlay 31
+    bool func_ov031_020d9714();
     bool func_ov031_020d9758();
     bool func_ov031_020d97e4();
     bool func_ov031_020d97f4();
     void func_ov031_020d9844();
+    void func_ov031_020d9854(VecFx32 *param1, fx32 param2);
     void func_ov031_020d994c();
     void func_ov031_020d996c();
     bool TryItemGive(ItemId itemId);

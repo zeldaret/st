@@ -10,6 +10,7 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
+#include "nitro/fx.h"
 
 class UnkStruct_ov071_0215f92c : public UnkStruct_ov031_Items_00 {
 public:
@@ -453,7 +454,7 @@ bool ActorTearLight_194::vfunc_04() {
     return this->Actor_C4::vfunc_04();
 }
 
-void ActorTearLight_194::vfunc_0C(unk32 param1) {
+void ActorTearLight_194::vfunc_0C(VecFx32 *param1) {
     this->GetActorPtr<ActorTearLight>()->func_ov071_0215fca4();
     return this->Actor_C4::vfunc_0C(param1);
 }

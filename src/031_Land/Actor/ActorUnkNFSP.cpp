@@ -3,6 +3,7 @@
 #include "Actor/ActorManager.hpp"
 #include "MapObject/MapObjectUnkSWFS.hpp"
 #include "System/SysNew.hpp"
+#include "nitro/fx.h"
 
 class ActorUnkNFSP_vfunc_54 : public Actor {
 public:
@@ -221,7 +222,7 @@ void ActorUnkNFSP_C0::vfunc_08() {
     this->Actor_C4::vfunc_08();
 }
 
-void ActorUnkNFSP_C0::vfunc_0C(unk32 param1) {
+void ActorUnkNFSP_C0::vfunc_0C(VecFx32 *param1) {
     this->mUnk_04 = 0x1;
     this->GetActorPtr<ActorUnkNFSP>()->vfunc_54(0x3);
     this->Actor_C4::vfunc_0C(param1);

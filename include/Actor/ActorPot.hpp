@@ -21,18 +21,18 @@ enum ActorPotState_ {
 class UnkStruct_ov000_020b2838 {
 public:
     // data_ov000_020b2838
-    /* 00 */ virtual void vfunc_00();             // func_ov000_0207bfe4
-    /* 04 */ virtual ~UnkStruct_ov000_020b2838(); // func_ov000_0207bfe8
-    /* 08 */ virtual void vfunc_08();             // func_ov000_0207c000
-    /* 0C */ virtual void vfunc_0C();             // func_ov000_0207c008
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual ~UnkStruct_ov000_020b2838();
+    /* 08 */ virtual void vfunc_08(); // to link func_ov000_0207c000
+    /* 0C */ virtual void vfunc_0C(); // to link func_ov000_0207c008
 };
 
-class UnkStruct_ov031_02113fb8 : UnkStruct_ov000_020b2838 {
+class UnkStruct_ov031_02113fb8 : public UnkStruct_ov000_020b2838 {
 public:
     // data_ov031_02113fb8
-    /* 00 */ virtual ~UnkStruct_ov031_02113fb8() override; // func_ov031_020f09f8 & func_ov031_020f0a14
-    /* 08 */ virtual void vfunc_08() override;             // func_ov031_020f0aa8
-    /* 0C */ virtual void vfunc_0C() override;             // func_ov031_020f0a38
+    /* 00 */ virtual ~UnkStruct_ov031_02113fb8() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C() override;
 };
 
 class Actor_ov031_02113fd4 : public Actor {
@@ -49,18 +49,18 @@ public:
     Actor_ov031_02113fd4();
 
     // data_ov031_02113fd4
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;                                // func_ov031_020efd6c
-    /* 20 */ virtual void vfunc_20() override;                                            // func_ov031_020f005c
-    /* 24 */ virtual void vfunc_24() override;                                            // func_ov031_020f0060
-    /* 38 */ virtual bool Grab(ActorGrabParams grabParams) override;                      // func_ov031_020efdcc
-    /* 3C */ virtual bool Drop(ActorGrabParams grabParams, const VecFx32 *pVel) override; // func_ov031_020efe08
-    /* 40 */ virtual void vfunc_40() override;                                            // func_ov031_020f02a8
-    /* 44 */ virtual void vfunc_44() override;                                            // func_ov031_020f02c
-    /* 54 */ virtual void vfunc_54();                                                     // func_ov031_020f064c
-    /* 58 */ virtual void vfunc_58();                                                     // func_ov031_020f0654
-    /* 5C */ virtual void vfunc_5C(ActorState param1) = 0;
-    /* 60 */ virtual void vfunc_60(); // func_ov031_020f0090
-    /* 64 */ virtual void vfunc_64(); // func_ov031_020f065c
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+    /* 38 */ virtual bool Grab(ActorGrabParams grabParams) override;
+    /* 3C */ virtual bool Drop(ActorGrabParams grabParams, const VecFx32 *pVel) override;
+    /* 40 */ virtual void vfunc_40() override;
+    /* 44 */ virtual void vfunc_44() override;
+    /* 54 */ virtual void vfunc_54();
+    /* 58 */ virtual void vfunc_58();
+    /* 5C */ virtual void vfunc_5C(ActorState state) = 0;
+    /* 60 */ virtual void vfunc_60();
+    /* 64 */ virtual void vfunc_64();
 
     void func_ov031_020f0094();
     void func_ov031_020f0098();
@@ -86,10 +86,10 @@ public:
 
     ActorPot();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;      // func_ov031_020f0d04
-    /* 20 */ virtual void vfunc_20() override;                  // func_ov031_020f0d80
-    /* 2C */ virtual void vfunc_2C(unk32 param1) override;      // func_ov031_020f0db8
-    /* 5C */ virtual void vfunc_5C(ActorState param1) override; // func_ov031_020f0d2c
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 5C */ virtual void vfunc_5C(ActorState state) override;
 
     void func_ov031_020f0cf0();
     void func_ov031_020f0de8();

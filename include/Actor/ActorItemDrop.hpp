@@ -3,6 +3,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "global.h"
+#include "nitro/fx.h"
 #include "types.h"
 
 typedef u32 ItemDropType;
@@ -39,7 +40,7 @@ public:
     virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     virtual bool vfunc_04() override;
     virtual void vfunc_08() override;
-    virtual void vfunc_0C(unk32 param1) override;
+    virtual void vfunc_0C(VecFx32 *param1) override;
 };
 
 class ActorItemDrop : public Actor_Derived2 {

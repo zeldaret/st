@@ -339,13 +339,8 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
 
             if (this->mUnk_86 && param2 == 0) {
                 func_ov000_02072fd0(&auStack_5c);
-                void *var_r0 = this;
 
-                if (this != NULL) {
-                    var_r0 = (u8 *) this + 0x40;
-                }
-
-                auStack_5c.mUnk_04   = var_r0;
+                auStack_5c.mUnk_04   = this;
                 auStack_5c.mUnk_00   = 0x7B;
                 auStack_5c.mUnk_0C.x = this->mPos.x;
                 auStack_5c.mUnk_0C.y = this->mPos.y;
@@ -420,13 +415,8 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
 
                 if (this->mUnk_86 && param2 == 0) {
                     func_ov000_02072fd0(&auStack_9c);
-                    void *var_r1 = this;
 
-                    if (this != NULL) {
-                        var_r1 = (u8 *) this + 0x40;
-                    }
-
-                    auStack_9c.mUnk_04   = var_r1;
+                    auStack_9c.mUnk_04   = this;
                     auStack_9c.mUnk_00   = 0x76;
                     auStack_9c.mUnk_0C.x = this->mPos.x;
                     auStack_9c.mUnk_0C.y = this->mPos.y;

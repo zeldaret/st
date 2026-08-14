@@ -7,6 +7,7 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
+#include "nitro/fx.h"
 #include "versions.h"
 
 extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
@@ -547,7 +548,7 @@ bool ActorItemDrop_C4::vfunc_04() {
     return Actor_C4::vfunc_04();
 }
 
-void ActorItemDrop_C4::vfunc_0C(unk32 param1) {
+void ActorItemDrop_C4::vfunc_0C(VecFx32 *param1) {
     this->GetActorPtr<ActorItemDrop>()->SetState(ActorItemDropState_1);
     Actor_C4::vfunc_0C(param1);
 }

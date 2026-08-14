@@ -42,17 +42,7 @@ public:
 
     /* 00 (base) */ virtual ~UnkStruct_ov063_02162ea8();
     /* 08 */ virtual bool vfunc_08(UnkStruct_ov031_020f3310 *param1) override;
-    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2, unk32 param3) override;
-};
-
-class UnkStruct_ov000_020b19f0 : public ModelRender {
-public:
-    UnkStruct_ov000_020b19f0(G3d_Model *pModel);
-};
-
-class UnkStruct_ov000_020b3268 : public UnkStruct_ov000_020b19f0 {
-public:
-    UnkStruct_ov000_020b3268(G3d_Model *pModel);
+    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) override;
 };
 
 class UnkStruct_ov063_02162ee8 : public UnkStruct_ov000_020b3268 {
@@ -100,17 +90,6 @@ public:
     /* 04 */ virtual unk32 vfunc_04(ActorRef param1, unk32 param2, unk32 param3, unk32 *param4) override;
 };
 
-class UnkStruct_func_ov063_0215a678 {
-public:
-    /* 00 */ STRUCT_PAD(0x00, 0x04);
-    /* 04 */ ModelRender *mUnk_04; //! INFO: Placeholder that matches
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ STRUCT_PAD(0x0C, 0x92);
-    /* 92 */ s8 mUnk_92;
-    /* 93 */ STRUCT_PAD(0x93, 0xAE);
-    /* AE */ u8 mUnk_AE;
-};
-
 class UnkStruct_ActorUnkCANS_224 {
 public:
     /* 00 (base) */
@@ -123,7 +102,7 @@ class ActorUnkCANS : public Actor_Derived2 {
 public:
     /* 000 (base) */
     /* 0AE */ STRUCT_PAD(0xAE, 0xB0);
-    /* 0B0 */ UnkStruct_ov063_02162ee8 mUnk_B0;
+    /* 0B0 */ UnkStruct_ov063_02162ee8 mUnk_0B0;
     /* 128 */ UnkStruct_ov063_02162f14 mUnk_128;
     /* 1C8 */ STRUCT_PAD(0x1C8, 0x1F4);
     /* 1F4 */ Actor_Derived1_94 mUnk_1F4;

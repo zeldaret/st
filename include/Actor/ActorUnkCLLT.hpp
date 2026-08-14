@@ -1,34 +1,31 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "ActorUnkTLKT.hpp"
 #include "global.h"
-#include "types.h"
 
-class ActorUnkCLLT_C4 : public Actor_C4 {
-public:
-    ActorUnkCLLT_C4(Actor *param1);
-
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual bool vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+enum ActorUnkCLLTState_ {
+    ActorUnkCLLTState_0 = 0,
+    ActorUnkCLLTState_1 = 1,
+    ActorUnkCLLTState_2 = 2,
+    ActorUnkCLLTState_3 = 3,
+    ActorUnkCLLTState_4 = 4,
+    ActorUnkCLLTState_5 = 5,
+    ActorUnkCLLTState_Max,
 };
 
-class ActorUnkCLLT : public Actor {
+class ActorUnkCLLT : public ActorUnkTLKTnCLLT_Base {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 9C */ UnkSystem1_ov000_Derived2 mUnk_9C;
+    /* D0 */
 
     ActorUnkCLLT();
 
-    /* 4C */ virtual ~ActorUnkCLLT() override;
-
-    void func_ov031_020fb38c(void);
-    void func_ov031_020fb3c8(void);
-    void func_ov031_020fb40c(void);
+    /* 58 */ virtual void vfunc_58() override;
+    /* 5C */ virtual void vfunc_5C() override;
+    /* 60 */ virtual void vfunc_60(ActorState state) override;
 };
 
 class ActorProfileUnkCLLT : public ActorProfile {
@@ -36,7 +33,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkCLLT();
-    ~ActorProfileUnkCLLT();
 
     /* 0C */ virtual Actor *Create();
 
