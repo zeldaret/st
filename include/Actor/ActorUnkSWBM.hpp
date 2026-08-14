@@ -75,7 +75,7 @@ public:
     void func_ov031_020e6d48();
     void func_ov031_020e6d80(unk32 param1);
     void func_ov031_020e6e84(ActorState state);
-    static void func_ov031_020e718c(VecFx32 *param1, Mat3p *param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
+    static void func_ov031_020e718c(VecFx32 *param1, Mat3p *param2, unk32 param3, s16 param4, u16 param5, s16 param6);
 };
 
 class ActorProfileUnkSWBM : public ActorProfile {

@@ -6,6 +6,18 @@
 #include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
+#include "Unknown/UnkStruct_ov000_020b4ec4.hpp"
+
+struct UnkStruct_ov031_020e5d18_00 {
+    Actor *mUnk_00;
+    u8 mUnk_04[0x14];
+};
+
+extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, UnkStruct_ov031_Items_00_Base *);
+extern "C" bool func_ov000_02080998(VecFx32 *);
+
+extern "C" void /*GX_*/ func_02024a84(Mat3p *param1);
+extern "C" void FlushGfxQueue();
 
 static const Cylinder data_ov031_02113114(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.35f));
 
@@ -47,8 +59,6 @@ void ActorUnkSWBM_98::vfunc_10(Actor *actor) {
     }
 }
 
-extern "C" void FlushGfxQueue();
-
 // non-matching
 void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2, unk32 param3) {
     ActorUnkSWBM *actor = this->mUnk_14;
@@ -68,9 +78,9 @@ void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2, unk32 param3) {
     u16 angle = actor->mAngle;
     Mat3p_InitYRotation(&mat, SIN(angle), COS(angle));
 
-    unk32 var_r8 = 0xB33;
+    s16 var_r8   = 0xB33;
     unk32 var_r9 = 0x1F - ((0xE - actor->mUnk_0E0) * 2);
-    unk32 var_r7 = 0xB33;
+    u16 var_r7   = 0xB33;
     ActorUnkSWBM::func_ov031_020e718c(&actor->mPos, &mat, var_r9, 0xB33, 0xB33, actor->mUnk_108);
 
     unk16 var_r10 = actor->mUnk_10A;
@@ -188,14 +198,6 @@ void ActorUnkSWBM::func_ov031_020e6e84(ActorState state) {
     this->mUnk_50 = 0x0000;
 }
 
-struct UnkStruct_ov031_020e5d18_00 {
-    Actor *mUnk_00;
-    u8 mUnk_04[0x14];
-};
-
-extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, UnkStruct_ov031_Items_00_Base *);
-extern "C" bool func_ov000_02080998(VecFx32 *);
-
 // non-matching
 void ActorUnkSWBM::vfunc_20() {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
@@ -273,8 +275,40 @@ void ActorUnkSWBM::vfunc_24() {
 }
 
 // non-matching
-void ActorUnkSWBM::func_ov031_020e718c(VecFx32 *param1, Mat3p *param2, unk32 param3, unk32 param4, unk32 param5,
-                                       unk32 param6) {}
+void ActorUnkSWBM::func_ov031_020e718c(VecFx32 *param1, Mat3p *param2, unk32 param3, s16 param4, u16 param5, s16 param6) {
+    if (param3 <= 0) {
+        return;
+    }
+    REG_GFX_FIFO_POLYGON_ATTR     = data_ov000_020b4ec4.func_01ffc768(0x4) << 0x18 | 0x80 | (param3 << 0x10);
+    REG_GFX_FIFO_MATRIX_PUSH      = false;
+    REG_GFX_FIFO_MATRIX_TRANSLATE = param1->x;
+    REG_GFX_FIFO_MATRIX_TRANSLATE = param1->y;
+    REG_GFX_FIFO_MATRIX_TRANSLATE = param1->z;
+
+    func_02024a84(param2);
+
+    REG_GFX_FIFO_POLYGONS_BEGIN  = true;
+    REG_GFX_FIFO_VERTEX_TEXCOORD = 0x02000200;
+
+    u16 var1 = (u16) (s16) -param4;
+    u16 var2 = (u16) -param4;
+    u16 var3 = (u16) (s16) -param6;
+
+    REG_GFX_FIFO_VERTEX_16 = var1;
+    REG_GFX_FIFO_VERTEX_16 = var3;
+
+    REG_GFX_FIFO_VERTEX_TEXCOORD = 0x200;
+    REG_GFX_FIFO_VERTEX_XZ       = var1 | (param5 << 0x10);
+
+    REG_GFX_FIFO_VERTEX_TEXCOORD = 0x0;
+    REG_GFX_FIFO_VERTEX_XZ       = var2 | (param5 << 0x10);
+
+    REG_GFX_FIFO_VERTEX_TEXCOORD = 0x02000000;
+    REG_GFX_FIFO_VERTEX_XZ       = var2 | (var3 << 0x10);
+
+    REG_GFX_FIFO_POLYGONS_END = false;
+    REG_GFX_FIFO_MATRIX_POP   = true;
+}
 
 void ActorUnkSWBM::vfunc_2C(unk32 param1) {
     if (this->mState == ActorUnkSWBMState_2) {
