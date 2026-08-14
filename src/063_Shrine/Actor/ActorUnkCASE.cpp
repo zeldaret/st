@@ -7,6 +7,7 @@
 #include "Actor/ActorRef.hpp"
 #include "Actor/ActorShotArrow.hpp"
 #include "Actor/ActorUnkCANS.hpp"
+#include "Actor/ActorUnkITWP.hpp"
 #include "MapObject/MapObjectProfile_Derived2_20.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
@@ -364,26 +365,17 @@ void ActorUnkCASE::func_ov063_0215afa4(void) {
 }
 
 void ActorUnkCASE::func_ov063_0215afb8(void) {
-    //! INFO: Actually a Mat3p, this is only used to allow a "batched" copy (all 9 elements at a time, not 3 by 3)
-    struct Fx32Array9 {
-        fx32 array[9];
-    };
-
-    // Fake struct because it is unknown at the time which Actor otherActor is
-    struct UnkStruct_otherActor {
-        /* 000 */ STRUCT_PAD(0x000, 0xE8);
-        /* 0E8 */ VecFx32 mUnk_0E8;
-        /* 0F4 */ STRUCT_PAD(0xF4, 0x154);
-        /* 154 */ Fx32Array9 mUnk_154;
-    };
-
-    UnkStruct_otherActor *otherActor = (UnkStruct_otherActor *) gpActorManager->func_01fff3b4(mUnk_1E4);
+    ActorUnkITWP *otherActor = (ActorUnkITWP *) gpActorManager->func_01fff3b4(mUnk_1E4);
     if (otherActor == NULL) {
         this->func_ov063_0215aefc(4);
         return;
     }
 
-    *(Fx32Array9 *) &mUnk_1A4 = otherActor->mUnk_154;
+    //! INFO: Actually a Mat3p, this is only used to allow a "batched" copy (all 9 elements at a time, not 3 by 3)
+    struct Fx32Array9 {
+        fx32 array[9];
+    };
+    *(Fx32Array9 *) &mUnk_1A4 = *(Fx32Array9 *) &otherActor->mUnk_154;
 
     VecFx32 vec = otherActor->mUnk_0E8;
     mPos.x      = vec.x;

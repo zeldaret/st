@@ -5,6 +5,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "global.h"
+#include "nitro/math.h"
 #include "types.h"
 
 class ActorUnkITWP_C4 : public Actor_C4 {
@@ -20,7 +21,10 @@ public:
 class ActorUnkITWP : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 094 */ STRUCT_PAD(0x094, 0x0E8);
+    /* 0E8 */ VecFx32 mUnk_0E8;
+    /* 0F4 */ STRUCT_PAD(0x0F4, 0x154);
+    /* 154 */ Mat3p mUnk_154;
 
     ActorUnkITWP();
 

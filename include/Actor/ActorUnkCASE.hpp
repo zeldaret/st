@@ -66,7 +66,7 @@ public:
 class ActorUnkCASE : public Actor_Derived2 {
 public:
     /* 000 (base) */
-    /* 0AE */ unk16 mUnk_AE;
+    /* 0AE */ unk16 mUnk_0AE;
     /* 0B0 */ UnkStruct_ov063_021631a0 mUnk_0B0;
     /* 120 */ unk16 mUnk_120;
     /* 122 */ STRUCT_PAD(0x122, 0x124);
