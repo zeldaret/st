@@ -177,17 +177,18 @@ void ActorUnkSWBM::func_ov031_020e6d80(unk32 param1) {
 }
 
 void ActorUnkSWBM::func_ov031_020e6e84(ActorState state) {
-    if (state != ActorUnkSWBMState_1) {
-        if (state == ActorUnkSWBMState_2) {
+    switch (state) {
+        case ActorUnkSWBMState_2:
             UNSET_FLAG(this->mFlags, ActorFlag_Alive);
-        }
-    } else {
-        if (this->mUnk_0E0 > 0x6) {
-            this->mUnk_0E0 = 0x6;
-        }
+            break;
+        case ActorUnkSWBMState_1:
+            if (this->mUnk_0E0 > 0x6) {
+                this->mUnk_0E0 = 0x6;
+            }
 
-        this->mVel.x /= 3;
-        this->mVel.z /= 3;
+            this->mVel.x /= 3;
+            this->mVel.z /= 3;
+            break;
     }
     this->mState  = state;
     this->mUnk_52 = 0xFFFF;
