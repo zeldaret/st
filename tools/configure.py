@@ -20,7 +20,7 @@ parser.add_argument("--version", "-v", help='Game version', required=False)
 args = parser.parse_args()
 
 config = ProjectConfig("st", args.compiler, "dsi/1.2p1", args.wine, args.dsd, Path(__file__).resolve())
-config.dsd_tag = "v0.11.0"
+config.dsd_tag = "v0.12.0"
 config.wibo_tag = "1.1.0"
 config.objdiff_tag = "v3.7.1"
 config.sjiswrap_tag = "v1.2.2"
