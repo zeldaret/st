@@ -23,11 +23,11 @@ static const Cylinder data_ov031_02113114(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0
 
 // non-matching
 bool ActorUnkSWBM_94::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
-    return ((u32) param1->mUnk_04->mUnk_24[param1->mUnk_00->mUnk_06] >> 0x16 & 0x1) != 0x1;
+    return (((u32) param1->mUnk_04->mUnk_24[param1->mUnk_00->mUnk_06] >> 0x16) & 0x1) != 0x1;
 }
 
 bool ActorUnkSWBM_94::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {
-    return ((u32) param2[0x2] >> 0x16 & 0x1) != 0x1;
+    return (((u32) param2[0x2] >> 0x16) & 0x1) != 0x1;
 }
 
 bool ActorUnkSWBM_98::vfunc_0C(Actor *param1, VecFx32 *vector) {
