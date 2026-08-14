@@ -65,13 +65,14 @@ void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2, unk32 param3) {
 
     FlushGfxQueue();
     REG_GFX_FIFO_DIFFUSE_AMBIENT_REFLECT = 0x1084FFFF;
-    REG_GFX_FIFO_TEXTURE_PARAM           = data_027e095c->mUnk_000[0x8].z;
+    VecFx32 *textureParam                = data_027e095c->mUnk_000;
+    REG_GFX_FIFO_TEXTURE_PARAM           = textureParam[0x8].z;
 
     unk32 var_r2 = 1;
-    if ((((u32) data_027e095c->mUnk_000[0x8].z >> 0x1A) & 7) != 2) {
+    if (((textureParam[0x8].z >> 0x1A) & 7) != 2) {
         var_r2 = 0;
     }
-    REG_GFX_FIFO_TEXTURE_PALETTE = ((u32) (data_027e095c->mUnk_000[0x8].y << 0x10) >> 0xD) >> (4 - var_r2);
+    REG_GFX_FIFO_TEXTURE_PALETTE = ((u32) (textureParam[0x8].y << 0x10) >> 0xD) >> (4 - var_r2);
 
     Mat3p mat;
 
@@ -84,20 +85,15 @@ void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2, unk32 param3) {
     ActorUnkSWBM::func_ov031_020e718c(&actor->mPos, &mat, var_r9, 0xB33, 0xB33, actor->mUnk_108);
 
     unk16 var_r10 = actor->mUnk_10A;
-    unk16 var_r6  = 0;
     if ((s32) var_r10 >= 3) {
         var_r10 = 3;
     }
-    if ((s32) var_r10 <= 0) {
-        return;
-    }
-    do {
+    for (unk32 var_r6 = 0; var_r6 < (s32) var_r10; ++var_r6) {
         var_r8 += 0x11F;
         var_r7 += 0x23D;
         var_r9 -= 5;
         ActorUnkSWBM::func_ov031_020e718c(&actor->mUnk_0E4[var_r6], &mat, var_r9, var_r8, var_r7, actor->mUnk_108);
-        var_r6 += 1;
-    } while (var_r6 < (s32) var_r10);
+    }
 }
 
 DECL_PROFILE(ActorProfileUnkSWBM);
