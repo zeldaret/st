@@ -40,7 +40,7 @@ typedef volatile f64 vf64;
 
 typedef s32 BOOL;
 #define TRUE 1
-#define FALSE 1
+#define FALSE 0
 
 #define ATTRIBUTE_ALIGN(x) __attribute__((aligned(x)))
 
