@@ -78,9 +78,9 @@ void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2, unk32 param3) {
     u16 angle = actor->mAngle;
     Mat3p_InitYRotation(&mat, SIN(angle), COS(angle));
 
-    s16 var_r8   = 0xB33;
-    unk32 var_r9 = 0x1F - ((0xE - actor->mUnk_0E0) * 2);
-    u16 var_r7   = 0xB33;
+    s16 var_r8 = 0xB33;
+    s32 var_r9 = 0x1F - ((0xE - actor->mUnk_0E0) * 2);
+    u16 var_r7 = 0xB33;
     ActorUnkSWBM::func_ov031_020e718c(&actor->mPos, &mat, var_r9, 0xB33, 0xB33, actor->mUnk_108);
 
     unk16 var_r10 = actor->mUnk_10A;
@@ -275,7 +275,7 @@ void ActorUnkSWBM::vfunc_24() {
 }
 
 // non-matching
-void ActorUnkSWBM::func_ov031_020e718c(VecFx32 *param0, Mat3p *param1, unk32 param2, s16 param3, u16 param4, s16 param5) {
+void ActorUnkSWBM::func_ov031_020e718c(VecFx32 *param0, Mat3p *param1, s32 param2, s16 param3, u16 param4, s16 param5) {
     if (param2 <= 0) {
         return;
     }
