@@ -275,33 +275,33 @@ void ActorUnkSWBM::vfunc_24() {
 }
 
 // non-matching
-void ActorUnkSWBM::func_ov031_020e718c(VecFx32 *param1, Mat3p *param2, unk32 param3, s16 param4, u16 param5, s16 param6) {
-    if (param3 <= 0) {
+void ActorUnkSWBM::func_ov031_020e718c(VecFx32 *param0, Mat3p *param1, unk32 param2, s16 param3, u16 param4, s16 param5) {
+    if (param2 <= 0) {
         return;
     }
-    REG_GFX_FIFO_POLYGON_ATTR     = data_ov000_020b4ec4.func_01ffc768(0x4) << 0x18 | 0x80 | (param3 << 0x10);
+    REG_GFX_FIFO_POLYGON_ATTR     = data_ov000_020b4ec4.func_01ffc768(0x4) << 0x18 | 0x80 | (param2 << 0x10);
     REG_GFX_FIFO_MATRIX_PUSH      = false;
-    REG_GFX_FIFO_MATRIX_TRANSLATE = param1->x;
-    REG_GFX_FIFO_MATRIX_TRANSLATE = param1->y;
-    REG_GFX_FIFO_MATRIX_TRANSLATE = param1->z;
+    REG_GFX_FIFO_MATRIX_TRANSLATE = param0->x;
+    REG_GFX_FIFO_MATRIX_TRANSLATE = param0->y;
+    REG_GFX_FIFO_MATRIX_TRANSLATE = param0->z;
 
-    func_02024a84(param2);
+    func_02024a84(param1);
 
     REG_GFX_FIFO_POLYGONS_BEGIN  = true;
     REG_GFX_FIFO_VERTEX_TEXCOORD = 0x02000200;
 
-    u16 var1 = (u16) (s16) -param4;
-    u16 var2 = (u16) -param4;
-    u16 var3 = (u16) (s16) -param6;
+    u16 var1 = (u16) (s16) -param3;
+    u16 var2 = (u16) param3;
+    u16 var3 = (u16) (s16) -param5;
 
     REG_GFX_FIFO_VERTEX_16 = var1;
     REG_GFX_FIFO_VERTEX_16 = var3;
 
     REG_GFX_FIFO_VERTEX_TEXCOORD = 0x200;
-    REG_GFX_FIFO_VERTEX_XZ       = var1 | (param5 << 0x10);
+    REG_GFX_FIFO_VERTEX_XZ       = var1 | (param4 << 0x10);
 
     REG_GFX_FIFO_VERTEX_TEXCOORD = 0x0;
-    REG_GFX_FIFO_VERTEX_XZ       = var2 | (param5 << 0x10);
+    REG_GFX_FIFO_VERTEX_XZ       = var2 | (param4 << 0x10);
 
     REG_GFX_FIFO_VERTEX_TEXCOORD = 0x02000000;
     REG_GFX_FIFO_VERTEX_XZ       = var2 | (var3 << 0x10);
