@@ -1,14 +1,17 @@
 #pragma once
 
 #include "global.h"
+#include "math.hpp"
 #include "nitro/fx.h"
+#include "profile.hpp"
 #include "types.h"
 
 #include <nns/g3d/g3d.h>
 
+class UnkSystem5;
 extern "C" void *func_ov000_02057750(size_t allocSize);
 
-typedef void (*UnkSystem4_UnkCallback)(void);
+typedef void (*UnkSystem4_UnkCallback)(void *, unk32);
 
 class UnkSystem4_vfunc_1C_B4 {
 public:
@@ -73,7 +76,9 @@ public:
     void func_ov000_02057c38(unk32 param1, unk32 param2);
     void func_ov000_02057d20(u8 numBones);
     void func_ov000_02057d3c(G3d_BoneMtxStruct *pCacheJntAnm);
+    void func_ov000_02057d9c();
     void func_ov000_0209a7b8(void *param1, UnkSystem4_UnkCallback param2);
+    void func_ov000_02057c98(UnkSystem5 *param1);
 };
 
 class UnkSystem6_Derived1 : public ModelRenderBase {
@@ -106,7 +111,7 @@ public:
     /* 00 */ virtual ~UnkSystem6_Derived2() {}
     /* 0C */ virtual void vfunc_0C() override;
 
-    void func_01ffc6d4(u16 angle, VecFx32 *pos);
+    void func_01ffc6d4(UnkAngleStruct angleStruct, VecFx32 *pos);
 };
 
 class ModelRender_ov000_020b198c : public ModelRenderBase {
@@ -122,7 +127,6 @@ public:
     ModelRender_ov000_020b198c(G3d_Model *pModel, unk8 param2);
 
     // data_ov000_020b198c
-    /* 00 */ virtual ~ModelRender_ov000_020b198c() override {}
     /* 08 */ virtual void vfunc_08(G3d_Model *pModel) override; // func_ov000_02057908
     /* 0C */ virtual void vfunc_0C() override;                  // func_ov000_0205793c
     /* 10 */ virtual void vfunc_10(VecFx32 *param1, Mat3p *param2, VecFx32 *param3) override;
@@ -151,6 +155,7 @@ public:
 
     void func_ov000_020577a4(unk32 param1, unk32 param2, unk32 param3);
     void func_ov000_020577f8(unk32 param1);
+    void func_ov000_020578a4(unk32 param1, unk32 param2);
 };
 
 class UnkSystem5_Derived1 : public UnkSystem5 {
@@ -184,7 +189,7 @@ public:
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
 
     unk32 func_ov000_0205a778(const char *param1);
-    void *func_ov000_0205a7a8(unk32 param1);
+    VecFx32 *func_ov000_0205a7a8(unk32 param1);
 };
 
 class ModelRender_Derived2 : public ModelRender_Derived1 {

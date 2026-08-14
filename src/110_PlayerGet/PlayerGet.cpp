@@ -23,6 +23,7 @@
 #include "Unknown/UnkStruct_ov000_020b51c0.hpp"
 #include "versions.h"
 
+#include "Unknown/UnkStruct_027e0958.hpp"
 #include "math.hpp"
 
 struct UnkStruct_02186240 {
@@ -38,8 +39,6 @@ extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
 extern "C" void func_01ffc5a0(ModelRender *, unk32, u16, void *, unk32);
 extern "C" void func_ov000_0208f820();
-extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, VecFx32 *);
-extern unk32 *data_027e0958;
 extern "C" void func_ov000_0208ba10(void *, void *, unk32);
 extern "C" void func_02015ea8(unk32, void *);
 extern "C" void func_02015628(char *, char *, unk32, void *, size_t);
@@ -1002,7 +1001,7 @@ void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
         case 0x3B:
             if (param3 != 0 && this->mUnk_54.mItemId != ItemId_Nothing && this->mUnk_8C.mpModel != NULL) {
                 VecFx32_Add(this->mUnk_34, (VecFx32 *) &data_ov110_021861ec.mUnk_00, &auStack_18);
-                func_ov000_02058fc4(data_027e0958, &this->mUnk_74, &auStack_18);
+                data_027e0958->func_ov000_02058fc4(&this->mUnk_74, &auStack_18);
             }
             break;
         default:

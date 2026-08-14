@@ -115,4 +115,13 @@ class MapObjectProfile_Derived4 : public MapObjectProfile_Derived2 {
     /* 0C */ virtual void vfunc_0C() override;
 };
 
+class MapObjectProfile_Derived6 : public MapObjectProfile_Derived2 {
+public:
+    MapObjectProfile_Derived6(MapObjectId mapObjId1, MapObjectId mapObjId2) :
+        MapObjectProfile_Derived2(mapObjId1, mapObjId2) {}
+    ~MapObjectProfile_Derived6();
+
+    /* 0C */ virtual void vfunc_10() override;
+};
+
 typedef MapObjectProfile *(*GetMapObjectProfile)();

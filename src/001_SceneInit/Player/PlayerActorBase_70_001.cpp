@@ -1,3 +1,4 @@
+#include "Actor/Actor.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -68,7 +69,7 @@ PlayerActorBase_70::~PlayerActorBase_70() {
     delete this->mUnk_00C.GetUnk08();
 }
 
-void PlayerActorBase_70::func_ov001_020bbe18(unk32 param1, UnkStruct_func_ov001_020bbe18 param2, u32 param3, u8 param4) {
+void PlayerActorBase_70::func_ov001_020bbe18(unk32 param1, UnkAngleStruct param2, u32 param3, u8 param4) {
     this->mUnk_129 = true;
     this->mUnk_12A = true;
 

@@ -388,6 +388,8 @@ public:
     /* 48 */
 
     // clang-format off
+    const bool IsField() const { return this->mLoadedOverlays[OverlaySlot_7] == OverlayIndex_Field; }
+
     const bool IsTower() const { return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower; }
     const bool IsBossDesert() const { return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossDesert; }
     const bool IsBossDeago() const { return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossDeago; }
@@ -399,6 +401,7 @@ public:
 
     const bool IsASR() const { return this->mLoadedOverlays[OverlaySlot_9] == OverlayIndex_ASR; }
     const bool IsPlayerSub() const { return this->mLoadedOverlays[OverlaySlot_9] == OverlayIndex_PlayerSub; }
+    const bool IsTrainDark() const { return this->mLoadedOverlays[OverlaySlot_9] == OverlayIndex_TrainDark; }
 
     const bool IsPlayerPhantom() const { return this->mLoadedOverlays[OverlaySlot_10] == OverlayIndex_PlayerPhantom; }
     const bool IsPlayerZelda() const { return this->mLoadedOverlays[OverlaySlot_10] == OverlayIndex_PlayerZelda; }

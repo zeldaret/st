@@ -200,6 +200,10 @@ static inline void VecFx32_Init(fx32 x, fx32 y, fx32 z, VecFx32 *dst) {
     dst->z = z;
 }
 
+static inline BOOL VecFx32_IsEqual(const VecFx32 *a, const VecFx32 *b) {
+    return a->x == b->x && a->y == b->y && a->z == b->z;
+}
+
 void Mat2p_InitIdentity(Mat2p *m);
 void Mat2p_InitRotation(Mat2p *m, fx32 sin, fx32 cos);
 void Mat2p_Multiply(Mat2p *a, Mat2p *b, Mat2p *out);

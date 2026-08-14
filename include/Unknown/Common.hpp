@@ -3,7 +3,6 @@
 #include "Animation/CellAnimObject.hpp"
 #include "Game/GameModeManager.hpp"
 #include "LinkList.hpp"
-#include "System/SysNew.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "global.h"
 #include "math.hpp"
@@ -11,7 +10,6 @@
 #include "types.h"
 
 #include <nitro/mi.h>
-#include <nns/g3d/g3d.h>
 #include <nns/text.h>
 
 class UnkDataStruct2;
@@ -216,7 +214,7 @@ public:
 struct UnkStruct_ov019_020d24c8_28_258_00 {
     /* 00 */ void *mUnk_00;
     /* 04 */ unk32 mUnk_04;
-    /* 08 */
+    /* 0C */
 
     UnkStruct_ov019_020d24c8_28_258_00() {}
 
@@ -888,12 +886,61 @@ struct UnkStruct_StackTitleScreen {
 
 class MapObject;
 
+class MapObject_UnkStruct1 {
+public:
+    /* 00 (vtable) */
+    /* 04 */ union {
+        struct {
+            bool mUnk_04b;
+            bool mUnk_05;
+        };
+        unk32 mUnk_04;
+    };
+    /* 08 */
+
+    // MapObject_UnkStruct1(); // func_ov000_02073194 & func_ov000_020731c4
+
+    // data_ov000_020b2290
+    /* 00 */ virtual void vfunc2_00();
+    /* 04 */ virtual void vfunc2_04();
+    /* 08 */ virtual void vfunc2_08();
+    /* 0C */ virtual void vfunc2_0C();
+};
+
+class MapObject_UnkStruct1_Derived1 : public MapObject_UnkStruct1 {
+public:
+    /* 00 (base) */
+    /* 08 */ unk16 mUnk_48;
+    /* 0A */ s16 mUnk_4A;
+    /* 0C */ VecFx32 mUnk_4C;
+    /* 18 */ bool mUnk_58;
+    /* 19 */ unk8 mUnk_59;
+    /* 1A */ s16 mUnk_5A;
+    /* 1C */ VecFx32 mUnk_5C;
+    /* 28 */
+
+    MapObject_UnkStruct1_Derived1(); // func_ov000_02073234
+
+    // data_ov000_020b22a8
+    /* 0C */ virtual void vfunc2_0C() override;
+};
+
+class MapObject_UnkStruct1_Derived2 : public MapObject_UnkStruct1_Derived1 {
+public:
+    /* 00 (base) */
+    /* 28 */
+
+    // data_ov031_021150a0
+    /* 04 */ virtual void vfunc2_04() override;
+    /* 08 */ virtual void vfunc2_08() override;
+};
+
 struct UnkStackStruct1 {
-    /* 00 */ unk8 mUnk_00;
+    /* 00 */ u8 mUnk_00;
     /* 01 */ unk8 mUnk_01;
     /* 02 */ unk8 mUnk_02;
     /* 03 */ unk8 mUnk_03;
-    /* 04 */ void *mUnk_04;
+    /* 04 */ MapObject_UnkStruct1 *mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ VecFx32 mUnk_0C;
     /* 18 */ unk16 mUnk_18;
@@ -902,10 +949,10 @@ struct UnkStackStruct1 {
     /* 1E */ unk16 mUnk_1E;
     /* 20 */ unk32 mUnk_20;
     /* 24 */ VecFx32 mUnk_24;
-    /* 30 */ unk16 mUnk_30;
-    /* 32 */ unk16 mUnk_32;
-    /* 34 */ unk16 mUnk_34;
-    /* 36 */ unk16 mUnk_36;
+    /* 30 */ u16 mUnk_30;
+    /* 32 */ u16 mUnk_32;
+    /* 34 */ u16 mUnk_34;
+    /* 36 */ u16 mUnk_36;
     /* 38 */ u16 mUnk_38;
     /* 3A */ unk8 mUnk_3A;
     /* 3B */ unk8 mUnk_3B;
@@ -914,8 +961,19 @@ struct UnkStackStruct1 {
 };
 extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
 
+struct UnkSystem7_UnkStruct_00_20_00 {
+    /* 00 */ STRUCT_PAD(0x00, 0x04);
+    /* 04 */ VecFx32 mUnk_04;
+};
+
+struct UnkSystem7_UnkStruct_00_20 {
+    /* 00 */ UnkSystem7_UnkStruct_00_20_00 *mUnk_00;
+    /* 04 */ VecFx32 *mUnk_04;
+};
+
 struct UnkSystem7_UnkStruct_00 {
-    /* 00 */ STRUCT_PAD(0x00, 0x24);
+    /* 00 */ STRUCT_PAD(0x00, 0x20);
+    /* 20 */ UnkSystem7_UnkStruct_00_20 *mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ unk32 mUnk_28;
     /* 2C */ unk32 mUnk_2C;
@@ -1245,6 +1303,7 @@ public:
 class UnkStruct_PlayerGet_74_base {
 public:
     /* 00 (vtable) */
+    /* 04 */
 
     /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3);
 

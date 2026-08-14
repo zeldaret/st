@@ -1,14 +1,39 @@
 #pragma once
 
-#include "Actor/Actor.hpp"
-#include "LinkList.hpp"
+#include "Actor/ActorRef.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
-#include "Unknown/UnkStruct_027e09a4.hpp"
 #include "math.hpp"
+
 #include "types.h"
 
 #include <nns/g3d/g3d.h>
+
+class Actor_C4;
+class UnkStruct_027e0ce0_40_328;
+class ItemManager;
+
+struct ActorGrabParams;
+extern "C" void func_ov000_0205d500(ActorGrabParams *, unk32, unk32);
+bool PlayerCharacter_IsNotLink(s32 character);
+
+struct ActorGrabParams {
+    /* 00 */ u16 unk_00;
+    /* 02 */ u16 unk_02;
+    /* 04 */
+
+    ActorGrabParams() {}
+
+    ActorGrabParams(unk32 param2, unk32 param3) {
+        ActorGrabParams local_1c;
+        func_ov000_0205d500(&local_1c, param3, param2);
+        *this = local_1c;
+    }
+
+    void operator=(ActorGrabParams &from) {
+        *(u32 *) this = *(u32 *) &from;
+    }
+};
 
 class UnkStruct_027e0ce0_40;
 class PlayerActorBase_70;
@@ -288,10 +313,6 @@ struct UnkStruct_func_ov000_020830d4 {
     u32 mUnk_0C;
 };
 
-struct UnkStruct_func_ov001_020bbe18 {
-    u16 mUnk_00;
-};
-
 class PlayerActorBase_70 {
 private:
     /* 000 */ BOOL mIsNotLink;
@@ -339,10 +360,10 @@ public:
 
     // overlay 0
     void func_ov000_02082e78(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-    void func_ov000_020830d4(UnkStruct_func_ov001_020bbe18 param1, u32 param2, u8 param3, unk32 param4);
+    void func_ov000_020830d4(UnkAngleStruct param1, u32 param2, u8 param3, unk32 param4);
 
     // overlay 1
-    void func_ov001_020bbe18(unk32 param1, UnkStruct_func_ov001_020bbe18 param2, u32 param3, u8 param4);
+    void func_ov001_020bbe18(unk32 param1, UnkAngleStruct param2, u32 param3, u8 param4);
 };
 
 class PlayerActorBase_74 {
@@ -389,7 +410,7 @@ public:
     /* 004 */ STRUCT_PAD(0x04, 0x34);
     /* 034 */ PlayerLinkActor_9C_34 mUnk_34;
     /* 004 */ STRUCT_PAD(0x50, 0xF4);
-    /* 0F4 */ unk32 mUnk_0F4;
+    /* 0F4 */ UnkStruct_027e0ce0_40_328 *mUnk_0F4;
     /* 0F8 */ STRUCT_PAD(0xF8, 0x154);
     /* 154 */
 
@@ -407,7 +428,7 @@ public:
     /* 24 */ VecFx32 mAccel;
     /* 30 */ union {
         u16 mAngle;
-        UnkStruct_func_ov001_020bbe18 mAngleStruct;
+        UnkAngleStruct mAngleStruct;
     };
     /* 32 */ u8 mInvincibilityTimer;
     /* 33 */ u8 mInvincibilityIconTimer; // the blinking icon on top-screen
@@ -417,7 +438,7 @@ public:
     /* 48 */ PlayerCharacter mCharacter;
     /* 4C */ unk32 mUnk_4C;
     /* 50 */ ActorGrabParams mUnk_50;
-    /* 54 */ unk32 mUnk_54;
+    /* 54 */ ItemManager *mUnk_54;
     /* 58 */ UnkStruct_027e0ce0_40 *mUnk_58;
     /* 5C */ PlayerActorBase_5C mUnk_5C;
     /* 70 */ PlayerActorBase_70 *mUnk_70;
@@ -428,7 +449,7 @@ public:
     /* 90 */ PlayerLinkActor_9C *mUnk_90;
     /* 94 */
 
-    PlayerActorBase(PlayerCharacter character, unk32 param2, unk32 param3, UnkStruct_027e0ce0_40 *param4);
+    PlayerActorBase(PlayerCharacter character, unk32 param2, ItemManager *pItemMgr, UnkStruct_027e0ce0_40 *param4);
     ~PlayerActorBase();
 
     // overlay 0

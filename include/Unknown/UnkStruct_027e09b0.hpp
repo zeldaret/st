@@ -3,7 +3,7 @@
 #include "global.h"
 #include "types.h"
 
-class UnkStruct_027e09b0 {
+class UnkStruct_027e09b0 : public AutoInstance<UnkStruct_027e09b0> {
 public:
     /* 00 */ unk32 mUnk_00;
 
@@ -11,6 +11,11 @@ public:
     ~UnkStruct_027e09b0();
 
     void func_ov000_02072cc4(unk32 param1, unk32 param2);
+
+    static UnkStruct_027e09b0 *Create();
+
+    // overlay 1
+    static void Destroy();
 };
 
 extern UnkStruct_027e09b0 *data_027e09b0;

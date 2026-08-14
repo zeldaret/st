@@ -2,6 +2,7 @@
 
 #include "Item/Item.hpp"
 #include "Save/AdventureFlags.hpp"
+#include "Unknown/UnkStruct_02049bac.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -61,9 +62,9 @@ enum StampType_ {
 
 class MiscAdvManager : public AutoInstance<MiscAdvManager> {
 public:
-    /* 00 */ u16 mStampDates[StampType_Max];
-    /* 28 */ u16 mUnk_28;
-    /* 2A */ u16 mPostDate;
+    /* 00 */ Date mStampDates[StampType_Max];
+    /* 28 */ Date mUnk_28;
+    /* 2A */ Date mPostDate;
     /* 2C */ union {
         Vec2bCpp mStampPositions[StampType_Max];
         u16 mStampPos[StampType_Max];

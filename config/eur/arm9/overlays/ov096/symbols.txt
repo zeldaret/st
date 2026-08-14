@@ -1,11 +1,11 @@
 _ZN9Inventory19func_ov096_02179b20Ev kind:function(arm,size=0x9c) addr:0x02179b20
 func_ov096_02179bbc kind:function(thumb,size=0x20) addr:0x02179bbc
 func_ov096_02179bdc kind:function(thumb,size=0x20) addr:0x02179bdc
-func_ov096_02179bfc kind:function(thumb,size=0xc) addr:0x02179bfc
+_ZN25UnkStruct_027e0ce0_40_150C1Ev kind:function(thumb,size=0xc) addr:0x02179bfc
 func_ov096_02179c08 kind:function(thumb,size=0xc) addr:0x02179c08
 func_ov096_02179c14 kind:function(thumb,size=0x2c) addr:0x02179c14
 func_ov096_02179c40 kind:function(thumb,size=0x14) addr:0x02179c40
-func_ov096_02179c54 kind:function(thumb,size=0x118) addr:0x02179c54
+_ZN25UnkStruct_027e0ce0_40_15019func_ov096_02179c54Ebb kind:function(thumb,size=0x118) addr:0x02179c54
 func_ov096_02179d6c kind:function(arm,size=0x36c) addr:0x02179d6c
 func_ov096_0217a0d8 kind:function(arm,size=0x168) addr:0x0217a0d8
 _ZN19func_ov096_0217a240D1Ev kind:function(arm,size=0x14) addr:0x0217a240

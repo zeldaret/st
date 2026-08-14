@@ -4,10 +4,16 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 
-extern const char data_ov001_020c264c[][16];
-extern const char data_ov001_020c26bc[][16];
 extern "C" u16 *func_ov021_020ea868(int);
 extern "C" void func_ov000_0205c584(void *, int, int);
+
+static const char data_ov001_020c264c[][16] = {
+    "swA", "sheath", "swB", "sheathB", "belt", "cap", "body_all",
+};
+
+static const char data_ov001_020c26bc[][16] = {
+    "center", "body_chn", "waist_chn", "cl_podA", "cl_LhandA", "cl_RhandA", "LlegB_jnt", "RlegB_jnt", "head_jnt",
+};
 
 ModelRender_Derived4::ModelRender_Derived4(PlayerCharacter character, unk32 param2, G3d_Model *pModel,
                                            G3d_BoneMtxStruct *pCacheJntAnm) :
@@ -32,7 +38,8 @@ ModelRender_Derived4::ModelRender_Derived4(PlayerCharacter character, unk32 para
     this->func_ov000_0208c058(this->mUnk_7C[1]);
 }
 
-PlayerActorBase::PlayerActorBase(PlayerCharacter character, unk32 param2, unk32 param3, UnkStruct_027e0ce0_40 *param4) :
+PlayerActorBase::PlayerActorBase(PlayerCharacter character, unk32 param2, ItemManager *pItemMgr,
+                                 UnkStruct_027e0ce0_40 *param4) :
     mPos(0, 0, 0),
     mPrevPos(0, 0, 0),
     mVel(0, 0, 0),
@@ -46,7 +53,7 @@ PlayerActorBase::PlayerActorBase(PlayerCharacter character, unk32 param2, unk32 
     mCharacter(character),
     mUnk_4C(param2),
     mUnk_50(param2, this->mUnk_44),
-    mUnk_54(param3),
+    mUnk_54(pItemMgr),
     mUnk_58(param4) {
     this->mUnk_5C.mUnk_04 = 0;
     this->mUnk_5C.mUnk_10 = &this->mUnk_5C.mUnk_08;

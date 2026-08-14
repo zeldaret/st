@@ -745,7 +745,6 @@ from:0x020c3034 kind:load to:0x020b62a8 add:0x200 module:overlay(0)
 from:0x020c303c kind:load to:0x020b62a8 module:overlay(0)
 from:0x020c307c kind:arm_call to:0x020328c8 module:main
 from:0x020c309c kind:arm_call_thumb to:0x020a0b2c module:overlay(0)
-from:0x020c30ac kind:load to:0x020c2fc4 module:overlay(17)
 from:0x020c30fc kind:arm_call to:0x02018ac4 module:main
 from:0x020c3108 kind:arm_call_thumb to:0x0201ca28 module:main
 from:0x020c3110 kind:load to:0x027e0994 module:dtcm

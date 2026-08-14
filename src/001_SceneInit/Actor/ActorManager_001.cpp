@@ -13,9 +13,10 @@
 extern "C" {
 void func_ov000_020977e4();
 void func_ov021_020f8818();
-void func_ov031_020ea100();
 void func_ov071_0215e8d4();
 }
+
+extern "C" void func_ov031_020ea100();
 
 struct UnkStruct_ov000_020ab1ac {
     /* 00 */ u32 mUnk_00;

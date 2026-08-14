@@ -16,10 +16,10 @@ namespace std {
             static true_type test(To) { __MWERKS_NOEVAL; }
             static false_type test(...) { __MWERKS_NOEVAL; }
 
-#ifdef DECOMP_IDE_FLAG
-            typedef false_type type;
+#if __MWERKS__
+    typedef __decltype__(test(declval<From>())) type;
 #else
-            typedef __decltype__(test(declval<From>())) type;
+typedef false_type type;
 #endif
         };
 
@@ -28,10 +28,10 @@ namespace std {
             static true_type test(const volatile Base*) { __MWERKS_NOEVAL; }
             static false_type test(const volatile void*) { __MWERKS_NOEVAL; }
 
-#ifdef DECOMP_IDE_FLAG
-            typedef false_type type;
+#if __MWERKS__
+    typedef __decltype__(test(declval<Derived*>())) type;
 #else
-            typedef __decltype__(test(declval<Derived*>())) type;
+    typedef false_type type;
 #endif
         };
 

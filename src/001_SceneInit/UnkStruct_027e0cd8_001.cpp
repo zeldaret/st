@@ -75,8 +75,8 @@ void UnkStruct_027e0cd8::func_ov001_020b7830(const EntranceInfo *param1) {
     pUnk1  = data_027e09a0->func_ov000_020702a8(param1->sceneIndex);
 
     wchar_t sp80[16];
-    sp80[0]                    = L'\0';
-    sp80[sizeof(sp80) / 2 - 1] = L'\0';
+    sp80[0]                   = L'\0';
+    sp80[ARRAY_LEN(sp80) - 1] = L'\0';
     snprintf((char *) sp80, sizeof(sp80), "Map/%s/course.bin", pEntry->name);
 
     UnkStruct2 sp70((char *) sp80, 0x01);
@@ -123,8 +123,8 @@ void UnkStruct_027e0cd8::func_ov001_020b7830(const EntranceInfo *param1) {
 
     if (pEntry->unk_21 != -1) {
         wchar_t sp30[16];
-        sp30[0]                    = L'\0';
-        sp30[sizeof(sp30) / 2 - 1] = L'\0';
+        sp30[0]                   = L'\0';
+        sp30[ARRAY_LEN(sp30) - 1] = L'\0';
 
         snprintf((char *) sp30, sizeof(sp30), "Map/%s/course.bin", data_027e09a0->GetCourseEntry(pEntry->unk_21)->name);
 
@@ -254,7 +254,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7c08(const EntranceInfo *param1, const U
     this->func_ov001_020b7e50();
 
     if (sceneChange.roomIndex != ROOM_INDEX_NONE) {
-        if (this->mUnk_30 == sceneChange.sceneIndex && DSProt_DetectNotEmulator(func_ov084_0216122c) == 0) {
+        if (this->mUnk_30 == sceneChange.sceneIndex && DSProt_DetectNotEmulator((void *) func_ov084_0216122c) == 0) {
             func_ov084_021612ac();
         }
 

@@ -50,20 +50,20 @@ public:
     ~AutoInstance() {}
 };
 
-    #define DECL_INSTANCE_CTOR(T, gpInstance)           \
+    #define DECL_INSTANCE_CTOR(type, gpInstance)        \
         template <typename T> Instance<T>::Instance() { \
-            gpInstance = (T *) this;                    \
+            gpInstance = (type *) this;                 \
         }                                               \
-        template class Instance<T>;
+        template class Instance<type>;
 
-    #define DECL_INSTANCE_DTOR(T, gpInstance) \
-        Instance<T>::~Instance() {            \
-            gpInstance = NULL;                \
+    #define DECL_INSTANCE_DTOR(type, gpInstance)  \
+        template <> Instance<type>::~Instance() { \
+            gpInstance = NULL;                    \
         }
 
-    #define DECL_INSTANCE(T, gpInstance)  \
-        DECL_INSTANCE_CTOR(T, gpInstance) \
-        DECL_INSTANCE_DTOR(T, gpInstance)
+    #define DECL_INSTANCE(type, gpInstance)  \
+        DECL_INSTANCE_CTOR(type, gpInstance) \
+        DECL_INSTANCE_DTOR(type, gpInstance)
 
 template <typename T> struct StaticInstance {
     static T sInstance;
@@ -71,6 +71,23 @@ template <typename T> struct StaticInstance {
 
     #define DECL_STATIC_INSTANCE(T) T StaticInstance<T>::sInstance
 
+#endif
+
+//! TODO: move elsewhere
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef struct SPAHeader {
+    /* 00 */ u32 magic; // always 'SPA '
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ u16 mUnk_08;
+    /* 0A */ char pad[0x18 - 0x0A];
+    /* 18 */ unk32 mUnk_18;
+} SPAHeader;
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

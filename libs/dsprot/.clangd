@@ -1,0 +1,8 @@
+CompileFlags:
+    Add:
+        - -Wno-int-to-pointer-cast
+Diagnostics:
+    Suppress:
+        - sizeof_alignof_function_type
+        - bad_reinterpret_cast_small_int
+        - typecheck_pointer_arith_void_type

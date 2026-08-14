@@ -76,7 +76,7 @@ from:0x02151648 kind:load to:0x0216400c module:overlay(73)
 from:0x0215164c kind:load to:0x02163f60 module:overlay(73)
 from:0x02151650 kind:load to:0x020a02d4 module:overlay(0)
 from:0x02151654 kind:load to:0x02163198 module:overlay(73)
-from:0x02151658 kind:load to:0x021148a0 module:overlay(31)
+from:0x02151658 kind:load to:0x02114898 module:overlay(31) add:0x8
 from:0x0215165c kind:load to:0x02049be4 module:main
 from:0x02151668 kind:arm_call_thumb to:0x02057bd4 module:overlay(0)
 from:0x0215167c kind:arm_call_thumb to:0x0209a248 module:overlay(0)

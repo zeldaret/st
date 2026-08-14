@@ -112,13 +112,16 @@ public:
     static void func_ov000_0209c7ac(MapObjectId mapObjId);
 };
 
+typedef s16 MapObjState;
+#define MapObjState_None -1
+
 class MapObject {
 public:
     /* 00 (vtable) */
     /* 04 */ VecFx32 mPos;
     /* 10 */ MapObject_10 *mUnk_10;
     /* 14 */ s16 mUnk_14;
-    /* 16 */ s16 mUnk_16;
+    /* 16 */ MapObjState mState;
     /* 18 */ unk8 mUnk_18[2]; // related to Link walking to the map object when touched
     /* 1A */ unk8 mUnk_1A;
     /* 1B */ unk8 mUnk_1B;
@@ -165,7 +168,7 @@ public:
     MapObject();
 
     MapObjectId GetMapObjectId();
-    void func_01fff590(unk32 param2);
+    unk32 func_01fff590(unk32 param2);
 
     bool func_ov000_0209d114();
     bool func_ov000_0209d12c();
@@ -174,7 +177,7 @@ public:
     bool func_ov000_0209d29c(unk32 param1);
     void func_ov000_0209d2c4(unk32 param1, bool param2);
     void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3);
-    void func_ov000_0209d3b4(unk32 param1, fx32 size);
+    unk32 func_ov000_0209d3b4(unk32 param1, fx32 size);
     void func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_00 *param2, unk32 param3);
     void func_ov000_0209d518(VecFx32 *param1, unk32 param2, unk32 param3, u8 param4);
     void func_ov000_0209d5c8(ActorRef ref);

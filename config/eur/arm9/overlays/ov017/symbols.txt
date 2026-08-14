@@ -57,7 +57,7 @@ func_ov017_020beea4 kind:function(arm,size=0x28) addr:0x020beea4
 func_ov017_020beecc kind:function(arm,size=0x20) addr:0x020beecc
 _ZN5Actor19func_ov017_020beeecEi kind:function(arm,size=0x60) addr:0x020beeec
 func_ov017_020bef4c kind:function(arm,size=0x3c) addr:0x020bef4c
-func_ov017_020bef88 kind:function(arm,size=0x9c) addr:0x020bef88
+_ZN5Actor19func_ov017_020bef88EP14Actor_vfunc_30Pvi kind:function(arm,size=0x9c) addr:0x020bef88
 func_ov017_020bf024 kind:function(arm,size=0x2c) addr:0x020bf024
 func_ov017_020bf050 kind:function(arm,size=0x128) addr:0x020bf050
 func_ov017_020bf178 kind:function(arm,size=0x10c) addr:0x020bf178
@@ -76,14 +76,14 @@ _ZN5Actor8vfunc_40Ev kind:function(arm,size=0x44) addr:0x020bf8f4
 _ZN5Actor8vfunc_44Ev kind:function(arm,size=0x64) addr:0x020bf938
 func_ov017_020bf99c kind:function(arm,size=0x2c) addr:0x020bf99c
 _ZN5Actor19func_ov017_020bf9c8EPS_ kind:function(arm,size=0x88) addr:0x020bf9c8
-func_ov017_020bfa50 kind:function(arm,size=0x84) addr:0x020bfa50
+_ZN5Actor19func_ov017_020bfa50EP7VecFx32i kind:function(arm,size=0x84) addr:0x020bfa50
 func_ov017_020bfad4 kind:function(arm,size=0x44) addr:0x020bfad4
-func_ov017_020bfb18 kind:function(arm,size=0x238) addr:0x020bfb18
+_ZN5Actor19func_ov017_020bfb18EP8Actor_9C kind:function(arm,size=0x238) addr:0x020bfb18
 _ZN5Actor8vfunc_14Ev kind:function(arm,size=0x4c) addr:0x020bfd50
 func_ov017_020bfd9c kind:function(arm,size=0x130) addr:0x020bfd9c
 _ZN5Actor8vfunc_48Ev kind:function(arm,size=0x80) addr:0x020bfecc
 _ZN14ActorEventIcon8vfunc_24Ev kind:function(arm,size=0xc) addr:0x020bff4c
-_ZN14ActorEventIcon8vfunc_30Ev kind:function(arm,size=0xd4) addr:0x020bff58
+_ZN14ActorEventIcon8vfunc_30EP14Actor_vfunc_30 kind:function(arm,size=0xd4) addr:0x020bff58
 func_ov017_020c002c kind:function(arm,size=0x50) addr:0x020c002c
 func_ov017_020c007c kind:function(arm,size=0x60) addr:0x020c007c
 func_ov017_020c00dc kind:function(arm,size=0xec) addr:0x020c00dc
@@ -177,6 +177,7 @@ __sinit_ov017_020c3ec8 kind:function(arm,size=0x18) addr:0x020c3ec8
 .p__sinit_ov017_020c3ec8 kind:data(word) addr:0x020c3ee8
 data_ov017_020c3f08 kind:data(any) addr:0x020c3f08
 data_ov017_020c3f14 kind:data(any) addr:0x020c3f14
+_ZTV21UnkStruct_027e0cec_00 kind:data(any) addr:0x020c3f30
 data_ov017_020c3f3c kind:data(any) addr:0x020c3f3c
 data_ov017_020c3f40 kind:data(any) addr:0x020c3f40
 data_ov017_020c3f60 kind:bss addr:0x020c3f60

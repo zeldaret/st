@@ -117,7 +117,7 @@ public:
 
 extern UnkStruct_02011e10 data_0204999c;
 
-void *SysNew(UnkStruct_02011e10_Sub1 *param1, s32 length, s32 param3);
+void *SysNew(UnkStruct_02011e10_Sub1 *param1, u32 length, u32 idLength);
 void SysDelete(void *ptr);
 void *func_02011f10(s32 length);
 void *func_02011f30(s32 length);

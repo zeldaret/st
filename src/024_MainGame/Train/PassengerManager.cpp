@@ -320,9 +320,9 @@ bool PassengerManager::IsDateUnset() {
 }
 
 s16 PassengerManager::GetDate() {
-    u16 date;
+    Date date;
     data_02049bac.func_02014a34(&date);
-    return date;
+    return date.data[0];
 }
 
 u32 PassengerManager::GetRandomIndex(u32 param1, u32 seed) {

@@ -173,7 +173,7 @@ void CargoManager::RemoveAmount(unk32 decr) {
 
 bool CargoManager::func_ov017_020bec9c() {
     if (data_027e09a4->IsTrain()) {
-        return data_027e0cd8->GetUnk0C()->mUnk_160->func_ov026_02106aa8();
+        return data_027e0cd8->GetUnk0C()->mUnk_160[0]->func_ov026_02106aa8();
     }
 
     return false;

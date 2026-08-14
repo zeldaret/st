@@ -134,7 +134,7 @@ void Game::Run() {
 
         {
             int enabled = OS_DisableInterrupts_Irq();
-            this->mUnk_1C.func_02013e18(func_020132dc, 0);
+            this->mUnk_1C.func_02013e18((void *) func_020132dc, 0);
             REG_GFX_FIFO_SWAP_BUFFERS = 3;
             OS_RestoreInterrupts(enabled);
         }
@@ -143,7 +143,7 @@ void Game::Run() {
 
         if (this->mUnk_18 != NULL) {
             while (this->mUnk_18() != 0) {
-                while (this->mUnk_1C.func_02013e18(func_02013354, 0) == 0) {
+                while (this->mUnk_1C.func_02013e18((void *) func_02013354, 0) == 0) {
                 }
 
                 func_020132c8();

@@ -43,7 +43,7 @@ UnkTrainSystem2::UnkTrainSystem2() :
 
 UnkTrainSystem2::~UnkTrainSystem2() {}
 
-extern "C" void func_01ff916c(void *, int, int);
+extern "C" bool func_01ff916c(void *, int, int);
 
 void UnkTrainSystem2::func_ov024_020d5990() {
     if (this->func_ov024_020d5c40()) {

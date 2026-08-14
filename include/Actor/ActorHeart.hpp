@@ -3,6 +3,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "ActorRupee.hpp"
+#include "nitro/fx.h"
 #include "types.h"
 
 enum ActorHeartState_ {
@@ -20,9 +21,9 @@ public:
     ActorHeart_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(VecFx32 *param1) override;
 };
 
 class ActorHeart : public Actor {

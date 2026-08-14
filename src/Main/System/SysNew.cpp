@@ -1,11 +1,10 @@
 #include "System/SysNew.hpp"
-#include "global.h"
 
 extern "C" {
 void *func_02001654(void *);
 void *func_020145b0(UnkId *, s32);
-void *func_020010c0(void *);
-void *func_02001308(void *);
+void *func_020010c0(void *, size_t, u32);
+void *func_02001308(void *, size_t, u32);
 UnkId *func_02001488(void);
 UnkId *func_02014704();
 UnkId *func_020011c8(UnkId *, void *);
@@ -15,16 +14,15 @@ unk32 func_020011f4(void *);
 }
 extern char *data_0204372c[];
 
-// non-matching
-void *SysNew(UnkStruct_02011e10_Sub1 *param1, s32 length, s32 param3) {
+void *SysNew(UnkStruct_02011e10_Sub1 *param1, u32 length, u32 idLength) {
     void *newPtr = NULL;
 
     switch (param1->mId) {
         case UnkId_EXPH:
-            newPtr = func_020010c0(param1);
+            newPtr = func_020010c0(param1, length, idLength);
             break;
         case UnkId_FRMH:
-            newPtr = func_02001308(param1);
+            newPtr = func_02001308(param1, length, idLength);
             break;
         case UnkId_UNTH:
             newPtr = func_02001654(param1);
@@ -69,7 +67,7 @@ void *func_02011f30(s32 length) {
     return func_02011f10(length);
 }
 
-void *operator new(unsigned long length, u32 id, u32 idLength) {
+void *operator new(size_t length, u32 id, u32 idLength) {
     void *pvVar1;
     UnkStruct_02011e10_Sub1 *pUVar5;
 

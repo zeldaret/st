@@ -11,6 +11,7 @@
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
+#include "profile.hpp"
 
 #include <algorithm>
 #include <vector>
@@ -52,7 +53,7 @@ public:
 class UnkStruct_ov001_020c40f4 {
 public:
     /* 00 */ VecFx32 mUnk_00;
-    /* 0C */ unk16 mUnk_0C;
+    /* 0C */ s16 mUnk_0C;
     /* 0E */ u8 mUnk_0E;
     /* 0F */ u8 mUnk_0F;
     /* 10 */ unk32 mUnk_10;
@@ -85,6 +86,8 @@ public:
 
 class UnkStruct_027e0cd8_0C_160 {
 public:
+    /* 00 */ UnkSystem3 mUnk_00;
+
     bool func_ov026_02106aa8();
 };
 
@@ -178,6 +181,18 @@ enum UnkFlags2_ {
     UnkFlags2_Max  = 12,
 };
 
+class UnkStruct_func_ov000_02080620 {
+public:
+    /* 00 (vtable) */
+    /* 04 */ STRUCT_PAD(0x04, 0x14);
+    /* 14 */ VecFx32 mUnk_14;
+    /* 20 */ VecFx32 mUnk_20;
+    /* 2C */
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual bool vfunc_04();
+};
+
 class UnkStruct_027e0cd8_0C_Base {
 public:
     /* 000 (vtable) */
@@ -255,16 +270,20 @@ public:
     fx32 func_01ffedf4(Vec2bCpp *pPos);
 
     // overlay 0
-    unk32 func_ov000_02080180(void *param1);
+    unk32 func_ov000_02080180(Vec2bCpp *param1);
     void func_ov000_020801b0(Vec2bCpp *param1, unk32 param2, unk32 param3);
     bool func_ov000_020802ec(u16 param1, VecFx32 *param2);
     void func_ov000_020803ec(u16 param1);
     void func_ov000_0208053c(u16 param1);
+    UnkStruct_func_ov000_02080620 *func_ov000_02080620();
     bool func_ov000_02080658(unk32 param1, EntranceInfo *param2);
-    void func_ov000_020808f4(void *param1, void *param2, u8 param3);
+    void func_ov000_020808f4(void *param1, Vec2bCpp *param2, u8 param3);
+    void func_ov000_020809d8(unk32 param1, unk32 param2);
     unk32 func_ov000_02080a44();
     void func_ov000_02080a5c(VecFx32 *param1);
     void func_ov000_02080a78(VecFx32 *param1);
+    bool func_ov000_02082008(Vec2bCpp *param1);
+    bool func_ov000_0208217c(VecFx32 *param1, unk32 param2);
 
     // overlay 1
     void func_ov001_020b85d0(const EntranceInfo *param1);
@@ -274,7 +293,7 @@ public:
     void func_ov001_020b8aec();
     void func_ov001_020b8b94(ZMBEntryARAB *pARAB);
     void func_ov001_020b8c30(const EntranceInfo &param1);
-    void *func_ov001_020b8c80(unk32 param1);
+    const EntranceInfo *func_ov001_020b8c80(unk32 param1);
     void func_ov001_020b8c90(ZMBSectionCMPT *pCMPT);
     void func_ov001_020b8c98(ZMBSectionCAME *pCAME);
     void func_ov001_020b8db8();
@@ -282,27 +301,43 @@ public:
     void func_ov001_020b8e54();
 };
 
+class UnkStruct_027e0cd8_0C_1D0 {
+public:
+    /* 00 (vtable) */
+    /* 04 */
+
+    UnkStruct_027e0cd8_0C_1D0();
+
+    /* ?? */ virtual ~UnkStruct_027e0cd8_0C_1D0();
+
+    // overlay 101
+    void func_ov101_021837a0();
+};
+
 class UnkStruct_027e0cd8_0C : public UnkStruct_027e0cd8_0C_Base {
 public:
     /* 000 (base) */
-    /* 160 */ UnkStruct_027e0cd8_0C_160 *mUnk_160;
-    /* 164 */ STRUCT_PAD(0x164, 0x1E0);
+    /* 160 */ UnkStruct_027e0cd8_0C_160 *mUnk_160[4];
+    /* 170 */ ModelRender_UnkSystem1 *mUnk_170[4][5];
+    /* 1C0 */ void *mUnk_1C0[4];
+    /* 1D0 */ UnkStruct_027e0cd8_0C_1D0 *mUnk_1D0;
+    /* 1D4 */ unk32 mUnk_1D4;
+    /* 1D8 */ unk32 mUnk_1D8;
+    /* 1DC */ bool mUnk_1DC;
+    /* 1DD */ bool mUnk_1DD;
     /* 1E0 */
 
     UnkStruct_027e0cd8_0C(UnkStruct_027e0cd8 *param1);
 
     // data_ov031_02112a0c
     /* 00 */ virtual ~UnkStruct_027e0cd8_0C() override;
-    /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0C() override;
-    /* 10 */ virtual void vfunc_10() override;
-    /* 14 */ virtual void vfunc_14() override;
-    /* 18 */ virtual void vfunc_18() override;
-    /* 1C */ virtual void vfunc_1C(const EntranceInfo *param1, bool param2, bool param3) override;
-    /* 20 */ virtual void vfunc_20() override;
-    /* 24 */ virtual void vfunc_24() override;
-    /* 28 */ virtual fx32 vfunc_28(VecFx32 *param1, unk32 param2, unk32 param3) override;
-    /* 2C */ virtual void vfunc_2C() override;
+    /* 08 */ virtual void vfunc_08();
+    /* 38 */ virtual void vfunc_38();
+
+    // overlay 31
+    void func_ov031_020d8738();
+    void func_ov031_020d88c0();
+    void func_ov031_020d8ae4();
 };
 
 class UnkStruct_027e0cd8_0C_Derived2 : public UnkStruct_027e0cd8_0C_Base {

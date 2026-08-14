@@ -5,12 +5,13 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 
-PlayerLinkActor::PlayerLinkActor(unk32 param1, unk32 param2, UnkStruct_027e0ce0_40 *param3, bool *param4) :
-    PlayerActorBase(PlayerCharacter_Link, param1, param2, param3),
+PlayerLinkActor::PlayerLinkActor(unk32 param1, ItemManager *pItemMgr, UnkStruct_027e0ce0_40 *param3,
+                                 UnkStruct_027e0ce0_40_150 *param4) :
+    PlayerActorBase(PlayerCharacter_Link, param1, pItemMgr, param3),
     mUnk_094(param4),
     mUnk_098(0),
     mUnk_09C(new(HeapIndex_1) PlayerLinkActor_9C(param3, *(u32 *) &this->mUnk_50, this->mCharacter)),
-    mUnk_0A0(new(HeapIndex_1) PlayerLinkActor_A0(param2, param3, this, this->mUnk_09C)),
+    mUnk_0A0(new(HeapIndex_1) PlayerLinkActor_A0(pItemMgr, param3, this, this->mUnk_09C)),
     mUnk_0A4(this, this->mUnk_0A0),
     mUnk_0B0(-1),
     mUnk_0B4(false),
@@ -45,7 +46,7 @@ PlayerLinkActor::~PlayerLinkActor() {
     delete this->mUnk_09C;
 }
 
-void PlayerLinkActor::func_ov001_020bcb60(unk32 param1) {
+void PlayerLinkActor::func_ov001_020bcb60(UnkStruct_027e0ce0_40_328 *param1) {
     this->mUnk_098           = param1;
     this->mUnk_09C->mUnk_0F4 = param1;
 }
@@ -79,8 +80,8 @@ void PlayerLinkActor::func_ov001_020bcbd0(VecFx32 *pVec) {
                                 this->mUnk_0A0->func_ov000_0209378c());
 
     bool uVar1 = false;
-    if (this->mUnk_094 != 0) {
-        uVar1 = *this->mUnk_094;
+    if (this->mUnk_094 != NULL) {
+        uVar1 = this->mUnk_094->mUnk_00;
     }
 
     this->mUnk_0A0->func_ov001_020bd388(uVar1, this->mUnk_0B6);
