@@ -35,6 +35,12 @@ ActorUnkRMSBase::ActorUnkRMSBase() :
     mUnk_94(NULL),
     mUnk_F4(NULL) {}
 
+bool ActorUnkRMSBase::vfunc_18(unk32 param1) {}
+void ActorUnkRMSBase::vfunc_1C() {}
+void ActorUnkRMSBase::vfunc_20() {}
+void ActorUnkRMSBase::vfunc_24() {}
+void ActorUnkRMSBase::vfunc_2C(unk32 param1) {}
+
 ActorUnkRMSV::ActorUnkRMSV() {}
 
 bool ActorUnkRMSV::vfunc_18(unk32 param1) {
@@ -61,11 +67,6 @@ G3d_Model *ActorUnkRMSV::vfunc_54(void) {
 G3d_Model *ActorUnkRMSV::vfunc_58(void) {
     return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSV)->mUnk_3C, data_ov063_02162588);
 }
-
-void ActorUnkRMSV::func_ov063_0215bd44(void) {}
-void ActorUnkRMSV::func_ov063_0215bdec(void) {}
-void ActorUnkRMSV::func_ov063_0215bed0(void) {}
-void ActorUnkRMSV::func_ov063_0215bee0(void) {}
 
 ActorUnkRMSV::~ActorUnkRMSV() {}
 ActorProfileUnkRMSV::~ActorProfileUnkRMSV() {}

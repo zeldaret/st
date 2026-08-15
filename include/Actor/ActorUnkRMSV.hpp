@@ -30,6 +30,11 @@ public:
 
     ActorUnkRMSBase();
 
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override; // Init?
+    /* 1C */ virtual void vfunc_1C() override;             // Setup
+    /* 20 */ virtual void vfunc_20() override;             // Update?
+    /* 24 */ virtual void vfunc_24() override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorUnkRMSBase() override {};
 };
 
