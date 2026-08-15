@@ -2390,7 +2390,7 @@ _ZN17ActorUnkZLSL_270019func_ov000_02099ddcE25ActorUnkZLSL_AnimationTagi kind:fu
 func_ov000_0209b624 kind:function(arm,size=0x98) addr:0x0209b624
 func_ov000_0209b6bc kind:function(arm,size=0x74) addr:0x0209b6bc
 func_ov000_0209b730 kind:function(arm,size=0x94) addr:0x0209b730
-_ZN24UnkStruct_ov000_020b31a818func_ov000_02099f8E25ActorUnkZLSL_AnimationTagi kind:function(arm,size=0x74) addr:0x0209b7c4
+_ZN24UnkStruct_ov000_020b31a819func_ov000_02099ff8E25ActorUnkZLSL_AnimationTagi kind:function(arm,size=0x74) addr:0x0209b7c4
 _ZN24UnkStruct_ov000_020b31a88vfunc_24Ev kind:function(arm,size=0x78) addr:0x0209b838
 _ZN24UnkStruct_ov000_020b31a88vfunc_18Ev kind:function(arm,size=0x10) addr:0x0209b8b0
 _ZN24UnkStruct_ov000_020b31a88vfunc_28Ev kind:function(arm,size=0x18) addr:0x0209b8c0

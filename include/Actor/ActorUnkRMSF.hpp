@@ -21,8 +21,8 @@ public:
 class ActorUnkRMSF_Base : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */ ModelRender mUnk_94;
-    /* F4 */ ModelRender mUnk_F4;
+    /* 094 */ ModelRender mUnk_094;
+    /* 0F4 */ ModelRender mUnk_0F4;
     /* 154 */ unk32 mUnk_154;
     /* 158 */
 

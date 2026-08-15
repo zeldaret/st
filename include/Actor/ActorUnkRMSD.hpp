@@ -19,6 +19,7 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
+//! INFO: Not the right location
 class ActorUnkRMSBase : public Actor {
 public:
     /* 00 (base) */
@@ -39,7 +40,7 @@ public:
 
     ActorUnkRMSD();
 
-    /* 18 */ virtual unk32 vfunc_18(void) override;
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20(void) override;
     /* 24 */ virtual void vfunc_24(void) override;
     /* 4C */ virtual ~ActorUnkRMSD() override;

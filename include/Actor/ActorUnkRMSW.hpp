@@ -3,6 +3,7 @@
 #pragma once
 
 #include "Actor/Actor.hpp"
+#include "Actor/ActorId.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "Actor/ActorUnkRMSD.hpp"
 #include "global.h"
@@ -11,7 +12,7 @@
 
 struct UnkStruct_data_ov063_02163388 {
     /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
+    /* 04 */ ActorId mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
@@ -37,14 +38,14 @@ public:
 
     ActorUnkRMSW();
 
-    /* 18 */ virtual unk32 vfunc_18(void);
-    /* 20 */ virtual void vfunc_20(void);
-    /* 24 */ virtual void vfunc_24(void);
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 20 */ virtual void vfunc_20(void) override;
+    /* 24 */ virtual void vfunc_24(void) override;
 
     /* 4C */ virtual ~ActorUnkRMSW() override;
 
-    /* 54 */ virtual G3d_Model *vfunc_54(void);
-    /* 58 */ virtual G3d_Model *vfunc_58(void);
+    /* 54 */ virtual G3d_Model *vfunc_54(void) override;
+    /* 58 */ virtual G3d_Model *vfunc_58(void) override;
 };
 
 class ActorProfileUnkRMSW : public ActorProfile_Derived1 {

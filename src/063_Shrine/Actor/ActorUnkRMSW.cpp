@@ -1,16 +1,19 @@
 //! TODO: This file was generated automatically and might contain errors
 
 #include "Actor/ActorUnkRMSW.hpp"
+#include "Actor/ActorId.hpp"
+#include "Actor/ActorUnkZLSL_ZSRS.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "nns/g3d/g3d.h"
 #include "types.h"
 
 char data_ov063_02162598[0x10]; // = "RMSW_wall";
 char data_ov063_021625a8[0x10]; // = "RMSW";
 
-extern struct UnkStruct_data_ov063_02163388 data_ov063_02163388; // = {0, 0x57534D52, 0, 0, 0, 0};
+struct ActorUnkZLSL_AnimationTag data_ov063_02163388 = {0, "RMSW"};
 
 extern "C" void func_ov000_02099ff8(unk32 *param1, struct UnkStruct_data_ov063_02163388 param2, unk32 param8);
-extern "C" unk32 func_ov063_0215bb34(ActorUnkRMSW *);
+extern "C" bool func_ov063_0215bb34(ActorUnkRMSW *);
 
 DECL_PROFILE(ActorProfileUnkRMSW);
 
@@ -23,9 +26,9 @@ ActorProfileUnkRMSW::ActorProfileUnkRMSW() :
 
 ActorUnkRMSW::ActorUnkRMSW() {}
 
-unk32 ActorUnkRMSW::vfunc_18(void) {
-    unk32 res = func_ov063_0215bb34(this);
-    func_ov000_02099ff8(&this->mUnk_158, data_ov063_02163388, 0x1000);
+bool ActorUnkRMSW::vfunc_18(unk32 param1) {
+    bool res = func_ov063_0215bb34(this);
+    ((UnkStruct_ov000_020b31a8 *) &this->mUnk_158)->func_ov000_02099ff8(data_ov063_02163388, 0x1000);
     return res;
 }
 

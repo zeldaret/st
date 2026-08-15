@@ -73,7 +73,7 @@ public:
     /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2);
     /* 3C */ virtual void vfunc_3C();
 
-    void func_ov000_02099f8(ActorUnkZLSL_AnimationTag param1, unk32 param2);
+    void func_ov000_02099ff8(ActorUnkZLSL_AnimationTag param1, unk32 param2);
 };
 
 class ActorUnkZLSL_27CC : public UnkStruct_ov000_020b31a8 {
