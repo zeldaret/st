@@ -1,0 +1,38 @@
+func_ov015_020b6560 kind:function(arm,size=0x90) addr:0x020b6560
+func_ov015_020b65f0 kind:function(arm,size=0x33c) addr:0x020b65f0
+func_ov015_020b692c kind:function(arm,size=0x30) addr:0x020b692c
+func_ov015_020b695c kind:function(arm,size=0x14) addr:0x020b695c
+func_ov015_020b6970 kind:function(arm,size=0x14c) addr:0x020b6970
+func_ov015_020b6abc kind:function(arm,size=0x154) addr:0x020b6abc
+func_ov015_020b6c10 kind:function(arm,size=0x68) addr:0x020b6c10
+func_ov015_020b6c78 kind:function(arm,size=0x58) addr:0x020b6c78
+func_ov015_020b6cd0 kind:function(arm,size=0x24) addr:0x020b6cd0
+func_ov015_020b6cf4 kind:function(arm,size=0x44) addr:0x020b6cf4
+func_ov015_020b6d38 kind:function(arm,size=0x50) addr:0x020b6d38
+func_ov015_020b6d88 kind:function(arm,size=0x164) addr:0x020b6d88
+func_ov015_020b6eec kind:function(arm,size=0x2f0) addr:0x020b6eec
+func_ov015_020b71dc kind:function(arm,size=0x2c) addr:0x020b71dc
+func_ov015_020b7208 kind:function(arm,size=0x9c) addr:0x020b7208
+func_ov015_020b72a4 kind:function(arm,size=0xa0) addr:0x020b72a4
+func_ov015_020b7344 kind:function(arm,size=0x8) addr:0x020b7344
+func_ov015_020b734c kind:function(arm,size=0x20) addr:0x020b734c
+func_ov015_020b736c kind:function(arm,size=0x34) addr:0x020b736c
+func_ov015_020b73a0 kind:function(arm,size=0x28) addr:0x020b73a0
+func_ov015_020b73c8 kind:function(arm,size=0xc) addr:0x020b73c8
+func_ov015_020b73d4 kind:function(arm,size=0x4) addr:0x020b73d4
+func_ov015_020b73d8 kind:function(arm,size=0x10) addr:0x020b73d8
+func_ov015_020b73e8 kind:function(arm,size=0x14) addr:0x020b73e8
+func_ov015_020b73fc kind:function(arm,size=0x38) addr:0x020b73fc
+func_ov015_020b7434 kind:function(arm,size=0x1c) addr:0x020b7434
+data_ov015_020b7450 kind:data(any) addr:0x020b7450
+data_ov015_020b7480 kind:data(any) addr:0x020b7480
+data_ov015_020b748c kind:data(any) addr:0x020b748c
+data_ov015_020b74a4 kind:data(any) addr:0x020b74a4
+data_ov015_020b74bc kind:data(any) addr:0x020b74bc
+data_ov015_020b74e0 kind:bss addr:0x020b74e0
+data_ov015_020b74e4 kind:bss addr:0x020b74e4
+data_ov015_020b74f0 kind:bss addr:0x020b74f0
+data_ov015_020b7705 kind:bss addr:0x020b7705 ambiguous
+data_ov015_020b7810 kind:bss addr:0x020b7810 ambiguous
+data_ov015_020b7b15 kind:bss addr:0x020b7b15 ambiguous
+data_ov015_020b7b24 kind:bss addr:0x020b7b24 ambiguous

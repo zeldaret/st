@@ -28,6 +28,8 @@ config.sjiswrap_tag = "v1.2.2"
 
 GAME_VERSIONS = [
     "eur",
+    "eur1",
+    "usa",
     "jp",
 ]
 
