@@ -281,13 +281,14 @@ src/031_Land/MapObject/MapObjectGrass.cpp:
     .text       start:0x0210100c end:0x021019dc
     .init       start:0x02111df8 end:0x02111e88
     .ctor       start:0x02112834 end:0x02112838
-    .data       start:0x0211561c end:0x021156a8
+    .data       start:0x0211561c end:0x0211569c
     .bss        start:0x02117868 end:0x021179b8
 
 src/031_Land/MapObject/MapObjectUnkSWHT.cpp:
     .text       start:0x02101a14 end:0x02102438
     .init       start:0x02111e88 end:0x02111ef8
     .ctor       start:0x02112838 end:0x0211283c
+    .data       start:0x0211569c end:0x02115704
     .bss        start:0x021179b8 end:0x02117abc
 
 src/031_Land/MapObject/MapObjectUnkBMFL.cpp:

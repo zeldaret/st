@@ -56,7 +56,7 @@ public:
     /* 05 */ unk8 mUnk_05;
     /* 06 */ unk8 mUnk_06;
     /* 07 */ unk8 mUnk_07;
-    /* 08 */ unk32 mUnk_08;
+    /* 08 */ u32 mUnk_08;
     /* 0C */
 
     MapObject_10_Base(); // func_ov000_0207c018
