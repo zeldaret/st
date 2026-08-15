@@ -1,3 +1,4 @@
+from collections.abc import Generator
 import os
 import sys
 import json
@@ -10,6 +11,7 @@ from get_platform import get_platform
 
 
 COMPILER_MAP = {
+    "1.2/b56": "mwcc_20_56",
     "1.2/base": "mwcc_20_72",
     "1.2/sp2": "mwcc_20_79",
     "1.2/sp2p3": "mwcc_20_82",
@@ -38,13 +40,25 @@ COMPILER_MAP = {
 
 Library = Dict[str, Any]
 
-def get_c_cpp_files(dirs: list[Path]):
+
+def traverse_files(dirs: list[Path]) -> Generator[Path]:
     for dir in dirs:
         for root, _, files in os.walk(dir):
             root = Path(root)
             for file in files:
-                if is_cpp(file) or is_c(file):
-                    yield root / file
+                yield root / file
+
+
+def get_c_cpp_files(dirs: list[Path]) -> Generator[Path]:
+    for file in traverse_files(dirs):
+        if is_cpp(file) or is_c(file):
+            yield file
+
+
+def get_asm_files(dirs: list[Path]) -> Generator[Path]:
+    for file in traverse_files(dirs):
+        if is_asm(file):
+            yield file
 
 
 def is_cpp(name: str | Path):
@@ -54,8 +68,14 @@ def is_cpp(name: str | Path):
 def is_c(name: str | Path):
     return Path(name).suffix in [".c"]
 
+
 def is_c_cpp(name: str | Path):
     return is_c(name) or is_cpp(name)
+
+
+def is_asm(name: str | Path):
+    return Path(name).suffix in [".s"]
+
 
 class Object:
     def __init__(self, name: str, **options: Any):
@@ -132,8 +152,9 @@ class ProjectConfig:
         self.objdiff_path = (self.root_path / f"objdiff-cli{self.platform.exe}").resolve()
         self.sjiswrap_path = (self.root_path / "tools" / "sjiswrap.exe").resolve()
         self.cc_path = (self.mwcc_path / "mwccarm.exe").resolve()
+        self.as_path = (self.mwcc_path / "mwasmarm.exe").resolve()
         self.ld_path = (self.mwcc_path / "mwldarm.exe").resolve()
-        self.python_path = Path(sys.executable).resolve()
+        self.python_path = Path(sys.executable)
 
         self.dsd_base_flags = [
             "--force-color", # Force color output
@@ -295,11 +316,15 @@ class ProjectConfig:
         return self.get_game_build(version) / "build" / "rom_config.yaml"
 
     def source_object_files(self, version: str) -> list[str]:
-        files: list[str] = []
-        for source_file in get_c_cpp_files([self.src_path, self.libs_path]):
+        def to_object(source_file: Path) -> str:
             src_obj_path = self.get_game_build(version) / source_file
-            files.append(str(src_obj_path.with_suffix(".o")))
-        return files
+            return str(src_obj_path.with_suffix(".o"))
+
+        dirs = [self.src_path, self.libs_path]
+        c_cpp_objects = list(map(to_object, get_c_cpp_files(dirs)))
+        asm_objects = list(map(to_object, get_asm_files(dirs)))
+        return c_cpp_objects + asm_objects
+
 
     def arm9_o(self, version: str) -> Path:
         return self.get_game_build(version) / "arm9.o"
@@ -532,44 +557,40 @@ def add_disassemble_builds(cfg: ProjectConfig, version: str, n: ninja_syntax.Wri
 
 
 def add_mwcc_builds(cfg: ProjectConfig, version: str, objects: Dict[str, Object], n: ninja_syntax.Writer, mwcc_implicit: list[str]):
-    file_map: dict[str, list[str] | None] = {}
+    file_map: dict[str, Object] = {}
 
     for object in objects.values():
-        file_map[str(object.src_path)] = object.options["cflags"] + object.options["extra_cflags"]
+        assert object.src_path is not None, f"Object '{object.name}' is not resolved"
+        if is_asm(object.src_path):
+            # file_map[str(object.src_path)] = object.options["asflags"] or [] + object.options["extra_asflags"] or []
+            file_map[str(object.src_path)] = object
+        else:
+            # file_map[str(object.src_path)] = object.options["cflags"] or [] + object.options["extra_cflags"] or []
+            file_map[str(object.src_path)] = object
 
     if cfg.auto_add_sources:
         for source_file in get_c_cpp_files([cfg.src_path, cfg.libs_path]):
-            if str(source_file) not in file_map:
-                file_map[str(source_file)] = cfg.cflags_base
+            source_file = str(source_file)
+            if source_file not in file_map:
+                # file_map[source_file] = cfg.cflags_base or []
+                file_map[source_file] = Object(source_file, cflags=cfg.cflags_base)
+        for source_file in get_asm_files([cfg.src_path, cfg.libs_path]):
+            source_file = str(source_file)
+            if source_file not in file_map:
+                # file_map[source_file] = cfg.asflags or []
+                file_map[source_file] = Object(source_file, asflags=cfg.asflags)
 
-    for src_file, cc_flags in file_map.items():
+    for src_file, object in file_map.items():
         source_file = Path(src_file)
         src_obj_path = cfg.get_game_build(version) / source_file
 
         if cfg.warn_missing_source and not source_file.exists():
             print(f"WARNING: path not found for `{source_file}`")
 
-        assert cc_flags is not None, "cc_flags is None"
-        if  "-lang=c++" not in cc_flags or "-lang=c" not in cc_flags:
-            if is_cpp(source_file):
-                cc_flags.append("-lang=c++")
-            elif is_c(source_file):
-                cc_flags.append("-lang=c")
-
-        n.build(
-            inputs=str(source_file),
-            implicit=mwcc_implicit,
-            rule="mwcc",
-            outputs=str(src_obj_path.with_suffix(".o")),
-            variables={
-                "game_version": version.upper(),
-                "cc_flags": " ".join(cc_flags),
-                "basedir": str(src_obj_path.parent),
-                "basefile": str(src_obj_path.with_suffix("")),
-            },
-            # order_only="objdiff",
-        )
-        n.newline()
+        if is_asm(src_file):
+            add_mwas_build(cfg, version, n, source_file, object, mwcc_implicit)
+        else:
+            add_mwcc_build(cfg, version, n, source_file, object, mwcc_implicit)
 
         extension = source_file.suffix
         ctx_file = str(src_obj_path.with_suffix(f".ctx{extension}"))
@@ -582,6 +603,53 @@ def add_mwcc_builds(cfg: ProjectConfig, version: str, objects: Dict[str, Object]
             },
         )
         n.newline()
+
+
+def add_mwcc_build(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer, source_file: Path, object: Object, mwcc_implicit: list[str]):
+    src_obj_path = cfg.get_game_build(version) / source_file
+
+    cc_flags: list[str] = object.options["cflags"] or [] + object.options["extra_cflags"] or []
+    if "-lang=c++" not in cc_flags or "-lang=c" not in cc_flags:
+        if is_cpp(source_file):
+            cc_flags.append("-lang=c++")
+        elif is_c(source_file):
+            cc_flags.append("-lang=c")
+
+    n.build(
+        inputs=str(source_file),
+        implicit=mwcc_implicit,
+        rule="mwcc",
+        outputs=str(src_obj_path.with_suffix(".o")),
+        variables={
+            "game_version": version.upper(),
+            "mw_version": object.options["mw_version"],
+            "cc_flags": " ".join(cc_flags),
+            "basedir": str(src_obj_path.parent),
+            "basefile": str(src_obj_path.with_suffix("")),
+        },
+    )
+    n.newline()
+
+
+def add_mwas_build(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer, source_file: Path, object: Object, mwcc_implicit: list[str]):
+    src_obj_path = cfg.get_game_build(version) / source_file
+
+    as_flags: list[str] = object.options["asflags"] or [] + object.options["extra_asflags"] or []
+
+    n.build(
+        inputs=str(source_file),
+        implicit=mwcc_implicit,
+        rule="mwas",
+        outputs=str(src_obj_path.with_suffix(".o")),
+        variables={
+            "game_version": version.upper(),
+            "mw_version": object.options["mw_version"],
+            "as_flags": " ".join(as_flags),
+            "basedir": str(src_obj_path.parent),
+            "basefile": str(src_obj_path.with_suffix("")),
+        },
+    )
+    n.newline()
 
 
 def add_mwld_and_rom_builds(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer):
@@ -1025,17 +1093,27 @@ def process_project(cfg: ProjectConfig, args: Any):
 
         # -MMD excludes all includes instead of just system includes for some reason, so use -MD instead.
         includes = " ".join(include for include in cfg.includes)
-        mwcc_cmd = f'{cfg.wine_path} {cfg.sjiswrap_path} "{cfg.cc_path}" $cc_flags {includes} -DVERSION=$game_version -MD -c $in -o $basedir'
+        mwcc_cmd = f'{cfg.wine_path} {cfg.sjiswrap_path} "{cfg.mwcc_root}/$mw_version/mwccarm.exe" $cc_flags {includes} -DVERSION=$game_version -MD -c $in -o $basedir'
+        mwas_cmd = f'{cfg.wine_path} {cfg.sjiswrap_path} "{cfg.mwcc_root}/$mw_version/mwasmarm.exe" $as_flags {includes} -DVERSION=$game_version -MD -c $in -o $basedir'
         mwcc_implicit = [str(cfg.cc_path), str(cfg.sjiswrap_path)]
         if cfg.platform and cfg.platform.system != "windows":
             transform_dep = "tools/transform_dep.py"
-            mwcc_cmd += f" && $python {transform_dep} $basefile.d $basefile.d"
+            transform_dep_cmd = f" && $python {transform_dep} $basefile.d $basefile.d"
+            mwcc_cmd += transform_dep_cmd
+            mwas_cmd += transform_dep_cmd
             mwcc_implicit.append(transform_dep)
             if cfg.wine_path == cfg.default_wibo_path:
                 mwcc_implicit.append(cfg.wine_path)
         n.rule(
             name="mwcc",
             command=mwcc_cmd,
+            depfile="$basefile.d",
+        )
+        n.newline()
+
+        n.rule(
+            name="mwas",
+            command=mwas_cmd,
             depfile="$basefile.d",
         )
         n.newline()
@@ -1134,6 +1212,12 @@ def process_project(cfg: ProjectConfig, args: Any):
         )
         n.newline()
 
+        # Custom rules
+        for lib in cfg.libs or []:
+            for rule in lib.get("rules") or []:
+                rule(cfg, n)
+                n.newline()
+
         add_download_tool_builds(cfg, n, args)
         add_configure_build(cfg, n)
 
@@ -1158,6 +1242,11 @@ def process_project(cfg: ProjectConfig, args: Any):
                 cmds_map["dis"].append(f"dis_{version}")
 
                 add_mwcc_builds(cfg, version, objects, n, mwcc_implicit)
+
+                # Custom builds
+                for lib in cfg.libs or []:
+                    for extra_build in lib.get("extra_builds") or []:
+                        extra_build(cfg, version, n)
 
                 add_mwld_and_rom_builds(cfg, version, n)
                 cmds_map["sha1"].append(f"sha1_{version}")

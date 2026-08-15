@@ -7,8 +7,10 @@ extern "C" {
 
 #include <stdarg.h>
 
+#include "nitro/os/cache.h"
 #include "nitro/os/context.h"
 #include "nitro/os/mutex.h"
+#include "nitro/os/owner.h"
 #include "nitro/os/thread.h"
 #include "nitro/reg.h"
 
@@ -29,6 +31,12 @@ extern "C" {
 #define OS_LOCK_ID_ERROR -3
 
 #define OS_THREAD_LAUNCHER_PRIORITY 0x10
+
+#define OS_EXMEM_CNT_NDS_SLOT_ACCESS_SHIFT 11
+#define OS_EXMEM_CNT_NDS_SLOT_ACCESS (1 << OS_EXMEM_CNT_NDS_SLOT_ACCESS_SHIFT)
+
+#define OS_CPU_ARM9 0
+#define OS_CPU_ARM7 1
 
 typedef struct OSLinkedList {
     /* 00 */ void *head;
@@ -166,6 +174,9 @@ s32 OS_func_0171(u32, u32, u32);
 s32 OS_func_0174(void);
 BOOL OS_func_0065(void);
 
+void OS_func_0176(u8 *);
+void OS_func_0178(u32);
+
 inline void OS_SetIrqCheckFlag(void) {
     REG_IRQ |= 1;
 }
@@ -228,7 +239,14 @@ inline BOOL OS_IsRunOnTwl(void) {
     return false;
 #else
         // Probably checks some reg here
+    #define REG_A9ROM_OFFSET 0x4000
+    #define REG_SCFG_A9ROM_SEC_MASK 1
+
 #endif
+}
+
+inline void OS_SetNdsSlotAccess(u32 processor) {
+    REG_EXMEM_CNT = (REG_EXMEM_CNT & ~OS_EXMEM_CNT_NDS_SLOT_ACCESS) | (processor << OS_EXMEM_CNT_NDS_SLOT_ACCESS_SHIFT);
 }
 
 #ifdef __cplusplus

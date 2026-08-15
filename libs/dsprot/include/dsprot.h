@@ -17,7 +17,7 @@
 
     #ifndef DSP_NO_NITRO
 
-        #include <types.h> // For u32
+        #include <nitro/types.h> // For u32
 
     #else /* DSP_NO_NITRO */
 
@@ -113,8 +113,14 @@ extern u32 DSProt_DetectNotDummy(void *callback);
 
 #else /* SDK_ASM */
 
-.public DSProt_DetectFlashcart.public DSProt_DetectNotFlashcart.public DSProt_DetectEmulator.public DSProt_DetectNotEmulator
-    .public DSProt_DetectDummy.public DSProt_DetectNotDummy
+// clang-format off
+.public DSProt_DetectFlashcart
+.public DSProt_DetectNotFlashcart
+.public DSProt_DetectEmulator
+.public DSProt_DetectNotEmulator
+.public DSProt_DetectDummy
+.public DSProt_DetectNotDummy
+    // clang-format on
 
 #endif /* SDK_ASM */
 

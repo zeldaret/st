@@ -73,14 +73,6 @@ libs/c/src/ansi_files.c:
     .data       start:0x020446a8 end:0x0204478c
     .bss        start:0x020517a0 end:0x02051aa0
 
-libs/c/src/float.c:
-    complete
-    .data       start:0x0204478c end:0x02044790
-
-libs/c/src/locale.c:
-    complete
-    .data       start:0x02044790 end:0x020449ac
-
 libs/c/src/arith.c:
     complete
     .text       start:0x020338d4 end:0x020338ec
@@ -108,6 +100,14 @@ libs/c/src/mem.c:
 libs/c/src/mem_funcs.c:
     complete
     .text       start:0x02033d7c end:0x02033e28
+
+libs/c/src/float.c:
+    complete
+    .data       start:0x0204478c end:0x02044790
+
+libs/c/src/locale.c:
+    complete
+    .data       start:0x02044790 end:0x020449ac
 
 libs/c/src/secure_error.c:
     complete

@@ -1,0 +1,55 @@
+#include "dsprot/mac_owner.h"
+
+#include <nitro/os.h>
+
+// Functions to be encrypted (cannot be called directly)
+u32 MACOwner_IsBad(void);
+u32 MACOwner_IsGood(void);
+
+#define MAC_ADDR_SIZE (6)
+
+#define ENC_MAC_ADDR_BYTE (0xFF)
+
+static const u8 bad_mac_addr[MAC_ADDR_SIZE] = {0x00 ^ ENC_MAC_ADDR_BYTE, 0x09 ^ ENC_MAC_ADDR_BYTE, 0xBF ^ ENC_MAC_ADDR_BYTE,
+                                               0x00 ^ ENC_MAC_ADDR_BYTE, 0x00 ^ ENC_MAC_ADDR_BYTE, 0x31 ^ ENC_MAC_ADDR_BYTE};
+
+static inline u32 testMACOwner(u32 pass_ret, u32 fail_ret) {
+    u8 mac_addr[MAC_ADDR_SIZE];
+    OSOwnerInfo owner_info;
+    int i;
+    u32 ret;
+
+    OS_func_0176(&mac_addr[0]);
+    for (i = 0; i < MAC_ADDR_SIZE; i++) {
+        if (bad_mac_addr[i] != (mac_addr[i] ^ ENC_MAC_ADDR_BYTE)) {
+            break;
+        }
+    }
+
+    OS_func_0177(&owner_info);
+    if (i == MAC_ADDR_SIZE && owner_info.birthday.month == 1 && owner_info.birthday.day == 1 &&
+        owner_info.nickNameLength == 0) {
+        ret = fail_ret;
+        goto EXIT;
+    }
+
+    for (i = 0; i < MAC_ADDR_SIZE; i++) {
+        if (mac_addr[i] != 0x00) {
+            ret = pass_ret;
+            goto EXIT;
+        }
+    }
+
+    ret = fail_ret;
+
+EXIT:
+    return ret;
+}
+
+u32 MACOwner_IsBad(void) {
+    return testMACOwner(0, 1);
+}
+
+u32 MACOwner_IsGood(void) {
+    return testMACOwner(1, 0);
+}

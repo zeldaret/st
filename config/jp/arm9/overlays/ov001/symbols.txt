@@ -442,55 +442,55 @@ _ZN17GameModeAdventureC1Ev kind:function(thumb,size=0x58) addr:0x020c2198
 _Z19func_ov001_020c099cv kind:function(thumb,size=0x24) addr:0x020c21f0
 _Z19func_ov001_020c09c0v kind:function(thumb,size=0x1c) addr:0x020c2214
 _ZN20GameModeDownloadPlay19func_ov001_020c09dcEv kind:function(thumb,size=0x48) addr:0x020c2230
-DetectFlashcart kind:function(arm,size=0xb8,unknown) addr:0x020c2278
-DetectNotFlashcart kind:function(arm,size=0xb8,unknown) addr:0x020c2330
-DetectEmulator kind:function(arm,size=0xb8,unknown) addr:0x020c23e8
-DetectNotEmulator kind:function(arm,size=0xb8,unknown) addr:0x020c24a0
-DetectDummy kind:function(arm,size=0x98,unknown) addr:0x020c2558
-DetectNotDummy kind:function(arm,size=0x98,unknown) addr:0x020c25f0
-DSProt_DetectFlashcart kind:function(arm,size=0x78,unknown) addr:0x020c2688
-DSProt_DetectNotFlashcart kind:function(arm,size=0x78,unknown) addr:0x020c2700
-DSProt_DetectEmulator kind:function(arm,size=0x78,unknown) addr:0x020c2778
-DSProt_DetectNotEmulator kind:function(arm,size=0x78,unknown) addr:0x020c27f0
-DSProt_DetectDummy kind:function(arm,size=0x78,unknown) addr:0x020c2868
-DSProt_DetectNotDummy kind:function(arm,size=0x78,unknown) addr:0x020c28e0
-NitroStaticInit kind:function(arm,size=0x4c,unknown) addr:0x020c2958 local
-Integrity_MACOwner_IsBad kind:function(arm,size=0xd8,unknown) addr:0x020c29a4
-Integrity_MACOwner_IsGood kind:function(arm,size=0x114,unknown) addr:0x020c2a7c
-Integrity_ROMTest_IsBad kind:function(arm,size=0xd8,unknown) addr:0x020c2b90
-Integrity_ROMTest_IsGood kind:function(arm,size=0x114,unknown) addr:0x020c2c68
-RunEncrypted_Integrity_MACOwner_IsBad kind:function(arm,size=0x78,unknown) addr:0x020c2d7c
-RunEncrypted_Integrity_MACOwner_IsGood kind:function(arm,size=0x78,unknown) addr:0x020c2df4
-RunEncrypted_Integrity_ROMTest_IsBad kind:function(arm,size=0x78,unknown) addr:0x020c2e6c
-RunEncrypted_Integrity_ROMTest_IsGood kind:function(arm,size=0x78,unknown) addr:0x020c2ee4
-NitroStaticInit kind:function(arm,size=0x38,unknown) addr:0x020c2f5c local
-clearDataAndInstructionCache kind:function(arm,size=0x20,unknown) addr:0x020c2f94
-Encryptor_CategorizeInstruction kind:function(arm,size=0x3c,unknown) addr:0x020c2fb4
-Encryptor_DecodeFunctionTable kind:function(arm,size=0x110,unknown) addr:0x020c2ff0
-Encryptor_DecryptFunction kind:function(arm,size=0x88,unknown) addr:0x020c3100
-Encryptor_EncryptFunction kind:function(arm,size=0x90,unknown) addr:0x020c3188
-NitroStaticInit kind:function(arm,size=0x28,unknown) addr:0x020c3218 local
-MACOwner_IsBad kind:function(arm,size=0xb0,unknown) addr:0x020c3240
-MACOwner_IsGood kind:function(arm,size=0xb0,unknown) addr:0x020c32f0
-RunEncrypted_MACOwner_IsBad kind:function(arm,size=0x78,unknown) addr:0x020c33a0
-RunEncrypted_MACOwner_IsGood kind:function(arm,size=0x78,unknown) addr:0x020c3418
-ROMUtil_Read kind:function(arm,size=0x184,unknown) addr:0x020c3490
-ROMUtil_CRC32 kind:function(arm,size=0x58,unknown) addr:0x020c3614
-RunEncrypted_ROMUtil_Read kind:function(arm,size=0x78,unknown) addr:0x020c366c
-RunEncrypted_ROMUtil_CRC32 kind:function(arm,size=0x78,unknown) addr:0x020c36e4
-ROMTest_IsBad kind:function(arm,size=0xc4,unknown) addr:0x020c375c
-ROMTest_IsGood kind:function(arm,size=0xc4,unknown) addr:0x020c3820
-RunEncrypted_ROMTest_IsBad kind:function(arm,size=0x78,unknown) addr:0x020c38e4
-RunEncrypted_ROMTest_IsGood kind:function(arm,size=0x78,unknown) addr:0x020c395c
-NitroStaticInit kind:function(arm,size=0x48,unknown) addr:0x020c39d4 local
-RC4_Init kind:function(arm,size=0x74,unknown) addr:0x020c3a1c
-RC4_Byte kind:function(arm,size=0x4c,unknown) addr:0x020c3a90
-RC4_InitSBox kind:function(arm,size=0x24,unknown) addr:0x020c3adc
-RC4_EncryptInstructions kind:function(arm,size=0x108,unknown) addr:0x020c3b00
-RC4_DecryptInstructions kind:function(arm,size=0x10c,unknown) addr:0x020c3c08
-RC4_InitAndEncryptInstructions kind:function(arm,size=0x58,unknown) addr:0x020c3d14
-RC4_InitAndDecryptInstructions kind:function(arm,size=0x58,unknown) addr:0x020c3d6c
-NitroStaticInit kind:function(arm,size=0x50,unknown) addr:0x020c3dc4 local
+DetectFlashcart kind:function(arm,size=0xb8,dsprot=(0xac,0x2e8b)) addr:0x020c2278
+DetectNotFlashcart kind:function(arm,size=0xb8,dsprot=(0xac,0x2e8b)) addr:0x020c2330
+DetectEmulator kind:function(arm,size=0xb8,dsprot=(0xac,0x2e8b)) addr:0x020c23e8
+DetectNotEmulator kind:function(arm,size=0xb8,dsprot=(0xac,0x2e8b)) addr:0x020c24a0
+DetectDummy kind:function(arm,size=0x98,dsprot=(0x94,0x2e8b)) addr:0x020c2558
+DetectNotDummy kind:function(arm,size=0x98,dsprot=(0x94,0x2e8b)) addr:0x020c25f0
+DSProt_DetectFlashcart kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c2688
+DSProt_DetectNotFlashcart kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c2700
+DSProt_DetectEmulator kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c2778
+DSProt_DetectNotEmulator kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c27f0
+DSProt_DetectDummy kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c2868
+DSProt_DetectNotDummy kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c28e0
+NitroStaticInit kind:function(arm,size=0x4c) addr:0x020c2958 local
+Integrity_MACOwner_IsBad kind:function(arm,size=0xd8,dsprot=(0xd4,0xbe28)) addr:0x020c29a4
+Integrity_MACOwner_IsGood kind:function(arm,size=0x114,dsprot=(0x110,0xbe28)) addr:0x020c2a7c
+Integrity_ROMTest_IsBad kind:function(arm,size=0xd8,dsprot=(0xd4,0xbe28)) addr:0x020c2b90
+Integrity_ROMTest_IsGood kind:function(arm,size=0x114,dsprot=(0x110,0xbe28)) addr:0x020c2c68
+RunEncrypted_Integrity_MACOwner_IsBad kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c2d7c
+RunEncrypted_Integrity_MACOwner_IsGood kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c2df4
+RunEncrypted_Integrity_ROMTest_IsBad kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c2e6c
+RunEncrypted_Integrity_ROMTest_IsGood kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c2ee4
+NitroStaticInit kind:function(arm,size=0x38) addr:0x020c2f5c local
+clearDataAndInstructionCache kind:function(arm,size=0x20) addr:0x020c2f94 local
+Encryptor_CategorizeInstruction kind:function(arm,size=0x3c) addr:0x020c2fb4
+Encryptor_DecodeFunctionTable kind:function(arm,size=0x110) addr:0x020c2ff0
+Encryptor_DecryptFunction kind:function(arm,size=0x88,dsprot=0x84) addr:0x020c3100
+Encryptor_EncryptFunction kind:function(arm,size=0x90,dsprot=0x8c) addr:0x020c3188
+NitroStaticInit kind:function(arm,size=0x28) addr:0x020c3218 local
+MACOwner_IsBad kind:function(arm,size=0xb0,dsprot=(0xac,0xc7ea)) addr:0x020c3240
+MACOwner_IsGood kind:function(arm,size=0xb0,dsprot=(0xac,0xc7ea)) addr:0x020c32f0
+RunEncrypted_MACOwner_IsBad kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c33a0
+RunEncrypted_MACOwner_IsGood kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c3418
+ROMUtil_Read kind:function(arm,size=0x184,dsprot=(0x17c,0xc7ea)) addr:0x020c3490
+ROMUtil_CRC32 kind:function(arm,size=0x58,dsprot=(0x54,0xc7ea)) addr:0x020c3614
+RunEncrypted_ROMUtil_Read kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c366c
+RunEncrypted_ROMUtil_CRC32 kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c36e4
+ROMTest_IsBad kind:function(arm,size=0xc4,dsprot=(0xc4,0xc7ea)) addr:0x020c375c
+ROMTest_IsGood kind:function(arm,size=0xc4,dsprot=(0xc4,0xc7ea)) addr:0x020c3820
+RunEncrypted_ROMTest_IsBad kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c38e4
+RunEncrypted_ROMTest_IsGood kind:function(arm,size=0x78,dsprot=0x68) addr:0x020c395c
+NitroStaticInit kind:function(arm,size=0x48) addr:0x020c39d4 local
+RC4_Init kind:function(arm,size=0x74,dsprot=0x74) addr:0x020c3a1c
+RC4_Byte kind:function(arm,size=0x4c,dsprot=0x4c) addr:0x020c3a90
+RC4_InitSBox kind:function(arm,size=0x24,dsprot=0x24) addr:0x020c3adc
+RC4_EncryptInstructions kind:function(arm,size=0x108,dsprot=0x108) addr:0x020c3b00
+RC4_DecryptInstructions kind:function(arm,size=0x10c,dsprot=0x108) addr:0x020c3c08
+RC4_InitAndEncryptInstructions kind:function(arm,size=0x58,dsprot=0x58) addr:0x020c3d14
+RC4_InitAndDecryptInstructions kind:function(arm,size=0x58,dsprot=0x58) addr:0x020c3d6c
+NitroStaticInit kind:function(arm,size=0x50) addr:0x020c3dc4 local
 data_ov001_020c25c0 kind:data(any) addr:0x020c3e14
 data_ov001_020c25d4 kind:data(any) addr:0x020c3e28
 data_ov001_020c25fc kind:data(any) addr:0x020c3e50
@@ -504,18 +504,19 @@ data_ov001_020c2750 kind:data(any) addr:0x020c3fa4 local
 data_ov001_020c275e kind:data(any) addr:0x020c3fb2 local
 data_ov001_020c276c kind:data(any) addr:0x020c3fc0
 data_ov001_020c27a8 kind:data(any) addr:0x020c3ffc
-bad_mac_addr kind:data(any) addr:0x020c4060
+DSProt_Garbage kind:data(any) addr:0x020c4048
+bad_mac_addr kind:data(any) addr:0x020c4060 local
 __sinit_CourseList.cpp kind:function(thumb,size=0x24) addr:0x020c4068 local
 __sinit_UnkStruct_027e0cd8_0C_001.cpp kind:function(thumb,size=0xb8) addr:0x020c408c
 __sinit_code_020c099c.cpp kind:function(thumb,size=0x10) addr:0x020c4144 local
 .p__sinit_CourseList.cpp kind:data(word) addr:0x020c4154 local
 .p__sinit_UnkStruct_027e0cd8_0C_001.cpp kind:data(word) addr:0x020c4158
 .p__sinit_code_020c099c.cpp kind:data(word) addr:0x020c415c local
-.p__sinit_ov001_020c2958 kind:data(word) addr:0x020c4160 local
-.p__sinit_ov001_020c2f5c kind:data(word) addr:0x020c4164 local
-.p__sinit_ov001_020c3218 kind:data(word) addr:0x020c4168 local
-.p__sinit_ov001_020c39d4 kind:data(word) addr:0x020c416c local
-.p__sinit_ov001_020c3dc4 kind:data(word) addr:0x020c4170 local
+NitroStaticInit_11 kind:data(word) addr:0x020c4160 local
+NitroStaticInit_8 kind:data(word) addr:0x020c4164 local
+NitroStaticInit_6 kind:data(word) addr:0x020c4168 local
+NitroStaticInit_10 kind:data(word) addr:0x020c416c local
+NitroStaticInit_11 kind:data(word) addr:0x020c4170 local
 @433 kind:data(byte[22]) addr:0x020c4180 local
 @450 kind:data(byte[22]) addr:0x020c4198 local
 @3570 kind:data(byte[18]) addr:0x020c41b0 local
@@ -635,5 +636,4 @@ data_ov001_020c40f4 kind:bss addr:0x020c5934 local
 data_ov001_020c46f4 kind:bss addr:0x020c5f34 local
 data_ov001_020c46f8 kind:bss addr:0x020c5f38 local
 data_ov001_020c46fc kind:bss addr:0x020c5f3c local
-data_ov001_020c5f40 kind:bss addr:0x020c5f40
-data_ov001_020c5f41 kind:bss addr:0x020c5f41
+DSProt_BSS kind:bss addr:0x020c5f40

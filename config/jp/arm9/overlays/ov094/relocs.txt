@@ -1346,6 +1346,8 @@ from:0x021732b0 kind:arm_call to:0x02068848 module:overlay(0)
 from:0x021732b8 kind:arm_call_thumb to:0x02059454 module:overlay(0)
 from:0x021732c0 kind:arm_call to:0x02062c50 module:overlay(0)
 from:0x021732c8 kind:arm_call to:0x0209e870 module:overlay(0)
+from:0x021732dc kind:arm_branch to:0x0217326c module:overlay(94)
+from:0x021732ec kind:arm_branch to:0x021732a4 module:overlay(94)
 from:0x021732fc kind:load to:0x0217b518 module:overlay(94)
 from:0x02173310 kind:arm_call to:0x02011f3c module:main
 from:0x0217331c kind:arm_call to:0x02173414 module:overlay(94)
@@ -1413,6 +1415,11 @@ from:0x02173a3c kind:arm_call to:0x02011ff4 module:main
 from:0x02173a50 kind:arm_call to:0x0209e444 module:overlay(0)
 from:0x02173a58 kind:arm_call to:0x02011ff4 module:main
 from:0x02173a6c kind:arm_call to:0x0209e444 module:overlay(0)
+from:0x02173a80 kind:arm_branch to:0x021739a0 module:overlay(94)
+from:0x02173a90 kind:arm_branch to:0x02173954 module:overlay(94)
+from:0x02173aa0 kind:arm_branch to:0x02173934 module:overlay(94)
+from:0x02173ab0 kind:arm_branch to:0x021738c4 module:overlay(94)
+from:0x02173ac0 kind:arm_branch to:0x021739e0 module:overlay(94)
 from:0x02173ad0 kind:load to:0x0217b5b0 module:overlay(94)
 from:0x02173ae4 kind:arm_call to:0x02011f3c module:main
 from:0x02173af0 kind:arm_call to:0x02173b8c module:overlay(94)
@@ -1698,6 +1705,15 @@ from:0x02175b6c kind:load to:0x027e09bc module:dtcm
 from:0x02175b70 kind:load to:0x02178450 module:overlay(94)
 from:0x02175b7c kind:load to:0x0203feb0 module:main
 from:0x02175b8c kind:arm_call to:0x0209e19c module:overlay(0)
+from:0x02175ba0 kind:arm_branch to:0x02174db4 module:overlay(94)
+from:0x02175bb0 kind:arm_branch to:0x02173f68 module:overlay(94)
+from:0x02175bc0 kind:arm_branch to:0x02175834 module:overlay(94)
+from:0x02175bd0 kind:arm_branch to:0x021757d4 module:overlay(94)
+from:0x02175be0 kind:arm_branch to:0x021757e0 module:overlay(94)
+from:0x02175bf0 kind:arm_branch to:0x021757bc module:overlay(94)
+from:0x02175c00 kind:arm_branch to:0x02173ecc module:overlay(94)
+from:0x02175c10 kind:arm_branch to:0x02174d04 module:overlay(94)
+from:0x02175c20 kind:arm_branch to:0x02174cd8 module:overlay(94)
 from:0x02175c30 kind:load to:0x0217b8d4 module:overlay(94)
 from:0x02175c44 kind:arm_call to:0x02011f3c module:main
 from:0x02175c50 kind:arm_call to:0x02175dc8 module:overlay(94)

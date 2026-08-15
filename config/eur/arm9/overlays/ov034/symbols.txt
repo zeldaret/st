@@ -246,7 +246,7 @@ __sinit_MapObjectUnkGELG.cpp kind:function(arm,size=0x84) addr:0x02122748
 .p__sinit_MapObjectUnkWPHL.cpp kind:data(word) addr:0x021227e4
 .p__sinit_MapObjectUnkGELG.cpp kind:data(word) addr:0x021227e8
 data_ov034_02122808 kind:data(any) addr:0x02122808
-_ZTV19data_ov034_02122808 kind:data(any) addr:0x02122808 ambiguous
+_ZTV19data_ov034_02122808 kind:data(any) addr:0x02122808
 _ZTV19data_ov034_02122824 kind:data(any) addr:0x02122824
 _ZTV19data_ov034_02122888 kind:data(any) addr:0x02122888
 data_ov034_021228ac kind:data(any) addr:0x021228ac

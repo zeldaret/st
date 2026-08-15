@@ -1,9 +1,9 @@
     .text       start:0x020b6520 end:0x020c25c0 kind:code align:32
-    .rodata     start:0x020c25c0 end:0x020c2814 kind:rodata align:4
+    .rodata     start:0x020c25c0 end:0x020c2812 kind:rodata align:4
     .init       start:0x020c2814 end:0x020c2900 kind:code align:4
     .ctor       start:0x020c2900 end:0x020c2920 kind:rodata align:4
     .data       start:0x020c2940 end:0x020c2fe0 kind:data align:32
-    .bss        start:0x020c2fe0 end:0x020c4720 kind:bss align:32
+    .bss        start:0x020c2fe0 end:0x020c4704 kind:bss align:32
 
 src/001_SceneInit/SceneInitializers_001.cpp:
     .text       start:0x020b6520 end:0x020b7430
@@ -102,6 +102,11 @@ src/001_SceneInit/Player/PlayerLinkActor_001.cpp:
     complete
     .text       start:0x020bc99c end:0x020bcca0
 
+libs/dsprot/src/extra.c:
+    complete
+    .rodata     start:0x020c27f4 end:0x020c280c
+    .bss        start:0x020c4700 end:0x020c4704
+
 src/001_SceneInit/UnkStruct_027e0ce0_1C_001.cpp:
     .text       start:0x020bcca0 end:0x020bd514
     .data       start:0x020c2c70 end:0x020c2c80
@@ -191,7 +196,7 @@ src/001_SceneInit/code_020bfeec.cpp:
 
 src/001_SceneInit/Game/AdventureModeManager_001.cpp:
     .text       start:0x020bff74 end:0x020c0944
-    .rodata     start:0x020c276c end:0x020c280c
+    .rodata     start:0x020c276c end:0x020c27f4
 
 src/001_SceneInit/Game/GameModeAdventure_001.cpp:
     complete
@@ -204,3 +209,77 @@ src/001_SceneInit/code_020c099c.cpp:
     .init       start:0x020c28f0 end:0x020c2900
     .ctor       start:0x020c2908 end:0x020c290c
     .data       start:0x020c2fd4 end:0x020c2fe0
+
+libs/dsprot/src/dsprot_main.c:
+    complete
+    .text       start:0x020c0a24 end:0x020c0e34
+
+libs/dsprot/src/dsprot_main_decryptor.s:
+    complete
+    .text       start:0x020c0e34 end:0x020c1104
+
+libs/dsprot/src/dsprot_main_decoder.s:
+    complete
+    .text       start:0x020c1104 end:0x020c1150
+    .ctor       start:0x020c290c end:0x020c2910
+
+libs/dsprot/src/integrity.c:
+    complete
+    .text       start:0x020c1150 end:0x020c1528
+
+libs/dsprot/src/integrity_decryptor.s:
+    complete
+    .text       start:0x020c1528 end:0x020c1708
+
+libs/dsprot/src/integrity_decoder.s:
+    complete
+    .text       start:0x020c1708 end:0x020c1740
+    .ctor       start:0x020c2910 end:0x020c2914
+
+libs/dsprot/src/encryptor.c:
+    complete
+    .text       start:0x020c1740 end:0x020c19c4
+
+libs/dsprot/src/encryptor_decryptor.s:
+    complete
+    .text       start:0x020c19c4 end:0x020c19ec
+    .ctor       start:0x020c2914 end:0x020c2918
+
+libs/dsprot/src/mac_owner.c:
+    complete
+    .text       start:0x020c19ec end:0x020c1b4c
+    .rodata     start:0x020c280c end:0x020c2812
+
+libs/dsprot/src/mac_owner_decryptor.s:
+    complete
+    .text       start:0x020c1b4c end:0x020c1c3c
+
+libs/dsprot/src/rom_util.c:
+    complete
+    .text       start:0x020c1c3c end:0x020c1e18
+
+libs/dsprot/src/rom_util_decryptor.s:
+    complete
+    .text       start:0x020c1e18 end:0x020c1f08
+
+libs/dsprot/src/rom_test.c:
+    complete
+    .text       start:0x020c1f08 end:0x020c2090
+
+libs/dsprot/src/rom_test_decryptor.s:
+    complete
+    .text       start:0x020c2090 end:0x020c2180
+
+libs/dsprot/src/coretests_decoder.s:
+    complete
+    .text       start:0x020c2180 end:0x020c21c8
+    .ctor       start:0x020c2918 end:0x020c291c
+
+libs/dsprot/src/rc4.c:
+    complete
+    .text       start:0x020c21c8 end:0x020c2570
+
+libs/dsprot/src/rc4_decoder.s:
+    complete
+    .text       start:0x020c2570 end:0x020c25c0
+    .ctor       start:0x020c291c end:0x020c2920

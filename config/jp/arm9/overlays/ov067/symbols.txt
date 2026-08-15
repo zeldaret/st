@@ -270,7 +270,7 @@ __sinit_MapObjectUnkDRVT.cpp kind:function(arm,size=0x50) addr:0x0215e7ac
 .p__sinit_MapObjectUnkMTOR.cpp kind:data(word) addr:0x0215e824
 .p__sinit_MapObjectUnkDRVT.cpp kind:data(word) addr:0x0215e828
 data_ov067_0215e848 kind:data(any) addr:0x0215e848
-_ZTV19data_ov067_0215e848 kind:data(any) addr:0x0215e848 ambiguous
+_ZTV19data_ov067_0215e848 kind:data(any) addr:0x0215e848
 data_ov067_0215e858 kind:data(any) addr:0x0215e858 ambiguous
 _ZTV19data_ov067_0215e864 kind:data(any) addr:0x0215e864
 _ZTV19data_ov067_0215e888 kind:data(any) addr:0x0215e888

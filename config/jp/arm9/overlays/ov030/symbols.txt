@@ -501,7 +501,7 @@ data_ov030_02154074 kind:data(any) addr:0x02154074 ambiguous
 data_ov030_02154094 kind:data(any) addr:0x02154094 ambiguous
 _ZTV19data_ov030_02154094 kind:data(any) addr:0x02154094
 data_ov030_02154100 kind:data(any) addr:0x02154100
-_ZTV19data_ov030_02154100 kind:data(any) addr:0x02154100 ambiguous
+_ZTV19data_ov030_02154100 kind:data(any) addr:0x02154100
 _ZGVN15ProfileInstanceI23MapObjectProfileUnkETTVE8sProfileE kind:bss addr:0x02154120
 @30680 kind:bss addr:0x02154124
 _ZN15ProfileInstanceI23MapObjectProfileUnkETTVE8sProfileE kind:bss addr:0x02154130

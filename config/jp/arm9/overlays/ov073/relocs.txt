@@ -1784,6 +1784,10 @@ from:0x0216546c kind:arm_call to:0x02011ff4 module:main
 from:0x02165484 kind:arm_call to:0x02062c50 module:overlay(0)
 from:0x0216548c kind:arm_call to:0x02099c30 module:overlay(0)
 from:0x021654a0 kind:arm_call to:0x020990b4 module:overlay(0)
+from:0x021654b4 kind:arm_branch to:0x02165450 module:overlay(73)
+from:0x021654c4 kind:arm_branch to:0x021653a8 module:overlay(73)
+from:0x021654d4 kind:arm_branch to:0x02165388 module:overlay(73)
+from:0x021654e4 kind:arm_branch to:0x02165478 module:overlay(73)
 from:0x0216553c kind:arm_call to:0x01fff1a4 module:itcm
 from:0x02165554 kind:arm_call to:0x01fff148 module:itcm
 from:0x02165564 kind:arm_call to:0x01fff148 module:itcm

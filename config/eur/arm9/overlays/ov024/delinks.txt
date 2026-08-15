@@ -213,6 +213,10 @@ src/024_MainGame/Train/code_020d51dc_024.cpp:
     .data       start:0x020d851c end:0x020d8550
     .bss        start:0x020d86a4 end:0x020d86a8
 
+src/024_MainGame/Train/data_ov024_020d8550.cpp:
+    complete
+    .data       start:0x020d8550 end:0x020d85d4
+
 src/024_MainGame/Train/UnkTrainSystem1_024.cpp:
     complete
     .text       start:0x020d54a0 end:0x020d58b4
@@ -247,10 +251,6 @@ src/024_MainGame/Actor/Actor_Derived1_EC_024.cpp:
     complete
     .text       start:0x020d6650 end:0x020d6e9c
     .bss        start:0x020d86b4 end:0x020d86b8
-
-src/024_MainGame/Train/data_ov024_020d8550.cpp:
-    complete
-    .data       start:0x020d8550 end:0x020d85d4
 
 src/024_MainGame/Actor/ActorUnkOBPC.cpp:
     complete

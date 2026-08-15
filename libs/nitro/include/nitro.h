@@ -2,7 +2,6 @@
 #include <stddef.h>
 
 #include "nitro/card.h"
-#include "nitro/dc.h"
 #include "nitro/fs.h"
 #include "nitro/fx.h"
 #include "nitro/g2.h"

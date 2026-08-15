@@ -3,8 +3,8 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
-#include <nitro/dc.h>
 #include <nitro/mi.h>
+#include <nitro/os.h>
 
 extern "C" void *func_02001308(void *, size_t, u32);
 extern "C" UnkStruct_027e0cec_18_04 *func_ov000_02054690(void *, unk32, unk32, unk32, unk32, unk32);

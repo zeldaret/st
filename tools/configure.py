@@ -4,8 +4,9 @@ import json
 import argparse
 import subprocess
 import glob
+import ninja_syntax
 
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Callable
 from pathlib import Path
 from project import ProjectConfig, Object, process_project
 
@@ -20,7 +21,7 @@ parser.add_argument("--noclangd", "-c", help='Do not create clangd config', requ
 args = parser.parse_args()
 
 config = ProjectConfig("st", args.compiler, "dsi/1.2p1", args.wine, args.dsd, Path(__file__).resolve())
-config.dsd_tag = "v0.11.0"
+config.dsd_tag = "v0.12.0"
 config.wibo_tag = "1.1.0"
 config.objdiff_tag = "v3.7.1"
 config.sjiswrap_tag = "v1.2.2"
@@ -65,6 +66,10 @@ config.cflags_base = [
     "-ipa file",            # InterProcedural Analysis
 ]
 
+config.asflags = [
+    "-proc arm5TE",         # Target processor
+]
+
 config.ldflags = [
     "-proc arm946e",        # Target processor
     "-dead",                # Strip unused code
@@ -74,6 +79,8 @@ config.ldflags = [
     "-msgstyle gcc",        # Use GCC-like messages (some IDEs will make file names clickable)
 ]
 
+
+type NinjaBuild = Callable[[ProjectConfig, str, ninja_syntax.Writer], None]
 
 # Helper function for Nitro libraries
 def NitroLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
@@ -96,6 +103,57 @@ def NNSLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
         "objects": objects,
     }
 
+# Helper function for dsprot library
+DSPROT_SRC = "libs/dsprot/src"
+DSPROT_MW_VERSION = "2.0/sp2p3"
+def DSProtLib(lib_name: str, objects: List[Object], extra_builds: list[NinjaBuild]) -> Dict[str, Any]:
+    return {
+        "lib": lib_name,
+        "mw_version": DSPROT_MW_VERSION,
+        "src_dir": DSPROT_SRC,
+        "cflags": [*config.cflags_base, "-lang c"],
+        "objects": objects,
+        "rules": [dsprot_asmwriter_rule],
+        "extra_builds": extra_builds,
+    }
+
+def dsprot_asmwriter_rule(cfg: ProjectConfig, n: ninja_syntax.Writer):
+    n.rule(
+        name="dsprot_asmwriter",
+        command=f"{cfg.python_path} libs/dsprot/tools/asmwriter.py -i $in -o $out $flags"
+    )
+
+def DSProtAsmwriter(asm_file: str, src_objects: list[str], *, flags: list[str]):
+    def build(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer):
+        src_obj_path: list[Path] = [
+            cfg.get_game_build(version) / DSPROT_SRC / src_object
+            for src_object in src_objects
+        ]
+        asm_path: Path = cfg.get_game_build(version) / DSPROT_SRC / asm_file
+        asm_obj_path = asm_path.with_suffix(".o")
+        n.build(
+            inputs=list(map(str, src_obj_path)),
+            implicit="libs/dsprot/tools/asmwriter.py",
+            rule="dsprot_asmwriter",
+            outputs=str(asm_path),
+            variables={
+                "flags": " ".join(flags)
+            },
+        )
+        n.build(
+            inputs=str(asm_path),
+            rule="mwas",
+            outputs=str(asm_obj_path),
+            variables={
+                "game_version": version.upper(),
+                "mw_version": DSPROT_MW_VERSION,
+                "as_flags": " ".join(cfg.asflags or []),
+                "basedir": str(asm_obj_path.parent),
+                "basefile": str(asm_obj_path.with_suffix("")),
+            },
+        )
+        n.newline()
+    return build
 
 # Helper function for libc libraries
 def LibC(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
@@ -1494,6 +1552,65 @@ config.libs = [
         [
             Object("g3d/sbc.c"),
         ]
+    ),
+    DSProtLib(
+        "dsprot",
+        [
+            Object("dsprot_main.c"),
+            Object("integrity.c"),
+            Object("encryptor.c"),
+            Object("mac_owner.c"),
+            Object("rom_util.c"),
+            Object("rom_test.c"),
+            Object("rc4.c"),
+            Object("extra.c"),
+        ],
+        extra_builds=[
+            DSProtAsmwriter("dsprot_main_decryptor.s", ["dsprot_main.o"], flags=[
+                "--key 0x2e8b",
+                "--prefix DSProt_",
+                "--symbols DetectFlashcart DetectNotFlashcart DetectEmulator DetectNotEmulator DetectDummy DetectNotDummy",
+            ]),
+            DSProtAsmwriter("dsprot_main_decoder.s", ["dsprot_main_decryptor.o"], flags=[
+                "--garbage DSProt_Garbage",
+                "--prefix DSProt_",
+                "--symbols DetectFlashcart DetectNotFlashcart DetectEmulator DetectNotEmulator DetectDummy DetectNotDummy",
+            ]),
+            DSProtAsmwriter("integrity_decryptor.s", ["integrity.o"], flags=[
+                "--key 0xbe28",
+                "--symbols Integrity_MACOwner_IsBad Integrity_MACOwner_IsGood Integrity_ROMTest_IsBad Integrity_ROMTest_IsGood",
+            ]),
+            DSProtAsmwriter("integrity_decoder.s", ["integrity_decryptor.o"], flags=[
+                "--symbols Integrity_MACOwner_IsBad Integrity_MACOwner_IsGood Integrity_ROMTest_IsBad Integrity_ROMTest_IsGood",
+            ]),
+            DSProtAsmwriter("encryptor_decryptor.s", ["encryptor.o"], flags=[
+                "--prefix ''",
+                "--symbols Encryptor_EncryptFunction Encryptor_DecryptFunction",
+            ]),
+            DSProtAsmwriter("mac_owner_decryptor.s", ["mac_owner.o"], flags=[
+                "--key 0xc7ea",
+                "--symbols MACOwner_IsBad MACOwner_IsGood",
+            ]),
+            DSProtAsmwriter("rom_util_decryptor.s", ["rom_util.o"], flags=[
+                "--key 0xc7ea",
+                "--symbols ROMUtil_Read ROMUtil_CRC32",
+            ]),
+            DSProtAsmwriter("rom_test_decryptor.s", ["rom_test.o"], flags=[
+                "--key 0xc7ea",
+                "--symbols ROMTest_IsBad ROMTest_IsGood",
+            ]),
+            DSProtAsmwriter(
+                "coretests_decoder.s",
+                ["mac_owner_decryptor.o", "rom_util_decryptor.o", "rom_test_decryptor.o"],
+                flags=[
+                    "--symbols ROMTest_IsBad ROMTest_IsGood MACOwner_IsBad MACOwner_IsGood ROMUtil_Read ROMUtil_CRC32",
+                ]
+            ),
+            DSProtAsmwriter("rc4_decoder.s", ["rc4.o"], flags=[
+                "--prefix ''",
+                "--symbols RC4_Init RC4_Byte RC4_InitSBox RC4_EncryptInstructions RC4_DecryptInstructions RC4_InitAndEncryptInstructions RC4_InitAndDecryptInstructions",
+            ]),
+        ],
     )
 ]
 

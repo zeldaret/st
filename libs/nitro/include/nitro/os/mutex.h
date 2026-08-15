@@ -1,8 +1,8 @@
 #ifndef NITROSDK_OS_MUTEX_H
 #define NITROSDK_OS_MUTEX_H
 
-#include <nitro/os/thread.h>
-#include <types.h>
+#include "nitro/os/thread.h"
+#include "nitro/types.h"
 
 typedef struct OSMutex {
     /* 0x00 */ OSThreadQueue queue;

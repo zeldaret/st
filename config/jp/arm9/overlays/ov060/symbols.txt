@@ -389,7 +389,7 @@ __sinit_MapObjectUnkEXCT.cpp kind:function(arm,size=0x50) addr:0x021630dc
 _ZTV19data_ov060_02163180 kind:data(any) addr:0x02163180
 _ZTV19data_ov060_021631a4 kind:data(any) addr:0x021631a4
 data_ov060_021631d0 kind:data(any) addr:0x021631d0
-_ZTV19data_ov060_021631d0 kind:data(any) addr:0x021631d0 ambiguous
+_ZTV19data_ov060_021631d0 kind:data(any) addr:0x021631d0
 data_ov060_021631f4 kind:data(any) addr:0x021631f4
 data_ov060_02163238 kind:data(any) addr:0x02163238
 data_ov060_02163248 kind:data(any) addr:0x02163248 ambiguous

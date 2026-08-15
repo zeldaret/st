@@ -477,6 +477,8 @@ from:0x0213441c kind:arm_call to:0x021343e4 module:overlay(49)
 from:0x02134424 kind:arm_call to:0x02098488 module:overlay(0)
 from:0x0213442c kind:arm_call to:0x02011ff4 module:main
 from:0x02134440 kind:arm_call to:0x02097724 module:overlay(0)
+from:0x02134454 kind:arm_branch to:0x021342f0 module:overlay(49)
+from:0x02134464 kind:arm_branch to:0x0213420c module:overlay(49)
 from:0x02134488 kind:load to:0x027e09b8 module:dtcm
 from:0x021344a8 kind:load to:0x027e09b8 module:dtcm
 from:0x021344c8 kind:load to:0x027e09b8 module:dtcm
