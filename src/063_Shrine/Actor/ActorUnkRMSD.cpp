@@ -1,6 +1,7 @@
 //! TODO: This file was generated automatically and might contain errors
 
 #include "Actor/ActorUnkRMSD.hpp"
+#include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "Actor/Actor_Derived1.hpp"
 #include "Render/ModelRender.hpp"
 #include "nns/g3d/g3d.h"
@@ -13,7 +14,7 @@ char data_ov063_021625e8[0x10]; // = "RMSD";
 ActorUnkZLSL_AnimationTag data_ov063_021634b0 = {0, "RMSD"};
 
 extern "C" void func_ov000_02099ff8(unk32 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);
-extern "C" unk32 func_ov063_0215bb34(ActorUnkRMSD *);
+extern "C" bool func_ov063_0215bb34(ActorUnkRMSD *);
 
 DECL_PROFILE(ActorProfileUnkRMSD);
 
@@ -34,8 +35,8 @@ ActorUnkRMSD::ActorUnkRMSD() {
 }
 
 bool ActorUnkRMSD::vfunc_18(unk32 param1) {
-    unk32 res = func_ov063_0215bb34(this);
-    func_ov000_02099ff8(&this->mUnk_158, data_ov063_021634b0, 0x1000);
+    bool res = func_ov063_0215bb34(this);
+    ((UnkStruct_ov000_020b31a8 *) &this->mUnk_158)->func_ov000_02099ff8(data_ov063_021634b0, 0x1000);
     return res;
 }
 
