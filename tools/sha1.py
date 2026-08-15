@@ -9,7 +9,7 @@ from pathlib import Path
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
 
-DEBUG = True
+DEBUG = False
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Computes and verifies a SHA1 checksum")
