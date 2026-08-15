@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkRMSV.hpp"
 #include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
@@ -36,9 +34,16 @@ ActorUnkRMSBase::ActorUnkRMSBase() :
     mUnk_F4(NULL) {}
 
 bool ActorUnkRMSBase::vfunc_18(unk32 param1) {}
+
+// Matched
 void ActorUnkRMSBase::vfunc_1C() {}
+
+// Matched
 void ActorUnkRMSBase::vfunc_20() {}
-void ActorUnkRMSBase::vfunc_24() {}
+
+void ActorUnkRMSBase::vfunc_24() {
+    this->vfunc_20();
+}
 void ActorUnkRMSBase::vfunc_2C(unk32 param1) {}
 
 ActorUnkRMSV::ActorUnkRMSV() {}

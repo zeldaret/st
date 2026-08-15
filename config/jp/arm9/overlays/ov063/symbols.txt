@@ -149,7 +149,7 @@ _ZN12ActorUnkRMSFC1Ev kind:function(arm,size=0x20) addr:0x0215dfc4
 _ZN12ActorUnkRMSF8vfunc_54Ev kind:function(arm,size=0x40) addr:0x0215dfe4
 _ZN12ActorUnkRMSF8vfunc_58Ev kind:function(arm,size=0x40) addr:0x0215e024
 _ZN12ActorUnkRMSFD1Ev kind:function(arm,size=0x28) addr:0x0215e064
-_ZN12ActorUnkRMSFc0Ev kind:function(arm,size=0x30) addr:0x0215e08c
+_ZN12ActorUnkRMSFD0Ev kind:function(arm,size=0x30) addr:0x0215e08c
 _ZN19ActorProfileUnkRMSFD1Ev kind:function(arm,size=0x14) addr:0x0215e0bc
 _ZN19ActorProfileUnkRMSD10GetProfileEv kind:function(arm,size=0xc) addr:0x0215e0d0
 _ZN19ActorProfileUnkRMSD6CreateEv kind:function(arm,size=0x24) addr:0x0215e0dc
@@ -435,7 +435,7 @@ _ZTV16ActorUnkCASE_174 kind:data(any) addr:0x02164f78
 _ZTV19ActorProfileUnkCASE kind:data(any) addr:0x02164f94
 _ZTV24UnkStruct_ov063_021631a0 kind:data(any) addr:0x02164fb8
 _ZTV12ActorUnkCASE kind:data(any) addr:0x02164fe4
-_ZTV19data_ov063_02163224 kind:data(any) addr:0x02165044
+_ZTV15ActorUnkRMSBase kind:data(any) addr:0x02165044
 _ZTV19ActorProfileUnkRMSV kind:data(any) addr:0x021650a8
 data_ov063_021632ac kind:data(any) addr:0x021650cc
 data_ov063_021632c4 kind:data(any) addr:0x021650e4

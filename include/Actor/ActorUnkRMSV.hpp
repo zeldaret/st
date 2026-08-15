@@ -1,10 +1,9 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "Actor/ActorUnkZLSL_ZSRS.hpp"
+#include "Unknown/UnkStruct_ov031_02114870.hpp"
 #include "global.h"
 #include "nns/g3d/g3d.h"
 #include "types.h"
@@ -20,7 +19,7 @@ public:
     /* 3C */ virtual void vfunc_3C() override;
 };
 
-class ActorUnkRMSBase : public Actor {
+class ActorUnkRMSBase : public UnkStruct_ov031_02114870 {
 public:
     /* 00 (base) */
     /* 94 */ ModelRender mUnk_94;
@@ -30,12 +29,13 @@ public:
 
     ActorUnkRMSBase();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override; // Init?
-    /* 1C */ virtual void vfunc_1C() override;             // Setup
-    /* 20 */ virtual void vfunc_20() override;             // Update?
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C() override;
+    /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorUnkRMSBase() override {};
+    /* 58 */ virtual G3d_Model *vfunc_58() = 0;
 };
 
 class ActorUnkRMSV_C4 : public Actor_C4 {
@@ -48,7 +48,7 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkRMSV : public Actor { //! INFO: ActorUnkRMSBase ? -> weirdly doesn't match first dtor
+class ActorUnkRMSV : public ActorUnkRMSBase {
 public:
     /* 00 (base) */
     /* 94 */ STRUCT_PAD(0x94, 0x158);
