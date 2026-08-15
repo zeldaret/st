@@ -435,7 +435,6 @@ _ZTV19ActorProfileUnkCASE kind:data(any) addr:0x02163174
 _ZTV24UnkStruct_ov063_021631a0 kind:data(any) addr:0x02163198
 _ZTV12ActorUnkCASE kind:data(any) addr:0x021631c4
 _ZTV19data_ov063_02163224 kind:data(any) addr:0x02163224
-data_ov063_02163228 kind:data(any) addr:0x02163228 ambiguous
 _ZTV19ActorProfileUnkRMSV kind:data(any) addr:0x02163288
 data_ov063_021632ac kind:data(any) addr:0x021632ac
 data_ov063_021632c4 kind:data(any) addr:0x021632c4

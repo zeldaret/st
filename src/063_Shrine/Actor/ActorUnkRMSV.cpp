@@ -3,7 +3,6 @@
 #include "Actor/ActorUnkRMSV.hpp"
 #include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
-#include "Actor/ActorUnkRMSW.hpp"
 #include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "Actor/Actor_Derived1.hpp"
 #include "MapObject/MapObjectTreasureSpawned.hpp"
@@ -31,6 +30,10 @@ Actor *ActorProfileUnkRMSV::Create() {
 
 ActorProfileUnkRMSV::ActorProfileUnkRMSV() :
     ActorProfile_Derived1(ActorId_RMSV) {}
+
+ActorUnkRMSBase::ActorUnkRMSBase() :
+    mUnk_94(NULL),
+    mUnk_F4(NULL) {}
 
 ActorUnkRMSV::ActorUnkRMSV() {}
 

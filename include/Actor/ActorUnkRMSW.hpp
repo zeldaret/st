@@ -5,7 +5,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "Actor/ActorUnkRMSD.hpp"
+#include "Actor/ActorUnkRMSV.hpp"
 #include "global.h"
 #include "nns/g3d/g3d.h"
 #include "types.h"

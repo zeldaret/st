@@ -2,7 +2,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "Actor/ActorUnkRMSD.hpp"
+#include "Actor/ActorUnkRMSV.hpp"
 #include "Render/ModelRender.hpp"
 #include "global.h"
 #include "nns/g3d/g3d.h"
@@ -16,17 +16,6 @@ public:
     /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-};
-
-class ActorUnkRMSF_Base : public Actor {
-public:
-    /* 00 (base) */
-    /* 094 */ ModelRender mUnk_094;
-    /* 0F4 */ ModelRender mUnk_0F4;
-    /* 154 */ unk32 mUnk_154;
-    /* 158 */
-
-    ActorUnkRMSF_Base();
 };
 
 class ActorUnkRMSF : public ActorUnkRMSBase {

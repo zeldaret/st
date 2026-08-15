@@ -20,6 +20,19 @@ public:
     /* 3C */ virtual void vfunc_3C() override;
 };
 
+class ActorUnkRMSBase : public Actor {
+public:
+    /* 00 (base) */
+    /* 94 */ ModelRender mUnk_94;
+    /* F4 */ ModelRender mUnk_F4;
+    /* 154 */ unk32 mUnk_154;
+    /* 158 */
+
+    ActorUnkRMSBase();
+
+    /* 4C */ virtual ~ActorUnkRMSBase() override {};
+};
+
 class ActorUnkRMSV_C4 : public Actor_C4 {
 public:
     ActorUnkRMSV_C4(Actor *param1);
