@@ -21,6 +21,10 @@ extern "C" bool func_ov063_0215bb34(ActorUnkRMSV *);
 
 DECL_PROFILE(ActorProfileUnkRMSV);
 
+s8 UnkStruct_ov063_021632e4::vfunc_30() {}
+void UnkStruct_ov063_021632e4::vfunc_38(unk32 param1, unk32 param2) {}
+void UnkStruct_ov063_021632e4::vfunc_3C() {}
+
 Actor *ActorProfileUnkRMSV::Create() {
     return new(HeapIndex_2) ActorUnkRMSV();
 }

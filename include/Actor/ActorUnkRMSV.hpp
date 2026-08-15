@@ -4,9 +4,21 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "global.h"
 #include "nns/g3d/g3d.h"
 #include "types.h"
+
+class UnkStruct_ov063_021632e4 : public UnkStruct_ov000_020b31a8 {
+public:
+    UnkStruct_ov063_021632e4(UnkSystem5 *param1, ModelRender *param2, unk32 param3) :
+        UnkStruct_ov000_020b31a8(param1, param2, param3) {};
+
+    /* 00 */ virtual ~UnkStruct_ov063_021632e4() override {};
+    /* 30 */ virtual s8 vfunc_30() override;
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override;
+    /* 3C */ virtual void vfunc_3C() override;
+};
 
 class ActorUnkRMSV_C4 : public Actor_C4 {
 public:

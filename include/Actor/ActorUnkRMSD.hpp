@@ -4,6 +4,8 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Actor/ActorUnkRMSV.hpp"
+#include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "Render/ModelRender.hpp"
 #include "global.h"
 #include "nns/g3d/g3d.h"
@@ -34,8 +36,10 @@ public:
 class ActorUnkRMSD : public ActorUnkRMSBase {
 public:
     /* 00 (base) */
-    /* 158 */ unk32 mUnk_158;           //! INFO: Some class with a vfunc_34
-    /* 15C */ STRUCT_PAD(0x15C, 0x1D4); //! INFO: Force alignment to match ::Create
+    /* 158 */ UnkStruct_ov063_021632e4 mUnk_158;
+    /* 174 */ UnkSystem5 mUnk_174; // Probably part of mUnk_158
+    /* 194 */ unk32 mUnk_194;
+    /* 198 */ STRUCT_PAD(0x198, 0x1D4); //! INFO: Force alignment to match ::Create
     /* 1D4 */
 
     ActorUnkRMSD();

@@ -29,14 +29,18 @@ ActorUnkRMSBase::ActorUnkRMSBase() :
     mUnk_94(NULL),
     mUnk_F4(NULL) {}
 
-ActorUnkRMSD::ActorUnkRMSD() {
-    ActorProfileUnkRMSD *r0 = GET_PROFILE(ActorProfileUnkRMSD);
-    r0->vfunc_04();
+ActorUnkRMSD::ActorUnkRMSD() :
+    mUnk_158(&mUnk_174, &mUnk_94, GET_PROFILE(ActorProfileUnkRMSD)->vfunc_04()),
+    mUnk_174(&mUnk_194, NULL) {
+    // Must reuse the (same) value computed above
+    if (GET_PROFILE(ActorProfileUnkRMSD)->vfunc_04() != NULL) {
+        mUnk_174.mpModel = mUnk_158.mUnk_10;
+    }
 }
 
 bool ActorUnkRMSD::vfunc_18(unk32 param1) {
     bool res = func_ov063_0215bb34(this);
-    ((UnkStruct_ov000_020b31a8 *) &this->mUnk_158)->func_ov000_02099ff8(data_ov063_021634b0, 0x1000);
+    this->mUnk_158.func_ov000_02099ff8(data_ov063_021634b0, 0x1000);
     return res;
 }
 
