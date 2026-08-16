@@ -1,6 +1,6 @@
 func_ov047_02130480 kind:function(arm,size=0x64) addr:0x02130480
 func_ov047_021304e4 kind:function(arm,size=0x28) addr:0x021304e4
-func_ov047_0213050c kind:function(arm,size=0x30) addr:0x0213050c
+func_ov047_0213052c kind:function(arm,size=0x30) addr:0x0213050c
 func_ov047_0213053c kind:function(arm,size=0x200) addr:0x0213053c
 func_ov047_0213073c kind:function(arm,size=0x39c) addr:0x0213073c
 func_ov047_02130ad8 kind:function(arm,size=0x3d8) addr:0x02130ad8
@@ -9,7 +9,7 @@ func_ov047_02131130 kind:function(arm,size=0xe8) addr:0x02131130
 func_ov047_02131218 kind:function(arm,size=0x74) addr:0x02131218
 func_ov047_0213128c kind:function(arm,size=0x80) addr:0x0213128c
 func_ov047_0213130c kind:function(arm,size=0x68) addr:0x0213130c
-func_ov047_02131374 kind:function(arm,size=0xd0) addr:0x02131374
+func_ov047_02131394 kind:function(arm,size=0xd0) addr:0x02131374
 func_ov047_02131444 kind:function(arm,size=0x14) addr:0x02131444
 func_ov047_02131458 kind:function(arm,size=0xc) addr:0x02131458
 func_ov047_02131464 kind:function(arm,size=0x24) addr:0x02131464
@@ -123,8 +123,8 @@ func_ov047_02135a74 kind:function(arm,size=0x14) addr:0x02135a74
 func_ov047_02135a88 kind:function(arm,size=0x10) addr:0x02135a88
 func_ov047_02135a98 kind:function(arm,size=0x8c) addr:0x02135a98
 func_ov047_02135b24 kind:function(arm,size=0x8c) addr:0x02135b24
-func_ov047_02135bb0 kind:function(arm,size=0x98) addr:0x02135bb0
-func_ov047_02135c48 kind:function(arm,size=0x70) addr:0x02135c48
+_ZN21PlayerLinkActor_A0_28D1Ev kind:function(arm,size=0x98) addr:0x02135bb0
+func_ov047_02135c68 kind:function(arm,size=0x70) addr:0x02135c48
 data_ov047_02135cb8 kind:data(any) addr:0x02135cb8
 data_ov047_02135cc8 kind:data(any) addr:0x02135cc8
 data_ov047_02135ccc kind:data(any) addr:0x02135ccc

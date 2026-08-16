@@ -1,4 +1,4 @@
-data_ov097_02181040 kind:bss addr:0x02181040
+gBufferTrainMsg kind:bss addr:0x02181040
 data_ov097_02181094 kind:bss addr:0x02181094 ambiguous
 data_ov097_021810b8 kind:bss addr:0x021810b8 ambiguous
 data_ov097_02181358 kind:bss addr:0x02181358 ambiguous
