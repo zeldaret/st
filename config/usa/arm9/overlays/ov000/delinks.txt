@@ -4,3 +4,121 @@
     .ctor       start:0x020b1894 end:0x020b1920 kind:rodata align:4
     .data       start:0x020b1940 end:0x020b4ea0 kind:data align:32
     .bss        start:0x020b4ea0 end:0x020b6500 kind:bss align:32
+
+src/000_Second/Game/GameModeManagerBase_104_0C.cpp:
+    complete
+    .text       start:0x02061a6c end:0x02061ac4
+    .data       start:0x020b1e20 end:0x020b1e38
+
+src/000_Second/Game/GameModeManagerBase_104.cpp:
+    complete
+    .text       start:0x02061ac4 end:0x02061cc0
+    .data       start:0x020b1e38 end:0x020b1e5c
+
+src/000_Second/code_020657fc.cpp:
+    .text       start:0x020657dc end:0x02065c00
+
+src/000_Second/UnkSystem1_Base.cpp:
+    .text       start:0x02066790 end:0x02067224
+    .data       start:0x020b2050 end:0x020b207c
+
+src/000_Second/UnkSystem1_Derived1.cpp:
+    complete
+    .text       start:0x02067224 end:0x02067488
+    .data       start:0x020b207c end:0x020b20b0
+
+src/000_Second/Actor/Actor.cpp:
+    .text       start:0x02098368 end:0x02098634
+    .data       start:0x020b30c4 end:0x020b3120
+
+src/000_Second/Actor/ActorUnkSWOB.cpp:
+    complete
+    .text       start:0x0209a898 end:0x0209ac88
+    .init       start:0x020b07c8 end:0x020b0818
+    .ctor       start:0x020b18e8 end:0x020b18ec
+    .data       start:0x020b326c end:0x020b32ec
+    .bss        start:0x020b5bdc end:0x020b5c28
+
+src/000_Second/Actor/ActorUnkSWTM.cpp:
+    .text       start:0x0209ac88 end:0x0209b20c
+    .init       start:0x020b0818 end:0x020b0868
+    .ctor       start:0x020b18ec end:0x020b18f0
+    .data       start:0x020b32ec end:0x020b336c
+    .bss        start:0x020b5c28 end:0x020b5c74
+
+src/000_Second/Actor/ActorEventIcon.cpp:
+    complete
+    .text       start:0x0209bf68 end:0x0209c054
+    .init       start:0x020b0868 end:0x020b08b8
+    .ctor       start:0x020b18f0 end:0x020b18f4
+    .data       start:0x020b338c end:0x020b340c
+    .bss        start:0x020b5c78 end:0x020b5cc4
+
+src/000_Second/Actor/ActorUnkEFIK.cpp:
+    complete
+    .text       start:0x0209c054 end:0x0209c328
+    .init       start:0x020b08b8 end:0x020b0908
+    .ctor       start:0x020b18f4 end:0x020b18f8
+    .data       start:0x020b340c end:0x020b3490
+    .bss        start:0x020b5cc4 end:0x020b5d10
+
+src/000_Second/MapObject/MapObjectManager_000.cpp:
+    .text       start:0x0209c388 end:0x0209c680
+
+src/000_Second/MapObject/MapObjectProfile.cpp:
+    complete
+    .text       start:0x0209c770 end:0x0209cde8
+    .init       start:0x020b0908 end:0x020b0930
+    .ctor       start:0x020b18f8 end:0x020b18fc
+    .data       start:0x020b34a8 end:0x020b3540
+    .bss        start:0x020b5d10 end:0x020b60f4
+
+src/000_Second/MapObject/MapObjectProfile_Derived2_20.cpp:
+    complete
+    .text       start:0x0209cde8 end:0x0209cfc0
+    .data       start:0x020b3540 end:0x020b3568
+
+src/000_Second/MapObject/MapObject.cpp:
+    complete
+    .text       start:0x0209cfc0 end:0x0209d6e0
+    .data       start:0x020b3568 end:0x020b35a8
+
+src/000_Second/MapObject/MapObjectSwitchStep.cpp:
+    .text       start:0x0209dcc0 end:0x0209e3d8
+    .rodata     start:0x020af530 end:0x020af554
+    .init       start:0x020b0930 end:0x020b098c
+    .ctor       start:0x020b18fc end:0x020b1900
+    .data       start:0x020b3658 end:0x020b3724
+    .bss        start:0x020b60f4 end:0x020b6208
+
+src/000_Second/MapObject/MapObjectMiniBlocks.cpp:
+    complete
+    .text       start:0x0209e3d8 end:0x0209e764
+    .rodata     start:0x020af554 end:0x020af560
+    .init       start:0x020b098c end:0x020b09dc
+    .ctor       start:0x020b1900 end:0x020b1904
+    .data       start:0x020b3724 end:0x020b378c
+    .bss        start:0x020b6208 end:0x020b6280
+
+src/000_Second/data_ov000_020af58c.cpp:
+    .text       start:0x020a4be0 end:0x020a4bf0
+    .rodata     start:0x020af56c end:0x020af740
+
+src/000_Second/Cutscene/Cutscene.cpp:
+    .text       start:0x020a780c end:0x020a78e8
+    .rodata     start:0x020af760 end:0x020afc1c
+    .data       start:0x020b4bb0 end:0x020b4d08
+
+src/000_Second/Item/ItemManager.cpp:
+    complete
+    .text       start:0x020a861c end:0x020a8ac0
+    .rodata     start:0x020afc20 end:0x020afc28
+
+src/000_Second/Actor/Actor_Derived1.cpp:
+    .text       start:0x020a8ac0 end:0x020a9a9c
+    .data       start:0x020b4d68 end:0x020b4e2c
+
+src/000_Second/Item/TreasureManager.cpp:
+    .text       start:0x020a9a9c end:0x020aa204
+    .rodata     start:0x020afd48 end:0x020afeb8
+    .data       start:0x020b4e40 end:0x020b4ea0

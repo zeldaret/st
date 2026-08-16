@@ -1182,7 +1182,7 @@ from:0x020ca430 kind:arm_call to:0x020166a4 module:main
 from:0x020ca444 kind:arm_call to:0x020166a4 module:main
 from:0x020ca460 kind:load to:0x020d7f38 module:overlay(24)
 from:0x020ca464 kind:load to:0x020b1f6c module:overlay(0)
-from:0x020ca468 kind:load to:0x020b1f0c module:overlay(0)
+from:0x020ca468 kind:load to:0x020b1f04 module:overlay(0) add:0x8
 from:0x020ca4ac kind:arm_call to:0x02063a1c module:overlay(0)
 from:0x020ca4c8 kind:arm_call to:0x02063a1c module:overlay(0)
 from:0x020ca4dc kind:arm_call to:0x02062ef8 module:overlay(0)

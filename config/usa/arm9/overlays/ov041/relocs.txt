@@ -1036,7 +1036,7 @@ from:0x0212c6a8 kind:load to:0x0212d3e0 module:overlay(41)
 from:0x0212c70c kind:arm_call to:0x01fff520 module:itcm
 from:0x0212c72c kind:arm_call to:0x0209d27c module:overlay(0)
 from:0x0212c760 kind:load to:0x027e09a4 module:dtcm
-from:0x0212c768 kind:load to:0x020b3498 module:overlay(0)
+from:0x0212c768 kind:load to:0x020b3490 module:overlay(0) add:0x8
 from:0x0212c76c kind:load to:0x027e0ce8 module:dtcm
 from:0x0212c77c kind:arm_call_thumb to:0x02057bb4 module:overlay(0)
 from:0x0212c784 kind:arm_call to:0x02011ff4 module:main

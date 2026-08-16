@@ -5483,7 +5483,7 @@ from:0x0210c988 kind:load to:0x027e0cd8 module:dtcm
 from:0x0210c990 kind:load to:0x021334dc module:overlay(26)
 from:0x0210c998 kind:load to:0x027e0ce8 module:dtcm
 from:0x0210c9e8 kind:arm_call to:0x01fff520 module:itcm
-from:0x0210ca18 kind:load to:0x020b3498 module:overlay(0)
+from:0x0210ca18 kind:load to:0x020b3490 module:overlay(0) add:0x8
 from:0x0210ca1c kind:load to:0x027e0ce8 module:dtcm
 from:0x0210ca48 kind:arm_call to:0x020e94b8 module:overlay(26)
 from:0x0210ca70 kind:arm_call to:0x020e95f4 module:overlay(26)
