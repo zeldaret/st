@@ -2384,15 +2384,7 @@ data_020433f4 kind:data(any) addr:0x020433f4
 data_020433fc kind:data(any) addr:0x020433fc
 data_02043400 kind:data(any) addr:0x02043400
 _ZZ17G3d_SBCRender_007P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043440
-_ZZ17G3d_SBCRender_007P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043444
-_ZZ17G3d_SBCRender_007P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x0204344c
-_ZZ17G3d_SBCRender_007P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043470
-_ZZ17G3d_SBCRender_007P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x0204347c
 _ZZ17G3d_SBCRender_008P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043488
-_ZZ17G3d_SBCRender_008P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x0204348c
-_ZZ17G3d_SBCRender_008P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043494
-_ZZ17G3d_SBCRender_008P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x020434b8
-_ZZ17G3d_SBCRender_008P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x020434c4
 data_020434d0 kind:data(any) addr:0x020434d0
 @171 kind:data(any) addr:0x020434f0
 @172 kind:data(any) addr:0x020434fc
@@ -2761,8 +2753,8 @@ data_02046c80 kind:bss addr:0x02046c80
 data_02047a8c kind:bss addr:0x02047a8c
 data_02047a90 kind:bss addr:0x02047a90
 data_02047a94 kind:bss addr:0x02047a94
-data_02046c80 kind:bss addr:0x02048080
-data_02046c80 kind:bss addr:0x020480c0
+data_02048080 kind:bss addr:0x02048080
+data_020480c0 kind:bss addr:0x020480c0
 data_02049980 kind:bss addr:0x02049980
 data_02049984 kind:bss addr:0x02049984
 data_0204998c kind:bss addr:0x0204998c
@@ -2800,7 +2792,7 @@ data_0204a060 kind:bss addr:0x0204a060
 data_0204a088 kind:bss addr:0x0204a088
 data_0204a090 kind:bss addr:0x0204a090
 data_0204a110 kind:bss addr:0x0204a110
-data_0204a110 kind:bss addr:0x0204a120
+data_0204a120 kind:bss addr:0x0204a120
 data_0204a480 kind:bss addr:0x0204a480
 data_0204ae10 kind:bss addr:0x0204ae10
 data_0204ae90 kind:bss addr:0x0204ae90
