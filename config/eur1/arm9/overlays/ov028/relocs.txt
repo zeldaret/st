@@ -302,7 +302,7 @@ from:0x0214403c kind:arm_call_thumb to:0x020156f4 module:main
 from:0x02144044 kind:arm_call_thumb to:0x0201568c module:main
 from:0x02144050 kind:load to:0x02147440 module:overlay(28)
 from:0x02144054 kind:load to:0x021474d4 module:overlay(28)
-from:0x02144058 kind:load to:0x02043f40 module:main
+from:0x02144058 kind:load to:0x02043f38 module:main add:0x8
 from:0x02144070 kind:arm_call_thumb to:0x0205777c module:overlay(0)
 from:0x02144078 kind:arm_call to:0x02011ff4 module:main
 from:0x0214413c kind:arm_call to:0x0200eab0 module:main
