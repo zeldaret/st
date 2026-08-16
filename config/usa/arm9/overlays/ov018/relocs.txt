@@ -98,7 +98,7 @@ from:0x020c4e90 kind:load to:0x02049bc4 module:main
 from:0x020c4e94 kind:load to:0x0204997c module:main
 from:0x020c4e98 kind:load to:0x02049964 module:main
 from:0x020c4ea0 kind:thumb_call_arm to:0x0201bac4 module:main
-from:0x020c4eb0 kind:load to:0x02044018 module:main
+from:0x020c4eb0 kind:load to:0x02044010 module:main add:0x8
 from:0x020c4ecc kind:arm_call to:0x02028c24 module:main
 from:0x020c4ef4 kind:arm_call to:0x0203d138 module:main
 from:0x020c4f10 kind:arm_call to:0x0206665c module:overlay(0)
