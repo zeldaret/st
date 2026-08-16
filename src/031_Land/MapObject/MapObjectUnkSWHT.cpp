@@ -1,4 +1,7 @@
 #include "MapObject/MapObjectUnkSWHT.hpp"
+
+#include "Actor/Actor.hpp"
+#include "Actor/ActorManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -7,8 +10,11 @@
 
 extern const char data_ov031_02110ce0;
 
+extern "C" void func_ov031_020e0f30(ActorRef);
+
 DECL_PROFILE(MapObjectProfileUnkSWHT);
 
+// awful sinit: should not have constructors
 static MapObject_10 data_ov031_02117a9c                 = MapObject_10();
 static MapObjectProfile_Derived2_20 data_ov031_021179e8 = MapObjectProfile_Derived2_20();
 
@@ -16,6 +22,7 @@ MapObject *MapObjectProfileUnkSWHT::Create() {
     return new(HeapIndex_ITCM) MapObjectUnkSWHT();
 }
 
+// non-matching (regalloc)
 MapObjectProfileUnkSWHT::MapObjectProfileUnkSWHT() :
     MapObjectProfilePot_Base(MapObjectId_SWHT, MapObjectId_SWHT) {
     this->mUnk_D4.mUnk_08 = 0x84007009;
@@ -58,6 +65,7 @@ MapObjectUnkSWHT::~MapObjectUnkSWHT() {
     }
 }
 
+// non-matching (SET_FLAG and UNSET_FLAG do not simplify into a single op)
 bool MapObjectUnkSWHT::vfunc_00() {
     SET_FLAG(this->mFlags, MapObjFlag_9);
     SET_FLAG(this->mFlags, MapObjFlag_10);
@@ -119,7 +127,71 @@ void MapObjectUnkSWHT::func_ov031_02101dd8() {
     this->mUnk_0B4.func_01ffc3b4();
 }
 
-void MapObjectUnkSWHT::vfunc_08() {}
+void MapObjectUnkSWHT::vfunc_08() {
+    this->func_ov031_02101dd8();
+    ++this->mUnk_04C;
+
+    switch (this->mState) {
+        case MapObjUnkSWHTState_0:
+            ++this->mUnk_050;
+
+            if (this->mUnk_044 != 0x1) {
+                break;
+            }
+
+            if (!this->func_ov000_0209d29c(0x0)) {
+                break;
+            }
+
+            this->func_ov031_021021c0(MapObjUnkSWHTState_1, 0x0);
+            break;
+        case MapObjUnkSWHTState_1:
+            this->func_ov031_021023b0();
+
+            data_027e0cec->func_ov000_020a0140(&this->mUnk_0F4, &this->mPos);
+
+            switch (this->mUnk_040) {
+                case 0x2:
+                case 0x3:
+                    if (this->mUnk_20.mParams[2] == 0x1) {
+                        if (this->func_ov000_0209d29c(0x1)) {
+                            break;
+                        }
+                    }
+
+                    if (++this->mUnk_050 < this->mUnk_048) {
+                        break;
+                    }
+
+                    this->func_ov031_021021c0(MapObjUnkSWHTState_0, 0x0);
+                    break;
+                case 0x1:
+                    ++this->mUnk_050;
+
+                    if (this->mUnk_044 != 0x1) {
+                        break;
+                    }
+
+                    if (this->func_ov000_0209d29c(0x0)) {
+                        break;
+                    }
+
+                    this->func_ov031_021021c0(MapObjUnkSWHTState_0, 0x0);
+                    break;
+                default:
+                    if (this->func_ov000_0209d29c(0x0)) {
+                        break;
+                    }
+
+                    this->func_ov031_021021c0(MapObjUnkSWHTState_0, 0x0);
+                    break;
+            }
+
+            break;
+        default:
+            break;
+    }
+}
 
 void MapObjectUnkSWHT::vfunc_0C() {
     this->func_ov031_02101dd8();
@@ -129,9 +201,95 @@ void MapObjectUnkSWHT::vfunc_14() {
     this->mUnk_054.vfunc_18(&this->mPos);
 }
 
-bool MapObjectUnkSWHT::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {}
-void MapObjectUnkSWHT::func_ov031_021020ec() {}
+bool MapObjectUnkSWHT::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
+    if (param1.type != 0x0) {
+        Actor *actor = gpActorManager->func_01fff3b4(param1);
+        if (actor != NULL) {
+            if (actor->GetActorId() == ActorId_SRST) {
+                return false;
+            }
+        }
+    }
 
+    switch (param2) {
+        case 0xE:
+        case 0x10:
+        case 0x11:
+            return true;
+        case 0xD:
+            if (this->func_ov031_021020ec()) {
+                func_ov031_020e0f30(param1);
+            }
+            return false;
+        case 0xC:
+            this->func_ov031_021020ec();
+            return false;
+        case 0xA:
+            if (param1.type != 0x0) {
+                Actor *actor = gpActorManager->func_01fff3b4(param1);
+                if (actor != NULL) {
+                    if (actor->GetActorId() == ActorId_KEYB) {
+                        return true;
+                    }
+                }
+            }
+            this->func_ov031_021020ec();
+            break;
+        default:
+            this->func_ov031_021020ec();
+            break;
+    }
+    return false;
+}
+
+bool MapObjectUnkSWHT::func_ov031_021020ec() {
+    bool retValue = false;
+    if (this->mState != MapObjUnkSWHTState_0) {
+        if (this->mState == MapObjUnkSWHTState_1) {
+            switch (this->mUnk_040) {
+                case 0:
+                case 2:
+                case 3:
+                    break;
+                case 1:
+                    if (this->mUnk_04C > 0x1 && this->mUnk_050 >= 0x14) {
+                        this->func_ov031_021021c0(MapObjUnkSWHTState_0, 0);
+                        retValue = true;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    } else {
+        switch (this->mUnk_040) {
+            default:
+                break;
+            case 0:
+                if (this->mUnk_050 < 0x14) {
+                    break;
+                }
+                this->func_ov031_021021c0(MapObjUnkSWHTState_1, 0);
+                retValue = true;
+                break;
+            case 2:
+            case 3:
+                this->func_ov031_021021c0(MapObjUnkSWHTState_1, 0);
+                retValue = true;
+                break;
+            case 1:
+                if (this->mUnk_04C > 1 && this->mUnk_050 >= 0x14) {
+                    this->func_ov031_021021c0(MapObjUnkSWHTState_1, 0);
+                    retValue = true;
+                }
+                break;
+        }
+    }
+    this->mUnk_04C = 0;
+    return retValue;
+}
+
+// non-matching (SET_FLAG and UNSET_FLAG do not simplify into a single op)
 void MapObjectUnkSWHT::func_ov031_021021c0(unk16 state, unk32 param2) {
     this->mState = state;
     switch (this->mState) {
@@ -142,32 +300,32 @@ void MapObjectUnkSWHT::func_ov031_021021c0(unk16 state, unk32 param2) {
 
             this->func_ov000_0209d2c4(0x0, false);
 
-            if (this->mUnk_040 - 2 > 1 || this->mUnk_20.mParams[2] != 1) {
+            if (this->mUnk_040 - 2 > 0x1 || this->mUnk_20.mParams[2] != 0x1) {
                 this->func_ov000_0209d2c4(0x1, true);
             }
 
-            this->mUnk_050 = 0;
-            if (param2 == 0) {
+            this->mUnk_050 = 0x0;
+            if (param2 == 0x0) {
                 data_027e09a8->func_ov000_02071b30(0x120, &this->mPos, 0x0);
             }
             data_027e0cec->func_ov000_020a0110(&this->mUnk_0F4);
 
             break;
         case MapObjUnkSWHTState_1:
-            if (param2 == 0 && this->mUnk_20.mParams[3] != 0) {
+            if (param2 == 0x0 && this->mUnk_20.mParams[3] != 0x0) {
                 UnkStackStruct1 stack;
                 func_ov000_02072fd0(&stack);
                 stack.mUnk_08 = 0x3C;
                 stack.mUnk_00 = 0x6C;
-                stack.mUnk_3A = 3;
+                stack.mUnk_3A = 0x3;
                 stack.mUnk_38 |= 0x80;
                 VecFx32_Copy(&this->mPos, &stack.mUnk_0C);
-                data_027e09b8->func_ov000_02073388(&stack, 0);
+                data_027e09b8->func_ov000_02073388(&stack, 0x0);
             }
 
             this->func_ov000_0209d2c4(0x0, true);
 
-            if (this->mUnk_040 - 2 > 1 || this->mUnk_20.mParams[2] != 1) {
+            if (this->mUnk_040 - 2 > 0x1 || this->mUnk_20.mParams[2] != 0x1) {
                 this->func_ov000_0209d2c4(0x1, false);
             }
 

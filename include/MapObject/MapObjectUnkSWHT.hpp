@@ -39,7 +39,7 @@ public:
     /* 30 */ virtual ~MapObjectUnkSWHT() override;
 
     void func_ov031_02101dd8();
-    void func_ov031_021020ec();
+    bool func_ov031_021020ec();
     void func_ov031_021021c0(unk16 state, unk32 param2);
     void func_ov031_021023b0();
 };
