@@ -2053,7 +2053,7 @@ from:0x020d267c kind:load to:0x020d8248 module:overlay(24)
 from:0x020d2680 kind:load to:0x027e09a0 module:dtcm
 from:0x020d2684 kind:load to:0x020d8250 module:overlay(24)
 from:0x020d2688 kind:load to:0x020d8268 module:overlay(24)
-from:0x020d268c kind:load to:0x02043f10 module:main
+from:0x020d268c kind:load to:0x02043f08 module:main add:0x8
 from:0x020d2740 kind:arm_call to:0x02011f3c module:main
 from:0x020d2754 kind:arm_call to:0x020d27ac module:overlay(24)
 from:0x020d2784 kind:arm_call to:0x02011ff4 module:main
