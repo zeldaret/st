@@ -111,7 +111,7 @@ func_ov053_0213cad0 kind:function(arm,size=0x1c) addr:0x0213cad0
 func_ov053_0213caec kind:function(arm,size=0x84) addr:0x0213caec
 func_ov053_0213cb70 kind:function(arm,size=0x8c) addr:0x0213cb70
 func_ov053_0213cbfc kind:function(arm,size=0x14) addr:0x0213cbfc
-func_ov053_0213cc10 kind:function(arm,size=0x98) addr:0x0213cc10
+_ZN27UnkStruct_ItemManager_20_1419func_ov053_0213caf0Ev kind:function(arm,size=0x98) addr:0x0213cc10
 func_ov053_0213cca8 kind:function(arm,size=0x194) addr:0x0213cca8
 data_ov053_0213ce3c kind:data(any) addr:0x0213ce3c
 data_ov053_0213ce4c kind:data(any) addr:0x0213ce4c

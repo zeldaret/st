@@ -1,6 +1,6 @@
 func_ov047_021305e0 kind:function(arm,size=0x64) addr:0x021305e0
 func_ov047_02130644 kind:function(arm,size=0x28) addr:0x02130644
-func_ov047_0213066c kind:function(arm,size=0x30) addr:0x0213066c
+func_ov047_0213052c kind:function(arm,size=0x30) addr:0x0213066c
 func_ov047_0213069c kind:function(arm,size=0x200) addr:0x0213069c
 func_ov047_0213089c kind:function(arm,size=0x39c) addr:0x0213089c
 func_ov047_02130c38 kind:function(arm,size=0x3d8) addr:0x02130c38
@@ -123,8 +123,8 @@ func_ov047_02135bd4 kind:function(arm,size=0x14) addr:0x02135bd4
 func_ov047_02135be8 kind:function(arm,size=0x10) addr:0x02135be8
 func_ov047_02135bf8 kind:function(arm,size=0x8c) addr:0x02135bf8
 func_ov047_02135c84 kind:function(arm,size=0x8c) addr:0x02135c84
-func_ov047_02135d10 kind:function(arm,size=0x98) addr:0x02135d10
-func_ov047_02135da8 kind:function(arm,size=0x70) addr:0x02135da8
+_ZN21PlayerLinkActor_A0_28D1Ev kind:function(arm,size=0x98) addr:0x02135d10
+func_ov047_02135c68 kind:function(arm,size=0x70) addr:0x02135da8
 data_ov047_02135e18 kind:data(any) addr:0x02135e18
 data_ov047_02135e28 kind:data(any) addr:0x02135e28
 data_ov047_02135e2c kind:data(any) addr:0x02135e2c
