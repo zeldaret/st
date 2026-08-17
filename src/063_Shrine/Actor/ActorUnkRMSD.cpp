@@ -1,6 +1,7 @@
 //! TODO: This file was generated automatically and might contain errors
 
 #include "Actor/ActorUnkRMSD.hpp"
+#include "Actor/ActorUnkRMSV.hpp"
 #include "Actor/Actor_Derived1.hpp"
 #include "Render/ModelRender.hpp"
 #include "nns/g3d/g3d.h"
@@ -25,16 +26,10 @@ ActorProfileUnkRMSD::ActorProfileUnkRMSD() :
     ActorProfile_Derived1(ActorId_RMSD) {}
 
 ActorUnkRMSD::ActorUnkRMSD() :
-    mUnk_158(&mUnk_174, &mUnk_94, GET_PROFILE(ActorProfileUnkRMSD)->vfunc_04()),
-    mUnk_174(&mUnk_194, NULL) {
-    // Must reuse the (same) value computed above
-    if (GET_PROFILE(ActorProfileUnkRMSD)->vfunc_04() != NULL) {
-        mUnk_174.mpModel = mUnk_158.mUnk_10;
-    }
-}
+    mUnk_158(&mUnk_94, GET_PROFILE(ActorProfileUnkRMSD)->vfunc_04()) {}
 
 bool ActorUnkRMSD::vfunc_18(unk32 param1) {
-    bool res = func_ov063_0215bb34(this);
+    bool res = ActorUnkRMSBase::vfunc_18(param1);
     this->mUnk_158.func_ov000_02099ff8(data_ov063_021634b0, 0x1000);
     return res;
 }

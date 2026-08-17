@@ -24,8 +24,6 @@ class ActorUnkRMSD : public ActorUnkRMSBase {
 public:
     /* 00 (base) */
     /* 158 */ UnkStruct_ov063_021632e4 mUnk_158;
-    /* 174 */ UnkSystem5 mUnk_174; // Probably part of mUnk_158
-    /* 194 */ unk32 mUnk_194;
     /* 198 */ STRUCT_PAD(0x198, 0x1D4); //! INFO: Force alignment to match ::Create
     /* 1D4 */
 
