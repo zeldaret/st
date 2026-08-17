@@ -13,9 +13,12 @@ char data_ov063_02162588[0x10]; // = "RMSV_wall";
 ActorUnkZLSL_AnimationTag data_ov063_021632ac = {0, "RMSV"};
 ActorUnkZLSL_AnimationTag data_ov063_021632c4 = {1, "RMSV"};
 
+// Overlay 0
 extern "C" void func_ov000_02099ff8(unk32 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);
 extern "C" void func_ov000_02099e58(UnkStruct_ov063_021632e4 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);
-extern "C" bool func_ov063_0215bb34(ActorUnkRMSV *);
+
+// Overlay 31
+extern "C" void func_ov031_020f7574(Actor *param1, unk32 param2);
 
 DECL_PROFILE(ActorProfileUnkRMSV);
 
@@ -47,14 +50,21 @@ void ActorUnkRMSBase::vfunc_20() {}
 void ActorUnkRMSBase::vfunc_24() {
     this->vfunc_20();
 }
-void ActorUnkRMSBase::vfunc_2C(unk32 param1) {}
+
+void ActorUnkRMSBase::vfunc_2C(unk32 param1) {
+    func_ov031_020f7574(this, param1); // Probably vfunc_18 of the parent class
+
+    if (mUnk_154) {
+        mUnk_F4.vfunc_18(&mPos);
+    }
+}
 
 ActorUnkRMSV::ActorUnkRMSV() :
     mUnk_158(&mUnk_94, GET_PROFILE(ActorProfileUnkRMSV)->vfunc_04()),
     mUnk_1D4(&mUnk_94, GET_PROFILE(ActorProfileUnkRMSV)->vfunc_04()) {}
 
 bool ActorUnkRMSV::vfunc_18(unk32 param1) {
-    bool res = func_ov063_0215bb34(this);
+    bool res = ActorUnkRMSBase::vfunc_18(param1);
     ((UnkStruct_ov000_020b31a8 *) &this->mUnk_158)->func_ov000_02099ff8(data_ov063_021632ac, 0x1000);
     func_ov000_02099e58(&this->mUnk_1D4, data_ov063_021632c4, 0x1000);
     ((MapObjectTreasureSpawned *) &this->mUnk_1D4)->vfunc_3C(); //! WARN: NOT a MapObjectTreasureSpawned

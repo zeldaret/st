@@ -14,7 +14,6 @@ char data_ov063_021625a8[0x10]; // = "RMSW";
 struct ActorUnkZLSL_AnimationTag data_ov063_02163388 = {0, "RMSW"};
 
 extern "C" void func_ov000_02099ff8(unk32 *param1, struct UnkStruct_data_ov063_02163388 param2, unk32 param8);
-extern "C" bool func_ov063_0215bb34(ActorUnkRMSW *);
 
 DECL_PROFILE(ActorProfileUnkRMSW);
 

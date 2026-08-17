@@ -35,7 +35,7 @@ public:
     /* 00 (base) */
     /* 94 */ ModelRender mUnk_94; // Belongs to the parent class
     /* F4 */ ModelRender mUnk_F4;
-    /* 154 */ unk8 mUnk_154;
+    /* 154 */ u8 mUnk_154;
     /* 155 */ unk8 mUnk_155;
     /* 156 */ STRUCT_PAD(0x156, 0x158);
     /* 158 */
@@ -67,7 +67,7 @@ public:
     /* 158 */ UnkStruct_ov063_021632e4 mUnk_158; //! INFO: Some class with a vfunc_34
     /* 198 */ STRUCT_PAD(0x198, 0x1D4);          //! INFO: Force alignment to match ::Create
     /* 1D4 */ UnkStruct_ov063_021632e4 mUnk_1D4; //! INFO: Some class with a vfunc_34
-    /* 114 */ STRUCT_PAD(0x114, 0x250);          //! INFO: Force alignment to match ::Create
+    /* 214 */ STRUCT_PAD(0x214, 0x250);          //! INFO: Force alignment to match ::Create
     /* 250 */
 
     ActorUnkRMSV();
