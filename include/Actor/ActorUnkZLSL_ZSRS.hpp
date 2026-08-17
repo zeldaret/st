@@ -50,7 +50,7 @@ public:
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ G3d_Model *mUnk_10;
     /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk8 mUnk_18; // deduced from strb [..., 0x18]
+    /* 18 */ unk8 mUnk_18;
     /* 19 */ STRUCT_PAD(0x19, 0x1C);
     /* 1C */
 

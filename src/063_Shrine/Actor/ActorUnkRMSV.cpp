@@ -22,9 +22,17 @@ extern "C" void func_ov031_020f7574(Actor *param1, unk32 param2);
 
 DECL_PROFILE(ActorProfileUnkRMSV);
 
-s8 UnkStruct_ov063_021632e4::vfunc_30() {}
-void UnkStruct_ov063_021632e4::vfunc_38(unk32 param1, unk32 param2) {}
-void UnkStruct_ov063_021632e4::vfunc_3C() {}
+s8 UnkStruct_ov063_021632e4::vfunc_30() {
+    return mUnk_18;
+}
+
+void UnkStruct_ov063_021632e4::vfunc_38(unk32 param1, unk32 param2) {
+    mUnk_04->func_ov000_020578a4(param1, param2);
+}
+
+void UnkStruct_ov063_021632e4::vfunc_3C() {
+    mUnk_08->func_ov000_02057c98(this->vfunc_10());
+}
 
 Actor *ActorProfileUnkRMSV::Create() {
     return new(HeapIndex_2) ActorUnkRMSV();
@@ -65,15 +73,15 @@ ActorUnkRMSV::ActorUnkRMSV() :
 
 bool ActorUnkRMSV::vfunc_18(unk32 param1) {
     bool res = ActorUnkRMSBase::vfunc_18(param1);
-    ((UnkStruct_ov000_020b31a8 *) &this->mUnk_158)->func_ov000_02099ff8(data_ov063_021632ac, 0x1000);
+    this->mUnk_158.func_ov000_02099ff8(data_ov063_021632ac, 0x1000);
     func_ov000_02099e58(&this->mUnk_1D4, data_ov063_021632c4, 0x1000);
-    ((MapObjectTreasureSpawned *) &this->mUnk_1D4)->vfunc_3C(); //! WARN: NOT a MapObjectTreasureSpawned
+    this->mUnk_1D4.vfunc_3C();
     return res;
 }
 
 void ActorUnkRMSV::vfunc_20(void) {
-    (*(Actor *) &this->mUnk_158).vfunc_34(); // Not an Actor
-    (*(Actor *) &this->mUnk_1D4).vfunc_34(); // Not an Actor
+    this->mUnk_158.vfunc_34();
+    this->mUnk_1D4.vfunc_34();
 }
 
 void ActorUnkRMSV::vfunc_24(void) {
