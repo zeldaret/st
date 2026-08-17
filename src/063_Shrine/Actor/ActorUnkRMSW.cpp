@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkRMSW.hpp"
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorUnkZLSL_ZSRS.hpp"

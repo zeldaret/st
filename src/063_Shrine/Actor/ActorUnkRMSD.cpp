@@ -1,9 +1,6 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkRMSD.hpp"
 #include "Actor/ActorUnkRMSV.hpp"
 #include "Actor/Actor_Derived1.hpp"
-#include "Render/ModelRender.hpp"
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
 #include "types.h"

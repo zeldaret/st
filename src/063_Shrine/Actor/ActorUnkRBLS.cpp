@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkRBLS.hpp"
 #include "MapObject/MapObjectTreasureSpawned.hpp"
 #include "Render/ModelRender.hpp"

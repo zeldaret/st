@@ -1,11 +1,8 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "Actor/ActorUnkRMSV.hpp"
-#include "Render/ModelRender.hpp"
 #include "global.h"
 #include "nns/g3d/g3d.h"
 #include "types.h"
