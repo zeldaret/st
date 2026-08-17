@@ -3,6 +3,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "Actor/ActorUnkZLSL_ZSRS.hpp"
+#include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_ov031_02114870.hpp"
 #include "global.h"
 #include "nns/g3d/g3d.h"
@@ -10,8 +11,18 @@
 
 class UnkStruct_ov063_021632e4 : public UnkStruct_ov000_020b31a8 {
 public:
-    UnkStruct_ov063_021632e4(UnkSystem5 *param1, ModelRender *param2, unk32 param3) :
-        UnkStruct_ov000_020b31a8(param1, param2, param3) {};
+    /* 00 (base) */
+    /* 1C */ UnkSystem5 mUnk_1C;
+    /* 3C */ unk32 mUnk_3C;
+    /* 40 */
+
+    UnkStruct_ov063_021632e4(ModelRender *param1, unk32 param2) :
+        UnkStruct_ov000_020b31a8(&mUnk_1C, param1, param2),
+        mUnk_1C(&mUnk_3C, NULL) {
+        if (param2 != 0) {
+            mUnk_1C.mpModel = mUnk_10;
+        }
+    };
 
     /* 00 */ virtual ~UnkStruct_ov063_021632e4() override {};
     /* 30 */ virtual s8 vfunc_30() override;
@@ -22,9 +33,11 @@ public:
 class ActorUnkRMSBase : public UnkStruct_ov031_02114870 {
 public:
     /* 00 (base) */
-    /* 94 */ ModelRender mUnk_94;
+    /* 94 */ ModelRender mUnk_94; // Belongs to the parent class
     /* F4 */ ModelRender mUnk_F4;
-    /* 154 */ unk32 mUnk_154;
+    /* 154 */ unk8 mUnk_154;
+    /* 155 */ unk8 mUnk_155;
+    /* 156 */ STRUCT_PAD(0x156, 0x158);
     /* 158 */
 
     ActorUnkRMSBase();

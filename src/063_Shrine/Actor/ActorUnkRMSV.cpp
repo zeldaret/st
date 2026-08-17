@@ -31,7 +31,9 @@ ActorProfileUnkRMSV::ActorProfileUnkRMSV() :
 
 ActorUnkRMSBase::ActorUnkRMSBase() :
     mUnk_94(NULL),
-    mUnk_F4(NULL) {}
+    mUnk_F4(NULL),
+    mUnk_154(0),
+    mUnk_155(0) {}
 
 bool ActorUnkRMSBase::vfunc_18(unk32 param1) {}
 

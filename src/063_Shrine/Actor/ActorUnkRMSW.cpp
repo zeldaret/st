@@ -5,6 +5,7 @@
 #include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "Actor/Actor_Derived1.hpp"
 #include "nns/g3d/g3d.h"
+#include "profile.hpp"
 #include "types.h"
 
 char data_ov063_02162598[0x10]; // = "RMSW_wall";
@@ -24,10 +25,11 @@ Actor *ActorProfileUnkRMSW::Create() {
 ActorProfileUnkRMSW::ActorProfileUnkRMSW() :
     ActorProfile_Derived1(ActorId_RMSW) {}
 
-ActorUnkRMSW::ActorUnkRMSW() {}
+ActorUnkRMSW::ActorUnkRMSW() :
+    mUnk_158(&mUnk_94, GET_PROFILE(ActorProfileUnkRMSW)->vfunc_04()) {}
 
 bool ActorUnkRMSW::vfunc_18(unk32 param1) {
-    bool res = func_ov063_0215bb34(this);
+    bool res = ActorUnkRMSBase::vfunc_18(param1);
     ((UnkStruct_ov000_020b31a8 *) &this->mUnk_158)->func_ov000_02099ff8(data_ov063_02163388, 0x1000);
     return res;
 }
