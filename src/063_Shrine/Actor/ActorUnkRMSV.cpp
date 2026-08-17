@@ -5,6 +5,7 @@
 #include "Actor/Actor_Derived1.hpp"
 #include "MapObject/MapObjectTreasureSpawned.hpp"
 #include "nns/g3d/g3d.h"
+#include "profile.hpp"
 
 char data_ov063_02162578[0x10]; // = "RMSV";
 char data_ov063_02162588[0x10]; // = "RMSV_wall";
@@ -13,7 +14,7 @@ ActorUnkZLSL_AnimationTag data_ov063_021632ac = {0, "RMSV"};
 ActorUnkZLSL_AnimationTag data_ov063_021632c4 = {1, "RMSV"};
 
 extern "C" void func_ov000_02099ff8(unk32 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);
-extern "C" void func_ov000_02099e58(unk32 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);
+extern "C" void func_ov000_02099e58(UnkStruct_ov063_021632e4 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);
 extern "C" bool func_ov063_0215bb34(ActorUnkRMSV *);
 
 DECL_PROFILE(ActorProfileUnkRMSV);
@@ -48,7 +49,9 @@ void ActorUnkRMSBase::vfunc_24() {
 }
 void ActorUnkRMSBase::vfunc_2C(unk32 param1) {}
 
-ActorUnkRMSV::ActorUnkRMSV() {}
+ActorUnkRMSV::ActorUnkRMSV() :
+    mUnk_158(&mUnk_94, GET_PROFILE(ActorProfileUnkRMSV)->vfunc_04()),
+    mUnk_1D4(&mUnk_94, GET_PROFILE(ActorProfileUnkRMSV)->vfunc_04()) {}
 
 bool ActorUnkRMSV::vfunc_18(unk32 param1) {
     bool res = func_ov063_0215bb34(this);
