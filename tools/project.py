@@ -1288,6 +1288,16 @@ def process_project(cfg: ProjectConfig, args: Any):
                     implicit=cmds,
                 )
 
+            version_to_cmds = {
+                version: [f"check_{version}", f"sha1_{version}", f"report_{version}"] for version in cfg.game_versions
+            }
+            for version in cfg.game_versions:
+                n.build(
+                    rule="phony",
+                    outputs=version,
+                    implicit=version_to_cmds[version],
+                )
+
             # n.default(["format", "objdiff", *defaults])
             n.default(["objdiff", *defaults])
         else:
