@@ -2,20 +2,9 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "Actor/ActorUnkRMSV.hpp"
+#include "Actor/ActorUnkRMSBase.hpp"
 #include "global.h"
 #include "nns/g3d/g3d.h"
-#include "types.h"
-
-class ActorUnkRMSS_C4 : public Actor_C4 {
-public:
-    ActorUnkRMSS_C4(Actor *param1);
-
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual bool vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-};
 
 class ActorUnkRMSS : public ActorUnkRMSBase {
 public:
