@@ -9,6 +9,26 @@
 #include "nns/g3d/g3d.h"
 #include "types.h"
 
+class ActorUnkRMSBase : public UnkStruct_ov031_02114870 {
+public:
+    /* 00 (base) */
+    /* F4 */ ModelRender mUnk_F4;
+    /* 154 */ u8 mUnk_154;
+    /* 155 */ unk8 mUnk_155;
+    /* 156 */ STRUCT_PAD(0x156, 0x158);
+    /* 158 */
+
+    ActorUnkRMSBase();
+
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C() override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 4C */ virtual ~ActorUnkRMSBase() override {};
+    /* 58 */ virtual G3d_Model *vfunc_58() = 0;
+};
+
 class UnkStruct_ov063_021632e4 : public UnkStruct_ov000_020b31a8 {
 public:
     /* 00 (base) */
@@ -30,44 +50,13 @@ public:
     /* 3C */ virtual void vfunc_3C() override;
 };
 
-class ActorUnkRMSBase : public UnkStruct_ov031_02114870 {
-public:
-    /* 00 (base) */
-    /* 94 */ ModelRender mUnk_94; // Belongs to the parent class
-    /* F4 */ ModelRender mUnk_F4;
-    /* 154 */ u8 mUnk_154;
-    /* 155 */ unk8 mUnk_155;
-    /* 156 */ STRUCT_PAD(0x156, 0x158);
-    /* 158 */
-
-    ActorUnkRMSBase();
-
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C() override;
-    /* 20 */ virtual void vfunc_20() override;
-    /* 24 */ virtual void vfunc_24() override;
-    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
-    /* 4C */ virtual ~ActorUnkRMSBase() override {};
-    /* 58 */ virtual G3d_Model *vfunc_58() = 0;
-};
-
-class ActorUnkRMSV_C4 : public Actor_C4 {
-public:
-    ActorUnkRMSV_C4(Actor *param1);
-
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual bool vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-};
-
 class ActorUnkRMSV : public ActorUnkRMSBase {
 public:
     /* 00 (base) */
-    /* 158 */ UnkStruct_ov063_021632e4 mUnk_158; //! INFO: Some class with a vfunc_34
-    /* 198 */ STRUCT_PAD(0x198, 0x1D4);          //! INFO: Force alignment to match ::Create
-    /* 1D4 */ UnkStruct_ov063_021632e4 mUnk_1D4; //! INFO: Some class with a vfunc_34
-    /* 214 */ STRUCT_PAD(0x214, 0x250);          //! INFO: Force alignment to match ::Create
+    /* 158 */ UnkStruct_ov063_021632e4 mUnk_158;
+    /* 198 */ STRUCT_PAD(0x198, 0x1D4); //! INFO: Force alignment to match ::Create
+    /* 1D4 */ UnkStruct_ov063_021632e4 mUnk_1D4;
+    /* 214 */ STRUCT_PAD(0x214, 0x250); //! INFO: Force alignment to match ::Create
     /* 250 */
 
     ActorUnkRMSV();

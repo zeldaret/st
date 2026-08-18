@@ -6,8 +6,8 @@
 #include "profile.hpp"
 #include "types.h"
 
-char data_ov063_02162598[0x10]; // = "RMSW_wall";
-char data_ov063_021625a8[0x10]; // = "RMSW";
+extern char data_ov063_02162598[0x10]; // = "RMSW_wall";
+extern char data_ov063_021625a8[0x10]; // = "RMSW";
 
 struct ActorUnkZLSL_AnimationTag data_ov063_02163388 = {0, "RMSW"};
 

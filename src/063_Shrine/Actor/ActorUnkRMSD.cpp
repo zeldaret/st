@@ -5,8 +5,8 @@
 #include "profile.hpp"
 #include "types.h"
 
-char data_ov063_021625d8[0x10]; // = "RMSD_wall";
-char data_ov063_021625e8[0x10]; // = "RMSD";
+extern char data_ov063_021625d8[0x10]; // = "RMSD_wall";
+extern char data_ov063_021625e8[0x10]; // = "RMSD";
 
 ActorUnkZLSL_AnimationTag data_ov063_021634b0 = {0, "RMSD"};
 
