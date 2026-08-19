@@ -38,25 +38,27 @@ src/063_Shrine/Actor/ActorUnkRMSW.cpp:
     .bss        start:0x02163e18 end:0x02163f00
 
 src/063_Shrine/Actor/ActorUnkRMSF.cpp:
+    complete
     .text       start:0x0215c1d8 end:0x0215c33c
     .init       start:0x021628d4 end:0x02162924
     .ctor       start:0x02162e50 end:0x02162e54
     .data       start:0x02163428 end:0x021634b0
-    .bss        start:0x02163f00 end:0x02163fec
+    .bss        start:0x02163f00 end:0x02163fe8
 
 src/063_Shrine/Actor/ActorUnkRMSD.cpp:
     .text       start:0x0215c33c end:0x0215c584
     .init       start:0x02162924 end:0x02162974
     .ctor       start:0x02162e54 end:0x02162e58
     .data       start:0x021634b0 end:0x02163550
-    .bss        start:0x02163fec end:0x021640d0
+    .bss        start:0x02163fe8 end:0x021640d0
 
 src/063_Shrine/Actor/ActorUnkRMSS.cpp:
+    complete
     .text       start:0x0215c584 end:0x0215c6e8
     .init       start:0x02162974 end:0x021629c4
     .ctor       start:0x02162e58 end:0x02162e5c
     .data       start:0x02163550 end:0x021635d8
-    .bss        start:0x021640d0 end:0x02164318
+    .bss        start:0x021640d0 end:0x021641b8
 
 src/063_Shrine/Actor/ActorUnkRBLS.cpp:
     .text       start:0x0215f2b8 end:0x0215f544

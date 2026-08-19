@@ -388,11 +388,11 @@ data_ov063_02164528 kind:data(any) addr:0x02164528
 data_ov063_02164538 kind:data(any) addr:0x02164538
 __sinit_ActorUnkCANS.cpp kind:function(arm,size=0x70) addr:0x02164548
 __sinit_ActorUnkCASE.cpp kind:function(arm,size=0x94) addr:0x021645b8
-__sinit_ActorUnkRMSV.cpp kind:function(arm,size=0x50) addr:0x0216464c
+__sinit_ActorUnkRMSV.cpp kind:function(arm,size=0x50) addr:0x0216464c local
 __sinit_ActorUnkRMSW.cpp kind:function(arm,size=0x50) addr:0x0216469c
-__sinit_ActorUnkRMSF.cpp kind:function(arm,size=0x50) addr:0x021646ec
-__sinit_ActorUnkRMSD.cpp kind:function(arm,size=0x50) addr:0x0216473c
-__sinit_ActorUnkRMSS.cpp kind:function(arm,size=0x50) addr:0x0216478c
+__sinit_ActorUnkRMSF.cpp kind:function(arm,size=0x50) addr:0x021646ec local
+__sinit_ActorUnkRMSD.cpp kind:function(arm,size=0x50) addr:0x0216473c local
+__sinit_ActorUnkRMSS.cpp kind:function(arm,size=0x50) addr:0x0216478c local
 __sinit_ov063_021647dc kind:function(arm,size=0x168) addr:0x021647dc
 __sinit_ActorUnkRBLS.cpp kind:function(arm,size=0x50) addr:0x02164944
 __sinit_MapObjectUnkSTAT.cpp kind:function(arm,size=0x50) addr:0x02164994
@@ -402,11 +402,11 @@ __sinit_MapObjectUnkMTJR.cpp kind:function(arm,size=0x50) addr:0x02164bb8
 __sinit_MapObjectUnkSWCR.cpp kind:function(arm,size=0x50) addr:0x02164c08
 .p__sinit_ActorUnkCANS.cpp kind:data(word) addr:0x02164c58
 .p__sinit_ActorUnkCASE.cpp kind:data(word) addr:0x02164c5c
-.p__sinit_ActorUnkRMSV.cpp kind:data(word) addr:0x02164c60
+.p__sinit_ActorUnkRMSV.cpp kind:data(word) addr:0x02164c60 local
 .p__sinit_ActorUnkRMSW.cpp kind:data(word) addr:0x02164c64
-.p__sinit_ActorUnkRMSF.cpp kind:data(word) addr:0x02164c68
-.p__sinit_ActorUnkRMSD.cpp kind:data(word) addr:0x02164c6c
-.p__sinit_ActorUnkRMSS.cpp kind:data(word) addr:0x02164c70
+.p__sinit_ActorUnkRMSF.cpp kind:data(word) addr:0x02164c68 local
+.p__sinit_ActorUnkRMSD.cpp kind:data(word) addr:0x02164c6c local
+.p__sinit_ActorUnkRMSS.cpp kind:data(word) addr:0x02164c70 local
 .p__sinit_ov063_021647dc kind:data(word) addr:0x02164c74
 .p__sinit_ActorUnkRBLS.cpp kind:data(word) addr:0x02164c78
 .p__sinit_MapObjectUnkSTAT.cpp kind:data(word) addr:0x02164c7c
@@ -511,13 +511,13 @@ _ZGVN15ProfileInstanceI19ActorProfileUnkRMSWE8sProfileE kind:bss addr:0x02165c38
 @32629 kind:bss addr:0x02165c3c
 _ZN15ProfileInstanceI19ActorProfileUnkRMSWE8sProfileE kind:bss addr:0x02165c48
 _ZGVN15ProfileInstanceI19ActorProfileUnkRMSFE8sProfileE kind:bss addr:0x02165d20
-@32635 kind:bss addr:0x02165d24
+@32635 kind:bss addr:0x02165d24 local
 _ZN15ProfileInstanceI19ActorProfileUnkRMSFE8sProfileE kind:bss addr:0x02165d30
 _ZGVN15ProfileInstanceI19ActorProfileUnkRMSDE8sProfileE kind:bss addr:0x02165e08
 @32641 kind:bss addr:0x02165e0c
 _ZN15ProfileInstanceI19ActorProfileUnkRMSDE8sProfileE kind:bss addr:0x02165e18
 _ZGVN15ProfileInstanceI19ActorProfileUnkRMSSE8sProfileE kind:bss addr:0x02165ef0
-@32647 kind:bss addr:0x02165ef4
+@32647 kind:bss addr:0x02165ef4 local
 _ZN15ProfileInstanceI19ActorProfileUnkRMSSE8sProfileE kind:bss addr:0x02165f00
 data_ov063_02165fd8 kind:bss addr:0x02165fd8
 data_ov063_02165fdc kind:bss addr:0x02165fdc

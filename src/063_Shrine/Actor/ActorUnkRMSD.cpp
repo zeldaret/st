@@ -44,6 +44,3 @@ G3d_Model *ActorUnkRMSD::vfunc_54(void) {
 G3d_Model *ActorUnkRMSD::vfunc_58(void) {
     return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSD)->mUnk_3C, data_ov063_021625d8);
 }
-
-ActorUnkRMSD::~ActorUnkRMSD() {}
-ActorProfileUnkRMSD::~ActorProfileUnkRMSD() {}
