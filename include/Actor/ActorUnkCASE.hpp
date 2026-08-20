@@ -22,8 +22,6 @@ public:
     /* 70 */
 
     UnkStruct_ov063_021631a0(G3d_Model *pModel);
-
-    /* 00 */ virtual ~UnkStruct_ov063_021631a0() override {};
 };
 
 class UnkStruct_func_ov063_0215a678 {
@@ -59,7 +57,6 @@ public:
 
     ActorUnkCASE_174(Actor *param1);
 
-    /* 00 */ virtual ~ActorUnkCASE_174() override {};
     /* 10 */ virtual void vfunc_10(Actor *actor) override;
 };
 
@@ -93,7 +90,6 @@ public:
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
-    /* 4C */ virtual ~ActorUnkCASE() override;
 
     void func_ov063_0215ab70(void);
     void func_ov063_0215aba4(void);
@@ -132,7 +128,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkCASE();
-    ~ActorProfileUnkCASE();
 
     /* 0C */ virtual Actor *Create();
 

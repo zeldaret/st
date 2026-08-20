@@ -132,6 +132,16 @@ void ActorUnkCASE_174::vfunc_10(Actor *actor) {
     func_ov000_0207b70c(this, actor);
 }
 
+// Static
+void ActorUnkCASE::func_ov063_0215acec(ActorRef *ref1, ActorRef ref2) {
+    ActorParams params;
+
+    params.mUnk_28 = 0;
+    params.func_ov000_020975f8();
+    params.mUnk_28 = ref2;
+    Actor::func_ov000_020973f4(ref1, &data_ov000_020b539c_eur, ActorId_CASE, &params, 0);
+}
+
 ActorUnkCASE::ActorUnkCASE() :
     mUnk_0B0(G3d_GetModelPtr(((MapObjectProfile_Derived2_20 *) GET_PROFILE(ActorProfileUnkCASE)->vfunc_04())->mUnk_50)),
     mUnk_120(0),
@@ -156,15 +166,6 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_A8          = &data_ov063_02162558;
 }
 
-void ActorUnkCASE::vfunc_10(Cylinder *param1) {
-    if (mUnk_14C != NULL) {
-        ((ActorUnkCASE *) mUnk_14C)->vfunc_10(param1);
-        return;
-    }
-    VecFx32_Copy(&mPos, &param1->pos); // doesn't match
-    param1->size = 0x800;
-}
-
 bool ActorUnkCASE::vfunc_18(unk32 param1) {
     mUnk_14C = gpActorManager->func_01fff3b4(mUnk_5C.mUnk_28);
 
@@ -176,156 +177,6 @@ bool ActorUnkCASE::vfunc_18(unk32 param1) {
     VecFx32_Init(0, 0, 0, &mVel);
 
     return true;
-}
-
-void ActorUnkCASE::vfunc_20() {
-    mUnk_150.mUnk_1C = 1;
-
-    if (!func_ov017_020bef4c(this, 0x4000) && mUnk_48 != 0) {
-        bool cond = true;
-        if (mState != 1 && mState != 2) {
-            cond = false;
-        }
-
-        if (!cond) {
-            return;
-        }
-
-        if (mState == 3) {
-            this->func_ov063_0215b724();
-            return;
-        }
-    }
-
-    mUnk_3C = &mUnk_124;
-
-    CALL_PTMF(PTMF<ActorUnkCASE>, data_ov063_021630e0[mState]);
-
-    VecFx32 *vec_base, *vec2;
-    u16 ret1;
-    fx16 x, y, z;
-    fx32 x_pos, x_neg, z_pos, z_neg;
-
-    if (mUnk_14C != NULL) {
-        VecFx32 vec1;
-        VecFx32 *mUnk_14C_vec = (VecFx32 *) (((u8 *) mUnk_14C) + 0x25C);
-        vec1                  = *mUnk_14C_vec;
-        func_01ffb714(&vec1, &mPos, &vec1);
-
-        z = vec1.z;
-        y = vec1.y;
-        x = vec1.x;
-
-        ((VecFx16 *) &mUnk_150.mUnk_0E)->x = x;
-        ((VecFx16 *) &mUnk_150.mUnk_0E)->y = y;
-        ((VecFx16 *) &mUnk_150.mUnk_0E)->z = z;
-
-        vec2     = data_027e0ce0->func_01fff148(0);
-        vec_base = (VecFx32 *) (((u8 *) mUnk_14C) + 0x25C);
-        z_neg    = vec2->z;
-        z_pos    = vec_base->z;
-        x_pos    = vec_base->x;
-        x_neg    = vec2->x;
-    } else if (mState == 5) {
-        VecFx32 vec1;
-        vec1 = mUnk_1CC;
-        func_01ffb714(&vec1, &mPos, &vec1);
-
-        z = vec1.z;
-        y = vec1.y;
-        x = vec1.x;
-
-        ((VecFx16 *) &mUnk_150.mUnk_0E)->x = x;
-        ((VecFx16 *) &mUnk_150.mUnk_0E)->y = y;
-        ((VecFx16 *) &mUnk_150.mUnk_0E)->z = z;
-
-        vec2     = data_027e0ce0->func_01fff148(0);
-        vec_base = &mUnk_1CC;
-        z_pos    = vec_base->z;
-        z_neg    = vec2->z;
-        x_pos    = vec_base->x;
-        x_neg    = vec2->x;
-    } else {
-        goto post;
-    }
-
-    // Unsuccessful tries to remove the goto: duplicating raw code, duplicating an inline of the code, wrapping the code in an
-    // "if (cond1 || cond2) { code }"
-    ret1        = func_01ffbbe0(x_pos - x_neg, z_pos - z_neg);
-    s16 sin_val = SIN((u16) (s16) ret1);
-    s16 cos_val = COS((u16) (s16) ret1);
-
-    ((VecFx16 *) &mUnk_150.mUnk_08)->y = y;
-    // ((VecFx16 *) &mUnk_150.mUnk_08)->x = x + (((1 - sin_val) * 0x8000) >> 0x10);
-    // ((VecFx16 *) &mUnk_150.mUnk_08)->z = z + (((1 - cos_val) * 0x8000) >> 0x10);
-    ((VecFx16 *) &mUnk_150.mUnk_08)->x = x + (s16) ((1 - sin_val) >> 1);
-    ((VecFx16 *) &mUnk_150.mUnk_08)->z = z + (s16) ((1 - cos_val) >> 1);
-
-post:
-    this->func_ov000_020989e0();
-
-    if (((u32) mState == 5 || mState == 4) && (mUnk_124.mUnk_08 & 0x3FFFF) != 0) {
-        switch (mUnk_124.mUnk_1C) {
-            case 4:
-                data_027e0d38->func_ov031_020d9c44(data_ov000_020aed00);
-                break;
-            case 11:
-                if (gpActorManager->func_01fff3b4(mUnk_124.mUnk_0C)->GetActorId() == ActorId_RollingStone) {
-                    this->func_ov063_0215b724();
-                }
-                break;
-            case 13:
-                break;
-            default:
-                func_ov000_020990c0(this, &mUnk_124, 1, 0);
-                break;
-        }
-    }
-
-    if (GET_FLAG(mFlags, ActorFlag_Alive)) {
-        if (mState == 5) {
-            UnkStruct_ov000_0207de98 param2;
-            VecFx32_Copy(&mPos, &param2.vec);
-            param2.param1 = 0x548;
-            param2.param2 = 0x1000;
-            data_027e09c0->func_ov000_0207de98(mRef, &param2, mUnk_38);
-        }
-    }
-}
-
-void ActorUnkCASE::vfunc_24() {
-    if (mState != 1 && mState != 2) {
-        return;
-    }
-    this->vfunc_20();
-}
-
-void ActorUnkCASE::vfunc_2C(unk32 param1) {
-    if (!this->func_01fff5d0(param1, 0)) {
-        return;
-    }
-
-    if (mUnk_14C == NULL || ((u32 *) mUnk_14C)[0x268 >> 2] == NULL) {
-        fx32 sin_val = SIN((u16) mUnk_1C8);
-        fx32 cos_val = COS((u16) mUnk_1C8);
-
-        Mat3p mat2;
-        Mat3p mat1;
-        Mat3p_InitZRotation(&mat1, sin_val, cos_val);
-
-        func_01ffa60c(&mat1, &mUnk_1A4, &mat2);
-        mUnk_0B0.vfunc_14(&mat2, &mPos);
-    }
-}
-
-// Static
-void ActorUnkCASE::func_ov063_0215acec(ActorRef *ref1, ActorRef ref2) {
-    ActorParams params;
-
-    params.mUnk_28 = 0;
-    params.func_ov000_020975f8();
-    params.mUnk_28 = ref2;
-    Actor::func_ov000_020973f4(ref1, &data_ov000_020b539c_eur, ActorId_CASE, &params, 0);
 }
 
 void ActorUnkCASE::func_ov063_0215aefc(ActorState param1) {
@@ -458,6 +309,146 @@ void ActorUnkCASE::func_ov063_0215b2b0(void) {
 // Matched
 void ActorUnkCASE::func_ov063_0215b2c4(void) {}
 
+void ActorUnkCASE::vfunc_24() {
+    if (mState != 1 && mState != 2) {
+        return;
+    }
+    this->vfunc_20();
+}
+
+void ActorUnkCASE::vfunc_20() {
+    mUnk_150.mUnk_1C = 1;
+
+    if (!func_ov017_020bef4c(this, 0x4000) && mUnk_48 != 0) {
+        bool cond = true;
+        if (mState != 1 && mState != 2) {
+            cond = false;
+        }
+
+        if (!cond) {
+            return;
+        }
+
+        if (mState == 3) {
+            this->func_ov063_0215b724();
+            return;
+        }
+    }
+
+    mUnk_3C = &mUnk_124;
+
+    CALL_PTMF(PTMF<ActorUnkCASE>, data_ov063_021630e0[mState]);
+
+    VecFx32 *vec_base, *vec2;
+    u16 ret1;
+    fx16 x, y, z;
+    fx32 x_pos, x_neg, z_pos, z_neg;
+
+    if (mUnk_14C != NULL) {
+        VecFx32 vec1;
+        VecFx32 *mUnk_14C_vec = (VecFx32 *) (((u8 *) mUnk_14C) + 0x25C);
+        vec1                  = *mUnk_14C_vec;
+        func_01ffb714(&vec1, &mPos, &vec1);
+
+        z = vec1.z;
+        y = vec1.y;
+        x = vec1.x;
+
+        ((VecFx16 *) &mUnk_150.mUnk_0E)->x = x;
+        ((VecFx16 *) &mUnk_150.mUnk_0E)->y = y;
+        ((VecFx16 *) &mUnk_150.mUnk_0E)->z = z;
+
+        vec2     = data_027e0ce0->func_01fff148(0);
+        vec_base = (VecFx32 *) (((u8 *) mUnk_14C) + 0x25C);
+        z_neg    = vec2->z;
+        z_pos    = vec_base->z;
+        x_pos    = vec_base->x;
+        x_neg    = vec2->x;
+    } else if (mState == 5) {
+        VecFx32 vec1;
+        vec1 = mUnk_1CC;
+        func_01ffb714(&vec1, &mPos, &vec1);
+
+        z = vec1.z;
+        y = vec1.y;
+        x = vec1.x;
+
+        ((VecFx16 *) &mUnk_150.mUnk_0E)->x = x;
+        ((VecFx16 *) &mUnk_150.mUnk_0E)->y = y;
+        ((VecFx16 *) &mUnk_150.mUnk_0E)->z = z;
+
+        vec2     = data_027e0ce0->func_01fff148(0);
+        vec_base = &mUnk_1CC;
+        z_pos    = vec_base->z;
+        z_neg    = vec2->z;
+        x_pos    = vec_base->x;
+        x_neg    = vec2->x;
+    } else {
+        goto post;
+    }
+
+    // Unsuccessful tries to remove the goto: duplicating raw code, duplicating an inline of the code, wrapping the code in an
+    // "if (cond1 || cond2) { code }"
+    ret1        = func_01ffbbe0(x_pos - x_neg, z_pos - z_neg);
+    s16 sin_val = SIN((u16) (s16) ret1);
+    s16 cos_val = COS((u16) (s16) ret1);
+
+    ((VecFx16 *) &mUnk_150.mUnk_08)->y = y;
+    // ((VecFx16 *) &mUnk_150.mUnk_08)->x = x + (((1 - sin_val) * 0x8000) >> 0x10);
+    // ((VecFx16 *) &mUnk_150.mUnk_08)->z = z + (((1 - cos_val) * 0x8000) >> 0x10);
+    ((VecFx16 *) &mUnk_150.mUnk_08)->x = x + (s16) ((1 - sin_val) >> 1);
+    ((VecFx16 *) &mUnk_150.mUnk_08)->z = z + (s16) ((1 - cos_val) >> 1);
+
+post:
+    this->func_ov000_020989e0();
+
+    if (((u32) mState == 5 || mState == 4) && (mUnk_124.mUnk_08 & 0x3FFFF) != 0) {
+        switch (mUnk_124.mUnk_1C) {
+            case 4:
+                data_027e0d38->func_ov031_020d9c44(data_ov000_020aed00);
+                break;
+            case 11:
+                if (gpActorManager->func_01fff3b4(mUnk_124.mUnk_0C)->GetActorId() == ActorId_RollingStone) {
+                    this->func_ov063_0215b724();
+                }
+                break;
+            case 13:
+                break;
+            default:
+                func_ov000_020990c0(this, &mUnk_124, 1, 0);
+                break;
+        }
+    }
+
+    if (GET_FLAG(mFlags, ActorFlag_Alive)) {
+        if (mState == 5) {
+            UnkStruct_ov000_0207de98 param2;
+            VecFx32_Copy(&mPos, &param2.vec);
+            param2.param1 = 0x548;
+            param2.param2 = 0x1000;
+            data_027e09c0->func_ov000_0207de98(mRef, &param2, mUnk_38);
+        }
+    }
+}
+
+void ActorUnkCASE::vfunc_2C(unk32 param1) {
+    if (!this->func_01fff5d0(param1, 0)) {
+        return;
+    }
+
+    if (mUnk_14C == NULL || ((u32 *) mUnk_14C)[0x268 >> 2] == NULL) {
+        fx32 sin_val = SIN((u16) mUnk_1C8);
+        fx32 cos_val = COS((u16) mUnk_1C8);
+
+        Mat3p mat2;
+        Mat3p mat1;
+        Mat3p_InitZRotation(&mat1, sin_val, cos_val);
+
+        func_01ffa60c(&mat1, &mUnk_1A4, &mat2);
+        mUnk_0B0.vfunc_14(&mat2, &mPos);
+    }
+}
+
 void ActorUnkCASE::func_ov063_0215b6c8(VecFx32 *param1, UnkAngleStruct angle) {
     VecFx32 vec = *param1;
     VecFx32_Copy(&vec, &mPos);
@@ -471,6 +462,15 @@ void ActorUnkCASE::func_ov063_0215b724(void) {
     data_027e0cec->func_ov000_0209feac(0xCC07, &mPos, 2, 0, 0);
     data_027e0cec->func_ov000_0209feac(0x823, &mPos, 2, 0, 0);
     data_027e09a8->func_ov000_02071b30(0x9865, &mPos, 0);
+}
+
+void ActorUnkCASE::vfunc_10(Cylinder *param1) {
+    if (mUnk_14C != NULL) {
+        ((ActorUnkCASE *) mUnk_14C)->vfunc_10(param1);
+        return;
+    }
+    VecFx32_Copy(&mPos, &param1->pos); // doesn't match
+    param1->size = 0x800;
 }
 
 void ActorUnkCASE::func_ov063_0215b814(ActorRef ref) {
@@ -577,6 +577,3 @@ void ActorUnkCASE::func_ov063_0215b99c(ActorUnkCASE *param1, UnkStruct_func_ov06
     param2->mUnk_92 = 2;
     var2[0x25]      = 2;
 }
-
-ActorUnkCASE::~ActorUnkCASE() {}
-ActorProfileUnkCASE::~ActorProfileUnkCASE() {}
