@@ -6,7 +6,6 @@
 #include "Actor/ActorRef.hpp"
 #include "Actor/ActorShotArrow.hpp"
 #include "Actor/ActorUnkCASE.hpp"
-#include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectManager.hpp"
@@ -33,20 +32,6 @@ extern const char data_ov063_02162528[0x10]; // = "mCANS1";
 extern const char data_ov063_02162538[0x10]; // = "Rarm1";
 extern const char data_ov063_02162548[0x10]; // = "locator1";
 
-static PTMF<ActorUnkCANS> data_ov063_02162fb0[0xA] = {
-    ActorUnkCANS::func_ov063_02158db0, ActorUnkCANS::func_ov063_02159100, ActorUnkCANS::func_ov063_02159258,
-    ActorUnkCANS::func_ov063_02159494, ActorUnkCANS::func_ov063_02159618, ActorUnkCANS::func_ov063_02159784,
-    ActorUnkCANS::func_ov063_021599e4, ActorUnkCANS::func_ov063_02159d68, ActorUnkCANS::func_ov063_02159e1c,
-    ActorUnkCANS::func_ov063_02159ec0,
-};
-
-static PTMF<ActorUnkCANS> data_ov063_02162f58[0xA] = {
-    ActorUnkCANS::func_ov063_02158d40, ActorUnkCANS::func_ov063_021590c8, ActorUnkCANS::func_ov063_021591f4,
-    ActorUnkCANS::func_ov063_02159408, ActorUnkCANS::func_ov063_021595a4, ActorUnkCANS::func_ov063_02159714,
-    ActorUnkCANS::func_ov063_021598fc, ActorUnkCANS::func_ov063_02159ca8, ActorUnkCANS::func_ov063_02159dfc,
-    ActorUnkCANS::func_ov063_02159e20,
-};
-
 /* Contains a string somewhere with info such as "attack" or "guard" */
 extern ActorUnkZLSL_AnimationTag data_ov063_02163068; // = {0, 0x6B6C6177, 0x41, 0, 0, 0};
 extern ActorUnkZLSL_AnimationTag data_ov063_02163080;
@@ -61,7 +46,6 @@ extern u16 data_ov000_020aecf0[0x4];
 extern u16 data_ov000_020aecf4[0x4];   //! INFO: Unsure about the size
 extern unk32 data_ov000_020aecf8[0x2]; //! INFO: Unsure about the size
 extern unk32 data_ov000_020aecfc[0x2]; //! INFO: Unsure about the size
-extern Cylinder data_ov063_02162e90;
 
 extern "C" void func_01ff916c(unk32 *param1, unk32 param2, unk32 param3);
 extern "C" unk32 func_01ff9258(unk32, unk32);
@@ -98,6 +82,22 @@ extern "C" void func_ov026_020f46a8(Actor *param1, VecFx32 *param2, bool param3)
 
 extern "C" void G3d_GetCurrentMtx(Mat4x3p *mtx1, Mat3p *mtx2);
 
+const Cylinder data_ov063_02162e90(0, 0x99A, 0, 0x99A);
+
+static PTMF<ActorUnkCANS> data_ov063_02162f58[0xB] = {
+    ActorUnkCANS::func_ov063_02158b34, ActorUnkCANS::func_ov063_02158d40, ActorUnkCANS::func_ov063_021590c8,
+    ActorUnkCANS::func_ov063_021591f4, ActorUnkCANS::func_ov063_02159408, ActorUnkCANS::func_ov063_021595a4,
+    ActorUnkCANS::func_ov063_02159714, ActorUnkCANS::func_ov063_021598fc, ActorUnkCANS::func_ov063_02159ca8,
+    ActorUnkCANS::func_ov063_02159dfc, ActorUnkCANS::func_ov063_02159e20,
+};
+
+static PTMF<ActorUnkCANS> data_ov063_02162fb0[0xB] = {
+    ActorUnkCANS::func_ov063_02158b98, ActorUnkCANS::func_ov063_02158db0, ActorUnkCANS::func_ov063_02159100,
+    ActorUnkCANS::func_ov063_02159258, ActorUnkCANS::func_ov063_02159494, ActorUnkCANS::func_ov063_02159618,
+    ActorUnkCANS::func_ov063_02159784, ActorUnkCANS::func_ov063_021599e4, ActorUnkCANS::func_ov063_02159d68,
+    ActorUnkCANS::func_ov063_02159e1c, ActorUnkCANS::func_ov063_02159ec0,
+};
+
 DECL_PROFILE(ActorProfileUnkCANS);
 
 Actor *ActorProfileUnkCANS::Create() {
@@ -114,9 +114,8 @@ ActorProfileUnkCANS::ActorProfileUnkCANS() :
 UnkStruct_ov063_02162ea8::UnkStruct_ov063_02162ea8() {
     VecFx32_Init(0, 0, 0, &mUnk_08);
 }
-UnkStruct_ov063_02162ea8::~UnkStruct_ov063_02162ea8() {}
 
-bool UnkStruct_ov063_02162ea8::vfunc_08(UnkStruct_ov031_020f3310 *param1) {
+bool UnkStruct_ov063_02162ea8::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
     bool retVal = UnkStruct_ov031_Items_00::vfunc_08(param1);
     if (retVal && func_01ff9258(param1->mUnk_08.x, param1->mUnk_08.z) > 0) {
         // VecFx16_Copy2VecFx32(&param1->mUnk_08, &mUnk_08);
@@ -248,8 +247,7 @@ void ActorUnkCANS::vfunc_10(Cylinder *param1) {
     }
 }
 
-// return bool ?
-unk32 ActorUnkCANS::vfunc_18(void) {
+bool ActorUnkCANS::vfunc_18(unk32 param1) {
     this->mUnk_0B0.func_ov000_02057c38(6, 2);
     this->mUnk_0B0.func_ov000_0209a7b8(this, (UnkSystem4_UnkCallback) ActorUnkCANS::func_ov063_0215a678);
 
@@ -259,7 +257,7 @@ unk32 ActorUnkCANS::vfunc_18(void) {
     ActorUnkCASE::func_ov063_0215acec(&var, this->mRef);
     this->mUnk_268 = (ActorUnkCASE *) actorManager->func_01fff3b4(var);
 
-    return 1;
+    return true;
 }
 
 void ActorUnkCANS::vfunc_1C(void) {
@@ -539,8 +537,8 @@ void ActorUnkCANS::func_ov063_02158490(void) {
 void ActorUnkCANS::func_ov063_02158b0c(void) {
     mUnk_268             = NULL;
     ((u16 *) mUnk_38)[4] = 1;
-    mUnk_34              = &data_ov063_02162e90;
-    mUnk_30              = &data_ov063_02162e90;
+    mUnk_34              = (Cylinder *) &data_ov063_02162e90;
+    mUnk_30              = (Cylinder *) &data_ov063_02162e90;
 }
 
 void ActorUnkCANS::func_ov063_02158b34(void) {
@@ -1259,6 +1257,3 @@ void ActorUnkCANS::func_ov063_0215a678(ActorUnkCANS *actor, UnkStruct_func_ov063
         ((u8 *) &modelRender->mRenderObj.mUnk_1C)[1] = 2;
     }
 }
-
-ActorUnkCANS::~ActorUnkCANS() {}
-ActorProfileUnkCANS::~ActorProfileUnkCANS() {}

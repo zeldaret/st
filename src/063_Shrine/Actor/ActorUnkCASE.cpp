@@ -17,7 +17,6 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "flags.h"
-#include "global.h"
 #include "nitro/fx.h"
 #include "nitro/math.h"
 #include "nns/g3d/g3d.h"

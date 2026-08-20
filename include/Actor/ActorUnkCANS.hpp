@@ -40,8 +40,7 @@ public:
 
     UnkStruct_ov063_02162ea8();
 
-    /* 00 (base) */ virtual ~UnkStruct_ov063_02162ea8();
-    /* 08 */ virtual bool vfunc_08(UnkStruct_ov031_020f3310 *param1) override;
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
     /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) override;
 };
 
@@ -132,13 +131,12 @@ public:
 
     ActorUnkCANS();
 
-    /* 10 */ virtual void vfunc_10(Cylinder *param1);
-    /* 18 */ virtual unk32 vfunc_18(void);
-    /* 1C */ virtual void vfunc_1C(void);
-    /* 20 */ virtual void vfunc_20(void);
-    /* 24 */ virtual void vfunc_24(void);
-    /* 2C */ virtual void vfunc_2C(unk32 param1);
-    /* 4C */ virtual ~ActorUnkCANS() override;
+    /* 10 */ virtual void vfunc_10(Cylinder *param1) override;
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(void) override;
+    /* 20 */ virtual void vfunc_20(void) override;
+    /* 24 */ virtual void vfunc_24(void) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
 
     unk32 func_ov063_02157fa4(ActorRef param1, unk32 param2, unk32 param3, unk32 *param4);
     void func_ov063_02158424(void);
@@ -185,7 +183,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkCANS();
-    ~ActorProfileUnkCANS();
 
     /* 0C */ virtual Actor *Create();
 
