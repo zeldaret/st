@@ -7,7 +7,7 @@ _ZN24UnkStruct_ov063_02162e888vfunc_04E8ActorRefiiPi kind:function(arm,size=0x17
 _ZN12ActorUnkCANSC1Ev kind:function(arm,size=0x1dc) addr:0x02159e5c
 _ZN24UnkStruct_ov063_02162ee8D1Ev kind:function(arm,size=0x14) addr:0x0215a038
 _ZN24UnkStruct_ov063_02162f14D1Ev kind:function(arm,size=0x14) addr:0x0215a04c
-_ZN12ActorUnkCANS8vfunc_18Ev kind:function(arm,size=0x68) addr:0x0215a060
+_ZN12ActorUnkCANS8vfunc_18Ei kind:function(arm,size=0x68) addr:0x0215a060
 _ZN12ActorUnkCANS8vfunc_1CEv kind:function(arm,size=0x9c) addr:0x0215a0c8
 _ZN12ActorUnkCANS19func_ov063_02158424Ev kind:function(arm,size=0x24) addr:0x0215a164
 _ZN12ActorUnkCANS19func_ov063_02158448Ei kind:function(arm,size=0x48) addr:0x0215a188
@@ -53,7 +53,7 @@ _ZN12ActorUnkCANS19func_ov063_0215a678EPS_P29UnkStruct_func_ov063_0215a678 kind:
 _ZN24UnkStruct_ov063_02162ea8C1Ev kind:function(arm,size=0x30) addr:0x0215c570
 _ZN24UnkStruct_ov063_02162ea8D1Ev kind:function(arm,size=0x14) addr:0x0215c5a0
 _ZN24UnkStruct_ov063_02162ea8D0Ev kind:function(arm,size=0x1c) addr:0x0215c5b4
-_ZN24UnkStruct_ov063_02162ea88vfunc_08EP24UnkStruct_ov031_020f3310 kind:function(arm,size=0x4c) addr:0x0215c5d0
+_ZN24UnkStruct_ov063_02162ea88vfunc_08EPK24UnkStruct_ov031_020f3310 kind:function(arm,size=0x4c) addr:0x0215c5d0
 _ZN24UnkStruct_ov063_02162ea88vfunc_0CEPK24UnkStruct_ov031_020e54d4Pii kind:function(arm,size=0xcc) addr:0x0215c61c
 _ZN24UnkStruct_ov063_02162f148vfunc_3CEv kind:function(arm,size=0x24) addr:0x0215c6e8
 _ZN24UnkStruct_ov063_02162f148vfunc_38Eii kind:function(arm,size=0x2c) addr:0x0215c70c

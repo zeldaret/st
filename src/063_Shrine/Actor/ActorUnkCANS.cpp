@@ -84,6 +84,8 @@ extern "C" void G3d_GetCurrentMtx(Mat4x3p *mtx1, Mat3p *mtx2);
 
 const Cylinder data_ov063_02162e90(0, 0x99A, 0, 0x99A);
 
+DECL_PROFILE(ActorProfileUnkCANS);
+
 static PTMF<ActorUnkCANS> data_ov063_02162f58[0xB] = {
     ActorUnkCANS::func_ov063_02158b34, ActorUnkCANS::func_ov063_02158d40, ActorUnkCANS::func_ov063_021590c8,
     ActorUnkCANS::func_ov063_021591f4, ActorUnkCANS::func_ov063_02159408, ActorUnkCANS::func_ov063_021595a4,
@@ -98,8 +100,6 @@ static PTMF<ActorUnkCANS> data_ov063_02162fb0[0xB] = {
     ActorUnkCANS::func_ov063_02159e1c, ActorUnkCANS::func_ov063_02159ec0,
 };
 
-DECL_PROFILE(ActorProfileUnkCANS);
-
 Actor *ActorProfileUnkCANS::Create() {
     return new(HeapIndex_2) ActorUnkCANS();
 }
@@ -111,62 +111,11 @@ ActorProfileUnkCANS::ActorProfileUnkCANS() :
     mUnk_04.size = 0xCCD;
 }
 
-UnkStruct_ov063_02162ea8::UnkStruct_ov063_02162ea8() {
-    VecFx32_Init(0, 0, 0, &mUnk_08);
-}
-
-bool UnkStruct_ov063_02162ea8::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
-    bool retVal = UnkStruct_ov031_Items_00::vfunc_08(param1);
-    if (retVal && func_01ff9258(param1->mUnk_08.x, param1->mUnk_08.z) > 0) {
-        // VecFx16_Copy2VecFx32(&param1->mUnk_08, &mUnk_08);
-        // Better match
-        unk16 tmp1 = param1->mUnk_08.x;
-        unk16 tmp3 = param1->mUnk_08.z;
-        unk16 tmp2 = param1->mUnk_08.y;
-        mUnk_08.x  = tmp1;
-        mUnk_08.y  = tmp2;
-        mUnk_08.z  = tmp3;
-    }
-    return retVal;
-}
-
-bool UnkStruct_ov063_02162ea8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {
-    UnkStruct_02162ea8_vfunc_0C *param2Struct = (UnkStruct_02162ea8_vfunc_0C *) param2;
-    if ((*(u16 *) &param2Struct->mUnk_04 & 0x1000) != 0) {
-        UnkStruct_02162ea8_vfunc_0C tmp;
-        tmp.mUnk_04 = *(volatile unk32 *) &param2Struct->mUnk_04;
-
-        Vec2bCpp vec;
-        *(unk32 *) &vec = tmp.mUnk_04;
-
-        MapObject *mapObject = gpMapObjManager->func_01fff498(vec);
-
-        if (mapObject != NULL) {
-            MapObjectId id = mapObject->GetMapObjectId();
-            if (id == MapObjectId_Grass || id == MapObjectId_LEVS || id == MapObjectId_STSH) {
-                return false;
-            }
-        }
-    }
-    return UnkStruct_027e0ce0_38_Base::vfunc_0C((const UnkStruct_ov031_020e54d4 *) param2Struct->mUnk_04, param2,
-                                                param2Struct->mUnk_04);
-}
-
 UnkStruct_ov063_02162ee8::UnkStruct_ov063_02162ee8(G3d_Model *pModel) :
     UnkStruct_ov000_020b3268(pModel),
     mUnk_6C(ModelRenderBase::func_ov000_02057f40(data_ov063_02162528)),
     mUnk_70(ModelRenderBase::func_ov000_02057f18(data_ov063_02162538)),
     mUnk_74(ModelRenderBase::func_ov000_02057f18(data_ov063_02162548)) {}
-
-void UnkStruct_ov063_02162f14::vfunc_38(unk32 param1, unk32 param2) {
-    func_ov000_020578a4(mUnk_04, param1, param2);
-    func_ov000_020578a4(mUnk_1C, param1, param2);
-}
-
-void UnkStruct_ov063_02162f14::vfunc_3C() {
-    mUnk_08->func_ov000_02057c98(mUnk_04);
-    mUnk_08->func_ov000_02057c98(mUnk_1C);
-}
 
 UnkStruct_ov063_02162e88::UnkStruct_ov063_02162e88(void *param1) :
     mUnk_20(param1) {}
@@ -233,20 +182,6 @@ ActorUnkCANS::ActorUnkCANS() :
     mUnk_270 *= mUnk_276;
 }
 
-void ActorUnkCANS::vfunc_10(Cylinder *param1) {
-    Cylinder *cylinder = this->mUnk_34;
-    *param1            = *cylinder;
-    VecFx32_Add(&param1->pos, &this->mPos, &param1->pos);
-
-    if (this->mUnk_268 != NULL) {
-        fx16 angle = this->mAngle;
-        VecFx32 pos;
-        VecFx32_Init(FLOAT_TO_FX32(0.25f), 0, 0, &pos);
-        func_01ff9638(&pos, angle);
-        VecFx32_Add(&param1->pos, &pos, &param1->pos);
-    }
-}
-
 bool ActorUnkCANS::vfunc_18(unk32 param1) {
     this->mUnk_0B0.func_ov000_02057c38(6, 2);
     this->mUnk_0B0.func_ov000_0209a7b8(this, (UnkSystem4_UnkCallback) ActorUnkCANS::func_ov063_0215a678);
@@ -283,6 +218,32 @@ void ActorUnkCANS::vfunc_1C(void) {
     }
 
     this->func_ov063_02158448(0);
+}
+
+void ActorUnkCANS::func_ov063_02158424(void) {
+    mUnk_274 = 0;
+    if (mState == 6) {
+        mUnk_23A = 0x14;
+        mUnk_238 = 0;
+    }
+}
+
+void ActorUnkCANS::func_ov063_02158448(unk32 param1) {
+    this->func_ov063_02158424();
+    mState = param1;
+    CALL_PTMF(PTMF<ActorUnkCANS>, data_ov063_02162f58[mState]);
+}
+
+void ActorUnkCANS::func_ov063_02158490(void) {
+    mUnk_48 -= mUnk_200.mUnk_1E;
+    func_ov017_020bf050(this, &mUnk_200, 1);
+    this->func_ov063_02158448(2);
+}
+
+void ActorUnkCANS::vfunc_24(void) {
+    if (data_027e09b8->HasAdventureFlag(AdventureFlag_VisitedIslandSanctuaryFirstTime)) {
+        this->vfunc_20();
+    }
 }
 
 void ActorUnkCANS::vfunc_20(void) {
@@ -488,12 +449,6 @@ void ActorUnkCANS::vfunc_20(void) {
     }
 }
 
-void ActorUnkCANS::vfunc_24(void) {
-    if (data_027e09b8->HasAdventureFlag(AdventureFlag_VisitedIslandSanctuaryFirstTime)) {
-        this->vfunc_20();
-    }
-}
-
 void ActorUnkCANS::vfunc_2C(unk32 param1) {
     if (!this->func_01fff5d0(param1, 0)) {
         return;
@@ -512,26 +467,6 @@ void ActorUnkCANS::vfunc_2C(unk32 param1) {
     } else {
         this->func_ov017_020bf5c4(&mPos, 0x800, 0x555, 0x1F, mAngle);
     }
-}
-
-void ActorUnkCANS::func_ov063_02158424(void) {
-    mUnk_274 = 0;
-    if (mState == 6) {
-        mUnk_23A = 0x14;
-        mUnk_238 = 0;
-    }
-}
-
-void ActorUnkCANS::func_ov063_02158448(unk32 param1) {
-    this->func_ov063_02158424();
-    mState = param1;
-    CALL_PTMF(PTMF<ActorUnkCANS>, data_ov063_02162f58[mState]);
-}
-
-void ActorUnkCANS::func_ov063_02158490(void) {
-    mUnk_48 -= mUnk_200.mUnk_1E;
-    func_ov017_020bf050(this, &mUnk_200, 1);
-    this->func_ov063_02158448(2);
 }
 
 void ActorUnkCANS::func_ov063_02158b0c(void) {
@@ -1187,6 +1122,20 @@ unk32 ActorUnkCANS::func_ov063_0215a5d8(void) {
     return data_ov000_020aecfc[0];
 }
 
+void ActorUnkCANS::vfunc_10(Cylinder *param1) {
+    Cylinder *cylinder = this->mUnk_34;
+    *param1            = *cylinder;
+    VecFx32_Add(&param1->pos, &this->mPos, &param1->pos);
+
+    if (this->mUnk_268 != NULL) {
+        fx16 angle = this->mAngle;
+        VecFx32 pos;
+        VecFx32_Init(FLOAT_TO_FX32(0.25f), 0, 0, &pos);
+        func_01ff9638(&pos, angle);
+        VecFx32_Add(&param1->pos, &pos, &param1->pos);
+    }
+}
+
 void ActorUnkCANS::func_ov063_0215a678(ActorUnkCANS *actor, UnkStruct_func_ov063_0215a678 *param2) {
     ModelRender *modelRender = param2->mUnk_04;
     u8 var1;
@@ -1256,4 +1205,57 @@ void ActorUnkCANS::func_ov063_0215a678(ActorUnkCANS *actor, UnkStruct_func_ov063
         param2->mUnk_92                              = 2;
         ((u8 *) &modelRender->mRenderObj.mUnk_1C)[1] = 2;
     }
+}
+
+UnkStruct_ov063_02162ea8::UnkStruct_ov063_02162ea8() {
+    VecFx32_Init(0, 0, 0, &mUnk_08);
+}
+
+UnkStruct_ov063_02162ea8::~UnkStruct_ov063_02162ea8() {}
+
+bool UnkStruct_ov063_02162ea8::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
+    bool retVal = UnkStruct_ov031_Items_00::vfunc_08(param1);
+    if (retVal && func_01ff9258(param1->mUnk_08.x, param1->mUnk_08.z) > 0) {
+        // VecFx16_Copy2VecFx32(&param1->mUnk_08, &mUnk_08);
+        // Better match
+        unk16 tmp1 = param1->mUnk_08.x;
+        unk16 tmp3 = param1->mUnk_08.z;
+        unk16 tmp2 = param1->mUnk_08.y;
+        mUnk_08.x  = tmp1;
+        mUnk_08.y  = tmp2;
+        mUnk_08.z  = tmp3;
+    }
+    return retVal;
+}
+
+bool UnkStruct_ov063_02162ea8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {
+    UnkStruct_02162ea8_vfunc_0C *param2Struct = (UnkStruct_02162ea8_vfunc_0C *) param2;
+    if ((*(u16 *) &param2Struct->mUnk_04 & 0x1000) != 0) {
+        UnkStruct_02162ea8_vfunc_0C tmp;
+        tmp.mUnk_04 = *(volatile unk32 *) &param2Struct->mUnk_04;
+
+        Vec2bCpp vec;
+        *(unk32 *) &vec = tmp.mUnk_04;
+
+        MapObject *mapObject = gpMapObjManager->func_01fff498(vec);
+
+        if (mapObject != NULL) {
+            MapObjectId id = mapObject->GetMapObjectId();
+            if (id == MapObjectId_Grass || id == MapObjectId_LEVS || id == MapObjectId_STSH) {
+                return false;
+            }
+        }
+    }
+    return UnkStruct_027e0ce0_38_Base::vfunc_0C((const UnkStruct_ov031_020e54d4 *) param2Struct->mUnk_04, param2,
+                                                param2Struct->mUnk_04);
+}
+
+void UnkStruct_ov063_02162f14::vfunc_3C() {
+    mUnk_08->func_ov000_02057c98(mUnk_04);
+    mUnk_08->func_ov000_02057c98(mUnk_1C);
+}
+
+void UnkStruct_ov063_02162f14::vfunc_38(unk32 param1, unk32 param2) {
+    func_ov000_020578a4(mUnk_04, param1, param2);
+    func_ov000_020578a4(mUnk_1C, param1, param2);
 }

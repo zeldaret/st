@@ -40,6 +40,7 @@ public:
 
     UnkStruct_ov063_02162ea8();
 
+    /* 00 */ virtual ~UnkStruct_ov063_02162ea8();
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
     /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) override;
 };
@@ -138,7 +139,6 @@ public:
     /* 24 */ virtual void vfunc_24(void) override;
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
 
-    unk32 func_ov063_02157fa4(ActorRef param1, unk32 param2, unk32 param3, unk32 *param4);
     void func_ov063_02158424(void);
     void func_ov063_02158448(unk32 param1);
     void func_ov063_02158490(void);
