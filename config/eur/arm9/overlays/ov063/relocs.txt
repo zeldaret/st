@@ -973,7 +973,7 @@ from:0x0215f398 kind:arm_call_thumb to:0x02099a28 module:overlay(0)
 from:0x0215f3b0 kind:arm_call_thumb to:0x0205778c module:overlay(0)
 from:0x0215f3c8 kind:load to:0x021637c4 add:0x8 module:overlay(63)
 from:0x0215f3cc kind:load to:0x02164328 module:overlay(63)
-from:0x0215f3d0 kind:load to:0x02163784 module:overlay(63)
+from:0x0215f3d0 kind:load to:0x0216377c module:overlay(63) add:0x8
 from:0x0215f3dc kind:arm_call_thumb to:0x02099afc module:overlay(0)
 from:0x0215f43c kind:arm_call to:0x02099f64 module:overlay(0)
 from:0x0215f46c kind:load to:0x02163740 module:overlay(63)

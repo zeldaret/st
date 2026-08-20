@@ -13,7 +13,7 @@ class UnkStruct_ov063_021632e4 : public UnkStruct_ov000_020b31a8 {
 public:
     /* 00 (base) */
     /* 1C */ UnkSystem5 mUnk_1C;
-    /* 3C */ unk32 mUnk_3C;
+    /* 3C */ void *mUnk_3C;
     /* 40 */
 
     UnkStruct_ov063_021632e4(ModelRender *param1, unk32 param2) :

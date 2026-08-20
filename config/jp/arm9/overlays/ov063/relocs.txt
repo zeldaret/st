@@ -980,7 +980,7 @@ from:0x0216116c kind:arm_call_thumb to:0x0209b1f4 module:overlay(0)
 from:0x02161184 kind:arm_call_thumb to:0x02058d0c module:overlay(0)
 from:0x0216119c kind:load to:0x021655e4 add:0x8 module:overlay(63)
 from:0x021611a0 kind:load to:0x02166148 module:overlay(63)
-from:0x021611a4 kind:load to:0x021655a4 module:overlay(63)
+from:0x021611a4 kind:load to:0x0216559c module:overlay(63) add:0x8
 from:0x021611b0 kind:arm_call_thumb to:0x0209b2c8 module:overlay(0)
 from:0x02161210 kind:arm_call to:0x0209b730 module:overlay(0)
 from:0x02161240 kind:load to:0x02165560 module:overlay(63)

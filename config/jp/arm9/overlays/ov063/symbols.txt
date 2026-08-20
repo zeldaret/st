@@ -252,14 +252,14 @@ _ZN19ActorProfileUnkRBLS10GetProfileEv kind:function(arm,size=0xc) addr:0x021610
 _ZN19ActorProfileUnkRBLS6CreateEv kind:function(arm,size=0x24) addr:0x02161098
 _ZN19ActorProfileUnkRBLSC1Ev kind:function(arm,size=0x28) addr:0x021610bc
 _ZN12ActorUnkRBLSC1Ev kind:function(arm,size=0xc4) addr:0x021610e4
-_ZN12ActorUnkRBLS19func_ov063_0215f3d4Ev kind:function(arm,size=0x14) addr:0x021611a8
-_ZN12ActorUnkRBLS8vfunc_18Ev kind:function(arm,size=0x8c) addr:0x021611bc
+_ZN24UnkStruct_ov063_02163784D1Ev kind:function(arm,size=0x14) addr:0x021611a8
+_ZN12ActorUnkRBLS8vfunc_18Ei kind:function(arm,size=0x8c) addr:0x021611bc
 _ZN12ActorUnkRBLS8vfunc_20Ev kind:function(arm,size=0x14) addr:0x02161248
 _ZN12ActorUnkRBLS8vfunc_24Ev kind:function(arm,size=0x14) addr:0x0216125c
-_ZN12ActorUnkRBLS8vfunc_2CEv kind:function(arm,size=0x20) addr:0x02161270
-_ZN12ActorUnkRBLSD0Ev kind:function(arm,size=0x1c) addr:0x02161290
+_ZN12ActorUnkRBLS8vfunc_2CEi kind:function(arm,size=0x20) addr:0x02161270
+_ZN24UnkStruct_ov063_02163784D0Ev kind:function(arm,size=0x1c) addr:0x02161290
 _ZN12ActorUnkRBLSD1Ev kind:function(arm,size=0x28) addr:0x021612ac
-_ZN12ActorUnkRBLS19func_ov063_0215f500Ev kind:function(arm,size=0x30) addr:0x021612d4
+_ZN12ActorUnkRBLSD0Ev kind:function(arm,size=0x30) addr:0x021612d4
 _ZN19ActorProfileUnkRBLSD1Ev kind:function(arm,size=0x14) addr:0x02161304
 _ZN23MapObjectProfileUnkSTAT10GetProfileEv kind:function(arm,size=0xc) addr:0x02161318
 _ZN23MapObjectProfileUnkSTAT6CreateEv kind:function(arm,size=0x24) addr:0x02161324
@@ -464,10 +464,10 @@ data_ov063_02165510 kind:data(any) addr:0x02165510
 data_ov063_02165518 kind:data(any) addr:0x02165518 ambiguous
 data_ov063_02165524 kind:data(any) addr:0x02165524
 _ZTV19data_ov063_0216552c kind:data(any) addr:0x0216552c
-data_ov063_02165560 kind:data(any) addr:0x02165560
+data_ov063_02163740 kind:data(any) addr:0x02165560
 _ZTV19ActorProfileUnkRBLS kind:data(any) addr:0x02165578
-data_ov063_021655a4 kind:data(any) addr:0x021655a4
-_ZTV19data_ov063_021655e4 kind:data(any) addr:0x021655e4
+_ZTV24UnkStruct_ov063_02163784 kind:data(any) addr:0x0216559c
+_ZTV12ActorUnkRBLS kind:data(any) addr:0x021655e4
 _ZTV28MapObjectProfileUnkSTAT_Base kind:data(any) addr:0x02165640
 _ZTV23MapObjectProfileUnkSTAT kind:data(any) addr:0x0216565c
 _ZTV31MapObjectProfileUnkSTAT_Base_D4 kind:data(any) addr:0x02165678
