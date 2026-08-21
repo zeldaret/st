@@ -41,11 +41,6 @@ extern ActorUnkZLSL_AnimationTag data_ov063_021630b0;
 extern VecFx32 data_027e07d4;
 extern Mat4x3p data_027e0964;
 extern UnkStruct_027e09c0 *data_027e09c0;
-extern u16 data_ov000_020aed00;
-extern u16 data_ov000_020aecf0[0x4];
-extern u16 data_ov000_020aecf4[0x4];   //! INFO: Unsure about the size
-extern unk32 data_ov000_020aecf8[0x2]; //! INFO: Unsure about the size
-extern unk32 data_ov000_020aecfc[0x2]; //! INFO: Unsure about the size
 
 extern "C" void func_01ff916c(unk32 *param1, unk32 param2, unk32 param3);
 extern "C" unk32 func_01ff9258(unk32, unk32);
@@ -58,7 +53,14 @@ extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
 extern "C" unk32 func_01ffbbe0(unk32 param1, unk32 param2);
 extern "C" void func_01ffc6d4(ModelRender *param1, UnkAngleStruct param2, VecFx32 *param3);
 extern "C" void func_0200eab0(G3d_Model *, unk32, u8);
-extern "C" void func_ov000_020578a4(UnkSystem5 *param1, unk32 param2, unk32 param3);
+
+// Overlay 0
+extern u16 data_ov000_020aed00;
+extern u16 data_ov000_020aecf0[0x4];
+extern u16 data_ov000_020aecf4[0x4];   //! INFO: Unsure about the size
+extern unk32 data_ov000_020aecf8[0x2]; //! INFO: Unsure about the size
+extern unk32 data_ov000_020aecfc[0x2]; //! INFO: Unsure about the size
+
 extern "C" void func_ov000_02057c98(ModelRender *param1, UnkSystem5 *param2);
 #if IS_JP
 extern "C" unk32 func_ov000_0205c384(VecFx32 *param1, VecFx32 *param2);
@@ -70,12 +72,16 @@ extern "C" unk32 func_ov000_02098d7c(ActorUnkCANS *param1, UnkStruct_ov063_02162
 extern "C" unk32 func_ov000_02099450(ActorUnkCANS *param1, void *param2, VecFx32 *param3, unk32 param4, u16 param5);
 extern "C" void func_ov000_020994a0(ActorUnkCANS *);
 extern "C" unk32 func_ov000_02099a0c(void *param1);
+
+// Overlay 17
 extern "C" void func_ov017_020bf050(ActorUnkCANS *param1, UnkStruct_ov063_02162e88 *param2, unk32 param3);
 extern "C" void func_ov017_020bf178(ActorUnkCANS *param1, UnkStruct_ov063_02162e88 *param2, unk32 param3);
 extern "C" void func_ov017_020bf634(ActorUnkCANS *param1, unk16 *param2, unk32 param3, unk32 param4);
 extern "C" void func_ov017_020bf688(ActorUnkCANS *param1);
 extern "C" void func_ov017_020bf894(ActorUnkCANS *param1, void *param2);
 extern "C" unk32 func_ov017_020bef4c(ActorUnkCANS *param1, unk32 param2);
+
+// Overlay 26
 #if IS_JP
 extern "C" void func_ov026_020f46a8(Actor *param1, VecFx32 *param2, bool param3);
 #endif
@@ -1256,6 +1262,6 @@ void UnkStruct_ov063_02162f14::vfunc_3C() {
 }
 
 void UnkStruct_ov063_02162f14::vfunc_38(unk32 param1, unk32 param2) {
-    func_ov000_020578a4(mUnk_04, param1, param2);
-    func_ov000_020578a4(mUnk_1C, param1, param2);
+    mUnk_04->func_ov000_020578a4(param1, param2);
+    mUnk_1C->func_ov000_020578a4(param1, param2);
 }
