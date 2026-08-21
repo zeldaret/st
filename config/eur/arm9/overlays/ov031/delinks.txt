@@ -8,7 +8,7 @@
 src/031_Land/UnkStruct_027e0d34.cpp:
     .text       start:0x020d9834 end:0x020d9854
 
-src/031_Land/Actor/ActorUnkBOMB.cpp:
+src/031_Land/Actor/ActorBomb.cpp:
     .text       start:0x020e14c4 end:0x020e34b4
     .init       start:0x02110ff8 end:0x02111048
     .ctor       start:0x0211279c end:0x021127a0
@@ -291,10 +291,11 @@ src/031_Land/MapObject/MapObjectUnkSWHT.cpp:
     .data       start:0x0211569c end:0x02115704
     .bss        start:0x021179b8 end:0x02117abc
 
-src/031_Land/MapObject/MapObjectUnkBMFL.cpp:
+src/031_Land/MapObject/MapObjectBombFlower.cpp:
     .text       start:0x02102438 end:0x02102bc0
     .init       start:0x02111ef8 end:0x02111f48
     .ctor       start:0x0211283c end:0x02112840
+    .data       start:0x02115704 end:0x02115784
     .bss        start:0x02117abc end:0x02117ba0
 
 src/031_Land/MapObject/MapObjectTreasureSpawned.cpp:

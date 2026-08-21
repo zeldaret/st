@@ -9,7 +9,7 @@
 
 #include "limits.h"
 
-extern "C" MapObject_10 data_ov031_02118010;
+extern "C" MapObject_10_Pot data_ov031_02118010;
 
 extern "C" fx32 func_01ffe868(VecFx32 *, unk32, unk32);
 extern "C" void func_ov031_020e0f30(ActorRef);
@@ -22,15 +22,15 @@ MapObject *MapObjectProfilePot::Create() {
 
 MapObjectProfilePot::MapObjectProfilePot() :
     MapObjectProfilePot_Base(MapObjectId_Pot, MapObjectId_Pot) {
-    this->mUnk_0E           = 0x0;
-    this->mUnk_D4.mUnk_08   = 0x7007;
-    this->mUnk_D4.mUnk_0C.x = FLOAT_TO_FX32(0.0f);
-    this->mUnk_D4.mUnk_0C.y = FLOAT_TO_FX32(0.0f);
-    this->mUnk_D4.mUnk_0C.z = FLOAT_TO_FX32(0.0f);
-    this->mUnk_D4.mUnk_18.x = FLOAT_TO_FX32(0.5f);
-    this->mUnk_D4.mUnk_18.y = FLOAT_TO_FX32(1.2f);
-    this->mUnk_06           = 0x0;
-    this->mUnk_0C           = 0x1000;
+    this->mUnk_0E         = 0x0;
+    this->mUnk_D4.mUnk_08 = 0x7007;
+
+    VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_D4.mUnk_0C);
+
+    this->mUnk_D4.mUnk_18 = FLOAT_TO_FX32(0.5f);
+    this->mUnk_D4.mUnk_1C = FLOAT_TO_FX32(1.2f);
+    this->mUnk_06         = 0x0;
+    this->mUnk_0C         = 0x1000;
 }
 
 ModelRender_ov000_020b198c::ModelRender_ov000_020b198c(G3d_Model *pModel, unk8 param2) :
@@ -54,78 +54,39 @@ void MapObjectPot::vfunc_04() {
     this->mPos.y = func_01ffe868(&this->mPos, 0x1, 0x0);
 }
 
-void MapObjectPot::vfunc_14() {
-    this->func_ov000_0209d518(&this->mPos, 0x5A7, 0x5A7, 0x1F);
-    this->mUnk_48.vfunc_18(&this->mPos);
-}
-
-// non-matching
 bool MapObjectPot::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
     switch (param2) {
         case 0xD:
-            this->vfunc_44(0x1, 0x0);
+            this->SetState(0x1, 0x0);
             func_ov031_020e0f30(param1);
-            return true;
+            break;
         case 0x0:
         case 0x1:
         case 0x7:
         case 0x8:
-        case 0xA:
-        case 0xB:
-            this->vfunc_44(0x1, 0x0);
-            return true;
+            this->SetState(0x1, 0x0);
+            break;
         case 0x3:
         case 0xC:
-            this->vfunc_44(0x1, 0x0);
+            this->SetState(0x1, 0x0);
             return false;
+        case 0xA:
+        case 0xB:
+            this->SetState(0x1, 0x0);
+            break;
         case 0x4:
             if (data_027e0d38->func_ov031_020d9c04(0x1, 0x0, 0x0)) {
                 Actor *actor = gpActorManager->func_01fff3b4(param1);
                 if (actor != NULL) {
-                    this->mUnk_14 = actor->mAngle;
-                    this->vfunc_44(0x3, 0x0);
+                    this->mAngle = actor->mAngle;
+                    this->SetState(0x3, 0x0);
+                    break;
                 }
             }
         default:
-            return true;
+            break;
     }
-}
-
-void MapObjectPot::vfunc_24(MapObject *param1, VecFx32 param2) {
-    this->func_ov000_0209d8e8((MapObjectPot_Base *) param1, param2.x);
-    param1->func_ov000_0209d614(0x1);
-
-    if (((MapObjectPot_Base *) param1)->func_ov000_0209da64() != 0x65) {
-        return;
-    }
-
-    if (param1->mUnk_20.mUnk_0A[0] == 0x0) {
-        return;
-    }
-
-    param1->func_ov000_0209d2c4(0x0, true);
-}
-
-bool MapObjectPot::vfunc_3C() {
-    if (this->func_ov000_0209da64() == 0x65) {
-        return false;
-    }
-    if (this->func_ov000_0209da64() == 0x0) {
-        return this->func_ov000_0209d668() == 0x0;
-    }
-    return false;
-}
-
-bool MapObjectPot::vfunc_40() {
-    if (this->func_ov000_0209da64() == 0x65) {
-        if (!this->func_ov000_0209d29c(0x0)) {
-            return true;
-        }
-        if (this->mUnk_20.mUnk_0A[0] == 0x0) {
-            return true;
-        }
-    }
-    return false;
+    return true;
 }
 
 void MapObjectPot::vfunc_48() {
@@ -140,7 +101,7 @@ void MapObjectPot::vfunc_48() {
 
     data_027e0cec->func_ov000_0209feac(0x822, &stack_09, 0x4, 0x0, 0x0);
 
-    if (this->func_ov000_0209da64() != 0x65) {
+    if (this->MapObjectPot_Base::vfunc_54() != 0x65) {
         return;
     }
 
@@ -150,8 +111,13 @@ void MapObjectPot::vfunc_48() {
     this->func_ov000_0209d2c4(0x0, true);
 }
 
+void MapObjectPot::vfunc_14() {
+    this->func_ov000_0209d518(&this->mPos, 0x5A7, 0x5A7, 0x1F);
+    this->mUnk_48.vfunc_18(&this->mPos);
+}
+
 unk32 MapObjectPot::vfunc_54() {
-    if (this->func_ov000_0209da64() == 0x65) {
+    if (this->MapObjectPot_Base::vfunc_54() == 0x65) {
         return 0x1;
     }
 
@@ -159,8 +125,42 @@ unk32 MapObjectPot::vfunc_54() {
         return 0x1;
     }
 
-    return this->func_ov000_0209da64();
+    return this->MapObjectPot_Base::vfunc_54();
 }
 
-MapObjectPot::~MapObjectPot() {}
-MapObjectProfilePot::~MapObjectProfilePot() {}
+void MapObjectPot::vfunc_24(MapObject *param1, VecFx32 param2) {
+    this->MapObjectPot_Base::vfunc_24(param1, param2);
+    param1->func_ov000_0209d614(0x1);
+
+    if (((MapObjectPot_Base *) param1)->MapObjectPot_Base::vfunc_54() != 0x65) {
+        return;
+    }
+
+    if (param1->mUnk_20.mUnk_0A[0] == 0x0) {
+        return;
+    }
+
+    param1->func_ov000_0209d2c4(0x0, true);
+}
+
+bool MapObjectPot::vfunc_3C() {
+    if (this->MapObjectPot_Base::vfunc_54() == 0x65) {
+        return false;
+    }
+    if (this->MapObjectPot_Base::vfunc_54() == 0x0) {
+        return this->func_ov000_0209d668() == 0x0;
+    }
+    return false;
+}
+
+bool MapObjectPot::vfunc_40() {
+    if (this->MapObjectPot_Base::vfunc_54() == 0x65) {
+        if (!this->func_ov000_0209d29c(0x0)) {
+            return true;
+        }
+        if (this->mUnk_20.mUnk_0A[0] == 0x0) {
+            return true;
+        }
+    }
+    return false;
+}

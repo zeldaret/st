@@ -119,7 +119,7 @@ void MapObjectUnkSTAT::vfunc_0C(void) {
 void MapObjectUnkSTAT::vfunc_14(void) {
     VecFx32 vec;
     VecFx32_Init(mPos.x + mUnk_60, mPos.y + mUnk_64, mPos.z + mUnk_68, &vec);
-    mUnk_40.func_01ffc6d4(mUnk_14_AngleStruct, &vec);
+    mUnk_40.func_01ffc6d4(mAngleStruct, &vec);
 }
 
 void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
@@ -220,7 +220,7 @@ void MapObjectUnkSTAT::func_ov063_0215fc40(unk32 param1) {
 }
 
 unk32 MapObjectUnkSTAT::func_ov063_0215fce0(void) {
-    return func_02016b8c(&mPos, data_027e0ce0->func_01fff148(0), mUnk_54, mUnk_14_AngleStruct, mUnk_58, 1);
+    return func_02016b8c(&mPos, data_027e0ce0->func_01fff148(0), mUnk_54, mAngleStruct, mUnk_58, 1);
 }
 
 MapObjectUnkSTAT::~MapObjectUnkSTAT() {}

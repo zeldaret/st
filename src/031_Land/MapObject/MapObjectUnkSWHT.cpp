@@ -27,11 +27,11 @@ MapObjectProfileUnkSWHT::MapObjectProfileUnkSWHT() :
     MapObjectProfilePot_Base(MapObjectId_SWHT, MapObjectId_SWHT) {
     this->mUnk_D4.mUnk_08 = 0x84007009;
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_D4.mUnk_0C);
-    this->mUnk_D4.mUnk_18.x = FLOAT_TO_FX32(0.35f);
-    this->mUnk_D4.mUnk_18.y = FLOAT_TO_FX32(1.2f);
-    this->mUnk_06           = 0x0;
-    this->mUnk_0C           = 0x1333;
-    this->mUnk_20.mUnk_15   = 0x1;
+    this->mUnk_D4.mUnk_18 = FLOAT_TO_FX32(0.35f);
+    this->mUnk_D4.mUnk_1C = FLOAT_TO_FX32(1.2f);
+    this->mUnk_06         = 0x0;
+    this->mUnk_0C         = 0x1333;
+    this->mUnk_20.mUnk_15 = 0x1;
 }
 
 MapObjectUnkSWHT::MapObjectUnkSWHT() :
@@ -43,8 +43,8 @@ MapObjectUnkSWHT::MapObjectUnkSWHT() :
     this->mUnk_054.vfunc_08(G3d_GetModelPtr(GET_PROFILE(MapObjectProfileUnkSWHT)->mUnk_20.mUnk_50));
     this->mUnk_0B4.mpModel = this->mUnk_054.mpModel;
 
-    unk32 param2 = data_ov031_021179e8.func_ov000_02058a24();
-    unk32 param1 = data_ov031_021179e8.func_ov000_02058a84(0x3, &data_ov031_02110ce0);
+    unk32 param2                     = data_ov031_021179e8.func_ov000_02058a24();
+    UnkStruct_ov000_02058a84 *param1 = data_ov031_021179e8.func_ov000_02058a84(0x3, &data_ov031_02110ce0);
 
     this->mUnk_0B4.func_ov000_020577a4(param1, param2, 0x1);
 

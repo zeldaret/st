@@ -56,8 +56,9 @@ public:
     /* 05 */ unk8 mUnk_05;
     /* 06 */ unk8 mUnk_06;
     /* 07 */ unk8 mUnk_07;
-    /* 08 */ u32 mUnk_08;
-    /* 0C */
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ VecFx32 mUnk_0C;
+    /* 18 */
 
     MapObject_10_Base(); // func_ov000_0207c018
 
@@ -76,13 +77,12 @@ public:
 class MapObject_10 : public MapObject_10_Base {
 public:
     /* 00 (vtable) */
-    /* 0C */ VecFx32 mUnk_0C;
     /* 18 */ VecFx32 mUnk_18;
     /* 24 */
 
     MapObject_10() {}
 
-    // data_ov031_02113f18
+    // data_ov000_020b36b8
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
@@ -119,10 +119,10 @@ class MapObject {
 public:
     /* 00 (vtable) */
     /* 04 */ VecFx32 mPos;
-    /* 10 */ MapObject_10 *mUnk_10;
+    /* 10 */ MapObject_10_Base *mUnk_10;
     /* 14 */ union {
-        s16 mUnk_14;
-        UnkAngleStruct mUnk_14_AngleStruct;
+        s16 mAngle;
+        UnkAngleStruct mAngleStruct;
     };
     /* 16 */ MapObjState mState;
     /* 18 */ unk8 mUnk_18[2]; // related to Link walking to the map object when touched
@@ -154,7 +154,7 @@ public:
     /* 38 */
 
     u16 GetDirection() {
-        return (u16) (this->mUnk_14 + DEG_TO_ANG(45)) / DEG_TO_ANG(90);
+        return (u16) (this->mAngle + DEG_TO_ANG(45)) / DEG_TO_ANG(90);
     }
 
     bool IsOrientedVertically() {

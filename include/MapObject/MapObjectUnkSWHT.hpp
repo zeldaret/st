@@ -1,8 +1,8 @@
 #pragma once
 
 #include "MapObject/MapObject.hpp"
+#include "MapObject/MapObjectGrass.hpp"
 #include "MapObject/MapObjectProfile.hpp"
-#include "MapObject_ov031.hpp"
 #include "global.h"
 #include "types.h"
 

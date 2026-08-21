@@ -7224,7 +7224,7 @@ from:0x0209f3dc kind:arm_call to:0x0209e7a4 module:overlay(0)
 from:0x0209f3ec kind:arm_call to:0x02016614 module:main
 from:0x0209f408 kind:arm_call_thumb to:0x0205db0c module:overlay(0)
 from:0x0209f414 kind:load to:0x020b4e3c module:overlay(0)
-from:0x0209f418 kind:load to:0x020b4e30 module:overlay(0)
+from:0x0209f418 kind:load to:0x020b4e28 module:overlay(0) add:0x8
 from:0x0209f438 kind:load to:0x027e09bc module:dtcm
 from:0x0209f43c kind:load to:0x0201668c module:main
 from:0x0209f468 kind:arm_call to:0x0201662c module:main

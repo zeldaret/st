@@ -89,6 +89,10 @@ public:
     UnkStruct_027e0ce0_1C();
     ~UnkStruct_027e0ce0_1C();
 
+    // overlay 0
+    G3d_Model *func_ov000_0208ed30(unk32 param1, unk32 param2, char *param3);
+    UnkStruct_ov000_02058a84 *func_ov000_0208ee94(unk32 param1, unk32 param2, char *param3, unk32 param4);
+
     // overlay 1
     void func_ov001_020bccec();
     void func_ov001_020bcfec();
@@ -303,7 +307,7 @@ public:
     /* 00 */ virtual ~UnkStruct_027e0ce0_38_Base();
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1);
     /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3);
-    /* 10 */ virtual void vfunc_10();
+    /* 10 */ virtual bool vfunc_10(ActorRef param1, unk32 param2);
     /* 14 */
 };
 
@@ -777,7 +781,6 @@ public:
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);
     void func_ov000_0208bd30(bool param1, unk32 param2, unk32 param3, unk32 param4);
     bool func_ov000_0208be70(VecFx32 param1);
-    G3d_Model *func_ov000_0208ed30(unk32 param1, unk32 param2, char *param3);
 
     static UnkStruct_027e0ce0_34 *func_ov000_0205c904();
 

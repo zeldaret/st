@@ -13,7 +13,15 @@ MapObject *MapObjectProfileGrass::Create() {
 
 // non-matching
 MapObjectProfileGrass::MapObjectProfileGrass() :
-    MapObjectProfile_Derived2(MapObjectId_Grass, MapObjectId_Grass) {}
+    MapObjectProfilePot_Base(MapObjectId_Grass, MapObjectId_Grass) {
+    this->mUnk_D4.mUnk_08 = 0x2A807003;
+    VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_D4.mUnk_0C);
+    this->mUnk_D4.mUnk_18 = FLOAT_TO_FX32(0.35f);
+    this->mUnk_D4.mUnk_1C = FLOAT_TO_FX32(1.0f);
+    this->mUnk_D4.mUnk_04 &= 0xFD;
+    this->mUnk_06 = -0x1;
+    this->mUnk_1E &= ~0x1;
+}
 
 MapObjectGrass::MapObjectGrass() :
     mUnk_58(0x0),

@@ -36,7 +36,7 @@ MapObject::MapObject() {
     this->mPos.y = ptr->y;
     this->mPos.z = ptr->z;
 
-    this->mUnk_14 = *ptr2->mUnk_0C;
+    this->mAngle = *ptr2->mUnk_0C;
     MI_CpuCopyFast(ptr2->mUnk_04, &this->mUnk_20, sizeof(MapObject_20));
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_18); i++) {

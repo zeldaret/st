@@ -34,8 +34,8 @@ public:
 
     // data_ov031_02114a5c
     /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2,
-                                   unk32 param3) override; // func_ov031_020f8354
-    /* 10 */ virtual void vfunc_10() override;             // func_ov031_020f83e4
+                                   unk32 param3) override;                  // func_ov031_020f8354
+    /* 10 */ virtual bool vfunc_10(ActorRef param1, unk32 param2) override; // func_ov031_020f83e4
     /* 14 */
 };
 

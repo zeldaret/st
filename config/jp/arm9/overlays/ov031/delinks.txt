@@ -8,10 +8,11 @@
 src/031_Land/UnkStruct_027e0d34.cpp:
     .text       start:0x020db1d4 end:0x020db1f4
 
-src/031_Land/Actor/ActorUnkBOMB.cpp:
+src/031_Land/Actor/ActorBomb.cpp:
     .text       start:0x020e2e94 end:0x020e4ea0
     .init       start:0x02112d68 end:0x02112db8
     .ctor       start:0x02114528 end:0x0211452c
+    .data       start:0x02114988 end:0x02114ae4
     .bss        start:0x021181a4 end:0x021181f0
 
 src/031_Land/Actor/ActorBlast.cpp:
@@ -277,7 +278,7 @@ src/031_Land/MapObject/MapObjectGrass.cpp:
     .text       start:0x02102d54 end:0x02103724
     .init       start:0x02113b84 end:0x02113c14
     .ctor       start:0x021145c0 end:0x021145c4
-    .data       start:0x02117390 end:0x0211741c
+    .data       start:0x02117390 end:0x02117410
     .bss        start:0x02119608 end:0x02119758
 
 src/031_Land/MapObject/MapObjectUnkSWHT.cpp:
@@ -286,10 +287,11 @@ src/031_Land/MapObject/MapObjectUnkSWHT.cpp:
     .ctor       start:0x021145c4 end:0x021145c8
     .bss        start:0x02119758 end:0x0211985c
 
-src/031_Land/MapObject/MapObjectUnkBMFL.cpp:
+src/031_Land/MapObject/MapObjectBombFlower.cpp:
     .text       start:0x02104194 end:0x0210491c
     .init       start:0x02113c84 end:0x02113cd4
     .ctor       start:0x021145c8 end:0x021145cc
+    .data       start:0x02117478 end:0x021174f8
     .bss        start:0x0211985c end:0x02119940
 
 src/031_Land/MapObject/MapObjectTreasureSpawned.cpp:
@@ -335,6 +337,7 @@ src/031_Land/MapObject/MapObjectPot.cpp:
     .text       start:0x02106c8c end:0x021071f8
     .init       start:0x02113f04 end:0x02113f54
     .ctor       start:0x021145e4 end:0x021145e8
+    .data       start:0x02117858 end:0x021178d4
     .bss        start:0x02119ccc end:0x02119dd0
 
 src/031_Land/MapObject/MapObjectUnkSKBN.cpp:

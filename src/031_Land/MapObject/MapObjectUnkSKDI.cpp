@@ -165,12 +165,12 @@ void MapObjectUnkSKDI::func_ov031_0210643c(unk32 param1) {
                 VecFx32 vec;
                 VecFx32_Init(this->mPos.x, this->mPos.y + FLOAT_TO_FX32(1.25f), this->mPos.z, &vec);
                 UnkStruct_027e0cec *data = data_027e0cec;
-                for (ActorUnkBOMB_unk *ptr = this->mUnk_04C; ptr != this->mUnk_04C + ARRAY_LEN(this->mUnk_04C); ++ptr) {
+                for (ActorBomb_unk *ptr = this->mUnk_04C; ptr != this->mUnk_04C + ARRAY_LEN(this->mUnk_04C); ++ptr) {
                     data->func_ov000_020a0140(ptr, &vec);
                 }
             } else {
                 UnkStruct_027e0cec *data = data_027e0cec;
-                for (ActorUnkBOMB_unk *ptr = this->mUnk_04C; ptr != this->mUnk_04C + ARRAY_LEN(this->mUnk_04C); ++ptr) {
+                for (ActorBomb_unk *ptr = this->mUnk_04C; ptr != this->mUnk_04C + ARRAY_LEN(this->mUnk_04C); ++ptr) {
                     data->func_ov000_020a0110(ptr);
                 }
             }
@@ -265,7 +265,7 @@ void MapObjectUnkSKDI::func_ov031_02106678(MapObjState state, unk32 param2) {
                 this->func_ov000_0209d2c4(0x0, true);
             }
             UnkStruct_027e0cec *data = data_027e0cec;
-            for (ActorUnkBOMB_unk *ptr = this->mUnk_04C; ptr != this->mUnk_04C + ARRAY_LEN(this->mUnk_04C); ++ptr) {
+            for (ActorBomb_unk *ptr = this->mUnk_04C; ptr != this->mUnk_04C + ARRAY_LEN(this->mUnk_04C); ++ptr) {
                 data->func_ov000_020a0140(ptr, &sp48);
             }
             unk32 dc = this->mUnk_0D4.mUnk_08;
@@ -287,7 +287,7 @@ void MapObjectUnkSKDI::func_ov031_02106678(MapObjState state, unk32 param2) {
             if (param2 == 0) {
                 this->func_ov000_0209d2c4(0x0, false);
                 UnkStruct_027e0cec *data = data_027e0cec;
-                for (ActorUnkBOMB_unk *ptr = this->mUnk_04C; ptr != this->mUnk_04C + ARRAY_LEN(this->mUnk_04C); ++ptr) {
+                for (ActorBomb_unk *ptr = this->mUnk_04C; ptr != this->mUnk_04C + ARRAY_LEN(this->mUnk_04C); ++ptr) {
                     data->func_ov000_020a0110(ptr);
                 }
                 if (this->mUnk_0FC == 0) {

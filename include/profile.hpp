@@ -48,6 +48,13 @@ public:
     /* 0C */ virtual void vfunc_0C();
 };
 
+class UnkStruct_ov000_02058a84 {
+public:
+    /* 0 */ STRUCT_PAD(0x0, 0x6);
+    /* 6 */ u16 mUnk_6;
+    /* 8 */
+};
+
 class MapObjectProfile_Derived2_20_Base {
 public:
     /* 00 (vtable) */
@@ -82,7 +89,7 @@ public:
     void func_ov000_020589e4(void);
     unk32 func_ov000_02058a24();
     void unc_ov000_02058a58(void);
-    unk32 func_ov000_02058a84(unk32 param1, const char *param2);
+    UnkStruct_ov000_02058a84 *func_ov000_02058a84(unk32 param1, const char *param2);
     void func_ov000_02058ab0(void);
 };
 

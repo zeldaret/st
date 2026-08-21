@@ -111,12 +111,12 @@ bool Actor::Grab(ActorGrabParams grabParams) {
 
     SET_FLAG(this->mFlags, ActorFlag_Grabbed);
 
-    switch (grabParams.unk_00) {
+    switch (grabParams.mUnk_00.type_index) {
         case 0x100:
         case 0x101: {
-            u16 var_r3 = grabParams.unk_02;
+            u16 var_r3 = grabParams.mUnk_00.unk_id;
 
-            if (grabParams.unk_00 == 0x101) {
+            if (grabParams.mUnk_00.type_index == 0x101) {
                 var_r3 = 0;
             }
 

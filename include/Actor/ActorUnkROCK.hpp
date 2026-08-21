@@ -3,7 +3,8 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "ActorUnkSCCN.hpp"
-#include "MapObject/MapObject_ov031.hpp"
+#include "MapObject/MapObjectPot_Base.hpp"
+#include "MapObject/MapObject_10_Pot.hpp"
 #include "global.h"
 #include "types.h"
 

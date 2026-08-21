@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Actor/ActorUnkBOMB.hpp"
+#include "Actor/ActorBomb.hpp"
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectProfile.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
@@ -21,7 +21,7 @@ public:
     /* 040 */ UnkSystem6_Derived2 mUnk_040;
     /* 048 */ unk8 mUnk_048;
     /* 049 */ STRUCT_PAD(0x049, 0x04C);
-    /* 04C */ ActorUnkBOMB_unk mUnk_04C[0x4];
+    /* 04C */ ActorBomb_unk mUnk_04C[0x4];
     /* 07C */ unk32 mUnk_07C;
     /* 080 */ unk32 mUnk_080;
     /* 084 */ u16 mUnk_084;

@@ -1,4 +1,6 @@
 #include "Actor/ActorUnkROCK.hpp"
+
+#include "MapObject/MapObject_10_Pot.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
@@ -6,7 +8,7 @@
 
 extern "C" Mat3p data_027e0130;
 
-static MapObject_10 data_ov031_021166b8;
+static MapObject_10_Pot data_ov031_021166b8;
 
 DECL_PROFILE(ActorProfileUnkROCK);
 
@@ -17,9 +19,10 @@ Actor *ActorProfileUnkROCK::Create() {
 // non-matching
 ActorProfileUnkROCK::ActorProfileUnkROCK() :
     ActorProfileUnkROCK_Base(ActorId_ROCK) {
-    this->mUnk_04.Init(FLOAT_TO_FX32(0.5f));
+    this->mUnk_04.Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.5f));
     VecFx32_Init(FLOAT_TO_FX32(7.0017f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_D8.mUnk_0C);
-    VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.6f), FLOAT_TO_FX32(1.2f), &this->mUnk_D8.mUnk_18);
+    this->mUnk_D8.mUnk_18 = FLOAT_TO_FX32(0.6f);
+    this->mUnk_D8.mUnk_1C = FLOAT_TO_FX32(1.2f);
 }
 
 ActorUnkROCK::ActorUnkROCK() :
@@ -105,9 +108,8 @@ void ActorUnkROCK::vfunc_2C(unk32 param1) {
     data_027e09b4->func_01fff60c(&this->mPos, 0xC00, 0xC00, 0x1F, 0x0, 0x0);
 }
 
-// non-matching
 bool ActorUnkROCK::Grab(ActorGrabParams param1) {
-    if (param1.unk_00 != 0x100 || param1.unk_02 != 1) {
+    if (param1.mUnk_00.type_index != 0x100 || param1.mUnk_00.unk_id != 1) {
         return false;
     }
     if (!this->Actor::Grab(param1)) {
@@ -117,7 +119,6 @@ bool ActorUnkROCK::Grab(ActorGrabParams param1) {
     return true;
 }
 
-// non-matching
 bool ActorUnkROCK::Drop(ActorGrabParams param1, const VecFx32 *param2) {
     if (!this->Actor::Drop(param1, param2)) {
         return false;

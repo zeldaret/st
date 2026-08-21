@@ -11,20 +11,28 @@ public:
     /* 00 (vtable) */
     /* 04 */ ActorRef mUnk_04;
     /* 08 */ VecFx32 *mUnk_08;
-    /* 0C */ MapObject_10 *mUnk_0C;
+    /* 0C */ MapObject_10_Base *mUnk_0C;
     /* 10 */
 
-    ActorUnkSCCN_B8(); // func_ov000_0207ec88 set all fields to 0
+    ActorUnkSCCN_B8();
 
     // data_ov000_020b287c
-    /* 00 */ virtual ~ActorUnkSCCN_B8(); // func_ov000_0207eca8 & func_ov000_0207ecd8
-    /* 08 */ virtual void vfunc_08();    // func_ov000_0207ed84
+    /* 00 */ virtual ~ActorUnkSCCN_B8();
+    /* 08 */ virtual void vfunc_08();
+};
+
+class MapObject_10_SCCN : public MapObject_10 {
+public:
+    /* 00 (base) */
+    /* 24 */
+
+    MapObject_10_SCCN() {}
 };
 
 class ActorUnkSCCN : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */ MapObject_10 mUnk_94;
+    /* 94 */ MapObject_10_SCCN mUnk_94;
     /* B8 */ ActorUnkSCCN_B8 mUnk_B8;
     /* C8 */
 
