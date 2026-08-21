@@ -43,7 +43,7 @@ MapObject::MapObject() {
         this->mUnk_18[i] = 0;
     }
 
-    SET_FLAGS(this->mFlags, MapObjFlag_Alive, MapObjFlag_1, MapObjFlag_2);
+    INIT_FLAGS(this->mFlags, MapObjFlag_Alive, MapObjFlag_1, MapObjFlag_2);
 }
 
 MapObject::~MapObject() {}

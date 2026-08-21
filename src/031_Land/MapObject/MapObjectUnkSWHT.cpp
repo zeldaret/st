@@ -67,8 +67,7 @@ MapObjectUnkSWHT::~MapObjectUnkSWHT() {
 
 // non-matching (SET_FLAG and UNSET_FLAG do not simplify into a single op)
 bool MapObjectUnkSWHT::vfunc_00() {
-    SET_FLAG(this->mFlags, MapObjFlag_9);
-    SET_FLAG(this->mFlags, MapObjFlag_10);
+    SET_FLAGS(this->mFlags, MapObjFlag_9, MapObjFlag_10);
 
     this->mUnk_18[0] = 0x11;
     this->mUnk_18[1] = 0x11;
@@ -294,9 +293,8 @@ void MapObjectUnkSWHT::func_ov031_021021c0(unk16 state, unk32 param2) {
     this->mState = state;
     switch (this->mState) {
         case MapObjUnkSWHTState_0:
-            SET_FLAG(this->mFlags, MapObjFlag_7);
-            SET_FLAG(this->mFlags, MapObjFlag_9);
-            SET_FLAG(this->mFlags, MapObjFlag_10);
+            SET_FLAGS(this->mFlags, MapObjFlag_7);
+            SET_FLAGS(this->mFlags, MapObjFlag_9, MapObjFlag_10);
 
             this->func_ov000_0209d2c4(0x0, false);
 
@@ -332,8 +330,7 @@ void MapObjectUnkSWHT::func_ov031_021021c0(unk16 state, unk32 param2) {
             if (this->mUnk_040 == 1) {
                 SET_FLAG(this->mFlags, MapObjFlag_7);
             } else {
-                UNSET_FLAG(this->mFlags, MapObjFlag_9);
-                UNSET_FLAG(this->mFlags, MapObjFlag_10);
+                UNSET_FLAGS(this->mFlags, MapObjFlag_9, MapObjFlag_10);
                 UNSET_FLAG(this->mFlags, MapObjFlag_7);
             }
             this->mUnk_050 = 0x0;
