@@ -65,7 +65,6 @@ MapObjectUnkSWHT::~MapObjectUnkSWHT() {
     }
 }
 
-// non-matching (SET_FLAG and UNSET_FLAG do not simplify into a single op)
 bool MapObjectUnkSWHT::vfunc_00() {
     SET_FLAGS(this->mFlags, MapObjFlag_9, MapObjFlag_10);
 
@@ -288,7 +287,6 @@ bool MapObjectUnkSWHT::func_ov031_021020ec() {
     return retValue;
 }
 
-// non-matching (SET_FLAG and UNSET_FLAG do not simplify into a single op)
 void MapObjectUnkSWHT::func_ov031_021021c0(unk16 state, unk32 param2) {
     this->mState = state;
     switch (this->mState) {
