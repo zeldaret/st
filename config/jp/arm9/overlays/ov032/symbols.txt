@@ -236,12 +236,12 @@ __sinit_MapObjectUnkSWSW.cpp kind:function(arm,size=0x50) addr:0x021240b4
 .p__sinit_ActorUnkKETH.cpp kind:data(word) addr:0x0212410c
 .p__sinit_ActorUnkNSSW.cpp kind:data(word) addr:0x02124110
 .p__sinit_MapObjectUnkSWSW.cpp kind:data(word) addr:0x02124114
-data_ov032_02124120 kind:data(any) addr:0x02124120
-data_ov032_0212412c kind:data(any) addr:0x0212412c
+data_ov032_02122160 kind:data(any) addr:0x02124120
+data_ov032_0212216c kind:data(any) addr:0x0212412c
 data_ov032_02122184 kind:data(any) addr:0x02124144
-data_ov032_0212415c kind:data(any) addr:0x0212415c
+data_ov032_0212219c kind:data(any) addr:0x0212415c
 data_ov032_0212417c kind:data(any) addr:0x0212417c
-_ZTV19data_ov032_02124190 kind:data(any) addr:0x02124190
+_ZTV19ActorProfileUnkKURI kind:data(any) addr:0x02124190
 data_ov032_021241ad kind:data(any) addr:0x021241ad ambiguous
 data_ov032_021241bc kind:data(any) addr:0x021241bc
 data_ov032_02124204 kind:data(any) addr:0x02124204

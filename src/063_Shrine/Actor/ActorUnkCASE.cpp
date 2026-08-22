@@ -37,9 +37,6 @@ extern u16 data_ov000_020aed00;
 extern "C" void func_ov000_0207b70c(ActorUnkCASE_174 *param1, Actor *param2);
 extern "C" void func_ov000_020990c0(ActorUnkCASE *param1, ActorShotArrow_140 *param2, unk32 param3, unk32 param4);
 
-// Overlay 17
-extern "C" unk32 func_ov017_020bef4c(ActorUnkCASE *param1, unk32 param2);
-
 // Other
 extern "C" void G3d_GetCurrentMtx(Mat4x3p *mtx1, Mat3p *mtx2);
 
@@ -319,7 +316,7 @@ void ActorUnkCASE::vfunc_24() {
 void ActorUnkCASE::vfunc_20() {
     mUnk_150.mUnk_1C = 1;
 
-    if (!func_ov017_020bef4c(this, 0x4000) && mUnk_48 != 0) {
+    if (!this->func_ov017_020bef4c(0x4000) && mUnk_48 != 0) {
         bool cond = true;
         if (mState != 1 && mState != 2) {
             cond = false;

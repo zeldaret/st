@@ -226,7 +226,7 @@ public:
     u32 func_ov000_02098800(bool param1);
     bool func_ov000_02098838();
     unk32 func_ov000_02098910(UnkStruct_ov031_Items_00 *param1, unk32 param2);
-    void func_ov000_02098b8c(unk32 param1, void *param2);
+    void func_ov000_02098b8c(unk32 param1, UnkStruct_ov031_Items_00 *param2);
     s32 func_ov000_02098518(unk32 *param1);
     VecFx32 *func_ov000_0209853c(unk32 param1);
     s32 func_ov000_02098554();
@@ -304,6 +304,7 @@ public:
     /* 10 */
 };
 
+class UnkStruct_ActorUnkCANS_224;
 class Actor_Derived2 : public Actor {
 public:
     /* 00 (base) */
@@ -326,6 +327,9 @@ public:
     void func_ov000_020994a0();
     void func_ov000_020997c4(unk32 param1);
     void func_ov000_02098f34(VecFx32 *);
+
+    unk32 func_ov017_020bef4c(unk32 param1);
+    void func_ov017_020bf894(UnkStruct_ActorUnkCANS_224 *param1);
 };
 
 extern UnkStruct_ov000_020b539c data_ov000_020b539c_eur;

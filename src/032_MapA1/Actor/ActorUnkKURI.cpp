@@ -21,11 +21,19 @@ extern "C" u16 data_ov000_020aecf4[];
 extern "C" unk32 data_ov000_020aecf8;
 
 extern "C" bool func_01ff916c(void *, int, int);
+extern "C" unk32 func_01ff9258(fx32, fx32);
+extern "C" void func_01ff9318(void *, unk32, unk32);
 extern "C" void func_01ff941c(VecFx32 *, VecFx32 *);
-extern "C" fx32 func_01ffb66c(unk32, u16);
+extern "C" fx32 func_01ffb428(unk32, unk32);
+extern "C" unk32 func_01ffb464(unk32 param1);
+extern "C" fx32 func_01ffb66c(unk32, unk32);
 extern "C" fx16 func_01ffbbe0(fx32, fx32);
 extern "C" void func_01ffc634(ModelRender *, VecFx32 *, UnkAngleStruct, VecFx32 *);
+extern "C" bool func_02016ae0(VecFx32 *, VecFx32 *, UnkAngleStruct, unk32, unk32);
 extern "C" Actor *func_02016fbc(ActorId, VecFx32 *, unk32);
+
+extern "C" bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
+extern "C" void func_ov000_020986b4(s16 *param1, Actor_Derived2 *param2, unk32 param3);
 
 extern "C" void func_ov017_020c2438(unk32 *, unk32, VecFx32 *, unk32, unk32);
 extern "C" void func_ov017_020c26f8(unk32, VecFx32 *, unk32, unk32);
@@ -171,9 +179,30 @@ void ActorUnkKURI::SetState(ActorState state) {
 }
 
 void ActorUnkKURI::vfunc_20() {
-    // some code
+    if (!this->Actor_Derived2::func_ov017_020bef4c(0x4000) && mUnk_48 != 0) {
 
+        return;
+    }
+
+    this->mUnk_3C = &this->mUnk_228;
     CALL_PTMF(PTMF<ActorUnkKURI>, data_ov032_02122288[this->mState]);
+
+    this->Actor_Derived2::func_ov017_020bf894(&this->mUnk_248);
+    this->Actor::func_ov000_02098838();
+    this->func_ov032_0211b298();
+
+    VecFx32_Copy(&this->mPos, &this->mPrevPos);
+    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+
+    this->Actor::func_ov000_02098b8c(0x1, &this->mUnk_268);
+
+    if (this->mUnk_46 & 0x1) {
+        this->mVel.y = FLOAT_TO_FX32(0.0f);
+    }
+
+    if (this->func_ov032_0211b17c()) {
+        return;
+    }
 
     // some code
 }
@@ -202,16 +231,113 @@ void ActorUnkKURI::func_ov032_02119990() {
 }
 
 void ActorUnkKURI::func_ov032_02119a0c() {}
-void ActorUnkKURI::func_ov032_02119be8() {}
+
+void ActorUnkKURI::func_ov032_02119be8() {
+    this->mUnk_264 = 0x4800;
+    this->mUnk_110.vfunc_1C(data_ov032_0212219c, 0x14CD, 0x19A, 0x0);
+
+    data_027e09a8->func_ov000_02071b30(0x9836, &this->mPos, 0x0);
+    this->mVel.x = FLOAT_TO_FX32(0.0f);
+    this->mVel.z = FLOAT_TO_FX32(0.0f);
+}
+
 void ActorUnkKURI::func_ov032_02119c80() {}
-void ActorUnkKURI::func_ov032_02119d7c() {}
-void ActorUnkKURI::func_ov032_02119df4() {}
+
+void ActorUnkKURI::func_ov032_02119d7c() {
+    this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
+    this->mUnk_52 = 0x14;
+    this->mUnk_50 = 0x00;
+    this->mVel.x  = FLOAT_TO_FX32(0.0f);
+    this->mVel.z  = FLOAT_TO_FX32(0.0f);
+}
+
+void ActorUnkKURI::func_ov032_02119df4() {
+    s16 var;
+    s16 delta = this->mUnk_52 - this->mUnk_50;
+    func_ov000_020986b4(&var, this, 0x0);
+
+    s16 val = var;
+    if (delta > 0x0) {
+        func_01ff9318(&this->mAngle, val, func_01ffb464(delta << 0xC));
+    }
+
+    if (this->IsTimerOut()) {
+        this->SetState(ActorUnkKURIState_3);
+    }
+    this->func_ov032_0211b1e0();
+}
+
 void ActorUnkKURI::func_ov032_02119e90() {}
 void ActorUnkKURI::func_ov032_02119f40() {}
 void ActorUnkKURI::func_ov032_0211a140() {}
 void ActorUnkKURI::func_ov032_0211a20c() {}
-void ActorUnkKURI::func_ov032_0211a484() {}
-void ActorUnkKURI::func_ov032_0211a52c() {}
+
+void ActorUnkKURI::func_ov032_0211a484() {
+    this->mUnk_110.vfunc_1C(data_ov032_02122184, this->mUnk_110.vfunc_28()->mUnk_04, 0x19A, 0x0);
+    fx32 val         = func_01ffb428(this->mUnk_220, 0x14);
+    this->mUnk_288.x = func_01ffb66c(0x1000 - this->mUnk_110.vfunc_28()->mUnk_04, val >> 0xC);
+}
+
+void ActorUnkKURI::func_ov032_0211a52c() {
+    switch (this->mUnk_218) {
+        case 0x0:
+            this->mUnk_110.vfunc_28()->mUnk_04 = this->mUnk_110.vfunc_28()->mUnk_04 + this->mUnk_288.x;
+
+            unk32 val      = this->mUnk_220 - 0x14;
+            fx32 sinValue  = SIN((u16) this->mAngle);
+            fx32 cosValue  = COS((u16) this->mAngle);
+            this->mUnk_220 = val;
+
+            this->mVel.x = MUL_FX32(sinValue, val);
+            this->mVel.z = MUL_FX32(cosValue, val);
+
+            if (val > 0x0) {
+                return;
+            }
+
+            this->mVel.x   = FLOAT_TO_FX32(0.0f);
+            this->mVel.z   = FLOAT_TO_FX32(0.0f);
+            this->mUnk_220 = 0x0;
+
+            this->mUnk_110.vfunc_28()->mUnk_04 = FLOAT_TO_FX32(1.0f);
+            ++this->mUnk_218;
+            break;
+
+        case 0x1:
+            this->mUnk_110.vfunc_1C(data_ov032_0212219c, 0x1000, 0x19A, 0x0);
+
+            data_027e09a8->func_ov000_02071b30(0x9836, &this->mPos, 0x0);
+            ++this->mUnk_218;
+            break;
+
+        case 0x2:
+            if (!this->mUnk_110.vfunc_28()->func_01ff8fa8()) {
+                return;
+            }
+
+            data_027e0cec->func_ov000_0209feac(0x880, &this->mPos, 0x2, 0x0, 0x0);
+
+            this->mUnk_110.vfunc_28()->mUnk_02 = 0x0;
+            this->mUnk_110.vfunc_28()->mUnk_08 = FLOAT_TO_FX32(0.0f);
+
+            data_027e09a8->func_ov000_02071b30(0x9836, &this->mPos, 0x0);
+
+            ++this->mUnk_218;
+            break;
+
+        case 0x3:
+            if (!this->mUnk_110.vfunc_28()->func_01ff8fa8()) {
+                return;
+            }
+
+            data_027e0cec->func_ov000_0209feac(0x880, &this->mPos, 0x2, 0x0, 0x0);
+            this->func_ov032_0211b024();
+            break;
+
+        default:
+            break;
+    }
+}
 
 void ActorUnkKURI::func_ov032_0211a7b8() {
     this->mUnk_110.vfunc_1C(data_ov032_02122184, this->mUnk_110.vfunc_28()->mUnk_04, 0x19A, 0x0);
@@ -408,10 +534,6 @@ void ActorUnkKURI::func_ov032_0211b024() {
     }
     this->SetState(ActorUnkKURIState_2);
 }
-
-extern "C" unk32 func_01ff9258(fx32, fx32);
-extern "C" bool func_02016ae0(VecFx32 *, VecFx32 *, UnkAngleStruct, unk32, unk32);
-extern "C" bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
 
 bool ActorUnkKURI::func_ov032_0211b064(unk32 param1) {
     VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
