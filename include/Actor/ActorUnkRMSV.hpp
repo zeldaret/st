@@ -16,7 +16,7 @@ public:
     /* 3C */ void *mUnk_3C;
     /* 40 */
 
-    UnkStruct_ov063_021632e4(ModelRender *param1, unk32 param2) :
+    UnkStruct_ov063_021632e4(ModelRender *param1, UnkActorFileSystem2 *param2) :
         UnkStruct_ov000_020b31a8(&mUnk_1C, param1, param2),
         mUnk_1C(&mUnk_3C, NULL) {
         if (param2 != 0) {

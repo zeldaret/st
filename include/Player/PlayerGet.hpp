@@ -116,12 +116,6 @@ public:
     }
 };
 
-class UnkStruct_PlayerGet_50 {
-public:
-    unk32 func_01ff8fa8();
-    unk32 func_02015080(unk32 param1);
-};
-
 class UnkStruct_PlayerGet_fc {
 public:
     /* 00 */ UnkStruct_PlayerGet_ec *mUnk_00;

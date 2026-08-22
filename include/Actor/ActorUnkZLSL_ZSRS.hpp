@@ -54,7 +54,7 @@ public:
     /* 19 */ STRUCT_PAD(0x19, 0x1C);
     /* 1C */
 
-    UnkStruct_ov000_020b31a8(UnkSystem5 *param1, ModelRender *param2, unk32 param3);
+    UnkStruct_ov000_020b31a8(UnkSystem5 *param1, ModelRender *param2, UnkActorFileSystem2 *param3);
 
     // data_ov000_020b31a8
     /* 00 */ virtual ~UnkStruct_ov000_020b31a8();
@@ -73,6 +73,7 @@ public:
     /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2);
     /* 3C */ virtual void vfunc_3C();
 
+    void func_ov000_02099ddc(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3);
     void func_ov000_02099ff8(ActorUnkZLSL_AnimationTag param1, unk32 param2);
 };
 
@@ -84,10 +85,10 @@ public:
     /* 60 */ STRUCT_PAD(0x60, 0x7C);
     /* 7C */
 
-    ActorUnkZLSL_27CC(UnkSystem5 *param1, ModelRender *param2, unk32 param3) :
+    ActorUnkZLSL_27CC(UnkSystem5 *param1, ModelRender *param2, UnkActorFileSystem2 *param3) :
         UnkStruct_ov000_020b31a8(param1, param2, param3),
         mUnk_1C(&mUnk_5C, NULL) {
-        if (param3 != 0x0) {
+        if (param3 != NULL) {
             this->mUnk_1C.mpModel = this->mUnk_10;
         }
     }
@@ -104,7 +105,7 @@ public:
     /* 00 (base) */
     /* 04 */
 
-    ActorUnkZLSL_2700(UnkSystem5 *param1, ModelRender *param2, unk32 param3) :
+    ActorUnkZLSL_2700(UnkSystem5 *param1, ModelRender *param2, UnkActorFileSystem2 *param3) :
         ActorUnkZLSL_27CC(param1, param2, param3) {}
 
     // data_ov031_021136e4
@@ -122,10 +123,10 @@ public:
     /* 2A */ unk16 mUnk_2A;
     /* 2C */
 
-    UnkStruct_ov000_020b31f0(void *param1, void *param2, void *param3, unk32 param4);
+    UnkStruct_ov000_020b31f0(UnkSystem5 *param1, UnkSystem5 *param2, ModelRender *param3, UnkActorFileSystem2 *param4);
 
     // data_ov000_020b31f0
-    /* 00 */ virtual ~UnkStruct_ov000_020b31f0() override;
+    /* 00 */ virtual ~UnkStruct_ov000_020b31f0() override; // In thumb
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 10 */ virtual UnkSystem5 *vfunc_10() override;
@@ -150,7 +151,7 @@ public:
     /* 1C */ UnkSystem5 *mUnk_1C;
     /* 20 */
 
-    UnkStruct_ov031_0211372c(void *param1, void *param2, void *param3, unk32 param4);
+    UnkStruct_ov031_0211372c(UnkSystem5 *param1, UnkSystem5 *param2, ModelRender *param3, UnkActorFileSystem2 *param4);
 
     // data_ov031_0211372c
     /* 18 */ virtual void vfunc_18() override;

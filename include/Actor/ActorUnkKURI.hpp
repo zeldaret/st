@@ -1,84 +1,174 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "ActorUnkCANS.hpp"
+#include "ActorUnkZLSL_ZSRS.hpp"
 #include "global.h"
-#include "types.h"
 
-class ActorUnkKURI_C4 : public Actor_C4 {
-public:
-    ActorUnkKURI_C4(Actor *param1);
-
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
-    /* 04 */ virtual bool vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-};
-
-class ActorUnkKURI : public Actor {
+class ModelRender_ov000_020b1a1c : public ModelRender {
 public:
     /* 00 (base) */
-    /* 94 */
+    ModelRender_ov000_020b1a1c(G3d_Model *pModel);
+
+    // data_ov000_020b1a1c
+    /* 0C */ virtual void vfunc_0C() override;
+};
+
+enum ActorUnkKURIState_ {
+    ActorUnkKURIState_0  = 0,
+    ActorUnkKURIState_1  = 1,
+    ActorUnkKURIState_2  = 2,
+    ActorUnkKURIState_3  = 3,
+    ActorUnkKURIState_4  = 4,
+    ActorUnkKURIState_5  = 5,
+    ActorUnkKURIState_6  = 6,
+    ActorUnkKURIState_7  = 7,
+    ActorUnkKURIState_8  = 8,
+    ActorUnkKURIState_9  = 9,
+    ActorUnkKURIState_10 = 10,
+    ActorUnkKURIState_11 = 11,
+    ActorUnkKURIState_Max
+};
+
+class ActorUnkKURI_268 : public UnkStruct_ov031_Items_00 {
+public:
+    /* 00 (base) */
+    /* 04 */ STRUCT_PAD(0x04, 0x08);
+    /* 08 */ VecFx32 mUnk_08;
+    /* 14 */
+
+    ActorUnkKURI_268();
+
+    // data_ov032_021221bc
+    /* 00 */ virtual ~ActorUnkKURI_268();
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
+};
+
+class ActorUnkKURI_110 : public UnkStruct_ov000_020b31f0 {
+public:
+    /* 00 (base) */
+    /* 2C */ UnkSystem5 mUnk_2C;
+    /* 4C */ unk32 mUnk_4C;
+    /* 50 */ STRUCT_PAD(0x50, 0x6C);
+    /* 6C */ UnkSystem5 mUnk_6C;
+    /* 8C */ unk32 mUnk_8C;
+    /* 90 */
+
+    ActorUnkKURI_110(ModelRender *param3, UnkActorFileSystem2 *param4) :
+        UnkStruct_ov000_020b31f0(&this->mUnk_2C, &this->mUnk_6C, param3, param4),
+        mUnk_2C(&this->mUnk_4C, NULL),
+        mUnk_6C(&this->mUnk_8C, NULL) {
+        if (param4 != NULL) {
+            this->mUnk_6C.mpModel = this->mUnk_10;
+            this->mUnk_2C.mpModel = this->mUnk_10;
+        }
+    }
+
+    // data_ov032_02122244
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override;
+    /* 3C */ virtual void vfunc_3C() override;
+};
+
+class ActorUnkKURI_1BC : public UnkStruct_ov000_020b31a8 {
+public:
+    /* 00 (base) */
+    /* 1C */ UnkSystem5 mUnk_1C;
+    /* 3C */ unk32 mUnk_3C;
+    /* 40 */
+
+    ActorUnkKURI_1BC(ModelRender *param2, UnkActorFileSystem2 *param3) :
+        UnkStruct_ov000_020b31a8(&this->mUnk_1C, param2, param3),
+        mUnk_1C(&this->mUnk_3C, NULL) {
+        if (param3 != NULL) {
+            this->mUnk_1C.mpModel = this->mUnk_10;
+        }
+    }
+
+    // data data_ov032_021221fc
+    /* 30 */ virtual s8 vfunc_30() override;
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override;
+    /* 3C */ virtual void vfunc_3C() override;
+};
+
+class ActorUnkKURI : public Actor_Derived2 {
+public:
+    /* 000 (base) */
+    /* 0AE */ STRUCT_PAD(0x0AE, 0x0B0);
+    /* 0B0 */ ModelRender_ov000_020b1a1c mUnk_0B0;
+    /* 110 */ ActorUnkKURI_110 mUnk_110;
+    /* 1A0 */ STRUCT_PAD(0x1A0, 0x1BC);
+    /* 1BC */ ActorUnkKURI_1BC mUnk_1BC;
+    /* 1FC */ STRUCT_PAD(0x1FC, 0x218);
+    /* 218 */ unk16 mUnk_218;
+    /* 21C */ unk32 mUnk_21C;
+    /* 220 */ unk32 mUnk_220;
+    /* 224 */ unk16 mUnk_224;
+    /* 228 */ Actor_9C mUnk_228;
+    /* 248 */ UnkStruct_ActorUnkCANS_224 mUnk_248;
+    /* 258 */ Actor_Derived1_94 mUnk_258;
+    /* 264 */ unk32 mUnk_264;
+    /* 268 */ ActorUnkKURI_268 mUnk_268;
+    /* 27C */ VecFx32 mUnk_27C;
+    /* 288 */ VecFx32 mUnk_288;
+    /* 294 */ bool mUnk_294;
+    /* 296 */ volatile u16 mUnk_296;
+    /* 298 */ u16 mUnk_298;
+    /* 29A */
 
     ActorUnkKURI();
 
-    /* 4C */ virtual ~ActorUnkKURI() override;
+    bool IsInternalTimerOut() {
+        if (this->mUnk_296 < this->mUnk_298) {
+            this->mUnk_296++;
+            return false;
+        }
 
-    void func_ov032_02119248(void);
-    void func_ov032_0211925c(void);
-    void func_ov032_02119270(void);
-    void func_ov032_02119390(void);
-    void func_ov032_02119458(void);
-    void func_ov032_021194dc(void);
-    void func_ov032_0211953c(void);
-    void func_ov032_02119584(void);
-    void func_ov032_021198dc(void);
-    void func_ov032_02119990(void);
-    void func_ov032_02119a0c(void);
-    void func_ov032_02119be8(void);
-    void func_ov032_02119c80(void);
-    void func_ov032_02119d7c(void);
-    void func_ov032_02119df4(void);
-    void func_ov032_02119e90(void);
-    void func_ov032_02119f40(void);
-    void func_ov032_0211a140(void);
-    void func_ov032_0211a20c(void);
-    void func_ov032_0211a484(void);
-    void func_ov032_0211a52c(void);
-    void func_ov032_0211a7b8(void);
-    void func_ov032_0211a86c(void);
-    void func_ov032_0211a950(void);
-    void func_ov032_0211a9c8(void);
-    void func_ov032_0211aa40(void);
-    void func_ov032_0211aac8(void);
-    void func_ov032_0211ab20(void);
-    void func_ov032_0211abc0(void);
-    void func_ov032_0211ac20(void);
-    void func_ov032_0211ac94(void);
-    void func_ov032_0211ad40(void);
-    void func_ov032_0211adf4(void);
-    void func_ov032_0211b024(void);
-    void func_ov032_0211b064(void);
-    void func_ov032_0211b114(void);
-    void func_ov032_0211b17c(void);
-    void func_ov032_0211b190(void);
-    void func_ov032_0211b1e0(void);
-    void func_ov032_0211b298(void);
-    void func_ov032_0211b37c(void);
-    void func_ov032_0211b3b0(void);
-    void func_ov032_0211b408(void);
-    void func_ov032_0211b570(void);
-    void func_ov032_0211b5b4(void);
-    void func_ov032_0211b5d0(void);
-    void func_ov032_0211b5f4(void);
-    void func_ov032_0211b618(void);
-    void func_ov032_0211b628(void);
-    void func_ov032_0211b630(void);
-    void func_ov032_0211b654(void);
-    void func_ov032_0211b680(void);
-    void func_ov032_0211b69c(void);
+        return true;
+    }
+
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C() override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 4C */ virtual ~ActorUnkKURI() override;
+    /* 54 */ virtual void vfunc_54(unk32 param1) override;
+
+    void func_ov032_021194dc(ActorState state);
+    void SetState(ActorState state);
+    void func_ov032_02119990();
+    void func_ov032_02119a0c();
+    void func_ov032_02119be8();
+    void func_ov032_02119c80();
+    void func_ov032_02119d7c();
+    void func_ov032_02119df4();
+    void func_ov032_02119e90();
+    void func_ov032_02119f40();
+    void func_ov032_0211a140();
+    void func_ov032_0211a20c();
+    void func_ov032_0211a484();
+    void func_ov032_0211a52c();
+    void func_ov032_0211a7b8();
+    void func_ov032_0211a86c();
+    void func_ov032_0211a950();
+    void func_ov032_0211a9c8();
+    void func_ov032_0211aa40();
+    void func_ov032_0211aac8();
+    void func_ov032_0211ab20();
+    void func_ov032_0211abc0();
+    void func_ov032_0211ac20();
+    void func_ov032_0211ac94();
+    void func_ov032_0211ad40();
+    void func_ov032_0211adf4();
+    void func_ov032_0211b024();
+    bool func_ov032_0211b064(unk32 param1);
+    bool func_ov032_0211b114();
+    bool func_ov032_0211b17c();
+    void func_ov032_0211b190(s32 param1, s32 param2);
+    void func_ov032_0211b1e0();
+    void func_ov032_0211b298();
+    static void func_ov032_0211b37c(ActorUnkKURI *, u16 param1);
+    void func_ov032_0211b3b0();
 };
 
 class ActorProfileUnkKURI : public ActorProfile_Derived1 {
@@ -86,7 +176,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkKURI();
-    ~ActorProfileUnkKURI();
 
     /* 0C */ virtual Actor *Create();
 

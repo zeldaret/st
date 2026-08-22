@@ -21,7 +21,7 @@
 #include "nitro/math.h"
 #include "nns/g3d/g3d.h"
 
-extern const void *data_ov063_02162558;
+extern const Actor_Derived2_A8_PTR data_ov063_02162558;
 extern const void *data_ov063_02162568;
 
 extern Mat4x3p data_027e0964;
@@ -163,7 +163,7 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_124.mUnk_24 = 1;
     mUnk_38          = (Actor_38 *) &mUnk_1E8;
     mUnk_38->mUnk_08 = 4;
-    mUnk_A8          = &data_ov063_02162558;
+    mUnk_A8          = (Actor_Derived2_A8_PTR *) &data_ov063_02162558;
 }
 
 bool ActorUnkCASE::vfunc_18(unk32 param1) {

@@ -44,7 +44,8 @@ public:
 
 struct ActorUnkZLSL_AnimationTag {
     unk32 index;
-    char name[0x14];
+    char name[0x10];
+    unk32 unknown;
 };
 
 class Actor_Derived1_94_0C {

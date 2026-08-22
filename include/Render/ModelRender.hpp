@@ -9,6 +9,7 @@
 #include <nns/g3d/g3d.h>
 
 class UnkSystem5;
+class UnkStruct_PlayerGet_50;
 extern "C" void *func_ov000_02057750(size_t allocSize);
 
 typedef void (*UnkSystem4_UnkCallback)(void *, unk32);
@@ -137,16 +138,25 @@ public:
     unk32 func_ov000_02057ef4();
 };
 
-class UnkSystem5 {
+class UnkStruct_PlayerGet_50 {
 public:
-    /* 00 */ G3d_Model *mpModel;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
+    /* 00 (base) */ STRUCT_PAD(0x00, 0x04);
+    /* 04 */ fx32 mUnk_04;
+    /* 08 */ fx32 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk32 mUnk_1C;
+    /* 18 */
+
+    unk32 func_01ff8fa8();
+    unk32 func_02015080(unk32 param1);
+};
+
+class UnkSystem5 {
+public:
+    /* 00 */ G3d_Model *mpModel;
+    /* 04 */ UnkStruct_PlayerGet_50 mUnk_04;
+    /* 1C */ void *mUnk_1C; // this is param1
     /* 20 */
 
     UnkSystem5(void *param1, G3d_Model *pModel);

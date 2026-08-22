@@ -66,7 +66,7 @@ ActorTearLight::ActorTearLight() :
     mUnk_120(&this->mUnk_140, NULL),
     mUnk_160(*(ActorTearLight_UnkStruct *) &data_020431b8),
     mUnk_188(0x0),
-    mUnk_18C(0x1),
+    mUnk_18C(true),
     mUnk_18D(false),
     mUnk_190(0x0),
     mUnk_194(this),

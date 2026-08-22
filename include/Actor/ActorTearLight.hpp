@@ -48,7 +48,7 @@ public:
     /* 00 (base) */
     /* 1C */
 
-    ActorTearLight_104_Base(UnkSystem5 *param1, ModelRender *param2, unk32 param3) :
+    ActorTearLight_104_Base(UnkSystem5 *param1, ModelRender *param2, UnkActorFileSystem2 *param3) :
         UnkStruct_ov000_020b31a8(param1, param2, param3) {}
 
     // data_ov071_021641e0
@@ -63,7 +63,7 @@ public:
     /* 00 (base) */
     /* 1C */
 
-    ActorTearLight_104(UnkSystem5 *param1, ModelRender *param2, unk32 param3) :
+    ActorTearLight_104(UnkSystem5 *param1, ModelRender *param2, UnkActorFileSystem2 *param3) :
         ActorTearLight_104_Base(param1, param2, param3) {}
 
     // data_ov071_02164c3c

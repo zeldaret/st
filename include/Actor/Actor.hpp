@@ -97,9 +97,7 @@ public:
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ ActorRef mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
+    /* 10 */ VecFx32 mUnk_10;
     /* 1C */ u16 mUnk_1C;
     /* 1E */ u16 mUnk_1E;
     /* 20 */
@@ -248,6 +246,7 @@ public:
     // overlay 17
     bool func_ov017_020beeec(unk32 param1);
     void func_ov017_020bef88(Actor_vfunc_30 *param1, void *param2, unk32 param3);
+    void func_ov017_020bf3e0(unk32 param1, fx32 param2);
     void func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_ov017_020bf9c8(Actor *param1);
     void func_ov017_020bfa50(VecFx32 *param1, unk32 param2);
@@ -296,13 +295,22 @@ public:
         Actor_C4_Base(&param1->mRef, param2) {}
 };
 
+class Actor_Derived2_A8_PTR {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */
+};
+
 class Actor_Derived2 : public Actor {
 public:
     /* 00 (base) */
     /* 94 */ unk32 mUnk_94;
     /* 98 */ VecFx32 mUnk_98;
-    /* A4 */ unk32 mUnk_A4;
-    /* A8 */ void *mUnk_A8;
+    /* A4 */ VecFx32 const *mUnk_A4;
+    /* A8 */ Actor_Derived2_A8_PTR *mUnk_A8;
     /* AC */ unk8 mUnk_AC;
     /* AD */ unk8 mUnk_AD;
     /* AE */
@@ -312,6 +320,12 @@ public:
     /* 30 */ virtual void vfunc_30(Actor_vfunc_30 *param1);
     /* 4C */ WEAK virtual ~Actor_Derived2() {}
     /* 54 */ virtual void vfunc_54(unk32 param1);
+
+    void func_ov000_020992dc();
+    unk32 func_ov000_02099450(void *param2, VecFx32 *param3, unk32 param4, u16 param5);
+    void func_ov000_020994a0();
+    void func_ov000_020997c4(unk32 param1);
+    void func_ov000_02098f34(VecFx32 *);
 };
 
 extern UnkStruct_ov000_020b539c data_ov000_020b539c_eur;
