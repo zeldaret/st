@@ -102,11 +102,6 @@ src/001_SceneInit/Player/PlayerLinkActor_001.cpp:
     complete
     .text       start:0x020bc9dc end:0x020bcce0
 
-libs/dsprot/src/extra.c:
-    complete
-    .rodata     start:0x020c2834 end:0x020c284c
-    .bss        start:0x020c4740 end:0x020c4744
-
 src/001_SceneInit/UnkStruct_027e0ce0_1C_001.cpp:
     .text       start:0x020bcce0 end:0x020bd554
     .data       start:0x020c2cb0 end:0x020c2cc0
@@ -205,10 +200,10 @@ src/001_SceneInit/Game/GameModeAdventure_001.cpp:
 src/001_SceneInit/code_020c099c.cpp:
     complete
     .text       start:0x020c09dc end:0x020c0a64
-    .bss        start:0x020c473c end:0x020c4740
     .init       start:0x020c2930 end:0x020c2940
     .ctor       start:0x020c2948 end:0x020c294c
     .data       start:0x020c3014 end:0x020c3020
+    .bss        start:0x020c473c end:0x020c4740
 
 libs/dsprot/src/dsprot_main.c:
     complete
@@ -244,6 +239,11 @@ libs/dsprot/src/encryptor_decryptor.s:
     complete
     .text       start:0x020c1a04 end:0x020c1a2c
     .ctor       start:0x020c2954 end:0x020c2958
+
+libs/dsprot/src/extra.c:
+    complete
+    .rodata     start:0x020c2834 end:0x020c284c
+    .bss        start:0x020c4740 end:0x020c4744
 
 libs/dsprot/src/mac_owner.c:
     complete

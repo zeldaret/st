@@ -51,7 +51,7 @@ from:0x02151184 kind:load to:0x02154088 module:overlay(85)
 from:0x02151188 kind:load to:0x0215423c module:overlay(85)
 from:0x0215118c kind:load to:0x02153e00 module:overlay(85)
 from:0x02151190 kind:load to:0x02153e10 module:overlay(85)
-from:0x02151194 kind:load to:0x020b1940 module:overlay(0) add:0x8
+from:0x02151194 kind:load to:0x020b1940 add:0x8 module:overlay(0)
 from:0x02151198 kind:load to:0x027e0130 module:dtcm
 from:0x0215119c kind:load to:0x0215402c module:overlay(85)
 from:0x021511ac kind:arm_call to:0x0207b6a0 module:overlay(0)

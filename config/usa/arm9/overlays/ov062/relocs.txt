@@ -637,7 +637,7 @@ from:0x0215be00 kind:arm_call to:0x0209cfc0 module:overlay(0)
 from:0x0215be28 kind:arm_call to:0x0207ec68 module:overlay(0)
 from:0x0215be30 kind:arm_call to:0x0207bff8 module:overlay(0)
 from:0x0215be44 kind:load to:0x02160730 module:overlay(62)
-from:0x0215be48 kind:load to:0x020b1940 module:overlay(0) add:0x8
+from:0x0215be48 kind:load to:0x020b1940 add:0x8 module:overlay(0)
 from:0x0215be4c kind:load to:0x0216050c module:overlay(62)
 from:0x0215be60 kind:arm_call to:0x0209d27c module:overlay(0)
 from:0x0215be84 kind:arm_call to:0x0200f05c module:main

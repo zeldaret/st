@@ -1400,7 +1400,7 @@ from:0x020d0888 kind:arm_call to:0x02030cd4 module:main
 from:0x020d089c kind:arm_call to:0x02030d30 module:main
 from:0x020d08c8 kind:arm_call_thumb to:0x020a0b38 module:overlay(0)
 from:0x020d08d0 kind:load to:0x020b6288 add:0x200 module:overlay(0)
-from:0x020d08d4 kind:load to:0x020b6288 add:0x23C module:overlay(0)
+from:0x020d08d4 kind:load to:0x020b6288 add:0x23c module:overlay(0)
 from:0x020d08d8 kind:load to:0x020b6288 module:overlay(0)
 from:0x020d0904 kind:arm_call_thumb to:0x020a0b0c module:overlay(0)
 from:0x020d092c kind:arm_call to:0x02013ecc module:main

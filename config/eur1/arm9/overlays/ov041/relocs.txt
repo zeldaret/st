@@ -1041,7 +1041,7 @@ from:0x0212c8b8 kind:load to:0x0212d600 module:overlay(41)
 from:0x0212c91c kind:arm_call to:0x01fff520 module:itcm
 from:0x0212c93c kind:arm_call to:0x0209d2f0 module:overlay(0)
 from:0x0212c970 kind:load to:0x027e09a4 module:dtcm
-from:0x0212c978 kind:load to:0x020b34f0 module:overlay(0) add:0x8
+from:0x0212c978 kind:load to:0x020b34f0 add:0x8 module:overlay(0)
 from:0x0212c97c kind:load to:0x027e0ce8 module:dtcm
 from:0x0212c98c kind:arm_call_thumb to:0x02057bd4 module:overlay(0)
 from:0x0212c994 kind:arm_call to:0x02011ff4 module:main

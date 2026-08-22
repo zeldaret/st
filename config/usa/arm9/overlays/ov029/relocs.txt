@@ -679,11 +679,11 @@ from:0x021462a8 kind:load to:0x02151f84 module:overlay(29)
 from:0x021462c4 kind:arm_call to:0x0210ba80 module:overlay(26)
 from:0x02146360 kind:load to:0x02151fa0 module:overlay(29)
 from:0x02146364 kind:load to:0x02153354 module:overlay(29)
-from:0x02146368 kind:load to:0x020b1940 module:overlay(0) add:0x8
+from:0x02146368 kind:load to:0x020b1940 add:0x8 module:overlay(0)
 from:0x02146374 kind:arm_call to:0x0210ba80 module:overlay(26)
 from:0x02146410 kind:load to:0x02151fa0 module:overlay(29)
 from:0x02146414 kind:load to:0x02153354 module:overlay(29)
-from:0x02146418 kind:load to:0x020b1940 module:overlay(0) add:0x8
+from:0x02146418 kind:load to:0x020b1940 add:0x8 module:overlay(0)
 from:0x02146424 kind:arm_call to:0x0210bb08 module:overlay(26)
 from:0x02146510 kind:arm_call to:0x021466c8 module:overlay(29)
 from:0x02146520 kind:load to:0x02049bc4 module:main

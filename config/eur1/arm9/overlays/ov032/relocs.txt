@@ -790,7 +790,7 @@ from:0x02120014 kind:arm_call to:0x01ffa06c module:itcm
 from:0x02120028 kind:load to:0x0212288c module:overlay(32)
 from:0x0212002c kind:load to:0x020b5d7c module:overlay(0)
 from:0x02120034 kind:load to:0x021220a0 module:overlay(32)
-from:0x02120038 kind:load to:0x020b19a0 module:overlay(0) add:0x8
+from:0x02120038 kind:load to:0x020b19a0 add:0x8 module:overlay(0)
 from:0x02120044 kind:arm_call to:0x0207b6f4 module:overlay(0)
 from:0x0212006c kind:arm_call to:0x021209f4 module:overlay(32)
 from:0x021200b0 kind:arm_call to:0x01ffa7a0 module:itcm

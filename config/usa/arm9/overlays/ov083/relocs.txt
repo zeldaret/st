@@ -783,7 +783,7 @@ from:0x0215a794 kind:load to:0x0215dd68 module:overlay(83)
 from:0x0215a798 kind:load to:0x0215e44c module:overlay(83)
 from:0x0215a79c kind:load to:0x0215dce4 module:overlay(83)
 from:0x0215a7a0 kind:load to:0x0215dcd4 module:overlay(83)
-from:0x0215a7a4 kind:load to:0x020b1940 module:overlay(0) add:0x8
+from:0x0215a7a4 kind:load to:0x020b1940 add:0x8 module:overlay(0)
 from:0x0215a7a8 kind:load to:0x0215e434 module:overlay(83)
 from:0x0215a7ac kind:load to:0x027e0130 module:dtcm
 from:0x0215a7b0 kind:load to:0x0204193c module:main

@@ -599,7 +599,7 @@ from:0x02135430 kind:arm_call to:0x0207ec68 module:overlay(0)
 from:0x02135484 kind:arm_call to:0x01ffa06c module:itcm
 from:0x02135498 kind:load to:0x02136ecc module:overlay(50)
 from:0x0213549c kind:load to:0x021371f8 module:overlay(50)
-from:0x021354a0 kind:load to:0x020b1940 module:overlay(0) add:0x8
+from:0x021354a0 kind:load to:0x020b1940 add:0x8 module:overlay(0)
 from:0x021354a4 kind:load to:0x02136ea4 module:overlay(50)
 from:0x021354b0 kind:arm_call to:0x0207b6a0 module:overlay(0)
 from:0x021354ec kind:arm_call_thumb to:0x01ffa1a0 module:itcm

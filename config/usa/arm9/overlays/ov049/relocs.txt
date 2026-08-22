@@ -120,7 +120,7 @@ from:0x02131574 kind:arm_call to:0x02097b98 module:overlay(0)
 from:0x021315b0 kind:arm_call to:0x0209860c module:overlay(0)
 from:0x021315bc kind:load to:0x02137454 module:overlay(49)
 from:0x021315c0 kind:load to:0x021380d8 module:overlay(49)
-from:0x021315c4 kind:load to:0x020b1940 module:overlay(0) add:0x8
+from:0x021315c4 kind:load to:0x020b1940 add:0x8 module:overlay(0)
 from:0x021315dc kind:arm_call to:0x021317c4 module:overlay(49)
 from:0x021315f8 kind:arm_call to:0x0213169c module:overlay(49)
 from:0x02131628 kind:arm_call to:0x020975d8 module:overlay(0)

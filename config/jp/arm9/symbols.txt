@@ -2417,9 +2417,9 @@ data_020449f4 kind:data(any) addr:0x020449f4
 data_02044a18 kind:data(any) addr:0x02044a18
 data_02044a24 kind:data(any) addr:0x02044a24
 data_02044a30 kind:data(any) addr:0x02044a30
-@171 kind:data(byte[0xb]) kind:data(any) addr:0x02044a50 local
-@172 kind:data(byte[0x2d]) kind:data(any) addr:0x02044a5c local
-@173 kind:data(byte[0x22]) kind:data(any) addr:0x02044a8c local
+@171 kind:data(any) addr:0x02044a50 local
+@172 kind:data(any) addr:0x02044a5c local
+@173 kind:data(any) addr:0x02044a8c local
 data_02044ab0 kind:data(any) addr:0x02044ab0
 data_02044ab8 kind:data(any) addr:0x02044ab8
 data_02044ac0 kind:data(any) addr:0x02044ac0

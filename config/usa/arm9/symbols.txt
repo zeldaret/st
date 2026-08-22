@@ -2383,9 +2383,9 @@ _ZZ17G3d_SBCRender_00CP16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043
 _ZZ17G3d_SBCRender_007P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043420
 _ZZ17G3d_SBCRender_008P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043468
 data_020434b0 kind:data(any) addr:0x020434b0
-@171 kind:data(byte[0xb]) addr:0x020434d0 local
-@172 kind:data(byte[0x2d]) addr:0x020434dc local
-@173 kind:data(byte[0x22]) addr:0x0204350c local
+@171 kind:data(byte[11]) addr:0x020434d0 local
+@172 kind:data(byte[45]) addr:0x020434dc local
+@173 kind:data(byte[34]) addr:0x0204350c local
 data_02043530 kind:data(any) addr:0x02043530
 data_02043538 kind:data(any) addr:0x02043538
 data_02043540 kind:data(any) addr:0x02043540

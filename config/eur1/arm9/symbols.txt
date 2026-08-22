@@ -2386,9 +2386,9 @@ data_02043400 kind:data(any) addr:0x02043400
 _ZZ17G3d_SBCRender_007P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043440
 _ZZ17G3d_SBCRender_008P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043488
 data_020434d0 kind:data(any) addr:0x020434d0
-@171 kind:data(byte[0xb]) addr:0x020434f0 local
-@172 kind:data(byte[0x2d]) addr:0x020434fc local
-@173 kind:data(byte[0x22]) addr:0x0204352c local
+@171 kind:data(byte[11]) addr:0x020434f0 local
+@172 kind:data(byte[45]) addr:0x020434fc local
+@173 kind:data(byte[34]) addr:0x0204352c local
 data_02043550 kind:data(any) addr:0x02043550
 data_02043558 kind:data(any) addr:0x02043558
 data_02043560 kind:data(any) addr:0x02043560

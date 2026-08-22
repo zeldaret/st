@@ -1057,7 +1057,7 @@ from:0x0212d8ec kind:arm_call to:0x0209cba0 module:overlay(0)
 from:0x0212d918 kind:load to:0x0212f470 module:overlay(40)
 from:0x0212d928 kind:arm_call to:0x0209d034 module:overlay(0)
 from:0x0212d954 kind:load to:0x0212f498 module:overlay(40)
-from:0x0212d958 kind:load to:0x020b19a0 module:overlay(0) add:0x8
+from:0x0212d958 kind:load to:0x020b19a0 add:0x8 module:overlay(0)
 from:0x0212d978 kind:arm_call to:0x0209d2f0 module:overlay(0)
 from:0x0212d994 kind:arm_call to:0x0209cd2c module:overlay(0)
 from:0x0212d9f4 kind:arm_call to:0x0209cd2c module:overlay(0)
