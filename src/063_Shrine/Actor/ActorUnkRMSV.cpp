@@ -10,7 +10,6 @@ extern char data_ov063_02162578[0x10]; // = "RMSV";
 extern char data_ov063_02162588[0x10]; // = "RMSV_wall";
 
 // Overlay 0
-extern "C" void func_ov000_02099ff8(unk32 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);
 extern "C" void func_ov000_02099e58(UnkStruct_ov063_021632e4 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);
 
 // Overlay 31

@@ -894,6 +894,10 @@ public:
             bool mUnk_04b;
             bool mUnk_05;
         };
+        struct {
+            unk16 mUnk_04h;
+            unk16 mUnk_06;
+        };
         unk32 mUnk_04;
     };
     /* 08 */

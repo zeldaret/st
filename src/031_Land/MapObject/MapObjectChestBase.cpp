@@ -200,7 +200,7 @@ void MapObjectChestBase::vfunc_0C() {
     this->vfunc_08();
 }
 
-unk32 MapObjectChestBase::vfunc_28() {
+unk32 MapObjectChestBase::vfunc_28(unk32 param1) {
     return this->func_ov031_021037d0();
 }
 

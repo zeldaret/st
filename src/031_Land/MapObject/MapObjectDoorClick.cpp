@@ -307,7 +307,7 @@ bool MapObjectDoorClick::func_ov031_020ffde4(void) {
     return false;
 }
 
-unk32 MapObjectDoorClick::vfunc_28(void) {
+unk32 MapObjectDoorClick::vfunc_28(unk32 param1) {
     switch (this->mState) {
         case MapObjDoorClickState_3:
         case MapObjDoorClickState_4:

@@ -11,7 +11,7 @@ public:
 
     /* 00 */ virtual bool vfunc_00();                                           // func_ov000_0209d780
     /* 24 */ virtual void vfunc_24(MapObject *param1, VecFx32 param2) override; // func_ov000_0209d8e8
-    /* 28 */ virtual unk32 vfunc_28() override;                                 // func_ov000_0209d9f8
+    /* 28 */ virtual unk32 vfunc_28(unk32 param1) override;                     // func_ov000_0209d9f8
     /* 30 */ virtual ~MapObjectPot_Base() = 0 override;
     /* 38 */ virtual void vfunc_38() override;             // func_ov000_0209d9ac
     /* 3C */ virtual bool vfunc_3C() override;             // func_ov000_0209db74

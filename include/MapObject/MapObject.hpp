@@ -94,6 +94,20 @@ public:
     /* 20 */
 };
 
+class MapObject_10_Derived1 : public MapObject_10 {
+public:
+    MapObject_10_Derived1() {}
+
+    /* 00 */ virtual void vfunc_00() override;
+    /* 04 */ virtual void vfunc_04() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C() override;
+    /* 10 */ virtual void vfunc_10(Cylinder *param1) override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1) override;
+    /* 1C */ virtual void vfunc_1C(VecFx32 *param1) override;
+};
+
 class MapObject_20 {
 public:
     /* 00 */ u16 mParams[4]; // parameters
@@ -148,7 +162,7 @@ public:
     /* 1C */ virtual bool vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3);
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24(MapObject *param1, VecFx32 param2);
-    /* 28 */ virtual unk32 vfunc_28();
+    /* 28 */ virtual unk32 vfunc_28(unk32 param1);
     /* 2C */ virtual bool vfunc_2C(VecFx32 *param1);
     /* 30 */ virtual ~MapObject();
     /* 38 */
