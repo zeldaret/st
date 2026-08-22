@@ -912,7 +912,7 @@ _ZN12GameModeBase8vfunc_1CEv kind:function(arm,size=0x4) addr:0x02018394
 _ZN12GameModeBase8vfunc_20Ev kind:function(arm,size=0x4) addr:0x02018398
 _ZN12GameModeBase8vfunc_24Ev kind:function(arm,size=0x8) addr:0x0201839c
 _ZN18UnkStruct_0204a0608vfunc_0CEv kind:function(thumb,size=0x14) addr:0x020183a4
-_ZN18UnkStruct_0204a06013func_020183b88Ev kind:function(thumb,size=0x8) addr:0x020183b8
+_ZN18UnkStruct_0204a06013func_020183b8Ev kind:function(thumb,size=0x8) addr:0x020183b8
 _ZN18UnkStruct_0204a06013func_020183c0Ev kind:function(thumb,size=0x14) addr:0x020183c0
 _ZN18UnkStruct_0204a06013func_020183d4EbPFP12GameModeBasevEi kind:function(thumb,size=0x50) addr:0x020183d4
 _ZN18UnkStruct_0204a06013func_02018424Ev kind:function(thumb,size=0x14) addr:0x02018424
@@ -2338,9 +2338,9 @@ data_02042fd0 kind:data(any) addr:0x02042fd0
 data_02042ff4 kind:data(any) addr:0x02042ff4
 data_02043034 kind:data(any) addr:0x02043034
 __ctype_mapC kind:data(any) addr:0x02043088
-dp_h kind:data(any) addr:0x02043188
-bp kind:data(any) addr:0x02043198
-dp_l kind:data(any) addr:0x020431a8
+dp_h kind:data(any) addr:0x02043188 local
+bp kind:data(any) addr:0x02043198 local
+dp_l kind:data(any) addr:0x020431a8 local
 data_020431b8 kind:data(any) addr:0x020431b8
 .p__sinit_0203d824 kind:data(word) addr:0x020431c0
 .p__sinit_0203d840 kind:data(word) addr:0x020431c4
@@ -2386,9 +2386,9 @@ data_02043400 kind:data(any) addr:0x02043400
 _ZZ17G3d_SBCRender_007P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043440
 _ZZ17G3d_SBCRender_008P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043488
 data_020434d0 kind:data(any) addr:0x020434d0
-@171 kind:data(any) addr:0x020434f0
-@172 kind:data(any) addr:0x020434fc
-@173 kind:data(any) addr:0x0204352c
+@171 kind:data(byte[0xb]) addr:0x020434f0 local
+@172 kind:data(byte[0x2d]) addr:0x020434fc local
+@173 kind:data(byte[0x22]) addr:0x0204352c local
 data_02043550 kind:data(any) addr:0x02043550
 data_02043558 kind:data(any) addr:0x02043558
 data_02043560 kind:data(any) addr:0x02043560

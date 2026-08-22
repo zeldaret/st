@@ -741,16 +741,16 @@ data_ov024_020d768c kind:data(any) addr:0x020d768c
 data_ov024_020d7690 kind:data(any) addr:0x020d7690
 data_ov024_020d7698 kind:data(any) addr:0x020d7698
 data_ov024_020d76a8 kind:data(any) addr:0x020d76a8
-data_ov024_020d76b8 kind:data(any) addr:0x020d76b8 ambiguous
+data_ov024_020d7598 kind:data(any) addr:0x020d76b8
 data_ov024_020d76c4 kind:data(any) addr:0x020d76c4
 data_ov024_020d76c8 kind:data(any) addr:0x020d76c8
 data_ov024_020d76ca kind:data(any) addr:0x020d76ca
-data_ov024_020d7745 kind:data(any) addr:0x020d7745
+data_ov024_020d7624 kind:data(any) addr:0x020d7744
 data_ov024_020d774c kind:data(any) addr:0x020d774c
 data_ov024_020d775c kind:data(any) addr:0x020d775c
 data_ov024_020d776c kind:data(any) addr:0x020d776c
 data_ov024_020d777c kind:data(any) addr:0x020d777c
-data_ov024_020d778c kind:data(any) addr:0x020d778c
+data_ov024_020d766c kind:data(any) addr:0x020d778c
 data_ov024_020d779c kind:data(any) addr:0x020d779c
 data_ov024_020d77a4 kind:data(any) addr:0x020d77a4
 data_ov024_020d77e0 kind:data(any) addr:0x020d77e0
@@ -776,7 +776,7 @@ __sinit_ov024_020d7c04 kind:function(arm,size=0x50) addr:0x020d7c04
 .p__sinit_ov024_020d7bd4 kind:data(word) addr:0x020d7c64
 .p__sinit_ov024_020d7bec kind:data(word) addr:0x020d7c68
 .p__sinit_ov024_020d7c04 kind:data(word) addr:0x020d7c6c
-data_ov024_020d7c88 kind:data(any) addr:0x020d7c88
+_ZTV17GameModeAdventure kind:data(any) addr:0x020d7c80
 data_ov024_020d7cb8 kind:data(any) addr:0x020d7cb8
 data_ov024_020d7cf0 kind:data(any) addr:0x020d7cf0
 data_ov024_020d7d14 kind:data(any) addr:0x020d7d14
@@ -892,7 +892,7 @@ data_ov024_020d8680 kind:data(any) addr:0x020d8680
 data_ov024_020d8688 kind:data(any) addr:0x020d8688
 data_ov024_020d8690 kind:data(any) addr:0x020d8690
 data_ov024_020d8698 kind:data(any) addr:0x020d8698
-data_ov024_020d86a0 kind:data(any) addr:0x020d86a0
+data_ov024_020d86a0_eur1 kind:data(any) addr:0x020d86a0
 data_ov024_020d86a8 kind:data(any) addr:0x020d86a8
 data_ov024_020d86b0 kind:data(any) addr:0x020d86b0
 data_ov024_020d86bc kind:data(any) addr:0x020d86bc
@@ -900,13 +900,13 @@ data_ov024_020d86c8 kind:data(any) addr:0x020d86c8
 data_ov024_020d86dc kind:data(any) addr:0x020d86dc
 data_ov024_020d86fc kind:data(any) addr:0x020d86fc
 data_ov024_020d8720 kind:data(any) addr:0x020d8720
-data_ov024_020d8780 kind:bss addr:0x020d8780
+data_ov024_020d8660 kind:bss addr:0x020d8780
 data_ov024_020d8788 kind:bss addr:0x020d8788
 data_ov024_020d8794 kind:bss addr:0x020d8794
-data_ov024_020d87b4 kind:bss addr:0x020d87b4
-data_ov024_020d87b8 kind:bss addr:0x020d87b8
+data_ov024_020d8694 kind:bss addr:0x020d87b4
+gpUICounterManager kind:bss addr:0x020d87b8
 data_ov024_020d87bc kind:bss addr:0x020d87bc
-data_ov024_020d87c0 kind:bss addr:0x020d87c0
+data_ov024_020d86a0 kind:bss addr:0x020d87c0
 data_ov024_020d87c4 kind:bss addr:0x020d87c4
 data_ov024_020d87c8 kind:bss addr:0x020d87c8
 data_ov024_020d87cc kind:bss addr:0x020d87cc

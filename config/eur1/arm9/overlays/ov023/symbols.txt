@@ -221,8 +221,8 @@ data_ov023_020f1b68 kind:data(any) addr:0x020f1b68
 data_ov023_020f1b70 kind:data(any) addr:0x020f1b70
 data_ov023_020f1b78 kind:data(any) addr:0x020f1b78
 data_ov023_020f1b8c kind:data(any) addr:0x020f1b8c
-data_ov023_020f1b9c kind:data(any) addr:0x020f1b9c ambiguous
-data_ov023_020f1bb4 kind:data(any) addr:0x020f1bb4 ambiguous
+_ZTV33UnkStruct_ov001_020c46f4_Derived1 kind:data(any) addr:0x020f1b94 ambiguous
+_ZTV33UnkStruct_ov001_020c46f4_Derived2 kind:data(any) addr:0x020f1bac ambiguous
 data_ov023_020f1bc4 kind:data(any) addr:0x020f1bc4
 data_ov023_020f1bc8 kind:data(any) addr:0x020f1bc8
 data_ov023_020f1c00 kind:bss addr:0x020f1c00

@@ -180,6 +180,7 @@ __sinit_ov017_020c3f08 kind:function(arm,size=0x18) addr:0x020c3f08
 .p__sinit_ov017_020c3f08 kind:data(word) addr:0x020c3f28
 data_ov017_020c3f48 kind:data(any) addr:0x020c3f48
 data_ov017_020c3f54 kind:data(any) addr:0x020c3f54
+_ZTV21UnkStruct_027e0cec_00 kind:data(any) addr:0x020c3f70
 data_ov017_020c3f7c kind:data(any) addr:0x020c3f7c
 data_ov017_020c3f80 kind:data(any) addr:0x020c3f80
 data_ov017_020c3fa0 kind:bss addr:0x020c3fa0

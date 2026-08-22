@@ -2923,7 +2923,7 @@ data_ov026_02138e20 kind:bss addr:0x02138e20
 data_ov026_02138e24 kind:bss addr:0x02138e24
 data_ov026_02138e28 kind:bss addr:0x02138e28
 data_ov026_02138e2c kind:bss addr:0x02138e2c
-data_ov026_02138e30 kind:bss addr:0x02138e30
+data_ov026_02138d10 kind:bss addr:0x02138e30
 data_ov026_02138e34 kind:bss addr:0x02138e34
 data_ov026_02138e38 kind:bss addr:0x02138e38
 data_ov026_02138e3c kind:bss addr:0x02138e3c

@@ -653,14 +653,14 @@ data_ov084_021644f0 kind:bss addr:0x021644f0
 data_ov084_021645a8 kind:bss addr:0x021645a8
 data_ov084_02164680 kind:bss addr:0x02164680
 data_ov084_02164684 kind:bss addr:0x02164684
-data_ov084_02164690 kind:bss addr:0x02164690
+data_ov084_02164690_eur1 kind:bss addr:0x02164690
 data_ov084_021646b0 kind:bss addr:0x021646b0
 data_ov084_021646b4 kind:bss addr:0x021646b4
 data_ov084_021646c0 kind:bss addr:0x021646c0
 data_ov084_02164728 kind:bss addr:0x02164728
 data_ov084_0216472c kind:bss addr:0x0216472c
 data_ov084_02164738 kind:bss addr:0x02164738
-data_ov084_02164810 kind:bss addr:0x02164810
+data_ov084_02164690 kind:bss addr:0x02164810
 data_ov084_02164814 kind:bss addr:0x02164814
 data_ov084_02164818 kind:bss addr:0x02164818
 data_ov084_02164824 kind:bss addr:0x02164824

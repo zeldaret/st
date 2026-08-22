@@ -884,7 +884,7 @@ data_ov020_020e84a8 kind:bss addr:0x020e84a8 ambiguous
 data_ov020_020e8534 kind:bss addr:0x020e8534 ambiguous
 data_ov020_020e8578 kind:bss addr:0x020e8578 ambiguous
 data_ov020_020e8580 kind:bss addr:0x020e8580
-data_ov020_020e8584 kind:bss addr:0x020e8584
+data_ov020_020e8544 kind:bss addr:0x020e8584
 data_ov020_020e8588 kind:bss addr:0x020e8588 ambiguous
 data_ov020_020e8590 kind:bss addr:0x020e8590
 data_ov020_020e859c kind:bss addr:0x020e859c
