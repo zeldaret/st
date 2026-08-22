@@ -69,7 +69,7 @@ from:0x02183934 kind:load to:0x027e0cd8 module:dtcm
 from:0x02183938 kind:load to:0x02184890 module:overlay(102)
 from:0x0218393c kind:load to:0x021189b0 module:overlay(31)
 from:0x02183940 kind:load to:0x021848d0 module:overlay(102)
-from:0x02183944 kind:load to:0x020b1948 module:overlay(0)
+from:0x02183944 kind:load to:0x020b1940 module:overlay(0) add:0x8
 from:0x0218398c kind:arm_call to:0x021835a4 module:overlay(102)
 from:0x02183ad0 kind:arm_call to:0x0207e220 module:overlay(0)
 from:0x02183ae8 kind:arm_call to:0x0207e234 module:overlay(0)

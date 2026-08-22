@@ -73,7 +73,7 @@ from:0x020c4d24 kind:arm_call_thumb to:0x02015664 module:main
 from:0x020c4d2c kind:arm_call_thumb to:0x0201549c module:main
 from:0x020c4d40 kind:arm_call to:0x0201bb7c module:main
 from:0x020c4d4c kind:arm_call to:0x0201b980 module:main
-from:0x020c4d5c kind:load to:0x020c5b08 module:overlay(18)
+from:0x020c4d5c kind:load to:0x020c5b00 module:overlay(18) add:0x8
 from:0x020c4d60 kind:load to:0x0204a0f0 module:main
 from:0x020c4d64 kind:load to:0x020c5ba0 module:overlay(18)
 from:0x020c4d68 kind:load to:0x020c5b30 module:overlay(18)

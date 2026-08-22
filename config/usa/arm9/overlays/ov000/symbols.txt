@@ -3179,8 +3179,8 @@ data_ov000_020ab050 kind:data(any) addr:0x020ab050
 data_ov000_020ab070 kind:data(any) addr:0x020ab070
 data_ov000_020ab0bc kind:data(any) addr:0x020ab09c
 data_ov000_020ab118 kind:data(any) addr:0x020ab0f8
-data_ov000_020ab18c kind:data(any) addr:0x020ab18c
-data_ov000_020ab2f4 kind:data(any) addr:0x020ab2f4
+data_ov000_020ab1ac kind:data(any) addr:0x020ab18c
+data_ov000_020ab314 kind:data(any) addr:0x020ab2f4
 data_ov000_020ab2f8 kind:data(any) addr:0x020ab2f8
 data_ov000_020ab2fc kind:data(any) addr:0x020ab2fc
 data_ov000_020ab300 kind:data(any) addr:0x020ab300
@@ -3198,7 +3198,7 @@ data_ov000_020ab3b0 kind:data(any) addr:0x020ab3b0
 data_ov000_020ab3b4 kind:data(any) addr:0x020ab3b4
 data_ov000_020ab3b8 kind:data(any) addr:0x020ab3b8
 data_ov000_020ab3cc kind:data(any) addr:0x020ab3cc
-data_ov000_020ab4bc kind:data(any) addr:0x020ab4bc
+data_ov000_020ab4dc kind:data(any) addr:0x020ab4bc
 data_ov000_020ab53c kind:data(any) addr:0x020ab53c
 data_ov000_020ab5bc kind:data(any) addr:0x020ab5bc
 data_ov000_020ab690 kind:data(any) addr:0x020ab690
@@ -3267,7 +3267,7 @@ data_ov000_020af4b8 kind:data(any) addr:0x020af4b8
 data_ov000_020af4cc kind:data(any) addr:0x020af4cc
 data_ov000_020af550 kind:data(any) addr:0x020af530
 data_ov000_020af560 kind:data(any) addr:0x020af540
-data_ov000_020af574 kind:data(any) addr:0x020af554
+data_ov000_020af574 kind:data(any) addr:0x020af554 local
 data_ov000_020af560_usa kind:data(any) addr:0x020af560
 data_ov000_020af56c kind:data(any) addr:0x020af56c
 data_ov000_020af740 kind:data(any) addr:0x020af740
@@ -3282,7 +3282,7 @@ data_ov000_020afc48 kind:data(any) addr:0x020afc28
 data_ov000_020afce8 kind:data(any) addr:0x020afce8
 data_ov000_020afcec kind:data(any) addr:0x020afcec
 data_ov000_020afcf0 kind:data(any) addr:0x020afcf0
-data_ov000_020afcf4 kind:data(any) addr:0x020afcf4
+data_ov000_020afd14 kind:data(any) addr:0x020afcf4
 data_ov000_020afcf8 kind:data(any) addr:0x020afcf8
 data_ov000_020afcfc kind:data(any) addr:0x020afcfc
 data_ov000_020afd0c kind:data(any) addr:0x020afd0c
@@ -3347,13 +3347,13 @@ __sinit_ov000_020b044c kind:function(arm,size=0x2f4) addr:0x020b044c
 __sinit_ov000_020b0740 kind:function(arm,size=0x14) addr:0x020b0740
 __sinit_ov000_020b0754 kind:function(arm,size=0x34) addr:0x020b0754
 __sinit_ov000_020b0788 kind:function(arm,size=0x40) addr:0x020b0788
-__sinit_ov000_020b07c8 kind:function(arm,size=0x50) addr:0x020b07c8
-__sinit_ov000_020b0818 kind:function(arm,size=0x50) addr:0x020b0818
-__sinit_ov000_020b0868 kind:function(arm,size=0x50) addr:0x020b0868
-__sinit_ov000_020b08b8 kind:function(arm,size=0x50) addr:0x020b08b8
-__sinit_ov000_020b0908 kind:function(arm,size=0x28) addr:0x020b0908
-__sinit_ov000_020b0930 kind:function(arm,size=0x5c) addr:0x020b0930
-__sinit_ov000_020b098c kind:function(arm,size=0x50) addr:0x020b098c
+__sinit_ActorUnkSWOB.cpp kind:function(arm,size=0x50) addr:0x020b07c8 local
+__sinit_ActorUnkSWTM.cpp kind:function(arm,size=0x50) addr:0x020b0818 local
+__sinit_ActorEventIcon.cpp kind:function(arm,size=0x50) addr:0x020b0868 local
+__sinit_ActorUnkEFIK.cpp kind:function(arm,size=0x50) addr:0x020b08b8 local
+__sinit_MapObjectProfile.cpp kind:function(arm,size=0x28) addr:0x020b0908 local
+__sinit_MapObjectSwitchStep.cpp kind:function(arm,size=0x5c) addr:0x020b0930 local
+__sinit_MapObjectMiniBlocks.cpp kind:function(arm,size=0x50) addr:0x020b098c local
 __sinit_ov000_020b09dc kind:function(arm,size=0x9e8) addr:0x020b09dc
 __sinit_ov000_020b13c4 kind:function(arm,size=0x408) addr:0x020b13c4
 __sinit_ov000_020b17cc kind:function(arm,size=0x34) addr:0x020b17cc
@@ -3382,13 +3382,13 @@ __sinit_ov000_020b1880 kind:function(arm,size=0x14) addr:0x020b1880
 .p__sinit_ov000_020b0740 kind:data(word) addr:0x020b18dc
 .p__sinit_ov000_020b0754 kind:data(word) addr:0x020b18e0
 .p__sinit_ov000_020b0788 kind:data(word) addr:0x020b18e4
-.p__sinit_ov000_020b07c8 kind:data(word) addr:0x020b18e8
-.p__sinit_ov000_020b0818 kind:data(word) addr:0x020b18ec
-.p__sinit_ov000_020b0868 kind:data(word) addr:0x020b18f0
-.p__sinit_ov000_020b08b8 kind:data(word) addr:0x020b18f4
-.p__sinit_ov000_020b0908 kind:data(word) addr:0x020b18f8
-.p__sinit_ov000_020b0930 kind:data(word) addr:0x020b18fc
-.p__sinit_ov000_020b098c kind:data(word) addr:0x020b1900
+.p__sinit_ActorUnkSWOB.cpp kind:data(word) addr:0x020b18e8 local
+.p__sinit_ActorUnkSWTM.cpp kind:data(word) addr:0x020b18ec local
+.p__sinit_ActorEventIcon.cpp kind:data(word) addr:0x020b18f0 local
+.p__sinit_ActorUnkEFIK.cpp kind:data(word) addr:0x020b18f4 local
+.p__sinit_MapObjectProfile.cpp kind:data(word) addr:0x020b18f8 local
+.p__sinit_MapObjectSwitchStep.cpp kind:data(word) addr:0x020b18fc local
+.p__sinit_MapObjectMiniBlocks.cpp kind:data(word) addr:0x020b1900 local
 .p__sinit_ov000_020b09dc kind:data(word) addr:0x020b1904
 .p__sinit_ov000_020b13c4 kind:data(word) addr:0x020b1908
 .p__sinit_ov000_020b17cc kind:data(word) addr:0x020b190c
@@ -3396,7 +3396,7 @@ __sinit_ov000_020b1880 kind:function(arm,size=0x14) addr:0x020b1880
 .p__sinit_ov000_020b181c kind:data(word) addr:0x020b1914
 .p__sinit_ov000_020b1858 kind:data(word) addr:0x020b1918
 .p__sinit_ov000_020b1880 kind:data(word) addr:0x020b191c
-data_ov000_020b1948 kind:data(any) addr:0x020b1948
+_ZTV19UnkSystem6_Derived2 kind:data(any) addr:0x020b1940
 data_ov000_020b196c kind:data(any) addr:0x020b196c
 data_ov000_020b1988 kind:data(any) addr:0x020b1988
 data_ov000_020b1990 kind:data(any) addr:0x020b1990
@@ -3447,7 +3447,7 @@ data_ov000_020b1ca4 kind:data(any) addr:0x020b1c84
 data_ov000_020b1cb8 kind:data(any) addr:0x020b1c98
 data_ov000_020b1cec kind:data(any) addr:0x020b1ccc
 data_ov000_020b1cfc kind:data(any) addr:0x020b1cdc
-data_ov000_020b1d0c kind:data(any) addr:0x020b1cf4
+_ZTV19data_ov000_020b1d0c kind:data(any) addr:0x020b1cec
 data_ov000_020b1d5c kind:data(any) addr:0x020b1d3c
 data_ov000_020b1d74 kind:data(any) addr:0x020b1d54
 data_ov000_020b1db8 kind:data(any) addr:0x020b1db8
@@ -3508,21 +3508,21 @@ data_ov000_020b2224 kind:data(any) addr:0x020b2224
 data_ov000_020b2264 kind:data(any) addr:0x020b2244
 data_ov000_020b2270 kind:data(any) addr:0x020b2270
 data_ov000_020b22a8 kind:data(any) addr:0x020b2288
-data_ov000_020b22a0 kind:data(any) addr:0x020b22a0
+_ZTV21UnkStruct_027e09b8_04 kind:data(any) addr:0x020b2298
 data_ov000_020b22ec kind:data(any) addr:0x020b22cc
 data_ov000_020b2314 kind:data(any) addr:0x020b22fc
-data_ov000_020b232c kind:data(any) addr:0x020b232c
+_ZTV21UnkStruct_027e09b8_0C kind:data(any) addr:0x020b2324
 data_ov000_020b2358 kind:data(any) addr:0x020b2358
 data_ov000_020b2364 kind:data(any) addr:0x020b2364
 data_ov000_020b2398 kind:data(any) addr:0x020b2380
 data_ov000_020b23ac kind:data(any) addr:0x020b23ac
 data_ov000_020b2430 kind:data(any) addr:0x020b2430
 data_ov000_020b2448 kind:data(any) addr:0x020b2448
-data_ov000_020b2458 kind:data(any) addr:0x020b2458
+_ZTV18UnkStruct_027e09bc kind:data(any) addr:0x020b2450
 data_ov000_020b2480 kind:data(any) addr:0x020b2468
 data_ov000_020b247c kind:data(any) addr:0x020b247c
 data_ov000_020b24b4 kind:data(any) addr:0x020b2494
-data_ov000_020b24ac kind:data(any) addr:0x020b24ac
+_ZTV10UnkSystem9 kind:data(any) addr:0x020b24a4
 data_ov000_020b24b8 kind:data(any) addr:0x020b24b8
 data_ov000_020b24e4 kind:data(any) addr:0x020b24e4
 data_ov000_020b2508 kind:data(any) addr:0x020b2508
@@ -3551,7 +3551,7 @@ data_ov000_020b28c0 kind:data(any) addr:0x020b28c0
 data_ov000_020b28f8 kind:data(any) addr:0x020b28d8
 data_ov000_020b290c kind:data(any) addr:0x020b28ec
 data_ov000_020b2900 kind:data(any) addr:0x020b2900
-data_ov000_020b2920 kind:data(any) addr:0x020b2920
+_ZTV10UnkSystem8 kind:data(any) addr:0x020b2918
 data_ov000_020b292c kind:data(any) addr:0x020b292c
 data_ov000_020b2934 kind:data(any) addr:0x020b2934
 data_ov000_020b2944 kind:data(any) addr:0x020b2944
@@ -3582,9 +3582,9 @@ data_ov000_020b2af0 kind:data(any) addr:0x020b2af0
 data_ov000_020b2b1c kind:data(any) addr:0x020b2afc
 data_ov000_020b2b08 kind:data(any) addr:0x020b2b08
 data_ov000_020b2b2c kind:data(any) addr:0x020b2b0c
-data_ov000_020b2b18 kind:data(any) addr:0x020b2b18
+_ZTV21UnkStruct_027e0ce0_0C kind:data(any) addr:0x020b2b10
 data_ov000_020b2b24 kind:data(any) addr:0x020b2b24
-data_ov000_020b2b50 kind:data(any) addr:0x020b2b50
+_ZTV20ModelRender_Derived4 kind:data(any) addr:0x020b2b48
 data_ov000_020b2b7c kind:data(any) addr:0x020b2b7c
 data_ov000_020b2b80 kind:data(any) addr:0x020b2b80
 data_ov000_020b2b90 kind:data(any) addr:0x020b2b90
@@ -3655,7 +3655,7 @@ data_ov000_020b2f9c kind:data(any) addr:0x020b2f9c
 data_ov000_020b2fbc kind:data(any) addr:0x020b2fbc
 data_ov000_020b2fe8 kind:data(any) addr:0x020b2fc8
 data_ov000_020b2fd4 kind:data(any) addr:0x020b2fd4
-data_ov000_020b2fe0 kind:data(any) addr:0x020b2fe0
+data_ov000_020b3000 kind:data(any) addr:0x020b2fe0
 data_ov000_020b2fec kind:data(any) addr:0x020b2fec
 data_ov000_020b2ff8 kind:data(any) addr:0x020b2ff8
 data_ov000_020b303c kind:data(any) addr:0x020b301c
@@ -3691,9 +3691,9 @@ _ZTV25MapObjectProfile_Derived2 kind:data(any) addr:0x020b34e0
 _ZTV16MapObjectProfile kind:data(any) addr:0x020b34fc
 _ZTV25MapObjectProfile_Derived1 kind:data(any) addr:0x020b3518
 _ZTV28MapObjectProfile_Derived2_20 kind:data(any) addr:0x020b3540
-@1608 kind:data(any) addr:0x020b3550
-@1626 kind:data(any) addr:0x020b3558
-@1627 kind:data(any) addr:0x020b3560
+@1608 kind:data(any) addr:0x020b3550 local
+@1626 kind:data(any) addr:0x020b3558 local
+@1627 kind:data(any) addr:0x020b3560 local
 _ZTV9MapObject kind:data(any) addr:0x020b3568
 _ZTV19data_ov000_020b35d0 kind:data(any) addr:0x020b35a8
 data_ov000_020b3610 kind:data(any) addr:0x020b3610
@@ -3937,7 +3937,7 @@ data_ov000_020b4918 kind:data(any) addr:0x020b4918
 data_ov000_020b497c kind:data(any) addr:0x020b495c
 data_ov000_020b4998 kind:data(any) addr:0x020b4998
 data_ov000_020b49d0 kind:data(any) addr:0x020b49b0
-data_ov000_020b49d0 kind:data(any) addr:0x020b49d0
+data_ov000_020b49d0_usa kind:data(any) addr:0x020b49d0
 data_ov000_020b49dc kind:data(any) addr:0x020b49dc
 data_ov000_020b4a28 kind:data(any) addr:0x020b4a28
 data_ov000_020b4a50 kind:data(any) addr:0x020b4a38
@@ -3995,7 +3995,7 @@ data_ov000_020b4cf8 kind:data(any) addr:0x020b4cf8
 data_ov000_020b4d00 kind:data(any) addr:0x020b4d00
 data_ov000_020b4d28 kind:data(any) addr:0x020b4d08
 data_ov000_020b4d1c kind:data(any) addr:0x020b4d1c
-data_ov000_020b4d28 kind:data(any) addr:0x020b4d28
+data_ov000_020b4d28_usa kind:data(any) addr:0x020b4d28
 data_ov000_020b4d34 kind:data(any) addr:0x020b4d34
 data_ov000_020b4d38 kind:data(any) addr:0x020b4d38
 data_ov000_020b4d44 kind:data(any) addr:0x020b4d44
@@ -4011,7 +4011,7 @@ data_ov000_020b4eb4 kind:bss addr:0x020b4eb4
 data_ov000_020b4ec0 kind:bss addr:0x020b4ec0
 data_ov000_020b4ec4 kind:bss addr:0x020b4ec4
 data_ov000_020b4ec8 kind:bss addr:0x020b4ec8
-data_ov000_020b4ecc kind:bss addr:0x020b4ecc
+data_ov000_020b4eec kind:bss addr:0x020b4ecc
 data_ov000_020b4f50 kind:bss addr:0x020b4f50
 data_ov000_020b4f54 kind:bss addr:0x020b4f54
 data_ov000_020b4f58 kind:bss addr:0x020b4f58
@@ -4046,28 +4046,28 @@ data_ov000_020b5370 kind:bss addr:0x020b5370
 data_ov000_020b5378 kind:bss addr:0x020b5378
 data_ov000_020b539c_eur kind:bss addr:0x020b537c
 data_ov000_020b53d0 kind:bss addr:0x020b53b0
-data_ov000_020b5bdc kind:bss addr:0x020b5bdc
-data_ov000_020b5be0 kind:bss addr:0x020b5be0
-data_ov000_020b5bec kind:bss addr:0x020b5bec
+_ZGVN15ProfileInstanceI19ActorProfileUnkSWOBE8sProfileE kind:bss addr:0x020b5bdc
+@5649 kind:bss addr:0x020b5be0 local
+_ZN15ProfileInstanceI19ActorProfileUnkSWOBE8sProfileE kind:bss addr:0x020b5bec
 data_ov000_020b5c28 kind:bss addr:0x020b5c28
 data_ov000_020b5c2c kind:bss addr:0x020b5c2c
 data_ov000_020b5c38 kind:bss addr:0x020b5c38
 data_ov000_020b5c74 kind:bss addr:0x020b5c74
-data_ov000_020b5c78 kind:bss addr:0x020b5c78
-data_ov000_020b5c7c kind:bss addr:0x020b5c7c
-data_ov000_020b5c88 kind:bss addr:0x020b5c88
-data_ov000_020b5cc4 kind:bss addr:0x020b5cc4
-data_ov000_020b5cc8 kind:bss addr:0x020b5cc8
-data_ov000_020b5cd4 kind:bss addr:0x020b5cd4
-data_ov000_020b5d10 kind:bss addr:0x020b5d10
+_ZGVN15ProfileInstanceI21ActorProfileEventIconE8sProfileE kind:bss addr:0x020b5c78
+@3699 kind:bss addr:0x020b5c7c local
+_ZN15ProfileInstanceI21ActorProfileEventIconE8sProfileE kind:bss addr:0x020b5c88
+_ZGVN15ProfileInstanceI19ActorProfileUnkEFIKE8sProfileE kind:bss addr:0x020b5cc4
+@5745 kind:bss addr:0x020b5cc8 local
+_ZN15ProfileInstanceI19ActorProfileUnkEFIKE8sProfileE kind:bss addr:0x020b5cd4
+_ZGVN33UnkStruct_ov000_020b5d34_InstanceI24UnkStruct_ov000_020b5d34E19data_ov000_020b5d34E kind:bss addr:0x020b5d10
 _ZN33UnkStruct_ov000_020b5d34_InstanceI24UnkStruct_ov000_020b5d34E19data_ov000_020b5d34E kind:bss addr:0x020b5d14
 data_ov000_020b5d3c kind:bss addr:0x020b5d1c
 data_ov000_020b60f4 kind:bss addr:0x020b60f4
 MapObjectSwitchStep_data_020b6118 kind:bss addr:0x020b60f8
 data_ov000_020b6104 kind:bss addr:0x020b6104
 _ZN15ProfileInstanceI26MapObjectProfileSwitchStepE8sProfileE kind:bss addr:0x020b6110
-data_ov000_020b6208 kind:bss addr:0x020b6208
-data_ov000_020b620c kind:bss addr:0x020b620c
+_ZGVN15ProfileInstanceI26MapObjectProfileMiniBlocksE8sProfileE kind:bss addr:0x020b6208
+@5493 kind:bss addr:0x020b620c local
 _ZN15ProfileInstanceI26MapObjectProfileMiniBlocksE8sProfileE kind:bss addr:0x020b6218
 data_ov000_020b6280 kind:bss addr:0x020b6280
 data_ov000_020b6284 kind:bss addr:0x020b6284

@@ -2338,9 +2338,9 @@ data_02042fd0 kind:data(any) addr:0x02042fa8
 data_02042fcc kind:data(any) addr:0x02042fcc
 data_0204300c kind:data(any) addr:0x0204300c
 __ctype_mapC kind:data(any) addr:0x02043060
-dp_h kind:data(any) addr:0x02043160
-bp kind:data(any) addr:0x02043170
-dp_l kind:data(any) addr:0x02043180
+dp_h kind:data(any) addr:0x02043160 local
+bp kind:data(any) addr:0x02043170 local
+dp_l kind:data(any) addr:0x02043180 local
 data_02043190 kind:data(any) addr:0x02043190
 .p__sinit_0203d7fc kind:data(word) addr:0x02043198
 .p__sinit_0203d818 kind:data(word) addr:0x0204319c
@@ -2380,15 +2380,12 @@ data_0204337c kind:data(any) addr:0x0204337c
 data_02043380 kind:data(any) addr:0x02043380
 data_02043384 kind:data(any) addr:0x02043384
 _ZZ17G3d_SBCRender_00CP16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x020433d0
-data_020433f4 kind:data(any) addr:0x020433d4
-data_020433fc kind:data(any) addr:0x020433dc
-data_02043400 kind:data(any) addr:0x020433e0
 _ZZ17G3d_SBCRender_007P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043420
 _ZZ17G3d_SBCRender_008P16G3d_RenderState_jE8funcArgs kind:data(any) addr:0x02043468
 data_020434b0 kind:data(any) addr:0x020434b0
-@171 kind:data(any) addr:0x020434d0
-@172 kind:data(any) addr:0x020434dc
-@173 kind:data(any) addr:0x0204350c
+@171 kind:data(byte[0xb]) addr:0x020434d0 local
+@172 kind:data(byte[0x2d]) addr:0x020434dc local
+@173 kind:data(byte[0x22]) addr:0x0204350c local
 data_02043530 kind:data(any) addr:0x02043530
 data_02043538 kind:data(any) addr:0x02043538
 data_02043540 kind:data(any) addr:0x02043540
@@ -2773,7 +2770,7 @@ data_02049b5c kind:bss addr:0x02049b5c
 data_02049b60 kind:bss addr:0x02049b60
 data_02049ba0 kind:bss addr:0x02049b80
 data_02049b88 kind:bss addr:0x02049b88
-data_02049b8c kind:bss addr:0x02049b8c
+data_02049bac kind:bss addr:0x02049b8c
 data_02049bb0 kind:bss addr:0x02049bb0
 data_02049bd4 kind:bss addr:0x02049bb4
 data_02049be0 kind:bss addr:0x02049bbc
@@ -2789,7 +2786,6 @@ data_0204a060 kind:bss addr:0x0204a040
 data_0204a088 kind:bss addr:0x0204a068
 data_0204a070 kind:bss addr:0x0204a070
 data_0204a110 kind:bss addr:0x0204a0f0
-data_0204a100 kind:bss addr:0x0204a100
 data_0204a460 kind:bss addr:0x0204a460
 data_0204adf0 kind:bss addr:0x0204adf0
 data_0204ae70 kind:bss addr:0x0204ae70
