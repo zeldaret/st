@@ -670,7 +670,7 @@ from:0x020ef194 kind:arm_call_thumb to:0x020a0a70 module:overlay(0)
 from:0x020ef198 kind:arm_call to:0x02030cd4 module:main
 from:0x020ef1b8 kind:arm_call to:0x02030d30 module:main
 from:0x020ef1c0 kind:arm_call_thumb to:0x020a0b38 module:overlay(0)
-from:0x020ef1c8 kind:load to:0x020b6488 module:overlay(0)
+from:0x020ef1c8 kind:load to:0x020b6288 add:0x200 module:overlay(0)
 from:0x020ef1d0 kind:load to:0x020f1c64 module:overlay(23)
 from:0x020ef1d4 kind:load to:0x020b6288 module:overlay(0)
 from:0x020ef1fc kind:arm_call_thumb to:0x020bfe90 module:overlay(1)

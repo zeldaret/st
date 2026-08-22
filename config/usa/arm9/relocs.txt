@@ -3039,7 +3039,7 @@ from:0x02020142 kind:thumb_call_arm to:0x02069c24 module:overlay(0)
 from:0x02020156 kind:thumb_call_arm to:0x02069c24 module:overlay(0)
 from:0x02020164 kind:load to:0x02049a0c module:main
 from:0x02020168 kind:load to:0x02043e30 module:main
-from:0x0202016c kind:load to:0x020b6488 module:overlay(0)
+from:0x0202016c kind:load to:0x020b6288 add:0x200 module:overlay(0)
 from:0x02020170 kind:load to:0x0204e620 module:main
 from:0x02020174 kind:load to:0x020b50a0 module:overlay(0)
 from:0x0202017a kind:thumb_call_arm to:0x020131ec module:main

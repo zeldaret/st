@@ -522,7 +522,7 @@ from:0x020b8120 kind:load to:0x027e09bc module:dtcm
 from:0x020b8124 kind:load to:0x027e0cec module:dtcm
 from:0x020b8128 kind:load to:0x027e0960 module:dtcm
 from:0x020b812c kind:load to:0x027e09b8 module:dtcm
-from:0x020b8130 kind:load to:0x020b64f0 module:overlay(0)
+from:0x020b8130 kind:load to:0x020b62f0 add:0x200 module:overlay(0)
 from:0x020b8134 kind:load to:0x020b5100 module:overlay(0)
 from:0x020b8138 kind:load to:0x020b508c module:overlay(0)
 from:0x020b817e kind:thumb_call_arm to:0x02014b00 module:main

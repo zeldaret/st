@@ -3216,10 +3216,10 @@ data_ov000_020ace44 kind:data(any) addr:0x020ace44
 data_ov000_020ace48 kind:data(any) addr:0x020ace48
 data_ov000_020ace4c kind:data(any) addr:0x020ace4c
 data_ov000_020ace50 kind:data(any) addr:0x020ace50
-data_ov000_020ace54 kind:data(any) addr:0x020ace54
+data_ov000_020ace54_usa kind:data(any) addr:0x020ace54
 data_ov000_020ace58 kind:data(any) addr:0x020ace58
 data_ov000_020ace5c kind:data(any) addr:0x020ace5c
-data_ov000_020ace60 kind:data(any) addr:0x020ace60
+data_ov000_020ace60_usa kind:data(any) addr:0x020ace60
 data_ov000_020ace64 kind:data(any) addr:0x020ace64
 data_ov000_020ace68 kind:data(any) addr:0x020ace68
 data_ov000_020ace6c kind:data(any) addr:0x020ace6c
@@ -3257,7 +3257,7 @@ data_ov000_020aecd8 kind:data(any) addr:0x020aecd8
 data_ov000_020aecdc kind:data(any) addr:0x020aecdc
 data_ov000_020aece0 kind:data(any) addr:0x020aece0
 data_ov000_020aece4 kind:data(any) addr:0x020aece4
-data_ov000_020aece8 kind:data(any) addr:0x020aece8
+data_ov000_020aece8_usa kind:data(any) addr:0x020aece8
 data_ov000_020aed0c kind:data(any) addr:0x020aecec
 data_ov000_020aed1c kind:data(any) addr:0x020aecfc
 data_ov000_020aed04 kind:data(any) addr:0x020aed04
@@ -3268,7 +3268,7 @@ data_ov000_020af4cc kind:data(any) addr:0x020af4cc
 data_ov000_020af550 kind:data(any) addr:0x020af530
 data_ov000_020af560 kind:data(any) addr:0x020af540
 data_ov000_020af574 kind:data(any) addr:0x020af554
-data_ov000_020af560 kind:data(any) addr:0x020af560
+data_ov000_020af560_usa kind:data(any) addr:0x020af560
 data_ov000_020af56c kind:data(any) addr:0x020af56c
 data_ov000_020af740 kind:data(any) addr:0x020af740
 data_ov000_020af744 kind:data(any) addr:0x020af744
@@ -3425,9 +3425,9 @@ data_ov000_020b1b58 kind:data(any) addr:0x020b1b58
 data_ov000_020b1b7c kind:data(any) addr:0x020b1b5c
 data_ov000_020b1b60 kind:data(any) addr:0x020b1b60
 data_ov000_020b1b64 kind:data(any) addr:0x020b1b64
-data_ov000_020b1b6c kind:data(any) addr:0x020b1b6c
+data_ov000_020b1b6c_usa kind:data(any) addr:0x020b1b6c
 data_ov000_020b1b74 kind:data(any) addr:0x020b1b74
-data_ov000_020b1b7c kind:data(any) addr:0x020b1b7c
+data_ov000_020b1b7c_usa kind:data(any) addr:0x020b1b7c
 data_ov000_020b1b84 kind:data(any) addr:0x020b1b84
 data_ov000_020b1b9c kind:data(any) addr:0x020b1b9c
 data_ov000_020b1be4 kind:data(any) addr:0x020b1bc4
@@ -3468,7 +3468,7 @@ data_ov000_020b1ef4 kind:data(any) addr:0x020b1ef4
 _ZTV33UnkSystem2_UnkSubSystem1_Derived4 kind:data(any) addr:0x020b1f04
 data_ov000_020b1f24 kind:data(any) addr:0x020b1f24
 data_ov000_020b1f54 kind:data(any) addr:0x020b1f3c
-data_ov000_020b1f54 kind:data(any) addr:0x020b1f54
+data_ov000_020b1f54_usa kind:data(any) addr:0x020b1f54
 data_ov000_020b1f6c kind:data(any) addr:0x020b1f6c
 data_ov000_020b1f7c kind:data(any) addr:0x020b1f7c
 data_ov000_020b1fac kind:data(any) addr:0x020b1f8c
@@ -3489,7 +3489,7 @@ data_ov000_020b20d0 kind:data(any) addr:0x020b20b0
 data_ov000_020b20dc kind:data(any) addr:0x020b20bc
 data_ov000_020b20e4 kind:data(any) addr:0x020b20c4
 data_ov000_020b20ec kind:data(any) addr:0x020b20cc
-data_ov000_020b20dc kind:data(any) addr:0x020b20dc
+data_ov000_020b20dc_usa kind:data(any) addr:0x020b20dc
 data_ov000_020b2128 kind:data(any) addr:0x020b2128
 data_ov000_020b212c kind:data(any) addr:0x020b212c
 data_ov000_020b2130 kind:data(any) addr:0x020b2130
@@ -3546,7 +3546,7 @@ data_ov000_020b2870 kind:data(any) addr:0x020b2870
 data_ov000_020b2888 kind:data(any) addr:0x020b2888
 data_ov000_020b28b8 kind:data(any) addr:0x020b2898
 data_ov000_020b28c8 kind:data(any) addr:0x020b28a8
-data_ov000_020b28b8 kind:data(any) addr:0x020b28b8
+data_ov000_020b28b8_usa kind:data(any) addr:0x020b28b8
 data_ov000_020b28c0 kind:data(any) addr:0x020b28c0
 data_ov000_020b28f8 kind:data(any) addr:0x020b28d8
 data_ov000_020b290c kind:data(any) addr:0x020b28ec
@@ -4072,14 +4072,9 @@ _ZN15ProfileInstanceI26MapObjectProfileMiniBlocksE8sProfileE kind:bss addr:0x020
 data_ov000_020b6280 kind:bss addr:0x020b6280
 data_ov000_020b6284 kind:bss addr:0x020b6284
 gSaveManager kind:bss addr:0x020b6288
-gSaveManager kind:bss addr:0x020b628c
-data_ov000_020b6488 kind:bss addr:0x020b6488
-gSaveManager kind:bss addr:0x020b64a4
-data_ov000_020b64aa kind:bss addr:0x020b64aa
-data_ov000_020b64c4 kind:bss addr:0x020b64c4
 data_ov000_020b64d0 kind:bss addr:0x020b64d0
 data_ov000_020b64f4 kind:bss addr:0x020b64d4
 data_ov000_020b64d8 kind:bss addr:0x020b64d8
 data_ov000_020b64fc kind:bss addr:0x020b64dc
 data_ov000_020b64e0 kind:bss addr:0x020b64e0
-data_ov000_020b64f0 kind:bss addr:0x020b64f0
+gpTreasureManager kind:bss addr:0x020b64f0

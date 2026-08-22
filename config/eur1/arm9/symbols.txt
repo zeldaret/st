@@ -912,7 +912,7 @@ _ZN12GameModeBase8vfunc_1CEv kind:function(arm,size=0x4) addr:0x02018394
 _ZN12GameModeBase8vfunc_20Ev kind:function(arm,size=0x4) addr:0x02018398
 _ZN12GameModeBase8vfunc_24Ev kind:function(arm,size=0x8) addr:0x0201839c
 _ZN18UnkStruct_0204a0608vfunc_0CEv kind:function(thumb,size=0x14) addr:0x020183a4
-_ZN18UnkStruct_0204a06013func_020183b8Ev kind:function(thumb,size=0x8) addr:0x020183b8
+_ZN18UnkStruct_0204a06013func_020183b88Ev kind:function(thumb,size=0x8) addr:0x020183b8
 _ZN18UnkStruct_0204a06013func_020183c0Ev kind:function(thumb,size=0x14) addr:0x020183c0
 _ZN18UnkStruct_0204a06013func_020183d4EbPFP12GameModeBasevEi kind:function(thumb,size=0x50) addr:0x020183d4
 _ZN18UnkStruct_0204a06013func_02018424Ev kind:function(thumb,size=0x14) addr:0x02018424
@@ -2764,7 +2764,7 @@ data_020499c8 kind:bss addr:0x020499c8
 data_020499e0 kind:bss addr:0x020499e0
 data_02049a1c kind:bss addr:0x02049a1c
 data_02049a20 kind:bss addr:0x02049a20
-data_02049a2c kind:bss addr:0x02049a2c
+gGame kind:bss addr:0x02049a2c
 data_02049b14 kind:bss addr:0x02049b14
 data_02049b18 kind:bss addr:0x02049b18
 data_02049b2a kind:bss addr:0x02049b2a
@@ -2792,13 +2792,13 @@ data_0204a060 kind:bss addr:0x0204a060
 data_0204a088 kind:bss addr:0x0204a088
 data_0204a090 kind:bss addr:0x0204a090
 data_0204a110 kind:bss addr:0x0204a110
-data_0204a110 kind:bss addr:0x0204a120
+data_0204a120 kind:bss addr:0x0204a120
 data_0204a480 kind:bss addr:0x0204a480
 data_0204ae10 kind:bss addr:0x0204ae10
 data_0204ae90 kind:bss addr:0x0204ae90
 data_0204aeac kind:bss addr:0x0204aeac
 data_0204aeb8 kind:bss addr:0x0204aeb8
-data_0204a110 kind:bss addr:0x0204aed0
+data_0204aed0 kind:bss addr:0x0204aed0
 data_0204aedc kind:bss addr:0x0204aedc
 data_0204aeec kind:bss addr:0x0204aeec
 data_0204aef0 kind:bss addr:0x0204aef0

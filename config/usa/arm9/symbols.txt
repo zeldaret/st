@@ -2789,13 +2789,13 @@ data_0204a060 kind:bss addr:0x0204a040
 data_0204a088 kind:bss addr:0x0204a068
 data_0204a070 kind:bss addr:0x0204a070
 data_0204a110 kind:bss addr:0x0204a0f0
-data_0204a110 kind:bss addr:0x0204a100
+data_0204a100 kind:bss addr:0x0204a100
 data_0204a460 kind:bss addr:0x0204a460
 data_0204adf0 kind:bss addr:0x0204adf0
 data_0204ae70 kind:bss addr:0x0204ae70
 data_0204ae8c kind:bss addr:0x0204ae8c
 data_0204ae98 kind:bss addr:0x0204ae98
-data_0204a110 kind:bss addr:0x0204aeb0
+data_0204aeb0 kind:bss addr:0x0204aeb0
 data_0204aebc kind:bss addr:0x0204aebc
 data_0204aecc kind:bss addr:0x0204aecc
 data_0204aed0 kind:bss addr:0x0204aed0
