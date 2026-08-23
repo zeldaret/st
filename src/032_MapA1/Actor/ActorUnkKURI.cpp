@@ -5,7 +5,9 @@
 #include "System/Random.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
+#include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
+#include "Unknown/UnkStruct_027e0d38.hpp"
 
 // should be elsewhere
 class VecFx32Cpp {
@@ -134,6 +136,7 @@ bool ActorUnkKURI::vfunc_18(unk32 param1) {
     return true;
 }
 
+// non-matching
 void ActorUnkKURI::vfunc_1C() {
     if (this->mUnk_5C.mParams[0] == 0x2) {
         this->mUnk_294 = false;
@@ -180,8 +183,17 @@ void ActorUnkKURI::SetState(ActorState state) {
 
 void ActorUnkKURI::vfunc_20() {
     if (!this->Actor_Derived2::func_ov017_020bef4c(0x4000) && mUnk_48 != 0) {
-
-        return;
+        bool var_r1 = true;
+        bool var_r2 = true;
+        if (this->mState != ActorUnkKURIState_8 && this->mState != ActorUnkKURIState_7) {
+            var_r2 = false;
+        }
+        if (var_r2 == 0 && this->mUnk_5C.mParams[0] != 2) {
+            var_r1 = false;
+        }
+        if (var_r1 == 0) {
+            return;
+        }
     }
 
     this->mUnk_3C = &this->mUnk_228;
@@ -204,7 +216,67 @@ void ActorUnkKURI::vfunc_20() {
         return;
     }
 
-    // some code
+    this->Actor::func_ov000_020989e0();
+    bool var = true;
+
+    if (this->mUnk_228.mUnk_08 & 0x3FFFF) {
+        var = false;
+        switch (this->mUnk_228.mUnk_1C) {
+            case 0xE:
+                if (!this->Actor::func_ov000_020986fc(0) && !this->Actor::func_ov000_020986fc(1)) {
+                    var = true;
+                    break;
+                }
+            case 0xF:
+                this->Actor_Derived2::func_ov000_020990c0(&this->mUnk_228, 0, 0);
+                this->SetState(ActorUnkKURIState_6);
+                break;
+
+            case 0xC:
+                this->Actor_Derived2::func_ov017_020bf178(&this->mUnk_228, 1);
+                data_027e09a8->func_ov000_02071b30(0x983C, &this->mPos, 0x0);
+                this->mUnk_248.func_ov000_02099a0c();
+                this->SetState(ActorUnkKURIState_7);
+                break;
+
+            case 0x4:
+                if (data_027e0d38->func_ov031_020d9c04(0x1, 0x0, 0x0)) {
+                    this->SetState(ActorUnkKURIState_8);
+                }
+                break;
+
+            default:
+                this->mUnk_48 -= this->mUnk_228.mUnk_1E;
+                this->Actor_Derived2::func_ov000_020990c0(&this->mUnk_228, 0x0, 0x0);
+                data_027e09a8->func_ov000_02071b30(0x983C, &this->mPos, 0x0);
+                this->SetState(ActorUnkKURIState_6);
+                break;
+        }
+    }
+    if (var && (this->Actor::func_ov000_02098ab4(0x2, 0x0, 0x1, NULL) & 1) && (this->mState == ActorUnkKURIState_3)) {
+        this->SetState(ActorUnkKURIState_5);
+    }
+
+    if (GET_FLAG(this->mFlags, ActorFlag_14)) {
+        this->mUnk_110.vfunc_34();
+    }
+
+    if (!GET_FLAG(this->mFlags, ActorFlag_Alive)) {
+        return;
+    }
+
+    if (this->func_ov032_0211b17c()) {
+        return;
+    }
+
+    VecFx32 vec = this->mPos;
+
+    UnkStruct_ov000_0207de98 stack;
+    VecFx32_Copy(&vec, &stack.vec);
+    stack.param1 = 0x548;
+    stack.param2 = 0x1000;
+
+    data_027e09c0->func_ov000_0207de98(this->mRef, &stack, this->mUnk_38);
 }
 
 void ActorUnkKURI::vfunc_2C(unk32 param1) {
@@ -230,6 +302,7 @@ void ActorUnkKURI::func_ov032_02119990() {
     this->mUnk_220 = 0x7B;
 }
 
+// non-matching
 void ActorUnkKURI::func_ov032_02119a0c() {}
 
 void ActorUnkKURI::func_ov032_02119be8() {
@@ -241,7 +314,34 @@ void ActorUnkKURI::func_ov032_02119be8() {
     this->mVel.z = FLOAT_TO_FX32(0.0f);
 }
 
-void ActorUnkKURI::func_ov032_02119c80() {}
+// non-matching
+void ActorUnkKURI::func_ov032_02119c80() {
+    UnkStruct_PlayerGet_50 *playerGet50 = this->mUnk_110.vfunc_28();
+
+    fx32 val = func_01ffb428(playerGet50->mUnk_10 - playerGet50->mUnk_08, 0x14CD);
+    val >>= 0xC;
+
+    s16 var;
+    func_ov000_020986b4(&var, this, 0x0);
+
+    if (val > 0x0) {
+        unk32 param2 = func_01ffb464(val << 0xC);
+        func_01ff9318(&this->mAngle, var, param2);
+    }
+
+    if (this->mUnk_110.vfunc_28()->func_01ff8fa8() == 0x0) {
+        return;
+    }
+
+    data_027e0cec->func_ov000_0209feac(0x880, &this->mPos, 0x2, 0x0, 0x0);
+
+    if (this->mUnk_5C.mParams[0] == 0x1 && !this->func_ov032_0211b114()) {
+        this->SetState(ActorUnkKURIState_4);
+        return;
+    }
+
+    this->SetState(ActorUnkKURIState_3);
+}
 
 void ActorUnkKURI::func_ov032_02119d7c() {
     this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
@@ -251,6 +351,7 @@ void ActorUnkKURI::func_ov032_02119d7c() {
     this->mVel.z  = FLOAT_TO_FX32(0.0f);
 }
 
+// non-matching
 void ActorUnkKURI::func_ov032_02119df4() {
     s16 var;
     s16 delta = this->mUnk_52 - this->mUnk_50;
@@ -267,9 +368,13 @@ void ActorUnkKURI::func_ov032_02119df4() {
     this->func_ov032_0211b1e0();
 }
 
+// non-matching
 void ActorUnkKURI::func_ov032_02119e90() {}
+// non-matching
 void ActorUnkKURI::func_ov032_02119f40() {}
+// non-matching
 void ActorUnkKURI::func_ov032_0211a140() {}
+// non-matching
 void ActorUnkKURI::func_ov032_0211a20c() {}
 
 void ActorUnkKURI::func_ov032_0211a484() {
@@ -278,6 +383,7 @@ void ActorUnkKURI::func_ov032_0211a484() {
     this->mUnk_288.x = func_01ffb66c(0x1000 - this->mUnk_110.vfunc_28()->mUnk_04, val >> 0xC);
 }
 
+// non-matching
 void ActorUnkKURI::func_ov032_0211a52c() {
     switch (this->mUnk_218) {
         case 0x0:
@@ -349,6 +455,7 @@ void ActorUnkKURI::func_ov032_0211a7b8() {
     this->mUnk_38->mUnk_08 = 0x3;
 }
 
+// non-matching
 void ActorUnkKURI::func_ov032_0211a86c() {
     fx32 sum                           = this->mUnk_110.vfunc_28()->mUnk_04 + this->mUnk_288.x;
     this->mUnk_110.vfunc_28()->mUnk_04 = sum;
@@ -492,6 +599,7 @@ void ActorUnkKURI::func_ov032_0211ad40() {
     this->mUnk_296 = 0x0;
 }
 
+// non-matching
 void ActorUnkKURI::func_ov032_0211adf4() {
     this->IsTimerOut();
     switch (this->mUnk_218) {
@@ -535,6 +643,7 @@ void ActorUnkKURI::func_ov032_0211b024() {
     this->SetState(ActorUnkKURIState_2);
 }
 
+// non-matching
 bool ActorUnkKURI::func_ov032_0211b064(unk32 param1) {
     VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
     bool ret     = false;
@@ -554,12 +663,14 @@ bool ActorUnkKURI::func_ov032_0211b064(unk32 param1) {
     return ret;
 }
 
+// non-matching
 bool ActorUnkKURI::func_ov032_0211b114() {}
 
 bool ActorUnkKURI::func_ov032_0211b17c() {
     return this->mState == ActorUnkKURIState_10;
 }
 
+// non-matching
 void ActorUnkKURI::func_ov032_0211b190(s32 param1, s32 param2) {}
 
 void ActorUnkKURI::func_ov032_0211b1e0() {
@@ -578,6 +689,7 @@ void ActorUnkKURI::func_ov032_0211b1e0() {
     }
 }
 
+// non-matching
 void ActorUnkKURI::func_ov032_0211b298() {
     if (this->mUnk_110.vfunc_30() != 0x1) {
         if (this->mUnk_288.y <= FLOAT_TO_FX32(0.0f)) {
@@ -670,6 +782,7 @@ ActorUnkKURI_268::ActorUnkKURI_268() {
 
 ActorUnkKURI_268::~ActorUnkKURI_268() {}
 
+// non-matching
 bool ActorUnkKURI_268::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
     VecFx16_Copy2VecFx32(&param1->mUnk_08, &this->mUnk_08);
     this->UnkStruct_ov031_Items_00::vfunc_08(param1);

@@ -235,6 +235,7 @@ public:
     s32 func_ov000_02098584();
     s32 func_ov000_020985f0(void *param1);
     void func_ov000_0209862c(unk32 param1);
+    bool func_ov000_020986fc(unk32 param1);
     void func_ov000_020989e0();
     bool func_ov000_02098a60(unk32 param1);
     void func_ov000_02098a88(unk32 param1, unk32 param2);
@@ -322,6 +323,7 @@ public:
     /* 4C */ WEAK virtual ~Actor_Derived2() {}
     /* 54 */ virtual void vfunc_54(unk32 param1);
 
+    void func_ov000_020990c0(Actor_9C *param2, unk32 param3, unk32 param4);
     void func_ov000_020992dc();
     unk32 func_ov000_02099450(void *param2, VecFx32 *param3, unk32 param4, u16 param5);
     void func_ov000_020994a0();
@@ -329,6 +331,7 @@ public:
     void func_ov000_02098f34(VecFx32 *);
 
     unk32 func_ov017_020bef4c(unk32 param1);
+    void func_ov017_020bf178(Actor_9C *param2, unk32 param3);
     void func_ov017_020bf894(UnkStruct_ActorUnkCANS_224 *param1);
 };
 

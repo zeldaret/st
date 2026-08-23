@@ -35,7 +35,6 @@ extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
 extern unk32 data_ov000_020aecf8[0x2]; //! INFO: Unsure about the size and type
 extern u16 data_ov000_020aed00;
 extern "C" void func_ov000_0207b70c(ActorUnkCASE_174 *param1, Actor *param2);
-extern "C" void func_ov000_020990c0(ActorUnkCASE *param1, ActorShotArrow_140 *param2, unk32 param3, unk32 param4);
 
 // Other
 extern "C" void G3d_GetCurrentMtx(Mat4x3p *mtx1, Mat3p *mtx2);
@@ -412,7 +411,7 @@ post:
             case 13:
                 break;
             default:
-                func_ov000_020990c0(this, &mUnk_124, 1, 0);
+                this->Actor_Derived2::func_ov000_020990c0(&mUnk_124, 1, 0);
                 break;
         }
     }

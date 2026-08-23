@@ -71,7 +71,6 @@ extern "C" unk32 func_ov000_02098d7c(ActorUnkCANS *param1, UnkStruct_ov063_02162
 
 // Overlay 17
 extern "C" void func_ov017_020bf050(ActorUnkCANS *param1, UnkStruct_ov063_02162e88 *param2, unk32 param3);
-extern "C" void func_ov017_020bf178(ActorUnkCANS *param1, UnkStruct_ov063_02162e88 *param2, unk32 param3);
 extern "C" void func_ov017_020bf634(ActorUnkCANS *param1, unk16 *param2, unk32 param3, unk32 param4);
 extern "C" void func_ov017_020bf688(ActorUnkCANS *param1);
 
@@ -323,7 +322,7 @@ void ActorUnkCANS::vfunc_20(void) {
                                 this->func_ov063_02158448(5);
                             }
                         } else {
-                            func_ov017_020bf178(this, &mUnk_200, 1);
+                            this->Actor_Derived2::func_ov017_020bf178(&mUnk_200, 1);
                             mUnk_224.func_ov000_02099a0c();
                             this->func_ov063_02158448(4);
                         }
