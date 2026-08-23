@@ -1305,7 +1305,7 @@ public:
     /* 00 (vtable) */
     /* 04 */
 
-    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3);
+    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2);
 
     UnkStruct_PlayerGet_74_base();
 };

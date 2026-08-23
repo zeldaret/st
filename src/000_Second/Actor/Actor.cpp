@@ -25,7 +25,7 @@ Actor::Actor() {
     VecFx32_Copy(&this->mUnk_5C.mInitialPos, &this->mPos);
     VecFx32_Copy(&this->mUnk_5C.mInitialPos, &this->mPrevPos);
     this->mAngle = this->mUnk_5C.mInitialAngle;
-    SET_FLAGS(this->mFlags, ActorFlag_Alive, ActorFlag_Visible, ActorFlag_Active, ActorFlag_14);
+    INIT_FLAGS(this->mFlags, ActorFlag_Alive, ActorFlag_Visible, ActorFlag_Active, ActorFlag_14);
     this->mUnk_44 = 0xFF;
     this->mUnk_46 = 0;
     this->func_ov000_0209862c(0);
@@ -111,12 +111,12 @@ bool Actor::Grab(ActorGrabParams grabParams) {
 
     SET_FLAG(this->mFlags, ActorFlag_Grabbed);
 
-    switch (grabParams.unk_00) {
+    switch (grabParams.mUnk_00.type_index) {
         case 0x100:
         case 0x101: {
-            u16 var_r3 = grabParams.unk_02;
+            u16 var_r3 = grabParams.mUnk_00.unk_id;
 
-            if (grabParams.unk_00 == 0x101) {
+            if (grabParams.mUnk_00.type_index == 0x101) {
                 var_r3 = 0;
             }
 

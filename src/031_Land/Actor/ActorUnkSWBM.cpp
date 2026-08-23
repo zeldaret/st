@@ -60,7 +60,7 @@ void ActorUnkSWBM_98::vfunc_10(Actor *actor) {
 }
 
 // non-matching
-void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2, unk32 param3) {
+void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2) {
     ActorUnkSWBM *actor = this->mUnk_14;
 
     FlushGfxQueue();

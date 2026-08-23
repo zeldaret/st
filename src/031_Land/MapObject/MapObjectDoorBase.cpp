@@ -382,7 +382,7 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
                 auStack_5c.mUnk_36 = unk_1E;
                 auStack_5c.mUnk_34 = unk_1C;
 
-                auStack_5c.mUnk_1E = this->mUnk_14;
+                auStack_5c.mUnk_1E = this->mAngle;
                 this->mUnk_74      = data_027e09b8->func_ov000_02073388(&auStack_5c, 0);
             }
 
@@ -466,7 +466,7 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
                     auStack_9c.mUnk_36 = unk_1E;
                     auStack_9c.mUnk_34 = unk_1C;
 
-                    auStack_9c.mUnk_1E = this->mUnk_14;
+                    auStack_9c.mUnk_1E = this->mAngle;
                     this->mUnk_74      = data_027e09b8->func_ov000_02073388(&auStack_9c, 0);
 
                     this->mUnk_84 = 0x0D;
@@ -648,15 +648,15 @@ void MapObjectDoorBase::vfunc_4C() {}
 
 void MapObjectDoorBase::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param3) {
     VecFx32 local_20;
-    *param3 = this->mUnk_14;
+    *param3 = this->mAngle;
 
     if (param1 != 0) {
-        local_20.x = MUL_FX32(SIN((u16) this->mUnk_14), 0x1000);
-        local_20.z = MUL_FX32(COS((u16) this->mUnk_14), 0x1000);
+        local_20.x = MUL_FX32(SIN((u16) this->mAngle), 0x1000);
+        local_20.z = MUL_FX32(COS((u16) this->mAngle), 0x1000);
         local_20.y = 0;
     } else {
-        local_20.x = MUL_FX32(SIN((u16) this->mUnk_14), 0xC00);
-        local_20.z = MUL_FX32(COS((u16) this->mUnk_14), 0xC00);
+        local_20.x = MUL_FX32(SIN((u16) this->mAngle), 0xC00);
+        local_20.z = MUL_FX32(COS((u16) this->mAngle), 0xC00);
         local_20.y = 0;
 
         *param3 += -DEG_TO_ANG(180);
@@ -699,7 +699,7 @@ void MapObjectDoorBase::vfunc2_08() {
     u16 *temp_r3;
     u16 *temp_r3_2;
 
-    if (this->mState != MapObjDoorBaseState_1 || !this->mUnk_8C || (u16) (this->mUnk_14 + 0x2000) / DEG_TO_ANG(90) != 2) {
+    if (this->mState != MapObjDoorBaseState_1 || !this->mUnk_8C || (u16) (this->mAngle + 0x2000) / DEG_TO_ANG(90) != 2) {
         return;
     }
 

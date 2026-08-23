@@ -1,5 +1,6 @@
 #include "Actor/ActorRollingStone.hpp"
 
+#include "Actor/ActorManager.hpp"
 #include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -64,8 +65,23 @@ ActorProfileRollingStone::ActorProfileRollingStone() :
 // non-matching
 bool ActorRollingStone_104::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {}
 
-// non-matching
-void ActorRollingStone_104::vfunc_10() {}
+bool ActorRollingStone_104::vfunc_10(ActorRef param1, unk32 param2) {
+    if (param1.type != 0x0) {
+        Actor *actor = gpActorManager->func_01fff3b4(param1);
+        if (actor != NULL) {
+            switch (actor->GetActorId()) {
+                case ActorId_CASE:
+                case ActorId_FMAS:
+                case ActorId_FMLS:
+                case ActorId_RCMS:
+                    return false;
+                default:
+                    break;
+            }
+        }
+    }
+    return this->UnkStruct_027e0ce0_38_Base::vfunc_10(param1, param2);
+}
 
 void ActorRollingStone_D4::vfunc_10(Actor *param1) {
     if (param1->GetActorId() != ActorId_RollingStone) {

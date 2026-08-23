@@ -31,7 +31,7 @@ ActorProfileBlast::ActorProfileBlast() :
 }
 
 // non-matching
-bool ActorBlast_E8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2) {}
+bool ActorBlast_E8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {}
 
 ActorBlast::ActorBlast() :
     mUnk_94(FLOAT_TO_FX32(0.625f)),
@@ -146,7 +146,7 @@ fx32 ActorBlast::func_ov031_020e3b94() {
     return FLOAT_TO_FX32(0.5f);
 }
 
-void ActorBlast::func_ov031_020e3b9c(unk16 param1, unk16 param2) {
+void ActorBlast::func_ov031_020e3b9c(Actor *spawner, unk16 param1, unk16 param2) {
     ActorParams actorParams;
     ActorRef ref;
 
@@ -154,11 +154,11 @@ void ActorBlast::func_ov031_020e3b9c(unk16 param1, unk16 param2) {
     actorParams.func_ov000_020975f8();
     actorParams.func_ov000_020975f8();
 
-    actorParams.mUnk_28 = this->mRef;
-    VecFx32_Copy(&this->mPos, &actorParams.mInitialPos);
+    actorParams.mUnk_28 = spawner->mRef;
+    VecFx32_Copy(&spawner->mPos, &actorParams.mInitialPos);
 
     actorParams.mParams[0] = param1;
     actorParams.mParams[1] = param2;
 
-    this->func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_Blast, &actorParams, 0x0);
+    spawner->func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_Blast, &actorParams, 0x0);
 }

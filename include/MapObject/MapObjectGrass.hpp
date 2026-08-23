@@ -1,7 +1,9 @@
 #pragma once
 
+#include "Actor/ActorUnkSCCN.hpp"
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectProfile.hpp"
+#include "MapObject_10_Pot.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -11,6 +13,15 @@ enum MapObjGrassState_ {
     MapObjGrassState_2,
     MapObjGrassState_3,
     MapObjGrassState_MAX
+};
+
+class MapObjectProfilePot_Base : public MapObjectProfile_Derived2 {
+public:
+    /* 00 (base) */
+    /* D4 */ MapObject_10_Pot mUnk_D4;
+
+    MapObjectProfilePot_Base(MapObjectId param1, MapObjectId param2) :
+        MapObjectProfile_Derived2(param1, param2) {}
 };
 
 class MapObjectGrass : public MapObject {
@@ -41,10 +52,9 @@ public:
     void func_ov031_02101978(unk32 param1, VecFx32 *param2);
 };
 
-class MapObjectProfileGrass : public MapObjectProfile_Derived2 {
+class MapObjectProfileGrass : public MapObjectProfilePot_Base {
 public:
     /* 00 (base) */
-    /* D4 */ MapObject_10 mUnk_D4;
 
     MapObjectProfileGrass();
 

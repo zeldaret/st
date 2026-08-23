@@ -113,7 +113,7 @@ bool MapObjectDoorSwitch::vfunc_6C(void) {
 }
 
 void MapObjectDoorSwitch::vfunc_14(void) {
-    u16 angle = this->mUnk_14;
+    u16 angle = this->mAngle;
     Mat3p m;
 
     Mat3p_InitYRotation(&m, SIN(angle), COS(angle));
@@ -133,7 +133,7 @@ void MapObjectDoorSwitch::vfunc_74(void) {
     VecFx32_Init(0, 0, 0x666, &local_2c);
 
     Mat4x3p m;
-    u16 angle = this->mUnk_14;
+    u16 angle = this->mAngle;
 
     Mat4x3p_InitYRotation(&m, SIN(angle), COS(angle));
     func_01ffaf74(&local_2c, &m, &local_2c);
@@ -142,7 +142,7 @@ void MapObjectDoorSwitch::vfunc_74(void) {
     data_027e0cec->func_ov000_0209ff8c(&this->mUnk_68, 0x8CF, &local_20, 4);
 
     if (this->mUnk_68.mUnk_00 != NULL) {
-        this->mUnk_68.mUnk_00->mUnk_A4 = this->mUnk_14;
+        this->mUnk_68.mUnk_00->mUnk_A4 = this->mAngle;
     }
 }
 

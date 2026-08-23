@@ -20,9 +20,8 @@ public:
     /* 04 */
 
     // data_ov031_02113148
-    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override; // func_ov031_020e68d8
-    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2,
-                                   unk32 param3) override; // func_ov031_020e6900
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
+    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) override;
 };
 
 class ActorUnkSWBM_98 : public UnkStruct_ov031_Items_01 {
@@ -35,8 +34,8 @@ public:
         mUnk_2C(param1) {}
 
     // data_ov031_0211312c
-    /* 0C */ virtual bool vfunc_0C(Actor *param1, VecFx32 *vector) override; // func_ov031_020e691c
-    /* 10 */ virtual void vfunc_10(Actor *actor) override;                   // func_ov031_020e6974
+    /* 0C */ virtual bool vfunc_0C(Actor *param1, VecFx32 *vector) override;
+    /* 10 */ virtual void vfunc_10(Actor *actor) override;
 };
 
 class ActorUnkSWBM_C8 : public UnkStruct_PlayerGet_74_base {
@@ -50,7 +49,7 @@ public:
         mUnk_14(param1) {}
 
     // data_ov031_02113110
-    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3) override; // func_ov031_020e69cc
+    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2) override;
 };
 
 class ActorUnkSWBM : public Actor {
