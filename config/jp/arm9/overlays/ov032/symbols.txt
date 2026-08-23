@@ -245,7 +245,7 @@ _ZTV19ActorProfileUnkKURI kind:data(any) addr:0x02124190
 data_ov032_021241ad kind:data(any) addr:0x021241ad ambiguous
 data_ov032_021241bc kind:data(any) addr:0x021241bc
 data_ov032_02124204 kind:data(any) addr:0x02124204
-data_ov032_02124248 kind:data(any) addr:0x02124248
+data_ov032_02122288 kind:data(any) addr:0x02124248
 _ZTV19data_ov032_021242a8 kind:data(any) addr:0x021242a8
 data_ov032_02122348 kind:data(any) addr:0x02124308
 data_ov032_02124348 kind:data(any) addr:0x02124348 ambiguous
