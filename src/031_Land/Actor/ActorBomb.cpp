@@ -263,8 +263,8 @@ void ActorBomb::func_ov031_020e1b1c() {
 
     this->mUnk_0F4.func_ov000_020577a4(param1, 0x0, param3);
 
-    this->mUnk_0F4.mUnk_08 = 0x1000;
-    this->mUnk_0F4.mUnk_04 = data_ov031_02112be8.unknown;
+    this->mUnk_0F4.mUnk_04.mUnk_04 = 0x1000;
+    this->mUnk_0F4.mUnk_04.mUnk_00 = data_ov031_02112be8.unknown;
 
     this->mUnk_094.func_ov000_02057cf4();
 
@@ -288,8 +288,8 @@ void ActorBomb::func_ov031_020e1b7c() {
         this->func_ov031_020e1b1c();
         return;
     }
-    fx32 delta             = this->mUnk_1EC - this->mUnk_1EA;
-    this->mUnk_0F4.mUnk_08 = FLOAT_TO_FX32(1.5f) - delta * FLOAT_TO_FX32(0.01985f);
+    fx32 delta                     = this->mUnk_1EC - this->mUnk_1EA;
+    this->mUnk_0F4.mUnk_04.mUnk_04 = FLOAT_TO_FX32(1.5f) - delta * FLOAT_TO_FX32(0.01985f);
     this->mUnk_0F4.func_01ffc3b4();
 
     if (delta > 0x0) {
