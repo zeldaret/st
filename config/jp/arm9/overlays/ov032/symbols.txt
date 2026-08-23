@@ -240,16 +240,13 @@ data_ov032_02122160 kind:data(any) addr:0x02124120
 data_ov032_0212216c kind:data(any) addr:0x0212412c
 data_ov032_02122184 kind:data(any) addr:0x02124144
 data_ov032_0212219c kind:data(any) addr:0x0212415c
-data_ov032_0212417c kind:data(any) addr:0x0212417c
+_ZTV16ActorUnkKURI_268 kind:data(any) addr:0x02124174
 _ZTV19ActorProfileUnkKURI kind:data(any) addr:0x02124190
-data_ov032_021241ad kind:data(any) addr:0x021241ad ambiguous
-data_ov032_021241bc kind:data(any) addr:0x021241bc
-data_ov032_02124204 kind:data(any) addr:0x02124204
+_ZTV16ActorUnkKURI_1BC kind:data(any) addr:0x021241b4
+_ZTV16ActorUnkKURI_110 kind:data(any) addr:0x021241fc
 data_ov032_02122288 kind:data(any) addr:0x02124248
-_ZTV19data_ov032_021242a8 kind:data(any) addr:0x021242a8
+_ZTV12ActorUnkKURI kind:data(any) addr:0x021242a8
 data_ov032_02122348 kind:data(any) addr:0x02124308
-data_ov032_02124348 kind:data(any) addr:0x02124348 ambiguous
-data_ov032_02124360 kind:data(any) addr:0x02124360 ambiguous
 data_ov032_02124368 kind:data(any) addr:0x02124368
 data_ov032_02124374 kind:data(any) addr:0x02124374
 data_ov032_0212438c kind:data(any) addr:0x0212438c
