@@ -310,6 +310,7 @@ void ActorUnkKURI::func_ov032_02119be8() {
     this->mUnk_110.vfunc_1C(data_ov032_0212219c, 0x14CD, 0x19A, 0x0);
 
     data_027e09a8->func_ov000_02071b30(0x9836, &this->mPos, 0x0);
+
     this->mVel.x = FLOAT_TO_FX32(0.0f);
     this->mVel.z = FLOAT_TO_FX32(0.0f);
 }
