@@ -1,3 +1,5 @@
+#define VECFX32_CTORS
+
 #include "Actor/ActorUnkKURI.hpp"
 
 #include "Actor/ActorManager.hpp"
@@ -9,16 +11,6 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "nitro/os.h"
-
-// should be elsewhere
-class VecFx32Cpp {
-public:
-    /* 00 (base) */ VecFx32 mUnk_00;
-
-    VecFx32Cpp(fx32 x, fx32 y, fx32 z) {
-        VecFx32_Init(x, y, z, &this->mUnk_00);
-    }
-};
 
 extern "C" u16 data_ov000_020aecf4[];
 extern "C" unk32 data_ov000_020aecf8;
@@ -42,7 +34,7 @@ extern "C" void func_ov000_020986b4(s16 *param1, Actor_Derived2 *param2, unk32 p
 extern "C" void func_ov017_020c2438(unk32 *, unk32, VecFx32 *, unk32, unk32);
 extern "C" void func_ov017_020c26f8(unk32, VecFx32 *, unk32, unk32);
 
-static const VecFx32Cpp data_ov032_02122160(FLOAT_TO_FX32(1.7f), FLOAT_TO_FX32(0.5f), FLOAT_TO_FX32(1.7f));
+static const VecFx32 data_ov032_02122160(FLOAT_TO_FX32(1.7f), FLOAT_TO_FX32(0.5f), FLOAT_TO_FX32(1.7f));
 static ActorUnkZLSL_AnimationTag data_ov032_02122184                 = {.index = 0, .name = "walk", .unknown = 0x0};
 static ActorUnkZLSL_AnimationTag data_ov032_0212219c                 = {.index = 1, .name = "discover", .unknown = 0x1};
 static ActorUnkZLSL_AnimationTag data_ov032_0212216c                 = {.index = 0, .name = "KURI", .unknown = 0x1};
@@ -117,7 +109,7 @@ ActorUnkKURI::ActorUnkKURI() :
 
     SET_FLAG(this->mFlags, ActorFlag_9);
 
-    this->mUnk_A4 = &data_ov032_02122160.mUnk_00;
+    this->mUnk_A4 = &data_ov032_02122160;
 }
 
 ActorUnkKURI::~ActorUnkKURI() {}
