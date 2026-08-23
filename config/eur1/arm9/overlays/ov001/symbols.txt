@@ -108,7 +108,7 @@ _ZNSt13__vec_deleterIP38UnkStruct_027e0cd8_0C_Base_148_00_BaseSaIS1_EE8allocateE
 _ZNSt13__vec_deleterIP38UnkStruct_027e0cd8_0C_Base_148_00_BaseSaIS1_EED2Ev kind:function(thumb,size=0x1c) addr:0x020b9238
 _ZNSt13__vec_deleterI12EntranceInfoSaIS0_EE8allocateEmN10Metrowerks8int2typeILi1EEE kind:function(thumb,size=0x28) addr:0x020b9254
 _ZNSt13__vec_deleterI12EntranceInfoSaIS0_EED2Ev kind:function(thumb,size=0x1c) addr:0x020b927c
-__arraydtor kind:function(thumb,size=0x18) addr:0x020b9298
+__arraydtor$4129 kind:function(thumb,size=0x18) addr:0x020b9298
 ZAB_ParseFile kind:function(thumb,size=0x70) addr:0x020b92b0
 ZAB_ParseCAMB kind:function(thumb,size=0x18c) addr:0x020b9320
 ZAB_ParseCABI kind:function(thumb,size=0x4) addr:0x020b94ac
