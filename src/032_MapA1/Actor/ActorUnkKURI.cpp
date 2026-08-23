@@ -8,6 +8,7 @@
 #include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
+#include "nitro/os.h"
 
 // should be elsewhere
 class VecFx32Cpp {
@@ -24,6 +25,7 @@ extern "C" unk32 data_ov000_020aecf8;
 
 extern "C" bool func_01ff916c(void *, int, int);
 extern "C" unk32 func_01ff9258(fx32, fx32);
+extern "C" unk32 func_01ff930c(s16 *, s16, unk32);
 extern "C" void func_01ff9318(void *, unk32, unk32);
 extern "C" void func_01ff941c(VecFx32 *, VecFx32 *);
 extern "C" fx32 func_01ffb428(unk32, unk32);
@@ -302,8 +304,49 @@ void ActorUnkKURI::func_ov032_02119990() {
     this->mUnk_220 = 0x7B;
 }
 
-// non-matching
-void ActorUnkKURI::func_ov032_02119a0c() {}
+// non-matching (regalloc)
+void ActorUnkKURI::func_ov032_02119a0c() {
+    switch (this->mUnk_218) {
+        case 0x0:
+            unk32 var;
+            if (gRandom.Next32(0) & 0x80000000) {
+                var = 0x1;
+            } else {
+                var = -0x1;
+            }
+            this->mUnk_21C = var;
+
+            this->mUnk_52 = gRandom.Next32(0x15) + 0x1E;
+            this->mUnk_50 = 0x00;
+
+            ++this->mUnk_218;
+            break;
+
+        case 0x1:
+            this->mUnk_224 = this->mUnk_21C * gRandom.Next32(0x38E) + this->mAngle;
+
+            if (func_01ff930c(&this->mAngle, this->mUnk_224, 0x71C)) {
+                u16 angle    = this->mAngle;
+                this->mVel.x = MUL_FX32(SIN(angle), this->mUnk_220);
+                this->mVel.z = MUL_FX32(COS(angle), this->mUnk_220);
+
+                if (this->func_ov032_0211b064(0x0)) {
+                    this->SetState(ActorUnkKURIState_1);
+                    break;
+                }
+
+                if (this->IsTimerOut()) {
+                    this->SetState(ActorUnkKURIState_0);
+                }
+            }
+            break;
+
+        default:
+            break;
+    }
+
+    this->func_ov032_0211b1e0();
+}
 
 void ActorUnkKURI::func_ov032_02119be8() {
     this->mUnk_264 = 0x4800;
@@ -370,11 +413,104 @@ void ActorUnkKURI::func_ov032_02119df4() {
 }
 
 // non-matching
-void ActorUnkKURI::func_ov032_02119e90() {}
-// non-matching
-void ActorUnkKURI::func_ov032_02119f40() {}
-// non-matching
-void ActorUnkKURI::func_ov032_0211a140() {}
+void ActorUnkKURI::func_ov032_02119e90() {
+    this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
+
+    this->mUnk_288.x = func_01ffb66c(0x1800, func_01ffb428(0x148, 0x14) >> 0xC);
+
+    this->mUnk_50 = 0x0;
+    this->mUnk_52 = 0xB4;
+
+    if (this->mUnk_5C.mParams[0] == 0x2) {
+        this->mUnk_264 = 0x14000;
+    } else {
+        this->mUnk_264 = 0x4800;
+    }
+
+    this->mUnk_220 = 0x0;
+    this->mVel.x   = FLOAT_TO_FX32(0.0f);
+    this->mVel.z   = FLOAT_TO_FX32(0.0f);
+}
+
+// non-matching (case 1)
+void ActorUnkKURI::func_ov032_02119f40() {
+    if (this->IsTimerOut()) {
+        this->mUnk_218 = 0x2;
+    }
+
+    switch (this->mUnk_218) {
+        case 0x0:
+            this->mUnk_220 += 0x14;
+            fx32 newValAdd                     = this->mUnk_110.vfunc_28()->mUnk_04 + this->mUnk_288.x;
+            this->mUnk_110.vfunc_28()->mUnk_04 = newValAdd;
+
+            if (this->mUnk_220 < 0x148) {
+                break;
+            }
+
+            this->mUnk_220                     = 0x148;
+            this->mUnk_110.vfunc_28()->mUnk_04 = FLOAT_TO_FX32(2.5f);
+            ++this->mUnk_218;
+            break;
+
+        case 0x1:
+            s16 var;
+            s16 *r5 = &var;
+            func_ov000_020986b4(r5, this, 0x0);
+            func_01ff930c(&this->mAngle, *r5, 0x2D8);
+
+            if (!this->func_ov032_0211b064(0x1)) {
+                ++this->mUnk_218;
+            }
+            break;
+
+        case 0x2:
+            fx32 newValSub                     = this->mUnk_110.vfunc_28()->mUnk_04 - this->mUnk_288.x;
+            this->mUnk_110.vfunc_28()->mUnk_04 = newValSub;
+            this->mUnk_220 -= 0x14;
+
+            if (this->mUnk_220 > 0x0) {
+                break;
+            }
+
+            this->mUnk_220                     = 0x0;
+            this->mUnk_110.vfunc_28()->mUnk_04 = FLOAT_TO_FX32(1.0f);
+
+            this->SetState(ActorUnkKURIState_9);
+            break;
+
+        default:
+            _OS_Panic();
+            break;
+    }
+
+    u16 angle    = this->mAngle;
+    this->mVel.x = MUL_FX32(SIN(angle), this->mUnk_220);
+    this->mVel.z = MUL_FX32(COS(angle), this->mUnk_220);
+
+    this->func_ov032_0211b1e0();
+}
+
+void ActorUnkKURI::func_ov032_0211a140() {
+    this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x2000, 0x19A, 0x0);
+    this->mUnk_220 = 0x11F;
+    this->mUnk_264 = 0x4800;
+
+    unk32 var;
+    if (gRandom.Next32(0) & 0x80000000) {
+        var = 1;
+    } else {
+        var = -1;
+    }
+
+    this->mUnk_21C = var;
+
+    this->mVel.x  = FLOAT_TO_FX32(0.0f);
+    this->mVel.z  = FLOAT_TO_FX32(0.0f);
+    this->mUnk_52 = 0x1E;
+    this->mUnk_50 = 0x00;
+}
+
 // non-matching
 void ActorUnkKURI::func_ov032_0211a20c() {}
 
