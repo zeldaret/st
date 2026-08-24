@@ -97,23 +97,21 @@ def main():
 
             # if we have arguments, try to execute the command
             if len(arg_list) > 0:
-                try:
-                    dsd_p = DSD_PATH if DEBUG else sys.argv[1]
+                dsd_p = DSD_PATH if DEBUG else sys.argv[1]
 
-                    command = [
-                        str(dsd_p),
-                        "delink",
-                        "--config-path",
-                        str(CONFIG_DIR / version / "arm9" / "config.yaml"),
-                    ] + " ".join(arg_list).split(" ")
-                    subprocess.run(command, check=False)
-                    do_write = True
+                command = [
+                    str(dsd_p),
+                    "delink",
+                    "--config-path",
+                    str(CONFIG_DIR / version / "arm9" / "config.yaml"),
+                ] + " ".join(arg_list).split(" ")
 
-                    if DEBUG:
-                        print(f"[DEBUG]: execution completed for '{' '.join(command)}'")
-                except:
-                    # we only wanna write the updated file on a successful run
-                    do_write = False
+                subprocess.run(command, check=True)
+
+                if DEBUG:
+                    print(f"[DEBUG]: execution completed for '{' '.join(command)}'")
+
+                do_write = True
     else:
         # if the cache doesn't exist simply create it
         do_write = True
