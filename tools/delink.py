@@ -71,9 +71,8 @@ def main():
         saved_timestamp_map: dict[str, dict[str, float]] = json.loads(TIMESTAMP_FILE.read_text())
 
         for version, saved_map in saved_timestamp_map.items():
-            arg_list: list[str] = []
+            do_delink = False
 
-            # compile command arguments
             for saved_path_str, saved_timestamp in saved_map.items():
                 timestamp = current_timestamp_map[version].get(saved_path_str)
 
@@ -81,31 +80,16 @@ def main():
                 # we make it delink when not found because it might mean we added a new version
                 # and haven't cached it yet
                 if timestamp is None or timestamp != saved_timestamp:
-                    module = Path(saved_path_str).parent.stem
+                    do_delink = True
+                    break
 
-                    if module == "arm9":
-                        arg = "--main"
-                    elif module.endswith("tcm"):
-                        arg = f"--{module}"
-                    elif module.startswith("ov"):
-                        arg = f"--overlay {int(module.removeprefix('ov'))}"
-                    else:
-                        raise RuntimeError(f"unexpected module {module}")
-
-                    if arg not in arg_list:
-                        arg_list.append(arg)
-
-            # if we have arguments, try to execute the command
-            if len(arg_list) > 0:
+            if do_delink:
                 dsd_p = DSD_PATH if DEBUG else sys.argv[1]
 
-                command = [
-                    str(dsd_p),
-                    "delink",
-                    "--config-path",
-                    str(CONFIG_DIR / version / "arm9" / "config.yaml"),
-                ] + " ".join(arg_list).split(" ")
-
+                # ideally we'd only delink the necessary modules
+                # however because of how dsd works we can't do that otherwise modules with
+                # external calls won't be delinked again
+                command = [str(dsd_p), "delink", "--config-path", str(CONFIG_DIR / version / "arm9" / "config.yaml")]
                 subprocess.run(command, check=True)
 
                 if DEBUG:
