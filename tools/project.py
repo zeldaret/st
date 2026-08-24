@@ -1152,7 +1152,7 @@ def process_project(cfg: ProjectConfig, args: Any):
         ])
         n.rule(
             name="objdiff",
-            command=f"touch {cfg.dsd_path} && {cfg.dsd_path} {cfg.dsd_flags} objdiff --config-path $config_path --output-path $out_path {dsd_objdiff_args}"
+            command=f"{cfg.dsd_path} {cfg.dsd_flags} objdiff --config-path $config_path --output-path $out_path {dsd_objdiff_args}"
         )
         n.newline()
 
@@ -1275,7 +1275,6 @@ def process_project(cfg: ProjectConfig, args: Any):
                 rule="post_objdiff",
                 implicit=[f"objdiff_{version}.json" for version in cfg.game_versions],
                 outputs="objdiff",
-                order_only=cmds_map["delink"],
             )
             n.newline()
 
