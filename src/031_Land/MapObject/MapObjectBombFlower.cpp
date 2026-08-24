@@ -233,7 +233,6 @@ void MapObjectBombFlower::vfunc_38() {
     bomb->SetState(ActorBombState_4);
 }
 
-// non-matching
 unk32 MapObjectBombFlower::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
     if (this->mState == MapObjBombFlowerState_4) {
         return 0x0;
