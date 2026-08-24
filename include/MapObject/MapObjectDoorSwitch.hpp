@@ -25,7 +25,7 @@ public:
     /* 094 */ ModelRender mUnk_094;
     /* 0F4 */ MapObject_10_SCCN mUnk_0F4;
 #if IS_JP
-    /* 118 */ MapObject_10 mUnk_118;
+    /* 118 */ MapObject_10_SCCN mUnk_118;
     /* 13C */ fx32 mUnkPos;
     /* 140 */ bool mUnk_140;
     /* 141 */ bool mUnk_141;
