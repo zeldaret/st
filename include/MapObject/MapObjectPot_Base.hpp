@@ -22,7 +22,7 @@ public:
     // data_ov000_020b35d0
     /* 00 */ virtual bool vfunc_00();
     /* 24 */ virtual void vfunc_24(MapObject *param1, VecFx32 param2) override;
-    /* 28 */ virtual unk32 vfunc_28() override;
+    /* 28 */ virtual unk32 vfunc_28(unk32 param1, unk32 param2, unk32 param3) override;
     /* 30 */ virtual ~MapObjectPot_Base() = 0 override;
     /* 38 */ virtual void vfunc_38() override;
     /* 3C */ virtual bool vfunc_3C() override;

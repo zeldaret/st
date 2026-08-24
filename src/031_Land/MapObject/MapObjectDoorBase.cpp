@@ -1,5 +1,7 @@
 #define DOORBASE_DTOR_NOINLINE
 #include "MapObject/MapObjectDoorBase.hpp"
+
+#include "Actor/ActorUnkSCCN.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
@@ -15,7 +17,7 @@ extern "C" void *func_ov000_02077590(unk32);
 
 class UnkStruct_ov031_02117210 {
 public:
-    /* 00 */ MapObject_10 mUnk_00[3];
+    /* 00 */ MapObject_10_SCCN mUnk_00[3];
     /* 6C */
 
     UnkStruct_ov031_02117210();

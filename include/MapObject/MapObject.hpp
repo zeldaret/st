@@ -148,7 +148,7 @@ public:
     /* 1C */ virtual bool vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3);
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24(MapObject *param1, VecFx32 param2);
-    /* 28 */ virtual unk32 vfunc_28();
+    /* 28 */ virtual unk32 vfunc_28(unk32 param1, unk32 param2, unk32 param3);
     /* 2C */ virtual bool vfunc_2C(VecFx32 *param1);
     /* 30 */ virtual ~MapObject();
     /* 38 */

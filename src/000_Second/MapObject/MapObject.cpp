@@ -113,7 +113,7 @@ void MapObject::vfunc_24(MapObject *param1, VecFx32 param2) {
     *(u32 *) this = 0; // ????
 }
 
-unk32 MapObject::vfunc_28() {
+unk32 MapObject::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
     return 0;
 }
 

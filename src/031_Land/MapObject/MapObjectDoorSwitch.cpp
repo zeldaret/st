@@ -24,7 +24,7 @@ MapObjectProfileDoorSwitch::MapObjectProfileDoorSwitch() :
 }
 
 MapObjectDoorSwitch::MapObjectDoorSwitch() :
-    mUnk_094(0) {
+    mUnk_094(NULL) {
     this->mUnkPos = FLOAT_TO_FX32(0.0f);
 
 #if IS_JP
