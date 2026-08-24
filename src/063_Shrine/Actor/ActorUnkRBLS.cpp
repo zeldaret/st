@@ -1,15 +1,13 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkRBLS.hpp"
-#include "MapObject/MapObjectTreasureSpawned.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
 
-extern UnkStruct_data_ov063_02163740 data_ov063_02163740; // = {0, 0x534C4252, 0, 0, 0, 0};
+ActorUnkZLSL_AnimationTag data_ov063_02163740 = {0, "RBLS"};
 
-extern "C" void func_ov000_02099f64(unk32 *param1, UnkStruct_data_ov063_02163740 param2, unk32 param3);
+extern "C" void func_ov000_02099f64(UnkStruct_ov063_02163784 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param3);
 
 DECL_PROFILE(ActorProfileUnkRBLS);
 
@@ -21,36 +19,30 @@ ActorProfileUnkRBLS::ActorProfileUnkRBLS() :
     ActorProfile_Derived1(ActorId_RBLS) {}
 
 ActorUnkRBLS::ActorUnkRBLS() :
-    mUnk_94(NULL),
-    mUnk_110(&mUnk_130, NULL) {}
+    mUnk_94(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkRBLS)->mUnk_3C.mUnk_50)),
+    mUnk_F4(&mUnk_94, GET_PROFILE(ActorProfileUnkRBLS)->vfunc_04()) {}
 
-unk32 ActorUnkRBLS::vfunc_18(void) {
+bool ActorUnkRBLS::vfunc_18(unk32 param1) {
     this->mPos.x -= FLOAT_TO_FX32(0.5f);
     this->mPos.z -= FLOAT_TO_FX32(0.5f);
     this->mPos.y = 0;
     func_ov000_02099f64(&this->mUnk_F4, data_ov063_02163740, 0x1000);
-    (*(MapObjectTreasureSpawned *) &this->mUnk_F4).vfunc_3C();
+    this->mUnk_F4.vfunc_3C();
 
     data_027e0cd8->mUnk_0C->mUnk_12A = 0;
-    return 1; //! INFO: bool?
+    return true;
 }
 
 void ActorUnkRBLS::vfunc_20(void) {
-    (*(Actor *) &this->mUnk_F4).vfunc_34(); //! WARN: NOT an Actor
+    this->mUnk_F4.vfunc_34();
 }
 
 void ActorUnkRBLS::vfunc_24(void) {
     this->vfunc_20();
 }
 
-void ActorUnkRBLS::vfunc_2C(void) {
-    ModelRender *param1 = &this->mUnk_94;
-    VecFx32 *param2     = &this->mPos;
-    param1->vfunc_18(param2);
+void ActorUnkRBLS::vfunc_2C(unk32 param1) {
+    ModelRender *var1 = &this->mUnk_94;
+    VecFx32 *var2     = &this->mPos;
+    var1->vfunc_18(var2);
 }
-
-void ActorUnkRBLS::func_ov063_0215f3d4(void) {}
-void ActorUnkRBLS::func_ov063_0215f500(void) {}
-
-ActorUnkRBLS::~ActorUnkRBLS() {}
-ActorProfileUnkRBLS::~ActorProfileUnkRBLS() {}

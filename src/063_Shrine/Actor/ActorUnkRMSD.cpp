@@ -1,20 +1,16 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkRMSD.hpp"
-
-#include "Actor/ActorUnkRMSW.hpp"
-#include "Render/ModelRender.hpp"
+#include "Actor/ActorUnkRMSV.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
 #include "types.h"
 
-char data_ov063_021625d8[0x10]; // = "RMSD_wall";
-char data_ov063_021625e8[0x10]; // = "RMSD";
+extern char data_ov063_021625d8[0x10]; // = "RMSD_wall";
+extern char data_ov063_021625e8[0x10]; // = "RMSD";
 
-extern struct UnkStruct_data_ov063_02163388 data_ov063_021634b0; // = {0, 0x44534D52, 0, 0, 0, 0};
+ActorUnkZLSL_AnimationTag data_ov063_021634b0 = {0, "RMSD"};
 
-extern "C" void func_ov000_02099ff8(unk32 *param1, struct UnkStruct_data_ov063_02163388 param2, unk32 param8);
-extern "C" unk32 func_ov063_0215bb34(ActorUnkRMSD *);
+extern "C" void func_ov000_02099ff8(unk32 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);
 
 DECL_PROFILE(ActorProfileUnkRMSD);
 
@@ -25,18 +21,12 @@ Actor *ActorProfileUnkRMSD::Create() {
 ActorProfileUnkRMSD::ActorProfileUnkRMSD() :
     ActorProfile_Derived1(ActorId_RMSD) {}
 
-ActorUnkRMSBase::ActorUnkRMSBase() :
-    mUnk_94(NULL),
-    mUnk_F4(NULL) {}
+ActorUnkRMSD::ActorUnkRMSD() :
+    mUnk_158(&mUnk_94, GET_PROFILE(ActorProfileUnkRMSD)->vfunc_04()) {}
 
-ActorUnkRMSD::ActorUnkRMSD() {
-    ActorProfileUnkRMSD *r0 = GET_PROFILE(ActorProfileUnkRMSD);
-    r0->vfunc_04();
-}
-
-unk32 ActorUnkRMSD::vfunc_18(void) {
-    unk32 res = func_ov063_0215bb34(this);
-    func_ov000_02099ff8(&this->mUnk_158, data_ov063_021634b0, 0x1000);
+bool ActorUnkRMSD::vfunc_18(unk32 param1) {
+    bool res = ActorUnkRMSBase::vfunc_18(param1);
+    this->mUnk_158.func_ov000_02099ff8(data_ov063_021634b0, 0x1000);
     return res;
 }
 
@@ -54,6 +44,3 @@ G3d_Model *ActorUnkRMSD::vfunc_54(void) {
 G3d_Model *ActorUnkRMSD::vfunc_58(void) {
     return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSD)->mUnk_3C, data_ov063_021625d8);
 }
-
-ActorUnkRMSD::~ActorUnkRMSD() {}
-ActorProfileUnkRMSD::~ActorProfileUnkRMSD() {}

@@ -15,6 +15,8 @@ public:
 
     // data_ov031_0211578c
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
+
+    void func_ov031_02102c00();
 };
 
 enum ActorItemFlowerState_ {

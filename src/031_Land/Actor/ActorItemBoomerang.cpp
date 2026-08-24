@@ -30,7 +30,7 @@ ActorProfileItemBoomerang::ActorProfileItemBoomerang() :
 
 // non-matching
 ActorItemBoomerang::ActorItemBoomerang() :
-    mUnk_94(data_027e0ce0->func_ov000_0208ed30(0x0, 0x1, ItemManager::func_ov000_020a8974(0x1)->mUnk_10)),
+    mUnk_94(data_027e0ce0->mUnk_1C->func_ov000_0208ed30(0x0, 0x1, ItemManager::func_ov000_020a8974(0x1)->mUnk_10)),
     mUnk_9C(true),
     mUnk_11C(this),
     mUnk_12C(),

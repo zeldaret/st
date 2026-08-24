@@ -19,6 +19,7 @@ public:
     void func_ov093_021660a8(ActorRef param1);
     void func_ov093_021660f8();
     void func_ov093_02166108();
+    void func_ov093_021661c0(ActorRef param1);
     void func_ov093_02166220();
 };
 

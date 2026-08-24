@@ -10,9 +10,10 @@
 class UnkStruct_027e0cd8_0C_Base;
 
 struct UnkStruct_ov000_0207de98 {
-    VecFx32 vec;
-    unk32 param1;
-    unk32 param2;
+    /* 00 */ VecFx32 vec;
+    /* 0C */ unk32 param1;
+    /* 10 */ unk32 param2;
+    /* 14 */
 };
 
 class UnkStruct_027e09c0_60 {

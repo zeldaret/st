@@ -36,7 +36,7 @@ public:
     ~ActorProfile();
 
     /* 00 */ virtual Actor *Create() = 0;
-    /* 04 */ virtual unk32 vfunc_04();
+    /* 04 */ virtual UnkActorFileSystem2 *vfunc_04();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
@@ -59,7 +59,7 @@ public:
     ActorProfile_Derived1(ActorId actorId1, ActorId actorId2);
     ~ActorProfile_Derived1();
 
-    /* 04 */ virtual unk32 vfunc_04() override;
+    /* 04 */ virtual UnkActorFileSystem2 *vfunc_04() override;
     /* 10 */ virtual void vfunc_10() override;
     /* 14 */ virtual void vfunc_14() override;
     /* 18 */ virtual void vfunc_18() override;
@@ -73,10 +73,10 @@ public:
     ActorProfile_Derived2(ActorId actorId1, ActorId actorId2) :
         ActorProfile_Derived1(actorId1, actorId2) {}
 
-    /* 04 */ virtual unk32 vfunc_04() override; // func_ov000_02097944
-    /* 10 */ virtual void vfunc_10() override;  // func_ov000_0209794c
-    /* 14 */ virtual void vfunc_14() override;  // func_ov000_0209796c
-    /* 18 */ virtual void vfunc_18() override;  // func_ov000_02097998
+    /* 04 */ virtual UnkActorFileSystem2 *vfunc_04() override; // func_ov000_02097944
+    /* 10 */ virtual void vfunc_10() override;                 // func_ov000_0209794c
+    /* 14 */ virtual void vfunc_14() override;                 // func_ov000_0209796c
+    /* 18 */ virtual void vfunc_18() override;                 // func_ov000_02097998
 };
 
 // typedef ActorProfile *(*GetActorProfile)();

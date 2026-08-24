@@ -36,7 +36,7 @@ extern "C" void func_020169d4(VecFx32 *, VecFx32 *, unk16 *, const char *);
 extern "C" bool func_02016c68(VecFx32 *, VecFx32 *, ActorRef);
 extern "C" Actor *func_02016fbc(ActorId, VecFx32 *, unk32);
 
-extern "C" void func_ov000_020578a4(unk32);
+extern "C" void func_ov000_020578a4(UnkSystem5 *);
 extern "C" void func_ov000_02057c98(ModelRender *, UnkSystem5 *);
 
 static char data_ov031_021135f0[0x4]                 = "\x00 ";
@@ -1424,7 +1424,7 @@ void ActorUnkZLSL_27CC::vfunc_3C() {
 }
 
 void ActorUnkZLSL_27CC::vfunc_38(unk32 param1, unk32 param2) {
-    func_ov000_020578a4((unk32) this->mUnk_04);
+    func_ov000_020578a4(this->mUnk_04);
 }
 
 s8 ActorUnkZLSL_27CC::vfunc_30() {

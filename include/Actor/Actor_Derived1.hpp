@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Actor/Actor.hpp"
+#include "Actor.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e0960.hpp"
@@ -40,11 +40,6 @@ public:
     /* 08 */ STRUCT_PAD(0x04, 0x08);
     /* 0C */ unk32 mUnk_0C;
     /* 10 */
-};
-
-struct ActorUnkZLSL_AnimationTag {
-    unk32 index;
-    char name[0x14];
 };
 
 class Actor_Derived1_94_0C {

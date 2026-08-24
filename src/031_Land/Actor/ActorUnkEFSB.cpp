@@ -25,7 +25,7 @@ ActorUnkEFSB::ActorUnkEFSB() :
 
 bool ActorUnkEFSB::vfunc_18(unk32 param1) {
     this->mUnk_0F8.vfunc_1C(data_ov031_02114ed0[0], 0x1000, 0x11F, 0x0);
-    this->mUnk_154.func_ov000_02099f8(data_ov031_02114ed0[0], 0x1000);
+    this->mUnk_154.func_ov000_02099ff8(data_ov031_02114ed0[0], 0x1000);
 
     this->mUnk_1B0 = this->mUnk_5C.mParams[0] << 0xC;
     if (this->mUnk_1B0 == 0) {

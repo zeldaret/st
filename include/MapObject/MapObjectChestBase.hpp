@@ -64,7 +64,7 @@ public:
     /* 0C */ virtual void vfunc_0C() override;
     /* 14 */ virtual void vfunc_14() override;
     /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2) override;
-    /* 28 */ virtual ItemId vfunc_28() override;
+    /* 28 */ virtual ItemId vfunc_28(unk32 param1, unk32 param2, unk32 param3) override;
     /* 30 */ virtual ~MapObjectChestBase() override;
     /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2);
     /* 3C */ virtual unk32 vfunc_3C();

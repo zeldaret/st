@@ -85,31 +85,31 @@ bool MapObjectMiniBlocks::vfunc_00(void) {
         case 1:
         case 6:
         case 8:
-            this->mUnk_14 = -0x8000;
+            this->mAngle = DEG_TO_ANG(-180);
             break;
         case 2:
         case 7:
         case 9:
-            this->mUnk_14 = 0x4000;
+            this->mAngle = DEG_TO_ANG(90);
             break;
         case 3:
         case 5:
         case 11:
-            this->mUnk_14 = -0x4000;
+            this->mAngle = DEG_TO_ANG(-90);
             break;
         default:
-            this->mUnk_14 = 0;
+            this->mAngle = DEG_TO_ANG(0);
             break;
     }
 
-    func_01ff9638(&vec, -this->mUnk_14);
+    func_01ff9638(&vec, -this->mAngle);
     VecFx32_Add(&this->mPos, &vec, &this->mPos);
     return true;
 }
 
 void MapObjectMiniBlocks::vfunc_14(void) {
     Mat3p m;
-    u16 unk_14 = this->mUnk_14;
+    u16 unk_14 = this->mAngle;
     Mat3p_InitYRotation(&m, SIN(unk_14), COS(unk_14));
     this->mUnk_40.vfunc_14(&m, &this->mPos);
 }

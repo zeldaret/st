@@ -36,14 +36,14 @@ MapObject::MapObject() {
     this->mPos.y = ptr->y;
     this->mPos.z = ptr->z;
 
-    this->mUnk_14 = *ptr2->mUnk_0C;
+    this->mAngle = *ptr2->mUnk_0C;
     MI_CpuCopyFast(ptr2->mUnk_04, &this->mUnk_20, sizeof(MapObject_20));
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_18); i++) {
         this->mUnk_18[i] = 0;
     }
 
-    SET_FLAGS(this->mFlags, MapObjFlag_Alive, MapObjFlag_1, MapObjFlag_2);
+    INIT_FLAGS(this->mFlags, MapObjFlag_Alive, MapObjFlag_1, MapObjFlag_2);
 }
 
 MapObject::~MapObject() {}
@@ -113,7 +113,7 @@ void MapObject::vfunc_24(MapObject *param1, VecFx32 param2) {
     *(u32 *) this = 0; // ????
 }
 
-unk32 MapObject::vfunc_28() {
+unk32 MapObject::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
     return 0;
 }
 

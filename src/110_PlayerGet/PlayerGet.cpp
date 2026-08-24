@@ -37,7 +37,7 @@ extern const char *data_ov000_020aa248; // .nsbmd
 
 extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
-extern "C" void func_01ffc5a0(ModelRender *, unk32, u16, void *, unk32);
+extern "C" void func_01ffc5a0(ModelRender *, unk32, UnkAngleStruct, void *);
 extern "C" void func_ov000_0208f820();
 extern "C" void func_ov000_0208ba10(void *, void *, unk32);
 extern "C" void func_02015ea8(unk32, void *);
@@ -425,18 +425,17 @@ static const AdventureFlag sAdvFlagItemMap[] = {
     AdventureFlag_Nothing,                           // ItemId_EngineerUniform
 };
 
-// non-matching
-void UnkStruct_PlayerGet_74::vfunc_00(unk32 param1, unk32 param2, unk32 param3) {
+void UnkStruct_PlayerGet_74::vfunc_00(unk32 param1, unk32 param2) {
     PlayerGet *unk_14 = (PlayerGet *) this->mUnk_14;
 
-    func_01ffc5a0(&unk_14->mUnk_8C, unk_14->mUnk_6C, unk_14->mUnk_70, &this->mUnk_04, param3);
+    func_01ffc5a0(&unk_14->mUnk_8C, unk_14->mUnk_6C, unk_14->mUnkAngleStruct, &this->mUnk_04);
 }
 
 PlayerGet::PlayerGet() :
     mUnk_54(0, 0, -1, ItemId_None),
     mUnk_64(mUnk_44, -1),
     mUnk_6C(0x1000),
-    mUnk_70(0),
+    mAngle(0),
     mUnk_72(0),
     mUnk_73(0),
     mUnk_74(this),
@@ -536,7 +535,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             }
 
             this->mUnk_54.mItemId  = itemId;
-            this->mUnk_70          = 0;
+            this->mAngle           = 0;
             this->mUnk_2C->mUnk_58 = 0;
             char auStack_108[12];
             func_ov000_0208ba10(auStack_108, &this->mUnk_24->mUnk_94, 0);
@@ -955,7 +954,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                 break;
             }
 
-            this->mUnk_70 += 0x10E;
+            this->mAngle += 0x10E;
 
             if (this->mUnk_73 == 0) {
                 break;

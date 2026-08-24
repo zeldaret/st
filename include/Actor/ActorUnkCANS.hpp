@@ -40,8 +40,8 @@ public:
 
     UnkStruct_ov063_02162ea8();
 
-    /* 00 (base) */ virtual ~UnkStruct_ov063_02162ea8();
-    /* 08 */ virtual bool vfunc_08(UnkStruct_ov031_020f3310 *param1) override;
+    /* 00 */ virtual ~UnkStruct_ov063_02162ea8();
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
     /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) override;
 };
 
@@ -66,11 +66,11 @@ public:
     /* 7C */ UnkSystem5 mUnk_7C;
     /* 9C */ unk32 mUnk_9C;
 
-    UnkStruct_ov063_02162f14(void *param3, unk32 param4) :
+    UnkStruct_ov063_02162f14(ModelRender *param3, UnkActorFileSystem2 *param4) :
         UnkStruct_ov000_020b31f0(&mUnk_2C, &mUnk_7C, param3, param4),
         mUnk_2C(&mUnk_4C, NULL),
         mUnk_7C(&mUnk_9C, NULL) {
-        if (param4 != 0) {
+        if (param4 != NULL) {
             mUnk_7C.mpModel = mUnk_10;
             mUnk_2C.mpModel = mUnk_10;
         }
@@ -92,10 +92,23 @@ public:
 
 class UnkStruct_ActorUnkCANS_224 {
 public:
-    /* 00 (base) */
-    /* 04 */
+    /* 00 (base) */ UnkStruct_PlayerGet_ec mUnk_00[0x2];
+    /* 08 */ u16 mUnk_08;
+    /* 0A */ u16 mUnk_0A;
+    /* 0C */ STRUCT_PAD(0x0C, 0x10);
+    /* 10 */
 
     UnkStruct_ActorUnkCANS_224(); // func_ov000_02099820
+
+    ~UnkStruct_ActorUnkCANS_224() {
+        for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_00; ptr != this->mUnk_00 + ARRAY_LEN(this->mUnk_00); ++ptr) {
+            ptr->func_ov000_020a0334();
+        }
+        this->mUnk_0A = 0x0;
+        this->mUnk_08 = 0x0;
+    }
+
+    void func_ov000_02099a0c();
 };
 
 class ActorUnkCANS : public Actor_Derived2 {
@@ -108,10 +121,6 @@ public:
     /* 1F4 */ Actor_Derived1_94 mUnk_1F4;
     /* 200 */ UnkStruct_ov063_02162e88 mUnk_200;
     /* 224 */ UnkStruct_ActorUnkCANS_224 mUnk_224;
-    /* 226 */ STRUCT_PAD(0x226, 0x22C);
-    /* 22C */ unk16 mUnk_22C;
-    /* 22E */ unk16 mUnk_22E;
-    /* 230 */ STRUCT_PAD(0x230, 0x234);
     /* 234 */ volatile u16 mUnk_234;
     /* 236 */ u16 mUnk_236;
     /* 238 */ volatile u16 mUnk_238;
@@ -132,15 +141,13 @@ public:
 
     ActorUnkCANS();
 
-    /* 10 */ virtual void vfunc_10(Cylinder *param1);
-    /* 18 */ virtual unk32 vfunc_18(void);
-    /* 1C */ virtual void vfunc_1C(void);
-    /* 20 */ virtual void vfunc_20(void);
-    /* 24 */ virtual void vfunc_24(void);
-    /* 2C */ virtual void vfunc_2C(unk32 param1);
-    /* 4C */ virtual ~ActorUnkCANS() override;
+    /* 10 */ virtual void vfunc_10(Cylinder *param1) override;
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1C(void) override;
+    /* 20 */ virtual void vfunc_20(void) override;
+    /* 24 */ virtual void vfunc_24(void) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
 
-    unk32 func_ov063_02157fa4(ActorRef param1, unk32 param2, unk32 param3, unk32 *param4);
     void func_ov063_02158424(void);
     void func_ov063_02158448(unk32 param1);
     void func_ov063_02158490(void);
@@ -185,7 +192,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkCANS();
-    ~ActorProfileUnkCANS();
 
     /* 0C */ virtual Actor *Create();
 

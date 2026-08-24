@@ -124,7 +124,7 @@ bool MapObjectDoorKey::func_ov031_020fea88(void) {
     return false;
 }
 
-unk32 MapObjectDoorKey::vfunc_28(void) {
+unk32 MapObjectDoorKey::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
     if (this->mUnk_A4) {
         return -1;
     }
