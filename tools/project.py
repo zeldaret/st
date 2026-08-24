@@ -154,6 +154,7 @@ class ProjectConfig:
         self.cc_path = (self.mwcc_path / "mwccarm.exe").resolve()
         self.as_path = (self.mwcc_path / "mwasmarm.exe").resolve()
         self.ld_path = (self.mwcc_path / "mwldarm.exe").resolve()
+        self.delinkpy_path = (self.root_path / "tools" / "delink.py").resolve()
         self.python_path = Path(sys.executable)
 
         self.dsd_base_flags = [
@@ -246,11 +247,11 @@ class ProjectConfig:
         return self.mwcc_tag
 
     @property
-    def current_path(self):
+    def current_path(self) -> Path:
         return Path(__name__)
 
     @property
-    def root_path(self):
+    def root_path(self) -> Path:
         return self.current_path.parent
 
     @property
@@ -290,7 +291,7 @@ class ProjectConfig:
         return self.root_path / "tools"
 
     @property
-    def mwcc_path(self):
+    def mwcc_path(self) -> Path:
         return self.mwcc_root / self.mwcc_version
 
     @property
@@ -422,7 +423,7 @@ def add_download_tool_builds(cfg: ProjectConfig, n: ninja_syntax.Writer, args: A
         variables={
             "tool": "objdiff",
             "tag": cfg.objdiff_version,
-            "path": cfg.objdiff_path,
+            "path": str(cfg.objdiff_path),
         }
     )
     n.newline()
@@ -1195,7 +1196,7 @@ def process_project(cfg: ProjectConfig, args: Any):
         configure_cmdline = subprocess.list2cmdline(sys.argv[1:])
         n.rule(
             name="configure",
-            command=f"{cfg.python_path} tools/configure.py {configure_cmdline}",
+            command=f"{cfg.python_path} tools/configure.py {configure_cmdline} && {cfg.python_path} {cfg.delinkpy_path} {cfg.dsd_path}",
             generator=True
         )
         n.newline()
