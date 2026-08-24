@@ -5,7 +5,7 @@
     .data       start:0x02122160 end:0x02122818 kind:data align:32
     .bss        start:0x02122820 end:0x02122bc0 kind:bss align:32
 
-src/032_MapA1/Actor/ActorUnkKURI.cpp:
+src/032_MapA1/Actor/ActorSpinut.cpp:
     .text       start:0x02118fc0 end:0x0211b6cc
     .init       start:0x02121f34 end:0x02121fa0
     .ctor       start:0x0212212c end:0x02122130
