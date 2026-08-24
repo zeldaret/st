@@ -1298,7 +1298,6 @@ def process_project(cfg: ProjectConfig, args: Any):
                     implicit=version_to_cmds[version],
                 )
 
-            # n.default(["format", "objdiff", *defaults])
-            n.default(["objdiff", *defaults])
+            n.default(["format", "objdiff", *defaults])
         else:
             n.default(["download_tools"])
