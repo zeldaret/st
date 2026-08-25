@@ -66,10 +66,10 @@ func_ov003_020b88e8 kind:function(arm,size=0x48) addr:0x020b88c8
 func_ov003_020b8930 kind:function(arm,size=0x8) addr:0x020b8910
 func_ov003_020b8938 kind:function(arm,size=0x140) addr:0x020b8918
 func_ov003_020b8a78 kind:function(arm,size=0x40) addr:0x020b8a58
-func_ov003_020b8ad8 kind:function(arm,size=0x20) addr:0x020b8a98
+func_ov003_020b8ab8 kind:function(arm,size=0x20) addr:0x020b8a98
 func_ov003_020b8ad8 kind:function(arm,size=0x28) addr:0x020b8ab8
 func_ov003_020b8b00 kind:function(arm,size=0xc4) addr:0x020b8ae0
-func_ov003_020b8be4 kind:function(arm,size=0x20) addr:0x020b8ba4
+func_ov003_020b8bc4 kind:function(arm,size=0x20) addr:0x020b8ba4
 func_ov003_020b8be4 kind:function(arm,size=0x90) addr:0x020b8bc4
 func_ov003_020b8c74 kind:function(arm,size=0x2c) addr:0x020b8c54
 func_ov003_020b8ca0 kind:function(arm,size=0x1c8) addr:0x020b8c80
@@ -156,6 +156,6 @@ data_ov003_020ba680 kind:data(any) addr:0x020ba680
 data_ov003_020ba6b8 kind:data(any) addr:0x020ba6b8
 data_ov003_020ba6bc kind:data(any) addr:0x020ba6bc
 data_ov003_020ba6d8 kind:data(any) addr:0x020ba6d8
-data_ov003_020ba720 kind:bss addr:0x020ba720
+data_ov003_020ba740 kind:bss addr:0x020ba720
 data_ov003_020ba728 kind:bss addr:0x020ba728
 data_ov003_020ba734 kind:bss addr:0x020ba734

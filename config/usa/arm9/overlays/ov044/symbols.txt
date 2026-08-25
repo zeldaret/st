@@ -1,5 +1,5 @@
 func_ov044_021234c0 kind:function(arm,size=0x30) addr:0x021234a0
-func_ov044_02123510 kind:function(arm,size=0x10) addr:0x021234d0
+func_ov044_021234f0 kind:function(arm,size=0x10) addr:0x021234d0
 func_ov044_02123500 kind:function(arm,size=0x10) addr:0x021234e0
 func_ov044_02123510 kind:function(arm,size=0x5c) addr:0x021234f0
 func_ov044_0212356c kind:function(arm,size=0xa4) addr:0x0212354c

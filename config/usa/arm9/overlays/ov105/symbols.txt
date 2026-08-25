@@ -1,7 +1,7 @@
 func_ov105_02184a40 kind:function(arm,size=0x9c) addr:0x02184a20
 func_ov105_02184adc kind:function(arm,size=0xa8) addr:0x02184abc
 func_ov105_02184b84 kind:function(arm,size=0x12c) addr:0x02184b64
-_ZN19func_ov105_02184cd0D1Ev kind:function(arm,size=0x20) addr:0x02184c90
+func_ov105_02184cb0 kind:function(arm,size=0x20) addr:0x02184c90
 _ZN19func_ov105_02184cd0D1Ev kind:function(arm,size=0xc4) addr:0x02184cb0
 _ZN19func_ov105_02184d94D0Ev kind:function(arm,size=0xcc) addr:0x02184d74
 func_ov105_02184e60 kind:function(arm,size=0x3c) addr:0x02184e40

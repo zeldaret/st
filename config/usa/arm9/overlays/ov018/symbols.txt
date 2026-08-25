@@ -51,17 +51,13 @@ _ZN24UnkStruct_ov018_020c5ac0C1Ev kind:function(arm,size=0x24) addr:0x020c5aa0
 _ZN24UnkStruct_ov018_020c5ac06CreateEv kind:function(arm,size=0x24) addr:0x020c5ac4
 _ZN24UnkStruct_ov018_020c5ac011SetInstanceEv kind:function(arm,size=0x10) addr:0x020c5ae8
 _ZTV15GameModeStartUp kind:data(any) addr:0x020c5b00
-data_ov018_020c5b30 kind:data(any) addr:0x020c5b30
-data_ov018_020c5b34 kind:data(any) addr:0x020c5b34 ambiguous
-data_ov018_020c5b44 kind:data(any) addr:0x020c5b44
-data_ov018_020c5b48 kind:data(any) addr:0x020c5b48
-data_ov018_020c5b58 kind:data(any) addr:0x020c5b58
-data_ov018_020c5b64 kind:data(any) addr:0x020c5b64
-data_ov018_020c5b6c kind:data(any) addr:0x020c5b6c
-data_ov018_020c5b74 kind:data(any) addr:0x020c5b74
-data_ov018_020c5b8c kind:data(any) addr:0x020c5b8c
-data_ov018_020c5ba0 kind:bss addr:0x020c5ba0
-data_ov018_020c5ba4 kind:bss addr:0x020c5ba4
-data_ov018_020c5ba8 kind:bss addr:0x020c5ba8
-data_ov018_020c5bb4 kind:bss addr:0x020c5bb4
-data_ov018_020c5bf0 kind:bss addr:0x020c5bf0
+@1618 kind:data(any) addr:0x020c5b30 local
+@1619 kind:data(any) addr:0x020c5b44 local
+@1620 kind:data(byte[14]) addr:0x020c5b48 local
+@1621 kind:data(byte[10]) addr:0x020c5b58 local
+@1676 kind:data(any) addr:0x020c5b64 local
+@1845 kind:data(byte[32]) addr:0x020c5b6c local
+data_ov018_020c5bc0 kind:bss(size=0x1) addr:0x020c5ba0 local
+_ZGVZN4Game19func_ov018_020c4ba8EvE19data_ov018_020c5bd4 kind:bss addr:0x020c5ba4 local
+@978 kind:bss addr:0x020c5ba8 local
+_ZZN4Game19func_ov018_020c4ba8EvE19data_ov018_020c5bd4 kind:bss(size=0x34) addr:0x020c5bb4 local

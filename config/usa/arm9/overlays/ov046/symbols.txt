@@ -194,7 +194,7 @@ _ZN12ActorUnkWBN219func_ov046_02129574Ev kind:function(arm,size=0x40) addr:0x021
 _ZN12ActorUnkWBN219func_ov046_021295b4Ev kind:function(arm,size=0x14) addr:0x02129594
 _ZN12ActorUnkWBN219func_ov046_021295c8Ev kind:function(arm,size=0x1c) addr:0x021295a8
 _ZN19ActorProfileUnkWBN2D1Ev kind:function(arm,size=0x14) addr:0x021295c4
-func_ov046_02129618 kind:function(arm,size=0x20) addr:0x021295d8
+func_ov046_021295f8 kind:function(arm,size=0x20) addr:0x021295d8
 func_ov046_02129618 kind:function(arm,size=0x104) addr:0x021295f8
 func_ov046_0212971c kind:function(arm,size=0x30c) addr:0x021296fc
 data_ov046_02129a24 kind:data(any) addr:0x02129a24

@@ -840,7 +840,7 @@ from:0x021580d4 kind:arm_call to:0x0215c754 module:overlay(74)
 from:0x021580e0 kind:load to:0x027e0ce0 module:dtcm
 from:0x021580e4 kind:load to:0x027e09b8 module:dtcm
 from:0x021580ec kind:load to:0x027e0d74 module:dtcm
-from:0x021580f0 kind:load to:0x020d8674 module:overlays(19,24)
+from:0x021580f0 kind:load to:0x020d8674 module:overlay(24)
 from:0x021580fc kind:load to:0x027e09a8 module:dtcm
 from:0x0215811c kind:load to:0x02157360 module:overlay(74)
 from:0x02158148 kind:arm_call to:0x0215c788 module:overlay(74)

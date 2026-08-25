@@ -2560,7 +2560,7 @@ _ZN9MapObject19func_ov000_0209d144EP5Vec2sii kind:function(arm,size=0x88) addr:0
 _ZN9MapObject8vfunc_1CE8ActorRefiP7VecFx32 kind:function(arm,size=0x8) addr:0x0209d1ac
 _ZN9MapObject8vfunc_20Ev kind:function(arm,size=0x4) addr:0x0209d1b4
 _ZN9MapObject8vfunc_24EPS_7VecFx32 kind:function(arm,size=0xc) addr:0x0209d1b8
-_ZN9MapObject8vfunc_28Ev kind:function(arm,size=0x8) addr:0x0209d1c4
+_ZN9MapObject8vfunc_28Eiii kind:function(arm,size=0x8) addr:0x0209d1c4
 _ZN9MapObject8vfunc_2CEP7VecFx32 kind:function(arm,size=0x40) addr:0x0209d1cc
 _ZN9MapObject19func_ov000_0209d22cEPsPS_i kind:function(arm,size=0x48) addr:0x0209d20c
 _ZN9MapObject19func_ov000_0209d274Ei kind:function(arm,size=0x28) addr:0x0209d254
@@ -2582,7 +2582,7 @@ _ZN17MapObjectPot_Base8vfunc_00Ev kind:function(arm,size=0x24) addr:0x0209d760
 _ZN17MapObjectPot_Base8vfunc_44Eii kind:function(arm,size=0x144) addr:0x0209d784
 _ZN17MapObjectPot_Base19func_ov000_0209d8e8EPS_i kind:function(arm,size=0xc4) addr:0x0209d8c8
 _ZN17MapObjectPot_Base8vfunc_38Ev kind:function(arm,size=0x4c) addr:0x0209d98c
-_ZN17MapObjectPot_Base8vfunc_28Ev kind:function(arm,size=0x68) addr:0x0209d9d8
+_ZN17MapObjectPot_Base8vfunc_28Eiii kind:function(arm,size=0x68) addr:0x0209d9d8
 func_ov000_0209da60 kind:function(arm,size=0x4) addr:0x0209da40
 _ZN17MapObjectPot_Base19func_ov000_0209da64Ev kind:function(arm,size=0xc) addr:0x0209da44
 _ZN17MapObjectPot_Base8vfunc_4CEv kind:function(arm,size=0x8) addr:0x0209da50
@@ -3469,7 +3469,7 @@ _ZTV33UnkSystem2_UnkSubSystem1_Derived4 kind:data(any) addr:0x020b1f04
 data_ov000_020b1f24 kind:data(any) addr:0x020b1f24
 data_ov000_020b1f54 kind:data(any) addr:0x020b1f3c
 data_ov000_020b1f54_usa kind:data(any) addr:0x020b1f54
-data_ov000_020b1f6c kind:data(any) addr:0x020b1f6c
+_ZTV24UnkSystem2_UnkSubSystem8 kind:data(any) addr:0x020b1f64
 data_ov000_020b1f7c kind:data(any) addr:0x020b1f7c
 data_ov000_020b1fac kind:data(any) addr:0x020b1f8c
 data_ov000_020b1f9c kind:data(any) addr:0x020b1f9c
@@ -4038,7 +4038,7 @@ data_ov000_020b52dc kind:bss addr:0x020b52dc
 data_ov000_020b5300 kind:bss addr:0x020b52e0
 data_ov000_020b5318 kind:bss addr:0x020b5318
 data_ov000_020b531c kind:bss addr:0x020b531c
-data_ov000_020b5320 kind:bss addr:0x020b5320
+data_ov000_020b5340 kind:bss addr:0x020b5320
 data_ov000_020b5350 kind:bss addr:0x020b5350
 data_ov000_020b5360 kind:bss addr:0x020b5360
 data_ov000_020b5368 kind:bss addr:0x020b5368

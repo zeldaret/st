@@ -1,4 +1,4 @@
-func_ov039_02118fe0 kind:function(arm,size=0x20) addr:0x02118fa0
+func_ov039_02118fc0 kind:function(arm,size=0x20) addr:0x02118fa0
 func_ov039_02118fe0 kind:function(arm,size=0xc) addr:0x02118fc0
 _ZN19ActorProfileUnkZELD10GetProfileEv kind:function(arm,size=0xc) addr:0x02118fcc
 _ZN19ActorProfileUnkZELD6CreateEv kind:function(arm,size=0x28) addr:0x02118fd8
@@ -53,11 +53,11 @@ func_ov039_0211a510 kind:function(arm,size=0x54) addr:0x0211a4f0
 func_ov039_0211a564 kind:function(arm,size=0xcc) addr:0x0211a544
 func_ov039_0211a630 kind:function(arm,size=0x144) addr:0x0211a610
 func_ov039_0211a774 kind:function(arm,size=0x6c) addr:0x0211a754
-func_ov039_0211a800 kind:function(arm,size=0x20) addr:0x0211a7c0
+func_ov039_0211a7e0 kind:function(arm,size=0x20) addr:0x0211a7c0
 func_ov039_0211a800 kind:function(arm,size=0x28) addr:0x0211a7e0
 func_ov039_0211a828 kind:function(arm,size=0x90) addr:0x0211a808
 func_ov039_0211a8b8 kind:function(arm,size=0x98) addr:0x0211a898
-_ZN19func_ov039_0211a970D1Ev kind:function(arm,size=0x20) addr:0x0211a930
+func_ov039_0211a950 kind:function(arm,size=0x20) addr:0x0211a930
 _ZN19func_ov039_0211a970D1Ev kind:function(arm,size=0x30) addr:0x0211a950
 _ZN19func_ov039_0211a9a0D0Ev kind:function(arm,size=0x38) addr:0x0211a980
 _ZN19ActorProfileUnkSRNMD1Ev kind:function(arm,size=0x14) addr:0x0211a9b8
@@ -67,7 +67,7 @@ _ZN19ActorProfileUnkSIRSD1Ev kind:function(arm,size=0x14) addr:0x0211a9f4
 func_ov039_0211aa28 kind:function(arm,size=0x38) addr:0x0211aa08
 func_ov039_0211aa60 kind:function(arm,size=0x28) addr:0x0211aa40
 func_ov039_0211aa88 kind:function(arm,size=0x2c) addr:0x0211aa68
-func_ov039_0211aad4 kind:function(arm,size=0x20) addr:0x0211aa94
+func_ov039_0211aab4 kind:function(arm,size=0x20) addr:0x0211aa94
 func_ov039_0211aad4 kind:function(arm,size=0x54) addr:0x0211aab4
 _ZN19ActorProfileUnkRMM410GetProfileEv kind:function(arm,size=0xc) addr:0x0211ab08
 _ZN19ActorProfileUnkRMM46CreateEv kind:function(arm,size=0x24) addr:0x0211ab14
@@ -146,7 +146,7 @@ _ZN16MapObjectUnkGTAT19func_ov039_0211c964Ev kind:function(arm,size=0x4) addr:0x
 _ZN16MapObjectUnkGTATD1Ev kind:function(arm,size=0x14) addr:0x0211c948
 _ZN16MapObjectUnkGTATD0Ev kind:function(arm,size=0x1c) addr:0x0211c95c
 _ZN23MapObjectProfileUnkGTATD1Ev kind:function(arm,size=0x14) addr:0x0211c978
-func_ov039_0211c9cc kind:function(arm,size=0x20) addr:0x0211c98c
+func_ov039_0211c9ac kind:function(arm,size=0x20) addr:0x0211c98c
 func_ov039_0211c9cc kind:function(arm,size=0xe0) addr:0x0211c9ac
 data_ov039_0211ca94 kind:data(any) addr:0x0211ca94
 data_ov039_0211ca9c kind:data(any) addr:0x0211ca9c

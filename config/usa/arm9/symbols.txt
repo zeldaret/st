@@ -2577,11 +2577,11 @@ data_0204406c kind:data(any) addr:0x0204406c
 data_02044070 kind:data(any) addr:0x02044070
 data_02044080 kind:data(any) addr:0x02044080
 data_02044094 kind:data(any) addr:0x02044094
-data_020440b8 kind:data(any) addr:0x020440b8
+_ZTV21UnkStruct_0204e5f8_1C kind:data(any) addr:0x020440b0
 data_020440c4 kind:data(any) addr:0x020440c4
 data_020440d8 kind:data(any) addr:0x020440d8
 data_020440ec kind:data(any) addr:0x020440ec
-data_02044284 kind:data(any) addr:0x02044284
+_ZTV23UnkStruct_0204a110_Sub6 kind:data(any) addr:0x0204427c
 data_02044294 kind:data(any) addr:0x02044294
 data_020442a4 kind:data(any) addr:0x020442a4
 data_020442b4 kind:data(any) addr:0x020442b4
@@ -2596,7 +2596,7 @@ data_02044360 kind:data(any) addr:0x02044360
 data_0204436c kind:data(any) addr:0x0204436c
 data_02044378 kind:data(any) addr:0x02044378
 data_020443c0 kind:data(any) addr:0x02044390
-data_020443a8 kind:data(any) addr:0x020443a8
+_ZTV21UnkStruct_0204e64c_00 kind:data(any) addr:0x020443a0
 data_020443e8 kind:data(any) addr:0x020443b8
 data_020443d8 kind:data(any) addr:0x020443d8
 data_020443e0 kind:data(any) addr:0x020443e0
@@ -2784,7 +2784,7 @@ data_0204a030 kind:bss addr:0x0204a030
 data_0204a034 kind:bss addr:0x0204a034
 data_0204a060 kind:bss addr:0x0204a040
 data_0204a088 kind:bss addr:0x0204a068
-data_0204a070 kind:bss addr:0x0204a070
+data_0204a090 kind:bss addr:0x0204a070
 data_0204a110 kind:bss addr:0x0204a0f0
 data_0204a460 kind:bss addr:0x0204a460
 data_0204adf0 kind:bss addr:0x0204adf0
@@ -2793,7 +2793,6 @@ data_0204ae8c kind:bss addr:0x0204ae8c
 data_0204ae98 kind:bss addr:0x0204ae98
 data_0204aeb0 kind:bss addr:0x0204aeb0
 data_0204aebc kind:bss addr:0x0204aebc
-data_0204aecc kind:bss addr:0x0204aecc
 data_0204aed0 kind:bss addr:0x0204aed0
 data_0204aee2 kind:bss addr:0x0204aee2
 data_0204aef0 kind:bss addr:0x0204aef0

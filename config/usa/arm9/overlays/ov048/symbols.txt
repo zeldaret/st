@@ -1,7 +1,7 @@
 func_ov048_021304a0 kind:function(arm,size=0x88) addr:0x02130480
 func_ov048_02130528 kind:function(arm,size=0x30) addr:0x02130508
 func_ov048_02130558 kind:function(arm,size=0x88) addr:0x02130538
-func_ov048_02130600 kind:function(arm,size=0x20) addr:0x021305c0
+func_ov048_021305e0 kind:function(arm,size=0x20) addr:0x021305c0
 func_ov048_02130600 kind:function(arm,size=0xa8) addr:0x021305e0
 func_ov048_021306a8 kind:function(arm,size=0x14) addr:0x02130688
 _ZN19func_ov048_021306bcD1Ev kind:function(arm,size=0x30) addr:0x0213069c
