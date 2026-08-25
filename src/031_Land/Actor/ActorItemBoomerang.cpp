@@ -15,7 +15,7 @@ extern "C" void func_01ff97c8(VecFx32 *, int);
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
 extern "C" unk32 func_01ffb9cc(VecFx32 *, VecFx32 *);
 extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, UnkStruct_ov031_Items_00 *);
-extern "C" void func_01ffedac(u16 *, VecFx32 *);
+extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
 extern "C" bool func_ov000_0205aeac();
 extern "C" bool func_ov000_020982d8();
 
@@ -199,7 +199,7 @@ void ActorItemBoomerang::vfunc_20() {
                 this->func_ov031_020e49b0(0x8D70);
             }
 
-            u16 spC;
+            Vec2bCpp spC;
             VecFx32 sp3C;
             VecFx32_Copy(data_027e0ce0->func_01fff148(0x0), &sp3C);
 

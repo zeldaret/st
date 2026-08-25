@@ -15,37 +15,37 @@ public:
     /* 0C */ virtual void vfunc_0C() override;
 };
 
-enum ActorUnkKURIState_ {
-    ActorUnkKURIState_0  = 0,
-    ActorUnkKURIState_1  = 1,
-    ActorUnkKURIState_2  = 2,
-    ActorUnkKURIState_3  = 3,
-    ActorUnkKURIState_4  = 4,
-    ActorUnkKURIState_5  = 5,
-    ActorUnkKURIState_6  = 6,
-    ActorUnkKURIState_7  = 7,
-    ActorUnkKURIState_8  = 8,
-    ActorUnkKURIState_9  = 9,
-    ActorUnkKURIState_10 = 10,
-    ActorUnkKURIState_11 = 11,
-    ActorUnkKURIState_Max
+enum ActorSpinutState_ {
+    ActorSpinutState_0  = 0,
+    ActorSpinutState_1  = 1,
+    ActorSpinutState_2  = 2,
+    ActorSpinutState_3  = 3,
+    ActorSpinutState_4  = 4,
+    ActorSpinutState_5  = 5,
+    ActorSpinutState_6  = 6,
+    ActorSpinutState_7  = 7,
+    ActorSpinutState_8  = 8,
+    ActorSpinutState_9  = 9,
+    ActorSpinutState_10 = 10,
+    ActorSpinutState_11 = 11,
+    ActorSpinutState_Max
 };
 
-class ActorUnkKURI_268 : public UnkStruct_ov031_Items_00 {
+class ActorSpinut_268 : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (base) */
     /* 04 */ STRUCT_PAD(0x04, 0x08);
     /* 08 */ VecFx32 mUnk_08;
     /* 14 */
 
-    ActorUnkKURI_268();
+    ActorSpinut_268();
 
     // data_ov032_021221bc
-    /* 00 */ virtual ~ActorUnkKURI_268();
+    /* 00 */ virtual ~ActorSpinut_268();
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
 };
 
-class ActorUnkKURI_110 : public UnkStruct_ov000_020b31f0 {
+class ActorSpinut_110 : public UnkStruct_ov000_020b31f0 {
 public:
     /* 00 (base) */
     /* 2C */ UnkSystem5 mUnk_2C;
@@ -55,7 +55,7 @@ public:
     /* 8C */ unk32 mUnk_8C;
     /* 90 */
 
-    ActorUnkKURI_110(ModelRender *param3, UnkActorFileSystem2 *param4) :
+    ActorSpinut_110(ModelRender *param3, UnkActorFileSystem2 *param4) :
         UnkStruct_ov000_020b31f0(&this->mUnk_2C, &this->mUnk_6C, param3, param4),
         mUnk_2C(&this->mUnk_4C, NULL),
         mUnk_6C(&this->mUnk_8C, NULL) {
@@ -70,14 +70,14 @@ public:
     /* 3C */ virtual void vfunc_3C() override;
 };
 
-class ActorUnkKURI_1BC : public UnkStruct_ov000_020b31a8 {
+class ActorSpinut_1BC : public UnkStruct_ov000_020b31a8 {
 public:
     /* 00 (base) */
     /* 1C */ UnkSystem5 mUnk_1C;
     /* 3C */ unk32 mUnk_3C;
     /* 40 */
 
-    ActorUnkKURI_1BC(ModelRender *param2, UnkActorFileSystem2 *param3) :
+    ActorSpinut_1BC(ModelRender *param2, UnkActorFileSystem2 *param3) :
         UnkStruct_ov000_020b31a8(&this->mUnk_1C, param2, param3),
         mUnk_1C(&this->mUnk_3C, NULL) {
         if (param3 != NULL) {
@@ -91,14 +91,14 @@ public:
     /* 3C */ virtual void vfunc_3C() override;
 };
 
-class ActorUnkKURI : public Actor_Derived2 {
+class ActorSpinut : public Actor_Derived2 {
 public:
     /* 000 (base) */
     /* 0AE */ STRUCT_PAD(0x0AE, 0x0B0);
     /* 0B0 */ ModelRender_ov000_020b1a1c mUnk_0B0;
-    /* 110 */ ActorUnkKURI_110 mUnk_110;
+    /* 110 */ ActorSpinut_110 mUnk_110;
     /* 1A0 */ STRUCT_PAD(0x1A0, 0x1BC);
-    /* 1BC */ ActorUnkKURI_1BC mUnk_1BC;
+    /* 1BC */ ActorSpinut_1BC mUnk_1BC;
     /* 1FC */ STRUCT_PAD(0x1FC, 0x218);
     /* 218 */ unk16 mUnk_218;
     /* 21C */ unk32 mUnk_21C;
@@ -108,7 +108,7 @@ public:
     /* 248 */ UnkStruct_ActorUnkCANS_224 mUnk_248;
     /* 258 */ Actor_Derived1_94 mUnk_258;
     /* 264 */ unk32 mUnk_264;
-    /* 268 */ ActorUnkKURI_268 mUnk_268;
+    /* 268 */ ActorSpinut_268 mUnk_268;
     /* 27C */ VecFx32 mUnk_27C;
     /* 288 */ VecFx32 mUnk_288;
     /* 294 */ bool mUnk_294;
@@ -116,7 +116,7 @@ public:
     /* 298 */ u16 mUnk_298;
     /* 29A */
 
-    ActorUnkKURI();
+    ActorSpinut();
 
     bool IsInternalTimerOut() {
         if (this->mUnk_296 < this->mUnk_298) {
@@ -131,7 +131,7 @@ public:
     /* 1C */ virtual void vfunc_1C() override;
     /* 20 */ virtual void vfunc_20() override;
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
-    /* 4C */ virtual ~ActorUnkKURI() override;
+    /* 4C */ virtual ~ActorSpinut() override;
     /* 54 */ virtual void vfunc_54(unk32 param1) override;
 
     void func_ov032_021194dc(ActorState state);
@@ -167,17 +167,17 @@ public:
     void func_ov032_0211b190(s32 param1, s32 param2);
     void func_ov032_0211b1e0();
     void func_ov032_0211b298();
-    static void func_ov032_0211b37c(ActorUnkKURI *, u16 param1);
+    static void func_ov032_0211b37c(ActorSpinut *, u16 param1);
     void func_ov032_0211b3b0();
 };
 
-class ActorProfileUnkKURI : public ActorProfile_Derived1 {
+class ActorProfileSpinut : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
-    ActorProfileUnkKURI();
+    ActorProfileSpinut();
 
     /* 0C */ virtual Actor *Create();
 
-    static ActorProfileUnkKURI *GetProfile();
+    static ActorProfileSpinut *GetProfile();
 };

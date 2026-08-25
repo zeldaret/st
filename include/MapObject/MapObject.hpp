@@ -94,6 +94,11 @@ public:
     /* 20 */
 };
 
+class MapObject_10_Derived1 : public MapObject_10 {
+public:
+    MapObject_10_Derived1() {}
+};
+
 class MapObject_20 {
 public:
     /* 00 */ u16 mParams[4]; // parameters

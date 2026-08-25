@@ -6,7 +6,7 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
-extern "C" void func_01ffedac(u16 *, VecFx32 *);
+extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
 extern "C" void func_01ffb9cc(void *, VecFx32 *);
 
 DECL_PROFILE(ActorProfileUnkSWOB);
@@ -85,7 +85,7 @@ void ActorUnkSWOB::func_ov000_0209aa30(void) {
             VecFx32 vec2;
             VecFx32 vec;
             ActorParams AStack_7c;
-            u16 auStack_80[2];
+            Vec2bCpp auStack_80;
             int j;
             u32 i;
 
@@ -109,7 +109,7 @@ void ActorUnkSWOB::func_ov000_0209aa30(void) {
                     VecFx32_Add(&vec, &vec2, &vec);
 
                     if (j < 10) {
-                        func_01ffedac(auStack_80, &vec);
+                        func_01ffedac(&auStack_80, &vec);
                         func_01ffb9cc(&temp, &vec);
                         i--;
                         j++;

@@ -30,7 +30,7 @@ void ActorUnkNSSW::func_ov032_02120b6c(void) {}
 void ActorUnkNSSW::func_ov032_02120b7c(void) {}
 void ActorUnkNSSW::func_ov032_02120bc0(void) {}
 void ActorUnkNSSW::func_ov032_02120bfc(void) {}
-void ActorUnkNSSW::func_ov032_02120c64(void) {}
+void ActorUnkNSSW::func_ov032_02120c64(MapObjectUnkSWSW *param1) {}
 void ActorUnkNSSW::func_ov032_02120cf0(void) {}
 void ActorUnkNSSW::func_ov032_02120d24(void) {}
 void ActorUnkNSSW::func_ov032_02120d60(void) {}

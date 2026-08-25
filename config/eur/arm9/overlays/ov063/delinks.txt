@@ -85,6 +85,7 @@ src/063_Shrine/MapObject/MapObjectUnkLTRW.cpp:
     .text       start:0x02160ad0 end:0x02160e98
     .init       start:0x02162d20 end:0x02162da0
     .ctor       start:0x02162e6c end:0x02162e70
+    .data       start:0x021639c4 end:0x02163a94
     .bss        start:0x021646f8 end:0x02164800
 
 src/063_Shrine/MapObject/MapObjectUnkMTJR.cpp:

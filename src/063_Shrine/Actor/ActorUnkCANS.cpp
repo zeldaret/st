@@ -51,7 +51,6 @@ extern "C" void func_01ffad5c(Mat4x3p *, Mat4x3p *, Mat4x3p *);
 extern "C" fx32 func_01ffb428(unk32, unk32);
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
 extern "C" unk32 func_01ffbbe0(fx32 param1, fx32 param2);
-extern "C" void func_01ffc6d4(ModelRender *param1, UnkAngleStruct param2, VecFx32 *param3);
 extern "C" void func_0200eab0(G3d_Model *, unk32, u8);
 
 // Overlay 0
@@ -453,7 +452,7 @@ void ActorUnkCANS::vfunc_2C(unk32 param1) {
         return;
     }
 
-    ((UnkSystem6_Derived2 *) &mUnk_0B0)->func_01ffc6d4(mAngleStruct, &mPos);
+    mUnk_0B0.func_01ffc6d4(mAngleStruct, &mPos);
 
     if (mUnk_268 != NULL) {
         VecFx32 vec;

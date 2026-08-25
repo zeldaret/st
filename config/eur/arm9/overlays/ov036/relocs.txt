@@ -1246,7 +1246,7 @@ from:0x02120e9c kind:arm_call to:0x0203ce74 module:main
 from:0x02120eb0 kind:load to:0x02122764 module:overlay(36)
 from:0x02120eb4 kind:load to:0x02122774 module:overlay(36)
 from:0x02120eb8 kind:load to:0x0211b214 module:overlay(36)
-from:0x02120ebc kind:load to:0x02122768 module:overlay(36)
+from:0x02120ebc kind:load to:0x02122760 module:overlay(36) add:0x8
 from:0x02120edc kind:arm_call to:0x0211b278 module:overlay(36)
 from:0x02120eec kind:arm_call to:0x0203ce74 module:main
 from:0x02120f00 kind:load to:0x0212284c module:overlay(36)
