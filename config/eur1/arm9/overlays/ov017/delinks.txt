@@ -4,3 +4,8 @@
     .ctor       start:0x020c3f20 end:0x020c3f2c kind:rodata align:4
     .data       start:0x020c3f40 end:0x020c3fa0 kind:data align:32
     .bss        start:0x020c3fa0 end:0x020c4880 kind:bss align:32
+
+src/017_CourseExec/CargoManager_017.cpp:
+    complete
+    .text       start:0x020bea0c end:0x020bed18
+    .rodata     start:0x020c3e00 end:0x020c3e2c

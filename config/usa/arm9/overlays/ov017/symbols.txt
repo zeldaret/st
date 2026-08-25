@@ -167,10 +167,7 @@ _ZN24AdventureModeManager_15C19func_ov017_020c3bc0Ev kind:function(arm,size=0xa4
 _ZN24AdventureModeManager_15C19func_ov017_020c3c64Ev kind:function(arm,size=0x40) addr:0x020c3c44
 func_ov017_020c3ca4 kind:function(arm,size=0xf4) addr:0x020c3c84
 func_ov017_020c3d98 kind:function(arm,size=0x28) addr:0x020c3d78
-data_ov017_020c3da0 kind:data(any) addr:0x020c3da0
-data_ov017_020c3da2 kind:data(any) addr:0x020c3da2
-data_ov017_020c3da3 kind:data(any) addr:0x020c3da3
-data_ov017_020c3da4 kind:data(any) addr:0x020c3da4
+sCargoInfos kind:data(byte[0x2a]) addr:0x020c3da0 local
 data_ov017_020c3dcc kind:data(any) addr:0x020c3dcc
 __sinit_ov017_020c3e04 kind:function(arm,size=0x6c) addr:0x020c3e04
 __sinit_ov017_020c3e70 kind:function(arm,size=0x38) addr:0x020c3e70
