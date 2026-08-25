@@ -2560,7 +2560,7 @@ _ZN9MapObject19func_ov000_0209d144EP5Vec2sii kind:function(arm,size=0x88) addr:0
 _ZN9MapObject8vfunc_1CE8ActorRefiP7VecFx32 kind:function(arm,size=0x8) addr:0x0209d220
 _ZN9MapObject8vfunc_20Ev kind:function(arm,size=0x4) addr:0x0209d228
 _ZN9MapObject8vfunc_24EPS_7VecFx32 kind:function(arm,size=0xc) addr:0x0209d22c
-_ZN9MapObject8vfunc_28Ev kind:function(arm,size=0x8) addr:0x0209d238
+_ZN9MapObject8vfunc_28Eiii kind:function(arm,size=0x8) addr:0x0209d238
 _ZN9MapObject8vfunc_2CEP7VecFx32 kind:function(arm,size=0x40) addr:0x0209d240
 _ZN9MapObject19func_ov000_0209d22cEPsPS_i kind:function(arm,size=0x48) addr:0x0209d280
 _ZN9MapObject19func_ov000_0209d274Ei kind:function(arm,size=0x28) addr:0x0209d2c8
@@ -3469,7 +3469,7 @@ _ZTV33UnkSystem2_UnkSubSystem1_Derived4 kind:data(any) addr:0x020b1f6c
 data_ov000_020b1f84 kind:data(any) addr:0x020b1f84
 _ZTV19data_ov000_020b1f54 kind:data(any) addr:0x020b1f9c
 data_ov000_020b1fb4 kind:data(any) addr:0x020b1fb4
-data_ov000_020b1fcc kind:data(any) addr:0x020b1fcc
+_ZTV24UnkSystem2_UnkSubSystem8 kind:data(any) addr:0x020b1fc4
 data_ov000_020b1fdc kind:data(any) addr:0x020b1fdc
 data_ov000_020b1fac kind:data(any) addr:0x020b1fec
 data_ov000_020b1ffc kind:data(any) addr:0x020b1ffc
@@ -4038,7 +4038,7 @@ data_ov000_020b533c kind:bss addr:0x020b533c
 data_ov000_020b5300 kind:bss addr:0x020b5340
 data_ov000_020b5380 kind:bss addr:0x020b5380
 data_ov000_020b5384 kind:bss addr:0x020b5384
-data_ov000_020b5388 kind:bss addr:0x020b5388
+data_ov000_020b5340 kind:bss addr:0x020b5388
 data_ov000_020b53b8 kind:bss addr:0x020b53b8
 data_ov000_020b53c8 kind:bss addr:0x020b53c8
 data_ov000_020b53d0_eur1 kind:bss addr:0x020b53d0

@@ -156,6 +156,6 @@ data_ov003_020ba6e0 kind:data(any) addr:0x020ba6e0
 data_ov003_020ba718 kind:data(any) addr:0x020ba718
 data_ov003_020ba71c kind:data(any) addr:0x020ba71c
 data_ov003_020ba738 kind:data(any) addr:0x020ba738
-data_ov003_020ba780 kind:bss addr:0x020ba780
+data_ov003_020ba740 kind:bss addr:0x020ba780
 data_ov003_020ba788 kind:bss addr:0x020ba788
 data_ov003_020ba794 kind:bss addr:0x020ba794

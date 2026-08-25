@@ -2582,11 +2582,11 @@ data_0204409c kind:data(any) addr:0x0204409c
 data_020440a0 kind:data(any) addr:0x020440a0
 data_020440b0 kind:data(any) addr:0x020440b0
 data_020440c4 kind:data(any) addr:0x020440c4
-data_020440e8 kind:data(any) addr:0x020440e8
+_ZTV21UnkStruct_0204e5f8_1C kind:data(any) addr:0x020440e0
 data_020440f4 kind:data(any) addr:0x020440f4
 data_02044108 kind:data(any) addr:0x02044108
 data_0204411c kind:data(any) addr:0x0204411c
-data_020442b4 kind:data(any) addr:0x020442b4
+_ZTV23UnkStruct_0204a110_Sub6 kind:data(any) addr:0x020442ac
 data_020442c4 kind:data(any) addr:0x020442c4
 data_020442d4 kind:data(any) addr:0x020442d4
 data_020442e4 kind:data(any) addr:0x020442e4
@@ -2601,7 +2601,7 @@ data_02044390 kind:data(any) addr:0x02044390
 data_0204439c kind:data(any) addr:0x0204439c
 data_020443a8 kind:data(any) addr:0x020443a8
 data_020443c0 kind:data(any) addr:0x020443c0
-data_020443d8 kind:data(any) addr:0x020443d8
+_ZTV21UnkStruct_0204e64c_00 kind:data(any) addr:0x020443d0
 data_020443e8 kind:data(any) addr:0x020443e8
 data_02044408 kind:data(any) addr:0x02044408
 data_02044410 kind:data(any) addr:0x02044410
@@ -2800,7 +2800,6 @@ data_0204aeac kind:bss addr:0x0204aeac
 data_0204aeb8 kind:bss addr:0x0204aeb8
 data_0204aed0 kind:bss addr:0x0204aed0
 data_0204aedc kind:bss addr:0x0204aedc
-data_0204aeec kind:bss addr:0x0204aeec
 data_0204aef0 kind:bss addr:0x0204aef0
 data_0204af02 kind:bss addr:0x0204af02
 data_0204af10 kind:bss addr:0x0204af10
