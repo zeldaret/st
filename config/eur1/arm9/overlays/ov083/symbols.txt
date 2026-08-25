@@ -379,6 +379,7 @@ data_ov083_0215ea94 kind:bss addr:0x0215ea94 ambiguous
 data_ov083_0215eac4 kind:bss addr:0x0215eac4
 data_ov083_0215eac8 kind:bss addr:0x0215eac8
 data_ov083_0215ead4 kind:bss addr:0x0215ead4
+data_ov083_0215eaf4 kind:bss addr:0x0215eaf4
 data_ov083_0215ebac kind:bss addr:0x0215ebac
 data_ov083_0215ebb0 kind:bss addr:0x0215ebb0
 data_ov083_0215ebbc kind:bss addr:0x0215ebbc

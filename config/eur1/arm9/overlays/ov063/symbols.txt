@@ -385,34 +385,34 @@ data_ov063_02162838 kind:data(any) addr:0x02162838 ambiguous
 data_ov063_02162864 kind:data(any) addr:0x02162864
 data_ov063_02162874 kind:data(any) addr:0x02162874
 data_ov063_02162884 kind:data(any) addr:0x02162884
-__sinit_ov063_02162894 kind:function(arm,size=0x70) addr:0x02162894
-__sinit_ov063_02162904 kind:function(arm,size=0x94) addr:0x02162904
-__sinit_ov063_02162998 kind:function(arm,size=0x50) addr:0x02162998
-__sinit_ov063_021629e8 kind:function(arm,size=0x50) addr:0x021629e8
-__sinit_ov063_02162a38 kind:function(arm,size=0x50) addr:0x02162a38
-__sinit_ov063_02162a88 kind:function(arm,size=0x50) addr:0x02162a88
-__sinit_ov063_02162ad8 kind:function(arm,size=0x50) addr:0x02162ad8
-__sinit_ov063_02162b28 kind:function(arm,size=0x168) addr:0x02162b28
-__sinit_ov063_02162c90 kind:function(arm,size=0x50) addr:0x02162c90
-__sinit_ov063_02162ce0 kind:function(arm,size=0x50) addr:0x02162ce0
-__sinit_ov063_02162d30 kind:function(arm,size=0x154) addr:0x02162d30
-__sinit_ov063_02162e84 kind:function(arm,size=0x80) addr:0x02162e84
-__sinit_ov063_02162f04 kind:function(arm,size=0x50) addr:0x02162f04
-__sinit_ov063_02162f54 kind:function(arm,size=0x50) addr:0x02162f54
-.p__sinit_ov063_02162894 kind:data(word) addr:0x02162fa4
-.p__sinit_ov063_02162904 kind:data(word) addr:0x02162fa8
-.p__sinit_ov063_02162998 kind:data(word) addr:0x02162fac
-.p__sinit_ov063_021629e8 kind:data(word) addr:0x02162fb0
-.p__sinit_ov063_02162a38 kind:data(word) addr:0x02162fb4
-.p__sinit_ov063_02162a88 kind:data(word) addr:0x02162fb8
-.p__sinit_ov063_02162ad8 kind:data(word) addr:0x02162fbc
-.p__sinit_ov063_02162b28 kind:data(word) addr:0x02162fc0
-.p__sinit_ov063_02162c90 kind:data(word) addr:0x02162fc4
-.p__sinit_ov063_02162ce0 kind:data(word) addr:0x02162fc8
-.p__sinit_ov063_02162d30 kind:data(word) addr:0x02162fcc
-.p__sinit_ov063_02162e84 kind:data(word) addr:0x02162fd0
-.p__sinit_ov063_02162f04 kind:data(word) addr:0x02162fd4
-.p__sinit_ov063_02162f54 kind:data(word) addr:0x02162fd8
+__sinit_ActorUnkCANS.cpp kind:function(arm,size=0x70) addr:0x02162894 local
+__sinit_ActorUnkCASE.cpp kind:function(arm,size=0x94) addr:0x02162904 local
+__sinit_ActorUnkRMSV.cpp kind:function(arm,size=0x50) addr:0x02162998 local
+__sinit_ActorUnkRMSW.cpp kind:function(arm,size=0x50) addr:0x021629e8 local
+__sinit_ActorUnkRMSF.cpp kind:function(arm,size=0x50) addr:0x02162a38 local
+__sinit_ActorUnkRMSD.cpp kind:function(arm,size=0x50) addr:0x02162a88 local
+__sinit_ActorUnkRMSS.cpp kind:function(arm,size=0x50) addr:0x02162ad8 local
+__sinit_ov063_021629c4 kind:function(arm,size=0x168) addr:0x02162b28 local
+__sinit_ActorUnkRBLS.cpp kind:function(arm,size=0x50) addr:0x02162c90 local
+__sinit_MapObjectUnkSTAT.cpp kind:function(arm,size=0x50) addr:0x02162ce0 local
+__sinit_MapObjectUnkWLMS.cpp kind:function(arm,size=0x154) addr:0x02162d30 local
+__sinit_MapObjectUnkLTRW.cpp kind:function(arm,size=0x80) addr:0x02162e84 local
+__sinit_MapObjectUnkMTJR.cpp kind:function(arm,size=0x50) addr:0x02162f04 local
+__sinit_MapObjectUnkSWCR.cpp kind:function(arm,size=0x50) addr:0x02162f54 local
+.p__sinit_ActorUnkCANS.cpp kind:data(word) addr:0x02162fa4 local
+.p__sinit_ActorUnkCASE.cpp kind:data(word) addr:0x02162fa8 local
+.p__sinit_ActorUnkRMSV.cpp kind:data(word) addr:0x02162fac local
+.p__sinit_ActorUnkRMSW.cpp kind:data(word) addr:0x02162fb0 local
+.p__sinit_ActorUnkRMSF.cpp kind:data(word) addr:0x02162fb4 local
+.p__sinit_ActorUnkRMSD.cpp kind:data(word) addr:0x02162fb8 local
+.p__sinit_ActorUnkRMSS.cpp kind:data(word) addr:0x02162fbc local
+.p__sinit_ov063_021629c4 kind:data(word) addr:0x02162fc0 local
+.p__sinit_ActorUnkRBLS.cpp kind:data(word) addr:0x02162fc4 local
+.p__sinit_MapObjectUnkSTAT.cpp kind:data(word) addr:0x02162fc8 local
+.p__sinit_MapObjectUnkWLMS.cpp kind:data(word) addr:0x02162fcc local
+.p__sinit_MapObjectUnkLTRW.cpp kind:data(word) addr:0x02162fd0 local
+.p__sinit_MapObjectUnkMTJR.cpp kind:data(word) addr:0x02162fd4 local
+.p__sinit_MapObjectUnkSWCR.cpp kind:data(word) addr:0x02162fd8 local
 data_ov063_02162fe8 kind:data(any) addr:0x02162fe8
 data_ov063_02162ff0 kind:data(any) addr:0x02162ff0
 data_ov063_02163008 kind:data(any) addr:0x02163008

@@ -2757,7 +2757,7 @@ from:0x020f15d0 kind:load to:0x020b1940 add:0x8 module:overlay(0)
 from:0x020f15d4 kind:load to:0x02110b3c module:overlay(31)
 from:0x020f15d8 kind:load to:0x02110ae8 module:overlay(31)
 from:0x020f15e0 kind:load to:0x02043e30 module:main
-from:0x020f15e4 kind:load to:0x02163fc0 module:overlays(59,60,63,68,73,84)
+from:0x020f15e4 kind:load to:0x02163fc0 module:overlays(59,60,68,73,84)
 from:0x020f15f0 kind:arm_call to:0x0207b6a0 module:overlay(0)
 from:0x020f160c kind:arm_call to:0x0205ae8c module:overlay(0)
 from:0x020f1644 kind:arm_call to:0x02080a58 module:overlay(0)

@@ -285,6 +285,7 @@ data_ov065_0215b85c kind:bss addr:0x0215b85c
 data_ov065_0215b860 kind:bss addr:0x0215b860
 data_ov065_0215b86c kind:bss addr:0x0215b86c
 data_ov065_0215b876 kind:bss addr:0x0215b876
+data_ov065_0215b878 kind:bss addr:0x0215b878
 data_ov065_0215b87a kind:bss addr:0x0215b87a
 data_ov065_0215b884 kind:bss addr:0x0215b884
 data_ov065_0215b8c0 kind:bss addr:0x0215b8c0
