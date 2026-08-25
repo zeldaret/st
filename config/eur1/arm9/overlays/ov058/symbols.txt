@@ -987,6 +987,7 @@ data_ov058_02156ff8 kind:bss addr:0x02156ff8
 data_ov058_021570b8 kind:bss addr:0x021570b8 ambiguous
 data_ov058_021570d0 kind:bss addr:0x021570d0
 data_ov058_021570d8 kind:bss addr:0x021570d8
+data_ov058_021570dc kind:bss addr:0x021570dc
 data_ov058_021570e4 kind:bss addr:0x021570e4
 data_ov058_021570fc kind:bss addr:0x021570fc ambiguous
 data_ov058_0215710c kind:bss addr:0x0215710c
