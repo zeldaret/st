@@ -88,3 +88,9 @@ src/084_BossFlame/Actor/ActorUnkLBRC.cpp:
     .init       start:0x02162ae0 end:0x02162b68
     .ctor       start:0x02162bec end:0x02162bf0
     .bss        start:0x02164728 end:0x02164814
+
+src/084_BossFlame/MapObject/MapObjectUnkPLV2.cpp:
+    .text       start:0x02161448 end:0x02161968
+    .init       start:0x02162b68 end:0x02162bb8
+    .ctor       start:0x02162bf0 end:0x02162bf4
+    .bss        start:0x02164814 end:0x021648f8

@@ -22,3 +22,9 @@ src/035_MapA4/Actor/ActorUnkFIML.cpp:
     .init       start:0x02121208 end:0x02121270
     .ctor       start:0x021212c8 end:0x021212cc
     .bss        start:0x02121f04 end:0x02121ff4
+
+src/035_MapA4/Actor/ActorUnkFIFI.cpp:
+    .text       start:0x0211e5e4 end:0x0211ea50
+    .init       start:0x02121270 end:0x021212c0
+    .ctor       start:0x021212cc end:0x021212d0
+    .bss        start:0x02121ff4 end:0x02122040

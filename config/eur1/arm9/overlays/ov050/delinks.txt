@@ -22,3 +22,8 @@ src/050_MapC4/Actor/ActorUnkFRTN.cpp:
     .init       start:0x021369e8 end:0x02136a48
     .ctor       start:0x02136aa0 end:0x02136aa4
     .bss        start:0x0213733c end:0x02137430
+
+src/050_MapC4/MapObject/MapObjectUnkGTTN.cpp:
+    .text       start:0x0213636c end:0x02136904
+    .init       start:0x02136a48 end:0x02136a98
+    .ctor       start:0x02136aa4 end:0x02136aa8

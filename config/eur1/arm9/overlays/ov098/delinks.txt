@@ -28,3 +28,9 @@ src/098_MapWater/Actor/ActorUnkEFRI.cpp:
     .init       start:0x021824c0 end:0x02182510
     .ctor       start:0x0218256c end:0x02182570
     .bss        start:0x02182c38 end:0x02182d20
+
+src/098_MapWater/Actor/ActorUnkSEAT.cpp:
+    .text       start:0x02182170 end:0x021823bc
+    .init       start:0x02182510 end:0x02182560
+    .ctor       start:0x02182570 end:0x02182574
+    .bss        start:0x02182d20 end:0x02182d6c

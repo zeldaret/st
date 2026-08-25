@@ -46,3 +46,9 @@ src/038_MapA7/MapObject/MapObjectUnkFSSN.cpp:
     .init       start:0x02120c74 end:0x02120cc4
     .ctor       start:0x02120d2c end:0x02120d30
     .bss        start:0x02121958 end:0x02121a3c
+
+src/038_MapA7/Actor/ActorUnkPLSR.cpp:
+    .text       start:0x0211f080 end:0x02120960
+    .init       start:0x02120cc4 end:0x02120d14
+    .ctor       start:0x02120d30 end:0x02120d34
+    .bss        start:0x02121a3c end:0x02121b24

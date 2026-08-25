@@ -106,3 +106,8 @@ src/091_TrainExtra/Actor/ActorUnkTTUT.cpp:
     .init       start:0x021770b0 end:0x02177100
     .ctor       start:0x021771b0 end:0x021771b4
     .bss        start:0x02178ff8 end:0x02179044
+
+src/091_TrainExtra/Actor/ActorUnkTRIC.cpp:
+    .text       start:0x02175e50 end:0x021769d0
+    .init       start:0x02177100 end:0x02177168
+    .ctor       start:0x021771b4 end:0x021771b8

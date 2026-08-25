@@ -22,3 +22,8 @@ src/080_BossSnow/MapObject/MapObjectUnkSTSS.cpp:
     .init       start:0x0215f300 end:0x0215f350
     .ctor       start:0x0215f3a8 end:0x0215f3ac
     .bss        start:0x021601ac end:0x02160224
+
+src/080_BossSnow/Actor/ActorUnkRBSN.cpp:
+    .text       start:0x0215e9ec end:0x0215ec74
+    .init       start:0x0215f350 end:0x0215f3a0
+    .ctor       start:0x0215f3ac end:0x0215f3b0

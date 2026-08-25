@@ -28,3 +28,9 @@ src/042_MapB3/Actor/ActorUnkPHEY.cpp:
     .init       start:0x0212bbe8 end:0x0212bc54
     .ctor       start:0x0212bcb4 end:0x0212bcb8
     .bss        start:0x0212c904 end:0x0212c9ec
+
+src/042_MapB3/MapObject/MapObjectUnkSWRA.cpp:
+    .text       start:0x0212b62c end:0x0212ba54
+    .init       start:0x0212bc54 end:0x0212bca4
+    .ctor       start:0x0212bcb8 end:0x0212bcbc
+    .bss        start:0x0212c9ec end:0x0212ca1c

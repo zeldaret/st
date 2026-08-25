@@ -22,3 +22,8 @@ src/047_MapC1/Actor/ActorUnkFLDK.cpp:
     .init       start:0x02135f24 end:0x02135f74
     .ctor       start:0x02135fd0 end:0x02135fd4
     .bss        start:0x021365b4 end:0x02136600
+
+src/047_MapC1/Actor/ActorUnkDLTG.cpp:
+    .text       start:0x02135820 end:0x02135be8
+    .init       start:0x02135f74 end:0x02135fc4
+    .ctor       start:0x02135fd4 end:0x02135fd8

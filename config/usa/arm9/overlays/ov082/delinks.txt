@@ -16,3 +16,9 @@ src/082_DgnWater/Actor/ActorUnkEWHI.cpp:
     .init       start:0x02158888 end:0x021588d8
     .ctor       start:0x0215892c end:0x02158930
     .bss        start:0x02158f48 end:0x02158f94
+
+src/082_DgnWater/Actor/ActorUnkDSWT.cpp:
+    .text       start:0x02157a50 end:0x02157b74
+    .init       start:0x021588d8 end:0x02158928
+    .ctor       start:0x02158930 end:0x02158934
+    .bss        start:0x02158f94 end:0x02159080

@@ -28,3 +28,9 @@ src/046_MapB7/Actor/ActorUnkWBTN.cpp:
     .init       start:0x0212a000 end:0x0212a050
     .ctor       start:0x0212a0ac end:0x0212a0b0
     .bss        start:0x0212aaf8 end:0x0212abe0
+
+src/046_MapB7/Actor/ActorUnkWBN2.cpp:
+    .text       start:0x021289d0 end:0x02129738
+    .init       start:0x0212a050 end:0x0212a0a0
+    .ctor       start:0x0212a0b0 end:0x0212a0b4
+    .bss        start:0x0212abe0 end:0x0212abf4

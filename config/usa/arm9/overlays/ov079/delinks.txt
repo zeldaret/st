@@ -58,3 +58,9 @@ src/079_DgnSnow/MapObject/MapObjectUnkGTSN.cpp:
     .init       start:0x02157550 end:0x021575a0
     .ctor       start:0x02157610 end:0x02157614
     .bss        start:0x02158448 end:0x0215852c
+
+src/079_DgnSnow/MapObject/MapObjectUnkFSSV.cpp:
+    .text       start:0x02156f9c end:0x021571c4
+    .init       start:0x021575a0 end:0x021575f0
+    .ctor       start:0x02157614 end:0x02157618
+    .bss        start:0x0215852c end:0x02158620

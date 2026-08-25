@@ -142,3 +142,9 @@ src/094_Land2/MapObject/MapObjectUnkTHAW.cpp:
     .init       start:0x02176db4 end:0x02176e04
     .ctor       start:0x02176eb0 end:0x02176eb4
     .bss        start:0x021798d8 end:0x021799dc
+
+src/094_Land2/MapObject/MapObjectUnkMTWD.cpp:
+    .text       start:0x02175b28 end:0x02175f20
+    .init       start:0x02176e04 end:0x02176e54
+    .ctor       start:0x02176eb4 end:0x02176eb8
+    .bss        start:0x021799dc end:0x02179ac0

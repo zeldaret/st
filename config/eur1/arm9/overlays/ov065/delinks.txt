@@ -70,3 +70,9 @@ src/065_FldSnow/MapObject/MapObjectUnkHOSO.cpp:
     .init       start:0x0215a528 end:0x0215a578
     .ctor       start:0x0215a5f0 end:0x0215a5f4
     .bss        start:0x0215b920 end:0x0215ba00
+
+src/065_FldSnow/MapObject/MapObjectUnkMTIC.cpp:
+    .text       start:0x02159eec end:0x0215a0f4
+    .init       start:0x0215a578 end:0x0215a5c8
+    .ctor       start:0x0215a5f4 end:0x0215a5f8
+    .bss        start:0x0215ba00 end:0x0215bac4

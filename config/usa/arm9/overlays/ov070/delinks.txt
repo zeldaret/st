@@ -148,3 +148,8 @@ src/070_Dungeon/MapObject/MapObjectUnkPTFL.cpp:
     .init       start:0x0214e674 end:0x0214e6d0
     .ctor       start:0x0214e798 end:0x0214e79c
     .bss        start:0x02150a88 end:0x02150ac0
+
+src/070_Dungeon/Actor/ActorUnkRYAW.cpp:
+    .text       start:0x0214c004 end:0x0214dbcc
+    .init       start:0x0214e6d0 end:0x0214e73c
+    .ctor       start:0x0214e79c end:0x0214e7a0

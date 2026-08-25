@@ -34,3 +34,8 @@ src/045_MapB6/Actor/ActorUnkWPCL.cpp:
     .init       start:0x02129a14 end:0x02129a64
     .ctor       start:0x02129ac4 end:0x02129ac8
     .bss        start:0x0212a5d4 end:0x0212a620
+
+src/045_MapB6/MapObject/MapObjectUnkRDSD.cpp:
+    .text       start:0x02129028 end:0x0212937c
+    .init       start:0x02129a64 end:0x02129ab4
+    .ctor       start:0x02129ac8 end:0x02129acc

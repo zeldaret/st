@@ -112,3 +112,9 @@ src/088_Stb/Actor/ActorUnkDMET.cpp:
     .init       start:0x02174c5c end:0x02174cac
     .ctor       start:0x02174d44 end:0x02174d48
     .bss        start:0x02177028 end:0x02177110
+
+src/088_Stb/Actor/ActorUnkRMM2.cpp:
+    .text       start:0x021721b0 end:0x021722ec
+    .init       start:0x02174cac end:0x02174cfc
+    .ctor       start:0x02174d48 end:0x02174d4c
+    .bss        start:0x02177110 end:0x021771f8

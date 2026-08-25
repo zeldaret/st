@@ -82,3 +82,8 @@ src/059_InTrain/Actor/ActorUnkRMTB.cpp:
     .init       start:0x02163414 end:0x02163464
     .ctor       start:0x021634e4 end:0x021634e8
     .bss        start:0x02164ec8 end:0x02164fb0
+
+src/059_InTrain/MapObject/MapObjectUnkEXTR.cpp:
+    .text       start:0x02162dbc end:0x02162f68
+    .init       start:0x02163464 end:0x021634b4
+    .ctor       start:0x021634e8 end:0x021634ec

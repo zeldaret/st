@@ -52,3 +52,8 @@ src/083_BossWater/Actor/ActorUnkEFW3.cpp:
     .init       start:0x0215d808 end:0x0215d858
     .ctor       start:0x0215d938 end:0x0215d93c
     .bss        start:0x0215eac4 end:0x0215eaf4
+
+src/083_BossWater/MapObject/MapObjectUnkSHWB.cpp:
+    .text       start:0x0215c99c end:0x0215ce0c
+    .init       start:0x0215d858 end:0x0215d91c
+    .ctor       start:0x0215d93c end:0x0215d940

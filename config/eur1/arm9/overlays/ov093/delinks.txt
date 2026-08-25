@@ -40,3 +40,8 @@ src/093_PlayerSub/Actor/ActorUnkPMTC.cpp:
     .init       start:0x021787bc end:0x02178818
     .ctor       start:0x021788b4 end:0x021788b8
     .bss        start:0x021791bc end:0x021792b0
+
+src/093_PlayerSub/Actor/ActorUnkPMTD.cpp:
+    .text       start:0x02177cc8 end:0x02177d74
+    .init       start:0x02178818 end:0x02178890
+    .ctor       start:0x021788b8 end:0x021788bc

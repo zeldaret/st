@@ -64,3 +64,9 @@ src/061_CastleTown/MapObject/MapObjectUnkFSCT.cpp:
     .init       start:0x0215a1f4 end:0x0215a244
     .ctor       start:0x0215a2dc end:0x0215a2e0
     .bss        start:0x0215b958 end:0x0215ba3c
+
+src/061_CastleTown/MapObject/MapObjectUnkDRTY.cpp:
+    .text       start:0x02159564 end:0x02159ddc
+    .init       start:0x0215a244 end:0x0215a2b8
+    .ctor       start:0x0215a2e0 end:0x0215a2e4
+    .bss        start:0x0215ba3c end:0x0215bb20

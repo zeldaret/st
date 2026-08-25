@@ -28,3 +28,8 @@ src/039_MapA8/Actor/ActorUnkZLSS.cpp:
     .init       start:0x0211cd48 end:0x0211cd98
     .ctor       start:0x0211cdf4 end:0x0211cdf8
     .bss        start:0x0211e23c end:0x0211e290
+
+src/039_MapA8/MapObject/MapObjectUnkGTAT.cpp:
+    .text       start:0x0211c6e4 end:0x0211ca8c
+    .init       start:0x0211cd98 end:0x0211cde8
+    .ctor       start:0x0211cdf8 end:0x0211cdfc

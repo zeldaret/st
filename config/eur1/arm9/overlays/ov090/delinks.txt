@@ -118,3 +118,9 @@ src/090_TrainNormal/MapObject/MapObjectUnkTRCC.cpp:
     .init       start:0x02175d3c end:0x02175d8c
     .ctor       start:0x02175e24 end:0x02175e28
     .bss        start:0x02177dd0 end:0x02177ed4
+
+src/090_TrainNormal/MapObject/MapObjectUnkETNM.cpp:
+    .text       start:0x021753c8 end:0x02175518
+    .init       start:0x02175d8c end:0x02175ddc
+    .ctor       start:0x02175e28 end:0x02175e2c
+    .bss        start:0x02177ed4 end:0x02177fc0

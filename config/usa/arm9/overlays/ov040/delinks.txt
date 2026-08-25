@@ -46,3 +46,8 @@ src/040_MapB1/MapObject/MapObjectUnkFSTA.cpp:
     .init       start:0x0212e3d0 end:0x0212e420
     .ctor       start:0x0212e488 end:0x0212e48c
     .bss        start:0x0213035c end:0x0213038c
+
+src/040_MapB1/MapObject/MapObjectUnkFRAI.cpp:
+    .text       start:0x0212d744 end:0x0212db7c
+    .init       start:0x0212e420 end:0x0212e470
+    .ctor       start:0x0212e48c end:0x0212e490

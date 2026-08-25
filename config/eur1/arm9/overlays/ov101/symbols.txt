@@ -47,5 +47,5 @@ _ZTV30UnkStruct_027e09a4_54_Derived1 kind:data(any) addr:0x02183b0c
 @8 kind:data(byte[18]) addr:0x02183b98 local
 @9 kind:data(byte[12]) addr:0x02183bac local
 _ZTV25UnkStruct_027e0cd8_0C_1D0 kind:data(any) addr:0x02183bb8
-data_ov101_021839c8 kind:data(any) addr:0x02183bc8
+data_ov101_021839c8 kind:data(any) addr:0x02183bc8 local
 _ZTV25MapObjectProfile_Derived6 kind:data(any) addr:0x02183bd4

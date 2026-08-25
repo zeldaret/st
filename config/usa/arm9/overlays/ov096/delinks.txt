@@ -22,3 +22,9 @@ src/096_PlayerZelda/Actor/ActorUnkTKYT.cpp:
     .init       start:0x0217dc48 end:0x0217dc98
     .ctor       start:0x0217dd40 end:0x0217dd44
     .bss        start:0x0217e2b8 end:0x0217e304
+
+src/096_PlayerZelda/Actor/ActorUnkBPBS.cpp:
+    .text       start:0x0217ad10 end:0x0217d290
+    .init       start:0x0217dc98 end:0x0217dce8
+    .ctor       start:0x0217dd44 end:0x0217dd48
+    .bss        start:0x0217e304 end:0x0217e3ec

@@ -22,3 +22,9 @@ src/075_BossLast2/Actor/ActorUnkMRDL.cpp:
     .init       start:0x02162574 end:0x021625c4
     .ctor       start:0x02162674 end:0x02162678
     .bss        start:0x02163568 end:0x021635bc
+
+src/075_BossLast2/Actor/ActorUnkMABL.cpp:
+    .text       start:0x0215e264 end:0x0216072c
+    .init       start:0x021625c4 end:0x0216266c
+    .ctor       start:0x02162678 end:0x0216267c
+    .bss        start:0x021635bc end:0x021636c0

@@ -16,3 +16,8 @@ src/078_BossForest/Actor/ActorUnkRBFR.cpp:
     .init       start:0x0215d630 end:0x0215d680
     .ctor       start:0x0215d6d4 end:0x0215d6d8
     .bss        start:0x0215df3c end:0x0215e024
+
+src/078_BossForest/MapObject/MapObjectUnkSTSF.cpp:
+    .text       start:0x0215d148 end:0x0215d340
+    .init       start:0x0215d680 end:0x0215d6d0
+    .ctor       start:0x0215d6d8 end:0x0215d6dc

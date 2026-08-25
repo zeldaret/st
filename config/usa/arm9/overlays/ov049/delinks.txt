@@ -34,3 +34,8 @@ src/049_MapC3/Actor/ActorUnkPOST.cpp:
     .init       start:0x02136c90 end:0x02136f9c
     .ctor       start:0x021372b8 end:0x021372bc
     .bss        start:0x021382e4 end:0x021383cc
+
+src/049_MapC3/Actor/ActorUnkPTMN.cpp:
+    .text       start:0x02135528 end:0x02136b20
+    .init       start:0x02136f9c end:0x021372a8
+    .ctor       start:0x021372bc end:0x021372c0

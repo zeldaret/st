@@ -46,3 +46,8 @@ src/041_MapB2/MapObject/MapObjectUnkDRTK.cpp:
     .init       start:0x0212d6c4 end:0x0212d738
     .ctor       start:0x0212d7cc end:0x0212d7d0
     .bss        start:0x0212e560 end:0x0212e644
+
+src/041_MapB2/MapObject/MapObjectUnkDRMC.cpp:
+    .text       start:0x0212cf88 end:0x0212d2a8
+    .init       start:0x0212d738 end:0x0212d7ac
+    .ctor       start:0x0212d7d0 end:0x0212d7d4

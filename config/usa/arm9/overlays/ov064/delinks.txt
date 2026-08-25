@@ -46,3 +46,9 @@ src/064_FldForest/MapObject/MapObjectUnkHOF0.cpp:
     .init       start:0x0215a52c end:0x0215a57c
     .ctor       start:0x0215a5e4 end:0x0215a5e8
     .bss        start:0x0215b398 end:0x0215b4a0
+
+src/064_FldForest/MapObject/MapObjectUnkLEVN.cpp:
+    .text       start:0x0215a150 end:0x0215a2b8
+    .init       start:0x0215a57c end:0x0215a5cc
+    .ctor       start:0x0215a5e8 end:0x0215a5ec
+    .bss        start:0x0215b4a0 end:0x0215b500

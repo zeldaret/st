@@ -148,3 +148,9 @@ src/058_Field/MapObject/MapObjectUnkGRSV.cpp:
     .init       start:0x02154020 end:0x021540b0
     .ctor       start:0x0215415c end:0x02154160
     .bss        start:0x02157c24 end:0x02157d74
+
+src/058_Field/MapObject/MapObjectUnkSWCB.cpp:
+    .text       start:0x02151980 end:0x02152948
+    .init       start:0x021540b0 end:0x02154100
+    .ctor       start:0x02154160 end:0x02154164
+    .bss        start:0x02157d74 end:0x02157da4

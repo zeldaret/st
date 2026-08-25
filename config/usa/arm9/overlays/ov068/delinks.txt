@@ -106,3 +106,9 @@ src/068_FldAjito/MapObject/MapObjectUnkDRVC.cpp:
     .init       start:0x0216239c end:0x021623ec
     .ctor       start:0x02162480 end:0x02162484
     .bss        start:0x0216488c end:0x02164970
+
+src/068_FldAjito/MapObject/MapObjectUnkRKAG.cpp:
+    .text       start:0x02161500 end:0x02161728
+    .init       start:0x021623ec end:0x0216243c
+    .ctor       start:0x02162484 end:0x02162488
+    .bss        start:0x02164970 end:0x02164a54

@@ -10,3 +10,9 @@ src/072_TowerLobby/Actor/ActorUnkRMM0.cpp:
     .init       start:0x02152580 end:0x021525d0
     .ctor       start:0x02152620 end:0x02152624
     .bss        start:0x02152860 end:0x02152948
+
+src/072_TowerLobby/Actor/ActorUnkRMM3.cpp:
+    .text       start:0x02152034 end:0x021524cc
+    .init       start:0x021525d0 end:0x02152620
+    .ctor       start:0x02152624 end:0x02152628
+    .bss        start:0x02152948 end:0x02152a40

@@ -130,3 +130,9 @@ src/092_TrainDark/Actor/ActorUnkSZKL.cpp:
     .init       start:0x0217ba58 end:0x0217baa8
     .ctor       start:0x0217bb64 end:0x0217bb68
     .bss        start:0x0217e138 end:0x0217e228
+
+src/092_TrainDark/Actor/ActorUnkDKCB.cpp:
+    .text       start:0x02178e00 end:0x02179944
+    .init       start:0x0217baa8 end:0x0217baf8
+    .ctor       start:0x0217bb68 end:0x0217bb6c
+    .bss        start:0x0217e228 end:0x0217e274

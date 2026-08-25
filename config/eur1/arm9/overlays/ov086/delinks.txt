@@ -76,3 +76,9 @@ src/086_DgnDesert/MapObject/MapObjectUnkGRSG.cpp:
     .init       start:0x0215f6b4 end:0x0215f704
     .ctor       start:0x0215f780 end:0x0215f784
     .bss        start:0x02160e14 end:0x02160f1c
+
+src/086_DgnDesert/MapObject/MapObjectUnkDRRS.cpp:
+    .text       start:0x0215e7d8 end:0x0215ed64
+    .init       start:0x0215f704 end:0x0215f754
+    .ctor       start:0x0215f784 end:0x0215f788
+    .bss        start:0x02160f1c end:0x02161000

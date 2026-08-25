@@ -46,3 +46,9 @@ src/034_MapA3/MapObject/MapObjectUnkWPHL.cpp:
     .init       start:0x021226cc end:0x02122728
     .ctor       start:0x021227c4 end:0x021227c8
     .bss        start:0x021233f0 end:0x02123428
+
+src/034_MapA3/MapObject/MapObjectUnkGELG.cpp:
+    .text       start:0x02121eb4 end:0x021223b4
+    .init       start:0x02122728 end:0x021227ac
+    .ctor       start:0x021227c8 end:0x021227cc
+    .bss        start:0x02123428 end:0x02123458

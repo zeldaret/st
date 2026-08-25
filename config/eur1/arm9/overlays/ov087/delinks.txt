@@ -34,3 +34,8 @@ src/087_BossDesert/Actor/ActorUnkRBD2.cpp:
     .init       start:0x02162230 end:0x02162280
     .ctor       start:0x02162300 end:0x02162304
     .bss        start:0x02163040 end:0x021630b4
+
+src/087_BossDesert/MapObject/MapObjectUnkSTSD.cpp:
+    .text       start:0x02161ba8 end:0x02161e30
+    .init       start:0x02162280 end:0x021622f0
+    .ctor       start:0x02162304 end:0x02162308

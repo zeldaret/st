@@ -70,3 +70,9 @@ src/067_FldFlame/MapObject/MapObjectUnkMTOR.cpp:
     .init       start:0x0215cb24 end:0x0215cb74
     .ctor       start:0x0215cbec end:0x0215cbf0
     .bss        start:0x0215e388 end:0x0215e490
+
+src/067_FldFlame/MapObject/MapObjectUnkDRVT.cpp:
+    .text       start:0x0215c260 end:0x0215c614
+    .init       start:0x0215cb74 end:0x0215cbc4
+    .ctor       start:0x0215cbf0 end:0x0215cbf4
+    .bss        start:0x0215e490 end:0x0215e4c0

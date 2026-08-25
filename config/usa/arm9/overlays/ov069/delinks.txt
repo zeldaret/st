@@ -22,3 +22,8 @@ src/069_FldRabbit/Actor/ActorUnkRBRP.cpp:
     .init       start:0x0215ab78 end:0x0215abc8
     .ctor       start:0x0215ac24 end:0x0215ac28
     .bss        start:0x0215b5e0 end:0x0215b6c8
+
+src/069_FldRabbit/MapObject/MapObjectUnkGTRB.cpp:
+    .text       start:0x0215a878 end:0x0215aa74
+    .init       start:0x0215abc8 end:0x0215ac18
+    .ctor       start:0x0215ac28 end:0x0215ac2c

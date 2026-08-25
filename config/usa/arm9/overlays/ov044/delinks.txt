@@ -40,3 +40,8 @@ src/044_MapB5/Actor/ActorUnkL2V2.cpp:
     .init       start:0x0212ccc4 end:0x0212cd14
     .ctor       start:0x0212cd80 end:0x0212cd84
     .bss        start:0x0212daf0 end:0x0212dbd8
+
+src/044_MapB5/Actor/ActorUnkL2MT.cpp:
+    .text       start:0x0212c868 end:0x0212c9d4
+    .init       start:0x0212cd14 end:0x0212cd64
+    .ctor       start:0x0212cd84 end:0x0212cd88

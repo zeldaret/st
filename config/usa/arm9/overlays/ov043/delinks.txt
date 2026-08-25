@@ -22,3 +22,9 @@ src/043_MapB4/Actor/ActorUnkSTFB.cpp:
     .init       start:0x0212cd08 end:0x0212cd58
     .ctor       start:0x0212cdd8 end:0x0212cddc
     .bss        start:0x0212dd58 end:0x0212ddac
+
+src/043_MapB4/Actor/ActorUnkSHDL.cpp:
+    .text       start:0x02128ab8 end:0x0212c9e4
+    .init       start:0x0212cd58 end:0x0212cdd0
+    .ctor       start:0x0212cddc end:0x0212cde0
+    .bss        start:0x0212ddac end:0x0212de00

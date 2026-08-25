@@ -16,3 +16,9 @@ src/033_MapA2/MapObject/MapObjectUnkDOPA.cpp:
     .init       start:0x021211cc end:0x0212123c
     .ctor       start:0x02121290 end:0x02121294
     .bss        start:0x02121df4 end:0x02122780
+
+src/033_MapA2/MapObject/MapObjectUnkRCFL.cpp:
+    .text       start:0x0211b8c4 end:0x0211bfcc
+    .init       start:0x0212123c end:0x0212128c
+    .ctor       start:0x02121294 end:0x02121298
+    .bss        start:0x02122780 end:0x02122864

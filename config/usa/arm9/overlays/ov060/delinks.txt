@@ -106,3 +106,8 @@ src/060_Castle/MapObject/MapObjectUnkDFNC.cpp:
     .init       start:0x0216132c end:0x0216137c
     .ctor       start:0x0216140c end:0x02161410
     .bss        start:0x02163fdc end:0x021640c0
+
+src/060_Castle/MapObject/MapObjectUnkEXCT.cpp:
+    .text       start:0x021609bc end:0x02160b74
+    .init       start:0x0216137c end:0x021613cc
+    .ctor       start:0x02161410 end:0x02161414

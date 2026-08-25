@@ -46,3 +46,8 @@ src/074_BossLast1/Actor/ActorUnkKIMB.cpp:
     .init       start:0x02162624 end:0x02162698
     .ctor       start:0x02162724 end:0x02162728
     .bss        start:0x02163974 end:0x02163a5c
+
+src/074_BossLast1/Actor/ActorUnkPPPM.cpp:
+    .text       start:0x0215e808 end:0x02161fb4
+    .init       start:0x02162698 end:0x0216270c
+    .ctor       start:0x02162728 end:0x0216272c

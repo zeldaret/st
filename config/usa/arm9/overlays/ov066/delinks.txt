@@ -64,3 +64,9 @@ src/066_FldWater/MapObject/MapObjectUnkHOW1.cpp:
     .init       start:0x0215dc00 end:0x0215dc50
     .ctor       start:0x0215dcc4 end:0x0215dcc8
     .bss        start:0x02162f54 end:0x02163038
+
+src/066_FldWater/MapObject/MapObjectUnkMTFS.cpp:
+    .text       start:0x0215d11c end:0x0215d780
+    .init       start:0x0215dc50 end:0x0215dca0
+    .ctor       start:0x0215dcc8 end:0x0215dccc
+    .bss        start:0x02163038 end:0x0216311c

@@ -47,3 +47,8 @@ src/071_Tower/MapObject/MapObjectUnkBRGS.cpp:
     .init       start:0x02163fb4 end:0x02164018
     .ctor       start:0x021640b4 end:0x021640b8
     .bss        start:0x02165714 end:0x02165800
+
+src/071_Tower/MapObject/MapObjectUnkBLCT.cpp:
+    .text       start:0x02162f14 end:0x02163740
+    .init       start:0x02164018 end:0x02164074
+    .ctor       start:0x021640b8 end:0x021640bc
