@@ -360,7 +360,7 @@ UnkStruct_ov000_020b5300::UnkStruct_ov000_020b5300() {
     this->mUnk_2C = 0;
     this->mUnk_30 = 0;
     this->mUnk_34 = 0;
-#if IS_JP
+#if IS_JP || IS_EUR1
     this->mUnk_38 = 0;
     this->mUnk_3C = 0;
 #endif

@@ -24,7 +24,7 @@ public:
     /* 2C */ unk32 mUnk_2C;
     /* 30 */ unk32 mUnk_30;
     /* 34 */ unk32 mUnk_34;
-#if IS_JP //! TODO: confirm if this is present on the other versions
+#if IS_JP || IS_EUR1 //! TODO: confirm if this is present on the other versions
     /* 38 */ unk32 mUnk_38;
     /* 3C */ unk32 mUnk_3C;
 #endif
