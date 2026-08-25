@@ -5602,7 +5602,7 @@ from:0x0210ac4c kind:arm_call to:0x0207f4dc module:overlay(0)
 from:0x0210ac70 kind:arm_call to:0x02028c24 module:main
 from:0x0210ac90 kind:load to:0x02115b6c module:overlay(31)
 from:0x0210ac94 kind:load to:0x02113ef8 module:overlay(31)
-from:0x0210ac98 kind:load to:0x021839bc module:overlays(97,100,101)
+from:0x0210ac98 kind:load to:0x021839b4 module:overlay(101) add:0x8
 from:0x0210aca4 kind:load to:0x02115fe0 module:overlay(31)
 from:0x0210aca8 kind:load to:0x021188f8 module:overlay(31)
 from:0x0210acac kind:load to:0x021188c0 module:overlay(31)

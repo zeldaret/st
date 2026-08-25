@@ -4,3 +4,11 @@
     .ctor       start:0x021863bc end:0x021863c0 kind:rodata align:4
     .data       start:0x021863e0 end:0x02186440 kind:data align:32
     .bss        start:0x02186440 end:0x0218a3c0 kind:bss align:32
+
+src/110_PlayerGet/PlayerGet.cpp:
+    .text       start:0x02184c40 end:0x02185fc4
+    .rodata     start:0x02185fc4 end:0x02186390
+    .init       start:0x02186390 end:0x021863bc
+    .ctor       start:0x021863bc end:0x021863c0
+    .data       start:0x021863e0 end:0x02186440
+    .bss        start:0x02186440 end:0x0218a3c0

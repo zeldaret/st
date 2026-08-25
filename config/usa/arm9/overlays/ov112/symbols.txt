@@ -10,5 +10,5 @@ _ZN18PlayerSceneChange28vfunc_0CEP35UnkStruct_PlayerGet_vfunc_0C_param1 kind:fun
 _ZN18PlayerSceneChange28vfunc_10Eii kind:function(arm,size=0x208) addr:0x02186288
 _ZN18PlayerSceneChange2D1Ev kind:function(arm,size=0x14) addr:0x02186490
 _ZN18PlayerSceneChange2D0Ev kind:function(arm,size=0x1c) addr:0x021864a4
-data_ov112_021864e8 kind:data(any) addr:0x021864e8
-data_ov112_02186510 kind:data(any) addr:0x02186510
+_ZTV17PlayerSceneChange kind:data(any) addr:0x021864e0
+_ZTV18PlayerSceneChange2 kind:data(any) addr:0x02186508

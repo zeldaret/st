@@ -5603,7 +5603,7 @@ from:0x0210ad9c kind:arm_call to:0x0207f530 module:overlay(0)
 from:0x0210adc0 kind:arm_call to:0x02028c4c module:main
 from:0x0210ade0 kind:load to:0x02115ccc module:overlay(31)
 from:0x0210ade4 kind:load to:0x02114058 module:overlay(31)
-from:0x0210ade8 kind:load to:0x02183bdc module:overlays(97,100,101)
+from:0x0210ade8 kind:load to:0x02183bd4 module:overlay(101) add:0x8
 from:0x0210adf4 kind:load to:0x02116140 module:overlay(31)
 from:0x0210adf8 kind:load to:0x02118a58 module:overlay(31)
 from:0x0210adfc kind:load to:0x02118a20 module:overlay(31)

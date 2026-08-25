@@ -34,18 +34,18 @@ _Z19func_ov101_02183884iii kind:function(thumb,size=0x38) addr:0x02183864
 _ZN25MapObjectProfile_Derived68vfunc_10Ev kind:function(thumb,size=0x14) addr:0x0218389c
 __sinit_MapObjectProfile_Derived6_101.cpp kind:function(thumb,size=0x18) addr:0x021838b0 local
 .p__sinit_MapObjectProfile_Derived6_101.cpp kind:data(word) addr:0x021838c8 local
-data_ov101_021838e8 kind:data(any) addr:0x021838e8
-data_ov101_021838f4 kind:data(any) addr:0x021838f4
-data_ov101_02183908 kind:data(any) addr:0x02183908
-data_ov101_0218391c kind:data(any) addr:0x0218391c
-data_ov101_0218392c kind:data(any) addr:0x0218392c
-data_ov101_02183938 kind:data(any) addr:0x02183938
-data_ov101_02183948 kind:data(any) addr:0x02183948
-data_ov101_02183958 kind:data(any) addr:0x02183958
-data_ov101_02183968 kind:data(any) addr:0x02183968
-data_ov101_02183970 kind:data(any) addr:0x02183970
-data_ov101_02183978 kind:data(any) addr:0x02183978
-data_ov101_0218398c kind:data(any) addr:0x0218398c
-data_ov101_021839a0 kind:data(any) addr:0x021839a0
-data_ov101_021839a8 kind:data(any) addr:0x021839a8
-data_ov101_021839bc kind:data(any) addr:0x021839bc ambiguous
+_ZTV30UnkStruct_027e0ce0_40_108_Base kind:data(any) addr:0x021838e0
+_ZTV30UnkStruct_027e09a4_54_Derived1 kind:data(any) addr:0x021838ec
+@0 kind:data(byte[17]) kind:data(any) addr:0x02183908 local
+@1 kind:data(byte[15]) kind:data(any) addr:0x0218391c local
+@2 kind:data(byte[11]) kind:data(any) addr:0x0218392c local
+@3 kind:data(byte[13]) kind:data(any) addr:0x02183938 local
+@4 kind:data(byte[13]) kind:data(any) addr:0x02183948 local
+@5 kind:data(byte[13]) kind:data(any) addr:0x02183958 local
+@6 kind:data(byte[8]) kind:data(any) addr:0x02183968 local
+@7 kind:data(byte[7]) kind:data(any) addr:0x02183970 local
+@8 kind:data(byte[18]) kind:data(any) addr:0x02183978 local
+@9 kind:data(byte[12]) kind:data(any) addr:0x0218398c local
+_ZTV25UnkStruct_027e0cd8_0C_1D0 kind:data(any) addr:0x02183998
+data_ov101_021839c8 kind:data(any) addr:0x021839a8
+_ZTV25MapObjectProfile_Derived6 kind:data(any) addr:0x021839b4

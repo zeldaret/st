@@ -34,18 +34,18 @@ _Z19func_ov101_02183884iii kind:function(thumb,size=0x38) addr:0x02183a84
 _ZN25MapObjectProfile_Derived68vfunc_10Ev kind:function(thumb,size=0x14) addr:0x02183abc
 __sinit_MapObjectProfile_Derived6_101.cpp kind:function(thumb,size=0x18) addr:0x02183ad0 local
 .p__sinit_MapObjectProfile_Derived6_101.cpp kind:data(word) addr:0x02183ae8 local
-data_ov101_02183b08 kind:data(any) addr:0x02183b08
-data_ov101_02183b14 kind:data(any) addr:0x02183b14
-data_ov101_02183b28 kind:data(any) addr:0x02183b28
-data_ov101_02183b3c kind:data(any) addr:0x02183b3c
-data_ov101_02183b4c kind:data(any) addr:0x02183b4c
-data_ov101_02183b58 kind:data(any) addr:0x02183b58
-data_ov101_02183b68 kind:data(any) addr:0x02183b68
-data_ov101_02183b78 kind:data(any) addr:0x02183b78
-data_ov101_02183b88 kind:data(any) addr:0x02183b88
-data_ov101_02183b90 kind:data(any) addr:0x02183b90
-data_ov101_02183b98 kind:data(any) addr:0x02183b98
-data_ov101_02183bac kind:data(any) addr:0x02183bac
-data_ov101_02183bc0 kind:data(any) addr:0x02183bc0
-data_ov101_02183bc8 kind:data(any) addr:0x02183bc8
-data_ov101_02183bdc kind:data(any) addr:0x02183bdc ambiguous
+_ZTV30UnkStruct_027e0ce0_40_108_Base kind:data(any) addr:0x02183b00
+_ZTV30UnkStruct_027e09a4_54_Derived1 kind:data(any) addr:0x02183b0c
+@0 kind:data(byte[17]) addr:0x02183b28 local
+@1 kind:data(byte[15]) addr:0x02183b3c local
+@2 kind:data(byte[11]) addr:0x02183b4c local
+@3 kind:data(byte[13]) addr:0x02183b58 local
+@4 kind:data(byte[13]) addr:0x02183b68 local
+@5 kind:data(byte[13]) addr:0x02183b78 local
+@6 kind:data(byte[8]) addr:0x02183b88 local
+@7 kind:data(byte[7]) addr:0x02183b90 local
+@8 kind:data(byte[18]) addr:0x02183b98 local
+@9 kind:data(byte[12]) addr:0x02183bac local
+_ZTV25UnkStruct_027e0cd8_0C_1D0 kind:data(any) addr:0x02183bb8
+data_ov101_021839c8 kind:data(any) addr:0x02183bc8
+_ZTV25MapObjectProfile_Derived6 kind:data(any) addr:0x02183bd4
