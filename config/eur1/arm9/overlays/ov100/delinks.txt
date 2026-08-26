@@ -1,2 +1,6 @@
     .ctor       start:0x02182e20 end:0x02182e20 kind:rodata align:4
     .bss        start:0x02182e40 end:0x02189e40 kind:bss align:32
+
+src/100_CollectMsg/CollectMsg.cpp:
+    complete
+    .bss        start:0x02182e40 end:0x02189e40

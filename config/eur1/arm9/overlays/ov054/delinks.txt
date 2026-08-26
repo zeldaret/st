@@ -3,3 +3,20 @@
     .ctor       start:0x0213dd90 end:0x0213dd9c kind:rodata align:4
     .data       start:0x0213dda0 end:0x0213e640 kind:data align:32
     .bss        start:0x0213e640 end:0x0213e900 kind:bss align:32
+
+src/054_MapD2/Actor/ActorUnkFBBH.cpp:
+    .text       start:0x02138684 end:0x0213c33c
+    .init       start:0x0213db38 end:0x0213dc68
+    .ctor       start:0x0213dd90 end:0x0213dd94
+    .bss        start:0x0213e640 end:0x0213e728
+
+src/054_MapD2/Actor/ActorUnkFIBB.cpp:
+    .text       start:0x0213c33c end:0x0213d720
+    .init       start:0x0213dc68 end:0x0213dd40
+    .ctor       start:0x0213dd94 end:0x0213dd98
+    .bss        start:0x0213e728 end:0x0213e810
+
+src/054_MapD2/Actor/ActorUnkFBBF.cpp:
+    .text       start:0x0213d720 end:0x0213db38
+    .init       start:0x0213dd40 end:0x0213dd90
+    .ctor       start:0x0213dd98 end:0x0213dd9c

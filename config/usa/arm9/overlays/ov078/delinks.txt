@@ -4,3 +4,20 @@
     .ctor       start:0x0215d530 end:0x0215d53c kind:rodata align:4
     .data       start:0x0215d540 end:0x0215dc60 kind:data align:32
     .bss        start:0x0215dc60 end:0x0215df00 kind:bss align:32
+
+src/078_BossForest/Actor/ActorUnkFRBS.cpp:
+    .text       start:0x02152e80 end:0x0215cc94
+    .init       start:0x0215d3ec end:0x0215d490
+    .ctor       start:0x0215d530 end:0x0215d534
+    .bss        start:0x0215dc88 end:0x0215dd9c
+
+src/078_BossForest/Actor/ActorUnkRBFR.cpp:
+    .text       start:0x0215cc94 end:0x0215cfa8
+    .init       start:0x0215d490 end:0x0215d4e0
+    .ctor       start:0x0215d534 end:0x0215d538
+    .bss        start:0x0215dd9c end:0x0215de84
+
+src/078_BossForest/MapObject/MapObjectUnkSTSF.cpp:
+    .text       start:0x0215cfa8 end:0x0215d1a0
+    .init       start:0x0215d4e0 end:0x0215d530
+    .ctor       start:0x0215d538 end:0x0215d53c

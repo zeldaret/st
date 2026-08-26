@@ -6,3 +6,187 @@
     .ctor       start:0x02043198 end:0x020431ec kind:rodata align:4
     .data       start:0x02043200 end:0x02044da0 kind:data align:32
     .bss        start:0x02044da0 end:0x02051ac0 kind:bss align:32
+
+src/Main/Main.cpp:
+    .text       start:0x02000800 end:0x02000bdc
+
+libs/nns/src/g3d/sbc.c:
+    .text       start:0x0200c8cc end:0x0200e2ec
+
+src/Main/System/SysNew.cpp:
+    complete
+    .text       start:0x02011e10 end:0x0201200c
+    .data       start:0x020434d0 end:0x02043530
+
+src/Main/System/SysFault.cpp:
+    .text       start:0x020127f0 end:0x02012b00
+
+src/Main/Game/Game.cpp:
+    .text       start:0x02013370 end:0x0201373c
+
+src/Main/Player/TouchControl.cpp:
+    .text       start:0x02014124 end:0x020144a0
+
+src/Main/System/OverlayManager.cpp:
+    .text       start:0x020147fc end:0x02014944
+
+src/Main/UnkFileSystem.cpp:
+    .text       start:0x020154f0 end:0x02015760
+    .data       start:0x02043ed0 end:0x02043f5c
+
+src/Main/System/Random.cpp:
+    .text       start:0x0201635c end:0x020163dc
+
+src/Main/LinkList.cpp:
+    complete
+    .text       start:0x02016654 end:0x02016770
+
+src/Main/func_02017ea4.cpp:
+    .text       start:0x02017e7c end:0x02017f10
+
+src/Main/Game/GameModeBase.cpp:
+    complete
+    .text       start:0x020182bc end:0x0201837c
+    .data       start:0x02043fe0 end:0x02044010
+
+src/Main/UnkStruct_0204a060.cpp:
+    complete
+    .text       start:0x0201837c end:0x02018454
+    .data       start:0x02044010 end:0x0204402c
+
+src/Main/Game/GameModeManagerBase.cpp:
+    complete
+    .text       start:0x02018454 end:0x02018b9c
+    .data       start:0x0204402c end:0x0204406c
+
+src/Main/func_020196fc.cpp:
+    .text       start:0x020196d4 end:0x0201990c
+
+libs/c/src/abort_exit_arm_eabi.c:
+    complete
+    .text       start:0x020336c0 end:0x02033848
+    .bss        start:0x02051550 end:0x02051660
+
+libs/c/src/ansi_files.c:
+    complete
+    .text       start:0x02033848 end:0x020338ac
+    .data       start:0x02044678 end:0x0204475c
+    .bss        start:0x02051780 end:0x02051a80
+
+libs/c/src/arith.c:
+    complete
+    .text       start:0x020338ac end:0x020338c4
+
+libs/c/src/buffer_io.c:
+    complete
+    .text       start:0x020338c4 end:0x02033974
+
+libs/c/src/file_io.c:
+    complete
+    .text       start:0x02033974 end:0x02033a58
+
+libs/c/src/math_api.c:
+    complete
+    .text       start:0x02033aec end:0x02033b78
+
+libs/c/src/mbstring.c:
+    complete
+    .text       start:0x02033b78 end:0x02033c68
+
+libs/c/src/mem.c:
+    complete
+    .text       start:0x02033c68 end:0x02033d54
+
+libs/c/src/mem_funcs.c:
+    complete
+    .text       start:0x02033d54 end:0x02033e00
+
+libs/c/src/float.c:
+    complete
+    .data       start:0x0204475c end:0x02044760
+
+libs/c/src/locale.c:
+    complete
+    .data       start:0x02044760 end:0x0204497c
+
+libs/c/src/secure_error.c:
+    complete
+    .text       start:0x02033e00 end:0x02033e2c
+    .bss        start:0x02051a84 end:0x02051a88
+
+libs/c/src/signal.c:
+    complete
+    .text       start:0x02033e2c end:0x02033f54
+    .bss        start:0x02051a88 end:0x02051aa4
+
+libs/c/src/string.c:
+    complete
+    .text       start:0x02033f54 end:0x020341d0
+
+libs/c/src/wmem.c:
+    complete
+    .text       start:0x020341d0 end:0x02034208
+
+libs/c/src/wprintf.c:
+    .text       start:0x02034208 end:0x02036134
+    .data       start:0x0204497c end:0x020449fc
+
+libs/c/src/wstring.c:
+    complete
+    .text       start:0x02036134 end:0x020361f4
+
+libs/c/src/ansi_fp.c:
+    .text       start:0x020361f4 end:0x02036b7c
+    .data       start:0x020449fc end:0x02044ad0
+
+libs/c/src/extras.c:
+    complete
+    .text       start:0x02036b7c end:0x02036ba8
+
+libs/c/src/math/e_log.c:
+    complete
+    .text       start:0x02036ba8 end:0x020372d8
+    .bss        start:0x02051aa4 end:0x02051aac
+
+libs/c/src/math/e_log10.c:
+    complete
+    .text       start:0x020372d8 end:0x020374b0
+    .bss        start:0x02051aac end:0x02051ab4
+
+libs/c/src/math/e_pow.c:
+    complete
+    .text       start:0x020374b0 end:0x02038638
+    .rodata     start:0x02043160 end:0x02043190
+
+libs/c/src/math/s_ceil.c:
+    complete
+    .text       start:0x02038638 end:0x020387f8
+
+libs/c/src/math/s_copysign.c:
+    complete
+    .text       start:0x020387f8 end:0x02038820
+
+libs/c/src/math/s_fabs.c:
+    complete
+    .text       start:0x02038820 end:0x02038840
+
+libs/c/src/math/s_frexp.c:
+    complete
+    .text       start:0x02038840 end:0x02038900
+
+libs/c/src/math/s_ldexp.c:
+    complete
+    .text       start:0x02038900 end:0x02038b60
+
+libs/c/src/math/w_log.c:
+    complete
+    .text       start:0x02038b60 end:0x02038b6c
+
+libs/c/src/math/w_log10f.c:
+    complete
+    .text       start:0x02038b6c end:0x02038b78
+
+libs/cpp/src/__register_global_object.c:
+    complete
+    .text       start:0x0203ce4c end:0x0203ce6c
+    .bss        start:0x02051ab4 end:0x02051ab8

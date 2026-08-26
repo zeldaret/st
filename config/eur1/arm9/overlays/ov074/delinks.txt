@@ -4,3 +4,50 @@
     .ctor       start:0x0216270c end:0x0216272c kind:rodata align:4
     .data       start:0x02162740 end:0x021634a0 kind:data align:32
     .bss        start:0x021634a0 end:0x02163b60 kind:bss align:32
+
+src/074_BossLast1/Actor/ActorUnkRBL1.cpp:
+    .text       start:0x02150d80 end:0x02151c94
+    .init       start:0x02162330 end:0x021623f4
+    .ctor       start:0x0216270c end:0x02162710
+    .bss        start:0x021634a0 end:0x02163588
+
+src/074_BossLast1/Actor/ActorUnkMAGR.cpp:
+    .text       start:0x02151c94 end:0x02152fcc
+    .init       start:0x021623f4 end:0x02162478
+    .ctor       start:0x02162710 end:0x02162714
+    .bss        start:0x02163588 end:0x02163670
+
+src/074_BossLast1/Actor/ActorUnkZLBS.cpp:
+    .text       start:0x02152fcc end:0x0215585c
+    .init       start:0x02162478 end:0x021624ec
+    .ctor       start:0x02162714 end:0x02162718
+    .bss        start:0x02163670 end:0x02163758
+
+src/074_BossLast1/Actor/ActorUnkZLBB.cpp:
+    .text       start:0x0215585c end:0x02156d08
+    .init       start:0x021624ec end:0x02162560
+    .ctor       start:0x02162718 end:0x0216271c
+    .bss        start:0x02163758 end:0x02163840
+
+src/074_BossLast1/Actor/ActorUnkBSKM.cpp:
+    .text       start:0x02156d08 end:0x0215cb4c
+    .init       start:0x02162560 end:0x021625d4
+    .ctor       start:0x0216271c end:0x02162720
+    .bss        start:0x02163840 end:0x02163928
+
+src/074_BossLast1/Actor/ActorUnkBKST.cpp:
+    .text       start:0x0215cb4c end:0x0215d8d0
+    .init       start:0x021625d4 end:0x02162624
+    .ctor       start:0x02162720 end:0x02162724
+    .bss        start:0x02163928 end:0x02163974
+
+src/074_BossLast1/Actor/ActorUnkKIMB.cpp:
+    .text       start:0x0215d8d0 end:0x0215e808
+    .init       start:0x02162624 end:0x02162698
+    .ctor       start:0x02162724 end:0x02162728
+    .bss        start:0x02163974 end:0x02163a5c
+
+src/074_BossLast1/Actor/ActorUnkPPPM.cpp:
+    .text       start:0x0215e808 end:0x02161fb4
+    .init       start:0x02162698 end:0x0216270c
+    .ctor       start:0x02162728 end:0x0216272c

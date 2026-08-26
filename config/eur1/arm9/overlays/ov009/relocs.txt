@@ -33,7 +33,7 @@ from:0x020b68e8 kind:load to:0x020b508c module:overlay(0)
 from:0x020b68ec kind:load to:0x0204a110 module:main
 from:0x020b68f0 kind:load to:0x020b5254 module:overlay(0)
 from:0x020b68f4 kind:load to:0x027e0994 module:dtcm
-from:0x020b68f8 kind:load to:0x020d87c0 module:overlays(19,24)
+from:0x020b68f8 kind:load to:0x020d87c0 module:overlay(24)
 from:0x020b68fc kind:load to:0x0204a088 module:main
 from:0x020b690c kind:load to:0x021190e4 module:overlay(31)
 from:0x020b6920 kind:load to:0x021190e4 module:overlay(31)

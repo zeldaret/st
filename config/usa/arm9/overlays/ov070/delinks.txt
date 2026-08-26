@@ -4,3 +4,152 @@
     .ctor       start:0x0214e73c end:0x0214e7a0 kind:rodata align:4
     .data       start:0x0214e7c0 end:0x0214f840 kind:data align:32
     .bss        start:0x0214f840 end:0x02150be0 kind:bss align:32
+
+src/070_Dungeon/Actor/ActorUnkENGE.cpp:
+    .text       start:0x0213f324 end:0x0213f774
+    .init       start:0x0214ddb8 end:0x0214de08
+    .ctor       start:0x0214e73c end:0x0214e740
+    .bss        start:0x0214f840 end:0x0214f88c
+
+src/070_Dungeon/Actor/ActorUnkALEV.cpp:
+    .text       start:0x0213f774 end:0x0213f968
+    .init       start:0x0214de08 end:0x0214de58
+    .ctor       start:0x0214e740 end:0x0214e744
+    .bss        start:0x0214f88c end:0x0214f8d8
+
+src/070_Dungeon/Actor/ActorUnkBROW.cpp:
+    .text       start:0x02140038 end:0x021409e0
+    .init       start:0x0214de58 end:0x0214dea8
+    .ctor       start:0x0214e744 end:0x0214e748
+    .bss        start:0x0214f8d8 end:0x0214f9c8
+
+src/070_Dungeon/Actor/ActorUnkKEYN.cpp:
+    .text       start:0x02141394 end:0x02142714
+    .init       start:0x0214dea8 end:0x0214df04
+    .ctor       start:0x0214e748 end:0x0214e74c
+    .bss        start:0x0214f9c8 end:0x0214fabc
+
+src/070_Dungeon/Actor/ActorUnkLIRA.cpp:
+    .text       start:0x02142714 end:0x021435b0
+    .init       start:0x0214df04 end:0x0214df60
+    .ctor       start:0x0214e74c end:0x0214e750
+    .bss        start:0x0214fabc end:0x0214fca0
+
+src/070_Dungeon/Actor/ActorUnkBMHN.cpp:
+    .text       start:0x021435b0 end:0x02143698
+    .init       start:0x0214df60 end:0x0214dfb0
+    .ctor       start:0x0214e750 end:0x0214e754
+    .bss        start:0x0214fca0 end:0x0214fcf0
+
+src/070_Dungeon/Actor/ActorUnkSWDS.cpp:
+    .text       start:0x021439a8 end:0x02143c6c
+    .init       start:0x0214dfb0 end:0x0214e000
+    .ctor       start:0x0214e754 end:0x0214e758
+    .bss        start:0x0214fcf0 end:0x0214fd38
+
+src/070_Dungeon/Actor/ActorUnkRCSG.cpp:
+    .text       start:0x02143c6c end:0x02143fa4
+    .init       start:0x0214e000 end:0x0214e050
+    .ctor       start:0x0214e758 end:0x0214e75c
+    .bss        start:0x0214fd38 end:0x0214fd84
+
+src/070_Dungeon/MapObject/MapObjectUnkBLCK.cpp:
+    .text       start:0x02143fd4 end:0x021441d0
+    .init       start:0x0214e050 end:0x0214e0a0
+    .ctor       start:0x0214e75c end:0x0214e760
+    .bss        start:0x0214fd84 end:0x0214fe0c
+
+src/070_Dungeon/MapObject/MapObjectUnkFLSP.cpp:
+    .text       start:0x021441ec end:0x021450d4
+    .init       start:0x0214e0a0 end:0x0214e174
+    .ctor       start:0x0214e760 end:0x0214e764
+    .bss        start:0x0214fe0c end:0x0214ff1c
+
+src/070_Dungeon/MapObject/MapObjectUnkFSPS.cpp:
+    .text       start:0x021450d4 end:0x021452a4
+    .init       start:0x0214e174 end:0x0214e1c4
+    .ctor       start:0x0214e764 end:0x0214e768
+    .bss        start:0x0214ff1c end:0x02150028
+
+src/070_Dungeon/MapObject/MapObjectUnkBLRB.cpp:
+    .text       start:0x02145378 end:0x02145c00
+    .init       start:0x0214e1c4 end:0x0214e238
+    .ctor       start:0x0214e768 end:0x0214e76c
+    .bss        start:0x02150028 end:0x0215015c
+
+src/070_Dungeon/MapObject/MapObjectUnkSWRB.cpp:
+    .text       start:0x02145c00 end:0x0214613c
+    .init       start:0x0214e238 end:0x0214e288
+    .ctor       start:0x0214e76c end:0x0214e770
+    .bss        start:0x0215015c end:0x02150260
+
+src/070_Dungeon/MapObject/MapObjectUnkARWL.cpp:
+    .text       start:0x0214613c end:0x02146a7c
+    .init       start:0x0214e288 end:0x0214e2d8
+    .ctor       start:0x0214e770 end:0x0214e774
+    .bss        start:0x02150260 end:0x02150368
+
+src/070_Dungeon/MapObject/MapObjectUnkSWWN.cpp:
+    .text       start:0x02146a7c end:0x021473c4
+    .init       start:0x0214e2d8 end:0x0214e328
+    .ctor       start:0x0214e774 end:0x0214e778
+    .bss        start:0x02150368 end:0x02150470
+
+src/070_Dungeon/MapObject/MapObjectUnkSWEY.cpp:
+    .text       start:0x021473c4 end:0x02147cd8
+    .init       start:0x0214e328 end:0x0214e378
+    .ctor       start:0x0214e778 end:0x0214e77c
+    .bss        start:0x02150470 end:0x02150574
+
+src/070_Dungeon/Actor/ActorUnkTRAP.cpp:
+    .text       start:0x02147e28 end:0x02148bb4
+    .init       start:0x0214e378 end:0x0214e3c8
+    .ctor       start:0x0214e77c end:0x0214e780
+    .bss        start:0x02150574 end:0x0215065c
+
+src/070_Dungeon/MapObject/MapObjectUnkDRST.cpp:
+    .text       start:0x02148bb4 end:0x02149018
+    .init       start:0x0214e3c8 end:0x0214e42c
+    .ctor       start:0x0214e780 end:0x0214e784
+    .bss        start:0x0215065c end:0x02150744
+
+src/070_Dungeon/MapObject/MapObjectUnkFRWL.cpp:
+    .text       start:0x02149038 end:0x0214a020
+    .init       start:0x0214e42c end:0x0214e488
+    .ctor       start:0x0214e784 end:0x0214e788
+    .bss        start:0x02150744 end:0x02150854
+
+src/070_Dungeon/MapObject/MapObjectUnkSTSH.cpp:
+    .text       start:0x0214a020 end:0x0214b300
+    .init       start:0x0214e488 end:0x0214e524
+    .ctor       start:0x0214e788 end:0x0214e78c
+    .bss        start:0x02150854 end:0x02150938
+
+src/070_Dungeon/MapObject/MapObjectUnkTRLS.cpp:
+    .text       start:0x0214b310 end:0x0214b4dc
+    .init       start:0x0214e524 end:0x0214e594
+    .ctor       start:0x0214e78c end:0x0214e790
+    .bss        start:0x02150938 end:0x02150a1c
+
+src/070_Dungeon/MapObject/MapObjectUnkTRLD.cpp:
+    .text       start:0x0214b4dc end:0x0214b6c8
+    .init       start:0x0214e594 end:0x0214e604
+    .ctor       start:0x0214e790 end:0x0214e794
+    .bss        start:0x02150a1c end:0x02150a50
+
+src/070_Dungeon/MapObject/MapObjectUnkTRLW.cpp:
+    .text       start:0x0214b6c8 end:0x0214b8bc
+    .init       start:0x0214e604 end:0x0214e674
+    .ctor       start:0x0214e794 end:0x0214e798
+    .bss        start:0x02150a50 end:0x02150a88
+
+src/070_Dungeon/MapObject/MapObjectUnkPTFL.cpp:
+    .text       start:0x0214b8bc end:0x0214c004
+    .init       start:0x0214e674 end:0x0214e6d0
+    .ctor       start:0x0214e798 end:0x0214e79c
+    .bss        start:0x02150a88 end:0x02150ac0
+
+src/070_Dungeon/Actor/ActorUnkRYAW.cpp:
+    .text       start:0x0214c004 end:0x0214dbcc
+    .init       start:0x0214e6d0 end:0x0214e73c
+    .ctor       start:0x0214e79c end:0x0214e7a0

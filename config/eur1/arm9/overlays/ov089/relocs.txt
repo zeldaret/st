@@ -61,7 +61,7 @@ from:0x02166258 kind:load to:0x02049be0 module:main
 from:0x0216625c kind:load to:0x02170fd0 module:overlay(89)
 from:0x02166260 kind:load to:0x02170fe8 module:overlay(89)
 from:0x02166264 kind:load to:0x021707a8 module:overlay(89)
-from:0x02166268 kind:load to:0x02043f40 module:main
+from:0x02166268 kind:load to:0x02043f38 add:0x8 module:main
 from:0x0216626c kind:load to:0x02170fec module:overlay(89)
 from:0x02166298 kind:arm_call_thumb to:0x0201547c module:main
 from:0x021662b4 kind:arm_call to:0x021680e0 module:overlay(89)

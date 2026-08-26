@@ -4,3 +4,117 @@
     .ctor       start:0x02151674 end:0x021516c0 kind:rodata align:4
     .data       start:0x021516e0 end:0x02152740 kind:data align:32
     .bss        start:0x02152740 end:0x02153900 kind:bss align:32
+
+src/029_TrainWater/MapObject/MapObjectUnkTMDE.cpp:
+    .text       start:0x021419c0 end:0x02141f90
+    .init       start:0x02150f64 end:0x02150fd4
+    .ctor       start:0x02151674 end:0x02151678
+    .bss        start:0x02152748 end:0x02152834
+
+src/029_TrainWater/MapObject/MapObjectUnkTMWT.cpp:
+    .text       start:0x02141f90 end:0x02142244
+    .init       start:0x02150fd4 end:0x02151024
+    .ctor       start:0x02151678 end:0x0215167c
+    .bss        start:0x02152834 end:0x02152918
+
+src/029_TrainWater/MapObject/MapObjectUnkTRWA.cpp:
+    .text       start:0x02142244 end:0x02142520
+    .init       start:0x02151024 end:0x02151074
+    .ctor       start:0x0215167c end:0x02151680
+    .bss        start:0x02152918 end:0x02152a00
+
+src/029_TrainWater/MapObject/MapObjectUnkTRRW.cpp:
+    .text       start:0x02142520 end:0x021427d8
+    .init       start:0x02151074 end:0x021510c4
+    .ctor       start:0x02151680 end:0x02151684
+    .bss        start:0x02152a00 end:0x02152ae0
+
+src/029_TrainWater/MapObject/MapObjectUnkTRSA.cpp:
+    .text       start:0x021427d8 end:0x0214322c
+    .init       start:0x021510c4 end:0x02151114
+    .ctor       start:0x02151684 end:0x02151688
+    .bss        start:0x02152ae0 end:0x02152bc4
+
+src/029_TrainWater/MapObject/MapObjectUnkTRRD.cpp:
+    .text       start:0x0214322c end:0x021434e4
+    .init       start:0x02151114 end:0x02151164
+    .ctor       start:0x02151688 end:0x0215168c
+    .bss        start:0x02152bc4 end:0x02152ca8
+
+src/029_TrainWater/MapObject/MapObjectUnkTRPI.cpp:
+    .text       start:0x021434e4 end:0x021437a4
+    .init       start:0x02151164 end:0x021511b4
+    .ctor       start:0x0215168c end:0x02151690
+    .bss        start:0x02152ca8 end:0x02152d8c
+
+src/029_TrainWater/MapObject/MapObjectUnkSBDE.cpp:
+    .text       start:0x021437a4 end:0x02144050
+    .init       start:0x021511b4 end:0x02151204
+    .ctor       start:0x02151690 end:0x02151694
+    .bss        start:0x02152d8c end:0x02152e70
+
+src/029_TrainWater/MapObject/MapObjectUnkSTDE.cpp:
+    .text       start:0x02144050 end:0x02144304
+    .init       start:0x02151204 end:0x02151254
+    .ctor       start:0x02151694 end:0x02151698
+    .bss        start:0x02152e70 end:0x02152f58
+
+src/029_TrainWater/MapObject/MapObjectUnkTCBT.cpp:
+    .text       start:0x02144304 end:0x02145348
+    .init       start:0x02151254 end:0x021512a4
+    .ctor       start:0x02151698 end:0x0215169c
+    .bss        start:0x02152f58 end:0x02153058
+
+src/029_TrainWater/MapObject/MapObjectUnkWHSW.cpp:
+    .text       start:0x02145348 end:0x02145c50
+    .init       start:0x021512a4 end:0x021512f4
+    .ctor       start:0x0215169c end:0x021516a0
+    .bss        start:0x02153058 end:0x0215315c
+
+src/029_TrainWater/MapObject/MapObjectUnkTRH1.cpp:
+    .text       start:0x02145c50 end:0x02145f48
+    .init       start:0x021512f4 end:0x02151344
+    .ctor       start:0x021516a0 end:0x021516a4
+    .bss        start:0x0215315c end:0x02153240
+
+src/029_TrainWater/MapObject/MapObjectUnkTBSS.cpp:
+    .text       start:0x02145f48 end:0x021461dc
+    .init       start:0x02151344 end:0x02151394
+    .ctor       start:0x021516a4 end:0x021516a8
+    .bss        start:0x02153240 end:0x02153344
+
+src/029_TrainWater/MapObject/MapObjectUnkTRBL.cpp:
+    .text       start:0x021461dc end:0x021468d4
+    .init       start:0x02151394 end:0x021513e4
+    .ctor       start:0x021516a8 end:0x021516ac
+    .bss        start:0x02153344 end:0x02153448
+
+src/029_TrainWater/MapObject/MapObjectUnkRBBL.cpp:
+    .text       start:0x021468d4 end:0x02146ae4
+    .init       start:0x021513e4 end:0x02151434
+    .ctor       start:0x021516ac end:0x021516b0
+    .bss        start:0x02153448 end:0x021534fc
+
+src/029_TrainWater/Actor/ActorUnkDLPN.cpp:
+    .text       start:0x02146ae4 end:0x02149cac
+    .init       start:0x02151434 end:0x021514c4
+    .ctor       start:0x021516b0 end:0x021516b4
+    .bss        start:0x021534fc end:0x021535fc
+
+src/029_TrainWater/Actor/ActorUnkBLJF.cpp:
+    .text       start:0x02149cac end:0x0214af5c
+    .init       start:0x021514c4 end:0x02151520
+    .ctor       start:0x021516b4 end:0x021516b8
+    .bss        start:0x021535fc end:0x02153700
+
+src/029_TrainWater/Actor/ActorUnkMDYG.cpp:
+    .text       start:0x0214af5c end:0x0214d888
+    .init       start:0x02151520 end:0x021515f0
+    .ctor       start:0x021516b8 end:0x021516bc
+    .bss        start:0x02153700 end:0x0215380c
+
+src/029_TrainWater/Actor/ActorUnkPRSP.cpp:
+    .text       start:0x0214d888 end:0x02150e70
+    .init       start:0x021515f0 end:0x02151674
+    .ctor       start:0x021516bc end:0x021516c0
+    .bss        start:0x0215380c end:0x02153900

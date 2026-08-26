@@ -4,3 +4,32 @@
     .ctor       start:0x0211cde8 end:0x0211cdfc kind:rodata align:4
     .data       start:0x0211ce00 end:0x0211dd60 kind:data align:32
     .bss        start:0x0211dd60 end:0x0211e2c0 kind:bss align:32
+
+src/039_MapA8/Actor/ActorUnkZELD.cpp:
+    .text       start:0x02118fcc end:0x02119e3c
+    .init       start:0x0211cb60 end:0x0211cbb0
+    .ctor       start:0x0211cde8 end:0x0211cdec
+    .bss        start:0x0211dd60 end:0x0211de70
+
+src/039_MapA8/Actor/ActorUnkSIRO_SIRS_SRNM_SRSL.cpp:
+    .text       start:0x02119e3c end:0x0211aa08
+    .init       start:0x0211cbb0 end:0x0211ccf8
+    .ctor       start:0x0211cdec end:0x0211cdf0
+    .bss        start:0x0211de70 end:0x0211e154
+
+src/039_MapA8/Actor/ActorUnkRMM4.cpp:
+    .text       start:0x0211ab08 end:0x0211b4e8
+    .init       start:0x0211ccf8 end:0x0211cd48
+    .ctor       start:0x0211cdf0 end:0x0211cdf4
+    .bss        start:0x0211e154 end:0x0211e23c
+
+src/039_MapA8/Actor/ActorUnkZLSS.cpp:
+    .text       start:0x0211b4e8 end:0x0211c6e4
+    .init       start:0x0211cd48 end:0x0211cd98
+    .ctor       start:0x0211cdf4 end:0x0211cdf8
+    .bss        start:0x0211e23c end:0x0211e290
+
+src/039_MapA8/MapObject/MapObjectUnkGTAT.cpp:
+    .text       start:0x0211c6e4 end:0x0211ca8c
+    .init       start:0x0211cd98 end:0x0211cde8
+    .ctor       start:0x0211cdf8 end:0x0211cdfc

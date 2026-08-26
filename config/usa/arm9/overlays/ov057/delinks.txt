@@ -4,3 +4,44 @@
     .ctor       start:0x0213bd44 end:0x0213bd60 kind:rodata align:4
     .data       start:0x0213bd80 end:0x0213c2a0 kind:data align:32
     .bss        start:0x0213c2a0 end:0x0213c740 kind:bss align:32
+
+src/057_MapD5/Actor/ActorUnkFSST.cpp:
+    .text       start:0x021384c0 end:0x02139e40
+    .init       start:0x0213b940 end:0x0213b9a0
+    .ctor       start:0x0213bd44 end:0x0213bd48
+    .bss        start:0x0213c2a4 end:0x0213c394
+
+src/057_MapD5/Actor/ActorUnkFSSF.cpp:
+    .text       start:0x02139e40 end:0x0213a15c
+    .init       start:0x0213b9a0 end:0x0213b9f0
+    .ctor       start:0x0213bd48 end:0x0213bd4c
+    .bss        start:0x0213c394 end:0x0213c3e0
+
+src/057_MapD5/Actor/ActorUnkRMFK.cpp:
+    .text       start:0x0213a15c end:0x0213a7d8
+    .init       start:0x0213b9f0 end:0x0213bbe8
+    .ctor       start:0x0213bd4c end:0x0213bd50
+    .bss        start:0x0213c3e0 end:0x0213c4c8
+
+src/057_MapD5/Actor/ActorUnkGTTG.cpp:
+    .text       start:0x0213a7d8 end:0x0213a9dc
+    .init       start:0x0213bbe8 end:0x0213bc38
+    .ctor       start:0x0213bd50 end:0x0213bd54
+    .bss        start:0x0213c4c8 end:0x0213c514
+
+src/057_MapD5/Actor/ActorUnkHYSW.cpp:
+    .text       start:0x0213a9dc end:0x0213abd0
+    .init       start:0x0213bc38 end:0x0213bc88
+    .ctor       start:0x0213bd54 end:0x0213bd58
+    .bss        start:0x0213c514 end:0x0213c560
+
+src/057_MapD5/Actor/ActorUnkELVT.cpp:
+    .text       start:0x0213abd0 end:0x0213b748
+    .init       start:0x0213bc88 end:0x0213bcd8
+    .ctor       start:0x0213bd58 end:0x0213bd5c
+    .bss        start:0x0213c560 end:0x0213c648
+
+src/057_MapD5/MapObject/MapObjectUnkTRLN.cpp:
+    .text       start:0x0213b748 end:0x0213b8bc
+    .init       start:0x0213bcd8 end:0x0213bd44
+    .ctor       start:0x0213bd5c end:0x0213bd60

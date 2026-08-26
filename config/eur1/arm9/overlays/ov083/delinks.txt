@@ -4,3 +4,56 @@
     .ctor       start:0x0215d91c end:0x0215d940 kind:rodata align:4
     .data       start:0x0215d960 end:0x0215e4e0 kind:data align:32
     .bss        start:0x0215e4e0 end:0x0215eca0 kind:bss align:32
+
+src/083_BossWater/Actor/ActorUnkWTBS.cpp:
+    .text       start:0x02152ee4 end:0x0215a6f0
+    .init       start:0x0215d4d4 end:0x0215d5e8
+    .ctor       start:0x0215d91c end:0x0215d920
+    .bss        start:0x0215e4e4 end:0x0215e5d4
+
+src/083_BossWater/Actor/ActorUnkWBPS.cpp:
+    .text       start:0x0215a6f0 end:0x0215b218
+    .init       start:0x0215d5e8 end:0x0215d678
+    .ctor       start:0x0215d920 end:0x0215d924
+    .bss        start:0x0215e5d4 end:0x0215e6c4
+
+src/083_BossWater/Actor/ActorUnkWBEF.cpp:
+    .text       start:0x0215b218 end:0x0215b86c
+    .init       start:0x0215d678 end:0x0215d6c8
+    .ctor       start:0x0215d924 end:0x0215d928
+    .bss        start:0x0215e6c4 end:0x0215e7ac
+
+src/083_BossWater/Actor/ActorUnkRBWT.cpp:
+    .text       start:0x0215b86c end:0x0215c318
+    .init       start:0x0215d6c8 end:0x0215d718
+    .ctor       start:0x0215d928 end:0x0215d92c
+    .bss        start:0x0215e7ac end:0x0215e8ac
+
+src/083_BossWater/Actor/ActorUnkRBWS.cpp:
+    .text       start:0x0215c318 end:0x0215c4a0
+    .init       start:0x0215d718 end:0x0215d768
+    .ctor       start:0x0215d92c end:0x0215d930
+    .bss        start:0x0215e8ac end:0x0215e990
+
+src/083_BossWater/Actor/ActorUnkNPWC.cpp:
+    .text       start:0x0215c4a0 end:0x0215c634
+    .init       start:0x0215d768 end:0x0215d7b8
+    .ctor       start:0x0215d930 end:0x0215d934
+    .bss        start:0x0215e990 end:0x0215e9dc
+
+src/083_BossWater/Actor/ActorUnkEFR3.cpp:
+    .text       start:0x0215c634 end:0x0215c7e8
+    .init       start:0x0215d7b8 end:0x0215d808
+    .ctor       start:0x0215d934 end:0x0215d938
+    .bss        start:0x0215e9dc end:0x0215eac4
+
+src/083_BossWater/Actor/ActorUnkEFW3.cpp:
+    .text       start:0x0215c7e8 end:0x0215c99c
+    .init       start:0x0215d808 end:0x0215d858
+    .ctor       start:0x0215d938 end:0x0215d93c
+    .bss        start:0x0215eac4 end:0x0215eaf4
+
+src/083_BossWater/MapObject/MapObjectUnkSHWB.cpp:
+    .text       start:0x0215c99c end:0x0215ce0c
+    .init       start:0x0215d858 end:0x0215d91c
+    .ctor       start:0x0215d93c end:0x0215d940

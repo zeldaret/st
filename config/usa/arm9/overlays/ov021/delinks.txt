@@ -4,3 +4,75 @@
     .ctor       start:0x02107e2c end:0x02107e64 kind:rodata align:4
     .data       start:0x02107e80 end:0x02109060 kind:data align:32
     .bss        start:0x02109060 end:0x02109b80 kind:bss align:32
+
+src/021_BattleGame/Actor/ActorUnkBAPH.cpp:
+    .text       start:0x020ec0d0 end:0x020f02cc
+    .init       start:0x02107918 end:0x0210798c
+    .ctor       start:0x02107e2c end:0x02107e30
+    .bss        start:0x02109090 end:0x02109180
+
+src/021_BattleGame/Actor/ActorUnkBAEY.cpp:
+    .text       start:0x020f02cc end:0x020f0cbc
+    .init       start:0x0210798c end:0x021079dc
+    .ctor       start:0x02107e30 end:0x02107e34
+    .bss        start:0x02109180 end:0x02109284
+
+src/021_BattleGame/Actor/ActorUnkBAFO.cpp:
+    .text       start:0x020f0cbc end:0x020f19f4
+    .init       start:0x021079dc end:0x02107a84
+    .ctor       start:0x02107e34 end:0x02107e38
+    .bss        start:0x02109284 end:0x02109374
+
+src/021_BattleGame/Actor/ActorUnkBTIR.cpp:
+    .text       start:0x020f19f4 end:0x020f241c
+    .init       start:0x02107a84 end:0x02107ad4
+    .ctor       start:0x02107e38 end:0x02107e3c
+    .bss        start:0x02109374 end:0x0210945c
+
+src/021_BattleGame/Actor/ActorUnkBFFN.cpp:
+    .text       start:0x020f241c end:0x020f37b0
+    .init       start:0x02107ad4 end:0x02107b24
+    .ctor       start:0x02107e3c end:0x02107e40
+    .bss        start:0x0210945c end:0x021094a8
+
+src/021_BattleGame/Actor/ActorUnkBPAP.cpp:
+    .text       start:0x020f37b0 end:0x020f38a8
+    .init       start:0x02107b24 end:0x02107b74
+    .ctor       start:0x02107e40 end:0x02107e44
+    .bss        start:0x021094a8 end:0x021094f4
+
+src/021_BattleGame/Actor/ActorUnkCLZN.cpp:
+    .text       start:0x020f38a8 end:0x020f398c
+    .init       start:0x02107b74 end:0x02107bc4
+    .ctor       start:0x02107e44 end:0x02107e48
+    .bss        start:0x021094f4 end:0x02109540
+
+src/021_BattleGame/Actor/ActorUnkFOFA.cpp:
+    .text       start:0x020f398c end:0x020f3a84
+    .init       start:0x02107bc4 end:0x02107c14
+    .ctor       start:0x02107e48 end:0x02107e4c
+    .bss        start:0x02109540 end:0x0210958c
+
+src/021_BattleGame/Actor/ActorUnkLVOF.cpp:
+    .text       start:0x020f3a84 end:0x020f4710
+    .init       start:0x02107c14 end:0x02107c64
+    .ctor       start:0x02107e4c end:0x02107e50
+    .bss        start:0x0210958c end:0x02109678
+
+src/021_BattleGame/MapObject/MapObjectUnkBAPL.cpp:
+    .text       start:0x020f48fc end:0x020f5b04
+    .init       start:0x02107c64 end:0x02107cc0
+    .ctor       start:0x02107e50 end:0x02107e54
+    .bss        start:0x02109678 end:0x021096b0
+
+src/021_BattleGame/MapObject/MapObjectUnkBFFL.cpp:
+    .text       start:0x020f5b04 end:0x020f617c
+    .init       start:0x02107cc0 end:0x02107d10
+    .ctor       start:0x02107e54 end:0x02107e58
+    .bss        start:0x021096b0 end:0x02109794
+
+src/021_BattleGame/MapObject/MapObjectUnkBFSP.cpp:
+    .text       start:0x020f617c end:0x020f63f0
+    .init       start:0x02107d10 end:0x02107d60
+    .ctor       start:0x02107e58 end:0x02107e5c
+    .bss        start:0x02109794 end:0x02109878

@@ -4,3 +4,135 @@
     .ctor       start:0x0217bb14 end:0x0217bb70 kind:rodata align:4
     .data       start:0x0217bb80 end:0x0217d1c0 kind:data align:32
     .bss        start:0x0217d1c0 end:0x0217e2a0 kind:bss align:32
+
+src/092_TrainDark/MapObject/MapObjectUnkTDBP.cpp:
+    .text       start:0x021665a0 end:0x02166770
+    .init       start:0x0217aefc end:0x0217af4c
+    .ctor       start:0x0217bb14 end:0x0217bb18
+    .bss        start:0x0217d1c0 end:0x0217d2a4
+
+src/092_TrainDark/MapObject/MapObjectUnkTDBR.cpp:
+    .text       start:0x02166770 end:0x02166938
+    .init       start:0x0217af4c end:0x0217af9c
+    .ctor       start:0x0217bb18 end:0x0217bb1c
+    .bss        start:0x0217d2a4 end:0x0217d388
+
+src/092_TrainDark/MapObject/MapObjectUnkTDDR.cpp:
+    .text       start:0x02166938 end:0x02166bd8
+    .init       start:0x0217af9c end:0x0217afec
+    .ctor       start:0x0217bb1c end:0x0217bb20
+    .bss        start:0x0217d388 end:0x0217d46c
+
+src/092_TrainDark/MapObject/MapObjectUnkETET.cpp:
+    .text       start:0x02166bd8 end:0x02167044
+    .init       start:0x0217afec end:0x0217b03c
+    .ctor       start:0x0217bb20 end:0x0217bb24
+    .bss        start:0x0217d46c end:0x0217d550
+
+src/092_TrainDark/MapObject/MapObjectUnkETFD.cpp:
+    .text       start:0x02167044 end:0x02167470
+    .init       start:0x0217b03c end:0x0217b08c
+    .ctor       start:0x0217bb24 end:0x0217bb28
+    .bss        start:0x0217d550 end:0x0217d580
+
+src/092_TrainDark/MapObject/MapObjectUnkETMW.cpp:
+    .text       start:0x02167470 end:0x0216775c
+    .init       start:0x0217b08c end:0x0217b0dc
+    .ctor       start:0x0217bb28 end:0x0217bb2c
+    .bss        start:0x0217d580 end:0x0217d664
+
+src/092_TrainDark/MapObject/MapObjectUnkETYG.cpp:
+    .text       start:0x0216775c end:0x02167c74
+    .init       start:0x0217b0dc end:0x0217b12c
+    .ctor       start:0x0217bb2c end:0x0217bb30
+    .bss        start:0x0217d664 end:0x0217d748
+
+src/092_TrainDark/MapObject/MapObjectUnkTBSD.cpp:
+    .text       start:0x02167c74 end:0x02167f14
+    .init       start:0x0217b12c end:0x0217b17c
+    .ctor       start:0x0217bb30 end:0x0217bb34
+    .bss        start:0x0217d748 end:0x0217d84c
+
+src/092_TrainDark/MapObject/MapObjectUnkTRDR.cpp:
+    .text       start:0x02167f14 end:0x02168234
+    .init       start:0x0217b17c end:0x0217b1cc
+    .ctor       start:0x0217bb34 end:0x0217bb38
+    .bss        start:0x0217d84c end:0x0217d950
+
+src/092_TrainDark/MapObject/MapObjectUnkETDD.cpp:
+    .text       start:0x02168234 end:0x02168568
+    .init       start:0x0217b1cc end:0x0217b21c
+    .ctor       start:0x0217bb38 end:0x0217bb3c
+    .bss        start:0x0217d950 end:0x0217d9b4
+
+src/092_TrainDark/Actor/ActorUnkMATR.cpp:
+    .text       start:0x02168e3c end:0x0216f808
+    .init       start:0x0217b21c end:0x0217b580
+    .ctor       start:0x0217bb3c end:0x0217bb40
+    .bss        start:0x0217d9b4 end:0x0217daa4
+
+src/092_TrainDark/Actor/ActorUnkMTWP.cpp:
+    .text       start:0x0216f808 end:0x02170464
+    .init       start:0x0217b580 end:0x0217b5d0
+    .ctor       start:0x0217bb40 end:0x0217bb44
+    .bss        start:0x0217daa4 end:0x0217daf4
+
+src/092_TrainDark/Actor/ActorUnkMTFL.cpp:
+    .text       start:0x02170464 end:0x02171cd8
+    .init       start:0x0217b5d0 end:0x0217b698
+    .ctor       start:0x0217bb44 end:0x0217bb48
+    .bss        start:0x0217daf4 end:0x0217dbf0
+
+src/092_TrainDark/Actor/ActorUnkMTFB.cpp:
+    .text       start:0x02171cd8 end:0x02173768
+    .init       start:0x0217b698 end:0x0217b760
+    .ctor       start:0x0217bb48 end:0x0217bb4c
+    .bss        start:0x0217dbf0 end:0x0217dcec
+
+src/092_TrainDark/Actor/ActorUnkMBCC.cpp:
+    .text       start:0x02173768 end:0x02174684
+    .init       start:0x0217b760 end:0x0217b830
+    .ctor       start:0x0217bb4c end:0x0217bb50
+    .bss        start:0x0217dcec end:0x0217ddd4
+
+src/092_TrainDark/Actor/ActorUnkMABC.cpp:
+    .text       start:0x02174684 end:0x021753c0
+    .init       start:0x0217b830 end:0x0217b880
+    .ctor       start:0x0217bb50 end:0x0217bb54
+    .bss        start:0x0217ddd4 end:0x0217debc
+
+src/092_TrainDark/Actor/ActorUnkMARG.cpp:
+    .text       start:0x021753c0 end:0x02176c74
+    .init       start:0x0217b880 end:0x0217b948
+    .ctor       start:0x0217bb54 end:0x0217bb58
+    .bss        start:0x0217debc end:0x0217dfa8
+
+src/092_TrainDark/Actor/ActorUnkMAFI.cpp:
+    .text       start:0x02176c74 end:0x02177270
+    .init       start:0x0217b948 end:0x0217b9a4
+    .ctor       start:0x0217bb58 end:0x0217bb5c
+    .bss        start:0x0217dfa8 end:0x0217e09c
+
+src/092_TrainDark/Actor/ActorUnkTDKT.cpp:
+    .text       start:0x02177270 end:0x02177ef8
+    .init       start:0x0217b9a4 end:0x0217b9f4
+    .ctor       start:0x0217bb5c end:0x0217bb60
+    .bss        start:0x0217e09c end:0x0217e0e8
+
+src/092_TrainDark/Actor/ActorUnkTEVT.cpp:
+    .text       start:0x02177ef8 end:0x02178680
+    .init       start:0x0217b9f4 end:0x0217ba58
+    .ctor       start:0x0217bb60 end:0x0217bb64
+    .bss        start:0x0217e0e8 end:0x0217e138
+
+src/092_TrainDark/Actor/ActorUnkSZKL.cpp:
+    .text       start:0x02178680 end:0x02178e00
+    .init       start:0x0217ba58 end:0x0217baa8
+    .ctor       start:0x0217bb64 end:0x0217bb68
+    .bss        start:0x0217e138 end:0x0217e228
+
+src/092_TrainDark/Actor/ActorUnkDKCB.cpp:
+    .text       start:0x02178e00 end:0x02179944
+    .init       start:0x0217baa8 end:0x0217baf8
+    .ctor       start:0x0217bb68 end:0x0217bb6c
+    .bss        start:0x0217e228 end:0x0217e274

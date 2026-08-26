@@ -4,3 +4,50 @@
     .ctor       start:0x0212d9cc end:0x0212d9f4 kind:rodata align:4
     .data       start:0x0212da00 end:0x0212e3a0 kind:data align:32
     .bss        start:0x0212e3a0 end:0x0212e9a0 kind:bss align:32
+
+src/041_MapB2/Actor/ActorUnkKEYB.cpp:
+    .text       start:0x02123600 end:0x021237e0
+    .init       start:0x0212d660 end:0x0212d6b0
+    .ctor       start:0x0212d9cc end:0x0212d9d0
+    .bss        start:0x0212e3a0 end:0x0212e488
+
+src/041_MapB2/Actor/ActorUnkKGDB.cpp:
+    .text       start:0x021237e0 end:0x02123cb0
+    .init       start:0x0212d6b0 end:0x0212d71c
+    .ctor       start:0x0212d9d0 end:0x0212d9d4
+    .bss        start:0x0212e488 end:0x0212e570
+
+src/041_MapB2/Actor/ActorUnkKEYT.cpp:
+    .text       start:0x02123cb0 end:0x021242cc
+    .init       start:0x0212d71c end:0x0212d778
+    .ctor       start:0x0212d9d4 end:0x0212d9d8
+    .bss        start:0x0212e570 end:0x0212e5d0
+
+src/041_MapB2/Actor/ActorUnkKGDN.cpp:
+    .text       start:0x021242cc end:0x02124d48
+    .init       start:0x0212d778 end:0x0212d7c8
+    .ctor       start:0x0212d9d8 end:0x0212d9dc
+    .bss        start:0x0212e5d0 end:0x0212e640
+
+src/041_MapB2/Actor/ActorUnkRPMT.cpp:
+    .text       start:0x0212a988 end:0x0212bb88
+    .init       start:0x0212d814 end:0x0212d864
+    .ctor       start:0x0212d9e4 end:0x0212d9e8
+    .bss        start:0x0212e640 end:0x0212e690
+
+src/041_MapB2/MapObject/MapObjectUnkDRBK.cpp:
+    .text       start:0x0212bb88 end:0x0212c9c0
+    .init       start:0x0212d864 end:0x0212d8e4
+    .ctor       start:0x0212d9e8 end:0x0212d9ec
+    .bss        start:0x0212e690 end:0x0212e7a0
+
+src/041_MapB2/MapObject/MapObjectUnkDRTK.cpp:
+    .text       start:0x0212c9c0 end:0x0212d1a8
+    .init       start:0x0212d8e4 end:0x0212d958
+    .ctor       start:0x0212d9ec end:0x0212d9f0
+    .bss        start:0x0212e7a0 end:0x0212e884
+
+src/041_MapB2/MapObject/MapObjectUnkDRMC.cpp:
+    .text       start:0x0212d1a8 end:0x0212d4c8
+    .init       start:0x0212d958 end:0x0212d9cc
+    .ctor       start:0x0212d9f0 end:0x0212d9f4

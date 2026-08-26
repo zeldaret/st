@@ -4,3 +4,44 @@
     .ctor       start:0x0212cd64 end:0x0212cd88 kind:rodata align:4
     .data       start:0x0212cda0 end:0x0212d560 kind:data align:32
     .bss        start:0x0212d560 end:0x0212dcc0 kind:bss align:32
+
+src/044_MapB5/Actor/ActorUnkICBB.cpp:
+    .text       start:0x02125e94 end:0x0212a420
+    .init       start:0x0212cafc end:0x0212cb60
+    .ctor       start:0x0212cd6c end:0x0212cd70
+    .bss        start:0x0212d6a8 end:0x0212d798
+
+src/044_MapB5/Actor/ActorUnkIBBA.cpp:
+    .text       start:0x0212a420 end:0x0212b6f0
+    .init       start:0x0212cb60 end:0x0212cbd4
+    .ctor       start:0x0212cd70 end:0x0212cd74
+    .bss        start:0x0212d798 end:0x0212d804
+
+src/044_MapB5/Actor/ActorUnkIBSP.cpp:
+    .text       start:0x0212b6f0 end:0x0212bbb0
+    .init       start:0x0212cbd4 end:0x0212cc24
+    .ctor       start:0x0212cd74 end:0x0212cd78
+    .bss        start:0x0212d804 end:0x0212d850
+
+src/044_MapB5/Actor/ActorUnkRBL2.cpp:
+    .text       start:0x0212bd28 end:0x0212c188
+    .init       start:0x0212cc24 end:0x0212cc74
+    .ctor       start:0x0212cd78 end:0x0212cd7c
+    .bss        start:0x0212d850 end:0x0212d948
+
+src/044_MapB5/Actor/ActorUnkL2V1.cpp:
+    .text       start:0x0212c188 end:0x0212c624
+    .init       start:0x0212cc74 end:0x0212ccc4
+    .ctor       start:0x0212cd7c end:0x0212cd80
+    .bss        start:0x0212d948 end:0x0212daf0
+
+src/044_MapB5/Actor/ActorUnkL2V2.cpp:
+    .text       start:0x0212c624 end:0x0212c868
+    .init       start:0x0212ccc4 end:0x0212cd14
+    .ctor       start:0x0212cd80 end:0x0212cd84
+    .bss        start:0x0212daf0 end:0x0212dbd8
+
+src/044_MapB5/Actor/ActorUnkL2MT.cpp:
+    .text       start:0x0212c868 end:0x0212c9d4
+    .init       start:0x0212cd14 end:0x0212cd64
+    .ctor       start:0x0212cd84 end:0x0212cd88

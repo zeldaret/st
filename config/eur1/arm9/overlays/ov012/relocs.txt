@@ -112,8 +112,8 @@ from:0x020b6d84 kind:thumb_call_arm to:0x0201665c module:main
 from:0x020b6d8a kind:thumb_call to:0x020154c4 module:main
 from:0x020b6d94 kind:load to:0x020b44a4 module:overlay(0)
 from:0x020b6d98 kind:load to:0x020b8490 module:overlay(12)
-from:0x020b6d9c kind:load to:0x02043f40 module:main
-from:0x020b6da4 kind:load to:0x0204a480 module:main
+from:0x020b6d9c kind:load to:0x02043f38 add:0x8 module:main
+from:0x020b6da4 kind:load to:0x0204a110 add:0x370 module:main
 from:0x020b6da8 kind:load to:0x020b84a0 module:overlay(12)
 from:0x020b6db0 kind:load to:0x020b4634 module:overlay(0)
 from:0x020b6db4 kind:load to:0x020b84b0 module:overlay(12)
@@ -165,7 +165,7 @@ from:0x020b70c0 kind:thumb_call_arm to:0x0206db44 module:overlay(0)
 from:0x020b70dc kind:thumb_call_arm to:0x0201c73c module:main
 from:0x020b71cc kind:load to:0x020b83c0 module:overlay(12)
 from:0x020b71d0 kind:load to:0x020b5254 module:overlay(0)
-from:0x020b71d8 kind:load to:0x0204a480 module:main
+from:0x020b71d8 kind:load to:0x0204a110 add:0x370 module:main
 from:0x020b721e kind:thumb_call_arm to:0x0207017c module:overlay(0)
 from:0x020b7228 kind:thumb_call_arm to:0x0203a1bc module:main
 from:0x020b729c kind:thumb_call_arm to:0x02019624 module:main
@@ -194,7 +194,7 @@ from:0x020b74de kind:thumb_call_arm to:0x02067f88 module:overlay(0)
 from:0x020b74f4 kind:thumb_call_arm to:0x0201c504 module:main
 from:0x020b7502 kind:thumb_call_arm to:0x0201c504 module:main
 from:0x020b7508 kind:load to:0x020b508c module:overlay(0)
-from:0x020b750c kind:load to:0x0204aeac module:main
+from:0x020b750c kind:load to:0x0204a110 add:0xd9c module:main
 from:0x020b7530 kind:thumb_call_arm to:0x02028c4c module:main
 from:0x020b754a kind:thumb_call_arm to:0x0201edbc module:main
 from:0x020b757a kind:thumb_call_arm to:0x0201aa44 module:main
@@ -226,7 +226,7 @@ from:0x020b78ba kind:thumb_call to:0x020b7ce0 module:overlay(12)
 from:0x020b78ea kind:thumb_call to:0x020b7cd0 module:overlay(12)
 from:0x020b7938 kind:load to:0x020b82bc module:overlay(12)
 from:0x020b793c kind:load to:0x020b82b0 module:overlay(12)
-from:0x020b7944 kind:load to:0x0204a480 module:main
+from:0x020b7944 kind:load to:0x0204a110 add:0x370 module:main
 from:0x020b7948 kind:load to:0x027e0cf0 module:dtcm
 from:0x020b798e kind:thumb_call_arm to:0x0205fc20 module:overlay(0)
 from:0x020b79ae kind:thumb_call_arm to:0x0205fc20 module:overlay(0)

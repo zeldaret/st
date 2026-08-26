@@ -4,3 +4,21 @@
     .ctor       start:0x0213e5ec end:0x0213e5f8 kind:rodata align:4
     .data       start:0x0213e600 end:0x0213ef40 kind:data align:32
     .bss        start:0x0213ef40 end:0x0213f0e0 kind:bss align:32
+
+src/056_MapD4/Actor/ActorUnkPASS.cpp:
+    .text       start:0x021388a8 end:0x0213aa98
+    .init       start:0x0213e4fc end:0x0213e54c
+    .ctor       start:0x0213e5ec end:0x0213e5f0
+    .bss        start:0x0213ef40 end:0x0213efa0
+
+src/056_MapD4/MapObject/MapObjectUnkFSVC.cpp:
+    .text       start:0x0213ab68 end:0x0213aca0
+    .init       start:0x0213e54c end:0x0213e59c
+    .ctor       start:0x0213e5f0 end:0x0213e5f4
+    .bss        start:0x0213efa0 end:0x0213f084
+
+src/056_MapD4/Actor/ActorUnkFSIR.cpp:
+    .text       start:0x0213aca0 end:0x0213b36c
+    .init       start:0x0213e59c end:0x0213e5ec
+    .ctor       start:0x0213e5f4 end:0x0213e5f8
+    .bss        start:0x0213f084 end:0x0213f0d8

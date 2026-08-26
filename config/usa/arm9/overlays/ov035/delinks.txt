@@ -4,3 +4,27 @@
     .ctor       start:0x02121160 end:0x02121170 kind:rodata align:4
     .data       start:0x02121180 end:0x02121ae0 kind:data align:32
     .bss        start:0x02121ae0 end:0x02121ee0 kind:bss align:32
+
+src/035_MapA4/Actor/ActorUnkFIMA.cpp:
+    .text       start:0x02118fa0 end:0x0211aa48
+    .init       start:0x02120f7c end:0x02120fcc
+    .ctor       start:0x02121160 end:0x02121164
+    .bss        start:0x02121ae0 end:0x02121bd0
+
+src/035_MapA4/Actor/ActorUnkFMAS_FMLS.cpp:
+    .text       start:0x0211aa48 end:0x0211bb10
+    .init       start:0x02120fcc end:0x021210a8
+    .ctor       start:0x02121164 end:0x02121168
+    .bss        start:0x02121bd0 end:0x02121da4
+
+src/035_MapA4/Actor/ActorUnkFIML.cpp:
+    .text       start:0x0211bb9c end:0x0211e484
+    .init       start:0x021210a8 end:0x02121110
+    .ctor       start:0x02121168 end:0x0212116c
+    .bss        start:0x02121da4 end:0x02121e94
+
+src/035_MapA4/Actor/ActorUnkFIFI.cpp:
+    .text       start:0x0211e484 end:0x0211e8f0
+    .init       start:0x02121110 end:0x02121160
+    .ctor       start:0x0212116c end:0x02121170
+    .bss        start:0x02121e94 end:0x02121ee0

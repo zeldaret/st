@@ -4,3 +4,129 @@
     .ctor       start:0x0215ef94 end:0x0215efe8 kind:rodata align:4
     .data       start:0x0215f000 end:0x02160960 kind:data align:32
     .bss        start:0x02160960 end:0x02161c40 kind:bss align:32
+
+src/062_Village/Actor/ActorUnkRML0.cpp:
+    .text       start:0x02157e80 end:0x02157fd4
+    .init       start:0x0215e8ac end:0x0215e8fc
+    .ctor       start:0x0215ef94 end:0x0215ef98
+    .bss        start:0x02160960 end:0x02160a48
+
+src/062_Village/Actor/ActorUnkRML1.cpp:
+    .text       start:0x02157fd4 end:0x021580f8
+    .init       start:0x0215e8fc end:0x0215e94c
+    .ctor       start:0x0215ef98 end:0x0215ef9c
+    .bss        start:0x02160a48 end:0x02160b30
+
+src/062_Village/Actor/ActorUnkRML2.cpp:
+    .text       start:0x021580f8 end:0x0215821c
+    .init       start:0x0215e94c end:0x0215e99c
+    .ctor       start:0x0215ef9c end:0x0215efa0
+    .bss        start:0x02160b30 end:0x02160c18
+
+src/062_Village/Actor/ActorUnkRML3.cpp:
+    .text       start:0x0215821c end:0x02158340
+    .init       start:0x0215e99c end:0x0215e9ec
+    .ctor       start:0x0215efa0 end:0x0215efa4
+    .bss        start:0x02160c18 end:0x02160d00
+
+src/062_Village/Actor/ActorUnkNICO.cpp:
+    .text       start:0x02158340 end:0x02158714
+    .init       start:0x0215e9ec end:0x0215ea3c
+    .ctor       start:0x0215efa4 end:0x0215efa8
+    .bss        start:0x02160d00 end:0x02160dec
+
+src/062_Village/Actor/ActorUnkFBCH.cpp:
+    .text       start:0x02158714 end:0x02158bbc
+    .init       start:0x0215ea3c end:0x0215ea8c
+    .ctor       start:0x0215efa8 end:0x0215efac
+    .bss        start:0x02160dec end:0x02160ed4
+
+src/062_Village/Actor/ActorUnkNSHD.cpp:
+    .text       start:0x02158bbc end:0x02158f84
+    .init       start:0x0215ea8c end:0x0215eaf0
+    .ctor       start:0x0215efac end:0x0215efb0
+    .bss        start:0x02160ed4 end:0x02160f2c
+
+src/062_Village/Actor/ActorUnkLBCK.cpp:
+    .text       start:0x02158f84 end:0x021599d4
+    .init       start:0x0215eaf0 end:0x0215eb40
+    .ctor       start:0x0215efb0 end:0x0215efb4
+    .bss        start:0x02160f2c end:0x02161014
+
+src/062_Village/Actor/ActorUnkRMLF.cpp:
+    .text       start:0x021599d4 end:0x02159af8
+    .init       start:0x0215eb40 end:0x0215eb90
+    .ctor       start:0x0215efb4 end:0x0215efb8
+    .bss        start:0x02161014 end:0x02161104
+
+src/062_Village/Actor/ActorUnkNCCB_NCMB.cpp:
+    .text       start:0x02159af8 end:0x02159fd4
+    .init       start:0x0215eb90 end:0x0215ec24
+    .ctor       start:0x0215efb8 end:0x0215efbc
+    .bss        start:0x02161104 end:0x021612cc
+
+src/062_Village/Actor/ActorUnkNCWA.cpp:
+    .text       start:0x02159fd4 end:0x0215a3cc
+    .init       start:0x0215ec24 end:0x0215ec74
+    .ctor       start:0x0215efbc end:0x0215efc0
+    .bss        start:0x021612cc end:0x021613b4
+
+src/062_Village/Actor/ActorUnkRMBC.cpp:
+    .text       start:0x0215a3cc end:0x0215a4f0
+    .init       start:0x0215ec74 end:0x0215ecc4
+    .ctor       start:0x0215efc0 end:0x0215efc4
+    .bss        start:0x021613b4 end:0x0216149c
+
+src/062_Village/Actor/ActorUnkMOCT.cpp:
+    .text       start:0x0215a4f0 end:0x0215a710
+    .init       start:0x0215ecc4 end:0x0215ed14
+    .ctor       start:0x0215efc4 end:0x0215efc8
+    .bss        start:0x0216149c end:0x021614e8
+
+src/062_Village/Actor/ActorUnkTSLB.cpp:
+    .text       start:0x0215a710 end:0x0215b3b4
+    .init       start:0x0215ed14 end:0x0215ed64
+    .ctor       start:0x0215efc8 end:0x0215efcc
+    .bss        start:0x021614e8 end:0x021615d0
+
+src/062_Village/MapObject/MapObjectUnkFSFS.cpp:
+    .text       start:0x0215b3b4 end:0x0215b4ec
+    .init       start:0x0215ed64 end:0x0215edb4
+    .ctor       start:0x0215efcc end:0x0215efd0
+    .bss        start:0x021615d0 end:0x021616b4
+
+src/062_Village/MapObject/MapObjectUnkHOL2.cpp:
+    .text       start:0x0215b4ec end:0x0215b830
+    .init       start:0x0215edb4 end:0x0215ee04
+    .ctor       start:0x0215efd0 end:0x0215efd4
+    .bss        start:0x021616b4 end:0x021617bc
+
+src/062_Village/MapObject/MapObjectUnkHOL0.cpp:
+    .text       start:0x0215b830 end:0x0215b984
+    .init       start:0x0215ee04 end:0x0215ee54
+    .ctor       start:0x0215efd4 end:0x0215efd8
+    .bss        start:0x021617bc end:0x021618a0
+
+src/062_Village/MapObject/MapObjectUnkHOL1.cpp:
+    .text       start:0x0215b984 end:0x0215bad8
+    .init       start:0x0215ee54 end:0x0215eea4
+    .ctor       start:0x0215efd8 end:0x0215efdc
+    .bss        start:0x021618a0 end:0x02161984
+
+src/062_Village/MapObject/MapObjectUnkHOLB.cpp:
+    .text       start:0x0215bad8 end:0x0215bc2c
+    .init       start:0x0215eea4 end:0x0215eef4
+    .ctor       start:0x0215efdc end:0x0215efe0
+    .bss        start:0x02161984 end:0x02161a68
+
+src/062_Village/MapObject/MapObjectUnkHOSB.cpp:
+    .text       start:0x0215bc2c end:0x0215bd80
+    .init       start:0x0215eef4 end:0x0215ef44
+    .ctor       start:0x0215efe0 end:0x0215efe4
+    .bss        start:0x02161a68 end:0x02161b4c
+
+src/062_Village/MapObject/MapObjectUnkGBDR.cpp:
+    .text       start:0x0215bd80 end:0x0215c034
+    .init       start:0x0215ef44 end:0x0215ef94
+    .ctor       start:0x0215efe4 end:0x0215efe8
+    .bss        start:0x02161b4c end:0x02161bac

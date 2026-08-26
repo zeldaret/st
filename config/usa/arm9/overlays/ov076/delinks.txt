@@ -4,3 +4,9 @@
     .ctor       start:0x02152b10 end:0x02152b14 kind:rodata align:4
     .data       start:0x02152b20 end:0x02152d80 kind:data align:32
     .bss        start:0x02152d80 end:0x02152e80 kind:bss align:32
+
+src/076_DgnLv1/Actor/ActorUnkBGOK.cpp:
+    .text       start:0x02150be0 end:0x02152aa0
+    .init       start:0x02152ac0 end:0x02152b10
+    .ctor       start:0x02152b10 end:0x02152b14
+    .bss        start:0x02152d80 end:0x02152e80

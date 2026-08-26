@@ -4,3 +4,14 @@
     .ctor       start:0x02163e9c end:0x02163ea4 kind:rodata align:4
     .data       start:0x02163ec0 end:0x021647a0 kind:data align:32
     .bss        start:0x021647a0 end:0x02164980 kind:bss align:32
+
+src/073_BossDeago/Actor/ActorUnkBDEA.cpp:
+    .text       start:0x02150be0 end:0x02163208
+    .init       start:0x02163d28 end:0x02163e4c
+    .ctor       start:0x02163e9c end:0x02163ea0
+    .bss        start:0x021647a0 end:0x021647b4
+
+src/073_BossDeago/Actor/ActorUnkDGPC.cpp:
+    .text       start:0x02163208 end:0x0216346c
+    .init       start:0x02163e4c end:0x02163e9c
+    .ctor       start:0x02163ea0 end:0x02163ea4

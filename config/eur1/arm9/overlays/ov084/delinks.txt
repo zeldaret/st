@@ -4,3 +4,93 @@
     .ctor       start:0x02162bb8 end:0x02162bf4 kind:rodata align:4
     .data       start:0x02162c00 end:0x02163c80 kind:data align:32
     .bss        start:0x02163c80 end:0x02164920 kind:bss align:32
+
+src/084_BossFlame/Actor/ActorUnkIWTS.cpp:
+    .text       start:0x02150d80 end:0x02159e20
+    .init       start:0x02161fe0 end:0x021626ac
+    .ctor       start:0x02162bb8 end:0x02162bbc
+    .bss        start:0x02163c84 end:0x02163da8
+
+src/084_BossFlame/Actor/ActorUnkITSC.cpp:
+    .text       start:0x02159e20 end:0x0215a528
+    .init       start:0x021626ac end:0x0216271c
+    .ctor       start:0x02162bbc end:0x02162bc0
+    .bss        start:0x02163da8 end:0x02163e90
+
+src/084_BossFlame/Actor/ActorUnkFIRB.cpp:
+    .text       start:0x0215a528 end:0x0215b064
+    .init       start:0x0216271c end:0x0216276c
+    .ctor       start:0x02162bc0 end:0x02162bc4
+    .bss        start:0x02163e90 end:0x02163f78
+
+src/084_BossFlame/Actor/ActorUnkDSVC.cpp:
+    .text       start:0x0215b064 end:0x0215b188
+    .init       start:0x0216276c end:0x021627bc
+    .ctor       start:0x02162bc4 end:0x02162bc8
+    .bss        start:0x02163f78 end:0x02164060
+
+src/084_BossFlame/Actor/ActorUnkWIDR.cpp:
+    .text       start:0x0215b188 end:0x0215c7dc
+    .init       start:0x021627bc end:0x0216280c
+    .ctor       start:0x02162bc8 end:0x02162bcc
+    .bss        start:0x02164060 end:0x02164148
+
+src/084_BossFlame/Actor/ActorUnkWIDT.cpp:
+    .text       start:0x0215c7dc end:0x0215d218
+    .init       start:0x0216280c end:0x0216285c
+    .ctor       start:0x02162bcc end:0x02162bd0
+    .bss        start:0x02164148 end:0x0216419c
+
+src/084_BossFlame/Actor/ActorUnkRBVC.cpp:
+    .text       start:0x0215d218 end:0x0215d5e8
+    .init       start:0x0216285c end:0x021628ac
+    .ctor       start:0x02162bd0 end:0x02162bd4
+    .bss        start:0x0216419c end:0x02164284
+
+src/084_BossFlame/MapObject/MapObjectUnkLVCM.cpp:
+    .text       start:0x0215d5e8 end:0x0215dcf8
+    .init       start:0x021628ac end:0x021628fc
+    .ctor       start:0x02162bd4 end:0x02162bd8
+    .bss        start:0x02164284 end:0x02164388
+
+src/084_BossFlame/MapObject/MapObjectUnkMLVC.cpp:
+    .text       start:0x0215dcf8 end:0x0215e0ec
+    .init       start:0x021628fc end:0x0216294c
+    .ctor       start:0x02162bd8 end:0x02162bdc
+    .bss        start:0x02164388 end:0x021643c0
+
+src/084_BossFlame/Actor/ActorUnkLAVA.cpp:
+    .text       start:0x0215e0ec end:0x0215ecd8
+    .init       start:0x0216294c end:0x021629ac
+    .ctor       start:0x02162bdc end:0x02162be0
+    .bss        start:0x021643c0 end:0x021644d8
+
+src/084_BossFlame/Actor/ActorUnkLVBD.cpp:
+    .text       start:0x0215ecd8 end:0x021605d8
+    .init       start:0x021629ac end:0x02162a40
+    .ctor       start:0x02162be0 end:0x02162be4
+    .bss        start:0x021644d8 end:0x02164680
+
+src/084_BossFlame/MapObject/MapObjectUnkTMLV.cpp:
+    .text       start:0x021605d8 end:0x0216078c
+    .init       start:0x02162a40 end:0x02162a90
+    .ctor       start:0x02162be4 end:0x02162be8
+    .bss        start:0x02164680 end:0x021646b0
+
+src/084_BossFlame/MapObject/MapObjectUnkSTSV.cpp:
+    .text       start:0x0216078c end:0x02160984
+    .init       start:0x02162a90 end:0x02162ae0
+    .ctor       start:0x02162be8 end:0x02162bec
+    .bss        start:0x021646b0 end:0x02164728
+
+src/084_BossFlame/Actor/ActorUnkLBRC.cpp:
+    .text       start:0x021609b0 end:0x021613ac
+    .init       start:0x02162ae0 end:0x02162b68
+    .ctor       start:0x02162bec end:0x02162bf0
+    .bss        start:0x02164728 end:0x02164814
+
+src/084_BossFlame/MapObject/MapObjectUnkPLV2.cpp:
+    .text       start:0x02161448 end:0x02161968
+    .init       start:0x02162b68 end:0x02162bb8
+    .ctor       start:0x02162bf0 end:0x02162bf4
+    .bss        start:0x02164814 end:0x021648f8

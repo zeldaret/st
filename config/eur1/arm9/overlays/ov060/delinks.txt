@@ -4,3 +4,110 @@
     .ctor       start:0x0216150c end:0x02161554 kind:rodata align:4
     .data       start:0x02161560 end:0x02163020 kind:data align:32
     .bss        start:0x02163020 end:0x02164260 kind:bss align:32
+
+src/060_Castle/Actor/ActorUnkSOLB_SOLC_SOLD.cpp:
+    .text       start:0x02157fc0 end:0x021593c4
+    .init       start:0x02160dfc end:0x02160ed4
+    .ctor       start:0x0216150c end:0x02161510
+    .bss        start:0x02163038 end:0x02163308
+
+src/060_Castle/Actor/ActorUnkSOGB_SOGC_SOLG.cpp:
+    .text       start:0x021593c4 end:0x0215c7fc
+    .init       start:0x02160ed4 end:0x02160fec
+    .ctor       start:0x02161510 end:0x02161514
+    .bss        start:0x02163308 end:0x021633ec
+
+src/060_Castle/Actor/ActorUnkCOMM.cpp:
+    .text       start:0x0215c7fc end:0x0215cff8
+    .init       start:0x02160fec end:0x0216105c
+    .ctor       start:0x02161514 end:0x02161518
+    .bss        start:0x021633ec end:0x021634d4
+
+src/060_Castle/Actor/ActorUnkOLDM.cpp:
+    .text       start:0x0215cff8 end:0x0215d5f4
+    .init       start:0x0216105c end:0x021610ac
+    .ctor       start:0x02161518 end:0x0216151c
+    .bss        start:0x021634d4 end:0x021635bc
+
+src/060_Castle/Actor/ActorUnkRMC0.cpp:
+    .text       start:0x0215d5f4 end:0x0215d9a8
+    .init       start:0x021610ac end:0x021610fc
+    .ctor       start:0x0216151c end:0x02161520
+    .bss        start:0x021635bc end:0x021636a4
+
+src/060_Castle/Actor/ActorUnkRMC1.cpp:
+    .text       start:0x0215d9a8 end:0x0215dafc
+    .init       start:0x021610fc end:0x0216114c
+    .ctor       start:0x02161520 end:0x02161524
+    .bss        start:0x021636a4 end:0x0216378c
+
+src/060_Castle/Actor/ActorUnkRMC2.cpp:
+    .text       start:0x0215dafc end:0x0215e1ac
+    .init       start:0x0216114c end:0x0216119c
+    .ctor       start:0x02161524 end:0x02161528
+    .bss        start:0x0216378c end:0x021638d8
+
+src/060_Castle/Actor/ActorUnkRMC6.cpp:
+    .text       start:0x0215e1ac end:0x0215e2d4
+    .init       start:0x0216119c end:0x021611ec
+    .ctor       start:0x02161528 end:0x0216152c
+    .bss        start:0x021638d8 end:0x021639c0
+
+src/060_Castle/Actor/ActorUnkRMC3.cpp:
+    .text       start:0x0215e2d4 end:0x0215e728
+    .init       start:0x021611ec end:0x0216123c
+    .ctor       start:0x0216152c end:0x02161530
+    .bss        start:0x021639c0 end:0x02163aa8
+
+src/060_Castle/Actor/ActorUnkRMC4.cpp:
+    .text       start:0x0215e728 end:0x0215e850
+    .init       start:0x0216123c end:0x0216128c
+    .ctor       start:0x02161530 end:0x02161534
+    .bss        start:0x02163aa8 end:0x02163b90
+
+src/060_Castle/Actor/ActorUnkRMC5.cpp:
+    .text       start:0x0215e850 end:0x0215ea94
+    .init       start:0x0216128c end:0x021612dc
+    .ctor       start:0x02161534 end:0x02161538
+    .bss        start:0x02163b90 end:0x02163c78
+
+src/060_Castle/Actor/ActorUnkCASL.cpp:
+    .text       start:0x0215ea94 end:0x0215ecd0
+    .init       start:0x021612dc end:0x0216132c
+    .ctor       start:0x02161538 end:0x0216153c
+    .bss        start:0x02163c78 end:0x02163d60
+
+src/060_Castle/Actor/ActorUnkCAST.cpp:
+    .text       start:0x0215ecd0 end:0x0215ee58
+    .init       start:0x0216132c end:0x0216137c
+    .ctor       start:0x0216153c end:0x02161540
+    .bss        start:0x02163d60 end:0x02163e48
+
+src/060_Castle/Actor/ActorUnkZLSN.cpp:
+    .text       start:0x0215ee84 end:0x02160254
+    .init       start:0x0216137c end:0x021613cc
+    .ctor       start:0x02161540 end:0x02161544
+    .bss        start:0x02163e48 end:0x02163f30
+
+src/060_Castle/Actor/ActorUnkKIMA.cpp:
+    .text       start:0x02160254 end:0x02160484
+    .init       start:0x021613cc end:0x0216141c
+    .ctor       start:0x02161544 end:0x02161548
+    .bss        start:0x02163f30 end:0x02164018
+
+src/060_Castle/MapObject/MapObjectUnkPLCT.cpp:
+    .text       start:0x02160484 end:0x02160654
+    .init       start:0x0216141c end:0x0216146c
+    .ctor       start:0x02161548 end:0x0216154c
+    .bss        start:0x02164018 end:0x0216411c
+
+src/060_Castle/MapObject/MapObjectUnkDFNC.cpp:
+    .text       start:0x02160654 end:0x02160afc
+    .init       start:0x0216146c end:0x021614bc
+    .ctor       start:0x0216154c end:0x02161550
+    .bss        start:0x0216411c end:0x02164200
+
+src/060_Castle/MapObject/MapObjectUnkEXCT.cpp:
+    .text       start:0x02160afc end:0x02160cb4
+    .init       start:0x021614bc end:0x0216150c
+    .ctor       start:0x02161550 end:0x02161554

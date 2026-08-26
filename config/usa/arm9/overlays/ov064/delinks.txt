@@ -4,3 +4,51 @@
     .ctor       start:0x0215a5cc end:0x0215a5ec kind:rodata align:4
     .data       start:0x0215a600 end:0x0215ada0 kind:data align:32
     .bss        start:0x0215ada0 end:0x0215b500 kind:bss align:32
+
+src/064_FldForest/MapObject/MapObjectUnkFSFR.cpp:
+    .text       start:0x02159120 end:0x02159258
+    .init       start:0x0215a324 end:0x0215a374
+    .ctor       start:0x0215a5cc end:0x0215a5d0
+    .bss        start:0x0215adc4 end:0x0215aea8
+
+src/064_FldForest/Actor/ActorUnkRMF0.cpp:
+    .text       start:0x02159258 end:0x0215937c
+    .init       start:0x0215a374 end:0x0215a3c4
+    .ctor       start:0x0215a5d0 end:0x0215a5d4
+    .bss        start:0x0215aea8 end:0x0215af90
+
+src/064_FldForest/Actor/ActorUnkRMF1.cpp:
+    .text       start:0x0215937c end:0x021594a0
+    .init       start:0x0215a3c4 end:0x0215a414
+    .ctor       start:0x0215a5d4 end:0x0215a5d8
+    .bss        start:0x0215af90 end:0x0215b078
+
+src/064_FldForest/Actor/ActorUnkRMTZ.cpp:
+    .text       start:0x021594a0 end:0x0215966c
+    .init       start:0x0215a414 end:0x0215a464
+    .ctor       start:0x0215a5d8 end:0x0215a5dc
+    .bss        start:0x0215b078 end:0x0215b17c
+
+src/064_FldForest/Actor/ActorUnkFOMD.cpp:
+    .text       start:0x0215966c end:0x02159e6c
+    .init       start:0x0215a464 end:0x0215a4dc
+    .ctor       start:0x0215a5dc end:0x0215a5e0
+    .bss        start:0x0215b17c end:0x0215b290
+
+src/064_FldForest/MapObject/MapObjectUnkHOF1.cpp:
+    .text       start:0x02159e6c end:0x02159fd8
+    .init       start:0x0215a4dc end:0x0215a52c
+    .ctor       start:0x0215a5e0 end:0x0215a5e4
+    .bss        start:0x0215b290 end:0x0215b398
+
+src/064_FldForest/MapObject/MapObjectUnkHOF0.cpp:
+    .text       start:0x02159fd8 end:0x0215a150
+    .init       start:0x0215a52c end:0x0215a57c
+    .ctor       start:0x0215a5e4 end:0x0215a5e8
+    .bss        start:0x0215b398 end:0x0215b4a0
+
+src/064_FldForest/MapObject/MapObjectUnkLEVN.cpp:
+    .text       start:0x0215a150 end:0x0215a2b8
+    .init       start:0x0215a57c end:0x0215a5cc
+    .ctor       start:0x0215a5e8 end:0x0215a5ec
+    .bss        start:0x0215b4a0 end:0x0215b500

@@ -4,6 +4,7 @@
 #include "FileSelect/FileSelectUnkDraw.hpp"
 #include "Game/GameModeManager.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkSystem1.hpp"
 #include "global.h"
 #include "iterator.hpp"
@@ -12,7 +13,6 @@
 #include <nitro/reg.h>
 
 extern const s16 data_ov019_020d1bb0[];
-extern "C" void func_ov001_020bd6a8();
 
 class FileSelect_UnkClass7_04 {
 public:
@@ -101,7 +101,7 @@ public:
         REG_DISPCNT_SUB |= 0x00200010;
 
         this->mUnk_004.func_ov001_020bd734(data_ov019_020d1bb0);
-        func_ov001_020bd6a8();
+        UnkStruct_0204a088::Create();
     }
     // clang-format on
 

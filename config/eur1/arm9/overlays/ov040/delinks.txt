@@ -4,3 +4,50 @@
     .ctor       start:0x0212e5d0 end:0x0212e5f0 kind:rodata align:4
     .data       start:0x0212e600 end:0x0212f4e0 kind:data align:32
     .bss        start:0x0212f4e0 end:0x021305e0 kind:bss align:32
+
+src/040_MapB1/Actor/ActorUnkFTRN.cpp:
+    .text       start:0x02123650 end:0x0212758c
+    .init       start:0x0212def8 end:0x0212e018
+    .ctor       start:0x0212e5d0 end:0x0212e5d4
+    .bss        start:0x0212f4e4 end:0x0212f538
+
+src/040_MapB1/Actor/ActorUnkZSTG.cpp:
+    .text       start:0x0212a904 end:0x0212ac6c
+    .init       start:0x0212e018 end:0x0212e068
+    .ctor       start:0x0212e5d4 end:0x0212e5d8
+    .bss        start:0x0212f538 end:0x0212f584
+
+src/040_MapB1/Actor/ActorUnkCAWB_CRFP_FOMA_FOMB_FOMC_FOMR_FOMS_FOPD_GOCP_GORP_NCCA_NCCS_WAMA.cpp:
+    .text       start:0x0212ad28 end:0x0212c8c8
+    .init       start:0x0212e068 end:0x0212e3b8
+    .ctor       start:0x0212e5d8 end:0x0212e5dc
+    .bss        start:0x0212f584 end:0x02130174
+
+src/040_MapB1/Actor/ActorUnkYKAP_YKCP_YKEP.cpp:
+    .text       start:0x0212c8c8 end:0x0212cdf0
+    .init       start:0x0212e3b8 end:0x0212e490
+    .ctor       start:0x0212e5dc end:0x0212e5e0
+    .bss        start:0x02130174 end:0x021302ec
+
+src/040_MapB1/Actor/ActorUnkOLDS.cpp:
+    .text       start:0x0212cdf0 end:0x0212d25c
+    .init       start:0x0212e490 end:0x0212e4e0
+    .ctor       start:0x0212e5e0 end:0x0212e5e4
+    .bss        start:0x021302ec end:0x021303d4
+
+src/040_MapB1/Actor/ActorUnkTMNP.cpp:
+    .text       start:0x0212d25c end:0x0212d494
+    .init       start:0x0212e4e0 end:0x0212e530
+    .ctor       start:0x0212e5e4 end:0x0212e5e8
+    .bss        start:0x021303d4 end:0x021304bc
+
+src/040_MapB1/MapObject/MapObjectUnkFSTA.cpp:
+    .text       start:0x0212d494 end:0x0212d858
+    .init       start:0x0212e530 end:0x0212e580
+    .ctor       start:0x0212e5e8 end:0x0212e5ec
+    .bss        start:0x021304bc end:0x021304ec
+
+src/040_MapB1/MapObject/MapObjectUnkFRAI.cpp:
+    .text       start:0x0212d8a4 end:0x0212dcdc
+    .init       start:0x0212e580 end:0x0212e5d0
+    .ctor       start:0x0212e5ec end:0x0212e5f0

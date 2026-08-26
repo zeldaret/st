@@ -4,3 +4,38 @@
     .ctor       start:0x021372a8 end:0x021372c0 kind:rodata align:4
     .data       start:0x021372e0 end:0x02137fe0 kind:data align:32
     .bss        start:0x02137fe0 end:0x021384c0 kind:bss align:32
+
+src/049_MapC3/Actor/ActorUnkBEEE.cpp:
+    .text       start:0x02130480 end:0x02131458
+    .init       start:0x02136b50 end:0x02136ba0
+    .ctor       start:0x021372a8 end:0x021372ac
+    .bss        start:0x02137fe0 end:0x021380c8
+
+src/049_MapC3/Actor/ActorUnkBEEH.cpp:
+    .text       start:0x02131458 end:0x021320cc
+    .init       start:0x02136ba0 end:0x02136bf0
+    .ctor       start:0x021372ac end:0x021372b0
+    .bss        start:0x021380c8 end:0x021381b0
+
+src/049_MapC3/Actor/ActorUnkCROW.cpp:
+    .text       start:0x021320cc end:0x02134114
+    .init       start:0x02136bf0 end:0x02136c40
+    .ctor       start:0x021372b0 end:0x021372b4
+    .bss        start:0x021381b0 end:0x02138298
+
+src/049_MapC3/Actor/ActorUnkCRCH.cpp:
+    .text       start:0x02134114 end:0x0213442c
+    .init       start:0x02136c40 end:0x02136c90
+    .ctor       start:0x021372b4 end:0x021372b8
+    .bss        start:0x02138298 end:0x021382e4
+
+src/049_MapC3/Actor/ActorUnkPOST.cpp:
+    .text       start:0x0213479c end:0x02135208
+    .init       start:0x02136c90 end:0x02136f9c
+    .ctor       start:0x021372b8 end:0x021372bc
+    .bss        start:0x021382e4 end:0x021383cc
+
+src/049_MapC3/Actor/ActorUnkPTMN.cpp:
+    .text       start:0x02135528 end:0x02136b20
+    .init       start:0x02136f9c end:0x021372a8
+    .ctor       start:0x021372bc end:0x021372c0

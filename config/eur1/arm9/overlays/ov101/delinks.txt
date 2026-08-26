@@ -3,3 +3,32 @@
     .ctor       start:0x02183ae8 end:0x02183aec kind:rodata align:4
     .data       start:0x02183b00 end:0x02183c00 kind:data align:32
     .bss        start:0x02183c00 end:0x02183c00 kind:bss align:32
+
+src/101_SceneInitLand/Item/ItemManager_101.cpp:
+    complete
+    .text       start:0x02182e20 end:0x0218300c
+
+src/101_SceneInitLand/UnkStruct_027e0ce0_40_101.cpp:
+    complete
+    .text       start:0x0218300c end:0x02183484
+    .data       start:0x02183b00 end:0x02183b0c
+
+src/101_SceneInitLand/Player/PlayerLinkActor_A0_1C_101.cpp:
+    complete
+    .text       start:0x02183484 end:0x021834d8
+
+src/101_SceneInitLand/UnkStruct_027e09a4_54_101.cpp:
+    complete
+    .text       start:0x021834d8 end:0x02183680
+    .data       start:0x02183b0c end:0x02183bb8
+
+src/101_SceneInitLand/UnkStruct_027e0cd8_0C_101.cpp:
+    .text       start:0x02183680 end:0x02183abc
+    .data       start:0x02183bb8 end:0x02183bc8
+
+src/101_SceneInitLand/MapObjectProfile_Derived6_101.cpp:
+    complete
+    .text       start:0x02183abc end:0x02183ad0
+    .init       start:0x02183ad0 end:0x02183ae8
+    .ctor       start:0x02183ae8 end:0x02183aec
+    .data       start:0x02183bc8 end:0x02183c00

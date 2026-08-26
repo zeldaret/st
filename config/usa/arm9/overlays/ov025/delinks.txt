@@ -4,3 +4,20 @@
     .ctor       start:0x020c5a24 end:0x020c5a28 kind:rodata align:4
     .data       start:0x020c5a40 end:0x020c5b60 kind:data align:32
     .bss        start:0x020c5b60 end:0x020c5b60 kind:bss align:32
+
+src/025_Title/GameModeTitleScreen.cpp:
+    complete
+    .text       start:0x020c4820 end:0x020c4a6c
+    .data       start:0x020c5a40 end:0x020c5a70
+
+src/025_Title/TitleScreenManager.cpp:
+    complete
+    .text       start:0x020c4a6c end:0x020c4c50
+    .rodata     start:0x020c59ec end:0x020c59f0
+    .data       start:0x020c5a70 end:0x020c5ac0
+
+src/025_Title/TitleScreen.cpp:
+    .text       start:0x020c4c50 end:0x020c59ec
+    .init       start:0x020c59f0 end:0x020c5a24
+    .ctor       start:0x020c5a24 end:0x020c5a28
+    .data       start:0x020c5ac0 end:0x020c5b60

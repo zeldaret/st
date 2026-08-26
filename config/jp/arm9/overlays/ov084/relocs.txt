@@ -451,7 +451,7 @@ from:0x021576a0 kind:arm_call to:0x0215776c module:overlay(84)
 from:0x021576b4 kind:arm_call to:0x01ffb6e4 module:itcm
 from:0x02157708 kind:arm_call to:0x0215776c module:overlay(84)
 from:0x02157714 kind:load to:0x02164ca0 module:overlay(84)
-from:0x02157718 kind:load to:0x02164ca0 module:overlay(84) add:0x8
+from:0x02157718 kind:load to:0x02164ca0 add:0x8 module:overlay(84)
 from:0x0215771c kind:load to:0x021650d0 module:overlay(84)
 from:0x02157720 kind:load to:0x02164cac module:overlay(84)
 from:0x02157724 kind:load to:0x02164ccc module:overlay(84)

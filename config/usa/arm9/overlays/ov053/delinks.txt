@@ -4,3 +4,14 @@
     .ctor       start:0x0213ce54 end:0x0213ce60 kind:rodata align:4
     .data       start:0x0213ce80 end:0x0213d3a0 kind:data align:32
     .bss        start:0x0213d3a0 end:0x0213d580 kind:bss align:32
+
+src/053_MapD1/Actor/ActorUnkLIKE.cpp:
+    .text       start:0x0213857c end:0x0213b288
+    .init       start:0x0213cd3c end:0x0213cd8c
+    .ctor       start:0x0213ce54 end:0x0213ce58
+    .bss        start:0x0213d3a0 end:0x0213d488
+
+src/053_MapD1/Actor/ActorUnkRAT0.cpp:
+    .text       start:0x0213b288 end:0x0213cad0
+    .init       start:0x0213cd8c end:0x0213ce3c
+    .ctor       start:0x0213ce58 end:0x0213ce5c

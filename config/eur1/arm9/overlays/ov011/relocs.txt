@@ -189,9 +189,9 @@ from:0x020b8078 kind:arm_call to:0x0201d628 module:main
 from:0x020b809c kind:arm_call to:0x0201673c module:main
 from:0x020b80ac kind:arm_call to:0x020166ac module:main
 from:0x020b80f0 kind:arm_call to:0x020c3124 module:overlay(17)
-from:0x020b8100 kind:load to:0x0204aeac module:main
-from:0x020b8104 kind:load to:0x020d87c0 module:overlays(19,24)
-from:0x020b8108 kind:load to:0x0204aed0 module:main
+from:0x020b8100 kind:load to:0x0204a110 add:0xd9c module:main
+from:0x020b8104 kind:load to:0x020d87c0 module:overlay(24)
+from:0x020b8108 kind:load to:0x0204a110 add:0xdc0 module:main
 from:0x020b810c kind:load to:0x020b5254 module:overlay(0)
 from:0x020b8110 kind:load to:0x0204a088 module:main
 from:0x020b812c kind:arm_call to:0x01ff9b64 module:itcm
@@ -210,8 +210,8 @@ from:0x020b8384 kind:arm_call to:0x020cb090 module:overlay(24)
 from:0x020b8390 kind:arm_call to:0x0206db44 module:overlay(0)
 from:0x020b83bc kind:arm_call to:0x020cb100 module:overlay(24)
 from:0x020b83c8 kind:load to:0x0204a110 module:main
-from:0x020b83d0 kind:load to:0x020d7444 module:overlays(19,24)
-from:0x020b83d4 kind:load to:0x020d87b4 module:overlays(19,24)
+from:0x020b83d0 kind:load to:0x020d7444 module:overlay(24)
+from:0x020b83d4 kind:load to:0x020d87b4 module:overlay(24)
 from:0x020b83d8 kind:load to:0x027e09a0 module:dtcm
 from:0x020b83dc kind:load to:0x020b5254 module:overlay(0)
 from:0x020b83e0 kind:load to:0x020b93e0 module:overlay(11)
@@ -229,8 +229,8 @@ from:0x020b8600 kind:load to:0x020b93e0 module:overlay(11)
 from:0x020b8630 kind:arm_call to:0x0201ec30 module:main
 from:0x020b864c kind:arm_call to:0x0201ec30 module:main
 from:0x020b86c0 kind:load to:0x0204a110 module:main
-from:0x020b86c4 kind:load to:0x0204af10 module:main
-from:0x020b86c8 kind:load to:0x0204ae10 module:main
+from:0x020b86c4 kind:load to:0x0204a110 add:0xe00 module:main
+from:0x020b86c8 kind:load to:0x0204a110 add:0xd00 module:main
 from:0x020b86fc kind:arm_call to:0x02019650 module:main
 from:0x020b871c kind:arm_call to:0x02019650 module:main
 from:0x020b8728 kind:load to:0x0204a110 module:main

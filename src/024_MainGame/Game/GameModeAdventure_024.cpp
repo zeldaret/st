@@ -31,7 +31,7 @@ void GameModeAdventure::vfunc_08() {
 
     GameSaveSlot *pSaveFile = data_ov000_020b4eec.func_ov001_020be12c();
 
-#if IS_JP
+#if IS_JP || IS_EUR1
     SaveInfoData *pSaveInfoData = &pSaveFile->mInfoData;
 
     if (pSaveInfoData->sceneIndex == SceneIndex_f_ajito2) {

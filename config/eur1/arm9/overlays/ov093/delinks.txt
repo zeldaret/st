@@ -4,3 +4,44 @@
     .ctor       start:0x02178890 end:0x021788bc kind:rodata align:4
     .data       start:0x021788c0 end:0x02178ee0 kind:data align:32
     .bss        start:0x02178ee0 end:0x021793c0 kind:bss align:32
+
+src/093_PlayerSub/Actor/ActorUnkSPTT.cpp:
+    .text       start:0x02176c28 end:0x021773a8
+    .init       start:0x02178614 end:0x02178664
+    .ctor       start:0x021788a0 end:0x021788a4
+    .bss        start:0x02178eec end:0x02178f3c
+
+src/093_PlayerSub/Actor/ActorUnkTCAM.cpp:
+    .text       start:0x021773a8 end:0x021776ec
+    .init       start:0x02178664 end:0x021786b4
+    .ctor       start:0x021788a4 end:0x021788a8
+    .bss        start:0x02178f3c end:0x02178f88
+
+src/093_PlayerSub/Actor/ActorUnkBLON.cpp:
+    .text       start:0x021776ec end:0x02177ac8
+    .init       start:0x021786b4 end:0x02178704
+    .ctor       start:0x021788a8 end:0x021788ac
+    .bss        start:0x02178f88 end:0x02178fd4
+
+src/093_PlayerSub/Actor/ActorUnkPHTM.cpp:
+    .text       start:0x02177ac8 end:0x02177b74
+    .init       start:0x02178704 end:0x02178760
+    .ctor       start:0x021788ac end:0x021788b0
+    .bss        start:0x02178fd4 end:0x021790c8
+
+src/093_PlayerSub/Actor/ActorUnkPMTB.cpp:
+    .text       start:0x02177b74 end:0x02177c20
+    .init       start:0x02178760 end:0x021787bc
+    .ctor       start:0x021788b0 end:0x021788b4
+    .bss        start:0x021790c8 end:0x021791bc
+
+src/093_PlayerSub/Actor/ActorUnkPMTC.cpp:
+    .text       start:0x02177c20 end:0x02177cc8
+    .init       start:0x021787bc end:0x02178818
+    .ctor       start:0x021788b4 end:0x021788b8
+    .bss        start:0x021791bc end:0x021792b0
+
+src/093_PlayerSub/Actor/ActorUnkPMTD.cpp:
+    .text       start:0x02177cc8 end:0x02177d74
+    .init       start:0x02178818 end:0x02178890
+    .ctor       start:0x021788b8 end:0x021788bc

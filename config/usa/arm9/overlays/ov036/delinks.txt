@@ -4,3 +4,57 @@
     .ctor       start:0x02121120 end:0x02121144 kind:rodata align:4
     .data       start:0x02121160 end:0x02122740 kind:data align:32
     .bss        start:0x02122740 end:0x02122ee0 kind:bss align:32
+
+src/036_MapA5/Actor/ActorUnkCAMY.cpp:
+    .text       start:0x0211af5c end:0x0211b208
+    .init       start:0x02120e50 end:0x02120ea0
+    .ctor       start:0x02121120 end:0x02121124
+    .bss        start:0x02122744 end:0x0212282c
+
+src/036_MapA5/Actor/ActorUnkFOMY.cpp:
+    .text       start:0x0211b228 end:0x0211b4e0
+    .init       start:0x02120ea0 end:0x02120ef0
+    .ctor       start:0x02121124 end:0x02121128
+    .bss        start:0x0212282c end:0x02122914
+
+src/036_MapA5/Actor/ActorUnkYUKY.cpp:
+    .text       start:0x0211b500 end:0x0211b7cc
+    .init       start:0x02120ef0 end:0x02120f40
+    .ctor       start:0x02121128 end:0x0212112c
+    .bss        start:0x02122914 end:0x021229fc
+
+src/036_MapA5/Actor/ActorUnkWAWY.cpp:
+    .text       start:0x0211b7ec end:0x0211ba94
+    .init       start:0x02120f40 end:0x02120f90
+    .ctor       start:0x0212112c end:0x02121130
+    .bss        start:0x021229fc end:0x02122ae4
+
+src/036_MapA5/Actor/ActorUnkGORY.cpp:
+    .text       start:0x0211bab4 end:0x0211bda0
+    .init       start:0x02120f90 end:0x02120fe0
+    .ctor       start:0x02121130 end:0x02121134
+    .bss        start:0x02122ae4 end:0x02122bcc
+
+src/036_MapA5/Actor/ActorUnkTERY.cpp:
+    .text       start:0x0211bdc0 end:0x0211c164
+    .init       start:0x02120fe0 end:0x02121030
+    .ctor       start:0x02121134 end:0x02121138
+    .bss        start:0x02122bcc end:0x02122cb4
+
+src/036_MapA5/Actor/ActorUnkSHIT.cpp:
+    .text       start:0x0211c184 end:0x0211d790
+    .init       start:0x02121030 end:0x02121080
+    .ctor       start:0x02121138 end:0x0212113c
+    .bss        start:0x02122cb4 end:0x02122d9c
+
+src/036_MapA5/Actor/ActorUnkTEHT.cpp:
+    .text       start:0x0211d830 end:0x0211dd68
+    .init       start:0x02121080 end:0x021210d0
+    .ctor       start:0x0212113c end:0x02121140
+    .bss        start:0x02122d9c end:0x02122df4
+
+src/036_MapA5/Actor/ActorUnkRMST.cpp:
+    .text       start:0x0211de08 end:0x0211df2c
+    .init       start:0x021210d0 end:0x02121120
+    .ctor       start:0x02121140 end:0x02121144
+    .bss        start:0x02122df4 end:0x02122ee0

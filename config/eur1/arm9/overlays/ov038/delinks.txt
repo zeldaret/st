@@ -4,3 +4,51 @@
     .ctor       start:0x02120e74 end:0x02120e94 kind:rodata align:4
     .data       start:0x02120ea0 end:0x021215c0 kind:data align:32
     .bss        start:0x021215c0 end:0x02121cc0 kind:bss align:32
+
+src/038_MapA7/Actor/ActorUnkWWFS.cpp:
+    .text       start:0x02119210 end:0x0211ced8
+    .init       start:0x02120bb4 end:0x02120c44
+    .ctor       start:0x02120e74 end:0x02120e78
+    .bss        start:0x021215c8 end:0x021216b4
+
+src/038_MapA7/Actor/ActorUnkBLBR.cpp:
+    .text       start:0x0211ced8 end:0x0211e570
+    .init       start:0x02120c44 end:0x02120c94
+    .ctor       start:0x02120e78 end:0x02120e7c
+    .bss        start:0x021216b4 end:0x0212179c
+
+src/038_MapA7/MapObject/MapObjectUnkBLSR.cpp:
+    .text       start:0x0211e570 end:0x0211e8b0
+    .init       start:0x02120c94 end:0x02120ce4
+    .ctor       start:0x02120e7c end:0x02120e80
+    .bss        start:0x0212179c end:0x021218a0
+
+src/038_MapA7/MapObject/MapObjectUnkSWBR.cpp:
+    .text       start:0x0211e8b0 end:0x0211eb88
+    .init       start:0x02120ce4 end:0x02120d34
+    .ctor       start:0x02120e80 end:0x02120e84
+    .bss        start:0x021218a0 end:0x02121984
+
+src/038_MapA7/Actor/ActorUnkBLBL.cpp:
+    .text       start:0x0211eb88 end:0x0211eda4
+    .init       start:0x02120d34 end:0x02120d84
+    .ctor       start:0x02120e84 end:0x02120e88
+    .bss        start:0x02121984 end:0x02121a6c
+
+src/038_MapA7/Actor/ActorUnkGRCF.cpp:
+    .text       start:0x0211eda4 end:0x0211efb8
+    .init       start:0x02120d84 end:0x02120dd4
+    .ctor       start:0x02120e88 end:0x02120e8c
+    .bss        start:0x02121a6c end:0x02121ab8
+
+src/038_MapA7/MapObject/MapObjectUnkFSSN.cpp:
+    .text       start:0x0211efb8 end:0x0211f1e0
+    .init       start:0x02120dd4 end:0x02120e24
+    .ctor       start:0x02120e8c end:0x02120e90
+    .bss        start:0x02121ab8 end:0x02121b9c
+
+src/038_MapA7/Actor/ActorUnkPLSR.cpp:
+    .text       start:0x0211f1e0 end:0x02120ac0
+    .init       start:0x02120e24 end:0x02120e74
+    .ctor       start:0x02120e90 end:0x02120e94
+    .bss        start:0x02121b9c end:0x02121c84

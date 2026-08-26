@@ -4,3 +4,26 @@
     .ctor       start:0x0215ad58 end:0x0215ad6c kind:rodata align:4
     .data       start:0x0215ad80 end:0x0215b520 kind:data align:32
     .bss        start:0x0215b520 end:0x0215b900 kind:bss align:32
+
+src/069_FldRabbit/Actor/ActorUnkBANI.cpp:
+    .text       start:0x02157fc0 end:0x02158ee8
+    .init       start:0x0215abc8 end:0x0215ac18
+    .ctor       start:0x0215ad58 end:0x0215ad5c
+    .bss        start:0x0215b520 end:0x0215b608
+
+src/069_FldRabbit/Actor/ActorUnkRB1F.cpp:
+    .text       start:0x02158ee8 end:0x0215a02c
+    .init       start:0x0215ac18 end:0x0215ac68
+    .ctor       start:0x0215ad5c end:0x0215ad60
+    .bss        start:0x0215b608 end:0x0215b720
+
+src/069_FldRabbit/Actor/ActorUnkRBRP.cpp:
+    .text       start:0x0215a34c end:0x0215a9b8
+    .init       start:0x0215acb8 end:0x0215ad08
+    .ctor       start:0x0215ad64 end:0x0215ad68
+    .bss        start:0x0215b720 end:0x0215b808
+
+src/069_FldRabbit/MapObject/MapObjectUnkGTRB.cpp:
+    .text       start:0x0215a9b8 end:0x0215abb4
+    .init       start:0x0215ad08 end:0x0215ad58
+    .ctor       start:0x0215ad68 end:0x0215ad6c

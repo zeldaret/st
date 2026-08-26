@@ -4,3 +4,282 @@
     .ctor       start:0x020c2940 end:0x020c2960 kind:rodata align:4
     .data       start:0x020c2980 end:0x020c3020 kind:data align:32
     .bss        start:0x020c3020 end:0x020c4760 kind:bss align:32
+
+src/001_SceneInit/SceneInitializers_001.cpp:
+    .text       start:0x020b6560 end:0x020b7470
+    .rodata     start:0x020c2600 end:0x020c2664
+
+src/001_SceneInit/CourseList.cpp:
+    complete
+    .text       start:0x020b7470 end:0x020b759c
+    .init       start:0x020c2854 end:0x020c2878
+    .ctor       start:0x020c2940 end:0x020c2944
+    .data       start:0x020c2980 end:0x020c29b0
+    .bss        start:0x020c3020 end:0x020c4128
+
+src/001_SceneInit/UnkStruct_027e09b8_001.cpp:
+    complete
+    .text       start:0x020b759c end:0x020b77ac
+
+src/001_SceneInit/UnkStruct_027e0cd8_001.cpp:
+    complete
+    .text       start:0x020b77ac end:0x020b8220
+    .data       start:0x020c29b0 end:0x020c2a34
+
+src/001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp:
+    .text       start:0x020b8220 end:0x020b92b0
+    .init       start:0x020c2878 end:0x020c2930
+    .ctor       start:0x020c2944 end:0x020c2948
+    .data       start:0x020c2a34 end:0x020c2b7c
+    .bss        start:0x020c4128 end:0x020c4734
+
+src/001_SceneInit/ZeldaArrangeBinary.cpp:
+    complete
+    .text       start:0x020b92b0 end:0x020b94f0
+
+src/001_SceneInit/ZeldaMapBinary.cpp:
+    .text       start:0x020b94f0 end:0x020ba54c
+
+src/001_SceneInit/UnkStruct_027e095c_001.cpp:
+    complete
+    .text       start:0x020ba54c end:0x020ba5c8
+
+src/001_SceneInit/SysNew_001.cpp:
+    complete
+    .text       start:0x020ba5c8 end:0x020ba6b0
+
+src/001_SceneInit/Save/SaveManager_001.cpp:
+    .text       start:0x020ba6b0 end:0x020ba9f8
+
+src/001_SceneInit/UnkStruct_027e09bc_001.cpp:
+    complete
+    .text       start:0x020ba9f8 end:0x020bac80
+
+src/001_SceneInit/MapObject/MapObjectManager_001.cpp:
+    complete
+    .text       start:0x020bac80 end:0x020bafa4
+
+src/001_SceneInit/Actor/ActorManager_001.cpp:
+    complete
+    .text       start:0x020bafa4 end:0x020bb8bc
+    .rodata     start:0x020c2664 end:0x020c268c
+    .data       start:0x020c2b7c end:0x020c2cb0
+
+src/001_SceneInit/Item/Inventory_001.cpp:
+    complete
+    .text       start:0x020bb8bc end:0x020bbb04
+
+src/001_SceneInit/Player/PlayerActorBase_70_001.cpp:
+    complete
+    .text       start:0x020bbb04 end:0x020bbea4
+
+src/001_SceneInit/UnkStruct_027e0ce0_30_001.cpp:
+    complete
+    .text       start:0x020bbea4 end:0x020bc068
+
+src/001_SceneInit/UnkStruct_027e0ce0_40_Base_001.cpp:
+    complete
+    .text       start:0x020bc068 end:0x020bc274
+
+src/001_SceneInit/Item/ItemManager_001.cpp:
+    complete
+    .text       start:0x020bc274 end:0x020bc308
+
+src/001_SceneInit/UnkStruct_027e0ce0_001.cpp:
+    complete
+    .text       start:0x020bc308 end:0x020bc7a8
+
+src/001_SceneInit/UnkStruct_027e0cdc_001.cpp:
+    complete
+    .text       start:0x020bc7a8 end:0x020bc7d4
+
+src/001_SceneInit/Player/PlayerActorBase_001.cpp:
+    complete
+    .text       start:0x020bc7d4 end:0x020bc9dc
+    .rodata     start:0x020c268c end:0x020c278c
+
+src/001_SceneInit/Player/PlayerLinkActor_001.cpp:
+    complete
+    .text       start:0x020bc9dc end:0x020bcce0
+
+src/001_SceneInit/UnkStruct_027e0ce0_1C_001.cpp:
+    .text       start:0x020bcce0 end:0x020bd554
+    .data       start:0x020c2cb0 end:0x020c2cc0
+
+src/001_SceneInit/UnkStruct_0204a110_001.cpp:
+    complete
+    .text       start:0x020bd554 end:0x020bd808
+
+src/001_SceneInit/UnkStruct_ov024_020d86a0_001.cpp:
+    complete
+    .text       start:0x020bd808 end:0x020bd894
+
+src/001_SceneInit/UnkStruct_ov000_020b50c0_001.cpp:
+    complete
+    .text       start:0x020bd894 end:0x020be094
+
+src/001_SceneInit/Game/GameModeCreate.cpp:
+    complete
+    .text       start:0x020be094 end:0x020be178
+
+src/001_SceneInit/ZeldaCollisionBinary.cpp:
+    complete
+    .text       start:0x020be178 end:0x020be310
+
+src/001_SceneInit/UnkStruct_027e09c0_001.cpp:
+    complete
+    .text       start:0x020be310 end:0x020be544
+
+src/001_SceneInit/UnkStruct_ov000_020b504c_001.cpp:
+    complete
+    .text       start:0x020be544 end:0x020bea80
+    .data       start:0x020c2cc0 end:0x020c2e2c
+
+src/001_SceneInit/UnkStruct_027e09b4_001.cpp:
+    complete
+    .text       start:0x020bea80 end:0x020beb24
+
+src/001_SceneInit/UnkStruct_027e09ac_001.cpp:
+    complete
+    .text       start:0x020beb24 end:0x020bed54
+    .data       start:0x020c2e2c end:0x020c2e6c
+
+src/001_SceneInit/UnkStruct_027e0cec_001.cpp:
+    complete
+    .text       start:0x020bed54 end:0x020bf0e0
+    .data       start:0x020c2e6c end:0x020c3004
+
+src/001_SceneInit/UnkStruct_027e0cec_18_001.cpp:
+    complete
+    .text       start:0x020bf0e0 end:0x020bf1f8
+    .data       start:0x020c3004 end:0x020c3014
+
+src/001_SceneInit/UnkStruct_027e0ce0_34_001.cpp:
+    complete
+    .text       start:0x020bf1f8 end:0x020bf4ec
+
+src/001_SceneInit/UnkStruct_027e0d00_001.cpp:
+    complete
+    .text       start:0x020bf4ec end:0x020bf840
+
+src/001_SceneInit/CargoManager_001.cpp:
+    complete
+    .text       start:0x020bf840 end:0x020bf8b0
+
+src/001_SceneInit/PassengerManager_001.cpp:
+    complete
+    .text       start:0x020bf8b0 end:0x020bfa90
+
+src/001_SceneInit/UnkStruct_027e0cf8_08_00_001.cpp:
+    complete
+    .text       start:0x020bfa90 end:0x020bfd00
+    .rodata     start:0x020c278c end:0x020c27ac
+
+src/001_SceneInit/UnkStruct_ov020_020e8544_001.cpp:
+    complete
+    .text       start:0x020bfd00 end:0x020bfe10
+
+src/001_SceneInit/code_020bfdd0.cpp:
+    complete
+    .text       start:0x020bfe10 end:0x020bff2c
+    .bss        start:0x020c4734 end:0x020c4738
+
+src/001_SceneInit/code_020bfeec.cpp:
+    complete
+    .text       start:0x020bff2c end:0x020bffb4
+    .bss        start:0x020c4738 end:0x020c473c
+
+src/001_SceneInit/Game/AdventureModeManager_001.cpp:
+    .text       start:0x020bffb4 end:0x020c0984
+    .rodata     start:0x020c27ac end:0x020c2834
+
+src/001_SceneInit/Game/GameModeAdventure_001.cpp:
+    complete
+    .text       start:0x020c0984 end:0x020c09dc
+
+src/001_SceneInit/code_020c099c.cpp:
+    complete
+    .text       start:0x020c09dc end:0x020c0a64
+    .init       start:0x020c2930 end:0x020c2940
+    .ctor       start:0x020c2948 end:0x020c294c
+    .data       start:0x020c3014 end:0x020c3020
+    .bss        start:0x020c473c end:0x020c4740
+
+libs/dsprot/src/dsprot_main.c:
+    complete
+    .text       start:0x020c0a64 end:0x020c0e74
+
+libs/dsprot/src/dsprot_main_decryptor.s:
+    complete
+    .text       start:0x020c0e74 end:0x020c1144
+
+libs/dsprot/src/dsprot_main_decoder.s:
+    complete
+    .text       start:0x020c1144 end:0x020c1190
+    .ctor       start:0x020c294c end:0x020c2950
+
+libs/dsprot/src/integrity.c:
+    complete
+    .text       start:0x020c1190 end:0x020c1568
+
+libs/dsprot/src/integrity_decryptor.s:
+    complete
+    .text       start:0x020c1568 end:0x020c1748
+
+libs/dsprot/src/integrity_decoder.s:
+    complete
+    .text       start:0x020c1748 end:0x020c1780
+    .ctor       start:0x020c2950 end:0x020c2954
+
+libs/dsprot/src/encryptor.c:
+    complete
+    .text       start:0x020c1780 end:0x020c1a04
+
+libs/dsprot/src/encryptor_decryptor.s:
+    complete
+    .text       start:0x020c1a04 end:0x020c1a2c
+    .ctor       start:0x020c2954 end:0x020c2958
+
+libs/dsprot/src/extra.c:
+    complete
+    .rodata     start:0x020c2834 end:0x020c284c
+    .bss        start:0x020c4740 end:0x020c4744
+
+libs/dsprot/src/mac_owner.c:
+    complete
+    .text       start:0x020c1a2c end:0x020c1b8c
+    .rodata     start:0x020c284c end:0x020c2852
+
+libs/dsprot/src/mac_owner_decryptor.s:
+    complete
+    .text       start:0x020c1b8c end:0x020c1c7c
+
+libs/dsprot/src/rom_util.c:
+    complete
+    .text       start:0x020c1c7c end:0x020c1e58
+
+libs/dsprot/src/rom_util_decryptor.s:
+    complete
+    .text       start:0x020c1e58 end:0x020c1f48
+
+libs/dsprot/src/rom_test.c:
+    complete
+    .text       start:0x020c1f48 end:0x020c20d0
+
+libs/dsprot/src/rom_test_decryptor.s:
+    complete
+    .text       start:0x020c20d0 end:0x020c21c0
+
+libs/dsprot/src/coretests_decoder.s:
+    complete
+    .text       start:0x020c21c0 end:0x020c2208
+    .ctor       start:0x020c2958 end:0x020c295c
+
+libs/dsprot/src/rc4.c:
+    complete
+    .text       start:0x020c2208 end:0x020c25b0
+
+libs/dsprot/src/rc4_decoder.s:
+    complete
+    .text       start:0x020c25b0 end:0x020c2600
+    .ctor       start:0x020c295c end:0x020c2960

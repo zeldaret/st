@@ -4,3 +4,44 @@
     .ctor       start:0x0212ceec end:0x0212cf10 kind:rodata align:4
     .data       start:0x0212cf20 end:0x0212d6e0 kind:data align:32
     .bss        start:0x0212d6e0 end:0x0212de40 kind:bss align:32
+
+src/044_MapB5/Actor/ActorUnkICBB.cpp:
+    .text       start:0x02125ff4 end:0x0212a5b4
+    .init       start:0x0212cc84 end:0x0212cce8
+    .ctor       start:0x0212cef4 end:0x0212cef8
+    .bss        start:0x0212d828 end:0x0212d918
+
+src/044_MapB5/Actor/ActorUnkIBBA.cpp:
+    .text       start:0x0212a5b4 end:0x0212b878
+    .init       start:0x0212cce8 end:0x0212cd5c
+    .ctor       start:0x0212cef8 end:0x0212cefc
+    .bss        start:0x0212d918 end:0x0212d984
+
+src/044_MapB5/Actor/ActorUnkIBSP.cpp:
+    .text       start:0x0212b878 end:0x0212bd38
+    .init       start:0x0212cd5c end:0x0212cdac
+    .ctor       start:0x0212cefc end:0x0212cf00
+    .bss        start:0x0212d984 end:0x0212d9d0
+
+src/044_MapB5/Actor/ActorUnkRBL2.cpp:
+    .text       start:0x0212beb0 end:0x0212c310
+    .init       start:0x0212cdac end:0x0212cdfc
+    .ctor       start:0x0212cf00 end:0x0212cf04
+    .bss        start:0x0212d9d0 end:0x0212dac8
+
+src/044_MapB5/Actor/ActorUnkL2V1.cpp:
+    .text       start:0x0212c310 end:0x0212c7ac
+    .init       start:0x0212cdfc end:0x0212ce4c
+    .ctor       start:0x0212cf04 end:0x0212cf08
+    .bss        start:0x0212dac8 end:0x0212dc70
+
+src/044_MapB5/Actor/ActorUnkL2V2.cpp:
+    .text       start:0x0212c7ac end:0x0212c9f0
+    .init       start:0x0212ce4c end:0x0212ce9c
+    .ctor       start:0x0212cf08 end:0x0212cf0c
+    .bss        start:0x0212dc70 end:0x0212dd58
+
+src/044_MapB5/Actor/ActorUnkL2MT.cpp:
+    .text       start:0x0212c9f0 end:0x0212cb5c
+    .init       start:0x0212ce9c end:0x0212ceec
+    .ctor       start:0x0212cf0c end:0x0212cf10

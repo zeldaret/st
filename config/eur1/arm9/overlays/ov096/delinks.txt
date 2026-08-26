@@ -4,3 +4,27 @@
     .ctor       start:0x0217df38 end:0x0217df4c kind:rodata align:4
     .data       start:0x0217df60 end:0x0217e420 kind:data align:32
     .bss        start:0x0217e420 end:0x0217e780 kind:bss align:32
+
+src/096_PlayerZelda/Actor/ActorUnkLZET.cpp:
+    .text       start:0x0217a86c end:0x0217a918
+    .init       start:0x0217dda8 end:0x0217ddf8
+    .ctor       start:0x0217df38 end:0x0217df3c
+    .bss        start:0x0217e420 end:0x0217e46c
+
+src/096_PlayerZelda/Actor/ActorUnkCLBT.cpp:
+    .text       start:0x0217a918 end:0x0217ad4c
+    .init       start:0x0217ddf8 end:0x0217de48
+    .ctor       start:0x0217df3c end:0x0217df40
+    .bss        start:0x0217e46c end:0x0217e4b8
+
+src/096_PlayerZelda/Actor/ActorUnkTKYT.cpp:
+    .text       start:0x0217ad6c end:0x0217af10
+    .init       start:0x0217de48 end:0x0217de98
+    .ctor       start:0x0217df40 end:0x0217df44
+    .bss        start:0x0217e4b8 end:0x0217e504
+
+src/096_PlayerZelda/Actor/ActorUnkBPBS.cpp:
+    .text       start:0x0217af10 end:0x0217d490
+    .init       start:0x0217de98 end:0x0217dee8
+    .ctor       start:0x0217df44 end:0x0217df48
+    .bss        start:0x0217e504 end:0x0217e5ec

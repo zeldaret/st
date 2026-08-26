@@ -4,3 +4,70 @@
     .ctor       start:0x020d1da4 end:0x020d1db8 kind:rodata align:4
     .data       start:0x020d1dc0 end:0x020d2500 kind:data align:32
     .bss        start:0x020d2500 end:0x02117120 kind:bss align:32
+
+src/019_MainSelect/GameModeFileSelect.cpp:
+    .text       start:0x020c4880 end:0x020c4bbc
+    .init       start:0x020d1c3c end:0x020d1c54
+    .ctor       start:0x020d1da4 end:0x020d1da8
+    .data       start:0x020d1dc0 end:0x020d1df4
+
+src/019_MainSelect/FileSelectManager.cpp:
+    .text       start:0x020c4bbc end:0x020c5240
+    .rodata     start:0x020d1bf0 end:0x020d1bfc
+    .init       start:0x020d1c54 end:0x020d1c6c
+    .ctor       start:0x020d1da8 end:0x020d1dac
+    .data       start:0x020d1df4 end:0x020d1e38
+
+src/019_MainSelect/019_UnkSystem1_ov019_Derived1.cpp:
+    complete
+    .text       start:0x020c5240 end:0x020c5670
+    .data       start:0x020d1e38 end:0x020d1e8c
+
+src/019_MainSelect/FileSelectMain.cpp:
+    .text       start:0x020c5670 end:0x020cb7a8
+    .rodata     start:0x020d1bfc end:0x020d1c0c
+    .init       start:0x020d1c6c end:0x020d1d14
+    .ctor       start:0x020d1dac end:0x020d1db0
+    .data       start:0x020d1e8c end:0x020d219c
+    .bss        start:0x020d2500 end:0x020d2508
+
+src/019_MainSelect/019_UnkSubStruct9.cpp:
+    .text       start:0x020cb7a8 end:0x020cc600
+
+src/019_MainSelect/FileSelectOptions.cpp:
+    .text       start:0x020cc600 end:0x020ce860
+    .init       start:0x020d1d14 end:0x020d1d7c
+    .ctor       start:0x020d1db0 end:0x020d1db4
+    .data       start:0x020d219c end:0x020d2288
+
+src/019_MainSelect/FileSelectMicTest.cpp:
+    .text       start:0x020ce860 end:0x020cf2cc
+    .init       start:0x020d1d7c end:0x020d1da4
+    .ctor       start:0x020d1db4 end:0x020d1db8
+    .data       start:0x020d2288 end:0x020d22e0
+
+src/019_MainSelect/FileSelectSubScreen.cpp:
+    .text       start:0x020cf2cc end:0x020cfc54
+    .rodata     start:0x020d1c0c end:0x020d1c14
+    .data       start:0x020d22e0 end:0x020d2418
+    .bss        start:0x020d2508 end:0x0211710c
+
+src/019_MainSelect/FileSelectManager_160.cpp:
+    complete
+    .text       start:0x020cfc54 end:0x020cff70
+    .data       start:0x020d2418 end:0x020d2448
+
+src/019_MainSelect/FileSelectManager_164.cpp:
+    complete
+    .text       start:0x020cff70 end:0x020d035c
+    .data       start:0x020d2448 end:0x020d2478
+
+src/019_MainSelect/019_UnkSystem1_ov019_Derived2.cpp:
+    complete
+    .text       start:0x020d035c end:0x020d05f0
+    .data       start:0x020d2478 end:0x020d24ac
+
+src/019_MainSelect/019_UnkSystem1_ov019_Derived3.cpp:
+    complete
+    .text       start:0x020d05f0 end:0x020d08ac
+    .data       start:0x020d24ac end:0x020d24e0

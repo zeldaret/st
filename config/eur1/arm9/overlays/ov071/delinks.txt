@@ -4,3 +4,51 @@
     .ctor       start:0x0216422c end:0x02164260 kind:rodata align:4
     .data       start:0x02164280 end:0x02165280 kind:data align:32
     .bss        start:0x02165280 end:0x02165a20 kind:bss align:32
+
+src/071_Tower/Actor/ActorTearLight.cpp:
+    .text       start:0x0215f390 end:0x02160298
+    .init       start:0x02163f50 end:0x02163fc4
+    .ctor       start:0x0216423c end:0x02164240
+    .data       start:0x02164d60 end:0x02164e90
+    .bss        start:0x021652d0 end:0x021653c0
+
+src/071_Tower/Actor/ActorUnkKMSO.cpp:
+    .text       start:0x02160298 end:0x02160afc
+    .init       start:0x02163fc4 end:0x02164014
+    .ctor       start:0x02164240 end:0x02164244
+    .bss        start:0x021653c0 end:0x021654a8
+
+src/071_Tower/MapObject/MapObjectUnkRNBO.cpp:
+    .text       start:0x02160afc end:0x02160d38
+    .init       start:0x02164014 end:0x02164064
+    .ctor       start:0x02164244 end:0x02164248
+    .bss        start:0x021654a8 end:0x021655b0
+
+src/071_Tower/MapObject/MapObjectUnkRPFL.cpp:
+    .text       start:0x02160d38 end:0x02161adc
+    .init       start:0x02164064 end:0x021640b4
+    .ctor       start:0x02164248 end:0x0216424c
+    .bss        start:0x021655b0 end:0x021656b8
+
+src/071_Tower/MapObject/MapObjectUnkBLCE.cpp:
+    .text       start:0x02161adc end:0x02161c6c
+    .init       start:0x021640b4 end:0x02164104
+    .ctor       start:0x0216424c end:0x02164250
+    .bss        start:0x021656b8 end:0x021657c0
+
+src/071_Tower/MapObject/MapObjectUnkSTAL.cpp:
+    .text       start:0x02161c6c end:0x02162240
+    .init       start:0x02164104 end:0x02164154
+    .ctor       start:0x02164250 end:0x02164254
+    .bss        start:0x021657c0 end:0x021658b4
+
+src/071_Tower/MapObject/MapObjectUnkBRGS.cpp:
+    .text       start:0x02162240 end:0x021630b4
+    .init       start:0x02164154 end:0x021641b8
+    .ctor       start:0x02164254 end:0x02164258
+    .bss        start:0x021658b4 end:0x021659a0
+
+src/071_Tower/MapObject/MapObjectUnkBLCT.cpp:
+    .text       start:0x021630b4 end:0x021638e0
+    .init       start:0x021641b8 end:0x02164214
+    .ctor       start:0x02164258 end:0x0216425c

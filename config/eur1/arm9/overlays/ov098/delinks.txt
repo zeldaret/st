@@ -4,3 +4,33 @@
     .ctor       start:0x02182560 end:0x02182574 kind:rodata align:4
     .data       start:0x02182580 end:0x02182980 kind:data align:32
     .bss        start:0x02182980 end:0x02182e20 kind:bss align:32
+
+src/098_MapWater/Actor/ActorUnkEFWV.cpp:
+    .text       start:0x021812d8 end:0x02181888
+    .init       start:0x021823d0 end:0x02182420
+    .ctor       start:0x02182560 end:0x02182564
+    .bss        start:0x02182980 end:0x02182a68
+
+src/098_MapWater/Actor/ActorUnkEFWI.cpp:
+    .text       start:0x02181888 end:0x02181a6c
+    .init       start:0x02182420 end:0x02182470
+    .ctor       start:0x02182564 end:0x02182568
+    .bss        start:0x02182a68 end:0x02182b50
+
+src/098_MapWater/Actor/ActorUnkEFRP.cpp:
+    .text       start:0x02181a6c end:0x02181f8c
+    .init       start:0x02182470 end:0x021824c0
+    .ctor       start:0x02182568 end:0x0218256c
+    .bss        start:0x02182b50 end:0x02182c38
+
+src/098_MapWater/Actor/ActorUnkEFRI.cpp:
+    .text       start:0x02181f8c end:0x02182170
+    .init       start:0x021824c0 end:0x02182510
+    .ctor       start:0x0218256c end:0x02182570
+    .bss        start:0x02182c38 end:0x02182d20
+
+src/098_MapWater/Actor/ActorUnkSEAT.cpp:
+    .text       start:0x02182170 end:0x021823bc
+    .init       start:0x02182510 end:0x02182560
+    .ctor       start:0x02182570 end:0x02182574
+    .bss        start:0x02182d20 end:0x02182d6c

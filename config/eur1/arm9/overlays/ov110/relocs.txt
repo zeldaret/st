@@ -17,12 +17,12 @@ from:0x02184f54 kind:arm_call to:0x020d6490 module:overlay(24)
 from:0x02184f84 kind:load to:0x027e0ce0 module:dtcm
 from:0x02184f88 kind:load to:0x020afc97 module:overlay(0)
 from:0x02184f8c kind:load to:0x020afc94 module:overlay(0)
-from:0x02184f90 kind:load to:0x020d87b8 module:overlays(19,24)
+from:0x02184f90 kind:load to:0x020d87b8 module:overlay(24)
 from:0x02184f94 kind:load to:0x02185fc8 module:overlay(110)
 from:0x02184f98 kind:load to:0x02185fca module:overlay(110)
 from:0x02184f9c kind:load to:0x027e09b8 module:dtcm
 from:0x02184fa0 kind:load to:0x020b6558 module:overlay(0)
-from:0x02184fa4 kind:load to:0x020d87d0 module:overlays(19,24)
+from:0x02184fa4 kind:load to:0x020d87d0 module:overlay(24)
 from:0x02184fa8 kind:load to:0x02043e50 module:main
 from:0x02184fd4 kind:arm_call to:0x01ffc5a0 module:itcm
 from:0x02184fe4 kind:arm_call to:0x0208f874 module:overlay(0)

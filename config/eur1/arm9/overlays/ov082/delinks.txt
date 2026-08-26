@@ -4,3 +4,21 @@
     .ctor       start:0x02158ac8 end:0x02158ad4 kind:rodata align:4
     .data       start:0x02158ae0 end:0x02159000 kind:data align:32
     .bss        start:0x02159000 end:0x02159220 kind:bss align:32
+
+src/082_DgnWater/Actor/ActorUnkWHMA.cpp:
+    .text       start:0x02152e20 end:0x0215785c
+    .init       start:0x021589d8 end:0x02158a28
+    .ctor       start:0x02158ac8 end:0x02158acc
+    .bss        start:0x02159000 end:0x021590e8
+
+src/082_DgnWater/Actor/ActorUnkEWHI.cpp:
+    .text       start:0x0215785c end:0x02157bf0
+    .init       start:0x02158a28 end:0x02158a78
+    .ctor       start:0x02158acc end:0x02158ad0
+    .bss        start:0x021590e8 end:0x02159134
+
+src/082_DgnWater/Actor/ActorUnkDSWT.cpp:
+    .text       start:0x02157bf0 end:0x02157d14
+    .init       start:0x02158a78 end:0x02158ac8
+    .ctor       start:0x02158ad0 end:0x02158ad4
+    .bss        start:0x02159134 end:0x02159220

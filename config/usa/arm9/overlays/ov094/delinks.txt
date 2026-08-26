@@ -4,3 +4,147 @@
     .ctor       start:0x02176e54 end:0x02176eb8 kind:rodata align:4
     .data       start:0x02176ec0 end:0x02178500 kind:data align:32
     .bss        start:0x02178500 end:0x02179b00 kind:bss align:32
+
+src/094_Land2/Actor/ActorUnkLOCK.cpp:
+    .text       start:0x02166018 end:0x021662a8
+    .init       start:0x021765b8 end:0x02176608
+    .ctor       start:0x02176e58 end:0x02176e5c
+    .bss        start:0x02178538 end:0x02178594
+
+src/094_Land2/Actor/ActorUnkPSWB.cpp:
+    .text       start:0x021662a8 end:0x021683b8
+    .init       start:0x02176608 end:0x02176680
+    .ctor       start:0x02176e5c end:0x02176e60
+    .bss        start:0x02178594 end:0x0217876c
+
+src/094_Land2/Actor/ActorUnkVRGN.cpp:
+    .text       start:0x021683b8 end:0x021689a0
+    .init       start:0x02176680 end:0x021766d0
+    .ctor       start:0x02176e60 end:0x02176e64
+    .bss        start:0x0217876c end:0x021787b8
+
+src/094_Land2/Actor/ActorUnkVLCR.cpp:
+    .text       start:0x021689a0 end:0x0216951c
+    .init       start:0x021766d0 end:0x02176720
+    .ctor       start:0x02176e64 end:0x02176e68
+    .bss        start:0x021787b8 end:0x021788a0
+
+src/094_Land2/Actor/ActorUnkSYRN.cpp:
+    .text       start:0x0216951c end:0x0216a0f4
+    .init       start:0x02176720 end:0x02176770
+    .ctor       start:0x02176e68 end:0x02176e6c
+    .bss        start:0x021788a0 end:0x02178988
+
+src/094_Land2/Actor/ActorUnkSTTG.cpp:
+    .text       start:0x0216a300 end:0x0216b1b4
+    .init       start:0x02176770 end:0x021767c0
+    .ctor       start:0x02176e6c end:0x02176e70
+    .bss        start:0x02178988 end:0x02178a74
+
+src/094_Land2/Actor/ActorUnkPCTG.cpp:
+    .text       start:0x0216b264 end:0x0216c38c
+    .init       start:0x021767c0 end:0x0217681c
+    .ctor       start:0x02176e70 end:0x02176e74
+    .bss        start:0x02178a74 end:0x02178b9c
+
+src/094_Land2/Actor/ActorUnkSPTG.cpp:
+    .text       start:0x0216c60c end:0x0216daa0
+    .init       start:0x0217681c end:0x0217686c
+    .ctor       start:0x02176e74 end:0x02176e78
+    .bss        start:0x02178b9c end:0x02178c84
+
+src/094_Land2/Actor/ActorUnkSNOW.cpp:
+    .text       start:0x0216daa0 end:0x0216de48
+    .init       start:0x0217686c end:0x021768bc
+    .ctor       start:0x02176e78 end:0x02176e7c
+    .bss        start:0x02178c84 end:0x02178cd0
+
+src/094_Land2/Actor/ActorUnkFBRG.cpp:
+    .text       start:0x0216de48 end:0x0216e384
+    .init       start:0x021768bc end:0x0217690c
+    .ctor       start:0x02176e7c end:0x02176e80
+    .bss        start:0x02178cd0 end:0x02178dcc
+
+src/094_Land2/Actor/ActorUnkKOTA.cpp:
+    .text       start:0x0216e384 end:0x0216edf4
+    .init       start:0x0217690c end:0x0217695c
+    .ctor       start:0x02176e80 end:0x02176e84
+    .bss        start:0x02178dcc end:0x02178e18
+
+src/094_Land2/Actor/ActorUnkEFOC.cpp:
+    .text       start:0x0216edf4 end:0x0216f524
+    .init       start:0x0217695c end:0x021769bc
+    .ctor       start:0x02176e84 end:0x02176e88
+    .bss        start:0x02178e18 end:0x02178f08
+
+src/094_Land2/Actor/ActorUnkMNCB.cpp:
+    .text       start:0x0216fa6c end:0x021706d8
+    .init       start:0x021769bc end:0x02176a0c
+    .ctor       start:0x02176e88 end:0x02176e8c
+    .bss        start:0x02178f08 end:0x02178f74
+
+src/094_Land2/Actor/ActorUnkEFR2.cpp:
+    .text       start:0x021706d8 end:0x0217088c
+    .init       start:0x02176a0c end:0x02176a5c
+    .ctor       start:0x02176e8c end:0x02176e90
+    .bss        start:0x02178f74 end:0x0217905c
+
+src/094_Land2/Actor/ActorUnkEFW2.cpp:
+    .text       start:0x0217088c end:0x02170a40
+    .init       start:0x02176a5c end:0x02176aac
+    .ctor       start:0x02176e90 end:0x02176e94
+    .bss        start:0x0217905c end:0x02179144
+
+src/094_Land2/MapObject/MapObjectUnkFNCE.cpp:
+    .text       start:0x02170a40 end:0x02170e4c
+    .init       start:0x02176aac end:0x02176afc
+    .ctor       start:0x02176e94 end:0x02176e98
+    .bss        start:0x02179144 end:0x02179228
+
+src/094_Land2/MapObject/MapObjectUnkWLMP.cpp:
+    .text       start:0x0217105c end:0x0217174c
+    .init       start:0x02176afc end:0x02176b4c
+    .ctor       start:0x02176e98 end:0x02176e9c
+    .bss        start:0x02179228 end:0x021792c0
+
+src/094_Land2/MapObject/MapObjectUnkCLMN.cpp:
+    .text       start:0x021717e8 end:0x021719b8
+    .init       start:0x02176b4c end:0x02176b9c
+    .ctor       start:0x02176e9c end:0x02176ea0
+    .bss        start:0x021792c0 end:0x021793c4
+
+src/094_Land2/MapObject/MapObjectUnkWDST.cpp:
+    .text       start:0x021719b8 end:0x021738b8
+    .init       start:0x02176b9c end:0x02176c24
+    .ctor       start:0x02176ea0 end:0x02176ea4
+    .bss        start:0x021793c4 end:0x02179518
+
+src/094_Land2/MapObject/MapObjectUnkICEB.cpp:
+    .text       start:0x02173948 end:0x02174914
+    .init       start:0x02176c24 end:0x02176cf0
+    .ctor       start:0x02176ea4 end:0x02176ea8
+    .bss        start:0x02179518 end:0x021796ec
+
+src/094_Land2/MapObject/MapObjectUnkBRGW.cpp:
+    .text       start:0x02174914 end:0x02174eac
+    .init       start:0x02176cf0 end:0x02176d40
+    .ctor       start:0x02176ea8 end:0x02176eac
+    .bss        start:0x021796ec end:0x021797d0
+
+src/094_Land2/MapObject/MapObjectUnkMBBS.cpp:
+    .text       start:0x02174eac end:0x02175448
+    .init       start:0x02176d40 end:0x02176db4
+    .ctor       start:0x02176eac end:0x02176eb0
+    .bss        start:0x021797d0 end:0x021798d8
+
+src/094_Land2/MapObject/MapObjectUnkTHAW.cpp:
+    .text       start:0x02175448 end:0x02175b28
+    .init       start:0x02176db4 end:0x02176e04
+    .ctor       start:0x02176eb0 end:0x02176eb4
+    .bss        start:0x021798d8 end:0x021799dc
+
+src/094_Land2/MapObject/MapObjectUnkMTWD.cpp:
+    .text       start:0x02175b28 end:0x02175f20
+    .init       start:0x02176e04 end:0x02176e54
+    .ctor       start:0x02176eb4 end:0x02176eb8
+    .bss        start:0x021799dc end:0x02179ac0

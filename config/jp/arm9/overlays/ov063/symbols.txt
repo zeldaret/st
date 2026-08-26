@@ -310,13 +310,13 @@ _ZN23MapObjectProfileUnkLTRW10GetProfileEv kind:function(arm,size=0xc) addr:0x02
 _ZN23MapObjectProfileUnkLTRW6CreateEv kind:function(arm,size=0x24) addr:0x021628f4
 _ZN23MapObjectProfileUnkLTRWC1Ev kind:function(arm,size=0xd0) addr:0x02162918
 _ZN16MapObjectUnkLTRWC1Ev kind:function(arm,size=0x9c) addr:0x021629e8
-_ZN16MapObjectUnkLTRW19func_ov063_02160c6cEv kind:function(arm,size=0x5c) addr:0x02162a84
-_ZN16MapObjectUnkLTRW19func_ov063_02160cc8Ev kind:function(arm,size=0x1c) addr:0x02162ae0
-_ZN16MapObjectUnkLTRW19func_ov063_02160ce4Ev kind:function(arm,size=0x34) addr:0x02162afc
-_ZN16MapObjectUnkLTRW19func_ov063_02160d18Ev kind:function(arm,size=0x1c) addr:0x02162b30
-_ZN16MapObjectUnkLTRW19func_ov063_02160d34Ev kind:function(arm,size=0xc4) addr:0x02162b4c
-_ZN16MapObjectUnkLTRW19func_ov063_02160df8Ev kind:function(arm,size=0x20) addr:0x02162c10
-_ZN16MapObjectUnkLTRW19func_ov063_02160e18Ev kind:function(arm,size=0x24) addr:0x02162c30
+_ZN16MapObjectUnkLTRW8vfunc_00Ev kind:function(arm,size=0x5c) addr:0x02162a84
+_ZN16MapObjectUnkLTRW8vfunc_08Ev kind:function(arm,size=0x1c) addr:0x02162ae0
+_ZN16MapObjectUnkLTRW8vfunc_1CE8ActorRefiP7VecFx32 kind:function(arm,size=0x34) addr:0x02162afc
+_ZN16MapObjectUnkLTRW19func_ov063_02160d18Ei kind:function(arm,size=0x1c) addr:0x02162b30
+_ZN16MapObjectUnkLTRW8vfunc_28Eiii kind:function(arm,size=0xc4) addr:0x02162b4c
+_ZN16MapObjectUnkLTRW8vfunc_14Ev kind:function(arm,size=0x20) addr:0x02162c10
+_ZN24UnkStruct_ov063_021639e49vfunc2_04Ev kind:function(arm,size=0x24) addr:0x02162c30
 _ZN16MapObjectUnkLTRWD1Ev kind:function(arm,size=0x20) addr:0x02162c54
 _ZN16MapObjectUnkLTRWD0Ev kind:function(arm,size=0x28) addr:0x02162c74
 _ZN23MapObjectProfileUnkLTRWD1Ev kind:function(arm,size=0x14) addr:0x02162c9c
@@ -397,7 +397,7 @@ __sinit_ov063_021647dc kind:function(arm,size=0x168) addr:0x021647dc
 __sinit_ActorUnkRBLS.cpp kind:function(arm,size=0x50) addr:0x02164944
 __sinit_MapObjectUnkSTAT.cpp kind:function(arm,size=0x50) addr:0x02164994
 __sinit_MapObjectUnkWLMS.cpp kind:function(arm,size=0x154) addr:0x021649e4
-__sinit_MapObjectUnkLTRW.cpp kind:function(arm,size=0x80) addr:0x02164b38
+__sinit_MapObjectUnkLTRW.cpp kind:function(arm,size=0x80) addr:0x02164b38 local
 __sinit_MapObjectUnkMTJR.cpp kind:function(arm,size=0x50) addr:0x02164bb8
 __sinit_MapObjectUnkSWCR.cpp kind:function(arm,size=0x50) addr:0x02164c08
 .p__sinit_ActorUnkCANS.cpp kind:data(word) addr:0x02164c58
@@ -411,7 +411,7 @@ __sinit_MapObjectUnkSWCR.cpp kind:function(arm,size=0x50) addr:0x02164c08
 .p__sinit_ActorUnkRBLS.cpp kind:data(word) addr:0x02164c78
 .p__sinit_MapObjectUnkSTAT.cpp kind:data(word) addr:0x02164c7c
 .p__sinit_MapObjectUnkWLMS.cpp kind:data(word) addr:0x02164c80
-.p__sinit_MapObjectUnkLTRW.cpp kind:data(word) addr:0x02164c84
+.p__sinit_MapObjectUnkLTRW.cpp kind:data(word) addr:0x02164c84 local
 .p__sinit_MapObjectUnkMTJR.cpp kind:data(word) addr:0x02164c88
 .p__sinit_MapObjectUnkSWCR.cpp kind:data(word) addr:0x02164c8c
 _ZTV24UnkStruct_ov063_02162e88 kind:data(any) addr:0x02164ca0
@@ -487,13 +487,13 @@ data_ov063_02165730 kind:data(any) addr:0x02165730
 data_ov063_02165748 kind:data(any) addr:0x02165748
 data_ov063_02165764 kind:data(any) addr:0x02165764
 _ZTV19data_ov063_021657a0 kind:data(any) addr:0x021657a0
-data_ov063_021657e4 kind:data(any) addr:0x021657e4
-data_ov063_02165804 kind:data(any) addr:0x02165804
-data_ov063_0216581c kind:data(any) addr:0x0216581c
-data_ov063_02165838 kind:data(any) addr:0x02165838
-data_ov063_02165854 kind:data(any) addr:0x02165854
-data_ov063_0216587c kind:data(any) addr:0x0216587c
-data_ov063_021658bc kind:data(any) addr:0x021658bc
+data_ov063_021639c4 kind:data(any) addr:0x021657e4 local
+_ZTV24UnkStruct_ov063_021639e4 kind:data(any) addr:0x021657fc
+_ZTV28MapObjectProfileUnkLTRW_Base kind:data(any) addr:0x02165814
+_ZTV23MapObjectProfileUnkLTRW kind:data(any) addr:0x02165830
+_ZTV31MapObjectProfileUnkLTRW_Base_D4 kind:data(any) addr:0x0216584c
+_ZTV16MapObjectUnkLTRW kind:data(any) addr:0x02165874
+data_ov063_021658bc kind:data(any) addr:0x021658b4
 data_ov063_021658d8 kind:data(any) addr:0x021658d8
 data_ov063_02165918 kind:data(any) addr:0x02165918
 data_ov063_0216592c kind:data(any) addr:0x0216592c
@@ -541,7 +541,6 @@ data_ov063_021664f8 kind:bss addr:0x021664f8
 _ZGVN15ProfileInstanceI23MapObjectProfileUnkLTRWE8sProfileE kind:bss addr:0x02166518
 @32263 kind:bss addr:0x0216651c
 _ZN15ProfileInstanceI23MapObjectProfileUnkLTRWE8sProfileE kind:bss addr:0x02166528
-data_ov063_021665fc kind:bss addr:0x021665fc
 _ZGVN15ProfileInstanceI23MapObjectProfileUnkMTJRE8sProfileE kind:bss addr:0x02166620
 @32269 kind:bss addr:0x02166624
 _ZN15ProfileInstanceI23MapObjectProfileUnkMTJRE8sProfileE kind:bss addr:0x02166630

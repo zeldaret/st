@@ -4,3 +4,38 @@
     .ctor       start:0x02129ab4 end:0x02129acc kind:rodata align:4
     .data       start:0x02129ae0 end:0x0212a220 kind:data align:32
     .bss        start:0x0212a220 end:0x0212a6a0 kind:bss align:32
+
+src/045_MapB6/Actor/ActorUnkRMBD.cpp:
+    .text       start:0x021234a0 end:0x02124168
+    .init       start:0x02129600 end:0x02129844
+    .ctor       start:0x02129ab4 end:0x02129ab8
+    .bss        start:0x0212a220 end:0x0212a31c
+
+src/045_MapB6/Actor/ActorUnkBDGA.cpp:
+    .text       start:0x02124168 end:0x02127898
+    .init       start:0x02129844 end:0x02129974
+    .ctor       start:0x02129ab8 end:0x02129abc
+    .bss        start:0x0212a31c end:0x0212a404
+
+src/045_MapB6/Actor/ActorUnkBDBA.cpp:
+    .text       start:0x02127898 end:0x021282e0
+    .init       start:0x02129974 end:0x021299c4
+    .ctor       start:0x02129abc end:0x02129ac0
+    .bss        start:0x0212a404 end:0x0212a4ec
+
+src/045_MapB6/Actor/ActorUnkBDLB.cpp:
+    .text       start:0x021282e0 end:0x02128e9c
+    .init       start:0x021299c4 end:0x02129a14
+    .ctor       start:0x02129ac0 end:0x02129ac4
+    .bss        start:0x0212a4ec end:0x0212a5d4
+
+src/045_MapB6/Actor/ActorUnkWPCL.cpp:
+    .text       start:0x02128e9c end:0x02129028
+    .init       start:0x02129a14 end:0x02129a64
+    .ctor       start:0x02129ac4 end:0x02129ac8
+    .bss        start:0x0212a5d4 end:0x0212a620
+
+src/045_MapB6/MapObject/MapObjectUnkRDSD.cpp:
+    .text       start:0x02129028 end:0x0212937c
+    .init       start:0x02129a64 end:0x02129ab4
+    .ctor       start:0x02129ac8 end:0x02129acc

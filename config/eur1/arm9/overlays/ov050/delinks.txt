@@ -4,3 +4,26 @@
     .ctor       start:0x02136a98 end:0x02136aa8 kind:rodata align:4
     .data       start:0x02136ac0 end:0x02137160 kind:data align:32
     .bss        start:0x02137160 end:0x02137520 kind:bss align:32
+
+src/050_MapC4/Actor/ActorUnkKMOS.cpp:
+    .text       start:0x021305e0 end:0x02133000
+    .init       start:0x02136924 end:0x02136980
+    .ctor       start:0x02136a98 end:0x02136a9c
+    .bss        start:0x02137164 end:0x02137254
+
+src/050_MapC4/Actor/ActorUnkKMOH.cpp:
+    .text       start:0x02133000 end:0x02135454
+    .init       start:0x02136980 end:0x021369e8
+    .ctor       start:0x02136a9c end:0x02136aa0
+    .bss        start:0x02137254 end:0x0213733c
+
+src/050_MapC4/Actor/ActorUnkFRTN.cpp:
+    .text       start:0x02135454 end:0x0213636c
+    .init       start:0x021369e8 end:0x02136a48
+    .ctor       start:0x02136aa0 end:0x02136aa4
+    .bss        start:0x0213733c end:0x02137430
+
+src/050_MapC4/MapObject/MapObjectUnkGTTN.cpp:
+    .text       start:0x0213636c end:0x02136904
+    .init       start:0x02136a48 end:0x02136a98
+    .ctor       start:0x02136aa4 end:0x02136aa8

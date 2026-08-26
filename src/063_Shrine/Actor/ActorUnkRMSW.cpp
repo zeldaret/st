@@ -1,6 +1,5 @@
 #include "Actor/ActorUnkRMSW.hpp"
 #include "Actor/ActorId.hpp"
-#include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "Actor/Actor_Derived1.hpp"
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
@@ -10,8 +9,6 @@ extern char data_ov063_02162598[0x10]; // = "RMSW_wall";
 extern char data_ov063_021625a8[0x10]; // = "RMSW";
 
 struct ActorUnkZLSL_AnimationTag data_ov063_02163388 = {0, "RMSW"};
-
-extern "C" void func_ov000_02099ff8(unk32 *param1, struct UnkStruct_data_ov063_02163388 param2, unk32 param8);
 
 DECL_PROFILE(ActorProfileUnkRMSW);
 
@@ -27,7 +24,7 @@ ActorUnkRMSW::ActorUnkRMSW() :
 
 bool ActorUnkRMSW::vfunc_18(unk32 param1) {
     bool res = ActorUnkRMSBase::vfunc_18(param1);
-    ((UnkStruct_ov000_020b31a8 *) &this->mUnk_158)->func_ov000_02099ff8(data_ov063_02163388, 0x1000);
+    this->mUnk_158.func_ov000_02099ff8(data_ov063_02163388, 0x1000);
     return res;
 }
 

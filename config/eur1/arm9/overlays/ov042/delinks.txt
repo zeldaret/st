@@ -4,3 +4,33 @@
     .ctor       start:0x0212be04 end:0x0212be1c kind:rodata align:4
     .data       start:0x0212be20 end:0x0212c7a0 kind:data align:32
     .bss        start:0x0212c7a0 end:0x0212cc60 kind:bss align:32
+
+src/042_MapB3/Actor/ActorUnkOCTS.cpp:
+    .text       start:0x02123600 end:0x02123d8c
+    .init       start:0x0212bc24 end:0x0212bc74
+    .ctor       start:0x0212be04 end:0x0212be08
+    .bss        start:0x0212c7a0 end:0x0212c888
+
+src/042_MapB3/Actor/ActorUnkOCTA.cpp:
+    .text       start:0x02123d8c end:0x021252e8
+    .init       start:0x0212bc74 end:0x0212bce0
+    .ctor       start:0x0212be08 end:0x0212be0c
+    .bss        start:0x0212c888 end:0x0212c974
+
+src/042_MapB3/Actor/ActorUnkMIFR.cpp:
+    .text       start:0x021252e8 end:0x02126aa4
+    .init       start:0x0212bce0 end:0x0212bd30
+    .ctor       start:0x0212be0c end:0x0212be10
+    .bss        start:0x0212c974 end:0x0212ca64
+
+src/042_MapB3/Actor/ActorUnkPHEY.cpp:
+    .text       start:0x021289fc end:0x0212b78c
+    .init       start:0x0212bd48 end:0x0212bdb4
+    .ctor       start:0x0212be14 end:0x0212be18
+    .bss        start:0x0212ca64 end:0x0212cb4c
+
+src/042_MapB3/MapObject/MapObjectUnkSWRA.cpp:
+    .text       start:0x0212b78c end:0x0212bbb4
+    .init       start:0x0212bdb4 end:0x0212be04
+    .ctor       start:0x0212be18 end:0x0212be1c
+    .bss        start:0x0212cb4c end:0x0212cb7c

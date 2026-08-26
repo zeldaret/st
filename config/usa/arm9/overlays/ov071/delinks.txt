@@ -4,3 +4,51 @@
     .ctor       start:0x0216408c end:0x021640c0 kind:rodata align:4
     .data       start:0x021640e0 end:0x021650e0 kind:data align:32
     .bss        start:0x021650e0 end:0x02165880 kind:bss align:32
+
+src/071_Tower/Actor/ActorTearLight.cpp:
+    .text       start:0x0215f1f0 end:0x021600f8
+    .init       start:0x02163db0 end:0x02163e24
+    .ctor       start:0x0216409c end:0x021640a0
+    .data       start:0x02164bc0 end:0x02164cf0
+    .bss        start:0x02165130 end:0x02165220
+
+src/071_Tower/Actor/ActorUnkKMSO.cpp:
+    .text       start:0x021600f8 end:0x0216095c
+    .init       start:0x02163e24 end:0x02163e74
+    .ctor       start:0x021640a0 end:0x021640a4
+    .bss        start:0x02165220 end:0x02165308
+
+src/071_Tower/MapObject/MapObjectUnkRNBO.cpp:
+    .text       start:0x0216095c end:0x02160b98
+    .init       start:0x02163e74 end:0x02163ec4
+    .ctor       start:0x021640a4 end:0x021640a8
+    .bss        start:0x02165308 end:0x02165410
+
+src/071_Tower/MapObject/MapObjectUnkRPFL.cpp:
+    .text       start:0x02160b98 end:0x0216193c
+    .init       start:0x02163ec4 end:0x02163f14
+    .ctor       start:0x021640a8 end:0x021640ac
+    .bss        start:0x02165410 end:0x02165518
+
+src/071_Tower/MapObject/MapObjectUnkBLCE.cpp:
+    .text       start:0x0216193c end:0x02161acc
+    .init       start:0x02163f14 end:0x02163f64
+    .ctor       start:0x021640ac end:0x021640b0
+    .bss        start:0x02165518 end:0x02165620
+
+src/071_Tower/MapObject/MapObjectUnkSTAL.cpp:
+    .text       start:0x02161acc end:0x021620a0
+    .init       start:0x02163f64 end:0x02163fb4
+    .ctor       start:0x021640b0 end:0x021640b4
+    .bss        start:0x02165620 end:0x02165714
+
+src/071_Tower/MapObject/MapObjectUnkBRGS.cpp:
+    .text       start:0x021620a0 end:0x02162f14
+    .init       start:0x02163fb4 end:0x02164018
+    .ctor       start:0x021640b4 end:0x021640b8
+    .bss        start:0x02165714 end:0x02165800
+
+src/071_Tower/MapObject/MapObjectUnkBLCT.cpp:
+    .text       start:0x02162f14 end:0x02163740
+    .init       start:0x02164018 end:0x02164074
+    .ctor       start:0x021640b8 end:0x021640bc

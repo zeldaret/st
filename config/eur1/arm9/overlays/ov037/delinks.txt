@@ -4,3 +4,20 @@
     .ctor       start:0x02121f34 end:0x02121f44 kind:rodata align:4
     .data       start:0x02121f60 end:0x02122960 kind:data align:32
     .bss        start:0x02122960 end:0x02122c60 kind:bss align:32
+
+src/037_MapA6/Actor/ActorUnkSOLF.cpp:
+    .text       start:0x0211b544 end:0x0211ea8c
+    .init       start:0x02121df8 end:0x02121e48
+    .ctor       start:0x02121f38 end:0x02121f3c
+    .bss        start:0x02122ac8 end:0x02122b1c
+
+src/037_MapA6/Actor/ActorUnkSOLT.cpp:
+    .text       start:0x0211ea8c end:0x02120b04
+    .init       start:0x02121e48 end:0x02121e98
+    .ctor       start:0x02121f3c end:0x02121f40
+    .bss        start:0x02122b1c end:0x02122c04
+
+src/037_MapA6/Actor/ActorUnkTUTO.cpp:
+    .text       start:0x02120b04 end:0x02121d04
+    .init       start:0x02121e98 end:0x02121f34
+    .ctor       start:0x02121f40 end:0x02121f44

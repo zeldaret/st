@@ -4,3 +4,110 @@
     .ctor       start:0x02176fc8 end:0x02177018 kind:rodata align:4
     .data       start:0x02177020 end:0x02178060 kind:data align:32
     .bss        start:0x02178060 end:0x02178fa0 kind:bss align:32
+
+src/091_TrainExtra/MapObject/MapObjectUnkFRSH.cpp:
+    .text       start:0x02167984 end:0x02167af8
+    .init       start:0x02176960 end:0x021769b0
+    .ctor       start:0x02176fd0 end:0x02176fd4
+    .bss        start:0x02178184 end:0x02178268
+
+src/091_TrainExtra/MapObject/MapObjectUnkMZFX.cpp:
+    .text       start:0x02167af8 end:0x02167ca0
+    .init       start:0x021769b0 end:0x02176a00
+    .ctor       start:0x02176fd4 end:0x02176fd8
+    .bss        start:0x02178268 end:0x0217829c
+
+src/091_TrainExtra/MapObject/MapObjectUnkMZTR.cpp:
+    .text       start:0x02167ca0 end:0x02167fec
+    .init       start:0x02176a00 end:0x02176a50
+    .ctor       start:0x02176fd8 end:0x02176fdc
+    .bss        start:0x0217829c end:0x02178388
+
+src/091_TrainExtra/MapObject/MapObjectUnkTMSB.cpp:
+    .text       start:0x02167fec end:0x021685b0
+    .init       start:0x02176a50 end:0x02176ac0
+    .ctor       start:0x02176fdc end:0x02176fe0
+    .bss        start:0x02178388 end:0x02178474
+
+src/091_TrainExtra/MapObject/MapObjectUnkETUS.cpp:
+    .text       start:0x021685b0 end:0x021687f8
+    .init       start:0x02176ac0 end:0x02176b10
+    .ctor       start:0x02176fe0 end:0x02176fe4
+    .bss        start:0x02178474 end:0x02178558
+
+src/091_TrainExtra/MapObject/MapObjectUnkBOGN.cpp:
+    .text       start:0x021687f8 end:0x02168be8
+    .init       start:0x02176b10 end:0x02176b60
+    .ctor       start:0x02176fe4 end:0x02176fe8
+    .bss        start:0x02178558 end:0x02178588
+
+src/091_TrainExtra/Actor/ActorUnkMZCT.cpp:
+    .text       start:0x02168be8 end:0x02169be0
+    .init       start:0x02176b60 end:0x02176bb0
+    .ctor       start:0x02176fe8 end:0x02176fec
+    .bss        start:0x02178588 end:0x02178670
+
+src/091_TrainExtra/Actor/ActorUnkSMCT.cpp:
+    .text       start:0x02169be0 end:0x02169dbc
+    .init       start:0x02176bb0 end:0x02176c00
+    .ctor       start:0x02176fec end:0x02176ff0
+    .bss        start:0x02178670 end:0x021786bc
+
+src/091_TrainExtra/Actor/ActorUnkSTCT.cpp:
+    .text       start:0x02169dbc end:0x02169f58
+    .init       start:0x02176c00 end:0x02176c50
+    .ctor       start:0x02176ff0 end:0x02176ff4
+    .bss        start:0x021786bc end:0x021787a8
+
+src/091_TrainExtra/Actor/ActorUnkCTFS.cpp:
+    .text       start:0x02169f58 end:0x0216b308
+    .init       start:0x02176c50 end:0x02176cc8
+    .ctor       start:0x02176ff4 end:0x02176ff8
+    .bss        start:0x021787a8 end:0x021788a0
+
+src/091_TrainExtra/Actor/ActorUnkNLTR.cpp:
+    .text       start:0x0216b308 end:0x0216bff8
+    .init       start:0x02176cc8 end:0x02176d18
+    .ctor       start:0x02176ff8 end:0x02176ffc
+    .bss        start:0x021788a0 end:0x02178a1c
+
+src/091_TrainExtra/Actor/ActorUnkSEFS.cpp:
+    .text       start:0x0216bff8 end:0x0216d9a8
+    .init       start:0x02176d18 end:0x02176d98
+    .ctor       start:0x02176ffc end:0x02177000
+    .bss        start:0x02178a1c end:0x02178b40
+
+src/091_TrainExtra/Actor/ActorUnkTPDO.cpp:
+    .text       start:0x0216d9a8 end:0x0216e680
+    .init       start:0x02176d98 end:0x02176de8
+    .ctor       start:0x02177000 end:0x02177004
+    .bss        start:0x02178b40 end:0x02178c38
+
+src/091_TrainExtra/Actor/ActorUnkBMOC.cpp:
+    .text       start:0x0216e680 end:0x0216ef10
+    .init       start:0x02176de8 end:0x02176e38
+    .ctor       start:0x02177004 end:0x02177008
+    .bss        start:0x02178c38 end:0x02178d20
+
+src/091_TrainExtra/Actor/ActorUnkTSMT.cpp:
+    .text       start:0x0216ef10 end:0x0216f07c
+    .init       start:0x02176e38 end:0x02176e88
+    .ctor       start:0x02177008 end:0x0217700c
+    .bss        start:0x02178d20 end:0x02178d70
+
+src/091_TrainExtra/Actor/ActorUnkTTKB.cpp:
+    .text       start:0x0216f07c end:0x021757c0
+    .init       start:0x02176e88 end:0x02176f10
+    .ctor       start:0x0217700c end:0x02177010
+    .bss        start:0x02178d70 end:0x02178e58
+
+src/091_TrainExtra/Actor/ActorUnkTTUT.cpp:
+    .text       start:0x021757c0 end:0x02175cb0
+    .init       start:0x02176f10 end:0x02176f60
+    .ctor       start:0x02177010 end:0x02177014
+    .bss        start:0x02178e58 end:0x02178ea4
+
+src/091_TrainExtra/Actor/ActorUnkTRIC.cpp:
+    .text       start:0x02175cb0 end:0x02176830
+    .init       start:0x02176f60 end:0x02176fc8
+    .ctor       start:0x02177014 end:0x02177018
