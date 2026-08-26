@@ -4,3 +4,26 @@
     .ctor       start:0x0215f630 end:0x0215f640 kind:rodata align:4
     .data       start:0x0215f660 end:0x021600a0 kind:data align:32
     .bss        start:0x021600a0 end:0x021605c0 kind:bss align:32
+
+src/080_BossSnow/Actor/ActorUnkICBS.cpp:
+    .text       start:0x02150db8 end:0x0215caa4
+    .init       start:0x0215efb8 end:0x0215f51c
+    .ctor       start:0x0215f630 end:0x0215f634
+    .bss        start:0x021600a4 end:0x02160344
+
+src/080_BossSnow/Actor/ActorUnkICBA.cpp:
+    .text       start:0x0215caa4 end:0x0215e774
+    .init       start:0x0215f51c end:0x0215f590
+    .ctor       start:0x0215f634 end:0x0215f638
+    .bss        start:0x02160344 end:0x0216044c
+
+src/080_BossSnow/MapObject/MapObjectUnkSTSS.cpp:
+    .text       start:0x0215e9b0 end:0x0215ec50
+    .init       start:0x0215f590 end:0x0215f5e0
+    .ctor       start:0x0215f638 end:0x0215f63c
+    .bss        start:0x0216044c end:0x021604c4
+
+src/080_BossSnow/Actor/ActorUnkRBSN.cpp:
+    .text       start:0x0215ec7c end:0x0215ef04
+    .init       start:0x0215f5e0 end:0x0215f630
+    .ctor       start:0x0215f63c end:0x0215f640

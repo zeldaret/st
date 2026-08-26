@@ -4,3 +4,27 @@
     .ctor       start:0x021627cc end:0x021627dc kind:rodata align:4
     .data       start:0x021627e0 end:0x02163480 kind:data align:32
     .bss        start:0x02163480 end:0x02163820 kind:bss align:32
+
+src/075_BossLast2/Actor/ActorUnkMRDA_MRDO.cpp:
+    .text       start:0x02150d80 end:0x02154254
+    .init       start:0x02162498 end:0x021625c8
+    .ctor       start:0x021627cc end:0x021627d0
+    .bss        start:0x0216348c end:0x02163668
+
+src/075_BossLast2/Actor/ActorUnkMRD2.cpp:
+    .text       start:0x02154320 end:0x0215e064
+    .init       start:0x021625c8 end:0x021626d4
+    .ctor       start:0x021627d0 end:0x021627d4
+    .bss        start:0x02163668 end:0x021636c8
+
+src/075_BossLast2/Actor/ActorUnkMRDL.cpp:
+    .text       start:0x0215e064 end:0x0215e3c4
+    .init       start:0x021626d4 end:0x02162724
+    .ctor       start:0x021627d4 end:0x021627d8
+    .bss        start:0x021636c8 end:0x0216371c
+
+src/075_BossLast2/Actor/ActorUnkMABL.cpp:
+    .text       start:0x0215e3c4 end:0x0216088c
+    .init       start:0x02162724 end:0x021627cc
+    .ctor       start:0x021627d8 end:0x021627dc
+    .bss        start:0x0216371c end:0x02163820

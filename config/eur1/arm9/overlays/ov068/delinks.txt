@@ -4,3 +4,111 @@
     .ctor       start:0x02162700 end:0x0216274c kind:rodata align:4
     .data       start:0x02162760 end:0x02163d60 kind:data align:32
     .bss        start:0x02163d60 end:0x02164d40 kind:bss align:32
+
+src/068_FldAjito/Actor/ActorUnkRMAJ.cpp:
+    .text       start:0x02157fc0 end:0x021580c0
+    .init       start:0x02162110 end:0x02162160
+    .ctor       start:0x02162700 end:0x02162704
+    .bss        start:0x02163d60 end:0x02163dac
+
+src/068_FldAjito/Actor/ActorUnkAJMN.cpp:
+    .text       start:0x021580c0 end:0x02158c04
+    .init       start:0x02162160 end:0x021621b0
+    .ctor       start:0x02162704 end:0x02162708
+    .bss        start:0x02163dac end:0x02163df8
+
+src/068_FldAjito/Actor/ActorUnkAJAI.cpp:
+    .text       start:0x02158c04 end:0x021593d0
+    .init       start:0x021621b0 end:0x02162200
+    .ctor       start:0x02162708 end:0x0216270c
+    .bss        start:0x02163df8 end:0x02163ee0
+
+src/068_FldAjito/Actor/ActorUnkAJEM.cpp:
+    .text       start:0x021593d0 end:0x0215a964
+    .init       start:0x02162200 end:0x02162250
+    .ctor       start:0x0216270c end:0x02162710
+    .bss        start:0x02163ee0 end:0x02163fcc
+
+src/068_FldAjito/Actor/ActorUnkTSCN.cpp:
+    .text       start:0x0215a964 end:0x0215ac54
+    .init       start:0x02162250 end:0x021622a0
+    .ctor       start:0x02162710 end:0x02162714
+    .bss        start:0x02163fcc end:0x02164018
+
+src/068_FldAjito/Actor/ActorUnkAJET.cpp:
+    .text       start:0x0215ac54 end:0x0215c2a4
+    .init       start:0x021622a0 end:0x021622f0
+    .ctor       start:0x02162714 end:0x02162718
+    .bss        start:0x02164018 end:0x02164100
+
+src/068_FldAjito/Actor/ActorUnkAJTM.cpp:
+    .text       start:0x0215c2a4 end:0x0215d1f0
+    .init       start:0x021622f0 end:0x02162340
+    .ctor       start:0x02162718 end:0x0216271c
+    .bss        start:0x02164100 end:0x0216414c
+
+src/068_FldAjito/Actor/ActorUnkAJNP.cpp:
+    .text       start:0x0215d1f0 end:0x0215d9a8
+    .init       start:0x02162340 end:0x02162390
+    .ctor       start:0x0216271c end:0x02162720
+    .bss        start:0x0216414c end:0x02164234
+
+src/068_FldAjito/Actor/ActorUnkAJCR.cpp:
+    .text       start:0x0215d9a8 end:0x0215db68
+    .init       start:0x02162390 end:0x021623e0
+    .ctor       start:0x02162720 end:0x02162724
+    .bss        start:0x02164234 end:0x021644f4
+
+src/068_FldAjito/Actor/ActorUnkMGAJ.cpp:
+    .text       start:0x0215e7bc end:0x0215ebb0
+    .init       start:0x02162430 end:0x02162480
+    .ctor       start:0x02162728 end:0x0216272c
+    .bss        start:0x021644f4 end:0x021645dc
+
+src/068_FldAjito/Actor/ActorUnkAJBS.cpp:
+    .text       start:0x0215ebb0 end:0x0216067c
+    .init       start:0x02162480 end:0x021624d0
+    .ctor       start:0x0216272c end:0x02162730
+    .bss        start:0x021645dc end:0x021646c4
+
+src/068_FldAjito/Actor/ActorUnkRMA1.cpp:
+    .text       start:0x0216067c end:0x021607cc
+    .init       start:0x021624d0 end:0x02162520
+    .ctor       start:0x02162730 end:0x02162734
+    .bss        start:0x021646c4 end:0x021647ac
+
+src/068_FldAjito/Actor/ActorUnkRMA2.cpp:
+    .text       start:0x021607cc end:0x0216091c
+    .init       start:0x02162520 end:0x02162570
+    .ctor       start:0x02162734 end:0x02162738
+    .bss        start:0x021647ac end:0x02164894
+
+src/068_FldAjito/Actor/ActorUnkRMA0.cpp:
+    .text       start:0x0216091c end:0x02160a6c
+    .init       start:0x02162570 end:0x021625c0
+    .ctor       start:0x02162738 end:0x0216273c
+    .bss        start:0x02164894 end:0x0216497c
+
+src/068_FldAjito/Actor/ActorUnkRMA3.cpp:
+    .text       start:0x02160a6c end:0x02160bbc
+    .init       start:0x021625c0 end:0x02162610
+    .ctor       start:0x0216273c end:0x02162740
+    .bss        start:0x0216497c end:0x02164a64
+
+src/068_FldAjito/Actor/ActorUnkAJSP.cpp:
+    .text       start:0x02160bbc end:0x02160e14
+    .init       start:0x02162610 end:0x02162660
+    .ctor       start:0x02162740 end:0x02162744
+    .bss        start:0x02164a64 end:0x02164b4c
+
+src/068_FldAjito/MapObject/MapObjectUnkDRVC.cpp:
+    .text       start:0x02160e14 end:0x021617c4
+    .init       start:0x02162660 end:0x021626b0
+    .ctor       start:0x02162744 end:0x02162748
+    .bss        start:0x02164b4c end:0x02164c30
+
+src/068_FldAjito/MapObject/MapObjectUnkRKAG.cpp:
+    .text       start:0x021617c4 end:0x021619ec
+    .init       start:0x021626b0 end:0x02162700
+    .ctor       start:0x02162748 end:0x0216274c
+    .bss        start:0x02164c30 end:0x02164d14
