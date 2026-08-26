@@ -74,7 +74,7 @@ Actor *ActorProfileSpinut::Create() {
 }
 
 ActorProfileSpinut::ActorProfileSpinut() :
-    ActorProfile_Derived1(ActorId_KURI) {
+    ActorProfile_Derived1(ActorId_Spinut) {
     this->mUnk_04.Init(FLOAT_TO_FX32(0.4f));
     this->vfunc_04()->mUnk_15 = true;
 }
@@ -849,7 +849,7 @@ void ActorSpinut::func_ov032_0211b298() {
 }
 
 void ActorSpinut::func_ov032_0211b37c(ActorSpinut *thisx, u16 param1) {
-    if (thisx->GetActorId() == ActorId_KURI) {
+    if (thisx->GetActorId() == ActorId_Spinut) {
         thisx->mUnk_294 = true;
         thisx->mUnk_52  = param1;
         thisx->mUnk_50  = 0x0;

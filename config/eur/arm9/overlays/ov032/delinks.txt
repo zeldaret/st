@@ -12,7 +12,7 @@ src/032_MapA1/Actor/ActorSpinut.cpp:
     .data       start:0x02122160 end:0x021223a8
     .bss        start:0x02122820 end:0x02122908
 
-src/032_MapA1/Actor/ActorUnkMKUR.cpp:
+src/032_MapA1/Actor/ActorGreenSpinut.cpp:
     .text       start:0x0211b6cc end:0x0211db40
     .init       start:0x02121fa0 end:0x02122020
     .ctor       start:0x02122130 end:0x02122134

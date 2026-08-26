@@ -7,18 +7,18 @@
 #include "global.h"
 #include "types.h"
 
-enum ActorUnkMKURState_ {
-    ActorUnkMKURState_0 = 0,
-    ActorUnkMKURState_1 = 1,
-    ActorUnkMKURState_2 = 2,
-    ActorUnkMKURState_3 = 3,
-    ActorUnkMKURState_4 = 4,
-    ActorUnkMKURState_5 = 5,
-    ActorUnkMKURState_6 = 6,
-    ActorUnkMKURState_Max
+enum ActorGreenSpinutState_ {
+    ActorGreenSpinutState_0 = 0,
+    ActorGreenSpinutState_1 = 1,
+    ActorGreenSpinutState_2 = 2,
+    ActorGreenSpinutState_3 = 3,
+    ActorGreenSpinutState_4 = 4,
+    ActorGreenSpinutState_5 = 5,
+    ActorGreenSpinutState_6 = 6,
+    ActorGreenSpinutState_Max
 };
 
-class ActorUnkMKUR_1EC {
+class ActorGreenSpinut_1EC {
 public:
     /* 00 */ u8 mUnk_00;
     /* 04 */ unk32 mUnk_04;
@@ -34,7 +34,7 @@ public:
     /* 2C */ unk32 mUnk_2C;
     /* 30 */
 
-    ActorUnkMKUR_1EC();
+    ActorGreenSpinut_1EC();
 
     UnkStruct_027e0960_TableEntry_04 *func_ov032_0211cd20(VecFx32 *param1);
     void func_ov032_0211cf74();
@@ -43,7 +43,7 @@ public:
     void func_ov032_0211d6d8();
 };
 
-class ActorUnkMKUR : public Actor_Derived2 {
+class ActorGreenSpinut : public Actor_Derived2 {
 public:
     /* 000 (base) */
     /* 0AE */ STRUCT_PAD(0x0AE, 0x0B0);
@@ -54,18 +54,18 @@ public:
     /* 1BE */ unk16 mUnk_1BE;
     /* 1C0 */ Actor_9C mUnk_1C0;
     /* 1E0 */ Actor_Derived1_94 mUnk_1E0;
-    /* 1EC */ ActorUnkMKUR_1EC mUnk_1EC;
+    /* 1EC */ ActorGreenSpinut_1EC mUnk_1EC;
     /* 21C */ fx32 mUnk_21C;
     /* 220 */ unk32 mUnk_220;
     /* 224 */ bool mUnk_224;
 
-    ActorUnkMKUR();
+    ActorGreenSpinut();
 
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 30 */ virtual void vfunc_30(Actor_vfunc_30 *param1) override;
-    /* 4C */ virtual ~ActorUnkMKUR() override;
+    /* 4C */ virtual ~ActorGreenSpinut() override;
 
     void SetState(ActorState state);
     bool func_ov032_0211be04();
@@ -106,15 +106,15 @@ public:
     void func_ov032_0211da0c();
 };
 
-class ActorProfileUnkMKUR : public ActorProfile_ov000_020b3018 {
+class ActorProfileGreenSpinut : public ActorProfile_ov000_020b3018 {
 public:
     /* 00 (base) */
     /* 3C */ STRUCT_PAD(0x3C, 0x44);
     /* 44 */
 
-    ActorProfileUnkMKUR();
+    ActorProfileGreenSpinut();
 
     /* 0C */ virtual Actor *Create();
 
-    static ActorProfileUnkMKUR *GetProfile();
+    static ActorProfileGreenSpinut *GetProfile();
 };

@@ -599,7 +599,7 @@ config.libs = [
         [
             Object("032_MapA1/Actor/ActorUnkKETH.cpp"),
             Object("032_MapA1/Actor/ActorSpinut.cpp"),
-            Object("032_MapA1/Actor/ActorUnkMKUR.cpp"),
+            Object("032_MapA1/Actor/ActorGreenSpinut.cpp"),
             Object("032_MapA1/Actor/ActorUnkNSSW.cpp"),
             Object("032_MapA1/MapObject/MapObjectUnkSWSW.cpp"),
         ]
