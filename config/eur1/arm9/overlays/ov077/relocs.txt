@@ -24,7 +24,7 @@ from:0x02153324 kind:load to:0x0215bf18 module:overlay(77)
 from:0x02153328 kind:load to:0x0215b640 module:overlay(77)
 from:0x0215332c kind:load to:0x020a0328 module:overlay(0)
 from:0x02153330 kind:load to:0x02157088 module:overlay(77)
-from:0x02153334 kind:load to:0x021149d8 module:overlay(31) add:0x8
+from:0x02153334 kind:load to:0x021149d8 add:0x8 module:overlay(31)
 from:0x02153338 kind:load to:0x0215bf00 module:overlay(77)
 from:0x02153344 kind:arm_call_thumb to:0x02057bd4 module:overlay(0)
 from:0x02153358 kind:arm_call_thumb to:0x0209a29c module:overlay(0)

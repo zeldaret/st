@@ -58,4 +58,3 @@ src/036_MapA5/Actor/ActorUnkRMST.cpp:
     .init       start:0x02121234 end:0x02121284
     .ctor       start:0x021212a4 end:0x021212a8
     .bss        start:0x02122f54 end:0x02123040
-

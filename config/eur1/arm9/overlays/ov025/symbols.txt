@@ -52,5 +52,5 @@ data_ov025_020c5ae8 kind:data(any) addr:0x020c5b28 local
 data_ov025_020c5aec kind:data(any) addr:0x020c5b2c local
 _ZTV16TitleScreen_Sub2 kind:data(any) addr:0x020c5b5c
 _ZTV11TitleScreen kind:data(any) addr:0x020c5b68
-@337 kind:data(byte[18]) kind:data(any) addr:0x020c5b8c local
-@338 kind:data(byte[6]) kind:data(any) addr:0x020c5ba0 local
+@337 kind:data(any) addr:0x020c5b8c local
+@338 kind:data(any) addr:0x020c5ba0 local

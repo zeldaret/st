@@ -45,4 +45,3 @@ src/044_MapB5/Actor/ActorUnkL2MT.cpp:
     .text       start:0x0212c9f0 end:0x0212cb5c
     .init       start:0x0212ce9c end:0x0212ceec
     .ctor       start:0x0212cf0c end:0x0212cf10
-

@@ -82,7 +82,7 @@ from:0x020b6d7c kind:arm_call to:0x020166cc module:main
 from:0x020b6d8c kind:load to:0x020ba044 module:overlay(3)
 from:0x020b6d90 kind:load to:0x020b6da0 module:overlay(3)
 from:0x020b6d94 kind:load to:0x0206337c module:overlay(0)
-from:0x020b6d9c kind:load to:0x020b1fc4 module:overlay(0) add:0x8
+from:0x020b6d9c kind:load to:0x020b1fc4 add:0x8 module:overlay(0)
 from:0x020b6da8 kind:arm_call to:0x02062be0 module:overlay(0)
 from:0x020b6dc8 kind:arm_call to:0x02011ff4 module:main
 from:0x020b6dd0 kind:arm_call to:0x02011ff4 module:main

@@ -53,11 +53,11 @@ _ZN24UnkStruct_ov018_020c5ac011SetInstanceEv kind:function(arm,size=0x10) addr:0
 _ZTV15GameModeStartUp kind:data(any) addr:0x020c5b80
 @3943 kind:data(any) addr:0x020c5bb0 local
 @3944 kind:data(any) addr:0x020c5bc4 local
-@3945 kind:data(byte[0xe]) addr:0x020c5bc8 local
-@3946 kind:data(byte[0xa]) addr:0x020c5bd8 local
+@3945 kind:data(byte[14]) addr:0x020c5bc8 local
+@3946 kind:data(byte[10]) addr:0x020c5bd8 local
 @5284 kind:data(any) addr:0x020c5be4 local
-@5549 kind:data(byte[0x20]) addr:0x020c5bec local
-data_ov018_020c5bc0 kind:bss(size=1) addr:0x020c5c20 local
-_ZGVZN4Game19func_ov018_020c4ba8EvE19data_ov018_020c5bd4 kind:bss(size=4) addr:0x020c5c24 local
+@5549 kind:data(byte[32]) addr:0x020c5bec local
+data_ov018_020c5bc0 kind:bss(size=0x1) addr:0x020c5c20 local
+_ZGVZN4Game19func_ov018_020c4ba8EvE19data_ov018_020c5bd4 kind:bss(size=0x4) addr:0x020c5c24 local
 @3730 kind:bss addr:0x020c5c28 local
 _ZZN4Game19func_ov018_020c4ba8EvE19data_ov018_020c5bd4 kind:bss(size=0x34) addr:0x020c5c34 local

@@ -2621,7 +2621,7 @@ data_ov031_02116fc8 kind:bss addr:0x02116fc8
 data_ov031_02116fcc kind:bss addr:0x02116fcc
 data_ov031_02116fd8 kind:bss addr:0x02116fd8
 _ZGVN15ProfileInstanceI19ActorProfileUnkEFSBE8sProfileE kind:bss addr:0x02117014
-@10932  kind:bss addr:0x02117018 local
+@10932 kind:bss addr:0x02117018 local
 _ZN15ProfileInstanceI19ActorProfileUnkEFSBE8sProfileE kind:bss addr:0x02117024
 _ZGVN15ProfileInstanceI19ActorProfileUnkNFSPE8sProfileE kind:bss addr:0x021170fc
 @10938 kind:bss addr:0x02117100 local

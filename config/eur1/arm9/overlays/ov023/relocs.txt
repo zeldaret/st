@@ -288,10 +288,10 @@ from:0x020eb4ec kind:load to:0x020a0328 module:overlay(0)
 from:0x020eb4f0 kind:load to:0x020ef0a0 module:overlay(23)
 from:0x020eb4f4 kind:load to:0x020eb548 module:overlay(23)
 from:0x020eb4f8 kind:load to:0x020ea960 module:overlay(23)
-from:0x020eb4fc kind:load to:0x020b1f64 module:overlay(0) add:0x8
+from:0x020eb4fc kind:load to:0x020b1f64 add:0x8 module:overlay(0)
 from:0x020eb500 kind:load to:0x020eb55c module:overlay(23)
 from:0x020eb504 kind:load to:0x0201f678 module:main
-from:0x020eb508 kind:load to:0x020b1fc4 module:overlay(0) add:0x8
+from:0x020eb508 kind:load to:0x020b1fc4 add:0x8 module:overlay(0)
 from:0x020eb50c kind:load to:0x020f18c4 module:overlay(23)
 from:0x020eb510 kind:load to:0x020f18d8 module:overlay(23)
 from:0x020eb514 kind:load to:0x020431b8 module:main

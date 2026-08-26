@@ -731,7 +731,7 @@ data_ov024_020d73fa kind:data(any) addr:0x020d73da local
 data_ov024_020d740a kind:data(any) addr:0x020d73ea local
 data_ov024_020d741e kind:data(any) addr:0x020d73fe local
 data_ov024_020d7432 kind:data(any) addr:0x020d7412 local
-data_ov024_020d7454 kind:data(byte[0xee]) addr:0x020d7434 local
+data_ov024_020d7454 kind:data(byte[238]) addr:0x020d7434 local
 data_ov024_020d7544 kind:data(any) addr:0x020d7524 local
 data_ov024_020d7547 kind:data(any) addr:0x020d7527 local
 data_ov024_020d7550 kind:data(any) addr:0x020d7530 local
@@ -904,13 +904,13 @@ _ZGVZN24UnkStruct_ov024_020d866019func_ov024_020c4ac0EvE8instance kind:bss addr:
 _ZZN24UnkStruct_ov024_020d866019func_ov024_020c4ac0EvE8instance kind:bss addr:0x020d8654 local
 data_ov024_020d8694 kind:bss addr:0x020d8674
 gpUICounterManager kind:bss addr:0x020d8678
-data_ov024_020d869c kind:bss(size=2) addr:0x020d867c local
+data_ov024_020d869c kind:bss(size=0x2) addr:0x020d867c local
 data_ov024_020d86a0 kind:bss addr:0x020d8680
 _ZGVZ19func_ov024_020d51dcP5Vec2sjE19data_ov024_020d851c kind:bss addr:0x020d8684 local
 data_ov024_020d86a8 kind:bss addr:0x020d8688
 data_ov024_020d86ac kind:bss addr:0x020d868c
 gpMiscAdvManager kind:bss addr:0x020d8690
-data_ov024_020d86b4 kind:bss(size=1) addr:0x020d8694
+data_ov024_020d86b4 kind:bss(size=0x1) addr:0x020d8694
 _ZGVN15ProfileInstanceI19ActorProfileUnkOBPCE8sProfileE kind:bss addr:0x020d8698
 @5617 kind:bss addr:0x020d869c local
 _ZN15ProfileInstanceI19ActorProfileUnkOBPCE8sProfileE kind:bss(size=0x3c) addr:0x020d86a8

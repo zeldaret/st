@@ -270,7 +270,7 @@ _ZTV23MapObjectProfileUnkSWSW kind:data(any) addr:0x02122744
 _ZTV28MapObjectProfileUnkSWSW_Base kind:data(any) addr:0x02122760
 _ZTV17MapObject_10_SWSW kind:data(any) addr:0x0212277c
 _ZTV19MapObjectUnkSWSW_40 kind:data(any) addr:0x021227a4
-_ZTV16MapObjectUnkSWSW kind:data(byte[0x48]) addr:0x021227d0
+_ZTV16MapObjectUnkSWSW kind:data(byte[72]) addr:0x021227d0
 _ZGVN15ProfileInstanceI18ActorProfileSpinutE8sProfileE kind:bss addr:0x02122820
 @11136 kind:bss addr:0x02122824
 _ZN15ProfileInstanceI18ActorProfileSpinutE8sProfileE kind:bss addr:0x02122830
