@@ -256,10 +256,10 @@ data_ov032_021224dc kind:data(any) addr:0x021224dc
 data_ov032_021224fc kind:data(any) addr:0x021224fc
 data_ov032_02122508 kind:data(any) addr:0x02122508
 data_ov032_02122524 kind:data(any) addr:0x02122524
-data_ov032_021223a8 kind:data(any) addr:0x02122548
-data_ov032_021223cc kind:data(any) addr:0x0212256c
+data_ov032_02122548 kind:data(any) addr:0x02122548
+data_ov032_0212256c kind:data(any) addr:0x0212256c
 data_ov032_02122588 kind:data(any) addr:0x02122588 ambiguous
-data_ov032_0212241c kind:data(any) addr:0x021225bc
+data_ov032_021225bc kind:data(any) addr:0x021225bc
 data_ov032_02122614 kind:data(any) addr:0x02122614
 data_ov032_02122674 kind:data(any) addr:0x02122674
 data_ov032_0212268c kind:data(any) addr:0x0212268c
