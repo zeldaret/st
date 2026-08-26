@@ -20,7 +20,7 @@ enum ActorUnkMKURState_ {
 
 class ActorUnkMKUR_1EC {
 public:
-    /* 00 */ unk8 mUnk_00;
+    /* 00 */ u8 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
@@ -36,8 +36,11 @@ public:
 
     ActorUnkMKUR_1EC();
 
+    UnkStruct_027e0960_TableEntry_04 *func_ov032_0211cd20(VecFx32 *param1);
     void func_ov032_0211cf74();
+    void func_ov032_0211cfac(unk32 param1);
     void func_ov032_0211d028();
+    void func_ov032_0211d6d8();
 };
 
 class ActorUnkMKUR : public Actor_Derived2 {
@@ -52,7 +55,7 @@ public:
     /* 1C0 */ Actor_9C mUnk_1C0;
     /* 1E0 */ Actor_Derived1_94 mUnk_1E0;
     /* 1EC */ ActorUnkMKUR_1EC mUnk_1EC;
-    /* 21C */ unk32 mUnk_21C;
+    /* 21C */ fx32 mUnk_21C;
     /* 220 */ unk32 mUnk_220;
     /* 224 */ bool mUnk_224;
 
@@ -87,16 +90,13 @@ public:
     void func_ov032_0211cab8();
     void func_ov032_0211cb2c();
     void func_ov032_0211cc48();
-    void func_ov032_0211cd20();
     void func_ov032_0211cd60();
-    void func_ov032_0211cfac();
     void func_ov032_0211d040();
     void func_ov032_0211d08c();
     void func_ov032_0211d2e4();
     void func_ov032_0211d384();
     void func_ov032_0211d568();
     void func_ov032_0211d674();
-    void func_ov032_0211d6d8();
     void func_ov032_0211d7e8();
     void func_ov032_0211d80c();
     void func_ov032_0211d830();

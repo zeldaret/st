@@ -110,11 +110,37 @@ void ActorUnkMKUR::vfunc_20() {
 }
 
 // non-matching
-void ActorUnkMKUR::vfunc_30(Actor_vfunc_30 *param1) {}
+void ActorUnkMKUR::vfunc_30(Actor_vfunc_30 *param1) {
+    if (!this->func_ov032_0211be04()) {
+        return;
+    }
+    this->Actor::func_ov017_020bef88(param1, (void *) 0x11142, 0x1);
+}
+
+extern "C" void func_01ffc634(ModelRender *, VecFx32 *, UnkAngleStruct, VecFx32 *);
+
 // non-matching
-void ActorUnkMKUR::vfunc_2C(unk32 param1) {}
-// non-matching
-bool ActorUnkMKUR::func_ov032_0211be04() {}
+void ActorUnkMKUR::vfunc_2C(unk32 param1) {
+    if (!this->Actor::func_01fff5d0(param1, 0x0)) {
+        return;
+    }
+
+    this->Actor::func_ov017_020bf5c4(&this->mPos, 0x548, 0x548, 0x1F, 0x0);
+
+    VecFx32 vec = this->mPos;
+
+    vec.y += this->mUnk_21C;
+
+    func_01ffc634(&this->mUnk_0B0, &this->mUnk_98, this->mAngleStruct, &vec);
+}
+
+bool ActorUnkMKUR::func_ov032_0211be04() {
+    if (this->mUnk_5C.mParams[2] == 0x1 && !this->func_ov000_02098a60(0x0)) {
+        return true;
+    }
+
+    return false;
+}
 
 void ActorUnkMKUR::func_ov032_0211be30() {
     this->mUnk_110.vfunc_1C(data_ov032_021223b4, 0x1000, 0x19A, 0x0);
@@ -187,16 +213,48 @@ ActorUnkMKUR_1EC::ActorUnkMKUR_1EC() :
 
 // non-matching
 void ActorUnkMKUR::func_ov032_0211cc48() {}
+
 // non-matching
-void ActorUnkMKUR::func_ov032_0211cd20() {}
+UnkStruct_027e0960_TableEntry_04 *ActorUnkMKUR_1EC::func_ov032_0211cd20(VecFx32 *param1) {
+    UnkStruct_027e0960_TableEntry *tEntry = data_027e0960->func_ov000_0205a3fc(*param1, this->mUnk_00);
+    tEntry->func_ov000_02059da4(param1);
+    return tEntry->mTable.GetPtr(0x1);
+}
+
 // non-matching
 void ActorUnkMKUR::func_ov032_0211cd60() {}
+
+void ActorUnkMKUR_1EC::func_ov032_0211cf74() {
+    this->func_ov032_0211cfac(0x0);
+
+    if (!data_027e0ce0->func_01fff1a4()) {
+        return;
+    }
+
+    this->func_ov032_0211cfac(0x1);
+}
+
+extern "C" bool func_02017930(unk32, UnkStruct_027e0960_TableEntry_04 *);
+
 // non-matching
-void ActorUnkMKUR_1EC::func_ov032_0211cf74() {}
-// non-matching
-void ActorUnkMKUR::func_ov032_0211cfac() {}
-// non-matching
-void ActorUnkMKUR_1EC::func_ov032_0211d028() {}
+void ActorUnkMKUR_1EC::func_ov032_0211cfac(unk32 param1) {
+    VecFx32 sp00;
+    UnkStruct_027e0960_TableEntry_04 *entry04 = this->func_ov032_0211cd20(data_027e0ce0->func_01fff148(param1));
+    entry04->vfunc_0C(&sp00);
+
+    if (entry04->mUnk_0C != 0x0 && func_02017930(entry04->mUnk_0C, entry04)) {
+        return;
+    }
+    entry04->mUnk_0C = 0x0;
+}
+
+void ActorUnkMKUR_1EC::func_ov032_0211d028() {
+    this->mUnk_14 = 0x0;
+    this->mUnk_18 = 0x0;
+    this->mUnk_0C = 0x0;
+    this->mUnk_10 = 0x0;
+}
+
 // non-matching
 void ActorUnkMKUR::func_ov032_0211d040() {}
 // non-matching
@@ -210,7 +268,7 @@ void ActorUnkMKUR::func_ov032_0211d568() {}
 // non-matching
 void ActorUnkMKUR::func_ov032_0211d674() {}
 // non-matching
-void ActorUnkMKUR::func_ov032_0211d6d8() {}
+void ActorUnkMKUR_1EC::func_ov032_0211d6d8() {}
 // non-matching
 void ActorUnkMKUR::func_ov032_0211d7e8() {}
 // non-matching
