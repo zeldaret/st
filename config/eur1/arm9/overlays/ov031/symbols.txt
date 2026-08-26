@@ -2005,13 +2005,13 @@ data_ov031_02110b90 kind:data(any) addr:0x02110b90
 data_ov031_02110ba0 kind:data(any) addr:0x02110ba0
 data_ov031_02110bb0 kind:data(any) addr:0x02110bb0
 data_ov031_02110bb8 kind:data(any) addr:0x02110bb8
-data_ov031_02110bc8 kind:data(any) addr:0x02110bc8
+data_ov031_02110bc8_eur1 kind:data(any) addr:0x02110bc8
 data_ov031_02110bcc kind:data(any) addr:0x02110bcc
 data_ov031_02110bd0 kind:data(any) addr:0x02110bd0
 data_ov031_02110bf0 kind:data(any) addr:0x02110bf0
 data_ov031_02110bf4 kind:data(any) addr:0x02110bf4
 data_ov031_02110bfc kind:data(any) addr:0x02110bfc
-data_ov031_02110c00 kind:data(any) addr:0x02110c00
+data_ov031_02110ad0 kind:data(any) addr:0x02110c00
 data_ov031_02110c31 kind:data(any) addr:0x02110c31
 data_ov031_02110c38 kind:data(any) addr:0x02110c38
 data_ov031_02110c6c kind:data(any) addr:0x02110c6c
@@ -2025,7 +2025,7 @@ data_ov031_02110cc8 kind:data(any) addr:0x02110cc8
 data_ov031_02110cd4 kind:data(any) addr:0x02110cd4
 data_ov031_02110ce0 kind:data(any) addr:0x02110ce0
 data_ov031_02110cec kind:data(any) addr:0x02110cec
-data_ov031_02110cf8 kind:data(any) addr:0x02110cf8
+data_ov031_02110bc8 kind:data(any) addr:0x02110cf8 local
 data_ov031_02110d1c kind:data(any) addr:0x02110d1c
 data_ov031_02110d30 kind:data(any) addr:0x02110d30
 data_ov031_02110d4c kind:data(any) addr:0x02110d4c
@@ -2047,6 +2047,7 @@ data_ov031_02110e84 kind:data(any) addr:0x02110e84
 data_ov031_02110e98 kind:data(any) addr:0x02110e98
 data_ov031_02110e9c kind:data(any) addr:0x02110e9c ambiguous
 data_ov031_02110ea4 kind:data(any) addr:0x02110ea4
+data_ov031_02110eac kind:data(any) addr:0x02110eac
 data_ov031_02110ec8 kind:data(any) addr:0x02110ec8
 data_ov031_02110ed4 kind:data(any) addr:0x02110ed4
 data_ov031_02110edc kind:data(any) addr:0x02110edc
@@ -2241,40 +2242,39 @@ _ZTV25UnkStruct_027e0ce0_40_108 kind:data(any) addr:0x02112c98 ambiguous
 data_ov031_02112cac kind:data(any) addr:0x02112cac
 data_ov031_02112cb8 kind:data(any) addr:0x02112cb8
 data_ov031_02112ccc kind:data(any) addr:0x02112ccc
-data_ov031_02112cf4 kind:data(any) addr:0x02112cf4
+_ZTV19data_ov031_02112bac kind:data(any) addr:0x02112cec
 data_ov031_02112d1c kind:data(any) addr:0x02112d1c
 data_ov031_02112d28 kind:data(any) addr:0x02112d28
 data_ov031_02112d40 kind:data(any) addr:0x02112d40
 data_ov031_02112d78 kind:data(any) addr:0x02112d78
-data_ov031_02112db8 kind:data(any) addr:0x02112db8
-data_ov031_02112dd4 kind:data(any) addr:0x02112dd4
-data_ov031_02112df0 kind:data(any) addr:0x02112df0
-data_ov031_02112e0c kind:data(any) addr:0x02112e0c
+_ZTV13ActorBomb_180 kind:data(any) addr:0x02112db0
+_ZTV13ActorBomb_19C kind:data(any) addr:0x02112dcc
+_ZTV24ActorBomb_ov031_020e2134 kind:data(any) addr:0x02112de8
+_ZTV16ActorProfileBomb kind:data(any) addr:0x02112e04
 data_ov031_02112e30 kind:data(any) addr:0x02112e30
-data_ov031_02112e8c kind:data(any) addr:0x02112e8c
-data_ov031_02112ea8 kind:data(any) addr:0x02112ea8
+_ZTV13ActorBlast_E8 kind:data(any) addr:0x02112e84
+_ZTV17ActorProfileBlast kind:data(any) addr:0x02112ea0
 data_ov031_02112ecc kind:data(any) addr:0x02112ecc
-data_ov031_02112f28 kind:data(any) addr:0x02112f28
-data_ov031_02112f94 kind:data(any) addr:0x02112f94
-data_ov031_02112fb8 kind:data(any) addr:0x02112fb8
-data_ov031_0211302c kind:data(any) addr:0x0211302c
-data_ov031_02113044 kind:data(any) addr:0x02113044
-data_ov031_02113060 kind:data(any) addr:0x02113060
-data_ov031_0211307c kind:data(any) addr:0x0211307c
-data_ov031_02113098 kind:data(any) addr:0x02113098
+_ZTV19data_ov031_02112de0 kind:data(any) addr:0x02112f20
+_ZTV19ActorProfileUnkTLKT kind:data(any) addr:0x02112f8c
+_ZTV12ActorUnkTLKT kind:data(any) addr:0x02112fb0
+_ZTV21ActorItemBoomerang_A0 kind:data(any) addr:0x0211303c
+_ZTV22ActorItemBoomerang_11C kind:data(any) addr:0x02113058
+_ZTV21ActorItemBoomerang_CC kind:data(any) addr:0x02113074
+_ZTV25ActorProfileItemBoomerang kind:data(any) addr:0x02113090
 data_ov031_021130bc kind:data(any) addr:0x021130bc
-data_ov031_02113118 kind:data(any) addr:0x02113118
-data_ov031_0211311c kind:data(any) addr:0x0211311c
-data_ov031_02113134 kind:data(any) addr:0x02113134
-data_ov031_02113150 kind:data(any) addr:0x02113150
+_ZTV19data_ov031_02112fd8 kind:data(any) addr:0x02113110
+_ZTV24UnkStruct_ov031_02112ff4 kind:data(any) addr:0x02113114
+_ZTV23ActorProfileItemTornado kind:data(any) addr:0x0211312c
+_ZTV16ActorItemTornado kind:data(any) addr:0x02113148
 data_ov031_02113174 kind:data(any) addr:0x02113174
-data_ov031_021131d0 kind:data(any) addr:0x021131d0
+_ZTV19data_ov031_021130a4 kind:data(any) addr:0x021131c8
 data_ov031_021131ec kind:data(any) addr:0x021131ec
-data_ov031_02113250 kind:data(any) addr:0x02113250
+_ZTV19data_ov031_02113250 kind:data(any) addr:0x02113248
 data_ov031_02113254 kind:data(any) addr:0x02113254
-data_ov031_0211326c kind:data(any) addr:0x0211326c
-data_ov031_02113288 kind:data(any) addr:0x02113288
-data_ov031_021132a4 kind:data(any) addr:0x021132a4
+_ZTV15ActorUnkSWBM_98 kind:data(any) addr:0x02113264
+_ZTV15ActorUnkSWBM_94 kind:data(any) addr:0x02113280
+_ZTV19ActorProfileUnkSWBM kind:data(any) addr:0x0211329c
 data_ov031_021132c8 kind:data(any) addr:0x021132c8
 data_ov031_0211331c kind:data(any) addr:0x0211331c
 data_ov031_02113320 kind:data(any) addr:0x02113320
@@ -2283,15 +2283,15 @@ data_ov031_02113328 kind:data(any) addr:0x02113328
 data_ov031_0211332c kind:data(any) addr:0x0211332c
 data_ov031_02113344 kind:data(any) addr:0x02113344
 data_ov031_02113358 kind:data(any) addr:0x02113358
-data_ov031_021133a0 kind:data(any) addr:0x021133a0
+_ZTV19data_ov031_021132a8 kind:data(any) addr:0x02113398
 data_ov031_021133f0 kind:data(any) addr:0x021133f0
-data_ov031_0211350c kind:data(any) addr:0x0211350c
+_ZTV24ActorProfileUnkROCK_Base kind:data(any) addr:0x02113504
 data_ov031_02113530 kind:data(any) addr:0x02113530
 data_ov031_02113554 kind:data(any) addr:0x02113554
 data_ov031_021135a8 kind:data(any) addr:0x021135a8
 data_ov031_021135b8 kind:data(any) addr:0x021135b8
-data_ov031_021135d0 kind:data(any) addr:0x021135d0
-data_ov031_021135e8 kind:data(any) addr:0x021135e8
+_ZTV13ActorRupee_C4 kind:data(any) addr:0x021135c8
+_ZTV17ActorProfileRupee kind:data(any) addr:0x021135e0
 data_ov031_0211360c kind:data(any) addr:0x0211360c
 data_ov031_02113660 kind:data(any) addr:0x02113660
 data_ov031_021136c8 kind:data(any) addr:0x021136c8
@@ -2300,15 +2300,15 @@ data_ov031_02113734 kind:data(any) addr:0x02113734
 data_ov031_02113738 kind:data(any) addr:0x02113738
 data_ov031_0211373c kind:data(any) addr:0x0211373c
 data_ov031_0211375c kind:data(any) addr:0x0211375c
-data_ov031_02113768 kind:data(any) addr:0x02113768
+_ZTV19ActorProfileUnkZLSL kind:data(any) addr:0x02113760
 data_ov031_0211378c kind:data(any) addr:0x0211378c
 data_ov031_021137b0 kind:data(any) addr:0x021137b0
-data_ov031_021137dc kind:data(any) addr:0x021137dc
-data_ov031_02113824 kind:data(any) addr:0x02113824
-data_ov031_0211386c kind:data(any) addr:0x0211386c
+_ZTV17ActorUnkZLSL_27CC kind:data(any) addr:0x021137d4
+_ZTV17ActorUnkZLSL_2700 kind:data(any) addr:0x0211381c
+_ZTV24UnkStruct_ov031_0211372c kind:data(any) addr:0x02113864
 data_ov031_021138b0 kind:data(any) addr:0x021138b0
 data_ov031_02113938 kind:data(any) addr:0x02113938
-data_ov031_021139c8 kind:data(any) addr:0x021139c8
+_ZTV12ActorUnkZLSL kind:data(any) addr:0x021139c0
 data_ov031_02113a8c kind:data(any) addr:0x02113a8c
 data_ov031_02113b48 kind:data(any) addr:0x02113b48
 data_ov031_02113b60 kind:data(any) addr:0x02113b60
@@ -2323,141 +2323,141 @@ data_ov031_02113c20 kind:data(any) addr:0x02113c20
 data_ov031_02113c38 kind:data(any) addr:0x02113c38
 data_ov031_02113c98 kind:data(any) addr:0x02113c98
 data_ov031_02113e48 kind:data(any) addr:0x02113e48
-data_ov031_02113e54 kind:data(any) addr:0x02113e54
+_ZTV19data_ov031_02113d14 kind:data(any) addr:0x02113e4c
 data_ov031_02113e5c kind:data(any) addr:0x02113e5c ambiguous
 data_ov031_02113e98 kind:data(any) addr:0x02113e98
 data_ov031_02113ea4 kind:data(any) addr:0x02113ea4
 data_ov031_02113eb4 kind:data(any) addr:0x02113eb4
 data_ov031_02113ee4 kind:data(any) addr:0x02113ee4
-data_ov031_02113f1c kind:data(any) addr:0x02113f1c
-data_ov031_02113f34 kind:data(any) addr:0x02113f34
+_ZTV13ActorHeart_C4 kind:data(any) addr:0x02113f14
+_ZTV17ActorProfileHeart kind:data(any) addr:0x02113f2c
 data_ov031_02113f58 kind:data(any) addr:0x02113f58
-data_ov031_02113fb4 kind:data(any) addr:0x02113fb4
-data_ov031_02113fd8 kind:data(any) addr:0x02113fd8
-data_ov031_02114034 kind:data(any) addr:0x02114034
+_ZTV19ActorProfileUnkRMTG kind:data(any) addr:0x02113fac
+_ZTV12ActorUnkRMTG kind:data(any) addr:0x02113fd0
+_ZTV19ActorProfileUnkSCCN kind:data(any) addr:0x0211402c
 data_ov031_02114058 kind:data(any) addr:0x02114058
-data_ov031_02114080 kind:data(any) addr:0x02114080
-data_ov031_021140dc kind:data(any) addr:0x021140dc
-data_ov031_021140f8 kind:data(any) addr:0x021140f8
-data_ov031_02114114 kind:data(any) addr:0x02114114
-data_ov031_02114184 kind:data(any) addr:0x02114184
-data_ov031_021141a0 kind:data(any) addr:0x021141a0
-data_ov031_021141e0 kind:data(any) addr:0x021141e0
-data_ov031_02114228 kind:data(any) addr:0x02114228
-data_ov031_02114298 kind:data(any) addr:0x02114298
-data_ov031_021142b4 kind:data(any) addr:0x021142b4
-data_ov031_021142f4 kind:data(any) addr:0x021142f4
-data_ov031_0211433c kind:data(any) addr:0x0211433c
-data_ov031_021143ac kind:data(any) addr:0x021143ac
-data_ov031_021143c8 kind:data(any) addr:0x021143c8
-data_ov031_021143e4 kind:data(any) addr:0x021143e4
+_ZTV12ActorUnkSCCN kind:data(any) addr:0x02114078
+_ZTV19data_ov031_02113f9c kind:data(any) addr:0x021140d4
+_ZTV19data_ov031_02113fb8 kind:data(any) addr:0x021140f0
+_ZTV19data_ov031_02113fcc kind:data(any) addr:0x0211410c
+_ZTV15ActorProfilePot kind:data(any) addr:0x0211417c
+data_ov031_02114060 kind:data(any) addr:0x021141a0 local
+data_ov031_021140a0 kind:data(any) addr:0x021141e0 local
+_ZTV8ActorPot kind:data(any) addr:0x02114220
+_ZTV22ActorProfileItemFlower kind:data(any) addr:0x02114290
+data_ov031_02114174 kind:data(any) addr:0x021142b4 local
+data_ov031_021141b4 kind:data(any) addr:0x021142f4 local
+_ZTV15ActorItemFlower kind:data(any) addr:0x02114334
+_ZTV18ActorShotArrow_194 kind:data(any) addr:0x021143a4
+_ZTV18ActorShotArrow_178 kind:data(any) addr:0x021143c0
+_ZTV21ActorProfileShotArrow kind:data(any) addr:0x021143dc
 data_ov031_02114400 kind:data(any) addr:0x02114400
 data_ov031_02114440 kind:data(any) addr:0x02114440
-data_ov031_02114488 kind:data(any) addr:0x02114488
-data_ov031_021144e4 kind:data(any) addr:0x021144e4
+_ZTV14ActorShotArrow kind:data(any) addr:0x02114480
+_ZTV19ActorProfileUnkATTG kind:data(any) addr:0x021144dc
 data_ov031_02114508 kind:data(any) addr:0x02114508
-data_ov031_02114564 kind:data(any) addr:0x02114564
-data_ov031_02114580 kind:data(any) addr:0x02114580
+_ZTV19data_ov031_02114424 kind:data(any) addr:0x0211455c
+_ZTV19data_ov031_02114438 kind:data(any) addr:0x02114578
 data_ov031_021145dc kind:data(any) addr:0x021145dc
-data_ov031_021145e8 kind:data(any) addr:0x021145e8
-data_ov031_0211464c kind:data(any) addr:0x0211464c
-data_ov031_02114670 kind:data(any) addr:0x02114670
+_ZTV19data_ov031_021144a0 kind:data(any) addr:0x021145e0
+_ZTV19ActorProfileUnkNTTZ kind:data(any) addr:0x02114644
+_ZTV12ActorUnkNTTZ kind:data(any) addr:0x02114668
 data_ov031_021146c4 kind:data(any) addr:0x021146c4
 data_ov031_021146d4 kind:data(any) addr:0x021146d4
 data_ov031_021146e4 kind:data(any) addr:0x021146e4
 data_ov031_021146e8 kind:data(any) addr:0x021146e8
 data_ov031_021146f8 kind:data(any) addr:0x021146f8
 data_ov031_0211471c kind:data(any) addr:0x0211471c
-data_ov031_02114748 kind:data(any) addr:0x02114748
-data_ov031_021147a4 kind:data(any) addr:0x021147a4
-data_ov031_02114800 kind:data(any) addr:0x02114800 ambiguous
-data_ov031_02114860 kind:data(any) addr:0x02114860 ambiguous
-data_ov031_021148c0 kind:data(any) addr:0x021148c0
+_ZTV12ActorUnkTGTZ kind:data(any) addr:0x02114740
+_ZTV19data_ov031_0211465c kind:data(any) addr:0x0211479c
+_ZTV19data_ov031_021146b8 kind:data(any) addr:0x021147f8 ambiguous
+_ZTV19data_ov031_02114718 kind:data(any) addr:0x02114858 ambiguous
+_ZTV19data_ov031_02114778 kind:data(any) addr:0x021148b8
 data_ov031_02114920 kind:data(any) addr:0x02114920
 data_ov031_02114944 kind:data(any) addr:0x02114944
 data_ov031_0211494c kind:data(any) addr:0x0211494c
-data_ov031_02114960 kind:data(any) addr:0x02114960
-data_ov031_02114984 kind:data(any) addr:0x02114984
-data_ov031_021149e0 kind:data(any) addr:0x021149e0 ambiguous
+_ZTV19ActorProfileUnkSWCH kind:data(any) addr:0x02114958
+_ZTV12ActorUnkSWCH kind:data(any) addr:0x0211497c
+_ZTV19data_ov031_021148a0 kind:data(any) addr:0x021149d8 ambiguous
 data_ov031_021149f0 kind:data(any) addr:0x021149f0
-data_ov031_02114a00 kind:data(any) addr:0x02114a00
-data_ov031_02114a24 kind:data(any) addr:0x02114a24
-data_ov031_02114a80 kind:data(any) addr:0x02114a80
-data_ov031_02114aa4 kind:data(any) addr:0x02114aa4
-data_ov031_02114b00 kind:data(any) addr:0x02114b00
+_ZTV19ActorProfileUnkSWON kind:data(any) addr:0x021149f8
+_ZTV12ActorUnkSWON kind:data(any) addr:0x02114a1c
+_ZTV19ActorProfileUnkNORE kind:data(any) addr:0x02114a78
+_ZTV12ActorUnkNORE kind:data(any) addr:0x02114a9c
+_ZTV19ActorProfileUnkFLEN kind:data(any) addr:0x02114af8
 data_ov031_02114b24 kind:data(any) addr:0x02114b24
-data_ov031_02114b80 kind:data(any) addr:0x02114b80
-data_ov031_02114b9c kind:data(any) addr:0x02114b9c
-data_ov031_02114bb8 kind:data(any) addr:0x02114bb8
+_ZTV20ActorRollingStone_D4 kind:data(any) addr:0x02114b78
+_ZTV21ActorRollingStone_104 kind:data(any) addr:0x02114b94
+_ZTV24ActorProfileRollingStone kind:data(any) addr:0x02114bb0
 data_ov031_02114bd4 kind:data(any) addr:0x02114bd4
 data_ov031_02114c2c kind:data(any) addr:0x02114c2c
-data_ov031_02114c8c kind:data(any) addr:0x02114c8c
-data_ov031_02114ce0 kind:data(any) addr:0x02114ce0
-data_ov031_02114cf0 kind:data(any) addr:0x02114cf0
-data_ov031_02114d28 kind:data(any) addr:0x02114d28
-data_ov031_02114d68 kind:data(any) addr:0x02114d68
-data_ov031_02114d80 kind:data(any) addr:0x02114d80
-data_ov031_02114da4 kind:data(any) addr:0x02114da4
-data_ov031_02114dc8 kind:data(any) addr:0x02114dc8
-data_ov031_02114dec kind:data(any) addr:0x02114dec
-data_ov031_02114e10 kind:data(any) addr:0x02114e10
+_ZTV17ActorRollingStone kind:data(any) addr:0x02114c84
+data_ov031_02114ba0 kind:data(any) addr:0x02114ce0 local
+data_ov031_02114bb0 kind:data(any) addr:0x02114cf0 local
+data_ov031_02114be8 kind:data(any) addr:0x02114d28 local
+_ZTV16ActorItemDrop_C4 kind:data(any) addr:0x02114d60
+_ZTV21ActorProfileArrowDrop kind:data(any) addr:0x02114d78
+_ZTV24ActorProfileTreasureDrop kind:data(any) addr:0x02114d9c
+_ZTV25ActorProfileRedPotionDrop kind:data(any) addr:0x02114dc0
+_ZTV20ActorProfileBombDrop kind:data(any) addr:0x02114de4
+_ZTV13ActorItemDrop kind:data(any) addr:0x02114e08
 data_ov031_02114e68 kind:data(any) addr:0x02114e68
 data_ov031_02114e7c kind:data(any) addr:0x02114e7c
-data_ov031_02114e94 kind:data(any) addr:0x02114e94
+_ZTV19ActorProfileUnkMLCK kind:data(any) addr:0x02114e8c
 data_ov031_02114eb8 kind:data(any) addr:0x02114eb8
-data_ov031_02114f34 kind:data(any) addr:0x02114f34
-data_ov031_02114f64 kind:data(any) addr:0x02114f64
+_ZTV15ActorUnkMLCK_94 kind:data(any) addr:0x02114f2c
+_ZTV19ActorProfileUnkCLLT kind:data(any) addr:0x02114f5c
 data_ov031_02114f88 kind:data(any) addr:0x02114f88
-data_ov031_02114ff4 kind:data(any) addr:0x02114ff4
-data_ov031_02115010 kind:data(any) addr:0x02115010
-data_ov031_02115048 kind:data(any) addr:0x02115048
-data_ov031_021150a8 kind:data(any) addr:0x021150a8
-data_ov031_021150c0 kind:data(any) addr:0x021150c0
-data_ov031_021150e4 kind:data(any) addr:0x021150e4
+_ZTV19ActorProfileUnkEFSB kind:data(any) addr:0x02114fec
+data_ov031_02114ed0 kind:data(any) addr:0x02115010 local
+_ZTV12ActorUnkEFSB kind:data(any) addr:0x02115040
+_ZTV15ActorUnkNFSP_C0 kind:data(any) addr:0x021150a0
+_ZTV19ActorProfileUnkNFSP kind:data(any) addr:0x021150b8
+_ZTV12ActorUnkNFSP kind:data(any) addr:0x021150dc
 data_ov031_0211513c kind:data(any) addr:0x0211513c
-data_ov031_02115148 kind:data(any) addr:0x02115148
+_ZTV17MapObjectDoorBase kind:data(any) addr:0x02115140
 data_ov031_021151e0 kind:data(any) addr:0x021151e0
 data_ov031_021151f0 kind:data(any) addr:0x021151f0
-data_ov031_021151fc kind:data(any) addr:0x021151fc
-data_ov031_02115218 kind:data(any) addr:0x02115218
+_ZTV31MapObjectProfileDoorDangerSpawn kind:data(any) addr:0x021151f4
+_ZTV24MapObjectDoorDangerSpawn kind:data(any) addr:0x02115210
 data_ov031_021152b0 kind:data(any) addr:0x021152b0
 data_ov031_021152c4 kind:data(any) addr:0x021152c4
-data_ov031_021152d0 kind:data(any) addr:0x021152d0
-data_ov031_021152ec kind:data(any) addr:0x021152ec
+_ZTV23MapObjectProfileDoorKey kind:data(any) addr:0x021152c8
+_ZTV16MapObjectDoorKey kind:data(any) addr:0x021152e4
 data_ov031_02115384 kind:data(any) addr:0x02115384
 data_ov031_02115394 kind:data(any) addr:0x02115394
-data_ov031_021153a0 kind:data(any) addr:0x021153a0
-data_ov031_021153bc kind:data(any) addr:0x021153bc
+_ZTV26MapObjectProfileDoorSwitch kind:data(any) addr:0x02115398
+_ZTV19MapObjectDoorSwitch kind:data(any) addr:0x021153b4
 data_ov031_02115454 kind:data(any) addr:0x02115454
 data_ov031_02115468 kind:data(any) addr:0x02115468
-data_ov031_02115474 kind:data(any) addr:0x02115474
-data_ov031_0211549c kind:data(any) addr:0x0211549c
+_ZTV25MapObjectProfileDoorClick kind:data(any) addr:0x0211546c
+_ZTV18MapObjectDoorClick kind:data(any) addr:0x02115494
 data_ov031_02115534 kind:data(any) addr:0x02115534
-data_ov031_0211555c kind:data(any) addr:0x0211555c
-data_ov031_02115584 kind:data(any) addr:0x02115584
+_ZTV25MapObjectProfileDoorTouch kind:data(any) addr:0x02115554
+_ZTV18MapObjectDoorTouch kind:data(any) addr:0x0211557c
 data_ov031_0211561c kind:data(any) addr:0x0211561c
-data_ov031_02115644 kind:data(any) addr:0x02115644
+_ZTV19data_ov031_02115504 kind:data(any) addr:0x0211563c
 data_ov031_02115660 kind:data(any) addr:0x02115660
 data_ov031_021156a0 kind:data(any) addr:0x021156a0
 data_ov031_021156c8 kind:data(any) addr:0x021156c8
 data_ov031_02115708 kind:data(any) addr:0x02115708
 data_ov031_02115724 kind:data(any) addr:0x02115724
-data_ov031_02115764 kind:data(any) addr:0x02115764
-data_ov031_02115780 kind:data(any) addr:0x02115780
-data_ov031_0211579c kind:data(any) addr:0x0211579c
+_ZTV24MapObjectProfilePot_Base kind:data(any) addr:0x0211575c
+_ZTV21MapObjectProfileGrass kind:data(any) addr:0x02115778
+_ZTV14MapObjectGrass kind:data(any) addr:0x02115794
 data_ov031_021157dc kind:data(any) addr:0x021157dc
 data_ov031_021157f0 kind:data(any) addr:0x021157f0
-data_ov031_0211580c kind:data(any) addr:0x0211580c
-data_ov031_0211584c kind:data(any) addr:0x0211584c
-data_ov031_02115868 kind:data(any) addr:0x02115868
-data_ov031_021158cc kind:data(any) addr:0x021158cc
-data_ov031_021158f0 kind:data(any) addr:0x021158f0
-data_ov031_02115900 kind:data(any) addr:0x02115900
-data_ov031_0211591c kind:data(any) addr:0x0211591c
+_ZTV16MapObjectUnkSWHT kind:data(any) addr:0x02115804
+_ZTV26MapObjectProfileBombFlower kind:data(any) addr:0x02115844
+_ZTV19MapObjectBombFlower kind:data(any) addr:0x02115860
+_ZTV19data_ov031_021158cc kind:data(any) addr:0x021158c4
+data_ov031_021157b0 kind:data(any) addr:0x021158f0 local
+_ZTV31MapObjectProfileTreasureSpawned kind:data(any) addr:0x021158f8
+_ZTV24MapObjectTreasureSpawned kind:data(any) addr:0x02115914
 data_ov031_02115970 kind:data(any) addr:0x02115970
 data_ov031_02115974 kind:data(any) addr:0x02115974
 data_ov031_02115984 kind:data(any) addr:0x02115984
-data_ov031_021159b0 kind:data(any) addr:0x021159b0
+_ZTV18MapObjectChestBase kind:data(any) addr:0x021159a8
 data_ov031_02115a04 kind:data(any) addr:0x02115a04
 data_ov031_02115a14 kind:data(any) addr:0x02115a14
 data_ov031_02115a30 kind:data(any) addr:0x02115a30
@@ -2470,8 +2470,8 @@ data_ov031_02115b34 kind:data(any) addr:0x02115b34
 data_ov031_02115b90 kind:data(any) addr:0x02115b90
 data_ov031_02115bac kind:data(any) addr:0x02115bac
 data_ov031_02115c18 kind:data(any) addr:0x02115c18
-data_ov031_02115c2c kind:data(any) addr:0x02115c2c
-data_ov031_02115c48 kind:data(any) addr:0x02115c48
+_ZTV19data_ov031_02115c2c kind:data(any) addr:0x02115c24
+_ZTV12MapObjectPot kind:data(any) addr:0x02115c40
 data_ov031_02115ca0 kind:data(any) addr:0x02115ca0
 data_ov031_02115cb4 kind:data(any) addr:0x02115cb4
 data_ov031_02115ccc kind:data(any) addr:0x02115ccc
@@ -2479,11 +2479,11 @@ data_ov031_02115ce8 kind:data(any) addr:0x02115ce8
 data_ov031_02115d04 kind:data(any) addr:0x02115d04
 data_ov031_02115d44 kind:data(any) addr:0x02115d44
 data_ov031_02115d60 kind:data(any) addr:0x02115d60
-data_ov031_02115dc0 kind:data(any) addr:0x02115dc0
-data_ov031_02115ddc kind:data(any) addr:0x02115ddc
-data_ov031_02115e28 kind:data(any) addr:0x02115e28
-data_ov031_02115e34 kind:data(any) addr:0x02115e34
-data_ov031_02115e58 kind:data(any) addr:0x02115e58
+_ZTV23MapObjectProfileUnkSKDI kind:data(any) addr:0x02115db8
+_ZTV16MapObjectUnkSKDI kind:data(any) addr:0x02115dd4
+_ZTV27ActorUnkSKDO_ov031_02115ce8 kind:data(any) addr:0x02115e20
+_ZTV19ActorProfileUnkSKDO kind:data(any) addr:0x02115e2c
+_ZTV12ActorUnkSKDO kind:data(any) addr:0x02115e50
 data_ov031_02115eb0 kind:data(any) addr:0x02115eb0
 data_ov031_02115ec4 kind:data(any) addr:0x02115ec4
 data_ov031_02115eec kind:data(any) addr:0x02115eec
@@ -2527,103 +2527,106 @@ data_ov031_0211646c kind:data(any) addr:0x0211646c
 data_ov031_02116480 kind:data(any) addr:0x02116480 ambiguous
 data_ov031_02116498 kind:data(any) addr:0x02116498
 data_ov031_021164c0 kind:bss addr:0x021164c0
-data_ov031_02116544 kind:bss addr:0x02116544
-data_ov031_02116548 kind:bss addr:0x02116548
-data_ov031_02116554 kind:bss addr:0x02116554
-data_ov031_02116590 kind:bss addr:0x02116590
-data_ov031_02116594 kind:bss addr:0x02116594
-data_ov031_021165a0 kind:bss addr:0x021165a0
-data_ov031_021165dc kind:bss addr:0x021165dc
-data_ov031_021165e0 kind:bss addr:0x021165e0
-data_ov031_021165ec kind:bss addr:0x021165ec
-data_ov031_02116628 kind:bss addr:0x02116628
-data_ov031_0211662c kind:bss addr:0x0211662c
-data_ov031_02116638 kind:bss addr:0x02116638
-data_ov031_02116674 kind:bss addr:0x02116674
-data_ov031_02116678 kind:bss addr:0x02116678
-data_ov031_02116684 kind:bss addr:0x02116684
-data_ov031_021166c0 kind:bss addr:0x021166c0
-data_ov031_021166c4 kind:bss addr:0x021166c4
-data_ov031_021166d0 kind:bss addr:0x021166d0
-data_ov031_0211670c kind:bss addr:0x0211670c
-data_ov031_02116710 kind:bss addr:0x02116710
-data_ov031_02116714 kind:bss addr:0x02116714
-data_ov031_02116720 kind:bss addr:0x02116720
+_ZGVN15ProfileInstanceI16ActorProfileBombE8sProfileE kind:bss addr:0x02116544
+@10775 kind:bss addr:0x02116548 local
+_ZN15ProfileInstanceI16ActorProfileBombE8sProfileE kind:bss addr:0x02116554
+_ZGVN15ProfileInstanceI17ActorProfileBlastE8sProfileE kind:bss addr:0x02116590
+@10781 kind:bss addr:0x02116594 local
+_ZN15ProfileInstanceI17ActorProfileBlastE8sProfileE kind:bss addr:0x021165a0
+_ZGVN15ProfileInstanceI19ActorProfileUnkTLKTE8sProfileE kind:bss addr:0x021165dc
+@10787 kind:bss addr:0x021165e0 local
+_ZN15ProfileInstanceI19ActorProfileUnkTLKTE8sProfileE kind:bss addr:0x021165ec
+_ZGVN15ProfileInstanceI25ActorProfileItemBoomerangE8sProfileE kind:bss addr:0x02116628
+@10793 kind:bss addr:0x0211662c local
+_ZN15ProfileInstanceI25ActorProfileItemBoomerangE8sProfileE kind:bss addr:0x02116638
+_ZGVN15ProfileInstanceI23ActorProfileItemTornadoE8sProfileE kind:bss addr:0x02116674
+@10799 kind:bss addr:0x02116678 local
+_ZN15ProfileInstanceI23ActorProfileItemTornadoE8sProfileE kind:bss addr:0x02116684
+_ZGVN15ProfileInstanceI19ActorProfileUnkSWBME8sProfileE kind:bss addr:0x021166c0
+@10805 kind:bss addr:0x021166c4 local
+_ZN15ProfileInstanceI19ActorProfileUnkSWBME8sProfileE kind:bss addr:0x021166d0
+data_ov031_021165cc kind:bss addr:0x0211670c
+_ZGVN15ProfileInstanceI19ActorProfileUnkROCKE8sProfileE kind:bss addr:0x02116710
+@10811 kind:bss addr:0x02116714 local
+_ZN15ProfileInstanceI19ActorProfileUnkROCKE8sProfileE kind:bss addr:0x02116720
 data_ov031_021167f8 kind:bss addr:0x021167f8
 data_ov031_02116818 kind:bss addr:0x02116818
 data_ov031_0211681c kind:bss addr:0x0211681c
 data_ov031_02116828 kind:bss addr:0x02116828
 data_ov031_02116864 kind:bss addr:0x02116864
 data_ov031_0211686c kind:bss addr:0x0211686c
-data_ov031_02116878 kind:bss addr:0x02116878
-data_ov031_02116884 kind:bss addr:0x02116884
-data_ov031_021168c0 kind:bss addr:0x021168c0
-data_ov031_021168e4 kind:bss addr:0x021168e4 ambiguous
-data_ov031_02116998 kind:bss addr:0x02116998
-data_ov031_0211699c kind:bss addr:0x0211699c
-data_ov031_021169a8 kind:bss addr:0x021169a8
-data_ov031_021169e4 kind:bss addr:0x021169e4
-data_ov031_021169e8 kind:bss addr:0x021169e8
-data_ov031_021169f4 kind:bss addr:0x021169f4
-data_ov031_02116acc kind:bss addr:0x02116acc
-data_ov031_02116ad0 kind:bss addr:0x02116ad0
-data_ov031_02116adc kind:bss addr:0x02116adc
-data_ov031_02116b18 kind:bss addr:0x02116b18
-data_ov031_02116b1c kind:bss addr:0x02116b1c
-data_ov031_02116b28 kind:bss addr:0x02116b28
-data_ov031_02116b64 kind:bss addr:0x02116b64
-data_ov031_02116b68 kind:bss addr:0x02116b68
-data_ov031_02116b74 kind:bss addr:0x02116b74
-data_ov031_02116bb0 kind:bss addr:0x02116bb0
-data_ov031_02116bb4 kind:bss addr:0x02116bb4
-data_ov031_02116bc0 kind:bss addr:0x02116bc0
-data_ov031_02116bfc kind:bss addr:0x02116bfc
-data_ov031_02116c00 kind:bss addr:0x02116c00
-data_ov031_02116c0c kind:bss addr:0x02116c0c
-data_ov031_02116c48 kind:bss addr:0x02116c48
-data_ov031_02116c4c kind:bss addr:0x02116c4c
-data_ov031_02116c58 kind:bss addr:0x02116c58
-data_ov031_02116c94 kind:bss addr:0x02116c94
-data_ov031_02116c98 kind:bss addr:0x02116c98
-data_ov031_02116ca4 kind:bss addr:0x02116ca4
-data_ov031_02116cb0 kind:bss addr:0x02116cb0
-data_ov031_02116cbc kind:bss addr:0x02116cbc
-data_ov031_02116d94 kind:bss addr:0x02116d94
-data_ov031_02116d98 kind:bss addr:0x02116d98
-data_ov031_02116da4 kind:bss addr:0x02116da4
-data_ov031_02116de0 kind:bss addr:0x02116de0
-data_ov031_02116de4 kind:bss addr:0x02116de4
-data_ov031_02116df0 kind:bss addr:0x02116df0
-data_ov031_02116e2c kind:bss addr:0x02116e2c
-data_ov031_02116e30 kind:bss addr:0x02116e30
-data_ov031_02116e3c kind:bss addr:0x02116e3c
-data_ov031_02116e78 kind:bss addr:0x02116e78
-data_ov031_02116e7c kind:bss addr:0x02116e7c
-data_ov031_02116e88 kind:bss addr:0x02116e88
-data_ov031_02116ec4 kind:bss addr:0x02116ec4
-data_ov031_02116ec8 kind:bss addr:0x02116ec8
-data_ov031_02116ed4 kind:bss addr:0x02116ed4
-data_ov031_02116fac kind:bss addr:0x02116fac
-data_ov031_02116fbc kind:bss addr:0x02116fbc
-data_ov031_02116fc8 kind:bss addr:0x02116fc8
-data_ov031_02116fd4 kind:bss addr:0x02116fd4
-data_ov031_02116fe0 kind:bss addr:0x02116fe0
-data_ov031_02116fec kind:bss addr:0x02116fec
-data_ov031_02117028 kind:bss addr:0x02117028
-data_ov031_02117064 kind:bss addr:0x02117064
-data_ov031_021170a0 kind:bss addr:0x021170a0
-data_ov031_021170dc kind:bss addr:0x021170dc
-data_ov031_021170e0 kind:bss addr:0x021170e0
-data_ov031_021170ec kind:bss addr:0x021170ec
-data_ov031_02117128 kind:bss addr:0x02117128
-data_ov031_0211712c kind:bss addr:0x0211712c
-data_ov031_02117138 kind:bss addr:0x02117138
-data_ov031_02117174 kind:bss addr:0x02117174
-data_ov031_02117178 kind:bss addr:0x02117178
-data_ov031_02117184 kind:bss addr:0x02117184
-data_ov031_0211725c kind:bss addr:0x0211725c
-data_ov031_02117260 kind:bss addr:0x02117260
-data_ov031_0211726c kind:bss addr:0x0211726c
+_ZGVN15ProfileInstanceI19ActorProfileUnkZLSLE8sProfileE kind:bss addr:0x02116878
+@10824 kind:bss addr:0x02116884 local
+_ZN15ProfileInstanceI19ActorProfileUnkZLSLE8sProfileE kind:bss addr:0x021168c0
+_ZN15ProfileInstanceI19ActorProfileUnkZSRSE8sProfileE kind:bss addr:0x021168e4 ambiguous
+_ZGVN15ProfileInstanceI17ActorProfileHeartE8sProfileE kind:bss addr:0x02116998
+@10830 kind:bss addr:0x0211699c local
+_ZN15ProfileInstanceI17ActorProfileHeartE8sProfileE kind:bss addr:0x021169a8
+_ZGVN15ProfileInstanceI19ActorProfileUnkRMTGE8sProfileE kind:bss addr:0x021169e4
+@10836 kind:bss addr:0x021169e8 local
+_ZN15ProfileInstanceI19ActorProfileUnkRMTGE8sProfileE kind:bss addr:0x021169f4
+_ZGVN15ProfileInstanceI19ActorProfileUnkSCCNE8sProfileE kind:bss addr:0x02116acc
+@10842 kind:bss addr:0x02116ad0 local
+_ZN15ProfileInstanceI19ActorProfileUnkSCCNE8sProfileE kind:bss addr:0x02116adc
+_ZGVN15ProfileInstanceI15ActorProfilePotE8sProfileE kind:bss addr:0x02116b18
+@10848 kind:bss addr:0x02116b1c local
+_ZN15ProfileInstanceI15ActorProfilePotE8sProfileE kind:bss addr:0x02116b28
+_ZGVN15ProfileInstanceI22ActorProfileItemFlowerE8sProfileE kind:bss addr:0x02116b64
+@10854 kind:bss addr:0x02116b68 local
+_ZN15ProfileInstanceI22ActorProfileItemFlowerE8sProfileE kind:bss addr:0x02116b74
+_ZGVN15ProfileInstanceI21ActorProfileShotArrowE8sProfileE kind:bss addr:0x02116bb0
+@10860 kind:bss addr:0x02116bb4 local
+_ZN15ProfileInstanceI21ActorProfileShotArrowE8sProfileE kind:bss addr:0x02116bc0
+_ZGVN15ProfileInstanceI19ActorProfileUnkATTGE8sProfileE kind:bss addr:0x02116bfc
+@10866 kind:bss addr:0x02116c00 local
+_ZN15ProfileInstanceI19ActorProfileUnkATTGE8sProfileE kind:bss addr:0x02116c0c
+_ZGVN15ProfileInstanceI19ActorProfileUnkNTTZE8sProfileE kind:bss addr:0x02116c48
+@10872 kind:bss addr:0x02116c4c local
+_ZN15ProfileInstanceI19ActorProfileUnkNTTZE8sProfileE kind:bss addr:0x02116c58
+data_ov031_02116b54 kind:bss addr:0x02116c94
+data_ov031_02116b58 kind:bss addr:0x02116c98
+_ZGVN15ProfileInstanceI19ActorProfileUnkTGTZE8sProfileE kind:bss addr:0x02116ca4
+@10878 kind:bss addr:0x02116cb0 local
+_ZN15ProfileInstanceI19ActorProfileUnkTGTZE8sProfileE kind:bss addr:0x02116cbc
+_ZGVN15ProfileInstanceI19ActorProfileUnkSWCHE8sProfileE kind:bss addr:0x02116d94
+@10884 kind:bss addr:0x02116d98 local
+_ZN15ProfileInstanceI19ActorProfileUnkSWCHE8sProfileE kind:bss addr:0x02116da4
+_ZGVN15ProfileInstanceI19ActorProfileUnkSWONE8sProfileE kind:bss addr:0x02116de0
+@10890 kind:bss addr:0x02116de4 local
+_ZN15ProfileInstanceI19ActorProfileUnkSWONE8sProfileE kind:bss addr:0x02116df0
+_ZGVN15ProfileInstanceI19ActorProfileUnkNOREE8sProfileE kind:bss addr:0x02116e2c
+@10896 kind:bss addr:0x02116e30 local
+_ZN15ProfileInstanceI19ActorProfileUnkNOREE8sProfileE kind:bss addr:0x02116e3c
+_ZGVN15ProfileInstanceI19ActorProfileUnkFLENE8sProfileE kind:bss addr:0x02116e78
+@10902 kind:bss addr:0x02116e7c local
+_ZN15ProfileInstanceI19ActorProfileUnkFLENE8sProfileE kind:bss addr:0x02116e88
+_ZGVN15ProfileInstanceI24ActorProfileRollingStoneE8sProfileE kind:bss addr:0x02116ec4
+@10908 kind:bss addr:0x02116ec8 local
+_ZN15ProfileInstanceI24ActorProfileRollingStoneE8sProfileE kind:bss addr:0x02116ed4
+_ZGVN15ProfileInstanceI24ActorProfileTreasureDropE8sProfileE kind:bss addr:0x02116fac
+_ZGVN15ProfileInstanceI25ActorProfileRedPotionDropE8sProfileE kind:bss addr:0x02116fb0
+_ZGVN15ProfileInstanceI20ActorProfileBombDropE8sProfileE kind:bss addr:0x02116fb4
+_ZGVN15ProfileInstanceI21ActorProfileArrowDropE8sProfileE kind:bss addr:0x02116fb8
+@2630 kind:bss addr:0x02116fbc local
+@2591 kind:bss addr:0x02116fc8 local
+@2604 kind:bss addr:0x02116fd4 local
+@2617 kind:bss addr:0x02116fe0 local
+_ZN15ProfileInstanceI25ActorProfileRedPotionDropE8sProfileE kind:bss addr:0x02116fec
+_ZN15ProfileInstanceI24ActorProfileTreasureDropE8sProfileE kind:bss addr:0x02117028
+_ZN15ProfileInstanceI21ActorProfileArrowDropE8sProfileE kind:bss addr:0x02117064
+_ZN15ProfileInstanceI20ActorProfileBombDropE8sProfileE kind:bss addr:0x021170a0
+_ZGVN15ProfileInstanceI19ActorProfileUnkMLCKE8sProfileE kind:bss addr:0x021170dc
+@10920 kind:bss addr:0x021170e0 local
+_ZN15ProfileInstanceI19ActorProfileUnkMLCKE8sProfileE kind:bss addr:0x021170ec
+_ZGVN15ProfileInstanceI19ActorProfileUnkCLLTE8sProfileE kind:bss addr:0x02117128
+@10926 kind:bss addr:0x0211712c local
+_ZN15ProfileInstanceI19ActorProfileUnkCLLTE8sProfileE kind:bss addr:0x02117138
+_ZGVN15ProfileInstanceI19ActorProfileUnkEFSBE8sProfileE kind:bss addr:0x02117174
+@10932 kind:bss addr:0x02117178 local
+_ZN15ProfileInstanceI19ActorProfileUnkEFSBE8sProfileE kind:bss addr:0x02117184
+_ZGVN15ProfileInstanceI19ActorProfileUnkNFSPE8sProfileE kind:bss addr:0x0211725c
+@10938 kind:bss addr:0x02117260 local
+_ZN15ProfileInstanceI19ActorProfileUnkNFSPE8sProfileE kind:bss addr:0x0211726c
 data_ov031_02117344 kind:bss addr:0x02117344
 data_ov031_02117350 kind:bss addr:0x02117350
 data_ov031_02117374 kind:bss addr:0x02117374
@@ -2669,9 +2672,9 @@ data_ov031_02117bdc kind:bss addr:0x02117bdc
 data_ov031_02117bfc kind:bss addr:0x02117bfc
 data_ov031_02117c00 kind:bss addr:0x02117c00
 data_ov031_02117c0c kind:bss addr:0x02117c0c
-data_ov031_02117ce0 kind:bss addr:0x02117ce0
-data_ov031_02117ce4 kind:bss addr:0x02117ce4
-data_ov031_02117cf0 kind:bss addr:0x02117cf0
+_ZGVN15ProfileInstanceI31MapObjectProfileTreasureSpawnedE8sProfileE kind:bss addr:0x02117ce0
+@10999 kind:bss addr:0x02117ce4 local
+_ZN15ProfileInstanceI31MapObjectProfileTreasureSpawnedE8sProfileE kind:bss addr:0x02117cf0
 data_ov031_02117dc4 kind:bss addr:0x02117dc4
 data_ov031_02117e3c kind:bss addr:0x02117e3c
 data_ov031_02117e40 kind:bss addr:0x02117e40
@@ -2699,9 +2702,9 @@ data_ov031_02118288 kind:bss addr:0x02118288
 data_ov031_0211835c kind:bss addr:0x0211835c
 data_ov031_02118360 kind:bss addr:0x02118360
 data_ov031_0211836c kind:bss addr:0x0211836c
-data_ov031_02118440 kind:bss addr:0x02118440
-data_ov031_02118444 kind:bss addr:0x02118444
-data_ov031_02118450 kind:bss addr:0x02118450
+_ZGVN15ProfileInstanceI19ActorProfileUnkSKDOE8sProfileE kind:bss addr:0x02118440
+@11064 kind:bss addr:0x02118444 local
+_ZN15ProfileInstanceI19ActorProfileUnkSKDOE8sProfileE kind:bss addr:0x02118450
 data_ov031_0211848c kind:bss addr:0x0211848c
 data_ov031_02118490 kind:bss addr:0x02118490
 data_ov031_0211849c kind:bss addr:0x0211849c
