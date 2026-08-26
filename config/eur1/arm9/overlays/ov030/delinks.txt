@@ -4,3 +4,81 @@
     .ctor       start:0x0215109c end:0x021510d0 kind:rodata align:4
     .data       start:0x021510e0 end:0x02151ea0 kind:data align:32
     .bss        start:0x02151ea0 end:0x02152e20 kind:bss align:32
+
+src/030_TrainFlame/MapObject/MapObjectUnkETTV.cpp:
+    .text       start:0x02141f84 end:0x02142b0c
+    .init       start:0x02150ab4 end:0x02150b04
+    .ctor       start:0x0215109c end:0x021510a0
+    .bss        start:0x02151ea0 end:0x02151f84
+
+src/030_TrainFlame/MapObject/MapObjectUnkTRFI.cpp:
+    .text       start:0x02142b0c end:0x02142f58
+    .init       start:0x02150b04 end:0x02150b54
+    .ctor       start:0x021510a0 end:0x021510a4
+    .bss        start:0x02151f84 end:0x02152068
+
+src/030_TrainFlame/MapObject/MapObjectUnkTRGM.cpp:
+    .text       start:0x02142f58 end:0x021432b0
+    .init       start:0x02150b54 end:0x02150ba4
+    .ctor       start:0x021510a4 end:0x021510a8
+    .bss        start:0x02152068 end:0x0215214c
+
+src/030_TrainFlame/MapObject/MapObjectUnkTRH2.cpp:
+    .text       start:0x021432b0 end:0x021435b8
+    .init       start:0x02150ba4 end:0x02150bf4
+    .ctor       start:0x021510a8 end:0x021510ac
+    .bss        start:0x0215214c end:0x02152230
+
+src/030_TrainFlame/MapObject/MapObjectUnkTRH3.cpp:
+    .text       start:0x021435b8 end:0x021438c0
+    .init       start:0x02150bf4 end:0x02150c44
+    .ctor       start:0x021510ac end:0x021510b0
+    .bss        start:0x02152230 end:0x02152314
+
+src/030_TrainFlame/MapObject/MapObjectUnkTRST.cpp:
+    .text       start:0x021438c0 end:0x02143bdc
+    .init       start:0x02150c44 end:0x02150c94
+    .ctor       start:0x021510b0 end:0x021510b4
+    .bss        start:0x02152314 end:0x02152428
+
+src/030_TrainFlame/Actor/ActorUnkHELA.cpp:
+    .text       start:0x02143bdc end:0x0214b1ec
+    .init       start:0x02150c94 end:0x02150dd0
+    .ctor       start:0x021510b4 end:0x021510b8
+    .bss        start:0x02152428 end:0x02152a04
+
+src/030_TrainFlame/Actor/ActorUnkHLMG.cpp:
+    .text       start:0x0214b1ec end:0x0214c464
+    .init       start:0x02150dd0 end:0x02150eb8
+    .ctor       start:0x021510b8 end:0x021510bc
+    .bss        start:0x02152a04 end:0x02152a50
+
+src/030_TrainFlame/Actor/ActorUnkFDKY.cpp:
+    .text       start:0x0214c464 end:0x0214cf5c
+    .init       start:0x02150eb8 end:0x02150f28
+    .ctor       start:0x021510bc end:0x021510c0
+    .bss        start:0x02152a50 end:0x02152b3c
+
+src/030_TrainFlame/Actor/ActorUnkGOVT.cpp:
+    .text       start:0x0214cf5c end:0x0214d778
+    .init       start:0x02150f28 end:0x02150fac
+    .ctor       start:0x021510c0 end:0x021510c4
+    .bss        start:0x02152b3c end:0x02152b84
+
+src/030_TrainFlame/Actor/ActorUnkTTFT.cpp:
+    .text       start:0x0214d778 end:0x0214d8f0
+    .init       start:0x02150fac end:0x02150ffc
+    .ctor       start:0x021510c4 end:0x021510c8
+    .bss        start:0x02152b84 end:0x02152bd0
+
+src/030_TrainFlame/Actor/ActorUnkSGMG.cpp:
+    .text       start:0x0214d8f0 end:0x0214ddd8
+    .init       start:0x02150ffc end:0x0215104c
+    .ctor       start:0x021510c8 end:0x021510cc
+    .bss        start:0x02152bd0 end:0x02152d24
+
+src/030_TrainFlame/Actor/ActorUnkWKTR.cpp:
+    .text       start:0x0214ddd8 end:0x021506e0
+    .init       start:0x0215104c end:0x0215109c
+    .ctor       start:0x021510cc end:0x021510d0
+    .bss        start:0x02152d24 end:0x02152e20

@@ -980,7 +980,7 @@ from:0x0215a11c kind:arm_call to:0x0201aa1c module:main
 from:0x0215a128 kind:load to:0x0203e93c module:main
 from:0x0215a12c kind:load to:0x021650e0 module:overlay(71)
 from:0x0215a130 kind:load to:0x027e0998 module:dtcm
-from:0x0215a134 kind:load to:0x0204ae8c module:main
+from:0x0215a134 kind:load to:0x0204a0f0 add:0xd9c module:main
 from:0x0215a138 kind:load to:0x0204aefc module:main
 from:0x0215a13c kind:load to:0x021650fc module:overlay(71)
 from:0x0215a1ec kind:arm_call to:0x0201aa1c module:main

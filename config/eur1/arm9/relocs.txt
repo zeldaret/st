@@ -3062,7 +3062,7 @@ from:0x0202036c kind:arm_call to:0x02061f60 module:overlay(0)
 from:0x02020374 kind:arm_call to:0x02011ff4 module:main
 from:0x02020398 kind:load to:0x020443e8 module:main
 from:0x02020454 kind:arm_call to:0x02062144 module:overlay(0)
-from:0x02020484 kind:load to:0x0204aeac module:main
+from:0x02020484 kind:load to:0x0204a110 add:0xd9c module:main
 from:0x02020488 kind:load to:0x0201c4d8 module:main
 from:0x020204b8 kind:load to:0x0204ae10 module:main
 from:0x020204bc kind:load to:0x0204a110 module:main

@@ -2349,7 +2349,7 @@ _ZN5Actor19func_ov000_02098a60Ei kind:function(arm,size=0x28) addr:0x02098a40
 _ZN5Actor19func_ov000_02098a88Eii kind:function(arm,size=0x2c) addr:0x02098a68
 _ZN5Actor19func_ov000_02098ab4EhiiP7VecFx32 kind:function(arm,size=0x74) addr:0x02098a94
 _ZN14Actor_Derived2C2Ev kind:function(arm,size=0x64) addr:0x02098b08
-_ZN5Actor19func_ov000_02098b8cEiPv kind:function(arm,size=0x184) addr:0x02098b6c
+_ZN5Actor19func_ov000_02098b8cEiP24UnkStruct_ov031_Items_00 kind:function(arm,size=0x184) addr:0x02098b6c
 func_ov000_02098d10 kind:function(arm,size=0x6c) addr:0x02098cf0
 func_ov000_02098d7c kind:function(arm,size=0x1b8) addr:0x02098d5c
 func_ov000_02098f34 kind:function(arm,size=0xd0) addr:0x02098f14
@@ -2375,7 +2375,7 @@ func_ov000_02099870 kind:function(arm,size=0x80) addr:0x02099850
 func_ov000_020998f0 kind:function(arm,size=0x11c) addr:0x020998d0
 func_ov000_02099a0c kind:function(arm,size=0x10) addr:0x020999ec
 func_ov000_02099a1c kind:function(arm,size=0xc) addr:0x020999fc
-_ZN24UnkStruct_ov000_020b31a8C2EP10UnkSystem5P11ModelRenderi kind:function(thumb,size=0x54) addr:0x02099a08
+_ZN24UnkStruct_ov000_020b31a8C2EP10UnkSystem5P11ModelRenderP19UnkActorFileSystem2 kind:function(thumb,size=0x54) addr:0x02099a08
 func_ov000_02099a7c kind:function(thumb,size=0x48) addr:0x02099a5c
 func_ov000_02099ac4 kind:function(thumb,size=0x28) addr:0x02099aa4
 func_ov000_02099aec kind:function(thumb,size=0x2) addr:0x02099acc
@@ -2390,7 +2390,7 @@ func_ov000_02099ddc kind:function(arm,size=0x7c) addr:0x02099dbc
 func_ov000_02099e58 kind:function(arm,size=0x98) addr:0x02099e38
 func_ov000_02099ef0 kind:function(arm,size=0x74) addr:0x02099ed0
 func_ov000_02099f64 kind:function(arm,size=0x94) addr:0x02099f44
-_ZN24UnkStruct_ov000_020b31a818func_ov000_02099f8E25ActorUnkZLSL_AnimationTagi kind:function(arm,size=0x74) addr:0x02099fd8
+_ZN24UnkStruct_ov000_020b31a819func_ov000_02099ff8E25ActorUnkZLSL_AnimationTagi kind:function(arm,size=0x74) addr:0x02099fd8
 _ZN24UnkStruct_ov000_020b31a88vfunc_24Ev kind:function(arm,size=0x78) addr:0x0209a04c
 _ZN24UnkStruct_ov000_020b31a88vfunc_18Ev kind:function(arm,size=0x10) addr:0x0209a0c4
 _ZN24UnkStruct_ov000_020b31a88vfunc_28Ev kind:function(arm,size=0x18) addr:0x0209a0d4
@@ -3098,10 +3098,10 @@ _ZN8InstanceI15TreasureManagerED2Ev kind:function(arm,size=0x14) addr:0x020aa1f0
 func_ov000_020aa224 kind:function(arm,size=0x14) addr:0x020aa204
 data_ov000_020aa218 kind:data(any) addr:0x020aa218
 data_ov000_020aa220 kind:data(any) addr:0x020aa220
-data_ov000_020aa224 kind:data(any) addr:0x020aa224
+data_ov000_020aa244 kind:data(any) addr:0x020aa224
 data_ov000_020aa228 kind:data(any) addr:0x020aa228
-data_ov000_020aa22c kind:data(any) addr:0x020aa22c
-data_ov000_020aa230 kind:data(any) addr:0x020aa230
+data_ov000_020aa24c kind:data(any) addr:0x020aa22c
+data_ov000_020aa250 kind:data(any) addr:0x020aa230
 data_ov000_020aa240 kind:data(any) addr:0x020aa240
 data_ov000_020aa340 kind:data(any) addr:0x020aa340
 data_ov000_020aa350 kind:data(any) addr:0x020aa350
@@ -3474,7 +3474,7 @@ data_ov000_020b1f7c kind:data(any) addr:0x020b1f7c
 data_ov000_020b1fac kind:data(any) addr:0x020b1f8c
 data_ov000_020b1f9c kind:data(any) addr:0x020b1f9c
 data_ov000_020b1fd8 kind:data(any) addr:0x020b1fb8
-data_ov000_020b1fd4 kind:data(any) addr:0x020b1fd4
+_ZTV27AdventureModeManager_160_28 kind:data(any) addr:0x020b1fcc
 data_ov000_020b1fe8 kind:data(any) addr:0x020b1fe8
 data_ov000_020b1ff4 kind:data(any) addr:0x020b1ff4
 data_ov000_020b2000 kind:data(any) addr:0x020b2000
@@ -3684,7 +3684,7 @@ _ZTV14ActorEventIcon kind:data(any) addr:0x020b33b0
 _ZTV19ActorProfileUnkEFIK kind:data(any) addr:0x020b340c
 _ZTV12ActorUnkEFIK kind:data(any) addr:0x020b3430
 _ZTV19data_ov000_020b3498 kind:data(any) addr:0x020b3490
-data_ov000_020b34a4 kind:data(any) addr:0x020b34a4
+data_ov000_020b34c4 kind:data(any) addr:0x020b34a4
 _ZTV25MapObjectProfile_Derived4 kind:data(any) addr:0x020b34a8
 _ZTV25MapObjectProfile_Derived3 kind:data(any) addr:0x020b34c4
 _ZTV25MapObjectProfile_Derived2 kind:data(any) addr:0x020b34e0
@@ -4012,7 +4012,7 @@ data_ov000_020b4ec0 kind:bss addr:0x020b4ec0
 data_ov000_020b4ec4 kind:bss addr:0x020b4ec4
 data_ov000_020b4ec8 kind:bss addr:0x020b4ec8
 data_ov000_020b4eec kind:bss addr:0x020b4ecc
-data_ov000_020b4f50 kind:bss addr:0x020b4f50
+data_ov000_020b4f70 kind:bss addr:0x020b4f50
 data_ov000_020b4f54 kind:bss addr:0x020b4f54
 data_ov000_020b4f58 kind:bss addr:0x020b4f58
 data_ov000_020b4f84 kind:bss addr:0x020b4f64
@@ -4074,7 +4074,7 @@ data_ov000_020b6284 kind:bss addr:0x020b6284
 gSaveManager kind:bss addr:0x020b6288
 data_ov000_020b64d0 kind:bss addr:0x020b64d0
 data_ov000_020b64f4 kind:bss addr:0x020b64d4
-data_ov000_020b64d8 kind:bss addr:0x020b64d8
+data_ov000_020b64f8 kind:bss addr:0x020b64d8
 data_ov000_020b64fc kind:bss addr:0x020b64dc
 data_ov000_020b64e0 kind:bss addr:0x020b64e0
 gpTreasureManager kind:bss addr:0x020b64f0

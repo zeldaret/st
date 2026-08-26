@@ -19,7 +19,7 @@ from:0x020e9b5c kind:load to:0x020f1ba0 module:overlay(23)
 from:0x020e9b60 kind:load to:0x02049a0c module:main
 from:0x020e9b64 kind:load to:0x0204a0f0 module:main
 from:0x020e9b68 kind:load to:0x020ea328 module:overlay(23)
-from:0x020e9b6c kind:load to:0x0204adf0 module:main
+from:0x020e9b6c kind:load to:0x0204a0f0 add:0xd00 module:main
 from:0x020e9b70 kind:load to:0x027e09ac module:dtcm
 from:0x020e9b74 kind:load to:0x020b6288 module:overlay(0)
 from:0x020e9b8c kind:arm_call to:0x020bba74 module:overlay(17)

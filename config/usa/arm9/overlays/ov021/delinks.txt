@@ -70,3 +70,9 @@ src/021_BattleGame/MapObject/MapObjectUnkBFFL.cpp:
     .init       start:0x02107cc0 end:0x02107d10
     .ctor       start:0x02107e54 end:0x02107e58
     .bss        start:0x021096b0 end:0x02109794
+
+src/021_BattleGame/MapObject/MapObjectUnkBFSP.cpp:
+    .text       start:0x020f617c end:0x020f63f0
+    .init       start:0x02107d10 end:0x02107d60
+    .ctor       start:0x02107e58 end:0x02107e5c
+    .bss        start:0x02109794 end:0x02109878

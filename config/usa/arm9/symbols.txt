@@ -2594,7 +2594,7 @@ data_02044310 kind:data(any) addr:0x02044310
 data_02044354 kind:data(any) addr:0x02044354
 data_02044360 kind:data(any) addr:0x02044360
 data_0204436c kind:data(any) addr:0x0204436c
-data_02044378 kind:data(any) addr:0x02044378
+_ZTV34UnkSystem2_UnkSubSystem11_Derived2 kind:data(any) addr:0x02044370
 data_020443c0 kind:data(any) addr:0x02044390
 _ZTV21UnkStruct_0204e64c_00 kind:data(any) addr:0x020443a0
 data_020443e8 kind:data(any) addr:0x020443b8
@@ -2779,7 +2779,7 @@ data_02049bdc kind:bss addr:0x02049bdc
 data_02049ee0 kind:bss addr:0x02049ee0
 data_02049f04 kind:bss addr:0x02049ee4
 data_02049f68 kind:bss addr:0x02049f68
-data_02049f6c kind:bss addr:0x02049f6c
+data_02049f8c kind:bss addr:0x02049f6c
 data_0204a030 kind:bss addr:0x0204a030
 data_0204a034 kind:bss addr:0x0204a034
 data_0204a060 kind:bss addr:0x0204a040
@@ -2787,15 +2787,7 @@ data_0204a088 kind:bss addr:0x0204a068
 data_0204a090 kind:bss addr:0x0204a070
 data_0204a110 kind:bss addr:0x0204a0f0
 data_0204a460 kind:bss addr:0x0204a460
-data_0204adf0 kind:bss addr:0x0204adf0
-data_0204ae70 kind:bss addr:0x0204ae70
-data_0204ae8c kind:bss addr:0x0204ae8c
-data_0204ae98 kind:bss addr:0x0204ae98
-data_0204aeb0 kind:bss addr:0x0204aeb0
 data_0204aebc kind:bss addr:0x0204aebc
-data_0204aed0 kind:bss addr:0x0204aed0
-data_0204aee2 kind:bss addr:0x0204aee2
-data_0204aef0 kind:bss addr:0x0204aef0
 data_0204aef8 kind:bss addr:0x0204aef8
 data_0204af1c kind:bss addr:0x0204aefc
 data_0204c38c kind:bss addr:0x0204c38c

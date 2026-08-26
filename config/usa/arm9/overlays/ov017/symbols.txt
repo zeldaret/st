@@ -182,5 +182,5 @@ data_ov017_020c3f1c kind:data(any) addr:0x020c3f1c
 data_ov017_020c3f20 kind:data(any) addr:0x020c3f20
 data_ov017_020c3f40 kind:bss addr:0x020c3f40
 data_ov017_020c3f44 kind:bss addr:0x020c3f44
-data_ov017_020c3f50 kind:bss addr:0x020c3f50
+data_ov017_020c3f70 kind:bss addr:0x020c3f50
 data_ov017_020c401c kind:bss addr:0x020c401c

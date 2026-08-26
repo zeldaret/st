@@ -2158,14 +2158,14 @@ from:0x020bff74 kind:thumb_call_arm to:0x02060ec4 module:overlay(0)
 from:0x020bff94 kind:thumb_call_arm to:0x02011f3c module:main
 from:0x020bff9c kind:thumb_call to:0x020c0898 module:overlay(1)
 from:0x020c0016 kind:thumb_call_arm to:0x02011f3c module:main
-from:0x020c001e kind:thumb_call_arm to:0x020c6e18 module:overlays(20,24)
+from:0x020c001e kind:thumb_call_arm to:0x020c6e18 module:overlay(24)
 from:0x020c0050 kind:thumb_call_arm to:0x020c6f48 module:overlay(24)
 from:0x020c0054 kind:thumb_call_arm to:0x020d1638 module:overlay(24)
 from:0x020c0060 kind:thumb_call_arm to:0x02011f3c module:main
 from:0x020c006c kind:thumb_call_arm to:0x020c85b0 module:overlay(24)
 from:0x020c007e kind:thumb_call_arm to:0x02023564 module:main
 from:0x020c0086 kind:thumb_call_arm to:0x020235cc module:main
-from:0x020c00a0 kind:load to:0x020d7bf8 module:overlay(24)
+from:0x020c00a0 kind:load to:0x020d7bf0 module:overlay(24) add:0x8
 from:0x020c00ac kind:load to:0x027e0998 module:dtcm
 from:0x020c00b0 kind:load to:0x02061741 module:overlay(0)
 from:0x020c00be kind:thumb_call_arm to:0x02011f3c module:main

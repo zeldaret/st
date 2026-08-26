@@ -528,6 +528,7 @@ data_ov030_021522c0 kind:bss addr:0x021522c0
 data_ov030_021522cc kind:bss addr:0x021522cc
 data_ov030_021522d8 kind:bss addr:0x021522d8
 data_ov030_021522dc kind:bss addr:0x021522dc
+data_ov030_021522e8 kind:bss addr:0x021522e8
 data_ov030_021522ea kind:bss addr:0x021522ea
 data_ov030_021522ec kind:bss addr:0x021522ec
 data_ov030_02152320 kind:bss addr:0x02152320

@@ -4,3 +4,99 @@
     .ctor       start:0x02146fb0 end:0x02146ff4 kind:rodata align:4
     .data       start:0x02147000 end:0x02147c40 kind:data align:32
     .bss        start:0x02147c40 end:0x021489c0 kind:bss align:32
+
+src/028_TrainSnow/Actor/ActorUnkSNMA.cpp:
+    .text       start:0x021419c0 end:0x0214312c
+    .init       start:0x02146a24 end:0x02146ac0
+    .ctor       start:0x02146fb0 end:0x02146fb4
+    .bss        start:0x02147c44 end:0x02147d34
+
+src/028_TrainSnow/Actor/ActorUnkSNMB.cpp:
+    .text       start:0x0214312c end:0x02143878
+    .init       start:0x02146ac0 end:0x02146b10
+    .ctor       start:0x02146fb4 end:0x02146fb8
+    .bss        start:0x02147d34 end:0x02147e20
+
+src/028_TrainSnow/MapObject/MapObjectUnkTRSS.cpp:
+    .text       start:0x021443e8 end:0x02144848
+    .init       start:0x02146b30 end:0x02146b80
+    .ctor       start:0x02146fbc end:0x02146fc0
+    .bss        start:0x02147e20 end:0x02147f00
+
+src/028_TrainSnow/MapObject/MapObjectUnkTRRS.cpp:
+    .text       start:0x02144848 end:0x02144b00
+    .init       start:0x02146b80 end:0x02146bd0
+    .ctor       start:0x02146fc0 end:0x02146fc4
+    .bss        start:0x02147f00 end:0x02147fe4
+
+src/028_TrainSnow/MapObject/MapObjectUnkTRMA.cpp:
+    .text       start:0x02144b00 end:0x02144e00
+    .init       start:0x02146bd0 end:0x02146c20
+    .ctor       start:0x02146fc4 end:0x02146fc8
+    .bss        start:0x02147fe4 end:0x021480c8
+
+src/028_TrainSnow/MapObject/MapObjectUnkTRBM.cpp:
+    .text       start:0x02144e00 end:0x02145100
+    .init       start:0x02146c20 end:0x02146c70
+    .ctor       start:0x02146fc8 end:0x02146fcc
+    .bss        start:0x021480c8 end:0x021481b4
+
+src/028_TrainSnow/MapObject/MapObjectUnkTMSN.cpp:
+    .text       start:0x02145100 end:0x021455e8
+    .init       start:0x02146c70 end:0x02146ce0
+    .ctor       start:0x02146fcc end:0x02146fd0
+    .bss        start:0x021481b4 end:0x021482a0
+
+src/028_TrainSnow/MapObject/MapObjectUnkETNS.cpp:
+    .text       start:0x021455e8 end:0x02145738
+    .init       start:0x02146ce0 end:0x02146d30
+    .ctor       start:0x02146fd0 end:0x02146fd4
+    .bss        start:0x021482a0 end:0x02148384
+
+src/028_TrainSnow/MapObject/MapObjectUnkETSW.cpp:
+    .text       start:0x02145738 end:0x02145a6c
+    .init       start:0x02146d30 end:0x02146d80
+    .ctor       start:0x02146fd4 end:0x02146fd8
+    .bss        start:0x02148384 end:0x02148468
+
+src/028_TrainSnow/MapObject/MapObjectUnkEFRF.cpp:
+    .text       start:0x02145a6c end:0x02145be0
+    .init       start:0x02146d80 end:0x02146dd0
+    .ctor       start:0x02146fd8 end:0x02146fdc
+    .bss        start:0x02148468 end:0x0214854c
+
+src/028_TrainSnow/MapObject/MapObjectUnkRLPT.cpp:
+    .text       start:0x02145be0 end:0x02145d88
+    .init       start:0x02146dd0 end:0x02146e20
+    .ctor       start:0x02146fdc end:0x02146fe0
+    .bss        start:0x0214854c end:0x0214857c
+
+src/028_TrainSnow/MapObject/MapObjectUnkTRH0.cpp:
+    .text       start:0x02145d88 end:0x02146048
+    .init       start:0x02146e20 end:0x02146e70
+    .ctor       start:0x02146fe0 end:0x02146fe4
+    .bss        start:0x0214857c end:0x02148660
+
+src/028_TrainSnow/MapObject/MapObjectUnkTRTS.cpp:
+    .text       start:0x02146048 end:0x0214633c
+    .init       start:0x02146e70 end:0x02146ec0
+    .ctor       start:0x02146fe4 end:0x02146fe8
+    .bss        start:0x02148660 end:0x02148764
+
+src/028_TrainSnow/MapObject/MapObjectUnkTRSR.cpp:
+    .text       start:0x0214633c end:0x02146514
+    .init       start:0x02146ec0 end:0x02146f10
+    .ctor       start:0x02146fe8 end:0x02146fec
+    .bss        start:0x02148764 end:0x02148868
+
+src/028_TrainSnow/MapObject/MapObjectUnkRBSR.cpp:
+    .text       start:0x02146514 end:0x02146708
+    .init       start:0x02146f10 end:0x02146f60
+    .ctor       start:0x02146fec end:0x02146ff0
+    .bss        start:0x02148868 end:0x021488bc
+
+src/028_TrainSnow/MapObject/MapObjectUnkTRFS.cpp:
+    .text       start:0x02146708 end:0x02146998
+    .init       start:0x02146f60 end:0x02146fb0
+    .ctor       start:0x02146ff0 end:0x02146ff4
+    .bss        start:0x021488bc end:0x021489a0

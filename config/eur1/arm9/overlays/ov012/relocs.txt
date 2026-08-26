@@ -194,7 +194,7 @@ from:0x020b74de kind:thumb_call_arm to:0x02067f88 module:overlay(0)
 from:0x020b74f4 kind:thumb_call_arm to:0x0201c504 module:main
 from:0x020b7502 kind:thumb_call_arm to:0x0201c504 module:main
 from:0x020b7508 kind:load to:0x020b508c module:overlay(0)
-from:0x020b750c kind:load to:0x0204aeac module:main
+from:0x020b750c kind:load to:0x0204a110 add:0xd9c module:main
 from:0x020b7530 kind:thumb_call_arm to:0x02028c4c module:main
 from:0x020b754a kind:thumb_call_arm to:0x0201edbc module:main
 from:0x020b757a kind:thumb_call_arm to:0x0201aa44 module:main
