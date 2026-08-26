@@ -18,11 +18,21 @@ enum ActorGreenSpinutState_ {
     ActorGreenSpinutState_Max
 };
 
+class UnkStruct_ov032_0211d830 {
+public:
+    /* 00 (vtable) */
+
+    /* 00 */ virtual void vfunc_00()        = 0;
+    /* 04 */ virtual void vfunc_04()        = 0;
+    /* 08 */ virtual void vfunc_08()        = 0;
+    /* 0C */ virtual void vfunc_0C(unk32 *) = 0;
+};
+
 class ActorGreenSpinut_1EC {
 public:
     /* 00 */ u8 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
+    /* 04 */ UnkStruct_ov032_0211d830 *mUnk_04;
+    /* 08 */ UnkStruct_ov032_0211d830 *mUnk_08;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ unk32 mUnk_14;
@@ -36,11 +46,26 @@ public:
 
     ActorGreenSpinut_1EC();
 
+    void func_ov032_0211cc48(VecFx32 *param1);
     UnkStruct_027e0960_TableEntry_04 *func_ov032_0211cd20(VecFx32 *param1);
+    void func_ov032_0211cd60(VecFx32 *param1, s16 *param2, VecFx32 *param3, unk32 param4, unk32 param5, unk32 param6);
     void func_ov032_0211cf74();
     void func_ov032_0211cfac(unk32 param1);
     void func_ov032_0211d028();
+    bool func_ov032_0211d040(unk32 param1);
+    void func_ov032_0211d08c(VecFx32 *param1);
+    void func_ov032_0211d2e4();
+    void func_ov032_0211d384();
+    unk32 func_ov032_0211d568(unk32 param1, UnkStruct_ov032_0211d830 *param2, unk32 param3);
+    void func_ov032_0211d674();
     void func_ov032_0211d6d8();
+    void func_ov032_0211d7e8();
+    void func_ov032_0211d80c();
+    void func_ov032_0211d830(UnkStruct_ov032_0211d830 *param1);
+    void func_ov032_0211d910();
+    void func_ov032_0211d920();
+    void func_ov032_0211d864();
+    void func_ov032_0211da0c();
 };
 
 class ActorGreenSpinut : public Actor_Derived2 {
@@ -50,7 +75,7 @@ public:
     /* 0B0 */ ModelRender_ov000_020b1a1c mUnk_0B0;
     /* 110 */ ActorSpinut_110 mUnk_110;
     /* 1A0 */ STRUCT_PAD(0x1A0, 0x1BC);
-    /* 1BC */ unk16 mUnk_1BC;
+    /* 1BC */ ActorState previousState;
     /* 1BE */ unk16 mUnk_1BE;
     /* 1C0 */ Actor_9C mUnk_1C0;
     /* 1E0 */ Actor_Derived1_94 mUnk_1E0;
@@ -84,26 +109,11 @@ public:
     void func_ov032_0211c73c();
     void func_ov032_0211c7bc();
     bool func_ov032_0211c938();
-    void func_ov032_0211c9d8();
-    void func_ov032_0211ca20();
-    void func_ov032_0211ca6c();
-    void func_ov032_0211cab8();
+    bool func_ov032_0211c9d8();
+    bool func_ov032_0211ca20();
+    bool func_ov032_0211ca6c();
+    bool func_ov032_0211cab8(unk32 param1, unk32 param2);
     void func_ov032_0211cb2c();
-    void func_ov032_0211cc48();
-    void func_ov032_0211cd60();
-    void func_ov032_0211d040();
-    void func_ov032_0211d08c();
-    void func_ov032_0211d2e4();
-    void func_ov032_0211d384();
-    void func_ov032_0211d568();
-    void func_ov032_0211d674();
-    void func_ov032_0211d7e8();
-    void func_ov032_0211d80c();
-    void func_ov032_0211d830();
-    void func_ov032_0211d864();
-    void func_ov032_0211d910();
-    void func_ov032_0211d920();
-    void func_ov032_0211da0c();
 };
 
 class ActorProfileGreenSpinut : public ActorProfile_ov000_020b3018 {

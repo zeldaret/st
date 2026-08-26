@@ -16,7 +16,8 @@ ActorProfileUnkKEYN::ActorProfileUnkKEYN() :
 
 ActorUnkKEYN::ActorUnkKEYN() {}
 
-void ActorUnkKEYN::func_ov070_0214143c(void) {}
+void ActorUnkKEYN::func_ov070_0214143c(ActorRef *param1, VecFx32 *param2, ActorRef param3, s16 param4, u8 param5, u16 param6) {
+}
 void ActorUnkKEYN::func_ov070_02141618(void) {}
 void ActorUnkKEYN::func_ov070_0214162c(void) {}
 void ActorUnkKEYN::func_ov070_02141750(void) {}

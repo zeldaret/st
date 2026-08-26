@@ -28,7 +28,7 @@ public:
 
     /* 4C */ virtual ~ActorUnkKEYN() override;
 
-    void func_ov070_0214143c(void);
+    static void func_ov070_0214143c(ActorRef *param1, VecFx32 *param2, ActorRef param3, s16 param4, u8 param5, u16 param6);
     void func_ov070_02141618(void);
     void func_ov070_0214162c(void);
     void func_ov070_02141750(void);
