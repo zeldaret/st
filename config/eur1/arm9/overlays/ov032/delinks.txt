@@ -4,3 +4,35 @@
     .ctor       start:0x021222e8 end:0x021222fc kind:rodata align:4
     .data       start:0x02122300 end:0x021229c0 kind:data align:32
     .bss        start:0x021229c0 end:0x02122d60 kind:bss align:32
+
+src/032_MapA1/Actor/ActorSpinut.cpp:
+    .text       start:0x02119100 end:0x0211b80c
+    .init       start:0x021220f0 end:0x0212215c
+    .ctor       start:0x021222e8 end:0x021222ec
+    .data       start:0x02122300 end:0x02122548
+    .bss        start:0x021229c0 end:0x02122aa8
+
+src/032_MapA1/Actor/ActorUnkMKUR.cpp:
+    .text       start:0x0211b80c end:0x0211dc80
+    .init       start:0x0212215c end:0x021221dc
+    .ctor       start:0x021222ec end:0x021222f0
+    .bss        start:0x02122aa8 end:0x02122b14
+
+src/032_MapA1/Actor/ActorUnkKETH.cpp:
+    .text       start:0x0211dc80 end:0x0211fec0
+    .init       start:0x021221dc end:0x02122248
+    .ctor       start:0x021222f0 end:0x021222f4
+    .bss        start:0x02122b14 end:0x02122bfc
+
+src/032_MapA1/Actor/ActorUnkNSSW.cpp:
+    .text       start:0x0211fec0 end:0x0212104c
+    .init       start:0x02122248 end:0x02122298
+    .ctor       start:0x021222f4 end:0x021222f8
+    .bss        start:0x02122bfc end:0x02122c48
+
+src/032_MapA1/MapObject/MapObjectUnkSWSW.cpp:
+    .text       start:0x0212104c end:0x0212208c
+    .init       start:0x02122298 end:0x021222e8
+    .ctor       start:0x021222f8 end:0x021222fc
+    .data       start:0x021228e4 end:0x021229c0
+    .bss        start:0x02122c48 end:0x02122c78

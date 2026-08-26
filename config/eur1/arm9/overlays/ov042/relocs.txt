@@ -554,7 +554,7 @@ from:0x021284a0 kind:arm_call to:0x0207c030 module:overlay(0)
 from:0x021284d8 kind:arm_call to:0x01ff9258 module:itcm
 from:0x021284ec kind:arm_call to:0x01ff9258 module:itcm
 from:0x0212850c kind:arm_call to:0x01ff9258 module:itcm
-from:0x02128548 kind:load to:0x021642c4 module:overlays(59,63,68,71,73,84)
+from:0x02128548 kind:load to:0x021642c4 module:overlays(59,68,71,73,84)
 from:0x0212854c kind:load to:0x027e0cd8 module:dtcm
 from:0x02128574 kind:arm_call to:0x01ff9258 module:itcm
 from:0x0212858c kind:arm_call to:0x02159bdc module:overlays(62,71,87)
