@@ -2,7 +2,7 @@
     .rodata     start:0x02121ed0 end:0x02121f34 kind:rodata align:4
     .init       start:0x02121f34 end:0x0212212c kind:code align:4
     .ctor       start:0x0212212c end:0x02122140 kind:rodata align:4
-    .data       start:0x02122160 end:0x02122818 kind:data align:32
+    .data       start:0x02122160 end:0x02122820 kind:data align:32
     .bss        start:0x02122820 end:0x02122bc0 kind:bss align:32
 
 src/032_MapA1/Actor/ActorSpinut.cpp:
@@ -34,5 +34,5 @@ src/032_MapA1/MapObject/MapObjectUnkSWSW.cpp:
     .text       start:0x02120e90 end:0x02121ed0
     .init       start:0x021220dc end:0x0212212c
     .ctor       start:0x0212213c end:0x02122140
-    .data       start:0x02122744 end:0x02122818
+    .data       start:0x02122744 end:0x02122820
     .bss        start:0x02122aa8 end:0x02122ad8

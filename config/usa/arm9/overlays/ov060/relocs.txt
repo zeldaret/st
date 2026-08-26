@@ -436,11 +436,11 @@ from:0x0215cd78 kind:arm_call to:0x020a8ea0 module:overlay(0)
 from:0x0215cd84 kind:load to:0x027e09b8 module:dtcm
 from:0x0215cda0 kind:arm_call to:0x0215ce18 module:overlay(60)
 from:0x0215cdfc kind:arm_call to:0x0211ab64 module:overlays(35,37)
-from:0x0215ce14 kind:load to:0x021227f0 module:overlays(32,34,36,37)
+from:0x0215ce14 kind:load to:0x021227f0 module:overlays(34,36,37)
 from:0x0215ce38 kind:arm_call to:0x020c4a6c module:overlays(24,25)
 from:0x0215ce40 kind:load to:0x02043e30 module:main
 from:0x0215ce44 kind:load to:0x020d8640 module:overlay(24)
-from:0x0215ce48 kind:load to:0x021227f0 module:overlays(32,34,36,37)
+from:0x0215ce48 kind:load to:0x021227f0 module:overlays(34,36,37)
 from:0x0215ce58 kind:arm_call_thumb to:0x02057bb4 module:overlay(0)
 from:0x0215ce60 kind:arm_call_thumb to:0x0209a228 module:overlay(0)
 from:0x0215ce68 kind:arm_call to:0x020e7414 module:overlay(31)
