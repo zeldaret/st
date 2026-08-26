@@ -177,7 +177,7 @@ from:0x020d9b30 kind:arm_call to:0x0208d46c module:overlay(0)
 from:0x020d9b4c kind:load to:0x0208d580 module:overlay(0)
 from:0x020d9b5c kind:load to:0x0208dcd0 module:overlay(0)
 from:0x020d9b84 kind:load to:0x020936cc module:overlay(0)
-from:0x020d9b90 kind:load to:0x021223d1 module:overlays(32,33,34,36,37)
+from:0x020d9b90 kind:load to:0x021223d1 module:overlays(33,34,36,37)
 from:0x020d9b9c kind:load to:0x02152a05 module:overlays(29,30,58,72,81)
 from:0x020d9bac kind:load to:0x027e0d34 module:dtcm
 from:0x020d9bba kind:thumb_call_arm to:0x02011f3c module:main
