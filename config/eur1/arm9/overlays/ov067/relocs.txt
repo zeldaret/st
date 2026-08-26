@@ -75,7 +75,7 @@ from:0x021588ac kind:arm_call to:0x020a9948 module:overlay(0)
 from:0x021588c8 kind:arm_call to:0x020730e0 module:overlay(0)
 from:0x0215890c kind:arm_call to:0x020734a4 module:overlay(0)
 from:0x02158918 kind:load to:0x027e09b8 module:dtcm
-from:0x02158950 kind:arm_call to:0x020c4aec module:overlays(19,24)
+from:0x02158950 kind:arm_call to:0x020c4aec module:overlay(24)
 from:0x02158958 kind:arm_call to:0x021589a8 module:overlay(67)
 from:0x0215896c kind:arm_call to:0x02158a14 module:overlay(67)
 from:0x02158980 kind:arm_call to:0x02158a80 module:overlay(67)

@@ -175,7 +175,7 @@ public:
     void func_ov000_02073578(void *param1, unk32 param2);
     void func_ov000_02073610(void *param1, unk32 param2);
 
-#if IS_JP
+#if IS_JP || IS_EUR1
     void func_ov000_02074d78(unk32 param1);
 #endif
 

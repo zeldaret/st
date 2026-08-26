@@ -4,3 +4,258 @@
     .ctor       start:0x020d7c54 end:0x020d7c70 kind:rodata align:4
     .data       start:0x020d7c80 end:0x020d8780 kind:data align:32
     .bss        start:0x020d8780 end:0x020d8840 kind:bss align:32
+
+src/024_MainGame/Game/GameModeAdventure_024.cpp:
+    complete
+    .text       start:0x020c4880 end:0x020c4aec
+    .data       start:0x020d7c80 end:0x020d7cb0
+
+src/024_MainGame/Actor/UnkStruct_ov024_020d8660_024.cpp:
+    complete
+    .text       start:0x020c4aec end:0x020c4e60
+    .bss        start:0x020d8780 end:0x020d87b4
+
+src/024_MainGame/Actor/UnkActorSystem1_024.cpp:
+    complete
+    .text       start:0x020c4e60 end:0x020c4ec8
+    .data       start:0x020d7cb0 end:0x020d7ce8
+
+src/024_MainGame/Actor/UnkActorSystem2_024.cpp:
+    complete
+    .text       start:0x020c4ec8 end:0x020c51b8
+    .data       start:0x020d7ce8 end:0x020d7d0c
+
+src/024_MainGame/Game/AdventureModeManager_024.cpp:
+    complete
+    .text       start:0x020c51b8 end:0x020c6f18
+    .data       start:0x020d7d0c end:0x020d7db0
+
+src/024_MainGame/Unknown/UnkStruct_027e0998_024.cpp:
+    complete
+    .text       start:0x020c6f18 end:0x020c73cc
+    .data       start:0x020d7db0 end:0x020d7dbc
+
+src/024_MainGame/Train/UnkStruct_027e0cf8_024.cpp:
+    complete
+    .text       start:0x020c73cc end:0x020c797c
+
+src/024_MainGame/Game/AdventureModeManager_160_024.cpp:
+    complete
+    .text       start:0x020c797c end:0x020c85f4
+    .data       start:0x020d7dbc end:0x020d7e08
+
+src/024_MainGame/Game/AdventureModeManager_170_024.cpp:
+    complete
+    .text       start:0x020c85f4 end:0x020c889c
+    .data       start:0x020d7e08 end:0x020d7e54
+
+src/024_MainGame/Game/AdventureModeManager_174_Base_024.cpp:
+    complete
+    .text       start:0x020c889c end:0x020c8da0
+    .data       start:0x020d7e54 end:0x020d7ea0
+
+src/024_MainGame/Game/AdventureModeManager_174_024.cpp:
+    complete
+    .text       start:0x020c8da0 end:0x020c90d0
+    .data       start:0x020d7ea0 end:0x020d7ed0
+
+src/024_MainGame/Game/AdventureModeManager_178_Base_024.cpp:
+    complete
+    .text       start:0x020c90d0 end:0x020c91bc
+    .data       start:0x020d7ed0 end:0x020d7f00
+
+src/024_MainGame/Game/AdventureModeManager_178_024.cpp:
+    complete
+    .text       start:0x020c91bc end:0x020c9278
+    .data       start:0x020d7f00 end:0x020d7f30
+
+src/024_MainGame/Game/AdventureModeManager_180_024.cpp:
+    complete
+    .text       start:0x020c9278 end:0x020c9664
+    .data       start:0x020d7f30 end:0x020d7f7c
+
+src/024_MainGame/Game/AdventureModeManager_184_024.cpp:
+    complete
+    .text       start:0x020c9664 end:0x020c99ac
+    .data       start:0x020d7f7c end:0x020d7fac
+
+src/024_MainGame/Game/AdventureModeManager_18C_024.cpp:
+    complete
+    .text       start:0x020c99ac end:0x020ca0d4
+    .data       start:0x020d7fac end:0x020d7ff8
+
+src/024_MainGame/Game/AdventureModeManager_190_024.cpp:
+    complete
+    .text       start:0x020ca0d4 end:0x020ca35c
+    .data       start:0x020d7ff8 end:0x020d8060
+
+src/024_MainGame/data_ov024_020d7f40.cpp:
+    complete
+    .rodata     start:0x020d7438 end:0x020d7448
+    .init       start:0x020d7a08 end:0x020d7a40
+    .ctor       start:0x020d7c54 end:0x020d7c58
+    .data       start:0x020d8060 end:0x020d8070
+
+src/024_MainGame/Game/AdventureModeManager_15C_20_00_024.cpp:
+    complete
+    .text       start:0x020ca35c end:0x020caa94
+    .data       start:0x020d8070 end:0x020d8094
+
+src/024_MainGame/Unknown/UnkAdventureModeSystem1_024.cpp:
+    complete
+    .text       start:0x020caa94 end:0x020caddc
+    .data       start:0x020d8094 end:0x020d80a0
+
+src/024_MainGame/TitleCard/UnkStruct_ov024_020d8694_024.cpp:
+    .text       start:0x020caddc end:0x020cb22c
+    .rodata     start:0x020d7448 end:0x020d74f8
+    .data       start:0x020d80a0 end:0x020d80c4
+    .bss        start:0x020d87b4 end:0x020d87b8
+
+src/024_MainGame/TitleCard/UnkTitleCardSystem1_024.cpp:
+    complete
+    .text       start:0x020cb22c end:0x020ccd58
+    .data       start:0x020d80c4 end:0x020d8184
+
+src/024_MainGame/UICounterManager.cpp:
+    complete
+    .text       start:0x020ccd58 end:0x020cfa88
+    .rodata     start:0x020d74f8 end:0x020d7574
+    .data       start:0x020d8184 end:0x020d81b4
+    .bss        start:0x020d87b8 end:0x020d87bc
+
+src/024_MainGame/Train/UnkStruct_027e0cf8_00_0C_024.cpp:
+    .text       start:0x020cfa88 end:0x020d070c
+    .rodata     start:0x020d7574 end:0x020d7664
+    .init       start:0x020d7a40 end:0x020d7b60
+    .ctor       start:0x020d7c58 end:0x020d7c5c
+    .data       start:0x020d81b4 end:0x020d8320
+
+src/024_MainGame/Game/AdventureModeManager_1B8_Base_024.cpp:
+    complete
+    .text       start:0x020d070c end:0x020d1778
+    .rodata     start:0x020d7664 end:0x020d7670
+    .init       start:0x020d7b60 end:0x020d7b8c
+    .ctor       start:0x020d7c5c end:0x020d7c60
+    .data       start:0x020d8320 end:0x020d8328
+    .bss        start:0x020d87bc end:0x020d87c0
+
+src/024_MainGame/Unknown/UnkStruct_ov024_020d86a0_024.cpp:
+    complete
+    .text       start:0x020d1778 end:0x020d181c
+    .data       start:0x020d8328 end:0x020d8344
+    .bss        start:0x020d87c0 end:0x020d87c4
+
+src/024_MainGame/Player/PlayerActor_A0_38_024.cpp:
+    .text       start:0x020d181c end:0x020d1b18
+    .init       start:0x020d7b8c end:0x020d7bd4
+    .ctor       start:0x020d7c60 end:0x020d7c64
+    .data       start:0x020d8344 end:0x020d8374
+
+src/024_MainGame/CreditsEndingType.cpp:
+    complete
+    .text       start:0x020d1b18 end:0x020d1b38
+    .data       start:0x020d8374 end:0x020d8378
+
+src/024_MainGame/Train/UnkDataStruct4_14.cpp:
+    complete
+    .text       start:0x020d1b38 end:0x020d25b0
+    .rodata     start:0x020d7670 end:0x020d768c
+
+src/024_MainGame/Train/UnkDataStruct4.cpp:
+    complete
+    .text       start:0x020d25b0 end:0x020d3278
+    .rodata     start:0x020d768c end:0x020d7690
+    .data       start:0x020d8378 end:0x020d83bc
+
+src/024_MainGame/Train/UnkStruct_027e0cf8_08_024.cpp:
+    complete
+    .text       start:0x020d3278 end:0x020d3790
+
+src/024_MainGame/ZeldaTrainBinary.cpp:
+    complete
+    .text       start:0x020d3790 end:0x020d3a20
+
+src/024_MainGame/Train/UnkStruct_027e0cf8_08_00_024.cpp:
+    complete
+    .text       start:0x020d3a20 end:0x020d3d74
+
+src/024_MainGame/Train/UnkStruct_027e0ce0_34_024.cpp:
+    complete
+    .text       start:0x020d3d74 end:0x020d4240
+    .rodata     start:0x020d7690 end:0x020d76b8
+
+src/024_MainGame/Train/PassengerManager.cpp:
+    complete
+    .text       start:0x020d4240 end:0x020d47d4
+    .rodata     start:0x020d76b8 end:0x020d7744
+
+src/024_MainGame/Train/MapObjectProfile_Derived5.cpp:
+    complete
+    .text       start:0x020d47d4 end:0x020d48e4
+    .data       start:0x020d83bc end:0x020d84e8
+
+src/024_MainGame/Train/UnkStruct_027e0d00.cpp:
+    complete
+    .text       start:0x020d48e4 end:0x020d4fbc
+    .rodata     start:0x020d7744 end:0x020d779c
+    .data       start:0x020d84e8 end:0x020d8524
+
+src/024_MainGame/Train/UnkStruct_027e0d00_20.cpp:
+    complete
+    .text       start:0x020d4fbc end:0x020d52fc
+    .data       start:0x020d8524 end:0x020d863c
+
+src/024_MainGame/Train/code_020d51dc_024.cpp:
+    complete
+    .text       start:0x020d52fc end:0x020d55c0
+    .rodata     start:0x020d779c end:0x020d79cc
+    .data       start:0x020d863c end:0x020d8670
+    .bss        start:0x020d87c4 end:0x020d87c8
+
+src/024_MainGame/Train/data_ov024_020d8550.cpp:
+    complete
+    .data       start:0x020d8670 end:0x020d86f4
+
+src/024_MainGame/Train/UnkTrainSystem1_024.cpp:
+    complete
+    .text       start:0x020d55c0 end:0x020d59d4
+    .rodata     start:0x020d79cc end:0x020d79d8
+    .init       start:0x020d7bd4 end:0x020d7bec
+    .ctor       start:0x020d7c64 end:0x020d7c68
+    .bss        start:0x020d87c8 end:0x020d87cc
+
+src/024_MainGame/Train/CargoManager_024.cpp:
+    complete
+    .text       start:0x020d59d4 end:0x020d5a58
+    .rodata     start:0x020d79d8 end:0x020d79dc
+
+src/024_MainGame/Train/UnkTrainSystem2_024.cpp:
+    complete
+    .text       start:0x020d5a58 end:0x020d5dac
+    .rodata     start:0x020d79dc end:0x020d7a08
+    .init       start:0x020d7bec end:0x020d7c04
+    .ctor       start:0x020d7c68 end:0x020d7c6c
+    .bss        start:0x020d87cc end:0x020d87d0
+
+src/024_MainGame/Unknown/UnkStruct_027e0d08_024.cpp:
+    complete
+    .text       start:0x020d5dac end:0x020d63d4
+
+src/024_MainGame/MiscAdvManager.cpp:
+    complete
+    .text       start:0x020d63d4 end:0x020d6770
+    .bss        start:0x020d87d0 end:0x020d87d4
+
+src/024_MainGame/Actor/Actor_Derived1_EC_024.cpp:
+    complete
+    .text       start:0x020d6770 end:0x020d6fbc
+    .bss        start:0x020d87d4 end:0x020d87d8
+
+src/024_MainGame/Actor/ActorUnkOBPC.cpp:
+    complete
+    .text       start:0x020d6fbc end:0x020d7438
+    .init       start:0x020d7c04 end:0x020d7c54
+    .ctor       start:0x020d7c6c end:0x020d7c70
+    .data       start:0x020d86f4 end:0x020d8780
+    .bss        start:0x020d87d8 end:0x020d8840

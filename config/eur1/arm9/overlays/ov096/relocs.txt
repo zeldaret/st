@@ -149,7 +149,7 @@ from:0x0217ade8 kind:load to:0x0217e114 module:overlay(96)
 from:0x0217adf4 kind:arm_call to:0x020984dc module:overlay(0)
 from:0x0217ae08 kind:arm_call to:0x020984dc module:overlay(0)
 from:0x0217ae10 kind:arm_call to:0x02011ff4 module:main
-from:0x0217ae98 kind:arm_call to:0x020c4aec module:overlays(19,24)
+from:0x0217ae98 kind:arm_call to:0x020c4aec module:overlay(24)
 from:0x0217aeb0 kind:load to:0x0217dd7c module:overlay(96)
 from:0x0217aeb4 kind:load to:0x0217e620 module:overlay(96)
 from:0x0217aeb8 kind:load to:0x020d8780 module:overlay(24)

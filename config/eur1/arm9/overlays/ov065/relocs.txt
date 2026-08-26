@@ -275,7 +275,7 @@ from:0x021599d4 kind:arm_call to:0x0201aa44 module:main
 from:0x021599e0 kind:load to:0x027e09a4 module:dtcm
 from:0x021599e4 kind:load to:0x027e0998 module:dtcm
 from:0x021599e8 kind:load to:0x0215b85c module:overlay(65)
-from:0x021599ec kind:load to:0x0204af10 module:main
+from:0x021599ec kind:load to:0x0204a110 add:0xe00 module:main
 from:0x021599f4 kind:load to:0x0204af1c module:main
 from:0x021599f8 kind:load to:0x0215b86c module:overlay(65)
 from:0x02159a04 kind:arm_call to:0x020984dc module:overlay(0)

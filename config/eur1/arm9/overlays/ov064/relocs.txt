@@ -287,7 +287,7 @@ from:0x02159db4 kind:load to:0x0215a454 module:overlay(64)
 from:0x02159dbc kind:load to:0x027e0cfc module:dtcm
 from:0x02159dd4 kind:load to:0x020d8780 module:overlay(24)
 from:0x02159dd8 kind:load to:0x0215b2bc module:overlay(64)
-from:0x02159ddc kind:load to:0x020c4aec module:overlays(19,24)
+from:0x02159ddc kind:load to:0x020c4aec module:overlay(24)
 from:0x02159df0 kind:arm_call to:0x01fff458 module:itcm
 from:0x02159df8 kind:arm_call to:0x0212bf5c module:overlay(40)
 from:0x02159e0c kind:arm_call to:0x020d43a8 module:overlay(24)

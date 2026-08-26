@@ -3009,10 +3009,10 @@ data_ov026_0213f464 kind:bss addr:0x0213f464 ambiguous
 data_ov026_0213f684 kind:bss addr:0x0213f684
 data_ov026_0213f68c kind:bss addr:0x0213f68c
 data_ov026_0213f694 kind:bss addr:0x0213f694
-data_ov026_0213f698 kind:bss addr:0x0213f698
+data_ov026_0213f578 kind:bss addr:0x0213f698
 data_ov026_0213f69c kind:bss addr:0x0213f69c
 data_ov026_0213f6a4 kind:bss addr:0x0213f6a4
-data_ov026_0213f6b0 kind:bss addr:0x0213f6b0
+data_ov026_0213f590 kind:bss addr:0x0213f6b0
 data_ov026_0213f70c kind:bss addr:0x0213f70c
 data_ov026_0213f714 kind:bss addr:0x0213f714
 data_ov026_0213f720 kind:bss addr:0x0213f720

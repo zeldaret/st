@@ -484,7 +484,7 @@ void UICounter_Health::func_ov024_020cdd3c(u8 param1, u8 param2) {
         var_r4 *= 4;
     }
 
-#if IS_JP
+#if IS_JP || IS_EUR1
     if (var_r5 < var_r4 && (var_r4 - var_r5) >= 4) {
         this->mUnk_008 = var_r5 / 4;
         this->mUnk_009 = var_r4 / 4;
@@ -697,7 +697,7 @@ void UICounter_Health::func_ov024_020cdfd8() {
                             this->mUnk_4D4 = 0x12;
                         }
                     } else if (this->mUnk_00A != 0) {
-#if IS_JP
+#if IS_JP || IS_EUR1
                         switch (this->mUnk_00A) {
                             case 1:
                                 this->SetIterValue(this->mUnk_008, 0x06);
@@ -1031,7 +1031,7 @@ void UICounter_Cargo::func_ov024_020cee64() {
     if (gpCargoManager->GetCargo()->IsTypeSet()) {
         this->mUnk_143 = true;
     } else {
-#if IS_JP
+#if IS_JP || IS_EUR1
         this->mUnk_141 = false;
         this->mUnk_04C.Subprocess2_UnkValueSets();
         this->mUnk_04C.UnkOperations3();
@@ -1050,7 +1050,7 @@ void UICounter_Cargo::func_ov024_020cee84() {
 
     this->mUnk_14C.func_ov000_02060e3c(0, "Cargo.ncgr", path);
 
-#if IS_JP
+#if IS_JP || IS_EUR1
     if (!gpCargoManager->GetCargo()->IsTypeSet()) {
         this->mUnk_141 = false;
         return;

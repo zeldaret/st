@@ -329,7 +329,7 @@ void AdventureModeManager::vfunc_24() {
 
                             data_ov000_020b5214.func_ov000_0206db44(0x37);
                             break;
-#if !IS_JP
+#if IS_EUR || IS_USA
                         case 7:
                             if (data_ov031_02118fa4 == 0) {
                                 return;
@@ -732,7 +732,7 @@ bool AdventureModeManager::func_ov024_020c6940(unk32 param1, unk32 param2) {
     if (param1 != 0) {
         if (data_0204a088->mUnk_00 == 1) {
 
-#if IS_JP
+#if IS_JP || IS_EUR1
             if (data_027e09b8->mUnk_94 & 8) {
                 data_027e09b8->func_ov000_02074d78(3);
             }

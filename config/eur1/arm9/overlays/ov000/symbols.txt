@@ -3098,10 +3098,10 @@ _ZN8InstanceI15TreasureManagerED2Ev kind:function(arm,size=0x14) addr:0x020aa264
 func_ov000_020aa224 kind:function(arm,size=0x14) addr:0x020aa278
 data_ov000_020aa28c kind:data(any) addr:0x020aa28c
 data_ov000_020aa294 kind:data(any) addr:0x020aa294
-data_ov000_020aa298 kind:data(any) addr:0x020aa298
+data_ov000_020aa244 kind:data(any) addr:0x020aa298
 data_ov000_020aa29c kind:data(any) addr:0x020aa29c
-data_ov000_020aa2a0 kind:data(any) addr:0x020aa2a0
-data_ov000_020aa2a4 kind:data(any) addr:0x020aa2a4
+data_ov000_020aa24c kind:data(any) addr:0x020aa2a0
+data_ov000_020aa250 kind:data(any) addr:0x020aa2a4
 data_ov000_020aa2b4 kind:data(any) addr:0x020aa2b4
 data_ov000_020aa3b4 kind:data(any) addr:0x020aa3b4
 data_ov000_020aa3c4 kind:data(any) addr:0x020aa3c4
@@ -3465,7 +3465,7 @@ data_ov000_020b1f0c kind:data(any) addr:0x020b1f0c
 data_ov000_020b1f24 kind:data(any) addr:0x020b1f24
 data_ov000_020b1f3c kind:data(any) addr:0x020b1f3c
 data_ov000_020b1f54 kind:data(any) addr:0x020b1f54
-_ZTV33UnkSystem2_UnkSubSystem1_Derived4 kind:data(any) addr:0x020b1f6c
+_ZTV33UnkSystem2_UnkSubSystem1_Derived4 kind:data(any) addr:0x020b1f64
 data_ov000_020b1f84 kind:data(any) addr:0x020b1f84
 _ZTV19data_ov000_020b1f54 kind:data(any) addr:0x020b1f9c
 data_ov000_020b1fb4 kind:data(any) addr:0x020b1fb4
@@ -3474,7 +3474,7 @@ data_ov000_020b1fdc kind:data(any) addr:0x020b1fdc
 data_ov000_020b1fac kind:data(any) addr:0x020b1fec
 data_ov000_020b1ffc kind:data(any) addr:0x020b1ffc
 data_ov000_020b1fd8 kind:data(any) addr:0x020b2018
-data_ov000_020b2034 kind:data(any) addr:0x020b2034
+_ZTV27AdventureModeManager_160_28 kind:data(any) addr:0x020b202c
 data_ov000_020b2048_eur1 kind:data(any) addr:0x020b2048
 data_ov000_020b2054 kind:data(any) addr:0x020b2054
 data_ov000_020b2060_eur1 kind:data(any) addr:0x020b2060
@@ -3684,7 +3684,7 @@ _ZTV14ActorEventIcon kind:data(any) addr:0x020b3410
 _ZTV19ActorProfileUnkEFIK kind:data(any) addr:0x020b346c
 _ZTV12ActorUnkEFIK kind:data(any) addr:0x020b3490
 _ZTV19data_ov000_020b34f8 kind:data(any) addr:0x020b34f0
-data_ov000_020b3504 kind:data(any) addr:0x020b3504
+data_ov000_020b34c4 kind:data(any) addr:0x020b3504
 _ZTV25MapObjectProfile_Derived4 kind:data(any) addr:0x020b3508
 _ZTV25MapObjectProfile_Derived3 kind:data(any) addr:0x020b3524
 _ZTV25MapObjectProfile_Derived2 kind:data(any) addr:0x020b3540
@@ -4012,7 +4012,7 @@ data_ov000_020b4f20 kind:bss addr:0x020b4f20
 data_ov000_020b4f24 kind:bss addr:0x020b4f24
 data_ov000_020b4f28 kind:bss addr:0x020b4f28
 data_ov000_020b4eec kind:bss addr:0x020b4f2c
-data_ov000_020b4fb0 kind:bss addr:0x020b4fb0
+data_ov000_020b4f70 kind:bss addr:0x020b4fb0
 data_ov000_020b4fb4 kind:bss addr:0x020b4fb4
 data_ov000_020b4fb8 kind:bss addr:0x020b4fb8
 data_ov000_020b4f84 kind:bss addr:0x020b4fc4
@@ -4074,7 +4074,7 @@ data_ov000_020b62ec kind:bss addr:0x020b62ec
 gSaveManager kind:bss addr:0x020b62f0
 data_ov000_020b6538 kind:bss addr:0x020b6538
 data_ov000_020b64f4 kind:bss addr:0x020b653c
-data_ov000_020b6540 kind:bss addr:0x020b6540
+data_ov000_020b64f8 kind:bss addr:0x020b6540
 data_ov000_020b64fc kind:bss addr:0x020b6544
 data_ov000_020b6548 kind:bss addr:0x020b6548
 gpTreasureManager kind:bss addr:0x020b6558
