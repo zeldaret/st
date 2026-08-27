@@ -42,16 +42,17 @@ public:
     void func_ov032_0211d028();
     bool func_ov032_0211d040(VecFx32 *param1);
     void func_ov032_0211d08c(VecFx32 *param1);
-    void func_ov032_0211d2e4();
-    UnkStruct_027e0960_TableEntry_04 *func_ov032_0211d384();
-    unk32 func_ov032_0211d568(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04 *param2, unk32 param3);
-    bool func_ov032_0211d674(unk32 param1, unk32 param2);
-    bool func_ov032_0211d6d8(unk32 param1, unk32 param2, unk32 param3);
-    void func_ov032_0211d7e8();
+    bool func_ov032_0211d2e4(UnkStruct_027e0960_TableEntry_04_Base *param1);
+    UnkStruct_027e0960_TableEntry_04 *func_ov032_0211d384(VecFx32 *param1);
+    unk32 func_ov032_0211d568(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2,
+                              UnkStruct_027e0960_TableEntry_04_Base *param3);
+    bool func_ov032_0211d674(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2);
+    bool func_ov032_0211d6d8(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2, unk32 param3);
+    void func_ov032_0211d7e8(VecFx32 *param1);
     void func_ov032_0211d80c();
     void func_ov032_0211d830(UnkStruct_027e0960_TableEntry_04 *param1);
     void func_ov032_0211d910();
-    bool func_ov032_0211d920();
+    bool func_ov032_0211d920(VecFx32 *param1);
     bool func_ov032_0211d864(VecFx32 *param1);
     bool func_ov032_0211da0c(unk32 param1, VecFx32 *param2);
 };

@@ -625,7 +625,7 @@ u16 *ActorGreenSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, Vec
 
     this->mUnk_28 = 0x0;
 
-    if (this->func_ov032_0211d920()) {
+    if (this->func_ov032_0211d920(param1)) {
         param3->z = FLOAT_TO_FX32(0.0f);
         param3->x = FLOAT_TO_FX32(0.0f);
         this->mUnk_28 |= 0x1;
@@ -665,7 +665,7 @@ void ActorGreenSpinut_1EC::func_ov032_0211cf74() {
     this->func_ov032_0211cfac(0x1);
 }
 
-extern "C" bool func_02017930(unk32, UnkStruct_027e0960_TableEntry_04 *);
+extern "C" bool func_02017930(UnkStruct_027e0960_TableEntry_04_Base *, UnkStruct_027e0960_TableEntry_04_Base *);
 
 // non-matching
 void ActorGreenSpinut_1EC::func_ov032_0211cfac(unk32 param1) {
@@ -673,12 +673,12 @@ void ActorGreenSpinut_1EC::func_ov032_0211cfac(unk32 param1) {
     UnkStruct_027e0960_TableEntry_04 *entry04 = this->func_ov032_0211cd20(data_027e0ce0->func_01fff148(param1));
     entry04->vfunc_0C(&sp00);
 
-    if (entry04->mUnk_0C != 0x0 && func_02017930(entry04->mUnk_0C, entry04)) {
+    if (entry04->mUnk_0C != NULL && func_02017930(entry04->mUnk_0C, entry04)) {
         return;
     }
 
     entry04->mUnk_14 = entry04->mUnk_0C;
-    entry04->mUnk_0C = 0x0;
+    entry04->mUnk_0C = NULL;
 }
 
 void ActorGreenSpinut_1EC::func_ov032_0211d028() {
@@ -689,19 +689,71 @@ void ActorGreenSpinut_1EC::func_ov032_0211d028() {
 }
 
 bool ActorGreenSpinut_1EC::func_ov032_0211d040(VecFx32 *param1) {
-    return (this->func_ov032_0211d568(param1, this->mUnk_04, 0x0) > 0) ||
-           (this->func_ov032_0211d568(param1, this->mUnk_08, 0x0) > 0);
+    return (this->func_ov032_0211d568(param1, this->mUnk_04, NULL) > 0) ||
+           (this->func_ov032_0211d568(param1, this->mUnk_08, NULL) > 0);
 }
-// non-matching
-void ActorGreenSpinut_1EC::func_ov032_0211d08c(VecFx32 *param1) {}
-// non-matching
-void ActorGreenSpinut_1EC::func_ov032_0211d2e4() {}
-// non-matching
-UnkStruct_027e0960_TableEntry_04 *ActorGreenSpinut_1EC::func_ov032_0211d384() {}
-// non-matching
-unk32 ActorGreenSpinut_1EC::func_ov032_0211d568(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04 *param2, unk32 param3) {}
 
-bool ActorGreenSpinut_1EC::func_ov032_0211d674(unk32 param1, unk32 param2) {
+// non-matching
+void ActorGreenSpinut_1EC::func_ov032_0211d08c(VecFx32 *param1) {
+    if (this->func_ov032_0211d568(param1, this->mUnk_08, this->mUnk_04) > 0x0) {
+        VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
+        if ((func_01ff9258(vec->x - param1->x, vec->z - param1->z) > 0x3CCD)) {
+            return;
+        }
+    }
+}
+
+// non-matching
+bool ActorGreenSpinut_1EC::func_ov032_0211d2e4(UnkStruct_027e0960_TableEntry_04_Base *param1) {
+    if (param1 == NULL) {
+    }
+}
+
+// non-matching
+UnkStruct_027e0960_TableEntry_04 *ActorGreenSpinut_1EC::func_ov032_0211d384(VecFx32 *param1) {
+    VecFx32 *sp00 = param1;
+    if (this->func_ov032_0211d920(param1)) {
+        return NULL;
+    }
+
+    u32 sp08 = this->mUnk_04->vfunc_1C();
+    u32 sp04 = 0x0;
+
+    // loop
+}
+
+// non-matching (regalloc)
+unk32 ActorGreenSpinut_1EC::func_ov032_0211d568(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2,
+                                                UnkStruct_027e0960_TableEntry_04_Base *param3) {
+    if (this->func_ov032_0211d674(param1, param2) == 0) {
+        return 0x0;
+    }
+
+    unk32 ret = 0;
+    u32 val   = param2->vfunc_1C();
+    if (val < 0x2) {
+        return ret;
+    }
+
+    VecFx32 sp00;
+    param2->vfunc_0C(&sp00);
+
+    for (u32 i = 0; i < val; ++i) {
+        UnkStruct_027e0960_TableEntry_04_Base *temp = param2->vfunc_18(i);
+        if (!func_02017930(temp, param2) && (param3 == NULL || !func_02017930(temp, param3)) &&
+            this->func_ov032_0211d674(&sp00, temp)) {
+            if (val != 0x2) {
+                ++ret;
+            } else {
+                ret += this->func_ov032_0211d568(&sp00, temp, param2);
+            }
+        }
+    }
+
+    return ret;
+}
+
+bool ActorGreenSpinut_1EC::func_ov032_0211d674(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2) {
     if (this->func_ov032_0211d6d8(param1, param2, 0x0) &&
         (!data_027e0ce0->func_01fff1a4() || this->func_ov032_0211d6d8(param1, param2, 0x1))) {
         return true;
@@ -710,10 +762,10 @@ bool ActorGreenSpinut_1EC::func_ov032_0211d674(unk32 param1, unk32 param2) {
 }
 
 // non-matching
-bool ActorGreenSpinut_1EC::func_ov032_0211d6d8(unk32 param1, unk32 param2, unk32 param3) {}
+bool ActorGreenSpinut_1EC::func_ov032_0211d6d8(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2, unk32 param3) {}
 
-void ActorGreenSpinut_1EC::func_ov032_0211d7e8() {
-    this->func_ov032_0211d830(this->func_ov032_0211d384());
+void ActorGreenSpinut_1EC::func_ov032_0211d7e8(VecFx32 *param1) {
+    this->func_ov032_0211d830(this->func_ov032_0211d384(param1));
     this->func_ov032_0211d80c();
 }
 
@@ -737,9 +789,9 @@ bool ActorGreenSpinut_1EC::func_ov032_0211d864(VecFx32 *param1) {
         return false;
     }
 
-    if (!this->func_ov032_0211d568(param1, this->mUnk_04, 0x0)) {
+    if (!this->func_ov032_0211d568(param1, this->mUnk_04, NULL)) {
 
-        if (this->func_ov032_0211d568(param1, this->mUnk_08, 0x0) > 0x0) {
+        if (this->func_ov032_0211d568(param1, this->mUnk_08, NULL) > 0x0) {
             return true;
         }
     }
@@ -754,7 +806,36 @@ void ActorGreenSpinut_1EC::func_ov032_0211d910() {
     this->mUnk_08                              = oldUnk04;
 }
 
-// non-matching
-bool ActorGreenSpinut_1EC::func_ov032_0211d920() {}
+// non-matching (regalloc :sob:)
+bool ActorGreenSpinut_1EC::func_ov032_0211d920(VecFx32 *param1) {
+    UnkStruct_027e0ce0 *data = data_027e0ce0;
+    if (!data->func_01fff1a4()) {
+        return false;
+    }
+
+    bool ret    = false;
+    bool var_r7 = false;
+    bool var_r8 = false;
+
+    VecFx32 *vec = data->func_01fff148(0x0);
+    if (func_01ff9258(param1->x - vec->x, param1->z - vec->z) < 0x3000) {
+        vec = data->func_01fff148(0x1);
+
+        if (func_01ff9258(param1->x - vec->x, param1->z - vec->z) < 0x3000) {
+            var_r8 = true;
+        }
+    }
+
+    if (var_r8 && this->func_ov032_0211d568(param1, this->mUnk_04, NULL) == 0) {
+        var_r7 = true;
+    }
+
+    if (var_r7 && this->func_ov032_0211d568(param1, this->mUnk_08, NULL) == 0) {
+        ret = true;
+    }
+
+    return ret;
+}
+
 // non-matching
 bool ActorGreenSpinut_1EC::func_ov032_0211da0c(unk32 param1, VecFx32 *param2) {}

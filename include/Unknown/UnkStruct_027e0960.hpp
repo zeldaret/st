@@ -10,7 +10,7 @@ public:
     /* 00 (vtable) */
     /* 04 */ unk8 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
+    /* 0C */ UnkStruct_027e0960_TableEntry_04_Base *mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */
 
@@ -19,18 +19,18 @@ public:
     // data_02043ff0
     /* 00 */ virtual ~UnkStruct_027e0960_TableEntry_04_Base();
     /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C(VecFx32 *param1) = 0;
-    /* 10 */ virtual void vfunc_10()                = 0;
-    /* 14 */ virtual void vfunc_14()                = 0;
-    /* 18 */ virtual void vfunc_18()                = 0;
-    /* 1C */ virtual void vfunc_1C()                = 0;
+    /* 0C */ virtual void vfunc_0C(VecFx32 *param1)                                = 0;
+    /* 10 */ virtual void vfunc_10()                                               = 0;
+    /* 14 */ virtual void vfunc_14()                                               = 0;
+    /* 18 */ virtual UnkStruct_027e0960_TableEntry_04_Base *vfunc_18(unk32 param1) = 0;
+    /* 1C */ virtual u32 vfunc_1C()                                                = 0;
     /* 20 */
 };
 
 class UnkStruct_027e0960_TableEntry_04 : public UnkStruct_027e0960_TableEntry_04_Base {
 public:
     /* 00 (base) */
-    /* 14 */ unk32 mUnk_14;
+    /* 14 */ UnkStruct_027e0960_TableEntry_04_Base *mUnk_14;
     /* 18 */ unk32 mUnk_18;
     /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk16 mUnk_20;
@@ -43,8 +43,8 @@ public:
     /* 0C */ virtual void vfunc_0C(VecFx32 *param1) override;
     /* 10 */ virtual void vfunc_10() override;
     /* 14 */ virtual void vfunc_14() override;
-    /* 18 */ virtual void vfunc_18() override;
-    /* 1C */ virtual void vfunc_1C() override;
+    /* 18 */ virtual UnkStruct_027e0960_TableEntry_04 *vfunc_18(unk32 param1) override;
+    /* 1C */ virtual u32 vfunc_1C() override;
 };
 
 class UnkStruct_027e0960_TableEntry {
