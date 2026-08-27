@@ -18,29 +18,17 @@ enum ActorGreenSpinutState_ {
     ActorGreenSpinutState_Max
 };
 
-class UnkStruct_ov032_0211d830 {
-public:
-    /* 00 (vtable) */
-
-    /* 00 */ virtual void vfunc_00()        = 0;
-    /* 04 */ virtual void vfunc_04()        = 0;
-    /* 08 */ virtual void vfunc_08()        = 0;
-    /* 0C */ virtual void vfunc_0C(unk32 *) = 0;
-};
-
 class ActorGreenSpinut_1EC {
 public:
     /* 00 */ u8 mUnk_00;
-    /* 04 */ UnkStruct_ov032_0211d830 *mUnk_04;
-    /* 08 */ UnkStruct_ov032_0211d830 *mUnk_08;
+    /* 04 */ UnkStruct_027e0960_TableEntry_04 *mUnk_04;
+    /* 08 */ UnkStruct_027e0960_TableEntry_04 *mUnk_08;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk32 mUnk_1C;
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ unk32 mUnk_24;
-    /* 28 */ unk16 mUnk_28;
+    /* 1C */ VecFx32 mUnk_1C;
+    /* 28 */ u16 mUnk_28;
     /* 2C */ unk32 mUnk_2C;
     /* 30 */
 
@@ -48,24 +36,24 @@ public:
 
     void func_ov032_0211cc48(VecFx32 *param1);
     UnkStruct_027e0960_TableEntry_04 *func_ov032_0211cd20(VecFx32 *param1);
-    void func_ov032_0211cd60(VecFx32 *param1, s16 *param2, VecFx32 *param3, unk32 param4, unk32 param5, unk32 param6);
+    u16 *func_ov032_0211cd60(VecFx32 *param1, s16 *param2, VecFx32 *param3, unk32 param4, unk32 param5, unk32 param6);
     void func_ov032_0211cf74();
     void func_ov032_0211cfac(unk32 param1);
     void func_ov032_0211d028();
-    bool func_ov032_0211d040(unk32 param1);
+    bool func_ov032_0211d040(VecFx32 *param1);
     void func_ov032_0211d08c(VecFx32 *param1);
     void func_ov032_0211d2e4();
-    void func_ov032_0211d384();
-    unk32 func_ov032_0211d568(unk32 param1, UnkStruct_ov032_0211d830 *param2, unk32 param3);
-    void func_ov032_0211d674();
-    void func_ov032_0211d6d8();
+    UnkStruct_027e0960_TableEntry_04 *func_ov032_0211d384();
+    unk32 func_ov032_0211d568(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04 *param2, unk32 param3);
+    bool func_ov032_0211d674(unk32 param1, unk32 param2);
+    bool func_ov032_0211d6d8(unk32 param1, unk32 param2, unk32 param3);
     void func_ov032_0211d7e8();
     void func_ov032_0211d80c();
-    void func_ov032_0211d830(UnkStruct_ov032_0211d830 *param1);
+    void func_ov032_0211d830(UnkStruct_027e0960_TableEntry_04 *param1);
     void func_ov032_0211d910();
-    void func_ov032_0211d920();
-    void func_ov032_0211d864();
-    void func_ov032_0211da0c();
+    bool func_ov032_0211d920();
+    bool func_ov032_0211d864(VecFx32 *param1);
+    bool func_ov032_0211da0c(unk32 param1, VecFx32 *param2);
 };
 
 class ActorGreenSpinut : public Actor_Derived2 {
