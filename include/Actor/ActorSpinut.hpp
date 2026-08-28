@@ -16,16 +16,16 @@ public:
 };
 
 enum ActorSpinutState_ {
-    ActorSpinutState_0  = 0,
-    ActorSpinutState_1  = 1,
+    ActorSpinutState_0  = 0, // Idle
+    ActorSpinutState_1  = 1, // Triggered by Link
     ActorSpinutState_2  = 2,
-    ActorSpinutState_3  = 3,
+    ActorSpinutState_3  = 3, // Walking to target aka Link
     ActorSpinutState_4  = 4,
     ActorSpinutState_5  = 5,
-    ActorSpinutState_6  = 6,
+    ActorSpinutState_6  = 6, // Damaged or killed ?
     ActorSpinutState_7  = 7,
     ActorSpinutState_8  = 8,
-    ActorSpinutState_9  = 9,
+    ActorSpinutState_9  = 9, // Target lost
     ActorSpinutState_10 = 10,
     ActorSpinutState_11 = 11,
     ActorSpinutState_Max
