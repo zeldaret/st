@@ -1,6 +1,6 @@
 #define VECFX32_CTORS
 
-#include "Actor/ActorGreenSpinut.hpp"
+#include "Actor/ActorFleeingSpinut.hpp"
 
 #include "Actor/ActorUnkKEYN.hpp"
 #include "System/SysNew.hpp"
@@ -37,39 +37,39 @@ static const VecFx32 data_ov032_021223a8(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f
 static ActorUnkZLSL_AnimationTag data_ov032_021223b4 = {.index = 0, .name = "walk", .unknown = 0x0};
 static ActorUnkZLSL_AnimationTag data_ov032_021223cc = {.index = 1, .name = "discover", .unknown = 0x1};
 
-static PTMF<ActorGreenSpinut> data_ov032_021223e4[ActorGreenSpinutState_Max] = {
-    ActorGreenSpinut::func_ov032_0211c2c4, // ActorGreenSpinutState_0
-    ActorGreenSpinut::func_ov032_0211c444, // ActorGreenSpinutState_1
-    ActorGreenSpinut::func_ov032_0211be30, // ActorGreenSpinutState_2
-    ActorGreenSpinut::func_ov032_0211bf84, // ActorGreenSpinutState_3
-    ActorGreenSpinut::func_ov032_0211c53c, // ActorGreenSpinutState_4
-    ActorGreenSpinut::func_ov032_0211c73c, // ActorGreenSpinutState_5
-    ActorGreenSpinut::func_ov032_0211c07c  // ActorGreenSpinutState_6
+static PTMF<ActorFleeingSpinut> data_ov032_021223e4[ActorFleeingSpinutState_Max] = {
+    ActorFleeingSpinut::func_ov032_0211c2c4, // ActorGreenSpinutState_0
+    ActorFleeingSpinut::func_ov032_0211c444, // ActorGreenSpinutState_1
+    ActorFleeingSpinut::func_ov032_0211be30, // ActorGreenSpinutState_2
+    ActorFleeingSpinut::func_ov032_0211bf84, // ActorGreenSpinutState_3
+    ActorFleeingSpinut::func_ov032_0211c53c, // ActorGreenSpinutState_4
+    ActorFleeingSpinut::func_ov032_0211c73c, // ActorGreenSpinutState_5
+    ActorFleeingSpinut::func_ov032_0211c07c  // ActorGreenSpinutState_6
 };
-static PTMF<ActorGreenSpinut> data_ov032_0212241c[ActorGreenSpinutState_Max] = {
-    ActorGreenSpinut::func_ov032_0211c340, // ActorGreenSpinutState_0
-    ActorGreenSpinut::func_ov032_0211c4d4, // ActorGreenSpinutState_1
-    ActorGreenSpinut::func_ov032_0211bea8, // ActorGreenSpinutState_2
-    ActorGreenSpinut::func_ov032_0211bffc, // ActorGreenSpinutState_3
-    ActorGreenSpinut::func_ov032_0211c5cc, // ActorGreenSpinutState_4
-    ActorGreenSpinut::func_ov032_0211c7bc, // ActorGreenSpinutState_5
-    ActorGreenSpinut::func_ov032_0211c108  // ActorGreenSpinutState_6
+static PTMF<ActorFleeingSpinut> data_ov032_0212241c[ActorFleeingSpinutState_Max] = {
+    ActorFleeingSpinut::func_ov032_0211c340, // ActorGreenSpinutState_0
+    ActorFleeingSpinut::func_ov032_0211c4d4, // ActorGreenSpinutState_1
+    ActorFleeingSpinut::func_ov032_0211bea8, // ActorGreenSpinutState_2
+    ActorFleeingSpinut::func_ov032_0211bffc, // ActorGreenSpinutState_3
+    ActorFleeingSpinut::func_ov032_0211c5cc, // ActorGreenSpinutState_4
+    ActorFleeingSpinut::func_ov032_0211c7bc, // ActorGreenSpinutState_5
+    ActorFleeingSpinut::func_ov032_0211c108  // ActorGreenSpinutState_6
 };
 
-DECL_PROFILE(ActorProfileGreenSpinut);
+DECL_PROFILE(ActorProfileFleeingSpinut);
 
-Actor *ActorProfileGreenSpinut::Create() {
-    return new(HeapIndex_2) ActorGreenSpinut();
+Actor *ActorProfileFleeingSpinut::Create() {
+    return new(HeapIndex_2) ActorFleeingSpinut();
 }
 
-ActorProfileGreenSpinut::ActorProfileGreenSpinut() :
+ActorProfileFleeingSpinut::ActorProfileFleeingSpinut() :
     ActorProfile_ov000_020b3018(ActorId_GreenSpinut, ActorId_Spinut) {
     this->mUnk_04.Init(FLOAT_TO_FX32(0.4f));
 }
 
-ActorGreenSpinut::ActorGreenSpinut() :
-    mUnk_0B0(G3d_GetModelPtr(GET_PROFILE(ActorProfileGreenSpinut)->vfunc_04()->mUnk_50)),
-    mUnk_110(&this->mUnk_0B0, GET_PROFILE(ActorProfileGreenSpinut)->vfunc_04()),
+ActorFleeingSpinut::ActorFleeingSpinut() :
+    mUnk_0B0(G3d_GetModelPtr(GET_PROFILE(ActorProfileFleeingSpinut)->vfunc_04()->mUnk_50)),
+    mUnk_110(&this->mUnk_0B0, GET_PROFILE(ActorProfileFleeingSpinut)->vfunc_04()),
     previousState(ActorState_None),
     mUnk_1BE(0x0) {
     *(s16 *) &this->mUnk_44 |= 0x40;
@@ -96,9 +96,9 @@ ActorGreenSpinut::ActorGreenSpinut() :
     }
 }
 
-ActorGreenSpinut::~ActorGreenSpinut() {}
+ActorFleeingSpinut::~ActorFleeingSpinut() {}
 
-bool ActorGreenSpinut::vfunc_18(unk32 param1) {
+bool ActorFleeingSpinut::vfunc_18(unk32 param1) {
     this->mUnk_1EC.mUnk_00 = this->mUnk_5C.mParams[1];
 
     this->SetState(0x0);
@@ -107,7 +107,7 @@ bool ActorGreenSpinut::vfunc_18(unk32 param1) {
 }
 
 // non-matching (assignation order)
-void ActorGreenSpinut::SetState(ActorState state) {
+void ActorFleeingSpinut::SetState(ActorState state) {
     ActorState oldState = this->mState;
     this->mState        = state;
 
@@ -116,10 +116,10 @@ void ActorGreenSpinut::SetState(ActorState state) {
     this->mUnk_2C       = data_ov000_020aecf8;
     this->mUnk_224      = true;
 
-    CALL_PTMF(PTMF<ActorGreenSpinut>, data_ov032_021223e4[oldState]);
+    CALL_PTMF(PTMF<ActorFleeingSpinut>, data_ov032_021223e4[oldState]);
 }
 
-void ActorGreenSpinut::vfunc_20() {
+void ActorFleeingSpinut::vfunc_20() {
     this->mUnk_3C = &this->mUnk_1C0;
     if (!this->func_ov032_0211c938()) {
         this->mUnk_1EC.func_ov032_0211d028();
@@ -127,7 +127,7 @@ void ActorGreenSpinut::vfunc_20() {
         this->mUnk_1EC.func_ov032_0211cf74();
     }
 
-    CALL_PTMF(PTMF<ActorGreenSpinut>, data_ov032_0212241c[this->mState]);
+    CALL_PTMF(PTMF<ActorFleeingSpinut>, data_ov032_0212241c[this->mState]);
 
     this->Actor::func_ov000_02098838();
     this->func_ov032_0211cb2c();
@@ -161,14 +161,14 @@ void ActorGreenSpinut::vfunc_20() {
 
                 case 0xF:
                     this->Actor_Derived2::func_ov000_020990c0(&this->mUnk_1C0, 0x0, 0x0);
-                    this->SetState(ActorGreenSpinutState_2);
+                    this->SetState(ActorFleeingSpinutState_2);
                     break;
 
                 default:
                     this->mUnk_48 -= this->mUnk_1C0.mUnk_1E;
                     this->Actor_Derived2::func_ov000_020990c0(&this->mUnk_1C0, 0x0, 0x0);
                     data_027e09a8->func_ov000_02071b30(0x983C, &this->mPos, 0x0);
-                    this->SetState(ActorGreenSpinutState_2);
+                    this->SetState(ActorFleeingSpinutState_2);
                     break;
             }
         }
@@ -196,7 +196,7 @@ void ActorGreenSpinut::vfunc_20() {
 }
 
 // non-matching (@1142)
-void ActorGreenSpinut::vfunc_30(Actor_vfunc_30 *param1) {
+void ActorFleeingSpinut::vfunc_30(Actor_vfunc_30 *param1) {
     if (!this->func_ov032_0211be04()) {
         return;
     }
@@ -204,7 +204,7 @@ void ActorGreenSpinut::vfunc_30(Actor_vfunc_30 *param1) {
     bool var = true;
     this->Actor::func_ov017_020bef88(param1, &data_ov032_02122924, 0x1);
 
-    if (this->mState != ActorGreenSpinutState_6) {
+    if (this->mState != ActorFleeingSpinutState_6) {
         return;
     }
 
@@ -230,7 +230,7 @@ void ActorGreenSpinut::vfunc_30(Actor_vfunc_30 *param1) {
     data_0204af1c.func_0201aa44(&data_ov032_0212290c, &sp04, 0x1, NULL);
 }
 
-void ActorGreenSpinut::vfunc_2C(unk32 param1) {
+void ActorFleeingSpinut::vfunc_2C(unk32 param1) {
     if (!this->Actor::func_01fff5d0(param1, 0x0)) {
         return;
     }
@@ -244,18 +244,18 @@ void ActorGreenSpinut::vfunc_2C(unk32 param1) {
     func_01ffc634(&this->mUnk_0B0, &this->mUnk_98, this->mAngleStruct, &vec);
 }
 
-bool ActorGreenSpinut::func_ov032_0211be04() {
+bool ActorFleeingSpinut::func_ov032_0211be04() {
     return this->mUnk_5C.mParams[2] == 0x1 && !this->Actor::func_ov000_02098a60(0x0);
 }
 
-void ActorGreenSpinut::func_ov032_0211be30() {
+void ActorFleeingSpinut::func_ov032_0211be30() {
     this->mUnk_110.vfunc_1C(data_ov032_021223b4, 0x1000, 0x19A, 0x0);
 
     this->mUnk_1C0.func_ov000_02097bec();
     this->mUnk_38->mUnk_08 = 0x3;
 }
 
-void ActorGreenSpinut::func_ov032_0211bea8() {
+void ActorFleeingSpinut::func_ov032_0211bea8() {
     this->Actor_Derived2::func_ov000_020992dc();
 
     if (!GET_FLAG(this->mFlags, ActorFlag_5)) {
@@ -284,7 +284,7 @@ void ActorGreenSpinut::func_ov032_0211bea8() {
     this->SetState(this->previousState);
 }
 
-void ActorGreenSpinut::func_ov032_0211bf84() {
+void ActorFleeingSpinut::func_ov032_0211bf84() {
     this->mUnk_110.vfunc_1C(data_ov032_021223b4, 0x1000, 0x19A, 0x0);
 
     this->mUnk_52 = 0xF;
@@ -294,23 +294,23 @@ void ActorGreenSpinut::func_ov032_0211bf84() {
     this->mVel.z = FLOAT_TO_FX32(0.0f);
 }
 
-void ActorGreenSpinut::func_ov032_0211bffc() {
+void ActorFleeingSpinut::func_ov032_0211bffc() {
     if (this->func_ov032_0211ca20()) {
         if (this->mUnk_50 >= this->mUnk_52) {
-            this->SetState(ActorGreenSpinutState_1);
+            this->SetState(ActorFleeingSpinutState_1);
         } else {
-            this->SetState(ActorGreenSpinutState_4);
+            this->SetState(ActorFleeingSpinutState_4);
         }
     } else {
         if (!this->func_ov032_0211c938() || this->func_ov032_0211c9d8()) {
-            this->SetState(ActorGreenSpinutState_0);
+            this->SetState(ActorFleeingSpinutState_0);
         }
     }
 
     this->IsTimerOut();
 }
 
-void ActorGreenSpinut::func_ov032_0211c07c() {
+void ActorFleeingSpinut::func_ov032_0211c07c() {
     this->mUnk_110.vfunc_1C(data_ov032_021223cc, 0x1000, 0x19A, 0x0);
 
     this->mVel.x = FLOAT_TO_FX32(0.0f);
@@ -320,7 +320,7 @@ void ActorGreenSpinut::func_ov032_0211c07c() {
 }
 
 // non-matching (func_01ffb428 & sp8)
-void ActorGreenSpinut::func_ov032_0211c108() {
+void ActorFleeingSpinut::func_ov032_0211c108() {
     UnkStruct_PlayerGet_50 *pGet50 = this->mUnk_110.vfunc_28();
     unk32 pGet50Unk8               = pGet50->mUnk_08;
     unk32 pGet50Unk10              = pGet50->mUnk_10;
@@ -347,17 +347,17 @@ void ActorGreenSpinut::func_ov032_0211c108() {
     data_027e0cec->func_ov000_0209feac(0x880, &this->mPos, 0x2, 0x0, 0x0);
 
     if (!this->func_ov032_0211c938()) {
-        this->SetState(ActorGreenSpinutState_0);
+        this->SetState(ActorFleeingSpinutState_0);
         return;
     }
 
     if (this->func_ov032_0211c9d8()) {
-        this->SetState(ActorGreenSpinutState_5);
+        this->SetState(ActorFleeingSpinutState_5);
         return;
     }
 
     if (this->mUnk_1EC.func_ov032_0211d040(&this->mPos)) {
-        this->SetState(ActorGreenSpinutState_4);
+        this->SetState(ActorFleeingSpinutState_4);
         return;
     }
 
@@ -369,7 +369,7 @@ void ActorGreenSpinut::func_ov032_0211c108() {
     data_027e09a8->func_ov000_02071b30(0x9837, &this->mPos, 0x0);
 }
 
-void ActorGreenSpinut::func_ov032_0211c2c4() {
+void ActorFleeingSpinut::func_ov032_0211c2c4() {
     this->mUnk_1EC.mUnk_2C = 0x0;
     this->mUnk_1EC.func_ov032_0211cc48(&this->mPos);
 
@@ -379,11 +379,11 @@ void ActorGreenSpinut::func_ov032_0211c2c4() {
     this->mVel.z = FLOAT_TO_FX32(0.0f);
 }
 
-void ActorGreenSpinut::func_ov032_0211c340() {
+void ActorFleeingSpinut::func_ov032_0211c340() {
     this->mUnk_1EC.func_ov032_0211cd60(&this->mPos, &this->mAngle, &this->mVel, 0xF6, 0xE39, 0xF6);
 
     if (this->func_ov032_0211c938() && this->func_ov032_0211ca20()) {
-        this->SetState(ActorGreenSpinutState_1);
+        this->SetState(ActorFleeingSpinutState_1);
         return;
     }
 
@@ -397,7 +397,7 @@ void ActorGreenSpinut::func_ov032_0211c340() {
     }
 }
 
-void ActorGreenSpinut::func_ov032_0211c444() {
+void ActorFleeingSpinut::func_ov032_0211c444() {
     this->mUnk_110.vfunc_1C(data_ov032_021223cc, 0x2000, 0x19A, 0x0);
 
     data_027e09a8->func_ov000_02071b30(0x9837, &this->mPos, 0x0);
@@ -407,17 +407,17 @@ void ActorGreenSpinut::func_ov032_0211c444() {
     this->mUnk_224 = false;
 }
 
-void ActorGreenSpinut::func_ov032_0211c4d4() {
+void ActorFleeingSpinut::func_ov032_0211c4d4() {
     if (!this->mUnk_110.vfunc_28()->func_01ff8fa8()) {
         return;
     }
 
     data_027e0cec->func_ov000_0209feac(0x880, &this->mPos, 0x2, 0x0, 0x0);
 
-    this->SetState(ActorGreenSpinutState_4);
+    this->SetState(ActorFleeingSpinutState_4);
 }
 
-void ActorGreenSpinut::func_ov032_0211c53c() {
+void ActorFleeingSpinut::func_ov032_0211c53c() {
     this->mUnk_1EC.mUnk_2C = 0x1;
 
     this->mUnk_110.vfunc_1C(data_ov032_021223b4, 0x3000, 0x19A, 0x0);
@@ -432,7 +432,7 @@ void ActorGreenSpinut::func_ov032_0211c53c() {
     this->mVel.z = FLOAT_TO_FX32(0.0f);
 }
 
-void ActorGreenSpinut::func_ov032_0211c5cc() {
+void ActorFleeingSpinut::func_ov032_0211c5cc() {
     if (this->IsTimerOut()) {
         this->mUnk_224 = true;
     }
@@ -440,17 +440,17 @@ void ActorGreenSpinut::func_ov032_0211c5cc() {
     this->mUnk_1EC.func_ov032_0211cd60(&this->mPos, &this->mAngle, &this->mVel, 0x429, 0x429 + 0xA10, 0x429);
 
     if (this->mUnk_1EC.mUnk_28 & 0x1) {
-        this->SetState(ActorGreenSpinutState_6);
+        this->SetState(ActorFleeingSpinutState_6);
         return;
     }
 
     if (!this->func_ov032_0211c938()) {
-        this->SetState(ActorGreenSpinutState_0);
+        this->SetState(ActorFleeingSpinutState_0);
         return;
     }
 
     if (this->func_ov032_0211c9d8() && (this->mUnk_1EC.mUnk_28 & 0x2)) {
-        this->SetState(ActorGreenSpinutState_5);
+        this->SetState(ActorFleeingSpinutState_5);
         return;
     }
 
@@ -466,7 +466,7 @@ void ActorGreenSpinut::func_ov032_0211c5cc() {
     data_027e09a8->func_ov000_02071b30(0x983B, &this->mPos, 0x0);
 }
 
-void ActorGreenSpinut::func_ov032_0211c73c() {
+void ActorFleeingSpinut::func_ov032_0211c73c() {
     this->mUnk_1EC.func_ov032_0211cc48(&this->mPos);
 
     this->mUnk_1EC.mUnk_2C = 0x1;
@@ -477,26 +477,26 @@ void ActorGreenSpinut::func_ov032_0211c73c() {
     this->mVel.z = FLOAT_TO_FX32(0.0f);
 }
 
-void ActorGreenSpinut::func_ov032_0211c7bc() {
+void ActorFleeingSpinut::func_ov032_0211c7bc() {
     this->mUnk_1EC.func_ov032_0211cd60(&this->mPos, &this->mAngle, &this->mVel, 0xF6, 0xE39, 0xF6);
 
     if (this->func_ov032_0211ca6c() && this->mUnk_1EC.mUnk_28 & 0x2) {
-        this->SetState(ActorGreenSpinutState_3);
+        this->SetState(ActorFleeingSpinutState_3);
         return;
     }
 
     if (this->mUnk_1EC.mUnk_28 & 0x1) {
-        this->SetState(ActorGreenSpinutState_6);
+        this->SetState(ActorFleeingSpinutState_6);
         return;
     }
 
     if (this->func_ov032_0211c938() && this->func_ov032_0211ca20()) {
-        this->SetState(ActorGreenSpinutState_1);
+        this->SetState(ActorFleeingSpinutState_1);
         return;
     }
 
     if (!this->func_ov032_0211c938()) {
-        this->SetState(ActorGreenSpinutState_0);
+        this->SetState(ActorFleeingSpinutState_0);
         return;
     }
 
@@ -513,7 +513,7 @@ void ActorGreenSpinut::func_ov032_0211c7bc() {
 }
 
 // non-matching (ldr of mUnk_0C)
-bool ActorGreenSpinut::func_ov032_0211c938() {
+bool ActorFleeingSpinut::func_ov032_0211c938() {
     if (this->mUnk_5C.mParams[0] == 0x0) {
         return true;
     }
@@ -535,19 +535,19 @@ bool ActorGreenSpinut::func_ov032_0211c938() {
     return ret;
 }
 
-bool ActorGreenSpinut::func_ov032_0211c9d8() {
+bool ActorFleeingSpinut::func_ov032_0211c9d8() {
     return !this->func_ov032_0211cab8(0x0, 0x5000) && !this->func_ov032_0211cab8(0x1, 0x5000);
 }
 
-bool ActorGreenSpinut::func_ov032_0211ca20() {
+bool ActorFleeingSpinut::func_ov032_0211ca20() {
     return this->func_ov032_0211cab8(0x0, 0x3CCD) || this->func_ov032_0211cab8(0x1, 0x3CCD);
 }
 
-bool ActorGreenSpinut::func_ov032_0211ca6c() {
+bool ActorFleeingSpinut::func_ov032_0211ca6c() {
     return !this->func_ov032_0211cab8(0x0, 0x3CCD) && !this->func_ov032_0211cab8(0x1, 0x3CCD);
 }
 
-bool ActorGreenSpinut::func_ov032_0211cab8(unk32 param1, unk32 param2) {
+bool ActorFleeingSpinut::func_ov032_0211cab8(unk32 param1, unk32 param2) {
     if (param1 == 0x1 && !data_027e0ce0->func_01fff1a4()) {
         return false;
     }
@@ -561,7 +561,7 @@ bool ActorGreenSpinut::func_ov032_0211cab8(unk32 param1, unk32 param2) {
 }
 
 // non-matching (MUL_FX32 etc.)
-void ActorGreenSpinut::func_ov032_0211cb2c() {
+void ActorFleeingSpinut::func_ov032_0211cb2c() {
     if (this->mUnk_110.vfunc_30() != 0x1) {
         if (this->mUnk_21C <= FLOAT_TO_FX32(0.0f)) {
             this->mUnk_220 = 0x0;
@@ -583,7 +583,7 @@ void ActorGreenSpinut::func_ov032_0211cb2c() {
     this->mUnk_21C = FLOAT_TO_FX32(0.0f);
 }
 
-ActorGreenSpinut_1EC::ActorGreenSpinut_1EC() :
+ActorFleeingSpinut_1EC::ActorFleeingSpinut_1EC() :
     mUnk_00(0x0),
     mUnk_04(NULL),
     mUnk_08(NULL),
@@ -597,12 +597,12 @@ ActorGreenSpinut_1EC::ActorGreenSpinut_1EC() :
 }
 
 // non-matching
-void ActorGreenSpinut_1EC::func_ov032_0211cc48(VecFx32 *param1) {
+void ActorFleeingSpinut_1EC::func_ov032_0211cc48(VecFx32 *param1) {
     this->mUnk_04 = this->func_ov032_0211cd20(param1);
 }
 
 // non-matching
-UnkStruct_027e0960_TableEntry_04 *ActorGreenSpinut_1EC::func_ov032_0211cd20(VecFx32 *param1) {
+UnkStruct_027e0960_TableEntry_04 *ActorFleeingSpinut_1EC::func_ov032_0211cd20(VecFx32 *param1) {
     UnkStruct_027e0960_TableEntry *tEntry = data_027e0960->func_ov000_0205a3fc(*param1, this->mUnk_00);
     tEntry->func_ov000_02059da4(param1);
     return tEntry->mTable.GetPtr(0x1);
@@ -615,8 +615,8 @@ extern "C" unk32 func_01ff9258(fx32, fx32);
 extern "C" fx32 func_02017f54(s16 *, UnkAngleStruct);
 
 // non-matching
-u16 *ActorGreenSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, VecFx32 *param3, unk32 param4, unk32 param5,
-                                               unk32 param6) {
+u16 *ActorFleeingSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, VecFx32 *param3, unk32 param4, unk32 param5,
+                                                 unk32 param6) {
     if (param6 == 0x0 || this->mUnk_04 == NULL) {
         param3->z = FLOAT_TO_FX32(0.0f);
         param3->x = FLOAT_TO_FX32(0.0f);
@@ -655,7 +655,7 @@ u16 *ActorGreenSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, Vec
     func_02017f54(param2, spm04);
 }
 
-void ActorGreenSpinut_1EC::func_ov032_0211cf74() {
+void ActorFleeingSpinut_1EC::func_ov032_0211cf74() {
     this->func_ov032_0211cfac(0x0);
 
     if (!data_027e0ce0->func_01fff1a4()) {
@@ -668,7 +668,7 @@ void ActorGreenSpinut_1EC::func_ov032_0211cf74() {
 extern "C" bool func_02017930(UnkStruct_027e0960_TableEntry_04_Base *, UnkStruct_027e0960_TableEntry_04_Base *);
 
 // non-matching
-void ActorGreenSpinut_1EC::func_ov032_0211cfac(unk32 param1) {
+void ActorFleeingSpinut_1EC::func_ov032_0211cfac(unk32 param1) {
     VecFx32 sp00;
     UnkStruct_027e0960_TableEntry_04 *entry04 = this->func_ov032_0211cd20(data_027e0ce0->func_01fff148(param1));
     entry04->vfunc_0C(&sp00);
@@ -681,20 +681,20 @@ void ActorGreenSpinut_1EC::func_ov032_0211cfac(unk32 param1) {
     entry04->mUnk_0C = NULL;
 }
 
-void ActorGreenSpinut_1EC::func_ov032_0211d028() {
+void ActorFleeingSpinut_1EC::func_ov032_0211d028() {
     this->mUnk_14 = 0x0;
     this->mUnk_18 = 0x0;
     this->mUnk_0C = 0x0;
     this->mUnk_10 = 0x0;
 }
 
-bool ActorGreenSpinut_1EC::func_ov032_0211d040(VecFx32 *param1) {
+bool ActorFleeingSpinut_1EC::func_ov032_0211d040(VecFx32 *param1) {
     return (this->func_ov032_0211d568(param1, this->mUnk_04, NULL) > 0) ||
            (this->func_ov032_0211d568(param1, this->mUnk_08, NULL) > 0);
 }
 
 // non-matching
-void ActorGreenSpinut_1EC::func_ov032_0211d08c(VecFx32 *param1) {
+void ActorFleeingSpinut_1EC::func_ov032_0211d08c(VecFx32 *param1) {
     if (this->func_ov032_0211d568(param1, this->mUnk_08, this->mUnk_04) > 0x0) {
         VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
         if ((func_01ff9258(vec->x - param1->x, vec->z - param1->z) > 0x3CCD)) {
@@ -704,13 +704,13 @@ void ActorGreenSpinut_1EC::func_ov032_0211d08c(VecFx32 *param1) {
 }
 
 // non-matching
-bool ActorGreenSpinut_1EC::func_ov032_0211d2e4(UnkStruct_027e0960_TableEntry_04_Base *param1) {
+bool ActorFleeingSpinut_1EC::func_ov032_0211d2e4(UnkStruct_027e0960_TableEntry_04_Base *param1) {
     if (param1 == NULL) {
     }
 }
 
 // non-matching
-UnkStruct_027e0960_TableEntry_04 *ActorGreenSpinut_1EC::func_ov032_0211d384(VecFx32 *param1) {
+UnkStruct_027e0960_TableEntry_04 *ActorFleeingSpinut_1EC::func_ov032_0211d384(VecFx32 *param1) {
     VecFx32 *sp00 = param1;
     if (this->func_ov032_0211d920(param1)) {
         return NULL;
@@ -723,8 +723,8 @@ UnkStruct_027e0960_TableEntry_04 *ActorGreenSpinut_1EC::func_ov032_0211d384(VecF
 }
 
 // non-matching (regalloc)
-unk32 ActorGreenSpinut_1EC::func_ov032_0211d568(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2,
-                                                UnkStruct_027e0960_TableEntry_04_Base *param3) {
+unk32 ActorFleeingSpinut_1EC::func_ov032_0211d568(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2,
+                                                  UnkStruct_027e0960_TableEntry_04_Base *param3) {
     if (this->func_ov032_0211d674(param1, param2) == 0) {
         return 0x0;
     }
@@ -753,7 +753,7 @@ unk32 ActorGreenSpinut_1EC::func_ov032_0211d568(VecFx32 *param1, UnkStruct_027e0
     return ret;
 }
 
-bool ActorGreenSpinut_1EC::func_ov032_0211d674(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2) {
+bool ActorFleeingSpinut_1EC::func_ov032_0211d674(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2) {
     if (this->func_ov032_0211d6d8(param1, param2, 0x0) &&
         (!data_027e0ce0->func_01fff1a4() || this->func_ov032_0211d6d8(param1, param2, 0x1))) {
         return true;
@@ -762,21 +762,22 @@ bool ActorGreenSpinut_1EC::func_ov032_0211d674(VecFx32 *param1, UnkStruct_027e09
 }
 
 // non-matching
-bool ActorGreenSpinut_1EC::func_ov032_0211d6d8(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2, unk32 param3) {}
+bool ActorFleeingSpinut_1EC::func_ov032_0211d6d8(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2,
+                                                 unk32 param3) {}
 
-void ActorGreenSpinut_1EC::func_ov032_0211d7e8(VecFx32 *param1) {
+void ActorFleeingSpinut_1EC::func_ov032_0211d7e8(VecFx32 *param1) {
     this->func_ov032_0211d830(this->func_ov032_0211d384(param1));
     this->func_ov032_0211d80c();
 }
 
-void ActorGreenSpinut_1EC::func_ov032_0211d80c() {
+void ActorFleeingSpinut_1EC::func_ov032_0211d80c() {
     this->mUnk_28 |= 0x2;
     if (this->mUnk_04 == NULL) {
         this->mUnk_28 |= 0x1;
     }
 }
 
-void ActorGreenSpinut_1EC::func_ov032_0211d830(UnkStruct_027e0960_TableEntry_04 *param1) {
+void ActorFleeingSpinut_1EC::func_ov032_0211d830(UnkStruct_027e0960_TableEntry_04 *param1) {
     this->mUnk_08 = this->mUnk_04;
     if (this->mUnk_04 != NULL) {
         this->mUnk_04->vfunc_0C(&this->mUnk_1C);
@@ -784,7 +785,7 @@ void ActorGreenSpinut_1EC::func_ov032_0211d830(UnkStruct_027e0960_TableEntry_04 
     this->mUnk_04 = param1;
 }
 
-bool ActorGreenSpinut_1EC::func_ov032_0211d864(VecFx32 *param1) {
+bool ActorFleeingSpinut_1EC::func_ov032_0211d864(VecFx32 *param1) {
     if (this->mUnk_2C == 0x0) {
         return false;
     }
@@ -800,14 +801,14 @@ bool ActorGreenSpinut_1EC::func_ov032_0211d864(VecFx32 *param1) {
            (data_027e0ce0->func_01fff1a4() && this->func_ov032_0211da0c(0x1, param1));
 }
 
-void ActorGreenSpinut_1EC::func_ov032_0211d910() {
+void ActorFleeingSpinut_1EC::func_ov032_0211d910() {
     UnkStruct_027e0960_TableEntry_04 *oldUnk04 = this->mUnk_04;
     this->mUnk_04                              = this->mUnk_08;
     this->mUnk_08                              = oldUnk04;
 }
 
 // non-matching (regalloc :sob:)
-bool ActorGreenSpinut_1EC::func_ov032_0211d920(VecFx32 *param1) {
+bool ActorFleeingSpinut_1EC::func_ov032_0211d920(VecFx32 *param1) {
     UnkStruct_027e0ce0 *data = data_027e0ce0;
     if (!data->func_01fff1a4()) {
         return false;
@@ -838,4 +839,4 @@ bool ActorGreenSpinut_1EC::func_ov032_0211d920(VecFx32 *param1) {
 }
 
 // non-matching
-bool ActorGreenSpinut_1EC::func_ov032_0211da0c(unk32 param1, VecFx32 *param2) {}
+bool ActorFleeingSpinut_1EC::func_ov032_0211da0c(unk32 param1, VecFx32 *param2) {}
