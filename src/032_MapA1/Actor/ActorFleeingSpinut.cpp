@@ -68,7 +68,7 @@ ActorProfileFleeingSpinut::ActorProfileFleeingSpinut() :
 ActorFleeingSpinut::ActorFleeingSpinut() :
     mUnk_0B0(G3d_GetModelPtr(GET_PROFILE(ActorProfileFleeingSpinut)->vfunc_04()->mUnk_50)),
     mUnk_110(&this->mUnk_0B0, GET_PROFILE(ActorProfileFleeingSpinut)->vfunc_04()),
-    previousState(ActorState_None),
+    mPrevState(ActorState_None),
     mUnk_1BE(0x0) {
     *(s16 *) &this->mUnk_44 |= 0x40;
     SET_FLAG(this->mFlags, ActorFlag_6);
@@ -109,10 +109,10 @@ void ActorFleeingSpinut::SetState(ActorState state) {
     ActorState oldState = this->mState;
     this->mState        = state;
 
-    this->previousState = oldState;
-    this->mUnk_1BE      = 0x0;
-    this->mUnk_2C       = data_ov000_020aecf8;
-    this->mUnk_224      = true;
+    this->mPrevState = oldState;
+    this->mUnk_1BE   = 0x0;
+    this->mUnk_2C    = data_ov000_020aecf8;
+    this->mUnk_224   = true;
 
     CALL_PTMF(PTMF<ActorFleeingSpinut>, data_ov032_021223e4[oldState]);
 }
@@ -279,7 +279,7 @@ void ActorFleeingSpinut::func_ov032_0211bea8() {
         return;
     }
 
-    this->SetState(this->previousState);
+    this->SetState(this->mPrevState);
 }
 
 void ActorFleeingSpinut::func_ov032_0211bf84() {

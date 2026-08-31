@@ -64,7 +64,7 @@ public:
     /* 0B0 */ ModelRender_ov000_020b1a1c mUnk_0B0;
     /* 110 */ ActorSpinut_110 mUnk_110;
     /* 1A0 */ STRUCT_PAD(0x1A0, 0x1BC);
-    /* 1BC */ ActorState previousState;
+    /* 1BC */ ActorState mPrevState;
     /* 1BE */ unk16 mUnk_1BE;
     /* 1C0 */ Actor_9C mUnk_1C0;
     /* 1E0 */ Actor_Derived1_94 mUnk_1E0;
