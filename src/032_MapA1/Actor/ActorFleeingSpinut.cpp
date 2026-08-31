@@ -17,8 +17,6 @@ extern "C" bool func_01ff916c(void *, int, int);
 extern "C" void func_01ff9318(void *, unk32, unk32);
 extern "C" fx32 func_01ffb428(unk32, unk32);
 extern "C" fx32 func_01ffb464(fx32);
-// maybe relocate in ModelRender
-extern "C" void func_01ffc634(ModelRender *, VecFx32 *, UnkAngleStruct, VecFx32 *);
 
 extern "C" bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
 extern "C" void func_ov000_020986b4(s16 *param1, Actor_Derived2 *param2, unk32 param3);
@@ -241,7 +239,7 @@ void ActorFleeingSpinut::vfunc_2C(unk32 param1) {
 
     vec.y += this->mUnk_21C;
 
-    func_01ffc634(&this->mUnk_0B0, &this->mUnk_98, this->mAngleStruct, &vec);
+    this->mUnk_0B0.func_01ffc634(&this->mUnk_98, this->mAngleStruct, &vec);
 }
 
 bool ActorFleeingSpinut::func_ov032_0211be04() {

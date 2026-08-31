@@ -57,6 +57,7 @@ public:
     /* 18 */ virtual void vfunc_18(VecFx32 *param1)                                 = 0;
     /* 1C */
 
+    void func_01ffc634(VecFx32 *param1, UnkAngleStruct param2, VecFx32 *param3);
     void func_01ffc6d4(UnkAngleStruct angleStruct, VecFx32 *pos);
 
     void func_ov000_02057cb0();

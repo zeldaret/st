@@ -2,7 +2,6 @@
 #include "System/SysNew.hpp"
 
 extern "C" unk32 func_01ffb428(unk32, unk32);
-extern "C" void func_01ffc634(ModelRender *, VecFx32 *, UnkAngleStruct, VecFx32 *);
 
 static ActorUnkZLSL_AnimationTag data_ov031_02114ed0[0x2] = {
     {.index = 0x0, .name = "statue_beam"},
@@ -61,5 +60,5 @@ void ActorUnkEFSB::vfunc_2C(unk32 param1) {
     VecFx32 sp0 = this->mPos;
     sp0.y += FLOAT_TO_FX32(0.85f);
 
-    func_01ffc634(&this->mUnk_098, &vec, this->mAngleStruct, &sp0);
+    this->mUnk_098.func_01ffc634(&vec, this->mAngleStruct, &sp0);
 }
