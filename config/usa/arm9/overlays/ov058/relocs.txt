@@ -2271,7 +2271,7 @@ from:0x02152a74 kind:arm_call to:0x02061628 module:overlay(0)
 from:0x02152a90 kind:arm_call to:0x0201bac4 module:main
 from:0x02152ab0 kind:arm_call to:0x020611bc module:overlay(0)
 from:0x02152abc kind:load to:0x02155de8 module:overlay(58)
-from:0x02152ac0 kind:load to:0x02122588 module:overlays(32,33,36,37)
+from:0x02152ac0 kind:load to:0x02122588 module:overlays(33,36,37)
 from:0x02152ac4 kind:load to:0x0204a068 module:main
 from:0x02152ad4 kind:arm_call to:0x0201baa4 module:main
 from:0x02152adc kind:arm_call to:0x020616a8 module:overlay(0)

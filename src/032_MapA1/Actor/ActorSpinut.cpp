@@ -915,10 +915,9 @@ ActorSpinut_268::ActorSpinut_268() {
 
 ActorSpinut_268::~ActorSpinut_268() {}
 
-// non-matching
-bool ActorSpinut_268::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
+bool ActorSpinut_268::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
     VecFx16_Copy2VecFx32(&param1->mUnk_08, &this->mUnk_08);
-    this->UnkStruct_ov031_Items_00::vfunc_08(param1);
+    this->UnkStruct_ov031_Items_00::vfunc_08(param1, param2);
 }
 
 void ActorSpinut_1BC::vfunc_3C() {

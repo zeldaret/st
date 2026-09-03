@@ -4,8 +4,6 @@
 #include "math.hpp"
 #include "types.h"
 
-#include "Actor/Actor.hpp"
-#include "MapObject/MapObjectManager.hpp"
 #include "Render/ModelRender.hpp"
 #include "Save/SaveFile.hpp"
 #include "Unknown/Common.hpp"
@@ -13,7 +11,6 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "profile.hpp"
 
-#include <algorithm>
 #include <vector>
 
 class MapObject_20;

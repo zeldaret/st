@@ -19,10 +19,11 @@ src/032_MapA1/Actor/ActorFleeingSpinut.cpp:
     .data       start:0x02124368 end:0x02124498
     .bss        start:0x021248e8 end:0x02124954
 
-src/032_MapA1/Actor/ActorUnkKETH.cpp:
+src/032_MapA1/Actor/ActorKeese.cpp:
     .text       start:0x0211f8e0 end:0x02121b20
     .init       start:0x02123ff8 end:0x02124064
     .ctor       start:0x0212410c end:0x02124110
+    .data       start:0x02124498 end:0x0212464c
     .bss        start:0x02124954 end:0x02124a3c
 
 src/032_MapA1/Actor/ActorUnkNSSW.cpp:

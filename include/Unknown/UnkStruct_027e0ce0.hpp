@@ -305,7 +305,7 @@ public:
 
     // data_ov000_020b2838
     /* 00 */ virtual ~UnkStruct_027e0ce0_38_Base();
-    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1);
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2);
     /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3);
     /* 10 */ virtual bool vfunc_10(ActorRef param1, unk32 param2);
     /* 14 */

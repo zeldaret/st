@@ -239,6 +239,7 @@ public:
     void func_ov000_020989e0();
     bool func_ov000_02098a60(unk32 param1);
     void func_ov000_02098a88(unk32 param1, unk32 param2);
+    void func_ov000_0209a008(unk32 param1, fx16 param2);
     u32 func_ov000_02098ab4(u8 param1, unk32 param2, unk32 param3, VecFx32 *param4);
 
     static void func_ov000_020973f4(ActorRef *pOutRef, UnkStruct_ov000_020b539c *param2, ActorId actorId, ActorParams *pParams,
@@ -249,6 +250,8 @@ public:
     void func_ov017_020bef88(Actor_vfunc_30 *param1, void *param2, unk32 param3);
     void func_ov017_020bf3e0(unk32 param1, fx32 param2);
     void func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+    void func_ov017_020bf634(VecFx32 *param2, unk32 param3, unk32 param4);
+    void func_ov017_020bf688();
     void func_ov017_020bf9c8(Actor *param1);
     void func_ov017_020bfa50(VecFx32 *param1, unk32 param2);
     void func_ov017_020bfb18(Actor_9C *param1);

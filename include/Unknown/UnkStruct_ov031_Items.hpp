@@ -21,7 +21,7 @@ public:
     UnkStruct_ov031_Items_00();
 
     // data_ov000_020b30d0
-    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override; // func_ov000_020982d8
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override; // func_ov000_020982d8
 };
 
 class UnkStruct_ov031_Items_01_Base {

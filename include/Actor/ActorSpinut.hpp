@@ -42,7 +42,7 @@ public:
 
     // data_ov032_021221bc
     /* 00 */ virtual ~ActorSpinut_268();
-    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
 };
 
 class ActorSpinut_110 : public UnkStruct_ov000_020b31f0 {

@@ -9,7 +9,7 @@
 class UnkStruct_ov031_02112ff4 : public UnkStruct_ov031_Items_00 {
 public:
     // data_ov031_02112ff4
-    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1);
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2);
     /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2);
 };
 

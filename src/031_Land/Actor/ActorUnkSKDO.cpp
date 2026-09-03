@@ -5,7 +5,6 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 
-extern "C" bool func_ov000_0209c348();
 extern "C" fx32 func_01ffb9cc(VecFx32 *, VecFx32 *);
 
 DECL_PROFILE(ActorProfileUnkSKDO);
@@ -49,7 +48,7 @@ void ActorUnkSKDO::vfunc_54(unk32 param1) {
 }
 
 bool ActorUnkSKDO_ov031_02115ce8::vfunc_00(MapObject *param1) {
-    if (func_ov000_0209c348()) {
+    if (this->UnkStruct_ov000_020b34c4::vfunc_00(param1)) {
         if (func_01ffb9cc(&param1->mPos, &this->mUnk_08) < this->mUnk_14) {
             return true;
         }

@@ -70,8 +70,6 @@ extern "C" unk32 func_ov000_02098d7c(ActorUnkCANS *param1, UnkStruct_ov063_02162
 
 // Overlay 17
 extern "C" void func_ov017_020bf050(ActorUnkCANS *param1, UnkStruct_ov063_02162e88 *param2, unk32 param3);
-extern "C" void func_ov017_020bf634(ActorUnkCANS *param1, unk16 *param2, unk32 param3, unk32 param4);
-extern "C" void func_ov017_020bf688(ActorUnkCANS *param1);
 
 // Overlay 26
 #if IS_JP
@@ -571,12 +569,12 @@ void ActorUnkCANS::func_ov063_02158db0(void) {
 }
 
 void ActorUnkCANS::func_ov063_021590c8(void) {
-    func_ov017_020bf634(this, (unk16 *) &mUnk_200.mUnk_10, this->func_ov063_0215a5bc(), this->func_ov063_0215a5d8());
-    ((Actor_9C *) &mUnk_200)->func_ov000_02097bec();
+    this->Actor::func_ov017_020bf634(&mUnk_200.mUnk_10, this->func_ov063_0215a5bc(), this->func_ov063_0215a5d8());
+    mUnk_200.func_ov000_02097bec();
 }
 
 void ActorUnkCANS::func_ov063_02159100(void) {
-    func_ov017_020bf688(this);
+    this->Actor::func_ov017_020bf688();
 
     if (!GET_FLAG(this->mFlags, 5)) {
         return;
@@ -1209,17 +1207,10 @@ UnkStruct_ov063_02162ea8::UnkStruct_ov063_02162ea8() {
 
 UnkStruct_ov063_02162ea8::~UnkStruct_ov063_02162ea8() {}
 
-bool UnkStruct_ov063_02162ea8::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
-    bool retVal = UnkStruct_ov031_Items_00::vfunc_08(param1);
+bool UnkStruct_ov063_02162ea8::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
+    bool retVal = UnkStruct_ov031_Items_00::vfunc_08(param1, param2);
     if (retVal && func_01ff9258(param1->mUnk_08.x, param1->mUnk_08.z) > 0) {
-        // VecFx16_Copy2VecFx32(&param1->mUnk_08, &mUnk_08);
-        // Better match
-        unk16 tmp1 = param1->mUnk_08.x;
-        unk16 tmp3 = param1->mUnk_08.z;
-        unk16 tmp2 = param1->mUnk_08.y;
-        mUnk_08.x  = tmp1;
-        mUnk_08.y  = tmp2;
-        mUnk_08.z  = tmp3;
+        VecFx16_Copy2VecFx32(&param1->mUnk_08, &mUnk_08);
     }
     return retVal;
 }

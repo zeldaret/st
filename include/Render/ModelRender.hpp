@@ -58,7 +58,7 @@ public:
     /* 1C */
 
     void func_01ffc634(VecFx32 *param1, UnkAngleStruct param2, VecFx32 *param3);
-    void func_01ffc6d4(UnkAngleStruct angleStruct, VecFx32 *pos);
+    VecFx32 *func_01ffc6d4(UnkAngleStruct angleStruct, VecFx32 *pos);
 
     void func_ov000_02057cb0();
     unk32 func_ov000_02057f18(const void *param1);

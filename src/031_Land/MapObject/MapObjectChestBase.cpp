@@ -1,4 +1,6 @@
 #include "MapObject/MapObjectChestBase.hpp"
+
+#include "MapObject/MapObjectManager.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
