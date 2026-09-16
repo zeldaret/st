@@ -609,7 +609,7 @@ def add_mwcc_builds(cfg: ProjectConfig, version: str, objects: Dict[str, Object]
 def add_mwcc_build(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer, source_file: Path, object: Object, mwcc_implicit: list[str]):
     src_obj_path = cfg.get_game_build(version) / source_file
 
-    cc_flags: list[str] = object.options["cflags"] or [] + object.options["extra_cflags"] or []
+    cc_flags: list[str] = (object.options["cflags"] or []) + object.options["extra_cflags"]
     if "-lang=c++" not in cc_flags and is_cpp(source_file):
         cc_flags.append("-lang=c++")
     elif "-lang=c" not in cc_flags and is_c(source_file):
