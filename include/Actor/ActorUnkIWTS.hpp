@@ -20,7 +20,8 @@ public:
 class ActorUnkIWTS : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 94 */ STRUCT_PAD(0x94, 0x22F8);
+    /* 22F8 */ VecFx32 mUnk_22F8;
 
     ActorUnkIWTS();
 

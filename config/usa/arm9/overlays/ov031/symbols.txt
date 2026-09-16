@@ -2497,7 +2497,7 @@ data_ov031_02115f0c kind:data(any) addr:0x02115f0c
 data_ov031_02115f48 kind:data(any) addr:0x02115f48
 _ZTV19data_ov031_02115f5c kind:data(any) addr:0x02115f54
 data_ov031_02115f78 kind:data(any) addr:0x02115f78
-data_ov031_02115fc0 kind:data(any) addr:0x02115fc0
+data_ov031_02115fe0 kind:data(any) addr:0x02115fc0
 data_ov031_02115fcc kind:data(any) addr:0x02115fcc ambiguous
 _ZTV19data_ov031_02115fe0 kind:data(any) addr:0x02115fd8
 data_ov031_02115ffc kind:data(any) addr:0x02115ffc ambiguous
@@ -2734,10 +2734,10 @@ data_ov031_021188c8 kind:bss addr:0x021188c8
 data_ov031_021188d4 kind:bss addr:0x021188d4
 data_ov031_02118900 kind:bss addr:0x021188e0
 data_ov031_021188f8 kind:bss addr:0x021188f8
-data_ov031_021189b0 kind:bss addr:0x021189b0
-data_ov031_02118a84 kind:bss addr:0x02118a84
-data_ov031_02118aa8 kind:bss addr:0x02118aa8
-data_ov031_02118acc kind:bss addr:0x02118acc
+data_ov031_021189d0 kind:bss addr:0x021189b0
+data_ov031_02118aa4 kind:bss addr:0x02118a84
+data_ov031_02118ac8 kind:bss addr:0x02118aa8
+data_ov031_02118aec kind:bss addr:0x02118acc
 data_ov031_02118af0 kind:bss addr:0x02118af0
 data_ov031_02118c70 kind:bss addr:0x02118c70
 data_ov031_02118c78 kind:bss addr:0x02118c78

@@ -8,16 +8,16 @@ _ZN21UnkStruct_027e0ce0_4019func_ov102_02183180Eib kind:function(arm,size=0x34) 
 _ZN21UnkStruct_027e0ce0_4019func_ov102_021831b4Ei kind:function(arm,size=0x3c) addr:0x021831b4
 _ZN21UnkStruct_027e0ce0_4019func_ov102_021831f0Ei kind:function(arm,size=0x4c) addr:0x021831f0
 _ZN29UnkStruct_027e0ce0_40_Base_7419func_ov102_0218323cEP29UnkStruct_027e0ce0_40_Base_14i kind:function(arm,size=0x1d8) addr:0x0218323c
-func_ov102_02183414 kind:function(arm,size=0x1b0) addr:0x02183414
+_Z19func_ov102_02183414PsP21PlayerLinkActor_A0_1CbP7VecFx3214UnkAngleStructi kind:function(arm,size=0x1b0) addr:0x02183414
 _ZN19MapObjectUnkSAND_4019func_ov102_021835c4EP7VecFx32 kind:function(arm,size=0x1e4) addr:0x021835c4
 _ZN19MapObjectUnkSAND_4019func_ov102_021837a8E8Vec2bCppP7VecFx32 kind:function(arm,size=0x1c0) addr:0x021837a8
 _ZN16MapObjectUnkSAND8vfunc_08Ev kind:function(arm,size=0x1c0) addr:0x02183968
 _ZN16MapObjectUnkSAND8vfunc_0CEv kind:function(arm,size=0x48) addr:0x02183b28
 _ZN16MapObjectUnkSAND8vfunc_14Ev kind:function(arm,size=0xa4) addr:0x02183b70
-func_ov102_02183c14 kind:function(arm,size=0x58) addr:0x02183c14
-func_ov102_02183c6c kind:function(arm,size=0x28) addr:0x02183c6c
-func_ov102_02183c94 kind:function(arm,size=0x110) addr:0x02183c94
-func_ov102_02183da4 kind:function(arm,size=0x44) addr:0x02183da4
+_Z19func_ov102_02183c14i kind:function(arm,size=0x58) addr:0x02183c14
+_Z19func_ov102_02183c6ci kind:function(arm,size=0x28) addr:0x02183c6c
+_Z19func_ov102_02183c94iiiiitttti kind:function(arm,size=0x110) addr:0x02183c94
+_Z19func_ov102_02183da4iiiiitttti kind:function(arm,size=0x44) addr:0x02183da4
 _ZN16MapObjectUnkPTFL8vfunc_08Ev kind:function(arm,size=0x180) addr:0x02183de8
 _ZN16MapObjectUnkPTFL8vfunc_0CEv kind:function(arm,size=0x14) addr:0x02183f68
 _ZN16MapObjectUnkPTFL8vfunc_14Ev kind:function(arm,size=0x220) addr:0x02183f7c
@@ -29,11 +29,11 @@ _ZN12ActorUnkMLCK8vfunc_20Ev kind:function(arm,size=0x190) addr:0x02184644
 _ZN12ActorUnkMLCK8vfunc_24Ev kind:function(arm,size=0x14) addr:0x021847d4
 _ZN15ActorUnkMLCK_C419func_ov102_021847e8Eii kind:function(arm,size=0x78) addr:0x021847e8
 _ZN24UnkStruct_ov102_02184a248vfunc_00EP5Actor kind:function(arm,size=0x50) addr:0x02184860
-data_ov102_021848b0 kind:data(any) addr:0x021848b0
-data_ov102_021848f0 kind:data(any) addr:0x021848f0
+data_ov102_021848b0 kind:data(any) addr:0x021848b0 local
+data_ov102_021848f0 kind:data(any) addr:0x021848f0 local
 __sinit_ActorUnkMLCK_102.cpp kind:function(arm,size=0x24) addr:0x02184950 local
 .p__sinit_ActorUnkMLCK_102.cpp kind:data(word) addr:0x02184974 local
-data_ov102_02184980 kind:data(any) addr:0x02184980
-data_ov102_021849a8 kind:data(any) addr:0x021849a8
+data_ov102_02184980 kind:data(any) addr:0x02184980 local
+data_ov102_021849a8 kind:data(any) addr:0x021849a8 local
 data_ov102_02184a10 kind:data(any) addr:0x02184a10 local
 _ZTV24UnkStruct_ov102_02184a24 kind:data(byte[0xc]) addr:0x02184a1c

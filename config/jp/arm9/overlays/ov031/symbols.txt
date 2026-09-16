@@ -2486,7 +2486,7 @@ data_ov031_02117ccc kind:data(any) addr:0x02117ccc
 data_ov031_02117d08 kind:data(any) addr:0x02117d08
 data_ov031_02117d1c kind:data(any) addr:0x02117d1c
 data_ov031_02117d38 kind:data(any) addr:0x02117d38
-data_ov031_02117d80 kind:data(any) addr:0x02117d80
+data_ov031_02115fe0 kind:data(any) addr:0x02117d80
 data_ov031_02117d8c kind:data(any) addr:0x02117d8c ambiguous
 data_ov031_02117da0 kind:data(any) addr:0x02117da0
 data_ov031_02117dbc kind:data(any) addr:0x02117dbc ambiguous
@@ -2719,9 +2719,9 @@ data_ov031_0211a694 kind:bss addr:0x0211a694
 data_ov031_02118900 kind:bss addr:0x0211a6a0
 data_ov031_02118918 kind:bss addr:0x0211a6b8
 data_ov031_021189d0 kind:bss addr:0x0211a770
-data_ov031_0211a844 kind:bss addr:0x0211a844
-data_ov031_0211a868 kind:bss addr:0x0211a868
-data_ov031_0211a88c kind:bss addr:0x0211a88c
+data_ov031_02118aa4 kind:bss addr:0x0211a844
+data_ov031_02118ac8 kind:bss addr:0x0211a868
+data_ov031_02118aec kind:bss addr:0x0211a88c
 data_ov031_0211a8b0 kind:bss addr:0x0211a8b0
 _ZGVN15ProfileInstanceI23MapObjectProfileUnkSPTBE8sProfileE kind:bss addr:0x0211aa30
 @31101 kind:bss addr:0x0211aa38

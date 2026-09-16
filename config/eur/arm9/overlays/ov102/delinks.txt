@@ -6,9 +6,20 @@
     .bss        start:0x02184a40 end:0x02184a40 kind:bss align:32
 
 src/102_CourseExecLand/CourseExecLand.cpp:
-    .text       start:0x02182c20 end:0x02184644
+    .text       start:0x02182c20 end:0x021835c4
+
+src/102_CourseExecLand/MapObjectUnkSAND_102.cpp:
+    complete
+    .text       start:0x021835c4 end:0x02183c14
     .rodata     start:0x021848b0 end:0x02184950
+
+src/102_CourseExecLand/MapObjectUnkPTFL_102.cpp:
+    .text       start:0x02183c14 end:0x021845c8
     .data       start:0x02184980 end:0x02184a10
+
+src/102_CourseExecLand/UnkStruct_027e0cd8_0C_102.cpp:
+    complete
+    .text       start:0x021845c8 end:0x02184644
 
 src/102_CourseExecLand/ActorUnkMLCK_102.cpp:
     complete
