@@ -1540,7 +1540,7 @@ from:0x0215f2f4 kind:arm_call to:0x01fff350 module:itcm
 from:0x0215f334 kind:arm_call to:0x0212928c module:overlay(42)
 from:0x0215f344 kind:arm_call to:0x01fff350 module:itcm
 from:0x0215f360 kind:load to:0x027e0ce4 module:dtcm
-from:0x0215f368 kind:load to:0x020b3038 module:overlay(0) add:0x8
+from:0x0215f368 kind:load to:0x020b3038 add:0x8 module:overlay(0)
 from:0x0215f378 kind:load to:0x027e0d70 module:dtcm
 from:0x0215f38c kind:load to:0x027e0d70 module:dtcm
 from:0x0215f398 kind:load to:0x021652e8 module:overlay(71)

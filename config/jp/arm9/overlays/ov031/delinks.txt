@@ -188,15 +188,15 @@ src/031_Land/Actor/ActorItemDrop.cpp:
 src/031_Land/Actor/ActorUnkMLCK.cpp:
     .text       start:0x020fc5b4 end:0x020fcd64
     .init       start:0x02113714 end:0x02113788
-    .data       start:0x02116a9c end:0x02116b90
     .ctor       start:0x0211458c end:0x02114590
+    .data       start:0x02116a9c end:0x02116b90
     .bss        start:0x02118d3c end:0x02118d88
 
 src/031_Land/Actor/ActorUnkCLLT.cpp:
-    .data       start:0x02116b90 end:0x02116c20
     .text       start:0x020fcd64 end:0x020fcf04
     .init       start:0x02113788 end:0x021137d8
     .ctor       start:0x02114590 end:0x02114594
+    .data       start:0x02116b90 end:0x02116c20
     .bss        start:0x02118d88 end:0x02118dd4
 
 src/031_Land/Actor/ActorUnkEFSB.cpp:

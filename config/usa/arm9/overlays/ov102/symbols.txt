@@ -36,4 +36,4 @@ __sinit_ActorUnkMLCK_102.cpp kind:function(arm,size=0x24) addr:0x02184930 local
 data_ov102_02184980 kind:data(any) addr:0x02184960 local
 data_ov102_021849a8 kind:data(any) addr:0x02184988 local
 data_ov102_02184a10 kind:data(any) addr:0x021849f0 local
-_ZTV24UnkStruct_ov102_02184a24 kind:data(byte[0xc]) addr:0x021849fc
+_ZTV24UnkStruct_ov102_02184a24 kind:data(byte[12]) addr:0x021849fc

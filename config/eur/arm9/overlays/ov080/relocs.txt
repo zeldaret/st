@@ -1063,7 +1063,7 @@ from:0x0215bfd8 kind:arm_call to:0x01fff350 module:itcm
 from:0x0215c004 kind:arm_call to:0x0215d0dc module:overlay(80)
 from:0x0215c014 kind:arm_call to:0x01fff350 module:itcm
 from:0x0215c030 kind:load to:0x027e0ce4 module:dtcm
-from:0x0215c038 kind:load to:0x020b2ff8 module:overlay(0) add:0x8
+from:0x0215c038 kind:load to:0x020b2ff8 add:0x8 module:overlay(0)
 from:0x0215c05c kind:arm_call to:0x020d961c module:overlay(31)
 from:0x0215c068 kind:arm_call to:0x01fff3b4 module:itcm
 from:0x0215c074 kind:arm_call to:0x020984d0 module:overlay(0)

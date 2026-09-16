@@ -2093,7 +2093,7 @@ from:0x02016fb8 kind:arm_call to:0x01fff350 module:itcm
 from:0x02016fec kind:arm_call to:0x01ffb9cc module:itcm
 from:0x02017014 kind:arm_call to:0x01fff350 module:itcm
 from:0x0201703c kind:load to:0x027e0ce4 module:dtcm
-from:0x02017040 kind:load to:0x020b47f8 module:overlay(0) add:0x8
+from:0x02017040 kind:load to:0x020b47f8 add:0x8 module:overlay(0)
 from:0x02017064 kind:arm_call to:0x01fff520 module:itcm
 from:0x02017088 kind:arm_call to:0x01ffb9cc module:itcm
 from:0x020170b4 kind:arm_call to:0x01ffb9cc module:itcm

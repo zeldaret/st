@@ -234,7 +234,7 @@ from:0x0211ae68 kind:load to:0x027e09a4 module:dtcm
 from:0x0211ae98 kind:arm_call to:0x01fff350 module:itcm
 from:0x0211aeb4 kind:arm_call to:0x0211cccc module:overlay(34)
 from:0x0211aef4 kind:load to:0x027e0ce4 module:dtcm
-from:0x0211aefc kind:load to:0x020b2fd8 module:overlay(0) add:0x8
+from:0x0211aefc kind:load to:0x020b2fd8 add:0x8 module:overlay(0)
 from:0x0211af7c kind:arm_call to:0x0207e0a8 module:overlay(0)
 from:0x0211af9c kind:arm_call to:0x0207e0a8 module:overlay(0)
 from:0x0211afa8 kind:arm_call to:0x0211c8c4 module:overlay(34)

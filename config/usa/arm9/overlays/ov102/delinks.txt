@@ -24,7 +24,6 @@ src/102_CourseExecLand/UnkStruct_027e0cd8_0C_102.cpp:
 src/102_CourseExecLand/ActorUnkMLCK_102.cpp:
     complete
     .text       start:0x02184624 end:0x02184890
-    .data       start:0x021849f0 end:0x02184a20
     .init       start:0x02184930 end:0x02184954
     .ctor       start:0x02184954 end:0x02184958
-
+    .data       start:0x021849f0 end:0x02184a20

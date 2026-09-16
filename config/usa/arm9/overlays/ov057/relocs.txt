@@ -348,7 +348,7 @@ from:0x0213b634 kind:arm_call to:0x0213b51c module:overlay(57)
 from:0x0213b63c kind:arm_call to:0x0213b5ac module:overlay(57)
 from:0x0213b64c kind:arm_call to:0x01fff350 module:itcm
 from:0x0213b66c kind:load to:0x027e0ce4 module:dtcm
-from:0x0213b670 kind:load to:0x020b2fd8 module:overlay(0) add:0x8
+from:0x0213b670 kind:load to:0x020b2fd8 add:0x8 module:overlay(0)
 from:0x0213b684 kind:load to:0x02057884 module:overlay(0)
 from:0x0213b698 kind:arm_call_thumb to:0x02099adc module:overlay(0)
 from:0x0213b6a0 kind:arm_call to:0x02011ff4 module:main

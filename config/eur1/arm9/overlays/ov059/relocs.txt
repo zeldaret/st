@@ -27,7 +27,7 @@ from:0x021582ec kind:arm_call to:0x01fff350 module:itcm
 from:0x02158304 kind:arm_call to:0x02158ad4 module:overlay(59)
 from:0x02158310 kind:arm_call to:0x02158118 module:overlay(59)
 from:0x0215831c kind:load to:0x027e0ce4 module:dtcm
-from:0x02158320 kind:load to:0x020b3038 module:overlay(0) add:0x8
+from:0x02158320 kind:load to:0x020b3038 add:0x8 module:overlay(0)
 from:0x02158340 kind:arm_call to:0x01fff3b4 module:itcm
 from:0x02158360 kind:arm_call to:0x02081db0 module:overlay(0)
 from:0x02158368 kind:load to:0x027e0ce4 module:dtcm
@@ -45,7 +45,7 @@ from:0x02158550 kind:arm_call to:0x01fff350 module:itcm
 from:0x02158560 kind:arm_call to:0x01fff350 module:itcm
 from:0x0215858c kind:arm_call to:0x01fff350 module:itcm
 from:0x021585b4 kind:load to:0x027e0ce4 module:dtcm
-from:0x021585bc kind:load to:0x020b3038 module:overlay(0) add:0x8
+from:0x021585bc kind:load to:0x020b3038 add:0x8 module:overlay(0)
 from:0x02158670 kind:arm_call to:0x021587c8 module:overlay(59)
 from:0x02158678 kind:arm_call to:0x02158684 module:overlay(59)
 from:0x021586fc kind:arm_call to:0x021587c8 module:overlay(59)
@@ -313,7 +313,7 @@ from:0x0215ac70 kind:arm_call to:0x02160cc4 module:overlay(59)
 from:0x0215ac7c kind:load to:0x027e0ce4 module:dtcm
 from:0x0215ac80 kind:load to:0x027e0d5c module:dtcm
 from:0x0215ac88 kind:load to:0x027e09b8 module:dtcm
-from:0x0215ac90 kind:load to:0x020b3038 module:overlay(0) add:0x8
+from:0x0215ac90 kind:load to:0x020b3038 add:0x8 module:overlay(0)
 from:0x0215acf4 kind:load to:0x02163878 module:overlay(59)
 from:0x0215ad10 kind:arm_call to:0x01fff3b4 module:itcm
 from:0x0215ad30 kind:arm_call to:0x02015080 module:main
@@ -448,7 +448,7 @@ from:0x0215bf24 kind:arm_call to:0x01fff350 module:itcm
 from:0x0215bf4c kind:arm_call to:0x01fff350 module:itcm
 from:0x0215bf84 kind:arm_call to:0x01fff350 module:itcm
 from:0x0215bfa4 kind:load to:0x027e0ce4 module:dtcm
-from:0x0215bfac kind:load to:0x020b3038 module:overlay(0) add:0x8
+from:0x0215bfac kind:load to:0x020b3038 add:0x8 module:overlay(0)
 from:0x0215bfd4 kind:arm_call to:0x020169d4 module:main
 from:0x0215c08c kind:arm_call to:0x0207e48c module:overlay(0)
 from:0x0215c0b0 kind:arm_call to:0x02071b64 module:overlay(0)
@@ -786,7 +786,7 @@ from:0x0215f01c kind:arm_call to:0x02098524 module:overlay(0)
 from:0x0215f02c kind:arm_call to:0x01fff350 module:itcm
 from:0x0215f048 kind:load to:0x020b51f8 module:overlay(0)
 from:0x0215f054 kind:load to:0x027e09b8 module:dtcm
-from:0x0215f05c kind:load to:0x020b3038 module:overlay(0) add:0x8
+from:0x0215f05c kind:load to:0x020b3038 add:0x8 module:overlay(0)
 from:0x0215f060 kind:load to:0x027e0ce4 module:dtcm
 from:0x0215f0d8 kind:arm_call to:0x02073320 module:overlay(0)
 from:0x0215f134 kind:arm_call to:0x0208bc10 module:overlay(0)
@@ -902,7 +902,7 @@ from:0x02160424 kind:arm_call to:0x01fff350 module:itcm
 from:0x0216044c kind:arm_call to:0x01fff350 module:itcm
 from:0x02160478 kind:arm_call to:0x01fff350 module:itcm
 from:0x02160498 kind:load to:0x027e0ce4 module:dtcm
-from:0x021604a0 kind:load to:0x020b3038 module:overlay(0) add:0x8
+from:0x021604a0 kind:load to:0x020b3038 add:0x8 module:overlay(0)
 from:0x021604ac kind:arm_call_thumb to:0x02057bd4 module:overlay(0)
 from:0x021604b4 kind:arm_call to:0x02011ff4 module:main
 from:0x021604cc kind:arm_call to:0x0207b6f4 module:overlay(0)

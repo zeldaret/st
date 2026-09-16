@@ -106,7 +106,7 @@ from:0x02123f88 kind:arm_call to:0x0212360c module:overlay(45)
 from:0x02123fb8 kind:arm_call to:0x0207e0c8 module:overlay(0)
 from:0x02123fd0 kind:arm_call to:0x0207e184 module:overlay(0)
 from:0x02123fe0 kind:load to:0x027e0ce4 module:dtcm
-from:0x02123fe8 kind:load to:0x020b2ff8 module:overlay(0) add:0x8
+from:0x02123fe8 kind:load to:0x020b2ff8 add:0x8 module:overlay(0)
 from:0x02123fec kind:load to:0x027e09c0 module:dtcm
 from:0x02124008 kind:arm_call to:0x02078698 module:overlay(0)
 from:0x02124034 kind:arm_call to:0x02017e8c module:main
