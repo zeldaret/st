@@ -120,9 +120,9 @@ void UnkTrainSystem1::func_ov024_020d562c(const VecFx32 *param1, fx32 param2) {
         sp44.z = new_var5;
 
 #if IS_JP
-        UnkStruct_027e09bc_0C *temp_r8_2 = data_027e09bc->mUnk_04;
+        UnkStruct_027e09bc_0C *temp_r8_2 = data_027e09bc->mUnk_04[0];
 #else
-        UnkStruct_027e09bc_0C *temp_r8_2 = data_027e09bc->mUnk_0C;
+        UnkStruct_027e09bc_0C *temp_r8_2 = data_027e09bc->mUnk_04[2];
 #endif
 
         temp_r1_3.x = temp_r8_2->mUnk_034.x;

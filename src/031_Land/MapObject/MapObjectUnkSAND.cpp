@@ -14,7 +14,7 @@ MapObjectProfileUnkSAND::MapObjectProfileUnkSAND() :
 
 void MapObjectUnkSAND::func_ov031_0210acd4(void) {}
 void MapObjectUnkSAND::func_ov031_0210ad64(void) {}
-void MapObjectUnkSAND::func_ov031_0210ae00(void) {}
+unk32 MapObjectUnkSAND::func_ov031_0210ae00(Vec2bCpp param1, void *param2) {}
 void MapObjectUnkSAND::func_ov031_0210ae90(void) {}
 void MapObjectUnkSAND::func_ov031_0210af50(void) {}
 void MapObjectUnkSAND::func_ov031_0210b018(void) {}
@@ -22,7 +22,7 @@ void MapObjectUnkSAND::func_ov031_0210b028(void) {}
 void MapObjectUnkSAND::func_ov031_0210b0ac(void) {}
 void MapObjectUnkSAND::func_ov031_0210b0e4(void) {}
 void MapObjectUnkSAND::func_ov031_0210b144(void) {}
-void MapObjectUnkSAND::func_ov031_0210b17c(void) {}
+void MapObjectUnkSAND::func_ov031_0210b17c(MapObjectUnkSAND_40 *param1, unk32 param2) {}
 void MapObjectUnkSAND::func_ov031_0210b1ec(void) {}
 void MapObjectUnkSAND::func_ov031_0210b2cc(void) {}
 void MapObjectUnkSAND::func_ov031_0210b32c(void) {}

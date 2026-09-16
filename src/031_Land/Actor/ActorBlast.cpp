@@ -59,7 +59,7 @@ bool ActorBlast::vfunc_18(unk32 param1) {
         this->mUnk_F0 = FLOAT_TO_FX32(1.0f);
     }
 
-    data_027e09bc->mUnk_0C->func_ov000_0207a1e0(0x6);
+    data_027e09bc->mUnk_04[2]->func_ov000_0207a1e0(0x6);
 
     if (this->mUnk_5C.mParams[0] != 0x0) {
         data_027e0cec->func_ov000_0209feac(0x812, &this->mPos, 0x2, 0x0, 0x0);

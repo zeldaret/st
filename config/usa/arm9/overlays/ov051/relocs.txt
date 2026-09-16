@@ -470,7 +470,7 @@ from:0x02135684 kind:arm_call to:0x01fff458 module:itcm
 from:0x02135694 kind:arm_call to:0x021355b8 module:overlay(51)
 from:0x021356a4 kind:arm_call to:0x01fff350 module:itcm
 from:0x021356c0 kind:load to:0x027e0ce4 module:dtcm
-from:0x021356c4 kind:load to:0x020b2fe0 module:overlay(0)
+from:0x021356c4 kind:load to:0x020b2fd8 module:overlay(0) add:0x8
 from:0x02135774 kind:arm_call to:0x01fff148 module:itcm
 from:0x02135780 kind:arm_call to:0x01ff9a5c module:itcm
 from:0x0213579c kind:load to:0x0203e93c module:main

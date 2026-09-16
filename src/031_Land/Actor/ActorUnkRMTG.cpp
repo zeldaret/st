@@ -40,7 +40,7 @@ bool ActorUnkRMTG::vfunc_18(unk32 param1) {
 }
 
 void ActorUnkRMTG::vfunc_1C() {
-    UnkStruct_027e09bc_0C *data = data_027e09bc->mUnk_0C;
+    UnkStruct_027e09bc_0C *data = data_027e09bc->mUnk_04[2];
     data->func_ov000_0207834c(&this->mPos, func_ov000_02077590(0x7), 0x0);
 }
 

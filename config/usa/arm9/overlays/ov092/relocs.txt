@@ -518,7 +518,7 @@ from:0x0216978c kind:arm_call to:0x01fff350 module:itcm
 from:0x021697e4 kind:arm_call to:0x01fff498 module:itcm
 from:0x02169820 kind:load to:0x027e09a4 module:dtcm
 from:0x02169824 kind:load to:0x027e0ce4 module:dtcm
-from:0x0216982c kind:load to:0x020b2fe0 module:overlay(0)
+from:0x0216982c kind:load to:0x020b2fd8 module:overlay(0) add:0x8
 from:0x02169834 kind:load to:0x027e0ce8 module:dtcm
 from:0x02169970 kind:arm_call to:0x0216cee4 module:overlay(92)
 from:0x021699fc kind:load to:0x0217d7e0 module:overlay(92)

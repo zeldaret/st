@@ -30,7 +30,7 @@ MapObjectProfileMiniBlocks::MapObjectProfileMiniBlocks() :
 }
 
 MapObjectMiniBlocks::MapObjectMiniBlocks() {
-    this->mUnk_48 = 1;
+    this->mUnk_40.mUnk_08 = 1;
 }
 
 bool MapObjectMiniBlocks::vfunc_00(void) {

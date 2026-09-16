@@ -2229,7 +2229,7 @@ data_ov031_02112a30 kind:data(any) addr:0x02112a30
 data_ov031_02112a44 kind:data(any) addr:0x02112a44
 _ZTV16MapObject_10_Pot kind:data(any) addr:0x02112a50
 data_ov031_02112a80 kind:data(any) addr:0x02112a80
-_ZTV24UnkStruct_ov031_02112ad4 kind:data(any) addr:0x02112acc
+_ZTV24UnkStruct_ov031_02112ad4 kind:data(any) addr:0x02112aac
 data_ov031_02112ac0 kind:data(any) addr:0x02112ac0
 data_ov031_02112adc kind:data(any) addr:0x02112adc
 data_ov031_02112af8 kind:data(any) addr:0x02112af8

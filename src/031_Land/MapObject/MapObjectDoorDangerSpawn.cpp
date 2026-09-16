@@ -124,7 +124,7 @@ void MapObjectDoorDangerSpawn::vfunc_04(void) {
         ptr->func_ov000_020803ec(this->mUnk_20.mParams[0]);
         this->vfunc_5C(MapObjDoorDangerSpawnState_0, 0);
 
-        UnkStruct_027e09bc_0C *uVar5 = data_027e09bc->mUnk_0C;
+        UnkStruct_027e09bc_0C *uVar5 = data_027e09bc->mUnk_04[2];
         MapObjectDoorDangerSpawn::func_ov031_020fe5fc(&auStack_20, this);
 
         uVar5->func_ov000_0207834c(&auStack_20, (unk32) func_ov000_02077590(0), 0);
@@ -141,7 +141,7 @@ void MapObjectDoorDangerSpawn::vfunc2_08(void) {
     this->MapObjectDoorBase::vfunc2_08();
 
     if (this->mUnk_A2) {
-        data_027e09bc->mUnk_0C->func_ov000_02078230(0);
+        data_027e09bc->mUnk_04[2]->func_ov000_02078230(0);
     }
 
     data_ov000_020b51b8.func_ov000_0206c96c(data_ov031_02110c00[this->mUnk_20.mParams[3]]);
@@ -178,7 +178,7 @@ void MapObjectDoorDangerSpawn::vfunc_08(void) {
                         sp3C                     = *temp_r0_3;
                         ((unk16 *) sp3C.data)[3] = this->mAngle;
 
-                        UnkStruct_027e09bc_0C *temp_r5 = data_027e09bc->mUnk_0C;
+                        UnkStruct_027e09bc_0C *temp_r5 = data_027e09bc->mUnk_04[2];
 
                         this->func_ov031_020fe5fc(&sp10, this);
                         temp_r5->func_ov000_02078764(&sp10, &sp3C, 0);
@@ -192,7 +192,7 @@ void MapObjectDoorDangerSpawn::vfunc_08(void) {
 
                         sp1C = *temp_r0_3;
 
-                        UnkStruct_027e09bc_0C *temp_r7_2 = data_027e09bc->mUnk_0C;
+                        UnkStruct_027e09bc_0C *temp_r7_2 = data_027e09bc->mUnk_04[2];
                         this->func_ov031_020fe5fc(&sp4, this);
                         temp_r7_2->func_ov000_02078764(&sp4, &sp1C, 0);
                     }

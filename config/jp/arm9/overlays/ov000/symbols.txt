@@ -3653,7 +3653,7 @@ _ZTV19data_ov000_020b47b4 kind:data(any) addr:0x020b47b4
 data_ov000_020b47dc kind:data(any) addr:0x020b47dc
 data_ov000_020b47e8 kind:data(any) addr:0x020b47e8
 data_ov000_020b47f4 kind:data(any) addr:0x020b47f4
-data_ov000_020b3000 kind:data(any) addr:0x020b4800
+_ZTV24UnkStruct_ov000_020b3000 kind:data(any) addr:0x020b47f8
 data_ov000_020b480c kind:data(any) addr:0x020b480c
 data_ov000_020b4818 kind:data(any) addr:0x020b4818
 data_ov000_020b483c kind:data(any) addr:0x020b483c

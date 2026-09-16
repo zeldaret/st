@@ -1842,7 +1842,7 @@ from:0x02161b48 kind:arm_call to:0x01ffb428 module:itcm
 from:0x02161b64 kind:arm_call to:0x01ffb428 module:itcm
 from:0x02161ba0 kind:arm_call to:0x01fff350 module:itcm
 from:0x02161bbc kind:load to:0x027e0ce4 module:dtcm
-from:0x02161bc0 kind:load to:0x020b2fe0 module:overlay(0)
+from:0x02161bc0 kind:load to:0x020b2fd8 module:overlay(0) add:0x8
 from:0x02161bec kind:arm_call to:0x02078814 module:overlay(0)
 from:0x02161bf4 kind:load to:0x027e09bc module:dtcm
 from:0x02161c00 kind:arm_call to:0x020978ec module:overlay(0)

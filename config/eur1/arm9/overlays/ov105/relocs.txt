@@ -280,7 +280,7 @@ from:0x02186d74 kind:arm_call to:0x02185588 module:overlay(105)
 from:0x02186de0 kind:arm_call to:0x02082b10 module:overlay(0)
 from:0x02186e40 kind:load to:0x027e09bc module:dtcm
 from:0x02186e44 kind:load to:0x027e0ce4 module:dtcm
-from:0x02186e4c kind:load to:0x020b3040 module:overlay(0)
+from:0x02186e4c kind:load to:0x020b3038 module:overlay(0) add:0x8
 from:0x02186e50 kind:load to:0x0218a3b0 module:overlay(105)
 from:0x02186e54 kind:load to:0x0218a3ac module:overlay(105)
 from:0x02186e58 kind:load to:0x027e09b8 module:dtcm
@@ -430,7 +430,7 @@ from:0x02188528 kind:arm_call to:0x02187afc module:overlay(105)
 from:0x02188548 kind:arm_call to:0x01fff350 module:itcm
 from:0x02188584 kind:load to:0x027e0ce4 module:dtcm
 from:0x02188588 kind:load to:0x027e09bc module:dtcm
-from:0x02188590 kind:load to:0x020b3040 module:overlay(0)
+from:0x02188590 kind:load to:0x020b3038 module:overlay(0) add:0x8
 from:0x02188594 kind:load to:0x0218a4d8 module:overlay(105)
 from:0x02188598 kind:load to:0x0218a3bc module:overlay(105)
 from:0x021885a0 kind:load to:0x0203e964 module:main
@@ -455,7 +455,7 @@ from:0x02188828 kind:load to:0x0218a3a8 module:overlay(105)
 from:0x0218882c kind:load to:0x0218a3a4 module:overlay(105)
 from:0x02188830 kind:load to:0x0218a3a0 module:overlay(105)
 from:0x02188834 kind:load to:0x027e0ce4 module:dtcm
-from:0x0218883c kind:load to:0x020b3040 module:overlay(0)
+from:0x0218883c kind:load to:0x020b3038 module:overlay(0) add:0x8
 from:0x02188840 kind:load to:0x0218a340 module:overlay(105)
 from:0x02188844 kind:load to:0x0218a394 module:overlay(105)
 from:0x02188848 kind:load to:0x0218a398 module:overlay(105)
@@ -601,7 +601,7 @@ from:0x02189f9c kind:arm_call to:0x020f5cc4 module:overlay(31)
 from:0x02189fa4 kind:arm_call to:0x020f4450 module:overlay(31)
 from:0x02189fb4 kind:load to:0x02110a28 module:overlay(31)
 from:0x02189fc0 kind:load to:0x027e0ce4 module:dtcm
-from:0x02189fc8 kind:load to:0x020b3040 module:overlay(0)
+from:0x02189fc8 kind:load to:0x020b3038 module:overlay(0) add:0x8
 from:0x02189fcc kind:load to:0x02110a6c module:overlay(31)
 from:0x02189fd8 kind:load to:0x0203e964 module:main
 from:0x02189fe0 kind:load to:0x027e0ce0 module:dtcm

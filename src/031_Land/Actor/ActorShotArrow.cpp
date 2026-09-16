@@ -560,7 +560,7 @@ void ActorShotArrow::vfunc_2C(unk32 param1) {
     VecFx32_Copy(&this->mPos, &stack.mUnk_E4);
     stack.mUnk_F0 = 0x2000;
 
-    if (!data_027e09bc->mUnk_04->func_01ffd640(&stack.mUnk_E4)) {
+    if (!data_027e09bc->mUnk_04[0]->func_01ffd640(&stack.mUnk_E4)) {
         return;
     }
 

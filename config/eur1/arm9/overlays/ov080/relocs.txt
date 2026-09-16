@@ -1064,7 +1064,7 @@ from:0x0215c260 kind:arm_call to:0x01fff350 module:itcm
 from:0x0215c28c kind:arm_call to:0x0215d35c module:overlay(80)
 from:0x0215c29c kind:arm_call to:0x01fff350 module:itcm
 from:0x0215c2b8 kind:load to:0x027e0ce4 module:dtcm
-from:0x0215c2c0 kind:load to:0x020b3040 module:overlay(0)
+from:0x0215c2c0 kind:load to:0x020b3038 module:overlay(0) add:0x8
 from:0x0215c2e4 kind:arm_call to:0x020d973c module:overlay(31)
 from:0x0215c2f0 kind:arm_call to:0x01fff3b4 module:itcm
 from:0x0215c2fc kind:arm_call to:0x02098524 module:overlay(0)

@@ -35,7 +35,7 @@ void UnkStruct_027e0ce0_40_Base::func_ov001_020bc0e0(bool param1) {
     }
 
     if (this->mUnk_078 != NULL) {
-        this->mUnk_078->mUnk_00 = 0;
+        *(u32 *) &this->mUnk_078->mUnk_00 = 0;
     }
 
     this->mUnk_094.mUnk_5C = 0;

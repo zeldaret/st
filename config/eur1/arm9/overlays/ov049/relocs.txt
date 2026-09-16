@@ -462,13 +462,13 @@ from:0x021343f0 kind:arm_call to:0x02132854 module:overlay(49)
 from:0x02134404 kind:arm_call to:0x01fff350 module:itcm
 from:0x02134420 kind:load to:0x020d87d0 module:overlay(24)
 from:0x02134424 kind:load to:0x027e0ce4 module:dtcm
-from:0x0213442c kind:load to:0x020b3040 module:overlay(0)
+from:0x0213442c kind:load to:0x020b3038 module:overlay(0) add:0x8
 from:0x02134480 kind:arm_call to:0x01fff350 module:itcm
 from:0x021344ac kind:arm_call to:0x020986a8 module:overlay(0)
 from:0x021344d8 kind:arm_call to:0x01fff350 module:itcm
 from:0x021344f8 kind:load to:0x020d87d0 module:overlay(24)
 from:0x021344fc kind:load to:0x027e0ce4 module:dtcm
-from:0x02134504 kind:load to:0x020b3040 module:overlay(0)
+from:0x02134504 kind:load to:0x020b3038 module:overlay(0) add:0x8
 from:0x02134520 kind:load to:0x027e0d40 module:dtcm
 from:0x02134534 kind:load to:0x027e0d40 module:dtcm
 from:0x02134540 kind:arm_call to:0x02134524 module:overlay(49)

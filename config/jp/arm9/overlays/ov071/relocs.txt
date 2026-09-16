@@ -1554,7 +1554,7 @@ from:0x021613b4 kind:arm_call to:0x01fff350 module:itcm
 from:0x021613f4 kind:arm_call to:0x0212b154 module:overlays(26,42)
 from:0x02161404 kind:arm_call to:0x01fff350 module:itcm
 from:0x02161420 kind:load to:0x027e0ce4 module:dtcm
-from:0x02161428 kind:load to:0x020b4800 module:overlay(0)
+from:0x02161428 kind:load to:0x020b47f8 module:overlay(0) add:0x8
 from:0x02161438 kind:load to:0x027e0d70 module:dtcm
 from:0x0216144c kind:load to:0x027e0d70 module:dtcm
 from:0x02161458 kind:load to:0x021673c8 module:overlay(71)
