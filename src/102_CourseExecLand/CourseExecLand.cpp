@@ -573,8 +573,7 @@ void MapObjectUnkSAND_40::func_ov102_021837a8(Vec2bCpp param1, VecFx32 *param2) 
 
     const UnkStruct_ov102_021848b0 *ptr = &data_ov102_021848b0[var_r6];
     UnkSystem6_Derived2 sp14(
-        G3d_GetUnkPtr(data_ov031_021189d0.unk_70, data_ov102_021848f0[data_ov102_021848b0[var_r6].unk_00]));
-    sp14.mUnk_08     = 1;
+        G3d_GetUnkPtr(data_ov031_021189d0.unk_70, data_ov102_021848f0[data_ov102_021848b0[var_r6].unk_00]), true);
     sp6.angle_signed = ptr->unk_02;
     sp14.func_01ffc6d4(sp6, param2);
 }

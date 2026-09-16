@@ -19,8 +19,6 @@ class MapObjectUnkSKDI : public MapObject {
 public:
     /* 000 (base) */
     /* 040 */ UnkSystem6_Derived2 mUnk_040;
-    /* 048 */ unk8 mUnk_048;
-    /* 049 */ STRUCT_PAD(0x049, 0x04C);
     /* 04C */ ActorBomb_unk mUnk_04C[0x4];
     /* 07C */ unk32 mUnk_07C;
     /* 080 */ unk32 mUnk_080;

@@ -26,8 +26,7 @@ ActorProfileUnkROCK::ActorProfileUnkROCK() :
 }
 
 ActorUnkROCK::ActorUnkROCK() :
-    mUnk_94(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkROCK)->mUnk_3C.mUnk_50)),
-    mUnk_9C(true) {
+    mUnk_94(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkROCK)->mUnk_3C.mUnk_50), true) {
     this->mUnk_44    = 0x1F;
     this->mUnk_4A[1] = 0x02;
 }

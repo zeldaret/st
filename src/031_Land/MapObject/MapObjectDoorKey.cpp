@@ -24,8 +24,7 @@ MapObjectProfileDoorKey::MapObjectProfileDoorKey() :
 }
 
 MapObjectDoorKey::MapObjectDoorKey() :
-    mUnk_94(GetModelFromProfile<MapObjectProfileDoorKey>()),
-    mUnk_9C(1),
+    mUnk_94(GetModelFromProfile<MapObjectProfileDoorKey>(), true),
     mUnk_A0(0),
     mUnk_A4(false) {
     this->mUnk_8F = true;

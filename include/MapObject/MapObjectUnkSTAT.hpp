@@ -10,8 +10,6 @@ class MapObjectUnkSTAT : public MapObject {
 public:
     /* 00 (base) */
     /* 40 */ UnkSystem6_Derived2 mUnk_40;
-    /* 48 */ unk8 mUnk_48;
-    /* 49 */ STRUCT_PAD(0x49, 0x4C);
     /* 4C */ unk32 mUnk_4C;
     /* 50 */ unk32 mUnk_50;
     /* 54 */ unk32 mUnk_54;

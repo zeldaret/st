@@ -21,7 +21,6 @@ class ActorUnkROCK : public Actor {
 public:
     /* 00 (base) */
     /* 94 */ UnkSystem6_Derived2 mUnk_94;
-    /* 9C */ bool mUnk_9C;
     /* A0 */ ActorUnkSCCN_B8 mUnk_A0;
     /* B0 */
 

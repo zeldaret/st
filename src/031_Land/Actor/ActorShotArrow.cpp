@@ -122,7 +122,7 @@ ActorProfileShotArrow::ActorProfileShotArrow() :
 }
 
 ActorShotArrow::ActorShotArrow() :
-    mUnk_9C(true),
+    mUnk_94(true),
     mUnk_A0(GetModelFromProfile3(func_ov031_020f1404(), data_ov031_02110b5c)),
     mUnk_100(&this->mUnk_120, GetModelFromProfile3(func_ov031_020f1404(), data_ov031_02110b5c),
              func_ov031_020f1404()->func_ov000_02058a84(0, data_ov031_02110b08)),

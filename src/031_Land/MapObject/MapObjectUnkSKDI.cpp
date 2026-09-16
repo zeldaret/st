@@ -21,8 +21,7 @@ MapObjectProfileUnkSKDI::MapObjectProfileUnkSKDI() :
 }
 
 MapObjectUnkSKDI::MapObjectUnkSKDI() :
-    mUnk_040(GetModelFromProfile<MapObjectProfileUnkSKDI>()),
-    mUnk_048(0x1),
+    mUnk_040(GetModelFromProfile<MapObjectProfileUnkSKDI>(), true),
     mUnk_07C(0x0),
     mUnk_080(-0x1),
     mUnk_084(0x0),

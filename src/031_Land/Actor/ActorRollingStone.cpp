@@ -93,8 +93,7 @@ void ActorRollingStone_D4::vfunc_10(Actor *param1) {
 
 // non-matching
 ActorRollingStone::ActorRollingStone() :
-    mUnk_94(G3d_GetModelPtr(GET_PROFILE(ActorProfileRollingStone)->mUnk_3C.mUnk_50)),
-    mUnk_9C(0x1),
+    mUnk_94(G3d_GetModelPtr(GET_PROFILE(ActorProfileRollingStone)->mUnk_3C.mUnk_50), true),
     mUnk_AC(this),
     mUnk_D4(this),
     mUnk_10C(data_027e0130),

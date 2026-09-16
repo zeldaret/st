@@ -44,10 +44,6 @@ class MapObjectDoorDangerSpawn : public MapObjectDoorBase {
 public:
     /* 00 (base) */
     /* 94 */ UnkSystem6_Derived2 mUnk_94;
-    /* 9C */ unk8 mUnk_9C;
-    /* 9D */ unk8 mUnk_9D;
-    /* 9E */ unk8 mUnk_9E;
-    /* 9F */ unk8 mUnk_9F;
     /* A0 */ unk8 mUnk_A0;
     /* A1 */ bool mUnk_A1;
     /* A2 */ bool mUnk_A2;

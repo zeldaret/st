@@ -20,7 +20,6 @@ public:
     /* 000 (base) */
 #if IS_JP
     /* 094 */ UnkSystem6_Derived2 mUnk_094;
-    /* 09C */ bool mUnk_09C;
 #else
     /* 094 */ ActorUnkTGTZ_ModelRender mUnk_094;
     /* 100 */ unk32 mUnk_100;

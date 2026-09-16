@@ -36,8 +36,7 @@ MapObjectProfileDoorDangerSpawn::MapObjectProfileDoorDangerSpawn() :
 }
 
 MapObjectDoorDangerSpawn::MapObjectDoorDangerSpawn() :
-    mUnk_94(GetModelFromProfile<MapObjectProfileDoorDangerSpawn>()),
-    mUnk_9C(1),
+    mUnk_94(GetModelFromProfile<MapObjectProfileDoorDangerSpawn>(), true),
     mUnk_A0(0),
     mUnk_A1(false),
     mUnk_A2(false),

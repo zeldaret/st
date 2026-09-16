@@ -57,8 +57,6 @@ class ActorRollingStone : public Actor {
 public:
     /* 000 (base) */
     /* 094 */ UnkSystem6_Derived2 mUnk_94;
-    /* 09C */ unk8 mUnk_9C;
-    /* 09D */ STRUCT_PAD(0x9D, 0xA0);
     /* 0A0 */ Actor_Derived1_94 mUnk_A0;
     /* 0AC */ ActorShotArrow_140 mUnk_AC;
     /* 0D4 */ ActorRollingStone_D4 mUnk_D4;

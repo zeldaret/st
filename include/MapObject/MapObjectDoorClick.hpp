@@ -34,10 +34,6 @@ class MapObjectDoorClick : public MapObjectDoorBase {
 public:
     /* 00 (base) */
     /* 94 */ UnkSystem6_Derived2 mUnk_94;
-    /* 9C */ unk8 mUnk_9C; // bool?
-    /* 9D */ unk8 mUnk_9D; // pad?
-    /* 9E */ unk8 mUnk_9E; // pad?
-    /* 9F */ unk8 mUnk_9F; // pad?
     /* A0 */ UnkStruct_PlayerGet_ec mUnk_A0;
     /* A0 */ unk32 mUnk_A4;
     /* A8 */ MapObject_10 mUnk_A8;

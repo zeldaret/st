@@ -65,8 +65,6 @@ class ActorItemBoomerang : public Actor {
 public:
     /* 000 (base) */
     /* 094 */ UnkSystem6_Derived2 mUnk_94;
-    /* 09C */ bool mUnk_9C;
-    /* 09D */ STRUCT_PAD(0x9D, 0xA0);
     /* 0A0 */ ActorItemBoomerang_A0 mUnk_A0;
     /* 0CC */ ActorItemBoomerang_CC mUnk_CC;
     /* 10C */ VecFx32 mUnk_10C;

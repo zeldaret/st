@@ -23,10 +23,6 @@ class MapObjectDoorKey : public MapObjectDoorBase {
 public:
     /* 00 (base) */
     /* 94 */ UnkSystem6_Derived2 mUnk_94;
-    /* 9C */ unk8 mUnk_9C;
-    /* 9D */ unk8 mUnk_9D; // pad?
-    /* 9E */ unk8 mUnk_9E; // pad?
-    /* 9F */ unk8 mUnk_9F; // pad?
     /* A0 */ UnkStruct_PlayerGet_ec mUnk_A0;
     /* A4 */ bool mUnk_A4;
     /* A5 */ unk8 mUnk_A5; // pad?

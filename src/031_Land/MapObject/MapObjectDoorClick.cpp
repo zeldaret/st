@@ -35,7 +35,7 @@ MapObjectProfileDoorClick::MapObjectProfileDoorClick() :
 }
 
 MapObjectDoorClick::MapObjectDoorClick() :
-    mUnk_9C(1),
+    mUnk_94(true),
     mUnk_A0(0) {
     this->mUnk_8F = true;
     SET_FLAG(this->mFlags, MapObjFlag_9);

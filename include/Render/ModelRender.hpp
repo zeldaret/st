@@ -112,7 +112,7 @@ public:
 class UnkSystem6_Derived2 : public UnkSystem6_Derived1 {
 public:
     /* 00 (base) */
-    /* 08 */ unk8 mUnk_08;
+    /* 08 */ bool mUnk_08;
     /* 0C */
 
     UnkSystem6_Derived2() :
@@ -120,6 +120,14 @@ public:
 
     UnkSystem6_Derived2(G3d_Model *pModel) :
         UnkSystem6_Derived1(pModel) {}
+
+    UnkSystem6_Derived2(G3d_Model *pModel, bool param2) :
+        UnkSystem6_Derived1(pModel),
+        mUnk_08(param2) {}
+
+    UnkSystem6_Derived2(bool param2) :
+        UnkSystem6_Derived1(NULL),
+        mUnk_08(param2) {}
 
     // data_ov000_020b1968
     /* 00 */ virtual ~UnkSystem6_Derived2() {}

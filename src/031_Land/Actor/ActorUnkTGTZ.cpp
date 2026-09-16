@@ -50,8 +50,7 @@ ActorProfileUnkTGTZ::ActorProfileUnkTGTZ() :
 // non-matching
 ActorUnkTGTZ::ActorUnkTGTZ() :
 #if IS_JP
-    mUnk_094(NULL),
-    mUnk_09C(true),
+    mUnk_094(NULL, true),
 #else
     mUnk_094(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkTGTZ)->mUnk_3C.mUnk_50), 0xC, &this->mUnk_100),
 #endif
