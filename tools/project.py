@@ -823,9 +823,10 @@ def add_report_changes(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer)
     n.comment(f"[{version}]: Create a baseline progress report for later match regression testing")
 
     delink_files = cfg.delink_files(version)
+    all_sources = [str(cfg.objdiff_path)] + delink_files + cfg.source_object_files(version)
     n.build(
         inputs=[str(objdiffjson_path)],
-        implicit=[str(cfg.objdiff_path)] + delink_files + cfg.source_object_files(version),
+        implicit=all_sources,
         rule="objdiff_report",
         outputs=str(report_baseline_path),
         variables={
@@ -862,13 +863,13 @@ def add_report_changes(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer)
         outputs=f"changes_{version}",
         rule=f"changes_fmt_{version}",
         inputs=str(report_changes_path),
-        implicit=str(changes_fmt),
+        implicit=[str(changes_fmt)] + all_sources,
     )
     n.build(
         outputs=f"changes_all_{version}",
         rule=f"changes_fmt_{version}",
         inputs=str(report_changes_path),
-        implicit=str(changes_fmt),
+        implicit=[str(changes_fmt)] + all_sources,
         variables={"args": "--all"},
     )
     n.rule(
@@ -880,7 +881,7 @@ def add_report_changes(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer)
         outputs=str(regressions_md),
         rule=f"changes_md_{version}",
         inputs=str(report_changes_path),
-        implicit=str(changes_fmt),
+        implicit=[str(changes_fmt)] + all_sources,
     )
     n.newline()
 
