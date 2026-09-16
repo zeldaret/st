@@ -3,6 +3,8 @@
 Here we gather useful tips that may help to get started with and solve common problems in case of doubt. \
 Some miscellaneous information are also reported here, for example about the build rules or the github workflow.
 
+- [Classes](#classes)
+  - [Double Inheritance](#double-inheritance)
 - [Maths](#maths)
   - [General](#general)
   - [Fx32](#fx32)
@@ -16,6 +18,20 @@ Some miscellaneous information are also reported here, for example about the bui
   - [Build targets](#build-targets)
 - [Github](#github)
   - [CI/CD](#cicd)
+
+# Classes
+
+Helpful tips about C++ classes.
+
+## Double Inheritance
+
+Classes (mostly actors and map objects) may inherit from two parents, you can figure that out by looking at the vtables, they'll contain virtual thunk functions that will call another vfunc with a negative offset, those are compiler-generated and usually linked at the end of the unit.
+
+![vthunk example](images/double_inheritance_vthunk.png)
+
+When a class inherits from several parents all vtables will end up in the same vtable (they'll also include the empty words at the beginning). In order to have the "vthunks" generated, the target vfunc need to be present in both parent classes, with the same prototype, for instance: `bool vfunc_54(int, int, int)` in parent class A and parent class B, with class C inheriting from A and B.
+
+![vtable example](images/double_inheritance_vtable.png)
 
 # Maths
 

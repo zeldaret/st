@@ -103,3 +103,7 @@ In order, the parts are:
 - Other methods, grouped by overlay with a comment indicating which one.
 
 Using `private` may sometime be required to enable some inlining, so feel free to when use it you feel like you should.
+
+## Report Summary
+
+To generate a report highlighting the changes, first run `ninja baseline_{version}` (where `{version}` is one of the supported versions) from the upstream/main branch, then checkout your branch and run `ninja changes_{version}`.
