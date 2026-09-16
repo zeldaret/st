@@ -813,6 +813,78 @@ def add_apply_build(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer):
     n.newline()
 
 
+def add_report_changes(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer):
+    objdiffjson_path = cfg.get_game_build(version) / "objdiff.json"
+    report_baseline_path: Path = cfg.get_game_build(version) / "baseline.json"
+    report_changes_path: Path = cfg.get_game_build(version) / "report_changes.json"
+    regressions_md: Path = cfg.get_game_build(version) / "regressions.md"
+    changes_fmt: Path = cfg.tools_path / "changes_fmt.py"
+
+    n.comment(f"[{version}]: Create a baseline progress report for later match regression testing")
+
+    delink_files = cfg.delink_files(version)
+    n.build(
+        inputs=[str(objdiffjson_path)],
+        implicit=[str(cfg.objdiff_path)] + delink_files + cfg.source_object_files(version),
+        rule="objdiff_report",
+        outputs=str(report_baseline_path),
+        variables={
+            "dir": str(cfg.get_game_build(version)),
+            "filename": "baseline.json"
+        }
+    )
+    n.build(
+        outputs=f"baseline_{version}",
+        rule="phony",
+        inputs=str(report_baseline_path),
+    )
+
+    n.comment(f"[{version}]: Check for any match regressions against the baseline")
+    n.comment(f"[{version}]: Will fail if no baseline has been created")
+
+    n.rule(
+        name=f"report_changes_{version}",
+        command=f"{cfg.objdiff_path} report changes --format json-pretty {report_baseline_path} $in -o $out",
+        description="CHANGES",
+    )
+    n.build(
+        outputs=str(report_changes_path),
+        rule=f"report_changes_{version}",
+        inputs=str(cfg.get_game_build(version) / "report.json"),
+        implicit=[str(cfg.objdiff_path)],
+    )
+    n.rule(
+        name=f"changes_fmt_{version}",
+        command=f"$python {changes_fmt} $args $in",
+        description="CHANGESFMT",
+    )
+    n.build(
+        outputs=f"changes_{version}",
+        rule=f"changes_fmt_{version}",
+        inputs=str(report_changes_path),
+        implicit=str(changes_fmt),
+    )
+    n.build(
+        outputs=f"changes_all_{version}",
+        rule=f"changes_fmt_{version}",
+        inputs=str(report_changes_path),
+        implicit=str(changes_fmt),
+        variables={"args": "--all"},
+    )
+    n.rule(
+        name=f"changes_md_{version}",
+        command=f"$python {changes_fmt} $in -o $out",
+        description="CHANGESFMT $out",
+    )
+    n.build(
+        outputs=str(regressions_md),
+        rule=f"changes_md_{version}",
+        inputs=str(report_changes_path),
+        implicit=str(changes_fmt),
+    )
+    n.newline()
+
+
 def create_objdiff_fixup_config(cfg: ProjectConfig, objects: Dict[str, Object]):
     out_json = {}
 
@@ -1268,6 +1340,8 @@ def process_project(cfg: ProjectConfig, args: Any):
                 )
                 n.newline()
                 cmds_map["format"].append(f"format_{version}")
+
+                add_report_changes(cfg, version, n)
 
                 defaults.extend([f"check_{version}", f"sha1_{version}"])
 
