@@ -24,14 +24,14 @@ AdventureModeManager_170::AdventureModeManager_170(GameModeManagerBase_104 *para
 
 AdventureModeManager_170::~AdventureModeManager_170() {}
 
-void AdventureModeManager_170::vfunc_08(unk32 param1) {
+void AdventureModeManager_170::vfunc2_08(unk32 param1) {
     if (param1 == 1) {
         this->mUnk_14.func_0201bb84(0x3C, 2, 0x3C);
         data_0204e5f8.func_0201b9a8(&this->mUnk_14);
     }
 }
 
-void AdventureModeManager_170::vfunc_0C(unk32 param1) {
+void AdventureModeManager_170::vfunc2_0C(unk32 param1) {
     if (param1 != 1) {
         return;
     }
@@ -50,7 +50,7 @@ void AdventureModeManager_170::vfunc_0C(unk32 param1) {
     }
 }
 
-void AdventureModeManager_170::vfunc_10(unk32 param1, unk32 param2) {
+void AdventureModeManager_170::vfunc_54(unk32 param1, unk32 param2) {
     if (data_0204a110.mUnk_008 == 1) {
         data_0204a110.mUnk_DFE = true;
     }
@@ -72,11 +72,11 @@ void AdventureModeManager_170::vfunc_10(unk32 param1, unk32 param2) {
     data_ov000_020b5214.func_ov000_0206d83c(0x0A);
 }
 
-void AdventureModeManager_170::vfunc_18(unk32 param1) {
+void AdventureModeManager_170::vfunc2_18(unk32 param1) {
     this->mUnk_0C = 0;
 }
 
-void AdventureModeManager_170::vfunc_24() {
+void AdventureModeManager_170::vfunc_60() {
     data_0204e5f8.mUnk_38   = true;
     data_0204a088->mUnk_120 = -1;
 }

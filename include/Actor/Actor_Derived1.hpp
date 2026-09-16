@@ -8,7 +8,7 @@
 
 class ActorUnk_vfunc_B0 {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ bool mUnk_00;
     /* 04 */ MapObject_UnkStruct1 *mUnk_04;
     /* 08 */ u16 mUnk_08;
     /* 0C */ unk32 mUnk_0C;

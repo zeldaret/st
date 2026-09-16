@@ -8,3 +8,4 @@ public:
 };
 
 extern UnkStruct_ov000_020b51c0 data_ov000_020b51c0;
+extern UnkStruct_ov000_020b51c0 data_ov000_020b51c8; //! TODO: real?

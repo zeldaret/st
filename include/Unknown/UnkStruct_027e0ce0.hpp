@@ -457,7 +457,11 @@ public:
 class UnkStruct_027e0ce0_40_Base_14 {
 public:
     /* 00 */ TouchControl mTouchControl;
-    /* 22 */ STRUCT_PAD(0x22, 0x60);
+    /* 22 */ STRUCT_PAD(0x22, 0x40);
+    /* 40 */ unk16 mUnk_40;
+    /* 42 */ unk16 mUnk_42;
+    /* 44 */ unk16 mUnk_44;
+    /* 48 */ STRUCT_PAD(0x48, 0x60);
     /* 60 */
 
     UnkStruct_027e0ce0_40_Base_14() :
@@ -472,20 +476,36 @@ public:
 
 class UnkStruct_027e0ce0_40_Base_74 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x5C);
+    /* 00 */ unk16 mUnk_00[14];
+    /* 1C */ Vec2s mUnk_1C[14];
+    /* 54 */ unk32 mUnk_54;
+    /* 58 */ unk32 mUnk_58;
     /* 5C */
 
     UnkStruct_027e0ce0_40_Base_74() {
         this->func_ov031_020e0c34();
     }
 
+    // overlay 31
     void func_ov031_020e0c34();
+
+    // overlay 102
+    void func_ov102_0218323c(UnkStruct_027e0ce0_40_Base_14 *param1, unk32 param2);
 };
 
 class UnkStruct_027e0ce0_40_Base_78 {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ unk16 mUnk_00; // ActorRef?
+    /* 02 */ unk16 mUnk_02;
     /* 04 */
+
+    const u32 GetData() const {
+        return *(u32 *) this;
+    }
+
+    const bool HasValue() const {
+        return this->GetData() != 0;
+    }
 
     UnkStruct_027e0ce0_40_Base_78();
     ~UnkStruct_027e0ce0_40_Base_78();
@@ -513,6 +533,9 @@ public:
 
     // overlay 0
     void func_ov000_020968e0();
+
+    // overlay 17
+    void func_ov017_020be434();
 };
 
 class UnkStruct_027e0ce0_40_Base_94_50_Base {
@@ -618,6 +641,10 @@ public:
     /* 107 */ unk8 mUnk_107;
     /* 108 */
 
+    const BOOL Unk78HasValue() const {
+        return this->mUnk_078 != NULL && this->mUnk_078->HasValue();
+    }
+
     UnkStruct_027e0ce0_40_Base(unk32 param1, void *param2, ItemManager *pItemMgr);
     ~UnkStruct_027e0ce0_40_Base();
 
@@ -638,19 +665,34 @@ public:
     /* 00 */ virtual void vfunc_00() = 0;
 };
 
+class UnkStruct_027e0ce0_40_108_10 {
+public:
+    /* 00 */ Vec2s mUnk_00;
+    /* 04 */ u8 mUnk_04;
+    /* 05 */ u8 mUnk_05;
+    /* 06 */
+};
+
 class UnkStruct_027e0ce0_40_108 : public UnkStruct_027e0ce0_40_108_Base {
 public:
     /* 00 (base) */
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ STRUCT_PAD(0x14, 0x40);
-    /* 40 */ void *mUnk_40;
+    /* 10 */ UnkStruct_027e0ce0_40_108_10 mUnk_10;
+    /* 18 */ STRUCT_PAD(0x16, 0x40);
+    /* 40 */ UnkStruct_027e0ce0_40_108_10 *mUnk_40;
     /* 44 */
 
     UnkStruct_027e0ce0_40_108() :
         mUnk_40(&this->mUnk_10) {}
 
+    const bool UnknownInline1() const {
+        return (uintptr_t) (this->mUnk_40 - &this->mUnk_10) >= 8;
+    }
+
     // data_ov031_02112b60
     /* 00 */ virtual void vfunc_00() override;
+
+    // overlay 102
+    void func_ov102_02182e54(unk32 param1, unk32 param2, unk32 param3);
 };
 
 class UnkStruct_027e0ce0_40_14C {
@@ -661,8 +703,13 @@ public:
     UnkStruct_027e0ce0_40_14C();
     ~UnkStruct_027e0ce0_40_14C();
 
+    // overlay 17
+    void func_ov093_02168e24(unk32 param1);
+
     // overlay 93
     void func_ov093_02168850();
+    bool func_ov092_021689e8(unk32 param1, UnkStruct_027e0ce0_40 *param2, PlayerLinkActor *param3,
+                             UnkStruct_027e0ce0_40_328 *param4);
 };
 
 class UnkStruct_027e0ce0_40_150 {
@@ -682,7 +729,14 @@ class UnkStruct_027e0ce0_40_328 {
 public:
     /* 000 */ STRUCT_PAD(0x00, 0x98);
     /* 098 */ PlayerActorBase *mpPlayer;
-    /* 09C */ STRUCT_PAD(0x9C, 0x154);
+    /* 09C */ STRUCT_PAD(0x9C, 0xCC);
+    /* 0CC */ bool mUnk_0CC;
+    /* 0CD */ STRUCT_PAD(0xCD, 0xD0);
+    /* 0D0 */ unk32 mUnk_0D0;
+    /* 0D4 */ unk32 mUnk_0D4;
+    /* 0D8 */ unk32 mUnk_0D8;
+    /* 0DC */ unk32 mUnk_0DC;
+    /* 0E0 */ STRUCT_PAD(0xE0, 0x154);
     /* 154 */
 
     UnkStruct_027e0ce0_40_328(void *param1, UnkStruct_027e0ce0_40 *param2, UnkStruct_027e0ce0_40_150 *param3,
@@ -693,6 +747,11 @@ public:
     void func_ov093_0216d0d4();
     void func_ov093_0216d160();
     void func_ov093_0216d1cc(unk32 param1, const UnkStruct_ov001_020c40f4 *param2, bool param3, bool param4);
+    void func_ov093_0216d5b8(unk32 param1);
+    void func_ov093_0216f71c(unk32 *param1);
+    void func_ov093_0216de30(unk32 param1, unk32 param2);
+    void func_ov093_0216dec8(unk32 param1);
+    void func_ov093_0216e1a4(unk32 param1);
 };
 
 // land player stuff
@@ -719,11 +778,23 @@ public:
     // overlay 0
     void func_ov000_02088060(bool param1);
 
+    // overlay 17
+    unk32 func_ov017_020bcde8(unk32 param1, ItemManager *pItemMgr);
+
+    // overlay 93
+    void func_ov093_02168220();
+
     // overlay 101
     bool func_ov101_02182fb4(bool param1);
     void func_ov101_02183004();
     void func_ov101_02183024(const UnkStruct_ov001_020c40f4 *param1, const UnkStruct_ov001_020c40f4 *param2, unk32 param3,
                              unk32 param4, ItemManager *pItemMgr, UnkStruct_027e0ce0_30 *param6, bool param7, bool param8);
+
+    // overlay 102
+    void func_ov102_0218303c(unk32 param1, ItemManager *pItemMgr);
+    void func_ov102_02183180(unk32 param1, bool param2);
+    void func_ov102_021831b4(unk32 param1);
+    void func_ov102_021831f0(unk32 param1);
 };
 
 union UnkStruct_027e0478 {
@@ -799,6 +870,7 @@ public:
     static void Destroy();
 
     // overlay 17
+    void func_ov017_020bd5dc(unk32 param1);
     void func_ov017_020bd69c();
 };
 

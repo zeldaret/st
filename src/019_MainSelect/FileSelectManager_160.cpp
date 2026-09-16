@@ -16,7 +16,7 @@ FileSelectManager_160::FileSelectManager_160(GameModeManagerBase_104 *param1, Fi
 
 FileSelectManager_160::~FileSelectManager_160() {}
 
-void FileSelectManager_160::vfunc_08(unk32 param1) {
+void FileSelectManager_160::vfunc2_08(unk32 param1) {
     if (param1 == 0) {
         this->mUnk_0C = 0;
         this->mUnk_10->func_ov019_020cb6e8();
@@ -24,7 +24,7 @@ void FileSelectManager_160::vfunc_08(unk32 param1) {
     }
 }
 
-void FileSelectManager_160::vfunc_0C(unk32 param1) {
+void FileSelectManager_160::vfunc2_0C(unk32 param1) {
     if (param1 == 0) {
         switch (this->mUnk_0C) {
             case 0:
@@ -42,9 +42,9 @@ void FileSelectManager_160::vfunc_0C(unk32 param1) {
     }
 }
 
-void FileSelectManager_160::vfunc_14(unk32 param1) {}
+void FileSelectManager_160::vfunc2_14(unk32 param1) {}
 
-void FileSelectManager_160::vfunc_10(unk32 param1, unk32 param2) {
+void FileSelectManager_160::vfunc_54(unk32 param1, unk32 param2) {
     data_0204999c.func_02013014();
     data_0204999c.mUnk_60 = 0xD6D8;
     data_0204a088->func_ov000_02061248();
@@ -56,13 +56,13 @@ void FileSelectManager_160::vfunc_10(unk32 param1, unk32 param2) {
     data_0204999c.func_02013070();
 }
 
-void FileSelectManager_160::vfunc_18(unk32 param1) {
+void FileSelectManager_160::vfunc2_18(unk32 param1) {
     if (param1 == 0) {
         this->mUnk_0C = 1;
     }
 }
 
-void FileSelectManager_160::vfunc_1C(unk32 param1) {
+void FileSelectManager_160::vfunc_5C(unk32 param1) {
     if (param1 == 0) {
         switch (this->mUnk_0C) {
             case 0:
@@ -80,7 +80,7 @@ void FileSelectManager_160::vfunc_1C(unk32 param1) {
     }
 }
 
-void FileSelectManager_160::vfunc_20(unk32 param1, unk32 param2) {
+void FileSelectManager_160::vfunc_58(unk32 param1, unk32 param2) {
     data_0204999c.func_02013014();
     data_0204999c.mUnk_60 = 0xD6D8;
     this->mUnk_14         = NULL;
@@ -99,6 +99,6 @@ void FileSelectManager_160::vfunc_20(unk32 param1, unk32 param2) {
     data_0204999c.func_02013070();
 }
 
-void FileSelectManager_160::vfunc_24() {
+void FileSelectManager_160::vfunc_60() {
     data_0204a110.func_0201967c(0, 0, 1, 0, 3);
 }

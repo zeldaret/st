@@ -10,12 +10,6 @@
 
 // --- Actor ZLSL ---
 
-class UnkStruct_ov031_0211361c {
-public:
-    // data_ov031_0211361c
-    virtual bool func_ov031_020ea0b4(Actor *param1);
-};
-
 // NPC Renderer ?
 class ModelRender_ov000_020b4d64 : public ModelRender {
 public:

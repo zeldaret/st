@@ -162,7 +162,7 @@ public:
     ~UnkStruct_027e09b8();
 
     // itcm
-    unk32 func_01ffd420();
+    bool func_01ffd420();
 
     // overlay 0
     unk32 func_ov000_020732ec(unk32 param1);

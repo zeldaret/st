@@ -81,7 +81,7 @@ public:
     /* 83 */ unk8 mUnk_83;       // pad?
     /* 84 */ unk32 mLettersRead; // bitfield
     /* 88 */ unk32 mStampsFlag;  // bitfield, related to the checkmarks from the stampbook
-    /* 8C */ unk16 mSongs;       // bitfield
+    /* 8C */ u16 mSongs;         // bitfield
     /* 8E */ unk16 mUnk_8E;      // pad?
     /* 90 */
 

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Player/PlayerLink.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -45,6 +46,7 @@ public:
 
     UnkStruct_ov000_020b5214();
 
+    // overlay 0
     void func_ov000_0206d43c();
     void func_ov000_0206d6b4(unk32 param1, unk32 param2);
     void func_ov000_0206d83c(unk32 param1);
@@ -53,6 +55,8 @@ public:
     void func_ov000_0206db44(unk32 param1); // play sfx?
     void func_ov000_0206dc4c(unk32 param1);
     void func_ov000_0206e7e8(unk32 param1);
+    void func_ov000_0206ed1c(PlayerLinkActor *pPlayer);
+    void func_ov000_0206edd8(PlayerLinkActor *pPlayer);
 };
 
 extern UnkStruct_ov000_020b5214 data_ov000_020b5214_eur;

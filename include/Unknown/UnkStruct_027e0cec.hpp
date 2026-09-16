@@ -3,6 +3,7 @@
 #include "LinkList.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "math.hpp"
+#include "nitro/fx.h"
 #include "types.h"
 
 class UnkStruct_027e0cec_00_00 : public LinkList<UnkStruct_027e0cec_00_00> {
@@ -81,6 +82,7 @@ public:
     void func_ov000_020a0110(UnkSystem7 *param1);
     void func_ov000_020a0140(UnkSystem7 *param1, VecFx32 *param2);
     void func_ov000_020a0220(void *param1, void *param2);
+    void func_ov000_0209ff4c(unk32 param1, VecFx32 *param2, UnkAngleStruct param3, unk32 param4);
 
     // overlay 1
     const char *func_ov001_020bef98();

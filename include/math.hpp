@@ -211,10 +211,11 @@ static inline void Vec2us_Copy(const Vec2us *a, Vec2us *dst) {
 union Vec2bCpp {
     struct {
         /* 0 */ u8 x;
-        /* 2 */ u8 y;
-        /* 4 */
+        /* 1 */ u8 y;
+        /* 2 */
     };
     u8 coords[2];
+    u16 data[1];
 
     void operator=(const Vec2bCpp &from) {
         this->x = from.x;
@@ -369,5 +370,8 @@ union Vec2sb {
 };
 
 struct UnkAngleStruct {
-    u16 angle;
+    union {
+        u16 angle;
+        s16 angle_signed;
+    };
 };

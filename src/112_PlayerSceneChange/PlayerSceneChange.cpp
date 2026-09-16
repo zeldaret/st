@@ -6,6 +6,7 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cdc.hpp"
+#include "Unknown/UnkStruct_ov000_020b3000.hpp"
 
 #include "math.hpp"
 
@@ -71,7 +72,6 @@ extern fx16 data_0203feb0[];
 extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
 extern "C" void func_01ff9638(VecFx32 *, s16);
 extern "C" void func_01ff9770(VecFx32 *);
-extern unk32 data_ov000_020b3000;
 extern "C" bool func_ov000_02080998(VecFx32 *);
 extern "C" void func_01ff930c(UnkStruct_ov000_0208f820_40 *, unk16, unk32);
 
@@ -323,12 +323,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             }
 
             if ((this->mUnk_24->mUnk_104 & 0x10) || this->mUnk_28->pItemManager->GetTearsAmount() == MAX_TEARS_OF_LIGHT) {
-                struct {
-                    unk32 actorId;
-                    void *ptr;
-                } local_9c;
-                local_9c.ptr     = &data_ov000_020b3000;
-                local_9c.actorId = ActorId_RPMT;
+                UnkStruct_ov000_020b3000 local_9c(ActorId_RPMT);
                 Actor **ppAVar12 = gpActorManager->func_01fff350(&local_9c, gpActorManager->mActorTable);
 
                 if (ppAVar12 == gpActorManager->mUnk_08) {

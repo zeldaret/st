@@ -46,14 +46,14 @@ public:
 
 class PlayerLinkActor_A0_1C {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ UnkStruct_027e0ce0_40 *mUnk_00;
     /* 04 */ unk16 mUnk_04;
     /* 06 */ bool mUnk_06;
     /* 07 */ STRUCT_PAD(0x07, 0x0C);
     /* 0C */ ActorRef mUnk_0C;
     /* 10 */
 
-    PlayerLinkActor_A0_1C(unk32 param1);
+    PlayerLinkActor_A0_1C(UnkStruct_027e0ce0_40 *param1);
 
     // overlay 101
     void func_ov101_02183290();
@@ -281,13 +281,22 @@ public:
     void func_ov001_020bcba8();
     void func_ov001_020bcbd0(VecFx32 *pVec);
 
+    // overlay 17
+    void func_ov017_020bd788(unk32 param1);
+    void func_ov017_020bdcf4();
+    void func_ov017_020bdd84(unk32 param1, unk32 param2);
+    void func_ov017_020bdf48(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
+
     // overlay 21
     void func_ov021_020ebda0();
-    void func_ov021_020ebda0(int);
+    void func_ov021_020ebda0(unk32 param1);
 
     // overlay 31
     void func_ov031_020d96a4(PlayerLinkActor_A0 *param1, UnkStruct_027e0ce0_40 *param2);
     void func_ov031_020d96a4(int, PlayerLinkActor_A0 *param1, UnkStruct_027e0ce0_40 *param2);
     void func_ov031_020dccf0();
-    void func_ov031_020dccf0(int);
+    void func_ov031_020dccf0(unk32 param1);
+
+    // overlay 93
+    void func_ov093_0216ce24(unk32 *param1);
 };

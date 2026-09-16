@@ -276,7 +276,7 @@ void AdventureModeManager::vfunc_24() {
     data_027e0998->func_ov000_02061764();
 
     if (data_ov000_020b4f70 != NULL && data_027e09b8 != NULL) {
-        if (data_027e09b8->func_01ffd420() == 0) {
+        if (!data_027e09b8->func_01ffd420()) {
             data_ov000_020b4f70->func_ov000_02066370();
         }
     }
@@ -364,12 +364,13 @@ void AdventureModeManager::vfunc_24() {
             if (CHECK_BUTTON_COMBO(this->mButtons.press, PAD_BUTTON_SELECT)) {
                 if (this->func_ov024_020c60f4()) {
                     switch (data_0204a088->mUnk_00) {
-                        case 1:
+                        case 1: {
                             stack_ov000_02073578 stack;
                             stack.unk_08 = 0x05;
                             data_027e09b8->func_ov000_02073578(&stack, 1);
                             data_ov000_020b5214.func_ov000_0206db44(0x37);
                             break;
+                        }
                         case 6:
                             data_0204a088->func_ov000_020611fc(5);
                             data_ov000_020b5214.func_ov000_0206db44(0x37);
@@ -457,7 +458,7 @@ bool AdventureModeManager::func_ov024_020c5dac() {
 }
 
 bool AdventureModeManager::func_ov024_020c5ecc() {
-    if (data_ov026_02138d10->func_ov026_020e13f4() != 0 && data_027e09b8->func_01ffd420() == 0 &&
+    if (data_ov026_02138d10->func_ov026_020e13f4() != 0 && !data_027e09b8->func_01ffd420() &&
         func_ov024_020d5304(data_027e09a4->mUnk_00.sceneIndex) &&
         (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == NULL) && this->func_ov024_020c6a20() != 0 &&
         data_ov026_0213f590.func_ov026_020f7cc0() == 0) {

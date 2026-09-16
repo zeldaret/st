@@ -2,6 +2,10 @@
 
 #include "g3d.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 extern void PushGeometryCommand(u32 command, void *data, s32 length);
 
 typedef enum {
@@ -109,3 +113,7 @@ static inline void G3d_Scale_inline(fx32 x, fx32 y, fx32 z) {
     vec.z = z;
     PushGeometryCommand(0x1B, (u32 *) &vec, 3);
 }
+
+#ifdef __cplusplus
+} // extern "C"
+#endif

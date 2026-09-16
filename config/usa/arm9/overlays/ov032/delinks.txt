@@ -16,7 +16,7 @@ src/032_MapA1/Actor/ActorFleeingSpinut.cpp:
     .text       start:0x0211b6ac end:0x0211db20
     .init       start:0x02121f80 end:0x02122000
     .ctor       start:0x02122110 end:0x02122114
-    .data       start:0x02122388 end:0x021224B8
+    .data       start:0x02122388 end:0x021224b8
     .bss        start:0x021228e8 end:0x02122954
 
 src/032_MapA1/Actor/ActorUnkKETH.cpp:

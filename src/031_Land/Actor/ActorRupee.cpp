@@ -393,7 +393,7 @@ void ActorRupee::func_ov031_020e94d4() {
 void ActorRupee::func_ov031_020e951c() {
     ItemId itemId;
 
-    if (data_027e09b8->func_01ffd420() != 0) {
+    if (data_027e09b8->func_01ffd420()) {
         return;
     }
 

@@ -112,7 +112,8 @@ public:
 class UnkSystem6_Derived2 : public UnkSystem6_Derived1 {
 public:
     /* 00 (base) */
-    /* 08 */
+    /* 08 */ unk8 mUnk_08;
+    /* 0C */
 
     UnkSystem6_Derived2() :
         UnkSystem6_Derived1(NULL) {}

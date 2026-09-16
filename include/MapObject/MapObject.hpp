@@ -173,6 +173,10 @@ public:
         return isVertical;
     }
 
+    void Kill(void) {
+        UNSET_FLAG(this->mFlags, MapObjFlag_Alive);
+    }
+
     MapObject();
 
     MapObjectId GetMapObjectId();

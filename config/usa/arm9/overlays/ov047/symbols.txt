@@ -1,7 +1,7 @@
 _ZN29UnkStruct_027e0cd8_0C_Base_98C1Ev kind:function(arm,size=0x64) addr:0x02130480
 _ZN29UnkStruct_027e0cd8_0C_Base_98D1Ev kind:function(arm,size=0x28) addr:0x021304e4
 func_ov047_0213052c kind:function(arm,size=0x30) addr:0x0213050c
-func_ov047_0213055c kind:function(arm,size=0x200) addr:0x0213053c
+_ZN29UnkStruct_027e0cd8_0C_Base_9819func_ov047_0213055cEv kind:function(arm,size=0x200) addr:0x0213053c
 func_ov047_0213075c kind:function(arm,size=0x39c) addr:0x0213073c
 func_ov047_02130af8 kind:function(arm,size=0x3d8) addr:0x02130ad8
 func_ov047_02130ed0 kind:function(arm,size=0x280) addr:0x02130eb0

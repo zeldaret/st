@@ -4,6 +4,9 @@
 #include "System/SysNew.hpp"
 #include "types.h"
 
+class Actor;
+class FileSelectManager_UnkDrawBase;
+
 // members 00 04 and 08 are used in data_ov000_020b1d74 to figure out which overlay to load next in slot 1
 class UnkStruct_0204a088 : public AutoInstance<UnkStruct_0204a088> {
 public:
@@ -25,7 +28,7 @@ public:
 
     // overlay 0
     void func_ov000_02061098(void);
-    void func_ov000_020611dc(void *param1, unk32 param2);
+    void func_ov000_020611dc(FileSelectManager_UnkDrawBase *param1, unk32 param2);
     bool func_ov000_020611fc(unk32 param2); // sets new index
     bool func_ov000_02061224(void);
     void func_ov000_02061230(void);

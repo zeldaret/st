@@ -4,13 +4,12 @@
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
+#include "Unknown/UnkStruct_ov000_020b3000.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
 #include "versions.h"
 
 #include <nitro/gx.h>
-
-extern unk32 data_ov000_020b3000;
 
 UnkStruct_ov024_020d8660 *data_ov024_020d8660 = NULL;
 
@@ -36,7 +35,7 @@ UnkStruct_ov024_020d8660::UnkStruct_ov024_020d8660() {
 
 void UnkStruct_ov024_020d8660::func_ov024_020c4b4c(unk32 param1) {
     if (this->mUnk_00 != NULL) {
-        if (data_027e09b8->func_01ffd420() == 0) {
+        if (!data_027e09b8->func_01ffd420()) {
             this->mUnk_00->vfunc_10(param1);
         } else {
             this->mUnk_00->vfunc_14(param1);
@@ -55,13 +54,7 @@ void UnkStruct_ov024_020d8660::func_ov024_020c4ba0() {
     }
 
     if (this->mActorId != 0) {
-        struct {
-            void *ptr;
-            unk32 actorId;
-        } uStack_68;
-        uStack_68.actorId = this->mActorId;
-        uStack_68.ptr     = &data_ov000_020b3000;
-
+        UnkStruct_ov000_020b3000 uStack_68(this->mActorId);
         Actor **ppActor = gpActorManager->func_01fff350(&uStack_68, gpActorManager->mActorTable);
         Actor *pActor   = NULL;
 

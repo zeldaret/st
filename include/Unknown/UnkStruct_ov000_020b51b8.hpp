@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Player/PlayerLink.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include "types.h"
@@ -59,6 +60,10 @@ public:
     /* 54 */ unk16 mUnk_54;
     /* 56 */ unk16 mUnk_56;
 
+    const BOOL IsUnk08_2() const {
+        return this->mUnk_08[2] != NULL;
+    }
+
     UnkStruct_ov000_020b51b8();
     ~UnkStruct_ov000_020b51b8();
 
@@ -70,6 +75,7 @@ public:
     void func_ov000_0206d0ec(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
     void func_ov000_0206d134(unk32 param1);
     void func_ov000_0206d274(unk32 param1); // play seq?
+    void func_ov000_0206bdd4(PlayerLinkActor *pPlayer);
 
     // overlay 1
     void func_ov000_0206bbfc(unk32 param1);

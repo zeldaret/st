@@ -14,6 +14,7 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d8c.hpp"
+#include "Unknown/UnkStruct_ov000_020b3000.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
 
@@ -156,11 +157,12 @@ ActorUnkZLSL::ActorUnkZLSL() :
 
 void func_ov031_020ea100() {}
 
-bool UnkStruct_ov031_0211361c::func_ov031_020ea0b4(Actor *param1) {
-    if (param1 != NULL && param1->GetActorId() == ActorId_RAT0 && param1->mState == ActorUnkRAT0State_0 &&
-        param1->mUnk_5C.mParams[1] == 0x1) {
+bool UnkStruct_ov031_0211361c::vfunc_00(Actor *pActor) {
+    if (pActor != NULL && pActor->GetActorId() == ActorId_RAT0 && pActor->mState == ActorUnkRAT0State_0 &&
+        pActor->mUnk_5C.mParams[1] == 0x1) {
         return true;
     }
+
     return false;
 }
 THUMB_END
@@ -990,7 +992,7 @@ unk32 ActorUnkZLSL::func_ov031_020ec54c() {
 }
 
 void ActorUnkZLSL::vfunc_B0() {
-    if (data_027e09b8->func_01ffd420() != 0x0) {
+    if (data_027e09b8->func_01ffd420()) {
         return;
     }
     ActorUnk_vfunc_B0 stack = ActorUnk_vfunc_B0();
@@ -1277,7 +1279,7 @@ void ActorUnkZLSL::func_ov031_020ed4e4(unk32 param1, unk32 param2) {
     if (data_027e09b8->func_ov000_020732ec(this->mUnk_28C8) == 0x0) {
         return;
     }
-    data_027e09bc->mUnk_0C->func_ov000_02078834(&this->mUnk_28F4, &this->mUnk_28E8, param2, param1);
+    data_027e09bc->mUnk_04[2]->func_ov000_02078834(&this->mUnk_28F4, &this->mUnk_28E8, param2, param1);
 }
 
 // non-matching
@@ -1414,7 +1416,6 @@ unk32 ActorUnkZLSL::vfunc_80(unk32 param1, unk32 param2) {
 
 bool ActorUnkZLSL::func_ov031_020ee724() {
     UnkStruct_ov031_0211361c stack;
-
     Actor **actor = gpActorManager->func_01fff350(&stack, gpActorManager->mActorTable);
     return *actor != NULL;
 }

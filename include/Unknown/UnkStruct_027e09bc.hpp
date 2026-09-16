@@ -3,6 +3,7 @@
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
 #include "global.h"
+#include "math.hpp"
 #include "types.h"
 
 class UnkStruct_027e09bc_0C {
@@ -25,6 +26,7 @@ public:
     /* 10 */
 
     // itcm
+    bool func_01ffd43c(Vec2s *param1, unk32 param2, unk32 param3);
     bool func_01ffd640(VecFx32 *param1);
 
     // overlay 0
@@ -51,10 +53,7 @@ public:
 class UnkStruct_027e09bc : public AutoInstance<UnkStruct_027e09bc> {
 public:
     /* 00 (vtable) */
-    /* 04 */ UnkStruct_027e09bc_0C *mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ UnkStruct_027e09bc_0C *mUnk_0C;
-    /* 10 */ UnkStruct_027e09bc_0C *mUnk_10;
+    /* 04 */ UnkStruct_027e09bc_0C *mUnk_04[4];
     /* 14 */ UnkStruct_027e09bc_0C *mUnk_14[4];
     /* 24 */ UnkStruct_027e09bc_24 mUnk_24;
     /* 48 */ UnkSystem9 mUnk_48;

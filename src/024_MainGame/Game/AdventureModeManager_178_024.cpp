@@ -12,14 +12,14 @@ AdventureModeManager_178::AdventureModeManager_178(GameModeManagerBase_104 *para
     data_0204a088->func_ov000_020611dc(this, 0x0D);
 }
 
-void AdventureModeManager_178::vfunc_10(unk32 param1, unk32 param2) {
+void AdventureModeManager_178::vfunc_54(unk32 param1, unk32 param2) {
     if (param2 == 1) {
         data_0204a088->func_ov000_02061248();
         this->mUnk_B8 = func_ov004_020b697c(&this->mUnk_0C, 0);
     }
 }
 
-void AdventureModeManager_178::vfunc_20(unk32 param1, unk32 param2) {
+void AdventureModeManager_178::vfunc_58(unk32 param1, unk32 param2) {
     if (param2 == 1) {
         this->mUnk_B8 = 0;
         data_0204a088->func_ov000_02061248();

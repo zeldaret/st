@@ -4,3 +4,15 @@
     .ctor       start:0x02184b74 end:0x02184b78 kind:rodata align:4
     .data       start:0x02184b80 end:0x02184c40 kind:data align:32
     .bss        start:0x02184c40 end:0x02184c40 kind:bss align:32
+
+src/102_CourseExecLand/CourseExecLand.cpp:
+    .text       start:0x02182e20 end:0x02184844
+    .rodata     start:0x02184ab0 end:0x02184b50
+    .data       start:0x02184b80 end:0x02184c10
+
+src/102_CourseExecLand/ActorUnkMLCK_102.cpp:
+    complete
+    .text       start:0x02184844 end:0x02184ab0
+    .init       start:0x02184b50 end:0x02184b74
+    .ctor       start:0x02184b74 end:0x02184b78
+    .data       start:0x02184c10 end:0x02184c40

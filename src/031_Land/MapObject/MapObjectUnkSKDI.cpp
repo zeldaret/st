@@ -198,7 +198,7 @@ void MapObjectUnkSKDI::func_ov031_0210643c(unk32 param1) {
                 this->mUnk_0FA = 0x0;
                 this->mUnk_0F8 = 0x0;
             }
-            if (data_027e09b8->func_01ffd420() != 0) {
+            if (data_027e09b8->func_01ffd420()) {
                 return;
             }
             if (this->mUnk_0F8 < this->mUnk_0FA) {

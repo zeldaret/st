@@ -15,7 +15,7 @@ AdventureModeManager_174::AdventureModeManager_174(GameModeManagerBase_104 *para
     data_0204a088->func_ov000_020611dc(this, 5);
 }
 
-void AdventureModeManager_174::vfunc_08(unk32 param1) {
+void AdventureModeManager_174::vfunc2_08(unk32 param1) {
     switch (param1) {
         case 1:
         case 6:
@@ -40,7 +40,7 @@ void AdventureModeManager_174::vfunc_08(unk32 param1) {
     }
 }
 
-void AdventureModeManager_174::vfunc_0C(unk32 param1) {
+void AdventureModeManager_174::vfunc2_0C(unk32 param1) {
     switch (param1) {
         case 1:
         case 6:
@@ -65,7 +65,7 @@ void AdventureModeManager_174::vfunc_0C(unk32 param1) {
     }
 }
 
-void AdventureModeManager_174::vfunc_10(unk32 param1, unk32 param2) {
+void AdventureModeManager_174::vfunc_54(unk32 param1, unk32 param2) {
     if (param2 != 1) {
         return;
     }
@@ -104,7 +104,7 @@ void AdventureModeManager_174::vfunc_10(unk32 param1, unk32 param2) {
     }
 }
 
-void AdventureModeManager_174::vfunc_18(unk32 param1) {
+void AdventureModeManager_174::vfunc2_18(unk32 param1) {
     switch (param1) {
         case 1:
             this->mUnk_10.func_0201bb84(0x14, 2, 0x14);
@@ -124,7 +124,7 @@ void AdventureModeManager_174::vfunc_18(unk32 param1) {
     }
 }
 
-void AdventureModeManager_174::vfunc_1C(unk32 param1) {
+void AdventureModeManager_174::vfunc_5C(unk32 param1) {
     switch (param1) {
         case 1:
         case 2:
@@ -140,7 +140,7 @@ void AdventureModeManager_174::vfunc_1C(unk32 param1) {
     }
 }
 
-void AdventureModeManager_174::vfunc_20(unk32 param1, unk32 param2) {
+void AdventureModeManager_174::vfunc_58(unk32 param1, unk32 param2) {
     if (param2 != 1) {
         return;
     }
@@ -174,7 +174,7 @@ void AdventureModeManager_174::vfunc_20(unk32 param1, unk32 param2) {
     }
 }
 
-void AdventureModeManager_174::vfunc_24() {}
+void AdventureModeManager_174::vfunc_60() {}
 
 THUMB_END
 

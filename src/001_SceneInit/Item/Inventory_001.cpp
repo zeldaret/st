@@ -4,10 +4,9 @@
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
+#include "Unknown/UnkStruct_ov000_020b3000.hpp"
 
 #include <nitro/mi.h>
-
-extern unk32 data_ov000_020b3000;
 
 Inventory::Inventory() {
     this->mEquippedItem = ItemFlag_None;
@@ -125,14 +124,9 @@ void Inventory::func_ov001_020bba54() {
 }
 
 void Inventory::func_ov001_020bba6c() {
-    struct {
-        void *ptr;
-        unk32 actorId;
-    } uStack_18;
-    uStack_18.ptr     = &data_ov000_020b3000;
-    uStack_18.actorId = ActorId_TearLight;
-
+    UnkStruct_ov000_020b3000 uStack_18(ActorId_TearLight);
     Actor **ppActor = gpActorManager->func_01fff350(&uStack_18, gpActorManager->mActorTable);
+
     while (ppActor != gpActorManager->mUnk_08) {
         UNSET_FLAG((*ppActor)->mFlags, ActorFlag_Alive);
         (*ppActor)->func_ov000_020984f0();

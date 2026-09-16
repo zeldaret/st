@@ -18,7 +18,7 @@ public:
     ~UnkStruct_ov000_020b52e8();
 
     // overlay 0
-    ActorUnkMLCK_B4_00 *func_ov000_0206f980(unk32 param1);
+    ActorUnkMLCK_C4_00 *func_ov000_0206f980(unk32 param1);
     void func_ov000_0206f994();
 };
 

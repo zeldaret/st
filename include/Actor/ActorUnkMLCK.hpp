@@ -9,18 +9,6 @@
 
 class ActorUnkMLCK;
 
-class ActorUnkMLCK_94 : FileSelectManager_UnkDrawBase {
-public:
-    /* 00 (base) */
-    /* 0C */
-
-    // /* 00 */ virtual ~ActorUnkMLCK_94() override; // func_ov031_020fb2fc & func_ov031_020fb2ac
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override; // func_ov031_020fb2ec
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;               // func_ov031_020fb2dc
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override; // func_ov031_020fb2cc
-    /* 24 */ virtual void vfunc_24() override;                           // func_ov031_020fb2bc
-};
-
 class ActorUnkMLCK_D8 : public ActorUnkTLKT_9C_Base {
 public:
     /* 00 (vtable) */
@@ -37,67 +25,62 @@ public:
     /* 04 */ virtual void vfunc2_04() override; // func_ov031_020fb1cc
 };
 
-class ActorUnkMLCK_B4_00 {
+class ActorUnkMLCK_A0 {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ u16 mUnk_0C;
-    /* 0E */ u16 mUnk_0E;
-    /* 10 */ u16 mUnk_10;
-    /* 12 */ u16 mUnk_12;
-    /* 14 */
 
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual void vfunc_08();
+};
 
+struct ActorUnkMLCK_C4_00 {
+    /* 00 */ unk16 unk_00;
+    /* 02 */ s16 unk_02;
+    /* 04 */ unk32 unk_04;
+    /* 08 */ unk32 unk_08;
+    /* 0C */ unk32 unk_0C;
+    /* 10 */ unk32 unk_10;
+    /* 14 */ unk16 unk_14[];
+};
+
+class ActorUnkMLCK_C4 {
+public:
+    /* 00 */ ActorUnkMLCK_C4_00 *mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk16 mUnk_0C;
+    /* 0E */ u16 mUnk_0E;
+    /* 10 */ unk16 mUnk_10;
+    /* 12 */ u16 mUnk_12;
+    /* 14 */
+
+    ActorUnkMLCK_C4() :
+        mUnk_00(NULL),
+        mUnk_04(0),
+        mUnk_08(-1),
+        mUnk_0C(0),
+        mUnk_0E(0),
+        mUnk_10(0),
+        mUnk_12(0) {}
+
+    // overlay 31
     void func_ov031_020fb184();
+
+    // overlay 102
+    bool func_ov102_021847e8(unk32 param1, unk32 param2);
 };
 
-class ActorUnkMLCK_B4 {
-public:
-    /* 00 */ ActorUnkMLCK_B4_00 *mUnk_00;
-    /* 04 */
-};
-
-class Actor_ov102_02184950 : public Actor {
+class ActorUnkMLCK : public Actor, public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 94 */
-
-    /* 20 */ virtual void vfunc_20() override; // func_ov102_02184644
-    /* 24 */ virtual void vfunc_24() override; // func_ov102_021847d4
-
-    /* 54 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
-    /* 58 */ virtual void vfunc_58() override;
-    /* 5C */ virtual void vfunc_5C() override;
-    /* 60 */ virtual void vfunc_60() override;
-    /* 64 */ virtual void vfunc_64(unk32 param1) override;
-    /* 68 */ virtual void vfunc_68() override;
-    /* 6C */ virtual void vfunc_6C() override;
-    /* 70 */ virtual void vfunc_70() override;
-};
-
-// multiple inheritance ?
-// ActorUnkMLCK_D8 ?
-class ActorUnkMLCK : public Actor_ov102_02184950 {
-public:
-    /* 00 (base) */
-    /* 94 */ ActorUnkMLCK_94 mUnk_94;
-    /* A0 */ ActorUnkMLCK_B4 mUnk_A0[0x5];
-    /* B4 */ ActorUnkMLCK_B4 *mUnk_B4;
+    /* A0 */ ActorUnkMLCK_A0 *mUnk_A0[5];
+    /* B4 */ ActorUnkMLCK_A0 **mUnk_B4;
     /* B8 */ unk32 mUnk_B8;
     /* BC */ unk32 mUnk_BC;
     /* C0 */ u16 mUnk_C0;
-    /* C2 */ u16 mUnk_C2;
-    /* C4 */ ActorUnkMLCK_B4_00 *mUnk_C4;
-    /* C8 */ unk32 mUnk_C8;
-    /* CC */ unk32 mUnk_CC;
-    /* D0 */ unk16 mUnk_D0;
-    /* D0 */ unk16 mUnk_D2;
-    /* D0 */ unk16 mUnk_D4;
-    /* D0 */ unk16 mUnk_D6;
+    /* C2 */ vu16 mUnk_C2;
+    /* C4 */ ActorUnkMLCK_C4 mUnk_C4;
     /* D8 */ ActorUnkMLCK_D8 mUnk_D8;
     /* E4 */ ActorUnkMLCK_D8 mUnk_E4;
     /* F0 */ bool mUnk_F0;
@@ -108,21 +91,31 @@ public:
 
     ActorUnkMLCK();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;               // func_ov031_020fac64
-    /* 54 */ virtual void vfunc_54(unk32 param1, unk32 param2) override; // func_ov031_020fad88
-    /* 58 */ virtual void vfunc_58() override;                           // func_ov031_020fada8
-    /* 5C */ virtual void vfunc_5C() override;                           // func_ov031_020fadb4
-    /* 60 */ virtual void vfunc_60() override;                           // func_ov031_020fae08
-    /* 64 */ virtual void vfunc_64(unk32 param1) override;               // func_ov031_020fad3c
-    /* 68 */ virtual void vfunc_68() override;                           // func_ov031_020fae20
-    /* 6C */ virtual void vfunc_6C() override;                           // func_ov031_020faeb4
-    /* 70 */ virtual void vfunc_70() override;                           // func_ov031_020faf04
+    /// (Actor)
+    // overlay 31
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+
+    // overlay 102
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+
+    /// (FileSelectManager_UnkDrawBase)
+    // overlay 31
+    /* 54 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 58 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
+    /* 5C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 60 */ virtual void vfunc_60() override;
+
+    /* 64 */ virtual void vfunc_64(unk32 param1) override;
+    /* 68 */ virtual void vfunc_68() override;
+    /* 6C */ virtual void vfunc_6C() override;
+    /* 70 */ virtual void vfunc_70() override;
 
     void func_ov031_020faeb0();
     void func_ov031_020faf24();
     void func_ov031_020fb104();
     void func_ov031_020fb11c();
-    void func_ov031_020fb1e8(ActorUnkMLCK_B4_00 *param1);
+    void func_ov031_020fb1e8(ActorUnkMLCK_A0 *param1);
     bool func_ov031_020fb204(unk32 param1);
 };
 

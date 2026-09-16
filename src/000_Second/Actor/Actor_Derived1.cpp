@@ -111,7 +111,7 @@ void Actor_Derived1::func_ov000_020a8e9c(VecFx32 *param1) {
 }
 
 void Actor_Derived1::vfunc_B0() {
-    if (data_027e09b8->func_01ffd420() == 0) {
+    if (!data_027e09b8->func_01ffd420()) {
         ActorUnk_vfunc_B0 auStack_60;
         auStack_60.mpActor = this;
         auStack_60.mUnk_0C = this->mUnk_5C.mUnk_20;
@@ -144,7 +144,7 @@ void Actor_Derived1::vfunc_94() {
 }
 
 void Actor_Derived1::vfunc_60() {
-    if (data_027e09b8->func_01ffd420() == 0) {
+    if (!data_027e09b8->func_01ffd420()) {
         if (this->vfunc_64()) {
             this->vfunc_B0();
             this->func_ov000_020a9200();

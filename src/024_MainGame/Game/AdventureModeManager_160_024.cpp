@@ -35,7 +35,7 @@ AdventureModeManager_160::AdventureModeManager_160(GameModeManagerBase_104 *para
 
 AdventureModeManager_160::~AdventureModeManager_160() {}
 
-void AdventureModeManager_160::vfunc_08(unk32 param1) {
+void AdventureModeManager_160::vfunc2_08(unk32 param1) {
     switch (param1) {
         case 1:
         case 6:
@@ -60,7 +60,7 @@ void AdventureModeManager_160::vfunc_08(unk32 param1) {
     }
 }
 
-void AdventureModeManager_160::vfunc_0C(unk32 param1) {
+void AdventureModeManager_160::vfunc2_0C(unk32 param1) {
     switch (param1) {
         case 1:
         case 5:
@@ -128,13 +128,13 @@ void AdventureModeManager_160::vfunc_0C(unk32 param1) {
     }
 }
 
-void AdventureModeManager_160::vfunc_10(unk32 param1, unk32 param2) {
+void AdventureModeManager_160::vfunc_54(unk32 param1, unk32 param2) {
     if ((param1 == 5 || param1 == 8) && param2 == 2) {
         this->func_ov024_020c7d4c(param1);
     }
 }
 
-void AdventureModeManager_160::vfunc_14(unk32 param1) {
+void AdventureModeManager_160::vfunc2_14(unk32 param1) {
     if (param1 == 10) {
         this->mUnk_14->mUnk_1C = 1;
         this->mUnk_70.mUnk_25  = true;
@@ -170,7 +170,7 @@ void AdventureModeManager_160::func_ov024_020c7d4c(unk32 param1) {
     G2S_SetBG2Priority(1);
 }
 
-void AdventureModeManager_160::vfunc_18(unk32 param1) {
+void AdventureModeManager_160::vfunc2_18(unk32 param1) {
     this->mUnk_14 = NULL;
 
     switch (param1) {
@@ -206,7 +206,7 @@ void AdventureModeManager_160::vfunc_18(unk32 param1) {
     data_ov000_020b504c.func_ov000_02067e60(0, 1);
 }
 
-void AdventureModeManager_160::vfunc_1C(unk32 param1) {
+void AdventureModeManager_160::vfunc_5C(unk32 param1) {
     switch (param1) {
         case 1:
         case 7:
@@ -324,7 +324,7 @@ void AdventureModeManager_160::vfunc_1C(unk32 param1) {
     }
 }
 
-void AdventureModeManager_160::vfunc_20(unk32 param1, unk32 param2) {
+void AdventureModeManager_160::vfunc_58(unk32 param1, unk32 param2) {
     if (param1 != 1) {
         return;
     }
@@ -361,7 +361,7 @@ void AdventureModeManager_160::vfunc_20(unk32 param1, unk32 param2) {
     }
 }
 
-void AdventureModeManager_160::vfunc_24() {}
+void AdventureModeManager_160::vfunc_60() {}
 
 void AdventureModeManager_160::func_ov024_020c83bc() {
     data_0204a110.mUnk_DC0.func_0201dd58(6, 3);

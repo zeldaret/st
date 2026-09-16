@@ -4,9 +4,8 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "Unknown/UnkStruct_ov000_020b3000.hpp"
 #include "Unknown/UnkStruct_ov000_020b504c.hpp"
-
-extern unk32 data_ov000_020b3000;
 
 DECL_PROFILE(ActorProfileUnkOBPC);
 
@@ -131,15 +130,8 @@ bool ActorUnkOBPC::func_ov024_020d7154(void) {
             }
             break;
         case 2: {
-            struct {
-                void *ptr;
-                unk32 actorId;
-            } sp8;
-
-            sp8.ptr     = &data_ov000_020b3000;
-            sp8.actorId = ActorId_KEYB;
-            pActorMgr   = gpActorManager;
-
+            pActorMgr = gpActorManager;
+            UnkStruct_ov000_020b3000 sp8(ActorId_KEYB);
             Actor **ppActor = pActorMgr->func_01fff350(&sp8, pActorMgr->mActorTable);
 
             if (ppActor == pActorMgr->mUnk_08) {
@@ -150,15 +142,8 @@ bool ActorUnkOBPC::func_ov024_020d7154(void) {
             break;
         }
         default: {
-            struct {
-                void *ptr;
-                unk32 actorId;
-            } sp0;
-
-            sp0.ptr     = &data_ov000_020b3000;
-            sp0.actorId = ActorId_KEYT;
-            pActorMgr   = gpActorManager;
-
+            pActorMgr = gpActorManager;
+            UnkStruct_ov000_020b3000 sp0(ActorId_KEYT);
             Actor **ppActor = pActorMgr->func_01fff350(&sp0, pActorMgr->mActorTable);
 
             if (ppActor == pActorMgr->mUnk_08) {

@@ -57,7 +57,7 @@ void UnkTrainSystem2::func_ov024_020d5990() {
         }
     }
 
-    if (data_027e09b8->func_01ffd420() == 0) {
+    if (!data_027e09b8->func_01ffd420()) {
         if (gpCargoManager->mUnk_18 <= 0) {
             this->mUnk_64 = 0;
             this->mUnk_66 = 0;

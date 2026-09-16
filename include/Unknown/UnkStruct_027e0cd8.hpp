@@ -113,6 +113,9 @@ public:
 
     UnkStruct_027e0cd8_0C_Base_98();
     ~UnkStruct_027e0cd8_0C_Base_98();
+
+    // overlay 47
+    void func_ov047_0213055c();
 };
 
 class UnkStruct_027e0cd8_0C_Base_148_00_Base {
@@ -332,12 +335,17 @@ public:
     // data_ov031_02112a0c
     /* 00 */ virtual ~UnkStruct_027e0cd8_0C() override;
     /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 1C */ virtual void vfunc_1C(const EntranceInfo *param1, bool param2, bool param3);
     /* 38 */ virtual void vfunc_38();
 
     // overlay 31
     void func_ov031_020d8738();
     void func_ov031_020d88c0();
     void func_ov031_020d8ae4();
+
+    // overlay 102
+    void func_ov102_02184628();
 };
 
 class UnkStruct_027e0cd8_0C_Derived2 : public UnkStruct_027e0cd8_0C_Base {

@@ -27,7 +27,7 @@ AdventureModeManager_180::AdventureModeManager_180(GameModeManagerBase_104 *para
 
 AdventureModeManager_180::~AdventureModeManager_180() {}
 
-void AdventureModeManager_180::vfunc_08(unk32 param1) {
+void AdventureModeManager_180::vfunc2_08(unk32 param1) {
     this->mUnk_0C = 1;
 
     switch (param1) {
@@ -48,7 +48,7 @@ void AdventureModeManager_180::vfunc_08(unk32 param1) {
     }
 }
 
-void AdventureModeManager_180::vfunc_0C(unk32 param1) {
+void AdventureModeManager_180::vfunc2_0C(unk32 param1) {
     switch (param1) {
         case 5:
             if (this->mUnk_18.mUnk_0D == this->mUnk_18.mUnk_10) {
@@ -85,7 +85,7 @@ void AdventureModeManager_180::vfunc_0C(unk32 param1) {
 }
 
 #pragma opt_dead_assignments off
-void AdventureModeManager_180::vfunc_10(unk32 param1, unk32 param2) {
+void AdventureModeManager_180::vfunc_54(unk32 param1, unk32 param2) {
     if (param2 != 1) {
         return;
     }
@@ -121,7 +121,7 @@ void AdventureModeManager_180::func_ov024_020c9430(unk32 param1, unk32 param2) {
     this->mUnk_10 = func_ov014_020b6520(&this->mUnk_14, param1, param2);
 }
 
-void AdventureModeManager_180::vfunc_18(unk32 param1) {
+void AdventureModeManager_180::vfunc2_18(unk32 param1) {
     switch (param1) {
         case 5:
             this->mUnk_18.func_0201bb84(0x10, 2, 0x10);
@@ -135,7 +135,7 @@ void AdventureModeManager_180::vfunc_18(unk32 param1) {
     }
 }
 
-void AdventureModeManager_180::vfunc_1C(unk32 param1) {
+void AdventureModeManager_180::vfunc_5C(unk32 param1) {
     switch (param1) {
         case 5:
             if (this->mUnk_18.mUnk_0D == this->mUnk_18.mUnk_10) {
@@ -165,7 +165,7 @@ void AdventureModeManager_180::vfunc_1C(unk32 param1) {
     }
 }
 
-void AdventureModeManager_180::vfunc_20(unk32 param1, unk32 param2) {
+void AdventureModeManager_180::vfunc_58(unk32 param1, unk32 param2) {
     if (param2 != 1) {
         return;
     }
@@ -200,7 +200,7 @@ void AdventureModeManager_180::vfunc_20(unk32 param1, unk32 param2) {
     }
 }
 
-void AdventureModeManager_180::vfunc_24() {}
+void AdventureModeManager_180::vfunc_60() {}
 
 void AdventureModeManager_180::func_ov024_020c957c() {
     data_0204a110.mUnk_DA8.func_0201ced8();

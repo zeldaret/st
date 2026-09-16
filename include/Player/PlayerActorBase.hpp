@@ -5,6 +5,7 @@
 #include "Unknown/Common.hpp"
 #include "math.hpp"
 
+#include "nitro/fx.h"
 #include "types.h"
 
 #include <nns/g3d/g3d.h>
@@ -367,7 +368,9 @@ public:
 
 class PlayerActorBase_74 {
 private:
-    /* 00 */ STRUCT_PAD(0x00, 0x34);
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ VecFx32 mUnk_04[2];
+    /* 1C */ VecFx32 mUnk_1C[2];
     /* 34 */
 
 public:
@@ -375,7 +378,14 @@ public:
         this->func_ov001_020db190();
     }
 
+    inline bool UnknownInline1(u32 index, VecFx32 *pVec);
+
+    // overlay 1
     void func_ov001_020db190();
+
+    // overlay 102
+    void func_ov102_02182c20(unk32 param1, Mat4x3p *param2);
+    void func_ov102_02182c84(bool param1, unk32 param2, UnkAngleStruct param3, Mat4x3p *param4, Mat4x3p *param5);
 };
 
 struct PlayerActorBase_78_04 {

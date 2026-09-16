@@ -25,13 +25,13 @@ AdventureModeManager_184::AdventureModeManager_184(GameModeManagerBase_104 *para
 
 AdventureModeManager_184::~AdventureModeManager_184() {}
 
-void AdventureModeManager_184::vfunc_08(unk32 param1) {
+void AdventureModeManager_184::vfunc2_08(unk32 param1) {
     if (!data_027e09a4->IsTrain()) {
         this->func_ov024_020c979c(param1);
     }
 }
 
-void AdventureModeManager_184::vfunc_0C(unk32 param1) {
+void AdventureModeManager_184::vfunc2_0C(unk32 param1) {
     if (this->mUnk_10 == NULL && this->mUnk_18 && data_0204a110.func_02019548()) {
         this->mUnk_18 = false;
 
@@ -64,11 +64,11 @@ void AdventureModeManager_184::vfunc_0C(unk32 param1) {
     }
 }
 
-void AdventureModeManager_184::vfunc_10(unk32 param1, unk32 param2) {
+void AdventureModeManager_184::vfunc_54(unk32 param1, unk32 param2) {
     this->func_ov024_020c979c(param1);
 }
 
-void AdventureModeManager_184::vfunc_14(unk32 param1) {}
+void AdventureModeManager_184::vfunc2_14(unk32 param1) {}
 
 void AdventureModeManager_184::func_ov024_020c979c(unk32 param1) {
     this->mUnk_18 = true;
@@ -94,7 +94,7 @@ void AdventureModeManager_184::func_ov024_020c979c(unk32 param1) {
     }
 }
 
-void AdventureModeManager_184::vfunc_18(unk32 param1) {
+void AdventureModeManager_184::vfunc2_18(unk32 param1) {
     switch (param1) {
         case 1:
             this->mUnk_10->func_ov010_020b7054();
@@ -119,7 +119,7 @@ void AdventureModeManager_184::vfunc_18(unk32 param1) {
     }
 }
 
-void AdventureModeManager_184::vfunc_1C(unk32 param1) {
+void AdventureModeManager_184::vfunc_5C(unk32 param1) {
     switch (param1) {
         case 1:
             if (this->mUnk_10 != NULL && this->mUnk_10->vfunc_20()) {
@@ -139,7 +139,7 @@ void AdventureModeManager_184::vfunc_1C(unk32 param1) {
     }
 }
 
-void AdventureModeManager_184::vfunc_20(unk32 param1, unk32 param2) {
+void AdventureModeManager_184::vfunc_58(unk32 param1, unk32 param2) {
     switch (param1) {
         case 1:
             this->mUnk_10 = NULL;
@@ -158,7 +158,7 @@ void AdventureModeManager_184::vfunc_20(unk32 param1, unk32 param2) {
     }
 }
 
-void AdventureModeManager_184::vfunc_24() {
+void AdventureModeManager_184::vfunc_60() {
     this->mUnk_10 = NULL;
     this->mUnk_14 = NULL;
 }

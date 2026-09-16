@@ -187,7 +187,7 @@ src/031_Land/Actor/ActorItemDrop.cpp:
     .bss        start:0x02116fac end:0x021170dc
 
 src/031_Land/Actor/ActorUnkMLCK.cpp:
-    .text       start:0x020fac8c end:0x020fb3dc
+    .text       start:0x020fac8c end:0x020fb43c
     .init       start:0x02111ab8 end:0x02111b2c
     .ctor       start:0x02112930 end:0x02112934
     .data       start:0x02114e68 end:0x02114f5c

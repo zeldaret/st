@@ -45,7 +45,7 @@ from:0x02185730 kind:load to:0x0203f964 module:main
 from:0x02185734 kind:load to:0x027e0ce8 module:dtcm
 from:0x02185744 kind:load to:0x027e0ce4 module:dtcm
 from:0x02185760 kind:load to:0x027e09a4 module:dtcm
-from:0x02185768 kind:load to:0x020b3000 module:overlay(0)
+from:0x02185768 kind:load to:0x020b2ff8 module:overlay(0) add:0x8
 from:0x0218576c kind:load to:0x027e09b8 module:dtcm
 from:0x021857c4 kind:arm_call to:0x0208fdd4 module:overlay(0)
 from:0x021857d8 kind:arm_call to:0x020921e4 module:overlay(0)

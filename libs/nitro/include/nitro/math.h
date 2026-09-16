@@ -44,6 +44,7 @@ extern "C" {
 #endif
 
 #define ABS(x) ((x) < 0 ? -(x) : (x))
+#define ABS2(x) ((x) >= 0 ? (x) : -(x))
 #define CLAMP(x, min, max) ((x) > (max) ? (max) : (x) < (min) ? (min) : (x))
 #define CLAMP2(x, min, max) ((x) > (max) ? (max) : (x) >= (min) ? (x) : (min))
 

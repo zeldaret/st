@@ -3,6 +3,7 @@
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "Unknown/UnkStruct_ov000_020b3000.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
 
 #include <nitro/mi.h>
@@ -10,8 +11,6 @@
 
 extern "C" bool func_ov000_0208e874(const u8 *, int, int, int);
 extern "C" const char *func_ov000_0208e830(int);
-
-extern unk32 data_ov000_020b3000;
 
 UnkStruct_027e0ce0_1C::UnkStruct_027e0ce0_1C() {
     this->mUnk_D4 = NULL;
@@ -353,13 +352,7 @@ void PlayerLinkActor_A0::func_ov001_020bd388(bool param1, bool param2) {
 
         if (data_ov000_020aa88c[temp_r0].mUnk_04) {
             if (temp_r0 == 0x33) {
-                struct {
-                    void *ptr;
-                    unk32 actorId;
-                } local_18;
-                local_18.ptr     = &data_ov000_020b3000;
-                local_18.actorId = ActorId_Beedle;
-
+                UnkStruct_ov000_020b3000 local_18(ActorId_Beedle);
                 Actor **pBeedle = gpActorManager->func_01fff350(&local_18, gpActorManager->mActorTable);
 
                 if (0) {

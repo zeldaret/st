@@ -191,14 +191,14 @@ public:
 
     // data_ov024_020d7cc0
     /* 00 */ virtual ~AdventureModeManager_160() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 14 */ virtual void vfunc_14(unk32 param1) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
-    /* 24 */ virtual void vfunc_24() override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 14 */ virtual void vfunc2_14(unk32 param1) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
+    /* 24 */ virtual void vfunc_60() override;
 
     void func_ov024_020c7cfc();
     void func_ov024_020c7d4c(unk32 param1);
@@ -220,11 +220,11 @@ public:
 
     // data_ov026_0213528c
     /* 00 */ virtual ~AdventureModeManager_164() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 14 */ virtual void vfunc_14(unk32 param1) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 14 */ virtual void vfunc2_14(unk32 param1) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
 };
 
 class AdventureModeManager_168 : public FileSelectManager_UnkDrawBase {
@@ -239,11 +239,11 @@ public:
 
     // data_ov031_02116254
     /* 00 */ virtual ~AdventureModeManager_168() override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 14 */ virtual void vfunc_14(unk32 param1) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 14 */ virtual void vfunc2_14(unk32 param1) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
 
     void func_ov031_0210df60(unk32 param1);
     void func_ov031_0210df70(unk32 param1);
@@ -262,12 +262,12 @@ public:
 
     // data_ov026_021352bc
     /* 00 */ virtual ~AdventureModeManager_16C() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 14 */ virtual void vfunc_14(unk32 param1) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 14 */ virtual void vfunc2_14(unk32 param1) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
 
     void func_ov026_020d8dd4(unk32 param1);
     unk32 func_ov026_020d8e30();
@@ -296,11 +296,11 @@ public:
 
     // data_ov024_020d7d0c
     /* 00 */ virtual ~AdventureModeManager_170() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 24 */ virtual void vfunc_24() override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 24 */ virtual void vfunc_60() override;
 };
 
 class AdventureModeManager_174_Base_10 : public UnkStruct_0204a060_Base {
@@ -346,10 +346,10 @@ public:
     AdventureModeManager_178_Base(GameModeManagerBase_104 *param1);
 
     // data_ov024_020d7db8
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
 };
 
 class AdventureModeManager_174 : public AdventureModeManager_174_Base {
@@ -363,13 +363,13 @@ public:
 
     // data_ov024_020d7d88
     /* 00 */ virtual ~AdventureModeManager_174() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
-    /* 24 */ virtual void vfunc_24() override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
+    /* 24 */ virtual void vfunc_60() override;
 };
 
 class AdventureModeManager_178 : public AdventureModeManager_178_Base {
@@ -381,8 +381,8 @@ public:
     AdventureModeManager_178(GameModeManagerBase_104 *param1); // overlay 24
 
     // data_ov024_020d7de8
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
 };
 
 class AdventureModeManager_17C : public AdventureModeManager_178_Base {
@@ -395,12 +395,12 @@ public:
 
     // data_ov062_02160790
     /* 00 */ virtual ~AdventureModeManager_17C() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
 };
 
 class AdventureModeManager_180_18 : public UnkStruct_0204a060_Base {
@@ -431,13 +431,13 @@ public:
 
     // data_ov024_020d7e34
     /* 00 */ virtual ~AdventureModeManager_180() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
-    /* 24 */ virtual void vfunc_24() override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
+    /* 24 */ virtual void vfunc_60() override;
 
     void func_ov024_020c9430(unk32 param1, unk32 param2);
     void func_ov024_020c957c();
@@ -491,14 +491,14 @@ public:
 
     // data_ov024_020d7e64
     /* 00 */ virtual ~AdventureModeManager_184();
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 14 */ virtual void vfunc_14(unk32 param1) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
-    /* 24 */ virtual void vfunc_24() override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 14 */ virtual void vfunc2_14(unk32 param1) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
+    /* 24 */ virtual void vfunc_60() override;
 
     void func_ov024_020c979c(unk32 param1);
 };
@@ -512,13 +512,13 @@ public:
 
     // data_ov031_021162a0
     /* 00 */ virtual ~AdventureModeManager_188() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 14 */ virtual void vfunc_14(unk32 param1) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 14 */ virtual void vfunc2_14(unk32 param1) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
 };
 
 class AdventureModeManager_18C_14 : public UnkStruct_0204a060_Base {
@@ -567,14 +567,14 @@ public:
 
     // data_ov024_020d7eb0
     /* 00 */ virtual ~AdventureModeManager_18C() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 14 */ virtual void vfunc_14(unk32 param1) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
-    /* 24 */ virtual void vfunc_24() override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 14 */ virtual void vfunc2_14(unk32 param1) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
+    /* 24 */ virtual void vfunc_60() override;
 
     void func_ov024_020c9c6c();
     void func_ov024_020ca034();
@@ -624,12 +624,12 @@ public:
     AdventureModeManager_190(GameModeManagerBase_104 *param1); // overlay 24
 
     // data_ov024_020d7f18
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
 
     void func_ov024_020ca21c();
     bool func_ov024_020ca24c(unk32 param1);
@@ -654,13 +654,13 @@ public:
 
     // data_ov031_021162ec
     /* 00 */ virtual ~AdventureModeManager_194() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
-    /* 24 */ virtual void vfunc_24() override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
+    /* 24 */ virtual void vfunc_60() override;
 };
 
 class AdventureModeManager_198 : public FileSelectManager_UnkDrawBase {
@@ -672,13 +672,13 @@ public:
 
     // data_ov058_02155e08
     /* 00 */ virtual ~AdventureModeManager_198() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 14 */ virtual void vfunc_14(unk32 param1) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 14 */ virtual void vfunc2_14(unk32 param1) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
 };
 
 class AdventureModeManager_19C : public FileSelectManager_UnkDrawBase {
@@ -691,12 +691,12 @@ public:
 
     // data_ov026_021352ec
     /* 00 */ virtual ~AdventureModeManager_19C() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 14 */ virtual void vfunc_14(unk32 param1) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 24 */ virtual void vfunc_24() override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 14 */ virtual void vfunc2_14(unk32 param1) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 24 */ virtual void vfunc_60() override;
 };
 
 class AdventureModeManager_1A0 : public AdventureModeManager_174_Base {
@@ -709,12 +709,12 @@ public:
 
     // data_ov062_021607c0
     /* 00 */ virtual ~AdventureModeManager_1A0() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
 };
 
 class AdventureModeManager_1A4 : public AdventureModeManager_174_Base {
@@ -727,12 +727,12 @@ public:
 
     // data_ov062_021607f0
     /* 00 */ virtual ~AdventureModeManager_1A4() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20(unk32 param1, unk32 param2) override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
+    /* 0C */ virtual void vfunc2_0C(unk32 param1) override;
+    /* 10 */ virtual void vfunc_54(unk32 param1, unk32 param2) override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_5C(unk32 param1) override;
+    /* 20 */ virtual void vfunc_58(unk32 param1, unk32 param2) override;
 };
 
 class AdventureModeManager_1A8 : public FileSelectManager_UnkDrawBase {
@@ -744,10 +744,10 @@ public:
 
     // data_ov088_02176068
     /* 00 */ virtual ~AdventureModeManager_1A8() override;
-    /* 08 */ virtual void vfunc_08(unk32 param1) override;
+    /* 08 */ virtual void vfunc2_08(unk32 param1) override;
     /* 14 */ virtual void vfunc_14(unk32 param1) override;
-    /* 18 */ virtual void vfunc_18(unk32 param1) override;
-    /* 24 */ virtual void vfunc_24() override;
+    /* 18 */ virtual void vfunc2_18(unk32 param1) override;
+    /* 24 */ virtual void vfunc_60() override;
 };
 
 // AdventureMode?

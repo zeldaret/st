@@ -17,7 +17,7 @@ FileSelectManager_164::~FileSelectManager_164() {
     }
 }
 
-void FileSelectManager_164::vfunc_08(unk32 param1) {
+void FileSelectManager_164::vfunc2_08(unk32 param1) {
     if (param1 == 0) {
         this->mUnk_0C = 0;
         this->mUnk_10->func_ov019_020cb6e8();
@@ -25,7 +25,7 @@ void FileSelectManager_164::vfunc_08(unk32 param1) {
     }
 }
 
-void FileSelectManager_164::vfunc_0C(unk32 param1) {
+void FileSelectManager_164::vfunc2_0C(unk32 param1) {
     if (param1 == 0) {
         switch (this->mUnk_0C) {
             case 0:
@@ -43,9 +43,9 @@ void FileSelectManager_164::vfunc_0C(unk32 param1) {
     }
 }
 
-void FileSelectManager_164::vfunc_14(unk32 param1) {}
+void FileSelectManager_164::vfunc2_14(unk32 param1) {}
 
-void FileSelectManager_164::vfunc_10(unk32 param1, unk32 param2) {
+void FileSelectManager_164::vfunc_54(unk32 param1, unk32 param2) {
     data_0204999c.func_02013014();
     data_0204999c.mUnk_60 = 0xD6D8;
     data_ov000_020b50c0.func_ov000_0206a758();
@@ -61,7 +61,7 @@ void FileSelectManager_164::vfunc_10(unk32 param1, unk32 param2) {
     data_0204999c.func_02013070();
 }
 
-void FileSelectManager_164::vfunc_18(unk32 param1) {
+void FileSelectManager_164::vfunc2_18(unk32 param1) {
     if (param1 == 0) {
         this->mUnk_0C = 1;
         gpFSOptionsManager->func_ov019_020cc85c(2);
@@ -69,7 +69,7 @@ void FileSelectManager_164::vfunc_18(unk32 param1) {
     }
 }
 
-void FileSelectManager_164::vfunc_1C(unk32 param1) {
+void FileSelectManager_164::vfunc_5C(unk32 param1) {
     if (param1 == 0) {
         switch (this->mUnk_0C) {
             case 1:
@@ -89,7 +89,7 @@ void FileSelectManager_164::vfunc_1C(unk32 param1) {
     }
 }
 
-void FileSelectManager_164::vfunc_20(unk32 param1, unk32 param2) {
+void FileSelectManager_164::vfunc_58(unk32 param1, unk32 param2) {
     data_0204999c.func_02013014();
     data_0204999c.mUnk_60 = 0xD6D8;
     FileSelectManager_164::func_ov019_020d02f4();

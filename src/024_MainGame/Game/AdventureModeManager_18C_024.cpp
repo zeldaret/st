@@ -44,7 +44,7 @@ AdventureModeManager_18C::AdventureModeManager_18C(GameModeManagerBase_104 *para
 
 AdventureModeManager_18C::~AdventureModeManager_18C() {}
 
-void AdventureModeManager_18C::vfunc_08(unk32 param1) {
+void AdventureModeManager_18C::vfunc2_08(unk32 param1) {
     switch (param1) {
         case 1:
             this->func_ov024_020ca034();
@@ -62,7 +62,7 @@ void AdventureModeManager_18C::vfunc_08(unk32 param1) {
     }
 }
 
-void AdventureModeManager_18C::vfunc_0C(unk32 param1) {
+void AdventureModeManager_18C::vfunc2_0C(unk32 param1) {
     switch (param1) {
         case 6:
             switch (this->mUnk_54) {
@@ -112,7 +112,7 @@ void AdventureModeManager_18C::vfunc_0C(unk32 param1) {
     }
 }
 
-void AdventureModeManager_18C::vfunc_10(unk32 param1, unk32 param2) {
+void AdventureModeManager_18C::vfunc_54(unk32 param1, unk32 param2) {
     if (param2 != 1) {
         return;
     }
@@ -205,12 +205,12 @@ void AdventureModeManager_18C::func_ov024_020c9c6c() {
     G2S_SetBG3Priority(2);
 }
 
-void AdventureModeManager_18C::vfunc_14(unk32 param1) {
+void AdventureModeManager_18C::vfunc2_14(unk32 param1) {
     this->mUnk_10->func_ov011_020b88ac();
     this->mUnk_54 = 3;
 }
 
-void AdventureModeManager_18C::vfunc_18(unk32 param1) {
+void AdventureModeManager_18C::vfunc2_18(unk32 param1) {
     switch (param1) {
         case 1:
             data_ov000_020b5214.func_ov000_0206db44(0x44);
@@ -243,7 +243,7 @@ void AdventureModeManager_18C::vfunc_18(unk32 param1) {
     }
 }
 
-void AdventureModeManager_18C::vfunc_1C(unk32 param1) {
+void AdventureModeManager_18C::vfunc_5C(unk32 param1) {
     switch (param1) {
         case 1:
             switch (this->mUnk_54) {
@@ -282,7 +282,7 @@ void AdventureModeManager_18C::vfunc_1C(unk32 param1) {
     }
 }
 
-void AdventureModeManager_18C::vfunc_20(unk32 param1, unk32 param2) {
+void AdventureModeManager_18C::vfunc_58(unk32 param1, unk32 param2) {
     if (param2 != 1) {
         return;
     }
@@ -346,7 +346,7 @@ void AdventureModeManager_18C::vfunc_20(unk32 param1, unk32 param2) {
                 case 4:
                 case 5:
                 case 6:
-                case 7:
+                case 7: {
                     this->mUnk_44 = data_0204a110.mUnk_DC0.mUnk_08->func_0201ec30();
 
                     Vec2s auStack_14;
@@ -362,6 +362,7 @@ void AdventureModeManager_18C::vfunc_20(unk32 param1, unk32 param2) {
                     GetAdventureModeManager()->func_ov024_020c53e8();
                     GetAdventureModeManager()->func_ov024_020c6770(temp_r6, temp_r7, 0, 4);
                     break;
+                }
                 default:
                     GetAdventureModeManager()->func_ov024_020c555c(3);
                     GetAdventureModeManager()->func_ov024_020c53e8();
@@ -381,7 +382,7 @@ void AdventureModeManager_18C::vfunc_20(unk32 param1, unk32 param2) {
     func_02019b3c();
 }
 
-void AdventureModeManager_18C::vfunc_24() {
+void AdventureModeManager_18C::vfunc_60() {
     this->mUnk_10 = NULL;
     this->mUnk_3A = false;
 }
