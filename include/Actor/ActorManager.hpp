@@ -4,6 +4,7 @@
 #include "Actor/Actor_Derived1.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
+#include "Unknown/UnkStruct_ov000_020b3000.hpp"
 #include "files.h"
 #include "types.h"
 
@@ -40,7 +41,7 @@ public:
 
     // itcm
     void func_01fff2fc(void (*callback)(Actor *, u16), unk32 param2);
-    Actor **func_01fff350(void *param1, Actor **ppActorTable);
+    Actor **func_01fff350(UnkStruct_ov000_020b3000_Base *param1, Actor **ppActorTable);
     Actor *func_01fff3b4(ActorRef ref);
 
     // overlay 0
