@@ -27,7 +27,6 @@ public:
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 14 */ virtual void vfunc_14() override;
-    /* 30 */ virtual ~MapObjectUnkSTAT() override;
 
     void func_ov063_0215f6d0(void);
     void func_ov063_0215f710(void);
@@ -59,7 +58,6 @@ public:
     /* F8 */
 
     MapObjectProfileUnkSTAT();
-    ~MapObjectProfileUnkSTAT();
 
     /* 0C */ virtual MapObject *Create();
 

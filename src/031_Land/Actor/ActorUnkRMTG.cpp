@@ -6,7 +6,7 @@
 extern "C" const char data_ov031_02110ad0;
 
 extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
-extern "C" unk32 func_ov000_02077590(unk32);
+extern "C" void *func_ov000_02077590(unk32);
 
 DECL_PROFILE(ActorProfileUnkRMTG);
 

@@ -899,6 +899,7 @@ public:
             unk16 mUnk_06;
         };
         unk32 mUnk_04;
+        void *mUnk_04p;
     };
     /* 08 */
 
