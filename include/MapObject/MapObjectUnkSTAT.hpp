@@ -40,6 +40,10 @@ public:
 
 class MapObjectProfileUnkSTAT_Base_D4 : public MapObject_10 {
 public:
+    /* 00 (vtable) */
+    /* 24 */
+
+    MapObjectProfileUnkSTAT_Base_D4() {}
 };
 
 class MapObjectProfileUnkSTAT_Base : public MapObjectProfile_Derived2 {
