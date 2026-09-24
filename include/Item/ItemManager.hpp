@@ -9,6 +9,7 @@
 #include "types.h"
 
 class UnkStruct_027e0ce0_30_00;
+class Inventory;
 
 #define IS_ITEM_RESTRICTED(restrictions, itemFlag) (((restrictions) & (1 << (itemFlag))) != 0)
 
@@ -230,6 +231,7 @@ public:
     bool func_ov031_020db874(ItemFlag itemFlag);
     void func_ov031_020db8cc();
     bool func_ov031_020db8f8(UnkStruct_027e0ce0_30_00 *param1);
+    void func_ov031_020db844(ItemFlag item);
 
     // overlay 101
     void func_ov101_02182d5c();
@@ -411,6 +413,7 @@ public:
 
     // overlay 17
     void func_ov017_020bd2a0(unk32 param1, bool param2);
+    void func_ov017_020bd2e8(unk32 param1);
 
     // overlay 110
     static u32 GetBmgIDFromItem(ItemId itemId);
