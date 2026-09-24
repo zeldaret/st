@@ -47,6 +47,7 @@ extern "C" {
 #define ABS2(x) ((x) >= 0 ? (x) : -(x))
 #define CLAMP(x, min, max) ((x) > (max) ? (max) : (x) < (min) ? (min) : (x))
 #define CLAMP2(x, min, max) ((x) > (max) ? (max) : (x) >= (min) ? (x) : (min))
+#define POW_2(x) (x * x)
 
 #define INT_TO_FX32(n) ((s32) ((n) << FX32_SHIFT))
 #define FLOAT_TO_FX32(n) ((s32) (((n) * 8192 + 1) / 2))

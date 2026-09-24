@@ -482,7 +482,9 @@ public:
     /* 40 */ unk16 mUnk_40;
     /* 42 */ unk16 mUnk_42;
     /* 44 */ unk16 mUnk_44;
-    /* 48 */ STRUCT_PAD(0x48, 0x60);
+    /* 46 */ unk16 mUnk_46;
+    /* 48 */ Vec2s mUnk_48;
+    /* 4C */ STRUCT_PAD(0x4C, 0x60);
     /* 60 */
 
     UnkStruct_027e0ce0_40_Base_14() :
@@ -603,12 +605,13 @@ class UnkStruct_027e0ce0_40_Base_94_Base : public UnkStruct_027e0ce0_40_Base_94_
 public:
     /* 00 (base) */
     /* 14 */ ActorRef mUnk_14;
-    /* 18 */ unk32 mUnk_18;
+    /* 18 */ ActorRef mUnk_18;
     /* 1C */ ActorRef mUnk_1C;
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ STRUCT_PAD(0x24, 0x48);
+    /* 20 */ Vec2s mTouchPosLast;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ STRUCT_PAD(0x28, 0x48);
     /* 48 */ ActorRef mUnk_48;
-    /* 4C */ unk32 mUnk_4C;
+    /* 4C */ u16 mUnk_4C;
     /* 50 */
 
     UnkStruct_027e0ce0_40_Base_94_Base(unk32 param1);
