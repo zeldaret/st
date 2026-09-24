@@ -79,7 +79,7 @@ void PlayerActorBase_70::func_ov017_020bbcd8(VecFx32 *param1, UnkAngleStruct par
     s16 temp_r9;
     u8 var_r7;
 
-    VecFx32_Add(param1, &this->mUnk_118, &sp1C);
+    VecFx32_Add(param1, (VecFx32 *) &this->mUnk_118, &sp1C);
 
     if (this->mUnk_126 != 0) {
         this->mUnk_01C->func_ov000_0208c7b0(&sp1C, param2);
@@ -125,7 +125,7 @@ void PlayerActorBase_70::func_ov017_020bbef4(VecFx32 *param1, UnkAngleStruct par
     VecFx32 sp0;
     ModelRender_Derived3 *var_r4;
 
-    VecFx32_Add(param1, &this->mUnk_118, &sp0);
+    VecFx32_Add(param1, (VecFx32 *) &this->mUnk_118, &sp0);
     var_r4 = this->mUnk_00C.GetUnk08OrUnk0C(this->mUnk_126 != 0);
 
     var_r4->mRenderObj.flag |= 0x02;

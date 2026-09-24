@@ -7,8 +7,9 @@ extern "C" void func_ov000_0208dd60(void *, UnkStruct_027e0ce0_30_00 *);
 
 extern fx32 data_ov000_020afd14;
 
-UnkStruct_027e0ce0_30_00::UnkStruct_027e0ce0_30_00(UnkStruct_027e0ce0_38 *param1, UnkStruct_027e0ce0_3C *param2, unk32 param3,
-                                                   unk32 *param4, unk32 param5) {
+UnkStruct_027e0ce0_30_00::UnkStruct_027e0ce0_30_00(UnkStruct_027e0ce0_38 *param1, UnkStruct_027e0ce0_3C *param2,
+                                                   UnkStruct_027e0ce0_40 *param3, PlayerLinkActor *param4,
+                                                   PlayerActorBase *param5) {
     this->mUnk_00.x = 0;
     this->mUnk_00.y = 0;
     this->mUnk_00.z = 0;
@@ -17,16 +18,16 @@ UnkStruct_027e0ce0_30_00::UnkStruct_027e0ce0_30_00(UnkStruct_027e0ce0_38 *param1
     this->mUnk_0C.y = 0;
     this->mUnk_0C.z = 0;
 
-    this->mUnk_18 = 0;
-    this->mUnk_1C = 0;
-    this->mUnk_20 = 0;
-    this->mUnk_24 = 0;
-    this->mUnk_28 = false;
-    this->mUnk_2C = param1;
-    this->mUnk_30 = param2;
-    this->mUnk_34 = param3;
-    this->mUnk_38 = param4;
-    this->mUnk_3C = param5;
+    this->mUnk_18  = 0;
+    this->mUnk_1C  = 0;
+    this->mUnk_20  = 0;
+    this->mUnk_24  = 0;
+    this->mUnk_28  = false;
+    this->mUnk_2C  = param1;
+    this->mUnk_30  = param2;
+    this->mUnk_34  = param3;
+    this->mpPlayer = param4;
+    this->mpZelda  = param5;
 
     if (param1 != NULL) {
         param1->func_ov026_020de908(this);
@@ -69,7 +70,8 @@ void UnkStruct_027e0ce0_30::func_ov001_020bbf50(UnkStruct_027e0ce0_3C *param1) {
     this->mUnk_00 = new(HeapIndex_1) UnkStruct_027e0ce0_30_00(NULL, param1, 0x00, NULL, 0x00);
 }
 
-void UnkStruct_027e0ce0_30::func_ov001_020bbf7c(unk32 param1, unk32 *param2, unk32 param3) {
+void UnkStruct_027e0ce0_30::func_ov001_020bbf7c(UnkStruct_027e0ce0_40 *param1, PlayerLinkActor *param2,
+                                                PlayerActorBase *param3) {
     this->mUnk_00 = new(HeapIndex_1) UnkStruct_027e0ce0_30_00(NULL, NULL, param1, param2, param3);
 
     if (gOverlayManager.IsPlayerSub()) {

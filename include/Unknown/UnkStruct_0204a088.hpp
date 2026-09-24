@@ -24,6 +24,24 @@ public:
     /* 128 */ unk16 mUnk_128;
     /* 12C */
 
+    const BOOL IsUnknownCheck1(unk32 value1, unk32 value2) const {
+        bool ret = false;
+
+        if (!(this->mUnk_04 != value1 || this->mUnk_08 != value2)) {
+            ret = true;
+        }
+
+        return ret;
+    }
+
+    const bool IsUnknownCheck2(unk32 value1, unk32 value2) const {
+        return this->mUnk_04 == value1 && this->mUnk_08 == value2;
+    }
+
+    const bool IsUnknownCheck3(unk32 value1, unk32 value2) const {
+        return *(volatile u32 *) &this->mUnk_04 != value1 || this->mUnk_08 != value2;
+    }
+
     UnkStruct_0204a088();
 
     // overlay 0

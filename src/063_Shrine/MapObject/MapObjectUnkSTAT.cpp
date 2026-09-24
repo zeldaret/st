@@ -19,22 +19,6 @@ extern "C" f32 func_02039f04(unk32);
 extern "C" fx32 func_01ffb428(unk32, unk32);
 extern "C" unk32 func_02016b8c(VecFx32 *, VecFx32 *, unk32, UnkAngleStruct, u16, unk32);
 
-// Overlay 0
-struct UnkStruct_ov000_02077590 {
-    /* 00 */ s16 mUnk_00;
-    /* 02 */ s16 mUnk_02;
-    /* 04 */ s16 mUnk_04;
-    /* 06 */ s16 mUnk_06;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ VecFx32 mUnk_0C;
-    /* 18 */ u16 mUnk_18;
-    /* 1A */ u16 mUnk_1A;
-    /* 1C */ u16 mUnk_1C;
-    /* 1E */ u16 mUnk_1E;
-};
-
-extern "C" UnkStruct_ov000_02077590 *func_ov000_02077590(unk32);
-
 DECL_PROFILE(MapObjectProfileUnkSTAT);
 unk32 data_ov063_02164508[3]; // Is probably part of the profile?
 
@@ -176,7 +160,7 @@ void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
             stackStruct.mUnk_3A = 7;
             stackStruct.mUnk_3B = 7;
 
-            UnkStruct_ov000_02077590 *res1 = func_ov000_02077590(1);
+            UnkStackStruct_ov000_02077590 *res1 = func_ov000_02077590(1);
 
             stackStruct.mUnk_18 = res1->mUnk_00;
             stackStruct.mUnk_1A = res1->mUnk_02;

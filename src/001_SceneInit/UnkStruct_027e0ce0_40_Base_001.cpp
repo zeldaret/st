@@ -1,4 +1,5 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "global.h"
 
 UnkStruct_027e0ce0_40_Base::UnkStruct_027e0ce0_40_Base(unk32 param1, void *param2, ItemManager *pItemMgr) :
     mUnk_000(param1),
@@ -35,20 +36,20 @@ void UnkStruct_027e0ce0_40_Base::func_ov001_020bc0e0(bool param1) {
     }
 
     if (this->mUnk_078 != NULL) {
-        *(u32 *) &this->mUnk_078->mUnk_00 = 0;
+        this->mUnk_078->mRef.Reset();
     }
 
-    this->mUnk_094.mUnk_5C = 0;
-    this->mUnk_094.mUnk_60 = 0x80;
-    this->mUnk_094.mUnk_62 = 0x60;
-    this->mUnk_094.mUnk_64 = 0;
-    this->mUnk_094.mUnk_65 = 0;
-    this->mUnk_094.mUnk_66 = 0;
-    this->mUnk_094.mUnk_67 = 0;
-    this->mUnk_094.mUnk_68 = 0;
-    this->mUnk_094.mUnk_69 = 0;
-    this->mUnk_094.mUnk_6A = 0;
-    this->mUnk_094.mUnk_6C = 0;
+    this->mUnk_094.mUnk_5C   = 0;
+    this->mUnk_094.mUnk_60.x = SUBSCREEN_WIDTH / 2;
+    this->mUnk_094.mUnk_60.y = SUBSCREEN_HEIGHT / 2;
+    this->mUnk_094.mUnk_64   = 0;
+    this->mUnk_094.mUnk_65   = 0;
+    this->mUnk_094.mUnk_66   = 0;
+    this->mUnk_094.mUnk_67   = 0;
+    this->mUnk_094.mUnk_68   = 0;
+    this->mUnk_094.mUnk_69   = 0;
+    this->mUnk_094.mUnk_6A   = 0;
+    this->mUnk_094.mUnk_6C   = 0;
 
     if (param1) {
         UNSET_FLAG2(this->mUnk_104, UnkFlags3_0);

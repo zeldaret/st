@@ -245,12 +245,12 @@ void ItemManager::func_ov000_020a8a5c() {
     this->mUnk_20->func_ov031_020db8cc();
 }
 
-bool ItemManager::func_ov000_020a8a74() {
+bool ItemManager::func_ov000_020a8a74(UnkStruct_027e0ce0_30_00 *param1) {
     if (this->mUnk_20 == NULL) {
         return false;
     }
 
-    return this->mUnk_20->func_ov031_020db8f8();
+    return this->mUnk_20->func_ov031_020db8f8(param1);
 }
 
 UnkStruct_ItemManager_20_00 *ItemManager::func_ov000_020a8a90() {

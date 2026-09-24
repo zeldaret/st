@@ -164,7 +164,7 @@ void ActorSpinut::func_ov032_021194dc(ActorState state) {
         return;
     }
 
-    gpActorManager->func_01fff2fc((void (*)(Actor *, u16)) &ActorSpinut::func_ov032_0211b37c, param2);
+    gpActorManager->func_01fff2fc(ActorSpinut::func_ov032_0211b37c, (void *) param2); //! TODO: cast is right?
 }
 
 void ActorSpinut::SetState(ActorState state) {
@@ -847,11 +847,11 @@ void ActorSpinut::func_ov032_0211b298() {
     this->mUnk_288.y = FLOAT_TO_FX32(0.0f);
 }
 
-void ActorSpinut::func_ov032_0211b37c(ActorSpinut *thisx, u16 param1) {
+void ActorSpinut::func_ov032_0211b37c(Actor *thisx, u16 param1) {
     if (thisx->GetActorId() == ActorId_Spinut) {
-        thisx->mUnk_294 = true;
-        thisx->mUnk_52  = param1;
-        thisx->mUnk_50  = 0x0;
+        ((ActorSpinut *) thisx)->mUnk_294 = true;
+        thisx->mUnk_52                    = param1;
+        thisx->mUnk_50                    = 0x0;
     }
 }
 

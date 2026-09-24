@@ -3,6 +3,7 @@
 #include "Actor/ActorRef.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
+#include "global.h"
 #include "math.hpp"
 
 #include "nitro/fx.h"
@@ -11,7 +12,9 @@
 #include <nns/g3d/g3d.h>
 
 class Actor_C4;
-class UnkStruct_027e0ce0_40_328;
+class UnkStruct_027e0ce0_30_00;
+class UnkStruct_ov001_020c40f4;
+class PlayerActorBase;
 class ItemManager;
 
 struct ActorGrabParams;
@@ -361,7 +364,7 @@ private:
     /* 0E0 */ PlayerActorBase_70_E0 mUnk_0E0;
     /* 0E4 */ PlayerActorBase_70_E4 mUnk_0E4;
     /* 114 */ Mat4x3p *mUnk_114; // allocated array, size = PlayerCharacter_Max
-    /* 118 */ VecFx32 mUnk_118;
+    /* 118 */ Vec3p mUnk_118;
     /* 124 */ UnkAngleStruct mUnk_124;
     /* 126 */ s8 mUnk_126;
     /* 127 */ bool mUnk_127;
@@ -440,6 +443,7 @@ private:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ VecFx32 mUnk_04;
     /* 10 */ VecFx32 mUnk_10;
+    /* 1C */
 
 public:
     void func_ov000_0208efd0(VecFx32 *pVec);
@@ -448,11 +452,30 @@ public:
 class PlayerLinkActor_9C {
 public:
     /* 000 (vtable) */
-    /* 004 */ STRUCT_PAD(0x04, 0x34);
-    /* 034 */ PlayerLinkActor_9C_34 mUnk_34;
-    /* 004 */ STRUCT_PAD(0x50, 0xF4);
-    /* 0F4 */ UnkStruct_027e0ce0_40_328 *mUnk_0F4;
-    /* 0F8 */ STRUCT_PAD(0xF8, 0x154);
+    /* 004 */ STRUCT_PAD(0x04, 0x08);
+    /* 008 */ ActorRef mUnk_008; //! TODO: confirm type
+    /* 00C */ STRUCT_PAD(0x0C, 0x34);
+    /* 034 */ PlayerLinkActor_9C_34 mUnk_034;
+    /* 004 */ STRUCT_PAD(0x50, 0x6C);
+    /* 06C */ VecFx32 mUnk_06C;
+    /* 078 */ STRUCT_PAD(0x78, 0xDC);
+    /* 0DC */ u16 mUnk_0DC;
+    /* 0DE */ unk16 mUnk_0DE;
+    /* 0E0 */ unk32 mUnk_0E0;
+    /* 0E4 */ unk32 mUnk_0E4;
+    /* 0E8 */ unk32 mUnk_0E8;
+    /* 0EC */ unk32 mUnk_0EC;
+    /* 0F0 */ unk32 mUnk_0F0;
+    /* 0F4 */ PlayerActorBase *pZelda;
+    /* 0F8 */ unk32 mUnk_0F8;
+    /* 0FC */ bool mUnk_0FC;
+    /* 100 */ unk32 mUnk_100;
+    /* 104 */ VecFx32 mUnk_104;
+    /* 110 */ STRUCT_PAD(0x110, 0x138);
+    /* 138 */ s16 mUnk_138;
+    /* 13A */ u16 mUnk_13A;
+    /* 13C */ unk16 mUnk_13C;
+    /* 13E */ STRUCT_PAD(0x13E, 0x154);
     /* 154 */
 
     PlayerLinkActor_9C(UnkStruct_027e0ce0_40 *param1, u32 rawGrabParams, PlayerCharacter character);
@@ -460,8 +483,23 @@ public:
     // data_ov000_020b2a8c
     /* 00 */ virtual ~PlayerLinkActor_9C();
 
+    // overlay 0
+    unk32 func_ov000_02084944();
+    unk32 func_ov000_020849d0(unk32 param1, VecFx32 *param2);
+    unk32 func_ov000_02084ac8(unk32 param1, VecFx32 *param2, unk32 param3, VecFx32 *param4);
+    void func_ov000_02084c3c(unk32 param1, unk32 param2, VecFx32 *param3, VecFx32 *param4);
+    unk32 func_ov000_02084e58(unk32 param1, u8 param2, VecFx32 *param3, VecFx32 *param4, unk32 param5, VecFx32 *param6,
+                              unk32 param7);
+    void func_ov000_02085274(unk32 param1, unk32 param2, unk32 param3, VecFx32 *param4, VecFx32 *param5, VecFx32 *param6);
+    void func_ov000_02085578(unk32 param1, unk32 param2, unk32 param3, unk32 param4, VecFx32 *param5);
+    void func_ov000_02085718(VecFx32 *param1);
+    void func_ov000_02085840(VecFx32 *param1, VecFx32 *param2, VecFx32 *param3);
+    void func_ov000_02086758();
+    void func_ov000_020867f4();
+
     // overlay 17
-    void func_ov017_020bc640();
+    bool func_ov017_020bc640(u32 param1, bool param2, bool param3, u8 param4, u8 param5, unk32 param6, VecFx32 *param7,
+                             VecFx32 *param8);
 };
 
 class PlayerActorBase {
@@ -501,7 +539,20 @@ public:
     void func_ov000_0208c914();
     void func_ov000_0208d3fc();
     void func_ov000_0208d7f0(bool param1);
+    unk32 func_ov000_0208dd60(UnkStruct_027e0ce0_30_00 *param1);
 
     // overlay 1
     void func_ov001_020bc96c(); // ResetState? or just Reset? idk
+
+    // overlay 93
+    //! TODO: move to PlayerZeldaActor?
+    unk32 func_ov093_0216e8e4(UnkStruct_027e0ce0_30_00 *param1);
+    void func_ov093_0216d0d4();
+    void func_ov093_0216d160();
+    void func_ov093_0216d1cc(unk32 param1, const UnkStruct_ov001_020c40f4 *param2, bool param3, bool param4);
+    void func_ov093_0216d5b8(unk32 param1);
+    void func_ov093_0216f71c(unk32 *param1);
+    void func_ov093_0216de30(unk32 param1, unk32 param2);
+    void func_ov093_0216dec8(unk32 param1);
+    void func_ov093_0216e1a4(unk32 param1);
 };

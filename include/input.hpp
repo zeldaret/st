@@ -4,7 +4,7 @@
 
 #include <nitro/pad.h>
 
-#define CHECK_BUTTON_COMBO(value, btn) ((value) & (btn))
+#define CHECK_BUTTON_COMBO(value, btn) (((value) & (btn)) != 0)
 
 struct Input {
     /* 00 */ u16 cur;
@@ -16,8 +16,12 @@ struct Input {
         this->Init();
     }
 
+    BOOL CheckCurButtonCombo(u16 combo) {
+        return CHECK_BUTTON_COMBO(this->cur, combo);
+    }
+
     void Init();
-    unk32 func_02013c08(u16 param1);
+    unk32 func_02013c08(u32 param1);
     unk32 func_02013b24(unk32 param1);
     unk32 func_02013bbc();
 };

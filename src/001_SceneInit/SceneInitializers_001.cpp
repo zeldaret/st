@@ -30,7 +30,6 @@
 #include <nitro/mi.h>
 #include <string.h>
 
-extern "C" void func_ov001_020bed34();
 extern "C" void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
 extern "C" u16 func_ov026_02106564(void *);
 
@@ -420,7 +419,7 @@ UnkStruct_027e09a4_54_Base::~UnkStruct_027e09a4_54_Base() {
     data_027e09c0->func_ov001_020be3c4();
     data_0204a110.func_ov001_020bd638();
     data_ov000_020b50c0.func_ov001_020bde04(&this->mUnk_1C);
-    func_ov001_020bed34();
+    UnkStruct_027e0cec::func_ov001_020bed34();
 }
 
 void UnkStruct_027e09a4_54_Base::vfunc_0C() {

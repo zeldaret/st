@@ -183,6 +183,15 @@ static inline void VecFx32_CopyXZ(VecFx32 *vec, VecFx32 *out) {
     out->z = z;
 }
 
+static inline void VecFx32_SubXZ(VecFx32 *vec1, VecFx32 *vec2, VecFx32 *out) {
+
+    fx32 x = vec1->x - vec2->x;
+    fx32 z = vec1->z - vec2->z;
+    out->z = z;
+    out->x = x;
+    out->y = 0;
+}
+
 static inline void VecFx16_Copy2VecFx32(const VecFx16 *vec, VecFx32 *out) {
     out->x = vec->x;
     out->y = vec->y;

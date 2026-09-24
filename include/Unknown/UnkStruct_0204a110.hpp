@@ -295,6 +295,8 @@ public:
     void func_02019528();
     bool func_02019548();
     UnkStruct_func_02019590 *func_02019590(unk16 param1, unk32 param2);
+    unk32 func_01ff9b64();
+    unk32 func_01ff9b78();
 
     // overlay 1
     void func_ov001_020bd514(unk32 param1, GameModeMgrCreateCallback createCallback, bool param3, bool param4);

@@ -1,12 +1,16 @@
 #pragma once
 
+#include "Unknown/UnkStruct_0204a110.hpp"
+#include "flags.h"
 #include "global.h"
+#include "nitro/fx.h"
 #include "types.h"
 
 #include "Actor/ActorRef.hpp"
 #include "Item/ItemManager.hpp"
 #include "LinkList.hpp"
 #include "Player/PlayerLink.hpp"
+#include "Player/PlayerZelda.hpp"
 #include "Player/TouchControl.hpp"
 #include "Save/SaveManager.hpp"
 #include "input.hpp"
@@ -17,6 +21,7 @@ class UnkStruct_027e0ce0;
 class UnkStruct_027e0ce0_30;
 class UnkStruct_027e0ce0_38;
 class UnkStruct_027e0ce0_3C;
+class UnkStruct_027e0ce0_40;
 class UnkStruct_ov001_020c40f4;
 
 class UnkStruct_027e0ce0_0C : public LinkList<UnkStruct_027e0ce0_0C> {
@@ -111,7 +116,9 @@ public:
 
 class UnkStruct_027e0ce0_24 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x88);
+    /* 00 */ STRUCT_PAD(0x00, 0x70);
+    /* 70 */ u16 mUnk_70[1]; //! TODO: confirm array size
+    /* 72 */ STRUCT_PAD(0x72, 0x88);
     /* 88 */
 
     UnkStruct_027e0ce0_24();
@@ -121,6 +128,7 @@ public:
     void func_ov021_020eaa08(UnkStruct_027e0ce0_20 *param1);
     void func_ov021_020eaac4();
     void func_ov021_020eab14(unk32 param1, const UnkStruct_ov001_020c40f4 *param2, UnkStruct_027e0ce0_30 *param3);
+    unk32 func_ov021_020eb870(unk32 param1, unk32 param2, unk32 param3, void *param4);
 };
 
 class UnkStruct_027e0ce0_30_00 {
@@ -129,20 +137,26 @@ private:
     /* 0C */ VecFx32 mUnk_0C;
     /* 18 */ unk32 mUnk_18;
     /* 1C */ unk32 mUnk_1C;
-    /* 20 */ unk32 mUnk_20;
+    /* 20 */ u32 mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ bool mUnk_28;
     /* 2C */ UnkStruct_027e0ce0_38 *mUnk_2C;
     /* 30 */ UnkStruct_027e0ce0_3C *mUnk_30;
-    /* 34 */ unk32 mUnk_34;
-    /* 38 */ unk32 *mUnk_38;
-    /* 38 */ unk32 mUnk_3C;
+    /* 34 */ UnkStruct_027e0ce0_40 *mUnk_34;
+    /* 38 */ PlayerLinkActor *mpPlayer;
+    /* 3C */ PlayerActorBase *mpZelda; // either phantom zelda or human zelda
     /* 40 */
 
 public:
-    UnkStruct_027e0ce0_30_00(UnkStruct_027e0ce0_38 *param1, UnkStruct_027e0ce0_3C *param2, unk32 param3, unk32 *param4,
-                             unk32 param5);
+    UnkStruct_027e0ce0_30_00(UnkStruct_027e0ce0_38 *param1, UnkStruct_027e0ce0_3C *param2, UnkStruct_027e0ce0_40 *param3,
+                             PlayerLinkActor *param4, PlayerActorBase *param5);
     ~UnkStruct_027e0ce0_30_00();
+
+    // overlay 0
+    void func_ov000_020a8af4(unk32 param1);
+
+    // overlay 17
+    void func_ov017_020bbf7c(ItemManager *pItemMgr);
 };
 
 class UnkStruct_027e0ce0_30_04 {
@@ -163,6 +177,9 @@ private:
 public:
     UnkStruct_027e0ce0_30_08(unk32 param1);
     ~UnkStruct_027e0ce0_30_08();
+
+    // overlay 21
+    void func_ov021_020ebc68();
 };
 
 class UnkStruct_027e0ce0_30 {
@@ -180,12 +197,12 @@ public:
     void func_ov001_020bbf00(int index, unk32 param2);
     void func_ov001_020bbf24(UnkStruct_027e0ce0_38 *param1);
     void func_ov001_020bbf50(UnkStruct_027e0ce0_3C *param1);
-    void func_ov001_020bbf7c(unk32 param1, unk32 *param2, unk32 param3);
+    void func_ov001_020bbf7c(UnkStruct_027e0ce0_40 *param1, PlayerLinkActor *param2, PlayerActorBase *param3);
     void func_ov001_020bbfcc();
     void func_ov001_020bbff4(UnkStruct_027e0ce0_38 *param1);
 
     // overlay 17
-    void func_ov017_020bc5fc(ItemManager *param1);
+    void func_ov017_020bc5fc(ItemManager *pItemMgr);
 };
 
 class UnkStruct_027e0ce0_34_20 {
@@ -460,7 +477,8 @@ public:
 class UnkStruct_027e0ce0_40_Base_14 {
 public:
     /* 00 */ TouchControl mTouchControl;
-    /* 22 */ STRUCT_PAD(0x22, 0x40);
+    /* 22 */ STRUCT_PAD(0x22, 0x3C);
+    /* 3C */ unk32 mUnk_3C;
     /* 40 */ unk16 mUnk_40;
     /* 42 */ unk16 mUnk_42;
     /* 44 */ unk16 mUnk_44;
@@ -474,7 +492,12 @@ public:
         ptr->func_ov000_02096a9c();
     }
 
+    // overlay 0
     void func_ov000_02096a9c();
+    unk32 func_ov000_02096b1c(BOOL param1);
+
+    // overlay 17
+    void func_ov017_020be44c(unk32 param1, bool param2);
 };
 
 class UnkStruct_027e0ce0_40_Base_74 {
@@ -493,13 +516,12 @@ public:
     void func_ov031_020e0c34();
 
     // overlay 102
-    void func_ov102_0218323c(UnkStruct_027e0ce0_40_Base_14 *param1, unk32 param2);
+    void func_ov102_0218323c(UnkStruct_027e0ce0_40_Base_14 *param1, BOOL param2);
 };
 
 class UnkStruct_027e0ce0_40_Base_78 {
 public:
-    /* 00 */ unk16 mUnk_00; // ActorRef?
-    /* 02 */ unk16 mUnk_02;
+    /* 00 */ ActorRef mRef;
     /* 04 */
 
     const u32 GetData() const {
@@ -507,11 +529,19 @@ public:
     }
 
     const bool HasValue() const {
-        return this->GetData() != 0;
+        u32 var_r2 = 0;
+        return *(u32 *) &this->mRef != *(u32 *) &var_r2;
+    }
+
+    const bool UnkCheck1() {
+        return this->mRef.UnkCheck2();
     }
 
     UnkStruct_027e0ce0_40_Base_78();
     ~UnkStruct_027e0ce0_40_Base_78();
+
+    // overlay 31
+    u8 func_ov031_020dcfb4(void *param1);
 };
 
 class UnkStruct_027e0ce0_40_Base_7C_04 {
@@ -538,6 +568,7 @@ public:
     void func_ov000_020968e0();
 
     // overlay 17
+    void func_ov017_020be2ec(UnkStruct_027e0ce0_40_Base_14 *param1, bool param2, unk32 param3);
     void func_ov017_020be434();
 };
 
@@ -590,15 +621,14 @@ public:
     /* 54 */ UnkStruct_027e0ce0_40_Base_94 *mUnk_54;
     /* 58 */ UnkStruct_027e0ce0_40_Base_94_50 *mUnk_58;
     /* 5C */ unk32 mUnk_5C; // seems to be the walking speed of link??
-    /* 60 */ unk16 mUnk_60;
-    /* 62 */ unk16 mUnk_62;
-    /* 64 */ unk8 mUnk_64;
-    /* 65 */ unk8 mUnk_65;
-    /* 66 */ unk8 mUnk_66;
-    /* 67 */ unk8 mUnk_67;
-    /* 68 */ unk8 mUnk_68;
-    /* 69 */ unk8 mUnk_69;
-    /* 6A */ unk8 mUnk_6A;
+    /* 60 */ Vec2s mUnk_60;
+    /* 64 */ u8 mUnk_64;
+    /* 65 */ u8 mUnk_65;
+    /* 66 */ u8 mUnk_66;
+    /* 67 */ u8 mUnk_67;
+    /* 68 */ u8 mUnk_68;
+    /* 69 */ u8 mUnk_69;
+    /* 6A */ u8 mUnk_6A;
     /* 6C */ unk32 mUnk_6C;
     /* 70 */
 
@@ -607,6 +637,10 @@ public:
 
     // overlay 0
     void func_ov000_0208aee4();
+
+    // overlay 17
+    void func_ov017_020bd478();
+    void func_ov017_020bd300(UnkStruct_027e0ce0_40_Base_14 *param1, unk32 param2, bool param3);
 };
 
 typedef u16 UnkFlags3;
@@ -644,9 +678,37 @@ public:
     /* 107 */ unk8 mUnk_107;
     /* 108 */
 
+    ItemManager *GetItemMgr() const {
+        return this->mpItemManager;
+    }
+
+    UnkStruct_027e0ce0_40_Base_78 *GetUnk78() const {
+        return this->mUnk_078;
+    }
+
+    const bool IsUnk78() {
+        return this->mUnk_078 != NULL;
+    }
+
     const BOOL Unk78HasValue() const {
         return this->mUnk_078 != NULL && this->mUnk_078->HasValue();
     }
+
+    const bool CheckUnk104(UnkFlags3 flag) const {
+        return GET_FLAG2(this->mUnk_104, flag);
+    }
+
+    const bool UnkCheck1() {
+        bool ret = false;
+
+        if (this->IsUnk78() && this->mUnk_078->UnkCheck1()) {
+            ret = true;
+        }
+
+        return ret;
+    }
+
+    inline const bool UnknownInline1(unk32 param1, unk32 param2);
 
     UnkStruct_027e0ce0_40_Base(unk32 param1, void *param2, ItemManager *pItemMgr);
     ~UnkStruct_027e0ce0_40_Base();
@@ -695,7 +757,7 @@ public:
     /* 00 */ virtual void vfunc_00() override;
 
     // overlay 102
-    void func_ov102_02182e54(unk32 param1, unk32 param2, unk32 param3);
+    void func_ov102_02182e54(unk32 param1, VecFx32 *param2, unk32 param3);
 };
 
 class UnkStruct_027e0ce0_40_14C {
@@ -711,8 +773,7 @@ public:
 
     // overlay 93
     void func_ov093_02168850();
-    bool func_ov092_021689e8(unk32 param1, UnkStruct_027e0ce0_40 *param2, PlayerLinkActor *param3,
-                             UnkStruct_027e0ce0_40_328 *param4);
+    bool func_ov092_021689e8(unk32 param1, UnkStruct_027e0ce0_40 *param2, PlayerLinkActor *pPlayer, PlayerActorBase *pZelda);
 };
 
 class UnkStruct_027e0ce0_40_150 {
@@ -728,35 +789,6 @@ public:
     bool func_ov096_02179c54(bool param1, bool param2);
 };
 
-class UnkStruct_027e0ce0_40_328 {
-public:
-    /* 000 */ STRUCT_PAD(0x00, 0x98);
-    /* 098 */ PlayerActorBase *mpPlayer;
-    /* 09C */ STRUCT_PAD(0x9C, 0xCC);
-    /* 0CC */ bool mUnk_0CC;
-    /* 0CD */ STRUCT_PAD(0xCD, 0xD0);
-    /* 0D0 */ unk32 mUnk_0D0;
-    /* 0D4 */ unk32 mUnk_0D4;
-    /* 0D8 */ unk32 mUnk_0D8;
-    /* 0DC */ unk32 mUnk_0DC;
-    /* 0E0 */ STRUCT_PAD(0xE0, 0x154);
-    /* 154 */
-
-    UnkStruct_027e0ce0_40_328(void *param1, UnkStruct_027e0ce0_40 *param2, UnkStruct_027e0ce0_40_150 *param3,
-                              ItemFlag *pEquippedItem);
-    ~UnkStruct_027e0ce0_40_328();
-
-    // overlay 93
-    void func_ov093_0216d0d4();
-    void func_ov093_0216d160();
-    void func_ov093_0216d1cc(unk32 param1, const UnkStruct_ov001_020c40f4 *param2, bool param3, bool param4);
-    void func_ov093_0216d5b8(unk32 param1);
-    void func_ov093_0216f71c(unk32 *param1);
-    void func_ov093_0216de30(unk32 param1, unk32 param2);
-    void func_ov093_0216dec8(unk32 param1);
-    void func_ov093_0216e1a4(unk32 param1);
-};
-
 // land player stuff
 class UnkStruct_027e0ce0_40 : public UnkStruct_027e0ce0_40_Base {
 public:
@@ -765,9 +797,9 @@ public:
     /* 14C */ UnkStruct_027e0ce0_40_14C *mUnk_14C;
     /* 150 */ UnkStruct_027e0ce0_40_150 *mUnk_150;
     /* 154 */ PlayerLinkActor mPlayer;
-    /* 328 */ UnkStruct_027e0ce0_40_328 *mUnk_328;
-    /* 32C */ PlayerLinkActor *mpPlayer;           // set to mPlayer
-    /* 330 */ UnkStruct_027e0ce0_40_328 *mUnk_330; // set to mUnk_328
+    /* 328 */ PlayerZeldaActor *mpZelda;
+    /* 32C */ PlayerLinkActor *mpPlayer;  // set to mPlayer
+    /* 330 */ PlayerZeldaActor *mUnk_330; // set to mpZelda
     /* 334 */ ItemFlag mEquippedItem;
     /* 338 */ bool mIsSceneTowerInsideStairs;
     /* 339 */ bool mIsSceneTowerOutsideStairs;
@@ -782,10 +814,15 @@ public:
     void func_ov000_02088060(bool param1);
 
     // overlay 17
-    unk32 func_ov017_020bcde8(unk32 param1, ItemManager *pItemMgr);
+    bool func_ov017_020bc95c(unk32 param1);
+    void func_ov017_020bca40(unk32 param1, unk32 param2);
+    bool func_ov017_020bcde8(unk32 param1);
 
     // overlay 93
+    void func_ov093_02168020(unk32 param1);
+    void func_ov093_021680fc(unk32 param1);
     void func_ov093_02168220();
+    void func_ov093_02168258();
 
     // overlay 101
     bool func_ov101_02182fb4(bool param1);
@@ -851,10 +888,15 @@ public:
     void func_ov000_0208ba94(unk32 param1, VecFx32 *param2);
     void func_ov000_0208bacc(unk32 param1, VecFx32 *param2);
     void func_ov000_0208bbd4(unk32 param1, VecFx32 *param2, u16 param3);
-    bool func_ov000_0208bc1c(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
+
+    bool func_ov000_0208bc1c(unk32 param1, unk32 param2, void *param3, unk32 param4, void *param5, unk32 param6);
+    bool func_ov000_0208bc1c(unk32 param1, unk32 param2, unk32 param3, unk32 param4, void *param5, unk32 param6);
+    bool func_ov000_0208bc1c(unk32 param1, unk32 param2, unk32 param4, void *param5, unk32 param6);
+
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);
     void func_ov000_0208bd30(bool param1, unk32 param2, unk32 param3, unk32 param4);
     bool func_ov000_0208be70(VecFx32 param1);
+    bool func_ov000_0208bf34(unk32 param1);
 
     static UnkStruct_027e0ce0_34 *func_ov000_0205c904();
 
@@ -874,9 +916,9 @@ public:
 
     // overlay 17
     void func_ov017_020bd4a0(unk32 param1, bool param2);
-    void func_ov017_020bd5c4(unk32 param1);
-    void func_ov017_020bd5dc(unk32 param1);
-    void func_ov017_020bd644(unk32 param1);
+    void func_ov017_020bd5c4(void *param1);
+    void func_ov017_020bd5dc(void *param1);
+    void func_ov017_020bd644(void *param1);
     void func_ov017_020bd69c();
 };
 

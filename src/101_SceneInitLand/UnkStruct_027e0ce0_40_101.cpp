@@ -1,3 +1,4 @@
+#include "Player/PlayerZelda.hpp"
 #include "System/OverlayManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -12,25 +13,24 @@ UnkStruct_027e0ce0_40::UnkStruct_027e0ce0_40(bool param1, UnkStruct_027e0ce0_20 
     mUnk_14C(gOverlayManager.IsPlayerSub() ? new(HeapIndex_1) UnkStruct_027e0ce0_40_14C() : NULL),
     mUnk_150(data_027e09a4->IsCastleOrTown() ? new(HeapIndex_1) UnkStruct_027e0ce0_40_150() : NULL),
     mPlayer(-1, pItemMgr, this, this->mUnk_150),
-    mUnk_328(gOverlayManager.IsPlayerSub() ? new(HeapIndex_1)
-                                                 UnkStruct_027e0ce0_40_328(pItemMgr, this, this->mUnk_150, pEquippedItem)
-                                           : NULL),
+    mpZelda(gOverlayManager.IsPlayerSub() ? new(HeapIndex_1) PlayerZeldaActor(pItemMgr, this, this->mUnk_150, pEquippedItem)
+                                          : NULL),
     mEquippedItem(*pEquippedItem),
     mIsSceneTowerInsideStairs(data_027e09a4->IsTowerInsideStairs()),
     mIsSceneTowerOutsideStairs(data_027e09a4->IsTowerOutsideStairs()),
     mIsSceneBossByrne(data_027e09a4->IsBossByrne()),
     mUnk_33B(param1) {
     this->mpPlayer = &this->mPlayer;
-    this->mUnk_330 = this->mUnk_328;
-    this->mPlayer.func_ov001_020bcb60(this->mUnk_328);
+    this->mUnk_330 = this->mpZelda;
+    this->mPlayer.func_ov001_020bcb60(this->mpZelda);
 
-    if (this->mUnk_328 != NULL) {
-        this->mUnk_328->mpPlayer = &this->mPlayer;
+    if (this->mpZelda != NULL) {
+        this->mpZelda->mpPlayer = &this->mPlayer;
     }
 }
 
 UnkStruct_027e0ce0_40::~UnkStruct_027e0ce0_40() {
-    delete this->mUnk_328;
+    delete this->mpZelda;
     delete this->mUnk_150;
     delete this->mUnk_14C;
 }
@@ -48,16 +48,16 @@ bool UnkStruct_027e0ce0_40::func_ov101_02182fb4(bool param1) {
 
     this->mPlayer.func_ov001_020bcb70();
 
-    if (this->mUnk_328 != NULL) {
-        this->mUnk_328->func_ov093_0216d0d4();
+    if (this->mpZelda != NULL) {
+        this->mpZelda->func_ov093_0216d0d4();
     }
 
     return param1;
 }
 
 void UnkStruct_027e0ce0_40::func_ov101_02183004() {
-    if (this->mUnk_328 != NULL) {
-        this->mUnk_328->func_ov093_0216d160();
+    if (this->mpZelda != NULL) {
+        this->mpZelda->func_ov093_0216d160();
     }
 
     this->mPlayer.func_ov001_020bcba8();
@@ -68,7 +68,7 @@ void UnkStruct_027e0ce0_40::func_ov101_02183024(const UnkStruct_ov001_020c40f4 *
                                                 UnkStruct_027e0ce0_30 *param6, bool param7, bool param8) {
     bool var_r7 = false;
 
-    if (this->mUnk_328 != NULL) {
+    if (this->mpZelda != NULL) {
         if (GET_FLAG2(this->mUnk_104, UnkFlags3_4)) {
             var_r7 = true;
         }
@@ -147,7 +147,7 @@ void UnkStruct_027e0ce0_40::func_ov101_02183024(const UnkStruct_ov001_020c40f4 *
 
     this->mPlayer.func_ov001_020bcbd0(&sp40.mUnk_00);
 
-    if (this->mUnk_328 != NULL) {
+    if (this->mpZelda != NULL) {
         UnkStruct_ov001_020c40f4 sp1C = *param2;
 
         if (sp8) {
@@ -174,9 +174,9 @@ void UnkStruct_027e0ce0_40::func_ov101_02183024(const UnkStruct_ov001_020c40f4 *
             VecFx32_Copy(&sp10, &sp1C.mUnk_00);
         }
 
-        this->mUnk_328->func_ov093_0216d1cc(param3, &sp1C, var_r7, param8);
+        this->mpZelda->func_ov093_0216d1cc(param3, &sp1C, var_r7, param8);
     }
 
-    param6->func_ov001_020bbf7c((unk32) this, (unk32 *) &this->mPlayer, (unk32) this->mUnk_328);
+    param6->func_ov001_020bbf7c(this, &this->mPlayer, this->mpZelda);
     this->mUnk_33B = false;
 }

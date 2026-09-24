@@ -167,7 +167,7 @@ public:
     void func_ov032_0211b190(s32 param1, s32 param2);
     void func_ov032_0211b1e0();
     void func_ov032_0211b298();
-    static void func_ov032_0211b37c(ActorSpinut *, u16 param1);
+    static void func_ov032_0211b37c(Actor *thisx, u16 param1);
     void func_ov032_0211b3b0();
 };
 

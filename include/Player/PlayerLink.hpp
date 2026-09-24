@@ -3,7 +3,7 @@
 #include "Player/PlayerActorBase.hpp"
 
 class UnkStruct_027e0ce0_40;
-class UnkStruct_027e0ce0_40_328;
+class PlayerActorBase;
 class UnkStruct_027e0ce0_40_150;
 class PlayerLinkActor_A0_38;
 class ItemManager;
@@ -253,7 +253,7 @@ class PlayerLinkActor : public PlayerActorBase {
 public:
     /* 000 (base) */
     /* 094 */ UnkStruct_027e0ce0_40_150 *mUnk_094;
-    /* 098 */ UnkStruct_027e0ce0_40_328 *mUnk_098;
+    /* 098 */ PlayerActorBase *mpZelda;
     /* 09C */ PlayerLinkActor_9C *mUnk_09C;
     /* 0A0 */ PlayerLinkActor_A0 *mUnk_0A0;
     /* 0A4 */ PlayerLinkActor_A4 mUnk_0A4;
@@ -276,7 +276,7 @@ public:
     ~PlayerLinkActor();
 
     // overlay 1
-    void func_ov001_020bcb60(UnkStruct_027e0ce0_40_328 *param1);
+    void func_ov001_020bcb60(PlayerActorBase *pZelda);
     void func_ov001_020bcb70();
     void func_ov001_020bcba8();
     void func_ov001_020bcbd0(VecFx32 *pVec);

@@ -4,16 +4,44 @@
 #include "Unknown/UnkStruct_0204a060.hpp"
 #include "global.h"
 #include "math.hpp"
+#include "nitro/fx.h"
 #include "types.h"
+
+class UnkStruct_027e0ce0_30_00;
+
+class UnkStruct_027e09bc_0C_230 {
+public:
+    /* 00 (base) */
+    /* 04 */
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual unk32 vfunc_08();
+};
+
+struct UnkStruct_027e09bc_0C_268 {
+    /* 00 */ u32 unk_00;
+    /* 04 */ u16 unk_04;
+    /* 06 */ bool unk_06;
+    /* 07 */ u8 unk_07;
+    /* 08 */ VecFx32 unk_08;
+    /* 14 */
+};
 
 class UnkStruct_027e09bc_0C {
 public:
     /* 000 (vtable) */
     /* 004 */ STRUCT_PAD(0x04, 0x34);
     /* 034 */ VecFx32 mUnk_034;
-    /* 040 */ STRUCT_PAD(0x40, 0x264);
+    /* 040 */ VecFx32 mUnk_040;
+    /* 04C */ STRUCT_PAD(0x4C, 0xCA);
+    /* 0CA */ unk16 mUnk_0CA;
+    /* 0CC */ STRUCT_PAD(0xCC, 0x230);
+    /* 230 */ UnkStruct_027e09bc_0C_230 *mUnk_230;
+    /* 234 */ STRUCT_PAD(0x234, 0x264);
     /* 264 */ unk32 mUnk_264;
-    /* 268 */ STRUCT_PAD(0x268, 0x280);
+    /* 268 */ UnkStruct_027e09bc_0C_268 mUnk_268;
+    /* 27C */ unk32 mUnk_27C;
     /* 280 */ unk32 mUnk_280;
     /* 284 */
 
@@ -26,14 +54,18 @@ public:
     /* 10 */
 
     // itcm
-    bool func_01ffd43c(Vec2s *param1, unk32 param2, unk32 param3);
+    bool func_01ffd43c(Vec2s *param1, VecFx32 *param2, unk32 param3);
     bool func_01ffd640(VecFx32 *param1);
 
     // overlay 0
     void func_ov000_02078230(unk32 param1);
-    bool func_ov000_0207834c(VecFx32 *param1, unk32 param2, unk32 param3);
+    bool func_ov000_0207834c(VecFx32 *param1, UnkStackStruct_ov000_02077590 *param2, unk32 param3);
+    unk16 func_ov000_0207868c();
+    unk16 func_ov000_02078698();
+    void func_ov000_02078534(VecFx32 *param1, unk32 param2);
     bool func_ov000_02078764(VecFx32 *param1, void *param2, unk32 param3);
     void func_ov000_02078834(VecFx32 *param1, VecFx32 *param2, unk32 param3, unk32 param4);
+    void func_ov000_02078aa4(UnkStruct_027e0ce0_30_00 *param1, unk32 param2, unk32 param3, unk32 param4);
     void func_ov000_02078ba4();
     void func_ov000_02078cec();
     void func_ov000_0207a1e0(unk32 param1);
@@ -67,6 +99,7 @@ public:
     // overlay 0
     void func_ov000_020771b8(unk32 param1);
     void func_ov000_020771c8();
+    UnkStruct_027e09bc_0C *func_ov000_02077468(unk32 param1, unk32 param2);
 
     // overlay 1
     void func_ov001_020bab5c();

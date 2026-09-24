@@ -13,18 +13,24 @@ public:
     UnkStruct_02049b18_06();
 };
 
+struct UnkReturnStruct_020137c8 {
+    bool unk_00;
+};
+
 class UnkStruct_02049b18 {
 public:
     /* 00 */ Input mButtons;
     /* 06 */ UnkStruct_02049b18_06 mUnk_06;
-    /* 28 */ unk16 mUnk_28;
-    /* 2A */ STRUCT_PAD(0x2A, 0x58);
+    /* 28 */ u16 mUnk_28;
+    /* 2A */ u16 mUnk_2A;
+    /* 2C */ STRUCT_PAD(0x2C, 0x58);
     /* 58 */ unk16 mUnk_58;
     /* 5A */ unk16 mUnk_5A;
 
     UnkStruct_02049b18();
     ~UnkStruct_02049b18();
     void func_02013768();
+    UnkReturnStruct_020137c8 *func_020137c8(unk32 param1);
     void func_02013840(u16 param1, unk32 param2);
     void func_020138f4(unk32 param1);
 };

@@ -21,6 +21,7 @@ src/017_CourseExec/UnkStruct_027e0ce0_30_017.cpp:
     .text       start:0x020bbf7c end:0x020bc640
 
 src/017_CourseExec/UnkStruct_027e0ce0_40_017.cpp:
+    complete
     .text       start:0x020bc640 end:0x020bd2a0
 
 src/017_CourseExec/ItemManager_017.cpp:

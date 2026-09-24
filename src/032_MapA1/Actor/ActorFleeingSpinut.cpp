@@ -649,7 +649,8 @@ u16 *ActorFleeingSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, V
 
     func_01ff9258(sp1C.x - param1->x, sp1C.z - param1->z);
 
-    UnkAngleStruct spm04 = {.angle = (u16) sp00};
+    UnkAngleStruct spm04;
+    spm04.angle = sp00;
     func_02017f54(param2, spm04);
 }
 

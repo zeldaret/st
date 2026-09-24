@@ -4,11 +4,14 @@
 
 class UnkStruct_027e0ce0_40;
 
+//! TODO: should this be merged with PlayerZeldaActor? both are the exact same size
 class PlayerPhantomActor : public PlayerActorBase {
 public:
     /* 000 (base) */
     /* 094 */ unk32 mUnk_94;
     /* 098 */ unk32 mUnk_98;
+    /* 09C */ STRUCT_PAD(0x9C, 0x154);
+    /* 154 */
 
     PlayerPhantomActor(unk32 param1, unk32 param2, UnkStruct_027e0ce0_40 *param3, bool *param4);
 };

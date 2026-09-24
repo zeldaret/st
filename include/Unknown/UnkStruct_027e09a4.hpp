@@ -368,9 +368,9 @@ public:
 
     // overlay 17
     void func_ov017_020bb660(unk32 param1);
-    void func_ov017_020bb7f8(unk32 param1);
-    void func_ov017_020bb934(unk32 param1);
-    void func_ov017_020bb994(unk32 param1);
+    void func_ov017_020bb7f8(void *param1);
+    void func_ov017_020bb934(void *param1);
+    void func_ov017_020bb994(void *param1);
 
     static void func_ov025_020c4a60();
     static void Destroy();

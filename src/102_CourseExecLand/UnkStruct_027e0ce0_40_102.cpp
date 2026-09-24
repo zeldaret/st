@@ -90,7 +90,7 @@ void PlayerActorBase_74::func_ov102_02182c84(bool param1, unk32 param2, UnkAngle
     }
 }
 
-void UnkStruct_027e0ce0_40_108::func_ov102_02182e54(unk32 param1, unk32 param2, unk32 param3) {
+void UnkStruct_027e0ce0_40_108::func_ov102_02182e54(unk32 param1, VecFx32 *param2, unk32 param3) {
     Vec2s sp6;
 
     if (!data_027e09bc->mUnk_04[param1]->func_01ffd43c(&sp6, param2, 1)) {
@@ -147,11 +147,11 @@ void UnkStruct_ItemManager_20::func_ov102_02182ffc(unk32 param1) {
 }
 
 void UnkStruct_027e0ce0_40::func_ov102_0218303c(unk32 param1, ItemManager *pItemMgr) {
-    s32 temp_r2;
+    bool temp_r2;
     bool var_r1;
     UnkStruct_027e0ce0_40_150 *temp_r1;
 
-    temp_r2 = this->func_ov017_020bcde8(param1, pItemMgr);
+    temp_r2 = this->func_ov017_020bcde8(param1);
 
     if (pItemMgr != NULL) {
         pItemMgr->func_ov017_020bd2a0(param1, temp_r2);
@@ -165,21 +165,21 @@ void UnkStruct_027e0ce0_40::func_ov102_0218303c(unk32 param1, ItemManager *pItem
 
     this->mPlayer.func_ov017_020bd788(param1);
 
-    if (this->mUnk_328 != NULL) {
-        this->mUnk_328->func_ov093_0216d5b8(param1);
+    if (this->mpZelda != NULL) {
+        this->mpZelda->func_ov093_0216d5b8(param1);
 
-        UnkStruct_027e0ce0_40_328 *ptr = this->mUnk_328;
+        PlayerZeldaActor *ptr = this->mpZelda;
         if (ptr->mUnk_0CC) {
             this->func_ov093_02168220();
             this->mPlayer.func_ov093_0216ce24(&ptr->mUnk_0D0);
-            this->mUnk_328->func_ov093_0216f71c(&ptr->mUnk_0DC);
+            this->mpZelda->func_ov093_0216f71c(&ptr->mUnk_0DC);
             ptr->mUnk_0CC = false;
         }
     }
 
     var_r1 = false;
     if (this->mUnk_14C != 0) {
-        var_r1 = this->mUnk_14C->func_ov092_021689e8(param1, this, &this->mPlayer, this->mUnk_328);
+        var_r1 = this->mUnk_14C->func_ov092_021689e8(param1, this, &this->mPlayer, this->mpZelda);
     }
 
     if (var_r1) {
@@ -201,8 +201,8 @@ void UnkStruct_027e0ce0_40::func_ov102_0218303c(unk32 param1, ItemManager *pItem
 void UnkStruct_027e0ce0_40::func_ov102_02183180(unk32 param1, bool param2) {
     this->mPlayer.func_ov017_020bdcf4();
 
-    if (this->mUnk_328 != NULL) {
-        this->mUnk_328->func_ov093_0216de30(param1, param2);
+    if (this->mpZelda != NULL) {
+        this->mpZelda->func_ov093_0216de30(param1, param2);
     }
 }
 
@@ -210,16 +210,16 @@ void UnkStruct_027e0ce0_40::func_ov102_021831b4(unk32 param1) {
     this->mUnk_07C.func_ov017_020be434();
     this->mPlayer.func_ov017_020bdd84(param1, 0);
 
-    if (this->mUnk_328 != NULL) {
-        this->mUnk_328->func_ov093_0216dec8(param1);
+    if (this->mpZelda != NULL) {
+        this->mpZelda->func_ov093_0216dec8(param1);
     }
 }
 
 void UnkStruct_027e0ce0_40::func_ov102_021831f0(unk32 param1) {
     this->mPlayer.func_ov017_020bdf48(param1, 1, 0, 0);
 
-    if (this->mUnk_328 != NULL) {
-        this->mUnk_328->func_ov093_0216e1a4(param1);
+    if (this->mpZelda != NULL) {
+        this->mpZelda->func_ov093_0216e1a4(param1);
     }
 
     if (this->mUnk_14C != NULL) {
@@ -228,7 +228,7 @@ void UnkStruct_027e0ce0_40::func_ov102_021831f0(unk32 param1) {
 }
 
 // https://decomp.me/scratch/d1Vky
-void UnkStruct_027e0ce0_40_Base_74::func_ov102_0218323c(UnkStruct_027e0ce0_40_Base_14 *param1, s32 param2) {
+void UnkStruct_027e0ce0_40_Base_74::func_ov102_0218323c(UnkStruct_027e0ce0_40_Base_14 *param1, BOOL param2) {
     s16 temp_r11;
     s16 var_r3;
     s32 temp_r10;
@@ -249,7 +249,7 @@ void UnkStruct_027e0ce0_40_Base_74::func_ov102_0218323c(UnkStruct_027e0ce0_40_Ba
     s16 y;
     s16 x;
 
-    if (param2 == 0 || param1->mUnk_40 <= 0 || this->mUnk_58 != -1) {
+    if (!param2 || param1->mUnk_40 <= 0 || this->mUnk_58 != -1) {
         this->mUnk_00[this->mUnk_54] = 0x00;
 
         ptr    = &this->mUnk_1C[this->mUnk_54];
@@ -347,62 +347,29 @@ static inline bool UnknownInline2(PlayerLinkActor_A0_1C *param2, VecFx32 *param4
     return false;
 }
 
-// https://decomp.me/scratch/jzXAd
 void func_ov102_02183414(s16 *param1, PlayerLinkActor_A0_1C *param2, bool param3, VecFx32 *param4, UnkAngleStruct param5,
                          s32 param6) {
     s16 sp6;
     s16 sp4;
     s16 sp2;
-    s16 var_r0_2;
-    s32 var_r1_3;
-    s32 var_r2;
-    s32 var_r3;
-    UnkStruct_027e0ce0_40_Base_78 *temp_r4;
-    u16 temp_r6;
-    u16 var_r0;
-    u16 *temp_r1;
-    u16 *temp_r1_2;
-    u16 *temp_r2;
-    bool var_r5;
-
-    STACK_PAD(0x10);
-
-    var_r5 = false;
+    bool var_r5 = false;
 
     if (param3) {
+        STACK_PAD(0x0C);
+
         if (param2->mUnk_00->Unk78HasValue()) {
             if (!UnknownInline2(param2, param4, &param5)) {
-                temp_r4  = param2->mUnk_00->mUnk_078;
-                var_r5   = true;
-                var_r1_3 = 0;
+                UnkStruct_027e0ce0_40 *ptr = param2->mUnk_00;
+                var_r5                     = true;
 
-                if (temp_r4 != NULL) {
-                    temp_r6 = temp_r4->mUnk_00;
-                    var_r2  = 0;
+                //! TODO: UnkCheck1() don't work
+                bool var_r1_3 = false;
 
-                    var_r3 = 1;
-                    if (temp_r6 != 0x100 && temp_r6 != 0x101) {
-                        var_r3 = 0;
-                    }
-
-                    if (var_r3 != 0) {
-                        if (temp_r6 == 0x101) {
-                            var_r0 = 0;
-                        } else {
-                            var_r0 = temp_r4->mUnk_02;
-                        }
-
-                        if (var_r0 == 1) {
-                            var_r2 = 1;
-                        }
-                    }
-
-                    if (var_r2 != 0) {
-                        var_r1_3 = 1;
-                    }
+                if (ptr->IsUnk78() && ptr->mUnk_078->UnkCheck1()) {
+                    var_r1_3 = true;
                 }
 
-                if (var_r1_3 != 0) {
+                if (var_r1_3) {
                     if (!param2->mUnk_06) {
                         func_ov095_0217aa88(&sp6, &param2->mUnk_04, param6, param5);
                         param5.angle = sp6;
@@ -411,7 +378,7 @@ void func_ov102_02183414(s16 *param1, PlayerLinkActor_A0_1C *param2, bool param3
                         param5.angle = sp4;
                     }
                 } else {
-                    func_ov031_020dcea4(&sp2, *(UnkStruct_027e0ce0_40_Base_78 **) &param2->mUnk_00->mUnk_078, param5);
+                    func_ov031_020dcea4(&sp2, param2->mUnk_00->GetUnk78(), param5);
                     param5.angle = sp2 + 0x4000;
                 }
             }

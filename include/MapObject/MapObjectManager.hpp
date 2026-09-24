@@ -72,9 +72,9 @@ public:
 
     // overlay 17
     void func_ov017_020c00dc(unk32 param1);
-    void func_ov017_020c01c8(unk32 param1);
-    void func_ov017_020c01cc(unk32 param1);
-    void func_ov017_020c023c(unk32 param1);
+    void func_ov017_020c01c8(void *param1);
+    void func_ov017_020c01cc(void *param1);
+    void func_ov017_020c023c(void *param1);
 };
 
 extern MapObjectManager *gpMapObjManager;

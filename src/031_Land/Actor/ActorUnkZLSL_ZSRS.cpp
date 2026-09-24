@@ -256,7 +256,8 @@ void ActorUnkZLSL::func_ov031_020ea8c4() {}
 void ActorUnkZLSL::func_ov031_020ea8c8() {}
 
 void ActorUnkZLSL::vfunc_20() {
-    UnkAngleStruct angleTmp = {.angle = this->mAngle};
+    UnkAngleStruct angleTmp;
+    angleTmp.angle = this->mAngle;
     CALL_PTMF(PTMF<ActorUnkZLSL>, data_ov031_021137f8[this->mState]);
 
     if (!GET_FLAG(this->mFlags, ActorFlag_Visible)) {

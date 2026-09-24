@@ -43,7 +43,7 @@ public:
     ~ActorManager();
 
     // itcm
-    void func_01fff2fc(UnkCallback1 callback, unk32 param2);
+    void func_01fff2fc(UnkCallback1 callback, void *param2);
     Actor **func_01fff350(UnkStruct_ov000_020b3000_Base *param1, Actor **ppActorTable);
     Actor *func_01fff3b4(ActorRef ref);
 

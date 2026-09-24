@@ -14,7 +14,6 @@
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "versions.h"
 
-extern "C" void *func_ov000_02077590(unk32);
 extern "C" unk32 func_01ffb428(unk32, unk32);
 extern "C" void func_01ffaf74(VecFx32 *, Mat4x3p *, VecFx32 *);
 extern "C" void func_01ff93c0(VecFx32 *, fx32);
@@ -126,7 +125,7 @@ void MapObjectDoorDangerSpawn::vfunc_04(void) {
         UnkStruct_027e09bc_0C *uVar5 = data_027e09bc->mUnk_04[2];
         MapObjectDoorDangerSpawn::func_ov031_020fe5fc(&auStack_20, this);
 
-        uVar5->func_ov000_0207834c(&auStack_20, (unk32) func_ov000_02077590(0), 0);
+        uVar5->func_ov000_0207834c(&auStack_20, func_ov000_02077590(0), 0);
     }
 }
 
@@ -146,14 +145,10 @@ void MapObjectDoorDangerSpawn::vfunc2_08(void) {
     data_ov000_020b51b8.func_ov000_0206c96c(data_ov031_02110c00[this->mUnk_20.mParams[3]]);
 }
 
-struct UnkStruct_Copy {
-    unk32 data[8];
-};
-
 // https://decomp.me/scratch/KLkdU
 void MapObjectDoorDangerSpawn::vfunc_08(void) {
-    UnkStruct_Copy sp3C;
-    UnkStruct_Copy sp1C;
+    UnkStackStruct_ov000_02077590 sp3C;
+    UnkStackStruct_ov000_02077590 sp1C;
     VecFx32 sp10;
     VecFx32 sp4;
 
@@ -172,7 +167,7 @@ void MapObjectDoorDangerSpawn::vfunc_08(void) {
                         this->mUnk_88 = 1;
                         this->vfunc_74();
 
-                        UnkStruct_Copy *temp_r0_3 = (UnkStruct_Copy *) func_ov000_02077590(3);
+                        UnkStackStruct_ov000_02077590 *temp_r0_3 = func_ov000_02077590(3);
 
                         sp3C                     = *temp_r0_3;
                         ((unk16 *) sp3C.data)[3] = this->mAngle;
@@ -187,7 +182,7 @@ void MapObjectDoorDangerSpawn::vfunc_08(void) {
                             data_027e0d8c->func_ov093_02166058();
                         }
                     } else {
-                        UnkStruct_Copy *temp_r0_3 = (UnkStruct_Copy *) func_ov000_02077590(0);
+                        UnkStackStruct_ov000_02077590 *temp_r0_3 = func_ov000_02077590(0);
 
                         sp1C = *temp_r0_3;
 
