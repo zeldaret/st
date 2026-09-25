@@ -282,10 +282,11 @@ public:
     void func_ov001_020bcbd0(VecFx32 *pVec);
 
     // overlay 17
-    void func_ov017_020bd788(unk32 param1);
+    void func_ov017_020bd788(bool param1);
     void func_ov017_020bdcf4();
-    void func_ov017_020bdd84(unk32 param1, unk32 param2);
-    void func_ov017_020bdf48(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
+    void func_ov017_020bdd84(void *param1, unk32 param2);
+    void func_ov017_020bdf48(void *param1, unk32 param2, unk32 param3, unk32 param4);
+    void func_ov017_020be098();
 
     // overlay 21
     void func_ov021_020ebda0();

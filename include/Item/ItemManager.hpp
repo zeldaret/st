@@ -69,7 +69,7 @@ public:
     // overlay 31
     void func_ov031_020d9bd0();
     void func_ov031_020dba40();
-    void func_ov031_020dbc80(unk32 param1, unk32 param2);
+    void func_ov031_020dbc80(bool param1, bool param2);
 };
 
 class UnkStruct_ItemManager_20_04_08_310 {
@@ -125,8 +125,8 @@ public:
     // overlay 31
     void func_ov031_020d9598();
     void func_ov031_020db338();
-    void func_ov031_020db4f0(unk32 param1, unk32 param2);
-    void func_ov031_020db528(unk32 param1);
+    void func_ov031_020db4f0(bool param1, bool param2);
+    void func_ov031_020db528(void *param1);
 };
 
 class UnkStruct_ItemManager_20_08 {
@@ -151,7 +151,7 @@ public:
     // overlay 31
     void func_ov031_020d9658();
     void func_ov031_020db5b4();
-    void func_ov031_020db704(unk32 param1, unk32 param2);
+    void func_ov031_020db704(bool param1, bool param2);
 };
 
 class UnkStruct_ItemManager_20_0C {
@@ -170,8 +170,8 @@ public:
 
     // overlay 31
     void func_ov031_020db954();
-    void func_ov031_020db958(unk32 param1, unk32 param2);
-    void func_ov031_020dba3c(unk32 param1);
+    void func_ov031_020db958(bool param1, bool param2);
+    void func_ov031_020dba3c(void *param1);
 };
 
 struct UnkStruct_ItemManager_20_10_00 {
@@ -237,8 +237,8 @@ public:
     void func_ov101_02182d5c();
 
     // overlay 102
-    void func_ov102_02182fa8(unk32 param1, unk32 param2);
-    void func_ov102_02182ffc(unk32 param1);
+    void func_ov102_02182fa8(bool param1, bool param2);
+    void func_ov102_02182ffc(void *param1);
 };
 
 struct InvImportData {
@@ -412,8 +412,8 @@ public:
     void func_ov001_020bc2b8();
 
     // overlay 17
-    void func_ov017_020bd2a0(unk32 param1, bool param2);
-    void func_ov017_020bd2e8(unk32 param1);
+    void func_ov017_020bd2a0(bool param1, bool param2);
+    void func_ov017_020bd2e8(void *param1);
 
     // overlay 110
     static u32 GetBmgIDFromItem(ItemId itemId);

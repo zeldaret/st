@@ -147,7 +147,7 @@ bool PlayerLinkActor_9C::func_ov017_020bc640(u32 param1, bool param2, bool param
     return var_r5;
 }
 
-bool UnkStruct_027e0ce0_40::func_ov017_020bc95c(unk32 param1) {
+bool UnkStruct_027e0ce0_40::func_ov017_020bc95c(bool param1) {
     UnkStruct_027e09bc_0C_268 sp8;
     sp8.unk_00   = 0;
     sp8.unk_04   = 0;
@@ -159,7 +159,7 @@ bool UnkStruct_027e0ce0_40::func_ov017_020bc95c(unk32 param1) {
 
     bool var_r4 = false;
 
-    if (param1 == 0) {
+    if (!param1) {
         var_r4 = this->mUnk_014.mTouchControl.mState.touch;
 
         if (!GET_FLAG2(this->mUnk_104, UnkFlags3_5)) {
@@ -180,7 +180,7 @@ bool UnkStruct_027e0ce0_40::func_ov017_020bc95c(unk32 param1) {
     return var_r4;
 }
 
-const bool UnkStruct_027e0ce0_40_Base::UnknownInline1(unk32 param1, unk32 param2) {
+const bool UnkStruct_027e0ce0_40_Base::UnknownInline1(bool param1, unk32 param2) {
     if (this->GetItemMgr() != NULL && !GET_FLAG2(this->mUnk_104, UnkFlags3_5)) {
         if (data_027e0d34->func_ov031_020d9a4c(1) != 0) {
             bool ret = true;
@@ -194,13 +194,13 @@ const bool UnkStruct_027e0ce0_40_Base::UnknownInline1(unk32 param1, unk32 param2
                 if (param2 == 3 && ptr->IsUnknownCheck2(OverlayIndex_RailEdit, OverlayIndex_SceneInit)) {
                     return true;
                 }
-            } else if (param1 == 0 && !(data_027e09b8->mUnk_94 & 8) &&
+            } else if (!param1 && !(data_027e09b8->mUnk_94 & 8) &&
                        ((CHECK_BUTTON_COMBO(this->mButtons.cur, PAD_BUTTON_L | PAD_BUTTON_R) &&
                          data_0204a110.func_01ff9b64() != 3) ||
                         param2 == 3)) {
                 return true;
             }
-        } else if (param1 == 0 && CHECK_BUTTON_COMBO(this->mButtons.press, PAD_BUTTON_L | PAD_BUTTON_R) &&
+        } else if (!param1 && CHECK_BUTTON_COMBO(this->mButtons.press, PAD_BUTTON_L | PAD_BUTTON_R) &&
                    !(gpUICounterManager != NULL && gpUICounterManager->func_ov024_020cd5c0(2) == 0) &&
                    this->mpItemManager->GetCurrentItem() != ItemId_None) {
             data_ov000_020b5214.func_ov000_0206db44(0x66);
@@ -210,14 +210,14 @@ const bool UnkStruct_027e0ce0_40_Base::UnknownInline1(unk32 param1, unk32 param2
     return false;
 }
 
-void UnkStruct_027e0ce0_40::func_ov017_020bca40(unk32 param1, unk32 param2) {
+void UnkStruct_027e0ce0_40::func_ov017_020bca40(bool param1, unk32 param2) {
     UNSET_FLAG2(this->mUnk_104, UnkFlags3_10);
 
     if (this->CheckUnk104(UnkFlags3_0)) {
         if (!data_02049b18.func_020137c8(this->mUnk_000)->unk_00) {
             UNSET_FLAG2(this->mUnk_104, UnkFlags3_0);
             UNSET_FLAG2(this->mUnk_104, UnkFlags3_1);
-        } else if (param1 != 0) {
+        } else if (param1) {
             SET_FLAG2(this->mUnk_104, UnkFlags3_1);
         } else if (data_027e09bc->func_ov000_02077468(this->mUnk_000, 0)->mUnk_230->vfunc_08() == 0) {
             if (this->CheckUnk104(UnkFlags3_1)) {
@@ -233,7 +233,7 @@ void UnkStruct_027e0ce0_40::func_ov017_020bca40(unk32 param1, unk32 param2) {
         if (param2 == 0x2D || data_0204a088->mUnk_08 == OverlayIndex_RailEdit ||
             data_0204a088->mUnk_00 == OverlayIndex_RailEdit) {
             UNSET_FLAG2(this->mUnk_104, UnkFlags3_8);
-        } else if (param1 == 0) {
+        } else if (!param1) {
             if (param2 == 4) {
                 if (!this->mButtons.CheckCurButtonCombo(PAD_BUTTON_L | PAD_BUTTON_R)) {
                     if (data_0204a110.func_01ff9b64() != 4) {
@@ -254,16 +254,16 @@ void UnkStruct_027e0ce0_40::func_ov017_020bca40(unk32 param1, unk32 param2) {
     } else if (GET_FLAG2(this->mUnk_104, UnkFlags3_8) &&
                data_0204a088->IsUnknownCheck3(OverlayIndex_None, OverlayIndex_None) && !data_0204a088->IsUnknownCheck1(6, 1)) {
         UNSET_FLAG2(this->mUnk_104, UnkFlags3_8);
-    } else if (param1 == 0) {
+    } else if (!param1) {
         UNSET_FLAG2(this->mUnk_104, UnkFlags3_8);
     }
 
-    if (param1 != 0) {
+    if (param1) {
         SET_FLAG2(this->mUnk_104, UnkFlags3_2);
     }
 }
 
-bool UnkStruct_027e0ce0_40::func_ov017_020bcde8(unk32 param1) {
+bool UnkStruct_027e0ce0_40::func_ov017_020bcde8(bool param1) {
     s32 temp_r6;
     bool var_r7;
 
@@ -273,7 +273,7 @@ bool UnkStruct_027e0ce0_40::func_ov017_020bcde8(unk32 param1) {
         this->mUnk_094.mUnk_69--;
     }
 
-    if (param1 != 0) {
+    if (param1) {
         this->func_ov017_020bca40(param1, temp_r6);
         this->mUnk_094.func_ov017_020bd478();
 

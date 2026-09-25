@@ -550,9 +550,9 @@ public:
     void func_ov093_0216d0d4();
     void func_ov093_0216d160();
     void func_ov093_0216d1cc(unk32 param1, const UnkStruct_ov001_020c40f4 *param2, bool param3, bool param4);
-    void func_ov093_0216d5b8(unk32 param1);
+    void func_ov093_0216d5b8(bool param1);
     void func_ov093_0216f71c(unk32 *param1);
     void func_ov093_0216de30(unk32 param1, unk32 param2);
-    void func_ov093_0216dec8(unk32 param1);
-    void func_ov093_0216e1a4(unk32 param1);
+    void func_ov093_0216dec8(void *param1);
+    void func_ov093_0216e1a4(void *param1);
 };

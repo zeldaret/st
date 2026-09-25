@@ -128,6 +128,10 @@ public:
     void func_ov021_020eaa08(UnkStruct_027e0ce0_20 *param1);
     void func_ov021_020eaac4();
     void func_ov021_020eab14(unk32 param1, const UnkStruct_ov001_020c40f4 *param2, UnkStruct_027e0ce0_30 *param3);
+    void func_ov021_020eab6c(bool param1);
+    void func_ov021_020eae84();
+    void func_ov021_020eae2c(unk32 param1);
+    void func_ov021_020eb010();
     unk32 func_ov021_020eb870(unk32 param1, unk32 param2, unk32 param3, void *param4);
 };
 
@@ -287,6 +291,9 @@ public:
 
     // overlay 88
     void func_ov088_0216fbc4(unk32 param1, const UnkStruct_ov001_020c40f4 *param2);
+    void func_ov088_0216fca0();
+    void func_ov088_0216ff10();
+    void func_ov088_0216fbf0(unk32 param1);
 };
 
 class UnkStruct_ov031_020f3310_00 {
@@ -468,10 +475,14 @@ public:
 
     // overlay 26
     void func_ov026_020dc8f0();
-    void func_ov026_020de908(UnkStruct_027e0ce0_30_00 *param1);
     void func_ov026_020dc918();
     void func_ov026_020dc9b0();
     void func_ov026_020dc9bc(const UnkStruct_ov001_020c40f4 *param1);
+    void func_ov026_020de19c(unk32 param1, bool param2);
+    void func_ov026_020de45c(void *param1);
+    void func_ov026_020de46c();
+    void func_ov026_020de49c();
+    void func_ov026_020de908(UnkStruct_027e0ce0_30_00 *param1);
 };
 
 class UnkStruct_027e0ce0_40_Base_14 {
@@ -711,7 +722,7 @@ public:
         return ret;
     }
 
-    inline const bool UnknownInline1(unk32 param1, unk32 param2);
+    inline const bool UnknownInline1(bool param1, unk32 param2);
 
     UnkStruct_027e0ce0_40_Base(unk32 param1, void *param2, ItemManager *pItemMgr);
     ~UnkStruct_027e0ce0_40_Base();
@@ -772,11 +783,11 @@ public:
     ~UnkStruct_027e0ce0_40_14C();
 
     // overlay 17
-    void func_ov093_02168e24(unk32 param1);
+    void func_ov093_02168e24(void *param1);
 
     // overlay 93
     void func_ov093_02168850();
-    bool func_ov092_021689e8(unk32 param1, UnkStruct_027e0ce0_40 *param2, PlayerLinkActor *pPlayer, PlayerActorBase *pZelda);
+    bool func_ov092_021689e8(bool param1, UnkStruct_027e0ce0_40 *param2, PlayerLinkActor *pPlayer, PlayerActorBase *pZelda);
 };
 
 class UnkStruct_027e0ce0_40_150 {
@@ -817,9 +828,9 @@ public:
     void func_ov000_02088060(bool param1);
 
     // overlay 17
-    bool func_ov017_020bc95c(unk32 param1);
-    void func_ov017_020bca40(unk32 param1, unk32 param2);
-    bool func_ov017_020bcde8(unk32 param1);
+    bool func_ov017_020bc95c(bool param1);
+    void func_ov017_020bca40(bool param1, unk32 param2);
+    bool func_ov017_020bcde8(bool param1);
 
     // overlay 93
     void func_ov093_02168020(unk32 param1);
@@ -834,10 +845,10 @@ public:
                              unk32 param4, ItemManager *pItemMgr, UnkStruct_027e0ce0_30 *param6, bool param7, bool param8);
 
     // overlay 102
-    void func_ov102_0218303c(unk32 param1, ItemManager *pItemMgr);
+    void func_ov102_0218303c(bool param1, ItemManager *pItemMgr);
     void func_ov102_02183180(unk32 param1, bool param2);
-    void func_ov102_021831b4(unk32 param1);
-    void func_ov102_021831f0(unk32 param1);
+    void func_ov102_021831b4(void *param1);
+    void func_ov102_021831f0(void *param1);
 };
 
 union UnkStruct_027e0478 {
@@ -919,6 +930,7 @@ public:
 
     // overlay 17
     void func_ov017_020bd4a0(unk32 param1, bool param2);
+    void func_ov017_020bd568(unk32 param1);
     void func_ov017_020bd5c4(void *param1);
     void func_ov017_020bd5dc(void *param1);
     void func_ov017_020bd644(void *param1);

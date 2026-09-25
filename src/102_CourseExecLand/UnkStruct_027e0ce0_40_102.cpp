@@ -130,7 +130,7 @@ void UnkStruct_027e0ce0_40_108::func_ov102_02182e54(unk32 param1, VecFx32 *param
     this->mUnk_40++;
 }
 
-void UnkStruct_ItemManager_20::func_ov102_02182fa8(unk32 param1, unk32 param2) {
+void UnkStruct_ItemManager_20::func_ov102_02182fa8(bool param1, bool param2) {
     this->mUnk_00->func_ov031_020dbc80(param1, param2);
     this->mUnk_04->func_ov031_020db4f0(param1, param2);
     this->mUnk_08->func_ov031_020db704(param1, param2);
@@ -138,7 +138,7 @@ void UnkStruct_ItemManager_20::func_ov102_02182fa8(unk32 param1, unk32 param2) {
     this->mUnk_14.func_ov031_020db7f4();
 }
 
-void UnkStruct_ItemManager_20::func_ov102_02182ffc(unk32 param1) {
+void UnkStruct_ItemManager_20::func_ov102_02182ffc(void *param1) {
     if (!data_027e09b8->func_01ffd420()) {
         this->mUnk_04->func_ov031_020db528(param1);
     }
@@ -146,7 +146,7 @@ void UnkStruct_ItemManager_20::func_ov102_02182ffc(unk32 param1) {
     this->mUnk_0C->func_ov031_020dba3c(param1);
 }
 
-void UnkStruct_027e0ce0_40::func_ov102_0218303c(unk32 param1, ItemManager *pItemMgr) {
+void UnkStruct_027e0ce0_40::func_ov102_0218303c(bool param1, ItemManager *pItemMgr) {
     bool temp_r2;
     bool var_r1;
     UnkStruct_027e0ce0_40_150 *temp_r1;
@@ -206,7 +206,7 @@ void UnkStruct_027e0ce0_40::func_ov102_02183180(unk32 param1, bool param2) {
     }
 }
 
-void UnkStruct_027e0ce0_40::func_ov102_021831b4(unk32 param1) {
+void UnkStruct_027e0ce0_40::func_ov102_021831b4(void *param1) {
     this->mUnk_07C.func_ov017_020be434();
     this->mPlayer.func_ov017_020bdd84(param1, 0);
 
@@ -215,7 +215,7 @@ void UnkStruct_027e0ce0_40::func_ov102_021831b4(unk32 param1) {
     }
 }
 
-void UnkStruct_027e0ce0_40::func_ov102_021831f0(unk32 param1) {
+void UnkStruct_027e0ce0_40::func_ov102_021831f0(void *param1) {
     this->mPlayer.func_ov017_020bdf48(param1, 1, 0, 0);
 
     if (this->mpZelda != NULL) {

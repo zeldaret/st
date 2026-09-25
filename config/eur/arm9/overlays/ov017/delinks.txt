@@ -32,6 +32,7 @@ src/017_CourseExec/UnkStruct_027e0ce0_40_Base_94_017.cpp:
     .text       start:0x020bd300 end:0x020bd4a0
 
 src/017_CourseExec/UnkStruct_027e0ce0_017.cpp:
+    complete
     .text       start:0x020bd4a0 end:0x020bd6b8
 
 src/017_CourseExec/Player/PlayerLinkActor_017.cpp:
