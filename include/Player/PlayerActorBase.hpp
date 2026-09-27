@@ -15,6 +15,7 @@ class Actor_C4;
 class UnkStruct_027e0ce0_30_00;
 class UnkStruct_ov001_020c40f4;
 class PlayerActorBase;
+class PlayerLinkActor_A0_28;
 class ItemManager;
 
 struct ActorGrabParams;
@@ -169,10 +170,9 @@ public:
 };
 
 class PlayerActorBase_38 {
-private:
+public:
     /* 00 */ UnkStruct_PlayerGet_64 mUnk_00;
 
-public:
     PlayerActorBase_38(void *param1) :
         mUnk_00(param1) {
         this->mUnk_00.mUnk_08 = 0;
@@ -194,6 +194,7 @@ public:
     /* 14 */
 
     void func_ov000_02089dc4();
+    void func_ov000_02089f0c(bool param1);
 };
 
 class PlayerActorBase_70_0C {
@@ -345,7 +346,7 @@ struct UnkStruct_func_ov000_020830d4 {
 };
 
 class PlayerActorBase_70 {
-private:
+public:
     /* 000 */ BOOL mIsNotLink;
     /* 004 */ PlayerCharacter mCharacter;
     /* 008 */ unk32 mUnk_008;
@@ -383,13 +384,15 @@ private:
     /* 15C */ unk32 mUnk_15C;
     /* 160 */
 
-public:
     PlayerActorBase_70(PlayerCharacter character, unk32 param2);
     ~PlayerActorBase_70();
 
     // overlay 0
+    void func_ov000_02082e54();
     void func_ov000_02082e78(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-    void func_ov000_020830d4(UnkAngleStruct param1, u32 param2, u8 param3, unk32 param4);
+    void func_ov000_020830d4(UnkAngleStruct param1, u32 param2, u8 param3, PlayerLinkActor_A0_28 *param4);
+    void func_ov000_020830a4(unk32 param1, PlayerCharacter character, unk32 param3, unk32 param4);
+    void func_ov000_020830a4(unk32 param1, PlayerCharacter character, unk32 param3, unk32 param4, unk32);
 
     // overlay 1
     void func_ov001_020bbe18(unk32 param1, UnkAngleStruct param2, u32 param3, u8 param4);
@@ -430,12 +433,14 @@ struct PlayerActorBase_78_04 {
 };
 
 class PlayerActorBase_78 {
-private:
-    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 00 */ unk32 mUnk_04;
+    /* 00 */ u8 mUnk_08[2]; // bool?
     /* 0C */
 
-public:
     void func_ov000_0205c584(volatile unk32 param1, volatile unk32 param2);
+    void func_ov000_0205c5d0(unk32 param1, PlayerActorBase *pPlayer);
 };
 
 class PlayerLinkActor_9C_34 {
@@ -456,9 +461,16 @@ public:
     /* 008 */ ActorRef mUnk_008; //! TODO: confirm type
     /* 00C */ STRUCT_PAD(0x0C, 0x34);
     /* 034 */ PlayerLinkActor_9C_34 mUnk_034;
-    /* 004 */ STRUCT_PAD(0x50, 0x6C);
+    /* 004 */ STRUCT_PAD(0x50, 0x5A);
+    /* 05A */ UnkAngleStruct mUnk_5A;
+    /* 05C */ STRUCT_PAD(0x5C, 0x6C);
     /* 06C */ VecFx32 mUnk_06C;
-    /* 078 */ STRUCT_PAD(0x78, 0xDC);
+    /* 078 */ STRUCT_PAD(0x78, 0x90);
+    /* 090 */ s16 mUnk_090;
+    /* 090 */ unk16 mUnk_092;
+    /* 094 */ unk32 mUnk_094;
+    /* 098 */ unk16 mUnk_098;
+    /* 094 */ STRUCT_PAD(0x9A, 0xDC);
     /* 0DC */ u16 mUnk_0DC;
     /* 0DE */ unk16 mUnk_0DE;
     /* 0E0 */ unk32 mUnk_0E0;
@@ -485,10 +497,10 @@ public:
 
     // overlay 0
     unk32 func_ov000_02084944();
-    unk32 func_ov000_020849d0(unk32 param1, VecFx32 *param2);
-    unk32 func_ov000_02084ac8(unk32 param1, VecFx32 *param2, unk32 param3, VecFx32 *param4);
+    unk32 func_ov000_020849d0(VecFx32 *pAccel, VecFx32 *pVel);
+    unk32 func_ov000_02084ac8(unk32 param1, VecFx32 *pPos, VecFx32 *pAccel, VecFx32 *pVel);
     void func_ov000_02084c3c(unk32 param1, unk32 param2, VecFx32 *param3, VecFx32 *param4);
-    unk32 func_ov000_02084e58(unk32 param1, u8 param2, VecFx32 *param3, VecFx32 *param4, unk32 param5, VecFx32 *param6,
+    unk32 func_ov000_02084e58(unk32 param1, u8 param2, VecFx32 *param3, VecFx32 *pPos, VecFx32 *pAccel, VecFx32 *pVel,
                               unk32 param7);
     void func_ov000_02085274(unk32 param1, unk32 param2, unk32 param3, VecFx32 *param4, VecFx32 *param5, VecFx32 *param6);
     void func_ov000_02085578(unk32 param1, unk32 param2, unk32 param3, unk32 param4, VecFx32 *param5);
@@ -498,8 +510,8 @@ public:
     void func_ov000_020867f4();
 
     // overlay 17
-    bool func_ov017_020bc640(u32 param1, bool param2, bool param3, u8 param4, u8 param5, unk32 param6, VecFx32 *param7,
-                             VecFx32 *param8);
+    bool func_ov017_020bc640(u32 param1, bool param2, bool param3, u8 param4, u8 param5, VecFx32 *pAccel, VecFx32 *pPos,
+                             VecFx32 *pVel);
 };
 
 class PlayerActorBase {
@@ -537,8 +549,17 @@ public:
     // overlay 0
     void func_ov000_0208c8f8(VecFx32 *pVec);
     void func_ov000_0208c914();
+    void func_ov000_0208cbf0();
+    void func_ov000_0208cc20(VecFx32 *param1);
+    bool func_ov000_0208cc90();
+    unk32 func_ov000_0208d3a8();
+    void func_ov000_0208d3d0(Vec2s *param1, unk32 param2, void *param3);
     void func_ov000_0208d3fc();
+    void func_ov000_0208d60c();
+    bool func_ov000_0208d754();
     void func_ov000_0208d7f0(bool param1);
+    bool func_ov000_0208db08();
+    unk32 func_ov000_0208dc98();
     unk32 func_ov000_0208dd60(UnkStruct_027e0ce0_30_00 *param1);
 
     // overlay 1

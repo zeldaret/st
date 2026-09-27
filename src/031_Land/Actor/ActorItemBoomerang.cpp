@@ -299,12 +299,12 @@ void ActorItemBoomerang::func_ov031_020e52a0() {
     if (this->mUnk_128 == 0x1 || this->mUnk_128 == 0x2) {
         for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_12C; ptr != this->mUnk_12C + 0x3; ++ptr) {
             UnkSystem7_UnkStruct_00 *data = ptr->mUnk_00;
-            if (data == NULL) {
-                continue;
+
+            if (data != NULL) {
+                data->mUnk_28.x = this->mPos.x + data->mUnk_20->mUnk_00->mUnk_04.x;
+                data->mUnk_28.y = this->mPos.y + data->mUnk_20->mUnk_00->mUnk_04.y;
+                data->mUnk_28.z = this->mPos.z + data->mUnk_20->mUnk_00->mUnk_04.z;
             }
-            data->mUnk_28 = this->mPos.x + data->mUnk_20->mUnk_00->mUnk_04.x;
-            data->mUnk_2C = this->mPos.y + data->mUnk_20->mUnk_00->mUnk_04.y;
-            data->mUnk_30 = this->mPos.z + data->mUnk_20->mUnk_00->mUnk_04.z;
         }
         return;
     }

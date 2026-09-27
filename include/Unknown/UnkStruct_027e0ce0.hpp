@@ -129,8 +129,9 @@ public:
     void func_ov021_020eaac4();
     void func_ov021_020eab14(unk32 param1, const UnkStruct_ov001_020c40f4 *param2, UnkStruct_027e0ce0_30 *param3);
     void func_ov021_020eab6c(bool param1);
-    void func_ov021_020eae84();
     void func_ov021_020eae2c(unk32 param1);
+    void func_ov021_020eae84();
+    unk32 func_ov021_020eaef0(unk32 param1, bool param2);
     void func_ov021_020eb010();
     unk32 func_ov021_020eb870(unk32 param1, unk32 param2, unk32 param3, void *param4);
 };
@@ -536,10 +537,6 @@ class UnkStruct_027e0ce0_40_Base_78 {
 public:
     /* 00 */ ActorRef mRef;
     /* 04 */
-
-    const u32 GetData() const {
-        return *(u32 *) this;
-    }
 
     const bool HasValue() const {
         u32 var_r2 = 0;

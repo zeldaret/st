@@ -191,13 +191,21 @@ public:
     ~PlayerLinkActor_A0();
 
     // overlay 0
+    void func_ov000_02091ea0();
     bool func_ov000_02091f08(unk32 param1);
     void func_ov000_020921e4(unk32 param1);
-    void func_ov000_02091ea0();
+    void func_ov000_02092e38();
+    bool func_ov000_0209360c();
+    void func_ov000_02092648(unk32 param1);
+    void func_ov000_02092ea8(unk32 param1, unk32 param2);
+    void func_ov000_02092ecc(void *param1, bool param2);
+    u8 func_ov000_02093650();
+    bool func_ov000_020936c4();
     void func_ov000_020936ec();
     u32 func_ov000_02093718();
     u8 func_ov000_0209378c(); // bool?
     void func_ov000_02093a04();
+    void func_ov000_02093fe8();
 
     // overlay 1
     void func_ov001_020bd2e0();
@@ -217,6 +225,8 @@ public:
 
     PlayerLinkActor_A4(PlayerActorBase *pPlayer, PlayerLinkActor_A0 *param2);
     ~PlayerLinkActor_A4();
+
+    void func_ov000_02089998(bool param1);
 };
 
 class PlayerLinkActor_134 {
@@ -236,6 +246,7 @@ public:
 
     // overlay 31
     void func_ov031_020db0fc();
+    void func_ov031_020db160(bool param1);
 };
 
 class PlayerLinkActor_1B0 : public UnkSystem7 {
@@ -261,8 +272,8 @@ public:
     /* 0B4 */ bool mUnk_0B4;
     /* 0B5 */ bool mUnk_0B5;
     /* 0B6 */ bool mUnk_0B6;
-    /* 0B7 */ bool mUnk_0B7;
-    /* 0B8 */ bool mUnk_0B8;
+    /* 0B7 */ u8 mUnk_0B7;
+    /* 0B8 */ u8 mUnk_0B8;
     /* 0B9 */ bool mUnk_0B9;
     /* 0BA */ bool mUnk_0BA;
     /* 0BB */ bool mUnk_0BB;
@@ -282,10 +293,13 @@ public:
     void func_ov001_020bcbd0(VecFx32 *pVec);
 
     // overlay 17
+    bool func_ov017_020bd6b8();
+    unk32 func_ov017_020bd6e0(bool param1);
+    void func_ov017_020bd758();
     void func_ov017_020bd788(bool param1);
-    void func_ov017_020bdcf4();
+    void func_ov017_020bdcf4(unk32 param1, unk32 param2);
     void func_ov017_020bdd84(void *param1, unk32 param2);
-    void func_ov017_020bdf48(void *param1, unk32 param2, unk32 param3, unk32 param4);
+    void func_ov017_020bdf48(s8 *param1, unk32 param2, void *param3, UnkStruct_ov019_020d24c8_28_258_00 *param4);
     void func_ov017_020be098();
 
     // overlay 21

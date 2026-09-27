@@ -211,6 +211,12 @@ static inline void VecFx32_Init(fx32 x, fx32 y, fx32 z, VecFx32 *dst) {
     dst->z = z;
 }
 
+static inline void VecFx32_Reset(VecFx32 *dst) {
+    dst->x = 0;
+    dst->y = 0;
+    dst->z = 0;
+}
+
 static inline BOOL VecFx32_IsEqual(const VecFx32 *a, const VecFx32 *b) {
     return a->x == b->x && a->y == b->y && a->z == b->z;
 }

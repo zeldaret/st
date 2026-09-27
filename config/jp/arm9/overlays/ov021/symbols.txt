@@ -58,7 +58,7 @@ _ZN21UnkStruct_027e0ce0_2419func_ov021_020eab14EiPK24UnkStruct_ov001_020c40f4P21
 _ZN21UnkStruct_027e0ce0_2419func_ov021_020eab6cEb kind:function(arm,size=0x2c0) addr:0x020ec3ec
 _ZN21UnkStruct_027e0ce0_2419func_ov021_020eae2cEi kind:function(arm,size=0x58) addr:0x020ec6ac
 _ZN21UnkStruct_027e0ce0_2419func_ov021_020eae84Ev kind:function(arm,size=0x6c) addr:0x020ec704
-func_ov021_020ec770 kind:function(arm,size=0xa8) addr:0x020ec770
+_ZN21UnkStruct_027e0ce0_2419func_ov021_020eaef0Eib kind:function(arm,size=0xa8) addr:0x020ec770
 func_ov021_020ec818 kind:function(arm,size=0x78) addr:0x020ec818
 _ZN21UnkStruct_027e0ce0_2419func_ov021_020eb010Ev kind:function(arm,size=0x358) addr:0x020ec890
 func_ov021_020ecbe8 kind:function(arm,size=0x30) addr:0x020ecbe8

@@ -199,7 +199,7 @@ void UnkStruct_027e0ce0_40::func_ov102_0218303c(bool param1, ItemManager *pItemM
 }
 
 void UnkStruct_027e0ce0_40::func_ov102_02183180(unk32 param1, bool param2) {
-    this->mPlayer.func_ov017_020bdcf4();
+    this->mPlayer.func_ov017_020bdcf4(param1, param2);
 
     if (this->mpZelda != NULL) {
         this->mpZelda->func_ov093_0216de30(param1, param2);
@@ -216,7 +216,8 @@ void UnkStruct_027e0ce0_40::func_ov102_021831b4(void *param1) {
 }
 
 void UnkStruct_027e0ce0_40::func_ov102_021831f0(void *param1) {
-    this->mPlayer.func_ov017_020bdf48(param1, 1, 0, 0);
+    //! TODO: determine param1's type
+    this->mPlayer.func_ov017_020bdf48((s8 *) param1, 1, 0, 0);
 
     if (this->mpZelda != NULL) {
         this->mpZelda->func_ov093_0216e1a4(param1);

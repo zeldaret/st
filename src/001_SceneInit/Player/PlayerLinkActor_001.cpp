@@ -17,8 +17,8 @@ PlayerLinkActor::PlayerLinkActor(unk32 param1, ItemManager *pItemMgr, UnkStruct_
     mUnk_0B4(false),
     mUnk_0B5(false),
     mUnk_0B6(false),
-    mUnk_0B7(false),
-    mUnk_0B8(false),
+    mUnk_0B7(0),
+    mUnk_0B8(0),
     mUnk_0B9(false),
     mUnk_0BA(false),
     mUnk_0BB(false),
@@ -55,7 +55,7 @@ void PlayerLinkActor::func_ov001_020bcb70() {
     this->func_ov001_020bc96c();
     this->mUnk_0B4 = false;
     this->mUnk_0B5 = false;
-    this->mUnk_0B8 = false;
+    this->mUnk_0B8 = 0;
     this->mUnk_0A0->func_ov001_020bd2e0();
     this->mUnk_0A4.mUnk_08 = false;
     this->func_ov000_0208d7f0(false);
