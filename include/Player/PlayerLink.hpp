@@ -134,8 +134,7 @@ public:
 
 class PlayerLinkActor_A0_38 {
 public:
-    /* 00 */ unk16 mUnk_00;
-    /* 02 */ unk16 mUnk_02;
+    /* 00 */ Vec2s mUnk_00;
     /* 04 */ PlayerLinkActor_A0_38_04 mUnk_04;
     /* 18 */ PlayerLinkActor_A0_38_18 mUnk_18;
     /* 2C */ Vec2s mUnk_2C;
@@ -146,9 +145,28 @@ public:
     /* 37 */ bool mUnk_37;
     /* 38 */
 
+    const bool UnknownCheck1(u16 flag, s16 pos, s16 min, s16 max) {
+        if (this->mUnk_34 & flag) {
+            if (pos > min) {
+                return true;
+            }
+        } else {
+            if (pos < max) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     PlayerLinkActor_A0_38();
     ~PlayerLinkActor_A0_38();
 
+    // overlay 17
+    void func_ov017_020be0a8(unk32 param1);
+    void func_ov017_020be0e0(s32 param1, VecFx32 *param2, bool param3, bool param4);
+
+    // overlay 24
     void func_ov024_020d19d8();
 };
 

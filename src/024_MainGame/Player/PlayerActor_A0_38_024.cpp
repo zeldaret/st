@@ -120,8 +120,7 @@ void PlayerLinkActor_A0_38_18::vfunc_00() {
 THUMB_BEGIN
 
 PlayerLinkActor_A0_38::PlayerLinkActor_A0_38() :
-    mUnk_00(0xC0),
-    mUnk_02(0x80),
+    mUnk_00(SUBSCREEN_WIDTH / 2, SUBSCREEN_HEIGHT / 2),
     mUnk_04(this),
     mUnk_18(this) {
     this->func_ov024_020d19d8();
