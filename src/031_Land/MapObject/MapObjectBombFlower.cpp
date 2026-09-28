@@ -5,6 +5,7 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
+#include "profile.hpp"
 
 extern "C" fx32 func_01ffb464(fx32);
 extern "C" void func_01ff9218(fx32 *, fx32, fx32);
@@ -30,7 +31,7 @@ MapObjectProfileBombFlower::MapObjectProfileBombFlower() :
 
 // non-matching
 MapObjectBombFlower::MapObjectBombFlower() :
-    mUnk_48(G3d_GetModelPtr(GET_PROFILE(MapObjectProfileBombFlower)->mUnk_20.mUnk_50), 0x0, 0x0),
+    mUnk_48(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfileBombFlower)), 0x0, 0x0),
     mUnk_B4(0x1000),
     mUnk_B8(0x0),
     mUnk_BA(0x0),

@@ -1,6 +1,5 @@
 #include "Actor/ActorUnkRMSW.hpp"
 #include "Actor/ActorId.hpp"
-#include "Actor/Actor_Derived1.hpp"
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
 #include "types.h"
@@ -29,7 +28,7 @@ bool ActorUnkRMSW::vfunc_18(unk32 param1) {
 }
 
 void ActorUnkRMSW::vfunc_20(void) {
-    (*(Actor *) &this->mUnk_158).vfunc_34(); // Not an Actor
+    this->mUnk_158.vfunc_34();
 }
 
 void ActorUnkRMSW::vfunc_24(void) {

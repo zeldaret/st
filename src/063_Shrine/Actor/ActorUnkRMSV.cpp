@@ -2,7 +2,6 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorUnkRMSBase.hpp"
-#include "Actor/Actor_Derived1.hpp"
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
 

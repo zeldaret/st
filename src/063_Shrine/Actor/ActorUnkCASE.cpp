@@ -8,7 +8,6 @@
 #include "Actor/ActorShotArrow.hpp"
 #include "Actor/ActorUnkCANS.hpp"
 #include "Actor/ActorUnkITWP.hpp"
-#include "MapObject/MapObjectProfile_Derived2_20.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -69,6 +68,7 @@ static PTMF<ActorUnkCASE> data_ov063_02163110[0x6] = {ActorUnkCASE::func_ov063_0
 
 DECL_PROFILE(ActorProfileUnkCASE);
 
+// non-matching (profile is smaller than target)
 Actor *ActorProfileUnkCASE::Create() {
     return new(HeapIndex_2) ActorUnkCASE();
 }
@@ -139,7 +139,7 @@ void ActorUnkCASE::func_ov063_0215acec(ActorRef *ref1, ActorRef ref2) {
 }
 
 ActorUnkCASE::ActorUnkCASE() :
-    mUnk_0B0(G3d_GetModelPtr(((MapObjectProfile_Derived2_20 *) GET_PROFILE(ActorProfileUnkCASE)->vfunc_04())->mUnk_50)),
+    mUnk_0B0(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkCASE)->vfunc_04()->mUnk_50)),
     mUnk_120(0),
     mUnk_124(this),
     mUnk_14C(NULL),
@@ -312,6 +312,7 @@ void ActorUnkCASE::vfunc_24() {
     this->vfunc_20();
 }
 
+// non-matching
 void ActorUnkCASE::vfunc_20() {
     mUnk_150.mUnk_1C = 1;
 
@@ -445,6 +446,7 @@ void ActorUnkCASE::vfunc_2C(unk32 param1) {
     }
 }
 
+// non-matching
 void ActorUnkCASE::func_ov063_0215b6c8(VecFx32 *param1, UnkAngleStruct angle) {
     VecFx32 vec = *param1;
     VecFx32_Copy(&vec, &mPos);
@@ -460,6 +462,7 @@ void ActorUnkCASE::func_ov063_0215b724(void) {
     data_027e09a8->func_ov000_02071b30(0x9865, &mPos, 0);
 }
 
+// non-matching
 void ActorUnkCASE::vfunc_10(Cylinder *param1) {
     if (mUnk_14C != NULL) {
         ((ActorUnkCASE *) mUnk_14C)->vfunc_10(param1);
@@ -479,6 +482,7 @@ void ActorUnkCASE::func_ov063_0215b814(ActorRef ref) {
     this->func_ov063_0215aefc(1);
 }
 
+// non-matching
 void ActorUnkCASE::func_ov063_0215b854(void) {
     if (mUnk_14C != NULL) {
         ActorUnkCANS *actorCans = (ActorUnkCANS *) mUnk_14C;
@@ -506,6 +510,7 @@ static inline bool VecFx32_IsZero(VecFx32 *vec) {
     return vec->x == 0 && vec->y == 0 && vec->z == 0;
 }
 
+// non-matching
 void ActorUnkCASE::func_ov063_0215b8e8(VecFx32 *param1) {
 
     if (mUnk_14C != NULL) {

@@ -48,7 +48,7 @@ MapObjectProfileUnkLTRW::MapObjectProfileUnkLTRW() :
 }
 
 MapObjectUnkLTRW::MapObjectUnkLTRW() :
-    mUnk_40(G3d_GetModelPtr(GET_PROFILE(MapObjectProfileUnkLTRW)->mUnk_20.mUnk_50)),
+    mUnk_40(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfileUnkLTRW))),
     mUnk_A0(1),
     mUnk_A4(0),
     mUnk_A6(0),
@@ -57,7 +57,7 @@ MapObjectUnkLTRW::MapObjectUnkLTRW() :
 bool MapObjectUnkLTRW::vfunc_00() {
     mPos.x -= FLOAT_TO_FX32(.5f);
     mPos.z -= FLOAT_TO_FX32(.5f);
-    mUnk_10 = &GET_PROFILE(MapObjectProfileUnkLTRW)->mUnk_D4;
+    mUnk_10 = GET_PROFILE_D4(MapObjectProfileUnkLTRW);
     SET_FLAG(mFlags, MapObjFlag_9);
     mUnk_18[0]       = 0x10;
     mUnk_A8.mUnk_04h = mUnk_20.mUnk_08[0];

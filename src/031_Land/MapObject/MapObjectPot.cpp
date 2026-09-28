@@ -8,6 +8,7 @@
 #include "Unknown/UnkStruct_027e0d38.hpp"
 
 #include "limits.h"
+#include "profile.hpp"
 
 extern "C" MapObject_10_Pot data_ov031_02118010;
 
@@ -43,7 +44,7 @@ ModelRender_ov000_020b198c::ModelRender_ov000_020b198c(G3d_Model *pModel, unk8 p
 
 // non-matching
 MapObjectPot::MapObjectPot() :
-    mUnk_48(G3d_GetModelPtr(GET_PROFILE(MapObjectProfilePot)->mUnk_20.mUnk_50), 0x1) {
+    mUnk_48(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfilePot)), 0x1) {
     this->mUnk_40 = ActorId_NTUB;
     this->mUnk_10 = &data_ov031_02118010;
     SET_FLAG(this->mFlags, MapObjFlag_8);

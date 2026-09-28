@@ -1,6 +1,7 @@
 #define VECFX32_CTORS
 
 #include "MapObject/MapObjectUnkSWSW.hpp"
+#include "profile.hpp"
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorManager.hpp"
@@ -97,7 +98,7 @@ void MapObjectUnkSWSW_40::func_ov032_021210a0(fx32 param1) {
 }
 
 MapObjectUnkSWSW::MapObjectUnkSWSW() :
-    mUnk_040(G3d_GetUnkPtr(GET_PROFILE(MapObjectProfileUnkSWSW)->mUnk_20.mUnk_50, &data_ov032_02121ef4)),
+    mUnk_040(G3d_GetUnkPtr(GET_PROFILE_20_50(MapObjectProfileUnkSWSW), &data_ov032_02121ef4)),
     mUnk_0AC(&this->mUnk_0CC, NULL),
     mUnk_0EC(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.5f), FLOAT_TO_FX32(-0.4202f)),
     mUnk_0F8(NULL),
