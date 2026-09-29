@@ -282,12 +282,12 @@ func_ov000_0205b090 kind:function(arm,size=0x1c) addr:0x0205b090
 func_ov000_0205b0ac kind:function(arm,size=0x20) addr:0x0205b0ac
 func_ov000_0205b0cc kind:function(arm,size=0x7c) addr:0x0205b0cc
 func_ov000_0205b148 kind:function(arm,size=0x84) addr:0x0205b148
-func_ov000_0205b1cc kind:function(arm,size=0xc) addr:0x0205b1cc
+_Z19func_ov000_0205b1ccP27UnkStruct_ov000_020b1c10_10Pii kind:function(arm,size=0xc) addr:0x0205b1cc
 func_ov000_0205b1d8 kind:function(arm,size=0x4c) addr:0x0205b1d8
 func_ov000_0205b224 kind:function(arm,size=0xb0) addr:0x0205b224
 func_ov000_0205b2d4 kind:function(arm,size=0x50) addr:0x0205b2d4
-func_ov000_0205b324 kind:function(arm,size=0x50) addr:0x0205b324
-func_ov000_0205b374 kind:function(arm,size=0x18) addr:0x0205b374
+_ZN24UnkStruct_ov000_020b1c10C1EPii kind:function(arm,size=0x50) addr:0x0205b324
+_ZN24UnkStruct_ov000_020b1c108vfunc_00Ev kind:function(arm,size=0x18) addr:0x0205b374
 func_ov000_0205b38c kind:function(arm,size=0x10) addr:0x0205b38c
 func_ov000_0205b39c kind:function(arm,size=0x58) addr:0x0205b39c
 func_ov000_0205b3f4 kind:function(arm,size=0xc0) addr:0x0205b3f4
@@ -1253,7 +1253,7 @@ func_ov000_020781d4 kind:function(arm,size=0x14) addr:0x020781d4
 func_ov000_020781e8 kind:function(arm,size=0x48) addr:0x020781e8
 _ZN21UnkStruct_027e09bc_0C19func_ov000_02078230Ei kind:function(arm,size=0xe4) addr:0x02078230
 func_ov000_02078314 kind:function(arm,size=0x38) addr:0x02078314
-_ZN21UnkStruct_027e09bc_0C19func_ov000_0207834cEP7VecFx32ii kind:function(arm,size=0x40) addr:0x0207834c
+_ZN21UnkStruct_027e09bc_0C19func_ov000_0207834cEP7VecFx32Pvi kind:function(arm,size=0x40) addr:0x0207834c
 func_ov000_0207838c kind:function(arm,size=0x70) addr:0x0207838c
 func_ov000_020783fc kind:function(arm,size=0x88) addr:0x020783fc
 func_ov000_02078484 kind:function(arm,size=0x40) addr:0x02078484
@@ -3426,7 +3426,7 @@ data_ov000_020b1b9c kind:data(any) addr:0x020b1b9c
 data_ov000_020b1ba4 kind:data(any) addr:0x020b1ba4
 data_ov000_020b1bbc kind:data(any) addr:0x020b1bbc
 data_ov000_020b1be4 kind:data(any) addr:0x020b1be4
-data_ov000_020b1c10 kind:data(any) addr:0x020b1c10
+_ZTV24UnkStruct_ov000_020b1c10 kind:data(any) addr:0x020b1c08
 data_ov000_020b1c14 kind:data(any) addr:0x020b1c14
 data_ov000_020b1c18 kind:data(any) addr:0x020b1c18
 data_ov000_020b1c1c kind:data(any) addr:0x020b1c1c

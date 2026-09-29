@@ -126,7 +126,7 @@ void MapObjectDoorDangerSpawn::vfunc_04(void) {
         UnkStruct_027e09bc_0C *uVar5 = data_027e09bc->mUnk_04[2];
         MapObjectDoorDangerSpawn::func_ov031_020fe5fc(&auStack_20, this);
 
-        uVar5->func_ov000_0207834c(&auStack_20, (unk32) func_ov000_02077590(0), 0);
+        uVar5->func_ov000_0207834c(&auStack_20, func_ov000_02077590(0), 0);
     }
 }
 
