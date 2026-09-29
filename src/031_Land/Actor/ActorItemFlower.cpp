@@ -60,7 +60,7 @@ void ActorItemFlower::vfunc_20() {
     CALL_PTMF(PTMF<ActorItemFlower>, data_ov031_021141b4[this->mState]);
 }
 
-void ActorItemFlower::vfunc_2C(unk32 param1) {
+void ActorItemFlower::vfunc_2C(Actor_vfunc_30 *param1) {
     if (!this->func_01fff5d0(param1, 0x0)) {
         return;
     }

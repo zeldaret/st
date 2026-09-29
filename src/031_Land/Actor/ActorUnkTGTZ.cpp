@@ -338,7 +338,7 @@ void ActorUnkTGTZ::vfunc_30(Actor_vfunc_30 *param1) {
         var = 0x0;
     }
 
-    if (param1->mUnk_00 != var || param1->mUnk_01 != var) {
+    if (param1->mUnk_00.unk_00 != var || param1->mUnk_00.unk_01 != var) {
         return;
     }
     Vec2s vec2s;
@@ -365,7 +365,7 @@ void ActorUnkTGTZ::vfunc_30(Actor_vfunc_30 *param1) {
     data_0204af1c.func_0201aa44(this->mUnk_1C8, NULL, 0x2, NULL);
 }
 
-void ActorUnkTGTZ::vfunc_2C(unk32 param1) {
+void ActorUnkTGTZ::vfunc_2C(Actor_vfunc_30 *param1) {
     if (!this->func_01fff5d0(param1, 0x0)) {
         return;
     }

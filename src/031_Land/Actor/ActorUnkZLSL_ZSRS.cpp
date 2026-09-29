@@ -856,7 +856,7 @@ void ActorUnkZLSL::func_ov031_020ec170() {
     this->mAngle = 0x0;
 }
 
-void ActorUnkZLSL::vfunc_2C(unk32 param1) {
+void ActorUnkZLSL::vfunc_2C(Actor_vfunc_30 *param1) {
     Mat3p sp00;
     if (this->mUnk_28A4.x == FLOAT_TO_FX32(0.0f) && this->mUnk_28A4.y == FLOAT_TO_FX32(0.0f) &&
         this->mUnk_28A4.z == FLOAT_TO_FX32(0.0f)) {

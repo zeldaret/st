@@ -391,7 +391,7 @@ void ActorHeart::func_ov031_020ef570() {
     }
 }
 
-void ActorHeart::vfunc_2C(unk32 param1) {
+void ActorHeart::vfunc_2C(Actor_vfunc_30 *param1) {
     VecFx32 iStack_20;
     VecFx32 iStack_2c;
     unk32 auStack_30;

@@ -92,7 +92,7 @@ void ActorUnkROCK::func_ov031_020e8acc() {
     this->func_ov000_020984d0();
 }
 
-void ActorUnkROCK::vfunc_2C(unk32 param1) {
+void ActorUnkROCK::vfunc_2C(Actor_vfunc_30 *param1) {
     if (!this->func_01fff5d0(param1, 0x0)) {
         return;
     }

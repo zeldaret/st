@@ -47,7 +47,7 @@ public:
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
-    /* 30 */ virtual void vfunc_2C(unk32 param1) override;
+    /* 30 */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
     /* 34 */ virtual void vfunc_30(Actor_vfunc_30 *param1) override;
 
     bool IsInternalTimerOut() {

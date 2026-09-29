@@ -272,7 +272,7 @@ void ActorSpinut::vfunc_20() {
     data_027e09c0->func_ov000_0207de98(this->mRef, &stack, this->mUnk_38);
 }
 
-void ActorSpinut::vfunc_2C(unk32 param1) {
+void ActorSpinut::vfunc_2C(Actor_vfunc_30 *param1) {
     if (!this->Actor::func_01fff5d0(param1, 0x0)) {
         return;
     }
@@ -847,10 +847,10 @@ void ActorSpinut::func_ov032_0211b298() {
     this->mUnk_288.y = FLOAT_TO_FX32(0.0f);
 }
 
-void ActorSpinut::func_ov032_0211b37c(Actor *thisx, u16 param1) {
+void ActorSpinut::func_ov032_0211b37c(Actor *thisx, Actor_vfunc_30 *param1) {
     if (thisx->GetActorId() == ActorId_Spinut) {
         ((ActorSpinut *) thisx)->mUnk_294 = true;
-        thisx->mUnk_52                    = param1;
+        thisx->mUnk_52                    = (u16) param1; //! TODO: fake match
         thisx->mUnk_50                    = 0x0;
     }
 }

@@ -232,7 +232,7 @@ void ActorItemTornado::vfunc_24() {
 }
 
 // non-matching
-void ActorItemTornado::vfunc_2C(unk32 param1) {
+void ActorItemTornado::vfunc_2C(Actor_vfunc_30 *param1) {
     if (this->mUnk_1DC <= 0x0) {
         return;
     }

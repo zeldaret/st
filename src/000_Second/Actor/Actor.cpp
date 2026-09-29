@@ -56,9 +56,9 @@ void Actor::vfunc_20() {}
 
 void Actor::vfunc_24() {}
 
-void Actor::vfunc_28() {}
+void Actor::vfunc_28(Actor_vfunc_30 *param1) {}
 
-void Actor::vfunc_2C(unk32 param1) {}
+void Actor::vfunc_2C(Actor_vfunc_30 *param1) {}
 
 void Actor::vfunc_30(Actor_vfunc_30 *param1) {}
 

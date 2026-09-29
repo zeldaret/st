@@ -12,7 +12,7 @@ class EntranceInfo;
 
 class ActorManager : public AutoInstance<ActorManager> {
 public:
-    typedef void (*UnkCallback1)(Actor *, u16);
+    typedef void (*UnkCallback1)(Actor *, Actor_vfunc_30 *);
 
 public:
     /* 00 */ Actor **mActorTable;
@@ -75,10 +75,11 @@ public:
     // overlay 17
     void func_ov017_020becd8(unk32 param1);
 
-    static void func_ov017_020bee64(Actor *pActor, u16 param2);
-    static void func_ov017_020bee84(Actor *pActor, u16 param2);
-    static void func_ov017_020beea4(Actor *pActor, u16 param2);
-    static void func_ov017_020beecc(Actor *pActor, u16 param2);
+    static void func_ov017_020bee20(Actor *pActor, Actor_vfunc_30 *param2);
+    static void func_ov017_020bee64(Actor *pActor, Actor_vfunc_30 *param2);
+    static void func_ov017_020bee84(Actor *pActor, Actor_vfunc_30 *param2);
+    static void func_ov017_020beea4(Actor *pActor, Actor_vfunc_30 *param2);
+    static void func_ov017_020beecc(Actor *pActor, Actor_vfunc_30 *param2);
 };
 
 extern ActorManager *gpActorManager;

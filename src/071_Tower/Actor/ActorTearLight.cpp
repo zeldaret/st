@@ -144,7 +144,7 @@ void ActorTearLight::vfunc_24() {
     this->mUnk_104.vfunc_34();
 }
 
-void ActorTearLight::vfunc_2C(unk32 param1) {
+void ActorTearLight::vfunc_2C(Actor_vfunc_30 *param1) {
     if (!this->func_01fff5d0(param1, 0x0)) {
         return;
     }

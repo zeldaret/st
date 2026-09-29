@@ -146,7 +146,7 @@ public:
     /* 1C */ virtual void vfunc_1C(void) override;
     /* 20 */ virtual void vfunc_20(void) override;
     /* 24 */ virtual void vfunc_24(void) override;
-    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
 
     void func_ov063_02158424(void);
     void func_ov063_02158448(unk32 param1);

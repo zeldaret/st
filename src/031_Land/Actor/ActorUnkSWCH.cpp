@@ -38,7 +38,7 @@ void ActorUnkSWCH::vfunc_20() {
     this->func_ov000_02098a88(0x1, 0x1);
 }
 
-void ActorUnkSWCH::vfunc_2C(unk32 param1) {
+void ActorUnkSWCH::vfunc_2C(Actor_vfunc_30 *param1) {
     if (this->func_01fff5d0(param1, 0x0)) {
         return;
     }

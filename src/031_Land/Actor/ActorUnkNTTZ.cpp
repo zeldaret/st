@@ -27,7 +27,7 @@ bool ActorUnkNTTZ::vfunc_18(unk32 param1) {
 
 void ActorUnkNTTZ::vfunc_20() {}
 
-void ActorUnkNTTZ::vfunc_2C(unk32 param1) {}
+void ActorUnkNTTZ::vfunc_2C(Actor_vfunc_30 *param1) {}
 
 void ActorUnkNTTZ::func_ov031_020f61a0() {
     if (this->mUnk_5C.mUnk_28.type == 0x0) {

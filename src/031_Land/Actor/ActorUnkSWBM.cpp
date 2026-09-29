@@ -307,7 +307,7 @@ void ActorUnkSWBM::func_ov031_020e718c(VecFx32 *param0, Mat3p *param1, s32 param
     REG_GFX_FIFO_MATRIX_POP   = true;
 }
 
-void ActorUnkSWBM::vfunc_2C(unk32 param1) {
+void ActorUnkSWBM::vfunc_2C(Actor_vfunc_30 *param1) {
     if (this->mState == ActorUnkSWBMState_2) {
         return;
     }

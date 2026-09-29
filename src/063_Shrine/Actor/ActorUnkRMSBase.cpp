@@ -24,7 +24,7 @@ void ActorUnkRMSBase::vfunc_24() {
     this->vfunc_20();
 }
 
-void ActorUnkRMSBase::vfunc_2C(unk32 param1) {
+void ActorUnkRMSBase::vfunc_2C(Actor_vfunc_30 *param1) {
     UnkStruct_ov031_02114870::vfunc_2C(param1);
 
     if (mUnk_154) {

@@ -51,7 +51,7 @@ void ActorUnkEFSB::vfunc_54(unk32 param1) {
     this->mUnk_094 = param1;
 }
 
-void ActorUnkEFSB::vfunc_2C(unk32 param1) {
+void ActorUnkEFSB::vfunc_2C(Actor_vfunc_30 *param1) {
     VecFx32 vec;
 
     VecFx32_Init(FLOAT_TO_FX32(1.0f), FLOAT_TO_FX32(1.0f), FLOAT_TO_FX32(1.0f), &vec);

@@ -52,6 +52,7 @@ src/017_CourseExec/CargoManager_017.cpp:
     .rodata     start:0x020c3dc0 end:0x020c3dec
 
 src/017_CourseExec/Actor/ActorManager_017.cpp:
+    complete
     .text       start:0x020becd8 end:0x020beeec
 
 src/017_CourseExec/Actor/Actor_017.cpp:

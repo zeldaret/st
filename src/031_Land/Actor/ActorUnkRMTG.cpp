@@ -43,6 +43,6 @@ void ActorUnkRMTG::vfunc_1C() {
     data->func_ov000_0207834c(&this->mPos, func_ov000_02077590(0x7), 0x0);
 }
 
-void ActorUnkRMTG::vfunc_2C(unk32 param1) {
+void ActorUnkRMTG::vfunc_2C(Actor_vfunc_30 *param1) {
     this->mUnk_94.vfunc_18(&this->mPos);
 }

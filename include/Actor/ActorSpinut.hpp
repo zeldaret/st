@@ -130,7 +130,7 @@ public:
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 1C */ virtual void vfunc_1C() override;
     /* 20 */ virtual void vfunc_20() override;
-    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
     /* 4C */ virtual ~ActorSpinut() override;
     /* 54 */ virtual void vfunc_54(unk32 param1) override;
 
@@ -167,7 +167,7 @@ public:
     void func_ov032_0211b190(s32 param1, s32 param2);
     void func_ov032_0211b1e0();
     void func_ov032_0211b298();
-    static void func_ov032_0211b37c(Actor *thisx, u16 param1);
+    static void func_ov032_0211b37c(Actor *thisx, Actor_vfunc_30 *param1);
     void func_ov032_0211b3b0();
 };
 

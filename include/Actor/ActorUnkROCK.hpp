@@ -28,7 +28,7 @@ public:
 
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
-    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
     /* 38 */ virtual bool Grab(ActorGrabParams param1) override;
     /* 38 */ virtual bool Drop(ActorGrabParams param1, const VecFx32 *param2) override;
 

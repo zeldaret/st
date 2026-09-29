@@ -505,7 +505,7 @@ void ActorBomb::func_ov031_020e2134() {
     }
 }
 
-void ActorBomb::vfunc_2C(unk32 param1) {
+void ActorBomb::vfunc_2C(Actor_vfunc_30 *param1) {
     if (!this->Actor::func_01fff5d0(param1, 0x0)) {
         for (ActorBomb_unk *ptr = this->mUnk_164; ptr != this->mUnk_164 + ARRAY_LEN(this->mUnk_164); ptr++) {
             ptr->func_ov000_020a0334();

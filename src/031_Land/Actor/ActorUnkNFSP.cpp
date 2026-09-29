@@ -172,7 +172,7 @@ void ActorUnkNFSP::vfunc_54(unk32 param1) {
     }
 }
 
-void ActorUnkNFSP::vfunc_2C(unk32 param1) {}
+void ActorUnkNFSP::vfunc_2C(Actor_vfunc_30 *param1) {}
 
 void ActorUnkNFSP::func_ov031_020fbb8c() {
     this->mUnk_3C = &this->mUnk_A0;

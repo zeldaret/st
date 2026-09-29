@@ -63,7 +63,7 @@ void ActorPot::vfunc_20() {
     CALL_PTMF(PTMF<ActorPot>, data_ov031_021140a0[this->mState]);
 }
 
-void ActorPot::vfunc_2C(unk32 param1) {
+void ActorPot::vfunc_2C(Actor_vfunc_30 *param1) {
     if (!this->func_01fff5d0(param1, 0x0)) {
         return;
     }

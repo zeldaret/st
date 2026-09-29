@@ -281,7 +281,7 @@ public:
     /* 00 */ virtual void GetOffsetPos(VecFx32 *pPos) const override;
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
-    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
     /* 4C */ virtual ~ActorUnkZLSL() override;
     /* 58 */ virtual void vfunc_58(ActorState state) override;
     /* 68 */ virtual void vfunc_68() override;

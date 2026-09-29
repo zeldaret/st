@@ -444,7 +444,7 @@ void ActorUnkCANS::vfunc_20(void) {
     }
 }
 
-void ActorUnkCANS::vfunc_2C(unk32 param1) {
+void ActorUnkCANS::vfunc_2C(Actor_vfunc_30 *param1) {
     if (!this->func_01fff5d0(param1, 0)) {
         return;
     }
