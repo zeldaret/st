@@ -49,6 +49,24 @@ extern "C" {
 #define CLAMP2(x, min, max) ((x) > (max) ? (max) : (x) >= (min) ? (x) : (min))
 #define POW_2(x) (x * x)
 
+static inline const s32 ClampValue(s32 value, const s32 min, const s32 max) {
+    if (value > max) {
+        value = max;
+    } else if (value < min) {
+        value = min;
+    }
+
+    return value;
+}
+
+static inline void ClampValue16(s16 *value, const s32 min, const s32 max) {
+    if (*value > max) {
+        *value = max;
+    } else if (*value < min) {
+        *value = min;
+    }
+}
+
 #define INT_TO_FX32(n) ((s32) ((n) << FX32_SHIFT))
 #define FLOAT_TO_FX32(n) ((s32) (((n) * 8192 + 1) / 2))
 #define ROUND_FX32(n) (((s32) (n) + 0x800) >> FX32_SHIFT)

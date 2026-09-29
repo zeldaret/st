@@ -489,14 +489,20 @@ public:
 class UnkStruct_027e0ce0_40_Base_14 {
 public:
     /* 00 */ TouchControl mTouchControl;
-    /* 22 */ STRUCT_PAD(0x22, 0x3C);
+    /* 22 */ STRUCT_PAD(0x22, 0x24);
+    /* 24 */ VecFx32 mUnk_24;
+    /* 30 */ VecFx32 mUnk_30;
     /* 3C */ unk32 mUnk_3C;
-    /* 40 */ unk16 mUnk_40;
+    /* 40 */ s16 mUnk_40;
     /* 42 */ unk16 mUnk_42;
     /* 44 */ unk16 mUnk_44;
     /* 46 */ unk16 mUnk_46;
     /* 48 */ Vec2s mUnk_48;
-    /* 4C */ STRUCT_PAD(0x4C, 0x60);
+    /* 4C */ Vec2s mUnk_4C;
+    /* 50 */ unk32 mUnk_50;
+    /* 54 */ unk32 mUnk_54;
+    /* 58 */ unk32 mUnk_58;
+    /* 5C */ unk16 mUnk_5C;
     /* 60 */
 
     UnkStruct_027e0ce0_40_Base_14() :
@@ -508,6 +514,7 @@ public:
 
     // overlay 0
     void func_ov000_02096a9c();
+    void func_ov000_02096af4();
     unk32 func_ov000_02096b1c(BOOL param1);
 
     // overlay 17
@@ -554,13 +561,22 @@ public:
     u8 func_ov031_020dcfb4(void *param1);
 };
 
+struct UnkParamStruct1 {
+    u32 unk_00;
+};
+
 class UnkStruct_027e0ce0_40_Base_7C_04 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0xB4);
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ STRUCT_PAD(0x04, 0xB4);
     /* B4 */
 
     UnkStruct_027e0ce0_40_Base_7C_04();
     ~UnkStruct_027e0ce0_40_Base_7C_04();
+
+    // overlay 31
+    void func_ov031_020dca3c();
+    void func_ov031_020dcb60(UnkParamStruct1 param1);
 };
 
 class UnkStruct_027e0ce0_40_Base_7C {
@@ -575,10 +591,12 @@ public:
     ~UnkStruct_027e0ce0_40_Base_7C();
 
     // overlay 0
+    void func_ov000_020968b8();
     void func_ov000_020968e0();
+    bool func_ov000_020968fc();
 
     // overlay 17
-    void func_ov017_020be2ec(UnkStruct_027e0ce0_40_Base_14 *param1, bool param2, unk32 param3);
+    void func_ov017_020be2ec(UnkStruct_027e0ce0_40_Base_14 *param1, bool param2, UnkParamStruct1 param3);
     void func_ov017_020be434();
 };
 

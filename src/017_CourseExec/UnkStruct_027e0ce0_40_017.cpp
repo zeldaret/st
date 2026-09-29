@@ -214,7 +214,7 @@ void UnkStruct_027e0ce0_40::func_ov017_020bca40(bool param1, unk32 param2) {
     UNSET_FLAG2(this->mUnk_104, UnkFlags3_10);
 
     if (this->CheckUnk104(UnkFlags3_0)) {
-        if (!data_02049b18.func_020137c8(this->mUnk_000)->unk_00) {
+        if (!data_02049b18.func_020137c8(this->mUnk_000)->touch) {
             UNSET_FLAG2(this->mUnk_104, UnkFlags3_0);
             UNSET_FLAG2(this->mUnk_104, UnkFlags3_1);
         } else if (param1) {
@@ -333,8 +333,8 @@ bool UnkStruct_027e0ce0_40::func_ov017_020bcde8(bool param1) {
         var_r10 = false;
     }
 
-    u32 sp0;
-    u32 *ptr = (u32 *) &sp0;
+    UnkParamStruct1 sp0;
+    UnkParamStruct1 *ptr = (UnkParamStruct1 *) &sp0;
     func_ov000_0208a7a4(ptr, &this->mUnk_094);
     this->mUnk_07C.func_ov017_020be2ec(&this->mUnk_014, var_r10, *ptr);
 

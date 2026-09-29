@@ -101,7 +101,7 @@ public:
 class UnkStruct_027e0cf8_08 {
 public:
     /* 000 */ UnkStruct_027e0cf8_08_00 *mUnk_000;
-    /* 004 */ unk32 mUnk_004;
+    /* 004 */ unk32 mUnk_004; // volatile?
     /* 008 */ unk32 mUnk_008;
     /* 00C */ unk32 mUnk_00C;
     /* 010 */ UnkArrayDataType1 mUnk_010;
@@ -114,6 +114,10 @@ public:
     UnkStruct_027e0cf8_08();
     ~UnkStruct_027e0cf8_08();
 
+    // overlay 17
+    void func_ov017_020be8a8();
+
+    // overlay 24
     void func_ov024_020d32b4(unk8 *param1);
     void func_ov024_020d32d8();
     void func_ov024_020d32e8(Vec2s *param1);

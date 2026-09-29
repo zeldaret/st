@@ -36,10 +36,10 @@ _ZN15PlayerLinkActor19func_ov017_020bdf48EPciPvP34UnkStruct_ov019_020d24c8_28_25
 _ZN15PlayerLinkActor19func_ov017_020be098Ev kind:function(arm,size=0x10) addr:0x020be098
 _ZN21PlayerLinkActor_A0_3819func_ov017_020be0a8Ei kind:function(arm,size=0x38) addr:0x020be0a8
 _ZN21PlayerLinkActor_A0_3819func_ov017_020be0e0EiP7VecFx32bb kind:function(arm,size=0x20c) addr:0x020be0e0
-_ZN29UnkStruct_027e0ce0_40_Base_7C19func_ov017_020be2ecEP29UnkStruct_027e0ce0_40_Base_14bi kind:function(arm,size=0x148) addr:0x020be2ec
+_ZN29UnkStruct_027e0ce0_40_Base_7C19func_ov017_020be2ecEP29UnkStruct_027e0ce0_40_Base_14b15UnkParamStruct1 kind:function(arm,size=0x148) addr:0x020be2ec
 _ZN29UnkStruct_027e0ce0_40_Base_7C19func_ov017_020be434Ev kind:function(arm,size=0x18) addr:0x020be434
 _ZN29UnkStruct_027e0ce0_40_Base_1419func_ov017_020be44cEib kind:function(arm,size=0x45c) addr:0x020be44c
-func_ov017_020be8a8 kind:function(arm,size=0x124) addr:0x020be8a8
+_ZN21UnkStruct_027e0cf8_0819func_ov017_020be8a8Ev kind:function(arm,size=0x124) addr:0x020be8a8
 _ZN12CargoManager8DoUpdateEv kind:function(arm,size=0x18) addr:0x020be9cc
 _ZN12CargoManager15IsNotUsingTimerEi kind:function(arm,size=0x30) addr:0x020be9e4
 _ZN12CargoManager6UpdateEv kind:function(arm,size=0x140) addr:0x020bea14

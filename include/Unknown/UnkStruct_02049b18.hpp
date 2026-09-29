@@ -13,10 +13,6 @@ public:
     UnkStruct_02049b18_06();
 };
 
-struct UnkReturnStruct_020137c8 {
-    bool unk_00;
-};
-
 class UnkStruct_02049b18 {
 public:
     /* 00 */ Input mButtons;
@@ -30,7 +26,7 @@ public:
     UnkStruct_02049b18();
     ~UnkStruct_02049b18();
     void func_02013768();
-    UnkReturnStruct_020137c8 *func_020137c8(unk32 param1);
+    TouchState *func_020137c8(unk32 param1);
     void func_02013840(u16 param1, unk32 param2);
     void func_020138f4(unk32 param1);
 };
