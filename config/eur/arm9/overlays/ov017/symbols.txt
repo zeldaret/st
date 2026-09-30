@@ -84,7 +84,7 @@ _ZN5Actor19func_ov017_020bfd9cEP5Vec2siP21UnkStruct_027e09bc_0CP4AABB kind:funct
 _ZN5Actor8vfunc_48Ei kind:function(arm,size=0x80) addr:0x020bfecc
 _ZN14ActorEventIcon8vfunc_24Ev kind:function(arm,size=0xc) addr:0x020bff4c
 _ZN14ActorEventIcon8vfunc_30EP14Actor_vfunc_30 kind:function(arm,size=0xd4) addr:0x020bff58
-func_ov017_020c002c kind:function(arm,size=0x50) addr:0x020c002c
+_ZN14ActorEventIcon19func_ov017_020c002cEv kind:function(arm,size=0x50) addr:0x020c002c
 func_ov017_020c007c kind:function(arm,size=0x60) addr:0x020c007c
 _ZN16MapObjectManager19func_ov017_020c00dcEi kind:function(arm,size=0xec) addr:0x020c00dc
 _ZN16MapObjectManager19func_ov017_020c01c8EPv kind:function(arm,size=0x4) addr:0x020c01c8

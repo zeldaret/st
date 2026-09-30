@@ -60,6 +60,7 @@ src/017_CourseExec/Actor/Actor_017.cpp:
     .text       start:0x020beeec end:0x020bff4c
 
 src/017_CourseExec/Actor/ActorEventIcon_017.cpp:
+    complete
     .text       start:0x020bff4c end:0x020c007c
 
 src/017_CourseExec/MapObject/MapObjectManager_017.cpp:

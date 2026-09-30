@@ -10,7 +10,7 @@ class ActorEventIcon : public Actor {
 public:
     /* 000 (base) */
     /* 094 */ CellAnimObject mUnk_094; // event icon
-    /* 10C */ unk16 mUnk_10C;
+    /* 10C */ u16 mUnk_10C;
     /* 110 */ unk16 mUnk_10E; // pad?
 
     ActorEventIcon();
@@ -21,7 +21,11 @@ public:
     /* 30 */ virtual void vfunc_30(Actor_vfunc_30 *param1) override;
     /* 4C */ virtual ~ActorEventIcon() override;
 
+    // overlay 0
     void func_ov000_0209c014(void);
+
+    // overlay 17
+    void func_ov017_020c002c();
 };
 
 class ActorProfileEventIcon : public ActorProfile {

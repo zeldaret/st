@@ -1,5 +1,6 @@
 #pragma once
 
+#include "global.h"
 #include <nitro/math.h>
 #include <types.h>
 
@@ -42,9 +43,14 @@ typedef struct UnkAnimStruct1 {
     /* 12 */ unk16 unk_12;
 } UnkAnimStruct1; // size = 0x14
 
+typedef struct UnkAnimStruct2 {
+    /* 00 */ STRUCT_PAD(0x00, 0x0A);
+    /* 0A */ unk16 unk_0A;
+} UnkAnimStruct2;
+
 typedef struct CellAnim {
     /* 00 */ AnimController animCtrl;
-    /* 30 */ void *unk_30; // pointer to somewhere inside "CEBK"
+    /* 30 */ UnkAnimStruct2 *unk_30; // pointer to somewhere inside "CEBK"
     /* 34 */ void *unk_34;
     /* 38 */ unk32 unk_38;
     /* 3C */ UnkAnimStruct1 unk_3C;
