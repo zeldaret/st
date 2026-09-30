@@ -290,11 +290,11 @@ void ActorShotArrow::vfunc_20() {
 // non-matching
 void ActorShotArrow::func_ov031_020f1a64() {
     if (this->mUnk_5C.mParams[1] == 0x1 || this->mUnk_5C.mParams[1] == 0x4) {
-        this->mUnk_50 = 0x0;
-        this->mUnk_52 = 0x78;
+        this->mTimer    = 0x0;
+        this->mTimerMax = 0x78;
     } else {
-        this->mUnk_50 = 0x0;
-        this->mUnk_52 = 0x3C;
+        this->mTimer    = 0x0;
+        this->mTimerMax = 0x3C;
     }
 
     unk32 value_func_020f2270 = this->func_ov031_020f2270();
@@ -395,9 +395,9 @@ void ActorShotArrow::func_ov031_020f1dd4() {
     this->mUnk_174 = 0x1555;
 
     data_027e09a8->func_ov000_02071b30(0x8D7A, &this->mPos, 0);
-    this->mUnk_16C = 0;
-    this->mUnk_50  = 0;
-    this->mUnk_52  = this->mUnk_258;
+    this->mUnk_16C  = 0;
+    this->mTimer    = 0;
+    this->mTimerMax = this->mUnk_258;
 }
 
 void ActorShotArrow::func_ov031_020f1e3c() {
@@ -407,8 +407,8 @@ void ActorShotArrow::func_ov031_020f1e3c() {
             return;
         }
 
-        this->mUnk_52 = this->mUnk_258;
-        this->mUnk_50 = 0;
+        this->mTimerMax = this->mUnk_258;
+        this->mTimer    = 0;
     }
 
     Actor *targetActor = this->mUnk_1C8.mUnk_00;

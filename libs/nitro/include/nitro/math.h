@@ -239,6 +239,10 @@ static inline BOOL VecFx32_IsEqual(const VecFx32 *a, const VecFx32 *b) {
     return a->x == b->x && a->y == b->y && a->z == b->z;
 }
 
+static inline bool VecFx32_IsCleared(const VecFx32 *a) {
+    return a->x == 0 && a->y == 0 && a->z == 0;
+}
+
 void Mat2p_InitIdentity(Mat2p *m);
 void Mat2p_InitRotation(Mat2p *m, fx32 sin, fx32 cos);
 void Mat2p_Multiply(Mat2p *a, Mat2p *b, Mat2p *out);

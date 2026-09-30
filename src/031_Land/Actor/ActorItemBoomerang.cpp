@@ -37,9 +37,9 @@ ActorItemBoomerang::ActorItemBoomerang() :
     mUnk_13A(0x0),
     mUnk_13C((u16) 0x8D71),
     mUnk_140(0x1000, 0x0) {
-    this->mState  = ActorItemBoomerangState_0;
-    this->mUnk_52 = 0xFFFF;
-    this->mUnk_50 = 0x0;
+    this->mState    = ActorItemBoomerangState_0;
+    this->mTimerMax = 0xFFFF;
+    this->mTimer    = 0x0;
 }
 
 bool ActorItemBoomerang::vfunc_18(unk32 param1) {
@@ -66,9 +66,9 @@ bool ActorItemBoomerang::vfunc_18(unk32 param1) {
 
 // non-matching
 void ActorItemBoomerang::SetState(ActorState state) {
-    this->mState  = state;
-    this->mUnk_52 = 0xFFFF;
-    this->mUnk_50 = 0;
+    this->mState    = state;
+    this->mTimerMax = 0xFFFF;
+    this->mTimer    = 0;
 }
 
 void ActorItemBoomerang::func_ov031_020e49b0(unk32 param1) {

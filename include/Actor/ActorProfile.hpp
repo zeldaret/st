@@ -15,7 +15,7 @@ public:
     /* 04 */ Cylinder mUnk_04;
     /* 14 */ unk8 mUnk_14;
     /* 15 */ bool mUnk_15;
-    /* 16 */ unk8 mUnk_16;
+    /* 16 */ unk8 mUnk_16[1]; //! TODO: at least one element
     /* 17 */ unk8 mUnk_17;
     /* 18 */ unk8 mUnk_18;
     /* 19 */ unk8 mUnk_19;

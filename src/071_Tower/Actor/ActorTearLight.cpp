@@ -37,14 +37,16 @@ extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
 extern "C" fx32 func_ov000_02080068(fx32 x);
 extern "C" fx32 func_ov000_02080080(fx32 x);
 
-static ActorUnkZLSL_AnimationTag data_ov071_02164be0 = {0x0, "szku"};
-static ActorTearLight_UnkStruct data_ov071_02164cd8  = {.fct = 0x0};
-static ActorTearLight_UnkStruct data_ov071_02164ce0  = {.fct = ActorTearLight::func_ov071_0215fed4};
-static ActorTearLight_UnkStruct data_ov071_02164ce8  = {.fct = ActorTearLight::func_ov071_0215ff08};
-static ActorTearLight_UnkStruct data_ov071_02164cf0  = {.fct = ActorTearLight::func_ov071_0215ff3c};
-static ActorTearLight_UnkStruct data_ov071_02164cf8  = {.fct = ActorTearLight::func_ov071_0215ff3c};
-static ActorTearLight_UnkStruct data_ov071_02164d00  = {.fct = ActorTearLight::func_ov071_0215ffb8};
-static ActorTearLight_UnkStruct data_ov071_02164d08  = {.fct = ActorTearLight::func_ov071_0215ffbc};
+extern UnkStruct_ov019_020d24c8_28_258_00 data_ov071_02165150;
+
+static ActorUnkZLSL_AnimationTag data_ov071_02164be0      = {0x0, "szku"};
+static const ActorTearLight_UnkStruct data_ov071_02164cd8 = {.fct = NULL};
+static ActorTearLight_UnkStruct data_ov071_02164ce0       = {.fct = ActorTearLight::func_ov071_0215fed4};
+static ActorTearLight_UnkStruct data_ov071_02164ce8       = {.fct = ActorTearLight::func_ov071_0215ff08};
+static ActorTearLight_UnkStruct data_ov071_02164cf0       = {.fct = ActorTearLight::func_ov071_0215ff3c};
+static ActorTearLight_UnkStruct data_ov071_02164cf8       = {.fct = ActorTearLight::func_ov071_0215ff3c};
+static ActorTearLight_UnkStruct data_ov071_02164d00       = {.fct = ActorTearLight::func_ov071_0215ffb8};
+static ActorTearLight_UnkStruct data_ov071_02164d08       = {.fct = ActorTearLight::func_ov071_0215ffbc};
 
 DECL_PROFILE(ActorProfileTearLight);
 
@@ -125,7 +127,7 @@ void ActorTearLight::vfunc_24() {
     if (this->mState == ActorUnkSZKUState_2) {
         if (this->mUnk_1B8 != 0x0) {
             this->IsTimerOut();
-            if (this->mUnk_50 == 0x14) {
+            if (this->mTimer == 0x14) {
                 this->func_ov071_0215fca4();
                 VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);
                 this->mUnk_1B8 = 0x0;
@@ -159,9 +161,8 @@ void ActorTearLight::vfunc_2C(Actor_vfunc_30 *param1) {
     data_027e09b4->func_ov017_020c08c4(&vecC, 0x333, 0x333, 0x1F, 0x0, 0x1);
 }
 
-// non-matching
 void ActorTearLight::vfunc_30(Actor_vfunc_30 *param1) {
-    this->func_ov017_020bef88(param1, GET_PROFILE(ActorProfileTearLight), 0x1);
+    this->func_ov017_020bef88(param1, &data_ov071_02165150, 0x1);
 }
 
 void ActorTearLight::func_ov071_0215f7f4(ActorState state) {
@@ -309,8 +310,8 @@ void ActorTearLight::func_ov071_0215fc54() {
 void ActorTearLight::func_ov071_0215fca4() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_1);
 
-    this->mUnk_52 = 0xFFFF;
-    this->mUnk_50 = 0x0000;
+    this->mTimerMax = 0xFFFF;
+    this->mTimer    = 0x0000;
 
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.25f), FLOAT_TO_FX32(0.0f), &this->mVel);
 
@@ -335,8 +336,8 @@ void ActorTearLight::func_ov071_0215fd04() {
         var_z = !this->mUnk_18D;
     }
 
-    this->mUnk_52 = 0xFFFF;
-    this->mUnk_50 = 0x0000;
+    this->mTimerMax = 0xFFFF;
+    this->mTimer    = 0x0000;
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);
     this->mUnk_44 = 0;
     if (var_z) {
@@ -350,8 +351,8 @@ void ActorTearLight::func_ov071_0215fd04() {
 void ActorTearLight::func_ov071_0215fd80() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_3);
 
-    this->mUnk_52 = 0xFFFF;
-    this->mUnk_50 = 0x0000;
+    this->mTimerMax = 0xFFFF;
+    this->mTimer    = 0x0000;
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);
 
     this->mUnk_4A[0] = 0x0;
@@ -364,8 +365,8 @@ void ActorTearLight::func_ov071_0215fd80() {
 void ActorTearLight::func_ov071_0215fdd4() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_4);
 
-    this->mUnk_52 = 0xFFFF;
-    this->mUnk_50 = 0x0000;
+    this->mTimerMax = 0xFFFF;
+    this->mTimer    = 0x0000;
 
     this->mUnk_4A[0] = 0x0;
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);

@@ -234,7 +234,7 @@ void ActorUnkCANS::func_ov063_02158448(unk32 param1) {
 
 void ActorUnkCANS::func_ov063_02158490(void) {
     mUnk_48 -= mUnk_200.mUnk_1E;
-    func_ov017_020bf050(this, &mUnk_200, 1);
+    this->func_ov017_020bf050(&mUnk_200, 1);
     this->func_ov063_02158448(2);
 }
 
@@ -570,12 +570,12 @@ void ActorUnkCANS::func_ov063_02158db0(void) {
 }
 
 void ActorUnkCANS::func_ov063_021590c8(void) {
-    func_ov017_020bf634(this, (unk16 *) &mUnk_200.mUnk_10, this->func_ov063_0215a5bc(), this->func_ov063_0215a5d8());
+    this->func_ov017_020bf634(&mUnk_200.mUnk_10, this->func_ov063_0215a5bc(), this->func_ov063_0215a5d8());
     mUnk_200.func_ov000_02097bec();
 }
 
 void ActorUnkCANS::func_ov063_02159100(void) {
-    func_ov017_020bf688(this);
+    this->func_ov017_020bf688();
 
     if (!GET_FLAG(this->mFlags, ActorFlag_5)) {
         return;
@@ -589,7 +589,7 @@ void ActorUnkCANS::func_ov063_02159100(void) {
         return;
     }
 
-    u16 *tmpArr = &mUnk_224.mUnk_08;
+    u16 *tmpArr = (u16 *) &mUnk_224.mUnk_08;
     if (tmpArr[0] < tmpArr[1]) {
         this->func_ov063_02158448(4);
         return;
@@ -761,9 +761,9 @@ void ActorUnkCANS::func_ov063_02159784(void) {
 
 void ActorUnkCANS::func_ov063_021598fc(void) {
     mUnk_128.vfunc_1C(data_ov063_02163080, 0x1333, 0x19A, 0);
-    mUnk_52  = gRandom.Next32(0x15) + 10;
-    mUnk_50  = 0;
-    mUnk_276 = gRandom.Next32(0) & 0x80000000 ? 1 : -1;
+    mTimerMax = gRandom.Next32(0x15) + 10;
+    mTimer    = 0;
+    mUnk_276  = gRandom.Next32(0) & 0x80000000 ? 1 : -1;
 }
 
 // non-matching
@@ -778,24 +778,16 @@ void ActorUnkCANS::func_ov063_021599e4(void) {
         unk32 iVar9 = ABS((unk16) ((mUnk_26C * 0x4000 + mUnk_276) - ret1));
 
         if (DEG_TO_ANG(90) < iVar9) {
-            mUnk_50 = 0;
+            mTimer = 0;
             mUnk_276 *= -1;
-            mUnk_52 = 0x1E;
+            mTimerMax = 0x1E;
         }
     }
 
-    unk32 flag;
-    if (mUnk_50 < mUnk_52) {
-        mUnk_50++;
-        flag = 0;
-    } else {
-        flag = 1;
-    }
-
-    if (flag) {
+    if (this->IsTimerOut()) {
         mUnk_276 *= -1;
-        mUnk_52 = gRandom.Next32(0x15) + 10;
-        mUnk_50 = 0;
+        mTimerMax = gRandom.Next32(0x15) + 10;
+        mTimer    = 0;
     }
 
     func_01ff916c(&mUnk_270, mUnk_276 * 0x19A, 0xCD);
@@ -1039,7 +1031,7 @@ unk32 ActorUnkCANS::func_ov063_0215a2c0(void) {
 
 void ActorUnkCANS::func_ov063_0215a428(void) {
     // A not very clean code to access 22C and 22E matching the asm
-    u16 *values = &mUnk_224.mUnk_08;
+    u16 *values = (u16 *) &mUnk_224.mUnk_08;
     if (values[0] < values[1]) {
         this->func_ov063_02158448(4);
     } else if (mUnk_268 == NULL) {

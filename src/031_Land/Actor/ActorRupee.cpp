@@ -244,9 +244,7 @@ void ActorRupee::func_ov031_020e9108() {
 void ActorRupee::func_ov031_020e91a8() {
     u32 sp0;
 
-    if (this->mUnk_50 < this->mUnk_52) {
-        this->mUnk_50++;
-    }
+    this->IsTimerOut();
 
     this->func_ov031_020e9b88();
 
@@ -274,9 +272,7 @@ void ActorRupee::func_ov031_020e9234() {
 void ActorRupee::func_ov031_020e9254() {
     u32 sp0;
 
-    if (this->mUnk_50 < this->mUnk_52) {
-        this->mUnk_50++;
-    }
+    this->IsTimerOut();
 
     this->func_ov031_020e9be8();
 
@@ -309,9 +305,7 @@ void ActorRupee::func_ov031_020e92e0() {
 void ActorRupee::func_ov031_020e9310() {
     u32 sp0;
 
-    if (this->mUnk_50 < this->mUnk_52) {
-        this->mUnk_50++;
-    }
+    this->IsTimerOut();
 
     switch (this->mUnk_EC) {
         case 0:
@@ -379,8 +373,8 @@ void ActorRupee::func_ov031_020e9450() {
 }
 
 void ActorRupee::func_ov031_020e94d4() {
-    this->mUnk_52    = -1;
-    this->mUnk_50    = 0;
+    this->mTimerMax  = -1;
+    this->mTimer     = 0;
     this->mVel.x     = 0;
     this->mVel.y     = 0;
     this->mVel.z     = 0;
@@ -495,8 +489,8 @@ void ActorRupee::func_ov031_020e970c() {
     this->mVel.z = 0;
     SET_FLAG(this->mFlags, ActorFlag_Visible);
     this->mUnk_4A[0] = 1;
-    this->mUnk_52    = -1;
-    this->mUnk_50    = 0;
+    this->mTimerMax  = -1;
+    this->mTimer     = 0;
 }
 
 // non-matching
@@ -515,10 +509,10 @@ void ActorRupee::func_ov031_020e9740() {
         temp_r2 = (sp4 - 0x800) + temp_r0->vfunc_28(&this->mPos, 0, 0);
 
         if (this->mPos.y != temp_r2) {
-            this->mPos.y  = temp_r2;
-            this->mUnk_52 = -1;
-            this->mUnk_50 = 0;
-        } else if (this->mUnk_50 == 8) {
+            this->mPos.y    = temp_r2;
+            this->mTimerMax = -1;
+            this->mTimer    = 0;
+        } else if (this->mTimer == 8) {
             this->SetState(ActorRupeeState_12);
         }
     } else {
@@ -527,9 +521,7 @@ void ActorRupee::func_ov031_020e9740() {
         this->SetState(ActorRupeeState_12);
     }
 
-    if (this->mUnk_50 < this->mUnk_52) {
-        this->mUnk_50++;
-    }
+    this->IsTimerOut();
 }
 
 // non-matching
@@ -554,10 +546,10 @@ void ActorRupee::func_ov031_020e98c4() {
 }
 
 void ActorRupee::SetState(ActorState state) {
-    this->mState  = state;
-    this->mUnk_52 = -1;
-    this->mUnk_50 = 0;
-    this->mUnk_EC = 0;
+    this->mState    = state;
+    this->mTimerMax = -1;
+    this->mTimer    = 0;
+    this->mUnk_EC   = 0;
     CALL_PTMF(PTMF<ActorRupee>, data_ov031_02113520[this->mState]);
 }
 

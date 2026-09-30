@@ -56,10 +56,11 @@ src/017_CourseExec/Actor/ActorManager_017.cpp:
     .text       start:0x020becd8 end:0x020beeec
 
 src/017_CourseExec/Actor/Actor_017.cpp:
-    .text       start:0x020beeec end:0x020bfecc
+    complete
+    .text       start:0x020beeec end:0x020bff4c
 
 src/017_CourseExec/Actor/ActorEventIcon_017.cpp:
-    .text       start:0x020bfecc end:0x020c007c
+    .text       start:0x020bff4c end:0x020c007c
 
 src/017_CourseExec/MapObject/MapObjectManager_017.cpp:
     .text       start:0x020c007c end:0x020c058c

@@ -435,8 +435,8 @@ void ActorUnkZLSL::func_ov031_020ead7c() {
     this->mVel.x      = FLOAT_TO_FX32(0.0f);
     this->mVel.y      = FLOAT_TO_FX32(0.0f);
     this->mVel.z      = FLOAT_TO_FX32(0.0f);
-    this->mUnk_52     = 0xA;
-    this->mUnk_50     = 0x0;
+    this->mTimerMax   = 0xA;
+    this->mTimer      = 0x0;
     this->mUnk_2884   = 0x0;
     this->mUnk_2888   = 0x0;
 }
@@ -558,8 +558,8 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
             }
             this->func_ov031_020ecc68(0x0);
             actor->func_ov071_021540ac(0x19);
-            this->mUnk_52 = 0x14;
-            this->mUnk_50 = 0x0;
+            this->mTimerMax = 0x14;
+            this->mTimer    = 0x0;
             ++this->mUnk_286E;
             break;
         case 0x1:
@@ -579,8 +579,8 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
             this->func_ov031_020edd14(&vec);
             vec.y = this->mPos.y;
             if (this->func_ov031_020ed6cc(0xC00)) {
-                this->mUnk_52 = 0xF;
-                this->mUnk_50 = 0x0;
+                this->mTimerMax = 0xF;
+                this->mTimer    = 0x0;
                 ++this->mUnk_286E;
             }
             this->mAngle = func_02016958(&this->mPos, &vec);
@@ -623,8 +623,8 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
                 ++this->mUnk_286E;
                 data_027e0d8c->func_ov093_021660a8(this->mUnk_28DC);
                 actor->func_ov071_021540ac(0x1A);
-                this->mUnk_52 = 0x1E;
-                this->mUnk_50 = 0x0;
+                this->mTimerMax = 0x1E;
+                this->mTimer    = 0x0;
             }
             this->func_ov031_020ed4e4(0x5, 0x93F);
             break;
@@ -661,8 +661,8 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             }
             this->func_ov031_020ecc68(0x1);
             actor->func_ov071_021540ac(0x19);
-            this->mUnk_52 = 0x14;
-            this->mUnk_50 = 0x0;
+            this->mTimerMax = 0x14;
+            this->mTimer    = 0x0;
             ++this->mUnk_286E;
             break;
         case 0x1:
@@ -684,8 +684,8 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             this->func_ov031_020edd14(&vec);
             vec.y = this->mPos.y;
             if (this->func_ov031_020ed8ac(0x800)) {
-                this->mUnk_52 = 0xF;
-                this->mUnk_50 = 0x0;
+                this->mTimerMax = 0xF;
+                this->mTimer    = 0x0;
                 ++this->mUnk_286E;
             }
             this->mAngle = func_02016958(&this->mPos, &vec);
@@ -699,8 +699,8 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
                 data_027e0d8c->func_ov093_02166108();
                 ++this->mUnk_286E;
                 this->mUnk_2884 = 0x0;
-                this->mUnk_52   = 0x1E;
-                this->mUnk_50   = 0x0;
+                this->mTimerMax = 0x1E;
+                this->mTimer    = 0x0;
                 this->func_ov031_020eb188();
             }
             VecFx32_Copy(&this->mPos, &vec);
@@ -731,8 +731,8 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             }
             this->func_ov031_020ed3c0();
 
-            this->mUnk_52 = 0xF;
-            this->mUnk_50 = 0x0;
+            this->mTimerMax = 0xF;
+            this->mTimer    = 0x0;
             break;
         case 0x5:
             if (!this->IsTimerOut()) {
@@ -760,8 +760,8 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             ++this->mUnk_286E;
             data_027e0d8c->func_ov093_021660a8(this->mUnk_28DC);
             actor->func_ov071_021540ac(0x1A);
-            this->mUnk_52 = 0x1E;
-            this->mUnk_50 = 0x0;
+            this->mTimerMax = 0x1E;
+            this->mTimer    = 0x0;
             break;
         case 0x7:
             if (!this->IsTimerOut()) {
@@ -917,8 +917,8 @@ bool ActorUnkZLSL::func_ov031_020ec3d0() {
     switch (this->mUnk_2872) {
         case 0x0:
             data_ov000_020b51b8.func_ov000_0206d0bc(0x0);
-            this->mUnk_52 = 0x0;
-            this->mUnk_50 = 0x0;
+            this->mTimerMax = 0x0;
+            this->mTimer    = 0x0;
             ++this->mUnk_2872;
             break;
         case 0x1:
@@ -943,8 +943,8 @@ bool ActorUnkZLSL::func_ov031_020ec49c() {
     switch (this->mUnk_2872) {
         case 0x0:
             data_ov000_020b51b8.func_ov000_0206d0bc(0xA);
-            this->mUnk_52 = 0xA;
-            this->mUnk_50 = 0x0;
+            this->mTimerMax = 0xA;
+            this->mTimer    = 0x0;
             ++this->mUnk_2872;
             break;
         case 0x1:

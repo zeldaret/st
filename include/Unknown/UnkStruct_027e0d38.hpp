@@ -1,6 +1,8 @@
 #pragma once
 
+#include "Actor/ActorRef.hpp"
 #include "global.h"
+#include "nitro/fx.h"
 #include "types.h"
 
 class UnkStruct_027e0d38 : public AutoInstance<UnkStruct_027e0d38> {
@@ -8,6 +10,9 @@ public:
     /* 00 */ unk32 mUnk_00;
 
     UnkStruct_027e0d38();
+
+    // overlay 26
+    unk32 func_ov026_020d9c14(ActorRef ref, VecFx32 *pPos, VecFx32 *pVel);
 
     // overlay 31
     bool func_ov031_020d9bec();

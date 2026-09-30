@@ -308,7 +308,7 @@ void PlayerLinkActor::func_ov017_020bdf48(s8 *param1, unk32 param2, void *param3
     if (!this->mUnk_0A0->func_ov000_02091f08(0x0D) && param1[1] == 1) {
         sp4 = this->mUnk_50;
 
-        if (!data_027e0998->vfunc_00(&this->mPos, &sp8, (u16 *) &sp4)) { //! TODO
+        if (!data_027e0998->vfunc_00(&this->mPos, &sp8, &sp4.mUnk_00)) {
             return;
         }
 

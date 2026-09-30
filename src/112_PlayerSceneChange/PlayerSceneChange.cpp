@@ -693,9 +693,9 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
             }
 
             if (this->mUnk_AD) {
-                UnkStruct_ov000_0208f820_24 *temp_r1_6 = this->mUnk_24;
+                UnkStruct_027e0ce0_40 *temp_r1_6 = this->mUnk_24;
                 temp_r1_6->mUnk_104 &= 0xFFFB;
-                temp_r1_6->mUnk_FE = 3;
+                temp_r1_6->mUnk_094.mUnk_6A = 3;
                 this->mUnk_30->func_ov000_020921e4(1);
             } else if (temp_r5_2) {
                 if (!this->func_ov000_02091e68(param2) && data_02049b18.mUnk_06.mTouchControl.mState.touch) {

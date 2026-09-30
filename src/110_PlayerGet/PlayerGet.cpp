@@ -537,7 +537,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             this->mAngle           = 0;
             this->mUnk_2C->mUnk_58 = 0;
             char auStack_108[12];
-            func_ov000_0208ba10(auStack_108, &this->mUnk_24->mUnk_94, 0);
+            func_ov000_0208ba10(auStack_108, &this->mUnk_24->mUnk_094, 0);
             *(s16 *) &this->mUnk_40->mUnk_00 = 0x8000;
 
             pUnk_38    = this->mUnk_38;
@@ -631,43 +631,20 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 this->mUnk_64.func_ov000_0208a100();
             }
 
-            bool var_r1_4    = 0;
-            void **temp_r5_2 = this->mUnk_24->mUnk_78;
-            if (temp_r5_2 != NULL) {
-                u16 temp_r6 = *(u16 *) temp_r5_2;
-                bool var_r3 = 1;
-                bool var_r2 = 0;
+            bool var_r1_4 = false;
 
-                if ((temp_r6 != 0x100) && (temp_r6 != 0x101)) {
-                    var_r3 = 0;
-                }
-
-                if (var_r3 != 0) {
-                    bool var_r0_2;
-
-                    if (temp_r6 == 0x101) {
-                        var_r0_2 = 0;
-                    } else {
-                        var_r0_2 = ((u16 *) temp_r5_2)[1];
-                    }
-
-                    if (var_r0_2 == 1) {
-                        var_r2 = 1;
-                    }
-                }
-
-                if (var_r2 != 0) {
-                    var_r1_4 = 1;
-                }
+            if (this->mUnk_24->mUnk_078 != NULL && this->mUnk_24->mUnk_078->UnkCheck1()) {
+                var_r1_4 = true;
             }
 
             if (!var_r1_4) {
-                UnkStruct_ov000_0208f820_28_98 *pUnk28_98 = this->mUnk_28->mUnk_98;
+                UnkStruct_ov000_0208f820_28 *ptr0    = this->mUnk_28;
+                UnkStruct_ov000_0208f820_28_98 *ptr1 = ptr0->mUnk_98;
 
-                if (pUnk28_98 != NULL) {
-                    UnkStruct_PlayerGet_64 *ptr = &pUnk28_98->mUnk_38;
+                if (ptr1 != NULL) {
+                    UnkStruct_PlayerGet_64 *ptr = *(UnkStruct_PlayerGet_64 **) &ptr1->mUnk_38;
                     ptr->mUnk_08 |= 0x10;
-                    this->mUnk_64.func_ov000_0208a100();
+                    ptr1->mUnk_38.func_ov000_0208a100();
                 }
             }
 

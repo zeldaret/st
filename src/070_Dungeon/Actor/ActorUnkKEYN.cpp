@@ -43,9 +43,7 @@ void ActorUnkKEYN::func_ov070_021420a4(void) {}
 void ActorUnkKEYN::func_ov070_021420d8(void) {}
 
 void ActorUnkKEYN::func_ov070_02142140(void) {
-    if (this->mUnk_50 < this->mUnk_52) {
-        this->mUnk_50++;
-    }
+    this->IsTimerOut();
 
     if (!data_027e09b8->func_01ffd420()) {
         if (data_027e0d34->TryItemGive(this->mItemId)) {

@@ -238,13 +238,13 @@ void ActorHeart::func_ov031_020ef208() {
         if (!this->IsTimerOut()) {
             return;
         }
-        this->mUnk_BE = 0x01;
-        this->mUnk_52 = 0x3C;
-        this->mUnk_50 = 0x00;
+        this->mUnk_BE   = 0x01;
+        this->mTimerMax = 60;
+        this->mTimer    = 0;
         return;
     }
 
-    if ((this->mUnk_50 % 8) < 4) {
+    if ((this->mTimer % 8) < 4) {
         UNSET_FLAG(this->mFlags, ActorFlag_Visible);
     } else {
         SET_FLAG(this->mFlags, ActorFlag_Visible);
@@ -285,9 +285,9 @@ void ActorHeart::func_ov031_020ef35c() {
     this->mVel.x = FLOAT_TO_FX32(0.0);
     this->mVel.y = FLOAT_TO_FX32(0.0);
     this->mVel.z = FLOAT_TO_FX32(0.0);
-    if ((u8) this->mUnk_BE == 0 && (this->mUnk_52 - this->mUnk_50) > 0xB4) {
-        this->mUnk_52 = 0xB4;
-        this->mUnk_50 = 0x00;
+    if ((u8) this->mUnk_BE == 0 && (this->mTimerMax - this->mTimer) > 0xB4) {
+        this->mTimerMax = 0xB4;
+        this->mTimer    = 0x00;
     }
     this->mUnk_44 = 0x9F;
 }
@@ -353,20 +353,20 @@ void ActorHeart::func_ov031_020ef4a8() {
 
     switch (this->mUnk_5C.mUnk_2C) {
         case 0:
-            this->mUnk_52 = 0xB4;
-            this->mUnk_50 = 0x00;
+            this->mTimerMax = 0xB4;
+            this->mTimer    = 0x00;
             this->SetState(ActorHeartState_2);
             break;
 
         case 1:
-            this->mUnk_52 = 0x1E0;
-            this->mUnk_50 = 0x00;
+            this->mTimerMax = 0x1E0;
+            this->mTimer    = 0x00;
             this->SetState(ActorHeartState_0);
             return;
 
         default:
-            this->mUnk_52 = 0x1E0;
-            this->mUnk_50 = 0x00;
+            this->mTimerMax = 0x1E0;
+            this->mTimer    = 0x00;
             this->SetState(ActorHeartState_0);
             break;
     }

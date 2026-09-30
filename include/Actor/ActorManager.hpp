@@ -21,9 +21,9 @@ public:
     /* 0C */ unk16 mActorCount;
     /* 0E */ unk16 mNextActorId;
     /* 10 */ unk8 mUnk_10;
-    /* 10 */ unk8 mUnk_11;
-    /* 10 */ unk8 mUnk_12;
-    /* 10 */ unk8 mUnk_13;
+    /* 11 */ unk8 mUnk_11;
+    /* 12 */ unk8 mUnk_12;
+    /* 13 */ unk8 mUnk_13;
     /* 14 */ UnkStruct_ov019_020d24c8_28_258_00 mUnk_14;
     /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk8 mUnk_20;

@@ -571,8 +571,8 @@ data_ov071_0216511c kind:bss addr:0x0216511c
 data_ov071_02165128 kind:bss addr:0x02165128
 data_ov071_02165134 kind:bss addr:0x02165134
 data_ov071_02165140 kind:bss addr:0x02165140
-data_ov071_0216514c kind:bss addr:0x0216514c
-_ZGVN15ProfileInstanceI21ActorProfileTearLightE8sProfileE kind:bss addr:0x02165150
+_ZGVN15ProfileInstanceI21ActorProfileTearLightE8sProfileE kind:bss addr:0x0216514c
+data_ov071_02165150 kind:bss addr:0x02165150
 @13264 kind:bss addr:0x0216515c
 _ZN15ProfileInstanceI21ActorProfileTearLightE8sProfileE kind:bss addr:0x02165168
 _ZGVN15ProfileInstanceI19ActorProfileUnkKMSOE8sProfileE kind:bss addr:0x02165240

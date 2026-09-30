@@ -90,27 +90,6 @@ public:
     /* 04 */ virtual unk32 vfunc_04(ActorRef param1, unk32 param2, unk32 param3, unk32 *param4) override;
 };
 
-class UnkStruct_ActorUnkCANS_224 {
-public:
-    /* 00 (base) */ UnkStruct_PlayerGet_ec mUnk_00[0x2];
-    /* 08 */ u16 mUnk_08;
-    /* 0A */ u16 mUnk_0A;
-    /* 0C */ STRUCT_PAD(0x0C, 0x10);
-    /* 10 */
-
-    UnkStruct_ActorUnkCANS_224(); // func_ov000_02099820
-
-    ~UnkStruct_ActorUnkCANS_224() {
-        for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_00; ptr != this->mUnk_00 + ARRAY_LEN(this->mUnk_00); ++ptr) {
-            ptr->func_ov000_020a0334();
-        }
-        this->mUnk_0A = 0x0;
-        this->mUnk_08 = 0x0;
-    }
-
-    void func_ov000_02099a0c();
-};
-
 class ActorUnkCANS : public Actor_Derived2 {
 public:
     /* 000 (base) */

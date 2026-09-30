@@ -79,6 +79,10 @@ struct ActorRef {
         return this->unk_id;
     }
 
+    const bool HasTypeIndexValue(u16 value) {
+        return this->type_index == value;
+    }
+
     const bool UnkCheck1() {
         bool ret = true;
 
@@ -94,6 +98,16 @@ struct ActorRef {
         bool ret = false;
 
         if (this->UnkCheck1() && this->GetTypeIndex1() == 0x01) {
+            ret = true;
+        }
+
+        return ret;
+    }
+
+    const bool UnkCheck3(u16 value) {
+        BOOL ret = false;
+
+        if (this->HasTypeIndexValue(value) && (this->unk_id == 1 || this->unk_id == 3)) {
             ret = true;
         }
 

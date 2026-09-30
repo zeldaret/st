@@ -343,7 +343,7 @@ void ActorUnkTGTZ::vfunc_30(Actor_vfunc_30 *param1) {
     }
     Vec2s vec2s;
 
-    if (!data_027e0998->vfunc_00(&this->mPos, &vec2s, (u16 *) &this->mRef)) {
+    if (!data_027e0998->vfunc_00(&this->mPos, &vec2s, &this->mRef)) {
         return;
     }
 

@@ -179,8 +179,8 @@ bool ActorItemDrop::vfunc_18(unk32 param1) {
         return false;
     }
 
-    this->mUnk_52 = FLOAT_TO_FX32(0.1173f);
-    this->mUnk_50 = FLOAT_TO_FX32(0.0f);
+    this->mTimerMax = FLOAT_TO_FX32(0.1173f);
+    this->mTimer    = FLOAT_TO_FX32(0.0f);
     this->SetState(ActorItemDropState_0);
     return true;
 }
@@ -326,9 +326,9 @@ void ActorItemDrop::func_ov031_020fa524() {
     this->mVel.y = FLOAT_TO_FX32(0.0f);
     this->mVel.z = FLOAT_TO_FX32(0.0f);
 
-    if (!this->mUnk_118 && this->mUnk_52 - this->mUnk_50 > FLOAT_TO_FX32(0.044f)) {
-        this->mUnk_52 = FLOAT_TO_FX32(0.044f);
-        this->mUnk_50 = FLOAT_TO_FX32(0.0f);
+    if (!this->mUnk_118 && this->mTimerMax - this->mTimer > FLOAT_TO_FX32(0.044f)) {
+        this->mTimerMax = FLOAT_TO_FX32(0.044f);
+        this->mTimer    = FLOAT_TO_FX32(0.0f);
     }
 
     this->mUnk_44 = 0x9F;
@@ -411,8 +411,8 @@ void ActorItemDrop::func_ov031_020fa678() {
 }
 
 void ActorItemDrop::func_ov031_020fa6c8() {
-    this->mUnk_52    = FLOAT_TO_FX32(15.9998f);
-    this->mUnk_50    = FLOAT_TO_FX32(0.0f);
+    this->mTimerMax  = FLOAT_TO_FX32(15.9998f);
+    this->mTimer     = FLOAT_TO_FX32(0.0f);
     this->mVel.x     = FLOAT_TO_FX32(0.0f);
     this->mVel.y     = FLOAT_TO_FX32(0.0f);
     this->mVel.z     = FLOAT_TO_FX32(0.0f);
@@ -510,12 +510,12 @@ void ActorItemDrop::func_ov031_020fa900() {
         SET_FLAG(this->mFlags, ActorFlag_Visible);
     } else if (!this->mUnk_118) {
         if (this->Actor::IsTimerOut()) {
-            this->mUnk_118 = true;
-            this->mUnk_52  = 60;
-            this->mUnk_50  = 0;
+            this->mUnk_118  = true;
+            this->mTimerMax = 60;
+            this->mTimer    = 0;
         }
     } else {
-        if ((this->mUnk_50 % 8) < 4) {
+        if ((this->mTimer % 8) < 4) {
             UNSET_FLAG(this->mFlags, ActorFlag_Visible);
         } else {
             SET_FLAG(this->mFlags, ActorFlag_Visible);

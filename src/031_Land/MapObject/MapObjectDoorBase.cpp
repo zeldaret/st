@@ -538,7 +538,7 @@ extern fx16 data_0203f964[];
 void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1, s8 param2) {
     Vec2s sp10;
     stack_struct sp8;
-    u32 sp4;
+    ActorRef sp4;
     bool var_r2;
 
     if (!GET_FLAG(this->mFlags, MapObjFlag_5)) {
@@ -554,9 +554,9 @@ void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1, s8 param2) {
     bool uVar4 = (this->mUnk_84 % 0x1A) >= 0x0D ? true : false;
 
     //! TODO: fake match?
-    sp4 = *(u32 *) &this->mUnk_38;
+    sp4 = *(ActorRef *) &this->mUnk_38;
 
-    if (data_027e0998->vfunc_00(&this->mPos, &sp10, (u16 *) &sp4) && uVar4 != 0) {
+    if (data_027e0998->vfunc_00(&this->mPos, &sp10, &sp4) && uVar4 != 0) {
         Mat2p m;
 
         if (this->IsOrientedVertically()) {

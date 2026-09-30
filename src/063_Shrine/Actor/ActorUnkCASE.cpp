@@ -237,18 +237,14 @@ void ActorUnkCASE::func_ov063_0215b054(void) {
     mVel.y = 0;
     mVel.z = mUnk_1E0;
     UNSET_FLAG2(*(s16 *) &mUnk_44, ActorFlag_5);
-    mUnk_52 = -1;
-    mUnk_50 = 0;
+    this->mTimerMax = -1;
+    this->mTimer    = 0;
 }
 
 void ActorUnkCASE::func_ov063_0215b090(void) {
-    if (mUnk_50 < 4) {
+    if (this->mTimer < 4) {
         this->func_ov063_0215afb8();
-
-        if (mUnk_50 < mUnk_52) {
-            mUnk_50++;
-        }
-
+        this->IsTimerOut();
         this->vfunc_10(&mUnk_174.mUnk_0C);
         data_027e09c0->func_ov000_0207e58c(mRef, 3, 4, &mUnk_174);
         return;

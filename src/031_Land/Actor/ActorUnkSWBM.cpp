@@ -115,9 +115,9 @@ ActorUnkSWBM::ActorUnkSWBM() :
     mUnk_108(0x0),
     mUnk_10A(0x0) {
     MI_CpuFill32(0x0, this->mUnk_0E4, ARRAY_LEN(this->mUnk_0E4) * sizeof *this->mUnk_0E4);
-    this->mState  = ActorUnkSWBMState_0;
-    this->mUnk_52 = 0xFFFF;
-    this->mUnk_50 = 0x0000;
+    this->mState    = ActorUnkSWBMState_0;
+    this->mTimerMax = 0xFFFF;
+    this->mTimer    = 0x0000;
 }
 
 bool ActorUnkSWBM::vfunc_18(unk32 param1) {
@@ -190,9 +190,9 @@ void ActorUnkSWBM::func_ov031_020e6e84(ActorState state) {
             this->mVel.z /= 3;
             break;
     }
-    this->mState  = state;
-    this->mUnk_52 = 0xFFFF;
-    this->mUnk_50 = 0x0000;
+    this->mState    = state;
+    this->mTimerMax = 0xFFFF;
+    this->mTimer    = 0x0000;
 }
 
 // non-matching

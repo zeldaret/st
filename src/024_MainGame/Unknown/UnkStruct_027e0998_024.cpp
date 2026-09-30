@@ -25,7 +25,7 @@ UnkStruct_027e0998 *UnkStruct_027e0998::Create() {
     return new(HeapIndex_1) UnkStruct_027e0998();
 }
 
-bool UnkStruct_027e0998::vfunc_00(VecFx32 *pPos, Vec2s *param2, u16 *param3) {
+bool UnkStruct_027e0998::vfunc_00(VecFx32 *pPos, Vec2s *param2, ActorRef *param3) {
     if (data_027e09a4->IsCutscene()) {
         CutsceneParamsEntry *pEntry = Cutscene_GetParamEntry(data_027e09a4->CurrentCSIndex());
 
@@ -71,13 +71,7 @@ bool UnkStruct_027e0998::vfunc_00(VecFx32 *pPos, Vec2s *param2, u16 *param3) {
     }
 
     if (data_027e0cd8->func_ov000_02082124()) {
-        bool var_r2 = true;
-
-        if (*param3 != 0x100 && *param3 != 0x101) {
-            var_r2 = false;
-        }
-
-        if (!var_r2) {
+        if (!param3->UnkCheck1()) {
             return false;
         }
 
@@ -101,7 +95,7 @@ bool UnkStruct_027e0998::func_ov024_020c716c() {
     return false;
 }
 
-bool UnkStruct_027e0998::func_ov024_020c7214(VecFx32 *pPos, Vec2s *param2, u16 *param3) {
+bool UnkStruct_027e0998::func_ov024_020c7214(VecFx32 *pPos, Vec2s *param2, ActorRef *param3) {
     bool temp_r4 = this->UnkStruct_027e0998_Base::vfunc_00(pPos, param2, param3);
 
     if (data_027e09a4->IsTrain()) {
@@ -115,14 +109,8 @@ bool UnkStruct_027e0998::func_ov024_020c7214(VecFx32 *pPos, Vec2s *param2, u16 *
     return temp_r4;
 }
 
-bool UnkStruct_027e0998::func_ov024_020c727c(Vec2s *param1, u16 *param2) {
-    bool var_r2 = true;
-
-    if (*param2 != 0x100 && *param2 != 0x101) {
-        var_r2 = false;
-    }
-
-    if (!var_r2) {
+bool UnkStruct_027e0998::func_ov024_020c727c(Vec2s *param1, ActorRef *param2) {
+    if (!param2->UnkCheck1()) {
         return false;
     }
 

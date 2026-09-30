@@ -9,6 +9,7 @@
 #include "math.hpp"
 
 class PlayerLinkActor_A0;
+class UnkStruct_027e0ce0_40;
 
 class UnkStruct_ov000_0208f820_14 {
 public:
@@ -102,24 +103,6 @@ public:
     /* 1C */ ItemId mUnk_1C;
 };
 
-class UnkStruct_ov000_0208f820_24 {
-public:
-    /* 00 */ unk8 mUnk_00[0x24];
-    /* 24 */ unk8 mUnk_24;
-    /* 25 */ unk8 mUnk_25;
-    /* 26 */ STRUCT_PAD(0x26, 0x78);
-    /* 78 */ void **mUnk_78;
-    /* 7C */ STRUCT_PAD(0x7C, 0x94);
-    /* 94 */ unk32 mUnk_94;
-    /* 98 */ unk32 mUnk_98;
-    /* 9C */ unk32 mUnk_9C;
-    /* A0 */ STRUCT_PAD(0xA0, 0xFE);
-    /* FE */ unk8 mUnk_FE;
-    /* FF */ unk8 mUnk_FF;
-    /* 100 */ unk32 mUnk_100;
-    /* 104 */ u16 mUnk_104;
-};
-
 class UnkStruct_ov000_0208f820_04 {
 public:
     /* 00 */ ActorRef mUnk_00;
@@ -154,7 +137,7 @@ public:
     /* 1B */ unk8 mUnk_1B;
     /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk32 mUnk_20;
-    /* 24 */ UnkStruct_ov000_0208f820_24 *mUnk_24;
+    /* 24 */ UnkStruct_027e0ce0_40 *mUnk_24;
     /* 28 */ UnkStruct_ov000_0208f820_28 *mUnk_28;
     /* 2C */ UnkStruct_ov000_0208f820_2c *mUnk_2C;
     /* 30 */ PlayerLinkActor_A0 *mUnk_30;

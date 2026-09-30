@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Actor.hpp"
+#include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e0960.hpp"
@@ -154,7 +155,7 @@ public:
     /* 118 */ unk32 mUnk_118;
     /* 11C */ unk32 mUnk_11C;
 
-    /* 14 */ virtual void vfunc_14() override;
+    /* 14 */ virtual bool vfunc_14(Cylinder *param1) override;
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 1C */ virtual void vfunc_1C() override;
     /* 20 */ virtual void vfunc_20() override;

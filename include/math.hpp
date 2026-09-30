@@ -369,6 +369,40 @@ union Vec2sb {
     }
 };
 
+union Vec3s {
+    struct {
+        /* 0 */ s16 x;
+        /* 2 */ s16 y;
+        /* 4 */ s16 z;
+        /* 6 */
+    };
+    s16 coords[3];
+
+    void operator=(const Vec3s &from) {
+        this->x = from.x;
+        this->y = from.y;
+        this->z = from.z;
+    }
+
+    Vec3s() {}
+
+    Vec3s(Vec3s *from) {
+#if __MWERKS__
+        this->coords = from->coords;
+#else
+        this->x = from->x;
+        this->y = from->y;
+        this->z = from->z;
+#endif
+    }
+
+    Vec3s(s16 X, s16 Y, s16 Z) {
+        x = X;
+        y = Y;
+        y = Z;
+    }
+};
+
 struct UnkAngleStruct {
     union {
         u16 angle;

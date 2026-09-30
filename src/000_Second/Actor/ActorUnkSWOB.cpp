@@ -54,8 +54,8 @@ void ActorUnkSWOB::SetState(ActorState state) {
             break;
         case ActorUnkSWOBState_2:
             this->func_ov000_0209aa30();
-            this->mUnk_52 = -1;
-            this->mUnk_50 = 0;
+            this->mTimerMax = -1;
+            this->mTimer    = 0;
             break;
         default:
             break;

@@ -307,8 +307,8 @@ void ActorSpinut::func_ov032_02119a0c() {
             }
             this->mUnk_21C = var;
 
-            this->mUnk_52 = gRandom.Next32(0x15) + 0x1E;
-            this->mUnk_50 = 0x00;
+            this->mTimerMax = gRandom.Next32(0x15) + 0x1E;
+            this->mTimer    = 0x00;
 
             ++this->mUnk_218;
             break;
@@ -380,16 +380,16 @@ void ActorSpinut::func_ov032_02119c80() {
 
 void ActorSpinut::func_ov032_02119d7c() {
     this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
-    this->mUnk_52 = 0x14;
-    this->mUnk_50 = 0x00;
-    this->mVel.x  = FLOAT_TO_FX32(0.0f);
-    this->mVel.z  = FLOAT_TO_FX32(0.0f);
+    this->mTimerMax = 0x14;
+    this->mTimer    = 0x00;
+    this->mVel.x    = FLOAT_TO_FX32(0.0f);
+    this->mVel.z    = FLOAT_TO_FX32(0.0f);
 }
 
 // non-matching
 void ActorSpinut::func_ov032_02119df4() {
     s16 var;
-    s16 delta = this->mUnk_52 - this->mUnk_50;
+    s16 delta = this->mTimerMax - this->mTimer;
     func_ov000_020986b4(&var, this, 0x0);
 
     s16 val = var;
@@ -409,8 +409,8 @@ void ActorSpinut::func_ov032_02119e90() {
 
     this->mUnk_288.x = func_01ffb66c(0x1800, func_01ffb428(0x148, 0x14) >> 0xC);
 
-    this->mUnk_50 = 0x0;
-    this->mUnk_52 = 0xB4;
+    this->mTimer    = 0x0;
+    this->mTimerMax = 0xB4;
 
     if (this->mUnk_5C.mParams[0] == 0x2) {
         this->mUnk_264 = 0x14000;
@@ -499,10 +499,10 @@ void ActorSpinut::func_ov032_0211a140() {
 
     this->mUnk_21C = var;
 
-    this->mVel.x  = FLOAT_TO_FX32(0.0f);
-    this->mVel.z  = FLOAT_TO_FX32(0.0f);
-    this->mUnk_52 = 0x1E;
-    this->mUnk_50 = 0x00;
+    this->mVel.x    = FLOAT_TO_FX32(0.0f);
+    this->mVel.z    = FLOAT_TO_FX32(0.0f);
+    this->mTimerMax = 0x1E;
+    this->mTimer    = 0x00;
 }
 
 // non-matching
@@ -620,10 +620,10 @@ void ActorSpinut::func_ov032_0211a86c() {
 void ActorSpinut::func_ov032_0211a950() {
     this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
 
-    this->mUnk_52 = 0x14;
-    this->mUnk_50 = 0x00;
-    this->mVel.x  = FLOAT_TO_FX32(0.0f);
-    this->mVel.z  = FLOAT_TO_FX32(0.0f);
+    this->mTimerMax = 0x14;
+    this->mTimer    = 0x00;
+    this->mVel.x    = FLOAT_TO_FX32(0.0f);
+    this->mVel.z    = FLOAT_TO_FX32(0.0f);
 }
 
 void ActorSpinut::func_ov032_0211a9c8() {
@@ -696,8 +696,8 @@ void ActorSpinut::func_ov032_0211ac20() {
     this->mVel.x = FLOAT_TO_FX32(0.0f);
     this->mVel.z = FLOAT_TO_FX32(0.0f);
 
-    this->mUnk_52 = 0xA;
-    this->mUnk_50 = 0x0;
+    this->mTimerMax = 0xA;
+    this->mTimer    = 0x0;
 
     this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
 }
@@ -752,7 +752,7 @@ void ActorSpinut::func_ov032_0211adf4() {
 
             data_027e0cec->func_ov000_0209feac(0x880, &this->mPos, 0x2, 0x0, 0x0);
             this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
-            if (this->func_ov032_0211b064(0x0) || (this->mUnk_294 && this->mUnk_50 >= this->mUnk_52)) {
+            if (this->func_ov032_0211b064(0x0) || (this->mUnk_294 && this->mTimer >= this->mTimerMax)) {
                 this->SetState(ActorSpinutState_1);
                 return;
             }
@@ -850,8 +850,8 @@ void ActorSpinut::func_ov032_0211b298() {
 void ActorSpinut::func_ov032_0211b37c(Actor *thisx, Actor_vfunc_30 *param1) {
     if (thisx->GetActorId() == ActorId_Spinut) {
         ((ActorSpinut *) thisx)->mUnk_294 = true;
-        thisx->mUnk_52                    = (u16) param1; //! TODO: fake match
-        thisx->mUnk_50                    = 0x0;
+        thisx->mTimerMax                  = (u16) param1; //! TODO: fake match
+        thisx->mTimer                     = 0x0;
     }
 }
 

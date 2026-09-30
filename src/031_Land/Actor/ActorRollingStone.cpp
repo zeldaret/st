@@ -170,8 +170,8 @@ void ActorRollingStone::vfunc_20() {
 
 void ActorRollingStone::SetState(ActorState state) {
     this->mState           = state;
-    this->mUnk_52          = 0xFFFF;
-    this->mUnk_50          = 0x0;
+    this->mTimerMax        = 0xFFFF;
+    this->mTimer           = 0x0;
     this->mUnk_38->mUnk_08 = 0x3;
     CALL_PTMF(PTMF<ActorRollingStone>, data_ov031_02114aec[this->mState]);
 }

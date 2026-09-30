@@ -77,11 +77,9 @@ void ActorUnkSWTM::vfunc_20(void) {
         case ActorUnkSWTMState_2:
             break;
         case ActorUnkSWTMState_3:
-            if (this->mUnk_50 < this->mUnk_52) {
-                this->mUnk_50++;
-            }
+            this->IsTimerOut();
 
-            if ((s32) this->mUnk_50 >= 15) {
+            if ((s32) this->mTimer >= 15) {
                 this->func_ov000_0209b184();
                 this->SetState(ActorUnkSWTMState_0);
             }
@@ -114,8 +112,8 @@ void ActorUnkSWTM::SetState(ActorState state) {
             break;
         case ActorUnkSWTMState_3:
             this->func_ov000_0209b160();
-            this->mUnk_50 = 0;
-            this->mUnk_52 = -1;
+            this->mTimer    = 0;
+            this->mTimerMax = -1;
             break;
         default:
             break;

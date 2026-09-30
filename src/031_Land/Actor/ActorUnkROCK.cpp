@@ -64,8 +64,8 @@ void ActorUnkROCK::vfunc_20() {
 }
 
 void ActorUnkROCK::func_ov031_020e8a48(ActorState state) {
-    this->mUnk_52 = 0xFFFF;
-    this->mUnk_50 = 0x0000;
+    this->mTimerMax = 0xFFFF;
+    this->mTimer    = 0x0000;
 
     if (this->mState == ActorUnkROCKState_0) {
         data_027e09c0->func_ov000_0207e254(&this->mUnk_A0);

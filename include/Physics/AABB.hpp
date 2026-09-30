@@ -6,6 +6,7 @@
 #include <nitro/math.h>
 
 struct AABB {
-    VecFx32 min;
-    VecFx32 max;
+    /* 00 */ VecFx32 min;
+    /* 0C */ VecFx32 max;
+    /* 18 */
 };
