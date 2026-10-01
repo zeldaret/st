@@ -160,17 +160,8 @@ void UnkStruct_027e0ce0_40_Base_14::func_ov017_020be44c(unk32 param1, bool param
             var_r7 = func_01ffb428(0x50, 0xBF - sp10.y);
         }
 
-        fx32 x2    = sp10.x;
-        fx32 x1    = this->mTouchControl.mState.touchPos.x;
-        fx32 xDiff = (x1 - x2);
-
-        fx32 y1    = this->mTouchControl.mState.touchPos.y;
-        fx32 y2    = sp10.y;
-        fx32 yDiff = (y1 - y2);
-
-        sp1C.x = var_r5 * xDiff;
-        sp1C.y = 0;
-        sp1C.z = var_r7 * yDiff;
+        VecFx32_Init(var_r5 * (this->mTouchControl.mState.touchPos.x - sp10.x), 0,
+                     var_r7 * (this->mTouchControl.mState.touchPos.y - sp10.y), &sp1C);
 
         this->mUnk_3C = VecFx32_Length(&sp1C);
         temp_r5       = func_01ffbbe0(sp1C.x, sp1C.z);
@@ -215,7 +206,7 @@ void UnkStruct_027e0ce0_40_Base_14::func_ov017_020be44c(unk32 param1, bool param
         this->mUnk_58 = 0;
     } else {
         if (this->mUnk_50 != 0 && this->mUnk_54 != 0) {
-            sp8           = func_01ffbbe0(this->mUnk_50, this->mUnk_54);
+            sp8           = func_01ffbbe0(diffX, diffY);
             spA           = func_01ffbbe0(this->mUnk_50, this->mUnk_54);
             this->mUnk_58 = func_01ff9364(&sp8, spA);
         }
