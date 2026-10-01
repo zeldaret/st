@@ -487,7 +487,7 @@ void MapObjectUnkSWSW::vfunc_3C(unk32 param1) {
     }
 }
 
-void MapObjectUnkSWSW::vfunc_14() {
+void MapObjectUnkSWSW::vfunc_14(unk32 param1) {
     VecFx32 vec;
     VecFx32_Init(this->mPos.x + this->mUnk_0EC.x, this->mPos.y + this->mUnk_0EC.y, this->mPos.z + this->mUnk_0EC.z, &vec);
 

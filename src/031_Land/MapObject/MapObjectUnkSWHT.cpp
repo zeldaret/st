@@ -196,7 +196,7 @@ void MapObjectUnkSWHT::vfunc_0C() {
     this->func_ov031_02101dd8();
 }
 
-void MapObjectUnkSWHT::vfunc_14() {
+void MapObjectUnkSWHT::vfunc_14(unk32 param1) {
     this->mUnk_054.vfunc_18(&this->mPos);
 }
 

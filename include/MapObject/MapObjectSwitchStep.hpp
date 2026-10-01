@@ -50,9 +50,9 @@ public:
 
     /* 00 */ virtual bool vfunc_00() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 14 */ virtual void vfunc_14() override;
-    /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2) override;
-    /* 20 */ virtual void vfunc_20() override;
+    /* 14 */ virtual void vfunc_14(unk32 param1) override;
+    /* 18 */ virtual void vfunc_18(s8 *param1) override;
+    /* 20 */ virtual void vfunc_20(unk32 param1) override;
     /* 30 */ virtual ~MapObjectSwitchStep() override;
 
     void func_ov000_0209dda4(void);

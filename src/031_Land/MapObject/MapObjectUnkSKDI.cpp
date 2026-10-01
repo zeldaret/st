@@ -401,7 +401,7 @@ bool MapObjectUnkSKDI::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) 
     }
 }
 
-void MapObjectUnkSKDI::vfunc_14() {
+void MapObjectUnkSKDI::vfunc_14(unk32 param1) {
     this->mUnk_040.vfunc_18(&this->mPos);
 }
 

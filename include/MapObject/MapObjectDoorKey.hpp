@@ -34,8 +34,8 @@ public:
 
     /* 00 */ virtual bool vfunc_00() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 14 */ virtual void vfunc_14() override;
-    /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2) override;
+    /* 14 */ virtual void vfunc_14(unk32 param1) override;
+    /* 18 */ virtual void vfunc_18(s8 *param1) override;
     /* 28 */ virtual unk32 vfunc_28(unk32 param1, unk32 param2, unk32 param3) override;
     /* 30 */ virtual ~MapObjectDoorKey() override;
     /* 40 */ virtual void vfunc_40() override;

@@ -198,12 +198,12 @@ void MapObjectDoorClick::vfunc_08(void) {
     }
 }
 
-void MapObjectDoorClick::vfunc_18(s8 *param1, s8 param2) {
-    this->func_ov031_020fcb78(param1, param2);
+void MapObjectDoorClick::vfunc_18(s8 *param1) {
+    this->func_ov031_020fcb78(param1);
 }
 
 // https://decomp.me/scratch/3XTMj
-void MapObjectDoorClick::vfunc_14(void) {
+void MapObjectDoorClick::vfunc_14(unk32 param1) {
     f32 factor;
     f32 uVar3;
     s32 sVar2;
@@ -256,7 +256,7 @@ void MapObjectDoorClick::vfunc_5C(MapObjState state, unk32 param2) {
     this->mState = state;
 
     switch (this->mState) {
-        case MapObjDoorClickState_3:
+        case MapObjDoorClickState_3: {
             this->vfunc_7C();
 
             u16 result    = ROUND_FX32(MUL_FX32(func_01ffb428(0x1000 - this->mUnk_6C, 0x1000), INT_TO_FX32(this->mUnk_78)));
@@ -272,6 +272,7 @@ void MapObjectDoorClick::vfunc_5C(MapObjState state, unk32 param2) {
             }
 
             break;
+        }
         case MapObjDoorClickState_8:
             if (this->mUnk_20.mParams[2] & 0xFF) {
                 this->MapObjectDoorBase::vfunc_5C(state, param2);

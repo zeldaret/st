@@ -5,6 +5,7 @@
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
+#include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
@@ -14,7 +15,6 @@ extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
 extern "C" void func_01ffb9cc(VecFx32 *, VecFx32 *);
 extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
 extern "C" unk32 func_01ffecdc(unk32 param1, Cylinder *param2);
-extern "C" bool func_01ffd768(unk32, void *, void *, unk8);
 extern "C" void func_01fff6d0(void *, VecFx32 *param1, s32 *param2, s32 *param3);
 
 MapObject::MapObject() {
@@ -81,7 +81,7 @@ bool MapObject::func_ov000_0209d12c() {
     return result[1];
 }
 
-bool MapObject::func_ov000_0209d144(Vec2s *param1, unk32 param2, unk32 param3) {
+bool MapObject::func_ov000_0209d144(Vec2s *param1, unk32 param2, UnkStruct_027e09bc_0C *param3) {
     if (this->mUnk_10 != NULL) {
         u32 stack[5];
 
@@ -97,7 +97,7 @@ bool MapObject::func_ov000_0209d144(Vec2s *param1, unk32 param2, unk32 param3) {
         stack2.x = param1->x;
         stack2.y = param1->y;
 
-        return func_01ffd768(param3, &stack, &stack2, value);
+        return param3->func_01ffd768(&stack, &stack2, value);
     }
 
     return false;
@@ -107,7 +107,7 @@ bool MapObject::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
     return true;
 }
 
-void MapObject::vfunc_20() {}
+void MapObject::vfunc_20(unk32 param1) {}
 
 void MapObject::vfunc_24(MapObject *param1, VecFx32 param2) {
     *(u32 *) this = 0; // ????

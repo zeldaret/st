@@ -56,6 +56,7 @@ public:
     // itcm
     bool func_01ffd43c(Vec2s *param1, VecFx32 *param2, unk32 param3);
     bool func_01ffd640(VecFx32 *param1);
+    bool func_01ffd768(void *param1, Vec2s *param2, unk8 param3);
 
     // overlay 0
     void func_ov000_020767b4(VecFx32 *param1, Vec2s *touchPos, fx32 param3, unk32 param4, VecFx32 *param5);
@@ -70,6 +71,7 @@ public:
     void func_ov000_02078ba4();
     void func_ov000_02078cec();
     void func_ov000_0207a1e0(unk32 param1);
+    unk32 func_ov000_02076fa8(void *param1, void *param2, unk32 param3, fx32 param4);
 };
 
 class UnkStruct_027e09bc_24 : public UnkStruct_0204a060_Base {

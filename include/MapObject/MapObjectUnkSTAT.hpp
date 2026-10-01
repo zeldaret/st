@@ -26,7 +26,7 @@ public:
     /* 00 */ virtual bool vfunc_00() override; // Init
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
-    /* 14 */ virtual void vfunc_14() override;
+    /* 14 */ virtual void vfunc_14(unk32 param1) override;
     /* 30 */ virtual ~MapObjectUnkSTAT() override;
 
     void func_ov063_0215f6d0(void);

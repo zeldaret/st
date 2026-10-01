@@ -38,7 +38,7 @@ public:
 
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
-    /* 0C */ virtual void vfunc_14();
+    /* 0C */ virtual void vfunc_14(unk32 param1);
     /* 30 */ virtual ~MapObjectUnkSAND() override;
 
     void func_ov031_0210acd4(void);

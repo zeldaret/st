@@ -12,6 +12,7 @@
 #include "types.h"
 
 class MapObjectProfile;
+class UnkStruct_027e09bc_0C;
 
 typedef u16 MapObjFlags;
 enum MapObjFlag_ {
@@ -148,10 +149,10 @@ public:
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
-    /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2);
+    /* 14 */ virtual void vfunc_14(unk32 param1);
+    /* 18 */ virtual void vfunc_18(s8 *param1);
     /* 1C */ virtual bool vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3);
-    /* 20 */ virtual void vfunc_20();
+    /* 20 */ virtual void vfunc_20(unk32 param1);
     /* 24 */ virtual void vfunc_24(MapObject *param1, VecFx32 param2);
     /* 28 */ virtual unk32 vfunc_28(unk32 param1, unk32 param2, unk32 param3);
     /* 2C */ virtual bool vfunc_2C(VecFx32 *param1);
@@ -177,14 +178,51 @@ public:
         UNSET_FLAG(this->mFlags, MapObjFlag_Alive);
     }
 
+    // clang-format off
+    /* x & 0x00000001 */ const bool IsAlive() { return GET_FLAG(this->mFlags, MapObjFlag_Alive); }
+    /* x & 0x00000002 */ const bool IsFlag1() { return GET_FLAG(this->mFlags, MapObjFlag_1); }
+    /* x & 0x00000004 */ const bool IsFlag2() { return GET_FLAG(this->mFlags, MapObjFlag_2); }
+    /* x & 0x00000008 */ const bool IsFlag3() { return GET_FLAG(this->mFlags, MapObjFlag_3); }
+    /* x & 0x00000010 */ const bool IsFlag4() { return GET_FLAG(this->mFlags, MapObjFlag_4); }
+    /* x & 0x00000020 */ const bool IsFlag5() { return GET_FLAG(this->mFlags, MapObjFlag_5); }
+    /* x & 0x00000040 */ const bool IsFlag6() { return GET_FLAG(this->mFlags, MapObjFlag_6); }
+    /* x & 0x00000080 */ const bool IsFlag7() { return GET_FLAG(this->mFlags, MapObjFlag_7); }
+    /* x & 0x00000100 */ const bool IsFlag8() { return GET_FLAG(this->mFlags, MapObjFlag_8); }
+    /* x & 0x00000200 */ const bool IsFlag9() { return GET_FLAG(this->mFlags, MapObjFlag_9); }
+    /* x & 0x00000400 */ const bool IsFlag10() { return GET_FLAG(this->mFlags, MapObjFlag_10); }
+    /* x & 0x00000800 */ const bool IsFlag11() { return GET_FLAG(this->mFlags, MapObjFlag_11); }
+    /* x & 0x00001000 */ const bool IsFlag12() { return GET_FLAG(this->mFlags, MapObjFlag_12); }
+    /* x & 0x00002000 */ const bool IsFlag13() { return GET_FLAG(this->mFlags, MapObjFlag_13); }
+    /* x & 0x00004000 */ const bool IsFlag14() { return GET_FLAG(this->mFlags, MapObjFlag_14); }
+    /* x & 0x00008000 */ const bool IsFlag15() { return GET_FLAG(this->mFlags, MapObjFlag_15); }
+    /* x & 0x00010000 */ const bool IsFlag16() { return GET_FLAG(this->mFlags, MapObjFlag_16); }
+    /* x & 0x00020000 */ const bool IsFlag17() { return GET_FLAG(this->mFlags, MapObjFlag_17); }
+    /* x & 0x00040000 */ const bool IsFlag18() { return GET_FLAG(this->mFlags, MapObjFlag_18); }
+    /* x & 0x00080000 */ const bool IsFlag19() { return GET_FLAG(this->mFlags, MapObjFlag_19); }
+    /* x & 0x00100000 */ const bool IsFlag20() { return GET_FLAG(this->mFlags, MapObjFlag_20); }
+    /* x & 0x00200000 */ const bool IsFlag21() { return GET_FLAG(this->mFlags, MapObjFlag_21); }
+    /* x & 0x00400000 */ const bool IsFlag22() { return GET_FLAG(this->mFlags, MapObjFlag_22); }
+    /* x & 0x00800000 */ const bool IsFlag23() { return GET_FLAG(this->mFlags, MapObjFlag_23); }
+    /* x & 0x01000000 */ const bool IsFlag24() { return GET_FLAG(this->mFlags, MapObjFlag_24); }
+    /* x & 0x02000000 */ const bool IsFlag25() { return GET_FLAG(this->mFlags, MapObjFlag_25); }
+    /* x & 0x04000000 */ const bool IsFlag26() { return GET_FLAG(this->mFlags, MapObjFlag_26); }
+    /* x & 0x08000000 */ const bool IsFlag27() { return GET_FLAG(this->mFlags, MapObjFlag_27); }
+    /* x & 0x10000000 */ const bool IsFlag28() { return GET_FLAG(this->mFlags, MapObjFlag_28); }
+    /* x & 0x20000000 */ const bool IsFlag29() { return GET_FLAG(this->mFlags, MapObjFlag_29); }
+    /* x & 0x40000000 */ const bool IsFlag30() { return GET_FLAG(this->mFlags, MapObjFlag_30); }
+    /* x & 0x80000000 */ const bool IsFlag31() { return GET_FLAG(this->mFlags, MapObjFlag_31); }
+    // clang-format on
+
     MapObject();
 
+    // itcm
     MapObjectId GetMapObjectId();
     unk32 func_01fff590(unk32 param2);
 
+    // overlay 0
     bool func_ov000_0209d114();
     bool func_ov000_0209d12c();
-    bool func_ov000_0209d144(Vec2s *param1, unk32 param2, unk32 param3);
+    bool func_ov000_0209d144(Vec2s *param1, unk32 param2, UnkStruct_027e09bc_0C *param3);
     void func_ov000_0209d274(unk32 param1);
     bool func_ov000_0209d29c(unk32 param1);
     void func_ov000_0209d2c4(unk32 param1, bool param2);

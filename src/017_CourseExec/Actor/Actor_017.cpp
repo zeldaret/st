@@ -28,7 +28,6 @@ extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
 extern "C" void func_01ff97c8(VecFx32 *, int);
 extern "C" void func_01ffce1c(Cylinder *, Cylinder *);
 extern "C" unk32 func_01ff9258(fx32, fx32);
-extern "C" bool func_01ffd768(UnkStruct_027e09bc_0C *, void *, Vec2s *, char);
 
 extern "C" void func_ov000_0209807c(void *);
 extern "C" void func_ov000_020980e0(void *);
@@ -593,7 +592,7 @@ bool Actor::func_ov017_020bfd9c(Vec2s *param1, unk32 param2, UnkStruct_027e09bc_
         Vec2s sp0;
         sp0.x = param1->x;
         sp0.y = param1->y;
-        return func_01ffd768(param3, &sp4, &sp0, value);
+        return param3->func_01ffd768(&sp4, &sp0, value);
     }
 
     return false;

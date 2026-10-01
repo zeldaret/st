@@ -101,7 +101,7 @@ void MapObjectUnkSTAT::vfunc_0C(void) {
     this->vfunc_08();
 }
 
-void MapObjectUnkSTAT::vfunc_14(void) {
+void MapObjectUnkSTAT::vfunc_14(unk32 param1) {
     VecFx32 vec;
     VecFx32_Init(mPos.x + mUnk_60, mPos.y + mUnk_64, mPos.z + mUnk_68, &vec);
     mUnk_40.func_01ffc6d4(mAngleStruct, &vec);

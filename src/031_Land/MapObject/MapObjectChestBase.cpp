@@ -238,8 +238,8 @@ void MapObjectChestBase::func_ov031_02103878() {
 }
 
 void MapObjectChestBase::vfunc_38(unk32 param1, unk32 param2) {}
-void MapObjectChestBase::vfunc_18(s8 *param1, s8 param2) {}
-void MapObjectChestBase::vfunc_14() {}
+void MapObjectChestBase::vfunc_18(s8 *param1) {}
+void MapObjectChestBase::vfunc_14(unk32 param1) {}
 unk32 MapObjectChestBase::vfunc_3C() {}
 
 bool MapObjectChestBase::vfunc_40() {

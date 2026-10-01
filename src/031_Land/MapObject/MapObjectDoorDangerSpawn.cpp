@@ -552,11 +552,11 @@ bool MapObjectDoorDangerSpawn::func_ov031_020fdec8(void) {
     return false;
 }
 
-void MapObjectDoorDangerSpawn::vfunc_18(s8 *param1, s8 param2) {
-    this->func_ov031_020fcb78(param1, param2);
+void MapObjectDoorDangerSpawn::vfunc_18(s8 *param1) {
+    this->func_ov031_020fcb78(param1);
 }
 
-void MapObjectDoorDangerSpawn::vfunc_14(void) {
+void MapObjectDoorDangerSpawn::vfunc_14(unk32 param1) {
     Mat3p m;
     Mat3p_InitYRotation(&m, SIN((u16) this->mAngle), COS((u16) this->mAngle));
 

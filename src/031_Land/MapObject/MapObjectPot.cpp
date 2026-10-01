@@ -112,7 +112,7 @@ void MapObjectPot::vfunc_48() {
     this->func_ov000_0209d2c4(0x0, true);
 }
 
-void MapObjectPot::vfunc_14() {
+void MapObjectPot::vfunc_14(unk32 param1) {
     this->func_ov000_0209d518(&this->mPos, 0x5A7, 0x5A7, 0x1F);
     this->mUnk_48.vfunc_18(&this->mPos);
 }

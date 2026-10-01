@@ -72,7 +72,7 @@ void MapObjectUnkLTRW::vfunc_08() {
     }
 }
 
-void MapObjectUnkLTRW::vfunc_14() {
+void MapObjectUnkLTRW::vfunc_14(unk32 param1) {
     mUnk_40.vfunc_18(&mPos);
 }
 

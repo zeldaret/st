@@ -144,7 +144,7 @@ void MapObjectUnkPTFL::vfunc_0C() {
     this->vfunc_08();
 }
 
-void MapObjectUnkPTFL::vfunc_14() {
+void MapObjectUnkPTFL::vfunc_14(unk32 param1) {
     Mat4p sp44;
     VecFx32 sp38;
     VecFx32 sp2C;

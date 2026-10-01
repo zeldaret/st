@@ -51,7 +51,7 @@ void GameModeTitleScreen::vfunc_1C() {
 
 void GameModeTitleScreen::vfunc_20() {
     UnkStruct_027e09a4 *ptr4 = data_027e09a4;
-    void *ptr                = &data_0204a110.mUnk_DF2;
+    s8 *ptr                  = &data_0204a110.mUnk_DF2;
 
     if ((data_0204a088->mUnk_120 & 1) != 0) {
         ptr4->func_ov017_020bb994(ptr);

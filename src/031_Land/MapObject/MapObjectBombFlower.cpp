@@ -208,7 +208,7 @@ bool MapObjectBombFlower::SetState(MapObjState state, unk32 param2) {
     return true;
 }
 
-void MapObjectBombFlower::vfunc_14() {
+void MapObjectBombFlower::vfunc_14(unk32 param1) {
     this->mUnk_48.func_ov031_02102c00();
 
     this->MapObject::func_ov000_0209d518(&this->mPos, 0x5A7, 0x5A7, 0x1F);

@@ -42,12 +42,12 @@ void MapObjectDoorKey::vfunc_08(void) {
     this->mUnk_A4 = false;
 }
 
-void MapObjectDoorKey::vfunc_18(s8 *param1, s8 param2) {
-    this->MapObjectDoorBase::func_ov031_020fcb78(param1, param2);
+void MapObjectDoorKey::vfunc_18(s8 *param1) {
+    this->MapObjectDoorBase::func_ov031_020fcb78(param1);
 }
 
 // https://decomp.me/scratch/XO3u2
-void MapObjectDoorKey::vfunc_14(void) {
+void MapObjectDoorKey::vfunc_14(unk32 param1) {
     f32 factor;
     f32 uVar3;
     s32 sVar2;

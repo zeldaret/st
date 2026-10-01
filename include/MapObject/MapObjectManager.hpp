@@ -71,10 +71,16 @@ public:
     void func_ov005_020b6570(unk32 param1);
 
     // overlay 17
+    bool func_ov017_020c007c(unk32 param1);
     void func_ov017_020c00dc(unk32 param1);
     void func_ov017_020c01c8(void *param1);
-    void func_ov017_020c01cc(void *param1);
-    void func_ov017_020c023c(void *param1);
+    void func_ov017_020c01cc(unk32 param1);
+    void func_ov017_020c023c(s8 *param1);
+    void func_ov017_020c02ac(volatile unk32 param1, Vec2bCpp param2);
+    void func_ov017_020c02f4(volatile unk32 param1, VecFx32 *param2);
+    unk32 func_ov017_020c050c(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
+
+    static void func_ov017_020c033c(unk32 *param1, MapObjectManager *thisx, const Vec2s *param2, unk32 param3, unk32 param4);
 };
 
 extern MapObjectManager *gpMapObjManager;

@@ -124,7 +124,7 @@ void MapObjectUnkMTJR::func_ov063_02161288(void) {
     UNSET_FLAG(mFlags, 0);
 }
 
-void MapObjectUnkMTJR::vfunc_14() {
+void MapObjectUnkMTJR::vfunc_14(unk32 param1) {
     this->func_ov000_0209d518(&mPos, 0xD9A, 0xD9A, 0x1F);
     mUnk_40.vfunc_18(&mPos);
 }

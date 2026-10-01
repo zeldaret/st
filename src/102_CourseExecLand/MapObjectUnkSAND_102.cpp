@@ -216,7 +216,7 @@ void MapObjectUnkSAND::vfunc_0C() {
     }
 }
 
-void MapObjectUnkSAND::vfunc_14() {
+void MapObjectUnkSAND::vfunc_14(unk32 param1) {
     VecFx32 sp4  = this->mPos;
     Vec2bCpp sp0 = this->mUnk_3A;
 

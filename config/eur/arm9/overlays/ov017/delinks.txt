@@ -44,6 +44,7 @@ src/017_CourseExec/Player/PlayerLinkActor_A0_20_017.cpp:
     .text       start:0x020be0a8 end:0x020be2ec
 
 src/017_CourseExec/code_020be2ec_017.cpp:
+    complete
     .text       start:0x020be2ec end:0x020be9cc
 
 src/017_CourseExec/CargoManager_017.cpp:

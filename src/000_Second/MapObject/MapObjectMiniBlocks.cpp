@@ -107,7 +107,7 @@ bool MapObjectMiniBlocks::vfunc_00(void) {
     return true;
 }
 
-void MapObjectMiniBlocks::vfunc_14(void) {
+void MapObjectMiniBlocks::vfunc_14(unk32 param1) {
     Mat3p m;
     u16 unk_14 = this->mAngle;
     Mat3p_InitYRotation(&m, SIN(unk_14), COS(unk_14));

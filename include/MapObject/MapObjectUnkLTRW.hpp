@@ -32,7 +32,7 @@ public:
 
     /* 00 */ virtual bool vfunc_00() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 14 */ virtual void vfunc_14() override;
+    /* 14 */ virtual void vfunc_14(unk32 param1) override;
     /* 1C */ virtual bool vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) override;
     /* 28 */ virtual unk32 vfunc_28(unk32 param1, unk32 param2, unk32 param3) override;
 

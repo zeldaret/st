@@ -66,7 +66,7 @@ void UnkStruct_027e09a4::func_ov017_020bb7f8(void *param1) {
     }
 
     if (data_0204a088->mUnk_120 & 0x08) {
-        gpMapObjManager->func_ov017_020c01cc(param1);
+        gpMapObjManager->func_ov017_020c01cc((unk32) param1); //! TODO: change parameters
     }
 
     if (data_0204a088->mUnk_120 & 0x10) {
@@ -92,7 +92,7 @@ void UnkStruct_027e09a4::func_ov017_020bb934(void *param1) {
     gpActorManager->func_01fff2fc(ActorManager::func_ov017_020bee64, param1);
 }
 
-void UnkStruct_027e09a4::func_ov017_020bb994(void *param1) {
+void UnkStruct_027e09a4::func_ov017_020bb994(s8 *param1) {
     data_027e0cd8->func_ov000_02081d58();
     data_027e0ce0->func_ov017_020bd644(param1);
     gpMapObjManager->func_ov017_020c023c(param1);

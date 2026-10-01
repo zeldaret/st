@@ -42,8 +42,8 @@ public:
     // data_ov031_0211527c (MapObject)
     /* 00 */ virtual bool vfunc_00() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 14 */ virtual void vfunc_14() override;
-    /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2) override;
+    /* 14 */ virtual void vfunc_14(unk32 param1) override;
+    /* 18 */ virtual void vfunc_18(s8 *param1) override;
     /* 30 */ virtual ~MapObjectDoorSwitch() override;
     /* 40 */ virtual void vfunc_40() override;
     /* 44 */ virtual void vfunc_44() override;

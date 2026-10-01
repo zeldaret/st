@@ -247,7 +247,7 @@ public:
     /* DDC */ UnkStruct_0204a110_Sub8 mUnk_DDC;
     /* DEC */ GameModeManagerBase *mpManager;
     /* DF0 */ u16 mUnk_DF0;
-    /* DF2 */ unk8 mUnk_DF2;
+    /* DF2 */ s8 mUnk_DF2;
     /* DF3 */ unk8 mUnk_DF3;
     /* DF4 */ unk32 mUnk_DF4;
     /* DF8 */ unk32 mUnk_DF8;

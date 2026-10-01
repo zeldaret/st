@@ -88,7 +88,7 @@ public:
     /* 90 */
 
     void func_ov031_020fbf10(bool param1, bool param2);
-    void func_ov031_020fcb78(s8 *param1, s8 param2);
+    void func_ov031_020fcb78(s8 *param1);
     void func_ov031_020fcd40();
     void func_ov031_020fcf0c(unk32 param1);
     bool func_ov031_020fcf30();

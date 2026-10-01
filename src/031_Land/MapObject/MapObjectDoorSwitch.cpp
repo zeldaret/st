@@ -112,7 +112,7 @@ bool MapObjectDoorSwitch::vfunc_6C(void) {
     return true;
 }
 
-void MapObjectDoorSwitch::vfunc_14(void) {
+void MapObjectDoorSwitch::vfunc_14(unk32 param1) {
     u16 angle = this->mAngle;
     Mat3p m;
 
@@ -123,8 +123,8 @@ void MapObjectDoorSwitch::vfunc_14(void) {
     this->mUnk_094.vfunc_14(&m, &local_40);
 }
 
-void MapObjectDoorSwitch::vfunc_18(s8 *param1, s8 param2) {
-    this->func_ov031_020fcb78(param1, param2);
+void MapObjectDoorSwitch::vfunc_18(s8 *param1) {
+    this->func_ov031_020fcb78(param1);
 }
 
 void MapObjectDoorSwitch::vfunc_74(void) {

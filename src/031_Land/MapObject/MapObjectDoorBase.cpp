@@ -535,7 +535,7 @@ struct stack_struct {
 extern "C" void func_01ff9fbc(Mat2p *, unk32, Mat2p *);
 extern fx16 data_0203f964[];
 
-void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1, s8 param2) {
+void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1) {
     Vec2s sp10;
     stack_struct sp8;
     ActorRef sp4;

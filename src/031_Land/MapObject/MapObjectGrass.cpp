@@ -50,7 +50,7 @@ void MapObjectGrass::vfunc_08() {
 }
 
 // non-matching
-void MapObjectGrass::vfunc_14() {
+void MapObjectGrass::vfunc_14(unk32 param1) {
     VecFx32 vec;
     for (unk32 i = 0; i < ARRAY_LEN(this->mUnk_40); ++i) {
         VecFx32_Add(&this->mUnk_40[i], &this->mPos, &vec);
