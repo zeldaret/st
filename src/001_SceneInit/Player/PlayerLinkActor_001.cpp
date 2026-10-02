@@ -3,6 +3,7 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 
 PlayerLinkActor::PlayerLinkActor(unk32 param1, ItemManager *pItemMgr, UnkStruct_027e0ce0_40 *param3,

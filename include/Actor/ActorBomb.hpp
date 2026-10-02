@@ -52,7 +52,7 @@ public:
 
     // data_ov031_02112c78
     /* 00 */ virtual ~ActorBomb_180() override;
-    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
     /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) override;
     /* 10 */ virtual bool vfunc_10(ActorRef param1, unk32 param2) override;
 };
@@ -64,7 +64,7 @@ public:
     /* 08 */
 
     // data_ov031_02112cb0
-    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1) override;
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
 };
 
 class ActorBomb : public Actor {

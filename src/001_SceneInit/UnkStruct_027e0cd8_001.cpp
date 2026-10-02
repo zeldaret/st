@@ -1,4 +1,5 @@
 #include "Actor/ActorManager.hpp"
+#include "MapObject/MapObjectManager.hpp"
 #include "Save/SaveManager.hpp"
 #include "System/OverlayManager.hpp"
 #include "System/SysNew.hpp"

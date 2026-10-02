@@ -53,7 +53,7 @@ _ZN12ActorUnkCANS19func_ov063_0215a678EPS_P29UnkStruct_func_ov063_0215a678 kind:
 _ZN24UnkStruct_ov063_02162ea8C1Ev kind:function(arm,size=0x30) addr:0x0215a8f4
 _ZN24UnkStruct_ov063_02162ea8D1Ev kind:function(arm,size=0x14) addr:0x0215a924
 _ZN24UnkStruct_ov063_02162ea8D0Ev kind:function(arm,size=0x1c) addr:0x0215a938
-_ZN24UnkStruct_ov063_02162ea88vfunc_08EPK24UnkStruct_ov031_020f3310 kind:function(arm,size=0x4c) addr:0x0215a954
+_ZN24UnkStruct_ov063_02162ea88vfunc_08EPK24UnkStruct_ov031_020f3310i kind:function(arm,size=0x4c) addr:0x0215a954
 _ZN24UnkStruct_ov063_02162ea88vfunc_0CEPK24UnkStruct_ov031_020e54d4Pii kind:function(arm,size=0xcc) addr:0x0215a9a0
 _ZN24UnkStruct_ov063_02162f148vfunc_3CEv kind:function(arm,size=0x24) addr:0x0215aa6c
 _ZN24UnkStruct_ov063_02162f148vfunc_38Eii kind:function(arm,size=0x2c) addr:0x0215aa90

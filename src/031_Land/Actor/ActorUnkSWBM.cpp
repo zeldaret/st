@@ -22,7 +22,7 @@ extern "C" void FlushGfxQueue();
 static const Cylinder data_ov031_02113114(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.35f));
 
 // non-matching
-bool ActorUnkSWBM_94::vfunc_08(const UnkStruct_ov031_020f3310 *param1) {
+bool ActorUnkSWBM_94::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
     return (((u32) param1->mUnk_04->mUnk_24[param1->mUnk_00->mUnk_06] >> 0x16) & 0x1) != 0x1;
 }
 
