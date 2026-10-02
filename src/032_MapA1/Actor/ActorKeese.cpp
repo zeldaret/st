@@ -332,7 +332,7 @@ void ActorKeese::vfunc_2C(Actor_vfunc_30 *param1) {
         return;
     }
 
-    VecFx32 *og = this->mUnk_0B0.func_01ffc6d4(this->mAngleStruct, &this->mPos);
+    VecFx32 *og = this->mUnk_0B0.func_01ffc6d4(this->mAngle, &this->mPos);
     VecFx32 vec;
     VecFx32_Init(og->x, og->y, og->z, &vec);
 
@@ -382,7 +382,7 @@ void ActorKeese::func_ov032_0211eb60() {
     func_01ff916c(&this->mUnk_2A0, this->mUnk_2A4, 0xA4);
     func_01ff916c(&this->mPos.y, this->mUnk_29C, 0xA4);
 
-    this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle);
+    this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle.angle_s);
 
     if (this->IsTimerOut()) {
         if (func_01ff9258(this->mPos.x - this->mUnk_5C.mInitialPos.x, this->mPos.z - this->mUnk_5C.mInitialPos.z) > 0x2000) {
@@ -398,7 +398,7 @@ void ActorKeese::func_ov032_0211eb60() {
 
     VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
 
-    if (!func_02016b8c(&this->mPos, vec, 0x3000, this->mAngleStruct, 0x1000, 0x1)) {
+    if (!func_02016b8c(&this->mPos, vec, 0x3000, this->mAngle, 0x1000, 0x1)) {
         return;
     }
 
@@ -420,7 +420,7 @@ void ActorKeese::func_ov032_0211f0a8() {
 
     if (this->IsTimerOut()) {
         VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
-        if (func_02016b8c(&this->mPos, vec, 0x3000, this->mAngleStruct, 0x1000, 0x1)) {
+        if (func_02016b8c(&this->mPos, vec, 0x3000, this->mAngle, 0x1000, 0x1)) {
             this->SetState(ActorKeeseState_2);
         }
     }
@@ -436,7 +436,7 @@ void ActorKeese::func_ov032_0211f0a8() {
             this->SetState(ActorKeeseState_0);
         }
     }
-    this->func_ov000_0209a008(this->mUnk_2A0, this->mAngle);
+    this->func_ov000_0209a008(this->mUnk_2A0, this->mAngle.angle_s);
 }
 
 // non-matching
@@ -452,7 +452,7 @@ void ActorKeese::func_ov032_0211f1f4() {
         if (func_01ff9258(this->mPos.x - sp00.x, this->mPos.z - sp00.z) > 0x2000) {
             this->func_ov032_0211e380();
 
-            this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle);
+            this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle.angle_s);
             return;
         }
     }
@@ -460,7 +460,7 @@ void ActorKeese::func_ov032_0211f1f4() {
     if (func_01ff9258(this->mPos.x - this->mUnk_5C.mInitialPos.x, this->mPos.z - this->mUnk_5C.mInitialPos.z) > 0x2000) {
         this->SetState(ActorKeeseState_3);
 
-        this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle);
+        this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle.angle_s);
         return;
     }
 
@@ -470,7 +470,7 @@ void ActorKeese::func_ov032_0211f1f4() {
         this->func_ov032_0211e380();
     }
 
-    this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle);
+    this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle.angle_s);
 }
 
 void ActorKeese::func_ov032_0211f300() {

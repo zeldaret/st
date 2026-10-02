@@ -54,8 +54,8 @@ bool ActorItemBoomerang::Init(unk32 param1) {
 
     this->func_ov031_020e5034(0x0);
 
-    unk16 sin = SIN((u16) this->mAngle);
-    unk16 cos = COS((u16) this->mAngle);
+    unk16 sin = SIN((u16) this->mAngle.angle_s);
+    unk16 cos = COS((u16) this->mAngle.angle_s);
 
     this->mVel.x = MUL_FX32(sin, FLOAT_TO_FX32(0.5f));
     this->mVel.z = MUL_FX32(cos, FLOAT_TO_FX32(0.5f));
@@ -320,7 +320,7 @@ void ActorItemBoomerang::func_ov031_020e52a0() {
 // non-matching
 void ActorItemBoomerang::vfunc_2C(Actor_vfunc_30 *param1) {
     if (Actor::func_01fff5d0(param1, 0x0)) {
-        this->mUnk_94.func_01ffc6d4(this->mAngleStruct, &this->mPos);
+        this->mUnk_94.func_01ffc6d4(this->mAngle, &this->mPos);
         data_027e09b4->func_ov017_020c08c4(&this->mPos, 0x400, 0x400, 0x1F, 0x0, 0x1);
     }
 }

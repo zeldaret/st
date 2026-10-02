@@ -83,7 +83,7 @@ bool ActorUnkFLEN::func_ov031_020f81f8() {
     actorParams.mUnk_28 = 0;
     actorParams.func_ov000_020975f8();
     actorParams.mUnk_28       = this->mRef;
-    actorParams.mInitialAngle = this->mAngle;
+    actorParams.mInitialAngle = this->mAngle.angle_s;
 
     VecFx32_Copy(&this->mPos, &actorParams.mInitialPos);
     actorParams.mInitialPos.y += FLOAT_TO_FX32(5.0f);

@@ -257,7 +257,7 @@ void ActorUnkZLSL::func_ov031_020ea8c8() {}
 
 void ActorUnkZLSL::Update() {
     UnkAngleStruct angleTmp;
-    angleTmp.angle = this->mAngle;
+    angleTmp.angle_u = this->mAngle.angle_u;
     CALL_PTMF(PTMF<ActorUnkZLSL>, data_ov031_021137f8[this->mState]);
 
     if (!GET_FLAG(this->mFlags, ActorFlag_Visible)) {
@@ -365,7 +365,7 @@ void ActorUnkZLSL::func_ov031_020eab40(unk32 param1) {
     }
     VecFx32 *pVec2 = this->func_ov000_0209853c(0x0);
 
-    func_01ff930c(&this->mAngle, func_02016958(&this->mPos, pVec2), 0x71C);
+    func_01ff930c(&this->mAngle.angle_s, func_02016958(&this->mPos, pVec2), 0x71C);
 }
 
 void ActorUnkZLSL::func_ov031_020eac64() {
@@ -503,7 +503,7 @@ void ActorUnkZLSL::func_ov031_020eb218() {
 bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
     func_01ff916c(&this->mUnk_27CC.mUnk_1C, param1->y, 0xCD);
     unk16 res = func_02016958(&this->mPos, param1);
-    func_01ff930c(&this->mAngle, res, 0x71C);
+    func_01ff930c(&this->mAngle.angle_s, res, 0x71C);
 
     VecFx32 vec = *param1;
     vec.y += 0x800;
@@ -864,7 +864,7 @@ void ActorUnkZLSL::vfunc_2C(Actor_vfunc_30 *param1) {
     }
     switch (this->mUnk_2874) {
         case false:
-            Mat3p_InitYRotation(&sp00, SIN((u16) this->mAngle), COS((u16) this->mAngle));
+            Mat3p_InitYRotation(&sp00, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
             this->mUnk_1620.vfunc_10(&this->mUnk_28A4, &sp00, &this->mPos);
             break;
         case true:
@@ -1091,21 +1091,21 @@ bool ActorUnkZLSL::func_ov031_020ec8c4() {
     VecFx32 vec;
     UnkAngleStruct angleStruct;
     if (!this->func_ov000_020a8ff4(&vec)) {
-        angleStruct.angle = this->mAngle;
+        angleStruct.angle_u = this->mAngle.angle_u;
     } else {
-        angleStruct.angle = func_02016958(&this->mPos, &vec);
+        angleStruct.angle_u = func_02016958(&this->mPos, &vec);
     }
 
     if (this->mUnk_0B0 & 0x2) {
-        func_01ff9364(&this->mAngle, angleStruct);
+        func_01ff9364(&this->mAngle.angle_s, angleStruct);
 
-        s16 angle = angleStruct.angle - this->mAngle;
+        s16 angle = angleStruct.angle_s - this->mAngle.angle_s;
         if (ABS(angle) < 0x2000) {
             return true;
         }
     }
 
-    return func_01ff930c(&this->mAngle, angleStruct.angle, 0x71C);
+    return func_01ff930c(&this->mAngle.angle_s, angleStruct.angle_u, 0x71C);
 }
 
 // non-matching
@@ -1196,13 +1196,13 @@ void ActorUnkZLSL::func_ov031_020ecc68(unk32 param1) {
         if (func_01ff9258(actor->mPos.x - vec->x, actor->mPos.z - vec->z) > 0x3000) {
             this->func_ov031_020ed0b0();
         } else {
-            UnkAngleStruct angleStruct = this->mAngleStruct;
-            angleStruct.angle          = 0x2000;
+            UnkAngleStruct angleStruct = this->mAngle;
+            angleStruct.angle_u        = 0x2000;
             this->func_ov031_020ecea8(angleStruct, 0x6000, 0x4800, 0x0);
         }
     } else {
-        UnkAngleStruct angleStruct = this->mAngleStruct;
-        angleStruct.angle          = 0x2000;
+        UnkAngleStruct angleStruct = this->mAngle;
+        angleStruct.angle_u        = 0x2000;
         this->func_ov031_020ecea8(angleStruct, 0x6000, 0x4800, 0x0);
     }
     func_ov000_02072fd0(&stack.sp_34);
@@ -1256,8 +1256,8 @@ void ActorUnkZLSL::func_ov031_020ed3c0() {
     VecFx32 sp08;
     UnkAngleStruct angleStruct;
 
-    sp14              = this->mUnk_28B0;
-    angleStruct.angle = 0xE39;
+    sp14                = this->mUnk_28B0;
+    angleStruct.angle_u = 0xE39;
 
     this->func_ov031_020ecea8(angleStruct, 0x7000, 0x4800, 0x1);
 
@@ -1333,7 +1333,7 @@ void ActorUnkZLSL::vfunc_A4() {
     sp00.y       = sp00.y + this->mYOffset - FLOAT_TO_FX32(0.5f);
     func_01ffb714(&sp0C, &sp00, &sp0C);
 
-    s16 var_r4 = this->mAngle - func_01ffbbe0(sp0C.x, sp0C.z);
+    s16 var_r4 = this->mAngle.angle_s - func_01ffbbe0(sp0C.x, sp0C.z);
     if (this->mUnk_0E8 < this->mUnk_0EA) {
         ++this->mUnk_0E8;
     }

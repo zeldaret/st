@@ -102,14 +102,14 @@ bool MapObjectMiniBlocks::Init(void) {
             break;
     }
 
-    func_01ff9638(&vec, -this->mAngle);
+    func_01ff9638(&vec, -this->mAngle.angle_s);
     VecFx32_Add(&this->mPos, &vec, &this->mPos);
     return true;
 }
 
 void MapObjectMiniBlocks::vfunc_14(unk32 param1) {
     Mat3p m;
-    u16 unk_14 = this->mAngle;
+    u16 unk_14 = this->mAngle.angle_s;
     Mat3p_InitYRotation(&m, SIN(unk_14), COS(unk_14));
     this->mUnk_40.vfunc_14(&m, &this->mPos);
 }

@@ -447,7 +447,7 @@ void ActorUnkCASE::func_ov063_0215b6c8(VecFx32 *param1, UnkAngleStruct angle) {
     VecFx32 vec = *param1;
     VecFx32_Copy(&vec, &mPos);
     VecFx32_Copy(&vec, &mPrevPos);
-    mAngle = *(s16 *) &angle.angle;
+    mAngle = angle;
 }
 
 void ActorUnkCASE::func_ov063_0215b724(void) {

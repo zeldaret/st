@@ -297,8 +297,8 @@ void ActorRollingStone::func_ov031_020f8bc4() {
 
     this->func_ov031_020f8de8();
     VecFx32 sp38;
-    unk16 sinValue = SIN((u16) this->mAngle);
-    unk16 cosValue = COS((u16) this->mAngle);
+    unk16 sinValue = SIN((u16) this->mAngle.angle_s);
+    unk16 cosValue = COS((u16) this->mAngle.angle_s);
 
     sp38.x = MUL_FX32(sinValue, FLOAT_TO_FX32(1.0f));
     sp38.z = MUL_FX32(cosValue, FLOAT_TO_FX32(1.0f));
@@ -400,7 +400,7 @@ void ActorRollingStone::func_ov031_020f8f30() {
     VecFx32 vec  = this->mPos;
     VecFx32_Copy(&vec, &sp14.mInitialPos);
 
-    sp14.mInitialAngle = this->mAngle;
+    sp14.mInitialAngle = this->mAngle.angle_s;
     sp14.mParams[0]    = 0x1;
 
     ActorRef ref;
@@ -412,7 +412,7 @@ void ActorRollingStone::func_ov031_020f8f30() {
 void ActorRollingStone::func_ov031_020f9018() {
     this->mUnk_2C = 0x0;
 
-    fx32 angle = ((u32) (this->mAngle + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
+    fx32 angle = ((u32) (this->mAngle.angle_s + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
     if (angle == 0x1 || angle == 0x3) {
         this->mVel.y = FLOAT_TO_FX32(0.0f);
         this->mVel.z = FLOAT_TO_FX32(0.0f);
@@ -426,7 +426,7 @@ void ActorRollingStone::func_ov031_020f9050() {
     this->mUnk_3C = &this->mUnk_AC;
     this->func_ov031_020f8de8();
 
-    fx32 angle = ((u32) (this->mAngle + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
+    fx32 angle = ((u32) (this->mAngle.angle_s + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
     if (angle == 0x1 || angle == 0x3) {
         this->mVel.y = FLOAT_TO_FX32(0.0f);
         this->mVel.z = FLOAT_TO_FX32(0.0f);
@@ -446,7 +446,7 @@ void ActorRollingStone::func_ov031_020f9050() {
 
     data_027e09c0->func_ov000_0207de98(this->mRef, &unk, this->mUnk_38);
 
-    angle = ((u32) (this->mAngle + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
+    angle = ((u32) (this->mAngle.angle_s + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
     if (angle == 0x1 || angle == 0x3) {
         if (this->mVel.x != FLOAT_TO_FX32(0.0f)) {
             return;
@@ -634,8 +634,8 @@ void ActorRollingStone::func_ov031_020f9554() {
     this->func_ov031_020f8de8();
 
     VecFx32 sp38;
-    unk16 sinValue = SIN((u16) this->mAngle);
-    unk16 cosValue = COS((u16) this->mAngle);
+    unk16 sinValue = SIN((u16) this->mAngle.angle_s);
+    unk16 cosValue = COS((u16) this->mAngle.angle_s);
 
     sp38.x = MUL_FX32(sinValue, FLOAT_TO_FX32(0.25f));
     sp38.y = FLOAT_TO_FX32(0.0f);
@@ -663,7 +663,7 @@ void ActorRollingStone::func_ov031_020f9554() {
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
 
-    this->mUnk_15C.func_ov024_020d69d8(&this->mPos, &this->mAngle, &this->mVel, 0x1AE, 0xE39, 0x1AE);
+    this->mUnk_15C.func_ov024_020d69d8(&this->mPos, &this->mAngle.angle_s, &this->mVel, 0x1AE, 0xE39, 0x1AE);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
     this->func_ov031_020f98e4();
@@ -694,7 +694,7 @@ void ActorRollingStone::func_ov031_020f97cc() {
 }
 
 void ActorRollingStone::func_ov031_020f98e4() {
-    unk16 sp00 = this->mAngle;
+    unk16 sp00 = this->mAngle.angle_s;
 
     Mat3p sp34;
     switch (func_02017e8c(&sp00)) {

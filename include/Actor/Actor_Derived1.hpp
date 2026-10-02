@@ -92,7 +92,7 @@ public:
     /* 0A */ unk32 mUnk_08;
     /* 0C */
 
-    void func_01ffc6d4(u16 param1, VecFx32 *pos);
+    void func_01ffc6d4(UnkAngleStruct param1, VecFx32 *pos);
 
     Actor_Derived1_a4(ModelRender *pModelRender) {
         this->mpModelRender = pModelRender;

@@ -60,5 +60,5 @@ void ActorUnkEFSB::vfunc_2C(Actor_vfunc_30 *param1) {
     VecFx32 sp0 = this->mPos;
     sp0.y += FLOAT_TO_FX32(0.85f);
 
-    this->mUnk_098.func_01ffc634(&vec, this->mAngleStruct, &sp0);
+    this->mUnk_098.func_01ffc634(&vec, this->mAngle, &sp0);
 }

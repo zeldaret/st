@@ -239,7 +239,7 @@ void ActorFleeingSpinut::vfunc_2C(Actor_vfunc_30 *param1) {
 
     vec.y += this->mUnk_21C;
 
-    this->mUnk_0B0.func_01ffc634(&this->mUnk_98, this->mAngleStruct, &vec);
+    this->mUnk_0B0.func_01ffc634(&this->mUnk_98, this->mAngle, &vec);
 }
 
 bool ActorFleeingSpinut::func_ov032_0211be04() {
@@ -378,7 +378,7 @@ void ActorFleeingSpinut::func_ov032_0211c2c4() {
 }
 
 void ActorFleeingSpinut::func_ov032_0211c340() {
-    this->mUnk_1EC.func_ov032_0211cd60(&this->mPos, &this->mAngle, &this->mVel, 0xF6, 0xE39, 0xF6);
+    this->mUnk_1EC.func_ov032_0211cd60(&this->mPos, &this->mAngle.angle_s, &this->mVel, 0xF6, 0xE39, 0xF6);
 
     if (this->func_ov032_0211c938() && this->func_ov032_0211ca20()) {
         this->SetState(ActorFleeingSpinutState_1);
@@ -435,7 +435,7 @@ void ActorFleeingSpinut::func_ov032_0211c5cc() {
         this->mUnk_224 = true;
     }
 
-    this->mUnk_1EC.func_ov032_0211cd60(&this->mPos, &this->mAngle, &this->mVel, 0x429, 0x429 + 0xA10, 0x429);
+    this->mUnk_1EC.func_ov032_0211cd60(&this->mPos, &this->mAngle.angle_s, &this->mVel, 0x429, 0x429 + 0xA10, 0x429);
 
     if (this->mUnk_1EC.mUnk_28 & 0x1) {
         this->SetState(ActorFleeingSpinutState_6);
@@ -476,7 +476,7 @@ void ActorFleeingSpinut::func_ov032_0211c73c() {
 }
 
 void ActorFleeingSpinut::func_ov032_0211c7bc() {
-    this->mUnk_1EC.func_ov032_0211cd60(&this->mPos, &this->mAngle, &this->mVel, 0xF6, 0xE39, 0xF6);
+    this->mUnk_1EC.func_ov032_0211cd60(&this->mPos, &this->mAngle.angle_s, &this->mVel, 0xF6, 0xE39, 0xF6);
 
     if (this->func_ov032_0211ca6c() && this->mUnk_1EC.mUnk_28 & 0x2) {
         this->SetState(ActorFleeingSpinutState_3);
@@ -650,7 +650,7 @@ u16 *ActorFleeingSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, V
     func_01ff9258(sp1C.x - param1->x, sp1C.z - param1->z);
 
     UnkAngleStruct spm04;
-    spm04.angle = sp00;
+    spm04.angle_u = sp00;
     func_02017f54(param2, spm04);
 }
 

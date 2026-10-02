@@ -36,7 +36,7 @@ bool ActorUnkSWBM_98::vfunc_0C(Actor *param1, VecFx32 *vector) {
         return retValue;
     }
 
-    u16 angle = this->mUnk_2C->mAngle;
+    u16 angle = this->mUnk_2C->mAngle.angle_s;
 
     vector->x = SIN(angle);
     vector->y = FLOAT_TO_FX32(0.0f);
@@ -76,7 +76,7 @@ void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2) {
 
     Mat3p mat;
 
-    u16 angle = actor->mAngle;
+    u16 angle = actor->mAngle.angle_s;
     Mat3p_InitYRotation(&mat, SIN(angle), COS(angle));
 
     s16 var_r8 = 0xB33;
@@ -128,8 +128,8 @@ bool ActorUnkSWBM::Init(unk32 param1) {
     VecFx32_Copy(&this->mPos, &this->mUnk_098.mUnk_0C.pos);
     this->mUnk_098.mUnk_0C.size = FLOAT_TO_FX32(0.35f);
 
-    this->mVel.x = MUL_FX32(SIN((u16) this->mAngle), 0xB33);
-    this->mVel.z = MUL_FX32(COS((u16) this->mAngle), 0xB33);
+    this->mVel.x = MUL_FX32(SIN((u16) this->mAngle.angle_s), 0xB33);
+    this->mVel.z = MUL_FX32(COS((u16) this->mAngle.angle_s), 0xB33);
     this->mVel.y = FLOAT_TO_FX32(0.0f);
     return true;
 }
@@ -163,7 +163,7 @@ void ActorUnkSWBM::func_ov031_020e6d80(unk32 param1) {
 
         data_027e0cec->func_ov000_0209feac(0x8E0, &this->mPos, 0x1, 0x0, 0x0);
 
-        s16 angle = this->mAngle - DEG_TO_ANG(180);
+        s16 angle = this->mAngle.angle_s - DEG_TO_ANG(180);
 
         vecSp08.x = SIN((u16) angle);
         vecSp08.y = FLOAT_TO_FX32(0.0f);

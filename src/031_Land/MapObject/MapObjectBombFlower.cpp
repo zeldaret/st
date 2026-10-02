@@ -220,7 +220,7 @@ void MapObjectBombFlower::vfunc_38() {
     params.mUnk_28 = 0;
     params.func_ov000_020975f8();
 
-    params.mInitialAngle = this->mAngle;
+    params.mInitialAngle = this->mAngle.angle_s;
     VecFx32_Copy(&this->mPos, &params.mInitialPos);
 
     params.mParams[0] = 0x1;
@@ -249,7 +249,7 @@ void MapObjectBombFlower::vfunc_50(ActorRef *param1, MapObjectPot_Base *thisx) {
 
     params.func_ov000_020975f8();
 
-    params.mInitialAngle = thisx->mAngle;
+    params.mInitialAngle = thisx->mAngle.angle_s;
     VecFx32_Copy(&thisx->mPos, &params.mInitialPos);
 
     params.mParams[0] = 0x1;

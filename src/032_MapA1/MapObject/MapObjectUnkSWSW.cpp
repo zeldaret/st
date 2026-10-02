@@ -349,7 +349,7 @@ bool MapObjectUnkSWSW::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) 
                 }
 
                 UnkAngleStruct angle;
-                angle.angle  = actorNSSW->mAngle;
+                angle        = actorNSSW->mAngle;
                 VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
 
                 if (!func_02016ae0(&actorNSSW->mPos, vec, angle, 0x2AAB, 0x1)) {
@@ -491,7 +491,7 @@ void MapObjectUnkSWSW::vfunc_14(unk32 param1) {
     VecFx32 vec;
     VecFx32_Init(this->mPos.x + this->mUnk_0EC.x, this->mPos.y + this->mUnk_0EC.y, this->mPos.z + this->mUnk_0EC.z, &vec);
 
-    this->mUnk_040.func_01ffc6d4(this->mAngleStruct, &vec);
+    this->mUnk_040.func_01ffc6d4(this->mAngle, &vec);
 }
 
 struct UnkStack_ov032_02121dc8 {
@@ -508,7 +508,7 @@ ActorUnkNSSW *MapObjectUnkSWSW::func_ov032_02121dc8(VecFx32 *param1) {
     params.mUnk_28 = 0;
     params.func_ov000_020975f8();
 
-    params.mInitialAngle = this->mAngle;
+    params.mInitialAngle = this->mAngle.angle_s;
     params.mUnk_28       = *(unk32 *) &this->mUnk_38;
 
     VecFx32_Init(param1->x, param1->y, param1->z, &params.mInitialPos);

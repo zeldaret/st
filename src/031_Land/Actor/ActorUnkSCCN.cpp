@@ -51,7 +51,7 @@ bool ActorUnkSCCN::Init(unk32 param1) {
         this->mUnk_94.mUnk_07 = 0x13;
     } else {
         unk32 var;
-        switch (((u32) (this->mAngle + DEG_TO_ANG(45)) << 0x10) >> 0x1E) {
+        switch (((u32) (this->mAngle.angle_s + DEG_TO_ANG(45)) << 0x10) >> 0x1E) {
             case 0:
                 var = 9;
                 break;

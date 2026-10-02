@@ -145,7 +145,7 @@ void PlayerLinkActor::func_ov017_020bd788(bool param1) {
         this->func_ov017_020bd758();
 
         PlayerActorBase_70 *temp_r5_3 = this->mUnk_70;
-        temp_r5_3->func_ov000_020830d4(this->mAngleStruct, this->mUnk_0A0->func_ov000_02093718(),
+        temp_r5_3->func_ov000_020830d4(this->mAngle, this->mUnk_0A0->func_ov000_02093718(),
                                        this->mUnk_0A0->func_ov000_0209378c(), this->mUnk_0A0->mUnk_28);
 
         this->mUnk_0B0 = data_0204a088->mUnk_04;
@@ -212,8 +212,8 @@ void PlayerLinkActor::func_ov017_020bd788(bool param1) {
     this->func_ov017_020bd758();
 
     PlayerActorBase_70 *temp_r5_4 = this->mUnk_70;
-    temp_r5_4->func_ov000_020830d4(this->mAngleStruct, this->mUnk_0A0->func_ov000_02093718(),
-                                   this->mUnk_0A0->func_ov000_0209378c(), this->mUnk_0A0->mUnk_28);
+    temp_r5_4->func_ov000_020830d4(this->mAngle, this->mUnk_0A0->func_ov000_02093718(), this->mUnk_0A0->func_ov000_0209378c(),
+                                   this->mUnk_0A0->mUnk_28);
 
     this->mUnk_0A0->func_ov000_02092e38();
     this->mUnk_0B0 = data_0204a088->mUnk_04;
@@ -254,10 +254,10 @@ void PlayerLinkActor::func_ov017_020bdd84(void *param1, unk32 param2) {
     if (var_r5) {
         if (param2 != 0) {
             if (this->mUnk_74 != 0) {
-                this->mUnk_70->func_ov017_020bbef4(&this->mPos, this->mAngleStruct);
+                this->mUnk_70->func_ov017_020bbef4(&this->mPos, this->mAngle);
             }
         } else {
-            this->mUnk_70->func_ov017_020bbcd8(&this->mPos, this->mAngleStruct);
+            this->mUnk_70->func_ov017_020bbcd8(&this->mPos, this->mAngle);
         }
 
         if (param1 == NULL && data_0204a110.func_02019514() == 0) {
@@ -283,7 +283,7 @@ void PlayerLinkActor::func_ov017_020bdd84(void *param1, unk32 param2) {
                 spC = 0;
 
                 temp_r1_2 = func_ov000_020864f8(&this->mUnk_09C->mUnk_0DC, this->mUnk_09C->mUnk_5A, &sp8, &spC);
-                this->mUnk_74->func_ov102_02182c84(temp_r1_2, spC, this->mAngleStruct, &temp_r4[0], &temp_r4[1]);
+                this->mUnk_74->func_ov102_02182c84(temp_r1_2, spC, this->mAngle, &temp_r4[0], &temp_r4[1]);
             }
         }
     }

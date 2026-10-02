@@ -24,7 +24,7 @@ Actor::Actor() {
     MI_CpuCopyFast(&data_ov000_020b539c_eur.mUnk_00, &this->mUnk_5C, sizeof(ActorParams));
     VecFx32_Copy(&this->mUnk_5C.mInitialPos, &this->mPos);
     VecFx32_Copy(&this->mUnk_5C.mInitialPos, &this->mPrevPos);
-    this->mAngle = this->mUnk_5C.mInitialAngle;
+    this->mAngle.angle_s = this->mUnk_5C.mInitialAngle;
     INIT_FLAGS(this->mFlags, ActorFlag_Alive, ActorFlag_Visible, ActorFlag_Active, ActorFlag_14);
     this->mUnk_44 = 0xFF;
     this->mUnk_46 = 0;

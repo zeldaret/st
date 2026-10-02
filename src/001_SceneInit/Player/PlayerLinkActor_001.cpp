@@ -77,8 +77,7 @@ void PlayerLinkActor::func_ov001_020bcbd0(VecFx32 *pVec) {
     this->mUnk_90->mUnk_034.func_ov000_0208efd0(pVec);
 
     PlayerActorBase_70 *unk_70 = this->mUnk_70;
-    unk_70->func_ov001_020bbe18(0, this->mAngleStruct, this->mUnk_0A0->func_ov000_02093718(),
-                                this->mUnk_0A0->func_ov000_0209378c());
+    unk_70->func_ov001_020bbe18(0, this->mAngle, this->mUnk_0A0->func_ov000_02093718(), this->mUnk_0A0->func_ov000_0209378c());
 
     bool uVar1 = false;
     if (this->mUnk_094 != NULL) {

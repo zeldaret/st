@@ -126,10 +126,7 @@ public:
     /* 00 (vtable) */
     /* 04 */ VecFx32 mPos;
     /* 10 */ MapObject_10_Base *mUnk_10;
-    /* 14 */ union {
-        s16 mAngle;
-        UnkAngleStruct mAngleStruct;
-    };
+    /* 14 */ UnkAngleStruct mAngle;
     /* 16 */ MapObjState mState;
     /* 18 */ unk8 mUnk_18[2]; // related to Link walking to the map object when touched
     /* 1A */ unk8 mUnk_1A;
@@ -160,7 +157,7 @@ public:
     /* 38 */
 
     u16 GetDirection() {
-        return (u16) (this->mAngle + DEG_TO_ANG(45)) / DEG_TO_ANG(90);
+        return (u16) (this->mAngle.angle_s + DEG_TO_ANG(45)) / DEG_TO_ANG(90);
     }
 
     bool IsOrientedVertically() {

@@ -283,7 +283,7 @@ void ActorSpinut::vfunc_2C(Actor_vfunc_30 *param1) {
 
     VecFx32 sp08 = this->mPos;
     sp08.y += this->mUnk_288.y;
-    this->mUnk_0B0.func_01ffc634(&sp14, this->mAngleStruct, &sp08);
+    this->mUnk_0B0.func_01ffc634(&sp14, this->mAngle, &sp08);
 }
 
 void ActorSpinut::func_ov032_02119990() {
@@ -314,10 +314,10 @@ void ActorSpinut::func_ov032_02119a0c() {
             break;
 
         case 0x1:
-            this->mUnk_224 = this->mUnk_21C * gRandom.Next32(0x38E) + this->mAngle;
+            this->mUnk_224 = this->mUnk_21C * gRandom.Next32(0x38E) + this->mAngle.angle_s;
 
-            if (func_01ff930c(&this->mAngle, this->mUnk_224, 0x71C)) {
-                u16 angle    = this->mAngle;
+            if (func_01ff930c(&this->mAngle.angle_s, this->mUnk_224, 0x71C)) {
+                u16 angle    = this->mAngle.angle_u;
                 this->mVel.x = MUL_FX32(SIN(angle), this->mUnk_220);
                 this->mVel.z = MUL_FX32(COS(angle), this->mUnk_220);
 
@@ -449,7 +449,7 @@ void ActorSpinut::func_ov032_02119f40() {
             s16 var;
             s16 *r5 = &var;
             func_ov000_020986b4(r5, this, 0x0);
-            func_01ff930c(&this->mAngle, *r5, 0x2D8);
+            func_01ff930c(&this->mAngle.angle_s, *r5, 0x2D8);
 
             if (!this->func_ov032_0211b064(0x1)) {
                 ++this->mUnk_218;
@@ -478,7 +478,7 @@ void ActorSpinut::func_ov032_02119f40() {
             break;
     }
 
-    u16 angle    = this->mAngle;
+    u16 angle    = this->mAngle.angle_u;
     this->mVel.x = MUL_FX32(SIN(angle), this->mUnk_220);
     this->mVel.z = MUL_FX32(COS(angle), this->mUnk_220);
 
@@ -521,8 +521,8 @@ void ActorSpinut::func_ov032_0211a52c() {
             this->mUnk_110.vfunc_28()->mUnk_04 = this->mUnk_110.vfunc_28()->mUnk_04 + this->mUnk_288.x;
 
             unk32 val      = this->mUnk_220 - 0x14;
-            fx32 sinValue  = SIN((u16) this->mAngle);
-            fx32 cosValue  = COS((u16) this->mAngle);
+            fx32 sinValue  = SIN((u16) this->mAngle.angle_s);
+            fx32 cosValue  = COS((u16) this->mAngle.angle_s);
             this->mUnk_220 = val;
 
             this->mVel.x = MUL_FX32(sinValue, val);
@@ -786,7 +786,7 @@ bool ActorSpinut::func_ov032_0211b064(unk32 param1) {
     }
 
     if (param1 != 0x0) {
-        if (!ret || !func_02016ae0(&this->mPos, vec, this->mAngleStruct, 0x4E39, 0x1) == 0x0) {
+        if (!ret || !func_02016ae0(&this->mPos, vec, this->mAngle, 0x4E39, 0x1) == 0x0) {
             ret = true;
         } else {
             ret = false;

@@ -170,7 +170,7 @@ void MapObjectDoorDangerSpawn::vfunc_08(void) {
                         UnkStackStruct_ov000_02077590 *temp_r0_3 = func_ov000_02077590(3);
 
                         sp3C                     = *temp_r0_3;
-                        ((unk16 *) sp3C.data)[3] = this->mAngle;
+                        ((unk16 *) sp3C.data)[3] = this->mAngle.angle_s;
 
                         UnkStruct_027e09bc_0C *temp_r5 = data_027e09bc->mUnk_04[2];
 
@@ -558,7 +558,7 @@ void MapObjectDoorDangerSpawn::vfunc_18(s8 *param1) {
 
 void MapObjectDoorDangerSpawn::vfunc_14(unk32 param1) {
     Mat3p m;
-    Mat3p_InitYRotation(&m, SIN((u16) this->mAngle), COS((u16) this->mAngle));
+    Mat3p_InitYRotation(&m, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
 
     VecFx32 pos(this->mPos);
     pos.y += -(this->mUnk_6C * 2);
@@ -616,9 +616,9 @@ void MapObjectDoorDangerSpawn::vfunc_74(void) {
     local_28.y = local_34.y;
     local_28.z = local_34.z;
 
-    u16 var_r5 = (u16) (this->mAngle + DEG_TO_ANG(45));
+    u16 var_r5 = (u16) (this->mAngle.angle_s + DEG_TO_ANG(45));
 
-    if (((u16) this->mAngle / DEG_TO_ANG(90)) == 2 && this->mState == MapObjDoorDangerSpawnState_5) {
+    if (((u16) this->mAngle.angle_s / DEG_TO_ANG(90)) == 2 && this->mState == MapObjDoorDangerSpawnState_5) {
         var_r5 = 0;
     }
 
@@ -693,8 +693,8 @@ void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *pa
     }
 
     VecFx32 local_24;
-    *param3 = this->mAngle;
-    iVar1   = this->mAngle + DEG_TO_ANG(30);
+    *param3 = this->mAngle.angle_s;
+    iVar1   = this->mAngle.angle_s + DEG_TO_ANG(30);
     if (param1 != 0) {
         local_24.x = MUL_FX32(SIN((u16) iVar1), 0x1666);
         local_24.z = MUL_FX32(COS((u16) iVar1), 0x1666);
@@ -709,8 +709,8 @@ void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *pa
     VecFx32_Add(&this->mPos, &local_24, param2);
 
     VecFx32 local_30;
-    this->mUnk_5A = this->mAngle;
-    iVar1         = this->mAngle - DEG_TO_ANG(30);
+    this->mUnk_5A = this->mAngle.angle_s;
+    iVar1         = this->mAngle.angle_s - DEG_TO_ANG(30);
     if (param1 != 0) {
         local_30.x = MUL_FX32(SIN((u16) iVar1), 0x1666);
         local_30.z = MUL_FX32(COS((u16) iVar1), 0x1666);

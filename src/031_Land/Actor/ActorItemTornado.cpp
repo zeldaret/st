@@ -59,7 +59,7 @@ ActorItemTornado::ActorItemTornado() :
 }
 
 bool ActorItemTornado::Init(unk32 param1) {
-    u16 tmp = (u16) this->mAngle;
+    u16 tmp = (u16) this->mAngle.angle_s;
 
     this->mUnk_44 = 0x1F;
 

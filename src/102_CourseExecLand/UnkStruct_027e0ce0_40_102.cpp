@@ -340,7 +340,7 @@ static inline bool UnknownInline2(PlayerLinkActor_A0_1C *param2, VecFx32 *param4
         if (temp_r0_2 != NULL && temp_r0_2->GetActorId() == ActorId_IWTS) {
             s16 sp0;
             func_ov000_0205d65c(&sp0, param4, &((ActorUnkIWTS *) temp_r0_2)->mUnk_22F8, *param5);
-            param5->angle = sp0;
+            param5->angle_u = sp0;
             return true;
         }
     }
@@ -373,19 +373,19 @@ void func_ov102_02183414(s16 *param1, PlayerLinkActor_A0_1C *param2, bool param3
                 if (var_r1_3) {
                     if (!param2->mUnk_06) {
                         func_ov095_0217aa88(&sp6, &param2->mUnk_04, param6, param5);
-                        param5.angle = sp6;
+                        param5.angle_u = sp6;
                     } else {
                         func_ov095_0217aaa8(&sp4, &param2->mUnk_04, param6);
-                        param5.angle = sp4;
+                        param5.angle_u = sp4;
                     }
                 } else {
                     func_ov031_020dcea4(&sp2, param2->mUnk_00->GetUnk78(), param5);
-                    param5.angle = sp2 + 0x4000;
+                    param5.angle_u = sp2 + 0x4000;
                 }
             }
         }
     }
 
     param2->mUnk_06 = var_r5;
-    *param1         = param5.angle_signed;
+    *param1         = param5.angle_s;
 }

@@ -151,7 +151,7 @@ void ActorTearLight::vfunc_2C(Actor_vfunc_30 *param1) {
         return;
     }
     Mat3p matrix;
-    Mat3p_InitYRotation(&matrix, SIN((u16) this->mAngle), COS((u16) this->mAngle));
+    Mat3p_InitYRotation(&matrix, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
 
     VecFx32 vecC = this->mPos;
     vecC.y += FLOAT_TO_FX32(0.5f);

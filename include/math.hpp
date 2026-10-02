@@ -405,11 +405,32 @@ union Vec3s {
 
 struct UnkAngleStruct {
     union {
-        u16 angle;
-        s16 angle_signed;
+        u16 angle_u;
+        s16 angle_s;
     };
 
     UnkAngleStruct() {}
     UnkAngleStruct(s16 angle) :
-        angle_signed(angle) {}
+        angle_s(angle) {}
+
+    // clang-format off
+    UnkAngleStruct& operator+=(const u16 value) { this->angle_u += value; return *this; }
+    UnkAngleStruct& operator+=(const unsigned int value) { this->angle_u += value; return *this; }
+    UnkAngleStruct& operator+=(const s16 value) { this->angle_s += value; return *this; }
+    UnkAngleStruct& operator+=(const int value) { this->angle_s += value; return *this; }
+    UnkAngleStruct& operator++() { this->angle_s += 1; return *this; }
+    UnkAngleStruct& operator++(int) { this->angle_s += 1; return *this; }
+
+    UnkAngleStruct& operator-=(const u16 value) { this->angle_u -= value; return *this; }
+    UnkAngleStruct& operator-=(const unsigned int value) { this->angle_u -= value; return *this; }
+    UnkAngleStruct& operator-=(const s16 value) { this->angle_s -= value; return *this; }
+    UnkAngleStruct& operator-=(const int value) { this->angle_s -= value; return *this; }
+    UnkAngleStruct& operator--() { this->angle_s -= 1; return *this; }
+    UnkAngleStruct& operator--(int) { this->angle_s -= 1; return *this; }
+
+    UnkAngleStruct& operator=(const u16 value) { this->angle_u = value; return *this; }
+    UnkAngleStruct& operator=(const unsigned int value) { this->angle_u += value; return *this; }
+    UnkAngleStruct& operator=(const s16 value) { this->angle_s = value; return *this; }
+    UnkAngleStruct& operator=(const int value) { this->angle_s = value; return *this; }
+    // clang-format on
 };

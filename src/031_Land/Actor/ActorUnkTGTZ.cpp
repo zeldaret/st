@@ -65,12 +65,12 @@ bool ActorUnkTGTZ::Init(unk32 param1) {
     if (this->mUnk_5C.mUnk_1A[0] != 0x0) {
         this->mPos.y = MUL_FX32(this->mUnk_5C.mUnk_1A[0] << 0xC, 0x1333);
     }
-    Mat3p_InitYRotation(&this->mUnk_190, SIN((u16) this->mAngle), COS((u16) this->mAngle));
+    Mat3p_InitYRotation(&this->mUnk_190, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
     data_ov031_02116b58.func_ov000_0205fc20(0x5D, 0x32, NULL, NULL);
     ((UnkStruct_ov019_020d24c8_28_258_00 *) GET_PROFILE(ActorProfileUnkNTTZ))->func_ov000_0205fc20(0x5D, 0x31, NULL, NULL);
 
     unk32 temp_r3_2 = this->mUnk_5C.mParams[1];
-    unk32 temp_r0   = (u16) (((s16) this->mAngle + 0x2000)) >> 0xE;
+    unk32 temp_r0   = (u16) (((s16) this->mAngle.angle_s + 0x2000)) >> 0xE;
     if ((temp_r0 != 0) && (temp_r0 != 2)) {
         this->mUnk_1C8 = (UnkStruct_ov019_020d24c8_28_258_00 *) GET_PROFILE(ActorProfileUnkNTTZ);
     } else {
@@ -349,7 +349,7 @@ void ActorUnkTGTZ::vfunc_30(Actor_vfunc_30 *param1) {
 
     unk32 var_r5 = 0;
     unk32 var_r6 = 0;
-    switch (((u16) (((s16) this->mAngle + 0x2000)) >> 0xE)) {
+    switch (((u16) (((s16) this->mAngle.angle_s + 0x2000)) >> 0xE)) {
         case 0x3:
             var_r5 = 0x10000 >> 0x10;
             break;
@@ -373,10 +373,10 @@ void ActorUnkTGTZ::vfunc_2C(Actor_vfunc_30 *param1) {
 
     if (this->mUnk_1CC == 0x0) {
         VecFx32_Init(-this->mUnk_1C4, FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &vec1);
-        func_01ff9638(&vec1, this->mAngle);
+        func_01ff9638(&vec1, this->mAngle.angle_s);
     } else {
         VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &vec1);
-        func_01ff9638(&vec1, this->mAngle);
+        func_01ff9638(&vec1, this->mAngle.angle_s);
         vec1.y = this->mUnk_1C4;
     }
 
@@ -394,7 +394,7 @@ void ActorUnkTGTZ::func_ov031_020f7358() {
     params.mUnk_28 = 0x0;
     params.func_ov000_020975f8();
 
-    params.mInitialAngle = this->mAngle;
+    params.mInitialAngle = this->mAngle.angle_s;
     params.mUnk_28       = this->mRef;
 
     Actor::func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_NTTZ, &params, 0x0);

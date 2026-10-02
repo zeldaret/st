@@ -309,7 +309,7 @@ void Actor::func_ov017_020bf4b0(unk32 param1) {
 }
 
 void Actor::func_ov017_020bf574(unk32 param1, unk32 param2) {
-    func_ov000_020a1330(param1, this->mRef, this->mPos, this->mAngleStruct, 8, param2);
+    func_ov000_020a1330(param1, this->mRef, this->mPos, this->mAngle, 8, param2);
 }
 
 void Actor::func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, s16 param5) {
