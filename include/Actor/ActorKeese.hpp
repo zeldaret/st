@@ -119,7 +119,7 @@ public:
 
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
-    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
 
     void func_ov032_0211e0c0();
     void func_ov032_0211e0d4(s16 param1, unk32 param2);

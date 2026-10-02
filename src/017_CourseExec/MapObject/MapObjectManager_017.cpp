@@ -1,5 +1,6 @@
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectManager.hpp"
+#include "Physics/AABB.hpp"
 #include "Unknown/UnkStruct_020499e0.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"

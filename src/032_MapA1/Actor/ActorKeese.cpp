@@ -321,7 +321,7 @@ void ActorKeese::vfunc_20() {
 }
 
 // non-matching
-void ActorKeese::vfunc_2C(unk32 param1) {
+void ActorKeese::vfunc_2C(Actor_vfunc_30 *param1) {
     if (!this->func_01fff5d0(param1, 0x0)) {
         this->mUnk_278.func_ov000_020a0334();
 
@@ -341,8 +341,8 @@ void ActorKeese::vfunc_2C(unk32 param1) {
 
 // non-matching
 void ActorKeese::func_ov032_0211e9ec() {
-    this->mUnk_52 = gRandom.Next32(0x1F) + 0x1E;
-    this->mUnk_50 = 0x0;
+    this->mTimerMax = gRandom.Next32(0x1F) + 0x1E;
+    this->mTimer    = 0x0;
 
     u32 sp00;
 
@@ -411,8 +411,8 @@ void ActorKeese::func_ov032_0211ece8() {}
 void ActorKeese::func_ov032_0211ee5c() {}
 
 void ActorKeese::func_ov032_0211f054() {
-    this->mUnk_52 = gRandom.Next32(0x1F) + 0x1E;
-    this->mUnk_50 = 0x0;
+    this->mTimerMax = gRandom.Next32(0x1F) + 0x1E;
+    this->mTimer    = 0x0;
 }
 
 void ActorKeese::func_ov032_0211f0a8() {
@@ -602,8 +602,8 @@ void ActorKeese::func_ov032_0211f804() {
             }
 
             ++this->mUnk_228;
-            this->mUnk_52 = 0x1E;
-            this->mUnk_50 = 0x00;
+            this->mTimerMax = 0x1E;
+            this->mTimer    = 0x00;
             break;
 
         case 0x1: {
@@ -617,8 +617,8 @@ void ActorKeese::func_ov032_0211f804() {
             func_ov017_020c26f8(0x1, &vec, 0x1, 0x2);
 
             ++this->mUnk_228;
-            this->mUnk_52 = 0xA;
-            this->mUnk_50 = 0x0;
+            this->mTimerMax = 0xA;
+            this->mTimer    = 0x0;
             break;
         }
 
