@@ -77,9 +77,9 @@ void ActorUnkSWTM::Update(void) {
         case ActorUnkSWTMState_2:
             break;
         case ActorUnkSWTMState_3:
-            this->IsTimerOut();
+            this->mTimer.Update();
 
-            if ((s32) this->mTimer >= 15) {
+            if (this->mTimer.GetValue() >= 15) {
                 this->func_ov000_0209b184();
                 this->SetState(ActorUnkSWTMState_0);
             }
@@ -107,13 +107,12 @@ void ActorUnkSWTM::SetState(ActorState state) {
             this->func_ov000_02098a88(0, 1);
 
             if (this->mUnk_94 == 0) {
-                UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+                this->Kill();
             }
             break;
         case ActorUnkSWTMState_3:
             this->func_ov000_0209b160();
-            this->mTimer    = 0;
-            this->mTimerMax = -1;
+            this->mTimer.Reset();
             break;
         default:
             break;

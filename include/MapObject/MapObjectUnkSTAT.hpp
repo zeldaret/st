@@ -4,6 +4,7 @@
 #include "MapObject/MapObjectProfile.hpp"
 #include "Render/ModelRender.hpp"
 #include "global.h"
+#include "timer.hpp"
 #include "types.h"
 
 class MapObjectUnkSTAT : public MapObject {
@@ -14,8 +15,7 @@ public:
     /* 50 */ unk32 mUnk_50;
     /* 54 */ unk32 mUnk_54;
     /* 58 */ unk16 mUnk_58;
-    /* 5A */ volatile u16 mUnk_5A;
-    /* 5C */ u16 mUnk_5C;
+    /* 5A */ Timer mUnk_5A;
     /* 5E */ STRUCT_PAD(0x5E, 0x60);
     /* 60 */ unk32 mUnk_60;
     /* 64 */ unk32 mUnk_64;

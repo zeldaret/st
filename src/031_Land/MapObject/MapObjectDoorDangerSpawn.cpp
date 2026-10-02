@@ -42,8 +42,7 @@ MapObjectDoorDangerSpawn::MapObjectDoorDangerSpawn() :
     mUnk_A3(0),
     mUnk_A4(-1),
     mUnk_A8(NULL) {
-    this->mUnk_AC = 0;
-    this->mUnk_AE = 0;
+    this->mUnk_AC.Init();
     this->mUnk_89 = true;
 }
 
@@ -152,18 +151,16 @@ void MapObjectDoorDangerSpawn::vfunc_08(void) {
     VecFx32 sp10;
     VecFx32 sp4;
 
-    if (this->mUnk_AC < this->mUnk_AE) {
-        this->mUnk_AC++;
-    }
+    this->mUnk_AC.Update();
 
     switch (this->mState) {
         case MapObjDoorDangerSpawnState_0:
             if (this->mUnk_A2) {
-                u16 max   = this->mUnk_AE;
-                u16 timer = this->mUnk_AC;
+                u16 max  = this->mUnk_AC.max;
+                u16 time = this->mUnk_AC.value;
 
-                if (timer < max) {
-                    if (max - timer == 1) {
+                if (time < max) {
+                    if (max - time == 1) {
                         this->mUnk_88 = 1;
                         this->vfunc_74();
 
@@ -270,9 +267,8 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
     s16 sp4;
     s16 *sp4Ptr;
 
-    this->mState  = state;
-    this->mUnk_AE = 0;
-    this->mUnk_AC = 0;
+    this->mState = state;
+    this->mUnk_AC.Init();
 
     switch (this->mState) {
         case MapObjDoorDangerSpawnState_3: {
@@ -336,8 +332,7 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
             data_027e0d38->func_ov031_020d9c44(4);
 
             if (this->mUnk_A2 != 0) {
-                this->mUnk_AE = this->vfunc_8C() * 2;
-                this->mUnk_AC = 0;
+                this->mUnk_AC.Set(0, this->vfunc_8C() * 2);
                 this->mUnk_88 = 0;
                 this->mUnk_90 = false;
             }

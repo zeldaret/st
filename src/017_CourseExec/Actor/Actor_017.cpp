@@ -323,8 +323,7 @@ void Actor::func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk
 void Actor::func_ov017_020bf634(const VecFx32 *param1, u16 param2, unk32 param3) {
     UNSET_FLAG(this->mFlags, ActorFlag_5);
 
-    this->mTimerMax = param2;
-    this->mTimer    = 0;
+    this->mTimer.Set(0, param2);
 
     this->mVel.x = param1->x;
     this->mVel.z = param1->z;
@@ -347,7 +346,7 @@ void Actor::func_ov017_020bf688() {
 
     this->mUnk_3C = NULL;
 
-    if (this->IsTimerOut()) {
+    if (this->mTimer.HasExpired()) {
         SET_FLAG(this->mFlags, ActorFlag_5);
     }
 }
@@ -358,8 +357,7 @@ void Actor::func_ov017_020bf710(UnkStruct_ActorUnkCANS_224 *param1, const VecFx3
     this->mUnk_54 = param1;
     func_ov000_02099870(param1, &this->mPos, param3);
 
-    this->mTimerMax = param1->mUnk_0A - param1->mUnk_08;
-    this->mTimer    = 0;
+    this->mTimer.Set(0, param1->mUnk_08.GetRemainingTime());
 
     this->mVel.x = param2->x;
     this->mVel.z = param2->z;
@@ -378,7 +376,7 @@ void Actor::func_ov017_020bf7a8() {
     this->func_ov000_02098838();
 
     UnkStruct_ActorUnkCANS_224 *temp_r4 = this->mUnk_54;
-    temp_r4->UpdateTimer();
+    temp_r4->mUnk_08.Update();
 
     func_01ff93c0(&this->mVel, 0xC7B);
 
@@ -387,11 +385,11 @@ void Actor::func_ov017_020bf7a8() {
         this->mVel.z /= 2;
     }
 
-    if (this->mTimer < temp_r4->mUnk_0E) {
+    if (this->mTimer.value < temp_r4->mUnk_0E) {
         this->mUnk_3C = NULL;
     }
 
-    if (this->IsTimerOut()) {
+    if (this->mTimer.HasExpired()) {
         temp_r4->Destroy();
         SET_FLAG(this->mFlags, ActorFlag_5);
     }
@@ -428,8 +426,7 @@ void Actor::vfunc_44() {
 void Actor::func_ov017_020bf99c() {
     UNSET_FLAG(this->mFlags, ActorFlag_5);
     VecFx32_Reset(&this->mVel);
-    this->mTimerMax = 1;
-    this->mTimer    = 0;
+    this->mTimer.Set(0, 1);
 }
 
 void Actor::func_ov017_020bf9c8(Actor *param1) {
@@ -439,16 +436,16 @@ void Actor::func_ov017_020bf9c8(Actor *param1) {
         return;
     }
 
-    u16 timerMax = this->mTimerMax;
-    u16 timer    = this->mTimer;
+    u16 timerMax = this->mTimer.max;
+    u16 time     = this->mTimer.value;
 
-    if (timer >= timerMax) {
+    if (time >= timerMax) {
         SET_FLAG(this->mFlags, ActorFlag_5);
         return;
     }
 
-    if (timer < timerMax) {
-        this->mTimer++;
+    if (time < timerMax) {
+        this->mTimer.value++;
     }
 
     func_01ffb714(data_027e0ce0->func_01fff148(0), &this->mPos, &this->mVel);
@@ -458,8 +455,7 @@ void Actor::func_ov017_020bf9c8(Actor *param1) {
 void Actor::func_ov017_020bfa50(VecFx32 *param1, unk32 param2) {
     UNSET_FLAG(this->mFlags, ActorFlag_5);
 
-    this->mTimerMax = param2;
-    this->mTimer    = 0;
+    this->mTimer.Set(0, param2);
 
     VecFx32 sp0;
     func_01ffb714(param1, &this->mPos, &sp0);
@@ -476,7 +472,7 @@ void Actor::func_ov017_020bfa50(VecFx32 *param1, unk32 param2) {
 void Actor::func_ov017_020bfad4() {
     this->mVel.y -= this->mUnk_2C;
 
-    if (this->IsTimerOut()) {
+    if (this->mTimer.HasExpired()) {
         SET_FLAG(this->mFlags, ActorFlag_5);
     }
 }

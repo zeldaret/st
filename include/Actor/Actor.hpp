@@ -11,6 +11,7 @@
 #include "global.h"
 #include "math.hpp"
 #include "nitro/fx.h"
+#include "timer.hpp"
 #include "types.h"
 #include "versions.h"
 
@@ -141,8 +142,7 @@ public:
 class UnkStruct_ActorUnkCANS_224 {
 public:
     /* 00 (base) */ UnkStruct_PlayerGet_ec mUnk_00[0x2];
-    /* 08 */ volatile u16 mUnk_08;
-    /* 0A */ u16 mUnk_0A;
+    /* 08 */ Timer mUnk_08;
     /* 0C */ u16 mUnk_0C;
     /* 0E */ u16 mUnk_0E;
     /* 10 */
@@ -158,14 +158,7 @@ public:
             ptr->func_ov000_020a0334();
         }
 
-        this->mUnk_0A = 0;
-        this->mUnk_08 = 0;
-    }
-
-    void UpdateTimer() {
-        if (this->mUnk_08 < this->mUnk_0A) {
-            this->mUnk_08++;
-        }
+        this->mUnk_08.Init();
     }
 
     void func_ov000_020998f0(ActorRef ref, VecFx32 *pPos);
@@ -195,8 +188,7 @@ public:
     /* 4A */ u8 mUnk_4A[2];
     /* 4C */ ActorState mState;
     /* 4E */ fx16 mYOffset;
-    /* 50 */ volatile u16 mTimer; // generic timer, used for stunned time, drop expiration, ...
-    /* 52 */ u16 mTimerMax;       // maximum value for the above timer
+    /* 50 */ Timer mTimer; // generic timer, used for stunned time, drop expiration, ...
     /* 54 */ UnkStruct_ActorUnkCANS_224 *mUnk_54;
     /* 58 */ ActorFlags mFlags[1];
     /* 5C */ ActorParams mUnk_5C;
@@ -274,15 +266,6 @@ public:
     Actor();
 
     ActorId GetActorId();
-
-    bool IsTimerOut() {
-        if (this->mTimer < this->mTimerMax) {
-            this->mTimer++;
-            return false;
-        }
-
-        return true;
-    }
 
     // overlay 0
     bool func_ov000_0205cbc4(u32 param1, VecFx32 *param2);

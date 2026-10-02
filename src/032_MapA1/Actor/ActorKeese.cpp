@@ -341,8 +341,7 @@ void ActorKeese::vfunc_2C(Actor_vfunc_30 *param1) {
 
 // non-matching
 void ActorKeese::func_ov032_0211e9ec() {
-    this->mTimerMax = gRandom.Next32(0x1F) + 0x1E;
-    this->mTimer    = 0x0;
+    this->mTimer.Set(0, gRandom.Next32(31) + 30);
 
     u32 sp00;
 
@@ -375,7 +374,7 @@ void ActorKeese::func_ov032_0211eb60() {
 
     this->mAngle += this->mUnk_2A8;
 
-    if (this->IsTimerOut()) {
+    if (this->mTimer.HasExpired()) {
         this->func_ov032_0211e380();
     }
 
@@ -384,7 +383,7 @@ void ActorKeese::func_ov032_0211eb60() {
 
     this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle.angle_s);
 
-    if (this->IsTimerOut()) {
+    if (this->mTimer.HasExpired()) {
         if (func_01ff9258(this->mPos.x - this->mUnk_5C.mInitialPos.x, this->mPos.z - this->mUnk_5C.mInitialPos.z) > 0x2000) {
             this->SetState(ActorKeeseState_3);
             return;
@@ -411,14 +410,13 @@ void ActorKeese::func_ov032_0211ece8() {}
 void ActorKeese::func_ov032_0211ee5c() {}
 
 void ActorKeese::func_ov032_0211f054() {
-    this->mTimerMax = gRandom.Next32(0x1F) + 0x1E;
-    this->mTimer    = 0x0;
+    this->mTimer.Set(0, gRandom.Next32(31) + 30);
 }
 
 void ActorKeese::func_ov032_0211f0a8() {
     this->func_ov032_0211f93c(&this->mUnk_5C.mInitialPos, 0x38E);
 
-    if (this->IsTimerOut()) {
+    if (this->mTimer.HasExpired()) {
         VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
         if (func_02016b8c(&this->mPos, vec, 0x3000, this->mAngle, 0x1000, 0x1)) {
             this->SetState(ActorKeeseState_2);
@@ -428,7 +426,7 @@ void ActorKeese::func_ov032_0211f0a8() {
     if (this->func_ov032_0211f9c4()) {
         this->SetState(ActorKeeseState_8);
     } else {
-        if (this->IsTimerOut() && (this->mUnk_46 & 0x1C)) {
+        if (this->mTimer.HasExpired() && (this->mUnk_46 & 0x1C)) {
             this->mAngle = func_01ffbbe0(this->mUnk_2AC.mUnk_0C.x, this->mUnk_2AC.mUnk_0C.z);
             this->SetState(ActorKeeseState_0);
         } else if (func_01ff9258(this->mUnk_5C.mInitialPos.x - this->mPos.x, this->mUnk_5C.mInitialPos.z - this->mPos.z) <
@@ -485,7 +483,7 @@ void ActorKeese::func_ov032_0211f310() {
         if (this->mUnk_48 <= 0x0) {
             this->vfunc_54(0x0);
         } else {
-            if (this->mUnk_268.mUnk_08 >= this->mUnk_268.mUnk_0A) {
+            if (this->mUnk_268.mUnk_08.HasReachedMax()) {
                 this->func_ov032_0211e380();
             } else {
                 this->SetState(ActorKeeseState_6);
@@ -602,12 +600,11 @@ void ActorKeese::func_ov032_0211f804() {
             }
 
             ++this->mUnk_228;
-            this->mTimerMax = 0x1E;
-            this->mTimer    = 0x00;
+            this->mTimer.Set(0, 30);
             break;
 
         case 0x1: {
-            if (!this->IsTimerOut()) {
+            if (!this->mTimer.HasExpired()) {
                 return;
             }
 
@@ -617,13 +614,12 @@ void ActorKeese::func_ov032_0211f804() {
             func_ov017_020c26f8(0x1, &vec, 0x1, 0x2);
 
             ++this->mUnk_228;
-            this->mTimerMax = 0xA;
-            this->mTimer    = 0x0;
+            this->mTimer.Set(0, 10);
             break;
         }
 
         case 0x2:
-            if (!this->IsTimerOut()) {
+            if (!this->mTimer.HasExpired()) {
                 return;
             }
 

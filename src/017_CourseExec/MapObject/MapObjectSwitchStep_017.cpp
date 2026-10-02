@@ -26,11 +26,11 @@ void MapObjectSwitchStep::vfunc_08() {
             if (this->mUnk_20.mParams[0] != 0) {
                 if (this->mUnk_20.mParams[0] == 2) {
                     if (!this->func_ov000_0209d29c(1)) {
-                        if (this->mUnk_EA == 0 && (this->mUnk_E4 >= this->mUnk_E6 || !this->func_ov000_0209d29c(0))) {
+                        if (this->mUnk_EA == 0 && (this->mUnk_E4.HasReachedMaxU() || !this->func_ov000_0209d29c(0))) {
                             this->func_ov000_0209e11c(0, 0);
                             sp0 = this->mUnk_40.mUnk_60;
                         } else {
-                            if (this->mUnk_EA != 0 && (this->mUnk_E4 >= this->mUnk_E6 || !this->func_ov000_0209d29c(0))) {
+                            if (this->mUnk_EA != 0 && (this->mUnk_E4.HasReachedMaxU() || !this->func_ov000_0209d29c(0))) {
                                 this->func_ov000_0209e11c(3, 0);
                             } else {
                                 this->func_ov000_0209e38c();
@@ -55,10 +55,7 @@ void MapObjectSwitchStep::vfunc_08() {
 
     this->mUnk_40.mUnk_60 = sp0;
     this->mUnk_EA         = 0;
-
-    if (this->mUnk_E4 < this->mUnk_E6) {
-        this->mUnk_E4++;
-    }
+    this->mUnk_E4.Update();
 }
 
 void MapObjectSwitchStep::vfunc_14(unk32 param1) {

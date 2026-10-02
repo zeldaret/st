@@ -100,10 +100,8 @@ public:
     /* 1F4 */ Actor_Derived1_94 mUnk_1F4;
     /* 200 */ UnkStruct_ov063_02162e88 mUnk_200;
     /* 224 */ UnkStruct_ActorUnkCANS_224 mUnk_224;
-    /* 234 */ volatile u16 mUnk_234;
-    /* 236 */ u16 mUnk_236;
-    /* 238 */ volatile u16 mUnk_238;
-    /* 23A */ u16 mUnk_23A;
+    /* 234 */ Timer mUnk_234;
+    /* 238 */ Timer mUnk_238;
     /* 23C */ UnkStruct_ov063_02162ea8 mUnk_23C;
     /* 250 */ VecFx32 mUnk_250;
     /* 25C */ unk32 mUnk_25C;

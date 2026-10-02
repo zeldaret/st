@@ -43,12 +43,10 @@ ActorUnkTGTZ::ActorUnkTGTZ() :
     mUnk_1B4(NULL),
     mUnk_1B8(0x0),
     mUnk_1BC(-0x1),
-    mUnk_1C0(0x0),
-    mUnk_1C2(0x0),
+    mUnk_1C0(0, 0),
     mUnk_1C4(FLOAT_TO_FX32(0.0f)),
     mUnk_1CC(0x0),
-    mUnk_1D0(0x0),
-    mUnk_1D2(0x0),
+    mUnk_1D0(0, 0),
     mUnk_1D4(0x0),
     mUnk_1D6(0x0),
     mUnk_1D8(false),
@@ -119,8 +117,8 @@ void ActorUnkTGTZ::Update() {
 
             stack.mUnk_24 = r3->mUnk_0C;
 
+            u16 unk_18    = *(volatile u16 *) &r3->mUnk_18; //! TODO: Timer?
             u16 unk_1A    = r3->mUnk_1A;
-            u16 unk_18    = r3->mUnk_18;
             stack.mUnk_30 = unk_18;
             stack.mUnk_32 = unk_1A;
 
@@ -155,9 +153,10 @@ void ActorUnkTGTZ::Update() {
             if (data_027e09b8->func_ov000_020732ec(this->mUnk_1BC) == 0x0) {
                 return;
             }
-            u16 var1 = this->mUnk_1C2;
-            u16 var2 = this->mUnk_1C0;
-            if (var2 >= var1) {
+
+            u16 max  = this->mUnk_1C0.max;
+            u16 time = this->mUnk_1C0.value;
+            if (time >= max) {
                 data_027e09a8->func_ov000_02071b30(0xF0, &this->mPos, 0x0);
                 this->func_ov031_020f6f20(0x2);
                 if (!this->mUnk_5C.mUnk_0F) {
@@ -166,13 +165,13 @@ void ActorUnkTGTZ::Update() {
                 data_027e09a8->func_ov000_020716dc(0x1E);
                 return;
             }
-            if (var2 >= var1) {
+            if (time >= max) {
                 func_01ff916c(&this->mUnk_1C4, 0x0, 0x333);
             }
             break;
         }
         case 0x3:
-            if (!this->IsInternalTimerOut()) {
+            if (!this->mUnk_1D0.HasExpired()) {
                 break;
             }
             this->func_ov031_020f6f20(0x5);
@@ -196,7 +195,7 @@ void ActorUnkTGTZ::Update() {
             this->func_ov031_020f6f20(0x3);
             break;
         case 0x6:
-            if (!this->IsInternalTimerOut()) {
+            if (!this->mUnk_1D0.HasExpired()) {
                 break;
             }
             this->func_ov031_020f6f20(0x4);
@@ -213,9 +212,8 @@ void ActorUnkTGTZ::Update() {
         VecFx32_Init(vecSp00.x, vecSp00.y, vecSp00.z, &actor->mPos);
         VecFx32_Init(vecSp00.x, vecSp00.y, vecSp00.z, &actor->mPrevPos);
     }
-    if (this->mUnk_1C0 < this->mUnk_1C2) {
-        ++this->mUnk_1C0;
-    }
+
+    this->mUnk_1C0.Update();
 }
 
 void ActorUnkTGTZ::vfunc_24() {
@@ -251,8 +249,7 @@ void ActorUnkTGTZ::func_ov031_020f6ea8(ActorRef *param0, u16 param1, const VecFx
 
 void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
     this->mUnk_1B8 = param1;
-    this->mUnk_1C2 = 0xFFFF;
-    this->mUnk_1C0 = 0x0;
+    this->mUnk_1C0.Reset();
 
     switch (param1) {
         case 0x0:
@@ -263,8 +260,7 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
             this->mUnk_1DC = 0x0;
             break;
         case 0x1: {
-            this->mUnk_1C2 = 0x1E;
-            this->mUnk_1C0 = 0x0;
+            this->mUnk_1C0.Set(0, 30);
             SET_FLAG(this->mFlags, ActorFlag_Visible);
             ActorRef ref;
             this->func_ov031_020f6ea8(&ref, 0x0, &this->mPos, 0x0, 0x1);
@@ -310,8 +306,7 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
         case 0x3:
             this->mUnk_1C4 = FLOAT_TO_FX32(-1.0002f);
             SET_FLAG(this->mFlags, ActorFlag_Visible);
-            this->mUnk_1D2 = this->mUnk_1D4;
-            this->mUnk_1D0 = 0x0;
+            this->mUnk_1D0.Set(0, this->mUnk_1D4);
             break;
         case 0x5:
             data_027e09a8->func_ov000_02071b30(0x10E, &this->mPos, 0x0);
@@ -322,8 +317,7 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
             break;
         case 0x6:
             this->mUnk_1C4 = FLOAT_TO_FX32(1.0f);
-            this->mUnk_1D2 = this->mUnk_1D6;
-            this->mUnk_1D0 = 0x0;
+            this->mUnk_1D0.Set(0, this->mUnk_1D6);
             break;
         default:
             break;

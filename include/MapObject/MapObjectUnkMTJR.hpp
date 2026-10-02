@@ -5,6 +5,7 @@
 #include "MapObject/MapObjectUnkSTAT.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
+#include "timer.hpp"
 #include "types.h"
 
 class MapObjectUnkMTJR : public MapObject {
@@ -12,8 +13,7 @@ public:
     /* 00 (base) */
     /* 40 */ ModelRender mUnk_40;
     /* A0 */ unk32 mUnk_A0;
-    /* A4 */ volatile u16 mUnk_A4; // Probably a counter
-    /* A6 */ u16 mUnk_A6;          // Counter (mUnk_A4) bound
+    /* A4 */ Timer mUnk_A4;
     /* A8 */ UnkSystem7 mUnk_A8;
     /* AC */ unk32 mUnk_AC;
     /* B0 */ unk32 mUnk_B0;

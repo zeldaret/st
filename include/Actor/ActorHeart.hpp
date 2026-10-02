@@ -35,7 +35,7 @@ public:
     /* B8 */ s16 mUnk_B8;
     /* BA */ unk16 mUnk_BA;
     /* BC */ unk16 mUnk_BC;
-    /* BE */ s8 mUnk_BE;
+    /* BE */ bool mUnk_BE;
     /* BF */ STRUCT_PAD(0xBF, 0xC0);
     /* C0 */ ActorRef mUnk_C0;
     /* C4 */ ActorRef mUnk_C4;

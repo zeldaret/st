@@ -32,8 +32,7 @@ MapObjectProfileUnkMTJR::MapObjectProfileUnkMTJR() :
 MapObjectUnkMTJR::MapObjectUnkMTJR() :
     mUnk_40(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfileUnkMTJR))),
     mUnk_A0(2),
-    mUnk_A4(0),
-    mUnk_A6(0),
+    mUnk_A4(0, 0),
     mUnk_A8(NULL),
     mUnk_AC(-1),
     mUnk_B0(0) {}
@@ -62,9 +61,8 @@ void MapObjectUnkMTJR::vfunc_08() {
         VecFx32 stack_vec = {tmp_x, tmp_y, tmp_z};
         data_027e0cec->func_ov000_020a0220(&mUnk_A8, &stack_vec);
     }
-    if (mUnk_A4 < mUnk_A6) {
-        mUnk_A4++;
-    }
+
+    this->mUnk_A4.Update();
 }
 
 void MapObjectUnkMTJR::vfunc_0C() {
@@ -104,9 +102,9 @@ bool MapObjectUnkMTJR::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) 
 }
 
 void MapObjectUnkMTJR::func_ov063_02161254(unk32 param1) {
-    mUnk_A0 = param1;
-    mUnk_A6 = -1;
-    mUnk_A4 = 0;
+    this->mUnk_A0 = param1;
+    this->mUnk_A4.Reset();
+
     if (param1 != 0 && param1 == 1) {
         this->func_ov063_02161288();
     }

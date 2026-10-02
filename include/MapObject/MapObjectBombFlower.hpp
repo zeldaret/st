@@ -27,8 +27,7 @@ public:
     /* A8 */ STRUCT_PAD(0xA8, 0xB0);
     /* BC */ fx32 mUnk_B0;
     /* BC */ fx32 mUnk_B4;
-    /* B8 */ volatile u16 mUnk_B8;
-    /* BA */ u16 mUnk_BA;
+    /* B8 */ Timer mUnk_B8;
     /* BC */ bool mUnk_BC;
     /* C0 */ MapObject_10_Pot mUnk_C0;
 
@@ -43,15 +42,6 @@ public:
     /* 48 */ virtual void vfunc_48() override;
     /* 50 */ virtual void vfunc_50(ActorRef *param1, MapObjectPot_Base *thisx) override;
     /* 58 */ virtual void vfunc_58();
-
-    bool IsInternalTimerOut() {
-        if (this->mUnk_B8 < this->mUnk_BA) {
-            ++this->mUnk_B8;
-            return false;
-        }
-
-        return true;
-    }
 
     void func_ov031_02102728(unk32 param1);
 };

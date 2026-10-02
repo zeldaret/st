@@ -32,8 +32,7 @@ Actor_Derived1::Actor_Derived1(ModelRender *param1, Actor_Derived1_94_0C *param2
     mUnk_0DE(0xEAAB),
     mUnk_0E0(0x1555),
     mUnk_0E4(NULL),
-    mUnk_0E8(0),
-    mUnk_0EA(0),
+    mUnk_0E8(0, 0),
     mUnk_104(this->mUnk_34->size),
     mUnk_114(-1),
     mUnk_118(0x1000),
@@ -50,7 +49,7 @@ Actor_Derived1::~Actor_Derived1() {}
 
 bool Actor_Derived1::Init(unk32 param1) {
     if (this->mUnk_5C.mParams[2] == 0 && this->func_ov000_020a8dd0()) {
-        UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+        this->Kill();
     }
 
     if (this->mUnk_0B0 & 8) {

@@ -112,20 +112,10 @@ public:
     /* 27C */ VecFx32 mUnk_27C;
     /* 288 */ VecFx32 mUnk_288;
     /* 294 */ bool mUnk_294;
-    /* 296 */ volatile u16 mUnk_296;
-    /* 298 */ u16 mUnk_298;
+    /* 296 */ Timer mUnk_296;
     /* 29A */
 
     ActorSpinut();
-
-    bool IsInternalTimerOut() {
-        if (this->mUnk_296 < this->mUnk_298) {
-            this->mUnk_296++;
-            return false;
-        }
-
-        return true;
-    }
 
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 1C */ virtual void Setup() override;

@@ -78,8 +78,7 @@ public:
     /* B4 */ ActorUnkMLCK_A0 **mUnk_B4;
     /* B8 */ unk32 mUnk_B8;
     /* BC */ unk32 mUnk_BC;
-    /* C0 */ u16 mUnk_C0;
-    /* C2 */ vu16 mUnk_C2;
+    /* C0 */ Timer mUnk_C0;
     /* C4 */ ActorUnkMLCK_C4 mUnk_C4;
     /* D8 */ ActorUnkMLCK_D8 mUnk_D8;
     /* E4 */ ActorUnkMLCK_D8 mUnk_E4;

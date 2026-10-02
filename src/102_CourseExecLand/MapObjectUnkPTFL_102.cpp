@@ -122,7 +122,7 @@ void MapObjectUnkPTFL::vfunc_08() {
                     }
                     break;
                 case 2:
-                    if (this->mUnk_56 >= this->mUnk_58) {
+                    if (this->mUnk_56.HasReachedMax()) {
                         this->func_ov070_0214bbd0(MapObjectUnkPTFLState_0, false);
                     }
                     break;
@@ -135,9 +135,7 @@ void MapObjectUnkPTFL::vfunc_08() {
             break;
     }
 
-    if (this->mUnk_56 < this->mUnk_58) {
-        this->mUnk_56++;
-    }
+    this->mUnk_56.Update();
 }
 
 void MapObjectUnkPTFL::vfunc_0C() {

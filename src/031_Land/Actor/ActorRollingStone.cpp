@@ -99,10 +99,8 @@ ActorRollingStone::ActorRollingStone() :
     mUnk_10C(data_027e0130),
     mUnk_138(0x0),
     mUnk_14C(0x0),
-    mUnk_150(0x0),
-    mUnk_152(0x0),
-    mUnk_154(0x0),
-    mUnk_156(0x0),
+    mUnk_150(0, 0),
+    mUnk_154(0, 0),
     mUnk_158(true),
     mUnk_159(false),
     mUnk_15A(-0x1),
@@ -153,7 +151,7 @@ bool ActorRollingStone::Init(unk32 param1) {
 }
 
 void ActorRollingStone::Update() {
-    this->IsTimerOut();
+    this->mTimer.Update();
 
     CALL_PTMF(PTMF<ActorRollingStone>, data_ov031_02114a94[this->mState]);
 
@@ -169,9 +167,8 @@ void ActorRollingStone::Update() {
 }
 
 void ActorRollingStone::SetState(ActorState state) {
-    this->mState           = state;
-    this->mTimerMax        = 0xFFFF;
-    this->mTimer           = 0x0;
+    this->mState = state;
+    this->mTimer.Reset();
     this->mUnk_38->mUnk_08 = 0x3;
     CALL_PTMF(PTMF<ActorRollingStone>, data_ov031_02114aec[this->mState]);
 }
@@ -328,7 +325,7 @@ void ActorRollingStone::func_ov031_020f8bc4() {
 }
 
 void ActorRollingStone::func_ov031_020f8de8() {
-    this->IsInternalTimerOut2();
+    this->mUnk_154.Update();
     this->func_ov000_020989e0();
 
     if ((this->mUnk_AC.mUnk_08 & 0x3FFFF) == 0) {
@@ -340,11 +337,10 @@ void ActorRollingStone::func_ov031_020f8de8() {
             data_027e0d38->func_ov031_020d9c44(0x4);
             return;
         case 0xC:
-            if ((u32) this->mUnk_154 < (u32) this->mUnk_156) {
+            if (!this->mUnk_154.HasReachedMax()) {
                 return;
             }
-            this->mUnk_156 = 0x14;
-            this->mUnk_154 = 0x0;
+            this->mUnk_154.Set(0, 20);
         case 0x8:
         case 0xD:
             this->func_ov017_020bfb18(&this->mUnk_AC);
@@ -380,8 +376,7 @@ void ActorRollingStone::func_ov031_020f8f0c() {}
 void ActorRollingStone::func_ov031_020f8f10() {
     this->mUnk_2C  = 0x0;
     this->mUnk_158 = false;
-    this->mUnk_152 = this->mUnk_5C.mParams[1];
-    this->mUnk_150 = 0x0;
+    this->mUnk_150.Set(0, this->mUnk_5C.mParams[1]);
 }
 
 void ActorRollingStone::func_ov031_020f8f30() {
@@ -389,7 +384,7 @@ void ActorRollingStone::func_ov031_020f8f30() {
         return;
     }
 
-    if (!this->IsInternalTimerOut1()) {
+    if (!this->mUnk_150.HasExpired()) {
         return;
     }
     ActorParams sp14;
@@ -405,8 +400,7 @@ void ActorRollingStone::func_ov031_020f8f30() {
 
     ActorRef ref;
     this->func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_RollingStone, &sp14, 0x0);
-    this->mUnk_150 = 0;
-    this->mUnk_152 = this->mUnk_5C.mParams[1];
+    this->mUnk_150.Set(0, this->mUnk_5C.mParams[1]);
 }
 
 void ActorRollingStone::func_ov031_020f9018() {

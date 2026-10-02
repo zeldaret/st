@@ -115,8 +115,7 @@ ActorBomb::ActorBomb() :
     mUnk_1E0(0x0),
     mUnk_1E4(0x0),
     mUnk_1E8(0x0),
-    mUnk_1EA(0x0),
-    mUnk_1EC(0x0),
+    mUnk_1EA(0, 0),
     mUnk_1EE(false),
 #if IS_JP
     mUnk_1F0(false),
@@ -158,8 +157,7 @@ bool ActorBomb::Init(unk32 param1) {
     VecFx32_Copy(&this->mPos, &this->mUnk_19C.mUnk_0C.pos);
     this->mUnk_19C.mUnk_0C.size = 0x666;
 
-    this->mUnk_1EC = 0x78;
-    this->mUnk_1EA = 0x0;
+    this->mUnk_1EA.Set(0, 120);
     this->Actor::func_ov000_0209862c(0x2);
     return true;
 }
@@ -278,24 +276,23 @@ void ActorBomb::func_ov031_020e1b7c() {
     data_027e09a8->func_ov000_02071d34(&this->mRef, 0xF4, &this->mPos, 0x0);
 
     if (!this->mUnk_1EE) {
-        if (!this->IsInternalTimerOut()) {
+        if (!this->mUnk_1EA.HasExpired()) {
             return;
         }
 
         this->mUnk_1EE = true;
-        this->mUnk_1EC = 0x3C;
-        this->mUnk_1EA = 0x00;
+        this->mUnk_1EA.Set(0, 60);
         this->func_ov031_020e1b1c();
         return;
     }
-    fx32 delta                     = this->mUnk_1EC - this->mUnk_1EA;
+    fx32 delta                     = this->mUnk_1EA.GetRemainingTime();
     this->mUnk_0F4.mUnk_04.mUnk_04 = FLOAT_TO_FX32(1.5f) - delta * FLOAT_TO_FX32(0.01985f);
     this->mUnk_0F4.func_01ffc3b4();
 
     if (delta > 0x0) {
         func_01ff9218(&this->mUnk_1D8, FLOAT_TO_FX32(1.3f), func_01ffb464((u32) delta << 0xC));
     }
-    if (!this->IsInternalTimerOut()) {
+    if (!this->mUnk_1EA.HasExpired()) {
         return;
     }
     ActorBlast::func_ov031_020e3b9c(this, 0x0, 0x0);

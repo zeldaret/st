@@ -5,6 +5,7 @@
 #include "MapObject/MapObjectProfile.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
+#include "timer.hpp"
 #include "types.h"
 
 enum MapObjUnkSKDIState_ {
@@ -33,8 +34,7 @@ public:
     /* 0BC */ unk32 mUnk_0BC;
     /* 0C0 */ STRUCT_PAD(0x0C0, 0x0D4);
     /* 0D4 */ MapObject_10 mUnk_0D4;
-    /* 0F8 */ volatile u16 mUnk_0F8;
-    /* 0FA */ u16 mUnk_0FA;
+    /* 0F8 */ Timer mUnk_0F8;
     /* 0FC */ unk32 mUnk_0FC;
     /* 100 */
 

@@ -60,9 +60,7 @@ void ActorUnkMLCK::Update() {
         }
     }
 
-    if (this->mUnk_C0 < this->mUnk_C2) {
-        (*(volatile u16 *) &this->mUnk_C0)++;
-    }
+    this->mUnk_C0.Update();
 }
 
 void ActorUnkMLCK::vfunc_24() {

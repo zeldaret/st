@@ -50,8 +50,7 @@ MapObjectProfileUnkLTRW::MapObjectProfileUnkLTRW() :
 MapObjectUnkLTRW::MapObjectUnkLTRW() :
     mUnk_40(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfileUnkLTRW))),
     mUnk_A0(1),
-    mUnk_A4(0),
-    mUnk_A6(0),
+    mUnk_A4(0, 0),
     mUnk_A8() {}
 
 bool MapObjectUnkLTRW::Init() {
@@ -67,9 +66,7 @@ bool MapObjectUnkLTRW::Init() {
 }
 
 void MapObjectUnkLTRW::vfunc_08() {
-    if (mUnk_A4 < mUnk_A6) {
-        mUnk_A4++;
-    }
+    this->mUnk_A4.Update();
 }
 
 void MapObjectUnkLTRW::vfunc_14(unk32 param1) {
@@ -112,9 +109,8 @@ unk32 MapObjectUnkLTRW::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
 }
 
 void MapObjectUnkLTRW::func_ov063_02160d18(unk32 param1) {
-    mUnk_A0 = param1;
-    mUnk_A6 = -1;
-    mUnk_A4 = 0;
+    this->mUnk_A0 = param1;
+    this->mUnk_A4.Reset();
 }
 
 void UnkStruct_ov063_021639e4::vfunc2_04() {

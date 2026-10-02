@@ -37,9 +37,8 @@ ActorItemBoomerang::ActorItemBoomerang() :
     mUnk_13A(0x0),
     mUnk_13C((u16) 0x8D71),
     mUnk_140(0x1000, 0x0) {
-    this->mState    = ActorItemBoomerangState_0;
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0;
+    this->mState = ActorItemBoomerangState_0;
+    this->mTimer.Reset();
 }
 
 bool ActorItemBoomerang::Init(unk32 param1) {
@@ -66,9 +65,9 @@ bool ActorItemBoomerang::Init(unk32 param1) {
 
 // non-matching
 void ActorItemBoomerang::SetState(ActorState state) {
-    this->mState    = state;
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0;
+    this->mState = state;
+    this->mTimer.Reset();
+    ;
 }
 
 void ActorItemBoomerang::func_ov031_020e49b0(unk32 param1) {
@@ -96,7 +95,7 @@ void ActorItemBoomerang::Update() {
         VecFx32_Copy(&this->mPos, &this->mUnk_140.mUnk_00);
     }
 
-    this->IsTimerOut();
+    this->mTimer.Update();
     this->mAngle += DEG_TO_ANG(45);
     this->func_ov031_020e52a0();
     data_027e09a8->func_ov000_02071d34(&this->mRef, this->mUnk_13C, &this->mPos, 0x0);

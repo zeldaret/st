@@ -46,8 +46,7 @@ public:
 class ActorItemDrop : public Actor_Derived2 {
 public:
     /* 000 (base) */
-    /* 0AE */ volatile u16 mUnk_AE;
-    /* 0B0 */ u16 mUnk_B0;
+    /* 0AE */ Timer mUnk_AE;
     /* 0B2 */ STRUCT_PAD(0xB2, 0xB4);
     /* 0B4 */ Actor_9C mUnk_B4;
     /* 0D4 */ ItemDropType mItemTypeId;
@@ -60,15 +59,6 @@ public:
     /* 10C */ VecFx32 mUnk_10C;
     /* 118 */ bool mUnk_118;
     /* 119 */ bool mUnk_119;
-
-    bool IsTimerOut() {
-        if (this->mUnk_AE < this->mUnk_B0) {
-            this->mUnk_AE++;
-            return false;
-        }
-
-        return true;
-    }
 
     ActorItemDrop();
 

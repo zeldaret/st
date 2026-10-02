@@ -239,14 +239,13 @@ void ActorUnkCASE::func_ov063_0215b054(void) {
     mVel.y = 0;
     mVel.z = mUnk_1E0;
     UNSET_FLAG2(*(s16 *) &mUnk_44, ActorFlag_5);
-    this->mTimerMax = -1;
-    this->mTimer    = 0;
+    this->mTimer.Reset();
 }
 
 void ActorUnkCASE::func_ov063_0215b090(void) {
-    if (this->mTimer < 4) {
+    if (this->mTimer.value < 4) {
         this->func_ov063_0215afb8();
-        this->IsTimerOut();
+        this->mTimer.Update();
         this->vfunc_10(&mUnk_174.mUnk_0C);
         data_027e09c0->func_ov000_0207e58c(mRef, 3, 4, &mUnk_174);
         return;
@@ -489,8 +488,7 @@ void ActorUnkCASE::func_ov063_0215b854(void) {
         VecFx32_Copy(&vec, &mPos);
         VecFx32_Copy(&vec, &mPrevPos);
 
-        actorCans->mUnk_236 = 20;
-        actorCans->mUnk_234 = 0;
+        actorCans->mUnk_234.Set(0, 20);
 
         actorCans = (ActorUnkCANS *) mUnk_14C;
         actorCans->func_ov063_02158b0c();

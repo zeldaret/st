@@ -29,13 +29,11 @@ public:
     /* 1B4 */ ActorUnkNTTZ *mUnk_1B4;
     /* 1B8 */ unk32 mUnk_1B8;
     /* 1BC */ unk32 mUnk_1BC;
-    /* 1C0 */ volatile u16 mUnk_1C0;
-    /* 1C2 */ u16 mUnk_1C2;
+    /* 1C0 */ Timer mUnk_1C0;
     /* 1CC */ fx32 mUnk_1C4;
     /* 1C8 */ UnkStruct_ov019_020d24c8_28_258_00 *mUnk_1C8;
     /* 1CC */ unk32 mUnk_1CC;
-    /* 1D0 */ volatile u16 mUnk_1D0;
-    /* 1D2 */ u16 mUnk_1D2;
+    /* 1D0 */ Timer mUnk_1D0;
     /* 1D4 */ u16 mUnk_1D4;
     /* 1D6 */ u16 mUnk_1D6;
     /* 1D8 */ bool mUnk_1D8;
@@ -49,14 +47,6 @@ public:
     /* 24 */ virtual void vfunc_24() override;
     /* 30 */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
     /* 34 */ virtual void vfunc_30(Actor_vfunc_30 *param1) override;
-
-    bool IsInternalTimerOut() {
-        if (this->mUnk_1D0 < this->mUnk_1D2) {
-            ++this->mUnk_1D0;
-            return false;
-        }
-        return true;
-    }
 
     void func_ov031_020f6984();
     static void func_ov031_020f6e5c(ActorRef param1);

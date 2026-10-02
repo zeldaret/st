@@ -64,8 +64,7 @@ void ActorUnkROCK::Update() {
 }
 
 void ActorUnkROCK::func_ov031_020e8a48(ActorState state) {
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0000;
+    this->mTimer.Reset();
 
     if (this->mState == ActorUnkROCKState_0) {
         data_027e09c0->func_ov000_0207e254(&this->mUnk_A0);

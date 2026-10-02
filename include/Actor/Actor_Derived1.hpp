@@ -147,8 +147,7 @@ public:
     /* 0E0 */ unk16 mUnk_0E0;
     /* 0E0 */ unk16 mUnk_0E2;
     /* 0E4 */ void (*mUnk_0E4)(); // callback
-    /* 0E8 */ volatile u16 mUnk_0E8;
-    /* 0E8 */ volatile u16 mUnk_0EA;
+    /* 0E8 */ Timer mUnk_0E8;
     /* 0EC */ Actor_Derived1_EC mUnk_0EC;
     /* 104 */ Cylinder mUnk_104;
     /* 114 */ unk32 mUnk_114;

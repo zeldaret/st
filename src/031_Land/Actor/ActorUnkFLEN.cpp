@@ -34,7 +34,7 @@ bool ActorUnkFLEN::Init(int param1) {
 }
 
 void ActorUnkFLEN::Update() {
-    this->IsTimerOut();
+    this->mTimer.Update();
 
     switch (this->mState) {
         case ActorUnkFLENState_0:

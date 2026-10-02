@@ -44,8 +44,7 @@ MapObjectUnkSTAT::MapObjectUnkSTAT() :
     mUnk_50(-1),
     mUnk_54(0x8000),
     mUnk_58(500),
-    mUnk_5A(0),
-    mUnk_5C(0),
+    mUnk_5A(0, 0),
     mUnk_60(0),
     mUnk_64(0),
     mUnk_68(0) {
@@ -92,9 +91,7 @@ void MapObjectUnkSTAT::vfunc_08(void) {
             break;
     }
 
-    if (mUnk_5A < mUnk_5C) {
-        mUnk_5A++;
-    }
+    this->mUnk_5A.Update();
 }
 
 void MapObjectUnkSTAT::vfunc_0C(void) {
@@ -119,7 +116,7 @@ void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
             this->func_ov063_0215fc40(3);
         }
 
-        if (mUnk_5A == 35) {
+        if (this->mUnk_5A.value == 35) {
             VecFx32 vec = mPos;
 
             data_027e0cec->func_ov000_0209feac(0x87D, &vec, 4, 0, 0);
@@ -127,7 +124,7 @@ void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
             data_027e09a8->func_ov000_02071b30(0x127, &vec, 0);
         }
 
-        u16 counter = mUnk_5A;
+        u16 counter = this->mUnk_5A.value;
         if (30 < counter && counter < 50) {
             u32 randomVal  = gRandom.Next32(0x15);
             s32 gRandomVal = ((u32 *) gRandom.mRandomValue)[0];
@@ -179,8 +176,7 @@ void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
             VecFx32_Copy(&mPos, &stackStruct.mUnk_0C);
 
             mUnk_50 = data_027e09b8->func_ov000_02073388(&stackStruct, 0);
-            mUnk_5C = -1;
-            mUnk_5A = 0;
+            this->mUnk_5A.Reset();
             data_027e09a8->func_ov000_02071bd4(0x126, &mPos, 0);
             return;
         }
@@ -188,12 +184,11 @@ void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
 }
 
 void MapObjectUnkSTAT::func_ov063_0215fc40(unk32 param1) {
-    mUnk_4C = param1;
-    mUnk_5C = -1;
-    mUnk_5A = 0;
-    mUnk_60 = 0;
-    mUnk_64 = 0;
-    mUnk_68 = 0;
+    this->mUnk_4C = param1;
+    this->mUnk_5A.Reset();
+    this->mUnk_60 = 0;
+    this->mUnk_64 = 0;
+    this->mUnk_68 = 0;
 
     switch (param1) {
         case 0:

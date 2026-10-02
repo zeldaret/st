@@ -24,8 +24,7 @@ class ActorUnkNFSP : public Actor {
 public:
     /* 00 (base) */
     /* 94 */ unk32 mUnk_94;
-    /* 98 */ volatile u16 mUnk_98;
-    /* 9A */ u16 mUnk_9A;
+    /* 98 */ Timer mUnk_98;
     /* 9C */ MapObjectUnkSWFS *mUnk_9C;
     /* A0 */ Actor_9C mUnk_A0;
     /* C0 */ ActorUnkNFSP_C0 mUnk_C0;

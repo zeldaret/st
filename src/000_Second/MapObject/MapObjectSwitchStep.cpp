@@ -82,8 +82,7 @@ void MapObjectSwitchStep_40::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
 
 MapObjectSwitchStep::MapObjectSwitchStep() :
     mUnk_A4(&mUnk_C4, NULL) {
-    this->mUnk_E4 = 0;
-    this->mUnk_E6 = 0;
+    this->mUnk_E4.Init();
     this->mUnk_E8 = 0;
     this->mUnk_EA = 0;
     this->mUnk_EB = 0;
@@ -127,9 +126,8 @@ bool MapObjectSwitchStep::Init(void) {
 }
 
 void MapObjectSwitchStep::func_ov000_0209e11c(MapObjState state, unk32 param2) {
-    this->mState  = state;
-    this->mUnk_E6 = -1;
-    this->mUnk_E4 = 0;
+    this->mState = state;
+    this->mUnk_E4.Reset();
     this->mUnk_A4.func_01ffc3b4();
 
     switch (this->mState) {
@@ -161,8 +159,7 @@ void MapObjectSwitchStep::func_ov000_0209e11c(MapObjState state, unk32 param2) {
             }
 
             if (this->mUnk_20.mParams[0] == 2) {
-                this->mUnk_E6 = this->mUnk_20.mParams[1];
-                this->mUnk_E4 = 0;
+                this->mUnk_E4.Set(0, this->mUnk_20.mParams[1]);
             }
 
             this->mUnk_A4.func_ov000_020577f8(0x1000);
@@ -222,7 +219,7 @@ void MapObjectSwitchStep::vfunc_18(s8 *param1) {
 }
 
 void MapObjectSwitchStep::func_ov000_0209e38c(void) {
-    if (this->mUnk_E6 - this->mUnk_E4 < 0x3C) {
+    if (this->mUnk_E4.GetRemainingTime() < 60) {
         data_ov000_020b5214.func_ov000_0206e7e8(0x92);
     } else {
         data_ov000_020b5214.func_ov000_0206e7e8(0x91);

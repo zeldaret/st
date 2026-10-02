@@ -71,7 +71,7 @@ ActorHeart::ActorHeart() :
     mUnk_B8(0),
     mUnk_BA(gRandom.Next32(0) & 0x80000000 ? 0x666 : ~0x665),
     mUnk_BC(0),
-    mUnk_BE(0),
+    mUnk_BE(false),
     mUnk_C0(0),
     mUnk_C4(0),
     mUnk_C8(this) {
@@ -234,23 +234,22 @@ void ActorHeart::func_ov031_020ef208() {
         SET_FLAG(this->mFlags, ActorFlag_Visible);
         return;
     }
-    if ((u8) this->mUnk_BE == 0) {
-        if (!this->IsTimerOut()) {
+    if (!this->mUnk_BE) {
+        if (!this->mTimer.HasExpired()) {
             return;
         }
-        this->mUnk_BE   = 0x01;
-        this->mTimerMax = 60;
-        this->mTimer    = 0;
+        this->mUnk_BE = true;
+        this->mTimer.Set(0, 60);
         return;
     }
 
-    if ((this->mTimer % 8) < 4) {
+    if ((this->mTimer.value % 8) < 4) {
         UNSET_FLAG(this->mFlags, ActorFlag_Visible);
     } else {
         SET_FLAG(this->mFlags, ActorFlag_Visible);
     }
 
-    if (!this->IsTimerOut()) {
+    if (!this->mTimer.HasExpired()) {
         return;
     }
     this->func_ov000_020984d0();
@@ -285,9 +284,8 @@ void ActorHeart::func_ov031_020ef35c() {
     this->mVel.x = FLOAT_TO_FX32(0.0);
     this->mVel.y = FLOAT_TO_FX32(0.0);
     this->mVel.z = FLOAT_TO_FX32(0.0);
-    if ((u8) this->mUnk_BE == 0 && (this->mTimerMax - this->mTimer) > 0xB4) {
-        this->mTimerMax = 0xB4;
-        this->mTimer    = 0x00;
+    if (!this->mUnk_BE && this->mTimer.GetRemainingTime() > 180) {
+        this->mTimer.Set(0, 180);
     }
     this->mUnk_44 = 0x9F;
 }
@@ -353,20 +351,17 @@ void ActorHeart::func_ov031_020ef4a8() {
 
     switch (this->mUnk_5C.mUnk_2C) {
         case 0:
-            this->mTimerMax = 0xB4;
-            this->mTimer    = 0x00;
+            this->mTimer.Set(0, 180);
             this->SetState(ActorHeartState_2);
             break;
 
         case 1:
-            this->mTimerMax = 0x1E0;
-            this->mTimer    = 0x00;
+            this->mTimer.Set(0, 480);
             this->SetState(ActorHeartState_0);
             return;
 
         default:
-            this->mTimerMax = 0x1E0;
-            this->mTimer    = 0x00;
+            this->mTimer.Set(0, 480);
             this->SetState(ActorHeartState_0);
             break;
     }

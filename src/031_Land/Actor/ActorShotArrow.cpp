@@ -290,11 +290,9 @@ void ActorShotArrow::Update() {
 // non-matching
 void ActorShotArrow::func_ov031_020f1a64() {
     if (this->mUnk_5C.mParams[1] == 0x1 || this->mUnk_5C.mParams[1] == 0x4) {
-        this->mTimer    = 0x0;
-        this->mTimerMax = 0x78;
+        this->mTimer.Set(0, 120);
     } else {
-        this->mTimer    = 0x0;
-        this->mTimerMax = 0x3C;
+        this->mTimer.Set(0, 60);
     }
 
     unk32 value_func_020f2270 = this->func_ov031_020f2270();
@@ -310,7 +308,7 @@ void ActorShotArrow::func_ov031_020f1a64() {
 void ActorShotArrow::func_ov031_020f1b04() {
     UnkStruct_020f1b04 stack;
 
-    if (this->IsTimerOut()) {
+    if (this->mTimer.HasExpired()) {
         this->SetState(ActorShotArrowState_6);
         return;
     }
@@ -395,20 +393,18 @@ void ActorShotArrow::func_ov031_020f1dd4() {
     this->mUnk_174 = 0x1555;
 
     data_027e09a8->func_ov000_02071b30(0x8D7A, &this->mPos, 0);
-    this->mUnk_16C  = 0;
-    this->mTimer    = 0;
-    this->mTimerMax = this->mUnk_258;
+    this->mUnk_16C = 0;
+    this->mTimer.Set(0, this->mUnk_258);
 }
 
 void ActorShotArrow::func_ov031_020f1e3c() {
-    if (!this->mUnk_25B && this->IsTimerOut()) {
+    if (!this->mUnk_25B && this->mTimer.HasExpired()) {
         if (this->func_ov031_020f3210(0x1)) {
             this->Kill();
             return;
         }
 
-        this->mTimerMax = this->mUnk_258;
-        this->mTimer    = 0;
+        this->mTimer.Set(0, this->mUnk_258);
     }
 
     Actor *targetActor = this->mUnk_1C8.mUnk_00;

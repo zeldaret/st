@@ -24,8 +24,7 @@ class ActorBlast : public Actor {
 public:
     /* 00 (base) */
     /* 94 */ fx32 mUnk_94;
-    /* 98 */ volatile u16 mUnk_98;
-    /* 9A */ u16 mUnk_9A;
+    /* 98 */ Timer mUnk_98;
     /* 9C */ UnkStruct_ov031_Items_01 mUnk_9C;
     /* C8 */ Cylinder mUnk_C8;
     /* D8 */ Cylinder mUnk_D8;
@@ -39,14 +38,6 @@ public:
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 20 */ virtual void Update() override;
     /* 24 */ virtual void vfunc_24() override;
-
-    bool IsInternalTimerOut() {
-        if (this->mUnk_98 < this->mUnk_9A) {
-            ++this->mUnk_98;
-            return false;
-        }
-        return true;
-    }
 
     fx32 func_ov031_020e3b94();
     static void func_ov031_020e3b9c(Actor *spawner, unk16 param1, unk16 param2);

@@ -103,13 +103,11 @@ MapObjectUnkSWSW::MapObjectUnkSWSW() :
     mUnk_0EC(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.5f), FLOAT_TO_FX32(-0.4202f)),
     mUnk_0F8(NULL),
     mUnk_0FC(0x4),
-    mUnk_100(0x0),
-    mUnk_102(0x0),
+    mUnk_100(0, 0),
     mUnk_104(0x0),
     mUnk_105(0x0),
     mUnk_10C(0x0),
-    mUnk_10E(0x0),
-    mUnk_110(0x0),
+    mUnk_10E(0, 0),
     mUnk_114(NULL) {
     this->mUnk_10 = &data_ov032_02122b8c;
 }
@@ -196,7 +194,7 @@ void MapObjectUnkSWSW::vfunc_08() {
             break;
 
         case 0x2: {
-            if (this->mUnk_102 != 0x0 && this->mUnk_100 >= this->mUnk_102) {
+            if (this->mUnk_100.max != 0 && this->mUnk_100.HasReachedMax()) {
                 this->MapObject::func_ov000_0209d2c4(0x0, true);
 
                 if (this->mUnk_104 != 0x0) {
@@ -227,8 +225,8 @@ void MapObjectUnkSWSW::vfunc_08() {
                 func_01ff91b8(&this->mUnk_10C, 0x0, 0x333);
             }
 
-            if (var_r5 && this->mUnk_110 != 0x0) {
-                fx16 var_r3 = COS((u16) (this->mUnk_10E * 0xFFFF / this->mUnk_110));
+            if (var_r5 && this->mUnk_10E.max != 0) {
+                fx16 var_r3 = COS((u16) (this->mUnk_10E.value * 0xFFFF / this->mUnk_10E.max));
 
                 if (var_r3 < 0) {
                     var_r3 = -var_r3;
@@ -236,26 +234,22 @@ void MapObjectUnkSWSW::vfunc_08() {
 
                 this->mUnk_108 = var_r3;
 
-                if (this->mUnk_10E < this->mUnk_110) {
-                    ++this->mUnk_10E;
-                }
+                this->mUnk_10E.Update();
 
-                if (this->mUnk_10E >= this->mUnk_110) {
-                    this->mUnk_110 = 0x0;
-                    this->mUnk_10E = 0x0;
+                if (this->mUnk_10E.HasReachedMax()) {
+                    this->mUnk_10E.Init();
                 }
             } else {
                 if (gRandom.Next32(0x33) != 0x0) {
-                    this->mUnk_110 = 0x0;
+                    this->mUnk_10E.max = 0;
                 } else {
-                    this->mUnk_110 = gRandom.Next32(0x29) + 0xA;
+                    this->mUnk_10E.max = gRandom.Next32(41) + 10;
                 }
 
-                this->mUnk_10E = 0x0;
+                this->mUnk_10E.value = 0;
 
                 if (!var_r5) {
-                    this->mUnk_110 = 0x0;
-                    this->mUnk_10E = 0x0;
+                    this->mUnk_10E.Init();
                     func_01ff9218(&this->mUnk_108, 0x0, 0x800);
                 } else {
                     func_01ff9218(&this->mUnk_108, 0x1000, 0x800);
@@ -269,7 +263,7 @@ void MapObjectUnkSWSW::vfunc_08() {
             VecFx32 sp24;
             VecFx32 sp18;
             VecFx32 sp0C;
-            if (this->mUnk_100 >= this->mUnk_102) {
+            if (this->mUnk_100.HasReachedMax()) {
                 VecFx32_Init(this->mPos.x + this->mUnk_0EC.x, this->mPos.y + this->mUnk_0EC.y, this->mPos.z + this->mUnk_0EC.z,
                              &sp30);
                 sp18 = sp30;
@@ -286,7 +280,7 @@ void MapObjectUnkSWSW::vfunc_08() {
                 this->vfunc_3C(0x0);
             } else {
                 fx32 z = this->mPos.z + this->mUnk_0EC.z +
-                         func_02015a18(this->mUnk_100 << 0xC, 0, -0x1000, 0, this->mUnk_102 << 0xC, 0, 0);
+                         func_02015a18(this->mUnk_100.max << 0xC, 0, -0x1000, 0, this->mUnk_100.value << 0xC, 0, 0);
                 VecFx32_Init(this->mPos.x + this->mUnk_0EC.x, this->mPos.y + this->mUnk_0EC.y, z, &sp24);
 
                 sp0C = sp24;
@@ -307,7 +301,7 @@ void MapObjectUnkSWSW::vfunc_08() {
             break;
     }
 
-    this->IsInternalTimerOut();
+    this->mUnk_100.Update();
     this->mUnk_040.func_ov032_021210a0(this->mUnk_108);
 
     if (this->mUnk_10C > 0x2AAB) {
@@ -402,8 +396,7 @@ void MapObjectUnkSWSW::vfunc_38() {
 
     this->vfunc_3C(0x2);
 
-    this->mUnk_102 = 0xF;
-    this->mUnk_100 = 0x0;
+    this->mUnk_100.Set(0, 15);
     this->mUnk_114 = NULL;
 }
 
@@ -437,13 +430,11 @@ void MapObjectUnkSWSW::func_ov032_02121b90() {
 // non-matching (last copies)
 void MapObjectUnkSWSW::vfunc_3C(unk32 param1) {
     this->mUnk_0FC = param1;
-    this->mUnk_102 = 0xFFFF;
-    this->mUnk_100 = 0x0000;
+    this->mUnk_100.Reset();
 
     switch (param1) {
         case 0x2:
-            this->mUnk_102 = 0x0;
-            this->mUnk_100 = 0x0;
+            this->mUnk_100.Init();
             this->mUnk_0AC.func_ov000_020577f8(0x1000);
             break;
 
@@ -459,9 +450,7 @@ void MapObjectUnkSWSW::vfunc_3C(unk32 param1) {
             this->mUnk_0F8          = actorNSSW;
             this->mUnk_114          = actorNSSW;
 
-            this->mUnk_102 = 0x28;
-            this->mUnk_100 = 0x00;
-
+            this->mUnk_100.Set(0, 40);
             this->mUnk_0AC.func_ov000_020577f8(0x1000);
 
             VecFx32_Init(this->mPos.x + this->mUnk_0EC.x, this->mPos.y + this->mUnk_0EC.y,

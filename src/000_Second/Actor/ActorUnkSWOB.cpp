@@ -49,13 +49,12 @@ void ActorUnkSWOB::SetState(ActorState state) {
             this->func_ov000_02098a88(0, 1);
 
             if (this->mUnk_94 == 0) {
-                UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+                this->Kill();
             }
             break;
         case ActorUnkSWOBState_2:
             this->func_ov000_0209aa30();
-            this->mTimerMax = -1;
-            this->mTimer    = 0;
+            this->mTimer.Reset();
             break;
         default:
             break;

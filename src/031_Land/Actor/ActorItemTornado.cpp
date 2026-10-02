@@ -53,9 +53,8 @@ ActorItemTornado::ActorItemTornado() :
     this->mUnk_94.func_ov000_02057c98(&this->mUnk_F4);
     this->mUnk_94.func_ov000_02057c98(&this->mUnk_134);
 
-    this->mTimerMax = 0xFFFF;
-    this->mState    = ActorItemTornadoState_0;
-    this->mTimer    = 0x0;
+    this->mState = ActorItemTornadoState_0;
+    this->mTimer.Reset();
 }
 
 bool ActorItemTornado::Init(unk32 param1) {
@@ -95,9 +94,8 @@ void ActorItemTornado::SetState(ActorState state) {
             break;
     }
 
-    this->mState    = state;
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0;
+    this->mState = state;
+    this->mTimer.Reset();
 }
 
 // non-matching
@@ -115,12 +113,12 @@ void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
     if (param1 == 0x0) {
         ++this->mUnk_1D8;
     }
-    this->IsTimerOut();
+    this->mTimer.Update();
 
     switch (this->mState) {
         case ActorItemTornadoState_0:
             data_027e09a8->func_ov000_02071d34(&this->mRef, 0x8D6C, &this->mPos, 0x0);
-            if (this->mTimer < (s16) 0xA) {
+            if (this->mTimer.GetValue() < 10) {
                 this->mUnk_1DC += 0x199;
                 break;
             }
@@ -139,7 +137,6 @@ void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
                 }
             }
 
-            ;
             if (!data_027e0d38->func_ov031_020d9bec() &&
                 (((u16) this->mUnk_1CC == 0x0 && (u32) this->mUnk_1D8 >= 0x28U) || !this->func_ov017_020beeec(0))) {
                 this->func_ov031_020e6314(0x4);
@@ -161,15 +158,15 @@ void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
             }
             break;
         case ActorItemTornadoState_2:
-            if ((u32) this->mTimer >= (u32) this->mUnk_1D6) {
-                UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+            if (this->mTimer.value >= this->mUnk_1D6) {
+                this->Kill();
             } else if (this->mUnk_1D6 != 0) {
                 if (this->mUnk_1CE != 0) {
                     func_01ff993c(&this->mPos, &this->mUnk_1C0, 0x266);
                 }
                 this->mUnk_1DC -= func_01ffb66c(0x1000, this->mUnk_1D6);
                 if (this->mUnk_1DC <= 0) {
-                    UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+                    this->Kill();
                 }
             }
             break;

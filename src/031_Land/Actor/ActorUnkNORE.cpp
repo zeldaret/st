@@ -25,7 +25,7 @@ bool ActorUnkNORE::Init(unk32 param1) {
 
     unk_obj->func_ov000_020801b0(&local_vec, 7, 1);
 
-    UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+    this->Kill();
 
     return true;
 }

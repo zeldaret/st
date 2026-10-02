@@ -126,8 +126,8 @@ void ActorTearLight::vfunc_24() {
 
     if (this->mState == ActorUnkSZKUState_2) {
         if (this->mUnk_1B8 != 0x0) {
-            this->IsTimerOut();
-            if (this->mTimer == 0x14) {
+            this->mTimer.Update();
+            if (this->mTimer.value == 20) {
                 this->func_ov071_0215fca4();
                 VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);
                 this->mUnk_1B8 = 0x0;
@@ -310,8 +310,7 @@ void ActorTearLight::func_ov071_0215fc54() {
 void ActorTearLight::func_ov071_0215fca4() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_1);
 
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0000;
+    this->mTimer.Reset();
 
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.25f), FLOAT_TO_FX32(0.0f), &this->mVel);
 
@@ -336,8 +335,7 @@ void ActorTearLight::func_ov071_0215fd04() {
         var_z = !this->mUnk_18D;
     }
 
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0000;
+    this->mTimer.Reset();
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);
     this->mUnk_44 = 0;
     if (var_z) {
@@ -351,8 +349,7 @@ void ActorTearLight::func_ov071_0215fd04() {
 void ActorTearLight::func_ov071_0215fd80() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_3);
 
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0000;
+    this->mTimer.Reset();
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);
 
     this->mUnk_4A[0] = 0x0;
@@ -365,8 +362,7 @@ void ActorTearLight::func_ov071_0215fd80() {
 void ActorTearLight::func_ov071_0215fdd4() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_4);
 
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0000;
+    this->mTimer.Reset();
 
     this->mUnk_4A[0] = 0x0;
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);
@@ -401,19 +397,19 @@ void ActorTearLight::func_ov071_0215fe94() {
 }
 
 void ActorTearLight::func_ov071_0215fed4() {
-    this->IsTimerOut();
+    this->mTimer.Update();
     this->func_ov000_02098838();
     this->mUnk_3C = &this->mUnk_168;
 }
 
 void ActorTearLight::func_ov071_0215ff08() {
-    this->IsTimerOut();
+    this->mTimer.Update();
     this->mAngle += 0x222; // TODO DEG_ANGLE
     this->mUnk_3C = &this->mUnk_168;
 }
 
 void ActorTearLight::func_ov071_0215ff3c() {
-    this->IsTimerOut();
+    this->mTimer.Update();
 
     if (!data_027e09b8->func_01ffd420()) {
         if (data_027e0d34->TryItemGive(this->mItemId)) {

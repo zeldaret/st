@@ -35,8 +35,7 @@ bool ActorBlast_E8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *para
 
 ActorBlast::ActorBlast() :
     mUnk_94(FLOAT_TO_FX32(0.625f)),
-    mUnk_98(0x0),
-    mUnk_9A(0x18),
+    mUnk_98(0, 24),
     mUnk_E8(this) {}
 
 bool ActorBlast::Init(unk32 param1) {
@@ -101,7 +100,7 @@ void ActorBlast::Update() {
         this->mUnk_94      = f0;
         this->mUnk_C8.size = ~FLOAT_TO_FX32(0.0f);
     }
-    if (this->IsInternalTimerOut()) {
+    if (this->mUnk_98.HasExpired()) {
         this->func_ov000_020984d0();
         return;
     }
@@ -136,7 +135,7 @@ void ActorBlast::vfunc_24() {
         newVal = f0;
     }
     this->mUnk_94 = newVal;
-    if (!this->IsInternalTimerOut()) {
+    if (!this->mUnk_98.HasExpired()) {
         return;
     }
     this->func_ov000_020984d0();

@@ -160,10 +160,8 @@ ActorUnkCANS::ActorUnkCANS() :
     mUnk_1F4(),
     mUnk_200(this),
     mUnk_224(),
-    mUnk_234(0),
-    mUnk_236(0),
-    mUnk_238(0),
-    mUnk_23A(0),
+    mUnk_234(0, 0),
+    mUnk_238(0, 0),
     mUnk_250(mUnk_5C.mInitialPos),
     mUnk_274(0),
     mUnk_270(0xCD) {
@@ -219,8 +217,7 @@ void ActorUnkCANS::Setup(void) {
 void ActorUnkCANS::func_ov063_02158424(void) {
     mUnk_274 = 0;
     if (mState == 6) {
-        mUnk_23A = 0x14;
-        mUnk_238 = 0;
+        this->mUnk_238.Set(0, 20);
     }
 }
 
@@ -244,9 +241,7 @@ void ActorUnkCANS::vfunc_24(void) {
 
 // non-matching
 void ActorUnkCANS::Update(void) {
-    if (mUnk_238 < mUnk_23A) {
-        mUnk_238++;
-    }
+    this->mUnk_238.Update();
 
     if (!this->func_ov017_020bef4c(0x4000) && mUnk_48 != 0 && mState != 4) {
         return;
@@ -284,15 +279,7 @@ void ActorUnkCANS::Update(void) {
     unk32 iVar5;
 
     if (mUnk_48 > 0) {
-        unk32 var;
-        if ((mUnk_234 < mUnk_236)) {
-            mUnk_234++;
-            var = 0;
-        } else {
-            var = 1;
-        }
-
-        if (var == 0) {
+        if (!this->mUnk_234.HasExpired()) {
             if (mUnk_268 != NULL) {
                 mUnk_268->mUnk_1F4 = 0;
             }
@@ -301,9 +288,7 @@ void ActorUnkCANS::Update(void) {
             this->func_ov000_020989e0();
 
             if (((*(u32 *) &mUnk_200.mUnk_08) & 0x3FFFF) != 0) {
-
-                mUnk_236 = func_ov000_02098d7c(this, &mUnk_200);
-                mUnk_234 = 0;
+                this->mUnk_234.Set(0, func_ov000_02098d7c(this, &this->mUnk_200));
 
                 iVar5 = this->func_ov063_0215a56c((unk16) func_01ffbbe0(mUnk_200.mUnk_10.x, mUnk_200.mUnk_10.z));
 
@@ -505,9 +490,8 @@ void ActorUnkCANS::func_ov063_02158b98(void) {
 }
 
 void ActorUnkCANS::func_ov063_02158d40(void) {
-    mUnk_128.vfunc_1C(data_ov063_02163068, 0x1800, 0x19A, 0);
-    mUnk_23A = 0;
-    mUnk_238 = 0;
+    this->mUnk_128.vfunc_1C(data_ov063_02163068, 0x1800, 0x19A, 0);
+    this->mUnk_238.Init();
 }
 
 // non-matching
@@ -640,7 +624,7 @@ void ActorUnkCANS::func_ov063_02159258(void) {
 
     if (!mUnk_270 && this->func_ov063_0215a514()) {
         this->func_ov063_02158448(8);
-    } else if (!mUnk_270 && mUnk_238 >= mUnk_23A && this->func_ov063_0215a474()) {
+    } else if (!mUnk_270 && this->mUnk_238.HasReachedMax() && this->func_ov063_0215a474()) {
         this->func_ov063_02158448(6);
     } else if (!this->func_ov063_0215a2c0()) {
         this->func_ov063_02158448(1);
@@ -759,9 +743,8 @@ void ActorUnkCANS::func_ov063_02159784(void) {
 
 void ActorUnkCANS::func_ov063_021598fc(void) {
     mUnk_128.vfunc_1C(data_ov063_02163080, 0x1333, 0x19A, 0);
-    mTimerMax = gRandom.Next32(0x15) + 10;
-    mTimer    = 0;
-    mUnk_276  = gRandom.Next32(0) & 0x80000000 ? 1 : -1;
+    this->mTimer.Set(0, gRandom.Next32(21) + 10);
+    mUnk_276 = gRandom.Next32(0) & 0x80000000 ? 1 : -1;
 }
 
 // non-matching
@@ -776,16 +759,14 @@ void ActorUnkCANS::func_ov063_021599e4(void) {
         unk32 iVar9 = ABS((unk16) ((mUnk_26C * 0x4000 + mUnk_276) - ret1));
 
         if (DEG_TO_ANG(90) < iVar9) {
-            mTimer = 0;
             mUnk_276 *= -1;
-            mTimerMax = 0x1E;
+            this->mTimer.Set(0, 30);
         }
     }
 
-    if (this->IsTimerOut()) {
+    if (this->mTimer.HasExpired()) {
         mUnk_276 *= -1;
-        mTimerMax = gRandom.Next32(0x15) + 10;
-        mTimer    = 0;
+        this->mTimer.Set(0, gRandom.Next32(21) + 10);
     }
 
     func_01ff916c(&mUnk_270, mUnk_276 * 0x19A, 0xCD);

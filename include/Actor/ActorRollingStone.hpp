@@ -68,10 +68,8 @@ public:
     /* 138 */ unk16 mUnk_138;
     /* 13C */ Cylinder mUnk_13C;
     /* 14C */ unk32 mUnk_14C;
-    /* 150 */ volatile u16 mUnk_150;
-    /* 152 */ volatile u16 mUnk_152;
-    /* 154 */ volatile u16 mUnk_154;
-    /* 156 */ volatile u16 mUnk_156;
+    /* 150 */ Timer mUnk_150;
+    /* 154 */ Timer mUnk_154;
     /* 158 */ bool mUnk_158;
     /* 159 */ bool mUnk_159;
     /* 15A */ s8 mUnk_15A;
@@ -85,24 +83,6 @@ public:
     /* 20 */ virtual void Update() override;                         // func_ov031_020f878c
     /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override; // func_ov031_020f8948
     /* 54 */
-
-    bool IsInternalTimerOut1() {
-        if (this->mUnk_150 < this->mUnk_152) {
-            this->mUnk_150++;
-            return false;
-        }
-
-        return true;
-    }
-
-    bool IsInternalTimerOut2() {
-        if (this->mUnk_154 < this->mUnk_156) {
-            this->mUnk_154++;
-            return false;
-        }
-
-        return true;
-    }
 
     void SetState(ActorState state);
     void func_ov031_020f8880();
