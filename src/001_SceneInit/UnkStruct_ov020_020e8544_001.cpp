@@ -63,9 +63,9 @@ void func_ov001_020bfd54() {
 void GameModeBattle::func_ov001_020bfd84(unk32 param1) {
     switch (param1) {
         case 0:
-            DSProt_DetectEmulator(func_ov001_020bfcc0);
-            DSProt_DetectFlashcart(func_ov001_020bfcf0);
-            DSProt_DetectNotDummy(func_ov001_020bfd20);
+            DSProt_DetectEmulator((void *) func_ov001_020bfcc0);
+            DSProt_DetectFlashcart((void *) func_ov001_020bfcf0);
+            DSProt_DetectNotDummy((void *) func_ov001_020bfd20);
             func_ov001_020bfd54();
             break;
         case 1:

@@ -58,13 +58,15 @@ struct UnkStruct_data_ov063_021630c8 {
 
 const UnkStruct_data_ov063_021630c8 data_ov063_021630c8(0x5EC, 0x785, 0xFFFFFD48, 0x7AE, 0x112, 0xFFFFECA4);
 
-static PTMF<ActorUnkCASE> data_ov063_021630e0[0x6] = {ActorUnkCASE::func_ov063_0215af58, ActorUnkCASE::func_ov063_0215af60,
-                                                      ActorUnkCASE::func_ov063_0215afb8, ActorUnkCASE::func_ov063_0215b090,
-                                                      ActorUnkCASE::func_ov063_0215b244, ActorUnkCASE::func_ov063_0215b2c4};
+static PTMF<ActorUnkCASE> data_ov063_021630e0[0x6] = {
+    &ActorUnkCASE::func_ov063_0215af58, &ActorUnkCASE::func_ov063_0215af60, &ActorUnkCASE::func_ov063_0215afb8,
+    &ActorUnkCASE::func_ov063_0215b090, &ActorUnkCASE::func_ov063_0215b244, &ActorUnkCASE::func_ov063_0215b2c4,
+};
 
-static PTMF<ActorUnkCASE> data_ov063_02163110[0x6] = {ActorUnkCASE::func_ov063_0215af54, ActorUnkCASE::func_ov063_0215af5c,
-                                                      ActorUnkCASE::func_ov063_0215afa4, ActorUnkCASE::func_ov063_0215b054,
-                                                      ActorUnkCASE::func_ov063_0215b1bc, ActorUnkCASE::func_ov063_0215b2b0};
+static PTMF<ActorUnkCASE> data_ov063_02163110[0x6] = {
+    &ActorUnkCASE::func_ov063_0215af54, &ActorUnkCASE::func_ov063_0215af5c, &ActorUnkCASE::func_ov063_0215afa4,
+    &ActorUnkCASE::func_ov063_0215b054, &ActorUnkCASE::func_ov063_0215b1bc, &ActorUnkCASE::func_ov063_0215b2b0,
+};
 
 DECL_PROFILE(ActorProfileUnkCASE);
 

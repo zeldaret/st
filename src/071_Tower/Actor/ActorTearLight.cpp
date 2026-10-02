@@ -41,12 +41,12 @@ extern UnkStruct_ov019_020d24c8_28_258_00 data_ov071_02165150;
 
 static ActorUnkZLSL_AnimationTag data_ov071_02164be0      = {0x0, "szku"};
 static const ActorTearLight_UnkStruct data_ov071_02164cd8 = {.fct = NULL};
-static ActorTearLight_UnkStruct data_ov071_02164ce0       = {.fct = ActorTearLight::func_ov071_0215fed4};
-static ActorTearLight_UnkStruct data_ov071_02164ce8       = {.fct = ActorTearLight::func_ov071_0215ff08};
-static ActorTearLight_UnkStruct data_ov071_02164cf0       = {.fct = ActorTearLight::func_ov071_0215ff3c};
-static ActorTearLight_UnkStruct data_ov071_02164cf8       = {.fct = ActorTearLight::func_ov071_0215ff3c};
-static ActorTearLight_UnkStruct data_ov071_02164d00       = {.fct = ActorTearLight::func_ov071_0215ffb8};
-static ActorTearLight_UnkStruct data_ov071_02164d08       = {.fct = ActorTearLight::func_ov071_0215ffbc};
+static ActorTearLight_UnkStruct data_ov071_02164ce0       = {.fct = &ActorTearLight::func_ov071_0215fed4};
+static ActorTearLight_UnkStruct data_ov071_02164ce8       = {.fct = &ActorTearLight::func_ov071_0215ff08};
+static ActorTearLight_UnkStruct data_ov071_02164cf0       = {.fct = &ActorTearLight::func_ov071_0215ff3c};
+static ActorTearLight_UnkStruct data_ov071_02164cf8       = {.fct = &ActorTearLight::func_ov071_0215ff3c};
+static ActorTearLight_UnkStruct data_ov071_02164d00       = {.fct = &ActorTearLight::func_ov071_0215ffb8};
+static ActorTearLight_UnkStruct data_ov071_02164d08       = {.fct = &ActorTearLight::func_ov071_0215ffbc};
 
 DECL_PROFILE(ActorProfileTearLight);
 

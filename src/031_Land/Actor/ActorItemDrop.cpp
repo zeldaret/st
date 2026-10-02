@@ -196,13 +196,13 @@ void ActorItemDrop::vfunc_24() {
 }
 
 static PTMF<ActorItemDrop> data_ov031_02114bb0[ActorItemDropState_Max] = {
-    ActorItemDrop::func_ov031_020fa46c, // ActorItemDropState_0
-    ActorItemDrop::func_ov031_020fa4a0, // ActorItemDropState_1
-    ActorItemDrop::func_ov031_020fa568, // ActorItemDropState_2
-    ActorItemDrop::func_ov031_020fa5f0, // ActorItemDropState_3
-    ActorItemDrop::func_ov031_020fa664, // ActorItemDropState_4
-    ActorItemDrop::func_ov031_020fa678, // ActorItemDropState_5
-    ActorItemDrop::func_ov031_020fa72c, // ActorItemDropState_6
+    &ActorItemDrop::func_ov031_020fa46c, // ActorItemDropState_0
+    &ActorItemDrop::func_ov031_020fa4a0, // ActorItemDropState_1
+    &ActorItemDrop::func_ov031_020fa568, // ActorItemDropState_2
+    &ActorItemDrop::func_ov031_020fa5f0, // ActorItemDropState_3
+    &ActorItemDrop::func_ov031_020fa664, // ActorItemDropState_4
+    &ActorItemDrop::func_ov031_020fa678, // ActorItemDropState_5
+    &ActorItemDrop::func_ov031_020fa72c, // ActorItemDropState_6
 };
 
 void ActorItemDrop::func_ov031_020fa260() {
@@ -265,13 +265,13 @@ void ActorItemDrop::func_ov031_020fa260() {
 }
 
 static PTMF<ActorItemDrop> data_ov031_02114be8[ActorItemDropState_Max] = {
-    ActorItemDrop::func_ov031_020fa468, // ActorItemDropState_0
-    ActorItemDrop::func_ov031_020fa494, // ActorItemDropState_1
-    ActorItemDrop::func_ov031_020fa524, // ActorItemDropState_2
-    ActorItemDrop::func_ov031_020fa5d8, // ActorItemDropState_3
-    ActorItemDrop::func_ov031_020fa650, // ActorItemDropState_4
-    ActorItemDrop::func_ov031_020fa668, // ActorItemDropState_5
-    ActorItemDrop::func_ov031_020fa6c8, // ActorItemDropState_6
+    &ActorItemDrop::func_ov031_020fa468, // ActorItemDropState_0
+    &ActorItemDrop::func_ov031_020fa494, // ActorItemDropState_1
+    &ActorItemDrop::func_ov031_020fa524, // ActorItemDropState_2
+    &ActorItemDrop::func_ov031_020fa5d8, // ActorItemDropState_3
+    &ActorItemDrop::func_ov031_020fa650, // ActorItemDropState_4
+    &ActorItemDrop::func_ov031_020fa668, // ActorItemDropState_5
+    &ActorItemDrop::func_ov031_020fa6c8, // ActorItemDropState_6
 };
 
 void ActorItemDrop::SetState(ActorState state) {

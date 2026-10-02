@@ -221,5 +221,3 @@ public:
         this->mUnk_0C               = 0x20004;
     }
 };
-
-extern const UnkStruct_ov019_020d1e70 data_ov019_020d1e70;

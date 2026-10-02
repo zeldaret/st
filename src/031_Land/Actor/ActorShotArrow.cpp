@@ -203,14 +203,14 @@ void ActorShotArrow::func_ov031_020f1868() {
 void ActorShotArrow::func_ov031_020f1874() {}
 
 static PTMF<ActorShotArrow> data_ov031_021142c0[ActorShotArrowState_Max] = {
-    ActorShotArrow::func_ov031_020f1a64, // ActorShotArrowState_0
-    ActorShotArrow::func_ov031_020f1c24, // ActorShotArrowState_1
-    ActorShotArrow::func_ov031_020f1dd4, // ActorShotArrowState_2
-    ActorShotArrow::func_ov031_020f1f54, // ActorShotArrowState_3
-    ActorShotArrow::func_ov031_020f206c, // ActorShotArrowState_4
-    ActorShotArrow::func_ov031_020f2134, // ActorShotArrowState_5
-    ActorShotArrow::func_ov031_020f21dc, // ActorShotArrowState_6
-    ActorShotArrow::func_ov031_020f1874  // ActorShotArrowState_7
+    &ActorShotArrow::func_ov031_020f1a64, // ActorShotArrowState_0
+    &ActorShotArrow::func_ov031_020f1c24, // ActorShotArrowState_1
+    &ActorShotArrow::func_ov031_020f1dd4, // ActorShotArrowState_2
+    &ActorShotArrow::func_ov031_020f1f54, // ActorShotArrowState_3
+    &ActorShotArrow::func_ov031_020f206c, // ActorShotArrowState_4
+    &ActorShotArrow::func_ov031_020f2134, // ActorShotArrowState_5
+    &ActorShotArrow::func_ov031_020f21dc, // ActorShotArrowState_6
+    &ActorShotArrow::func_ov031_020f1874  // ActorShotArrowState_7
 };
 
 void ActorShotArrow::SetState(ActorShotArrowState state) {
@@ -246,14 +246,14 @@ void ActorShotArrow::vfunc_24() {
 void ActorShotArrow::func_ov031_020f1958() {}
 
 static PTMF<ActorShotArrow> data_ov031_02114300[ActorShotArrowState_Max] = {
-    ActorShotArrow::func_ov031_020f1b04, // ActorShotArrowState_0
-    ActorShotArrow::func_ov031_020f1c7c, // ActorShotArrowState_1
-    ActorShotArrow::func_ov031_020f1e3c, // ActorShotArrowState_2
-    ActorShotArrow::func_ov031_020f2010, // ActorShotArrowState_3
-    ActorShotArrow::func_ov031_020f20bc, // ActorShotArrowState_4
-    ActorShotArrow::func_ov031_020f2160, // ActorShotArrowState_5
-    ActorShotArrow::func_ov031_020f2214, // ActorShotArrowState_6
-    ActorShotArrow::func_ov031_020f1958  // ActorShotArrowState_7
+    &ActorShotArrow::func_ov031_020f1b04, // ActorShotArrowState_0
+    &ActorShotArrow::func_ov031_020f1c7c, // ActorShotArrowState_1
+    &ActorShotArrow::func_ov031_020f1e3c, // ActorShotArrowState_2
+    &ActorShotArrow::func_ov031_020f2010, // ActorShotArrowState_3
+    &ActorShotArrow::func_ov031_020f20bc, // ActorShotArrowState_4
+    &ActorShotArrow::func_ov031_020f2160, // ActorShotArrowState_5
+    &ActorShotArrow::func_ov031_020f2214, // ActorShotArrowState_6
+    &ActorShotArrow::func_ov031_020f1958  // ActorShotArrowState_7
 };
 
 void ActorShotArrow::Update() {
@@ -687,7 +687,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
 
                 this->func_ov031_020f2cac(&vec1, true);
                 break;
-            case 0x4:
+            case 0x4: {
                 Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_140.mUnk_0C);
 
                 if (actor != NULL) {
@@ -696,6 +696,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
                 }
 
                 break;
+            }
             case 0xE:
                 if (this->mUnk_140.mUnk_0C.index == 0x102) {
                     bool var = false;
@@ -720,7 +721,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
                     }
                 }
                 break;
-            case 0xF:
+            case 0xF: {
                 if (this->mUnk_5C.mParams[1] == 0x0 || this->mUnk_5C.mParams[1] == 0x3) {
                     data_027e0ce0->func_ov000_0208bc1c(1, 0, 0x18, 0, 0, 0);
                 }
@@ -729,6 +730,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
                 func_01ffb714(&this->mPos, result, &vec1);
                 this->func_ov031_020f2cac(&vec1, true);
                 break;
+            }
             case 0x3:
                 if (this->mUnk_140.mUnk_0C.type != ActorRefType_0) {
                     Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_140.mUnk_0C);

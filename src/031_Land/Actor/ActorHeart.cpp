@@ -96,12 +96,12 @@ bool ActorHeart::Init(unk32 param1) {
 }
 
 static PTMF<ActorHeart> data_ov031_02113d74[ActorHeartState_Max] = {
-    ActorHeart::func_ov031_020ef2f8, // ActorHeartState_0
-    ActorHeart::func_ov031_020ef334, // ActorHeartState_1
-    ActorHeart::func_ov031_020ef3a0, // ActorHeartState_2
-    ActorHeart::func_ov031_020ef3d0, // ActorHeartState_3
-    ActorHeart::func_ov031_020ef444, // ActorHeartState_4
-    ActorHeart::func_ov031_020ef458, // ActorHeartState_5
+    &ActorHeart::func_ov031_020ef2f8, // ActorHeartState_0
+    &ActorHeart::func_ov031_020ef334, // ActorHeartState_1
+    &ActorHeart::func_ov031_020ef3a0, // ActorHeartState_2
+    &ActorHeart::func_ov031_020ef3d0, // ActorHeartState_3
+    &ActorHeart::func_ov031_020ef444, // ActorHeartState_4
+    &ActorHeart::func_ov031_020ef458, // ActorHeartState_5
 };
 
 // non-matching
@@ -203,12 +203,12 @@ void ActorHeart::Update() {
 extern unk32 data_ov000_020aecf8;
 
 static PTMF<ActorHeart> data_ov031_02113da4[ActorHeartState_Max] = {
-    ActorHeart::func_ov031_020ef2ec, // ActorHeartState_0
-    ActorHeart::func_ov031_020ef320, // ActorHeartState_1
-    ActorHeart::func_ov031_020ef35c, // ActorHeartState_2
-    ActorHeart::func_ov031_020ef3b8, // ActorHeartState_3
-    ActorHeart::func_ov031_020ef430, // ActorHeartState_4
-    ActorHeart::func_ov031_020ef448, // ActorHeartState_5
+    &ActorHeart::func_ov031_020ef2ec, // ActorHeartState_0
+    &ActorHeart::func_ov031_020ef320, // ActorHeartState_1
+    &ActorHeart::func_ov031_020ef35c, // ActorHeartState_2
+    &ActorHeart::func_ov031_020ef3b8, // ActorHeartState_3
+    &ActorHeart::func_ov031_020ef430, // ActorHeartState_4
+    &ActorHeart::func_ov031_020ef448, // ActorHeartState_5
 };
 
 void ActorHeart::SetState(ActorState state) {

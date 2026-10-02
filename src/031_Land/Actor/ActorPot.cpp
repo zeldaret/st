@@ -7,25 +7,25 @@
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
 
 static PTMF<ActorPot> data_ov031_021140a0[ActorPotState_Max] = {
-    ActorPot::func_ov031_020f0df4, // ActorPotState_0
-    ActorPot::func_ov031_020f0e0c, // ActorPotState_1
-    ActorPot::func_ov031_020f0e24, // ActorPotState_2
-    ActorPot::func_ov031_020f0e3c, // ActorPotState_3
-    ActorPot::func_ov031_020f0e5c, // ActorPotState_4
-    ActorPot::func_ov031_020f0f44, // ActorPotState_5
-    ActorPot::func_ov031_020f0244, // ActorPotState_6
-    ActorPot::func_ov031_020f0514  // ActorPotState_7
+    &ActorPot::func_ov031_020f0df4, // ActorPotState_0
+    &ActorPot::func_ov031_020f0e0c, // ActorPotState_1
+    &ActorPot::func_ov031_020f0e24, // ActorPotState_2
+    &ActorPot::func_ov031_020f0e3c, // ActorPotState_3
+    &ActorPot::func_ov031_020f0e5c, // ActorPotState_4
+    &ActorPot::func_ov031_020f0f44, // ActorPotState_5
+    &ActorPot::func_ov031_020f0244, // ActorPotState_6
+    &ActorPot::func_ov031_020f0514  // ActorPotState_7
 };
 
 static PTMF<ActorPot> data_ov031_02114060[ActorPotState_Max] = {
-    ActorPot::func_ov031_020f0de8, // ActorPotState_0
-    ActorPot::func_ov031_020f0e00, // ActorPotState_1
-    ActorPot::func_ov031_020f0e18, // ActorPotState_2
-    ActorPot::func_ov031_020f0e30, // ActorPotState_3
-    ActorPot::func_ov031_020f0e48, // ActorPotState_4
-    ActorPot::func_ov031_020f0e70, // ActorPotState_5
-    ActorPot::func_ov031_020f0220, // ActorPotState_6
-    ActorPot::func_ov031_020f04dc  // ActorPotState_7
+    &ActorPot::func_ov031_020f0de8, // ActorPotState_0
+    &ActorPot::func_ov031_020f0e00, // ActorPotState_1
+    &ActorPot::func_ov031_020f0e18, // ActorPotState_2
+    &ActorPot::func_ov031_020f0e30, // ActorPotState_3
+    &ActorPot::func_ov031_020f0e48, // ActorPotState_4
+    &ActorPot::func_ov031_020f0e70, // ActorPotState_5
+    &ActorPot::func_ov031_020f0220, // ActorPotState_6
+    &ActorPot::func_ov031_020f04dc  // ActorPotState_7
 };
 
 DECL_PROFILE(ActorProfilePot);

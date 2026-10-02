@@ -38,32 +38,32 @@ static ActorUnkZLSL_AnimationTag data_ov032_02122184               = {.index = 0
 static ActorUnkZLSL_AnimationTag data_ov032_0212219c               = {.index = 1, .name = "discover", .unknown = 0x1};
 static ActorUnkZLSL_AnimationTag data_ov032_0212216c               = {.index = 0, .name = "KURI", .unknown = 0x1};
 static PTMF<ActorSpinut> data_ov032_02122288[ActorSpinutState_Max] = {
-    ActorSpinut::func_ov032_02119a0c, // ActorSpinutState_0
-    ActorSpinut::func_ov032_02119c80, // ActorSpinutState_1
-    ActorSpinut::func_ov032_02119df4, // ActorSpinutState_2
-    ActorSpinut::func_ov032_02119f40, // ActorSpinutState_3
-    ActorSpinut::func_ov032_0211a20c, // ActorSpinutState_4
-    ActorSpinut::func_ov032_0211a52c, // ActorSpinutState_5
-    ActorSpinut::func_ov032_0211a86c, // ActorSpinutState_6
-    ActorSpinut::func_ov032_0211aac8, // ActorSpinutState_7
-    ActorSpinut::func_ov032_0211abc0, // ActorSpinutState_8
-    ActorSpinut::func_ov032_0211a9c8, // ActorSpinutState_9
-    ActorSpinut::func_ov032_0211ac94, // ActorSpinutState_10
-    ActorSpinut::func_ov032_0211adf4  // ActorSpinutState_11
+    &ActorSpinut::func_ov032_02119a0c, // ActorSpinutState_0
+    &ActorSpinut::func_ov032_02119c80, // ActorSpinutState_1
+    &ActorSpinut::func_ov032_02119df4, // ActorSpinutState_2
+    &ActorSpinut::func_ov032_02119f40, // ActorSpinutState_3
+    &ActorSpinut::func_ov032_0211a20c, // ActorSpinutState_4
+    &ActorSpinut::func_ov032_0211a52c, // ActorSpinutState_5
+    &ActorSpinut::func_ov032_0211a86c, // ActorSpinutState_6
+    &ActorSpinut::func_ov032_0211aac8, // ActorSpinutState_7
+    &ActorSpinut::func_ov032_0211abc0, // ActorSpinutState_8
+    &ActorSpinut::func_ov032_0211a9c8, // ActorSpinutState_9
+    &ActorSpinut::func_ov032_0211ac94, // ActorSpinutState_10
+    &ActorSpinut::func_ov032_0211adf4  // ActorSpinutState_11
 };
 static PTMF<ActorSpinut> data_ov032_02122348[ActorSpinutState_Max] = {
-    ActorSpinut::func_ov032_02119990, // ActorSpinutState_0
-    ActorSpinut::func_ov032_02119be8, // ActorSpinutState_1
-    ActorSpinut::func_ov032_02119d7c, // ActorSpinutState_2
-    ActorSpinut::func_ov032_02119e90, // ActorSpinutState_3
-    ActorSpinut::func_ov032_0211a140, // ActorSpinutState_4
-    ActorSpinut::func_ov032_0211a484, // ActorSpinutState_5
-    ActorSpinut::func_ov032_0211a7b8, // ActorSpinutState_6
-    ActorSpinut::func_ov032_0211aa40, // ActorSpinutState_7
-    ActorSpinut::func_ov032_0211ab20, // ActorSpinutState_8
-    ActorSpinut::func_ov032_0211a950, // ActorSpinutState_9
-    ActorSpinut::func_ov032_0211ac20, // ActorSpinutState_10
-    ActorSpinut::func_ov032_0211ad40  // ActorSpinutState_11
+    &ActorSpinut::func_ov032_02119990, // ActorSpinutState_0
+    &ActorSpinut::func_ov032_02119be8, // ActorSpinutState_1
+    &ActorSpinut::func_ov032_02119d7c, // ActorSpinutState_2
+    &ActorSpinut::func_ov032_02119e90, // ActorSpinutState_3
+    &ActorSpinut::func_ov032_0211a140, // ActorSpinutState_4
+    &ActorSpinut::func_ov032_0211a484, // ActorSpinutState_5
+    &ActorSpinut::func_ov032_0211a7b8, // ActorSpinutState_6
+    &ActorSpinut::func_ov032_0211aa40, // ActorSpinutState_7
+    &ActorSpinut::func_ov032_0211ab20, // ActorSpinutState_8
+    &ActorSpinut::func_ov032_0211a950, // ActorSpinutState_9
+    &ActorSpinut::func_ov032_0211ac20, // ActorSpinutState_10
+    &ActorSpinut::func_ov032_0211ad40  // ActorSpinutState_11
 };
 
 DECL_PROFILE(ActorProfileSpinut);

@@ -34,10 +34,10 @@ public:
 static const UnkStruct_ov019_020d2248 data_ov019_020d2248(0, 0x32, 0x100, 0);
 
 static PTMF<FileSelectMicTest> data_ov019_020d225c[FSMicTestState_Max] = {
-    FileSelectMicTest::func_ov019_020cea70,
-    FileSelectMicTest::func_ov019_020ceaac,
-    FileSelectMicTest::func_ov019_020cebcc,
-    FileSelectMicTest::func_ov019_020cea6c,
+    &FileSelectMicTest::func_ov019_020cea70,
+    &FileSelectMicTest::func_ov019_020ceaac,
+    &FileSelectMicTest::func_ov019_020cebcc,
+    &FileSelectMicTest::func_ov019_020cea6c,
 };
 
 OptionsManagerAssessor::OptionsManagerAssessor() {

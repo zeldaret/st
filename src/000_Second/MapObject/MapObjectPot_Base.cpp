@@ -20,7 +20,7 @@ bool MapObjectPot_Base::Init() {
 // non-matching
 bool MapObjectPot_Base::SetState(MapObjState state, unk32 param2) {
     if (param2 == 0x0 && this->mState == MapObjPot_BaseState_1) {
-        return;
+        return true;
     }
     this->mState = state;
     switch (this->mState) {

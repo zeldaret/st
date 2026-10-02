@@ -9,35 +9,35 @@
 #include "nitro/fx.h"
 
 static PTMF<ActorRupee> data_ov031_02113588[0xD] = {
-    ActorRupee::func_ov031_020e91a8, // ActorRupeeState_0
-    ActorRupee::func_ov031_020e9254, // ActorRupeeState_1
-    ActorRupee::func_ov031_020e9310, // ActorRupeeState_2
-    ActorRupee::func_ov031_020e942c, // ActorRupeeState_3
-    ActorRupee::func_ov031_020e9434, // ActorRupeeState_4
-    ActorRupee::func_ov031_020e951c, // ActorRupeeState_5
-    ActorRupee::func_ov031_020e9450, // ActorRupeeState_6
-    ActorRupee::func_ov031_020e95ac, // ActorRupeeState_7
-    ActorRupee::func_ov031_020e95c0, // ActorRupeeState_8
-    ActorRupee::func_ov031_020e9624, // ActorRupeeState_9
-    ActorRupee::func_ov031_020e96bc, // ActorRupeeState_10
-    ActorRupee::func_ov031_020e9740, // ActorRupeeState_11
-    ActorRupee::func_ov031_020e98c4, // ActorRupeeState_12
+    &ActorRupee::func_ov031_020e91a8, // ActorRupeeState_0
+    &ActorRupee::func_ov031_020e9254, // ActorRupeeState_1
+    &ActorRupee::func_ov031_020e9310, // ActorRupeeState_2
+    &ActorRupee::func_ov031_020e942c, // ActorRupeeState_3
+    &ActorRupee::func_ov031_020e9434, // ActorRupeeState_4
+    &ActorRupee::func_ov031_020e951c, // ActorRupeeState_5
+    &ActorRupee::func_ov031_020e9450, // ActorRupeeState_6
+    &ActorRupee::func_ov031_020e95ac, // ActorRupeeState_7
+    &ActorRupee::func_ov031_020e95c0, // ActorRupeeState_8
+    &ActorRupee::func_ov031_020e9624, // ActorRupeeState_9
+    &ActorRupee::func_ov031_020e96bc, // ActorRupeeState_10
+    &ActorRupee::func_ov031_020e9740, // ActorRupeeState_11
+    &ActorRupee::func_ov031_020e98c4, // ActorRupeeState_12
 };
 
 static PTMF<ActorRupee> data_ov031_02113520[0xD] = {
-    ActorRupee::func_ov031_020e9108, // ActorRupeeState_0
-    ActorRupee::func_ov031_020e9234, // ActorRupeeState_1
-    ActorRupee::func_ov031_020e92e0, // ActorRupeeState_2
-    ActorRupee::func_ov031_020e9428, // ActorRupeeState_3
-    ActorRupee::func_ov031_020e9430, // ActorRupeeState_4
-    ActorRupee::func_ov031_020e94d4, // ActorRupeeState_5
-    ActorRupee::func_ov031_020e9438, // ActorRupeeState_6
-    ActorRupee::func_ov031_020e9598, // ActorRupeeState_7
-    ActorRupee::func_ov031_020e95b0, // ActorRupeeState_8
-    ActorRupee::func_ov031_020e9610, // ActorRupeeState_9
-    ActorRupee::func_ov031_020e9638, // ActorRupeeState_10
-    ActorRupee::func_ov031_020e970c, // ActorRupeeState_11
-    ActorRupee::func_ov031_020e9838, // ActorRupeeState_12
+    &ActorRupee::func_ov031_020e9108, // ActorRupeeState_0
+    &ActorRupee::func_ov031_020e9234, // ActorRupeeState_1
+    &ActorRupee::func_ov031_020e92e0, // ActorRupeeState_2
+    &ActorRupee::func_ov031_020e9428, // ActorRupeeState_3
+    &ActorRupee::func_ov031_020e9430, // ActorRupeeState_4
+    &ActorRupee::func_ov031_020e94d4, // ActorRupeeState_5
+    &ActorRupee::func_ov031_020e9438, // ActorRupeeState_6
+    &ActorRupee::func_ov031_020e9598, // ActorRupeeState_7
+    &ActorRupee::func_ov031_020e95b0, // ActorRupeeState_8
+    &ActorRupee::func_ov031_020e9610, // ActorRupeeState_9
+    &ActorRupee::func_ov031_020e9638, // ActorRupeeState_10
+    &ActorRupee::func_ov031_020e970c, // ActorRupeeState_11
+    &ActorRupee::func_ov031_020e9838, // ActorRupeeState_12
 };
 
 extern "C" void func_01ffedac(u16 *, VecFx32 *);

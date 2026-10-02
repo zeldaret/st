@@ -48,23 +48,23 @@ extern "C" void func_ov017_020c26f8(unk32, VecFx32 *, unk32, unk32);
 
 static ActorUnkZLSL_AnimationTag data_ov031_02112be8           = {.index = 0, .name = "bomb_clanim", .unknown = 0};
 static PTMF<ActorBomb> data_ov031_02112c00[ActorBombState_Max] = {
-    ActorBomb::func_ov031_020e1da0, // ActorUnkBOMBState_0
-    ActorBomb::func_ov031_020e1ed8, // ActorUnkBOMBState_1
-    ActorBomb::func_ov031_020e1f88, // ActorUnkBOMBState_2
-    ActorBomb::func_ov031_020e1fe4, // ActorUnkBOMBState_3
-    ActorBomb::func_ov031_020e2064, // ActorUnkBOMBState_4
-    ActorBomb::func_ov031_020e20fc, // ActorUnkBOMBState_5
-    ActorBomb::func_ov031_020e2134, // ActorUnkBOMBState_6
+    &ActorBomb::func_ov031_020e1da0, // ActorUnkBOMBState_0
+    &ActorBomb::func_ov031_020e1ed8, // ActorUnkBOMBState_1
+    &ActorBomb::func_ov031_020e1f88, // ActorUnkBOMBState_2
+    &ActorBomb::func_ov031_020e1fe4, // ActorUnkBOMBState_3
+    &ActorBomb::func_ov031_020e2064, // ActorUnkBOMBState_4
+    &ActorBomb::func_ov031_020e20fc, // ActorUnkBOMBState_5
+    &ActorBomb::func_ov031_020e2134, // ActorUnkBOMBState_6
 };
 
 static PTMF<ActorBomb> data_ov031_02112c38[ActorBombState_Max] = {
-    ActorBomb::func_ov031_020e1d48, // ActorUnkBOMBState_0
-    ActorBomb::func_ov031_020e1ebc, // ActorUnkBOMBState_1
-    ActorBomb::func_ov031_020e1f18, // ActorUnkBOMBState_2
-    ActorBomb::func_ov031_020e1fe0, // ActorUnkBOMBState_3
-    ActorBomb::func_ov031_020e2034, // ActorUnkBOMBState_4
-    ActorBomb::func_ov031_020e20d8, // ActorUnkBOMBState_5
-    ActorBomb::func_ov031_020e2100, // ActorUnkBOMBState_6
+    &ActorBomb::func_ov031_020e1d48, // ActorUnkBOMBState_0
+    &ActorBomb::func_ov031_020e1ebc, // ActorUnkBOMBState_1
+    &ActorBomb::func_ov031_020e1f18, // ActorUnkBOMBState_2
+    &ActorBomb::func_ov031_020e1fe0, // ActorUnkBOMBState_3
+    &ActorBomb::func_ov031_020e2034, // ActorUnkBOMBState_4
+    &ActorBomb::func_ov031_020e20d8, // ActorUnkBOMBState_5
+    &ActorBomb::func_ov031_020e2100, // ActorUnkBOMBState_6
 };
 
 DECL_PROFILE(ActorProfileBomb);

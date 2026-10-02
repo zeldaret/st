@@ -36,22 +36,22 @@ static ActorUnkZLSL_AnimationTag data_ov032_021223b4 = {.index = 0, .name = "wal
 static ActorUnkZLSL_AnimationTag data_ov032_021223cc = {.index = 1, .name = "discover", .unknown = 0x1};
 
 static PTMF<ActorFleeingSpinut> data_ov032_021223e4[ActorFleeingSpinutState_Max] = {
-    ActorFleeingSpinut::func_ov032_0211c2c4, // ActorFleeingSpinutState_0
-    ActorFleeingSpinut::func_ov032_0211c444, // ActorFleeingSpinutState_1
-    ActorFleeingSpinut::func_ov032_0211be30, // ActorFleeingSpinutState_2
-    ActorFleeingSpinut::func_ov032_0211bf84, // ActorFleeingSpinutState_3
-    ActorFleeingSpinut::func_ov032_0211c53c, // ActorFleeingSpinutState_4
-    ActorFleeingSpinut::func_ov032_0211c73c, // ActorFleeingSpinutState_5
-    ActorFleeingSpinut::func_ov032_0211c07c  // ActorFleeingSpinutState_6
+    &ActorFleeingSpinut::func_ov032_0211c2c4, // ActorFleeingSpinutState_0
+    &ActorFleeingSpinut::func_ov032_0211c444, // ActorFleeingSpinutState_1
+    &ActorFleeingSpinut::func_ov032_0211be30, // ActorFleeingSpinutState_2
+    &ActorFleeingSpinut::func_ov032_0211bf84, // ActorFleeingSpinutState_3
+    &ActorFleeingSpinut::func_ov032_0211c53c, // ActorFleeingSpinutState_4
+    &ActorFleeingSpinut::func_ov032_0211c73c, // ActorFleeingSpinutState_5
+    &ActorFleeingSpinut::func_ov032_0211c07c  // ActorFleeingSpinutState_6
 };
 static PTMF<ActorFleeingSpinut> data_ov032_0212241c[ActorFleeingSpinutState_Max] = {
-    ActorFleeingSpinut::func_ov032_0211c340, // ActorFleeingSpinutState_0
-    ActorFleeingSpinut::func_ov032_0211c4d4, // ActorFleeingSpinutState_1
-    ActorFleeingSpinut::func_ov032_0211bea8, // ActorFleeingSpinutState_2
-    ActorFleeingSpinut::func_ov032_0211bffc, // ActorFleeingSpinutState_3
-    ActorFleeingSpinut::func_ov032_0211c5cc, // ActorFleeingSpinutState_4
-    ActorFleeingSpinut::func_ov032_0211c7bc, // ActorFleeingSpinutState_5
-    ActorFleeingSpinut::func_ov032_0211c108  // ActorFleeingSpinutState_6
+    &ActorFleeingSpinut::func_ov032_0211c340, // ActorFleeingSpinutState_0
+    &ActorFleeingSpinut::func_ov032_0211c4d4, // ActorFleeingSpinutState_1
+    &ActorFleeingSpinut::func_ov032_0211bea8, // ActorFleeingSpinutState_2
+    &ActorFleeingSpinut::func_ov032_0211bffc, // ActorFleeingSpinutState_3
+    &ActorFleeingSpinut::func_ov032_0211c5cc, // ActorFleeingSpinutState_4
+    &ActorFleeingSpinut::func_ov032_0211c7bc, // ActorFleeingSpinutState_5
+    &ActorFleeingSpinut::func_ov032_0211c108  // ActorFleeingSpinutState_6
 };
 
 DECL_PROFILE(ActorProfileFleeingSpinut);

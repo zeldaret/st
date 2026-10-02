@@ -24,31 +24,31 @@ extern "C" unk32 func_01ffb9cc(VecFx32 *, VecFx32 *);
 extern "C" unk8 func_02017e8c(unk16 *);
 
 static PTMF<ActorRollingStone> data_ov031_02114aec[0xB] = {
-    ActorRollingStone::func_ov031_020f89f4, // ActorRollingStoneState_0
-    ActorRollingStone::func_ov031_020f8a2c, // ActorRollingStoneState_1
-    ActorRollingStone::func_ov031_020f8a3c, // ActorRollingStoneState_2
-    ActorRollingStone::func_ov031_020f8b58, // ActorRollingStoneState_3
-    ActorRollingStone::func_ov031_020f9250, // ActorRollingStoneState_4
-    ActorRollingStone::func_ov031_020f9340, // ActorRollingStoneState_5
-    ActorRollingStone::func_ov031_020f8ed4, // ActorRollingStoneState_6
-    ActorRollingStone::func_ov031_020f8f10, // ActorRollingStoneState_7
-    ActorRollingStone::func_ov031_020f9018, // ActorRollingStoneState_8
-    ActorRollingStone::func_ov031_020f916c, // ActorRollingStoneState_9
-    ActorRollingStone::func_ov031_020f9494, // ActorRollingStoneState_10
+    &ActorRollingStone::func_ov031_020f89f4, // ActorRollingStoneState_0
+    &ActorRollingStone::func_ov031_020f8a2c, // ActorRollingStoneState_1
+    &ActorRollingStone::func_ov031_020f8a3c, // ActorRollingStoneState_2
+    &ActorRollingStone::func_ov031_020f8b58, // ActorRollingStoneState_3
+    &ActorRollingStone::func_ov031_020f9250, // ActorRollingStoneState_4
+    &ActorRollingStone::func_ov031_020f9340, // ActorRollingStoneState_5
+    &ActorRollingStone::func_ov031_020f8ed4, // ActorRollingStoneState_6
+    &ActorRollingStone::func_ov031_020f8f10, // ActorRollingStoneState_7
+    &ActorRollingStone::func_ov031_020f9018, // ActorRollingStoneState_8
+    &ActorRollingStone::func_ov031_020f916c, // ActorRollingStoneState_9
+    &ActorRollingStone::func_ov031_020f9494, // ActorRollingStoneState_10
 };
 
 static PTMF<ActorRollingStone> data_ov031_02114a94[0xB] = {
-    ActorRollingStone::func_ov031_020f8a04, // ActorRollingStoneState_0
-    ActorRollingStone::func_ov031_020f8a38, // ActorRollingStoneState_1
-    ActorRollingStone::func_ov031_020f8a58, // ActorRollingStoneState_2
-    ActorRollingStone::func_ov031_020f8bc4, // ActorRollingStoneState_3
-    ActorRollingStone::func_ov031_020f92cc, // ActorRollingStoneState_4
-    ActorRollingStone::func_ov031_020f93bc, // ActorRollingStoneState_5
-    ActorRollingStone::func_ov031_020f8f0c, // ActorRollingStoneState_6
-    ActorRollingStone::func_ov031_020f8f30, // ActorRollingStoneState_7
-    ActorRollingStone::func_ov031_020f9050, // ActorRollingStoneState_8
-    ActorRollingStone::func_ov031_020f91ac, // ActorRollingStoneState_9
-    ActorRollingStone::func_ov031_020f9554, // ActorRollingStoneState_10
+    &ActorRollingStone::func_ov031_020f8a04, // ActorRollingStoneState_0
+    &ActorRollingStone::func_ov031_020f8a38, // ActorRollingStoneState_1
+    &ActorRollingStone::func_ov031_020f8a58, // ActorRollingStoneState_2
+    &ActorRollingStone::func_ov031_020f8bc4, // ActorRollingStoneState_3
+    &ActorRollingStone::func_ov031_020f92cc, // ActorRollingStoneState_4
+    &ActorRollingStone::func_ov031_020f93bc, // ActorRollingStoneState_5
+    &ActorRollingStone::func_ov031_020f8f0c, // ActorRollingStoneState_6
+    &ActorRollingStone::func_ov031_020f8f30, // ActorRollingStoneState_7
+    &ActorRollingStone::func_ov031_020f9050, // ActorRollingStoneState_8
+    &ActorRollingStone::func_ov031_020f91ac, // ActorRollingStoneState_9
+    &ActorRollingStone::func_ov031_020f9554, // ActorRollingStoneState_10
 };
 
 DECL_PROFILE(ActorProfileRollingStone);
@@ -699,18 +699,20 @@ void ActorRollingStone::func_ov031_020f98e4() {
     Mat3p sp34;
     switch (func_02017e8c(&sp00)) {
         case 0x2:
-        case 0x6:
+        case 0x6: {
             fx32 diffX  = this->mPos.x - this->mPrevPos.x;
             fx32 angleX = -MUL_FX32(diffX, FLOAT_TO_FX32(2.6668f));
             Mat3p_InitZRotation(&sp34, SIN((u16) angleX), COS((u16) angleX));
             break;
+        }
         case 0x0:
-        case 0x4:
+        case 0x4: {
             fx32 diffZ  = this->mPos.z - this->mPrevPos.z;
             fx32 angleZ = MUL_FX32(diffZ, FLOAT_TO_FX32(2.6668f));
             Mat3p_InitXRotation(&sp34, SIN((u16) angleZ), COS((u16) angleZ));
             break;
-        case 0x5:
+        }
+        case 0x5: {
             VecFx32 sp28 = data_ov031_02110b98;
 
             unk32 ret      = func_01ffb9cc(&this->mPrevPos, &this->mPos);
@@ -718,7 +720,8 @@ void ActorRollingStone::func_ov031_020f98e4() {
 
             Mat3p_func_01ff8248(&sp34, &sp28, SIN((u16) angleRet1), COS((u16) angleRet1));
             break;
-        case 0x1:
+        }
+        case 0x1: {
             VecFx32 sp1C = data_ov031_02110ba4;
 
             unk32 ret2     = func_01ffb9cc(&this->mPrevPos, &this->mPos);
@@ -726,7 +729,8 @@ void ActorRollingStone::func_ov031_020f98e4() {
 
             Mat3p_func_01ff8248(&sp34, &sp1C, SIN((u16) angleRet2), COS((u16) angleRet2));
             break;
-        case 0x7:
+        }
+        case 0x7: {
             VecFx32 sp10 = data_ov031_02110bb0;
 
             unk32 ret3     = func_01ffb9cc(&this->mPrevPos, &this->mPos);
@@ -734,7 +738,8 @@ void ActorRollingStone::func_ov031_020f98e4() {
 
             Mat3p_func_01ff8248(&sp34, &sp10, SIN((u16) angleRet3), COS((u16) angleRet3));
             break;
-        case 0x3:
+        }
+        case 0x3: {
             VecFx32 sp04 = data_ov031_02110bbc;
 
             unk32 ret4     = func_01ffb9cc(&this->mPrevPos, &this->mPos);
@@ -742,6 +747,7 @@ void ActorRollingStone::func_ov031_020f98e4() {
 
             Mat3p_func_01ff8248(&sp34, &sp04, SIN((u16) angleRet4), COS((u16) angleRet4));
             break;
+        }
         default:
             break;
     }

@@ -26,17 +26,17 @@ unk32 UnkSystem1_ov019_Derived1::vfunc_1C(u32 param1, unk32 param2, unk32 param3
                 case 0x1E:
                     switch (param1) {
                         case 0:
-                            gSaveManager.func_ov019_020d08fc(2, SaveFile::func_ov019_020d0d50);
+                            gSaveManager.func_ov019_020d08fc(2, &SaveFile::func_ov019_020d0d50);
                             gSaveManager.mUnk_20A = 0;
                             break;
                         case 1:
-                            gSaveManager.func_ov019_020d08fc(2, SaveFile::func_ov019_020d0ea8);
+                            gSaveManager.func_ov019_020d08fc(2, &SaveFile::func_ov019_020d0ea8);
                             break;
                         case 2:
-                            gSaveManager.func_ov019_020d08fc(2, SaveFile::func_ov019_020d1108);
+                            gSaveManager.func_ov019_020d08fc(2, &SaveFile::func_ov019_020d1108);
                             break;
                         case 3:
-                            gSaveManager.func_ov019_020d08fc(2, SaveFile::func_ov019_020d127c);
+                            gSaveManager.func_ov019_020d08fc(2, &SaveFile::func_ov019_020d127c);
                             break;
                         default:
                             break;

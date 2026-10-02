@@ -234,8 +234,7 @@ void ActorUnkSWBM::Update() {
     }
 
     switch (this->mState) {
-        case ActorUnkSWBMState_0:
-
+        case ActorUnkSWBMState_0: {
             if (this->func_ov000_02098ab4(0x4, 0x19, 0x2, &this->mVel)) {
                 this->func_ov031_020e6d80(-0x1);
             } else {
@@ -258,7 +257,10 @@ void ActorUnkSWBM::Update() {
 
             this->func_ov031_020e6d80(-0x1);
             break;
+        }
         case ActorUnkSWBMState_1:
+            break;
+        default:
             break;
     }
 }

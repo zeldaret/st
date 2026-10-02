@@ -183,7 +183,7 @@ void MapObjectUnkSKDI::func_ov031_0210643c(unk32 param1) {
             }
             this->func_ov031_02106678(MapObjUnkSKDIState_2, 0x0);
             break;
-        case MapObjUnkSKDIState_2:
+        case MapObjUnkSKDIState_2: {
             if (this->func_ov000_0209d29c(0x1) != 0x0) {
                 if (this->mUnk_086 != 0) {
                     this->func_ov031_02106678(MapObjUnkSKDIState_3, 0x0);
@@ -204,6 +204,7 @@ void MapObjectUnkSKDI::func_ov031_0210643c(unk32 param1) {
                 ++this->mUnk_0F8;
             }
             break;
+        }
         default:
             break;
     }
@@ -254,7 +255,7 @@ void MapObjectUnkSKDI::func_ov031_02106678(MapObjState state, unk32 param2) {
             }
             this->func_ov031_02106678(MapObjUnkSKDIState_0, 0x0);
             break;
-        case MapObjUnkSKDIState_1:
+        case MapObjUnkSKDIState_1: {
             SET_FLAG(this->mFlags, MapObjFlag_7);
             SET_FLAG(this->mFlags, MapObjFlag_8);
             if (param2 == 0x0) {
@@ -278,6 +279,7 @@ void MapObjectUnkSKDI::func_ov031_02106678(MapObjState state, unk32 param2) {
             this->mUnk_0BC         = 0x3000;
             UNSET_FLAG(this->mFlags, MapObjFlag_10);
             break;
+        }
         case MapObjUnkSKDIState_2:
             SET_FLAG(this->mFlags, MapObjFlag_7);
             this->mFlags[0] &= 0xFEFF;

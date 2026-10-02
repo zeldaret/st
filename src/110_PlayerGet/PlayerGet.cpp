@@ -427,7 +427,7 @@ static const AdventureFlag sAdvFlagItemMap[] = {
 void UnkStruct_PlayerGet_74::vfunc_00(unk32 param1, unk32 param2) {
     PlayerGet *unk_14 = (PlayerGet *) this->mUnk_14;
 
-    func_01ffc5a0(&unk_14->mUnk_8C, unk_14->mUnk_6C, unk_14->mUnkAngleStruct, &this->mUnk_04);
+    func_01ffc5a0(&unk_14->mUnk_8C, unk_14->mUnk_6C, unk_14->mAngle, &this->mUnk_04);
 }
 
 PlayerGet::PlayerGet() :
@@ -564,7 +564,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 pActor->mUnk_4A[0] = 0;
             }
             break;
-        case 0x3A:
+        case 0x3A: {
             if (this->mUnk_54.mItemId != ItemId_Nothing) {
                 u32 niVar10 = func_ov000_020a4c00(this->mUnk_54.mItemId);
 
@@ -664,7 +664,8 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             }
 
             break;
-        case 0x3B:
+        }
+        case 0x3B: {
             this->mUnk_72 = 0;
 
             if (this->mUnk_54.mItemId != ItemId_Nothing) {
@@ -684,6 +685,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             UnkTextStruct1 auStack_30(-1, 0);
             data_ov000_020b504c.func_ov000_02067cf8(ItemManager::GetBmgIDFromItem(this->mUnk_54.mItemId), 0, &auStack_30);
             break;
+        }
         default:
             break;
     }

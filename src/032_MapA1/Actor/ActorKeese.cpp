@@ -31,28 +31,28 @@ static const VecFx32 data_ov032_021224d8(FLOAT_TO_FX32(1.7f), FLOAT_TO_FX32(0.5f
 static ActorUnkZLSL_AnimationTag data_ov032_021224e4             = {.index = 0, .name = "fly"};
 static ActorUnkZLSL_AnimationTag data_ov032_021224fc             = {.index = 0, .name = "keeth", .unknown = 1};
 static PTMF<ActorKeese> data_ov032_0212258c[ActorKeeseState_Max] = {
-    ActorKeese::func_ov032_0211e9ec, // ActorKeeseState_0
-    ActorKeese::func_ov032_0211ece8, // ActorKeeseState_1
-    ActorKeese::func_ov032_0211f1f0, // ActorKeeseState_2
-    ActorKeese::func_ov032_0211f054, // ActorKeeseState_3
-    ActorKeese::func_ov032_0211f300, // ActorKeeseState_4
-    ActorKeese::func_ov032_0211f3ac, // ActorKeeseState_5
-    ActorKeese::func_ov032_0211f4a4, // ActorKeeseState_6
-    ActorKeese::func_ov032_0211f560, // ActorKeeseState_7
-    ActorKeese::func_ov032_0211f604, // ActorKeeseState_8
-    ActorKeese::func_ov032_0211f6bc, // ActorKeeseState_9
+    &ActorKeese::func_ov032_0211e9ec, // ActorKeeseState_0
+    &ActorKeese::func_ov032_0211ece8, // ActorKeeseState_1
+    &ActorKeese::func_ov032_0211f1f0, // ActorKeeseState_2
+    &ActorKeese::func_ov032_0211f054, // ActorKeeseState_3
+    &ActorKeese::func_ov032_0211f300, // ActorKeeseState_4
+    &ActorKeese::func_ov032_0211f3ac, // ActorKeeseState_5
+    &ActorKeese::func_ov032_0211f4a4, // ActorKeeseState_6
+    &ActorKeese::func_ov032_0211f560, // ActorKeeseState_7
+    &ActorKeese::func_ov032_0211f604, // ActorKeeseState_8
+    &ActorKeese::func_ov032_0211f6bc, // ActorKeeseState_9
 };
 static PTMF<ActorKeese> data_ov032_021225dc[ActorKeeseState_Max] = {
-    ActorKeese::func_ov032_0211eb60, // ActorKeeseState_0
-    ActorKeese::func_ov032_0211ee5c, // ActorKeeseState_1
-    ActorKeese::func_ov032_0211f1f4, // ActorKeeseState_2
-    ActorKeese::func_ov032_0211f0a8, // ActorKeeseState_3
-    ActorKeese::func_ov032_0211f310, // ActorKeeseState_4
-    ActorKeese::func_ov032_0211f404, // ActorKeeseState_5
-    ActorKeese::func_ov032_0211f50c, // ActorKeeseState_6
-    ActorKeese::func_ov032_0211f58c, // ActorKeeseState_7
-    ActorKeese::func_ov032_0211f614, // ActorKeeseState_8
-    ActorKeese::func_ov032_0211f804, // ActorKeeseState_9
+    &ActorKeese::func_ov032_0211eb60, // ActorKeeseState_0
+    &ActorKeese::func_ov032_0211ee5c, // ActorKeeseState_1
+    &ActorKeese::func_ov032_0211f1f4, // ActorKeeseState_2
+    &ActorKeese::func_ov032_0211f0a8, // ActorKeeseState_3
+    &ActorKeese::func_ov032_0211f310, // ActorKeeseState_4
+    &ActorKeese::func_ov032_0211f404, // ActorKeeseState_5
+    &ActorKeese::func_ov032_0211f50c, // ActorKeeseState_6
+    &ActorKeese::func_ov032_0211f58c, // ActorKeeseState_7
+    &ActorKeese::func_ov032_0211f614, // ActorKeeseState_8
+    &ActorKeese::func_ov032_0211f804, // ActorKeeseState_9
 };
 
 DECL_PROFILE(ActorProfileKeese);

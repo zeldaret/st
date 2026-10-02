@@ -132,7 +132,7 @@ void MapObjectBombFlower::vfunc_08() {
 
             this->SetState(MapObjBombFlowerState_5, 0x0);
             break;
-        case MapObjBombFlowerState_5:
+        case MapObjBombFlowerState_5: {
             if (this->IsInternalTimerOut()) {
                 this->SetState(MapObjBombFlowerState_0, 0x0);
                 break;
@@ -144,6 +144,7 @@ void MapObjectBombFlower::vfunc_08() {
             }
             this->mUnk_B0 = this->mUnk_B4;
             break;
+        }
         default:
             break;
     }

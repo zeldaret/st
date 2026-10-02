@@ -1,6 +1,5 @@
-#include "Actor/ActorManager.hpp"
 #include "Player/PlayerSceneChange.hpp"
-#include "Unknown/UnkStruct_027e0cdc.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 
 extern "C" void func_ov000_0208ba10(void *, void *, unk32);
 extern "C" void func_ov000_02087ee8();

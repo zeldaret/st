@@ -321,7 +321,7 @@ void AdventureModeManager::vfunc_24() {
             if (CHECK_BUTTON_COMBO(press, PAD_KEY_DOWN) || CHECK_BUTTON_COMBO(press, PAD_BUTTON_B)) {
                 if (this->func_ov024_020c5f70() != 0) {
                     switch (data_0204a088->mUnk_00) {
-                        case 1:
+                        case 1: {
                             stack_ov000_02073578 spC;
                             spC.unk_08 = 0x02;
                             spC.unk_00 = 0x0B;
@@ -329,6 +329,7 @@ void AdventureModeManager::vfunc_24() {
 
                             data_ov000_020b5214.func_ov000_0206db44(0x37);
                             break;
+                        }
 #if IS_EUR || IS_USA
                         case 7:
                             if (data_ov031_02118fa4 == 0) {

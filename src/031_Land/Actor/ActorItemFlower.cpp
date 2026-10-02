@@ -8,25 +8,25 @@
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
 
 static PTMF<ActorItemFlower> data_ov031_021141b4[ActorItemFlowerState_Max] = {
-    ActorItemFlower::func_ov031_020f11b4, // ActorItemFlowerState_0
-    ActorItemFlower::func_ov031_020f11cc, // ActorItemFlowerState_1
-    ActorItemFlower::func_ov031_020f11e4, // ActorItemFlowerState_2
-    ActorItemFlower::func_ov031_020f11fc, // ActorItemFlowerState_3
-    ActorItemFlower::func_ov031_020f121c, // ActorItemFlowerState_4
-    ActorItemFlower::func_ov031_020f1308, // ActorItemFlowerState_5
-    ActorItemFlower::func_ov031_020f0244, // ActorItemFlowerState_6
-    ActorItemFlower::func_ov031_020f0514, // ActorItemFlowerState_7
+    &ActorItemFlower::func_ov031_020f11b4, // ActorItemFlowerState_0
+    &ActorItemFlower::func_ov031_020f11cc, // ActorItemFlowerState_1
+    &ActorItemFlower::func_ov031_020f11e4, // ActorItemFlowerState_2
+    &ActorItemFlower::func_ov031_020f11fc, // ActorItemFlowerState_3
+    &ActorItemFlower::func_ov031_020f121c, // ActorItemFlowerState_4
+    &ActorItemFlower::func_ov031_020f1308, // ActorItemFlowerState_5
+    &ActorItemFlower::func_ov031_020f0244, // ActorItemFlowerState_6
+    &ActorItemFlower::func_ov031_020f0514, // ActorItemFlowerState_7
 };
 
 static PTMF<ActorItemFlower> data_ov031_02114174[ActorItemFlowerState_Max] = {
-    ActorItemFlower::func_ov031_020f11a8, // ActorItemFlowerState_0
-    ActorItemFlower::func_ov031_020f11c0, // ActorItemFlowerState_1
-    ActorItemFlower::func_ov031_020f11d8, // ActorItemFlowerState_2
-    ActorItemFlower::func_ov031_020f11f0, // ActorItemFlowerState_3
-    ActorItemFlower::func_ov031_020f1208, // ActorItemFlowerState_4
-    ActorItemFlower::func_ov031_020f1230, // ActorItemFlowerState_5
-    ActorItemFlower::func_ov031_020f0220, // ActorItemFlowerState_6
-    ActorItemFlower::func_ov031_020f04dc, // ActorItemFlowerState_7
+    &ActorItemFlower::func_ov031_020f11a8, // ActorItemFlowerState_0
+    &ActorItemFlower::func_ov031_020f11c0, // ActorItemFlowerState_1
+    &ActorItemFlower::func_ov031_020f11d8, // ActorItemFlowerState_2
+    &ActorItemFlower::func_ov031_020f11f0, // ActorItemFlowerState_3
+    &ActorItemFlower::func_ov031_020f1208, // ActorItemFlowerState_4
+    &ActorItemFlower::func_ov031_020f1230, // ActorItemFlowerState_5
+    &ActorItemFlower::func_ov031_020f0220, // ActorItemFlowerState_6
+    &ActorItemFlower::func_ov031_020f04dc, // ActorItemFlowerState_7
 };
 
 DECL_PROFILE(ActorProfileItemFlower);

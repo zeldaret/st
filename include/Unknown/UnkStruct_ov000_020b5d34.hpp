@@ -1,6 +1,8 @@
 #pragma once
 
+#include "MapObject/MapObject.hpp"
 #include "global.h"
+#include "nitro/fx.h"
 #include "types.h"
 
 class MapObject_20;
@@ -41,4 +43,3 @@ template <typename T> struct UnkStruct_ov000_020b5d34_Instance {
 };
 
 #define data_ov000_020b5d34 UnkStruct_ov000_020b5d34_Instance<UnkStruct_ov000_020b5d34>::data_ov000_020b5d34
-extern UnkStruct_ov000_020b5d34 data_ov000_020b5d34;

@@ -45,42 +45,42 @@ static char data_ov031_021135f4[0x4]                 = "3\x03";
 static char data_ov031_021135f8[0x4]                 = "\x00\x10";
 static ActorUnkZLSL_AnimationTag data_ov031_021135fc = {0, "wait"};
 static PTMF<ActorUnkZLSL> data_ov031_021137f8[0x11]  = {
-    ActorUnkZLSL::func_ov031_020eaa88, // ActorUnkZLSLState_0
-    ActorUnkZLSL::func_ov031_020ea8c8, // ActorUnkZLSLState_1
-    ActorUnkZLSL::func_ov031_020ea8c4, // ActorUnkZLSLState_2
-    ActorUnkZLSL::func_ov031_020ea8c0, // ActorUnkZLSLState_3
-    ActorUnkZLSL::func_ov031_020eace0, // ActorUnkZLSLState_4
-    ActorUnkZLSL::func_ov031_020ead78, // ActorUnkZLSLState_5
-    ActorUnkZLSL::func_ov031_020ec058, // ActorUnkZLSLState_6
-    ActorUnkZLSL::func_ov031_020ec0a8, // ActorUnkZLSLState_7
-    ActorUnkZLSL::func_ov031_020ec12c, // ActorUnkZLSLState_8
-    ActorUnkZLSL::func_ov031_020eb61c, // ActorUnkZLSLState_9
-    ActorUnkZLSL::func_ov031_020eafb0, // ActorUnkZLSLState_10
-    ActorUnkZLSL::func_ov031_020eb218, // ActorUnkZLSLState_11
-    ActorUnkZLSL::func_ov031_020ec028, // ActorUnkZLSLState_12
-    ActorUnkZLSL::func_ov031_020eb158, // ActorUnkZLSLState_13
-    ActorUnkZLSL::func_ov031_020eab0c, // ActorUnkZLSLState_14
-    ActorUnkZLSL::func_ov031_020ec170, // ActorUnkZLSLState_15
-    ActorUnkZLSL::func_ov031_020eba8c, // ActorUnkZLSLState_16
+    &ActorUnkZLSL::func_ov031_020eaa88, // ActorUnkZLSLState_0
+    &ActorUnkZLSL::func_ov031_020ea8c8, // ActorUnkZLSLState_1
+    &ActorUnkZLSL::func_ov031_020ea8c4, // ActorUnkZLSLState_2
+    &ActorUnkZLSL::func_ov031_020ea8c0, // ActorUnkZLSLState_3
+    &ActorUnkZLSL::func_ov031_020eace0, // ActorUnkZLSLState_4
+    &ActorUnkZLSL::func_ov031_020ead78, // ActorUnkZLSLState_5
+    &ActorUnkZLSL::func_ov031_020ec058, // ActorUnkZLSLState_6
+    &ActorUnkZLSL::func_ov031_020ec0a8, // ActorUnkZLSLState_7
+    &ActorUnkZLSL::func_ov031_020ec12c, // ActorUnkZLSLState_8
+    &ActorUnkZLSL::func_ov031_020eb61c, // ActorUnkZLSLState_9
+    &ActorUnkZLSL::func_ov031_020eafb0, // ActorUnkZLSLState_10
+    &ActorUnkZLSL::func_ov031_020eb218, // ActorUnkZLSLState_11
+    &ActorUnkZLSL::func_ov031_020ec028, // ActorUnkZLSLState_12
+    &ActorUnkZLSL::func_ov031_020eb158, // ActorUnkZLSLState_13
+    &ActorUnkZLSL::func_ov031_020eab0c, // ActorUnkZLSLState_14
+    &ActorUnkZLSL::func_ov031_020ec170, // ActorUnkZLSLState_15
+    &ActorUnkZLSL::func_ov031_020eba8c, // ActorUnkZLSLState_16
 };
 static PTMF<ActorUnkZLSL> data_ov031_02113770[0x11] = {
-    ActorUnkZLSL::func_ov031_020eaa68, // ActorUnkZLSLState_0
-    ActorUnkZLSL::func_ov031_020ea86c, // ActorUnkZLSLState_1
-    ActorUnkZLSL::func_ov031_020ea868, // ActorUnkZLSLState_2
-    ActorUnkZLSL::func_ov031_020ea864, // ActorUnkZLSLState_3
-    ActorUnkZLSL::func_ov031_020eac64, // ActorUnkZLSLState_4
-    ActorUnkZLSL::func_ov031_020ead0c, // ActorUnkZLSLState_5
-    ActorUnkZLSL::func_ov031_020ec034, // ActorUnkZLSLState_6
-    ActorUnkZLSL::func_ov031_020ec05c, // ActorUnkZLSLState_7
-    ActorUnkZLSL::func_ov031_020ec0d4, // ActorUnkZLSLState_8
-    ActorUnkZLSL::func_ov031_020eb5f8, // ActorUnkZLSLState_9
-    ActorUnkZLSL::func_ov031_020ead7c, // ActorUnkZLSLState_10
-    ActorUnkZLSL::func_ov031_020eb188, // ActorUnkZLSLState_11
-    ActorUnkZLSL::func_ov031_020ebfd8, // ActorUnkZLSLState_12
-    ActorUnkZLSL::func_ov031_020eafe0, // ActorUnkZLSLState_13
-    ActorUnkZLSL::func_ov031_020eaa8c, // ActorUnkZLSLState_14
-    ActorUnkZLSL::func_ov031_020ec164, // ActorUnkZLSLState_15
-    ActorUnkZLSL::func_ov031_020eba58, // ActorUnkZLSLState_16
+    &ActorUnkZLSL::func_ov031_020eaa68, // ActorUnkZLSLState_0
+    &ActorUnkZLSL::func_ov031_020ea86c, // ActorUnkZLSLState_1
+    &ActorUnkZLSL::func_ov031_020ea868, // ActorUnkZLSLState_2
+    &ActorUnkZLSL::func_ov031_020ea864, // ActorUnkZLSLState_3
+    &ActorUnkZLSL::func_ov031_020eac64, // ActorUnkZLSLState_4
+    &ActorUnkZLSL::func_ov031_020ead0c, // ActorUnkZLSLState_5
+    &ActorUnkZLSL::func_ov031_020ec034, // ActorUnkZLSLState_6
+    &ActorUnkZLSL::func_ov031_020ec05c, // ActorUnkZLSLState_7
+    &ActorUnkZLSL::func_ov031_020ec0d4, // ActorUnkZLSLState_8
+    &ActorUnkZLSL::func_ov031_020eb5f8, // ActorUnkZLSLState_9
+    &ActorUnkZLSL::func_ov031_020ead7c, // ActorUnkZLSLState_10
+    &ActorUnkZLSL::func_ov031_020eb188, // ActorUnkZLSLState_11
+    &ActorUnkZLSL::func_ov031_020ebfd8, // ActorUnkZLSLState_12
+    &ActorUnkZLSL::func_ov031_020eafe0, // ActorUnkZLSLState_13
+    &ActorUnkZLSL::func_ov031_020eaa8c, // ActorUnkZLSLState_14
+    &ActorUnkZLSL::func_ov031_020ec164, // ActorUnkZLSLState_15
+    &ActorUnkZLSL::func_ov031_020eba58, // ActorUnkZLSLState_16
 };
 static ActorUnkZLSL_AnimationTag data_ov031_02113a08      = {0, "blink"};
 static ActorUnkZLSL_AnimationTag data_ov031_02113a20      = {0x01, "happy"};
@@ -708,7 +708,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
 
             this->func_ov031_020ed4e4(0x5, 0x93F);
             break;
-        case 0x4:
+        case 0x4: {
             VecFx32 *pVec = this->func_ov000_0209853c(0x0);
             if (func_01ff9258(this->mPos.x - pVec->x, this->mPos.z - pVec->z) > 0x3000) {
                 this->func_ov031_020eb2b0(&actor->mPos, 0x666);
@@ -734,6 +734,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             this->mTimerMax = 0xF;
             this->mTimer    = 0x0;
             break;
+        }
         case 0x5:
             if (!this->IsTimerOut()) {
                 break;

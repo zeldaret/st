@@ -17,12 +17,12 @@ void func_ov000_0205bedc(void *param1, void *param2, void *param3, void *param4,
 }
 
 static TitleScreenPTMF<TitleScreen> data_ov025_020c5aec[TitleScreenState_Max] = {
-    TitleScreen::func_ov025_020c5200, // TitleScreenState_None
-    TitleScreen::func_ov025_020c5204, // TitleScreenState_IdleBeforeUI
-    TitleScreen::func_ov025_020c5240, // TitleScreenState_DrawUIOnInput
-    TitleScreen::func_ov025_020c53d0, // TitleScreenState_DrawUIOnCsCmd
-    TitleScreen::func_ov025_020c55a4, // TitleScreenState_IdleBeforeFileSelect
-    TitleScreen::func_ov025_020c55e4, // TitleScreenState_ToFileSelect
+    &TitleScreen::func_ov025_020c5200, // TitleScreenState_None
+    &TitleScreen::func_ov025_020c5204, // TitleScreenState_IdleBeforeUI
+    &TitleScreen::func_ov025_020c5240, // TitleScreenState_DrawUIOnInput
+    &TitleScreen::func_ov025_020c53d0, // TitleScreenState_DrawUIOnCsCmd
+    &TitleScreen::func_ov025_020c55a4, // TitleScreenState_IdleBeforeFileSelect
+    &TitleScreen::func_ov025_020c55e4, // TitleScreenState_ToFileSelect
 };
 
 #if IS_JP

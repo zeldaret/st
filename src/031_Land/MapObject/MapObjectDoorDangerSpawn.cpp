@@ -275,7 +275,7 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
     this->mUnk_AC = 0;
 
     switch (this->mState) {
-        case MapObjDoorDangerSpawnState_3:
+        case MapObjDoorDangerSpawnState_3: {
             this->vfunc_7C();
 
             sp4Ptr = (s16 *) &sp4;
@@ -321,6 +321,7 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
             }
 
             break;
+        }
         case MapObjDoorDangerSpawnState_4:
             this->MapObjectDoorBase::vfunc_5C(state, param2);
             break;

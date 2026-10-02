@@ -155,7 +155,7 @@ void ActorUnkNFSP::vfunc_54(unk32 param1) {
         case 0x2:
             this->mUnk_40 = &this->mUnk_C0;
             break;
-        case 0x3:
+        case 0x3: {
             ActorUnkNFSP_vfunc_54 *actor = (ActorUnkNFSP_vfunc_54 *) gpActorManager->func_01fff3b4(this->mUnk_E4);
             if (actor != NULL) {
                 actor->mUnk_2B0 = 0x0;
@@ -167,6 +167,7 @@ void ActorUnkNFSP::vfunc_54(unk32 param1) {
             }
             this->mUnk_9C->func_ov031_0210d750();
             break;
+        }
         default:
             break;
     }

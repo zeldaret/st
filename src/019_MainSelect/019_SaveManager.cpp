@@ -59,7 +59,7 @@ bool SaveManager::func_ov019_020d0964() {
     data_02049b80.func_02013ee8(0, 1);
 
     if (this->mUnk_20A == 0) {
-        this->func_ov019_020d08fc(1, SaveFile::func_ov019_020d17e0);
+        this->func_ov019_020d08fc(1, &SaveFile::func_ov019_020d17e0);
         return true;
     }
 
@@ -68,12 +68,12 @@ bool SaveManager::func_ov019_020d0964() {
 
 void SaveManager::func_ov019_020d09dc(u16 saveSlotIndex) {
     this->mpSaveFile->mSaveSlotIndex = saveSlotIndex;
-    this->func_ov019_020d08fc(2, SaveFile::func_ov019_020d1434);
+    this->func_ov019_020d08fc(2, &SaveFile::func_ov019_020d1434);
 }
 
 void SaveManager::func_ov019_020d0a04(u16 saveSlotIndex) {
     this->mpSaveFile->mSaveSlotIndex = saveSlotIndex;
-    this->func_ov019_020d08fc(2, SaveFile::func_ov019_020d1538);
+    this->func_ov019_020d08fc(2, &SaveFile::func_ov019_020d1538);
 }
 
 void SaveManager::func_ov019_020d0a2c(u16 saveSlotIndex) {

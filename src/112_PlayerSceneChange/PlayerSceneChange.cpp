@@ -18,11 +18,23 @@ PlayerSceneChange::PlayerSceneChange() :
     this->mUnk_68 = this->mUnk_2C->mUnk_14C;
     this->mUnk_6C = -1;
 
+#if __MWERKS__
     this->mUnk_70.coords = this->mUnk_34->coords;
     this->mUnk_7C        = 0;
 
     this->mUnk_80.coords = this->mUnk_34->coords;
     this->mUnk_8C        = 0;
+#else
+    this->mUnk_70.x = this->mUnk_34->x;
+    this->mUnk_70.y = this->mUnk_34->y;
+    this->mUnk_70.z = this->mUnk_34->z;
+    this->mUnk_7C   = 0;
+
+    this->mUnk_80.x = this->mUnk_34->x;
+    this->mUnk_80.y = this->mUnk_34->y;
+    this->mUnk_80.z = this->mUnk_34->z;
+    this->mUnk_8C   = 0;
+#endif
 
     this->mUnk_90.Reset();
     *((u32 *) this->mUnk_94) = 0;

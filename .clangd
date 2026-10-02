@@ -20,6 +20,7 @@ Diagnostics:
     - "illegal_union_or_anon_struct_member"
     - "main_returns_nonint"
     - "template_spec_needs_header"
+    - "goto_into_protected_scope"
 Documentation:
   CommentFormat: Doxygen
 ---

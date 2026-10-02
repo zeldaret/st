@@ -149,10 +149,7 @@ public:
     /* 064 */ UnkStruct_PlayerGet_64_2 mUnk_64;
     /* 068 */ unk32 mUnk_68;
     /* 06C */ unk32 mUnk_6C; // scale
-    /* 070 */ union {
-        unk16 mAngle;
-        UnkAngleStruct mUnkAngleStruct;
-    }; // angle/rotation
+    /* 070 */ UnkAngleStruct mAngle;
     /* 070 */ u8 mUnk_72; // probably bools
     /* 070 */ u8 mUnk_73; // probably bools
     /* 074 */ UnkStruct_PlayerGet_74 mUnk_74;

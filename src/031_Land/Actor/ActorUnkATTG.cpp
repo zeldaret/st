@@ -59,7 +59,7 @@ void ActorUnkATTG::vfunc_24() {
 void ActorUnkATTG::func_ov031_020f3eec(ActorState state, unk32 param2) {
     this->mState = state;
     switch (this->mState) {
-        case ActorUnkATTGState_1:
+        case ActorUnkATTGState_1: {
             UnkStackStruct1 stack;
 
             func_ov000_02072fd0(&stack);
@@ -88,6 +88,7 @@ void ActorUnkATTG::func_ov031_020f3eec(ActorState state, unk32 param2) {
 
             this->mUnk_94 = data_027e09b8->func_ov000_02073388(&stack, 0x0);
             break;
+        }
         case ActorUnkATTGState_2:
             if (param2 == 0x0) {
                 data_ov000_020b5214.func_ov000_0206db44(0x2);

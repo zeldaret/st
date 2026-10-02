@@ -99,7 +99,7 @@ bool ActorUnkTGTZ::Init(unk32 param1) {
 // non-matching
 void ActorUnkTGTZ::Update() {
     switch (this->mUnk_1B8) {
-        case 0x0:
+        case 0x0: {
             if (!this->func_ov000_02098a60(0x0)) {
                 break;
             }
@@ -137,6 +137,7 @@ void ActorUnkTGTZ::Update() {
             this->mUnk_1BC  = data_027e09b8->func_ov000_02073388(&stack, 0x0);
             this->func_ov031_020f6f20(0x1);
             break;
+        }
         case 0x2:
             if (this->mUnk_5C.mUnk_1A[0] == 0x0) {
                 break;
@@ -150,7 +151,7 @@ void ActorUnkTGTZ::Update() {
             }
             this->func_ov031_020f6f20(0x0);
             break;
-        case 0x1:
+        case 0x1: {
             if (data_027e09b8->func_ov000_020732ec(this->mUnk_1BC) == 0x0) {
                 return;
             }
@@ -169,6 +170,7 @@ void ActorUnkTGTZ::Update() {
                 func_01ff916c(&this->mUnk_1C4, 0x0, 0x333);
             }
             break;
+        }
         case 0x3:
             if (!this->IsInternalTimerOut()) {
                 break;
@@ -260,7 +262,7 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
             this->func_ov031_020f6e5c(this->mUnk_1DC);
             this->mUnk_1DC = 0x0;
             break;
-        case 0x1:
+        case 0x1: {
             this->mUnk_1C2 = 0x1E;
             this->mUnk_1C0 = 0x0;
             SET_FLAG(this->mFlags, ActorFlag_Visible);
@@ -268,7 +270,8 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
             this->func_ov031_020f6ea8(&ref, 0x0, &this->mPos, 0x0, 0x1);
             this->mUnk_1DC = ref;
             break;
-        case 0x2:
+        }
+        case 0x2: {
             this->mUnk_1BC = -0x1;
             this->mUnk_1C4 = FLOAT_TO_FX32(0.0f);
             SET_FLAG(this->mFlags, ActorFlag_Visible);
@@ -303,6 +306,7 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
 
             this->func_ov031_020f6f20(0x3);
             break;
+        }
         case 0x3:
             this->mUnk_1C4 = FLOAT_TO_FX32(-1.0002f);
             SET_FLAG(this->mFlags, ActorFlag_Visible);

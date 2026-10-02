@@ -83,7 +83,7 @@ void ActorUnkTLKT::vfunc_68() {
 
 void ActorUnkTLKT::vfunc_60(ActorState state) {
     switch (state) {
-        case ActorUnkTLKTState_1:
+        case ActorUnkTLKTState_1: {
             Actor *actor = this->func_ov031_020e3df8();
             if (this->mUnk_5C.mParams[0] == 0x0 && actor == NULL) {
                 this->vfunc_60(ActorUnkTLKTState_5);
@@ -133,6 +133,7 @@ void ActorUnkTLKT::vfunc_60(ActorState state) {
             actorUnkSp40.mUnk_30 = func_ov031_020e3dd0(this);
             this->mUnk_04        = data_027e09b8->func_ov000_02073470(&actorUnkSp40, 0x0);
             break;
+        }
         case ActorUnkTLKTState_3:
             UnkStackStruct1 unkSp00;
             func_ov000_02072fd0(&unkSp00);

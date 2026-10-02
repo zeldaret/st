@@ -74,23 +74,23 @@ UnkStruct_ov019_020d215c UnkStruct_ov019_020d2170::data_ov019_020d215c = {
 static const UnkStruct_ov019_020d2170 data_ov019_020d2170;
 
 static PTMF<FileSelectOptions> data_ov019_020d21c0[FSOptionsState_Max] = {
-    FileSelectOptions::func_ov019_020cce04, // FSOptionsState_Idle
-    FileSelectOptions::func_ov019_020cce30, // FSOptionsState_OptionsFromChooseMode
-    FileSelectOptions::func_ov019_020cd16c, // FSOptionsState_OptionsToChooseMode
-    FileSelectOptions::func_ov019_020cd41c, // FSOptionsState_OptionsToMicTest
-    FileSelectOptions::func_ov019_020cd5f8, // FSOptionsState_MicTestIdle
-    FileSelectOptions::func_ov019_020cd614, // FSOptionsState_OptionsFromMicTest
-    FileSelectOptions::func_ov019_020cd788, // FSOptionsState_SaveSettings
+    &FileSelectOptions::func_ov019_020cce04, // FSOptionsState_Idle
+    &FileSelectOptions::func_ov019_020cce30, // FSOptionsState_OptionsFromChooseMode
+    &FileSelectOptions::func_ov019_020cd16c, // FSOptionsState_OptionsToChooseMode
+    &FileSelectOptions::func_ov019_020cd41c, // FSOptionsState_OptionsToMicTest
+    &FileSelectOptions::func_ov019_020cd5f8, // FSOptionsState_MicTestIdle
+    &FileSelectOptions::func_ov019_020cd614, // FSOptionsState_OptionsFromMicTest
+    &FileSelectOptions::func_ov019_020cd788, // FSOptionsState_SaveSettings
 };
 
 static PTMF<FileSelectOptions> data_ov019_020d2188[FSOptionsState_Max] = {
-    FileSelectOptions::func_ov019_020cd7f8, // FSOptionsState_Idle
-    FileSelectOptions::func_ov019_020cdc0c, // FSOptionsState_OptionsFromChooseMode
-    FileSelectOptions::func_ov019_020cdc38, // FSOptionsState_OptionsToChooseMode
-    FileSelectOptions::func_ov019_020cdc60, // FSOptionsState_OptionsToMicTest
-    FileSelectOptions::func_ov019_020cdc5c, // FSOptionsState_MicTestIdle
-    FileSelectOptions::func_ov019_020cdc8c, // FSOptionsState_OptionsFromMicTest
-    FileSelectOptions::func_ov019_020cdcb8, // FSOptionsState_SaveSettings
+    &FileSelectOptions::func_ov019_020cd7f8, // FSOptionsState_Idle
+    &FileSelectOptions::func_ov019_020cdc0c, // FSOptionsState_OptionsFromChooseMode
+    &FileSelectOptions::func_ov019_020cdc38, // FSOptionsState_OptionsToChooseMode
+    &FileSelectOptions::func_ov019_020cdc60, // FSOptionsState_OptionsToMicTest
+    &FileSelectOptions::func_ov019_020cdc5c, // FSOptionsState_MicTestIdle
+    &FileSelectOptions::func_ov019_020cdc8c, // FSOptionsState_OptionsFromMicTest
+    &FileSelectOptions::func_ov019_020cdcb8, // FSOptionsState_SaveSettings
 };
 
 GameModeManagerBase_104 *FileSelectOptionsManager::Create(void *param1, s32 saveSlotIndex) {
@@ -123,20 +123,22 @@ void FileSelectOptionsManager::vfunc_08(Input *pButtons, TouchControl *pTouchCon
     this->mUnk_20 = 0;
 
     switch (this->mUnk_1C) {
-        case 0:
+        case 0: {
             FileSelectOptions *pFVar4 = this->mpOptions;
             this->mUnk_24->Append(pFVar4);
             pFVar4->vfunc_18();
             this->mpOptions->func_ov019_020cde9c();
             this->mpMicTest->Detach();
             break;
-        case 1:
+        }
+        case 1: {
             FileSelectMicTest *pFVar5 = this->mpMicTest;
             this->mUnk_24->Append(pFVar5);
             pFVar5->vfunc_18();
             this->mpMicTest->func_ov019_020cefe4();
             this->mpOptions->Detach();
             break;
+        }
         case 2:
             this->mpOptions->func_ov019_020ccdf4();
             break;
