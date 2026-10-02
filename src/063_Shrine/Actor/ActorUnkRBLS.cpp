@@ -22,7 +22,7 @@ ActorUnkRBLS::ActorUnkRBLS() :
     mUnk_94(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkRBLS)->mUnk_3C.mUnk_50)),
     mUnk_F4(&mUnk_94, GET_PROFILE(ActorProfileUnkRBLS)->vfunc_04()) {}
 
-bool ActorUnkRBLS::vfunc_18(unk32 param1) {
+bool ActorUnkRBLS::Init(unk32 param1) {
     this->mPos.x -= FLOAT_TO_FX32(0.5f);
     this->mPos.z -= FLOAT_TO_FX32(0.5f);
     this->mPos.y = 0;
@@ -33,12 +33,12 @@ bool ActorUnkRBLS::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorUnkRBLS::vfunc_20(void) {
+void ActorUnkRBLS::Update(void) {
     this->mUnk_F4.vfunc_34();
 }
 
 void ActorUnkRBLS::vfunc_24(void) {
-    this->vfunc_20();
+    this->Update();
 }
 
 void ActorUnkRBLS::vfunc_2C(Actor_vfunc_30 *param1) {

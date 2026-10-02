@@ -82,7 +82,7 @@ ActorTearLight::ActorTearLight() :
 }
 
 // non-matching
-bool ActorTearLight::vfunc_18(unk32 param1) {
+bool ActorTearLight::Init(unk32 param1) {
     SET_FLAG(this->mFlags, ActorFlag_11);
     this->mItemId = ItemId_ForceGem_60;
 
@@ -98,14 +98,14 @@ bool ActorTearLight::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorTearLight::vfunc_1C() {
+void ActorTearLight::Setup() {
     if (this->mUnk_5C.mParams[0] != 0x1) {
         return;
     }
     data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_1BC.mUnk_00);
 }
 
-void ActorTearLight::vfunc_20() {
+void ActorTearLight::Update() {
     this->func_ov071_0215f92c();
     this->func_ov071_0215f824();
 

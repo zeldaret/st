@@ -17,7 +17,7 @@ ActorProfileUnkSCCN::ActorProfileUnkSCCN() :
 ActorUnkSCCN::ActorUnkSCCN() {}
 
 // non-matching
-bool ActorUnkSCCN::vfunc_18(unk32 param1) {
+bool ActorUnkSCCN::Init(unk32 param1) {
     if (this->mUnk_5C.mParams[1] == 0x0) {
         return false;
     }

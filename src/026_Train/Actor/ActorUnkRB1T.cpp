@@ -27,7 +27,7 @@ bool ActorUnkRB1T::func_ov026_0211e3e0(int param1) {
         return true;
     }
 
-    this->Actor_Derived1::vfunc_18(param1);
+    this->Actor_Derived1::Init(param1);
     this->mUnk_0E4 = ActorUnkRB1T::func_ov026_021208a0;
 
     int result = this->func_ov026_0211e6cc();

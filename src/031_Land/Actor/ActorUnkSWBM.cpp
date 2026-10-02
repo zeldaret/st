@@ -120,7 +120,7 @@ ActorUnkSWBM::ActorUnkSWBM() :
     this->mTimer    = 0x0000;
 }
 
-bool ActorUnkSWBM::vfunc_18(unk32 param1) {
+bool ActorUnkSWBM::Init(unk32 param1) {
     this->mUnk_44          = 0x1F;
     this->mUnk_098.mUnk_04 = this->mRef;
 
@@ -196,7 +196,7 @@ void ActorUnkSWBM::func_ov031_020e6e84(ActorState state) {
 }
 
 // non-matching
-void ActorUnkSWBM::vfunc_20() {
+void ActorUnkSWBM::Update() {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
@@ -268,7 +268,7 @@ void ActorUnkSWBM::vfunc_24() {
         this->func_ov031_020e6e84(ActorUnkSWBMState_1);
         return;
     }
-    this->vfunc_20();
+    this->Update();
 }
 
 // non-matching

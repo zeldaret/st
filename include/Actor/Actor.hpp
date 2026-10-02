@@ -95,11 +95,6 @@ enum ActorFlag_ {
     ActorFlag_31          = FLAG(0, 31),
 };
 
-//            normal: 0x603B - 0110 0000 0011 1011 - Alive | Visible | Active | Flag_4 | Flag_13 | Flag_14 | Flag 5
-//       out of stun: 0xE03B - 1110 0000 0011 1011 - Alive | Visible | Active | Flag_4 | Flag_13 | Flag_14 | Flag 5 | Flag_15
-// caught in tornado: 0xE01B - 1110 0000 0001 1011 - Alive | Visible | Active | Flag_4 | Flag_13 | Flag_14          | Flag_15
-//           stunned: 0xA01B - 1010 0000 0001 1011 - Alive | Visible | Active | Flag_4 | Flag_13                    | Flag_15
-
 class Actor_9C {
 public:
     /* 00 (vtable) */
@@ -218,9 +213,9 @@ public:
     /* 0C */ virtual unk8 vfunc_0C();
     /* 10 */ virtual void vfunc_10(Cylinder *param1);
     /* 14 */ virtual bool vfunc_14(Cylinder *param1);
-    /* 18 */ virtual bool vfunc_18(unk32 param1); // Init?
-    /* 1C */ virtual void vfunc_1C();             // Setup
-    /* 20 */ virtual void vfunc_20();             // Update?
+    /* 18 */ virtual bool Init(unk32 param1);
+    /* 1C */ virtual void Setup();
+    /* 20 */ virtual void Update();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28(Actor_vfunc_30 *param1);
     /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1);

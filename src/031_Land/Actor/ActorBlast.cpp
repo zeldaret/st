@@ -39,7 +39,7 @@ ActorBlast::ActorBlast() :
     mUnk_9A(0x18),
     mUnk_E8(this) {}
 
-bool ActorBlast::vfunc_18(unk32 param1) {
+bool ActorBlast::Init(unk32 param1) {
     this->mPos.y += FLOAT_TO_FX32(0.5f);
 
     this->mUnk_C8 = *this->mUnk_34;
@@ -90,7 +90,7 @@ bool ActorBlast::vfunc_18(unk32 param1) {
 }
 
 // non-matching
-void ActorBlast::vfunc_20() {
+void ActorBlast::Update() {
     fx32 f0       = this->mUnk_F0;
     fx32 newVal   = this->mUnk_94 + this->mUnk_F4;
     this->mUnk_94 = newVal;

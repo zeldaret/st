@@ -121,9 +121,9 @@ public:
     ActorUnkCANS();
 
     /* 10 */ virtual void vfunc_10(Cylinder *param1) override;
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C(void) override;
-    /* 20 */ virtual void vfunc_20(void) override;
+    /* 18 */ virtual bool Init(unk32 param1) override;
+    /* 1C */ virtual void Setup(void) override;
+    /* 20 */ virtual void Update(void) override;
     /* 24 */ virtual void vfunc_24(void) override;
     /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
 

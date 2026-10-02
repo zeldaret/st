@@ -40,8 +40,8 @@ public:
 
     ActorItemFlower();
 
-    /* 18 */ bool vfunc_18(unk32 param1);
-    /* 20 */ virtual void vfunc_20() override;
+    /* 18 */ virtual bool Init(unk32 param1);
+    /* 20 */ virtual void Update() override;
     /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
     /* 5C */ virtual void vfunc_5C(ActorState state) override;
 

@@ -48,7 +48,7 @@ Actor_Derived1::Actor_Derived1(ModelRender *param1, Actor_Derived1_94_0C *param2
 
 Actor_Derived1::~Actor_Derived1() {}
 
-bool Actor_Derived1::vfunc_18(unk32 param1) {
+bool Actor_Derived1::Init(unk32 param1) {
     if (this->mUnk_5C.mParams[2] == 0 && this->func_ov000_020a8dd0()) {
         UNSET_FLAG(this->mFlags, ActorFlag_Alive);
     }
@@ -64,7 +64,7 @@ bool Actor_Derived1::vfunc_18(unk32 param1) {
 
 void Actor_Derived1::vfunc_54(unk32 param1) {}
 
-void Actor_Derived1::vfunc_1C() {
+void Actor_Derived1::Setup() {
     this->func_ov031_020e3ca4();
 }
 
@@ -223,12 +223,12 @@ unk32 Actor_Derived1::vfunc_A8() {
 }
 
 void Actor_Derived1::func_ov000_020a9804(void *param1, unk32 param2) {}
-void Actor_Derived1::vfunc_20() {}
+void Actor_Derived1::Update() {}
 
 // non-matching
 void Actor_Derived1::vfunc_24() {
     if (!data_027e09b8->func_ov000_020732dc(3) || !(this->mUnk_0B0 & 4)) {
-        this->vfunc_20();
+        this->Update();
     }
 
     if (!(this->mUnk_0B0 & 0x200)) {

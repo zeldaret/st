@@ -96,7 +96,7 @@ ActorFleeingSpinut::ActorFleeingSpinut() :
 
 ActorFleeingSpinut::~ActorFleeingSpinut() {}
 
-bool ActorFleeingSpinut::vfunc_18(unk32 param1) {
+bool ActorFleeingSpinut::Init(unk32 param1) {
     this->mUnk_1EC.mUnk_00 = this->mUnk_5C.mParams[1];
 
     this->SetState(0x0);
@@ -117,7 +117,7 @@ void ActorFleeingSpinut::SetState(ActorState state) {
     CALL_PTMF(PTMF<ActorFleeingSpinut>, data_ov032_021223e4[oldState]);
 }
 
-void ActorFleeingSpinut::vfunc_20() {
+void ActorFleeingSpinut::Update() {
     this->mUnk_3C = &this->mUnk_1C0;
     if (!this->func_ov032_0211c938()) {
         this->mUnk_1EC.func_ov032_0211d028();

@@ -162,7 +162,7 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_A8          = (Actor_Derived2_A8_PTR *) &data_ov063_02162558;
 }
 
-bool ActorUnkCASE::vfunc_18(unk32 param1) {
+bool ActorUnkCASE::Init(unk32 param1) {
     mUnk_14C = gpActorManager->func_01fff3b4(mUnk_5C.mUnk_28);
 
     mUnk_0B0.func_ov000_02057c38(6, 2);
@@ -305,11 +305,11 @@ void ActorUnkCASE::vfunc_24() {
     if (mState != 1 && mState != 2) {
         return;
     }
-    this->vfunc_20();
+    this->Update();
 }
 
 // non-matching
-void ActorUnkCASE::vfunc_20() {
+void ActorUnkCASE::Update() {
     mUnk_150.mUnk_1C = 1;
 
     if (!this->func_ov017_020bef4c(0x4000) && mUnk_48 != 0) {

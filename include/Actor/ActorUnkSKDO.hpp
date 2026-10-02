@@ -29,9 +29,9 @@ public:
 
     ActorUnkSKDO();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C() override;
-    /* 20 */ virtual void vfunc_20() override;
+    /* 18 */ virtual bool Init(unk32 param1) override;
+    /* 1C */ virtual void Setup() override;
+    /* 20 */ virtual void Update() override;
     /* 54 */ virtual void vfunc_54(unk32 param1);
 };
 

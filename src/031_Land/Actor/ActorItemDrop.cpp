@@ -174,7 +174,7 @@ ActorItemDrop::ActorItemDrop() :
     }
 }
 
-bool ActorItemDrop::vfunc_18(unk32 param1) {
+bool ActorItemDrop::Init(unk32 param1) {
     if (this->mItemTypeId >= ItemDropType_Unknown) {
         return false;
     }
@@ -185,7 +185,7 @@ bool ActorItemDrop::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorItemDrop::vfunc_20() {
+void ActorItemDrop::Update() {
     this->func_ov031_020fa260();
 }
 

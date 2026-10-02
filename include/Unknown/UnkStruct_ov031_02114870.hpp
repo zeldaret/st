@@ -10,7 +10,7 @@ public:
 
     UnkStruct_ov031_02114870();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 18 */ virtual bool Init(unk32 param1) override;
     /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
     /* 54 */ virtual G3d_Model *vfunc_54();
 };

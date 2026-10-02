@@ -22,7 +22,7 @@ ActorUnkEFSB::ActorUnkEFSB() :
     mUnk_0F8(&this->mUnk_0F8.mUnk_1C, &this->mUnk_098, GET_PROFILE(ActorProfileUnkEFSB)->vfunc_04()),
     mUnk_154(&this->mUnk_154.mUnk_1C, &this->mUnk_098, GET_PROFILE(ActorProfileUnkEFSB)->vfunc_04()) {}
 
-bool ActorUnkEFSB::vfunc_18(unk32 param1) {
+bool ActorUnkEFSB::Init(unk32 param1) {
     this->mUnk_0F8.vfunc_1C(data_ov031_02114ed0[0], 0x1000, 0x11F, 0x0);
     this->mUnk_154.func_ov000_02099ff8(data_ov031_02114ed0[0], 0x1000);
 
@@ -35,7 +35,7 @@ bool ActorUnkEFSB::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorUnkEFSB::vfunc_20() {
+void ActorUnkEFSB::Update() {
     if (this->mUnk_094 != 0x0) {
         return;
     }
@@ -44,7 +44,7 @@ void ActorUnkEFSB::vfunc_20() {
 }
 
 void ActorUnkEFSB::vfunc_24() {
-    this->vfunc_20();
+    this->Update();
 }
 
 void ActorUnkEFSB::vfunc_54(unk32 param1) {

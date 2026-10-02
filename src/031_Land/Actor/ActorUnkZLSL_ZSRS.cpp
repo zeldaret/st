@@ -172,7 +172,7 @@ void ActorUnkZLSL::func_ov031_020ea674() {
     this->vfunc_58(ActorUnkZLSLState_8);
 }
 
-bool ActorUnkZLSL::vfunc_18(unk32 param1) {
+bool ActorUnkZLSL::Init(unk32 param1) {
     this->mUnk_1620.func_ov000_02057c38(0x6, 0x2);
     this->mUnk_1620.func_ov000_0209a7b8(this, this->func_ov000_020a9804);
 
@@ -255,7 +255,7 @@ void ActorUnkZLSL::func_ov031_020ea8c4() {}
 // non-matching
 void ActorUnkZLSL::func_ov031_020ea8c8() {}
 
-void ActorUnkZLSL::vfunc_20() {
+void ActorUnkZLSL::Update() {
     UnkAngleStruct angleTmp;
     angleTmp.angle = this->mAngle;
     CALL_PTMF(PTMF<ActorUnkZLSL>, data_ov031_021137f8[this->mState]);

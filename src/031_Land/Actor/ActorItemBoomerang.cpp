@@ -42,7 +42,7 @@ ActorItemBoomerang::ActorItemBoomerang() :
     this->mTimer    = 0x0;
 }
 
-bool ActorItemBoomerang::vfunc_18(unk32 param1) {
+bool ActorItemBoomerang::Init(unk32 param1) {
     this->mUnk_CC.mUnk_30.func_ov031_020e45fc();
 
     this->mUnk_A0.mUnk_0C.Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(-0.1003f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.4f));
@@ -88,7 +88,7 @@ void ActorItemBoomerang::func_ov031_020e49b0(unk32 param1) {
 }
 
 // non-matching
-void ActorItemBoomerang::vfunc_20() {
+void ActorItemBoomerang::Update() {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 

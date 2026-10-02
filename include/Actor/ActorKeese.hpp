@@ -117,8 +117,8 @@ public:
 
     ActorKeese();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20() override;
+    /* 18 */ virtual bool Init(unk32 param1) override;
+    /* 20 */ virtual void Update() override;
     /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
 
     void func_ov032_0211e0c0();

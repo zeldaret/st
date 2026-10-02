@@ -46,13 +46,13 @@ void Actor::func_ov000_0209848c(ActorProfile *param1) {
     this->mYOffset = unk_1c;
 }
 
-bool Actor::vfunc_18(unk32 param1) {
+bool Actor::Init(unk32 param1) {
     return true;
 }
 
-void Actor::vfunc_1C() {}
+void Actor::Setup() {}
 
-void Actor::vfunc_20() {}
+void Actor::Update() {}
 
 void Actor::vfunc_24() {}
 

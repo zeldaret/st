@@ -31,7 +31,7 @@ ActorUnkROCK::ActorUnkROCK() :
     this->mUnk_4A[1] = 0x02;
 }
 
-bool ActorUnkROCK::vfunc_18(unk32 param1) {
+bool ActorUnkROCK::Init(unk32 param1) {
     this->mUnk_A0.mUnk_04 = this->mRef;
     this->mUnk_A0.mUnk_08 = &this->mPos;
     this->mUnk_A0.mUnk_0C = &data_ov031_021166b8;
@@ -41,7 +41,7 @@ bool ActorUnkROCK::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorUnkROCK::vfunc_20() {
+void ActorUnkROCK::Update() {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     switch (this->mState) {
         case ActorUnkROCKState_1:

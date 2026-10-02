@@ -44,7 +44,7 @@ ActorUnkNFSP::ActorUnkNFSP() :
     this->mUnk_40 = &this->mUnk_C0;
 }
 
-bool ActorUnkNFSP::vfunc_18(unk32 param1) {
+bool ActorUnkNFSP::Init(unk32 param1) {
     this->mUnk_9C = (MapObjectUnkSWFS *) param1;
 
     this->mUnk_C0.mUnk_08 = 0x0;
@@ -61,7 +61,7 @@ bool ActorUnkNFSP::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorUnkNFSP::vfunc_20() {
+void ActorUnkNFSP::Update() {
     this->mUnk_C0.mUnk_1C = 0x1;
 
     switch (this->mUnk_94) {

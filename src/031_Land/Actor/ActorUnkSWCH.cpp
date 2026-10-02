@@ -17,13 +17,13 @@ ActorProfileUnkSWCH::ActorProfileUnkSWCH() :
 ActorUnkSWCH::ActorUnkSWCH() :
     mUnk_94(0x1) {}
 
-bool ActorUnkSWCH::vfunc_18(unk32 param1) {
+bool ActorUnkSWCH::Init(unk32 param1) {
     this->mUnk_98.mUnk_04 = 0x0;
     this->mUnk_98.mUnk_04 |= 0x10000;
     return true;
 }
 
-void ActorUnkSWCH::vfunc_20() {
+void ActorUnkSWCH::Update() {
     if (!this->func_ov000_02098a60(0x0) && this->mUnk_5C.mUnk_1A[0] != 0x0) {
         return;
     }

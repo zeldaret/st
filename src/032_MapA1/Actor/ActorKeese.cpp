@@ -116,7 +116,7 @@ bool ActorKeese_2AC::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 para
 // non-matching
 bool ActorKeese_2AC::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {}
 
-bool ActorKeese::vfunc_18(unk32 param1) {
+bool ActorKeese::Init(unk32 param1) {
     this->mUnk_0B0.func_ov000_02057c38(0x6, 0x2);
     this->mUnk_0B0.func_ov000_0209a7b8(this, &ActorKeese::func_ov032_0211faf0);
 
@@ -258,7 +258,7 @@ void ActorKeese::SetState(ActorState state) {
 // non-matching
 void ActorKeese::func_ov032_0211e468() {}
 
-void ActorKeese::vfunc_20() {
+void ActorKeese::Update() {
     if (this->mState != ActorKeeseState_9 && !this->Actor_Derived2::func_ov017_020bef4c(0x4000) && this->mUnk_48 != 0x0) {
         bool noReturn = true;
         if (this->mState != ActorKeeseState_7 && this->mState != ActorKeeseState_6) {

@@ -27,8 +27,8 @@ public:
 
     ActorUnkSWOB();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20() override;
+    /* 18 */ virtual bool Init(unk32 param1) override;
+    /* 20 */ virtual void Update() override;
 
     bool func_ov000_0209a948(void);
     void SetState(ActorState state);

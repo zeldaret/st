@@ -49,7 +49,7 @@ ActorUnkMLCK::ActorUnkMLCK() :
     mUnk_F3(true),
     mUnk_F4(-1) {}
 
-bool ActorUnkMLCK::vfunc_18(unk32 param1) {
+bool ActorUnkMLCK::Init(unk32 param1) {
     this->mUnk_B8 = this->mUnk_5C.mParams[0];
 
     UnkStruct_ov031_02112ad4 local_9c(ActorId_MLCK, this->mUnk_5C.mParams[0]);

@@ -19,7 +19,7 @@ ActorProfileUnkRMTG::ActorProfileUnkRMTG() :
 ActorUnkRMTG::ActorUnkRMTG() :
     mUnk_94(NULL) {}
 
-bool ActorUnkRMTG::vfunc_18(unk32 param1) {
+bool ActorUnkRMTG::Init(unk32 param1) {
     this->mPos.x -= FLOAT_TO_FX32(0.5f);
     this->mPos.z -= FLOAT_TO_FX32(0.5f);
 
@@ -38,7 +38,7 @@ bool ActorUnkRMTG::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorUnkRMTG::vfunc_1C() {
+void ActorUnkRMTG::Setup() {
     UnkStruct_027e09bc_0C *data = data_027e09bc->mUnk_04[2];
     data->func_ov000_0207834c(&this->mPos, func_ov000_02077590(0x7), 0x0);
 }

@@ -38,7 +38,7 @@ public:
 
     ActorUnkSCCN();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 18 */ virtual bool Init(unk32 param1) override;
 };
 
 class ActorProfileUnkSCCN : public ActorProfile {

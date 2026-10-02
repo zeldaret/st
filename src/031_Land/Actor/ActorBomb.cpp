@@ -145,7 +145,7 @@ ActorBomb::ActorBomb() :
 
 void ActorBomb::func_ov031_020e17f4() {}
 
-bool ActorBomb::vfunc_18(unk32 param1) {
+bool ActorBomb::Init(unk32 param1) {
     Cylinder *profileCylinder = &this->mpProfile->mUnk_04;
 
     this->mUnk_154.pos  = profileCylinder->pos;
@@ -215,7 +215,7 @@ void ActorBomb::func_ov031_020e193c() {
     }
 }
 
-void ActorBomb::vfunc_20() {
+void ActorBomb::Update() {
     this->mUnk_3C = &this->mUnk_134;
 
     CALL_PTMF(PTMF<ActorBomb>, data_ov031_02112c00[this->mState]);

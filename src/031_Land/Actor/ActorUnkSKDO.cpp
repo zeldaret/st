@@ -19,11 +19,11 @@ ActorProfileUnkSKDO::ActorProfileUnkSKDO() :
 ActorUnkSKDO::ActorUnkSKDO() :
     mUnk_98(NULL) {}
 
-bool ActorUnkSKDO::vfunc_18(unk32 param1) {
+bool ActorUnkSKDO::Init(unk32 param1) {
     return true;
 }
 
-void ActorUnkSKDO::vfunc_1C() {
+void ActorUnkSKDO::Setup() {
     ActorUnkSKDO_ov031_02115ce8 stack(MapObjectId_SKDI);
     stack.mUnk_08 = this->mPos;
     stack.mUnk_14 = FLOAT_TO_FX32(2.0f);
@@ -35,7 +35,7 @@ void ActorUnkSKDO::vfunc_1C() {
     }
 }
 
-void ActorUnkSKDO::vfunc_20() {
+void ActorUnkSKDO::Update() {
     unk32 var2 = 0x0;
     if (this->mUnk_98->vfunc_40() == 0x2) {
         var2 = 0x1;

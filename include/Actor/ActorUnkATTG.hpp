@@ -20,8 +20,8 @@ public:
 
     ActorUnkATTG();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20() override;
+    /* 18 */ virtual bool Init(unk32 param1) override;
+    /* 20 */ virtual void Update() override;
     /* 24 */ virtual void vfunc_24() override;
     void func_ov031_020f3eec(ActorState state, unk32 param2);
     bool func_ov031_020f4014();

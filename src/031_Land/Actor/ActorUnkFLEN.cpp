@@ -18,7 +18,7 @@ ActorProfileUnkFLEN::ActorProfileUnkFLEN() :
 ActorUnkFLEN::ActorUnkFLEN() :
     mUnk_94(0) {}
 
-bool ActorUnkFLEN::vfunc_18(int param1) {
+bool ActorUnkFLEN::Init(int param1) {
     this->mUnk_94 = this->mUnk_5C.mParams[1];
 
     if (this->mUnk_5C.mParams[1] >= (s16) 0x2) {
@@ -33,7 +33,7 @@ bool ActorUnkFLEN::vfunc_18(int param1) {
     return true;
 }
 
-void ActorUnkFLEN::vfunc_20() {
+void ActorUnkFLEN::Update() {
     this->IsTimerOut();
 
     switch (this->mState) {

@@ -31,8 +31,8 @@ ActorUnkRMSV::ActorUnkRMSV() :
     mUnk_158(&mUnk_94, GET_PROFILE(ActorProfileUnkRMSV)->vfunc_04()),
     mUnk_1D4(&mUnk_94, GET_PROFILE(ActorProfileUnkRMSV)->vfunc_04()) {}
 
-bool ActorUnkRMSV::vfunc_18(unk32 param1) {
-    bool res = ActorUnkRMSBase::vfunc_18(param1);
+bool ActorUnkRMSV::Init(unk32 param1) {
+    bool res = ActorUnkRMSBase::Init(param1);
     this->mUnk_158.func_ov000_02099ff8(data_ov063_021632ac, 0x1000);
     func_ov000_02099e58(&this->mUnk_1D4, data_ov063_021632c4, 0x1000);
     this->mUnk_1D4.vfunc_3C();
@@ -43,13 +43,13 @@ void UnkStruct_ov063_021632e4::vfunc_3C() {
     mUnk_08->func_ov000_02057c98(this->vfunc_10());
 }
 
-void ActorUnkRMSV::vfunc_20(void) {
+void ActorUnkRMSV::Update(void) {
     this->mUnk_158.vfunc_34();
     this->mUnk_1D4.vfunc_34();
 }
 
 void ActorUnkRMSV::vfunc_24(void) {
-    this->vfunc_20();
+    this->Update();
 }
 
 G3d_Model *ActorUnkRMSV::vfunc_54(void) {

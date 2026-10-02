@@ -113,7 +113,7 @@ ActorSpinut::ActorSpinut() :
 
 ActorSpinut::~ActorSpinut() {}
 
-bool ActorSpinut::vfunc_18(unk32 param1) {
+bool ActorSpinut::Init(unk32 param1) {
     if (this->Actor::func_ov000_02098a60(0x1)) {
         this->func_ov000_020984d0();
         return true;
@@ -130,7 +130,7 @@ bool ActorSpinut::vfunc_18(unk32 param1) {
 }
 
 // non-matching
-void ActorSpinut::vfunc_1C() {
+void ActorSpinut::Setup() {
     if (this->mUnk_5C.mParams[0] == 0x2) {
         this->mUnk_294 = false;
         Actor *actor   = func_02016fbc(ActorId_Soldier, &this->mPos, 0x0);
@@ -174,7 +174,7 @@ void ActorSpinut::SetState(ActorState state) {
     CALL_PTMF(PTMF<ActorSpinut>, data_ov032_02122348[this->mState]);
 }
 
-void ActorSpinut::vfunc_20() {
+void ActorSpinut::Update() {
     if (!this->Actor_Derived2::func_ov017_020bef4c(0x4000) && mUnk_48 != 0) {
         bool var_r1 = true;
         bool var_r2 = true;

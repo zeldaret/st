@@ -13,8 +13,8 @@ public:
 
     ActorUnkRMTG();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C() override;
+    /* 18 */ virtual bool Init(unk32 param1) override;
+    /* 1C */ virtual void Setup() override;
     /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
 };
 

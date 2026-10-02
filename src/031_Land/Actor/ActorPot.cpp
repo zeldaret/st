@@ -42,8 +42,8 @@ ActorProfilePot::ActorProfilePot() :
 ActorPot::ActorPot() :
     mUnk_110(G3d_GetModelPtr(data_ov000_020b5d34.GetProfileFromId(MapObjectId_Pot)->vfunc_04()->mUnk_50), 0x01) {}
 
-bool ActorPot::vfunc_18(unk32 param1) {
-    Actor_ov031_02113fd4::vfunc_18(param1);
+bool ActorPot::Init(unk32 param1) {
+    Actor_ov031_02113fd4::Init(param1);
 
     this->vfunc_5C(ActorPotState_0);
 
@@ -59,7 +59,7 @@ void ActorPot::vfunc_5C(ActorState state) {
     CALL_PTMF(PTMF<ActorPot>, data_ov031_02114060[this->mState]);
 }
 
-void ActorPot::vfunc_20() {
+void ActorPot::Update() {
     CALL_PTMF(PTMF<ActorPot>, data_ov031_021140a0[this->mState]);
 }
 

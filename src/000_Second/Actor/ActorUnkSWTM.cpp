@@ -29,7 +29,7 @@ ActorUnkSWTM::~ActorUnkSWTM() {
 }
 
 // https://decomp.me/scratch/qkP8m
-bool ActorUnkSWTM::vfunc_18(unk32 param1) {
+bool ActorUnkSWTM::Init(unk32 param1) {
     this->mUnk_9E = this->mUnk_5C.mUnk_1A[1];
     this->mUnk_98 = this->mUnk_5C.mParams[2];
     this->mUnk_A4 = this->mUnk_5C.mParams[1] * 30;
@@ -46,7 +46,7 @@ bool ActorUnkSWTM::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorUnkSWTM::vfunc_20(void) {
+void ActorUnkSWTM::Update(void) {
     switch (this->mState) {
         case ActorUnkSWTMState_0:
             if (!this->func_ov000_0209afe4()) {

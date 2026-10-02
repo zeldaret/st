@@ -169,7 +169,7 @@ ActorShotArrow::~ActorShotArrow() {
     }
 }
 
-bool ActorShotArrow::vfunc_18(unk32 param1) {
+bool ActorShotArrow::Init(unk32 param1) {
     fx32 sin_value = SIN((u16) this->mAngle);
     fx32 cos_value = COS((u16) this->mAngle);
 
@@ -256,7 +256,7 @@ static PTMF<ActorShotArrow> data_ov031_02114300[ActorShotArrowState_Max] = {
     ActorShotArrow::func_ov031_020f1958  // ActorShotArrowState_7
 };
 
-void ActorShotArrow::vfunc_20() {
+void ActorShotArrow::Update() {
     this->mUnk_3C = &this->mUnk_140;
     CALL_PTMF(PTMF<ActorShotArrow>, data_ov031_02114300[this->mState]);
 

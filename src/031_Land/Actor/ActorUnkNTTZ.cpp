@@ -21,11 +21,11 @@ ActorUnkNTTZ::ActorUnkNTTZ() :
     this->func_ov000_0209862c(0x0);
 }
 
-bool ActorUnkNTTZ::vfunc_18(unk32 param1) {
+bool ActorUnkNTTZ::Init(unk32 param1) {
     return true;
 }
 
-void ActorUnkNTTZ::vfunc_20() {}
+void ActorUnkNTTZ::Update() {}
 
 void ActorUnkNTTZ::vfunc_2C(Actor_vfunc_30 *param1) {}
 

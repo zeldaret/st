@@ -20,7 +20,7 @@ ActorProfileUnkSWOB::ActorProfileUnkSWOB() :
 
 ActorUnkSWOB::ActorUnkSWOB() {}
 
-bool ActorUnkSWOB::vfunc_18(unk32 param1) {
+bool ActorUnkSWOB::Init(unk32 param1) {
     this->mUnk_9E = this->mUnk_5C.mUnk_1A[1];
     this->mUnk_94 = this->mUnk_5C.mParams[1];
     this->mUnk_98 = this->mUnk_5C.mParams[2];

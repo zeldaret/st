@@ -20,8 +20,8 @@ public:
 
     ActorUnkFLEN();
 
-    /* 18 */ virtual bool vfunc_18(int param1) override;
-    /* 20 */ virtual void vfunc_20() override;
+    /* 18 */ virtual bool Init(int param1) override;
+    /* 20 */ virtual void Update() override;
 
     void SetState(ActorState state);
     bool func_ov031_020f81f8();

@@ -93,10 +93,10 @@ public:
 
     /// (Actor)
     // overlay 31
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 18 */ virtual bool Init(unk32 param1) override;
 
     // overlay 102
-    /* 20 */ virtual void vfunc_20() override;
+    /* 20 */ virtual void Update() override;
     /* 24 */ virtual void vfunc_24() override;
 
     /// (FileSelectManager_UnkDrawBase)

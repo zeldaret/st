@@ -58,7 +58,7 @@ ActorItemTornado::ActorItemTornado() :
     this->mTimer    = 0x0;
 }
 
-bool ActorItemTornado::vfunc_18(unk32 param1) {
+bool ActorItemTornado::Init(unk32 param1) {
     u16 tmp = (u16) this->mAngle;
 
     this->mUnk_44 = 0x1F;
@@ -219,7 +219,7 @@ void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
         this->mUnk_1CC = 0x1;
     }
 }
-void ActorItemTornado::vfunc_20() {
+void ActorItemTornado::Update() {
     this->func_ov031_020e5d18(0x0);
 }
 

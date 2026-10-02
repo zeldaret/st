@@ -97,7 +97,7 @@ ActorRupee::ActorRupee() :
 }
 
 // https://decomp.me/scratch/wunA4
-bool ActorRupee::vfunc_18(unk32 param1) {
+bool ActorRupee::Init(unk32 param1) {
     if (this->func_ov031_020e9d54()) {
         this->mUnk_30 = &data_ov031_02113478;
         this->mUnk_34 = &data_ov031_02113478;
@@ -557,7 +557,7 @@ extern "C" void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
 extern "C" void func_02018114(unk16 *, unk32);
 
 // non-matching
-void ActorRupee::vfunc_20() {
+void ActorRupee::Update() {
     short sVar1;
     unk16 uVar2;
     unk16 uVar3;

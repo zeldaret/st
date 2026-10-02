@@ -21,7 +21,7 @@ ActorUnkOBPC::ActorUnkOBPC() :
     mUnk_98(0),
     mUnk_9C(0) {}
 
-bool ActorUnkOBPC::vfunc_18(unk32 param1) {
+bool ActorUnkOBPC::Init(unk32 param1) {
     this->mUnk_94 = this->mUnk_5C.mParams[1];
     this->mUnk_98 = this->mUnk_5C.mParams[3];
 
@@ -42,7 +42,7 @@ bool ActorUnkOBPC::func_ov024_020d6f74(void) {
     return false;
 }
 
-void ActorUnkOBPC::vfunc_20(void) {
+void ActorUnkOBPC::Update(void) {
     switch (this->mState) {
         case 0:
             if (this->func_ov024_020d7154()) {
@@ -68,7 +68,7 @@ void ActorUnkOBPC::vfunc_20(void) {
 }
 
 void ActorUnkOBPC::vfunc_24(void) {
-    this->vfunc_20();
+    this->Update();
 }
 
 void ActorUnkOBPC::SetState(ActorState state, int param2) {

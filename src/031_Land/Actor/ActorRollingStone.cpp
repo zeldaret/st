@@ -116,7 +116,7 @@ ActorRollingStone::ActorRollingStone() :
     this->mUnk_38->mUnk_08 = 0x3;
 }
 
-bool ActorRollingStone::vfunc_18(unk32 param1) {
+bool ActorRollingStone::Init(unk32 param1) {
     this->mUnk_13C.Init(FLOAT_TO_FX32(0.8f));
 
     if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_f_flame) {
@@ -152,7 +152,7 @@ bool ActorRollingStone::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorRollingStone::vfunc_20() {
+void ActorRollingStone::Update() {
     this->IsTimerOut();
 
     CALL_PTMF(PTMF<ActorRollingStone>, data_ov031_02114a94[this->mState]);

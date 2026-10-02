@@ -90,7 +90,7 @@ ActorHeart::ActorHeart() :
     }
 }
 
-bool ActorHeart::vfunc_18(unk32 param1) {
+bool ActorHeart::Init(unk32 param1) {
     this->func_ov031_020ef4a8();
     return true;
 }
@@ -105,7 +105,7 @@ static PTMF<ActorHeart> data_ov031_02113d74[ActorHeartState_Max] = {
 };
 
 // non-matching
-void ActorHeart::vfunc_20() {
+void ActorHeart::Update() {
     UnkStruct_ov031_020eeee8 stack;
 
     stack.mUnk_02 = 0;

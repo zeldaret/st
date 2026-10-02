@@ -23,7 +23,7 @@ ActorUnkEFIK::ActorUnkEFIK() :
     this->mUnk_A0 = 0;
 }
 
-bool ActorUnkEFIK::vfunc_18(unk32 param1) {
+bool ActorUnkEFIK::Init(unk32 param1) {
     this->mUnk_9C = 0x86F;
     this->mUnk_A0 = 4;
     this->mUnk_98.func_ov000_020a0334();
@@ -31,7 +31,7 @@ bool ActorUnkEFIK::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorUnkEFIK::vfunc_20() {
+void ActorUnkEFIK::Update() {
     if (this->mUnk_94 != 0) {
         return;
     }
@@ -81,7 +81,7 @@ void ActorUnkEFIK::vfunc_20() {
 }
 
 void ActorUnkEFIK::vfunc_24() {
-    this->vfunc_20();
+    this->Update();
 }
 
 void ActorUnkEFIK::vfunc_54(unk32 param1) {

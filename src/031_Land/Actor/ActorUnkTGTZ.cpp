@@ -61,7 +61,7 @@ ActorUnkTGTZ::ActorUnkTGTZ() :
 void ActorUnkTGTZ::func_ov031_020f6984() {}
 
 // non-matching
-bool ActorUnkTGTZ::vfunc_18(unk32 param1) {
+bool ActorUnkTGTZ::Init(unk32 param1) {
     if (this->mUnk_5C.mUnk_1A[0] != 0x0) {
         this->mPos.y = MUL_FX32(this->mUnk_5C.mUnk_1A[0] << 0xC, 0x1333);
     }
@@ -97,7 +97,7 @@ bool ActorUnkTGTZ::vfunc_18(unk32 param1) {
 }
 
 // non-matching
-void ActorUnkTGTZ::vfunc_20() {
+void ActorUnkTGTZ::Update() {
     switch (this->mUnk_1B8) {
         case 0x0:
             if (!this->func_ov000_02098a60(0x0)) {
@@ -217,7 +217,7 @@ void ActorUnkTGTZ::vfunc_20() {
 }
 
 void ActorUnkTGTZ::vfunc_24() {
-    this->vfunc_20();
+    this->Update();
 }
 
 void ActorUnkTGTZ::func_ov031_020f6e5c(ActorRef param1) {

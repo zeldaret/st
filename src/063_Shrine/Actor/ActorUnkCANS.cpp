@@ -178,7 +178,7 @@ ActorUnkCANS::ActorUnkCANS() :
     mUnk_270 *= mUnk_276;
 }
 
-bool ActorUnkCANS::vfunc_18(unk32 param1) {
+bool ActorUnkCANS::Init(unk32 param1) {
     this->mUnk_0B0.func_ov000_02057c38(6, 2);
     this->mUnk_0B0.func_ov000_0209a7b8(this, (UnkSystem4_UnkCallback) ActorUnkCANS::func_ov063_0215a678);
 
@@ -191,7 +191,7 @@ bool ActorUnkCANS::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorUnkCANS::vfunc_1C(void) {
+void ActorUnkCANS::Setup(void) {
     mUnk_26C = mUnk_5C.mInitialAngle;
 
     s16 var;
@@ -238,12 +238,12 @@ void ActorUnkCANS::func_ov063_02158490(void) {
 
 void ActorUnkCANS::vfunc_24(void) {
     if (data_027e09b8->HasAdventureFlag(AdventureFlag_VisitedIslandSanctuaryFirstTime)) {
-        this->vfunc_20();
+        this->Update();
     }
 }
 
 // non-matching
-void ActorUnkCANS::vfunc_20(void) {
+void ActorUnkCANS::Update(void) {
     if (mUnk_238 < mUnk_23A) {
         mUnk_238++;
     }

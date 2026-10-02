@@ -22,7 +22,7 @@ void func_ov001_020bff1c(void) {
 }
 
 void Actor_Derived1::func_ov001_020bff2c(void) {
-    this->Actor_Derived1::vfunc_1C();
+    this->Actor_Derived1::Setup();
 }
 
 void ActorUnkLBCK::func_ov001_020bff34() {
