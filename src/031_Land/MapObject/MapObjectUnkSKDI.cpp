@@ -191,8 +191,7 @@ void MapObjectUnkSKDI::func_ov031_0210643c(unk32 param1) {
                 }
             }
 
-            unk32 max = this->mUnk_0F8.max;
-            if (max != 0 && this->mUnk_0F8.GetValue() >= max) {
+            if (this->mUnk_0F8.max != 0 && this->mUnk_0F8.GetValueU() >= this->mUnk_0F8.max) {
                 this->func_ov031_02106678(MapObjUnkSKDIState_0, 0x0);
                 this->mUnk_0F8.Init();
             }

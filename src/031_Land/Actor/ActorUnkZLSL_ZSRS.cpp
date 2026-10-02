@@ -1312,7 +1312,6 @@ void ActorUnkZLSL::GetOffsetPos(VecFx32 *pPos) const {
     VecFx32_Init(this->mUnk_2878.x, this->mUnk_2878.y + this->mYOffset, this->mUnk_2878.z, pPos);
 }
 
-// non-matching
 void ActorUnkZLSL::vfunc_A4() {
     VecFx32 sp0C;
     if ((this->mUnk_0B0 & 0x10) || !this->func_ov000_020a8ff4(&sp0C)) {
@@ -1324,7 +1323,9 @@ void ActorUnkZLSL::vfunc_A4() {
     sp00.y       = sp00.y + this->mYOffset - FLOAT_TO_FX32(0.5f);
     func_01ffb714(&sp0C, &sp00, &sp0C);
 
-    s16 var_r4 = this->mAngle.angle_s - func_01ffbbe0(sp0C.x, sp0C.z);
+    int angle  = this->mAngle.angle_s;
+    int temp   = func_01ffbbe0(sp0C.x, sp0C.z);
+    s16 var_r4 = (angle - (s16) temp);
 
     this->mUnk_0E8.Update();
 
@@ -1334,34 +1335,19 @@ void ActorUnkZLSL::vfunc_A4() {
     }
 
     if ((var_r0 <= 0x4000 && func_01ff9258(sp0C.x, sp0C.z) < 0x2000) || this->mUnk_0B0 & 1) {
-        if (var_r4 >= 0x2AAB) {
-            var_r4 = 0x2AAB;
-        } else if (var_r4 <= -0x2AAB) {
-            var_r4 = -0x2AAB;
-        }
+        int clamped1 = CLAMP3(var_r4, -0x2AAB, 0x2AAB);
 
-        u16 temp_r0_2 = (u16) func_01ffbbe0(sp0C.y, func_01ff9258(sp0C.x, sp0C.z));
-        s16 var_r2    = temp_r0_2;
+        int temp_r0_2 = func_01ffbbe0(sp0C.y, func_01ff9258(sp0C.x, sp0C.z));
+        int clamped2  = CLAMP3((s16) temp_r0_2, -0x18E4, 0x18E4);
 
-        if (temp_r0_2 <= 0x18E4) {
-            var_r2 = 0x18E4;
-        } else if (var_r2 <= -0x18E4) {
-            var_r2 = -0x18E4;
-        }
-
-        this->mUnk_0CC = (s16) var_r4;
-        this->mUnk_0CE = var_r2;
+        this->mUnk_0CC = clamped1;
+        this->mUnk_0CE = clamped2;
         this->mUnk_0E8.Set(0, 50);
-    } else if (this->mUnk_0E8.HasReachedMax()) {
+    } else if (this->mUnk_0E8.HasReachedMaxU()) {
         this->mUnk_0CE = 0x0;
         this->mUnk_0CC = 0x0;
-    } else {
-        if ((s32) var_r4 < 0x0) {
-            var_r4 = 0 - var_r4;
-        }
-        if ((s32) var_r4 >= 0x71C7) {
-            this->mUnk_0D0 = 0x0;
-        }
+    } else if (ABS(var_r4) >= 0x71C7) {
+        this->mUnk_0D0 = 0x0;
     }
 
     func_01ff916c(&this->mUnk_0D0, 0x1EC, 0x19);

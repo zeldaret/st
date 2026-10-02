@@ -21,6 +21,7 @@ MapObject *MapObjectProfilePot::Create() {
     return new(HeapIndex_ITCM) MapObjectPot();
 }
 
+// non-matchhing
 MapObjectProfilePot::MapObjectProfilePot() :
     MapObjectProfilePot_Base(MapObjectId_Pot, MapObjectId_Pot) {
     this->mUnk_0E         = 0x0;
@@ -42,7 +43,6 @@ ModelRender_ov000_020b198c::ModelRender_ov000_020b198c(G3d_Model *pModel, unk8 p
     this->vfunc_08(pModel);
 }
 
-// non-matching
 MapObjectPot::MapObjectPot() :
     mUnk_48(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfilePot)), 0x1) {
     this->mUnk_40 = ActorId_NTUB;
@@ -79,7 +79,7 @@ bool MapObjectPot::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
             if (data_027e0d38->func_ov031_020d9c04(0x1, 0x0, 0x0)) {
                 Actor *actor = gpActorManager->func_01fff3b4(param1);
                 if (actor != NULL) {
-                    this->mAngle = actor->mAngle;
+                    this->mAngle.angle_s = actor->mAngle.angle_s;
                     this->SetState(0x3, 0x0);
                     break;
                 }

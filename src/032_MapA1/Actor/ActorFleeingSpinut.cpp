@@ -291,7 +291,7 @@ void ActorFleeingSpinut::func_ov032_0211bf84() {
 
 void ActorFleeingSpinut::func_ov032_0211bffc() {
     if (this->func_ov032_0211ca20()) {
-        if (this->mTimer.HasReachedMax()) {
+        if (this->mTimer.HasReachedMaxU()) {
             this->SetState(ActorFleeingSpinutState_1);
         } else {
             this->SetState(ActorFleeingSpinutState_4);

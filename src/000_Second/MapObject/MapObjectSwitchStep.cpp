@@ -81,8 +81,8 @@ void MapObjectSwitchStep_40::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
 }
 
 MapObjectSwitchStep::MapObjectSwitchStep() :
-    mUnk_A4(&mUnk_C4, NULL) {
-    this->mUnk_E4.Init();
+    mUnk_A4(&mUnk_C4, NULL),
+    mUnk_E4(0, 0) {
     this->mUnk_E8 = 0;
     this->mUnk_EA = 0;
     this->mUnk_EB = 0;

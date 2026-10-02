@@ -34,9 +34,10 @@ extern "C" void func_ov017_020c2438(unk32 *, unk32, VecFx32 *, unk32, unk32);
 extern "C" void func_ov017_020c26f8(unk32, VecFx32 *, unk32, unk32);
 
 static const VecFx32 data_ov032_02122160(FLOAT_TO_FX32(1.7f), FLOAT_TO_FX32(0.5f), FLOAT_TO_FX32(1.7f));
-static ActorUnkZLSL_AnimationTag data_ov032_02122184               = {.index = 0, .name = "walk", .unknown = 0x0};
-static ActorUnkZLSL_AnimationTag data_ov032_0212219c               = {.index = 1, .name = "discover", .unknown = 0x1};
-static ActorUnkZLSL_AnimationTag data_ov032_0212216c               = {.index = 0, .name = "KURI", .unknown = 0x1};
+static ActorUnkZLSL_AnimationTag data_ov032_02122184 = {.index = 0, .name = "walk", .unknown = 0x0};
+static ActorUnkZLSL_AnimationTag data_ov032_0212219c = {.index = 1, .name = "discover", .unknown = 0x1};
+static ActorUnkZLSL_AnimationTag data_ov032_0212216c = {.index = 0, .name = "KURI", .unknown = 0x1};
+
 static PTMF<ActorSpinut> data_ov032_02122288[ActorSpinutState_Max] = {
     &ActorSpinut::func_ov032_02119a0c, // ActorSpinutState_0
     &ActorSpinut::func_ov032_02119c80, // ActorSpinutState_1
@@ -51,6 +52,7 @@ static PTMF<ActorSpinut> data_ov032_02122288[ActorSpinutState_Max] = {
     &ActorSpinut::func_ov032_0211ac94, // ActorSpinutState_10
     &ActorSpinut::func_ov032_0211adf4  // ActorSpinutState_11
 };
+
 static PTMF<ActorSpinut> data_ov032_02122348[ActorSpinutState_Max] = {
     &ActorSpinut::func_ov032_02119990, // ActorSpinutState_0
     &ActorSpinut::func_ov032_02119be8, // ActorSpinutState_1
@@ -96,10 +98,11 @@ ActorSpinut::ActorSpinut() :
 
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_288);
 
-    Actor_38 *actor_38 = &this->mUnk_258.mUnk_00;
-    actor_38->mUnk_08  = 0x1;
-    this->mUnk_38      = actor_38;
-    this->mUnk_296.Set(0, 0);
+    this->mUnk_38          = &this->mUnk_258.mUnk_00;
+    this->mUnk_38->mUnk_08 = 0x01;
+
+    this->mUnk_296.value = 0;
+    this->mUnk_296.max   = 0;
 
     VecFx32_Init(FLOAT_TO_FX32(1.0f), FLOAT_TO_FX32(1.0f), FLOAT_TO_FX32(1.0f), &this->mUnk_27C);
 
@@ -598,7 +601,7 @@ void ActorSpinut::func_ov032_0211a86c() {
         return;
     }
 
-    if (!this->mUnk_248.mUnk_08.HasReachedMax()) {
+    if (!this->mUnk_248.mUnk_08.HasReachedMaxU()) {
         this->SetState(ActorSpinutState_7);
         return;
     }
@@ -737,7 +740,7 @@ void ActorSpinut::func_ov032_0211adf4() {
 
             data_027e0cec->func_ov000_0209feac(0x880, &this->mPos, 0x2, 0x0, 0x0);
             this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
-            if (this->func_ov032_0211b064(0x0) || (this->mUnk_294 && this->mTimer.HasReachedMax())) {
+            if (this->func_ov032_0211b064(0x0) || (this->mUnk_294 && this->mTimer.HasReachedMaxU())) {
                 this->SetState(ActorSpinutState_1);
                 return;
             }

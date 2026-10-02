@@ -335,19 +335,20 @@ void ActorRollingStone::func_ov031_020f8de8() {
     switch (this->mUnk_AC.mUnk_1C) {
         case 0x4:
             data_027e0d38->func_ov031_020d9c44(0x4);
-            return;
+            break;
         case 0xC:
-            if (!this->mUnk_154.HasReachedMax()) {
+            if (!this->mUnk_154.HasReachedMaxU()) {
                 return;
             }
+
             this->mUnk_154.Set(0, 20);
         case 0x8:
         case 0xD:
             this->func_ov017_020bfb18(&this->mUnk_AC);
-            return;
+            break;
         case 0x1:
             this->SetState(ActorRollingStoneState_6);
-            return;
+            break;
         case 0x0:
         case 0x2:
         case 0x3:
@@ -359,7 +360,7 @@ void ActorRollingStone::func_ov031_020f8de8() {
         case 0xB:
         case 0xE:
         case 0xF:
-            return;
+            break;
     }
 }
 

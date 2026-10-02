@@ -36,6 +36,11 @@ struct Timer {
         this->value = value;
     }
 
+    void SetAlt(u16 value, u16 max) {
+        this->value = value;
+        this->max   = max;
+    }
+
     void Init() {
         this->Set(0, 0);
     }
@@ -59,6 +64,14 @@ struct Timer {
 
     int GetValue() {
         return this->value;
+    }
+
+    u32 GetValueU() {
+        return this->value;
+    }
+
+    int GetMax() {
+        return this->max;
     }
 
     bool Test(u16 value) {

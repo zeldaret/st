@@ -624,7 +624,7 @@ void ActorUnkCANS::func_ov063_02159258(void) {
 
     if (!mUnk_270 && this->func_ov063_0215a514()) {
         this->func_ov063_02158448(8);
-    } else if (!mUnk_270 && this->mUnk_238.HasReachedMax() && this->func_ov063_0215a474()) {
+    } else if (!mUnk_270 && this->mUnk_238.HasReachedMaxU() && this->func_ov063_0215a474()) {
         this->func_ov063_02158448(6);
     } else if (!this->func_ov063_0215a2c0()) {
         this->func_ov063_02158448(1);
@@ -1214,6 +1214,7 @@ bool UnkStruct_ov063_02162ea8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, 
             }
         }
     }
+
     return UnkStruct_027e0ce0_38_Base::vfunc_0C((const UnkStruct_ov031_020e54d4 *) param2Struct->mUnk_04, param2,
                                                 param2Struct->mUnk_04);
 }

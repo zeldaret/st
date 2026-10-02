@@ -475,7 +475,6 @@ void ActorKeese::func_ov032_0211f300() {
     this->mUnk_248.func_ov000_02097bec();
 }
 
-// non-matching (270 + 2)
 void ActorKeese::func_ov032_0211f310() {
     this->Actor_Derived2::func_ov000_020992dc();
 
@@ -483,7 +482,9 @@ void ActorKeese::func_ov032_0211f310() {
         if (this->mUnk_48 <= 0x0) {
             this->vfunc_54(0x0);
         } else {
-            if (this->mUnk_268.mUnk_08.HasReachedMax()) {
+            Timer *pTimer = &this->mUnk_268.mUnk_08;
+
+            if (pTimer->HasReachedMaxU()) {
                 this->func_ov032_0211e380();
             } else {
                 this->SetState(ActorKeeseState_6);

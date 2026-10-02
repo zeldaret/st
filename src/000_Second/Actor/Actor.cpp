@@ -13,7 +13,7 @@ Actor::Actor() {
     this->mUnk_40 = 0;
     this->mUnk_48 = 4;
     this->mState  = ActorState_None;
-    this->mTimer.Init();
+    this->mTimer.SetAlt(0, 0);
     this->mUnk_54 = 0;
     this->ResetFlags();
     this->mUnk_5C.mUnk_28 = 0;

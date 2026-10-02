@@ -343,8 +343,8 @@ bool MapObjectUnkSWSW::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) 
                 }
 
                 UnkAngleStruct angle;
-                angle        = actorNSSW->mAngle;
-                VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
+                angle.angle_s = actorNSSW->mAngle.angle_s;
+                VecFx32 *vec  = data_027e0ce0->func_01fff148(0x0);
 
                 if (!func_02016ae0(&actorNSSW->mPos, vec, angle, 0x2AAB, 0x1)) {
                     return false;

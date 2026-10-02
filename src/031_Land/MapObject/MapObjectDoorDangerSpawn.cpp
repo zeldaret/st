@@ -41,8 +41,8 @@ MapObjectDoorDangerSpawn::MapObjectDoorDangerSpawn() :
     mUnk_A2(false),
     mUnk_A3(0),
     mUnk_A4(-1),
-    mUnk_A8(NULL) {
-    this->mUnk_AC.Init();
+    mUnk_A8(NULL),
+    mUnk_AC(0, 0) {
     this->mUnk_89 = true;
 }
 
