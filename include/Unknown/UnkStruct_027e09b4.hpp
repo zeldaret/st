@@ -26,9 +26,15 @@ public:
     static void Destroy();
 
     // overlay 17
-    void func_ov017_020c08c4(VecFx32 *param1, unk32 param2, unk32 param3, s32 param4, s32 param5, s32 param6);
-    void func_ov017_020c0970(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6,
+    bool func_ov017_020c08c4(const VecFx32 *param1, unk32 param2, unk32 param3, s32 param4, s16 param5, u8 param6);
+    void func_ov017_020c0970(const VecFx32 *param1, unk32 param2, unk32 param3, u16 param4, u16 param5, u32 param6,
                              fx32 param7);
+    void func_ov017_020c0a30(const VecFx32 *param1, unk32 param2, unk32 param3, u16 param4, u16 param5);
+    void func_ov017_020c0a6c(const VecFx32 *param1, s32 param2, s32 param3, s32 param4, u16 param5, u16 param6, s32 param7,
+                             u16 param8);
+
+    static void func_ov017_020c0774(s32 param1, s32 param2, s32 param3, s32 param4);
+    static s32 func_ov017_020c08a4(void);
 };
 
 extern UnkStruct_027e09b4 *data_027e09b4;

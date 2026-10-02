@@ -34,13 +34,18 @@ inline void G3_TexPlttBase(u32 addr, GXTexFmt fmt) {
     REG_GFX_FIFO_TEXTURE_PALETTE = addr >> (4 - (fmt == 2));
 }
 
-inline void G3_PolygonAttr(u32 lightMask, u32 polygonMode, u32 cull, u32 id, u32 alpha, u32 param6) {
-    // Unclear where lightMask, cull and param6 should go
-    // xxIIIIII_xxxAAAAA_xxxxxxxx_PPxxxxxx
+inline void G3_PolygonAttr(u32 id, u32 alpha, u32 useFog, u32 renderFront, u32 renderBack, u32 polygonMode, u32 lightMask) {
+    // uuIIIIII_uuuAAAAA_uuufuuuu_FBPPLLLL (based on gbatek)
     // I: id
     // A: alpha
+    // f: useFog
+    // F: renderFront
+    // B: renderBack
     // P: polygonMode
-    REG_GFX_FIFO_POLYGON_ATTR = (id << 0x18) | (polygonMode << 0x6) | (alpha << 0x10);
+    // L: lightMask
+    // u: unused (TODO: determine if those bits are truly unused)
+    REG_GFX_FIFO_POLYGON_ATTR = (id << 0x18) | (useFog << 0x0F) | (renderFront << 0x07) | (renderBack << 0x06) |
+                                (polygonMode << 0x04) | (alpha << 0x10) | lightMask;
 }
 
 inline void G3_PushMtx(void) {
@@ -50,6 +55,11 @@ inline void G3_Translate(fx32 x, fx32 y, fx32 z) {
     REG_GFX_FIFO_MATRIX_TRANSLATE = x;
     REG_GFX_FIFO_MATRIX_TRANSLATE = y;
     REG_GFX_FIFO_MATRIX_TRANSLATE = z;
+}
+inline void G3_Scale(fx32 x, fx32 y, fx32 z) {
+    REG_GFX_FIFO_MATRIX_SCALE = x;
+    REG_GFX_FIFO_MATRIX_SCALE = y;
+    REG_GFX_FIFO_MATRIX_SCALE = z;
 }
 inline void G3_ViewPort(u32 left, u32 top, u32 right, u32 bottom) {
     // Unclear how to combine the arguments
@@ -90,9 +100,12 @@ inline void G3_Direct1(u32 op, GXSt texCoord) {
             break;
     }
 }
-inline void G3_Vtx(u16 x, u16 y, u16 z) {
+inline void G3_Vtx16(u16 x, u16 y, u16 z) {
     REG_GFX_FIFO_VERTEX_16 = x | (y << 0x10);
     REG_GFX_FIFO_VERTEX_16 = z;
+}
+inline void G3_Vtx10(const u32 x, const u32 y, const u32 z) {
+    REG_GFX_FIFO_VERTEX_10 = (x & 0x3FF) | ((y & 0x3FF) << 0x0A) | ((z & 0x3FF) << 0x14);
 }
 inline void G3_End(void) {
     REG_GFX_FIFO_POLYGONS_END = 0;

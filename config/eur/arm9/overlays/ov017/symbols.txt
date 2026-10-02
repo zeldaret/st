@@ -101,12 +101,12 @@ _ZN9MapObject8vfunc_14Ei kind:function(arm,size=0x4) addr:0x020c0598
 _ZN9MapObject8vfunc_18EPc kind:function(arm,size=0x4) addr:0x020c059c
 _ZN19MapObjectSwitchStep8vfunc_08Ev kind:function(arm,size=0x1ac) addr:0x020c05a0
 _ZN19MapObjectSwitchStep8vfunc_14Ei kind:function(arm,size=0x28) addr:0x020c074c
-func_ov017_020c0774 kind:function(arm,size=0x130) addr:0x020c0774
-func_ov017_020c08a4 kind:function(arm,size=0x20) addr:0x020c08a4
-_ZN18UnkStruct_027e09b419func_ov017_020c08c4EP7VecFx32iiiii kind:function(arm,size=0xac) addr:0x020c08c4
-_ZN18UnkStruct_027e09b419func_ov017_020c0970EP7VecFx32iiiiii kind:function(arm,size=0xc0) addr:0x020c0970
-func_ov017_020c0a30 kind:function(arm,size=0x3c) addr:0x020c0a30
-func_ov017_020c0a6c kind:function(arm,size=0xb8) addr:0x020c0a6c
+_ZN18UnkStruct_027e09b419func_ov017_020c0774Eiiii kind:function(arm,size=0x130) addr:0x020c0774
+_ZN18UnkStruct_027e09b419func_ov017_020c08a4Ev kind:function(arm,size=0x20) addr:0x020c08a4
+_ZN18UnkStruct_027e09b419func_ov017_020c08c4EPK7VecFx32iiish kind:function(arm,size=0xac) addr:0x020c08c4
+_ZN18UnkStruct_027e09b419func_ov017_020c0970EPK7VecFx32iittji kind:function(arm,size=0xc0) addr:0x020c0970
+_ZN18UnkStruct_027e09b419func_ov017_020c0a30EPK7VecFx32iitt kind:function(arm,size=0x3c) addr:0x020c0a30
+_ZN18UnkStruct_027e09b419func_ov017_020c0a6cEPK7VecFx32iiittit kind:function(arm,size=0xb8) addr:0x020c0a6c
 func_ov017_020c0b24 kind:function(arm,size=0x12c) addr:0x020c0b24
 func_ov017_020c0c50 kind:function(arm,size=0x19c) addr:0x020c0c50
 func_ov017_020c0dec kind:function(arm,size=0xf0) addr:0x020c0dec
@@ -168,7 +168,7 @@ _ZN24AdventureModeManager_15C19func_ov017_020c3c64Ev kind:function(arm,size=0x40
 func_ov017_020c3ca4 kind:function(arm,size=0xf4) addr:0x020c3ca4
 func_ov017_020c3d98 kind:function(arm,size=0x28) addr:0x020c3d98
 sCargoInfos kind:data(byte[42]) addr:0x020c3dc0 local
-data_ov017_020c3dec kind:data(any) addr:0x020c3dec
+data_ov017_020c3dec kind:data(any) addr:0x020c3dec local
 __sinit_ov017_020c3e24 kind:function(arm,size=0x6c) addr:0x020c3e24
 __sinit_ov017_020c3e90 kind:function(arm,size=0x38) addr:0x020c3e90
 __sinit_ov017_020c3ec8 kind:function(arm,size=0x18) addr:0x020c3ec8
