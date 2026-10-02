@@ -71,7 +71,7 @@ void MapObjectUnkSKDI::func_ov031_021061dc() {
 }
 
 // non-matching
-bool MapObjectUnkSKDI::vfunc_00() {
+bool MapObjectUnkSKDI::Init() {
     unk32 var1;
     if (this->mUnk_20.mParams[2] == 0x1) {
         var1 = 0x1;
@@ -106,7 +106,7 @@ bool MapObjectUnkSKDI::vfunc_00() {
     return true;
 }
 
-void MapObjectUnkSKDI::vfunc_04() {
+void MapObjectUnkSKDI::Setup() {
     data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_08C.mUnk_00);
 
     if (this->mUnk_20.mParams[0] == 0x0) {

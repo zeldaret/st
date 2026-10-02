@@ -36,7 +36,7 @@ MapObject *MapObjectManager::AllocateMapObject(MapObjectId mapObjId, Vec2b param
         MapObject *pMapObj          = data_ov000_020b5d34.CreateMapObject(mapObjId);
         *ppTable                    = pMapObj;
 
-        if (pMapObj->vfunc_00()) {
+        if (pMapObj->Init()) {
             // init was successful, proceed and return the pointer
 
             // this seems to set map object table index in an array that uses tile pos to figure out which map obj it is

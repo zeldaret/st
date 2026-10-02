@@ -48,7 +48,7 @@ u16 MapObjectDoorClick::vfunc2_1C(unk32 param1) {
 }
 
 // https://decomp.me/scratch/zmw3b
-bool MapObjectDoorClick::vfunc_00(void) {
+bool MapObjectDoorClick::Init(void) {
     VecFx32 local_1c;
     VecFx32 local_28;
     VecFx32 local_40[2];

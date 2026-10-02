@@ -47,7 +47,7 @@ MapObjectDoorDangerSpawn::MapObjectDoorDangerSpawn() :
     this->mUnk_89 = true;
 }
 
-bool MapObjectDoorDangerSpawn::vfunc_00(void) {
+bool MapObjectDoorDangerSpawn::Init(void) {
     this->func_ov031_020fbf10(true, false);
     this->mUnk_78 = 0x23;
     this->mUnk_7A = 0x0F;
@@ -57,7 +57,7 @@ bool MapObjectDoorDangerSpawn::vfunc_00(void) {
     return true;
 }
 
-void MapObjectDoorDangerSpawn::vfunc_04(void) {
+void MapObjectDoorDangerSpawn::Setup(void) {
     UnkStruct_027e0cd8_0C_Base *ptr;
     VecFx32 auStack_20;
 

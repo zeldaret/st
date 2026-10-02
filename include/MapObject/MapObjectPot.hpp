@@ -13,7 +13,7 @@ public:
 
     MapObjectPot();
 
-    /* 04 */ virtual void vfunc_04() override;                                      // func_ov031_02105088
+    /* 04 */ virtual void Setup() override;                                         // func_ov031_02105088
     /* 14 */ virtual void vfunc_14(unk32 param1) override;                          // func_ov031_021052cc
     /* 1C */ virtual bool vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3); // func_ov031_021050b4
     /* 24 */ virtual void vfunc_24(MapObject *param1, VecFx32 param2) override;     // func_ov031_02105348

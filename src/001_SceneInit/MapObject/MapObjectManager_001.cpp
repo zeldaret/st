@@ -43,7 +43,7 @@ void MapObjectManager::func_ov001_020bac9c() {
         if (pMapObj != NULL) {
             // alive and uninitialized?
             if (GET_FLAG(pMapObj->mFlags, MapObjFlag_Alive) && !GET_FLAG(pMapObj->mFlags, MapObjFlag_4)) {
-                pMapObj->vfunc_04();
+                pMapObj->Setup();
                 SET_FLAG(pMapObj->mFlags, MapObjFlag_4);
             }
         }

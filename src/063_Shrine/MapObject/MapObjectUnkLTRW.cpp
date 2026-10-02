@@ -54,7 +54,7 @@ MapObjectUnkLTRW::MapObjectUnkLTRW() :
     mUnk_A6(0),
     mUnk_A8() {}
 
-bool MapObjectUnkLTRW::vfunc_00() {
+bool MapObjectUnkLTRW::Init() {
     mPos.x -= FLOAT_TO_FX32(.5f);
     mPos.z -= FLOAT_TO_FX32(.5f);
     mUnk_10 = GET_PROFILE_D4(MapObjectProfileUnkLTRW);

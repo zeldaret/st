@@ -21,8 +21,8 @@ MapObjectDoorTouch::MapObjectDoorTouch() {
     this->mUnk_18[0] = 0x0F;
 }
 
-bool MapObjectDoorTouch::vfunc_00(void) {
-    this->MapObjectDoorClick::vfunc_00();
+bool MapObjectDoorTouch::Init(void) {
+    this->MapObjectDoorClick::Init();
     this->mUnk_88 = true;
     return true;
 }

@@ -33,7 +33,7 @@ MapObjectGrass::MapObjectGrass() :
 }
 
 // non-matching
-bool MapObjectGrass::vfunc_00() {}
+bool MapObjectGrass::Init() {}
 
 void MapObjectGrass::vfunc_08() {
     MapObjState state = this->mState;

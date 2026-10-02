@@ -38,7 +38,7 @@ MapObjectUnkMTJR::MapObjectUnkMTJR() :
     mUnk_AC(-1),
     mUnk_B0(0) {}
 
-bool MapObjectUnkMTJR::vfunc_00() {
+bool MapObjectUnkMTJR::Init() {
     if (!this->func_ov000_0209d29c(0)) {
         return false;
     }

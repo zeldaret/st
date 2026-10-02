@@ -12,7 +12,7 @@ public:
 
     MapObjectDoorTouch();
 
-    /* 00 */ virtual bool vfunc_00() override;
+    /* 00 */ virtual bool Init() override;
     /* 30 */ virtual ~MapObjectDoorTouch() override;
     /* 40 */ virtual void vfunc_40() override;
     /* 44 */ virtual void vfunc_44() override;

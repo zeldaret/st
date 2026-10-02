@@ -50,7 +50,7 @@ MapObjectPot::MapObjectPot() :
     SET_FLAG(this->mFlags, MapObjFlag_8);
 }
 
-void MapObjectPot::vfunc_04() {
+void MapObjectPot::Setup() {
     this->mPos.y = INT_MAX - FLOAT_TO_FX32(1.0f);
     this->mPos.y = func_01ffe868(&this->mPos, 0x1, 0x0);
 }

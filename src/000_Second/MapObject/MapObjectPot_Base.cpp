@@ -12,7 +12,7 @@ MapObjectPot_Base::MapObjectPot_Base() {
 
 MapObjectPot_Base::~MapObjectPot_Base() {}
 
-bool MapObjectPot_Base::vfunc_00() {
+bool MapObjectPot_Base::Init() {
     this->SetState(MapObjPot_BaseState_0, 0x1);
     return true;
 }

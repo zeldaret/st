@@ -53,7 +53,7 @@ MapObjectUnkSTAT::MapObjectUnkSTAT() :
 }
 
 // non-matching
-bool MapObjectUnkSTAT::vfunc_00(void) {
+bool MapObjectUnkSTAT::Init(void) {
     unk32 val;
     switch (mUnk_20.mParams[0]) {
         case 0:

@@ -144,8 +144,8 @@ public:
     /* 40 */
 
     // data_ov000_020b3590
-    /* 00 */ virtual bool vfunc_00(); // Init
-    /* 04 */ virtual void vfunc_04(); // Setup
+    /* 00 */ virtual bool Init();
+    /* 04 */ virtual void Setup();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();

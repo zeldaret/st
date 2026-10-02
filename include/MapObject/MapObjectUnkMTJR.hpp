@@ -20,7 +20,7 @@ public:
 
     MapObjectUnkMTJR();
 
-    /* 00 */ virtual bool vfunc_00() override;
+    /* 00 */ virtual bool Init() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 14 */ virtual void vfunc_14(unk32 param1) override;

@@ -14,7 +14,7 @@ public:
 
     MapObjectMiniBlocks();
 
-    /* 00 */ virtual bool vfunc_00() override;
+    /* 00 */ virtual bool Init() override;
     /* 14 */ virtual void vfunc_14(unk32 param1) override;
     /* 30 */ virtual ~MapObjectMiniBlocks() override;
 };

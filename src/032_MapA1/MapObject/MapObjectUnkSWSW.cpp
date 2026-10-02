@@ -114,7 +114,7 @@ MapObjectUnkSWSW::MapObjectUnkSWSW() :
     this->mUnk_10 = &data_ov032_02122b8c;
 }
 
-bool MapObjectUnkSWSW::vfunc_00() {
+bool MapObjectUnkSWSW::Init() {
     Vec2bCpp sp00;
 
     UnkStruct_027e0cd8_0C_Base *data_027e0cd8_0C = data_027e0cd8->mUnk_0C;

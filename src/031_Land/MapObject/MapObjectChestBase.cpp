@@ -69,7 +69,7 @@ MapObjectChestBase::MapObjectChestBase(unk32 param1) :
 
 MapObjectChestBase::~MapObjectChestBase() {}
 
-bool MapObjectChestBase::vfunc_00() {
+bool MapObjectChestBase::Init() {
     SET_FLAG(this->mFlags, MapObjFlag_9);
     this->mUnk_18[0] = 0x0D;
 
@@ -91,7 +91,7 @@ bool MapObjectChestBase::vfunc_00() {
 }
 
 // non-matching
-void MapObjectChestBase::vfunc_04() {
+void MapObjectChestBase::Setup() {
     fx32 iVar2;
     UnkStruct_027e0cd8_0C_Base *pUVar5;
     VecFx32 sp48;

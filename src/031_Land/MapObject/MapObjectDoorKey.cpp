@@ -32,7 +32,7 @@ MapObjectDoorKey::MapObjectDoorKey() :
     this->mUnk_18[0] = 0x0E;
 }
 
-bool MapObjectDoorKey::vfunc_00(void) {
+bool MapObjectDoorKey::Init(void) {
     this->func_ov031_020fbf10(true, false);
     return true;
 }

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "MapObject.hpp"
 
 class MapObject_10_Pot_Base : public MapObject_10_Base {

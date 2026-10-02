@@ -40,8 +40,8 @@ public:
 
     MapObjectUnkSKDI();
 
-    /* 00 */ virtual bool vfunc_00() override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 00 */ virtual bool Init() override;
+    /* 04 */ virtual void Setup() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 14 */ virtual void vfunc_14(unk32 param1) override;

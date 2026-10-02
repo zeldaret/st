@@ -66,7 +66,7 @@ MapObjectUnkSWHT::~MapObjectUnkSWHT() {
     }
 }
 
-bool MapObjectUnkSWHT::vfunc_00() {
+bool MapObjectUnkSWHT::Init() {
     SET_FLAGS(this->mFlags, MapObjFlag_9, MapObjFlag_10);
 
     this->mUnk_18[0] = 0x11;

@@ -37,7 +37,7 @@ MapObjectDoorSwitch::MapObjectDoorSwitch() :
     this->mUnk_89 = true;
 }
 
-bool MapObjectDoorSwitch::vfunc_00(void) {
+bool MapObjectDoorSwitch::Init(void) {
     this->mUnk_094.vfunc_08(this->GetModel());
     this->func_ov031_020fbf10(true, true);
 

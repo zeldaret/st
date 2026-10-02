@@ -105,7 +105,7 @@ MapObjectSwitchStep::~MapObjectSwitchStep() {
     }
 }
 
-bool MapObjectSwitchStep::vfunc_00(void) {
+bool MapObjectSwitchStep::Init(void) {
     SET_FLAG(this->mFlags, MapObjFlag_9);
     this->mUnk_18[0] = 1;
 

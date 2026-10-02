@@ -48,11 +48,11 @@ MapObject::MapObject() {
 
 MapObject::~MapObject() {}
 
-bool MapObject::vfunc_00() {
+bool MapObject::Init() {
     return true;
 }
 
-void MapObject::vfunc_04() {}
+void MapObject::Setup() {}
 
 void MapObject::func_ov000_0209d0bc(Vec2bCpp *param1, MapObject *thisx) {
     VecFx32 pos;

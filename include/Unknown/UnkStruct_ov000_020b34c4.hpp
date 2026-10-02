@@ -1,6 +1,8 @@
 #pragma once
 
-#include "types.h"
+#include "Map/MapObjectId.hpp"
+#include "MapObject/MapObject.hpp"
+#include "nitro/fx.h"
 
 class UnkStruct_ov000_020b34c4 {
 public:

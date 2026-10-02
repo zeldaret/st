@@ -1,5 +1,7 @@
 #pragma once
 
+#include "MapObject/MapObject.hpp"
+
 class MapObjectPot_Base : public MapObject {
 public:
     /* 00 (base) */
@@ -8,8 +10,7 @@ public:
     MapObjectPot_Base();
 
     // data_ov000_020b35d0
-
-    /* 00 */ virtual bool vfunc_00();                                           // func_ov000_0209d780
+    /* 00 */ virtual bool Init();                                               // func_ov000_0209d780
     /* 24 */ virtual void vfunc_24(MapObject *param1, VecFx32 param2) override; // func_ov000_0209d8e8
     /* 28 */ virtual unk32 vfunc_28(unk32 param1) override;                     // func_ov000_0209d9f8
     /* 30 */ virtual ~MapObjectPot_Base() = 0 override;
