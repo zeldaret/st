@@ -13,6 +13,9 @@ src/017_CourseExec/UnkStruct_ov017_020c3f70.cpp:
     complete
     .text       start:0x020bba20 end:0x020bbaa8
     .data       start:0x020c3f00 end:0x020c3f14
+    .init       start:0x020c3e24 end:0x020c3e90
+    .bss        start:0x020c3f60 end:0x020c4840
+    .ctor       start:0x020c3ee0 end:0x020c3ee4
 
 src/017_CourseExec/Player/PlayerActorBase_70_017.cpp:
     .text       start:0x020bbaa8 end:0x020bbf7c

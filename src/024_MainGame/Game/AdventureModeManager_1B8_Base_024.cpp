@@ -643,10 +643,10 @@ void AdventureModeManager_1B8::func_ov024_020d1564(const AdventureModeManager_1B
 void AdventureModeManager_1B8::func_ov024_020d1614(void *param1) {
     this->mUnk_28 = param1;
     MI_CpuClearFast(this->mUnk_28, 0x1000);
-    data_ov017_020c3f70.func_ov017_020bba78();
+    StaticInstance<UnkStruct_ov017_020c3f70>::sInstance.func_ov017_020bba78();
 }
 
 void AdventureModeManager_1B8::func_ov024_020d1638() {
-    data_ov017_020c3f70.func_ov017_020bba94();
+    StaticInstance<UnkStruct_ov017_020c3f70>::sInstance.func_ov017_020bba94();
     this->mUnk_28 = NULL;
 }

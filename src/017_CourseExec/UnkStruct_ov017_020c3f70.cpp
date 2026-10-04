@@ -1,6 +1,11 @@
 #include "Unknown/UnkStruct_ov017_020c3f70.hpp"
 #include "Unknown/UnkStruct_02049b80.hpp"
 
+//! TODO: determine type
+static u8 data_ov017_020c403c[0x804];
+
+UnkStruct_ov017_020c3f70 StaticInstance<UnkStruct_ov017_020c3f70>::sInstance(data_ov017_020c403c, 0x800, 0x0E);
+
 UnkStruct_ov017_020c3f70::~UnkStruct_ov017_020c3f70() {
     this->func_ov017_020bba94();
 }
