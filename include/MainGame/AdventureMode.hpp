@@ -93,20 +93,29 @@ public:
     /* 20 */ AdventureModeManager_15C_20 mUnk_20;
     /* 28 */ AdventureModeManager_15C_28 mUnk_28;
     /* 44 */ unk8 mUnk_44;
-    /* 45 */ unk8 mUnk_45;
-    /* 46 */ unk8 mUnk_46;
+    /* 45 */ bool mUnk_45;
+    /* 46 */ bool mUnk_46;
     /* 47 */ bool mUnk_47;
-    /* 48 */ unk32 mUnk_48;
+    /* 48 */ unk16 mUnk_48;
+    /* 4A */ unk16 mUnk_4A;
     /* 4C */
 
     AdventureModeManager_15C();
     ~AdventureModeManager_15C();
 
+    // overlay 1
     void func_ov001_020c0920();
 
-    unk32 func_ov017_020c3a00(Input *pButtons, TouchControl *pTouchControl);
+    // overlay 17
+    void func_ov017_020c39f0(unk32 param1);
+    bool func_ov017_020c39f8();
+    bool func_ov017_020c3a00(Input *pButtons, TouchControl *pTouchControl);
+    bool func_ov017_020c3a38();
+    bool func_ov017_020c3b58();
     void func_ov017_020c3bc0();
     void func_ov017_020c3c64();
+    void func_ov017_020c3ca4();
+    void func_ov017_020c3d98();
 };
 
 class AdventureModeManager_160_28 : public UnkStruct_0204a060_Base {

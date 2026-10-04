@@ -316,9 +316,9 @@ AdventureModeManager_15C::AdventureModeManager_15C() :
     mUnk_00(0),
     mUnk_20(&this->mUnk_04) {
     this->mUnk_44 = 0;
-    this->mUnk_45 = 0;
-    this->mUnk_46 = 0;
-    this->mUnk_47 = 0;
+    this->mUnk_45 = false;
+    this->mUnk_46 = false;
+    this->mUnk_47 = false;
 
     unk32 value           = data_0204999c.func_02013014();
     this->mUnk_20.mUnk_00 = new(HeapIndex_1) AdventureModeManager_15C_20_00(0);

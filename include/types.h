@@ -17,11 +17,22 @@ typedef s32 unk32;
             PTMFCallback callback;                             \
         };
 
+    #define DECL_PTMF_RET(name, ret, ...)                     \
+        template <typename T, typename R = ret> struct name { \
+            typedef R (T::*PTMFCallback)(__VA_ARGS__);        \
+                                                              \
+            PTMFCallback callback;                            \
+        };
+
     #define CALL_PTMF(type, data, ...)          \
         {                                       \
             type &ptr = (data);                 \
             (this->*ptr.callback)(__VA_ARGS__); \
         }
+
+    #define CALL_PTMF_RET(type, data, ...)               \
+        type &ptr  = (data);                             \
+        ptmfResult = (this->*ptr.callback)(__VA_ARGS__);
 
     #define STATIC_CALL_PTMF(type, data, thisx, ...) \
         {                                            \
@@ -36,6 +47,7 @@ typedef s32 unk32;
         }
 
 DECL_PTMF(PTMF);
+DECL_PTMF_RET(PTMFBool, bool);
 typedef void (*UnkCallback)(u16 param1);
 
 template <typename T> class Instance {

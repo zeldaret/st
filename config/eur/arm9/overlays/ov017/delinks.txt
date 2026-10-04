@@ -111,4 +111,8 @@ src/017_CourseExec/Train/UnkStruct_027e0cf8_017.cpp:
     .text       start:0x020c3414 end:0x020c39f0
 
 src/017_CourseExec/Game/AdventureModeManager_15C_017.cpp:
+    complete
     .text       start:0x020c39f0 end:0x020c3dc0
+    .data       start:0x020c3f3c end:0x020c3f60
+    .init       start:0x020c3ec8 end:0x020c3ee0
+    .ctor       start:0x020c3ee8 end:0x020c3f00
