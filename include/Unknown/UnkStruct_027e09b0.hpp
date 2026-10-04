@@ -10,11 +10,12 @@ public:
     UnkStruct_027e09b0();
     ~UnkStruct_027e09b0();
 
+    // overlay 0
+    unk16 *func_ov000_02072cb4(unk32 param1);
     void func_ov000_02072cc4(unk32 param1, unk32 param2);
 
-    static UnkStruct_027e09b0 *Create();
-
     // overlay 1
+    static UnkStruct_027e09b0 *Create();
     static void Destroy();
 };
 

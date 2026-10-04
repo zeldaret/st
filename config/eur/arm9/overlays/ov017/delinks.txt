@@ -76,11 +76,12 @@ src/017_CourseExec/MapObject/MapObjectSwitchStep_017.cpp:
     .text       start:0x020c05a0 end:0x020c0774
 
 src/017_CourseExec/UnkStruct_027e09b4_017.cpp:
-    .text       start:0x020c0774 end:0x020c0b24
+    complete
+    .text       start:0x020c0774 end:0x020c1104
     .rodata     start:0x020c3dec end:0x020c3e24
 
 src/017_CourseExec/code_020c0b24_017.cpp:
-    .text       start:0x020c0b24 end:0x020c1860
+    .text       start:0x020c1104 end:0x020c1860
 
 src/017_CourseExec/Game/AdventureModeManager_15C_20_00_017.cpp:
     .text       start:0x020c1860 end:0x020c1e54

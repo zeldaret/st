@@ -52,19 +52,8 @@ void PlayerActorBase_70::func_ov017_020bbaa8(VecFx32 *param1, UnkAngleStruct par
     }
 }
 
-struct UnkStackStruct {
-    /* 00 */ VecFx32 unk_00;
-    /* 0C */ STRUCT_PAD(0x0C, 0x12);
-    /* 12 */ s16 unk_12;
-    /* 13 */ STRUCT_PAD(0x13, 0x50);
-    /* 50 */
-};
-
 extern unk16 data_ov000_020ab318;
 extern unk16 data_ov000_020ab31c;
-extern "C" void func_ov017_020c1104(UnkStackStruct *param1, VecFx32 *param2, unk16 param3, unk32 param4);
-extern "C" void func_ov017_020c117c(UnkStackStruct *param1, VecFx32 *param2, unk16 param3);
-extern "C" void func_ov017_020c12fc(UnkStackStruct *param1, u8 param2, unk16 param3);
 
 struct UnkStruct_ov021_02106c5c {
     /* 00 */ STRUCT_PAD(0x00, 0x13);
@@ -73,7 +62,7 @@ struct UnkStruct_ov021_02106c5c {
 extern "C" const UnkStruct_ov021_02106c5c *func_ov021_020ea868(int index);
 
 void PlayerActorBase_70::func_ov017_020bbcd8(VecFx32 *param1, UnkAngleStruct param2) {
-    UnkStackStruct sp28;
+    UnkStackStruct_ov017_020c1104 sp28;
     VecFx32 sp1C;
     VecFx32 sp10;
     s16 temp_r9;
@@ -94,17 +83,17 @@ void PlayerActorBase_70::func_ov017_020bbcd8(VecFx32 *param1, UnkAngleStruct par
 
     if (this->mUnk_008 == -1 && this->mCharacter == PlayerCharacter_Link) {
         if (!data_027e0d34->func_ov031_020d9ab8()) {
-            func_ov017_020c1104(&sp28, &sp10, data_ov000_020ab31c, 4);
+            sp28.func_ov017_020c1104(&sp10, data_ov000_020ab31c, 4);
 
             sp28.unk_12 = this->mUnk_132;
             VecFx32_Add(&sp1C, &this->mUnk_0E4.mUnk_0C[PlayerCharacter_Link], &sp10);
             temp_r9 = data_ov000_020ab318;
 
-            func_ov017_020c117c(&sp28, &sp10, temp_r9);
+            sp28.func_ov017_020c117c(&sp10, temp_r9);
             VecFx32_Add(&sp1C, &this->mUnk_0E4.mUnk_0C[PlayerCharacter_Phantom], &sp10);
 
-            func_ov017_020c117c(&sp28, &sp10, temp_r9);
-            func_ov017_020c12fc(&sp28, var_r7, 0x6000);
+            sp28.func_ov017_020c117c(&sp10, temp_r9);
+            sp28.func_ov017_020c12fc(var_r7, 0x6000);
         }
     } else {
         unk16 unk_6C = Get_ov000_020ab4dc(this->mCharacter)->mUnk_6C;

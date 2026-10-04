@@ -7,7 +7,6 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
-struct UnkStackStruct;
 DECL_PROFILE(MapObjectProfileUnkSKDI);
 
 MapObject *MapObjectProfileUnkSKDI::Create() {

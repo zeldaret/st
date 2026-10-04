@@ -177,11 +177,17 @@ extern "C" {
 
 #define GX_LIGHTMASK_NONE 0
 
+#define GX_POLYGONMODE_UNK_00 0x0
+#define GX_POLYGONMODE_UNK_01 0x1
+#define GX_POLYGONMODE_UNK_02 0x2
 #define GX_POLYGONMODE_MODULATE 0x3
 
 #define GX_CULL_NONE 0
 
-#define GX_BEGIN_QUADS 0x1
+#define GX_BEGIN_TRIS 0 // (based on gbatek)
+#define GX_BEGIN_QUADS 1
+#define GX_BEGIN_TRIS_STRIPS 2 // (based on gbatek)
+#define GX_BEGIN_QUAD_STRIPS 3 // (based on gbatek)
 
 #define GX_RGB(r, g, b) ((r) | ((g) << 0x5) | ((b) << 0xA))
 

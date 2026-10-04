@@ -1348,3 +1348,17 @@ struct UnkStackStruct_ov000_02084344 {
     /* 04 */ unk32 mUnk_04;
 };
 extern "C" UnkStackStruct_ov000_02084344 *func_ov000_02084344(unk32);
+
+struct UnkStackStruct_ov017_020c1104 {
+    /* 00 */ VecFx32 unk_00;
+    /* 0C */ unk32 unk_0C;
+    /* 10 */ u16 unk_10;
+    /* 12 */ s16 unk_12;
+    /* 14 */ s16 unk_14[30];
+    /* 50 */
+
+    void func_ov017_020c1104(const VecFx32 *param2, s32 param3, u16 param4);
+    void func_ov017_020c117c(const VecFx32 *param2, unk16 param3);
+    void func_ov017_020c12fc(u8 param2, unk16 param3);
+    void func_ov017_020c13b4();
+};

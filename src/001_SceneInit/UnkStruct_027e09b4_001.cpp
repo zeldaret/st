@@ -7,7 +7,7 @@ UnkStruct_027e09b4 *UnkStruct_027e09b4::Create() {
 }
 
 UnkStruct_027e09b4::UnkStruct_027e09b4() {
-    this->mUnk_300 = this;
+    this->mUnk_300 = &this->mUnk_000[0];
     this->mUnk_304 = 0x6000;
     this->mUnk_308 = 0x019A;
     this->mUnk_30A = 0x00CD;

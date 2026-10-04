@@ -30,7 +30,7 @@ public:
     /* 02 */ u16 mUnk_02;
     /* 04 */ u16 mUnk_04;
     /* 06 */ u16 mUnk_06;
-    /* 08 */ u16 mUnk_08;
+    /* 08 */ u16 mUnk_08; // used for G3_Color
     /* 0A */ u16 mUnk_0A;
     /* 0C */ u16 mUnk_0C;
     /* 0E */ u16 mUnk_0E;
