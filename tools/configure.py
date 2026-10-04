@@ -320,7 +320,7 @@ config.libs = [
             Object("017_CourseExec/MapObject/MapObject_017.cpp"),
             Object("017_CourseExec/MapObject/MapObjectSwitchStep_017.cpp"),
             Object("017_CourseExec/UnkStruct_027e09b4_017.cpp"),
-            Object("017_CourseExec/code_020c0b24_017.cpp"),
+            Object("017_CourseExec/UnkStackStruct_ov017_020c1104_017.cpp"),
             Object("017_CourseExec/Game/AdventureModeManager_15C_20_00_017.cpp"),
             Object("017_CourseExec/UnkStruct_027e0cec_017.cpp"),
             Object("017_CourseExec/code_020c201c_017.cpp"),
