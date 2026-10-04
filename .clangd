@@ -21,6 +21,7 @@ Diagnostics:
     - "main_returns_nonint"
     - "template_spec_needs_header"
     - "goto_into_protected_scope"
+    - "init_list_bad_dest_type"
 Documentation:
   CommentFormat: Doxygen
 ---

@@ -162,8 +162,9 @@ public:
     /* 0C */
 
     void func_0201ea68(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-    u16 func_0201eaa0();
+    void func_0201ed30(u16 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     unk32 func_0201edbc();
+    u16 func_0201eaa0();
 };
 
 class UnkSubStruct1 : public UnkSubStruct1_Base {

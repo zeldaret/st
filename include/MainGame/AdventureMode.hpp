@@ -41,8 +41,13 @@ public:
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
 
     // overlay 17
+    unk16 func_ov017_020c18c4();
+    void func_ov017_020c18e4();
     bool func_ov017_020c19a0();
-    void func_ov017_020c1c80(unk32 param1);
+    void func_ov017_020c19cc();
+    void func_ov017_020c19ec();
+    void func_ov017_020c1a0c(bool param1);
+    void func_ov017_020c1c80(bool param1);
 
     // overlay 24
     void func_ov024_020ca48c();

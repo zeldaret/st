@@ -122,17 +122,17 @@ void AdventureModeManager_15C_20_00::vfunc_08(Input *pButtons, TouchControl *pTo
                 case 0x28:
                     data_ov000_020b5214.func_ov000_0206db44(0x04);
                     this->mUnk_77A = data_0204a110.func_01ff9b50();
-                    this->func_ov017_020c1c80(1);
+                    this->func_ov017_020c1c80(true);
                     break;
                 case 0x29:
                     if (data_ov024_020d8660 != NULL && data_ov024_020d8660->func_ov024_020c4d74()) {
                         data_ov000_020b5214.func_ov000_0206db44(0x04);
                         this->mUnk_77A = 0x2A;
-                        this->func_ov017_020c1c80(0);
+                        this->func_ov017_020c1c80(false);
                     } else {
                         data_ov000_020b5214.func_ov000_0206db44(0x04);
                         this->mUnk_77A = data_0204a110.func_01ff9b50();
-                        this->func_ov017_020c1c80(0);
+                        this->func_ov017_020c1c80(false);
                     }
                     break;
                 default:
