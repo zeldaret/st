@@ -60,8 +60,8 @@ public:
     // data_02044108 vtable
     /* 00 */ WEAK virtual ~UnkStruct_0204a060_Base() override {}
     /* 08 */ virtual bool vfunc_08(unk32 param1) override;
-    /* 0C */ virtual bool vfunc_0C(void);
-    /* 10 */ virtual bool vfunc_10(void);
+    /* 0C */ virtual void vfunc_0C(void);
+    /* 10 */ virtual void vfunc_10(void);
     /* 14 */
 };
 
@@ -78,7 +78,7 @@ public:
 
     // data_02044048 vtable
     /* 00 */ virtual ~UnkStruct_0204a060() override;
-    /* 0C */ virtual bool vfunc_0C(void) override;
+    /* 0C */ virtual void vfunc_0C(void) override;
     /* 14 */
 
     static void func_020183b8(void);

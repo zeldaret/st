@@ -11,8 +11,8 @@
 
 extern "C" GameModeManagerBase_104 *func_ov008_020b6520(void *);
 
-bool AdventureModeManager_170_14::vfunc_0C() {
-    return data_0204a088->func_ov000_02061224();
+void AdventureModeManager_170_14::vfunc_0C() {
+    data_0204a088->func_ov000_02061224();
 }
 
 AdventureModeManager_170::AdventureModeManager_170(GameModeManagerBase_104 *param1) :

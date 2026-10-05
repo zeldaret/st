@@ -10,8 +10,8 @@
 
 THUMB_BEGIN
 
-bool UnkStruct_0204a060::vfunc_0C(void) {
-    return gGame.TrySetCreateCallback(this->createCallback);
+void UnkStruct_0204a060::vfunc_0C(void) {
+    gGame.TrySetCreateCallback(this->createCallback);
 }
 
 void UnkStruct_0204a060::func_020183b8(void) {

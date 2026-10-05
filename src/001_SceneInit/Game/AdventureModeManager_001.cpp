@@ -72,7 +72,7 @@ AdventureModeManager::AdventureModeManager(UnkStruct_0204a110_Sub2 *param1) {
     GXS_SetGraphicsMode(5);
 
     this->mUnk_1C4.sceneIndex = SceneIndex_None;
-    this->mUnk_1C4.unk_04     = 0;
+    this->mUnk_1C4.roomIndex  = 0;
     this->mUnk_1C4.unk_06     = -1;
 }
 

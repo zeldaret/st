@@ -1,5 +1,6 @@
 #pragma once
 
+#include "MainGame/AdventureMode.hpp"
 #include "Unknown/UnkStruct_0204a060.hpp"
 #include "global.h"
 #include "types.h"
@@ -16,14 +17,13 @@ public:
 
     // data_ov024_020d8210
     /* 00 */ virtual ~UnkStruct_ov024_020d86a0_00() override;
-    /* 0C */ virtual bool vfunc_0C(void) override;
+    /* 0C */ virtual void vfunc_0C(void) override;
 };
 
 class UnkStruct_ov024_020d86a0 : public AutoInstance<UnkStruct_ov024_020d86a0> {
 public:
     /* 00 */ UnkStruct_ov024_020d86a0_00 *mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
+    /* 04 */ SceneInfos mSceneInfos;
     /* 0C */ bool mUnk_0C;
     /* 0D */ bool mUnk_0D;
     /* 0E */ bool mUnk_0E;
@@ -39,8 +39,12 @@ public:
     void func_ov001_020bd818();
 
     // overlay 17
-    bool func_ov017_020c3180();
+    void func_ov017_020c30e4();
+    void func_ov017_020c3118(bool param1);
+    void func_ov017_020c313c();
+    void func_ov017_020c3180();
     void func_ov017_020c31cc();
+    void func_ov017_020c3374(unk32 param1);
 
     // overlay 24
     void func_ov024_020d167c();

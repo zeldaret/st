@@ -48,7 +48,7 @@ public:
     void func_ov000_02061098(void);
     void func_ov000_020611dc(FileSelectManager_UnkDrawBase *param1, unk32 param2);
     bool func_ov000_020611fc(unk32 param2); // sets new index
-    bool func_ov000_02061224(void);
+    void func_ov000_02061224(void);
     void func_ov000_02061230(void);
     void func_ov000_02061248(void);
 

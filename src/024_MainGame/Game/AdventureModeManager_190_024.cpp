@@ -9,12 +9,12 @@ extern "C" AdventureModeManager_190_10 *func_ov011_020b8e54(void *, int);
 
 THUMB_BEGIN
 
-bool AdventureModeManager_190_14::vfunc_0C() {
-    return data_0204a088->func_ov000_02061224();
+void AdventureModeManager_190_14::vfunc_0C() {
+    data_0204a088->func_ov000_02061224();
 }
 
-bool AdventureModeManager_190_38::vfunc_0C() {
-    return this->mpParent->func_ov024_020ca280();
+void AdventureModeManager_190_38::vfunc_0C() {
+    this->mpParent->func_ov024_020ca280();
 }
 
 AdventureModeManager_190::AdventureModeManager_190(GameModeManagerBase_104 *param1) :
@@ -93,8 +93,8 @@ bool AdventureModeManager_190::func_ov024_020ca24c(unk32 param1) {
     data_0204e5f8.func_0201b9a8(&this->mUnk_38);
 }
 
-bool AdventureModeManager_190::func_ov024_020ca280() {
-    return this->mUnk_10->func_ov011_020b8f20(this->mUnk_60);
+void AdventureModeManager_190::func_ov024_020ca280() {
+    this->mUnk_10->func_ov011_020b8f20(this->mUnk_60);
 }
 
 THUMB_END

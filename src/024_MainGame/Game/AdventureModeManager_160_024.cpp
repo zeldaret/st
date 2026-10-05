@@ -17,8 +17,8 @@ extern "C" AdventureModeManager_160_18 *func_ov006_020b6ab0(void *, void *);
 //! TODO: this is fake according to GameModeTitleScreen::GameModeTitleScreen()
 extern "C" AdventureModeManager_160_14 *func_ov002_020b6520(void *, void *, int);
 
-bool AdventureModeManager_160_4C::vfunc_0C() {
-    return data_0204a088->func_ov000_02061224();
+void AdventureModeManager_160_4C::vfunc_0C() {
+    data_0204a088->func_ov000_02061224();
 }
 
 AdventureModeManager_160::AdventureModeManager_160(GameModeManagerBase_104 *param1, AdventureModeManager_1B8 *param2) :

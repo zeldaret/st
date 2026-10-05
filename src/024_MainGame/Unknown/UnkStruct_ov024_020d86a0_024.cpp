@@ -19,6 +19,6 @@ UnkStruct_ov024_020d86a0_00::UnkStruct_ov024_020d86a0_00(UnkStruct_ov024_020d86a
 
 UnkStruct_ov024_020d86a0_00::~UnkStruct_ov024_020d86a0_00() {}
 
-bool UnkStruct_ov024_020d86a0_00::vfunc_0C() {
-    return this->mpInstance->func_ov017_020c3180();
+void UnkStruct_ov024_020d86a0_00::vfunc_0C() {
+    this->mpInstance->func_ov017_020c3180();
 }

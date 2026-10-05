@@ -19,12 +19,12 @@ THUMB_BEGIN
 
 AdventureModeManager_18C_14::AdventureModeManager_18C_14() {}
 
-bool AdventureModeManager_18C_14::vfunc_0C(void) {
-    return data_0204a088->func_ov000_02061224();
+void AdventureModeManager_18C_14::vfunc_0C(void) {
+    data_0204a088->func_ov000_02061224();
 }
 
-bool AdventureModeManager_18C_14::vfunc_10(void) {
-    return data_0204a088->func_ov000_02061224();
+void AdventureModeManager_18C_14::vfunc_10(void) {
+    data_0204a088->func_ov000_02061224();
 }
 
 AdventureModeManager_18C::AdventureModeManager_18C(GameModeManagerBase_104 *param1) :

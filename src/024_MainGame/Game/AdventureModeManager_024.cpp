@@ -632,12 +632,12 @@ void AdventureModeManager::func_ov024_020c6514(SceneIndex sceneIndex, u8 param2,
     this->mUnk_1B8->func_ov024_020d13cc(var_r1);
     this->mUnk_1B8->func_ov024_020d06d0();
     this->mUnk_1CC.sceneIndex = sceneIndex;
-    this->mUnk_1CC.unk_04     = param2;
+    this->mUnk_1CC.roomIndex  = param2;
     this->mUnk_1CC.unk_06     = param4;
 
     if (param3 != 0) {
         this->mUnk_1C4.sceneIndex = sceneIndex;
-        this->mUnk_1C4.unk_04     = param2;
+        this->mUnk_1C4.roomIndex  = param2;
         this->mUnk_1C4.unk_06     = param4;
     }
 }
@@ -651,7 +651,7 @@ u8 AdventureModeManager::GetMapPaintIndex(SceneIndex sceneIndex, u8 param2) {
 }
 
 void AdventureModeManager::func_ov024_020c66c0() {
-    this->vfunc_38(this->mUnk_1C4.sceneIndex, this->mUnk_1C4.unk_04, 1, this->mUnk_1C4.unk_06);
+    this->vfunc_38(this->mUnk_1C4.sceneIndex, this->mUnk_1C4.roomIndex, 1, this->mUnk_1C4.unk_06);
 
     if (this->mUnk_1BC != NULL) {
         this->mUnk_1BC->func_ov024_020d06d0();
@@ -662,7 +662,7 @@ void AdventureModeManager::func_ov024_020c66c0() {
 }
 
 void AdventureModeManager::func_ov024_020c671c() {
-    this->func_ov024_020c6770(this->mUnk_1C4.sceneIndex, this->mUnk_1C4.unk_04, 1, this->mUnk_1C4.unk_06);
+    this->func_ov024_020c6770(this->mUnk_1C4.sceneIndex, this->mUnk_1C4.roomIndex, 1, this->mUnk_1C4.unk_06);
 
     if (data_027e09a4->IsTrain()) {
         data_027e0ce0->mUnk_38->mUnk_158->func_ov026_020dc2d0();
@@ -689,7 +689,7 @@ void AdventureModeManager::func_ov024_020c6770(SceneIndex sceneIndex, u8 param2,
 }
 
 bool AdventureModeManager::func_ov024_020c681c() {
-    if (this->mUnk_1C4.sceneIndex == this->mUnk_1CC.sceneIndex && this->mUnk_1C4.unk_04 == this->mUnk_1CC.unk_04) {
+    if (this->mUnk_1C4.sceneIndex == this->mUnk_1CC.sceneIndex && this->mUnk_1C4.roomIndex == this->mUnk_1CC.roomIndex) {
         return true;
     }
 
@@ -932,7 +932,7 @@ void AdventureModeManager::func_ov024_020c6db8(unk32 param1) {
 bool AdventureModeManager::func_ov024_020c6dec() {
     if (this->mUnk_1CC.sceneIndex == data_027e09a4->mUnk_00.sceneIndex) {
         if (this->mUnk_1CC.sceneIndex == data_027e09a4->mUnk_00.sceneIndex) {
-            if (this->mUnk_1CC.unk_04 == data_027e0cd8->func_ov000_02081d5c()) {
+            if (this->mUnk_1CC.roomIndex == data_027e0cd8->func_ov000_02081d5c()) {
                 return true;
             }
         }

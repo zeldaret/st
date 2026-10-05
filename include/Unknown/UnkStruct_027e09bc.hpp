@@ -84,7 +84,7 @@ public:
     UnkStruct_027e09bc_24();
 
     // data_ov000_020b2488
-    /* 0C */ virtual bool vfunc_0C(void) override;
+    /* 0C */ virtual void vfunc_0C(void) override;
 };
 
 class UnkStruct_027e09bc : public AutoInstance<UnkStruct_027e09bc> {

@@ -12,11 +12,11 @@
 
 THUMB_BEGIN
 
-bool AdventureModeManager_174_Base_10::vfunc_0C() {
+void AdventureModeManager_174_Base_10::vfunc_0C() {
     data_0204a088->func_ov000_02061224();
 }
 
-bool AdventureModeManager_174_Base_10::vfunc_10() {
+void AdventureModeManager_174_Base_10::vfunc_10() {
     data_0204a088->func_ov000_02061224();
 }
 
