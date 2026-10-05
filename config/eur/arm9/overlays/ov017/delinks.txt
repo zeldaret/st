@@ -93,6 +93,7 @@ src/017_CourseExec/Game/AdventureModeManager_15C_20_00_017.cpp:
     .ctor       start:0x020c3ee4 end:0x020c3ee8
 
 src/017_CourseExec/UnkStruct_027e0cec_017.cpp:
+    complete
     .text       start:0x020c1e54 end:0x020c201c
 
 src/017_CourseExec/code_020c201c_017.cpp:

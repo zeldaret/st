@@ -6,6 +6,9 @@
 #include "nitro/fx.h"
 #include "types.h"
 
+class UnkStruct_PlayerGet_ec;
+class UnkSystem7;
+
 class UnkStruct_027e0cec_00_00 : public LinkList<UnkStruct_027e0cec_00_00> {
 public:
     /* 00 (vtable) */
@@ -60,6 +63,10 @@ public:
 
     // overlay 1
     static void *func_ov001_020bf0a0(size_t length);
+
+    // overlay 17
+    void func_ov017_020c297c(unk32 param1, unk32 param2);
+    bool func_ov017_020c2ad8(void *param1, unk32 param2, unk32 param3);
 };
 
 class UnkStruct_027e0cec : public AutoInstance<UnkStruct_027e0cec> {
@@ -90,6 +97,11 @@ public:
 
     static UnkStruct_027e0cec *Create();
     static void func_ov001_020bed34();
+
+    // overlay 17
+    void func_ov017_020c1e54(unk32 param1, unk32 param2);
+    void func_ov017_020c1e9c(unk32 param1, unk32 param2);
+    void func_ov017_020c1fc0(unk32 param1, unk32 param2);
 };
 
 extern UnkStruct_027e0cec *data_027e0cec;
