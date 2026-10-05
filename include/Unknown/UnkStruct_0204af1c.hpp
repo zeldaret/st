@@ -3,6 +3,7 @@
 #include "types.h"
 
 class CellAnimObject;
+class UnkStruct_ov019_020d24c8_28_258_00;
 
 class UnkStruct_0204af1c_00 {
 public:

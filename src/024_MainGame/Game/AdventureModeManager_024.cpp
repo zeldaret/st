@@ -949,13 +949,13 @@ AdventureModeManager_1AC::AdventureModeManager_1AC() {
 AdventureModeManager_1AC::~AdventureModeManager_1AC() {}
 
 void AdventureModeManager_1AC::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
-    data_027e0cf8->func_ov017_020c390c();
+    data_027e0cf8->func_ov017_020c390c(pButtons, pTouchControl);
 }
 
 void AdventureModeManager_1AC::vfunc_10(unk8 *param1) {
-    data_027e0cf8->func_ov017_020c397c();
+    data_027e0cf8->func_ov017_020c397c(param1);
 }
 
 void AdventureModeManager_1AC::vfunc_14(unk8 *param1) {
-    data_027e0cf8->func_ov017_020c39d4();
+    data_027e0cf8->func_ov017_020c39d4(param1);
 }
