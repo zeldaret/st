@@ -85,6 +85,9 @@ public:
     static UnkStruct_027e09c0 *Create();
     static void Destroy();
     static void DestroyImpl();
+
+    // overlay 17
+    void func_ov017_020c30b0();
 };
 
 extern UnkStruct_027e09c0 *data_027e09c0;
