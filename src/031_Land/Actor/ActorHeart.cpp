@@ -32,8 +32,6 @@ extern "C" void func_02097bb8(void);
 extern "C" void func_ov000_0205c1f0(unk32 *, unk16);
 extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
 extern "C" void func_ov000_0208bc00(UnkStruct_027e0ce0 *, unk16, unk16 *);
-extern "C" void func_ov017_020bf99c(void);
-extern "C" void func_ov017_02097bec(Actor_9C *);
 
 const Cylinder data_ov031_02113d64(0x800);
 
@@ -298,7 +296,7 @@ void ActorHeart::func_ov031_020ef3a0() {
 }
 
 void ActorHeart::func_ov031_020ef3b8() {
-    func_ov017_020bf99c();
+    Actor::func_ov017_020bf99c();
     this->mUnk_98.func_ov000_02097bec();
 }
 

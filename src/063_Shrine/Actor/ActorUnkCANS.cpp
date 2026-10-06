@@ -67,9 +67,6 @@ extern "C" void func_ov000_0208bd20(UnkStruct_027e0ce0 *param1, unk32 param2, un
 extern "C" void func_ov000_020986b4(s16 *param1, Actor_Derived2 *param2, unk32 param3);
 extern "C" unk32 func_ov000_02098d7c(ActorUnkCANS *param1, UnkStruct_ov063_02162e88 *param2);
 
-// Overlay 17
-extern "C" void func_ov017_020bf050(ActorUnkCANS *param1, UnkStruct_ov063_02162e88 *param2, unk32 param3);
-
 // Overlay 26
 #if IS_JP
 extern "C" void func_ov026_020f46a8(Actor *param1, VecFx32 *param2, bool param3);

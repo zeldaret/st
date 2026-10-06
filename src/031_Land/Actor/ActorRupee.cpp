@@ -43,7 +43,6 @@ static PTMF<ActorRupee> data_ov031_02113520[0xD] = {
 extern "C" void func_01ffedac(u16 *, VecFx32 *);
 extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0C_Base *, VecFx32 *);
 extern "C" unk32 func_02017158();
-extern "C" void func_ov017_020bf99c();
 extern "C" void func_ov031_0210acd4(u8);
 extern "C" unk32 func_ov031_0210af50(u16, unk32 *);
 extern void func_ov031_0210b0e4(u16, unk32);
@@ -352,7 +351,7 @@ void ActorRupee::func_ov031_020e9430() {}
 void ActorRupee::func_ov031_020e9434() {}
 
 void ActorRupee::func_ov031_020e9438() {
-    func_ov017_020bf99c();
+    Actor::func_ov017_020bf99c();
     this->mUnk_9C.func_ov000_02097bec();
 }
 

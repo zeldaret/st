@@ -14,7 +14,6 @@ extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
 extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0C_Base *, VecFx32 *);
 extern "C" void func_ov000_0205c1f0(unk32 *, u16);
 extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
-extern "C" void func_ov017_020bf99c();
 
 static const Cylinder data_ov031_02114ba0(0x800);
 
@@ -360,7 +359,7 @@ void ActorItemDrop::func_ov031_020fa568() {
 }
 
 void ActorItemDrop::func_ov031_020fa5d8() {
-    func_ov017_020bf99c();
+    Actor::func_ov017_020bf99c();
     this->mUnk_B4.func_ov000_02097bec();
 }
 
