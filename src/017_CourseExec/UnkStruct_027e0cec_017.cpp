@@ -57,3 +57,7 @@ void UnkStruct_027e0cec::func_ov017_020c1fc0(unk32 param1, unk32 param2) {
         }
     }
 }
+
+void UnkStruct_027e0cec_00::vfunc_00() {
+    this->mUnk_10->func_ov017_020c1fc0(this->mUnk_14, 0x00);
+}

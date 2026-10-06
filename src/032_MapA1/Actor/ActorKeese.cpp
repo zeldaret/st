@@ -588,9 +588,6 @@ void ActorKeese::func_ov032_0211f614() {}
 // non-matching
 void ActorKeese::func_ov032_0211f6bc() {}
 
-extern "C" void func_ov017_020c26f8(unk32, VecFx32 *, unk32, unk32);
-
-// non-matching (instruction order)
 void ActorKeese::func_ov032_0211f804() {
     Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_2D4);
 
@@ -600,31 +597,29 @@ void ActorKeese::func_ov032_0211f804() {
                 break;
             }
 
-            ++this->mUnk_228;
             this->mTimer.Set(0, 30);
+            this->mUnk_228++;
             break;
 
         case 0x1: {
-            if (!this->mTimer.HasExpired()) {
-                return;
+            if (this->mTimer.HasExpired()) {
+                VecFx32 vec = this->mPos;
+                vec.y -= FLOAT_TO_FX32(1.0f);
+
+                Actor::func_ov017_020c26f8(0x2, &vec, 0x1, true);
+
+                this->mTimer.Set(0, 10);
+                this->mUnk_228++;
             }
 
-            VecFx32 vec = this->mPos;
-            vec.y -= FLOAT_TO_FX32(1.0f);
-
-            func_ov017_020c26f8(0x1, &vec, 0x1, 0x2);
-
-            ++this->mUnk_228;
-            this->mTimer.Set(0, 10);
             break;
         }
 
         case 0x2:
-            if (!this->mTimer.HasExpired()) {
-                return;
+            if (this->mTimer.HasExpired()) {
+                this->SetState(ActorKeeseState_9);
             }
 
-            this->SetState(ActorKeeseState_9);
             break;
 
         default:

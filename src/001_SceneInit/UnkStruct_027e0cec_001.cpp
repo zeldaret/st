@@ -196,7 +196,7 @@ void UnkStruct_027e0cec::func_ov001_020bf028() {
 
 ARM_BEGIN
 
-UnkStruct_027e0cec_00::UnkStruct_027e0cec_00(void *param1) :
+UnkStruct_027e0cec_00::UnkStruct_027e0cec_00(UnkStruct_027e0cec *param1) :
     mUnk_10(param1),
     mUnk_14(0) {}
 

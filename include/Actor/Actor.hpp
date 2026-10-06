@@ -331,6 +331,14 @@ public:
     bool func_ov017_020bfd9c(Vec2s *param1, unk32 param2, UnkStruct_027e09bc_0C *param3,
                              AABB *param4); //! TODO: param4's type not confirmed but probably correct
 
+    static void func_ov017_020c2038(ActorRef *pRef, unk32 param2, unk32 param3, const VecFx32 *param4, unk32 param5);
+    static bool func_ov017_020c219c(unk32 param1, const VecFx32 *param2, unk32 param3, bool param4);
+    static bool func_ov017_020c2310(const VecFx32 *param1, unk32 param2);
+    static bool func_ov017_020c23a4(unk32 param1, const VecFx32 *param2, unk32 param3, bool param4);
+    static void func_ov017_020c2438(ActorRef *pRef, unk32 param2, const VecFx32 *param3, unk32 param4, bool param5);
+    static void func_ov017_020c26f8(unk32 param1, const VecFx32 *param2, unk32 param3, bool param4);
+    static void func_ov017_020c28b4(VecFx32 *param1, UnkAngleStruct param2, unk32 param3);
+
     // overlay 71 (might be temporary)
     void func_ov071_021540ac(unk32 param1);
     void func_ov071_0215414c();

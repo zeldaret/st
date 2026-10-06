@@ -43,9 +43,6 @@ extern "C" void func_01ffe6c4(UnkStruct_ov031_020e5d18_00 *, ActorRef, VecFx32 *
                               UnkStruct_ov031_Items_00_Base *);
 extern "C" void func_0200b578(G3d_RenderObject *, void (*)(), unk32, unk32, unk32);
 
-extern "C" void func_ov017_020c2438(unk32 *, unk32, VecFx32 *, unk32, unk32);
-extern "C" void func_ov017_020c26f8(unk32, VecFx32 *, unk32, unk32);
-
 static ActorUnkZLSL_AnimationTag data_ov031_02112be8           = {.index = 0, .name = "bomb_clanim", .unknown = 0};
 static PTMF<ActorBomb> data_ov031_02112c00[ActorBombState_Max] = {
     &ActorBomb::func_ov031_020e1da0, // ActorUnkBOMBState_0
@@ -760,7 +757,7 @@ void ActorBomb::func_ov031_020e2a9c() {
 
 bool ActorBomb::func_ov031_020e2b40() {
     if (this->mUnk_180.mUnk_04 & 0x4) {
-        func_ov017_020c26f8(0x2, &this->mPos, 0x1, 0x1);
+        Actor::func_ov017_020c26f8(0x2, &this->mPos, 0x1, true);
         data_027e09a8->func_ov000_02071b30(0xED, &this->mPos, 0x0);
 
         ActorBlast::func_ov031_020e3b9c(this, 0x0, 0x0);
@@ -769,8 +766,8 @@ bool ActorBomb::func_ov031_020e2b40() {
     }
 
     if (this->mUnk_180.mUnk_04 & 0x2) {
-        unk32 sp00;
-        func_ov017_020c2438(&sp00, 0x2, &this->mPos, 0x1, 0x1);
+        ActorRef ref;
+        Actor::func_ov017_020c2438(&ref, 0x2, &this->mPos, 0x1, true);
 
         data_027e09a8->func_ov000_02071b30(0xEA, &this->mPos, 0x0);
 

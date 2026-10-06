@@ -30,9 +30,6 @@ extern "C" Actor *func_02016fbc(ActorId, VecFx32 *, unk32);
 extern "C" bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
 extern "C" void func_ov000_020986b4(s16 *param1, Actor_Derived2 *param2, unk32 param3);
 
-extern "C" void func_ov017_020c2438(unk32 *, unk32, VecFx32 *, unk32, unk32);
-extern "C" void func_ov017_020c26f8(unk32, VecFx32 *, unk32, unk32);
-
 static const VecFx32 data_ov032_02122160(FLOAT_TO_FX32(1.7f), FLOAT_TO_FX32(0.5f), FLOAT_TO_FX32(1.7f));
 static ActorUnkZLSL_AnimationTag data_ov032_02122184 = {.index = 0, .name = "walk", .unknown = 0x0};
 static ActorUnkZLSL_AnimationTag data_ov032_0212219c = {.index = 1, .name = "discover", .unknown = 0x1};
@@ -872,17 +869,18 @@ void ActorSpinut::vfunc_54(unk32 param1) {
             this->func_ov032_0211b3b0();
             break;
 
-        case 0x3:
-            unk32 sp04;
-            func_ov017_020c2438(&sp04, this->mUnk_A8->mUnk_08, &this->mPos, 0x1, 0x1);
+        case 0x3: {
+            ActorRef ref;
+            Actor::func_ov017_020c2438(&ref, this->mUnk_A8->mUnk_08, &this->mPos, 0x1, true);
             data_027e09a8->func_ov000_02071b30(0xEA, &this->mPos, 0x0);
 
             this->func_ov032_0211b3b0();
             break;
+        }
 
         case 0x2:
             data_027e09a8->func_ov000_02071b30(0x983D, &this->mPos, 0x0);
-            func_ov017_020c26f8(this->mUnk_A8->mUnk_0C, &this->mPos, 0x1, 0x1);
+            Actor::func_ov017_020c26f8(this->mUnk_A8->mUnk_0C, &this->mPos, 0x1, true);
             data_027e09a8->func_ov000_02071b30(0xED, &this->mPos, 0x0);
 
             this->func_ov017_020bf3e0(this->mUnk_A8->mUnk_00, 0x0);

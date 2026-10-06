@@ -8,6 +8,7 @@
 #include "types.h"
 
 class UnkStruct_PlayerGet_ec;
+class UnkStruct_027e0cec;
 class UnkSystem7;
 
 class UnkStruct_027e0cec_00_00 : public LinkList<UnkStruct_027e0cec_00_00> {
@@ -23,12 +24,13 @@ public:
 class UnkStruct_027e0cec_00 : public UnkStruct_027e0cec_00_00 {
 public:
     /* 00 (base) */
-    /* 10 */ void *mUnk_10;
+    /* 10 */ UnkStruct_027e0cec *mUnk_10;
     /* 14 */ unk32 mUnk_14;
     /* 18 */
 
-    UnkStruct_027e0cec_00(void *param1);
+    UnkStruct_027e0cec_00(UnkStruct_027e0cec *param1);
 
+    // data_ov017_020c3f38
     /* 00 */ virtual void vfunc_00();
 };
 

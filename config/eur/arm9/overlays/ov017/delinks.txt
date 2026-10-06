@@ -94,10 +94,12 @@ src/017_CourseExec/Game/AdventureModeManager_15C_20_00_017.cpp:
 
 src/017_CourseExec/UnkStruct_027e0cec_017.cpp:
     complete
-    .text       start:0x020c1e54 end:0x020c201c
+    .text       start:0x020c1e54 end:0x020c2038
+    .data       start:0x020c3f30 end:0x020c3f3c
 
-src/017_CourseExec/code_020c201c_017.cpp:
-    .text       start:0x020c201c end:0x020c297c
+src/017_CourseExec/Actor/code_020c201c_017.cpp:
+    complete
+    .text       start:0x020c2038 end:0x020c297c
 
 src/017_CourseExec/UnkStruct_027e0cec_18_017.cpp:
     complete

@@ -323,7 +323,7 @@ config.libs = [
             Object("017_CourseExec/UnkStackStruct_ov017_020c1104_017.cpp"),
             Object("017_CourseExec/Game/AdventureModeManager_15C_20_00_017.cpp"),
             Object("017_CourseExec/UnkStruct_027e0cec_017.cpp"),
-            Object("017_CourseExec/code_020c201c_017.cpp"),
+            Object("017_CourseExec/Actor/code_020c201c_017.cpp"),
             Object("017_CourseExec/UnkStruct_027e0cec_18_017.cpp"),
             Object("017_CourseExec/Save/SaveManager_017.cpp"),
             Object("017_CourseExec/UnkStruct_027e09c0_017.cpp"),
