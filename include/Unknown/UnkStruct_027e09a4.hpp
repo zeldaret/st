@@ -171,7 +171,6 @@ struct UnkStruct_027e09a4_2C {
     /* 02 */ unk16 mUnk_02;
     /* 04 */ VecFx32 mUnk_04;
     /* 10 */ u16 mUnk_10;
-    /* 12 */ u16 mUnk_12;
     /* 14 */
 };
 
