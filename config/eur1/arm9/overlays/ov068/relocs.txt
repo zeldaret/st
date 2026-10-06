@@ -114,7 +114,7 @@ from:0x02158e58 kind:arm_call to:0x01ffb6e4 module:itcm
 from:0x02158e60 kind:load to:0x021628fc module:overlay(68)
 from:0x02158e70 kind:arm_call to:0x0215e41c module:overlay(68)
 from:0x02158e90 kind:load to:0x02164294 module:overlay(68)
-from:0x02158ec4 kind:load to:0x020bfa90 module:overlays(2,4,17)
+from:0x02158ec4 kind:load to:0x020bfa90 module:overlay(17)
 from:0x02158ed0 kind:arm_call to:0x020bfb14 module:overlay(17)
 from:0x02158eec kind:arm_call to:0x02158db0 module:overlay(68)
 from:0x02158ef4 kind:arm_call to:0x02159240 module:overlay(68)

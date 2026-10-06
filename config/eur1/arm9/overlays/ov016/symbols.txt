@@ -85,5 +85,5 @@ data_ov016_020b82f0 kind:data(any) addr:0x020b82f0
 data_ov016_020b8314 kind:data(any) addr:0x020b8314
 data_ov016_020b8340 kind:bss addr:0x020b8340
 data_ov016_020b8344 kind:bss addr:0x020b8344
-data_ov016_020b8350 kind:bss addr:0x020b8350
+data_ov016_020b8310 kind:bss addr:0x020b8350
 data_ov016_020b860d kind:bss addr:0x020b860d ambiguous

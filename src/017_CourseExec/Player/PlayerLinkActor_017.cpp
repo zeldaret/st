@@ -84,7 +84,13 @@ void PlayerLinkActor::func_ov017_020bd788(bool param1) {
     if (param1) {
         unk32 var_r4 = -1;
 
-        if (this->mUnk_0A0->func_ov000_02091f08(0x0B) || this->mUnk_0A0->func_ov000_02091f08(0x0F)) {
+#if IS_JP
+        bool cond = this->mUnk_0A0->mUnk_68 == 0x49;
+#else
+        bool cond = false;
+#endif
+
+        if (cond || this->mUnk_0A0->func_ov000_02091f08(0x0B) || this->mUnk_0A0->func_ov000_02091f08(0x0F)) {
             VecFx32_Reset(&this->mVel);
         } else {
             if (this->mUnk_09C->mUnk_090 >= 0 && !this->mUnk_0A0->func_ov000_020936c4()) {

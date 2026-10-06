@@ -85,5 +85,5 @@ _ZTV19data_ov016_020b9ac8 kind:data(any) addr:0x020b9ac8
 _ZTV19data_ov016_020b9aec kind:data(any) addr:0x020b9aec
 data_ov016_020b9b20 kind:bss addr:0x020b9b20
 data_ov016_020b9b24 kind:bss addr:0x020b9b24
-data_ov016_020b9b30 kind:bss addr:0x020b9b30
+data_ov016_020b8310 kind:bss addr:0x020b9b30
 data_ov016_020b9e0d kind:bss addr:0x020b9e0d ambiguous

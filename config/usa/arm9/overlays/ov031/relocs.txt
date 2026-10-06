@@ -1713,7 +1713,7 @@ from:0x020e863c kind:arm_call to:0x020988f0 module:overlay(0)
 from:0x020e8708 kind:arm_call to:0x0207de78 module:overlay(0)
 from:0x020e8714 kind:load to:0x027e0cd8 module:dtcm
 from:0x020e8718 kind:load to:0x027e09c0 module:dtcm
-from:0x020e8724 kind:load to:0x020beecc module:overlays(2,4,17)
+from:0x020e8724 kind:load to:0x020beecc module:overlay(17)
 from:0x020e877c kind:arm_call to:0x02015058 module:main
 from:0x020e87a0 kind:arm_call to:0x01fff05c module:itcm
 from:0x020e87b8 kind:arm_call to:0x01fff458 module:itcm

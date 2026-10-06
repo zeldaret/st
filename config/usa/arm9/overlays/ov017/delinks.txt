@@ -9,3 +9,121 @@ src/017_CourseExec/CargoManager_017.cpp:
     complete
     .text       start:0x020be9ac end:0x020becb8
     .rodata     start:0x020c3da0 end:0x020c3dcc
+
+src/017_CourseExec/UnkStruct_027e09a4_017.cpp:
+    complete
+    .text       start:0x020bb640 end:0x020bba00
+
+src/017_CourseExec/UnkStruct_ov017_020c3f70.cpp:
+    complete
+    .text       start:0x020bba00 end:0x020bba88
+    .data       start:0x020c3ee0 end:0x020c3ef4
+    .init       start:0x020c3e04 end:0x020c3e70
+    .bss        start:0x020c3f40 end:0x020c4820
+    .ctor       start:0x020c3ec0 end:0x020c3ec4
+
+src/017_CourseExec/Player/PlayerActorBase_70_017.cpp:
+    .text       start:0x020bba88 end:0x020bbf5c
+
+src/017_CourseExec/UnkStruct_027e0ce0_30_017.cpp:
+    .text       start:0x020bbf5c end:0x020bc620
+
+src/017_CourseExec/UnkStruct_027e0ce0_40_017.cpp:
+    complete
+    .text       start:0x020bc620 end:0x020bd280
+
+src/017_CourseExec/ItemManager_017.cpp:
+    complete
+    .text       start:0x020bd280 end:0x020bd2e0
+
+src/017_CourseExec/UnkStruct_027e0ce0_40_Base_94_017.cpp:
+    .text       start:0x020bd2e0 end:0x020bd480
+
+src/017_CourseExec/UnkStruct_027e0ce0_017.cpp:
+    complete
+    .text       start:0x020bd480 end:0x020bd698
+
+src/017_CourseExec/Player/PlayerLinkActor_017.cpp:
+    complete
+    .text       start:0x020bd698 end:0x020be088
+
+src/017_CourseExec/Player/PlayerLinkActor_A0_20_017.cpp:
+    complete
+    .text       start:0x020be088 end:0x020be2cc
+
+src/017_CourseExec/code_020be2ec_017.cpp:
+    complete
+    .text       start:0x020be2cc end:0x020be9ac
+
+src/017_CourseExec/Actor/ActorManager_017.cpp:
+    complete
+    .text       start:0x020becb8 end:0x020beecc
+
+src/017_CourseExec/Actor/Actor_017.cpp:
+    complete
+    .text       start:0x020beecc end:0x020bff2c
+
+src/017_CourseExec/Actor/ActorEventIcon_017.cpp:
+    complete
+    .text       start:0x020bff2c end:0x020c005c
+
+src/017_CourseExec/MapObject/MapObjectManager_017.cpp:
+    .text       start:0x020c005c end:0x020c056c
+
+src/017_CourseExec/MapObject/MapObject_017.cpp:
+    complete
+    .text       start:0x020c056c end:0x020c0580
+
+src/017_CourseExec/MapObject/MapObjectSwitchStep_017.cpp:
+    complete
+    .text       start:0x020c0580 end:0x020c0754
+
+src/017_CourseExec/UnkStruct_027e09b4_017.cpp:
+    complete
+    .text       start:0x020c0754 end:0x020c10e4
+    .rodata     start:0x020c3dcc end:0x020c3e04
+
+src/017_CourseExec/UnkStackStruct_ov017_020c1104_017.cpp:
+    .text       start:0x020c10e4 end:0x020c1840
+
+src/017_CourseExec/Game/AdventureModeManager_15C_20_00_017.cpp:
+    .text       start:0x020c1840 end:0x020c1e34
+    .data       start:0x020c3ef4 end:0x020c3f10
+    .init       start:0x020c3e70 end:0x020c3ea8
+    .ctor       start:0x020c3ec4 end:0x020c3ec8
+
+src/017_CourseExec/UnkStruct_027e0cec_017.cpp:
+    complete
+    .text       start:0x020c1e34 end:0x020c2018
+    .data       start:0x020c3f10 end:0x020c3f1c
+
+src/017_CourseExec/Actor/code_020c201c_017.cpp:
+    complete
+    .text       start:0x020c2018 end:0x020c295c
+
+src/017_CourseExec/UnkStruct_027e0cec_18_017.cpp:
+    complete
+    .text       start:0x020c295c end:0x020c2b48
+
+src/017_CourseExec/Save/SaveManager_017.cpp:
+    complete
+    .text       start:0x020c2b48 end:0x020c3090
+
+src/017_CourseExec/UnkStruct_027e09c0_017.cpp:
+    complete
+    .text       start:0x020c3090 end:0x020c30c4
+
+src/017_CourseExec/Unknown/UnkStruct_ov024_020d86a0_017.cpp:
+    complete
+    .text       start:0x020c30c4 end:0x020c33f4
+
+src/017_CourseExec/Train/UnkStruct_027e0cf8_017.cpp:
+    complete
+    .text       start:0x020c33f4 end:0x020c39d0
+
+src/017_CourseExec/Game/AdventureModeManager_15C_017.cpp:
+    complete
+    .text       start:0x020c39d0 end:0x020c3da0
+    .data       start:0x020c3f1c end:0x020c3f40
+    .init       start:0x020c3ea8 end:0x020c3ec0
+    .ctor       start:0x020c3ec8 end:0x020c3ee0

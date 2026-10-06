@@ -2756,7 +2756,7 @@ data_0204996c kind:bss addr:0x0204996c
 data_02049970 kind:bss addr:0x02049970
 data_0204999c kind:bss addr:0x0204997c
 data_020499a8 kind:bss addr:0x020499a8
-data_020499c0 kind:bss addr:0x020499c0
+data_020499e0 kind:bss addr:0x020499c0
 data_020499fc kind:bss addr:0x020499fc
 data_02049a00 kind:bss addr:0x02049a00
 gGame kind:bss addr:0x02049a0c
@@ -2767,7 +2767,7 @@ data_02049b4c kind:bss addr:0x02049b2c
 data_02049b32 kind:bss addr:0x02049b32
 data_02049b74 kind:bss addr:0x02049b54
 data_02049b5c kind:bss addr:0x02049b5c
-data_02049b60 kind:bss addr:0x02049b60
+data_02049b80 kind:bss addr:0x02049b60
 data_02049ba0 kind:bss addr:0x02049b80
 data_02049b88 kind:bss addr:0x02049b88
 data_02049bac kind:bss addr:0x02049b8c

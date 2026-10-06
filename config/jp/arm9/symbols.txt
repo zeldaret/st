@@ -1003,7 +1003,7 @@ func_0201a470 kind:function(arm,size=0x44) addr:0x0201a470
 func_0201a4b4 kind:function(arm,size=0x44) addr:0x0201a4b4
 func_0201a4f8 kind:function(arm,size=0x3c) addr:0x0201a4f8
 func_0201a534 kind:function(arm,size=0x174) addr:0x0201a534
-func_0201a6a8 kind:function(arm,size=0x18) addr:0x0201a6a8
+func_0201a710 kind:function(arm,size=0x18) addr:0x0201a6a8
 func_0201a6c0 kind:function(arm,size=0x44) addr:0x0201a6c0
 func_0201a704 kind:function(arm,size=0x4c) addr:0x0201a704
 func_0201a750 kind:function(arm,size=0x48) addr:0x0201a750
@@ -1391,7 +1391,7 @@ func_02025f44 kind:function(arm,size=0x1c) addr:0x02025f44
 func_02025f60 kind:function(arm,size=0x1c) addr:0x02025f60
 func_02025f7c kind:function(arm,size=0x1c) addr:0x02025f7c
 func_02025f98 kind:function(arm,size=0x1c) addr:0x02025f98
-func_02025fb4 kind:function(arm,size=0x1c) addr:0x02025fb4
+func_02024a84 kind:function(arm,size=0x1c) addr:0x02025fb4
 func_02025fd0 kind:function(thumb,size=0xb8) addr:0x02025fd0
 func_02026088 kind:function(arm,size=0x6c) addr:0x02026088
 func_020260f4 kind:function(arm,size=0x24) addr:0x020260f4
@@ -1408,7 +1408,7 @@ func_02026360 kind:function(arm,size=0xa8) addr:0x02026360
 func_02026408 kind:function(arm,size=0x2c) addr:0x02026408
 func_02026434 kind:function(arm,size=0x2c) addr:0x02026434
 func_02026460 kind:function(arm,size=0x94) addr:0x02026460
-func_020264f4 kind:function(arm,size=0x3c) addr:0x020264f4
+func_02024fc4 kind:function(arm,size=0x3c) addr:0x020264f4
 GX_LoadBGPltt kind:function(arm,size=0x50) addr:0x02026530
 GXS_LoadBGPltt kind:function(arm,size=0x54) addr:0x02026580
 GX_LoadOBJPltt kind:function(arm,size=0x54) addr:0x020265d4
@@ -1963,7 +1963,7 @@ func_02033cf8 kind:function(arm,size=0x44) addr:0x02033cf8
 func_02033d3c kind:function(arm,size=0x40) addr:0x02033d3c
 func_02033d7c kind:function(arm,size=0x40) addr:0x02033d7c
 func_02033dbc kind:function(arm,size=0x3c) addr:0x02033dbc
-func_02033df8 kind:function(arm,size=0x2c) addr:0x02033df8
+func_020328c8 kind:function(arm,size=0x2c) addr:0x02033df8
 func_02033e24 kind:function(arm,size=0x2c) addr:0x02033e24
 func_02033e50 kind:function(arm,size=0xc0) addr:0x02033e50
 func_02033f10 kind:function(arm,size=0xb0) addr:0x02033f10
@@ -2790,7 +2790,7 @@ data_0204af0c kind:bss addr:0x0204af0c
 data_0204af10 kind:bss addr:0x0204af10
 data_0204999c kind:bss addr:0x0204af1c
 data_0204af48 kind:bss addr:0x0204af48
-data_0204af60 kind:bss addr:0x0204af60
+data_020499e0 kind:bss addr:0x0204af60
 data_0204af9c kind:bss addr:0x0204af9c
 data_0204afa0 kind:bss addr:0x0204afa0
 gGame kind:bss addr:0x0204afac
