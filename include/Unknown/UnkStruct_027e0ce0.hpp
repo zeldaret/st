@@ -914,6 +914,7 @@ public:
     void func_ov000_0208a218(InvImportData *pInvData);
     void func_ov000_0208a2c4(unk32 param1, unk32 param2);
     void func_ov000_0208a318(unk32 param1, unk32 param2, unk32 param3);
+    void func_ov000_0208ba40(SaveInventoryData *param1);
     void func_ov000_0208ba94(unk32 param1, VecFx32 *param2);
     void func_ov000_0208bacc(unk32 param1, VecFx32 *param2);
     void func_ov000_0208bbd4(unk32 param1, VecFx32 *param2, u16 param3);

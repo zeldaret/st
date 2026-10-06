@@ -10,6 +10,7 @@
 #include "Unknown/UnkSystem1.hpp"
 
 class AdventureModeManager_1B8;
+class GameSaveSlot;
 
 class AdventureModeManager_15C_20_00 : public GameModeManagerBase_104 {
 public:
@@ -58,7 +59,7 @@ public:
 class AdventureModeManager_15C_28 : public UnkSystem1_ov000_Derived1 {
 public:
     /* 00 (base) */
-    /* 14 */ unk32 mUnk_14;
+    /* 14 */ GameSaveSlot *mUnk_14;
     /* 18 */ unk8 mUnk_18;
     /* 19 */ unk8 mUnk_19; // pad?
     /* 1A */ unk8 mUnk_1A; // pad?
@@ -880,7 +881,7 @@ public:
     /* 00 (base) */
     /* 24 */ u16 mUnk_24;
     /* 24 */ unk16 mUnk_26; // pad?
-    /* 24 */ void *mUnk_28;
+    /* 24 */ GameSaveSlot *mUnk_28;
     /* 2C */
 
     AdventureModeManager_1B8(u8 bgType, bool param2, bool param3); // overlay 24
@@ -893,7 +894,7 @@ public:
     void func_ov024_020d13cc(s32 param1);
     bool func_ov024_020d14a8(AdventureModeManager_1B8_Base_1C *param1, unk32 param2, s32 *pFlags);
     void func_ov024_020d1564(const AdventureModeManager_1B8_Base_1C *param1, unk32 param2, s32 *pFlags, const u8 param4);
-    void func_ov024_020d1614(void *param1);
+    void func_ov024_020d1614(GameSaveSlot *param1);
     void func_ov024_020d1638();
 };
 

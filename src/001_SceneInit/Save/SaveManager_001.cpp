@@ -48,7 +48,6 @@ void SaveManager::func_ov001_020ba7c8(u16 saveSlotIndex) {
     }
 }
 
-// https://decomp.me/scratch/PykmO
 void SaveManager::func_ov001_020ba858(void) {
     if (this->mUnk_244 != NULL) {
         return;
@@ -60,8 +59,8 @@ void SaveManager::func_ov001_020ba858(void) {
 
     if (this->mUnk_206 >= 0 && this->mUnk_214 == 0) {
         CARD_LockBackup(this->mCardId);
-        CARD_ReadFlashAsync(this->mUnk_206 * 0x7A700 + offsetof(SaveSlot, mUnk_2500), this->mUnk_244,
-                            sizeof(SaveManager_244) * 2, NULL, NULL);
+        CARD_ReadFlashAsync(this->GetOffset() + offsetof(SaveSlot, mUnk_2500), this->mUnk_244, sizeof(SaveManager_244) * 2,
+                            NULL, NULL);
         this->mResultCode = CARD_GetResultCode();
         CARD_UnlockBackup(this->mCardId);
 

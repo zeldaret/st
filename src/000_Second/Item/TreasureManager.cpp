@@ -90,7 +90,7 @@ TreasureManager *TreasureManager::Create() {
 }
 
 TreasureManager::TreasureManager() {
-    this->mUnk_5C = 0;
+    this->mUnk_5C.unk_00 = 0;
 }
 
 TreasureManager::~TreasureManager() {}

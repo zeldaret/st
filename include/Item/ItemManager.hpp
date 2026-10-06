@@ -420,14 +420,18 @@ public:
     static AdventureFlag GetAdvFlagFromItem(ItemId itemId);
 };
 
+struct TreasureManager_5C {
+    /* 00 */ u16 unk_00;
+    /* 02 */ u8 unk_02[32];
+    /* 22 */ u16 unk_22;
+    /* 24 */
+};
+
 class TreasureManager : public AutoInstance<TreasureManager> {
 public:
-    /* 28 */ unk8 mUnk_00[0x3C - 0x00];
+    /* 00 */ unk16 mUnk_00[30];
     /* 3C */ s16 mUnk_3C[TreasureType_Max]; // treasures
-    /* 5C */ unk16 mUnk_5C;
-    /* 5E */ unk16 mUnk_5E;
-    /* 60 */ STRUCT_PAD(0x60, 0x7E);
-    /* 7E */ u16 mUnk_7E;
+    /* 5C */ TreasureManager_5C mUnk_5C;
     /* 80 */
 
     TreasureManager();

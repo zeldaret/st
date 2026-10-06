@@ -49,6 +49,7 @@ src/001_SceneInit/SysNew_001.cpp:
     .text       start:0x020ba5c8 end:0x020ba6b0
 
 src/001_SceneInit/Save/SaveManager_001.cpp:
+    complete
     .text       start:0x020ba6b0 end:0x020ba9f8
 
 src/001_SceneInit/UnkStruct_027e09bc_001.cpp:

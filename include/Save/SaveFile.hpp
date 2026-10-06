@@ -5,6 +5,7 @@
 #include "MainGame/PassengerManager.hpp"
 #include "flags.h"
 #include "math.hpp"
+#include "nitro/fx.h"
 #include "types.h"
 
 #include <nitro/mi.h>
@@ -256,18 +257,20 @@ struct SaveFile_00000_0000_Data_D9C {
 struct SaveInfoData {
     /* 000 */ unk32 unk_000;
     /* 004 */ unk32 unk_004;
-    /* 008 */ unk32 unk_008;
-    /* 00C */ unk32 unk_00C;
-    /* 010 */ unk32 unk_010;
-    /* 014 */ unk16 unk_014;
+    /* 008 */ VecFx32 unk_008;
+    /* 014 */ u16 unk_014;
     /* 016 */ u16 sceneIndex;
     /* 018 */ u8 roomIndex;
     /* 019 */ u8 spawnIndex;
-    /* 01A */ unk16 unk_01A;
-    /* 01C */ unk32 unk_01C;
-    /* 020 */ unk32 unk_020;
-    /* 024 */ unk32 unk_024;
-    /* 028 */ STRUCT_PAD(0x28, 0x40);
+
+    // similar to UnkStruct_027e09a4_2C but not exactly the same struct
+    /* 01A */ SceneIndex_Halfs mSceneIndex;
+    /* 01C */ VecFx32 mUnk_01C;
+    /* 028 */ u16 mUnk_028;
+    /* 02A */ u16 mUnk_02A;
+    /* 02C */ u16 mUnk_02C;
+
+    /* 028 */ STRUCT_PAD(0x30, 0x40);
     /* 040 */ SaveInventory inventory;
     /* 0D8 */ SaveFile_00000_0000_Data_D8 unk_0D8;
     /* 158 */ SaveFile_00000_0000_Data_158 unk_158;
@@ -305,32 +308,35 @@ struct SaveInfoData {
 };
 
 struct SaveTreasureData {
-    /* 00 */ STRUCT_PAD(0x00, 0x3C);
+    /* 00 */ unk16 unk_00[30];
     /* 3C */ s16 unk_3C[TreasureType_Max];
-    /* 5C */ unk16 unk_5C;
-    /* 5E */ unk16 unk_5E;
-    /* 60 */ STRUCT_PAD(0x60, 0x7E);
-    /* 7E */ u16 unk_7E;
+    /* 5C */ TreasureManager_5C unk_5C;
     /* 80 */
 
-    SaveTreasureData() :
-        unk_5C(0) {}
+    SaveTreasureData() {
+        this->unk_5C.unk_00 = 0;
+    }
 };
 
 struct SaveFile_00000_1D00_Data {
-    /* 000 */ STRUCT_PAD(0x00, 0x3C4);
+    /* 000 */ STRUCT_PAD(0x00, 0xFE);
+    /* 0FE */ unk16 unk_0FE;
+    /* 100 */ STRUCT_PAD(0x100, 0x3C4);
     /* 3C4 */ wchar_t unk_3C4[LENGTH_PLAYER_NAME + 1];
     /* 3D6 */ STRUCT_PAD(0x3D6, 0x3FE);
     /* 3FE */ u16 unk_3FE;
     /* 400 */
 };
 
+//! TODO: is this SaveTreasureData? similarities with both the size and unk_7E
 struct SaveFile_00000_2500_Data {
     /* 00 */ unk8 unk_00[0x7E];
     /* 7E */ u16 unk_7E;
     /* 80 */
 };
 
+//! TODO: is this SaveTreasureData? similarities with both the size and unk_7E
+//! a ctor from FileSelectOptions.cpp says otherwise though
 struct SaveFile_00000_2600_Data {
     /* 00 */ u8 unk_00;
     /* 01 */ u8 unk_01;

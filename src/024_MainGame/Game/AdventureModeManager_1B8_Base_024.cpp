@@ -640,7 +640,7 @@ void AdventureModeManager_1B8::func_ov024_020d1564(const AdventureModeManager_1B
     }
 }
 
-void AdventureModeManager_1B8::func_ov024_020d1614(void *param1) {
+void AdventureModeManager_1B8::func_ov024_020d1614(GameSaveSlot *param1) {
     this->mUnk_28 = param1;
     MI_CpuClearFast(this->mUnk_28, 0x1000);
     StaticInstance<UnkStruct_ov017_020c3f70>::sInstance.func_ov017_020bba78();
