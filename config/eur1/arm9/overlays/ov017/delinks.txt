@@ -5,11 +5,6 @@
     .data       start:0x020c3f40 end:0x020c3fa0 kind:data align:32
     .bss        start:0x020c3fa0 end:0x020c4880 kind:bss align:32
 
-src/017_CourseExec/CargoManager_017.cpp:
-    complete
-    .text       start:0x020bea0c end:0x020bed18
-    .rodata     start:0x020c3e00 end:0x020c3e2c
-
 src/017_CourseExec/UnkStruct_027e09a4_017.cpp:
     complete
     .text       start:0x020bb6a0 end:0x020bba60
@@ -17,10 +12,10 @@ src/017_CourseExec/UnkStruct_027e09a4_017.cpp:
 src/017_CourseExec/UnkStruct_ov017_020c3f70.cpp:
     complete
     .text       start:0x020bba60 end:0x020bbae8
-    .data       start:0x020c3f40 end:0x020c3f54
     .init       start:0x020c3e64 end:0x020c3ed0
-    .bss        start:0x020c3fa0 end:0x020c4880
     .ctor       start:0x020c3f20 end:0x020c3f24
+    .data       start:0x020c3f40 end:0x020c3f54
+    .bss        start:0x020c3fa0 end:0x020c4880
 
 src/017_CourseExec/Player/PlayerActorBase_70_017.cpp:
     .text       start:0x020bbae8 end:0x020bbfbc
@@ -55,6 +50,11 @@ src/017_CourseExec/code_020be2ec_017.cpp:
     complete
     .text       start:0x020be32c end:0x020bea0c
 
+src/017_CourseExec/CargoManager_017.cpp:
+    complete
+    .text       start:0x020bea0c end:0x020bed18
+    .rodata     start:0x020c3e00 end:0x020c3e2c
+
 src/017_CourseExec/Actor/ActorManager_017.cpp:
     complete
     .text       start:0x020bed18 end:0x020bef2c
@@ -88,9 +88,9 @@ src/017_CourseExec/UnkStackStruct_ov017_020c1104_017.cpp:
 
 src/017_CourseExec/Game/AdventureModeManager_15C_20_00_017.cpp:
     .text       start:0x020c18a0 end:0x020c1e94
-    .data       start:0x020c3f54 end:0x020c3f70
     .init       start:0x020c3ed0 end:0x020c3f08
     .ctor       start:0x020c3f24 end:0x020c3f28
+    .data       start:0x020c3f54 end:0x020c3f70
 
 src/017_CourseExec/UnkStruct_027e0cec_017.cpp:
     complete
@@ -124,6 +124,6 @@ src/017_CourseExec/Train/UnkStruct_027e0cf8_017.cpp:
 src/017_CourseExec/Game/AdventureModeManager_15C_017.cpp:
     complete
     .text       start:0x020c3a30 end:0x020c3e00
-    .data       start:0x020c3f7c end:0x020c3fa0
     .init       start:0x020c3f08 end:0x020c3f20
     .ctor       start:0x020c3f28 end:0x020c3f40
+    .data       start:0x020c3f7c end:0x020c3fa0
