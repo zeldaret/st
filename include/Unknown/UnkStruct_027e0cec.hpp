@@ -2,6 +2,7 @@
 
 #include "LinkList.hpp"
 #include "Unknown/UnkFileSystem.hpp"
+#include "global.h"
 #include "math.hpp"
 #include "nitro/fx.h"
 #include "types.h"
@@ -31,11 +32,48 @@ public:
     /* 00 */ virtual void vfunc_00();
 };
 
-struct UnkStruct_027e0cec_18_04 {
-    /* 00 */ STRUCT_PAD(0x00, 0x3C);
+struct UnkStruct_027e0cec_18_04_20 {
+    /* 00 */ u32 mUnk_00_00 : 14;
+    /* 00 */ u32 mUnk_00_14 : 1;
+    /* 04 */ STRUCT_PAD(0x04, 0x36);
+    /* 36 */ u16 mUnk_36;
+    /* 38 */ STRUCT_PAD(0x38, 0x40);
+    /* 40 */ u16 mUnk_40;
+};
+
+class UnkStruct_027e0cec_18_04 : public LinkList<UnkStruct_027e0cec_18_04> {
+public:
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ unk32 mUnk_1C;
+    /* 20 */ UnkStruct_027e0cec_18_04_20 **mUnk_20;
+    /* 24 */ u32 mUnk_24_00 : 1;
+    /* 24 */ u32 mUnk_24_01 : 1;
+    /* 24 */ u32 mUnk_24_02 : 1;
+    /* 24 */ u32 mUnk_24_03 : 1;
+    /* 24 */ u32 mUnk_24_04 : 1;
+    /* 28 */ unk32 mUnk_28;
+    /* 2C */ unk32 mUnk_2C;
+    /* 30 */ unk32 mUnk_30;
+    /* 34 */ unk32 mUnk_34;
+    /* 38 */ unk32 mUnk_38;
     /* 3C */ unk32 mUnk_3C;
-    /* 40 */ unk32 mUnk_40;
-    /* 44 */ void *mUnk_44;
+    /* 40 */ LinkList<void *> mUnk_40;
+    /* 48 */ u16 mUnk_48;
+    /* 48 */ u16 mUnk_4A;
+    /* 48 */ u16 mUnk_4C;
+    /* 50 */ STRUCT_PAD(0x50, 0x84);
+    /* 84 */ unk32 mUnk_84_00 : 16;
+    /* 84 */ u32 mUnk_84_16 : 3;
+    /* 88 */ unk32 mUnk_88;
+    /* 8C */ unk32 mUnk_8C;
+    /* 90 */ unk32 mUnk_90;
+    /* 94 */ unk32 mUnk_94;
+    /* 98 */ unk32 mUnk_98;
+    /* 9C */ unk32 mUnk_9C;
 
     // overlay 0
     void func_ov000_02054a78();

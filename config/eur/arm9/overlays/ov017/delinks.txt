@@ -100,6 +100,7 @@ src/017_CourseExec/code_020c201c_017.cpp:
     .text       start:0x020c201c end:0x020c297c
 
 src/017_CourseExec/UnkStruct_027e0cec_18_017.cpp:
+    complete
     .text       start:0x020c297c end:0x020c2b68
 
 src/017_CourseExec/Save/SaveManager_017.cpp:

@@ -21,6 +21,10 @@ public:
         return this->mpPrev;
     }
 
+    void **GetPrevRef() {
+        return (void **) &this->mpPrev;
+    }
+
     void SetNext(LinkListNode *pNext) {
         this->mpNext = pNext;
     }
@@ -111,7 +115,7 @@ public:
 };
 
 #define GetBeginIter(l) (GetLinkListRef(l)->GetNextTarget())
-#define GetBeginIterReverse(l) (GetLinkListRef(l)->GetPrevTarget())
+#define GetBeginIterReverse(l) (GetLinkListRef((l))->GetPrevTarget())
 #define GetEndIter(l) GetLinkListRef(l)
 #define GetNextIter(it) (it = it->GetNextTarget())
 #define GetPrevIter(it) (it = it->GetPrevTarget())
@@ -125,6 +129,10 @@ public:
 
     LinkListIter(T *pNode) {
         this->mPointer = pNode;
+    }
+
+    LinkListNode *GetNode() const {
+        return this->mPointer;
     }
 
     T *operator->() const {

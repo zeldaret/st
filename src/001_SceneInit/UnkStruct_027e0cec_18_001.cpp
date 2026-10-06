@@ -35,8 +35,8 @@ UnkStruct_027e0cec_18::UnkStruct_027e0cec_18(UnkFileSystem1 *param1, bool param2
         }
     }
 
-    this->mUnk_04          = func_ov000_02054690(UnkStruct_027e0cec_18::func_ov001_020bf0a0, uVar5, uVar3, 0x00, 0x24, 0x3F);
-    this->mUnk_04->mUnk_44 = &data_027e0154;
+    this->mUnk_04 = func_ov000_02054690((void *) UnkStruct_027e0cec_18::func_ov001_020bf0a0, uVar5, uVar3, 0x00, 0x24, 0x3F);
+    this->mUnk_04->mUnk_40.SetPrev((LinkListNode *) &data_027e0154);
     this->mUnk_04->mUnk_3C = 0x8000;
 
     param1->vfunc_08(0x10);
