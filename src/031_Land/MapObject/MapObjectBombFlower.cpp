@@ -1,4 +1,5 @@
 #include "MapObject/MapObjectBombFlower.hpp"
+#include "Actor/ActorRef.hpp"
 #include "CommonFuncs.hpp"
 
 #include "Actor/ActorBomb.hpp"
@@ -103,7 +104,7 @@ void MapObjectBombFlower::func_ov031_02102728(unk32 param1) {
     params.mUnk_28 = 0;
     params.func_ov000_020975f8();
 
-    params.mUnk_28 = *(unk32 *) &this->mUnk_38;
+    params.mUnk_28 = *(ActorRef *) &this->mRef; //! TODO: ref conflicts
     VecFx32_Copy(&this->mPos, &params.mInitialPos);
 
     params.mParams[0] = 0x0;

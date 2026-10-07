@@ -20,7 +20,7 @@ public:
 
     // data_ov031_02115844
     /* 00 */ virtual ~MapObjectTreasureSpawned_74() override {}
-    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
+    /* 1C */ virtual void vfunc_1C(G3d_RenderState *param1) override;
 
     void func_ov000_0209dde0(void);
 

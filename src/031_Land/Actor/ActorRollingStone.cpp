@@ -59,7 +59,8 @@ ActorProfileRollingStone::ActorProfileRollingStone() :
 }
 
 // non-matching
-bool ActorRollingStone_104::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {}
+bool ActorRollingStone_104::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+                                     const VecFx32 *param4) {}
 
 bool ActorRollingStone_104::vfunc_10(ActorRef param1, unk32 param2) {
     if (param1.type != 0x0) {

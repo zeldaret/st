@@ -218,7 +218,7 @@ void MapObjectUnkSAND::vfunc_0C() {
 
 void MapObjectUnkSAND::vfunc_14(unk32 param1) {
     VecFx32 sp4  = this->mPos;
-    Vec2bCpp sp0 = this->mUnk_3A;
+    Vec2bCpp sp0 = this->mRef.GetUnk02();
 
     for (int var_r7 = 0; var_r7 < ARRAY_LEN(this->mUnk_40); var_r7++) {
         if (this->mUnk_40[var_r7].mUnk_00 != 0) {

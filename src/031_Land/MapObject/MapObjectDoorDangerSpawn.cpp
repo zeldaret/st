@@ -95,8 +95,8 @@ void MapObjectDoorDangerSpawn::Setup(void) {
         u32 temp2;
 
         if (pMapObject != NULL) {
-            temp1 = *(u32 *) &this->mUnk_38;
-            temp2 = *(u32 *) &pMapObject->mUnk_38;
+            temp1 = *(u32 *) &this->mRef;
+            temp2 = *(u32 *) &pMapObject->mRef;
 
             if (temp2 != temp1 && pMapObject->mUnk_A2) {
                 run = false;
@@ -649,7 +649,7 @@ void MapObjectDoorDangerSpawn::vfunc_40(void) {
 }
 
 void MapObjectDoorDangerSpawn::vfunc_44(void) {
-    unk32 local_c = *(u32 *) &this->mUnk_38;
+    unk32 local_c = *(u32 *) &this->mRef;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x137, &this->mPos, 0);
 }
 
@@ -658,7 +658,7 @@ void MapObjectDoorDangerSpawn::vfunc_48(void) {
 }
 
 void MapObjectDoorDangerSpawn::vfunc_4C(void) {
-    unk32 local_c = *(u32 *) &this->mUnk_38;
+    unk32 local_c = *(u32 *) &this->mRef;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x139, &this->mPos, 0);
 }
 

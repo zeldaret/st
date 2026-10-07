@@ -17,14 +17,14 @@ MapObject::MapObject() {
     this->mState    = MapObjState_None;
     this->mFlags[0] = 0;
     this->mUnk_20.Init();
-    *(u32 *) &this->mUnk_38 = 0;
+    this->mRef.Reset();
 
     UnkStruct_ov000_020b5d34 *ptr1 = &data_ov000_020b5d34;
     this->mpProfile                = ptr1->mpProfile;
 
     UnkStruct_ov000_020b5d34_00 *ptr2 = ptr1->mUnk_00;
 
-    *(u32 *) &this->mUnk_38 = *ptr2->mUnk_00;
+    this->mRef = *ptr2->mUnk_00;
 
     VecFx32 *ptr = ptr2->mUnk_08;
     this->mPos.x = ptr->x;
@@ -144,24 +144,24 @@ void MapObject::func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3
     UnkStruct_027e0cd8_0C_Base *temp_r5 = data_027e0cd8->mUnk_0C;
     Vec2bCpp sp0(0, 0);
 
-    sp0.x = this->mUnk_3A.x;
+    sp0.x = this->mRef.unk_02.x;
 
     s32 tempX = param3->x;
-    tempX += this->mUnk_3A.x;
+    tempX += this->mRef.unk_02.x;
 
-    if (this->mUnk_3A.x < tempX) {
+    if (this->mRef.unk_02.x < tempX) {
         do {
-            sp0.y = this->mUnk_3A.y;
+            sp0.y = this->mRef.unk_02.y;
 
             s32 tempY = param3->y;
-            tempY += this->mUnk_3A.y;
+            tempY += this->mRef.unk_02.y;
 
-            if (this->mUnk_3A.y < tempY) {
+            if (this->mRef.unk_02.y < tempY) {
                 do {
                     temp_r5->func_ov000_020801b0(&sp0, param1, param2);
-                } while (++sp0.y < param3->y + this->mUnk_3A.y);
+                } while (++sp0.y < param3->y + this->mRef.unk_02.y);
             }
-        } while (++sp0.x < param3->x + this->mUnk_3A.x);
+        } while (++sp0.x < param3->x + this->mRef.unk_02.x);
     }
 }
 
@@ -208,7 +208,7 @@ void MapObject::func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_
         return;
     }
 
-    if (data_027e0998->vfunc_00(&this->mPos, &sp10, (ActorRef *) &this->mUnk_38)) {
+    if (data_027e0998->vfunc_00(&this->mPos, &sp10, (ActorRef *) &this->mRef)) { //! TODO: ref conflicts
         spC.mUnk_06 = 0x00;
         MI_CpuFill32(0, &spC, sizeof(spC));
         spC.mUnk_05             = -1;

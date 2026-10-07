@@ -28,7 +28,7 @@ bool MapObjectPot_Base::SetState(MapObjState state, unk32 param2) {
         case MapObjPot_BaseState_1:
             this->vfunc_48();
             if (this->vfunc_40()) {
-                func_ov000_020a14e4(this->mUnk_38, &this->mPos);
+                func_ov000_020a14e4(this->mRef.unk_00, &this->mPos);
             } else {
                 if (this->vfunc_4C()) {
                     unk32 val = this->vfunc_54();

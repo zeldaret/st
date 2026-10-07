@@ -310,7 +310,7 @@ _ZN16ActorProfileBomb6CreateEv kind:function(arm,size=0x24) addr:0x020e14d0
 _ZN16ActorProfileBombC1Ev kind:function(arm,size=0x4c) addr:0x020e14f4
 _ZN9ActorBomb19func_ov031_020e1540Et kind:function(arm,size=0x90) addr:0x020e1540
 _ZN9ActorBomb19func_ov031_020e15d0Et kind:function(arm,size=0x64) addr:0x020e15d0
-_ZN9ActorBomb19func_ov031_020e1634Ev kind:function(arm,size=0x58) addr:0x020e1634
+_ZN9ActorBomb19func_ov031_020e1634EP16G3d_RenderState_ kind:function(arm,size=0x58) addr:0x020e1634
 _ZN9ActorBombC1Ev kind:function(arm,size=0x168) addr:0x020e168c
 _ZN13ActorBomb_unkD1Ev kind:function(arm,size=0x14) addr:0x020e17f4
 _ZN13ActorBomb_19CD1Ev kind:function(arm,size=0x14) addr:0x020e1808
@@ -318,7 +318,7 @@ _ZN9ActorBomb4InitEi kind:function(arm,size=0x84) addr:0x020e181c
 _ZN9ActorBomb19func_ov031_020e18a0Ev kind:function(arm,size=0x24) addr:0x020e18a0
 _ZN9ActorBomb8SetStateEs kind:function(arm,size=0x44) addr:0x020e18c4
 _ZN9ActorBomb19func_ov031_020e1908Ev kind:function(arm,size=0x18) addr:0x020e1908
-_ZN9ActorBomb19func_ov031_020e1920EP7VecFx32 kind:function(arm,size=0x1c) addr:0x020e1920
+_ZN9ActorBomb19func_ov031_020e1920EPK7VecFx32 kind:function(arm,size=0x1c) addr:0x020e1920
 _ZN9ActorBomb19func_ov031_020e193cEv kind:function(arm,size=0xec) addr:0x020e193c
 _ZN9ActorBomb6UpdateEv kind:function(arm,size=0xd0) addr:0x020e1a28
 _ZN9ActorBomb8vfunc_24Ev kind:function(arm,size=0x24) addr:0x020e1af8
@@ -359,7 +359,7 @@ _ZN13ActorBomb_180C1EP5Actor kind:function(arm,size=0x3c) addr:0x020e2d78
 _ZN13ActorBomb_180D1Ev kind:function(arm,size=0x1c) addr:0x020e2db4
 _ZN13ActorBomb_180D0Ev kind:function(arm,size=0x24) addr:0x020e2dd0
 _ZN13ActorBomb_1808vfunc_08EPK24UnkStruct_ov031_020f3310i kind:function(arm,size=0x48) addr:0x020e2df4
-_ZN13ActorBomb_1808vfunc_0CEPK24UnkStruct_ov031_020e54d4Pii kind:function(arm,size=0x450) addr:0x020e2e3c
+_ZN13ActorBomb_1808vfunc_0CE9MapObjRefP24UnkStruct_ov031_020e54d4PK7VecFx32S5_ kind:function(arm,size=0x450) addr:0x020e2e3c
 _ZN13ActorBomb_1808vfunc_10E8ActorRefi kind:function(arm,size=0x84) addr:0x020e328c
 _ZN24ActorBomb_ov031_020e21348vfunc_08EPK24UnkStruct_ov031_020f3310i kind:function(arm,size=0x30) addr:0x020e3310
 _ZN13ActorBomb_19CC1EP5Actor kind:function(arm,size=0x3c) addr:0x020e3340
@@ -373,7 +373,7 @@ _ZN16ActorProfileBombD1Ev kind:function(arm,size=0x14) addr:0x020e34a0
 _ZN17ActorProfileBlast10GetProfileEv kind:function(arm,size=0xc) addr:0x020e34b4
 _ZN17ActorProfileBlast6CreateEv kind:function(arm,size=0x24) addr:0x020e34c0
 _ZN17ActorProfileBlastC1Ev kind:function(arm,size=0x38) addr:0x020e34e4
-_ZN13ActorBlast_E88vfunc_0CEPK24UnkStruct_ov031_020e54d4Pii kind:function(arm,size=0x1a4) addr:0x020e351c
+_ZN13ActorBlast_E88vfunc_0CE9MapObjRefP24UnkStruct_ov031_020e54d4PK7VecFx32S5_ kind:function(arm,size=0x1a4) addr:0x020e351c
 _ZN10ActorBlastC1Ev kind:function(arm,size=0x7c) addr:0x020e36c0
 _ZN13ActorBlast_E8D1Ev kind:function(arm,size=0x14) addr:0x020e373c
 _ZN10ActorBlast4InitEi kind:function(arm,size=0x274) addr:0x020e3750
@@ -444,7 +444,7 @@ _ZN22ActorItemBoomerang_11CC1EP18ActorItemBoomerang kind:function(arm,size=0x28)
 _ZN22ActorItemBoomerang_11CD1Ev kind:function(arm,size=0x14) addr:0x020e5474
 _ZN22ActorItemBoomerang_11CD0Ev kind:function(arm,size=0x1c) addr:0x020e5488
 _ZN22ActorItemBoomerang_11C8vfunc_08EPK24UnkStruct_ov031_020f3310i kind:function(arm,size=0x30) addr:0x020e54a4
-_ZN22ActorItemBoomerang_11C8vfunc_0CEPK24UnkStruct_ov031_020e54d4Pii kind:function(arm,size=0x230) addr:0x020e54d4
+_ZN22ActorItemBoomerang_11C8vfunc_0CE9MapObjRefP24UnkStruct_ov031_020e54d4PK7VecFx32S5_ kind:function(arm,size=0x230) addr:0x020e54d4
 _ZN26ActorItemBoomerang_Unknown19func_ov031_020e5704Ev kind:function(arm,size=0xc) addr:0x020e5704
 _ZN21ActorItemBoomerang_A0D0Ev kind:function(arm,size=0x1c) addr:0x020e5710
 _ZN21ActorItemBoomerang_CCD0Ev kind:function(arm,size=0x1c) addr:0x020e572c
@@ -482,7 +482,7 @@ func_ov031_020e67dc kind:function(arm,size=0x7c) addr:0x020e67dc
 func_ov031_020e6858 kind:function(arm,size=0x64) addr:0x020e6858
 _ZN19func_ov031_020e68bcD0Ev kind:function(arm,size=0x1c) addr:0x020e68bc
 _ZN15ActorUnkSWBM_948vfunc_08EPK24UnkStruct_ov031_020f3310i kind:function(arm,size=0x28) addr:0x020e68d8
-_ZN15ActorUnkSWBM_948vfunc_0CEPK24UnkStruct_ov031_020e54d4Pii kind:function(arm,size=0x1c) addr:0x020e6900
+_ZN15ActorUnkSWBM_948vfunc_0CE9MapObjRefP24UnkStruct_ov031_020e54d4PK7VecFx32S5_ kind:function(arm,size=0x1c) addr:0x020e6900
 _ZN15ActorUnkSWBM_988vfunc_0CEP5ActorP7VecFx32 kind:function(arm,size=0x58) addr:0x020e691c
 _ZN15ActorUnkSWBM_988vfunc_10EP5Actor kind:function(arm,size=0x58) addr:0x020e6974
 _ZN15ActorUnkSWBM_C88vfunc_00Eii kind:function(arm,size=0x168) addr:0x020e69cc
@@ -924,7 +924,7 @@ _ZN18ActorShotArrow_178D1Ev kind:function(arm,size=0x1c) addr:0x020f32c4
 _ZN18ActorShotArrow_178D0Ev kind:function(arm,size=0x24) addr:0x020f32e0
 _ZN18ActorShotArrow_17819func_ov031_020f3304Ev kind:function(arm,size=0xc) addr:0x020f3304
 _ZN18ActorShotArrow_1788vfunc_08EPK24UnkStruct_ov031_020f3310i kind:function(arm,size=0xac) addr:0x020f3310
-_ZN18ActorShotArrow_1788vfunc_0CEPK24UnkStruct_ov031_020e54d4Pii kind:function(arm,size=0x350) addr:0x020f33bc
+_ZN18ActorShotArrow_1788vfunc_0CE9MapObjRefP24UnkStruct_ov031_020e54d4PK7VecFx32S5_ kind:function(arm,size=0x350) addr:0x020f33bc
 _ZN18ActorShotArrow_194C1EP14ActorShotArrow kind:function(arm,size=0x40) addr:0x020f370c
 _ZN18ActorShotArrow_19419func_ov031_020f374cEP5Actor kind:function(arm,size=0x164) addr:0x020f374c
 _ZN18ActorShotArrow_1948vfunc_10EP5Actor kind:function(arm,size=0x388) addr:0x020f38b0
@@ -1110,7 +1110,7 @@ _ZN19ActorProfileUnkFLEND1Ev kind:function(arm,size=0x14) addr:0x020f82cc
 _ZN24ActorProfileRollingStone10GetProfileEv kind:function(arm,size=0xc) addr:0x020f82e0
 _ZN24ActorProfileRollingStone6CreateEv kind:function(arm,size=0x24) addr:0x020f82ec
 _ZN24ActorProfileRollingStoneC1Ev kind:function(arm,size=0x44) addr:0x020f8310
-_ZN21ActorRollingStone_1048vfunc_0CEPK24UnkStruct_ov031_020e54d4Pii kind:function(arm,size=0x90) addr:0x020f8354
+_ZN21ActorRollingStone_1048vfunc_0CE9MapObjRefP24UnkStruct_ov031_020e54d4PK7VecFx32S5_ kind:function(arm,size=0x90) addr:0x020f8354
 _ZN21ActorRollingStone_1048vfunc_10E8ActorRefi kind:function(arm,size=0xb8) addr:0x020f83e4
 _ZN20ActorRollingStone_D48vfunc_10EP5Actor kind:function(arm,size=0x44) addr:0x020f849c
 _ZN17ActorRollingStoneC1Ev kind:function(arm,size=0x194) addr:0x020f84e0
@@ -1538,11 +1538,11 @@ _ZN24MapObjectTreasureSpawned8vfunc_54Ev kind:function(arm,size=0xc) addr:0x0210
 _ZN24MapObjectTreasureSpawnedD1Ev kind:function(arm,size=0x14) addr:0x02102fa4
 _ZN24MapObjectTreasureSpawnedD0Ev kind:function(arm,size=0x1c) addr:0x02102fb8
 _ZN31MapObjectProfileTreasureSpawnedD1Ev kind:function(arm,size=0x14) addr:0x02102fd4
-_ZN19MapObjectUnkTRES_74C1Ei kind:function(arm,size=0x28) addr:0x02102fe8
-_ZN19MapObjectUnkTRES_748vfunc_1CEP19UnkSystem4_vfunc_1C kind:function(arm,size=0x5c) addr:0x02103010
-_ZN19MapObjectUnkTRES_7419func_ov031_0210306cEv kind:function(arm,size=0x10) addr:0x0210306c
+_ZN27MapObjectTreasureSpawned_74C1EP10G3d_Model_ kind:function(arm,size=0x28) addr:0x02102fe8
+_ZN27MapObjectTreasureSpawned_748vfunc_1CEP16G3d_RenderState_ kind:function(arm,size=0x5c) addr:0x02103010
+_ZN27MapObjectTreasureSpawned_7419func_ov031_0210306cEv kind:function(arm,size=0x10) addr:0x0210306c
 _ZN18MapObjectChestBaseC2Ei kind:function(arm,size=0x80) addr:0x0210307c
-_ZN19MapObjectUnkTRES_74D1Ev kind:function(arm,size=0x14) addr:0x021030fc
+_ZN27MapObjectTreasureSpawned_74D1Ev kind:function(arm,size=0x14) addr:0x021030fc
 _ZN18MapObjectChestBaseD1Ev kind:function(arm,size=0x20) addr:0x02103110
 _ZN18MapObjectChestBaseD0Ev kind:function(arm,size=0x28) addr:0x02103130
 _ZN18MapObjectChestBaseD2Ev kind:function(arm,size=0x20) addr:0x02103158
@@ -1564,7 +1564,7 @@ _ZN18MapObjectChestBase19func_ov031_02103f48Ev kind:function(arm,size=0x58) addr
 _ZN18MapObjectChestBase8vfunc_4CEv kind:function(arm,size=0x28) addr:0x02103fa0
 _ZN18MapObjectChestBase8vfunc_50Ev kind:function(arm,size=0x2c) addr:0x02103fc8
 _ZN18MapObjectChestBase8vfunc_54Ev kind:function(arm,size=0xc) addr:0x02103ff4
-_ZN19MapObjectUnkTRES_74D0Ev kind:function(arm,size=0x1c) addr:0x02104000
+_ZN27MapObjectTreasureSpawned_74D0Ev kind:function(arm,size=0x1c) addr:0x02104000
 _ZN23MapObjectProfileUnkTRED10GetProfileEv kind:function(arm,size=0xc) addr:0x0210401c
 _ZN23MapObjectProfileUnkTRED6CreateEv kind:function(arm,size=0x24) addr:0x02104028
 _ZN23MapObjectProfileUnkTREDC1Ev kind:function(arm,size=0x44) addr:0x0210404c
@@ -1997,12 +1997,10 @@ data_ov031_021109ea kind:data(any) addr:0x021109ea
 data_ov031_021109ec kind:data(any) addr:0x021109ec
 data_ov031_021109ee kind:data(any) addr:0x021109ee
 data_ov031_021109f0 kind:data(any) addr:0x021109f0
-data_ov031_021109fc kind:data(any) addr:0x021109fc
-data_ov031_02110a10 kind:data(any) addr:0x02110a10
-data_ov031_02110a28 kind:data(any) addr:0x02110a28
-data_ov031_02110a50 kind:data(any) addr:0x02110a50
-data_ov031_02110a60 kind:data(any) addr:0x02110a60
-data_ov031_02110a70 kind:data(any) addr:0x02110a70
+data_ov031_021109fc kind:data(any) addr:0x021109fc local
+data_ov031_02110a10 kind:data(byte[0x18]) addr:0x02110a10 local
+data_ov031_02110a28 kind:data(byte[0x18]) addr:0x02110a28 local
+data_ov031_02110a40 kind:data(any) addr:0x02110a40 local
 data_ov031_02110a80 kind:data(any) addr:0x02110a80
 data_ov031_02110a88 kind:data(any) addr:0x02110a88
 data_ov031_02110a98 kind:data(any) addr:0x02110a98
@@ -2070,7 +2068,7 @@ data_ov031_02110f74 kind:data(any) addr:0x02110f74
 data_ov031_02110f88 kind:data(any) addr:0x02110f88
 __sinit_ov031_02110fd0 kind:function(arm,size=0x18) addr:0x02110fd0
 __sinit_ov031_02110fe8 kind:function(arm,size=0x10) addr:0x02110fe8
-__sinit_ActorBomb.cpp kind:function(arm,size=0x50) addr:0x02110ff8
+__sinit_ActorBomb.cpp kind:function(arm,size=0x50) addr:0x02110ff8 local
 __sinit_ActorBlast.cpp kind:function(arm,size=0x50) addr:0x02111048
 __sinit_ActorUnkTLKT.cpp kind:function(arm,size=0x50) addr:0x02111098 local
 __sinit_ActorItemBoomerang.cpp kind:function(arm,size=0x50) addr:0x021110e8
@@ -2134,7 +2132,7 @@ __sinit_MapObjectUnkGSST.cpp kind:function(arm,size=0x50) addr:0x021126d4
 __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x02112724
 .p__sinit_ov031_02110fd0 kind:data(word) addr:0x02112794
 .p__sinit_ov031_02110fe8 kind:data(word) addr:0x02112798
-.p__sinit_ActorBomb.cpp kind:data(word) addr:0x0211279c
+.p__sinit_ActorBomb.cpp kind:data(word) addr:0x0211279c local
 .p__sinit_ActorBlast.cpp kind:data(word) addr:0x021127a0
 .p__sinit_ActorUnkTLKT.cpp kind:data(word) addr:0x021127a4 local
 .p__sinit_ActorItemBoomerang.cpp kind:data(word) addr:0x021127a8
@@ -2242,9 +2240,9 @@ data_ov031_02112b78 kind:data(any) addr:0x02112b78
 _ZTV19data_ov031_02112b84 kind:data(any) addr:0x02112b84
 _ZTV19data_ov031_02112bac kind:data(any) addr:0x02112bac
 data_ov031_02112bdc kind:data(any) addr:0x02112bdc
-data_ov031_02112be8 kind:data(any) addr:0x02112be8
-data_ov031_02112c00 kind:data(any) addr:0x02112c00
-data_ov031_02112c38 kind:data(any) addr:0x02112c38
+data_ov031_02112be8 kind:data(any) addr:0x02112be8 local
+data_ov031_02112c00 kind:data(any) addr:0x02112c00 local
+data_ov031_02112c38 kind:data(any) addr:0x02112c38 local
 _ZTV13ActorBomb_180 kind:data(any) addr:0x02112c70
 _ZTV13ActorBomb_19C kind:data(any) addr:0x02112c8c
 _ZTV24ActorBomb_ov031_020e2134 kind:data(any) addr:0x02112ca8
@@ -2519,7 +2517,7 @@ data_ov031_02116340 kind:data(any) addr:0x02116340 ambiguous
 data_ov031_02116358 kind:data(any) addr:0x02116358
 data_ov031_02116380 kind:bss addr:0x02116380
 _ZGVN15ProfileInstanceI16ActorProfileBombE8sProfileE kind:bss addr:0x02116404
-@10775 kind:bss addr:0x02116408
+@10775 kind:bss addr:0x02116408 local
 _ZN15ProfileInstanceI16ActorProfileBombE8sProfileE kind:bss addr:0x02116414
 _ZGVN15ProfileInstanceI17ActorProfileBlastE8sProfileE kind:bss addr:0x02116450
 @10781 kind:bss addr:0x02116454

@@ -49,15 +49,16 @@ MapObjectUnkSWSW_40::MapObjectUnkSWSW_40(G3d_Model *pModel) :
     this->ModelRender::func_ov000_02057c38(0x6, 0x2);
 }
 
-void MapObjectUnkSWSW_40::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
-    if (param1->mUnk_00[0x1] == this->mUnk_60) {
+void MapObjectUnkSWSW_40::vfunc_1C(G3d_RenderState *param1) {
+    if (param1->currentCmd[1] == this->mUnk_60) {
         param1->mUnk_B4->mUnk_00 &= ~0x2;
         MtxFx33_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN((u16) this->mUnk_68), COS((u16) this->mUnk_68));
     }
 
-    if (param1->mUnk_00[0x1] != this->mUnk_64) {
+    if (param1->currentCmd[1] != this->mUnk_64) {
         return;
     }
+
     param1->mUnk_B4->mUnk_00 &= ~0x2;
     MtxFx33_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN((u16) this->mUnk_6A), COS((u16) this->mUnk_6A));
 }
@@ -492,7 +493,7 @@ ActorUnkNSSW *MapObjectUnkSWSW::func_ov032_02121dc8(VecFx32 *param1) {
     params.func_ov000_020975f8();
 
     params.mInitialAngle = this->mAngle.angle_s;
-    params.mUnk_28       = *(unk32 *) &this->mUnk_38;
+    params.mUnk_28       = this->mRef.Get32(); //! TODO: ref conflicts
 
     VecFx32_Init(param1->x, param1->y, param1->z, &params.mInitialPos);
 

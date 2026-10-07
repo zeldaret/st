@@ -348,7 +348,6 @@ ActorItemBoomerang_11C::ActorItemBoomerang_11C(ActorItemBoomerang *param1) :
 
 ActorItemBoomerang_11C::~ActorItemBoomerang_11C() {}
 
-// non-matching
 bool ActorItemBoomerang_11C::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
     u32 var = param1->mUnk_04->mUnk_24[param1->mUnk_00->mUnk_06];
 
@@ -359,54 +358,64 @@ bool ActorItemBoomerang_11C::vfunc_08(const UnkStruct_ov031_020f3310 *param1, un
     return this->UnkStruct_ov031_Items_00::vfunc_08(param1, param2);
 }
 
-bool ActorItemBoomerang_11C::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {
-    u32 val = (param1->mUnk_08 >> 9) & 7;
+bool ActorItemBoomerang_11C::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+                                      const VecFx32 *param4) {
+    u32 val = (param2->mUnk_08 >> 9) & 7;
+
     if (val == 0x2) {
         this->mUnk_08->func_ov031_020e5034(0x1);
-    }
-
-    if (val == 0x4) {
+    } else if (val == 0x4) {
         this->mUnk_08->func_ov031_020e5034(0x2);
     }
 
-    if (param1->mUnk_08 >> 0x18 & 1) {
+    if (((param2->mUnk_08 >> 0x18) & 1) == 1) {
         return false;
     }
 
-    Vec2bCpp pos;
     if (this->mUnk_08->mState == ActorItemBoomerangState_1) {
-        if (*param2 & 0x1000) {
-            pos.x = (u8) *param2 >> 16;
-            pos.y = (u8) *param2 >> 24;
+        if (ref.unk_00_u16 & 0x1000) {
+            MapObjRef ref2 = ref;
+            Vec2bCpp pos   = ref2.GetUnk02();
 
             MapObject *mapObject = gpMapObjManager->func_01fff498(pos);
-            if (mapObject != NULL) {
-                if (mapObject->GetMapObjectId() == MapObjectId_ICEB || mapObject->GetMapObjectId() == MapObjectId_THAW) {
+
+            if (mapObject == NULL) {
+                return false;
+            }
+
+            switch (mapObject->GetMapObjectId()) {
+                case MapObjectId_ICEB:
+                case MapObjectId_THAW:
                     mapObject->vfunc_1C(this->mUnk_08->mRef, 0xC, &this->mUnk_08->mVel);
-                }
+                    break;
+                default:
+                    break;
             }
         }
         return false;
     }
 
-    if (*param2 & 0x1000) {
-        pos.x = (u8) *param2 >> 16;
-        pos.y = (u8) *param2 >> 24;
+    if (ref.unk_00_u16 & 0x1000) {
+        MapObjRef ref2 = ref;
+        Vec2bCpp pos   = ref2.GetUnk02();
 
         MapObject *mapObject = gpMapObjManager->func_01fff498(pos);
-        if (mapObject != NULL) {
-            switch (mapObject->GetMapObjectId()) {
-                case MapObjectId_SKDI:
-                case MapObjectId_SWHT:
-                    data_027e0d2c->func_ov031_020d95c8(*param2);
-                case MapObjectId_Pot:
-                    mapObject->vfunc_1C(this->mUnk_08->mRef, 0xC, &this->mUnk_08->mVel);
-                    return false;
-            }
+
+        if (mapObject == NULL) {
+            return false;
+        }
+
+        switch (mapObject->GetMapObjectId()) {
+            case MapObjectId_SKDI:
+            case MapObjectId_SWHT:
+                data_027e0d2c->func_ov031_020d95c8(*(ActorRef *) &ref); //! TODO: ref conflicts
+            case MapObjectId_Pot:
+                mapObject->vfunc_1C(this->mUnk_08->mRef, 0xC, &this->mUnk_08->mVel);
+                return false;
         }
     }
 
-    UnkStruct_027e0ce0_38_Base::vfunc_0C(param1, param2, param3);
+    return this->UnkStruct_027e0ce0_38_Base::vfunc_0C(ref, param2, param3, param4);
 }
 
 void ActorItemBoomerang_Unknown::func_ov031_020e5704() {

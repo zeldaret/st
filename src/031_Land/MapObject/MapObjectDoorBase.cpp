@@ -550,7 +550,7 @@ void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1) {
     bool uVar4 = (this->mUnk_84 % 0x1A) >= 0x0D ? true : false;
 
     //! TODO: fake match?
-    sp4 = *(ActorRef *) &this->mUnk_38;
+    sp4 = *(ActorRef *) &this->mRef; //! TODO: ref conflicts
 
     if (data_027e0998->vfunc_00(&this->mPos, &sp10, &sp4) && uVar4 != 0) {
         MtxFx22 m;

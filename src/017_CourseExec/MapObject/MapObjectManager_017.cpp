@@ -159,7 +159,7 @@ void MapObjectManager::func_ov017_020c033c(unk32 *param1, MapObjectManager *this
                         sp16.y = param2->y;
 
                         if (pMapObj->func_ov000_0209d144(&sp16, param3, temp_r0)) {
-                            *param1 = *(s32 *) &pMapObj->mUnk_38;
+                            *param1 = pMapObj->mRef.Get32();
                             return;
                         }
                     }

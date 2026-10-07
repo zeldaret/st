@@ -20,7 +20,7 @@ public:
     MapObjectUnkSWSW_40(G3d_Model *pModel);
 
     // data_ov032_021227ac
-    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
+    /* 1C */ virtual void vfunc_1C(G3d_RenderState *param1) override;
 
     void func_ov032_021210a0(fx32 param1);
 };

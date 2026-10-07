@@ -163,9 +163,9 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
 
                             if (this->mUnk_68 == 0x19) {
                                 pDRTY->func_ov034_02121d84();
-                                this->mUnk_8C = pDRTY->mUnk_38;
+                                this->mUnk_8C = pDRTY->mRef.Get32();
                             } else if (pDRTY->GetMapObjectId() == MapObjectId_DRTY) {
-                                *(u32 *) this->mUnk_94 = pDRTY->mUnk_38;
+                                *(u32 *) this->mUnk_94 = pDRTY->mRef.Get32();
 
                                 switch (pDRTY->mUnk_CC) {
                                     case 1:

@@ -9,6 +9,7 @@
 #include "Actor/ActorRef.hpp"
 #include "Item/ItemManager.hpp"
 #include "LinkList.hpp"
+#include "MapObject/MapObjectRef.hpp"
 #include "Player/PlayerLink.hpp"
 #include "Player/PlayerZelda.hpp"
 #include "Player/TouchControl.hpp"
@@ -307,7 +308,10 @@ public:
 class UnkStruct_ov031_020f3310_04 {
 public:
     /* 00 */ PAD(0x00, 0x24);
-    /* 24 */ unk32 mUnk_24[4];
+    /* 24 */ u32 *mUnk_24;
+    /* 28 */ unk32 mUnk_28;
+    /* 2C */ unk32 mUnk_2C;
+    /* 30 */ unk32 mUnk_30;
     /* 34 */
 };
 
@@ -321,9 +325,16 @@ public:
 
 class UnkStruct_ov031_020e54d4 {
 public:
-    /* 00 */ PAD(0x00, 0x04);
-    /* 04 */ unk32 mUnk_04;
+    /* 00 (vtable) */
+    /* 04 */ u8 mUnk_04;
     /* 08 */ u32 mUnk_08;
+
+    /* 00 */ virtual unk32 vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */ virtual void vfunc_10();
+    /* 14 */ virtual void vfunc_14(const VecFx32 *param1);
 };
 
 class UnkStruct_027e0ce0_38_Base {
@@ -334,7 +345,8 @@ public:
     // data_ov000_020b2838
     /* 00 */ virtual ~UnkStruct_027e0ce0_38_Base();
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2);
-    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3);
+    /* 0C */ virtual bool vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+                                   const VecFx32 *param4);
     /* 10 */ virtual bool vfunc_10(ActorRef param1, unk32 param2);
     /* 14 */
 };

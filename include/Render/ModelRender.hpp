@@ -3,7 +3,9 @@
 #include "global.h"
 #include "math.hpp"
 #include "nitro/fx.h"
+#include "nns/g3d/sbc.h"
 #include "profile.hpp"
+#include "stdbool.h"
 #include "types.h"
 
 #include <nns/g3d/g3d.h>
@@ -19,25 +21,6 @@ struct ActorUnkZLSL_AnimationTag {
 };
 
 typedef void (*UnkSystem4_UnkCallback)(void *, unk32);
-
-class UnkSystem4_vfunc_1C_B4 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 00 */ PAD(0x04, 0x28);
-    /* 28 */ MtxFx33 mUnk_28;
-    /* 4C */ unk32 mUnk_4C;
-    /* 50 */ unk32 mUnk_50;
-    /* 54 */ unk32 mUnk_54;
-};
-
-class UnkSystem4_vfunc_1C {
-public:
-    /* 00 */ u8 *mUnk_00;
-    /* 04 */ unk32 *mUnk_04;
-    /* 08 */ PAD(0x08, 0xB4);
-    /* B4 */ UnkSystem4_vfunc_1C_B4 *mUnk_B4;
-    /* 00 */ unk32 *mUnk_B8;
-};
 
 class ModelRenderBase {
 public:
@@ -82,7 +65,7 @@ public:
     /* 10 */ virtual void vfunc_10(VecFx32 *param1, MtxFx33 *param2, VecFx32 *param3) override; // SetTransform?
     /* 14 */ virtual void vfunc_14(MtxFx33 *param1, VecFx32 *param2) override;                  // SetRotationTranslation?
     /* 18 */ virtual void vfunc_18(VecFx32 *param1) override;
-    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1);
+    /* 1C */ virtual void vfunc_1C(G3d_RenderState *param1);
     /* 20 */ virtual void vfunc_20();
 
     void func_ov000_02057c38(unk32 param1, unk32 param2);
@@ -183,7 +166,7 @@ public:
 
     void func_01ffc3b4();
 
-    void func_ov000_020577a4(UnkStruct_ov000_02058a84 *param1, unk32 param2, unk32 param3);
+    void func_ov000_020577a4(UnkStruct_ov000_02058a84 *param1, unk32 param2, bool param3);
     void func_ov000_020577f8(unk32 param1);
     void func_ov000_020578a4(unk32 param1, unk32 param2);
 };
@@ -216,7 +199,7 @@ public:
     // data_ov000_020b1be4
     /* 00 */ virtual ~ModelRender_Derived1() override {}
     /* 08 */ virtual void vfunc_08(G3d_Model *pModel) override;
-    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
+    /* 1C */ virtual void vfunc_1C(G3d_RenderState *param1) override;
 
     unk32 func_ov000_0205a778(const char *param1);
     VecFx32 *func_ov000_0205a7a8(unk32 param1);

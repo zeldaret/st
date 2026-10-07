@@ -35,6 +35,15 @@ typedef enum {
     G3D_RENDERST_FLAG_SKIP_SBC_MTXCALC = 0x400  // skips the execution of matrix calculation commands
 } G3d_RenderStateFlag;
 
+typedef struct G3d_RenderState_B4_ {
+    /* 00 */ s32 mUnk_00;
+    /* 04 */ PAD(0x04, 0x28);
+    /* 28 */ MtxFx33 mUnk_28;
+    /* 4C */ s32 mUnk_4C;
+    /* 50 */ s32 mUnk_50;
+    /* 54 */ s32 mUnk_54;
+} G3d_RenderState_B4; // size = ?
+
 typedef struct G3d_RenderState_ {
     /* 00 */ u8 *currentCmd;                         // current command being processed
     /* 04 */ G3d_RenderObject *renderObj;            // current render object being processed
@@ -46,8 +55,8 @@ typedef struct G3d_RenderState_ {
     /* AE */ u8 currentBoneMtxId;
     /* AF */ u8 dummy;
     /* B0 */ G3d_MaterialAnimation *matAnim;
-    /* B4 */ void *mUnk_19;
-    /* B8 */ u8 *visibilityPtr; // points to isVisible (0x187)
+    /* B4 */ G3d_RenderState_B4 *mUnk_B4;
+    /* B8 */ BOOL *visibilityPtr; // points to isVisible (0x187)
     /* BC */ u32 mUnk_BC[2];
     /* C4 */ u32 mUnk_C4[2];
     /* CC */ u32 mUnk_CC[2];
@@ -61,8 +70,7 @@ typedef struct G3d_RenderState_ {
     /* F0 */ void *textureHandler;    // texture matrix handler
     /* F4 */ u8 mUnk_F4[0x93];
     /* 187 */ u8 isVisible;
-    /* 188 */
-} G3d_RenderState;
+} G3d_RenderState; // size = 0x188
 
 typedef struct UnkStruct_0205ae08_ {
     /* 00 */ u8 mUnk_00[0x1400];

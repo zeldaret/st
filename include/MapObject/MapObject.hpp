@@ -3,6 +3,7 @@
 #include "Actor/ActorRef.hpp"
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectProfile.hpp"
+#include "MapObject/MapObjectRef.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
 #include "System/SysNew.hpp"
@@ -134,9 +135,7 @@ public:
     /* 1C */ MapObjFlags mFlags[1];
     /* 1E */ unk16 mUnk_1E;
     /* 20 */ MapObject_20 mUnk_20; // parameters
-    /* 38 */ unk8 mUnk_38;
-    /* 39 */ unk8 mUnk_39;
-    /* 3A */ Vec2bCpp mUnk_3A;
+    /* 38 */ MapObjRef mRef;
     /* 3C */ MapObjectProfile *mpProfile;
     /* 40 */
 

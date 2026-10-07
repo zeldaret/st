@@ -147,7 +147,7 @@ public:
     ModelRender_Derived4(PlayerCharacter character, unk32 param2, G3d_Model *pModel, G3d_BoneMtxStruct *pCacheJntAnm);
 
     // data_ov000_020b2b70
-    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
+    /* 1C */ virtual void vfunc_1C(G3d_RenderState *param1) override;
 
     // overlay 0
     void func_ov000_02057fe8(UnkAngleStruct param1, UnkAngleStruct param2, VecFx32 *param3);
@@ -166,7 +166,7 @@ public:
 
     // data_ov093_021787e8
     /* 00 */ virtual ~ModelRender_Derived5() override {}
-    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
+    /* 1C */ virtual void vfunc_1C(G3d_RenderState *param1) override;
 };
 
 class PlayerActorBase_38 {

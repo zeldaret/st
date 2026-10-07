@@ -3,7 +3,9 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "Actor_Derived1.hpp"
+#include "MapObject/MapObjectRef.hpp"
 #include "global.h"
+#include "nns/g3d/sbc.h"
 #include "types.h"
 
 enum ActorBombState_ {
@@ -53,15 +55,18 @@ public:
     // data_ov031_02112c78
     /* 00 */ virtual ~ActorBomb_180() override;
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
-    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) override;
+    /* 0C */ virtual bool vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+                                   const VecFx32 *param4) override;
     /* 10 */ virtual bool vfunc_10(ActorRef param1, unk32 param2) override;
 };
 
 class ActorBomb_ov031_020e2134 : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (base) */
-    /* 04 */ PAD(0x4, 0x8);
+    /* 04 */ PAD(0x04, 0x08);
     /* 08 */
+
+    ~ActorBomb_ov031_020e2134() {} // required to fix function order
 
     // data_ov031_02112cb0
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
@@ -112,14 +117,15 @@ public:
     // check if really in ActorUnkBomb
     G3d_Model *func_ov031_020e1540(u16 param1);
     UnkStruct_ov000_02058a84 *func_ov031_020e15d0(u16 param1);
-    static void func_ov031_020e1634();
     void func_ov031_020e17f4();
+
+    static void func_ov031_020e1634(G3d_RenderState *param1);
 
     //
     void func_ov031_020e18a0();
     void SetState(ActorState state);
     void func_ov031_020e1908();
-    void func_ov031_020e1920(VecFx32 *param1);
+    void func_ov031_020e1920(const VecFx32 *param1);
     void func_ov031_020e193c();
     void func_ov031_020e1b1c();
     void func_ov031_020e1b7c();

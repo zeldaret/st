@@ -29,7 +29,7 @@ ActorProfileBlast::ActorProfileBlast() :
 }
 
 // non-matching
-bool ActorBlast_E8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {}
+bool ActorBlast_E8::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3, const VecFx32 *param4) {}
 
 ActorBlast::ActorBlast() :
     mUnk_94(FX_F32_TO_FX32(0.625f)),

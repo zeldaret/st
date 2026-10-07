@@ -52,29 +52,18 @@ void MapObjectSwitchStep_40::func_ov000_0209dde0(void) {
     this->func_ov000_02057c38(6, 2);
 }
 
-void MapObjectSwitchStep_40::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
-    unk32 iVar1 = param1->mUnk_04[1];
-    if (iVar1 != 0) {
-        iVar1 += 0x40;
-    } else {
-        iVar1 = 0;
-    }
+void MapObjectSwitchStep_40::vfunc_1C(G3d_RenderState *param1) {
+    G3d_NameList *iVar1 = G3d_GetBoneList(param1->renderObj->model);
+    uint uVar2          = iVar1 != NULL ? func_0200f218(iVar1, data_ov000_020af560) : -1;
 
-    unk32 uVar2;
-    if (iVar1 == 0) {
-        uVar2 = -1;
-    } else {
-        uVar2 = func_0200f218(iVar1, data_ov000_020af560);
-    }
-
-    if (param1->mUnk_00[1] == uVar2) {
+    if (param1->currentCmd[1] == uVar2) {
         if (this->mUnk_62) {
             param1->mUnk_B4->mUnk_00 &= ~0x04;
             param1->mUnk_B4->mUnk_50 = this->mUnk_60;
             param1->mUnk_B4->mUnk_4C = 0;
             param1->mUnk_B4->mUnk_54 = 0;
         } else {
-            param1->mUnk_B8[0] = 0;
+            *param1->visibilityPtr = false;
         }
     }
 }
@@ -205,7 +194,7 @@ void MapObjectSwitchStep::vfunc_18(s8 *param1) {
         ActorRef sp4;
 
         //! TODO: fake match?
-        sp4 = *(ActorRef *) &this->mUnk_38;
+        sp4 = *(ActorRef *) &this->mRef;
 
         if (data_027e0998->vfunc_00(&this->mPos, &sp10, &sp4)) {
             sp8.mUnk_06 = 0x00;

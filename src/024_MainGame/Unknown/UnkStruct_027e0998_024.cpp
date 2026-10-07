@@ -51,7 +51,7 @@ bool UnkStruct_027e0998::vfunc_00(VecFx32 *pPos, Vec2s *param2, ActorRef *param3
             return this->func_ov024_020c727c(param2, param3);
         case 4:
             if (data_027e09a4->IsTrain()) {
-                u32 value = *(u32 *) param3;
+                u32 value = param3->Get32();
 
                 // position? param3 could be a Vec2us
                 u16 stack[4];

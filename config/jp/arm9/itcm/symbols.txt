@@ -131,7 +131,7 @@ _ZN15ModelRenderBase13func_01ffc634EP7VecFx3214UnkAngleStructS1_ kind:function(a
 _ZN15ModelRenderBase13func_01ffc6d4E14UnkAngleStructP7VecFx32 kind:function(arm,size=0x70) addr:0x01ffc6d4
 func_01ffc744 kind:function(arm,size=0x24) addr:0x01ffc744
 _ZN24UnkStruct_ov000_020b4ec413func_01ffc768Ei kind:function(arm,size=0x3c) addr:0x01ffc768
-_ZN20ModelRender_Derived18vfunc_1CEP19UnkSystem4_vfunc_1C kind:function(arm,size=0xb4) addr:0x01ffc7a4
+_ZN20ModelRender_Derived18vfunc_1CEP16G3d_RenderState_ kind:function(arm,size=0xb4) addr:0x01ffc7a4
 func_01ffc858 kind:function(arm,size=0x88) addr:0x01ffc858
 func_01ffc8e0 kind:function(arm,size=0x2b4) addr:0x01ffc8e0
 func_01ffcb94 kind:function(arm,size=0x98) addr:0x01ffcb94

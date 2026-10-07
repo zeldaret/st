@@ -21,7 +21,7 @@ public:
 
     // data_ov000_020b4d64
     /* 0C */ virtual void vfunc_0C() override;
-    /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
+    /* 1C */ virtual void vfunc_1C(G3d_RenderState *param1) override;
 };
 
 class ModelRender_ov031_02113670 : public ModelRender_ov000_020b4d64 {

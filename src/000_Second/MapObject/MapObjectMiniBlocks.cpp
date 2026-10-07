@@ -39,7 +39,7 @@ bool MapObjectMiniBlocks::Init(void) {
     u8 uVar6;
 
     if (this->mUnk_20.mParams[1] != MiniBlocksVariant_BLKF) {
-        Vec2bCpp vec(this->mUnk_3A.x, this->mUnk_3A.y);
+        Vec2bCpp vec(this->mRef.unk_02.x, this->mRef.unk_02.y);
         this->mPos.y = pUnkStruct_027e0cd8_0C->func_01ffedf4(&vec);
     }
 

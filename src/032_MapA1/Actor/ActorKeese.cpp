@@ -105,7 +105,7 @@ bool ActorKeese_2AC::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 para
 }
 
 // non-matching
-bool ActorKeese_2AC::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {}
+bool ActorKeese_2AC::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3, const VecFx32 *param4) {}
 
 bool ActorKeese::Init(unk32 param1) {
     this->mUnk_0B0.func_ov000_02057c38(0x6, 0x2);

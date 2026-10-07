@@ -409,7 +409,7 @@ void MapObjectDoorClick::vfunc_40(void) {
 }
 
 void MapObjectDoorClick::vfunc_44(void) {
-    unk32 local_c = *(u32 *) &this->mUnk_38;
+    unk32 local_c = *(u32 *) &this->mRef;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x142, &this->mPos, 0);
 }
 
