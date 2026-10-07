@@ -563,8 +563,8 @@ void ActorUnkCASE::func_ov063_0215b99c(ActorUnkCASE *param1, UnkStruct_func_ov06
     func_01ffad5c(&matx1, &data_027e0964, &matx2);
     // VecFx32_Copy(&matx2.wColumn, &param1->mUnk_1CC);
     fx32 x                 = matx2._30;
-    fx32 z                 = matx2._31;
-    fx32 y                 = matx2._32;
+    fx32 z                 = matx2._32;
+    fx32 y                 = matx2._31;
     param1->mUnk_1CC.vec.x = x;
     param1->mUnk_1CC.vec.y = y;
     param1->mUnk_1CC.vec.z = z;

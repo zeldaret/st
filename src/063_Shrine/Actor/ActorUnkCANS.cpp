@@ -1106,16 +1106,14 @@ void ActorUnkCANS::vfunc_10(Cylinder *param1) {
     }
 }
 
-// non-matching
 void ActorUnkCANS::func_ov063_0215a678(ActorUnkCANS *actor, UnkStruct_func_ov063_0215a678 *param2) {
     ModelRender *modelRender = param2->mUnk_04;
-    u8 var1;
+
     if (actor->mUnk_268 == NULL) {
-        var1 = 0;
+        func_0200eab0(modelRender->mpModel, actor->mUnk_0B0.mUnk_6C, 0x00);
     } else {
-        var1 = 0x1F;
+        func_0200eab0(modelRender->mpModel, actor->mUnk_0B0.mUnk_6C, 0x1F);
     }
-    func_0200eab0(modelRender->mpModel, actor->mUnk_0B0.mUnk_6C, var1);
 
     unk32 var2 = param2->mUnk_08 & 0x10 ? param2->mUnk_AE : -1;
     if (var2 == actor->mUnk_0B0.mUnk_70) {
@@ -1135,10 +1133,9 @@ void ActorUnkCANS::func_ov063_0215a678(ActorUnkCANS *actor, UnkStruct_func_ov063
         func_01ffad5c(&matx1, &data_027e0964, &matx2);
 
         VecFx32 vec;
-        // VecFx32_Copy(&matx2.wColumn, &actor->mUnk_250);
         vec.x             = matx2._30;
-        vec.z             = matx2._31;
-        vec.y             = matx2._32;
+        vec.z             = matx2._32;
+        vec.y             = matx2._31;
         actor->mUnk_250.x = vec.x;
         actor->mUnk_250.y = vec.y;
         actor->mUnk_250.z = vec.z;
@@ -1167,8 +1164,8 @@ void ActorUnkCANS::func_ov063_0215a678(ActorUnkCANS *actor, UnkStruct_func_ov063
 
         VecFx32 vec;
         vec.x           = matx4._30;
-        vec.z           = matx4._31;
-        vec.y           = matx4._32;
+        vec.z           = matx4._32;
+        vec.y           = matx4._31;
         actor->mUnk_25C = vec.x;
         actor->mUnk_260 = vec.y;
         actor->mUnk_264 = vec.z;
