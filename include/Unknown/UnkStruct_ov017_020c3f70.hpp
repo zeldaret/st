@@ -8,6 +8,8 @@ class UnkStruct_ov017_020c3f70_Base {
 public:
     /* 00 (vtable) */
     /* 04 */ OSThread mThread;
+    /* BC */ unk32 mUnk_BC;
+    /* C0 */ unk32 mUnk_C0;
     /* C4 */ unk32 mUnk_C4;
     /* C8 */ unk32 mUnk_C8;
     /* CC */

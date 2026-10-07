@@ -1,5 +1,5 @@
-_ZN18PlayerActorBase_7419func_ov102_02182c20EiP7Mat4x3p kind:function(arm,size=0x64) addr:0x02182c20
-_ZN18PlayerActorBase_7419func_ov102_02182c84Ebi14UnkAngleStructP7Mat4x3pS2_ kind:function(arm,size=0x1d0) addr:0x02182c84
+_ZN18PlayerActorBase_7419func_ov102_02182c20EiP7MtxFx43 kind:function(arm,size=0x64) addr:0x02182c20
+_ZN18PlayerActorBase_7419func_ov102_02182c84Ebi14UnkAngleStructP7MtxFx43S2_ kind:function(arm,size=0x1d0) addr:0x02182c84
 _ZN25UnkStruct_027e0ce0_40_10819func_ov102_02182e54EiP7VecFx32i kind:function(arm,size=0x154) addr:0x02182e54
 _ZN24UnkStruct_ItemManager_2019func_ov102_02182fa8Ebb kind:function(arm,size=0x54) addr:0x02182fa8
 _ZN24UnkStruct_ItemManager_2019func_ov102_02182ffcEPv kind:function(arm,size=0x40) addr:0x02182ffc
