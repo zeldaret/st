@@ -10,7 +10,7 @@ extern "C" {
 #define SND_COMMAND_NOBLOCK 0
 #define SND_COMMAND_BLOCK 1
 
-#define SND_TIMER_CLOCK 0xFFB0FF
+#define SND_TIMER_CLOCK 0xffb0ff
 
 #define SND_WAVE_FORMAT_PCM16 1
 
@@ -22,13 +22,13 @@ typedef void (*SNDAlarmCallback)(void *arg);
 
 typedef u32 SNDCommandType;
 enum SNDCommandType_ {
-    SNDCommandType_StartTimer       = 0xC,
-    SNDCommandType_SetupChannelPcm  = 0xE,
+    SNDCommandType_StartTimer       = 0xc,
+    SNDCommandType_SetupChannelPcm  = 0xe,
     SNDCommandType_SetupAlarm       = 0x12,
     SNDCommandType_SetChannelVolume = 0x14,
     SNDCommandType_SetChannelPan    = 0x15,
-    SNDCommandType_LockChannel      = 0x1A,
-    SNDCommandType_Unk_1d           = 0x1D,
+    SNDCommandType_LockChannel      = 0x1a,
+    SNDCommandType_Unk_1d           = 0x1d,
 };
 
 typedef struct SNDCommand {
@@ -48,7 +48,6 @@ void SND_Init(void);
 SNDCommand *SND_RecvCommandReply(u32);
 BOOL SND_FlushCommand(u32);
 
-void SND_StopTimer(u32 channel, u32, u32 alarm, u32);
 void SND_UnlockChannel(u32 channel, u32);
 void SND_LockChannel(u32 channel, u32);
 void SND_SetChannelVolume(u32 channel, u32 volume, u32 datashift);
@@ -59,6 +58,7 @@ void SND_SetupChannelPcm(u32 channel, u32 format, void *buf, u32 loop, u32, u32 
 
 void SND_SetupAlarm(u32 num, u32, u32, SNDAlarmCallback callback, void *arg);
 void SND_StartTimer(u32 channel, u32, u32 num, u32);
+void SND_StopTimer(u32 channel, u32, u32 alarm, u32);
 
 u32 SND_GetCurrentCommandTag(void);
 void SND_WaitForCommandProc(u32 tag);

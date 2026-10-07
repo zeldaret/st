@@ -10,7 +10,7 @@ extern "C" {
 #define REG_BASE 0x4000000
 
 #define REG_POWER_CNT (*(vu16 *) (REG_BASE | 0x304))
-#define REG_IME (*(vu16 *) (REG_BASE | 0x208))
+#define REG_IME (*(vu32 *) (REG_BASE | 0x208))
 
 #define REG_DISPSTAT (*(vu16 *) (REG_BASE | 0x4))
 #define REG_VCOUNT (*(vu16 *) (REG_BASE | 0x6))
@@ -57,17 +57,41 @@ extern "C" {
 #define REG_CARD_DATA_OFFSET 0x100010
 #define REG_CARD_DATA (*(vu32 *) (REG_BASE | REG_CARD_DATA_OFFSET))
 
+typedef struct DivParam {
+    union {
+        u64 numer;
+        struct {
+            u32 numerLo;
+            u32 numerHi;
+        };
+    };
+    u64 denom;
+} DivParam;
+
+#define REG_DIV_CNT (*(vu16 *) (REG_BASE | 0x280))
+#define REG_DIV (*(DivParam *) (REG_BASE | 0x290))
+#define REG_DIV_NUMER (*(u64 *) (REG_BASE | 0x290))
+#define REG_DIV_DENOM (*(u64 *) (REG_BASE | 0x298))
+#define REG_DIV_RESULT (*(u64 *) (REG_BASE | 0x2a0))
+#define REG_REM_RESULT (*(u64 *) (REG_BASE | 0x2a8))
+#define REG_SQRT_CNT (*(vu16 *) (REG_BASE | 0x2b0))
+#define REG_SQRT_RESULT (*(vu32 *) (REG_BASE | 0x2b4))
+#define REG_SQRT_PARAM (*(u64 *) (REG_BASE | 0x2b8))
+
 #define REG_FRAME_COUNTER (*(u32 *) (_BIOS_REG_BASE | 0xC3C))
 #define REG_027FFC40 (*(u16 *) (_BIOS_REG_BASE | 0xC40))
 #define REG_027FFC42 (*(u16 *) (_BIOS_REG_BASE | 0xC42))
+#define REG_027FFD9C (*(void **) (_BIOS_REG_BASE | 0xD9C))
+#define REG_027FFDA0 ((void **) (_BIOS_REG_BASE | 0xDA0))
+#define REG_027FFDC4 ((void **) (_BIOS_REG_BASE | 0xDC4))
 #define REG_027FFDE8 (*(u32 *) (_BIOS_REG_BASE | 0xDE8))
 #define REG_027FFDEA (*(u16 *) (_BIOS_REG_BASE | 0xDEA))
 #define REG_027FFDEC (*(u32 *) (_BIOS_REG_BASE | 0xDEC))
-#define REG_FNT_ROM_OFFSET (*(u32 *) (_BIOS_REG_BASE | 0xE40))
-#define REG_FNT_SIZE (*(u32 *) (_BIOS_REG_BASE | 0xE44))
-#define REG_FAT_ROM_OFFSET (*(u32 *) (_BIOS_REG_BASE | 0xE48))
-#define REG_FAT_SIZE (*(u32 *) (_BIOS_REG_BASE | 0xE4C))
-#define REG_027FFF9C (*(u32 *) (_BIOS_REG_BASE | 0xF9C))
+#define REG_ROM_HEADER (*(RomHeader *) (_BIOS_REG_BASE | 0xE00))
+#define REG_IPC_FIFO_RECV_CALLBACKS (*(u32 *) (_BIOS_REG_BASE | 0xF88))
+#define REG_027FFF90 (*(u32 *) (_BIOS_REG_BASE | 0xF90))
+#define REG_027FFF9C_ADDR (_BIOS_REG_BASE | 0xF9C)
+#define REG_027FFF9C (*(u32 *) REG_027FFF9C_ADDR)
 #define REG_027FFFA0 (*(u32 *) (_BIOS_REG_BASE | 0xFA0))
 
 #define REG_GFX_FIFO (*(vu32 *) (REG_BASE | 0x400))
@@ -93,8 +117,20 @@ extern "C" {
 #define REG_GFX_FIFO_SWAP_BUFFERS (*(vu32 *) (REG_BASE | 0x540))
 #define REG_GFX_FIFO_VIEWPORT (*(vu32 *) (REG_BASE | 0x580))
 
+#define REG_IPC_SYNC (*(vu16 *) (REG_BASE | 0x180))
+#define REG_IPC_FIFO_CNT (*(vu16 *) (REG_BASE | 0x184))
+#define REG_IPC_FIFO_SEND (*(PXI_UnkStruct1 *) (REG_BASE | 0x188))
+#define REG_04100000 (*(PXI_UnkStruct1 *) (REG_BASE | 0x100000))
+
 extern u32 __DTCM_LO;
+extern u32 __DTCM_HI;
+extern u32 __ITCM_HI;
+extern u32 __CODE_HI;
 #define DTCM_LO ((u8 *) &__DTCM_LO)
+#define DTCM_HI ((u8 *) &__DTCM_HI)
+#define ITCM_HI ((u8 *) &__ITCM_HI)
+#define CODE_HI ((u8 *) (&__CODE_HI))
+
 #define REG_IRQ (*(u32 *) (DTCM_LO + 0x3FF8))
 
 #define _MAIN_REG_BASE REG_BASE
@@ -191,6 +227,66 @@ extern u32 __DTCM_LO;
 #define REG_A9ROM (*(vu16 *) (REG_BASE | REG_A9ROM_OFFSET))
 
 #define REG_04FFF200 (*(vu32 *) (REG_BASE | 0xFFF200))
+
+// TODO: Move these structs somewhere else
+typedef struct ProgramOffset {
+    /* 00 */ u32 offset;
+    /* 04 */ u32 entry;
+    /* 08 */ u32 baseAddress;
+    /* 0c */ u32 size;
+    /* 10 */
+} ProgramOffset;
+
+typedef struct TableOffset {
+    /* 00 */ u32 offset;
+    /* 04 */ u32 size;
+    /* 08 */
+} TableOffset;
+
+typedef struct RomHeader {
+    /* 000 */ char title[0xc];
+    /* 00c */ char gamecode[0x4];
+    /* 010 */ char makercode[0x2];
+    /* 012 */ u8 unitcode;
+    /* 013 */ u8 seedSelect;
+    /* 014 */ u8 capacity;
+    /* 015 */ PAD(0x015, 0x01c);
+    /* 01c */ u8 dsiFlags;
+    /* 01d */ u8 dsFlags;
+    /* 01e */ u8 romVersion;
+    /* 01f */ u8 autostart;
+    /* 020 */ ProgramOffset arm9;
+    /* 030 */ ProgramOffset arm7;
+    /* 040 */ TableOffset fnt;
+    /* 048 */ TableOffset fat;
+    /* 050 */ TableOffset arm9ovt;
+    /* 058 */ TableOffset arm7ovt;
+    /* 060 */ u32 normalCmdSetting;
+    /* 064 */ u32 key1CmdSetting;
+    /* 068 */ u32 bannerOffset;
+    /* 06c */ u16 secureAreaCrc;
+    /* 06e */ u16 secureAreaDelay;
+    /* 070 */ u32 arm9AutoloadCallback;
+    /* 074 */ u32 arm7AutoloadCallback;
+    /* 078 */ u64 secureAreaDisable;
+    /* 080 */ u32 romSizeDs;
+    /* 084 */ u32 headerSize;
+    /* 088 */ u32 arm9BuildInfoOffset;
+    /* 08c */ u32 arm7BuildInfoOffset;
+    /* 090 */ u16 dsRomRegionEnd;
+    /* 092 */ u16 dsiRomRegionEnd;
+    /* 094 */ u16 romNandEnd;
+    /* 096 */ u16 rwNandEnd;
+    /* 098 */ PAD(0x098, 0x0c0);
+    /* 0c0 */ u8 logo[0x9c];
+    /* 15c */ u16 logoCrc;
+    /* 15e */ u16 headerCrc;
+    /* 160 */ u32 debugRomOffset;
+    /* 164 */ u32 debugSize;
+    /* 168 */ u32 debugRamAddr;
+    /* 16c */ PAD(0x16c, 0x170);
+    /* 170 */
+} RomHeader;
 
 #ifdef __cplusplus
 } // extern "C"
