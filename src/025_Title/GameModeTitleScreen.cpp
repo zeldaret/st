@@ -1,15 +1,11 @@
 #include "Game/GameModeTitleScreen.hpp"
+#include "CommonFuncs.hpp"
 #include "Cutscene/Cutscene.hpp"
 #include "Game/Game.hpp"
 #include "TitleScreen/TitleScreen.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
-
-extern "C" {
-void func_0201659c();
-void func_0200e234();
-}
 
 GameModeTitleScreen::GameModeTitleScreen() {
     func_0201659c();

@@ -1,4 +1,5 @@
 #include "Actor/ActorBlast.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "System/SysNew.hpp"
@@ -14,10 +15,7 @@ struct UnkStruct_ov031_020e5d18_00 {
     /* 18 */
 };
 
-extern "C" VecFx32 data_027e07d4;
-
-extern "C" void func_01ffe6c4(UnkStruct_ov031_020e5d18_00 *, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *,
-                              UnkStruct_ov031_Items_00_Base *);
+extern VecFx32 data_027e07d4;
 
 DECL_PROFILE(ActorProfileBlast);
 
@@ -114,7 +112,7 @@ void ActorBlast::Update() {
     UnkStruct_ov031_020e5d18_00 sp14;
     sp14.mUnk_00 = NULL;
 
-    func_01ffe6c4(&sp14, this->mRef, &data_027e07d4, &data_027e07d4, 0x1C, NULL, &this->mUnk_E8);
+    func_01ffe6c4(&sp14.mUnk_00, this->mRef, &data_027e07d4, &data_027e07d4, 0x1C, NULL, &this->mUnk_E8);
 
     sp14.mUnk_00->func_ov000_0207df88(&this->mUnk_C8, 0x0);
 

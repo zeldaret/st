@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "MainGame/CargoManager.hpp"
 #include "MainGame/UnkTrainSystems.hpp"
@@ -7,9 +8,6 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0d00.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-
-extern "C" void func_01ffcb94(unk16, unk16, MtxFx33 *);
-extern "C" void func_01ffa60c(const MtxFx33 *, MtxFx33 *, MtxFx33 *);
 
 const UnkStruct_ov024_020d86a8 data_ov024_020d78bc = {0};
 
@@ -42,8 +40,6 @@ UnkTrainSystem2::UnkTrainSystem2() :
 }
 
 UnkTrainSystem2::~UnkTrainSystem2() {}
-
-extern "C" bool func_01ff916c(void *, int, int);
 
 void UnkTrainSystem2::func_ov024_020d5990() {
     if (this->func_ov024_020d5c40()) {

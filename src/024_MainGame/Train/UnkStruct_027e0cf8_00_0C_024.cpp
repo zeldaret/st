@@ -1,11 +1,10 @@
+#include "CommonFuncs.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 #include "versions.h"
 
-extern "C" bool func_ov000_0205ca18(unk32 param1, unk32 param2);
-extern "C" bool func_ov000_0205c9d0(unk32 stationSceneIdx);
 extern VecFx32 data_027e07d4;
 
 static const Vec2sb data_ov024_020d8094(0x7F, 0x7F);

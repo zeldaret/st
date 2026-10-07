@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Unknown/UnkStruct_02049b18.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
@@ -9,19 +10,6 @@
 #include "math.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
-
-extern "C" bool func_01ff916c(void *, int, int);
-extern "C" void func_01ffb974(unk32, VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" void func_01ff9770(VecFx32 *, unk32);
-extern "C" unk32 func_01ffb428(unk32, unk32);
-extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
-extern "C" unk32 func_01ff9364(u16 *, UnkAngleStruct);
-extern "C" bool func_ov000_02080998(VecFx32 *);
-extern "C" VecFx32 *func_ov000_0205d524(unk32, unk32);
-extern "C" unk32 func_ov000_02077480();
-extern "C" unk16 func_0201a710(unk16);
-extern "C" void func_ov000_0205db44(void *, void *, unk32);
 
 void UnkStruct_027e0ce0_40_Base_7C::func_ov017_020be2ec(UnkStruct_027e0ce0_40_Base_14 *param1, bool param2,
                                                         UnkParamStruct1 param3) {

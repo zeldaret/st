@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Unknown/UnkStruct_027e095c.hpp"
 #include "Unknown/UnkStruct_027e09ac.hpp"
 #include "Unknown/UnkStruct_027e09b0.hpp"
@@ -10,15 +11,6 @@
 #include <nitro/math.h>
 #include <nitro/reg.h>
 #include <nitro/types.h>
-
-extern "C" void FlushGfxQueue();
-extern "C" void func_ov000_0205dbe4(u16);
-extern "C" void func_02024a84(MtxFx33 *param1);
-extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
-extern "C" unk32 func_01ff9258(fx32, fx32);
-extern "C" void func_01ffcb94(s16, s16, MtxFx33 *);
-extern "C" fx32 func_01ffb66c(unk32, unk32);
-extern "C" void func_02024fc4(fx16 sin, fx16 cos);
 
 static const fx16 data_ov017_020c3dec[] = {
     0x1000, 0x1000, 0x0000, 0x0800, 0x0800, 0xF000, 0x1000, 0xF000, 0x0000, 0x0800, 0xF800, 0xF000, 0xF000, 0x1000,

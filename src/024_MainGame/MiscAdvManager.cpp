@@ -1,10 +1,9 @@
 #include "MainGame/MiscAdvManager.hpp"
+#include "CommonFuncs.hpp"
 #include "Item/ItemManager.hpp"
 #include "System/SysNew.hpp"
 
 #include <nitro/mi.h>
-
-extern "C" u8 func_ov000_020a9a50();
 
 MiscAdvManager *gpMiscAdvManager = NULL;
 

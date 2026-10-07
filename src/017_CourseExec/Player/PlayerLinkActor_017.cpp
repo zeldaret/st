@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Player/PlayerLink.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
@@ -10,8 +11,6 @@
 #include "nitro/fx.h"
 #include "nitro/math.h"
 #include "nitro/types.h"
-
-extern "C" bool func_ov000_020864f8(void *, UnkAngleStruct, void *, void *);
 
 bool PlayerLinkActor::func_ov017_020bd6b8() {
     bool ret = false;

@@ -1,4 +1,5 @@
 #include "Actor/ActorTearLight.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "System/SysNew.hpp"
@@ -29,13 +30,8 @@ public:
     /* E8 */ VecFx32 mUnk_E8;
 };
 
-extern "C" unk32 data_ov000_020aecf8;
-extern "C" VecFx32 data_ov071_02164bd4;
-
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
-extern "C" fx32 func_ov000_02080068(fx32 x);
-extern "C" fx32 func_ov000_02080080(fx32 x);
+extern unk32 data_ov000_020aecf8;
+extern VecFx32 data_ov071_02164bd4;
 
 extern UnkStruct_ov019_020d24c8_28_258_00 data_ov071_02165150;
 

@@ -1363,3 +1363,10 @@ struct UnkStackStruct_ov017_020c1104 {
     void func_ov017_020c12fc(u8 param2, unk16 param3);
     void func_ov017_020c13b4();
 };
+
+struct UnkStruct_ov021_02106c5c {
+    /* 00 */ PAD(0x00, 0x10);
+    /* 10 */ u16 unk_10;
+    /* 12 */ u8 unk_12;
+    /* 13 */ u8 unk_13;
+};

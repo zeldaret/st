@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Save/SaveManager.hpp"
 #include "System/Random.hpp"
 #include "System/SysFault.hpp"
@@ -23,25 +24,6 @@
 #include <nitro/gx.h>
 #include <nitro/os.h>
 #include <nitro/rtc.h>
-
-extern "C" {
-unk32 func_02014fe0();
-void func_020327c8(void *param1, unk32 param2);
-void func_0201bdd0();
-void NNS_SndInit();
-void NNS_SndArcInit(void *param1, const char *soundDataPath, unk32 param2, unk32 param3);
-void NNS_SndArcPlayerSetup(unk32 param1);
-void func_02004d2c(unk32 param1, unk32 param2);
-void func_02001778(unk32 param1);
-void func_02003f98(unk32 param1, unk32 param2);
-void NNS_SndHeapSaveState(unk32 param1);
-void func_0202ee0c();
-void func_0202f910(unk32 param1);
-void func_0202f958(unk32 param1);
-void func_02005030(void *param1);
-void NNS_SndHandleInit(void *param1);
-void NNS_SndPlayerStopSeq(void *param1, unk32 param2);
-}
 
 void func_ov018_020c4e8c(void) {
     RTC_Init();

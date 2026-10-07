@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Game/GameModeAdventure.hpp"
 #include "Save/SaveManager.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
@@ -8,10 +9,6 @@
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
 #include "versions.h"
-
-extern "C" {
-unk32 func_0200e234();
-}
 
 THUMB_BEGIN
 

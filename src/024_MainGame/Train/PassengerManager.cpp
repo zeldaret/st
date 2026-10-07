@@ -1,11 +1,9 @@
 #include "MainGame/PassengerManager.hpp"
+#include "CommonFuncs.hpp"
 #include "System/Random.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_02049bac.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-
-extern "C" SceneIndex func_ov000_0205c984();
-extern "C" u32 func_ov000_0205c9b4();
 
 const s16 data_ov024_020d7598[] = {0x29, 0x2F, 0x2B, 0x2C, 0x2E};
 

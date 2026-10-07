@@ -1,12 +1,11 @@
 #include "Actor/ActorUnkRBLS.hpp"
+#include "CommonFuncs.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
 
 ActorUnkZLSL_AnimationTag data_ov063_02163740 = {0, "RBLS"};
-
-extern "C" void func_ov000_02099f64(UnkStruct_ov063_02163784 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param3);
 
 DECL_PROFILE(ActorProfileUnkRBLS);
 

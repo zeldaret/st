@@ -1,11 +1,6 @@
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f84.hpp"
-
-extern "C" size_t func_020010e0(UnkStruct_02011e10_Sub1 *heapID, void *pFile, unk32 param3);
-extern "C" void *func_02012ec8(unk32, unk16, const char *, size_t *, unk32, u8);
-extern "C" void *func_02012ee4(const char *, unk32, unk32, size_t *, u8);
-extern "C" void *func_02012f6c(const char *, size_t *);
-extern "C" HeapIndex16 func_02015338();
 
 THUMB_BEGIN
 

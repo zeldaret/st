@@ -1,13 +1,10 @@
 #include "MapObject/MapObjectDoorSwitch.hpp"
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "versions.h"
-
-extern "C" void func_01ffaf74(VecFx32 *, MtxFx43 *, VecFx32 *);
-extern "C" fx32 func_01ffb464(fx32);
-extern "C" void func_01ff9218(fx32 *, fx32, fx32);
 
 const UnkStruct_ov031_021150b0 data_ov031_02115254(0x1E66);
 

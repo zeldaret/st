@@ -1,4 +1,5 @@
 #include "MapObject/MapObjectUnkMTJR.hpp"
+#include "CommonFuncs.hpp"
 #include "System/Random.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
@@ -8,7 +9,6 @@
 #include "profile.hpp"
 
 // Overlay 31
-extern "C" void func_ov031_020e0f30(ActorRef);
 
 DECL_PROFILE(MapObjectProfileUnkMTJR);
 

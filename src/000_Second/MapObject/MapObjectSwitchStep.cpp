@@ -1,4 +1,5 @@
 #include "MapObject/MapObjectSwitchStep.hpp"
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
@@ -6,8 +7,6 @@
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include <nitro/mi.h>
-
-extern "C" unk32 func_0200f218(unk32, const char *);
 
 static const char data_ov000_020af550[] = "switch";
 static const char data_ov000_020af560[] = "switchB";

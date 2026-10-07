@@ -1,5 +1,6 @@
 #include "MapObject/MapObjectDoorDangerSpawn.hpp"
 #include "Actor/ActorManager.hpp"
+#include "CommonFuncs.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -14,9 +15,6 @@
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "versions.h"
 
-extern "C" unk32 func_01ffb428(unk32, unk32);
-extern "C" void func_01ffaf74(VecFx32 *, MtxFx43 *, VecFx32 *);
-extern "C" void func_01ff93c0(VecFx32 *, fx32);
 extern unk32 data_ov031_02110c00[];
 
 const UnkStruct_ov031_021150b0 data_ov031_021150b0(0x1E66);

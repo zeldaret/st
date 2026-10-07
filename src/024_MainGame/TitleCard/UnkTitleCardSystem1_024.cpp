@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Game/GameModeManager.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_02049be0.hpp"
@@ -11,9 +12,6 @@
 #include "Unknown/UnkStruct_ov000_020b504c.hpp"
 #include "Unknown/UnkStruct_ov024_020d8694.hpp"
 #include <nitro/mi.h>
-
-extern "C" unk32 func_02014fe0();
-extern "C" fx32 func_01ffb428(unk32, unk32);
 
 UnkTitleCardSystem1::UnkTitleCardSystem1(GameModeManagerBase_004 *param1) :
     mUnk_004(4),

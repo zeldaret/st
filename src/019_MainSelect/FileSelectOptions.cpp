@@ -3,17 +3,13 @@
 #include "FileSelect/FileSelectOptions.hpp"
 // clang-format on
 
+#include "CommonFuncs.hpp"
 #include "FileSelect/FileSelect.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-
-extern "C" {
-void func_ov000_02062e44(void *param1, void *param2);
-void func_ov000_020623d8(void *param1, unk32 param2);
-};
 
 class UnkStruct_ov019_020d215c {
 public:
@@ -454,14 +450,14 @@ void FileSelectOptions::func_ov019_020cd614() {
     }
     this->mUnk_1064.mUnk_08 = 0;
 
-    func_ov000_02062e44(&local_34, &this->mUnk_1388);
+    func_ov000_02062e44((Vec2s *) &local_34, &this->mUnk_1388);
     this->mUnk_1420.func_ov000_0206415c(&local_34, 0, 0xC, 0);
 
-    func_ov000_02062e44(&local_40, &this->mUnk_16AC);
+    func_ov000_02062e44((Vec2s *) &local_40, &this->mUnk_16AC);
     local_34 = local_40;
     this->mUnk_1744.func_ov000_0206415c(&local_34, 0, 0xC, 0);
 
-    func_ov000_02062e44(&local_44, &this->mUnk_19D0);
+    func_ov000_02062e44((Vec2s *) &local_44, &this->mUnk_19D0);
     local_34 = local_44;
     this->mUnk_1A68.func_ov000_0206415c(&local_34, 0, 0xC, 0);
 }

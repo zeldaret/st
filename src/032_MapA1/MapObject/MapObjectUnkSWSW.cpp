@@ -1,4 +1,5 @@
 #include "MapObject/MapObjectUnkSWSW.hpp"
+#include "CommonFuncs.hpp"
 #include "profile.hpp"
 
 #include "Actor/Actor.hpp"
@@ -9,19 +10,12 @@
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 
-extern "C" char data_ov032_02121ef4;
-extern "C" char data_ov032_02121f04;
-extern "C" unk32 data_ov032_02121f14; // ig these variables should be 0x10-byte long
-extern "C" unk32 data_ov032_02121f24; // same as above
-extern "C" MapObjectProfile_Derived2_20_Base data_ov032_02122ad8;
-extern "C" MapObject_10 data_ov032_02122b8c;
-
-extern "C" void func_01ff9218(fx32 *, fx32, fx32);
-extern "C" void func_01ff91b8(unk16 *, fx32, fx32);
-extern "C" fx32 func_01ffbbe0(fx32 x, fx32 z);
-extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
-extern "C" fx32 func_02015a18(u16, unk32, unk32, unk32, u16, unk32, unk32);
-extern "C" unk32 func_02016ae0(VecFx32 *, VecFx32 *, UnkAngleStruct, unk32, unk32);
+extern char data_ov032_02121ef4;
+extern char data_ov032_02121f04;
+extern unk32 data_ov032_02121f14; // ig these variables should be 0x10-byte long
+extern unk32 data_ov032_02121f24; // same as above
+extern MapObjectProfile_Derived2_20_Base data_ov032_02122ad8;
+extern MapObject_10 data_ov032_02122b8c;
 
 DECL_PROFILE(MapObjectProfileUnkSWSW);
 

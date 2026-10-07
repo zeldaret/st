@@ -1,11 +1,10 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 
 #include <nitro/gx.h>
-
-extern "C" AdventureModeManager_190_10 *func_ov011_020b8e54(void *, int);
 
 THUMB_BEGIN
 

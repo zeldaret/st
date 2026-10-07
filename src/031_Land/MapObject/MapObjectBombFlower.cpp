@@ -1,4 +1,5 @@
 #include "MapObject/MapObjectBombFlower.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorBomb.hpp"
 #include "Actor/ActorManager.hpp"
@@ -6,10 +7,6 @@
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "profile.hpp"
-
-extern "C" fx32 func_01ffb464(fx32);
-extern "C" void func_01ff9218(fx32 *, fx32, fx32);
-extern "C" void func_ov031_020e0f30(ActorRef);
 
 struct UnkStruct_ov031_02102728 {
     ActorRef ref;

@@ -1,12 +1,10 @@
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e0d08.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 
 #include <nitro/os.h>
 #include <nitro/snd.h>
-
-extern "C" BOOL func_0200169c(void *, int, int, int, int, void *, int);
-extern "C" void func_0200174c();
 
 UnkStruct_027e0d08::UnkStruct_027e0d08() {
     this->mUnk_00 = NULL;

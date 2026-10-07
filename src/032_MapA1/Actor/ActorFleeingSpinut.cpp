@@ -1,4 +1,5 @@
 #include "Actor/ActorFleeingSpinut.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorUnkKEYN.hpp"
 #include "System/SysNew.hpp"
@@ -9,15 +10,7 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
-extern "C" unk32 data_ov000_020aecf8;
-
-extern "C" bool func_01ff916c(void *, int, int);
-extern "C" void func_01ff9318(void *, unk32, unk32);
-extern "C" fx32 func_01ffb428(unk32, unk32);
-extern "C" fx32 func_01ffb464(fx32);
-
-extern "C" bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
-extern "C" void func_ov000_020986b4(s16 *param1, Actor_Derived2 *param2, unk32 param3);
+extern unk32 data_ov000_020aecf8;
 
 struct UnkStruct_ov032_02122908 {
     /* 00 */ unk32 mUnk_00;
@@ -600,12 +593,6 @@ UnkStruct_027e0960_TableEntry_04 *ActorFleeingSpinut_1EC::func_ov032_0211cd20(Ve
     return tEntry->mTable.GetPtr(0x1);
 }
 
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
-extern "C" fx16 func_01ffbbe0(fx32, fx32);
-extern "C" unk32 func_01ff930c(s16 *, s16, unk32, s16);
-extern "C" unk32 func_01ff9258(fx32, fx32);
-extern "C" fx32 func_02017f54(s16 *, UnkAngleStruct);
-
 // non-matching
 u16 *ActorFleeingSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, VecFx32 *param3, unk32 param4, unk32 param5,
                                                  unk32 param6) {
@@ -639,7 +626,7 @@ u16 *ActorFleeingSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, V
 
     fx16 sp00 = (fx32) func_01ffbbe0(sp10.x, sp10.z);
 
-    func_01ff930c(param2, sp00, param5, sp00);
+    func_01ff930c(param2, sp00, param5);
 
     func_01ff9258(sp1C.x - param1->x, sp1C.z - param1->z);
 
@@ -657,8 +644,6 @@ void ActorFleeingSpinut_1EC::func_ov032_0211cf74() {
 
     this->func_ov032_0211cfac(0x1);
 }
-
-extern "C" bool func_02017930(UnkStruct_027e0960_TableEntry_04_Base *, UnkStruct_027e0960_TableEntry_04_Base *);
 
 // non-matching
 void ActorFleeingSpinut_1EC::func_ov032_0211cfac(unk32 param1) {

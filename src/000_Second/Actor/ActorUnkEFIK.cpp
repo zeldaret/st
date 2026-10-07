@@ -1,12 +1,11 @@
 #include "Actor/ActorUnkEFIK.hpp"
+#include "CommonFuncs.hpp"
 #include "System/Random.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_ov000_020aed1c.hpp"
-
-extern "C" void Unknown_func_ov000_0207fd7c(void *, void *, unk32);
 
 DECL_PROFILE(ActorProfileUnkEFIK);
 

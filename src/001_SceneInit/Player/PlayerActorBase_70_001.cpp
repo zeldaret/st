@@ -1,8 +1,7 @@
+#include "CommonFuncs.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
-
-extern "C" void *func_ov000_0208ea70(PlayerCharacter, unk32, bool); // returns pointer to .NSBTX
 
 extern unk16 data_ov000_020ab314;
 

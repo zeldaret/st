@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "System/Random.hpp"
 #include "types.h"
 

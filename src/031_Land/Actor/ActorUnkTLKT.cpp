@@ -1,13 +1,11 @@
 #include "Actor/ActorUnkTLKT.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/Actor_Derived1.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
-
-extern "C" void func_ov000_02072fd0(UnkStackStruct1 *param0);
-extern "C" unk16 func_ov031_020e3dd0(Actor *param0);
 
 DECL_PROFILE(ActorProfileUnkTLKT);
 

@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "MainGame/PassengerManager.hpp"
 #include "MainGame/UnkTrainSystems.hpp"
@@ -7,9 +8,6 @@
 #include "Unknown/UnkStruct_ov024_020d86a0.hpp"
 #include "types.h"
 #include "versions.h"
-
-extern "C" void func_ov000_0205c1f0(unk32 *, u16);
-extern "C" void func_ov000_0205c204(void *, VecFx32 *, int, int, u8);
 
 struct UnkStruct_ov024_020d86a8_Mgr {
     const UnkStruct_ov024_020d86a8 *pInstance;

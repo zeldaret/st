@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "MapObject/MapObjectUnkSAND.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -6,7 +7,6 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
-extern "C" void func_01ff91b8(unk16 *, fx32, fx32);
 extern unk32 data_ov031_02115fe0;
 extern MapObject_10 data_ov031_02118ac8[];
 extern MapObject_10 data_ov031_02118aec;

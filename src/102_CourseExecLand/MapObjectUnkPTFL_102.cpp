@@ -1,10 +1,8 @@
+#include "CommonFuncs.hpp"
 #include "MapObject/MapObjectUnkPTFL.hpp"
 #include "Unknown/UnkStruct_027e0208.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "nns/g3d/sbc.h"
-
-extern "C" void func_01ff9318(void *, unk32, unk32);
-extern "C" fx32 func_01ffb464(fx32);
 
 static unk32 data_ov102_02184980[] = {
     0x1FF00000, 0x0007FC00, 0x000001FF, 0x20000000, 0x00080000, 0x00000200, 0x16A5A800, 0x00000000, 0x00000000, 0x00000000,

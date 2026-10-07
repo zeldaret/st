@@ -1,11 +1,12 @@
 #include "Actor/ActorHeart.hpp"
+#include "CommonFuncs.hpp"
 #include "System/Random.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "nitro/fx.h"
 
-typedef struct {
+typedef struct UnkStruct_ov031_020eeee8 {
     unk16 mUnk_00;
     unk16 mUnk_02;
     unk16 mUnk_04;
@@ -21,17 +22,6 @@ typedef struct {
     unk16 mUnk_28;
     PAD(0x2A, 0x3C);
 } UnkStruct_ov031_020eeee8;
-
-extern "C" void func_01ffce1c(unk16 *, unk16 *);
-extern "C" int func_01ffcea0(unk32, UnkStruct_ov031_020eeee8 *);
-extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
-extern "C" void func_01fff17c(UnkStruct_ov031_020eeee8 *, UnkStruct_027e0ce0 *, unk32);
-extern "C" void func_02018114(unk16 *, unk16);
-extern "C" void func_02098388(void);
-extern "C" void func_02097bb8(void);
-extern "C" void func_ov000_0205c1f0(unk32 *, unk16);
-extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
-extern "C" void func_ov000_0208bc00(UnkStruct_027e0ce0 *, unk16, unk16 *);
 
 const Cylinder data_ov031_02113d64(0x800);
 
@@ -110,7 +100,7 @@ void ActorHeart::Update() {
     stack.mUnk_04 = 0x666;
     stack.mUnk_06 = 0xFB33;
 
-    func_01fff17c(&stack, data_027e0ce0, 0);
+    func_01fff17c(&stack.mUnk_00, data_027e0ce0, 0);
     func_02018114(&stack.mUnk_02, stack.mUnk_00);
 
     this->mUnk_C8.mUnk_08 = stack.mUnk_02; // d0
@@ -142,7 +132,7 @@ void ActorHeart::Update() {
         if (this->mState == ActorHeartState_1) {
             func_ov000_0208bc00(data_027e0ce0, 0, &stack.mUnk_08);
 
-            func_01ffce1c(&stack.mUnk_18, &stack.mUnk_08);
+            func_01ffce1c((Cylinder *) &stack.mUnk_18, (Cylinder *) &stack.mUnk_08);
 
             stack.mUnk_28 += stack.mUnk_14 + (stack.mUnk_14 << 1);
             stack.mUnk_1C -= stack.mUnk_14;

@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
@@ -8,10 +9,6 @@
 #include "Unknown/UnkStruct_ov000_020b4f70.hpp"
 #include "Unknown/UnkStruct_ov000_020b504c.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
-
-extern "C" AdventureModeManager_184_10 *func_ov010_020b65fc(void *);
-extern "C" AdventureModeManager_184_10 *func_ov010_020b6520(void *);
-extern "C" AdventureModeManager_184_14 *func_ov010_020b88c4(void *);
 
 THUMB_BEGIN
 

@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #define DOORBASE_DTOR_NOINLINE
 #include "MapObject/MapObjectDoorBase.hpp"
 
@@ -9,10 +10,6 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
 #include <nitro/mi.h>
-
-extern "C" unk32 func_01ffb464(unk32 param1);
-extern "C" void func_01ff9218(void *, unk32, unk32);
-extern "C" unk32 func_01ffb428(unk32, unk32);
 
 class UnkStruct_ov031_02117210 {
 public:
@@ -532,7 +529,6 @@ struct stack_struct {
     /* 08 */
 };
 
-extern "C" void func_01ff9fbc(MtxFx22 *, unk32, MtxFx22 *);
 extern fx16 data_0203f964[];
 
 void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1) {

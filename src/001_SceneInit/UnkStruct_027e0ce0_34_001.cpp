@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/CargoManager.hpp"
 #include "MainGame/PassengerManager.hpp"
 #include "System/SysNew.hpp"
@@ -5,9 +6,6 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d00.hpp"
-
-extern "C" SceneIndex func_ov000_0205c984();
-extern "C" unk32 func_ov026_020f4c9c(SceneIndex);
 
 UnkStruct_027e0ce0_34::UnkStruct_027e0ce0_34() {
     this->mUnk_20           = NULL;

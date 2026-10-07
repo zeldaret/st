@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "types.h"
 #include <nitro/mi.h>
@@ -5,15 +6,6 @@
 #include <nitro/g2.h>
 #include <nitro/hw.h>
 #include <nitro/reg.h>
-
-extern "C" void func_020242a0();
-extern "C" void func_020241f4();
-extern "C" void func_0202428c();
-extern "C" void func_02024208();
-extern "C" void func_020242b4();
-extern "C" void func_020242c8();
-extern "C" void func_02024264();
-extern "C" void func_02024278();
 
 extern "C" void func_020196fc() {
     GX_SetGraphicsMode(1, 0, 0);

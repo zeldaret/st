@@ -1,4 +1,5 @@
 #include "Actor/ActorBomb.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorBlast.hpp"
 #include "Actor/ActorManager.hpp"
@@ -23,25 +24,13 @@ struct UnkStruct_ov031_020e5d18_00 {
     /* 18 */
 };
 
-extern "C" VecFx32 data_027e07d4;
-extern "C" unk32 data_ov000_020aecf8;
-extern "C" VecFx32 data_ov031_02110a10;
-extern "C" VecFx32 data_ov031_02110a28;
-extern "C" char data_ov031_02110a50;
-extern "C" char data_ov031_02110a60;
-extern "C" char data_ov031_02110a70;
-
-extern "C" bool func_01ff916c(void *, int, int);
-extern "C" void func_01ff9218(fx32 *, fx32, fx32);
-extern "C" unk32 func_01ff9258(fx32, fx32);
-extern "C" void func_01ff94cc(VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" fx32 func_01ffb464(fx32);
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" void func_01ffb974(unk32, VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" void func_01ffc5a0(ModelRender *, unk32, UnkAngleStruct, void *);
-extern "C" void func_01ffe6c4(UnkStruct_ov031_020e5d18_00 *, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *,
-                              UnkStruct_ov031_Items_00_Base *);
-extern "C" void func_0200b578(G3d_RenderObject *, void (*)(), unk32, unk32, unk32);
+extern VecFx32 data_027e07d4;
+extern unk32 data_ov000_020aecf8;
+extern VecFx32 data_ov031_02110a10;
+extern VecFx32 data_ov031_02110a28;
+extern char data_ov031_02110a50;
+extern char data_ov031_02110a60;
+extern char data_ov031_02110a70;
 
 static ActorUnkZLSL_AnimationTag data_ov031_02112be8           = {.index = 0, .name = "bomb_clanim", .unknown = 0};
 static PTMF<ActorBomb> data_ov031_02112c00[ActorBombState_Max] = {
@@ -691,7 +680,7 @@ fx32 ActorBomb::func_ov031_020e2820(UnkStruct_ov031_Items_00 *param1) {
                 func_01ffb974(sp3CLength, &sp18, &sp24, &sp24);
                 sp3CLength = FX_F32_TO_FX32(0.0f);
             }
-            func_01ffe6c4(&sp60, this->mRef, &sp24, &sp30, (s16) this->mUnk_44, &this->mPos, param1);
+            func_01ffe6c4(&sp60.mUnk_00, this->mRef, &sp24, &sp30, (s16) this->mUnk_44, &this->mPos, param1);
 
             if (!this->Actor::func_ov000_0207e294(this->mUnk_30)) {
                 VecFx32_Copy(&sp24, &sp30);
@@ -727,7 +716,7 @@ fx32 ActorBomb::func_ov031_020e295c(UnkStruct_ov031_Items_00 *param1) {
                 func_01ffb974(sp3CLength, &sp18, &sp24, &sp24);
                 sp3CLength = FX_F32_TO_FX32(0.0f);
             }
-            func_01ffe6c4(&sp60, this->mRef, &sp24, &sp30, (s16) this->mUnk_44, &this->mPos, param1);
+            func_01ffe6c4(&sp60.mUnk_00, this->mRef, &sp24, &sp30, (s16) this->mUnk_44, &this->mPos, param1);
 
             if (!this->Actor::func_ov000_0207df88(this->mUnk_30, 0x10)) {
                 VecFx32_Copy(&sp24, &sp30);
@@ -744,7 +733,7 @@ void ActorBomb::func_ov031_020e2a9c() {
 
     VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_180.mUnk_0C);
 
-    func_01ffe6c4(&s0C, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos, &this->mUnk_180);
+    func_01ffe6c4(&s0C.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos, &this->mUnk_180);
 
     unk32 value = this->func_ov031_020e295c(&this->mUnk_180) | this->func_ov031_020e2820(&this->mUnk_180);
     if (this->mUnk_1E0.type_index != 0x0) {

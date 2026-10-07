@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "FileSelect/FileSelect.hpp"
 #include "FileSelect/FileSelectOptionsManager.hpp"
 #include "System/Random.hpp"
@@ -6,11 +7,6 @@
 
 #include <nitro/g2.h>
 #include <nitro/os.h>
-
-extern "C" {
-void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
-                   unk32 param8);
-};
 
 FileSelectOptionsManager *gpFSOptionsManager = NULL;
 

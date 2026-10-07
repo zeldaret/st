@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Save/SaveFile.hpp"
 #include "Save/SaveManager.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -6,9 +7,6 @@
 #include "nitro/card.h"
 #include "nitro/math.h"
 #include "nitro/types.h"
-
-extern "C" bool func_ov000_020a0a90(u32, unk32, size_t);
-extern "C" unk32 func_020328c8(void *, void *, size_t);
 
 void SaveManager::func_ov017_020c2b68(u16 param1) {
     CARD_LockBackup(gSaveManager.mCardId);

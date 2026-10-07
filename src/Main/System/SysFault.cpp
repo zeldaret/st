@@ -1,4 +1,5 @@
 #include "System/SysFault.hpp"
+#include "CommonFuncs.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_02049b18.hpp"
@@ -12,16 +13,6 @@
 #include <nitro/os.h>
 #include <nitro/reg.h>
 
-extern "C" void func_020131ec();
-extern "C" void func_02013214();
-extern "C" void func_ov020_020c86d8(void *);
-extern "C" void func_02014d38(void *, int);
-extern "C" void func_020196fc();
-extern "C" unk32 func_ov000_02068504(int);
-extern "C" unk32 func_020147a8();
-extern "C" void func_0201b278(bool, bool);
-extern "C" void func_0201b180(bool, bool);
-extern "C" void SetBrightColor(void *, int);
 extern int data_02049bd4;
 
 extern u16 data_0203e0c4[];

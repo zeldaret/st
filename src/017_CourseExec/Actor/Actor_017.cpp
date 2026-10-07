@@ -7,6 +7,7 @@
 #include "Actor/ActorRupee.hpp"
 #include "Actor/ActorUnkKEYN.hpp"
 #include "Actor/ActorUnkSWBM.hpp"
+#include "CommonFuncs.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
@@ -19,27 +20,6 @@
 #include "math.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
-
-extern "C" bool func_01ffecdc(unk32 param1, Cylinder *param2);
-extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
-extern "C" void func_01ff93c0(VecFx32 *, fx32);
-extern "C" void func_01ff9770(VecFx32 *, unk32);
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
-extern "C" void func_01ff97c8(VecFx32 *, int);
-extern "C" void func_01ffce1c(Cylinder *, Cylinder *);
-extern "C" unk32 func_01ff9258(fx32, fx32);
-
-extern "C" void func_ov000_0209807c(void *);
-extern "C" void func_ov000_020980e0(void *);
-extern "C" void func_ov000_02098244(VecFx32 *);
-extern "C" void func_ov000_02097f38(VecFx32 *);
-extern "C" void func_ov000_02097fcc(VecFx32 *);
-extern "C" void func_ov000_02097ea0(VecFx32 *);
-extern "C" void func_ov000_02097e04(VecFx32 *);
-extern "C" void func_ov000_02097d4c(VecFx32 *);
-extern "C" void func_ov000_02099870(UnkStruct_ActorUnkCANS_224 *, VecFx32 *, u16);
-extern "C" void func_ov000_020a1330(u16, ActorRef, VecFx32, UnkAngleStruct, unk32, unk32);
-extern "C" void func_ov031_020f439c(void *, Vec3s *, unk32);
 
 extern unk32 data_ov000_020aed08;
 extern unk32 data_ov000_020aed04;

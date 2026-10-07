@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include <string.h>
 
 #include "Actor/ActorId.hpp"
@@ -34,20 +35,6 @@ UnkStruct_02186240 data_ov110_02186240;
 
 extern const char *data_ov000_020aa240; // .nsbtx
 extern const char *data_ov000_020aa248; // .nsbmd
-
-extern "C" void func_ov000_0205ca74(unk32);
-extern "C" void func_01ffb6e4(unk32, const void *, void *);
-extern "C" void func_01ffc5a0(ModelRender *, unk32, UnkAngleStruct, void *);
-extern "C" void func_ov000_0208f820();
-extern "C" void func_ov000_0208ba10(void *, void *, unk32);
-extern "C" void func_02015ea8(unk32, void *);
-extern "C" void func_02015628(char *, char *, unk32, void *, size_t);
-extern "C" void func_02015664(char *, unk32);
-extern "C" void func_020156c8(char *, char *, unk32);
-extern "C" void func_020156f4(char *);
-extern "C" void func_02015644(char *);
-
-extern "C" BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, void *);
 
 static const unk32 data_ov110_02185dc4[1] = {8};
 
@@ -538,7 +525,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             this->mUnk_2C->mUnk_58 = 0;
             char auStack_108[12];
             func_ov000_0208ba10(auStack_108, &this->mUnk_24->mUnk_094, 0);
-            *(s16 *) &this->mUnk_40->mUnk_00 = 0x8000;
+            this->mUnk_40->angle_s = 0x8000;
 
             pUnk_38    = this->mUnk_38;
             pUnk_38->x = 0;
@@ -915,7 +902,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                     this->mUnk_54.mUnk_08 = -1;
                 }
 
-                this->mUnk_40->mUnk_00 = 0;
+                this->mUnk_40->angle_u = 0;
 
                 if (temp_r6) {
                     this->mUnk_30->func_ov000_020921e4(0x49);

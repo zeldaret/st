@@ -1,11 +1,8 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
-
-extern "C" unk32 func_02032784(unk32 param1);
-extern "C" u8 func_020157f0(unk32 param1, unk32 param2);
-extern "C" u8 func_020157c0(unk32 param1, unk32 param2);
 
 static const u8 data_ov024_020d7550[]    = {0x01, 0x04, 0x10, 0x40, 0x00};
 static const u8 data_ov024_020d7555[]    = {0x20, 0x10, 0x08, 0x40, 0x00, 0x04, 0x80, 0x01, 0x02, 0x00, 0x00};

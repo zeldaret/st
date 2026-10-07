@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
@@ -8,8 +9,6 @@
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
 #include <nitro/gx.h>
-
-extern "C" GameModeManagerBase_104 *func_ov008_020b6520(void *);
 
 void AdventureModeManager_170_14::vfunc_0C() {
     data_0204a088->func_ov000_02061224();

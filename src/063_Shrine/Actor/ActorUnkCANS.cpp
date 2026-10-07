@@ -6,6 +6,7 @@
 #include "Actor/ActorRef.hpp"
 #include "Actor/ActorShotArrow.hpp"
 #include "Actor/ActorUnkCASE.hpp"
+#include "CommonFuncs.hpp"
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectManager.hpp"
@@ -41,17 +42,6 @@ extern VecFx32 data_027e07d4;
 extern MtxFx43 data_027e0964;
 extern UnkStruct_027e09c0 *data_027e09c0;
 
-extern "C" void func_01ff916c(unk32 *param1, unk32 param2, unk32 param3);
-extern "C" unk32 func_01ff9258(unk32, unk32);
-extern "C" unk32 func_01ff930c(s16 *, unk16, unk32);
-extern "C" void func_01ff9638(VecFx32 *param1, fx16 param2);
-extern "C" fx32 func_01ff9a5c(VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" void func_01ffad5c(MtxFx43 *, MtxFx43 *, MtxFx43 *);
-extern "C" fx32 func_01ffb428(unk32, unk32);
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" unk32 func_01ffbbe0(fx32 param1, fx32 param2);
-extern "C" void func_0200eab0(G3d_Model *, unk32, u8);
-
 // Overlay 0
 extern u16 data_ov000_020aed00;
 extern u16 data_ov000_020aecf0[0x4];
@@ -59,20 +49,14 @@ extern u16 data_ov000_020aecf4[0x4];   //! INFO: Unsure about the size
 extern unk32 data_ov000_020aecf8[0x2]; //! INFO: Unsure about the size
 extern unk32 data_ov000_020aecfc[0x2]; //! INFO: Unsure about the size
 
-extern "C" void func_ov000_02057c98(ModelRender *param1, UnkSystem5 *param2);
 #if IS_JP
-extern "C" unk32 func_ov000_0205c384(VecFx32 *param1, VecFx32 *param2);
+
 #endif
-extern "C" void func_ov000_0208bd20(UnkStruct_027e0ce0 *param1, unk32 param2, unk32 param3, unk32 param4);
-extern "C" void func_ov000_020986b4(s16 *param1, Actor_Derived2 *param2, unk32 param3);
-extern "C" unk32 func_ov000_02098d7c(ActorUnkCANS *param1, UnkStruct_ov063_02162e88 *param2);
 
 // Overlay 26
 #if IS_JP
-extern "C" void func_ov026_020f46a8(Actor *param1, VecFx32 *param2, bool param3);
-#endif
 
-extern "C" void G3d_GetCurrentMtx(MtxFx43 *mtx1, MtxFx33 *mtx2);
+#endif
 
 const Cylinder data_ov063_02162e90(0, 0x99A, 0, 0x99A);
 

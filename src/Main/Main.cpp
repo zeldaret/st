@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Game/Game.hpp"
 #include "global.h"
 #include "types.h"

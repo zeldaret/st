@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
@@ -7,17 +8,6 @@
 #include "nitro/fx.h"
 #include "nitro/math.h"
 #include "nitro/types.h"
-
-extern "C" unk32 func_01ffb9cc(VecFx32 *, VecFx32 *);
-extern "C" void func_01ff9770(VecFx32 *, unk32);
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
-extern "C" void func_01ff97c8(VecFx32 *, int);
-extern "C" unk32 func_ov000_02078aec();
-extern "C" unk32 func_ov000_0205b090();
-extern "C" unk32 func_ov000_0205b0ac(s16 param1);
-extern "C" unk32 func_01ffb428(unk32, unk32);
-extern "C" unk32 func_01ffbbe0();
-extern "C" unk32 func_ov000_0208832c(s16, unk32);
 
 extern u16 data_ov000_020afd08;
 extern unk32 data_ov000_020afd0c;
@@ -199,7 +189,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                 VecFx32_SubXZ(&this->mUnk_00, &temp_r10_2->mPos.vec, &sp8);
 
                 PlayerLinkActor_9C *ptr = this->mpPlayer->mUnk_90;
-                s16 value1              = func_01ffbbe0();
+                s16 value1              = func_01ffbbe0(sp8.x, sp8.z);
                 temp_r8_5               = func_ov000_0208832c(value1, ptr->func_ov000_02084944());
 
                 if (VecFx32_Length(&sp8) <= temp_r8_5) {

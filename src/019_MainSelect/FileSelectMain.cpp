@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "FileSelect/FileSelect.hpp"
 #include "Game/Game.hpp"
 #include "Game/GameModeFileSelect.hpp"
@@ -9,10 +10,6 @@
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
 #include <nitro/g2.h>
-
-extern "C" {
-void func_ov000_02062e44(void *param1, void *param2);
-};
 
 class UnkStruct_ov019_020d24c0 {
 public:
@@ -244,7 +241,7 @@ void FileSelectMain::func_ov019_020c6d48() {
 
     for (int i = 0; i < MAX_SAVE_SLOTS; i++) {
         this->GetUnk03E0(i).func_ov019_020cbaec();
-        func_ov000_02062e44(&auStack_2c, &this->GetUnk03E0(i).mUnk_004);
+        func_ov000_02062e44((Vec2s *) &auStack_2c, &this->GetUnk03E0(i).mUnk_004);
 
         local_34.x = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_20;
         local_34.y = UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_0C;

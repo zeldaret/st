@@ -1,11 +1,8 @@
+#include "CommonFuncs.hpp"
 #include "FileSelect/FileSelect.hpp"
 #include "FileSelect/UnkSubStruct9.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
-
-extern "C" {
-void func_ov000_02062e44(void *param1, void *param2);
-};
 
 // non-matching
 UnkSubStruct9::UnkSubStruct9(stack_struct1 param1) :
@@ -100,7 +97,7 @@ struct struct_sStack_100 {
 
     struct_sStack_100(UnkSubStruct9 *thisx, UnkStruct_ov019_020d24c8_28_258 *pUnkSub258, Vec2s *pLocal_c4, u16 iVar12,
                       u16 iVar11) {
-        func_ov000_02062e44(this, &thisx->mUnk_004);
+        func_ov000_02062e44((Vec2s *) this, &thisx->mUnk_004);
         this->mUnk_06 = pUnkSub258->mPos.x - this->mUnk_02;
         this->mUnk_04 = pUnkSub258->mPos.y - this->mUnk_00;
         this->mUnk_08 = pLocal_c4->x + thisx->mUnk_77C.x + iVar11 + this->mUnk_00;
@@ -135,7 +132,7 @@ void UnkSubStruct9::func_ov019_020cbc0c() {
 
     Vec2s pos = this->mUnk_004.mPos;
 
-    func_ov000_02062e44(local_d0, (void *) &this->mUnk_004);
+    func_ov000_02062e44((Vec2s *) local_d0, (void *) &this->mUnk_004);
 
     unk16 test[2];
     unk16 sVar4 = this->mUnk_77C.y;
@@ -146,7 +143,7 @@ void UnkSubStruct9::func_ov019_020cbc0c() {
     this->mUnk_064.mUnk_142 = test[1];
     this->mUnk_064.func_0201f4b4(0);
 
-    func_ov000_02062e44(local_d8, &this->mUnk_004);
+    func_ov000_02062e44((Vec2s *) local_d8, &this->mUnk_004);
 
     local_dc[0] = local_c4.x + pos.x + this->mUnk_29C.mPos.x - local_d8[0];
     local_dc[1] = local_c4.y + pos.y + this->mUnk_29C.mPos.y - local_d8[1];
@@ -179,7 +176,7 @@ void UnkSubStruct9::func_ov019_020cbc0c() {
             unk16 sStack_e0[2];
             unk16 uVar3 = data_ov019_020d1e98[i];
             UnkStruct_ov019_020d24c8_28_258 uStack_40(0x89, uVar3);
-            func_ov000_02062e44(&sStack_e0, &this->mUnk_004.mPos);
+            func_ov000_02062e44((Vec2s *) &sStack_e0, &this->mUnk_004.mPos);
 
             unk16 iVar5 = uStack_40.mPos.x - sStack_e0[0];
             unk16 iVar2 = uStack_40.mPos.y - sStack_e0[1];

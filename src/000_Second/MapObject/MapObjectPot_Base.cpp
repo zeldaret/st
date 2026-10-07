@@ -1,6 +1,5 @@
 #include "MapObject/MapObjectPot_Base.hpp"
-
-extern "C" void func_ov000_020a14e4(unk8, VecFx32 *);
+#include "CommonFuncs.hpp"
 
 MapObjectPot_Base::MapObjectPot_Base() {
     this->mUnk_40 = 0;

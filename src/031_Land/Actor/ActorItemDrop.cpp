@@ -1,4 +1,5 @@
 #include "Actor/ActorItemDrop.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "System/SysNew.hpp"
@@ -9,11 +10,6 @@
 #include "Unknown/UnkStruct_027e0d34.hpp"
 #include "nitro/fx.h"
 #include "versions.h"
-
-extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
-extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0C_Base *, VecFx32 *);
-extern "C" void func_ov000_0205c1f0(unk32 *, u16);
-extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
 
 static const Cylinder data_ov031_02114ba0(0x800);
 

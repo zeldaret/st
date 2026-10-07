@@ -1,13 +1,11 @@
 #include "Actor/ActorUnkSWOB.hpp"
 #include "Actor/ActorManager.hpp"
+#include "CommonFuncs.hpp"
 #include "System/Random.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-
-extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
-extern "C" void func_01ffb9cc(void *, VecFx32 *);
 
 DECL_PROFILE(ActorProfileUnkSWOB);
 

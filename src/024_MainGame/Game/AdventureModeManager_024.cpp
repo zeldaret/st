@@ -1,4 +1,5 @@
 #include "Actor/ActorUnkTUTO.hpp"
+#include "CommonFuncs.hpp"
 #include "Game/GameModeAdventure.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "System/OverlayManager.hpp"
@@ -29,14 +30,6 @@
 
 #include <nitro/g2.h>
 #include <nitro/os.h>
-
-extern "C" {
-void func_02019b3c();
-void func_02019c4c();
-void func_02019a74();
-void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
-                   unk32 param8);
-}
 
 extern void *data_ov000_020b64f8;
 

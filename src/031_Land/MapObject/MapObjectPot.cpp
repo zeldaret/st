@@ -1,4 +1,5 @@
 #include "MapObject/MapObjectPot.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorManager.hpp"
@@ -10,10 +11,7 @@
 #include "limits.h"
 #include "profile.hpp"
 
-extern "C" MapObject_10_Pot data_ov031_02118010;
-
-extern "C" fx32 func_01ffe868(VecFx32 *, unk32, unk32);
-extern "C" void func_ov031_020e0f30(ActorRef);
+extern MapObject_10_Pot data_ov031_02118010;
 
 DECL_PROFILE(MapObjectProfilePot);
 

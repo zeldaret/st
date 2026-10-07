@@ -1,9 +1,8 @@
+#include "CommonFuncs.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
 #include <nitro/mi.h>
-
-extern "C" void func_ov000_0208dd60(void *, UnkStruct_027e0ce0_30_00 *);
 
 extern fx32 data_ov000_020afd14;
 

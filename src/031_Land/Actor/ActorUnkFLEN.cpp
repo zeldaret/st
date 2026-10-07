@@ -1,8 +1,9 @@
 #include "Actor/ActorUnkFLEN.hpp"
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 
-extern "C" u16 data_ov031_02110b90[];
-extern "C" ActorId data_ov031_02110b94[];
+extern u16 data_ov031_02110b90[];
+extern ActorId data_ov031_02110b94[];
 
 DECL_PROFILE(ActorProfileUnkFLEN);
 

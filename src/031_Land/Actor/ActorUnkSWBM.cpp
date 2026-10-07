@@ -1,4 +1,5 @@
 #include "Actor/ActorUnkSWBM.hpp"
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e0958.hpp"
 #include "Unknown/UnkStruct_027e095c.hpp"
@@ -12,12 +13,6 @@ struct UnkStruct_ov031_020e5d18_00 {
     Actor *mUnk_00;
     u8 mUnk_04[0x14];
 };
-
-extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, UnkStruct_ov031_Items_00_Base *);
-extern "C" bool func_ov000_02080998(VecFx32 *);
-
-extern "C" void /*GX_*/ func_02024a84(MtxFx33 *param1);
-extern "C" void FlushGfxQueue();
 
 static const Cylinder data_ov031_02113114(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f),
                                           FX_F32_TO_FX32(0.35f));

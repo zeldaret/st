@@ -1,13 +1,10 @@
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 
 #include <nitro/gx.h>
-
-extern "C" void func_02019a74();
-extern "C" void func_02019b3c();
-extern "C" void func_02019c4c();
 
 void UnkStruct_0204a110::func_ov001_020bd514(unk32 param1, GameModeMgrCreateCallback createCallback, bool param3,
                                              bool param4) {

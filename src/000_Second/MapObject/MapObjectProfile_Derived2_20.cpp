@@ -1,11 +1,7 @@
 #include "MapObject/MapObjectProfile_Derived2_20.hpp"
+#include "CommonFuncs.hpp"
 
 #include <string.h>
-
-extern "C" {
-void func_02015ea8(u32 resourceId, void *);
-unk32 func_02012fa8(const char *);
-}
 
 MapObjectProfile_Derived2_20::MapObjectProfile_Derived2_20(MapObjectId mapObjId2) :
     MapObjectProfile_Derived2_20_Base("MapObj", (const char *) &mUnk_94, (const char *) &mUnk_94, (const char *) &mUnk_94, 0,

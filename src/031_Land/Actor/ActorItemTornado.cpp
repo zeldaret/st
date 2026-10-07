@@ -1,4 +1,5 @@
 #include "Actor/ActorItemTornado.hpp"
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e0958.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -12,19 +13,8 @@ struct UnkStruct_ov031_020e5d18_00 {
     u8 mUnk_04[0x14];
 };
 
-extern "C" char *data_ov031_02110a88;
-extern "C" Cylinder data_ov031_02112fdc;
-
-extern "C" void func_01ff916c(void *, unk32, unk32);
-extern "C" void func_01ff93c0(VecFx32 *, unk32);
-extern "C" void func_01ff993c(VecFx32 *, VecFx32 *, unk32);
-extern "C" fx32 func_01ffb66c(unk32, u16);
-extern "C" void func_01ffe6c4(UnkStruct_ov031_020e5d18_00 *, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *,
-                              UnkStruct_ov031_Items_00 *);
-extern "C" void func_0200ea38(G3d_Model *, unk32, unk32);
-extern "C" void func_0200ef9c(G3d_Model *);
-
-extern "C" bool func_ov000_02080998(VecFx32 *);
+extern char *data_ov031_02110a88;
+extern Cylinder data_ov031_02112fdc;
 
 DECL_PROFILE(ActorProfileItemTornado);
 
@@ -199,7 +189,7 @@ void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
     } else {
         UnkStruct_ov031_020e5d18_00 var_sp0C;
         var_sp0C.mUnk_00 = NULL;
-        func_01ffe6c4(&var_sp0C, this->mRef, &this->mPos, &this->mPrevPos, (s32) (s16) this->mUnk_44, &this->mPos,
+        func_01ffe6c4(&var_sp0C.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s32) (s16) this->mUnk_44, &this->mPos,
                       &this->mUnk_174);
         Actor *actor  = var_sp0C.mUnk_00;
         unk32 temp_r5 = actor->func_ov000_0207df88(this->mUnk_30, 4);

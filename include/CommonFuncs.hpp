@@ -3,6 +3,7 @@
 #include "Actor/ActorId.hpp"
 #include "Course/Course.hpp"
 #include "Map/MapObjectId.hpp"
+#include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
 #include "types.h"
 
@@ -338,6 +339,7 @@ void func_ov000_020623d8(void *param1, unk32 param2);
 unk8 func_ov000_02070164(void *); //! TODO: turn to a class
 void func_ov000_0205a950(u8 bgType, bool isTopScreen, bool);
 void func_ov000_0205a944(u8 bgType, bool isTopScreen, bool);
+void *func_ov000_0208ea70(PlayerCharacter, unk32, bool); // returns pointer to .NSBTX
 
 // overlay 2
 AdventureModeManager_160_14 *func_ov002_020b6520(void *, void *, int);
@@ -399,8 +401,9 @@ void func_ov031_020ea100();
 void func_ov031_020f439c(void *, Vec3s *, unk32);
 bool func_ov031_020f7538(Actor *param1, unk32 param2);
 void func_ov031_020f7574(Actor *param1, unk32 param2);
-void func_ov031_0210acd4(u8);
-unk32 func_ov031_0210af50(u16, unk32 *);
+void func_ov031_0210acd4(Vec2bCpp);
+unk32 func_ov031_0210af50(Vec2bCpp, unk32 *);
+void func_ov031_0210b0e4(Vec2bCpp, unk32);
 
 // overlay 34
 void func_ov034_02121de4(void *);

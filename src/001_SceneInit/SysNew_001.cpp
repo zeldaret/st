@@ -1,12 +1,6 @@
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
-
-extern "C" UnkStruct_02011e10_Sub1 *func_02001098(void *, size_t, unk32);
-extern "C" UnkStruct_02011e10_Sub1 *func_020012e0(void *, size_t, unk32);
-extern "C" void func_020010b8(void *);
-extern "C" void func_02001300(void *);
-extern "C" unk32 func_020013ac(void *param1);
-extern "C" size_t func_020010e0(UnkStruct_02011e10_Sub1 *heapID, void *pFile, unk32 param3);
 
 void UnkStruct_02011e10::func_ov001_020ba588(unk32 param1, unk32 param2) {
     this->mUnk_2C.func_020144cc(param1, param2, 0x01);

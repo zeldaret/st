@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkFileSystem.hpp"
@@ -7,10 +8,6 @@
 
 #include <nitro/mi.h>
 #include <printf.h>
-
-extern "C" unk32 func_02032784(unk32 param1);
-extern "C" unk32 func_ov000_0205c7ac(unk32, unk32);
-extern "C" bool func_ov000_0205c74c(unk32, unk32, unk32, unk32);
 
 static const u8 data_ov024_020d756c[] = {0x01, 0x04, 0x10, 0x40};
 

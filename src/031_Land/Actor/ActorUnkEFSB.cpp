@@ -1,7 +1,6 @@
 #include "Actor/ActorUnkEFSB.hpp"
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
-
-extern "C" unk32 func_01ffb428(unk32, unk32);
 
 static ActorUnkZLSL_AnimationTag data_ov031_02114ed0[0x2] = {
     {.index = 0x0, .name = "statue_beam"},

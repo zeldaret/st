@@ -1,8 +1,7 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
-
-extern "C" unk32 func_ov004_020b697c(void *, unk32 param1);
 
 THUMB_BEGIN
 

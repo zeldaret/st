@@ -1,10 +1,9 @@
+#include "CommonFuncs.hpp"
 #include "FileSelect/FileSelect.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 
 #include <nitro/gx.h>
-
-extern "C" GameModeManagerBase_104 *func_ov003_020b6520(void *param1, void *param2);
 
 FileSelectManager_160::FileSelectManager_160(GameModeManagerBase_104 *param1, FileSelectMain *param2) {
     this->mUnk_10 = param2;

@@ -1,10 +1,6 @@
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e095c.hpp"
-
-extern "C" u32 func_0202447c();
-extern "C" u32 func_02024494();
-extern "C" void func_02006d8c(u16, unk32);
-extern "C" void func_02006aa8(unk32, unk32);
 
 UnkStruct_027e095c *UnkStruct_027e095c::Create() {
     return new(HeapIndex_1) UnkStruct_027e095c();

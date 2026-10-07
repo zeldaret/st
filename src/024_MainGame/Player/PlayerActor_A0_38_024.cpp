@@ -1,7 +1,5 @@
+#include "CommonFuncs.hpp"
 #include "Player/PlayerLink.hpp"
-
-extern "C" void func_ov000_0205be34(void *thisx, unk16 param1);
-extern "C" void func_ov000_0205be44(void *thisx, Vec2s *param1, Vec2s *param2, bool param3, bool param4);
 
 struct UnkStruct_auStack_14 {
     unk16 unk_00;

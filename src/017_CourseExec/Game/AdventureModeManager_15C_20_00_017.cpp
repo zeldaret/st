@@ -1,10 +1,9 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
 #include "math.hpp"
 #include "nitro/fx.h"
-
-extern "C" void func_ov000_02062e44(Vec2s *param1, void *param2);
 
 struct UnkStruct_ov017_020c3f14 {
     struct Vectors {

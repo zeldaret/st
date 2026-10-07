@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Save/SaveManager.hpp"
 
 #include "Unknown/UnkStruct_02049b80.hpp"
@@ -6,11 +7,6 @@
 #include <cstddef>
 #include <nitro/card.h>
 #include <wstring.h>
-
-extern "C" {
-unk32 func_020328c8(void *, void *, size_t);
-bool func_ov000_020a0a90(size_t param1, void *param2, size_t param3);
-};
 
 const size_t data_ov019_020d1bd4[] = {
     sizeof(SaveInfoData),
@@ -205,24 +201,24 @@ void SaveFile::func_ov019_020d0e18(unk32 param1) {
     size_t offset    = SAVE_FILE_OFFSET(param1);
     SaveSlot *puVar3 = &this->mSlots[param1];
 
-    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mInfoData), &puVar3->mInfoData, sizeof(puVar3->mInfoData))) {
+    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mInfoData), (unk32) &puVar3->mInfoData, sizeof(puVar3->mInfoData))) {
         return;
     }
 
-    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mTreasureData), &puVar3->mTreasureData,
+    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mTreasureData), (unk32) &puVar3->mTreasureData,
                              sizeof(puVar3->mTreasureData))) {
         return;
     }
 
-    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mUnk_1D00), &puVar3->mUnk_1D00, sizeof(puVar3->mUnk_1D00))) {
+    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mUnk_1D00), (unk32) &puVar3->mUnk_1D00, sizeof(puVar3->mUnk_1D00))) {
         return;
     }
 
-    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mUnk_2500), &puVar3->mUnk_2500, sizeof(puVar3->mUnk_2500))) {
+    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mUnk_2500), (unk32) &puVar3->mUnk_2500, sizeof(puVar3->mUnk_2500))) {
         return;
     }
 
-    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mUnk_2600), &puVar3->mUnk_2600, sizeof(puVar3->mUnk_2600))) {
+    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mUnk_2600), (unk32) &puVar3->mUnk_2600, sizeof(puVar3->mUnk_2600))) {
         return;
     }
 }
@@ -240,7 +236,7 @@ void SaveFile::func_ov019_020d13b8() {
     SaveSlot::func_ov019_020d1400(this->mSlots[this->mSaveSlotIndex].mUnk_2600);
 
     func_ov000_020a0a90(saveSlotIndex * SAVE_DATA_SIZE + offsetof(SaveSlot, mUnk_2600),
-                        this->mSlots[this->mSaveSlotIndex].mUnk_2600, sizeof(this->mSlots->mUnk_2600));
+                        (unk32) this->mSlots[this->mSaveSlotIndex].mUnk_2600, sizeof(this->mSlots->mUnk_2600));
 }
 
 void SaveSlot::func_ov019_020d1400(SaveFile_00000_2600_Data *param1) {
@@ -252,13 +248,13 @@ void SaveFile::func_ov019_020d1434() {
     size_t offset = SAVE_FILE_OFFSET(this->mSaveSlotIndex);
 
     SaveSlot::func_ov019_020d14fc(this->mSlots[this->mSaveSlotIndex].mInfoData);
-    if (!func_ov000_020a0a90(offset, &this->mSlots[this->mSaveSlotIndex].mInfoData,
+    if (!func_ov000_020a0a90(offset, (unk32) & this->mSlots[this->mSaveSlotIndex].mInfoData,
                              sizeof(this->mSlots[this->mSaveSlotIndex].mInfoData))) {
         return;
     }
 
     SaveSlot::func_ov019_020d14c0(this->mSlots[this->mSaveSlotIndex].mUnk_1D00);
-    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mUnk_1D00), &this->mSlots[this->mSaveSlotIndex].mUnk_1D00,
+    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mUnk_1D00), (unk32) & this->mSlots[this->mSaveSlotIndex].mUnk_1D00,
                              sizeof(this->mSlots[this->mSaveSlotIndex].mUnk_1D00))) {
         return;
     }
@@ -280,13 +276,13 @@ void SaveFile::func_ov019_020d1538() {
     size_t offset = this->mSaveSlotIndex * SAVE_DATA_SIZE;
 
     SaveSlot::func_ov019_020d1600(this->mSlots[this->mSaveSlotIndex].mTreasureData);
-    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mTreasureData), &this->mSlots[this->mSaveSlotIndex].mTreasureData,
-                             sizeof(SaveInfoData) * 2)) {
+    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mTreasureData),
+                             (unk32) & this->mSlots[this->mSaveSlotIndex].mTreasureData, sizeof(SaveInfoData) * 2)) {
         return;
     }
 
     SaveSlot::func_ov019_020d15cc(this->mSlots[this->mSaveSlotIndex].mUnk_2500);
-    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mUnk_2500), &this->mSlots[this->mSaveSlotIndex].mUnk_2500,
+    if (!func_ov000_020a0a90(offset + offsetof(SaveSlot, mUnk_2500), (unk32) & this->mSlots[this->mSaveSlotIndex].mUnk_2500,
                              sizeof(SaveFile_00000_1D00_Data) * 2)) {
         return;
     }
@@ -339,7 +335,7 @@ void SaveFile::func_ov019_020d16d0() {
     for (int i = 0; i < NUM_UNK_BLOCKS; i++) {
         if (pSub2->mInfoData[i >> 5].unk_C84.unk_00[0] & (1 << (i & 0x1F))) {
             func_ov000_020a0a90(SAVE_FILE_OFFSET(saveSlotIndex) + i * SIZE_UNK_BLOCK + sizeof(SaveSlot),
-                                &this->mUnk_04E0C[i * SIZE_UNK_BLOCK], SIZE_UNK_BLOCK);
+                                (unk32) & this->mUnk_04E0C[i * SIZE_UNK_BLOCK], SIZE_UNK_BLOCK);
         }
     }
 }

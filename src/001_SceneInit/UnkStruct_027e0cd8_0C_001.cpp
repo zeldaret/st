@@ -1,4 +1,5 @@
 #include "Actor/ActorManager.hpp"
+#include "CommonFuncs.hpp"
 #include "Cutscene/Cutscene.hpp"
 #include "Game/GameModeManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
@@ -15,8 +16,6 @@
 #include <printf.h>
 #include <vector>
 
-extern "C" BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, void *);
-extern "C" void func_ov089_02165c34(void *);
 extern AABB data_027e0ca8;
 extern AABB data_027e0cc0;
 extern AABB data_027e0c90;

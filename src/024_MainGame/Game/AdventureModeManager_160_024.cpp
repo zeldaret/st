@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
@@ -11,11 +12,7 @@
 #include <nitro/g2.h>
 #include <nitro/reg.h>
 
-extern "C" void func_02019b3c();
-extern "C" AdventureModeManager_160_18 *func_ov006_020b6ab0(void *, void *);
-
 //! TODO: this is fake according to GameModeTitleScreen::GameModeTitleScreen()
-extern "C" AdventureModeManager_160_14 *func_ov002_020b6520(void *, void *, int);
 
 void AdventureModeManager_160_4C::vfunc_0C() {
     data_0204a088->func_ov000_02061224();

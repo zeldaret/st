@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "MapObject/MapObjectUnkSPTB.hpp"
@@ -6,8 +7,6 @@
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f70.hpp"
-
-extern "C" unk32 func_ov014_020b6520(void *, int, int);
 
 THUMB_BEGIN
 

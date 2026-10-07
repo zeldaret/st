@@ -1,11 +1,9 @@
 #include "MapObject/MapObjectDoorKey.hpp"
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
-
-extern "C" f32 func_02039f04(unk32);
-extern "C" void func_01ffaf74(VecFx32 *, MtxFx43 *, VecFx32 *);
 
 const UnkStruct_ov031_021150b0 data_ov031_02115184(0x1E66);
 

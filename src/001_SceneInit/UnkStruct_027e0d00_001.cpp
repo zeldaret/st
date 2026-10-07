@@ -1,10 +1,8 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/CargoManager.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d00.hpp"
-
-extern "C" unk32 func_ov000_0205c984();
-extern "C" void func_ov026_020efc40(unk32 param1);
 
 UnkStruct_027e0d00::UnkStruct_027e0d00() {
     this->mUnk_0E0 = NULL;

@@ -1,10 +1,9 @@
+#include "CommonFuncs.hpp"
 #include "Game/Game.hpp"
 #include "Game/GameModeAdventure.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
-
-extern "C" void func_0201659c();
 
 GameModeAdventure::GameModeAdventure() {
     func_0201659c();

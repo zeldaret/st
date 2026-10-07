@@ -87,12 +87,6 @@ public:
     /* 150 */ ActorRef mUnk_150;
 };
 
-class UnkStruct_ov000_0208f820_40 {
-public:
-    /* 00 */ u16 mUnk_00;
-    /* 00 */ s16 mUnk_02;
-};
-
 class UnkStruct_PlayerGet_vfunc_0C_param1 {
 public:
     /* 00 */ unk32 mUnk_00;
@@ -144,7 +138,7 @@ public:
     /* 34 */ VecFx32 *mUnk_34;
     /* 38 */ VecFx32 *mUnk_38;
     /* 3C */ VecFx32 *mUnk_3C;
-    /* 40 */ UnkStruct_ov000_0208f820_40 *mUnk_40;
+    /* 40 */ UnkAngleStruct *mUnk_40;
     /* 44 */ UnkStruct_ov000_0208f820_44 *mUnk_44;
     /* 48 */
 

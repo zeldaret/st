@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Game/GameModeManager.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
@@ -6,8 +7,6 @@
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
 #include "types.h"
-
-extern "C" unk32 func_020196b0(unk32);
 
 struct UnkStruct_ov017_020c3f3c {
     /* 00 */ unk32 unk_00;

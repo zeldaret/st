@@ -1,9 +1,8 @@
 #include "Actor/ActorUnkSCCN.hpp"
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
-
-extern "C" void func_01ffd054(VecFx32 *, VecFx32 *);
 
 DECL_PROFILE(ActorProfileUnkSCCN);
 

@@ -1,9 +1,8 @@
 #include "Actor/ActorUnkNORE.hpp"
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 
 #include "Unknown/UnkStruct_027e0cd8.hpp"
-
-extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
 
 DECL_PROFILE(ActorProfileUnkNORE);
 

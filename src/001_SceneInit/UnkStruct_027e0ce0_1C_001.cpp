@@ -1,4 +1,5 @@
 #include "Actor/ActorManager.hpp"
+#include "CommonFuncs.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -8,9 +9,6 @@
 
 #include <nitro/mi.h>
 #include <string.h>
-
-extern "C" bool func_ov000_0208e874(const u8 *, int, int, int);
-extern "C" const char *func_ov000_0208e830(int);
 
 UnkStruct_027e0ce0_1C::UnkStruct_027e0ce0_1C() {
     this->mUnk_D4 = NULL;

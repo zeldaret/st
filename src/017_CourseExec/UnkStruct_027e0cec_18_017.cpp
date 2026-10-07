@@ -1,11 +1,6 @@
+#include "CommonFuncs.hpp"
 #include "LinkList.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
-
-extern "C" void FlushGfxQueue();
-extern "C" void func_ov000_02052238(void *, void *);
-extern "C" void func_ov000_02052bcc(void *);
-extern "C" unk32 func_ov000_020545d0(void *, void *);
-extern "C" void func_ov000_02054548(void *, unk32);
 
 void UnkStruct_027e0cec_18::func_ov017_020c297c(unk32 param1, unk32 param2) {
     UnkStruct_027e0cec_18_04 *pIt = GetBeginIterReverse(*this->mUnk_04);

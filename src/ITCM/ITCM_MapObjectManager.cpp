@@ -1,13 +1,5 @@
+#include "CommonFuncs.hpp"
 #include "MapObject/MapObjectManager.hpp"
-
-struct UnkStruct {
-    unk32 one;
-    unk32 two;
-    unk32 three;
-    unk32 four;
-};
-
-extern "C" unk32 func_01ffecdc(int, void *);
 
 MapObject *MapObjectManager::func_01fff498(Vec2bCpp param1) {
     if (this->mUnk_0C[param1.y][param1.x] < 0) {
@@ -51,20 +43,20 @@ MapObjectId MapObject::GetMapObjectId() {
 }
 
 unk32 MapObject::func_01fff590(unk32 param2) {
-    UnkStruct stack;
-    unk32 one;
-    unk32 two;
-    unk32 three;
-    unk32 four;
+    Cylinder stack;
+    unk32 x;
+    unk32 y;
+    unk32 z;
+    unk32 size;
 
-    four  = this->mpProfile->mUnk_08;
-    one   = (three = this->mPos.x);
-    two   = this->mPos.y;
-    three = this->mPos.z;
+    size = this->mpProfile->mUnk_08;
+    x    = (z = this->mPos.x);
+    y    = this->mPos.y;
+    z    = this->mPos.z;
 
-    stack.one   = one;
-    stack.two   = two;
-    stack.three = three;
-    stack.four  = four;
+    stack.pos.x = x;
+    stack.pos.y = y;
+    stack.pos.z = z;
+    stack.size  = size;
     return func_01ffecdc(param2, &stack);
 }

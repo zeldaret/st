@@ -1,4 +1,5 @@
 #include "Actor/ActorSpinut.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "Actor/Actor_Derived1.hpp"
@@ -10,23 +11,8 @@
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "nitro/os.h"
 
-extern "C" u16 data_ov000_020aecf4[];
-extern "C" unk32 data_ov000_020aecf8;
-
-extern "C" bool func_01ff916c(void *, int, int);
-extern "C" unk32 func_01ff9258(fx32, fx32);
-extern "C" unk32 func_01ff930c(s16 *, s16, unk32);
-extern "C" void func_01ff9318(void *, unk32, unk32);
-extern "C" void func_01ff941c(VecFx32 *, VecFx32 *);
-extern "C" fx32 func_01ffb428(unk32, unk32);
-extern "C" unk32 func_01ffb464(unk32 param1);
-extern "C" fx32 func_01ffb66c(unk32, unk32);
-extern "C" fx16 func_01ffbbe0(fx32, fx32);
-extern "C" bool func_02016ae0(VecFx32 *, VecFx32 *, UnkAngleStruct, unk32, unk32);
-extern "C" Actor *func_02016fbc(ActorId, VecFx32 *, unk32);
-
-extern "C" bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
-extern "C" void func_ov000_020986b4(s16 *param1, Actor_Derived2 *param2, unk32 param3);
+extern u16 data_ov000_020aecf4[];
+extern unk32 data_ov000_020aecf8;
 
 static const VecFx32Cpp data_ov032_02122160(FX_F32_TO_FX32(1.7f), FX_F32_TO_FX32(0.5f), FX_F32_TO_FX32(1.7f));
 static ActorUnkZLSL_AnimationTag data_ov032_02122184 = {.index = 0, .name = "walk", .unknown = 0x0};
@@ -626,7 +612,7 @@ void ActorSpinut::func_ov032_0211a9c8() {
     this->func_ov032_0211b1e0();
 }
 
-extern "C" u16 data_ov000_020aecf0;
+extern u16 data_ov000_020aecf0;
 
 void ActorSpinut::func_ov032_0211aa40() {
     this->Actor_Derived2::func_ov000_02099450(&this->mUnk_248, &this->mUnk_228.mUnk_10, 0x0, data_ov000_020aecf0);

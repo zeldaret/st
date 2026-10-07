@@ -2,6 +2,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorUnkRMSBase.hpp"
+#include "CommonFuncs.hpp"
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
 
@@ -9,11 +10,8 @@ extern char data_ov063_02162578[0x10]; // = "RMSV";
 extern char data_ov063_02162588[0x10]; // = "RMSV_wall";
 
 // Overlay 0
-extern "C" void func_ov000_02099e58(UnkStruct_ov063_021632e4 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);
 
 // Overlay 31
-extern "C" bool func_ov031_020f7538(Actor *param1, unk32 param2);
-extern "C" void func_ov031_020f7574(Actor *param1, unk32 param2);
 
 ActorUnkZLSL_AnimationTag data_ov063_021632ac = {0, "RMSV"};
 ActorUnkZLSL_AnimationTag data_ov063_021632c4 = {1, "RMSV"};

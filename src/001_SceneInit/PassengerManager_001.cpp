@@ -1,8 +1,7 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/PassengerManager.hpp"
 #include "Unknown/UnkStruct_02049bac.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-
-extern "C" bool func_ov000_0205c9d0(unk32 stationSceneIdx);
 
 bool PassengerManager::func_ov001_020bf870() {
     s32 *pSceneIndex = &data_027e09a4->mUnk_00.sceneIndex;

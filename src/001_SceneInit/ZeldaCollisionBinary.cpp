@@ -1,9 +1,8 @@
+#include "CommonFuncs.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "Unknown/UnkStruct_027e09e8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "files.h"
-
-extern "C" void func_01ffd1b4(VecFx32 *, VecFx32 *);
 
 BOOL ZCB_ParseFile(ZCBFileInfos *pFileInfos, UnkStruct_027e09e8 *pDst, UnkStruct_027e0cd8_0C_Base *param3) {
     int i;

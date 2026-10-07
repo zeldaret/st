@@ -1,4 +1,5 @@
 #include "Actor/ActorUnkTGTZ.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorUnkNTTZ.hpp"
@@ -7,11 +8,6 @@
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-
-extern "C" bool func_01ff916c(void *, int, int);
-extern "C" void func_01ff9638(VecFx32 *, s16);
-extern "C" void func_01ffa7a0(VecFx32 *, MtxFx33 *, VecFx32 *);
-extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
 
 #if IS_JP
 static const VecFx32Cpp data_ov031_02116344(FX_F32_TO_FX32(1.5f), FX_F32_TO_FX32(2.0f), FX_F32_TO_FX32(0.0f));

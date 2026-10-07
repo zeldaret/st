@@ -1,12 +1,10 @@
 #include "Unknown/UnkStruct_027e0d00.hpp"
+#include "CommonFuncs.hpp"
 #include "MainGame/CargoManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "versions.h"
-
-extern "C" bool func_ov026_020f4be0(int, int);
-extern "C" unk32 func_02012fc4(unk32);
 
 const UnkStruct_ov024_020d7624 data_ov024_020d7624 = {0x13, {0}};
 static const unk32 data_ov024_020d764c[]           = {0x0320, 0x0300, 0x0500, 0x0200};
@@ -96,7 +94,7 @@ void UnkStruct_027e0d00::func_ov024_020d4ab4() {
 }
 
 #if IS_JP
-extern "C" void func_ov000_02058c74(void *, int, int, int, int);
+
 #endif
 
 void UnkStruct_027e0d00::func_ov024_020d4af4() {

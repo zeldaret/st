@@ -1,4 +1,5 @@
 #include "MapObject/MapObjectUnkSWHT.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorManager.hpp"
@@ -10,8 +11,6 @@
 #include "profile.hpp"
 
 extern const char data_ov031_02110ce0;
-
-extern "C" void func_ov031_020e0f30(ActorRef);
 
 DECL_PROFILE(MapObjectProfileUnkSWHT);
 

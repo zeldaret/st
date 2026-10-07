@@ -1,15 +1,6 @@
 #include "Actor/Actor_Derived1.hpp"
+#include "CommonFuncs.hpp"
 #include "Unknown/UnkStruct_027e0960.hpp"
-
-struct UnkFuncStruct1 {
-    s16 unk_00;
-};
-
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
-extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
-extern "C" unk32 func_01ff930c(s16 *, unk16, unk32);
-extern "C" unk32 func_01ff9258(int, int);
-extern "C" fx32 func_02017f54(s16 *pAngle, UnkFuncStruct1);
 
 //! TODO: probably not there?
 bool data_ov024_020d86b4 = false;
@@ -171,7 +162,7 @@ u16 *Actor_Derived1_EC::func_ov024_020d69d8(VecFx32 *pPos, s16 *pAngle, VecFx32 
     VecFx32 sp1C;
     VecFx32 sp10;
     VecFx32 sp4;
-    UnkFuncStruct1 sp0;
+    UnkAngleStruct sp0;
     s16 temp_r1;
     s32 var_r0;
     s32 temp_r4;
@@ -186,8 +177,8 @@ u16 *Actor_Derived1_EC::func_ov024_020d69d8(VecFx32 *pPos, s16 *pAngle, VecFx32 
 
     func_01ffb714(&sp1C, pPos, &sp10);
 
-    temp_r1    = func_01ffbbe0(sp10.x, sp10.z);
-    sp0.unk_00 = temp_r1;
+    temp_r1     = func_01ffbbe0(sp10.x, sp10.z);
+    sp0.angle_s = temp_r1;
     func_01ff930c((s16 *) pAngle, temp_r1, param5);
 
     temp_r4 = func_01ff9258(sp1C.x - pPos->x, sp1C.z - pPos->z);
@@ -221,7 +212,7 @@ u16 *Actor_Derived1_EC::func_ov024_020d6b7c(VecFx32 *pPos, s16 *pAngle, VecFx32 
     VecFx32 sp1C;
     VecFx32 sp10;
     VecFx32 sp4;
-    UnkFuncStruct1 sp0;
+    UnkAngleStruct sp0;
     s16 temp_r1;
     s32 var_r0;
     s32 temp_r4;
@@ -237,8 +228,8 @@ u16 *Actor_Derived1_EC::func_ov024_020d6b7c(VecFx32 *pPos, s16 *pAngle, VecFx32 
     func_01ffb714(&sp28, pPos, &sp1C);
     func_01ffb714(&sp28, &this->mUnk_0C, &sp10);
 
-    temp_r1    = func_01ffbbe0(sp1C.x, sp1C.z);
-    sp0.unk_00 = temp_r1;
+    temp_r1     = func_01ffbbe0(sp1C.x, sp1C.z);
+    sp0.angle_s = temp_r1;
     func_01ff930c((s16 *) pAngle, temp_r1, param5);
 
     temp_r4 = func_01ff9258(sp28.x - pPos->x, sp28.z - pPos->z);

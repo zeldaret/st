@@ -1,4 +1,5 @@
 #include "Actor/ActorKeese.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "Map/MapObjectId.hpp"
@@ -10,20 +11,12 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
-extern "C" u16 data_ov000_020aecf0[];
-extern "C" u16 data_ov000_020aecf4[];
-extern "C" unk32 data_ov000_020aecf8;
-extern "C" unk32 data_ov000_020aecfc[];
+extern u16 data_ov000_020aecf0[];
+extern u16 data_ov000_020aecf4[];
+extern unk32 data_ov000_020aecf8;
+extern unk32 data_ov000_020aecfc[];
 
-extern "C" void *data_ov032_02121ed4;
-
-extern "C" bool func_01ff916c(fx32 *, unk32, unk32);
-extern "C" unk32 func_01ff9258(fx32, fx32);
-extern "C" fx16 func_01ffbbe0(fx32, fx32);
-extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0C_Base *, VecFx32 *);
-extern "C" bool func_02016b8c(VecFx32 *, VecFx32 *, unk32, UnkAngleStruct, unk32, unk32);
-
-extern "C" s8 func_ov000_02059da4(UnkStruct_027e0960_TableEntry *, VecFx32 *param1);
+extern void *data_ov032_02121ed4;
 
 static const VecFx32Cpp data_ov032_021224d8(FX_F32_TO_FX32(1.7f), FX_F32_TO_FX32(0.5f), FX_F32_TO_FX32(1.7f));
 static ActorUnkZLSL_AnimationTag data_ov032_021224e4             = {.index = 0, .name = "fly"};

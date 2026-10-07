@@ -1,6 +1,7 @@
 #include "MapObject/MapObject.hpp"
 #include "Actor/Actor.hpp"
 #include "Actor/ActorManager.hpp"
+#include "CommonFuncs.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
@@ -10,12 +11,6 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
 #include <nitro/mi.h>
-
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
-extern "C" void func_01ffb9cc(VecFx32 *, VecFx32 *);
-extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
-extern "C" unk32 func_01ffecdc(unk32 param1, Cylinder *param2);
-extern "C" void func_01fff6d0(void *, VecFx32 *param1, s32 *param2, s32 *param3);
 
 MapObject::MapObject() {
     this->mUnk_10   = NULL;

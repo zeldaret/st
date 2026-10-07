@@ -1,9 +1,7 @@
+#include "CommonFuncs.hpp"
 #include "Player/TouchControl.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "math.hpp"
-
-extern "C" void func_ov000_02089bbc(void *, unk32);
-extern "C" void func_ov000_0208abc4(ActorRef *, void *, Vec2s *);
 
 extern unk16 data_ov000_020ab3c8;
 

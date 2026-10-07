@@ -1,9 +1,8 @@
+#include "CommonFuncs.hpp"
 #include "Game/Game.hpp"
 #include "Save/SaveManager.hpp"
 #include "Unknown/UnkStruct_02049b80.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
-
-extern "C" unk32 func_020328c8(void *, void *, size_t);
 
 void SaveManager::func_ov001_020ba670() {
     this->mUnk_000 = new(HeapIndex_1) SaveManager_00(0);

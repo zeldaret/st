@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09ac.hpp"
 
@@ -7,12 +8,6 @@
 #include <nitro/math.h>
 #include <nitro/reg.h>
 #include <nitro/types.h>
-
-extern "C" void FlushGfxQueue();
-extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
-extern "C" unk32 func_01ff9258(fx32, fx32);
-extern "C" void func_01ffb714(const VecFx32 *, const VecFx32 *, VecFx32 *);
-extern "C" unk32 func_01ffb428(unk32, unk32);
 
 void UnkStackStruct_ov017_020c1104::func_ov017_020c1104(const VecFx32 *param2, s32 param3, u16 param4) {
     s16 var_r1;

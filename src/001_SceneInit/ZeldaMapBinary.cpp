@@ -1,4 +1,5 @@
 #include "Actor/ActorManager.hpp"
+#include "CommonFuncs.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Physics/AABB.hpp"
 #include "System/OverlayManager.hpp"
@@ -12,15 +13,6 @@
 
 extern AABB data_027e0c90;
 extern int data_ov089_02171540;
-
-extern "C" fx32 func_ov000_02080068(fx32 x);
-extern "C" fx32 func_ov000_02080080(fx32 x);
-extern "C" void func_ov089_02165b18(void *);
-extern "C" fx32 func_ov000_020775d8(fx32);
-
-extern "C" BOOL ZMB_020ba350(ZMBFileInfos *pFileInfos, u8 param2, UnkStruct_027e0cd8_0C_Base *pDst);
-extern "C" void ZMB_020ba388(CustomVector<EntranceInfo> *pVector, size_t param2);
-extern "C" void ZMB_020ba408(CustomVector<UnkStruct_027e0cd8_0C_Base_148_00_Base *> *pVector, size_t param2);
 
 BOOL ZMB_ParseFile(ZMBFileInfos *pFileInfos, UnkStruct_027e0cd8_0C_Base *pDst, bool param3) {
     bool isVersion2;

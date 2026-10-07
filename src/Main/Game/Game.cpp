@@ -1,4 +1,5 @@
 #include "Game/Game.hpp"
+#include "CommonFuncs.hpp"
 #include "System/OverlayManager.hpp"
 #include "System/Random.hpp"
 #include "Unknown/UnkStruct_02049b74.hpp"
@@ -13,12 +14,6 @@
 #include <nitro/os.h>
 #include <nitro/reg.h>
 
-extern "C" void func_020196fc();
-extern "C" void FlushGfxQueue();
-extern "C" void func_020132c8();
-extern "C" void func_020132dc();
-extern "C" void func_02013354();
-extern "C" void func_0201328c();
 extern MtxFx33 gGeomMatrix;
 
 void Game::func_02013370(unk32 param1) {

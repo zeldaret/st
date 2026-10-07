@@ -1,4 +1,5 @@
 #include "Actor/ActorUnkMLCK.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "MainGame/AdventureMode.hpp"
@@ -12,7 +13,7 @@
 #include "Unknown/UnkStruct_ov000_020b52e8.hpp"
 #include "nitro/math.h"
 
-extern "C" unk32 data_ov031_02110bec[];
+extern unk32 data_ov031_02110bec[];
 
 struct UnkStruct_ov031_02114d28 {
     /* 00 */ u32 mUnk_00;

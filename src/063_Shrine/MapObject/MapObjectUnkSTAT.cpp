@@ -1,4 +1,5 @@
 #include "MapObject/MapObjectUnkSTAT.hpp"
+#include "CommonFuncs.hpp"
 #include "MapObject/MapObjectProfile.hpp"
 #include "System/Random.hpp"
 #include "Unknown/Common.hpp"
@@ -11,13 +12,6 @@
 #include "nitro/fx.h"
 #include "nitro/math.h"
 #include "profile.hpp"
-
-extern "C" unk32 func_02039d60(f32, unk32);
-extern "C" f32 func_0203ab58(unk32, f32);
-extern "C" f32 func_0203ad88(f32, unk32);
-extern "C" f32 func_02039f04(unk32);
-extern "C" fx32 func_01ffb428(unk32, unk32);
-extern "C" unk32 func_02016b8c(VecFx32 *, VecFx32 *, unk32, UnkAngleStruct, u16, unk32);
 
 DECL_PROFILE(MapObjectProfileUnkSTAT);
 unk32 data_ov063_02164508[3]; // Is probably part of the profile?

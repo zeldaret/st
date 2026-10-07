@@ -1,17 +1,6 @@
 #include "System/SysNew.hpp"
+#include "CommonFuncs.hpp"
 
-extern "C" {
-void *func_02001654(void *);
-void *func_020145b0(UnkId *, s32);
-void *func_020010c0(void *, size_t, uint);
-void *func_02001308(void *, size_t, uint);
-UnkId *func_02001488(void);
-UnkId *func_02014704();
-UnkId *func_020011c8(UnkId *, void *);
-UnkId *func_02014630(UnkId *, void *);
-UnkId *func_02001684(UnkId *, void *);
-unk32 func_020011f4(void *);
-}
 extern char *data_0204372c[];
 
 void *SysNew(UnkStruct_02011e10_Sub1 *param1, uint length, uint idLength) {

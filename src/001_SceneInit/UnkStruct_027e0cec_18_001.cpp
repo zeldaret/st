@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -6,8 +7,6 @@
 #include <nitro/mi.h>
 #include <nitro/os.h>
 
-extern "C" void *func_02001308(void *, size_t, u32);
-extern "C" UnkStruct_027e0cec_18_04 *func_ov000_02054690(void *, unk32, unk32, unk32, unk32, unk32);
 extern unk32 data_027e0154;
 
 void *UnkStruct_027e0cec_18::func_ov001_020bf0a0(size_t length) {

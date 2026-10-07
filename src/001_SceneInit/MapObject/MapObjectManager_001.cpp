@@ -1,5 +1,6 @@
 #include "Actor/ActorUnkPMST.hpp"
 #include "Actor/ActorUnkPMTT.hpp"
+#include "CommonFuncs.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "System/OverlayManager.hpp"
 #include "System/SysNew.hpp"
@@ -8,8 +9,6 @@
 #include "versions.h"
 
 #include <nitro/mi.h>
-
-extern "C" bool func_ov026_0210d664(SceneIndex sceneIndex, MapObjectId mapObjId);
 
 MapObjectManager *MapObjectManager::Create() {
     return new(HeapIndex_1) MapObjectManager();

@@ -1,9 +1,7 @@
+#include "CommonFuncs.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
-
-extern "C" u16 *func_ov021_020ea868(int);
-extern "C" void func_ov000_0205c584(void *, int, int);
 
 static const char data_ov001_020c264c[][16] = {
     "swA", "sheath", "swB", "sheathB", "belt", "cap", "body_all",
@@ -71,7 +69,7 @@ PlayerActorBase::PlayerActorBase(PlayerCharacter character, unk32 param2, ItemMa
     if (this->mUnk_4C == -1) {
         this->func_ov000_0208c914();
     } else {
-        u16 temp = func_ov021_020ea868(this->mUnk_4C)[8];
+        u16 temp = func_ov021_020ea868(this->mUnk_4C)->unk_10;
         this->mUnk_84.func_ov000_0205fc20(0x78, temp, NULL, NULL);
     }
 }

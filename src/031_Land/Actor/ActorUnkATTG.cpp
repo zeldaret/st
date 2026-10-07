@@ -1,10 +1,9 @@
 #include "Actor/ActorUnkATTG.hpp"
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-
-extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
 
 DECL_PROFILE(ActorProfileUnkATTG);
 

@@ -1,8 +1,7 @@
+#include "CommonFuncs.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 
 #include <nitro/mi.h>
-
-extern "C" fx32 func_01ffb66c(unk32, unk32);
 
 bool UnkStruct_027e0cf8_08_00::func_ov024_020d3900(Vec2s *param1, fx32 *param2, fx32 *param3, unk32 param4, unk32 param5) {
     return UnkStruct_027e0cf8_08_00::func_ov024_020d3970(param1, param2, param3, param4, param5);

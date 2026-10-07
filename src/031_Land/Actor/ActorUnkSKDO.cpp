@@ -1,11 +1,10 @@
 #include "Actor/ActorUnkSKDO.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
-
-extern "C" fx32 func_01ffb9cc(VecFx32 *, VecFx32 *);
 
 DECL_PROFILE(ActorProfileUnkSKDO);
 

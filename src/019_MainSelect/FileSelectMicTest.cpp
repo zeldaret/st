@@ -1,17 +1,11 @@
 #include "FileSelect/FileSelectMicTest.hpp"
+#include "CommonFuncs.hpp"
 #include "FileSelect/FileSelect.hpp"
 #include "FileSelect/FileSelectOptionsManager.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
-
-extern "C" {
-unk32 func_01ffb428(unk32, unk32);
-
-void func_ov000_02062e44(Vec2s *param1, void *param2);
-unk8 func_ov000_02070164(void *); //! TODO: turn to a class
-};
 
 class UnkStruct_ov019_020d2248 {
 public:

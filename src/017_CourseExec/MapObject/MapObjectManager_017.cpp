@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Physics/AABB.hpp"
@@ -8,11 +9,6 @@
 #include "flags.h"
 #include "math.hpp"
 #include "nitro/fx.h"
-
-extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
-
-extern "C" unk32 func_ov000_02077480();
-extern "C" unk32 func_ov000_02080098(void *, void *, int, int, int, int);
 
 extern AABB data_027e0c90;
 

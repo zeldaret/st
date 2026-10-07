@@ -1,15 +1,9 @@
 #include "MapObject/MapObjectDoorClick.hpp"
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
-
-extern "C" f32 func_02039f04(unk32);
-extern "C" void func_01ffaf74(VecFx32 *, MtxFx43 *, VecFx32 *);
-extern "C" void func_01ffcfcc(VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" unk32 func_01ffb428(unk32, unk32);
-extern "C" unk32 func_01ffb464(unk32 param1);
-extern "C" void func_01ff9218(void *, unk32, unk32);
 
 static const u32 data_ov031_02110c1c[] = {
     'DRCG',

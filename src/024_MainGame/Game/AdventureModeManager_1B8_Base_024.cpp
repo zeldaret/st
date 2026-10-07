@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "Save/SaveManager.hpp"
 #include "System/SysNew.hpp"
@@ -9,16 +10,6 @@
 
 #include <nitro/gx.h>
 #include <nitro/os.h>
-
-extern "C" {
-void func_ov000_0205a950(u8 bgType, bool isTopScreen, bool);
-void func_ov000_0205a944(u8 bgType, bool isTopScreen, bool);
-void func_01ffb644(fx32 x, fx32 y);
-unk32 func_01ffb558();
-
-void func_02029058(void *, void *);
-u32 func_0202955c(void *, int, void *, int, void *);
-}
 
 static const bool data_ov024_020d7544[] = {true, false, true};
 static const u8 data_ov024_020d7547[]   = {0x03, 0x01, 0x02, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00};

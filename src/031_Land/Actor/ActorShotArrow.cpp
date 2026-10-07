@@ -1,4 +1,5 @@
 #include "Actor/ActorShotArrow.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorUnkGYAM.hpp"
@@ -72,40 +73,18 @@ struct UnkStruct_020f1b04 {
     /* 24 */
 };
 
-extern "C" u8 data_ov031_02110b01[];       //       = {0x08, 0x02, 0x02, 0x0C, 0x04, 0x00};
-extern "C" char data_ov031_02110b3c[0x10]; // = "arrow";
-extern "C" char data_ov031_02110b4c[0x10]; // = "arrow_s";
+extern u8 data_ov031_02110b01[];       //       = {0x08, 0x02, 0x02, 0x0C, 0x04, 0x00};
+extern char data_ov031_02110b3c[0x10]; // = "arrow";
+extern char data_ov031_02110b4c[0x10]; // = "arrow_s";
 
-extern "C" char data_ov031_02110b5c[0x14]; // = "ef_arrowB";
-extern "C" char data_ov031_02110b08[0x34]; // = "ef_arrowB";
+extern char data_ov031_02110b5c[0x14]; // = "ef_arrowB";
+extern char data_ov031_02110b08[0x34]; // = "ef_arrowB";
 
 extern MtxFx43 data_027e0964;
 extern ActorUnkIWTS *data_027e0d80;
 extern bool data_ov060_02163fe0;
 extern UnkStruct_ov060_02163ff4 data_ov060_02163ff4;
 extern ActorUnkMRD2 *data_ov075_02163518;
-
-extern "C" unk32 func_01ff9258(fx32, fx32);
-extern "C" void func_01ff93c0(VecFx32 *, unk32);
-extern "C" void func_01ff94cc(VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" void func_01ff95a0(VecFx32 *, unk16);
-extern "C" void func_01ff9638(VecFx32 *vec, s16 angle);
-extern "C" void func_01ffa7a0(VecFx32 *, MtxFx33 *, VecFx32 *);
-extern "C" void func_01ffa9e8(MtxFx43 *, MtxFx43 *);
-extern "C" void func_01ffad5c(MtxFx43 *, MtxFx43 *, MtxFx43 *);
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" fx16 func_01ffbbe0(fx32, fx32);
-extern "C" bool func_01ffccf4(Cylinder *, VecFx32 *, VecFx32 *, unk32 *);
-extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, unk32);
-extern "C" void func_0200eab0(G3d_Model *, unk16, u8);
-extern "C" UnkResourceStruct2 *func_0200f05c(G3d_NameList *, char *);
-extern "C" bool func_ov000_0205aeac();
-extern "C" void func_ov000_0207b6c0();
-extern "C" unk32 func_ov000_0207df88(unk32 *, Cylinder *, unk32);
-extern "C" void func_ov075_02160864(ActorShotArrow *, unk32);
-extern "C" void GX_func_02024a84(MtxFx33 *param1);
-extern "C" void CopySingle288(MtxFx43 *, MtxFx33 *);
-extern "C" void func_01ffa60c(const MtxFx33 *, MtxFx33 *, MtxFx33 *);
 
 MapObjectProfile_Derived2_20_Base *func_ov031_020f1404() {
     return data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Link][1];

@@ -1,4 +1,5 @@
 #include "Actor/ActorRollingStone.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "Physics/Cylinder.hpp"
@@ -10,18 +11,13 @@
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "Unknown/UnkStruct_027e0d8c.hpp"
 
-extern "C" MtxFx33 data_027e0130;
-extern "C" unk32 data_ov000_020aecf8;
+extern MtxFx33 data_027e0130;
+extern unk32 data_ov000_020aecf8;
 
-extern "C" VecFx32 data_ov031_02110b98;
-extern "C" VecFx32 data_ov031_02110ba4;
-extern "C" VecFx32 data_ov031_02110bb0;
-extern "C" VecFx32 data_ov031_02110bbc;
-
-extern "C" void func_01ff916c(unk32 *, unk32, unk32);
-extern "C" void func_01ffa60c(const MtxFx33 *, MtxFx33 *, MtxFx33 *);
-extern "C" unk32 func_01ffb9cc(VecFx32 *, VecFx32 *);
-extern "C" unk8 func_02017e8c(unk16 *);
+extern VecFx32 data_ov031_02110b98;
+extern VecFx32 data_ov031_02110ba4;
+extern VecFx32 data_ov031_02110bb0;
+extern VecFx32 data_ov031_02110bbc;
 
 static PTMF<ActorRollingStone> data_ov031_02114aec[0xB] = {
     &ActorRollingStone::func_ov031_020f89f4, // ActorRollingStoneState_0

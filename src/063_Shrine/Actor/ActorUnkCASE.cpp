@@ -6,6 +6,7 @@
 #include "Actor/ActorShotArrow.hpp"
 #include "Actor/ActorUnkCANS.hpp"
 #include "Actor/ActorUnkITWP.hpp"
+#include "CommonFuncs.hpp"
 #include "Physics/Cylinder.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -22,19 +23,12 @@ extern const Actor_Derived2_A8_PTR data_ov063_02162558;
 extern const void *data_ov063_02162568;
 
 extern MtxFx43 data_027e0964;
-extern "C" void func_01ffa60c(const MtxFx33 *, MtxFx33 *, MtxFx33 *);
-extern "C" void func_01ffa7a0(VecFx32 *, MtxFx33 *, VecFx32 *);
-extern "C" void func_01ffad5c(MtxFx43 *, MtxFx43 *, MtxFx43 *);
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
 
 // Overlay 0
 extern unk32 data_ov000_020aecf8[0x2]; //! INFO: Unsure about the size and type
 extern u16 data_ov000_020aed00;
-extern "C" void func_ov000_0207b70c(ActorUnkCASE_174 *param1, Actor *param2);
 
 // Other
-extern "C" void G3d_GetCurrentMtx(MtxFx43 *mtx1, MtxFx33 *mtx2);
 
 struct UnkStruct_data_ov063_021630c8 {
     /* 00 */ unk32 mUnk_00;

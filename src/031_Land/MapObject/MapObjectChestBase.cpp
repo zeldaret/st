@@ -1,4 +1,5 @@
 #include "MapObject/MapObjectChestBase.hpp"
+#include "CommonFuncs.hpp"
 
 #include "MapObject/MapObjectManager.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -7,11 +8,6 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
 #pragma readonly_strings on
-
-extern "C" unk32 func_0200f218(unk32, const char *);
-extern "C" void func_0200b58c(G3d_RenderObject *);
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
-extern "C" void func_01ffcfcc(VecFx32 *, VecFx32 *, VecFx32 *);
 
 struct UnkStruct_ov031_02117c84 {
     u16 mUnk_00;

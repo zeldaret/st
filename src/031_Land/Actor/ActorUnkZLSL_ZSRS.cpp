@@ -1,4 +1,5 @@
 #include "Actor/ActorUnkZLSL_ZSRS.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorUnkFTRN.hpp"
@@ -18,27 +19,8 @@
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
 
-extern "C" UnkActorSystem1_Derived1 data_ov060_02163ff4;
-extern "C" const char *data_ov031_02110acc; // 3\x13\x00\x00
-
-extern "C" void func_01ff916c(void *, int, int);
-extern "C" unk32 func_01ff9258(fx32, fx32);
-extern "C" unk32 func_01ff930c(s16 *, s16, unk32);
-extern "C" void func_01ff9318(void *, unk32, unk32);
-extern "C" void func_01ff9364(s16 *, UnkAngleStruct);
-extern "C" void func_01ff93c0(VecFx32 *, unk32);
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, VecFx32 *);
-extern "C" fx16 func_01ffbbe0(fx32, fx32);
-extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, UnkStruct_ov031_Items_00 *);
-extern "C" void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
-extern "C" void func_02015300(unk32 *);
-extern "C" unk16 func_02016958(VecFx32 *, VecFx32 *);
-extern "C" void func_020169d4(VecFx32 *, VecFx32 *, unk16 *, const char *);
-extern "C" bool func_02016c68(VecFx32 *, VecFx32 *, ActorRef);
-extern "C" Actor *func_02016fbc(ActorId, VecFx32 *, unk32);
-
-extern "C" void func_ov000_020578a4(UnkSystem5 *);
-extern "C" void func_ov000_02057c98(ModelRender *, UnkSystem5 *);
+extern UnkActorSystem1_Derived1 data_ov060_02163ff4;
+extern const char *data_ov031_02110acc; // 3\x13\x00\x00
 
 static char data_ov031_021135f0[0x4]                 = "\x00 ";
 static char data_ov031_021135f4[0x4]                 = "3\x03";
@@ -500,7 +482,7 @@ void ActorUnkZLSL::func_ov031_020eb218() {
 
 // non-matching
 bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
-    func_01ff916c(&this->mUnk_27CC.mUnk_1C, param1->y, 0xCD);
+    func_01ff916c(&this->mUnk_2878.y, param1->y, 0xCD);
     unk16 res = func_02016958(&this->mPos, param1);
     func_01ff930c(&this->mAngle.angle_s, res, 0x71C);
 
@@ -508,7 +490,7 @@ bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
     vec.y += 0x800;
     if (!this->mUnk_2874) {
         if (this->mUnk_094.mUnk_0C->vfunc_10()->mUnk_0C < 0xA000) {
-            func_01ff916c(&this->mUnk_27CC.mUnk_1C, 0xCD - 0x400, 0xCD + 0xCD);
+            func_01ff916c(&this->mUnk_2878.y, 0xCD - 0x400, 0xCD + 0xCD);
         }
     }
 }
@@ -1087,7 +1069,7 @@ bool ActorUnkZLSL::func_ov031_020ec8c4() {
     }
 
     if (this->mUnk_0B0 & 0x2) {
-        func_01ff9364(&this->mAngle.angle_s, angleStruct);
+        func_01ff9364(&this->mAngle.angle_u, angleStruct);
 
         s16 angle = angleStruct.angle_s - this->mAngle.angle_s;
         if (ABS(angle) < 0x2000) {
@@ -1166,9 +1148,6 @@ void ActorUnkZLSL::func_ov031_020ecbe0() {
     this->mPrevPos.y = this->mPos.y;
     this->mPrevPos.z = this->mPos.z;
 }
-
-extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
-extern "C" unk32 func_01ffb9cc(VecFx32 *, VecFx32 *);
 
 class ActorUnkZLSL_020ecc68 : public Actor {
 public:

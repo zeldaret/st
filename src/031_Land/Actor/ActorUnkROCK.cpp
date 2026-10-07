@@ -1,4 +1,5 @@
 #include "Actor/ActorUnkROCK.hpp"
+#include "CommonFuncs.hpp"
 
 #include "MapObject/MapObject_10_Pot.hpp"
 #include "System/SysNew.hpp"
@@ -6,7 +7,7 @@
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
 
-extern "C" MtxFx33 data_027e0130;
+extern MtxFx33 data_027e0130;
 
 static MapObject_10_Pot data_ov031_021166b8;
 

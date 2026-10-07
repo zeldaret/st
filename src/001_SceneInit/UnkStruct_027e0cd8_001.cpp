@@ -1,4 +1,5 @@
 #include "Actor/ActorManager.hpp"
+#include "CommonFuncs.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Save/SaveManager.hpp"
 #include "System/OverlayManager.hpp"
@@ -24,11 +25,6 @@
 #include <dsprot.h>
 #include <printf.h>
 
-extern "C" void func_ov026_020e9208();
-extern "C" void func_ov000_02081520(void *, void *, u8);
-extern "C" void func_ov000_020814ec(void *, void *);
-extern "C" void func_ov084_0216122c();
-extern "C" void func_ov084_021612ac();
 extern void *data_ov084_02164690;
 
 struct UnkStruct7 {

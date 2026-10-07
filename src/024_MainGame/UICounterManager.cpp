@@ -1,4 +1,5 @@
 #include "Unknown/UICounterManager.hpp"
+#include "CommonFuncs.hpp"
 #include "MainGame/CargoManager.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
@@ -10,9 +11,6 @@
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
 #include "versions.h"
-
-extern "C" s16 func_020196b0(unk32 param1);
-extern "C" unk32 func_02015788(u16 param1);
 
 UICounterManager *gpUICounterManager = NULL;
 

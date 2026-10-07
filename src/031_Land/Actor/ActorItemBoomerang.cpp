@@ -1,4 +1,5 @@
 #include "Actor/ActorItemBoomerang.hpp"
+#include "CommonFuncs.hpp"
 
 #include "MapObject/MapObjectManager.hpp"
 #include "MapObject/MapObjectUnkICEB.hpp"
@@ -9,15 +10,6 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d2c.hpp"
-
-extern "C" void func_01ff916c(void *, int, int);
-extern "C" void func_01ff93c0(VecFx32 *, unk32);
-extern "C" void func_01ff97c8(VecFx32 *, int);
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
-extern "C" unk32 func_01ffb9cc(VecFx32 *, VecFx32 *);
-extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, UnkStruct_ov031_Items_00 *);
-extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
-extern "C" bool func_ov000_0205aeac();
 
 DECL_PROFILE(ActorProfileItemBoomerang);
 

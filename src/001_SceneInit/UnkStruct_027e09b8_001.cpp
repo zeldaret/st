@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -11,7 +12,6 @@ struct UnkStruct_ov000_02073080 {
     /* 0C */ PAD(0x0C, 0x1C);
     /* 1C */
 };
-extern "C" void func_ov000_02073080(void *);
 
 UnkStruct_027e09b8 *UnkStruct_027e09b8::Create() {
     return new(HeapIndex_1) UnkStruct_027e09b8();

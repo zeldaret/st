@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -5,7 +6,6 @@
 
 #include <nitro/mi.h>
 
-extern "C" void *func_02022884(unk32);
 extern u8 gBufferTrainMsg[0x8C00];
 
 static const char *data_ov001_020c2cf4[] = {

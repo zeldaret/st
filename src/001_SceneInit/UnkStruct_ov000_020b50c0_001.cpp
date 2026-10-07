@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -7,10 +8,6 @@
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b52e8.hpp"
 #include "versions.h"
-
-extern "C" BOOL NNS_SndArcLoadBank(unk32 param1, unk32 param2);
-extern "C" void func_0200240c(unk32);
-extern "C" unk32 func_ov026_0212e54c();
 
 void UnkStruct_ov000_020b50c0::func_ov001_020bd854(void) {
     data_027e099c->func_ov001_020bde6c();

@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "Unknown/UnkStruct_027e09ac.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
@@ -6,8 +7,6 @@
 #include "math.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
-
-extern "C" void func_01ffb714(VecFx32 *, VecFx32 *, void *);
 
 void PlayerActorBase_70::func_ov017_020bbaa8(VecFx32 *param1, UnkAngleStruct param2) {
     if (this->mCharacter == PlayerCharacter_Link) {
@@ -54,12 +53,6 @@ void PlayerActorBase_70::func_ov017_020bbaa8(VecFx32 *param1, UnkAngleStruct par
 
 extern unk16 data_ov000_020ab318;
 extern unk16 data_ov000_020ab31c;
-
-struct UnkStruct_ov021_02106c5c {
-    /* 00 */ PAD(0x00, 0x13);
-    /* 13 */ u8 unk_13;
-};
-extern "C" const UnkStruct_ov021_02106c5c *func_ov021_020ea868(int index);
 
 void PlayerActorBase_70::func_ov017_020bbcd8(VecFx32 *param1, UnkAngleStruct param2) {
     UnkStackStruct_ov017_020c1104 sp28;

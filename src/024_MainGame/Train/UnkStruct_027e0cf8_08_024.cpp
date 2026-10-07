@@ -1,8 +1,7 @@
+#include "CommonFuncs.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 
 #include <nitro/mi.h>
-
-extern "C" void func_02019cec(u16 param1, unk32 param2);
 
 u8 UnkStruct_027e0cf8_08::func_ov024_020d3158(SceneIndex sceneIndex) {
     switch (sceneIndex) {

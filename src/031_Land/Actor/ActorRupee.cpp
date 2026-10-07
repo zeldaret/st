@@ -1,4 +1,5 @@
 #include "Actor/ActorRupee.hpp"
+#include "CommonFuncs.hpp"
 #include "System/Random.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -39,13 +40,6 @@ static PTMF<ActorRupee> data_ov031_02113520[0xD] = {
     &ActorRupee::func_ov031_020e970c, // ActorRupeeState_11
     &ActorRupee::func_ov031_020e9838, // ActorRupeeState_12
 };
-
-extern "C" void func_01ffedac(u16 *, VecFx32 *);
-extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0C_Base *, VecFx32 *);
-extern "C" unk32 func_02017158();
-extern "C" void func_ov031_0210acd4(u8);
-extern "C" unk32 func_ov031_0210af50(u16, unk32 *);
-extern void func_ov031_0210b0e4(u16, unk32);
 
 extern Cylinder data_ov031_02113478;
 
@@ -468,9 +462,8 @@ void ActorRupee::func_ov031_020e9638() {
     this->mPos.y -= FX_F32_TO_FX32(1.2);
 }
 
-// non-matching
 void ActorRupee::func_ov031_020e96bc() {
-    u16 sp0;
+    Vec2bCpp sp0;
 
     func_01ffedac(&sp0, &this->mPos);
 
@@ -490,9 +483,8 @@ void ActorRupee::func_ov031_020e970c() {
     this->mTimer.Reset();
 }
 
-// non-matching
 void ActorRupee::func_ov031_020e9740() {
-    u16 sp0;
+    Vec2bCpp sp0;
     unk32 sp4;
     unk32 *psp4;
     s32 temp_r2;
@@ -522,7 +514,7 @@ void ActorRupee::func_ov031_020e9740() {
 
 // non-matching
 void ActorRupee::func_ov031_020e9838() {
-    u16 sp2;
+    Vec2bCpp sp2;
 
     func_01ffedac(&sp2, &this->mPos);
     this->mUnk_C4.mUnk_04 = 1;
@@ -532,9 +524,8 @@ void ActorRupee::func_ov031_020e9838() {
     data_027e0cec->func_ov000_020a0110(&this->mUnk_F0);
 }
 
-// non-matching
 void ActorRupee::func_ov031_020e98c4() {
-    u16 sp0;
+    Vec2bCpp sp0;
 
     func_01ffedac(&sp0, &this->mPos);
     func_ov031_0210b0e4(sp0, 1);
@@ -547,9 +538,6 @@ void ActorRupee::SetState(ActorState state) {
     this->mUnk_EC = 0;
     CALL_PTMF(PTMF<ActorRupee>, data_ov031_02113520[this->mState]);
 }
-
-extern "C" void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
-extern "C" void func_02018114(unk16 *, unk32);
 
 // non-matching
 void ActorRupee::Update() {
@@ -564,8 +552,8 @@ void ActorRupee::Update() {
     unk16 uStack_18;
     unk16 uStack_1a;
     short sStack_1c;
-    u16 uStack_1e;
-    u16 uStack_20;
+    Vec2bCpp uStack_1e;
+    Vec2bCpp uStack_20;
     VecFx32 test;
 
     uStack_1a = 0;
@@ -680,10 +668,8 @@ void ActorRupee::func_ov031_020e9be8() {
     }
 }
 
-extern "C" void func_ov000_0205c1f0(unk32 *, unk16);
 extern unk32 data_ov031_02110aa0[];
 extern unk32 data_ov031_02113468[];
-extern "C" void func_ov000_0205c204(unk32 *, VecFx32 *, unk32, unk32, unk32);
 
 // non-matching
 void ActorRupee::vfunc_2C(Actor_vfunc_30 *param1) {

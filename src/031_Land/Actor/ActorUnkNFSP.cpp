@@ -1,4 +1,5 @@
 #include "Actor/ActorUnkNFSP.hpp"
+#include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "MapObject/MapObjectUnkSWFS.hpp"
@@ -20,8 +21,6 @@ public:
     /* E8 */ VecFx32 mUnk_E8;
     /* F4 */
 };
-
-extern "C" void func_01ff993c(VecFx32 *, VecFx32 *, unk32);
 
 DECL_PROFILE(ActorProfileUnkNFSP);
 

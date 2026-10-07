@@ -1,5 +1,6 @@
 #include "MapObject/MapObjectUnkLTRW.hpp"
 #include "Actor/Actor_Derived1.hpp"
+#include "CommonFuncs.hpp"
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectProfile.hpp"
 #include "Unknown/Common.hpp"
@@ -12,7 +13,6 @@
 #include "profile.hpp"
 
 // Overlay 31
-extern "C" void func_ov031_020e0f30(ActorRef);
 
 struct UnkStruct_data_ov063_021639c4 {
     /* 00 */ unk32 mUnk_00;

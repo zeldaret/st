@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -10,9 +11,6 @@
 #include <nitro/g3.h>
 #include <nitro/gx.h>
 #include <nitro/mi.h>
-
-extern "C" void func_ov000_02072344(u16 *, UnkStruct_027e09ac_14 *);
-extern "C" void func_02024df0(u16 *);
 
 UnkStruct_027e09ac *UnkStruct_027e09ac::Create() {
     return new(HeapIndex_1) UnkStruct_027e09ac();

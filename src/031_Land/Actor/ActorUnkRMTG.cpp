@@ -1,11 +1,10 @@
 #include "Actor/ActorUnkRMTG.hpp"
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 
-extern "C" const char data_ov031_02110ad0;
-
-extern "C" void func_01ffedac(Vec2bCpp *, VecFx32 *);
+extern const char data_ov031_02110ad0;
 
 DECL_PROFILE(ActorProfileUnkRMTG);
 

@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Cutscene/Cutscene.hpp"
 #include "System/OverlayManager.hpp"
 #include "System/SysNew.hpp"
@@ -6,8 +7,6 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
 #include <string.h>
-
-extern "C" BOOL func_02012fa8(const char *);
 
 DATA_ALIGN_FIX2();
 

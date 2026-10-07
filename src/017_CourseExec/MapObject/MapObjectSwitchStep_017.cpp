@@ -1,8 +1,6 @@
+#include "CommonFuncs.hpp"
 #include "MapObject/MapObjectSwitchStep.hpp"
 #include "nitro/math.h"
-
-extern "C" void func_01ff91b8(unk16 *, fx32, fx32);
-extern "C" fx32 func_01ffb464(fx32);
 
 void MapObjectSwitchStep::vfunc_08() {
     s16 sp0 = this->mUnk_40.mUnk_60;

@@ -1,4 +1,5 @@
 #include "Actor/ActorManager.hpp"
+#include "CommonFuncs.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -9,14 +10,6 @@
 #include "flags.h"
 #include "global.h"
 #include <nitro/mi.h>
-
-extern "C" {
-void func_ov000_020977e4();
-void func_ov021_020f8818();
-void func_ov071_0215e8d4();
-}
-
-extern "C" void func_ov031_020ea100();
 
 struct UnkStruct_ov000_020ab1ac {
     /* 00 */ u32 mUnk_00;

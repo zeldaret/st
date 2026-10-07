@@ -1,3 +1,4 @@
+#include "CommonFuncs.hpp"
 #include "Item/Item.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "System/OverlayManager.hpp"
@@ -14,10 +15,6 @@
 #include "global.h"
 #include "nitro/fx.h"
 #include "nitro/math.h"
-
-extern "C" unk32 func_ov000_02080998(VecFx32 *);
-extern "C" void func_ov000_02085d1c(void *);
-extern "C" void func_ov000_0208a7a4(void *, void *);
 
 extern const unk16 data_ov000_020ab3b8;
 extern const unk16 data_ov000_020ab3bc;

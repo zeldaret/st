@@ -1,4 +1,5 @@
 #include "System/OverlayManager.hpp"
+#include "CommonFuncs.hpp"
 #include "global.h"
 
 #include <nitro/fs.h>
@@ -26,8 +27,6 @@ struct OverlaySetup {
 extern OverlaySetup gOverlaySetups[];
 
 extern u32 *data_027e0ce0[];
-extern "C" void func_ov007_02102850(uint **);
-extern "C" void func_ov007_021028a0(uint **);
 
 THUMB_BEGIN
 
