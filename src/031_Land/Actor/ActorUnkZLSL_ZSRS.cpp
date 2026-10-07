@@ -137,7 +137,7 @@ ActorUnkZLSL::ActorUnkZLSL() :
     mUnk_276C(NULL),
     mUnk_27CC(0, 0, 0) {}
 
-void func_ov031_020ea100() {}
+void ActorUnkZLSL::func_ov031_020ea100() {}
 
 bool UnkStruct_ov031_0211361c::vfunc_00(Actor *pActor) {
     if (pActor != NULL && pActor->GetActorId() == ActorId_RAT0 && pActor->mState == ActorUnkRAT0State_0 &&

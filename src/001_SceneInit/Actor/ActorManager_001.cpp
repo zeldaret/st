@@ -1,4 +1,5 @@
 #include "Actor/ActorManager.hpp"
+#include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "CommonFuncs.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
@@ -221,7 +222,7 @@ void ActorManager::func_ov001_020bb488() {
             case 0x03:
             case 0x06:
                 if (data_027e0cd8->GetUnk0C()->mUnk_128 & 0x800) {
-                    func_ov031_020ea100();
+                    ActorUnkZLSL::func_ov031_020ea100();
                 }
                 break;
             default:

@@ -317,8 +317,10 @@ public:
     void func_ov031_020eaa8c();
     void func_ov031_020ec164();
     void func_ov031_020eba58();
-    static void func_ov031_020ee1f4();
     bool func_ov031_020ee724();
+
+    static void func_ov031_020ea100();
+    static void func_ov031_020ee1f4();
 
     // not sure where they go
     void func_ov031_020ea8c0();

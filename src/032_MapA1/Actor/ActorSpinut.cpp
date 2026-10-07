@@ -384,11 +384,11 @@ void ActorSpinut::func_ov032_02119df4() {
     this->func_ov032_0211b1e0();
 }
 
-// non-matching
 void ActorSpinut::func_ov032_02119e90() {
     this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
     this->mUnk_288.x = func_01ffb66c(0x1800, func_01ffb428(0x148, 0x14) >> 0xC);
     this->mTimer.Set(0, 180);
+    this->mUnk_220 = 0x0;
 
     if (this->mUnk_5C.mParams[0] == 0x2) {
         this->mUnk_264 = 0x14000;
@@ -396,9 +396,8 @@ void ActorSpinut::func_ov032_02119e90() {
         this->mUnk_264 = 0x4800;
     }
 
-    this->mUnk_220 = 0x0;
-    this->mVel.x   = FX_F32_TO_FX32(0.0f);
-    this->mVel.z   = FX_F32_TO_FX32(0.0f);
+    this->mVel.x = FX_F32_TO_FX32(0.0f);
+    this->mVel.z = FX_F32_TO_FX32(0.0f);
 }
 
 // non-matching (case 1)
