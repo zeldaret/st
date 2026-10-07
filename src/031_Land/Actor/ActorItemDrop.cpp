@@ -91,15 +91,15 @@ void ActorItemDrop::func_ov031_020f9f8c(ActorRef *pOutRef, const VecFx32 *pPos, 
 
 ActorItemDrop::ActorItemDrop() :
     mUnk_AE(0, 6),
-    mUnk_D8(FLOAT_TO_FX32(0.5f)),
+    mUnk_D8(FX_F32_TO_FX32(0.5f)),
     mUnk_DC(0),
     mUnk_E0(0),
     mUnk_E4(this),
     mUnk_108(0x0) {
 
-    this->mUnk_10C.x = FLOAT_TO_FX32(0.0f);
-    this->mUnk_10C.y = FLOAT_TO_FX32(0.0f);
-    this->mUnk_10C.z = FLOAT_TO_FX32(0.0f);
+    this->mUnk_10C.x = FX_F32_TO_FX32(0.0f);
+    this->mUnk_10C.y = FX_F32_TO_FX32(0.0f);
+    this->mUnk_10C.z = FX_F32_TO_FX32(0.0f);
     this->mUnk_118   = false;
     this->mUnk_119   = false;
 
@@ -107,7 +107,7 @@ ActorItemDrop::ActorItemDrop() :
         case ActorId_ArrowDrop:
             if (data_027e0ce0->mUnk_2C->HasItem(ItemFlag_Bow)) {
                 this->mItemTypeId = ItemDropType_Arrow;
-                this->mUnk_D8     = FLOAT_TO_FX32(0.5f);
+                this->mUnk_D8     = FX_F32_TO_FX32(0.5f);
             } else {
                 this->mItemTypeId = ItemDropType_Unknown;
             }
@@ -115,14 +115,14 @@ ActorItemDrop::ActorItemDrop() :
         case ActorId_BombDrop:
             if (data_027e0ce0->mUnk_2C->HasItem(ItemFlag_Bombs)) {
                 this->mItemTypeId = ItemDropType_Bomb;
-                this->mUnk_D8     = FLOAT_TO_FX32(0.3f);
+                this->mUnk_D8     = FX_F32_TO_FX32(0.3f);
             } else {
                 this->mItemTypeId = ItemDropType_Unknown;
             }
             break;
         case ActorId_RedPotionDrop:
             this->mItemTypeId = ItemDropType_RedPotion;
-            this->mUnk_D8     = FLOAT_TO_FX32(0.4f);
+            this->mUnk_D8     = FX_F32_TO_FX32(0.4f);
             this->mUnk_119    = true;
             break;
         case ActorId_TreasureDrop:
@@ -153,7 +153,7 @@ ActorItemDrop::ActorItemDrop() :
             }
 
             this->mItemTypeId = itemType;
-            this->mUnk_D8     = FLOAT_TO_FX32(0.3f);
+            this->mUnk_D8     = FX_F32_TO_FX32(0.3f);
             this->mUnk_119    = true;
             break;
         default:
@@ -252,13 +252,13 @@ void ActorItemDrop::func_ov031_020fa260() {
     }
 
     if (this->mUnk_46 & 3) {
-        this->mVel.y = FLOAT_TO_FX32(0.0f);
+        this->mVel.y = FX_F32_TO_FX32(0.0f);
     }
 
     VecFx32_Add(&this->mPos, &this->mUnk_10C, &this->mPos);
-    this->mUnk_10C.x = FLOAT_TO_FX32(0.0f);
-    this->mUnk_10C.y = FLOAT_TO_FX32(0.0f);
-    this->mUnk_10C.z = FLOAT_TO_FX32(0.0f);
+    this->mUnk_10C.x = FX_F32_TO_FX32(0.0f);
+    this->mUnk_10C.y = FX_F32_TO_FX32(0.0f);
+    this->mUnk_10C.z = FX_F32_TO_FX32(0.0f);
 }
 
 static PTMF<ActorItemDrop> data_ov031_02114be8[ActorItemDropState_Max] = {
@@ -288,7 +288,7 @@ void ActorItemDrop::func_ov031_020fa468() {}
 void ActorItemDrop::func_ov031_020fa46c() {
     func_ov000_02098838();
 
-    if (this->mVel.y > FLOAT_TO_FX32(0.0f)) {
+    if (this->mVel.y > FX_F32_TO_FX32(0.0f)) {
         return;
     }
 
@@ -319,9 +319,9 @@ void ActorItemDrop::func_ov031_020fa4a0() {
 }
 
 void ActorItemDrop::func_ov031_020fa524() {
-    this->mVel.x = FLOAT_TO_FX32(0.0f);
-    this->mVel.y = FLOAT_TO_FX32(0.0f);
-    this->mVel.z = FLOAT_TO_FX32(0.0f);
+    this->mVel.x = FX_F32_TO_FX32(0.0f);
+    this->mVel.y = FX_F32_TO_FX32(0.0f);
+    this->mVel.z = FX_F32_TO_FX32(0.0f);
 
     if (!this->mUnk_118 && this->mTimer.GetRemainingTime() > 180) {
         this->mTimer.Set(0, 180);
@@ -346,9 +346,9 @@ void ActorItemDrop::func_ov031_020fa568() {
             this->func_ov000_02098838();
 
             if (this->mUnk_46 & 0x3) {
-                this->mVel.x   = FLOAT_TO_FX32(0.0f);
-                this->mVel.y   = FLOAT_TO_FX32(0.0f);
-                this->mVel.z   = FLOAT_TO_FX32(0.0f);
+                this->mVel.x   = FX_F32_TO_FX32(0.0f);
+                this->mVel.y   = FX_F32_TO_FX32(0.0f);
+                this->mVel.z   = FX_F32_TO_FX32(0.0f);
                 this->mUnk_108 = 0x0;
             }
 
@@ -367,31 +367,31 @@ void ActorItemDrop::func_ov031_020fa5f0() {
     this->func_ov017_020bf9c8(gpActorManager->func_01fff3b4(this->mUnk_DC));
 
     if (GET_FLAG(this->mFlags, ActorFlag_5)) {
-        this->mVel.x = FLOAT_TO_FX32(0.0f);
-        this->mVel.y = FLOAT_TO_FX32(0.0f);
-        this->mVel.z = FLOAT_TO_FX32(0.0f);
+        this->mVel.x = FX_F32_TO_FX32(0.0f);
+        this->mVel.y = FX_F32_TO_FX32(0.0f);
+        this->mVel.z = FX_F32_TO_FX32(0.0f);
         this->mUnk_B4.mUnk_04 |= 0x1000;
         this->SetState(ActorItemDropState_1);
     }
 }
 
 void ActorItemDrop::func_ov031_020fa650() {
-    this->mVel.x = FLOAT_TO_FX32(0.0f);
-    this->mVel.y = FLOAT_TO_FX32(0.0f);
-    this->mVel.z = FLOAT_TO_FX32(0.0f);
+    this->mVel.x = FX_F32_TO_FX32(0.0f);
+    this->mVel.y = FX_F32_TO_FX32(0.0f);
+    this->mVel.z = FX_F32_TO_FX32(0.0f);
 }
 
 void ActorItemDrop::func_ov031_020fa664() {}
 
 void ActorItemDrop::func_ov031_020fa668() {
-    this->mVel.x = FLOAT_TO_FX32(0.0f);
-    this->mVel.z = FLOAT_TO_FX32(0.0f);
+    this->mVel.x = FX_F32_TO_FX32(0.0f);
+    this->mVel.z = FX_F32_TO_FX32(0.0f);
 }
 
 class UnkActor_ov031_020fa678 : public Actor {
 public:
     /* 000 (base) */
-    /* 94 */ STRUCT_PAD(0x94, 0xE8);
+    /* 94 */ PAD(0x94, 0xE8);
     /* E8 */ VecFx32 mUnk_E8;
 };
 
@@ -408,9 +408,9 @@ void ActorItemDrop::func_ov031_020fa678() {
 
 void ActorItemDrop::func_ov031_020fa6c8() {
     this->mTimer.Reset();
-    this->mVel.x     = FLOAT_TO_FX32(0.0f);
-    this->mVel.y     = FLOAT_TO_FX32(0.0f);
-    this->mVel.z     = FLOAT_TO_FX32(0.0f);
+    this->mVel.x     = FX_F32_TO_FX32(0.0f);
+    this->mVel.y     = FX_F32_TO_FX32(0.0f);
+    this->mVel.z     = FX_F32_TO_FX32(0.0f);
     this->mUnk_4A[0] = 0x0;
     this->mUnk_44    = 0x0;
 
@@ -475,7 +475,7 @@ void ActorItemDrop::vfunc_2C(Actor_vfunc_30 *param1) {
     }
 
     vec1 = this->mPos;
-    vec1.y += FLOAT_TO_FX32(0.03113);
+    vec1.y += FX_F32_TO_FX32(0.03113);
     this->func_ov017_020bf5c4(&vec1, 0x400, 0x400, 0x1F, 0x0);
 
     func_ov000_0205c1f0(&value, data_ov031_02110bc8[this->mItemTypeId]);

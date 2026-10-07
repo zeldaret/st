@@ -45,9 +45,9 @@ bool MapObjectMiniBlocks::Init(void) {
     }
 
     VecFx32 vec;
-    vec.x = FLOAT_TO_FX32(0.0f);
-    vec.y = FLOAT_TO_FX32(0.0f);
-    vec.z = FLOAT_TO_FX32(0.0f);
+    vec.x = FX_F32_TO_FX32(0.0f);
+    vec.y = FX_F32_TO_FX32(0.0f);
+    vec.z = FX_F32_TO_FX32(0.0f);
     uVar6 = 0;
 
     switch (this->mUnk_20.mParams[0]) {
@@ -65,13 +65,13 @@ bool MapObjectMiniBlocks::Init(void) {
             break;
         default:
             if (this->mUnk_20.mParams[1] == MiniBlocksVariant_BLKF) {
-                vec.x = FLOAT_TO_FX32(0.0f);
-                vec.y = FLOAT_TO_FX32(0.0f);
-                vec.z = -FLOAT_TO_FX32(0.375f);
+                vec.x = FX_F32_TO_FX32(0.0f);
+                vec.y = FX_F32_TO_FX32(0.0f);
+                vec.z = -FX_F32_TO_FX32(0.375f);
             } else {
-                vec.x = FLOAT_TO_FX32(0.0f);
-                vec.y = FLOAT_TO_FX32(0.0f);
-                vec.z = -FLOAT_TO_FX32(0.25f);
+                vec.x = FX_F32_TO_FX32(0.0f);
+                vec.y = FX_F32_TO_FX32(0.0f);
+                vec.z = -FX_F32_TO_FX32(0.25f);
             }
             break;
     }
@@ -108,9 +108,9 @@ bool MapObjectMiniBlocks::Init(void) {
 }
 
 void MapObjectMiniBlocks::vfunc_14(unk32 param1) {
-    Mat3p m;
+    MtxFx33 m;
     u16 unk_14 = this->mAngle.angle_s;
-    Mat3p_InitYRotation(&m, SIN(unk_14), COS(unk_14));
+    MtxFx33_InitYRotation(&m, SIN(unk_14), COS(unk_14));
     this->mUnk_40.vfunc_14(&m, &this->mPos);
 }
 

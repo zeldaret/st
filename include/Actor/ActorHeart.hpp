@@ -36,7 +36,7 @@ public:
     /* BA */ unk16 mUnk_BA;
     /* BC */ unk16 mUnk_BC;
     /* BE */ bool mUnk_BE;
-    /* BF */ STRUCT_PAD(0xBF, 0xC0);
+    /* BF */ PAD(0xBF, 0xC0);
     /* C0 */ ActorRef mUnk_C0;
     /* C4 */ ActorRef mUnk_C4;
     /* C8 */ ActorHeart_C4 mUnk_C8;

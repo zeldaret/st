@@ -6,7 +6,7 @@
 
 class UnkStruct_027e0b48_IteratorEntry {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x70);
+    /* 00 */ PAD(0x00, 0x70);
     /* 70 */ void *mUnk_70;
     /* 74 */
 

@@ -1,124 +1,123 @@
-#ifndef GLOBAL_H
-    #define GLOBAL_H
+#pragma once
 
-    // Prevent the IDE from reporting errors that the compiler/linker won't report
-    #ifndef __MWERKS__
-    #endif
+// start of thumb region, using thumb instructions
+#define THUMB_BEGIN _Pragma("thumb on")
+#define ARM_END THUMB_BEGIN
 
-    // start of thumb region, using thumb instructions
-    #define THUMB_BEGIN _Pragma("thumb on")
-    #define ARM_END THUMB_BEGIN
+// end of thumb region, using arm instructions
+#define THUMB_END _Pragma("thumb off")
+#define ARM_BEGIN THUMB_END
 
-    // end of thumb region, using arm instructions
-    #define THUMB_END _Pragma("thumb off")
-    #define ARM_BEGIN THUMB_END
+// `override` was added in C++11 before the DS, so we only use the keyword to indicate overriden functions
+#define override
 
-    // `override` was added in C++11 before the DS, so we only use the keyword to indicate overriden functions
-    #define override
+#pragma define_section dtcm ".dtcm" \
+                            ".dtcm"
+// Puts variables in the DTCM module
+#define DTCM_BEGIN _Pragma("section dtcm begin")
+#define DTCM_END _Pragma("section dtcm end")
 
-    #pragma define_section dtcm ".dtcm" \
-                                ".dtcm"
-    // Puts variables in the DTCM module
-    #define DTCM_BEGIN _Pragma("section dtcm begin")
-    #define DTCM_END _Pragma("section dtcm end")
+#pragma define_section sbss ".data" \
+                            ".sbss"
+// Define .sbss variables
+#define SBSS_BEGIN _Pragma("section sbss begin")
+#define SBSS_END _Pragma("section sbss end")
 
-    #pragma define_section sbss ".data" \
-                                ".sbss"
-    // Define .sbss variables
-    #define SBSS_BEGIN _Pragma("section sbss begin")
-    #define SBSS_END _Pragma("section sbss end")
-
-    #ifdef __MWERKS__
-        #define NO_INLINE __attribute__((never_inline))
-        #define AT_ADDRESS(xyz) : (xyz)
-        #define DECL_SECTION(x) __declspec(section x)
-        #define EXPORT __declspec(export)
-        #define WEAK __declspec(weak)
-        #define ASM asm
-    #else
-        #define AT_ADDRESS(xyz)
-        #define DECL_SECTION(x)
-        #define EXPORT
-        #define WEAK
-        #define ASM
-        #define NO_INLINE
-    #endif
-
-    #define STRUCT_PAD(from, to) unsigned char _pad_##from[(to) - (from)]
-
-    #define DF_CONCAT3_(a, b, c) a##b##c
-    #define DF_CONCAT3(a, b, c) DF_CONCAT3_(a, b, c)
-    #define DF_UNIQUE_IDENT(ident_) DF_CONCAT3(ident_, _, __LINE__)
-
-    // sometimes we need something in .bss
-    // to force things in .data to align properly
-    #define DATA_ALIGN_FIX() int DF_UNIQUE_IDENT(__data_align_fix)
-
-    // for cases where `DATA_ALIGN_FIX` doesn't work
-    #define DATA_ALIGN_FIX2()                                   \
-        static const int DF_UNIQUE_IDENT(__data_align_fix) = 0; \
-        void DF_UNIQUE_IDENT(__data_align_fix_func)() {         \
-            *(int *) &DF_UNIQUE_IDENT(__data_align_fix) = 0;    \
-        }
-
-    #ifndef typeof
-        #define typeof __typeof__
-    #endif
-    #define DF_TYPEOF typeof
-    #define DF_FUNCTION_DECLARATOR_WITH_PROTO(ident_) \
-        extern void(ident_)(void);                    \
-        extern void(ident_)(void)
-    #define DF_FUNCTION_CALL(ident_, arg_)    \
-        extern void(ident_)(DF_TYPEOF(arg_)); \
-        (ident_)(arg_)
-
-    // prevents the linker from deadstripping a symbol (can be anything)
-    #define DECOMP_FORCE(arg_)                                             \
-        DF_FUNCTION_DECLARATOR_WITH_PROTO(DF_UNIQUE_IDENT(DECOMP_FORCE)) { \
-            DF_FUNCTION_CALL(DF_UNIQUE_IDENT(DECOMP_FORCE_CALL), arg_);    \
-        }
-
-    #define SUBSCREEN_WIDTH 256
-    #define SUBSCREEN_HEIGHT 192
-
-    #define ALIGN_PREV(X, N) ((X) & ~((N) - 1))
-    #define ALIGN_NEXT(X, N) ALIGN_PREV(((X) + (N) - 1), N)
-    #define ALIGN(X, N) ((X + N) & ~N)
-
-    #define STACK_PAD(N)     \
-        struct __StackPad {  \
-            char pad[(N)];   \
-            ~__StackPad() {} \
-        } __stack_pad
-
-    #define VTABLE_PAD(name)                \
-        class _VTABLE_PAD_##name {          \
-        public:                             \
-            virtual void dummy();           \
-        };                                  \
-        void _VTABLE_PAD_##name::dummy() {}
-
-    #define DELETE(ptr) \
-        {               \
-            delete ptr; \
-            ptr = NULL; \
-        }               \
-        (void) 0
-
-    #define DELETE_ARRAY(ptr) \
-        {                     \
-            delete[] ptr;     \
-            ptr = NULL;       \
-        }                     \
-        (void) 0
-
-    #define DELETE_ARRAY2(ptr)        \
-        {                             \
-            ::operator delete[](ptr); \
-            ptr = NULL;               \
-        }                             \
-        (void) 0
-
+#ifdef __MWERKS__
+    #define NO_INLINE __attribute__((never_inline))
+    #define AT_ADDRESS(xyz) : (xyz)
+    #define DECL_SECTION(x) __declspec(section x)
+    #define EXPORT __declspec(export)
+    #define WEAK __declspec(weak)
+#else
+    #define AT_ADDRESS(xyz)
+    #define DECL_SECTION(x)
+    #define EXPORT
+    #define WEAK
+    #define NO_INLINE
 #endif
 
+#define DF_CONCAT3_(a, b, c) a##b##c
+#define DF_CONCAT3(a, b, c) DF_CONCAT3_(a, b, c)
+#define DF_UNIQUE_IDENT(ident_) DF_CONCAT3(ident_, _, __LINE__)
+
+// sometimes we need something in .bss
+// to force things in .data to align properly
+#define DATA_ALIGN_FIX() int DF_UNIQUE_IDENT(__data_align_fix)
+
+// for cases where `DATA_ALIGN_FIX` doesn't work
+#define DATA_ALIGN_FIX2()                                   \
+    static const int DF_UNIQUE_IDENT(__data_align_fix) = 0; \
+    void DF_UNIQUE_IDENT(__data_align_fix_func)() {         \
+        *(int *) &DF_UNIQUE_IDENT(__data_align_fix) = 0;    \
+    }
+
+#ifndef typeof
+    #define typeof __typeof__
+#endif
+#define DF_TYPEOF typeof
+#define DF_FUNCTION_DECLARATOR_WITH_PROTO(ident_) \
+    extern void(ident_)(void);                    \
+    extern void(ident_)(void)
+#define DF_FUNCTION_CALL(ident_, arg_)    \
+    extern void(ident_)(DF_TYPEOF(arg_)); \
+    (ident_)(arg_)
+
+// prevents the linker from deadstripping a symbol (can be anything)
+#define DECOMP_FORCE(arg_)                                             \
+    DF_FUNCTION_DECLARATOR_WITH_PROTO(DF_UNIQUE_IDENT(DECOMP_FORCE)) { \
+        DF_FUNCTION_CALL(DF_UNIQUE_IDENT(DECOMP_FORCE_CALL), arg_);    \
+    }
+
+#define SUBSCREEN_WIDTH 256
+#define SUBSCREEN_HEIGHT 192
+
+#define ALIGN_PREV(X, N) ((X) & ~((N) - 1))
+#define ALIGN_NEXT(X, N) ALIGN_PREV(((X) + (N) - 1), N)
+#define ALIGN(X, N) ((X + N) & ~N)
+
+#define STACK_PAD(N)     \
+    struct __StackPad {  \
+        char pad[(N)];   \
+        ~__StackPad() {} \
+    } __stack_pad
+
+#define VTABLE_PAD(name)                \
+    class _VTABLE_PAD_##name {          \
+    public:                             \
+        virtual void dummy();           \
+    };                                  \
+    void _VTABLE_PAD_##name::dummy() {}
+
+#define DELETE(ptr) \
+    {               \
+        delete ptr; \
+        ptr = NULL; \
+    }               \
+    (void) 0
+
+#define DELETE_ARRAY(ptr) \
+    {                     \
+        delete[] ptr;     \
+        ptr = NULL;       \
+    }                     \
+    (void) 0
+
+#define DELETE_ARRAY2(ptr)        \
+    {                             \
+        ::operator delete[](ptr); \
+        ptr = NULL;               \
+    }                             \
+    (void) 0
+
 #define FILE_BUFFER_OFFSETOF(offset) ((size_t) (((u8 *) 0) + (offset)))
+
+//! TODO: move in an appropriate place
+typedef union Vec2b {
+    struct {
+        /* 0 */ unsigned char x;
+        /* 4 */ unsigned char y;
+        /* 8 */
+    };
+    unsigned char coords[2];
+} Vec2b;

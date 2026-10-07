@@ -144,7 +144,7 @@ void ActorUnkTLKT::vfunc_60(ActorState state) {
             this->mUnk_04   = data_027e09b8->func_ov000_02073388(&unkSp00, 0x0);
             break;
         case ActorUnkTLKTState_4:
-            data_027e0d34->func_ov031_020d9854(&this->mPos, FLOAT_TO_FX32(0.5f));
+            data_027e0d34->func_ov031_020d9854(&this->mPos, FX_F32_TO_FX32(0.5f));
             break;
         default:
             break;

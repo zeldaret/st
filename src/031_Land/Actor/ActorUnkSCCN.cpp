@@ -35,7 +35,7 @@ bool ActorUnkSCCN::Init(unk32 param1) {
         this->mPos.y = data_0C->vfunc_28(&this->mPos, 0x1, 0x0);
 
         VecFx32 vec3;
-        VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &vec3);
+        VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &vec3);
         vec3.x = -this->mPos.x;
         vec3.z = -this->mPos.z;
 

@@ -60,7 +60,7 @@ public:
 class ActorBomb_ov031_020e2134 : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x4, 0x8);
+    /* 04 */ PAD(0x4, 0x8);
     /* 08 */
 
     // data_ov031_02112cb0
@@ -73,7 +73,7 @@ public:
     /* 094 */ ModelRender mUnk_094;
     /* 0F4 */ UnkSystem5 mUnk_0F4;
     /* 114 */ unk32 mUnk_114;
-    /* 118 */ STRUCT_PAD(0x118, 0x134);
+    /* 118 */ PAD(0x118, 0x134);
     /* 134 */ Actor_9C mUnk_134;
     /* 154 */ Cylinder mUnk_154;
     /* 164 */ ActorBomb_unk mUnk_164[0x2];
@@ -94,9 +94,9 @@ public:
 #if IS_JP
     /* 1F1 */ bool mUnk_1F1;
 #else
-    /* 1F1 */ STRUCT_PAD(0x1F1, 0x1F2);
+    /* 1F1 */ PAD(0x1F1, 0x1F2);
 #endif
-    /* 1F2 */ STRUCT_PAD(0x1F2, 0x1F4);
+    /* 1F2 */ PAD(0x1F2, 0x1F4);
     /* 1F4 */ Actor_Derived1_94 mUnk_1F4;
     /* 200 */
 

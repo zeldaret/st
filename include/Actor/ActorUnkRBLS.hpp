@@ -21,7 +21,7 @@ public:
     /* 00 (base) */
     /* 94 */ ModelRender mUnk_94;
     /* F4 */ UnkStruct_ov063_02163784 mUnk_F4;
-    /* 134 */ STRUCT_PAD(0x134, 0x160);
+    /* 134 */ PAD(0x134, 0x160);
     /* 160 */
 
     ActorUnkRBLS();

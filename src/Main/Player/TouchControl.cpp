@@ -1,6 +1,7 @@
 #include "Player/TouchControl.hpp"
-#include <nitro/mi.h>
+#include "global.h"
 
+#include <nitro/mi.h>
 #include <nitro/pad.h>
 
 // non-matching

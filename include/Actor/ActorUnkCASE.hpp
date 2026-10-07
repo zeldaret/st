@@ -17,7 +17,7 @@
 class UnkStruct_ov063_021631a0 : public UnkStruct_ov000_020b3268 {
 public:
     /* 00 (base) */
-    /* 60 */ STRUCT_PAD(0x60, 0x6C);
+    /* 60 */ PAD(0x60, 0x6C);
     /* 6C */ unk32 mUnk_6C;
     /* 70 */
 
@@ -26,14 +26,14 @@ public:
 
 class UnkStruct_func_ov063_0215a678 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x04);
+    /* 00 */ PAD(0x00, 0x04);
     /* 04 */ ModelRender *mUnk_04; //! INFO: Placeholder that matches
     /* 08 */ unk32 mUnk_08;
-    /* 0C */ STRUCT_PAD(0x0C, 0x25);
+    /* 0C */ PAD(0x0C, 0x25);
     /* 25 */ u8 mUnk_25;
-    /* 26 */ STRUCT_PAD(0x26, 0x92);
+    /* 26 */ PAD(0x26, 0x92);
     /* 92 */ s8 mUnk_92;
-    /* 93 */ STRUCT_PAD(0x93, 0xAE);
+    /* 93 */ PAD(0x93, 0xAE);
     /* AE */ u8 mUnk_AE;
 };
 
@@ -66,15 +66,15 @@ public:
     /* 0AE */ unk16 mUnk_0AE;
     /* 0B0 */ UnkStruct_ov063_021631a0 mUnk_0B0;
     /* 120 */ unk16 mUnk_120;
-    /* 122 */ STRUCT_PAD(0x122, 0x124);
+    /* 122 */ PAD(0x122, 0x124);
     /* 124 */ ActorShotArrow_140 mUnk_124;
     /* 14C */ Actor *mUnk_14C;
     /* 150 */ ActorUnkCASE_150 mUnk_150;
     /* 174 */ ActorUnkCASE_174 mUnk_174;
-    /* 1A4 */ Mat3p mUnk_1A4;
+    /* 1A4 */ MtxFx33 mUnk_1A4;
     /* 1C8 */ unk16 mUnk_1C8; // Angle related
-    /* 1CA */ STRUCT_PAD(0x1CA, 0x1CC);
-    /* 1CC */ VecFx32 mUnk_1CC;
+    /* 1CA */ PAD(0x1CA, 0x1CC);
+    /* 1CC */ VecFx32Cpp mUnk_1CC;
     /* 1D8 */ unk32 mUnk_1D8;
     /* 1DC */ unk32 mUnk_1DC;
     /* 1E0 */ unk32 mUnk_1E0;

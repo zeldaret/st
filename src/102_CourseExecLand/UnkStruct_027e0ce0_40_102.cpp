@@ -10,7 +10,7 @@
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
-extern "C" void func_01ffaf74(VecFx32 *, Mat4x3p *, VecFx32 *);
+extern "C" void func_01ffaf74(VecFx32 *, MtxFx43 *, VecFx32 *);
 extern "C" unk32 func_01ffb6a8(unk32, unk32);
 extern "C" void func_ov095_0217aa88(void *, unk16 *, unk32, UnkAngleStruct);
 extern "C" void func_ov095_0217aaa8(void *, unk16 *, unk32);
@@ -18,13 +18,13 @@ extern "C" void func_ov031_020dcea4(void *, UnkStruct_027e0ce0_40_Base_78 *, Unk
 extern "C" void func_ov000_0205d65c(void *, VecFx32 *, VecFx32 *, UnkAngleStruct);
 extern Vec2s data_ov031_02112b54;
 
-void PlayerActorBase_74::func_ov102_02182c20(unk32 param1, Mat4x3p *param2) {
+void PlayerActorBase_74::func_ov102_02182c20(unk32 param1, MtxFx43 *param2) {
     this->mUnk_04[param1].x = this->mUnk_1C[param1].x;
     this->mUnk_04[param1].y = this->mUnk_1C[param1].y;
     this->mUnk_04[param1].z = this->mUnk_1C[param1].z;
 
     VecFx32 sp0;
-    VecFx32_Init(FLOAT_TO_FX32(0.15f), FLOAT_TO_FX32(0.05f), FLOAT_TO_FX32(0.0f), &sp0);
+    VecFx32_Init(FX_F32_TO_FX32(0.15f), FX_F32_TO_FX32(0.05f), FX_F32_TO_FX32(0.0f), &sp0);
     func_01ffaf74(&sp0, param2, &this->mUnk_1C[param1]);
 }
 
@@ -69,8 +69,8 @@ bool PlayerActorBase_74::UnknownInline1(u32 index, VecFx32 *pVec) {
     return false;
 }
 
-void PlayerActorBase_74::func_ov102_02182c84(bool param1, unk32 param2, UnkAngleStruct param3, Mat4x3p *param4,
-                                             Mat4x3p *param5) {
+void PlayerActorBase_74::func_ov102_02182c84(bool param1, unk32 param2, UnkAngleStruct param3, MtxFx43 *param4,
+                                             MtxFx43 *param5) {
     func_ov102_02182c20(0, param4);
     func_ov102_02182c20(1, param5);
 

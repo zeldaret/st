@@ -12,7 +12,7 @@ Actor *ActorProfileUnkFLEN::Create() {
 
 ActorProfileUnkFLEN::ActorProfileUnkFLEN() :
     ActorProfile(ActorId_FLEN) {
-    this->mUnk_04.Init(FLOAT_TO_FX32(0.0f));
+    this->mUnk_04.Init(FX_F32_TO_FX32(0.0f));
 }
 
 ActorUnkFLEN::ActorUnkFLEN() :
@@ -86,7 +86,7 @@ bool ActorUnkFLEN::func_ov031_020f81f8() {
     actorParams.mInitialAngle = this->mAngle.angle_s;
 
     VecFx32_Copy(&this->mPos, &actorParams.mInitialPos);
-    actorParams.mInitialPos.y += FLOAT_TO_FX32(5.0f);
+    actorParams.mInitialPos.y += FX_F32_TO_FX32(5.0f);
 
     u16 index              = this->mUnk_5C.mParams[0];
     actorParams.mParams[0] = data_ov031_02110b90[index];

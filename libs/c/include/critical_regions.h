@@ -1,7 +1,7 @@
 #ifndef MSL_COMMON_CRITICAL_REGIONS_H
 #define MSL_COMMON_CRITICAL_REGIONS_H
 
-#include <nitro/os/mutex.h>
+#include <nitro/os.h>
 
 enum critical_regions {
     atexit_funcs_access   = 0,

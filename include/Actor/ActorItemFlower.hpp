@@ -35,7 +35,7 @@ class ActorItemFlower : public Actor_ov031_02113fd4 {
 public:
     /* 000 (base) */
     /* 110 */ ModelRender_ov031_0211578c mUnk_110;
-    /* 170 */ STRUCT_PAD(0x170, 0x17C);
+    /* 170 */ PAD(0x170, 0x17C);
     /* 17C */
 
     ActorItemFlower();

@@ -104,7 +104,7 @@ public:
     /* 08 */ unk16 mUnk_08;
     /* 0A */ unk16 mUnk_0A;
     /* 0C */ unk16 mUnk_0C;
-    /* 0E */ STRUCT_PAD(0x0E, 0x18);
+    /* 0E */ PAD(0x0E, 0x18);
     /* 18 */
 
     UnkStruct_ov000_020b504c_08_18C() {
@@ -123,16 +123,16 @@ public:
     /* 098 */ CellAnimObject mUnk_098;
     /* 110 */ CellAnimObject mUnk_110;
     /* 188 */ bool mUnk_188;
-    /* 189 */ STRUCT_PAD(0x189, 0x18C);
+    /* 189 */ PAD(0x189, 0x18C);
     /* 18C */ UnkStruct_ov000_020b504c_08_18C mUnk_18C[2];
-    /* 1BC */ STRUCT_PAD(0x1BC, 0x1C4);
+    /* 1BC */ PAD(0x1BC, 0x1C4);
     /* 1C4 */ bool mUnk_1C4;
-    /* 1C5 */ STRUCT_PAD(0x1C5, 0x1C8);
+    /* 1C5 */ PAD(0x1C5, 0x1C8);
     /* 1C8 */ CellAnimObject mUnk_1C8[2];
     /* 2B8 */ unk32 mUnk_2B8;
     /* 2BC */ unk32 mUnk_2BC;
     /* 2C0 */ bool mUnk_2C0;
-    /* 2C1 */ STRUCT_PAD(0x2C1, 0x2C4);
+    /* 2C1 */ PAD(0x2C1, 0x2C4);
     /* 2C4 */
 
     UnkStruct_ov000_020b504c_08();
@@ -150,7 +150,7 @@ class UnkStruct_ov000_020b504c_0C_Base {
 public:
     /* 04 */ UnkSystem2_UnkSubSystem11_Derived2 *mUnk_04;
     /* 08 */ UnkStruct_ov000_020b504c_08 *mUnk_08;
-    /* 0C */ STRUCT_PAD(0x0C, 0x1C);
+    /* 0C */ PAD(0x0C, 0x1C);
     /* 1C */
 
     UnkStruct_ov000_020b504c_0C_Base();
@@ -173,7 +173,7 @@ public:
 class UnkStruct_ov000_020b504c_0C_Derived1 : public UnkStruct_ov000_020b504c_0C_Base {
 public:
     /* 000 (base) */
-    /* 01C */ STRUCT_PAD(0x1C, 0x194);
+    /* 01C */ PAD(0x1C, 0x194);
     /* 194 */
 
     UnkStruct_ov000_020b504c_0C_Derived1(unk32 param1);
@@ -182,7 +182,7 @@ public:
 class UnkStruct_ov000_020b504c_0C_Derived2 : public UnkStruct_ov000_020b504c_0C_Base {
 public:
     /* 00 (base) */
-    /* 1C */ STRUCT_PAD(0x1C, 0xCC);
+    /* 1C */ PAD(0x1C, 0xCC);
     /* CC */
 
     UnkStruct_ov000_020b504c_0C_Derived2();
@@ -191,7 +191,7 @@ public:
 class UnkStruct_ov000_020b504c_0C_Derived3 : public UnkStruct_ov000_020b504c_0C_Base {
 public:
     /* 000 (base) */
-    /* 01C */ STRUCT_PAD(0x1C, 0x194);
+    /* 01C */ PAD(0x1C, 0x194);
     /* 194 */
 
     UnkStruct_ov000_020b504c_0C_Derived3(unk32 param1);
@@ -200,7 +200,7 @@ public:
 class UnkStruct_ov000_020b504c_0C_Derived4 : public UnkStruct_ov000_020b504c_0C_Base {
 public:
     /* 00 (base) */
-    /* 1C */ STRUCT_PAD(0x1C, 0x28);
+    /* 1C */ PAD(0x1C, 0x28);
     /* 28 */
 
     UnkStruct_ov000_020b504c_0C_Derived4();
@@ -210,7 +210,7 @@ class UnkStruct_ov000_020b504c_28_Base_160 {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ bool mUnk_04;
-    /* 05 */ STRUCT_PAD(0x05, 0x08);
+    /* 05 */ PAD(0x05, 0x08);
     /* 08 */ CellAnimObject mUnk_08;
     /* 80 */
 
@@ -283,11 +283,11 @@ public:
     /* 158 */ unk32 mUnk_158;
     /* 15C */ bool mUnk_15C;
     /* 15D */ bool mUnk_15D;
-    /* 15E */ STRUCT_PAD(0x15E, 0x160);
+    /* 15E */ PAD(0x15E, 0x160);
     /* 160 */ UnkStruct_ov000_020b504c_28_Base_160 mUnk_160;
     /* 1E0 */ unk32 mUnk_1E0;
     /* 1E4 */ bool mUnk_1E4;
-    /* 1E5 */ STRUCT_PAD(0x1E5, 0x1E8);
+    /* 1E5 */ PAD(0x1E5, 0x1E8);
     /* 1E8 */ UnkSystem2_UnkSubSystem9 mUnk_1E8;
     /* 22C */ UnkSubStruct1 mUnk_22C;
     /* 25C */ UnkStruct_ov000_020b504c_28_Base_25C mUnk_25C[15];
@@ -306,7 +306,7 @@ public:
     /* 3A9 */ unk8 mUnk_3A9; // pad?
     /* 3AA */ unk16 mUnk_3AA;
     /* 3AC */ bool mUnk_3AC;
-    /* 3AD */ STRUCT_PAD(0x3AD, 0x3B8);
+    /* 3AD */ PAD(0x3AD, 0x3B8);
     /* 3B8 */
 
     UnkStruct_ov000_020b504c_28_Base();

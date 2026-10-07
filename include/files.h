@@ -1,5 +1,6 @@
 #pragma once
 
+#include "global.h"
 #include "types.h"
 
 #include <nitro/math.h>
@@ -28,7 +29,7 @@ typedef struct FileInfos {
 // .cib
 typedef struct CourseInitEntry {
     /* 00 */ char name[16];
-    /* 10 */ STRUCT_PAD(0x10, 0x24);
+    /* 10 */ PAD(0x10, 0x24);
 } CourseInitEntry; // size = 0x24
 
 typedef struct CourseInitHeader {

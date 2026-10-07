@@ -5,7 +5,7 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
 extern "C" f32 func_02039f04(unk32);
-extern "C" void func_01ffaf74(VecFx32 *, Mat4x3p *, VecFx32 *);
+extern "C" void func_01ffaf74(VecFx32 *, MtxFx43 *, VecFx32 *);
 
 const UnkStruct_ov031_021150b0 data_ov031_02115184(0x1E66);
 
@@ -66,12 +66,12 @@ void MapObjectDoorKey::vfunc_14(unk32 param1) {
     sVar2     = (s16) mul;
     u16 angle = (u16) sVar2;
 
-    Mat3p m;
+    MtxFx33 m;
     VecFx32 local_48;
     VecFx32 temp;
 
-    Mat3p_InitYRotation(&m, SIN(angle), COS(angle));
-    temp.x     = this->mPos.x - FLOAT_TO_FX32(1.0f) + this->mUnk_70;
+    MtxFx33_InitYRotation(&m, SIN(angle), COS(angle));
+    temp.x     = this->mPos.x - FX_F32_TO_FX32(1.0f) + this->mUnk_70;
     temp.z     = this->mPos.z;
     temp.y     = this->mPos.y;
     local_48.x = temp.x;
@@ -80,8 +80,8 @@ void MapObjectDoorKey::vfunc_14(unk32 param1) {
     this->mUnk_94.vfunc_14(&m, &local_48);
 
     u16 var = (-0x8000 - sVar2);
-    Mat3p_InitYRotation(&m, SIN(var), COS(var));
-    temp.x     = this->mPos.x + FLOAT_TO_FX32(1.0f) - this->mUnk_70;
+    MtxFx33_InitYRotation(&m, SIN(var), COS(var));
+    temp.x     = this->mPos.x + FX_F32_TO_FX32(1.0f) - this->mUnk_70;
     temp.z     = this->mPos.z;
     temp.y     = this->mPos.y;
     local_48.x = temp.x;
@@ -178,7 +178,7 @@ void MapObjectDoorKey::vfunc_78(void) {
     VecFx32 local_30;
     VecFx32 VStack_3c;
     VecFx32 VStack_48;
-    Mat4x3p m;
+    MtxFx43 m;
     VecFx32 local_84;
     VecFx32 local_90;
 
@@ -187,26 +187,26 @@ void MapObjectDoorKey::vfunc_78(void) {
     temp.z = this->mPos.z;
     temp.y = this->mPos.y;
 
-    local_24.x = temp.x - FLOAT_TO_FX32(0.999f);
+    local_24.x = temp.x - FX_F32_TO_FX32(0.999f);
     local_24.y = temp.y;
     local_24.z = temp.z;
 
-    local_30.x = temp.x + FLOAT_TO_FX32(0.999f);
+    local_30.x = temp.x + FX_F32_TO_FX32(0.999f);
     local_30.y = temp.y;
     local_30.z = temp.z;
 
     f32 div   = func_02039f04(this->mUnk_6C) / 4096.0f;
     s16 angle = 16384.0f * div;
 
-    Mat4x3p_InitYRotation(&m, SIN((u16) angle), COS((u16) angle));
+    MtxFx43_InitYRotation(&m, SIN((u16) angle), COS((u16) angle));
 
-    local_84.x = FLOAT_TO_FX32(1.0f);
+    local_84.x = FX_F32_TO_FX32(1.0f);
     local_84.y = 0;
     local_84.z = 0;
 
     local_90.x = 0;
     local_90.y = 0;
-    local_90.z = FLOAT_TO_FX32(0.3299f);
+    local_90.z = FX_F32_TO_FX32(0.3299f);
 
     func_01ffaf74(&local_90, &m, &local_90);
     func_01ffaf74(&local_84, &m, &local_84);

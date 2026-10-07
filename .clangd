@@ -13,6 +13,7 @@ CompileFlags:
     "-Wunused-parameter",
     "-Wunused-but-set-parameter",
     "-Wself-assign",
+    "-D__CLANGD__",
   ]
 Diagnostics:
   Suppress:

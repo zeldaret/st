@@ -58,7 +58,7 @@ public:
 class UnkStruct_02011e10_2C {
 public:
     /* 00 */ UnkStruct_02011e10_Sub1 *mUnk_00;
-    /* 04 */ STRUCT_PAD(0x04, 0x18);
+    /* 04 */ PAD(0x04, 0x18);
     /* 18 */
 
     UnkStruct_02011e10_2C();

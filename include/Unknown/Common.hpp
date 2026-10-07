@@ -534,7 +534,7 @@ public:
 class UnkSystem2_UnkSubSystem7_Derived2 {
 public:
     /* 00 */ UnkSystem2_UnkSubSystem7 mUnk_00;
-    /* 04 */ STRUCT_PAD(0x04, 0x64);
+    /* 04 */ PAD(0x04, 0x64);
 
     UnkSystem2_UnkSubSystem7_Derived2();
 };
@@ -620,7 +620,7 @@ public:
     /* 05C */ unk32 mUnk_04C;
     /* 060 */ unk32 mUnk_050;
     /* 064 */ unk32 mUnk_054;
-    /* 068 */ STRUCT_PAD(0x58, 0x130);
+    /* 068 */ PAD(0x58, 0x130);
     /* 130 */
 
     UnkSystem2_UnkSubSystem5_Base_10();
@@ -686,7 +686,7 @@ public:
 class UnkSystem2_UnkSubSystem11_Derived1 : public UnkSystem2_UnkSubSystem11_Base {
 public:
     /* 00 (base) */
-    /* 30 */ STRUCT_PAD(0x30, 0xC0);
+    /* 30 */ PAD(0x30, 0xC0);
     /* C0 */
 
     UnkSystem2_UnkSubSystem11_Derived1(); // func_ov000_02061f30
@@ -708,7 +708,7 @@ public:
 class UnkSystem2_UnkSubSystem11_Derived2 : public UnkSystem2_UnkSubSystem11_Derived1 {
 public:
     /* 00 (base) */
-    /* C0 */ STRUCT_PAD(0xC0, 0xE0);
+    /* C0 */ PAD(0xC0, 0xE0);
     /* E0 */
 
     UnkSystem2_UnkSubSystem11_Derived2() {}
@@ -850,7 +850,7 @@ class UnkStruct2 {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ const char *mUnk_04;
-    /* 08 */ STRUCT_PAD(0x08, 0x10);
+    /* 08 */ PAD(0x08, 0x10);
     /* 10 */
 
     UnkStruct2(const char *path, unk32 param2);
@@ -967,7 +967,7 @@ struct UnkStackStruct1 {
 extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
 
 struct UnkSystem7_UnkStruct_00_20_00 {
-    /* 00 */ STRUCT_PAD(0x00, 0x04);
+    /* 00 */ PAD(0x00, 0x04);
     /* 04 */ VecFx32 mUnk_04;
 };
 
@@ -977,11 +977,11 @@ struct UnkSystem7_UnkStruct_00_20 {
 };
 
 struct UnkSystem7_UnkStruct_00 {
-    /* 00 */ STRUCT_PAD(0x00, 0x20);
+    /* 00 */ PAD(0x00, 0x20);
     /* 20 */ UnkSystem7_UnkStruct_00_20 *mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ VecFx32 mUnk_28;
-    /* 34 */ STRUCT_PAD(0x34, 0xA0);
+    /* 34 */ PAD(0x34, 0xA0);
     /* A0 */ unk32 mUnk_A0;
     /* A4 */ unk16 mUnk_A4;
 

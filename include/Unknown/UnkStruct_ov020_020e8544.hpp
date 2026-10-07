@@ -22,7 +22,7 @@ public:
 class UnkStruct_ov020_020e8544_Derived1 : public UnkStruct_ov020_020e8544_Base {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x04, 0x30);
+    /* 04 */ PAD(0x04, 0x30);
     /* 30 */
 
     UnkStruct_ov020_020e8544_Derived1();
@@ -31,7 +31,7 @@ public:
 class UnkStruct_ov020_020e8544_Derived2 : public UnkStruct_ov020_020e8544_Base {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x04, 0x2E4);
+    /* 04 */ PAD(0x04, 0x2E4);
     /* 2E4 */
 
     UnkStruct_ov020_020e8544_Derived2();

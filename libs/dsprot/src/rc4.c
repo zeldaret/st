@@ -81,7 +81,7 @@ u32 RC4_InitSBox(u8 *sbox) {
 
 u32 RC4_EncryptInstructions(RC4_Ctx *ctx, void *src, void *dst, u32 size) {
     u8 sbox[256];
-    ulong offset;
+    unsigned long offset;
     u8 *src_bytes;
     u8 *dst_bytes;
 
@@ -139,7 +139,7 @@ u32 RC4_EncryptInstructions(RC4_Ctx *ctx, void *src, void *dst, u32 size) {
 
 u32 RC4_DecryptInstructions(RC4_Ctx *ctx, void *src, void *dst, u32 size) {
     u8 sbox[256];
-    ulong offset;
+    unsigned long offset;
     u8 *src_bytes;
     u8 *dst_bytes;
 

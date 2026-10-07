@@ -15,7 +15,7 @@
 #include "versions.h"
 
 extern "C" unk32 func_01ffb428(unk32, unk32);
-extern "C" void func_01ffaf74(VecFx32 *, Mat4x3p *, VecFx32 *);
+extern "C" void func_01ffaf74(VecFx32 *, MtxFx43 *, VecFx32 *);
 extern "C" void func_01ff93c0(VecFx32 *, fx32);
 extern unk32 data_ov031_02110c00[];
 
@@ -283,7 +283,7 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
                 this->mUnk_8B = 1;
             }
 
-            u16 result    = ROUND_FX32(MUL_FX32(func_01ffb428(0x1000 - this->mUnk_6C, 0x1000), INT_TO_FX32(this->mUnk_78)));
+            u16 result    = ROUND_FX32(FX_MUL(func_01ffb428(0x1000 - this->mUnk_6C, 0x1000), INT_TO_FX32(this->mUnk_78)));
             this->mUnk_80 = result;
 
             if (this->mUnk_8A) {
@@ -553,8 +553,8 @@ void MapObjectDoorDangerSpawn::vfunc_18(s8 *param1) {
 }
 
 void MapObjectDoorDangerSpawn::vfunc_14(unk32 param1) {
-    Mat3p m;
-    Mat3p_InitYRotation(&m, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
+    MtxFx33 m;
+    MtxFx33_InitYRotation(&m, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
 
     VecFx32 pos(this->mPos);
     pos.y += -(this->mUnk_6C * 2);
@@ -592,7 +592,7 @@ void MapObjectDoorDangerSpawn::vfunc_74(void) {
     VecFx32 local_34;
     VecFx32 local_40;
     VecFx32 local_4c;
-    Mat4x3p m;
+    MtxFx43 m;
 
     fx32 b33 = 0xB33;
 
@@ -618,7 +618,7 @@ void MapObjectDoorDangerSpawn::vfunc_74(void) {
         var_r5 = 0;
     }
 
-    Mat4x3p_InitYRotation(&m, SIN(var_r5), COS(var_r5));
+    MtxFx43_InitYRotation(&m, SIN(var_r5), COS(var_r5));
 
     func_01ffaf74(&local_40, &m, &local_40);
     func_01ffaf74(&local_4c, &m, &local_4c);
@@ -692,12 +692,12 @@ void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *pa
     *param3 = this->mAngle.angle_s;
     iVar1   = this->mAngle.angle_s + DEG_TO_ANG(30);
     if (param1 != 0) {
-        local_24.x = MUL_FX32(SIN((u16) iVar1), 0x1666);
-        local_24.z = MUL_FX32(COS((u16) iVar1), 0x1666);
+        local_24.x = FX_MUL(SIN((u16) iVar1), 0x1666);
+        local_24.z = FX_MUL(COS((u16) iVar1), 0x1666);
         local_24.y = 0;
     } else {
-        local_24.x = MUL_FX32(SIN((u16) iVar1), 0x10CD);
-        local_24.z = MUL_FX32(COS((u16) iVar1), 0x10CD);
+        local_24.x = FX_MUL(SIN((u16) iVar1), 0x10CD);
+        local_24.z = FX_MUL(COS((u16) iVar1), 0x10CD);
         local_24.y = 0;
 
         *param3 += DEG_TO_ANG(180);
@@ -708,12 +708,12 @@ void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *pa
     this->mUnk_5A = this->mAngle.angle_s;
     iVar1         = this->mAngle.angle_s - DEG_TO_ANG(30);
     if (param1 != 0) {
-        local_30.x = MUL_FX32(SIN((u16) iVar1), 0x1666);
-        local_30.z = MUL_FX32(COS((u16) iVar1), 0x1666);
+        local_30.x = FX_MUL(SIN((u16) iVar1), 0x1666);
+        local_30.z = FX_MUL(COS((u16) iVar1), 0x1666);
         local_30.y = 0;
     } else {
-        local_30.x = MUL_FX32(SIN((u16) iVar1), 0x10CD);
-        local_30.z = MUL_FX32(COS((u16) iVar1), 0x10CD);
+        local_30.x = FX_MUL(SIN((u16) iVar1), 0x10CD);
+        local_30.z = FX_MUL(COS((u16) iVar1), 0x10CD);
         local_30.y = 0;
         this->mUnk_5A += DEG_TO_ANG(180);
     }
@@ -731,7 +731,7 @@ void MapObjectDoorDangerSpawn::func_ov031_020fe5fc(VecFx32 *param1, MapObjectDoo
         VecFx32 pos;
         VecFx32_Init(temp.x + piVar2->x, temp.y + piVar2->y, temp.z + piVar2->z, &pos);
 
-        func_01ff93c0(&pos, FLOAT_TO_FX32(0.5f));
+        func_01ff93c0(&pos, FX_F32_TO_FX32(0.5f));
         *param1 = pos;
     } else {
         VecFx32 *piVar4 = data_027e0ce0->func_01fff148(0);

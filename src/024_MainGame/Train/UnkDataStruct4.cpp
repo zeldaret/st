@@ -79,8 +79,8 @@ void UnkDataStruct4::func_ov024_020d258c(u32 sceneIndex, u8 roomIndex) {
 
 void UnkDataStruct4::func_ov024_020d26b0(unk32 param1) {
     fx32 pos1 = INT_TO_FX32(param1);
-    fx32 pos3 = MUL_FX32(pos1 >> 1, INT_TO_FX32(this->mUnk_06));
-    fx32 pos2 = MUL_FX32(pos1 >> 1, INT_TO_FX32(this->mUnk_04));
+    fx32 pos3 = FX_MUL(pos1 >> 1, INT_TO_FX32(this->mUnk_06));
+    fx32 pos2 = FX_MUL(pos1 >> 1, INT_TO_FX32(this->mUnk_04));
 
     this->mUnk_08 = pos1;
     this->mUnk_0C = pos2;

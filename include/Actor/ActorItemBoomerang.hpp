@@ -28,7 +28,7 @@ public:
 class ActorItemBoomerang_11C : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x08);
+    /* 04 */ PAD(0x04, 0x08);
     /* 08 */ ActorItemBoomerang *mUnk_08;
     /* 0C */
 
@@ -75,9 +75,9 @@ public:
     /* 138 */ u16 mUnk_138; // timer ?
     /* 13A */ u16 mUnk_13A;
     /* 13C */ u16 mUnk_13C;
-    /* 13E */ STRUCT_PAD(0x13E, 0x140);
+    /* 13E */ PAD(0x13E, 0x140);
     /* 140 */ UnkStruct_ov031_Items_02 mUnk_140;
-    /* 14C */ STRUCT_PAD(0x14C, 0x188);
+    /* 14C */ PAD(0x14C, 0x188);
     /* 188 */
 
     ActorItemBoomerang();

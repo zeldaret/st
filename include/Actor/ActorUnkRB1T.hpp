@@ -23,13 +23,13 @@ public:
     /* 000 (base) */
     /* 120 */
     Actor_Derived1_94_0C *mUnk_120;
-    /* 124 */ STRUCT_PAD(0x124, 0x20C);
+    /* 124 */ PAD(0x124, 0x20C);
     /* 20C */ ModelRender mUnk_20C; // actually a derived class of a derived class
-    /* 26C */ STRUCT_PAD(0x26C, 0x280);
+    /* 26C */ PAD(0x26C, 0x280);
     /* 280 */ unk32 mUnk_280;
-    /* 284 */ STRUCT_PAD(0x284, 0x300);
+    /* 284 */ PAD(0x284, 0x300);
     /* 300 */ unk32 mUnk_300;
-    /* 304 */ STRUCT_PAD(0x304, 0x36C);
+    /* 304 */ PAD(0x304, 0x36C);
     /* 36C */ unk8 mUnk_36C;
     /* 36D */ unk8 mUnk_36D;
     /* 36E */ unk8 mUnk_36E;

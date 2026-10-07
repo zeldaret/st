@@ -46,7 +46,7 @@ There is a `ABS(x)` macro that computes the absolute value of the given value.
 
 `fx32` (and smaller `fx` types) represent **F**ixed **P**oint floats used in the source code. They appear very often, especially with the `VexFx32` struct (3 `fx32`s components that represent a position or other kind of vectors).
 
-Some macros exists to operate on them, two major ones are `FLOAT_TO_FX32(n)` (takes a C `float` and transforms it into a `fx32`) and `MUL_FX32(a, b)` (takes two `fx32` and performs multiplication).
+Some macros exists to operate on them, two major ones are `FX_F32_TO_FX32(n)` (takes a C `float` and transforms it into a `fx32`) and `FX_MUL(a, b)` (takes two `fx32` and performs multiplication).
 
 ## Angles
 

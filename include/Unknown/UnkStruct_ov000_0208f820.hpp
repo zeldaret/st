@@ -42,7 +42,7 @@ public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ u16 mUnk_08;
-    /* 0C */ STRUCT_PAD(0x0C, 0x38);
+    /* 0C */ PAD(0x0C, 0x38);
     /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
 
     void func_ov093_0216f76c(VecFx32 *param1, unk32 param2);
@@ -50,14 +50,14 @@ public:
 
 class UnkStruct_ov000_0208f820_28 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x38);
+    /* 00 */ PAD(0x00, 0x38);
     /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
-    /* 42 */ STRUCT_PAD(0x44, 0x48);
+    /* 42 */ PAD(0x44, 0x48);
     /* 48 */ unk32 mUnk_48;
     /* 48 */ unk32 mUnk_4C;
     /* 48 */ unk32 mUnk_50;
     /* 54 */ ItemManager *pItemManager;
-    /* 58 */ STRUCT_PAD(0x58, 0x94);
+    /* 58 */ PAD(0x58, 0x94);
     /* 94 */ unk32 mUnk_94;
     /* 98 */ UnkStruct_ov000_0208f820_28_98 *mUnk_98;
 
@@ -75,13 +75,13 @@ public:
     /* 10 */ unk32 mUnk_10;
     /* 14 */ unk16 mUnk_14;
     /* 16 */ unk16 mUnk_16;
-    /* 18 */ STRUCT_PAD(0x18, 0x26);
+    /* 18 */ PAD(0x18, 0x26);
     /* 26 */ unk16 mUnk_26;
-    /* 28 */ STRUCT_PAD(0x28, 0x58);
+    /* 28 */ PAD(0x28, 0x58);
     /* 58 */ unk16 mUnk_58;
-    /* 5A */ STRUCT_PAD(0x5A, 0x9C);
+    /* 5A */ PAD(0x5A, 0x9C);
     /* 9C */ unk32 mUnk_9C;
-    /* A0 */ STRUCT_PAD(0xA0, 0x148);
+    /* A0 */ PAD(0xA0, 0x148);
     /* 148 */ u32 mUnk_148;
     /* 14C */ unk32 mUnk_14C;
     /* 150 */ ActorRef mUnk_150;

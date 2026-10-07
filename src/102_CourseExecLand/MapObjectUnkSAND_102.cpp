@@ -13,7 +13,7 @@ extern MapObject_10 data_ov031_02118aec;
 extern MapObject_10 data_ov031_02118aa4;
 
 struct UnkStruct_ov031_021189d0 {
-    /* 00 */ STRUCT_PAD(0x00, 0x70);
+    /* 00 */ PAD(0x00, 0x70);
     /* 70 */ BMDSectionModel *unk_70;
 };
 extern UnkStruct_ov031_021189d0 data_ov031_021189d0;

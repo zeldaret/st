@@ -36,9 +36,9 @@ public:
 
 class Actor_Derived1_94_vfunc_10 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x04);
+    /* 00 */ PAD(0x00, 0x04);
     /* 04 */ unk32 mUnk_04;
-    /* 08 */ STRUCT_PAD(0x04, 0x08);
+    /* 08 */ PAD(0x04, 0x08);
     /* 0C */ unk32 mUnk_0C;
     /* 10 */
 };
@@ -135,7 +135,7 @@ public:
     /* 0B4 */ unk32 mUnk_0B4;
     /* 0B8 */ unk32 mUnk_0B8;
     /* 0BC */ ActorRef mUnk_0BC;
-    /* 0C0 */ Vec3p mUnk_0C0;
+    /* 0C0 */ VecFx32Cpp mUnk_0C0;
     /* 0CC */ unk16 mUnk_0CC;
     /* 0CC */ unk16 mUnk_0CE;
     /* 0D0 */ unk32 mUnk_0D0;

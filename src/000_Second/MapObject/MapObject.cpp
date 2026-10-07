@@ -176,7 +176,7 @@ unk32 MapObject::func_ov000_0209d3b4(unk32 param1, fx32 size) {
     if (this->mUnk_10 != NULL) {
         this->mUnk_10->vfunc_10(&spC);
     } else {
-        spC.Init(FLOAT_TO_FX32(0.5f));
+        spC.Init(FX_F32_TO_FX32(0.5f));
     }
 
     VecFx32_Add(&spC.pos, &this->mPos, &spC.pos);

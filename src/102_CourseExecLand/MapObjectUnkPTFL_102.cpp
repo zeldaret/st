@@ -143,7 +143,7 @@ void MapObjectUnkPTFL::vfunc_0C() {
 }
 
 void MapObjectUnkPTFL::vfunc_14(unk32 param1) {
-    Mat4p sp44;
+    MtxFx44 sp44;
     VecFx32 sp38;
     VecFx32 sp2C;
     VecFx32 sp20;
@@ -180,9 +180,9 @@ void MapObjectUnkPTFL::vfunc_14(unk32 param1) {
     sp2C.z = 0x1000;
     PushGeometryCommand(0x1B, &sp2C, 3);
 
-    Mat4p_InitIdentity(&sp44);
-    sp44.zColumn.z = 0x10000;
-    sp44.wColumn.w = 0x10000;
+    MtxFx44_InitIdentity(&sp44);
+    sp44._23 = 0x10000;
+    sp44._33 = 0x10000;
     PushGeometryCommand(0x18, &sp44, 0x10);
     spC = 2;
     PushGeometryCommand(0x10, &spC, 1);
@@ -217,7 +217,7 @@ void MapObjectUnkPTFL::func_ov102_0218419c() {
     VecFx32 sp5C;
     VecFx32 sp50;
     VecFx32 sp44;
-    Mat3p sp20;
+    MtxFx33 sp20;
     u32 sp1C;
     u32 sp18;
     s32 temp_r0_3;
@@ -228,30 +228,30 @@ void MapObjectUnkPTFL::func_ov102_0218419c() {
 
     if (this->mState == 1) {
         sp68.x = (this->mUnk_5A << 0xB) + 0x52;
-        sp68.y = FLOAT_TO_FX32(0.0f);
-        sp68.z = FLOAT_TO_FX32(0.0f);
+        sp68.y = FX_F32_TO_FX32(0.0f);
+        sp68.z = FX_F32_TO_FX32(0.0f);
         PushGeometryCommand(0x1C, &sp68, 3);
 
         temp_r0_3 = INT_TO_FX32(this->mUnk_5A);
-        sp5C.x    = MUL_FX32(temp_r0_3, FLOAT_TO_FX32(0.54f));
-        sp5C.y    = FLOAT_TO_FX32(1.0f);
-        sp5C.z    = MUL_FX32(temp_r0_3, FLOAT_TO_FX32(1.04f));
+        sp5C.x    = FX_MUL(temp_r0_3, FX_F32_TO_FX32(0.54f));
+        sp5C.y    = FX_F32_TO_FX32(1.0f);
+        sp5C.z    = FX_MUL(temp_r0_3, FX_F32_TO_FX32(1.04f));
         PushGeometryCommand(0x1B, &sp5C, 3);
     } else {
         sp50.x = this->mUnk_5A << 0xB;
-        sp50.y = FLOAT_TO_FX32(0.0f);
-        sp50.z = FLOAT_TO_FX32(0.0f);
+        sp50.y = FX_F32_TO_FX32(0.0f);
+        sp50.z = FX_F32_TO_FX32(0.0f);
         PushGeometryCommand(0x1C, &sp50, 3);
 
         temp_r7 = INT_TO_FX32(this->mUnk_5A);
-        sp44.x  = MUL_FX32(temp_r7, FLOAT_TO_FX32(0.5f));
-        sp44.y  = FLOAT_TO_FX32(1.0f);
-        sp44.z  = MUL_FX32(temp_r7, FLOAT_TO_FX32(1.0f));
+        sp44.x  = FX_MUL(temp_r7, FX_F32_TO_FX32(0.5f));
+        sp44.y  = FX_F32_TO_FX32(1.0f);
+        sp44.z  = FX_MUL(temp_r7, FX_F32_TO_FX32(1.0f));
         PushGeometryCommand(0x1B, &sp44, 3);
     }
 
     temp_r1_3 = (u16) (this->mUnk_54 - 0x8000);
-    Mat3p_InitZRotation(&sp20, SIN(temp_r1_3), COS(temp_r1_3));
+    MtxFx33_InitZRotation(&sp20, SIN(temp_r1_3), COS(temp_r1_3));
 
     PushGeometryCommand(0x1A, &sp20, 9);
 
@@ -271,7 +271,7 @@ void MapObjectUnkPTFL::func_ov102_021843b4() {
     VecFx32 sp5C;
     VecFx32 sp50;
     VecFx32 sp44;
-    Mat3p sp20;
+    MtxFx33 sp20;
     u32 sp1C;
     u32 sp18;
     s32 temp_r0_3;
@@ -281,29 +281,29 @@ void MapObjectUnkPTFL::func_ov102_021843b4() {
 
     if (this->mState == 1) {
         sp68.x = (-this->mUnk_5A << 0xB) - 0x52;
-        sp68.y = FLOAT_TO_FX32(0.0f);
-        sp68.z = FLOAT_TO_FX32(0.0f);
+        sp68.y = FX_F32_TO_FX32(0.0f);
+        sp68.z = FX_F32_TO_FX32(0.0f);
         PushGeometryCommand(0x1C, &sp68, 3);
 
         temp_r0_3 = INT_TO_FX32(this->mUnk_5A);
-        sp5C.x    = MUL_FX32(temp_r0_3, FLOAT_TO_FX32(0.54f));
-        sp5C.y    = FLOAT_TO_FX32(1.0f);
-        sp5C.z    = MUL_FX32(temp_r0_3, FLOAT_TO_FX32(1.04f));
+        sp5C.x    = FX_MUL(temp_r0_3, FX_F32_TO_FX32(0.54f));
+        sp5C.y    = FX_F32_TO_FX32(1.0f);
+        sp5C.z    = FX_MUL(temp_r0_3, FX_F32_TO_FX32(1.04f));
         PushGeometryCommand(0x1B, &sp5C, 3);
     } else {
         sp50.x = -this->mUnk_5A << 0xB;
-        sp50.y = FLOAT_TO_FX32(0.0f);
-        sp50.z = FLOAT_TO_FX32(0.0f);
+        sp50.y = FX_F32_TO_FX32(0.0f);
+        sp50.z = FX_F32_TO_FX32(0.0f);
         PushGeometryCommand(0x1C, &sp50, 3);
 
         temp_r7 = INT_TO_FX32(this->mUnk_5A);
-        sp44.x  = MUL_FX32(temp_r7, FLOAT_TO_FX32(0.5f));
-        sp44.y  = FLOAT_TO_FX32(1.0f);
-        sp44.z  = MUL_FX32(temp_r7, FLOAT_TO_FX32(1.0f));
+        sp44.x  = FX_MUL(temp_r7, FX_F32_TO_FX32(0.5f));
+        sp44.y  = FX_F32_TO_FX32(1.0f);
+        sp44.z  = FX_MUL(temp_r7, FX_F32_TO_FX32(1.0f));
         PushGeometryCommand(0x1B, &sp44, 3);
     }
 
-    Mat3p_InitZRotation(&sp20, -SIN(this->mUnk_54), COS(this->mUnk_54));
+    MtxFx33_InitZRotation(&sp20, -SIN(this->mUnk_54), COS(this->mUnk_54));
 
     PushGeometryCommand(0x1A, &sp20, 9);
 

@@ -26,7 +26,7 @@ enum ActorUnkRPMTState_ {
 class ActorUnkRPMT : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */ STRUCT_PAD(0x94, 0xA4);
+    /* 94 */ PAD(0x94, 0xA4);
     /* A4 */ bool mUnk_A4;
     /* A5 */
 

@@ -19,7 +19,7 @@ public:
     /* 06 */ UnkStruct_02049b18_06 mUnk_06;
     /* 28 */ u16 mUnk_28;
     /* 2A */ u16 mUnk_2A;
-    /* 2C */ STRUCT_PAD(0x2C, 0x58);
+    /* 2C */ PAD(0x2C, 0x58);
     /* 58 */ unk16 mUnk_58;
     /* 5A */ unk16 mUnk_5A;
 

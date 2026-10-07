@@ -123,7 +123,7 @@ public:
 
 class UnkStruct_020d8698_2C_198 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x80);
+    /* 00 */ PAD(0x00, 0x80);
     /* 80 */
 };
 
@@ -219,9 +219,9 @@ public:
 // this is the item button, it's technically a counter because of arrows and bombs
 class UICounter_Items : public LinkList<UICounter_Items> {
 public:
-    /* 008 */ STRUCT_PAD(0x0C, 0x18B);
+    /* 008 */ PAD(0x0C, 0x18B);
     /* 18B */ bool mUnk_18B;
-    /* 18C */ STRUCT_PAD(0x18C, 0x52C);
+    /* 18C */ PAD(0x18C, 0x52C);
     /* 52C */
 
     UICounter_Items(); // overlay 31

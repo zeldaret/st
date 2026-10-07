@@ -8,7 +8,7 @@
 class UnkStruct_ov000_020b51b8_00 {
 public:
     /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0xA0);
+    /* 04 */ PAD(0x04, 0xA0);
 
     UnkStruct_ov000_020b51b8_00(void *param1);
 
@@ -21,7 +21,7 @@ public:
 class UnkStruct_ov000_020b51b8_04 {
 public:
     /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x98);
+    /* 04 */ PAD(0x04, 0x98);
 
     UnkStruct_ov000_020b51b8_04(void *param1);
 

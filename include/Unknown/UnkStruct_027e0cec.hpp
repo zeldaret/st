@@ -37,9 +37,9 @@ public:
 struct UnkStruct_027e0cec_18_04_20 {
     /* 00 */ u32 mUnk_00_00 : 14;
     /* 00 */ u32 mUnk_00_14 : 1;
-    /* 04 */ STRUCT_PAD(0x04, 0x36);
+    /* 04 */ PAD(0x04, 0x36);
     /* 36 */ u16 mUnk_36;
-    /* 38 */ STRUCT_PAD(0x38, 0x40);
+    /* 38 */ PAD(0x38, 0x40);
     /* 40 */ u16 mUnk_40;
 };
 
@@ -67,7 +67,7 @@ public:
     /* 48 */ u16 mUnk_48;
     /* 48 */ u16 mUnk_4A;
     /* 48 */ u16 mUnk_4C;
-    /* 50 */ STRUCT_PAD(0x50, 0x84);
+    /* 50 */ PAD(0x50, 0x84);
     /* 84 */ unk32 mUnk_84_00 : 16;
     /* 84 */ u32 mUnk_84_16 : 3;
     /* 88 */ unk32 mUnk_88;

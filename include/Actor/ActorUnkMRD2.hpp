@@ -20,7 +20,7 @@ public:
 class ActorUnkMRD2 : public Actor {
 public:
     /* 000 (base) */
-    /* 094 */ STRUCT_PAD(0x094, 0x910);
+    /* 094 */ PAD(0x094, 0x910);
     /* 910 */ unk32 mUnk_910;
 
     ActorUnkMRD2();

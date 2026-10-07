@@ -26,7 +26,7 @@ class ActorShotArrow;
 class ActorShotArrow_140 : public Actor_9C {
 public:
     /* 00 (vtable) */
-    /* 20 */ STRUCT_PAD(0x20, 0x24);
+    /* 20 */ PAD(0x20, 0x24);
     /* 24 */ bool mUnk_24;
     /* 25 */ unk8 mUnk_25;
     /* 26 */ unk8 mUnk_26;
@@ -39,7 +39,7 @@ public:
 class ActorShotArrow_178 : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (vtable) */
-    /* 04 */ STRUCT_PAD(0x04, 0x08);
+    /* 04 */ PAD(0x04, 0x08);
     /* 08 */ ActorShotArrow *mUnk_08;
     /* 0C */ VecFx32 mUnk_0C;
     /* 18 */ u16 mUnk_18;
@@ -72,7 +72,7 @@ public:
     // data_ov031_0211426c
     /* 0C */ virtual bool vfunc_0C(Actor *param1, VecFx32 *vector) override; // func_ov031_020f3c38
     /* 10 */ virtual void vfunc_10(Actor *actor) override;                   // func_ov031_020f38b0
-    // /* 14 */ virtual void vfunc_14(Mat3p *, VecFx32 *);
+    // /* 14 */ virtual void vfunc_14(MtxFx33 *, VecFx32 *);
 
     void func_ov031_020f374c(Actor *param1);
 };
@@ -102,7 +102,7 @@ public:
     /* 0A0 */ ModelRender mUnk_A0;
     /* 100 */ UnkSystem5_Derived1 mUnk_100;
     /* 120 */ unk32 mUnk_120;
-    /* 124 */ STRUCT_PAD(0x124, 0x140);
+    /* 124 */ PAD(0x124, 0x140);
     /* 140 */ ActorShotArrow_140 mUnk_140;
     /* 168 */ unk32 mUnk_168;
     /* 16C */ fx32 mUnk_16C;
@@ -114,9 +114,9 @@ public:
     /* 194 */ ActorShotArrow_194 mUnk_194;
     /* 1C8 */ ActorShotArrow_1C8 mUnk_1C8;
     /* 1DC */ UnkStruct_ov031_Items_02 mUnk_1DC;
-    /* 1E0 */ STRUCT_PAD(0x1E8, 0x224);
-    /* 224 */ Mat4x3p *mUnk_224;
-    /* 228 */ Mat4x3p mUnk_228;
+    /* 1E0 */ PAD(0x1E8, 0x224);
+    /* 224 */ MtxFx43 *mUnk_224;
+    /* 228 */ MtxFx43 mUnk_228;
     /* 258 */ u16 mUnk_258;
     /* 25A */ bool mUnk_25A;
     /* 25B */ bool mUnk_25B;
@@ -139,8 +139,8 @@ public:
     unk32 func_ov031_020f2270();
     void func_ov031_020f2280();
     void func_ov031_020f229c();
-    void func_ov031_020f22d4(Mat3p *param1, VecFx32 *param2);
-    void func_ov031_020f2654(Mat3p *param1);
+    void func_ov031_020f22d4(MtxFx33 *param1, VecFx32 *param2);
+    void func_ov031_020f2654(MtxFx33 *param1);
     void func_ov031_020f2794(unk16 param1);
     void func_ov031_020f28ac();
     void func_ov031_020f2b8c();
@@ -152,7 +152,7 @@ public:
     void func_ov031_020f2f5c(VecFx32 *param1);
     bool func_ov031_020f2f9c();
     void func_ov031_020f3000();
-    void func_ov031_020f311c(Mat4x3p *param1);
+    void func_ov031_020f311c(MtxFx43 *param1);
     bool func_ov031_020f3210(u16 param1);
     bool func_ov031_020f3258(u16 param1);
     void func_ov031_020f3d04(unk16 param1);

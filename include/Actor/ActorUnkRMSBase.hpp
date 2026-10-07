@@ -11,7 +11,7 @@ public:
     /* F4 */ ModelRender mUnk_F4;
     /* 154 */ u8 mUnk_154;
     /* 155 */ unk8 mUnk_155;
-    /* 156 */ STRUCT_PAD(0x156, 0x158);
+    /* 156 */ PAD(0x156, 0x158);
     /* 158 */
 
     ActorUnkRMSBase();

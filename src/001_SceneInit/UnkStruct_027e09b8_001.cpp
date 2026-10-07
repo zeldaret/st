@@ -6,9 +6,9 @@
 #include <nitro/mi.h>
 
 struct UnkStruct_ov000_02073080 {
-    /* 00 */ STRUCT_PAD(0x00, 0x08);
+    /* 00 */ PAD(0x00, 0x08);
     /* 08 */ CutsceneIndex csIndex;
-    /* 0C */ STRUCT_PAD(0x0C, 0x1C);
+    /* 0C */ PAD(0x0C, 0x1C);
     /* 1C */
 };
 extern "C" void func_ov000_02073080(void *);

@@ -51,9 +51,9 @@ public:
 class ActorKeese_2AC : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x04, 0x08);
+    /* 04 */ PAD(0x04, 0x08);
     /* 08 */ ActorKeese *mUnk_08;
-    /* 0C */ VecFx32 mUnk_0C;
+    /* 0C */ VecFx32Cpp mUnk_0C;
     /* 18 */
 
     ActorKeese_2AC(ActorKeese *param1);
@@ -67,7 +67,7 @@ public:
 class ModelRender_ov032_02122568 : public UnkStruct_ov000_020b3268 {
 public:
     /* 00 (base) */
-    /* 60 */ STRUCT_PAD(0x60, 0x6C);
+    /* 60 */ PAD(0x60, 0x6C);
     /* 6C */ unk32 mUnk_6C;
     /* 70 */
 
@@ -91,9 +91,9 @@ public:
     /* 000 (base) */
     /* 0B0 */ ModelRender_ov032_02122568 mUnk_0B0;
     /* 120 */ ActorSpinut_110 mUnk_120;
-    /* 1B0 */ STRUCT_PAD(0x1B0, 0x1CC);
+    /* 1B0 */ PAD(0x1B0, 0x1CC);
     /* 1CC */ ActorSpinut_1BC mUnk_1CC;
-    /* 20C */ STRUCT_PAD(0x20C, 0x228);
+    /* 20C */ PAD(0x20C, 0x228);
     /* 228 */ unk16 mUnk_228;
     /* 22A */ unk16 mUnk_22A;
     /* 22C */ Actor_Derived1_EC mUnk_22C;
@@ -110,7 +110,7 @@ public:
     /* 2A4 */ unk32 mUnk_2A4;
     /* 2A8 */ fx16 mUnk_2A8;
     /* 2AC */ ActorKeese_2AC mUnk_2AC;
-    /* 2C4 */ VecFx32 mUnk_2C4;
+    /* 2C4 */ VecFx32Cpp mUnk_2C4;
     /* 2D0 */ Actor_38 *mUnk_2D0;
     /* 2D4 */ ActorRef mUnk_2D4;
     /* 2D8 */

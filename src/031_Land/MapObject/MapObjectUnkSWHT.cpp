@@ -27,9 +27,9 @@ MapObject *MapObjectProfileUnkSWHT::Create() {
 MapObjectProfileUnkSWHT::MapObjectProfileUnkSWHT() :
     MapObjectProfilePot_Base(MapObjectId_SWHT, MapObjectId_SWHT) {
     this->mUnk_D4.mUnk_08 = 0x84007009;
-    VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_D4.mUnk_0C);
-    this->mUnk_D4.mUnk_18 = FLOAT_TO_FX32(0.35f);
-    this->mUnk_D4.mUnk_1C = FLOAT_TO_FX32(1.2f);
+    VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_D4.mUnk_0C);
+    this->mUnk_D4.mUnk_18 = FX_F32_TO_FX32(0.35f);
+    this->mUnk_D4.mUnk_1C = FX_F32_TO_FX32(1.2f);
     this->mUnk_06         = 0x0;
     this->mUnk_0C         = 0x1333;
     this->mUnk_20.mUnk_15 = 0x1;

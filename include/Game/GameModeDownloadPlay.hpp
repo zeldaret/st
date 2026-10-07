@@ -8,7 +8,7 @@
 class UnkStruct_ov001_020c46fc {
 public:
     /* 00000 (vtable) */
-    /* 00004 */ STRUCT_PAD(0x04, 0xAF054);
+    /* 00004 */ PAD(0x04, 0xAF054);
     /* AF054 */
 
     UnkStruct_ov001_020c46fc();
@@ -19,9 +19,9 @@ public:
 class GameModeDownloadPlay : public GameModeBase {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x04, 0x48);
+    /* 04 */ PAD(0x04, 0x48);
     /* 48 */ UnkStruct_ov001_020c46fc *mUnk_48;
-    /* 4C */ STRUCT_PAD(0x4C, 0x6C);
+    /* 4C */ PAD(0x4C, 0x6C);
     /* 6C */
 
     GameModeDownloadPlay();

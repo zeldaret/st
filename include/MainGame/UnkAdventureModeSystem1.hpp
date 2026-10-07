@@ -6,7 +6,7 @@
 #include <nitro/math.h>
 
 struct UnkAdventureModeSystem1_48 {
-    /* 00 */ STRUCT_PAD(0x00, 0x2A);
+    /* 00 */ PAD(0x00, 0x2A);
     /* 2A */ bool mUnk_2A;
 };
 

@@ -39,7 +39,7 @@ public:
     /* 40 */ MapObjectSwitchStep_40 mUnk_40;
     /* A4 */ UnkSystem5 mUnk_A4;
     /* C4 */ unk32 mUnk_C4;
-    /* C8 */ STRUCT_PAD(0xC8, 0xE4);
+    /* C8 */ PAD(0xC8, 0xE4);
     /* E4 */ Timer mUnk_E4;
     /* E8 */ unk16 mUnk_E8;
     /* EA */ u8 mUnk_EA; // bool?

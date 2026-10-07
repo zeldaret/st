@@ -1,6 +1,6 @@
 #include "dsprot/encryptor.h"
 
-#include <nitro/os/cache.h>
+#include <nitro/os.h>
 
 #include "dsprot/bss.h"
 #include "dsprot/encoding_constants.h"

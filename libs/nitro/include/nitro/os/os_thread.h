@@ -40,7 +40,7 @@ typedef struct OSThread {
     /* b0 */ OSAlarm *alarm;
     /* b4 */ OSThreadDtor destructor;
     /* b8 */
-} ATTRIBUTE_ALIGN(32) OSThread;
+} OSThread;
 
 extern OSThreadInfo ThreadInfo;
 

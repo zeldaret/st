@@ -55,7 +55,7 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c117c(const VecFx32 *param2, u
 
         s16 temp_r0_4  = 0x10000 >> *new_var;
         s32 value2     = var_r7 + (temp_r5 >> 16);
-        fx32 temp_r2_3 = MUL_FX32(temp_r0_3, COS((u16) (s16) (temp_r0 - ((s16) (value2 * temp_r0_4 + temp_r0_4 / 2)))));
+        fx32 temp_r2_3 = FX_MUL(temp_r0_3, COS((u16) (s16) (temp_r0 - ((s16) (value2 * temp_r0_4 + temp_r0_4 / 2)))));
 
         s16 temp_r0_5 = func_01ffb428(param3 + temp_r2_3, this->unk_0C);
         u32 temp_r2_4 = ~(0xFF << *(volatile u16 *) &this->unk_10) & ((u16) (1 << *new_var) + (temp_r5 >> 16) + var_r7);

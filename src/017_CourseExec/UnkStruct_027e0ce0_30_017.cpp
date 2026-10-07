@@ -58,9 +58,9 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                     sp2C.mUnk_06 = temp_r8->func_ov000_02078698();
                     sp2C.mUnk_04 = temp_r8->func_ov000_0207868c();
                     sp2C.mUnk_02 = temp_r8->mUnk_0CA;
-                    sp2C.mUnk_08 = MUL_FX32(func_01ffb9cc(&temp_r8->mUnk_040, &temp_r8->mUnk_034), data_ov000_020afd0c);
+                    sp2C.mUnk_08 = FX_MUL(func_01ffb9cc(&temp_r8->mUnk_040, &temp_r8->mUnk_034), data_ov000_020afd0c);
 
-                    sp4C = this->mpPlayer->mPos;
+                    sp4C = this->mpPlayer->mPos.vec;
                     sp4C.y += data_ov000_020afd14;
                     temp_r8->func_ov000_0207834c(&sp4C, &sp2C, data_ov000_020afd08);
 
@@ -105,7 +105,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
             }
 
             if (var_r9 != 0) {
-                this->mUnk_00.y = this->mpZelda->mPos.y + 0x191F;
+                this->mUnk_00.y = this->mpZelda->mPos.vec.y + 0x191F;
                 return;
             }
 
@@ -119,10 +119,10 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                 return;
             }
 
-            func_01ffb714(&this->mpPlayer->mPos, &this->mpZelda->mPos, &sp14);
+            func_01ffb714(&this->mpPlayer->mPos.vec, &this->mpZelda->mPos.vec, &sp14);
             sp14.y = 0;
 
-            VecFx32_Copy(&this->mpPlayer->mPos, &sp20);
+            VecFx32_Copy(&this->mpPlayer->mPos.vec, &sp20);
             sp20.y += data_ov000_020ab4dc[PlayerCharacter_Link].mUnk_66 / 2;
 
             if (!data_027e09bc->mUnk_04[0]->func_01ffd43c(&sp4, &sp20, 1)) {
@@ -190,13 +190,13 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
             PlayerLinkActor *temp_r10_2 = this->mpPlayer;
 
             if (var_r9 != 0) {
-                this->mUnk_00.y = this->mpZelda->mPos.y + 0x191F;
+                this->mUnk_00.y = this->mpZelda->mPos.vec.y + 0x191F;
             } else {
                 this->mUnk_00.y += data_ov000_020afd14;
             }
 
             if (this->mUnk_18 == 0x0D) {
-                VecFx32_SubXZ(&this->mUnk_00, &temp_r10_2->mPos, &sp8);
+                VecFx32_SubXZ(&this->mUnk_00, &temp_r10_2->mPos.vec, &sp8);
 
                 PlayerLinkActor_9C *ptr = this->mpPlayer->mUnk_90;
                 s16 value1              = func_01ffbbe0();
@@ -210,8 +210,8 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
 
                     if (!(sp8.x == 0 && sp8.z == 0 ? 1 : 0)) {
                         func_01ff9770(&sp8, temp_r8_5);
-                        this->mUnk_00.x = temp_r10_2->mPos.x + sp8.x;
-                        this->mUnk_00.z = temp_r10_2->mPos.z + sp8.z;
+                        this->mUnk_00.x = temp_r10_2->mPos.vec.x + sp8.x;
+                        this->mUnk_00.z = temp_r10_2->mPos.vec.z + sp8.z;
                     }
                 }
             }
@@ -246,7 +246,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
     this->mUnk_18 = this->mpPlayer->func_ov000_0208dd60(this);
 
     if (var_r9 != 0) {
-        this->mUnk_00.y = this->mpZelda->mPos.y + 0x191F;
+        this->mUnk_00.y = this->mpZelda->mPos.vec.y + 0x191F;
     } else {
         this->mUnk_00.y += data_ov000_020afd14;
     }

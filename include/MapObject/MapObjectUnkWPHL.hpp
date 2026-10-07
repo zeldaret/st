@@ -10,7 +10,7 @@
 class MapObjectUnkWPHL : public MapObject {
 public:
     /* 00 (base) */
-    /* 40 */ STRUCT_PAD(0x40, 0x8C);
+    /* 40 */ PAD(0x40, 0x8C);
     /* 8C */
 
     MapObjectUnkWPHL();

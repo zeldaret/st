@@ -49,7 +49,7 @@ public:
     /* 00 */ UnkStruct_027e0ce0_40 *mUnk_00;
     /* 04 */ unk16 mUnk_04;
     /* 06 */ bool mUnk_06;
-    /* 07 */ STRUCT_PAD(0x07, 0x0C);
+    /* 07 */ PAD(0x07, 0x0C);
     /* 0C */ ActorRef mUnk_0C;
     /* 10 */
 
@@ -187,14 +187,14 @@ public:
     /* 30 */ unk32 mUnk_30;
     /* 34 */ PlayerLinkActor_A0_34 mUnk_34;
     /* 38 */ PlayerLinkActor_A0_38 *mUnk_38;
-    /* 3C */ STRUCT_PAD(0x3C, 0x5C);
+    /* 3C */ PAD(0x3C, 0x5C);
     /* 5C */ UnkStruct_PlayerGet_64 mUnk_5C;
     /* 68 */ unk32 mUnk_68;
     /* 6C */ unk32 mUnk_6C;
     /* 70 */ u32 mUnk_70;
     /* 74 */ unk32 mUnk_74;
     /* 78 */ bool mUnk_78;
-    /* 79 */ STRUCT_PAD(0x79, 0x7D);
+    /* 79 */ PAD(0x79, 0x7D);
     /* 7D */ bool mUnk_7D;
     /* 7E */ bool mUnk_7E;
     /* 80 */ void *mUnk_80;

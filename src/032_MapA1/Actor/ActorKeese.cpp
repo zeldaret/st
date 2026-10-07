@@ -1,5 +1,3 @@
-#define VECFX32_CTORS
-
 #include "Actor/ActorKeese.hpp"
 
 #include "Actor/ActorManager.hpp"
@@ -27,7 +25,7 @@ extern "C" bool func_02016b8c(VecFx32 *, VecFx32 *, unk32, UnkAngleStruct, unk32
 
 extern "C" s8 func_ov000_02059da4(UnkStruct_027e0960_TableEntry *, VecFx32 *param1);
 
-static const VecFx32 data_ov032_021224d8(FLOAT_TO_FX32(1.7f), FLOAT_TO_FX32(0.5f), FLOAT_TO_FX32(1.7f));
+static const VecFx32Cpp data_ov032_021224d8(FX_F32_TO_FX32(1.7f), FX_F32_TO_FX32(0.5f), FX_F32_TO_FX32(1.7f));
 static ActorUnkZLSL_AnimationTag data_ov032_021224e4             = {.index = 0, .name = "fly"};
 static ActorUnkZLSL_AnimationTag data_ov032_021224fc             = {.index = 0, .name = "keeth", .unknown = 1};
 static PTMF<ActorKeese> data_ov032_0212258c[ActorKeeseState_Max] = {
@@ -63,7 +61,7 @@ Actor *ActorProfileKeese::Create() {
 
 ActorProfileKeese::ActorProfileKeese() :
     ActorProfile_Derived1(ActorId_Keese) {
-    this->mUnk_04.Init(FLOAT_TO_FX32(0.4f));
+    this->mUnk_04.Init(FX_F32_TO_FX32(0.4f));
 
     this->vfunc_04()->mUnk_15 = 0x1;
 }
@@ -89,7 +87,7 @@ ActorKeese::ActorKeese() :
     mUnk_2A4(0x0),
     mUnk_2A8(0x0),
     mUnk_2AC(this),
-    mUnk_2C4(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f)),
+    mUnk_2C4(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)),
     mUnk_2D0(NULL),
     mUnk_2D4(0x0) {
     this->Actor::func_ov000_0209862c(0x4);
@@ -97,19 +95,19 @@ ActorKeese::ActorKeese() :
     SET_FLAGS(this->mFlags, ActorFlag_6, ActorFlag_9);
     *(s16 *) &this->mUnk_44 &= ~0x20;
 
-    this->mUnk_A4 = &data_ov032_021224d8;
+    this->mUnk_A4 = &data_ov032_021224d8.vec;
 }
 
 ActorKeese_2AC::ActorKeese_2AC(ActorKeese *param1) :
     mUnk_08(param1),
-    mUnk_0C(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f)) {}
+    mUnk_0C(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)) {}
 
 ActorKeese_2AC::~ActorKeese_2AC() {
     this->mUnk_08 = NULL;
 }
 
 bool ActorKeese_2AC::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
-    VecFx16_Copy2VecFx32(&param1->mUnk_08, &this->mUnk_0C);
+    VecFx16_Copy2VecFx32(&param1->mUnk_08, &this->mUnk_0C.vec);
     return this->UnkStruct_ov031_Items_00::vfunc_08(param1, param2);
 }
 
@@ -165,7 +163,7 @@ void ActorKeese::func_ov032_0211e0d4(s16 param1, unk32 param2) {
 
             UnkStruct_027e0cec *data = data_027e0cec;
             for (ActorKeese_284 *ptr = this->mUnk_284; ptr != this->mUnk_284 + ARRAY_LEN(this->mUnk_284); ++ptr) {
-                data->func_ov000_020a0140(ptr, &this->mUnk_2C4);
+                data->func_ov000_020a0140(ptr, &this->mUnk_2C4.vec);
             }
 
             if (param2 != 0x0) {
@@ -182,7 +180,7 @@ void ActorKeese::func_ov032_0211e0d4(s16 param1, unk32 param2) {
             this->mUnk_27C = 0x877;
             this->mUnk_280 = 0x2;
 
-            data_027e0cec->func_ov000_020a0140(&this->mUnk_278, &this->mUnk_2C4);
+            data_027e0cec->func_ov000_020a0140(&this->mUnk_278, &this->mUnk_2C4.vec);
 
             if (param2 != 0x0) {
                 data_027e09a8->func_ov000_02071b30(0x9822, &this->mPos, 0x0);
@@ -203,13 +201,13 @@ void ActorKeese::func_ov032_0211e308() {
         case 0x1: {
             UnkStruct_027e0cec *data = data_027e0cec;
             for (ActorKeese_284 *ptr = this->mUnk_284; ptr != this->mUnk_284 + ARRAY_LEN(this->mUnk_284); ++ptr) {
-                data->func_ov000_020a0140(ptr, &this->mUnk_2C4);
+                data->func_ov000_020a0140(ptr, &this->mUnk_2C4.vec);
             }
             break;
         }
 
         case 0x2:
-            data_027e0cec->func_ov000_020a0140(&this->mUnk_278, &this->mUnk_2C4);
+            data_027e0cec->func_ov000_020a0140(&this->mUnk_278, &this->mUnk_2C4.vec);
             break;
 
         default:
@@ -287,7 +285,7 @@ void ActorKeese::Update() {
     this->func_ov032_0211e308();
 
     if (this->mUnk_46 & 1) {
-        this->mVel.y = FLOAT_TO_FX32(0.0f);
+        this->mVel.y = FX_F32_TO_FX32(0.0f);
     }
 
     if ((this->mUnk_120.vfunc_28()->func_02015080(0x1000) != 0 || this->mUnk_120.vfunc_28()->func_02015080(0x9000) != 0) &&
@@ -369,7 +367,7 @@ void ActorKeese::func_ov032_0211e9ec() {
 
 void ActorKeese::func_ov032_0211eb60() {
     if (this->mUnk_46 & 0x1C) {
-        this->mAngle = func_01ffbbe0(this->mUnk_2AC.mUnk_0C.x, this->mUnk_2AC.mUnk_0C.z);
+        this->mAngle = func_01ffbbe0(this->mUnk_2AC.mUnk_0C.vec.x, this->mUnk_2AC.mUnk_0C.vec.z);
     }
 
     this->mAngle += this->mUnk_2A8;
@@ -427,7 +425,7 @@ void ActorKeese::func_ov032_0211f0a8() {
         this->SetState(ActorKeeseState_8);
     } else {
         if (this->mTimer.HasExpired() && (this->mUnk_46 & 0x1C)) {
-            this->mAngle = func_01ffbbe0(this->mUnk_2AC.mUnk_0C.x, this->mUnk_2AC.mUnk_0C.z);
+            this->mAngle = func_01ffbbe0(this->mUnk_2AC.mUnk_0C.vec.x, this->mUnk_2AC.mUnk_0C.vec.z);
             this->SetState(ActorKeeseState_0);
         } else if (func_01ff9258(this->mUnk_5C.mInitialPos.x - this->mPos.x, this->mUnk_5C.mInitialPos.z - this->mPos.z) <
                    0x800) {
@@ -503,7 +501,7 @@ void ActorKeese::func_ov032_0211f3ac() {
 
     this->mUnk_248.func_ov000_02097bec();
 
-    this->mUnk_120.vfunc_28()->mUnk_04 = FLOAT_TO_FX32(1.2f);
+    this->mUnk_120.vfunc_28()->mUnk_04 = FX_F32_TO_FX32(1.2f);
     this->mUnk_2C                      = 0x7B;
 }
 
@@ -513,7 +511,7 @@ void ActorKeese::func_ov032_0211f404() {
     if (GET_FLAG(this->mFlags, ActorFlag_5)) {
         if (this->mUnk_48 <= 0x0) {
             this->Actor::func_ov000_020984d0();
-            this->Actor::func_ov017_020bf3e0(0x1, FLOAT_TO_FX32(0.0f));
+            this->Actor::func_ov017_020bf3e0(0x1, FX_F32_TO_FX32(0.0f));
 
             this->Actor_Derived2::func_ov000_020997c4(0x0);
         } else {
@@ -538,7 +536,7 @@ void ActorKeese::func_ov032_0211f4a4() {
 
     this->mUnk_248.func_ov000_02097bec();
 
-    this->mUnk_120.vfunc_28()->mUnk_04 = FLOAT_TO_FX32(0.8f);
+    this->mUnk_120.vfunc_28()->mUnk_04 = FX_F32_TO_FX32(0.8f);
 }
 
 void ActorKeese::func_ov032_0211f50c() {
@@ -566,7 +564,7 @@ void ActorKeese::func_ov032_0211f58c() {
     this->vfunc_44();
 
     if (GET_FLAG(this->mFlags, ActorFlag_5)) {
-        VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_248.mUnk_10);
+        VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_248.mUnk_10);
 
         this->mUnk_268.func_ov000_02099a0c();
 
@@ -604,7 +602,7 @@ void ActorKeese::func_ov032_0211f804() {
         case 0x1: {
             if (this->mTimer.HasExpired()) {
                 VecFx32 vec = this->mPos;
-                vec.y -= FLOAT_TO_FX32(1.0f);
+                vec.y -= FX_F32_TO_FX32(1.0f);
 
                 Actor::func_ov017_020c26f8(0x2, &vec, 0x1, true);
 

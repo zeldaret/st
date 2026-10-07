@@ -24,7 +24,7 @@ class MapObjectBombFlower : public MapObjectPot_Base {
 public:
     /* 00 (base) */
     /* 48 */ ModelRender_ov031_0211578c mUnk_48;
-    /* A8 */ STRUCT_PAD(0xA8, 0xB0);
+    /* A8 */ PAD(0xA8, 0xB0);
     /* BC */ fx32 mUnk_B0;
     /* BC */ fx32 mUnk_B4;
     /* B8 */ Timer mUnk_B8;

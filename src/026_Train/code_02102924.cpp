@@ -16,7 +16,7 @@ static TrainSpeedPreset data_ov026_02135fec[TrainPresetType_Max] = {
         .unk_30  = 143,
         .unk_34  = 5,
         .unk_38  = 30,
-        .unk_3C  = FLOAT_TO_FX32(225.0f),
+        .unk_3C  = FX_F32_TO_FX32(225.0f),
     },
     // TrainPresetType_DarkRealmNormal
     {
@@ -31,7 +31,7 @@ static TrainSpeedPreset data_ov026_02135fec[TrainPresetType_Max] = {
         .unk_30  = 377,
         .unk_34  = 5,
         .unk_38  = 30,
-        .unk_3C  = FLOAT_TO_FX32(225.0f),
+        .unk_3C  = FX_F32_TO_FX32(225.0f),
     },
     // TrainPresetType_DarkRealmLightTear
     {
@@ -46,7 +46,7 @@ static TrainSpeedPreset data_ov026_02135fec[TrainPresetType_Max] = {
         .unk_30  = 0,
         .unk_34  = 0,
         .unk_38  = 0,
-        .unk_3C  = FLOAT_TO_FX32(225.0f),
+        .unk_3C  = FX_F32_TO_FX32(225.0f),
     },
     // TrainPresetType_DarkRealmLightTearRope
     {
@@ -61,7 +61,7 @@ static TrainSpeedPreset data_ov026_02135fec[TrainPresetType_Max] = {
         .unk_30  = 0,
         .unk_34  = 0,
         .unk_38  = 0,
-        .unk_3C  = FLOAT_TO_FX32(225.0f),
+        .unk_3C  = FX_F32_TO_FX32(225.0f),
     },
     // TrainPresetType_DarkRealmFight
     {
@@ -76,7 +76,7 @@ static TrainSpeedPreset data_ov026_02135fec[TrainPresetType_Max] = {
         .unk_30  = 0,
         .unk_34  = 0,
         .unk_38  = 30,
-        .unk_3C  = FLOAT_TO_FX32(81.0f),
+        .unk_3C  = FX_F32_TO_FX32(81.0f),
     },
     // TrainPresetType_5
     {
@@ -91,7 +91,7 @@ static TrainSpeedPreset data_ov026_02135fec[TrainPresetType_Max] = {
         .unk_30  = 143,
         .unk_34  = 5,
         .unk_38  = 30,
-        .unk_3C  = FLOAT_TO_FX32(81.0f),
+        .unk_3C  = FX_F32_TO_FX32(81.0f),
     },
 };
 

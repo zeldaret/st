@@ -44,21 +44,21 @@ ActorItemBoomerang::ActorItemBoomerang() :
 bool ActorItemBoomerang::Init(unk32 param1) {
     this->mUnk_CC.mUnk_30.func_ov031_020e45fc();
 
-    this->mUnk_A0.mUnk_0C.Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(-0.1003f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.4f));
+    this->mUnk_A0.mUnk_0C.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(-0.1003f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.4f));
 
-    this->mUnk_10C.x = FLOAT_TO_FX32(0.0f);
-    this->mUnk_10C.y = FLOAT_TO_FX32(-0.1003f);
-    this->mUnk_10C.z = FLOAT_TO_FX32(0.0f);
-    this->mUnk_118   = FLOAT_TO_FX32(0.0f);
+    this->mUnk_10C.x = FX_F32_TO_FX32(0.0f);
+    this->mUnk_10C.y = FX_F32_TO_FX32(-0.1003f);
+    this->mUnk_10C.z = FX_F32_TO_FX32(0.0f);
+    this->mUnk_118   = FX_F32_TO_FX32(0.0f);
 
     this->func_ov031_020e5034(0x0);
 
     unk16 sin = SIN((u16) this->mAngle.angle_s);
     unk16 cos = COS((u16) this->mAngle.angle_s);
 
-    this->mVel.x = MUL_FX32(sin, FLOAT_TO_FX32(0.5f));
-    this->mVel.z = MUL_FX32(cos, FLOAT_TO_FX32(0.5f));
-    this->mVel.y = FLOAT_TO_FX32(0.0f);
+    this->mVel.x = FX_MUL(sin, FX_F32_TO_FX32(0.5f));
+    this->mVel.z = FX_MUL(cos, FX_F32_TO_FX32(0.5f));
+    this->mVel.y = FX_F32_TO_FX32(0.0f);
 
     return true;
 }
@@ -78,9 +78,9 @@ void ActorItemBoomerang::func_ov031_020e49b0(unk32 param1) {
     if (this->mState == ActorItemBoomerangState_1) {
         return;
     }
-    this->mVel.x = FLOAT_TO_FX32(0.0f);
-    this->mVel.y = FLOAT_TO_FX32(0.0f);
-    this->mVel.z = FLOAT_TO_FX32(0.0f);
+    this->mVel.x = FX_F32_TO_FX32(0.0f);
+    this->mVel.y = FX_F32_TO_FX32(0.0f);
+    this->mVel.z = FX_F32_TO_FX32(0.0f);
 
     data_027e0d2c->func_ov031_020d95b4();
     this->SetState(ActorItemBoomerangState_1);
@@ -103,7 +103,7 @@ void ActorItemBoomerang::Update() {
     bool var2 = false;
     switch (this->mState) {
         case ActorItemBoomerangState_0: {
-            this->mUnk_A0.mUnk_0C.Init(this->mPos.x, this->mPos.y, this->mPos.z, FLOAT_TO_FX32(0.3f));
+            this->mUnk_A0.mUnk_0C.Init(this->mPos.x, this->mPos.y, this->mPos.z, FX_F32_TO_FX32(0.3f));
 
             data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_A0);
 
@@ -133,14 +133,14 @@ void ActorItemBoomerang::Update() {
                     unk32 vecLength      = VecFx32_Length(&this->mVel);
                     unk32 lengthModified = (vecLength << 0xA) + 0x800;
                     unk32 sp18           = lengthModified;
-                    func_01ff916c(&sp18, 0x0, MUL_FX32(vecLength, lengthModified));
+                    func_01ff916c(&sp18, 0x0, FX_MUL(vecLength, lengthModified));
                     func_01ffb714(&sp6C, &this->mPos, &this->mVel);
                     func_01ff97c8(&this->mPos, sp18 + 0x200);
                 }
 
                 if (sp14.type != 0) {
                     this->mUnk_CC.mUnk_0C.pos.z = this->mPos.z;
-                    this->mUnk_CC.mUnk_0C.pos.y = this->mPos.y + FLOAT_TO_FX32(-0.1003f);
+                    this->mUnk_CC.mUnk_0C.pos.y = this->mPos.y + FX_F32_TO_FX32(-0.1003f);
                     this->mUnk_CC.mUnk_0C.size  = 0xA000;
                     this->mUnk_CC.mUnk_0C.pos.x = this->mPos.x;
                     data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_CC);
@@ -177,7 +177,7 @@ void ActorItemBoomerang::Update() {
         }
 
         case ActorItemBoomerangState_1: {
-            this->mUnk_A0.mUnk_0C.Init(this->mPos.x, this->mPos.y, this->mPos.z, FLOAT_TO_FX32(0.3f));
+            this->mUnk_A0.mUnk_0C.Init(this->mPos.x, this->mPos.y, this->mPos.z, FX_F32_TO_FX32(0.3f));
 
             data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_A0);
             Actor *sp24; /* actor* ? */
@@ -335,8 +335,8 @@ void ActorItemBoomerang_CC::vfunc_10(Actor *actor) {
 // non-matching
 bool ActorItemBoomerang_CC::vfunc_0C(Actor *actor, VecFx32 *param2) {
     if (actor != NULL) {
-        if (actor->mRef.Get32() == this->mUnk_2C && actor->mVel.x == FLOAT_TO_FX32(0.0f) &&
-            actor->mVel.y == FLOAT_TO_FX32(0.0f) && actor->mVel.z == FLOAT_TO_FX32(0.0f)) {
+        if (actor->mRef.Get32() == this->mUnk_2C && actor->mVel.x == FX_F32_TO_FX32(0.0f) &&
+            actor->mVel.y == FX_F32_TO_FX32(0.0f) && actor->mVel.z == FX_F32_TO_FX32(0.0f)) {
             this->mUnk_2C = 0x0;
             return UnkStruct_ov031_Items_01::vfunc_0C(actor, param2);
         }
@@ -346,9 +346,9 @@ bool ActorItemBoomerang_CC::vfunc_0C(Actor *actor, VecFx32 *param2) {
 
 void ActorItemBoomerang_Unknown::func_ov031_020e45fc() {
     this->mUnk_00   = 0x0;
-    this->mUnk_04.x = FLOAT_TO_FX32(-0.1003f);
-    this->mUnk_04.y = FLOAT_TO_FX32(0.0f);
-    this->mUnk_04.z = FLOAT_TO_FX32(0.3f);
+    this->mUnk_04.x = FX_F32_TO_FX32(-0.1003f);
+    this->mUnk_04.y = FX_F32_TO_FX32(0.0f);
+    this->mUnk_04.z = FX_F32_TO_FX32(0.3f);
 }
 
 ActorItemBoomerang_11C::ActorItemBoomerang_11C(ActorItemBoomerang *param1) :

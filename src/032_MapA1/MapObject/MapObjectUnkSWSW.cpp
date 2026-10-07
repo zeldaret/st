@@ -1,5 +1,3 @@
-#define VECFX32_CTORS
-
 #include "MapObject/MapObjectUnkSWSW.hpp"
 #include "profile.hpp"
 
@@ -35,8 +33,8 @@ MapObjectProfileUnkSWSW::MapObjectProfileUnkSWSW() :
     MapObjectProfileUnkSWSW_Base(MapObjectId_SWSW) {
     this->mUnk_D4.mUnk_08 = 0x7007;
 
-    VecFx32_Init(FLOAT_TO_FX32(-0.5002f), FLOAT_TO_FX32(-1.0002), FLOAT_TO_FX32(-1.0002), &this->mUnk_D4.mUnk_0C);
-    VecFx32_Init(FLOAT_TO_FX32(0.5f), FLOAT_TO_FX32(1.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_D4.mUnk_18);
+    VecFx32_Init(FX_F32_TO_FX32(-0.5002f), FX_F32_TO_FX32(-1.0002), FX_F32_TO_FX32(-1.0002), &this->mUnk_D4.mUnk_0C);
+    VecFx32_Init(FX_F32_TO_FX32(0.5f), FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_D4.mUnk_18);
 
     this->mUnk_D4.mUnk_04 |= 0x2;
     this->mUnk_06 = -0x1;
@@ -60,14 +58,14 @@ MapObjectUnkSWSW_40::MapObjectUnkSWSW_40(G3d_Model *pModel) :
 void MapObjectUnkSWSW_40::vfunc_1C(UnkSystem4_vfunc_1C *param1) {
     if (param1->mUnk_00[0x1] == this->mUnk_60) {
         param1->mUnk_B4->mUnk_00 &= ~0x2;
-        Mat3p_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN((u16) this->mUnk_68), COS((u16) this->mUnk_68));
+        MtxFx33_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN((u16) this->mUnk_68), COS((u16) this->mUnk_68));
     }
 
     if (param1->mUnk_00[0x1] != this->mUnk_64) {
         return;
     }
     param1->mUnk_B4->mUnk_00 &= ~0x2;
-    Mat3p_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN((u16) this->mUnk_6A), COS((u16) this->mUnk_6A));
+    MtxFx33_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN((u16) this->mUnk_6A), COS((u16) this->mUnk_6A));
 }
 
 struct UnkStruct_ov032_021210a0 {
@@ -100,7 +98,7 @@ void MapObjectUnkSWSW_40::func_ov032_021210a0(fx32 param1) {
 MapObjectUnkSWSW::MapObjectUnkSWSW() :
     mUnk_040(G3d_GetUnkPtr(GET_PROFILE_20_50(MapObjectProfileUnkSWSW), &data_ov032_02121ef4)),
     mUnk_0AC(&this->mUnk_0CC, NULL),
-    mUnk_0EC(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.5f), FLOAT_TO_FX32(-0.4202f)),
+    mUnk_0EC(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.5f), FX_F32_TO_FX32(-0.4202f)),
     mUnk_0F8(NULL),
     mUnk_0FC(0x4),
     mUnk_100(0, 0),
@@ -119,11 +117,11 @@ bool MapObjectUnkSWSW::Init() {
 
     func_01ffedac(&sp00, &this->mPos);
     if (data_027e0cd8_0C->func_ov000_02080180(&sp00) == 0x14) {
-        this->mPos.y = FLOAT_TO_FX32(0.0f);
+        this->mPos.y = FX_F32_TO_FX32(0.0f);
     }
 
     if (this->mUnk_20.mParams[2] != 0x0) {
-        this->mPos.y += MUL_FX32(this->mUnk_20.mParams[2] << 0xC, 0x1333);
+        this->mPos.y += FX_MUL(this->mUnk_20.mParams[2] << 0xC, 0x1333);
     }
 
     this->mUnk_0AC.mpModel           = this->mUnk_040.mpModel;
@@ -155,7 +153,8 @@ bool MapObjectUnkSWSW::Init() {
 
     if (this->mUnk_20.mParams[0] == 0x0) {
         VecFx32 sp04;
-        VecFx32_Init(this->mPos.x + this->mUnk_0EC.x, this->mPos.y + this->mUnk_0EC.y, this->mPos.z + this->mUnk_0EC.z, &sp04);
+        VecFx32_Init(this->mPos.x + this->mUnk_0EC.vec.x, this->mPos.y + this->mUnk_0EC.vec.y,
+                     this->mPos.z + this->mUnk_0EC.vec.z, &sp04);
 
         ActorUnkNSSW *actorNSSW = this->func_ov032_02121dc8(&sp04);
         this->mUnk_0F8          = actorNSSW;
@@ -163,7 +162,7 @@ bool MapObjectUnkSWSW::Init() {
 
         this->vfunc_3C(0x0);
 
-        this->mUnk_108 = FLOAT_TO_FX32(0.0f);
+        this->mUnk_108 = FX_F32_TO_FX32(0.0f);
 
         this->MapObject::func_ov000_0209d2c4(0x1, true);
 
@@ -173,7 +172,7 @@ bool MapObjectUnkSWSW::Init() {
     } else {
         this->vfunc_3C(0x2);
 
-        this->mUnk_108 = FLOAT_TO_FX32(1.0f);
+        this->mUnk_108 = FX_F32_TO_FX32(1.0f);
 
         this->MapObject::func_ov000_0209d2c4(0x0, true);
 
@@ -213,10 +212,10 @@ void MapObjectUnkSWSW::vfunc_08() {
             VecFx32_Normalize(&sp48, &sp48);
 
             VecFx32 sp3C;
-            VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(1.0f), &sp3C);
+            VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), &sp3C);
 
             bool var_r5 = false;
-            if (VecFx32_Dot(&sp48, &sp3C) > FLOAT_TO_FX32(0.4f)) {
+            if (VecFx32_Dot(&sp48, &sp3C) > FX_F32_TO_FX32(0.4f)) {
                 s16 param = (s16) func_01ffbbe0(sp48.x, sp48.z);
                 func_01ff91b8(&this->mUnk_10C, param, 0x333);
 
@@ -264,8 +263,8 @@ void MapObjectUnkSWSW::vfunc_08() {
             VecFx32 sp18;
             VecFx32 sp0C;
             if (this->mUnk_100.HasReachedMax()) {
-                VecFx32_Init(this->mPos.x + this->mUnk_0EC.x, this->mPos.y + this->mUnk_0EC.y, this->mPos.z + this->mUnk_0EC.z,
-                             &sp30);
+                VecFx32_Init(this->mPos.x + this->mUnk_0EC.vec.x, this->mPos.y + this->mUnk_0EC.vec.y,
+                             this->mPos.z + this->mUnk_0EC.vec.z, &sp30);
                 sp18 = sp30;
 
                 ActorUnkNSSW *actorNSSW = this->mUnk_0F8;
@@ -279,9 +278,9 @@ void MapObjectUnkSWSW::vfunc_08() {
 
                 this->vfunc_3C(0x0);
             } else {
-                fx32 z = this->mPos.z + this->mUnk_0EC.z +
+                fx32 z = this->mPos.z + this->mUnk_0EC.vec.z +
                          func_02015a18(this->mUnk_100.max << 0xC, 0, -0x1000, 0, this->mUnk_100.value << 0xC, 0, 0);
-                VecFx32_Init(this->mPos.x + this->mUnk_0EC.x, this->mPos.y + this->mUnk_0EC.y, z, &sp24);
+                VecFx32_Init(this->mPos.x + this->mUnk_0EC.vec.x, this->mPos.y + this->mUnk_0EC.vec.y, z, &sp24);
 
                 sp0C = sp24;
 
@@ -356,8 +355,8 @@ bool MapObjectUnkSWSW::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) 
                 VecFx32 sp14;
                 VecFx32 sp08;
 
-                VecFx32_Init(this->mPos.x + this->mUnk_0EC.x, this->mPos.y + this->mUnk_0EC.y, this->mPos.z + this->mUnk_0EC.z,
-                             &sp14);
+                VecFx32_Init(this->mPos.x + this->mUnk_0EC.vec.x, this->mPos.y + this->mUnk_0EC.vec.y,
+                             this->mPos.z + this->mUnk_0EC.vec.z, &sp14);
                 sp08 = sp14;
 
                 ActorUnkNSSW *nssw114 = this->mUnk_114;
@@ -443,8 +442,8 @@ void MapObjectUnkSWSW::vfunc_3C(unk32 param1) {
             VecFx32 sp0C;
             VecFx32 sp00;
 
-            VecFx32_Init(this->mPos.x + this->mUnk_0EC.x, this->mPos.y + this->mUnk_0EC.y, this->mPos.z + this->mUnk_0EC.z,
-                         &sp0C);
+            VecFx32_Init(this->mPos.x + this->mUnk_0EC.vec.x, this->mPos.y + this->mUnk_0EC.vec.y,
+                         this->mPos.z + this->mUnk_0EC.vec.z, &sp0C);
 
             ActorUnkNSSW *actorNSSW = this->func_ov032_02121dc8(&sp0C);
             this->mUnk_0F8          = actorNSSW;
@@ -453,8 +452,8 @@ void MapObjectUnkSWSW::vfunc_3C(unk32 param1) {
             this->mUnk_100.Set(0, 40);
             this->mUnk_0AC.func_ov000_020577f8(0x1000);
 
-            VecFx32_Init(this->mPos.x + this->mUnk_0EC.x, this->mPos.y + this->mUnk_0EC.y,
-                         this->mPos.z + this->mUnk_0EC.z - FLOAT_TO_FX32(1.0f), &sp18);
+            VecFx32_Init(this->mPos.x + this->mUnk_0EC.vec.x, this->mPos.y + this->mUnk_0EC.vec.y,
+                         this->mPos.z + this->mUnk_0EC.vec.z - FX_F32_TO_FX32(1.0f), &sp18);
             sp00 = sp18;
 
             ActorUnkNSSW *nssw0F8 = this->mUnk_0F8;
@@ -478,14 +477,15 @@ void MapObjectUnkSWSW::vfunc_3C(unk32 param1) {
 
 void MapObjectUnkSWSW::vfunc_14(unk32 param1) {
     VecFx32 vec;
-    VecFx32_Init(this->mPos.x + this->mUnk_0EC.x, this->mPos.y + this->mUnk_0EC.y, this->mPos.z + this->mUnk_0EC.z, &vec);
+    VecFx32_Init(this->mPos.x + this->mUnk_0EC.vec.x, this->mPos.y + this->mUnk_0EC.vec.y, this->mPos.z + this->mUnk_0EC.vec.z,
+                 &vec);
 
     this->mUnk_040.func_01ffc6d4(this->mAngle, &vec);
 }
 
 struct UnkStack_ov032_02121dc8 {
     /* 00 */ ActorRef ref;
-    /* 04 */ STRUCT_PAD(0x04, 0x08);
+    /* 04 */ PAD(0x04, 0x08);
     /* 08 */
 };
 

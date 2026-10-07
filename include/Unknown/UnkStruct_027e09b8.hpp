@@ -18,7 +18,7 @@ struct stack_ov000_02073578 {
 
 class UnkStruct_027e09b8_00 {
 public:
-    /* 000 */ STRUCT_PAD(0x000, 0xFD0);
+    /* 000 */ PAD(0x000, 0xFD0);
     /* FD0 */ unk16 mUnk_FD0; // set to 1 when link has a blocking interaction?
     /* FD2 */ unk16 mUnk_FD2;
     /* FD4 */
@@ -48,7 +48,7 @@ public:
 class UnkStruct_027e09b8_04 : public UnkStruct_027e09b8_04_Base {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x04, 0x14);
+    /* 04 */ PAD(0x04, 0x14);
     /* 14 */ UnkStruct_0204a060_Base mUnk_14;
     /* 38 */ UnkStruct_WarpUnk1_50 mUnk_38;
     /* 60 */ unk32 mUnk_60;
@@ -71,7 +71,7 @@ public:
 class UnkStruct_027e09b8_08 : public UnkStruct_027e09b8_04_Base {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x04, 0x30);
+    /* 04 */ PAD(0x04, 0x30);
     /* 30 */
 
     UnkStruct_027e09b8_08(void *param1);
@@ -83,9 +83,9 @@ public:
 class UnkStruct_027e09b8_0C : public UnkStruct_027e09b8_04_Base {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x04, 0x0C);
+    /* 04 */ PAD(0x04, 0x0C);
     /* 0C */ UnkSystem1_ov000_Derived3 mUnk_0C;
-    /* 20 */ STRUCT_PAD(0x20, 0x98);
+    /* 20 */ PAD(0x20, 0x98);
     /* 98 */ UnkStruct_WarpUnk1_50 mUnk_98;
     /* C0 */ unk32 mUnk_C4;
     /* C4 */ MapObjectId mMapObjId;
@@ -107,7 +107,7 @@ public:
 class UnkStruct_027e09b8_10 : public UnkStruct_027e09b8_04_Base {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x04, 0x18);
+    /* 04 */ PAD(0x04, 0x18);
     /* 18 */
 
     UnkStruct_027e09b8_10();
@@ -118,7 +118,7 @@ public:
 
 class UnkStruct_027e09b8_98 {
 public:
-    /* 0000 */ STRUCT_PAD(0x00, 0x151C);
+    /* 0000 */ PAD(0x00, 0x151C);
     /* 151C */
 
     UnkStruct_027e09b8_98();

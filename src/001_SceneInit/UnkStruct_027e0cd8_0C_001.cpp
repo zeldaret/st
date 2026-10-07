@@ -357,19 +357,19 @@ void UnkStruct_027e0cd8_0C_Base::vfunc_40(u8 spawnIndex) {
 
             switch (spawnIndex) {
                 case 0xFB:
-                    pos.z = data_027e0c90.max.z - FLOAT_TO_FX32(0.5f);
+                    pos.z = data_027e0c90.max.z - FX_F32_TO_FX32(0.5f);
                     angle = DEG_TO_ANG(180);
                     break;
                 case 0xFC:
-                    pos.z = data_027e0c90.min.z + FLOAT_TO_FX32(0.5f);
+                    pos.z = data_027e0c90.min.z + FX_F32_TO_FX32(0.5f);
                     angle = DEG_TO_ANG(0);
                     break;
                 case 0xFD:
-                    pos.x = data_027e0c90.max.x - FLOAT_TO_FX32(0.5f);
+                    pos.x = data_027e0c90.max.x - FX_F32_TO_FX32(0.5f);
                     angle = DEG_TO_ANG(270);
                     break;
                 case 0xFE:
-                    pos.x = data_027e0c90.min.x + FLOAT_TO_FX32(0.5f);
+                    pos.x = data_027e0c90.min.x + FX_F32_TO_FX32(0.5f);
                     angle = DEG_TO_ANG(90);
                     break;
                 default:

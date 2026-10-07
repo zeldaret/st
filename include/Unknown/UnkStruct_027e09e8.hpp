@@ -8,7 +8,7 @@
 class UnkStruct_027e09e8 {
 public:
     /* 00 */ unk32 mUnk_00;
-    /* 04 */ STRUCT_PAD(0x04, 0x24);
+    /* 04 */ PAD(0x04, 0x24);
     /* 24 */ ZCBEntryPLCB *mpPolyClassTable;
     /* 28 */ ZCBEntryPLCB *mpPolyClassTableEnd;
     /* 2C */ u32 mNumPolyClasses;

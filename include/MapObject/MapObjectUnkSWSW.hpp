@@ -31,14 +31,14 @@ public:
     /* 040 */ MapObjectUnkSWSW_40 mUnk_040;
     /* 0AC */ UnkSystem5 mUnk_0AC;
     /* 0CC */ unk32 mUnk_0CC;
-    /* 0E0 */ STRUCT_PAD(0xD0, 0xEC);
-    /* 0EC */ VecFx32 mUnk_0EC;
+    /* 0E0 */ PAD(0xD0, 0xEC);
+    /* 0EC */ VecFx32Cpp mUnk_0EC;
     /* 0F8 */ ActorUnkNSSW *mUnk_0F8;
     /* 0FC */ unk32 mUnk_0FC;
     /* 100 */ Timer mUnk_100;
     /* 104 */ u8 mUnk_104;
     /* 105 */ u8 mUnk_105;
-    /* 106 */ STRUCT_PAD(0x106, 0x108);
+    /* 106 */ PAD(0x106, 0x108);
     /* 108 */ fx32 mUnk_108;
     /* 10C */ unk16 mUnk_10C;
     /* 10E */ Timer mUnk_10E;

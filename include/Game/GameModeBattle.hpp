@@ -7,7 +7,7 @@
 class GameModeBattle : public GameModeBase {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x04, 0x4C);
+    /* 04 */ PAD(0x04, 0x4C);
     /* 4C */
 
     GameModeBattle(unk32 param1);

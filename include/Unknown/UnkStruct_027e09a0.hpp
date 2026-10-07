@@ -8,10 +8,10 @@
 #include "types.h"
 
 struct UnkStruct_func_ov000_020702a8 {
-    /* 00 */ STRUCT_PAD(0x00, 0x10);
+    /* 00 */ PAD(0x00, 0x10);
     /* 10 */ Vec2s mUnk_10;
     /* 14 */ u8 mUnk_14;
-    /* 15 */ STRUCT_PAD(0x15, 0x18);
+    /* 15 */ PAD(0x15, 0x18);
     /* 18 */ u16 mUnk_18;
     /* 1A */ u16 mUnk_1A;
     /* 1C */ u16 mUnk_1C;

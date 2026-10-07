@@ -18,7 +18,7 @@ class UnkStruct_0204a110_Sub2;
 
 class GameModeManagerBase_004_00 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x38);
+    /* 00 */ PAD(0x00, 0x38);
     /* 38 */
 
     GameModeManagerBase_004_00(s16 param1);

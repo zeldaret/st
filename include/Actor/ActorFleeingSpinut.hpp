@@ -5,6 +5,7 @@
 #include "ActorProfile_ov000_020b3018.hpp"
 #include "ActorSpinut.hpp"
 #include "global.h"
+#include "math.hpp"
 #include "types.h"
 
 enum ActorFleeingSpinutState_ {
@@ -27,7 +28,7 @@ public:
     /* 10 */ unk32 mUnk_10;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
-    /* 1C */ VecFx32 mUnk_1C;
+    /* 1C */ VecFx32Cpp mUnk_1C;
     /* 28 */ u16 mUnk_28;
     /* 2C */ unk32 mUnk_2C;
     /* 30 */
@@ -60,10 +61,10 @@ public:
 class ActorFleeingSpinut : public Actor_Derived2 {
 public:
     /* 000 (base) */
-    /* 0AE */ STRUCT_PAD(0x0AE, 0x0B0);
+    /* 0AE */ PAD(0x0AE, 0x0B0);
     /* 0B0 */ ModelRender_ov000_020b1a1c mUnk_0B0;
     /* 110 */ ActorSpinut_110 mUnk_110;
-    /* 1A0 */ STRUCT_PAD(0x1A0, 0x1BC);
+    /* 1A0 */ PAD(0x1A0, 0x1BC);
     /* 1BC */ ActorState mPrevState;
     /* 1BE */ unk16 mUnk_1BE;
     /* 1C0 */ Actor_9C mUnk_1C0;
@@ -108,7 +109,7 @@ public:
 class ActorProfileFleeingSpinut : public ActorProfile_ov000_020b3018 {
 public:
     /* 00 (base) */
-    /* 3C */ STRUCT_PAD(0x3C, 0x44);
+    /* 3C */ PAD(0x3C, 0x44);
     /* 44 */
 
     ActorProfileFleeingSpinut();

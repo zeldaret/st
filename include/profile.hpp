@@ -50,7 +50,7 @@ public:
 
 class UnkStruct_ov000_02058a84 {
 public:
-    /* 0 */ STRUCT_PAD(0x0, 0x6);
+    /* 0 */ PAD(0x0, 0x6);
     /* 6 */ u16 mUnk_6;
     /* 8 */
 };

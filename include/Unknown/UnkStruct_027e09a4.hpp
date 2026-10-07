@@ -117,7 +117,7 @@ struct EntranceInfo {
 class UnkStruct_WarpUnk1_24 : public UnkStruct_0204a060_Base3 {
 public:
     /* 00 (base) */
-    /* 14 */ STRUCT_PAD(0x14, 0x2A);
+    /* 14 */ PAD(0x14, 0x2A);
     /* 2A */ bool mUnk_2A;
     /* 2C */
 

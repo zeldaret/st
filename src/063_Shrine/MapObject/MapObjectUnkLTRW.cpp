@@ -39,10 +39,10 @@ MapObject *MapObjectProfileUnkLTRW::Create() {
 MapObjectProfileUnkLTRW::MapObjectProfileUnkLTRW() :
     MapObjectProfileUnkLTRW_Base(MapObjectId_LTRW, MapObjectId_LTRW) {
     mUnk_D4.mUnk_08 = 0x04007007;
-    VecFx32_Init(data_ov063_021639c4.vec.x - FLOAT_TO_FX32(.6f), data_ov063_021639c4.vec.y,
-                 data_ov063_021639c4.vec.z - FLOAT_TO_FX32(.4f), &mUnk_D4.mUnk_0C);
-    VecFx32_Init(data_ov063_021639c4.vec.x + FLOAT_TO_FX32(.6f), data_ov063_021639c4.vec.y + FLOAT_TO_FX32(1.2f),
-                 data_ov063_021639c4.vec.z + FLOAT_TO_FX32(.4f), &mUnk_D4.mUnk_18);
+    VecFx32_Init(data_ov063_021639c4.vec.x - FX_F32_TO_FX32(.6f), data_ov063_021639c4.vec.y,
+                 data_ov063_021639c4.vec.z - FX_F32_TO_FX32(.4f), &mUnk_D4.mUnk_0C);
+    VecFx32_Init(data_ov063_021639c4.vec.x + FX_F32_TO_FX32(.6f), data_ov063_021639c4.vec.y + FX_F32_TO_FX32(1.2f),
+                 data_ov063_021639c4.vec.z + FX_F32_TO_FX32(.4f), &mUnk_D4.mUnk_18);
     mUnk_06 = 1;
     mUnk_0C = 0x1333;
 }
@@ -54,8 +54,8 @@ MapObjectUnkLTRW::MapObjectUnkLTRW() :
     mUnk_A8() {}
 
 bool MapObjectUnkLTRW::Init() {
-    mPos.x -= FLOAT_TO_FX32(.5f);
-    mPos.z -= FLOAT_TO_FX32(.5f);
+    mPos.x -= FX_F32_TO_FX32(.5f);
+    mPos.z -= FX_F32_TO_FX32(.5f);
     mUnk_10 = GET_PROFILE_D4(MapObjectProfileUnkLTRW);
     SET_FLAG(mFlags, MapObjFlag_9);
     mUnk_18[0]       = 0x10;

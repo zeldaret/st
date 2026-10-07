@@ -10,7 +10,7 @@
 #define MAX_TRAIN_SETS 8
 
 struct UnkStruct_027e0d00_00 {
-    /* 00 */ STRUCT_PAD(0x00, 0x1B);
+    /* 00 */ PAD(0x00, 0x1B);
     /* 1B */ u8 mUnk_1B;
     /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk32 mUnk_20;
@@ -21,7 +21,7 @@ struct UnkStruct_027e0d00_00 {
 };
 
 struct UnkStruct_027e0d00_10 {
-    /* 0000 */ STRUCT_PAD(0x00, 0x44C0);
+    /* 0000 */ PAD(0x00, 0x44C0);
     /* 44C0 */
 };
 
@@ -50,7 +50,7 @@ public:
 class UnkStruct_027e0d00_E0 : public MapObjectProfile_Derived2_20_Base {
 public:
     /* 00 (base) */
-    /* 94 */ STRUCT_PAD(0x94, 0xA8);
+    /* 94 */ PAD(0x94, 0xA8);
     /* A8 */
 
     UnkStruct_027e0d00_E0(bool hasRecruitUniform);
@@ -61,7 +61,7 @@ public:
 };
 
 struct UnkStruct_027e0d00_FC {
-    /* 000 */ STRUCT_PAD(0x00, 0xD30);
+    /* 000 */ PAD(0x00, 0xD30);
     /* D30 */
 };
 

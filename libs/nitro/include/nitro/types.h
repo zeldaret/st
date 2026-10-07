@@ -17,7 +17,7 @@ typedef unsigned char u8;
 typedef long long s64;
 typedef int s32; //! TODO: convert to unsigned long
 typedef short s16;
-typedef signed char s8;
+typedef char s8; //! TODO convert to signed char
 
 typedef float f32;
 typedef double f64;

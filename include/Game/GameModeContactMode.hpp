@@ -8,7 +8,7 @@
 class GameModeContactMode : public GameModeBase {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x04, 0x20);
+    /* 04 */ PAD(0x04, 0x20);
     /* 20 */
 
     GameModeContactMode();

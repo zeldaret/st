@@ -10,11 +10,11 @@
 
 extern "C" bool func_01ff916c(void *, int, int);
 extern "C" void func_01ff9638(VecFx32 *, s16);
-extern "C" void func_01ffa7a0(VecFx32 *, Mat3p *, VecFx32 *);
+extern "C" void func_01ffa7a0(VecFx32 *, MtxFx33 *, VecFx32 *);
 extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
 
 #if IS_JP
-static const Vec3p data_ov031_02116344(FLOAT_TO_FX32(1.5f), FLOAT_TO_FX32(2.0f), FLOAT_TO_FX32(0.0f));
+static const VecFx32Cpp data_ov031_02116344(FX_F32_TO_FX32(1.5f), FX_F32_TO_FX32(2.0f), FX_F32_TO_FX32(0.0f));
 #else
 static unk32 data_ov031_02114584[0x2]  = {0};
 static const char *data_ov031_021145a4 = "target";
@@ -30,7 +30,7 @@ Actor *ActorProfileUnkTGTZ::Create() {
 
 ActorProfileUnkTGTZ::ActorProfileUnkTGTZ() :
     ActorProfile_Derived1(ActorId_TGTZ) {
-    this->mUnk_04.Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(2.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.5f));
+    this->mUnk_04.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(2.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.5f));
 }
 
 // non-matching
@@ -44,14 +44,14 @@ ActorUnkTGTZ::ActorUnkTGTZ() :
     mUnk_1B8(0x0),
     mUnk_1BC(-0x1),
     mUnk_1C0(0, 0),
-    mUnk_1C4(FLOAT_TO_FX32(0.0f)),
+    mUnk_1C4(FX_F32_TO_FX32(0.0f)),
     mUnk_1CC(0x0),
     mUnk_1D0(0, 0),
     mUnk_1D4(0x0),
     mUnk_1D6(0x0),
     mUnk_1D8(false),
     mUnk_1DC(0x0) {
-    Mat3p_InitIdentity(&this->mUnk_190);
+    MtxFx33_InitIdentity(&this->mUnk_190);
     this->func_ov000_0209862c(0x0);
 }
 
@@ -61,9 +61,9 @@ void ActorUnkTGTZ::func_ov031_020f6984() {}
 // non-matching
 bool ActorUnkTGTZ::Init(unk32 param1) {
     if (this->mUnk_5C.mUnk_1A[0] != 0x0) {
-        this->mPos.y = MUL_FX32(this->mUnk_5C.mUnk_1A[0] << 0xC, 0x1333);
+        this->mPos.y = FX_MUL(this->mUnk_5C.mUnk_1A[0] << 0xC, 0x1333);
     }
-    Mat3p_InitYRotation(&this->mUnk_190, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
+    MtxFx33_InitYRotation(&this->mUnk_190, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
     data_ov031_02116b58.func_ov000_0205fc20(0x5D, 0x32, NULL, NULL);
     ((UnkStruct_ov019_020d24c8_28_258_00 *) GET_PROFILE(ActorProfileUnkNTTZ))->func_ov000_0205fc20(0x5D, 0x31, NULL, NULL);
 
@@ -131,7 +131,7 @@ void ActorUnkTGTZ::Update() {
             stack.mUnk_0C.x = this->mPos.x;
             stack.mUnk_0C.y = this->mPos.y;
             stack.mUnk_0C.z = this->mPos.z;
-            stack.mUnk_0C.y = this->mPos.y + FLOAT_TO_FX32(1.0f);
+            stack.mUnk_0C.y = this->mPos.y + FX_F32_TO_FX32(1.0f);
             this->mUnk_1BC  = data_027e09b8->func_ov000_02073388(&stack, 0x0);
             this->func_ov031_020f6f20(0x1);
             break;
@@ -206,7 +206,7 @@ void ActorUnkTGTZ::Update() {
     if (this->mUnk_1CC == 0x1) {
         ActorUnkNTTZ *actor = this->mUnk_1B4;
         VecFx32 vecSp0C     = actor->mPos;
-        vecSp0C.y           = this->mPos.y + this->mUnk_1C4 + FLOAT_TO_FX32(1.5f);
+        vecSp0C.y           = this->mPos.y + this->mUnk_1C4 + FX_F32_TO_FX32(1.5f);
 
         VecFx32 vecSp00 = vecSp0C;
         VecFx32_Init(vecSp00.x, vecSp00.y, vecSp00.z, &actor->mPos);
@@ -254,7 +254,7 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
     switch (param1) {
         case 0x0:
             this->mUnk_1BC = -0x1;
-            this->mUnk_1C4 = FLOAT_TO_FX32(3.0f);
+            this->mUnk_1C4 = FX_F32_TO_FX32(3.0f);
             UNSET_FLAG(this->mFlags, ActorFlag_Visible);
             this->func_ov031_020f6e5c(this->mUnk_1DC);
             this->mUnk_1DC = 0x0;
@@ -269,7 +269,7 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
         }
         case 0x2: {
             this->mUnk_1BC = -0x1;
-            this->mUnk_1C4 = FLOAT_TO_FX32(0.0f);
+            this->mUnk_1C4 = FX_F32_TO_FX32(0.0f);
             SET_FLAG(this->mFlags, ActorFlag_Visible);
 
             VecFx32 vec1;
@@ -281,7 +281,7 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
             func_01ffa7a0(pVec, &this->mUnk_190, &vec1);
 #endif
 
-            vec1.y -= FLOAT_TO_FX32(0.5f);
+            vec1.y -= FX_F32_TO_FX32(0.5f);
 
             this->func_ov031_020f7358();
 
@@ -304,7 +304,7 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
             break;
         }
         case 0x3:
-            this->mUnk_1C4 = FLOAT_TO_FX32(-1.0002f);
+            this->mUnk_1C4 = FX_F32_TO_FX32(-1.0002f);
             SET_FLAG(this->mFlags, ActorFlag_Visible);
             this->mUnk_1D0.Set(0, this->mUnk_1D4);
             break;
@@ -316,7 +316,7 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
             SET_FLAG(this->mFlags, ActorFlag_Visible);
             break;
         case 0x6:
-            this->mUnk_1C4 = FLOAT_TO_FX32(1.0f);
+            this->mUnk_1C4 = FX_F32_TO_FX32(1.0f);
             this->mUnk_1D0.Set(0, this->mUnk_1D6);
             break;
         default:
@@ -370,10 +370,10 @@ void ActorUnkTGTZ::vfunc_2C(Actor_vfunc_30 *param1) {
     VecFx32 vec1;
 
     if (this->mUnk_1CC == 0x0) {
-        VecFx32_Init(-this->mUnk_1C4, FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &vec1);
+        VecFx32_Init(-this->mUnk_1C4, FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &vec1);
         func_01ff9638(&vec1, this->mAngle.angle_s);
     } else {
-        VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &vec1);
+        VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &vec1);
         func_01ff9638(&vec1, this->mAngle.angle_s);
         vec1.y = this->mUnk_1C4;
     }

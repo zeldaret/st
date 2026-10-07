@@ -38,15 +38,15 @@ MapObjectBombFlower::MapObjectBombFlower() :
     SET_FLAG(this->mFlags, MapObjFlag_8);
 
     if (this->mUnk_20.mParams[1] == 0x1) {
-        this->mPos.x += FLOAT_TO_FX32(0.5f);
+        this->mPos.x += FX_F32_TO_FX32(0.5f);
     }
 
     this->mUnk_40 = ActorId_Bomb;
 
     this->mUnk_C0.mUnk_08 = (unk32) 0x80007006;
-    VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_C0.mUnk_0C);
-    this->mUnk_C0.mUnk_18 = FLOAT_TO_FX32(0.5f);
-    this->mUnk_C0.mUnk_1C = FLOAT_TO_FX32(1.2f);
+    VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_C0.mUnk_0C);
+    this->mUnk_C0.mUnk_18 = FX_F32_TO_FX32(0.5f);
+    this->mUnk_C0.mUnk_1C = FX_F32_TO_FX32(1.2f);
     this->mUnk_10         = &this->mUnk_C0;
 
     SET_FLAG(this->mFlags, MapObjFlag_6);
@@ -175,7 +175,7 @@ bool MapObjectBombFlower::SetState(MapObjState state, unk32 param2) {
             this->mUnk_C0.mUnk_04 &= 0xFD;
             this->mUnk_C0.mUnk_08 |= 0xA800000;
             UNSET_FLAG(this->mFlags, MapObjFlag_9);
-            this->mUnk_B4 = FLOAT_TO_FX32(0.0f);
+            this->mUnk_B4 = FX_F32_TO_FX32(0.0f);
             this->mUnk_B8.Set(0, 180);
             break;
 
@@ -189,7 +189,7 @@ bool MapObjectBombFlower::SetState(MapObjState state, unk32 param2) {
             this->mUnk_C0.mUnk_04 |= 0x2;
             this->mUnk_C0.mUnk_08 &= ~0xA800000;
             SET_FLAG(this->mFlags, MapObjFlag_9);
-            this->mUnk_B4 = FLOAT_TO_FX32(1.0f);
+            this->mUnk_B4 = FX_F32_TO_FX32(1.0f);
             break;
 
         case MapObjBombFlowerState_3:

@@ -16,7 +16,7 @@ public:
     /* 54 */ unk32 mUnk_54;
     /* 58 */ unk16 mUnk_58;
     /* 5A */ Timer mUnk_5A;
-    /* 5E */ STRUCT_PAD(0x5E, 0x60);
+    /* 5E */ PAD(0x5E, 0x60);
     /* 60 */ unk32 mUnk_60;
     /* 64 */ unk32 mUnk_64;
     /* 68 */ unk32 mUnk_68;

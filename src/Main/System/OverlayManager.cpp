@@ -26,8 +26,8 @@ struct OverlaySetup {
 extern OverlaySetup gOverlaySetups[];
 
 extern u32 *data_027e0ce0[];
-extern "C" void func_ov007_02102850(u32 **);
-extern "C" void func_ov007_021028a0(u32 **);
+extern "C" void func_ov007_02102850(uint **);
+extern "C" void func_ov007_021028a0(uint **);
 
 THUMB_BEGIN
 

@@ -23,9 +23,9 @@ public:
 #else
     /* 094 */ ActorUnkTGTZ_ModelRender mUnk_094;
     /* 100 */ unk32 mUnk_100;
-    /* 104 */ STRUCT_PAD(0x104, 0x190);
+    /* 104 */ PAD(0x104, 0x190);
 #endif
-    /* 190 */ Mat3p mUnk_190;
+    /* 190 */ MtxFx33 mUnk_190;
     /* 1B4 */ ActorUnkNTTZ *mUnk_1B4;
     /* 1B8 */ unk32 mUnk_1B8;
     /* 1BC */ unk32 mUnk_1BC;

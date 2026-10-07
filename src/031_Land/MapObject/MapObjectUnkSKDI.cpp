@@ -85,8 +85,8 @@ bool MapObjectUnkSKDI::Init() {
     }
 
     this->mUnk_0D4.mUnk_08 = (var1 & ~0x7000) | 0x7000;
-    VecFx32_Init(FLOAT_TO_FX32(-0.5002f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(-0.5002f), &this->mUnk_0D4.mUnk_0C);
-    VecFx32_Init(FLOAT_TO_FX32(0.5f), FLOAT_TO_FX32(1.2f), FLOAT_TO_FX32(0.5f), &this->mUnk_0D4.mUnk_18);
+    VecFx32_Init(FX_F32_TO_FX32(-0.5002f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(-0.5002f), &this->mUnk_0D4.mUnk_0C);
+    VecFx32_Init(FX_F32_TO_FX32(0.5f), FX_F32_TO_FX32(1.2f), FX_F32_TO_FX32(0.5f), &this->mUnk_0D4.mUnk_18);
 
     if (this->mUnk_07C == 0x0) {
         this->func_ov031_02106190();
@@ -158,9 +158,9 @@ void MapObjectUnkSKDI::func_ov031_0210643c(unk32 param1) {
             this->func_ov031_02106678(MapObjUnkSKDIState_0, 0x0);
             break;
         case MapObjUnkSKDIState_1:
-            if (this->func_ov000_0209d3b4(0x0, FLOAT_TO_FX32(2.0f)) != 0x0) {
+            if (this->func_ov000_0209d3b4(0x0, FX_F32_TO_FX32(2.0f)) != 0x0) {
                 VecFx32 vec;
-                VecFx32_Init(this->mPos.x, this->mPos.y + FLOAT_TO_FX32(1.25f), this->mPos.z, &vec);
+                VecFx32_Init(this->mPos.x, this->mPos.y + FX_F32_TO_FX32(1.25f), this->mPos.z, &vec);
                 UnkStruct_027e0cec *data = data_027e0cec;
                 for (ActorBomb_unk *ptr = this->mUnk_04C; ptr != this->mUnk_04C + ARRAY_LEN(this->mUnk_04C); ++ptr) {
                     data->func_ov000_020a0140(ptr, &vec);
@@ -213,7 +213,7 @@ void MapObjectUnkSKDI::func_ov031_02106678(MapObjState state, unk32 param2) {
         return;
     }
     this->mState = state;
-    VecFx32_Init(this->mPos.x, this->mPos.y + FLOAT_TO_FX32(1.25f), this->mPos.z, &sp48);
+    VecFx32_Init(this->mPos.x, this->mPos.y + FX_F32_TO_FX32(1.25f), this->mPos.z, &sp48);
 
     switch (this->mState) {
         case MapObjUnkSKDIState_0:
@@ -316,7 +316,7 @@ void MapObjectUnkSKDI::func_ov031_02106a70() {
 class ActorUnk_MapObjectUnkSKDI_vfunc_1C : public Actor {
 public:
     /* 000 (base) */
-    /* 094 */ STRUCT_PAD(0x094, 0x128);
+    /* 094 */ PAD(0x094, 0x128);
     /* 128 */ unk32 mUnk_128;
     /* 12C */
 };

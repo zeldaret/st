@@ -1,5 +1,3 @@
-#define VECFX32_CTORS
-
 #include "Actor/ActorSpinut.hpp"
 
 #include "Actor/ActorManager.hpp"
@@ -30,7 +28,7 @@ extern "C" Actor *func_02016fbc(ActorId, VecFx32 *, unk32);
 extern "C" bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
 extern "C" void func_ov000_020986b4(s16 *param1, Actor_Derived2 *param2, unk32 param3);
 
-static const VecFx32 data_ov032_02122160(FLOAT_TO_FX32(1.7f), FLOAT_TO_FX32(0.5f), FLOAT_TO_FX32(1.7f));
+static const VecFx32Cpp data_ov032_02122160(FX_F32_TO_FX32(1.7f), FX_F32_TO_FX32(0.5f), FX_F32_TO_FX32(1.7f));
 static ActorUnkZLSL_AnimationTag data_ov032_02122184 = {.index = 0, .name = "walk", .unknown = 0x0};
 static ActorUnkZLSL_AnimationTag data_ov032_0212219c = {.index = 1, .name = "discover", .unknown = 0x1};
 static ActorUnkZLSL_AnimationTag data_ov032_0212216c = {.index = 0, .name = "KURI", .unknown = 0x1};
@@ -73,7 +71,7 @@ Actor *ActorProfileSpinut::Create() {
 
 ActorProfileSpinut::ActorProfileSpinut() :
     ActorProfile_Derived1(ActorId_Spinut) {
-    this->mUnk_04.Init(FLOAT_TO_FX32(0.4f));
+    this->mUnk_04.Init(FX_F32_TO_FX32(0.4f));
     this->vfunc_04()->mUnk_15 = true;
 }
 
@@ -93,7 +91,7 @@ ActorSpinut::ActorSpinut() :
     this->mUnk_228.mUnk_04 |= 0x8000;
     this->mUnk_294 = true;
 
-    VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_288);
+    VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_288);
 
     this->mUnk_38          = &this->mUnk_258.mUnk_00;
     this->mUnk_38->mUnk_08 = 0x01;
@@ -101,13 +99,13 @@ ActorSpinut::ActorSpinut() :
     this->mUnk_296.value = 0;
     this->mUnk_296.max   = 0;
 
-    VecFx32_Init(FLOAT_TO_FX32(1.0f), FLOAT_TO_FX32(1.0f), FLOAT_TO_FX32(1.0f), &this->mUnk_27C);
+    VecFx32_Init(FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), &this->mUnk_27C);
 
     this->func_ov000_0209862c(0x4);
 
     SET_FLAG(this->mFlags, ActorFlag_9);
 
-    this->mUnk_A4 = &data_ov032_02122160;
+    this->mUnk_A4 = &data_ov032_02122160.vec;
 }
 
 ActorSpinut::~ActorSpinut() {}
@@ -201,7 +199,7 @@ void ActorSpinut::Update() {
     this->Actor::func_ov000_02098b8c(0x1, &this->mUnk_268);
 
     if (this->mUnk_46 & 0x1) {
-        this->mVel.y = FLOAT_TO_FX32(0.0f);
+        this->mVel.y = FX_F32_TO_FX32(0.0f);
     }
 
     if (this->func_ov032_0211b17c()) {
@@ -286,8 +284,8 @@ void ActorSpinut::vfunc_2C(Actor_vfunc_30 *param1) {
 }
 
 void ActorSpinut::func_ov032_02119990() {
-    this->mVel.x   = FLOAT_TO_FX32(0.0f);
-    this->mVel.z   = FLOAT_TO_FX32(0.0f);
+    this->mVel.x   = FX_F32_TO_FX32(0.0f);
+    this->mVel.z   = FX_F32_TO_FX32(0.0f);
     this->mUnk_264 = 0x3800;
 
     this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
@@ -316,8 +314,8 @@ void ActorSpinut::func_ov032_02119a0c() {
 
             if (func_01ff930c(&this->mAngle.angle_s, this->mUnk_224, 0x71C)) {
                 u16 angle    = this->mAngle.angle_u;
-                this->mVel.x = MUL_FX32(SIN(angle), this->mUnk_220);
-                this->mVel.z = MUL_FX32(COS(angle), this->mUnk_220);
+                this->mVel.x = FX_MUL(SIN(angle), this->mUnk_220);
+                this->mVel.z = FX_MUL(COS(angle), this->mUnk_220);
 
                 if (this->func_ov032_0211b064(0x0)) {
                     this->SetState(ActorSpinutState_1);
@@ -343,8 +341,8 @@ void ActorSpinut::func_ov032_02119be8() {
 
     data_027e09a8->func_ov000_02071b30(0x9836, &this->mPos, 0x0);
 
-    this->mVel.x = FLOAT_TO_FX32(0.0f);
-    this->mVel.z = FLOAT_TO_FX32(0.0f);
+    this->mVel.x = FX_F32_TO_FX32(0.0f);
+    this->mVel.z = FX_F32_TO_FX32(0.0f);
 }
 
 // non-matching
@@ -379,8 +377,8 @@ void ActorSpinut::func_ov032_02119c80() {
 void ActorSpinut::func_ov032_02119d7c() {
     this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
     this->mTimer.Set(0, 20);
-    this->mVel.x = FLOAT_TO_FX32(0.0f);
-    this->mVel.z = FLOAT_TO_FX32(0.0f);
+    this->mVel.x = FX_F32_TO_FX32(0.0f);
+    this->mVel.z = FX_F32_TO_FX32(0.0f);
 }
 
 // non-matching
@@ -413,8 +411,8 @@ void ActorSpinut::func_ov032_02119e90() {
     }
 
     this->mUnk_220 = 0x0;
-    this->mVel.x   = FLOAT_TO_FX32(0.0f);
-    this->mVel.z   = FLOAT_TO_FX32(0.0f);
+    this->mVel.x   = FX_F32_TO_FX32(0.0f);
+    this->mVel.z   = FX_F32_TO_FX32(0.0f);
 }
 
 // non-matching (case 1)
@@ -434,7 +432,7 @@ void ActorSpinut::func_ov032_02119f40() {
             }
 
             this->mUnk_220                     = 0x148;
-            this->mUnk_110.vfunc_28()->mUnk_04 = FLOAT_TO_FX32(2.5f);
+            this->mUnk_110.vfunc_28()->mUnk_04 = FX_F32_TO_FX32(2.5f);
             ++this->mUnk_218;
             break;
         }
@@ -461,7 +459,7 @@ void ActorSpinut::func_ov032_02119f40() {
             }
 
             this->mUnk_220                     = 0x0;
-            this->mUnk_110.vfunc_28()->mUnk_04 = FLOAT_TO_FX32(1.0f);
+            this->mUnk_110.vfunc_28()->mUnk_04 = FX_F32_TO_FX32(1.0f);
 
             this->SetState(ActorSpinutState_9);
             break;
@@ -473,8 +471,8 @@ void ActorSpinut::func_ov032_02119f40() {
     }
 
     u16 angle    = this->mAngle.angle_u;
-    this->mVel.x = MUL_FX32(SIN(angle), this->mUnk_220);
-    this->mVel.z = MUL_FX32(COS(angle), this->mUnk_220);
+    this->mVel.x = FX_MUL(SIN(angle), this->mUnk_220);
+    this->mVel.z = FX_MUL(COS(angle), this->mUnk_220);
 
     this->func_ov032_0211b1e0();
 }
@@ -493,8 +491,8 @@ void ActorSpinut::func_ov032_0211a140() {
 
     this->mUnk_21C = var;
 
-    this->mVel.x = FLOAT_TO_FX32(0.0f);
-    this->mVel.z = FLOAT_TO_FX32(0.0f);
+    this->mVel.x = FX_F32_TO_FX32(0.0f);
+    this->mVel.z = FX_F32_TO_FX32(0.0f);
     this->mTimer.Set(0, 30);
 }
 
@@ -518,18 +516,18 @@ void ActorSpinut::func_ov032_0211a52c() {
             fx32 cosValue  = COS((u16) this->mAngle.angle_s);
             this->mUnk_220 = val;
 
-            this->mVel.x = MUL_FX32(sinValue, val);
-            this->mVel.z = MUL_FX32(cosValue, val);
+            this->mVel.x = FX_MUL(sinValue, val);
+            this->mVel.z = FX_MUL(cosValue, val);
 
             if (val > 0x0) {
                 return;
             }
 
-            this->mVel.x   = FLOAT_TO_FX32(0.0f);
-            this->mVel.z   = FLOAT_TO_FX32(0.0f);
+            this->mVel.x   = FX_F32_TO_FX32(0.0f);
+            this->mVel.z   = FX_F32_TO_FX32(0.0f);
             this->mUnk_220 = 0x0;
 
-            this->mUnk_110.vfunc_28()->mUnk_04 = FLOAT_TO_FX32(1.0f);
+            this->mUnk_110.vfunc_28()->mUnk_04 = FX_F32_TO_FX32(1.0f);
             ++this->mUnk_218;
             break;
         }
@@ -549,7 +547,7 @@ void ActorSpinut::func_ov032_0211a52c() {
             data_027e0cec->func_ov000_0209feac(0x880, &this->mPos, 0x2, 0x0, 0x0);
 
             this->mUnk_110.vfunc_28()->mUnk_02 = 0x0;
-            this->mUnk_110.vfunc_28()->mUnk_08 = FLOAT_TO_FX32(0.0f);
+            this->mUnk_110.vfunc_28()->mUnk_08 = FX_F32_TO_FX32(0.0f);
 
             data_027e09a8->func_ov000_02071b30(0x9836, &this->mPos, 0x0);
 
@@ -613,8 +611,8 @@ void ActorSpinut::func_ov032_0211a86c() {
 void ActorSpinut::func_ov032_0211a950() {
     this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
     this->mTimer.Set(0, 20);
-    this->mVel.x = FLOAT_TO_FX32(0.0f);
-    this->mVel.z = FLOAT_TO_FX32(0.0f);
+    this->mVel.x = FX_F32_TO_FX32(0.0f);
+    this->mVel.z = FX_F32_TO_FX32(0.0f);
 }
 
 void ActorSpinut::func_ov032_0211a9c8() {
@@ -674,7 +672,7 @@ void ActorSpinut::func_ov032_0211abc0() {
     }
 
     this->mUnk_38->mUnk_08 = 0x1;
-    VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_228.mUnk_10);
+    VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_228.mUnk_10);
 
     this->mUnk_248.func_ov000_02099a0c();
 
@@ -684,8 +682,8 @@ void ActorSpinut::func_ov032_0211abc0() {
 }
 
 void ActorSpinut::func_ov032_0211ac20() {
-    this->mVel.x = FLOAT_TO_FX32(0.0f);
-    this->mVel.z = FLOAT_TO_FX32(0.0f);
+    this->mVel.x = FX_F32_TO_FX32(0.0f);
+    this->mVel.z = FX_F32_TO_FX32(0.0f);
     this->mTimer.Set(0, 10);
     this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
 }
@@ -710,8 +708,8 @@ void ActorSpinut::func_ov032_0211ac94() {
 }
 
 void ActorSpinut::func_ov032_0211ad40() {
-    this->mVel.x = FLOAT_TO_FX32(0.0f);
-    this->mVel.z = FLOAT_TO_FX32(0.0f);
+    this->mVel.x = FX_F32_TO_FX32(0.0f);
+    this->mVel.z = FX_F32_TO_FX32(0.0f);
     this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
     this->mUnk_296.Set(0, gRandom.Next32(14));
 }
@@ -809,8 +807,8 @@ void ActorSpinut::func_ov032_0211b1e0() {
 // non-matching
 void ActorSpinut::func_ov032_0211b298() {
     if (this->mUnk_110.vfunc_30() != 0x1) {
-        if (this->mUnk_288.y <= FLOAT_TO_FX32(0.0f)) {
-            this->mUnk_288.z = FLOAT_TO_FX32(0.0f);
+        if (this->mUnk_288.y <= FX_F32_TO_FX32(0.0f)) {
+            this->mUnk_288.z = FX_F32_TO_FX32(0.0f);
             return;
         }
 
@@ -822,13 +820,13 @@ void ActorSpinut::func_ov032_0211b298() {
 
     fx32 value = this->mUnk_110.vfunc_28()->mUnk_08;
 
-    if (value > FLOAT_TO_FX32(1.0f) && value < FLOAT_TO_FX32(16.0f)) {
-        value -= FLOAT_TO_FX32(1.0f);
-        this->mUnk_288.y = MUL_FX32(value + MUL_FX32(-MUL_FX32(value, value), 0x92492493), 0x3B4);
+    if (value > FX_F32_TO_FX32(1.0f) && value < FX_F32_TO_FX32(16.0f)) {
+        value -= FX_F32_TO_FX32(1.0f);
+        this->mUnk_288.y = FX_MUL(value + FX_MUL(-FX_MUL(value, value), 0x92492493), 0x3B4);
         return;
     }
 
-    this->mUnk_288.y = FLOAT_TO_FX32(0.0f);
+    this->mUnk_288.y = FX_F32_TO_FX32(0.0f);
 }
 
 void ActorSpinut::func_ov032_0211b37c(Actor *thisx, Actor_vfunc_30 *param1) {
@@ -894,7 +892,7 @@ void ActorSpinut::vfunc_54(unk32 param1) {
 }
 
 ActorSpinut_268::ActorSpinut_268() {
-    VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_08);
+    VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_08);
 }
 
 ActorSpinut_268::~ActorSpinut_268() {}

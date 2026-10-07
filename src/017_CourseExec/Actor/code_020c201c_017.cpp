@@ -234,7 +234,7 @@ void Actor::func_ov017_020c26f8(unk32 param1, const VecFx32 *param2, unk32 param
         sp8.y = temp_r5->vfunc_28(&sp8, 0x00, 0x00);
     }
 
-    sp8.y = -FLOAT_TO_FX32(0.5f);
+    sp8.y = -FX_F32_TO_FX32(0.5f);
 
     switch (param1) {
         case 0:
@@ -266,7 +266,7 @@ void Actor::func_ov017_020c28b4(VecFx32 *param1, UnkAngleStruct param2, unk32 pa
     VecFx16 sp4;
 
     sp4.x = SIN((u16) (s16) -param2.angle_s);
-    sp4.y = FLOAT_TO_FX32(0.0f);
+    sp4.y = FX_F32_TO_FX32(0.0f);
     sp4.z = COS((u16) (s16) -param2.angle_s);
 
     data_027e0cec->func_ov000_0209ff24(0x8F7, param1, &sp4, param3);

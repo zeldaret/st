@@ -33,7 +33,7 @@ public:
     /* 1A */ unk8 mUnk_1A;
     /* 1B */ unk8 mUnk_1B;
     /* 1C */ UnkStruct_0204e5f8_1C mUnk_1C;
-    /* 2C */ STRUCT_PAD(0x2C, 0x38);
+    /* 2C */ PAD(0x2C, 0x38);
     /* 38 */ unk8 mUnk_38;
     /* 39 */ unk8 mUnk_39;
     /* 3A */ u16 mUnk_3A;

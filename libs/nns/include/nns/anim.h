@@ -44,7 +44,7 @@ typedef struct UnkAnimStruct1 {
 } UnkAnimStruct1; // size = 0x14
 
 typedef struct UnkAnimStruct2 {
-    /* 00 */ STRUCT_PAD(0x00, 0x0A);
+    /* 00 */ PAD(0x00, 0x0A);
     /* 0A */ unk16 unk_0A;
 } UnkAnimStruct2;
 

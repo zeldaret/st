@@ -6,7 +6,7 @@
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
 
-extern "C" Mat3p data_027e0130;
+extern "C" MtxFx33 data_027e0130;
 
 static MapObject_10_Pot data_ov031_021166b8;
 
@@ -19,10 +19,10 @@ Actor *ActorProfileUnkROCK::Create() {
 // non-matching
 ActorProfileUnkROCK::ActorProfileUnkROCK() :
     ActorProfileUnkROCK_Base(ActorId_ROCK) {
-    this->mUnk_04.Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.5f));
-    VecFx32_Init(FLOAT_TO_FX32(7.0017f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_D8.mUnk_0C);
-    this->mUnk_D8.mUnk_18 = FLOAT_TO_FX32(0.6f);
-    this->mUnk_D8.mUnk_1C = FLOAT_TO_FX32(1.2f);
+    this->mUnk_04.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.5f));
+    VecFx32_Init(FX_F32_TO_FX32(7.0017f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_D8.mUnk_0C);
+    this->mUnk_D8.mUnk_18 = FX_F32_TO_FX32(0.6f);
+    this->mUnk_D8.mUnk_1C = FX_F32_TO_FX32(1.2f);
 }
 
 ActorUnkROCK::ActorUnkROCK() :
@@ -96,10 +96,10 @@ void ActorUnkROCK::vfunc_2C(Actor_vfunc_30 *param1) {
         return;
     }
     VecFx32 vecSp18;
-    VecFx32_Init(FLOAT_TO_FX32(1.2f), FLOAT_TO_FX32(1.2f), FLOAT_TO_FX32(1.2f), &vecSp18);
+    VecFx32_Init(FX_F32_TO_FX32(1.2f), FX_F32_TO_FX32(1.2f), FX_F32_TO_FX32(1.2f), &vecSp18);
 
     VecFx32 vecSp0C = this->mPos;
-    vecSp0C.y += FLOAT_TO_FX32(0.8f);
+    vecSp0C.y += FX_F32_TO_FX32(0.8f);
 
     this->mUnk_94.vfunc_10(&vecSp18, &data_027e0130, &vecSp0C);
 

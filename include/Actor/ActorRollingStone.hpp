@@ -62,8 +62,8 @@ public:
     /* 0D4 */ ActorRollingStone_D4 mUnk_D4;
     /* 104 */ ActorRollingStone_104 mUnk_104;
     /* 108 */ u16 mUnk_108;
-    /* 10A */ STRUCT_PAD(0x10A, 0x10C);
-    /* 10C */ Mat3p mUnk_10C;
+    /* 10A */ PAD(0x10A, 0x10C);
+    /* 10C */ MtxFx33 mUnk_10C;
     /* 130 */ UnkStruct_PlayerGet_ec mUnk_130[0x2];
     /* 138 */ unk16 mUnk_138;
     /* 13C */ Cylinder mUnk_13C;

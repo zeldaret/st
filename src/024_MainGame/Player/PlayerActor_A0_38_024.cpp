@@ -82,7 +82,7 @@ void PlayerLinkActor_A0_38_18::vfunc_00() {
         Vec2us temp2;
         temp1.x = data_ov024_020d8228.x;
         temp1.y = data_ov024_020d8228.y;
-        temp2.x = (temp_r6 + 0x18) + ROUND_FX32(MUL_FX32(SIN(this->mUnk_10->mUnk_30), FLOAT_TO_FX32(16.0f)));
+        temp2.x = (temp_r6 + 0x18) + ROUND_FX32(FX_MUL(SIN(this->mUnk_10->mUnk_30), FX_F32_TO_FX32(16.0f)));
         temp2.y = temp_r7 - 0x18;
         temp2.y = temp2.y & 0xFFFF; //! TODO: fake match?
 

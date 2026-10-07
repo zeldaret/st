@@ -23,7 +23,7 @@ public:
     /* 054 */ ModelRender mUnk_054;
     /* 0B4 */ UnkSystem5 mUnk_0B4;
     /* 0D4 */ unk32 mUnk_0D4;
-    /* 0D8 */ STRUCT_PAD(0x0D8, 0x0F4);
+    /* 0D8 */ PAD(0x0D8, 0x0F4);
     /* 0F4 */ UnkSystem7 mUnk_0F4;
     /* 0F8 */ unk32 mUnk_0F8;
     /* 0FC */ unk32 mUnk_0FC;

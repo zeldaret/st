@@ -20,7 +20,7 @@
 
 struct SaveFile_00000_0000_Data_D8 {
     /* 00 */ unk32 unk_00;
-    /* 04 */ STRUCT_PAD(0x04, 0x40);
+    /* 04 */ PAD(0x04, 0x40);
     /* 40 */ UnkStruct_Param1 unk_40;
     /* 58 */ unk32 unk_58;
     /* 5C */ unk32 unk_5C;
@@ -270,7 +270,7 @@ struct SaveInfoData {
     /* 02A */ u16 mUnk_02A;
     /* 02C */ u16 mUnk_02C;
 
-    /* 028 */ STRUCT_PAD(0x30, 0x40);
+    /* 028 */ PAD(0x30, 0x40);
     /* 040 */ SaveInventory inventory;
     /* 0D8 */ SaveFile_00000_0000_Data_D8 unk_0D8;
     /* 158 */ SaveFile_00000_0000_Data_158 unk_158;
@@ -319,11 +319,11 @@ struct SaveTreasureData {
 };
 
 struct SaveFile_00000_1D00_Data {
-    /* 000 */ STRUCT_PAD(0x00, 0xFE);
+    /* 000 */ PAD(0x00, 0xFE);
     /* 0FE */ unk16 unk_0FE;
-    /* 100 */ STRUCT_PAD(0x100, 0x3C4);
+    /* 100 */ PAD(0x100, 0x3C4);
     /* 3C4 */ wchar_t unk_3C4[LENGTH_PLAYER_NAME + 1];
-    /* 3D6 */ STRUCT_PAD(0x3D6, 0x3FE);
+    /* 3D6 */ PAD(0x3D6, 0x3FE);
     /* 3FE */ u16 unk_3FE;
     /* 400 */
 };

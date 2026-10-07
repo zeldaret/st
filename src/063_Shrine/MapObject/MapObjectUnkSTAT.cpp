@@ -65,7 +65,7 @@ bool MapObjectUnkSTAT::Init(void) {
     this->func_ov063_0215fc40(val);
 
     if (mUnk_20.mParams[2] == 1) {
-        mPos.x += FLOAT_TO_FX32(.5f);
+        mPos.x += FX_F32_TO_FX32(.5f);
     }
 
     return true;

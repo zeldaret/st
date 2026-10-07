@@ -38,7 +38,7 @@ void UnkStruct_027e0ce0_40_Base_7C::func_ov017_020be2ec(UnkStruct_027e0ce0_40_Ba
     if (!param2 && param1->mTouchControl.mState.touch && this->func_ov000_020968fc()) {
         VecFx32 sp4;
 
-        func_01ffb974((this->mUnk_14 + FLOAT_TO_FX32(0.5999f)) - param1->mUnk_24.y, &param1->mUnk_30, &param1->mUnk_24, &sp4);
+        func_01ffb974((this->mUnk_14 + FX_F32_TO_FX32(0.5999f)) - param1->mUnk_24.y, &param1->mUnk_30, &param1->mUnk_24, &sp4);
         data_027e0cec->func_ov000_020a0140(&this->mUnk_08, &sp4);
         fx32 originalY = func_ov000_0205d524(0, this->mUnk_00)->y;
         fx32 y         = originalY;
@@ -47,7 +47,7 @@ void UnkStruct_027e0ce0_40_Base_7C::func_ov017_020be2ec(UnkStruct_027e0ce0_40_Ba
             y = data_027e0cd8->mUnk_0C->vfunc_28(&sp4, 1, 0);
         }
 
-        func_01ff916c(&this->mUnk_14, ClampValue(y, originalY, originalY + FLOAT_TO_FX32(3.6f)), 0x1000);
+        func_01ff916c(&this->mUnk_14, ClampValue(y, originalY, originalY + FX_F32_TO_FX32(3.6f)), 0x1000);
         return;
     }
 

@@ -22,8 +22,8 @@ MapObjectProfileUnkMTJR::MapObjectProfileUnkMTJR() :
     mUnk_D4.mUnk_08 = 0x7009;
 
     VecFx32_Init(0, 0, 0, &mUnk_D4.mUnk_0C);
-    mUnk_D4.mUnk_18.x = FLOAT_TO_FX32(0.7f);
-    mUnk_D4.mUnk_18.y = FLOAT_TO_FX32(2.4f);
+    mUnk_D4.mUnk_18.x = FX_F32_TO_FX32(0.7f);
+    mUnk_D4.mUnk_18.y = FX_F32_TO_FX32(2.4f);
 
     mUnk_06 = -1;
     UNSET_FLAG2(mUnk_1E, 0x0);
@@ -42,8 +42,8 @@ bool MapObjectUnkMTJR::Init() {
         return false;
     }
 
-    mPos.x += FLOAT_TO_FX32(.5f);
-    mPos.z += FLOAT_TO_FX32(.5f);
+    mPos.x += FX_F32_TO_FX32(.5f);
+    mPos.z += FX_F32_TO_FX32(.5f);
     mUnk_10 = GET_PROFILE_D4(MapObjectProfileUnkMTJR);
     mUnk_AC = 0x86F;
     mUnk_B0 = 4;
@@ -55,9 +55,9 @@ bool MapObjectUnkMTJR::Init() {
 // non-matching
 void MapObjectUnkMTJR::vfunc_08() {
     if (mUnk_A0 == 0) {
-        fx32 tmp_x        = mPos.x - FLOAT_TO_FX32(1.f) + (fx32) gRandom.Next32(0);
+        fx32 tmp_x        = mPos.x - FX_F32_TO_FX32(1.f) + (fx32) gRandom.Next32(0);
         fx32 tmp_y        = mPos.y + (fx32) gRandom.Next32(0x1801);
-        fx32 tmp_z        = mPos.z - FLOAT_TO_FX32(1.f) + (fx32) gRandom.Next32(0);
+        fx32 tmp_z        = mPos.z - FX_F32_TO_FX32(1.f) + (fx32) gRandom.Next32(0);
         VecFx32 stack_vec = {tmp_x, tmp_y, tmp_z};
         data_027e0cec->func_ov000_020a0220(&mUnk_A8, &stack_vec);
     }

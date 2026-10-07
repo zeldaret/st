@@ -21,7 +21,7 @@ public:
 class ActorUnkKEYN : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */ STRUCT_PAD(0x94, 0xA0);
+    /* 94 */ PAD(0x94, 0xA0);
     /* A0 */ ItemId mItemId;
 
     ActorUnkKEYN();

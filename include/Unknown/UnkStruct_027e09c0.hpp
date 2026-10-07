@@ -60,9 +60,9 @@ public:
     /* 770 */ void *mUnk_770;
     /* 774 */ unk32 mUnk_774;
     /* 778 */ unk32 mUnk_778;
-    /* 77C */ STRUCT_PAD(0x77C, 0x878);
+    /* 77C */ PAD(0x77C, 0x878);
     /* 878 */ unk32 mUnk_878;
-    /* 87C */ STRUCT_PAD(0x87C, 0x978);
+    /* 87C */ PAD(0x87C, 0x978);
     /* 978 */
 
     UnkStruct_027e09c0();

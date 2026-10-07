@@ -11,9 +11,9 @@
 class MapObjectUnkDRTY : public MapObjectUnkWPHL { //! TODO: fake?
 public:
     /* 00 (base) */
-    /* 8C */ STRUCT_PAD(0x8C, 0xCC);
+    /* 8C */ PAD(0x8C, 0xCC);
     /* CC */ unk32 mUnk_CC;
-    /* D0 */ STRUCT_PAD(0xD0, 0xF4);
+    /* D0 */ PAD(0xD0, 0xF4);
     /* F4 */
 
     MapObjectUnkDRTY();

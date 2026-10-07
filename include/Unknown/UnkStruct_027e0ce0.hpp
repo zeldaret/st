@@ -57,7 +57,7 @@ public:
 
 class UnkStruct_027e0ce0_1C_C8 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x20);
+    /* 00 */ PAD(0x00, 0x20);
     /* 20 */
 
     UnkStruct_027e0ce0_1C_C8(unk32 param1, unk32 param2);
@@ -66,7 +66,7 @@ public:
 
 class UnkStruct_027e0ce0_1C_D4 {
 public:
-    /* 0000 */ STRUCT_PAD(0x00, 0x6AD8);
+    /* 0000 */ PAD(0x00, 0x6AD8);
     /* 6AD8 */
 
     UnkStruct_027e0ce0_1C_D4();
@@ -74,7 +74,7 @@ public:
 
 class UnkStruct_027e0ce0_1C_D8 {
 public:
-    /* 0000 */ STRUCT_PAD(0x00, 0x6AB0);
+    /* 0000 */ PAD(0x00, 0x6AB0);
     /* 6AB0 */
 
     UnkStruct_027e0ce0_1C_D8();
@@ -107,7 +107,7 @@ public:
 
 class UnkStruct_027e0ce0_20 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+    /* 00 */ PAD(0x00, 0x0C);
     /* 0C */
 
     UnkStruct_027e0ce0_20();
@@ -116,9 +116,9 @@ public:
 
 class UnkStruct_027e0ce0_24 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x70);
+    /* 00 */ PAD(0x00, 0x70);
     /* 70 */ u16 mUnk_70[1]; //! TODO: confirm array size
-    /* 72 */ STRUCT_PAD(0x72, 0x88);
+    /* 72 */ PAD(0x72, 0x88);
     /* 88 */
 
     UnkStruct_027e0ce0_24();
@@ -166,7 +166,7 @@ public:
 
 class UnkStruct_027e0ce0_30_04 {
 private:
-    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+    /* 00 */ PAD(0x00, 0x0C);
     /* 0C */
 
 public:
@@ -176,7 +176,7 @@ public:
 
 class UnkStruct_027e0ce0_30_08 {
 private:
-    /* 00 */ STRUCT_PAD(0x00, 0x24);
+    /* 00 */ PAD(0x00, 0x24);
     /* 24 */
 
 public:
@@ -212,7 +212,7 @@ public:
 
 class UnkStruct_027e0ce0_34_20 {
 public:
-    /* 000 */ STRUCT_PAD(0x00, 0x960);
+    /* 000 */ PAD(0x00, 0x960);
     /* 960 */
 
     UnkStruct_027e0ce0_34_20();
@@ -234,7 +234,7 @@ public:
     /* 30 */ u32 mSpiritTrackFlags; //! TODO: rename (actually handles train parts?)
     /* 34 */ unk32 mUnk_34;
     /* 38 */ u32 mTrackFlags[3];
-    /* 44 */ STRUCT_PAD(0x44, 0xE8);
+    /* 44 */ PAD(0x44, 0xE8);
     /* E8 */ unk32 mUnk_E8;
     /* EC */ unk32 mUnk_EC;
     /* F0 */ unk32 mUnk_F0;
@@ -284,7 +284,7 @@ public:
 class UnkStruct_027e0ce0_3C {
 public:
     /* 00 */ VecFx32 mUnk_00;
-    /* 0C */ STRUCT_PAD(0x0C, 0x98);
+    /* 0C */ PAD(0x0C, 0x98);
     /* 98 */
 
     UnkStruct_027e0ce0_3C();
@@ -299,14 +299,14 @@ public:
 
 class UnkStruct_ov031_020f3310_00 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x06);
+    /* 00 */ PAD(0x00, 0x06);
     /* 06 */ u16 mUnk_06;
     /* 0A */
 };
 
 class UnkStruct_ov031_020f3310_04 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x24);
+    /* 00 */ PAD(0x00, 0x24);
     /* 24 */ unk32 mUnk_24[4];
     /* 34 */
 };
@@ -321,7 +321,7 @@ public:
 
 class UnkStruct_ov031_020e54d4 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x04);
+    /* 00 */ PAD(0x00, 0x04);
     /* 04 */ unk32 mUnk_04;
     /* 08 */ u32 mUnk_08;
 };
@@ -366,10 +366,10 @@ public:
 
 class UnkStruct_027e0ce0_38_58 {
 public:
-    /* 000 */ STRUCT_PAD(0x00, 0x338);
+    /* 000 */ PAD(0x00, 0x338);
     /* 338 */ unk32 mUnk_338; // rope pulled timer
     /* 33C */ unk32 mUnk_33C; // rope pull strength, 0 to 8
-    /* 340 */ STRUCT_PAD(0x340, 0x3D4);
+    /* 340 */ PAD(0x340, 0x3D4);
     /* 3D4 */
 
     UnkStruct_027e0ce0_38_58();
@@ -377,7 +377,7 @@ public:
 
 class UnkStruct_027e0ce0_38_5C {
 public:
-    /* 000 */ STRUCT_PAD(0x00, 0x1A4);
+    /* 000 */ PAD(0x00, 0x1A4);
     /* 1A4 */
 
     UnkStruct_027e0ce0_38_5C();
@@ -385,7 +385,7 @@ public:
 
 class UnkStruct_027e0ce0_38_60 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0xD8);
+    /* 00 */ PAD(0x00, 0xD8);
     /* D8 */
 
     UnkStruct_027e0ce0_38_60();
@@ -393,7 +393,7 @@ public:
 
 class UnkStruct_027e0ce0_38_158 {
 public:
-    /* 000 */ STRUCT_PAD(0x00, 0x45C);
+    /* 000 */ PAD(0x00, 0x45C);
     /* 45C */
 
     UnkStruct_027e0ce0_38_158();
@@ -403,7 +403,7 @@ public:
 
 class UnkStruct_027e0ce0_38_174 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x28);
+    /* 00 */ PAD(0x00, 0x28);
     /* 28 */
 
     UnkStruct_027e0ce0_38_174();
@@ -411,7 +411,7 @@ public:
 
 class UnkStruct_027e0ce0_38_19C {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x2C);
+    /* 00 */ PAD(0x00, 0x2C);
     /* 2C */
 
     UnkStruct_027e0ce0_38_19C();
@@ -419,7 +419,7 @@ public:
 
 class UnkStruct_027e0ce0_38_1C8 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x34);
+    /* 00 */ PAD(0x00, 0x34);
     /* 34 */
 
     UnkStruct_027e0ce0_38_1C8();
@@ -459,7 +459,7 @@ public:
     /* 150 */ unk32 mUnk_150;
     /* 154 */ unk32 mUnk_154;
     /* 158 */ UnkStruct_027e0ce0_38_158 *mUnk_158;
-    /* 15C */ STRUCT_PAD(0x15C, 0x170);
+    /* 15C */ PAD(0x15C, 0x170);
     /* 170 */ unk32 mUnk_170;
     /* 174 */ UnkStruct_027e0ce0_38_174 mUnk_174;
     /* 19C */ UnkStruct_027e0ce0_38_19C mUnk_19C;
@@ -489,7 +489,7 @@ public:
 class UnkStruct_027e0ce0_40_Base_14 {
 public:
     /* 00 */ TouchControl mTouchControl;
-    /* 22 */ STRUCT_PAD(0x22, 0x24);
+    /* 22 */ PAD(0x22, 0x24);
     /* 24 */ VecFx32 mUnk_24;
     /* 30 */ VecFx32 mUnk_30;
     /* 3C */ unk32 mUnk_3C;
@@ -568,7 +568,7 @@ struct UnkParamStruct1 {
 class UnkStruct_027e0ce0_40_Base_7C_04 {
 public:
     /* 00 */ unk32 mUnk_00;
-    /* 04 */ STRUCT_PAD(0x04, 0xB4);
+    /* 04 */ PAD(0x04, 0xB4);
     /* B4 */
 
     UnkStruct_027e0ce0_40_Base_7C_04();
@@ -635,7 +635,7 @@ public:
     /* 1C */ ActorRef mUnk_1C;
     /* 20 */ Vec2s mTouchPosLast;
     /* 24 */ unk32 mUnk_24;
-    /* 28 */ STRUCT_PAD(0x28, 0x48);
+    /* 28 */ PAD(0x28, 0x48);
     /* 48 */ ActorRef mUnk_48;
     /* 4C */ u16 mUnk_4C;
     /* 50 */
@@ -771,7 +771,7 @@ class UnkStruct_027e0ce0_40_108 : public UnkStruct_027e0ce0_40_108_Base {
 public:
     /* 00 (base) */
     /* 10 */ UnkStruct_027e0ce0_40_108_10 mUnk_10;
-    /* 18 */ STRUCT_PAD(0x16, 0x40);
+    /* 18 */ PAD(0x16, 0x40);
     /* 40 */ UnkStruct_027e0ce0_40_108_10 *mUnk_40;
     /* 44 */
 
@@ -791,7 +791,7 @@ public:
 
 class UnkStruct_027e0ce0_40_14C {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x94);
+    /* 00 */ PAD(0x00, 0x94);
     /* 94 */
 
     UnkStruct_027e0ce0_40_14C();
@@ -809,7 +809,7 @@ class UnkStruct_027e0ce0_40_150 {
 public:
     /* 00 */ bool mUnk_00;
     /* 01 */ bool mUnk_01;
-    /* 02 */ STRUCT_PAD(0x02, 0x0C);
+    /* 02 */ PAD(0x02, 0x0C);
     /* 0C */
 
     UnkStruct_027e0ce0_40_150();

@@ -13,10 +13,10 @@
 
 extern "C" void FlushGfxQueue();
 extern "C" void func_ov000_0205dbe4(u16);
-extern "C" void func_02024a84(Mat3p *param1);
+extern "C" void func_02024a84(MtxFx33 *param1);
 extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
 extern "C" unk32 func_01ff9258(fx32, fx32);
-extern "C" void func_01ffcb94(s16, s16, Mat3p *);
+extern "C" void func_01ffcb94(s16, s16, MtxFx33 *);
 extern "C" fx32 func_01ffb66c(unk32, unk32);
 extern "C" void func_02024fc4(fx16 sin, fx16 cos);
 
@@ -98,7 +98,7 @@ void UnkStruct_027e09b4::func_ov017_020c0a6c(const VecFx32 *param1, s32 param2, 
 }
 
 void UnkStruct_027e09b4::func_ov017_020c0b24(const VecFx32 *param1, s32 param2, s32 param3) {
-    Mat3p sp0;
+    MtxFx33 sp0;
     u16 temp_r7    = data_027e09ac->mUnk_014.mUnk_06;
     unk16 *temp_r0 = data_027e09b0->func_ov000_02072cb4(1);
     unk32 temp_r8;
@@ -136,7 +136,7 @@ void UnkStruct_027e09b4::func_ov017_020c0c50(u16 param1) {
     s16 temp_ip;
     s32 var_r1;
     s16 var_r2;
-    slong var_lr;
+    long var_lr;
     s16 var_r5;
     s16 var_r6;
     s32 temp_r7;

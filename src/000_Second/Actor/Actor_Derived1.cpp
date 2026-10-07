@@ -86,9 +86,9 @@ void Actor_Derived1::func_ov000_020a8df0(ActorRef param1, unk32 param2) {
     if (this->mRef != param1) {
         this->vfunc_B4();
         *(u32 *) &this->mUnk_0BC = param1.Get32();
-        this->mUnk_0C0.x         = 0;
-        this->mUnk_0C0.y         = 0;
-        this->mUnk_0C0.z         = 0;
+        this->mUnk_0C0.vec.x     = 0;
+        this->mUnk_0C0.vec.y     = 0;
+        this->mUnk_0C0.vec.z     = 0;
         this->mUnk_0B0 |= 1;
     }
 }
@@ -103,9 +103,9 @@ void Actor_Derived1::func_ov000_020a8e9c(VecFx32 *param1) {
     fx32 y = param1->y;
     fx32 x = param1->z;
 
-    this->mUnk_0C0.x = x;
-    this->mUnk_0C0.y = y;
-    this->mUnk_0C0.z = x;
+    this->mUnk_0C0.vec.x = x;
+    this->mUnk_0C0.vec.y = y;
+    this->mUnk_0C0.vec.z = x;
     this->mUnk_0BC.Reset();
 }
 

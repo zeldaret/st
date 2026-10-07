@@ -300,10 +300,10 @@ BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection,
                 if (!iVar6 || pProfile->mUnk_15) {
                     VecFx32 local_24;
                     local_24.x = func_ov000_02080068(posX);
-                    local_24.x += MUL_FX32(INT_TO_FX32(xMod16), 256);
+                    local_24.x += FX_MUL(INT_TO_FX32(xMod16), 256);
 
                     local_24.z = func_ov000_02080080(posY);
-                    local_24.z += MUL_FX32(INT_TO_FX32(yMod16), 256);
+                    local_24.z += FX_MUL(INT_TO_FX32(yMod16), 256);
 
                     local_24.y = 0x7FFFEFFF;
                     local_24.y = pDst->vfunc_28(&local_24, 0x01, 0x00);
@@ -472,7 +472,7 @@ BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pSection, UnkStruct
 
         if (pEntry->unk_10 & 0x008) {
             SET_FLAG2(pDst->mUnk_128, UnkFlags2_8);
-            var_r7 += FLOAT_TO_FX32(1.2f);
+            var_r7 += FX_F32_TO_FX32(1.2f);
         } else {
             UNSET_FLAG2(pDst->mUnk_128, UnkFlags2_8);
         }
@@ -569,10 +569,10 @@ BOOL ZMB_ParsePLYR(ZMBFileInfos *pFileInfos, ZMBSectionPLYR *pSection, UnkStruct
             s32 zMod16 = unk_08 % 16;
 
             fx32 z = func_ov000_02080080(tile_z);
-            z += MUL_FX32(INT_TO_FX32(zMod16), 256);
+            z += FX_MUL(INT_TO_FX32(zMod16), 256);
 
             fx32 x = func_ov000_02080068(tile_x);
-            x += MUL_FX32(INT_TO_FX32(xMod16), 256);
+            x += FX_MUL(INT_TO_FX32(xMod16), 256);
 
             VecFx32 local_20;
             local_20.x = x;

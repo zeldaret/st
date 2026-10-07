@@ -27,30 +27,30 @@ UnkStruct_ov031_02117210 data_ov031_02117210;
 UnkStruct_ov019_020d24c8_28_258_00 data_ov031_02117204(NULL, 0);
 
 UnkStruct_ov031_02117210::UnkStruct_ov031_02117210() {
-    this->mUnk_00[0].mUnk_0C.x = -FLOAT_TO_FX32(1.0f);
-    this->mUnk_00[0].mUnk_0C.y = FLOAT_TO_FX32(0.0f);
-    this->mUnk_00[0].mUnk_0C.z = -FLOAT_TO_FX32(0.35f);
-    this->mUnk_00[0].mUnk_18.x = FLOAT_TO_FX32(1.0f);
-    this->mUnk_00[0].mUnk_18.y = FLOAT_TO_FX32(2.4f);
-    this->mUnk_00[0].mUnk_18.z = FLOAT_TO_FX32(0.35f);
+    this->mUnk_00[0].mUnk_0C.x = -FX_F32_TO_FX32(1.0f);
+    this->mUnk_00[0].mUnk_0C.y = FX_F32_TO_FX32(0.0f);
+    this->mUnk_00[0].mUnk_0C.z = -FX_F32_TO_FX32(0.35f);
+    this->mUnk_00[0].mUnk_18.x = FX_F32_TO_FX32(1.0f);
+    this->mUnk_00[0].mUnk_18.y = FX_F32_TO_FX32(2.4f);
+    this->mUnk_00[0].mUnk_18.z = FX_F32_TO_FX32(0.35f);
     this->mUnk_00[0].mUnk_04 &= 0xFE;
     this->mUnk_00[0].mUnk_08 = 0x7009;
 
-    this->mUnk_00[1].mUnk_0C.x = -FLOAT_TO_FX32(1.0f);
-    this->mUnk_00[1].mUnk_0C.y = FLOAT_TO_FX32(0.0f);
-    this->mUnk_00[1].mUnk_0C.z = -FLOAT_TO_FX32(1.35f);
-    this->mUnk_00[1].mUnk_18.x = FLOAT_TO_FX32(1.0f);
-    this->mUnk_00[1].mUnk_18.y = FLOAT_TO_FX32(2.4f);
-    this->mUnk_00[1].mUnk_18.z = FLOAT_TO_FX32(0.35f);
+    this->mUnk_00[1].mUnk_0C.x = -FX_F32_TO_FX32(1.0f);
+    this->mUnk_00[1].mUnk_0C.y = FX_F32_TO_FX32(0.0f);
+    this->mUnk_00[1].mUnk_0C.z = -FX_F32_TO_FX32(1.35f);
+    this->mUnk_00[1].mUnk_18.x = FX_F32_TO_FX32(1.0f);
+    this->mUnk_00[1].mUnk_18.y = FX_F32_TO_FX32(2.4f);
+    this->mUnk_00[1].mUnk_18.z = FX_F32_TO_FX32(0.35f);
     this->mUnk_00[1].mUnk_04 &= 0xFE;
     this->mUnk_00[1].mUnk_08 = 0x7009;
 
-    this->mUnk_00[2].mUnk_0C.x = -FLOAT_TO_FX32(0.35f);
-    this->mUnk_00[2].mUnk_0C.y = FLOAT_TO_FX32(0.0f);
-    this->mUnk_00[2].mUnk_0C.z = -FLOAT_TO_FX32(1.0f);
-    this->mUnk_00[2].mUnk_18.x = FLOAT_TO_FX32(0.35f);
-    this->mUnk_00[2].mUnk_18.y = FLOAT_TO_FX32(2.4f);
-    this->mUnk_00[2].mUnk_18.z = FLOAT_TO_FX32(1.0f);
+    this->mUnk_00[2].mUnk_0C.x = -FX_F32_TO_FX32(0.35f);
+    this->mUnk_00[2].mUnk_0C.y = FX_F32_TO_FX32(0.0f);
+    this->mUnk_00[2].mUnk_0C.z = -FX_F32_TO_FX32(1.0f);
+    this->mUnk_00[2].mUnk_18.x = FX_F32_TO_FX32(0.35f);
+    this->mUnk_00[2].mUnk_18.y = FX_F32_TO_FX32(2.4f);
+    this->mUnk_00[2].mUnk_18.z = FX_F32_TO_FX32(1.0f);
     this->mUnk_00[2].mUnk_04 &= 0xFE;
     this->mUnk_00[2].mUnk_08 = 0x7009;
 }
@@ -84,12 +84,12 @@ MapObjectDoorBase::MapObjectDoorBase() :
 
 void MapObjectDoorBase::func_ov031_020fbf10(bool param1, bool param2) {
     if (this->IsOrientedVertically()) {
-        this->mPos.z += FLOAT_TO_FX32(0.5f);
+        this->mPos.z += FX_F32_TO_FX32(0.5f);
         Vec2bCpp local_16(1, 2);
         this->func_ov000_0209d2f0(5, 1, &local_16);
 
     } else {
-        this->mPos.x += FLOAT_TO_FX32(0.5f);
+        this->mPos.x += FX_F32_TO_FX32(0.5f);
         Vec2bCpp local_18(2, 1);
         this->func_ov000_0209d2f0(5, 1, &local_18);
     }
@@ -280,19 +280,19 @@ void MapObjectDoorBase::vfunc_0C() {
 void MapObjectDoorBase::vfunc_60() {
     switch (this->mState) {
         case MapObjDoorBaseState_0:
-            if (!this->mUnk_86 && !GET_FLAG(this->mFlags, MapObjFlag_1) && this->mUnk_6C <= FLOAT_TO_FX32(0.5f)) {
+            if (!this->mUnk_86 && !GET_FLAG(this->mFlags, MapObjFlag_1) && this->mUnk_6C <= FX_F32_TO_FX32(0.5f)) {
                 this->func_ov031_020fcf0c(1);
             }
             this->vfunc_54();
             break;
         case MapObjDoorBaseState_2:
-            if (this->mUnk_86 && !GET_FLAG(this->mFlags, MapObjFlag_1) && this->mUnk_6C <= FLOAT_TO_FX32(0.5f)) {
+            if (this->mUnk_86 && !GET_FLAG(this->mFlags, MapObjFlag_1) && this->mUnk_6C <= FX_F32_TO_FX32(0.5f)) {
                 this->func_ov031_020fcf0c(1);
                 this->vfunc_58();
             }
             break;
         case MapObjDoorBaseState_5:
-            if (GET_FLAG(this->mFlags, MapObjFlag_1) && this->mUnk_6C >= FLOAT_TO_FX32(0.5f)) {
+            if (GET_FLAG(this->mFlags, MapObjFlag_1) && this->mUnk_6C >= FX_F32_TO_FX32(0.5f)) {
                 this->func_ov031_020fcf0c(0);
             }
             break;
@@ -321,7 +321,7 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
             this->mUnk_82 = 0;
             this->mUnk_84 = 0x0D;
             this->mUnk_80 =
-                (MUL_FX32(INT_TO_FX32(this->mUnk_7A), func_01ffb428(this->mUnk_6C, 0x1000)) + FLOAT_TO_FX32(0.5f)) >> 12;
+                (FX_MUL(INT_TO_FX32(this->mUnk_7A), func_01ffb428(this->mUnk_6C, 0x1000)) + FX_F32_TO_FX32(0.5f)) >> 12;
 
             this->vfunc_50();
 
@@ -394,7 +394,7 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
             this->vfunc_7C();
 
             this->mUnk_80 =
-                (MUL_FX32(INT_TO_FX32(this->mUnk_78), func_01ffb428(0x1000 - this->mUnk_6C, 0x1000)) + FLOAT_TO_FX32(0.5f)) >>
+                (FX_MUL(INT_TO_FX32(this->mUnk_78), func_01ffb428(0x1000 - this->mUnk_6C, 0x1000)) + FX_F32_TO_FX32(0.5f)) >>
                 12;
 
             if (this->mUnk_8A) {
@@ -532,7 +532,7 @@ struct stack_struct {
     /* 08 */
 };
 
-extern "C" void func_01ff9fbc(Mat2p *, unk32, Mat2p *);
+extern "C" void func_01ff9fbc(MtxFx22 *, unk32, MtxFx22 *);
 extern fx16 data_0203f964[];
 
 void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1) {
@@ -557,12 +557,12 @@ void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1) {
     sp4 = *(ActorRef *) &this->mUnk_38;
 
     if (data_027e0998->vfunc_00(&this->mPos, &sp10, &sp4) && uVar4 != 0) {
-        Mat2p m;
+        MtxFx22 m;
 
         if (this->IsOrientedVertically()) {
-            Mat2p_InitRotation(&m, data_0203f964[0], data_0203f964[1]);
+            MtxFx22_InitRotation(&m, data_0203f964[0], data_0203f964[1]);
         } else {
-            Mat2p_InitIdentity(&m);
+            MtxFx22_InitIdentity(&m);
         }
 
         func_01ff9fbc(&m, data_027e0998->func_ov000_02061a70(), &m);
@@ -639,12 +639,12 @@ void MapObjectDoorBase::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param3) {
     *param3 = this->mAngle.angle_s;
 
     if (param1 != 0) {
-        local_20.x = MUL_FX32(SIN((u16) this->mAngle.angle_s), 0x1000);
-        local_20.z = MUL_FX32(COS((u16) this->mAngle.angle_s), 0x1000);
+        local_20.x = FX_MUL(SIN((u16) this->mAngle.angle_s), 0x1000);
+        local_20.z = FX_MUL(COS((u16) this->mAngle.angle_s), 0x1000);
         local_20.y = 0;
     } else {
-        local_20.x = MUL_FX32(SIN((u16) this->mAngle.angle_s), 0xC00);
-        local_20.z = MUL_FX32(COS((u16) this->mAngle.angle_s), 0xC00);
+        local_20.x = FX_MUL(SIN((u16) this->mAngle.angle_s), 0xC00);
+        local_20.z = FX_MUL(COS((u16) this->mAngle.angle_s), 0xC00);
         local_20.y = 0;
 
         *param3 += -DEG_TO_ANG(180);
@@ -695,7 +695,7 @@ void MapObjectDoorBase::vfunc2_08() {
     bool result = data_027e0ce0->func_01fff1a4();
     temp_r0     = this->mPos.x;
     temp_r1     = this->mPos.y;
-    temp_r2     = this->mPos.z - FLOAT_TO_FX32(3.0f);
+    temp_r2     = this->mPos.z - FX_F32_TO_FX32(3.0f);
 
     if (!result) {
         this->mUnk_4C.x = temp_r0;
@@ -708,7 +708,7 @@ void MapObjectDoorBase::vfunc2_08() {
         return;
     }
 
-    this->mUnk_4C.x = temp_r0 - FLOAT_TO_FX32(1.0f);
+    this->mUnk_4C.x = temp_r0 - FX_F32_TO_FX32(1.0f);
     this->mUnk_4C.y = temp_r1;
     this->mUnk_4C.z = temp_r2;
 
@@ -716,9 +716,9 @@ void MapObjectDoorBase::vfunc2_08() {
     // *temp_r3_2  = this->mUnk_4A;
     data_027e0ce0->func_ov000_0208bbd4(this->mUnk_04, &this->mUnk_4C, this->mUnk_4A);
 
-    this->mUnk_5C.x = this->mPos.x + FLOAT_TO_FX32(1.0f);
+    this->mUnk_5C.x = this->mPos.x + FX_F32_TO_FX32(1.0f);
     this->mUnk_5C.y = this->mPos.y;
-    this->mUnk_5C.z = this->mPos.z - FLOAT_TO_FX32(3.0f);
+    this->mUnk_5C.z = this->mPos.z - FX_F32_TO_FX32(3.0f);
     this->mUnk_5A   = this->mUnk_4A;
 
     // temp_r2_2   = sp - 4;

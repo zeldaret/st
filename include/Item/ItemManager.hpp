@@ -53,7 +53,7 @@ public:
     /* 08 */ UnkStruct_ItemManager_20_00_08 mUnk_08;
     /* 1C */ unk32 mUnk_1C;
     /* 20 */ UnkStruct_ItemManager_20_00_20 mUnk_20;
-    /* 24 */ STRUCT_PAD(0x24, 0x2C);
+    /* 24 */ PAD(0x24, 0x2C);
     /* 2C */ unk16 mUnk_2C;
     /* 2E */ unk16 mUnk_2E; // pad?
     /* 30 */
@@ -78,7 +78,7 @@ public:
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ bool mUnk_0C;
-    /* 0D */ STRUCT_PAD(0x0D, 0x10);
+    /* 0D */ PAD(0x0D, 0x10);
     /* 10 */
 
     UnkStruct_ItemManager_20_04_08_310(); //! TODO: params
@@ -89,14 +89,14 @@ public:
     /* 000 (vtable) */
     /* 004 (base) */
     /* 00C */ unk32 mUnk_00C;
-    /* 010 */ STRUCT_PAD(0x10, 0x310);
+    /* 010 */ PAD(0x10, 0x310);
     /* 310 */ UnkStruct_ItemManager_20_04_08_310 mUnk_310;
     /* 320 */ unk32 mUnk_320;
     /* 324 */ unk16 mUnk_324;
     /* 326 */ bool mUnk_326;
     /* 327 */ bool mUnk_327;
     /* 328 */ unk32 mUnk_328;
-    /* 32C */ STRUCT_PAD(0x32C, 0x3CC);
+    /* 32C */ PAD(0x32C, 0x3CC);
     /* 3CC */ void *mUnk_3CC;
     /* 3D0 */ unk32 mUnk_3D0;
     /* 3D4 */

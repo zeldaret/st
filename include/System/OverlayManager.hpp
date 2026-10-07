@@ -7,6 +7,9 @@
 
 typedef u32 ItemFlag;
 
+#define EXTERN_OVERLAY_ID(name_or_index) extern u32 OVERLAY_##name_or_index##_ID;
+#define OVERLAY_ID(name_or_index) ((u32) & OVERLAY_##name_or_index##_ID)
+
 EXTERN_OVERLAY_ID(0);
 EXTERN_OVERLAY_ID(1);
 EXTERN_OVERLAY_ID(2);

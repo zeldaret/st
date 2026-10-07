@@ -36,7 +36,7 @@ Actor *ActorProfilePot::Create() {
 
 ActorProfilePot::ActorProfilePot() :
     ActorProfile(ActorId_NTUB) {
-    this->mUnk_04.size = FLOAT_TO_FX32(0.5f);
+    this->mUnk_04.size = FX_F32_TO_FX32(0.5f);
 }
 
 ActorPot::ActorPot() :

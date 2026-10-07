@@ -28,15 +28,15 @@ typedef struct G3d_NameList_Header_ {
 } G3d_NameList_Header;
 
 typedef struct G3d_InvBindMtx_ {
-    /* 00 */ Mat4x3p mtx;
-    /* 30 */ Mat3p unkMtx;
+    /* 00 */ MtxFx43 mtx;
+    /* 30 */ MtxFx33 unkMtx;
     /* 54 */
 } G3d_InvBindMtx;
 
 typedef struct G3d_BoneMtxStruct_ {
     /* 00 */ u32 flag;
     /* 04 */ u8 mUnk_04[0x24];
-    /* 28 */ Mat3p rot;
+    /* 28 */ MtxFx33 rot;
     /* 58 */ u8 mUnk_58[0xC];
     /* 64 */
 } G3d_BoneMtxStruct;

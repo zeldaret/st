@@ -57,7 +57,7 @@ typedef union MtxFx22 {
     fx32 values[4];
 } MtxFx22;
 
-typedef union MtxFx3 {
+typedef union MtxFx33 {
     struct {
         /* 00 */ fx32 _00;
         /* 04 */ fx32 _01;

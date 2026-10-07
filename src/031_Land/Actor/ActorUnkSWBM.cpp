@@ -16,10 +16,11 @@ struct UnkStruct_ov031_020e5d18_00 {
 extern "C" void func_01ffe6c4(Actor **, ActorRef, VecFx32 *, VecFx32 *, s32, VecFx32 *, UnkStruct_ov031_Items_00_Base *);
 extern "C" bool func_ov000_02080998(VecFx32 *);
 
-extern "C" void /*GX_*/ func_02024a84(Mat3p *param1);
+extern "C" void /*GX_*/ func_02024a84(MtxFx33 *param1);
 extern "C" void FlushGfxQueue();
 
-static const Cylinder data_ov031_02113114(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.35f));
+static const Cylinder data_ov031_02113114(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f),
+                                          FX_F32_TO_FX32(0.35f));
 
 // non-matching
 bool ActorUnkSWBM_94::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
@@ -39,7 +40,7 @@ bool ActorUnkSWBM_98::vfunc_0C(Actor *param1, VecFx32 *vector) {
     u16 angle = this->mUnk_2C->mAngle.angle_s;
 
     vector->x = SIN(angle);
-    vector->y = FLOAT_TO_FX32(0.0f);
+    vector->y = FX_F32_TO_FX32(0.0f);
     vector->z = COS(angle);
     return retValue;
 }
@@ -74,10 +75,10 @@ void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2) {
     }
     REG_GFX_FIFO_TEXTURE_PALETTE = ((u32) (textureParam[0x8].y << 0x10) >> 0xD) >> (4 - var_r2);
 
-    Mat3p mat;
+    MtxFx33 mat;
 
     u16 angle = actor->mAngle.angle_s;
-    Mat3p_InitYRotation(&mat, SIN(angle), COS(angle));
+    MtxFx33_InitYRotation(&mat, SIN(angle), COS(angle));
 
     s16 var_r8 = 0xB33;
     s32 var_r9 = 0x1F - ((0xE - actor->mUnk_0E0) * 2);
@@ -104,8 +105,8 @@ Actor *ActorProfileUnkSWBM::Create() {
 
 ActorProfileUnkSWBM::ActorProfileUnkSWBM() :
     ActorProfile(ActorId_SWBM) {
-    VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_04.pos);
-    this->mUnk_04.size = FLOAT_TO_FX32(0.35f);
+    VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_04.pos);
+    this->mUnk_04.size = FX_F32_TO_FX32(0.35f);
 }
 
 ActorUnkSWBM::ActorUnkSWBM() :
@@ -125,11 +126,11 @@ bool ActorUnkSWBM::Init(unk32 param1) {
 
     this->mUnk_34 = (Cylinder *) &data_ov031_02113114;
     VecFx32_Copy(&this->mPos, &this->mUnk_098.mUnk_0C.pos);
-    this->mUnk_098.mUnk_0C.size = FLOAT_TO_FX32(0.35f);
+    this->mUnk_098.mUnk_0C.size = FX_F32_TO_FX32(0.35f);
 
-    this->mVel.x = MUL_FX32(SIN((u16) this->mAngle.angle_s), 0xB33);
-    this->mVel.z = MUL_FX32(COS((u16) this->mAngle.angle_s), 0xB33);
-    this->mVel.y = FLOAT_TO_FX32(0.0f);
+    this->mVel.x = FX_MUL(SIN((u16) this->mAngle.angle_s), 0xB33);
+    this->mVel.z = FX_MUL(COS((u16) this->mAngle.angle_s), 0xB33);
+    this->mVel.y = FX_F32_TO_FX32(0.0f);
     return true;
 }
 
@@ -165,7 +166,7 @@ void ActorUnkSWBM::func_ov031_020e6d80(unk32 param1) {
         s16 angle = this->mAngle.angle_s - DEG_TO_ANG(180);
 
         vecSp08.x = SIN((u16) angle);
-        vecSp08.y = FLOAT_TO_FX32(0.0f);
+        vecSp08.y = FX_F32_TO_FX32(0.0f);
         vecSp08.z = COS((u16) angle);
 
         data_027e0cec->func_ov000_0209ff24(0x8E1, &this->mPos, &vecSp08, 0x1);
@@ -272,7 +273,7 @@ void ActorUnkSWBM::vfunc_24() {
 }
 
 // non-matching
-void ActorUnkSWBM::func_ov031_020e718c(VecFx32 *param0, Mat3p *param1, s32 param2, s16 param3, u16 param4, s16 param5) {
+void ActorUnkSWBM::func_ov031_020e718c(VecFx32 *param0, MtxFx33 *param1, s32 param2, s16 param3, u16 param4, s16 param5) {
     if (param2 <= 0) {
         return;
     }

@@ -19,13 +19,13 @@ void PlayerActorBase_70::func_ov017_020bbaa8(VecFx32 *param1, UnkAngleStruct par
         if (this->mUnk_114 != NULL) {
             VecFx32 sp4;
 
-            func_01ffb714(&this->mUnk_114[PlayerCharacter_Link].wColumn, param1, &sp4);
+            func_01ffb714((VecFx32 *) &this->mUnk_114[PlayerCharacter_Link]._30, param1, &sp4);
             VecFx32_Copy(&sp4, &this->mUnk_0E4.mUnk_0C[PlayerCharacter_Link]);
 
-            func_01ffb714(&this->mUnk_114[PlayerCharacter_Phantom].wColumn, param1, &sp4);
+            func_01ffb714((VecFx32 *) &this->mUnk_114[PlayerCharacter_Phantom]._30, param1, &sp4);
             VecFx32_Copy(&sp4, &this->mUnk_0E4.mUnk_0C[PlayerCharacter_Phantom]);
 
-            func_01ffb714(&this->mUnk_114[PlayerCharacter_Zelda].wColumn, param1, &sp4);
+            func_01ffb714((VecFx32 *) &this->mUnk_114[PlayerCharacter_Zelda]._30, param1, &sp4);
             VecFx32_Copy(&sp4, &this->mUnk_0E4.mUnk_0C[PlayerCharacter_Zelda]);
 
             if (this->mUnk_126 != 0) {
@@ -56,7 +56,7 @@ extern unk16 data_ov000_020ab318;
 extern unk16 data_ov000_020ab31c;
 
 struct UnkStruct_ov021_02106c5c {
-    /* 00 */ STRUCT_PAD(0x00, 0x13);
+    /* 00 */ PAD(0x00, 0x13);
     /* 13 */ u8 unk_13;
 };
 extern "C" const UnkStruct_ov021_02106c5c *func_ov021_020ea868(int index);

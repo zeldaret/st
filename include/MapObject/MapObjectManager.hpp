@@ -32,7 +32,7 @@ public:
     /* 1E */ unk16 mUnk_1E;
     /* 20 */ unk16 mUnk_20;
     /* 22 */ unk16 mUnk_22;
-    /* 24 */ STRUCT_PAD(0x24, 0x6C);
+    /* 24 */ PAD(0x24, 0x6C);
     /* 6C */ void *mUnk_6C;
     /* 70 */
 

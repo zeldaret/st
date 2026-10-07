@@ -127,16 +127,16 @@ void UnkStruct_027e0ce0_40::func_ov101_02183024(const UnkStruct_ov001_020c40f4 *
         //! TODO: fake match?
         switch ((u32) ((sp40.mUnk_0C + 0x2000) << 0x10) >> 0x1E) {
             case 0x03:
-                sp34.z += FLOAT_TO_FX32(0.5f);
+                sp34.z += FX_F32_TO_FX32(0.5f);
                 break;
             case 0x01:
-                sp34.z -= FLOAT_TO_FX32(0.5f);
+                sp34.z -= FX_F32_TO_FX32(0.5f);
                 break;
             case 0x02:
-                sp34.x -= FLOAT_TO_FX32(0.5f);
+                sp34.x -= FX_F32_TO_FX32(0.5f);
                 break;
             case 0x00:
-                sp34.x += FLOAT_TO_FX32(0.5f);
+                sp34.x += FX_F32_TO_FX32(0.5f);
                 break;
             default:
                 break;
@@ -156,16 +156,16 @@ void UnkStruct_027e0ce0_40::func_ov101_02183024(const UnkStruct_ov001_020c40f4 *
             //! TODO: fake match?
             switch ((u32) ((sp1C.mUnk_0C + 0x2000) << 0x10) >> 0x1E) {
                 case 0x03:
-                    sp10.z -= FLOAT_TO_FX32(0.5f);
+                    sp10.z -= FX_F32_TO_FX32(0.5f);
                     break;
                 case 0x01:
-                    sp10.z += FLOAT_TO_FX32(0.5f);
+                    sp10.z += FX_F32_TO_FX32(0.5f);
                     break;
                 case 0x02:
-                    sp10.x += FLOAT_TO_FX32(0.5f);
+                    sp10.x += FX_F32_TO_FX32(0.5f);
                     break;
                 case 0x00:
-                    sp10.x -= FLOAT_TO_FX32(0.5f);
+                    sp10.x -= FX_F32_TO_FX32(0.5f);
                     break;
                 default:
                     break;

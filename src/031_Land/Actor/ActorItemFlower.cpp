@@ -37,7 +37,7 @@ Actor *ActorProfileItemFlower::Create() {
 
 ActorProfileItemFlower::ActorProfileItemFlower() :
     ActorProfile(ActorId_ItemFlower) {
-    this->mUnk_04.size = FLOAT_TO_FX32(0.25f);
+    this->mUnk_04.size = FX_F32_TO_FX32(0.25f);
 }
 
 ActorItemFlower::ActorItemFlower() :
@@ -112,7 +112,7 @@ void ActorItemFlower::func_ov031_020f1230() {
     data_027e09a8->func_ov000_02071eac(&this->mPos);
 
     VecFx32 vecSp08;
-    VecFx32_Init(this->mPos.x, this->mPos.y + FLOAT_TO_FX32(0.5f), this->mPos.z, &vecSp08);
+    VecFx32_Init(this->mPos.x, this->mPos.y + FX_F32_TO_FX32(0.5f), this->mPos.z, &vecSp08);
 
     data_027e0cec->func_ov000_0209feac(0x875, &vecSp08, 0x4, 0x0, 0x0);
     data_027e0cec->func_ov000_0209feac(0x876, &vecSp08, 0x4, 0x0, 0x0);

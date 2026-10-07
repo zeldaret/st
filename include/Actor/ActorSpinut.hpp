@@ -34,7 +34,7 @@ enum ActorSpinutState_ {
 class ActorSpinut_268 : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x04, 0x08);
+    /* 04 */ PAD(0x04, 0x08);
     /* 08 */ VecFx32 mUnk_08;
     /* 14 */
 
@@ -50,7 +50,7 @@ public:
     /* 00 (base) */
     /* 2C */ UnkSystem5 mUnk_2C;
     /* 4C */ unk32 mUnk_4C;
-    /* 50 */ STRUCT_PAD(0x50, 0x6C);
+    /* 50 */ PAD(0x50, 0x6C);
     /* 6C */ UnkSystem5 mUnk_6C;
     /* 8C */ unk32 mUnk_8C;
     /* 90 */
@@ -94,12 +94,12 @@ public:
 class ActorSpinut : public Actor_Derived2 {
 public:
     /* 000 (base) */
-    /* 0AE */ STRUCT_PAD(0x0AE, 0x0B0);
+    /* 0AE */ PAD(0x0AE, 0x0B0);
     /* 0B0 */ ModelRender_ov000_020b1a1c mUnk_0B0;
     /* 110 */ ActorSpinut_110 mUnk_110;
-    /* 1A0 */ STRUCT_PAD(0x1A0, 0x1BC);
+    /* 1A0 */ PAD(0x1A0, 0x1BC);
     /* 1BC */ ActorSpinut_1BC mUnk_1BC;
-    /* 1FC */ STRUCT_PAD(0x1FC, 0x218);
+    /* 1FC */ PAD(0x1FC, 0x218);
     /* 218 */ unk16 mUnk_218;
     /* 21C */ unk32 mUnk_21C;
     /* 220 */ unk32 mUnk_220;

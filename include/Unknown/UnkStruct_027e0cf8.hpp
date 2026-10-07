@@ -18,7 +18,7 @@ struct UnkStruct_027e0cf8_00_18_00 {
 struct UnkStruct_027e0cf8_00_18 {
     /* 0000 */ UnkStruct_027e0cf8_00_18_00 mUnk_00[48];
     /* 18C0 */ Vec2p mUnk_18C0;
-    /* 18C8 */ STRUCT_PAD(0x18C8, 0x2220);
+    /* 18C8 */ PAD(0x18C8, 0x2220);
     /* 2220 */
 };
 
@@ -69,7 +69,7 @@ public:
 
 class UnkStruct_027e0cf8_04 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x1C);
+    /* 00 */ PAD(0x00, 0x1C);
 
     UnkStruct_027e0cf8_04();
 

@@ -41,7 +41,7 @@ public:
 class ActorUnkSWBM_C8 : public UnkStruct_PlayerGet_74_base {
 public:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x04, 0x14);
+    /* 04 */ PAD(0x04, 0x14);
     /* 14 */ ActorUnkSWBM *mUnk_14;
     /* 18 */
 
@@ -74,7 +74,7 @@ public:
     void func_ov031_020e6d48();
     void func_ov031_020e6d80(unk32 param1);
     void func_ov031_020e6e84(ActorState state);
-    static void func_ov031_020e718c(VecFx32 *param0, Mat3p *param1, s32 param2, s16 param3, u16 param4, s16 param5);
+    static void func_ov031_020e718c(VecFx32 *param0, MtxFx33 *param1, s32 param2, s16 param3, u16 param4, s16 param5);
 };
 
 class ActorProfileUnkSWBM : public ActorProfile {

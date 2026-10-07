@@ -26,7 +26,7 @@ bool ActorUnkSKDO::Init(unk32 param1) {
 void ActorUnkSKDO::Setup() {
     ActorUnkSKDO_ov031_02115ce8 stack(MapObjectId_SKDI);
     stack.mUnk_08 = this->mPos;
-    stack.mUnk_14 = FLOAT_TO_FX32(2.0f);
+    stack.mUnk_14 = FX_F32_TO_FX32(2.0f);
 
     MapObject **mapObject = gpMapObjManager->func_01fff520(&stack, gpMapObjManager->mMapObjTable);
 

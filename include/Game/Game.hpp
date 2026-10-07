@@ -4,6 +4,7 @@
 #include "Game/GameModeStartUp.hpp"
 #include "Save/SaveManager.hpp"
 #include "global.h"
+#include "nitro/os.h"
 #include "types.h"
 
 typedef void (*GameUnkCallback1)(void);
@@ -15,8 +16,8 @@ class GameModeFileSelect;
 class UnkStruct_02049a2c_1C {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ STRUCT_PAD(0x08, 0xCC);
+    /* 04 */ OSThread mUnk_04;
+    /* C0 */ PAD(0xC0, 0xCC);
     /* CC */
 
     UnkStruct_02049a2c_1C();

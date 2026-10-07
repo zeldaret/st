@@ -21,11 +21,11 @@ public:
 class ActorUnkNSSW : public Actor {
 public:
     /* 000 (base) */
-    /* 094 */ STRUCT_PAD(0x094, 0x0BC);
+    /* 094 */ PAD(0x094, 0x0BC);
     /* 0BC */ unk32 mUnk_0BC;
-    /* 0C0 */ STRUCT_PAD(0x0C0, 0x184);
+    /* 0C0 */ PAD(0x0C0, 0x184);
 #if IS_JP
-    /* 184 */ STRUCT_PAD(0x184, 0x190);
+    /* 184 */ PAD(0x184, 0x190);
     /* 190 */ MapObjectUnkSWSW *mUnk_184_eur;
     /* 194 */ MapObjectUnkSWSW *mUnk_188_eur;
 #else

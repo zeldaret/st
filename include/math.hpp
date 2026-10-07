@@ -2,16 +2,117 @@
 
 #include <nitro/math.h>
 
-//! TODO: find a way to make VecFx32 work in ctor init lists
-struct Vec3p {
-    fx32 x, y, z;
+// some kind of angle conversion? only used for angle values so far
+#define MUL_FX32_FX64(a, b) (fx32)(((((a) * (b)) + 0x80000000000LL) >> 32))
+#define UNK_FX_OPERATION_1(a) (MUL_FX32_FX64((u64) (a), 0xB60B60B60BLL) >> FX32_SHIFT)
+#define MUL_FX32_U(a, b) (fx32)((((u64) (a)) * ((u64) (b)) + 0x800) >> FX32_SHIFT)
+#define UNK_FX_OPERATION_2(a) MUL_FX32_U((u64) (a), FX_F32_TO_FX32(1.2f))
+#define DEG_TO_ANG(n) ((n) * 0x10000 / 360)
+#define DEG_TO_ANG_ALT(n) DEG_TO_ANG((u64) (n))
 
-    Vec3p(fx32 X, fx32 Y, fx32 Z) {
-        x = X;
-        y = Y;
-        z = Z;
+#define ABS(x) ((x) < 0 ? -(x) : (x))
+#define ABS2(x) ((x) >= 0 ? (x) : -(x))
+#define CLAMP(x, min, max) ((x) > (max) ? (max) : (x) < (min) ? (min) : (x))
+#define CLAMP2(x, min, max) ((x) > (max) ? (max) : (x) >= (min) ? (x) : (min))
+#define CLAMP3(x, min, max) ((x) >= (max) ? (max) : (x) <= (min) ? (min) : (x))
+#define POW_2(x) (x * x)
+
+static inline const s32 ClampValue(s32 value, const s32 min, const s32 max) {
+    if (value > max) {
+        value = max;
+    } else if (value < min) {
+        value = min;
+    }
+
+    return value;
+}
+
+static inline void ClampValue16(s16 *value, const s32 min, const s32 max) {
+    if (*value > max) {
+        *value = max;
+    } else if (*value < min) {
+        *value = min;
+    }
+}
+
+// C++ wrapper for VecFx32
+struct VecFx32Cpp {
+    VecFx32 vec;
+
+    VecFx32Cpp() {}
+    VecFx32Cpp(fx32 X, fx32 Y, fx32 Z) {
+        vec.x = X;
+        vec.y = Y;
+        vec.z = Z;
     }
 };
+
+// C++ wrapper for VecFx16
+struct VecFx16Cpp {
+    VecFx16 vec;
+
+    VecFx16Cpp() {}
+    VecFx16Cpp(fx16 X, fx16 Y, fx16 Z) {
+        vec.x = X;
+        vec.y = Y;
+        vec.z = Z;
+    }
+};
+
+union Vec2p {
+    struct {
+        /* 0 */ fx32 x;
+        /* 4 */ fx32 y;
+        /* 8 */
+    };
+    fx32 coords[2];
+};
+
+#define Vec2p_Add(a, b, dst) Vec2_Add(Vec2p, a, b, dst)
+#define Vec2p_Sub(a, b, dst) Vec2_Sub(Vec2p, a, b, dst)
+#define Vec2p_Set(a, dst) Vec2_Set(Vec2p, a, dst)
+#define Vec2p_Clear(dst) Vec2_Clear(fx32, dst)
+static inline void Vec2p_Copy(const Vec2p *src, Vec2p *dst) {
+#if __MWERKS__
+    dst->coords = src->coords;
+#else
+    dst->x = src->x;
+    dst->y = src->y;
+#endif
+}
+
+#if __MWERKS__
+    #define Vec2_Set(a, dst)             \
+        {                                \
+            (dst)->coords = (a)->coords; \
+        }                                \
+        ((void) 0)
+#else
+    #define Vec2_Set(a, dst)   \
+        {                      \
+            (dst)->x = (a)->x; \
+            (dst)->y = (a)->y; \
+        }                      \
+        ((void) 0)
+#endif
+
+#define Vec2_CopyAdd(type, a, b, dst) \
+    {                                 \
+        type temp;                    \
+        temp.x = (a)->x + (b)->x;     \
+        temp.y = (a)->y + (b)->y;     \
+        Vec2_Set(&temp, dst);         \
+    }                                 \
+    ((void) 0)
+
+#define Vec2_CopySub(type, a, b, dst) \
+    {                                 \
+        type temp;                    \
+        temp.x = (a)->x - (b)->x;     \
+        temp.y = (a)->y - (b)->y;     \
+        Vec2_Set(&temp, dst);         \
+    }                                 \
+    ((void) 0)
 
 extern "C" {
 //! TODO: find a way to remove that

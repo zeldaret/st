@@ -50,7 +50,7 @@ public:
     /* 2C */
 
     UnkStruct_ov031_Items_01() {
-        this->mUnk_0C.Init(FLOAT_TO_FX32(0.0f));
+        this->mUnk_0C.Init(FX_F32_TO_FX32(0.0f));
         this->mUnk_1C = 0;
         this->mUnk_20 = 0;
         this->mUnk_24 = 0;

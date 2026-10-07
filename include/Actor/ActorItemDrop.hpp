@@ -47,7 +47,7 @@ class ActorItemDrop : public Actor_Derived2 {
 public:
     /* 000 (base) */
     /* 0AE */ Timer mUnk_AE;
-    /* 0B2 */ STRUCT_PAD(0xB2, 0xB4);
+    /* 0B2 */ PAD(0xB2, 0xB4);
     /* 0B4 */ Actor_9C mUnk_B4;
     /* 0D4 */ ItemDropType mItemTypeId;
     /* 0D8 */ fx32 mUnk_D8;
@@ -55,7 +55,7 @@ public:
     /* 0E0 */ ActorRef mUnk_E0;
     /* 0E4 */ ActorItemDrop_C4 mUnk_E4;
     /* 108 */ unk16 mUnk_108;
-    /* 10A */ STRUCT_PAD(0x10A, 0x10C);
+    /* 10A */ PAD(0x10A, 0x10C);
     /* 10C */ VecFx32 mUnk_10C;
     /* 118 */ bool mUnk_118;
     /* 119 */ bool mUnk_119;

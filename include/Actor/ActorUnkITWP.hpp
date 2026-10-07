@@ -21,10 +21,10 @@ public:
 class ActorUnkITWP : public Actor {
 public:
     /* 00 (base) */
-    /* 094 */ STRUCT_PAD(0x094, 0x0E8);
+    /* 094 */ PAD(0x094, 0x0E8);
     /* 0E8 */ VecFx32 mUnk_0E8;
-    /* 0F4 */ STRUCT_PAD(0x0F4, 0x154);
-    /* 154 */ Mat3p mUnk_154;
+    /* 0F4 */ PAD(0x0F4, 0x154);
+    /* 154 */ MtxFx33 mUnk_154;
 
     ActorUnkITWP();
 

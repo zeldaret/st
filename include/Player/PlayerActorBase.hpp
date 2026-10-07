@@ -57,7 +57,7 @@ struct UnkStruct_ov000_020ab4dc {
     /* 24 */ const char mUnk_24[16];
     /* 34 */ const char mUnk_34[16];
     /* 44 */ const char mUnk_44[16];
-    /* 54 */ STRUCT_PAD(0x54, 0x66);
+    /* 54 */ PAD(0x54, 0x66);
     /* 66 */ s16 mUnk_66;
     /* 66 */ unk16 mUnk_68;
     /* 66 */ unk16 mUnk_6A;
@@ -66,12 +66,12 @@ struct UnkStruct_ov000_020ab4dc {
     /* 66 */ unk16 mUnk_70;
     /* 66 */ unk16 mUnk_72;
     /* 74 */ s16 mUnk_74;
-    /* 78 */ STRUCT_PAD(0x76, 0x83);
+    /* 78 */ PAD(0x76, 0x83);
     /* 83 */ u8 mUnk_83;
     /* 83 */ u8 mUnk_84;
     /* 83 */ u8 mUnk_85;
     /* 86 */ u8 mUnk_86[7];
-    /* 8D */ STRUCT_PAD(0x8D, 0x98);
+    /* 8D */ PAD(0x8D, 0x98);
     /* 98 */ unk32 mUnk_98;
     /* 9C */
 };
@@ -141,7 +141,7 @@ public:
     /* 78 */ unk32 mUnk_78;
     /* 7C */ unk32 mUnk_7C[9];
     /* A0 */ unk32 mUnk_A0[7];
-    /* BC */ Mat4x3p *mUnk_BC;
+    /* BC */ MtxFx43 *mUnk_BC;
     /* C0 */
 
     ModelRender_Derived4(PlayerCharacter character, unk32 param2, G3d_Model *pModel, G3d_BoneMtxStruct *pCacheJntAnm);
@@ -159,7 +159,7 @@ public:
 class ModelRender_Derived5 : public ModelRender_Derived3 {
 public:
     /* 00 (base) */
-    /* 60 */ STRUCT_PAD(0x60, 0xA8);
+    /* 60 */ PAD(0x60, 0xA8);
     /* A8 */
 
     ModelRender_Derived5(PlayerCharacter character, G3d_Model *pModel, G3d_BoneMtxStruct *pCacheJntAnm);
@@ -257,7 +257,7 @@ public:
 class PlayerActorBase_70_1C : public UnkStruct_PlayerGet_74_base {
 private:
     /* 00 (base) */
-    /* 04 */ STRUCT_PAD(0x04, 0x2C);
+    /* 04 */ PAD(0x04, 0x2C);
     /* 2C */
 
 public:
@@ -273,7 +273,7 @@ public:
 
 class PlayerActorBase_70_30 {
 private:
-    /* 00 */ STRUCT_PAD(0x00, 0x1C);
+    /* 00 */ PAD(0x00, 0x1C);
     /* 1C */
 
 public:
@@ -283,7 +283,7 @@ public:
 class PlayerActorBase_70_6C {
 private:
     /* 00 */ UnkSystem5 mUnk_00;
-    /* 20 */ STRUCT_PAD(0x20, 0x70);
+    /* 20 */ PAD(0x20, 0x70);
     /* 70 */
 
 public:
@@ -294,7 +294,7 @@ public:
 class PlayerActorBase_70_DC {
 private:
     /* 00 */ UnkSystem5 mUnk_00;
-    /* 20 */ STRUCT_PAD(0x20, 0x60);
+    /* 20 */ PAD(0x20, 0x60);
     /* 60 */
 
 public:
@@ -331,7 +331,7 @@ public:
 
 class PlayerActorBase_70_134 {
 private:
-    /* 00 */ STRUCT_PAD(0x00, 0x28);
+    /* 00 */ PAD(0x00, 0x28);
     /* 28 */
 
 public:
@@ -364,8 +364,8 @@ public:
     /* 0DC */ PlayerActorBase_70_DC *mUnk_0DC;
     /* 0E0 */ PlayerActorBase_70_E0 mUnk_0E0;
     /* 0E4 */ PlayerActorBase_70_E4 mUnk_0E4;
-    /* 114 */ Mat4x3p *mUnk_114; // allocated array, size = PlayerCharacter_Max
-    /* 118 */ Vec3p mUnk_118;
+    /* 114 */ MtxFx43 *mUnk_114; // allocated array, size = PlayerCharacter_Max
+    /* 118 */ VecFx32Cpp mUnk_118;
     /* 124 */ UnkAngleStruct mUnk_124;
     /* 126 */ s8 mUnk_126;
     /* 127 */ bool mUnk_127;
@@ -422,12 +422,12 @@ public:
     void func_ov001_020db190();
 
     // overlay 102
-    void func_ov102_02182c20(unk32 param1, Mat4x3p *param2);
-    void func_ov102_02182c84(bool param1, unk32 param2, UnkAngleStruct param3, Mat4x3p *param4, Mat4x3p *param5);
+    void func_ov102_02182c20(unk32 param1, MtxFx43 *param2);
+    void func_ov102_02182c84(bool param1, unk32 param2, UnkAngleStruct param3, MtxFx43 *param4, MtxFx43 *param5);
 };
 
 struct PlayerActorBase_78_04 {
-    STRUCT_PAD(0x00, 0x0C);
+    PAD(0x00, 0x0C);
 
     void func_ov000_0205c584(unk32 param1, unk32 param2);
 };
@@ -457,20 +457,20 @@ public:
 class PlayerLinkActor_9C {
 public:
     /* 000 (vtable) */
-    /* 004 */ STRUCT_PAD(0x04, 0x08);
+    /* 004 */ PAD(0x04, 0x08);
     /* 008 */ ActorRef mUnk_008; //! TODO: confirm type
-    /* 00C */ STRUCT_PAD(0x0C, 0x34);
+    /* 00C */ PAD(0x0C, 0x34);
     /* 034 */ PlayerLinkActor_9C_34 mUnk_034;
-    /* 004 */ STRUCT_PAD(0x50, 0x5A);
+    /* 004 */ PAD(0x50, 0x5A);
     /* 05A */ UnkAngleStruct mUnk_5A;
-    /* 05C */ STRUCT_PAD(0x5C, 0x6C);
+    /* 05C */ PAD(0x5C, 0x6C);
     /* 06C */ VecFx32 mUnk_06C;
-    /* 078 */ STRUCT_PAD(0x78, 0x90);
+    /* 078 */ PAD(0x78, 0x90);
     /* 090 */ s16 mUnk_090;
     /* 090 */ unk16 mUnk_092;
     /* 094 */ unk32 mUnk_094;
     /* 098 */ unk16 mUnk_098;
-    /* 094 */ STRUCT_PAD(0x9A, 0xDC);
+    /* 094 */ PAD(0x9A, 0xDC);
     /* 0DC */ u16 mUnk_0DC;
     /* 0DE */ unk16 mUnk_0DE;
     /* 0E0 */ unk32 mUnk_0E0;
@@ -483,11 +483,11 @@ public:
     /* 0FC */ bool mUnk_0FC;
     /* 100 */ unk32 mUnk_100;
     /* 104 */ VecFx32 mUnk_104;
-    /* 110 */ STRUCT_PAD(0x110, 0x138);
+    /* 110 */ PAD(0x110, 0x138);
     /* 138 */ s16 mUnk_138;
     /* 13A */ u16 mUnk_13A;
     /* 13C */ unk16 mUnk_13C;
-    /* 13E */ STRUCT_PAD(0x13E, 0x154);
+    /* 13E */ PAD(0x13E, 0x154);
     /* 154 */
 
     PlayerLinkActor_9C(UnkStruct_027e0ce0_40 *param1, u32 rawGrabParams, PlayerCharacter character);
@@ -516,10 +516,10 @@ public:
 
 class PlayerActorBase {
 public:
-    /* 00 */ VecFx32 mPos;
-    /* 0C */ VecFx32 mPrevPos;
-    /* 18 */ VecFx32 mVel;
-    /* 24 */ VecFx32 mAccel;
+    /* 00 */ VecFx32Cpp mPos;
+    /* 0C */ VecFx32Cpp mPrevPos;
+    /* 18 */ VecFx32Cpp mVel;
+    /* 24 */ VecFx32Cpp mAccel;
     /* 30 */ UnkAngleStruct mAngle;
     /* 32 */ u8 mInvincibilityTimer;
     /* 33 */ u8 mInvincibilityIconTimer; // the blinking icon on top-screen

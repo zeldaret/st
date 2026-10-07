@@ -40,7 +40,7 @@ struct SaveManager_00 {
 
 class SaveManager_244 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x7E);
+    /* 00 */ PAD(0x00, 0x7E);
     /* 7E */ u16 mUnk_7E;
     /* 80 */
 
@@ -51,7 +51,7 @@ class SaveManager {
 public:
     /* 000 */ SaveManager_00 *mUnk_000; // related to mUnk_184, allocated from func_ov001_020ba670
     /* 004 */ unk32 mUnk_004;
-    /* 008 */ STRUCT_PAD(0x08, 0x204);
+    /* 008 */ PAD(0x08, 0x204);
     /* 204 */ u16 mCardId;
     /* 206 */ s16 mUnk_206; // this is a save slot index?
     /* 208 */ unk16 mUnk_208;

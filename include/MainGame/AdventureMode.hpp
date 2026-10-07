@@ -150,9 +150,9 @@ public:
 
 class AdventureModeManager_160_14 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x1C);
+    /* 00 */ PAD(0x00, 0x1C);
     /* 1C */ unk32 mUnk_1C;
-    /* 20 */ STRUCT_PAD(0x20, 0x40);
+    /* 20 */ PAD(0x20, 0x40);
     /* 40 */ AdventureModeManager_160_18 *mUnk_40;
     /* 44 */ unk32 mUnk_44;
     /* 48 */ unk32 mUnk_48;
@@ -228,7 +228,7 @@ public:
 class AdventureModeManager_164 : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x1C);
+    /* 0C */ PAD(0x0C, 0x1C);
     /* 1C */
 
     AdventureModeManager_164(GameModeManagerBase_104 *param1, GameModeManagerBase_004 *param2); // overlay 26
@@ -245,7 +245,7 @@ public:
 class AdventureModeManager_168 : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x20);
+    /* 0C */ PAD(0x0C, 0x20);
     /* 20 */ bool mUnk_20;
     /* 21 */ bool mUnk_21;
     /* 24 */
@@ -269,7 +269,7 @@ public:
 class AdventureModeManager_16C : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x1C);
+    /* 0C */ PAD(0x0C, 0x1C);
     /* 1C */ bool mUnk_1C;
     /* 20 */
 
@@ -521,7 +521,7 @@ public:
 class AdventureModeManager_188 : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x38);
+    /* 0C */ PAD(0x0C, 0x38);
 
     AdventureModeManager_188(GameModeManagerBase_104 *param1); // overlay 31
 
@@ -549,7 +549,7 @@ public:
 
 class AdventureModeManager_18C_10 {
 public:
-    /* 0000 */ STRUCT_PAD(0x0000, 0x10E9);
+    /* 0000 */ PAD(0x0000, 0x10E9);
     /* 10E9 */ u8 mUnk_10E9;
     /* 10EA */ unk8 mUnk_10EA; // pad?
     /* 10EB */ unk8 mUnk_10EB; // pad?
@@ -653,7 +653,7 @@ public:
 
 class AdventureModeManager_194_0C {
 public:
-    /* 00 (base) */ STRUCT_PAD(0x00, 0xC4);
+    /* 00 (base) */ PAD(0x00, 0xC4);
     /* C4 */ u8 mUnk_C4;
     /* C8 */
 };
@@ -662,7 +662,7 @@ class AdventureModeManager_194 : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
     /* 0C */ AdventureModeManager_194_0C *mUnk_0C;
-    /* 10 */ STRUCT_PAD(0x10, 0x48);
+    /* 10 */ PAD(0x10, 0x48);
     /* 48 */
 
     AdventureModeManager_194(GameModeManagerBase_104 *param1);
@@ -681,7 +681,7 @@ public:
 class AdventureModeManager_198 : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x3C);
+    /* 0C */ PAD(0x0C, 0x3C);
 
     AdventureModeManager_198(GameModeManagerBase_104 *param1); // overlay 58
 
@@ -699,7 +699,7 @@ public:
 class AdventureModeManager_19C : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x14);
+    /* 0C */ PAD(0x0C, 0x14);
     /* 14 */
 
     AdventureModeManager_19C(GameModeManagerBase_104 *param1); // overlay 26
@@ -753,7 +753,7 @@ public:
 class AdventureModeManager_1A8 : public FileSelectManager_UnkDrawBase {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0x38);
+    /* 0C */ PAD(0x0C, 0x38);
 
     AdventureModeManager_1A8(GameModeManagerBase_104 *param1); // overlay 88
 
@@ -783,7 +783,7 @@ public:
 class AdventureModeManager_1B0 : public GameModeManagerBase_104 {
 public:
     /* 1C */ UnkStruct_ov019_020d24c8_28_258 mUnk_1C;
-    /* 34 */ STRUCT_PAD(0x34, 0x50);
+    /* 34 */ PAD(0x34, 0x50);
     /* 50 */
 
     AdventureModeManager_1B0(); // overlay 31
@@ -901,7 +901,7 @@ public:
 class AdventureModeManager_1BC : public AdventureModeManager_1B8_Base {
 public:
     /* 00 (base) */
-    /* 24 */ STRUCT_PAD(0x24, 0x34);
+    /* 24 */ PAD(0x24, 0x34);
     /* 34 */ bool mUnk_34;
     /* 35 */ unk8 mUnk_35;
     /* 36 */ unk8 mUnk_36;

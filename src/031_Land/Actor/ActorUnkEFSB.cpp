@@ -54,11 +54,11 @@ void ActorUnkEFSB::vfunc_54(unk32 param1) {
 void ActorUnkEFSB::vfunc_2C(Actor_vfunc_30 *param1) {
     VecFx32 vec;
 
-    VecFx32_Init(FLOAT_TO_FX32(1.0f), FLOAT_TO_FX32(1.0f), FLOAT_TO_FX32(1.0f), &vec);
+    VecFx32_Init(FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), &vec);
     vec.z = func_01ffb428(this->mUnk_1B0, 0x8000);
 
     VecFx32 sp0 = this->mPos;
-    sp0.y += FLOAT_TO_FX32(0.85f);
+    sp0.y += FX_F32_TO_FX32(0.85f);
 
     this->mUnk_098.func_01ffc634(&vec, this->mAngle, &sp0);
 }

@@ -10,7 +10,7 @@
 
 struct UnkStruct_ov031_020e5d18_00 {
     /* 00 */ Actor *mUnk_00;
-    /* 04 */ STRUCT_PAD(0x04, 0x18);
+    /* 04 */ PAD(0x04, 0x18);
     /* 18 */
 };
 
@@ -27,19 +27,19 @@ Actor *ActorProfileBlast::Create() {
 
 ActorProfileBlast::ActorProfileBlast() :
     ActorProfile(ActorId_Blast) {
-    VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mUnk_04.pos);
+    VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_04.pos);
 }
 
 // non-matching
 bool ActorBlast_E8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {}
 
 ActorBlast::ActorBlast() :
-    mUnk_94(FLOAT_TO_FX32(0.625f)),
+    mUnk_94(FX_F32_TO_FX32(0.625f)),
     mUnk_98(0, 24),
     mUnk_E8(this) {}
 
 bool ActorBlast::Init(unk32 param1) {
-    this->mPos.y += FLOAT_TO_FX32(0.5f);
+    this->mPos.y += FX_F32_TO_FX32(0.5f);
 
     this->mUnk_C8 = *this->mUnk_34;
     VecFx32_Add(&this->mUnk_C8.pos, &this->mPos, &this->mUnk_C8.pos);
@@ -51,11 +51,11 @@ bool ActorBlast::Init(unk32 param1) {
     data_027e09a8->func_ov000_02071eac(&this->mPos);
 
     if (this->mUnk_5C.mParams[1] == 0x1) {
-        this->mUnk_F4 = FLOAT_TO_FX32(0.2f);
-        this->mUnk_F0 = FLOAT_TO_FX32(1.5f);
+        this->mUnk_F4 = FX_F32_TO_FX32(0.2f);
+        this->mUnk_F0 = FX_F32_TO_FX32(1.5f);
     } else {
-        this->mUnk_F4 = FLOAT_TO_FX32(0.1f);
-        this->mUnk_F0 = FLOAT_TO_FX32(1.0f);
+        this->mUnk_F4 = FX_F32_TO_FX32(0.1f);
+        this->mUnk_F0 = FX_F32_TO_FX32(1.0f);
     }
 
     data_027e09bc->mUnk_04[2]->func_ov000_0207a1e0(0x6);
@@ -98,13 +98,13 @@ void ActorBlast::Update() {
         this->mUnk_D8.size = newVal;
     } else {
         this->mUnk_94      = f0;
-        this->mUnk_C8.size = ~FLOAT_TO_FX32(0.0f);
+        this->mUnk_C8.size = ~FX_F32_TO_FX32(0.0f);
     }
     if (this->mUnk_98.HasExpired()) {
         this->func_ov000_020984d0();
         return;
     }
-    if (this->mUnk_C8.size <= FLOAT_TO_FX32(0.0f)) {
+    if (this->mUnk_C8.size <= FX_F32_TO_FX32(0.0f)) {
         return;
     }
     this->mUnk_9C.mUnk_0C = this->mUnk_C8;
@@ -142,7 +142,7 @@ void ActorBlast::vfunc_24() {
 }
 
 fx32 ActorBlast::func_ov031_020e3b94() {
-    return FLOAT_TO_FX32(0.5f);
+    return FX_F32_TO_FX32(0.5f);
 }
 
 void ActorBlast::func_ov031_020e3b9c(Actor *spawner, unk16 param1, unk16 param2) {

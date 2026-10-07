@@ -39,11 +39,11 @@ class Actor_ov031_02113fd4 : public Actor {
 public:
     /* 000 (base) */
     /* 094 */ UnkStruct_ov031_Items_01 mUnk_94;
-    /* 0C0 */ STRUCT_PAD(0x0C0, 0x0EC);
+    /* 0C0 */ PAD(0x0C0, 0x0EC);
     /* 0EC */ u16 mUnk_EC;
-    /* 0EE */ STRUCT_PAD(0x0EE, 0xF0);
+    /* 0EE */ PAD(0x0EE, 0xF0);
     /* 0F0 */ UnkStruct_ov031_02113fb8 mUnk_F0;
-    /* 0F4 */ STRUCT_PAD(0xF4, 0x110);
+    /* 0F4 */ PAD(0xF4, 0x110);
     /* 110 */
 
     Actor_ov031_02113fd4();

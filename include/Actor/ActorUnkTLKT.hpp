@@ -19,7 +19,7 @@ enum ActorUnkTLKTState_ {
 class ActorUnkTLKTnCLLT_Base : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */ STRUCT_PAD(0x94, 0x9C);
+    /* 94 */ PAD(0x94, 0x9C);
     /* 9C */
 
     ActorUnkTLKTnCLLT_Base();

@@ -36,7 +36,7 @@ static u8 data_ov018_020c5bc0;
 
 void SysFault::func_ov018_020c4840() {
     this->mUnk_05 = 0;
-    func_02027a28(func_0201245c, 0);
+    func_02027a28((void *) func_0201245c, 0);
     DC_FlushAll();
     this->mUnk_00 = 0;
     this->mUnk_04 = 0;
@@ -55,7 +55,7 @@ void Game::func_ov018_020c48a4() {
     OS_EnableIrqMask(1);
     GX_VBlankIntr(1);
     OS_WakeupThreadDirect(&this->mUnk_1C.mUnk_04);
-    func_02031e48(func_020131b0);
+    func_02031e48((void *) func_020131b0);
     this->TrySetCreateCallback((GameModeCreateCallback) Game::func_ov018_020c4ba8);
 }
 
@@ -75,8 +75,8 @@ UnkStruct_02049b18::UnkStruct_02049b18() {
 }
 
 void UnkStruct_02011e10::func_ov018_020c4980() {
-    unk32 arenaLo = OS_GetMainArenaLo();
-    unk32 arenaHi = OS_GetMainArenaHi();
+    uintptr_t arenaLo = (uintptr_t) OS_GetMainArenaLo();
+    uintptr_t arenaHi = (uintptr_t) OS_GetMainArenaHi();
 
     for (int i = 0; i < HeapIndex_Max; i++) {
         this->mUnk_00[i] = NULL;
@@ -107,18 +107,18 @@ void UnkStruct_02011e10::func_ov018_020c4980() {
 
 void UnkStruct_02011e10::func_ov018_020c4a5c() {
     UnkStruct_02011e10_Sub1 *temp_r2;
-    int temp_r5;
-    int temp_r7;
-    int temp_r0;
+    uintptr_t temp_r5;
+    uintptr_t temp_r7;
+    uintptr_t temp_r0;
 
     func_020013ac(this->mUnk_00[0]);
     temp_r2 = this->mUnk_00[0];
 
     temp_r5 = ((uintptr_t) temp_r2->mUnk_1C - (uintptr_t) temp_r2); //! TODO: fake match?
-    temp_r7 = OS_GetArenaLo(0);
+    temp_r7 = (uintptr_t) OS_GetArenaLo(0);
     temp_r7 += temp_r5;
 
-    temp_r0          = OS_GetMainArenaHi();
+    temp_r0          = (uintptr_t) OS_GetMainArenaHi();
     this->mUnk_00[1] = func_02001098(temp_r7, temp_r0 - temp_r7, 2);
     this->mUnk_5C    = func_020011f4();
     OS_SetMainArenaLo((void *) temp_r0);

@@ -124,14 +124,14 @@ public:
 class UnkStruct_PlayerGet_48 {
 public:
     /* 00 */ unk32 mUnk_00;
-    /* 04 */ STRUCT_PAD(0x04, 0x40);
+    /* 04 */ PAD(0x04, 0x40);
     /* 40 */ unk16 mUnk_40;
     /* 42 */ unk16 mUnk_42;
     /* 44 */ unk8 mUnk_44;
     /* 45 */ unk8 mUnk_45;
     /* 46 */ unk8 mUnk_46;
     /* 47 */ unk8 mUnk_47;
-    /* 48 */ STRUCT_PAD(0x48, 0x5E);
+    /* 48 */ PAD(0x48, 0x5E);
     /* 5E */ unk16 mUnk_5E;
     /* 60 */ unk8 mUnk_60;
     /* 61 */ unk8 mUnk_61;

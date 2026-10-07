@@ -104,8 +104,8 @@ void Actor::func_ov017_020bf050(Actor_9C *param1, unk32 param2) {
     fx16 sin = SIN((u16) (s16) temp_r2);
     fx16 cos = COS((u16) (s16) temp_r2);
 
-    sp0.pos.x += MUL_FX32(sin, size);
-    sp0.pos.z += MUL_FX32(cos, size);
+    sp0.pos.x += FX_MUL(sin, size);
+    sp0.pos.z += FX_MUL(cos, size);
 
     func_ov000_0209807c(&sp0);
 
@@ -142,8 +142,8 @@ void Actor::func_ov017_020bf178(Actor_9C *param1, unk32 param2) {
     fx16 sin = SIN((u16) (s16) temp_r2);
     fx16 cos = COS((u16) (s16) temp_r2);
 
-    sp0.pos.x += MUL_FX32(sin, size);
-    sp0.pos.z += MUL_FX32(cos, size);
+    sp0.pos.x += FX_MUL(sin, size);
+    sp0.pos.z += FX_MUL(cos, size);
 
     func_ov000_020980e0(&this->mPos);
 
@@ -164,7 +164,7 @@ void Actor::func_ov017_020bf284(VecFx32 *param1, VecFx32 param2) {
     sp0 = param2;
 
     VecFx32_Add(&sp0, param1, &sp0);
-    func_01ff93c0(&sp0, FLOAT_TO_FX32(0.5f));
+    func_01ff93c0(&sp0, FX_F32_TO_FX32(0.5f));
     func_ov000_02098244(&sp0);
 }
 
@@ -516,8 +516,8 @@ void Actor::func_ov017_020bfb18(Actor_9C *param1) {
             fx16 sin = SIN((u16) (s16) temp_r2);
             fx16 cos = COS((u16) (s16) temp_r2);
 
-            sp14.pos.x += MUL_FX32(sin, size);
-            sp14.pos.z += MUL_FX32(cos, size);
+            sp14.pos.x += FX_MUL(sin, size);
+            sp14.pos.z += FX_MUL(cos, size);
 
             Vec3s sp0;
             sp0.x = sp8.x;

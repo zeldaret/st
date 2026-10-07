@@ -67,8 +67,8 @@ typedef struct G3d_RenderState_ {
 typedef struct UnkStruct_0205ae08_ {
     /* 00 */ u8 mUnk_00[0x1400];
     /* 1400 */ struct {
-        Mat4p mtx1;
-        Mat3p mtx2;
+        MtxFx44 mtx1;
+        MtxFx33 mtx2;
     } mUnk_1400[64];
 } UnkStruct_0205ae08;
 
@@ -94,15 +94,15 @@ static inline void G3d_RestoreMtx_inline(u32 idx) {
     PushGeometryCommand(0x14, &idx, 1);
 }
 
-static inline void G3d_MtxMult33_inline(const Mat3p *m) {
+static inline void G3d_MtxMult33_inline(const MtxFx33 *m) {
     PushGeometryCommand(0x1A, (u32 *) m, 9);
 }
 
-static inline void G3d_MtxMult43_inline(const Mat4x3p *m) {
+static inline void G3d_MtxMult43_inline(const MtxFx43 *m) {
     PushGeometryCommand(0x19, (u32 *) m, 12);
 }
 
-static inline void G3d_MtxMult44_inline(const Mat4p *m) {
+static inline void G3d_MtxMult44_inline(const MtxFx44 *m) {
     PushGeometryCommand(0x18, (u32 *) m, 0x10);
 }
 

@@ -31,16 +31,16 @@ struct UnkStruct_027e09bc_0C_268 {
 class UnkStruct_027e09bc_0C {
 public:
     /* 000 (vtable) */
-    /* 004 */ STRUCT_PAD(0x04, 0x34);
+    /* 004 */ PAD(0x04, 0x34);
     /* 034 */ VecFx32 mUnk_034;
     /* 040 */ VecFx32 mUnk_040;
-    /* 04C */ STRUCT_PAD(0x4C, 0x58);
+    /* 04C */ PAD(0x4C, 0x58);
     /* 058 */ unk32 mUnk_058;
-    /* 05C */ STRUCT_PAD(0x5C, 0xCA);
+    /* 05C */ PAD(0x5C, 0xCA);
     /* 0CA */ unk16 mUnk_0CA;
-    /* 0CC */ STRUCT_PAD(0xCC, 0x230);
+    /* 0CC */ PAD(0xCC, 0x230);
     /* 230 */ UnkStruct_027e09bc_0C_230 *mUnk_230;
-    /* 234 */ STRUCT_PAD(0x234, 0x264);
+    /* 234 */ PAD(0x234, 0x264);
     /* 264 */ unk32 mUnk_264;
     /* 268 */ UnkStruct_027e09bc_0C_268 mUnk_268;
     /* 27C */ unk32 mUnk_27C;

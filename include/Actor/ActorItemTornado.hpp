@@ -26,12 +26,12 @@ public:
     /* 094 */ ModelRender mUnk_94;
     /* 0F4 */ UnkSystem5 mUnk_F4;
     /* 114 */ unk32 mUnk_114;
-    /* 118 */ STRUCT_PAD(0x118, 0x134);
+    /* 118 */ PAD(0x118, 0x134);
     /* 134 */ UnkSystem5 mUnk_134;
     /* 154 */ unk32 mUnk_154;
-    /* 158 */ STRUCT_PAD(0x158, 0x174);
+    /* 158 */ PAD(0x158, 0x174);
     /* 174 */ UnkStruct_ov031_02112ff4 mUnk_174;
-    /* 178 */ STRUCT_PAD(0x178, 0x17C);
+    /* 178 */ PAD(0x178, 0x17C);
     /* 17C */ UnkStruct_PlayerGet_74 mUnk_17C;
     /* 194 */ UnkStruct_ov031_Items_01 mUnk_194;
     /* 1C0 */ VecFx32 mUnk_1C0;

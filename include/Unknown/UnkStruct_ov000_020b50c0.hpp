@@ -35,7 +35,7 @@ extern UnkStruct_ov018_020c5ac0 *data_027e099c;
 
 class UnkStruct_ov000_020b50c0 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0x94);
+    /* 00 */ PAD(0x00, 0x94);
     /* 94 */ unk32 mUnk_94;
     /* 98 */ unk32 mUnk_98;
     /* 9C */ unk16 mUnk_9C;

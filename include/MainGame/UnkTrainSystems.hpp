@@ -36,18 +36,18 @@ class UnkTrainSystem2 {
         this->mModelRender.vfunc_08(G3d_GetModelPtr(data_027e0d00->mUnk_0F4->mUnk_50));
     }
 
-    void SetTransform(const Mat3p *param1, const VecFx32 *param2, fx32 param3) {
+    void SetTransform(const MtxFx33 *param1, const VecFx32 *param2, fx32 param3) {
         VecFx32 temp;
         temp.x = param3;
         temp.y = param3;
         temp.z = param3;
-        this->mModelRender.vfunc_10(&temp, (Mat3p *) param1, (VecFx32 *) param2);
+        this->mModelRender.vfunc_10(&temp, (MtxFx33 *) param1, (VecFx32 *) param2);
     }
 
     UnkTrainSystem2();
     ~UnkTrainSystem2();
 
     void func_ov024_020d5990();
-    void func_ov024_020d5afc(const Mat3p *param1, const VecFx32 *param2, unk32 param3);
+    void func_ov024_020d5afc(const MtxFx33 *param1, const VecFx32 *param2, unk32 param3);
     bool func_ov024_020d5c40();
 };

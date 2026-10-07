@@ -11,15 +11,15 @@ typedef struct {
     unk16 mUnk_04;
     unk16 mUnk_06;
     unk16 mUnk_08;
-    STRUCT_PAD(0x0A, 0x14);
+    PAD(0x0A, 0x14);
     unk16 mUnk_14;
-    STRUCT_PAD(0x16, 0x18);
+    PAD(0x16, 0x18);
     unk16 mUnk_18;
-    STRUCT_PAD(0x1A, 0x1C);
+    PAD(0x1A, 0x1C);
     unk16 mUnk_1C;
-    STRUCT_PAD(0x1E, 0x28);
+    PAD(0x1E, 0x28);
     unk16 mUnk_28;
-    STRUCT_PAD(0x2A, 0x3C);
+    PAD(0x2A, 0x3C);
 } UnkStruct_ov031_020eeee8;
 
 extern "C" void func_01ffce1c(unk16 *, unk16 *);
@@ -43,7 +43,7 @@ Actor *ActorProfileHeart::Create() {
 
 ActorProfileHeart::ActorProfileHeart() :
     ActorProfile(ActorId_Heart) {
-    this->mUnk_04.Init(FLOAT_TO_FX32(0.25));
+    this->mUnk_04.Init(FX_F32_TO_FX32(0.25));
 }
 
 void ActorHeart::func_ov031_020eed64(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref) {
@@ -74,9 +74,9 @@ ActorHeart::ActorHeart() :
     mUnk_C4(0),
     mUnk_C8(this) {
 
-    this->mUnk_EC.x = FLOAT_TO_FX32(0.0);
-    this->mUnk_EC.y = FLOAT_TO_FX32(0.0);
-    this->mUnk_EC.z = FLOAT_TO_FX32(0.0);
+    this->mUnk_EC.x = FX_F32_TO_FX32(0.0);
+    this->mUnk_EC.y = FX_F32_TO_FX32(0.0);
+    this->mUnk_EC.z = FX_F32_TO_FX32(0.0);
 
     this->mUnk_98.mUnk_04 = 0x13100;
     this->mUnk_40         = &this->mUnk_C8;
@@ -189,13 +189,13 @@ void ActorHeart::Update() {
         this->func_ov000_02098910(0, 0x10);
     }
     if (this->mUnk_46 & 0x3) {
-        this->mVel.y = FLOAT_TO_FX32(0.0);
+        this->mVel.y = FX_F32_TO_FX32(0.0);
     }
 
     VecFx32_Add(&this->mPos, &this->mUnk_EC, &this->mPos);
-    this->mUnk_EC.x = FLOAT_TO_FX32(0.0);
-    this->mUnk_EC.y = FLOAT_TO_FX32(0.0);
-    this->mUnk_EC.z = FLOAT_TO_FX32(0.0);
+    this->mUnk_EC.x = FX_F32_TO_FX32(0.0);
+    this->mUnk_EC.y = FX_F32_TO_FX32(0.0);
+    this->mUnk_EC.z = FX_F32_TO_FX32(0.0);
 }
 
 extern unk32 data_ov000_020aecf8;
@@ -254,7 +254,7 @@ void ActorHeart::func_ov031_020ef208() {
 }
 
 void ActorHeart::func_ov031_020ef2ec() {
-    this->mVel.y = FLOAT_TO_FX32(0.25);
+    this->mVel.y = FX_F32_TO_FX32(0.25);
 }
 
 void ActorHeart::func_ov031_020ef2f8() {
@@ -279,9 +279,9 @@ void ActorHeart::func_ov031_020ef334() {
 }
 
 void ActorHeart::func_ov031_020ef35c() {
-    this->mVel.x = FLOAT_TO_FX32(0.0);
-    this->mVel.y = FLOAT_TO_FX32(0.0);
-    this->mVel.z = FLOAT_TO_FX32(0.0);
+    this->mVel.x = FX_F32_TO_FX32(0.0);
+    this->mVel.y = FX_F32_TO_FX32(0.0);
+    this->mVel.z = FX_F32_TO_FX32(0.0);
     if (!this->mUnk_BE && this->mTimer.GetRemainingTime() > 180) {
         this->mTimer.Set(0, 180);
     }
@@ -305,29 +305,29 @@ void ActorHeart::func_ov031_020ef3d0() {
     if (!GET_FLAG(this->mFlags, ActorFlag_5)) {
         return;
     }
-    this->mVel.x = FLOAT_TO_FX32(0.0);
-    this->mVel.y = FLOAT_TO_FX32(0.0);
-    this->mVel.z = FLOAT_TO_FX32(0.0);
+    this->mVel.x = FX_F32_TO_FX32(0.0);
+    this->mVel.y = FX_F32_TO_FX32(0.0);
+    this->mVel.z = FX_F32_TO_FX32(0.0);
 
     this->mUnk_98.mUnk_04 |= 0x1000;
     this->SetState(ActorHeartState_1);
 }
 
 void ActorHeart::func_ov031_020ef430() {
-    this->mVel.x = FLOAT_TO_FX32(0.0);
-    this->mVel.y = FLOAT_TO_FX32(0.0);
-    this->mVel.z = FLOAT_TO_FX32(0.0);
+    this->mVel.x = FX_F32_TO_FX32(0.0);
+    this->mVel.y = FX_F32_TO_FX32(0.0);
+    this->mVel.z = FX_F32_TO_FX32(0.0);
 }
 
 void ActorHeart::func_ov031_020ef444() {}
 
 void ActorHeart::func_ov031_020ef448() {
-    this->mVel.x = FLOAT_TO_FX32(0.0);
-    this->mVel.z = FLOAT_TO_FX32(0.0);
+    this->mVel.x = FX_F32_TO_FX32(0.0);
+    this->mVel.z = FX_F32_TO_FX32(0.0);
 }
 
 typedef struct {
-    STRUCT_PAD(0x00, 0xE8);
+    PAD(0x00, 0xE8);
     VecFx32 mUnk_E8;
 } UnkActor_02ef458;
 
@@ -376,11 +376,11 @@ void ActorHeart::func_ov031_020ef570() {
 
     this->mUnk_B8 += 0x666;
 
-    this->mVel.x = MUL_FX32(SIN((u16) this->mUnk_B8), 0x40);
-    this->mVel.z = FLOAT_TO_FX32(0.0);
+    this->mVel.x = FX_MUL(SIN((u16) this->mUnk_B8), 0x40);
+    this->mVel.z = FX_F32_TO_FX32(0.0);
 
-    if (this->mVel.y <= FLOAT_TO_FX32(-0.005) - 1) {
-        this->mVel.y = FLOAT_TO_FX32(-0.005) - 1;
+    if (this->mVel.y <= FX_F32_TO_FX32(-0.005) - 1) {
+        this->mVel.y = FX_F32_TO_FX32(-0.005) - 1;
     }
 }
 
@@ -394,13 +394,13 @@ void ActorHeart::vfunc_2C(Actor_vfunc_30 *param1) {
     }
 
     iStack_20 = this->mPos;
-    iStack_20.y += FLOAT_TO_FX32(0.03113);
+    iStack_20.y += FX_F32_TO_FX32(0.03113);
     this->func_ov017_020bf5c4(&iStack_20, 0x400, 0x400, 0x1F, 0);
 
     func_ov000_0205c1f0(&auStack_30, 0x10);
 
     iStack_2c = this->mPos;
-    iStack_2c.y += FLOAT_TO_FX32(0.33);
+    iStack_2c.y += FX_F32_TO_FX32(0.33);
     func_ov000_0205c204(&auStack_30, &iStack_2c, 0xCCD, 0xCCD, 0x1F);
 }
 
