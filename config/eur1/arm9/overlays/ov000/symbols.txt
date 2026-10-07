@@ -4049,9 +4049,9 @@ data_ov000_020b53d0 kind:bss addr:0x020b5418
 _ZGVN15ProfileInstanceI19ActorProfileUnkSWOBE8sProfileE kind:bss addr:0x020b5c44
 @5649 kind:bss addr:0x020b5c48 local
 _ZN15ProfileInstanceI19ActorProfileUnkSWOBE8sProfileE kind:bss addr:0x020b5c54
-data_ov000_020b5c90 kind:bss addr:0x020b5c90
-data_ov000_020b5c94 kind:bss addr:0x020b5c94
-data_ov000_020b5ca0 kind:bss addr:0x020b5ca0
+_ZGVN15ProfileInstanceI19ActorProfileUnkSWTME8sProfileE kind:bss addr:0x020b5c90
+@6523 kind:bss addr:0x020b5c94 local
+_ZN15ProfileInstanceI19ActorProfileUnkSWTME8sProfileE kind:bss addr:0x020b5ca0
 data_ov000_020b5cdc kind:bss addr:0x020b5cdc
 _ZGVN15ProfileInstanceI21ActorProfileEventIconE8sProfileE kind:bss addr:0x020b5ce0
 @3699 kind:bss addr:0x020b5ce4 local

@@ -3346,7 +3346,7 @@ __sinit_ov000_020b1f70 kind:function(arm,size=0x14) addr:0x020b1f70
 __sinit_ov000_020b1f84 kind:function(arm,size=0x34) addr:0x020b1f84
 __sinit_ov000_020b1fb8 kind:function(arm,size=0x40) addr:0x020b1fb8
 __sinit_ActorUnkSWOB.cpp kind:function(arm,size=0x50) addr:0x020b1ff8 local
-__sinit_ActorUnkSWTM.cpp kind:function(arm,size=0x50) addr:0x020b2048
+__sinit_ActorUnkSWTM.cpp kind:function(arm,size=0x50) addr:0x020b2048 local
 __sinit_ActorEventIcon.cpp kind:function(arm,size=0x50) addr:0x020b2098 local
 __sinit_ActorUnkEFIK.cpp kind:function(arm,size=0x50) addr:0x020b20e8 local
 __sinit_MapObjectProfile.cpp kind:function(arm,size=0x28) addr:0x020b2138 local
@@ -3381,7 +3381,7 @@ __sinit_ov000_020b30b0 kind:function(arm,size=0x14) addr:0x020b30b0
 .p__sinit_ov000_020b1f84 kind:data(word) addr:0x020b3110
 .p__sinit_ov000_020b1fb8 kind:data(word) addr:0x020b3114
 .p__sinit_ActorUnkSWOB.cpp kind:data(word) addr:0x020b3118 local
-.p__sinit_ActorUnkSWTM.cpp kind:data(word) addr:0x020b311c
+.p__sinit_ActorUnkSWTM.cpp kind:data(word) addr:0x020b311c local
 .p__sinit_ActorEventIcon.cpp kind:data(word) addr:0x020b3120 local
 .p__sinit_ActorUnkEFIK.cpp kind:data(word) addr:0x020b3124 local
 .p__sinit_MapObjectProfile.cpp kind:data(word) addr:0x020b3128 local

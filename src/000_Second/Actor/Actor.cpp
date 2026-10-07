@@ -33,16 +33,14 @@ Actor::Actor() {
 
 Actor::~Actor() {}
 
-// non-matching (equivalent)
 void Actor::func_ov000_0209848c(ActorProfile *param1) {
     Cylinder *temp_r3 = &param1->mUnk_04;
-    unk32 unk_1c      = param1->mUnk_1C;
+    unk32 temp_r2     = param1->mUnk_1C;
 
     this->mpProfile = param1;
-
-    this->mUnk_34  = &param1->mUnk_04;
-    this->mUnk_30  = &param1->mUnk_04;
-    this->mYOffset = unk_1c;
+    this->mUnk_34   = temp_r3;
+    this->mUnk_30   = temp_r3;
+    this->mYOffset  = temp_r2;
 }
 
 bool Actor::Init(unk32 param1) {
