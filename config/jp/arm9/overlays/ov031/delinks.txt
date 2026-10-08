@@ -9,11 +9,13 @@ src/031_Land/UnkStruct_027e0d34.cpp:
     .text       start:0x020db1d4 end:0x020db1f4
 
 src/031_Land/Actor/ActorBomb.cpp:
+    complete
     .text       start:0x020e2e94 end:0x020e4ea0
     .init       start:0x02112d68 end:0x02112db8
     .ctor       start:0x02114528 end:0x0211452c
     .data       start:0x02114988 end:0x02114ae4
     .bss        start:0x021181a4 end:0x021181f0
+    .rodata     start:0x0211276c end:0x021127f0
 
 src/031_Land/Actor/ActorBlast.cpp:
     .text       start:0x020e4ea0 end:0x020e5690

@@ -1997,12 +1997,10 @@ data_ov031_0211275a kind:data(any) addr:0x0211275a
 data_ov031_0211275c kind:data(any) addr:0x0211275c
 data_ov031_0211275e kind:data(any) addr:0x0211275e
 data_ov031_02112760 kind:data(any) addr:0x02112760
-data_ov031_0211276c kind:data(any) addr:0x0211276c
-data_ov031_02110a10 kind:data(any) addr:0x02112780
-data_ov031_02110a28 kind:data(any) addr:0x02112798
-data_ov031_02110a50 kind:data(any) addr:0x021127c0
-data_ov031_02110a60 kind:data(any) addr:0x021127d0
-data_ov031_02110a70 kind:data(any) addr:0x021127e0
+data_ov031_021109fc kind:data(any) addr:0x0211276c local
+data_ov031_02110a10 kind:data(byte[0x18]) addr:0x02112780 local
+data_ov031_02110a28 kind:data(byte[0x18]) addr:0x02112798 local
+data_ov031_02110a40 kind:data(any) addr:0x021127b0 local
 data_ov031_021127f0 kind:data(any) addr:0x021127f0
 data_ov031_021127f8 kind:data(any) addr:0x021127f8
 data_ov031_02112808 kind:data(any) addr:0x02112808
@@ -2239,9 +2237,9 @@ data_ov031_02114918 kind:data(any) addr:0x02114918
 _ZTV19data_ov031_02114924 kind:data(any) addr:0x02114924
 _ZTV19data_ov031_0211494c kind:data(any) addr:0x0211494c
 data_ov031_0211497c kind:data(any) addr:0x0211497c
-data_ov031_02112be8 kind:data(any) addr:0x02114988
-data_ov031_02112c00 kind:data(any) addr:0x021149a0
-data_ov031_02112c38 kind:data(any) addr:0x021149d8
+data_ov031_02112be8 kind:data(any) addr:0x02114988 local
+data_ov031_02112c00 kind:data(any) addr:0x021149a0 local
+data_ov031_02112c38 kind:data(any) addr:0x021149d8 local
 _ZTV13ActorBomb_180 kind:data(any) addr:0x02114a10
 _ZTV13ActorBomb_19C kind:data(any) addr:0x02114a2c
 _ZTV24ActorBomb_ov031_020e2134 kind:data(any) addr:0x02114a48
@@ -2514,7 +2512,7 @@ data_ov031_021180e0 kind:data(any) addr:0x021180e0 ambiguous
 data_ov031_021180f8 kind:data(any) addr:0x021180f8
 data_ov031_02118120 kind:bss addr:0x02118120
 _ZGVN15ProfileInstanceI16ActorProfileBombE8sProfileE kind:bss addr:0x021181a4
-@30775 kind:bss addr:0x021181a8
+@30775 kind:bss addr:0x021181a8 local
 _ZN15ProfileInstanceI16ActorProfileBombE8sProfileE kind:bss addr:0x021181b4
 _ZGVN15ProfileInstanceI17ActorProfileBlastE8sProfileE kind:bss addr:0x021181f0
 @30781 kind:bss addr:0x021181f4

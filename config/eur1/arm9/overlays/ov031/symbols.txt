@@ -1997,12 +1997,10 @@ data_ov031_02110b1a kind:data(any) addr:0x02110b1a
 data_ov031_02110b1c kind:data(any) addr:0x02110b1c
 data_ov031_02110b1e kind:data(any) addr:0x02110b1e
 data_ov031_02110b20 kind:data(any) addr:0x02110b20
-data_ov031_02110b2c kind:data(any) addr:0x02110b2c
-data_ov031_02110b40 kind:data(any) addr:0x02110b40
-data_ov031_02110b58 kind:data(any) addr:0x02110b58
-data_ov031_02110b80 kind:data(any) addr:0x02110b80
-data_ov031_02110b90 kind:data(any) addr:0x02110b90
-data_ov031_02110ba0 kind:data(any) addr:0x02110ba0
+data_ov031_021109fc kind:data(any) addr:0x02110b2c local
+data_ov031_02110a10 kind:data(byte[0x18]) addr:0x02110b40 local
+data_ov031_02110a28 kind:data(byte[0x18]) addr:0x02110b58 local
+data_ov031_02110a40 kind:data(any) addr:0x02110b70 local
 data_ov031_02110bb0 kind:data(any) addr:0x02110bb0
 data_ov031_02110bb8 kind:data(any) addr:0x02110bb8
 data_ov031_02110bc8_eur1 kind:data(any) addr:0x02110bc8
@@ -2244,14 +2242,14 @@ data_ov031_02112cb8 kind:data(any) addr:0x02112cb8
 data_ov031_02112ccc kind:data(any) addr:0x02112ccc
 _ZTV19data_ov031_02112bac kind:data(any) addr:0x02112cec
 data_ov031_02112d1c kind:data(any) addr:0x02112d1c
-data_ov031_02112d28 kind:data(any) addr:0x02112d28
-data_ov031_02112d40 kind:data(any) addr:0x02112d40
-data_ov031_02112d78 kind:data(any) addr:0x02112d78
+data_ov031_02112be8 kind:data(any) addr:0x02112d28 local
+data_ov031_02112c00 kind:data(any) addr:0x02112d40 local
+data_ov031_02112c38 kind:data(any) addr:0x02112d78 local
 _ZTV13ActorBomb_180 kind:data(any) addr:0x02112db0
 _ZTV13ActorBomb_19C kind:data(any) addr:0x02112dcc
 _ZTV24ActorBomb_ov031_020e2134 kind:data(any) addr:0x02112de8
 _ZTV16ActorProfileBomb kind:data(any) addr:0x02112e04
-data_ov031_02112e30 kind:data(any) addr:0x02112e30
+_ZTV9ActorBomb kind:data(any) addr:0x02112e28
 _ZTV13ActorBlast_E8 kind:data(any) addr:0x02112e84
 _ZTV17ActorProfileBlast kind:data(any) addr:0x02112ea0
 data_ov031_02112ecc kind:data(any) addr:0x02112ecc

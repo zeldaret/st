@@ -1997,12 +1997,10 @@ data_ov031_021109ca kind:data(any) addr:0x021109ca
 data_ov031_021109cc kind:data(any) addr:0x021109cc
 data_ov031_021109ce kind:data(any) addr:0x021109ce
 data_ov031_021109d0 kind:data(any) addr:0x021109d0
-data_ov031_021109dc kind:data(any) addr:0x021109dc
-data_ov031_021109f0 kind:data(any) addr:0x021109f0
-data_ov031_02110a08 kind:data(any) addr:0x02110a08
-data_ov031_02110a30 kind:data(any) addr:0x02110a30
-data_ov031_02110a40 kind:data(any) addr:0x02110a40
-data_ov031_02110a50 kind:data(any) addr:0x02110a50
+data_ov031_021109fc kind:data(any) addr:0x021109dc local
+data_ov031_02110a10 kind:data(byte[0x18]) addr:0x021109f0 local
+data_ov031_02110a28 kind:data(byte[0x18]) addr:0x02110a08 local
+data_ov031_02110a40 kind:data(any) addr:0x02110a20 local
 data_ov031_02110a60 kind:data(any) addr:0x02110a60
 data_ov031_02110a68 kind:data(any) addr:0x02110a68
 data_ov031_02110a78 kind:data(any) addr:0x02110a78
@@ -2242,9 +2240,9 @@ data_ov031_02112b58 kind:data(any) addr:0x02112b58
 _ZTV19data_ov031_02112b6c kind:data(any) addr:0x02112b64
 _ZTV19data_ov031_02112bac kind:data(any) addr:0x02112b8c
 data_ov031_02112bbc kind:data(any) addr:0x02112bbc
-data_ov031_02112bc8 kind:data(any) addr:0x02112bc8
-data_ov031_02112be0 kind:data(any) addr:0x02112be0
-data_ov031_02112c18 kind:data(any) addr:0x02112c18
+data_ov031_02112be8 kind:data(any) addr:0x02112bc8 local
+data_ov031_02112c00 kind:data(any) addr:0x02112be0 local
+data_ov031_02112c38 kind:data(any) addr:0x02112c18 local
 _ZTV13ActorBomb_180 kind:data(any) addr:0x02112c50
 _ZTV13ActorBomb_19C kind:data(any) addr:0x02112c6c
 _ZTV24ActorBomb_ov031_020e2134 kind:data(any) addr:0x02112c88
@@ -2524,9 +2522,9 @@ data_ov031_0211630c kind:data(any) addr:0x0211630c
 data_ov031_02116320 kind:data(any) addr:0x02116320 ambiguous
 data_ov031_02116338 kind:data(any) addr:0x02116338
 data_ov031_02116360 kind:bss addr:0x02116360
-data_ov031_021163e4 kind:bss addr:0x021163e4
-data_ov031_021163e8 kind:bss addr:0x021163e8
-data_ov031_021163f4 kind:bss addr:0x021163f4
+_ZGVN15ProfileInstanceI16ActorProfileBombE8sProfileE kind:bss addr:0x021163e4
+@10775 kind:bss addr:0x021163e8 local
+_ZN15ProfileInstanceI16ActorProfileBombE8sProfileE kind:bss addr:0x021163f4
 data_ov031_02116430 kind:bss addr:0x02116430
 data_ov031_02116434 kind:bss addr:0x02116434
 data_ov031_02116440 kind:bss addr:0x02116440

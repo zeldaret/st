@@ -902,15 +902,15 @@ from:0x020e1514 kind:load to:0x02112ca4 add:0x8 module:overlay(31)
 from:0x020e1544 kind:arm_call_thumb to:0x0208ed10 module:overlay(0)
 from:0x020e1554 kind:arm_call to:0x0209c698 module:overlay(0)
 from:0x020e15a0 kind:load to:0x027e0ce0 module:dtcm
-from:0x020e15a4 kind:load to:0x02110a40 module:overlay(31)
+from:0x020e15a4 kind:load to:0x02110a20 add:0x20 module:overlay(31)
 from:0x020e15a8 kind:load to:0x020b5d14 module:overlay(0)
 from:0x020e15d8 kind:arm_call to:0x0208ee74 module:overlay(0)
 from:0x020e15e8 kind:arm_call to:0x0209c698 module:overlay(0)
 from:0x020e15f8 kind:arm_call to:0x02058a64 module:overlay(0)
 from:0x020e1600 kind:load to:0x027e0ce0 module:dtcm
-from:0x020e1604 kind:load to:0x02110a50 module:overlay(31)
+from:0x020e1604 kind:load to:0x02110a20 add:0x30 module:overlay(31)
 from:0x020e1608 kind:load to:0x020b5d14 module:overlay(0)
-from:0x020e1610 kind:load to:0x02110a30 module:overlay(31)
+from:0x020e1610 kind:load to:0x02110a20 add:0x10 module:overlay(31)
 from:0x020e1640 kind:arm_call to:0x0200f218 module:main
 from:0x020e1668 kind:load to:0x021109dc module:overlay(31)
 from:0x020e1678 kind:arm_call to:0x02098368 module:overlay(0)
