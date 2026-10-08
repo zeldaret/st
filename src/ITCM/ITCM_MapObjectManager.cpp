@@ -1,4 +1,5 @@
 #include "CommonFuncs.hpp"
+#include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectManager.hpp"
 
 MapObject *MapObjectManager::func_01fff498(Vec2bCpp param1) {

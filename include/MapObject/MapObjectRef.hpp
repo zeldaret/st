@@ -1,8 +1,11 @@
 #pragma once
 
+#include "MapObject/MapObjectManager.hpp"
 #include "global.h"
 #include "math.hpp"
 #include "types.h"
+
+struct MapObject;
 
 struct MapObjRef {
     union {

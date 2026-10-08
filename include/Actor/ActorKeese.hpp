@@ -22,18 +22,6 @@ enum ActorKeeseState_ {
 };
 
 class ActorKeese;
-class UnkStruct_ov000_020b34c4 {
-public:
-    /* 00 (vtable) */
-    /* 04 */ MapObjectId mUnk_04;
-    /* 08 */
-
-    UnkStruct_ov000_020b34c4(MapObjectId param1) :
-        mUnk_04(param1) {}
-
-    // data_ov000_020b34c4
-    /* 00 */ virtual bool vfunc_00(MapObject *param1);
-};
 
 class UnkStruct_ov032_0212251c : public UnkStruct_ov000_020b34c4 {
 public:

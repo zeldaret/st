@@ -1,11 +1,12 @@
 #pragma once
 
-#include "MapObject/MapObject.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "files.h"
 #include "types.h"
 
 #include "math.hpp"
+
+struct MapObject;
 
 typedef void (*UnkCallback_func_01fff4cc)(void *, void *);
 
