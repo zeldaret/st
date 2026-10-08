@@ -829,7 +829,7 @@ from:0x0215ee58 kind:load to:0x02163568 module:overlay(68)
 from:0x0215ee5c kind:load to:0x021645ec module:overlay(68)
 from:0x0215ee60 kind:load to:0x021634dc module:overlay(68)
 from:0x0215ee64 kind:load to:0x02162a2c module:overlay(68)
-from:0x0215ee68 kind:load to:0x020b2808 module:overlay(0)
+from:0x0215ee68 kind:load to:0x020b2800 module:overlay(0) add:0x8
 from:0x0215ee74 kind:arm_call_thumb to:0x02057bd4 module:overlay(0)
 from:0x0215ee9c kind:arm_call to:0x02057c38 module:overlay(0)
 from:0x0215eeac kind:arm_call to:0x0209a80c module:overlay(0)

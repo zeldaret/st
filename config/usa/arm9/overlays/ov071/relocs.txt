@@ -1216,7 +1216,7 @@ from:0x0215c478 kind:load to:0x02163bf4 module:overlay(71)
 from:0x0215c47c kind:load to:0x02163c04 module:overlay(71)
 from:0x0215c480 kind:load to:0x02164634 module:overlay(71)
 from:0x0215c484 kind:load to:0x02163c14 module:overlay(71)
-from:0x0215c488 kind:load to:0x020b27a8 module:overlay(0)
+from:0x0215c488 kind:load to:0x020b27a0 module:overlay(0) add:0x8
 from:0x0215c48c kind:load to:0x02163c24 module:overlay(71)
 from:0x0215c490 kind:load to:0x02165114 module:overlay(71)
 from:0x0215c494 kind:load to:0x02163bac module:overlay(71)

@@ -3535,7 +3535,7 @@ data_ov000_020b26f8 kind:data(any) addr:0x020b26f8
 data_ov000_020b2724 kind:data(any) addr:0x020b2724
 data_ov000_020b2750 kind:data(any) addr:0x020b2750
 data_ov000_020b277c kind:data(any) addr:0x020b277c
-data_ov000_020b27a8 kind:data(any) addr:0x020b27a8
+_ZTV24UnkStruct_ov031_Items_01 kind:data(any) addr:0x020b27a0
 data_ov000_020b27c4 kind:data(any) addr:0x020b27c4
 data_ov000_020b27e0 kind:data(any) addr:0x020b27e0
 data_ov000_020b27fc kind:data(any) addr:0x020b27fc

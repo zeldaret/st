@@ -2252,7 +2252,7 @@ _ZTV16ActorProfileBomb kind:data(any) addr:0x02112e04
 _ZTV9ActorBomb kind:data(any) addr:0x02112e28
 _ZTV13ActorBlast_E8 kind:data(any) addr:0x02112e84
 _ZTV17ActorProfileBlast kind:data(any) addr:0x02112ea0
-data_ov031_02112ecc kind:data(any) addr:0x02112ecc
+_ZTV10ActorBlast kind:data(any) addr:0x02112ec4
 _ZTV19data_ov031_02112de0 kind:data(any) addr:0x02112f20
 _ZTV19ActorProfileUnkTLKT kind:data(any) addr:0x02112f8c
 _ZTV12ActorUnkTLKT kind:data(any) addr:0x02112fb0

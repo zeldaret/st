@@ -1415,7 +1415,7 @@ from:0x0214de6c kind:arm_call to:0x0209860c module:overlay(0)
 from:0x0214de90 kind:arm_call to:0x0210134c module:overlay(26)
 from:0x0214de9c kind:arm_call to:0x020ee518 module:overlay(26)
 from:0x0214dea8 kind:load to:0x02151cdc module:overlay(30)
-from:0x0214deac kind:load to:0x020b27a8 module:overlay(0)
+from:0x0214deac kind:load to:0x020b27a0 module:overlay(0) add:0x8
 from:0x0214deb0 kind:load to:0x0215102c module:overlay(30)
 from:0x0214deb4 kind:load to:0x0214df08 module:overlay(30)
 from:0x0214deb8 kind:load to:0x0214dec8 module:overlay(30)

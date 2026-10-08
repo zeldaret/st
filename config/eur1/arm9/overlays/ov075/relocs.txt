@@ -1479,7 +1479,7 @@ from:0x0215e790 kind:arm_call to:0x0215fbdc module:overlay(75)
 from:0x0215e7a0 kind:load to:0x02163350 module:overlay(75)
 from:0x0215e7a4 kind:load to:0x02163734 module:overlay(75)
 from:0x0215e7a8 kind:load to:0x02163308 module:overlay(75)
-from:0x0215e7ac kind:load to:0x020b2808 module:overlay(0)
+from:0x0215e7ac kind:load to:0x020b2800 module:overlay(0) add:0x8
 from:0x0215e7b0 kind:load to:0x02163728 module:overlay(75)
 from:0x0215e7b8 kind:load to:0x027e0130 module:dtcm
 from:0x0215e7bc kind:load to:0x027e07d4 module:dtcm

@@ -18,6 +18,7 @@ src/031_Land/Actor/ActorBomb.cpp:
     .rodata     start:0x0211276c end:0x021127f0
 
 src/031_Land/Actor/ActorBlast.cpp:
+    complete
     .text       start:0x020e4ea0 end:0x020e5690
     .init       start:0x02112db8 end:0x02112e08
     .ctor       start:0x0211452c end:0x02114530

@@ -688,7 +688,7 @@ from:0x0215b520 kind:arm_call_thumb to:0x0205778c module:overlay(0)
 from:0x0215b534 kind:arm_call to:0x02097c0c module:overlay(0)
 from:0x0215b580 kind:arm_call to:0x01ffa06c module:itcm
 from:0x0215b59c kind:load to:0x021627a8 module:overlay(87)
-from:0x0215b5a0 kind:load to:0x020b2808 module:overlay(0)
+from:0x0215b5a0 kind:load to:0x020b2800 module:overlay(0) add:0x8
 from:0x0215b5a4 kind:load to:0x02162d98 module:overlay(87)
 from:0x0215b5a8 kind:load to:0x0216275c module:overlay(87)
 from:0x0215b5ac kind:load to:0x021623a8 module:overlay(87)

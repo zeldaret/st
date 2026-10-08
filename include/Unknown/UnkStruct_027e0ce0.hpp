@@ -333,7 +333,7 @@ public:
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
+    /* 10 */ virtual void vfunc_10(const VecFx32 *param1);
     /* 14 */ virtual void vfunc_14(const VecFx32 *param1);
 };
 

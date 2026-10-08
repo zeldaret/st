@@ -2092,7 +2092,7 @@ from:0x02178eb4 kind:arm_call to:0x020fbddc module:overlay(26)
 from:0x02178ee4 kind:arm_call to:0x02103290 module:overlay(26)
 from:0x02178f20 kind:arm_call to:0x021040c8 module:overlay(26)
 from:0x02178f2c kind:load to:0x0217d0f0 module:overlay(92)
-from:0x02178f30 kind:load to:0x020b2808 module:overlay(0)
+from:0x02178f30 kind:load to:0x020b2800 module:overlay(0) add:0x8
 from:0x02178fc8 kind:load to:0x0217e224 module:overlay(92)
 from:0x02178fcc kind:load to:0x0217d0a4 module:overlay(92)
 from:0x02178fd0 kind:load to:0x0217e274 module:overlay(92)
