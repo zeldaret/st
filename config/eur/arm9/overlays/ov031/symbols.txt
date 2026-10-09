@@ -450,8 +450,8 @@ _ZN21ActorItemBoomerang_A0D0Ev kind:function(arm,size=0x1c) addr:0x020e5710
 _ZN21ActorItemBoomerang_CCD0Ev kind:function(arm,size=0x1c) addr:0x020e572c
 _ZN25ActorProfileItemBoomerangD1Ev kind:function(arm,size=0x14) addr:0x020e5748
 _ZN24UnkStruct_ov031_02112ff48vfunc_08EPK24UnkStruct_ov031_020f3310i kind:function(arm,size=0x28) addr:0x020e575c
-_ZN24UnkStruct_ov031_02112ff48vfunc_0CEPK24UnkStruct_ov031_020e54d4i kind:function(arm,size=0x114) addr:0x020e5784
-func_ov031_020e5898 kind:function(arm,size=0x30) addr:0x020e5898
+_ZN24UnkStruct_ov031_02112ff48vfunc_0CE9MapObjRefP24UnkStruct_ov031_020e54d4PK7VecFx32S5_ kind:function(arm,size=0x114) addr:0x020e5784
+_ZN20ActorItemTornado_17C8vfunc_00Eii kind:function(arm,size=0x30) addr:0x020e5898
 _ZN23ActorProfileItemTornado10GetProfileEv kind:function(arm,size=0xc) addr:0x020e58c8
 _ZN23ActorProfileItemTornado6CreateEv kind:function(arm,size=0x24) addr:0x020e58d4
 _ZN23ActorProfileItemTornadoC1Ev kind:function(arm,size=0x44) addr:0x020e58f8
@@ -465,7 +465,7 @@ _ZN16ActorItemTornado8vfunc_24Ev kind:function(arm,size=0x44) addr:0x020e6158
 _ZN16ActorItemTornado8vfunc_2CEP14Actor_vfunc_30 kind:function(arm,size=0x124) addr:0x020e619c
 _ZN16ActorItemTornado19func_ov031_020e62c0Ev kind:function(arm,size=0x54) addr:0x020e62c0
 _ZN16ActorItemTornado19func_ov031_020e6314Et kind:function(arm,size=0x2c) addr:0x020e6314
-_ZN16ActorItemTornado19func_ov031_020e6340EP7VecFx32ss kind:function(arm,size=0x58) addr:0x020e6340
+_ZN16ActorItemTornado19func_ov031_020e6340EPK7VecFx32ss kind:function(arm,size=0x58) addr:0x020e6340
 _ZN16ActorItemTornado19func_ov031_020e6398Ev kind:function(arm,size=0x78) addr:0x020e6398
 _ZN24UnkStruct_ov031_02112ff4D0Ev kind:function(arm,size=0x1c) addr:0x020e6410
 _ZN16ActorItemTornadoD1Ev kind:function(arm,size=0x48) addr:0x020e642c
@@ -2002,7 +2002,7 @@ data_ov031_02110a10 kind:data(byte[0x18]) addr:0x02110a10 local
 data_ov031_02110a28 kind:data(byte[0x18]) addr:0x02110a28 local
 data_ov031_02110a40 kind:data(any) addr:0x02110a40 local
 data_ov031_02110a80 kind:data(any) addr:0x02110a80
-data_ov031_02110a88 kind:data(any) addr:0x02110a88
+@8898 kind:data(byte[0xb]) addr:0x02110a88 local
 data_ov031_02110a98 kind:data(any) addr:0x02110a98
 data_ov031_02110a9c kind:data(any) addr:0x02110a9c
 data_ov031_02110aa0 kind:data(any) addr:0x02110aa0
@@ -2071,129 +2071,129 @@ __sinit_ov031_02110fe8 kind:function(arm,size=0x10) addr:0x02110fe8
 __sinit_ActorBomb.cpp kind:function(arm,size=0x50) addr:0x02110ff8 local
 __sinit_ActorBlast.cpp kind:function(arm,size=0x50) addr:0x02111048 local
 __sinit_ActorUnkTLKT.cpp kind:function(arm,size=0x50) addr:0x02111098 local
-__sinit_ActorItemBoomerang.cpp kind:function(arm,size=0x50) addr:0x021110e8
-__sinit_ActorItemTornado.cpp kind:function(arm,size=0x74) addr:0x02111138
-__sinit_ActorUnkSWBM.cpp kind:function(arm,size=0x74) addr:0x021111ac
-__sinit_ActorUnkROCK.cpp kind:function(arm,size=0x50) addr:0x02111220
-__sinit_ActorRupee.cpp kind:function(arm,size=0x98) addr:0x02111270
-__sinit_ActorUnkZLSL_ZSRS.cpp kind:function(arm,size=0x94) addr:0x02111308
-__sinit_ActorHeart.cpp kind:function(arm,size=0x6c) addr:0x0211139c
+__sinit_ActorItemBoomerang.cpp kind:function(arm,size=0x50) addr:0x021110e8 local
+__sinit_ActorItemTornado.cpp kind:function(arm,size=0x74) addr:0x02111138 local
+__sinit_ActorUnkSWBM.cpp kind:function(arm,size=0x74) addr:0x021111ac local
+__sinit_ActorUnkROCK.cpp kind:function(arm,size=0x50) addr:0x02111220 local
+__sinit_ActorRupee.cpp kind:function(arm,size=0x98) addr:0x02111270 local
+__sinit_ActorUnkZLSL_ZSRS.cpp kind:function(arm,size=0x94) addr:0x02111308 local
+__sinit_ActorHeart.cpp kind:function(arm,size=0x6c) addr:0x0211139c local
 __sinit_ActorUnkRMTG.cpp kind:function(arm,size=0x50) addr:0x02111408 local
-__sinit_ActorUnkSCCN.cpp kind:function(arm,size=0x50) addr:0x02111458
+__sinit_ActorUnkSCCN.cpp kind:function(arm,size=0x50) addr:0x02111458 local
 __sinit_ActorPot.cpp kind:function(arm,size=0x50) addr:0x021114a8 local
 __sinit_ActorItemFlower.cpp kind:function(arm,size=0x50) addr:0x021114f8 local
-__sinit_ActorShotArrow.cpp kind:function(arm,size=0x50) addr:0x02111548
-__sinit_ActorUnkATTG.cpp kind:function(arm,size=0x50) addr:0x02111598
+__sinit_ActorShotArrow.cpp kind:function(arm,size=0x50) addr:0x02111548 local
+__sinit_ActorUnkATTG.cpp kind:function(arm,size=0x50) addr:0x02111598 local
 __sinit_ActorUnkNTTZ.cpp kind:function(arm,size=0x50) addr:0x021115e8 local
-__sinit_ov031_02111638 kind:function(arm,size=0x24) addr:0x02111638
-__sinit_ActorUnkTGTZ.cpp kind:function(arm,size=0x64) addr:0x0211165c
+__sinit_ov031_02111638 kind:function(arm,size=0x24) addr:0x02111638 local
+__sinit_ActorUnkTGTZ.cpp kind:function(arm,size=0x64) addr:0x0211165c local
 __sinit_ActorUnkSWCH.cpp kind:function(arm,size=0x50) addr:0x021116c0 local
 __sinit_ActorUnkSWON.cpp kind:function(arm,size=0x50) addr:0x02111710 local
 __sinit_ActorUnkNORE.cpp kind:function(arm,size=0x50) addr:0x02111760 local
-__sinit_ActorUnkFLEN.cpp kind:function(arm,size=0x50) addr:0x021117b0
+__sinit_ActorUnkFLEN.cpp kind:function(arm,size=0x50) addr:0x021117b0 local
 __sinit_ActorRollingStone.cpp kind:function(arm,size=0x50) addr:0x02111800
 __sinit_ActorItemDrop.cpp kind:function(arm,size=0x138) addr:0x02111850 local
 __sinit_ActorUnkMLCK.cpp kind:function(arm,size=0x74) addr:0x02111988 local
-__sinit_ActorUnkCLLT.cpp kind:function(arm,size=0x50) addr:0x021119fc
+__sinit_ActorUnkCLLT.cpp kind:function(arm,size=0x50) addr:0x021119fc local
 __sinit_ActorUnkEFSB.cpp kind:function(arm,size=0x50) addr:0x02111a4c local
 __sinit_ActorUnkNFSP.cpp kind:function(arm,size=0x50) addr:0x02111a9c local
 __sinit_MapObjectDoorBase.cpp kind:function(arm,size=0x3c) addr:0x02111aec local
-__sinit_MapObjectDoorDangerSpawn.cpp kind:function(arm,size=0x64) addr:0x02111b28
-__sinit_MapObjectDoorKey.cpp kind:function(arm,size=0x64) addr:0x02111b8c
-__sinit_MapObjectDoorSwitch.cpp kind:function(arm,size=0x64) addr:0x02111bf0
-__sinit_MapObjectDoorClick.cpp kind:function(arm,size=0x64) addr:0x02111c54
-__sinit_MapObjectDoorTouch.cpp kind:function(arm,size=0x50) addr:0x02111cb8
-__sinit_MapObjectUnkEXIT.cpp kind:function(arm,size=0x50) addr:0x02111d08
-__sinit_MapObjectUnkGATE.cpp kind:function(arm,size=0x50) addr:0x02111d58
-__sinit_MapObjectUnkSTIR.cpp kind:function(arm,size=0x50) addr:0x02111da8
-__sinit_MapObjectGrass.cpp kind:function(arm,size=0x90) addr:0x02111df8
-__sinit_MapObjectUnkSWHT.cpp kind:function(arm,size=0x70) addr:0x02111e88
-__sinit_MapObjectBombFlower.cpp kind:function(arm,size=0x50) addr:0x02111ef8
+__sinit_MapObjectDoorDangerSpawn.cpp kind:function(arm,size=0x64) addr:0x02111b28 local
+__sinit_MapObjectDoorKey.cpp kind:function(arm,size=0x64) addr:0x02111b8c local
+__sinit_MapObjectDoorSwitch.cpp kind:function(arm,size=0x64) addr:0x02111bf0 local
+__sinit_MapObjectDoorClick.cpp kind:function(arm,size=0x64) addr:0x02111c54 local
+__sinit_MapObjectDoorTouch.cpp kind:function(arm,size=0x50) addr:0x02111cb8 local
+__sinit_MapObjectUnkEXIT.cpp kind:function(arm,size=0x50) addr:0x02111d08 local
+__sinit_MapObjectUnkGATE.cpp kind:function(arm,size=0x50) addr:0x02111d58 local
+__sinit_MapObjectUnkSTIR.cpp kind:function(arm,size=0x50) addr:0x02111da8 local
+__sinit_MapObjectGrass.cpp kind:function(arm,size=0x90) addr:0x02111df8 local
+__sinit_MapObjectUnkSWHT.cpp kind:function(arm,size=0x70) addr:0x02111e88 local
+__sinit_MapObjectBombFlower.cpp kind:function(arm,size=0x50) addr:0x02111ef8 local
 __sinit_MapObjectTreasureSpawned.cpp kind:function(arm,size=0x6c) addr:0x02111f48 local
-__sinit_MapObjectChestBase.cpp kind:function(arm,size=0x30) addr:0x02111fb4
-__sinit_MapObjectUnkTRED.cpp kind:function(arm,size=0x6c) addr:0x02111fe4
-__sinit_MapObjectUnkTREW.cpp kind:function(arm,size=0x6c) addr:0x02112050
-__sinit_MapObjectUnkTREN.cpp kind:function(arm,size=0x6c) addr:0x021120bc
-__sinit_MapObjectUnkTRWS.cpp kind:function(arm,size=0x50) addr:0x02112128
-__sinit_MapObjectPot.cpp kind:function(arm,size=0x50) addr:0x02112178
-__sinit_MapObjectUnkSKBN.cpp kind:function(arm,size=0x74) addr:0x021121c8
-__sinit_MapObjectUnkITFL.cpp kind:function(arm,size=0x50) addr:0x0211223c
-__sinit_MapObjectUnkSKDI.cpp kind:function(arm,size=0x50) addr:0x0211228c
+__sinit_MapObjectChestBase.cpp kind:function(arm,size=0x30) addr:0x02111fb4 local
+__sinit_MapObjectUnkTRED.cpp kind:function(arm,size=0x6c) addr:0x02111fe4 local
+__sinit_MapObjectUnkTREW.cpp kind:function(arm,size=0x6c) addr:0x02112050 local
+__sinit_MapObjectUnkTREN.cpp kind:function(arm,size=0x6c) addr:0x021120bc local
+__sinit_MapObjectUnkTRWS.cpp kind:function(arm,size=0x50) addr:0x02112128 local
+__sinit_MapObjectPot.cpp kind:function(arm,size=0x50) addr:0x02112178 local
+__sinit_MapObjectUnkSKBN.cpp kind:function(arm,size=0x74) addr:0x021121c8 local
+__sinit_MapObjectUnkITFL.cpp kind:function(arm,size=0x50) addr:0x0211223c local
+__sinit_MapObjectUnkSKDI.cpp kind:function(arm,size=0x50) addr:0x0211228c local
 __sinit_ActorUnkSKDO.cpp kind:function(arm,size=0x50) addr:0x021122dc local
-__sinit_MapObjectUnkCRWL.cpp kind:function(arm,size=0x70) addr:0x0211232c
-__sinit_MapObjectUnkBREX.cpp kind:function(arm,size=0x64) addr:0x0211239c
-__sinit_MapObjectUnkTATZ.cpp kind:function(arm,size=0x64) addr:0x02112400
-__sinit_MapObjectUnkSTSP.cpp kind:function(arm,size=0x50) addr:0x02112464
-__sinit_MapObjectUnkBLCC.cpp kind:function(arm,size=0x5c) addr:0x021124b4
-__sinit_MapObjectUnkRLSG.cpp kind:function(arm,size=0x70) addr:0x02112510
-__sinit_MapObjectUnkSAND.cpp kind:function(arm,size=0xe0) addr:0x02112580
-__sinit_MapObjectUnkSPTB.cpp kind:function(arm,size=0x74) addr:0x02112660
-__sinit_MapObjectUnkGSST.cpp kind:function(arm,size=0x50) addr:0x021126d4
-__sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x02112724
+__sinit_MapObjectUnkCRWL.cpp kind:function(arm,size=0x70) addr:0x0211232c local
+__sinit_MapObjectUnkBREX.cpp kind:function(arm,size=0x64) addr:0x0211239c local
+__sinit_MapObjectUnkTATZ.cpp kind:function(arm,size=0x64) addr:0x02112400 local
+__sinit_MapObjectUnkSTSP.cpp kind:function(arm,size=0x50) addr:0x02112464 local
+__sinit_MapObjectUnkBLCC.cpp kind:function(arm,size=0x5c) addr:0x021124b4 local
+__sinit_MapObjectUnkRLSG.cpp kind:function(arm,size=0x70) addr:0x02112510 local
+__sinit_MapObjectUnkSAND.cpp kind:function(arm,size=0xe0) addr:0x02112580 local
+__sinit_MapObjectUnkSPTB.cpp kind:function(arm,size=0x74) addr:0x02112660 local
+__sinit_MapObjectUnkGSST.cpp kind:function(arm,size=0x50) addr:0x021126d4 local
+__sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x02112724 local
 .p__sinit_ov031_02110fd0 kind:data(word) addr:0x02112794
 .p__sinit_ov031_02110fe8 kind:data(word) addr:0x02112798
 .p__sinit_ActorBomb.cpp kind:data(word) addr:0x0211279c local
 .p__sinit_ActorBlast.cpp kind:data(word) addr:0x021127a0 local
 .p__sinit_ActorUnkTLKT.cpp kind:data(word) addr:0x021127a4 local
-.p__sinit_ActorItemBoomerang.cpp kind:data(word) addr:0x021127a8
-.p__sinit_ActorItemTornado.cpp kind:data(word) addr:0x021127ac
-.p__sinit_ActorUnkSWBM.cpp kind:data(word) addr:0x021127b0
-.p__sinit_ActorUnkROCK.cpp kind:data(word) addr:0x021127b4
-.p__sinit_ActorRupee.cpp kind:data(word) addr:0x021127b8
-.p__sinit_ActorUnkZLSL_ZSRS.cpp kind:data(word) addr:0x021127bc
-.p__sinit_ActorHeart.cpp kind:data(word) addr:0x021127c0
+.p__sinit_ActorItemBoomerang.cpp kind:data(word) addr:0x021127a8 local
+.p__sinit_ActorItemTornado.cpp kind:data(word) addr:0x021127ac local
+.p__sinit_ActorUnkSWBM.cpp kind:data(word) addr:0x021127b0 local
+.p__sinit_ActorUnkROCK.cpp kind:data(word) addr:0x021127b4 local
+.p__sinit_ActorRupee.cpp kind:data(word) addr:0x021127b8 local
+.p__sinit_ActorUnkZLSL_ZSRS.cpp kind:data(word) addr:0x021127bc local
+.p__sinit_ActorHeart.cpp kind:data(word) addr:0x021127c0 local
 .p__sinit_ActorUnkRMTG.cpp kind:data(word) addr:0x021127c4 local
-.p__sinit_ActorUnkSCCN.cpp kind:data(word) addr:0x021127c8
+.p__sinit_ActorUnkSCCN.cpp kind:data(word) addr:0x021127c8 local
 .p__sinit_ActorPot.cpp kind:data(word) addr:0x021127cc local
 .p__sinit_ActorItemFlower.cpp kind:data(word) addr:0x021127d0 local
-.p__sinit_ActorShotArrow.cpp kind:data(word) addr:0x021127d4
-.p__sinit_ActorUnkATTG.cpp kind:data(word) addr:0x021127d8
+.p__sinit_ActorShotArrow.cpp kind:data(word) addr:0x021127d4 local
+.p__sinit_ActorUnkATTG.cpp kind:data(word) addr:0x021127d8 local
 .p__sinit_ActorUnkNTTZ.cpp kind:data(word) addr:0x021127dc local
-.p__sinit_ov031_02111638 kind:data(word) addr:0x021127e0
-.p__sinit_ActorUnkTGTZ.cpp kind:data(word) addr:0x021127e4
+.p__sinit_ov031_02111638 kind:data(word) addr:0x021127e0 local
+.p__sinit_ActorUnkTGTZ.cpp kind:data(word) addr:0x021127e4 local
 .p__sinit_ActorUnkSWCH.cpp kind:data(word) addr:0x021127e8 local
 .p__sinit_ActorUnkSWON.cpp kind:data(word) addr:0x021127ec local
 .p__sinit_ActorUnkNORE.cpp kind:data(word) addr:0x021127f0 local
-.p__sinit_ActorUnkFLEN.cpp kind:data(word) addr:0x021127f4
-.p__sinit_ActorRollingStone.cpp kind:data(word) addr:0x021127f8
+.p__sinit_ActorUnkFLEN.cpp kind:data(word) addr:0x021127f4 local
+.p__sinit_ActorRollingStone.cpp kind:data(word) addr:0x021127f8 local
 .p__sinit_ActorItemDrop.cpp kind:data(word) addr:0x021127fc local
 .p__sinit_ActorUnkMLCK.cpp kind:data(word) addr:0x02112800 local
-.p__sinit_ActorUnkCLLT.cpp kind:data(word) addr:0x02112804
+.p__sinit_ActorUnkCLLT.cpp kind:data(word) addr:0x02112804 local
 .p__sinit_ActorUnkEFSB.cpp kind:data(word) addr:0x02112808 local
 .p__sinit_ActorUnkNFSP.cpp kind:data(word) addr:0x0211280c local
 .p__sinit_MapObjectDoorBase.cpp kind:data(word) addr:0x02112810 local
-.p__sinit_MapObjectDoorDangerSpawn.cpp kind:data(word) addr:0x02112814
-.p__sinit_MapObjectDoorKey.cpp kind:data(word) addr:0x02112818
-.p__sinit_MapObjectDoorSwitch.cpp kind:data(word) addr:0x0211281c
-.p__sinit_MapObjectDoorClick.cpp kind:data(word) addr:0x02112820
-.p__sinit_MapObjectDoorTouch.cpp kind:data(word) addr:0x02112824
-.p__sinit_MapObjectUnkEXIT.cpp kind:data(word) addr:0x02112828
-.p__sinit_MapObjectUnkGATE.cpp kind:data(word) addr:0x0211282c
-.p__sinit_MapObjectUnkSTIR.cpp kind:data(word) addr:0x02112830
-.p__sinit_MapObjectGrass.cpp kind:data(word) addr:0x02112834
-.p__sinit_MapObjectUnkSWHT.cpp kind:data(word) addr:0x02112838
-.p__sinit_MapObjectBombFlower.cpp kind:data(word) addr:0x0211283c
+.p__sinit_MapObjectDoorDangerSpawn.cpp kind:data(word) addr:0x02112814 local
+.p__sinit_MapObjectDoorKey.cpp kind:data(word) addr:0x02112818 local
+.p__sinit_MapObjectDoorSwitch.cpp kind:data(word) addr:0x0211281c local
+.p__sinit_MapObjectDoorClick.cpp kind:data(word) addr:0x02112820 local
+.p__sinit_MapObjectDoorTouch.cpp kind:data(word) addr:0x02112824 local
+.p__sinit_MapObjectUnkEXIT.cpp kind:data(word) addr:0x02112828 local
+.p__sinit_MapObjectUnkGATE.cpp kind:data(word) addr:0x0211282c local
+.p__sinit_MapObjectUnkSTIR.cpp kind:data(word) addr:0x02112830 local
+.p__sinit_MapObjectGrass.cpp kind:data(word) addr:0x02112834 local
+.p__sinit_MapObjectUnkSWHT.cpp kind:data(word) addr:0x02112838 local
+.p__sinit_MapObjectBombFlower.cpp kind:data(word) addr:0x0211283c local
 .p__sinit_MapObjectTreasureSpawned.cpp kind:data(word) addr:0x02112840 local
-.p__sinit_MapObjectChestBase.cpp kind:data(word) addr:0x02112844
-.p__sinit_MapObjectUnkTRED.cpp kind:data(word) addr:0x02112848
-.p__sinit_MapObjectUnkTREW.cpp kind:data(word) addr:0x0211284c
-.p__sinit_MapObjectUnkTREN.cpp kind:data(word) addr:0x02112850
-.p__sinit_MapObjectUnkTRWS.cpp kind:data(word) addr:0x02112854
-.p__sinit_MapObjectPot.cpp kind:data(word) addr:0x02112858
-.p__sinit_MapObjectUnkSKBN.cpp kind:data(word) addr:0x0211285c
-.p__sinit_MapObjectUnkITFL.cpp kind:data(word) addr:0x02112860
-.p__sinit_MapObjectUnkSKDI.cpp kind:data(word) addr:0x02112864
+.p__sinit_MapObjectChestBase.cpp kind:data(word) addr:0x02112844 local
+.p__sinit_MapObjectUnkTRED.cpp kind:data(word) addr:0x02112848 local
+.p__sinit_MapObjectUnkTREW.cpp kind:data(word) addr:0x0211284c local
+.p__sinit_MapObjectUnkTREN.cpp kind:data(word) addr:0x02112850 local
+.p__sinit_MapObjectUnkTRWS.cpp kind:data(word) addr:0x02112854 local
+.p__sinit_MapObjectPot.cpp kind:data(word) addr:0x02112858 local
+.p__sinit_MapObjectUnkSKBN.cpp kind:data(word) addr:0x0211285c local
+.p__sinit_MapObjectUnkITFL.cpp kind:data(word) addr:0x02112860 local
+.p__sinit_MapObjectUnkSKDI.cpp kind:data(word) addr:0x02112864 local
 .p__sinit_ActorUnkSKDO.cpp kind:data(word) addr:0x02112868 local
-.p__sinit_MapObjectUnkCRWL.cpp kind:data(word) addr:0x0211286c
-.p__sinit_MapObjectUnkBREX.cpp kind:data(word) addr:0x02112870
-.p__sinit_MapObjectUnkTATZ.cpp kind:data(word) addr:0x02112874
-.p__sinit_MapObjectUnkSTSP.cpp kind:data(word) addr:0x02112878
-.p__sinit_MapObjectUnkBLCC.cpp kind:data(word) addr:0x0211287c
-.p__sinit_MapObjectUnkRLSG.cpp kind:data(word) addr:0x02112880
-.p__sinit_MapObjectUnkSAND.cpp kind:data(word) addr:0x02112884
-.p__sinit_MapObjectUnkSPTB.cpp kind:data(word) addr:0x02112888
-.p__sinit_MapObjectUnkGSST.cpp kind:data(word) addr:0x0211288c
-.p__sinit_MapObjectUnkSWFS.cpp kind:data(word) addr:0x02112890
+.p__sinit_MapObjectUnkCRWL.cpp kind:data(word) addr:0x0211286c local
+.p__sinit_MapObjectUnkBREX.cpp kind:data(word) addr:0x02112870 local
+.p__sinit_MapObjectUnkTATZ.cpp kind:data(word) addr:0x02112874 local
+.p__sinit_MapObjectUnkSTSP.cpp kind:data(word) addr:0x02112878 local
+.p__sinit_MapObjectUnkBLCC.cpp kind:data(word) addr:0x0211287c local
+.p__sinit_MapObjectUnkRLSG.cpp kind:data(word) addr:0x02112880 local
+.p__sinit_MapObjectUnkSAND.cpp kind:data(word) addr:0x02112884 local
+.p__sinit_MapObjectUnkSPTB.cpp kind:data(word) addr:0x02112888 local
+.p__sinit_MapObjectUnkGSST.cpp kind:data(word) addr:0x0211288c local
+.p__sinit_MapObjectUnkSWFS.cpp kind:data(word) addr:0x02112890 local
 data_ov031_021128a0 kind:data(any) addr:0x021128a0 ambiguous
 data_ov031_021128a4 kind:data(any) addr:0x021128a4
 data_ov031_021128a8 kind:data(any) addr:0x021128a8
@@ -2259,8 +2259,8 @@ _ZTV22ActorItemBoomerang_11C kind:data(any) addr:0x02112f18
 _ZTV21ActorItemBoomerang_CC kind:data(any) addr:0x02112f34
 _ZTV25ActorProfileItemBoomerang kind:data(any) addr:0x02112f50
 _ZTV18ActorItemBoomerang kind:data(any) addr:0x02112f74
-_ZTV19data_ov031_02112fd8 kind:data(any) addr:0x02112fd0
-data_ov031_02112fdc kind:data(any) addr:0x02112fdc
+_ZTV20ActorItemTornado_17C kind:data(any) addr:0x02112fd0
+data_ov031_02112fdc kind:data(any) addr:0x02112fdc local
 _ZTV24UnkStruct_ov031_02112ff4 kind:data(any) addr:0x02112fec
 _ZTV23ActorProfileItemTornado kind:data(any) addr:0x02113008
 _ZTV16ActorItemTornado kind:data(any) addr:0x0211302c

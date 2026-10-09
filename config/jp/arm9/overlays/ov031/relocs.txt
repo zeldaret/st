@@ -1448,7 +1448,7 @@ from:0x020e74d0 kind:arm_call to:0x02059218 module:overlay(0)
 from:0x020e74ec kind:load to:0x02114dcc add:0x8 module:overlay(31)
 from:0x020e74f0 kind:load to:0x021127f8 module:overlay(31)
 from:0x020e74f4 kind:load to:0x027e0ce0 module:dtcm
-from:0x020e74f8 kind:load to:0x02114d94 module:overlay(31)
+from:0x020e74f8 kind:load to:0x02114d8c module:overlay(31) add:0x8
 from:0x020e74fc kind:load to:0x02114d70 add:0x8 module:overlay(31)
 from:0x020e7500 kind:load to:0x020b3fc0 add:0x8 module:overlay(0)
 from:0x020e7504 kind:load to:0x020a1aac module:overlay(0)

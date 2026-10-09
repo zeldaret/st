@@ -41,11 +41,12 @@ src/031_Land/Actor/ActorItemBoomerang.cpp:
     .bss        start:0x02116628 end:0x02116674
 
 src/031_Land/Actor/ActorItemTornado.cpp:
-    .text       start:0x020e59e8 end:0x020e65f8
+    .text       start:0x020e587c end:0x020e65f8
     .init       start:0x02111268 end:0x021112dc
     .ctor       start:0x021128dc end:0x021128e0
-    .data       start:0x0211312c end:0x021131c8
+    .data       start:0x02113110 end:0x021131c8
     .bss        start:0x02116674 end:0x021166c0
+    .rodata     start:0x02110bb8 end:0x02110bc8
 
 src/031_Land/Actor/ActorUnkSWBM.cpp:
     .text       start:0x020e69f8 end:0x020e7498

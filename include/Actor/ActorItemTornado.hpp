@@ -4,13 +4,22 @@
 #include "Actor/ActorProfile.hpp"
 #include "Player/PlayerGet.hpp"
 #include "global.h"
+#include "nitro/types.h"
 #include "types.h"
 
-class UnkStruct_ov031_02112ff4 : public UnkStruct_ov031_Items_00 {
+class UnkStruct_ov031_02112ff4 : public UnkStruct_ov031_Items_00_Base {
 public:
+    /* 00 (base) */
+    /* 04 */ Actor *mUnk_04;
+    /* 08 */
+
+    UnkStruct_ov031_02112ff4(Actor *pActor) :
+        mUnk_04(pActor) {}
+
     // data_ov031_02112ff4
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2);
-    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 param2);
+    /* 0C */ virtual bool vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+                                   const VecFx32 *param4) override;
 };
 
 enum ActorItemTornadoState_ {
@@ -20,21 +29,40 @@ enum ActorItemTornadoState_ {
     ActorItemTornadoState_MAX,
 };
 
+class UnkSystem5_Derived2 {
+public:
+    /* 00 */ UnkSystem5 mUnk_00;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ PAD(0x24, 0x40);
+    /* 40 */
+
+    UnkSystem5_Derived2(UnkStruct_ov000_02058a84 *param1, G3d_Model *param2) :
+        mUnk_00(&this->mUnk_20, param2) {
+        this->mUnk_00.func_ov000_020577a4(param1, 0, false);
+    }
+};
+
+class ActorItemTornado_17C : public UnkStruct_PlayerGet_74 {
+public:
+    /* 00 (base) */
+    /* 18 */
+
+    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2) override;
+
+    ActorItemTornado_17C(UnkStruct_ov000_0208f820 *param1) :
+        UnkStruct_PlayerGet_74(param1) {}
+};
+
 class ActorItemTornado : public Actor {
 public:
     /* 000 (base) */
     /* 094 */ ModelRender mUnk_94;
-    /* 0F4 */ UnkSystem5 mUnk_F4;
-    /* 114 */ unk32 mUnk_114;
-    /* 118 */ PAD(0x118, 0x134);
-    /* 134 */ UnkSystem5 mUnk_134;
-    /* 154 */ unk32 mUnk_154;
-    /* 158 */ PAD(0x158, 0x174);
+    /* 0F4 */ UnkSystem5_Derived2 mUnk_F4;
+    /* 134 */ UnkSystem5_Derived2 mUnk_134;
     /* 174 */ UnkStruct_ov031_02112ff4 mUnk_174;
-    /* 178 */ PAD(0x178, 0x17C);
-    /* 17C */ UnkStruct_PlayerGet_74 mUnk_17C;
+    /* 17C */ ActorItemTornado_17C mUnk_17C;
     /* 194 */ UnkStruct_ov031_Items_01 mUnk_194;
-    /* 1C0 */ VecFx32 mUnk_1C0;
+    /* 1C0 */ VecFx32Cpp mUnk_1C0;
     /* 1CC */ u16 mUnk_1CC;
     /* 1CE */ bool mUnk_1CE;
     /* 1CF */ bool mUnk_1CF;
@@ -59,7 +87,7 @@ public:
     void func_ov031_020e5d18(unk32 param1);
     bool func_ov031_020e62c0();
     bool func_ov031_020e6314(u16 param1);
-    bool func_ov031_020e6340(VecFx32 *param1, unk16 param2, unk16 param3);
+    bool func_ov031_020e6340(const VecFx32 *param1, unk16 param2, unk16 param3);
     bool func_ov031_020e6398();
 };
 
