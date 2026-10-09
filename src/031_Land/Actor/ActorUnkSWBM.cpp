@@ -9,11 +9,6 @@
 #include "Unknown/UnkStruct_027e0d34.hpp"
 #include "Unknown/UnkStruct_ov000_020b4ec4.hpp"
 
-struct UnkStruct_ov031_020e5d18_00 {
-    Actor *mUnk_00;
-    u8 mUnk_04[0x14];
-};
-
 static const Cylinder data_ov031_02113114(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f),
                                           FX_F32_TO_FX32(0.35f));
 

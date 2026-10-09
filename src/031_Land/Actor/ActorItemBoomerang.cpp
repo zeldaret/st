@@ -1,6 +1,7 @@
 #include "Actor/ActorItemBoomerang.hpp"
 #include "CommonFuncs.hpp"
 
+#include "Item/Item.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "MapObject/MapObjectUnkICEB.hpp"
 #include "System/SysNew.hpp"
@@ -10,6 +11,10 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d2c.hpp"
+#include "global.h"
+#include "nitro/fx.h"
+#include "nitro/math.h"
+#include "nitro/types.h"
 
 DECL_PROFILE(ActorProfileItemBoomerang);
 
@@ -20,14 +25,17 @@ Actor *ActorProfileItemBoomerang::Create() {
 ActorProfileItemBoomerang::ActorProfileItemBoomerang() :
     ActorProfile(ActorId_ITBM) {}
 
+static inline G3d_Model *GetModel() {
+    UnkStruct_027e0ce0_1C *ptr = data_027e0ce0->mUnk_1C;
+    return ptr->func_ov000_0208ed30(0x0, 0x1, ItemManager::func_ov000_020a8974(ItemFlag_Boomerang)->mUnk_10);
+}
+
 // non-matching
 ActorItemBoomerang::ActorItemBoomerang() :
-    mUnk_94(data_027e0ce0->mUnk_1C->func_ov000_0208ed30(0x0, 0x1, ItemManager::func_ov000_020a8974(0x1)->mUnk_10), true),
+    mUnk_94(GetModel(), true),
     mUnk_11C(this),
-    mUnk_12C(),
-    mUnk_138(0x0),
-    mUnk_13A(0x0),
-    mUnk_13C((u16) 0x8D71),
+    mUnk_138(0, 0),
+    mUnk_13C(0x8D71),
     mUnk_140(0x1000, 0x0) {
     this->mState = ActorItemBoomerangState_0;
     this->mTimer.Reset();
@@ -80,129 +88,156 @@ void ActorItemBoomerang::func_ov031_020e49b0(unk32 param1) {
 
 // non-matching
 void ActorItemBoomerang::Update() {
-    VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VecFx32 sp6C;
+    UnkStruct_ov031_020e5d18_00 sp54;
+    VecFx32 sp48;
+    VecFx32 sp3C;
+    UnkStruct_ov031_020e5d18_00 sp24;
+    MapObjRef sp20;
+    struct {
+        fx32 unk_00;
+        fx32 unk_04;
+    } sp18;
+    RefStruct sp14;
+    Vec2bCpp spE;
+    Vec2bCpp spC;
 
-    if (func_ov000_0205aeac() && this->mUnk_128 == 0x1 || this->mUnk_128 == 0x2) {
+    STACK_PAD(0x04);
+
+    VecFx32 *temp_r0 = &this->mPos;
+    VecFx32_Copy(&this->mPos, &this->mPrevPos);
+    VecFx32_Add(temp_r0, &this->mVel, temp_r0);
+
+    if ((func_ov000_0205aeac() && this->mUnk_128 == 0x1) || this->mUnk_128 == 0x2) {
         VecFx32_Copy(&this->mPos, &this->mUnk_140.mUnk_00);
     }
 
-    this->mTimer.Update();
     this->mAngle += DEG_TO_ANG(45);
+    this->mTimer.Update();
     this->func_ov031_020e52a0();
     data_027e09a8->func_ov000_02071d34(&this->mRef, this->mUnk_13C, &this->mPos, 0x0);
 
-    bool var2 = false;
     switch (this->mState) {
         case ActorItemBoomerangState_0: {
-            this->mUnk_A0.mUnk_0C.Init(this->mPos.x, this->mPos.y, this->mPos.z, FX_F32_TO_FX32(0.3f));
+            s32 flags = 0;
+            bool var1 = false;
+
+            this->mUnk_A0.mUnk_0C.Init(this->mPos.x, this->mPos.y - 0x19A, this->mPos.z, 0x666);
 
             data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_A0);
 
-            bool var1 = false;
-            if (data_027e0ce0->func_ov000_0208bc1c(0x1, 0x0, 0x16, 0x0, 0x0, 0x0)) {
-                var1           = true;
-                this->mUnk_13A = 0x14;
-                this->mUnk_138 = 0x0;
+            if (data_027e0ce0->func_ov000_0208bc1c(0x1, 0x0, 0x16, &this->mUnk_A0.mUnk_0C, 0x0, 0x0)) {
+                this->mUnk_138.Set(0, 20);
+                var1 = true;
             }
 
-            Actor *sp54; /* actor* ? */
-            func_01ffe6c4(&sp54, this->mRef, &this->mPos, &this->mPrevPos, 0x1C, NULL, &this->mUnk_11C);
-            unk32 tmp = sp54->func_ov000_0207df88((Cylinder *) &this->mUnk_CC.mUnk_30.mUnk_00, 0xC);
-            func_01ffe6c4(&sp54, this->mRef, &this->mPos, &this->mPrevPos, 0x1F, NULL, &this->mUnk_11C);
+            sp54.mUnk_00 = NULL;
 
-            if ((tmp | sp54->func_ov000_0207e294((Cylinder *) &this->mUnk_10C)) == 0 && !var1) {
-                if (data_027e0ce0->mUnk_2C->GetCurrentItem() != ItemFlag_Boomerang) {
-                    this->SetState(ActorItemBoomerangState_1);
-                    return;
-                }
+            func_01ffe6c4(&sp54.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, 0x1C, NULL, &this->mUnk_11C);
 
-                VecFx32 sp6C;
-                ActorRef sp14;
-                if (!data_027e0d2c->func_ov031_020d962c(&this->mPos, 0x4CD, &sp6C, &sp14)) {
-                    this->SetState(ActorItemBoomerangState_1);
-                } else {
-                    unk32 vecLength      = VecFx32_Length(&this->mVel);
-                    unk32 lengthModified = (vecLength << 0xA) + 0x800;
-                    unk32 sp18           = lengthModified;
-                    func_01ff916c(&sp18, 0x0, FX_MUL(vecLength, lengthModified));
-                    func_01ffb714(&sp6C, &this->mPos, &this->mVel);
-                    func_01ff97c8(&this->mPos, sp18 + 0x200);
-                }
+            flags |= ((Actor *) &sp54)->func_ov000_0207df88((Cylinder *) &this->mUnk_CC.mUnk_30.mUnk_00, 0xC);
 
-                if (sp14.type != 0) {
-                    this->mUnk_CC.mUnk_0C.pos.z = this->mPos.z;
-                    this->mUnk_CC.mUnk_0C.pos.y = this->mPos.y + FX_F32_TO_FX32(-0.1003f);
-                    this->mUnk_CC.mUnk_0C.size  = 0xA000;
-                    this->mUnk_CC.mUnk_0C.pos.x = this->mPos.x;
-                    data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_CC);
-                    return;
-                }
-                if (!(sp14.data & 0x1000)) {
-                    return;
-                }
+            func_01ffe6c4(&sp54.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, 0x1F, NULL, &this->mUnk_11C);
 
-                Vec2bCpp pos;
-                pos.x             = 0x0;
-                pos.y             = 0x0;
-                MapObject *object = gpMapObjManager->func_01fff498(pos);
-                if (object == NULL) {
-                    return;
-                }
-                object->vfunc_1C(this->mRef, 0xC, &this->mVel);
-                if (object->mUnk_10 != NULL) {
-                    unk32 val = object->mUnk_10->mUnk_0C.y;
-                    if (val == 0x2) {
-                        this->func_ov031_020e5034(0x1);
-                    } else if (val == 0x4) {
-                        this->func_ov031_020e5034(0x2);
-                    }
-                }
-                MapObjectId objectId = object->GetMapObjectId();
-                if (objectId != MapObjectId_SKDI && objectId != MapObjectId_SWHT && objectId != MapObjectId_Pot) {
-                    this->func_ov031_020e49b0(0x8D70);
-                }
+            flags |= ((Actor *) &sp54)->func_ov000_0207e294((Cylinder *) &this->mUnk_10C);
+
+            if (flags != 0 || var1) {
+                this->func_ov031_020e49b0(0x8D70);
                 return;
             }
-            this->func_ov031_020e49b0(0x8D70);
+
+            if (data_027e0ce0->mUnk_2C->GetCurrentItem() != ItemFlag_Boomerang) {
+                this->SetState(ActorItemBoomerangState_1);
+                return;
+            }
+
+            sp14.Reset();
+
+            if (!data_027e0d2c->func_ov031_020d962c(&this->mPos, 0x4CD, &sp6C, (ActorRef *) &sp14)) {
+                this->SetState(ActorItemBoomerangState_1);
+            } else {
+
+                sp18.unk_00 = VecFx32_Length(&this->mVel);
+
+                func_01ff916c(&sp18.unk_00, 0x0, FX_MUL(sp18.unk_00, 0x400));
+                func_01ffb714(&sp6C, &this->mPos, &this->mVel);
+                func_01ff97c8(&this->mVel, sp18.unk_00 + 0x200);
+            }
+
+            if (sp14.type != 0) {
+                this->mUnk_CC.mUnk_0C.pos.z = this->mPos.z;
+                this->mUnk_CC.mUnk_0C.pos.y = this->mPos.y + FX_F32_TO_FX32(-0.1003f);
+                this->mUnk_CC.mUnk_0C.size  = 0xA000;
+                this->mUnk_CC.mUnk_0C.pos.x = this->mPos.x;
+                data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_CC);
+                return;
+            }
+
+            if (!(sp14.moRef.unk_00_u16 & 0x1000)) {
+                return;
+            }
+
+            sp20 = sp14.data;
+            spE  = sp20.GetUnk02();
+
+            MapObject *temp_r0_5 = gpMapObjManager->func_01fff498(spE);
+
+            if (temp_r0_5 == NULL) {
+                return;
+            }
+
+            temp_r0_5->vfunc_1C(this->mRef, 0x0C, &this->mVel);
+
+            if (temp_r0_5->mUnk_10 != NULL) {
+                u32 val = (temp_r0_5->mUnk_10->mUnk_08 >> 0x09) & 0x07;
+
+                if (val == 0x02) {
+                    this->func_ov031_020e5034(0x01);
+                } else if (val == 0x04) {
+                    this->func_ov031_020e5034(0x02);
+                }
+            }
+
+            MapObjectId objectId = temp_r0_5->GetMapObjectId();
+
+            if (objectId != MapObjectId_SKDI && objectId != MapObjectId_SWHT && objectId != MapObjectId_Pot) {
+                this->func_ov031_020e49b0(0x8D70);
+                return;
+            }
+
             break;
         }
 
         case ActorItemBoomerangState_1: {
-            this->mUnk_A0.mUnk_0C.Init(this->mPos.x, this->mPos.y, this->mPos.z, FX_F32_TO_FX32(0.3f));
+            bool var_r4_2 = false;
+
+            this->mUnk_A0.mUnk_0C.Init(this->mPos.x, this->mPos.y - 0x19A, this->mPos.z, 0x666);
 
             data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_A0);
-            Actor *sp24; /* actor* ? */
-            func_01ffe6c4(&sp24, this->mRef, &this->mPos, &this->mPrevPos, 0x1C, NULL, &this->mUnk_11C);
-            sp24->func_ov000_0207df88((Cylinder *) &this->mUnk_CC.mUnk_30.mUnk_00, 0xC);
 
-            bool var3 = false;
-            if ((u32) this->mUnk_138 < (u32) this->mUnk_13A) {
-                ++this->mUnk_138;
-            } else {
-                var2 = true;
+            sp24.mUnk_00 = NULL;
+            func_01ffe6c4(&sp24.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, 0x1C, NULL, &this->mUnk_11C);
+            ((Actor *) &sp24)->func_ov000_0207df88((Cylinder *) &this->mUnk_CC.mUnk_30.mUnk_00, 0xC);
+
+            if (this->mUnk_138.HasExpiredAlt() &&
+                data_027e0ce0->func_ov000_0208bc1c(0x1, 0x0, 0x16, &this->mUnk_A0.mUnk_0C, 0x0, 0x0)) {
+                var_r4_2 = true;
             }
-            if (var2 && data_027e0ce0->func_ov000_0208bc1c(0x1, 0x0, 0x16, 0x0, 0x0, 0x0)) {
-                var3 = true;
-            }
-            if (var3) {
-                this->mUnk_13A = 0x14;
-                this->mUnk_138 = 0x0;
+
+            if (var_r4_2) {
+                this->mUnk_138.Set(0, 20);
                 this->func_ov031_020e49b0(0x8D70);
             }
 
-            Vec2bCpp spC;
-            VecFx32 sp3C;
-            VecFx32_Copy(data_027e0ce0->func_01fff148(0x0), &sp3C);
+            sp3C = *data_027e0ce0->func_01fff148(0x0);
+            sp3C.y += 0x800;
 
             if (func_01ffb9cc(&sp3C, &this->mPos) <= 0x800) {
                 if (this->mUnk_128 == 0x2) {
                     func_01ffedac(&spC, &sp3C);
 
-                    Vec2bCpp pos;
-                    pos.x             = 0x0;
-                    pos.y             = 0x0;
-                    MapObject *object = gpMapObjManager->func_01fff498(pos);
+                    MapObject *object = gpMapObjManager->func_01fff498(spC);
+
                     if (object != NULL && object->GetMapObjectId() == MapObjectId_ICEB) {
                         ((MapObjectUnkICEB *) object)->func_ov094_02174870();
                     }
@@ -211,7 +246,7 @@ void ActorItemBoomerang::Update() {
                 this->Kill();
                 return;
             }
-            VecFx32 sp48;
+
             func_01ff93c0(&this->mVel, 0xC00);
             func_01ffb714(&sp3C, &this->mPos, &sp48);
             func_01ff97c8(&sp48, 0x200);
@@ -234,7 +269,7 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
     switch (this->mUnk_128) {
         case 0x1:
             this->mUnk_13C = 0x8D72;
-            for (ptr = this->mUnk_12C; ptr != (void *) &this->mUnk_138; ++ptr) {
+            for (ptr = this->mUnk_12C; ptr != &this->mUnk_12C[ARRAY_LEN(this->mUnk_12C)]; ++ptr) {
                 ptr->func_ov000_020a0334();
             }
 
@@ -244,17 +279,20 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
             if (!func_ov000_0205aeac()) {
                 return;
             }
+
             if (this->mUnk_12C[0].mUnk_00 != NULL) {
                 this->mUnk_12C[0].mUnk_00->mUnk_A0 = 0;
             }
+
             if (this->mUnk_12C[1].mUnk_00 != NULL) {
                 this->mUnk_12C[1].mUnk_00->mUnk_A0 = 0;
             }
+
             data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_140.mUnk_00);
             return;
         case 0x2:
             this->mUnk_13C = 0x8D73;
-            for (ptr = this->mUnk_12C; ptr != (void *) &this->mUnk_138; ++ptr) {
+            for (ptr = this->mUnk_12C; ptr != &this->mUnk_12C[ARRAY_LEN(this->mUnk_12C)]; ++ptr) {
                 ptr->func_ov000_020a0334();
             }
 
@@ -289,9 +327,8 @@ void ActorItemBoomerang::func_ov031_020e5220() {
     data_027e0cec->func_ov000_0209feac(0x81C, &this->mPos, 0x2, 0x0, 0x0);
 }
 
-// non-matching
 void ActorItemBoomerang::func_ov031_020e52a0() {
-    if (this->mUnk_128 == 0x1 || this->mUnk_128 == 0x2) {
+    if (!(this->mUnk_128 != 0x1 && this->mUnk_128 != 0x2)) {
         for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_12C; ptr != this->mUnk_12C + 0x3; ++ptr) {
             UnkSystem7_UnkStruct_00 *data = ptr->mUnk_00;
 
@@ -301,10 +338,10 @@ void ActorItemBoomerang::func_ov031_020e52a0() {
                 data->mUnk_28.z = this->mPos.z + data->mUnk_20->mUnk_00->mUnk_04.z;
             }
         }
-        return;
-    }
-    for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_12C; ptr != this->mUnk_12C + 0x3; ++ptr) {
-        ptr->func_ov000_020a0334();
+    } else {
+        for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_12C; ptr != this->mUnk_12C + 0x3; ++ptr) {
+            ptr->func_ov000_020a0334();
+        }
     }
 }
 
@@ -324,15 +361,16 @@ void ActorItemBoomerang_CC::vfunc_10(Actor *actor) {
     data_027e0d2c->func_ov031_020d95c8(actor->mRef);
 }
 
-// non-matching
 bool ActorItemBoomerang_CC::vfunc_0C(Actor *actor, VecFx32 *param2) {
     if (actor != NULL) {
-        if (actor->mRef.Get32() == this->mUnk_2C && actor->mVel.x == FX_F32_TO_FX32(0.0f) &&
-            actor->mVel.y == FX_F32_TO_FX32(0.0f) && actor->mVel.z == FX_F32_TO_FX32(0.0f)) {
-            this->mUnk_2C = 0x0;
+        u32 refData = *(vu32 *) &this->mUnk_2C;
+
+        if (*(u32 *) &actor->mRef == refData && VecFx32_IsCleared(&actor->mVel)) {
+            this->mUnk_2C.Reset();
             return UnkStruct_ov031_Items_01::vfunc_0C(actor, param2);
         }
     }
+
     return false;
 }
 

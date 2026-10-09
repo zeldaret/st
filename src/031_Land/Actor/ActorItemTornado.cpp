@@ -8,11 +8,6 @@
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "Unknown/UnkStruct_ov000_020b4ec4.hpp"
 
-struct UnkStruct_ov031_020e5d18_00 {
-    Actor *mUnk_00;
-    u8 mUnk_04[0x14];
-};
-
 extern char *data_ov031_02110a88;
 extern Cylinder data_ov031_02112fdc;
 

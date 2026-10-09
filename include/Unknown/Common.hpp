@@ -1370,3 +1370,10 @@ struct UnkStruct_ov021_02106c5c {
     /* 12 */ u8 unk_12;
     /* 13 */ u8 unk_13;
 };
+
+class Actor;
+struct UnkStruct_ov031_020e5d18_00 {
+    /* 00 */ Actor *mUnk_00;
+    /* 04 */ PAD(0x04, 0x18);
+    /* 18 */
+};

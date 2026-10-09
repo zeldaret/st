@@ -1,5 +1,6 @@
 #pragma once
 
+#include "global.h"
 #include "types.h"
 
 // mapping:
@@ -26,6 +27,52 @@ enum ActorRefId_ {
     ActorRefId_6,
     ActorRefId_7,
     //! TODO: more ids?
+};
+
+//! TODO: remove ActorRef and MapObjRef in favor of this
+struct RefStruct {
+    union {
+        // common
+        struct {
+            /* 00 */ u16 index : 14;
+            /* 00 */ u16 type : 2;
+            /* 02 */ u16 id : 12;
+            /* 02 */ u16 unk : 4;
+            /* 04 */
+        };
+
+        // ActorRef
+        struct {
+            /* 00 */ u16 type_index;
+            /* 02 */ u16 unk_id;
+            /* 04 */
+        } acRef;
+
+        // MapObjRef
+        struct {
+            union {
+                struct {
+                    /* 00 */ u8 unk_00;
+                    /* 01 */ u8 unk_01;
+                };
+                u16 unk_00_u16;
+            };
+            /* 02 */ Vec2b unk_02;
+            /* 04 */
+        } moRef;
+
+        u32 data;
+    };
+
+    RefStruct() {}
+
+    RefStruct(u32 value) {
+        this->data = value;
+    }
+
+    void Reset() {
+        this->data = 0;
+    }
 };
 
 struct ActorRef {

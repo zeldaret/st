@@ -31,6 +31,18 @@ struct Timer {
         return true;
     }
 
+    bool HasExpiredAlt() {
+        bool ret = false;
+
+        if (this->value >= this->max) {
+            ret = true;
+        } else {
+            this->value++;
+        }
+
+        return ret;
+    }
+
     void Set(u16 value, u16 max) {
         this->max   = max;
         this->value = value;

@@ -12,12 +12,6 @@
 #include "global.h"
 #include "math.hpp"
 
-struct UnkStruct_ov031_020e5d18_00 {
-    /* 00 */ Actor *mUnk_00;
-    /* 04 */ PAD(0x04, 0x18);
-    /* 18 */
-};
-
 extern VecFx32 data_027e07d4;
 
 DECL_PROFILE(ActorProfileBlast);
