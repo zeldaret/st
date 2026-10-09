@@ -1,10 +1,9 @@
 #pragma once
 
-#include "Actor/ActorRef.hpp"
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectProfile.hpp"
-#include "MapObject/MapObjectRef.hpp"
 #include "Physics/Cylinder.hpp"
+#include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
 #include "System/SysNew.hpp"
 #include "flags.h"
@@ -135,7 +134,7 @@ public:
     /* 1C */ MapObjFlags mFlags[1];
     /* 1E */ unk16 mUnk_1E;
     /* 20 */ MapObject_20 mUnk_20; // parameters
-    /* 38 */ MapObjRef mRef;
+    /* 38 */ RefStruct mRef;
     /* 3C */ MapObjectProfile *mpProfile;
     /* 40 */
 
@@ -147,7 +146,7 @@ public:
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14(unk32 param1);
     /* 18 */ virtual void vfunc_18(s8 *param1);
-    /* 1C */ virtual bool vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3);
+    /* 1C */ virtual bool vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3);
     /* 20 */ virtual void vfunc_20(unk32 param1);
     /* 24 */ virtual void vfunc_24(MapObject *param1, VecFx32 param2);
     /* 28 */ virtual unk32 vfunc_28(unk32 param1, unk32 param2, unk32 param3);
@@ -226,13 +225,13 @@ public:
     unk32 func_ov000_0209d3b4(unk32 param1, fx32 size);
     void func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_00 *param2, unk32 param3);
     void func_ov000_0209d518(VecFx32 *param1, unk32 param2, unk32 param3, u8 param4);
-    void func_ov000_0209d5c8(ActorRef ref);
+    void func_ov000_0209d5c8(RefStruct ref);
     void func_ov000_0209d614(unk32 param1);
     bool func_ov000_0209d668();
     void func_ov000_0209d6ac(VecFx32 *param1);
 
     static void func_ov000_0209d0bc(Vec2bCpp *param1, MapObject *thisx);
     static void func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2);
-    static void func_ov000_0209d54c(ActorRef *param1, MapObject *thisx, u16 param2, const VecFx32 *pPos, s16 param3,
+    static void func_ov000_0209d54c(RefStruct *param1, MapObject *thisx, u16 param2, const VecFx32 *pPos, s16 param3,
                                     u16 param4);
 };

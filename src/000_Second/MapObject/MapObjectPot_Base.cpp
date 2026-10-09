@@ -28,7 +28,7 @@ bool MapObjectPot_Base::SetState(MapObjState state, unk32 param2) {
         case MapObjPot_BaseState_1:
             this->vfunc_48();
             if (this->vfunc_40()) {
-                func_ov000_020a14e4(this->mRef.unk_00, &this->mPos);
+                func_ov000_020a14e4(this->mRef.moRef.unk_00, &this->mPos);
             } else {
                 if (this->vfunc_4C()) {
                     unk32 val = this->vfunc_54();
@@ -72,4 +72,4 @@ bool MapObjectPot_Base::vfunc_4C() {
 // non-matching
 void MapObjectPot_Base::func_ov000_0209da78(unk32 param1, unk32 param2) {}
 // non-matching
-void MapObjectPot_Base::vfunc_50(ActorRef *param1, MapObjectPot_Base *thisx) {}
+void MapObjectPot_Base::vfunc_50(RefStruct *param1, MapObjectPot_Base *thisx) {}

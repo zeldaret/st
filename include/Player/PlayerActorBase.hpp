@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Actor/ActorRef.hpp"
+#include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
 #include "global.h"
@@ -23,7 +23,7 @@ extern "C" void func_ov000_0205d500(ActorGrabParams *, unk32, unk32);
 bool PlayerCharacter_IsNotLink(s32 character);
 
 struct ActorGrabParams {
-    /* 00 */ ActorRef mUnk_00;
+    /* 00 */ RefStruct mUnk_00;
     /* 04 */
 
     ActorGrabParams() {}
@@ -106,7 +106,7 @@ inline bool PlayerCharacter_IsNotLink2(PlayerCharacter character) {
 
 class UnkStruct_PlayerGet_64 {
 public:
-    /* 00 */ ActorRef *mUnk_00;
+    /* 00 */ RefStruct *mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ u16 mUnk_08; // makes link invisible when set
     /* 0A */ unk16 mUnk_0A;
@@ -458,7 +458,7 @@ class PlayerLinkActor_9C {
 public:
     /* 000 (vtable) */
     /* 004 */ PAD(0x04, 0x08);
-    /* 008 */ ActorRef mUnk_008; //! TODO: confirm type
+    /* 008 */ RefStruct mUnk_008; //! TODO: confirm type
     /* 00C */ PAD(0x0C, 0x34);
     /* 034 */ PlayerLinkActor_9C_34 mUnk_034;
     /* 004 */ PAD(0x50, 0x5A);
@@ -523,7 +523,7 @@ public:
     /* 30 */ UnkAngleStruct mAngle;
     /* 32 */ u8 mInvincibilityTimer;
     /* 33 */ u8 mInvincibilityIconTimer; // the blinking icon on top-screen
-    /* 34 */ ActorRef mGrabActor;
+    /* 34 */ RefStruct mGrabActor;
     /* 38 */ PlayerActorBase_38 mUnk_38;
     /* 44 */ unk32 mUnk_44;
     /* 48 */ PlayerCharacter mCharacter;

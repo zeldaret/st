@@ -59,11 +59,11 @@ ActorProfileRollingStone::ActorProfileRollingStone() :
 }
 
 // non-matching
-bool ActorRollingStone_104::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+bool ActorRollingStone_104::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
                                      const VecFx32 *param4) {}
 
-bool ActorRollingStone_104::vfunc_10(ActorRef param1, unk32 param2) {
-    if (param1.type != 0x0) {
+bool ActorRollingStone_104::vfunc_10(RefStruct param1, unk32 param2) {
+    if (param1.common.type != 0x0) {
         Actor *actor = gpActorManager->func_01fff3b4(param1);
         if (actor != NULL) {
             switch (actor->GetActorId()) {
@@ -396,7 +396,7 @@ void ActorRollingStone::func_ov031_020f8f30() {
     sp14.mInitialAngle = this->mAngle.angle_s;
     sp14.mParams[0]    = 0x1;
 
-    ActorRef ref;
+    RefStruct ref;
     this->func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_RollingStone, &sp14, 0x0);
     this->mUnk_150.Set(0, this->mUnk_5C.mParams[1]);
 }

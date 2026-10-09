@@ -199,8 +199,8 @@ void MapObjectUnkSWHT::vfunc_14(unk32 param1) {
     this->mUnk_054.vfunc_18(&this->mPos);
 }
 
-bool MapObjectUnkSWHT::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
-    if (param1.type != 0x0) {
+bool MapObjectUnkSWHT::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3) {
+    if (param1.common.type != 0x0) {
         Actor *actor = gpActorManager->func_01fff3b4(param1);
         if (actor != NULL) {
             if (actor->GetActorId() == ActorId_SRST) {
@@ -223,7 +223,7 @@ bool MapObjectUnkSWHT::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) 
             this->func_ov031_021020ec();
             return false;
         case 0xA:
-            if (param1.type != 0x0) {
+            if (param1.common.type != 0x0) {
                 Actor *actor = gpActorManager->func_01fff3b4(param1);
                 if (actor != NULL) {
                     if (actor->GetActorId() == ActorId_KEYB) {

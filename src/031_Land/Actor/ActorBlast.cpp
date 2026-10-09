@@ -2,6 +2,7 @@
 #include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
+#include "MapObject/MapObjectManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
@@ -25,7 +26,7 @@ ActorProfileBlast::ActorProfileBlast() :
     VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_04.pos);
 }
 
-bool ActorBlast_E8::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3, const VecFx32 *param4) {
+bool ActorBlast_E8::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3, const VecFx32 *param4) {
     struct {
         VecFx32 unk_00;
         int pad;
@@ -44,8 +45,8 @@ bool ActorBlast_E8::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, co
 
     param2->vfunc_10(&sp24.unk_00);
 
-    if (((ActorRef *) &ref)->type != 0) {
-        temp_r0 = gpActorManager->func_01fff3b4(*(ActorRef *) &ref);
+    if (ref.common.type != 0) {
+        temp_r0 = gpActorManager->func_01fff3b4(ref);
 
         if (temp_r0 != NULL) {
             var_r0 = this->mUnk_04->mPos.y - (sp24.unk_00.y + temp_r0->mPos.y);
@@ -58,9 +59,9 @@ bool ActorBlast_E8::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, co
                 return false;
             }
         }
-    } else if (ref.unk_00_u16 & 0x1000) {
-        MapObjRef sp8 = ref;
-        Vec2bCpp sp4  = sp8.GetUnk02();
+    } else if (ref.moRef.unk_00_u16 & 0x1000) {
+        RefStruct sp8 = ref;
+        Vec2bCpp sp4  = sp8.moRef.GetUnk02();
         temp_r0_2     = gpMapObjManager->func_01fff498(sp4);
 
         if (temp_r0_2 != NULL) {
@@ -132,7 +133,7 @@ bool ActorBlast::Init(unk32 param1) {
     UnkStruct_027e0cd8_0C_Base *data = data_027e0cd8->mUnk_0C;
     if (data->mUnk_110 == 0x7 && data->func_ov000_0208217c(&this->mPos, 0x1)) {
         ActorParams actorParams;
-        ActorRef actorRef;
+        RefStruct actorRef;
         actorParams.mUnk_28 = 0x0;
 
         actorParams.func_ov000_020975f8();
@@ -206,7 +207,7 @@ fx32 ActorBlast::func_ov031_020e3b94() {
 
 void ActorBlast::func_ov031_020e3b9c(Actor *spawner, unk16 param1, unk16 param2) {
     ActorParams actorParams;
-    ActorRef ref;
+    RefStruct ref;
 
     actorParams.mUnk_28 = 0x0;
     actorParams.func_ov000_020975f8();

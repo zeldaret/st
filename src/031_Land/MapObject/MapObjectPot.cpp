@@ -53,7 +53,7 @@ void MapObjectPot::Setup() {
     this->mPos.y = func_01ffe868(&this->mPos, 0x1, 0x0);
 }
 
-bool MapObjectPot::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
+bool MapObjectPot::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3) {
     switch (param2) {
         case 0xD:
             this->SetState(0x1, 0x0);

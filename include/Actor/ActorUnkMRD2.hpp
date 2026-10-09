@@ -11,7 +11,7 @@ class ActorUnkMRD2_C4 : public Actor_C4 {
 public:
     ActorUnkMRD2_C4(Actor *param1);
 
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(RefStruct ref, unk32 param2) override;
     /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
@@ -115,7 +115,7 @@ public:
     void func_ov075_0215b578(void);
     void func_ov075_0215b914(void);
     void func_ov075_0215bbe8(void);
-    bool func_ov075_0215bbf0(ActorRef *param1, unk32 *param2);
+    bool func_ov075_0215bbf0(RefStruct *param1, unk32 *param2);
     void func_ov075_0215bc50(void);
     void func_ov075_0215bd40(void);
     void func_ov075_0215bd50(void);

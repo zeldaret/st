@@ -30,7 +30,7 @@ void ActorUnkNTTZ::Update() {}
 void ActorUnkNTTZ::vfunc_2C(Actor_vfunc_30 *param1) {}
 
 void ActorUnkNTTZ::func_ov031_020f61a0() {
-    if (this->mUnk_5C.mUnk_28.type == 0x0) {
+    if (this->mUnk_5C.mUnk_28.common.type == 0x0) {
         return;
     }
 
@@ -43,7 +43,7 @@ void ActorUnkNTTZ::func_ov031_020f61a0() {
 }
 
 void ActorUnkNTTZ::func_ov031_020f61f0() {
-    if (this->mUnk_5C.mUnk_28.type == 0x0) {
+    if (this->mUnk_5C.mUnk_28.common.type == 0x0) {
         return;
     }
 

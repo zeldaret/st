@@ -475,7 +475,7 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
                 }
 
                 if (this->mUnk_87) {
-                    ActorRef sp8;
+                    RefStruct sp8;
                     MapObject::func_ov000_0209d54c(&sp8, this, 1, &this->mPos, var_r1_2, var_r5);
                 }
             }
@@ -534,7 +534,7 @@ extern fx16 data_0203f964[];
 void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1) {
     Vec2s sp10;
     stack_struct sp8;
-    ActorRef sp4;
+    RefStruct sp4;
     bool var_r2;
 
     if (!GET_FLAG(this->mFlags, MapObjFlag_5)) {
@@ -550,7 +550,7 @@ void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1) {
     bool uVar4 = (this->mUnk_84 % 0x1A) >= 0x0D ? true : false;
 
     //! TODO: fake match?
-    sp4 = *(ActorRef *) &this->mRef; //! TODO: ref conflicts
+    sp4 = *(RefStruct *) &this->mRef; //! TODO: ref conflicts
 
     if (data_027e0998->vfunc_00(&this->mPos, &sp10, &sp4) && uVar4 != 0) {
         MtxFx22 m;

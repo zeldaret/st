@@ -2,7 +2,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "Actor/ActorRef.hpp"
+#include "RefStruct.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -22,7 +22,7 @@ public:
     /* 9C */ unk16 mUnk_9E;
     /* A0 */ unk16 mUnk_A0;
     /* A0 */ unk16 mUnk_A2;
-    /* A4 */ ActorRefElem mUnk_A4[5];
+    /* A4 */ RefElem mUnk_A4[5];
     /* B8 */
 
     ActorUnkSWOB();

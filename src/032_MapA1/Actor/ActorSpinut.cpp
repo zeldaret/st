@@ -853,7 +853,7 @@ void ActorSpinut::vfunc_54(unk32 param1) {
             break;
 
         case 0x3: {
-            ActorRef ref;
+            RefStruct ref;
             Actor::func_ov017_020c2438(&ref, this->mUnk_A8->mUnk_08, &this->mPos, 0x1, true);
             data_027e09a8->func_ov000_02071b30(0xEA, &this->mPos, 0x0);
 

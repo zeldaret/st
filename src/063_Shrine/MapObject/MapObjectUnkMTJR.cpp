@@ -69,7 +69,7 @@ void MapObjectUnkMTJR::vfunc_0C() {
     this->vfunc_08();
 }
 
-bool MapObjectUnkMTJR::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
+bool MapObjectUnkMTJR::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3) {
     switch (param2) {
         case 13:
             this->func_ov063_02161254(1);

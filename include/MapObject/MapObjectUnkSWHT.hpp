@@ -35,7 +35,7 @@ public:
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 14 */ virtual void vfunc_14(unk32 param1) override;
-    /* 1C */ virtual bool vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) override;
+    /* 1C */ virtual bool vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3) override;
     /* 30 */ virtual ~MapObjectUnkSWHT() override;
 
     void func_ov031_02101dd8();

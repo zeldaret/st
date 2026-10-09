@@ -234,7 +234,7 @@ void ActorBomb::Update() {
         return;
     }
 
-    if (this->mUnk_1E4.type == 0x1) {
+    if (this->mUnk_1E4.common.type == 0x1) {
         if (!this->func_ov031_020e25bc()) {
             return;
         }
@@ -305,7 +305,7 @@ void ActorBomb::func_ov031_020e1b7c() {
 
     if (this->mState == ActorBombState_6) {
         ActorParams params;
-        ActorRef ref;
+        RefStruct ref;
         params.mUnk_28 = 0;
         params.func_ov000_020975f8();
 
@@ -379,14 +379,14 @@ void ActorBomb::func_ov031_020e1ebc() {
 }
 
 void ActorBomb::func_ov031_020e1ed8() {
-    if (this->mUnk_1E0.type_index != 0x100) {
+    if (this->mUnk_1E0.acRef.type_index != 0x100) {
         return;
     }
     unk32 param1 = 0x101;
-    if (this->mUnk_1E0.type_index == param1) {
+    if (this->mUnk_1E0.acRef.type_index == param1) {
         param1 = 0x0;
     } else {
-        param1 = this->mUnk_1E0.unk_id;
+        param1 = this->mUnk_1E0.acRef.unk_id;
     }
     data_027e0ce0->func_ov000_0208bacc(param1, &this->mPos);
 }
@@ -394,7 +394,7 @@ void ActorBomb::func_ov031_020e1ed8() {
 void ActorBomb::func_ov031_020e1f18() {
     if (!this->mUnk_1EF) {
         bool var = true;
-        if (this->mUnk_1E0.type_index != 0x100 && this->mUnk_1E0.type_index != 0x101) {
+        if (this->mUnk_1E0.acRef.type_index != 0x100 && this->mUnk_1E0.acRef.type_index != 0x101) {
             var = false;
         }
         if (var) {
@@ -588,12 +588,12 @@ bool ActorBomb::Drop(ActorGrabParams grabParams, const VecFx32 *pVel) {
     this->mUnk_1E4 = this->mUnk_1E0;
     this->mUnk_1E0 = 0x0;
 
-    if (!(grabParams.mUnk_00.type_index != 0x100 && grabParams.mUnk_00.type_index != 0x2 + 0xFF)) {
+    if (!(grabParams.mUnk_00.acRef.type_index != 0x100 && grabParams.mUnk_00.acRef.type_index != 0x2 + 0xFF)) {
         unk32 param1;
-        if (grabParams.mUnk_00.type_index == 0x101) {
+        if (grabParams.mUnk_00.acRef.type_index == 0x101) {
             param1 = 0x0;
         } else {
-            param1 = grabParams.mUnk_00.unk_id;
+            param1 = grabParams.mUnk_00.acRef.unk_id;
         }
 
         VecFx32 sp0C = *this->Actor::func_ov000_0209853c(param1);
@@ -790,7 +790,7 @@ void ActorBomb::func_ov031_020e2a9c() {
     func_01ffe6c4(&s0C.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos, &this->mUnk_180);
 
     unk32 value = this->func_ov031_020e295c(&this->mUnk_180) | this->func_ov031_020e2820(&this->mUnk_180);
-    if (this->mUnk_1E0.type_index != 0x0) {
+    if (this->mUnk_1E0.acRef.type_index != 0x0) {
         this->mUnk_154.pos.y = 0x4CC;
     } else {
         func_01ff916c(&this->mUnk_154.pos.y, 0x4CC, 0x333);
@@ -809,7 +809,7 @@ bool ActorBomb::func_ov031_020e2b40() {
     }
 
     if (this->mUnk_180.mUnk_04 & 0x2) {
-        ActorRef ref;
+        RefStruct ref;
         Actor::func_ov017_020c2438(&ref, 0x2, &this->mPos, 0x1, true);
 
         data_027e09a8->func_ov000_02071b30(0xEA, &this->mPos, 0x0);
@@ -887,7 +887,7 @@ bool ActorBomb_180::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param
     return this->UnkStruct_ov031_Items_00::vfunc_08(param1, param2);
 }
 
-bool ActorBomb_180::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3, const VecFx32 *param4) {
+bool ActorBomb_180::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3, const VecFx32 *param4) {
     MapObjRef sp54;
     VecFx32 sp24;
     VecFx32 sp18;
@@ -908,8 +908,8 @@ bool ActorBomb_180::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, co
 
     var_r4 = 0;
 
-    if (ref.unk_00_u16 == 0x1000) {
-        sp54 = ref;
+    if (ref.moRef.unk_00_u16 == 0x1000) {
+        sp54 = ref.moRef;
         sp0  = sp54.GetUnk02();
 
         MapObject *temp_r0 = gpMapObjManager->func_01fff498(sp0);
@@ -1033,13 +1033,12 @@ bool ActorBomb_180::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, co
         this->mUnk_0C.z = sp24.z;
     }
 
-    MapObjRef reffffff = ref;
-    u32 refdata        = ref.Get32();
-    if (this->mUnk_18 == reffffff.Get32()) {
+    RefStruct refCopy = ref;
+    if (refCopy == this->mUnk_18) {
         return true;
     }
 
-    this->mUnk_18 = refdata;
+    this->mUnk_18.data = ref.data;
 
     if (var_r5 != 0) {
         if (((ActorBomb *) this->mUnk_08)->func_ov031_020e1d58()) {
@@ -1052,8 +1051,8 @@ bool ActorBomb_180::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, co
     return true;
 }
 
-bool ActorBomb_180::vfunc_10(ActorRef param1, unk32 param2) {
-    if (param1.type == 0x1) {
+bool ActorBomb_180::vfunc_10(RefStruct param1, unk32 param2) {
+    if (param1.common.type == 0x1) {
         Actor *actor = gpActorManager->func_01fff3b4(param1);
         if (actor != NULL && actor->GetActorId() == ActorId_Bomb) {
             ActorBlast::func_ov031_020e3b9c(this->mUnk_08, 0x0, 0x0);

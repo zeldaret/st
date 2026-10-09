@@ -20,7 +20,7 @@ class ActorHeart_C4 : public Actor_C4 {
 public:
     ActorHeart_C4(Actor *param1);
 
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(RefStruct ref, unk32 param2) override;
     /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(VecFx32 *param1) override;
@@ -37,8 +37,8 @@ public:
     /* BC */ unk16 mUnk_BC;
     /* BE */ bool mUnk_BE;
     /* BF */ PAD(0xBF, 0xC0);
-    /* C0 */ ActorRef mUnk_C0;
-    /* C4 */ ActorRef mUnk_C4;
+    /* C0 */ RefStruct mUnk_C0;
+    /* C4 */ RefStruct mUnk_C4;
     /* C8 */ ActorHeart_C4 mUnk_C8;
     /* EC */ VecFx32 mUnk_EC;
 
@@ -57,7 +57,7 @@ public:
     void func_ov031_020ef570();
     void func_ov031_020ef698();
 
-    static void func_ov031_020eed64(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref);
+    static void func_ov031_020eed64(RefStruct *pOutRef, const VecFx32 *pPos, u32 params, RefStruct ref);
 
     // data_ov031_02113d74
     void func_ov031_020ef2f8();

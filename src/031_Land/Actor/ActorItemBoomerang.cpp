@@ -153,7 +153,7 @@ void ActorItemBoomerang::Update() {
 
             sp14.Reset();
 
-            if (!data_027e0d2c->func_ov031_020d962c(&this->mPos, 0x4CD, &sp6C, (ActorRef *) &sp14)) {
+            if (!data_027e0d2c->func_ov031_020d962c(&this->mPos, 0x4CD, &sp6C, (RefStruct *) &sp14)) {
                 this->SetState(ActorItemBoomerangState_1);
             } else {
 
@@ -164,7 +164,7 @@ void ActorItemBoomerang::Update() {
                 func_01ff97c8(&this->mVel, sp18.unk_00 + 0x200);
             }
 
-            if (sp14.type != 0) {
+            if (sp14.common.type != 0) {
                 this->mUnk_CC.mUnk_0C.pos.z = this->mPos.z;
                 this->mUnk_CC.mUnk_0C.pos.y = this->mPos.y + FX_F32_TO_FX32(-0.1003f);
                 this->mUnk_CC.mUnk_0C.size  = 0xA000;
@@ -177,7 +177,7 @@ void ActorItemBoomerang::Update() {
                 return;
             }
 
-            sp20 = sp14.data;
+            sp20 = sp14.moRef;
             spE  = sp20.GetUnk02();
 
             MapObject *temp_r0_5 = gpMapObjManager->func_01fff498(spE);
@@ -396,7 +396,7 @@ bool ActorItemBoomerang_11C::vfunc_08(const UnkStruct_ov031_020f3310 *param1, un
     return this->UnkStruct_ov031_Items_00::vfunc_08(param1, param2);
 }
 
-bool ActorItemBoomerang_11C::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+bool ActorItemBoomerang_11C::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
                                       const VecFx32 *param4) {
     u32 val = (param2->mUnk_08 >> 9) & 7;
 
@@ -411,9 +411,9 @@ bool ActorItemBoomerang_11C::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *p
     }
 
     if (this->mUnk_08->mState == ActorItemBoomerangState_1) {
-        if (ref.unk_00_u16 & 0x1000) {
-            MapObjRef ref2 = ref;
-            Vec2bCpp pos   = ref2.GetUnk02();
+        if (ref.moRef.unk_00_u16 & 0x1000) {
+            MapObjRef moRef = ref.moRef;
+            Vec2bCpp pos    = moRef.GetUnk02();
 
             MapObject *mapObject = gpMapObjManager->func_01fff498(pos);
 
@@ -433,9 +433,9 @@ bool ActorItemBoomerang_11C::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *p
         return false;
     }
 
-    if (ref.unk_00_u16 & 0x1000) {
-        MapObjRef ref2 = ref;
-        Vec2bCpp pos   = ref2.GetUnk02();
+    if (ref.moRef.unk_00_u16 & 0x1000) {
+        MapObjRef moRef = ref.moRef;
+        Vec2bCpp pos    = moRef.GetUnk02();
 
         MapObject *mapObject = gpMapObjManager->func_01fff498(pos);
 
@@ -446,7 +446,7 @@ bool ActorItemBoomerang_11C::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *p
         switch (mapObject->GetMapObjectId()) {
             case MapObjectId_SKDI:
             case MapObjectId_SWHT:
-                data_027e0d2c->func_ov031_020d95c8(*(ActorRef *) &ref); //! TODO: ref conflicts
+                data_027e0d2c->func_ov031_020d95c8(*(RefStruct *) &ref); //! TODO: ref conflicts
             case MapObjectId_Pot:
                 mapObject->vfunc_1C(this->mUnk_08->mRef, 0xC, &this->mUnk_08->mVel);
                 return false;

@@ -3,12 +3,12 @@
 #include "Actor/ActorItemBoomerang.hpp"
 #include "Actor/ActorItemDrop.hpp"
 #include "Actor/ActorManager.hpp"
-#include "Actor/ActorRef.hpp"
 #include "Actor/ActorRupee.hpp"
 #include "Actor/ActorUnkKEYN.hpp"
 #include "Actor/ActorUnkSWBM.hpp"
 #include "CommonFuncs.hpp"
 #include "Physics/Cylinder.hpp"
+#include "RefStruct.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -161,15 +161,15 @@ void Actor::func_ov017_020bf2d8(Actor_9C *param1, unk32 param2) {
     var_r3 = 1;
     var_lr = false;
 
-    if (param1->mUnk_0C.UnkCheck1() && param1->mUnk_0C.GetTypeIndex1() == 0x01) {
+    if (param1->mUnk_0C.acRef.UnkCheck1() && param1->mUnk_0C.acRef.GetTypeIndex1() == 0x01) {
         var_lr = true;
     }
 
     if (!var_lr) {
         var_ip_2 = 0;
 
-        if (param1->mUnk_0C.type_index == 0x102) {
-            temp_r0 = param1->mUnk_0C.unk_id;
+        if (param1->mUnk_0C.acRef.type_index == 0x102) {
+            temp_r0 = param1->mUnk_0C.acRef.unk_id;
 
             if (temp_r0 != 1 && temp_r0 != 3) {
 
@@ -262,24 +262,24 @@ void Actor::func_ov017_020bf3e0(unk32 param1, fx32 param2) {
 
 void Actor::func_ov017_020bf4b0(unk32 param1) {
     if (param1 >= 0 && param1 < 8) {
-        ActorRef ref;
+        RefStruct ref;
         ActorRupee::func_ov031_020e8d2c(&ref, &this->mPos, param1, 2, this->mRef);
         return;
     }
 
     switch (param1) {
         case 8: {
-            ActorRef ref;
+            RefStruct ref;
             ActorHeart::func_ov031_020eed64(&ref, &this->mPos, 1, this->mRef);
             break;
         }
         case 13: {
-            ActorRef ref;
+            RefStruct ref;
             ActorUnkKEYN::func_ov070_0214143c(&ref, &this->mPos, this->mRef, -1, 0, 0);
             break;
         }
         case 14: {
-            ActorRef ref;
+            RefStruct ref;
             ActorItemDrop::func_ov031_020f9f8c(&ref, &this->mPos, TreasureManager::func_ov000_020a9d78(-1), this->mRef);
             break;
         }
@@ -460,8 +460,8 @@ void Actor::func_ov017_020bfad4() {
 void Actor::func_ov017_020bfb18(Actor_9C *param1) {
     switch (param1->mUnk_1C) {
         case 8:
-            if (param1->mUnk_0C.HasTypeIndexValue(0x102)) {
-                data_027e0ce0->func_ov000_0208bd20(param1->mUnk_0C.UnkCheck3(0x102), 0x8C98, 0);
+            if (param1->mUnk_0C.acRef.HasTypeIndexValue(0x102)) {
+                data_027e0ce0->func_ov000_0208bd20(param1->mUnk_0C.acRef.UnkCheck3(0x102), 0x8C98, 0);
             }
 
             break;

@@ -3,7 +3,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "Actor_Derived1.hpp"
-#include "MapObject/MapObjectRef.hpp"
+#include "RefStruct.hpp"
 #include "global.h"
 #include "nns/g3d/sbc.h"
 #include "types.h"
@@ -47,7 +47,7 @@ public:
     /* 04 */ u16 mUnk_04;
     /* 08 */ Actor *mUnk_08;
     /* 0C */ VecFx32 mUnk_0C; // cylinder ?
-    /* 18 */ unk32 mUnk_18;
+    /* 18 */ RefStruct mUnk_18;
     /* 1C */
 
     ActorBomb_180(Actor *param1);
@@ -55,9 +55,9 @@ public:
     // data_ov031_02112c78
     /* 00 */ virtual ~ActorBomb_180() override;
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
-    /* 0C */ virtual bool vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+    /* 0C */ virtual bool vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
                                    const VecFx32 *param4) override;
-    /* 10 */ virtual bool vfunc_10(ActorRef param1, unk32 param2) override;
+    /* 10 */ virtual bool vfunc_10(RefStruct param1, unk32 param2) override;
 };
 
 class ActorBomb_ov031_020e2134 : public UnkStruct_ov031_Items_00 {
@@ -88,8 +88,8 @@ public:
     /* 1CC */ VecFx32 mUnk_1CC;
     /* 1D8 */ unk32 mUnk_1D8;
     /* 1D8 */ unk32 mUnk_1DC;
-    /* 1E0 */ ActorRef mUnk_1E0;
-    /* 1E4 */ ActorRef mUnk_1E4;
+    /* 1E0 */ RefStruct mUnk_1E0;
+    /* 1E4 */ RefStruct mUnk_1E4;
     /* 1E8 */ u8 mUnk_1E8;
     /* 1E8 */ u8 mUnk_1E9;
     /* 1EA */ Timer mUnk_1EA;

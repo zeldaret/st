@@ -312,9 +312,9 @@ void MapObjectUnkSWSW::vfunc_08() {
     this->mAngle = this->mUnk_10C;
 }
 
-bool MapObjectUnkSWSW::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
+bool MapObjectUnkSWSW::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3) {
     if (this->mUnk_0FC != 0x2) {
-        if (param1.type != 0x0) {
+        if (param1.common.type != 0x0) {
             Actor *actor = gpActorManager->func_01fff3b4(param1);
 
             if (actor != NULL) {
@@ -327,7 +327,7 @@ bool MapObjectUnkSWSW::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) 
         return true;
     }
 
-    if (param1.type != 0x0) {
+    if (param1.common.type != 0x0) {
         ActorUnkNSSW *actorNSSW = (ActorUnkNSSW *) gpActorManager->func_01fff3b4(param1);
 
         if (actorNSSW != NULL) {
@@ -479,7 +479,7 @@ void MapObjectUnkSWSW::vfunc_14(unk32 param1) {
 }
 
 struct UnkStack_ov032_02121dc8 {
-    /* 00 */ ActorRef ref;
+    /* 00 */ RefStruct ref;
     /* 04 */ PAD(0x04, 0x08);
     /* 08 */
 };

@@ -50,7 +50,7 @@ public:
     /* 04 */ unk16 mUnk_04;
     /* 06 */ bool mUnk_06;
     /* 07 */ PAD(0x07, 0x0C);
-    /* 0C */ ActorRef mUnk_0C;
+    /* 0C */ RefStruct mUnk_0C;
     /* 10 */
 
     PlayerLinkActor_A0_1C(UnkStruct_027e0ce0_40 *param1);

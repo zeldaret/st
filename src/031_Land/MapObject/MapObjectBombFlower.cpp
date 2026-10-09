@@ -1,6 +1,6 @@
 #include "MapObject/MapObjectBombFlower.hpp"
-#include "Actor/ActorRef.hpp"
 #include "CommonFuncs.hpp"
+#include "RefStruct.hpp"
 
 #include "Actor/ActorBomb.hpp"
 #include "Actor/ActorManager.hpp"
@@ -10,7 +10,7 @@
 #include "profile.hpp"
 
 struct UnkStruct_ov031_02102728 {
-    ActorRef ref;
+    RefStruct ref;
     unk32 mUnk_04;
 };
 
@@ -50,7 +50,7 @@ MapObjectBombFlower::MapObjectBombFlower() :
     SET_FLAG(this->mFlags, MapObjFlag_6);
 }
 
-bool MapObjectBombFlower::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
+bool MapObjectBombFlower::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3) {
     this->mUnk_BC = false;
     switch (param2) {
         case 0xD:
@@ -104,7 +104,7 @@ void MapObjectBombFlower::func_ov031_02102728(unk32 param1) {
     params.mUnk_28 = 0;
     params.func_ov000_020975f8();
 
-    params.mUnk_28 = *(ActorRef *) &this->mRef; //! TODO: ref conflicts
+    params.mUnk_28 = *(RefStruct *) &this->mRef; //! TODO: ref conflicts
     VecFx32_Copy(&this->mPos, &params.mInitialPos);
 
     params.mParams[0] = 0x0;
@@ -220,7 +220,7 @@ void MapObjectBombFlower::vfunc_38() {
     VecFx32_Copy(&this->mPos, &params.mInitialPos);
 
     params.mParams[0] = 0x1;
-    ActorRef ref;
+    RefStruct ref;
     Actor::func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, this->mUnk_40, &params, 0x0);
 
     ActorBomb *bomb = (ActorBomb *) gpActorManager->func_01fff3b4(ref);
@@ -239,7 +239,7 @@ unk32 MapObjectBombFlower::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
 
 // non-matching
 // https://decomp.me/scratch/WRLuY
-void MapObjectBombFlower::vfunc_50(ActorRef *param1, MapObjectPot_Base *thisx) {
+void MapObjectBombFlower::vfunc_50(RefStruct *param1, MapObjectPot_Base *thisx) {
     ActorParams params;
     params.mUnk_28 = 0;
 

@@ -1,7 +1,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorManager.hpp"
-#include "Actor/ActorRef.hpp"
+#include "RefStruct.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
@@ -20,7 +20,7 @@ struct ActorEffectBase {
     /* 1D4 */ unk32 mUnk_1D4;
 };
 
-void Actor::func_ov017_020c2038(ActorRef *pRef, unk32 param2, unk32 param3, const VecFx32 *param4, unk32 param5) {
+void Actor::func_ov017_020c2038(RefStruct *pRef, unk32 param2, unk32 param3, const VecFx32 *param4, unk32 param5) {
 #pragma unused(param2, param3)
 
     ActorParams params;
@@ -105,7 +105,7 @@ bool Actor::func_ov017_020c219c(unk32 param1, const VecFx32 *param2, unk32 param
             break;
     }
 
-    ActorRef ref;
+    RefStruct ref;
     Actor::func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, actorId, &params, 0x00);
 
     Actor *pActor = gpActorManager->func_01fff3b4(ref);
@@ -127,7 +127,7 @@ bool Actor::func_ov017_020c2310(const VecFx32 *param1, unk32 param2) {
     params.func_ov000_020975f8();
     VecFx32_Copy(param1, &params.mInitialPos);
 
-    ActorRef sp4;
+    RefStruct sp4;
     Actor::func_ov000_020973f4(&sp4, &data_ov000_020b539c_eur, ActorId_EFWL, &params, 0x00);
 
     Actor *pActor = gpActorManager->func_01fff3b4(sp4);
@@ -151,7 +151,7 @@ bool Actor::func_ov017_020c23a4(unk32 param1, const VecFx32 *param2, unk32 param
     params.func_ov000_020975f8();
     VecFx32_Copy(param2, &params.mInitialPos);
 
-    ActorRef sp4;
+    RefStruct sp4;
     Actor::func_ov000_020973f4(&sp4, &data_ov000_020b539c_eur, ActorId_EFRL, &params, 0x00);
 
     Actor *pActor = gpActorManager->func_01fff3b4(sp4);
@@ -167,7 +167,7 @@ bool Actor::func_ov017_020c23a4(unk32 param1, const VecFx32 *param2, unk32 param
     return true;
 }
 
-void Actor::func_ov017_020c2438(ActorRef *pRef, unk32 param2, const VecFx32 *param3, unk32 param4, bool param5) {
+void Actor::func_ov017_020c2438(RefStruct *pRef, unk32 param2, const VecFx32 *param3, unk32 param4, bool param5) {
 #pragma unused(param4)
 
     pRef->Reset();
@@ -184,7 +184,7 @@ void Actor::func_ov017_020c2438(ActorRef *pRef, unk32 param2, const VecFx32 *par
 
     switch (param2) {
         case 0: {
-            ActorRef sp14;
+            RefStruct sp14;
             Actor::func_ov017_020c2038(&sp14, NULL, 0, &sp18, 0xE66);
             *pRef = sp14;
             Actor::func_ov017_020c219c(NULL, &sp18, 0xE66, param5);
@@ -193,7 +193,7 @@ void Actor::func_ov017_020c2438(ActorRef *pRef, unk32 param2, const VecFx32 *par
             break;
         }
         case 1: {
-            ActorRef sp10;
+            RefStruct sp10;
             Actor::func_ov017_020c2038(&sp10, NULL, 0, &sp18, 0xB33);
             *pRef = sp10;
             Actor::func_ov017_020c219c(NULL, &sp18, 0xB33, param5);
@@ -202,7 +202,7 @@ void Actor::func_ov017_020c2438(ActorRef *pRef, unk32 param2, const VecFx32 *par
             break;
         }
         case 2: {
-            ActorRef spC;
+            RefStruct spC;
             Actor::func_ov017_020c2038(&spC, NULL, 0, &sp18, 0x800);
             *pRef = spC;
             Actor::func_ov017_020c219c(NULL, &sp18, 0x800, param5);
@@ -211,7 +211,7 @@ void Actor::func_ov017_020c2438(ActorRef *pRef, unk32 param2, const VecFx32 *par
             break;
         }
         case 3: {
-            ActorRef sp8;
+            RefStruct sp8;
             Actor::func_ov017_020c2038(&sp8, NULL, 0, &sp18, 0x4CD);
             *pRef = sp8;
             Actor::func_ov017_020c219c(NULL, &sp18, 0x4CD, param5);

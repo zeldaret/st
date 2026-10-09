@@ -18,7 +18,7 @@ void PlayerLinkActor_A0_1C::func_ov101_02183290() {
 
     // why is this a loop
     while (ppActor != gpActorManager->mUnk_08) {
-        ActorRef ref  = (*ppActor)->mRef;
+        RefStruct ref = (*ppActor)->mRef;
         this->mUnk_0C = ref;
         break;
     }

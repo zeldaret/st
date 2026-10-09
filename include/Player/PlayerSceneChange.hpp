@@ -4,7 +4,7 @@
 #include "types.h"
 #include "versions.h"
 
-#include "Actor/ActorRef.hpp"
+#include "RefStruct.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
 #include "math.hpp"
@@ -22,7 +22,7 @@ public:
     /* 7C */ unk32 mUnk_7C;
     /* 80 */ volatile VecFx32 mUnk_80;
     /* 8C */ unk32 mUnk_8C;
-    /* 90 */ ActorRef mUnk_90;
+    /* 90 */ RefStruct mUnk_90;
     /* 94 */ u16 mUnk_94[2];
     /* 98 */ unk32 mUnk_98;
     /* 9C */ VecFx32 mUnk_9C;

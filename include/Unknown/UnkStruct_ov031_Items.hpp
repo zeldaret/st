@@ -27,7 +27,7 @@ public:
 class UnkStruct_ov031_Items_01_Base {
 public:
     /* 00 (vtable) */
-    /* 04 */ ActorRef mUnk_04;
+    /* 04 */ RefStruct mUnk_04;
     /* 08 */ unk16 mUnk_08;
     /* 0C */
 

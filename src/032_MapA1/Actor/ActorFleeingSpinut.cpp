@@ -260,7 +260,7 @@ void ActorFleeingSpinut::func_ov032_0211bea8() {
         this->Actor::func_ov017_020bf3e0(0x1, 0x0);
 
         if (this->func_ov032_0211be04()) {
-            ActorRef ref;
+            RefStruct ref;
             ActorUnkKEYN::func_ov070_0214143c(&ref, &this->mPos, this->mRef, this->mUnk_5C.mUnk_24, this->mUnk_5C.mUnk_18[0],
                                               this->mUnk_5C.mUnk_1A[0]);
             return;

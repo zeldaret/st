@@ -57,7 +57,7 @@ ActorProfileRupee::ActorProfileRupee() :
     this->mUnk_04.size  = 0x556;
 }
 
-void ActorRupee::func_ov031_020e8d2c(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, u32 unk_2C, ActorRef ref) {
+void ActorRupee::func_ov031_020e8d2c(RefStruct *pOutRef, const VecFx32 *pPos, u32 params, u32 unk_2C, RefStruct ref) {
     ActorParams actorParams;
 
     actorParams.mUnk_28.Reset();
@@ -605,7 +605,7 @@ void ActorRupee::Update() {
                 switch (this->mUnk_9C.mUnk_1C) {
                     case 0x08:
                     case 0x10:
-                        if ((this->mUnk_9C.mUnk_0C.type_index & 0x100) != 0) {
+                        if ((this->mUnk_9C.mUnk_0C.acRef.type_index & 0x100) != 0) {
                             this->func_ov031_020e9068();
                             uVar3 = uStack_18;
                         }
@@ -822,7 +822,7 @@ ActorRupee_C4::ActorRupee_C4(Actor *param1) :
     this->mUnk_04 = 1;
 }
 
-bool ActorRupee_C4::vfunc_00(ActorRef ref, unk32 param2) {
+bool ActorRupee_C4::vfunc_00(RefStruct ref, unk32 param2) {
     if (param2 != 0) {
         ActorRupee *pRupee = this->GetActorPtr<ActorRupee>();
         pRupee->mUnk_C0    = ref.Get32();

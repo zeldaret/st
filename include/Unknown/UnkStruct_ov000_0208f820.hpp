@@ -3,9 +3,9 @@
 #include "global.h"
 #include "types.h"
 
-#include "Actor/ActorRef.hpp"
 #include "Item/ItemManager.hpp"
 #include "Player/PlayerActorBase.hpp"
+#include "RefStruct.hpp"
 #include "math.hpp"
 
 class PlayerLinkActor_A0;
@@ -84,7 +84,7 @@ public:
     /* A0 */ PAD(0xA0, 0x148);
     /* 148 */ u32 mUnk_148;
     /* 14C */ unk32 mUnk_14C;
-    /* 150 */ ActorRef mUnk_150;
+    /* 150 */ RefStruct mUnk_150;
 };
 
 class UnkStruct_PlayerGet_vfunc_0C_param1 {
@@ -99,8 +99,8 @@ public:
 
 class UnkStruct_ov000_0208f820_04 {
 public:
-    /* 00 */ ActorRef mUnk_00;
-    /* 04 */ ActorRef mUnk_04;
+    /* 00 */ RefStruct mUnk_00;
+    /* 04 */ RefStruct mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ ItemId mItemId;
     /* 10 */

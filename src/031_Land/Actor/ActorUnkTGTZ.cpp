@@ -216,8 +216,8 @@ void ActorUnkTGTZ::vfunc_24() {
     this->Update();
 }
 
-void ActorUnkTGTZ::func_ov031_020f6e5c(ActorRef param1) {
-    if (param1.type_index == 0x0) {
+void ActorUnkTGTZ::func_ov031_020f6e5c(RefStruct param1) {
+    if (param1.common.unk_00 == 0x0) {
         return;
     }
     Actor *actor = gpActorManager->func_01fff3b4(param1);
@@ -226,7 +226,7 @@ void ActorUnkTGTZ::func_ov031_020f6e5c(ActorRef param1) {
     }
 }
 
-void ActorUnkTGTZ::func_ov031_020f6ea8(ActorRef *param0, u16 param1, const VecFx32 *param2, s16 param3, u16 param4) {
+void ActorUnkTGTZ::func_ov031_020f6ea8(RefStruct *param0, u16 param1, const VecFx32 *param2, s16 param3, u16 param4) {
     ActorParams params;
 
     params.mUnk_28 = 0;
@@ -258,7 +258,7 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
         case 0x1: {
             this->mUnk_1C0.Set(0, 30);
             SET_FLAG(this->mFlags, ActorFlag_Visible);
-            ActorRef ref;
+            RefStruct ref;
             this->func_ov031_020f6ea8(&ref, 0x0, &this->mPos, 0x0, 0x1);
             this->mUnk_1DC = ref;
             break;
@@ -383,7 +383,7 @@ void ActorUnkTGTZ::vfunc_2C(Actor_vfunc_30 *param1) {
 
 void ActorUnkTGTZ::func_ov031_020f7358() {
     ActorParams params;
-    ActorRef ref;
+    RefStruct ref;
 
     params.mUnk_28 = 0x0;
     params.func_ov000_020975f8();

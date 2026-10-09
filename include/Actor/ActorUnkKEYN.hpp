@@ -12,7 +12,7 @@ class ActorUnkKEYN_C4 : public Actor_C4 {
 public:
     ActorUnkKEYN_C4(Actor *param1);
 
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(RefStruct ref, unk32 param2) override;
     /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
@@ -28,7 +28,7 @@ public:
 
     /* 4C */ virtual ~ActorUnkKEYN() override;
 
-    static void func_ov070_0214143c(ActorRef *param1, VecFx32 *param2, ActorRef param3, s16 param4, u8 param5, u16 param6);
+    static void func_ov070_0214143c(RefStruct *param1, VecFx32 *param2, RefStruct param3, s16 param4, u8 param5, u16 param6);
     void func_ov070_02141618(void);
     void func_ov070_0214162c(void);
     void func_ov070_02141750(void);

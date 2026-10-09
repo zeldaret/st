@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Actor/ActorRef.hpp"
+#include "RefStruct.hpp"
 #include "global.h"
 #include "math.hpp"
 #include "types.h"
@@ -17,7 +17,7 @@ public:
     UnkStruct_027e0998_Base();
 
     // data_ov000_020b1e08
-    /* 00 */ virtual bool vfunc_00(VecFx32 *pPos, Vec2s *param2, ActorRef *param3);
+    /* 00 */ virtual bool vfunc_00(VecFx32 *pPos, Vec2s *param2, RefStruct *param3);
     /* 04 */
 
     void func_ov000_02061760();
@@ -38,12 +38,12 @@ public:
     ~UnkStruct_027e0998(); // ClearInstance
 
     // data_ov024_020d7c98
-    /* 00 */ virtual bool vfunc_00(VecFx32 *pPos, Vec2s *param2, ActorRef *param3) override;
+    /* 00 */ virtual bool vfunc_00(VecFx32 *pPos, Vec2s *param2, RefStruct *param3) override;
     /* 04 */
 
     bool func_ov024_020c716c();
-    bool func_ov024_020c7214(VecFx32 *pPos, Vec2s *param2, ActorRef *param3);
-    bool func_ov024_020c727c(Vec2s *param1, ActorRef *param2);
+    bool func_ov024_020c7214(VecFx32 *pPos, Vec2s *param2, RefStruct *param3);
+    bool func_ov024_020c727c(Vec2s *param1, RefStruct *param2);
     bool func_ov024_020c7300(unk32 param1);
     bool func_ov024_020c7354();
 

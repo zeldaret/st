@@ -37,7 +37,7 @@ public:
     // func_ov031_020fa9f8
     ActorItemDrop_C4(Actor *param1);
 
-    virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
+    virtual bool vfunc_00(RefStruct ref, unk32 param2) override;
     virtual bool vfunc_04() override;
     virtual void vfunc_08() override;
     virtual void vfunc_0C(VecFx32 *param1) override;
@@ -51,8 +51,8 @@ public:
     /* 0B4 */ Actor_9C mUnk_B4;
     /* 0D4 */ ItemDropType mItemTypeId;
     /* 0D8 */ fx32 mUnk_D8;
-    /* 0DC */ ActorRef mUnk_DC;
-    /* 0E0 */ ActorRef mUnk_E0;
+    /* 0DC */ RefStruct mUnk_DC;
+    /* 0E0 */ RefStruct mUnk_E0;
     /* 0E4 */ ActorItemDrop_C4 mUnk_E4;
     /* 108 */ unk16 mUnk_108;
     /* 10A */ PAD(0x10A, 0x10C);
@@ -71,7 +71,7 @@ public:
     void SetState(ActorState state);
     void func_ov031_020fa900();
 
-    static void func_ov031_020f9f8c(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref);
+    static void func_ov031_020f9f8c(RefStruct *pOutRef, const VecFx32 *pPos, u32 params, RefStruct ref);
 
     // data_ov031_02114bb0
     void func_ov031_020fa46c();

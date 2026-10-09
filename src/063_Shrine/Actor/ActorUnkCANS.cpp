@@ -3,7 +3,6 @@
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorItemBoomerang.hpp"
 #include "Actor/ActorManager.hpp"
-#include "Actor/ActorRef.hpp"
 #include "Actor/ActorShotArrow.hpp"
 #include "Actor/ActorUnkCASE.hpp"
 #include "CommonFuncs.hpp"
@@ -11,6 +10,7 @@
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Physics/Cylinder.hpp"
+#include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "System/Random.hpp"
@@ -96,7 +96,7 @@ UnkStruct_ov063_02162ee8::UnkStruct_ov063_02162ee8(G3d_Model *pModel) :
 UnkStruct_ov063_02162e88::UnkStruct_ov063_02162e88(void *param1) :
     mUnk_20(param1) {}
 
-unk32 UnkStruct_ov063_02162e88::vfunc_04(ActorRef param1, unk32 param2, unk32 param3, unk32 *param4) {
+unk32 UnkStruct_ov063_02162e88::vfunc_04(RefStruct param1, unk32 param2, unk32 param3, unk32 *param4) {
 
     unk32 ret1 = Actor_9C::vfunc_04(param1, param2, param3, param4);
 
@@ -109,7 +109,7 @@ unk32 UnkStruct_ov063_02162e88::vfunc_04(ActorRef param1, unk32 param2, unk32 pa
     }
 
     if (((ActorUnkCANS *) mUnk_20)->func_ov063_0215a56c((unk16) func_01ffbbe0(param4[0], param4[2])) != 0 &&
-        param1.type != 0) {
+        param1.common.type != 0) {
         ActorShotArrow *ret4 = (ActorShotArrow *) gpActorManager->func_01fff3b4(param1);
 
         if (ret4 != NULL && ret4->GetActorId() == ActorId_ShotArrow) {
@@ -161,7 +161,7 @@ bool ActorUnkCANS::Init(unk32 param1) {
     this->mUnk_0B0.func_ov000_02057c38(6, 2);
     this->mUnk_0B0.func_ov000_0209a7b8(this, (UnkSystem4_UnkCallback) ActorUnkCANS::func_ov063_0215a678);
 
-    ActorRef var;
+    RefStruct var;
     ActorManager *actorManager = gpActorManager;
 
     ActorUnkCASE::func_ov063_0215acec(&var, this->mRef);
@@ -309,10 +309,10 @@ void ActorUnkCANS::Update(void) {
                         break;
                     case 8:
                         if (iVar5 != 0) {
-                            if (mUnk_200.mUnk_0C.type_index == 0x102) {
+                            if (mUnk_200.mUnk_0C.acRef.type_index == 0x102) {
                                 unk32 uVar1 = 0;
-                                if (mUnk_200.mUnk_0C.type_index == 0x102) {
-                                    if (mUnk_200.mUnk_0C.unk_id == 1 || mUnk_200.mUnk_0C.unk_id == 3) {
+                                if (mUnk_200.mUnk_0C.acRef.type_index == 0x102) {
+                                    if (mUnk_200.mUnk_0C.acRef.unk_id == 1 || mUnk_200.mUnk_0C.acRef.unk_id == 3) {
                                         uVar1 = 1;
                                     };
                                 }
@@ -1173,11 +1173,11 @@ bool UnkStruct_ov063_02162ea8::vfunc_08(const UnkStruct_ov031_020f3310 *param1, 
     return retVal;
 }
 
-bool UnkStruct_ov063_02162ea8::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+bool UnkStruct_ov063_02162ea8::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
                                         const VecFx32 *param4) {
-    if (ref.unk_00_u16 & 0x1000) {
-        MapObjRef ref2 = ref;
-        Vec2bCpp pos   = ref2.GetUnk02();
+    if (ref.moRef.unk_00_u16 & 0x1000) {
+        MapObjRef moRef = ref.moRef;
+        Vec2bCpp pos    = moRef.GetUnk02();
 
         MapObject *mapObject = gpMapObjManager->func_01fff498(pos);
 

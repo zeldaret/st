@@ -76,7 +76,7 @@ bool Actor_Derived1::func_ov000_020a8dd0() {
 }
 
 // non-matching
-void Actor_Derived1::func_ov000_020a8df0(ActorRef param1, unk32 param2) {
+void Actor_Derived1::func_ov000_020a8df0(RefStruct param1, unk32 param2) {
     if (!((u32) (((param2 + 8) - param2) / 2) < 2)) {
         this->mUnk_0B0 |= 2;
     } else {

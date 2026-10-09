@@ -36,7 +36,7 @@ ActorProfileHeart::ActorProfileHeart() :
     this->mUnk_04.Init(FX_F32_TO_FX32(0.25));
 }
 
-void ActorHeart::func_ov031_020eed64(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref) {
+void ActorHeart::func_ov031_020eed64(RefStruct *pOutRef, const VecFx32 *pPos, u32 params, RefStruct ref) {
     ActorParams actorParams;
 
     actorParams.mUnk_28.Reset();
@@ -420,7 +420,7 @@ ActorHeart_C4::ActorHeart_C4(Actor *param1) :
     this->mUnk_04 = 1;
 }
 
-bool ActorHeart_C4::vfunc_00(ActorRef ref, unk32 param3) {
+bool ActorHeart_C4::vfunc_00(RefStruct ref, unk32 param3) {
     if (param3 != 0) {
         ActorHeart *pHeart = this->GetActorPtr<ActorHeart>();
         pHeart->mUnk_C4    = ref;

@@ -9,7 +9,7 @@
 class ActorUnkSCCN_B8 {
 public:
     /* 00 (vtable) */
-    /* 04 */ ActorRef mUnk_04;
+    /* 04 */ RefStruct mUnk_04;
     /* 08 */ VecFx32 *mUnk_08;
     /* 0C */ MapObject_10_Base *mUnk_0C;
     /* 10 */

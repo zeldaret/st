@@ -97,7 +97,7 @@ void func_ov101_02183884(int index, unk32 param2, unk32 param3);
 
 void UnkStruct_027e0cd8_0C_1D0::func_ov101_021837a0() {
     ActorParams sp14;
-    ActorRef sp10;
+    RefStruct sp10;
     bool spC;
 
     struct {
@@ -163,7 +163,7 @@ void UnkStruct_027e0cd8_0C_1D0::func_ov101_021837a0() {
 
 void func_ov101_02183884(int index, unk32 param2, unk32 param3) {
     ActorParams params;
-    ActorRef ref;
+    RefStruct ref;
 
     params.mUnk_28.Reset();
     params.func_ov000_020975f8();

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Actor/ActorRef.hpp"
+#include "RefStruct.hpp"
 #include "global.h"
 #include "nitro/fx.h"
 #include "types.h"
@@ -12,7 +12,7 @@ public:
     UnkStruct_027e0d38();
 
     // overlay 26
-    unk32 func_ov026_020d9c14(ActorRef ref, VecFx32 *pPos, VecFx32 *pVel);
+    unk32 func_ov026_020d9c14(RefStruct ref, VecFx32 *pPos, VecFx32 *pVel);
 
     // overlay 31
     bool func_ov031_020d9bec();

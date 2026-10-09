@@ -2,7 +2,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "MapObject/MapObjectRef.hpp"
+#include "RefStruct.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -18,7 +18,7 @@ public:
         mUnk_04(param1) {}
 
     // data_ov031_02112d4c
-    /* 0C */ virtual bool vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+    /* 0C */ virtual bool vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
                                    const VecFx32 *param4) override;
 };
 

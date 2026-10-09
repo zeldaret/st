@@ -79,7 +79,7 @@ void ActorUnkFLEN::SetState(ActorState state) {
 
 bool ActorUnkFLEN::func_ov031_020f81f8() {
     ActorParams actorParams;
-    ActorRef actorRef;
+    RefStruct actorRef;
 
     actorParams.mUnk_28 = 0;
     actorParams.func_ov000_020975f8();
@@ -94,5 +94,5 @@ bool ActorUnkFLEN::func_ov031_020f81f8() {
 
     Actor::func_ov000_020973f4(&actorRef, &data_ov000_020b539c_eur, data_ov031_02110b94[index], &actorParams, 0x0);
 
-    return actorRef.type_index != 0;
+    return actorRef.common.unk_00 != 0;
 }

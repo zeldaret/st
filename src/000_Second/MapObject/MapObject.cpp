@@ -98,7 +98,7 @@ bool MapObject::func_ov000_0209d144(Vec2s *param1, unk32 param2, UnkStruct_027e0
     return false;
 }
 
-bool MapObject::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
+bool MapObject::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3) {
     return true;
 }
 
@@ -144,24 +144,24 @@ void MapObject::func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3
     UnkStruct_027e0cd8_0C_Base *temp_r5 = data_027e0cd8->mUnk_0C;
     Vec2bCpp sp0(0, 0);
 
-    sp0.x = this->mRef.unk_02.x;
+    sp0.x = this->mRef.moRef.unk_02.x;
 
     s32 tempX = param3->x;
-    tempX += this->mRef.unk_02.x;
+    tempX += this->mRef.moRef.unk_02.x;
 
-    if (this->mRef.unk_02.x < tempX) {
+    if (this->mRef.moRef.unk_02.x < tempX) {
         do {
-            sp0.y = this->mRef.unk_02.y;
+            sp0.y = this->mRef.moRef.unk_02.y;
 
             s32 tempY = param3->y;
-            tempY += this->mRef.unk_02.y;
+            tempY += this->mRef.moRef.unk_02.y;
 
-            if (this->mRef.unk_02.y < tempY) {
+            if (this->mRef.moRef.unk_02.y < tempY) {
                 do {
                     temp_r5->func_ov000_020801b0(&sp0, param1, param2);
-                } while (++sp0.y < param3->y + this->mRef.unk_02.y);
+                } while (++sp0.y < param3->y + this->mRef.moRef.unk_02.y);
             }
-        } while (++sp0.x < param3->x + this->mRef.unk_02.x);
+        } while (++sp0.x < param3->x + this->mRef.moRef.unk_02.x);
     }
 }
 
@@ -208,7 +208,7 @@ void MapObject::func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_
         return;
     }
 
-    if (data_027e0998->vfunc_00(&this->mPos, &sp10, (ActorRef *) &this->mRef)) { //! TODO: ref conflicts
+    if (data_027e0998->vfunc_00(&this->mPos, &sp10, (RefStruct *) &this->mRef)) { //! TODO: ref conflicts
         spC.mUnk_06 = 0x00;
         MI_CpuFill32(0, &spC, sizeof(spC));
         spC.mUnk_05             = -1;
@@ -222,7 +222,7 @@ void MapObject::func_ov000_0209d518(VecFx32 *param1, unk32 param2, unk32 param3,
     data_027e09b4->func_01fff60c(param1, param2, param3, param4, 0, 0);
 }
 
-void MapObject::func_ov000_0209d54c(ActorRef *param1, MapObject *thisx, u16 param2, const VecFx32 *pPos, s16 param3,
+void MapObject::func_ov000_0209d54c(RefStruct *param1, MapObject *thisx, u16 param2, const VecFx32 *pPos, s16 param3,
                                     u16 param4) {
     ActorParams params;
 
@@ -240,8 +240,8 @@ void MapObject::func_ov000_0209d54c(ActorRef *param1, MapObject *thisx, u16 para
     Actor::func_ov000_020973f4(param1, &data_ov000_020b539c_eur, ActorId_EventIcon, &params, 0);
 }
 
-void MapObject::func_ov000_0209d5c8(ActorRef ref) {
-    if (ref.type_index != 0) {
+void MapObject::func_ov000_0209d5c8(RefStruct ref) {
+    if (ref.common.unk_00 != 0) {
         Actor *pActor = gpActorManager->func_01fff3b4(ref);
 
         if (pActor != NULL) {

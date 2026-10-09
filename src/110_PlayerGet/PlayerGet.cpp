@@ -536,7 +536,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             pUnk_3c->y = 0;
             pUnk_3c->z = 0;
 
-            if (this->mUnk_54.mUnk_04.type != ActorRefType_1) {
+            if (this->mUnk_54.mUnk_04.common.type != ActorRefType_1) {
                 return;
             }
 
@@ -812,7 +812,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                     case ItemId_AncientShield:
                         this->mUnk_30->func_ov000_020936ec();
 
-                        if (this->mUnk_54.mUnk_04.type == ActorRefType_1) {
+                        if (this->mUnk_54.mUnk_04.common.type == ActorRefType_1) {
                             temp_r0_3 = (ActorUnkNSHD *) gpActorManager->func_01fff3b4(this->mUnk_54.mUnk_00);
 
                             if ((temp_r0_3 != NULL) && (temp_r0_3->GetActorId() == ActorId_NormalShield)) {
@@ -851,10 +851,10 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                         break;
                 }
 
-                if (this->mUnk_54.mUnk_00.type_index == REF_TYPE_INDEX(ActorRefType_0, 0x1000)) {
+                if (this->mUnk_54.mUnk_00.acRef.type_index == REF_TYPE_INDEX(ActorRefType_0, 0x1000)) {
                     Vec2bCpp stack;
-                    stack.x = this->mUnk_54.mUnk_00.type_index;
-                    stack.y = this->mUnk_54.mUnk_00.unk_id;
+                    stack.x = this->mUnk_54.mUnk_00.acRef.type_index;
+                    stack.y = this->mUnk_54.mUnk_00.acRef.unk_id;
 
                     MapObject *pMapObj = gpMapObjManager->func_01fff498(stack);
 
@@ -909,7 +909,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                     break;
                 }
 
-                if (this->mUnk_54.mUnk_04.type == ActorRefType_1 && data_027e09b8->func_ov000_020732dc(2) != 0) {
+                if (this->mUnk_54.mUnk_04.common.type == ActorRefType_1 && data_027e09b8->func_ov000_020732dc(2) != 0) {
                     this->mUnk_04.mUnk_00 = this->mUnk_54.mUnk_04;
                     this->mUnk_30->func_ov000_020921e4(0x57);
                     break;

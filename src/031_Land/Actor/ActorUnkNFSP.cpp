@@ -176,7 +176,7 @@ void ActorUnkNFSP::func_ov031_020fbb8c() {
     this->func_ov000_020989e0();
 }
 
-void ActorUnkNFSP::func_ov031_020fbba0(ActorRef ref) {
+void ActorUnkNFSP::func_ov031_020fbba0(RefStruct ref) {
     if (this->mUnk_94 == 0x2) {
         return;
     }
@@ -195,7 +195,7 @@ ActorUnkNFSP_C0::ActorUnkNFSP_C0(ActorUnkNFSP *actor) :
     this->mUnk_04 = 0x1;
 }
 
-bool ActorUnkNFSP_C0::vfunc_00(ActorRef ref, unk32 param2) {
+bool ActorUnkNFSP_C0::vfunc_00(RefStruct ref, unk32 param2) {
     if (this->GetActorPtr<ActorUnkNFSP>()->mUnk_94 != 0x0) {
         return false;
     }

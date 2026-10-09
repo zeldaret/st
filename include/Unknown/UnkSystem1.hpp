@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Actor/ActorRef.hpp"
 #include "Message/BMG.hpp"
+#include "RefStruct.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -75,8 +75,8 @@ public:
     /* 20 */ unk32 mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ unk8 mUnk_28;
-    /* 2C */ ActorRef mUnk_2C;
-    /* 30 */ ActorRef mUnk_30;
+    /* 2C */ RefStruct mUnk_2C;
+    /* 30 */ RefStruct mUnk_30;
     /* 34 */
 
     UnkSystem1_ov000_Derived2(unk32 param1);

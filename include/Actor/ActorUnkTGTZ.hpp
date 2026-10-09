@@ -37,7 +37,7 @@ public:
     /* 1D4 */ u16 mUnk_1D4;
     /* 1D6 */ u16 mUnk_1D6;
     /* 1D8 */ bool mUnk_1D8;
-    /* 1DC */ ActorRef mUnk_1DC;
+    /* 1DC */ RefStruct mUnk_1DC;
     /* 1E0 */
 
     ActorUnkTGTZ();
@@ -49,8 +49,8 @@ public:
     /* 34 */ virtual void vfunc_30(Actor_vfunc_30 *param1) override;
 
     void func_ov031_020f6984();
-    static void func_ov031_020f6e5c(ActorRef param1);
-    static void func_ov031_020f6ea8(ActorRef *param0, u16 param1, const VecFx32 *param2, s16 param3, u16 param4);
+    static void func_ov031_020f6e5c(RefStruct param1);
+    static void func_ov031_020f6ea8(RefStruct *param0, u16 param1, const VecFx32 *param2, s16 param3, u16 param4);
     void func_ov031_020f6f20(unk32 param1);
     void func_ov031_020f7358();
     void func_ov031_020f73e4();

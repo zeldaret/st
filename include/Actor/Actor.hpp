@@ -2,9 +2,9 @@
 
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "Actor/ActorRef.hpp"
 #include "Physics/AABB.hpp"
 #include "Physics/Cylinder.hpp"
+#include "RefStruct.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "flags.h"
@@ -39,7 +39,7 @@ public:
         unk8 mUnk_26_0;
         unk8 mUnk_26_1;
     };
-    /* 28 */ ActorRef mUnk_28;
+    /* 28 */ RefStruct mUnk_28;
     /* 2C */ u32 mUnk_2C;
     /* 30 */
 
@@ -101,14 +101,14 @@ public:
     /* 00 (vtable) */
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
-    /* 0C */ ActorRef mUnk_0C;
+    /* 0C */ RefStruct mUnk_0C;
     /* 10 */ VecFx32 mUnk_10;
     /* 1C */ u16 mUnk_1C;
     /* 1E */ u16 mUnk_1E;
     /* 20 */
 
     /* 00 */ virtual void vfunc_00(); // corresponds to func_ov000_02097c14
-    /* 04 */ virtual unk32 vfunc_04(ActorRef param1, unk32 param2, unk32 param3,
+    /* 04 */ virtual unk32 vfunc_04(RefStruct param1, unk32 param2, unk32 param3,
                                     unk32 *param4) override; // corresponds to func_ov000_02097c20
     /* 08 */
 
@@ -161,7 +161,7 @@ public:
         this->mUnk_08.Init();
     }
 
-    void func_ov000_020998f0(ActorRef ref, VecFx32 *pPos);
+    void func_ov000_020998f0(RefStruct ref, VecFx32 *pPos);
     void func_ov000_02099a0c();
 };
 
@@ -192,7 +192,7 @@ public:
     /* 54 */ UnkStruct_ActorUnkCANS_224 *mUnk_54;
     /* 58 */ ActorFlags mFlags[1];
     /* 5C */ ActorParams mUnk_5C;
-    /* 8C */ ActorRef mRef;
+    /* 8C */ RefStruct mRef;
     /* 90 */ ActorProfile *mpProfile;
     /* 94 */
 
@@ -302,8 +302,8 @@ public:
     void func_ov000_0209a008(unk32 param1, fx16 param2);
     u32 func_ov000_02098ab4(u8 param1, unk32 param2, unk32 param3, VecFx32 *param4);
 
-    static void func_ov000_020973f4(ActorRef *pOutRef, UnkStruct_ov000_020b539c *param2, ActorId actorId, ActorParams *pParams,
-                                    int param5);
+    static void func_ov000_020973f4(RefStruct *pOutRef, UnkStruct_ov000_020b539c *param2, ActorId actorId,
+                                    ActorParams *pParams, int param5);
 
     // overlay 17
     bool func_ov017_020beeec(unk32 param1);
@@ -331,11 +331,11 @@ public:
     bool func_ov017_020bfd9c(Vec2s *param1, unk32 param2, UnkStruct_027e09bc_0C *param3,
                              AABB *param4); //! TODO: param4's type not confirmed but probably correct
 
-    static void func_ov017_020c2038(ActorRef *pRef, unk32 param2, unk32 param3, const VecFx32 *param4, unk32 param5);
+    static void func_ov017_020c2038(RefStruct *pRef, unk32 param2, unk32 param3, const VecFx32 *param4, unk32 param5);
     static bool func_ov017_020c219c(unk32 param1, const VecFx32 *param2, unk32 param3, bool param4);
     static bool func_ov017_020c2310(const VecFx32 *param1, unk32 param2);
     static bool func_ov017_020c23a4(unk32 param1, const VecFx32 *param2, unk32 param3, bool param4);
-    static void func_ov017_020c2438(ActorRef *pRef, unk32 param2, const VecFx32 *param3, unk32 param4, bool param5);
+    static void func_ov017_020c2438(RefStruct *pRef, unk32 param2, const VecFx32 *param3, unk32 param4, bool param5);
     static void func_ov017_020c26f8(unk32 param1, const VecFx32 *param2, unk32 param3, bool param4);
     static void func_ov017_020c28b4(VecFx32 *param1, UnkAngleStruct param2, unk32 param3);
 
@@ -365,7 +365,7 @@ public:
     /* 20 */ Actor *mUnk_20;
     /* 24 */
 
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2);
+    /* 00 */ virtual bool vfunc_00(RefStruct ref, unk32 param2);
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C(VecFx32 *param1);

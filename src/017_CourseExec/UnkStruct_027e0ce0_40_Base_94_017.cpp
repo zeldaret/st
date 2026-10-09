@@ -7,7 +7,7 @@ extern unk16 data_ov000_020ab3c8;
 
 // https://decomp.me/scratch/6j77v
 void UnkStruct_027e0ce0_40_Base_94::func_ov017_020bd300(UnkStruct_027e0ce0_40_Base_14 *param1, unk32 param2, bool param3) {
-    ActorRef sp0;
+    RefStruct sp0;
     s16 temp_r0_2;
     s16 temp_r2;
     s16 temp_r3;

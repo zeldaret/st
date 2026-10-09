@@ -60,7 +60,7 @@ bool MapObjectChestBase::Init() {
     if (this->mUnk_20.mParams[3] == 1) {
         this->mPos.x += 0x7FC;
 
-        Vec2bCpp sp48(this->mRef.unk_02.x, this->mRef.unk_02.y);
+        Vec2bCpp sp48(this->mRef.moRef.unk_02.x, this->mRef.moRef.unk_02.y);
         pUVar2->func_ov000_020801b0(&sp48, 7, 1);
 
         sp48.x++;
@@ -111,12 +111,12 @@ void MapObjectChestBase::Setup() {
 
     VecFx32_Add((VecFx32 *) &sp3C, &spC, (VecFx32 *) &sp3C);
 
-    local_68.x = this->mRef.unk_02.x;
-    local_68.y = this->mRef.unk_02.y;
+    local_68.x = this->mRef.moRef.unk_02.x;
+    local_68.y = this->mRef.moRef.unk_02.y;
     iVar2      = pUVar5->func_01ffedf4((Vec2bCpp *) &local_68);
 
     if (this->mUnk_20.mParams[3] == 1) {
-        Vec2bCpp temp_r0(this->mRef.unk_02.x, this->mRef.unk_02.y);
+        Vec2bCpp temp_r0(this->mRef.moRef.unk_02.x, this->mRef.moRef.unk_02.y);
         temp_r0.x--;
 
         if (pUVar5->func_01ffedf4((Vec2bCpp *) &temp_r0) > iVar2 || gpMapObjManager->func_01fff498(local_5e) != NULL) {
@@ -128,10 +128,10 @@ void MapObjectChestBase::Setup() {
             sp3C.x += FX_F32_TO_FX32(0.5f);
         }
     } else {
-        Vec2bCpp temp_r0(this->mRef.unk_02.x, this->mRef.unk_02.y);
+        Vec2bCpp temp_r0(this->mRef.moRef.unk_02.x, this->mRef.moRef.unk_02.y);
         temp_r0.x--;
         temp_r0.y += 2;
-        // local_5e.y = this->mRef.unk_02.y + (this->mRef.unk_02.x - 1);
+        // local_5e.y = this->mRef.moRef.unk_02.y + (this->mRef.moRef.unk_02.x - 1);
         // local_6c.y += local_5e.y;
         // local_5e.y += 2;
 
@@ -145,7 +145,7 @@ void MapObjectChestBase::Setup() {
         }
     }
 
-    local_62.x = (this->mRef.unk_02.y - 1) + this->mRef.unk_02.x;
+    local_62.x = (this->mRef.moRef.unk_02.y - 1) + this->mRef.moRef.unk_02.x;
 
     if (gpMapObjManager->func_ov000_0209c3a8(&local_62) == MapObjectId_MiniBlocks &&
         iVar2 == pUVar5->func_01ffedf4(&local_62)) {
@@ -153,8 +153,8 @@ void MapObjectChestBase::Setup() {
     }
 
     if (data_027e09a4->CurrentSceneIndex() == SceneIndex_d_flame) {
-        local_64.x = this->mRef.unk_02.x;
-        local_66.y = this->mRef.unk_02.y;
+        local_64.x = this->mRef.moRef.unk_02.x;
+        local_66.y = this->mRef.moRef.unk_02.y;
 
         local_66.x = local_64.x - 1;
         local_64.y = local_66.y - 1;

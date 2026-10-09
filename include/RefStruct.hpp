@@ -1,7 +1,7 @@
 #pragma once
 
 #include "global.h"
-#include "types.h"
+#include "math.hpp"
 
 // mapping:
 // 0011 1111 1111 1111 = index
@@ -29,94 +29,28 @@ enum ActorRefId_ {
     //! TODO: more ids?
 };
 
-//! TODO: remove ActorRef and MapObjRef in favor of this
-struct RefStruct {
-    union {
-        // common
-        struct {
-            /* 00 */ u16 index : 14;
-            /* 00 */ u16 type : 2;
-            /* 02 */ u16 id : 12;
-            /* 02 */ u16 unk : 4;
-            /* 04 */
-        };
-
-        // ActorRef
-        struct {
-            /* 00 */ u16 type_index;
-            /* 02 */ u16 unk_id;
-            /* 04 */
-        } acRef;
-
-        // MapObjRef
-        struct {
-            union {
-                struct {
-                    /* 00 */ u8 unk_00;
-                    /* 01 */ u8 unk_01;
-                };
-                u16 unk_00_u16;
-            };
-            /* 02 */ Vec2b unk_02;
-            /* 04 */
-        } moRef;
-
-        u32 data;
+union RefCommon {
+    struct {
+        /* 00 */ u16 index : 14;
+        /* 00 */ u16 type : 2;
+        /* 02 */ u16 id : 12;
+        /* 02 */ u16 unk : 4;
+        /* 04 */
     };
-
-    RefStruct() {}
-
-    RefStruct(u32 value) {
-        this->data = value;
-    }
-
-    void Reset() {
-        this->data = 0;
-    }
+    /* 00 */ u16 unk_00;
+    /* 02 */ u16 unk_02;
+    /* 04 */
 };
 
 struct ActorRef {
     union {
         struct {
-            /* 00 */ u16 index : 14;
-            /* 00 */ u16 type : 2;
-            /* 02 */ u16 id : 12;
-            /* 02 */ u16 unk : 4;
-            /* 04 */
-        };
-        struct {
             /* 00 */ u16 type_index;
             /* 02 */ u16 unk_id;
             /* 04 */
         };
         u32 data;
     };
-
-    ActorRef() {}
-
-    ActorRef(u32 value) {
-        this->data = value;
-    }
-
-    void Reset() {
-        this->data = 0;
-    }
-
-    const bool operator==(const ActorRef &other) const {
-        return other.data == this->data;
-    }
-
-    const bool operator!=(const ActorRef &other) const {
-        return !(*this == other);
-    }
-
-    void operator=(const ActorRef &other) {
-        this->data = other.data;
-    }
-
-    const u32 Get32() const {
-        return this->data;
-    }
 
     const u16 GetTypeIndex1() {
         if (this->type_index == REF_TYPE_INDEX(ActorRefType_0, 0x101)) {
@@ -162,11 +96,67 @@ struct ActorRef {
     }
 };
 
-// for arrays
-struct ActorRefElem {
-    ActorRef ref;
+struct MapObjRef {
+    union {
+        struct {
+            /* 00 */ union {
+                struct {
+                    u8 unk_00;
+                    u8 unk_01;
+                };
+                u16 unk_00_u16;
+            };
+            /* 02 */ Vec2b unk_02;
+            /* 04 */
+        };
+        u32 data;
+    };
 
-    ActorRefElem() {
+    Vec2bCpp &GetUnk02() {
+        return *(Vec2bCpp *) &this->unk_02;
+    }
+};
+
+struct RefStruct {
+    union {
+        RefCommon common; // use this when the kind is undetermined
+        ActorRef acRef;   // use this when the kind is clearly an actor ref
+        MapObjRef moRef;  // use this when the kind is clearly a map object ref
+        u32 data;         // raw data as a u32
+    };
+
+    RefStruct() {}
+
+    RefStruct(u32 value) {
+        this->data = value;
+    }
+
+    void Reset() {
+        this->data = 0;
+    }
+
+    const bool operator==(const RefStruct &other) const {
+        return other.data == this->data;
+    }
+
+    const bool operator!=(const RefStruct &other) const {
+        return !(*this == other);
+    }
+
+    void operator=(const RefStruct &other) {
+        this->data = other.data;
+    }
+
+    const u32 Get32() const {
+        return this->data;
+    }
+};
+
+// for arrays
+struct RefElem {
+    RefStruct ref;
+
+    RefElem() {
         this->ref.Reset();
     }
 };

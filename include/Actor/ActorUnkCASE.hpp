@@ -4,9 +4,9 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "Actor/ActorRef.hpp"
 #include "Actor/ActorShotArrow.hpp"
 #include "Actor/Actor_Derived1.hpp"
+#include "RefStruct.hpp"
 #include "Unknown/UnkStruct_ov000_020b3268.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
@@ -44,7 +44,7 @@ public:
 
     ActorUnkCASE_150(Actor *param1);
 
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(RefStruct ref, unk32 param2) override;
     /* 04 */ virtual bool vfunc_04() override;
     /* 0C */ virtual void vfunc_0C(VecFx32 *param1) override;
 };
@@ -78,7 +78,7 @@ public:
     /* 1D8 */ unk32 mUnk_1D8;
     /* 1DC */ unk32 mUnk_1DC;
     /* 1E0 */ unk32 mUnk_1E0;
-    /* 1E4 */ ActorRef mUnk_1E4;
+    /* 1E4 */ RefStruct mUnk_1E4;
     /* 1E8 */ Actor_Derived1_94 mUnk_1E8;
     /* 1F4 */ u8 mUnk_1F4;
     /* 1F5 */
@@ -98,7 +98,7 @@ public:
     void func_ov063_0215ac68(void);
     void func_ov063_0215ac8c(void);
     void func_ov063_0215acc8(void);
-    static void func_ov063_0215acec(ActorRef *ref1, ActorRef ref2); // copy ?
+    static void func_ov063_0215acec(RefStruct *ref1, RefStruct ref2); // copy ?
     void func_ov063_0215ae6c(void);
     void func_ov063_0215ae80(void);
     void func_ov063_0215aefc(ActorState param2);
@@ -116,7 +116,7 @@ public:
     void func_ov063_0215b2c4(void);
     void func_ov063_0215b6c8(VecFx32 *param1, UnkAngleStruct angle);
     void func_ov063_0215b724(void);
-    void func_ov063_0215b814(ActorRef ref);
+    void func_ov063_0215b814(RefStruct ref);
     void func_ov063_0215b854(void);
     void func_ov063_0215b8e8(VecFx32 *param1);
     static void func_ov063_0215b99c(ActorUnkCASE *param1, UnkStruct_func_ov063_0215a678 *param2);

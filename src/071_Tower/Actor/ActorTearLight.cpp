@@ -269,7 +269,7 @@ void ActorTearLight::func_ov071_0215f92c() {
             this->func_ov071_0215fdd4();
             break;
         case 16:
-            if (this->mUnk_168.mUnk_0C.type_index == 0x100 && this->mUnk_168.mUnk_0C.unk_id == 0) {
+            if (this->mUnk_168.mUnk_0C.acRef.type_index == 0x100 && this->mUnk_168.mUnk_0C.acRef.unk_id == 0) {
                 this->func_ov071_0215fd80();
                 break;
             }
@@ -433,7 +433,7 @@ ActorTearLight_194::ActorTearLight_194(ActorTearLight *param1) :
     this->mUnk_04 = 0x1;
 }
 
-bool ActorTearLight_194::vfunc_00(ActorRef ref, unk32 param2) {
+bool ActorTearLight_194::vfunc_00(RefStruct ref, unk32 param2) {
     if (param2 != 0x0) {
         ActorTearLight *actor = this->GetActorPtr<ActorTearLight>();
         actor->mUnk_190       = ref;

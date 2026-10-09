@@ -33,9 +33,9 @@ public:
     /* 04 */
 
     // data_ov031_02114a5c
-    /* 0C */ virtual bool vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+    /* 0C */ virtual bool vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
                                    const VecFx32 *param4) override;
-    /* 10 */ virtual bool vfunc_10(ActorRef param1, unk32 param2) override; // func_ov031_020f83e4
+    /* 10 */ virtual bool vfunc_10(RefStruct param1, unk32 param2) override; // func_ov031_020f83e4
     /* 14 */
 };
 

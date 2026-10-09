@@ -1,8 +1,9 @@
 #include "Actor/ActorItemTornado.hpp"
-#include "Actor/ActorRef.hpp"
 #include "CommonFuncs.hpp"
 #include "Map/MapObjectId.hpp"
+#include "MapObject/MapObjectManager.hpp"
 #include "Physics/Cylinder.hpp"
+#include "RefStruct.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e0958.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -25,7 +26,7 @@ bool UnkStruct_ov031_02112ff4::vfunc_08(const UnkStruct_ov031_020f3310 *param1, 
     return ((param1->mUnk_04->mUnk_24[param1->mUnk_00->mUnk_06] >> 0x1A) & 0x01) != 0x01;
 }
 
-bool UnkStruct_ov031_02112ff4::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+bool UnkStruct_ov031_02112ff4::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
                                         const VecFx32 *param4) {
 #pragma unused(param3, param4)
 
@@ -33,8 +34,8 @@ bool UnkStruct_ov031_02112ff4::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 
         return false;
     }
 
-    if (ref.unk_00_u16 == 0x1000) {
-        MapObjRef sp4 = ref;
+    if (ref.moRef.unk_00_u16 == 0x1000) {
+        MapObjRef sp4 = ref.moRef;
         Vec2bCpp sp0  = sp4.GetUnk02();
 
         MapObject *temp_r5 = gpMapObjManager->func_01fff498(sp0);

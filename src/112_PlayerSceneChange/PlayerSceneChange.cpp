@@ -62,7 +62,7 @@ PlayerSceneChange::~PlayerSceneChange() {
 }
 
 s16 PlayerSceneChange::func_ov112_02184bbc(s16 param1) {
-    if (this->mUnk_90.type == ActorRefType_1) {
+    if (this->mUnk_90.common.type == ActorRefType_1) {
         Actor *pActor = gpActorManager->func_01fff3b4(this->mUnk_90);
 
         if (pActor != NULL) {
@@ -152,11 +152,9 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                     this->mUnk_70.z = temp_r8->z + FX_MUL(data_0203f964[1], FX_F32_TO_FX32(2.0f));
                     break;
                 default:
-                    if (this->mUnk_2C->mUnk_150.type_index == 0x1000) {
-                        stack2.y = this->mUnk_2C->mUnk_150.type_index;
-                        stack2.x = 0;
-
-                        MapObjectUnkDRTY *pDRTY = (MapObjectUnkDRTY *) gpMapObjManager->func_01fff498(stack2);
+                    if (this->mUnk_2C->mUnk_150.moRef.unk_00_u16 == 0x1000) {
+                        Vec2bCpp pos            = this->mUnk_2C->mUnk_150.moRef.GetUnk02();
+                        MapObjectUnkDRTY *pDRTY = (MapObjectUnkDRTY *) gpMapObjManager->func_01fff498(pos);
 
                         if (pDRTY != NULL) {
                             pDRTY->func_ov000_0209d6ac((VecFx32 *) &this->mUnk_70);
@@ -181,7 +179,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                             }
                         }
                     } else {
-                        if (this->mUnk_2C->mUnk_150.type == ActorRefType_1) {
+                        if (this->mUnk_2C->mUnk_150.common.type == ActorRefType_1) {
                             Actor_Derived1 *temp_r0_6 =
                                 (Actor_Derived1 *) gpActorManager->func_01fff3b4(this->mUnk_2C->mUnk_150);
 
@@ -191,9 +189,9 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                                 this->mUnk_70.z = temp_r0_6->mPos.z;
 
                                 if (temp_r0_6->GetActorId() == ActorId_GTTG) {
-                                    this->mUnk_90.type_index = temp_r0_6->mRef.type_index;
-                                    this->mUnk_AA            = temp_r0_6->mAngle.angle_s;
-                                    this->mUnk_A8            = temp_r0_6->mAngle.angle_s;
+                                    this->mUnk_90.acRef.type_index = temp_r0_6->mRef.acRef.type_index;
+                                    this->mUnk_AA                  = temp_r0_6->mAngle.angle_s;
+                                    this->mUnk_A8                  = temp_r0_6->mAngle.angle_s;
                                 }
                             }
                         }

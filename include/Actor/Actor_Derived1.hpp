@@ -134,7 +134,7 @@ public:
     /* 0B0 */ u16 mUnk_0B0;
     /* 0B4 */ unk32 mUnk_0B4;
     /* 0B8 */ unk32 mUnk_0B8;
-    /* 0BC */ ActorRef mUnk_0BC;
+    /* 0BC */ RefStruct mUnk_0BC;
     /* 0C0 */ VecFx32Cpp mUnk_0C0;
     /* 0CC */ unk16 mUnk_0CC;
     /* 0CC */ unk16 mUnk_0CE;
@@ -195,7 +195,7 @@ public:
     void func_ov000_020a8ae0(fx32 param1);
     bool func_ov000_020a8db0();
     bool func_ov000_020a8dd0();
-    void func_ov000_020a8df0(ActorRef param1, unk32 param2);
+    void func_ov000_020a8df0(RefStruct param1, unk32 param2);
     void func_ov000_020a8e9c(VecFx32 *param1);
     bool func_ov000_020a8ff4(VecFx32 *param1);
     void func_ov000_020a91b8(VecFx32 *param1, unk32 param2);

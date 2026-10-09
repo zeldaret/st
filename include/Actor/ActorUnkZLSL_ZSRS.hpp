@@ -264,7 +264,7 @@ public:
     /* 28C4 */ unk32 mUnk_28C4;
     /* 28C8 */ unk32 mUnk_28C8;
     /* 2894 */ PAD(0x28CC, 0x28DC);
-    /* 28DC */ ActorRef mUnk_28DC;
+    /* 28DC */ RefStruct mUnk_28DC;
     /* 28E0 */ PAD(0x28E0, 0x28E4);
     /* 28E4 */ unk16 mUnk_28E4;
     /* 28E6 */ PAD(0x28E6, 0x28E8);

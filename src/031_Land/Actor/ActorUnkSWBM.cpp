@@ -16,7 +16,7 @@ bool ActorUnkSWBM_94::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 par
     return (((u32) param1->mUnk_04->mUnk_24[param1->mUnk_00->mUnk_06] >> 0x16) & 0x1) != 0x1;
 }
 
-bool ActorUnkSWBM_94::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3, const VecFx32 *param4) {
+bool ActorUnkSWBM_94::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3, const VecFx32 *param4) {
 #pragma unused(ref, param3, param4)
     return ((param2->mUnk_08 >> 0x16) & 0x1) != 0x1;
 }

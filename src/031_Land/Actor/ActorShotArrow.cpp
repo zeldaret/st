@@ -35,7 +35,7 @@ typedef struct {
 
 typedef struct {
     /* 00 */ PAD(0x00, 0x04);
-    /* 04 */ ActorRef mUnk_04;
+    /* 04 */ RefStruct mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ MtxFx43 *mUnk_0C;
     /* 10 */ VecFx32 mUnk_10;
@@ -636,9 +636,9 @@ void ActorShotArrow::func_ov031_020f28ac() {
 
         switch (this->mUnk_140.mUnk_1C) {
             case 0x8:
-                if ((s16) this->mUnk_140.mUnk_0C.index == 0x102) {
+                if (this->mUnk_140.mUnk_0C.acRef.unk_id == 0x102) {
                     bool var = false;
-                    if ((s16) this->mUnk_140.mUnk_0C.index == 0x102) {
+                    if (this->mUnk_140.mUnk_0C.acRef.unk_id == 0x102) {
                         if (this->mUnk_140.mUnk_0C.data == 0x1 || this->mUnk_140.mUnk_0C.data == 0x3) {
                             var = true;
                         }
@@ -674,10 +674,10 @@ void ActorShotArrow::func_ov031_020f28ac() {
                 break;
             }
             case 0xE:
-                if (this->mUnk_140.mUnk_0C.index == 0x102) {
+                if (this->mUnk_140.mUnk_0C.acRef.unk_id == 0x102) {
                     bool var = false;
 
-                    if (this->mUnk_140.mUnk_0C.index == 0x102) {
+                    if (this->mUnk_140.mUnk_0C.acRef.unk_id == 0x102) {
                         if (this->mUnk_140.mUnk_0C.data == 0x1 || this->mUnk_140.mUnk_0C.data == 0x3) {
                             var = true;
                         }
@@ -708,7 +708,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
                 break;
             }
             case 0x3:
-                if (this->mUnk_140.mUnk_0C.type != ActorRefType_0) {
+                if (this->mUnk_140.mUnk_0C.common.type != ActorRefType_0) {
                     Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_140.mUnk_0C);
                     if (actor) {
                         func_01ffb714(&actor->mPos, &actor->mPrevPos, &vec1);
@@ -965,7 +965,7 @@ bool ActorShotArrow_178::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 
 }
 
 // non-matching
-bool ActorShotArrow_178::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+bool ActorShotArrow_178::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
                                   const VecFx32 *param4) {}
 
 ActorShotArrow_194::ActorShotArrow_194(ActorShotArrow *param1) {
@@ -1065,7 +1065,7 @@ void ActorShotArrow_194::vfunc_10(Actor *actor) {
 
         case ActorId_LOCK:
             stack.mUnk_04 = actor->mUnk_5C.mUnk_28;
-            if (stack.mUnk_04.data != 0 && stack.mUnk_04.type != ActorRefType_0) {
+            if (stack.mUnk_04.data != 0 && stack.mUnk_04.common.type != ActorRefType_0) {
                 ActorUnkGYAM *lockedActor = (ActorUnkGYAM *) gpActorManager->func_01fff3b4(actor->mUnk_5C.mUnk_28);
 
                 if (lockedActor != NULL && lockedActor->GetActorId() == ActorId_GYAM) {

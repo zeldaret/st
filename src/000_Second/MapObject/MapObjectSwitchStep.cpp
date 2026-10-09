@@ -191,10 +191,10 @@ void MapObjectSwitchStep::vfunc_18(s8 *param1) {
     if (data_027e09a4->mUnk_00.sceneIndex >= SceneIndex_battle01 && data_027e09a4->mUnk_00.sceneIndex < SceneIndex_Max) {
         Vec2s sp10;
         stack_struct sp8;
-        ActorRef sp4;
+        RefStruct sp4;
 
         //! TODO: fake match?
-        sp4 = *(ActorRef *) &this->mRef;
+        sp4 = *(RefStruct *) &this->mRef;
 
         if (data_027e0998->vfunc_00(&this->mPos, &sp10, &sp4)) {
             sp8.mUnk_06 = 0x00;

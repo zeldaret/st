@@ -73,7 +73,7 @@ void MapObjectUnkLTRW::vfunc_14(unk32 param1) {
     mUnk_40.vfunc_18(&mPos);
 }
 
-bool MapObjectUnkLTRW::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
+bool MapObjectUnkLTRW::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3) {
     if (param2 == 0xD) {
         func_ov031_020e0f30(param1);
         return false;

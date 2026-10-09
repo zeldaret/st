@@ -118,7 +118,7 @@ bool MapObjectGrass::func_ov031_02101778() {
     return false;
 }
 
-bool MapObjectGrass::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
+bool MapObjectGrass::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3) {
     if (this->mUnk_64 != -0x1) {
         return false;
     }

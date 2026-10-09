@@ -7,13 +7,12 @@
 #include "nitro/fx.h"
 #include "types.h"
 
-#include "Actor/ActorRef.hpp"
 #include "Item/ItemManager.hpp"
 #include "LinkList.hpp"
-#include "MapObject/MapObjectRef.hpp"
 #include "Player/PlayerLink.hpp"
 #include "Player/PlayerZelda.hpp"
 #include "Player/TouchControl.hpp"
+#include "RefStruct.hpp"
 #include "Save/SaveManager.hpp"
 #include "input.hpp"
 
@@ -346,9 +345,9 @@ public:
     // data_ov000_020b2838
     /* 00 */ virtual ~UnkStruct_027e0ce0_38_Base();
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2);
-    /* 0C */ virtual bool vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+    /* 0C */ virtual bool vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
                                    const VecFx32 *param4);
-    /* 10 */ virtual bool vfunc_10(ActorRef param1, unk32 param2);
+    /* 10 */ virtual bool vfunc_10(RefStruct param1, unk32 param2);
     /* 14 */
 };
 
@@ -555,7 +554,7 @@ public:
 
 class UnkStruct_027e0ce0_40_Base_78 {
 public:
-    /* 00 */ ActorRef mRef;
+    /* 00 */ RefStruct mRef;
     /* 04 */
 
     const bool HasValue() const {
@@ -564,7 +563,7 @@ public:
     }
 
     const bool UnkCheck1() {
-        return this->mRef.UnkCheck2();
+        return this->mRef.acRef.UnkCheck2();
     }
 
     UnkStruct_027e0ce0_40_Base_78();
@@ -622,13 +621,13 @@ public:
     /* 10 */ unk32 mUnk_10;
     /* 14 */
 
-    UnkStruct_027e0ce0_40_Base_94_50_Base(unk32 param1, unk32 param2, ActorRefElem *param3, unk32 param4);
+    UnkStruct_027e0ce0_40_Base_94_50_Base(unk32 param1, unk32 param2, RefElem *param3, unk32 param4);
 };
 
 class UnkStruct_027e0ce0_40_Base_94_50 : public UnkStruct_027e0ce0_40_Base_94_50_Base {
 public:
     /* 00 (base) */
-    /* 14 */ ActorRefElem mUnk_14[4];
+    /* 14 */ RefElem mUnk_14[4];
     /* 24 */ unk32 mUnk_24;
     /* 28 */ unk32 mUnk_28;
     /* 2C */ unk32 *mUnk_2C;
@@ -643,13 +642,13 @@ public:
 class UnkStruct_027e0ce0_40_Base_94_Base : public UnkStruct_027e0ce0_40_Base_94_50_Base {
 public:
     /* 00 (base) */
-    /* 14 */ ActorRef mUnk_14;
-    /* 18 */ ActorRef mUnk_18;
-    /* 1C */ ActorRef mUnk_1C;
+    /* 14 */ RefStruct mUnk_14;
+    /* 18 */ RefStruct mUnk_18;
+    /* 1C */ RefStruct mUnk_1C;
     /* 20 */ Vec2s mTouchPosLast;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ PAD(0x28, 0x48);
-    /* 48 */ ActorRef mUnk_48;
+    /* 48 */ RefStruct mUnk_48;
     /* 4C */ u16 mUnk_4C;
     /* 50 */
 
@@ -935,7 +934,7 @@ public:
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);
     void func_ov000_0208bd20(bool param1, unk32 param2, unk32 param3);
     void func_ov000_0208bd30(bool param1, unk32 param2, unk32 param3, unk32 param4);
-    bool func_ov000_0208be0c(ActorRef param1);
+    bool func_ov000_0208be0c(RefStruct param1);
     bool func_ov000_0208be70(VecFx32 param1);
     bool func_ov000_0208bf34(unk32 param1);
 

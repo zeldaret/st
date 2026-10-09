@@ -42,7 +42,7 @@ public:
 
     /* 00 */ virtual ~UnkStruct_ov063_02162ea8();
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
-    /* 0C */ virtual bool vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+    /* 0C */ virtual bool vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
                                    const VecFx32 *param4) override;
 };
 
@@ -88,7 +88,7 @@ public:
 
     UnkStruct_ov063_02162e88(void *param1);
 
-    /* 04 */ virtual unk32 vfunc_04(ActorRef param1, unk32 param2, unk32 param3, unk32 *param4) override;
+    /* 04 */ virtual unk32 vfunc_04(RefStruct param1, unk32 param2, unk32 param3, unk32 *param4) override;
 };
 
 class ActorUnkCANS : public Actor_Derived2 {

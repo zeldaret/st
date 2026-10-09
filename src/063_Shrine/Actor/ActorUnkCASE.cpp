@@ -2,12 +2,12 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorManager.hpp"
-#include "Actor/ActorRef.hpp"
 #include "Actor/ActorShotArrow.hpp"
 #include "Actor/ActorUnkCANS.hpp"
 #include "Actor/ActorUnkITWP.hpp"
 #include "CommonFuncs.hpp"
 #include "Physics/Cylinder.hpp"
+#include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
@@ -83,7 +83,7 @@ ActorUnkCASE_150::ActorUnkCASE_150(Actor *param1) :
     mUnk_04 = 1;
 }
 
-bool ActorUnkCASE_150::vfunc_00(ActorRef ref, unk32 param2) {
+bool ActorUnkCASE_150::vfunc_00(RefStruct ref, unk32 param2) {
     ActorUnkCASE *actor = (ActorUnkCASE *) mUnk_20;
     if (actor->mUnk_1F4 == 0) {
         bool cond = true;
@@ -123,7 +123,7 @@ void ActorUnkCASE_174::vfunc_10(Actor *actor) {
 }
 
 // Static
-void ActorUnkCASE::func_ov063_0215acec(ActorRef *ref1, ActorRef ref2) {
+void ActorUnkCASE::func_ov063_0215acec(RefStruct *ref1, RefStruct ref2) {
     ActorParams params;
 
     params.mUnk_28 = 0;
@@ -461,7 +461,7 @@ void ActorUnkCASE::vfunc_10(Cylinder *param1) {
     param1->size = 0x800;
 }
 
-void ActorUnkCASE::func_ov063_0215b814(ActorRef ref) {
+void ActorUnkCASE::func_ov063_0215b814(RefStruct ref) {
     mUnk_1E4 = ref;
 
     if (mUnk_14C != NULL) {

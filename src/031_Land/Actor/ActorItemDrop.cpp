@@ -69,7 +69,7 @@ ActorProfileTreasureDrop::ActorProfileTreasureDrop() :
     this->mUnk_04.Init(0x400);
 }
 
-void ActorItemDrop::func_ov031_020f9f8c(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref) {
+void ActorItemDrop::func_ov031_020f9f8c(RefStruct *pOutRef, const VecFx32 *pPos, u32 params, RefStruct ref) {
     ActorParams actorParams;
 
     actorParams.mUnk_28.Reset();
@@ -213,15 +213,15 @@ void ActorItemDrop::func_ov031_020fa260() {
                     if (this->mUnk_119) {
                         bool var_r1_3 = false;
 
-                        if (this->mUnk_B4.mUnk_0C.type_index == 0x100 && this->mUnk_B4.mUnk_0C.unk_id == 0) {
+                        if (this->mUnk_B4.mUnk_0C.acRef.type_index == 0x100 && this->mUnk_B4.mUnk_0C.acRef.unk_id == 0) {
                             var_r1_3 = true;
                         }
 
-                        if (var_r1_3 || (this->mUnk_B4.mUnk_0C.type_index == 0x100 && this->mUnk_B4.mUnk_0C.unk_id == 1 &&
-                                         data_027e0ce0->func_01fff1e0())) {
+                        if (var_r1_3 || (this->mUnk_B4.mUnk_0C.acRef.type_index == 0x100 &&
+                                         this->mUnk_B4.mUnk_0C.acRef.unk_id == 1 && data_027e0ce0->func_01fff1e0())) {
                             this->SetState(ActorItemDropState_6);
                         }
-                    } else if (this->mUnk_B4.mUnk_0C.type_index & 0x100) {
+                    } else if (this->mUnk_B4.mUnk_0C.acRef.type_index & 0x100) {
                         this->SetState(ActorItemDropState_6);
                     }
                     break;
@@ -523,7 +523,7 @@ ActorItemDrop_C4::ActorItemDrop_C4(Actor *param1) :
     this->mUnk_04 = 0x1;
 }
 
-bool ActorItemDrop_C4::vfunc_00(ActorRef ref, unk32 param2) {
+bool ActorItemDrop_C4::vfunc_00(RefStruct ref, unk32 param2) {
     if (param2 != 0) {
         ActorItemDrop *actorDroppedItem = this->GetActorPtr<ActorItemDrop>();
         actorDroppedItem->mUnk_E0       = ref;

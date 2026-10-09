@@ -37,7 +37,7 @@ public:
     ActorTearLight_194(ActorTearLight *param1);
 
     // data_ov071_02164c00
-    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(RefStruct ref, unk32 param2) override;
     /* 04 */ virtual bool vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C(VecFx32 *param1) override;
@@ -98,7 +98,7 @@ public:
     /* 188 */ unk32 mUnk_188;
     /* 18C */ bool mUnk_18C;
     /* 18D */ bool mUnk_18D;
-    /* 190 */ ActorRef mUnk_190;
+    /* 190 */ RefStruct mUnk_190;
     /* 194 */ ActorTearLight_194 mUnk_194;
     /* 1B8 */ u8 mUnk_1B8;
     /* 1B9 */ unk8 mUnk_1B9;

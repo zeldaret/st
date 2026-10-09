@@ -30,7 +30,7 @@ public:
     /* 44 */ virtual bool SetState(MapObjState state, unk32 param2) override;
     /* 48 */ virtual void vfunc_48() override;
     /* 4C */ virtual bool vfunc_4C() override;
-    /* 50 */ virtual void vfunc_50(ActorRef *param1, MapObjectPot_Base *thisx) override;
+    /* 50 */ virtual void vfunc_50(RefStruct *param1, MapObjectPot_Base *thisx) override;
     /* 54 */ virtual unk32 vfunc_54() override;
 
     void func_ov000_0209da78(unk32 param1, unk32 param2);

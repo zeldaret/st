@@ -321,14 +321,14 @@ public:
     /* 12C */
 };
 
-bool MapObjectUnkSKDI::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
+bool MapObjectUnkSKDI::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3) {
     bool var_r1 = false;
-    if (param1.type_index == 0x102) {
-        if (param1.unk_id == 1 || param1.unk_id == 3) {
+    if (param1.acRef.type_index == 0x102) {
+        if (param1.acRef.unk_id == 1 || param1.acRef.unk_id == 3) {
             var_r1 = true;
         }
     }
-    if (var_r1 != 0 && param1.unk_id == 1) {
+    if (var_r1 != 0 && param1.acRef.unk_id == 1) {
         if (data_027e0ce0->mEquippedItem != ActorId_PMTB) {
             return false;
         }

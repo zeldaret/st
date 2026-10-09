@@ -4,6 +4,7 @@
 #include "Actor/ActorProfile.hpp"
 #include "ActorSpinut.hpp"
 #include "Map/MapObjectId.hpp"
+#include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -49,7 +50,7 @@ public:
     // data_ov032_02122528
     /* 00 */ virtual ~ActorKeese_2AC() override;
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
-    /* 0C */ virtual bool vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+    /* 0C */ virtual bool vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
                                    const VecFx32 *param4) override;
 };
 
@@ -101,7 +102,7 @@ public:
     /* 2AC */ ActorKeese_2AC mUnk_2AC;
     /* 2C4 */ VecFx32Cpp mUnk_2C4;
     /* 2D0 */ Actor_38 *mUnk_2D0;
-    /* 2D4 */ ActorRef mUnk_2D4;
+    /* 2D4 */ RefStruct mUnk_2D4;
     /* 2D8 */
 
     ActorKeese();

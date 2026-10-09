@@ -115,25 +115,25 @@ bool PlayerLinkActor_9C::func_ov017_020bc640(u32 param1, bool param2, bool param
         if (temp_r6 == NULL) {
             data_027e0ce0->func_ov000_0208bc1c(0, this->mUnk_13A, this->mUnk_138, 0, &this->mUnk_13C, 0);
         } else {
-            ActorRef sp14 = this->mUnk_008.Get32();
-            ActorRef *ptr = &sp14;
+            RefStruct sp14 = this->mUnk_008.Get32();
+            RefStruct *ptr = &sp14;
 
-            if (sp14.type_index == 0x100) {
+            if (sp14.acRef.type_index == 0x100) {
                 *(u32 *) &var_r1 = -1;
             } else {
-                var_r1 = ptr->unk_id;
+                var_r1 = ptr->acRef.unk_id;
             }
 
             if (!(temp_r6->mUnk_70[var_r1] & 0x01) &&
                 temp_r6->func_ov021_020eb870(var_r1, this->mUnk_138, 0, &this->mUnk_13C) != 0) {
 
-                ActorRef sp10 = this->mUnk_008.Get32();
-                ActorRef *ptr = &sp10;
+                RefStruct sp10 = this->mUnk_008.Get32();
+                RefStruct *ptr = &sp10;
 
-                if (sp10.type_index == 0x100) {
+                if (sp10.acRef.type_index == 0x100) {
                     var_r1_2 = -1;
                 } else {
-                    var_r1_2 = ptr->unk_id;
+                    var_r1_2 = ptr->acRef.unk_id;
                 }
 
                 data_027e0cf4->func_ov021_020f6f58(var_r1_2, 0x1E, &this->mUnk_13C, 0, 0);
