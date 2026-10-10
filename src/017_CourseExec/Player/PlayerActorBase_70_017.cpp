@@ -56,8 +56,8 @@ extern unk16 data_ov000_020ab31c;
 
 void PlayerActorBase_70::func_ov017_020bbcd8(VecFx32 *param1, UnkAngleStruct param2) {
     UnkStackStruct_ov017_020c1104 sp28;
-    VecFx32 sp1C;
     VecFx32 sp10;
+    VecFx32 sp1C;
     s16 temp_r9;
     u8 var_r7;
 
@@ -78,7 +78,7 @@ void PlayerActorBase_70::func_ov017_020bbcd8(VecFx32 *param1, UnkAngleStruct par
         if (!data_027e0d34->func_ov031_020d9ab8()) {
             sp28.func_ov017_020c1104(&sp10, data_ov000_020ab31c, 4);
 
-            sp28.unk_12 = this->mUnk_132;
+            sp28.mHeight = this->mUnk_132;
             VecFx32_Add(&sp1C, &this->mUnk_0E4.mUnk_0C[PlayerCharacter_Link], &sp10);
             temp_r9 = data_ov000_020ab318;
 

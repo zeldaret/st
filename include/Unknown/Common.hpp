@@ -1351,11 +1351,11 @@ struct UnkStackStruct_ov000_02084344 {
 extern "C" UnkStackStruct_ov000_02084344 *func_ov000_02084344(unk32);
 
 struct UnkStackStruct_ov017_020c1104 {
-    /* 00 */ VecFx32 unk_00;
-    /* 0C */ unk32 unk_0C;
-    /* 10 */ u16 unk_10;
-    /* 12 */ s16 unk_12;
-    /* 14 */ s16 unk_14[30];
+    /* 00 */ VecFx32 mCenter;       // mesh center
+    /* 0C */ unk32 mOuterRadius;
+    /* 10 */ u16 mSubdivShift;      // subdivision shift (segments = 1 << shift)
+    /* 12 */ s16 mHeight;
+    /* 14 */ s16 mSegmentRadii[30]; // per-segment radii
     /* 50 */
 
     void func_ov017_020c1104(const VecFx32 *param2, s32 param3, u16 param4);
