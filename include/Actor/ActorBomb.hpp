@@ -19,16 +19,6 @@ enum ActorBombState_ {
     ActorBombState_Max
 };
 
-class ActorBomb_unk : public UnkSystem7 {
-public:
-    /* 00 (base) */
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */
-
-    ActorBomb_unk();
-};
-
 class ActorBomb_19C : public UnkStruct_ov031_Items_01 {
 public:
     /* 00 (base) */

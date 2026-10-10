@@ -28,4 +28,5 @@ public:
     /* 20 */
 
     MapObject_10_Pot() {}
+    MapObject_10_Pot(int) {}
 };

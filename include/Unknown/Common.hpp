@@ -1377,3 +1377,13 @@ struct UnkStruct_ov031_020e5d18_00 {
     /* 04 */ PAD(0x04, 0x18);
     /* 18 */
 };
+
+class ActorBomb_unk : public UnkSystem7 {
+public:
+    /* 00 (base) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */
+
+    ActorBomb_unk();
+};

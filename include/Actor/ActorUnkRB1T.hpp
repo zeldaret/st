@@ -21,8 +21,7 @@ public:
 class ActorUnkRB1T : public Actor_Derived1 {
 public:
     /* 000 (base) */
-    /* 120 */
-    Actor_Derived1_94_0C *mUnk_120;
+    /* 120 */ ActorUnkZSRS_120 *mUnk_120;
     /* 124 */ PAD(0x124, 0x20C);
     /* 20C */ ModelRender mUnk_20C; // actually a derived class of a derived class
     /* 26C */ PAD(0x26C, 0x280);

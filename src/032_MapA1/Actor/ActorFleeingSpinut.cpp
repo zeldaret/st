@@ -64,9 +64,9 @@ ActorFleeingSpinut::ActorFleeingSpinut() :
     *(s16 *) &this->mUnk_44 |= 0x40;
     SET_FLAG(this->mFlags, ActorFlag_6);
 
-    this->mUnk_1E0.mUnk_00.mUnk_08 = 0x1;
-    this->mUnk_38                  = &this->mUnk_1E0.mUnk_00;
-    this->mUnk_224                 = true;
+    this->mUnk_1E0.mUnk_08 = 0x1;
+    this->mUnk_38          = (Actor_38 *) &this->mUnk_1E0;
+    this->mUnk_224         = true;
 
     this->mUnk_21C = 0x0;
     this->mUnk_220 = 0x0;

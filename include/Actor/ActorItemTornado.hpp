@@ -29,19 +29,6 @@ enum ActorItemTornadoState_ {
     ActorItemTornadoState_MAX,
 };
 
-class UnkSystem5_Derived2 {
-public:
-    /* 00 */ UnkSystem5 mUnk_00;
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ PAD(0x24, 0x40);
-    /* 40 */
-
-    UnkSystem5_Derived2(UnkStruct_ov000_02058a84 *param1, G3d_Model *param2) :
-        mUnk_00(&this->mUnk_20, param2) {
-        this->mUnk_00.func_ov000_020577a4(param1, 0, false);
-    }
-};
-
 class ActorItemTornado_17C : public UnkStruct_PlayerGet_74 {
 public:
     /* 00 (base) */

@@ -9,8 +9,6 @@
 
 extern MtxFx33 data_027e0130;
 
-static MapObject_10_Pot data_ov031_021166b8;
-
 DECL_PROFILE(ActorProfileUnkROCK);
 
 Actor *ActorProfileUnkROCK::Create() {
@@ -20,10 +18,11 @@ Actor *ActorProfileUnkROCK::Create() {
 // non-matching
 ActorProfileUnkROCK::ActorProfileUnkROCK() :
     ActorProfileUnkROCK_Base(ActorId_ROCK) {
-    this->mUnk_04.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.5f));
-    VecFx32_Init(FX_F32_TO_FX32(7.0017f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_D8.mUnk_0C);
-    this->mUnk_D8.mUnk_18 = FX_F32_TO_FX32(0.6f);
-    this->mUnk_D8.mUnk_1C = FX_F32_TO_FX32(1.2f);
+    this->mUnk_04.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.5f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.5f));
+    VecFx32_Reset(&this->mUnk_D8.mUnk_0C);
+    this->mUnk_D8.mUnk_08 = 0x7007;
+    this->mUnk_D8.mUnk_18 = 0x99A;
+    this->mUnk_D8.mUnk_1C = 0x1333;
 }
 
 ActorUnkROCK::ActorUnkROCK() :
@@ -33,9 +32,10 @@ ActorUnkROCK::ActorUnkROCK() :
 }
 
 bool ActorUnkROCK::Init(unk32 param1) {
+#pragma unused(param1)
     this->mUnk_A0.mUnk_04 = this->mRef;
     this->mUnk_A0.mUnk_08 = &this->mPos;
-    this->mUnk_A0.mUnk_0C = &data_ov031_021166b8;
+    this->mUnk_A0.mUnk_0C = GET_PROFILE_D8(ActorProfileUnkROCK);
 
     this->func_ov031_020e8a48(ActorUnkROCKState_0);
 

@@ -179,7 +179,7 @@ public:
     /* 2C */ unk32 mUnk_2C; // gravity?
     /* 30 */ Cylinder *mUnk_30;
     /* 34 */ Cylinder *mUnk_34;
-    /* 38 */ Actor_38 *mUnk_38;
+    /* 38 */ Actor_38 *mUnk_38; // wrong type, points to Actor_Derived1_94
     /* 3C */ Actor_9C *mUnk_3C;
     /* 40 */ Actor_C4 *mUnk_40;
     /* 44 */ u16 mUnk_44;

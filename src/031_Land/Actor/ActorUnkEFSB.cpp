@@ -18,8 +18,8 @@ ActorProfileUnkEFSB::ActorProfileUnkEFSB() :
 
 ActorUnkEFSB::ActorUnkEFSB() :
     mUnk_098(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkEFSB)->mUnk_3C.mUnk_50)),
-    mUnk_0F8(&this->mUnk_0F8.mUnk_1C, &this->mUnk_098, GET_PROFILE(ActorProfileUnkEFSB)->vfunc_04()),
-    mUnk_154(&this->mUnk_154.mUnk_1C, &this->mUnk_098, GET_PROFILE(ActorProfileUnkEFSB)->vfunc_04()) {}
+    mUnk_0F8(&this->mUnk_098, GET_PROFILE(ActorProfileUnkEFSB)->vfunc_04()),
+    mUnk_154(&this->mUnk_098, GET_PROFILE(ActorProfileUnkEFSB)->vfunc_04()) {}
 
 bool ActorUnkEFSB::Init(unk32 param1) {
     this->mUnk_0F8.vfunc_1C(data_ov031_02114ed0[0], 0x1000, 0x11F, 0x0);

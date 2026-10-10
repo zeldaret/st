@@ -58,7 +58,8 @@ bool UnkStruct_027e09b4::func_ov017_020c08c4(const VecFx32 *param1, unk32 param2
 void UnkStruct_027e09b4::func_ov017_020c0970(const VecFx32 *param1, unk32 param2, unk32 param3, u16 param4, u16 param5,
                                              u32 param6, fx32 param7) {
     FlushGfxQueue();
-    G3_TexImageParam(0, 0, 0, 0, 0, 0, 0, 0);
+    G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
+                     GX_TEXPLTTCOLOR0_USE, 0);
     G3_Color(data_027e09ac->mUnk_014.mUnk_08);
     G3_PushMtx();
     G3_Translate(param1->x, param1->y + this->mUnk_308, param1->z);
@@ -77,7 +78,8 @@ void UnkStruct_027e09b4::func_ov017_020c0a30(const VecFx32 *param1, unk32 param2
 void UnkStruct_027e09b4::func_ov017_020c0a6c(const VecFx32 *param1, s32 param2, s32 param3, s32 param4, u16 param5, u16 param6,
                                              s32 param7, u16 param8) {
     FlushGfxQueue();
-    G3_TexImageParam(0, 0, 0, 0, 0, 0, 0, 0);
+    G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
+                     GX_TEXPLTTCOLOR0_USE, 0);
     G3_Color(param8);
     G3_PushMtx();
     G3_Translate(param1->x, param1->y + this->mUnk_308 - param4, param1->z);
@@ -109,7 +111,8 @@ void UnkStruct_027e09b4::func_ov017_020c0b24(const VecFx32 *param1, s32 param2, 
     }
 
     FlushGfxQueue();
-    G3_TexImageParam(0, 0, 0, 0, 0, 0, 0, 0);
+    G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
+                     GX_TEXPLTTCOLOR0_USE, 0);
     G3_Color(data_027e09ac->mUnk_014.mUnk_08);
     G3_PushMtx();
     G3_Translate(param1->x, param1->y, param1->z);

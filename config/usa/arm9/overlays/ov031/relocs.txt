@@ -1734,7 +1734,7 @@ from:0x020e8950 kind:load to:0x021133ec add:0x8 module:overlay(31)
 from:0x020e8954 kind:load to:0x021165c0 module:overlay(31)
 from:0x020e8958 kind:load to:0x020b1940 add:0x8 module:overlay(0)
 from:0x020e897c kind:arm_call to:0x020e8a28 module:overlay(31)
-from:0x020e8988 kind:load to:0x02116698 module:overlay(31)
+from:0x020e8988 kind:load to:0x021165c0 add:0xd8 module:overlay(31)
 from:0x020e89e0 kind:arm_call to:0x0208baac module:overlay(0)
 from:0x020e89e8 kind:arm_call to:0x02098818 module:overlay(0)
 from:0x020e89f8 kind:arm_call to:0x01ffb6e4 module:itcm

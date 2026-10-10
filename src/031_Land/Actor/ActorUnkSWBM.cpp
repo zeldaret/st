@@ -8,11 +8,14 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 #include "Unknown/UnkStruct_ov000_020b4ec4.hpp"
+#include "nitro/g3.h"
+#include "nitro/gx.h"
 
 static const Cylinder data_ov031_02113114(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f),
                                           FX_F32_TO_FX32(0.35f));
 
 bool ActorUnkSWBM_94::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
+#pragma unused(param2)
     return (((u32) param1->mUnk_04->mUnk_24[param1->mUnk_00->mUnk_06] >> 0x16) & 0x1) != 0x1;
 }
 
@@ -36,7 +39,7 @@ bool ActorUnkSWBM_98::vfunc_0C(Actor *param1, VecFx32 *vector) {
 }
 
 void ActorUnkSWBM_98::vfunc_10(Actor *actor) {
-    switch (GET_FLAG(actor->mFlags, ActorFlag_17)) {
+    switch (GET_FLAG(actor->mFlags, ActorFlag_17) ? 1 : 0) {
         case false: {
             ActorUnkSWBM *actorSWBM = this->mUnk_2C;
             if (actorSWBM->mState != ActorUnkSWBMState_0) {
@@ -53,34 +56,34 @@ void ActorUnkSWBM_98::vfunc_10(Actor *actor) {
 
 // non-matching
 void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2) {
+#pragma unused(param1, param2)
     ActorUnkSWBM *actor = this->mUnk_14;
+    unk32 var_r6;
+    s16 var_r7;
+    s16 var_r8;
+    s32 var_r9;
 
     FlushGfxQueue();
     REG_GFX_FIFO_DIFFUSE_AMBIENT_REFLECT = 0x1084FFFF;
-    VecFx32 *textureParam                = data_027e095c->mUnk_000;
-    REG_GFX_FIFO_TEXTURE_PARAM           = textureParam[0x8].z;
 
-    unk32 var_r2 = 1;
-    if (((textureParam[0x8].z >> 0x1A) & 7) != 2) {
-        var_r2 = 0;
-    }
-    REG_GFX_FIFO_TEXTURE_PALETTE = ((u32) (textureParam[0x8].y << 0x10) >> 0xD) >> (4 - var_r2);
+    VecFx32 *textureParam = &data_027e095c->mUnk_000[8];
+    G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
+                     GX_TEXPLTTCOLOR0_USE, textureParam->z);
+    G3_TexPlttBase(((u32) textureParam->y << 0x10) >> 0xD, (((u32) textureParam->z >> 0x1A) & 7));
 
     MtxFx33 mat;
+    MtxFx33_InitYRotation(&mat, SIN((u16) actor->mAngle.angle_s), COS((u16) actor->mAngle.angle_s));
 
-    u16 angle = actor->mAngle.angle_s;
-    MtxFx33_InitYRotation(&mat, SIN(angle), COS(angle));
-
-    s16 var_r8 = 0xB33;
-    s32 var_r9 = 0x1F - ((0xE - actor->mUnk_0E0) * 2);
-    u16 var_r7 = 0xB33;
+    var_r7 = var_r8 = 0xB33;
+    var_r9          = 0x1F - ((0xE - actor->mUnk_0E0) * 2);
     ActorUnkSWBM::func_ov031_020e718c(&actor->mPos, &mat, var_r9, 0xB33, 0xB33, actor->mUnk_108);
 
-    unk16 var_r10 = actor->mUnk_10A;
-    if ((s32) var_r10 >= 3) {
+    unk32 var_r10 = actor->mUnk_10A;
+    if (var_r10 >= 3) {
         var_r10 = 3;
     }
-    for (unk32 var_r6 = 0; var_r6 < (s32) var_r10; ++var_r6) {
+
+    for (var_r6 = 0; var_r6 < var_r10; var_r6++) {
         var_r8 += 0x11F;
         var_r7 += 0x23D;
         var_r9 -= 5;
@@ -112,12 +115,20 @@ ActorUnkSWBM::ActorUnkSWBM() :
 }
 
 bool ActorUnkSWBM::Init(unk32 param1) {
+#pragma unused(param1)
+
     this->mUnk_44          = 0x1F;
+    this->mUnk_34          = (Cylinder *) &data_ov031_02113114;
     this->mUnk_098.mUnk_04 = this->mRef;
 
-    this->mUnk_34 = (Cylinder *) &data_ov031_02113114;
-    VecFx32_Copy(&this->mPos, &this->mUnk_098.mUnk_0C.pos);
-    this->mUnk_098.mUnk_0C.size = FX_F32_TO_FX32(0.35f);
+    fx32 posX = this->mPos.x;
+    fx32 posZ = this->mPos.z;
+    fx32 posY = this->mPos.y;
+
+    this->mUnk_098.mUnk_0C.pos.x = posX;
+    this->mUnk_098.mUnk_0C.pos.y = posY;
+    this->mUnk_098.mUnk_0C.pos.z = posZ;
+    this->mUnk_098.mUnk_0C.size  = FX_F32_TO_FX32(0.35f);
 
     this->mVel.x = FX_MUL(SIN((u16) this->mAngle.angle_s), 0xB33);
     this->mVel.z = FX_MUL(COS((u16) this->mAngle.angle_s), 0xB33);
@@ -185,7 +196,6 @@ void ActorUnkSWBM::func_ov031_020e6e84(ActorState state) {
     this->mTimer.Reset();
 }
 
-// non-matching
 void ActorUnkSWBM::Update() {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
@@ -195,7 +205,7 @@ void ActorUnkSWBM::Update() {
     }
 
     VecFx32_Copy(&this->mPrevPos, &this->mUnk_0E4[0]);
-    ++this->mUnk_10A;
+    this->mUnk_10A++;
 
     if (this->mState != ActorUnkSWBMState_2) {
         --this->mUnk_0E0;
@@ -203,9 +213,11 @@ void ActorUnkSWBM::Update() {
             this->func_ov031_020e6e84(ActorUnkSWBMState_2);
         } else {
             s16 newVal = this->mUnk_108 + 0x666;
+
             if (newVal >= 0xB33) {
                 newVal = 0xB33;
             }
+
             this->mUnk_108 = newVal;
         }
     }
@@ -217,6 +229,7 @@ void ActorUnkSWBM::Update() {
             this->func_ov031_020e6e84(ActorUnkSWBMState_2);
             return;
         }
+
         if (func_ov000_02080998(&this->mPos)) {
             this->func_ov031_020e6e84(ActorUnkSWBMState_2);
             return;
@@ -226,21 +239,22 @@ void ActorUnkSWBM::Update() {
     switch (this->mState) {
         case ActorUnkSWBMState_0: {
             if (this->func_ov000_02098ab4(0x4, 0x19, 0x2, &this->mVel)) {
-                this->func_ov031_020e6d80(-0x1);
+                this->func_ov031_020e6d80(-0x01);
             } else {
                 VecFx32_Copy(&this->mPos, &this->mUnk_098.mUnk_0C.pos);
                 data_027e09c0->func_ov000_0207e58c(this->mRef, 0x7, 0x4, &this->mUnk_098);
             }
-            //! TODO : find this
+
             UnkStruct_ov031_020e5d18_00 actorSpC;
             actorSpC.mUnk_00 = NULL;
 
-            func_01ffe6c4((Actor **) &actorSpC, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos,
+            func_01ffe6c4(&actorSpC.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos,
                           &this->mUnk_094);
 
-            unk32 val = ((Actor *) &actorSpC)->func_ov000_0207df88(this->mUnk_30, 0x7) |
+            unk32 val = ((Actor *) &actorSpC)->func_ov000_0207df88(this->mUnk_30, 0x07) |
                         ((Actor *) &actorSpC)->func_ov000_0207e294(this->mUnk_30);
             this->mUnk_46 = val;
+
             if (val == 0x0) {
                 return;
             }
@@ -249,6 +263,7 @@ void ActorUnkSWBM::Update() {
             break;
         }
         case ActorUnkSWBMState_1:
+        case ActorUnkSWBMState_2:
             break;
         default:
             break;
@@ -260,51 +275,49 @@ void ActorUnkSWBM::vfunc_24() {
         this->func_ov031_020e6e84(ActorUnkSWBMState_1);
         return;
     }
+
     this->Update();
 }
 
-// non-matching
-void ActorUnkSWBM::func_ov031_020e718c(VecFx32 *param0, MtxFx33 *param1, s32 param2, s16 param3, u16 param4, s16 param5) {
+void ActorUnkSWBM::func_ov031_020e718c(const VecFx32 *param0, MtxFx33 *param1, s32 param2, s16 param3, s16 param4,
+                                       s16 param5) {
     if (param2 <= 0) {
         return;
     }
-    REG_GFX_FIFO_POLYGON_ATTR     = data_ov000_020b4ec4.func_01ffc768(0x4) << 0x18 | 0x80 | (param2 << 0x10);
-    REG_GFX_FIFO_MATRIX_PUSH      = false;
-    REG_GFX_FIFO_MATRIX_TRANSLATE = param0->x;
-    REG_GFX_FIFO_MATRIX_TRANSLATE = param0->y;
-    REG_GFX_FIFO_MATRIX_TRANSLATE = param0->z;
+
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_UNK_00, 2, data_ov000_020b4ec4.func_01ffc768(0x4), param2, 0);
+    G3_PushMtx();
+    G3_Translate(param0->x, param0->y, param0->z);
 
     func_02024a84(param1);
 
-    REG_GFX_FIFO_POLYGONS_BEGIN  = true;
-    REG_GFX_FIFO_VERTEX_TEXCOORD = 0x02000200;
+    u16 x = (s16) -param3;
+    u16 z = (s16) -param5;
 
-    u16 var1 = (u16) (s16) -param3;
-    u16 var2 = (u16) param3;
-    u16 var3 = (u16) (s16) -param5;
+    {
+        G3_Begin(GX_BEGIN_QUADS);
+        G3_Direct1(G3OP_TEXCOORD, 0x02000200);
+        G3_Vtx(x, 0, z);
+        G3_Direct1(G3OP_TEXCOORD, 0x200);
+        G3_VtxXZ(x, (u16) param4);
+        G3_Direct1(G3OP_TEXCOORD, 0x0);
+        G3_VtxXZ((u16) param3, (u16) param4);
+        G3_Direct1(G3OP_TEXCOORD, 0x02000000);
+        G3_VtxXZ((u16) param3, z);
+        G3_End();
+    }
 
-    REG_GFX_FIFO_VERTEX_16 = var1;
-    REG_GFX_FIFO_VERTEX_16 = var3;
-
-    REG_GFX_FIFO_VERTEX_TEXCOORD = 0x200;
-    REG_GFX_FIFO_VERTEX_XZ       = var1 | (param4 << 0x10);
-
-    REG_GFX_FIFO_VERTEX_TEXCOORD = 0x0;
-    REG_GFX_FIFO_VERTEX_XZ       = var2 | (param4 << 0x10);
-
-    REG_GFX_FIFO_VERTEX_TEXCOORD = 0x02000000;
-    REG_GFX_FIFO_VERTEX_XZ       = var2 | (var3 << 0x10);
-
-    REG_GFX_FIFO_POLYGONS_END = false;
-    REG_GFX_FIFO_MATRIX_POP   = true;
+    G3_PopMtx(1);
 }
 
 void ActorUnkSWBM::vfunc_2C(Actor_vfunc_30 *param1) {
     if (this->mState == ActorUnkSWBMState_2) {
         return;
     }
+
     if (!this->func_01fff5d0(param1, 0x0)) {
         return;
     }
+
     data_027e0958->func_ov000_02058fc4(&this->mUnk_0C8, &this->mPos);
 }

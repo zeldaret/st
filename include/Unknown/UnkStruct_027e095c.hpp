@@ -17,7 +17,7 @@ public:
     /* 960 */ void *mUnk_940;
     /* 968 */
 #else
-    /* 000 */ VecFx32 mUnk_000[63];
+    /* 000 */ VecFx32 mUnk_000[63]; //! TODO: used for G3_TexImageParam/G3_TexPlttBase operations, right type?
     /* 2F4 */ unk32 mUnk_2F4;
     /* 2F8 */ PAD(0x2F8, 0x8DC);
     /* 8DC */ void *mUnk_8DC;

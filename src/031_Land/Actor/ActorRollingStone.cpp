@@ -107,7 +107,7 @@ ActorRollingStone::ActorRollingStone() :
 
     this->mUnk_44 = 0x9F;
 
-    this->mUnk_38          = &this->mUnk_A0.mUnk_00;
+    this->mUnk_38          = (Actor_38 *) &this->mUnk_A0;
     this->mUnk_38->mUnk_08 = 0x3;
 }
 

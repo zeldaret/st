@@ -79,7 +79,7 @@ ActorSpinut::ActorSpinut() :
 
     VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_288);
 
-    this->mUnk_38          = &this->mUnk_258.mUnk_00;
+    this->mUnk_38          = (Actor_38 *) &this->mUnk_258;
     this->mUnk_38->mUnk_08 = 0x01;
 
     this->mUnk_296.value = 0;

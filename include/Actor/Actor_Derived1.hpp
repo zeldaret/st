@@ -7,6 +7,8 @@
 #include "Unknown/UnkStruct_027e0960.hpp"
 #include "types.h"
 
+class ActorUnkZSRS_120;
+
 class ActorUnk_vfunc_B0 {
 public:
     /* 00 */ bool mUnk_00;
@@ -43,43 +45,30 @@ public:
     /* 10 */
 };
 
-class Actor_Derived1_94_0C {
-public:
-    /* 00 (vtable) */
-    /* 04 */
-
-    /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual Actor_Derived1_94_vfunc_10 *vfunc_10();
-    /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual void vfunc_18();
-    /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4);
-    /* 20 */ virtual void vfunc_20();
-    /* 24 */ virtual void vfunc_24();
-    /* 28 */ virtual void vfunc_28();
-    /* 2C */ virtual void vfunc_2C();
-    /* 30 */ virtual unk32 vfunc_30();
-};
-
 class Actor_Derived1_94 {
 public:
-    /* 00 */ Actor_38 mUnk_00;
+    /* 00 (vtable) */
+    /* 00 */ unk32 mUnk_04;
+    /* 04 */ unk16 mUnk_08;
     /* 0A */ unk16 mUnk_0A;
     /* 0C */
 
     Actor_Derived1_94();
-    ~Actor_Derived1_94();
+
+    // data_ov000_020b2890
+    /* 00 */ virtual ~Actor_Derived1_94();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
+    /* 10 */
 };
 
 class Actor_Derived1_94_Derived1 : public Actor_Derived1_94 {
 public:
     /* 00 (base) */
-    /* 0C */ Actor_Derived1_94_0C *mUnk_0C;
+    /* 0C */ ActorUnkZSRS_120 *mUnk_0C;
     /* 10 */
 
-    Actor_Derived1_94_Derived1(Actor_Derived1_94_0C *param1) {
+    Actor_Derived1_94_Derived1(ActorUnkZSRS_120 *param1) {
         this->mUnk_0C = param1;
     }
 };
@@ -133,7 +122,7 @@ public:
     /* 0A4 */ Actor_Derived1_a4 mUnk_0A4;
     /* 0B0 */ u16 mUnk_0B0;
     /* 0B4 */ unk32 mUnk_0B4;
-    /* 0B8 */ unk32 mUnk_0B8;
+    /* 0B8 */ ActorUnkZLSL_AnimationTag *mUnk_0B8;
     /* 0BC */ RefStruct mUnk_0BC;
     /* 0C0 */ VecFx32Cpp mUnk_0C0;
     /* 0CC */ unk16 mUnk_0CC;
@@ -153,6 +142,7 @@ public:
     /* 114 */ unk32 mUnk_114;
     /* 118 */ unk32 mUnk_118;
     /* 11C */ unk32 mUnk_11C;
+    /* 120 */
 
     /* 14 */ virtual bool vfunc_14(Cylinder *param1) override;
     /* 18 */ virtual bool Init(unk32 param1) override;
@@ -189,7 +179,7 @@ public:
     /* B8 */ virtual void vfunc_B8();
     /* BC */
 
-    Actor_Derived1(ModelRender *param1, Actor_Derived1_94_0C *param2);
+    Actor_Derived1(ModelRender *param1, ActorUnkZSRS_120 *param2);
 
     // overlay 0
     void func_ov000_020a8ae0(fx32 param1);

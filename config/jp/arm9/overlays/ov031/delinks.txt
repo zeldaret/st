@@ -49,6 +49,7 @@ src/031_Land/Actor/ActorItemTornado.cpp:
     .rodata     start:0x021127f8 end:0x02112808
 
 src/031_Land/Actor/ActorUnkSWBM.cpp:
+    complete
     .text       start:0x020e82c4 end:0x020e8d64
     .init       start:0x02112f1c end:0x02112f90
     .ctor       start:0x0211453c end:0x02114540
@@ -60,14 +61,14 @@ src/031_Land/Actor/ActorUnkROCK.cpp:
     .init       start:0x02112f90 end:0x02112fe0
     .ctor       start:0x02114540 end:0x02114544
     .data       start:0x02115164 end:0x02115208
-    .bss        start:0x02118370 end:0x02118458
+    .bss        start:0x02118370 end:0x02118478
 
 src/031_Land/Actor/ActorRupee.cpp:
     .text       start:0x020ea6a4 end:0x020eba18
     .init       start:0x02112fe0 end:0x02113078
     .ctor       start:0x02114544 end:0x02114548
     .data       start:0x02115228 end:0x02115390
-    .bss        start:0x02118488 end:0x021184cc
+    .bss        start:0x02118478 end:0x021184cc
 
 src/031_Land/Actor/ActorUnkZLSL_ZSRS.cpp:
     .text       start:0x020eba18 end:0x020f02b8
