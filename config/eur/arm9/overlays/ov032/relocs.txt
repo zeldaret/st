@@ -899,7 +899,7 @@ from:0x02120d8c kind:arm_call to:0x01ffb800 module:itcm
 from:0x02120d9c kind:arm_call to:0x02120bc0 module:overlay(32)
 from:0x02120da8 kind:arm_call to:0x02120b7c module:overlay(32)
 from:0x02120db4 kind:arm_call to:0x020f6384 module:overlay(31)
-from:0x02120df4 kind:load to:0x021226ac module:overlay(32)
+from:0x02120df4 kind:load to:0x021226a4 module:overlay(32) add:0x8
 from:0x02120e04 kind:load to:0x02120bfc module:overlay(32)
 from:0x02120e10 kind:arm_call to:0x0207b6c0 module:overlay(0)
 from:0x02120e18 kind:arm_call to:0x02011ff4 module:main

@@ -286,7 +286,6 @@ void ActorItemTornado::vfunc_24() {
 
 #define MUL_FXUNK2(a, b) (fx32)((((s32) (a)) * ((s32) (b)) + 0x800) >> FX32_SHIFT)
 
-// non-matching
 void ActorItemTornado::vfunc_2C(Actor_vfunc_30 *param1) {
     if (this->mUnk_1DC <= 0x0) {
         return;
@@ -304,7 +303,7 @@ void ActorItemTornado::vfunc_2C(Actor_vfunc_30 *param1) {
 
     u32 var_r7;
     G3d_Model *var_r8 = this->mUnk_94.mpModel;
-    func_0200ef9c(var_r8);
+    func_0200ef9c(var_r8, var_r1);
 
     for (var_r7 = 0x0; var_r7 < this->mUnk_1D1; ++var_r7) {
         func_0200ea38(var_r8, var_r7, data_ov000_020b4ec4.func_01ffc768(0x4));

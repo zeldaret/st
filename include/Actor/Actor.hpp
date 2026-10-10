@@ -353,12 +353,16 @@ class Actor_C4 : public Actor_C4_Base {
 public:
     /* 00 (vtable) */
     /* 04 */ unk32 mUnk_04;
+    // <-- might be a VecFx16
     /* 08 */ unk16 mUnk_08;
     /* 08 */ unk16 mUnk_0A;
     /* 0C */ unk16 mUnk_0C;
+    // -->
+    // <-- might be a VecFx16
     /* 0C */ unk16 mUnk_0E;
     /* 10 */ unk16 mUnk_10;
     /* 10 */ unk16 mUnk_12;
+    // -->
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
     /* 1C */ unk32 mUnk_1C;

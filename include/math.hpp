@@ -1,5 +1,7 @@
 #pragma once
 
+#include "global.h"
+
 #include <nitro/math.h>
 
 // some kind of angle conversion? only used for angle values so far
@@ -44,6 +46,22 @@ struct VecFx32Cpp {
         vec.x = X;
         vec.y = Y;
         vec.z = Z;
+    }
+
+    void Set(fx32 X, fx32 Y, fx32 Z) {
+        VecFx32_Init(X, Y, Z, &this->vec);
+    }
+
+    void CopyIn(VecFx32Cpp *vec) {
+        VecFx32_Copy(&this->vec, &vec->vec);
+    }
+
+    void CopyIn(VecFx32 *vec) {
+        VecFx32_Copy(&this->vec, vec);
+    }
+
+    bool TryNormalize() {
+        return VecFx32_TryNormalize(&this->vec);
     }
 };
 
