@@ -153,19 +153,7 @@ void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
             stackStruct.mUnk_00 = 0x80;
             stackStruct.mUnk_3A = 7;
             stackStruct.mUnk_3B = 7;
-
-            UnkStackStruct_ov000_02077590 *res1 = func_ov000_02077590(1);
-
-            stackStruct.mUnk_18 = res1->mUnk_00;
-            stackStruct.mUnk_1A = res1->mUnk_02;
-            stackStruct.mUnk_1C = res1->mUnk_04;
-            stackStruct.mUnk_1E = res1->mUnk_06;
-            stackStruct.mUnk_20 = res1->mUnk_08;
-            stackStruct.mUnk_24 = res1->mUnk_0C;
-            stackStruct.mUnk_30 = res1->mUnk_18;
-            stackStruct.mUnk_32 = res1->mUnk_1A;
-            stackStruct.mUnk_34 = res1->mUnk_1C;
-            stackStruct.mUnk_36 = res1->mUnk_1E;
+            stackStruct.mUnk_18 = *func_ov000_02077590(1);
             stackStruct.mUnk_38 |= 0x80;
             VecFx32_Copy(&mPos, &stackStruct.mUnk_0C);
 

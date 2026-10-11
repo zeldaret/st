@@ -4,18 +4,17 @@
 #include "math.hpp"
 
 // mapping:
-// 0011 1111 1111 1111 = index
-// 1100 0000 0000 0000 = type
+// 0011 1111 1111 1111 (0x3FFF) = index
+// 1100 0000 0000 0000 (0xC000) = type
 //
-// 0000 1111 1111 1111 = id
-// 1111 0000 0000 0000 = unk
+// 0000 1111 1111 1111 (0x0FFF) = id
+// 1111 0000 0000 0000 (0xF000) = unk
 
 #define REF_TYPE_INDEX(type, index) (((type) << 14) | (index))
 
 enum ActorRefType_ {
     ActorRefType_0,
     ActorRefType_1,
-    ActorRefType_2,
 };
 
 enum ActorRefId_ {
@@ -31,8 +30,8 @@ enum ActorRefId_ {
 
 union RefCommon {
     struct {
-        /* 00 */ u16 index : 14;
-        /* 00 */ u16 type : 2;
+        /* 00 */ u16 index : 14; // for actors this is used as an index to the actor table
+        /* 00 */ u16 type : 2;   // 1 for actors?
         /* 02 */ u16 id : 12;
         /* 02 */ u16 unk : 4;
         /* 04 */

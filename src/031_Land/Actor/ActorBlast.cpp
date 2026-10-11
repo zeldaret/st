@@ -65,7 +65,7 @@ bool ActorBlast_E8::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, co
         temp_r0_2     = gpMapObjManager->func_01fff498(sp4);
 
         if (temp_r0_2 != NULL) {
-            if (temp_r0_2->GetMapObjectId() == 0x424C4354) {
+            if (temp_r0_2->GetMapObjectId() == MapObjectId_BLCT) {
                 param2->vfunc_14(&spC.unk_00);
 
                 if (this->mUnk_04->mPos.y < spC.unk_00.y + temp_r0_2->mPos.y &&

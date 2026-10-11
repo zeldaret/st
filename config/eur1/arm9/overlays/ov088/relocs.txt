@@ -1314,7 +1314,7 @@ from:0x02170044 kind:arm_call to:0x02028cdc module:main
 from:0x02170068 kind:arm_call to:0x020c0a70 module:overlay(17)
 from:0x02170074 kind:load to:0x027e0ce0 module:dtcm
 from:0x02170078 kind:load to:0x02174654 module:overlay(88)
-from:0x0217007c kind:load to:0x02041964 module:main
+from:0x0217007c kind:load to:0x0203e964 add:0x3000 module:main
 from:0x02170080 kind:load to:0x020aa3e8 module:overlay(0)
 from:0x02170084 kind:load to:0x020ab530 module:overlay(0)
 from:0x0217008c kind:load to:0x027e09b4 module:dtcm

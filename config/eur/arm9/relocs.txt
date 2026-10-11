@@ -5806,7 +5806,7 @@ from:0x0203de04 kind:load to:0x02008590 module:main
 from:0x0203de08 kind:load to:0x020087f8 module:main
 from:0x0203de1c kind:load to:0x02010200 module:main
 from:0x0203de24 kind:load to:0x02010200 module:main
-from:0x0203df9c kind:load to:0x02040202 module:main
+from:0x0203df9c kind:load to:0x0203e964 add:0x189e module:main
 from:0x0203e0dc kind:load to:0x02043770 module:main
 from:0x0203e0e0 kind:load to:0x02043778 module:main
 from:0x0203e0e4 kind:load to:0x02043768 module:main

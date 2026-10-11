@@ -349,26 +349,9 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
                     auStack_5c.mUnk_3B = 0;
                 }
 
-                UnkStackStruct_ov000_02077590 *puVar5 = func_ov000_02077590(3);
-                auStack_5c.mUnk_18                    = puVar5->mUnk_00;
-                auStack_5c.mUnk_1A                    = puVar5->mUnk_02;
-                auStack_5c.mUnk_1C                    = puVar5->mUnk_04;
-                auStack_5c.mUnk_1E                    = puVar5->mUnk_06;
-                auStack_5c.mUnk_20                    = puVar5->mUnk_08;
-                auStack_5c.mUnk_24                    = puVar5->mUnk_0C;
-
-                u16 unk_18         = puVar5->mUnk_18;
-                u16 unk_1A         = puVar5->mUnk_1A;
-                auStack_5c.mUnk_32 = unk_1A;
-                auStack_5c.mUnk_30 = unk_18;
-
-                u16 unk_1C         = puVar5->mUnk_1C;
-                u16 unk_1E         = puVar5->mUnk_1E;
-                auStack_5c.mUnk_36 = unk_1E;
-                auStack_5c.mUnk_34 = unk_1C;
-
-                auStack_5c.mUnk_1E = this->mAngle.angle_s;
-                this->mUnk_74      = data_027e09b8->func_ov000_02073388(&auStack_5c, 0);
+                auStack_5c.mUnk_18         = *func_ov000_02077590(3);
+                auStack_5c.mUnk_18.mUnk_06 = this->mAngle.angle_s;
+                this->mUnk_74              = data_027e09b8->func_ov000_02073388(&auStack_5c, 0);
             }
 
             if (param2 == 0) {
@@ -432,27 +415,9 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
                     }
 
                     auStack_9c.mUnk_38 |= 0x200;
-
-                    UnkStackStruct_ov000_02077590 *puVar5 = func_ov000_02077590(2);
-                    auStack_9c.mUnk_18                    = puVar5->mUnk_00;
-                    auStack_9c.mUnk_1A                    = puVar5->mUnk_02;
-                    auStack_9c.mUnk_1C                    = puVar5->mUnk_04;
-                    auStack_9c.mUnk_1E                    = puVar5->mUnk_06;
-                    auStack_9c.mUnk_20                    = puVar5->mUnk_08;
-                    auStack_9c.mUnk_24                    = puVar5->mUnk_0C;
-
-                    u16 unk_18         = puVar5->mUnk_18;
-                    u16 unk_1A         = puVar5->mUnk_1A;
-                    auStack_9c.mUnk_32 = unk_1A;
-                    auStack_9c.mUnk_30 = unk_18;
-
-                    u16 unk_1C         = puVar5->mUnk_1C;
-                    u16 unk_1E         = puVar5->mUnk_1E;
-                    auStack_9c.mUnk_36 = unk_1E;
-                    auStack_9c.mUnk_34 = unk_1C;
-
-                    auStack_9c.mUnk_1E = this->mAngle.angle_s;
-                    this->mUnk_74      = data_027e09b8->func_ov000_02073388(&auStack_9c, 0);
+                    auStack_9c.mUnk_18         = *func_ov000_02077590(2);
+                    auStack_9c.mUnk_18.mUnk_06 = this->mAngle.angle_s;
+                    this->mUnk_74              = data_027e09b8->func_ov000_02073388(&auStack_9c, 0);
 
                     this->mUnk_84 = 0x0D;
                 }

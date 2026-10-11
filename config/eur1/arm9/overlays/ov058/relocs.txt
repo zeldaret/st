@@ -1918,7 +1918,7 @@ from:0x02150250 kind:arm_call to:0x01ffcfcc module:itcm
 from:0x021502c4 kind:arm_call to:0x0209d2f0 module:overlay(0)
 from:0x021502e4 kind:arm_call to:0x0215038c module:overlay(58)
 from:0x021502f4 kind:load to:0x027e0cd8 module:dtcm
-from:0x021502f8 kind:load to:0x0203f964 module:main
+from:0x021502f8 kind:load to:0x0203e964 add:0x1000 module:main
 from:0x021502fc kind:load to:0x02157b24 module:overlay(58)
 from:0x02150300 kind:load to:0x021534f0 module:overlay(58)
 from:0x0215036c kind:arm_call to:0x0210b214 module:overlay(31)

@@ -144,8 +144,8 @@ void MapObjectDoorDangerSpawn::vfunc2_08(void) {
 
 // https://decomp.me/scratch/KLkdU
 void MapObjectDoorDangerSpawn::vfunc_08(void) {
-    UnkStackStruct_ov000_02077590 sp3C;
-    UnkStackStruct_ov000_02077590 sp1C;
+    UnkStackStruct2 sp3C;
+    UnkStackStruct2 sp1C;
     VecFx32 sp10;
     VecFx32 sp4;
 
@@ -162,10 +162,8 @@ void MapObjectDoorDangerSpawn::vfunc_08(void) {
                         this->mUnk_88 = 1;
                         this->vfunc_74();
 
-                        UnkStackStruct_ov000_02077590 *temp_r0_3 = func_ov000_02077590(3);
-
-                        sp3C                     = *temp_r0_3;
-                        ((unk16 *) sp3C.data)[3] = this->mAngle.angle_s;
+                        sp3C         = *func_ov000_02077590(3);
+                        sp3C.mUnk_06 = this->mAngle.angle_s;
 
                         UnkStruct_027e09bc_0C *temp_r5 = data_027e09bc->mUnk_04[2];
 
@@ -177,10 +175,7 @@ void MapObjectDoorDangerSpawn::vfunc_08(void) {
                             data_027e0d8c->func_ov093_02166058();
                         }
                     } else {
-                        UnkStackStruct_ov000_02077590 *temp_r0_3 = func_ov000_02077590(0);
-
-                        sp1C = *temp_r0_3;
-
+                        sp1C                             = *func_ov000_02077590(0);
                         UnkStruct_027e09bc_0C *temp_r7_2 = data_027e09bc->mUnk_04[2];
                         this->func_ov031_020fe5fc(&sp4, this);
                         temp_r7_2->func_ov000_02078764(&sp4, &sp1C, 0);

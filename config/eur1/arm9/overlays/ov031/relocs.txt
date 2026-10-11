@@ -507,7 +507,7 @@ from:0x020dd3f4 kind:arm_call_thumb to:0x01ffa1bc module:itcm
 from:0x020dd404 kind:arm_call to:0x01ff8e58 module:itcm
 from:0x020dd414 kind:arm_call to:0x01ff8e58 module:itcm
 from:0x020dd434 kind:arm_call to:0x01ff8e58 module:itcm
-from:0x020dd440 kind:load to:0x02041964 module:main
+from:0x020dd440 kind:load to:0x0203e964 add:0x3000 module:main
 from:0x020dd444 kind:load to:0x020aa3e8 module:overlay(0)
 from:0x020dd448 kind:load to:0x027e0254 module:dtcm
 from:0x020dd458 kind:arm_call to:0x0207b6f4 module:overlay(0)
@@ -2241,10 +2241,10 @@ from:0x020ed440 kind:arm_call to:0x01ff9770 module:itcm
 from:0x020ed454 kind:arm_call to:0x01ffb6e4 module:itcm
 from:0x020ed470 kind:arm_call to:0x020ede34 module:overlay(31)
 from:0x020ed488 kind:arm_call to:0x020169d4 module:main
-from:0x020ed4c4 kind:load to:0x02040364 module:main
-from:0x020ed4c8 kind:load to:0x0203f364 module:main
-from:0x020ed4cc kind:load to:0x02041364 module:main
-from:0x020ed4d0 kind:load to:0x02042364 module:main
+from:0x020ed4c4 kind:load to:0x0203e964 add:0x1a00 module:main
+from:0x020ed4c8 kind:load to:0x0203e964 add:0xa00 module:main
+from:0x020ed4cc kind:load to:0x0203e964 add:0x2a00 module:main
+from:0x020ed4d0 kind:load to:0x0203e964 add:0x3a00 module:main
 from:0x020ed4d8 kind:load to:0x02110bf0 module:overlay(31)
 from:0x020ed4dc kind:load to:0x02110bf4 module:overlay(31)
 from:0x020ed52c kind:arm_call to:0x020ecfc8 module:overlay(31)
@@ -3963,7 +3963,7 @@ from:0x020fcdd4 kind:arm_call to:0x02028c4c module:main
 from:0x020fce04 kind:arm_call to:0x0201aa44 module:main
 from:0x020fce10 kind:load to:0x02117344 module:overlay(31)
 from:0x020fce18 kind:load to:0x027e0998 module:dtcm
-from:0x020fce1c kind:load to:0x0203f964 module:main
+from:0x020fce1c kind:load to:0x0203e964 add:0x1000 module:main
 from:0x020fce20 kind:load to:0x0204af1c module:main
 from:0x020fce24 kind:load to:0x02117344 module:overlay(31)
 from:0x020fce3c kind:load to:0x020a0388 module:overlay(0)
@@ -4468,7 +4468,7 @@ from:0x02100e38 kind:arm_call to:0x020801e4 module:overlay(0)
 from:0x02100e4c kind:arm_call to:0x020801e4 module:overlay(0)
 from:0x02100e5c kind:arm_call to:0x02080908 module:overlay(0)
 from:0x02100e90 kind:load to:0x027e0cd8 module:dtcm
-from:0x02100e94 kind:load to:0x0203f964 module:main
+from:0x02100e94 kind:load to:0x0203e964 add:0x1000 module:main
 from:0x02100e98 kind:load to:0x021178c4 module:overlay(31)
 from:0x02100e9c kind:load to:0x02110d98 module:overlay(31)
 from:0x02100f1c kind:arm_call to:0x01ffb714 module:itcm

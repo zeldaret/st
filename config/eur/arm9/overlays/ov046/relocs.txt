@@ -483,7 +483,7 @@ from:0x02127e80 kind:arm_call to:0x01ffa7a0 module:itcm
 from:0x02127e90 kind:arm_call to:0x01ffb6e4 module:itcm
 from:0x02127ed0 kind:arm_call to:0x021287c4 module:overlay(46)
 from:0x02127edc kind:load to:0x027e0ce4 module:dtcm
-from:0x02127ee0 kind:load to:0x02040964 module:main
+from:0x02127ee0 kind:load to:0x0203e964 add:0x2000 module:main
 from:0x02127f70 kind:arm_call to:0x02127d8c module:overlay(46)
 from:0x02127fa0 kind:arm_call to:0x01ff938c module:itcm
 from:0x02127fdc kind:arm_call to:0x01fff17c module:itcm

@@ -5,12 +5,12 @@ Actor *ActorManager::func_01fff3b4(RefStruct ref) {
         int size = this->mActorTableEnd - this->mActorTable;
         Actor *pActor;
 
-        // Affectation directement dans la condition
         if (size != 0 && (pActor = this->mActorTable[ref.common.index]) != NULL) {
             if (pActor->IsAlive() && pActor->mRef == ref) {
                 return pActor;
             }
         }
     }
+
     return NULL;
 }

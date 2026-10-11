@@ -18,7 +18,7 @@ extern unk32 data_ov000_020afd18;
 // https://decomp.me/scratch/jtWsb
 void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
     VecFx32 sp4C;
-    UnkStackStruct_ov000_02077590 sp2C;
+    UnkStackStruct2 sp2C;
     VecFx32 sp20;
     VecFx32 sp14;
     VecFx32 sp8;
@@ -42,8 +42,8 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                 if (data_0204a088->mUnk_08 == 2 || data_0204a088->mUnk_08 == 6) {
                     UnkStruct_027e09bc_0C *temp_r8 = data_027e09bc->mUnk_04[2];
 
-                    UnkStackStruct_ov000_02077590 *temp_r0_2 = func_ov000_02077590(0x1B);
-                    sp2C                                     = *temp_r0_2;
+                    UnkStackStruct2 *temp_r0_2 = func_ov000_02077590(0x1B);
+                    sp2C                       = *temp_r0_2;
 
                     sp2C.mUnk_06 = temp_r8->func_ov000_02078698();
                     sp2C.mUnk_04 = temp_r8->func_ov000_0207868c();

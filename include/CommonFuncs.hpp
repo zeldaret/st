@@ -163,7 +163,7 @@ fx32 func_02015a18(u16, unk32, unk32, unk32, u16, unk32, unk32);
 void func_02015ea8(u32 resourceId, void *);
 void func_0201659c();
 unk16 func_02016958(VecFx32 *, VecFx32 *);
-void func_020169d4(VecFx32 *, VecFx32 *, unk16 *, const char *);
+void func_020169d4(VecFx32 *, VecFx32 *, unk16 *, void *);
 bool func_02016ae0(VecFx32 *, VecFx32 *, UnkAngleStruct, unk32, unk32);
 bool func_02016b8c(VecFx32 *, VecFx32 *, unk32, UnkAngleStruct, u16, unk32);
 bool func_02016c68(VecFx32 *, VecFx32 *, RefStruct, int, int);
@@ -248,6 +248,7 @@ void func_0202f958(unk32 param1);
 void func_02005030(void *param1);
 void NNS_SndHandleInit(void *param1);
 void NNS_SndPlayerStopSeq(void *param1, unk32 param2);
+void func_020158e8(unk32 *, unk16 *, unk16 *, const VecFx32 *, const VecFx32 *);
 
 // overlay 0
 void func_ov000_02052238(void *, void *);

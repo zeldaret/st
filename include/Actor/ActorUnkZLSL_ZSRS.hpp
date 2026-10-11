@@ -157,24 +157,6 @@ public:
     /* 40 */ virtual void vfunc_40();
 };
 
-class UnkStruct_ov031_020ecc68 {
-public:
-    /* 08 */ unk16 sp_08;
-    /* 0A */ unk16 sp_0A;
-    /* 0C */ unk16 sp_0C;
-    /* 0E */ unk16 sp_0E;
-    /* 10 */ unk32 sp_10;
-    /* 14 */ VecFx32 sp_14;
-    /* 20 */ u16 sp_20;
-    /* 22 */ u16 sp_22;
-    /* 24 */ u16 sp_24;
-    /* 26 */ u16 sp_26;
-    /* 28 */ VecFx32 sp_28;
-    /* 34 */ UnkStackStruct1 sp_34;
-
-    void func_ov031_020ed47c(ActorUnkZLSL *param1, unk32 param2);
-};
-
 // --- Actor ZLSL ---
 
 enum ActorUnkZLSLState_ {
@@ -195,7 +177,7 @@ enum ActorUnkZLSLState_ {
     ActorUnkZLSLState_14 = 14,
     ActorUnkZLSLState_15 = 15,
     ActorUnkZLSLState_16 = 16,
-    ActorUnkZLSLState_MAX
+    ActorUnkZLSLState_Max
 };
 
 class ActorUnkZLSL_1690 {
@@ -342,12 +324,10 @@ public:
     /* 2894 */ Cylinder mUnk_2894;
     /* 28A4 */ VecFx32Cpp mUnk_28A4;
     /* 28B0 */ VecFx32Cpp mUnk_28B0;
-    /* 28BC */ unk32 mUnk_28BC;
-    /* 28C0 */ unk32 mUnk_28C0;
-    /* 28C4 */ unk32 mUnk_28C4;
+    /* 28BC */ VecFx32Cpp mUnk_28BC;
     /* 28C8 */ unk32 mUnk_28C8;
     /* 28CC */ ActorUnkZLSL_28CC mUnk_28CC[4];
-    /* 28DC */ RefStruct mUnk_28DC;
+    /* 28DC */ RefStruct mUnk_28DC; // possessed phantom actor ref
     /* 28E0 */ unk16 mUnk_28E0;
     /* 28E2 */ unk16 mUnk_28E2;
     /* 28E4 */ unk16 mUnk_28E4;
@@ -431,10 +411,11 @@ public:
     unk32 func_ov031_020ec54c();
     void func_ov031_020ec6d8(bool param1);
     bool func_ov031_020ec8c4();
-    void func_ov031_020ecc68(unk32 param1);
+    void func_ov031_020ecc68(bool param1);
     void func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk32 param3, unk32 param4);
     void func_ov031_020ed0b0();
     void func_ov031_020ed3c0();
+    UnkStackStruct2 func_ov031_020ed47c(unk32 param2);
     void func_ov031_020ed4e4(unk32 param1, unk32 param2);
     void func_ov031_020ed55c();
     bool func_ov031_020ed6cc(unk32 param1);
@@ -450,19 +431,6 @@ public:
     void func_ov031_020ee654();
 };
 
-class ActorProfileUnkZLSL : public ActorProfile {
-public:
-    /* 00 (base) */
-
-    ActorProfileUnkZLSL();
-
-    /* 0C */ virtual Actor *Create();
-
-    static ActorProfileUnkZLSL *GetProfile();
-};
-
-// --- Actor ZSRS ---
-
 class ActorProfileUnkZSRS : public ActorProfile_Derived2 {
 public:
     /* 00 (base) */
@@ -472,4 +440,15 @@ public:
     /* 0C */ virtual Actor *Create();
 
     static ActorProfileUnkZSRS *GetProfile();
+};
+
+class ActorProfileUnkZLSL : public ActorProfile {
+public:
+    /* 00 (base) */
+
+    ActorProfileUnkZLSL();
+
+    /* 0C */ virtual Actor *Create();
+
+    static ActorProfileUnkZLSL *GetProfile();
 };

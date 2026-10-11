@@ -940,6 +940,20 @@ public:
     /* 08 */ virtual void vfunc2_08() override;
 };
 
+struct UnkStackStruct2 {
+    /* 00 */ unk16 mUnk_00;
+    /* 02 */ unk16 mUnk_02;
+    /* 04 */ unk16 mUnk_04;
+    /* 06 */ unk16 mUnk_06;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ VecFx32 mUnk_0C;
+    /* 18 */ u16 mUnk_18;
+    /* 1A */ u16 mUnk_1A;
+    /* 1C */ u16 mUnk_1C;
+    /* 1E */ u16 mUnk_1E;
+    /* 20 */
+};
+
 struct UnkStackStruct1 {
     /* 00 */ u8 mUnk_00;
     /* 01 */ unk8 mUnk_01;
@@ -948,23 +962,13 @@ struct UnkStackStruct1 {
     /* 04 */ MapObject_UnkStruct1 *mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ VecFx32 mUnk_0C;
-    /* 18 */ unk16 mUnk_18;
-    /* 1A */ unk16 mUnk_1A;
-    /* 1C */ unk16 mUnk_1C;
-    /* 1E */ unk16 mUnk_1E;
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ VecFx32 mUnk_24;
-    /* 30 */ u16 mUnk_30;
-    /* 32 */ u16 mUnk_32;
-    /* 34 */ u16 mUnk_34;
-    /* 36 */ u16 mUnk_36;
+    /* 18 */ UnkStackStruct2 mUnk_18;
     /* 38 */ u16 mUnk_38;
     /* 3A */ unk8 mUnk_3A;
     /* 3B */ unk8 mUnk_3B;
     /* 3C */ unk32 mUnk_3C;
     /* 40 */
 };
-extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
 
 struct UnkSystem7_UnkStruct_00_20_00 {
     /* 00 */ PAD(0x00, 0x04);
@@ -1325,23 +1329,7 @@ struct UnkStruct_ov000_020aa88c {
 };
 extern UnkStruct_ov000_020aa88c data_ov000_020aa88c[];
 
-union UnkStackStruct_ov000_02077590 {
-    struct {
-        /* 00 */ s16 mUnk_00;
-        /* 02 */ s16 mUnk_02;
-        /* 04 */ s16 mUnk_04;
-        /* 06 */ s16 mUnk_06;
-        /* 08 */ unk32 mUnk_08;
-        /* 0C */ VecFx32 mUnk_0C;
-        /* 18 */ u16 mUnk_18;
-        /* 1A */ u16 mUnk_1A;
-        /* 1C */ u16 mUnk_1C;
-        /* 1E */ u16 mUnk_1E;
-        /* 20 */
-    };
-    u32 data[8];
-};
-extern "C" UnkStackStruct_ov000_02077590 *func_ov000_02077590(unk32);
+extern "C" UnkStackStruct2 *func_ov000_02077590(unk32);
 
 struct UnkStackStruct_ov000_02084344 {
     /* 00 */ s16 mUnk_00;

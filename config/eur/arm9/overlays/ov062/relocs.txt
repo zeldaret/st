@@ -174,7 +174,7 @@ from:0x02158e6c kind:arm_call_thumb to:0x01ffa1bc module:itcm
 from:0x02158ea8 kind:arm_call_thumb to:0x01ffa1a0 module:itcm
 from:0x02158eb8 kind:arm_call to:0x01ffa60c module:itcm
 from:0x02158f2c kind:arm_call to:0x01fff60c module:itcm
-from:0x02158f38 kind:load to:0x02040964 module:main
+from:0x02158f38 kind:load to:0x0203e964 add:0x2000 module:main
 from:0x02158f3c kind:load to:0x0203e964 module:main
 from:0x02158f40 kind:load to:0x027e09b4 module:dtcm
 from:0x02158f54 kind:arm_call_thumb to:0x02057ed4 module:overlay(0)

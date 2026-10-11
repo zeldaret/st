@@ -60,7 +60,7 @@ from:0x020e9d80 kind:arm_call_thumb to:0x02014994 module:main
 from:0x020e9d88 kind:arm_call to:0x020bba78 module:overlay(17)
 from:0x020e9d94 kind:load to:0x027e0208 module:dtcm
 from:0x020e9d98 kind:load to:0x027e0208 add:0x4c module:dtcm
-from:0x020e9d9c kind:load to:0x0203ea64 module:main
+from:0x020e9d9c kind:load to:0x0203e964 add:0x100 module:main
 from:0x020e9da0 kind:load to:0x027e0210 module:dtcm
 from:0x020e9da8 kind:load to:0x020b4eec module:overlay(0)
 from:0x020e9dac kind:load to:0x020b6510 module:overlay(0)

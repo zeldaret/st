@@ -65,26 +65,8 @@ void ActorUnkATTG::func_ov031_020f3eec(ActorState state, unk32 param2) {
             stack.mUnk_08 = 0x3C;
             stack.mUnk_00 = 0x6C;
             stack.mUnk_3A = 0x7;
-
             VecFx32_Copy(&this->mPos, &stack.mUnk_0C);
-            UnkStackStruct_ov000_02077590 *r3 = func_ov000_02077590(0x1);
-            stack.mUnk_18                     = r3->mUnk_00;
-            stack.mUnk_1A                     = r3->mUnk_02;
-            stack.mUnk_1C                     = r3->mUnk_04;
-            stack.mUnk_1E                     = r3->mUnk_06;
-            stack.mUnk_20                     = r3->mUnk_08;
-            stack.mUnk_24                     = r3->mUnk_0C;
-
-            u16 unk_18    = r3->mUnk_18;
-            u16 unk_1A    = r3->mUnk_1A;
-            stack.mUnk_30 = unk_18;
-            stack.mUnk_32 = unk_1A;
-
-            u16 unk_1C    = r3->mUnk_1C;
-            u16 unk_1E    = r3->mUnk_1E;
-            stack.mUnk_34 = unk_1C;
-            stack.mUnk_36 = unk_1E;
-
+            stack.mUnk_18 = *func_ov000_02077590(0x1);
             this->mUnk_94 = data_027e09b8->func_ov000_02073388(&stack, 0x0);
             break;
         }

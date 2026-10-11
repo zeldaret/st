@@ -1748,8 +1748,8 @@ from:0x0216089c kind:arm_call_thumb to:0x01ffa970 module:itcm
 from:0x021608b4 kind:arm_call_thumb to:0x01ffa9ac module:itcm
 from:0x021608c4 kind:arm_call to:0x01ffad5c module:itcm
 from:0x021608e8 kind:arm_call to:0x020f1878 module:overlay(31)
-from:0x021608f4 kind:load to:0x0203f964 module:main
-from:0x021608f8 kind:load to:0x0203f164 module:main
+from:0x021608f4 kind:load to:0x0203e964 add:0x1000 module:main
+from:0x021608f8 kind:load to:0x0203e964 add:0x800 module:main
 from:0x02160914 kind:arm_call to:0x01fff5d0 module:itcm
 from:0x0216097c kind:arm_call to:0x0200eab0 module:main
 from:0x02160990 kind:arm_call to:0x01ffad5c module:itcm

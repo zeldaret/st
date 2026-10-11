@@ -1,6 +1,7 @@
 #include "MapObject/MapObjectUnkSKDI.hpp"
 
 #include "Actor/ActorManager.hpp"
+#include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"

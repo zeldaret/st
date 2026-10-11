@@ -9126,7 +9126,7 @@ from:0x0212dc88 kind:arm_call to:0x020f931c module:overlay(26)
 from:0x0212dcd8 kind:arm_call to:0x01ffb6e4 module:itcm
 from:0x0212dd04 kind:arm_call to:0x01ffa1d4 module:itcm
 from:0x0212dd14 kind:arm_call to:0x01ffa60c module:itcm
-from:0x0212dd78 kind:load to:0x0203ec64 module:main
+from:0x0212dd78 kind:load to:0x0203e964 add:0x300 module:main
 from:0x0212dd7c kind:load to:0x02141888 module:overlay(26)
 from:0x0212dd80 kind:load to:0x02138b34 module:overlay(26)
 from:0x0212dd84 kind:load to:0x021418f0 module:overlay(26)
