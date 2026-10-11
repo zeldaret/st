@@ -1423,7 +1423,7 @@ void ActorUnkZLSL::func_ov031_020ecc68(bool param1) {
     sp34.mUnk_3A = 0x2;
     sp34.mUnk_3B = 0x4;
     VecFx32_Copy(&this->mUnk_28F4.vec, &sp34.mUnk_0C);
-    sp34.mUnk_18 = this->func_ov031_020ed47c(0x93F);
+    sp34.mUnk_18.s = this->func_ov031_020ed47c(0x93F);
 
     this->mUnk_28C8 = data_027e09b8->func_ov000_02073388(&sp34, 0x0);
 
@@ -1574,13 +1574,13 @@ void ActorUnkZLSL::func_ov031_020ed3c0() {
     this->func_ov031_020ed4e4(0x0, 0x93F);
 }
 
-UnkStackStruct2 ActorUnkZLSL::func_ov031_020ed47c(unk32 param2) {
+UnkStackStruct2::Inner ActorUnkZLSL::func_ov031_020ed47c(unk32 param2) {
     UnkStackStruct2 sp4;
-    sp4.mUnk_02 = param2;
-    sp4.mUnk_00 = 0x800;
-    VecFx32_Reset(&sp4.mUnk_0C);
-    func_020158e8(&sp4.mUnk_08, &sp4.mUnk_04, &sp4.mUnk_06, &this->mUnk_28F4.vec, &this->mUnk_28E8.vec);
-    return sp4;
+    sp4.s.mUnk_02 = param2;
+    sp4.s.mUnk_00 = 0x800;
+    VecFx32_Reset(&sp4.s.mUnk_0C);
+    func_020158e8(&sp4.s.mUnk_08, &sp4.s.mUnk_04, &sp4.s.mUnk_06, &this->mUnk_28F4.vec, &this->mUnk_28E8.vec);
+    return sp4.s;
 }
 
 void ActorUnkZLSL::func_ov031_020ed4e4(unk32 param1, unk32 param2) {

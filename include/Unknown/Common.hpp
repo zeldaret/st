@@ -940,18 +940,43 @@ public:
     /* 08 */ virtual void vfunc2_08() override;
 };
 
-struct UnkStackStruct2 {
-    /* 00 */ unk16 mUnk_00;
-    /* 02 */ unk16 mUnk_02;
-    /* 04 */ unk16 mUnk_04;
-    /* 06 */ unk16 mUnk_06;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ VecFx32 mUnk_0C;
-    /* 18 */ u16 mUnk_18;
-    /* 1A */ u16 mUnk_1A;
-    /* 1C */ u16 mUnk_1C;
-    /* 1E */ u16 mUnk_1E;
-    /* 20 */
+union UnkStackStruct2;
+extern "C" UnkStackStruct2 *func_ov000_02077590(unk32);
+union UnkStackStruct2 {
+    struct Inner {
+        /* 00 */ unk16 mUnk_00;
+        /* 02 */ unk16 mUnk_02;
+        /* 04 */ unk16 mUnk_04;
+        /* 06 */ unk16 mUnk_06;
+        /* 08 */ unk32 mUnk_08;
+        /* 0C */ VecFx32 mUnk_0C;
+        /* 18 */ u16 mUnk_18;
+        /* 1A */ u16 mUnk_1A;
+        /* 1C */ u16 mUnk_1C;
+        /* 1E */ u16 mUnk_1E;
+        /* 20 */
+    } s;
+    u32 data[8];
+
+    void Copy(unk32 param1) {
+        UnkStackStruct2 *r3 = func_ov000_02077590(param1);
+        this->s.mUnk_00     = r3->s.mUnk_00;
+        this->s.mUnk_02     = r3->s.mUnk_02;
+        this->s.mUnk_04     = r3->s.mUnk_04;
+        this->s.mUnk_06     = r3->s.mUnk_06;
+        this->s.mUnk_08     = r3->s.mUnk_08;
+        this->s.mUnk_0C     = r3->s.mUnk_0C;
+
+        u16 unk_18      = *(volatile u16 *) &r3->s.mUnk_18; //! TODO: Timer?
+        u16 unk_1A      = r3->s.mUnk_1A;
+        this->s.mUnk_18 = unk_18;
+        this->s.mUnk_1A = unk_1A;
+
+        u16 unk_1C      = *(volatile u16 *) &r3->s.mUnk_1C; //! TODO: Timer?
+        u16 unk_1E      = r3->s.mUnk_1E;
+        this->s.mUnk_1C = unk_1C;
+        this->s.mUnk_1E = unk_1E;
+    }
 };
 
 struct UnkStackStruct1 {
@@ -1328,8 +1353,6 @@ struct UnkStruct_ov000_020aa88c {
     /* 08 */
 };
 extern UnkStruct_ov000_020aa88c data_ov000_020aa88c[];
-
-extern "C" UnkStackStruct2 *func_ov000_02077590(unk32);
 
 struct UnkStackStruct_ov000_02084344 {
     /* 00 */ s16 mUnk_00;

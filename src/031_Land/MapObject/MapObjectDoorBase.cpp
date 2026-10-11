@@ -349,9 +349,9 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
                     auStack_5c.mUnk_3B = 0;
                 }
 
-                auStack_5c.mUnk_18         = *func_ov000_02077590(3);
-                auStack_5c.mUnk_18.mUnk_06 = this->mAngle.angle_s;
-                this->mUnk_74              = data_027e09b8->func_ov000_02073388(&auStack_5c, 0);
+                auStack_5c.mUnk_18.Copy(3);
+                auStack_5c.mUnk_18.s.mUnk_06 = this->mAngle.angle_s;
+                this->mUnk_74                = data_027e09b8->func_ov000_02073388(&auStack_5c, 0);
             }
 
             if (param2 == 0) {
@@ -415,9 +415,9 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
                     }
 
                     auStack_9c.mUnk_38 |= 0x200;
-                    auStack_9c.mUnk_18         = *func_ov000_02077590(2);
-                    auStack_9c.mUnk_18.mUnk_06 = this->mAngle.angle_s;
-                    this->mUnk_74              = data_027e09b8->func_ov000_02073388(&auStack_9c, 0);
+                    auStack_9c.mUnk_18.Copy(2);
+                    auStack_9c.mUnk_18.s.mUnk_06 = this->mAngle.angle_s;
+                    this->mUnk_74                = data_027e09b8->func_ov000_02073388(&auStack_9c, 0);
 
                     this->mUnk_84 = 0x0D;
                 }

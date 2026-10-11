@@ -406,7 +406,7 @@ public:
     void func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk32 param3, unk32 param4);
     void func_ov031_020ed0b0();
     void func_ov031_020ed3c0();
-    UnkStackStruct2 func_ov031_020ed47c(unk32 param2);
+    UnkStackStruct2::Inner func_ov031_020ed47c(unk32 param2);
     void func_ov031_020ed4e4(unk32 param1, unk32 param2);
     bool func_ov031_020ed55c(unk32 param1);
     bool func_ov031_020ed6cc(unk32 param1);

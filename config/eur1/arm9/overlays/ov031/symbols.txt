@@ -2353,7 +2353,7 @@ data_ov031_02114400 kind:data(any) addr:0x02114400
 data_ov031_02114440 kind:data(any) addr:0x02114440
 _ZTV14ActorShotArrow kind:data(any) addr:0x02114480
 _ZTV19ActorProfileUnkATTG kind:data(any) addr:0x021144dc
-data_ov031_02114508 kind:data(any) addr:0x02114508
+_ZTV12ActorUnkATTG kind:data(any) addr:0x02114500
 _ZTV19data_ov031_02114424 kind:data(any) addr:0x0211455c
 _ZTV19data_ov031_02114438 kind:data(any) addr:0x02114578
 data_ov031_021145dc kind:data(any) addr:0x021145dc

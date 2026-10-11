@@ -2571,9 +2571,9 @@ _ZN15ProfileInstanceI22ActorProfileItemFlowerE8sProfileE kind:bss addr:0x02116a1
 data_ov031_02116a50 kind:bss addr:0x02116a50
 data_ov031_02116a54 kind:bss addr:0x02116a54
 data_ov031_02116a60 kind:bss addr:0x02116a60
-data_ov031_02116a9c kind:bss addr:0x02116a9c
-data_ov031_02116aa0 kind:bss addr:0x02116aa0
-data_ov031_02116aac kind:bss addr:0x02116aac
+_ZGVN15ProfileInstanceI19ActorProfileUnkATTGE8sProfileE kind:bss addr:0x02116a9c
+@8299 kind:bss addr:0x02116aa0 local
+_ZN15ProfileInstanceI19ActorProfileUnkATTGE8sProfileE kind:bss addr:0x02116aac
 _ZGVN15ProfileInstanceI19ActorProfileUnkNTTZE8sProfileE kind:bss addr:0x02116ae8
 @10872 kind:bss addr:0x02116aec local
 _ZN15ProfileInstanceI19ActorProfileUnkNTTZE8sProfileE kind:bss addr:0x02116af8

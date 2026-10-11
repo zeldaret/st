@@ -18,9 +18,9 @@ Actor *ActorProfileUnkROCK::Create() {
 // non-matching
 ActorProfileUnkROCK::ActorProfileUnkROCK() :
     ActorProfileUnkROCK_Base(ActorId_ROCK) {
-    this->mUnk_04.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.5f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.5f));
-    VecFx32_Reset(&this->mUnk_D8.mUnk_0C);
+    this->mUnk_04.Init(FX_F32_TO_FX32(0.5f));
     this->mUnk_D8.mUnk_08 = 0x7007;
+    VecFx32_Reset(&this->mUnk_D8.mUnk_0C);
     this->mUnk_D8.mUnk_18 = 0x99A;
     this->mUnk_D8.mUnk_1C = 0x1333;
 }

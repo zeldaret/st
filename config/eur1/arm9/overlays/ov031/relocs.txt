@@ -3026,7 +3026,7 @@ from:0x020f3ed4 kind:arm_call to:0x020f3f04 module:overlay(31)
 from:0x020f3ee8 kind:arm_call to:0x020976d0 module:overlay(0)
 from:0x020f3f00 kind:load to:0x021144dc add:0x8 module:overlay(31)
 from:0x020f3f0c kind:arm_call to:0x020983dc module:overlay(0)
-from:0x020f3f28 kind:load to:0x02114508 module:overlay(31)
+from:0x020f3f28 kind:load to:0x02114500 module:overlay(31) add:0x8
 from:0x020f3f44 kind:arm_call to:0x02098ab4 module:overlay(0)
 from:0x020f3f74 kind:arm_call to:0x020f401c module:overlay(31)
 from:0x020f3fa0 kind:arm_call to:0x020f4144 module:overlay(31)

@@ -2560,7 +2560,7 @@ _ZGVN15ProfileInstanceI21ActorProfileShotArrowE8sProfileE kind:bss addr:0x021188
 @30860 kind:bss addr:0x02118814
 _ZN15ProfileInstanceI21ActorProfileShotArrowE8sProfileE kind:bss addr:0x02118820
 _ZGVN15ProfileInstanceI19ActorProfileUnkATTGE8sProfileE kind:bss addr:0x0211885c
-@30866 kind:bss addr:0x02118860
+@30866 kind:bss addr:0x02118860 local
 _ZN15ProfileInstanceI19ActorProfileUnkATTGE8sProfileE kind:bss addr:0x0211886c
 _ZGVN15ProfileInstanceI19ActorProfileUnkNTTZE8sProfileE kind:bss addr:0x021188a8
 @30872 kind:bss addr:0x021188ac local

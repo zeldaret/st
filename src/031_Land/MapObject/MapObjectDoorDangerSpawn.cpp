@@ -162,8 +162,8 @@ void MapObjectDoorDangerSpawn::vfunc_08(void) {
                         this->mUnk_88 = 1;
                         this->vfunc_74();
 
-                        sp3C         = *func_ov000_02077590(3);
-                        sp3C.mUnk_06 = this->mAngle.angle_s;
+                        sp3C           = *func_ov000_02077590(3);
+                        sp3C.s.mUnk_06 = this->mAngle.angle_s;
 
                         UnkStruct_027e09bc_0C *temp_r5 = data_027e09bc->mUnk_04[2];
 

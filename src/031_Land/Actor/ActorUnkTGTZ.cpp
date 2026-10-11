@@ -103,7 +103,7 @@ void ActorUnkTGTZ::Update() {
             stack.mUnk_08 = 0x4B;
             stack.mUnk_00 = 0x80;
             stack.mUnk_3A = 0x7;
-            stack.mUnk_18 = *func_ov000_02077590(0x1);
+            stack.mUnk_18.Copy(1);
             stack.mUnk_38 |= 0x80;
 
             stack.mUnk_0C.x = this->mPos.x;

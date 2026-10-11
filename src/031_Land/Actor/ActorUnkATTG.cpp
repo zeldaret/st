@@ -66,7 +66,7 @@ void ActorUnkATTG::func_ov031_020f3eec(ActorState state, unk32 param2) {
             stack.mUnk_00 = 0x6C;
             stack.mUnk_3A = 0x7;
             VecFx32_Copy(&this->mPos, &stack.mUnk_0C);
-            stack.mUnk_18 = *func_ov000_02077590(0x1);
+            stack.mUnk_18.Copy(1);
             this->mUnk_94 = data_027e09b8->func_ov000_02073388(&stack, 0x0);
             break;
         }

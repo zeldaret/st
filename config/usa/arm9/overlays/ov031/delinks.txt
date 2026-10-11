@@ -123,6 +123,7 @@ src/031_Land/Actor/ActorShotArrow.cpp:
     .bss        start:0x02116a50 end:0x02116a9c
 
 src/031_Land/Actor/ActorUnkATTG.cpp:
+    complete
     .text       start:0x020f3d5c end:0x020f407c
     .init       start:0x02111578 end:0x021115c8
     .ctor       start:0x021127b8 end:0x021127bc
