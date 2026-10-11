@@ -30,6 +30,7 @@ src/032_MapA1/Actor/ActorUnkNSSW.cpp:
     .text       start:0x02121b20 end:0x02122e68
     .init       start:0x02124064 end:0x021240b4
     .ctor       start:0x02124110 end:0x02124114
+    .data       start:0x0212464c end:0x02124720
     .bss        start:0x02124a3c end:0x02124a88
 
 src/032_MapA1/MapObject/MapObjectUnkSWSW.cpp:
