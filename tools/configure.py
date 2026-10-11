@@ -587,7 +587,7 @@ config.libs = [
             Object("031_Land/Actor/ActorUnkSWON.cpp"),
             Object("031_Land/Actor/ActorUnkTGTZ.cpp"),
             Object("031_Land/Actor/ActorUnkTLKT.cpp"),
-            Object("031_Land/Actor/ActorUnkZLSL_ZSRS.cpp", extra_cflags=["-thumb"]),
+            Object("031_Land/Actor/ActorUnkZLSL_ZSRS.cpp"),
             Object("031_Land/MapObject/MapObjectDoorBase.cpp"),
             Object("031_Land/MapObject/MapObjectUnkBLCC.cpp"),
             Object("031_Land/MapObject/MapObjectBombFlower.cpp"),

@@ -3,6 +3,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "Actor_Derived1.hpp"
+#include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "global.h"
@@ -267,15 +268,6 @@ public:
     // data_ov031_02113944
 };
 
-class ActorUnkZLSL_28CC {
-public:
-    /* 00 */ unk32 mUnk_00;
-
-    ActorUnkZLSL_28CC() {
-        this->mUnk_00 = 0;
-    }
-};
-
 class ActorUnkZLSL_2828 {
 public:
     /* 00 */ UnkSystem7 mUnk_00;
@@ -304,8 +296,7 @@ public:
     /* 27CC */ ActorUnkZLSL_27CC mUnk_27CC;
     /* 2828 */ ActorUnkZLSL_2828 mUnk_2828;
     /* 2834 */ ActorBomb_unk mUnk_2834[4];
-    /* 2864 */ unk16 mUnk_2864;
-    /* 2866 */ unk16 mUnk_2866;
+    /* 2864 */ Timer mUnk_2864;
     /* 2868 */ unk16 mUnk_2868;
     /* 286A */ unk16 mUnk_286A;
     /* 286C */ unk16 mUnk_286C;
@@ -326,8 +317,8 @@ public:
     /* 28B0 */ VecFx32Cpp mUnk_28B0;
     /* 28BC */ VecFx32Cpp mUnk_28BC;
     /* 28C8 */ unk32 mUnk_28C8;
-    /* 28CC */ ActorUnkZLSL_28CC mUnk_28CC[4];
-    /* 28DC */ RefStruct mUnk_28DC; // possessed phantom actor ref
+    /* 28CC */ RefElem mUnk_28CC[4]; // target list?
+    /* 28DC */ RefStruct mUnk_28DC;  // possessed phantom actor ref
     /* 28E0 */ unk16 mUnk_28E0;
     /* 28E2 */ unk16 mUnk_28E2;
     /* 28E4 */ unk16 mUnk_28E4;
@@ -384,7 +375,7 @@ public:
     bool func_ov031_020ee724();
 
     static void func_ov031_020ea100();
-    static void func_ov031_020ee1f4();
+    static void func_ov031_020ee1f4(Actor *param1, G3d_RenderState *param2);
 
     // not sure where they go
     void func_ov031_020ea8c0();
@@ -417,14 +408,14 @@ public:
     void func_ov031_020ed3c0();
     UnkStackStruct2 func_ov031_020ed47c(unk32 param2);
     void func_ov031_020ed4e4(unk32 param1, unk32 param2);
-    void func_ov031_020ed55c();
+    bool func_ov031_020ed55c(unk32 param1);
     bool func_ov031_020ed6cc(unk32 param1);
     bool func_ov031_020ed8ac(unk32 param1);
     void func_ov031_020edc80();
     void func_ov031_020edd14(VecFx32 *param1);
-    void func_ov031_020edd54();
-    void func_ov031_020ede30();
-    void func_ov031_020edf98();
+    void func_ov031_020edd54(RefStruct ref);
+    void func_ov031_020ede30(RefStruct ref);
+    void func_ov031_020edf98(RefStruct ref);
     unk16 func_ov031_020ee2c8();
     void func_ov031_020ee41c();
     void func_ov031_020ee4c4(UnkAngleStruct angle);

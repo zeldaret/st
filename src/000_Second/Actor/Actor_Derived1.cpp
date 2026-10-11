@@ -221,7 +221,7 @@ unk32 Actor_Derived1::vfunc_A8() {
     return 1;
 }
 
-void Actor_Derived1::func_ov000_020a9804(void *param1, unk32 param2) {}
+void Actor_Derived1::func_ov000_020a9804(Actor *param1, G3d_RenderState *param2) {}
 void Actor_Derived1::Update() {}
 
 // non-matching

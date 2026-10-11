@@ -141,7 +141,7 @@ public:
     bool func_ov032_0211f93c(VecFx32 *param1, unk32 param2);
     bool func_ov032_0211f9c4();
     bool func_ov032_0211fa4c(unk32 param1);
-    static void func_ov032_0211faf0(void *param1, unk32 param2);
+    static void func_ov032_0211faf0(Actor *param1, G3d_RenderState *param2);
 };
 
 class ActorProfileKeese : public ActorProfile_Derived1 {

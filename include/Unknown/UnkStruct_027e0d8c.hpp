@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RefStruct.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -19,6 +20,7 @@ public:
     void func_ov093_021660a8(RefStruct param1);
     void func_ov093_021660f8();
     void func_ov093_02166108();
+    unk32 func_ov093_02166118();
     void func_ov093_021661c0(RefStruct param1);
     void func_ov093_02166220();
 };

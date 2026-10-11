@@ -5,6 +5,7 @@
 #include "Map/MapObjectId.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
+#include "nitro/fx.h"
 #include "types.h"
 
 #include <nitro.h>
@@ -112,6 +113,7 @@ void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
 void func_01fff6d0(void *, VecFx32 *param1, s32 *param2, s32 *param3);
 void func_01ffb644(fx32 x, fx32 y);
 unk32 func_01ffb558();
+void func_01ff9984(VecFx32 *, VecFx32 *, unk32, unk32, unk32);
 
 // main
 UnkStruct_02011e10_Sub1 *func_02001098(void *, size_t, unk32);
@@ -256,8 +258,6 @@ void func_ov000_02052bcc(void *);
 void func_ov000_02054548(void *, unk32);
 unk32 func_ov000_020545d0(void *, void *);
 UnkStruct_027e0cec_18_04 *func_ov000_02054690(void *, unk32, unk32, unk32, unk32, unk32);
-void func_ov000_020578a4(UnkSystem5 *);
-void func_ov000_02057c98(ModelRender *param1, UnkSystem5 *param2);
 void func_ov000_02058c74(void *, int, int, int, int);
 s8 func_ov000_02059da4(UnkStruct_027e0960_TableEntry *, VecFx32 *param1);
 BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, void *);
@@ -328,7 +328,7 @@ void func_ov000_02097fcc(VecFx32 *);
 void func_ov000_0209807c(void *);
 void func_ov000_020980e0(void *);
 void func_ov000_02098244(VecFx32 *);
-void func_ov000_020986b4(s16 *param1, Actor_Derived2 *param2, unk32 param3);
+void func_ov000_020986b4(s16 *param1, Actor *param2, unk32 param3);
 unk32 func_ov000_02098d7c(ActorUnkCANS *param1, UnkStruct_ov063_02162e88 *param2);
 void func_ov000_02099870(UnkStruct_ActorUnkCANS_224 *, VecFx32 *, u16);
 void func_ov000_02099e58(UnkStruct_ov063_021632e4 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);

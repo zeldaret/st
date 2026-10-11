@@ -12,6 +12,7 @@
 
 class UnkSystem5;
 class UnkStruct_PlayerGet_50;
+class Actor;
 extern "C" void *func_ov000_02057750(size_t allocSize);
 
 struct ActorUnkZLSL_AnimationTag {
@@ -20,7 +21,7 @@ struct ActorUnkZLSL_AnimationTag {
     u32 unknown;
 };
 
-typedef void (*UnkSystem4_UnkCallback)(void *, unk32);
+typedef void (*UnkSystem4_UnkCallback)(Actor *, G3d_RenderState *);
 
 class ModelRenderBase {
 public:

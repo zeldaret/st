@@ -27,7 +27,7 @@ class ActorUnkRPMT : public Actor {
 public:
     /* 00 (base) */
     /* 94 */ PAD(0x94, 0xA4);
-    /* A4 */ bool mUnk_A4;
+    /* A4 */ u8 mUnk_A4;
     /* A5 */
 
     ActorUnkRPMT();

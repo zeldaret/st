@@ -106,7 +106,7 @@ void ActorUnkRB1T::func_ov026_0212052c(void) {}
 void ActorUnkRB1T::func_ov026_02120744(void) {}
 void ActorUnkRB1T::func_ov026_021207e0(void) {}
 void ActorUnkRB1T::func_ov026_02120874(void) {}
-void ActorUnkRB1T::func_ov026_021208a0(void) {}
+void ActorUnkRB1T::func_ov026_021208a0(Actor *param1, G3d_RenderState *param2) {}
 void ActorUnkRB1T::func_ov026_02120954(void) {}
 void ActorUnkRB1T::func_ov026_02120974(void) {}
 void ActorUnkRB1T::func_ov026_021209d8(void) {}

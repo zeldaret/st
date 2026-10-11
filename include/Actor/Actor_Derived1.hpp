@@ -135,7 +135,7 @@ public:
     /* 0DC */ unk16 mUnk_0DE;
     /* 0E0 */ unk16 mUnk_0E0;
     /* 0E0 */ unk16 mUnk_0E2;
-    /* 0E4 */ void (*mUnk_0E4)(); // callback
+    /* 0E4 */ UnkSystem4_UnkCallback mUnk_0E4;
     /* 0E8 */ Timer mUnk_0E8;
     /* 0EC */ Actor_Derived1_EC mUnk_0EC;
     /* 104 */ Cylinder mUnk_104;
@@ -199,7 +199,7 @@ public:
     void func_ov000_020a9a94();
     void func_ov000_020a9abc();
 
-    static void func_ov000_020a9804(void *param1, unk32 param2);
+    static void func_ov000_020a9804(Actor *param1, G3d_RenderState *param2);
 
     // overlay 1
     void func_ov001_020bff2c();

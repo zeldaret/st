@@ -6,6 +6,7 @@
 #include "Actor/ActorProfile.hpp"
 #include "Actor/Actor_Derived1.hpp"
 #include "global.h"
+#include "nns/g3d/sbc.h"
 #include "types.h"
 
 class ActorUnkRB1T_C4 : public Actor_C4 {
@@ -98,7 +99,7 @@ public:
     void func_ov026_02120744(void);
     void func_ov026_021207e0(void);
     void func_ov026_02120874(void);
-    static void func_ov026_021208a0(void); //! TODO is this really static? can't make it work as a ptmf
+    static void func_ov026_021208a0(Actor *param1, G3d_RenderState *param2);
     void func_ov026_02120954(void);
     void func_ov026_02120974(void);
     void func_ov026_021209d8(void);
