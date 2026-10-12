@@ -2333,7 +2333,7 @@ _ZTV10ActorHeart kind:data(any) addr:0x02113f50
 _ZTV19ActorProfileUnkRMTG kind:data(any) addr:0x02113fac
 _ZTV12ActorUnkRMTG kind:data(any) addr:0x02113fd0
 _ZTV19ActorProfileUnkSCCN kind:data(any) addr:0x0211402c
-data_ov031_02114058 kind:data(any) addr:0x02114058
+_ZTV17MapObject_10_SCCN kind:data(any) addr:0x02114050
 _ZTV12ActorUnkSCCN kind:data(any) addr:0x02114078
 _ZTV19data_ov031_02113f9c kind:data(any) addr:0x021140d4
 _ZTV19data_ov031_02113fb8 kind:data(any) addr:0x021140f0

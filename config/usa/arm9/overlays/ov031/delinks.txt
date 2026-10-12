@@ -94,6 +94,7 @@ src/031_Land/Actor/ActorUnkRMTG.cpp:
     .bss        start:0x02116884 end:0x0211696c
 
 src/031_Land/Actor/ActorUnkSCCN.cpp:
+    complete
     .text       start:0x020ef9ec end:0x020efcb4
     .init       start:0x02111438 end:0x02111488
     .ctor       start:0x021127a8 end:0x021127ac

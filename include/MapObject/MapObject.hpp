@@ -155,7 +155,7 @@ public:
     /* 38 */
 
     u16 GetDirection() {
-        return (u16) (this->mAngle.angle_s + DEG_TO_ANG(45)) / DEG_TO_ANG(90);
+        return GET_DIRECTION(this->mAngle.angle_s);
     }
 
     bool IsOrientedVertically() {

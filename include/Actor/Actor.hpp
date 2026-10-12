@@ -228,6 +228,14 @@ public:
         UNSET_FLAG(this->mFlags, ActorFlag_Alive);
     }
 
+    u16 GetDirection() {
+        return (u16) GET_DIRECTION(this->mAngle.angle_s);
+    }
+
+    u16 GetInitialDirection() {
+        return (u16) GET_DIRECTION(this->mUnk_5C.mInitialAngle);
+    }
+
     // clang-format off
     /* x & 0x00000001 */ const bool IsAlive() { return GET_FLAG(this->mFlags, ActorFlag_Alive); }
     /* x & 0x00000002 */ const bool IsVisible() { return GET_FLAG(this->mFlags, ActorFlag_Visible); }

@@ -2559,9 +2559,9 @@ _ZN15ProfileInstanceI17ActorProfileHeartE8sProfileE kind:bss addr:0x02116848
 _ZGVN15ProfileInstanceI19ActorProfileUnkRMTGE8sProfileE kind:bss addr:0x02116884
 @10836 kind:bss addr:0x02116888 local
 _ZN15ProfileInstanceI19ActorProfileUnkRMTGE8sProfileE kind:bss addr:0x02116894
-data_ov031_0211696c kind:bss addr:0x0211696c
-data_ov031_02116970 kind:bss addr:0x02116970
-data_ov031_0211697c kind:bss addr:0x0211697c
+_ZGVN15ProfileInstanceI19ActorProfileUnkSCCNE8sProfileE kind:bss addr:0x0211696c
+@10842 kind:bss addr:0x02116970 local
+_ZN15ProfileInstanceI19ActorProfileUnkSCCNE8sProfileE kind:bss addr:0x0211697c
 _ZGVN15ProfileInstanceI15ActorProfilePotE8sProfileE kind:bss addr:0x021169b8
 @10848 kind:bss addr:0x021169bc local
 _ZN15ProfileInstanceI15ActorProfilePotE8sProfileE kind:bss addr:0x021169c8

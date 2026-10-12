@@ -117,15 +117,20 @@ public:
 
 class UnkStruct_027e0cd8_0C_Base_148_00_Base {
 public:
-    /* 00 */ PAD(0x00, 0x14);
+    /* 00 (vtable) */
+    /* 04 */ PAD(0x04, 0x14);
     /* 14 */
 
     UnkStruct_027e0cd8_0C_Base_148_00_Base();
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual bool vfunc_04();
 };
 
 class UnkStruct_027e0cd8_0C_Base_148_00 : public UnkStruct_027e0cd8_0C_Base_148_00_Base {
 public:
-    /* 00 */ PAD(0x14, 0x2C);
+    /* 00 (base) */
+    /* 14 */ VecFx32x2 mUnk_14;
     /* 2C */
 
     UnkStruct_027e0cd8_0C_Base_148_00(ZMBEntryARAB *pARAB);
@@ -134,7 +139,7 @@ public:
 
 class UnkStruct_027e0cd8_0C_Base_148_01 : public UnkStruct_027e0cd8_0C_Base_148_00_Base {
 public:
-    /* 00 */ PAD(0x14, 0x28);
+    /* 00 (base) */ PAD(0x14, 0x28);
     /* 28 */
 
     UnkStruct_027e0cd8_0C_Base_148_01(ZMBEntryARAB *pARAB);
@@ -143,7 +148,7 @@ public:
 
 class UnkStruct_027e0cd8_0C_Base_148_02 : public UnkStruct_027e0cd8_0C_Base_148_00_Base {
 public:
-    /* 00 */ PAD(0x14, 0x34);
+    /* 00 (base) */ PAD(0x14, 0x34);
     /* 34 */
 
     UnkStruct_027e0cd8_0C_Base_148_02(ZMBEntryARAB *pARAB);
@@ -185,8 +190,7 @@ class UnkStruct_func_ov000_02080620 {
 public:
     /* 00 (vtable) */
     /* 04 */ PAD(0x04, 0x14);
-    /* 14 */ VecFx32 mUnk_14;
-    /* 20 */ VecFx32 mUnk_20;
+    /* 14 */ VecFx32x2 mUnk_14;
     /* 2C */
 
     /* 00 */ virtual void vfunc_00();
@@ -275,7 +279,7 @@ public:
     bool func_ov000_020802ec(u16 param1, VecFx32 *param2);
     void func_ov000_020803ec(u16 param1);
     void func_ov000_0208053c(u16 param1);
-    UnkStruct_func_ov000_02080620 *func_ov000_02080620();
+    UnkStruct_027e0cd8_0C_Base_148_00 *func_ov000_02080620(unk32 param1); //! TODO wrong class? weirdness with mUnk_14
     bool func_ov000_02080658(unk32 param1, EntranceInfo *param2);
     void func_ov000_020808f4(void *param1, Vec2bCpp *param2, u8 param3);
     void func_ov000_020809d8(unk32 param1, unk32 param2);

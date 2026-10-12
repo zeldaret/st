@@ -4,6 +4,7 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "math.hpp"
 
 #include <nitro/math.h>
 
@@ -124,8 +125,7 @@ void UnkStruct_027e0ce0_40::func_ov101_02183024(const UnkStruct_ov001_020c40f4 *
     if (sp8) {
         VecFx32 sp34 = sp40.mUnk_00;
 
-        //! TODO: fake match?
-        switch ((u32) ((sp40.mUnk_0C + 0x2000) << 0x10) >> 0x1E) {
+        switch (GET_DIRECTION(sp40.mUnk_0C)) {
             case 0x03:
                 sp34.z += FX_F32_TO_FX32(0.5f);
                 break;
@@ -153,8 +153,7 @@ void UnkStruct_027e0ce0_40::func_ov101_02183024(const UnkStruct_ov001_020c40f4 *
         if (sp8) {
             VecFx32 sp10 = sp1C.mUnk_00;
 
-            //! TODO: fake match?
-            switch ((u32) ((sp1C.mUnk_0C + 0x2000) << 0x10) >> 0x1E) {
+            switch (GET_DIRECTION(sp1C.mUnk_0C)) {
                 case 0x03:
                     sp10.z -= FX_F32_TO_FX32(0.5f);
                     break;

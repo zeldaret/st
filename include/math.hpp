@@ -11,6 +11,7 @@
 #define UNK_FX_OPERATION_2(a) MUL_FX32_U((u64) (a), FX_F32_TO_FX32(1.2f))
 #define DEG_TO_ANG(n) ((n) * 0x10000 / 360)
 #define DEG_TO_ANG_ALT(n) DEG_TO_ANG((u64) (n))
+#define GET_DIRECTION(angle) ((u16) ((s16) angle + DEG_TO_ANG(45)) / DEG_TO_ANG(90))
 
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 #define ABS2(x) ((x) >= 0 ? (x) : -(x))
@@ -36,6 +37,11 @@ static inline void ClampValue16(s16 *value, const s32 min, const s32 max) {
         *value = min;
     }
 }
+
+struct VecFx32x2 {
+    VecFx32 unk_00;
+    VecFx32 unk_0C;
+};
 
 // C++ wrapper for VecFx32
 struct VecFx32Cpp {

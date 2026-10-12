@@ -1564,7 +1564,7 @@ _ZN26UnkStruct_027e0cd8_0C_Base19func_ov000_020802ecEtP7VecFx32 kind:function(ar
 func_ov000_02080364 kind:function(arm,size=0x88) addr:0x02080364
 _ZN26UnkStruct_027e0cd8_0C_Base19func_ov000_020803ecEt kind:function(arm,size=0x150) addr:0x020803ec
 _ZN26UnkStruct_027e0cd8_0C_Base19func_ov000_0208053cEt kind:function(arm,size=0xe4) addr:0x0208053c
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov000_02080620Ev kind:function(arm,size=0x38) addr:0x02080620
+_ZN26UnkStruct_027e0cd8_0C_Base19func_ov000_02080620Ei kind:function(arm,size=0x38) addr:0x02080620
 func_ov000_02080658 kind:function(arm,size=0xd8) addr:0x02080658
 func_ov000_02080730 kind:function(arm,size=0x64) addr:0x02080730
 func_ov000_02080794 kind:function(arm,size=0xac) addr:0x02080794
