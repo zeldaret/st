@@ -2324,12 +2324,12 @@ data_ov031_02113e48 kind:data(any) addr:0x02113e48
 _ZTV19data_ov031_02113d14 kind:data(any) addr:0x02113e4c
 data_ov031_02113e5c kind:data(any) addr:0x02113e5c ambiguous
 data_ov031_02113e98 kind:data(any) addr:0x02113e98
-data_ov031_02113ea4 kind:data(any) addr:0x02113ea4
-data_ov031_02113eb4 kind:data(any) addr:0x02113eb4
-data_ov031_02113ee4 kind:data(any) addr:0x02113ee4
+data_ov031_02113d64 kind:data(any) addr:0x02113ea4 local
+data_ov031_02113d74 kind:data(any) addr:0x02113eb4 local
+data_ov031_02113da4 kind:data(any) addr:0x02113ee4 local
 _ZTV13ActorHeart_C4 kind:data(any) addr:0x02113f14
 _ZTV17ActorProfileHeart kind:data(any) addr:0x02113f2c
-data_ov031_02113f58 kind:data(any) addr:0x02113f58
+_ZTV10ActorHeart kind:data(any) addr:0x02113f50
 _ZTV19ActorProfileUnkRMTG kind:data(any) addr:0x02113fac
 _ZTV12ActorUnkRMTG kind:data(any) addr:0x02113fd0
 _ZTV19ActorProfileUnkSCCN kind:data(any) addr:0x0211402c

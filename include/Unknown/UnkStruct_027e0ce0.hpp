@@ -937,6 +937,7 @@ public:
     void func_ov000_0208bd30(bool param1, unk32 param2, unk32 param3, unk32 param4);
     bool func_ov000_0208be0c(RefStruct param1);
     bool func_ov000_0208be70(VecFx32 param1);
+    bool func_ov000_0208bee8();
     bool func_ov000_0208bf34(unk32 param1);
 
     static UnkStruct_027e0ce0_34 *func_ov000_0205c904();

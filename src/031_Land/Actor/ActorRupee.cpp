@@ -563,24 +563,23 @@ void ActorRupee::Update() {
 
     func_01fff17c(&sStack_1c, data_027e0ce0, 0);
     func_02018114(&uStack_1a, sStack_1c);
-    this->mUnk_C4.mUnk_08 = uStack_1a;
-    this->mUnk_C4.mUnk_0A = uStack_18;
-    this->mUnk_C4.mUnk_0C = uStack_16;
+    this->mUnk_C4.mUnk_08.x = uStack_1a;
+    this->mUnk_C4.mUnk_08.y = uStack_18;
+    this->mUnk_C4.mUnk_08.z = uStack_16;
 
-    uStack_1a             = 0;
-    uStack_18             = 0x666;
-    uStack_16             = 0;
-    this->mUnk_C4.mUnk_0E = 0;
-    this->mUnk_C4.mUnk_10 = 0x666;
-    sVar1                 = this->mState;
+    uStack_1a               = 0;
+    uStack_18               = 0x666;
+    uStack_16               = 0;
+    this->mUnk_C4.mUnk_0E.x = 0;
+    this->mUnk_C4.mUnk_0E.y = 0x666;
+    this->mUnk_C4.mUnk_0E.z = 0;
+    sVar1                   = this->mState;
 
     test = this->mPos;
 
     if (sVar1 != ActorRupeeState_5) {
         iVar4 = (int) (short) this->mState;
     }
-
-    this->mUnk_C4.mUnk_12 = 0;
 
     this->mPrevPos = test;
 

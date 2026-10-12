@@ -29,8 +29,7 @@ public:
 class ActorHeart : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */ u16 mUnk_94;
-    /* 96 */ u16 mUnk_96;
+    /* 94 */ Timer mUnk_94;
     /* 98 */ Actor_9C mUnk_98;
     /* B8 */ s16 mUnk_B8;
     /* BA */ unk16 mUnk_BA;

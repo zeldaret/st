@@ -45,12 +45,13 @@ ActorUnkNFSP::ActorUnkNFSP() :
 bool ActorUnkNFSP::Init(unk32 param1) {
     this->mUnk_9C = (MapObjectUnkSWFS *) param1;
 
-    this->mUnk_C0.mUnk_08 = 0x0;
-    this->mUnk_C0.mUnk_0A = 0x0;
-    this->mUnk_C0.mUnk_0C = 0x1000;
-    this->mUnk_C0.mUnk_0E = 0x0;
-    this->mUnk_C0.mUnk_10 = 0x0;
-    this->mUnk_C0.mUnk_12 = 0x1000;
+    this->mUnk_C0.mUnk_08.x = 0x0;
+    this->mUnk_C0.mUnk_08.y = 0x0;
+    this->mUnk_C0.mUnk_08.z = 0x1000;
+
+    this->mUnk_C0.mUnk_0E.x = 0x0;
+    this->mUnk_C0.mUnk_0E.y = 0x0;
+    this->mUnk_C0.mUnk_0E.z = 0x1000;
 
     if (this->mUnk_5C.mParams[3] == 0x0) {
         this->vfunc_54(0x0);

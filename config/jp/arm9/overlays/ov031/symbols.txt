@@ -2318,9 +2318,9 @@ data_ov031_02113b58 kind:data(any) addr:0x021158f8
 data_ov031_02115aa8 kind:data(any) addr:0x02115aa8
 data_ov031_02115ab4 kind:data(any) addr:0x02115ab4
 data_ov031_02113d58 kind:data(any) addr:0x02115af8
-data_ov031_02113d64 kind:data(any) addr:0x02115b04
-data_ov031_02113d74 kind:data(any) addr:0x02115b14
-data_ov031_02113da4 kind:data(any) addr:0x02115b44
+data_ov031_02113d64 kind:data(any) addr:0x02115b04 local
+data_ov031_02113d74 kind:data(any) addr:0x02115b14 local
+data_ov031_02113da4 kind:data(any) addr:0x02115b44 local
 _ZTV13ActorHeart_C4 kind:data(any) addr:0x02115b74
 _ZTV17ActorProfileHeart kind:data(any) addr:0x02115b8c
 _ZTV10ActorHeart kind:data(any) addr:0x02115bb0
@@ -2521,10 +2521,10 @@ _ZGVN15ProfileInstanceI19ActorProfileUnkTLKTE8sProfileE kind:bss addr:0x0211823c
 @30787 kind:bss addr:0x02118240 local
 _ZN15ProfileInstanceI19ActorProfileUnkTLKTE8sProfileE kind:bss addr:0x0211824c
 _ZGVN15ProfileInstanceI25ActorProfileItemBoomerangE8sProfileE kind:bss addr:0x02118288
-@30793 kind:bss addr:0x0211828c
+@30793 kind:bss addr:0x0211828c local
 _ZN15ProfileInstanceI25ActorProfileItemBoomerangE8sProfileE kind:bss addr:0x02118298
 _ZGVN15ProfileInstanceI23ActorProfileItemTornadoE8sProfileE kind:bss addr:0x021182d4
-@30799 kind:bss addr:0x021182d8
+@30799 kind:bss addr:0x021182d8 local
 _ZN15ProfileInstanceI23ActorProfileItemTornadoE8sProfileE kind:bss addr:0x021182e4
 _ZGVN15ProfileInstanceI19ActorProfileUnkSWBME8sProfileE kind:bss addr:0x02118320
 @30805 kind:bss addr:0x02118324 local
@@ -2538,17 +2538,17 @@ data_ov031_0211847c kind:bss addr:0x0211847c
 _ZN15ProfileInstanceI17ActorProfileRupeeE8sProfileE kind:bss addr:0x02118488
 data_ov031_021184c4 kind:bss addr:0x021184c4
 _ZGVN15ProfileInstanceI19ActorProfileUnkZLSLE8sProfileE kind:bss addr:0x021184cc
-@30824 kind:bss addr:0x021184d8
+@30824 kind:bss addr:0x021184d8 local
 _ZN15ProfileInstanceI19ActorProfileUnkZLSLE8sProfileE kind:bss addr:0x021184e4
 _ZN15ProfileInstanceI19ActorProfileUnkZSRSE8sProfileE kind:bss addr:0x02118520
 _ZGVN15ProfileInstanceI17ActorProfileHeartE8sProfileE kind:bss addr:0x021185f8
-@30830 kind:bss addr:0x021185fc
+@30830 kind:bss addr:0x021185fc local
 _ZN15ProfileInstanceI17ActorProfileHeartE8sProfileE kind:bss addr:0x02118608
 _ZGVN15ProfileInstanceI19ActorProfileUnkRMTGE8sProfileE kind:bss addr:0x02118644
 @30836 kind:bss addr:0x02118648 local
 _ZN15ProfileInstanceI19ActorProfileUnkRMTGE8sProfileE kind:bss addr:0x02118654
 _ZGVN15ProfileInstanceI19ActorProfileUnkSCCNE8sProfileE kind:bss addr:0x0211872c
-@30842 kind:bss addr:0x02118730
+@30842 kind:bss addr:0x02118730 local
 _ZN15ProfileInstanceI19ActorProfileUnkSCCNE8sProfileE kind:bss addr:0x0211873c
 _ZGVN15ProfileInstanceI15ActorProfilePotE8sProfileE kind:bss addr:0x02118778
 @30848 kind:bss addr:0x0211877c local
@@ -2557,7 +2557,7 @@ _ZGVN15ProfileInstanceI22ActorProfileItemFlowerE8sProfileE kind:bss addr:0x02118
 @30854 kind:bss addr:0x021187c8 local
 _ZN15ProfileInstanceI22ActorProfileItemFlowerE8sProfileE kind:bss addr:0x021187d4
 _ZGVN15ProfileInstanceI21ActorProfileShotArrowE8sProfileE kind:bss addr:0x02118810
-@30860 kind:bss addr:0x02118814
+@30860 kind:bss addr:0x02118814 local
 _ZN15ProfileInstanceI21ActorProfileShotArrowE8sProfileE kind:bss addr:0x02118820
 _ZGVN15ProfileInstanceI19ActorProfileUnkATTGE8sProfileE kind:bss addr:0x0211885c
 @30866 kind:bss addr:0x02118860 local
