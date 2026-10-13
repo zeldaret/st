@@ -3464,7 +3464,7 @@ from:0x020f817c kind:arm_call to:0x020f81c0 module:overlay(31)
 from:0x020f8190 kind:arm_call to:0x020976d0 module:overlay(0)
 from:0x020f81bc kind:load to:0x02114af8 add:0x8 module:overlay(31)
 from:0x020f81c8 kind:arm_call to:0x020983dc module:overlay(0)
-from:0x020f81e4 kind:load to:0x02114b24 module:overlay(31)
+from:0x020f81e4 kind:load to:0x02114b1c module:overlay(31) add:0x8
 from:0x020f8214 kind:arm_call to:0x02097530 module:overlay(0)
 from:0x020f8234 kind:arm_call to:0x020f82e4 module:overlay(31)
 from:0x020f8240 kind:load to:0x02110cc4 module:overlay(31)

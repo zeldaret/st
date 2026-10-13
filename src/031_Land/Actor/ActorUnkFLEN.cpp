@@ -1,9 +1,11 @@
 #include "Actor/ActorUnkFLEN.hpp"
+#include "Actor/ActorId.hpp"
 #include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 
-extern u16 data_ov031_02110b90[];
-extern ActorId data_ov031_02110b94[];
+static const u16 data_ov031_02110b90[] = {0x02, 0x00};
+
+static const ActorId data_ov031_02110b94[] = {ActorId_ChuChu};
 
 DECL_PROFILE(ActorProfileUnkFLEN);
 
@@ -20,9 +22,11 @@ ActorUnkFLEN::ActorUnkFLEN() :
     mUnk_94(0) {}
 
 bool ActorUnkFLEN::Init(int param1) {
+#pragma unused(param1)
+
     this->mUnk_94 = this->mUnk_5C.mParams[1];
 
-    if (this->mUnk_5C.mParams[1] >= (s16) 0x2) {
+    if (this->mUnk_94 >= 0x02) {
         this->mUnk_94 = 0;
     }
 

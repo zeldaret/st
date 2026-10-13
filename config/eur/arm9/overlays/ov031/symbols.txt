@@ -2017,8 +2017,8 @@ data_ov031_02110b4c kind:data(any) addr:0x02110b4c
 data_ov031_02110b5c kind:data(any) addr:0x02110b5c
 data_ov031_02110b70 kind:data(any) addr:0x02110b70
 data_ov031_02110b80 kind:data(any) addr:0x02110b80
-data_ov031_02110b90 kind:data(any) addr:0x02110b90
-data_ov031_02110b94 kind:data(any) addr:0x02110b94
+data_ov031_02110b90 kind:data(any) addr:0x02110b90 local
+data_ov031_02110b94 kind:data(any) addr:0x02110b94 local
 data_ov031_02110b98 kind:data(any) addr:0x02110b98
 data_ov031_02110ba4 kind:data(any) addr:0x02110ba4
 data_ov031_02110bb0 kind:data(any) addr:0x02110bb0

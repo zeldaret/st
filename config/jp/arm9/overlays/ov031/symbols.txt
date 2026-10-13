@@ -2017,8 +2017,8 @@ data_ov031_02110b4c kind:data(any) addr:0x021128bc
 data_ov031_02110b5c kind:data(any) addr:0x021128cc
 data_ov031_021128e0 kind:data(any) addr:0x021128e0
 data_ov031_021128f0 kind:data(any) addr:0x021128f0
-data_ov031_02110b90 kind:data(any) addr:0x02112900
-data_ov031_02110b94 kind:data(any) addr:0x02112904
+data_ov031_02110b90 kind:data(any) addr:0x02112900 local
+data_ov031_02110b94 kind:data(any) addr:0x02112904 local
 data_ov031_02112908 kind:data(any) addr:0x02112908
 data_ov031_02112914 kind:data(any) addr:0x02112914
 data_ov031_02112920 kind:data(any) addr:0x02112920
@@ -2580,10 +2580,10 @@ _ZGVN15ProfileInstanceI19ActorProfileUnkNOREE8sProfileE kind:bss addr:0x02118a8c
 @30896 kind:bss addr:0x02118a90 local
 _ZN15ProfileInstanceI19ActorProfileUnkNOREE8sProfileE kind:bss addr:0x02118a9c
 _ZGVN15ProfileInstanceI19ActorProfileUnkFLENE8sProfileE kind:bss addr:0x02118ad8
-@30902 kind:bss addr:0x02118adc
+@30902 kind:bss addr:0x02118adc local
 _ZN15ProfileInstanceI19ActorProfileUnkFLENE8sProfileE kind:bss addr:0x02118ae8
 _ZGVN15ProfileInstanceI24ActorProfileRollingStoneE8sProfileE kind:bss addr:0x02118b24
-@30908 kind:bss addr:0x02118b28
+@30908 kind:bss addr:0x02118b28 local
 _ZN15ProfileInstanceI24ActorProfileRollingStoneE8sProfileE kind:bss addr:0x02118b34
 _ZGVN15ProfileInstanceI24ActorProfileTreasureDropE8sProfileE kind:bss addr:0x02118c0c
 _ZGVN15ProfileInstanceI25ActorProfileRedPotionDropE8sProfileE kind:bss addr:0x02118c10

@@ -2017,8 +2017,8 @@ data_ov031_02110b4c kind:data(any) addr:0x02110c7c
 data_ov031_02110b5c kind:data(any) addr:0x02110c8c
 data_ov031_02110ca0 kind:data(any) addr:0x02110ca0
 data_ov031_02110cb0 kind:data(any) addr:0x02110cb0
-data_ov031_02110cc0 kind:data(any) addr:0x02110cc0
-data_ov031_02110cc4 kind:data(any) addr:0x02110cc4
+data_ov031_02110b90 kind:data(any) addr:0x02110cc0 local
+data_ov031_02110b94 kind:data(any) addr:0x02110cc4 local
 data_ov031_02110cc8 kind:data(any) addr:0x02110cc8
 data_ov031_02110cd4 kind:data(any) addr:0x02110cd4
 data_ov031_02110ce0 kind:data(any) addr:0x02110ce0
@@ -2383,7 +2383,7 @@ _ZTV12ActorUnkSWON kind:data(any) addr:0x02114a1c
 _ZTV19ActorProfileUnkNORE kind:data(any) addr:0x02114a78
 _ZTV12ActorUnkNORE kind:data(any) addr:0x02114a9c
 _ZTV19ActorProfileUnkFLEN kind:data(any) addr:0x02114af8
-data_ov031_02114b24 kind:data(any) addr:0x02114b24
+_ZTV12ActorUnkFLEN kind:data(any) addr:0x02114b1c
 _ZTV20ActorRollingStone_D4 kind:data(any) addr:0x02114b78
 _ZTV21ActorRollingStone_104 kind:data(any) addr:0x02114b94
 _ZTV24ActorProfileRollingStone kind:data(any) addr:0x02114bb0

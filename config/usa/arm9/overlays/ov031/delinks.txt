@@ -175,11 +175,13 @@ src/031_Land/Actor/ActorUnkNORE.cpp:
     .bss        start:0x02116ccc end:0x02116d18
 
 src/031_Land/Actor/ActorUnkFLEN.cpp:
+    complete
     .text       start:0x020f8004 end:0x020f82c0
     .init       start:0x02111790 end:0x021117e0
     .ctor       start:0x021127d4 end:0x021127d8
     .data       start:0x02114998 end:0x02114a18
     .bss        start:0x02116d18 end:0x02116d64
+    .rodata     start:0x02110b70 end:0x02110b78
 
 src/031_Land/Actor/ActorRollingStone.cpp:
     .text       start:0x020f82c0 end:0x020f9dac
