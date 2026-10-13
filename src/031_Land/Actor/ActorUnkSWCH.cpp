@@ -3,10 +3,6 @@
 
 DECL_PROFILE(ActorProfileUnkSWCH);
 
-#if IS_JP
-unk8 data_ov031_02118a1c[0x24];
-#endif
-
 Actor *ActorProfileUnkSWCH::Create() {
     return new(HeapIndex_2) ActorUnkSWCH();
 }
