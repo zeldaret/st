@@ -207,6 +207,7 @@ src/031_Land/Actor/ActorUnkMLCK.cpp:
     .bss        start:0x021170dc end:0x02117128
 
 src/031_Land/Actor/ActorUnkCLLT.cpp:
+    complete
     .text       start:0x020fb43c end:0x020fb5dc
     .init       start:0x02111b2c end:0x02111b7c
     .ctor       start:0x02112934 end:0x02112938

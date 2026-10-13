@@ -3839,7 +3839,7 @@ from:0x020fb478 kind:arm_call to:0x020976d0 module:overlay(0)
 from:0x020fb490 kind:load to:0x02114f5c add:0x8 module:overlay(31)
 from:0x020fb49c kind:arm_call to:0x020e3ec0 module:overlay(31)
 from:0x020fb4ac kind:arm_call to:0x0209fb14 module:overlay(0)
-from:0x020fb4b8 kind:load to:0x02114f88 module:overlay(31)
+from:0x020fb4b8 kind:load to:0x02114f80 module:overlay(31) add:0x8
 from:0x020fb4d0 kind:arm_call to:0x0206807c module:overlay(0)
 from:0x020fb4f4 kind:load to:0x020b508c module:overlay(0)
 from:0x020fb550 kind:arm_call to:0x020e3f18 module:overlay(31)

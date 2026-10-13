@@ -2578,7 +2578,7 @@ _ZGVN15ProfileInstanceI19ActorProfileUnkFLENE8sProfileE kind:bss addr:0x02116d38
 @10902 kind:bss addr:0x02116d3c local
 _ZN15ProfileInstanceI19ActorProfileUnkFLENE8sProfileE kind:bss addr:0x02116d48
 _ZGVN15ProfileInstanceI24ActorProfileRollingStoneE8sProfileE kind:bss addr:0x02116d84
-@10908 kind:bss addr:0x02116d88
+@10908 kind:bss addr:0x02116d88 local
 _ZN15ProfileInstanceI24ActorProfileRollingStoneE8sProfileE kind:bss addr:0x02116d94
 _ZGVN15ProfileInstanceI24ActorProfileTreasureDropE8sProfileE kind:bss addr:0x02116e6c
 _ZGVN15ProfileInstanceI25ActorProfileRedPotionDropE8sProfileE kind:bss addr:0x02116e70
@@ -2596,7 +2596,7 @@ _ZGVN15ProfileInstanceI19ActorProfileUnkMLCKE8sProfileE kind:bss addr:0x02116f9c
 @10920 kind:bss addr:0x02116fa0 local
 _ZN15ProfileInstanceI19ActorProfileUnkMLCKE8sProfileE kind:bss addr:0x02116fac
 _ZGVN15ProfileInstanceI19ActorProfileUnkCLLTE8sProfileE kind:bss addr:0x02116fe8
-@10926 kind:bss addr:0x02116fec
+@10926 kind:bss addr:0x02116fec local
 _ZN15ProfileInstanceI19ActorProfileUnkCLLTE8sProfileE kind:bss addr:0x02116ff8
 _ZGVN15ProfileInstanceI19ActorProfileUnkEFSBE8sProfileE kind:bss addr:0x02117034
 @10932 kind:bss addr:0x02117038 local

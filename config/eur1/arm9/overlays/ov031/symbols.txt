@@ -2404,7 +2404,7 @@ _ZTV15ActorUnkMLCK_D8 kind:data(any) addr:0x02114e74
 _ZTV19ActorProfileUnkMLCK kind:data(any) addr:0x02114e8c
 _ZTV12ActorUnkMLCK kind:data(any) addr:0x02114eb0
 _ZTV19ActorProfileUnkCLLT kind:data(any) addr:0x02114f5c
-data_ov031_02114f88 kind:data(any) addr:0x02114f88
+_ZTV12ActorUnkCLLT kind:data(any) addr:0x02114f80
 _ZTV19ActorProfileUnkEFSB kind:data(any) addr:0x02114fec
 data_ov031_02114ed0 kind:data(any) addr:0x02115010 local
 _ZTV12ActorUnkEFSB kind:data(any) addr:0x02115040

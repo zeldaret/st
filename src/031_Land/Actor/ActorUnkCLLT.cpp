@@ -28,18 +28,22 @@ void ActorUnkCLLT::vfunc_5C() {
     this->vfunc_60(ActorUnkCLLTState_5);
 }
 
-// non-matching
 void ActorUnkCLLT::vfunc_60(ActorState state) {
     if (state == ActorUnkCLLTState_1) {
-        Actor *actor = func_ov031_020e3df8();
+        Actor *actor = this->func_ov031_020e3df8();
+
         if (actor != NULL) {
-            this->mUnk_9C.mUnk_2C = actor->mRef;
-            this->mUnk_9C.mUnk_30 = this->mRef;
+            u32 actorRef = actor->mRef.Get32();
+            u32 thisRef  = *(vu32 *) &this->mRef;
+
+            this->mUnk_9C.mUnk_2C.data = actorRef;
+            this->mUnk_9C.mUnk_30.data = thisRef;
         } else {
             this->mUnk_9C.mUnk_28 = 0;
             this->mUnk_9C.mUnk_2C = 0;
             this->mUnk_9C.mUnk_30 = 0;
         }
     }
+
     this->mState = state;
 }
