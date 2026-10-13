@@ -41,12 +41,10 @@
 #define DF_CONCAT3(a, b, c) DF_CONCAT3_(a, b, c)
 #define DF_UNIQUE_IDENT(ident_) DF_CONCAT3(ident_, _, __LINE__)
 
-// sometimes we need something in .bss
-// to force things in .data to align properly
-#define DATA_ALIGN_FIX() int DF_UNIQUE_IDENT(__data_align_fix)
-
-// for cases where `DATA_ALIGN_FIX` doesn't work
-#define DATA_ALIGN_FIX2()                                   \
+// sometimes we need dummy variables to force a section to align properly
+#define DUMMY_BSS() int DF_UNIQUE_IDENT(__data_align_fix)
+#define DUMMY_DATA(n) char DF_UNIQUE_IDENT(__data_align_fix)[n] = {1}
+#define DUMMY_RODATA()                                      \
     static const int DF_UNIQUE_IDENT(__data_align_fix) = 0; \
     void DF_UNIQUE_IDENT(__data_align_fix_func)() {         \
         *(int *) &DF_UNIQUE_IDENT(__data_align_fix) = 0;    \

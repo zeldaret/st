@@ -8,17 +8,23 @@
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
+#include "global.h"
+#include "math.hpp"
+#include "nitro/mi.h"
 
 #if IS_JP
 static const VecFx32Cpp data_ov031_02116344(FX_F32_TO_FX32(1.5f), FX_F32_TO_FX32(2.0f), FX_F32_TO_FX32(0.0f));
 #else
-static unk32 data_ov031_02114584[0x2]  = {0};
-static const char *data_ov031_021145a4 = "target";
+static char *data_ov031_021145a4 = "target";
 #endif
-unk32 data_ov031_02116b54 = 0x0;
-UnkStruct_ov019_020d24c8_28_258_00 data_ov031_02116b58(NULL, 0);
+
+UnkStruct_ov019_020d24c8_28_258_00_Derived1 data_ov031_02116b58;
+UnkStruct_ov019_020d24c8_28_258_00_Derived1 data_ov031_02116b64;
 
 DECL_PROFILE(ActorProfileUnkTGTZ);
+
+DUMMY_RODATA();
+DUMMY_DATA(1);
 
 Actor *ActorProfileUnkTGTZ::Create() {
     return new(HeapIndex_2) ActorUnkTGTZ();
@@ -29,68 +35,70 @@ ActorProfileUnkTGTZ::ActorProfileUnkTGTZ() :
     this->mUnk_04.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(2.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.5f));
 }
 
-// non-matching
 ActorUnkTGTZ::ActorUnkTGTZ() :
 #if IS_JP
-    mUnk_094(NULL, true),
+    mUnk_094(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkTGTZ)->mUnk_3C.mUnk_50), true),
 #else
     mUnk_094(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkTGTZ)->mUnk_3C.mUnk_50), 0xC, &this->mUnk_100),
 #endif
     mUnk_1B4(NULL),
     mUnk_1B8(0x0),
-    mUnk_1BC(-0x1),
-    mUnk_1C0(0, 0),
-    mUnk_1C4(FX_F32_TO_FX32(0.0f)),
-    mUnk_1CC(0x0),
-    mUnk_1D0(0, 0),
-    mUnk_1D4(0x0),
-    mUnk_1D6(0x0),
-    mUnk_1D8(false),
-    mUnk_1DC(0x0) {
+    mUnk_1BC(-0x1) {
+    *(u16 *) &mUnk_1C0.value = 0; // somehow breaks if volatile
+    mUnk_1C0.max             = 0;
+    mUnk_1C4                 = FX_F32_TO_FX32(0.0f);
+    mUnk_1CC                 = 0x0;
+    mUnk_1D0.value           = 0;
+    mUnk_1D0.max             = 0;
+    mUnk_1D4                 = 0x0;
+    mUnk_1D6                 = 0x0;
+    mUnk_1D8                 = false;
+    mUnk_1DC                 = 0x0;
     MtxFx33_InitIdentity(&this->mUnk_190);
     this->func_ov000_0209862c(0x0);
 }
 
-// non-matching
-void ActorUnkTGTZ::func_ov031_020f6984() {}
-
-// non-matching
 bool ActorUnkTGTZ::Init(unk32 param1) {
-    if (this->mUnk_5C.mUnk_1A[0] != 0x0) {
-        this->mPos.y = FX_MUL(this->mUnk_5C.mUnk_1A[0] << 0xC, 0x1333);
+#pragma unused(param1)
+
+    if (this->mUnk_5C.mParams[3] != 0x0) {
+        this->mPos.y = FX_MUL(this->mUnk_5C.mParams[3] << 0xC, 0x1333);
     }
+
     MtxFx33_InitYRotation(&this->mUnk_190, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
     data_ov031_02116b58.func_ov000_0205fc20(0x5D, 0x32, NULL, NULL);
-    ((UnkStruct_ov019_020d24c8_28_258_00 *) GET_PROFILE(ActorProfileUnkNTTZ))->func_ov000_0205fc20(0x5D, 0x31, NULL, NULL);
+    data_ov031_02116b64.func_ov000_0205fc20(0x5D, 0x31, NULL, NULL);
 
-    unk32 temp_r3_2 = this->mUnk_5C.mParams[1];
-    unk32 temp_r0   = (u16) (((s16) this->mAngle.angle_s + 0x2000)) >> 0xE;
-    if ((temp_r0 != 0) && (temp_r0 != 2)) {
-        this->mUnk_1C8 = (UnkStruct_ov019_020d24c8_28_258_00 *) GET_PROFILE(ActorProfileUnkNTTZ);
-    } else {
+    int temp_r0 = GET_DIRECTION(this->mAngle.angle_s);
+
+    if (!(temp_r0 != 0 && temp_r0 != 2)) {
         this->mUnk_1C8 = &data_ov031_02116b58;
-    }
-    if (temp_r3_2 != 0) {
-        unk32 temp_r1_3 = this->mUnk_5C.mParams[2];
-        if (temp_r1_3 != 0) {
-            this->mUnk_1D4 = temp_r1_3;
-        }
-        this->mUnk_1CC = 1;
-        this->mUnk_1D6 = temp_r3_2;
-        if (temp_r1_3 == 0) {
-            this->mUnk_1D4 = temp_r3_2;
-        }
-    }
-    if (this->mUnk_5C.mUnk_1A[0] == 0 || !this->func_ov000_02098a60(0x0)) {
-        this->func_ov031_020f6f20(0x2);
     } else {
-        this->func_ov031_020f6f20(0x0);
+        this->mUnk_1C8 = &data_ov031_02116b64;
+    }
+
+    if (this->mUnk_5C.mParams[1] != 0) {
+        this->mUnk_1CC = 1;
+        this->mUnk_1D6 = this->mUnk_5C.mParams[1];
+
+        if (this->mUnk_5C.mParams[2] != 0) {
+            this->mUnk_1D4 = this->mUnk_5C.mParams[2];
+        } else {
+            this->mUnk_1D4 = this->mUnk_5C.mParams[1];
+        }
+    }
+
+    if (this->mUnk_5C.mUnk_1A[0] == 0) {
+        this->func_ov031_020f6f20(2);
+    } else if (this->func_ov000_02098a60(0x0)) {
+        this->func_ov031_020f6f20(2);
+    } else {
+        this->func_ov031_020f6f20(0);
     }
 
     return true;
 }
 
-// non-matching
 void ActorUnkTGTZ::Update() {
     switch (this->mUnk_1B8) {
         case 0x0: {
@@ -181,6 +189,7 @@ void ActorUnkTGTZ::Update() {
         default:
             break;
     }
+
     if (this->mUnk_1CC == 0x1) {
         ActorUnkNTTZ *actor = this->mUnk_1B4;
         VecFx32 vecSp0C     = actor->mPos;
@@ -302,43 +311,59 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
     }
 }
 
-// non-matching
 void ActorUnkTGTZ::vfunc_30(Actor_vfunc_30 *param1) {
+    Vec2s sp10;
+    struct {
+        /* 00 */ unk32 unk_00;
+        /* 04 */ unk8 unk_04;
+        /* 05 */ unk8 unk_05;
+        /* 06 */ u16 unk_06;
+    } sp8;
+    Vec2s sp4;
+    unk32 var_r2;
+    Vec2s var_r5;
+
     if (this->mUnk_1B8 == 0x0) {
         return;
     }
-    unk32 var;
+
     if (this->mUnk_1C8->mUnk_04 & 0x1) {
-        var = 0x1;
+        var_r2 = 0x1;
     } else {
-        var = 0x0;
+        var_r2 = 0x0;
     }
 
-    if (param1->mUnk_00.unk_00 != var || param1->mUnk_00.unk_01 != var) {
-        return;
-    }
-    Vec2s vec2s;
-
-    if (!data_027e0998->vfunc_00(&this->mPos, &vec2s, &this->mRef)) {
+    if (param1->mUnk_00.unk_00 != var_r2 && param1->mUnk_00.unk_01 != var_r2) {
         return;
     }
 
-    unk32 var_r5 = 0;
-    unk32 var_r6 = 0;
-    switch (((u16) (((s16) this->mAngle.angle_s + 0x2000)) >> 0xE)) {
+    if (!data_027e0998->vfunc_00(&this->mPos, &sp10, &this->mRef)) {
+        return;
+    }
+
+    var_r5.x = 0;
+    var_r5.y = 0;
+
+    switch (GET_DIRECTION(this->mAngle.angle_s)) {
         case 0x3:
-            var_r5 = 0x10000 >> 0x10;
+            var_r5.x++;
             break;
         case 0x0:
-            var_r6 = -0x10000 >> 0x10;
+            var_r5.y--;
             break;
         default:
             break;
     }
 
-    data_027e0998->func_ov000_02061a70();
+    sp8.unk_06 = 0;
+    MI_CpuFill32(0, &sp8, sizeof(sp8));
+    sp8.unk_05 = -1;
+    sp8.unk_00 = data_027e0998->func_ov000_02061a70();
+    sp8.unk_06 |= 0x01;
 
-    data_0204af1c.func_0201aa44(this->mUnk_1C8, NULL, 0x2, NULL);
+    sp4.x = sp10.x + var_r5.x;
+    sp4.y = sp10.y + var_r5.y;
+    data_0204af1c.func_0201aa44(this->mUnk_1C8, &sp4, 0x2, &sp8);
 }
 
 void ActorUnkTGTZ::vfunc_2C(unk32 param1) {

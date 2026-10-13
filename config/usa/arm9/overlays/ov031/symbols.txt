@@ -2360,8 +2360,8 @@ _ZTV19ActorProfileUnkNTTZ kind:data(any) addr:0x021144e4
 _ZTV12ActorUnkNTTZ kind:data(any) addr:0x02114508
 data_ov031_02114564 kind:data(any) addr:0x02114564
 _ZTV19data_ov031_02114574 kind:data(any) addr:0x0211456c
-data_ov031_02114584 kind:data(any) addr:0x02114584
-data_ov031_02114588 kind:data(any) addr:0x02114588
+data_ov031_021145a4 kind:data(any) addr:0x02114584 local
+@8383 kind:data(byte[7]) addr:0x02114588 local
 _ZTV19ActorProfileUnkTGTZ kind:data(any) addr:0x02114590
 _ZTV24ActorUnkTGTZ_ModelRender kind:data(any) addr:0x021145b4
 _ZTV12ActorUnkTGTZ kind:data(any) addr:0x021145e0
@@ -2577,11 +2577,11 @@ _ZN15ProfileInstanceI19ActorProfileUnkATTGE8sProfileE kind:bss addr:0x02116aac
 _ZGVN15ProfileInstanceI19ActorProfileUnkNTTZE8sProfileE kind:bss addr:0x02116ae8
 @10872 kind:bss addr:0x02116aec local
 _ZN15ProfileInstanceI19ActorProfileUnkNTTZE8sProfileE kind:bss addr:0x02116af8
-data_ov031_02116b54 kind:bss addr:0x02116b34
+_ZGVN15ProfileInstanceI19ActorProfileUnkTGTZE8sProfileE kind:bss addr:0x02116b34
 data_ov031_02116b58 kind:bss addr:0x02116b38
-data_ov031_02116b44 kind:bss addr:0x02116b44
-data_ov031_02116b50 kind:bss addr:0x02116b50
-data_ov031_02116b5c kind:bss addr:0x02116b5c
+data_ov031_02116b64 kind:bss addr:0x02116b44
+@10878 kind:bss addr:0x02116b50 local
+_ZN15ProfileInstanceI19ActorProfileUnkTGTZE8sProfileE kind:bss addr:0x02116b5c
 _ZGVN15ProfileInstanceI19ActorProfileUnkSWCHE8sProfileE kind:bss addr:0x02116c34
 @10884 kind:bss addr:0x02116c38 local
 _ZN15ProfileInstanceI19ActorProfileUnkSWCHE8sProfileE kind:bss addr:0x02116c44

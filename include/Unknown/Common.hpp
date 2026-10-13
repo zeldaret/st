@@ -215,7 +215,7 @@ public:
 struct UnkStruct_ov019_020d24c8_28_258_00 {
     /* 00 */ void *mUnk_00;
     /* 04 */ unk32 mUnk_04;
-    /* 0C */
+    /* 08 */
 
     UnkStruct_ov019_020d24c8_28_258_00() {}
 

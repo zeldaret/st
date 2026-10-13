@@ -48,13 +48,13 @@ public:
     /* 30 */ virtual void vfunc_2C(unk32 param1) override;
     /* 34 */ virtual void vfunc_30(Actor_vfunc_30 *param1) override;
 
-    void func_ov031_020f6984();
-    static void func_ov031_020f6e5c(RefStruct param1);
-    static void func_ov031_020f6ea8(RefStruct *param0, u16 param1, const VecFx32 *param2, s16 param3, u16 param4);
     void func_ov031_020f6f20(unk32 param1);
     void func_ov031_020f7358();
     void func_ov031_020f73e4();
     void func_ov031_020f73f0();
+
+    static void func_ov031_020f6e5c(RefStruct param1);
+    static void func_ov031_020f6ea8(RefStruct *param0, u16 param1, const VecFx32 *param2, s16 param3, u16 param4);
 };
 
 class ActorProfileUnkTGTZ : public ActorProfile_Derived1 {

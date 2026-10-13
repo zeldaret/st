@@ -21,7 +21,7 @@ static const char *data_ov024_020d8484[] = {
     "lord", "wood", "iron", "bone", "euro", "fest", "cute", "gold",
 };
 
-DATA_ALIGN_FIX();
+DUMMY_BSS();
 
 void UnkStruct_027e0d00_20::func_ov024_020d4e9c(wchar_t *param1, unk32 param2, bool param3) {
     const char *fileExt = param3 ? data_ov000_020aa24c : data_ov000_020aa244;

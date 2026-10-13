@@ -6,9 +6,6 @@
 
 DECL_PROFILE(ActorProfileUnkNTTZ);
 
-unk32 data_ov031_02116b58[0x3];
-unk32 data_ov031_02116b54;
-
 Actor *ActorProfileUnkNTTZ::Create() {
     return new(HeapIndex_2) ActorUnkNTTZ();
 }

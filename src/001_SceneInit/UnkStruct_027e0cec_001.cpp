@@ -8,7 +8,7 @@
 
 #include <string.h>
 
-DATA_ALIGN_FIX2();
+DUMMY_RODATA();
 
 enum EffectPathIndex_ {
     EffectPathIndex_Dungeon1   = 0,

@@ -140,14 +140,15 @@ src/031_Land/Actor/ActorUnkNTTZ.cpp:
     .init       start:0x02111718 end:0x02111768
     .ctor       start:0x0211290c end:0x02112910
     .data       start:0x02114644 end:0x021146c4
-    .bss        start:0x02116c48 end:0x02116ca4
+    .bss        start:0x02116c48 end:0x02116c94
 
 src/031_Land/Actor/ActorUnkTGTZ.cpp:
+    complete
     .text       start:0x020f6964 end:0x020f75a4
     .init       start:0x0211178c end:0x021117f0
     .ctor       start:0x02112914 end:0x02112918
     .data       start:0x021146e4 end:0x0211479c
-    .bss        start:0x02116ca4 end:0x02116d94
+    .bss        start:0x02116c94 end:0x02116d94
 
 src/031_Land/Actor/ActorUnkSWCH.cpp:
     complete
