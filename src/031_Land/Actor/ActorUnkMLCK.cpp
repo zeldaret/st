@@ -11,22 +11,17 @@
 #include "Unknown/UnkStruct_ov000_020b3000.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b52e8.hpp"
+#include "global.h"
 #include "nitro/math.h"
 
-extern unk32 data_ov031_02110bec[];
+DUMMY_BSS();
+DUMMY_BSS();
 
-struct UnkStruct_ov031_02114d28 {
-    /* 00 */ u32 mUnk_00;
-    /* 04 */ u32 mUnk_04;
-    /* 08 */ u32 mUnk_08;
+static const RefStruct data_ov031_02114d28 = 0x10002;
+static const RefStruct data_ov031_02114d30 = 0x10006;
+static const RefStruct data_ov031_02114d2c = 0x10009;
 
-    UnkStruct_ov031_02114d28() {
-        this->mUnk_00 = 0x10002;
-        this->mUnk_08 = 0x10006;
-        this->mUnk_04 = 0x10009;
-    }
-};
-static const UnkStruct_ov031_02114d28 data_ov031_02114d28;
+static const unk32 data_ov031_02110bec[] = {0x90, 0x92, 0x94, 0x96, 0x98};
 
 DECL_PROFILE(ActorProfileUnkMLCK);
 
@@ -50,6 +45,8 @@ ActorUnkMLCK::ActorUnkMLCK() :
     mUnk_F4(-1) {}
 
 bool ActorUnkMLCK::Init(unk32 param1) {
+#pragma unused(param1)
+
     this->mUnk_B8 = this->mUnk_5C.mParams[0];
 
     UnkStruct_ov031_02112ad4 local_9c(ActorId_MLCK, this->mUnk_5C.mParams[0]);
@@ -79,7 +76,6 @@ bool ActorUnkMLCK::Init(unk32 param1) {
     return true;
 }
 
-// non-matching
 void ActorUnkMLCK::vfunc_64(unk32 param1) {
     this->mUnk_BC = param1;
     this->mUnk_C0.Reset();
@@ -92,16 +88,22 @@ void ActorUnkMLCK::vfunc_64(unk32 param1) {
 }
 
 void ActorUnkMLCK::vfunc_54(unk32 param1, unk32 param2) {
+#pragma unused(param1)
+
     if (param2 != 0) {
         this->vfunc_64(0x1);
     }
 }
 
 void ActorUnkMLCK::vfunc_58(unk32 param1, unk32 param2) {
+#pragma unused(param1, param2)
+
     this->mUnk_F0 = true;
 }
 
 void ActorUnkMLCK::vfunc_5C(unk32 param1) {
+#pragma unused(param1)
+
     if (this->mUnk_F1 && this->mUnk_F0) {
         data_027e0d34->func_ov031_020d994c();
         data_ov000_020b51b8.func_ov000_0206d274(data_ov031_02110bec[this->mUnk_B8]);
@@ -245,6 +247,8 @@ void ActorUnkMLCK::func_ov031_020fb1e8(ActorUnkMLCK_A0 *param1) {
 }
 
 bool ActorUnkMLCK::func_ov031_020fb204(unk32 param1) {
+#pragma unused(param1)
+
     for (ActorUnkMLCK_A0 **ptr = this->mUnk_A0; ptr != this->mUnk_B4; ptr++) {
         if ((*ptr)->vfunc_04()) {
             return true;

@@ -2024,7 +2024,7 @@ data_ov031_02112914 kind:data(any) addr:0x02112914
 data_ov031_02112920 kind:data(any) addr:0x02112920
 data_ov031_0211292c kind:data(any) addr:0x0211292c
 data_ov031_02110bc8 kind:data(any) addr:0x02112938 local
-data_ov031_02110bec kind:data(any) addr:0x0211295c
+data_ov031_02110bec kind:data(any) addr:0x0211295c local
 data_ov031_02112970 kind:data(any) addr:0x02112970
 data_ov031_02110c1c kind:data(any) addr:0x0211298c local
 data_ov031_02110c28 kind:data(any) addr:0x02112998 local
@@ -2392,6 +2392,8 @@ _ZTV25ActorProfileRedPotionDrop kind:data(any) addr:0x021169f4
 _ZTV20ActorProfileBombDrop kind:data(any) addr:0x02116a18
 _ZTV13ActorItemDrop kind:data(any) addr:0x02116a3c
 data_ov031_02114d28 kind:data(any) addr:0x02116a9c local
+data_ov031_02114d2c kind:data(any) addr:0x02116aa0 local
+data_ov031_02114d30 kind:data(any) addr:0x02116aa4 local
 _ZTV15ActorUnkMLCK_D8 kind:data(any) addr:0x02116aa8
 _ZTV19ActorProfileUnkMLCK kind:data(any) addr:0x02116ac0
 _ZTV12ActorUnkMLCK kind:data(any) addr:0x02116ae4
