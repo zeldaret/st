@@ -80,12 +80,11 @@ bool ActorRollingStone_104::vfunc_10(RefStruct param1, unk32 param2) {
     return this->UnkStruct_027e0ce0_38_Base::vfunc_10(param1, param2);
 }
 
-void ActorRollingStone_D4::vfunc_10(Actor *param1) {
-    if (param1->GetActorId() != ActorId_RollingStone) {
-        return;
+void ActorRollingStone_D4::vfunc_10(const Actor *actor) {
+    if (((Actor *) actor)->GetActorId() == ActorId_RollingStone) {
+        this->mUnk_2C->SetState(ActorRollingStoneState_6);
+        ((ActorRollingStone *) actor)->SetState(ActorRollingStoneState_6);
     }
-    this->mUnk_2C->SetState(ActorRollingStoneState_6);
-    ((ActorRollingStone *) param1)->SetState(ActorRollingStoneState_6);
 }
 
 // non-matching
@@ -183,7 +182,7 @@ void ActorRollingStone::func_ov031_020f8880() {
     this->func_ov000_020984d0();
 }
 
-void ActorRollingStone::vfunc_2C(Actor_vfunc_30 *param1) {
+void ActorRollingStone::vfunc_2C(unk32 param1) {
     if (!this->func_01fff5d0(param1, 0x0) || !this->mUnk_158) {
         return;
     }

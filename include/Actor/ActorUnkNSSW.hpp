@@ -28,7 +28,7 @@ public:
 
     ActorUnkNSSW_104(ActorUnkNSSW *actor);
 
-    /* 10 */ virtual void vfunc_10(Actor *actor) override;
+    /* 10 */ virtual void vfunc_10(const Actor *actor) override;
 };
 
 #if IS_JP
@@ -81,7 +81,7 @@ public:
 
     /* 1C */ virtual bool Init(unk32 param1) override;
     /* 20 */ virtual void Update() override;
-    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
 
     void func_ov032_02120118();
     void func_ov032_02120190();

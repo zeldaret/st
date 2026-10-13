@@ -68,7 +68,7 @@ void ActorManager::func_ov017_020bee64(Actor *pActor, Actor_vfunc_30 *param2) {
 
 void ActorManager::func_ov017_020bee84(Actor *pActor, Actor_vfunc_30 *param2) {
     if (pActor->IsVisible()) {
-        pActor->vfunc_2C(param2);
+        pActor->vfunc_2C((unk32) param2); //! TODO: solve this oddity
     }
 }
 
@@ -81,7 +81,7 @@ void ActorManager::func_ov017_020beea4(Actor *pActor, Actor_vfunc_30 *param2) {
         return;
     }
 
-    pActor->vfunc_2C(param2);
+    pActor->vfunc_2C((unk32) param2); //! TODO: solve this oddity
 }
 
 void ActorManager::func_ov017_020beecc(Actor *pActor, Actor_vfunc_30 *param2) {

@@ -10,5 +10,5 @@ public:
 
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 1C */ virtual void Setup() override;
-    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
 };

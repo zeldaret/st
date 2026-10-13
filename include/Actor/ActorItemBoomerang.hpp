@@ -46,7 +46,7 @@ public:
     /* 00 (vtable) */
     /* 04 */
 
-    /* 10 */ virtual void vfunc_10(Actor *actor) override;
+    /* 10 */ virtual void vfunc_10(const Actor *actor) override;
 };
 
 class ActorItemBoomerang_CC : public UnkStruct_ov031_Items_01 {
@@ -60,7 +60,7 @@ public:
         mUnk_2C(0x0) {}
 
     /* 0C */ virtual bool vfunc_0C(Actor *actor, VecFx32 *param2) override;
-    /* 10 */ virtual void vfunc_10(Actor *actor) override;
+    /* 10 */ virtual void vfunc_10(const Actor *actor) override;
 };
 
 class ActorItemBoomerang : public Actor {
@@ -85,7 +85,7 @@ public:
 
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 20 */ virtual void Update() override;
-    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorItemBoomerang() override;
 
     void SetState(ActorState state);

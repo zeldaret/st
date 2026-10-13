@@ -57,7 +57,7 @@ public:
 
     // itcm
     bool func_01ffd43c(Vec2s *param1, VecFx32 *param2, unk32 param3);
-    bool func_01ffd640(VecFx32 *param1);
+    bool func_01ffd640(UnkVecFx32Struct *param1);
     bool func_01ffd768(void *param1, Vec2s *param2, unk8 param3);
 
     // overlay 0

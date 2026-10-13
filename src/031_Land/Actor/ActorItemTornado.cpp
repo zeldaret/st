@@ -284,9 +284,7 @@ void ActorItemTornado::vfunc_24() {
     this->func_ov031_020e5d18(0x1);
 }
 
-#define MUL_FXUNK2(a, b) (fx32)((((s32) (a)) * ((s32) (b)) + 0x800) >> FX32_SHIFT)
-
-void ActorItemTornado::vfunc_2C(Actor_vfunc_30 *param1) {
+void ActorItemTornado::vfunc_2C(unk32 param1) {
     if (this->mUnk_1DC <= 0x0) {
         return;
     }

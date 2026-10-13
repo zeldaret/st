@@ -401,7 +401,7 @@ void ActorUnkNSSW::func_ov032_021203fc() {
     this->func_ov032_0212025c();
 }
 
-void ActorUnkNSSW::vfunc_2C(Actor_vfunc_30 *param1) {
+void ActorUnkNSSW::vfunc_2C(unk32 param1) {
     if (!this->Actor::func_01fff5d0(param1, 0x0)) {
         return;
     }
@@ -674,8 +674,8 @@ void ActorUnkNSSW_0E0::vfunc_0C(VecFx32 *param1) {
 ActorUnkNSSW_104::ActorUnkNSSW_104(ActorUnkNSSW *actor) :
     mUnk_2C(actor) {}
 
-void ActorUnkNSSW_104::vfunc_10(Actor *actor) {
-    this->mUnk_2C->func_ov032_02120bfc(actor);
+void ActorUnkNSSW_104::vfunc_10(const Actor *actor) {
+    this->mUnk_2C->func_ov032_02120bfc((Actor *) actor);
 }
 
 #if IS_JP

@@ -57,7 +57,7 @@ public:
 
     ActorUnkCASE_174(Actor *param1);
 
-    /* 10 */ virtual void vfunc_10(Actor *actor) override;
+    /* 10 */ virtual void vfunc_10(const Actor *actor) override;
 };
 
 class ActorUnkCASE : public Actor_Derived2 {
@@ -89,7 +89,7 @@ public:
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 20 */ virtual void Update() override;
     /* 24 */ virtual void vfunc_24() override;
-    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
 
     void func_ov063_0215ab70(void);
     void func_ov063_0215aba4(void);

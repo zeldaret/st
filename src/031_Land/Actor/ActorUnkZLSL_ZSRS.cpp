@@ -1066,7 +1066,7 @@ void ActorUnkZLSL::func_ov031_020ec170() {
     this->mAngle = 0x0;
 }
 
-void ActorUnkZLSL::vfunc_2C(Actor_vfunc_30 *param1) {
+void ActorUnkZLSL::vfunc_2C(unk32 param1) {
 #pragma unused(param1)
     MtxFx33 sp00;
 

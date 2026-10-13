@@ -50,7 +50,7 @@ public:
     }
 
     // data_ov031_02114a40
-    /* 10 */ virtual void vfunc_10(Actor *param1) override; // func_ov031_020f849c
+    /* 10 */ virtual void vfunc_10(const Actor *param1) override; // func_ov031_020f849c
 };
 
 class ActorRollingStone : public Actor {
@@ -79,9 +79,9 @@ public:
 
     ActorRollingStone();
 
-    /* 18 */ virtual bool Init(unk32 param1) override;               // func_ov031_020f869c
-    /* 20 */ virtual void Update() override;                         // func_ov031_020f878c
-    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override; // func_ov031_020f8948
+    /* 18 */ virtual bool Init(unk32 param1) override;     // func_ov031_020f869c
+    /* 20 */ virtual void Update() override;               // func_ov031_020f878c
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override; // func_ov031_020f8948
     /* 54 */
 
     void SetState(ActorState state);

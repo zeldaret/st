@@ -250,7 +250,7 @@ _ZN12ActorUnkMABL19func_ov075_02160714Ev kind:function(arm,size=0x8) addr:0x0216
 _ZN12ActorUnkMABL19func_ov075_0216071cEv kind:function(arm,size=0x1c) addr:0x0216085c
 _ZN19ActorProfileUnkMABLD1Ev kind:function(arm,size=0x14) addr:0x02160878
 func_ov075_0216074c kind:function(arm,size=0x118) addr:0x0216088c
-func_ov075_02160864 kind:function(arm,size=0xa0) addr:0x021609a4
+_ZN14ActorShotArrow19func_ov075_02160864Ei kind:function(arm,size=0xa0) addr:0x021609a4
 func_ov075_02160904 kind:function(arm,size=0xec) addr:0x02160a44
 func_ov075_021609f0 kind:function(arm,size=0x44) addr:0x02160b30
 func_ov075_02160a34 kind:function(arm,size=0x8) addr:0x02160b74
@@ -399,7 +399,7 @@ data_ov075_02163498 kind:bss addr:0x02163498
 data_ov075_021634a4 kind:bss addr:0x021634a4
 data_ov075_0216357c kind:bss addr:0x0216357c
 data_ov075_02163654 kind:bss addr:0x02163654
-data_ov075_02163658 kind:bss addr:0x02163658
+data_ov075_02163518 kind:bss addr:0x02163658
 data_ov075_0216365c kind:bss addr:0x0216365c
 data_ov075_02163668 kind:bss addr:0x02163668
 data_ov075_02163674 kind:bss addr:0x02163674

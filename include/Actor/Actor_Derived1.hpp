@@ -149,7 +149,7 @@ public:
     /* 1C */ virtual void Setup() override;
     /* 20 */ virtual void Update() override;
     /* 24 */ virtual void vfunc_24() override;
-    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~Actor_Derived1();
     /* 54 */ virtual void vfunc_54(unk32 param1);
     /* 58 */ virtual void vfunc_58(ActorState param1) = 0;

@@ -72,8 +72,7 @@ public:
 
     // data_ov031_0211426c
     /* 0C */ virtual bool vfunc_0C(Actor *param1, VecFx32 *vector) override; // func_ov031_020f3c38
-    /* 10 */ virtual void vfunc_10(Actor *actor) override;                   // func_ov031_020f38b0
-    // /* 14 */ virtual void vfunc_14(MtxFx33 *, VecFx32 *);
+    /* 10 */ virtual void vfunc_10(const Actor *actor) override;             // func_ov031_020f38b0
 
     void func_ov031_020f374c(Actor *param1);
 };
@@ -131,7 +130,7 @@ public:
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 20 */ virtual void Update() override;
     /* 24 */ virtual void vfunc_24() override;
-    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorShotArrow() override;
 
     void func_ov031_020f1868();
@@ -148,7 +147,7 @@ public:
     void func_ov031_020f2bbc();
     void func_ov031_020f2bec();
     void func_ov031_020f2c08(unk16 param1);
-    void func_ov031_020f2cac(VecFx32 *param1, bool param2);
+    void func_ov031_020f2cac(const VecFx32 *param1, bool param2);
     void func_ov031_020f2ef0();
     void func_ov031_020f2f5c(VecFx32 *param1);
     bool func_ov031_020f2f9c();
@@ -177,6 +176,9 @@ public:
     void func_ov031_020f2160();
     void func_ov031_020f2214();
     void func_ov031_020f1958();
+
+    // overlay 75
+    void func_ov075_02160864(unk32 param1);
 };
 
 class ActorProfileShotArrow : public ActorProfile {

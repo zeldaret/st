@@ -120,7 +120,7 @@ public:
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 1C */ virtual void Setup() override;
     /* 20 */ virtual void Update() override;
-    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorSpinut() override;
     /* 54 */ virtual void vfunc_54(unk32 param1) override;
 

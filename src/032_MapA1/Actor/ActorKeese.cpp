@@ -312,7 +312,7 @@ void ActorKeese::Update() {
 }
 
 // non-matching
-void ActorKeese::vfunc_2C(Actor_vfunc_30 *param1) {
+void ActorKeese::vfunc_2C(unk32 param1) {
     if (!this->func_01fff5d0(param1, 0x0)) {
         this->mUnk_278.func_ov000_020a0334();
 

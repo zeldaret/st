@@ -28,7 +28,7 @@ public:
     ActorBomb_19C(Actor *param1);
 
     // data_ov031_02112c94
-    /* 10 */ virtual void vfunc_10(Actor *actor) override;
+    /* 10 */ virtual void vfunc_10(const Actor *actor) override;
 };
 
 class ActorBomb_180 : public UnkStruct_ov031_Items_00 {
@@ -100,7 +100,7 @@ public:
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 20 */ virtual void Update() override;
     /* 24 */ virtual void vfunc_24() override;
-    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 38 */ virtual bool Grab(ActorGrabParams grabParams) override;
     /* 3C */ virtual bool Drop(ActorGrabParams grabParams, const VecFx32 *pVel) override;
 

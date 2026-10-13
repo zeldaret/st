@@ -38,7 +38,7 @@ bool ActorUnkSWBM_98::vfunc_0C(Actor *param1, VecFx32 *vector) {
     return retValue;
 }
 
-void ActorUnkSWBM_98::vfunc_10(Actor *actor) {
+void ActorUnkSWBM_98::vfunc_10(const Actor *actor) {
     switch (GET_FLAG(actor->mFlags, ActorFlag_17) ? 1 : 0) {
         case false: {
             ActorUnkSWBM *actorSWBM = this->mUnk_2C;
@@ -310,7 +310,7 @@ void ActorUnkSWBM::func_ov031_020e718c(const VecFx32 *param0, MtxFx33 *param1, s
     G3_PopMtx(1);
 }
 
-void ActorUnkSWBM::vfunc_2C(Actor_vfunc_30 *param1) {
+void ActorUnkSWBM::vfunc_2C(unk32 param1) {
     if (this->mState == ActorUnkSWBMState_2) {
         return;
     }

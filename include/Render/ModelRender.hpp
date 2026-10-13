@@ -16,9 +16,10 @@ class Actor;
 extern "C" void *func_ov000_02057750(size_t allocSize);
 
 struct ActorUnkZLSL_AnimationTag {
-    unk32 index;
-    char name[0x10];
-    u32 unknown;
+    /* 00 */ unk32 index;
+    /* 04 */ char name[16];
+    /* 14 */ u32 unknown;
+    /* 18 */
 };
 
 typedef void (*UnkSystem4_UnkCallback)(Actor *, G3d_RenderState *);
@@ -172,17 +173,19 @@ public:
     void func_ov000_020578a4(unk32 param1, unk32 param2);
 };
 
-class UnkSystem5_Derived1 : public UnkSystem5 {
+class UnkSystem5_Derived1 {
 public:
+    /* 00 */ UnkSystem5 mUnk_00;
+
     UnkSystem5_Derived1(void *param1, G3d_Model *param2, UnkStruct_ov000_02058a84 *param3) :
-        UnkSystem5(param1, param2) {
+        mUnk_00(param1, param2) {
         bool value = false;
 
         if (!(param3->mUnk_08 & 2)) {
             value = true;
         }
 
-        this->func_ov000_020577a4(param3, 0, value);
+        this->mUnk_00.func_ov000_020577a4(param3, 0, value);
     }
 };
 

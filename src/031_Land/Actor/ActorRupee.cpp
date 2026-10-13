@@ -671,7 +671,7 @@ extern unk32 data_ov031_02110aa0[];
 extern unk32 data_ov031_02113468[];
 
 // non-matching
-void ActorRupee::vfunc_2C(Actor_vfunc_30 *param1) {
+void ActorRupee::vfunc_2C(unk32 param1) {
     VecFx32 iStack_18;
     VecFx32 iStack_28;
     unk32 auStack_30[4];

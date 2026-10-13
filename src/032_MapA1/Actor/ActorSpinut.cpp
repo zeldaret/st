@@ -255,7 +255,7 @@ void ActorSpinut::Update() {
     data_027e09c0->func_ov000_0207de98(this->mRef, &stack, this->mUnk_38);
 }
 
-void ActorSpinut::vfunc_2C(Actor_vfunc_30 *param1) {
+void ActorSpinut::vfunc_2C(unk32 param1) {
     if (!this->Actor::func_01fff5d0(param1, 0x0)) {
         return;
     }

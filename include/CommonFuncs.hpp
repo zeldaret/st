@@ -132,7 +132,7 @@ void func_0200b578(G3d_RenderObject *, G3d_CallbackFunction, unk32, unk32, unk32
 void func_0200b58c(G3d_RenderObject *);
 void G3d_GetCurrentMtx(MtxFx43 *mtx1, MtxFx33 *mtx2);
 void func_0200ea38(G3d_Model *, unk32, unk32);
-void func_0200eab0(G3d_Model *, unk32, u8);
+void func_0200eab0(G3d_Model *, unk32, unk32);
 void func_0200ef5c(G3d_Model *, unk32);
 void func_0200ef9c(G3d_Model *, unk32);
 UnkResourceStruct2 *func_0200f05c(G3d_NameList *, char *);
@@ -348,6 +348,7 @@ unk8 func_ov000_02070164(void *); //! TODO: turn to a class
 void func_ov000_0205a950(u8 bgType, bool isTopScreen, bool);
 void func_ov000_0205a944(u8 bgType, bool isTopScreen, bool);
 void *func_ov000_0208ea70(PlayerCharacter, unk32, bool); // returns pointer to .NSBTX
+bool func_ov000_0205cbc4(u32 param1, VecFx32 *param2);
 
 // overlay 2
 AdventureModeManager_160_14 *func_ov002_020b6520(void *, void *, int);
@@ -420,9 +421,6 @@ UnkStruct_ov070_0214dc74 *func_ov070_02143fe4(int index);
 
 // overlay 71
 void func_ov071_0215e8d4();
-
-// overlay 75
-void func_ov075_02160864(ActorShotArrow *, unk32);
 
 // overlay 84
 void func_ov084_0216122c();

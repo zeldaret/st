@@ -75,8 +75,6 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c12fc(u8 param2, unk16 param3)
     G3_PopMtx(1);
 }
 
-#define MUL_FXUNK(a, b) (fx32)((((s16) (a)) * ((s16) (b)) + 0x800) >> FX32_SHIFT)
-
 // https://decomp.me/scratch/bsO9Z
 void UnkStackStruct_ov017_020c1104::func_ov017_020c13b4() {
     s16 temp_r1;

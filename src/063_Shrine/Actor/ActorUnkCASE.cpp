@@ -117,9 +117,9 @@ ActorUnkCASE_174::ActorUnkCASE_174(Actor *param1) {
     mUnk_2C = param1;
 }
 
-void ActorUnkCASE_174::vfunc_10(Actor *actor) {
+void ActorUnkCASE_174::vfunc_10(const Actor *actor) {
     ((ActorUnkCASE *) mUnk_2C)->func_ov063_0215b724();
-    func_ov000_0207b70c(this, actor);
+    func_ov000_0207b70c(this, (Actor *) actor);
 }
 
 // Static
@@ -417,7 +417,7 @@ post:
     }
 }
 
-void ActorUnkCASE::vfunc_2C(Actor_vfunc_30 *param1) {
+void ActorUnkCASE::vfunc_2C(unk32 param1) {
     if (!this->func_01fff5d0(param1, 0)) {
         return;
     }

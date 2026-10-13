@@ -40,7 +40,7 @@ void ActorUnkRBLS::vfunc_24(void) {
     this->Update();
 }
 
-void ActorUnkRBLS::vfunc_2C(Actor_vfunc_30 *param1) {
+void ActorUnkRBLS::vfunc_2C(unk32 param1) {
     ModelRender *var1 = &this->mUnk_94;
     VecFx32 *var2     = &this->mPos;
     var1->vfunc_18(var2);
