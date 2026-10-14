@@ -271,7 +271,7 @@ void PlayerLinkActor::func_ov017_020bdd84(void *param1, unk32 param2) {
                 PlayerLinkActor_134 *temp_r1 = this->mUnk_134;
 
                 if (temp_r1->mUnk_04 > 0) {
-                    UnkSystem7_UnkStruct_00 *temp_r0 = temp_r1->mUnk_00.mUnk_00;
+                    UnkSystem7_UnkStruct_00 *temp_r0 = temp_r1->mUnk_00.mUnk_00.mUnk_00;
 
                     if (temp_r0 != NULL) {
                         temp_r0->mUnk_28.x = sp10.x + temp_r0->mUnk_20->mUnk_00->mUnk_04.x;

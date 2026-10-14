@@ -435,7 +435,7 @@ PlayerGet::~PlayerGet() {
         UnkStruct_PlayerGet_ec *pUnk_ec = &this->mUnk_EC[0];
 
         while (pUnk_ec != (UnkStruct_PlayerGet_ec *) &this->mUnk_FC) {
-            pData_027e0cec->func_ov000_020a0110(pUnk_ec);
+            pData_027e0cec->func_ov000_020a0110(&pUnk_ec->mUnk_00);
             pUnk_ec++;
         }
     }
@@ -665,7 +665,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 uStack_f0[1] = 0x871;
                 uStack_f0[2] = 0x872;
                 uStack_f0[3] = 0x873;
-                data_027e0cec->func_ov000_020a0000(this->mUnk_EC, &this->mUnk_FC, uStack_f0, &VStack_fc, 1);
+                data_027e0cec->func_ov000_020a0000(&this->mUnk_EC->mUnk_00, &this->mUnk_FC, uStack_f0, &VStack_fc, 1);
             }
 
             data_027e0cf8->func_ov024_020c7828(this->mUnk_54.mItemId);
@@ -973,8 +973,7 @@ void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
     }
 }
 
-UnkStruct_PlayerGet_ec::UnkStruct_PlayerGet_ec() :
-    UnkSystem7(NULL) {}
+UnkStruct_PlayerGet_ec::UnkStruct_PlayerGet_ec() {}
 
 THUMB_BEGIN
 

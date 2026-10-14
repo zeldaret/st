@@ -542,7 +542,7 @@ void MapObjectDoorBase::vfunc_74() {}
 void MapObjectDoorBase::vfunc_78() {}
 
 void MapObjectDoorBase::vfunc_7C() {
-    this->mUnk_68.func_ov000_020a0334();
+    this->mUnk_68.mUnk_00.func_ov000_020a0334();
 }
 
 void MapObjectDoorBase::vfunc_80() {

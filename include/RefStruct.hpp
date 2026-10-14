@@ -84,6 +84,18 @@ struct ActorRef {
         return ret;
     }
 
+    const bool UnkCheck2Alt() {
+        bool ret = false;
+
+        if (((s32) this->type_index == REF_TYPE_INDEX(ActorRefType_0, 0x100) ||
+             this->type_index == REF_TYPE_INDEX(ActorRefType_0, 0x101)) &&
+            this->GetTypeIndex1() == 0x01) {
+            ret = true;
+        }
+
+        return ret;
+    }
+
     const bool UnkCheck3(u16 value) {
         BOOL ret = false;
 

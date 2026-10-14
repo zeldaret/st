@@ -16,13 +16,14 @@ Actor *ActorProfileUnkEFIK::Create() {
 ActorProfileUnkEFIK::ActorProfileUnkEFIK() :
     ActorProfile(ActorId_EFIK) {}
 
-ActorUnkEFIK::ActorUnkEFIK() :
-    mUnk_98(NULL) {
+ActorUnkEFIK::ActorUnkEFIK() {
     this->mUnk_9C = -1;
     this->mUnk_A0 = 0;
 }
 
 bool ActorUnkEFIK::Init(unk32 param1) {
+#pragma unused(param1)
+
     this->mUnk_9C = 0x86F;
     this->mUnk_A0 = 4;
     this->mUnk_98.func_ov000_020a0334();

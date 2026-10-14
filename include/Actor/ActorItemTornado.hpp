@@ -60,7 +60,7 @@ public:
     /* 1D6 */ u16 mUnk_1D6;
     /* 1D8 */ unk32 mUnk_1D8;
     /* 1DC */ fx32 mUnk_1DC;
-    /* 1E0 */ UnkStruct_PlayerGet_ec mUnk_1E0[0x3];
+    /* 1E0 */ UnkSystem7 mUnk_1E0[0x3];
     /* 1EC */
 
     ActorItemTornado();

@@ -155,7 +155,7 @@ public:
 
     void Destroy() {
         for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_00; ptr != &this->mUnk_00[ARRAY_LEN(this->mUnk_00)]; ++ptr) {
-            ptr->func_ov000_020a0334();
+            ptr->mUnk_00.func_ov000_020a0334();
         }
 
         this->mUnk_08.Init();

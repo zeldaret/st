@@ -263,8 +263,8 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
     if (this->mUnk_128 == param1) {
         return;
     }
-    this->mUnk_128              = param1;
-    UnkStruct_PlayerGet_ec *ptr = NULL;
+    this->mUnk_128  = param1;
+    UnkSystem7 *ptr = NULL;
 
     switch (this->mUnk_128) {
         case 0x1:
@@ -329,7 +329,7 @@ void ActorItemBoomerang::func_ov031_020e5220() {
 
 void ActorItemBoomerang::func_ov031_020e52a0() {
     if (!(this->mUnk_128 != 0x1 && this->mUnk_128 != 0x2)) {
-        for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_12C; ptr != this->mUnk_12C + 0x3; ++ptr) {
+        for (UnkSystem7 *ptr = this->mUnk_12C; ptr != &this->mUnk_12C[ARRAY_LEN(this->mUnk_12C)]; ++ptr) {
             UnkSystem7_UnkStruct_00 *data = ptr->mUnk_00;
 
             if (data != NULL) {
@@ -339,7 +339,7 @@ void ActorItemBoomerang::func_ov031_020e52a0() {
             }
         }
     } else {
-        for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_12C; ptr != this->mUnk_12C + 0x3; ++ptr) {
+        for (UnkSystem7 *ptr = this->mUnk_12C; ptr != &this->mUnk_12C[ARRAY_LEN(this->mUnk_12C)]; ++ptr) {
             ptr->func_ov000_020a0334();
         }
     }

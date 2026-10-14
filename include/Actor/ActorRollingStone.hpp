@@ -8,6 +8,7 @@
 #include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
+#include "nitro/fx.h"
 #include "types.h"
 
 enum ActorRollingStoneState_ {
@@ -22,7 +23,7 @@ enum ActorRollingStoneState_ {
     ActorRollingStoneState_8  = 8,
     ActorRollingStoneState_9  = 9,
     ActorRollingStoneState_10 = 10,
-    ActorRollingStoneState_MAX
+    ActorRollingStoneState_Max
 };
 
 class ActorRollingStone;
@@ -64,7 +65,7 @@ public:
     /* 108 */ u16 mUnk_108;
     /* 10A */ PAD(0x10A, 0x10C);
     /* 10C */ MtxFx33 mUnk_10C;
-    /* 130 */ UnkStruct_PlayerGet_ec mUnk_130[0x2];
+    /* 130 */ UnkSystem7 mUnk_130[0x2];
     /* 138 */ unk16 mUnk_138;
     /* 13C */ Cylinder mUnk_13C;
     /* 14C */ unk32 mUnk_14C;

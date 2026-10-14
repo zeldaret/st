@@ -41,6 +41,7 @@ src/031_Land/Actor/ActorItemBoomerang.cpp:
     .bss        start:0x02116628 end:0x02116674
 
 src/031_Land/Actor/ActorItemTornado.cpp:
+    complete
     .text       start:0x020e587c end:0x020e65f8
     .init       start:0x02111268 end:0x021112dc
     .ctor       start:0x021128dc end:0x021128e0
@@ -184,11 +185,13 @@ src/031_Land/Actor/ActorUnkFLEN.cpp:
     .rodata     start:0x02110cc0 end:0x02110cc8
 
 src/031_Land/Actor/ActorRollingStone.cpp:
+    complete
     .text       start:0x020f8410 end:0x020f9efc
     .init       start:0x02111930 end:0x02111980
     .ctor       start:0x02112928 end:0x0211292c
     .data       start:0x02114b78 end:0x02114ce0
     .bss        start:0x02116ec4 end:0x02116fac
+    .rodata     start:0x02110cc8 end:0x02110cf8
 
 src/031_Land/Actor/ActorItemDrop.cpp:
     complete

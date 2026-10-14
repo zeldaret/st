@@ -454,7 +454,7 @@ void ActorRupee::func_ov031_020e9638() {
 
     if (this->mUnk_5C.mParams[1] == 2) {
         this->mUnk_4A[0] = 1;
-        data_027e0cec->func_ov000_0209ff8c(&this->mUnk_F0, 0xD00C, &this->mPos, 2);
+        data_027e0cec->func_ov000_0209ff8c(&this->mUnk_F0.mUnk_00, 0xD00C, &this->mPos, 2);
     } else {
         this->mUnk_4A[0] = 0;
     }
@@ -521,7 +521,7 @@ void ActorRupee::func_ov031_020e9838() {
     func_ov031_0210b0e4(sp2, 0);
     func_ov031_0210acd4(sp2);
     func_ov031_0210acd4(sp2);
-    data_027e0cec->func_ov000_020a0110(&this->mUnk_F0);
+    data_027e0cec->func_ov000_020a0110(&this->mUnk_F0.mUnk_00);
 }
 
 void ActorRupee::func_ov031_020e98c4() {

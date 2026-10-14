@@ -332,15 +332,15 @@ bool MapObjectDoorClick::vfunc_6C(void) {
 }
 
 void MapObjectDoorClick::vfunc_74(void) {
-    data_027e0cec->func_ov000_0209ff8c(&this->mUnk_68, 0x89E, &this->mPos, 4);
-    data_027e0cec->func_ov000_0209ff8c(&this->mUnk_A0, 0x89E, &this->mPos, 4);
+    data_027e0cec->func_ov000_0209ff8c(&this->mUnk_68.mUnk_00, 0x89E, &this->mPos, 4);
+    data_027e0cec->func_ov000_0209ff8c(&this->mUnk_A0.mUnk_00, 0x89E, &this->mPos, 4);
 }
 
 void MapObjectDoorClick::vfunc_7C(void) {
     this->MapObjectDoorBase::vfunc_7C();
 
-    if (this->mUnk_A0.mUnk_00 != NULL) {
-        this->mUnk_A0.func_ov000_020a0334();
+    if (this->mUnk_A0.mUnk_00.mUnk_00 != NULL) {
+        this->mUnk_A0.mUnk_00.func_ov000_020a0334();
     }
 }
 
@@ -390,12 +390,12 @@ void MapObjectDoorClick::vfunc_78(void) {
     VecFx32_Add(&local_30, &local_90, &local_30);
     VecFx32_Add(&local_30, &local_84, &VStack_48);
 
-    if (this->mUnk_68.mUnk_00 != NULL) {
-        this->mUnk_68.mUnk_00->func_ov000_02052c48(&VStack_3c, &local_24);
+    if (this->mUnk_68.mUnk_00.mUnk_00 != NULL) {
+        this->mUnk_68.mUnk_00.mUnk_00->func_ov000_02052c48(&VStack_3c, &local_24);
     }
 
-    if (this->mUnk_A0.mUnk_00 != NULL) {
-        this->mUnk_A0.mUnk_00->func_ov000_02052c48(&VStack_48, &local_30);
+    if (this->mUnk_A0.mUnk_00.mUnk_00 != NULL) {
+        this->mUnk_A0.mUnk_00.mUnk_00->func_ov000_02052c48(&VStack_48, &local_30);
     }
 }
 

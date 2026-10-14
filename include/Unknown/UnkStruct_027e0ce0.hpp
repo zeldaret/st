@@ -96,8 +96,8 @@ public:
     ~UnkStruct_027e0ce0_1C();
 
     // overlay 0
-    G3d_Model *func_ov000_0208ed30(unk32 param1, unk32 param2, char *param3);
-    UnkStruct_ov000_02058a84 *func_ov000_0208ee94(unk32 param1, unk32 param2, char *param3, unk32 param4);
+    G3d_Model *func_ov000_0208ed30(unk32 param1, unk32 param2, const char *param3);
+    UnkStruct_ov000_02058a84 *func_ov000_0208ee94(unk32 param1, unk32 param2, const char *param3, unk32 param4);
 
     // overlay 1
     void func_ov001_020bccec();
@@ -936,7 +936,7 @@ public:
     void func_ov000_0208bd20(bool param1, unk32 param2, unk32 param3);
     void func_ov000_0208bd30(bool param1, unk32 param2, unk32 param3, unk32 param4);
     bool func_ov000_0208be0c(RefStruct param1);
-    bool func_ov000_0208be70(VecFx32 param1);
+    bool func_ov000_0208be70();
     bool func_ov000_0208bee8();
     bool func_ov000_0208bf34(unk32 param1);
 

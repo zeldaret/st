@@ -178,7 +178,7 @@ void ActorTearLight::func_ov071_0215f824() {
             UnkStruct_027e0cec *data = data_027e0cec;
             for (ActorTearLight_204 *playerGet = this->mUnk_204; playerGet != this->mUnk_204 + ARRAY_LEN(this->mUnk_204);
                  ++playerGet) {
-                data->func_ov000_020a0110(playerGet);
+                data->func_ov000_020a0110(&playerGet->mUnk_00);
             }
             break;
         }
@@ -189,14 +189,14 @@ void ActorTearLight::func_ov071_0215f824() {
                 UnkStruct_027e0cec *data = data_027e0cec;
                 for (ActorTearLight_204 *playerGet = this->mUnk_204; playerGet != this->mUnk_204 + ARRAY_LEN(this->mUnk_204);
                      ++playerGet) {
-                    data->func_ov000_020a0140(playerGet, &vec);
+                    data->func_ov000_020a0140(&playerGet->mUnk_00, &vec);
                 }
                 break;
             }
             UnkStruct_027e0cec *data = data_027e0cec;
             for (ActorTearLight_204 *playerGet = this->mUnk_204; playerGet != this->mUnk_204 + ARRAY_LEN(this->mUnk_204);
                  ++playerGet) {
-                data->func_ov000_020a0110(playerGet);
+                data->func_ov000_020a0110(&playerGet->mUnk_00);
             }
             break;
     }
@@ -283,7 +283,7 @@ void ActorTearLight::func_ov071_0215fc0c() {
     UnkStruct_027e0cec *data = data_027e0cec;
     for (ActorTearLight_204 *playerGet = this->mUnk_204; playerGet != this->mUnk_204 + ARRAY_LEN(this->mUnk_204);
          ++playerGet) {
-        data->func_ov000_020a0110(playerGet);
+        data->func_ov000_020a0110(&playerGet->mUnk_00);
     }
     this->func_ov071_0215fd80();
 }

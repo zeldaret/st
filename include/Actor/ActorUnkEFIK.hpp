@@ -6,11 +6,15 @@
 #include "global.h"
 #include "types.h"
 
+class ActorUnkEFIK_98 : public UnkSystem7 {
+public:
+};
+
 class ActorUnkEFIK : public Actor {
 public:
     /* 00 (base) */
     /* 94 */ unk32 mUnk_94;
-    /* 98 */ UnkSystem7 mUnk_98;
+    /* 98 */ ActorUnkEFIK_98 mUnk_98;
     /* 9C */ unk32 mUnk_9C;
     /* A0 */ unk32 mUnk_A0;
 

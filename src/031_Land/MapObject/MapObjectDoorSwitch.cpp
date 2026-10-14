@@ -136,10 +136,10 @@ void MapObjectDoorSwitch::vfunc_74(void) {
     func_01ffaf74(&local_2c, &m, &local_2c);
     VecFx32_Add(&local_20, &local_2c, &local_20);
 
-    data_027e0cec->func_ov000_0209ff8c(&this->mUnk_68, 0x8CF, &local_20, 4);
+    data_027e0cec->func_ov000_0209ff8c(&this->mUnk_68.mUnk_00, 0x8CF, &local_20, 4);
 
-    if (this->mUnk_68.mUnk_00 != NULL) {
-        this->mUnk_68.mUnk_00->mUnk_A4 = this->mAngle.angle_s;
+    if (this->mUnk_68.mUnk_00.mUnk_00 != NULL) {
+        this->mUnk_68.mUnk_00.mUnk_00->mUnk_A4 = this->mAngle.angle_s;
     }
 }
 

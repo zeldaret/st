@@ -14,10 +14,9 @@
 #include "math.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
+#include "nitro/types.h"
 
-#pragma readonly_strings on
-
-extern char *data_ov031_02110a88;
+static const char data_ov031_02110a88[16] = "ef_tsumuji";
 
 static const Cylinder data_ov031_02112fdc(0, 0xD9A, 0, 0xCCD);
 
@@ -75,9 +74,9 @@ ActorProfileItemTornado::ActorProfileItemTornado() :
 
 // non-matching
 ActorItemTornado::ActorItemTornado() :
-    mUnk_94(data_027e0ce0->mUnk_1C->func_ov000_0208ed30(0x0, 0x1, "ef_tsumuji")),
-    mUnk_F4(data_027e0ce0->mUnk_1C->func_ov000_0208ee94(0x00, 0x01, "ef_tsumuji", 0x00), this->mUnk_94.mpModel),
-    mUnk_134(data_027e0ce0->mUnk_1C->func_ov000_0208ee94(0x00, 0x01, "ef_tsumuji", 0x02), this->mUnk_94.mpModel),
+    mUnk_94(data_027e0ce0->mUnk_1C->func_ov000_0208ed30(0x0, 0x1, data_ov031_02110a88)),
+    mUnk_F4(data_027e0ce0->mUnk_1C->func_ov000_0208ee94(0x00, 0x01, data_ov031_02110a88, 0x00), this->mUnk_94.mpModel),
+    mUnk_134(data_027e0ce0->mUnk_1C->func_ov000_0208ee94(0x00, 0x01, data_ov031_02110a88, 0x02), this->mUnk_94.mpModel),
     mUnk_174(this),
     mUnk_17C((UnkStruct_ov000_0208f820 *) this), //! TODO: conflicting type
     mUnk_1C0(0, 0, 0),
@@ -125,7 +124,7 @@ void ActorItemTornado::SetState(ActorState state) {
         case ActorItemTornadoState_2:
             data_027e09a8->func_ov000_02071b30(0x8D6D, &this->mPos, 0x0);
 
-            for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_1E0; ptr != this->mUnk_1E0 + 0x3; ++ptr) {
+            for (UnkSystem7 *ptr = this->mUnk_1E0; ptr != &this->mUnk_1E0[ARRAY_LEN(this->mUnk_1E0)]; ++ptr) {
                 ptr->func_ov000_020a0334();
             }
 
@@ -172,7 +171,7 @@ void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
         case ActorItemTornadoState_1:
             data_027e09a8->func_ov000_02071d34(&this->mRef, 0x8D6C, &this->mPos, 0x0);
 
-            for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_1E0; ptr != this->mUnk_1E0 + 0x3; ++ptr) {
+            for (UnkSystem7 *ptr = this->mUnk_1E0; ptr != &this->mUnk_1E0[ARRAY_LEN(this->mUnk_1E0)]; ++ptr) {
                 UnkSystem7_UnkStruct_00 *data = ptr->mUnk_00;
 
                 if (data != NULL) {
