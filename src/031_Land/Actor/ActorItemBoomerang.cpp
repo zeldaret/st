@@ -456,10 +456,6 @@ bool ActorItemBoomerang_11C::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *p
     return this->UnkStruct_027e0ce0_38_Base::vfunc_0C(ref, param2, param3, param4);
 }
 
-void ActorItemBoomerang_Unknown::func_ov031_020e5704() {
-    this->mUnk_00 = 0;
-}
-
 ActorItemBoomerang::~ActorItemBoomerang() {
     if (data_027e0d2c) {
         data_027e0d2c->func_ov031_020d95b4();

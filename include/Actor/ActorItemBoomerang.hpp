@@ -23,7 +23,6 @@ public:
     /* 10 */
 
     void func_ov031_020e45fc();
-    void func_ov031_020e5704();
 };
 
 class ActorItemBoomerang_11C : public UnkStruct_ov031_Items_00 {
