@@ -49,3 +49,8 @@ jobs:
         run: |
           python3 -m unittest discover -s research/eur1/scripts -p 'test_decomp_readiness.py' -v
           python3 research/eur1/scripts/decomp_readiness.py --verify-core --out /tmp/spirit-tracks-decomp-readiness.json
+
+      - name: Test ARM9 boot memory-fill semantics (ROM-free)
+        run: |
+          clang -std=c11 -Wall -Wextra -Werror -pedantic -o /tmp/st-fill32 research/eur1/tests/test_entry_fill32_semantics.c
+          /tmp/st-fill32
