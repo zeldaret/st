@@ -113,3 +113,15 @@ The next productive decompilation effort should concentrate on nonempty gameplay
 The owner's local `codewarrior_probe_100.json` reports **98 distinct standalone original-CodeWarrior ARM instruction matches (892 bytes)** out of 100 C reconstructions (916 bytes), compiled under `dsi/1.2p1 -O4,p`. Two 12-byte indexed word accessors, `0x0206A5C0` and `0x0206A5CC`, have matching size but different instructions and zero relocations. This supersedes the earlier blanket statement of zero CodeWarrior *standalone* matches; there are still **zero newly established integrated project/objdiff matching functions** from this isolated research batch.
 
 Added [the result analysis](research/eur1/batches/ov000_100/CODEWARRIOR_RESULTS.md) and a [12-variant original-compiler probe](research/eur1/batches/ov000_100/verify_codewarrior_last2.py) for resolving the two mismatches on Windows without touching the 98 known matches. No CodeWarrior-exact success for those variants has been claimed prior to executing the tool on Windows.
+
+## 23 Oct 2026 — 500 additional ROM-checked ARM9 C reconstructions
+
+Published [batch overlay500](research/eur1/batches/overlay500/) via [PR #4](https://github.com/zeranemesis/st/pull/4) (main). The batch contains **500 unique ARM9 overlay function bodies** beyond the preceding [100 overlay0 functions](research/eur1/batches/ov000_100/), across **40 overlays**.
+
+- **211 non-empty** small C reconstructions (loads, stores, pointer arithmetic, constant returns and some semantic multi-instruction functions).
+- **289 originally empty** `BX LR` functions. These are real minimal DS functions but are **not 289 gameplay implementations**.
+- **500/500 standalone Clang ARMv5TE -O2 identical code sections** against the user's SHA-1-verified local European Rev 1 ARM9 overlays, representing **3,188 identical instruction bytes**.
+- **396 upstream-symbolized** function starts; **104 BL-referenced heuristic starts**, which must be confirmed in the upstream symbol maps before direct C++ source integration.
+- All [500 addresses, sizes and original span SHA-256 values](research/eur1/batches/overlay500/manifest_500.json), the [source C](research/eur1/batches/overlay500/overlay_recovered_500.c) and [full verifier](research/eur1/batches/overlay500/verify_500.py) are published. No ROM or binary assets were committed.
+
+**No original CodeWarrior matching has been measured yet for these 500 additional C functions**, and none were integrated into the normal DS build. The earlier **98/100 standalone CodeWarrior-matching** result applies to the *prior* separate 100-function set only. No PC runtime/port work was undertaken.
