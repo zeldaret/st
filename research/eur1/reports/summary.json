@@ -1,0 +1,159 @@
+{
+  "title": "SPIRITTRACKS",
+  "game_code": "BKIP",
+  "maker_code": "01",
+  "rom_revision": 1,
+  "rom_size_bytes": 134217728,
+  "declared_used_size": 101697676,
+  "sha1": "dcb221a89acb894503a461c2c7d4cfdad9a06b68",
+  "sha256": "b2bdc0ac110884ed8bca1326938523816926fbb905f1454e2bbfe6427cbfb18f",
+  "arm9": {
+    "rom_offset": 16384,
+    "entry": "0x02000800",
+    "ram_address": "0x02000000",
+    "rom_size": 214848,
+    "unpacked_size": 314872,
+    "decoded_blz": true,
+    "footer_trailer": 0,
+    "sha1_unpacked": "650ea160271b2297bfdea0ff3b97e9fa335d7f73"
+  },
+  "arm7": {
+    "rom_offset": 3148288,
+    "entry": "0x02380000",
+    "ram_address": "0x02380000",
+    "rom_size": 160048,
+    "unpacked_size": 160048,
+    "decoded_blz": false,
+    "footer_trailer": 0,
+    "sha1_unpacked": "a64c309486c205043dcefbeca3183334d827bd0d"
+  },
+  "overlay_arm9_count": 114,
+  "overlay_arm7_count": 0,
+  "overlay_blz_decoded": 114,
+  "overlay_size_mismatches": 0,
+  "overlay_failures": [],
+  "fat_file_count": 3556,
+  "filesystem_named_count": 3442,
+  "filesystem_unmapped_count": 114,
+  "fnt_errors": [],
+  "total_named_asset_bytes": 97415850,
+  "top_file_extensions": [
+    [
+      ".bin",
+      1571
+    ],
+    [
+      ".nsbtx",
+      1148
+    ],
+    [
+      ".narc",
+      262
+    ],
+    [
+      ".bmg",
+      151
+    ],
+    [
+      ".nsbmd",
+      97
+    ],
+    [
+      ".spa",
+      61
+    ],
+    [
+      ".nsbca",
+      47
+    ],
+    [
+      ".zcb",
+      40
+    ],
+    [
+      ".ntfp",
+      17
+    ],
+    [
+      ".ntft",
+      17
+    ],
+    [
+      ".ncgr",
+      15
+    ],
+    [
+      ".srl",
+      5
+    ],
+    [
+      ".nftr",
+      4
+    ],
+    [
+      ".nbfc",
+      1
+    ],
+    [
+      ".nbfp",
+      1
+    ],
+    [
+      ".cib",
+      1
+    ],
+    [
+      ".clb",
+      1
+    ],
+    [
+      ".evc",
+      1
+    ],
+    [
+      ".zc2",
+      1
+    ],
+    [
+      ".sdat",
+      1
+    ]
+  ],
+  "sample_file_paths": [
+    "DSzelda2_battle.nbfc",
+    "DSzelda2_battle.nbfp",
+    "English_Child.srl",
+    "French_Child.srl",
+    "German_Child.srl",
+    "Italian_Child.srl",
+    "Spanish_Child.srl",
+    "staff.bmg",
+    "Course/courseinit.cib",
+    "Course/courselist.clb",
+    "Effect/battle.spa",
+    "Effect/battle_result.spa",
+    "Effect/boss_deago.spa",
+    "Effect/boss_desert.spa",
+    "Effect/boss_flame.spa",
+    "Effect/boss_forest.spa",
+    "Effect/boss_last1.spa",
+    "Effect/boss_last2.spa",
+    "Effect/boss_snow.spa",
+    "Effect/boss_water.spa",
+    "Effect/demo_d00_01.spa",
+    "Effect/demo_d01_01.spa",
+    "Effect/demo_d02_01.spa",
+    "Effect/demo_d03_01.spa",
+    "Effect/demo_d04_01.spa",
+    "Effect/demo_d04_02.spa",
+    "Effect/demo_d04_03.spa",
+    "Effect/demo_d04_04.spa",
+    "Effect/demo_d04_05.spa",
+    "Effect/demo_d05_01.spa",
+    "Effect/demo_d06_01.spa",
+    "Effect/demo_d07_01.spa",
+    "Effect/demo_d08_01.spa",
+    "Effect/demo_d08_02.spa",
+    "Effect/demo_d08_03.spa"
+  ]
+}

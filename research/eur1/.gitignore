@@ -1,0 +1,11 @@
+# Locally extracted Nintendo DS material — never commit these
+*.nds
+*.srl
+*.elf
+*.bin
+*.rom
+*.sav
+working_code/
+working_files/
+asm/
+__pycache__/

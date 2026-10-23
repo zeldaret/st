@@ -1,0 +1,1046 @@
+[
+  {
+    "component": "arm9",
+    "overlay_id": null,
+    "primary_mode": "ARM",
+    "entry_candidates": 1746,
+    "candidate_prologues": 1362,
+    "called_prologue_candidates": 695,
+    "internal_bl_targets": 1079
+  },
+  {
+    "component": "arm7",
+    "overlay_id": null,
+    "primary_mode": "ARM",
+    "entry_candidates": 855,
+    "candidate_prologues": 623,
+    "called_prologue_candidates": 440,
+    "internal_bl_targets": 672
+  },
+  {
+    "component": "overlay_000",
+    "overlay_id": 0,
+    "primary_mode": "ARM",
+    "entry_candidates": 2484,
+    "candidate_prologues": 2042,
+    "called_prologue_candidates": 867,
+    "internal_bl_targets": 1309
+  },
+  {
+    "component": "overlay_001",
+    "overlay_id": 1,
+    "primary_mode": "Thumb",
+    "entry_candidates": 426,
+    "candidate_prologues": 355,
+    "called_prologue_candidates": 255,
+    "internal_bl_targets": 326
+  },
+  {
+    "component": "overlay_002",
+    "overlay_id": 2,
+    "primary_mode": "Thumb",
+    "entry_candidates": 153,
+    "candidate_prologues": 139,
+    "called_prologue_candidates": 80,
+    "internal_bl_targets": 94
+  },
+  {
+    "component": "overlay_003",
+    "overlay_id": 3,
+    "primary_mode": "ARM",
+    "entry_candidates": 85,
+    "candidate_prologues": 78,
+    "called_prologue_candidates": 38,
+    "internal_bl_targets": 45
+  },
+  {
+    "component": "overlay_004",
+    "overlay_id": 4,
+    "primary_mode": "ARM",
+    "entry_candidates": 85,
+    "candidate_prologues": 72,
+    "called_prologue_candidates": 48,
+    "internal_bl_targets": 61
+  },
+  {
+    "component": "overlay_005",
+    "overlay_id": 5,
+    "primary_mode": "ARM",
+    "entry_candidates": 62,
+    "candidate_prologues": 62,
+    "called_prologue_candidates": 15,
+    "internal_bl_targets": 15
+  },
+  {
+    "component": "overlay_006",
+    "overlay_id": 6,
+    "primary_mode": "Thumb",
+    "entry_candidates": 61,
+    "candidate_prologues": 52,
+    "called_prologue_candidates": 26,
+    "internal_bl_targets": 35
+  },
+  {
+    "component": "overlay_007",
+    "overlay_id": 7,
+    "primary_mode": "ARM",
+    "entry_candidates": 78,
+    "candidate_prologues": 62,
+    "called_prologue_candidates": 33,
+    "internal_bl_targets": 49
+  },
+  {
+    "component": "overlay_008",
+    "overlay_id": 8,
+    "primary_mode": "ARM",
+    "entry_candidates": 14,
+    "candidate_prologues": 14,
+    "called_prologue_candidates": 2,
+    "internal_bl_targets": 2
+  },
+  {
+    "component": "overlay_009",
+    "overlay_id": 9,
+    "primary_mode": "ARM",
+    "entry_candidates": 23,
+    "candidate_prologues": 20,
+    "called_prologue_candidates": 5,
+    "internal_bl_targets": 8
+  },
+  {
+    "component": "overlay_010",
+    "overlay_id": 10,
+    "primary_mode": "Thumb",
+    "entry_candidates": 51,
+    "candidate_prologues": 46,
+    "called_prologue_candidates": 13,
+    "internal_bl_targets": 18
+  },
+  {
+    "component": "overlay_011",
+    "overlay_id": 11,
+    "primary_mode": "ARM",
+    "entry_candidates": 32,
+    "candidate_prologues": 27,
+    "called_prologue_candidates": 12,
+    "internal_bl_targets": 17
+  },
+  {
+    "component": "overlay_012",
+    "overlay_id": 12,
+    "primary_mode": "Thumb",
+    "entry_candidates": 54,
+    "candidate_prologues": 44,
+    "called_prologue_candidates": 22,
+    "internal_bl_targets": 32
+  },
+  {
+    "component": "overlay_013",
+    "overlay_id": 13,
+    "primary_mode": "ARM",
+    "entry_candidates": 9,
+    "candidate_prologues": 9,
+    "called_prologue_candidates": 2,
+    "internal_bl_targets": 2
+  },
+  {
+    "component": "overlay_014",
+    "overlay_id": 14,
+    "primary_mode": "Thumb",
+    "entry_candidates": 56,
+    "candidate_prologues": 49,
+    "called_prologue_candidates": 34,
+    "internal_bl_targets": 41
+  },
+  {
+    "component": "overlay_015",
+    "overlay_id": 15,
+    "primary_mode": "ARM",
+    "entry_candidates": 22,
+    "candidate_prologues": 20,
+    "called_prologue_candidates": 6,
+    "internal_bl_targets": 8
+  },
+  {
+    "component": "overlay_016",
+    "overlay_id": 16,
+    "primary_mode": "ARM",
+    "entry_candidates": 70,
+    "candidate_prologues": 44,
+    "called_prologue_candidates": 28,
+    "internal_bl_targets": 54
+  },
+  {
+    "component": "overlay_017",
+    "overlay_id": 17,
+    "primary_mode": "ARM",
+    "entry_candidates": 160,
+    "candidate_prologues": 145,
+    "called_prologue_candidates": 56,
+    "internal_bl_targets": 71
+  },
+  {
+    "component": "overlay_018",
+    "overlay_id": 18,
+    "primary_mode": "ARM",
+    "entry_candidates": 48,
+    "candidate_prologues": 45,
+    "called_prologue_candidates": 17,
+    "internal_bl_targets": 20
+  },
+  {
+    "component": "overlay_019",
+    "overlay_id": 19,
+    "primary_mode": "ARM",
+    "entry_candidates": 234,
+    "candidate_prologues": 201,
+    "called_prologue_candidates": 75,
+    "internal_bl_targets": 108
+  },
+  {
+    "component": "overlay_020",
+    "overlay_id": 20,
+    "primary_mode": "ARM",
+    "entry_candidates": 568,
+    "candidate_prologues": 467,
+    "called_prologue_candidates": 279,
+    "internal_bl_targets": 380
+  },
+  {
+    "component": "overlay_021",
+    "overlay_id": 21,
+    "primary_mode": "ARM",
+    "entry_candidates": 687,
+    "candidate_prologues": 619,
+    "called_prologue_candidates": 262,
+    "internal_bl_targets": 330
+  },
+  {
+    "component": "overlay_022",
+    "overlay_id": 22,
+    "primary_mode": "ARM",
+    "entry_candidates": 134,
+    "candidate_prologues": 112,
+    "called_prologue_candidates": 46,
+    "internal_bl_targets": 68
+  },
+  {
+    "component": "overlay_023",
+    "overlay_id": 23,
+    "primary_mode": "ARM",
+    "entry_candidates": 160,
+    "candidate_prologues": 138,
+    "called_prologue_candidates": 84,
+    "internal_bl_targets": 106
+  },
+  {
+    "component": "overlay_024",
+    "overlay_id": 24,
+    "primary_mode": "Thumb",
+    "entry_candidates": 104,
+    "candidate_prologues": 100,
+    "called_prologue_candidates": 15,
+    "internal_bl_targets": 19
+  },
+  {
+    "component": "overlay_025",
+    "overlay_id": 25,
+    "primary_mode": "ARM",
+    "entry_candidates": 33,
+    "candidate_prologues": 30,
+    "called_prologue_candidates": 4,
+    "internal_bl_targets": 7
+  },
+  {
+    "component": "overlay_026",
+    "overlay_id": 26,
+    "primary_mode": "ARM",
+    "entry_candidates": 2052,
+    "candidate_prologues": 1803,
+    "called_prologue_candidates": 839,
+    "internal_bl_targets": 1088
+  },
+  {
+    "component": "overlay_027",
+    "overlay_id": 27,
+    "primary_mode": "ARM",
+    "entry_candidates": 227,
+    "candidate_prologues": 225,
+    "called_prologue_candidates": 43,
+    "internal_bl_targets": 45
+  },
+  {
+    "component": "overlay_028",
+    "overlay_id": 28,
+    "primary_mode": "ARM",
+    "entry_candidates": 222,
+    "candidate_prologues": 219,
+    "called_prologue_candidates": 53,
+    "internal_bl_targets": 56
+  },
+  {
+    "component": "overlay_029",
+    "overlay_id": 29,
+    "primary_mode": "ARM",
+    "entry_candidates": 385,
+    "candidate_prologues": 369,
+    "called_prologue_candidates": 116,
+    "internal_bl_targets": 132
+  },
+  {
+    "component": "overlay_030",
+    "overlay_id": 30,
+    "primary_mode": "ARM",
+    "entry_candidates": 347,
+    "candidate_prologues": 328,
+    "called_prologue_candidates": 103,
+    "internal_bl_targets": 122
+  },
+  {
+    "component": "overlay_031",
+    "overlay_id": 31,
+    "primary_mode": "ARM",
+    "entry_candidates": 1610,
+    "candidate_prologues": 1498,
+    "called_prologue_candidates": 400,
+    "internal_bl_targets": 512
+  },
+  {
+    "component": "overlay_032",
+    "overlay_id": 32,
+    "primary_mode": "ARM",
+    "entry_candidates": 212,
+    "candidate_prologues": 198,
+    "called_prologue_candidates": 69,
+    "internal_bl_targets": 83
+  },
+  {
+    "component": "overlay_033",
+    "overlay_id": 33,
+    "primary_mode": "ARM",
+    "entry_candidates": 92,
+    "candidate_prologues": 83,
+    "called_prologue_candidates": 45,
+    "internal_bl_targets": 54
+  },
+  {
+    "component": "overlay_034",
+    "overlay_id": 34,
+    "primary_mode": "ARM",
+    "entry_candidates": 206,
+    "candidate_prologues": 193,
+    "called_prologue_candidates": 73,
+    "internal_bl_targets": 86
+  },
+  {
+    "component": "overlay_035",
+    "overlay_id": 35,
+    "primary_mode": "ARM",
+    "entry_candidates": 180,
+    "candidate_prologues": 168,
+    "called_prologue_candidates": 47,
+    "internal_bl_targets": 59
+  },
+  {
+    "component": "overlay_036",
+    "overlay_id": 36,
+    "primary_mode": "ARM",
+    "entry_candidates": 227,
+    "candidate_prologues": 214,
+    "called_prologue_candidates": 46,
+    "internal_bl_targets": 59
+  },
+  {
+    "component": "overlay_037",
+    "overlay_id": 37,
+    "primary_mode": "ARM",
+    "entry_candidates": 219,
+    "candidate_prologues": 195,
+    "called_prologue_candidates": 68,
+    "internal_bl_targets": 92
+  },
+  {
+    "component": "overlay_038",
+    "overlay_id": 38,
+    "primary_mode": "ARM",
+    "entry_candidates": 154,
+    "candidate_prologues": 145,
+    "called_prologue_candidates": 41,
+    "internal_bl_targets": 50
+  },
+  {
+    "component": "overlay_039",
+    "overlay_id": 39,
+    "primary_mode": "ARM",
+    "entry_candidates": 128,
+    "candidate_prologues": 126,
+    "called_prologue_candidates": 32,
+    "internal_bl_targets": 34
+  },
+  {
+    "component": "overlay_040",
+    "overlay_id": 40,
+    "primary_mode": "ARM",
+    "entry_candidates": 248,
+    "candidate_prologues": 235,
+    "called_prologue_candidates": 94,
+    "internal_bl_targets": 107
+  },
+  {
+    "component": "overlay_041",
+    "overlay_id": 41,
+    "primary_mode": "ARM",
+    "entry_candidates": 224,
+    "candidate_prologues": 218,
+    "called_prologue_candidates": 55,
+    "internal_bl_targets": 61
+  },
+  {
+    "component": "overlay_042",
+    "overlay_id": 42,
+    "primary_mode": "ARM",
+    "entry_candidates": 179,
+    "candidate_prologues": 175,
+    "called_prologue_candidates": 45,
+    "internal_bl_targets": 49
+  },
+  {
+    "component": "overlay_043",
+    "overlay_id": 43,
+    "primary_mode": "ARM",
+    "entry_candidates": 143,
+    "candidate_prologues": 136,
+    "called_prologue_candidates": 28,
+    "internal_bl_targets": 35
+  },
+  {
+    "component": "overlay_044",
+    "overlay_id": 44,
+    "primary_mode": "ARM",
+    "entry_candidates": 205,
+    "candidate_prologues": 195,
+    "called_prologue_candidates": 59,
+    "internal_bl_targets": 69
+  },
+  {
+    "component": "overlay_045",
+    "overlay_id": 45,
+    "primary_mode": "ARM",
+    "entry_candidates": 137,
+    "candidate_prologues": 135,
+    "called_prologue_candidates": 31,
+    "internal_bl_targets": 33
+  },
+  {
+    "component": "overlay_046",
+    "overlay_id": 46,
+    "primary_mode": "ARM",
+    "entry_candidates": 175,
+    "candidate_prologues": 161,
+    "called_prologue_candidates": 52,
+    "internal_bl_targets": 66
+  },
+  {
+    "component": "overlay_047",
+    "overlay_id": 47,
+    "primary_mode": "ARM",
+    "entry_candidates": 121,
+    "candidate_prologues": 116,
+    "called_prologue_candidates": 29,
+    "internal_bl_targets": 34
+  },
+  {
+    "component": "overlay_048",
+    "overlay_id": 48,
+    "primary_mode": "ARM",
+    "entry_candidates": 145,
+    "candidate_prologues": 138,
+    "called_prologue_candidates": 54,
+    "internal_bl_targets": 61
+  },
+  {
+    "component": "overlay_049",
+    "overlay_id": 49,
+    "primary_mode": "ARM",
+    "entry_candidates": 167,
+    "candidate_prologues": 163,
+    "called_prologue_candidates": 38,
+    "internal_bl_targets": 42
+  },
+  {
+    "component": "overlay_050",
+    "overlay_id": 50,
+    "primary_mode": "ARM",
+    "entry_candidates": 156,
+    "candidate_prologues": 147,
+    "called_prologue_candidates": 40,
+    "internal_bl_targets": 49
+  },
+  {
+    "component": "overlay_051",
+    "overlay_id": 51,
+    "primary_mode": "ARM",
+    "entry_candidates": 95,
+    "candidate_prologues": 91,
+    "called_prologue_candidates": 30,
+    "internal_bl_targets": 34
+  },
+  {
+    "component": "overlay_052",
+    "overlay_id": 52,
+    "primary_mode": "ARM",
+    "entry_candidates": 151,
+    "candidate_prologues": 141,
+    "called_prologue_candidates": 33,
+    "internal_bl_targets": 43
+  },
+  {
+    "component": "overlay_053",
+    "overlay_id": 53,
+    "primary_mode": "ARM",
+    "entry_candidates": 106,
+    "candidate_prologues": 104,
+    "called_prologue_candidates": 21,
+    "internal_bl_targets": 23
+  },
+  {
+    "component": "overlay_054",
+    "overlay_id": 54,
+    "primary_mode": "ARM",
+    "entry_candidates": 135,
+    "candidate_prologues": 133,
+    "called_prologue_candidates": 32,
+    "internal_bl_targets": 34
+  },
+  {
+    "component": "overlay_055",
+    "overlay_id": 55,
+    "primary_mode": "ARM",
+    "entry_candidates": 172,
+    "candidate_prologues": 163,
+    "called_prologue_candidates": 54,
+    "internal_bl_targets": 63
+  },
+  {
+    "component": "overlay_056",
+    "overlay_id": 56,
+    "primary_mode": "ARM",
+    "entry_candidates": 155,
+    "candidate_prologues": 148,
+    "called_prologue_candidates": 49,
+    "internal_bl_targets": 56
+  },
+  {
+    "component": "overlay_057",
+    "overlay_id": 57,
+    "primary_mode": "ARM",
+    "entry_candidates": 102,
+    "candidate_prologues": 99,
+    "called_prologue_candidates": 37,
+    "internal_bl_targets": 40
+  },
+  {
+    "component": "overlay_058",
+    "overlay_id": 58,
+    "primary_mode": "ARM",
+    "entry_candidates": 570,
+    "candidate_prologues": 541,
+    "called_prologue_candidates": 143,
+    "internal_bl_targets": 172
+  },
+  {
+    "component": "overlay_059",
+    "overlay_id": 59,
+    "primary_mode": "ARM",
+    "entry_candidates": 277,
+    "candidate_prologues": 268,
+    "called_prologue_candidates": 81,
+    "internal_bl_targets": 90
+  },
+  {
+    "component": "overlay_060",
+    "overlay_id": 60,
+    "primary_mode": "ARM",
+    "entry_candidates": 300,
+    "candidate_prologues": 295,
+    "called_prologue_candidates": 59,
+    "internal_bl_targets": 64
+  },
+  {
+    "component": "overlay_061",
+    "overlay_id": 61,
+    "primary_mode": "ARM",
+    "entry_candidates": 116,
+    "candidate_prologues": 116,
+    "called_prologue_candidates": 28,
+    "internal_bl_targets": 28
+  },
+  {
+    "component": "overlay_062",
+    "overlay_id": 62,
+    "primary_mode": "ARM",
+    "entry_candidates": 282,
+    "candidate_prologues": 277,
+    "called_prologue_candidates": 68,
+    "internal_bl_targets": 73
+  },
+  {
+    "component": "overlay_063",
+    "overlay_id": 63,
+    "primary_mode": "ARM",
+    "entry_candidates": 328,
+    "candidate_prologues": 301,
+    "called_prologue_candidates": 96,
+    "internal_bl_targets": 123
+  },
+  {
+    "component": "overlay_064",
+    "overlay_id": 64,
+    "primary_mode": "ARM",
+    "entry_candidates": 110,
+    "candidate_prologues": 100,
+    "called_prologue_candidates": 32,
+    "internal_bl_targets": 42
+  },
+  {
+    "component": "overlay_065",
+    "overlay_id": 65,
+    "primary_mode": "ARM",
+    "entry_candidates": 131,
+    "candidate_prologues": 129,
+    "called_prologue_candidates": 29,
+    "internal_bl_targets": 31
+  },
+  {
+    "component": "overlay_066",
+    "overlay_id": 66,
+    "primary_mode": "ARM",
+    "entry_candidates": 158,
+    "candidate_prologues": 154,
+    "called_prologue_candidates": 44,
+    "internal_bl_targets": 48
+  },
+  {
+    "component": "overlay_067",
+    "overlay_id": 67,
+    "primary_mode": "ARM",
+    "entry_candidates": 196,
+    "candidate_prologues": 195,
+    "called_prologue_candidates": 52,
+    "internal_bl_targets": 53
+  },
+  {
+    "component": "overlay_068",
+    "overlay_id": 68,
+    "primary_mode": "ARM",
+    "entry_candidates": 333,
+    "candidate_prologues": 310,
+    "called_prologue_candidates": 95,
+    "internal_bl_targets": 118
+  },
+  {
+    "component": "overlay_069",
+    "overlay_id": 69,
+    "primary_mode": "ARM",
+    "entry_candidates": 95,
+    "candidate_prologues": 86,
+    "called_prologue_candidates": 20,
+    "internal_bl_targets": 29
+  },
+  {
+    "component": "overlay_070",
+    "overlay_id": 70,
+    "primary_mode": "ARM",
+    "entry_candidates": 473,
+    "candidate_prologues": 447,
+    "called_prologue_candidates": 130,
+    "internal_bl_targets": 156
+  },
+  {
+    "component": "overlay_071",
+    "overlay_id": 71,
+    "primary_mode": "ARM",
+    "entry_candidates": 406,
+    "candidate_prologues": 379,
+    "called_prologue_candidates": 133,
+    "internal_bl_targets": 160
+  },
+  {
+    "component": "overlay_072",
+    "overlay_id": 72,
+    "primary_mode": "ARM",
+    "entry_candidates": 38,
+    "candidate_prologues": 36,
+    "called_prologue_candidates": 9,
+    "internal_bl_targets": 11
+  },
+  {
+    "component": "overlay_073",
+    "overlay_id": 73,
+    "primary_mode": "ARM",
+    "entry_candidates": 189,
+    "candidate_prologues": 175,
+    "called_prologue_candidates": 63,
+    "internal_bl_targets": 77
+  },
+  {
+    "component": "overlay_074",
+    "overlay_id": 74,
+    "primary_mode": "ARM",
+    "entry_candidates": 330,
+    "candidate_prologues": 307,
+    "called_prologue_candidates": 109,
+    "internal_bl_targets": 132
+  },
+  {
+    "component": "overlay_075",
+    "overlay_id": 75,
+    "primary_mode": "ARM",
+    "entry_candidates": 259,
+    "candidate_prologues": 238,
+    "called_prologue_candidates": 88,
+    "internal_bl_targets": 109
+  },
+  {
+    "component": "overlay_076",
+    "overlay_id": 76,
+    "primary_mode": "ARM",
+    "entry_candidates": 53,
+    "candidate_prologues": 50,
+    "called_prologue_candidates": 8,
+    "internal_bl_targets": 11
+  },
+  {
+    "component": "overlay_077",
+    "overlay_id": 77,
+    "primary_mode": "ARM",
+    "entry_candidates": 210,
+    "candidate_prologues": 202,
+    "called_prologue_candidates": 57,
+    "internal_bl_targets": 65
+  },
+  {
+    "component": "overlay_078",
+    "overlay_id": 78,
+    "primary_mode": "ARM",
+    "entry_candidates": 131,
+    "candidate_prologues": 128,
+    "called_prologue_candidates": 46,
+    "internal_bl_targets": 49
+  },
+  {
+    "component": "overlay_079",
+    "overlay_id": 79,
+    "primary_mode": "ARM",
+    "entry_candidates": 183,
+    "candidate_prologues": 177,
+    "called_prologue_candidates": 58,
+    "internal_bl_targets": 64
+  },
+  {
+    "component": "overlay_080",
+    "overlay_id": 80,
+    "primary_mode": "ARM",
+    "entry_candidates": 201,
+    "candidate_prologues": 186,
+    "called_prologue_candidates": 62,
+    "internal_bl_targets": 77
+  },
+  {
+    "component": "overlay_081",
+    "overlay_id": 81,
+    "primary_mode": "ARM",
+    "entry_candidates": 75,
+    "candidate_prologues": 70,
+    "called_prologue_candidates": 27,
+    "internal_bl_targets": 32
+  },
+  {
+    "component": "overlay_082",
+    "overlay_id": 82,
+    "primary_mode": "ARM",
+    "entry_candidates": 117,
+    "candidate_prologues": 115,
+    "called_prologue_candidates": 30,
+    "internal_bl_targets": 32
+  },
+  {
+    "component": "overlay_083",
+    "overlay_id": 83,
+    "primary_mode": "ARM",
+    "entry_candidates": 213,
+    "candidate_prologues": 199,
+    "called_prologue_candidates": 62,
+    "internal_bl_targets": 76
+  },
+  {
+    "component": "overlay_084",
+    "overlay_id": 84,
+    "primary_mode": "ARM",
+    "entry_candidates": 365,
+    "candidate_prologues": 341,
+    "called_prologue_candidates": 123,
+    "internal_bl_targets": 147
+  },
+  {
+    "component": "overlay_085",
+    "overlay_id": 85,
+    "primary_mode": "ARM",
+    "entry_candidates": 74,
+    "candidate_prologues": 71,
+    "called_prologue_candidates": 31,
+    "internal_bl_targets": 34
+  },
+  {
+    "component": "overlay_086",
+    "overlay_id": 86,
+    "primary_mode": "ARM",
+    "entry_candidates": 280,
+    "candidate_prologues": 274,
+    "called_prologue_candidates": 71,
+    "internal_bl_targets": 77
+  },
+  {
+    "component": "overlay_087",
+    "overlay_id": 87,
+    "primary_mode": "ARM",
+    "entry_candidates": 206,
+    "candidate_prologues": 201,
+    "called_prologue_candidates": 68,
+    "internal_bl_targets": 73
+  },
+  {
+    "component": "overlay_088",
+    "overlay_id": 88,
+    "primary_mode": "ARM",
+    "entry_candidates": 512,
+    "candidate_prologues": 457,
+    "called_prologue_candidates": 181,
+    "internal_bl_targets": 236
+  },
+  {
+    "component": "overlay_089",
+    "overlay_id": 89,
+    "primary_mode": "ARM",
+    "entry_candidates": 192,
+    "candidate_prologues": 145,
+    "called_prologue_candidates": 117,
+    "internal_bl_targets": 164
+  },
+  {
+    "component": "overlay_090",
+    "overlay_id": 90,
+    "primary_mode": "ARM",
+    "entry_candidates": 391,
+    "candidate_prologues": 374,
+    "called_prologue_candidates": 106,
+    "internal_bl_targets": 123
+  },
+  {
+    "component": "overlay_091",
+    "overlay_id": 91,
+    "primary_mode": "ARM",
+    "entry_candidates": 399,
+    "candidate_prologues": 372,
+    "called_prologue_candidates": 118,
+    "internal_bl_targets": 145
+  },
+  {
+    "component": "overlay_092",
+    "overlay_id": 92,
+    "primary_mode": "ARM",
+    "entry_candidates": 520,
+    "candidate_prologues": 482,
+    "called_prologue_candidates": 176,
+    "internal_bl_targets": 214
+  },
+  {
+    "component": "overlay_093",
+    "overlay_id": 93,
+    "primary_mode": "ARM",
+    "entry_candidates": 353,
+    "candidate_prologues": 289,
+    "called_prologue_candidates": 126,
+    "internal_bl_targets": 190
+  },
+  {
+    "component": "overlay_094",
+    "overlay_id": 94,
+    "primary_mode": "ARM",
+    "entry_candidates": 453,
+    "candidate_prologues": 439,
+    "called_prologue_candidates": 124,
+    "internal_bl_targets": 138
+  },
+  {
+    "component": "overlay_095",
+    "overlay_id": 95,
+    "primary_mode": "ARM",
+    "entry_candidates": 98,
+    "candidate_prologues": 94,
+    "called_prologue_candidates": 9,
+    "internal_bl_targets": 13
+  },
+  {
+    "component": "overlay_096",
+    "overlay_id": 96,
+    "primary_mode": "ARM",
+    "entry_candidates": 108,
+    "candidate_prologues": 102,
+    "called_prologue_candidates": 29,
+    "internal_bl_targets": 35
+  },
+  {
+    "component": "overlay_097",
+    "overlay_id": 97,
+    "primary_mode": "unknown",
+    "entry_candidates": 0,
+    "candidate_prologues": 0,
+    "called_prologue_candidates": 0,
+    "internal_bl_targets": 0
+  },
+  {
+    "component": "overlay_098",
+    "overlay_id": 98,
+    "primary_mode": "ARM",
+    "entry_candidates": 63,
+    "candidate_prologues": 63,
+    "called_prologue_candidates": 15,
+    "internal_bl_targets": 15
+  },
+  {
+    "component": "overlay_099",
+    "overlay_id": 99,
+    "primary_mode": "ARM",
+    "entry_candidates": 56,
+    "candidate_prologues": 56,
+    "called_prologue_candidates": 10,
+    "internal_bl_targets": 10
+  },
+  {
+    "component": "overlay_100",
+    "overlay_id": 100,
+    "primary_mode": "unknown",
+    "entry_candidates": 0,
+    "candidate_prologues": 0,
+    "called_prologue_candidates": 0,
+    "internal_bl_targets": 0
+  },
+  {
+    "component": "overlay_101",
+    "overlay_id": 101,
+    "primary_mode": "Thumb",
+    "entry_candidates": 31,
+    "candidate_prologues": 27,
+    "called_prologue_candidates": 7,
+    "internal_bl_targets": 11
+  },
+  {
+    "component": "overlay_102",
+    "overlay_id": 102,
+    "primary_mode": "ARM",
+    "entry_candidates": 32,
+    "candidate_prologues": 31,
+    "called_prologue_candidates": 9,
+    "internal_bl_targets": 10
+  },
+  {
+    "component": "overlay_103",
+    "overlay_id": 103,
+    "primary_mode": "ARM",
+    "entry_candidates": 21,
+    "candidate_prologues": 19,
+    "called_prologue_candidates": 4,
+    "internal_bl_targets": 6
+  },
+  {
+    "component": "overlay_104",
+    "overlay_id": 104,
+    "primary_mode": "ARM",
+    "entry_candidates": 11,
+    "candidate_prologues": 11,
+    "called_prologue_candidates": 2,
+    "internal_bl_targets": 2
+  },
+  {
+    "component": "overlay_105",
+    "overlay_id": 105,
+    "primary_mode": "ARM",
+    "entry_candidates": 89,
+    "candidate_prologues": 75,
+    "called_prologue_candidates": 43,
+    "internal_bl_targets": 57
+  },
+  {
+    "component": "overlay_106",
+    "overlay_id": 106,
+    "primary_mode": "ARM",
+    "entry_candidates": 27,
+    "candidate_prologues": 24,
+    "called_prologue_candidates": 8,
+    "internal_bl_targets": 11
+  },
+  {
+    "component": "overlay_107",
+    "overlay_id": 107,
+    "primary_mode": "ARM",
+    "entry_candidates": 38,
+    "candidate_prologues": 27,
+    "called_prologue_candidates": 7,
+    "internal_bl_targets": 18
+  },
+  {
+    "component": "overlay_108",
+    "overlay_id": 108,
+    "primary_mode": "ARM",
+    "entry_candidates": 41,
+    "candidate_prologues": 36,
+    "called_prologue_candidates": 6,
+    "internal_bl_targets": 11
+  },
+  {
+    "component": "overlay_109",
+    "overlay_id": 109,
+    "primary_mode": "ARM",
+    "entry_candidates": 6,
+    "candidate_prologues": 5,
+    "called_prologue_candidates": 0,
+    "internal_bl_targets": 1
+  },
+  {
+    "component": "overlay_110",
+    "overlay_id": 110,
+    "primary_mode": "ARM",
+    "entry_candidates": 10,
+    "candidate_prologues": 8,
+    "called_prologue_candidates": 1,
+    "internal_bl_targets": 3
+  },
+  {
+    "component": "overlay_111",
+    "overlay_id": 111,
+    "primary_mode": "ARM",
+    "entry_candidates": 30,
+    "candidate_prologues": 29,
+    "called_prologue_candidates": 10,
+    "internal_bl_targets": 11
+  },
+  {
+    "component": "overlay_112",
+    "overlay_id": 112,
+    "primary_mode": "ARM",
+    "entry_candidates": 12,
+    "candidate_prologues": 12,
+    "called_prologue_candidates": 1,
+    "internal_bl_targets": 1
+  },
+  {
+    "component": "overlay_113",
+    "overlay_id": 113,
+    "primary_mode": "ARM",
+    "entry_candidates": 22,
+    "candidate_prologues": 22,
+    "called_prologue_candidates": 2,
+    "internal_bl_targets": 2
+  }
+]
