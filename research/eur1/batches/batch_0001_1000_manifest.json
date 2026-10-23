@@ -5,7 +5,7 @@
   "source": "config/eur1/arm9/symbols.txt",
   "source_sha": "d122c72eb0d37a84f3520e521edc741973102cb6",
   "selection": "1000 shortest non-SDK symbolized ARM9-main functions beginning at address >=0x02012000; sorted back into address order",
-  "notes": "All 1000 catalogued functions have known EUR1 addresses and sizes. Exactly 58 tested isolated Clang ARMv5TE code matches, 942 are NOT validated. None are CodeWarrior-matched or integrated into original game build. Isolated matches may include functions already present in upstream source.",
+  "notes": "1000 known symbols; 60 isolated Clang ARMv5TE matches, 6 additional semantically reconstructed host-tested routines, 934 queued. None newly matched with original CodeWarrior or integrated into DS build.",
   "summary": {
     "total": 1000,
     "arm": 870,
@@ -13,8 +13,10 @@
     "small": 281,
     "maximum_bytes": 152,
     "total_span_bytes": 53864,
-    "isolated_clang_byte_exact": 58,
-    "awaiting_byte_exact": 942
+    "isolated_clang_byte_exact": 60,
+    "awaiting_byte_exact": 940,
+    "semantic_c_host_tested_not_byte_matching": 6,
+    "queued_for_decompilation": 934
   },
   "functions": [
     {
@@ -263,7 +265,9 @@
       "size_bytes": 60,
       "isa": "arm",
       "upstream_symbol": "func_0201328c",
-      "status": "queued_for_decompilation"
+      "status": "semantic_c_host_tested_not_byte_matching",
+      "research_file": "research/eur1/src/nds_input_frame_semantics.c",
+      "verification": "research/eur1/tests/test_nds_input_frame_semantics.c (semantic host tests only)"
     },
     {
       "batch_index": 32,
@@ -287,7 +291,9 @@
       "size_bytes": 28,
       "isa": "arm",
       "upstream_symbol": "func_02013354",
-      "status": "queued_for_decompilation"
+      "status": "semantic_c_host_tested_not_byte_matching",
+      "research_file": "research/eur1/src/nds_input_frame_semantics.c",
+      "verification": "research/eur1/tests/test_nds_input_frame_semantics.c (semantic host tests only)"
     },
     {
       "batch_index": 35,
@@ -375,7 +381,9 @@
       "size_bytes": 20,
       "isa": "arm",
       "upstream_symbol": "_ZN5Input4InitEv",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "research_file": "research/eur1/src/nds_input_frame_semantics.c",
+      "verification": "research/eur1/scripts/verify_arm9_input_exact.py (Clang target, not CodeWarrior)"
     },
     {
       "batch_index": 46,
@@ -383,7 +391,9 @@
       "size_bytes": 100,
       "isa": "arm",
       "upstream_symbol": "_ZN5Input13func_02013b24Ei",
-      "status": "queued_for_decompilation"
+      "status": "semantic_c_host_tested_not_byte_matching",
+      "research_file": "research/eur1/src/nds_input_frame_semantics.c",
+      "verification": "research/eur1/tests/test_nds_input_frame_semantics.c (semantic host tests only)"
     },
     {
       "batch_index": 47,
@@ -391,7 +401,9 @@
       "size_bytes": 16,
       "isa": "arm",
       "upstream_symbol": "func_02013b88",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "research_file": "research/eur1/src/nds_input_frame_semantics.c",
+      "verification": "research/eur1/scripts/verify_arm9_input_exact.py (Clang target, not CodeWarrior)"
     },
     {
       "batch_index": 48,
@@ -399,7 +411,9 @@
       "size_bytes": 36,
       "isa": "arm",
       "upstream_symbol": "func_02013b98",
-      "status": "queued_for_decompilation"
+      "status": "semantic_c_host_tested_not_byte_matching",
+      "research_file": "research/eur1/src/nds_input_frame_semantics.c",
+      "verification": "research/eur1/tests/test_nds_input_frame_semantics.c (semantic host tests only)"
     },
     {
       "batch_index": 49,
@@ -407,7 +421,9 @@
       "size_bytes": 76,
       "isa": "arm",
       "upstream_symbol": "_ZN5Input13func_02013bbcEv",
-      "status": "queued_for_decompilation"
+      "status": "semantic_c_host_tested_not_byte_matching",
+      "research_file": "research/eur1/src/nds_input_frame_semantics.c",
+      "verification": "research/eur1/tests/test_nds_input_frame_semantics.c (semantic host tests only)"
     },
     {
       "batch_index": 50,
@@ -415,7 +431,9 @@
       "size_bytes": 28,
       "isa": "arm",
       "upstream_symbol": "_ZN5Input13func_02013c08Ej",
-      "status": "queued_for_decompilation"
+      "status": "semantic_c_host_tested_not_byte_matching",
+      "research_file": "research/eur1/src/nds_input_frame_semantics.c",
+      "verification": "research/eur1/tests/test_nds_input_frame_semantics.c (semantic host tests only)"
     },
     {
       "batch_index": 51,
