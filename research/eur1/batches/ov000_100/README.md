@@ -49,3 +49,23 @@ then inspect `objdiff` and `ninja changes_eur1`.
 
 No extra Nintendo game binaries, assets, original ROM bytes or CodeWarrior
 binary are committed.
+
+## Current original-compiler results: **98/100 exact standalone CodeWarrior**
+
+The user's Windows `dsi/1.2p1` output from `verify_codewarrior_100.py`
+reported **98 functions / 892 bytes identical**, with two correct-size
+instruction mismatches: `0x0206A5C0` and `0x0206A5CC` (24 bytes).
+The exact reproduction report and next diagnostic are documented in
+[CODEWARRIOR_RESULTS.md](CODEWARRIOR_RESULTS.md).
+
+Test alternate C pointer expressions for just those two functions:
+
+```powershell
+cd C:\st
+git pull --ff-only origin main
+python research/eur1/batches/ov000_100/verify_codewarrior_last2.py
+```
+
+The script writes `build/eur1/codewarrior_last2_variants.json` with
+exact-byte results for each variant, without changing the existing C source.
+**Do not count these as newly integrated official matching functions.**
