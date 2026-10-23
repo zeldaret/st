@@ -80,3 +80,9 @@ jobs:
         run: |
           clang --target=armv5te-none-eabi -march=armv5te -marm -O2 -ffreestanding -fomit-frame-pointer -ffunction-sections -c research/eur1/batches/ov000_165/overlay000_additional_165.c -o /tmp/st-ov000-extra165.o
           python3 -c 'import json; from pathlib import Path; a=json.loads(Path("research/eur1/batches/ov000_165/manifest_165.json").read_text())["functions"]; b=json.loads(Path("research/eur1/batches/ov000_100/manifest_100.json").read_text())["functions"]; aa=[x["address"] for x in a];bb=[x["address"] for x in b]; assert len(a)==165 and len(set(aa))==165 and not (set(aa)&set(bb))'
+
+      - name: Compile 500 additional reconstructed ARM9 functions (no ROM required)
+        run: |
+          clang --target=armv5te-none-eabi -march=armv5te -marm -O2 -ffreestanding -fomit-frame-pointer -ffunction-sections -c research/eur1/batches/overlay500/overlay_recovered_500.c -o /tmp/st-overlay500.o
+          python3 -m py_compile research/eur1/batches/overlay500/verify_500.py
+          python3 -c 'import json; j=json.load(open("research/eur1/batches/overlay500/manifest_500.json")); assert len(j["functions"])==500; assert j["summary"]["non_empty_functions"]==211; assert j["summary"]["originally_empty_functions"]==289'
