@@ -86,3 +86,9 @@ jobs:
           clang --target=armv5te-none-eabi -march=armv5te -marm -O2 -ffreestanding -fomit-frame-pointer -ffunction-sections -c research/eur1/batches/overlay500/overlay_recovered_500.c -o /tmp/st-overlay500.o
           python3 -m py_compile research/eur1/batches/overlay500/verify_500.py
           python3 -c 'import json; j=json.load(open("research/eur1/batches/overlay500/manifest_500.json")); assert len(j["functions"])==500; assert j["summary"]["non_empty_functions"]==211; assert j["summary"]["originally_empty_functions"]==289'
+
+      - name: Compile third batch of 500 ARM9 C reconstructions (ROM-free smoke check)
+        run: |
+          clang --target=armv5te-none-eabi -march=armv5te -marm -O2 -ffreestanding -fomit-frame-pointer -ffunction-sections -c research/eur1/batches/overlay_next500/overlay_recovered_next500.c -o /tmp/st-overlay-next500.o
+          python3 -m py_compile research/eur1/batches/overlay_next500/verify_next500.py
+          python3 -c 'import json; x=json.load(open("research/eur1/batches/overlay_next500/manifest_next500.json")); assert len(x["functions"]) == 500; assert x["summary"]["non_empty_functions"] == 245 and x["summary"]["originally_empty_functions"] == 255'
