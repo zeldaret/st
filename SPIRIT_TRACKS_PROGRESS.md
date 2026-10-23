@@ -12,8 +12,8 @@ Upstream source project: [zeldaret/st](https://github.com/zeldaret/st) (CC0). Th
 | Local mock behavior tests | PASS: wrappers (9 scenarios) and Base2 constructor tests; no ROM equivalence established |
 | Source fingerprint verification | PASS: 13 ARM9 symbol spans hashed against original EUR1 ROM; not compiler matching |
 | 20 ARM9 function spans cross-checked with existing EUR1 symbols | Exact address and size agreement, SHA-256 verified against local decompressed ROM |
-| ARMv5TE Clang exact instruction probes | **73 distinct isolated functions** (prior 28 plus 45 newly verified in 1000-function batch); **not CodeWarrior** |
-| Batch 0001 (ARM9 main) | **1,000 symbolized functions inventoried; 58 short Clang-exact; 942 unvalidated** |\n| Recompilation matching for recovered C using original CodeWarrior | Not done |
+| ARMv5TE Clang exact instruction probes | **74 distinct isolated functions**, including new Input::Init; Clang ARMv5TE only, **not CodeWarrior** |
+| Batch 0001 (ARM9 main) | **1,000 known targets: 60 isolated Clang-exact, 6 additional host-tested semantic C reconstructions, 934 queued** |
 | Native-PC-playability preparation | Critical-path source graph, ROM-free audit tool and ARM9 boot semantic regression tests added; PC runtime not started |\n| Playable rebuild/PC port | Not done |
 
 Do not mistake the upstream decompilation percentage for local research progress. Legal ownership and build requirements for the ROM/BIOS are separate from this repository.
@@ -83,3 +83,11 @@ The [batch 0001 manifest](research/eur1/batches/batch_0001_1000_manifest.json) r
 - The `ninja` baseline on the user's Windows PC still requires `extract/baserom_st_eur1.nds` locally; no Nintendo ROM/assets were committed to GitHub.
 
 **Number of newly CodeWarrior-matching functions from this phase: zero.** The deliverables are tested semantic correctness for a critical boot routine and a better prioritized decompilation map, not a playable game.
+
+## 23 Oct 2026 — Eight input and frame helper reconstructions
+
+Reconstructed ARM9 input state update, input reset, IPC special condition, keyboard polling mask, frame scanline predicate and callback dispatch from the owner's BKIP EUR Rev 1 ROM. Code lives in [`research/eur1/src/nds_input_frame_semantics.c`](research/eur1/src/nds_input_frame_semantics.c) and is deliberately **not included in the DS game build**. The [host tests](research/eur1/tests/test_nds_input_frame_semantics.c) passed under Clang with AddressSanitizer and UndefinedBehaviorSanitizer.
+
+- **2 functions with exact isolated Clang ARMv5TE instruction bytes**: `0x02013B10` (Input::Init, 20 bytes) and `0x02013B88` (clear edges, 16 bytes). [Independent verification](research/eur1/scripts/verify_arm9_input_exact.py) compares Clang output to original ROM-derived hashes, or optionally to the original local ARM9 bytes. `0x02013B88` was matched before in the prior 13-probe batch, so this increases the distinct count by **one**, from 73 to **74**.
+- **6 other functions** were reconstructed as semantic C models and behavior-tested but remain **unmatched**: `0x02013B24`, `0x02013B98`, `0x02013BBC`, `0x02013C08`, `0x0201328C`, `0x02013354`. In particular, the host models intentionally abstract direct hardware reads and bound a scanline wait loop.
+- The batch of 1000 target functions is now explicitly split into **60 Clang-exact / 6 semantic C host-tested / 934 queued**. Original CodeWarrior matching: **0 newly demonstrated**. This work supports the eventual native PC port without implementing a PC executable yet.
