@@ -485,6 +485,7 @@ def add_configure_build(cfg: ProjectConfig, n: ninja_syntax.Writer):
         rule="configure",
         implicit=[
             str(cfg.cfg_script),
+            str(cfg.tools_path / "regenerate_ninja.py"),
             # Require dsd to exist when rerunning configure.py
             str(cfg.dsd_path),
             *dsd_cfg,
@@ -1266,9 +1267,23 @@ def process_project(cfg: ProjectConfig, args: Any):
         n.newline()
 
         configure_cmdline = subprocess.list2cmdline(sys.argv[1:])
+        if cfg.platform is not None and cfg.platform.system == "windows":
+            # On Windows, Ninja can pass '&&' to Python literally instead of
+            # invoking a command shell. Use an explicit sequential runner.
+            configure_command = subprocess.list2cmdline([
+                str(cfg.python_path),
+                "tools/regenerate_ninja.py",
+                str(cfg.dsd_path),
+                *sys.argv[1:],
+            ])
+        else:
+            configure_command = (
+                f"{cfg.python_path} tools/configure.py {configure_cmdline}"
+                f" && {cfg.python_path} {cfg.delinkpy_path} {cfg.dsd_path}"
+            )
         n.rule(
             name="configure",
-            command=f"{cfg.python_path} tools/configure.py {configure_cmdline} && {cfg.python_path} {cfg.delinkpy_path} {cfg.dsd_path}",
+            command=configure_command,
             generator=True
         )
         n.newline()
