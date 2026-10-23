@@ -16,3 +16,36 @@ python research/eur1/batches/ov000_100/verify_ov000_100.py --overlay0 local_audi
 Requires Clang with ARMv5TE target plus `llvm-objcopy`. The overlay is never committed to GitHub. `manifest_100.json` carries only symbolic addresses, sizes, categories and hashes.
 
 The next task for native portability is to map these routines to their actual C++ classes and integrate **tested** logic into the correct DS modules; isolated exact-code snippets alone do not produce a PC build.
+
+## Standalone CodeWarrior verification (experimental)
+
+Once `ninja arm9_eur1 report_eur1 check_eur1`, `ninja baseline_eur1`,
+and `ninja objdiff` have succeeded **on Windows**, run this from `C:\st`:
+
+```powershell
+git pull --ff-only origin main
+python research/eur1/batches/ov000_100/verify_codewarrior_100.py
+```
+
+This test compiles the 100 research functions with the **project's CodeWarrior
+ARM dsi/1.2p1** and its flags (`-O4,p`, `-proc arm946e`, etc.) in C mode.
+It reads the produced CodeWarrior ELF function symbols with `pyelftools`,
+and compares each function's full byte span SHA-256 against the original
+EUR1 overlay 0 instruction fingerprints in `manifest_100.json`.
+
+The output is saved to:
+
+```text
+C:\st\build\eur1\codewarrior_probe_100.json
+```
+
+This report distinguishes `exact_codewarrior_standalone`,
+`different_instructions`, `different_size`, missing symbols and relocated
+or ambiguous symbols. An exact standalone match is **stronger than the existing
+Clang match**, but it is still **not an integrated upstream project match**.
+To obtain that, identify the correct original object file and C++ owning
+class, add an appropriately typed function to that translation unit, rebuild,
+then inspect `objdiff` and `ninja changes_eur1`.
+
+No extra Nintendo game binaries, assets, original ROM bytes or CodeWarrior
+binary are committed.
