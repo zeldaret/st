@@ -72,3 +72,8 @@ jobs:
         run: |
           clang --target=armv5te-none-eabi -march=armv5te -marm -O2 -ffreestanding -fomit-frame-pointer -ffunction-sections -c research/eur1/batches/ov000_100/overlay000_recovered_100.c -o /tmp/st-ov000-100.o
           python3 -c 'import json; x=json.load(open("research/eur1/batches/ov000_100/manifest_100.json")); assert len(x["functions"]) == 100'
+
+      - name: Compile additional 165 overlay0 C functions (ARMv5TE; no ROM)
+        run: |
+          clang --target=armv5te-none-eabi -march=armv5te -marm -O2 -ffreestanding -fomit-frame-pointer -ffunction-sections -c research/eur1/batches/ov000_165/overlay000_additional_165.c -o /tmp/st-ov000-extra165.o
+          python3 -c 'import json; from pathlib import Path; a=json.loads(Path("research/eur1/batches/ov000_165/manifest_165.json").read_text())["functions"]; b=json.loads(Path("research/eur1/batches/ov000_100/manifest_100.json").read_text())["functions"]; aa=[x["address"] for x in a];bb=[x["address"] for x in b]; assert len(a)==165 and len(set(aa))==165 and not (set(aa)&set(bb))'
