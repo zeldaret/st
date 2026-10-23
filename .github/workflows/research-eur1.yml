@@ -92,3 +92,9 @@ jobs:
           clang --target=armv5te-none-eabi -march=armv5te -marm -O2 -ffreestanding -fomit-frame-pointer -ffunction-sections -c research/eur1/batches/overlay_next500/overlay_recovered_next500.c -o /tmp/st-overlay-next500.o
           python3 -m py_compile research/eur1/batches/overlay_next500/verify_next500.py
           python3 -c 'import json; x=json.load(open("research/eur1/batches/overlay_next500/manifest_next500.json")); assert len(x["functions"]) == 500; assert x["summary"]["non_empty_functions"] == 245 and x["summary"]["originally_empty_functions"] == 255'
+
+      - name: Compile 1000 ARM9 candidate C code spans (ROM-free smoke test)
+        run: |
+          clang --target=armv5te-none-eabi -march=armv5te -marm -O2 -ffreestanding -fomit-frame-pointer -ffunction-sections -c research/eur1/batches/overlay_candidates_1000/candidate_reconstructions_1000.c -o /tmp/st-candidate-1000.o
+          python3 -m py_compile research/eur1/batches/overlay_candidates_1000/verify_candidates_1000.py
+          python3 -c 'import json; m=json.load(open("research/eur1/batches/overlay_candidates_1000/manifest_candidates_1000.json")); assert len(m["functions"])==1000; assert m["summary"]["function_entrypoints_confirmed_by_upstream_symbols"]+m["summary"]["entrypoints_supported_by_same_overlay_function_pointers"]==323; assert m["summary"]["post_return_candidate_not_confirmed"]+m["summary"]["possible_epilogue_or_branch_fragment_not_confirmed"]==677'
