@@ -1,0 +1,190 @@
+{
+  "schema": 1,
+  "game": "Spirit Tracks EUR Rev 1",
+  "scope": "Ten inspected C++ sources only (NOT whole project)",
+  "intent": "Grounded baseline of direct DS platform calls and control-loop dependencies for native-playability decomp work",
+  "rom_required": false,
+  "proves_matching": false,
+  "files": [
+    {
+      "path": "src/Main/Main.cpp",
+      "source_sha": "82f47f80aa5d7ef7843788801533b1620401f3df",
+      "lines": 124,
+      "indicators": {
+        "registers": 3,
+        "graphics": 1,
+        "overlay_fs": 0,
+        "backup_card": 0,
+        "interrupts": 0,
+        "input": 0,
+        "audio": 0,
+        "manual_nonmatching": 2,
+        "todos": 0
+      },
+      "boundary_reference_count": 4,
+      "notes": "Lexical counts, not machine-code matching progress"
+    },
+    {
+      "path": "src/Main/Game/Game.cpp",
+      "source_sha": "1b2cb03cd814333534be4f0f7502bf365896da02",
+      "lines": 160,
+      "indicators": {
+        "registers": 5,
+        "graphics": 0,
+        "overlay_fs": 0,
+        "backup_card": 2,
+        "interrupts": 2,
+        "input": 0,
+        "audio": 0,
+        "manual_nonmatching": 0,
+        "todos": 0
+      },
+      "boundary_reference_count": 9,
+      "notes": "Lexical counts, not machine-code matching progress"
+    },
+    {
+      "path": "src/Main/Game/GameModeBase.cpp",
+      "source_sha": "bc2164cc205cc96ae724f08d2d294ff16591424f",
+      "lines": 27,
+      "indicators": {
+        "registers": 0,
+        "graphics": 0,
+        "overlay_fs": 0,
+        "backup_card": 0,
+        "interrupts": 0,
+        "input": 0,
+        "audio": 0,
+        "manual_nonmatching": 0,
+        "todos": 0
+      },
+      "boundary_reference_count": 0,
+      "notes": "Lexical counts, not machine-code matching progress"
+    },
+    {
+      "path": "src/Main/System/OverlayManager.cpp",
+      "source_sha": "f0bfcf00a4d65af99f95cafcdbed5fc6e57539e8",
+      "lines": 93,
+      "indicators": {
+        "registers": 0,
+        "graphics": 0,
+        "overlay_fs": 2,
+        "backup_card": 0,
+        "interrupts": 0,
+        "input": 0,
+        "audio": 0,
+        "manual_nonmatching": 0,
+        "todos": 0
+      },
+      "boundary_reference_count": 2,
+      "notes": "Lexical counts, not machine-code matching progress"
+    },
+    {
+      "path": "src/025_Title/TitleScreen.cpp",
+      "source_sha": "31891da57e298f413f07e04088de25927f583ac1",
+      "lines": 376,
+      "indicators": {
+        "registers": 6,
+        "graphics": 2,
+        "overlay_fs": 0,
+        "backup_card": 0,
+        "interrupts": 0,
+        "input": 9,
+        "audio": 0,
+        "manual_nonmatching": 0,
+        "todos": 0
+      },
+      "boundary_reference_count": 17,
+      "notes": "Lexical counts, not machine-code matching progress"
+    },
+    {
+      "path": "src/025_Title/GameModeTitleScreen.cpp",
+      "source_sha": "07b1bc76a4198afe352430d1266c2f5d7317cd36",
+      "lines": 60,
+      "indicators": {
+        "registers": 0,
+        "graphics": 0,
+        "overlay_fs": 0,
+        "backup_card": 0,
+        "interrupts": 0,
+        "input": 0,
+        "audio": 0,
+        "manual_nonmatching": 0,
+        "todos": 0
+      },
+      "boundary_reference_count": 0,
+      "notes": "Lexical counts, not machine-code matching progress"
+    },
+    {
+      "path": "src/001_SceneInit/Save/SaveManager_001.cpp",
+      "source_sha": "2b015d81b8649e753c6e73f396eafc18ec18b134",
+      "lines": 100,
+      "indicators": {
+        "registers": 0,
+        "graphics": 0,
+        "overlay_fs": 0,
+        "backup_card": 5,
+        "interrupts": 0,
+        "input": 0,
+        "audio": 0,
+        "manual_nonmatching": 0,
+        "todos": 0
+      },
+      "boundary_reference_count": 5,
+      "notes": "Lexical counts, not machine-code matching progress"
+    },
+    {
+      "path": "src/026_Train/code_02102924.cpp",
+      "source_sha": "55f80a8c4d56e7c060469dbd0cc36fdaf91ce1b8",
+      "lines": 101,
+      "indicators": {
+        "registers": 0,
+        "graphics": 0,
+        "overlay_fs": 0,
+        "backup_card": 0,
+        "interrupts": 0,
+        "input": 0,
+        "audio": 0,
+        "manual_nonmatching": 0,
+        "todos": 0
+      },
+      "boundary_reference_count": 0,
+      "notes": "Lexical counts, not machine-code matching progress"
+    },
+    {
+      "path": "src/024_MainGame/MiscAdvManager.cpp",
+      "source_sha": "cf0f0dd8915bc91f9b49fac655349203823ce412",
+      "lines": 208,
+      "indicators": {
+        "registers": 0,
+        "graphics": 0,
+        "overlay_fs": 0,
+        "backup_card": 0,
+        "interrupts": 0,
+        "input": 0,
+        "audio": 0,
+        "manual_nonmatching": 0,
+        "todos": 0
+      },
+      "boundary_reference_count": 0,
+      "notes": "Lexical counts, not machine-code matching progress"
+    },
+    {
+      "path": "src/Main/System/Random.cpp",
+      "source_sha": "81fc2d9831780ba74ecd42f1e2ff559155fc0a89",
+      "lines": 16,
+      "indicators": {
+        "registers": 0,
+        "graphics": 0,
+        "overlay_fs": 0,
+        "backup_card": 0,
+        "interrupts": 0,
+        "input": 0,
+        "audio": 0,
+        "manual_nonmatching": 0,
+        "todos": 0
+      },
+      "boundary_reference_count": 0,
+      "notes": "Lexical counts, not machine-code matching progress"
+    }
+  ]
+}
