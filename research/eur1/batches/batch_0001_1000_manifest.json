@@ -5,14 +5,16 @@
   "source": "config/eur1/arm9/symbols.txt",
   "source_sha": "d122c72eb0d37a84f3520e521edc741973102cb6",
   "selection": "1000 shortest non-SDK symbolized ARM9-main functions beginning at address >=0x02012000; sorted back into address order",
-  "notes": "Listing these functions is inventory, NOT proof of decompilation or matching.",
+  "notes": "All 1000 catalogued functions have known EUR1 addresses and sizes. Exactly 58 tested isolated Clang ARMv5TE code matches, 942 are NOT validated. None are CodeWarrior-matched or integrated into original game build. Isolated matches may include functions already present in upstream source.",
   "summary": {
     "total": 1000,
     "arm": 870,
     "thumb": 130,
     "small": 281,
     "maximum_bytes": 152,
-    "total_span_bytes": 53864
+    "total_span_bytes": 53864,
+    "isolated_clang_byte_exact": 58,
+    "awaiting_byte_exact": 942
   },
   "functions": [
     {
@@ -525,7 +527,8 @@
       "size_bytes": 12,
       "isa": "arm",
       "upstream_symbol": "_ZN18UnkStruct_02049b8013func_02013fecEiPv",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 65,
@@ -909,7 +912,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "func_02014fe0",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 113,
@@ -1605,7 +1609,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_020167a8",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 200,
@@ -1725,7 +1730,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "func_02017774",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 215,
@@ -1733,7 +1739,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "func_0201777c",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 216,
@@ -1741,7 +1748,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "func_02017784",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 217,
@@ -1757,7 +1765,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "_ZN37UnkStruct_027e0960_TableEntry_04_BaseD1Ev",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 219,
@@ -1773,7 +1782,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_020177c8",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 221,
@@ -1789,7 +1799,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "_ZN37UnkStruct_027e0960_TableEntry_04_Base8vfunc_08Ev",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 223,
@@ -1845,7 +1856,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_020179a4",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 230,
@@ -1885,7 +1897,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "func_02017c34",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 235,
@@ -2037,7 +2050,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "_ZN12GameModeBase8vfunc_14Ev",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 254,
@@ -2045,7 +2059,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "_ZN12GameModeBase8vfunc_10Ev",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 255,
@@ -2053,7 +2068,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "_ZN12GameModeBase8vfunc_18Ev",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 256,
@@ -2061,7 +2077,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "_ZN12GameModeBase8vfunc_1CEv",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 257,
@@ -2069,7 +2086,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "_ZN12GameModeBase8vfunc_20Ev",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 258,
@@ -2077,7 +2095,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "_ZN12GameModeBase8vfunc_24Ev",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 259,
@@ -2293,7 +2312,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "_ZN19GameModeManagerBase6DrawUIEPc",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 286,
@@ -2309,7 +2329,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "_ZN19GameModeManagerBase8vfunc_34Eii",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 288,
@@ -2317,7 +2338,8 @@
       "size_bytes": 12,
       "isa": "arm",
       "upstream_symbol": "_ZN19GameModeManagerBase13func_020186f8Ei",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 289,
@@ -2877,7 +2899,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "_ZN24UnkStruct_0204a060_Base28vfunc_08Ei",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 359,
@@ -2925,7 +2948,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "_ZN23UnkStruct_0204a060_Base8vfunc_0CEi",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 365,
@@ -2933,7 +2957,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "_ZN23UnkStruct_0204a060_Base8vfunc_10Ev",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 366,
@@ -2981,7 +3006,8 @@
       "size_bytes": 12,
       "isa": "arm",
       "upstream_symbol": "func_0201be20",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 372,
@@ -3301,7 +3327,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_0201cd68",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 412,
@@ -3541,7 +3568,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "_ZN26UnkStruct_0204a110_Sub7_0813func_0201ec30Ev",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 442,
@@ -3797,7 +3825,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "func_0201f5bc",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 474,
@@ -3949,7 +3978,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_020203d0",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 493,
@@ -3957,7 +3987,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_020203d4",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 494,
@@ -3965,7 +3996,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_020203d8",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 495,
@@ -4029,7 +4061,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "func_0202052c",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 503,
@@ -4037,7 +4070,8 @@
       "size_bytes": 12,
       "isa": "arm",
       "upstream_symbol": "func_02020534",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 504,
@@ -4125,7 +4159,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "func_02020de0",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 515,
@@ -4205,7 +4240,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "_ZN32UnkStruct_ov000_020b504c_0C_Base13func_02021becEs",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 525,
@@ -4237,7 +4273,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "func_02021c3c",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 529,
@@ -4261,7 +4298,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "func_02021e00",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 532,
@@ -4285,7 +4323,8 @@
       "size_bytes": 12,
       "isa": "arm",
       "upstream_symbol": "func_02021f44",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 535,
@@ -4429,7 +4468,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "func_02022884",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 553,
@@ -4437,7 +4477,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_0202288c",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 554,
@@ -4445,7 +4486,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_02022890",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 555,
@@ -4453,7 +4495,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_02022894",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 556,
@@ -4461,7 +4504,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_02022898",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 557,
@@ -6061,7 +6105,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "SND_func_0045",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 757,
@@ -6165,7 +6210,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "func_0202d45c",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 770,
@@ -6901,7 +6947,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "__convert_from_newlines",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 862,
@@ -7029,7 +7076,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "secure_error_func_02033e50",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 878,
@@ -7261,7 +7309,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_02038cd0",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 907,
@@ -7269,7 +7318,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_02038cd4",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 908,
@@ -7285,7 +7335,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "func_02038cec",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 910,
@@ -7493,7 +7544,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_0203b920",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 936,
@@ -7509,7 +7561,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_0203b930",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 938,
@@ -7517,7 +7570,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_0203b934",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 939,
@@ -7525,7 +7579,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "sys_ReadChar",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 940,
@@ -7533,7 +7588,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_0203b940",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 941,
@@ -7557,7 +7613,8 @@
       "size_bytes": 8,
       "isa": "arm",
       "upstream_symbol": "__close_console",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 944,
@@ -7613,7 +7670,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_0203c9e0",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 951,
@@ -7749,7 +7807,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "func_0203d26c",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 968,
@@ -7933,7 +7992,8 @@
       "size_bytes": 4,
       "isa": "arm",
       "upstream_symbol": "__sinit_0203da40",
-      "status": "queued_for_decompilation"
+      "status": "isolated_clang_armv5te_byte_exact",
+      "verification": "verify_batch_0001.py (independent Clang -O2 function code match; not Nintendo CodeWarrior)"
     },
     {
       "batch_index": 991,
