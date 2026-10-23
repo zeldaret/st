@@ -9,7 +9,9 @@ Upstream source project: [zeldaret/st](https://github.com/zeldaret/st) (CC0). Th
 | Indexed 3,442 named NitroFS resources | Done; metadata only |
 | Generated function-entry heuristics | Done; not validated functions |
 | Preliminary C reconstructions | **16** total (3 initial + 10 ARM9 wrappers + 3 Base2 class helpers); syntax checked, **none binary matched** |
-| Local mock behavior tests | PASS: wrappers (9 scenarios) and Base2 constructor tests; no ROM equivalence established |\n| Source fingerprint verification | PASS: 13 ARM9 symbol spans hashed against original EUR1 ROM; not compiler matching |\n| Recompilation matching for recovered C | Not done |
+| Local mock behavior tests | PASS: wrappers (9 scenarios) and Base2 constructor tests; no ROM equivalence established |
+| Source fingerprint verification | PASS: 13 ARM9 symbol spans hashed against original EUR1 ROM; not compiler matching |
+| Recompilation matching for recovered C | Not done |
 | Playable rebuild/PC port | Not done |
 
 Do not mistake the upstream decompilation percentage for local research progress. Legal ownership and build requirements for the ROM/BIOS are separate from this repository.
