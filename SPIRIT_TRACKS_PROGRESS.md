@@ -14,7 +14,7 @@ Upstream source project: [zeldaret/st](https://github.com/zeldaret/st) (CC0). Th
 | 20 ARM9 function spans cross-checked with existing EUR1 symbols | Exact address and size agreement, SHA-256 verified against local decompressed ROM |
 | ARMv5TE Clang exact instruction probes | **74 distinct isolated functions**, including new Input::Init; Clang ARMv5TE only, **not CodeWarrior** |
 | Batch 0001 (ARM9 main) | **1,000 known targets: 60 isolated Clang-exact, 6 additional host-tested semantic C reconstructions, 934 queued** |
-| Native-PC-playability preparation | Critical-path source graph, ROM-free audit tool and ARM9 boot semantic regression tests added; PC runtime not started |\n| Playable rebuild/PC port | Not done |
+| Native-PC-playability preparation | Critical-path source graph, ROM-free audit tool and ARM9 boot semantic regression tests added; PC runtime not started |\n| Overlay 0 C research | **265 distinct isolated Clang-exact functions:** 144 nonempty + 121 genuine empty; 1,940 bytes; **0 CodeWarrior integrations** |\n| Playable rebuild/PC port | Not done |
 
 Do not mistake the upstream decompilation percentage for local research progress. Legal ownership and build requirements for the ROM/BIOS are separate from this repository.
 
@@ -99,3 +99,11 @@ Reconstructed ARM9 input state update, input reset, IPC special condition, keybo
 **Locally reproduced:** The entire 100-function C source was compiled together into one ARMv5TE Clang ELF object with `-O2 -ffunction-sections`. All **100/100** isolated emitted function sections are **byte-for-byte identical** to their spans in the user's decompressed, SHA-1-verified EUR1 overlay-0 image, totaling **916 original ARM instruction bytes**. All addresses and sizes agree with the repository's existing EUR1 overlay0 symbol map. [Manifest](research/eur1/batches/ov000_100/manifest_100.json) and [verification script](research/eur1/batches/ov000_100/verify_ov000_100.py) allow local rechecks against `overlay_000.bin` extracted from the owner's original ROM.
 
 **Scope limit:** This is a C reconstruction, **not** source integrated into the official DS game's build; no original CodeWarrior matching or gameplay test has been shown. It has **not** begun a native PC port. The code was published via [PR #2](https://github.com/zeranemesis/st/pull/2). No proprietary original ROM, assembly, BIOS or assets have been committed.
+
+## 23 Oct 2026 — Further maximum verified ov000 batch: +165 C reconstructions
+
+A second [overlay-0 C reconstruction batch](research/eur1/batches/ov000_165/) adds **165 distinct C function definitions that are not in the previous 100-function batch**. The original EUR1 overlay functions consist of **121 genuine empty ARM `BX LR` returns, 25 constant returns, and 19 other short nonempty operations**. All **165/165** were compiled in one Clang ARMv5TE object with `-O2 -ffunction-sections` and the instructions in each separate function section matched the original locally extracted SHA-1-verified overlay-0 bytes **byte-for-byte**: **1,024 machine-code bytes**. Intentional corruption of the original image was rejected.
+
+This results in **265 distinct overlay-0 research C functions (144 nonempty, 121 empty; 1,940 machine-code bytes)** across the [100-function batch](research/eur1/batches/ov000_100/) and the [165-function batch](research/eur1/batches/ov000_165/). No code from either batch has been integrated into the game's original `src/` build, and **0 newly matching functions were established with the original CodeWarrior compiler**. These are isolated Clang-exact C reconstructions with provisional signatures, not a playable DS build or PC port. The 165 were merged via [PR #3](https://github.com/zeranemesis/st/pull/3).
+
+The next productive decompilation effort should concentrate on nonempty gameplay/control-flow functions, true C++ method signatures and original target-compiler equivalence instead of inflating totals with empty returns.
