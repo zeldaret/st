@@ -1,0 +1,40 @@
+name: Spirit Tracks EUR1 research checks
+
+on:
+  push:
+    paths:
+      - 'research/eur1/src/**'
+      - 'research/eur1/tests/**'
+      - 'research/eur1/scripts/**'
+      - '.github/workflows/research-eur1.yml'
+  pull_request:
+    paths:
+      - 'research/eur1/src/**'
+      - 'research/eur1/tests/**'
+      - 'research/eur1/scripts/**'
+      - '.github/workflows/research-eur1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Python scripts
+        run: |
+          python3 -m py_compile research/eur1/scripts/verify_arm9_functions.py
+          python3 -m py_compile research/eur1/scripts/analyze_nds.py
+      - name: Host behavior tests - ARM9 wrappers
+        run: |
+          clang -std=c11 -Wall -Wextra -Werror -pedantic             -o /tmp/st-arm9-tests research/eur1/tests/test_recovered_arm9_wrappers.c
+          /tmp/st-arm9-tests
+      - name: Host behavior tests - Base2
+        run: |
+          clang -std=c11 -Wall -Wextra -Werror -pedantic             -o /tmp/st-base2-tests research/eur1/tests/test_base2_constructors.c
+          /tmp/st-base2-tests
+      - name: Syntax and ARM target compilation (NOT CodeWarrior matching)
+        run: |
+          clang --target=armv5te-none-eabi -march=armv5te -marm             -std=c11 -ffreestanding -Wall -Wextra -Werror             -c research/eur1/src/recovered_base2_constructors.c -o /tmp/st-base2-arm.o
