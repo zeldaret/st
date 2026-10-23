@@ -11,7 +11,9 @@ Upstream source project: [zeldaret/st](https://github.com/zeldaret/st) (CC0). Th
 | Preliminary C reconstructions | **23 total** (3 original + 10 ARM9 batch 1 + 10 ARM9 batch 2); **none binary matched** |
 | Local mock behavior tests | PASS: wrappers (9 scenarios) and Base2 constructor tests; no ROM equivalence established |
 | Source fingerprint verification | PASS: 13 ARM9 symbol spans hashed against original EUR1 ROM; not compiler matching |
-| 20 ARM9 function spans cross-checked with existing EUR1 symbols | Exact address and size agreement, SHA-256 verified against local decompressed ROM |\n| Recompilation matching for recovered C | Not done |
+| 20 ARM9 function spans cross-checked with existing EUR1 symbols | Exact address and size agreement, SHA-256 verified against local decompressed ROM |
+| ARMv5TE Clang exact instruction probe | **PASS** for one 8-byte ARM9 leaf function `0x0201BAE4` (not CodeWarrior) |
+| Recompilation matching for recovered C using original CodeWarrior | Not done |
 | Playable rebuild/PC port | Not done |
 
 Do not mistake the upstream decompilation percentage for local research progress. Legal ownership and build requirements for the ROM/BIOS are separate from this repository.
@@ -37,3 +39,15 @@ Added `research/eur1/src/recovered_arm9_batch2.c` and `research/eur1/tests/test_
 * The initial three research functions are not included in the 20-item ARM9 manifest: one belongs to the main ARM9 boot code and the other two to overlays. They remain unproven.
 * Existing symbols and previously known addresses are not evidence of new upstream matching progress. The 10 batch-1 and 10 batch-2 wrappers are **approximations**, not replacements for existing upstream source.
 * Next objective: establish EUR1 target-compiler baseline and run objdiff/byte comparisons; **zero** new binary-matching functions have been demonstrated by the research batches.
+
+## 23 Oct 2026 — first machine-byte equivalence probe
+
+`research/eur1/probes/leaf_0201BAE4.c` is a standalone candidate for `UnkStruct_0204a060_Base2::vfunc_08(int)`. It returns 1, ignoring its arguments. Running:
+
+```sh
+python research/eur1/scripts/check_matching_leaf.py --rom extract/baserom_st_eur1.nds
+```
+
+compiled its 8 bytes with Clang `--target=armv5te-none-eabi -march=armv5te -marm -O2` and compared them **byte for byte with the uploaded original EUR1 ROM**. Local result: **PASS**. Without `--rom`, the script compares against the SHA-256 fingerprint recorded from that ROM, and can run in CI without copyrighted data.
+
+**Crucial boundary:** this proves identical machine instructions for one tiny leaf method under Clang; it is *not* CodeWarrior recompilation, not upstream source-level matching, and must not be counted as a new function matched in the `zeldaret/st` build. The recorded 16 experimental reconstructions include this function already; do not double-count the probe.
