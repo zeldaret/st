@@ -14,7 +14,7 @@ Upstream source project: [zeldaret/st](https://github.com/zeldaret/st) (CC0). Th
 | 20 ARM9 function spans cross-checked with existing EUR1 symbols | Exact address and size agreement, SHA-256 verified against local decompressed ROM |
 | ARMv5TE Clang exact instruction probes | **73 distinct isolated functions** (prior 28 plus 45 newly verified in 1000-function batch); **not CodeWarrior** |
 | Batch 0001 (ARM9 main) | **1,000 symbolized functions inventoried; 58 short Clang-exact; 942 unvalidated** |\n| Recompilation matching for recovered C using original CodeWarrior | Not done |
-| Playable rebuild/PC port | Not done |
+| Native-PC-playability preparation | Critical-path source graph, ROM-free audit tool and ARM9 boot semantic regression tests added; PC runtime not started |\n| Playable rebuild/PC port | Not done |
 
 Do not mistake the upstream decompilation percentage for local research progress. Legal ownership and build requirements for the ROM/BIOS are separate from this repository.
 
@@ -71,3 +71,15 @@ Combined with the previously confirmed 15 constant-return leaves, this establish
 The [batch 0001 manifest](research/eur1/batches/batch_0001_1000_manifest.json) records 870 ARM and 130 Thumb known function spans in the main ARM9 game code. These are **targets**, not decompiled sources. The first [58 short C code probes](research/eur1/batches/batch_0001_short_exact_58.c) generated 356 machine-code bytes identical to locally verified EUR1 ARM9 output when each was compiled separately under Clang ARMv5TE. Across previous codegen experiments this adds **45 newly verified** distinct Clang-exact addresses, for **73 distinct isolated Clang-exact probes total** (13 of the current 58 overlapped prior probes). The [verification script](research/eur1/batches/verify_batch_0001.py) checks the original SHA-1 and recompilation bytes on a local ROM; the remaining 942 functions are explicitly listed as awaiting validation.
 
 **This does not mean 1,000 functions have been decompiled** or imply any progress in original CodeWarrior matching or game playability. See [batch detailed README](research/eur1/batches/README.md).
+
+## 23 Oct 2026 — decompilation focused on a future native playable game
+
+**Future goal:** playable **native PC port**, but **no PC port implementation yet**. Rather than only chasing short Clang instruction matches, the priority is code actually used by boot -> frame loop -> title -> file selection -> gameplay/train -> save. See [decompilation-first plan](research/eur1/NATIVE_PORT_DECOMP_PLAN.md) and the [ten-file source snapshot](research/eur1/reports/critical_path_source_snapshot.json).
+
+- New **ROM-free audit**: `research/eur1/scripts/decomp_readiness.py` walks C++ source files and flags DS register/GX/FS/CARD/input/audio uses, non-matching markers, and TODOs. It does **not** compute a source-matching percentage. Three unit tests passed locally, and the script is included in research CI.
+- Located the actual frame event sequence in `src/Main/Game/Game.cpp`: `main() -> gGame.Run()`, mode creation, update callbacks, graphics flush, frame counter and interrupt synchronization.
+- Confirmed `OverlayManager` uses `FS_LoadOverlay`/`FS_UnloadOverlay`, the title screen has input-driven state transitions, and `SaveManager` uses cartridge-backed saves and duplicate block integrity checks. These become named decompilation milestones.
+- The upstream `src/Main/Main.cpp` still marks `func_0200093c` as non-matching and its current loop seems inconsistent with ROM instructions. Added a separate [semantic reconstruction](research/eur1/src/entry_fill32_semantics.c) and [host guard tests](research/eur1/tests/test_entry_fill32_semantics.c) that check the destination, byte count, whole-word rounding and return register. They passed Clang host tests with sanitizers. This **is not** CodeWarrior matching and was **not** inserted into the DS game source.
+- The `ninja` baseline on the user's Windows PC still requires `extract/baserom_st_eur1.nds` locally; no Nintendo ROM/assets were committed to GitHub.
+
+**Number of newly CodeWarrior-matching functions from this phase: zero.** The deliverables are tested semantic correctness for a critical boot routine and a better prioritized decompilation map, not a playable game.
