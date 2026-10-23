@@ -107,3 +107,9 @@ A second [overlay-0 C reconstruction batch](research/eur1/batches/ov000_165/) ad
 This results in **265 distinct overlay-0 research C functions (144 nonempty, 121 empty; 1,940 machine-code bytes)** across the [100-function batch](research/eur1/batches/ov000_100/) and the [165-function batch](research/eur1/batches/ov000_165/). No code from either batch has been integrated into the game's original `src/` build, and **0 newly matching functions were established with the original CodeWarrior compiler**. These are isolated Clang-exact C reconstructions with provisional signatures, not a playable DS build or PC port. The 165 were merged via [PR #3](https://github.com/zeranemesis/st/pull/3).
 
 The next productive decompilation effort should concentrate on nonempty gameplay/control-flow functions, true C++ method signatures and original target-compiler equivalence instead of inflating totals with empty returns.
+
+## 23 Oct 2026 — CodeWarrior standalone verifies 98/100 overlay-0 C functions
+
+The owner's local `codewarrior_probe_100.json` reports **98 distinct standalone original-CodeWarrior ARM instruction matches (892 bytes)** out of 100 C reconstructions (916 bytes), compiled under `dsi/1.2p1 -O4,p`. Two 12-byte indexed word accessors, `0x0206A5C0` and `0x0206A5CC`, have matching size but different instructions and zero relocations. This supersedes the earlier blanket statement of zero CodeWarrior *standalone* matches; there are still **zero newly established integrated project/objdiff matching functions** from this isolated research batch.
+
+Added [the result analysis](research/eur1/batches/ov000_100/CODEWARRIOR_RESULTS.md) and a [12-variant original-compiler probe](research/eur1/batches/ov000_100/verify_codewarrior_last2.py) for resolving the two mismatches on Windows without touching the 98 known matches. No CodeWarrior-exact success for those variants has been claimed prior to executing the tool on Windows.
