@@ -69,7 +69,7 @@ jobs:
         run: python3 research/eur1/scripts/verify_arm9_input_exact.py
 
       - name: Parse CodeWarrior research verification script (no proprietary compiler required)
-        run: python3 -m py_compile research/eur1/batches/ov000_100/verify_codewarrior_100.py
+        run: python3 -m py_compile research/eur1/batches/ov000_100/verify_codewarrior_100.py research/eur1/batches/ov000_100/verify_codewarrior_last2.py
 
       - name: Compile 100 overlay0 decompilation functions (ARMv5TE, not CodeWarrior)
         run: |
