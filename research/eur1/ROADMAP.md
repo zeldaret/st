@@ -20,6 +20,10 @@ Source of truth: [zeldaret/st](https://github.com/zeldaret/st). This fork uses t
 - [ ] Track remaining unmatched bytes and all regressions until the supported `eur1` build is matching.
 - [ ] Consider PC port separately after decompilation; a compilable DS ROM is not a playable PC port.
 
+## Primary project objective (updated)
+
+The long-term goal for this fork is a **playable native PC edition**, not simply 100% DS matching. For now: **decompile and validate the DS game**, with special priority given to the frame loop, scenes, input, title screen, train movement, save logic and the surrounding data formats. Do not start a PC executable until these contracts and the DS reference build are sufficiently understood. See [native-port-focused decomp plan](NATIVE_PORT_DECOMP_PLAN.md) and [critical-path source snapshot](reports/critical_path_source_snapshot.json).
+
 ## Validation levels
 1. **Disassembled**: ARM/Thumb instructions recovered (not C).
 2. **Provisional C**: readable approximation (our current research).
