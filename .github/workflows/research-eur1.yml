@@ -6,12 +6,14 @@ on:
       - 'research/eur1/src/**'
       - 'research/eur1/tests/**'
       - 'research/eur1/scripts/**'
+      - 'research/eur1/probes/**'
       - '.github/workflows/research-eur1.yml'
   pull_request:
     paths:
       - 'research/eur1/src/**'
       - 'research/eur1/tests/**'
       - 'research/eur1/scripts/**'
+      - 'research/eur1/probes/**'
       - '.github/workflows/research-eur1.yml'
   workflow_dispatch:
 
@@ -54,3 +56,12 @@ jobs:
         run: |
           clang -std=c11 -Wall -Wextra -Werror -pedantic -o /tmp/st-fill32 research/eur1/tests/test_entry_fill32_semantics.c
           /tmp/st-fill32
+
+
+      - name: Input and VCOUNT semantic regression tests (ROM-free)
+        run: |
+          clang -std=c11 -O1 -Wall -Wextra -Werror -pedantic -o /tmp/st-input-semantics research/eur1/tests/test_nds_input_frame_semantics.c
+          /tmp/st-input-semantics
+
+      - name: Verify two input ARM9 exact Clang-codegen probes
+        run: python3 research/eur1/scripts/verify_arm9_input_exact.py
