@@ -7,6 +7,7 @@ on:
       - 'research/eur1/tests/**'
       - 'research/eur1/scripts/**'
       - 'research/eur1/probes/**'
+      - 'research/eur1/batches/**'
       - '.github/workflows/research-eur1.yml'
   pull_request:
     paths:
@@ -14,6 +15,7 @@ on:
       - 'research/eur1/tests/**'
       - 'research/eur1/scripts/**'
       - 'research/eur1/probes/**'
+      - 'research/eur1/batches/**'
       - '.github/workflows/research-eur1.yml'
   workflow_dispatch:
 
@@ -65,3 +67,8 @@ jobs:
 
       - name: Verify two input ARM9 exact Clang-codegen probes
         run: python3 research/eur1/scripts/verify_arm9_input_exact.py
+
+      - name: Compile 100 overlay0 decompilation functions (ARMv5TE, not CodeWarrior)
+        run: |
+          clang --target=armv5te-none-eabi -march=armv5te -marm -O2 -ffreestanding -fomit-frame-pointer -ffunction-sections -c research/eur1/batches/ov000_100/overlay000_recovered_100.c -o /tmp/st-ov000-100.o
+          python3 -c 'import json; x=json.load(open("research/eur1/batches/ov000_100/manifest_100.json")); assert len(x["functions"]) == 100'

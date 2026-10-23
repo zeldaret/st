@@ -1,0 +1,711 @@
+{
+  "game": "The Legend of Zelda: Spirit Tracks",
+  "revision": "EUR Rev 1 BKIP",
+  "rom_sha1": "dcb221a89acb894503a461c2c7d4cfdad9a06b68",
+  "module": "ARM9 overlay 000",
+  "overlay_start": "0x02051AE0",
+  "overlay_sha1": "94a5cc04665bd7687a50dc26011e3e604faf3092",
+  "validation": "100 C bodies -> standalone Clang -O2 ARMv5TE exact code; not original CodeWarrior",
+  "functions": [
+    {
+      "address": "0x02057ED8",
+      "size_bytes": 8,
+      "category": "write_word",
+      "original_span_sha256": "505b94340fbfdd3d8e442a68bb956489c518053106e3f320e3074676d41dcf1c",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020580E4",
+      "size_bytes": 8,
+      "category": "write_word",
+      "original_span_sha256": "c7be09c47b3d86e889cd449335abee714590bf89def107eff89cca0990ceef76",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0205A084",
+      "size_bytes": 12,
+      "category": "nested_indexed_read",
+      "original_span_sha256": "4ca5a56a2be44bbc3f4cdfc537ad3d4e2609e4d08024d29b7b76d5b3296ca0ab",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0205A090",
+      "size_bytes": 12,
+      "category": "read_nested_word",
+      "original_span_sha256": "f7aa43f920d21bbe31dfafb949049313604d4249bb3827202841d9a84500cd51",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0205A09C",
+      "size_bytes": 12,
+      "category": "read_nested_word",
+      "original_span_sha256": "ab1f508c7b3529589fd9df03ccb116be06941f4ee80ee44e567c1ac1ab953e8f",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0205C188",
+      "size_bytes": 8,
+      "category": "write_word",
+      "original_span_sha256": "d6fdb6fb53b97ea0ffdf9e38f755ba28aa6bc13990292a8f10d4d3904cb10c33",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0205C888",
+      "size_bytes": 12,
+      "category": "masked_increment",
+      "original_span_sha256": "e124a25d2d2a54845f3516c6b39b423eadd8356624cacf63f62432a364e0c6f1",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02061030",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02061224",
+      "size_bytes": 12,
+      "category": "set_byte",
+      "original_span_sha256": "3ad8adaa1b46eadd6bf6903d204cfebe244833e33a3ab5e4f9a734863c97885d",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02061230",
+      "size_bytes": 12,
+      "category": "set_byte",
+      "original_span_sha256": "426e74b04b990225327e76e0e8b278602fe0367d6a3acde1f4a22c378e770079",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0206123C",
+      "size_bytes": 12,
+      "category": "set_byte",
+      "original_span_sha256": "1dfcbd42ed0edf666c99c86b6947fee6de243405a912ff69c64521fd659db92c",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02064548",
+      "size_bytes": 8,
+      "category": "read_byte",
+      "original_span_sha256": "a5a30e796667f1f265e731b85a5f514a77b68cfd463efaa7e383228eaaffac0c",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02066364",
+      "size_bytes": 12,
+      "category": "set_word",
+      "original_span_sha256": "3cd7778275ded59fbbc20414172b770cc926236e55c2d0fcc1f0daac8af2a21a",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020669D0",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02067234",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0206723C",
+      "size_bytes": 8,
+      "category": "return_not_constant",
+      "original_span_sha256": "6143299c415a779d14d46483b05772d81c6b595bc189b4499503e30275041932",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02067BF0",
+      "size_bytes": 8,
+      "category": "read_word",
+      "original_span_sha256": "f794a96f7ae6cca84512e07d84d5433bb44a5caedd5c59ce72b1fa2cdf86e291",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02067BF8",
+      "size_bytes": 8,
+      "category": "read_word",
+      "original_span_sha256": "f784f97224e88b07c2539cb007a7a0f937f635d59f538c9f3e1d31af77ad9831",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0206869C",
+      "size_bytes": 8,
+      "category": "write_word",
+      "original_span_sha256": "505b94340fbfdd3d8e442a68bb956489c518053106e3f320e3074676d41dcf1c",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020691D8",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02069814",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02069C14",
+      "size_bytes": 8,
+      "category": "write_word",
+      "original_span_sha256": "d1fd7b2e6da9015b732cf13cf69008e3f71aaaaa8b9f1a46942dacf1380e06f7",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0206A5C0",
+      "size_bytes": 12,
+      "category": "indexed_write",
+      "original_span_sha256": "c3bb7a3b13de5d83e1ee8b100e8d4fb6207894dc6b4fd3f8f44d3f3e867b362e",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0206A5CC",
+      "size_bytes": 12,
+      "category": "indexed_read",
+      "original_span_sha256": "0da51a1da80c7af000447388e9555e5883a999c684e518d69be9321e99447046",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0206F994",
+      "size_bytes": 12,
+      "category": "set_byte",
+      "original_span_sha256": "3b737b1cf022d92a71403f153e470aabd5ffab44398e735c3628a87a0c063398",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020702D0",
+      "size_bytes": 12,
+      "category": "nested_indexed_read",
+      "original_span_sha256": "53327a2a5e400150a7a0267194c5c2f53eaf2e6f3dd30cecfe4849c06e3fb33a",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020703F0",
+      "size_bytes": 8,
+      "category": "fourth_parameter",
+      "original_span_sha256": "5e64b91b57eaf124341a5f84484d853cfe5e97bae40e8d7c8bf60c7ed4c6969d",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207056C",
+      "size_bytes": 12,
+      "category": "nested_pointer_offset",
+      "original_span_sha256": "34f716139667b1e7bc158b8bbe85fb1842f664c69cee35e73030c43ec5a511c2",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02070588",
+      "size_bytes": 12,
+      "category": "read_nested_word",
+      "original_span_sha256": "8d410b3a5da9e26b8e34590820441c73a86b4128823d530521268dd96996d1e6",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02070594",
+      "size_bytes": 12,
+      "category": "nested_pointer_offset",
+      "original_span_sha256": "277040859174dc59a533008f7f11288223da42dc7fb015ba8e1f10a4a7bdc4c7",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02073180",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "ad1df9f579a087aa956d75d5a8ddce90092c2704e14b5c58ec4779f5bbc9103c",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020731A4",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020731AC",
+      "size_bytes": 12,
+      "category": "set_byte",
+      "original_span_sha256": "99771cb16edd8315d0ed4585c1c3fe2cb06de2baf2c4a1b63c2f7d903f5fb2a4",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02073704",
+      "size_bytes": 8,
+      "category": "read_word",
+      "original_span_sha256": "68a639b2dffac301817461b8b1e1e2fbca60e4b4db136a34b582411c8b7d17ba",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207370C",
+      "size_bytes": 8,
+      "category": "read_word",
+      "original_span_sha256": "fdc1710f100ccf2b13937a27e7f23ccda5a1973826c8d8f3b7db09e6988fe8a4",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02073EB4",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020746E4",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "caf9ecb434891f282b7fc815074a1d9d7cd42be55b9e16925d76c0b5e9fb1c13",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02074790",
+      "size_bytes": 12,
+      "category": "set_byte",
+      "original_span_sha256": "99771cb16edd8315d0ed4585c1c3fe2cb06de2baf2c4a1b63c2f7d903f5fb2a4",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02074814",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "14e29d8546e16c2862278bddeb80beb41b4943971c5e1bf329c9fce4245d8913",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02078D20",
+      "size_bytes": 12,
+      "category": "set_word",
+      "original_span_sha256": "8673ff4451f71688c3e0a5f59ff5b35f441727fbc2d67370a4cea262a9988113",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02079058",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020791FC",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "14e29d8546e16c2862278bddeb80beb41b4943971c5e1bf329c9fce4245d8913",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02079500",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207ABE8",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "caf9ecb434891f282b7fc815074a1d9d7cd42be55b9e16925d76c0b5e9fb1c13",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207AD50",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "ad1df9f579a087aa956d75d5a8ddce90092c2704e14b5c58ec4779f5bbc9103c",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207AEBC",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "360e42c8d5fdec86ec8ac1e7dee4036c011d5d765363a8ab68e21cde9f86df6b",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207B4D4",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "a526138cfeb4c3f8bc07038b2671aa5bc63ec3d9a5942f22c0d7bf8112651659",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207C034",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207C03C",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207C044",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207C308",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207C4D0",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "14e29d8546e16c2862278bddeb80beb41b4943971c5e1bf329c9fce4245d8913",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207CAF4",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207D40C",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "caf9ecb434891f282b7fc815074a1d9d7cd42be55b9e16925d76c0b5e9fb1c13",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207EDB8",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207EEB8",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207FAD8",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207FAE0",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "14e29d8546e16c2862278bddeb80beb41b4943971c5e1bf329c9fce4245d8913",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207FAE8",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0207FBC4",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02080900",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020819D0",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02081B9C",
+      "size_bytes": 12,
+      "category": "nested_pointer_offset",
+      "original_span_sha256": "3ee720299be472c764b676ec1b49115fc1c95a33e3041d76360d9e6c2bf9b2d6",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02082368",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02082E14",
+      "size_bytes": 12,
+      "category": "nested_pointer_offset",
+      "original_span_sha256": "1634afc4412e51bb346d52ac1bfb24c32053d7631b89abffb8f036f12557ddd9",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02082E20",
+      "size_bytes": 12,
+      "category": "nested_pointer_offset",
+      "original_span_sha256": "a6a5d278e8bce8cc51dca04f266d54b122766b7b4eceb45521422d8aee361d12",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0208DC34",
+      "size_bytes": 12,
+      "category": "read_nested_byte",
+      "original_span_sha256": "44e5ae3a93f1cd87978c6cb23622aae4d0d0a40c7f207a15a398da9bf62ee195",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020901F0",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02093BD8",
+      "size_bytes": 12,
+      "category": "nested_pointer_offset",
+      "original_span_sha256": "bb393117e841551fc360decd059b5331409353490b56d06de6512c23da36d3ac",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02096CF0",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "2810ef3a160764ede46311b2fe05e7c810121773532fa2e45434edea870c1257",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02096CF8",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "e8018374b46b9957b110b80617a3d649f0b9f89d4d5f5e371bf9888c83810c5f",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02096D00",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "c6199a9b172af110e68431c6193ee04fc506df4706d3423f7915f5d0cef0531b",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02096D08",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "4e646276793fa17646a1a6ae032248f352722b4335306a2c8d7015d633f78abc",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02096D14",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020977A0",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02097998",
+      "size_bytes": 8,
+      "category": "pointer_offset",
+      "original_span_sha256": "9c9d78485f01447e2f0344b6a2e4bd8598cc48225a575727e645a5fe8d6aa22a",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02097A38",
+      "size_bytes": 8,
+      "category": "read_word",
+      "original_span_sha256": "bc7ed00b838995180d3bbf9e6e7b34b80030014fb0cce98eb890aaf3999b066f",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020984FC",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0209851C",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x02099A70",
+      "size_bytes": 12,
+      "category": "set_word",
+      "original_span_sha256": "4e04ee5e8b0262b528762ebe6bb10dc4fc3c9037cac69eff72906b7667e6ea14",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0209A190",
+      "size_bytes": 8,
+      "category": "read_word",
+      "original_span_sha256": "68a639b2dffac301817461b8b1e1e2fbca60e4b4db136a34b582411c8b7d17ba",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0209A198",
+      "size_bytes": 8,
+      "category": "read_word",
+      "original_span_sha256": "68a639b2dffac301817461b8b1e1e2fbca60e4b4db136a34b582411c8b7d17ba",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0209A760",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0209C338",
+      "size_bytes": 8,
+      "category": "write_word",
+      "original_span_sha256": "7364c5e8b2d6b8af5743bec7125105910f66c6e625bcf25a21b767f7de5a2a19",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0209C874",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "750f0d59b1daff56ae1c60e4a0b2f65ecc20b25861e8bbe0ca9f2d911433dfa7",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0209C930",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "6dcd5e75586fe6683156c0d559d4827b73bd48d501fa5781a1c6099aacd7c877",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0209CA64",
+      "size_bytes": 8,
+      "category": "pointer_offset",
+      "original_span_sha256": "d5067b070d30013b6c9a85dc6906da7038dde479912531cc19405b57fb2b5a82",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0209CB0C",
+      "size_bytes": 8,
+      "category": "read_word",
+      "original_span_sha256": "f794a96f7ae6cca84512e07d84d5433bb44a5caedd5c59ce72b1fa2cdf86e291",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0209D104",
+      "size_bytes": 8,
+      "category": "return_constant",
+      "original_span_sha256": "007f34a6c3441b0240da53f253e513b959105da2d8803255e1856aa48f48db47",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0209D22C",
+      "size_bytes": 12,
+      "category": "set_word",
+      "original_span_sha256": "4e04ee5e8b0262b528762ebe6bb10dc4fc3c9037cac69eff72906b7667e6ea14",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x0209F160",
+      "size_bytes": 12,
+      "category": "read_nested_word",
+      "original_span_sha256": "ece681f8ca4485b3cd66a1da4bd8600ea2c9e531dec885b96a5d8664b0839683",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020A1348",
+      "size_bytes": 8,
+      "category": "pointer_offset",
+      "original_span_sha256": "96182e09ceb94280dc46274be4685c8851b261e77b23e354841945fd4474082a",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020A1350",
+      "size_bytes": 8,
+      "category": "read_byte",
+      "original_span_sha256": "0cdc6d944774256058f84d1316d6077a218fc5f37c23508a13d15946e5aba560",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020A4E7C",
+      "size_bytes": 8,
+      "category": "read_word",
+      "original_span_sha256": "68a639b2dffac301817461b8b1e1e2fbca60e4b4db136a34b582411c8b7d17ba",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020A5660",
+      "size_bytes": 12,
+      "category": "set_byte",
+      "original_span_sha256": "9e9aed2cca1fbb05132bf87a47719e5d05cd534a69425942c952b65a592b75db",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020A5670",
+      "size_bytes": 8,
+      "category": "return_not_constant",
+      "original_span_sha256": "6143299c415a779d14d46483b05772d81c6b595bc189b4499503e30275041932",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020A6178",
+      "size_bytes": 8,
+      "category": "read_word",
+      "original_span_sha256": "68a639b2dffac301817461b8b1e1e2fbca60e4b4db136a34b582411c8b7d17ba",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020A6184",
+      "size_bytes": 12,
+      "category": "set_word",
+      "original_span_sha256": "2042a6056d9c1dc3b9f623c2892f00132703cac4f2e3f36213122d0c7f102b0f",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020A8FC0",
+      "size_bytes": 12,
+      "category": "set_word",
+      "original_span_sha256": "3ba7b6365bbdf26e89db9c159984ff630925757fe6f869cea311439878a8a004",
+      "status": "clang_armv5te_byte_identical"
+    },
+    {
+      "address": "0x020A91FC",
+      "size_bytes": 8,
+      "category": "return_not_constant",
+      "original_span_sha256": "6143299c415a779d14d46483b05772d81c6b595bc189b4499503e30275041932",
+      "status": "clang_armv5te_byte_identical"
+    }
+  ]
+}
