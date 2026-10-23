@@ -8,11 +8,11 @@ Upstream source project: [zeldaret/st](https://github.com/zeldaret/st) (CC0). Th
 | Extracted/decompressed 114 ARM9 overlays | Done locally; no game binaries checked in |
 | Indexed 3,442 named NitroFS resources | Done; metadata only |
 | Generated function-entry heuristics | Done; not validated functions |
-| Preliminary C reconstructions | **23 total** (3 original + 10 ARM9 batch 1 + 10 ARM9 batch 2); **none binary matched** |
+| Preliminary C reconstructions | Earlier 23 approximations, plus 13 new exact-Clang probes (one address overlaps earlier batch); **zero additional CodeWarrior matches** |
 | Local mock behavior tests | PASS: wrappers (9 scenarios) and Base2 constructor tests; no ROM equivalence established |
 | Source fingerprint verification | PASS: 13 ARM9 symbol spans hashed against original EUR1 ROM; not compiler matching |
 | 20 ARM9 function spans cross-checked with existing EUR1 symbols | Exact address and size agreement, SHA-256 verified against local decompressed ROM |
-| ARMv5TE Clang exact instruction probes | **PASS** for 15 independently symbolized 8-byte ARM9 functions; not CodeWarrior |
+| ARMv5TE Clang exact instruction probes | **PASS: 28 distinct ARM9 functions**: 15 constant 8-byte leaves + 13 short nonconstant routines (176 bytes); all compared with original EUR1 ROM, not CodeWarrior |
 | Recompilation matching for recovered C using original CodeWarrior | Not done |
 | Playable rebuild/PC port | Not done |
 
@@ -57,3 +57,11 @@ compiled its 8 bytes with Clang `--target=armv5te-none-eabi -march=armv5te -marm
 `research/eur1/scripts/check_constant_leaf_batch.py` cross-compiles 15 independent 8-byte ARM9 functions identified by `config/eur1/arm9/symbols.txt`. Each returns the literal 0, 1, or 2. Using Clang ARMv5TE, all 15 isolated functions produced machine bytes identical to the original EUR1 ROM in local tests (`--rom` supplied). The CI version verifies only pre-recorded SHA-256 fingerprints; it does not access a copyrighted ROM.
 
 The previous `0x0201BAE4` leaf is one of these 15. **Do not count this as 15 additional CodeWarrior-matching functions.** These 15 are experimental codegen probes, 14 newly investigated addresses plus 1 previously translated address; the 16 provisional source reconstructions are tracked separately.
+
+## 23 Oct 2026 — 13 new short-function ARMv5TE exact probes
+
+A [new source collection](research/eur1/probes/arm9_short_functions.c) and [reproducible checker](research/eur1/scripts/verify_arm9_short_functions.py) cover 13 independent ARM9 functions (12–16 bytes each; total **176 original machine-code bytes**). The checker verifies the ROM SHA-1, decompresses ARM9, compares with the expected ARM9 SHA-1, requires the corresponding official `eur1` address and span length in `config/eur1/arm9/symbols.txt`, compiles each C function separately with Clang 17 targeting ARMv5TE, and demands **exact code bytes**, not just equivalent behavior. All **13/13 PASS** on the user-supplied EUR1 ROM and the extracted ARM9 image. An altered ARM9 input correctly fails.
+
+[Detailed address/size/SHA-256 proof](research/eur1/reports/clang_byte_matches_13.md).
+
+Combined with the previously confirmed 15 constant-return leaves, this establishes **28 disjoint isolated Clang-exact ARM9 examples**. Do not mistake this for 28 newly matched functions in the project: the source remains in `research/`, 0x0201BE20 already appeared in the approximate research batch, and **no original CodeWarrior-compiler match or game integration is demonstrated**.
