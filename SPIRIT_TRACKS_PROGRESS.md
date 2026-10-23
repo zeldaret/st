@@ -12,8 +12,8 @@ Upstream source project: [zeldaret/st](https://github.com/zeldaret/st) (CC0). Th
 | Local mock behavior tests | PASS: wrappers (9 scenarios) and Base2 constructor tests; no ROM equivalence established |
 | Source fingerprint verification | PASS: 13 ARM9 symbol spans hashed against original EUR1 ROM; not compiler matching |
 | 20 ARM9 function spans cross-checked with existing EUR1 symbols | Exact address and size agreement, SHA-256 verified against local decompressed ROM |
-| ARMv5TE Clang exact instruction probes | **PASS: 28 distinct ARM9 functions**: 15 constant 8-byte leaves + 13 short nonconstant routines (176 bytes); all compared with original EUR1 ROM, not CodeWarrior |
-| Recompilation matching for recovered C using original CodeWarrior | Not done |
+| ARMv5TE Clang exact instruction probes | **73 distinct isolated functions** (prior 28 plus 45 newly verified in 1000-function batch); **not CodeWarrior** |
+| Batch 0001 (ARM9 main) | **1,000 symbolized functions inventoried; 58 short Clang-exact; 942 unvalidated** |\n| Recompilation matching for recovered C using original CodeWarrior | Not done |
 | Playable rebuild/PC port | Not done |
 
 Do not mistake the upstream decompilation percentage for local research progress. Legal ownership and build requirements for the ROM/BIOS are separate from this repository.
@@ -65,3 +65,9 @@ A [new source collection](research/eur1/probes/arm9_short_functions.c) and [repr
 [Detailed address/size/SHA-256 proof](research/eur1/reports/clang_byte_matches_13.md).
 
 Combined with the previously confirmed 15 constant-return leaves, this establishes **28 disjoint isolated Clang-exact ARM9 examples**. Do not mistake this for 28 newly matched functions in the project: the source remains in `research/`, 0x0201BE20 already appeared in the approximate research batch, and **no original CodeWarrior-compiler match or game integration is demonstrated**.
+
+## 23 Oct 2026 — Batch 0001: queue of 1,000 symbolized functions
+
+The [batch 0001 manifest](research/eur1/batches/batch_0001_1000_manifest.json) records 870 ARM and 130 Thumb known function spans in the main ARM9 game code. These are **targets**, not decompiled sources. The first [58 short C code probes](research/eur1/batches/batch_0001_short_exact_58.c) generated 356 machine-code bytes identical to locally verified EUR1 ARM9 output when each was compiled separately under Clang ARMv5TE. Across previous codegen experiments this adds **45 newly verified** distinct Clang-exact addresses, for **73 distinct isolated Clang-exact probes total** (13 of the current 58 overlapped prior probes). The [verification script](research/eur1/batches/verify_batch_0001.py) checks the original SHA-1 and recompilation bytes on a local ROM; the remaining 942 functions are explicitly listed as awaiting validation.
+
+**This does not mean 1,000 functions have been decompiled** or imply any progress in original CodeWarrior matching or game playability. See [batch detailed README](research/eur1/batches/README.md).
