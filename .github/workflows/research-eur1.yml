@@ -38,3 +38,6 @@ jobs:
       - name: Syntax and ARM target compilation (NOT CodeWarrior matching)
         run: |
           clang --target=armv5te-none-eabi -march=armv5te -marm             -std=c11 -ffreestanding -Wall -Wextra -Werror             -c research/eur1/src/recovered_base2_constructors.c -o /tmp/st-base2-arm.o
+
+      - name: Verify exact ARM instruction bytes for 0x0201BAE4
+        run: python3 research/eur1/scripts/check_matching_leaf.py
