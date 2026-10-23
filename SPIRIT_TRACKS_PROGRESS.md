@@ -12,7 +12,7 @@ Upstream source project: [zeldaret/st](https://github.com/zeldaret/st) (CC0). Th
 | Local mock behavior tests | PASS: wrappers (9 scenarios) and Base2 constructor tests; no ROM equivalence established |
 | Source fingerprint verification | PASS: 13 ARM9 symbol spans hashed against original EUR1 ROM; not compiler matching |
 | 20 ARM9 function spans cross-checked with existing EUR1 symbols | Exact address and size agreement, SHA-256 verified against local decompressed ROM |
-| ARMv5TE Clang exact instruction probe | **PASS** for one 8-byte ARM9 leaf function `0x0201BAE4` (not CodeWarrior) |
+| ARMv5TE Clang exact instruction probes | **PASS** for 15 independently symbolized 8-byte ARM9 functions; not CodeWarrior |
 | Recompilation matching for recovered C using original CodeWarrior | Not done |
 | Playable rebuild/PC port | Not done |
 
@@ -51,3 +51,9 @@ python research/eur1/scripts/check_matching_leaf.py --rom extract/baserom_st_eur
 compiled its 8 bytes with Clang `--target=armv5te-none-eabi -march=armv5te -marm -O2` and compared them **byte for byte with the uploaded original EUR1 ROM**. Local result: **PASS**. Without `--rom`, the script compares against the SHA-256 fingerprint recorded from that ROM, and can run in CI without copyrighted data.
 
 **Crucial boundary:** this proves identical machine instructions for one tiny leaf method under Clang; it is *not* CodeWarrior recompilation, not upstream source-level matching, and must not be counted as a new function matched in the `zeldaret/st` build. The recorded 16 experimental reconstructions include this function already; do not double-count the probe.
+
+## 23 Oct 2026 — 15-function exact instruction probe batch
+
+`research/eur1/scripts/check_constant_leaf_batch.py` cross-compiles 15 independent 8-byte ARM9 functions identified by `config/eur1/arm9/symbols.txt`. Each returns the literal 0, 1, or 2. Using Clang ARMv5TE, all 15 isolated functions produced machine bytes identical to the original EUR1 ROM in local tests (`--rom` supplied). The CI version verifies only pre-recorded SHA-256 fingerprints; it does not access a copyrighted ROM.
+
+The previous `0x0201BAE4` leaf is one of these 15. **Do not count this as 15 additional CodeWarrior-matching functions.** These 15 are experimental codegen probes, 14 newly investigated addresses plus 1 previously translated address; the 16 provisional source reconstructions are tracked separately.
