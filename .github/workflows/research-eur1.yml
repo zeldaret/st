@@ -41,3 +41,6 @@ jobs:
 
       - name: Verify exact ARM instruction bytes for 0x0201BAE4
         run: python3 research/eur1/scripts/check_matching_leaf.py
+
+      - name: Check 15 ARM9 constant-return functions (ROM-free fingerprints)
+        run: python3 research/eur1/scripts/check_constant_leaf_batch.py
