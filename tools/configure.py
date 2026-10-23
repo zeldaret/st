@@ -1626,7 +1626,7 @@ config.libs = [
                 "--symbols Integrity_MACOwner_IsBad Integrity_MACOwner_IsGood Integrity_ROMTest_IsBad Integrity_ROMTest_IsGood",
             ]),
             DSProtAsmwriter("encryptor_decryptor.s", ["encryptor.o"], flags=[
-                "--prefix ''",
+                '--prefix ""',
                 "--symbols Encryptor_EncryptFunction Encryptor_DecryptFunction",
             ]),
             DSProtAsmwriter("mac_owner_decryptor.s", ["mac_owner.o"], flags=[
@@ -1649,7 +1649,7 @@ config.libs = [
                 ]
             ),
             DSProtAsmwriter("rc4_decoder.s", ["rc4.o"], flags=[
-                "--prefix ''",
+                '--prefix ""',
                 "--symbols RC4_Init RC4_Byte RC4_InitSBox RC4_EncryptInstructions RC4_DecryptInstructions RC4_InitAndEncryptInstructions RC4_InitAndDecryptInstructions",
             ]),
         ],
