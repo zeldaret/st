@@ -125,3 +125,15 @@ Published [batch overlay500](research/eur1/batches/overlay500/) via [PR #4](http
 - All [500 addresses, sizes and original span SHA-256 values](research/eur1/batches/overlay500/manifest_500.json), the [source C](research/eur1/batches/overlay500/overlay_recovered_500.c) and [full verifier](research/eur1/batches/overlay500/verify_500.py) are published. No ROM or binary assets were committed.
 
 **No original CodeWarrior matching has been measured yet for these 500 additional C functions**, and none were integrated into the normal DS build. The earlier **98/100 standalone CodeWarrior-matching** result applies to the *prior* separate 100-function set only. No PC runtime/port work was undertaken.
+
+## 23 Oct 2026 — Third batch: 500 MORE ARM9 C function reconstructions
+
+The [third additional-500 batch](research/eur1/batches/overlay_next500/) was merged as [PR #5](https://github.com/zeranemesis/st/pull/5). It adds **500 distinct real C function bodies** with **zero address/overlay overlap** against the preceding 100 overlay-0 and 500 mixed-overlay research batches, resulting in **1,100 catalogued C bodies across these three separate batches**.
+
+- **245 non-empty** small source reconstructions, **255 originally empty** `BX LR` no-op functions. Empty slots are actual DS functions but should never be mistaken for 255 completed gameplay features.
+- **500/500 isolated Clang ARMv5TE instruction-code matches**, against the owner's SHA-1-verified EUR1 local ROM, **3,468 exact original instruction bytes** in **47 overlays**. Test: [`verify_next500.py`](research/eur1/batches/overlay_next500/verify_next500.py) with the user's locally extracted original overlay images.
+- **443 upstream-symbolized function starts**, **57 additional BL-target candidates** whose exact original ownership/signatures still require investigation.
+- [Research C source](research/eur1/batches/overlay_next500/overlay_recovered_next500.c), [full manifest and per-span hashes](research/eur1/batches/overlay_next500/manifest_next500.json), and [reproduction guide](research/eur1/batches/overlay_next500/README.md) published without any copyrighted ROM/asset bytes.
+- **CodeWarrior standalone: NOT TESTED** for these 500; **official DS build integration: NOT DONE**. The previous 98/100 original-compiler result remains specific to the earlier 100-function batch. No native PC port work was performed.
+
+The substantive matching milestone is finding correct C++ class/member ownership, integrating into the existing CodeWarrior target build, and matching through objdiff; a standalone Clang-exact result alone is **not** integrated or official matching progress.
