@@ -1,5 +1,3 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #include "Actor/ActorUnkCRFT.hpp"
 #include "System/SysNew.hpp"
 
@@ -10,37 +8,43 @@ Actor *ActorProfileUnkCRFT::Create() {
 }
 
 ActorProfileUnkCRFT::ActorProfileUnkCRFT() :
-    ActorProfile_Derived1(ActorId_CRFT) {}
+    ActorProfile_Derived1(ActorId_CRFT) {
+    this->mUnk_04.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.7101f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.6101f));
+    this->mUnk_1C = 0x1400;
+    this->mUnk_18 = 0x1;
+    this->mUnk_1A = 0x2000;
+    this->mUnk_1E |= 0x1;
+}
 
 ActorUnkCRFT::ActorUnkCRFT() {}
 
-void ActorUnkCRFT::func_ov058_02148148(void) {}
-void ActorUnkCRFT::func_ov058_02148178(void) {}
-void ActorUnkCRFT::func_ov058_021481cc(void) {}
-void ActorUnkCRFT::func_ov058_0214827c(void) {}
-void ActorUnkCRFT::func_ov058_021482f8(void) {}
-void ActorUnkCRFT::func_ov058_021483fc(void) {}
-void ActorUnkCRFT::func_ov058_02148448(void) {}
-void ActorUnkCRFT::func_ov058_0214847c(void) {}
-void ActorUnkCRFT::func_ov058_021484e0(void) {}
-void ActorUnkCRFT::func_ov058_02148514(void) {}
-void ActorUnkCRFT::func_ov058_02148590(void) {}
-void ActorUnkCRFT::func_ov058_0214860c(void) {}
-void ActorUnkCRFT::func_ov058_0214869c(void) {}
-void ActorUnkCRFT::func_ov058_02148710(void) {}
-void ActorUnkCRFT::func_ov058_02148724(void) {}
-void ActorUnkCRFT::func_ov058_02148760(void) {}
-void ActorUnkCRFT::func_ov058_021487c8(void) {}
-void ActorUnkCRFT::func_ov058_021487e4(void) {}
-void ActorUnkCRFT::func_ov058_021487ec(void) {}
-void ActorUnkCRFT::func_ov058_0214881c(void) {}
-void ActorUnkCRFT::func_ov058_0214885c(void) {}
-void ActorUnkCRFT::func_ov058_021488d8(void) {}
-void ActorUnkCRFT::func_ov058_02148904(void) {}
-void ActorUnkCRFT::func_ov058_021489a8(void) {}
-void ActorUnkCRFT::func_ov058_02148a6c(void) {}
-void ActorUnkCRFT::func_ov058_02148a98(void) {}
-void ActorUnkCRFT::func_ov058_02148b04(void) {}
+bool ActorUnkCRFT::Init(unk32 param1) {}
+void ActorUnkCRFT::vfunc_58(ActorState param1) {}
+void ActorUnkCRFT::vfunc_54(unk32 param1) {}
+void ActorUnkCRFT::Setup() {}
+void ActorUnkCRFT::Update() {}
+void ActorUnkCRFT::vfunc_5C() {}
+void ActorUnkCRFT::vfunc_0BC() {}
+void ActorUnkCRFT::vfunc_0CC() {}
+void ActorUnkCRFT::vfunc_0D0() {}
+void ActorUnkCRFT::vfunc_114() {}
+void ActorUnkCRFT::vfunc_118() {}
+void ActorUnkCRFT::vfunc_11C() {}
+void ActorUnkCRFT::vfunc_120() {}
+void ActorUnkCRFT::func_ov058_02148710() {}
+void ActorUnkCRFT::vfunc_124() {}
+void ActorUnkCRFT::vfunc_128() {}
+void ActorUnkCRFT::func_ov058_021487c8() {}
+unk32 ActorUnkCRFT::vfunc_7C(unk32 param1) {}
+void ActorUnkCRFT::vfunc_9C() {}
+unk32 ActorUnkCRFT::vfunc_A0() {}
+void ActorUnkCRFT::func_ov058_0214885c() {}
+void ActorUnkCRFT::func_ov058_021488d8() {}
+unk32 ActorUnkCRFT::vfunc_80(unk32 param1, unk32 param2) {}
+bool ActorUnkCRFT::vfunc_48(unk32 param1) {}
+void ActorUnkCRFT::vfunc_A4() {}
+void ActorUnkCRFT::vfunc_2C(unk32 param1) {}
+void ActorUnkCRFT::func_ov058_02148b04() {}
 
 ActorUnkCRFT::~ActorUnkCRFT() {}
 ActorProfileUnkCRFT::~ActorProfileUnkCRFT() {}

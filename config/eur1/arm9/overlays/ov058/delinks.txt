@@ -39,6 +39,7 @@ src/058_Field/Actor/ActorUnkCRFT.cpp:
     .text       start:0x02148010 end:0x02148d0c
     .init       start:0x02153ac8 end:0x02153b18
     .ctor       start:0x02154254 end:0x02154258
+    .data       start:0x02154fdc end:0x0215525c
     .bss        start:0x02156fe8 end:0x021570dc
 
 src/058_Field/Actor/ActorUnkFBRD.cpp:

@@ -1,58 +1,48 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Actor_Character.hpp"
 #include "global.h"
 #include "types.h"
 
-class ActorUnkCRFT_C4 : public Actor_C4 {
+class ActorUnkCRFT : public Actor_Character {
 public:
-    ActorUnkCRFT_C4(Actor *param1);
-
-    /* 00 */ virtual bool vfunc_00(RefStruct ref, unk32 param2) override;
-    /* 04 */ virtual bool vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-};
-
-class ActorUnkCRFT : public Actor {
-public:
-    /* 00 (base) */
-    /* 94 */
+    /* 000 (base) */
+    /* 120 */ PAD(0x120, 0x358);
+    /* 358 */
 
     ActorUnkCRFT();
 
-    /* 4C */ virtual ~ActorUnkCRFT() override;
+    /* 018 */ virtual bool Init(unk32 param1) override;
+    /* 01C */ virtual void Setup() override;
+    /* 020 */ virtual void Update() override;
+    /* 02C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 048 */ virtual bool vfunc_48(unk32 param1) override;
+    /* 04C */ virtual ~ActorUnkCRFT() override;
+    /* 054 */ virtual void vfunc_54(unk32 param1) override;
+    /* 058 */ virtual void vfunc_58(ActorState param1) override;
+    /* 05C */ virtual void vfunc_5C() override;
+    /* 07C */ virtual unk32 vfunc_7C(unk32 param1) override;
+    /* 080 */ virtual unk32 vfunc_80(unk32 param1, unk32 param2) override;
+    /* 09C */ virtual void vfunc_9C() override;
+    /* 0A0 */ virtual unk32 vfunc_A0() override;
+    /* 0A4 */ virtual void vfunc_A4() override;
+    /* 0BC */ virtual void vfunc_0BC() override;
+    /* 0CC */ virtual void vfunc_0CC() override;
+    /* 0D0 */ virtual void vfunc_0D0() override;
+    /* 114 */ virtual void vfunc_114();
+    /* 118 */ virtual void vfunc_118();
+    /* 11C */ virtual void vfunc_11C();
+    /* 120 */ virtual void vfunc_120();
+    /* 124 */ virtual void vfunc_124();
+    /* 128 */ virtual void vfunc_128();
 
-    void func_ov058_02148148(void);
-    void func_ov058_02148178(void);
-    void func_ov058_021481cc(void);
-    void func_ov058_0214827c(void);
-    void func_ov058_021482f8(void);
-    void func_ov058_021483fc(void);
-    void func_ov058_02148448(void);
-    void func_ov058_0214847c(void);
-    void func_ov058_021484e0(void);
-    void func_ov058_02148514(void);
-    void func_ov058_02148590(void);
-    void func_ov058_0214860c(void);
-    void func_ov058_0214869c(void);
-    void func_ov058_02148710(void);
-    void func_ov058_02148724(void);
-    void func_ov058_02148760(void);
-    void func_ov058_021487c8(void);
-    void func_ov058_021487e4(void);
-    void func_ov058_021487ec(void);
-    void func_ov058_0214881c(void);
-    void func_ov058_0214885c(void);
-    void func_ov058_021488d8(void);
-    void func_ov058_02148904(void);
-    void func_ov058_021489a8(void);
-    void func_ov058_02148a6c(void);
-    void func_ov058_02148a98(void);
-    void func_ov058_02148b04(void);
+    void func_ov058_02148710();
+    void func_ov058_021487c8();
+    void func_ov058_0214885c();
+    void func_ov058_021488d8();
+    void func_ov058_02148b04();
 };
 
 class ActorProfileUnkCRFT : public ActorProfile_Derived1 {
