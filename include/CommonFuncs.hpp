@@ -55,6 +55,10 @@ struct UnkStruct_ov070_0214dc74;
 struct ActorShotArrow;
 struct UnkStruct_027e0960_TableEntry_04_Base;
 struct UnkStruct_PlayerGet_50;
+struct MapObjectUnkWLMS;
+struct stack_ov000_02073578;
+struct UnkStruct_ov000_020b1c10_10;
+struct UnkStruct_ov031_02118fa4;
 
 union Vec2bCpp;
 union Vec3s;
@@ -265,6 +269,7 @@ bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
 bool func_ov000_0205aeac();
 unk32 func_ov000_0205b090();
 unk32 func_ov000_0205b0ac(s16 param1);
+void func_ov000_0205b1d8(UnkStruct_ov000_020b1c10_10 *param1, void *param2);
 void func_ov000_0205be34(void *thisx, unk16 param1);
 void func_ov000_0205be44(void *thisx, Vec2s *param1, Vec2s *param2, bool param3, bool param4);
 void func_ov000_0205c1f0(unk32 *, u16);
@@ -372,6 +377,10 @@ void func_ov007_021028a0(uint **);
 // overlay 8
 GameModeManagerBase_104 *func_ov008_020b6520(void *);
 
+// overlay 9
+void func_ov009_020b669c(UnkStruct_ov031_02118fa4 *param1, unk32 param2, unk32 param3);
+void func_ov009_020b675c(UnkStruct_ov031_02118fa4 *param1, unk32 param2);
+
 // overlay 10
 AdventureModeManager_184_10 *func_ov010_020b6520(void *);
 AdventureModeManager_184_10 *func_ov010_020b65fc(void *);
@@ -429,6 +438,11 @@ void func_ov084_021612ac();
 // overlay 89
 void func_ov089_02165b18(void *);
 void func_ov089_02165c34(void *);
+
+// overlay 94
+void func_ov094_02170f7c(MapObjectUnkWLMS *, stack_ov000_02073578 *);
+unk32 func_ov094_02170fa0();
+void func_ov094_02170fd4(MapObjectUnkWLMS *);
 
 // overlay 95
 void func_ov095_0217aa88(void *, unk16 *, unk32, UnkAngleStruct);

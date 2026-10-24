@@ -1,5 +1,6 @@
 #include "MapObject/MapObjectUnkWLMS.hpp"
 #include "Animation/CellAnimObject.hpp"
+#include "CommonFuncs.hpp"
 #include "FileSelect/FileSelectUnkDraw.hpp"
 #include "LinkList.hpp"
 #include "MapObject/MapObject.hpp"
@@ -37,18 +38,6 @@ extern UnkStruct_data_ov063_021638c0 data_ov063_021638c0;
 extern unk16 data_ov063_021638c2;
 extern UnkStackStruct2 data_ov063_021638c8;
 extern unk16 data_ov063_021638e8; //= data_ov063_021638c8.mUnk_10;
-
-// Overlay 0
-extern "C" void func_ov000_0205b1d8(UnkStruct_ov000_020b1c10_10 *param1, void *param2);
-
-// Overlay 9
-extern "C" void func_ov009_020b669c(UnkStruct_ov031_02118fa4 *param1, unk32 param2, unk32 param3);
-extern "C" void func_ov009_020b675c(UnkStruct_ov031_02118fa4 *param1, unk32 param2);
-
-// Overlay 94
-extern "C" void func_ov094_02170f7c(MapObjectUnkWLMS *, stack_ov000_02073578 *);
-extern "C" unk32 func_ov094_02170fa0();
-extern "C" void func_ov094_02170fd4(MapObjectUnkWLMS *);
 
 CellAnimObject data_ov063_02164514;
 CellAnimObject data_ov063_0216458c;
