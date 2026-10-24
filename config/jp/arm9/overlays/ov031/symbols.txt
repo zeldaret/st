@@ -1998,8 +1998,8 @@ data_ov031_0211275c kind:data(any) addr:0x0211275c
 data_ov031_0211275e kind:data(any) addr:0x0211275e
 data_ov031_02112760 kind:data(any) addr:0x02112760
 data_ov031_021109fc kind:data(any) addr:0x0211276c local
-data_ov031_02110a10 kind:data(byte[0x18]) addr:0x02112780 local
-data_ov031_02110a28 kind:data(byte[0x18]) addr:0x02112798 local
+data_ov031_02110a10 kind:data(byte[24]) addr:0x02112780 local
+data_ov031_02110a28 kind:data(byte[24]) addr:0x02112798 local
 data_ov031_02110a40 kind:data(any) addr:0x021127b0 local
 data_ov031_021127f0 kind:data(any) addr:0x021127f0
 data_ov031_02110a88 kind:data(any) addr:0x021127f8 local
@@ -2735,4 +2735,4 @@ _ZGVN15ProfileInstanceI23MapObjectProfileUnkSWFSE8sProfileE kind:bss addr:0x0211
 _ZN15ProfileInstanceI23MapObjectProfileUnkSWFSE8sProfileE kind:bss addr:0x0211ac4c
 data_ov031_0211ac6c kind:bss addr:0x0211ac6c
 data_ov031_0211ad20 kind:bss addr:0x0211ad20
-data_ov031_0211ad44 kind:bss addr:0x0211ad44
+data_ov031_02118fa4 kind:bss addr:0x0211ad44

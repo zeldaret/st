@@ -177,13 +177,10 @@ void ActorUnkCASE::func_ov063_0215aefc(ActorState param1) {
     CALL_PTMF(PTMF<ActorUnkCASE>, data_ov063_02163110[mState]);
 }
 
-// Matched
 void ActorUnkCASE::func_ov063_0215af54(void) {}
 
-// Matched
 void ActorUnkCASE::func_ov063_0215af58(void) {}
 
-// Matched
 void ActorUnkCASE::func_ov063_0215af5c(void) {}
 
 void ActorUnkCASE::func_ov063_0215af60(void) {
@@ -291,7 +288,6 @@ void ActorUnkCASE::func_ov063_0215b2b0(void) {
     mUnk_2C = 0;
 }
 
-// Matched
 void ActorUnkCASE::func_ov063_0215b2c4(void) {}
 
 void ActorUnkCASE::vfunc_24() {

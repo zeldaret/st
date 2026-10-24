@@ -101,6 +101,10 @@ src/094_Land2/MapObject/MapObjectUnkFNCE.cpp:
     .ctor       start:0x02179174 end:0x02179178
     .bss        start:0x0217b424 end:0x0217b508
 
+src/094_Land2/MapObject/UnkStruct_ov094_02177ff8.cpp:
+    .text       start:0x021730e4 end:0x021732f4
+    .data       start:0x0217a2b0 end:0x0217a324
+
 src/094_Land2/MapObject/MapObjectUnkWLMP.cpp:
     .text       start:0x021732f4 end:0x02173a2c
     .init       start:0x02178ddc end:0x02178e2c
