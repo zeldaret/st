@@ -44,7 +44,7 @@ public:
     /* 31A */ unk16 mUnk_31A;
     /* 31C */ u16 mUnk_31C;
     /* 31E */ u8 mUnk_31E;
-    /* 31F */ u8 mUnk_31F;
+    /* 31F */ bool mUnk_31F;
     /* 320 */ UnkStruct_ov063_02163910 mUnk_320;
 
     MapObjectUnkWLMS();

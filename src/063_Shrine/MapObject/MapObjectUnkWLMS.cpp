@@ -103,7 +103,7 @@ MapObjectUnkWLMS::MapObjectUnkWLMS() :
     mUnk_31C(0),
     mUnk_31E(0),
 #if IS_JP
-    mUnk_31F(0),
+    mUnk_31F(false),
 #endif
     mUnk_320(this) {
     mUnk_10         = GET_PROFILE_D4(MapObjectProfileUnkWLMS);
@@ -131,10 +131,10 @@ bool MapObjectUnkWLMS::Init() {
 
 #if IS_JP
 void MapObjectUnkWLMS::vfunc_08() {
-    if (mState == MapObjectUnkWLMSState_1 && mUnk_31F == 0) {
+    if (mState == MapObjectUnkWLMSState_1 && !mUnk_31F) {
         this->func_ov063_02160580(MapObjectUnkWLMSState_0, 0);
     }
-    mUnk_31F = 0;
+    mUnk_31F = false;
 }
 #endif
 
@@ -213,7 +213,7 @@ void MapObjectUnkWLMS::vfunc_38(void) {
     data_ov063_02164514.func_ov000_020609c4();
     data_ov063_0216458c.func_ov000_020609c4();
 #if IS_JP
-    mUnk_31F = 0;
+    mUnk_31F = false;
 #endif
 }
 
@@ -291,7 +291,7 @@ unk32 MapObjectUnkWLMS::func_ov063_02160580(MapObjState param1, unk32 param2) {
                 UNSET_FLAG(mFlags, 9);
             }
 #if IS_JP
-            mUnk_31F = 0;
+            mUnk_31F = false;
 #endif
             break;
         case MapObjectUnkWLMSState_1: {
@@ -301,7 +301,7 @@ unk32 MapObjectUnkWLMS::func_ov063_02160580(MapObjState param1, unk32 param2) {
             stack.unk_04 = (unk32) (uintptr_t) &mUnk_320;
             func_ov094_02170f7c(this, &stack);
 #if IS_JP
-            mUnk_31F = 1;
+            mUnk_31F = true;
 #endif
             break;
         }
@@ -341,7 +341,7 @@ unk32 MapObjectUnkWLMS::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
 void MapObjectUnkWLMS::vfunc_14(unk32 param1) {
 #pragma unused(param1)
     VecFx32 vec;
-    VecFx32_Init(mPos.x, mPos.y + FX_F32_TO_FX32(0.7f), mPos.z + -FX_F32_TO_FX32(0.45f), &vec);
+    VecFx32_Init(mPos.x, mPos.y + FX_F32_TO_FX32(0.7f), mPos.z + FX_F32_TO_FX32(-0.45f - 0.0002f), &vec);
     mUnk_4C.vfunc_18(&vec);
     mUnk_70.vfunc_18(&vec);
 
