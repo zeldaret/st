@@ -67,7 +67,7 @@ bool MapObjectUnkSTAT::Init(void) {
 
 void MapObjectUnkSTAT::vfunc_08(void) {
     if (mUnk_20.mParams[1]) {
-        mUnk_54 = func_01ffb428(mUnk_20.mParams[1] << 0xC, 0xA000);
+        mUnk_54 = func_01ffb428(mUnk_20.mParams[1] << 0xC, FX_F32_TO_FX32(10.0f));
     }
 
     switch (mUnk_4C) {

@@ -111,7 +111,7 @@ public:
     /* 268 */ ActorUnkCASE *mUnk_268;
     /* 26C */ fx16 mUnk_26C; // Some kind of angle, probably
     /* 26E */ PAD(0x26E, 0x270);
-    /* 270 */ unk32 mUnk_270;
+    /* 270 */ fx32 mUnk_270;
     /* 274 */ u16 mUnk_274;
     /* 276 */ s8 mUnk_276;
     /* 277 */ s8 mUnk_277;

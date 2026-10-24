@@ -308,8 +308,8 @@ void ActorFleeingSpinut::func_ov032_0211c07c() {
 // non-matching (func_01ffb428 & sp8)
 void ActorFleeingSpinut::func_ov032_0211c108() {
     UnkStruct_PlayerGet_50 *pGet50 = this->mUnk_110.vfunc_28();
-    unk32 pGet50Unk8               = pGet50->mUnk_08;
-    unk32 pGet50Unk10              = pGet50->mUnk_10;
+    fx32 pGet50Unk8                = pGet50->mUnk_08;
+    fx32 pGet50Unk10               = pGet50->mUnk_10;
 
     bool var;
     if (this->mUnk_1BE % 2 == 0 || !data_027e0ce0->func_01fff1a4()) {
@@ -318,7 +318,7 @@ void ActorFleeingSpinut::func_ov032_0211c108() {
         var = true;
     }
 
-    unk32 temp_r5_2 = func_01ffb428(pGet50Unk10 - pGet50Unk8, 0x1000) >> 0xC;
+    unk32 temp_r5_2 = func_01ffb428(pGet50Unk10 - pGet50Unk8, FX_F32_TO_FX32(1.0f)) >> 0xC;
     unk16 sp8;
     func_ov000_020986b4(&sp8, this, var);
 

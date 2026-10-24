@@ -276,7 +276,7 @@ void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf168() {
         iVar4 += this->mUnk_7C[i];
     }
 
-    iVar4_2 = ROUND_FX32(func_01ffb428(iVar4 * 0x1000, 0xF000));
+    iVar4_2 = ROUND_FX32(func_01ffb428(iVar4 * FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(15.0f)));
 
     if (iVar4_2 > 0) {
         this->mUnk_78[0] = 1;

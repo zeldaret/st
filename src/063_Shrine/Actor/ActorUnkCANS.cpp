@@ -145,7 +145,7 @@ ActorUnkCANS::ActorUnkCANS() :
     mUnk_238(0, 0),
     mUnk_250(mUnk_5C.mInitialPos),
     mUnk_274(0),
-    mUnk_270(0xCD) {
+    mUnk_270(FX_F32_TO_FX32(0.05f)) {
     SET_FLAG(mFlags, ActorFlag_6);
     Actor_38 *actor_38 = (Actor_38 *) &mUnk_1F4;
     mUnk_38            = actor_38;
@@ -456,7 +456,7 @@ void ActorUnkCANS::func_ov063_02158b98(void) {
     }
 
     func_01ff916c(&mUnk_270, mUnk_276 * 0xCD, 0xCD);
-    u16 angle = (fx16) (fx32) (mUnk_26C + 0x4000);
+    u16 angle = (fx16) (fx32) (mUnk_26C + FX_F32_TO_FX32(4.0f));
     mVel.x    = FX_MUL(SIN(angle), mUnk_270);
     mVel.z    = FX_MUL(COS(angle), mUnk_270);
 
@@ -492,7 +492,7 @@ void ActorUnkCANS::func_ov063_02158db0(void) {
         mUnk_276 *= -1;
     }
 
-    fx32 ret1     = func_01ffb428(mUnk_270 + 0x66, 0xCD);
+    fx32 ret1     = func_01ffb428(mUnk_270 + FX_F32_TO_FX32(0.025f), FX_F32_TO_FX32(0.05f));
     u32 threshold = (u16) (mUnk_270 / 2) * ((u32) ret1 << 0x4 >> 0x10) + 0x4CD;
 
     VecFx32 vec = {mPos.x, mPos.y, mPos.z};
@@ -596,16 +596,16 @@ void ActorUnkCANS::func_ov063_02159258(void) {
 
     func_01ff916c(&mUnk_270, 0, 0xCD);
 
-    unk32 val    = mUnk_270;
+    fx32 val     = mUnk_270;
     fx16 angle   = mUnk_26C + DEG_TO_ANG(90);
     fx32 sin_val = SIN((u16) angle);
     fx32 cos_val = COS((u16) angle);
     mVel.x       = FX_MUL(sin_val, val);
     mVel.z       = FX_MUL(cos_val, val);
 
-    if (!mUnk_270 && this->func_ov063_0215a514()) {
+    if (mUnk_270 == FX_F32_TO_FX32(0.0f) && this->func_ov063_0215a514()) {
         this->func_ov063_02158448(8);
-    } else if (!mUnk_270 && this->mUnk_238.HasReachedMaxU() && this->func_ov063_0215a474()) {
+    } else if (mUnk_270 == FX_F32_TO_FX32(0.0f) && this->mUnk_238.HasReachedMaxU() && this->func_ov063_0215a474()) {
         this->func_ov063_02158448(6);
     } else if (!this->func_ov063_0215a2c0()) {
         this->func_ov063_02158448(1);
@@ -649,9 +649,9 @@ void ActorUnkCANS::func_ov063_02159494(void) {
 }
 
 void ActorUnkCANS::func_ov063_021595a4(void) {
-    mVel.x   = 0;
-    mVel.z   = 0;
-    mUnk_270 = 0;
+    mVel.x   = FX_F32_TO_FX32(0.0f);
+    mVel.z   = FX_F32_TO_FX32(0.0f);
+    mUnk_270 = FX_F32_TO_FX32(0.0f);
     mUnk_128.vfunc_1C(data_ov063_021630b0, 0x1000, 0x400, 0);
     mUnk_200.func_ov000_02097bec();
 }
@@ -677,9 +677,9 @@ void ActorUnkCANS::func_ov063_02159618(void) {
 }
 
 void ActorUnkCANS::func_ov063_02159714(void) {
-    mVel.x   = 0;
-    mVel.z   = 0;
-    mUnk_270 = 0;
+    mVel.x   = FX_F32_TO_FX32(0.0f);
+    mVel.z   = FX_F32_TO_FX32(0.0f);
+    mUnk_270 = FX_F32_TO_FX32(0.0f);
     mUnk_128.vfunc_1C(data_ov063_02163098, 0x1000, 0x19A, 0);
 }
 
@@ -767,9 +767,9 @@ void ActorUnkCANS::func_ov063_021599e4(void) {
 
 void ActorUnkCANS::func_ov063_02159ca8(void) {
     mUnk_128.vfunc_1C(data_ov063_02163068, 0x1333, 0x19A, 0);
-    mVel.x   = 0;
-    mVel.z   = 0;
-    mUnk_270 = 0;
+    mVel.x   = FX_F32_TO_FX32(0.0f);
+    mVel.z   = FX_F32_TO_FX32(0.0f);
+    mUnk_270 = FX_F32_TO_FX32(0.0f);
     volatile u16 var;
     func_ov000_020986b4((s16 *) &var, this, 0);
 
@@ -806,9 +806,9 @@ void ActorUnkCANS::func_ov063_02159d68(void) {
 }
 
 void ActorUnkCANS::func_ov063_02159dfc(void) {
-    mVel.x   = 0;
-    mVel.z   = 0;
-    mUnk_270 = 0;
+    mVel.x   = FX_F32_TO_FX32(0.0f);
+    mVel.z   = FX_F32_TO_FX32(0.0f);
+    mUnk_270 = FX_F32_TO_FX32(0.0f);
     mUnk_200.func_ov000_02097bec();
 }
 

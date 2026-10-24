@@ -149,7 +149,7 @@ public:
     /* 04 */ fx32 mUnk_04;
     /* 08 */ fx32 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
+    /* 10 */ fx32 mUnk_10;
     /* 14 */ unk32 mUnk_14;
     /* 18 */
 

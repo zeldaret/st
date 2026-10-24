@@ -22,12 +22,13 @@ ActorUnkEFSB::ActorUnkEFSB() :
     mUnk_154(&this->mUnk_098, GET_PROFILE(ActorProfileUnkEFSB)->vfunc_04()) {}
 
 bool ActorUnkEFSB::Init(unk32 param1) {
+#pragma unused(param1)
     this->mUnk_0F8.vfunc_1C(data_ov031_02114ed0[0], 0x1000, 0x11F, 0x0);
     this->mUnk_154.func_ov000_02099ff8(data_ov031_02114ed0[0], 0x1000);
 
     this->mUnk_1B0 = this->mUnk_5C.mParams[0] << 0xC;
-    if (this->mUnk_1B0 == 0) {
-        this->mUnk_1B0 = 0x1000;
+    if (this->mUnk_1B0 == FX_F32_TO_FX32(0.0f)) {
+        this->mUnk_1B0 = FX_F32_TO_FX32(1.0f);
     }
 
     this->vfunc_54(0x0);
@@ -51,10 +52,11 @@ void ActorUnkEFSB::vfunc_54(unk32 param1) {
 }
 
 void ActorUnkEFSB::vfunc_2C(unk32 param1) {
+#pragma unused(param1)
     VecFx32 vec;
 
     VecFx32_Init(FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), &vec);
-    vec.z = func_01ffb428(this->mUnk_1B0, 0x8000);
+    vec.z = func_01ffb428(this->mUnk_1B0, FX_F32_TO_FX32(8.0f));
 
     VecFx32 sp0 = this->mPos;
     sp0.y += FX_F32_TO_FX32(0.85f);
