@@ -218,7 +218,7 @@ public:
     bool func_ov000_0209d114();
     bool func_ov000_0209d12c();
     bool func_ov000_0209d144(Vec2s *param1, unk32 param2, UnkStruct_027e09bc_0C *param3);
-    void func_ov000_0209d274(unk32 param1);
+    fx32 func_ov000_0209d274(unk32 param1);
     bool func_ov000_0209d29c(unk32 param1);
     void func_ov000_0209d2c4(unk32 param1, bool param2);
     void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3);

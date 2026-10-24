@@ -25,8 +25,8 @@ MapObjectProfileUnkSTAT::MapObjectProfileUnkSTAT() :
     MapObjectProfileUnkSTAT_Base(MapObjectId_STAT, MapObjectId_STAT) {
     mUnk_D4.mUnk_08 = 0x7007;
     VecFx32_Init(0, 0, 0, &mUnk_D4.mUnk_0C);
-    mUnk_D4.mUnk_18.x = 0x800;
-    mUnk_D4.mUnk_18.y = 0x1000;
+    mUnk_D4.mUnk_18.x = FX_F32_TO_FX32(0.5f);
+    mUnk_D4.mUnk_18.y = FX_F32_TO_FX32(1.f);
 
     mUnk_06 = -1;
     UNSET_FLAG2(mUnk_1E, 0);
