@@ -128,8 +128,8 @@ void MapObject::func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param
     *param1 = func_01ffbbe0(local_18.x, local_18.z);
 }
 
-void MapObject::func_ov000_0209d274(unk32 param1) {
-    func_01ffb9cc(&this->mPos, data_027e0ce0->func_01fff148(param1));
+fx32 MapObject::func_ov000_0209d274(unk32 param1) {
+    return func_01ffb9cc(&this->mPos, data_027e0ce0->func_01fff148(param1));
 }
 
 bool MapObject::func_ov000_0209d29c(unk32 param1) {
