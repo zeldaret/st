@@ -64,8 +64,8 @@ MapObjectProfileUnkWLMS::MapObjectProfileUnkWLMS() :
     MapObjectProfileUnkSTAT_Base(MapObjectId_WLMS, MapObjectId_WLMS) {
     mUnk_D4.mUnk_08 = 0x2bc07006;
     VecFx32_Init(0, 0, 0, &mUnk_D4.mUnk_0C);
-    mUnk_D4.mUnk_18.x = 0x800;
-    mUnk_D4.mUnk_18.y = 0x1000;
+    mUnk_D4.mUnk_18.x = FX_F32_TO_FX32(0.5f);
+    mUnk_D4.mUnk_18.y = FX_F32_TO_FX32(1.f);
     UNSET_FLAG2(mUnk_D4.mUnk_04, 1);
     mUnk_14 = 0x574c4d50;
     mUnk_0C = 0x1B33;
@@ -123,7 +123,7 @@ MapObjectUnkWLMS::MapObjectUnkWLMS() :
 bool MapObjectUnkWLMS::Init() {
     mUnk_18[0] = 0x14;
     if (mUnk_20.mParams[1] == 1) {
-        mPos.x += 0x800;
+        mPos.x += FX_F32_TO_FX32(0.5f);
     }
     this->func_ov063_02160580(MapObjectUnkWLMSState_0, 1);
     return true;
@@ -341,7 +341,7 @@ unk32 MapObjectUnkWLMS::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
 void MapObjectUnkWLMS::vfunc_14(unk32 param1) {
 #pragma unused(param1)
     VecFx32 vec;
-    VecFx32_Init(mPos.x, mPos.y + 0xb33, mPos.z + -0x733, &vec);
+    VecFx32_Init(mPos.x, mPos.y + FX_F32_TO_FX32(0.7f), mPos.z + -FX_F32_TO_FX32(0.45f), &vec);
     mUnk_4C.vfunc_18(&vec);
     mUnk_70.vfunc_18(&vec);
 
