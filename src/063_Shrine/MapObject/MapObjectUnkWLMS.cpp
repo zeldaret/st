@@ -358,24 +358,19 @@ void MapObjectUnkWLMS::vfunc_18(s8 *param1) {
         return;
     }
 
-    unk16 *start = &mUnk_316;
-    if (start < (unk16 *) &mUnk_31C) {
-        unk16 *ptr = start;
-        do {
-            unk16 val = *ptr;
-            if (val >= 0) {
-                u16 temp_x   = (&data_ov063_021638e8)[val] + ((s16 *) &data_ov063_021638c0)[0];
-                u16 temp_y   = (&data_ov063_021638e8)[val] + ((s16 *) &data_ov063_021638c0)[1];
-                u16 stack[2] = {temp_x, temp_y};
+    for (unk16 *ptr = &mUnk_316; ptr < (unk16 *) &mUnk_31C; ++ptr) {
+        unk16 val = *ptr;
+        if (val >= 0) {
+            u16 temp_x   = (&data_ov063_021638e8)[val] + ((s16 *) &data_ov063_021638c0)[0];
+            u16 temp_y   = (&data_ov063_021638e8)[val] + ((s16 *) &data_ov063_021638c0)[1];
+            u16 stack[2] = {temp_x, temp_y};
 
-                if (ptr == start || ptr == &mUnk_31A) {
-                    data_0204af1c.func_0201aad0(&data_ov063_02164514, &stack, 1, NULL);
-                } else {
-                    data_0204af1c.func_0201aad0(&data_ov063_0216458c, &stack, 1, NULL);
-                }
+            if (ptr == &mUnk_316 || ptr == &mUnk_31A) {
+                data_0204af1c.func_0201aad0(&data_ov063_02164514, &stack, 1, NULL);
+            } else {
+                data_0204af1c.func_0201aad0(&data_ov063_0216458c, &stack, 1, NULL);
             }
-            ptr++;
-        } while (ptr < (unk16 *) &mUnk_31C);
+        }
     }
 }
 
