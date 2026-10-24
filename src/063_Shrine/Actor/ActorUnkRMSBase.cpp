@@ -14,10 +14,8 @@ bool ActorUnkRMSBase::Init(unk32 param1) {
     return res;
 }
 
-// Matched
 void ActorUnkRMSBase::Setup() {}
 
-// Matched
 void ActorUnkRMSBase::Update() {}
 
 void ActorUnkRMSBase::vfunc_24() {

@@ -3,6 +3,7 @@
 #include "CommonFuncs.hpp"
 #include "FileSelect/FileSelectUnkDraw.hpp"
 #include "LinkList.hpp"
+#include "Map/MapObjectId.hpp"
 #include "MapObject/MapObject.hpp"
 #include "Player/TouchControl.hpp"
 #include "Unknown/Common.hpp"
@@ -56,7 +57,7 @@ MapObjectProfileUnkWLMS::MapObjectProfileUnkWLMS() :
     mUnk_D4.mUnk_18.x = FX_F32_TO_FX32(0.5f);
     mUnk_D4.mUnk_18.y = FX_F32_TO_FX32(1.f);
     UNSET_FLAG2(mUnk_D4.mUnk_04, 1);
-    mUnk_14 = 0x574c4d50;
+    mUnk_14 = MapObjectId_WLMP;
     mUnk_0C = 0x1B33;
     mUnk_06 = -1;
     SET_FLAG2(mUnk_1E, 0);
@@ -275,16 +276,16 @@ unk32 MapObjectUnkWLMS::func_ov063_02160580(MapObjState param1, unk32 param2) {
     switch (mState) {
         case MapObjectUnkWLMSState_0:
             if (!this->func_ov000_0209d29c(0)) {
-                SET_FLAG(mFlags, 9);
+                SET_FLAG(mFlags, MapObjFlag_9);
             } else {
-                UNSET_FLAG(mFlags, 9);
+                UNSET_FLAG(mFlags, MapObjFlag_9);
             }
 #if IS_JP
             mUnk_31F = false;
 #endif
             break;
         case MapObjectUnkWLMSState_1: {
-            UNSET_FLAG(mFlags, 9);
+            UNSET_FLAG(mFlags, MapObjFlag_9);
             stack_ov000_02073578 stack;
             stack.unk_08 = 0x7;
             stack.unk_04 = (unk32) (uintptr_t) &mUnk_320;

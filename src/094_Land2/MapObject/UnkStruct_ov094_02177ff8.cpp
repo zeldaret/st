@@ -15,5 +15,4 @@ void UnkStruct_ov094_02177ff8::vfunc_0C(void) {
     }
 }
 
-// Matched
 void UnkStruct_ov094_02177ff8::vfunc_38(void) {}
