@@ -18,6 +18,7 @@
 #include "Unknown/UnkStruct_ov000_020b52b4.hpp"
 #include "Unknown/UnkStruct_ov031_02118fa4.hpp"
 #include "flags.h"
+#include "math.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
 #include "nitro/mi.h"
