@@ -4,7 +4,6 @@ extern "C" void func_ov000_0205b224(UnkStruct_ov000_020b1c10_10 *, unk32, u16);
 
 // non-matching
 UnkStruct_ov000_020b1c10::UnkStruct_ov000_020b1c10(unk32 *param1, unk32 param2) :
-    mUnk_04(),
     mUnk_0C(0) {
     func_ov000_0205b1cc(&mUnk_10, param1, param2);
     mUnk_1C = 0x1000;
