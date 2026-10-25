@@ -277,7 +277,7 @@ void ActorUnkRCFO::func_ov033_02119a58() {
         sp.y = 0xBF;
     }
 
-    unk32 val   = this->mUnk_910.mUnk_00;
+    unk32 *val  = this->mUnk_910.mUnk_00;
     unk32 delta = this->mUnk_910.mUnk_04 - val;
     if ((u32) (delta / 4) == 0x0) {
         this->mUnk_910.func_ov000_0205b1d8(&sp);
