@@ -556,7 +556,7 @@ void UnkStruct_ov024_020d8694_188::vfunc_00() {
 void UnkStruct_ov024_020d8694_188::vfunc_04(unk8 *param1) {
     MtxFx22 local;
     local     = data_027e0120;
-    local._11 = func_01ffb428(0x1000, this->mUnk_144.func_0201ec30());
+    local._11 = func_01ffb428(FX_F32_TO_FX32(1.0f), this->mUnk_144.func_0201ec30());
 
     UnkDataStruct1 local_30(&local, 0x40);
     this->func_ov024_020cb654(param1, &local_30);

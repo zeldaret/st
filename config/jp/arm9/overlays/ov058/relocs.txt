@@ -588,7 +588,7 @@ from:0x021460f4 kind:load to:0x02154e8d module:overlay(58)
 from:0x021460f8 kind:load to:0x02154e8e module:overlay(58)
 from:0x021460fc kind:load to:0x02154e8f module:overlay(58)
 from:0x02146100 kind:load to:0x02155f94 module:overlay(58)
-from:0x02146104 kind:load to:0x02156418 module:overlay(58)
+from:0x02146104 kind:load to:0x02156410 module:overlay(58) add:0x8
 from:0x02146108 kind:load to:0x02154e8c module:overlay(58)
 from:0x0214610c kind:load to:0x0214115c module:overlay(58)
 from:0x02146110 kind:load to:0x0214393c module:overlay(58)

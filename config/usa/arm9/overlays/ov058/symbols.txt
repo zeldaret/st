@@ -119,11 +119,11 @@ _ZN19ActorProfileUnkNSTN6CreateEv kind:function(arm,size=0x24) addr:0x021429b8
 _ZN19ActorProfileUnkNSTNC1Ev kind:function(arm,size=0x30) addr:0x021429dc
 _ZN12ActorUnkNSTNC1Ev kind:function(arm,size=0x90) addr:0x02142a0c
 _ZN12ActorUnkNSTN19func_ov058_02142abcEv kind:function(arm,size=0x14) addr:0x02142a9c
-_ZN12ActorUnkNSTN19func_ov058_02142ad0Ev kind:function(arm,size=0x18) addr:0x02142ab0
-_ZN12ActorUnkNSTN19func_ov058_02142ae8Ev kind:function(arm,size=0x8) addr:0x02142ac8
-_ZN12ActorUnkNSTN19func_ov058_02142af0Ev kind:function(arm,size=0x54) addr:0x02142ad0
-_ZN12ActorUnkNSTN19func_ov058_02142b44Ev kind:function(arm,size=0x38) addr:0x02142b24
-_ZN12ActorUnkNSTN19func_ov058_02142b7cEv kind:function(arm,size=0x30) addr:0x02142b5c
+_ZN12ActorUnkNSTN4InitEi kind:function(arm,size=0x18) addr:0x02142ab0
+_ZN12ActorUnkNSTN8vfunc_58Ev kind:function(arm,size=0x8) addr:0x02142ac8
+_ZN12ActorUnkNSTN8vfunc_5CEs kind:function(arm,size=0x54) addr:0x02142ad0
+_ZN12ActorUnkNSTN6UpdateEv kind:function(arm,size=0x38) addr:0x02142b24
+_ZN12ActorUnkNSTN8vfunc_2CEi kind:function(arm,size=0x30) addr:0x02142b5c
 _ZN12ActorUnkNSTN19func_ov058_02142bacEv kind:function(arm,size=0xc) addr:0x02142b8c
 _ZN12ActorUnkNSTN19func_ov058_02142bb8Ev kind:function(arm,size=0xc) addr:0x02142b98
 _ZN12ActorUnkNSTN19func_ov058_02142bc4Ev kind:function(arm,size=0xc) addr:0x02142ba4
@@ -699,7 +699,7 @@ data_ov058_02153468 kind:data(any) addr:0x02153468
 __sinit_ov058_02153478 kind:function(arm,size=0x50) addr:0x02153478
 __sinit_ov058_021534c8 kind:function(arm,size=0x50) addr:0x021534c8
 __sinit_ov058_02153518 kind:function(arm,size=0x50) addr:0x02153518
-__sinit_ov058_02153568 kind:function(arm,size=0x50) addr:0x02153568
+__sinit_ActorUnkNSTN.cpp kind:function(arm,size=0x50) addr:0x02153568
 __sinit_ov058_021535b8 kind:function(arm,size=0x3d0) addr:0x021535b8
 __sinit_ov058_02153988 kind:function(arm,size=0x50) addr:0x02153988
 __sinit_ov058_021539d8 kind:function(arm,size=0x7c) addr:0x021539d8
@@ -724,7 +724,7 @@ __sinit_ov058_021540b0 kind:function(arm,size=0x50) addr:0x021540b0
 .p__sinit_ov058_02153478 kind:data(word) addr:0x02154100
 .p__sinit_ov058_021534c8 kind:data(word) addr:0x02154104
 .p__sinit_ov058_02153518 kind:data(word) addr:0x02154108
-.p__sinit_ov058_02153568 kind:data(word) addr:0x0215410c
+.p__sinit_ActorUnkNSTN.cpp kind:data(word) addr:0x0215410c
 .p__sinit_ov058_021535b8 kind:data(word) addr:0x02154110
 .p__sinit_ov058_02153988 kind:data(word) addr:0x02154114
 .p__sinit_ov058_021539d8 kind:data(word) addr:0x02154118
@@ -774,12 +774,11 @@ data_ov058_02154508 kind:data(any) addr:0x02154508
 data_ov058_0215452c kind:data(any) addr:0x0215452c
 data_ov058_02154544 kind:data(any) addr:0x02154544 ambiguous
 data_ov058_02154590 kind:data(any) addr:0x02154590
-data_ov058_021545a4 kind:data(any) addr:0x021545a4
-data_ov058_021545c0 kind:data(any) addr:0x021545c0
-data_ov058_02154600 kind:data(any) addr:0x02154600
-data_ov058_02154648 kind:data(any) addr:0x02154648
-data_ov058_0215469c kind:data(any) addr:0x0215469c ambiguous
-data_ov058_021546b8 kind:data(any) addr:0x021546b8
+_ZTV19ActorProfileUnkNSTN kind:data(any) addr:0x0215459c
+data_ov058_021545e0 kind:data(any) addr:0x021545c0
+data_ov058_02154620 kind:data(any) addr:0x02154600
+_ZTV12ActorUnkNSTN kind:data(any) addr:0x02154640
+_ZTV19data_ov058_021546b8 kind:data(any) addr:0x021546b0
 data_ov058_021546c8 kind:data(any) addr:0x021546c8
 data_ov058_021546e8 kind:data(any) addr:0x021546e8
 data_ov058_02154704 kind:data(any) addr:0x02154704 ambiguous
@@ -921,9 +920,9 @@ data_ov058_02155f80 kind:bss addr:0x02155f80
 data_ov058_02155fc4 kind:bss addr:0x02155fc4
 data_ov058_02155fc8 kind:bss addr:0x02155fc8
 data_ov058_02155fd4 kind:bss addr:0x02155fd4
-data_ov058_02156010 kind:bss addr:0x02156010
-data_ov058_02156014 kind:bss addr:0x02156014
-data_ov058_02156020 kind:bss addr:0x02156020
+_ZGVN15ProfileInstanceI19ActorProfileUnkNSTNE8sProfileE kind:bss addr:0x02156010
+@5332 kind:bss addr:0x02156014
+_ZN15ProfileInstanceI19ActorProfileUnkNSTNE8sProfileE kind:bss addr:0x02156020
 data_ov058_0215605c kind:bss addr:0x0215605c
 data_ov058_02156098 kind:bss addr:0x02156098
 data_ov058_021560a4 kind:bss addr:0x021560a4

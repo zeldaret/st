@@ -27,13 +27,14 @@ src/058_Field/Actor/ActorUnkNSTN.cpp:
     .text       start:0x02142aec end:0x02142eb0
     .init       start:0x021536a8 end:0x021536f8
     .ctor       start:0x0215424c end:0x02154250
-    .bss        start:0x02156150 end:0x021562c0
+    .data       start:0x021546dc end:0x021547f0
+    .bss        start:0x02156150 end:0x0215619c
 
 src/058_Field/Actor/ActorUnkSYDE_SYDL_SYDS_SYFI_SYFO_SYIL_SYIS_SYOL_SYOS_SYSL_SYSN_SYSS_SYWA_SYWL_SYWS.cpp:
     .text       start:0x02142eb0 end:0x02148010
     .init       start:0x021536f8 end:0x02153ac8
     .ctor       start:0x02154250 end:0x02154254
-    .bss        start:0x021562c0 end:0x02156fe8
+    .bss        start:0x0215619c end:0x02156fe8
 
 src/058_Field/Actor/ActorUnkCRFT.cpp:
     .text       start:0x02148010 end:0x02148d0c

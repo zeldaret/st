@@ -154,7 +154,7 @@ public:
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
 
-    unk32 func_0201ec30();
+    fx32 func_0201ec30();
     void func_0201ebf8(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
 
     void Subprocess1_UnkValueSets() {

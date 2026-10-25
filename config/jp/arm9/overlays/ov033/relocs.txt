@@ -84,7 +84,7 @@ from:0x0211ba94 kind:load to:0x02123280 module:overlay(33)
 from:0x0211ba98 kind:load to:0x0211f96c module:overlay(33)
 from:0x0211ba9c kind:load to:0x0211f944 module:overlay(33)
 from:0x0211bab0 kind:arm_call to:0x02016614 module:main
-from:0x0211badc kind:load to:0x02122f6c module:overlay(33)
+from:0x0211badc kind:load to:0x02122f64 module:overlay(33) add:0x8
 from:0x0211bb00 kind:arm_call to:0x0205c7ac module:overlay(0)
 from:0x0211bb14 kind:arm_call to:0x02098ecc module:overlay(0)
 from:0x0211bb28 kind:load to:0x02123aac module:overlay(33)

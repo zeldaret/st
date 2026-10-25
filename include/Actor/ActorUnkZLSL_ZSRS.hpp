@@ -161,23 +161,23 @@ public:
 // --- Actor ZLSL ---
 
 enum ActorUnkZLSLState_ {
-    ActorUnkZLSLState_0  = 0,
-    ActorUnkZLSLState_1  = 1,
-    ActorUnkZLSLState_2  = 2,
-    ActorUnkZLSLState_3  = 3,
-    ActorUnkZLSLState_4  = 4,
-    ActorUnkZLSLState_5  = 5,
-    ActorUnkZLSLState_6  = 6,
-    ActorUnkZLSLState_7  = 7,
-    ActorUnkZLSLState_8  = 8,
-    ActorUnkZLSLState_9  = 9,
-    ActorUnkZLSLState_10 = 10,
-    ActorUnkZLSLState_11 = 11,
-    ActorUnkZLSLState_12 = 12,
-    ActorUnkZLSLState_13 = 13,
-    ActorUnkZLSLState_14 = 14,
-    ActorUnkZLSLState_15 = 15,
-    ActorUnkZLSLState_16 = 16,
+    ActorUnkZLSLState_OpenArms           = 0, // ZLSL arms are open
+    ActorUnkZLSLState_1                  = 1,
+    ActorUnkZLSLState_2                  = 2,
+    ActorUnkZLSLState_3                  = 3,
+    ActorUnkZLSLState_RotateClosedArms   = 4,  // Rotate body towards Actor go to state 5
+    ActorUnkZLSLState_ClosedArms         = 5,  // ZLSL arms are closed
+    ActorUnkZLSLState_FollowPath         = 6,  // used when ZLSL go ahead in first cave and encounter rats
+    ActorUnkZLSLState_RotateOpenArms     = 7,  // Rotate body towards Actor go to state 0
+    ActorUnkZLSLState_Idle               = 8,  // always on the side of Link
+    ActorUnkZLSLState_TakePhantomControl = 9,  // Control a Phantom
+    ActorUnkZLSLState_TakeHumanShape     = 10, // Take human shape and go to state 5 called when exiting Link or Phantom
+    ActorUnkZLSLState_GoOrbShapeAndIdle  = 11, // Return to Link in orb form and go to state idle
+    ActorUnkZLSLState_12                 = 12, // Return to Link in orb form and go to state idle
+    ActorUnkZLSLState_TakeHumanShapeTrainStation = 13, // Take human shape and go to state 14 (train station)
+    ActorUnkZLSLState_FollowLink                 = 14,
+    ActorUnkZLSLState_DuetFinale                 = 15,
+    ActorUnkZLSLState_16                         = 16,
     ActorUnkZLSLState_Max
 };
 

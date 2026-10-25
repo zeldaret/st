@@ -26,8 +26,6 @@ struct OverlaySetup {
 };
 extern OverlaySetup gOverlaySetups[];
 
-extern u32 *data_027e0ce0[];
-
 THUMB_BEGIN
 
 void OverlayManager::LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index) {
@@ -66,7 +64,7 @@ void OverlayManager::LoadOverlaySetup(s32 index) {
     this->LoadIfNotLoaded(OverlaySlot_2, pSetup->slot2Overlay);
 
     if (index == 5) {
-        func_ov007_02102850(data_027e0ce0);
+        func_ov007_02102850(&data_027e0ce0);
     } else {
         overlayId = pSetup->slot12Overlay;
 
@@ -84,7 +82,7 @@ void OverlayManager::UnloadOverlaySetup() {
     this->Unload(OverlaySlot_3);
 
     if (this->mLoadedOverlays[2] == OverlayId_RailEdit) {
-        func_ov007_021028a0(data_027e0ce0);
+        func_ov007_021028a0(&data_027e0ce0);
         this->Unload(OverlaySlot_2);
     }
 }

@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Actor/ActorId.hpp"
+#include "Actor/ActorLobarrier.hpp"
+#include "Actor/ActorLobarrierShield.hpp"
 #include "Course/Course.hpp"
 #include "Map/MapObjectId.hpp"
 #include "Player/PlayerActorBase.hpp"
@@ -39,7 +41,7 @@ struct UnkStruct_027e0ce0_30_00;
 struct Actor_Derived2;
 struct ActorUnkCANS;
 struct UnkStruct_ov063_02162e88;
-struct UnkStruct_ActorUnkCANS_224;
+struct UnkStruct_ActorLobarrier_224;
 struct ActorUnkZLSL_AnimationTag;
 struct UnkStruct_ov063_02163784;
 struct UnkStruct_ov063_021632e4;
@@ -90,7 +92,7 @@ void func_01ffa7a0(VecFx32 *, MtxFx33 *, VecFx32 *);
 void func_01ffa9e8(MtxFx43 *, MtxFx43 *);
 void func_01ffad5c(MtxFx43 *, MtxFx43 *, MtxFx43 *);
 void func_01ffaf74(VecFx32 *, MtxFx43 *, VecFx32 *);
-fx32 func_01ffb428(unk32, unk32);
+fx32 func_01ffb428(fx32, fx32);
 fx32 func_01ffb464(fx32);
 fx32 func_01ffb66c(unk32, unk32);
 unk32 func_01ffb6a8(unk32, unk32);
@@ -210,7 +212,7 @@ unk32 func_02032784(unk32 param1);
 unk32 func_020328c8(void *, void *, size_t);
 u16 func_02032920(void *param1, size_t param2);
 unk32 func_02039d60(f32, unk32);
-f32 func_02039f04(unk32);
+f32 func_02039f04(fx32);
 f32 func_0203ab58(unk32, f32);
 f32 func_0203ad88(f32, unk32);
 void func_02097bb8(void);
@@ -302,7 +304,7 @@ unk32 func_ov000_02077480();
 fx32 func_ov000_020775d8(fx32);
 unk32 func_ov000_02078aec();
 void func_ov000_0207b6c0();
-void func_ov000_0207b70c(ActorUnkCASE_174 *param1, Actor *param2);
+void func_ov000_0207b70c(ActorLobarrierShield_174 *param1, Actor *param2);
 unk32 func_ov000_0207df88(unk32 *, Cylinder *, unk32);
 void Unknown_func_ov000_0207fd7c(void *, void *, unk32);
 fx32 func_ov000_02080068(fx32 x);
@@ -339,8 +341,8 @@ void func_ov000_0209807c(void *);
 void func_ov000_020980e0(void *);
 void func_ov000_02098244(VecFx32 *);
 void func_ov000_020986b4(s16 *param1, Actor *param2, unk32 param3);
-unk32 func_ov000_02098d7c(ActorUnkCANS *param1, UnkStruct_ov063_02162e88 *param2);
-void func_ov000_02099870(UnkStruct_ActorUnkCANS_224 *, VecFx32 *, u16);
+unk32 func_ov000_02098d7c(ActorLobarrier *param1, UnkStruct_ov063_02162e88 *param2);
+void func_ov000_02099870(UnkStruct_ActorLobarrier_224 *, VecFx32 *, u16);
 void func_ov000_02099e58(UnkStruct_ov063_021632e4 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);
 void func_ov000_02099f64(UnkStruct_ov063_02163784 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param3);
 bool func_ov000_020a0a90(size_t, unk32, size_t);
@@ -371,8 +373,8 @@ unk32 func_ov004_020b697c(void *, unk32 param1);
 AdventureModeManager_160_18 *func_ov006_020b6ab0(void *, void *);
 
 // overlay 7
-void func_ov007_02102850(uint **);
-void func_ov007_021028a0(uint **);
+void func_ov007_02102850(UnkStruct_027e0ce0 **);
+void func_ov007_021028a0(UnkStruct_027e0ce0 **);
 
 // overlay 8
 GameModeManagerBase_104 *func_ov008_020b6520(void *);

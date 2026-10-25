@@ -9,8 +9,8 @@
 #include "types.h"
 
 enum ActorItemBoomerangState_ {
-    ActorItemBoomerangState_0,
-    ActorItemBoomerangState_1,
+    ActorItemBoomerangState_FollowingPath,
+    ActorItemBoomerangState_ReturningToLink,
     ActorItemBoomerangState_MAX
 };
 
