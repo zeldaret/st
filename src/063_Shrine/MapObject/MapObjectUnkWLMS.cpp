@@ -71,7 +71,7 @@ UnkStruct_ov063_02163910::UnkStruct_ov063_02163910(void *param1) {
 struct UnkStruct_ov063_02163910_04 {
     /* 00 */ PAD(0x0, 0x40);
     /* 40 */ unk32 mUnk_40;
-    /* 44 */ LinkListNode mUnk_44;
+    /* 44 */ LinkList<unk32> mUnk_44;
 };
 void UnkStruct_ov063_02163910::vfunc2_00() {
 
@@ -84,7 +84,7 @@ void UnkStruct_ov063_02163910::vfunc2_00() {
 }
 
 void UnkStruct_ov063_02163910::vfunc2_04() {
-    LinkListImpl::Detach(&((UnkStruct_ov063_02163910_04 *) mUnk_04p)->mUnk_44);
+    ((UnkStruct_ov063_02163910_04 *) mUnk_04p)->mUnk_44.Detach();
 }
 
 MapObjectUnkWLMS::MapObjectUnkWLMS() :
@@ -336,19 +336,10 @@ void MapObjectUnkWLMS::vfunc_14(unk32 param1) {
     mUnk_4C.vfunc_18(&vec);
     mUnk_70.vfunc_18(&vec);
 
-    if (1 < (u16) (s16) (mState - 4)) {
-        return;
-    }
-
-    if (mUnk_D0.mUnk_10.mUnk_04 - mUnk_D0.mUnk_10.mUnk_00 != 0) {
-        UnkStruct_ov000_020b1c10 *ptr = &mUnk_D0;
-        LinkListNode *node;
-        if (ptr != NULL) {
-            node = &ptr->mUnk_04;
-        } else {
-            node = (LinkListNode *) ptr;
+    if (mState == 4 || mState == 5) {
+        if (mUnk_D0.mUnk_10.mUnk_04 - mUnk_D0.mUnk_10.mUnk_00 != 0) {
+            data_027e0954->mUnk_00[1].mUnk_04.Prepend((UnkStruct_ov000_020b1c10 *) &mUnk_D0);
         }
-        data_027e0954->mUnk_00[1].mUnk_04.Prepend(node);
     }
 }
 

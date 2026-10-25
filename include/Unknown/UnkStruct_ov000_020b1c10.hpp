@@ -8,10 +8,9 @@ struct UnkStruct_ov000_020b1c10_10 {
 
 void func_ov000_0205b1cc(UnkStruct_ov000_020b1c10_10 *param1, unk32 *param2, unk32 param3);
 
-class UnkStruct_ov000_020b1c10 {
+class UnkStruct_ov000_020b1c10 : public LinkList<UnkStruct_ov000_020b1c10> {
 public:
     /* 00 (vtable) */
-    /* 04 */ LinkListImpl mUnk_04;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ UnkStruct_ov000_020b1c10_10 mUnk_10;
     /* 1C */ unk32 mUnk_1C;
