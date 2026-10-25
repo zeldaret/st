@@ -1,22 +1,14 @@
 #include "MapObject/MapObjectUnkWLMS.hpp"
-
-extern "C" void func_ov000_0205b224(UnkStruct_ov000_020b1c10_10 *, unk32, u16);
+#include "math.hpp"
 
 // non-matching
-UnkStruct_ov000_020b1c10::UnkStruct_ov000_020b1c10(unk32 *param1, unk32 param2) :
-    mUnk_0C(0) {
-    func_ov000_0205b1cc(&mUnk_10, param1, param2);
+UnkStruct_ov000_020b1c10::UnkStruct_ov000_020b1c10(Vec2s *param1, unk32 param2) :
+    mUnk_0C(0),
+    mUnk_10(param1, param2) {
     mUnk_1C = 0x1000;
     mUnk_20 = 0;
 }
 
 void UnkStruct_ov000_020b1c10::vfunc_00() {
-    func_ov000_0205b224(&mUnk_10, mUnk_1C, mUnk_20);
-}
-
-// matching, may belong to a different file
-void func_ov000_0205b1cc(UnkStruct_ov000_020b1c10_10 *param1, unk32 *param2, unk32 param3) {
-    param1->mUnk_00 = param2;
-    param1->mUnk_04 = param2;
-    param1->mUnk_08 = param3;
+    mUnk_10.func_ov000_0205b224(mUnk_1C, mUnk_20);
 }

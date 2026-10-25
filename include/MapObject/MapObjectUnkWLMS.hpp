@@ -10,6 +10,7 @@
 #include "Unknown/UnkStruct_ov000_020b1c10.hpp"
 #include "Unknown/UnkStruct_ov094_02177ff8.hpp"
 #include "global.h"
+#include "math.hpp"
 #include "types.h"
 
 class UnkStruct_ov063_02163910 : public ActorUnkTLKT_9C_Base {
@@ -36,7 +37,7 @@ public:
     /* 000 (base) */
     /* 070 */ ModelRender mUnk_70;
     /* 0D0 */ UnkStruct_ov000_020b1c10 mUnk_D0;
-    /* 0F4 */ unk32 mUnk_F4;
+    /* 0F4 */ Vec2s mUnk_F4;
     /* 0F8 */ PAD(0x0F8, 0x2F4);
     /* 2F4 */ TouchControl mUnk_2F4;
     /* 316 */ unk16 mUnk_316;

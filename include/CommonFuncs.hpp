@@ -3,6 +3,7 @@
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorLobarrier.hpp"
 #include "Actor/ActorLobarrierShield.hpp"
+#include "Actor/ActorUnkRCFO.hpp"
 #include "Course/Course.hpp"
 #include "Map/MapObjectId.hpp"
 #include "Player/PlayerActorBase.hpp"
@@ -59,7 +60,6 @@ struct UnkStruct_027e0960_TableEntry_04_Base;
 struct UnkStruct_PlayerGet_50;
 struct MapObjectUnkWLMS;
 struct stack_ov000_02073578;
-struct UnkStruct_ov000_020b1c10_10;
 struct UnkStruct_ov031_02118fa4;
 
 union Vec2bCpp;
@@ -271,7 +271,7 @@ bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
 bool func_ov000_0205aeac();
 unk32 func_ov000_0205b090();
 unk32 func_ov000_0205b0ac(s16 param1);
-void func_ov000_0205b1d8(UnkStruct_ov000_020b1c10_10 *param1, void *param2);
+void func_ov000_0205b1d8(ActorUnkRCFO_910 *param1, void *param2);
 void func_ov000_0205be34(void *thisx, unk16 param1);
 void func_ov000_0205be44(void *thisx, Vec2s *param1, Vec2s *param2, bool param3, bool param4);
 void func_ov000_0205c1f0(unk32 *, u16);
