@@ -243,7 +243,7 @@ void ActorKeese::SetState(ActorState state) {
 
     this->mState = state;
 
-    CALL_PTMF(PTMF<ActorKeese>, data_ov032_0212258c[this->mState]);
+    CALL_PTMF(data_ov032_0212258c[this->mState]);
 }
 
 // non-matching
@@ -261,7 +261,7 @@ void ActorKeese::Update() {
     }
 
     this->mUnk_3C = &this->mUnk_248;
-    CALL_PTMF(PTMF<ActorKeese>, data_ov032_021225dc[this->mState]);
+    CALL_PTMF(data_ov032_021225dc[this->mState]);
 
     if (this->mState == ActorKeeseState_9) {
         return;

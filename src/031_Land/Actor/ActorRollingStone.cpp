@@ -164,7 +164,7 @@ bool ActorRollingStone::Init(unk32 param1) {
 void ActorRollingStone::Update() {
     this->mTimer.Update();
 
-    CALL_PTMF(PTMF<ActorRollingStone>, data_ov031_02114a94[this->mState]);
+    CALL_PTMF(data_ov031_02114a94[this->mState]);
 
     if (this->mState == ActorRollingStoneState_10) {
         return;
@@ -181,7 +181,7 @@ void ActorRollingStone::SetState(ActorState state) {
     this->mState = state;
     this->mTimer.Reset();
     this->mUnk_38->mUnk_08 = 0x3;
-    CALL_PTMF(PTMF<ActorRollingStone>, data_ov031_02114aec[this->mState]);
+    CALL_PTMF(data_ov031_02114aec[this->mState]);
 }
 
 void ActorRollingStone::func_ov031_020f8880() {

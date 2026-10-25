@@ -179,7 +179,7 @@ void ActorBomb::SetState(ActorState state) {
     this->mState = state;
     this->func_ov031_020e18a0();
 
-    CALL_PTMF(PTMF<ActorBomb>, data_ov031_02112c38[this->mState]);
+    CALL_PTMF(data_ov031_02112c38[this->mState]);
 }
 
 void ActorBomb::func_ov031_020e1908() {
@@ -218,7 +218,7 @@ void ActorBomb::func_ov031_020e193c() {
 void ActorBomb::Update() {
     this->mUnk_3C = &this->mUnk_134;
 
-    CALL_PTMF(PTMF<ActorBomb>, data_ov031_02112c00[this->mState]);
+    CALL_PTMF(data_ov031_02112c00[this->mState]);
     this->func_ov031_020e1b7c();
 
     if (!GET_FLAG(this->mFlags, ActorFlag_Alive)) {

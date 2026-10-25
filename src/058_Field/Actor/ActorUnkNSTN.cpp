@@ -59,11 +59,11 @@ void ActorUnkNSTN::vfunc_5C(ActorState state) {
     this->mState  = state;
     this->vfunc_60();
 
-    CALL_PTMF(PTMF<ActorUnkNSTN>, data_ov058_021545e0[this->mState]);
+    CALL_PTMF(data_ov058_021545e0[this->mState]);
 }
 
 void ActorUnkNSTN::Update() {
-    CALL_PTMF(PTMF<ActorUnkNSTN>, data_ov058_02154620[this->mState]);
+    CALL_PTMF(data_ov058_02154620[this->mState]);
 }
 
 void ActorUnkNSTN::vfunc_2C(unk32 param1) {

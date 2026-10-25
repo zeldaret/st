@@ -536,7 +536,7 @@ void ActorRupee::SetState(ActorState state) {
     this->mState = state;
     this->mTimer.Reset();
     this->mUnk_EC = 0;
-    CALL_PTMF(PTMF<ActorRupee>, data_ov031_02113520[this->mState]);
+    CALL_PTMF(data_ov031_02113520[this->mState]);
 }
 
 // non-matching
@@ -622,7 +622,7 @@ void ActorRupee::Update() {
         }
     }
 
-    CALL_PTMF(PTMF<ActorRupee>, data_ov031_02113588[this->mState]);
+    CALL_PTMF(data_ov031_02113588[this->mState]);
 
     if (this->mUnk_5C.mUnk_24 < 0 && this->mState != ActorRupeeState_5) {
         this->func_ov031_020e9d94();

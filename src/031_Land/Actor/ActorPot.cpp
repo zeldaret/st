@@ -56,11 +56,11 @@ void ActorPot::vfunc_5C(ActorState state) {
 
     this->vfunc_60();
 
-    CALL_PTMF(PTMF<ActorPot>, data_ov031_02114060[this->mState]);
+    CALL_PTMF(data_ov031_02114060[this->mState]);
 }
 
 void ActorPot::Update() {
-    CALL_PTMF(PTMF<ActorPot>, data_ov031_021140a0[this->mState]);
+    CALL_PTMF(data_ov031_021140a0[this->mState]);
 }
 
 void ActorPot::vfunc_2C(unk32 param1) {

@@ -105,7 +105,7 @@ void ActorFleeingSpinut::SetState(ActorState state) {
     this->mUnk_2C    = data_ov000_020aecf8;
     this->mUnk_224   = true;
 
-    CALL_PTMF(PTMF<ActorFleeingSpinut>, data_ov032_021223e4[oldState]);
+    CALL_PTMF(data_ov032_021223e4[oldState]);
 }
 
 void ActorFleeingSpinut::Update() {
@@ -116,7 +116,7 @@ void ActorFleeingSpinut::Update() {
         this->mUnk_1EC.func_ov032_0211cf74();
     }
 
-    CALL_PTMF(PTMF<ActorFleeingSpinut>, data_ov032_0212241c[this->mState]);
+    CALL_PTMF(data_ov032_0212241c[this->mState]);
 
     this->Actor::func_ov000_02098838();
     this->func_ov032_0211cb2c();

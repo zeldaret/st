@@ -184,7 +184,7 @@ void ActorLobarrierShield::SetState(ActorState state) {
     mUnk_2C  = data_ov000_020aecf8[0];
     mUnk_120 = 0;
 
-    CALL_PTMF(PTMF<ActorLobarrierShield>, data_ov063_02163110[mState]);
+    CALL_PTMF(data_ov063_02163110[mState]);
 }
 
 // Matched
@@ -333,7 +333,7 @@ void ActorLobarrierShield::Update() {
 
     mUnk_3C = &mUnk_124;
 
-    CALL_PTMF(PTMF<ActorLobarrierShield>, data_ov063_021630e0[mState]);
+    CALL_PTMF(data_ov063_021630e0[mState]);
 
     VecFx32 *vec_base, *vec2;
     u16 ret1;

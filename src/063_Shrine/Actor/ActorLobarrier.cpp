@@ -218,7 +218,7 @@ void ActorLobarrier::func_ov063_02158424() {
 void ActorLobarrier::SetState(ActorState state) {
     this->func_ov063_02158424();
     mState = state;
-    CALL_PTMF(PTMF<ActorLobarrier>, data_ov063_02162f58[mState]);
+    CALL_PTMF(data_ov063_02162f58[mState]);
 }
 
 void ActorLobarrier::func_ov063_02158490() {
@@ -242,7 +242,7 @@ void ActorLobarrier::Update() {
     }
     mUnk_3C = &mUnk_200;
 
-    CALL_PTMF(PTMF<ActorLobarrier>, data_ov063_02162fb0[mState]);
+    CALL_PTMF(data_ov063_02162fb0[mState]);
 
     this->func_ov017_020bf894(&mUnk_224);
     this->func_ov000_02098838();

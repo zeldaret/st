@@ -53,11 +53,11 @@ void ActorItemFlower::vfunc_5C(ActorState state) {
     this->mState  = state;
     this->mUnk_EC = 0x0;
 
-    CALL_PTMF(PTMF<ActorItemFlower>, data_ov031_02114174[this->mState]);
+    CALL_PTMF(data_ov031_02114174[this->mState]);
 }
 
 void ActorItemFlower::Update() {
-    CALL_PTMF(PTMF<ActorItemFlower>, data_ov031_021141b4[this->mState]);
+    CALL_PTMF(data_ov031_021141b4[this->mState]);
 }
 
 void ActorItemFlower::vfunc_2C(unk32 param1) {

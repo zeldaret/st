@@ -340,7 +340,7 @@ void ActorUnkZLSL::vfunc_58(ActorState state) {
 
     this->func_ov031_020ea7a8();
 
-    CALL_PTMF(PTMF<ActorUnkZLSL>, data_ov031_02113770[this->mState]);
+    CALL_PTMF(data_ov031_02113770[this->mState]);
 }
 
 void ActorUnkZLSL::func_ov031_020ea8c0() {}
@@ -352,7 +352,7 @@ void ActorUnkZLSL::func_ov031_020ea8c8() {}
 void ActorUnkZLSL::Update() {
     UnkAngleStruct angle = this->mAngle.angle_s;
 
-    CALL_PTMF(PTMF<ActorUnkZLSL>, data_ov031_021137f8[this->mState]);
+    CALL_PTMF(data_ov031_021137f8[this->mState]);
 
     if (!GET_FLAG(this->mFlags, ActorFlag_Visible)) {
         return;

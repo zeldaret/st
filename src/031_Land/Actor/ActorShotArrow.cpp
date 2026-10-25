@@ -162,7 +162,7 @@ static PTMF<ActorShotArrow> data_ov031_021142c0[ActorShotArrowState_Max] = {
 void ActorShotArrow::SetState(ActorShotArrowState state) {
     this->mState = state;
     this->func_ov031_020f1868();
-    CALL_PTMF(PTMF<ActorShotArrow>, data_ov031_021142c0[this->mState]);
+    CALL_PTMF(data_ov031_021142c0[this->mState]);
 }
 
 void ActorShotArrow::vfunc_24() {
@@ -204,7 +204,7 @@ static PTMF<ActorShotArrow> data_ov031_02114300[ActorShotArrowState_Max] = {
 
 void ActorShotArrow::Update() {
     this->mUnk_3C = &this->mUnk_140;
-    CALL_PTMF(PTMF<ActorShotArrow>, data_ov031_02114300[this->mState]);
+    CALL_PTMF(data_ov031_02114300[this->mState]);
 
     if (this->mUnk_25A) {
         if (this->mUnk_25E < 0x1F && (this->mUnk_25E = this->mUnk_25E + 0x4 & 0xFF) >= 0x1F) {

@@ -30,7 +30,7 @@ static PTMF<ActorSpinut> data_ov032_02122288[ActorSpinutState_Max] = {
     &ActorSpinut::func_ov032_0211abc0, // ActorSpinutState_8
     &ActorSpinut::func_ov032_0211a9c8, // ActorSpinutState_9
     &ActorSpinut::func_ov032_0211ac94, // ActorSpinutState_10
-    &ActorSpinut::func_ov032_0211adf4  // ActorSpinutState_11
+    &ActorSpinut::func_ov032_0211adf4, // ActorSpinutState_11
 };
 
 static PTMF<ActorSpinut> data_ov032_02122348[ActorSpinutState_Max] = {
@@ -45,7 +45,7 @@ static PTMF<ActorSpinut> data_ov032_02122348[ActorSpinutState_Max] = {
     &ActorSpinut::func_ov032_0211ab20, // ActorSpinutState_8
     &ActorSpinut::func_ov032_0211a950, // ActorSpinutState_9
     &ActorSpinut::func_ov032_0211ac20, // ActorSpinutState_10
-    &ActorSpinut::func_ov032_0211ad40  // ActorSpinutState_11
+    &ActorSpinut::func_ov032_0211ad40, // ActorSpinutState_11
 };
 
 DECL_PROFILE(ActorProfileSpinut);
@@ -153,7 +153,7 @@ void ActorSpinut::SetState(ActorState state) {
     this->func_ov032_021194dc(state);
     this->mState = state;
 
-    CALL_PTMF(PTMF<ActorSpinut>, data_ov032_02122348[this->mState]);
+    CALL_PTMF(data_ov032_02122348[this->mState]);
 }
 
 void ActorSpinut::Update() {
@@ -172,7 +172,7 @@ void ActorSpinut::Update() {
     }
 
     this->mUnk_3C = &this->mUnk_228;
-    CALL_PTMF(PTMF<ActorSpinut>, data_ov032_02122288[this->mState]);
+    CALL_PTMF(data_ov032_02122288[this->mState]);
 
     this->Actor_Derived2::func_ov017_020bf894(&this->mUnk_248);
     this->Actor::func_ov000_02098838();
