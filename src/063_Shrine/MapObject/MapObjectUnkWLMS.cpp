@@ -116,14 +116,14 @@ bool MapObjectUnkWLMS::Init() {
     if (mUnk_20.mParams[1] == 1) {
         mPos.x += FX_F32_TO_FX32(0.5f);
     }
-    this->func_ov063_02160580(MapObjectUnkWLMSState_0, 1);
+    this->func_ov063_02160580(MapObjectUnkWLMSState_Closed, 1);
     return true;
 }
 
 #if IS_JP
 void MapObjectUnkWLMS::vfunc_08() {
-    if (mState == MapObjectUnkWLMSState_1 && !mUnk_31F) {
-        this->func_ov063_02160580(MapObjectUnkWLMSState_0, 0);
+    if (mState == MapObjectUnkWLMSState_Loading && !mUnk_31F) {
+        this->func_ov063_02160580(MapObjectUnkWLMSState_Closed, 0);
     }
     mUnk_31F = false;
 }
@@ -131,9 +131,9 @@ void MapObjectUnkWLMS::vfunc_08() {
 
 void MapObjectUnkWLMS::vfunc_38(void) {
     switch (mState) {
-        case MapObjectUnkWLMSState_0:
+        case MapObjectUnkWLMSState_Closed:
             break;
-        case MapObjectUnkWLMSState_1: {
+        case MapObjectUnkWLMSState_Loading: {
             if (mUnk_20.mUnk_10 == 0) {
                 break;
             }
@@ -149,20 +149,20 @@ void MapObjectUnkWLMS::vfunc_38(void) {
         }
         case MapObjectUnkWLMSState_2:
             if (mUnk_20.mUnk_10 == 0) {
-                this->func_ov063_02160580(MapObjectUnkWLMSState_4, 0);
+                this->func_ov063_02160580(MapObjectUnkWLMSState_PuzzleReady, 0);
             } else {
-                this->func_ov063_02160580(MapObjectUnkWLMSState_3, 0);
+                this->func_ov063_02160580(MapObjectUnkWLMSState_Description, 0);
             }
             break;
-        case MapObjectUnkWLMSState_3:
+        case MapObjectUnkWLMSState_Description:
             if ((u16) mUnk_58.mUnk_08 != 0xFFFF) {
                 mUnk_58.vfunc_04();
                 break;
             }
-            this->func_ov063_02160580(MapObjectUnkWLMSState_4, 0);
+            this->func_ov063_02160580(MapObjectUnkWLMSState_PuzzleReady, 0);
             func_ov009_020b675c(data_ov031_02118fa4, 0);
             break;
-        case MapObjectUnkWLMSState_4:
+        case MapObjectUnkWLMSState_PuzzleReady:
             if (data_ov031_02118fa4) {
                 this->func_ov063_02160254();
             }
@@ -173,9 +173,9 @@ void MapObjectUnkWLMS::vfunc_38(void) {
             if (data_0204a110.func_01ff9b50() != 5 || data_0204a088->mUnk_00 != 7) {
                 break;
             }
-            this->func_ov063_02160580(MapObjectUnkWLMSState_6, 0);
+            this->func_ov063_02160580(MapObjectUnkWLMSState_PuzzleSolved, 0);
             break;
-        case MapObjectUnkWLMSState_5:
+        case MapObjectUnkWLMSState_PuzzleFilled:
             if (mUnk_31C) {
                 mUnk_31C--;
                 break;
@@ -187,15 +187,15 @@ void MapObjectUnkWLMS::vfunc_38(void) {
                 data_ov000_020b5214_eur.func_ov000_0206db44(0xA3);
                 mUnk_31E = 0;
             }
-            this->func_ov063_02160580(MapObjectUnkWLMSState_6, 0);
+            this->func_ov063_02160580(MapObjectUnkWLMSState_PuzzleSolved, 0);
             break;
-        case MapObjectUnkWLMSState_6:
+        case MapObjectUnkWLMSState_PuzzleSolved:
             if (!func_ov094_02170fa0()) {
                 break;
             }
-            this->func_ov063_02160580(MapObjectUnkWLMSState_7, 0);
+            this->func_ov063_02160580(MapObjectUnkWLMSState_Quitting, 0);
             break;
-        case MapObjectUnkWLMSState_7:
+        case MapObjectUnkWLMSState_Quitting:
             break;
         default:
             break;
@@ -243,7 +243,7 @@ void MapObjectUnkWLMS::func_ov063_02160254(void) {
                 if (mUnk_2F4.mState.touchPos.x != cmp_target[0] || mUnk_2F4.mState.touchPos.y != cmp_target[1]) {
                     func_ov000_0205b1d8(&mUnk_D0.mUnk_10, &mUnk_2F4.mState.touchPos.x);
                 }
-                this->func_ov063_02160580(MapObjectUnkWLMSState_5, 0);
+                this->func_ov063_02160580(MapObjectUnkWLMSState_PuzzleFilled, 0);
                 mUnk_D0.mUnk_20         = 0x23F;
                 mUnk_D0.mUnk_10.mUnk_04 = mUnk_D0.mUnk_10.mUnk_00;
                 func_ov000_0205b1d8(&mUnk_D0.mUnk_10, &data_ov063_021638e8p[mUnk_316]);
@@ -275,7 +275,7 @@ unk32 MapObjectUnkWLMS::func_ov063_02160580(MapObjState param1, unk32 param2) {
 #pragma unused(param2)
     mState = param1;
     switch (mState) {
-        case MapObjectUnkWLMSState_0:
+        case MapObjectUnkWLMSState_Closed:
             if (!this->func_ov000_0209d29c(0)) {
                 SET_FLAG(mFlags, MapObjFlag_9);
             } else {
@@ -285,7 +285,7 @@ unk32 MapObjectUnkWLMS::func_ov063_02160580(MapObjState param1, unk32 param2) {
             mUnk_31F = false;
 #endif
             break;
-        case MapObjectUnkWLMSState_1: {
+        case MapObjectUnkWLMSState_Loading: {
             UNSET_FLAG(mFlags, MapObjFlag_9);
             stack_ov000_02073578 stack;
             stack.unk_08 = 0x7;
@@ -298,22 +298,22 @@ unk32 MapObjectUnkWLMS::func_ov063_02160580(MapObjState param1, unk32 param2) {
         }
         case MapObjectUnkWLMSState_2:
             break;
-        case MapObjectUnkWLMSState_3:
+        case MapObjectUnkWLMSState_Description:
             func_ov094_02170fd4(this);
             break;
-        case MapObjectUnkWLMSState_4:
+        case MapObjectUnkWLMSState_PuzzleReady:
             mUnk_D0.mUnk_10.mUnk_04 = mUnk_D0.mUnk_10.mUnk_00;
             break;
-        case MapObjectUnkWLMSState_5:
+        case MapObjectUnkWLMSState_PuzzleFilled:
             func_ov009_020b669c(data_ov031_02118fa4, 0, 0);
             mUnk_31C = 0x2D;
             break;
-        case MapObjectUnkWLMSState_6:
+        case MapObjectUnkWLMSState_PuzzleSolved:
             mUnk_316 = -1;
             mUnk_318 = -1;
             mUnk_31A = -1;
             break;
-        case MapObjectUnkWLMSState_7:
+        case MapObjectUnkWLMSState_Quitting:
         default:
             break;
     }
@@ -322,8 +322,8 @@ unk32 MapObjectUnkWLMS::func_ov063_02160580(MapObjState param1, unk32 param2) {
 
 unk32 MapObjectUnkWLMS::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
 #pragma unused(param1, param2, param3)
-    if (mState == MapObjectUnkWLMSState_0) {
-        this->func_ov063_02160580(MapObjectUnkWLMSState_1, 0);
+    if (mState == MapObjectUnkWLMSState_Closed) {
+        this->func_ov063_02160580(MapObjectUnkWLMSState_Loading, 0);
         return 0;
     }
     return -1;
@@ -374,7 +374,7 @@ void MapObjectUnkWLMS::vfunc_60(void) {
 
 void MapObjectUnkWLMS::vfunc_64(unk32 param1, unk32 param2) {
 #pragma unused(param1)
-    if (mState == MapObjectUnkWLMSState_1 && param2 == 1) {
+    if (mState == MapObjectUnkWLMSState_Loading && param2 == 1) {
         UnkStackStruct2 stackVar = data_ov063_021638c8;
         stackVar.s.mUnk_06       = mAngle.angle_s;
         data_027e09bc->mUnk_04[2]->func_ov000_0207834c(&mPos, &stackVar, 0);
@@ -382,7 +382,7 @@ void MapObjectUnkWLMS::vfunc_64(unk32 param1, unk32 param2) {
 }
 
 void MapObjectUnkWLMS::vfunc_68(void) {
-    if (mState == MapObjectUnkWLMSState_1) {
+    if (mState == MapObjectUnkWLMSState_Loading) {
         this->func_ov063_02160580(MapObjectUnkWLMSState_2, 0);
     }
 }
@@ -394,13 +394,13 @@ void MapObjectUnkWLMS::vfunc_6C(unk32 param1) {
 }
 
 void MapObjectUnkWLMS::vfunc_70(unk32 param1, unk32 param2) {
-    if (param1 == 1 && mState == MapObjectUnkWLMSState_7 && param2 == 1) {
+    if (param1 == 1 && mState == MapObjectUnkWLMSState_Quitting && param2 == 1) {
         data_027e09bc->mUnk_04[2]->func_ov000_02078230(0);
 
         if (mUnk_31E != 0) {
             this->func_ov000_0209d2c4(0, true);
         }
 
-        this->func_ov063_02160580(MapObjectUnkWLMSState_0, 0);
+        this->func_ov063_02160580(MapObjectUnkWLMSState_Closed, 0);
     }
 }

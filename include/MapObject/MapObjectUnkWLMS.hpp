@@ -22,14 +22,14 @@ public:
 };
 
 enum MapObjectUnkWLMSState_ {
-    MapObjectUnkWLMSState_0 = 0,
-    MapObjectUnkWLMSState_1 = 1,
-    MapObjectUnkWLMSState_2 = 2,
-    MapObjectUnkWLMSState_3 = 3,
-    MapObjectUnkWLMSState_4 = 4,
-    MapObjectUnkWLMSState_5 = 5,
-    MapObjectUnkWLMSState_6 = 6,
-    MapObjectUnkWLMSState_7 = 7,
+    MapObjectUnkWLMSState_Closed       = 0,
+    MapObjectUnkWLMSState_Loading      = 1,
+    MapObjectUnkWLMSState_2            = 2,
+    MapObjectUnkWLMSState_Description  = 3,
+    MapObjectUnkWLMSState_PuzzleReady  = 4,
+    MapObjectUnkWLMSState_PuzzleFilled = 5,
+    MapObjectUnkWLMSState_PuzzleSolved = 6,
+    MapObjectUnkWLMSState_Quitting     = 7,
 };
 
 class MapObjectUnkWLMS : public UnkStruct_ov094_02177ff8 {
