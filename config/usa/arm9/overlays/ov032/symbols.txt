@@ -37,7 +37,7 @@ _ZN11ActorSpinut19func_ov032_0211ac94Ev kind:function(arm,size=0xac) addr:0x0211
 _ZN11ActorSpinut19func_ov032_0211ad40Ev kind:function(arm,size=0xb4) addr:0x0211ad20
 _ZN11ActorSpinut19func_ov032_0211adf4Ev kind:function(arm,size=0x230) addr:0x0211add4
 _ZN11ActorSpinut19func_ov032_0211b024Ev kind:function(arm,size=0x40) addr:0x0211b004
-_ZN11ActorSpinut19func_ov032_0211b064Ei kind:function(arm,size=0xb0) addr:0x0211b044
+_ZNK11ActorSpinut19func_ov032_0211b064Ei kind:function(arm,size=0xb0) addr:0x0211b044
 _ZN11ActorSpinut19func_ov032_0211b114Ev kind:function(arm,size=0x68) addr:0x0211b0f4
 _ZN11ActorSpinut19func_ov032_0211b17cEv kind:function(arm,size=0x14) addr:0x0211b15c
 _ZN11ActorSpinut19func_ov032_0211b190Eii kind:function(arm,size=0x50) addr:0x0211b170
@@ -232,17 +232,17 @@ __sinit_MapObjectUnkSWSW.cpp kind:function(arm,size=0x50) addr:0x021220bc local
 .p__sinit_ActorKeese.cpp kind:data(word) addr:0x02122114 local
 .p__sinit_ActorUnkNSSW.cpp kind:data(word) addr:0x02122118 local
 .p__sinit_MapObjectUnkSWSW.cpp kind:data(word) addr:0x0212211c local
-data_ov032_02122140 kind:data(any) addr:0x02122140
-data_ov032_0212214c kind:data(any) addr:0x0212214c
-data_ov032_02122164 kind:data(any) addr:0x02122164
-data_ov032_0212217c kind:data(any) addr:0x0212217c
-data_ov032_0212219c kind:data(any) addr:0x0212219c
-data_ov032_021221b8 kind:data(any) addr:0x021221b8
+data_ov032_02122160 kind:data(any) addr:0x02122140 local
+data_ov032_0212216c kind:data(any) addr:0x0212214c local
+data_ov032_02122184 kind:data(any) addr:0x02122164 local
+data_ov032_0212219c kind:data(any) addr:0x0212217c local
+_ZTV15ActorSpinut_268 kind:data(any) addr:0x02122194
+_ZTV18ActorProfileSpinut kind:data(any) addr:0x021221b0
 _ZTV15ActorSpinut_1BC kind:data(any) addr:0x021221d4
 _ZTV15ActorSpinut_110 kind:data(any) addr:0x0212221c
-data_ov032_02122268 kind:data(any) addr:0x02122268
-data_ov032_021222d0 kind:data(any) addr:0x021222d0
-data_ov032_02122328 kind:data(any) addr:0x02122328
+data_ov032_02122288 kind:data(any) addr:0x02122268 local
+_ZTV11ActorSpinut kind:data(any) addr:0x021222c8
+data_ov032_02122348 kind:data(any) addr:0x02122328 local
 data_ov032_02122388 kind:data(any) addr:0x02122388
 data_ov032_02122394 kind:data(any) addr:0x02122394
 data_ov032_021223ac kind:data(any) addr:0x021223ac

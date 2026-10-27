@@ -837,7 +837,7 @@ func_02016740 kind:function(arm,size=0x4) addr:0x02016740
 func_02016744 kind:function(arm,size=0x34) addr:0x02016744
 func_02016778 kind:function(arm,size=0xd0) addr:0x02016778
 func_02016848 kind:function(arm,size=0xa8) addr:0x02016848
-func_020168f0 kind:function(arm,size=0x38) addr:0x020168f0
+func_02016958 kind:function(arm,size=0x38) addr:0x020168f0
 func_02016928 kind:function(arm,size=0x44) addr:0x02016928
 func_020169d4 kind:function(arm,size=0x9c) addr:0x0201696c
 func_02016a08 kind:function(arm,size=0x70) addr:0x02016a08
@@ -2329,7 +2329,7 @@ data_0203fe14 kind:data(any) addr:0x0203fe14
 data_0203fe58 kind:data(any) addr:0x0203fe58
 data_0203fea4 kind:data(any) addr:0x0203fea4
 data_0203feaa kind:data(any) addr:0x0203feaa
-gSinCosTable kind:data(any) addr:0x0203feb0
+FX_SinCosTable_ kind:data(any) addr:0x0203feb0
 data_0203ffb0 kind:data(any) addr:0x0203ffb0
 data_02040105 kind:data(any) addr:0x02040105
 data_020401b0 kind:data(any) addr:0x020401b0

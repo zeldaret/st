@@ -2307,7 +2307,7 @@ data_0203e8c8 kind:data(any) addr:0x0203e8c8
 data_0203e90c kind:data(any) addr:0x0203e90c
 data_0203e958 kind:data(any) addr:0x0203e958
 data_0203e95e kind:data(any) addr:0x0203e95e
-gSinCosTable kind:data(any) addr:0x0203e964
+FX_SinCosTable_ kind:data(any) addr:0x0203e964
 data_02042964 kind:data(any) addr:0x02042964
 data_02042a68 kind:data(any) addr:0x02042a68
 data_02042b6c kind:data(any) addr:0x02042b6c

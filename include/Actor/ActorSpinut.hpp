@@ -4,6 +4,7 @@
 #include "Actor/ActorProfile.hpp"
 #include "ActorUnkZLSL_ZSRS.hpp"
 #include "global.h"
+#include "math.hpp"
 
 class ModelRender_ov000_020b1a1c : public ModelRender {
 public:
@@ -109,7 +110,7 @@ public:
     /* 264 */ unk32 mUnk_264;
     /* 268 */ ActorSpinut_268 mUnk_268;
     /* 27C */ VecFx32 mUnk_27C;
-    /* 288 */ VecFx32 mUnk_288;
+    /* 288 */ VecFx32Cpp mUnk_288;
     /* 294 */ bool mUnk_294;
     /* 296 */ Timer mUnk_296;
     /* 29A */
@@ -150,7 +151,7 @@ public:
     void func_ov032_0211ad40();
     void func_ov032_0211adf4();
     void func_ov032_0211b024();
-    bool func_ov032_0211b064(unk32 param1);
+    bool func_ov032_0211b064(unk32 param1) const;
     bool func_ov032_0211b114();
     bool func_ov032_0211b17c();
     void func_ov032_0211b190(s32 param1, s32 param2);
