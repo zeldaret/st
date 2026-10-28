@@ -99,4 +99,5 @@ src/063_Shrine/MapObject/MapObjectUnkSWCR.cpp:
     .text       start:0x02163248 end:0x02163f60
     .init       start:0x02164c08 end:0x02164c58
     .ctor       start:0x02164c8c end:0x02164c90
+    .data       start:0x02165910 end:0x02165980
     .bss        start:0x02166724 end:0x02166754
