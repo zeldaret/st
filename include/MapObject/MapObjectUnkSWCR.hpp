@@ -5,6 +5,7 @@
 #include "MapObject/MapObjectUnkSTAT.hpp"
 #include "Render/ModelRender.hpp"
 #include "global.h"
+#include "timer.hpp"
 #include "types.h"
 
 class MapObjectUnkSWCR_160 {
@@ -36,8 +37,7 @@ public:
     /* 160 */ MapObjectUnkSWCR_160 mUnk_160;
     /* 168 */ unk32 mUnk_168;
     /* 16C */ unk32 mUnk_16C;
-    /* 170 */ unk16 mUnk_170;
-    /* 172 */ unk16 mUnk_172;
+    /* 170 */ Timer mUnk_170;
     /* 174 */ unk32 mUnk_174;
     /* 178 */ unk8 mUnk_178;
     /* 179 */ unk8 mUnk_179;

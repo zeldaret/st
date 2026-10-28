@@ -46,7 +46,7 @@ public:
     void func_ov094_02173520(void);
     void func_ov094_02173574(void);
     void func_ov094_02173578(void);
-    void func_ov094_02173584(void);
+    static unk32 func_ov094_02173584(unk32 param1);
     void func_ov094_02173618(void);
     void func_ov094_02173620(void);
     void func_ov094_02173680(void);

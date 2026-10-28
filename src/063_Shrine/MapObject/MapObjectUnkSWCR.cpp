@@ -3,6 +3,9 @@
 #include "Actor/ActorId.hpp"
 #include "CommonFuncs.hpp"
 #include "MainGame/MiscAdvManager.hpp"
+#include "MapObject/MapObjectUnkWDST.hpp"
+#include "Unknown/UnkStruct_027e09a8.hpp"
+#include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "flags.h"
 #include "nitro/fx.h"
@@ -48,7 +51,21 @@ void MapObjectUnkSWCR_160::vfunc_08(void) {
     ((MapObjectUnkSWCR *) mUnk_04)->func_ov063_02161638();
 }
 
-void MapObjectUnkSWCR::func_ov063_0216153c(void) {}
+void MapObjectUnkSWCR::func_ov063_0216153c(void) {
+    if ((unk32) GET_FLAG2(gpMiscAdvManager->mSongs, 3) == 0) {
+        return;
+    }
+
+    if (mUnk_168 == 0) {
+        if (FX_F32_TO_FX32(2.5f) > this->func_ov000_0209d274(0)) {
+            this->func_ov063_02161b08(1);
+        }
+    } else if (mUnk_168 == 5) {
+        if (FX_F32_TO_FX32(2.5f) > this->func_ov000_0209d274(0)) {
+            this->func_ov063_02161b08(6);
+        }
+    }
+}
 
 // return bool ?
 unk32 MapObjectUnkSWCR::func_ov063_021615c4(void) {
@@ -80,8 +97,7 @@ MapObjectUnkSWCR::MapObjectUnkSWCR() :
     mUnk_160(this),
     mUnk_168(8),
     mUnk_16C(2),
-    mUnk_170(0),
-    mUnk_172(0),
+    mUnk_170(0, 0),
     mUnk_174(-1),
     mUnk_178(0),
     mUnk_179(0) {}
@@ -130,7 +146,59 @@ void MapObjectUnkSWCR::Setup(void) {
     }
 }
 
-void MapObjectUnkSWCR::vfunc_08(void) {}
+void MapObjectUnkSWCR::vfunc_08(void) {
+    switch (mUnk_168) {
+        case 0:
+        case 5:
+            break;
+        case 1:
+            if (MapObjectUnkWDST::func_ov094_02173584(3) == 0) {
+                this->func_ov063_02161b08(2);
+            }
+            break;
+        case 2:
+            if (data_027e09b8->func_ov000_020732ec(mUnk_174) != 0 && data_027e09b8->func_ov000_0207330c() == 10) {
+                data_027e09a8->func_ov000_02071b30(0x114, &mPos, 0);
+                this->func_ov063_02161b08(3);
+                return;
+            }
+            break;
+        case 3:
+            if (mUnk_E0.mUnk_04.func_01ff8fa8() != 0) {
+                this->func_ov063_02161b08(4);
+                data_027e09a8->func_ov000_020716dc(0x3C);
+                return;
+            }
+            mUnk_E0.func_01ffc3b4();
+            break;
+        case 4:
+        case 7: {
+            unk32 stack = *(u32 *) &this->mRef;
+            data_027e09a8->func_ov000_02071d34(&stack, 0x117, &mPos, 0);
+            mUnk_A0.func_01ffc3b4();
+            break;
+        }
+        case 6:
+            if (data_027e09b8->func_ov000_020732ec(mUnk_174) != 0) {
+                if (mUnk_120.mUnk_04.func_01ff8fa8() != 0) {
+                    data_027e09a8->func_ov000_020716dc(0x3C);
+                    this->func_ov063_02161b08(7);
+                    return;
+                }
+
+                if ((u32) data_027e09b8->func_ov000_0207330c() >= 10) {
+                    mUnk_120.func_01ffc3b4();
+                }
+                if (data_027e09b8->func_ov000_0207330c() == 10) {
+                    data_027e09a8->func_ov000_02071b30(0x114, &mPos, 0);
+                }
+            }
+            break;
+    }
+
+    mUnk_170.Update();
+    mUnk_178 = (unk32) GET_FLAG2(gpMiscAdvManager->mSongs, 3) != 0;
+}
 
 void MapObjectUnkSWCR::vfunc_0C(void) {
     this->vfunc_08();
