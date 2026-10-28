@@ -35,7 +35,7 @@ public:
     /* 140 */ unk32 mUnk_140;
     /* 144 */ PAD(0x144, 0x160);
     /* 160 */ MapObjectUnkSWCR_160 mUnk_160;
-    /* 168 */ unk32 mUnk_168;
+    /* 168 */ unk32 mUnk_168; // Some kind of internal state
     /* 16C */ unk32 mUnk_16C;
     /* 170 */ Timer mUnk_170;
     /* 174 */ unk32 mUnk_174;

@@ -39,6 +39,7 @@ MapObjectProfileUnkSWCR::MapObjectProfileUnkSWCR() :
     mUnk_D4.mUnk_18.y = FX_F32_TO_FX32(1.2f);
 }
 
+// non-matching (regalloc)
 MapObjectUnkSWCR_160::MapObjectUnkSWCR_160(MapObject *param1) :
     mUnk_04(param1) {}
 
@@ -60,11 +61,11 @@ void MapObjectUnkSWCR::func_ov063_0216153c(void) {
     }
 
     if (mUnk_168 == 0) {
-        if (FX_F32_TO_FX32(2.5f) > this->func_ov000_0209d274(0)) {
+        if (this->func_ov000_0209d274(0) < FX_F32_TO_FX32(2.5f)) {
             this->func_ov063_02161b08(1);
         }
     } else if (mUnk_168 == 5) {
-        if (FX_F32_TO_FX32(2.5f) > this->func_ov000_0209d274(0)) {
+        if (this->func_ov000_0209d274(0) < FX_F32_TO_FX32(2.5f)) {
             this->func_ov063_02161b08(6);
         }
     }
@@ -112,8 +113,8 @@ bool MapObjectUnkSWCR::Init(void) {
     }
 
     mUnk_178 = (unk32) GET_FLAG2(gpMiscAdvManager->mSongs, 3) != 0;
-    mUnk_40.func_ov000_02057cb0();
 
+    mUnk_40.func_ov000_02057cb0();
     mUnk_A0.mpModel = mUnk_40.mpModel;
     mUnk_A0.func_ov000_020577a4(data_ov063_02164934.func_ov000_02058a84(0x0, &data_ov063_02162700), 0, false);
     mUnk_E0.mpModel = mUnk_40.mpModel;
@@ -207,6 +208,7 @@ void MapObjectUnkSWCR::vfunc_0C(void) {
     this->vfunc_08();
 }
 
+// non-matching (SIN/COS)
 void MapObjectUnkSWCR::func_ov063_02161b08(unk32 param1) {
     mUnk_168 = param1;
     mUnk_170.Reset();
