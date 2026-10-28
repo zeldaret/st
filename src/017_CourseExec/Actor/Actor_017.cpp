@@ -331,7 +331,7 @@ void Actor::func_ov017_020bf688() {
     }
 }
 
-void Actor::func_ov017_020bf710(UnkStruct_ActorUnkCANS_224 *param1, const VecFx32 *param2, u16 param3) {
+void Actor::func_ov017_020bf710(UnkStruct_ActorLobarrier_224 *param1, const VecFx32 *param2, u16 param3) {
     UNSET_FLAG(this->mFlags, ActorFlag_5);
 
     this->mUnk_54 = param1;
@@ -355,7 +355,7 @@ void Actor::func_ov017_020bf7a8() {
     SET_FLAG(this->mFlags, ActorFlag_15);
     this->func_ov000_02098838();
 
-    UnkStruct_ActorUnkCANS_224 *temp_r4 = this->mUnk_54;
+    UnkStruct_ActorLobarrier_224 *temp_r4 = this->mUnk_54;
     temp_r4->mUnk_08.Update();
 
     func_01ff93c0(&this->mVel, 0xC7B);
@@ -375,7 +375,7 @@ void Actor::func_ov017_020bf7a8() {
     }
 }
 
-void Actor::func_ov017_020bf894(UnkStruct_ActorUnkCANS_224 *param1) {
+void Actor::func_ov017_020bf894(UnkStruct_ActorLobarrier_224 *param1) {
     if (this->mUnk_48 <= 0) {
         param1->Destroy();
         return;

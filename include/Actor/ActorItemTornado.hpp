@@ -23,10 +23,10 @@ public:
 };
 
 enum ActorItemTornadoState_ {
-    ActorItemTornadoState_0 = 0,
-    ActorItemTornadoState_1 = 1,
-    ActorItemTornadoState_2 = 2,
-    ActorItemTornadoState_MAX,
+    ActorItemTornadoState_Starting = 0,
+    ActorItemTornadoState_Moving   = 1,
+    ActorItemTornadoState_Ending   = 2,
+    ActorItemTornadoState_Max,
 };
 
 class ActorItemTornado_17C : public UnkStruct_PlayerGet_74 {

@@ -29,8 +29,8 @@ config.sjiswrap_tag = "v1.2.2"
 GAME_VERSIONS = [
     "eur",
     "eur1",
-    "usa",
     "jp",
+    "usa",
 ]
 
 # Only configure versions for which a baserom file exists
@@ -998,8 +998,8 @@ config.libs = [
     GameLib(
         "Overlay 63",
         [
-            Object("063_Shrine/Actor/ActorUnkCANS.cpp"),
-            Object("063_Shrine/Actor/ActorUnkCASE.cpp"),
+            Object("063_Shrine/Actor/ActorLobarrier.cpp"),
+            Object("063_Shrine/Actor/ActorLobarrierShield.cpp"),
             Object("063_Shrine/Actor/ActorUnkRBLS.cpp"),
             Object("063_Shrine/Actor/ActorUnkRMSBase.cpp"),
             Object("063_Shrine/Actor/ActorUnkRMSD.cpp"),

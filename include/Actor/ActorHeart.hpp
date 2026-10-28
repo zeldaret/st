@@ -7,12 +7,12 @@
 #include "types.h"
 
 enum ActorHeartState_ {
-    ActorHeartState_0 = 0,
-    ActorHeartState_1 = 1,
-    ActorHeartState_2 = 2,
-    ActorHeartState_3 = 3,
-    ActorHeartState_4 = 4,
-    ActorHeartState_5 = 5,
+    ActorHeartState_InitFallDown       = 0,
+    ActorHeartState_FallingDown        = 1,
+    ActorHeartState_LyingOnGround      = 2,
+    ActorHeartState_GrabbedByBoomerang = 3,
+    ActorHeartState_Sliding            = 4,
+    ActorHeartState_GrabbedByWhip      = 5,
     ActorHeartState_Max,
 };
 

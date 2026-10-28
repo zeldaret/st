@@ -54,7 +54,7 @@ UnkStruct_ov031_02117210::UnkStruct_ov031_02117210() {
 
 MapObjectDoorBase::MapObjectDoorBase() :
     mUnk_68(NULL) {
-    this->mUnk_6C = 0;
+    this->mUnk_6C = FX_F32_TO_FX32(0.0f);
     this->mUnk_70 = 0x148;
     this->mUnk_74 = -1;
     this->mUnk_78 = 0x32;
@@ -317,8 +317,9 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
 
             this->mUnk_82 = 0;
             this->mUnk_84 = 0x0D;
-            this->mUnk_80 =
-                (FX_MUL(INT_TO_FX32(this->mUnk_7A), func_01ffb428(this->mUnk_6C, 0x1000)) + FX_F32_TO_FX32(0.5f)) >> 12;
+            this->mUnk_80 = (FX_MUL(INT_TO_FX32(this->mUnk_7A), func_01ffb428(this->mUnk_6C, FX_F32_TO_FX32(1.0f))) +
+                             FX_F32_TO_FX32(0.5f)) >>
+                            12;
 
             this->vfunc_50();
 
@@ -373,9 +374,10 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
         case MapObjDoorBaseState_3:
             this->vfunc_7C();
 
-            this->mUnk_80 =
-                (FX_MUL(INT_TO_FX32(this->mUnk_78), func_01ffb428(0x1000 - this->mUnk_6C, 0x1000)) + FX_F32_TO_FX32(0.5f)) >>
-                12;
+            this->mUnk_80 = (FX_MUL(INT_TO_FX32(this->mUnk_78),
+                                    func_01ffb428(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f))) +
+                             FX_F32_TO_FX32(0.5f)) >>
+                            12;
 
             if (this->mUnk_8A) {
                 this->mUnk_82 = 0;
@@ -465,7 +467,7 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
             this->func_ov031_020fcf0c(0);
             this->mUnk_82 = 0;
             this->mUnk_84 = 0;
-            this->mUnk_6C = 0x1000;
+            this->mUnk_6C = FX_F32_TO_FX32(1.0f);
             break;
         default:
             break;

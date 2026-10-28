@@ -139,7 +139,7 @@ public:
 };
 
 // ActorStateStunned? seems to related to that
-class UnkStruct_ActorUnkCANS_224 {
+class UnkStruct_ActorLobarrier_224 {
 public:
     /* 00 (base) */ UnkStruct_PlayerGet_ec mUnk_00[0x2];
     /* 08 */ Timer mUnk_08;
@@ -147,9 +147,9 @@ public:
     /* 0E */ u16 mUnk_0E;
     /* 10 */
 
-    UnkStruct_ActorUnkCANS_224(); // func_ov000_02099820
+    UnkStruct_ActorLobarrier_224(); // func_ov000_02099820
 
-    ~UnkStruct_ActorUnkCANS_224() {
+    ~UnkStruct_ActorLobarrier_224() {
         this->Destroy();
     }
 
@@ -189,7 +189,7 @@ public:
     /* 4C */ ActorState mState;
     /* 4E */ fx16 mYOffset;
     /* 50 */ Timer mTimer; // generic timer, used for stunned time, drop expiration, ...
-    /* 54 */ UnkStruct_ActorUnkCANS_224 *mUnk_54;
+    /* 54 */ UnkStruct_ActorLobarrier_224 *mUnk_54;
     /* 58 */ ActorFlags mFlags[1];
     /* 5C */ ActorParams mUnk_5C;
     /* 8C */ RefStruct mRef;
@@ -327,9 +327,9 @@ public:
     void func_ov017_020bf5c4(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, s16 param5);
     void func_ov017_020bf634(const VecFx32 *param1, u16 param2, unk32 param3);
     void func_ov017_020bf688();
-    void func_ov017_020bf710(UnkStruct_ActorUnkCANS_224 *param1, const VecFx32 *param2, u16 param3);
+    void func_ov017_020bf710(UnkStruct_ActorLobarrier_224 *param1, const VecFx32 *param2, u16 param3);
     void func_ov017_020bf7a8();
-    void func_ov017_020bf894(UnkStruct_ActorUnkCANS_224 *param1);
+    void func_ov017_020bf894(UnkStruct_ActorLobarrier_224 *param1);
     void func_ov017_020bf99c();
     void func_ov017_020bf9c8(Actor *param1);
     void func_ov017_020bfa50(VecFx32 *param1, unk32 param2);
@@ -413,7 +413,7 @@ public:
 
     void func_ov000_020990c0(Actor_9C *param1, unk32 param2, unk32 param3);
     void func_ov000_020992dc();
-    unk32 func_ov000_02099450(UnkStruct_ActorUnkCANS_224 *param1, VecFx32 *param2, unk32 param3, u16 param4);
+    unk32 func_ov000_02099450(UnkStruct_ActorLobarrier_224 *param1, VecFx32 *param2, unk32 param3, u16 param4);
     void func_ov000_020994a0();
     void func_ov000_020997c4(unk32 param1);
     void func_ov000_02098f34(VecFx32 *);

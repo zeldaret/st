@@ -9,6 +9,7 @@ src/033_MapA2/Actor/ActorUnkRCFO.cpp:
     .text       start:0x02119348 end:0x02119d80
     .init       start:0x0212103c end:0x0212108c
     .ctor       start:0x0212114c end:0x02121150
+    .data       start:0x02121160 end:0x02121224
     .bss        start:0x02121c64 end:0x02121cb4
 
 src/033_MapA2/MapObject/MapObjectUnkDOPA.cpp:

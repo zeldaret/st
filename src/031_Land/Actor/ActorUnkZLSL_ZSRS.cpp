@@ -56,42 +56,42 @@ static char data_ov031_021135f8[0x4] = "\x00\x10";
 static ActorUnkZLSL_AnimationTag data_ov031_021135fc = {0, "wait"};
 
 static PTMF<ActorUnkZLSL> data_ov031_02113770[ActorUnkZLSLState_Max] = {
-    &ActorUnkZLSL::func_ov031_020eaa68, // ActorUnkZLSLState_0
+    &ActorUnkZLSL::func_ov031_020eaa68, // ActorUnkZLSLState_OpenArms
     &ActorUnkZLSL::func_ov031_020ea86c, // ActorUnkZLSLState_1
     &ActorUnkZLSL::func_ov031_020ea868, // ActorUnkZLSLState_2
     &ActorUnkZLSL::func_ov031_020ea864, // ActorUnkZLSLState_3
-    &ActorUnkZLSL::func_ov031_020eac64, // ActorUnkZLSLState_4
-    &ActorUnkZLSL::func_ov031_020ead0c, // ActorUnkZLSLState_5
-    &ActorUnkZLSL::func_ov031_020ec034, // ActorUnkZLSLState_6
-    &ActorUnkZLSL::func_ov031_020ec05c, // ActorUnkZLSLState_7
-    &ActorUnkZLSL::func_ov031_020ec0d4, // ActorUnkZLSLState_8
-    &ActorUnkZLSL::func_ov031_020eb5f8, // ActorUnkZLSLState_9
-    &ActorUnkZLSL::func_ov031_020ead7c, // ActorUnkZLSLState_10
-    &ActorUnkZLSL::func_ov031_020eb188, // ActorUnkZLSLState_11
+    &ActorUnkZLSL::func_ov031_020eac64, // ActorUnkZLSLState_RotateClosedArms
+    &ActorUnkZLSL::func_ov031_020ead0c, // ActorUnkZLSLState_ClosedArms
+    &ActorUnkZLSL::func_ov031_020ec034, // ActorUnkZLSLState_FollowPath
+    &ActorUnkZLSL::func_ov031_020ec05c, // ActorUnkZLSLState_RotateOpenArms
+    &ActorUnkZLSL::func_ov031_020ec0d4, // ActorUnkZLSLState_Idle
+    &ActorUnkZLSL::func_ov031_020eb5f8, // ActorUnkZLSLState_TakePhantomControl
+    &ActorUnkZLSL::func_ov031_020ead7c, // ActorUnkZLSLState_TakeHumanShape
+    &ActorUnkZLSL::func_ov031_020eb188, // ActorUnkZLSLState_GoOrbShapeAndIdle
     &ActorUnkZLSL::func_ov031_020ebfd8, // ActorUnkZLSLState_12
-    &ActorUnkZLSL::func_ov031_020eafe0, // ActorUnkZLSLState_13
-    &ActorUnkZLSL::func_ov031_020eaa8c, // ActorUnkZLSLState_14
-    &ActorUnkZLSL::func_ov031_020ec164, // ActorUnkZLSLState_15
+    &ActorUnkZLSL::func_ov031_020eafe0, // ActorUnkZLSLState_TakeHumanShapeTrainStation
+    &ActorUnkZLSL::func_ov031_020eaa8c, // ActorUnkZLSLState_FollowLink
+    &ActorUnkZLSL::func_ov031_020ec164, // ActorUnkZLSLState_DuetFinale
     &ActorUnkZLSL::func_ov031_020eba58, // ActorUnkZLSLState_16
 };
 
 static PTMF<ActorUnkZLSL> data_ov031_021137f8[ActorUnkZLSLState_Max] = {
-    &ActorUnkZLSL::func_ov031_020eaa88, // ActorUnkZLSLState_0
+    &ActorUnkZLSL::func_ov031_020eaa88, // ActorUnkZLSLState_OpenArms
     &ActorUnkZLSL::func_ov031_020ea8c8, // ActorUnkZLSLState_1
     &ActorUnkZLSL::func_ov031_020ea8c4, // ActorUnkZLSLState_2
     &ActorUnkZLSL::func_ov031_020ea8c0, // ActorUnkZLSLState_3
-    &ActorUnkZLSL::func_ov031_020eace0, // ActorUnkZLSLState_4
-    &ActorUnkZLSL::func_ov031_020ead78, // ActorUnkZLSLState_5
-    &ActorUnkZLSL::func_ov031_020ec058, // ActorUnkZLSLState_6
-    &ActorUnkZLSL::func_ov031_020ec0a8, // ActorUnkZLSLState_7
-    &ActorUnkZLSL::func_ov031_020ec12c, // ActorUnkZLSLState_8
-    &ActorUnkZLSL::func_ov031_020eb61c, // ActorUnkZLSLState_9
-    &ActorUnkZLSL::func_ov031_020eafb0, // ActorUnkZLSLState_10
-    &ActorUnkZLSL::func_ov031_020eb218, // ActorUnkZLSLState_11
+    &ActorUnkZLSL::func_ov031_020eace0, // ActorUnkZLSLState_RotateClosedArms
+    &ActorUnkZLSL::func_ov031_020ead78, // ActorUnkZLSLState_ClosedArms
+    &ActorUnkZLSL::func_ov031_020ec058, // ActorUnkZLSLState_FollowPath
+    &ActorUnkZLSL::func_ov031_020ec0a8, // ActorUnkZLSLState_RotateOpenArms
+    &ActorUnkZLSL::func_ov031_020ec12c, // ActorUnkZLSLState_Idle
+    &ActorUnkZLSL::func_ov031_020eb61c, // ActorUnkZLSLState_TakePhantomControl
+    &ActorUnkZLSL::func_ov031_020eafb0, // ActorUnkZLSLState_TakeHumanShape
+    &ActorUnkZLSL::func_ov031_020eb218, // ActorUnkZLSLState_GoOrbShapeAndIdle
     &ActorUnkZLSL::func_ov031_020ec028, // ActorUnkZLSLState_12
-    &ActorUnkZLSL::func_ov031_020eb158, // ActorUnkZLSLState_13
-    &ActorUnkZLSL::func_ov031_020eab0c, // ActorUnkZLSLState_14
-    &ActorUnkZLSL::func_ov031_020ec170, // ActorUnkZLSLState_15
+    &ActorUnkZLSL::func_ov031_020eb158, // ActorUnkZLSLState_TakeHumanShapeTrainStation
+    &ActorUnkZLSL::func_ov031_020eab0c, // ActorUnkZLSLState_FollowLink
+    &ActorUnkZLSL::func_ov031_020ec170, // ActorUnkZLSLState_DuetFinale
     &ActorUnkZLSL::func_ov031_020eba8c, // ActorUnkZLSLState_16
 };
 
@@ -269,7 +269,7 @@ THUMB_END
 
 void ActorUnkZLSL::func_ov031_020ea674() {
     this->func_ov031_020ecbe0();
-    this->vfunc_58(ActorUnkZLSLState_8);
+    this->vfunc_58(ActorUnkZLSLState_Idle);
 }
 
 bool ActorUnkZLSL::Init(unk32 param1) {
@@ -363,7 +363,7 @@ void ActorUnkZLSL::Update() {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
-    if (this->mState != ActorUnkZLSLState_9 && this->mState != ActorUnkZLSLState_16) {
+    if (this->mState != ActorUnkZLSLState_TakePhantomControl && this->mState != ActorUnkZLSLState_16) {
         this->func_ov031_020edc80();
         this->vfunc_A4();
     }
@@ -473,7 +473,7 @@ void ActorUnkZLSL::func_ov031_020eac64() {
 
     if ((this->mUnk_0B0 & 0x2) != 0x0) {
         if (this->func_ov000_020a9248(0x2000)) {
-            this->vfunc_58(ActorUnkZLSLState_5);
+            this->vfunc_58(ActorUnkZLSLState_ClosedArms);
             return;
         }
     }
@@ -484,7 +484,7 @@ void ActorUnkZLSL::func_ov031_020eace0() {
     if (!this->func_ov031_020ec8c4()) {
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_5);
+    this->vfunc_58(ActorUnkZLSLState_ClosedArms);
 }
 
 void ActorUnkZLSL::func_ov031_020ead0c() {
@@ -570,7 +570,7 @@ void ActorUnkZLSL::func_ov031_020ead7c() {
 
 void ActorUnkZLSL::func_ov031_020eafb0() {
     if (this->func_ov031_020ed8ac(0x800)) {
-        this->vfunc_58(ActorUnkZLSLState_4);
+        this->vfunc_58(ActorUnkZLSLState_RotateClosedArms);
     }
 }
 
@@ -609,7 +609,7 @@ void ActorUnkZLSL::func_ov031_020eb158() {
     if (!this->func_ov031_020ed6cc(0x1800)) {
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_14);
+    this->vfunc_58(ActorUnkZLSLState_FollowLink);
 }
 
 void ActorUnkZLSL::func_ov031_020eb188() {
@@ -633,7 +633,7 @@ void ActorUnkZLSL::func_ov031_020eb218() {
     }
 
     if (this->func_ov031_020eb2b0(this->func_ov000_0209853c(0x00), 0xA000)) {
-        this->vfunc_58(ActorUnkZLSLState_8);
+        this->vfunc_58(ActorUnkZLSLState_Idle);
     }
 }
 
@@ -847,7 +847,7 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
                 this->mUnk_28A4.vec.x = FX_F32_TO_FX32(1.0f);
                 this->mUnk_28A4.vec.y = FX_F32_TO_FX32(1.0f);
                 this->mUnk_28A4.vec.z = FX_F32_TO_FX32(1.0f);
-                this->vfunc_58(ActorUnkZLSLState_8);
+                this->vfunc_58(ActorUnkZLSLState_Idle);
             }
             this->func_ov031_020ed4e4(0x5, 0x93F);
         default:
@@ -983,7 +983,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             this->mUnk_28A4.vec.y = FX_F32_TO_FX32(1.0f);
             this->mUnk_28A4.vec.z = FX_F32_TO_FX32(1.0f);
 
-            this->vfunc_58(ActorUnkZLSLState_8);
+            this->vfunc_58(ActorUnkZLSLState_Idle);
             break;
         default:
             break;
@@ -1020,14 +1020,14 @@ void ActorUnkZLSL::func_ov031_020ec05c() {
         this->vfunc_98(0x1);
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_0);
+    this->vfunc_58(ActorUnkZLSLState_OpenArms);
 }
 
 void ActorUnkZLSL::func_ov031_020ec0a8() {
     if (!this->func_ov031_020ec8c4()) {
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_0);
+    this->vfunc_58(ActorUnkZLSLState_OpenArms);
 }
 
 void ActorUnkZLSL::func_ov031_020ec0d4() {
@@ -1106,10 +1106,10 @@ unk32 ActorUnkZLSL::vfunc_7C(unk32 param1) {
             ActorUnkRAT0::func_ov053_0213c984();
             break;
         case 0x4:
-            this->vfunc_58(ActorUnkZLSLState_11);
+            this->vfunc_58(ActorUnkZLSLState_GoOrbShapeAndIdle);
             break;
         case 0x5:
-            this->vfunc_58(ActorUnkZLSLState_8);
+            this->vfunc_58(ActorUnkZLSLState_Idle);
             break;
         case 0x6:
             return this->func_ov031_020ec49c();
@@ -1181,15 +1181,15 @@ unk32 ActorUnkZLSL::func_ov031_020ec54c() {
     bool var = false;
     switch (this->mUnk_2872) {
         case 0x0:
-            if (this->mState == ActorUnkZLSLState_8) {
+            if (this->mState == ActorUnkZLSLState_Idle) {
                 var = true;
                 break;
             }
-            this->vfunc_58(ActorUnkZLSLState_11);
+            this->vfunc_58(ActorUnkZLSLState_GoOrbShapeAndIdle);
             ++this->mUnk_2872;
             break;
         case 0x1:
-            if (this->mState != ActorUnkZLSLState_8) {
+            if (this->mState != ActorUnkZLSLState_Idle) {
                 break;
             }
             var = true;
@@ -1256,26 +1256,26 @@ void ActorUnkZLSL::func_ov031_020ec6d8(bool param1) {
 
 void ActorUnkZLSL::vfunc_6C() {
     if (!this->mUnk_2874 && this->mUnk_28A4.vec.z == FX_F32_TO_FX32(1.0f)) {
-        this->vfunc_58(ActorUnkZLSLState_4);
+        this->vfunc_58(ActorUnkZLSLState_RotateClosedArms);
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_10);
+    this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
 }
 
 void ActorUnkZLSL::vfunc_70() {
     if (!this->mUnk_2874 && this->mUnk_28A4.vec.z == FX_F32_TO_FX32(1.0f)) {
-        this->vfunc_58(ActorUnkZLSLState_4);
+        this->vfunc_58(ActorUnkZLSLState_RotateClosedArms);
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_10);
+    this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
 }
 
 void ActorUnkZLSL::vfunc_68() {
-    if (this->mState != ActorUnkZLSLState_8) {
+    if (this->mState != ActorUnkZLSLState_Idle) {
         if (this->mUnk_2900 & 0x2) {
-            this->vfunc_58(ActorUnkZLSLState_14);
+            this->vfunc_58(ActorUnkZLSLState_FollowLink);
         } else {
-            this->vfunc_58(ActorUnkZLSLState_11);
+            this->vfunc_58(ActorUnkZLSLState_GoOrbShapeAndIdle);
         }
     }
     this->mUnk_2900 &= 0xFFFD;
@@ -1291,8 +1291,8 @@ bool ActorUnkZLSL::vfunc_88() {
     if (!this->mUnk_2874 && this->mUnk_28A4.vec.z == FX_F32_TO_FX32(1.0f)) {
         return true;
     }
-    if (this->mState != ActorUnkZLSLState_10) {
-        this->vfunc_58(ActorUnkZLSLState_10);
+    if (this->mState != ActorUnkZLSLState_TakeHumanShape) {
+        this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
     }
     return false;
 }
@@ -1605,9 +1605,9 @@ bool ActorUnkZLSL::func_ov031_020ed55c(unk32 param1) {
         return false;
     }
 
-    if (this->mState == ActorUnkZLSLState_8) {
+    if (this->mState == ActorUnkZLSLState_Idle) {
         this->mUnk_2904 = param1;
-        this->vfunc_58(ActorUnkZLSLState_13);
+        this->vfunc_58(ActorUnkZLSLState_TakeHumanShapeTrainStation);
 
         unk16 *psp8 = (unk16 *) &sp8;
         func_01fff17c(psp8, data_027e0ce0, 0);
@@ -1626,9 +1626,9 @@ bool ActorUnkZLSL::func_ov031_020ed55c(unk32 param1) {
         return true;
     }
 
-    if (this->mState == ActorUnkZLSLState_11 && this->mUnk_2874 == 1) {
+    if (this->mState == ActorUnkZLSLState_GoOrbShapeAndIdle && this->mUnk_2874 == 1) {
         this->mUnk_2904 = param1;
-        this->vfunc_58(ActorUnkZLSLState_13);
+        this->vfunc_58(ActorUnkZLSLState_TakeHumanShapeTrainStation);
         return true;
     }
 
@@ -1816,7 +1816,7 @@ void ActorUnkZLSL::func_ov031_020edd54(RefStruct ref) {
         if (data_027e0ce0->func_01fff1a4()) {
             this->vfunc_58(ActorUnkZLSLState_16);
         } else {
-            this->vfunc_58(ActorUnkZLSLState_9);
+            this->vfunc_58(ActorUnkZLSLState_TakePhantomControl);
         }
     }
 }
@@ -1919,7 +1919,7 @@ void ActorUnkZLSL::vfunc_A4() {
     func_01ff916c(&this->mUnk_0D0, 0x1EC, 0x19);
     unk16 temp_r1 = this->mUnk_0CC;
 
-    if (this->mState != ActorUnkZLSLState_4) {
+    if (this->mState != ActorUnkZLSLState_RotateClosedArms) {
         func_01ff9318(&this->mUnk_0D8, temp_r1, this->mUnk_0D0);
     } else {
         func_01ff930c(&this->mUnk_0D8, temp_r1, 0x71C);
@@ -1981,10 +1981,10 @@ unk16 ActorUnkZLSL::func_ov031_020ee2c8() {
 }
 
 void ActorUnkZLSL::vfunc_B4() {
-    if (this->mState == ActorUnkZLSLState_8) {
-        this->vfunc_58(ActorUnkZLSLState_10);
+    if (this->mState == ActorUnkZLSLState_Idle) {
+        this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
     } else {
-        this->vfunc_58(ActorUnkZLSLState_0);
+        this->vfunc_58(ActorUnkZLSLState_OpenArms);
     }
 }
 

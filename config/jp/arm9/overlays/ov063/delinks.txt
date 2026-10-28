@@ -5,14 +5,14 @@
     .data       start:0x02164ca0 end:0x02165980 kind:data align:32
     .bss        start:0x02165980 end:0x02166840 kind:bss align:32
 
-src/063_Shrine/Actor/ActorUnkCANS.cpp:
+src/063_Shrine/Actor/ActorLobarrier.cpp:
     .text       start:0x02159be0 end:0x0215c894
     .init       start:0x02164548 end:0x021645b8
     .ctor       start:0x02164c58 end:0x02164c5c
     .data       start:0x02164ca0 end:0x02164e88
     .bss        start:0x02165980 end:0x02165a68
 
-src/063_Shrine/Actor/ActorUnkCASE.cpp:
+src/063_Shrine/Actor/ActorLobarrierShield.cpp:
     .text       start:0x0215c894 end:0x0215d890
     .init       start:0x021645b8 end:0x0216464c
     .ctor       start:0x02164c5c end:0x02164c60

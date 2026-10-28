@@ -21,7 +21,7 @@ public:
     /* 00 (base MapObject) */
     /* 40 (base MapObject_UnkStruct1_Derived2) */
     /* 68 */ UnkStruct_PlayerGet_ec mUnk_68;
-    /* 6C */ unk32 mUnk_6C;
+    /* 6C */ fx32 mUnk_6C;
     /* 70 */ unk32 mUnk_70;
     /* 74 */ unk32 mUnk_74;
     /* 78 */ u16 mUnk_78;

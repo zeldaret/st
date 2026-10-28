@@ -59,7 +59,7 @@ void MapObjectDoorDangerSpawn::Setup(void) {
     VecFx32 auStack_20;
 
     if (this->mUnk_20.mParams[1] == 2) {
-        this->mUnk_6C = 0;
+        this->mUnk_6C = FX_F32_TO_FX32(0.0f);
 
         ptr = data_027e0cd8->mUnk_0C;
         ptr->func_ov000_0208053c(this->mUnk_20.mParams[0]);
@@ -74,7 +74,7 @@ void MapObjectDoorDangerSpawn::Setup(void) {
 
     if (this->mUnk_20.mParams[1] == 4) {
         if (this->func_ov000_0209d29c(0) != 0) {
-            this->mUnk_6C = 0;
+            this->mUnk_6C = FX_F32_TO_FX32(0.0f);
             this->MapObjectDoorBase::vfunc_5C(MapObjDoorDangerSpawnState_2, 1);
             return;
         }
@@ -276,7 +276,8 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
                 this->mUnk_8B = 1;
             }
 
-            u16 result    = ROUND_FX32(FX_MUL(func_01ffb428(0x1000 - this->mUnk_6C, 0x1000), INT_TO_FX32(this->mUnk_78)));
+            u16 result = ROUND_FX32(
+                FX_MUL(func_01ffb428(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f)), INT_TO_FX32(this->mUnk_78)));
             this->mUnk_80 = result;
 
             if (this->mUnk_8A) {

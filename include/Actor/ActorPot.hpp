@@ -7,14 +7,14 @@
 #include "types.h"
 
 enum ActorPotState_ {
-    ActorPotState_0 = 0,
-    ActorPotState_1 = 1,
-    ActorPotState_2 = 2,
-    ActorPotState_3 = 3,
-    ActorPotState_4 = 4,
-    ActorPotState_5 = 5,
-    ActorPotState_6 = 6,
-    ActorPotState_7 = 7,
+    ActorPotState_0         = 0,
+    ActorPotState_Held      = 1,
+    ActorPotState_Thrown    = 2,
+    ActorPotState_3         = 3,
+    ActorPotState_4         = 4,
+    ActorPotState_InTornado = 5,
+    ActorPotState_6         = 6,
+    ActorPotState_7         = 7,
     ActorPotState_Max,
 };
 
@@ -43,7 +43,8 @@ public:
     /* 0EC */ u16 mUnk_EC;
     /* 0EE */ PAD(0x0EE, 0xF0);
     /* 0F0 */ UnkStruct_ov031_02113fb8 mUnk_F0;
-    /* 0F4 */ PAD(0xF4, 0x110);
+    /* 0F4 */ PAD(0xF4, 0x10C);
+    /* 10C */ unk32 mUnk_10C;
     /* 110 */
 
     Actor_ov031_02113fd4();
@@ -57,7 +58,7 @@ public:
     /* 40 */ virtual void vfunc_40() override;
     /* 44 */ virtual void vfunc_44() override;
     /* 54 */ virtual void vfunc_54();
-    /* 58 */ virtual void vfunc_58();
+    /* 58 */ virtual unk32 vfunc_58();
     /* 5C */ virtual void vfunc_5C(ActorState state) = 0;
     /* 60 */ virtual void vfunc_60();
     /* 64 */ virtual void vfunc_64();

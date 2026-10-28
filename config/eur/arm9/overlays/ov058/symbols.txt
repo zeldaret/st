@@ -119,11 +119,11 @@ _ZN19ActorProfileUnkNSTN6CreateEv kind:function(arm,size=0x24) addr:0x021429d8
 _ZN19ActorProfileUnkNSTNC1Ev kind:function(arm,size=0x30) addr:0x021429fc
 _ZN12ActorUnkNSTNC1Ev kind:function(arm,size=0x90) addr:0x02142a2c
 _ZN12ActorUnkNSTN19func_ov058_02142abcEv kind:function(arm,size=0x14) addr:0x02142abc
-_ZN12ActorUnkNSTN19func_ov058_02142ad0Ev kind:function(arm,size=0x18) addr:0x02142ad0
-_ZN12ActorUnkNSTN19func_ov058_02142ae8Ev kind:function(arm,size=0x8) addr:0x02142ae8
-_ZN12ActorUnkNSTN19func_ov058_02142af0Ev kind:function(arm,size=0x54) addr:0x02142af0
-_ZN12ActorUnkNSTN19func_ov058_02142b44Ev kind:function(arm,size=0x38) addr:0x02142b44
-_ZN12ActorUnkNSTN19func_ov058_02142b7cEv kind:function(arm,size=0x30) addr:0x02142b7c
+_ZN12ActorUnkNSTN4InitEi kind:function(arm,size=0x18) addr:0x02142ad0
+_ZN12ActorUnkNSTN8vfunc_58Ev kind:function(arm,size=0x8) addr:0x02142ae8
+_ZN12ActorUnkNSTN8vfunc_5CEs kind:function(arm,size=0x54) addr:0x02142af0
+_ZN12ActorUnkNSTN6UpdateEv kind:function(arm,size=0x38) addr:0x02142b44
+_ZN12ActorUnkNSTN8vfunc_2CEi kind:function(arm,size=0x30) addr:0x02142b7c
 _ZN12ActorUnkNSTN19func_ov058_02142bacEv kind:function(arm,size=0xc) addr:0x02142bac
 _ZN12ActorUnkNSTN19func_ov058_02142bb8Ev kind:function(arm,size=0xc) addr:0x02142bb8
 _ZN12ActorUnkNSTN19func_ov058_02142bc4Ev kind:function(arm,size=0xc) addr:0x02142bc4
@@ -774,12 +774,11 @@ _ZTV19data_ov058_02154520 kind:data(any) addr:0x02154520
 _ZTV19data_ov058_02154544 kind:data(any) addr:0x02154544
 _ZTV19data_ov058_0215455c kind:data(any) addr:0x0215455c ambiguous
 data_ov058_021545b0 kind:data(any) addr:0x021545b0
-_ZTV19data_ov058_021545bc kind:data(any) addr:0x021545bc
+_ZTV19ActorProfileUnkNSTN kind:data(any) addr:0x021545bc
 data_ov058_021545e0 kind:data(any) addr:0x021545e0
 data_ov058_02154620 kind:data(any) addr:0x02154620
-_ZTV19data_ov058_02154660 kind:data(any) addr:0x02154660
-data_ov058_021546bc kind:data(any) addr:0x021546bc ambiguous
-data_ov058_021546d8 kind:data(any) addr:0x021546d8
+_ZTV12ActorUnkNSTN kind:data(any) addr:0x02154660
+_ZTV19data_ov058_021546d8 kind:data(any) addr:0x021546d0
 data_ov058_021546e8 kind:data(any) addr:0x021546e8
 _ZTV19data_ov058_02154700 kind:data(any) addr:0x02154700
 data_ov058_02154724 kind:data(any) addr:0x02154724 ambiguous

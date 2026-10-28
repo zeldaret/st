@@ -37,7 +37,7 @@ ActorItemBoomerang::ActorItemBoomerang() :
     mUnk_138(0, 0),
     mUnk_13C(0x8D71),
     mUnk_140(0x1000, 0x0) {
-    this->mState = ActorItemBoomerangState_0;
+    this->mState = ActorItemBoomerangState_FollowingPath;
     this->mTimer.Reset();
 }
 
@@ -75,7 +75,7 @@ void ActorItemBoomerang::func_ov031_020e49b0(unk32 param1) {
     data_027e09a8->func_ov000_02071eac(&this->mPos);
     this->func_ov031_020e5220();
 
-    if (this->mState == ActorItemBoomerangState_1) {
+    if (this->mState == ActorItemBoomerangState_ReturningToLink) {
         return;
     }
     this->mVel.x = FX_F32_TO_FX32(0.0f);
@@ -83,7 +83,7 @@ void ActorItemBoomerang::func_ov031_020e49b0(unk32 param1) {
     this->mVel.z = FX_F32_TO_FX32(0.0f);
 
     data_027e0d2c->func_ov031_020d95b4();
-    this->SetState(ActorItemBoomerangState_1);
+    this->SetState(ActorItemBoomerangState_ReturningToLink);
 }
 
 // non-matching
@@ -118,7 +118,7 @@ void ActorItemBoomerang::Update() {
     data_027e09a8->func_ov000_02071d34(&this->mRef, this->mUnk_13C, &this->mPos, 0x0);
 
     switch (this->mState) {
-        case ActorItemBoomerangState_0: {
+        case ActorItemBoomerangState_FollowingPath: {
             s32 flags = 0;
             bool var1 = false;
 
@@ -147,14 +147,14 @@ void ActorItemBoomerang::Update() {
             }
 
             if (data_027e0ce0->mUnk_2C->GetCurrentItem() != ItemFlag_Boomerang) {
-                this->SetState(ActorItemBoomerangState_1);
+                this->SetState(ActorItemBoomerangState_ReturningToLink);
                 return;
             }
 
             sp14.Reset();
 
             if (!data_027e0d2c->func_ov031_020d962c(&this->mPos, 0x4CD, &sp6C, (RefStruct *) &sp14)) {
-                this->SetState(ActorItemBoomerangState_1);
+                this->SetState(ActorItemBoomerangState_ReturningToLink);
             } else {
 
                 sp18.unk_00 = VecFx32_Length(&this->mVel);
@@ -167,7 +167,7 @@ void ActorItemBoomerang::Update() {
             if (sp14.common.type != 0) {
                 this->mUnk_CC.mUnk_0C.pos.z = this->mPos.z;
                 this->mUnk_CC.mUnk_0C.pos.y = this->mPos.y + FX_F32_TO_FX32(-0.1003f);
-                this->mUnk_CC.mUnk_0C.size  = 0xA000;
+                this->mUnk_CC.mUnk_0C.size  = FX_F32_TO_FX32(10.0f);
                 this->mUnk_CC.mUnk_0C.pos.x = this->mPos.x;
                 data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_CC);
                 return;
@@ -208,7 +208,7 @@ void ActorItemBoomerang::Update() {
             break;
         }
 
-        case ActorItemBoomerangState_1: {
+        case ActorItemBoomerangState_ReturningToLink: {
             bool var_r4_2 = false;
 
             this->mUnk_A0.mUnk_0C.Init(this->mPos.x, this->mPos.y - 0x19A, this->mPos.z, 0x666);
@@ -410,7 +410,7 @@ bool ActorItemBoomerang_11C::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *p
         return false;
     }
 
-    if (this->mUnk_08->mState == ActorItemBoomerangState_1) {
+    if (this->mUnk_08->mState == ActorItemBoomerangState_ReturningToLink) {
         if (ref.moRef.unk_00_u16 & 0x1000) {
             MapObjRef moRef = ref.moRef;
             Vec2bCpp pos    = moRef.GetUnk02();

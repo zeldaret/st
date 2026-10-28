@@ -13,7 +13,7 @@ public:
     /* 098 */ ModelRender mUnk_098;
     /* 0F8 */ ActorUnkZLSL_27CC mUnk_0F8;
     /* 154 */ ActorUnkZLSL_27CC mUnk_154;
-    /* 1B0 */ unk32 mUnk_1B0;
+    /* 1B0 */ fx32 mUnk_1B0;
     /* 1B4 */
 
     ActorUnkEFSB();

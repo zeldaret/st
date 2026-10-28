@@ -49,7 +49,7 @@ bool MapObjectDoorClick::Init(void) {
 
     this->func_ov031_020fbf10(true, false);
     this->mUnk_8B = true;
-    this->mUnk_6C = 0;
+    this->mUnk_6C = FX_F32_TO_FX32(0.0f);
     this->func_ov031_020fcf0c(1);
     this->mUnk_8D = false;
     this->mUnk_88 = false;
@@ -253,7 +253,8 @@ void MapObjectDoorClick::vfunc_5C(MapObjState state, unk32 param2) {
         case MapObjDoorClickState_3: {
             this->vfunc_7C();
 
-            u16 result    = ROUND_FX32(FX_MUL(func_01ffb428(0x1000 - this->mUnk_6C, 0x1000), INT_TO_FX32(this->mUnk_78)));
+            u16 result = ROUND_FX32(
+                FX_MUL(func_01ffb428(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f)), INT_TO_FX32(this->mUnk_78)));
             this->mUnk_80 = result;
 
             if (this->mUnk_8A) {

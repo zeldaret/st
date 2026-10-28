@@ -11,6 +11,24 @@ extern unk32 data_ov000_020aecf8;
 
 const Cylinder data_ov031_02113d64(0x800);
 
+static PTMF<ActorHeart> data_ov031_02113da4[ActorHeartState_Max] = {
+    &ActorHeart::func_ov031_020ef2ec, // ActorHeartState_InitFallDown
+    &ActorHeart::func_ov031_020ef320, // ActorHeartState_FallingDown
+    &ActorHeart::func_ov031_020ef35c, // ActorHeartState_LyingOnGround
+    &ActorHeart::func_ov031_020ef3b8, // ActorHeartState_GrabbedByBoomerang
+    &ActorHeart::func_ov031_020ef430, // ActorHeartState_Sliding
+    &ActorHeart::func_ov031_020ef448, // ActorHeartState_GrabbedByWhip
+};
+
+static PTMF<ActorHeart> data_ov031_02113d74[ActorHeartState_Max] = {
+    &ActorHeart::func_ov031_020ef2f8, // ActorHeartState_InitFallDown
+    &ActorHeart::func_ov031_020ef334, // ActorHeartState_FallingDown
+    &ActorHeart::func_ov031_020ef3a0, // ActorHeartState_LyingOnGround
+    &ActorHeart::func_ov031_020ef3d0, // ActorHeartState_GrabbedByBoomerang
+    &ActorHeart::func_ov031_020ef444, // ActorHeartState_Sliding
+    &ActorHeart::func_ov031_020ef458, // ActorHeartState_GrabbedByWhip
+};
+
 DECL_PROFILE(ActorProfileHeart);
 
 Actor *ActorProfileHeart::Create() {
@@ -69,15 +87,6 @@ bool ActorHeart::Init(unk32 param1) {
     return true;
 }
 
-static PTMF<ActorHeart> data_ov031_02113d74[ActorHeartState_Max] = {
-    &ActorHeart::func_ov031_020ef2f8, // ActorHeartState_0
-    &ActorHeart::func_ov031_020ef334, // ActorHeartState_1
-    &ActorHeart::func_ov031_020ef3a0, // ActorHeartState_2
-    &ActorHeart::func_ov031_020ef3d0, // ActorHeartState_3
-    &ActorHeart::func_ov031_020ef444, // ActorHeartState_4
-    &ActorHeart::func_ov031_020ef458, // ActorHeartState_5
-};
-
 void ActorHeart::Update() {
     Cylinder sp2C;
     struct {
@@ -115,7 +124,7 @@ void ActorHeart::Update() {
     if (this->mUnk_94.HasExpired()) {
         this->func_ov000_020989e0();
 
-        if (this->mState == ActorHeartState_1) {
+        if (this->mState == ActorHeartState_FallingDown) {
             func_ov000_0208bc00(data_027e0ce0, 0, &sp8);
             func_01ffce1c(&sp18.unk_00, &sp8);
             sp18.unk_00.pos.y -= sp8.size;
@@ -149,7 +158,7 @@ void ActorHeart::Update() {
                 case 12:
                     this->mUnk_C0 = this->mUnk_98.mUnk_0C;
                     this->mUnk_98.mUnk_04 &= ~0x1000;
-                    this->SetState(ActorHeartState_3);
+                    this->SetState(ActorHeartState_GrabbedByBoomerang);
                     break;
             }
         }
@@ -163,8 +172,8 @@ skip:
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
-    if (this->mState != ActorHeartState_3) {
-        this->func_ov000_02098910(0, 0x10);
+    if (this->mState != ActorHeartState_GrabbedByBoomerang) {
+        this->func_ov000_02098910(NULL, 0x10);
     }
 
     if (this->mUnk_46 & 0x03) {
@@ -174,15 +183,6 @@ skip:
     VecFx32_Add(&this->mPos, &this->mUnk_EC, &this->mPos);
     VecFx32_Reset(&this->mUnk_EC);
 }
-
-static PTMF<ActorHeart> data_ov031_02113da4[ActorHeartState_Max] = {
-    &ActorHeart::func_ov031_020ef2ec, // ActorHeartState_0
-    &ActorHeart::func_ov031_020ef320, // ActorHeartState_1
-    &ActorHeart::func_ov031_020ef35c, // ActorHeartState_2
-    &ActorHeart::func_ov031_020ef3b8, // ActorHeartState_3
-    &ActorHeart::func_ov031_020ef430, // ActorHeartState_4
-    &ActorHeart::func_ov031_020ef448, // ActorHeartState_5
-};
 
 void ActorHeart::SetState(ActorState state) {
     this->mState  = state;
@@ -194,11 +194,11 @@ void ActorHeart::SetState(ActorState state) {
 void ActorHeart::func_ov031_020ef208() {
     bool var2 = true;
     bool var1 = true;
-    if (this->mState != ActorHeartState_3 && this->mState != ActorHeartState_4) {
+    if (this->mState != ActorHeartState_GrabbedByBoomerang && this->mState != ActorHeartState_Sliding) {
         var1 = false;
     }
     if (!var1) {
-        if (this->mState != ActorHeartState_5) {
+        if (this->mState != ActorHeartState_GrabbedByWhip) {
             var2 = false;
         }
     }
@@ -237,7 +237,7 @@ void ActorHeart::func_ov031_020ef2f8() {
     if (this->mVel.y > 0) {
         return;
     }
-    this->SetState(ActorHeartState_1);
+    this->SetState(ActorHeartState_FallingDown);
 }
 
 void ActorHeart::func_ov031_020ef320() {
@@ -250,7 +250,7 @@ void ActorHeart::func_ov031_020ef334() {
     if ((this->mUnk_46 & 0x3) == 0) {
         return;
     }
-    this->SetState(ActorHeartState_2);
+    this->SetState(ActorHeartState_LyingOnGround);
 }
 
 void ActorHeart::func_ov031_020ef35c() {
@@ -285,7 +285,7 @@ void ActorHeart::func_ov031_020ef3d0() {
     this->mVel.z = FX_F32_TO_FX32(0.0);
 
     this->mUnk_98.mUnk_04 |= 0x1000;
-    this->SetState(ActorHeartState_1);
+    this->SetState(ActorHeartState_FallingDown);
 }
 
 void ActorHeart::func_ov031_020ef430() {
@@ -310,7 +310,7 @@ void ActorHeart::func_ov031_020ef458() {
     // which actor is this ?
     UnkActor_02ef458 *actor = (UnkActor_02ef458 *) gpActorManager->func_01fff3b4(this->mUnk_C4);
     if (actor == nullptr) {
-        this->SetState(ActorHeartState_1);
+        this->SetState(ActorHeartState_FallingDown);
         return;
     }
     VecFx32_Copy(&actor->mUnk_E8, &this->mPos);
@@ -318,24 +318,24 @@ void ActorHeart::func_ov031_020ef458() {
 
 void ActorHeart::func_ov031_020ef4a8() {
     if (this->mUnk_5C.mUnk_24 >= 0) {
-        this->SetState(ActorHeartState_2);
+        this->SetState(ActorHeartState_LyingOnGround);
         return;
     }
 
     switch (this->mUnk_5C.mUnk_2C) {
         case 0:
             this->mTimer.Set(0, 180);
-            this->SetState(ActorHeartState_2);
+            this->SetState(ActorHeartState_LyingOnGround);
             break;
 
         case 1:
             this->mTimer.Set(0, 480);
-            this->SetState(ActorHeartState_0);
+            this->SetState(ActorHeartState_InitFallDown);
             return;
 
         default:
             this->mTimer.Set(0, 480);
-            this->SetState(ActorHeartState_0);
+            this->SetState(ActorHeartState_InitFallDown);
             break;
     }
 }
@@ -415,19 +415,19 @@ bool ActorHeart_C4::vfunc_00(RefStruct ref, unk32 param3) {
     if (param3 != 0) {
         ActorHeart *pHeart = this->GetActorPtr<ActorHeart>();
         pHeart->mUnk_C4    = ref;
-        pHeart->SetState(ActorHeartState_4);
+        pHeart->SetState(ActorHeartState_Sliding);
     }
 
     return this->Actor_C4::vfunc_00(ref, param3);
 }
 
 bool ActorHeart_C4::vfunc_04() {
-    this->GetActorPtr<ActorHeart>()->SetState(ActorHeartState_5);
+    this->GetActorPtr<ActorHeart>()->SetState(ActorHeartState_GrabbedByWhip);
     return this->Actor_C4::vfunc_04();
 }
 
 void ActorHeart_C4::vfunc_0C(VecFx32 *param1) {
-    this->GetActorPtr<ActorHeart>()->SetState(ActorHeartState_1);
+    this->GetActorPtr<ActorHeart>()->SetState(ActorHeartState_FallingDown);
     this->Actor_C4::vfunc_0C(param1);
 }
 
