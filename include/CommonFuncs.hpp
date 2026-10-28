@@ -174,7 +174,6 @@ bool func_02016c68(VecFx32 *, VecFx32 *, RefStruct, int, int);
 bool func_02016cf0(VecFx32 *, VecFx32 *, RefStruct, int, int);
 Actor *func_02016fbc(ActorId, VecFx32 *, unk32);
 unk32 func_02017158();
-bool func_02017930(UnkStruct_027e0960_TableEntry_04_Base *, UnkStruct_027e0960_TableEntry_04_Base *);
 unk8 func_02017e8c(unk16 *);
 fx32 func_02017f54(s16 *, UnkAngleStruct);
 void func_02018114(unk16 *, unk16);
