@@ -261,6 +261,7 @@ void func_ov000_02052bcc(void *);
 void func_ov000_02054548(void *, unk32);
 unk32 func_ov000_020545d0(void *, void *);
 UnkStruct_027e0cec_18_04 *func_ov000_02054690(void *, unk32, unk32, unk32, unk32, unk32);
+void func_ov000_02057cc8(ModelRender *);
 void func_ov000_02058c74(void *, int, int, int, int);
 s8 func_ov000_02059da4(UnkStruct_027e0960_TableEntry *, VecFx32 *param1);
 BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, void *);

@@ -4,9 +4,12 @@
 #include "CommonFuncs.hpp"
 #include "MainGame/MiscAdvManager.hpp"
 #include "MapObject/MapObjectUnkWDST.hpp"
+#include "RefStruct.hpp"
+#include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "Unknown/UnkStruct_027e0cec.hpp"
 #include "flags.h"
 #include "nitro/fx.h"
 #include "nitro/math.h"
@@ -204,7 +207,120 @@ void MapObjectUnkSWCR::vfunc_0C(void) {
     this->vfunc_08();
 }
 
-void MapObjectUnkSWCR::func_ov063_02161b08(unk32 param1) {}
+void MapObjectUnkSWCR::func_ov063_02161b08(unk32 param1) {
+    mUnk_168 = param1;
+    mUnk_170.Reset();
+
+    switch (param1) {
+        case 1:
+            break;
+        case 0:
+            mUnk_40.func_ov000_02057cb0();
+            func_ov000_02057cc8(&mUnk_40);
+            mUnk_40.func_ov000_02057c98(&mUnk_A0);
+            mUnk_40.func_ov000_02057c98(&mUnk_E0);
+            mUnk_A0.func_ov000_020577f8(0);
+            mUnk_E0.func_ov000_020577f8(0);
+            break;
+        case 2:
+            UnkStackStruct1 stack;
+            func_ov000_02072fd0(&stack);
+            stack.mUnk_08 = 0x3C;
+            stack.mUnk_00 = 0x80;
+            stack.mUnk_3A = 3;
+            stack.mUnk_18.Copy(1);
+            SET_FLAG2(stack.mUnk_38, 7);
+            VecFx32_Copy(&mPos, &stack.mUnk_0C);
+            mUnk_174 = data_027e09b8->func_ov000_02073388(&stack, 0);
+            data_027e0cec->func_ov000_0209feac(0x8E6, &mPos, 4, 0, 0);
+            data_027e0cec->func_ov000_0209feac(0x8E7, &mPos, 4, 0, 0);
+            break;
+        case 3:
+            mUnk_40.func_ov000_02057cb0();
+            func_ov000_02057cc8(&mUnk_40);
+            mUnk_40.func_ov000_02057c98(&mUnk_A0);
+            mUnk_40.func_ov000_02057c98(&mUnk_E0);
+            mUnk_A0.func_ov000_020577f8(0);
+            mUnk_E0.func_ov000_020577f8(0);
+            break;
+        case 4: {
+            if (mUnk_20.mUnk_0A[1] != 0) {
+                this->func_ov000_0209d2c4(1, true);
+            }
+
+            mUnk_40.func_ov000_02057cb0();
+            func_ov000_02057cc8(&mUnk_40);
+            mUnk_40.func_ov000_02057c98(&mUnk_A0);
+            mUnk_40.func_ov000_02057c98(&mUnk_E0);
+            mUnk_A0.func_ov000_020577f8(0);
+            mUnk_E0.func_ov000_020577f8(mUnk_E0.mUnk_04.mUnk_10);
+
+            ActorParams params;
+            params.mUnk_28.Reset();
+            params.func_ov000_020975f8();
+
+            params.mInitialPos.z = mPos.z + FX_MUL(COS(mAngle.angle_u), FX_F32_TO_FX32(.5f));
+            params.mInitialPos.y = mPos.y;
+            params.mInitialPos.x = mPos.x + FX_MUL(SIN(mAngle.angle_u), FX_F32_TO_FX32(.5f));
+            params.mInitialAngle = mAngle.angle_s;
+            params.mParams[0]    = mUnk_20.mParams[1];
+            RefStruct pOutRef;
+            Actor::func_ov000_020973f4(&pOutRef, &data_ov000_020b539c_eur, ActorId_EFSB, &params, 0);
+            break;
+        }
+        case 7: {
+            if (mUnk_20.mUnk_0A[1] != 0) {
+                this->func_ov000_0209d2c4(1, true);
+            }
+
+            mUnk_40.func_ov000_02057cb0();
+            func_ov000_02057cc8(&mUnk_40);
+            mUnk_40.func_ov000_02057c98(&mUnk_A0);
+            mUnk_40.func_ov000_02057c98(&mUnk_120);
+            mUnk_A0.func_ov000_020577f8(0);
+            mUnk_120.func_ov000_020577f8(mUnk_120.mUnk_04.mUnk_10);
+
+            ActorParams params;
+            params.mUnk_28.Reset();
+            params.func_ov000_020975f8();
+
+            params.mInitialPos.z = mPos.z + FX_MUL(COS((u16) mAngle.angle_s), FX_F32_TO_FX32(.5f));
+            params.mInitialPos.y = mPos.y;
+            params.mInitialPos.x = mPos.x + FX_MUL(SIN((u16) mAngle.angle_s), FX_F32_TO_FX32(.5f));
+            params.mInitialAngle = mAngle.angle_s;
+            params.mParams[0]    = mUnk_20.mParams[1];
+            RefStruct pOutRef;
+            Actor::func_ov000_020973f4(&pOutRef, &data_ov000_020b539c_eur, ActorId_EFSB, &params, 0);
+            data_027e09a8->func_ov000_02071b30(0x116, &mPos, 0);
+            break;
+        }
+        case 5:
+            mUnk_10 = NULL;
+            break;
+        case 6: {
+            UnkStackStruct1 stack;
+            func_ov000_02072fd0(&stack);
+            stack.mUnk_08 = 0x5A;
+            stack.mUnk_00 = 0x80;
+            stack.mUnk_3A = 3;
+            stack.mUnk_18.Copy(1);
+            SET_FLAG2(stack.mUnk_38, 7);
+            VecFx32_Copy(&mPos, &stack.mUnk_0C);
+
+            mUnk_174 = data_027e09b8->func_ov000_02073388(&stack, 0);
+            mUnk_10  = &data_ov063_021649e8;
+
+            mUnk_40.func_ov000_02057cb0();
+            func_ov000_02057cc8(&mUnk_40);
+            mUnk_40.func_ov000_02057c98(&mUnk_120);
+            mUnk_120.func_ov000_020577f8(0);
+
+            data_027e0cec->func_ov000_0209feac(0x8E4, &mPos, 4, 0, 0);
+            data_027e0cec->func_ov000_0209feac(0x8E5, &mPos, 4, 0, 0);
+            break;
+        }
+    }
+}
 
 void MapObjectUnkSWCR::vfunc_14(unk32 param1) {
 #pragma unused(param1)
