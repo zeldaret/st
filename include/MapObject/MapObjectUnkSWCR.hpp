@@ -57,7 +57,7 @@ public:
     void func_ov063_0216153c(void);
     unk32 func_ov063_021615c4(void);
     void func_ov063_02161638(void);
-    void func_ov063_02161b08(void);
+    void func_ov063_02161b08(unk32 param1);
 };
 
 class MapObjectProfileUnkSWCR : public MapObjectProfileUnkSTAT_Base {
