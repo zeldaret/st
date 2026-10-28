@@ -493,14 +493,14 @@ _ZN23MapObjectProfileUnkSTNE10GetProfileEv kind:function(arm,size=0xc) addr:0x02
 _ZN23MapObjectProfileUnkSTNE6CreateEv kind:function(arm,size=0x24) addr:0x0214ea7c
 _ZN23MapObjectProfileUnkSTNEC1Ev kind:function(arm,size=0x8c) addr:0x0214eaa0
 _ZN16MapObjectUnkSTNEC1Ev kind:function(arm,size=0xb4) addr:0x0214eb2c
-_ZN16MapObjectUnkSTNE19func_ov058_0214ebe0Ev kind:function(arm,size=0xb0) addr:0x0214ebe0
-_ZN16MapObjectUnkSTNE19func_ov058_0214ec90Ev kind:function(arm,size=0xc4) addr:0x0214ec90
-_ZN16MapObjectUnkSTNE19func_ov058_0214ed54Ev kind:function(arm,size=0x50) addr:0x0214ed54
-_ZN16MapObjectUnkSTNE19func_ov058_0214eda4Ev kind:function(arm,size=0x1c0) addr:0x0214eda4
-_ZN16MapObjectUnkSTNE19func_ov058_0214ef64Ev kind:function(arm,size=0x54) addr:0x0214ef64
+_ZN16MapObjectUnkSTNE8vfunc_1CE9RefStructiP7VecFx32 kind:function(arm,size=0xb0) addr:0x0214ebe0
+_ZN16MapObjectUnkSTNE8vfunc_48Ev kind:function(arm,size=0xc4) addr:0x0214ec90
+_ZN16MapObjectUnkSTNE8SetStateEsi kind:function(arm,size=0x50) addr:0x0214ed54
+_ZN16MapObjectUnkSTNE8vfunc_08Ev kind:function(arm,size=0x1c0) addr:0x0214eda4
+_ZN16MapObjectUnkSTNE8vfunc_14Ei kind:function(arm,size=0x54) addr:0x0214ef64
 _ZN16MapObjectUnkSTNE19func_ov058_0214efb8Ev kind:function(arm,size=0x14) addr:0x0214efb8
-_ZN16MapObjectUnkSTNE19func_ov058_0214efccEv kind:function(arm,size=0x34) addr:0x0214efcc
-_ZN16MapObjectUnkSTNE19func_ov058_0214f000Ev kind:function(arm,size=0x8) addr:0x0214f000
+_ZN16MapObjectUnkSTNE8vfunc_24EP9MapObject7VecFx32 kind:function(arm,size=0x34) addr:0x0214efcc
+_ZN16MapObjectUnkSTNE8vfunc_4CEv kind:function(arm,size=0x8) addr:0x0214f000
 _ZN16MapObjectUnkSTNED1Ev kind:function(arm,size=0x20) addr:0x0214f008
 _ZN16MapObjectUnkSTNED0Ev kind:function(arm,size=0x28) addr:0x0214f028
 _ZN23MapObjectProfileUnkSTNED1Ev kind:function(arm,size=0x14) addr:0x0214f050
@@ -863,14 +863,13 @@ _ZTV19data_ov058_02155784 kind:data(any) addr:0x02155784
 data_ov058_021557e8 kind:data(any) addr:0x021557e8
 data_ov058_02155810 kind:data(any) addr:0x02155810
 data_ov058_02155818 kind:data(any) addr:0x02155818 ambiguous
-data_ov058_02155838 kind:data(any) addr:0x02155838
+_ZTV18MapObject_10_ov058 kind:data(any) addr:0x02155830
 data_ov058_02155860 kind:data(any) addr:0x02155860
-data_ov058_021558a0 kind:data(any) addr:0x021558a0
+_ZTV28MapObjectProfileUnkSTNE_Base kind:data(any) addr:0x02155898
 data_ov058_021558bc kind:data(any) addr:0x021558bc
-data_ov058_021558d8 kind:data(any) addr:0x021558d8
-data_ov058_0215591c kind:data(any) addr:0x0215591c
-data_ov058_02155938 kind:data(any) addr:0x02155938
-data_ov058_0215596c kind:data(any) addr:0x0215596c ambiguous
+_ZTV19data_ov058_021558d8 kind:data(any) addr:0x021558d0
+_ZTV23MapObjectProfileUnkSTNE kind:data(any) addr:0x02155914
+_ZTV16MapObjectUnkSTNE kind:data(any) addr:0x02155930
 data_ov058_02155990 kind:data(any) addr:0x02155990
 data_ov058_021559a8 kind:data(any) addr:0x021559a8
 data_ov058_021559d0 kind:data(any) addr:0x021559d0
@@ -1025,9 +1024,6 @@ data_ov058_02157658 kind:bss addr:0x02157658
 _ZGVN15ProfileInstanceI23MapObjectProfileUnkSTNEE8sProfileE kind:bss addr:0x02157678
 @11725 kind:bss addr:0x0215767c
 _ZN15ProfileInstanceI23MapObjectProfileUnkSTNEE8sProfileE kind:bss addr:0x02157688
-data_ov058_021576a4 kind:bss addr:0x021576a4 ambiguous
-data_ov058_021576dc kind:bss addr:0x021576dc ambiguous
-data_ov058_02157710 kind:bss addr:0x02157710 ambiguous
 data_ov058_0215775c kind:bss addr:0x0215775c
 _ZGVN15ProfileInstanceI23MapObjectProfileUnkHOUSE8sProfileE kind:bss addr:0x0215777c
 @11731 kind:bss addr:0x02157788

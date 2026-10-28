@@ -100,6 +100,7 @@ src/058_Field/MapObject/MapObjectUnkSTNE.cpp:
     .text       start:0x0214ea70 end:0x0214f064
     .init       start:0x02153d78 end:0x02153dc8
     .ctor       start:0x0215415c end:0x02154160
+    .data       start:0x02155914 end:0x02155990
     .bss        start:0x02157678 end:0x0215777c
 
 src/058_Field/MapObject/MapObjectUnkHOUS.cpp:
