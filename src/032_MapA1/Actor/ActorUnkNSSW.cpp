@@ -1,6 +1,7 @@
 #include "Actor/ActorUnkNSSW.hpp"
 
 #include "Actor/ActorManager.hpp"
+#include "Actor/ActorUnkITWP.hpp"
 #include "Actor/ActorUnkRCHU.hpp"
 #include "CommonFuncs.hpp"
 #include "MapObject/MapObjectManager.hpp"
@@ -14,21 +15,6 @@
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
 #include "nitro/fx.h"
 
-class ActorWithMat4x3pAt154 : public Actor {
-public:
-    /* 000 (base) */
-    /* 094 */ PAD(0x094, 0x154);
-    /* 154 */ MtxFx43 mUnk_154;
-    /* 184 */
-};
-
-class UnkActor_ov032_02120190 : public Actor {
-public:
-    /* 000 (base) */
-    /* 94 */ PAD(0x94, 0xE8);
-    /* E8 */ VecFx32 mUnk_E8;
-};
-
 class UnkStruct_ov071_0215f92c : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (base) */
@@ -37,16 +23,6 @@ public:
 
     UnkStruct_ov071_0215f92c();
 };
-
-#if IS_JP
-class ActorWithBoolAt17F : public Actor {
-public:
-    /* 000 (base) */
-    /* 094 */ PAD(0x094, 0x17F);
-    /* 17F */ bool mUnk_17F;
-    /* 180 */
-};
-#endif
 
 extern VecFx32 data_027e0108;
 extern const unk32 data_ov000_020aecf8;
@@ -72,7 +48,7 @@ ActorUnkNSSW::ActorUnkNSSW() :
     mUnk_0BC(0x7),
     mUnk_0E0(this),
     mUnk_104(this),
-    mUnk_134(0x0),
+    mUnk_134(0),
 #if IS_JP
     mUnk_138_jp(this),
 #endif
@@ -159,7 +135,7 @@ void ActorUnkNSSW::Update() {
             this->func_ov032_02120190();
 #if IS_JP
             {
-                ActorWithBoolAt17F *actor = (ActorWithBoolAt17F *) gpActorManager->func_01fff3b4(this->mUnk_134);
+                ActorUnkITWP *actor = (ActorUnkITWP *) gpActorManager->func_01fff3b4(this->mUnk_134);
                 if (actor != NULL) {
                     actor->mUnk_17F = this->mUnk_19C = true;
                 }
@@ -191,7 +167,7 @@ void ActorUnkNSSW::Update() {
 }
 
 void ActorUnkNSSW::func_ov032_02120118() {
-    ActorWithMat4x3pAt154 *actor = (ActorWithMat4x3pAt154 *) gpActorManager->func_01fff3b4(this->mUnk_134);
+    ActorUnkITWP *actor = (ActorUnkITWP *) gpActorManager->func_01fff3b4(this->mUnk_134);
     if (actor == NULL) {
         return;
     }
@@ -205,7 +181,7 @@ void ActorUnkNSSW::func_ov032_02120118() {
 }
 
 void ActorUnkNSSW::func_ov032_02120190() {
-    UnkActor_ov032_02120190 *actor = (UnkActor_ov032_02120190 *) gpActorManager->func_01fff3b4(this->mUnk_134);
+    ActorUnkITWP *actor = (ActorUnkITWP *) gpActorManager->func_01fff3b4(this->mUnk_134);
 
     if (actor == NULL) {
         this->func_ov032_02120894(0x6);
@@ -221,7 +197,7 @@ void ActorUnkNSSW::func_ov032_02120190() {
 
     func_01ffa7a0(&vec, &this->mUnk_150, &vec);
 
-    VecFx32_Add(&vec, &actor->mUnk_E8, &vec);
+    VecFx32_Add(&vec, &actor->mUnk_0E8, &vec);
 
     VecFx32_Copy(&vec, &this->mPos);
 

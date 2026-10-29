@@ -206,7 +206,7 @@ void func_02024a84(MtxFx33 *param1);
 void func_02024df0(u16 *);
 void func_02024fc4(fx16 sin, fx16 cos);
 void func_02028450(void *param1);
-void CopySingle288(MtxFx43 *, MtxFx33 *);
+void CopySingle288(void *, MtxFx33 *); //! TODO: figure param1's type
 unk32 func_02032784(unk32 param1);
 unk32 func_020328c8(void *, void *, size_t);
 u16 func_02032920(void *param1, size_t param2);

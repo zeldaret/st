@@ -218,11 +218,7 @@ void ActorLobarrierShield::func_ov063_0215afb8() {
         return;
     }
 
-    //! INFO: Actually a MtxFx33, this is only used to allow a "batched" copy (all 9 elements at a time, not 3 by 3)
-    struct Fx32Array9 {
-        fx32 array[9];
-    };
-    *(Fx32Array9 *) &mUnk_1A4 = *(Fx32Array9 *) &otherActor->mUnk_154;
+    mUnk_1A4 = otherActor->mUnk_154;
 
     VecFx32 vec = otherActor->mUnk_0E8;
     mPos.x      = vec.x;
