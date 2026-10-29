@@ -253,9 +253,8 @@ void MapObjectDoorClick::vfunc_5C(MapObjState state, unk32 param2) {
         case MapObjDoorClickState_3: {
             this->vfunc_7C();
 
-            u16 result = ROUND_FX32(
-                FX_Mul(func_01ffb428(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f)), INT_TO_FX32(this->mUnk_78)));
-            this->mUnk_80 = result;
+            this->mUnk_80 = ROUND_FX32(
+                FX_Mul(INT_TO_FX32(this->mUnk_78), func_01ffb428(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f))));
 
             if (this->mUnk_8A) {
                 this->mUnk_82 = 0;

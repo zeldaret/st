@@ -1,4 +1,5 @@
 #include "CommonFuncs.hpp"
+#include "nitro/math.h"
 #define DOORBASE_DTOR_NOINLINE
 #include "MapObject/MapObjectDoorBase.hpp"
 
@@ -374,10 +375,8 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
         case MapObjDoorBaseState_3:
             this->vfunc_7C();
 
-            this->mUnk_80 = (FX_Mul(INT_TO_FX32(this->mUnk_78),
-                                    func_01ffb428(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f))) +
-                             FX_F32_TO_FX32(0.5f)) >>
-                            12;
+            this->mUnk_80 = ROUND_FX32(
+                FX_Mul(INT_TO_FX32(this->mUnk_78), func_01ffb428(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f))));
 
             if (this->mUnk_8A) {
                 this->mUnk_82 = 0;

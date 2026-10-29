@@ -151,10 +151,19 @@ inline fx32 FX_SinIdx(u16 n) {
     return FX_SinCosTable_[2 * ((n) >> 4)];
 }
 
+inline fx32 FX_Sin(s16 n) {
+    return FX_SinCosTable_[2 * ((n) >> 4)];
+}
+
 inline fx32 FX_CosIdx(u16 n) {
     return FX_SinCosTable_[2 * ((n) >> 4) + 1];
 }
 
+inline fx32 FX_Cos(s16 n) {
+    return FX_SinCosTable_[2 * ((n) >> 4) + 1];
+}
+
+// FX_Sin and FX_Cos probably fake? was necessary to keep s16 for `MapObjectUnkPTFL::func_ov102_021843b4()`
 #define SIN(n) FX_SinIdx(n)
 #define COS(n) FX_CosIdx(n)
 

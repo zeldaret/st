@@ -219,7 +219,7 @@ void MapObjectUnkPTFL::func_ov102_0218419c() {
     u32 sp1C;
     u32 sp18;
     s32 temp_r0_3;
-    s32 temp_r1_3;
+    u16 temp_r1_3;
     s32 temp_r7;
 
     PushGeometryCommand(0x11, NULL, 0);
@@ -301,7 +301,7 @@ void MapObjectUnkPTFL::func_ov102_021843b4() {
         PushGeometryCommand(0x1B, &sp44, 3);
     }
 
-    MtxFx33_InitZRotation(&sp20, -SIN(this->mUnk_54), COS(this->mUnk_54));
+    MtxFx33_InitZRotation(&sp20, -FX_Sin(this->mUnk_54), FX_Cos(this->mUnk_54));
 
     PushGeometryCommand(0x1A, &sp20, 9);
 
