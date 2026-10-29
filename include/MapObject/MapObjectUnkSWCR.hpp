@@ -21,6 +21,18 @@ public:
     /* 08 */ virtual void vfunc_08();
 };
 
+enum MapObjectUnkSWCR_168_Enum {
+    MapObjectUnkSWCR_168_0 = 0,
+    MapObjectUnkSWCR_168_1 = 1,
+    MapObjectUnkSWCR_168_2 = 2,
+    MapObjectUnkSWCR_168_3 = 3,
+    MapObjectUnkSWCR_168_4 = 4,
+    MapObjectUnkSWCR_168_5 = 5,
+    MapObjectUnkSWCR_168_6 = 6,
+    MapObjectUnkSWCR_168_7 = 7,
+    MapObjectUnkSWCR_168_8 = 8 // value in ctor, ignored in the code
+};
+
 class MapObjectUnkSWCR : public MapObject {
 public:
     /* 000 (base) */
@@ -35,7 +47,7 @@ public:
     /* 140 */ unk32 mUnk_140;
     /* 144 */ PAD(0x144, 0x160);
     /* 160 */ MapObjectUnkSWCR_160 mUnk_160;
-    /* 168 */ unk32 mUnk_168; // Some kind of internal state
+    /* 168 */ MapObjectUnkSWCR_168_Enum mUnk_168; // Some kind of internal state
     /* 16C */ unk32 mUnk_16C;
     /* 170 */ Timer mUnk_170;
     /* 174 */ unk32 mUnk_174;
@@ -57,7 +69,7 @@ public:
     void func_ov063_0216153c(void);
     unk32 func_ov063_021615c4(void);
     void func_ov063_02161638(void);
-    void func_ov063_02161b08(unk32 param1);
+    void func_ov063_02161b08(MapObjectUnkSWCR_168_Enum param1);
 };
 
 class MapObjectProfileUnkSWCR : public MapObjectProfileUnkSTAT_Base {

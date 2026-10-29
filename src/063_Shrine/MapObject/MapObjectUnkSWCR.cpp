@@ -60,13 +60,13 @@ void MapObjectUnkSWCR::func_ov063_0216153c(void) {
         return;
     }
 
-    if (mUnk_168 == 0) {
+    if (mUnk_168 == MapObjectUnkSWCR_168_0) {
         if (this->func_ov000_0209d274(0) < FX_F32_TO_FX32(2.5f)) {
-            this->func_ov063_02161b08(1);
+            this->func_ov063_02161b08(MapObjectUnkSWCR_168_1);
         }
-    } else if (mUnk_168 == 5) {
+    } else if (mUnk_168 == MapObjectUnkSWCR_168_5) {
         if (this->func_ov000_0209d274(0) < FX_F32_TO_FX32(2.5f)) {
-            this->func_ov063_02161b08(6);
+            this->func_ov063_02161b08(MapObjectUnkSWCR_168_6);
         }
     }
 }
@@ -78,11 +78,11 @@ unk32 MapObjectUnkSWCR::func_ov063_021615c4(void) {
         return 0;
     }
 
-    if (mUnk_168 == 0) {
+    if (mUnk_168 == MapObjectUnkSWCR_168_0) {
         if (this->func_ov000_0209d274(0) < FX_F32_TO_FX32(2.5f)) {
             return 1;
         }
-    } else if (mUnk_168 == 5) {
+    } else if (mUnk_168 == MapObjectUnkSWCR_168_5) {
         if (this->func_ov000_0209d274(0) < FX_F32_TO_FX32(2.5f)) {
             return 1;
         }
@@ -99,7 +99,7 @@ MapObjectUnkSWCR::MapObjectUnkSWCR() :
     mUnk_E0(&mUnk_100, NULL),
     mUnk_120(&mUnk_140, NULL),
     mUnk_160(this),
-    mUnk_168(8),
+    mUnk_168(MapObjectUnkSWCR_168_8),
     mUnk_16C(2),
     mUnk_170(0, 0),
     mUnk_174(-1),
@@ -130,14 +130,14 @@ bool MapObjectUnkSWCR::Init(void) {
 
     if (mUnk_16C == 0) {
         if (mUnk_20.mUnk_0A[1] != 0 && this->func_ov000_0209d29c(1) != 0) {
-            this->func_ov063_02161b08(4);
+            this->func_ov063_02161b08(MapObjectUnkSWCR_168_4);
         } else {
-            this->func_ov063_02161b08(0);
+            this->func_ov063_02161b08(MapObjectUnkSWCR_168_0);
         }
     } else if (mUnk_20.mUnk_0A[1] != 0 && this->func_ov000_0209d29c(1) != 0) {
-        this->func_ov063_02161b08(7);
+        this->func_ov063_02161b08(MapObjectUnkSWCR_168_7);
     } else {
-        this->func_ov063_02161b08(5);
+        this->func_ov063_02161b08(MapObjectUnkSWCR_168_5);
     }
 
     return true;
@@ -152,41 +152,42 @@ void MapObjectUnkSWCR::Setup(void) {
 
 void MapObjectUnkSWCR::vfunc_08(void) {
     switch (mUnk_168) {
-        case 0:
-        case 5:
+        case MapObjectUnkSWCR_168_0:
+        case MapObjectUnkSWCR_168_5:
+        default:
             break;
-        case 1:
+        case MapObjectUnkSWCR_168_1:
             if (MapObjectUnkWDST::func_ov094_02173584(3) == 0) {
-                this->func_ov063_02161b08(2);
+                this->func_ov063_02161b08(MapObjectUnkSWCR_168_2);
             }
             break;
-        case 2:
+        case MapObjectUnkSWCR_168_2:
             if (data_027e09b8->func_ov000_020732ec(mUnk_174) != 0 && data_027e09b8->func_ov000_0207330c() == 10) {
                 data_027e09a8->func_ov000_02071b30(0x114, &mPos, 0);
-                this->func_ov063_02161b08(3);
+                this->func_ov063_02161b08(MapObjectUnkSWCR_168_3);
                 return;
             }
             break;
-        case 3:
+        case MapObjectUnkSWCR_168_3:
             if (mUnk_E0.mUnk_04.func_01ff8fa8() != 0) {
-                this->func_ov063_02161b08(4);
+                this->func_ov063_02161b08(MapObjectUnkSWCR_168_4);
                 data_027e09a8->func_ov000_020716dc(0x3C);
                 return;
             }
             mUnk_E0.func_01ffc3b4();
             break;
-        case 4:
-        case 7: {
+        case MapObjectUnkSWCR_168_4:
+        case MapObjectUnkSWCR_168_7: {
             unk32 stack = *(u32 *) &this->mRef;
             data_027e09a8->func_ov000_02071d34(&stack, 0x117, &mPos, 0);
             mUnk_A0.func_01ffc3b4();
             break;
         }
-        case 6:
+        case MapObjectUnkSWCR_168_6:
             if (data_027e09b8->func_ov000_020732ec(mUnk_174) != 0) {
                 if (mUnk_120.mUnk_04.func_01ff8fa8() != 0) {
                     data_027e09a8->func_ov000_020716dc(0x3C);
-                    this->func_ov063_02161b08(7);
+                    this->func_ov063_02161b08(MapObjectUnkSWCR_168_7);
                     return;
                 }
 
@@ -209,14 +210,15 @@ void MapObjectUnkSWCR::vfunc_0C(void) {
 }
 
 // non-matching (SIN/COS)
-void MapObjectUnkSWCR::func_ov063_02161b08(unk32 param1) {
+void MapObjectUnkSWCR::func_ov063_02161b08(MapObjectUnkSWCR_168_Enum param1) {
     mUnk_168 = param1;
     mUnk_170.Reset();
 
     switch (param1) {
-        case 1:
+        case MapObjectUnkSWCR_168_1:
+        default:
             break;
-        case 0:
+        case MapObjectUnkSWCR_168_0:
             mUnk_40.func_ov000_02057cb0();
             func_ov000_02057cc8(&mUnk_40);
             mUnk_40.func_ov000_02057c98(&mUnk_A0);
@@ -224,7 +226,7 @@ void MapObjectUnkSWCR::func_ov063_02161b08(unk32 param1) {
             mUnk_A0.func_ov000_020577f8(0);
             mUnk_E0.func_ov000_020577f8(0);
             break;
-        case 2:
+        case MapObjectUnkSWCR_168_2:
             UnkStackStruct1 stack;
             func_ov000_02072fd0(&stack);
             stack.mUnk_08 = 0x3C;
@@ -237,7 +239,7 @@ void MapObjectUnkSWCR::func_ov063_02161b08(unk32 param1) {
             data_027e0cec->func_ov000_0209feac(0x8E6, &mPos, 4, 0, 0);
             data_027e0cec->func_ov000_0209feac(0x8E7, &mPos, 4, 0, 0);
             break;
-        case 3:
+        case MapObjectUnkSWCR_168_3:
             mUnk_40.func_ov000_02057cb0();
             func_ov000_02057cc8(&mUnk_40);
             mUnk_40.func_ov000_02057c98(&mUnk_A0);
@@ -245,7 +247,7 @@ void MapObjectUnkSWCR::func_ov063_02161b08(unk32 param1) {
             mUnk_A0.func_ov000_020577f8(0);
             mUnk_E0.func_ov000_020577f8(0);
             break;
-        case 4: {
+        case MapObjectUnkSWCR_168_4: {
             if (mUnk_20.mUnk_0A[1] != 0) {
                 this->func_ov000_0209d2c4(1, true);
             }
@@ -270,7 +272,7 @@ void MapObjectUnkSWCR::func_ov063_02161b08(unk32 param1) {
             Actor::func_ov000_020973f4(&pOutRef, &data_ov000_020b539c_eur, ActorId_EFSB, &params, 0);
             break;
         }
-        case 7: {
+        case MapObjectUnkSWCR_168_7: {
             if (mUnk_20.mUnk_0A[1] != 0) {
                 this->func_ov000_0209d2c4(1, true);
             }
@@ -296,10 +298,10 @@ void MapObjectUnkSWCR::func_ov063_02161b08(unk32 param1) {
             data_027e09a8->func_ov000_02071b30(0x116, &mPos, 0);
             break;
         }
-        case 5:
+        case MapObjectUnkSWCR_168_5:
             mUnk_10 = NULL;
             break;
-        case 6: {
+        case MapObjectUnkSWCR_168_6: {
             UnkStackStruct1 stack;
             func_ov000_02072fd0(&stack);
             stack.mUnk_08 = 0x5A;
@@ -326,7 +328,7 @@ void MapObjectUnkSWCR::func_ov063_02161b08(unk32 param1) {
 
 void MapObjectUnkSWCR::vfunc_14(unk32 param1) {
 #pragma unused(param1)
-    if (mUnk_168 != 5) {
+    if (mUnk_168 != MapObjectUnkSWCR_168_5) {
         mUnk_40.vfunc_18(&mPos);
     }
 }
