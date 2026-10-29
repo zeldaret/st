@@ -187,13 +187,10 @@ void ActorLobarrierShield::SetState(ActorState state) {
     CALL_PTMF(data_ov063_02163110[mState]);
 }
 
-// Matched
 void ActorLobarrierShield::func_ov063_0215af54() {}
 
-// Matched
 void ActorLobarrierShield::func_ov063_0215af58() {}
 
-// Matched
 void ActorLobarrierShield::func_ov063_0215af5c() {}
 
 void ActorLobarrierShield::func_ov063_0215af60() {
@@ -301,7 +298,6 @@ void ActorLobarrierShield::func_ov063_0215b2b0() {
     mUnk_2C = 0;
 }
 
-// Matched
 void ActorLobarrierShield::func_ov063_0215b2c4() {}
 
 void ActorLobarrierShield::vfunc_24() {

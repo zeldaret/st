@@ -192,7 +192,7 @@ public:
     void func_ov031_020eece8();
 };
 
-class ActorUnkZSRS_120_Base {
+class ActorUnkZSRS_120_Base : public UnkStruct_ov000_020b31f0 {
 public:
     ActorUnkZSRS_120_Base(UnkSystem5 *param1, UnkSystem5 *param2, ModelRender *param3, UnkActorFileSystem2 *ptr, G3d_Model *,
                           unk32 param4);
@@ -216,15 +216,8 @@ public:
 
 class ActorUnkZSRS_120 : public ActorUnkZSRS_120_Base {
 public:
-    /* 00 (vtable) */
-    /* 04 */ UnkSystem5 *mUnk_04;
-    /* 08 */ ModelRender *mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ G3d_Model *mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ UnkSystem5 *mUnk_1C;
-    /* 14 */ PAD(0x20, 0x1440);
+    /* 0000 (base) */
+    /* 002C */ PAD(0x002C, 0x1440);
     /* 1440 */ UnkSystem5_Derived3 mUnk_1440;
     /* 14A0 */ UnkSystem5_Derived3 mUnk_14A0;
     /* 1500 */
@@ -338,7 +331,7 @@ public:
     /* 20 */ virtual void Update() override;
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorUnkZLSL() override;
-    /* 58 */ virtual void vfunc_58(ActorState state) override;
+    /* 58 */ virtual void SetState(ActorState state) override;
     /* 68 */ virtual void vfunc_68() override;
     /* 6C */ virtual void vfunc_6C() override;
     /* 70 */ virtual void vfunc_70() override;

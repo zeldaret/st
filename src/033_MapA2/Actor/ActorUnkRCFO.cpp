@@ -138,7 +138,7 @@ void ActorUnkRCFO::Update() {
 
             this->func_ov033_02119a58();
 
-            unk32 delta = this->mUnk_910.mUnk_04 - this->mUnk_910.mUnk_00;
+            unk32 delta = (uintptr_t) this->mUnk_910.mUnk_04 - (uintptr_t) this->mUnk_910.mUnk_00;
             if ((u32) (delta / 4) >= 200) {
                 this->func_ov033_02119840(0x0, 0x0);
                 break;
@@ -277,8 +277,8 @@ void ActorUnkRCFO::func_ov033_02119a58() {
         sp.y = 0xBF;
     }
 
-    unk32 val   = this->mUnk_910.mUnk_00;
-    unk32 delta = this->mUnk_910.mUnk_04 - val;
+    unk32 *val  = this->mUnk_910.mUnk_00;
+    unk32 delta = (uintptr_t) this->mUnk_910.mUnk_04 - (uintptr_t) val;
     if ((u32) (delta / 4) == 0x0) {
         this->mUnk_910.func_ov000_0205b1d8(&sp);
         return;

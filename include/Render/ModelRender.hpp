@@ -155,6 +155,7 @@ public:
 
     unk32 func_01ff8fa8();
     unk32 func_02015080(unk32 param1);
+    unk32 func_02015244();
 };
 
 class UnkSystem5 {

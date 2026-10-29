@@ -269,7 +269,7 @@ THUMB_END
 
 void ActorUnkZLSL::func_ov031_020ea674() {
     this->func_ov031_020ecbe0();
-    this->vfunc_58(ActorUnkZLSLState_Idle);
+    this->SetState(ActorUnkZLSLState_Idle);
 }
 
 bool ActorUnkZLSL::Init(unk32 param1) {
@@ -334,7 +334,7 @@ void ActorUnkZLSL::func_ov031_020ea868() {}
 
 void ActorUnkZLSL::func_ov031_020ea86c() {}
 
-void ActorUnkZLSL::vfunc_58(ActorState state) {
+void ActorUnkZLSL::SetState(ActorState state) {
     this->mState    = state;
     this->mUnk_286E = 0x0;
 
@@ -473,7 +473,7 @@ void ActorUnkZLSL::func_ov031_020eac64() {
 
     if ((this->mUnk_0B0 & 0x2) != 0x0) {
         if (this->func_ov000_020a9248(0x2000)) {
-            this->vfunc_58(ActorUnkZLSLState_ClosedArms);
+            this->SetState(ActorUnkZLSLState_ClosedArms);
             return;
         }
     }
@@ -484,7 +484,7 @@ void ActorUnkZLSL::func_ov031_020eace0() {
     if (!this->func_ov031_020ec8c4()) {
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_ClosedArms);
+    this->SetState(ActorUnkZLSLState_ClosedArms);
 }
 
 void ActorUnkZLSL::func_ov031_020ead0c() {
@@ -570,7 +570,7 @@ void ActorUnkZLSL::func_ov031_020ead7c() {
 
 void ActorUnkZLSL::func_ov031_020eafb0() {
     if (this->func_ov031_020ed8ac(0x800)) {
-        this->vfunc_58(ActorUnkZLSLState_RotateClosedArms);
+        this->SetState(ActorUnkZLSLState_RotateClosedArms);
     }
 }
 
@@ -609,7 +609,7 @@ void ActorUnkZLSL::func_ov031_020eb158() {
     if (!this->func_ov031_020ed6cc(0x1800)) {
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_FollowLink);
+    this->SetState(ActorUnkZLSLState_FollowLink);
 }
 
 void ActorUnkZLSL::func_ov031_020eb188() {
@@ -633,7 +633,7 @@ void ActorUnkZLSL::func_ov031_020eb218() {
     }
 
     if (this->func_ov031_020eb2b0(this->func_ov000_0209853c(0x00), 0xA000)) {
-        this->vfunc_58(ActorUnkZLSLState_Idle);
+        this->SetState(ActorUnkZLSLState_Idle);
     }
 }
 
@@ -847,7 +847,7 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
                 this->mUnk_28A4.vec.x = FX_F32_TO_FX32(1.0f);
                 this->mUnk_28A4.vec.y = FX_F32_TO_FX32(1.0f);
                 this->mUnk_28A4.vec.z = FX_F32_TO_FX32(1.0f);
-                this->vfunc_58(ActorUnkZLSLState_Idle);
+                this->SetState(ActorUnkZLSLState_Idle);
             }
             this->func_ov031_020ed4e4(0x5, 0x93F);
         default:
@@ -983,7 +983,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             this->mUnk_28A4.vec.y = FX_F32_TO_FX32(1.0f);
             this->mUnk_28A4.vec.z = FX_F32_TO_FX32(1.0f);
 
-            this->vfunc_58(ActorUnkZLSLState_Idle);
+            this->SetState(ActorUnkZLSLState_Idle);
             break;
         default:
             break;
@@ -1020,14 +1020,14 @@ void ActorUnkZLSL::func_ov031_020ec05c() {
         this->vfunc_98(0x1);
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_OpenArms);
+    this->SetState(ActorUnkZLSLState_OpenArms);
 }
 
 void ActorUnkZLSL::func_ov031_020ec0a8() {
     if (!this->func_ov031_020ec8c4()) {
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_OpenArms);
+    this->SetState(ActorUnkZLSLState_OpenArms);
 }
 
 void ActorUnkZLSL::func_ov031_020ec0d4() {
@@ -1106,10 +1106,10 @@ unk32 ActorUnkZLSL::vfunc_7C(unk32 param1) {
             ActorUnkRAT0::func_ov053_0213c984();
             break;
         case 0x4:
-            this->vfunc_58(ActorUnkZLSLState_GoOrbShapeAndIdle);
+            this->SetState(ActorUnkZLSLState_GoOrbShapeAndIdle);
             break;
         case 0x5:
-            this->vfunc_58(ActorUnkZLSLState_Idle);
+            this->SetState(ActorUnkZLSLState_Idle);
             break;
         case 0x6:
             return this->func_ov031_020ec49c();
@@ -1185,7 +1185,7 @@ unk32 ActorUnkZLSL::func_ov031_020ec54c() {
                 var = true;
                 break;
             }
-            this->vfunc_58(ActorUnkZLSLState_GoOrbShapeAndIdle);
+            this->SetState(ActorUnkZLSLState_GoOrbShapeAndIdle);
             ++this->mUnk_2872;
             break;
         case 0x1:
@@ -1256,26 +1256,26 @@ void ActorUnkZLSL::func_ov031_020ec6d8(bool param1) {
 
 void ActorUnkZLSL::vfunc_6C() {
     if (!this->mUnk_2874 && this->mUnk_28A4.vec.z == FX_F32_TO_FX32(1.0f)) {
-        this->vfunc_58(ActorUnkZLSLState_RotateClosedArms);
+        this->SetState(ActorUnkZLSLState_RotateClosedArms);
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
+    this->SetState(ActorUnkZLSLState_TakeHumanShape);
 }
 
 void ActorUnkZLSL::vfunc_70() {
     if (!this->mUnk_2874 && this->mUnk_28A4.vec.z == FX_F32_TO_FX32(1.0f)) {
-        this->vfunc_58(ActorUnkZLSLState_RotateClosedArms);
+        this->SetState(ActorUnkZLSLState_RotateClosedArms);
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
+    this->SetState(ActorUnkZLSLState_TakeHumanShape);
 }
 
 void ActorUnkZLSL::vfunc_68() {
     if (this->mState != ActorUnkZLSLState_Idle) {
         if (this->mUnk_2900 & 0x2) {
-            this->vfunc_58(ActorUnkZLSLState_FollowLink);
+            this->SetState(ActorUnkZLSLState_FollowLink);
         } else {
-            this->vfunc_58(ActorUnkZLSLState_GoOrbShapeAndIdle);
+            this->SetState(ActorUnkZLSLState_GoOrbShapeAndIdle);
         }
     }
     this->mUnk_2900 &= 0xFFFD;
@@ -1292,7 +1292,7 @@ bool ActorUnkZLSL::vfunc_88() {
         return true;
     }
     if (this->mState != ActorUnkZLSLState_TakeHumanShape) {
-        this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
+        this->SetState(ActorUnkZLSLState_TakeHumanShape);
     }
     return false;
 }
@@ -1607,7 +1607,7 @@ bool ActorUnkZLSL::func_ov031_020ed55c(unk32 param1) {
 
     if (this->mState == ActorUnkZLSLState_Idle) {
         this->mUnk_2904 = param1;
-        this->vfunc_58(ActorUnkZLSLState_TakeHumanShapeTrainStation);
+        this->SetState(ActorUnkZLSLState_TakeHumanShapeTrainStation);
 
         unk16 *psp8 = (unk16 *) &sp8;
         func_01fff17c(psp8, data_027e0ce0, 0);
@@ -1628,7 +1628,7 @@ bool ActorUnkZLSL::func_ov031_020ed55c(unk32 param1) {
 
     if (this->mState == ActorUnkZLSLState_GoOrbShapeAndIdle && this->mUnk_2874 == 1) {
         this->mUnk_2904 = param1;
-        this->vfunc_58(ActorUnkZLSLState_TakeHumanShapeTrainStation);
+        this->SetState(ActorUnkZLSLState_TakeHumanShapeTrainStation);
         return true;
     }
 
@@ -1814,9 +1814,9 @@ void ActorUnkZLSL::func_ov031_020edd54(RefStruct ref) {
         this->mUnk_28DC = ref;
 
         if (data_027e0ce0->func_01fff1a4()) {
-            this->vfunc_58(ActorUnkZLSLState_16);
+            this->SetState(ActorUnkZLSLState_16);
         } else {
-            this->vfunc_58(ActorUnkZLSLState_TakePhantomControl);
+            this->SetState(ActorUnkZLSLState_TakePhantomControl);
         }
     }
 }
@@ -1982,9 +1982,9 @@ unk16 ActorUnkZLSL::func_ov031_020ee2c8() {
 
 void ActorUnkZLSL::vfunc_B4() {
     if (this->mState == ActorUnkZLSLState_Idle) {
-        this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
+        this->SetState(ActorUnkZLSLState_TakeHumanShape);
     } else {
-        this->vfunc_58(ActorUnkZLSLState_OpenArms);
+        this->SetState(ActorUnkZLSLState_OpenArms);
     }
 }
 

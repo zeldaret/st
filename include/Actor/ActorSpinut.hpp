@@ -13,6 +13,8 @@ public:
 
     // data_ov000_020b1a1c
     /* 0C */ virtual void vfunc_0C() override;
+
+    void func_ov000_02058038(MtxFx43 *param1);
 };
 
 enum ActorSpinutState_ {

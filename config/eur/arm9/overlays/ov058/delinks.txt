@@ -36,10 +36,14 @@ src/058_Field/Actor/ActorUnkSYDE_SYDL_SYDS_SYFI_SYFO_SYIL_SYIS_SYOL_SYOS_SYSL_SY
     .ctor       start:0x02154130 end:0x02154134
     .bss        start:0x0215607c end:0x02156ec8
 
-src/058_Field/Actor/ActorUnkCRFT.cpp:
+src/058_Field/Actor/Actor_ov058.cpp:
+    .data       start:0x02154a80 end:0x02154b9c
+
+src/058_Field/Actor/ActorKenzo.cpp:
     .text       start:0x02147ef0 end:0x02148bec
     .init       start:0x021539a8 end:0x021539f8
     .ctor       start:0x02154134 end:0x02154138
+    .data       start:0x02154ebc end:0x0215513c
     .bss        start:0x02156ec8 end:0x02156fbc
 
 src/058_Field/Actor/ActorUnkFBRD.cpp:
