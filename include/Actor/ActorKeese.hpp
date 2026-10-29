@@ -3,9 +3,12 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "ActorSpinut.hpp"
+#include "Map/MapObjectId.hpp"
+#include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_ov000_020b3268.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "global.h"
+#include "nitro/fx.h"
 #include "types.h"
 
 enum ActorKeeseState_ {
@@ -34,7 +37,7 @@ public:
     // data_ov032_0212251c
     /* 00 */ virtual bool vfunc_00(MapObject *param1) override;
 
-    VecFx32 *func_020170ac(VecFx32 *param1);
+    MapObject *func_020170ac(VecFx32 *param1);
 };
 
 class ActorKeese_2AC : public UnkStruct_ov031_Items_00 {
@@ -74,6 +77,9 @@ public:
     /* 0C */
 
     ActorKeese_284();
+    ActorKeese_284(unk32 param1, unk32 param2) :
+        mUnk_04(param1),
+        mUnk_08(param2) {}
 };
 
 class ActorKeese : public Actor_Derived2 {
@@ -91,9 +97,7 @@ public:
     /* 246 */ unk16 mUnk_246;
     /* 248 */ Actor_9C mUnk_248;
     /* 268 */ UnkStruct_ActorLobarrier_224 mUnk_268;
-    /* 278 */ UnkSystem7 mUnk_278;
-    /* 27C */ unk32 mUnk_27C;
-    /* 280 */ unk32 mUnk_280;
+    /* 278 */ ActorKeese_284 mUnk_278;
     /* 284 */ ActorKeese_284 mUnk_284[0x2];
     /* 29C */ fx32 mUnk_29C;
     /* 2A0 */ fx32 mUnk_2A0;
@@ -101,7 +105,7 @@ public:
     /* 2A8 */ fx16 mUnk_2A8;
     /* 2AC */ ActorKeese_2AC mUnk_2AC;
     /* 2C4 */ VecFx32Cpp mUnk_2C4;
-    /* 2D0 */ Actor_38 *mUnk_2D0;
+    /* 2D0 */ RefStruct mUnk_2D0;
     /* 2D4 */ RefStruct mUnk_2D4;
     /* 2D8 */
 

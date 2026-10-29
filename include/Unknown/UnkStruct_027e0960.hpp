@@ -59,7 +59,7 @@ public:
     ~UnkStruct_027e0960_TableEntry();
 
     bool func_ov000_02059ccc(u8 param1, u8 param2);
-    unk32 func_ov000_02059da4(const VecFx32 *param1);
+    u8 func_ov000_02059da4(const VecFx32 *param1);
 };
 
 class UnkStruct_027e0960 : public AutoInstance<UnkStruct_027e0960> {

@@ -200,7 +200,7 @@ void ActorItemBoomerang::Update() {
 
             MapObjectId objectId = temp_r0_5->GetMapObjectId();
 
-            if (objectId != MapObjectId_SKDI && objectId != MapObjectId_SWHT && objectId != MapObjectId_Pot) {
+            if (objectId != MapObjectId_Torch && objectId != MapObjectId_SWHT && objectId != MapObjectId_Pot) {
                 this->func_ov031_020e49b0(0x8D70);
                 return;
             }
@@ -444,7 +444,7 @@ bool ActorItemBoomerang_11C::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *p
         }
 
         switch (mapObject->GetMapObjectId()) {
-            case MapObjectId_SKDI:
+            case MapObjectId_Torch:
             case MapObjectId_SWHT:
                 data_027e0d2c->func_ov031_020d95c8(*(RefStruct *) &ref); //! TODO: ref conflicts
             case MapObjectId_Pot:

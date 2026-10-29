@@ -237,14 +237,13 @@ void Actor_Derived1::vfunc_24() {
     }
 }
 
-// non-matching
 void Actor_Derived1::vfunc_2C(unk32 param1) {
     if (this->func_01fff5d0(param1, 0) == 0) {
         return;
     }
 
     this->vfunc_B8();
-    this->mUnk_0A4.func_01ffc6d4(this->mAngle, &this->mPos);
+    this->mUnk_0A4.mpModelRender->func_01ffc6d4(this->mAngle, &this->mPos);
 }
 
 void Actor_Derived1::vfunc_B8() {

@@ -15,7 +15,7 @@ MapObject *MapObjectProfileUnkSKDI::Create() {
 }
 
 MapObjectProfileUnkSKDI::MapObjectProfileUnkSKDI() :
-    MapObjectProfile_Derived2(MapObjectId_SKDI, MapObjectId_SKDI) {
+    MapObjectProfile_Derived2(MapObjectId_Torch, MapObjectId_Torch) {
     this->mUnk_06 = -0x1;
     this->mUnk_1E &= 0xFFFE;
 }
