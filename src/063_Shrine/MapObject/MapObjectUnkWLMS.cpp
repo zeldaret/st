@@ -56,7 +56,7 @@ MapObjectProfileUnkWLMS::MapObjectProfileUnkWLMS() :
     mUnk_D4.mUnk_08 = 0x2bc07006;
     VecFx32_Init(0, 0, 0, &mUnk_D4.mUnk_0C);
     mUnk_D4.mUnk_18.x = FX_F32_TO_FX32(0.5f);
-    mUnk_D4.mUnk_18.y = FX_F32_TO_FX32(1.f);
+    mUnk_D4.mUnk_18.y = FX_F32_TO_FX32(1.0f);
     UNSET_FLAG2(mUnk_D4.mUnk_04, 1);
     mUnk_14 = MapObjectId_WLMP;
     mUnk_0C = 0x1B33;
