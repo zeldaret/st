@@ -285,7 +285,7 @@ void ActorCharacter::SetState(ActorState state) {
 
     this->vfunc_104();
 
-    CALL_PTMF(PTMF<ActorCharacter>, data_ov031_02113218[this->mState]);
+    CALL_PTMF(data_ov031_02113218[this->mState]);
 }
 
 void ActorCharacter::Update() {
@@ -303,7 +303,7 @@ void ActorCharacter::Update() {
 
     this->vfunc_60();
 
-    CALL_PTMF(PTMF<ActorCharacter>, data_ov031_02113260[this->mState]);
+    CALL_PTMF(data_ov031_02113260[this->mState]);
     if (!GET_FLAG(this->mFlags, ActorFlag_Visible)) {
         return;
     }

@@ -98,7 +98,7 @@ void ActorKenzo::SetState(ActorState state) {
 
     this->vfunc_104();
 
-    CALL_PTMF(PTMF<ActorKenzo>, data_ov058_02154ee0[this->mState]);
+    CALL_PTMF(data_ov058_02154ee0[this->mState]);
 }
 
 void ActorKenzo::vfunc_54(unk32 param1) {
@@ -161,7 +161,7 @@ void ActorKenzo::Update() {
 
     this->vfunc_60();
 
-    CALL_PTMF(PTMF<ActorKenzo>, data_ov058_02154f38[this->mState]);
+    CALL_PTMF(data_ov058_02154f38[this->mState]);
     if (!GET_FLAG(this->mFlags, ActorFlag_Visible)) {
         return;
     }
