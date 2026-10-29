@@ -357,7 +357,7 @@ void ActorHeart::func_ov031_020ef570() {
 
     this->mUnk_B8 += 0x666;
 
-    this->mVel.x = FX_MUL(SIN((u16) this->mUnk_B8), 0x40);
+    this->mVel.x = FX_Mul(SIN(this->mUnk_B8), 0x40);
     this->mVel.z = FX_F32_TO_FX32(0.0);
 
     if (this->mVel.y <= FX_F32_TO_FX32(-0.005) - 1) {

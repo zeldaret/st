@@ -147,7 +147,7 @@ void ActorTearLight::vfunc_2C(unk32 param1) {
         return;
     }
     MtxFx33 matrix;
-    MtxFx33_InitYRotation(&matrix, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
+    MtxFx33_InitYRotation(&matrix, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
 
     VecFx32 vecC = this->mPos;
     vecC.y += FX_F32_TO_FX32(0.5f);

@@ -711,7 +711,7 @@ bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
 
         func_01ff9638(&sp4, 0x4000);
         VecFx32_TryNormalize(&sp4);
-        func_01ff93c0(&sp4, FX_MUL(this->mUnk_2888, SIN((u16) this->mUnk_286A)));
+        func_01ff93c0(&sp4, FX_Mul(this->mUnk_2888, SIN(this->mUnk_286A)));
         VecFx32_Add(&sp4, &sp10, &sp4);
         this->mUnk_286A += 0x1000;
         this->mPos.x = sp4.x;
@@ -1077,7 +1077,7 @@ void ActorUnkZLSL::vfunc_2C(unk32 param1) {
 
     switch (this->mUnk_2874 ? 1 : 0) {
         case false:
-            MtxFx33_InitYRotation(&sp00, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
+            MtxFx33_InitYRotation(&sp00, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
             this->mUnk_1620.vfunc_10(&this->mUnk_28A4.vec, &sp00, &this->mPos);
             break;
         case true:
@@ -1520,24 +1520,24 @@ void ActorUnkZLSL::func_ov031_020ed0b0() {
     sp24.y += FX_F32_TO_FX32(0.5f);
 
     VecFx32_Copy(&sp24, &sp18);
-    sp18.x += FX_MUL(SIN(0x6AAA), 0x1800);
-    sp18.z += FX_MUL(COS(0x6AAA), 0x1800);
+    sp18.x += FX_Mul(SIN(0x6AAA), 0x1800);
+    sp18.z += FX_Mul(COS(0x6AAA), 0x1800);
 
     if (func_02016c68(&sp24, &sp18, this->mRef, 4, 0)) {
         VecFx32_Copy(&sp24, &sp18);
-        sp18.x += FX_MUL(SIN(0x2AAA), 0x1800);
-        sp18.z += FX_MUL(COS(0x2AAA), 0x1800);
+        sp18.x += FX_Mul(SIN(0x2AAA), 0x1800);
+        sp18.z += FX_Mul(COS(0x2AAA), 0x1800);
 
         if (func_02016c68(&sp24, &sp18, this->mRef, 4, 0)) {
             VecFx32_Copy(&sp24, &sp18);
-            sp18.x += FX_MUL(SIN(0xAAAA), 0x1800);
-            sp18.z += FX_MUL(COS(0xAAAA), 0x1800);
+            sp18.x += FX_Mul(SIN(0xAAAA), 0x1800);
+            sp18.z += FX_Mul(COS(0xAAAA), 0x1800);
 
             if (func_02016c68(&sp24, &sp18, this->mRef, 4, 0)) {
 
                 VecFx32_Copy(&sp24, &sp18);
-                sp18.x += FX_MUL(SIN(0xEAAA), 0x1800);
-                sp18.z += FX_MUL(COS(0xEAAA), 0x1800);
+                sp18.x += FX_Mul(SIN(0xEAAA), 0x1800);
+                sp18.z += FX_Mul(COS(0xEAAA), 0x1800);
             }
         }
     }
@@ -1939,8 +1939,8 @@ void ActorUnkZLSL::func_ov031_020ee1f4(Actor *param1, G3d_RenderState *param2) {
         G3d_RenderState_B4 *temp_r6 = param2->mUnk_B4;
 
         temp_r6->mUnk_00 &= ~0x02;
-        MtxFx33_InitZRotation(&sp24, SIN((u16) thisx->mUnk_28E0), COS((u16) thisx->mUnk_28E0));
-        MtxFx33_InitYRotation(&sp0, SIN((u16) thisx->mUnk_28E2), COS((u16) thisx->mUnk_28E2));
+        MtxFx33_InitZRotation(&sp24, SIN(thisx->mUnk_28E0), COS(thisx->mUnk_28E0));
+        MtxFx33_InitYRotation(&sp0, SIN(thisx->mUnk_28E2), COS(thisx->mUnk_28E2));
         func_01ffa60c(&sp24, &sp0, &sp24);
         func_01ffa60c(&sp24, &temp_r6->mUnk_28, &temp_r6->mUnk_28);
     }
@@ -2009,13 +2009,13 @@ void ActorUnkZLSL::func_ov031_020ee4c4(UnkAngleStruct angle) {
     func_01ff930c(&this->mUnk_28E0, (s16) -diff * 4, 0x300);
 
     VecFx32 sp0;
-    sp0.x = FX_MUL(SIN((u16) this->mAngle.angle_s), 0x1000);
-    sp0.z = FX_MUL(COS((u16) this->mAngle.angle_s), 0x1000);
+    sp0.x = FX_Mul(SIN(this->mAngle.angle_s), 0x1000);
+    sp0.z = FX_Mul(COS(this->mAngle.angle_s), 0x1000);
     sp0.y = 0;
 
     if (!VecFx32_IsCleared(&this->mVel) && VecFx32_Dot(&sp0, &this->mVel) < 0) {
         fx32 temp_ret = VecFx32_Length(&this->mVel);
-        s16 value     = FX_MUL(FX_MUL(temp_ret, 0xA000), 0x2000);
+        s16 value     = FX_Mul(FX_Mul(temp_ret, 0xA000), 0x2000);
         func_01ff930c(&this->mUnk_28E2, -value, 0x1000);
     } else {
         func_01ff930c(&this->mUnk_28E2, 0, 0x200);

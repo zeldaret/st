@@ -285,8 +285,8 @@ void ActorSpinut::func_ov032_02119a0c() {
             this->mUnk_224 = this->mUnk_21C * gRandom.Next32(0x38E) + this->mAngle.angle_s;
 
             if (func_01ff930c(&this->mAngle.angle_s, this->mUnk_224, 0x71C)) {
-                fx32 z       = FX_Mul(FX_CosIdx(this->mAngle.angle_s), this->mUnk_220);
-                fx32 x       = FX_Mul(FX_SinIdx(this->mAngle.angle_s), this->mUnk_220);
+                fx32 z       = FX_Mul(COS(this->mAngle.angle_s), this->mUnk_220);
+                fx32 x       = FX_Mul(SIN(this->mAngle.angle_s), this->mUnk_220);
                 this->mVel.x = x;
                 this->mVel.z = z;
 
@@ -441,8 +441,8 @@ void ActorSpinut::func_ov032_02119f40() {
             break;
     }
 
-    fx32 z       = FX_Mul(FX_CosIdx(this->mAngle.angle_s), this->mUnk_220);
-    fx32 x       = FX_Mul(FX_SinIdx(this->mAngle.angle_s), this->mUnk_220);
+    fx32 z       = FX_Mul(COS(this->mAngle.angle_s), this->mUnk_220);
+    fx32 x       = FX_Mul(SIN(this->mAngle.angle_s), this->mUnk_220);
     this->mVel.x = x;
     this->mVel.z = z;
 
@@ -487,9 +487,9 @@ void ActorSpinut::func_ov032_0211a20c() {
 
         VecFx32_Copy(data_027e0ce0->func_01fff148(0), &this->mVel);
 
-        this->mVel.x += FX_Mul(FX_SinIdx(this->mUnk_224), 0x2800);
+        this->mVel.x += FX_Mul(SIN(this->mUnk_224), 0x2800);
         this->mVel.y = FX_F32_TO_FX32(0.0f);
-        this->mVel.z += FX_Mul(FX_CosIdx(this->mUnk_224), 0x2800);
+        this->mVel.z += FX_Mul(COS(this->mUnk_224), 0x2800);
 
         func_01ffb714(&this->mVel, &this->mPos, &this->mVel);
         func_01ff97c8(&this->mVel, ABS(this->mUnk_220));
@@ -526,8 +526,8 @@ void ActorSpinut::func_ov032_0211a52c() {
 
             this->mUnk_220 -= FX_F32_TO_FX32(0.005f);
 
-            fx32 z       = FX_Mul(FX_CosIdx(this->mAngle.angle_s), this->mUnk_220);
-            fx32 x       = FX_Mul(FX_SinIdx(this->mAngle.angle_s), this->mUnk_220);
+            fx32 z       = FX_Mul(COS(this->mAngle.angle_s), this->mUnk_220);
+            fx32 x       = FX_Mul(SIN(this->mAngle.angle_s), this->mUnk_220);
             this->mVel.x = x;
             this->mVel.z = z;
 

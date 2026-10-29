@@ -62,10 +62,10 @@ bool ActorUnkTGTZ::Init(unk32 param1) {
 #pragma unused(param1)
 
     if (this->mUnk_5C.mParams[3] != 0x0) {
-        this->mPos.y = FX_MUL(this->mUnk_5C.mParams[3] << 0xC, 0x1333);
+        this->mPos.y = FX_Mul(this->mUnk_5C.mParams[3] << 0xC, 0x1333);
     }
 
-    MtxFx33_InitYRotation(&this->mUnk_190, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
+    MtxFx33_InitYRotation(&this->mUnk_190, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
     data_ov031_02116b58.func_ov000_0205fc20(0x5D, 0x32, NULL, NULL);
     data_ov031_02116b64.func_ov000_0205fc20(0x5D, 0x31, NULL, NULL);
 

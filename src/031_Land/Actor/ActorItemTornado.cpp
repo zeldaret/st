@@ -108,8 +108,8 @@ bool ActorItemTornado::Init(unk32 param1) {
 
     this->mUnk_194.mUnk_0C.Init(this->mPos.x, this->mPos.y + FX_F32_TO_FX32(0.85f), this->mPos.z, FX_F32_TO_FX32(0.8f));
 
-    this->mVel.x = FX_MUL(SIN(tmp), FX_F32_TO_FX32(0.22f));
-    this->mVel.z = FX_MUL(COS(tmp), FX_F32_TO_FX32(0.22f));
+    this->mVel.x = FX_Mul(SIN(tmp), FX_F32_TO_FX32(0.22f));
+    this->mVel.z = FX_Mul(COS(tmp), FX_F32_TO_FX32(0.22f));
     this->mVel.y = FX_F32_TO_FX32(0.0f);
 
     return true;

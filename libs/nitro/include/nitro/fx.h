@@ -18,8 +18,6 @@ extern "C" {
 
 #define FX_F32_TO_FX32(n) ((s32) (((n) * 8192 + 1) / 2))
 
-//! TODO: remove in favor of inlines
-#define FX_MUL(a, b) (fx32)((((s64) (a)) * ((s64) (b)) + 0x800) >> FX32_SHIFT)
 #define FX_MUL32x64C(a, b) (fx32)((((s64) (a)) * ((s64) (b)) + 0x80000000) >> FX64C_SHIFT)
 
 typedef s64 fx64c;
@@ -156,6 +154,9 @@ inline fx32 FX_SinIdx(u16 n) {
 inline fx32 FX_CosIdx(u16 n) {
     return FX_SinCosTable_[2 * ((n) >> 4) + 1];
 }
+
+#define SIN(n) FX_SinIdx(n)
+#define COS(n) FX_CosIdx(n)
 
 #define VEC_Set(vec, x_, y_, z_) \
     do {                         \

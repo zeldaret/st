@@ -152,8 +152,8 @@ void UnkStruct_027e09b4::func_ov017_020c0c50(u16 param1) {
 
         G3_Begin(GX_BEGIN_QUAD_STRIPS);
         for (var_lr = 0; var_lr < temp_r7; var_lr++) {
-            G3_Vtx10(SIN((u16) var_r5) >> 6, 0, COS((u16) var_r5) >> 6);
-            G3_Vtx10(SIN((u16) var_r6) >> 6, 0, COS((u16) var_r6) >> 6);
+            G3_Vtx10(SIN(var_r5) >> 6, 0, COS(var_r5) >> 6);
+            G3_Vtx10(SIN(var_r6) >> 6, 0, COS(var_r6) >> 6);
             var_r5 -= temp_ip;
             var_r6 += temp_ip;
         }
@@ -165,7 +165,7 @@ void UnkStruct_027e09b4::func_ov017_020c0c50(u16 param1) {
 
         G3_Begin(GX_BEGIN_QUAD_STRIPS);
         for (var_r1 = 0; var_r1 <= param1; var_r1++) {
-            G3_Vtx10(SIN((u16) var_r2) >> 6, 0, COS((u16) var_r2) >> 6);
+            G3_Vtx10(SIN(var_r2) >> 6, 0, COS(var_r2) >> 6);
             G3_Vtx10(0, 0x3C0, 0);
             var_r2 += temp_ip;
         }
@@ -233,7 +233,7 @@ void UnkStruct_027e09b4::func_ov017_020c0edc() {
         G3_Translate(var_r8->trans.x, var_r8->trans.y + var_r3, trans_z);
 
         if (var_r8->unk_16 != 0) {
-            func_02024fc4(SIN((u16) var_r8->unk_16), COS((u16) var_r8->unk_16));
+            func_02024fc4(SIN(var_r8->unk_16), COS(var_r8->unk_16));
         }
 
         G3_Scale(var_r8->scale.x, 0x1000, var_r8->scale.z);

@@ -183,7 +183,7 @@ u16 *Actor_Derived1_EC::func_ov024_020d69d8(VecFx32 *pPos, s16 *pAngle, VecFx32 
 
     temp_r4 = func_01ff9258(sp1C.x - pPos->x, sp1C.z - pPos->z);
 
-    var_r0 = FX_MUL(param4, func_02017f54((s16 *) pAngle, sp0));
+    var_r0 = FX_Mul(param4, func_02017f54((s16 *) pAngle, sp0));
     if (var_r0 < param6) {
         var_r0 = param6;
     }
@@ -199,8 +199,8 @@ u16 *Actor_Derived1_EC::func_ov024_020d69d8(VecFx32 *pPos, s16 *pAngle, VecFx32 
         fx16 sin = SIN(angle);
         fx16 cos = COS(angle);
 
-        pVel->x = FX_MUL(sin, var_r0);
-        pVel->z = FX_MUL(cos, var_r0);
+        pVel->x = FX_Mul(sin, var_r0);
+        pVel->z = FX_Mul(cos, var_r0);
     }
 
     return &this->mUnk_08;
@@ -234,7 +234,7 @@ u16 *Actor_Derived1_EC::func_ov024_020d6b7c(VecFx32 *pPos, s16 *pAngle, VecFx32 
 
     temp_r4 = func_01ff9258(sp28.x - pPos->x, sp28.z - pPos->z);
 
-    var_r0 = FX_MUL(param4, func_02017f54((s16 *) pAngle, sp0));
+    var_r0 = FX_Mul(param4, func_02017f54((s16 *) pAngle, sp0));
     if (var_r0 < param6) {
         var_r0 = param6;
     }
@@ -254,8 +254,8 @@ u16 *Actor_Derived1_EC::func_ov024_020d6b7c(VecFx32 *pPos, s16 *pAngle, VecFx32 
         fx16 sin = SIN(angle);
         fx16 cos = COS(angle);
 
-        pVel->x = FX_MUL(sin, var_r0);
-        pVel->z = FX_MUL(cos, var_r0);
+        pVel->x = FX_Mul(sin, var_r0);
+        pVel->z = FX_Mul(cos, var_r0);
     }
 
     return &this->mUnk_08;

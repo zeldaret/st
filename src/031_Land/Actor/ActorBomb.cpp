@@ -489,8 +489,8 @@ void ActorBomb::func_ov031_020e2100() {
 }
 
 void ActorBomb::func_ov031_020e2134() {
-    fx32 newZ = FX_MUL(this->mVel.z, FX_F32_TO_FX32(0.3f));
-    fx32 newX = FX_MUL(this->mVel.x, FX_F32_TO_FX32(0.3f));
+    fx32 newZ = FX_Mul(this->mVel.z, FX_F32_TO_FX32(0.3f));
+    fx32 newX = FX_Mul(this->mVel.x, FX_F32_TO_FX32(0.3f));
 
     this->mVel.x = newX;
     this->mVel.y = FX_F32_TO_FX32(-0.0102f);
@@ -656,8 +656,8 @@ void ActorBomb::func_ov031_020e2680(VecFx32 *param1) {
     func_01ff94cc(&sp00, param1, &sp0C);
     VecFx32_TryNormalize(&sp00);
 
-    this->mVel.x = FX_MUL(sp00.x, FX_MUL(velLength, FX_F32_TO_FX32(0.2f)));
-    this->mVel.z = FX_MUL(sp00.z, FX_MUL(velLength, FX_F32_TO_FX32(0.2f)));
+    this->mVel.x = FX_Mul(sp00.x, FX_Mul(velLength, FX_F32_TO_FX32(0.2f)));
+    this->mVel.z = FX_Mul(sp00.z, FX_Mul(velLength, FX_F32_TO_FX32(0.2f)));
 }
 
 void ActorBomb::func_ov031_020e2780(VecFx32 *param1) {
@@ -845,9 +845,9 @@ void ActorBomb::func_ov031_020e2c2c() {
         }
 
         ++this->mUnk_1E8;
-        this->mVel.y = FX_MUL(-this->mVel.y, FX_F32_TO_FX32(0.6f));
-        this->mVel.x = FX_MUL(this->mVel.x, FX_F32_TO_FX32(0.2f));
-        this->mVel.z = FX_MUL(this->mVel.z, FX_F32_TO_FX32(0.2f));
+        this->mVel.y = FX_Mul(-this->mVel.y, FX_F32_TO_FX32(0.6f));
+        this->mVel.x = FX_Mul(this->mVel.x, FX_F32_TO_FX32(0.2f));
+        this->mVel.z = FX_Mul(this->mVel.z, FX_F32_TO_FX32(0.2f));
 
         if (this->mUnk_1E8 <= 0x3) {
             return;

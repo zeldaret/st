@@ -656,8 +656,8 @@ u16 *ActorFleeingSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, V
         this->mUnk_1C.CopyOut(&sp1C);
         this->func_ov032_0211d7e8(&sp1C);
     } else {
-        param3->x = FX_Mul(FX_SinIdx(sp0.angle_s), var_r4);
-        param3->z = FX_Mul(FX_CosIdx(sp0.angle_s), var_r4);
+        param3->x = FX_Mul(SIN(sp0.angle_s), var_r4);
+        param3->z = FX_Mul(COS(sp0.angle_s), var_r4);
     }
 
     return &this->mUnk_28;

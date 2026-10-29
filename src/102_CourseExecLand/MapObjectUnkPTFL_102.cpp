@@ -231,9 +231,9 @@ void MapObjectUnkPTFL::func_ov102_0218419c() {
         PushGeometryCommand(0x1C, &sp68, 3);
 
         temp_r0_3 = INT_TO_FX32(this->mUnk_5A);
-        sp5C.x    = FX_MUL(temp_r0_3, FX_F32_TO_FX32(0.54f));
+        sp5C.x    = FX_Mul(temp_r0_3, FX_F32_TO_FX32(0.54f));
         sp5C.y    = FX_F32_TO_FX32(1.0f);
-        sp5C.z    = FX_MUL(temp_r0_3, FX_F32_TO_FX32(1.04f));
+        sp5C.z    = FX_Mul(temp_r0_3, FX_F32_TO_FX32(1.04f));
         PushGeometryCommand(0x1B, &sp5C, 3);
     } else {
         sp50.x = this->mUnk_5A << 0xB;
@@ -242,9 +242,9 @@ void MapObjectUnkPTFL::func_ov102_0218419c() {
         PushGeometryCommand(0x1C, &sp50, 3);
 
         temp_r7 = INT_TO_FX32(this->mUnk_5A);
-        sp44.x  = FX_MUL(temp_r7, FX_F32_TO_FX32(0.5f));
+        sp44.x  = FX_Mul(temp_r7, FX_F32_TO_FX32(0.5f));
         sp44.y  = FX_F32_TO_FX32(1.0f);
-        sp44.z  = FX_MUL(temp_r7, FX_F32_TO_FX32(1.0f));
+        sp44.z  = FX_Mul(temp_r7, FX_F32_TO_FX32(1.0f));
         PushGeometryCommand(0x1B, &sp44, 3);
     }
 
@@ -284,9 +284,9 @@ void MapObjectUnkPTFL::func_ov102_021843b4() {
         PushGeometryCommand(0x1C, &sp68, 3);
 
         temp_r0_3 = INT_TO_FX32(this->mUnk_5A);
-        sp5C.x    = FX_MUL(temp_r0_3, FX_F32_TO_FX32(0.54f));
+        sp5C.x    = FX_Mul(temp_r0_3, FX_F32_TO_FX32(0.54f));
         sp5C.y    = FX_F32_TO_FX32(1.0f);
-        sp5C.z    = FX_MUL(temp_r0_3, FX_F32_TO_FX32(1.04f));
+        sp5C.z    = FX_Mul(temp_r0_3, FX_F32_TO_FX32(1.04f));
         PushGeometryCommand(0x1B, &sp5C, 3);
     } else {
         sp50.x = -this->mUnk_5A << 0xB;
@@ -295,9 +295,9 @@ void MapObjectUnkPTFL::func_ov102_021843b4() {
         PushGeometryCommand(0x1C, &sp50, 3);
 
         temp_r7 = INT_TO_FX32(this->mUnk_5A);
-        sp44.x  = FX_MUL(temp_r7, FX_F32_TO_FX32(0.5f));
+        sp44.x  = FX_Mul(temp_r7, FX_F32_TO_FX32(0.5f));
         sp44.y  = FX_F32_TO_FX32(1.0f);
-        sp44.z  = FX_MUL(temp_r7, FX_F32_TO_FX32(1.0f));
+        sp44.z  = FX_Mul(temp_r7, FX_F32_TO_FX32(1.0f));
         PushGeometryCommand(0x1B, &sp44, 3);
     }
 

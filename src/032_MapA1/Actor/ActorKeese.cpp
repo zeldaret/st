@@ -568,10 +568,10 @@ void ActorKeese::func_ov032_0211ee5c() {
     }
 
     this->mUnk_2A8 += 0x71C;
-    this->mAngle = this->mUnk_244 + (fx16) FX_Mul(this->mUnk_246, FX_SinIdx(this->mUnk_2A8));
+    this->mAngle = this->mUnk_244 + (fx16) FX_Mul(this->mUnk_246, SIN(this->mUnk_2A8));
 
-    fx32 x       = FX_Mul(FX_SinIdx(this->mAngle.angle_s), this->mUnk_2A0);
-    fx32 z       = FX_Mul(FX_CosIdx(this->mAngle.angle_s), this->mUnk_2A0);
+    fx32 x       = FX_Mul(SIN(this->mAngle.angle_s), this->mUnk_2A0);
+    fx32 z       = FX_Mul(COS(this->mAngle.angle_s), this->mUnk_2A0);
     this->mVel.x = x;
     this->mVel.z = z;
 

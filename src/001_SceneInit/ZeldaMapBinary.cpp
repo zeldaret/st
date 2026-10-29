@@ -11,6 +11,8 @@
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
 #include "files.h"
 
+#include <limits.h>
+
 extern AABB data_027e0c90;
 extern int data_ov089_02171540;
 
@@ -166,7 +168,7 @@ BOOL ZMB_ParseRALB(ZMBFileInfos *pFileInfos, ZMBSectionRALB *pSection, UnkStruct
             if (data_027e09a4->CurrentSceneIndex() != SceneIndex_b_flame &&
                 data_027e09a4->CurrentSceneIndex() != SceneIndex_tekiya08) {
                 fx32 y        = pPoint->pos.y;
-                pPoint->pos.y = 0x7FFFEFFF;
+                pPoint->pos.y = INT_MAX - FX32_ONE;
                 pPoint->pos.y = y + pDst->vfunc_28(&pPoint->pos, 0, 0);
             }
 
@@ -292,12 +294,12 @@ BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection,
                 if (!iVar6 || pProfile->mUnk_15) {
                     VecFx32 local_24;
                     local_24.x = func_ov000_02080068(posX);
-                    local_24.x += FX_MUL(INT_TO_FX32(xMod16), 256);
+                    local_24.x += FX_Mul(INT_TO_FX32(xMod16), 256);
 
                     local_24.z = func_ov000_02080080(posY);
-                    local_24.z += FX_MUL(INT_TO_FX32(yMod16), 256);
+                    local_24.z += FX_Mul(INT_TO_FX32(yMod16), 256);
 
-                    local_24.y = 0x7FFFEFFF;
+                    local_24.y = INT_MAX - FX32_ONE;
                     local_24.y = pDst->vfunc_28(&local_24, 0x01, 0x00);
 
                     Vec2bCpp bStack_40;
@@ -561,14 +563,14 @@ BOOL ZMB_ParsePLYR(ZMBFileInfos *pFileInfos, ZMBSectionPLYR *pSection, UnkStruct
             s32 zMod16 = unk_08 % 16;
 
             fx32 z = func_ov000_02080080(tile_z);
-            z += FX_MUL(INT_TO_FX32(zMod16), 256);
+            z += FX_Mul(INT_TO_FX32(zMod16), 256);
 
             fx32 x = func_ov000_02080068(tile_x);
-            x += FX_MUL(INT_TO_FX32(xMod16), 256);
+            x += FX_Mul(INT_TO_FX32(xMod16), 256);
 
             VecFx32 local_20;
             local_20.x = x;
-            local_20.y = 0x7FFFEFFF;
+            local_20.y = INT_MAX - FX32_ONE;
             local_20.z = z;
 
             fx16 unk_0C = (u16) UNK_FX_OPERATION_1(INT_TO_FX32(pEntry->unk_0C));

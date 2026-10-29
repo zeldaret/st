@@ -50,7 +50,7 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c117c(const VecFx32 *param2, u
 
         s16 temp_r0_4  = 0x10000 >> *new_var;
         s32 value2     = var_r7 + (temp_r5 >> 16);
-        fx32 temp_r2_3 = FX_MUL(temp_r0_3, COS((u16) (s16) (temp_r0 - ((s16) (value2 * temp_r0_4 + temp_r0_4 / 2)))));
+        fx32 temp_r2_3 = FX_Mul(temp_r0_3, COS((s16) (temp_r0 - ((s16) (value2 * temp_r0_4 + temp_r0_4 / 2)))));
 
         s16 temp_r0_5 = func_01ffb428(param3 + temp_r2_3, this->unk_0C);
         u32 temp_r2_4 = ~(0xFF << *(volatile u16 *) &this->unk_10) & ((u16) (1 << *new_var) + (temp_r5 >> 16) + var_r7);
@@ -132,7 +132,7 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c13b4() {
 
             temp_r6 = this->unk_14[var_r4];
             G3_Vtx10(0, 0, 0);
-            G3_Vtx10(MUL_FXUNK(SIN((u16) var_ip), temp_r6), 0, MUL_FXUNK(COS((u16) var_ip), temp_r6));
+            G3_Vtx10(MUL_FXUNK(SIN(var_ip), temp_r6), 0, MUL_FXUNK(COS(var_ip), temp_r6));
 
             var_ip = (s32) (s16) (var_ip + (s16) (0x10000 >> this->unk_10));
         }
@@ -157,7 +157,7 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c13b4() {
             }
 
             temp_r4_3 = this->unk_14[var_r4];
-            G3_Vtx10(MUL_FXUNK(SIN((u16) var_lr), temp_r4_3), 0, MUL_FXUNK(COS((u16) var_lr), temp_r4_3));
+            G3_Vtx10(MUL_FXUNK(SIN(var_lr), temp_r4_3), 0, MUL_FXUNK(COS(var_lr), temp_r4_3));
             G3_Vtx10(0, 0x3C0, 0);
 
             var_lr = (s32) (s16) (var_lr + (s16) (0x10000 >> this->unk_10));
@@ -180,8 +180,8 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c13b4() {
             }
 
             temp_r5_3 = this->unk_14[var_r6];
-            fx16 sin  = SIN((u16) var_lr);
-            fx16 cos  = COS((u16) var_lr);
+            fx16 sin  = SIN(var_lr);
+            fx16 cos  = COS(var_lr);
             G3_Vtx10(MUL_FXUNK((u16) sin, temp_r5_3), 0, MUL_FXUNK((u16) cos, temp_r5_3));
 
             temp_r10_2 = 0x1000 - this->unk_12;
@@ -211,7 +211,7 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c13b4() {
 
             temp_r4_6  = this->unk_14[var_r7];
             temp_r10_3 = 0x1000 - this->unk_12;
-            G3_Vtx10(MUL_FXUNK(SIN((u16) temp_r10_3), temp_r4_6), -this->unk_12, MUL_FXUNK(COS((u16) temp_r10_3), temp_r4_6));
+            G3_Vtx10(MUL_FXUNK(SIN(temp_r10_3), temp_r4_6), -this->unk_12, MUL_FXUNK(COS(temp_r10_3), temp_r4_6));
             G3_Vtx10(0, -this->unk_12, 0);
 
             var_lr_2 = (s32) (s16) (var_lr_2 + (s16) (0x10000 >> this->unk_10));

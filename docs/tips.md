@@ -52,9 +52,9 @@ Some macros and inlines exists to operate on them, two major ones are `FX_F32_TO
 
 There is a `DEG_TO_ANG(n)` macro that converts an angle from degrees to an internal hexadecimal representation.
 
-There are two inlined functions `FX_SinIdx(n)` and `FX_CosIdx(n)` that compute the expected trigonometric values by doing a table lookup[^sincos]. Note that both inlines access the same table, but the kind of operation performed can usually be determined by looking at the lookup pattern:
-- for `FX_SinIdx`, `FX_SinCosTable_` is accessed at roughly `2 * n`;
-- for `FX_CosIdx`, `FX_SinCosTable_` is accessed at roughly `2 * n + 1`. The `+1` allows for the differentiation.
+There are two macros `SIN(n)` and `COS(n)` that compute the expected trigonometric values by doing a table lookup[^sincos]. Note that both macros access the same table, but the kind of operation performed can usually be determined by looking at the lookup pattern:
+- for `SIN`, `FX_SinCosTable_` is accessed at roughly `2 * n`;
+- for `COS`, `FX_SinCosTable_` is accessed at roughly `2 * n + 1`. The `+1` allows for the differentiation.
 
 [^sincos]: You can usually spot these operations by seing a lookup to the table in ghidra.
 

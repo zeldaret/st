@@ -175,7 +175,7 @@ void ActorUnkNSSW::func_ov032_02120118() {
     CopySingle288(&actor->mUnk_154, &this->mUnk_150);
 
     MtxFx33 stack;
-    MtxFx33_InitYRotation(&stack, FX_SinIdx(0x8000), FX_CosIdx(0x8000));
+    MtxFx33_InitYRotation(&stack, SIN(0x8000), COS(0x8000));
     func_01ffa60c(&stack, &this->mUnk_150, &this->mUnk_150);
     func_ov000_0205f8e8(&this->mUnk_174, &this->mUnk_150);
 }

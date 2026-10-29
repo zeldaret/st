@@ -52,7 +52,7 @@ MapObjectUnkSWSW_40::MapObjectUnkSWSW_40(G3d_Model *pModel) :
 void MapObjectUnkSWSW_40::vfunc_1C(G3d_RenderState *param1) {
     if (param1->currentCmd[1] == this->mUnk_60) {
         param1->mUnk_B4->mUnk_00 &= ~0x2;
-        MtxFx33_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN((u16) this->mUnk_68), COS((u16) this->mUnk_68));
+        MtxFx33_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN(this->mUnk_68), COS(this->mUnk_68));
     }
 
     if (param1->currentCmd[1] != this->mUnk_64) {
@@ -60,7 +60,7 @@ void MapObjectUnkSWSW_40::vfunc_1C(G3d_RenderState *param1) {
     }
 
     param1->mUnk_B4->mUnk_00 &= ~0x2;
-    MtxFx33_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN((u16) this->mUnk_6A), COS((u16) this->mUnk_6A));
+    MtxFx33_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN(this->mUnk_6A), COS(this->mUnk_6A));
 }
 
 struct UnkStruct_ov032_021210a0 {
@@ -116,7 +116,7 @@ bool MapObjectUnkSWSW::Init() {
     }
 
     if (this->mUnk_20.mParams[2] != 0x0) {
-        this->mPos.y += FX_MUL(this->mUnk_20.mParams[2] << 0xC, 0x1333);
+        this->mPos.y += FX_Mul(this->mUnk_20.mParams[2] << 0xC, 0x1333);
     }
 
     this->mUnk_0AC.mpModel           = this->mUnk_040.mpModel;
@@ -220,7 +220,7 @@ void MapObjectUnkSWSW::vfunc_08() {
             }
 
             if (var_r5 && this->mUnk_10E.max != 0) {
-                fx16 var_r3 = COS((u16) (this->mUnk_10E.value * 0xFFFF / this->mUnk_10E.max));
+                fx16 var_r3 = COS((this->mUnk_10E.value * 0xFFFF / this->mUnk_10E.max));
 
                 if (var_r3 < 0) {
                     var_r3 = -var_r3;
