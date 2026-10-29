@@ -1752,8 +1752,8 @@ from:0x02162880 kind:arm_call_thumb to:0x01ffa970 module:itcm
 from:0x02162898 kind:arm_call_thumb to:0x01ffa9ac module:itcm
 from:0x021628a8 kind:arm_call to:0x01ffad5c module:itcm
 from:0x021628cc kind:arm_call to:0x020f3274 module:overlay(31)
-from:0x021628d8 kind:load to:0x02040eb0 module:main
-from:0x021628dc kind:load to:0x020406b0 module:main
+from:0x021628d8 kind:load to:0x0203feb0 add:0x1000 module:main
+from:0x021628dc kind:load to:0x0203feb0 add:0x800 module:main
 from:0x021628f8 kind:arm_call to:0x01fff5d0 module:itcm
 from:0x02162960 kind:arm_call to:0x0200eab0 module:main
 from:0x02162974 kind:arm_call to:0x01ffad5c module:itcm

@@ -8548,7 +8548,7 @@ from:0x020aa230 kind:load to:0x020b19c0 module:overlay(0)
 from:0x020aa234 kind:load to:0x020b1998 module:overlay(0)
 from:0x020aa238 kind:load to:0x020b19a8 module:overlay(0)
 from:0x020aa23c kind:load to:0x020b19b0 module:overlay(0)
-from:0x020ab0cc kind:load to:0x02040403 module:main
+from:0x020ab0cc kind:load to:0x0203e93c add:0x1ac7 module:main
 from:0x020ab4bc kind:load to:0x020b2abc module:overlay(0)
 from:0x020ab510 kind:load to:0x020ac008 module:overlay(0)
 from:0x020ab514 kind:load to:0x020ab690 module:overlay(0)

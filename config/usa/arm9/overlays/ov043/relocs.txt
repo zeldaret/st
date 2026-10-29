@@ -276,7 +276,7 @@ from:0x02125c50 kind:arm_call to:0x02058018 module:overlay(0)
 from:0x02125c64 kind:arm_call to:0x01ff8e58 module:itcm
 from:0x02125c9c kind:arm_call to:0x020bf5a4 module:overlay(17)
 from:0x02125ca8 kind:load to:0x0212ca08 module:overlay(43)
-from:0x02125cac kind:load to:0x0203f93c module:main
+from:0x02125cac kind:load to:0x0203e93c add:0x1000 module:main
 from:0x02125cb0 kind:load to:0x0203e93c module:main
 from:0x02125cc8 kind:arm_call to:0x02098fe4 module:overlay(0)
 from:0x02125cdc kind:arm_call to:0x020989c0 module:overlay(0)

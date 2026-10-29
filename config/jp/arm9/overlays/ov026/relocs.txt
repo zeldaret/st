@@ -9188,7 +9188,7 @@ from:0x0212fe8c kind:arm_call to:0x020fb134 module:overlay(26)
 from:0x0212fedc kind:arm_call to:0x01ffb6e4 module:itcm
 from:0x0212ff08 kind:arm_call to:0x01ffa1d4 module:itcm
 from:0x0212ff18 kind:arm_call to:0x01ffa60c module:itcm
-from:0x0212ff7c kind:load to:0x020401b0 module:main
+from:0x0212ff7c kind:load to:0x0203feb0 add:0x300 module:main
 from:0x0212ff80 kind:load to:0x02143ae8 module:overlay(26)
 from:0x0212ff84 kind:load to:0x0213ad94 module:overlay(26)
 from:0x0212ff88 kind:load to:0x02143b50 module:overlay(26)

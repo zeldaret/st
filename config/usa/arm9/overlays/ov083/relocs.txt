@@ -786,7 +786,7 @@ from:0x0215a7a0 kind:load to:0x0215dcd4 module:overlay(83)
 from:0x0215a7a4 kind:load to:0x020b1940 add:0x8 module:overlay(0)
 from:0x0215a7a8 kind:load to:0x0215e434 module:overlay(83)
 from:0x0215a7ac kind:load to:0x027e0130 module:dtcm
-from:0x0215a7b0 kind:load to:0x0204193c module:main
+from:0x0215a7b0 kind:load to:0x0203e93c add:0x3000 module:main
 from:0x0215a824 kind:arm_call to:0x01ffb974 module:itcm
 from:0x0215a838 kind:arm_call to:0x01ffb974 module:itcm
 from:0x0215a8c4 kind:arm_call to:0x02098a94 module:overlay(0)

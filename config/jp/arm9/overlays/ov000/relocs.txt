@@ -8550,7 +8550,7 @@ from:0x020aba50 kind:load to:0x020b31e0 module:overlay(0)
 from:0x020aba54 kind:load to:0x020b31b8 module:overlay(0)
 from:0x020aba58 kind:load to:0x020b31c8 module:overlay(0)
 from:0x020aba5c kind:load to:0x020b31d0 module:overlay(0)
-from:0x020ac8ec kind:load to:0x02040403 module:main
+from:0x020ac8ec kind:load to:0x0203feb0 add:0x553 module:main
 from:0x020accdc kind:load to:0x020b42dc module:overlay(0)
 from:0x020acd30 kind:load to:0x020ad828 module:overlay(0)
 from:0x020acd34 kind:load to:0x020aceb0 module:overlay(0)

@@ -1927,7 +1927,7 @@ from:0x02151e6c kind:arm_call to:0x01ffcfcc module:itcm
 from:0x02151ee0 kind:arm_call to:0x0209ea60 module:overlay(0)
 from:0x02151f00 kind:arm_call to:0x02151fa8 module:overlay(58)
 from:0x02151f10 kind:load to:0x027e0cd8 module:dtcm
-from:0x02151f14 kind:load to:0x02040eb0 module:main
+from:0x02151f14 kind:load to:0x0203feb0 add:0x1000 module:main
 from:0x02151f18 kind:load to:0x02159744 module:overlay(58)
 from:0x02151f1c kind:load to:0x02155110 module:overlay(58)
 from:0x02151f88 kind:arm_call to:0x0210ce4c module:overlays(26,31)

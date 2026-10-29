@@ -221,7 +221,7 @@ _ZN16MapObjectUnkSWSWD1Ev kind:function(arm,size=0x20) addr:0x02123e4c
 _ZN16MapObjectUnkSWSWD0Ev kind:function(arm,size=0x28) addr:0x02123e6c
 _ZN23MapObjectProfileUnkSWSWD1Ev kind:function(arm,size=0x14) addr:0x02123e94
 data_ov032_02121ed0 kind:data(any) addr:0x02123ea8 local
-data_ov032_02121ee4 kind:data(any) addr:0x02123ebc
+data_ov032_02121ee4 kind:data(any) addr:0x02123ebc local
 data_ov032_02121ef4 kind:data(any) addr:0x02123ecc
 data_ov032_02121f04 kind:data(any) addr:0x02123edc
 data_ov032_02121f14 kind:data(any) addr:0x02123eec

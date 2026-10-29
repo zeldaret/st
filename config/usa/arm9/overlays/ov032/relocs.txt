@@ -814,7 +814,7 @@ from:0x02120140 kind:arm_call_thumb to:0x01ffa1a0 module:itcm
 from:0x02120150 kind:arm_call to:0x01ffa60c module:itcm
 from:0x0212015c kind:arm_call to:0x0205f8c8 module:overlay(0)
 from:0x02120168 kind:load to:0x027e0ce4 module:dtcm
-from:0x0212016c kind:load to:0x0204093c module:main
+from:0x0212016c kind:load to:0x0203e93c add:0x2000 module:main
 from:0x02120188 kind:arm_call to:0x01fff3b4 module:itcm
 from:0x0212019c kind:arm_call to:0x02120874 module:overlay(32)
 from:0x021201fc kind:arm_call to:0x01ffa7a0 module:itcm
