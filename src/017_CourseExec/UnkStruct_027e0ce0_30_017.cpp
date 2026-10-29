@@ -10,7 +10,7 @@
 #include "nitro/types.h"
 
 extern u16 data_ov000_020afd08;
-extern unk32 data_ov000_020afd0c;
+extern const unk32 data_ov000_020afd0c;
 extern unk32 data_ov000_020afd10;
 extern const unk32 data_ov000_020afd14;
 extern unk32 data_ov000_020afd18;

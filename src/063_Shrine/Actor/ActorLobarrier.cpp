@@ -460,18 +460,20 @@ void ActorLobarrier::func_ov063_02158b98() {
     }
 
     if ((mUnk_46 & 0x3C) != 0) {
-        unk32 iVar5 = (unk16) ((mUnk_26C * 0x4000 + mUnk_276) - (unk16) func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z));
-        iVar5       = ABS(iVar5);
+        fx16 iVar5 = ((mUnk_276 << 14) + mUnk_26C) - (fx16) func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
 
-        if (DEG_TO_ANG(90) < iVar5) {
+        if (ABS(iVar5) > DEG_TO_ANG(90)) {
             mUnk_276 *= -1;
         }
     }
 
     func_01ff916c(&mUnk_270, mUnk_276 * 0xCD, 0xCD);
-    u16 angle = (fx16) (fx32) (mUnk_26C + FX_F32_TO_FX32(4.0f));
-    mVel.x    = FX_Mul(SIN(angle), mUnk_270);
-    mVel.z    = FX_Mul(COS(angle), mUnk_270);
+
+    fx16 angle = mUnk_26C + FX_F32_TO_FX32(4.0f);
+    fx32 x     = FX_Mul(SIN(angle), mUnk_270);
+    fx32 z     = FX_Mul(COS(angle), mUnk_270);
+    mVel.x     = x;
+    mVel.z     = z;
 
     if (this->func_ov063_0215a514() != 0) {
         this->SetState(ActorLobarrierState_Rotating);
@@ -488,61 +490,53 @@ void ActorLobarrier::func_ov063_02158d40() {
     this->mUnk_238.Init();
 }
 
-// non-matching
 void ActorLobarrier::func_ov063_02158db0() {
     if (mUnk_128.vfunc_28()->func_02015080(0x1000) || mUnk_128.vfunc_28()->func_02015080(0xD000) ||
         mUnk_128.vfunc_28()->func_02015080(0x19000) || mUnk_128.vfunc_28()->func_02015080(0x25000)) {
         data_027e09a8->func_ov000_02071b30(0x985F, &mPos, 0);
     }
 
-    s16 var;
-    s16 *varPtr = &var;
-    func_ov000_020986b4(varPtr, this, 0);
+    s16 sp0;
+    s16 *psp0 = (s16 *) &sp0;
+    func_ov000_020986b4(psp0, this, 0);
 
-    unk32 val = (unk16) ((mUnk_26C * 0x4000 + mUnk_276) - *varPtr);
-    val       = ABS(val);
-    if (DEG_TO_ANG(90) < val) {
+    fx16 val = ((mUnk_276 << 14) + mUnk_26C) - *psp0;
+
+    if (ABS(val) > DEG_TO_ANG(90)) {
         mUnk_276 *= -1;
     }
 
-    fx32 ret1     = func_01ffb428(mUnk_270 + FX_F32_TO_FX32(0.025f), FX_F32_TO_FX32(0.05f));
-    u32 threshold = (u16) (mUnk_270 / 2) * ((u32) ret1 << 0x4 >> 0x10) + 0x4CD;
+    u32 ret1    = func_01ffb428(mUnk_270 + FX_F32_TO_FX32(0.025f), 0xCD);
+    s32 temp_r5 = (mUnk_270 / 2) * ((ret1 * 0x10) >> 0x10) + 0x4CD;
 
-    VecFx32 vec = {mPos.x, mPos.y, mPos.z};
+    VecFx32 sp4;
+    VecFx32_Copy(&this->mPos, &sp4);
+    sp4.x += FX_Mul(SIN(mUnk_26C), FX_F32_TO_FX32(4.0f));
+    sp4.z += FX_Mul(COS(mUnk_26C), FX_F32_TO_FX32(4.0f));
 
-    vec.x = FX_Mul(SIN(mUnk_26C), ret1);
-    vec.z = FX_Mul(COS(mUnk_26C), mPos.z);
+    if (func_01ff9a5c(data_027e0ce0->func_01fff148(0), &mPos, &sp4) < temp_r5) {
+        func_01ff916c(&mUnk_270, 0, 0xCD);
+    } else {
+        func_01ff916c(&mUnk_270, mUnk_276 * 0x3AE, 0xCD);
+    }
 
-    unk32 param2 = func_01ff9a5c(data_027e0ce0->func_01fff148(0), &mPos, &vec) < threshold ? 0 : mUnk_276 * 0x3AE;
-
-    func_01ff916c(&mUnk_270, param2, 0xCD);
-
-    s16 iVar5b   = mUnk_26C + 0x4000;
-    fx32 sin_val = SIN(iVar5b);
-    fx32 cos_val = COS(iVar5b);
-    mVel.x       = FX_Mul(sin_val, mUnk_270);
-    mVel.z       = FX_Mul(cos_val, mUnk_270);
+    fx16 angle = mUnk_26C + 0x4000;
+    fx32 x     = FX_Mul(SIN(angle), mUnk_270);
+    fx32 z     = FX_Mul(COS(angle), mUnk_270);
+    mVel.x     = x;
+    mVel.z     = z;
 
     if (this->func_ov063_0215a514()) {
         this->SetState(ActorLobarrierState_Rotating);
-        return;
-    }
-
-    if (!this->func_ov063_02159f3c(0x4000)) {
+    } else if (!this->func_ov063_02159f3c(0x4000)) {
         this->SetState(ActorLobarrierState_Idle);
+    } else if (!this->func_ov063_0215a0f0()) {
         return;
-    }
-
-    if (!this->func_ov063_0215a0f0()) {
-        return;
-    }
-
-    if (this->func_ov063_0215a474()) {
+    } else if (this->func_ov063_0215a474()) {
         this->SetState(ActorLobarrierState_Hitting);
-        return;
+    } else {
+        this->SetState(ActorLobarrierState_LinkInRange);
     }
-
-    this->SetState(ActorLobarrierState_LinkInRange);
 }
 
 void ActorLobarrier::func_ov063_021590c8() {
@@ -752,7 +746,7 @@ void ActorLobarrier::func_ov063_021599e4() {
         unk16 ret1  = func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
         unk32 iVar9 = ABS((unk16) ((mUnk_26C * 0x4000 + mUnk_276) - ret1));
 
-        if (DEG_TO_ANG(90) < iVar9) {
+        if (iVar9 > DEG_TO_ANG(90)) {
             mUnk_276 *= -1;
             this->mTimer.Set(0, 30);
         }
@@ -914,7 +908,7 @@ unk32 ActorLobarrier::func_ov063_0215a0f0() {
     func_ov000_020986b4((s16 *) &var1, this, 0);
 
     s32 val1 = ABS((s16) (var1 - mUnk_26C));
-    if (DEG_TO_ANG(90) <= val1) {
+    if (val1 > DEG_TO_ANG(90)) {
         return false;
     }
 
@@ -925,7 +919,7 @@ unk32 ActorLobarrier::func_ov063_0215a0f0() {
 
     if (mUnk_46 & 0x3C) {
         val2 = ABS(val2);
-        if (DEG_TO_ANG(90) < val2) {
+        if (val2 > DEG_TO_ANG(90)) {
             return true;
         }
     }
@@ -955,51 +949,38 @@ unk32 ActorLobarrier::func_ov063_0215a0f0() {
     return func_01ff9a5c(data_027e0ce0->func_01fff148(0), &mPos, &vec) < 0x4CD;
 }
 
-// non-matching
-unk32 ActorLobarrier::func_ov063_0215a2c0() {
+bool ActorLobarrier::func_ov063_0215a2c0() const {
     s16 var1;
-    func_ov000_020986b4((s16 *) &var1, this, 0);
-    unk32 val1 = ABS((s16) (var1 - mUnk_26C));
+    func_ov000_020986b4((s16 *) &var1, (Actor *) this, 0);
 
-    if (DEG_TO_ANG(90) <= val1) {
-        return 0;
+    if (ABS((s16) (var1 - mUnk_26C)) >= DEG_TO_ANG(90)) {
+        return false;
     }
 
     s16 ret1 = func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
     s16 var2;
-    func_ov000_020986b4((s16 *) &var2, this, 0);
-    s16 val2 = (var2 - ret1);
+    s16 *pvar2 = (s16 *) &var2;
+    func_ov000_020986b4(pvar2, (Actor *) this, 0);
+    s16 val2 = (*pvar2 - ret1);
 
-    if (mUnk_46 & 0x3C) {
-        unk32 val3 = ABS(val2);
-        if (DEG_TO_ANG(90) < val3) {
-            return 1;
-        }
+    if ((mUnk_46 & 0x3C) && ABS(val2) > DEG_TO_ANG(90)) {
+        return true;
     }
 
-    VecFx32 stackVec;
+    VecFx32 sp4;
+    sp4.y = mPos.y;
+    sp4.x = mPos.x + FX_Mul(SIN(mUnk_26C), 0x4000);
+    sp4.z = mPos.z + FX_Mul(COS(mUnk_26C), 0x4000);
 
-    stackVec.y = mPos.y;
+#if IS_JP
+    VecFx32 result = *data_027e0ce0->func_01fff148(0);
+    result.y       = this->mPos.y;
+    fx32 ret       = func_01ff9a5c(&result, (VecFx32 *) &mPos, &sp4);
+#else
+    fx32 ret = func_01ff9a5c(data_027e0ce0->func_01fff148(0), (VecFx32 *) &mPos, &sp4);
+#endif
 
-    s16 angleVal = mUnk_26C;
-    u32 sin_val  = (fx16) SIN(angleVal);
-    u32 cos_val  = (fx16) COS(angleVal);
-
-    stackVec.x = mPos.x + (((sin_val * 0x4000 + 0x800) >> 0xC) |
-                           (((((u32) (s32) (s16) SIN(angleVal)) >> 0x12) + (0xFFFFF7FF < sin_val)) * 0x100000));
-    stackVec.z = mPos.z + (((cos_val * 0x4000 + 0x800) >> 0xC) |
-                           (((((u32) (s32) (s16) COS(angleVal)) >> 0x12) + (0xFFFFF7FF < cos_val)) * 0x100000));
-
-    VecFx32 *otherVec = data_027e0ce0->func_01fff148(0);
-
-    // Copy otherVec on the stack (JP only)
-    VecFx32 otherVecStack;
-    otherVecStack   = *otherVec;
-    otherVecStack.y = mPos.y;
-
-    VecFx32 *otherVecPtr = IS_JP ? &otherVecStack : otherVec;
-
-    return func_01ff9a5c(otherVecPtr, &mPos, &stackVec) < 0xB33;
+    return ret < 0xB33;
 }
 
 void ActorLobarrier::func_ov063_0215a428() {
@@ -1059,7 +1040,7 @@ unk32 ActorLobarrier::func_ov063_0215a56c(unk32 param1) {
         return false;
     }
 
-    return DEG_TO_ANG(90) <= ABS((s16) (param1 - mAngle.angle_s));
+    return ABS((s16) (param1 - mAngle.angle_s > DEG_TO_ANG(90)));
 }
 
 // non-matching
