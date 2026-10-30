@@ -262,9 +262,9 @@ void MapObjectUnkSWCR::func_ov063_02161b08(MapObjectUnkSWCR_168_Enum param1) {
             params.mUnk_28.Reset();
             params.func_ov000_020975f8();
 
-            params.mInitialPos.z = mPos.z + FX_MUL(COS(mAngle.angle_u), FX_F32_TO_FX32(.5f));
+            params.mInitialPos.z = mPos.z + FX_Mul(COS(mAngle.angle_u), FX_F32_TO_FX32(.5f));
             params.mInitialPos.y = mPos.y;
-            params.mInitialPos.x = mPos.x + FX_MUL(SIN(mAngle.angle_u), FX_F32_TO_FX32(.5f));
+            params.mInitialPos.x = mPos.x + FX_Mul(SIN(mAngle.angle_u), FX_F32_TO_FX32(.5f));
             params.mInitialAngle = mAngle.angle_s;
             params.mParams[0]    = mUnk_20.mParams[1];
             RefStruct pOutRef;
@@ -287,9 +287,9 @@ void MapObjectUnkSWCR::func_ov063_02161b08(MapObjectUnkSWCR_168_Enum param1) {
             params.mUnk_28.Reset();
             params.func_ov000_020975f8();
 
-            params.mInitialPos.z = mPos.z + FX_MUL(COS((u16) mAngle.angle_s), FX_F32_TO_FX32(.5f));
+            params.mInitialPos.z = mPos.z + FX_Mul(COS((u16) mAngle.angle_s), FX_F32_TO_FX32(.5f));
             params.mInitialPos.y = mPos.y;
-            params.mInitialPos.x = mPos.x + FX_MUL(SIN((u16) mAngle.angle_s), FX_F32_TO_FX32(.5f));
+            params.mInitialPos.x = mPos.x + FX_Mul(SIN((u16) mAngle.angle_s), FX_F32_TO_FX32(.5f));
             params.mInitialAngle = mAngle.angle_s;
             params.mParams[0]    = mUnk_20.mParams[1];
             RefStruct pOutRef;
