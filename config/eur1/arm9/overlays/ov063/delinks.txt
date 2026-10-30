@@ -73,13 +73,13 @@ src/063_Shrine/MapObject/MapObjectUnkSTAT.cpp:
     .init       start:0x02162ce0 end:0x02162d30
     .ctor       start:0x02162fc8 end:0x02162fcc
     .data       start:0x02163980 end:0x02163a20
-    .bss        start:0x02164560 end:0x02164674
+    .bss        start:0x02164560 end:0x02164664
 
 src/063_Shrine/MapObject/MapObjectUnkWLMS.cpp:
     .text       start:0x0215feb4 end:0x02160bc4
     .init       start:0x02162d30 end:0x02162e84
     .ctor       start:0x02162fcc end:0x02162fd0
-    .bss        start:0x02164674 end:0x02164858
+    .bss        start:0x02164664 end:0x02164858
 
 src/063_Shrine/MapObject/MapObjectUnkLTRW.cpp:
     .text       start:0x02160c34 end:0x02160ffc

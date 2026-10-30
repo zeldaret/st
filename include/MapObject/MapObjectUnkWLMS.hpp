@@ -51,7 +51,7 @@ public:
     MapObjectUnkWLMS();
 
     /* 00 */ virtual bool Init() override;
-#if IS_JP
+#if IS_JP || IS_EUR1
     /* 08 */ virtual void vfunc_08() override;
 #endif
     /* 14 */ virtual void vfunc_14(unk32 param1) override;

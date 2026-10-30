@@ -93,7 +93,7 @@ MapObjectUnkWLMS::MapObjectUnkWLMS() :
     mUnk_2F4(),
     mUnk_31C(0),
     mUnk_31E(0),
-#if IS_JP
+#if IS_JP || IS_EUR1
     mUnk_31F(false),
 #endif
     mUnk_320(this) {
@@ -120,7 +120,7 @@ bool MapObjectUnkWLMS::Init() {
     return true;
 }
 
-#if IS_JP
+#if IS_JP || IS_EUR1
 void MapObjectUnkWLMS::vfunc_08() {
     if (mState == MapObjectUnkWLMSState_Loading && !mUnk_31F) {
         this->func_ov063_02160580(MapObjectUnkWLMSState_Closed, 0);
@@ -203,7 +203,7 @@ void MapObjectUnkWLMS::vfunc_38(void) {
 
     data_ov063_02164514.func_ov000_020609c4();
     data_ov063_0216458c.func_ov000_020609c4();
-#if IS_JP
+#if IS_JP || IS_EUR1
     mUnk_31F = false;
 #endif
 }
@@ -281,7 +281,7 @@ unk32 MapObjectUnkWLMS::func_ov063_02160580(MapObjState param1, unk32 param2) {
             } else {
                 UNSET_FLAG(mFlags, MapObjFlag_9);
             }
-#if IS_JP
+#if IS_JP || IS_EUR1
             mUnk_31F = false;
 #endif
             break;
@@ -291,7 +291,7 @@ unk32 MapObjectUnkWLMS::func_ov063_02160580(MapObjState param1, unk32 param2) {
             stack.unk_08 = 0x7;
             stack.unk_04 = (unk32) (uintptr_t) &mUnk_320;
             func_ov094_02170f7c(this, &stack);
-#if IS_JP
+#if IS_JP || IS_EUR1
             mUnk_31F = true;
 #endif
             break;

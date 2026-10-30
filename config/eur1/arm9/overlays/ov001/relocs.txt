@@ -441,7 +441,7 @@ from:0x020b7d42 kind:thumb_call to:0x020b7ea8 module:overlay(1)
 from:0x020b7d60 kind:thumb_call_arm to:0x02081d90 module:overlay(0)
 from:0x020b7d6c kind:thumb_call_arm to:0x020cb014 module:overlay(24)
 from:0x020b7d7a kind:thumb_call_arm to:0x020cb03c module:overlay(24)
-from:0x020b7d84 kind:load to:0x02164810 module:overlays(84,59,63,68,71,73)
+from:0x020b7d84 kind:load to:0x02164810 module:overlays(84,59,68,71,73)
 from:0x020b7d98 kind:load to:0x021613ac module:overlays(84,62,66)
 from:0x020b7d9c kind:load to:0x027e09a4 module:dtcm
 from:0x020b7da0 kind:load to:0x020d87b4 module:overlay(24)
