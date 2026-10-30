@@ -71,23 +71,22 @@ void MapObjectUnkSWCR::func_ov063_0216153c(void) {
     }
 }
 
-// return bool ?
-unk32 MapObjectUnkSWCR::func_ov063_021615c4(void) {
+bool MapObjectUnkSWCR::func_ov063_021615c4(void) {
     unk32 has_flag = GET_FLAG2(gpMiscAdvManager->mSongs, 3);
     if (has_flag == 0) {
-        return 0;
+        return false;
     }
 
     if (mUnk_168 == MapObjectUnkSWCR_168_0) {
         if (this->func_ov000_0209d274(0) < FX_F32_TO_FX32(2.5f)) {
-            return 1;
+            return true;
         }
     } else if (mUnk_168 == MapObjectUnkSWCR_168_5) {
         if (this->func_ov000_0209d274(0) < FX_F32_TO_FX32(2.5f)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // matching (empty)

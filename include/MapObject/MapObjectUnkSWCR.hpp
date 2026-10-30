@@ -67,7 +67,7 @@ public:
     void func_ov063_0216151c(void);
     void func_ov063_0216152c(void);
     void func_ov063_0216153c(void);
-    unk32 func_ov063_021615c4(void);
+    bool func_ov063_021615c4(void);
     void func_ov063_02161638(void);
     void func_ov063_02161b08(MapObjectUnkSWCR_168_Enum param1);
 };
