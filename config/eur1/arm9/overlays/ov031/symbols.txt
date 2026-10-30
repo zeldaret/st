@@ -1998,8 +1998,8 @@ data_ov031_02110b1c kind:data(any) addr:0x02110b1c
 data_ov031_02110b1e kind:data(any) addr:0x02110b1e
 data_ov031_02110b20 kind:data(any) addr:0x02110b20
 data_ov031_021109fc kind:data(any) addr:0x02110b2c local
-data_ov031_02110a10 kind:data(byte[0x18]) addr:0x02110b40 local
-data_ov031_02110a28 kind:data(byte[0x18]) addr:0x02110b58 local
+data_ov031_02110a10 kind:data(byte[24]) addr:0x02110b40 local
+data_ov031_02110a28 kind:data(byte[24]) addr:0x02110b58 local
 data_ov031_02110a40 kind:data(any) addr:0x02110b70 local
 data_ov031_02110bb0 kind:data(any) addr:0x02110bb0
 data_ov031_02110a88 kind:data(any) addr:0x02110bb8 local

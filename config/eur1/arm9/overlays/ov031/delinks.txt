@@ -11,11 +11,11 @@ src/031_Land/UnkStruct_027e0d34.cpp:
 src/031_Land/Actor/ActorBomb.cpp:
     complete
     .text       start:0x020e15e4 end:0x020e35d4
+    .rodata     start:0x02110b2c end:0x02110bb0
     .init       start:0x02111128 end:0x02111178
     .ctor       start:0x021128cc end:0x021128d0
     .data       start:0x02112d28 end:0x02112e84
     .bss        start:0x02116544 end:0x02116590
-    .rodata     start:0x02110b2c end:0x02110bb0
 
 src/031_Land/Actor/ActorBlast.cpp:
     complete
@@ -43,11 +43,11 @@ src/031_Land/Actor/ActorItemBoomerang.cpp:
 src/031_Land/Actor/ActorItemTornado.cpp:
     complete
     .text       start:0x020e587c end:0x020e65f8
+    .rodata     start:0x02110bb8 end:0x02110bc8
     .init       start:0x02111268 end:0x021112dc
     .ctor       start:0x021128dc end:0x021128e0
     .data       start:0x02113110 end:0x021131c8
     .bss        start:0x02116674 end:0x021166c0
-    .rodata     start:0x02110bb8 end:0x02110bc8
 
 src/031_Land/Actor/ActorUnkSWBM.cpp:
     complete
@@ -125,11 +125,11 @@ src/031_Land/Actor/ActorItemFlower.cpp:
 src/031_Land/Actor/ActorShotArrow.cpp:
     complete
     .text       start:0x020f14c0 end:0x020f3eac
+    .rodata     start:0x02110c30 end:0x02110c38
     .init       start:0x02111678 end:0x021116c8
     .ctor       start:0x02112904 end:0x02112908
     .data       start:0x021143a4 end:0x021144dc
     .bss        start:0x02116bb0 end:0x02116bfc
-    .rodata     start:0x02110c30 end:0x02110c38
 
 src/031_Land/Actor/ActorUnkATTG.cpp:
     complete
@@ -182,20 +182,20 @@ src/031_Land/Actor/ActorUnkNORE.cpp:
 src/031_Land/Actor/ActorUnkFLEN.cpp:
     complete
     .text       start:0x020f8154 end:0x020f8410
+    .rodata     start:0x02110cc0 end:0x02110cc8
     .init       start:0x021118e0 end:0x02111930
     .ctor       start:0x02112924 end:0x02112928
     .data       start:0x02114af8 end:0x02114b78
     .bss        start:0x02116e78 end:0x02116ec4
-    .rodata     start:0x02110cc0 end:0x02110cc8
 
 src/031_Land/Actor/ActorRollingStone.cpp:
     complete
     .text       start:0x020f8410 end:0x020f9efc
+    .rodata     start:0x02110cc8 end:0x02110cf8
     .init       start:0x02111930 end:0x02111980
     .ctor       start:0x02112928 end:0x0211292c
     .data       start:0x02114b78 end:0x02114ce0
     .bss        start:0x02116ec4 end:0x02116fac
-    .rodata     start:0x02110cc8 end:0x02110cf8
 
 src/031_Land/Actor/ActorItemDrop.cpp:
     complete
@@ -209,11 +209,11 @@ src/031_Land/Actor/ActorItemDrop.cpp:
 src/031_Land/Actor/ActorUnkMLCK.cpp:
     complete
     .text       start:0x020fac8c end:0x020fb43c
+    .rodata     start:0x02110d1c end:0x02110d30
     .init       start:0x02111ab8 end:0x02111b2c
     .ctor       start:0x02112930 end:0x02112934
     .data       start:0x02114e68 end:0x02114f5c
     .bss        start:0x021170dc end:0x02117128
-    .rodata     start:0x02110d1c end:0x02110d30
 
 src/031_Land/Actor/ActorUnkCLLT.cpp:
     complete
