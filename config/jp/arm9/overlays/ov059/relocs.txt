@@ -602,7 +602,7 @@ from:0x0215efd0 kind:arm_call to:0x02079d94 module:overlay(0)
 from:0x0215f008 kind:arm_call to:0x020c0df0 module:overlay(17)
 from:0x0215f014 kind:load to:0x027e0ce4 module:dtcm
 from:0x0215f018 kind:load to:0x0203feb0 module:main
-from:0x0215f01c kind:load to:0x02040eb0 module:main
+from:0x0215f01c kind:load to:0x0203feb0 add:0x1000 module:main
 from:0x0215f028 kind:load to:0x027e0ce0 module:dtcm
 from:0x0215f02c kind:load to:0x027e09bc module:dtcm
 from:0x0215f04c kind:arm_call to:0x02098dac module:overlay(0)

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Actor/ActorId.hpp"
+
 #include "math.hpp"
 #include "types.h"
 
@@ -9,6 +11,7 @@ public:
     void func_ov000_020713bc();
     void func_ov000_020716dc(unk32 param1);
     void func_ov000_020717cc(unk32 param1, VecFx32 *pPos);
+    void func_ov000_02071934(u32 param1, VecFx32 *pPos, ActorId param3, unk32 param4);
     u16 func_ov000_02071b30(unk32 param1, VecFx32 *pPos, unk32 param3);
     void func_ov000_02071bd4(unk32 param1, VecFx32 *pPos, unk32 param3);
     void func_ov000_02071c90(unk32 param1, VecFx32 *pPos, unk32 param3);

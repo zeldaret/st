@@ -18,7 +18,6 @@ extern "C" {
 
 #define FX_F32_TO_FX32(n) ((s32) (((n) * 8192 + 1) / 2))
 
-#define FX_MUL(a, b) (fx32)((((s64) (a)) * ((s64) (b)) + 0x800) >> FX32_SHIFT)
 #define FX_MUL32x64C(a, b) (fx32)((((s64) (a)) * ((s64) (b)) + 0x80000000) >> FX64C_SHIFT)
 
 typedef s64 fx64c;
@@ -141,6 +140,32 @@ void MTX_OrthoW(fx32 top, fx32 bottom, fx32 left, fx32 right, fx32 near, fx32 fa
 inline fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b) {
     return ((fx64) a->x * (fx64) b->x + (fx64) a->y * (fx64) b->y + (fx64) a->z * (fx64) b->z) >> FX32_SHIFT;
 }
+
+inline fx32 FX_Mul(fx32 a, fx32 b) {
+    return (fx32) ((((fx64) a * (fx64) b) + 0x800) >> 12);
+}
+
+extern const fx16 FX_SinCosTable_[];
+
+inline fx32 FX_SinIdx(u16 n) {
+    return FX_SinCosTable_[2 * ((n) >> 4)];
+}
+
+inline fx32 FX_Sin(s16 n) {
+    return FX_SinCosTable_[2 * ((n) >> 4)];
+}
+
+inline fx32 FX_CosIdx(u16 n) {
+    return FX_SinCosTable_[2 * ((n) >> 4) + 1];
+}
+
+inline fx32 FX_Cos(s16 n) {
+    return FX_SinCosTable_[2 * ((n) >> 4) + 1];
+}
+
+// FX_Sin and FX_Cos probably fake? was necessary to keep s16 for `MapObjectUnkPTFL::func_ov102_021843b4()`
+#define SIN(n) FX_SinIdx(n)
+#define COS(n) FX_CosIdx(n)
 
 #define VEC_Set(vec, x_, y_, z_) \
     do {                         \

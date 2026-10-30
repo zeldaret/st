@@ -24,27 +24,10 @@ typedef s32 unk32;
             PTMFCallback callback;                            \
         };
 
-    #define CALL_PTMF(type, data, ...)          \
-        {                                       \
-            type &ptr = (data);                 \
-            (this->*ptr.callback)(__VA_ARGS__); \
-        }
-
-    #define CALL_PTMF_RET(type, data, ...)               \
-        type &ptr  = (data);                             \
-        ptmfResult = (this->*ptr.callback)(__VA_ARGS__);
-
-    #define STATIC_CALL_PTMF(type, data, thisx, ...) \
-        {                                            \
-            type &ptr = (data);                      \
-            ((thisx)->*ptr.callback)(__VA_ARGS__);   \
-        }
-
-    #define STATIC_PTMFCALLBACK(type, data, thisx, ...) \
-        {                                               \
-            type::PTMFCallback &ptr = (data);           \
-            ((thisx)->*ptr)(__VA_ARGS__);               \
-        }
+    #define CALL_PTMF(data, ...) (this->*(data).callback)(__VA_ARGS__)
+    #define CALL_PTMF_RET(data, ...) ptmfResult = (this->*(data).callback)(__VA_ARGS__)
+    #define STATIC_CALL_PTMF(data, thisx, ...) ((thisx)->*(data).callback)(__VA_ARGS__)
+    #define STATIC_PTMFCALLBACK(data, thisx, ...) ((thisx)->*(data))(__VA_ARGS__)
 
 DECL_PTMF(PTMF);
 DECL_PTMF_RET(PTMFBool, bool);

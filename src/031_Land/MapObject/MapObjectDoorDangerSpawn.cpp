@@ -276,9 +276,8 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
                 this->mUnk_8B = 1;
             }
 
-            u16 result = ROUND_FX32(
-                FX_MUL(func_01ffb428(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f)), INT_TO_FX32(this->mUnk_78)));
-            this->mUnk_80 = result;
+            this->mUnk_80 = ROUND_FX32(
+                FX_Mul(INT_TO_FX32(this->mUnk_78), func_01ffb428(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f))));
 
             if (this->mUnk_8A) {
                 this->mUnk_82 = 0;
@@ -548,7 +547,7 @@ void MapObjectDoorDangerSpawn::vfunc_18(s8 *param1) {
 
 void MapObjectDoorDangerSpawn::vfunc_14(unk32 param1) {
     MtxFx33 m;
-    MtxFx33_InitYRotation(&m, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
+    MtxFx33_InitYRotation(&m, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
 
     VecFx32 pos(this->mPos);
     pos.y += -(this->mUnk_6C * 2);
@@ -686,12 +685,12 @@ void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *pa
     *param3 = this->mAngle.angle_s;
     iVar1   = this->mAngle.angle_s + DEG_TO_ANG(30);
     if (param1 != 0) {
-        local_24.x = FX_MUL(SIN((u16) iVar1), 0x1666);
-        local_24.z = FX_MUL(COS((u16) iVar1), 0x1666);
+        local_24.x = FX_Mul(SIN(iVar1), 0x1666);
+        local_24.z = FX_Mul(COS(iVar1), 0x1666);
         local_24.y = 0;
     } else {
-        local_24.x = FX_MUL(SIN((u16) iVar1), 0x10CD);
-        local_24.z = FX_MUL(COS((u16) iVar1), 0x10CD);
+        local_24.x = FX_Mul(SIN(iVar1), 0x10CD);
+        local_24.z = FX_Mul(COS(iVar1), 0x10CD);
         local_24.y = 0;
 
         *param3 += DEG_TO_ANG(180);
@@ -702,12 +701,12 @@ void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *pa
     this->mUnk_5A = this->mAngle.angle_s;
     iVar1         = this->mAngle.angle_s - DEG_TO_ANG(30);
     if (param1 != 0) {
-        local_30.x = FX_MUL(SIN((u16) iVar1), 0x1666);
-        local_30.z = FX_MUL(COS((u16) iVar1), 0x1666);
+        local_30.x = FX_Mul(SIN(iVar1), 0x1666);
+        local_30.z = FX_Mul(COS(iVar1), 0x1666);
         local_30.y = 0;
     } else {
-        local_30.x = FX_MUL(SIN((u16) iVar1), 0x10CD);
-        local_30.z = FX_MUL(COS((u16) iVar1), 0x10CD);
+        local_30.x = FX_Mul(SIN(iVar1), 0x10CD);
+        local_30.z = FX_Mul(COS(iVar1), 0x10CD);
         local_30.y = 0;
         this->mUnk_5A += DEG_TO_ANG(180);
     }

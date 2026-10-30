@@ -201,7 +201,7 @@ static PTMF<ActorItemDrop> data_ov031_02114bb0[ActorItemDropState_Max] = {
 void ActorItemDrop::func_ov031_020fa260() {
     this->mUnk_3C = &this->mUnk_B4;
 
-    CALL_PTMF(PTMF<ActorItemDrop>, data_ov031_02114bb0[this->mState]);
+    CALL_PTMF(data_ov031_02114bb0[this->mState]);
 
     if (this->mUnk_AE.HasExpired()) {
         this->func_ov000_020989e0();
@@ -276,7 +276,7 @@ void ActorItemDrop::SetState(ActorState state) {
 
     this->mState  = state;
     this->mUnk_44 = 0x9C;
-    CALL_PTMF(PTMF<ActorItemDrop>, data_ov031_02114be8[this->mState]);
+    CALL_PTMF(data_ov031_02114be8[this->mState]);
 }
 
 void ActorItemDrop::func_ov031_020fa468() {}

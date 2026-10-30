@@ -24,10 +24,8 @@ public:
     /* 00 */ u8 mUnk_00;
     /* 04 */ UnkStruct_027e0960_TableEntry_04 *mUnk_04;
     /* 08 */ UnkStruct_027e0960_TableEntry_04 *mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
+    /* 0C */ UnkStruct_027e0960_TableEntry_04 *mUnk_0C[2];
+    /* 0C */ UnkStruct_027e0960_TableEntry_04 *mUnk_14[2];
     /* 1C */ VecFx32Cpp mUnk_1C;
     /* 28 */ u16 mUnk_28;
     /* 2C */ unk32 mUnk_2C;
@@ -35,15 +33,15 @@ public:
 
     ActorFleeingSpinut_1EC();
 
-    void func_ov032_0211cc48(VecFx32 *param1);
-    UnkStruct_027e0960_TableEntry_04 *func_ov032_0211cd20(VecFx32 *param1);
-    u16 *func_ov032_0211cd60(VecFx32 *param1, s16 *param2, VecFx32 *param3, unk32 param4, unk32 param5, unk32 param6);
+    void func_ov032_0211cc48(const VecFx32 *param1);
+    UnkStruct_027e0960_TableEntry_04 *func_ov032_0211cd20(const VecFx32 *param1);
+    u16 *func_ov032_0211cd60(VecFx32 *param1, s16 *param2, VecFx32 *param3, unk32 param4, s16 param5, unk32 param6);
     void func_ov032_0211cf74();
     void func_ov032_0211cfac(unk32 param1);
     void func_ov032_0211d028();
     bool func_ov032_0211d040(VecFx32 *param1);
     void func_ov032_0211d08c(VecFx32 *param1);
-    bool func_ov032_0211d2e4(UnkStruct_027e0960_TableEntry_04_Base *param1);
+    bool func_ov032_0211d2e4(UnkStruct_027e0960_TableEntry_04_Base *param1, unk32 param2);
     UnkStruct_027e0960_TableEntry_04 *func_ov032_0211d384(VecFx32 *param1);
     unk32 func_ov032_0211d568(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2,
                               UnkStruct_027e0960_TableEntry_04_Base *param3);

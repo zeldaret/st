@@ -119,7 +119,7 @@ void ActorHeart::Update() {
 
     this->mUnk_3C = &this->mUnk_98;
 
-    CALL_PTMF(PTMF<ActorHeart>, data_ov031_02113d74[this->mState]);
+    CALL_PTMF(data_ov031_02113d74[this->mState]);
 
     if (this->mUnk_94.HasExpired()) {
         this->func_ov000_020989e0();
@@ -188,7 +188,7 @@ void ActorHeart::SetState(ActorState state) {
     this->mState  = state;
     this->mUnk_2C = data_ov000_020aecf8;
     this->mUnk_44 = 0x9C;
-    CALL_PTMF(PTMF<ActorHeart>, data_ov031_02113da4[this->mState]);
+    CALL_PTMF(data_ov031_02113da4[this->mState]);
 }
 
 void ActorHeart::func_ov031_020ef208() {
@@ -357,7 +357,7 @@ void ActorHeart::func_ov031_020ef570() {
 
     this->mUnk_B8 += 0x666;
 
-    this->mVel.x = FX_MUL(SIN((u16) this->mUnk_B8), 0x40);
+    this->mVel.x = FX_Mul(SIN(this->mUnk_B8), 0x40);
     this->mVel.z = FX_F32_TO_FX32(0.0);
 
     if (this->mVel.y <= FX_F32_TO_FX32(-0.005) - 1) {

@@ -46,15 +46,15 @@ There is a `ABS(x)` macro that computes the absolute value of the given value.
 
 `fx32` (and smaller `fx` types) represent **F**ixed **P**oint floats used in the source code. They appear very often, especially with the `VexFx32` struct (3 `fx32`s components that represent a position or other kind of vectors).
 
-Some macros exists to operate on them, two major ones are `FX_F32_TO_FX32(n)` (takes a C `float` and transforms it into a `fx32`) and `FX_MUL(a, b)` (takes two `fx32` and performs multiplication).
+Some macros and inlines exists to operate on them, two major ones are `FX_F32_TO_FX32(n)` (takes a C `float` and transforms it into a `fx32`) and `FX_Mul(a, b)` (takes two `fx32` and performs multiplication).
 
 ## Angles
 
 There is a `DEG_TO_ANG(n)` macro that converts an angle from degrees to an internal hexadecimal representation.
 
 There are two macros `SIN(n)` and `COS(n)` that compute the expected trigonometric values by doing a table lookup[^sincos]. Note that both macros access the same table, but the kind of operation performed can usually be determined by looking at the lookup pattern:
-- for `SIN`, `gSinCosTable` is accessed at roughly `2 * n`;
-- for `COS`, `gSinCosTable` is accessed at roughly `2 * n + 1`. The `+1` allows for the differentiation.
+- for `SIN`, `FX_SinCosTable_` is accessed at roughly `2 * n`;
+- for `COS`, `FX_SinCosTable_` is accessed at roughly `2 * n + 1`. The `+1` allows for the differentiation.
 
 [^sincos]: You can usually spot these operations by seing a lookup to the table in ghidra.
 

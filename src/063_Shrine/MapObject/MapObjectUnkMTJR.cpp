@@ -55,9 +55,9 @@ bool MapObjectUnkMTJR::Init() {
 // non-matching
 void MapObjectUnkMTJR::vfunc_08() {
     if (mUnk_A0 == 0) {
-        fx32 tmp_x        = mPos.x - FX_F32_TO_FX32(1.f) + (fx32) gRandom.Next32(0);
+        fx32 tmp_x        = mPos.x - FX_F32_TO_FX32(1.0f) + (fx32) gRandom.Next32(0);
         fx32 tmp_y        = mPos.y + (fx32) gRandom.Next32(0x1801);
-        fx32 tmp_z        = mPos.z - FX_F32_TO_FX32(1.f) + (fx32) gRandom.Next32(0);
+        fx32 tmp_z        = mPos.z - FX_F32_TO_FX32(1.0f) + (fx32) gRandom.Next32(0);
         VecFx32 stack_vec = {tmp_x, tmp_y, tmp_z};
         data_027e0cec->func_ov000_020a0220(&mUnk_A8, &stack_vec);
     }

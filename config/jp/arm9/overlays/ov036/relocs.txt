@@ -1239,7 +1239,7 @@ from:0x02122a00 kind:arm_call to:0x020634e8 module:overlay(0)
 from:0x02122a08 kind:arm_call to:0x0201f0bc module:main
 from:0x02122a10 kind:arm_call to:0x0206304c module:overlay(0)
 from:0x02122a18 kind:arm_call to:0x02011ff4 module:main
-from:0x02122b70 kind:load to:0x02040105 module:main
+from:0x02122b70 kind:load to:0x0203feb0 add:0x255 module:main
 from:0x02122be4 kind:load to:0x020c010a module:overlays(2,4)
 from:0x02122c04 kind:load to:0x020b030a module:overlay(0)
 from:0x02122c30 kind:arm_call to:0x0211cd50 module:overlay(36)

@@ -1642,7 +1642,7 @@ from:0x020e7428 kind:arm_call to:0x02011ff4 module:main
 from:0x020e7440 kind:arm_call to:0x020e748c module:overlay(31)
 from:0x020e7448 kind:arm_call to:0x020a8d08 module:overlay(0)
 from:0x020e7460 kind:arm_call to:0x020982a8 module:overlay(0)
-from:0x020e7488 kind:load to:0x02113204 module:overlay(31)
+from:0x020e7488 kind:load to:0x021131fc module:overlay(31) add:0x8
 from:0x020e749c kind:arm_call to:0x0207bffc module:overlay(0)
 from:0x020e74b8 kind:arm_call to:0x0207bffc module:overlay(0)
 from:0x020e74c0 kind:arm_call to:0x02011ff4 module:main

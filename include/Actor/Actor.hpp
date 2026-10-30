@@ -138,10 +138,10 @@ public:
     /* 02 */ UnkStruct mUnk_02;
 };
 
-// ActorStateStunned? seems to related to that
+// ActorStateStunned? seems to be related to that
 class UnkStruct_ActorLobarrier_224 {
 public:
-    /* 00 (base) */ UnkStruct_PlayerGet_ec mUnk_00[0x2];
+    /* 00 (base) */ UnkSystem7 mUnk_00[0x2];
     /* 08 */ Timer mUnk_08;
     /* 0C */ u16 mUnk_0C;
     /* 0E */ u16 mUnk_0E;
@@ -154,8 +154,8 @@ public:
     }
 
     void Destroy() {
-        for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_00; ptr != &this->mUnk_00[ARRAY_LEN(this->mUnk_00)]; ++ptr) {
-            ptr->mUnk_00.func_ov000_020a0334();
+        for (UnkSystem7 *ptr = this->mUnk_00; ptr != &this->mUnk_00[ARRAY_LEN(this->mUnk_00)]; ++ptr) {
+            ptr->func_ov000_020a0334();
         }
 
         this->mUnk_08.Init();
@@ -399,7 +399,7 @@ public:
     /* 00 (base) */
     /* 94 */ unk32 mUnk_94;
     /* 98 */ VecFx32 mUnk_98;
-    /* A4 */ VecFx32 const *mUnk_A4;
+    /* A4 */ const VecFx32 *mUnk_A4;
     /* A8 */ Actor_Derived2_A8_PTR *mUnk_A8;
     /* AC */ unk8 mUnk_AC;
     /* AD */ unk8 mUnk_AD;

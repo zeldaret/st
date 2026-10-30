@@ -168,12 +168,12 @@ public:
     void func_ov063_02159e20();
     void func_ov063_02159ec0();
     unk32 func_ov063_02159f3c(unk32 param1);
-    unk32 func_ov063_0215a0f0();
-    unk32 func_ov063_0215a2c0();
+    bool func_ov063_0215a0f0() const;
+    bool func_ov063_0215a2c0() const;
     void func_ov063_0215a428();
     unk32 func_ov063_0215a474();
     unk32 func_ov063_0215a514();
-    unk32 func_ov063_0215a56c(unk32 param1);
+    bool func_ov063_0215a56c(unk32 param1);
     void func_ov063_0215a5a0(VecFx32 *param1);
     unk32 func_ov063_0215a5bc();
     unk32 func_ov063_0215a5d8();

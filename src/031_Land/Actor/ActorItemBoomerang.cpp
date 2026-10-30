@@ -53,11 +53,11 @@ bool ActorItemBoomerang::Init(unk32 param1) {
 
     this->func_ov031_020e5034(0x0);
 
-    unk16 sin = SIN((u16) this->mAngle.angle_s);
-    unk16 cos = COS((u16) this->mAngle.angle_s);
+    unk16 sin = SIN(this->mAngle.angle_s);
+    unk16 cos = COS(this->mAngle.angle_s);
 
-    this->mVel.x = FX_MUL(sin, FX_F32_TO_FX32(0.5f));
-    this->mVel.z = FX_MUL(cos, FX_F32_TO_FX32(0.5f));
+    this->mVel.x = FX_Mul(sin, FX_F32_TO_FX32(0.5f));
+    this->mVel.z = FX_Mul(cos, FX_F32_TO_FX32(0.5f));
     this->mVel.y = FX_F32_TO_FX32(0.0f);
 
     return true;
@@ -159,7 +159,7 @@ void ActorItemBoomerang::Update() {
 
                 sp18.unk_00 = VecFx32_Length(&this->mVel);
 
-                func_01ff916c(&sp18.unk_00, 0x0, FX_MUL(sp18.unk_00, 0x400));
+                func_01ff916c(&sp18.unk_00, 0x0, FX_Mul(sp18.unk_00, 0x400));
                 func_01ffb714(&sp6C, &this->mPos, &this->mVel);
                 func_01ff97c8(&this->mVel, sp18.unk_00 + 0x200);
             }
@@ -200,7 +200,7 @@ void ActorItemBoomerang::Update() {
 
             MapObjectId objectId = temp_r0_5->GetMapObjectId();
 
-            if (objectId != MapObjectId_SKDI && objectId != MapObjectId_SWHT && objectId != MapObjectId_Pot) {
+            if (objectId != MapObjectId_Torch && objectId != MapObjectId_SWHT && objectId != MapObjectId_Pot) {
                 this->func_ov031_020e49b0(0x8D70);
                 return;
             }
@@ -444,7 +444,7 @@ bool ActorItemBoomerang_11C::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *p
         }
 
         switch (mapObject->GetMapObjectId()) {
-            case MapObjectId_SKDI:
+            case MapObjectId_Torch:
             case MapObjectId_SWHT:
                 data_027e0d2c->func_ov031_020d95c8(*(RefStruct *) &ref); //! TODO: ref conflicts
             case MapObjectId_Pot:

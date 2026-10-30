@@ -7,7 +7,7 @@
 #include "Unknown/UnkStruct_027e0960.hpp"
 #include "types.h"
 
-class ActorUnkZSRS_120;
+class UnkStruct_ov000_020b31f0;
 
 class ActorUnk_vfunc_B0 {
 public:
@@ -65,10 +65,10 @@ public:
 class Actor_Derived1_94_Derived1 : public Actor_Derived1_94 {
 public:
     /* 00 (base) */
-    /* 0C */ ActorUnkZSRS_120 *mUnk_0C;
+    /* 0C */ UnkStruct_ov000_020b31f0 *mUnk_0C;
     /* 10 */
 
-    Actor_Derived1_94_Derived1(ActorUnkZSRS_120 *param1) {
+    Actor_Derived1_94_Derived1(UnkStruct_ov000_020b31f0 *param1) {
         this->mUnk_0C = param1;
     }
 };
@@ -80,8 +80,6 @@ public:
     /* 08 */ unk16 mUnk_06;
     /* 0A */ unk32 mUnk_08;
     /* 0C */
-
-    void func_01ffc6d4(UnkAngleStruct param1, VecFx32 *pos);
 
     Actor_Derived1_a4(ModelRender *pModelRender) {
         this->mpModelRender = pModelRender;
@@ -140,7 +138,7 @@ public:
     /* 0EC */ Actor_Derived1_EC mUnk_0EC;
     /* 104 */ Cylinder mUnk_104;
     /* 114 */ unk32 mUnk_114;
-    /* 118 */ unk32 mUnk_118;
+    /* 118 */ fx32 mUnk_118;
     /* 11C */ unk32 mUnk_11C;
     /* 120 */
 
@@ -152,8 +150,8 @@ public:
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~Actor_Derived1();
     /* 54 */ virtual void vfunc_54(unk32 param1);
-    /* 58 */ virtual void vfunc_58(ActorState param1) = 0;
-    /* 5C */ virtual void vfunc_5C();
+    /* 58 */ virtual void SetState(ActorState param1) = 0;
+    /* 5C */ virtual bool vfunc_5C();
     /* 60 */ virtual void vfunc_60();
     /* 64 */ virtual bool vfunc_64();
     /* 68 */ virtual void vfunc_68();
@@ -169,7 +167,7 @@ public:
     /* 90 */ virtual unk32 vfunc_90();
     /* 94 */ virtual void vfunc_94();
     /* 98 */ virtual void vfunc_98(u32 param1);
-    /* 9C */ virtual void vfunc_9C();
+    /* 9C */ virtual bool vfunc_9C();
     /* A0 */ virtual unk32 vfunc_A0();
     /* A4 */ virtual void vfunc_A4();
     /* A8 */ virtual unk32 vfunc_A8();
@@ -179,7 +177,11 @@ public:
     /* B8 */ virtual void vfunc_B8();
     /* BC */
 
-    Actor_Derived1(ModelRender *param1, ActorUnkZSRS_120 *param2);
+    Actor_Derived1(ModelRender *param1, UnkStruct_ov000_020b31f0 *param2);
+
+    const u16 GetUnk0B0() const {
+        return this->mUnk_0B0;
+    }
 
     // overlay 0
     void func_ov000_020a8ae0(fx32 param1);

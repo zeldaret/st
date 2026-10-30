@@ -196,11 +196,11 @@ FileSelectOptions::~FileSelectOptions() {
 }
 
 void FileSelectOptions::func_ov019_020ccd40() {
-    CALL_PTMF(PTMF<FileSelectOptions>, data_ov019_020d21c0[this->mState]);
+    CALL_PTMF(data_ov019_020d21c0[this->mState]);
 }
 
 void FileSelectOptions::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
-    CALL_PTMF(PTMF<FileSelectOptions>, data_ov019_020d2188[this->mState]);
+    CALL_PTMF(data_ov019_020d2188[this->mState]);
 }
 
 void FileSelectOptions::vfunc_10(unk8 *param1) {

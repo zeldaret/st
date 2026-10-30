@@ -2274,7 +2274,7 @@ from:0x020ff4d0 kind:load to:0x020b66c4 module:overlay(0)
 from:0x020ff4d4 kind:load to:0x0210a8a4 module:overlay(21)
 from:0x020ff4dc kind:load to:0x027e0208 module:dtcm
 from:0x020ff4e0 kind:load to:0x027e0208 add:0x4c module:dtcm
-from:0x020ff4e4 kind:load to:0x0203ffb0 module:main
+from:0x020ff4e4 kind:load to:0x0203feb0 add:0x100 module:main
 from:0x020ff4e8 kind:load to:0x027e0210 module:dtcm
 from:0x020ff4f0 kind:load to:0x0204af1c module:main
 from:0x020ff4f4 kind:load to:0x0210a938 module:overlay(21)

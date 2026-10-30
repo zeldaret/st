@@ -276,7 +276,7 @@ from:0x02127a30 kind:arm_call to:0x020595b8 module:overlay(0)
 from:0x02127a44 kind:arm_call to:0x01ff8e58 module:itcm
 from:0x02127a7c kind:arm_call to:0x020c0df0 module:overlay(17)
 from:0x02127a88 kind:load to:0x0212e818 module:overlay(43)
-from:0x02127a8c kind:load to:0x02040eb0 module:main
+from:0x02127a8c kind:load to:0x0203feb0 add:0x1000 module:main
 from:0x02127a90 kind:load to:0x0203feb0 module:main
 from:0x02127aa8 kind:arm_call to:0x0209a7d0 module:overlay(0)
 from:0x02127abc kind:arm_call to:0x0209a188 module:overlay(0)

@@ -713,7 +713,7 @@ from:0x02129ba4 kind:arm_call to:0x02057f78 module:overlay(0)
 from:0x02129bf0 kind:arm_call to:0x020c08a4 module:overlay(17)
 from:0x02129bfc kind:load to:0x027e0ce4 module:dtcm
 from:0x02129c04 kind:load to:0x0203e93c module:main
-from:0x02129c08 kind:load to:0x0203f93c module:main
+from:0x02129c08 kind:load to:0x0203e93c add:0x1000 module:main
 from:0x02129c0c kind:load to:0x027e09b4 module:dtcm
 from:0x02129c38 kind:arm_call to:0x020bef68 module:overlay(17)
 from:0x02129c48 kind:arm_call to:0x020bef68 module:overlay(17)

@@ -14,7 +14,6 @@
 #include "profile.hpp"
 
 DECL_PROFILE(MapObjectProfileUnkSTAT);
-unk32 data_ov063_02164508[3]; // Is probably part of the profile?
 
 MapObject *MapObjectProfileUnkSTAT::Create() {
     return new(HeapIndex_ITCM) MapObjectUnkSTAT();
@@ -128,9 +127,9 @@ void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
             // if (((s32) gRandom.mRandomValue[0]) >= 0) {
             // bls on gRandomVal (u32)
             if (gRandomVal >= 0) {
-                z = func_0203ab58(0x3F000000, func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f * 4096.f);
+                z = func_0203ab58(0x3F000000, func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f * 4096.0f);
             } else {
-                z = func_0203ad88(func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f * 4096.f, 0x3F000000);
+                z = func_0203ad88(func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f * 4096.0f, 0x3F000000);
             }
 
             func_02039d60(func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f, 0);
@@ -138,9 +137,9 @@ void MapObjectUnkSTAT::func_ov063_0215f7ac(void) {
 
             fx32 x;
             if (gRandomVal >= 0) {
-                x = func_0203ab58(0x3F000000, func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f * 4096.f);
+                x = func_0203ab58(0x3F000000, func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f * 4096.0f);
             } else {
-                x = func_0203ad88(func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f * 4096.f, 0x3F000000);
+                x = func_0203ad88(func_02039f04(gRandom.Next32(0x15) - 10) * 0.004f * 4096.0f, 0x3F000000);
             }
 
             VecFx32_Init(x, 0, z, (VecFx32 *) &mUnk_60);
@@ -185,6 +184,3 @@ void MapObjectUnkSTAT::func_ov063_0215fc40(unk32 param1) {
 unk32 MapObjectUnkSTAT::func_ov063_0215fce0(void) {
     return func_02016b8c(&mPos, data_027e0ce0->func_01fff148(0), mUnk_54, mAngle, mUnk_58, 1);
 }
-
-MapObjectUnkSTAT::~MapObjectUnkSTAT() {}
-MapObjectProfileUnkSTAT::~MapObjectProfileUnkSTAT() {}

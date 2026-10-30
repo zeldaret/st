@@ -83,7 +83,7 @@ extern fx16 data_0203feb0[];
 
 // https://decomp.me/scratch/c7PhN
 void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
-    const fx16 *pSinCosTable = gSinCosTable;
+    const fx16 *pSinCosTable = FX_SinCosTable_;
     Vec2bCpp stack4;
     s16 stack3;
     Vec2bCpp stack2;
@@ -136,20 +136,20 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
 
             switch (this->mUnk_68) {
                 case 0x08:
-                    this->mUnk_70.x = temp_r8->x + FX_MUL(data_02040964[0], FX_F32_TO_FX32(2.0f));
-                    this->mUnk_70.z = temp_r8->z + FX_MUL(data_02040964[1], FX_F32_TO_FX32(2.0f));
+                    this->mUnk_70.x = temp_r8->x + FX_Mul(data_02040964[0], FX_F32_TO_FX32(2.0f));
+                    this->mUnk_70.z = temp_r8->z + FX_Mul(data_02040964[1], FX_F32_TO_FX32(2.0f));
                     break;
                 case 0x09:
-                    this->mUnk_70.x = temp_r8->x + FX_MUL(data_0203e964[0], FX_F32_TO_FX32(2.0f));
-                    this->mUnk_70.z = temp_r8->z + FX_MUL(data_0203e964[1], FX_F32_TO_FX32(2.0f));
+                    this->mUnk_70.x = temp_r8->x + FX_Mul(data_0203e964[0], FX_F32_TO_FX32(2.0f));
+                    this->mUnk_70.z = temp_r8->z + FX_Mul(data_0203e964[1], FX_F32_TO_FX32(2.0f));
                     break;
                 case 0x22:
-                    this->mUnk_70.x = temp_r8->x + FX_MUL(data_02041964[0], FX_F32_TO_FX32(2.0f));
-                    this->mUnk_70.z = temp_r8->z + FX_MUL(data_02041964[1], FX_F32_TO_FX32(2.0f));
+                    this->mUnk_70.x = temp_r8->x + FX_Mul(data_02041964[0], FX_F32_TO_FX32(2.0f));
+                    this->mUnk_70.z = temp_r8->z + FX_Mul(data_02041964[1], FX_F32_TO_FX32(2.0f));
                     break;
                 case 0x23:
-                    this->mUnk_70.x = temp_r8->x + FX_MUL(data_0203f964[0], FX_F32_TO_FX32(2.0f));
-                    this->mUnk_70.z = temp_r8->z + FX_MUL(data_0203f964[1], FX_F32_TO_FX32(2.0f));
+                    this->mUnk_70.x = temp_r8->x + FX_Mul(data_0203f964[0], FX_F32_TO_FX32(2.0f));
+                    this->mUnk_70.z = temp_r8->z + FX_Mul(data_0203f964[1], FX_F32_TO_FX32(2.0f));
                     break;
                 default:
                     if (this->mUnk_2C->mUnk_150.moRef.unk_00_u16 == 0x1000) {
@@ -355,8 +355,8 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 case 0x16:
                 case 0x1C:
                     pVec = this->mUnk_34;
-                    pVec->x += FX_MUL(FX_F32_TO_FX32(-1.1003f), SIN2(pSinCosTable, this->mUnk_40->angle_u));
-                    pVec->z += FX_MUL(FX_F32_TO_FX32(-1.1003f), COS2(pSinCosTable, this->mUnk_40->angle_u));
+                    pVec->x += FX_Mul(FX_F32_TO_FX32(-1.1003f), SIN2(pSinCosTable, this->mUnk_40->angle_u));
+                    pVec->z += FX_Mul(FX_F32_TO_FX32(-1.1003f), COS2(pSinCosTable, this->mUnk_40->angle_u));
                     break;
                 case 0x08:
                 case 0x09:
@@ -377,8 +377,8 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 case 0x22:
                 case 0x23:
                     pVec = this->mUnk_34;
-                    pVec->x += FX_MUL(FX_F32_TO_FX32(-1.9001f), SIN2(pSinCosTable, this->mUnk_40->angle_u));
-                    pVec->z += FX_MUL(FX_F32_TO_FX32(-1.9001f), COS2(pSinCosTable, this->mUnk_40->angle_u));
+                    pVec->x += FX_Mul(FX_F32_TO_FX32(-1.9001f), SIN2(pSinCosTable, this->mUnk_40->angle_u));
+                    pVec->z += FX_Mul(FX_F32_TO_FX32(-1.9001f), COS2(pSinCosTable, this->mUnk_40->angle_u));
                     break;
                 case 0x0F:
                 case 0x10:
@@ -390,13 +390,13 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 case 0x24:
                 case 0x25:
                     pVec = this->mUnk_34;
-                    pVec->x += FX_MUL(FX_F32_TO_FX32(-1.0002f), SIN2(pSinCosTable, this->mUnk_40->angle_u));
-                    pVec->z += FX_MUL(FX_F32_TO_FX32(-1.0002f), COS2(pSinCosTable, this->mUnk_40->angle_u));
+                    pVec->x += FX_Mul(FX_F32_TO_FX32(-1.0002f), SIN2(pSinCosTable, this->mUnk_40->angle_u));
+                    pVec->z += FX_Mul(FX_F32_TO_FX32(-1.0002f), COS2(pSinCosTable, this->mUnk_40->angle_u));
                     break;
                 default:
                     // pVec = this->mUnk_34;
-                    // pVec->x += FX_MUL(FX_F32_TO_FX32(-1.7001f), SIN2(pSinCosTable, this->mUnk_40->angle_u));
-                    // pVec->z += FX_MUL(FX_F32_TO_FX32(-1.7001f), COS2(pSinCosTable, this->mUnk_40->angle_u));
+                    // pVec->x += FX_Mul(FX_F32_TO_FX32(-1.7001f), SIN2(pSinCosTable, this->mUnk_40->angle_u));
+                    // pVec->z += FX_Mul(FX_F32_TO_FX32(-1.7001f), COS2(pSinCosTable, this->mUnk_40->angle_u));
                     break;
             }
 
@@ -543,12 +543,12 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     }
 
                     // s16 iVar3 = var_r1_2 >> 4;
-                    // fx32 uVar6 = gSinCosTable[iVar3 * 2] * 0x2000;
-                    // fx32 uVar5 = gSinCosTable[iVar3 * 2 + 1] * 0x2000;
-                    // fx32 iVar2 = (gSinCosTable[iVar3 * 2 + 1] >> 0x13) + (0xFFFFF7FF < uVar5);
+                    // fx32 uVar6 = FX_SinCosTable_[iVar3 * 2] * 0x2000;
+                    // fx32 uVar5 = FX_SinCosTable_[iVar3 * 2 + 1] * 0x2000;
+                    // fx32 iVar2 = (FX_SinCosTable_[iVar3 * 2 + 1] >> 0x13) + (0xFFFFF7FF < uVar5);
 
                     // this->mUnk_70.x +=
-                    //     (((uVar6 + 0x800) >> 0xC) | (gSinCosTable[iVar3 * 2] >> 0x13) + (0xFFFFF7FF < uVar6)) * 0x100000;
+                    //     (((uVar6 + 0x800) >> 0xC) | (FX_SinCosTable_[iVar3 * 2] >> 0x13) + (0xFFFFF7FF < uVar6)) * 0x100000;
                     // this->mUnk_70.z += (((uVar5 + 0x800) >> 0xC) | iVar2 << 0x14);
 
                     s32 idx   = (((s32) var_r1_2) >> 4) << 1;
@@ -566,8 +566,8 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                         fx16 sin  = SIN2(data_0203feb0, value);
                         fx16 cos  = COS2(data_0203feb0, value);
 
-                        this->mUnk_70.x += FX_MUL(sin, 0x19A);
-                        this->mUnk_70.z += FX_MUL(cos, 0x19A);
+                        this->mUnk_70.x += FX_Mul(sin, 0x19A);
+                        this->mUnk_70.z += FX_Mul(cos, 0x19A);
                         break;
                     }
 
@@ -590,8 +590,8 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
 
                             fx16 sin = SIN2(data_0203feb0, this->mUnk_40->angle_u);
                             fx16 cos = COS2(data_0203feb0, this->mUnk_40->angle_u);
-                            this->mUnk_70.x += FX_MUL(sin, 0x19A);
-                            this->mUnk_70.z += FX_MUL(cos, 0x19A);
+                            this->mUnk_70.x += FX_Mul(sin, 0x19A);
+                            this->mUnk_70.z += FX_Mul(cos, 0x19A);
                         }
                         break;
                     default:
@@ -707,8 +707,8 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     this->mUnk_98 = -1;
                     fx16 sin      = SIN2(data_0203feb0, this->mUnk_40->angle_u);
                     fx16 cos      = COS2(data_0203feb0, this->mUnk_40->angle_u);
-                    this->mUnk_70.x += FX_MUL(sin, FX_F32_TO_FX32(2.0f));
-                    this->mUnk_70.z += FX_MUL(cos, FX_F32_TO_FX32(2.0f));
+                    this->mUnk_70.x += FX_Mul(sin, FX_F32_TO_FX32(2.0f));
+                    this->mUnk_70.z += FX_Mul(cos, FX_F32_TO_FX32(2.0f));
                     this->mUnk_AD = true;
                     return;
                 } else {

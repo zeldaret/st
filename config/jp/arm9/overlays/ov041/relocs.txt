@@ -721,7 +721,7 @@ from:0x0212ba74 kind:arm_call to:0x02059518 module:overlay(0)
 from:0x0212bac0 kind:arm_call to:0x020c20f0 module:overlay(17)
 from:0x0212bacc kind:load to:0x027e0ce4 module:dtcm
 from:0x0212bad4 kind:load to:0x0203feb0 module:main
-from:0x0212bad8 kind:load to:0x02040eb0 module:main
+from:0x0212bad8 kind:load to:0x0203feb0 add:0x1000 module:main
 from:0x0212badc kind:load to:0x027e09b4 module:dtcm
 from:0x0212bb08 kind:arm_call to:0x020c07b4 module:overlay(17)
 from:0x0212bb18 kind:arm_call to:0x020c07b4 module:overlay(17)

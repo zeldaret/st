@@ -12,9 +12,6 @@ extern "C" {
 #define ROUND_FX32(n) (((s32) (n) + 0x800) >> FX32_SHIFT)
 #define DIV_FX32(a, b) (((a) << FX32_SHIFT) / (b))
 
-#define SIN(n) (gSinCosTable[2 * ((n) >> 4)])
-#define COS(n) (gSinCosTable[2 * ((n) >> 4) + 1])
-
 s32 Atan2(s32 x, s32 y);
 
 u32 CoDivide64By32(u32 a, u32 b);
@@ -29,8 +26,6 @@ u32 AwaitSqrtResult();
 void StartDivision64By32(u32 a, u32 b);
 u32 CoDivide32(u32 a, u32 b);
 u32 CoRemainder(u32 a, u32 b);
-
-extern const fx16 gSinCosTable[];
 
 extern const VecFx32 gVecFx32_ZERO;
 
@@ -48,10 +43,10 @@ void VecFx32_Scale(VecFx32 *vec, fx32 scale);
 bool VecFx32_CalculateNormal(VecFx32 *vec, VecFx32 *a, VecFx32 *b, VecFx32 *c);
 
 static inline void VecFx32_Rotate(VecFx32 *vec, fx32 sin, fx32 cos, VecFx32 *out) {
-    out->x += FX_MUL(vec->z, sin);
-    out->z += FX_MUL(vec->z, cos);
-    out->x += FX_MUL(vec->x, cos);
-    out->z += FX_MUL(vec->x, -sin);
+    out->x += FX_Mul(vec->z, sin);
+    out->z += FX_Mul(vec->z, cos);
+    out->x += FX_Mul(vec->x, cos);
+    out->z += FX_Mul(vec->x, -sin);
 }
 
 static inline void VecFx32_CopyXZ(VecFx32 *vec, VecFx32 *out) {
@@ -85,6 +80,12 @@ static inline void VecFx32_Copy(const VecFx32 *vec, VecFx32 *out) {
 }
 
 static inline void VecFx32_Copy2VecFx16(const VecFx32 *vec, VecFx16 *out) {
+    out->x = vec->x;
+    out->y = vec->y;
+    out->z = vec->z;
+}
+
+static inline void VecFx16_Copy(const VecFx16 *vec, VecFx16 *out) {
     out->x = vec->x;
     out->y = vec->y;
     out->z = vec->z;

@@ -73,7 +73,7 @@ void UnkTrainSystem2::func_ov024_020d5afc(const MtxFx33 *param1, const VecFx32 *
         return;
     }
 
-    fx32 scale = FX_MUL(this->mUnk_00, param3);
+    fx32 scale = FX_Mul(this->mUnk_00, param3);
     this->SetModel();
 
     if (gpCargoManager->mUnk_18 > 0) {

@@ -164,7 +164,7 @@ bool ActorRollingStone::Init(unk32 param1) {
 void ActorRollingStone::Update() {
     this->mTimer.Update();
 
-    CALL_PTMF(PTMF<ActorRollingStone>, data_ov031_02114a94[this->mState]);
+    CALL_PTMF(data_ov031_02114a94[this->mState]);
 
     if (this->mState == ActorRollingStoneState_10) {
         return;
@@ -181,7 +181,7 @@ void ActorRollingStone::SetState(ActorState state) {
     this->mState = state;
     this->mTimer.Reset();
     this->mUnk_38->mUnk_08 = 0x3;
-    CALL_PTMF(PTMF<ActorRollingStone>, data_ov031_02114aec[this->mState]);
+    CALL_PTMF(data_ov031_02114aec[this->mState]);
 }
 
 void ActorRollingStone::func_ov031_020f8880() {
@@ -310,8 +310,8 @@ void ActorRollingStone::func_ov031_020f8bc4() {
 
     this->func_ov031_020f8de8();
 
-    sp38.x = FX_MUL(SIN((u16) this->mAngle.angle_s), FX_F32_TO_FX32(1.0f));
-    sp38.z = FX_MUL(COS((u16) this->mAngle.angle_s), FX_F32_TO_FX32(1.0f));
+    sp38.x = FX_Mul(SIN(this->mAngle.angle_s), FX_F32_TO_FX32(1.0f));
+    sp38.z = FX_Mul(COS(this->mAngle.angle_s), FX_F32_TO_FX32(1.0f));
     sp38.y = FX_F32_TO_FX32(0.0f);
 
     this->vfunc_10(&sp28);
@@ -639,8 +639,8 @@ void ActorRollingStone::func_ov031_020f9554() {
 
     this->func_ov031_020f8de8();
 
-    sp38.x = FX_MUL(SIN((u16) this->mAngle.angle_s), FX_F32_TO_FX32(1.0f));
-    sp38.z = FX_MUL(COS((u16) this->mAngle.angle_s), FX_F32_TO_FX32(1.0f));
+    sp38.x = FX_Mul(SIN(this->mAngle.angle_s), FX_F32_TO_FX32(1.0f));
+    sp38.z = FX_Mul(COS(this->mAngle.angle_s), FX_F32_TO_FX32(1.0f));
     sp38.y = FX_F32_TO_FX32(0.0f);
 
     this->vfunc_10(&sp28);
@@ -673,15 +673,15 @@ void ActorRollingStone::func_ov031_020f97cc() {
         case 0x1:
         case 0x3: {
             fx32 diffX  = this->mPos.x - this->mPrevPos.x;
-            fx32 angleX = -FX_MUL(diffX, FX_F32_TO_FX32(2.6668f));
-            MtxFx33_InitZRotation(&sp00, SIN((u16) angleX), COS((u16) angleX));
+            fx32 angleX = -FX_Mul(diffX, FX_F32_TO_FX32(2.6668f));
+            MtxFx33_InitZRotation(&sp00, SIN(angleX), COS(angleX));
             break;
         }
         case 0x0:
         case 0x2: {
             fx32 diffZ  = this->mPos.z - this->mPrevPos.z;
-            fx32 angleZ = FX_MUL(diffZ, FX_F32_TO_FX32(2.6668f));
-            MtxFx33_InitXRotation(&sp00, SIN((u16) angleZ), COS((u16) angleZ));
+            fx32 angleZ = FX_Mul(diffZ, FX_F32_TO_FX32(2.6668f));
+            MtxFx33_InitXRotation(&sp00, SIN(angleZ), COS(angleZ));
             break;
         }
         default:
@@ -698,51 +698,51 @@ void ActorRollingStone::func_ov031_020f98e4() {
         case 0x2:
         case 0x6: {
             fx32 diffX  = this->mPos.x - this->mPrevPos.x;
-            fx32 angleX = -FX_MUL(diffX, FX_F32_TO_FX32(2.6668f));
-            MtxFx33_InitZRotation(&sp34, SIN((u16) angleX), COS((u16) angleX));
+            fx32 angleX = -FX_Mul(diffX, FX_F32_TO_FX32(2.6668f));
+            MtxFx33_InitZRotation(&sp34, SIN(angleX), COS(angleX));
             break;
         }
         case 0x0:
         case 0x4: {
             fx32 diffZ  = this->mPos.z - this->mPrevPos.z;
-            fx32 angleZ = FX_MUL(diffZ, FX_F32_TO_FX32(2.6668f));
-            MtxFx33_InitXRotation(&sp34, SIN((u16) angleZ), COS((u16) angleZ));
+            fx32 angleZ = FX_Mul(diffZ, FX_F32_TO_FX32(2.6668f));
+            MtxFx33_InitXRotation(&sp34, SIN(angleZ), COS(angleZ));
             break;
         }
         case 0x5: {
             VecFx32 sp28 = data_ov031_02110b98;
 
             unk32 ret      = func_01ffb9cc(&this->mPrevPos, &this->mPos);
-            fx32 angleRet1 = -FX_MUL(ret, FX_F32_TO_FX32(2.6668f));
+            fx32 angleRet1 = -FX_Mul(ret, FX_F32_TO_FX32(2.6668f));
 
-            MtxFx33_func_01ff8248(&sp34, &sp28, SIN((u16) angleRet1), COS((u16) angleRet1));
+            MtxFx33_func_01ff8248(&sp34, &sp28, SIN(angleRet1), COS(angleRet1));
             break;
         }
         case 0x1: {
             VecFx32 sp1C = data_ov031_02110ba4;
 
             unk32 ret2     = func_01ffb9cc(&this->mPrevPos, &this->mPos);
-            fx32 angleRet2 = FX_MUL(ret2, FX_F32_TO_FX32(2.6668f));
+            fx32 angleRet2 = FX_Mul(ret2, FX_F32_TO_FX32(2.6668f));
 
-            MtxFx33_func_01ff8248(&sp34, &sp1C, SIN((u16) angleRet2), COS((u16) angleRet2));
+            MtxFx33_func_01ff8248(&sp34, &sp1C, SIN(angleRet2), COS(angleRet2));
             break;
         }
         case 0x7: {
             VecFx32 sp10 = data_ov031_02110bb0;
 
             unk32 ret3     = func_01ffb9cc(&this->mPrevPos, &this->mPos);
-            fx32 angleRet3 = FX_MUL(ret3, FX_F32_TO_FX32(2.6668f));
+            fx32 angleRet3 = FX_Mul(ret3, FX_F32_TO_FX32(2.6668f));
 
-            MtxFx33_func_01ff8248(&sp34, &sp10, SIN((u16) angleRet3), COS((u16) angleRet3));
+            MtxFx33_func_01ff8248(&sp34, &sp10, SIN(angleRet3), COS(angleRet3));
             break;
         }
         case 0x3: {
             VecFx32 sp04 = data_ov031_02110bbc;
 
             unk32 ret4     = func_01ffb9cc(&this->mPrevPos, &this->mPos);
-            fx32 angleRet4 = -FX_MUL(ret4, FX_F32_TO_FX32(2.6668f));
+            fx32 angleRet4 = -FX_Mul(ret4, FX_F32_TO_FX32(2.6668f));
 
-            MtxFx33_func_01ff8248(&sp34, &sp04, SIN((u16) angleRet4), COS((u16) angleRet4));
+            MtxFx33_func_01ff8248(&sp34, &sp04, SIN(angleRet4), COS(angleRet4));
             break;
         }
         default:

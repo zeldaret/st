@@ -75,7 +75,7 @@ void FileSelectMicTest::func_ov019_020cea6c() {}
 void FileSelectMicTest::func_ov019_020cea70() {}
 
 void FileSelectMicTest::func_ov019_020cea74() {
-    CALL_PTMF(PTMF<FileSelectMicTest>, data_ov019_020d225c[this->mState]);
+    CALL_PTMF(data_ov019_020d225c[this->mState]);
 }
 
 // non-matching

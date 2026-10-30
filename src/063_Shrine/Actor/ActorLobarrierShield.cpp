@@ -184,16 +184,13 @@ void ActorLobarrierShield::SetState(ActorState state) {
     mUnk_2C  = data_ov000_020aecf8[0];
     mUnk_120 = 0;
 
-    CALL_PTMF(PTMF<ActorLobarrierShield>, data_ov063_02163110[mState]);
+    CALL_PTMF(data_ov063_02163110[mState]);
 }
 
-// Matched
 void ActorLobarrierShield::func_ov063_0215af54() {}
 
-// Matched
 void ActorLobarrierShield::func_ov063_0215af58() {}
 
-// Matched
 void ActorLobarrierShield::func_ov063_0215af5c() {}
 
 void ActorLobarrierShield::func_ov063_0215af60() {
@@ -221,11 +218,7 @@ void ActorLobarrierShield::func_ov063_0215afb8() {
         return;
     }
 
-    //! INFO: Actually a MtxFx33, this is only used to allow a "batched" copy (all 9 elements at a time, not 3 by 3)
-    struct Fx32Array9 {
-        fx32 array[9];
-    };
-    *(Fx32Array9 *) &mUnk_1A4 = *(Fx32Array9 *) &otherActor->mUnk_154;
+    mUnk_1A4 = otherActor->mUnk_154;
 
     VecFx32 vec = otherActor->mUnk_0E8;
     mPos.x      = vec.x;
@@ -280,7 +273,7 @@ void ActorLobarrierShield::func_ov063_0215b1bc() {
     func_01ffa7a0(&vec, &mUnk_1A4, &vec);
 
     s16 angle = func_01ffbbe0(vec.x, vec.z);
-    MtxFx33_InitYRotation(&mUnk_1A4, SIN((u16) angle), COS((u16) angle));
+    MtxFx33_InitYRotation(&mUnk_1A4, SIN(angle), COS(angle));
 }
 
 void ActorLobarrierShield::func_ov063_0215b244() {
@@ -301,7 +294,6 @@ void ActorLobarrierShield::func_ov063_0215b2b0() {
     mUnk_2C = 0;
 }
 
-// Matched
 void ActorLobarrierShield::func_ov063_0215b2c4() {}
 
 void ActorLobarrierShield::vfunc_24() {
@@ -333,7 +325,7 @@ void ActorLobarrierShield::Update() {
 
     mUnk_3C = &mUnk_124;
 
-    CALL_PTMF(PTMF<ActorLobarrierShield>, data_ov063_021630e0[mState]);
+    CALL_PTMF(data_ov063_021630e0[mState]);
 
     VecFx32 *vec_base, *vec2;
     u16 ret1;
@@ -386,8 +378,8 @@ void ActorLobarrierShield::Update() {
     // Unsuccessful tries to remove the goto: duplicating raw code, duplicating an inline of the code, wrapping the code in an
     // "if (cond1 || cond2) { code }"
     ret1        = func_01ffbbe0(x_pos - x_neg, z_pos - z_neg);
-    s16 sin_val = SIN((u16) (s16) ret1);
-    s16 cos_val = COS((u16) (s16) ret1);
+    s16 sin_val = SIN((s16) ret1);
+    s16 cos_val = COS((s16) ret1);
 
     ((VecFx16 *) &mUnk_150.mUnk_08)->y = y;
     // ((VecFx16 *) &mUnk_150.mUnk_08)->x = x + (((1 - sin_val) * 0x8000) >> 0x10);
@@ -434,8 +426,8 @@ void ActorLobarrierShield::vfunc_2C(unk32 param1) {
     }
 
     if (this->lobarrier == NULL || this->lobarrier->shield == NULL) {
-        fx32 sin_val = SIN((u16) mUnk_1C8);
-        fx32 cos_val = COS((u16) mUnk_1C8);
+        fx32 sin_val = SIN(mUnk_1C8);
+        fx32 cos_val = COS(mUnk_1C8);
 
         MtxFx33 mat2;
         MtxFx33 mat1;

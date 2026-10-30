@@ -204,7 +204,7 @@ from:0x02159930 kind:load to:0x02158b84 module:overlay(67)
 from:0x0215993c kind:load to:0x02158ba4 module:overlay(67)
 from:0x02159948 kind:load to:0x02158bf0 module:overlay(67)
 from:0x02159aa8 kind:load to:0x0215d0cc module:overlay(67)
-from:0x02159aac kind:load to:0x0203f93c module:main
+from:0x02159aac kind:load to:0x0203e93c add:0x1000 module:main
 from:0x02159aec kind:arm_call to:0x01ff930c module:itcm
 from:0x02159b0c kind:arm_call to:0x01ffb714 module:itcm
 from:0x02159b18 kind:arm_call to:0x01ff97c8 module:itcm

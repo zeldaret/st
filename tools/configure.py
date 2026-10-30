@@ -227,6 +227,7 @@ config.libs = [
             Object("000_Second/code_020657fc.cpp"),
             Object("000_Second/UnkSystem1_Base.cpp"),
             Object("000_Second/UnkSystem1_Derived1.cpp"),
+            Object("000_Second/UnkStruct_ov000_020b1c10.cpp"),
             Object("000_Second/data_ov000_020af58c.cpp"),
             Object("000_Second/Actor/Actor.cpp"),
             Object("000_Second/Actor/ActorManager.cpp"),
@@ -559,6 +560,7 @@ config.libs = [
         "Overlay 31",
         [
             Object("031_Land/UnkStruct_027e0d34.cpp"),
+            Object("031_Land/Actor/ActorCharacter.cpp"),
             Object("031_Land/Actor/ActorRupee.cpp"),
             Object("031_Land/Actor/ActorShotArrow.cpp"),
             Object("031_Land/Actor/ActorUnkATTG.cpp"),
@@ -884,8 +886,9 @@ config.libs = [
     GameLib(
         "Overlay 58",
         [
+            Object("058_Field/Actor/Actor_ov058.cpp"),
             Object("058_Field/Actor/ActorUnkBSTG.cpp"),
-            Object("058_Field/Actor/ActorUnkCRFT.cpp"),
+            Object("058_Field/Actor/ActorKenzo.cpp"),
             Object("058_Field/Actor/ActorUnkFBRD.cpp"),
             Object("058_Field/Actor/ActorUnkFBSC.cpp"),
             Object("058_Field/Actor/ActorUnkKOAT.cpp"),
@@ -1456,6 +1459,7 @@ config.libs = [
             Object("094_Land2/Actor/ActorUnkSYRN.cpp"),
             Object("094_Land2/Actor/ActorUnkVLCR.cpp"),
             Object("094_Land2/Actor/ActorUnkVRGN.cpp"),
+            Object("094_Land2/MapObject/UnkStruct_ov094_02177ff8.cpp"),
             Object("094_Land2/MapObject/MapObjectUnkBRGW.cpp"),
             Object("094_Land2/MapObject/MapObjectUnkCLMN.cpp"),
             Object("094_Land2/MapObject/MapObjectUnkFNCE.cpp"),

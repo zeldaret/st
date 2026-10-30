@@ -11,6 +11,8 @@
 class ActorUnkSKDO_ov031_02115ce8 : public UnkStruct_ov000_020b34c4 {
 public:
     /* 00 (base) */
+    /* 08 */ VecFx32 mUnk_08;
+    /* 14 */ fx32 mUnk_14;
     /* 18 */
 
     ActorUnkSKDO_ov031_02115ce8(MapObjectId mapObjId) :

@@ -21,8 +21,8 @@ public:
 
 class ActorUnkRCFO_910 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
+    /* 00 */ unk32 *mUnk_00;
+    /* 04 */ unk32 *mUnk_04;
     /* 08 */
 
     ActorUnkRCFO_910(Vec2s *param1, unk32 param2); // func_ov000_0205b1cc

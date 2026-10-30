@@ -165,7 +165,7 @@ void TitleScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
         this->mUnk_2CC.func_ov000_020609c4();
     }
 
-    CALL_PTMF(TitleScreenPTMF<TitleScreen>, data_ov025_020c5aec[this->mState], pButtons, pTouchControl);
+    CALL_PTMF(data_ov025_020c5aec[this->mState], pButtons, pTouchControl);
     data_0204a110.mUnk_D9C.func_0201c4d8(0, 0x0B, 8);
     data_0204a110.mUnk_D9C.func_0201c504(1, 10, 0x10, 8);
 }

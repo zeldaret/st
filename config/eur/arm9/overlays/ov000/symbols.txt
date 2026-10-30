@@ -124,7 +124,7 @@ func_ov000_02057f74 kind:function(arm,size=0x24) addr:0x02057f74
 func_ov000_02057f98 kind:function(arm,size=0x28) addr:0x02057f98
 func_ov000_02057fc0 kind:function(arm,size=0x28) addr:0x02057fc0
 _ZN20ModelRender_Derived419func_ov000_02057fe8E14UnkAngleStructS0_P7VecFx32 kind:function(arm,size=0x50) addr:0x02057fe8
-func_ov000_02058038 kind:function(arm,size=0x28) addr:0x02058038
+_ZN26ModelRender_ov000_020b1a1c19func_ov000_02058038EP7MtxFx43 kind:function(arm,size=0x28) addr:0x02058038
 func_ov000_02058060 kind:function(arm,size=0x20) addr:0x02058060
 func_ov000_02058080 kind:function(arm,size=0x20) addr:0x02058080
 _ZN19func_ov000_020580a0D1Ev kind:function(arm,size=0x14) addr:0x020580a0
@@ -211,7 +211,7 @@ _ZN29UnkStruct_027e0960_TableEntryD1Ev kind:function(thumb,size=0x44) addr:0x020
 func_ov000_02059c30 kind:function(arm,size=0x9c) addr:0x02059c30
 _ZN29UnkStruct_027e0960_TableEntry19func_ov000_02059cccEhh kind:function(arm,size=0xa4) addr:0x02059ccc
 func_ov000_02059d70 kind:function(arm,size=0x34) addr:0x02059d70
-func_ov000_02059da4 kind:function(arm,size=0xfc) addr:0x02059da4
+_ZN29UnkStruct_027e0960_TableEntry19func_ov000_02059da4EPK7VecFx32 kind:function(arm,size=0xfc) addr:0x02059da4
 func_ov000_02059ea0 kind:function(arm,size=0x1e4) addr:0x02059ea0
 _ZN32UnkStruct_027e0960_TableEntry_048vfunc_18Ev kind:function(arm,size=0xc) addr:0x0205a084
 _ZN32UnkStruct_027e0960_TableEntry_048vfunc_14Ev kind:function(arm,size=0xc) addr:0x0205a090
@@ -286,8 +286,8 @@ _ZN16ActorUnkRCFO_910C1EP5Vec2si kind:function(arm,size=0xc) addr:0x0205b1cc
 func_ov000_0205b1d8 kind:function(arm,size=0x4c) addr:0x0205b1d8
 _ZN16ActorUnkRCFO_91019func_ov000_0205b224Eii kind:function(arm,size=0xb0) addr:0x0205b224
 func_ov000_0205b2d4 kind:function(arm,size=0x50) addr:0x0205b2d4
-func_ov000_0205b324 kind:function(arm,size=0x50) addr:0x0205b324
-func_ov000_0205b374 kind:function(arm,size=0x18) addr:0x0205b374
+_ZN24UnkStruct_ov000_020b1c10C1EP5Vec2si kind:function(arm,size=0x50) addr:0x0205b324
+_ZN24UnkStruct_ov000_020b1c108vfunc_00Ev kind:function(arm,size=0x18) addr:0x0205b374
 func_ov000_0205b38c kind:function(arm,size=0x10) addr:0x0205b38c
 func_ov000_0205b39c kind:function(arm,size=0x58) addr:0x0205b39c
 func_ov000_0205b3f4 kind:function(arm,size=0xc0) addr:0x0205b3f4
@@ -2359,7 +2359,7 @@ _ZN14Actor_Derived219func_ov000_020990c0EP8Actor_9Cii kind:function(arm,size=0x2
 _ZN14Actor_Derived219func_ov000_020992dcEv kind:function(arm,size=0x90) addr:0x020992dc
 func_ov000_0209936c kind:function(arm,size=0x64) addr:0x0209936c
 func_ov000_020993d0 kind:function(arm,size=0x80) addr:0x020993d0
-_ZN14Actor_Derived219func_ov000_02099450EPvP7VecFx32it kind:function(arm,size=0x50) addr:0x02099450
+_ZN14Actor_Derived219func_ov000_02099450EP28UnkStruct_ActorLobarrier_224P7VecFx32it kind:function(arm,size=0x50) addr:0x02099450
 _ZN14Actor_Derived219func_ov000_020994a0Ev kind:function(arm,size=0x74) addr:0x020994a0
 func_ov000_02099514 kind:function(arm,size=0x74) addr:0x02099514
 _ZN14Actor_Derived28vfunc_54Ei kind:function(arm,size=0x1b0) addr:0x02099588
@@ -3024,7 +3024,7 @@ _ZN14Actor_Derived119func_ov000_020a8ae0Ei kind:function(arm,size=0x14) addr:0x0
 func_ov000_020a8af4 kind:function(arm,size=0x54) addr:0x020a8af4
 _ZN26ModelRender_ov000_020b4d64C2EP10G3d_Model_ kind:function(arm,size=0x34) addr:0x020a8b48
 _ZN26ModelRender_ov000_020b4d64C1EP10G3d_Model_ kind:function(arm,size=0x34) addr:0x020a8b7c
-_ZN14Actor_Derived1C2EP11ModelRenderP16ActorUnkZSRS_120 kind:function(arm,size=0x110) addr:0x020a8bb0
+_ZN14Actor_Derived1C2EP11ModelRenderP24UnkStruct_ov000_020b31f0 kind:function(arm,size=0x110) addr:0x020a8bb0
 _ZN14Actor_Derived1D1Ev kind:function(arm,size=0x20) addr:0x020a8cc0
 _ZN14Actor_Derived1D0Ev kind:function(arm,size=0x28) addr:0x020a8ce0
 _ZN14Actor_Derived1D2Ev kind:function(arm,size=0x20) addr:0x020a8d08
@@ -3426,7 +3426,7 @@ data_ov000_020b1b9c kind:data(any) addr:0x020b1b9c
 data_ov000_020b1ba4 kind:data(any) addr:0x020b1ba4
 data_ov000_020b1bbc kind:data(any) addr:0x020b1bbc
 data_ov000_020b1be4 kind:data(any) addr:0x020b1be4
-data_ov000_020b1c10 kind:data(any) addr:0x020b1c10
+_ZTV24UnkStruct_ov000_020b1c10 kind:data(any) addr:0x020b1c08
 data_ov000_020b1c14 kind:data(any) addr:0x020b1c14
 data_ov000_020b1c18 kind:data(any) addr:0x020b1c18
 data_ov000_020b1c1c kind:data(any) addr:0x020b1c1c

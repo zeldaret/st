@@ -229,7 +229,7 @@ void FileSelectMain::func_ov019_020c6d08() {}
 void FileSelectMain::func_ov019_020c6d0c() {}
 
 void FileSelectMain::func_ov019_020c6d10() {
-    CALL_PTMF(PTMF<FileSelectMain>, data_ov019_020d1edc[this->mState]);
+    CALL_PTMF(data_ov019_020d1edc[this->mState]);
 }
 
 void FileSelectMain::func_ov019_020c6d48() {
@@ -1130,7 +1130,7 @@ void FileSelectMain::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
         this->GetUnk03E0(i).func_ov019_020cbb94();
     }
 
-    CALL_PTMF(PTMF<FileSelectMain>, data_ov019_020d1f94[this->mState]);
+    CALL_PTMF(data_ov019_020d1f94[this->mState]);
     this->mUnk_002C.UpdateLogic();
     G2_ChangeBlendAlpha(this->mUnk_002C.func_0201eaa0(), 16);
 }
@@ -1539,7 +1539,7 @@ void FileSelectMain::func_ov019_020cb268() {}
 void FileSelectMain::func_ov019_020cb26c() {}
 
 void FileSelectMain::vfunc_10(unk8 *param1) {
-    CALL_PTMF(PTMF<FileSelectMain>, data_ov019_020d204c[this->mState]);
+    CALL_PTMF(data_ov019_020d204c[this->mState]);
 }
 
 void FileSelectMain::func_ov019_020cb2a8() {

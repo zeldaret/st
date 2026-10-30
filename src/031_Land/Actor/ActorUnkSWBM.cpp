@@ -72,7 +72,7 @@ void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2) {
     G3_TexPlttBase(((u32) textureParam->y << 0x10) >> 0xD, (((u32) textureParam->z >> 0x1A) & 7));
 
     MtxFx33 mat;
-    MtxFx33_InitYRotation(&mat, SIN((u16) actor->mAngle.angle_s), COS((u16) actor->mAngle.angle_s));
+    MtxFx33_InitYRotation(&mat, SIN(actor->mAngle.angle_s), COS(actor->mAngle.angle_s));
 
     var_r7 = var_r8 = 0xB33;
     var_r9          = 0x1F - ((0xE - actor->mUnk_0E0) * 2);
@@ -130,8 +130,8 @@ bool ActorUnkSWBM::Init(unk32 param1) {
     this->mUnk_098.mUnk_0C.pos.z = posZ;
     this->mUnk_098.mUnk_0C.size  = FX_F32_TO_FX32(0.35f);
 
-    this->mVel.x = FX_MUL(SIN((u16) this->mAngle.angle_s), 0xB33);
-    this->mVel.z = FX_MUL(COS((u16) this->mAngle.angle_s), 0xB33);
+    this->mVel.x = FX_Mul(SIN(this->mAngle.angle_s), 0xB33);
+    this->mVel.z = FX_Mul(COS(this->mAngle.angle_s), 0xB33);
     this->mVel.y = FX_F32_TO_FX32(0.0f);
     return true;
 }
@@ -167,9 +167,9 @@ void ActorUnkSWBM::func_ov031_020e6d80(unk32 param1) {
 
         s16 angle = this->mAngle.angle_s - DEG_TO_ANG(180);
 
-        vecSp08.x = SIN((u16) angle);
+        vecSp08.x = SIN(angle);
         vecSp08.y = FX_F32_TO_FX32(0.0f);
-        vecSp08.z = COS((u16) angle);
+        vecSp08.z = COS(angle);
 
         data_027e0cec->func_ov000_0209ff24(0x8E1, &this->mPos, &vecSp08, 0x1);
     }

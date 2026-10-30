@@ -269,7 +269,7 @@ THUMB_END
 
 void ActorUnkZLSL::func_ov031_020ea674() {
     this->func_ov031_020ecbe0();
-    this->vfunc_58(ActorUnkZLSLState_Idle);
+    this->SetState(ActorUnkZLSLState_Idle);
 }
 
 bool ActorUnkZLSL::Init(unk32 param1) {
@@ -334,13 +334,13 @@ void ActorUnkZLSL::func_ov031_020ea868() {}
 
 void ActorUnkZLSL::func_ov031_020ea86c() {}
 
-void ActorUnkZLSL::vfunc_58(ActorState state) {
+void ActorUnkZLSL::SetState(ActorState state) {
     this->mState    = state;
     this->mUnk_286E = 0x0;
 
     this->func_ov031_020ea7a8();
 
-    CALL_PTMF(PTMF<ActorUnkZLSL>, data_ov031_02113770[this->mState]);
+    CALL_PTMF(data_ov031_02113770[this->mState]);
 }
 
 void ActorUnkZLSL::func_ov031_020ea8c0() {}
@@ -352,7 +352,7 @@ void ActorUnkZLSL::func_ov031_020ea8c8() {}
 void ActorUnkZLSL::Update() {
     UnkAngleStruct angle = this->mAngle.angle_s;
 
-    CALL_PTMF(PTMF<ActorUnkZLSL>, data_ov031_021137f8[this->mState]);
+    CALL_PTMF(data_ov031_021137f8[this->mState]);
 
     if (!GET_FLAG(this->mFlags, ActorFlag_Visible)) {
         return;
@@ -473,7 +473,7 @@ void ActorUnkZLSL::func_ov031_020eac64() {
 
     if ((this->mUnk_0B0 & 0x2) != 0x0) {
         if (this->func_ov000_020a9248(0x2000)) {
-            this->vfunc_58(ActorUnkZLSLState_ClosedArms);
+            this->SetState(ActorUnkZLSLState_ClosedArms);
             return;
         }
     }
@@ -484,7 +484,7 @@ void ActorUnkZLSL::func_ov031_020eace0() {
     if (!this->func_ov031_020ec8c4()) {
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_ClosedArms);
+    this->SetState(ActorUnkZLSLState_ClosedArms);
 }
 
 void ActorUnkZLSL::func_ov031_020ead0c() {
@@ -570,7 +570,7 @@ void ActorUnkZLSL::func_ov031_020ead7c() {
 
 void ActorUnkZLSL::func_ov031_020eafb0() {
     if (this->func_ov031_020ed8ac(0x800)) {
-        this->vfunc_58(ActorUnkZLSLState_RotateClosedArms);
+        this->SetState(ActorUnkZLSLState_RotateClosedArms);
     }
 }
 
@@ -609,7 +609,7 @@ void ActorUnkZLSL::func_ov031_020eb158() {
     if (!this->func_ov031_020ed6cc(0x1800)) {
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_FollowLink);
+    this->SetState(ActorUnkZLSLState_FollowLink);
 }
 
 void ActorUnkZLSL::func_ov031_020eb188() {
@@ -633,7 +633,7 @@ void ActorUnkZLSL::func_ov031_020eb218() {
     }
 
     if (this->func_ov031_020eb2b0(this->func_ov000_0209853c(0x00), 0xA000)) {
-        this->vfunc_58(ActorUnkZLSLState_Idle);
+        this->SetState(ActorUnkZLSLState_Idle);
     }
 }
 
@@ -711,7 +711,7 @@ bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
 
         func_01ff9638(&sp4, 0x4000);
         VecFx32_TryNormalize(&sp4);
-        func_01ff93c0(&sp4, FX_MUL(this->mUnk_2888, SIN((u16) this->mUnk_286A)));
+        func_01ff93c0(&sp4, FX_Mul(this->mUnk_2888, SIN(this->mUnk_286A)));
         VecFx32_Add(&sp4, &sp10, &sp4);
         this->mUnk_286A += 0x1000;
         this->mPos.x = sp4.x;
@@ -847,7 +847,7 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
                 this->mUnk_28A4.vec.x = FX_F32_TO_FX32(1.0f);
                 this->mUnk_28A4.vec.y = FX_F32_TO_FX32(1.0f);
                 this->mUnk_28A4.vec.z = FX_F32_TO_FX32(1.0f);
-                this->vfunc_58(ActorUnkZLSLState_Idle);
+                this->SetState(ActorUnkZLSLState_Idle);
             }
             this->func_ov031_020ed4e4(0x5, 0x93F);
         default:
@@ -983,7 +983,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             this->mUnk_28A4.vec.y = FX_F32_TO_FX32(1.0f);
             this->mUnk_28A4.vec.z = FX_F32_TO_FX32(1.0f);
 
-            this->vfunc_58(ActorUnkZLSLState_Idle);
+            this->SetState(ActorUnkZLSLState_Idle);
             break;
         default:
             break;
@@ -1020,14 +1020,14 @@ void ActorUnkZLSL::func_ov031_020ec05c() {
         this->vfunc_98(0x1);
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_OpenArms);
+    this->SetState(ActorUnkZLSLState_OpenArms);
 }
 
 void ActorUnkZLSL::func_ov031_020ec0a8() {
     if (!this->func_ov031_020ec8c4()) {
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_OpenArms);
+    this->SetState(ActorUnkZLSLState_OpenArms);
 }
 
 void ActorUnkZLSL::func_ov031_020ec0d4() {
@@ -1077,7 +1077,7 @@ void ActorUnkZLSL::vfunc_2C(unk32 param1) {
 
     switch (this->mUnk_2874 ? 1 : 0) {
         case false:
-            MtxFx33_InitYRotation(&sp00, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
+            MtxFx33_InitYRotation(&sp00, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
             this->mUnk_1620.vfunc_10(&this->mUnk_28A4.vec, &sp00, &this->mPos);
             break;
         case true:
@@ -1106,10 +1106,10 @@ unk32 ActorUnkZLSL::vfunc_7C(unk32 param1) {
             ActorUnkRAT0::func_ov053_0213c984();
             break;
         case 0x4:
-            this->vfunc_58(ActorUnkZLSLState_GoOrbShapeAndIdle);
+            this->SetState(ActorUnkZLSLState_GoOrbShapeAndIdle);
             break;
         case 0x5:
-            this->vfunc_58(ActorUnkZLSLState_Idle);
+            this->SetState(ActorUnkZLSLState_Idle);
             break;
         case 0x6:
             return this->func_ov031_020ec49c();
@@ -1185,7 +1185,7 @@ unk32 ActorUnkZLSL::func_ov031_020ec54c() {
                 var = true;
                 break;
             }
-            this->vfunc_58(ActorUnkZLSLState_GoOrbShapeAndIdle);
+            this->SetState(ActorUnkZLSLState_GoOrbShapeAndIdle);
             ++this->mUnk_2872;
             break;
         case 0x1:
@@ -1256,26 +1256,26 @@ void ActorUnkZLSL::func_ov031_020ec6d8(bool param1) {
 
 void ActorUnkZLSL::vfunc_6C() {
     if (!this->mUnk_2874 && this->mUnk_28A4.vec.z == FX_F32_TO_FX32(1.0f)) {
-        this->vfunc_58(ActorUnkZLSLState_RotateClosedArms);
+        this->SetState(ActorUnkZLSLState_RotateClosedArms);
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
+    this->SetState(ActorUnkZLSLState_TakeHumanShape);
 }
 
 void ActorUnkZLSL::vfunc_70() {
     if (!this->mUnk_2874 && this->mUnk_28A4.vec.z == FX_F32_TO_FX32(1.0f)) {
-        this->vfunc_58(ActorUnkZLSLState_RotateClosedArms);
+        this->SetState(ActorUnkZLSLState_RotateClosedArms);
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
+    this->SetState(ActorUnkZLSLState_TakeHumanShape);
 }
 
 void ActorUnkZLSL::vfunc_68() {
     if (this->mState != ActorUnkZLSLState_Idle) {
         if (this->mUnk_2900 & 0x2) {
-            this->vfunc_58(ActorUnkZLSLState_FollowLink);
+            this->SetState(ActorUnkZLSLState_FollowLink);
         } else {
-            this->vfunc_58(ActorUnkZLSLState_GoOrbShapeAndIdle);
+            this->SetState(ActorUnkZLSLState_GoOrbShapeAndIdle);
         }
     }
     this->mUnk_2900 &= 0xFFFD;
@@ -1292,7 +1292,7 @@ bool ActorUnkZLSL::vfunc_88() {
         return true;
     }
     if (this->mState != ActorUnkZLSLState_TakeHumanShape) {
-        this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
+        this->SetState(ActorUnkZLSLState_TakeHumanShape);
     }
     return false;
 }
@@ -1520,24 +1520,24 @@ void ActorUnkZLSL::func_ov031_020ed0b0() {
     sp24.y += FX_F32_TO_FX32(0.5f);
 
     VecFx32_Copy(&sp24, &sp18);
-    sp18.x += FX_MUL(SIN(0x6AAA), 0x1800);
-    sp18.z += FX_MUL(COS(0x6AAA), 0x1800);
+    sp18.x += FX_Mul(SIN(0x6AAA), 0x1800);
+    sp18.z += FX_Mul(COS(0x6AAA), 0x1800);
 
     if (func_02016c68(&sp24, &sp18, this->mRef, 4, 0)) {
         VecFx32_Copy(&sp24, &sp18);
-        sp18.x += FX_MUL(SIN(0x2AAA), 0x1800);
-        sp18.z += FX_MUL(COS(0x2AAA), 0x1800);
+        sp18.x += FX_Mul(SIN(0x2AAA), 0x1800);
+        sp18.z += FX_Mul(COS(0x2AAA), 0x1800);
 
         if (func_02016c68(&sp24, &sp18, this->mRef, 4, 0)) {
             VecFx32_Copy(&sp24, &sp18);
-            sp18.x += FX_MUL(SIN(0xAAAA), 0x1800);
-            sp18.z += FX_MUL(COS(0xAAAA), 0x1800);
+            sp18.x += FX_Mul(SIN(0xAAAA), 0x1800);
+            sp18.z += FX_Mul(COS(0xAAAA), 0x1800);
 
             if (func_02016c68(&sp24, &sp18, this->mRef, 4, 0)) {
 
                 VecFx32_Copy(&sp24, &sp18);
-                sp18.x += FX_MUL(SIN(0xEAAA), 0x1800);
-                sp18.z += FX_MUL(COS(0xEAAA), 0x1800);
+                sp18.x += FX_Mul(SIN(0xEAAA), 0x1800);
+                sp18.z += FX_Mul(COS(0xEAAA), 0x1800);
             }
         }
     }
@@ -1607,7 +1607,7 @@ bool ActorUnkZLSL::func_ov031_020ed55c(unk32 param1) {
 
     if (this->mState == ActorUnkZLSLState_Idle) {
         this->mUnk_2904 = param1;
-        this->vfunc_58(ActorUnkZLSLState_TakeHumanShapeTrainStation);
+        this->SetState(ActorUnkZLSLState_TakeHumanShapeTrainStation);
 
         unk16 *psp8 = (unk16 *) &sp8;
         func_01fff17c(psp8, data_027e0ce0, 0);
@@ -1628,7 +1628,7 @@ bool ActorUnkZLSL::func_ov031_020ed55c(unk32 param1) {
 
     if (this->mState == ActorUnkZLSLState_GoOrbShapeAndIdle && this->mUnk_2874 == 1) {
         this->mUnk_2904 = param1;
-        this->vfunc_58(ActorUnkZLSLState_TakeHumanShapeTrainStation);
+        this->SetState(ActorUnkZLSLState_TakeHumanShapeTrainStation);
         return true;
     }
 
@@ -1814,9 +1814,9 @@ void ActorUnkZLSL::func_ov031_020edd54(RefStruct ref) {
         this->mUnk_28DC = ref;
 
         if (data_027e0ce0->func_01fff1a4()) {
-            this->vfunc_58(ActorUnkZLSLState_16);
+            this->SetState(ActorUnkZLSLState_16);
         } else {
-            this->vfunc_58(ActorUnkZLSLState_TakePhantomControl);
+            this->SetState(ActorUnkZLSLState_TakePhantomControl);
         }
     }
 }
@@ -1939,8 +1939,8 @@ void ActorUnkZLSL::func_ov031_020ee1f4(Actor *param1, G3d_RenderState *param2) {
         G3d_RenderState_B4 *temp_r6 = param2->mUnk_B4;
 
         temp_r6->mUnk_00 &= ~0x02;
-        MtxFx33_InitZRotation(&sp24, SIN((u16) thisx->mUnk_28E0), COS((u16) thisx->mUnk_28E0));
-        MtxFx33_InitYRotation(&sp0, SIN((u16) thisx->mUnk_28E2), COS((u16) thisx->mUnk_28E2));
+        MtxFx33_InitZRotation(&sp24, SIN(thisx->mUnk_28E0), COS(thisx->mUnk_28E0));
+        MtxFx33_InitYRotation(&sp0, SIN(thisx->mUnk_28E2), COS(thisx->mUnk_28E2));
         func_01ffa60c(&sp24, &sp0, &sp24);
         func_01ffa60c(&sp24, &temp_r6->mUnk_28, &temp_r6->mUnk_28);
     }
@@ -1982,9 +1982,9 @@ unk16 ActorUnkZLSL::func_ov031_020ee2c8() {
 
 void ActorUnkZLSL::vfunc_B4() {
     if (this->mState == ActorUnkZLSLState_Idle) {
-        this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
+        this->SetState(ActorUnkZLSLState_TakeHumanShape);
     } else {
-        this->vfunc_58(ActorUnkZLSLState_OpenArms);
+        this->SetState(ActorUnkZLSLState_OpenArms);
     }
 }
 
@@ -2009,13 +2009,13 @@ void ActorUnkZLSL::func_ov031_020ee4c4(UnkAngleStruct angle) {
     func_01ff930c(&this->mUnk_28E0, (s16) -diff * 4, 0x300);
 
     VecFx32 sp0;
-    sp0.x = FX_MUL(SIN((u16) this->mAngle.angle_s), 0x1000);
-    sp0.z = FX_MUL(COS((u16) this->mAngle.angle_s), 0x1000);
+    sp0.x = FX_Mul(SIN(this->mAngle.angle_s), 0x1000);
+    sp0.z = FX_Mul(COS(this->mAngle.angle_s), 0x1000);
     sp0.y = 0;
 
     if (!VecFx32_IsCleared(&this->mVel) && VecFx32_Dot(&sp0, &this->mVel) < 0) {
         fx32 temp_ret = VecFx32_Length(&this->mVel);
-        s16 value     = FX_MUL(FX_MUL(temp_ret, 0xA000), 0x2000);
+        s16 value     = FX_Mul(FX_Mul(temp_ret, 0xA000), 0x2000);
         func_01ff930c(&this->mUnk_28E2, -value, 0x1000);
     } else {
         func_01ff930c(&this->mUnk_28E2, 0, 0x200);

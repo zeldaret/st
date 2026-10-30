@@ -10,7 +10,7 @@
 #include "nitro/types.h"
 
 extern u16 data_ov000_020afd08;
-extern unk32 data_ov000_020afd0c;
+extern const unk32 data_ov000_020afd0c;
 extern unk32 data_ov000_020afd10;
 extern const unk32 data_ov000_020afd14;
 extern unk32 data_ov000_020afd18;
@@ -48,7 +48,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                     sp2C.s.mUnk_06 = temp_r8->func_ov000_02078698();
                     sp2C.s.mUnk_04 = temp_r8->func_ov000_0207868c();
                     sp2C.s.mUnk_02 = temp_r8->mUnk_0CA;
-                    sp2C.s.mUnk_08 = FX_MUL(func_01ffb9cc(&temp_r8->mUnk_040, &temp_r8->mUnk_034), data_ov000_020afd0c);
+                    sp2C.s.mUnk_08 = FX_Mul(func_01ffb9cc(&temp_r8->mUnk_040, &temp_r8->mUnk_034), data_ov000_020afd0c);
 
                     sp4C = this->mpPlayer->mPos.vec;
                     sp4C.y += data_ov000_020afd14;

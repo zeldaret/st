@@ -24,7 +24,7 @@ const unk32 data_ov019_020d1be8[] = {
 void SaveManager::func_ov019_020d086c(u16 param1) {
     CARD_LockBackup(gSaveManager.mCardId);
 
-    STATIC_PTMFCALLBACK(PTMF<SaveFile>, gSaveManager.mUnk_23C, gSaveManager.mpSaveFile);
+    STATIC_PTMFCALLBACK(gSaveManager.mUnk_23C, gSaveManager.mpSaveFile);
     gSaveManager.mResultCode = CARD_GetResultCode();
     CARD_UnlockBackup(gSaveManager.mCardId);
 

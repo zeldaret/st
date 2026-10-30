@@ -1,6 +1,5 @@
 #include "MapObject/MapObjectDoorTouch.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 
 extern u32 data_ov031_02110c3c[];

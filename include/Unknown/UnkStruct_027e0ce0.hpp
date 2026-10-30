@@ -894,6 +894,8 @@ public:
     UnkStruct_027e0ce0_Base();
 };
 
+extern "C" unk32 func_01ff9258(fx32, fx32);
+
 // PlayerManager?
 class UnkStruct_027e0ce0 : public AutoInstance<UnkStruct_027e0ce0>, public UnkStruct_027e0ce0_Base {
 public:
@@ -913,6 +915,11 @@ public:
     /* 3C */ UnkStruct_027e0ce0_3C *mUnk_3C; // cutscene related
     /* 40 */ UnkStruct_027e0ce0_40 *mUnk_40; // pointer to data_027e0478 when on land
     /* 44 */
+
+    unk32 UnknownInline1(VecFx32 *param1, unk32 param2) {
+        VecFx32 *temp_r0 = this->func_01fff148(param2);
+        return func_01ff9258(temp_r0->x - param1->x, temp_r0->z - param1->z);
+    }
 
     UnkStruct_027e0ce0();
     ~UnkStruct_027e0ce0();

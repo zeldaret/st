@@ -1,6 +1,7 @@
 #include "Actor/ActorUnkNSSW.hpp"
 
 #include "Actor/ActorManager.hpp"
+#include "Actor/ActorUnkITWP.hpp"
 #include "Actor/ActorUnkRCHU.hpp"
 #include "CommonFuncs.hpp"
 #include "MapObject/MapObjectManager.hpp"
@@ -12,49 +13,23 @@
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_ov000_020b4ec4.hpp"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
-
-class ActorWithMat4x3pAt154 : public Actor {
-public:
-    /* 000 (base) */
-    /* 094 */ PAD(0x094, 0x154);
-    /* 154 */ MtxFx43 mUnk_154;
-    /* 184 */
-};
-
-class UnkActor_ov032_02120190 : public Actor {
-public:
-    /* 000 (base) */
-    /* 94 */ PAD(0x94, 0xE8);
-    /* E8 */ VecFx32 mUnk_E8;
-};
+#include "nitro/fx.h"
 
 class UnkStruct_ov071_0215f92c : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (base) */
     /* 04 */ u16 mUnk_04;
-    /* 08 */ UnkStruct_ov031_020e5d18_00 mUnk_08;
-    /* 0C */
+    /* 08 */
 
     UnkStruct_ov071_0215f92c();
 };
 
-#if IS_JP
-class ActorWithBoolAt17F : public Actor {
-public:
-    /* 000 (base) */
-    /* 094 */ PAD(0x094, 0x17F);
-    /* 17F */ bool mUnk_17F;
-    /* 180 */
-};
-#endif
-
-extern fx16 data_02040964[];
 extern VecFx32 data_027e0108;
-extern unk32 data_ov000_020aecf8;
+extern const unk32 data_ov000_020aecf8;
+
+static const char data_ov032_02121ee4[16] = "muchi_sword";
 
 DECL_PROFILE(ActorProfileUnkNSSW);
-
-extern char data_ov032_02121ee4;
 
 Actor *ActorProfileUnkNSSW::Create() {
     return new(HeapIndex_2) ActorUnkNSSW();
@@ -68,12 +43,12 @@ ActorProfileUnkNSSW::ActorProfileUnkNSSW() :
 ActorUnkNSSW::ActorUnkNSSW() :
     mUnk_0B0(
         G3d_GetUnkPtr(((MapObjectProfile_Derived2 *) data_ov000_020b5d34.GetProfileFromId(MapObjectId_SWSW))->mUnk_20.mUnk_50,
-                      &data_ov032_02121ee4),
+                      data_ov032_02121ee4),
         true),
     mUnk_0BC(0x7),
     mUnk_0E0(this),
     mUnk_104(this),
-    mUnk_134(0x0),
+    mUnk_134(0),
 #if IS_JP
     mUnk_138_jp(this),
 #endif
@@ -93,6 +68,8 @@ ActorUnkNSSW::ActorUnkNSSW() :
 }
 
 bool ActorUnkNSSW::Init(unk32 param1) {
+#pragma unused(param1)
+
     this->mUnk_104.mUnk_04 = this->mRef;
     this->mUnk_0E0.mUnk_1C = 0x1;
     this->mUnk_19D         = false;
@@ -158,7 +135,7 @@ void ActorUnkNSSW::Update() {
             this->func_ov032_02120190();
 #if IS_JP
             {
-                ActorWithBoolAt17F *actor = (ActorWithBoolAt17F *) gpActorManager->func_01fff3b4(this->mUnk_134);
+                ActorUnkITWP *actor = (ActorUnkITWP *) gpActorManager->func_01fff3b4(this->mUnk_134);
                 if (actor != NULL) {
                     actor->mUnk_17F = this->mUnk_19C = true;
                 }
@@ -190,7 +167,7 @@ void ActorUnkNSSW::Update() {
 }
 
 void ActorUnkNSSW::func_ov032_02120118() {
-    ActorWithMat4x3pAt154 *actor = (ActorWithMat4x3pAt154 *) gpActorManager->func_01fff3b4(this->mUnk_134);
+    ActorUnkITWP *actor = (ActorUnkITWP *) gpActorManager->func_01fff3b4(this->mUnk_134);
     if (actor == NULL) {
         return;
     }
@@ -198,15 +175,13 @@ void ActorUnkNSSW::func_ov032_02120118() {
     CopySingle288(&actor->mUnk_154, &this->mUnk_150);
 
     MtxFx33 stack;
-    MtxFx33_InitYRotation(&stack, data_02040964[0], data_02040964[1]);
-
+    MtxFx33_InitYRotation(&stack, SIN(0x8000), COS(0x8000));
     func_01ffa60c(&stack, &this->mUnk_150, &this->mUnk_150);
-
     func_ov000_0205f8e8(&this->mUnk_174, &this->mUnk_150);
 }
 
 void ActorUnkNSSW::func_ov032_02120190() {
-    UnkActor_ov032_02120190 *actor = (UnkActor_ov032_02120190 *) gpActorManager->func_01fff3b4(this->mUnk_134);
+    ActorUnkITWP *actor = (ActorUnkITWP *) gpActorManager->func_01fff3b4(this->mUnk_134);
 
     if (actor == NULL) {
         this->func_ov032_02120894(0x6);
@@ -222,21 +197,20 @@ void ActorUnkNSSW::func_ov032_02120190() {
 
     func_01ffa7a0(&vec, &this->mUnk_150, &vec);
 
-    VecFx32_Add(&vec, &actor->mUnk_E8, &vec);
+    VecFx32_Add(&vec, &actor->mUnk_0E8, &vec);
 
     VecFx32_Copy(&vec, &this->mPos);
 
     this->func_ov032_02120118();
 }
 
-// non-matching (ctor of sp0C called before sp0C.mUnk_08.mUnk_00 = NULL)
 void ActorUnkNSSW::func_ov032_0212025c() {
     UnkStruct_ov031_020e5d18_00 sp14;
     sp14.mUnk_00 = NULL;
-    UnkStruct_ov071_0215f92c sp0C;
-    sp0C.mUnk_08.mUnk_00 = NULL;
 
-    UnkStruct_ov031_020e5d18_00 *pActor = &sp0C.mUnk_08;
+    UnkStruct_ov071_0215f92c sp0C;
+
+    UnkStruct_ov031_020e5d18_00 *pActor = &sp14;
     func_01ffe6c4(&pActor->mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, 0x4, &this->mPos, &sp0C);
 
     this->mUnk_46 = ((Actor *) pActor)->func_ov000_0207e294(this->mUnk_30);
@@ -277,34 +251,30 @@ void ActorUnkNSSW::func_ov032_021202d8() {
     this->func_ov032_02120894(0x5);
 }
 
-// non-matching
 void ActorUnkNSSW::func_ov032_021203fc() {
-    /* 90 */ UnkStruct_ov031_020e5d18_00 stack_90;
-    /* 84 */ VecFx32Cpp stack_84;
-    /* 78 */ VecFx32Cpp stack_78;
-    /* 68 */ Cylinder stack_68;
-    /* 58 */ Cylinder stack_58;
-    /* 40 */ UnkStruct_ov031_020e5d18_00 stack_40;
-    /* 34 */ VecFx32Cpp stack_34;
-    /* 28 */ VecFx32Cpp stack_28;
-    /* 1C */ VecFx32Cpp stack_1C;
-    /* 10 */ VecFx32Cpp stack_10;
-    /* 0C */ u16 stack_0C;
+    UnkStruct_ov031_020e5d18_00 sp90;
+    VecFx32Cpp sp84;
+    VecFx32Cpp sp78;
+    Cylinder sp68;
+    Cylinder sp58;
+    UnkStruct_ov031_020e5d18_00 sp40;
+    VecFx32Cpp sp34;
+    VecFx32Cpp sp28;
+    VecFx32Cpp sp1C;
+    VecFx32Cpp sp10;
+    u16 spC;
 
     if (this->mTimer.value < 0x4) {
-
         this->func_ov032_02120190();
-        stack_90.mUnk_00 = NULL;
 
-        UnkStruct_ov031_020e5d18_00 *pActor = &stack_90;
-
+        sp90.mUnk_00 = NULL;
 #if IS_JP
-        func_01ffe6c4(&pActor->mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos,
+        func_01ffe6c4(&sp90.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos,
                       &this->mUnk_138_jp);
-        ((Actor *) pActor)->func_ov000_0207df88(this->mUnk_30, 0x0A);
+        ((Actor *) &sp90)->func_ov000_0207df88(this->mUnk_30, 0x0A);
 #else
-        func_01ffe6c4(&pActor->mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos, NULL);
-        ((Actor *) pActor)->func_ov000_0207df88(this->mUnk_30, 0x10);
+        func_01ffe6c4(&sp90.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos, NULL);
+        ((Actor *) &sp90)->func_ov000_0207df88(this->mUnk_30, 0x10);
 #endif
 
         if (this->mUnk_0BC == 0x0) {
@@ -313,17 +283,22 @@ void ActorUnkNSSW::func_ov032_021203fc() {
                 return;
             }
 
-            fx32 z         = objectSWSW->mPos.z + objectSWSW->mUnk_0EC.vec.z;
-            fx32 x         = objectSWSW->mPos.x + objectSWSW->mUnk_0EC.vec.x;
-            fx32 y         = objectSWSW->mPos.y + objectSWSW->mUnk_0EC.vec.y;
-            stack_34.vec.x = x;
-            stack_34.vec.y = y;
-            stack_34.vec.z = z;
+            fx32 z     = objectSWSW->mPos.z + objectSWSW->mUnk_0EC.vec.z;
+            fx32 x     = objectSWSW->mPos.x + objectSWSW->mUnk_0EC.vec.x;
+            fx32 y     = objectSWSW->mPos.y + objectSWSW->mUnk_0EC.vec.y;
+            sp34.vec.x = x;
+            sp34.vec.y = y;
+            sp34.vec.z = z;
 
-            stack_1C = stack_34;
+            sp1C = sp34;
 
-            VecFx32_Copy(&stack_1C.vec, &this->mPos);
-            VecFx32_Copy(&stack_1C.vec, &this->mPrevPos);
+            this->mPos.x = sp1C.vec.x;
+            this->mPos.y = sp1C.vec.y;
+            this->mPos.z = sp1C.vec.z;
+
+            this->mPrevPos.x = sp1C.vec.x;
+            this->mPrevPos.y = sp1C.vec.y;
+            this->mPrevPos.z = sp1C.vec.z;
             return;
         }
 
@@ -331,46 +306,43 @@ void ActorUnkNSSW::func_ov032_021203fc() {
         return;
     }
 
-    stack_84       = this->mUnk_138;
-    stack_84.vec.x = -stack_84.vec.x;
-    stack_84.vec.y = -stack_84.vec.y;
-    stack_84.vec.z = -stack_84.vec.z;
+    sp84       = this->mUnk_138;
+    sp84.vec.x = -sp84.vec.x;
+    sp84.vec.y = -sp84.vec.y;
+    sp84.vec.z = -sp84.vec.z;
 
-    if (!stack_84.TryNormalize()) {
-        stack_84.vec.y = data_027e0108.y;
-        stack_84.vec.x = data_027e0108.x;
-        stack_84.vec.z = data_027e0108.z;
-        unk16 *ptr     = (unk16 *) &stack_0C;
-        func_01fff17c(ptr, data_027e0ce0, stack_84.vec.z);
-        func_01ff9638(&stack_84.vec, *ptr);
+    if (!sp84.TryNormalize()) {
+        sp84.CopyFrom(&data_027e0108);
+        unk16 *ptr = (unk16 *) &spC;
+        func_01fff17c(ptr, data_027e0ce0, 0);
+        func_01ff9638(&sp84.vec, *ptr);
     }
 
-    stack_78.vec.x = stack_84.vec.x;
-    stack_78.vec.y = FX_F32_TO_FX32(0.0f);
-    stack_78.vec.z = stack_84.vec.z;
-    if (!func_ov000_0205f7d4(&stack_58.pos, &data_027e0108, &stack_78.vec)) {
-        stack_58.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f));
+    sp78.vec.x = sp84.vec.x;
+    sp78.vec.y = FX_F32_TO_FX32(0.0f);
+    sp78.vec.z = sp84.vec.z;
+    if (!func_ov000_0205f7d4(&sp58.pos, &data_027e0108, &sp78.vec)) {
+        sp58.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f));
     }
-    if (!func_ov000_0205f7d4(&stack_68.pos, &stack_78.vec, &stack_84.vec)) {
-        stack_68.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f));
+    if (!func_ov000_0205f7d4(&sp68.pos, &sp78.vec, &sp84.vec)) {
+        sp68.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f));
     }
 
-    func_ov000_0205f6e4(&stack_68.pos, &stack_58.pos);
-    func_ov000_0205f298(&this->mUnk_174, &stack_68.pos, 0x333);
+    func_ov000_0205f6e4(&sp68.pos, &sp58.pos);
+    func_ov000_0205f298(&this->mUnk_174, &sp68.pos, 0x333);
     func_ov000_0205f4fc(&this->mUnk_174, &this->mUnk_150);
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mUnk_144.vec, &this->mPos);
 
-    stack_40.mUnk_00                    = NULL;
-    UnkStruct_ov031_020e5d18_00 *pActor = &stack_40;
+    sp40.mUnk_00 = NULL;
 
 #if IS_JP
-    func_01ffe6c4(&pActor->mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos,
+    func_01ffe6c4(&sp40.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos,
                   &this->mUnk_138_jp);
-    ((Actor *) pActor)->func_ov000_0207df88(this->mUnk_30, 0x0A);
+    ((Actor *) &sp40)->func_ov000_0207df88(this->mUnk_30, 0x0A);
 #else
-    func_01ffe6c4(&pActor->mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos, NULL);
-    ((Actor *) pActor)->func_ov000_0207df88(this->mUnk_30, 0x10);
+    func_01ffe6c4(&sp40.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos, NULL);
+    ((Actor *) &sp40)->func_ov000_0207df88(this->mUnk_30, 0x10);
 #endif
 
     if (this->mUnk_0BC == 0x0) {
@@ -379,17 +351,22 @@ void ActorUnkNSSW::func_ov032_021203fc() {
             return;
         }
 
-        fx32 z         = objectSWSW->mPos.z + objectSWSW->mUnk_0EC.vec.z;
-        fx32 x         = objectSWSW->mPos.x + objectSWSW->mUnk_0EC.vec.x;
-        fx32 y         = objectSWSW->mPos.y + objectSWSW->mUnk_0EC.vec.y;
-        stack_28.vec.x = x;
-        stack_28.vec.y = y;
-        stack_28.vec.z = z;
+        fx32 z     = objectSWSW->mPos.z + objectSWSW->mUnk_0EC.vec.z;
+        fx32 x     = objectSWSW->mPos.x + objectSWSW->mUnk_0EC.vec.x;
+        fx32 y     = objectSWSW->mPos.y + objectSWSW->mUnk_0EC.vec.y;
+        sp28.vec.x = x;
+        sp28.vec.y = y;
+        sp28.vec.z = z;
 
-        stack_10 = stack_28;
+        sp10 = sp28;
 
-        VecFx32_Copy(&stack_10.vec, &this->mPos);
-        VecFx32_Copy(&stack_10.vec, &this->mPrevPos);
+        this->mPos.x = sp10.vec.x;
+        this->mPos.y = sp10.vec.y;
+        this->mPos.z = sp10.vec.z;
+
+        this->mPrevPos.x = sp10.vec.x;
+        this->mPrevPos.y = sp10.vec.y;
+        this->mPrevPos.z = sp10.vec.z;
         return;
     }
 
@@ -413,6 +390,7 @@ void ActorUnkNSSW::vfunc_2C(unk32 param1) {
     VecFx32 sp24;
     VecFx32 sp18;
     VecFx32 sp0C;
+
     // VecFx32_Add does not match
     VecFx32_Init(this->mPos.x + this->mUnk_190.vec.x, this->mPos.y + this->mUnk_190.vec.y, this->mPos.z + this->mUnk_190.vec.z,
                  &sp0C);
@@ -439,17 +417,13 @@ void ActorUnkNSSW::func_ov032_02120880() {
     this->Actor::func_ov000_020989e0();
 }
 
-// non-matching
-// eur,usa: regalloc
-// eur1,jp: regalloc + accessing actor in spC
 void ActorUnkNSSW::func_ov032_02120894(unk32 param1) {
-    unk32 oldVal0BC = this->mUnk_0BC;
-    unk32 newVal1A0 = data_ov000_020aecf8;
-    this->mUnk_0BC  = param1;
+    unk32 temp_r5  = this->mUnk_0BC;
+    this->mUnk_0BC = param1;
     this->mTimer.Reset();
-    this->mUnk_1A0 = newVal1A0;
+    this->mUnk_1A0 = data_ov000_020aecf8;
 
-    switch (param1) {
+    switch (this->mUnk_0BC) {
         case 0x0:
             this->mUnk_1A0 = 0x0;
             this->mUnk_18C = 0x0;
@@ -481,7 +455,7 @@ void ActorUnkNSSW::func_ov032_02120894(unk32 param1) {
 
         case 0x5:
             this->mUnk_1A0 = 0x0;
-            if (oldVal0BC == 0x5) {
+            if (temp_r5 == 0x5) {
                 break;
             }
 
@@ -608,6 +582,7 @@ void ActorUnkNSSW::func_ov032_02122b0c(MapObject *mapObject) {
     }
 
     MapObjectId id = mapObject->GetMapObjectId();
+
     // Weird branching, I think that there is a better way
     if (id <= MapObjectId_FSPS) {
         if (id < MapObjectId_FSPS && id != MapObjectId_FLSP) {
@@ -616,20 +591,26 @@ void ActorUnkNSSW::func_ov032_02122b0c(MapObject *mapObject) {
     } else if (id > MapObjectId_GTTN || id != MapObjectId_GTTN) {
         return;
     }
+
     this->mUnk_19D = false;
     this->func_ov032_02120894(0x5);
 }
 #endif
 
-// non-matching
 void ActorUnkNSSW::func_ov032_02120c64(MapObjectUnkSWSW *param1) {
     if (this->mUnk_0BC != 0x4) {
         return;
     }
 
     VecFx32 vec = param1->mPos;
-    VecFx32_Copy(&vec, &this->mPrevPos);
-    VecFx32_Copy(&vec, &this->mPos); // non-matching
+
+    this->mPrevPos.x = vec.x;
+    this->mPrevPos.y = vec.y;
+    this->mPrevPos.z = vec.z;
+
+    this->mPos.x = vec.x;
+    this->mPos.y = vec.y;
+    this->mPos.z = vec.z;
 
     this->mUnk_18C = 0x0;
     MtxFx33_InitIdentity(&this->mUnk_150);
@@ -657,7 +638,6 @@ bool ActorUnkNSSW_0E0::vfunc_00(RefStruct ref, unk32 param2) {
 
 bool ActorUnkNSSW_0E0::vfunc_04() {
     this->GetActorPtr<ActorUnkNSSW>()->func_ov032_02120b6c();
-
     return this->Actor_C4::vfunc_04();
 }
 
@@ -679,13 +659,13 @@ void ActorUnkNSSW_104::vfunc_10(const Actor *actor) {
 }
 
 #if IS_JP
-// non-matching
 bool ActorUnkNSSW_138::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
                                 const VecFx32 *param4) {
+    if (ref.moRef.unk_00_u16 & 0x1000) {
+        MapObjRef moRef = ref.moRef;
+        Vec2bCpp pos    = moRef.GetUnk02();
 
-    if ((s32) ref.moRef.unk_00_u16 & 0x1000) {
-        Vec2bCpp vec(0, 0);
-        MapObject *mapObject = gpMapObjManager->func_01fff498(vec);
+        MapObject *mapObject = gpMapObjManager->func_01fff498(pos);
 
         if (mapObject != NULL) {
             this->mUnk_08->func_ov032_02122b0c(mapObject);
