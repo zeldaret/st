@@ -57,7 +57,7 @@ public:
 
     // data_ov000_020b31a8
     /* 00 */ virtual ~UnkStruct_ov000_020b31a8();
-    /* 08 */ virtual void vfunc_08();
+    /* 08 */ virtual void vfunc_08(G3d_Model *param1);
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual UnkSystem5 *vfunc_10();
     /* 14 */ virtual void vfunc_14();
@@ -143,7 +143,7 @@ public:
 
     // data_ov000_020b31f0
     /* 00 */ virtual ~UnkStruct_ov000_020b31f0() override; // In thumb
-    /* 08 */ virtual void vfunc_08() override;
+    /* 08 */ virtual void vfunc_08(G3d_Model *param1) override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 10 */ virtual UnkSystem5 *vfunc_10() override;
     /* 14 */ virtual void vfunc_14() override;
@@ -198,7 +198,7 @@ public:
                           unk32 param4);
 
     /* 00 */ virtual ~ActorUnkZSRS_120_Base();
-    /* 08 */ virtual void vfunc_08();
+    /* 08 */ virtual void vfunc_08(G3d_Model *param1);
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual UnkSystem5 *vfunc_10();
     /* 14 */ virtual void vfunc_14();
@@ -232,7 +232,7 @@ public:
     }
 
     /* 00 */ virtual ~ActorUnkZSRS_120() {}
-    /* 08 */ virtual void vfunc_08();
+    /* 08 */ virtual void vfunc_08(G3d_Model *param1);
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual UnkSystem5 *vfunc_10();
     /* 14 */ virtual void vfunc_14();

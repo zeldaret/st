@@ -296,18 +296,68 @@ static ActorUnkZLSL_AnimationTag data_ov058_02154cdc[] = {
 
 unk32 ActorLokomo::func_ov058_02143438(unk32 param1) {}
 
+extern char data_ov058_02153100[];
+
+inline ActorProfile_Derived1 *GetLokomoProfile(ActorId currentActorId) {
+    ActorProfile_Derived1 *profile;
+    // switch according to M2C but could not match
+    if (currentActorId == ActorId_SYFO) {
+        profile = GET_PROFILE(ActorProfileUnkSYFO);
+    } else if (currentActorId == ActorId_SYSN) {
+        profile = GET_PROFILE(ActorProfileUnkSYSN);
+    } else if (currentActorId == ActorId_SYWA) {
+        profile = GET_PROFILE(ActorProfileUnkSYWA);
+    } else if (currentActorId == ActorId_SYFI) {
+        profile = GET_PROFILE(ActorProfileUnkSYFI);
+    } else if (currentActorId == ActorId_SYDE) {
+        profile = GET_PROFILE(ActorProfileUnkSYDE);
+    } else {
+        profile = NULL;
+    }
+
+    return profile;
+}
+
+inline G3d_Model *GetLokomoModel(ActorId currentActorId, const char *names) {
+    u32 index;
+    // switch according to M2C but could not match
+    if (currentActorId == ActorId_SYFO) {
+        index = 0x0;
+    } else if (currentActorId == ActorId_SYSN) {
+        index = 0x1;
+    } else if (currentActorId == ActorId_SYWA) {
+        index = 0x2;
+    } else if (currentActorId == ActorId_SYFI) {
+        index = 0x3;
+    } else {
+        index = 0x4;
+    }
+    return G3d_GetUnkPtr(GetLokomoProfile(currentActorId)->vfunc_04()->mUnk_50, &names[index * 0x54]);
+}
+
 ActorLokomo::ActorLokomo() :
-    ActorKenzo_Base(NULL, NULL),
-    mUnk_24C(NULL),
-    mUnk_2BC(NULL),
-    mUnk_328(NULL),
-    mUnk_38C(NULL),
-    mUnk_3F0(NULL),
-    mUnk_458(NULL, NULL, NULL),
-    mUnk_4C4(NULL, NULL, NULL, NULL),
-    mUnk_5B0(NULL, NULL, NULL, NULL),
-    mUnk_69C(NULL, NULL, NULL, NULL),
-    mUnk_788(NULL, NULL, NULL, NULL),
+    ActorKenzo_Base(&this->mUnk_24C, (UnkActorFileSystem2 *) GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)
+                                         ->vfunc_04()
+                                         ->func_ov000_02058a24()),
+    mUnk_24C(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100)),
+    mUnk_2BC(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100 + 0x10)),
+    mUnk_328(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100 + 0x20)),
+    mUnk_38C(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100 + 0x30)),
+    mUnk_3F0(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100 + 0x40)),
+    mUnk_458(&mUnk_474, &mUnk_2BC, GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)->vfunc_04()),
+    mUnk_474(NULL, NULL),
+    mUnk_4C4(&mUnk_4F0, &mUnk_550, &mUnk_2BC, GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)->vfunc_04()),
+    mUnk_4F0(NULL, NULL),
+    mUnk_550(NULL, NULL),
+    mUnk_5B0(&mUnk_5DC, &mUnk_63C, &mUnk_24C, GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)->vfunc_04(), 0),
+    mUnk_5DC(NULL, NULL),
+    mUnk_63C(NULL, NULL),
+    mUnk_69C(&mUnk_6C8, &mUnk_708, &mUnk_24C, GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)->vfunc_04(), 0),
+    mUnk_6C8(NULL, NULL),
+    mUnk_708(NULL, NULL),
+    mUnk_788(&mUnk_7B4, &mUnk_7F4, &mUnk_24C, GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)->vfunc_04(), 0),
+    mUnk_7B4(NULL, NULL),
+    mUnk_7F4(NULL, NULL),
     mUnk_888(NULL),
     mUnk_8D4(0x0),
     mUnk_8D8(0x0),
@@ -316,6 +366,7 @@ ActorLokomo::ActorLokomo() :
     mUnk_8F1(true),
     mUnk_8F4(0x3),
     mUnk_8F8(0x3),
+    mUnk_8FE(0x0),
     mUnk_901(false),
     mUnk_902(false),
     mUnk_903(false),
@@ -327,12 +378,19 @@ ActorLokomo::ActorLokomo() :
     mUnk_9B4(0x0),
     mUnk_9B8(0x0),
     mUnk_9BC(0x0),
-    mUnk_9C0(0x0),
-    mUnk_8FE(0x0) {
+    mUnk_9C0(0x0) {
 
-    this->mUnk_4C4.vfunc_08();
-    this->mUnk_4C4.mUnk_0C = this->func_ov058_02143438(0x1);
-    this->mUnk_4C4.vfunc_1C(data_ov058_021546e8, 0x1000, 0x19A, 0x0);
+    bool var = true;
+    if (data_027e09a4->mUnk_00.sceneIndex != 0x26) {
+        var = false;
+    }
+    this->mUnk_904 = var;
+
+    if (!(var & 0xFF)) {
+        this->mUnk_4C4.vfunc_08(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100 + 0x10));
+        this->mUnk_4C4.mUnk_0C = this->func_ov058_02143438(0x1);
+        this->mUnk_4C4.vfunc_1C(data_ov058_021546e8, 0x1000, 0x19A, 0x0);
+    }
 
     this->func_ov058_021470d8();
 

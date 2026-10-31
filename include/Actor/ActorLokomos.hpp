@@ -399,6 +399,14 @@ public:
     // data_ov000_020b3268
 };
 
+class ActorLokomo_5B0 : public UnkStruct_ov000_020b31f0 {
+public:
+    /* 00 (base) */
+    /* 2C */
+
+    ActorLokomo_5B0(UnkSystem5 *param1, UnkSystem5 *param2, ModelRender *param3, UnkActorFileSystem2 *param4, unk32 param5);
+};
+
 class ActorLokomo : public ActorKenzo_Base {
 public:
     /* 000 (base) */
@@ -415,15 +423,28 @@ public:
     /* 454 */ bool mUnk_454;
     /* 455 */ PAD(0x455, 0x458);
     /* 458 */ UnkStruct_ov000_020b31a8 mUnk_458;
-    /* 474 */ PAD(0x474, 0x4C4);
+    /* 474 */ UnkSystem5 mUnk_474;
+    /* 494 */ PAD(0x494, 0x4C4);
     /* 4C4 */ UnkStruct_ov000_020b31f0 mUnk_4C4;
-    /* 4F0 */ PAD(0x4F0, 0x5B0);
-    /* 5B0 */ UnkStruct_ov000_020b31f0 mUnk_5B0;
-    /* 5DC */ PAD(0x5DC, 0x69C);
-    /* 69C */ UnkStruct_ov000_020b31f0 mUnk_69C;
-    /* 6C8 */ PAD(0x6C8, 0x788);
-    /* 788 */ UnkStruct_ov000_020b31f0 mUnk_788;
-    /* 7B4 */ PAD(0x7B4, 0x874);
+    /* 4F0 */ UnkSystem5 mUnk_4F0;
+    /* 510 */ PAD(0x510, 0x550);
+    /* 550 */ UnkSystem5 mUnk_550;
+    /* 570 */ PAD(0x570, 0x5B0);
+    /* 5B0 */ ActorLokomo_5B0 mUnk_5B0;
+    /* 5DC */ UnkSystem5 mUnk_5DC;
+    /* 5FC */ PAD(0x5FC, 0x63C);
+    /* 63C */ UnkSystem5 mUnk_63C;
+    /* 65C */ PAD(0x65C, 0x69C);
+    /* 69C */ ActorLokomo_5B0 mUnk_69C;
+    /* 6C8 */ UnkSystem5 mUnk_6C8;
+    /* 6E8 */ PAD(0x6E8, 0x708);
+    /* 708 */ UnkSystem5 mUnk_708;
+    /* 728 */ PAD(0x728, 0x788);
+    /* 788 */ ActorLokomo_5B0 mUnk_788;
+    /* 7B4 */ UnkSystem5 mUnk_7B4;
+    /* 7D4 */ PAD(0x7D4, 0x7F4);
+    /* 7F4 */ UnkSystem5 mUnk_7F4;
+    /* 814 */ PAD(0x814, 0x874);
     /* 874 */ ActorLokomo_874 mUnk_874;
     /* 87C */ PAD(0x87C, 0x880);
     /* 880 */ bool mUnk_880;
