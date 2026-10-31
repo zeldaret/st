@@ -886,7 +886,6 @@ config.libs = [
     GameLib(
         "Overlay 58",
         [
-            Object("058_Field/Actor/Actor_ov058.cpp"),
             Object("058_Field/Actor/ActorUnkBSTG.cpp"),
             Object("058_Field/Actor/ActorKenzo.cpp"),
             Object("058_Field/Actor/ActorUnkFBRD.cpp"),
@@ -895,7 +894,7 @@ config.libs = [
             Object("058_Field/Actor/ActorUnkKOCH.cpp"),
             Object("058_Field/Actor/ActorUnkKOKO.cpp"),
             Object("058_Field/Actor/ActorUnkNSTN.cpp"),
-            Object("058_Field/Actor/ActorUnkSYDE_SYDL_SYDS_SYFI_SYFO_SYIL_SYIS_SYOL_SYOS_SYSL_SYSN_SYSS_SYWA_SYWL_SYWS.cpp"),
+            Object("058_Field/Actor/ActorLokomos.cpp"),
             Object("058_Field/Actor/ActorUnkTMNA.cpp"),
             Object("058_Field/Actor/ActorUnkTMNC.cpp"),
             Object("058_Field/Actor/ActorUnkWPBD.cpp"),

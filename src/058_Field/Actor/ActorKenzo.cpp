@@ -176,8 +176,8 @@ void ActorKenzo::Update() {
     this->vfunc_10C();
 }
 
-bool ActorKenzo::vfunc_5C() {
-    bool retValue = this->Actor_Derived1::vfunc_5C();
+bool ActorKenzo::vfunc_5C(unk32 param1, unk32 param2) {
+    bool retValue = this->Actor_Derived1::vfunc_5C(param1, param2);
 
     if (retValue && (this->mUnk_5C.mParams[2] == 0x1 ||
                      (this->mUnk_5C.mParams[2] == 0x0 && this->Actor_Derived1::func_ov000_020a8dd0()))) {

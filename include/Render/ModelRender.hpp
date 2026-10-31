@@ -76,6 +76,7 @@ public:
     void func_ov000_02057d9c();
     void func_ov000_0209a7b8(void *param1, UnkSystem4_UnkCallback param2);
     void func_ov000_02057c98(UnkSystem5 *param1);
+    void func_ov000_02057cc8();
     void func_ov000_02057cf4();
 };
 

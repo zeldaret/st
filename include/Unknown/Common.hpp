@@ -886,6 +886,7 @@ struct UnkStruct_StackTitleScreen {
 };
 
 class MapObject;
+class Actor;
 
 class MapObject_UnkStruct1 {
 public:
@@ -904,7 +905,7 @@ public:
     };
     /* 08 */
 
-    // MapObject_UnkStruct1(); // func_ov000_02073194 & func_ov000_020731c4
+    // MapObject_UnkStruct1(Actor *param1); // func_ov000_02073194 & func_ov000_020731c4
 
     // data_ov000_020b2290
     /* 00 */ virtual void vfunc2_00();
@@ -917,11 +918,11 @@ class MapObject_UnkStruct1_Derived1 : public MapObject_UnkStruct1 {
 public:
     /* 00 (base) */
     /* 08 */ unk16 mUnk_48;
-    /* 0A */ s16 mUnk_4A;
+    /* 0A */ UnkAngleStruct mUnk_4A;
     /* 0C */ VecFx32 mUnk_4C;
     /* 18 */ bool mUnk_58;
     /* 19 */ unk8 mUnk_59;
-    /* 1A */ s16 mUnk_5A;
+    /* 1A */ UnkAngleStruct mUnk_5A;
     /* 1C */ VecFx32 mUnk_5C;
     /* 28 */
 

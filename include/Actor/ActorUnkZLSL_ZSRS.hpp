@@ -64,7 +64,7 @@ public:
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4);
     /* 20 */ virtual void vfunc_20();
-    /* 24 */ virtual void vfunc_24();
+    /* 24 */ virtual void vfunc_24(unk32 param1);
     /* 28 */ virtual UnkStruct_PlayerGet_50 *vfunc_28();
     /* 2C */ virtual void vfunc_2C();
     /* 30 */ virtual s8 vfunc_30();
@@ -205,7 +205,7 @@ public:
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4);
     /* 20 */ virtual void vfunc_20();
-    /* 24 */ virtual void vfunc_24();
+    /* 24 */ virtual void vfunc_24(unk32 param1);
     /* 28 */ virtual UnkStruct_PlayerGet_50 *vfunc_28();
     /* 2C */ virtual void vfunc_2C();
     /* 30 */ virtual s8 vfunc_30();
@@ -239,7 +239,7 @@ public:
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4);
     /* 20 */ virtual void vfunc_20();
-    /* 24 */ virtual void vfunc_24();
+    /* 24 */ virtual void vfunc_24(unk32 param1);
     /* 28 */ virtual UnkStruct_PlayerGet_50 *vfunc_28();
     /* 2C */ virtual void vfunc_2C();
     /* 30 */ virtual s8 vfunc_30();

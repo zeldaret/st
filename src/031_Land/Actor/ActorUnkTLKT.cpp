@@ -43,7 +43,7 @@ void ActorUnkTLKT::vfunc_24() {
 }
 
 void ActorUnkTLKT::vfunc_58() {
-    if (!data_027e09b8->func_ov000_020732ec(this->mUnk_04)) {
+    if (!data_027e09b8->func_ov000_020732ec((unk32) this->mUnk_04)) {
         return;
     }
     this->vfunc_60(ActorUnkTLKTState_2);
@@ -53,7 +53,7 @@ void ActorUnkTLKT::func_ov031_020e4274() {
     if (data_027e0d34->func_ov031_020d9758()) {
         return;
     }
-    data_027e09b8->func_ov000_020732fc(this->mUnk_04);
+    data_027e09b8->func_ov000_020732fc((unk32) this->mUnk_04);
 }
 
 void ActorUnkTLKT::vfunc_64() {

@@ -15,7 +15,7 @@
 
 class UnkStruct_ov063_02163910 : public ActorUnkTLKT_9C_Base {
 public:
-    UnkStruct_ov063_02163910(void *param1);
+    UnkStruct_ov063_02163910(Actor *param1);
 
     /* 00 */ virtual void vfunc2_00() override;
     /* 04 */ virtual void vfunc2_04() override;

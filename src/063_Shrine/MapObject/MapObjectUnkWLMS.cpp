@@ -64,8 +64,8 @@ MapObjectProfileUnkWLMS::MapObjectProfileUnkWLMS() :
     SET_FLAG2(mUnk_1E, 0);
 }
 
-UnkStruct_ov063_02163910::UnkStruct_ov063_02163910(void *param1) {
-    mUnk_04 = (uintptr_t) param1;
+UnkStruct_ov063_02163910::UnkStruct_ov063_02163910(Actor *param1) {
+    mUnk_04 = (unk32) param1;
 }
 
 struct UnkStruct_ov063_02163910_04 {
@@ -96,7 +96,7 @@ MapObjectUnkWLMS::MapObjectUnkWLMS() :
 #if IS_JP || IS_EUR1
     mUnk_31F(false),
 #endif
-    mUnk_320(this) {
+    mUnk_320((Actor *) this) {
     mUnk_10         = GET_PROFILE_D4(MapObjectProfileUnkWLMS);
     mUnk_D0.mUnk_1C = 0x2000;
     mUnk_316        = -1;

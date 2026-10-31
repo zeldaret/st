@@ -9,6 +9,8 @@
 class ModelRender_ov000_020b1a1c : public ModelRender {
 public:
     /* 00 (base) */
+    /* 60 */
+
     ModelRender_ov000_020b1a1c(G3d_Model *pModel);
 
     // data_ov000_020b1a1c

@@ -37,7 +37,7 @@ void MapObjectDoorTouch::vfunc_40(void) {
 }
 
 void MapObjectDoorTouch::vfunc_44(void) {
-    unk32 local_c = *(u32 *) &this->mRef;
+    RefStruct local_c = this->mRef;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x147, &this->mPos, 0);
 }
 

@@ -177,7 +177,7 @@ void MapObjectUnkSWCR::vfunc_08(void) {
             break;
         case MapObjectUnkSWCR_168_4:
         case MapObjectUnkSWCR_168_7: {
-            unk32 stack = *(u32 *) &this->mRef;
+            RefStruct stack = this->mRef;
             data_027e09a8->func_ov000_02071d34(&stack, 0x117, &mPos, 0);
             mUnk_A0.func_01ffc3b4();
             break;

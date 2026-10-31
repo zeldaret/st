@@ -30,7 +30,7 @@ src/058_Field/Actor/ActorUnkNSTN.cpp:
     .data       start:0x021562fc end:0x02156410
     .bss        start:0x02157d70 end:0x02157da4
 
-src/058_Field/Actor/ActorUnkSYDE_SYDL_SYDS_SYFI_SYFO_SYIL_SYIS_SYOL_SYOS_SYSL_SYSN_SYSS_SYWA_SYWL_SYWS.cpp:
+src/058_Field/Actor/ActorLokomos.cpp:
     .text       start:0x02144970 end:0x02149b34
     .init       start:0x02155318 end:0x021556e8
     .ctor       start:0x02155e70 end:0x02155e74

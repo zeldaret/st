@@ -1,11 +1,10 @@
 #pragma once
 
 #include "Actor/Actor.hpp"
+#include "Actor/ActorLokomos.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "ActorCharacter.hpp"
 #include "ActorSpinut.hpp"
 #include "ActorUnkZLSL_ZSRS.hpp"
-#include "Actor_ov058.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -45,7 +44,7 @@ public:
     /* 048 */ virtual bool vfunc_48(unk32 param1) override;
     /* 054 */ virtual void vfunc_54(unk32 param1) override;
     /* 058 */ virtual void SetState(ActorState state) override;
-    /* 05C */ virtual bool vfunc_5C() override;
+    /* 05C */ virtual bool vfunc_5C(unk32 param1, unk32 param2) override;
     /* 07C */ virtual unk32 vfunc_7C(unk32 param1) override;
     /* 080 */ virtual unk32 vfunc_80(unk32 param1, unk32 param2) override;
     /* 09C */ virtual bool vfunc_9C() override;

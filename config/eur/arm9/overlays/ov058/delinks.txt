@@ -30,13 +30,11 @@ src/058_Field/Actor/ActorUnkNSTN.cpp:
     .data       start:0x021545bc end:0x021546d0
     .bss        start:0x02156030 end:0x0215607c
 
-src/058_Field/Actor/Actor_ov058.cpp:
-    .data       start:0x02154a80 end:0x02154b9c
-
-src/058_Field/Actor/ActorUnkSYDE_SYDL_SYDS_SYFI_SYFO_SYIL_SYIS_SYOL_SYOS_SYSL_SYSN_SYSS_SYWA_SYWL_SYWS.cpp:
+src/058_Field/Actor/ActorLokomos.cpp:
     .text       start:0x02142d90 end:0x02147ef0
     .init       start:0x021535d8 end:0x021539a8
     .ctor       start:0x02154130 end:0x02154134
+    .data       start:0x021546d0 end:0x02154ebc
     .bss        start:0x0215607c end:0x02156ec8
 
 src/058_Field/Actor/ActorKenzo.cpp:
