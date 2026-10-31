@@ -223,7 +223,8 @@ struct SaveFile_00000_0000_Data_D4C {
     /* 20 */ RabbitFlag rabbitFlags[2];
     /* 28 */ unk16 unk_28;
     /* 2A */ unk16 unk_2A;
-    /* 2C */ unk32 unk_2C;
+    /* 2C */ unk16 unk_2C;
+    /* 2E */ u16 unk_2E;
     /* 30 */ unk32 unk_30;
     /* 34 */ unk32 unk_34;
     /* 38 */ unk32 unk_38;

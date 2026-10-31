@@ -15,13 +15,14 @@ src/066_FldWater/Actor/ActorUnkVCFT.cpp:
     .text       start:0x02158d90 end:0x0215ba58
     .init       start:0x0215d918 end:0x0215d968
     .ctor       start:0x0215dcc4 end:0x0215dcc8
-    .bss        start:0x02162708 end:0x021627f8
+    .bss        start:0x02162708 end:0x021627f0
+    .data       start:0x0215ffa8 end:0x021601f4
 
 src/066_FldWater/Actor/ActorUnkWAWB_WAWS.cpp:
     .text       start:0x0215ba58 end:0x0215bf6c
     .init       start:0x0215d968 end:0x0215d9fc
     .ctor       start:0x0215dcc8 end:0x0215dccc
-    .bss        start:0x021627f8 end:0x021629d0
+    .bss        start:0x021627f0 end:0x021629d0
 
 src/066_FldWater/Actor/ActorUnkWAWA_WAWC.cpp:
     .text       start:0x0215bf6c end:0x0215c444

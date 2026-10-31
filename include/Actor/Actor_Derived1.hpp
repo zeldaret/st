@@ -160,7 +160,7 @@ public:
     /* 74 */ virtual void vfunc_74();
     /* 78 */ virtual void vfunc_78();
     /* 7C */ virtual unk32 vfunc_7C(unk32 param1);
-    /* 80 */ virtual unk32 vfunc_80(unk32 param1, unk32 param2);
+    /* 80 */ virtual s16 vfunc_80(unk32 param1, unk32 param2, unk32 param3);
     /* 84 */ virtual unk32 vfunc_84();
     /* 88 */ virtual bool vfunc_88();
     /* 8C */ virtual bool vfunc_8C();

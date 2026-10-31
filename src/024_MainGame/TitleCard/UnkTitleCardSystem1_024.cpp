@@ -81,7 +81,7 @@ void UnkTitleCardSystem1::func_ov024_020cb284(unk32 param1, unk32 param2) {
 
     UnkMsgDataStruct1 *ptr = (UnkMsgDataStruct1 *) &sp8; // cast is required
     ptr->func_ov000_02067a60(data_ov000_020b504c.mUnk_000, param1);
-    this->mUnk_00C->vfunc_14(ptr->mUnk_00);
+    this->mUnk_00C->vfunc_14((unk32) ptr->mUnk_00);
     Vec2s sp0;
     sp0.x = temp_r6_2;
     sp0.y = temp_r5_3;
