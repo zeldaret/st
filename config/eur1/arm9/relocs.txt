@@ -5817,7 +5817,6 @@ from:0x0203e3e8 kind:load to:0x020440c4 module:main
 from:0x0203f810 kind:load to:0x02150fdd module:overlay(29)
 from:0x0203f814 kind:load to:0x020e0fde module:overlay(20)
 from:0x02041ab4 kind:load to:0x020ef022 module:overlay(22)
-from:0x02041ab8 kind:load to:0x0215f023 module:overlay(62)
 from:0x02042fd0 kind:load to:0x0202bba4 module:main
 from:0x02042fd4 kind:load to:0x0202bbd0 module:main
 from:0x02042fd8 kind:load to:0x0202bbfc module:main
