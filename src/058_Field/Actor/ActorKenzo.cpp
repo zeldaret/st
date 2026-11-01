@@ -339,9 +339,10 @@ s16 ActorKenzo::func_ov058_021488d8() {
 
 // non-matching
 s16 ActorKenzo::vfunc_80(unk32 param1, unk32 param2, unk32 param3) {
-    unk32 params = (u8) (param1 + 1) | (param2 << 8);
-    if (params != 0x301) {
-        if (params == 0x502) {
+    u16 value = ((param1 + 1) & 0xFF) | (param2 << 8);
+
+    if (value != 0x301) {
+        if (value == 0x502) {
             if (this->mUnk_354 == 6) {
                 this->mUnk_354 = this->func_ov058_021488d8();
             }
@@ -350,18 +351,18 @@ s16 ActorKenzo::vfunc_80(unk32 param1, unk32 param2, unk32 param3) {
 
     } else {
         PassengerManager *instance = gpPassengerManager;
+
         if (instance->CanCompleteTrip()) {
             return 0x1;
         }
 
-        unk32 retVal;
         if (instance->IsCaughtByPirates()) {
-            retVal = 2;
-        } else {
-            retVal = 0;
+            return 2;
         }
-        return retVal;
+
+        return 0;
     }
+
     return 0x0;
 }
 
