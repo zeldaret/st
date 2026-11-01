@@ -4,6 +4,7 @@
 #include "Actor/ActorCharacter.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "ActorSpinut.hpp"
+#include "ActorUnkKOKO.hpp"
 #include "ActorUnkTLKT.hpp"
 #include "ActorUnkZLSL_ZSRS.hpp"
 #include "global.h"
@@ -321,6 +322,14 @@ public:
 
 // --- GENERAL ---
 
+enum ActorLokomo_ {
+    ActorLokomo_Gage    = 0,
+    ActorLokomo_Steem   = 1,
+    ActorLokomo_Carben  = 2,
+    ActorLokomo_Embrose = 3,
+    ActorLokomo_Rael    = 4
+};
+
 enum ActorLokomoState_ {
     ActorLokomoState_0  = 0,
     ActorLokomoState_1  = 1,
@@ -424,38 +433,56 @@ public:
     /* 455 */ PAD(0x455, 0x458);
     /* 458 */ UnkStruct_ov000_020b31a8 mUnk_458;
     /* 474 */ UnkSystem5 mUnk_474;
-    /* 494 */ PAD(0x494, 0x4C4);
+    /* 494 */ PAD(0x494, 0x4A0);
+    /* 4A0 */ unk32 mUnk_4A0;
+    /* 4A4 */ PAD(0x4A4, 0x4C4);
     /* 4C4 */ UnkStruct_ov000_020b31f0 mUnk_4C4;
     /* 4F0 */ UnkSystem5 mUnk_4F0;
-    /* 510 */ PAD(0x510, 0x550);
+    /* 510 */ PAD(0x510, 0x51C);
+    /* 51C */ unk32 mUnk_51C;
+    /* 520 */ PAD(0x520, 0x550);
     /* 550 */ UnkSystem5 mUnk_550;
-    /* 570 */ PAD(0x570, 0x5B0);
+    /* 570 */ PAD(0x570, 0x57C);
+    /* 57C */ unk32 mUnk_57C;
+    /* 580 */ PAD(0x580, 0x5B0);
     /* 5B0 */ ActorLokomo_5B0 mUnk_5B0;
     /* 5DC */ UnkSystem5 mUnk_5DC;
-    /* 5FC */ PAD(0x5FC, 0x63C);
+    /* 5FC */ PAD(0x5FC, 0x608);
+    /* 608 */ unk32 mUnk_608;
+    /* 60C */ PAD(0x60C, 0x63C);
     /* 63C */ UnkSystem5 mUnk_63C;
-    /* 65C */ PAD(0x65C, 0x69C);
+    /* 65C */ PAD(0x65C, 0x668);
+    /* 668 */ unk32 mUnk_668;
+    /* 66C */ PAD(0x66C, 0x69C);
     /* 69C */ ActorLokomo_5B0 mUnk_69C;
     /* 6C8 */ UnkSystem5 mUnk_6C8;
-    /* 6E8 */ PAD(0x6E8, 0x708);
+    /* 6E8 */ PAD(0x6E8, 0x6F4);
+    /* 6F4 */ unk32 mUnk_6F4;
+    /* 6F8 */ PAD(0x6F8, 0x708);
     /* 708 */ UnkSystem5 mUnk_708;
-    /* 728 */ PAD(0x728, 0x788);
+    /* 728 */ PAD(0x728, 0x734);
+    /* 734 */ unk32 mUnk_734;
+    /* 738 */ PAD(0x738, 0x788);
     /* 788 */ ActorLokomo_5B0 mUnk_788;
     /* 7B4 */ UnkSystem5 mUnk_7B4;
-    /* 7D4 */ PAD(0x7D4, 0x7F4);
+    /* 7D4 */ PAD(0x7D4, 0x7E0);
+    /* 7E0 */ unk32 mUnk_7E0;
+    /* 7E4 */ PAD(0x7E4, 0x7F4);
     /* 7F4 */ UnkSystem5 mUnk_7F4;
-    /* 814 */ PAD(0x814, 0x874);
+    /* 814 */ PAD(0x814, 0x820);
+    /* 820 */ unk32 mUnk_820;
+    /* 824 */ PAD(0x824, 0x874);
     /* 874 */ ActorLokomo_874 mUnk_874;
     /* 87C */ PAD(0x87C, 0x880);
     /* 880 */ bool mUnk_880;
     /* 881 */ PAD(0x881, 0x884);
     /* 884 */ unk32 mUnk_884;
     /* 888 */ UnkSystem7 mUnk_888;
-    /* 88C */ PAD(0x88C, 0x8D0);
+    /* 88C */ unk32 mUnk_88C;
+    /* 890 */ unk32 mUnk_890;
+    /* 894 */ ActorUnkKOKO_unk mUnk_894[0x5];
     /* 8D0 */ unk32 mUnk_8D0;
-    /* 8D4 */ unk32 mUnk_8D4;
-    /* 8D8 */ unk32 mUnk_8D8;
-    /* 8DC */ unk32 mUnk_8DC;
+    /* 8D4 */ VecFx32Cpp mUnk_8D4;
     /* 8E0 */ unk32 mUnk_8E0;
     /* 8E4 */ unk32 mUnk_8E4;
     /* 8E8 */ unk32 mUnk_8E8;
@@ -464,7 +491,7 @@ public:
     /* 8F1 */ bool mUnk_8F1;
     /* 8F4 */ unk32 mUnk_8F4;
     /* 8F8 */ unk32 mUnk_8F8;
-    /* 8FC */ PAD(0x8FC, 0x8FE);
+    /* 8FC */ unk16 mUnk_8FC;
     /* 8FE */ unk16 mUnk_8FE;
     /* 900 */ bool mUnk_900;
     /* 901 */ bool mUnk_901;
@@ -479,12 +506,8 @@ public:
     /* 974 */ MtxFx43 mUnk_974;
     /* 9A4 */ unk32 mUnk_9A4;
     /* 9A8 */ unk32 mUnk_9A8;
-    /* 9AC */ unk32 mUnk_9AC;
-    /* 9B0 */ unk32 mUnk_9B0;
-    /* 9B4 */ unk32 mUnk_9B4;
-    /* 9B8 */ unk32 mUnk_9B8;
-    /* 9BC */ unk32 mUnk_9BC;
-    /* 9C0 */ unk32 mUnk_9C0;
+    /* 9AC */ VecFx32Cpp mUnk_9AC;
+    /* 9B8 */ VecFx32Cpp mUnk_9B8;
     /* 9C4 */
 
     ActorLokomo();
@@ -531,14 +554,14 @@ public:
     void func_ov058_02144ba0();
     void func_ov058_02145120();
     unk32 func_ov058_021456a4();
-    unk32 func_ov058_021456d8();
+    ActorLokomo_ func_ov058_021456d8();
     void func_ov058_021459b8();
     void func_ov058_02145bd4();
     void func_ov058_02145e94(bool param1);
     void func_ov058_02145ef0();
     void func_ov058_02146070();
-    void func_ov058_02146848();
-    void func_ov058_021468d8();
+    void func_ov058_02146848(VecFx32 *param1, UnkAngleStruct param2);
+    void func_ov058_021468d8(unk32 param1, unk32 param2, unk16 param3);
     void func_ov058_02146984(unk32 param1, unk32 param2);
     void func_ov058_02146c6c();
     unk32 func_ov058_02146ccc();

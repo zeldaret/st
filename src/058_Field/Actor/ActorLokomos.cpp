@@ -4,7 +4,9 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
+#include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
+#include "Unknown/UnkStruct_ov063_021641c8.hpp"
 
 // --- Actor SYOS ---
 DECL_PROFILE(ActorProfileUnkSYOS);
@@ -322,15 +324,15 @@ inline G3d_Model *GetLokomoModel(ActorId currentActorId, const char *names) {
     u32 index;
     // switch according to M2C but could not match
     if (currentActorId == ActorId_SYFO) {
-        index = 0x0;
+        index = ActorLokomo_Gage;
     } else if (currentActorId == ActorId_SYSN) {
-        index = 0x1;
+        index = ActorLokomo_Steem;
     } else if (currentActorId == ActorId_SYWA) {
-        index = 0x2;
+        index = ActorLokomo_Carben;
     } else if (currentActorId == ActorId_SYFI) {
-        index = 0x3;
+        index = ActorLokomo_Embrose;
     } else {
-        index = 0x4;
+        index = ActorLokomo_Rael;
     }
     return G3d_GetUnkPtr(GetLokomoProfile(currentActorId)->vfunc_04()->mUnk_50, &names[index * 0x54]);
 }
@@ -345,23 +347,21 @@ ActorLokomo::ActorLokomo() :
     mUnk_38C(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100 + 0x30)),
     mUnk_3F0(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100 + 0x40)),
     mUnk_458(&mUnk_474, &mUnk_2BC, GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)->vfunc_04()),
-    mUnk_474(NULL, NULL),
+    mUnk_474(&mUnk_4A0, NULL),
     mUnk_4C4(&mUnk_4F0, &mUnk_550, &mUnk_2BC, GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)->vfunc_04()),
-    mUnk_4F0(NULL, NULL),
-    mUnk_550(NULL, NULL),
+    mUnk_4F0(&mUnk_51C, NULL),
+    mUnk_550(&mUnk_57C, NULL),
     mUnk_5B0(&mUnk_5DC, &mUnk_63C, &mUnk_24C, GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)->vfunc_04(), 0),
-    mUnk_5DC(NULL, NULL),
-    mUnk_63C(NULL, NULL),
+    mUnk_5DC(&mUnk_608, NULL),
+    mUnk_63C(&mUnk_668, NULL),
     mUnk_69C(&mUnk_6C8, &mUnk_708, &mUnk_24C, GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)->vfunc_04(), 0),
-    mUnk_6C8(NULL, NULL),
-    mUnk_708(NULL, NULL),
+    mUnk_6C8(&mUnk_6F4, NULL),
+    mUnk_708(&mUnk_734, NULL),
     mUnk_788(&mUnk_7B4, &mUnk_7F4, &mUnk_24C, GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)->vfunc_04(), 0),
-    mUnk_7B4(NULL, NULL),
-    mUnk_7F4(NULL, NULL),
+    mUnk_7B4(&mUnk_7E0, NULL),
+    mUnk_7F4(&mUnk_820, NULL),
     mUnk_888(NULL),
-    mUnk_8D4(0x0),
-    mUnk_8D8(0x0),
-    mUnk_8DC(0x0),
+    mUnk_8D4(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)),
     mUnk_8F0(false),
     mUnk_8F1(true),
     mUnk_8F4(0x3),
@@ -373,12 +373,8 @@ ActorLokomo::ActorLokomo() :
     mUnk_908(0x0),
     mUnk_90C(0x0),
     mUnk_910(0x0),
-    mUnk_9AC(0x0),
-    mUnk_9B0(0x0),
-    mUnk_9B4(0x0),
-    mUnk_9B8(0x0),
-    mUnk_9BC(0x0),
-    mUnk_9C0(0x0) {
+    mUnk_9AC(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)),
+    mUnk_9B8(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)) {
 
     bool var = true;
     if (data_027e09a4->mUnk_00.sceneIndex != 0x26) {
@@ -433,7 +429,7 @@ extern unk32 data_ov058_021561a4[];
 void ActorLokomo::func_ov058_021446b8() {
     unk32 value = this->func_ov058_021456a4();
     switch (this->func_ov058_021456d8()) {
-        case 0x0:
+        case ActorLokomo_Gage:
             this->mUnk_5B0.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x1);
             this->mUnk_5B0.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x1);
             this->mUnk_5B0.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x1);
@@ -450,7 +446,7 @@ void ActorLokomo::func_ov058_021446b8() {
             this->mUnk_5B0.vfunc_38(data_ov058_021561a4[(u32) (value * 0x3C) / 4], 0x1);
             break;
 
-        case 0x1:
+        case ActorLokomo_Steem:
             this->mUnk_5B0.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x1);
             this->mUnk_5B0.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x1);
             this->mUnk_5B0.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x0);
@@ -487,7 +483,7 @@ void ActorLokomo::func_ov058_021446b8() {
 void ActorLokomo::func_ov058_02144ba0() {
     unk32 value = this->func_ov058_021456a4();
     switch (this->func_ov058_021456d8()) {
-        case 0x0:
+        case ActorLokomo_Gage:
             this->mUnk_69C.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x0);
             this->mUnk_69C.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x0);
             this->mUnk_69C.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x0);
@@ -504,7 +500,7 @@ void ActorLokomo::func_ov058_02144ba0() {
             this->mUnk_69C.vfunc_38(data_ov058_021561a4[(u32) (value * 0x3C) / 4], 0x0);
             break;
 
-        case 0x1:
+        case ActorLokomo_Steem:
             this->mUnk_69C.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x0);
             this->mUnk_69C.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x0);
             this->mUnk_69C.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x1);
@@ -541,7 +537,7 @@ void ActorLokomo::func_ov058_02144ba0() {
 void ActorLokomo::func_ov058_02145120() {
     unk32 value = this->func_ov058_021456a4();
     switch (this->func_ov058_021456d8()) {
-        case 0x0:
+        case ActorLokomo_Gage:
             this->mUnk_788.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x0);
             this->mUnk_788.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x0);
             this->mUnk_788.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x0);
@@ -558,7 +554,7 @@ void ActorLokomo::func_ov058_02145120() {
             this->mUnk_788.vfunc_38(data_ov058_021561a4[(u32) (value * 0x3C) / 4], 0x0);
             break;
 
-        case 0x1:
+        case ActorLokomo_Steem:
             this->mUnk_788.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x0);
             this->mUnk_788.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x0);
             this->mUnk_788.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x0);
@@ -593,10 +589,10 @@ void ActorLokomo::func_ov058_02145120() {
 
 unk32 ActorLokomo::func_ov058_021456a4() {
     switch (this->func_ov058_021456d8()) {
-        case 0x0:
+        case ActorLokomo_Gage:
             return 0x1;
 
-        case 0x1:
+        case ActorLokomo_Steem:
             return 0x2;
 
         default:
@@ -606,24 +602,24 @@ unk32 ActorLokomo::func_ov058_021456a4() {
     return 0x0;
 }
 
-unk32 ActorLokomo::func_ov058_021456d8() {
+ActorLokomo_ ActorLokomo::func_ov058_021456d8() {
     if (this->GetActorId() == ActorId_SYFO) {
-        return 0x0;
+        return ActorLokomo_Gage;
     }
 
     if (this->GetActorId() == ActorId_SYSN) {
-        return 0x1;
+        return ActorLokomo_Steem;
     }
 
     if (this->GetActorId() == ActorId_SYWA) {
-        return 0x2;
+        return ActorLokomo_Carben;
     }
 
     if (this->GetActorId() == ActorId_SYFI) {
-        return 0x3;
+        return ActorLokomo_Embrose;
     }
 
-    return 0x4;
+    return ActorLokomo_Rael;
 }
 
 extern u8 data_ov058_02153010[];
@@ -636,7 +632,8 @@ bool ActorLokomo::Init(unk32 param1) {
     this->func_ov058_021456a4();
 
     for (int i = 0; i < 16; ++i) {
-        if (i != 12 || (this->func_ov058_021456d8() == 0x1 && i - 13 > 1) || this->func_ov058_021456d8() == 0x0) {
+        if (i != 12 || (this->func_ov058_021456d8() == ActorLokomo_Steem && i - 13 > 1) ||
+            this->func_ov058_021456d8() == ActorLokomo_Gage) {
             // TODO
             this->mUnk_24C.func_ov000_02057f18(&data_ov058_02153010[i * 0x10]);
         }
@@ -656,10 +653,36 @@ bool ActorLokomo::Init(unk32 param1) {
     return retValue;
 }
 
-// non-matching
 void ActorLokomo::vfunc_54(unk32 param1) {
     this->ActorCharacter::vfunc_54(param1);
-    this->func_ov058_02147aec();
+    bool val = false;
+    if (this->func_ov058_02147aec()) {
+        val = true;
+    }
+
+    if (val && this->mUnk_5C.mParams[2] == 0x3) {
+        ActorUnk_vfunc_B0 stack = ActorUnk_vfunc_B0();
+        stack.mpActor           = this;
+
+        stack.mUnk_0C = this->mUnk_5C.mUnk_20;
+        stack.mUnk_14 = 0x0;
+        stack.mUnk_18 = -0x1;
+        stack.mUnk_1C = -0x1;
+        stack.mUnk_20 = false;
+        stack.mUnk_21 = false;
+        stack.mUnk_32 = 0x1;
+
+        this->GetOffsetPos(&stack.mUnk_34);
+
+        data_027e09b8->func_ov000_02073470(&stack, 0x0);
+    }
+
+    if (this->mUnk_904) {
+        UNSET_FLAG(this->mFlags, ActorFlag_Visible);
+    }
+
+    this->mUnk_88C = 0x8C7;
+    this->mUnk_890 = 0x2;
 }
 
 void ActorLokomo::SetState(ActorState state) {
@@ -722,12 +745,67 @@ void ActorLokomo::Update() {
     this->func_ov058_02145bd4();
 }
 
-// non-matching
-void ActorLokomo::func_ov058_02145bd4() {}
+void ActorLokomo::func_ov058_02145bd4() {
+    if (!GET_FLAG(this->mFlags, ActorFlag_Visible) || this->mUnk_8D4.vec.y == FX_F32_TO_FX32(262144.0f)) {
+        return;
+    }
+
+    data_027e0cec->func_ov000_020a0140(&this->mUnk_888, &this->mUnk_8D4.vec);
+
+    VecFx32Cpp vec(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), -0x4CD);
+
+    func_01ff9638(&vec.vec, this->mAngle.angle_s);
+    VecFx32_Normalize(&vec.vec, &vec.vec);
+
+    this->mUnk_888.func_ov000_020a036c(&vec.vec);
+}
+
 // non-matching
 unk32 ActorLokomo::vfunc_7C(unk32 param1) {}
-// non-matching
-unk32 ActorLokomo::vfunc_80(unk32 param1, unk32 param2) {}
+
+unk32 ActorLokomo::vfunc_80(unk32 param1, unk32 param2) {
+    switch ((u16) ((u8) (param1 + 1) | param2 << 8)) {
+        case 0x201: {
+            u32 retValue;
+            if (data_ov063_021641c8.mUnk_050 != 0x1) {
+                retValue = 0x1;
+            } else {
+                retValue = 0x0;
+            }
+            return (unk16) retValue;
+        }
+
+        case 0x202: {
+            u32 retValue;
+            if (data_ov063_021641c8.mUnk_050 != 0x0) {
+                retValue = 0x1;
+            } else {
+                retValue = 0x0;
+            }
+            return (unk16) retValue;
+        }
+
+        case 0x502: {
+            switch (data_ov063_021641c8.mUnk_050) {
+                default:
+                    return 0x0;
+                case 0x3:
+                    return 0x1;
+                case 0x6:
+                    return 0x2;
+                case 0x4:
+                case 0x5:
+                    return 0x3;
+                case 0x7:
+                    return 0x4;
+            }
+            break;
+        }
+
+        default:
+            return 0;
+    }
+}
 
 void ActorLokomo::func_ov058_02145e94(bool param1) {
     this->mUnk_903 = param1;
@@ -784,8 +862,31 @@ void ActorLokomo::func_ov058_02145ef0() {
     this->mUnk_0B0 &= ~0x10;
     this->mUnk_8F1 = true;
 }
-// non-matching
-void ActorLokomo::func_ov058_02146070() {}
+
+void ActorLokomo::func_ov058_02146070() {
+    if (!this->mUnk_903) {
+        return;
+    }
+
+    u8 param1 = (u8) this->mUnk_5C.mParams[1];
+    if (param1 == 0x0) {
+        return;
+    }
+
+    UnkStruct_027e0960_TableEntry *tableEntry = data_027e0960->func_ov000_0205a390(param1);
+
+    VecFx32Cpp sp04;
+    tableEntry->mTable.GetPtr(0)->vfunc_0C(&sp04.vec);
+    sp04.CopyIn(&this->mPos);
+    this->mAngle = 0x0;
+
+    tableEntry->mTable.GetPtr(1)->vfunc_0C(&sp04.vec);
+    data_027e0ce0->func_ov000_0208bbd4(0x0, &sp04.vec, 0x0);
+    data_027e0cec->func_ov000_020a0110(&this->mUnk_888);
+
+    this->func_ov058_02145bd4();
+}
+
 // non-matching
 void ActorLokomo::vfunc_2C(unk32 param1) {}
 
@@ -882,8 +983,8 @@ void ActorLokomo::vfunc_114() {
     this->func_ov058_02147b98();
     this->mUnk_8EC = 0x14;
 
-    unk32 ret = this->func_ov058_021456d8();
-    if (!(ret != 0x0 && ret != 0x1)) {
+    unk32 lokomo = this->func_ov058_021456d8();
+    if (!(lokomo != ActorLokomo_Gage && lokomo != ActorLokomo_Steem)) {
         val = 0x0;
     }
 
@@ -928,17 +1029,167 @@ void ActorLokomo::vfunc_100() {
     this->ActorCharacter::vfunc_100();
 }
 
+extern unk32 data_ov063_021642fc[];
+
 // non-matching
-void ActorLokomo::vfunc_124() {}
-// non-matching
-void ActorLokomo::func_ov058_02146848() {}
-// non-matching
-void ActorLokomo::func_ov058_021468d8() {}
-// non-matching
+void ActorLokomo::vfunc_124() {
+    unk32 val;
+    UnkStruct_ov063_021641c8 *data = &data_ov063_021641c8;
+    if (this->mUnk_903) {
+        val = this->vfunc_08();
+    } else {
+        val = data->mUnk_148;
+    }
+
+    this->func_ov058_02146984(val, 0x1);
+
+    if (this->mUnk_903) {
+        switch (this->mUnk_8F4) {
+            case 0x1: {
+                if (this->mUnk_900) {
+                    this->mUnk_900 = true;
+                    unk16 sp00;
+                    func_01fff17c(&sp00, data_027e0ce0, NULL);
+                    this->mUnk_8FE = sp00;
+                }
+
+                unk32 var    = func_01ff930c(&this->mUnk_8FE, 0, this->mUnk_8FE);
+                VecFx32 sp20 = *data_027e0ce0->func_01fff148(0x0);
+
+                data_027e0ce0->func_ov000_0208bbd4(0x0, &sp20, this->mAngle);
+
+                this->func_ov058_02146848(&sp20, 0);
+                if (var != 0x0) {
+                    this->mUnk_8F4 = 0x3;
+                }
+                break;
+            }
+
+            case 0x3: {
+                VecFx32 sp14 = *data_027e0ce0->func_01fff148(0x0);
+                data_027e0ce0->func_ov000_0208bbd4(0x0, &sp14, this->mUnk_8FE);
+                this->func_ov058_02146848(&sp14, 0x0);
+                break;
+            }
+
+            case 0x0:
+            default:
+                break;
+        }
+
+        switch (this->mUnk_8F8) {
+            case 0x3:
+                this->mUnk_0B0 |= 0x10;
+                break;
+
+            case 0x1: {
+                unk32 var = func_01ff930c(&this->mAngle.angle_s, 0, this->mUnk_8FC);
+                this->mUnk_0B0 |= 0x10;
+                if (var == 0x0) {
+                    break;
+                }
+
+                this->mUnk_8F8 = 0x3;
+                this->func_ov058_02147b98();
+                break;
+            }
+
+            case 0x0: {
+                VecFx32 sp08;
+                unk32 var_r5 = 1;
+                if (this->Actor_Derived1::func_ov000_020a8ff4(&sp08) != 0) {
+                    var_r5 = func_01ff930c(&this->mAngle.angle_s, func_02016958(&this->mPos, &sp08), this->mUnk_8FC);
+                }
+
+                unk32 var_r6        = 0;
+                this->mUnk_900      = false;
+                ActorLokomo_ lokomo = this->func_ov058_021456d8();
+                if (lokomo == ActorLokomo_Carben || lokomo == ActorLokomo_Rael) {
+                    var_r6 = 1;
+                }
+
+                if (var_r6 != 0) {
+                    this->mUnk_0B0 |= 0x10;
+                } else {
+                    this->mUnk_0B0 &= 0xFFEF;
+                }
+
+                if (var_r5 != 0) {
+                    this->mUnk_8F8 = 0x2;
+                    this->func_ov058_02147b98();
+                }
+
+                break;
+            }
+
+            default:
+                break;
+        }
+    }
+
+    if (this->mUnk_903) {
+        if (data_ov063_021641c8.mUnk_130 == -1) {
+            return;
+        }
+
+        this->func_ov058_021471f4();
+        return;
+    }
+
+    if (data_ov063_021642fc[this->func_ov058_021456d8()] == -1) {
+        return;
+    }
+
+    this->func_ov058_021471f4();
+}
+
+void ActorLokomo::func_ov058_02146848(VecFx32 *param1, UnkAngleStruct param2) {
+    VecFx32 sp04 = *param1;
+
+    sp04.x += SIN(param2.angle_u) * 0xA000;
+    sp04.z += COS(param2.angle_u) * 0xA000;
+
+    data_027e0ce0->func_ov000_0208bde4(0, 0xA, &sp04, 0xB33);
+}
+
+void ActorLokomo::func_ov058_021468d8(unk32 param1, unk32 param2, unk16 param3) {
+    if (!this->mUnk_903) {
+        return;
+    }
+    this->mUnk_8FC = param3;
+
+    if (param2 == 0x0) {
+        if (param1 != 0x0) {
+            if (this->mUnk_8F4 == 0x1 || this->mUnk_8F4 == 0x3) {
+                this->mUnk_8F4 = 0x0;
+            }
+        } else if (this->mUnk_8F4 == 0x0 || this->mUnk_8F4 == 0x2) {
+            this->mUnk_8F4 = 0x1;
+        }
+    }
+
+    if (param1 != 0x0) {
+        if (this->mUnk_8F8 != 0x1 && this->mUnk_8F8 != 0x3) {
+            return;
+        }
+
+        this->mUnk_8F8 = 0x0;
+        this->func_ov058_02147b6c();
+        return;
+    }
+
+    if (this->mUnk_8F8 != 0x0 && this->mUnk_8F8 != 0x2) {
+        return;
+    }
+
+    this->mUnk_8F8 = 0x1;
+    this->func_ov058_02147b6c();
+}
+
 void ActorLokomo::vfunc_128() {}
-// non-matching
+
 void ActorLokomo::vfunc_12C() {}
-// non-matching
+
 void ActorLokomo::vfunc_130() {}
 
 void ActorLokomo::func_ov058_02146984(unk32 param1, unk32 param2) {
@@ -964,8 +1215,26 @@ void ActorLokomo::func_ov058_02146984(unk32 param1, unk32 param2) {
             break;
     }
 }
-// non-matching
-void ActorLokomo::vfunc_98(u32 param1) {}
+
+void ActorLokomo::vfunc_98(u32 param1) {
+    u32 val = param1;
+    if (this->mUnk_904) {
+        if (!(val != 0x0 && val != 0x1 && val != 0x2)) {
+            val = 0x10;
+        }
+    }
+
+    this->mUnk_094.mUnk_0C->mUnk_0C = this->func_ov058_02143438(0x0);
+    this->mUnk_5B0.mUnk_0C          = this->func_ov058_02143438(0x0);
+    this->mUnk_69C.mUnk_0C          = this->func_ov058_02143438(0x0);
+    this->mUnk_788.mUnk_0C          = this->func_ov058_02143438(0x0);
+
+    this->mUnk_5B0.vfunc_1C(data_ov058_02154cdc[val], 0x1000, 0x19A, 0x0);
+    this->mUnk_69C.vfunc_1C(data_ov058_02154cdc[val], 0x1000, 0x19A, 0x0);
+    this->mUnk_788.vfunc_1C(data_ov058_02154cdc[val], 0x1000, 0x19A, 0x0);
+
+    this->func_ov058_02146c6c();
+}
 
 void ActorLokomo::vfunc_134(unk32 param1) {
     this->mUnk_094.mUnk_0C->mUnk_0C = this->func_ov058_02143438(0x0);
@@ -991,9 +1260,9 @@ void ActorLokomo::func_ov058_02146c6c() {
 }
 
 unk32 ActorLokomo::func_ov058_02146ccc() {
-    unk32 val = this->func_ov058_021456d8();
+    unk32 lokomo = this->func_ov058_021456d8();
 
-    if (val == 0x0 || val == 0x1 || val == 0x3) {
+    if (lokomo == ActorLokomo_Gage || lokomo == ActorLokomo_Steem || lokomo == ActorLokomo_Embrose) {
         return 0x5;
     }
 
@@ -1002,11 +1271,11 @@ unk32 ActorLokomo::func_ov058_02146ccc() {
 
 unk32 ActorLokomo::func_ov058_02146cec(unk32 param1) {
     switch (this->func_ov058_021456d8()) {
-        case 0x0:
-        case 0x1:
+        case ActorLokomo_Gage:
+        case ActorLokomo_Steem:
             return 0x6;
 
-        case 0x3:
+        case ActorLokomo_Embrose:
             if (param1 != 0x0) {
                 return 0x9;
             }
@@ -1019,11 +1288,11 @@ unk32 ActorLokomo::func_ov058_02146cec(unk32 param1) {
 
 unk32 ActorLokomo::func_ov058_02146d30(unk32 param1) {
     switch (this->func_ov058_021456d8()) {
-        case 0x0:
-        case 0x1:
+        case ActorLokomo_Gage:
+        case ActorLokomo_Steem:
             return 0x6;
 
-        case 0x3:
+        case ActorLokomo_Embrose:
             if (param1 != 0x0) {
                 return 0xB;
             }
@@ -1138,8 +1407,94 @@ void ActorLokomo::func_ov058_02147760(Actor *param0, G3d_RenderState_ *param1) {
     param1->callbackSegment[6] = 0x2;
     renderObj->mUnk_25         = 0x2;
 }
-// non-matching
-void ActorLokomo::func_ov058_02147860(Actor *param0, G3d_RenderState_ *param1) {}
+
+extern MtxFx43 data_027e0964;
+
+void ActorLokomo::func_ov058_02147860(Actor *param0, G3d_RenderState_ *param1) {
+    ActorLokomo *thiz = (ActorLokomo *) param0;
+
+    G3d_RenderObject *renderObj = param1->renderObj;
+    s32 val                     = param1->flag & 0x10 ? param1->currentBoneMtxId : -1;
+
+    if (val == thiz->mUnk_8D0) {
+
+        if (renderObj->mUnk_25 == 0x2) {
+            param1->callbackSegment[6] = 0x3;
+            renderObj->mUnk_25         = 0x3;
+        } else {
+
+            if (renderObj->mUnk_25 == 0x3) {
+                MtxFx43 spF0;
+                MtxFx43 spC0;
+
+                G3d_GetCurrentMtx(&spC0, NULL);
+
+                func_01ffad5c(&spC0, &data_027e0964, &spF0);
+
+                thiz->mUnk_8D4.Set(spF0._30, spF0._31, spF0._32);
+
+                param1->callbackSegment[6] = 0x2;
+                renderObj->mUnk_25         = 0x2;
+            }
+        }
+    }
+
+    if (thiz->func_ov058_021456d8() != ActorLokomo_Carben) {
+        return;
+    }
+
+    if (val == thiz->mUnk_9A4) {
+        if (renderObj->mUnk_25 == 0x2) {
+            param1->callbackSegment[6] = 0x3;
+            renderObj->mUnk_25         = 0x3;
+            return;
+        }
+
+        if (renderObj->mUnk_25 != 0x3) {
+            return;
+        }
+
+        MtxFx43 sp90;
+        MtxFx43 sp60;
+
+        G3d_GetCurrentMtx(&sp60, NULL);
+
+        func_01ffad5c(&sp60, &data_027e0964, &sp90);
+
+        thiz->mUnk_9AC.Set(sp90._30, sp90._31, sp90._32);
+
+        param1->callbackSegment[6] = 0x2;
+        renderObj->mUnk_25         = 0x2;
+
+        return;
+    }
+
+    if (val != thiz->mUnk_9A8) {
+        return;
+    }
+
+    if (renderObj->mUnk_25 == 0x2) {
+        param1->callbackSegment[6] = 0x3;
+        renderObj->mUnk_25         = 0x3;
+        return;
+    }
+
+    if (renderObj->mUnk_25 != 0x3) {
+        return;
+    }
+
+    MtxFx43 sp30;
+    MtxFx43 sp00;
+
+    G3d_GetCurrentMtx(&sp00, NULL);
+
+    func_01ffad5c(&sp00, &data_027e0964, &sp30);
+
+    thiz->mUnk_9B8.Set(sp30._30, sp30._31, sp30._32);
+
+    param1->callbackSegment[6] = 0x2;
+    renderObj->mUnk_25         = 0x2;
+}
 
 bool ActorLokomo::vfunc_9C() {
     if (this->GetActorId() == ActorId_SYWA) {

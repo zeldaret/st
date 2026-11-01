@@ -1035,6 +1035,7 @@ public:
     ~UnkSystem7();
 
     void func_ov000_020a0334();
+    void func_ov000_020a036c(VecFx32 *param1);
 };
 
 class UnkSystem7_Derived2 : public UnkSystem7 {

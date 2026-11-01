@@ -73,10 +73,6 @@ struct VecFx32Cpp {
         VecFx32_Copy(&this->vec, &vec->vec);
     }
 
-    void CopyFrom(VecFx32 *vec) {
-        VecFx32_Copy(vec, &this->vec);
-    }
-
     void CopyIn(VecFx32 *vec) {
         VecFx32_Copy(&this->vec, vec);
     }

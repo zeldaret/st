@@ -337,9 +337,8 @@ s16 ActorKenzo::func_ov058_021488d8() {
     return var;
 }
 
-// non-matching
 unk32 ActorKenzo::vfunc_80(unk32 param1, unk32 param2) {
-    unk32 params = (u8) (param1 + 1) | (param2 << 8);
+    unk32 params = (u16) ((u8) (param1 + 1) | param2 << 8);
     if (params != 0x301) {
         if (params == 0x502) {
             if (this->mUnk_354 == 6) {

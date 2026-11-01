@@ -17,6 +17,15 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
+class ActorUnkKOKO_unk {
+public:
+    /* 00 */ PAD(0x00, 0x0C);
+    /* 0C */
+
+    ActorUnkKOKO_unk();  // func_ov058_02141d5c
+    ~ActorUnkKOKO_unk(); // func_ov058_0213f57c
+};
+
 class ActorUnkKOKO : public Actor {
 public:
     /* 00 (base) */
@@ -30,7 +39,6 @@ public:
     void func_ov058_0213f540(void);
     void func_ov058_0213f554(void);
     void func_ov058_0213f568(void);
-    void func_ov058_0213f57c(void);
     void func_ov058_0213f590(void);
     void func_ov058_0213f790(void);
     void func_ov058_0213f874(void);
@@ -81,7 +89,6 @@ public:
     void func_ov058_02141d04(void);
     void func_ov058_02141d0c(void);
     void func_ov058_02141d30(void);
-    void func_ov058_02141d5c(void);
     void func_ov058_02141d70(void);
     void func_ov058_02141d8c(void);
     void func_ov058_02141da8(void);
