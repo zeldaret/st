@@ -16,7 +16,8 @@ src/066_FldWater/Actor/ActorUnkVCFT.cpp:
     .init       start:0x0215d918 end:0x0215d968
     .ctor       start:0x0215dcc4 end:0x0215dcc8
     .bss        start:0x02162708 end:0x021627f0
-    .data       start:0x0215ffa8 end:0x021601f4
+    .data       start:0x0215eef4 end:0x02161d68
+    .rodata     start:0x0215d7d8 end:0x0215d888
 
 src/066_FldWater/Actor/ActorUnkWAWB_WAWS.cpp:
     .text       start:0x0215ba58 end:0x0215bf6c

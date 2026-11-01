@@ -1,4 +1,4 @@
-_ZN21ActorUnkVCFT_328_BaseC2EPPKc kind:function(arm,size=0x30) addr:0x021658a0
+_ZN21ActorUnkVCFT_328_BaseC2EP14UnkDataStruct5 kind:function(arm,size=0x30) addr:0x021658a0
 _ZN21ActorUnkVCFT_328_BaseD1Ev kind:function(arm,size=0x4) addr:0x021658d0
 _ZN21ActorUnkVCFT_328_BaseD0Ev kind:function(arm,size=0x14) addr:0x021658d4
 _ZN21ActorUnkVCFT_328_BaseD2Ev kind:function(arm,size=0x4) addr:0x021658e8

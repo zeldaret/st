@@ -1,4 +1,4 @@
-_ZN21ActorUnkVCFT_328_BaseC2EPPKc kind:function(arm,size=0x30) addr:0x02165880
+_ZN21ActorUnkVCFT_328_BaseC2EP14UnkDataStruct5 kind:function(arm,size=0x30) addr:0x02165880
 _ZN21ActorUnkVCFT_328_BaseD1Ev kind:function(arm,size=0x4) addr:0x021658b0
 _ZN21ActorUnkVCFT_328_BaseD0Ev kind:function(arm,size=0x14) addr:0x021658b4
 _ZN21ActorUnkVCFT_328_BaseD2Ev kind:function(arm,size=0x4) addr:0x021658c8
@@ -420,7 +420,7 @@ data_ov089_021714e8 kind:data(any) addr:0x021714e8
 data_ov089_021714ec kind:data(any) addr:0x021714ec
 data_ov089_02171500 kind:bss addr:0x02171500
 data_ov089_02171504 kind:bss addr:0x02171504
-data_ov089_02171520 kind:bss addr:0x02171520
+data_ov089_02171540 kind:bss addr:0x02171520
 data_ov089_0217154c kind:bss addr:0x0217154c ambiguous
 data_ov089_02171598 kind:bss addr:0x02171598 ambiguous
 data_ov089_021715ec kind:bss addr:0x021715ec ambiguous

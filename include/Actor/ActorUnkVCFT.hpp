@@ -3,6 +3,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorCharacter.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Unknown/Common.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -39,10 +40,10 @@ class ActorUnkVCFT_328_Base {
 public:
     /* 00 (vtable) */
     /* 04 */ unk8 mUnk_04[0x2C];
-    /* 30 */ const char **mUnk_30;
+    /* 30 */ UnkDataStruct5 *mUnk_30;
     /* 34 */
 
-    ActorUnkVCFT_328_Base(const char **param2);
+    ActorUnkVCFT_328_Base(UnkDataStruct5 *param2);
 
     /* 00 */ virtual ~ActorUnkVCFT_328_Base();
     /* 08 */ virtual bool vfunc_08();
@@ -83,7 +84,7 @@ public:
     /* 08 */ virtual bool vfunc_08() override;
 
     void func_ov066_02158eb4(void);
-    void func_ov066_0215ac68(const char **param1);
+    void func_ov066_0215ac68(UnkDataStruct5 *param1);
 
     unk32 func_ov089_02165a34();
 };

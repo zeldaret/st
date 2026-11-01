@@ -6115,7 +6115,7 @@ from:0x0210e510 kind:arm_call_thumb to:0x020b7e94 module:overlay(12)
 from:0x0210e518 kind:arm_call_thumb to:0x020b6520 module:overlays(1,2,6,10,12,14)
 from:0x0210e554 kind:arm_call to:0x0215c81c module:overlays(63,83)
 from:0x0210e55c kind:arm_call to:0x0215d8ec module:overlay(63)
-from:0x0210e564 kind:arm_call to:0x0215c868 module:overlays(63,66)
+from:0x0210e564 kind:arm_call to:0x0215c868 module:overlay(63)
 from:0x0210e56c kind:load to:0x0204a088 module:main
 from:0x0210e570 kind:load to:0x0204a110 module:main
 from:0x0210e578 kind:load to:0x02043e50 module:main

@@ -1399,3 +1399,8 @@ public:
 
     ActorBomb_unk();
 };
+
+struct UnkDataStruct5 {
+    const char *entries[64];
+    u32 numEntries;
+};

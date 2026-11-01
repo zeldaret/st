@@ -375,6 +375,7 @@ __sinit_ov062_0215f084 kind:function(arm,size=0x50) addr:0x0215f084
 .p__sinit_ov062_0215efe4 kind:data(word) addr:0x0215f11c
 .p__sinit_ov062_0215f034 kind:data(word) addr:0x0215f120
 .p__sinit_ov062_0215f084 kind:data(word) addr:0x0215f124
+data_ov062_0215f023 kind:data(any) addr:0x0215f023 ambiguous
 data_ov062_0215f148 kind:data(any) addr:0x0215f148
 data_ov062_0215f16c kind:data(any) addr:0x0215f16c
 data_ov062_0215f1cc kind:data(any) addr:0x0215f1cc
