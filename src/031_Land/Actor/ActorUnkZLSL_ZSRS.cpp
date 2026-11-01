@@ -2037,12 +2037,11 @@ void ActorUnkZLSL::func_ov031_020ee654() {
     }
 }
 
-unk32 ActorUnkZLSL::vfunc_80(unk32 param1, unk32 param2) {
+s16 ActorUnkZLSL::vfunc_80(unk32 param1, unk32 param2, unk32 param3) {
     u16 value = ((param1 + 1) & 0xFF) | (param2 << 8);
 
     switch (value) {
         case 0x201: {
-
             ActorUnkRPMT *actor = (ActorUnkRPMT *) func_02016fbc(ActorId_RPMT, &this->mPos, 0x0);
 
             if (actor != NULL) {

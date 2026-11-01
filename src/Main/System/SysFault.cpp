@@ -23,7 +23,7 @@ struct struct_aStack_2d8 {
     struct_aStack_2d8();
     void func_ov000_020685cc();
     void func_ov000_0206869c();
-    void func_ov000_020686a4(int);
+    void func_ov000_020686a4(void *);
     void func_ov000_02068fec();
     void func_ov000_0206878c();
     void func_ov000_020628e4(int, int, int, int, int, int, int, int, int);

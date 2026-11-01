@@ -46,7 +46,7 @@ public:
     /* 058 */ virtual void SetState(ActorState state) override;
     /* 05C */ virtual bool vfunc_5C(unk32 param1, unk32 param2) override;
     /* 07C */ virtual unk32 vfunc_7C(unk32 param1) override;
-    /* 080 */ virtual unk32 vfunc_80(unk32 param1, unk32 param2) override;
+    /* 080 */ virtual s16 vfunc_80(unk32 param1, unk32 param2, unk32 param3) override;
     /* 09C */ virtual bool vfunc_9C() override;
     /* 0A0 */ virtual unk32 vfunc_A0() override;
     /* 0A4 */ virtual void vfunc_A4() override;

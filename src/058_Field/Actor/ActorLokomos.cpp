@@ -763,7 +763,8 @@ void ActorLokomo::func_ov058_02145bd4() {
 // non-matching
 unk32 ActorLokomo::vfunc_7C(unk32 param1) {}
 
-unk32 ActorLokomo::vfunc_80(unk32 param1, unk32 param2) {
+s16 ActorLokomo::vfunc_80(unk32 param1, unk32 param2, unk32 param3) {
+#pragma unused(param3)
     switch ((u16) ((u8) (param1 + 1) | param2 << 8)) {
         case 0x201: {
             u32 retValue;

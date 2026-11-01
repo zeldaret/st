@@ -145,7 +145,7 @@ public:
 
 class UnkStruct_PlayerGet_50 {
 public:
-    /* 00 (base) */ unk16 mUnk_00;
+    /* 00 */ unk16 mUnk_00;
     /* 02 */ unk16 mUnk_02;
     /* 04 */ fx32 mUnk_04;
     /* 08 */ fx32 mUnk_08;

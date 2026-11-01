@@ -336,7 +336,7 @@ public:
     /* 6C */ virtual void vfunc_6C() override;
     /* 70 */ virtual void vfunc_70() override;
     /* 7C */ virtual unk32 vfunc_7C(unk32 param1) override;
-    /* 80 */ virtual unk32 vfunc_80(unk32 param1, unk32 param2) override;
+    /* 80 */ virtual s16 vfunc_80(unk32 param1, unk32 param2, unk32 param3) override;
     /* 88 */ virtual bool vfunc_88() override;
     /* 8C */ virtual bool vfunc_8C() override;
     /* 98 */ virtual void vfunc_98(u32 param1) override;
