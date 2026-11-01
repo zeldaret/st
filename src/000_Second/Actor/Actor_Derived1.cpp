@@ -172,7 +172,7 @@ unk32 Actor_Derived1::vfunc_7C(unk32 param1) {
     return 1;
 }
 
-unk32 Actor_Derived1::vfunc_80(unk32 param1, unk32 param2) {
+s16 Actor_Derived1::vfunc_80(unk32 param1, unk32 param2, unk32 param3) {
     return -1;
 }
 

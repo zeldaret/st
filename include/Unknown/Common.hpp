@@ -630,7 +630,7 @@ public:
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10(void *param1);
-    /* 14 */ virtual void vfunc_14(unk32 param1);
+    /* 14 */ virtual void vfunc_14(unk32 param1); //! TODO: fix type (unk32 -> void*)
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C();
     /* 20 */ virtual void vfunc_20();
@@ -1398,4 +1398,9 @@ public:
     /* 0C */
 
     ActorBomb_unk();
+};
+
+struct UnkDataStruct5 {
+    const char *entries[64];
+    u32 numEntries;
 };
