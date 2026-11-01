@@ -44,7 +44,7 @@ public:
     /* 00 (vtable) */
     /* 04 */ UnkSystem5 *mUnk_04;
     /* 08 */ ModelRender *mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
+    /* 0C */ UnkActorFileSystem2 *mUnk_0C;
     /* 10 */ G3d_Model *mUnk_10;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk8 mUnk_18;

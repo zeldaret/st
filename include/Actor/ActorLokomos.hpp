@@ -424,11 +424,14 @@ public:
     /* 2BC */ ActorLokomo_2BC mUnk_2BC;
     /* 31C */ PAD(0x31C, 0x328);
     /* 328 */ ModelRender_ov000_020b1a1c mUnk_328;
-    /* 388 */ PAD(0x388, 0x38C);
+    /* 388 */ bool mUnk_388;
+    /* 389 */ PAD(0x389, 0x38C);
     /* 38C */ ModelRender_ov000_020b1a1c mUnk_38C;
-    /* 3EC */ PAD(0x3EC, 0x3F0);
+    /* 3EC */ bool mUnk_3EC;
+    /* 3ED */ PAD(0x3ED, 0x3F0);
     /* 3F0 */ ModelRender_ov000_020b1a1c mUnk_3F0;
-    /* 450 */ PAD(0x450, 0x454);
+    /* 450 */ bool mUnk_450;
+    /* 451 */ PAD(0x451, 0x454);
     /* 454 */ bool mUnk_454;
     /* 455 */ PAD(0x455, 0x458);
     /* 458 */ UnkStruct_ov000_020b31a8 mUnk_458;
@@ -483,16 +486,14 @@ public:
     /* 894 */ ActorUnkKOKO_unk mUnk_894[0x5];
     /* 8D0 */ unk32 mUnk_8D0;
     /* 8D4 */ VecFx32Cpp mUnk_8D4;
-    /* 8E0 */ unk32 mUnk_8E0;
-    /* 8E4 */ unk32 mUnk_8E4;
-    /* 8E8 */ unk32 mUnk_8E8;
+    /* 8E0 */ VecFx32Cpp mUnk_8E0;
     /* 8EC */ unk32 mUnk_8EC;
     /* 8F0 */ bool mUnk_8F0;
     /* 8F1 */ bool mUnk_8F1;
     /* 8F4 */ unk32 mUnk_8F4;
     /* 8F8 */ unk32 mUnk_8F8;
     /* 8FC */ unk16 mUnk_8FC;
-    /* 8FE */ unk16 mUnk_8FE;
+    /* 8FE */ UnkAngleStruct mUnk_8FE;
     /* 900 */ bool mUnk_900;
     /* 901 */ bool mUnk_901;
     /* 902 */ bool mUnk_902;
@@ -549,7 +550,7 @@ public:
     /* 134 */ virtual void vfunc_134(unk32 param1);
 
     // bold guess
-    unk32 func_ov058_02143438(unk32 param1);
+    UnkActorFileSystem2 *func_ov058_02143438(unk32 param1);
     void func_ov058_021446b8();
     void func_ov058_02144ba0();
     void func_ov058_02145120();
