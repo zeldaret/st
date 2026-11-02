@@ -18,8 +18,6 @@ Actor *ActorProfileUnkSYOS::Create() {
 ActorProfileUnkSYOS::ActorProfileUnkSYOS() :
     ActorProfile_Derived1(ActorId_SYOS, ActorId_SYOS) {}
 
-ActorUnkSYOS::ActorUnkSYOS() {}
-
 // --- Actor SYSS ---
 DECL_PROFILE(ActorProfileUnkSYSS);
 
@@ -29,8 +27,6 @@ Actor *ActorProfileUnkSYSS::Create() {
 
 ActorProfileUnkSYSS::ActorProfileUnkSYSS() :
     ActorProfile_Derived1(ActorId_SYSS, ActorId_SYSS) {}
-
-ActorUnkSYSS::ActorUnkSYSS() {}
 
 // --- Actor SYWS ---
 DECL_PROFILE(ActorProfileUnkSYWS);
@@ -42,8 +38,6 @@ Actor *ActorProfileUnkSYWS::Create() {
 ActorProfileUnkSYWS::ActorProfileUnkSYWS() :
     ActorProfile_Derived1(ActorId_SYWS, ActorId_SYWS) {}
 
-ActorUnkSYWS::ActorUnkSYWS() {}
-
 // --- Actor SYIS ---
 DECL_PROFILE(ActorProfileUnkSYIS);
 
@@ -53,8 +47,6 @@ Actor *ActorProfileUnkSYIS::Create() {
 
 ActorProfileUnkSYIS::ActorProfileUnkSYIS() :
     ActorProfile_Derived1(ActorId_SYIS, ActorId_SYIS) {}
-
-ActorUnkSYIS::ActorUnkSYIS() {}
 
 // --- Actor SYDS ---
 DECL_PROFILE(ActorProfileUnkSYDS);
@@ -66,8 +58,6 @@ Actor *ActorProfileUnkSYDS::Create() {
 ActorProfileUnkSYDS::ActorProfileUnkSYDS() :
     ActorProfile_Derived1(ActorId_SYDS, ActorId_SYDS) {}
 
-ActorUnkSYDS::ActorUnkSYDS() {}
-
 // --- Actor SYOL ---
 DECL_PROFILE(ActorProfileUnkSYOL);
 
@@ -77,8 +67,6 @@ Actor *ActorProfileUnkSYOL::Create() {
 
 ActorProfileUnkSYOL::ActorProfileUnkSYOL() :
     ActorProfile_Derived1(ActorId_SYOL, ActorId_SYOL) {}
-
-ActorUnkSYOL::ActorUnkSYOL() {}
 
 // --- Actor SYSL ---
 DECL_PROFILE(ActorProfileUnkSYSL);
@@ -90,8 +78,6 @@ Actor *ActorProfileUnkSYSL::Create() {
 ActorProfileUnkSYSL::ActorProfileUnkSYSL() :
     ActorProfile_Derived1(ActorId_SYSL, ActorId_SYSL) {}
 
-ActorUnkSYSL::ActorUnkSYSL() {}
-
 // --- Actor SYWL ---
 DECL_PROFILE(ActorProfileUnkSYWL);
 
@@ -102,8 +88,6 @@ Actor *ActorProfileUnkSYWL::Create() {
 ActorProfileUnkSYWL::ActorProfileUnkSYWL() :
     ActorProfile_Derived1(ActorId_SYWL, ActorId_SYWL) {}
 
-ActorUnkSYWL::ActorUnkSYWL() {}
-
 // --- Actor SYIL ---
 DECL_PROFILE(ActorProfileUnkSYIL);
 
@@ -113,8 +97,6 @@ Actor *ActorProfileUnkSYIL::Create() {
 
 ActorProfileUnkSYIL::ActorProfileUnkSYIL() :
     ActorProfile_Derived1(ActorId_SYIL, ActorId_SYIL) {}
-
-ActorUnkSYIL::ActorUnkSYIL() {}
 
 // --- Actor SYDL ---
 DECL_PROFILE(ActorProfileUnkSYDL);
@@ -133,6 +115,10 @@ Actor *ActorProfileUnkSYFO::Create() {
     return new(HeapIndex_2) ActorLokomo();
 }
 
+inline ActorId GetGageModelId() {
+    return data_027e09a4->IsLastSession() ? ActorId_SYOL : ActorId_SYOS;
+}
+
 ActorProfileUnkSYFO::ActorProfileUnkSYFO() :
     ActorProfile_Derived1(ActorId_SYFO) {
     this->mUnk_04.Init(0x0, FX_F32_TO_FX32(0.58f), 0x0, FX_F32_TO_FX32(0.48f));
@@ -141,15 +127,7 @@ ActorProfileUnkSYFO::ActorProfileUnkSYFO() :
     this->mUnk_1A = 0x1B33;
 
     this->vfunc_04()->mUnk_15 = 0x1;
-
-    ActorId id;
-    if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_b_last22) {
-        id = ActorId_SYOL;
-    } else {
-        id = ActorId_SYOS;
-    }
-
-    this->mUnk_24 = id;
+    this->mUnk_24             = GetGageModelId();
 }
 
 // --- Actor SYSN ---
@@ -157,6 +135,10 @@ DECL_PROFILE(ActorProfileUnkSYSN);
 
 Actor *ActorProfileUnkSYSN::Create() {
     return new(HeapIndex_2) ActorLokomo();
+}
+
+inline ActorId GetSteemModelId() {
+    return data_027e09a4->IsLastSession() ? ActorId_SYSL : ActorId_SYSS;
 }
 
 ActorProfileUnkSYSN::ActorProfileUnkSYSN() :
@@ -167,15 +149,7 @@ ActorProfileUnkSYSN::ActorProfileUnkSYSN() :
     this->mUnk_1A = 0x1B33;
 
     this->vfunc_04()->mUnk_15 = 0x1;
-
-    ActorId id;
-    if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_b_last22) {
-        id = ActorId_SYSL;
-    } else {
-        id = ActorId_SYSS;
-    }
-
-    this->mUnk_24 = id;
+    this->mUnk_24             = GetSteemModelId();
 }
 
 // --- Actor SYWA ---
@@ -183,6 +157,10 @@ DECL_PROFILE(ActorProfileUnkSYWA);
 
 Actor *ActorProfileUnkSYWA::Create() {
     return new(HeapIndex_2) ActorLokomo();
+}
+
+inline ActorId GetCarbenModelId() {
+    return data_027e09a4->IsLastSession() ? ActorId_SYWL : ActorId_SYWS;
 }
 
 ActorProfileUnkSYWA::ActorProfileUnkSYWA() :
@@ -193,15 +171,7 @@ ActorProfileUnkSYWA::ActorProfileUnkSYWA() :
     this->mUnk_1A = 0x1B33;
 
     this->vfunc_04()->mUnk_15 = 0x1;
-
-    ActorId id;
-    if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_b_last22) {
-        id = ActorId_SYWL;
-    } else {
-        id = ActorId_SYWS;
-    }
-
-    this->mUnk_24 = id;
+    this->mUnk_24             = GetCarbenModelId();
 }
 
 // --- Actor SYFI ---
@@ -209,6 +179,10 @@ DECL_PROFILE(ActorProfileUnkSYFI);
 
 Actor *ActorProfileUnkSYFI::Create() {
     return new(HeapIndex_2) ActorLokomo();
+}
+
+inline ActorId GetEmbroseModelId() {
+    return data_027e09a4->IsLastSession() ? ActorId_SYIL : ActorId_SYIS;
 }
 
 ActorProfileUnkSYFI::ActorProfileUnkSYFI() :
@@ -219,15 +193,7 @@ ActorProfileUnkSYFI::ActorProfileUnkSYFI() :
     this->mUnk_1A = 0x1B33;
 
     this->vfunc_04()->mUnk_15 = 0x1;
-
-    ActorId id;
-    if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_b_last22) {
-        id = ActorId_SYIL;
-    } else {
-        id = ActorId_SYIS;
-    }
-
-    this->mUnk_24 = id;
+    this->mUnk_24             = GetEmbroseModelId();
 }
 
 // --- Actor SYDE ---
@@ -235,6 +201,10 @@ DECL_PROFILE(ActorProfileUnkSYDE);
 
 Actor *ActorProfileUnkSYDE::Create() {
     return new(HeapIndex_2) ActorLokomo();
+}
+
+inline ActorId GetRaelModelId() {
+    return data_027e09a4->IsLastSession() ? ActorId_SYDL : ActorId_SYDS;
 }
 
 ActorProfileUnkSYDE::ActorProfileUnkSYDE() :
@@ -245,15 +215,7 @@ ActorProfileUnkSYDE::ActorProfileUnkSYDE() :
     this->mUnk_1A = 0x1B33;
 
     this->vfunc_04()->mUnk_15 = 0x1;
-
-    ActorId id;
-    if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_b_last22) {
-        id = ActorId_SYDL;
-    } else {
-        id = ActorId_SYDS;
-    }
-
-    this->mUnk_24 = id;
+    this->mUnk_24             = GetRaelModelId();
 }
 
 // --- GENERAL ---
@@ -323,52 +285,26 @@ UnkActorFileSystem2 *ActorLokomo::func_ov058_02143438(unk32 param1) {
         lokomoId = ActorLokomo_Rael;
     }
 
-    ActorId profileId;
     ActorProfile *profile;
     switch (lokomoId) {
         case ActorLokomo_Gage:
-            if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_b_last22) {
-                profileId = ActorId_SYOL;
-            } else {
-                profileId = ActorId_SYOS;
-            }
-            profile = data_ov000_020b539c_eur.GetProfileFromId(profileId);
+            profile = data_ov000_020b539c_eur.GetProfileFromId(GetGageModelId());
             break;
 
         case ActorLokomo_Steem:
-            if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_b_last22) {
-                profileId = ActorId_SYSL;
-            } else {
-                profileId = ActorId_SYSS;
-            }
-            profile = data_ov000_020b539c_eur.GetProfileFromId(profileId);
+            profile = data_ov000_020b539c_eur.GetProfileFromId(GetSteemModelId());
             break;
 
         case ActorLokomo_Carben:
-            if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_b_last22) {
-                profileId = ActorId_SYWL;
-            } else {
-                profileId = ActorId_SYWS;
-            }
-            profile = data_ov000_020b539c_eur.GetProfileFromId(profileId);
+            profile = data_ov000_020b539c_eur.GetProfileFromId(GetCarbenModelId());
             break;
 
         case ActorLokomo_Embrose:
-            if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_b_last22) {
-                profileId = ActorId_SYIL;
-            } else {
-                profileId = ActorId_SYIS;
-            }
-            profile = data_ov000_020b539c_eur.GetProfileFromId(profileId);
+            profile = data_ov000_020b539c_eur.GetProfileFromId(GetEmbroseModelId());
             break;
 
         case ActorLokomo_Rael:
-            if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_b_last22) {
-                profileId = ActorId_SYDL;
-            } else {
-                profileId = ActorId_SYDS;
-            }
-            profile = data_ov000_020b539c_eur.GetProfileFromId(profileId);
+            profile = data_ov000_020b539c_eur.GetProfileFromId(GetRaelModelId());
             break;
 
         default:
@@ -1766,18 +1702,3 @@ void ActorLokomo_874::vfunc2_04() {}
 
 ActorKenzo_Base_160::~ActorKenzo_Base_160() {}
 inline ActorKenzo_Base::~ActorKenzo_Base() {}
-ActorProfileUnkSYOS::~ActorProfileUnkSYOS() {}
-ActorProfileUnkSYSS::~ActorProfileUnkSYSS() {}
-ActorProfileUnkSYWS::~ActorProfileUnkSYWS() {}
-ActorProfileUnkSYIS::~ActorProfileUnkSYIS() {}
-ActorProfileUnkSYDS::~ActorProfileUnkSYDS() {}
-ActorProfileUnkSYOL::~ActorProfileUnkSYOL() {}
-ActorProfileUnkSYSL::~ActorProfileUnkSYSL() {}
-ActorProfileUnkSYWL::~ActorProfileUnkSYWL() {}
-ActorProfileUnkSYIL::~ActorProfileUnkSYIL() {}
-ActorProfileUnkSYDL::~ActorProfileUnkSYDL() {}
-ActorProfileUnkSYFO::~ActorProfileUnkSYFO() {}
-ActorProfileUnkSYSN::~ActorProfileUnkSYSN() {}
-ActorProfileUnkSYWA::~ActorProfileUnkSYWA() {}
-ActorProfileUnkSYFI::~ActorProfileUnkSYFI() {}
-ActorProfileUnkSYDE::~ActorProfileUnkSYDE() {}

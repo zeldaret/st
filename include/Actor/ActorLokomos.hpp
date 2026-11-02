@@ -12,22 +12,11 @@
 
 // --- Actor SYDL ---
 
-class ActorUnkSYDL : public Actor {
-public:
-    /* 00 (base) */
-    /* 94 */
-
-    ActorUnkSYDL();
-
-    /* 4C */ virtual ~ActorUnkSYDL() override;
-};
-
 class ActorProfileUnkSYDL : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
     ActorProfileUnkSYDL();
-    ~ActorProfileUnkSYDL();
 
     /* 0C */ virtual Actor *Create();
 
@@ -36,22 +25,11 @@ public:
 
 // --- Actor SYOS ---
 
-class ActorUnkSYOS : public Actor {
-public:
-    /* 00 (base) */
-    /* 94 */
-
-    ActorUnkSYOS();
-
-    /* 4C */ virtual ~ActorUnkSYOS() override;
-};
-
 class ActorProfileUnkSYOS : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
     ActorProfileUnkSYOS();
-    ~ActorProfileUnkSYOS();
 
     /* 0C */ virtual Actor *Create();
 
@@ -60,22 +38,11 @@ public:
 
 // --- Actor SYSS ---
 
-class ActorUnkSYSS : public Actor {
-public:
-    /* 00 (base) */
-    /* 94 */
-
-    ActorUnkSYSS();
-
-    /* 4C */ virtual ~ActorUnkSYSS() override;
-};
-
 class ActorProfileUnkSYSS : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
     ActorProfileUnkSYSS();
-    ~ActorProfileUnkSYSS();
 
     /* 0C */ virtual Actor *Create();
 
@@ -84,22 +51,11 @@ public:
 
 // --- Actor SYIL ---
 
-class ActorUnkSYIL : public Actor {
-public:
-    /* 00 (base) */
-    /* 94 */
-
-    ActorUnkSYIL();
-
-    /* 4C */ virtual ~ActorUnkSYIL() override;
-};
-
 class ActorProfileUnkSYIL : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
     ActorProfileUnkSYIL();
-    ~ActorProfileUnkSYIL();
 
     /* 0C */ virtual Actor *Create();
 
@@ -108,22 +64,11 @@ public:
 
 // --- Actor SYWS ---
 
-class ActorUnkSYWS : public Actor {
-public:
-    /* 00 (base) */
-    /* 94 */
-
-    ActorUnkSYWS();
-
-    /* 4C */ virtual ~ActorUnkSYWS() override;
-};
-
 class ActorProfileUnkSYWS : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
     ActorProfileUnkSYWS();
-    ~ActorProfileUnkSYWS();
 
     /* 0C */ virtual Actor *Create();
 
@@ -132,22 +77,11 @@ public:
 
 // --- Actor SYIS ---
 
-class ActorUnkSYIS : public Actor {
-public:
-    /* 00 (base) */
-    /* 94 */
-
-    ActorUnkSYIS();
-
-    /* 4C */ virtual ~ActorUnkSYIS() override;
-};
-
 class ActorProfileUnkSYIS : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
     ActorProfileUnkSYIS();
-    ~ActorProfileUnkSYIS();
 
     /* 0C */ virtual Actor *Create();
 
@@ -156,22 +90,11 @@ public:
 
 // --- Actor SYDS ---
 
-class ActorUnkSYDS : public Actor {
-public:
-    /* 00 (base) */
-    /* 94 */
-
-    ActorUnkSYDS();
-
-    /* 4C */ virtual ~ActorUnkSYDS() override;
-};
-
 class ActorProfileUnkSYDS : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
     ActorProfileUnkSYDS();
-    ~ActorProfileUnkSYDS();
 
     /* 0C */ virtual Actor *Create();
 
@@ -180,22 +103,11 @@ public:
 
 // --- Actor SYOL ---
 
-class ActorUnkSYOL : public Actor {
-public:
-    /* 00 (base) */
-    /* 94 */
-
-    ActorUnkSYOL();
-
-    /* 4C */ virtual ~ActorUnkSYOL() override;
-};
-
 class ActorProfileUnkSYOL : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
     ActorProfileUnkSYOL();
-    ~ActorProfileUnkSYOL();
 
     /* 0C */ virtual Actor *Create();
 
@@ -204,22 +116,11 @@ public:
 
 // --- Actor SYSL ---
 
-class ActorUnkSYSL : public Actor {
-public:
-    /* 00 (base) */
-    /* 94 */
-
-    ActorUnkSYSL();
-
-    /* 4C */ virtual ~ActorUnkSYSL() override;
-};
-
 class ActorProfileUnkSYSL : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
     ActorProfileUnkSYSL();
-    ~ActorProfileUnkSYSL();
 
     /* 0C */ virtual Actor *Create();
 
@@ -228,22 +129,11 @@ public:
 
 // --- Actor SYWL ---
 
-class ActorUnkSYWL : public Actor {
-public:
-    /* 00 (base) */
-    /* 94 */
-
-    ActorUnkSYWL();
-
-    /* 4C */ virtual ~ActorUnkSYWL() override;
-};
-
 class ActorProfileUnkSYWL : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
     ActorProfileUnkSYWL();
-    ~ActorProfileUnkSYWL();
 
     /* 0C */ virtual Actor *Create();
 
@@ -257,7 +147,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkSYFO();
-    ~ActorProfileUnkSYFO();
 
     /* 0C */ virtual Actor *Create();
 
@@ -271,7 +160,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkSYSN();
-    ~ActorProfileUnkSYSN();
 
     /* 0C */ virtual Actor *Create();
 
@@ -285,7 +173,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkSYWA();
-    ~ActorProfileUnkSYWA();
 
     /* 0C */ virtual Actor *Create();
 
@@ -299,7 +186,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkSYFI();
-    ~ActorProfileUnkSYFI();
 
     /* 0C */ virtual Actor *Create();
 
@@ -313,7 +199,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkSYDE();
-    ~ActorProfileUnkSYDE();
 
     /* 0C */ virtual Actor *Create();
 
