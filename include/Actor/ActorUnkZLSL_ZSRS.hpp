@@ -147,6 +147,7 @@ public:
     /* 0C */ virtual void vfunc_0C() override;
     /* 10 */ virtual UnkSystem5 *vfunc_10() override;
     /* 14 */ virtual void vfunc_14() override;
+    // TODO : I'm pretty sure that param2 and param3 (at least) are FX32, see ActorLokomo::func_ov058_02146d74
     /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 28 */ virtual UnkStruct_PlayerGet_50 *vfunc_28() override;

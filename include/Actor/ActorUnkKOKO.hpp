@@ -17,9 +17,11 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkKOKO_unk {
+class ActorUnkKOKO_unk : public UnkSystem7 {
 public:
-    /* 00 */ PAD(0x00, 0x0C);
+    /* 00 (base) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
     /* 0C */
 
     ActorUnkKOKO_unk();  // func_ov058_02141d5c

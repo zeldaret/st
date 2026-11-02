@@ -361,7 +361,7 @@ public:
     /* 820 */ unk32 mUnk_820;
     /* 824 */ PAD(0x824, 0x874);
     /* 874 */ ActorLokomo_874 mUnk_874;
-    /* 87C */ PAD(0x87C, 0x880);
+    /* 87C */ unk32 mUnk_87C;
     /* 880 */ bool mUnk_880;
     /* 881 */ PAD(0x881, 0x884);
     /* 884 */ unk32 mUnk_884;
@@ -453,10 +453,10 @@ public:
     unk32 func_ov058_02146ccc();
     unk32 func_ov058_02146cec(unk32 param1);
     unk32 func_ov058_02146d30(unk32 param1);
-    void func_ov058_02146d74(unk32 param1);
+    void func_ov058_02146d74(unk32 param1, unk32 param2);
     void func_ov058_021470d8();
     void func_ov058_02147148();
-    void func_ov058_021471f4();
+    void func_ov058_021471f4(unk32 param1);
     static void func_ov058_02147760(Actor *param0, G3d_RenderState_ *param1);
     static void func_ov058_02147860(Actor *param0, G3d_RenderState_ *param1);
     bool func_ov058_02147aec();

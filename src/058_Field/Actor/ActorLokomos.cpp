@@ -6,6 +6,7 @@
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
+#include "Unknown/UnkStruct_ov059_021641c8.hpp"
 #include "Unknown/UnkStruct_ov063_021641c8.hpp"
 
 // --- Actor SYOS ---
@@ -636,6 +637,7 @@ ActorLokomo_ ActorLokomo::func_ov058_021456d8() {
 }
 
 extern u8 data_ov058_02153010[];
+extern unk32 data_ov058_02152fac[][5];
 
 // non-matching
 bool ActorLokomo::Init(unk32 param1) {
@@ -647,7 +649,6 @@ bool ActorLokomo::Init(unk32 param1) {
     for (int i = 0; i < 16; ++i) {
         if (i != 12 || (this->func_ov058_021456d8() == ActorLokomo_Steem && i - 13 > 1) ||
             this->func_ov058_021456d8() == ActorLokomo_Gage) {
-            // TODO
             this->mUnk_24C.func_ov000_02057f18(&data_ov058_02153010[i * 0x10]);
         }
     }
@@ -660,7 +661,12 @@ bool ActorLokomo::Init(unk32 param1) {
     this->mUnk_0E4 = &ActorLokomo::func_ov058_02147760;
 
     if (this->mUnk_904) {
-        // TODO
+        unk32 *array           = data_ov058_02152fac[this->func_ov058_021456d8()];
+        ActorUnkKOKO_unk *koko = this->mUnk_894;
+        for (int idx = 0; idx < 5; ++idx) {
+            koko[idx].mUnk_04 = array[idx];
+            koko[idx].mUnk_08 = 0x2;
+        }
     }
 
     return retValue;
@@ -774,7 +780,44 @@ void ActorLokomo::func_ov058_02145bd4() {
 }
 
 // non-matching
-unk32 ActorLokomo::vfunc_7C(unk32 param1) {}
+unk32 ActorLokomo::vfunc_7C(unk32 param1) {
+    switch ((u32) param1) {
+        case 0x0:
+        case 0x1:
+        case 0x2: {
+            if (this->mUnk_8F0 == 0) {
+                this->mUnk_8F0 = true;
+                this->mUnk_8F1 = false;
+
+                stack_ov000_02073578 stack = stack_ov000_02073578();
+                stack.unk_00               = 1;
+                stack.unk_08               = 9;
+                stack.unk_04               = (unk32) & this->mUnk_874;
+                data_027e09b8->func_ov000_02073578(&stack, 1);
+                this->mUnk_87C = param1;
+                return 0;
+            }
+
+            bool var_r0 = false;
+            if (this->mUnk_8F1) {
+                this->mUnk_8F0 = false;
+                var_r0         = true;
+            }
+            return var_r0;
+        }
+
+        case 0xA:
+            data_ov059_021641c8->func_ov063_0215ca28();
+            break;
+
+        default:
+            if (param1 >= 0xF4240U && param1 < 0x1E8480U) {
+                data_ov059_021641c8->func_ov063_0215d5cc(0);
+            }
+            break;
+    }
+    return 1;
+}
 
 s16 ActorLokomo::vfunc_80(unk32 param1, unk32 param2, unk32 param3) {
 #pragma unused(param3)
@@ -1184,11 +1227,12 @@ void ActorLokomo::vfunc_124() {
                     this->mUnk_0B0 &= 0xFFEF;
                 }
 
-                if (var_r5 != 0) {
-                    this->mUnk_8F8 = 0x2;
-                    this->func_ov058_02147b98();
+                if (var_r5 == 0) {
+                    break;
                 }
 
+                this->mUnk_8F8 = 0x2;
+                this->func_ov058_02147b98();
                 break;
             }
 
@@ -1202,15 +1246,16 @@ void ActorLokomo::vfunc_124() {
             return;
         }
 
-        this->func_ov058_021471f4();
+        this->func_ov058_021471f4(data_ov063_021641c8.mUnk_130);
         return;
     }
 
-    if (data_ov063_021642fc[this->func_ov058_021456d8()] == -1) {
+    unk32 param = data_ov063_021642fc[this->func_ov058_021456d8()];
+    if (param == -1) {
         return;
     }
 
-    this->func_ov058_021471f4();
+    this->func_ov058_021471f4(param);
 }
 
 void ActorLokomo::func_ov058_02146848(VecFx32 *param1, UnkAngleStruct param2) {
@@ -1263,20 +1308,19 @@ void ActorLokomo::vfunc_12C() {}
 void ActorLokomo::vfunc_130() {}
 
 void ActorLokomo::func_ov058_02146984(unk32 param1, unk32 param2) {
-#pragma unused(param2)
     switch (param1) {
         case 0x1:
-            this->func_ov058_02146d74(0x4);
+            this->func_ov058_02146d74(0x4, param2);
             this->mUnk_902 = true;
             break;
 
         case 0x2:
-            this->func_ov058_02146d74(0x10);
+            this->func_ov058_02146d74(0x10, param2);
             this->mUnk_902 = false;
             break;
 
         case 0x3:
-            this->func_ov058_02146d74(0x4);
+            this->func_ov058_02146d74(0x4, param2);
             this->mUnk_902 = true;
             break;
 
@@ -1373,8 +1417,66 @@ unk32 ActorLokomo::func_ov058_02146d30(unk32 param1) {
     }
 }
 
-// non-matching
-void ActorLokomo::func_ov058_02146d74(unk32 param1) {}
+void ActorLokomo::func_ov058_02146d74(unk32 param1, unk32 param2) {
+    if (this->mUnk_8EC == param1) {
+        return;
+    }
+
+    unk32 var = 0x19A;
+    if (param2 == 0x0) {
+        var = 0x1000;
+    }
+
+    switch (param1) {
+        case 0x4: {
+            unk32 var4          = 0x0;
+            ActorLokomo_ lokomo = this->func_ov058_021456d8();
+
+            if (lokomo == ActorLokomo_Gage || lokomo == ActorLokomo_Steem || lokomo == ActorLokomo_Embrose) {
+                var4 = 0x1000;
+            }
+
+            if (this->mUnk_903) {
+                ActorUnkZLSL_AnimationTag *data = data_ov058_02154cdc;
+                this->mUnk_5B0.vfunc_1C(data[this->func_ov058_02146ccc()], FX_Mul(var4, 0x1000), var, 0x0);
+                this->mUnk_69C.vfunc_1C(data[this->func_ov058_02146cec(0x0)], 0x0, var, 0x0);
+                this->mUnk_788.vfunc_1C(data[this->func_ov058_02146d30(0x0)], 0x0, var, 0x0);
+            } else {
+                ActorUnkZLSL_AnimationTag *data = data_ov058_02154cdc;
+                this->mUnk_5B0.vfunc_1C(data[this->func_ov058_02146ccc()], 0x1000, var, 0x0);
+                this->mUnk_69C.vfunc_1C(data[this->func_ov058_02146cec(0x0)], 0x1000, var, 0x0);
+                this->mUnk_788.vfunc_1C(data[this->func_ov058_02146d30(0x0)], 0x1000, var, 0x0);
+            }
+
+            break;
+        }
+
+        case 0x10:
+            this->mUnk_5B0.vfunc_1C(data_ov058_02154cdc[10], 0x1000, var, 0x0);
+            this->mUnk_69C.vfunc_1C(data_ov058_02154cdc[10], 0x1000, var, 0x0);
+            this->mUnk_788.vfunc_1C(data_ov058_02154cdc[10], 0x1000, var, 0x0);
+            break;
+
+        default:
+            break;
+    }
+
+    this->func_ov058_02146c6c();
+
+    this->mUnk_8EC = param1;
+    switch (param1) {
+        case 0x4:
+            this->func_ov058_02147148();
+            break;
+
+        case 0x10:
+            this->func_ov058_021470d8();
+            break;
+
+        default:
+            break;
+    }
+}
 
 void ActorLokomo::func_ov058_021470d8() {
     if (!this->mUnk_880 || this->mUnk_884 == 0x0) {
@@ -1407,8 +1509,154 @@ void ActorLokomo::vfunc_A4() {
 
     func_01ff930c(&this->mUnk_0DA, 0x0, 0x16C);
 }
+
+extern VecFx32 data_ov058_02152f10[];
+
 // non-matching
-void ActorLokomo::func_ov058_021471f4() {}
+void ActorLokomo::func_ov058_021471f4(unk32 param1) {
+    switch (param1 >> 16) {
+        case 0x1:
+            if (!this->mUnk_902) {
+                this->func_ov058_02146984(0x1, 0x1);
+            }
+            break;
+
+        case 0x2:
+            if (this->mUnk_902) {
+                this->func_ov058_02146984(0x2, 0x1);
+            }
+            break;
+
+        case 0x3: {
+            if (GET_FLAG(this->mFlags, ActorFlag_Visible)) {
+                break;
+            }
+            SET_FLAG(this->mFlags, ActorFlag_Visible);
+
+            UnkStruct_027e0cec *data = data_027e0cec;
+            for (ActorUnkKOKO_unk *ptr = this->mUnk_894; ptr < this->mUnk_894 + ARRAY_LEN(this->mUnk_894); ++ptr) {
+                data->func_ov000_020a0140(ptr, &this->mPos);
+            }
+
+            VecFx32 *vec = &data_ov058_02152f10[this->func_ov058_021456d8()];
+            for (int idx = 0; idx < 3; ++idx) {
+                data_027e0cec->func_ov000_0209feac(vec->values[idx], &this->mPos, 0x2, 0x0, 0x0);
+            }
+
+            data_027e09a8->func_ov000_02071c90(0x143, &this->mPos, 0x0);
+            break;
+        }
+
+        default:
+            break;
+    }
+
+    if (!this->mUnk_902) {
+        return;
+    }
+
+    switch (this->func_ov058_021456d8()) {
+        case ActorLokomo_Gage: {
+            u32 value                          = ((u32) param1 << 0x10) >> 4;
+            this->mUnk_69C.vfunc_28()->mUnk_08 = value;
+            this->mUnk_788.vfunc_28()->mUnk_08 = value;
+            break;
+        }
+
+        case ActorLokomo_Carben:
+        case ActorLokomo_Rael: {
+            u32 value                          = ((u32) param1 << 0x10) >> 4;
+            this->mUnk_69C.vfunc_28()->mUnk_08 = value;
+            this->mUnk_788.vfunc_28()->mUnk_08 = value;
+            this->mUnk_5B0.vfunc_28()->mUnk_08 = value;
+            break;
+        }
+
+        case ActorLokomo_Steem: {
+            UnkStruct_PlayerGet_50 *pGet50_69C = this->mUnk_69C.vfunc_28();
+            if (pGet50_69C->func_01ff8fa8() == 0x0 && pGet50_69C->mUnk_08 != pGet50_69C->mUnk_0C) {
+                break;
+            }
+
+            if (param1 != 0x1) {
+                break;
+            }
+
+            pGet50_69C->mUnk_04 = 0x3CCD;
+            pGet50_69C->mUnk_08 = 0x0;
+            *(u16 *) &pGet50_69C->mUnk_02 &= 0xFFF7;
+
+            UnkStruct_PlayerGet_50 *pGet50_788 = this->mUnk_788.vfunc_28();
+            pGet50_788->mUnk_04                = 0x3CCD;
+            pGet50_788->mUnk_08                = 0x0;
+            *(u16 *) &pGet50_788->mUnk_02 &= 0xFFF7;
+
+            this->func_ov058_02146c6c();
+            break;
+        }
+
+        case ActorLokomo_Embrose: {
+            u8 arg1                            = (u8) param1;
+            bool var6                          = false;
+            UnkStruct_PlayerGet_50 *pGet50_69C = this->mUnk_69C.vfunc_28();
+            UnkStruct_PlayerGet_50 *pGet50_788 = this->mUnk_788.vfunc_28();
+
+            if (pGet50_69C->func_01ff8fa8() != 0x0 || pGet50_69C->mUnk_08 == pGet50_69C->mUnk_0C) {
+                switch (arg1) {
+                    case 0x1:
+                        this->mUnk_69C.vfunc_1C(data_ov058_02154cdc[this->func_ov058_02146cec(0x0)], 0x199A, 0x1000, 0x0);
+                        pGet50_69C->mUnk_08 = 0x0;
+                        var6                = true;
+                        break;
+
+                    case 0x2:
+                        var6 = true;
+                        this->mUnk_69C.vfunc_1C(data_ov058_02154cdc[this->func_ov058_02146cec(0x1)], 0x199A, 0x1000, 0x0);
+                        pGet50_69C->mUnk_08 = 0x0;
+                        break;
+
+                    default:
+                        pGet50_69C->mUnk_04 = 0x0;
+                        pGet50_69C->mUnk_08 = 0x0;
+                        break;
+                }
+                *(u16 *) &pGet50_69C->mUnk_02 &= 0xFFF7;
+            }
+
+            if (pGet50_788->func_01ff8fa8() != 0x0 || pGet50_788->mUnk_08 == pGet50_788->mUnk_0C) {
+                switch (arg1) {
+                    case 0x1:
+                        this->mUnk_788.vfunc_1C(data_ov058_02154cdc[this->func_ov058_02146d30(0x0)], 0x199A, 0x1000, 0x0);
+                        pGet50_788->mUnk_08 = 0x0;
+                        var6                = true;
+                        break;
+
+                    case 0x2:
+                        var6 = true;
+                        this->mUnk_788.vfunc_1C(data_ov058_02154cdc[this->func_ov058_02146d30(0x1)], 0x199A, 0x1000, 0x0);
+                        pGet50_788->mUnk_08 = 0x0;
+                        break;
+
+                    default:
+                        pGet50_788->mUnk_04 = 0x0;
+                        pGet50_788->mUnk_08 = 0x0;
+                        break;
+                }
+                *(u16 *) &pGet50_788->mUnk_02 &= 0xFFF7;
+            }
+
+            if (!var6) {
+                break;
+            }
+
+            this->func_ov058_02146c6c();
+            break;
+        }
+
+        default:
+            break;
+    }
+}
 
 extern unk32 data_ov063_021641d0[];
 
@@ -1416,7 +1664,6 @@ void ActorLokomo_874::vfunc2_00() {
     data_ov063_021641d0[((ActorLokomo *) this->mUnk_04)->func_ov058_021456d8()] = (unk32) this->mUnk_04;
 }
 
-// non-matching
 void ActorLokomo::func_ov058_02147760(Actor *param0, G3d_RenderState_ *param1) {
     ActorLokomo *thiz = (ActorLokomo *) param0;
 
