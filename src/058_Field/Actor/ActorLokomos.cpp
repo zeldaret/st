@@ -1452,9 +1452,9 @@ void ActorLokomo::func_ov058_02146d74(unk32 param1, unk32 param2) {
         }
 
         case 0x10:
-            this->mUnk_5B0.vfunc_1C(data_ov058_02154cdc[10], 0x1000, var, 0x0);
-            this->mUnk_69C.vfunc_1C(data_ov058_02154cdc[10], 0x1000, var, 0x0);
-            this->mUnk_788.vfunc_1C(data_ov058_02154cdc[10], 0x1000, var, 0x0);
+            this->mUnk_5B0.vfunc_1C(data_ov058_02154cdc[16], 0x1000, var, 0x0);
+            this->mUnk_69C.vfunc_1C(data_ov058_02154cdc[16], 0x1000, var, 0x0);
+            this->mUnk_788.vfunc_1C(data_ov058_02154cdc[16], 0x1000, var, 0x0);
             break;
 
         default:
