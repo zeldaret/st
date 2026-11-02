@@ -98,7 +98,7 @@ _ZN20ActorLobarrierShield19func_ov063_0215b724Ev kind:function(arm,size=0xa8) ad
 _ZNK20ActorLobarrierShield8vfunc_10EP8Cylinder kind:function(arm,size=0x48) addr:0x0215b7cc
 _ZN20ActorLobarrierShield19func_ov063_0215b814E9RefStruct kind:function(arm,size=0x40) addr:0x0215b814
 _ZN20ActorLobarrierShield19func_ov063_0215b854Ev kind:function(arm,size=0x94) addr:0x0215b854
-_ZN20ActorLobarrierShield19func_ov063_0215b8e8EP7VecFx32 kind:function(arm,size=0xb4) addr:0x0215b8e8
+_ZN20ActorLobarrierShield19func_ov063_0215b8e8EPK7VecFx32 kind:function(arm,size=0xb4) addr:0x0215b8e8
 _ZN20ActorLobarrierShield19func_ov063_0215b99cEPS_P29UnkStruct_func_ov063_0215a678 kind:function(arm,size=0xac) addr:0x0215b99c
 _ZN24ActorLobarrierShield_174D0Ev kind:function(arm,size=0x1c) addr:0x0215ba48
 _ZN24UnkStruct_ov063_021631a0D0Ev kind:function(arm,size=0x1c) addr:0x0215ba64
@@ -363,8 +363,8 @@ data_ov063_02162524 kind:data(any) addr:0x02162524
 data_ov063_02162528 kind:data(any) addr:0x02162528 local
 data_ov063_02162538 kind:data(any) addr:0x02162538 local
 data_ov063_02162548 kind:data(any) addr:0x02162548 local
-data_ov063_02162558 kind:data(any) addr:0x02162558
-data_ov063_02162568 kind:data(any) addr:0x02162568
+data_ov063_02162558 kind:data(any) addr:0x02162558 local
+data_ov063_02162568 kind:data(any) addr:0x02162568 local
 data_ov063_02162578 kind:data(any) addr:0x02162578
 data_ov063_02162588 kind:data(any) addr:0x02162588
 data_ov063_02162598 kind:data(any) addr:0x02162598
@@ -423,9 +423,9 @@ data_ov063_02162f58 kind:data(any) addr:0x02162f58 local
 data_ov063_02162fb0 kind:data(any) addr:0x02162fb0 local
 _ZTV14ActorLobarrier kind:data(any) addr:0x02163008
 data_ov063_02163068 kind:data(any) addr:0x02163068 local
-data_ov063_021630c8 kind:data(any) addr:0x021630c8
-data_ov063_021630e0 kind:data(any) addr:0x021630e0
-data_ov063_02163110 kind:data(any) addr:0x02163110
+data_ov063_021630c8 kind:data(any) addr:0x021630c8 local
+data_ov063_021630e0 kind:data(any) addr:0x021630e0 local
+data_ov063_02163110 kind:data(any) addr:0x02163110 local
 _ZTV24ActorLobarrierShield_150 kind:data(any) addr:0x02163140
 _ZTV24ActorLobarrierShield_174 kind:data(any) addr:0x02163158
 _ZTV27ActorProfileLobarrierShield kind:data(any) addr:0x02163174

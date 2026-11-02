@@ -15,11 +15,13 @@ src/063_Shrine/Actor/ActorLobarrier.cpp:
     .rodata     start:0x02162504 end:0x02162538
 
 src/063_Shrine/Actor/ActorLobarrierShield.cpp:
+    complete
     .text       start:0x0215aad8 end:0x0215badc
     .init       start:0x02162780 end:0x02162814
     .ctor       start:0x02162e24 end:0x02162e28
     .data       start:0x021630a8 end:0x02163204
     .bss        start:0x02163c28 end:0x02163d10
+    .rodata     start:0x02162538 end:0x02162558
 
 src/063_Shrine/Actor/ActorUnkRMSBase.cpp:
     complete

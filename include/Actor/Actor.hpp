@@ -386,7 +386,7 @@ public:
         Actor_C4_Base(&param1->mRef, param2) {}
 };
 
-class Actor_Derived2_A8_PTR {
+class Actor_Derived2_A8 {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
@@ -401,7 +401,7 @@ public:
     /* 94 */ unk32 mUnk_94;
     /* 98 */ VecFx32 mUnk_98;
     /* A4 */ const VecFx32 *mUnk_A4;
-    /* A8 */ Actor_Derived2_A8_PTR *mUnk_A8;
+    /* A8 */ const Actor_Derived2_A8 *mUnk_A8;
     /* AC */ unk8 mUnk_AC;
     /* AD */ unk8 mUnk_AD;
     /* AE */

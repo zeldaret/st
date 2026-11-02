@@ -98,7 +98,7 @@ _ZN20ActorLobarrierShield19func_ov063_0215b724Ev kind:function(arm,size=0xa8) ad
 _ZNK20ActorLobarrierShield8vfunc_10EP8Cylinder kind:function(arm,size=0x48) addr:0x0215b8ec
 _ZN20ActorLobarrierShield19func_ov063_0215b814E9RefStruct kind:function(arm,size=0x40) addr:0x0215b934
 _ZN20ActorLobarrierShield19func_ov063_0215b854Ev kind:function(arm,size=0x94) addr:0x0215b974
-_ZN20ActorLobarrierShield19func_ov063_0215b8e8EP7VecFx32 kind:function(arm,size=0xb4) addr:0x0215ba08
+_ZN20ActorLobarrierShield19func_ov063_0215b8e8EPK7VecFx32 kind:function(arm,size=0xb4) addr:0x0215ba08
 _ZN20ActorLobarrierShield19func_ov063_0215b99cEPS_P29UnkStruct_func_ov063_0215a678 kind:function(arm,size=0xac) addr:0x0215babc
 _ZN24ActorLobarrierShield_174D0Ev kind:function(arm,size=0x1c) addr:0x0215bb68
 _ZN24UnkStruct_ov063_021631a0D0Ev kind:function(arm,size=0x1c) addr:0x0215bb84
@@ -364,8 +364,8 @@ data_ov063_02162524 kind:data(any) addr:0x02162688
 data_ov063_02162528 kind:data(any) addr:0x0216268c local
 data_ov063_02162538 kind:data(any) addr:0x0216269c local
 data_ov063_02162548 kind:data(any) addr:0x021626ac local
-data_ov063_021626bc kind:data(any) addr:0x021626bc
-data_ov063_021626cc kind:data(any) addr:0x021626cc
+data_ov063_02162558 kind:data(any) addr:0x021626bc local
+data_ov063_02162568 kind:data(any) addr:0x021626cc local
 data_ov063_021626dc kind:data(any) addr:0x021626dc
 data_ov063_021626ec kind:data(any) addr:0x021626ec
 data_ov063_021626fc kind:data(any) addr:0x021626fc
@@ -424,14 +424,14 @@ data_ov063_02162f58 kind:data(any) addr:0x021630b8 local
 data_ov063_02162fb0 kind:data(any) addr:0x02163110 local
 _ZTV14ActorLobarrier kind:data(any) addr:0x02163168
 data_ov063_02163068 kind:data(any) addr:0x021631c8 local
-data_ov063_02163228 kind:data(any) addr:0x02163228
-data_ov063_02163240 kind:data(any) addr:0x02163240
-data_ov063_02163270 kind:data(any) addr:0x02163270
-data_ov063_021632a8 kind:data(any) addr:0x021632a8
-data_ov063_021632c0 kind:data(any) addr:0x021632c0
-data_ov063_021632dc kind:data(any) addr:0x021632dc
-data_ov063_02163300 kind:data(any) addr:0x02163300
-data_ov063_0216332c kind:data(any) addr:0x0216332c
+data_ov063_021630c8 kind:data(any) addr:0x02163228 local
+data_ov063_021630e0 kind:data(any) addr:0x02163240 local
+data_ov063_02163110 kind:data(any) addr:0x02163270 local
+_ZTV24ActorLobarrierShield_150 kind:data(any) addr:0x021632a0
+_ZTV24ActorLobarrierShield_174 kind:data(any) addr:0x021632b8
+_ZTV27ActorProfileLobarrierShield kind:data(any) addr:0x021632d4
+_ZTV24UnkStruct_ov063_021631a0 kind:data(any) addr:0x021632f8
+_ZTV20ActorLobarrierShield kind:data(any) addr:0x02163324
 _ZTV15ActorUnkRMSBase kind:data(any) addr:0x02163384
 _ZTV19data_ov063_021633f0 kind:data(any) addr:0x021633e8
 data_ov063_02163408 kind:data(any) addr:0x02163408 ambiguous
