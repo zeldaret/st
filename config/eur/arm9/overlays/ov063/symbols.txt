@@ -365,8 +365,8 @@ data_ov063_02162538 kind:data(any) addr:0x02162538 local
 data_ov063_02162548 kind:data(any) addr:0x02162548 local
 data_ov063_02162558 kind:data(any) addr:0x02162558 local
 data_ov063_02162568 kind:data(any) addr:0x02162568 local
-data_ov063_02162578 kind:data(any) addr:0x02162578
-data_ov063_02162588 kind:data(any) addr:0x02162588
+data_ov063_02162578 kind:data(any) addr:0x02162578 local
+data_ov063_02162588 kind:data(any) addr:0x02162588 local
 data_ov063_02162598 kind:data(any) addr:0x02162598
 data_ov063_021625a8 kind:data(any) addr:0x021625a8
 data_ov063_021625b8 kind:data(any) addr:0x021625b8
@@ -433,8 +433,7 @@ _ZTV24UnkStruct_ov063_021631a0 kind:data(any) addr:0x02163198
 _ZTV20ActorLobarrierShield kind:data(any) addr:0x021631c4
 _ZTV15ActorUnkRMSBase kind:data(any) addr:0x02163224
 _ZTV19ActorProfileUnkRMSV kind:data(any) addr:0x02163288
-data_ov063_021632ac kind:data(any) addr:0x021632ac
-data_ov063_021632c4 kind:data(any) addr:0x021632c4
+data_ov063_021632ac kind:data(any) addr:0x021632ac local
 _ZTV24UnkStruct_ov063_021632e4 kind:data(any) addr:0x021632dc
 _ZTV12ActorUnkRMSV kind:data(any) addr:0x02163324
 data_ov063_02163388 kind:data(any) addr:0x02163388

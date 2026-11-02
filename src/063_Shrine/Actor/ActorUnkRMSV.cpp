@@ -6,15 +6,10 @@
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
 
-extern char data_ov063_02162578[0x10]; // = "RMSV";
-extern char data_ov063_02162588[0x10]; // = "RMSV_wall";
+static const char data_ov063_02162578[16] = "RMSV";
+static const char data_ov063_02162588[16] = "RMSV_wall";
 
-// Overlay 0
-
-// Overlay 31
-
-ActorUnkZLSL_AnimationTag data_ov063_021632ac = {0, "RMSV"};
-ActorUnkZLSL_AnimationTag data_ov063_021632c4 = {1, "RMSV"};
+static ActorUnkZLSL_AnimationTag data_ov063_021632ac[] = {{0, "RMSV", 0x00}, {1, "RMSV", 0x00}};
 
 DECL_PROFILE(ActorProfileUnkRMSV);
 
@@ -31,8 +26,8 @@ ActorUnkRMSV::ActorUnkRMSV() :
 
 bool ActorUnkRMSV::Init(unk32 param1) {
     bool res = ActorUnkRMSBase::Init(param1);
-    this->mUnk_158.func_ov000_02099ff8(data_ov063_021632ac, 0x1000);
-    func_ov000_02099e58(&this->mUnk_1D4, data_ov063_021632c4, 0x1000);
+    this->mUnk_158.func_ov000_02099ff8(data_ov063_021632ac[0], 0x1000);
+    func_ov000_02099e58(&this->mUnk_1D4, data_ov063_021632ac[1], 0x1000);
     this->mUnk_1D4.vfunc_3C();
     return res;
 }

@@ -29,11 +29,13 @@ src/063_Shrine/Actor/ActorUnkRMSBase.cpp:
     .data       start:0x02163384 end:0x021633e8
 
 src/063_Shrine/Actor/ActorUnkRMSV.cpp:
+    complete
     .text       start:0x0215bd4c end:0x0215c0b0
     .init       start:0x02162998 end:0x021629e8
     .ctor       start:0x02162fac end:0x02162fb0
     .data       start:0x021633e8 end:0x021634e8
     .bss        start:0x02163e90 end:0x02163f78
+    .rodata     start:0x021626dc end:0x021626fc
 
 src/063_Shrine/Actor/ActorUnkRMSW.cpp:
     .text       start:0x0215c0b0 end:0x0215c2f8
