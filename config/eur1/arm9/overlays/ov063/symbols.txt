@@ -370,12 +370,13 @@ data_ov063_02162578 kind:data(any) addr:0x021626dc local
 data_ov063_02162588 kind:data(any) addr:0x021626ec local
 data_ov063_02162598 kind:data(any) addr:0x021626fc local
 data_ov063_021625a8 kind:data(any) addr:0x0216270c local
-data_ov063_021625b8 kind:data(any) addr:0x0216271c
-data_ov063_021625c8 kind:data(any) addr:0x0216272c
-data_ov063_0216273c kind:data(any) addr:0x0216273c
-data_ov063_0216274c kind:data(any) addr:0x0216274c
-data_ov063_021625f8 kind:data(any) addr:0x0216275c
-data_ov063_02162608 kind:data(any) addr:0x0216276c
+data_ov063_021625b8 kind:data(any) addr:0x0216271c local
+data_ov063_021625c8 kind:data(any) addr:0x0216272c local
+data_ov063_021625d8 kind:data(any) addr:0x0216273c local
+data_ov063_021625e8 kind:data(any) addr:0x0216274c local
+data_ov063_021625f8 kind:data(any) addr:0x0216275c local
+data_ov063_02162608 kind:data(any) addr:0x0216276c local
+data_ov063_0216277c kind:data(any) addr:0x0216277c
 data_ov063_02162788 kind:data(any) addr:0x02162788
 data_ov063_0216278f kind:data(any) addr:0x0216278f
 data_ov063_02162796 kind:data(any) addr:0x02162796
@@ -442,11 +443,9 @@ _ZTV19ActorProfileUnkRMSW kind:data(any) addr:0x02163500
 _ZTV12ActorUnkRMSW kind:data(any) addr:0x02163524
 _ZTV19ActorProfileUnkRMSF kind:data(any) addr:0x02163588
 _ZTV12ActorUnkRMSF kind:data(any) addr:0x021635ac
-data_ov063_02163610 kind:data(any) addr:0x02163610
-data_ov063_02163630 kind:data(any) addr:0x02163630
-data_ov063_02163654 kind:data(any) addr:0x02163654
-data_ov063_02163658 kind:data(any) addr:0x02163658 ambiguous
-data_ov063_021636ac kind:data(any) addr:0x021636ac ambiguous
+data_ov063_021634b0 kind:data(any) addr:0x02163610 local
+_ZTV19ActorProfileUnkRMSD kind:data(any) addr:0x02163628
+_ZTV12ActorUnkRMSD kind:data(any) addr:0x0216364c
 _ZTV19ActorProfileUnkRMSS kind:data(any) addr:0x021636b0
 _ZTV12ActorUnkRMSS kind:data(any) addr:0x021636d4
 _ZTV19data_ov063_02163740 kind:data(any) addr:0x02163738
@@ -512,9 +511,9 @@ _ZN15ProfileInstanceI19ActorProfileUnkRMSWE8sProfileE kind:bss addr:0x02163f88
 _ZGVN15ProfileInstanceI19ActorProfileUnkRMSFE8sProfileE kind:bss addr:0x02164060
 @3726 kind:bss addr:0x02164064 local
 _ZN15ProfileInstanceI19ActorProfileUnkRMSFE8sProfileE kind:bss addr:0x02164070
-data_ov063_02164148 kind:bss addr:0x02164148
-data_ov063_0216414c kind:bss addr:0x0216414c
-data_ov063_02164158 kind:bss addr:0x02164158
+_ZGVN15ProfileInstanceI19ActorProfileUnkRMSDE8sProfileE kind:bss addr:0x02164148
+@5371 kind:bss addr:0x0216414c local
+_ZN15ProfileInstanceI19ActorProfileUnkRMSDE8sProfileE kind:bss addr:0x02164158
 _ZGVN15ProfileInstanceI19ActorProfileUnkRMSSE8sProfileE kind:bss addr:0x02164230
 @3726 kind:bss addr:0x02164234 local
 _ZN15ProfileInstanceI19ActorProfileUnkRMSSE8sProfileE kind:bss addr:0x02164240

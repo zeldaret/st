@@ -530,11 +530,11 @@ from:0x0215c464 kind:load to:0x02164158 module:overlay(63)
 from:0x0215c478 kind:arm_call to:0x02011f3c module:main
 from:0x0215c484 kind:arm_call to:0x0215c4b4 module:overlay(63)
 from:0x0215c498 kind:arm_call to:0x020978ec module:overlay(0)
-from:0x0215c4b0 kind:load to:0x02163630 module:overlay(63)
+from:0x0215c4b0 kind:load to:0x02163628 module:overlay(63) add:0x8
 from:0x0215c4bc kind:arm_call to:0x0215bc1c module:overlay(63)
 from:0x0215c4ec kind:arm_call_thumb to:0x02099a7c module:overlay(0)
 from:0x0215c504 kind:arm_call_thumb to:0x0205778c module:overlay(0)
-from:0x0215c51c kind:load to:0x02163654 module:overlay(63)
+from:0x0215c51c kind:load to:0x0216364c module:overlay(63) add:0x8
 from:0x0215c520 kind:load to:0x02164158 module:overlay(63)
 from:0x0215c524 kind:load to:0x0216343c module:overlay(63) add:0x8
 from:0x0215c534 kind:arm_call to:0x0215bc54 module:overlay(63)

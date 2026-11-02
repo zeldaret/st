@@ -2,8 +2,8 @@
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
 
-extern char data_ov063_021625b8[0x10]; // = "RMSF_wall";
-extern char data_ov063_021625c8[0x10]; // = "RMSF";
+static const char data_ov063_021625c8[16] = "RMSF";
+static const char data_ov063_021625b8[16] = "RMSF_wall";
 
 DECL_PROFILE(ActorProfileUnkRMSF);
 

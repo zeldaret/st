@@ -53,13 +53,16 @@ src/063_Shrine/Actor/ActorUnkRMSF.cpp:
     .ctor       start:0x02162fb4 end:0x02162fb8
     .data       start:0x02163588 end:0x02163610
     .bss        start:0x02164060 end:0x02164148
+    .rodata     start:0x0216271c end:0x0216273c
 
 src/063_Shrine/Actor/ActorUnkRMSD.cpp:
+    complete
     .text       start:0x0215c45c end:0x0215c6a4
     .init       start:0x02162a88 end:0x02162ad8
     .ctor       start:0x02162fb8 end:0x02162fbc
     .data       start:0x02163610 end:0x021636b0
     .bss        start:0x02164148 end:0x02164230
+    .rodata     start:0x0216273c end:0x0216275c
 
 src/063_Shrine/Actor/ActorUnkRMSS.cpp:
     complete
@@ -68,6 +71,7 @@ src/063_Shrine/Actor/ActorUnkRMSS.cpp:
     .ctor       start:0x02162fbc end:0x02162fc0
     .data       start:0x021636b0 end:0x02163738
     .bss        start:0x02164230 end:0x02164318
+    .rodata     start:0x0216275c end:0x0216277c
 
 src/063_Shrine/Actor/ActorUnkRBLS.cpp:
     .text       start:0x0215f3d8 end:0x0215f664
