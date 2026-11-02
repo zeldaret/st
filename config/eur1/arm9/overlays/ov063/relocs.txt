@@ -479,11 +479,11 @@ from:0x0215c0b8 kind:load to:0x02163f88 module:overlay(63)
 from:0x0215c0cc kind:arm_call to:0x02011f3c module:main
 from:0x0215c0d8 kind:arm_call to:0x0215c108 module:overlay(63)
 from:0x0215c0ec kind:arm_call to:0x020978ec module:overlay(0)
-from:0x0215c104 kind:load to:0x02163508 module:overlay(63)
+from:0x0215c104 kind:load to:0x02163500 module:overlay(63) add:0x8
 from:0x0215c110 kind:arm_call to:0x0215bc1c module:overlay(63)
 from:0x0215c140 kind:arm_call_thumb to:0x02099a7c module:overlay(0)
 from:0x0215c158 kind:arm_call_thumb to:0x0205778c module:overlay(0)
-from:0x0215c170 kind:load to:0x0216352c module:overlay(63)
+from:0x0215c170 kind:load to:0x02163524 module:overlay(63) add:0x8
 from:0x0215c174 kind:load to:0x02163f88 module:overlay(63)
 from:0x0215c178 kind:load to:0x0216343c module:overlay(63) add:0x8
 from:0x0215c188 kind:arm_call to:0x0215bc54 module:overlay(63)
