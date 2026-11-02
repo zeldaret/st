@@ -6,11 +6,13 @@
     .bss        start:0x02165980 end:0x02166840 kind:bss align:32
 
 src/063_Shrine/Actor/ActorLobarrier.cpp:
+    complete
     .text       start:0x02159be0 end:0x0215c894
     .init       start:0x02164548 end:0x021645b8
     .ctor       start:0x02164c58 end:0x02164c5c
-    .data       start:0x02164ca0 end:0x02164e88
+    .data       start:0x02164ca0 end:0x02164ee8
     .bss        start:0x02165980 end:0x02165a68
+    .rodata     start:0x0216433c end:0x02164370
 
 src/063_Shrine/Actor/ActorLobarrierShield.cpp:
     .text       start:0x0215c894 end:0x0215d890

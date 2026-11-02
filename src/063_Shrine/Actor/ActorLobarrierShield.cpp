@@ -455,7 +455,7 @@ void ActorLobarrierShield::func_ov063_0215b724() {
 }
 
 // non-matching
-void ActorLobarrierShield::vfunc_10(Cylinder *param1) {
+void ActorLobarrierShield::vfunc_10(Cylinder *param1) const {
     if (this->lobarrier != NULL) {
         this->lobarrier->vfunc_10(param1);
         return;

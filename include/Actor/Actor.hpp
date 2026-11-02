@@ -17,6 +17,7 @@
 
 class UnkStruct_027e09bc;
 class UnkStruct_027e09bc_0C;
+class Actor_9C;
 
 class ActorParams {
 public:
@@ -184,7 +185,7 @@ public:
     /* 40 */ Actor_C4 *mUnk_40;
     /* 44 */ u16 mUnk_44;
     /* 46 */ unk16 mUnk_46;
-    /* 48 */ unk16 mUnk_48;
+    /* 48 */ s16 mUnk_48;
     /* 4A */ u8 mUnk_4A[2];
     /* 4C */ ActorState mState;
     /* 4E */ fx16 mYOffset;
@@ -200,7 +201,7 @@ public:
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
     /* 0C */ virtual unk8 vfunc_0C();
-    /* 10 */ virtual void vfunc_10(Cylinder *param1);
+    /* 10 */ virtual void vfunc_10(Cylinder *param1) const;
     /* 14 */ virtual bool vfunc_14(Cylinder *param1);
     /* 18 */ virtual bool Init(unk32 param1);
     /* 1C */ virtual void Setup();
@@ -411,12 +412,13 @@ public:
     /* 4C */ WEAK virtual ~Actor_Derived2() {}
     /* 54 */ virtual void vfunc_54(unk32 param1);
 
+    unk32 func_ov000_02098d7c(Actor_9C *param2);
+    void func_ov000_02098f34(VecFx32 *);
     void func_ov000_020990c0(Actor_9C *param1, unk32 param2, unk32 param3);
     void func_ov000_020992dc();
     unk32 func_ov000_02099450(UnkStruct_ActorLobarrier_224 *param1, VecFx32 *param2, unk32 param3, u16 param4);
     void func_ov000_020994a0();
     void func_ov000_020997c4(unk32 param1);
-    void func_ov000_02098f34(VecFx32 *);
 };
 
 extern UnkStruct_ov000_020b539c data_ov000_020b539c_eur;
