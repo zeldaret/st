@@ -237,8 +237,7 @@ void ActorShotArrow::func_ov031_020f1a64() {
     if (this->mUnk_5C.mParams[1] == 0x1 || this->mUnk_5C.mParams[1] == 0x4) {
         this->mTimer.Set(0, 120);
     } else {
-        this->mTimer.max             = 60;
-        *(u16 *) &this->mTimer.value = 0; //! TODO: for some reasons volatile don't match here
+        this->mTimer.Set(0, 60);
     }
 
     unk32 value_func_020f2270 = this->func_ov031_020f2270();

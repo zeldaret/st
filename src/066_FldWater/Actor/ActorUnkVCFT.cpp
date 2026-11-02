@@ -1653,18 +1653,14 @@ ActorUnkVCFT::ActorUnkVCFT() :
     mUnk_328(this),
     mUnk_36C(this),
     mUnk_3D0(-1),
-    mUnk_3D4(0) {
-    *(u16 *) &this->mUnk_3D8.value = 0;
-    this->mUnk_3D8.max             = 300;
-
-    *(u16 *) &this->mUnk_3DC.value = 0;
-    this->mUnk_3DC.max             = 120;
-
-    this->mUnk_3E0.SetAlt(0, 0);
-    this->mUnk_3E4 = 0;
-    this->mUnk_3E8 = false;
-    this->mUnk_3E9 = false;
-    this->mUnk_3EA = false;
+    mUnk_3D4(0),
+    mUnk_3D8(0, 300),
+    mUnk_3DC(0, 120),
+    mUnk_3E0(0, 0),
+    mUnk_3E4(0),
+    mUnk_3E8(false),
+    mUnk_3E9(false),
+    mUnk_3EA(false) {
     this->mUnk_0B8 = data_ov066_02160018;
     this->mUnk_3EC = gSaveManager.mUnk_000->unk_B78.unk_2E;
 }
