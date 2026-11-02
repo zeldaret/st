@@ -5,7 +5,7 @@
 #include "nitro/fx.h"
 #include "nitro/math.h"
 
-ActorUnkZLSL_AnimationTag data_ov063_02163740 = {0, "RBLS"};
+static ActorUnkZLSL_AnimationTag data_ov063_02163740 = {0, "RBLS", 0x00};
 
 DECL_PROFILE(ActorProfileUnkRBLS);
 
@@ -22,6 +22,8 @@ ActorUnkRBLS::ActorUnkRBLS() :
     mUnk_F4(&mUnk_94, GET_PROFILE(ActorProfileUnkRBLS)->vfunc_04()) {}
 
 bool ActorUnkRBLS::Init(unk32 param1) {
+#pragma unused(param1)
+
     this->mPos.x -= FX_F32_TO_FX32(0.5f);
     this->mPos.z -= FX_F32_TO_FX32(0.5f);
     this->mPos.y = 0;
@@ -41,7 +43,7 @@ void ActorUnkRBLS::vfunc_24(void) {
 }
 
 void ActorUnkRBLS::vfunc_2C(unk32 param1) {
-    ModelRender *var1 = &this->mUnk_94;
-    VecFx32 *var2     = &this->mPos;
-    var1->vfunc_18(var2);
+#pragma unused(param1)
+
+    this->mUnk_94.vfunc_18(&this->mPos);
 }
