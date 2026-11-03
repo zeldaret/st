@@ -9,6 +9,32 @@
 #include "Unknown/UnkStruct_ov059_021641c8.hpp"
 #include "Unknown/UnkStruct_ov063_021641c8.hpp"
 
+extern MtxFx43 data_027e0964;
+
+// in bss ?
+extern VecFx32 data_ov058_02152f10[];
+extern unk32 data_ov058_02152fac[][5];
+extern char data_ov058_02153100[];
+extern u8 data_ov058_02153010[];
+extern unk32 data_ov058_0215616c[];
+extern unk32 data_ov058_02156170[];
+extern unk32 data_ov058_02156174[];
+extern unk32 data_ov058_02156178[];
+extern unk32 data_ov058_0215617c[];
+extern unk32 data_ov058_02156180[];
+extern unk32 data_ov058_02156184[];
+extern unk32 data_ov058_02156188[];
+extern unk32 data_ov058_0215618c[];
+extern unk32 data_ov058_02156190[];
+extern unk32 data_ov058_02156194[];
+extern unk32 data_ov058_02156198[];
+extern unk32 data_ov058_0215619c[];
+extern unk32 data_ov058_021561a0[];
+extern unk32 data_ov058_021561a4[];
+
+extern unk32 data_ov063_021641d0[];
+extern unk32 data_ov063_021642fc[];
+
 // --- Actor SYOS ---
 DECL_PROFILE(ActorProfileUnkSYOS);
 
@@ -314,8 +340,6 @@ UnkActorFileSystem2 *ActorLokomo::func_ov058_02143438(unk32 param1) {
     return profile->vfunc_04();
 }
 
-extern char data_ov058_02153100[];
-
 inline ActorProfile_Derived1 *GetLokomoProfile(ActorId currentActorId) {
     ActorProfile_Derived1 *profile;
     // switch according to M2C but could not match
@@ -422,22 +446,6 @@ ActorLokomo::ActorLokomo() :
 }
 
 ActorLokomo::~ActorLokomo() {}
-
-extern unk32 data_ov058_0215616c[];
-extern unk32 data_ov058_02156170[];
-extern unk32 data_ov058_02156174[];
-extern unk32 data_ov058_02156178[];
-extern unk32 data_ov058_0215617c[];
-extern unk32 data_ov058_02156180[];
-extern unk32 data_ov058_02156184[];
-extern unk32 data_ov058_02156188[];
-extern unk32 data_ov058_0215618c[];
-extern unk32 data_ov058_02156190[];
-extern unk32 data_ov058_02156194[];
-extern unk32 data_ov058_02156198[];
-extern unk32 data_ov058_0215619c[];
-extern unk32 data_ov058_021561a0[];
-extern unk32 data_ov058_021561a4[];
 
 // non-matching
 void ActorLokomo::func_ov058_021446b8() {
@@ -635,9 +643,6 @@ ActorLokomo_ ActorLokomo::func_ov058_021456d8() {
 
     return ActorLokomo_Rael;
 }
-
-extern u8 data_ov058_02153010[];
-extern unk32 data_ov058_02152fac[][5];
 
 // non-matching
 bool ActorLokomo::Init(unk32 param1) {
@@ -1144,8 +1149,6 @@ void ActorLokomo::vfunc_100() {
     this->ActorCharacter::vfunc_100();
 }
 
-extern unk32 data_ov063_021642fc[];
-
 // non-matching
 void ActorLokomo::vfunc_124() {
     unk32 val;
@@ -1516,8 +1519,6 @@ void ActorLokomo::vfunc_A4() {
     func_01ff930c(&this->mUnk_0DA, 0x0, 0x16C);
 }
 
-extern VecFx32 data_ov058_02152f10[];
-
 // non-matching
 void ActorLokomo::func_ov058_021471f4(unk32 param1) {
     switch (param1 >> 16) {
@@ -1664,8 +1665,6 @@ void ActorLokomo::func_ov058_021471f4(unk32 param1) {
     }
 }
 
-extern unk32 data_ov063_021641d0[];
-
 void ActorLokomo_874::vfunc2_00() {
     data_ov063_021641d0[((ActorLokomo *) this->mUnk_04)->func_ov058_021456d8()] = (unk32) this->mUnk_04;
 }
@@ -1730,8 +1729,6 @@ void ActorLokomo::func_ov058_02147760(Actor *param0, G3d_RenderState_ *param1) {
     param1->callbackSegment[6] = 0x2;
     renderObj->mUnk_25         = 0x2;
 }
-
-extern MtxFx43 data_027e0964;
 
 void ActorLokomo::func_ov058_02147860(Actor *param0, G3d_RenderState_ *param1) {
     ActorLokomo *thiz = (ActorLokomo *) param0;
