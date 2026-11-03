@@ -381,8 +381,8 @@ data_ov066_0215e224 kind:data(any) addr:0x0215e224
 _ZTV19data_ov066_0215e238 kind:data(any) addr:0x0215e238
 data_ov066_0215e25c kind:data(any) addr:0x0215e25c
 data_ov066_0215e284 kind:data(any) addr:0x0215e284 ambiguous
-data_ov066_0215e290 kind:data(any) addr:0x0215e290 ambiguous
 _ZTV16ActorUnkVCFT_2BC kind:data(any) addr:0x0215e28c
+data_ov066_0215e290 kind:data(any) addr:0x0215e290 ambiguous
 _ZTV27ActorCharacter_Derived1_160 kind:data(any) addr:0x0215e2d4
 data_ov066_0215e320 kind:data(any) addr:0x0215e320
 data_ov066_0215e398 kind:data(any) addr:0x0215e398
