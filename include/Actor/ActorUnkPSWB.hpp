@@ -4,8 +4,9 @@
 #include "Actor/ActorProfile.hpp"
 #include "CommonFuncs.hpp"
 #include "MapObject/MapObject.hpp"
+#include "Render/ModelRender.hpp"
+#include "Unknown/UnkStruct_ov048_02137600.hpp"
 #include "global.h"
-#include "nitro/types.h"
 #include "types.h"
 
 class ActorUnkPSWB_C4 : public Actor_C4 {
@@ -18,10 +19,10 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkPSWB : public Actor {
+class ActorUnkPSWB : public UnkStruct_ov048_02137600 {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* E0 */ ModelRender mUnk_E0;
 
     ActorUnkPSWB();
 
@@ -29,7 +30,11 @@ public:
     /* 20 */ virtual void Update() override;
     /* 24 */ virtual void vfunc_24() override;
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
-    /* 58 */ virtual void vfunc_58(void);
+    /* 58 */ virtual void vfunc_58(void) override;
+    /* 58 */ virtual void vfunc_5C(void) override;
+    /* 58 */ virtual void vfunc_60(void) override;
+    /* 6C */ virtual void vfunc_6C(void) override;
+    /* 70 */ virtual void vfunc_70(void) override;
 
     void func_ov094_02166424(void);
     void func_ov094_02166438(void);
@@ -52,13 +57,9 @@ public:
     void func_ov094_021675ac(void);
     void func_ov094_02167614(void);
     void func_ov094_02167688(void);
-    void func_ov094_021676f0(void);
     void func_ov094_021676f4(void);
     void func_ov094_02167794(void);
     void func_ov094_0216781c(void);
-    void func_ov094_0216783c(void);
-    void func_ov094_02167844(void);
-    void func_ov094_02167aac(void);
     void func_ov094_02167ab8(void);
     void func_ov094_02167b24(void);
     void func_ov094_02167b64(void);

@@ -59,7 +59,8 @@ ActorProfileUnkPSWB::ActorProfileUnkPSWB() :
     mUnk_1A                     = 0x1333;
 }
 
-ActorUnkPSWB::ActorUnkPSWB() {}
+ActorUnkPSWB::ActorUnkPSWB() :
+    mUnk_E0(G3d_GetModelPtr(GET_PROFILE(ActorProfileLobarrier)->mUnk_3C.mUnk_50)) {}
 
 void ActorUnkPSWB::func_ov094_02166424(void) {}
 void ActorUnkPSWB::func_ov094_02166438(void) {}
@@ -85,14 +86,14 @@ void ActorUnkPSWB::func_ov094_02167518(void) {}
 void ActorUnkPSWB::func_ov094_021675ac(void) {}
 void ActorUnkPSWB::func_ov094_02167614(void) {}
 void ActorUnkPSWB::func_ov094_02167688(void) {}
-void ActorUnkPSWB::func_ov094_021676f0(void) {}
+void ActorUnkPSWB::vfunc_6C(void) {}
 void ActorUnkPSWB::func_ov094_021676f4(void) {}
 void ActorUnkPSWB::func_ov094_02167794(void) {}
 void ActorUnkPSWB::func_ov094_0216781c(void) {}
-void ActorUnkPSWB::func_ov094_0216783c(void) {}
-void ActorUnkPSWB::func_ov094_02167844(void) {}
+void ActorUnkPSWB::vfunc_5C(void) {}
+void ActorUnkPSWB::vfunc_60(void) {}
 void ActorUnkPSWB::vfunc_2C(unk32 param1) {}
-void ActorUnkPSWB::func_ov094_02167aac(void) {}
+void ActorUnkPSWB::vfunc_70(void) {}
 void ActorUnkPSWB::func_ov094_02167ab8(void) {}
 void ActorUnkPSWB::func_ov094_02167b24(void) {}
 void ActorUnkPSWB::func_ov094_02167b64(void) {}

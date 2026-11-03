@@ -15,6 +15,7 @@ src/094_Land2/Actor/ActorUnkPSWB.cpp:
     .text       start:0x021662c8 end:0x021683d8
     .init       start:0x02176628 end:0x021766a0
     .ctor       start:0x02176e7c end:0x02176e80
+    .data       start:0x02176f9c end:0x0217710c
     .bss        start:0x021785b4 end:0x0217878c
 
 src/094_Land2/Actor/ActorUnkVRGN.cpp:
