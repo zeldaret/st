@@ -3,7 +3,7 @@
 #include "nitro/types.h"
 
 struct Timer {
-    /* 00 */ volatile u16 value;
+    /* 00 */ u16 value;
     /* 02 */ u16 max;
     /* 04 */
 
@@ -14,16 +14,20 @@ struct Timer {
         this->max   = max;
     }
 
+    const u16 GetConstValue() const {
+        return this->value;
+    }
+
     // advances the value until it reached the max value
     void Update() {
-        if (this->value < this->max) {
+        if (this->GetConstValue() < this->max) {
             this->value++;
         }
     }
 
     // same as `Update()` except it returns true if the max value is reached
     bool HasExpired() {
-        if (this->value < this->max) {
+        if (this->GetConstValue() < this->max) {
             this->value++;
             return false;
         }
@@ -34,7 +38,7 @@ struct Timer {
     bool HasExpiredAlt() {
         bool ret = false;
 
-        if (this->value >= this->max) {
+        if (this->GetConstValue() >= this->max) {
             ret = true;
         } else {
             this->value++;

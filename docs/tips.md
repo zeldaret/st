@@ -13,6 +13,7 @@ Some miscellaneous information are also reported here, for example about the bui
   - [TEQ instruction](#TEQ)
 - [Symbols](#symbols)
   - [Updating a vtable symbol](#updating-a-vtable-symbol)
+  - [Force Export](#force-export)
 - [Ghidra](#ghidra)
   - [Finding a function in Ghidra](#finding-a-function-in-ghidra)
 - [Ninja](#ninja)
@@ -96,6 +97,10 @@ Once the tool has been applied, update your symbols and you should see that the 
 
 > [!IMPORTANT]
 > Be mindful, [`tools/vtable_sym.py`](../tools/vtable_sym.py) should ONLY be used when a realignment is needed. In other cases (renames), simply edit the `symbols.txt` file manually (see [decompiling.md](decompiling.md#about-symbols)).
+
+## Force Export
+
+For any unused symbols, if the linker deletes them (thus ending in non-matching builds), you can add them to `force_symbols` in `configure.py` and it will force keeping them.
 
 # Ghidra
 

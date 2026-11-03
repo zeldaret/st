@@ -125,7 +125,7 @@ void ActorHeart::Update() {
         this->func_ov000_020989e0();
 
         if (this->mState == ActorHeartState_FallingDown) {
-            func_ov000_0208bc00(data_027e0ce0, 0, &sp8);
+            data_027e0ce0->func_ov000_0208bc00(0, &sp8);
             func_01ffce1c(&sp18.unk_00, &sp8);
             sp18.unk_00.pos.y -= sp8.size;
             sp18.unk_10 += sp8.size * 3;
@@ -135,7 +135,7 @@ void ActorHeart::Update() {
                 this->func_ov031_020ef528();
                 goto skip;
             } else if (data_027e0ce0->func_01fff1a4() != 0) {
-                func_ov000_0208bc00(data_027e0ce0, 1, &sp8);
+                data_027e0ce0->func_ov000_0208bc00(1, &sp8);
                 func_01ffce1c(&sp18.unk_00, &sp8);
                 sp18.unk_00.pos.y -= sp8.size;
                 sp18.unk_10 += sp8.size * 3;

@@ -417,7 +417,7 @@ void Actor::func_ov017_020bf9c8(Actor *param1) {
     }
 
     u16 timerMax = this->mTimer.max;
-    u16 time     = this->mTimer.value;
+    u16 time     = this->mTimer.GetConstValue();
 
     if (time >= timerMax) {
         SET_FLAG(this->mFlags, ActorFlag_5);

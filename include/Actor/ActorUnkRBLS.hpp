@@ -13,7 +13,7 @@ public:
     /* 40 */
 
     UnkStruct_ov063_02163784(ModelRender *param1, UnkActorFileSystem2 *param2) :
-        UnkStruct_ov063_021632e4(param1, param2) {};
+        UnkStruct_ov063_021632e4(param1, param2) {}
 };
 
 class ActorUnkRBLS : public Actor {

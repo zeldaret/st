@@ -72,6 +72,11 @@ config.asflags = [
     "-proc arm5TE",         # Target processor
 ]
 
+# add symbols to that list to prevent the linker from killing them
+force_symbols = [
+    "data_ov063_02162524",
+]
+
 config.ldflags = [
     "-proc arm946e",        # Target processor
     "-dead",                # Strip unused code
@@ -79,6 +84,9 @@ config.ldflags = [
     "-interworking",        # Enable ARM/Thumb interworking
     "-map closure,unused",  # Generate map file
     "-msgstyle gcc",        # Use GCC-like messages (some IDEs will make file names clickable)
+
+    # forced active
+    (f"-force_active {','.join(force_symbols)}" if len(force_symbols) > 0 else "")
 ]
 
 
