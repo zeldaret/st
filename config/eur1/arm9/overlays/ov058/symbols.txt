@@ -722,7 +722,7 @@ __sinit_ov058_02154078 kind:function(arm,size=0x74) addr:0x02154078
 __sinit_ov058_021540ec kind:function(arm,size=0x74) addr:0x021540ec
 __sinit_ov058_02154160 kind:function(arm,size=0x90) addr:0x02154160
 __sinit_ov058_021541f0 kind:function(arm,size=0x50) addr:0x021541f0
-.p__sinit_ActorLokomos.cpp kind:data(word) addr:0x02154240
+.p__sinit_ov058_02154240 kind:data(word) addr:0x02154240
 .p__sinit_ov058_02153608 kind:data(word) addr:0x02154244
 .p__sinit_ov058_02153658 kind:data(word) addr:0x02154248
 .p__sinit_ActorUnkNSTN.cpp kind:data(word) addr:0x0215424c
