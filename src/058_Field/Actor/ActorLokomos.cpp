@@ -147,7 +147,7 @@ inline ActorId GetGageModelId() {
 }
 
 ActorProfileUnkSYFO::ActorProfileUnkSYFO() :
-    ActorProfile_Derived1(ActorId_SYFO) {
+    ActorProfile_Derived1(ActorId_Gage) {
     this->mUnk_04.Init(0x0, FX_F32_TO_FX32(0.58f), 0x0, FX_F32_TO_FX32(0.48f));
     this->mUnk_1C = 0xEB2;
     this->mUnk_18 = 0x0;
@@ -169,7 +169,7 @@ inline ActorId GetSteemModelId() {
 }
 
 ActorProfileUnkSYSN::ActorProfileUnkSYSN() :
-    ActorProfile_Derived1(ActorId_SYSN) {
+    ActorProfile_Derived1(ActorId_Steem) {
     this->mUnk_04.Init(0x0, FX_F32_TO_FX32(0.58f), 0x0, FX_F32_TO_FX32(0.48f));
     this->mUnk_1C = 0xCCD;
     this->mUnk_18 = 0x0;
@@ -191,7 +191,7 @@ inline ActorId GetCarbenModelId() {
 }
 
 ActorProfileUnkSYWA::ActorProfileUnkSYWA() :
-    ActorProfile_Derived1(ActorId_SYWA) {
+    ActorProfile_Derived1(ActorId_Carben) {
     this->mUnk_04.Init(0x0, FX_F32_TO_FX32(0.58f), 0x0, FX_F32_TO_FX32(0.48f));
     this->mUnk_1C = 0xD9A;
     this->mUnk_18 = 0x0;
@@ -213,7 +213,7 @@ inline ActorId GetEmbroseModelId() {
 }
 
 ActorProfileUnkSYFI::ActorProfileUnkSYFI() :
-    ActorProfile_Derived1(ActorId_SYFI) {
+    ActorProfile_Derived1(ActorId_Embrose) {
     this->mUnk_04.Init(0x0, FX_F32_TO_FX32(0.58f), 0x0, FX_F32_TO_FX32(0.48f));
     this->mUnk_1C = 0xE8F;
     this->mUnk_18 = 0x0;
@@ -235,7 +235,7 @@ inline ActorId GetRaelModelId() {
 }
 
 ActorProfileUnkSYDE::ActorProfileUnkSYDE() :
-    ActorProfile_Derived1(ActorId_SYDE) {
+    ActorProfile_Derived1(ActorId_Rael) {
     this->mUnk_04.Init(0x0, FX_F32_TO_FX32(0.58f), 0x0, FX_F32_TO_FX32(0.48f));
     this->mUnk_1C = 0xE8F;
     this->mUnk_18 = 0x0;
@@ -289,24 +289,24 @@ UnkActorFileSystem2 *ActorLokomo::func_ov058_02143438(unk32 param1) {
     ActorLokomo_ lokomoId;
     if (param1 != 0) {
         ActorId id = data_ov000_020b539c_eur.mUnk_30->mActorId;
-        if (id == ActorId_SYFO) {
+        if (id == ActorId_Gage) {
             lokomoId = ActorLokomo_Gage;
-        } else if (id == ActorId_SYSN) {
+        } else if (id == ActorId_Steem) {
             lokomoId = ActorLokomo_Steem;
-        } else if (id == ActorId_SYWA) {
+        } else if (id == ActorId_Carben) {
             lokomoId = ActorLokomo_Carben;
-        } else if (id == ActorId_SYFI) {
+        } else if (id == ActorId_Embrose) {
             lokomoId = ActorLokomo_Embrose;
         } else {
             lokomoId = ActorLokomo_Rael;
         }
-    } else if (this->GetActorId() == ActorId_SYFO) {
+    } else if (this->GetActorId() == ActorId_Gage) {
         lokomoId = ActorLokomo_Gage;
-    } else if (this->GetActorId() == ActorId_SYSN) {
+    } else if (this->GetActorId() == ActorId_Steem) {
         lokomoId = ActorLokomo_Steem;
-    } else if (this->GetActorId() == ActorId_SYWA) {
+    } else if (this->GetActorId() == ActorId_Carben) {
         lokomoId = ActorLokomo_Carben;
-    } else if (this->GetActorId() == ActorId_SYFI) {
+    } else if (this->GetActorId() == ActorId_Embrose) {
         lokomoId = ActorLokomo_Embrose;
     } else {
         lokomoId = ActorLokomo_Rael;
@@ -343,15 +343,15 @@ UnkActorFileSystem2 *ActorLokomo::func_ov058_02143438(unk32 param1) {
 inline ActorProfile_Derived1 *GetLokomoProfile(ActorId currentActorId) {
     ActorProfile_Derived1 *profile;
     // switch according to M2C but could not match
-    if (currentActorId == ActorId_SYFO) {
+    if (currentActorId == ActorId_Gage) {
         profile = GET_PROFILE(ActorProfileUnkSYFO);
-    } else if (currentActorId == ActorId_SYSN) {
+    } else if (currentActorId == ActorId_Steem) {
         profile = GET_PROFILE(ActorProfileUnkSYSN);
-    } else if (currentActorId == ActorId_SYWA) {
+    } else if (currentActorId == ActorId_Carben) {
         profile = GET_PROFILE(ActorProfileUnkSYWA);
-    } else if (currentActorId == ActorId_SYFI) {
+    } else if (currentActorId == ActorId_Embrose) {
         profile = GET_PROFILE(ActorProfileUnkSYFI);
-    } else if (currentActorId == ActorId_SYDE) {
+    } else if (currentActorId == ActorId_Rael) {
         profile = GET_PROFILE(ActorProfileUnkSYDE);
     } else {
         profile = NULL;
@@ -363,13 +363,13 @@ inline ActorProfile_Derived1 *GetLokomoProfile(ActorId currentActorId) {
 inline G3d_Model *GetLokomoModel(ActorId currentActorId, const char *names) {
     u32 index;
     // switch according to M2C but could not match
-    if (currentActorId == ActorId_SYFO) {
+    if (currentActorId == ActorId_Gage) {
         index = ActorLokomo_Gage;
-    } else if (currentActorId == ActorId_SYSN) {
+    } else if (currentActorId == ActorId_Steem) {
         index = ActorLokomo_Steem;
-    } else if (currentActorId == ActorId_SYWA) {
+    } else if (currentActorId == ActorId_Carben) {
         index = ActorLokomo_Carben;
-    } else if (currentActorId == ActorId_SYFI) {
+    } else if (currentActorId == ActorId_Embrose) {
         index = ActorLokomo_Embrose;
     } else {
         index = ActorLokomo_Rael;
@@ -625,19 +625,19 @@ unk32 ActorLokomo::func_ov058_021456a4() {
 }
 
 ActorLokomo_ ActorLokomo::func_ov058_021456d8() {
-    if (this->GetActorId() == ActorId_SYFO) {
+    if (this->GetActorId() == ActorId_Gage) {
         return ActorLokomo_Gage;
     }
 
-    if (this->GetActorId() == ActorId_SYSN) {
+    if (this->GetActorId() == ActorId_Steem) {
         return ActorLokomo_Steem;
     }
 
-    if (this->GetActorId() == ActorId_SYWA) {
+    if (this->GetActorId() == ActorId_Carben) {
         return ActorLokomo_Carben;
     }
 
-    if (this->GetActorId() == ActorId_SYFI) {
+    if (this->GetActorId() == ActorId_Embrose) {
         return ActorLokomo_Embrose;
     }
 
@@ -729,7 +729,7 @@ void ActorLokomo::Update() {
     }
 
     if ((this->mUnk_5C.mParams[2] == 0x2 || this->mUnk_5C.mParams[2] == 0x1 ||
-         (this->GetActorId() == ActorId_SYWA && this->mUnk_5C.mParams[2] == 0x3)) &&
+         (this->GetActorId() == ActorId_Carben && this->mUnk_5C.mParams[2] == 0x3)) &&
         this->Actor_Derived1::func_ov000_020a8dd0()) {
         this->func_ov058_021459b8();
     }
@@ -1817,7 +1817,7 @@ void ActorLokomo::func_ov058_02147860(Actor *param0, G3d_RenderState_ *param1) {
 }
 
 bool ActorLokomo::vfunc_9C() {
-    if (this->GetActorId() == ActorId_SYWA) {
+    if (this->GetActorId() == ActorId_Carben) {
         PassengerManager *instance = gpPassengerManager;
         instance->TryBoardTrain(this->GetActorId(), SceneIndex_f_water2, 0xFF);
     }
@@ -1849,7 +1849,7 @@ bool ActorLokomo::vfunc_5C(unk32 param1, unk32 param2) {
 }
 
 bool ActorLokomo::func_ov058_02147aec() {
-    if (this->GetActorId() != ActorId_SYWA) {
+    if (this->GetActorId() != ActorId_Carben) {
         return false;
     }
 
@@ -1891,7 +1891,7 @@ void ActorLokomo::func_ov058_02147bc4(VecFx32 *vec, UnkAngleStruct param1) {
 }
 
 void ActorLokomo::func_ov058_02147bf4() {
-    if (this->GetActorId() != ActorId_SYWA) {
+    if (this->GetActorId() != ActorId_Carben) {
         return;
     }
 
@@ -1900,7 +1900,7 @@ void ActorLokomo::func_ov058_02147bf4() {
 }
 
 void ActorLokomo::func_ov058_02147c30() {
-    if (this->GetActorId() != ActorId_SYWA) {
+    if (this->GetActorId() != ActorId_Carben) {
         return;
     }
 
@@ -1909,7 +1909,7 @@ void ActorLokomo::func_ov058_02147c30() {
 }
 
 void ActorLokomo::func_ov058_02147c6c() {
-    if (this->GetActorId() != ActorId_SYWA) {
+    if (this->GetActorId() != ActorId_Carben) {
         return;
     }
 
@@ -1918,7 +1918,7 @@ void ActorLokomo::func_ov058_02147c6c() {
 }
 
 void ActorLokomo::func_ov058_02147ca8() {
-    if (this->GetActorId() != ActorId_SYWA) {
+    if (this->GetActorId() != ActorId_Carben) {
         return;
     }
 
@@ -1927,7 +1927,7 @@ void ActorLokomo::func_ov058_02147ca8() {
 }
 
 void ActorLokomo::func_ov058_02147ce4(unk32 param1) {
-    if (this->GetActorId() != ActorId_SYWA) {
+    if (this->GetActorId() != ActorId_Carben) {
         return;
     }
 
@@ -1940,7 +1940,7 @@ void ActorLokomo::func_ov058_02147ce4(unk32 param1) {
 }
 
 void ActorLokomo::func_ov058_02147d20() {
-    if (this->GetActorId() != ActorId_SYWA) {
+    if (this->GetActorId() != ActorId_Carben) {
         return;
     }
 
