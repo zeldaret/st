@@ -780,7 +780,7 @@ data_ov058_02154620 kind:data(any) addr:0x02154600
 _ZTV12ActorUnkNSTN kind:data(any) addr:0x02154640
 _ZTV19data_ov058_021546b8 kind:data(any) addr:0x021546b0
 data_ov058_021546c8 kind:data(any) addr:0x021546c8
-data_ov058_021546e8 kind:data(any) addr:0x021546e8
+data_ov058_021546e8_usa kind:data(any) addr:0x021546e8
 data_ov058_02154704 kind:data(any) addr:0x02154704 ambiguous
 data_ov058_0215470c kind:data(any) addr:0x0215470c
 data_ov058_02154730 kind:data(any) addr:0x02154730
