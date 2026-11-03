@@ -43,17 +43,15 @@ ActorUnkTGTZ::ActorUnkTGTZ() :
 #endif
     mUnk_1B4(NULL),
     mUnk_1B8(0x0),
-    mUnk_1BC(-0x1) {
-    *(u16 *) &mUnk_1C0.value = 0; // somehow breaks if volatile
-    mUnk_1C0.max             = 0;
-    mUnk_1C4                 = FX_F32_TO_FX32(0.0f);
-    mUnk_1CC                 = 0x0;
-    mUnk_1D0.value           = 0;
-    mUnk_1D0.max             = 0;
-    mUnk_1D4                 = 0x0;
-    mUnk_1D6                 = 0x0;
-    mUnk_1D8                 = false;
-    mUnk_1DC                 = 0x0;
+    mUnk_1BC(-0x1),
+    mUnk_1C0(0, 0),
+    mUnk_1C4(FX_F32_TO_FX32(0.0f)),
+    mUnk_1CC(0),
+    mUnk_1D0(0, 0),
+    mUnk_1D4(0),
+    mUnk_1D6(0),
+    mUnk_1D8(false),
+    mUnk_1DC(0) {
     MtxFx33_InitIdentity(&this->mUnk_190);
     this->func_ov000_0209862c(0x0);
 }

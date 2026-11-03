@@ -134,7 +134,7 @@ public:
 
     ActorLobarrier();
 
-    /* 10 */ virtual void vfunc_10(Cylinder *param1) override;
+    /* 10 */ virtual void vfunc_10(Cylinder *param1) const override;
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 1C */ virtual void Setup() override;
     /* 20 */ virtual void Update() override;
@@ -167,15 +167,15 @@ public:
     void func_ov063_02159e1c();
     void func_ov063_02159e20();
     void func_ov063_02159ec0();
-    unk32 func_ov063_02159f3c(unk32 param1);
+    bool func_ov063_02159f3c(fx32 param1) const;
     bool func_ov063_0215a0f0() const;
     bool func_ov063_0215a2c0() const;
     void func_ov063_0215a428();
     unk32 func_ov063_0215a474();
     unk32 func_ov063_0215a514();
     bool func_ov063_0215a56c(unk32 param1);
-    void func_ov063_0215a5a0(VecFx32 *param1);
-    unk32 func_ov063_0215a5bc();
+    void func_ov063_0215a5a0(VecFx32 *param1) const;
+    u16 func_ov063_0215a5bc();
     unk32 func_ov063_0215a5d8();
     static void func_ov063_0215a678(ActorLobarrier *param1, UnkStruct_func_ov063_0215a678 *param2);
 };
