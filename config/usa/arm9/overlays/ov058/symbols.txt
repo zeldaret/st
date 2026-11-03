@@ -700,7 +700,7 @@ __sinit_ov058_02153478 kind:function(arm,size=0x50) addr:0x02153478
 __sinit_ov058_021534c8 kind:function(arm,size=0x50) addr:0x021534c8
 __sinit_ov058_02153518 kind:function(arm,size=0x50) addr:0x02153518
 __sinit_ActorUnkNSTN.cpp kind:function(arm,size=0x50) addr:0x02153568
-__sinit_ov058_021535b8 kind:function(arm,size=0x3d0) addr:0x021535b8
+__sinit_ActorLokomos.cpp kind:function(arm,size=0x3d0) addr:0x021535b8
 __sinit_ActorKenzo.cpp kind:function(arm,size=0x50) addr:0x02153988
 __sinit_ov058_021539d8 kind:function(arm,size=0x7c) addr:0x021539d8
 __sinit_ov058_02153a54 kind:function(arm,size=0x50) addr:0x02153a54
@@ -725,7 +725,7 @@ __sinit_ov058_021540b0 kind:function(arm,size=0x50) addr:0x021540b0
 .p__sinit_ov058_021534c8 kind:data(word) addr:0x02154104
 .p__sinit_ov058_02153518 kind:data(word) addr:0x02154108
 .p__sinit_ActorUnkNSTN.cpp kind:data(word) addr:0x0215410c
-.p__sinit_ov058_021535b8 kind:data(word) addr:0x02154110
+.p__sinit_ActorLokomos.cpp kind:data(word) addr:0x02154110
 .p__sinit_ActorKenzo.cpp kind:data(word) addr:0x02154114
 .p__sinit_ov058_021539d8 kind:data(word) addr:0x02154118
 .p__sinit_ov058_02153a54 kind:data(word) addr:0x0215411c
