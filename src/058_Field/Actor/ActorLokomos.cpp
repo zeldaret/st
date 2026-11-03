@@ -812,7 +812,7 @@ unk32 ActorLokomo::vfunc_7C(unk32 param1) {
 
         default:
             if (param1 >= 1000000 && param1 < 2000000) {
-                data_ov059_021641c8->func_ov063_0215d5cc((param1 % 1000000 * 0x10624dd3));
+                data_ov059_021641c8->func_ov063_0215d5cc((u16) (param1 % 1000000) * 0x10624dd3, param1 % 1000);
             }
             break;
     }
