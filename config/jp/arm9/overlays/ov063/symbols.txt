@@ -180,7 +180,7 @@ func_ov063_0215e5b0 kind:function(arm,size=0x4c) addr:0x0215e5b0
 func_ov063_0215e5fc kind:function(arm,size=0x1c) addr:0x0215e5fc
 func_ov063_0215e618 kind:function(arm,size=0x4c) addr:0x0215e618
 func_ov063_0215e664 kind:function(arm,size=0x158) addr:0x0215e664
-func_ov063_0215e7bc kind:function(arm,size=0x24) addr:0x0215e7bc
+_ZN24UnkStruct_ov059_021641c819func_ov063_0215ca28Ev kind:function(arm,size=0x24) addr:0x0215e7bc
 func_ov063_0215e7e0 kind:function(arm,size=0x14) addr:0x0215e7e0
 func_ov063_0215e7f4 kind:function(arm,size=0x118) addr:0x0215e7f4
 func_ov063_0215e90c kind:function(arm,size=0x38) addr:0x0215e90c
@@ -193,7 +193,7 @@ func_ov063_0215eb3c kind:function(arm,size=0x6c4) addr:0x0215eb3c
 func_ov063_0215f200 kind:function(arm,size=0x50) addr:0x0215f200
 func_ov063_0215f250 kind:function(arm,size=0xb8) addr:0x0215f250
 func_ov063_0215f308 kind:function(arm,size=0x58) addr:0x0215f308
-func_ov063_0215f360 kind:function(arm,size=0x10) addr:0x0215f360
+_ZN24UnkStruct_ov059_021641c819func_ov063_0215d5ccEi kind:function(arm,size=0x10) addr:0x0215f360
 func_ov063_0215f370 kind:function(arm,size=0x34) addr:0x0215f370
 func_ov063_0215f3a4 kind:function(arm,size=0xc8) addr:0x0215f3a4
 func_ov063_0215f46c kind:function(arm,size=0x108) addr:0x0215f46c
@@ -518,11 +518,11 @@ _ZGVN15ProfileInstanceI19ActorProfileUnkRMSSE8sProfileE kind:bss addr:0x02165ef0
 _ZN15ProfileInstanceI19ActorProfileUnkRMSSE8sProfileE kind:bss addr:0x02165f00
 data_ov063_02165fd8 kind:bss addr:0x02165fd8
 data_ov063_02165fdc kind:bss addr:0x02165fdc
-data_ov063_02165fe8 kind:bss addr:0x02165fe8
+data_ov063_021641c8 kind:bss addr:0x02165fe8
 data_ov063_02165ff0 kind:bss addr:0x02165ff0 ambiguous
 data_ov063_02166040 kind:bss addr:0x02166040 ambiguous
 data_ov063_02166054 kind:bss addr:0x02166054 ambiguous
-data_ov063_0216611c kind:bss addr:0x0216611c ambiguous
+data_ov063_021642fc kind:bss addr:0x0216611c ambiguous
 _ZGVN15ProfileInstanceI19ActorProfileUnkRBLSE8sProfileE kind:bss addr:0x02166138
 @32653 kind:bss addr:0x0216613c
 _ZN15ProfileInstanceI19ActorProfileUnkRBLSE8sProfileE kind:bss addr:0x02166148

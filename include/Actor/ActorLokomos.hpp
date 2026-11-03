@@ -434,7 +434,6 @@ public:
     /* 130 */ virtual void vfunc_130();
     /* 134 */ virtual void vfunc_134(unk32 param1);
 
-    // bold guess
     UnkActorFileSystem2 *func_ov058_02143438(unk32 param1);
     void func_ov058_021446b8();
     void func_ov058_02144ba0();

@@ -811,8 +811,8 @@ unk32 ActorLokomo::vfunc_7C(unk32 param1) {
             break;
 
         default:
-            if (param1 >= 0xF4240U && param1 < 0x1E8480U) {
-                data_ov059_021641c8->func_ov063_0215d5cc(0);
+            if (param1 >= 1000000 && param1 < 2000000) {
+                data_ov059_021641c8->func_ov063_0215d5cc((param1 % 1000000 * 0x10624dd3));
             }
             break;
     }
@@ -1001,6 +1001,12 @@ void ActorLokomo::vfunc_2C(unk32 param1) {
 
 void ActorLokomo::vfunc_B8() {
     VecFx32 pos = this->mPos;
+#if IS_JP
+    if (this->func_ov058_021456d8() == ActorLokomo_Carben && this->mUnk_5B0.vfunc_30() == 0x13) {
+        data_027e09b4->func_ov017_020c08c4(&pos, 0x5EC, 0x5EC, 0x1F, 0x0, 0x1);
+        return;
+    }
+#endif
     data_027e09b4->func_01fff60c(&pos, 0x5EC, 0x5EC, 0x1F, 0x0, 0x0);
 }
 
