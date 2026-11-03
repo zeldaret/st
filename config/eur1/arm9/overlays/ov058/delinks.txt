@@ -34,6 +34,7 @@ src/058_Field/Actor/ActorLokomos.cpp:
     .text       start:0x02142eb0 end:0x02148010
     .init       start:0x021536f8 end:0x02153ac8
     .ctor       start:0x02154250 end:0x02154254
+    .data       start:0x021547f0 end:0x02154fdc
     .bss        start:0x0215619c end:0x02156fe8
 
 src/058_Field/Actor/ActorKenzo.cpp:
