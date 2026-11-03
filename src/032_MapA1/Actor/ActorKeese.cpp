@@ -568,10 +568,10 @@ void ActorKeese::func_ov032_0211ee5c() {
     }
 
     this->mUnk_2A8 += 0x71C;
-    this->mAngle = this->mUnk_244 + (fx16) FX_Mul(this->mUnk_246, SIN(this->mUnk_2A8));
+    this->mAngle = this->mUnk_244 + (fx16) FX_MUL(this->mUnk_246, SIN(this->mUnk_2A8));
 
-    fx32 x       = FX_Mul(SIN(this->mAngle.angle_s), this->mUnk_2A0);
-    fx32 z       = FX_Mul(COS(this->mAngle.angle_s), this->mUnk_2A0);
+    fx32 x       = FX_MUL(SIN(this->mAngle.angle_s), this->mUnk_2A0);
+    fx32 z       = FX_MUL(COS(this->mAngle.angle_s), this->mUnk_2A0);
     this->mVel.x = x;
     this->mVel.z = z;
 
@@ -608,7 +608,7 @@ void ActorKeese::func_ov032_0211f0a8() {
             this->mAngle = func_01ffbbe0(this->mUnk_2AC.mUnk_0C.vec.x, this->mUnk_2AC.mUnk_0C.vec.z);
             this->SetState(ActorKeeseState_0);
         } else if (func_01ff9258(this->mUnk_5C.mInitialPos.x - this->mPos.x, this->mUnk_5C.mInitialPos.z - this->mPos.z) <
-                   0x800) {
+                   FX32_HALF) {
             this->SetState(ActorKeeseState_0);
         }
     }

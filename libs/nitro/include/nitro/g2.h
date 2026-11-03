@@ -286,45 +286,47 @@ inline void G2S_SetBlendAlpha(u32 srcPlane, u32 dstPlane, u32 srcAlpha, u32 dstA
     _G2_SetBlend((u32 *) &REG_BLDCNT_SUB, srcPlane, dstPlane, srcAlpha, dstAlpha);
 }
 
-inline void G2_GetOBJPosition(GXOamAttr *oam, u32 *x, u32 *y) {
+inline void G2_GetOBJPosition(const GXOamAttr *oam, u32 *x, u32 *y) {
     *x = (oam->attr01 & 0x1ff0000) >> 16;
     *y = oam->attr01 & 0xff;
 }
 
-inline void G2_SetOBJPosition(GXOamAttr *oam, u32 x, u32 y) {
+inline void G2_SetOBJPosition(GXOamAttr *oam, s32 x, s32 y) {
     oam->attr01 = (oam->attr01 & 0xfe00ff00) | (y & 0xff) | (x << 0x17 >> 0x7);
 }
 
-inline u32 G2_GetOBJCharName(GXOamAttr *oam) {
+inline s32 G2_GetOBJCharName(const GXOamAttr *oam) {
     return oam->attr2 & 0x3ff;
 }
 
-inline void G2_SetOBJCharName(volatile GXOamAttr *oam, u32 name) {
+inline void G2_SetOBJCharName(volatile GXOamAttr *oam, s32 name) {
     oam->attr2 = (oam->attr2 & -0x400) | (name);
 }
 
-inline u32 G2_GetOBJColorParam(GXOamAttr *oam) {
+inline s32 G2_GetOBJColorParam(const GXOamAttr *oam) {
     return (oam->attr2 & 0xf000) >> 0xc;
 }
 
-// Defined as macro as sometimes `oam` is volatile and other times not
-#define G2_GetOBJMode(oam) (GXOamMode)(((oam)->attr01 & 0xc00) >> 0xa)
-// inline GXOamMode G2_GetOBJMode(volatile GXOamAttr *oam) {
-//     return ((oam)->attr01 & 0xc00) >> 0xa;
-// }
-
-inline void G2_SetOBJMode(GXOamAttr *oam, GXOamMode mode, u32 color) {
-    oam->attr01 = (oam->attr01 & ~0xc00) | (mode << 0xa);
-    oam->attr2  = (oam->attr2 & ~0xf000) | (color << 0xc);
+inline GXOamMode G2_GetOBJMode(const GXOamAttr *oam) {
+    return (GXOamMode) (((oam)->attr01 & 0xc00) >> 0xa);
 }
 
-inline void G2_SetOBJPriority(GXOamAttr *oam, u32 prio) {
+inline void G2_SetOBJMode(GXOamAttr *oam, GXOamMode mode, u32 cParam) {
+    oam->attr01 = (oam->attr01 & ~0xc00) | (mode << 0xa);
+    oam->attr2  = (oam->attr2 & ~0xf000) | (cParam << 0xc);
+}
+
+inline void G2_SetOBJPriority(GXOamAttr *oam, u32 priority) {
     // no implementation found
 }
 
-inline void G2_SetOBJAttr(GXOamAttr *oam, u32 x, u32 y, u32 param4, GXOamMode mode, BOOL param6, u32 effect, u32 shape,
-                          u32 color, u32 param10, u32 param11, u32 param12) {
-    // Unused: param4, param6, effect, param11, param12
+inline s32 G2_GetOBJPriority(const GXOamAttr *oam) {
+    // no implementation found
+}
+
+inline void G2_SetOBJAttr(GXOamAttr *oam, fx32 x, fx32 y, s32 priority, GXOamMode mode, BOOL mosaic, GXOamEffect effect,
+                          GXOamShape shape, GXOamColorMode color, s32 charName, s32 cParam, s32 rsParam) {
+    // Unused: priority, mosaic, effect, cParam, rsParam
 
     // c1ff0cff
     // 3 bits at 0x8
@@ -333,8 +335,20 @@ inline void G2_SetOBJAttr(GXOamAttr *oam, u32 x, u32 y, u32 param4, GXOamMode mo
     oam->attr01 = (y & 0xff) | (mode << 0xa) | (shape << 0x1e) | ((x << 0x17) >> 0x7);
     // f3ff
     // 2 bits at 0xa
-    oam->attr2 = param10 | (color << 0xc);
+    oam->attr2 = charName | (color << 0xc);
 }
+
+//! TODO: figure out
+void G2x_SetBGyAffine_(u32 addr, MtxFx22 mtx, fx32 centerX, fx32 centerY, fx32 x1, fx32 y1);
+void G2_SetOBJEffect(GXOamAttr *oam, GXOamEffect effect, s32 rsParam);
+GXOamEffect G2_GetOBJEffect(const GXOamAttr *oam);
+void G2_SetOBJShape(GXOamAttr *oam, GXOamShape shape);
+GXOamShape G2_GetOBJShape(const GXOamAttr *oam);
+void G2_SetOBJColorMode(GXOamAttr *oam, GXOamColorMode color);
+GXOamColorMode G2_GetOBJColorMode(const GXOamAttr *oam);
+void G2_OBJMosaic(GXOamAttr *oam, BOOL enable);
+void G2_SetOBJAffine(GXOamAffine *oam, MtxFx22 mtx);
+void G2_GetOBJAffine(GXOamAffine *oam, MtxFx22 mtx);
 
 #ifdef __cplusplus
 } // extern "C"

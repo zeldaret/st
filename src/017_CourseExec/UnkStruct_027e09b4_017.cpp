@@ -64,9 +64,9 @@ void UnkStruct_027e09b4::func_ov017_020c0970(const VecFx32 *param1, unk32 param2
     G3_PushMtx();
     G3_Translate(param1->x, param1->y + this->mUnk_308, param1->z);
     G3_Scale(param2, param7, param3);
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, 1, 0, 1, FALSE);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, 1, 0, 1, FALSE);
     UnkStruct_027e09b4::func_ov017_020c0c50(param5);
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, 2, param4, param6, TRUE);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, 2, param4, param6, TRUE);
     UnkStruct_027e09b4::func_ov017_020c0c50(param5);
     G3_PopMtx(1);
 }
@@ -84,9 +84,9 @@ void UnkStruct_027e09b4::func_ov017_020c0a6c(const VecFx32 *param1, s32 param2, 
     G3_PushMtx();
     G3_Translate(param1->x, param1->y + this->mUnk_308 - param4, param1->z);
     G3_Scale(param2, param4, param3);
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, 1, 0, 1, FALSE);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, 1, 0, 1, FALSE);
     func_ov000_0205dbe4(param6);
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, 2, param5, param7, FALSE);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, 2, param5, param7, FALSE);
     func_ov000_0205dbe4(param6);
     G3_PopMtx(1);
 }
@@ -118,9 +118,9 @@ void UnkStruct_027e09b4::func_ov017_020c0b24(const VecFx32 *param1, s32 param2, 
     G3_Translate(param1->x, param1->y, param1->z);
     func_02024a84(&sp0);
     G3_Scale(param2, param2, 0x666);
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, 1, 0, 1, FALSE);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, 1, 0, 1, FALSE);
     UnkStruct_027e09b4::func_ov017_020c0dec();
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, 2, param3, temp_r7, TRUE);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, 2, param3, temp_r7, TRUE);
     UnkStruct_027e09b4::func_ov017_020c0dec();
     G3_PopMtx(1);
 }
@@ -150,7 +150,7 @@ void UnkStruct_027e09b4::func_ov017_020c0c50(u16 param1) {
         var_r5 = temp_r0_2;
         var_r6 = temp_r8;
 
-        G3_Begin(GX_BEGIN_QUAD_STRIPS);
+        G3_Begin(GX_BEGIN_QUAD_STRIP);
         for (var_lr = 0; var_lr < temp_r7; var_lr++) {
             G3_Vtx10(SIN(var_r5) >> 6, 0, COS(var_r5) >> 6);
             G3_Vtx10(SIN(var_r6) >> 6, 0, COS(var_r6) >> 6);
@@ -163,7 +163,7 @@ void UnkStruct_027e09b4::func_ov017_020c0c50(u16 param1) {
     {
         var_r2 = temp_r8;
 
-        G3_Begin(GX_BEGIN_QUAD_STRIPS);
+        G3_Begin(GX_BEGIN_QUAD_STRIP);
         for (var_r1 = 0; var_r1 <= param1; var_r1++) {
             G3_Vtx10(SIN(var_r2) >> 6, 0, COS(var_r2) >> 6);
             G3_Vtx10(0, 0x3C0, 0);
@@ -175,7 +175,7 @@ void UnkStruct_027e09b4::func_ov017_020c0c50(u16 param1) {
 
 void UnkStruct_027e09b4::func_ov017_020c0dec(void) {
     {
-        G3_Begin(GX_BEGIN_TRIS);
+        G3_Begin(GX_BEGIN_TRIANGLES);
         G3_Vtx10(0x000, 0x000, 0x009);
         G3_Vtx10(0x040, 0x3C0, 0x000);
         G3_Vtx10(0x040, 0x040, 0x000);
@@ -216,7 +216,7 @@ void UnkStruct_027e09b4::func_ov017_020c0edc() {
 
         //! TODO: make this work with G3_PolygonAttr
         REG_GFX_FIFO_POLYGON_ATTR = (unk14 & 0x4000) | ((1 << 0x0F) | (2 << 0x06)) |
-                                    ((polyId << 0x18) | (GX_POLYGONMODE_UNK_00 << 0x04) | (0 << 0x10) | GX_LIGHTMASK_NONE) |
+                                    ((polyId << 0x18) | (GX_POLYGONMODE_MODULATE << 0x04) | (0 << 0x10) | GX_LIGHTMASK_NONE) |
                                     ((u32) (unk14 << 0x1B) >> 0xB);
 
         G3_PushMtx();

@@ -69,7 +69,7 @@ Actor *ActorProfileLobarrierShield::Create() {
 ActorProfileLobarrierShield::ActorProfileLobarrierShield() :
     ActorProfile_Derived1(ActorId_CASE) {
     VecFx32_Init(0, 0x666, 0, &mUnk_04.pos);
-    mUnk_04.size = 0x800;
+    mUnk_04.size = FX32_HALF;
 }
 
 UnkStruct_ov063_021631a0::UnkStruct_ov063_021631a0(G3d_Model *pModel) :
@@ -446,7 +446,7 @@ void ActorLobarrierShield::vfunc_10(Cylinder *param1) const {
         return;
     }
     VecFx32_Copy(&mPos, &param1->pos);
-    param1->size = 0x800;
+    param1->size = FX32_HALF;
 }
 
 void ActorLobarrierShield::func_ov063_0215b814(RefStruct ref) {

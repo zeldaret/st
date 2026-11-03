@@ -68,7 +68,7 @@ FileSelectSubScreen::FileSelectSubScreen() :
 
 void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
     this->mUnk_0024 = this->mUnk_0020;
-    this->mUnk_0020 += 0x800;
+    this->mUnk_0020 += FX32_HALF;
 
     G2S_SetBG1Offset(ROUND_FX32(this->mUnk_0020), 0);
     G2S_SetBG2Offset(ROUND_FX32(this->mUnk_0020) + 0x100, 0);
@@ -105,7 +105,7 @@ void FileSelectSubScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl)
             this->mUnk_0020 = 0;
         } else {
             this->mUnk_0028 = 2;
-            this->mUnk_0020 += 0x800;
+            this->mUnk_0020 += FX32_HALF;
         }
     }
 

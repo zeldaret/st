@@ -51,11 +51,7 @@ bool ActorBlast_E8::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, co
         if (temp_r0 != NULL) {
             var_r0 = this->mUnk_04->mPos.y - (sp24.unk_00.y + temp_r0->mPos.y);
 
-            if (var_r0 < 0) {
-                var_r0 = 0 - var_r0;
-            }
-
-            if (var_r0 > 0x800) {
+            if (ABS(var_r0) > FX32_HALF) {
                 return false;
             }
         }
@@ -69,17 +65,13 @@ bool ActorBlast_E8::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, co
                 param2->vfunc_14(&spC.unk_00);
 
                 if (this->mUnk_04->mPos.y < spC.unk_00.y + temp_r0_2->mPos.y &&
-                    temp_r0_2->mPos.y + this->mUnk_04->mPos.y > spC.unk_0C.y + 0x800) {
+                    temp_r0_2->mPos.y + this->mUnk_04->mPos.y > spC.unk_0C.y + FX32_HALF) {
                     return false;
                 }
             } else {
                 var_r0_2 = this->mUnk_04->mPos.y - (sp24.unk_00.y + temp_r0_2->mPos.y);
 
-                if (var_r0_2 < 0) {
-                    var_r0_2 = -var_r0_2;
-                }
-
-                if (var_r0_2 > 0x800) {
+                if (ABS(var_r0_2) > FX32_HALF) {
                     return false;
                 }
             }

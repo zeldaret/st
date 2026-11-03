@@ -63,7 +63,7 @@ void SaveManager::func_ov001_020ba858(void) {
         this->mResultCode = CARD_GetResultCode();
         CARD_UnlockBackup(this->mCardId);
 
-        if (this->mResultCode != CARD_RESULT_SUCCESS) {
+        if (this->mResultCode != CARD_RESULT_FAILURE) {
             this->mUnk_214 = 1;
         }
 

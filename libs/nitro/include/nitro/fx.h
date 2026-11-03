@@ -3,27 +3,20 @@
 
 #include <math.h>
 
+#include "fx/consts.h"
 #include "nitro/types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#define FX64C_SHIFT 32
-#define FX32_SHIFT 12
-#define FX16_SHIFT 12
-
-#define FX32_ONE ((fx32) 1 << FX32_SHIFT)
-#define FX16_ONE ((fx16) 1 << FX16_SHIFT)
-
-#define FX_F32_TO_FX32(n) ((s32) (((n) * 8192 + 1) / 2))
-
-#define FX_MUL32x64C(a, b) (fx32)((((s64) (a)) * ((s64) (b)) + 0x80000000) >> FX64C_SHIFT)
-
 typedef s64 fx64c;
 typedef s64 fx64;
 typedef s32 fx32;
 typedef s16 fx16;
+
+#define FX_F32_TO_FX32(x) ((fx32) (((x) * 8192 + 1) / 2))
+#define FX_FX32_TO_F32(x) ((f32) (((x) * 2 - 1) / 8192))
 
 typedef union VecFx16 {
     struct {
@@ -114,6 +107,13 @@ typedef union MtxFx44 {
     fx32 values[16];
 } MtxFx44;
 
+#define VEC_Set(vec, x_, y_, z_) \
+    do {                         \
+        vec.x = x_;              \
+        vec.y = y_;              \
+        vec.z = z_;              \
+    } while (0)
+
 void FX_Init(void);
 
 fx32 FX_Div(fx32 numer, fx32 denom);
@@ -141,38 +141,51 @@ inline fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b) {
     return ((fx64) a->x * (fx64) b->x + (fx64) a->y * (fx64) b->y + (fx64) a->z * (fx64) b->z) >> FX32_SHIFT;
 }
 
-inline fx32 FX_Mul(fx32 a, fx32 b) {
-    return (fx32) ((((fx64) a * (fx64) b) + 0x800) >> 12);
+inline fx32 FX_MulInline(fx32 v1, fx32 v2) {
+    return (fx32) ((((fx64) v1 * (fx64) v2) + FX32_HALF) >> FX32_SHIFT);
 }
+
+// a non-inline version exists and is named `FX_Mul` (according to Ghost Trick PC)
+#define FX_MUL FX_MulInline
+
+inline fx32 FX_Mul32x64cInline(fx32 v32, fx64c v64c) {
+    return (fx32) (((s64) v32 * v64c + 0x80000000) >> FX64C_SHIFT);
+}
+
+#define FX_MUL32x64C(v1, v2) FX_Mul32x64cInline
 
 extern const fx16 FX_SinCosTable_[];
 
-inline fx32 FX_SinIdx(u16 n) {
+// static fx16 FX_SinIdx(fx32 idx);
+inline fx16 FX_SinIdx(fx32 n) {
     return FX_SinCosTable_[2 * ((n) >> 4)];
 }
 
-inline fx32 FX_Sin(s16 n) {
-    return FX_SinCosTable_[2 * ((n) >> 4)];
-}
-
-inline fx32 FX_CosIdx(u16 n) {
+// static fx16 FX_CosIdx(fx32 idx);
+inline fx16 FX_CosIdx(fx32 n) {
     return FX_SinCosTable_[2 * ((n) >> 4) + 1];
 }
 
-inline fx32 FX_Cos(s16 n) {
-    return FX_SinCosTable_[2 * ((n) >> 4) + 1];
-}
+#define SIN(n) FX_SinIdx((u16) n)
+#define COS(n) FX_CosIdx((u16) n)
 
-// FX_Sin and FX_Cos probably fake? was necessary to keep s16 for `MapObjectUnkPTFL::func_ov102_021843b4()`
-#define SIN(n) FX_SinIdx(n)
-#define COS(n) FX_CosIdx(n)
+//! TODO: figure this out
+#define FX_FX64_TO_F32(x)
+#define FX_F32_TO_FX64(x)
+#define FX_FX64C_TO_F32(x)
+#define FX_F32_TO_FX64C(x)
+#define FX_FX16_TO_F32(x)
+#define FX_F32_TO_FX16(x)
 
-#define VEC_Set(vec, x_, y_, z_) \
-    do {                         \
-        vec.x = x_;              \
-        vec.y = y_;              \
-        vec.z = z_;              \
-    } while (0)
+//! TODO: figure out what is inlined or not
+fx32 FX_Whole(fx32 v);
+fx32 FX_Floor(fx32 v);
+fx32 FX_Sqrt(fx32 x);
+u16 FX_AcosIdx(fx32 x);
+
+//! TODO: find what this is
+#define FX_UNK_ANGLE_CONV(a) ((fx32) ((((a) * FX64C_65536_360) + 0x80000000000) >> 32) >> 12)
+#define FX_MUL_U(v1, v2) ((fx32) ((((u64) v1 * (u64) v2) + FX32_HALF) >> FX32_SHIFT))
 
 #ifdef __cplusplus
 } // extern "C"

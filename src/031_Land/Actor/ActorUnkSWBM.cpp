@@ -130,8 +130,8 @@ bool ActorUnkSWBM::Init(unk32 param1) {
     this->mUnk_098.mUnk_0C.pos.z = posZ;
     this->mUnk_098.mUnk_0C.size  = FX_F32_TO_FX32(0.35f);
 
-    this->mVel.x = FX_Mul(SIN(this->mAngle.angle_s), 0xB33);
-    this->mVel.z = FX_Mul(COS(this->mAngle.angle_s), 0xB33);
+    this->mVel.x = FX_MUL(SIN(this->mAngle.angle_s), 0xB33);
+    this->mVel.z = FX_MUL(COS(this->mAngle.angle_s), 0xB33);
     this->mVel.y = FX_F32_TO_FX32(0.0f);
     return true;
 }
@@ -285,7 +285,7 @@ void ActorUnkSWBM::func_ov031_020e718c(const VecFx32 *param0, MtxFx33 *param1, s
         return;
     }
 
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_UNK_00, 2, data_ov000_020b4ec4.func_01ffc768(0x4), param2, 0);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, 2, data_ov000_020b4ec4.func_01ffc768(0x4), param2, 0);
     G3_PushMtx();
     G3_Translate(param0->x, param0->y, param0->z);
 
