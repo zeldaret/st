@@ -611,9 +611,9 @@ _ZTV19data_ov094_02176f18 kind:data(any) addr:0x02176f18
 _ZTV19data_ov094_02176f3c kind:data(any) addr:0x02176f3c
 data_ov094_02176fa4 kind:data(any) addr:0x02176fa4
 data_ov094_02176fb8 kind:data(any) addr:0x02176fb8
-_ZTV19data_ov094_02176fcc kind:data(any) addr:0x02176fcc
-data_ov094_02176ff8 kind:data(any) addr:0x02176ff8
-data_ov094_0217701c kind:data(any) addr:0x0217701c
+_ZTV19ActorProfileUnkPSWB kind:data(any) addr:0x02176fcc
+_ZTV24ActorProfileUnkPSWB_Base kind:data(any) addr:0x02176ff0
+_ZTV27ActorProfileUnkPSWB_Base_D8 kind:data(any) addr:0x02177014
 data_ov094_0217703c kind:data(any) addr:0x0217703c
 data_ov094_02177064 kind:data(any) addr:0x02177064
 _ZTV19data_ov094_0217708c kind:data(any) addr:0x0217708c

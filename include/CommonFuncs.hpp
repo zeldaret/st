@@ -300,6 +300,8 @@ unk32 func_ov000_02068504(int);
 void func_ov000_02072344(u16 *, UnkStruct_027e09ac_14 *);
 void func_ov000_02072fd0(UnkStackStruct1 *);
 void func_ov000_02073080(void *);
+void func_ov000_0207f4e8(void *);
+void func_ov000_0207f4fc(void *, VecFx32 *, unk32, unk32);
 unk32 func_ov000_02077480();
 fx32 func_ov000_020775d8(fx32);
 unk32 func_ov000_02078aec();

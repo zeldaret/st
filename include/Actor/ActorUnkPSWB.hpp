@@ -2,7 +2,10 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "CommonFuncs.hpp"
+#include "MapObject/MapObject.hpp"
 #include "global.h"
+#include "nitro/types.h"
 #include "types.h"
 
 class ActorUnkPSWB_C4 : public Actor_C4 {
@@ -71,9 +74,28 @@ public:
     void func_ov094_02168388(void);
 };
 
-class ActorProfileUnkPSWB : public ActorProfile_Derived1 {
+class ActorProfileUnkPSWB_Base_D8 : public MapObject_10 {
 public:
-    /* 00 (base) */
+    ActorProfileUnkPSWB_Base_D8() {}
+};
+
+class ActorProfileUnkPSWB_Base : public ActorProfile_Derived1 {
+public:
+    /* 000 (base) */
+    /* 0D8 */ ActorProfileUnkPSWB_Base_D8 mUnk_D8;
+    /* 0FC */ unk32 mUnk_FC; // Some kind of unknown struct/class
+    /* 100 */
+
+    ActorProfileUnkPSWB_Base(ActorId param1) :
+        ActorProfile_Derived1(param1) {
+        func_ov000_0207f4e8(&mUnk_FC);
+    }
+};
+
+class ActorProfileUnkPSWB : public ActorProfileUnkPSWB_Base {
+public:
+    /* 000 (base) */
+    /* 100 */
 
     ActorProfileUnkPSWB();
 

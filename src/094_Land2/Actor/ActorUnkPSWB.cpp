@@ -1,13 +1,42 @@
 #include "Actor/ActorUnkPSWB.hpp"
+#include "CommonFuncs.hpp"
+#include "nitro/fx.h"
+#include "nitro/math.h"
 
 DECL_PROFILE(ActorProfileUnkPSWB);
+
+void *data_ov094_021785a4 = NULL;
 
 Actor *ActorProfileUnkPSWB::Create() {
     return new(HeapIndex_2) ActorUnkPSWB();
 }
 
 ActorProfileUnkPSWB::ActorProfileUnkPSWB() :
-    ActorProfile_Derived1(ActorId_PSWB) {}
+    ActorProfileUnkPSWB_Base(ActorId_PSWB) {
+    mUnk_04.pos.x     = 0;
+    mUnk_04.pos.z     = 0;
+    mUnk_D8.mUnk_0C.y = 0;
+    mUnk_D8.mUnk_08   = 0x7006;
+    mUnk_04.pos.y     = FX_F32_TO_FX32(0.49f);
+    mUnk_D8.mUnk_04 |= 1;
+    mUnk_04.size      = FX_F32_TO_FX32(0.49f);
+    mUnk_D8.mUnk_18.x = FX_F32_TO_FX32(0.49f);
+    mUnk_D8.mUnk_18.z = FX_F32_TO_FX32(0.49f);
+    mUnk_D8.mUnk_0C.x = -FX_F32_TO_FX32(0.49f);
+    mUnk_D8.mUnk_0C.z = -FX_F32_TO_FX32(0.49f);
+    mUnk_D8.mUnk_18.y = FX_F32_TO_FX32(0.90f);
+
+    VecFx32 vec1, vec2, vec3;
+    VecFx32_Init(-FX_F32_TO_FX32(0.49f), FX_F32_TO_FX32(0.90f), -FX_F32_TO_FX32(0.49f), &vec2);
+    VecFx32_Init(FX_F32_TO_FX32(0.49f), FX_F32_TO_FX32(1.90f), FX_F32_TO_FX32(0.49f), &vec3);
+    func_01ffcfcc(&vec1, &vec2, &vec3);
+
+    func_ov000_0207f4fc(&mUnk_FC, &vec1, 0x3000, 1);
+
+    data_ov094_021785a4 = &mUnk_FC;
+    mUnk_18             = 2;
+    mUnk_1A             = 0x1333;
+}
 
 ActorUnkPSWB::ActorUnkPSWB() {}
 
