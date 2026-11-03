@@ -697,7 +697,7 @@ data_ov058_02153534 kind:data(any) addr:0x02153534
 data_ov058_02153548 kind:data(any) addr:0x02153548
 data_ov058_02153598 kind:data(any) addr:0x02153598
 data_ov058_021535a8 kind:data(any) addr:0x021535a8
-__sinit_ActorLokomos.cpp kind:function(arm,size=0x50) addr:0x021535b8
+__sinit_ov058_021535b8 kind:function(arm,size=0x50) addr:0x021535b8
 __sinit_ov058_02153608 kind:function(arm,size=0x50) addr:0x02153608
 __sinit_ov058_02153658 kind:function(arm,size=0x50) addr:0x02153658
 __sinit_ActorUnkNSTN.cpp kind:function(arm,size=0x50) addr:0x021536a8
