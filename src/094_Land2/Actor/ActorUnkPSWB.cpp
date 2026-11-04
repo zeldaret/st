@@ -1,5 +1,8 @@
 #include "Actor/ActorUnkPSWB.hpp"
 #include "CommonFuncs.hpp"
+#include "Unknown/UnkStruct_027e09c0.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "flags.h"
 #include "nitro/fx.h"
 #include "nitro/math.h"
 #include "nitro/types.h"
@@ -59,6 +62,9 @@ ActorProfileUnkPSWB::ActorProfileUnkPSWB() :
     mUnk_1A                     = 0x1333;
 }
 
+ActorUnkPSWB_194::~ActorUnkPSWB_194() {}
+bool ActorUnkPSWB_194::vfunc_08() {}
+
 ActorUnkPSWB::ActorUnkPSWB() :
     mUnk_E0(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkPSWB)->mUnk_3C.mUnk_50)),
     mUnk_140(0),
@@ -89,18 +95,35 @@ ActorUnkPSWB::ActorUnkPSWB() :
     mUnk_194(),
     mUnk_1A4(this) {}
 
-void ActorUnkPSWB::func_ov094_02166424(void) {}
-void ActorUnkPSWB::func_ov094_02166438(void) {}
-void ActorUnkPSWB::func_ov094_02166454(void) {}
-void ActorUnkPSWB::func_ov094_02166680(void) {}
+ActorUnkPSWB::~ActorUnkPSWB() {
+    mUnk_184.func_ov000_020a0334();
+    data_027e09c0->func_ov000_0207e254(&mUnk_194);
+}
+
 bool ActorUnkPSWB::Init(unk32 param1) {}
 void ActorUnkPSWB::func_ov094_02166890(void) {}
-void ActorUnkPSWB::func_ov094_021668cc(void) {}
+
+void ActorUnkPSWB::func_ov094_021668cc(void) {
+    mUnk_150 = 0;
+    mUnk_166 = 0;
+}
+
 void ActorUnkPSWB::func_ov094_021668e0(void) {}
 void ActorUnkPSWB::Update(void) {}
-void ActorUnkPSWB::vfunc_24(void) {}
+
+void ActorUnkPSWB::vfunc_24(void) {
+    if (mState == 0) {
+        this->func_ov094_02166c10();
+    }
+}
+
 void ActorUnkPSWB::func_ov094_02166bcc(void) {}
-void ActorUnkPSWB::func_ov094_02166c10(void) {}
+
+void ActorUnkPSWB::func_ov094_02166c10(void) {
+    this->func_ov094_02167688();
+    this->func_ov094_02167b64(0);
+}
+
 void ActorUnkPSWB::func_ov094_02166c2c(void) {}
 void ActorUnkPSWB::func_ov094_02166c88(void) {}
 void ActorUnkPSWB::func_ov094_02166e10(void) {}
@@ -113,25 +136,65 @@ void ActorUnkPSWB::func_ov094_02167518(void) {}
 void ActorUnkPSWB::func_ov094_021675ac(void) {}
 void ActorUnkPSWB::func_ov094_02167614(void) {}
 void ActorUnkPSWB::func_ov094_02167688(void) {}
+
+// matched (empty)
 void ActorUnkPSWB::vfunc_6C(void) {}
+
 void ActorUnkPSWB::func_ov094_021676f4(void) {}
 void ActorUnkPSWB::func_ov094_02167794(void) {}
-void ActorUnkPSWB::func_ov094_0216781c(void) {}
-void ActorUnkPSWB::vfunc_5C(void) {}
-void ActorUnkPSWB::vfunc_60(void) {}
+
+void ActorUnkPSWB::func_ov094_0216781c(void) {
+    mUnk_170 = func_01ffbbe0(mVel.x, mVel.z);
+}
+
+unk32 ActorUnkPSWB::vfunc_5C(void) {
+    return 0;
+}
+
+unk32 ActorUnkPSWB::vfunc_60(void) {
+    return 0;
+}
+
 void ActorUnkPSWB::vfunc_2C(unk32 param1) {}
-void ActorUnkPSWB::vfunc_70(void) {}
+
+unk32 ActorUnkPSWB::vfunc_70(void) {
+    return 0x63d;
+}
+
 void ActorUnkPSWB::func_ov094_02167ab8(void) {}
-void ActorUnkPSWB::func_ov094_02167b24(void) {}
-void ActorUnkPSWB::func_ov094_02167b64(void) {}
+
+bool ActorUnkPSWB::func_ov094_02167b24(unk32 param1) {
+    if (param1 == 1 && !data_027e0ce0->func_01fff1a4()) {
+        return false;
+    }
+    return func_ov000_0208bba4(data_027e0ce0, param1);
+}
+
+void ActorUnkPSWB::func_ov094_02167b64(unk32 param1) {}
 void ActorUnkPSWB::func_ov094_02167bf0(void) {}
 void ActorUnkPSWB::func_ov094_02167c54(void) {}
 void ActorUnkPSWB::func_ov094_02167d20(void) {}
 void ActorUnkPSWB::func_ov094_02167dbc(void) {}
 void ActorUnkPSWB::func_ov094_02167e58(void) {}
 void ActorUnkPSWB::vfunc_58(void) {}
-void ActorUnkPSWB::func_ov094_0216825c(void) {}
-void ActorUnkPSWB::func_ov094_02168310(void) {}
-void ActorUnkPSWB::func_ov094_02168348(void) {}
-void ActorUnkPSWB::func_ov094_02168364(void) {}
-void ActorUnkPSWB::func_ov094_02168388(void) {}
+void ActorUnkPSWB::func_ov094_0216825c(void *param1, VecFx32 *param2, unk32 param3) {}
+
+UnkStruct_ov094_02176fb8::UnkStruct_ov094_02176fb8(void *param1) :
+    // mUnk_08((0x7000 & ~0x7000) | 0x7000),
+    mUnk_0C(param1) {
+    mUnk_08 = 0;
+    mUnk_08 &= ~0x7000;
+    mUnk_08 |= 0x7000;
+}
+
+UnkStruct_ov094_02176fb8::~UnkStruct_ov094_02176fb8() {
+    mUnk_0C = NULL;
+}
+
+bool UnkStruct_ov094_02176fb8::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
+    VecFx32 vec;
+    VecFx16_Copy2VecFx32(&param1->mUnk_08, &vec);
+    // VecFx16_Copy(param1, &vec);
+    ActorUnkPSWB::func_ov094_0216825c(mUnk_0C, &vec, 0x800);
+    return 1;
+}

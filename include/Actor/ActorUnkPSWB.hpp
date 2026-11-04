@@ -2,40 +2,42 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Actor/ActorUnkSCCN.hpp"
 #include "CommonFuncs.hpp"
 #include "MapObject/MapObject.hpp"
 #include "Render/ModelRender.hpp"
+#include "Unknown/Common.hpp"
+#include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "Unknown/UnkStruct_ov048_02137600.hpp"
 #include "global.h"
+#include "nitro/fx.h"
+#include "nitro/types.h"
 #include "types.h"
 
-class ActorUnkPSWB_C4 : public Actor_C4 {
-public:
-    ActorUnkPSWB_C4(Actor *param1);
-
-    /* 00 */ virtual bool vfunc_00(RefStruct ref, unk32 param2) override;
-    /* 04 */ virtual bool vfunc_04() override;
-    /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
-};
-
-//! TODO: Move to a separate file
-class UnkStruct_ov000_020b287c {
+class UnkStruct_ov094_02176fb8 : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
+    /* 04 */ PAD(0x4, 0x8);
     /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
+    /* 0C */ void *mUnk_0C; // Maybe an Actor
 
-    UnkStruct_ov000_020b287c();
+    UnkStruct_ov094_02176fb8(void *param1);
 
-    /* 08 */ virtual bool vfunc_08(void);
+    /* 00 */ virtual ~UnkStruct_ov094_02176fb8() override;
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
 };
 
-class ActorUnkPSWB_194 : public UnkStruct_ov000_020b287c {
+class ActorUnkPSWB_184 : public UnkSystem7 {
+public:
+    ActorUnkPSWB_184(UnkSystem7_UnkStruct_00 *param1) :
+        UnkSystem7(param1) {}
+};
+
+class ActorUnkPSWB_194 : public ActorUnkSCCN_B8 {
 public:
     ActorUnkPSWB_194() {}
 
+    /* 00 */ virtual ~ActorUnkPSWB_194() override;
     /* 08 */ virtual bool vfunc_08(void) override;
 };
 
@@ -59,14 +61,14 @@ public:
     /* 16A */ unk16 mUnk_16A;
     /* 16C */ unk16 mUnk_16C;
     /* 16E */ unk16 mUnk_16E;
-    /* 170 */ unk16 mUnk_170;
+    /* 170 */ unk16 mUnk_170; // Very likely an angle
     /* 172 */ unk16 mUnk_172; // WARN: unused
     /* 174 */ unk32 mUnk_174;
     /* 178 */ unk32 mUnk_178;
     /* 17C */ unk32 mUnk_17C;
     /* 180 */ unk16 mUnk_180;
     /* 182 */ unk16 mUnk_182; // WARN: unused
-    /* 184 */ unk32 mUnk_184;
+    /* 184 */ ActorUnkPSWB_184 mUnk_184;
     /* 188 */ unk32 mUnk_188;
     /* 18C */ unk32 mUnk_18C;
     /* 190 */ unk16 mUnk_190;
@@ -80,15 +82,13 @@ public:
     /* 20 */ virtual void Update() override;
     /* 24 */ virtual void vfunc_24() override;
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
+    /* 4C */ virtual ~ActorUnkPSWB();
     /* 58 */ virtual void vfunc_58(void) override;
-    /* 58 */ virtual void vfunc_5C(void) override;
-    /* 58 */ virtual void vfunc_60(void) override;
+    /* 5C */ virtual unk32 vfunc_5C(void) override;
+    /* 60 */ virtual unk32 vfunc_60(void) override;
     /* 6C */ virtual void vfunc_6C(void) override;
-    /* 70 */ virtual void vfunc_70(void) override;
+    /* 70 */ virtual unk32 vfunc_70(void) override;
 
-    void func_ov094_02166424(void);
-    void func_ov094_02166438(void);
-    void func_ov094_02166454(void);
     void func_ov094_02166680(void);
     void func_ov094_02166890(void);
     void func_ov094_021668cc(void);
@@ -111,18 +111,15 @@ public:
     void func_ov094_02167794(void);
     void func_ov094_0216781c(void);
     void func_ov094_02167ab8(void);
-    void func_ov094_02167b24(void);
-    void func_ov094_02167b64(void);
+    bool func_ov094_02167b24(unk32 param1);
+    void func_ov094_02167b64(unk32 param1);
     void func_ov094_02167bf0(void);
     void func_ov094_02167c54(void);
     void func_ov094_02167d20(void);
     void func_ov094_02167dbc(void);
     void func_ov094_02167e58(void);
-    void func_ov094_0216825c(void);
+    static void func_ov094_0216825c(void *param1, VecFx32 *param2, unk32 param3);
     void func_ov094_02168310(void);
-    void func_ov094_02168348(void);
-    void func_ov094_02168364(void);
-    void func_ov094_02168388(void);
 };
 
 class ActorProfileUnkPSWB_Base_D8 : public MapObject_10 {

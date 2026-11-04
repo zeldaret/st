@@ -1488,7 +1488,7 @@ _ZN18UnkStruct_027e09e819func_ov000_0207e99cEP14ZCBSectionGRDBP26UnkStruct_027e0
 func_ov000_0207eb40 kind:function(arm,size=0x4c) addr:0x0207eb40
 func_ov000_0207eb8c kind:function(arm,size=0x68) addr:0x0207eb8c
 func_ov000_0207ebf4 kind:function(arm,size=0x74) addr:0x0207ebf4
-_ZN24UnkStruct_ov000_020b287cC2Ev kind:function(arm,size=0x20) addr:0x0207ec68
+_ZN15ActorUnkSCCN_B8C2Ev kind:function(arm,size=0x20) addr:0x0207ec68
 _ZN15ActorUnkSCCN_B8C1Ev kind:function(arm,size=0x20) addr:0x0207ec88
 _ZN15ActorUnkSCCN_B8D1Ev kind:function(arm,size=0x30) addr:0x0207eca8
 _ZN15ActorUnkSCCN_B8D0Ev kind:function(arm,size=0x38) addr:0x0207ecd8

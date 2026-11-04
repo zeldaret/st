@@ -18,7 +18,7 @@ public:
 
     // data_ov000_020b287c
     /* 00 */ virtual ~ActorUnkSCCN_B8();
-    /* 08 */ virtual void vfunc_08();
+    /* 08 */ virtual bool vfunc_08();
 };
 
 class MapObject_10_SCCN : public MapObject_10 {

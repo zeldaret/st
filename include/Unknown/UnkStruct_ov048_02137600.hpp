@@ -15,13 +15,14 @@ public:
     UnkStruct_ov048_02137600();
 
     /* 18 */ virtual bool Init(unk32 param1) override;
+    /* 4C */ virtual ~UnkStruct_ov048_02137600() override;
     /* 54 */ virtual void vfunc_54(void);
     /* 58 */ virtual void vfunc_58(void);
-    /* 5C */ virtual void vfunc_5C(void);
-    /* 60 */ virtual void vfunc_60(void);
+    /* 5C */ virtual unk32 vfunc_5C(void);
+    /* 60 */ virtual unk32 vfunc_60(void);
     /* 64 */ virtual void vfunc_64(void);
     /* 68 */ virtual void vfunc_68(void);
-    /* 6C */ virtual void vfunc_6C(void) = 0;
-    /* 70 */ virtual void vfunc_70(void) = 0;
+    /* 6C */ virtual void vfunc_6C(void)  = 0;
+    /* 70 */ virtual unk32 vfunc_70(void) = 0;
     /* 74 */ virtual void vfunc_74(void);
 };
