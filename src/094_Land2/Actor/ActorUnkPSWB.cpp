@@ -60,7 +60,34 @@ ActorProfileUnkPSWB::ActorProfileUnkPSWB() :
 }
 
 ActorUnkPSWB::ActorUnkPSWB() :
-    mUnk_E0(G3d_GetModelPtr(GET_PROFILE(ActorProfileLobarrier)->mUnk_3C.mUnk_50)) {}
+    mUnk_E0(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkPSWB)->mUnk_3C.mUnk_50)),
+    mUnk_140(0),
+    mUnk_144(0),
+    mUnk_148(0),
+    mUnk_14C(0),
+    mUnk_150(0),
+    mUnk_154(0),
+    mUnk_158(0x1000),
+    mUnk_15C(0),
+    mUnk_160(1),
+    mUnk_164(0),
+    mUnk_166(0),
+    mUnk_168(0),
+    mUnk_16A(0),
+    mUnk_16C(0),
+    mUnk_16E(0),
+    mUnk_170(0),
+    mUnk_174(0),
+    mUnk_178(0),
+    mUnk_17C(0),
+    mUnk_180(0),
+    mUnk_184(0),
+    mUnk_188(-1),
+    mUnk_18C(0),
+    mUnk_190(0),
+    mUnk_192(0),
+    mUnk_194(),
+    mUnk_1A4(this) {}
 
 void ActorUnkPSWB::func_ov094_02166424(void) {}
 void ActorUnkPSWB::func_ov094_02166438(void) {}

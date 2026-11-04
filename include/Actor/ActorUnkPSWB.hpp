@@ -19,10 +19,60 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
+//! TODO: Move to a separate file
+class UnkStruct_ov000_020b287c {
+public:
+    /* 00 (vtable) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+
+    UnkStruct_ov000_020b287c();
+
+    /* 08 */ virtual bool vfunc_08(void);
+};
+
+class ActorUnkPSWB_194 : public UnkStruct_ov000_020b287c {
+public:
+    ActorUnkPSWB_194() {}
+
+    /* 08 */ virtual bool vfunc_08(void) override;
+};
+
 class ActorUnkPSWB : public UnkStruct_ov048_02137600 {
 public:
-    /* 00 (base) */
-    /* E0 */ ModelRender mUnk_E0;
+    /* 000 (base) */
+    /* 0E0 */ ModelRender mUnk_E0;
+    /* 140 */ unk32 mUnk_140;
+    /* 144 */ unk32 mUnk_144;
+    /* 148 */ unk32 mUnk_148;
+    /* 14C */ unk32 mUnk_14C;
+    /* 150 */ unk32 mUnk_150;
+    /* 154 */ unk32 mUnk_154;
+    /* 158 */ unk32 mUnk_158;
+    /* 15C */ unk32 mUnk_15C;
+    /* 160 */ unk32 mUnk_160;
+    /* 164 */ unk8 mUnk_164;
+    /* 165 */ unk8 mUnk_165; // WARN: unused
+    /* 166 */ unk16 mUnk_166;
+    /* 168 */ unk16 mUnk_168;
+    /* 16A */ unk16 mUnk_16A;
+    /* 16C */ unk16 mUnk_16C;
+    /* 16E */ unk16 mUnk_16E;
+    /* 170 */ unk16 mUnk_170;
+    /* 172 */ unk16 mUnk_172; // WARN: unused
+    /* 174 */ unk32 mUnk_174;
+    /* 178 */ unk32 mUnk_178;
+    /* 17C */ unk32 mUnk_17C;
+    /* 180 */ unk16 mUnk_180;
+    /* 182 */ unk16 mUnk_182; // WARN: unused
+    /* 184 */ unk32 mUnk_184;
+    /* 188 */ unk32 mUnk_188;
+    /* 18C */ unk32 mUnk_18C;
+    /* 190 */ unk16 mUnk_190;
+    /* 192 */ unk16 mUnk_192;
+    /* 194 */ ActorUnkPSWB_194 mUnk_194;
+    /* 1A4 */ void *mUnk_1A4;
 
     ActorUnkPSWB();
 

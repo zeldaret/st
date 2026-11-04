@@ -609,7 +609,7 @@ __sinit_MapObjectUnkMTWD.cpp kind:function(arm,size=0x50) addr:0x02176e24
 data_ov094_02176ee8 kind:data(any) addr:0x02176ee8
 _ZTV19data_ov094_02176f18 kind:data(any) addr:0x02176f18
 _ZTV19data_ov094_02176f3c kind:data(any) addr:0x02176f3c
-data_ov094_02176fa4 kind:data(any) addr:0x02176f9c
+_ZTV16ActorUnkPSWB_194 kind:data(any) addr:0x02176f9c
 data_ov094_02176fb8 kind:data(any) addr:0x02176fb8
 _ZTV19ActorProfileUnkPSWB kind:data(any) addr:0x02176fcc
 _ZTV24ActorProfileUnkPSWB_Base kind:data(any) addr:0x02176ff0
