@@ -6,6 +6,7 @@
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e0d00.hpp"
 #include "Unknown/UnkStruct_ov024_020d86a0.hpp"
+#include "nitro/fx.h"
 #include "types.h"
 #include "versions.h"
 
@@ -107,8 +108,8 @@ void UnkTrainSystem1::func_ov024_020d562c(const VecFx32 *param1, fx32 param2) {
     if (data_ov024_020d86a8.pInstance->mUnk_00_1 == 0) {
         UnkStruct_027e09bc *ptr = data_027e09bc;
         fx32 temp               = this->mUnk_00 + this->mUnk_04;
-        fx32 temp_r1            = FX_Mul(temp, param2);
-        new_var3                = FX_Mul(param2, 0x266);
+        fx32 temp_r1            = FX_MUL(temp, param2);
+        new_var3                = FX_MUL(param2, 0x266);
 
         new_var5 = param1->z;
         new_var6 = param1->y + new_var3;
@@ -132,9 +133,9 @@ void UnkTrainSystem1::func_ov024_020d562c(const VecFx32 *param1, fx32 param2) {
         temp_r1_3.z -= param1->z;
         temp_r1_3.y -= param1->y;
 
-        sp14.x = FX_Mul(temp_r1_3.x, 0x2E1);
-        sp14.y = FX_Mul(temp_r1_3.y, 0x2E1);
-        sp14.z = FX_Mul(temp_r1_3.z, 0x2E1);
+        sp14.x = FX_MUL(temp_r1_3.x, 0x2E1);
+        sp14.y = FX_MUL(temp_r1_3.y, 0x2E1);
+        sp14.z = FX_MUL(temp_r1_3.z, 0x2E1);
 
         sp20 = sp14;
 
@@ -150,19 +151,19 @@ void UnkTrainSystem1::func_ov024_020d562c(const VecFx32 *param1, fx32 param2) {
 
         func_ov000_0205c204(sp4, &sp44, temp_r1, temp_r1, 0x1F);
     } else {
-        fx32 calcul_x   = this->mUnk_04 + (this->mUnk_00 + 0x266);
-        fx32 thumb_y    = (fx32) (((((s64) this->mUnk_04) * ((s64) param2)) + 0x800) >> 12);
+        fx32 value1     = this->mUnk_04 + (this->mUnk_00 + 0x266);
+        fx32 value2     = FX_MUL(this->mUnk_04, param2);
         unk32 new_var10 = this->mUnk_10;
 
         fx32 x = param1->x;
         fx32 z = param1->z;
-        fx32 y = param1->y + (fx32) (((((s64) calcul_x) * ((s64) param2)) + 0x800) >> 12);
+        fx32 y = param1->y + FX_MUL(value1, param2);
 
         sp38.x = x;
         sp38.y = y;
         sp38.z = z;
 
-        func_ov000_0205c204(sp4, &sp38, thumb_y, thumb_y, (u8) new_var10);
+        func_ov000_0205c204(sp4, &sp38, value2, value2, (u8) new_var10);
     }
 }
 

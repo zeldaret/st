@@ -19,7 +19,7 @@ void SaveManager::func_ov017_020c2b68(u16 param1) {
 
     gSaveManager.mResultCode = CARD_GetResultCode();
 
-    if (gSaveManager.mResultCode != CARD_RESULT_SUCCESS) {
+    if (gSaveManager.mResultCode != CARD_RESULT_FAILURE) {
         gSaveManager.mUnk_214 = 2;
     }
 
@@ -123,7 +123,7 @@ void SaveManager::func_ov017_020c2fc4(u16 param1) {
     gSaveManager.mResultCode = CARD_GetResultCode();
     CARD_UnlockBackup(gSaveManager.mCardId);
 
-    if (gSaveManager.mResultCode != CARD_RESULT_SUCCESS) {
+    if (gSaveManager.mResultCode != CARD_RESULT_FAILURE) {
         gSaveManager.mUnk_214 = 2;
     }
 

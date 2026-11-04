@@ -50,7 +50,7 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c117c(const VecFx32 *param2, u
 
         s16 temp_r0_4  = 0x10000 >> *new_var;
         s32 value2     = var_r7 + (temp_r5 >> 16);
-        fx32 temp_r2_3 = FX_Mul(temp_r0_3, COS((s16) (temp_r0 - ((s16) (value2 * temp_r0_4 + temp_r0_4 / 2)))));
+        fx32 temp_r2_3 = FX_MUL(temp_r0_3, COS((s16) (temp_r0 - ((s16) (value2 * temp_r0_4 + temp_r0_4 / 2)))));
 
         s16 temp_r0_5 = func_01ffb428(param3 + temp_r2_3, this->unk_0C);
         u32 temp_r2_4 = ~(0xFF << *(volatile u16 *) &this->unk_10) & ((u16) (1 << *new_var) + (temp_r5 >> 16) + var_r7);
@@ -68,9 +68,9 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c12fc(u8 param2, unk16 param3)
     G3_PushMtx();
     G3_Translate(this->unk_00.x, this->unk_00.y + 0x333, this->unk_00.z);
     G3_Scale(this->unk_0C, param3, this->unk_0C);
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, 1, 0, 1, FALSE);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, GX_CULL_FRONT, 0, 1, FALSE);
     this->func_ov017_020c13b4();
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, 2, param2, data_027e09ac->mUnk_014.mUnk_06, TRUE);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, GX_CULL_BACK, param2, data_027e09ac->mUnk_014.mUnk_06, TRUE);
     this->func_ov017_020c13b4();
     G3_PopMtx(1);
 }
@@ -115,7 +115,7 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c13b4() {
     u16 temp_r7_2;
 
     {
-        G3_Begin(GX_BEGIN_QUAD_STRIPS);
+        G3_Begin(GX_BEGIN_QUAD_STRIP);
 
         temp_r2   = 0x10000 >> this->unk_10;
         u16 value = temp_r2 / 2;
@@ -145,7 +145,7 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c13b4() {
     var_lr    = ((u32) (value >> 15) >> 16);
 
     if (this->unk_12 >= 0x1000) {
-        G3_Begin(GX_BEGIN_QUAD_STRIPS);
+        G3_Begin(GX_BEGIN_QUAD_STRIP);
 
         for (var_ip_2 = 0; var_ip_2 <= (1 << this->unk_10); var_ip_2++) {
             temp_r4_2 = 1 << this->unk_10;
@@ -168,7 +168,7 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c13b4() {
     }
 
     {
-        G3_Begin(GX_BEGIN_QUAD_STRIPS);
+        G3_Begin(GX_BEGIN_QUAD_STRIP);
 
         for (var_ip_2 = 0; var_ip_2 <= (1 << this->unk_10); var_ip_2++) {
             temp_r5 = 1 << this->unk_10;
@@ -194,7 +194,7 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c13b4() {
     }
 
     {
-        G3_Begin(GX_BEGIN_QUAD_STRIPS);
+        G3_Begin(GX_BEGIN_QUAD_STRIP);
 
         temp_r1   = 0x10000 >> this->unk_10;
         u16 value = temp_r1 / 2;

@@ -210,22 +210,22 @@ void ActorUnkKOTA::func_ov094_0216e9fc(VecFx32 *param1, const VecFx32 *param2, f
         s32 temp       = 0xFFFF / (this->func_ov094_0216ed94() - this->mUnk_DA);
         s32 diff       = this->mUnk_D8 - this->mUnk_DA;
         s16 angle      = diff * temp;
-        param1->x += FX_Mul(SIN(angle), random_val);
-        param1->z += FX_Mul(COS(angle), random_val);
+        param1->x += FX_MUL(SIN(angle), random_val);
+        param1->z += FX_MUL(COS(angle), random_val);
     } else if (above == below) {
         s32 random_val = gRandom.Next32(param3 - param3 / 4 + 1) + param3 / 4;
         s32 temp       = 0xFFFF / (this->func_ov094_0216ed94() - this->mUnk_DA);
         s32 diff       = this->mUnk_D8 - this->mUnk_DA;
         s16 angle      = diff * temp;
-        param1->x += FX_Mul(SIN(angle), random_val);
-        param1->z += FX_Mul(COS(angle), random_val);
+        param1->x += FX_MUL(SIN(angle), random_val);
+        param1->z += FX_MUL(COS(angle), random_val);
     } else {
         s32 random_val = gRandom.Next32(param3 - param3 / 2 + 1) + param3 / 2;
         s32 temp       = 0xFFFF / (this->func_ov094_0216ed94() - this->mUnk_DA);
         s32 diff       = this->mUnk_D8 - this->mUnk_DA;
         s16 angle      = diff * temp;
-        param1->x += FX_Mul(SIN(angle), random_val);
-        param1->z += FX_Mul(COS(angle), random_val);
+        param1->x += FX_MUL(SIN(angle), random_val);
+        param1->z += FX_MUL(COS(angle), random_val);
     }
 }
 

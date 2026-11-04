@@ -60,7 +60,7 @@ bool ActorUnkTGTZ::Init(unk32 param1) {
 #pragma unused(param1)
 
     if (this->mUnk_5C.mParams[3] != 0x0) {
-        this->mPos.y = FX_Mul(this->mUnk_5C.mParams[3] << 0xC, 0x1333);
+        this->mPos.y = FX_MUL(this->mUnk_5C.mParams[3] << 0xC, 0x1333);
     }
 
     MtxFx33_InitYRotation(&this->mUnk_190, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));

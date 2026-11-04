@@ -34,7 +34,7 @@ bool PlayerActorBase_74::UnknownInline1(u32 index, VecFx32 *pVec) {
 
     temp_r0_3 = data_027e0cd8->mUnk_0C->vfunc_28(&this->mUnk_1C[index], 1, 0) + 0xF6;
 
-    if (temp_r0_3 >= this->mUnk_1C[index].y + 0x800) {
+    if (temp_r0_3 >= this->mUnk_1C[index].y + FX32_HALF) {
         return false;
     }
 

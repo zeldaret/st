@@ -17,7 +17,7 @@ struct UnkStruct_ov031_02117c84 {
     }
 };
 
-static const Vec2pCpp data_ov031_02115830(0x800, 0x800);
+static const Vec2pCpp data_ov031_02115830(FX32_HALF, FX32_HALF);
 static const UnkStruct_ov031_02117c84 data_ov031_02117c84(0x3C);
 static const CellAnimObject data_ov031_02115c84;
 
@@ -236,7 +236,7 @@ bool MapObjectChestBase::vfunc_44() {
 
 void MapObjectChestBase::func_ov031_02103f48() {
     VecFx32 local_10;
-    VecFx32_Init(this->mPos.x, this->mPos.y + 0x800, this->mPos.z, &local_10);
+    VecFx32_Init(this->mPos.x, this->mPos.y + FX32_HALF, this->mPos.z, &local_10);
     data_027e0cec->func_ov000_0209feac(0x81F, &local_10, 4, 0, 0);
 }
 

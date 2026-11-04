@@ -9,7 +9,7 @@
 
 extern unk32 data_ov000_020aecf8;
 
-const Cylinder data_ov031_02113d64(0x800);
+const Cylinder data_ov031_02113d64(FX32_HALF);
 
 static PTMF<ActorHeart> data_ov031_02113da4[ActorHeartState_Max] = {
     &ActorHeart::func_ov031_020ef2ec, // ActorHeartState_InitFallDown
@@ -357,7 +357,7 @@ void ActorHeart::func_ov031_020ef570() {
 
     this->mUnk_B8 += 0x666;
 
-    this->mVel.x = FX_Mul(SIN(this->mUnk_B8), 0x40);
+    this->mVel.x = FX_MUL(SIN(this->mUnk_B8), 0x40);
     this->mVel.z = FX_F32_TO_FX32(0.0);
 
     if (this->mVel.y <= FX_F32_TO_FX32(-0.005) - 1) {
