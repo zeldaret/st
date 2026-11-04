@@ -126,7 +126,7 @@ UnkStruct_02049b18_06::UnkStruct_02049b18_06() {
 
     TP_Init();
 
-    if (OS_func_0065()) {
+    if (OS_IsRunOnEmulator()) {
         TP_SetCalibrateParam(NULL);
     } else if (TP_GetUserInfo(&params)) {
         TP_SetCalibrateParam(&params);

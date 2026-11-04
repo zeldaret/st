@@ -123,7 +123,7 @@ void ROMUtil_Read(void *dest, u32 addr, s32 num_bytes) {
     *(vu16 *) (register_base_1 + REG_EXMEM_CNT_OFFSET) = ext_mem_register_val_original;
 
     CARD_func_0011(lock_id);
-    OS_func_0178(lock_id);
+    OS_ReleaseLockID(lock_id);
 }
 
 u32 ROMUtil_CRC32(void *buf, u32 size) {

@@ -52,20 +52,20 @@ void UnkDataStruct4::func_ov024_020d258c(u32 sceneIndex, u8 roomIndex) {
 
     sp10[0] = L'\0';
     sp10[1] = L'\0';
-    snprintf((char *) sp10, sizeof(sp10), "T%02d", roomIndex);
+    OS_SNPrintf((char *) sp10, sizeof(sp10), "T%02d", roomIndex);
 
     sp34[0]            = L'\0';
     sp34[15]           = L'\0';
     pEntry             = data_027e09a0->GetCourseEntry(sceneIndex);
     const char *string = "Map/%s/train%02d.bin";
-    snprintf((char *) sp34, sizeof(sp34), string, pEntry->name, roomIndex);
+    OS_SNPrintf((char *) sp34, sizeof(sp34), string, pEntry->name, roomIndex);
 
     UnkStruct2 sp24(NULL, 1);
     sp24.mUnk_04 = (char *) sp34;
     sp24.func_020154ec((char *) sp10);
 
     pEntry = data_027e09a0->GetCourseEntry(sceneIndex);
-    snprintf((char *) sp34, sizeof(sp34), "%s:ztb/%s_%02d.ztb", sp10, pEntry->name, roomIndex);
+    OS_SNPrintf((char *) sp34, sizeof(sp34), "%s:ztb/%s_%02d.ztb", sp10, pEntry->name, roomIndex);
 
     UnkFileSystem3 sp14((char *) sp34);
     sp14.vfunc_08(0x10);

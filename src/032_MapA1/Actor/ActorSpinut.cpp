@@ -436,7 +436,7 @@ void ActorSpinut::func_ov032_02119f40() {
         }
 
         default:
-            _OS_Panic();
+            OS_Terminate();
             break;
     }
 

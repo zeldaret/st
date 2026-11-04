@@ -306,7 +306,7 @@ void AdventureModeManager_1B8_Base::func_ov024_020d0a64() {
 }
 
 void AdventureModeManager_1B8_Base::TryLoadBGChar(void *ptr, u32 offset, u32 size) {
-    DC_func_0002();
+    DC_StoreAll();
 
     if (!this->mIsTopScreen) {
         switch (this->mBGType) {
