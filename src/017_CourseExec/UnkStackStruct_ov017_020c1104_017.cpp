@@ -68,9 +68,9 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c12fc(u8 param2, unk16 param3)
     G3_PushMtx();
     G3_Translate(this->unk_00.x, this->unk_00.y + 0x333, this->unk_00.z);
     G3_Scale(this->unk_0C, param3, this->unk_0C);
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, 1, 0, 1, FALSE);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, GX_CULL_FRONT, 0, 1, FALSE);
     this->func_ov017_020c13b4();
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, 2, param2, data_027e09ac->mUnk_014.mUnk_06, TRUE);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, GX_CULL_BACK, param2, data_027e09ac->mUnk_014.mUnk_06, TRUE);
     this->func_ov017_020c13b4();
     G3_PopMtx(1);
 }

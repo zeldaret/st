@@ -10,6 +10,11 @@ extern "C" {
 #include "nitro/reg.h"
 #include "nitro/types.h"
 
+#define GX_LCD_SIZE_X 256
+#define GX_LCD_SIZE_Y 192
+#define GX_DEFAULT_DMAID 3
+#define GX_DMA_NOT_USE -1
+
 #define GX_VRAM_LCDC_ALL 0x1ff
 #define GX_VRAM_LCDC_C 0x4
 #define GX_VRAM_LCDC_D 0x8
@@ -68,6 +73,24 @@ typedef struct GXOamAffine_ {
     /* 1C */ u16 _14;
     /* 1E */ s16 PD;
 } GXOamAffine; // size = 0x20
+
+typedef struct GXDispCnt_ {
+    /* 00 */ u32 bgMode;
+    /* 04 */ u32 bg0_2d3d;
+    /* 08 */ u32 objMapChar;
+    /* 0C */ u32 objMapBmp;
+    /* 10 */ u32 blankScr;
+    /* 14 */ u32 visiblePlane;
+    /* 18 */ u32 visibleWnd;
+    /* 1C */ u32 dispMode;
+    /* 20 */ u32 extObjMapChar;
+    /* 24 */ u32 extObjMapBmp;
+    /* 28 */ u32 hBlankObjProc;
+    /* 2C */ u32 bgCharOffset;
+    /* 30 */ u32 bgScrOffset;
+    /* 34 */ u32 bgExtPltt;
+    /* 38 */ u32 objExtPltt;
+} GXDispCnt; // size = 0x3C
 
 typedef u32 GXSt;
 
@@ -233,16 +256,10 @@ inline void GX_SetBGScrOffset(u32 offset) {
 
 inline void GX_SetCapture(GXCaptureSize sz, GXCaptureMode mode, GXCaptureSrcA srcA, GXCaptureSrcB srcB, GXCaptureDest dest,
                           s32 eva, s32 evb) {
-    // Unclear how to combine the arguments
-    //   sz = GX_CAPTURE_SIZE_256x192,
-    //   mode = GX_CAPTURE_MODE_A,
-    //   srcA = GX_CAPTURE_SRCA_2D3D,
-    //   srcB = 0,
-    //   dest = GX_CAPTURE_DEST_VRAM_C_0x00000,
-    //   eva = 16,
-    //   evb = 0,
-    //     => 0x80320010
-    REG_DISPCAPCNT = 0x80300010 | (dest << 0x10);
+    REG_DISPCAPCNT = (mode << REG_GX_DISPCAPCNT_MOD_SHIFT) | (srcB << REG_GX_DISPCAPCNT_SRCB_SHIFT) |
+                     (srcA << REG_GX_DISPCAPCNT_SRCA_SHIFT) | (sz << REG_GX_DISPCAPCNT_WSIZE_SHIFT) |
+                     (dest << REG_GX_DISPCAPCNT_DEST_SHIFT) | (evb << REG_GX_DISPCAPCNT_EVB_SHIFT) |
+                     (eva << REG_GX_DISPCAPCNT_EVA_SHIFT);
 }
 
 inline void GXS_SetOBJVRamModeBmp(u32 mode) {

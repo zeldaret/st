@@ -28,12 +28,20 @@ inline void G3_TexImageParam(GXTexFmt texFmt, GXTexGen texGen, GXTexSizeS texSiz
     // A: textureAddress
     // R: texRepeatST (& 1 -> S direction, & 2 -> T direction)
     // f: texFlip (& 1 -> S direction, & 2 -> T direction)
-    REG_GFX_FIFO_TEXTURE_PARAM = (texFmt << 0x1A) | textureAddress | (texGen << 0x1E) | (texSizeS << 0x14) |
-                                 (texSizeT << 0x17) | (color0 << 0x1D) | (texFlip << 0x12) | (texRepeatST << 0x10);
+    REG_GFX_FIFO_TEXTURE_PARAM =
+        (texFmt << REG_G3_TEXIMAGE_PARAM_TEXFMT_SHIFT) | textureAddress | (texGen << REG_G3_TEXIMAGE_PARAM_TGEN_SHIFT) |
+        (texSizeS << REG_G3_TEXIMAGE_PARAM_V_SIZE_SHIFT) | (texSizeT << REG_G3_TEXIMAGE_PARAM_T_SIZE_SHIFT) |
+        (color0 << REG_G3_TEXIMAGE_PARAM_TR_SHIFT) | (texFlip << REG_G3_TEXIMAGE_PARAM_FS_SHIFT) |
+        (texRepeatST << REG_G3_TEXIMAGE_PARAM_RS_SHIFT);
 }
 
+#define G3_TEXPLTTBASE_ADDR(addr) ((u32) (addr << 0x10) >> 0x0D) //! TODO: figure out the shifts
+#define G3_TEXPLTTBASE_FMT(fmt)                                                           \
+    (GXTexFmt)(((u32) fmt >> REG_G3_TEXIMAGE_PARAM_TEXFMT_SHIFT) &                        \
+               (REG_G3_TEXIMAGE_PARAM_TEXFMT_MASK >> REG_G3_TEXIMAGE_PARAM_TEXFMT_SHIFT))
+
 inline void G3_TexPlttBase(u32 paletteAddress, GXTexFmt fmt) {
-    REG_GFX_FIFO_TEXTURE_PALETTE = paletteAddress >> (4 - (fmt == 2));
+    REG_GFX_FIFO_TEXTURE_PALETTE = paletteAddress >> (4 - (fmt == GX_TEXFMT_PLTT4));
 }
 
 inline void G3_PolygonAttr(GXLightMask lightMask, GXPolygonMode polygonMode, GXCull cull, u32 id, u32 alpha, u32 misc) {
@@ -45,8 +53,9 @@ inline void G3_PolygonAttr(GXLightMask lightMask, GXPolygonMode polygonMode, GXC
     // P: polygonMode
     // L: lightMask
     // u: unknown
-    REG_GFX_FIFO_POLYGON_ATTR =
-        (id << 0x18) | (misc << 0x0F) | (cull << 0x06) | (polygonMode << 0x04) | (alpha << 0x10) | lightMask;
+    REG_GFX_FIFO_POLYGON_ATTR = (id << REG_G3_POLYGON_ATTR_ID_SHIFT) | (misc << REG_G3_POLYGON_ATTR_FE_SHIFT) |
+                                (cull << REG_G3_POLYGON_ATTR_BK_SHIFT) | (polygonMode << REG_G3_POLYGON_ATTR_PM_SHIFT) |
+                                (alpha << REG_G3_POLYGON_ATTR_ALPHA_SHIFT) | lightMask;
 }
 
 inline void G3_PushMtx(void) {
@@ -65,10 +74,12 @@ inline void G3_Scale(fx32 x, fx32 y, fx32 z) {
 }
 
 inline void G3_ViewPort(u32 left, u32 top, u32 right, u32 bottom) {
-    // Unclear how to combine the arguments
+    //! TODO: confirm combination
     // left = 0, top = 0, right = 255, bottom = 191 => 0x8000
-    REG_GFX_FIFO_VIEWPORT = 0xbfff0000;
+    REG_GFX_FIFO_VIEWPORT = left | (top << REG_G3_VIEWPORT_INTEGER_Y1_SHIFT) | (right << REG_G3_VIEWPORT_INTEGER_X2_SHIFT) |
+                            (bottom << REG_G3_VIEWPORT_INTEGER_Y2_SHIFT);
 }
+
 void _G3_Ortho(fx32 top, fx32 bottom, fx32 left, fx32 right, fx32 near, fx32 far, fx32 param7, BOOL param8, void *param9);
 inline void G3_Ortho(fx32 top, fx32 bottom, fx32 left, fx32 right, fx32 near, fx32 far, void *param7) {
     _G3_Ortho(top, bottom, left, right, near, far, FX32_ONE, TRUE, param7);
@@ -104,17 +115,18 @@ inline void G3_Direct1(u32 op, GXSt texCoord) {
     }
 }
 
-inline void G3_Vtx(fx16 x, fx16 y, fx16 z) {
-    REG_GFX_FIFO_VERTEX_16 = x | (y << 0x10);
-    REG_GFX_FIFO_VERTEX_16 = z;
+inline void G3_Vtx(const fx16 x, const fx16 y, const fx16 z) {
+    REG_GFX_FIFO_VERTEX_16 = (u16) x | ((u16) y << 16);
+    REG_GFX_FIFO_VERTEX_16 = (u16) z;
 }
 
-inline void G3_Vtx10(const u32 x, const u32 y, const u32 z) {
-    REG_GFX_FIFO_VERTEX_10 = (x & 0x3FF) | ((y & 0x3FF) << 0x0A) | ((z & 0x3FF) << 0x14);
+inline void G3_Vtx10(const fx16 x, const fx16 y, const fx16 z) {
+    REG_GFX_FIFO_VERTEX_10 =
+        ((x >> 6) & 0x3FF) | (((y >> 6) & 0x3FF) << GX_VEC_FX10_Y_SHIFT) | (((z >> 6) & 0x3FF) << GX_VEC_FX10_Z_SHIFT);
 }
 
-inline void G3_VtxXZ(const u32 x, const u32 z) {
-    REG_GFX_FIFO_VERTEX_XZ = x | (z << 0x10);
+inline void G3_VtxXZ(const fx16 x, const fx16 z) {
+    REG_GFX_FIFO_VERTEX_XZ = (u16) x | ((u16) z << 16);
 }
 
 inline void G3_End(void) {

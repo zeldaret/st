@@ -121,7 +121,8 @@ public:
         this->mpGameMode = NULL;
         GX_SetGraphicsMode(1, 0, 1);
         GXS_SetGraphicsMode(5);
-        G2S_SetBG3Control(1, 0, 14, 5, 0);
+        G2S_SetBG3Control(GX_BG_SCRSIZE_TEXT_512x256, GX_BG_COLORMODE_16, GX_BG_SCRBASE_0x7000, GX_BG_CHARBASE_0x14000,
+                          GX_BG_AREAOVER_XLU);
     }
 
     void func_ov025_020c4c20();

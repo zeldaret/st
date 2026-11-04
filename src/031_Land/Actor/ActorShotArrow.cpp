@@ -23,6 +23,7 @@
 #include "math.hpp"
 #include "nitro/fx.h"
 #include "nitro/gx.h"
+#include "nitro/gx/enums.h"
 #include "nitro/math.h"
 #include <cstddef>
 
@@ -587,7 +588,7 @@ void ActorShotArrow::func_ov031_020f2654(MtxFx33 *param1) {
     fx32 scaleZ = FX_MUL(this->mUnk_168, FX_F32_TO_FX32(1.0f));
 
     FlushGfxQueue();
-    G3_MtxMode(2);
+    G3_MtxMode(GX_MTXMODE_POSITION_VECTOR);
     G3_PushMtx();
 
     sp0 = this->mPos;
@@ -600,7 +601,7 @@ void ActorShotArrow::func_ov031_020f2654(MtxFx33 *param1) {
     G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
                      GX_TEXPLTTCOLOR0_USE, 0);
     G3_TexPlttBase(0, GX_TEXFMT_NONE);
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, 3, 1, 7, FALSE);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, GX_CULL_NONE, 1, 7, FALSE);
 
     REG_GFX_FIFO_DIFFUSE_AMBIENT_REFLECT   = 0x4210FFFF;
     REG_GFX_FIFO_SPECULAR_REF_AND_EMISSION = 0;
@@ -613,7 +614,7 @@ void ActorShotArrow::func_ov031_020f2654(MtxFx33 *param1) {
         G3_End();
     }
 
-    G3_MtxMode(2);
+    G3_MtxMode(GX_MTXMODE_POSITION_VECTOR);
     G3_PopMtx(1);
 }
 

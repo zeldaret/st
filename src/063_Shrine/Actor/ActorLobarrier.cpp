@@ -728,11 +728,11 @@ void ActorLobarrier::func_ov063_021599e4() {
     //! TODO: why is this required?
     (void) ((f32) this->mUnk_270);
 
-    this->mVel.x = FX_MUL(FX_SinIdx(temp_r6_2), this->mUnk_270);
-    this->mVel.z = FX_MUL(FX_CosIdx(temp_r6_2), this->mUnk_270);
+    this->mVel.x = FX_MUL(SIN(temp_r6_2), this->mUnk_270);
+    this->mVel.z = FX_MUL(COS(temp_r6_2), this->mUnk_270);
 
-    this->mVel.x += FX_MUL(FX_SinIdx(temp_r1_2), FX_F32_TO_FX32(0.02f));
-    this->mVel.z += FX_MUL(FX_CosIdx(temp_r1_2), FX_F32_TO_FX32(0.02f));
+    this->mVel.x += FX_MUL(SIN(temp_r1_2), FX_F32_TO_FX32(0.02f));
+    this->mVel.z += FX_MUL(COS(temp_r1_2), FX_F32_TO_FX32(0.02f));
 
     if (this->func_ov063_0215a514()) {
         this->SetState(ActorLobarrierState_Rotating);
