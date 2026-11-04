@@ -14,6 +14,7 @@
 #include "types.h"
 
 #include <nitro.h>
+#include <nns/fnd.h>
 #include <nns/g3d/g3d.h>
 #include <vector>
 
@@ -30,7 +31,6 @@ struct RefStruct;
 struct UnkStruct_ov031_Items_00;
 struct UnkStruct_ov031_Items_00_Base;
 struct UnkStruct_027e0ce0;
-struct UnkStruct_02011e10_Sub1;
 struct UnkResourceStruct2;
 struct UnkStruct_027e0cec_18_04;
 struct UnkSystem5;
@@ -122,12 +122,6 @@ unk32 func_01ffb558();
 void func_01ff9984(VecFx32 *, VecFx32 *, unk32, unk32, unk32);
 
 // main
-UnkStruct_02011e10_Sub1 *func_02001098(void *, size_t, unk32);
-void func_020010b8(void *);
-size_t func_020010e0(UnkStruct_02011e10_Sub1 *heapID, void *pFile, unk32 param3);
-UnkStruct_02011e10_Sub1 *func_020012e0(void *, size_t, unk32);
-void func_02001300(void *);
-void *func_02001308(void *, size_t, u32);
 unk32 func_020013ac(void *param1);
 BOOL func_0200169c(void *, int, int, int, int, void *, int);
 void func_0200174c();
@@ -226,21 +220,16 @@ void func_02013184();
 void func_020131b0();
 void func_02031e48(void *param1);
 unk32 func_0202d624(void *param1, unk32 param2);
-void *func_02001fd4(void *param1, size_t param2);
+void *NNS_SndHeapCreate(void *param1, size_t param2);
 unk32 func_020011f4(void *);
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
 unk32 func_0200e234();
 void func_02029058(void *, void *);
 u32 func_0202955c(void *, int, void *, int, void *);
-void *func_02001654(void *);
-void *func_020145b0(UnkId *, s32);
-void *func_020010c0(void *, size_t, uint);
-UnkId *func_02001488(void);
-UnkId *func_02014704();
-UnkId *func_020011c8(UnkId *, void *);
-UnkId *func_02014630(UnkId *, void *);
-UnkId *func_02001684(UnkId *, void *);
+void *func_020145b0(NNSiFndHeapHead *heap, s32 param2);
+NNSiFndHeapHead *func_02014704();
+NNSiFndHeapHead *func_02014630(NNSiFndHeapHead *heap, void *param2);
 void func_020327c8(void *param1, unk32 param2);
 void func_0201bdd0();
 void NNS_SndInit();

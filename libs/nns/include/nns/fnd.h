@@ -136,8 +136,11 @@ u32 NNS_FndResizeForMBlockExpHeap(NNSiFndHeapHead *heap, void *memBlock, size_t 
 void NNS_FndFreeToExpHeap(NNSiFndHeapHead *heap, void *memBlock);
 u32 NNS_FndGetTotalFreeSizeForExpHeap(NNSiFndHeapHead *heap);
 u32 NNS_FndGetAllocatableSizeForExpHeapEx(NNSiFndHeapHead *heap, s32 alignment);
+void NNS_FndDestroyExpHeap(NNSiFndHeapHead *param1);
 
 void *NNS_FndAllocFromFrmHeapEx(NNSiFndHeapHead *heap, size_t size, s32 alignment);
+void NNS_FndDestroyFrmHeap(NNSiFndHeapHead *param1);
+NNSiFndHeapHead *NNS_FndCreateFrmHeapEx(void *startAddress, size_t size, u16 optFlag);
 
 NNSiFndExpHeapHead *GetExpHeapHeadPtrFromHeapHead(NNSiFndHeapHead *pHHead);
 NNSiFndHeapHead *InitExpHeap(void *startAddress, void *endAddress, u16 optFlag);
@@ -147,6 +150,7 @@ void *AllocFromHead(NNSiFndHeapHead *pHeapHd, size_t size, s32 alignment);
 void *AllocFromTail(NNSiFndHeapHead *pHeapHd, size_t size, s32 alignment);
 BOOL RecycleRegion(NNSiFndExpHeapHead *pEHHead, NNSiMemRegion *pRegion);
 u16 NNS_FndSetAllocModeForExpHeap(NNSiFndHeapHead *heap, u16 mode);
+size_t func_020010e0(NNSiFndHeapHead *pHead, void *ptr, s32 param3);
 
 NNSiFndHeapHead *FindContainHeap(NNSFndList *pList, void *memBlock);
 void DumpHeapList();
@@ -191,10 +195,12 @@ NNSiFndHeapHead *NNS_FndCreateUnitHeap(void *startAddress, u32 heapSize, u32 mem
 u32 NNS_FndGetMemBlockSizeForUnitHeap(NNSiFndHeapHead *heap);
 NNSiFndHeapHead *NNS_FndCreateUnitHeapEx(void *startAddress, u32 heapSize, u32 memBlockSize, s32 alignment, u16 optFlag);
 void NNS_FndDestroyUnitHeap(NNSiFndHeapHead *heap);
-NNSiFndUntHeapMBlockHead *NNS_FndAllocFromUnitHeap(NNSiFndHeapHead *heap);
+void *NNS_FndAllocFromUnitHeap(NNSiFndHeapHead *heap);
 void NNS_FndFreeToUnitHeap(NNSiFndHeapHead *heap, void *memBlock);
 u32 NNS_FndCountFreeBlockForUnitHeap(NNSiFndHeapHead *heap);
 u32 NNS_FndCalcHeapSizeForUnitHeap(u32 memBlockSize, u32 memBlockNum, s32 alignment);
+
+NNSiFndHeapHead *func_02001488(void);
 
 //! TODO: figure it out
 // list = NNSFndList, obj = void*
