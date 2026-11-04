@@ -10,6 +10,7 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
 #include "files.h"
+#include "nitro/fx.h"
 
 #include <limits.h>
 
@@ -163,7 +164,7 @@ BOOL ZMB_ParseRALB(ZMBFileInfos *pFileInfos, ZMBSectionRALB *pSection, UnkStruct
         for (u8 j = 0; j < numPoints; j++) {
             ZMBRALBPoint *pPoint = (ZMBRALBPoint *) offset;
 
-            pPoint->angle = UNK_FX_OPERATION_1(INT_TO_FX32(pPoint->angle));
+            pPoint->angle = FX_UNK_ANGLE_CONV(INT_TO_FX32(pPoint->angle));
 
             if (data_027e09a4->CurrentSceneIndex() != SceneIndex_b_flame &&
                 data_027e09a4->CurrentSceneIndex() != SceneIndex_tekiya08) {
@@ -257,7 +258,7 @@ BOOL ZMB_ParseMapObjList(ZMBFileInfos *pFileInfos, ZMBSectionMapObjectList *pSec
         }
 
         if (ZMB_020ba350(pFileInfos, pEntry->unk_18, pDst)) {
-            allocData.angle = UNK_FX_OPERATION_1(INT_TO_FX32(pEntry->angle));
+            allocData.angle = FX_UNK_ANGLE_CONV(INT_TO_FX32(pEntry->angle));
             gpMapObjManager->AllocateMapObject(pEntry->id, allocData.pos, allocData.angle, (int) &local_30, 1);
         }
     }
@@ -294,10 +295,10 @@ BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection,
                 if (!iVar6 || pProfile->mUnk_15) {
                     VecFx32 local_24;
                     local_24.x = func_ov000_02080068(posX);
-                    local_24.x += FX_Mul(INT_TO_FX32(xMod16), 256);
+                    local_24.x += FX_MUL(INT_TO_FX32(xMod16), 256);
 
                     local_24.z = func_ov000_02080080(posY);
-                    local_24.z += FX_Mul(INT_TO_FX32(yMod16), 256);
+                    local_24.z += FX_MUL(INT_TO_FX32(yMod16), 256);
 
                     local_24.y = INT_MAX - FX32_ONE;
                     local_24.y = pDst->vfunc_28(&local_24, 0x01, 0x00);
@@ -311,7 +312,7 @@ BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection,
                         local_24.y = 0;
                     }
 
-                    local_24.y += UNK_FX_OPERATION_2(INT_TO_FX32(pEntry->unk_08));
+                    local_24.y += FX_MUL_U(INT_TO_FX32(pEntry->unk_08), FX_F32_TO_FX32(1.2f));
 
                     ActorParams actorParams;
                     actorParams.mUnk_28.Reset();
@@ -338,7 +339,7 @@ BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection,
                         actorParams.mUnk_0F = true;
                     }
 
-                    actorParams.mInitialAngle = UNK_FX_OPERATION_1(INT_TO_FX32(pEntry->angle));
+                    actorParams.mInitialAngle = FX_UNK_ANGLE_CONV(INT_TO_FX32(pEntry->angle));
                     actorParams.mUnk_24       = pFileInfos->unk_0E;
                     actorParams.mUnk_26_0     = pEntry->unk_1C;
 
@@ -396,7 +397,7 @@ BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pSection, UnkStruct
 
         pDst->mUnk_114 = var_r1_3;
 
-        fx32 var_r7 = UNK_FX_OPERATION_2(INT_TO_FX32(pEntry->unk_02));
+        fx32 var_r7 = FX_MUL_U(INT_TO_FX32(pEntry->unk_02), FX_F32_TO_FX32(1.2f));
 
         switch (pEntry->unk_03) {
             case 1:
@@ -563,17 +564,17 @@ BOOL ZMB_ParsePLYR(ZMBFileInfos *pFileInfos, ZMBSectionPLYR *pSection, UnkStruct
             s32 zMod16 = unk_08 % 16;
 
             fx32 z = func_ov000_02080080(tile_z);
-            z += FX_Mul(INT_TO_FX32(zMod16), 256);
+            z += FX_MUL(INT_TO_FX32(zMod16), 256);
 
             fx32 x = func_ov000_02080068(tile_x);
-            x += FX_Mul(INT_TO_FX32(xMod16), 256);
+            x += FX_MUL(INT_TO_FX32(xMod16), 256);
 
             VecFx32 local_20;
             local_20.x = x;
             local_20.y = INT_MAX - FX32_ONE;
             local_20.z = z;
 
-            fx16 unk_0C = (u16) UNK_FX_OPERATION_1(INT_TO_FX32(pEntry->unk_0C));
+            fx16 unk_0C = (u16) FX_UNK_ANGLE_CONV(INT_TO_FX32(pEntry->unk_0C));
             u8 unk_0E   = pEntry->unk_0E;
             u8 unk_12;
             u8 unk_0F = pEntry->unk_0F;
@@ -620,8 +621,8 @@ BOOL ZMB_ParseCAME(ZMBFileInfos *pFileInfos, ZMBSectionCAME *pSection, UnkStruct
         VecFx32_Copy(&pEntry->unk_04, &vec);
 
         pEntry->unk_04.y += pDst->vfunc_28(&vec, 0x01, 0x00);
-        pEntry->unk_10 = UNK_FX_OPERATION_1(INT_TO_FX32(pEntry->unk_10));
-        pEntry->unk_12 = UNK_FX_OPERATION_1(INT_TO_FX32(pEntry->unk_12));
+        pEntry->unk_10 = FX_UNK_ANGLE_CONV(INT_TO_FX32(pEntry->unk_10));
+        pEntry->unk_12 = FX_UNK_ANGLE_CONV(INT_TO_FX32(pEntry->unk_12));
     }
 
     pDst->func_ov001_020b8c98(pSection);

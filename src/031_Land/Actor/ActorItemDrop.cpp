@@ -11,7 +11,7 @@
 #include "nitro/fx.h"
 #include "versions.h"
 
-static const Cylinder data_ov031_02114ba0(0x800);
+static const Cylinder data_ov031_02114ba0(FX32_HALF);
 
 static const u32 data_ov031_02110bc8[] = {
     0x1D, // ItemDropType_Arrow

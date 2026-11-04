@@ -28,7 +28,7 @@ void SaveManager::func_ov019_020d086c(u16 param1) {
     gSaveManager.mResultCode = CARD_GetResultCode();
     CARD_UnlockBackup(gSaveManager.mCardId);
 
-    if (gSaveManager.mResultCode != CARD_RESULT_SUCCESS) {
+    if (gSaveManager.mResultCode != CARD_RESULT_FAILURE) {
         gSaveManager.mUnk_214 = gSaveManager.mUnk_210;
     }
 
@@ -80,7 +80,7 @@ void SaveManager::func_ov019_020d0a2c(u16 saveSlotIndex) {
     gSaveManager.mpSaveFile->func_ov019_020d1634();
     gSaveManager.mResultCode = CARD_GetResultCode();
 
-    if (gSaveManager.mResultCode != CARD_RESULT_SUCCESS) {
+    if (gSaveManager.mResultCode != CARD_RESULT_FAILURE) {
         gSaveManager.mUnk_214 = gSaveManager.mUnk_210;
         return;
     }
@@ -89,7 +89,7 @@ void SaveManager::func_ov019_020d0a2c(u16 saveSlotIndex) {
     gSaveManager.mpSaveFile->func_ov019_020d16d0();
     gSaveManager.mResultCode = CARD_GetResultCode();
 
-    if (gSaveManager.mResultCode != CARD_RESULT_SUCCESS) {
+    if (gSaveManager.mResultCode != CARD_RESULT_FAILURE) {
         gSaveManager.mUnk_214 = gSaveManager.mUnk_210;
     }
 

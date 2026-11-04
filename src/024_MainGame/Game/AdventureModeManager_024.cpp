@@ -67,8 +67,10 @@ void AdventureModeManager::func_ov024_020c52f4() {
 
 void AdventureModeManager::func_ov024_020c530c() {
     GXS_SetGraphicsMode(5);
-    G2S_SetBG2Control(1, 0, 13, 2, 0);
-    G2S_SetBG3Control(1, 0, 14, 5, 0);
+    G2S_SetBG2Control(GX_BG_SCRSIZE_TEXT_512x256, GX_BG_COLORMODE_16, GX_BG_SCRBASE_0x6800, GX_BG_CHARBASE_0x08000,
+                      GX_BG_AREAOVER_XLU);
+    G2S_SetBG3Control(GX_BG_SCRSIZE_TEXT_512x256, GX_BG_COLORMODE_16, GX_BG_SCRBASE_0x7000, GX_BG_CHARBASE_0x14000,
+                      GX_BG_AREAOVER_XLU);
     this->func_ov024_020c6db8(0x1C);
 }
 
@@ -79,10 +81,12 @@ void AdventureModeManager::func_ov024_020c5364() {
 
 void AdventureModeManager::func_ov024_020c537c() {
     GXS_SetGraphicsMode(3);
-    G2S_SetBG0Control(0, 0, 24, 0, 0);
+    G2S_SetBG0Control(GX_BG_SCRSIZE_TEXT_256x256, GX_BG_COLORMODE_16, GX_BG_SCRBASE_0xc000, GX_BG_CHARBASE_0x00000, 0);
     this->func_ov024_020c6d2c(1);
-    G2S_SetBG2Control(0, 0, 26, 3, 0);
-    G2S_SetBG3Control(1, 0, 27, 5, 0);
+    G2S_SetBG2Control(GX_BG_SCRSIZE_TEXT_256x256, GX_BG_COLORMODE_16, GX_BG_SCRBASE_0xd000, GX_BG_CHARBASE_0x0c000,
+                      GX_BG_AREAOVER_XLU);
+    G2S_SetBG3Control(GX_BG_SCRSIZE_TEXT_512x256, GX_BG_COLORMODE_16, GX_BG_SCRBASE_0xd800, GX_BG_CHARBASE_0x14000,
+                      GX_BG_AREAOVER_XLU);
     this->func_ov024_020c6db8(0x1F);
 }
 
@@ -898,9 +902,9 @@ void AdventureModeManager::func_ov024_020c6d20(unk32 param1) {
 
 void AdventureModeManager::func_ov024_020c6d2c(unk32 param1) {
     if (param1) {
-        G2S_SetBG1Control(0, 0, 25, 1, 0);
+        G2S_SetBG1Control(GX_BG_SCRSIZE_TEXT_256x256, GX_BG_COLORMODE_16, GX_BG_SCRBASE_0xc800, GX_BG_CHARBASE_0x04000, 0);
     } else {
-        G2S_SetBG1Control(0, 0, 12, 0, 0);
+        G2S_SetBG1Control(GX_BG_SCRSIZE_TEXT_256x256, GX_BG_COLORMODE_16, GX_BG_SCRBASE_0x6000, GX_BG_CHARBASE_0x00000, 0);
     }
 }
 

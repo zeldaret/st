@@ -151,7 +151,7 @@ bool ActorRupee::Init(unk32 param1) {
             {
                 VecFx32 vel;
                 vel.x        = 0;
-                vel.y        = 0x800;
+                vel.y        = FX32_HALF;
                 vel.z        = 0;
                 this->mVel.x = vel.x;
                 this->mVel.y = vel.y;
@@ -495,7 +495,7 @@ void ActorRupee::func_ov031_020e9740() {
 
     if (func_ov031_0210af50(sp0, &sp4) != 0) {
         temp_r0 = data_027e0cd8->mUnk_0C;
-        temp_r2 = (sp4 - 0x800) + temp_r0->vfunc_28(&this->mPos, 0, 0);
+        temp_r2 = (sp4 - FX32_HALF) + temp_r0->vfunc_28(&this->mPos, 0, 0);
 
         if (this->mPos.y != temp_r2) {
             this->mPos.y = temp_r2;
@@ -685,7 +685,7 @@ void ActorRupee::vfunc_2C(unk32 param1) {
     iStack_18 = this->mPos;
 
     if (!this->func_ov031_020e9d54()) {
-        iStack_18.y += 0x800;
+        iStack_18.y += FX32_HALF;
         func_ov000_0205c204(auStack_30, &iStack_18, 0xB0A, 0x0A, 0x1F);
         uVar2 = 0x333;
     } else {

@@ -148,7 +148,7 @@ SaveManager::SaveManager() {
     this->mResultCode = CARD_GetResultCode();
     CARD_UnlockBackup(this->mCardId);
 
-    if (this->mResultCode != CARD_RESULT_SUCCESS) {
+    if (this->mResultCode != CARD_RESULT_FAILURE) {
         this->mUnk_214 = uVar8;
     }
 }

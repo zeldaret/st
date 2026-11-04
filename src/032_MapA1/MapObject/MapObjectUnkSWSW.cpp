@@ -1,5 +1,6 @@
 #include "MapObject/MapObjectUnkSWSW.hpp"
 #include "CommonFuncs.hpp"
+#include "nitro/fx/consts.h"
 #include "profile.hpp"
 
 #include "Actor/Actor.hpp"
@@ -116,7 +117,7 @@ bool MapObjectUnkSWSW::Init() {
     }
 
     if (this->mUnk_20.mParams[2] != 0x0) {
-        this->mPos.y += FX_Mul(this->mUnk_20.mParams[2] << 0xC, 0x1333);
+        this->mPos.y += FX_MUL(this->mUnk_20.mParams[2] << 0xC, 0x1333);
     }
 
     this->mUnk_0AC.mpModel           = this->mUnk_040.mpModel;
@@ -244,9 +245,9 @@ void MapObjectUnkSWSW::vfunc_08() {
 
                 if (!var_r5) {
                     this->mUnk_10E.Init();
-                    func_01ff9218(&this->mUnk_108, 0x0, 0x800);
+                    func_01ff9218(&this->mUnk_108, 0, FX32_HALF);
                 } else {
-                    func_01ff9218(&this->mUnk_108, 0x1000, 0x800);
+                    func_01ff9218(&this->mUnk_108, FX32_ONE, FX32_HALF);
                 }
             }
             break;

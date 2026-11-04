@@ -49,8 +49,8 @@ void SysFault::func_020127f0(unk32 param1) {
     GXS_SetGraphicsMode(0);
     GX_SetVisiblePlane(1);
     GXS_SetVisiblePlane(1);
-    G2_SetBG0Control(0, 0, 0, 1, 0);
-    G2S_SetBG0Control(0, 0, 0, 1, 0);
+    G2_SetBG0Control(GX_BG_SCRSIZE_TEXT_256x256, GX_BG_COLORMODE_16, GX_BG_SCRBASE_0x0000, GX_BG_CHARBASE_0x04000, 0);
+    G2S_SetBG0Control(GX_BG_SCRSIZE_TEXT_256x256, GX_BG_COLORMODE_16, GX_BG_SCRBASE_0x0000, GX_BG_CHARBASE_0x04000, 0);
 
     if (this->mUnk_05 < 0xFF) {
         this->mUnk_05 = 0xFF;
