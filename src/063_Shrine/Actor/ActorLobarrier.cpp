@@ -110,7 +110,7 @@ unk32 UnkStruct_ov063_02162e88::vfunc_04(RefStruct param1, unk32 param2, unk32 p
         return ret1;
     }
 
-    if (this->mUnk_20->func_ov063_0215a56c((unk16) func_01ffbbe0(param4[0], param4[2])) && param1.common.type != 0) {
+    if (this->mUnk_20->func_ov063_0215a56c((unk16) FX_Atan2Idx(param4[0], param4[2])) && param1.common.type != 0) {
         ActorShotArrow *ret4 = (ActorShotArrow *) gpActorManager->func_01fff3b4(param1);
 
         if (ret4 != NULL && ret4->GetActorId() == ActorId_ShotArrow) {
@@ -243,8 +243,8 @@ void ActorLobarrier::Update() {
     }
 
     this->func_ov000_02098b8c(1, &mUnk_23C);
-    unk16 temp_r5  = func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
-    unk32 var_r1_2 = (unk16) ((unk16) func_01ffbbe0(mVel.x, mVel.z) - temp_r5 - 0x8000);
+    unk16 temp_r5  = FX_Atan2Idx(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
+    unk32 var_r1_2 = (unk16) ((unk16) FX_Atan2Idx(mVel.x, mVel.z) - temp_r5 - 0x8000);
 
     if ((mUnk_46 & 1) != 0) {
         mVel.y = 0;
@@ -267,7 +267,7 @@ void ActorLobarrier::Update() {
             if (((mUnk_200.mUnk_08) & 0x3FFFF) != 0) {
                 this->mUnk_234.Set(0, this->func_ov000_02098d7c(&this->mUnk_200));
 
-                var_r5 = this->func_ov063_0215a56c((unk16) func_01ffbbe0(mUnk_200.mUnk_10.x, mUnk_200.mUnk_10.z));
+                var_r5 = this->func_ov063_0215a56c((unk16) FX_Atan2Idx(mUnk_200.mUnk_10.x, mUnk_200.mUnk_10.z));
 
                 switch (mUnk_200.mUnk_1C) {
                     case 12:
@@ -425,7 +425,7 @@ void ActorLobarrier::func_ov063_02158b98() {
     }
 
     if ((mUnk_46 & 0x3C) != 0) {
-        fx16 iVar5 = ((mUnk_276 << 14) + mUnk_26C) - (fx16) func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
+        fx16 iVar5 = ((mUnk_276 << 14) + mUnk_26C) - (fx16) FX_Atan2Idx(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
 
         if (ABS(iVar5) > DEG_TO_ANG(90)) {
             mUnk_276 *= -1;
@@ -471,7 +471,7 @@ void ActorLobarrier::func_ov063_02158db0() {
         mUnk_276 *= -1;
     }
 
-    u32 ret1    = func_01ffb428(mUnk_270 + FX_F32_TO_FX32(0.025f), 0xCD);
+    u32 ret1    = FX_Div(mUnk_270 + FX_F32_TO_FX32(0.025f), 0xCD);
     s32 temp_r5 = (mUnk_270 / 2) * ((ret1 * 0x10) >> 0x10) + 0x4CD;
 
     VecFx32 sp4;
@@ -707,7 +707,7 @@ void ActorLobarrier::func_ov063_021599e4() {
     }
 
     if (mUnk_46 & 0x3C) {
-        unk16 ret1 = func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
+        unk16 ret1 = FX_Atan2Idx(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
 
         if (ABS((unk16) (((mUnk_276 << 14) + mUnk_26C) - ret1)) > DEG_TO_ANG(90)) {
             mUnk_276 *= -1;
@@ -854,7 +854,7 @@ bool ActorLobarrier::func_ov063_0215a0f0() const {
         return false;
     }
 
-    s16 ret1 = func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
+    s16 ret1 = FX_Atan2Idx(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
     s16 var2;
     s16 *pvar2 = (s16 *) &var2;
     func_ov000_020986b4(pvar2, (Actor *) this, 0);
@@ -871,7 +871,7 @@ bool ActorLobarrier::func_ov063_0215a0f0() const {
         func_ov000_020986b4((s16 *) psp0, (Actor *) this, 0);
         s16 value = *psp0;
 
-        unk32 ret2 = func_01ffbbe0(mVel.x, mVel.z);
+        unk32 ret2 = FX_Atan2Idx(mVel.x, mVel.z);
 
         if (ABS((s16) ((s16) ret2 - value)) < DEG_TO_ANG(90)) {
             return false;
@@ -894,7 +894,7 @@ bool ActorLobarrier::func_ov063_0215a2c0() const {
         return false;
     }
 
-    s16 ret1 = func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
+    s16 ret1 = FX_Atan2Idx(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
     s16 var2;
     s16 *pvar2 = (s16 *) &var2;
     func_ov000_020986b4(pvar2, (Actor *) this, 0);

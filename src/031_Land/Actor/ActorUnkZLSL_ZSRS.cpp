@@ -1077,11 +1077,11 @@ void ActorUnkZLSL::vfunc_2C(unk32 param1) {
 
     switch (this->mUnk_2874 ? 1 : 0) {
         case false:
-            MtxFx33_InitYRotation(&sp00, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
+            MTX_RotY33_(&sp00, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
             this->mUnk_1620.vfunc_10(&this->mUnk_28A4.vec, &sp00, &this->mPos);
             break;
         case true:
-            MtxFx33_InitYRotation(&sp00, SIN(1), COS(0));
+            MTX_RotY33_(&sp00, SIN(1), COS(0));
             this->mUnk_276C.vfunc_10(&this->mUnk_28A4.vec, &sp00, &this->mPos);
             break;
         default:
@@ -1480,11 +1480,11 @@ void ActorUnkZLSL::func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk3
         func_01ffb714(&sp58, &sp4C, &sp1C);
     }
 
-    s16 angle = func_01ffbbe0(sp1C.x, sp1C.z);
+    s16 angle = FX_Atan2Idx(sp1C.x, sp1C.z);
     sp2       = param1.angle_s + angle;
     func_020169d4(&sp34, &sp40, &sp2, (char *) &param2);
 
-    angle = func_01ffbbe0(sp1C.x, sp1C.z);
+    angle = FX_Atan2Idx(sp1C.x, sp1C.z);
     sp0   = angle - param1.angle_s;
     func_020169d4(&sp28, &sp40, &sp0, (char *) &param2);
 
@@ -1890,7 +1890,7 @@ void ActorUnkZLSL::vfunc_A4() {
     func_01ffb714(&sp0C, &sp00, &sp0C);
 
     int angle  = this->mAngle.angle_s;
-    int temp   = func_01ffbbe0(sp0C.x, sp0C.z);
+    int temp   = FX_Atan2Idx(sp0C.x, sp0C.z);
     s16 var_r4 = (angle - (s16) temp);
 
     this->mUnk_0E8.Update();
@@ -1903,7 +1903,7 @@ void ActorUnkZLSL::vfunc_A4() {
     if ((var_r0 <= 0x4000 && func_01ff9258(sp0C.x, sp0C.z) < 0x2000) || this->mUnk_0B0 & 1) {
         int clamped1 = CLAMP3(var_r4, -0x2AAB, 0x2AAB);
 
-        int temp_r0_2 = func_01ffbbe0(sp0C.y, func_01ff9258(sp0C.x, sp0C.z));
+        int temp_r0_2 = FX_Atan2Idx(sp0C.y, func_01ff9258(sp0C.x, sp0C.z));
         int clamped2  = CLAMP3((s16) temp_r0_2, -0x18E4, 0x18E4);
 
         this->mUnk_0CC = clamped1;
@@ -1939,10 +1939,10 @@ void ActorUnkZLSL::func_ov031_020ee1f4(Actor *param1, G3d_RenderState *param2) {
         G3d_RenderState_B4 *temp_r6 = param2->mUnk_B4;
 
         temp_r6->mUnk_00 &= ~0x02;
-        MtxFx33_InitZRotation(&sp24, SIN(thisx->mUnk_28E0), COS(thisx->mUnk_28E0));
-        MtxFx33_InitYRotation(&sp0, SIN(thisx->mUnk_28E2), COS(thisx->mUnk_28E2));
-        func_01ffa60c(&sp24, &sp0, &sp24);
-        func_01ffa60c(&sp24, &temp_r6->mUnk_28, &temp_r6->mUnk_28);
+        MTX_RotZ33_(&sp24, SIN(thisx->mUnk_28E0), COS(thisx->mUnk_28E0));
+        MTX_RotY33_(&sp0, SIN(thisx->mUnk_28E2), COS(thisx->mUnk_28E2));
+        MTX_Concat33(&sp24, &sp0, &sp24);
+        MTX_Concat33(&sp24, &temp_r6->mUnk_28, &temp_r6->mUnk_28);
     }
 }
 

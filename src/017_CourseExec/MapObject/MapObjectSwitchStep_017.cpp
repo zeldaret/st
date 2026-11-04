@@ -11,7 +11,7 @@ void MapObjectSwitchStep::vfunc_08() {
             break;
         case 1:
             if (this->mUnk_E8 > 0) {
-                func_01ff91b8(&sp0, -FX_F32_TO_FX32(0.1f), func_01ffb464(INT_TO_FX32(this->mUnk_E8)));
+                func_01ff91b8(&sp0, -FX_F32_TO_FX32(0.1f), FX_Inv(INT_TO_FX32(this->mUnk_E8)));
             }
 
             if (this->mUnk_E8 <= 0) {

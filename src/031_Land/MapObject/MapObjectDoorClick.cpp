@@ -139,7 +139,7 @@ void MapObjectDoorClick::vfunc_08(void) {
             this->mUnk_80--;
 
             if (this->mUnk_80 > 0) {
-                func_01ff9218(&this->mUnk_6C, 0x1000, func_01ffb464(INT_TO_FX32(this->mUnk_80)));
+                func_01ff9218(&this->mUnk_6C, 0x1000, FX_Inv(INT_TO_FX32(this->mUnk_80)));
             }
 
             if (this->mUnk_88 != false) {
@@ -220,7 +220,7 @@ void MapObjectDoorClick::vfunc_14(unk32 param1) {
     VecFx32 local_48;
     VecFx32 temp;
 
-    MtxFx33_InitYRotation(&m, SIN(angle), COS(angle));
+    MTX_RotY33_(&m, SIN(angle), COS(angle));
     temp.x     = this->mPos.x - FX_F32_TO_FX32(1.0f) + this->mUnk_70;
     temp.z     = this->mPos.z;
     temp.y     = this->mPos.y;
@@ -230,7 +230,7 @@ void MapObjectDoorClick::vfunc_14(unk32 param1) {
     this->mUnk_94.vfunc_14(&m, &local_48);
 
     u16 var = (-0x8000 - sVar2);
-    MtxFx33_InitYRotation(&m, SIN(var), COS(var));
+    MTX_RotY33_(&m, SIN(var), COS(var));
     temp.x     = this->mPos.x + FX_F32_TO_FX32(1.0f) - this->mUnk_70;
     temp.z     = this->mPos.z;
     temp.y     = this->mPos.y;
@@ -254,7 +254,7 @@ void MapObjectDoorClick::vfunc_5C(MapObjState state, unk32 param2) {
             this->vfunc_7C();
 
             this->mUnk_80 = ROUND_FX32(
-                FX_MUL(INT_TO_FX32(this->mUnk_78), func_01ffb428(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f))));
+                FX_MUL(INT_TO_FX32(this->mUnk_78), FX_Div(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f))));
 
             if (this->mUnk_8A) {
                 this->mUnk_82 = 0;

@@ -49,7 +49,7 @@ extern MtxFx43 *func_0200c23c();
 extern MtxFx43 *func_0200c270();
 extern s32 func_02024d94(MtxFx33 *matrix);
 extern void func_02024a68(void *param1);
-extern void func_02024a30(MtxFx43 *matrix);
+extern void G3_LoadMtx43(MtxFx43 *matrix);
 extern void func_01ff8dac(const void *param1, u32 param2);
 extern void func_02024a84(MtxFx33 *param1);
 extern MtxFx33 gGeomMatrix;
@@ -563,9 +563,9 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
     mtxStruct.mtx2._21 += (weight * mat3x->_21) >> 0xC;
     mtxStruct.mtx2._22 += (weight * mat3x->_22) >> 0xC;
 
-    func_02024a30((MtxFx43 *) &mtxStruct.mtx2);
+    G3_LoadMtx43((MtxFx43 *) &mtxStruct.mtx2);
     REG_GFX_FIFO_MATRIX_MODE = 1; // Position
-    func_02024a30(&mtxStruct.mtx1);
+    G3_LoadMtx43(&mtxStruct.mtx1);
     REG_GFX_FIFO_MATRIX_MODE    = 0; // Projection
     REG_GFX_FIFO_MATRIX_RESTORE = 1;
     REG_GFX_FIFO_MATRIX_MODE    = 2; // Position + Vector

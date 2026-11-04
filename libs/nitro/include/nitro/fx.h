@@ -132,7 +132,7 @@ u16 FX_Atan2Idx(fx32 y, fx32 x);
 void MTX_Transpose33_(const MtxFx33 *src, MtxFx33 *dst);
 void MTX_RotX33_(MtxFx33 *mtx, fx32 sin, fx32 cos);
 void MTX_RotZ33_(MtxFx33 *mtx, fx32 sin, fx32 cos);
-void MTX_Concat33(MtxFx33 *a, MtxFx33 *b, MtxFx33 *dst);
+void MTX_Concat33(const MtxFx33 *a, const MtxFx33 *b, MtxFx33 *dst);
 void MTX_Identity43_(MtxFx43 *mtx);
 void MTX_PerspectiveW(fx32 arg0, fx32 arg1, fx32 arg2, fx32 arg3, fx32 arg4, fx32 arg5, MtxFx44 *mtx);
 void MTX_OrthoW(fx32 top, fx32 bottom, fx32 left, fx32 right, fx32 near, fx32 far, fx32 arg6, MtxFx44 *mtx);

@@ -104,7 +104,7 @@ void ActorUnkNSSW::Update() {
 
     switch (this->mUnk_0BC) {
         case 0x0:
-            MtxFx33_InitYRotation(&this->mUnk_150, SIN(this->mAngle.angle_u), COS(this->mAngle.angle_u));
+            MTX_RotY33_(&this->mUnk_150, SIN(this->mAngle.angle_u), COS(this->mAngle.angle_u));
             func_ov000_0205f8e8(&this->mUnk_174, &this->mUnk_150);
             this->func_ov032_02120880();
             break;
@@ -172,11 +172,11 @@ void ActorUnkNSSW::func_ov032_02120118() {
         return;
     }
 
-    CopySingle288(&actor->mUnk_154, &this->mUnk_150);
+    MI_Copy36B(&actor->mUnk_154, &this->mUnk_150);
 
     MtxFx33 stack;
-    MtxFx33_InitYRotation(&stack, SIN(0x8000), COS(0x8000));
-    func_01ffa60c(&stack, &this->mUnk_150, &this->mUnk_150);
+    MTX_RotY33_(&stack, SIN(0x8000), COS(0x8000));
+    MTX_Concat33(&stack, &this->mUnk_150, &this->mUnk_150);
     func_ov000_0205f8e8(&this->mUnk_174, &this->mUnk_150);
 }
 
@@ -400,7 +400,7 @@ void ActorUnkNSSW::vfunc_2C(unk32 param1) {
     VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), &sp24);
 
     func_01ffa7a0(&sp24, &this->mUnk_150, &sp24);
-    fx16 angle = func_01ffbbe0(sp24.x, sp24.z);
+    fx16 angle = FX_Atan2Idx(sp24.x, sp24.z);
 
     sp18   = this->mPos;
     sp24.x = FX_F32_TO_FX32(0.1001f);
@@ -483,9 +483,9 @@ void ActorUnkNSSW::func_ov032_02120894(unk32 param1) {
 
             func_01ffa7a0(&vec, &this->mUnk_150, &vec);
 
-            u16 angle = (u16) (s16) func_01ffbbe0(vec.x, vec.z);
+            u16 angle = (u16) (s16) FX_Atan2Idx(vec.x, vec.z);
 
-            MtxFx33_InitYRotation(&this->mUnk_150, SIN(angle), COS(angle));
+            MTX_RotY33_(&this->mUnk_150, SIN(angle), COS(angle));
 
             *(s16 *) &this->mUnk_44 &= ~0x20;
 

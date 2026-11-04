@@ -26,6 +26,8 @@ void MI_CpuFill16(u16 value, void *dst, u32 size);
 void MI_CpuFill32(u32 value, void *ptr, u32 size);
 void MI_Swap(u32 *a, u32 *b);
 
+void MI_Copy36B(void *, MtxFx33 *);
+
 void MIi_UncompressBackward(void *addr);
 
 void MI_func_0008(s32 dmaChannel, void *param2, u32 param3, s32 param4);

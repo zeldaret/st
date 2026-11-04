@@ -117,7 +117,7 @@ void ActorSpinut::Setup() {
             this->SetState(ActorSpinutState_0);
         } else {
             fx32 z2      = *(volatile fx32 *) &actor->mPos.z;
-            this->mAngle = func_01ffbbe0(actor->mPos.x - this->mPos.x, z2 - this->mPos.z);
+            this->mAngle = FX_Atan2Idx(actor->mPos.x - this->mPos.x, z2 - this->mPos.z);
             this->SetState(ActorSpinutState_11);
         }
     } else {
@@ -318,7 +318,7 @@ void ActorSpinut::func_ov032_02119be8() {
 void ActorSpinut::func_ov032_02119c80() {
     UnkStruct_PlayerGet_50 *playerGet50 = this->mUnk_110.vfunc_28();
 
-    fx32 val = func_01ffb428(playerGet50->mUnk_10 - playerGet50->mUnk_08, FX_F32_TO_FX32(1.3f));
+    fx32 val = FX_Div(playerGet50->mUnk_10 - playerGet50->mUnk_08, FX_F32_TO_FX32(1.3f));
     val >>= 0xC;
 
     s16 sp0;
@@ -327,7 +327,7 @@ void ActorSpinut::func_ov032_02119c80() {
 
     s16 value = *psp0;
     if (val > 0x0) {
-        unk32 param2 = func_01ffb464(val << 0xC);
+        unk32 param2 = FX_Inv(val << 0xC);
         func_01ff9318(&this->mAngle, value, param2);
     }
 
@@ -360,7 +360,7 @@ void ActorSpinut::func_ov032_02119df4() {
 
     s16 val = *psp0;
     if (delta > 0x0) {
-        func_01ff9318(&this->mAngle, val, func_01ffb464(delta << 0xC));
+        func_01ff9318(&this->mAngle, val, FX_Inv(delta << 0xC));
     }
 
     if (this->mTimer.HasExpired()) {
@@ -372,8 +372,7 @@ void ActorSpinut::func_ov032_02119df4() {
 
 void ActorSpinut::func_ov032_02119e90() {
     this->mUnk_110.vfunc_1C(data_ov032_02122184, 0x1000, 0x19A, 0x0);
-    this->mUnk_288.vec.x =
-        func_01ffb66c(FX_F32_TO_FX32(1.5f), func_01ffb428(FX_F32_TO_FX32(0.08f), FX_F32_TO_FX32(0.005f)) >> 0xC);
+    this->mUnk_288.vec.x = FX_DivS32(FX_F32_TO_FX32(1.5f), FX_Div(FX_F32_TO_FX32(0.08f), FX_F32_TO_FX32(0.005f)) >> 0xC);
     this->mTimer.Set(0, 180);
     this->mUnk_220 = FX_F32_TO_FX32(0.0f);
 
@@ -514,8 +513,8 @@ void ActorSpinut::func_ov032_0211a20c() {
 
 void ActorSpinut::func_ov032_0211a484() {
     this->mUnk_110.vfunc_1C(data_ov032_02122184, this->mUnk_110.vfunc_28()->mUnk_04, 0x19A, 0x0);
-    fx32 val             = func_01ffb428(this->mUnk_220, FX_F32_TO_FX32(0.005f));
-    this->mUnk_288.vec.x = func_01ffb66c(0x1000 - this->mUnk_110.vfunc_28()->mUnk_04, val >> 0xC);
+    fx32 val             = FX_Div(this->mUnk_220, FX_F32_TO_FX32(0.005f));
+    this->mUnk_288.vec.x = FX_DivS32(0x1000 - this->mUnk_110.vfunc_28()->mUnk_04, val >> 0xC);
 }
 
 void ActorSpinut::func_ov032_0211a52c() {
@@ -582,7 +581,7 @@ void ActorSpinut::func_ov032_0211a52c() {
 
 void ActorSpinut::func_ov032_0211a7b8() {
     this->mUnk_110.vfunc_1C(data_ov032_02122184, this->mUnk_110.vfunc_28()->mUnk_04, 0x19A, 0x0);
-    this->mUnk_288.vec.x = func_01ffb66c(0x1000 - this->mUnk_110.vfunc_28()->mUnk_04, data_ov000_020aecf4[0]);
+    this->mUnk_288.vec.x = FX_DivS32(0x1000 - this->mUnk_110.vfunc_28()->mUnk_04, data_ov000_020aecf4[0]);
     this->mUnk_228.func_ov000_02097bec();
     this->mUnk_38->mUnk_08 = 0x3;
 }

@@ -315,7 +315,7 @@ void ActorFleeingSpinut::func_ov032_0211c108() {
         var = true;
     }
 
-    unk32 temp_r5_2 = func_01ffb428(pGet50Unk10 - pGet50Unk8, FX_F32_TO_FX32(1.0f)) >> 0xC;
+    unk32 temp_r5_2 = FX_Div(pGet50Unk10 - pGet50Unk8, FX_F32_TO_FX32(1.0f)) >> 0xC;
 
     unk16 sp8;
     unk16 *psp8 = (unk16 *) &sp8;
@@ -323,7 +323,7 @@ void ActorFleeingSpinut::func_ov032_0211c108() {
 
     unk16 value = *psp8;
     if (temp_r5_2 > 0) {
-        func_01ff9318(&this->mAngle, value, func_01ffb464(INT_TO_FX32(temp_r5_2)));
+        func_01ff9318(&this->mAngle, value, FX_Inv(INT_TO_FX32(temp_r5_2)));
     }
 
     if (!this->mUnk_110.vfunc_28()->func_01ff8fa8()) {
@@ -638,7 +638,7 @@ u16 *ActorFleeingSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, V
     func_01ffb714(&sp1C, param1, &sp10);
     func_01ffb714(&sp1C, &this->mUnk_1C.vec, &sp4);
 
-    temp_r1 = func_01ffbbe0(sp10.x, sp10.z);
+    temp_r1 = FX_Atan2Idx(sp10.x, sp10.z);
     sp0     = temp_r1;
 
     func_01ff930c(param2, temp_r1, param5);

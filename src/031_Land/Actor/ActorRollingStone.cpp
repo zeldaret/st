@@ -674,20 +674,20 @@ void ActorRollingStone::func_ov031_020f97cc() {
         case 0x3: {
             fx32 diffX  = this->mPos.x - this->mPrevPos.x;
             fx32 angleX = -FX_MUL(diffX, FX_F32_TO_FX32(2.6668f));
-            MtxFx33_InitZRotation(&sp00, SIN(angleX), COS(angleX));
+            MTX_RotZ33_(&sp00, SIN(angleX), COS(angleX));
             break;
         }
         case 0x0:
         case 0x2: {
             fx32 diffZ  = this->mPos.z - this->mPrevPos.z;
             fx32 angleZ = FX_MUL(diffZ, FX_F32_TO_FX32(2.6668f));
-            MtxFx33_InitXRotation(&sp00, SIN(angleZ), COS(angleZ));
+            MTX_RotX33_(&sp00, SIN(angleZ), COS(angleZ));
             break;
         }
         default:
             break;
     }
-    func_01ffa60c(&this->mUnk_10C, &sp00, &this->mUnk_10C);
+    MTX_Concat33(&this->mUnk_10C, &sp00, &this->mUnk_10C);
 }
 
 void ActorRollingStone::func_ov031_020f98e4() {
@@ -699,14 +699,14 @@ void ActorRollingStone::func_ov031_020f98e4() {
         case 0x6: {
             fx32 diffX  = this->mPos.x - this->mPrevPos.x;
             fx32 angleX = -FX_MUL(diffX, FX_F32_TO_FX32(2.6668f));
-            MtxFx33_InitZRotation(&sp34, SIN(angleX), COS(angleX));
+            MTX_RotZ33_(&sp34, SIN(angleX), COS(angleX));
             break;
         }
         case 0x0:
         case 0x4: {
             fx32 diffZ  = this->mPos.z - this->mPrevPos.z;
             fx32 angleZ = FX_MUL(diffZ, FX_F32_TO_FX32(2.6668f));
-            MtxFx33_InitXRotation(&sp34, SIN(angleZ), COS(angleZ));
+            MTX_RotX33_(&sp34, SIN(angleZ), COS(angleZ));
             break;
         }
         case 0x5: {
@@ -749,7 +749,7 @@ void ActorRollingStone::func_ov031_020f98e4() {
             break;
     }
 
-    func_01ffa60c(&this->mUnk_10C, &sp34, &this->mUnk_10C);
+    MTX_Concat33(&this->mUnk_10C, &sp34, &this->mUnk_10C);
 }
 
 void ActorRollingStone::func_ov031_020f9af4() {}

@@ -10,13 +10,13 @@ extern "C" {
 #include "nitro/reg.h"
 #include "nitro/types.h"
 
-void G2_SetBGAffine(u32 *reg, MtxFx22 *mtx, s32 x0, s32 y0, s32 x1, s32 y1);
+void G2x_SetBGyAffine_(u32 *addr, MtxFx22 *mtx, fx32 centerX, fx32 centerY, fx32 x1, fx32 y1);
 
 void _G2_SetBlend(u32 *reg, u32 srcPlane, u32 dstPlane, u32 srcAlpha, u32 dstAlpha);
 
 void *G2_GetBG2ScrPtr(void);
 void *G2_GetBG3ScrPtr(void);
-void *G2S_func_0001();
+void *G2S_GetBG0ScrPtr();
 
 inline void G2_SetBG0Priority(u32 value) {
     REG_BG0CNT = (REG_BG0CNT & ~REG_G2_BG0CNT_PRIORITY_MASK) | (value);
@@ -211,19 +211,19 @@ inline void G2S_SetBG3ControlText(GXBGScrSizeText scrSize, GXBGColorMode colMode
 }
 
 inline void G2_SetBG2Affine(MtxFx22 *mtx, s32 x0, s32 y0, s32 x1, s32 y1) {
-    G2_SetBGAffine((u32 *) &REG_BG2PA, mtx, x0, y0, x1, y1);
+    G2x_SetBGyAffine_((u32 *) &REG_BG2PA, mtx, x0, y0, x1, y1);
 }
 
 inline void G2_SetBG3Affine(MtxFx22 *mtx, s32 x0, s32 y0, s32 x1, s32 y1) {
-    G2_SetBGAffine((u32 *) &REG_BG3PA, mtx, x0, y0, x1, y1);
+    G2x_SetBGyAffine_((u32 *) &REG_BG3PA, mtx, x0, y0, x1, y1);
 }
 
 inline void G2S_SetBG2Affine(MtxFx22 *mtx, s32 x0, s32 y0, s32 x1, s32 y1) {
-    G2_SetBGAffine((u32 *) &REG_BG2PA_SUB, mtx, x0, y0, x1, y1);
+    G2x_SetBGyAffine_((u32 *) &REG_BG2PA_SUB, mtx, x0, y0, x1, y1);
 }
 
 inline void G2S_SetBG3Affine(MtxFx22 *mtx, s32 x0, s32 y0, s32 x1, s32 y1) {
-    G2_SetBGAffine((u32 *) &REG_BG3PA_SUB, mtx, x0, y0, x1, y1);
+    G2x_SetBGyAffine_((u32 *) &REG_BG3PA_SUB, mtx, x0, y0, x1, y1);
 }
 
 inline void G2_ChangeBlendAlpha(u32 eva, u32 evb) {
@@ -385,7 +385,6 @@ inline void G2_SetOBJAttr(GXOamAttr *oam, fx32 x, fx32 y, s32 priority, GXOamMod
 }
 
 //! TODO: figure out
-void G2x_SetBGyAffine_(u32 addr, MtxFx22 mtx, fx32 centerX, fx32 centerY, fx32 x1, fx32 y1);
 void G2_SetOBJEffect(GXOamAttr *oam, GXOamEffect effect, s32 rsParam);
 GXOamEffect G2_GetOBJEffect(const GXOamAttr *oam);
 void G2_SetOBJShape(GXOamAttr *oam, GXOamShape shape);

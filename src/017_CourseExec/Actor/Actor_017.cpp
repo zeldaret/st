@@ -79,7 +79,7 @@ void Actor::func_ov017_020bf050(Actor_9C *param1, unk32 param2) {
 
     fx32 size = -sp0.size;
 
-    temp_r2 = func_01ffbbe0(param1->mUnk_10.x, param1->mUnk_10.z);
+    temp_r2 = FX_Atan2Idx(param1->mUnk_10.x, param1->mUnk_10.z);
 
     fx16 sin = SIN((s16) temp_r2);
     fx16 cos = COS((s16) temp_r2);
@@ -117,7 +117,7 @@ void Actor::func_ov017_020bf178(Actor_9C *param1, unk32 param2) {
 
     fx32 size = -sp0.size;
 
-    temp_r2 = func_01ffbbe0(param1->mUnk_10.x, param1->mUnk_10.z);
+    temp_r2 = FX_Atan2Idx(param1->mUnk_10.x, param1->mUnk_10.z);
 
     fx16 sin = SIN((s16) temp_r2);
     fx16 cos = COS((s16) temp_r2);
@@ -491,7 +491,7 @@ void Actor::func_ov017_020bfb18(Actor_9C *param1) {
 
             fx32 size = sp14.size;
 
-            s16 temp_r2 = func_01ffbbe0(sp8.x, sp8.z);
+            s16 temp_r2 = FX_Atan2Idx(sp8.x, sp8.z);
 
             fx16 sin = SIN((s16) temp_r2);
             fx16 cos = COS((s16) temp_r2);

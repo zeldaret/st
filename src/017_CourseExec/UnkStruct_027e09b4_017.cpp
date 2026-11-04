@@ -96,8 +96,8 @@ void UnkStruct_027e09b4::func_ov017_020c0b24(const VecFx32 *param1, s32 param2, 
     temp_r10 = temp_r0[1];
     temp_r8  = temp_r0[2];
 
-    s16 temp_r8_2 = func_01ffbbe0(-temp_r9, -temp_r8);
-    func_01ffcb94(func_01ffbbe0(temp_r10, func_01ff9258(temp_r9, temp_r8)), temp_r8_2, &sp0);
+    s16 temp_r8_2 = FX_Atan2Idx(-temp_r9, -temp_r8);
+    func_01ffcb94(FX_Atan2Idx(temp_r10, func_01ff9258(temp_r9, temp_r8)), temp_r8_2, &sp0);
 
     if (temp_r10 > 0) {
         return;
@@ -130,7 +130,7 @@ void UnkStruct_027e09b4::func_ov017_020c0c50(u16 param1) {
     s32 temp_r7;
     s32 temp_r8;
 
-    temp_ip = func_01ffb66c(0x10000, param1);
+    temp_ip = FX_DivS32(0x10000, param1);
     new_var = -temp_ip;
 
     temp_r0_2 = new_var / 2;

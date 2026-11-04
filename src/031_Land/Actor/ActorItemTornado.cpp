@@ -211,7 +211,7 @@ void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
                     func_01ff993c(&this->mPos, &this->mUnk_1C0.vec, 0x266);
                 }
 
-                this->mUnk_1DC -= func_01ffb66c(0x1000, this->mUnk_1D6);
+                this->mUnk_1DC -= FX_DivS32(0x1000, this->mUnk_1D6);
 
                 if (this->mUnk_1DC <= FX_F32_TO_FX32(0.0f)) {
                     this->Kill();
