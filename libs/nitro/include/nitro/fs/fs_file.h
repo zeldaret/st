@@ -142,6 +142,7 @@ BOOL FS_CloseFile(FSFile *file);
 s32 FS_func_0003(FS_UnkStruct11 *arg0, void *dst, s32 size);
 void FS_func_0060(void);
 void FS_func_0055(FSFile *file, FSArchive *archive, s32 arg2, s32 arg3, s32 arg4);
+u32 FS_GetPosition(FSFile *file);
 s32 FSi_GetPosition(FSFile *file);
 s32 FS_func_0094(FSFile *file);
 inline BOOL FS_IsFile(FSFile *file) {
