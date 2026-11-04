@@ -30,7 +30,7 @@ void MI_Copy36B(void *, MtxFx33 *);
 
 void MIi_UncompressBackward(void *addr);
 
-void MI_func_0008(s32 dmaChannel, void *param2, u32 param3, s32 param4);
+void MIi_CardDmaCopy32(s32 dmaChannel, void *param2, u32 param3, s32 param4);
 void MI_Init(void);
 s32 MI_func_0010(s32 dmaChannel, void *param2, u32 param3, u32 param4, u32 param5);
 
