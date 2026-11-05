@@ -66,7 +66,7 @@ public:
     /* 174 */ unk32 mUnk_174;
     /* 178 */ unk32 mUnk_178;
     /* 17C */ unk32 mUnk_17C;
-    /* 180 */ unk16 mUnk_180;
+    /* 180 */ volatile u16 mUnk_180;
     /* 182 */ unk16 mUnk_182; // WARN: unused
     /* 184 */ ActorUnkPSWB_184 mUnk_184;
     /* 188 */ unk32 mUnk_188;
@@ -92,7 +92,7 @@ public:
     void func_ov094_02166680(void);
     void func_ov094_02166890(void);
     void func_ov094_021668cc(void);
-    void func_ov094_021668e0(void);
+    void func_ov094_021668e0(ActorState param1);
     void func_ov094_02166bcc(void);
     void func_ov094_02166c10(void);
     void func_ov094_02166c2c(void);

@@ -295,6 +295,8 @@ void func_ov000_02089bbc(void *, unk32);
 void func_ov000_0208a7a4(void *, void *);
 void func_ov000_0208abc4(RefStruct *, void *, Vec2s *);
 void func_ov000_0208ba10(void *, void *, unk32);
+void func_ov000_0208bb84(u16 *param1, UnkStruct_027e0ce0 *param2, unk32 param3);
+void func_ov000_0208bb94(UnkStruct_027e0ce0 *param1, unk32 param2, unk32 param3);
 bool func_ov000_0208bba4(UnkStruct_027e0ce0 *param1, unk32 param2);
 void func_ov000_0208cac8(UnkStruct_ov000_0208f820_28 *, VecFx32 *, unk32);
 unk32 func_ov000_0208dc98(unk32);
