@@ -180,12 +180,7 @@ inline void OS_SetNdsSlotAccess(u32 processor) {
     REG_EXMEM_CNT = (REG_EXMEM_CNT & ~OS_EXMEM_CNT_NDS_SLOT_ACCESS) | (processor << OS_EXMEM_CNT_NDS_SLOT_ACCESS_SHIFT);
 }
 
-// int printf(const char *format, ...);
-// int vprintf(const char *, va_list);
-// int vsnprintf(char *, size_t, const char *, va_list);
-// int vsprintf(char *, const char *, va_list);
 int OS_SNPrintf(char *, size_t, const char *, ...);
-// int sprintf(char *, const char *, ...);
 
 #ifdef __cplusplus
 } // extern "C"
