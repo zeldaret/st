@@ -324,7 +324,7 @@ void UnkDataStruct4::func_ov024_020d2cfc(UnkArrayDataType1 param1, unk32 param2,
                             if (this->func_ov024_020d2a18(sp20, var_r9, temp_r8, temp_r4, var_r7)) {
                                 temp_r5 = &this->mUnk_14[temp_r8]->mUnk_00[temp_r4];
 
-                                if (func_02032784(temp_r5->func_ov024_020d1d78()) > 0) {
+                                if (MATH_CountPopulation(temp_r5->func_ov024_020d1d78()) > 0) {
                                     param1[sp20][var_r9] |= temp_r10;
                                     param1[temp_r8][temp_r4] |= UnkDataStruct4_14::func_ov024_020d1eac(temp_r10);
                                     param1[temp_r8][temp_r4] |= temp_r5->func_ov024_020d1d78();

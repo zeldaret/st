@@ -16,6 +16,9 @@ void PM_GoSleepMode(u32, u32, u32);
 
 BOOL PM_SetLCDPower(u32 power);
 
+void PM_SetAmp(s32 param1);
+void PM_SetAmpGain(s32 param1);
+
 #ifdef __cplusplus
 } // extern "C"
 #endif

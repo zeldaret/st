@@ -151,6 +151,10 @@ void MtxFx44_CopyToMtxFx43(MtxFx44 *m, MtxFx43 *out);
 void MtxFx44_InitZRotation(MtxFx44 *m, fx32 sin, fx32 cos);
 void MtxFx44_Multiply(MtxFx44 *a, MtxFx44 *b, MtxFx44 *out);
 
+void MATHi_CRC16InitTableRev(void *param1, s32 param2);
+s32 MATH_CountPopulation(s32 param1);
+s32 MATH_CalcCRC16(void *, void *, size_t);
+
 #ifdef __cplusplus
 }
 #endif

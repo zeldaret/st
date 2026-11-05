@@ -102,7 +102,7 @@ void *func_0200093c(unk32 param1, uint *param2, unk32 param3) {
 
 extern "C" void AutoloadCallback(void) {}
 
-extern "C" void func_02000b60(void) {}
+extern "C" void OSi_ReferSymbol(void) {}
 
 RomBuildInfo BuildInfo = {
     .mUnk_00 = data_0204cde0,

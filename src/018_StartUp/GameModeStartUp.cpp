@@ -40,7 +40,7 @@ void Game::func_ov018_020c48a4() {
     OS_EnableIrqMask(1);
     GX_VBlankIntr(1);
     OS_WakeupThreadDirect(&this->mUnk_1C.mUnk_04);
-    func_02031e48((void *) func_020131b0);
+    CARD_SetPulledOutCallback((void *) func_020131b0);
     this->TrySetCreateCallback((GameModeCreateCallback) Game::func_ov018_020c4ba8);
 }
 

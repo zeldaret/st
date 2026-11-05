@@ -139,7 +139,7 @@ BOOL FS_SeekFile(FSFile *file, s32 pos, u32 mode);
 u32 FS_GetLength(FSFile *file);
 u32 FS_ReadFile(FSFile *file, void *buf, u32 size);
 BOOL FS_CloseFile(FSFile *file);
-s32 FS_func_0003(FS_UnkStruct11 *arg0, void *dst, s32 size);
+s32 FSi_ReadTable(FS_UnkStruct11 *arg0, void *dst, s32 size);
 void FS_func_0060(void);
 void FS_func_0055(FSFile *file, FSArchive *archive, s32 arg2, s32 arg3, s32 arg4);
 u32 FS_GetPosition(FSFile *file);
