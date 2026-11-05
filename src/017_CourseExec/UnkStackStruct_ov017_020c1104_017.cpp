@@ -36,7 +36,7 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c117c(const VecFx32 *param2, u
     VecFx32 sp0;
     func_01ffb714(param2, &this->unk_00, &sp0);
 
-    s16 temp_r0   = func_01ffbbe0(sp0.x, sp0.z);
+    s16 temp_r0   = FX_Atan2Idx(sp0.x, sp0.z);
     s16 temp_r0_2 = 0x10000 >> *(volatile u16 *) &this->unk_10;
 
     u16 value1  = temp_r0 - temp_r0_2 / 2;
@@ -52,7 +52,7 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c117c(const VecFx32 *param2, u
         s32 value2     = var_r7 + (temp_r5 >> 16);
         fx32 temp_r2_3 = FX_MUL(temp_r0_3, COS((s16) (temp_r0 - ((s16) (value2 * temp_r0_4 + temp_r0_4 / 2)))));
 
-        s16 temp_r0_5 = func_01ffb428(param3 + temp_r2_3, this->unk_0C);
+        s16 temp_r0_5 = FX_Div(param3 + temp_r2_3, this->unk_0C);
         u32 temp_r2_4 = ~(0xFF << *(volatile u16 *) &this->unk_10) & ((u16) (1 << *new_var) + (temp_r5 >> 16) + var_r7);
 
         s16 *ptr = &this->unk_14[temp_r2_4];

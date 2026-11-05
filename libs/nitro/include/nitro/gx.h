@@ -201,7 +201,15 @@ void GX_BeginLoadTex(void);
 void GX_LoadTex(void *ptr, u32 offset, u32 size);
 void GX_EndLoadTex(void);
 
-void GX_func_0008(void *, s32, s32);
+void G2x_SetBlendBrightness_(u16 *reg, s32 param1, s32 param2);
+
+inline void GX_SetBlendBrightness(s32 param1, s32 param2) {
+    G2x_SetBlendBrightness_(&REG_BLDCNT, param1, param2);
+}
+
+inline void GXS_SetBlendBrightness(s32 param1, s32 param2) {
+    G2x_SetBlendBrightness_(&REG_BLDCNT_SUB, param1, param2);
+}
 
 extern u16 data_020a7088;
 extern u32 data_020a708c;
@@ -274,11 +282,19 @@ inline void GXS_SetVisibleWindows(s32 windows) {
     REG_DISPCNT_SUB = (REG_DISPCNT_SUB & ~0xE000) | (windows << 13);
 }
 
+void GXx_SetMasterBrightness_(u16 *reg, s32 brightness);
+
+inline void GX_SetMasterBrightness(s32 brightness) {
+    GXx_SetMasterBrightness_(&REG_MASTER_BRIGHT, brightness);
+}
+
+inline void GXS_SetMasterBrightness(s32 brightness) {
+    GXx_SetMasterBrightness_(&REG_MASTER_BRIGHT_SUB, brightness);
+}
+
 //! TODO: figure out
 GXOBJVRamModeChar GX_GetOBJVRamModeChar();
 GXOBJVRamModeChar GXS_GetOBJVRamModeChar();
-void GX_SetMasterBrightness(s32 brightness);
-void GXx_SetMasterBrightness_(u16 reg, s32 brightness);
 void GX_ResetCapture();
 void GX_DisableBankForOBJ();
 void GX_DisableBankForBG();
@@ -291,6 +307,8 @@ void GX_DisableBankForBGExtPltt();
 void GX_DisableBankForOBJExtPltt();
 void GX_LoadVramCommon(void *pData, u32 addr, u32 size, u32 vram);
 void GX_Destory();
+void GX_ResetBankForTex();
+void GX_ResetBankForTexPltt();
 
 #ifdef __cplusplus
 } // extern "C"

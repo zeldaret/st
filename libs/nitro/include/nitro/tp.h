@@ -17,6 +17,7 @@ extern "C" {
 #define TP_RESULT_SUCCESS 0x0
 
 #define TP_TOUCH_ON 0x1
+#define TP_TOUCH_OFF 0x0
 
 typedef struct TPCalibrateParam {
     /* 00 */ s16 unk_00;

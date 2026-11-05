@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _NNS_ANIM_H
+#define _NNS_ANIM_H
 
 #include "global.h"
 #include <nitro/math.h>
@@ -58,4 +59,6 @@ typedef struct CellAnim {
 
 #ifdef __cplusplus
 } // extern "C"
+#endif
+
 #endif

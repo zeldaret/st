@@ -72,7 +72,7 @@ void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2) {
     G3_TexPlttBase(G3_TEXPLTTBASE_ADDR(textureParam->y), G3_TEXPLTTBASE_FMT(textureParam->z));
 
     MtxFx33 mat;
-    MtxFx33_InitYRotation(&mat, SIN(actor->mAngle.angle_s), COS(actor->mAngle.angle_s));
+    MTX_RotY33_(&mat, SIN(actor->mAngle.angle_s), COS(actor->mAngle.angle_s));
 
     var_r7 = var_r8 = 0xB33;
     var_r9          = 0x1F - ((0xE - actor->mUnk_0E0) * 2);

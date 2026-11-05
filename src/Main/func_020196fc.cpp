@@ -39,10 +39,10 @@ extern "C" void func_020196fc() {
     GX_SetVisibleWindows(0);
     GXS_SetVisibleWindows(0);
     func_020242a0();
-    func_020241f4();
+    GX_ResetBankForTex();
     GX_ResetBankForBGExtPltt();
     func_0202428c();
-    func_02024208();
+    GX_ResetBankForTexPltt();
     GX_ResetBankForOBJExtPltt();
     func_020242b4();
     GX_ResetBankForSubBGExtPltt();

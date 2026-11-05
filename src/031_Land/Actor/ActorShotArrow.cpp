@@ -533,7 +533,7 @@ void ActorShotArrow::vfunc_2C(unk32 param1) {
         func_01ffad5c(this->mUnk_224, &data_027e0964, &spB4);
         func_01ffad5c(&sp84, &this->mUnk_228, &sp84);
         func_01ffad5c(&sp84, &spB4, &spB4);
-        CopySingle288(&spB4, &sp60);
+        MI_Copy36B(&spB4, &sp60);
 
         VecFx32_Copy(&this->mPos, &this->mPrevPos);
 
@@ -553,14 +553,14 @@ void ActorShotArrow::vfunc_2C(unk32 param1) {
         sp54.y = this->mPos.y;
         sp54.z = this->mPos.z;
 
-        MtxFx33_InitYRotation(&sp30, SIN(this->mAngle.angle_u), COS(this->mAngle.angle_u));
+        MTX_RotY33_(&sp30, SIN(this->mAngle.angle_u), COS(this->mAngle.angle_u));
 
         s16 angle = this->mUnk_174 + this->mUnk_176;
         fx16 sin  = SIN(angle);
         fx16 cos  = COS(angle);
 
-        MtxFx33_InitXRotation(&spC, sin, cos);
-        func_01ffa60c(&spC, &sp30, &sp30);
+        MTX_RotX33_(&spC, sin, cos);
+        MTX_Concat33(&spC, &sp30, &sp30);
 
         if (this->mState == 4) {
             sp54.y -= FX_MUL(sin, 0x333);
@@ -814,7 +814,7 @@ void ActorShotArrow::func_ov031_020f2cac(const VecFx32 *param1, bool param2) {
         data_027e0cec->func_ov000_0209ff24(0x805, &sp10, &sp8, 2);
     }
 
-    this->mAngle = func_01ffbbe0(this->mVel.x, this->mVel.z);
+    this->mAngle = FX_Atan2Idx(this->mVel.x, this->mVel.z);
 }
 
 void ActorShotArrow::func_ov031_020f2ef0() {
@@ -853,10 +853,10 @@ void ActorShotArrow::func_ov031_020f3000() {
     vec.y = FX_F32_TO_FX32(0.0f);
     vec.z = FX_F32_TO_FX32(0.4f);
 
-    MtxFx33_InitYRotation(&m1, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
-    MtxFx33_InitXRotation(&m2, SIN((s16) (this->mUnk_174 + this->mUnk_176)), COS((s16) (this->mUnk_174 + this->mUnk_176)));
+    MTX_RotY33_(&m1, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
+    MTX_RotX33_(&m2, SIN((s16) (this->mUnk_174 + this->mUnk_176)), COS((s16) (this->mUnk_174 + this->mUnk_176)));
 
-    func_01ffa60c(&m2, &m1, &m1);
+    MTX_Concat33(&m2, &m1, &m1);
 
     func_01ffa7a0(&vec, &m1, &vec);
 
@@ -1177,7 +1177,7 @@ void ActorShotArrow_194::func_ov031_020f374c(Actor *actor) {
 
     if (temp > spC.size && spC.size > FX_F32_TO_FX32(0.15f)) {
         fx32 temp_r5 = (temp - spC.size) + FX_F32_TO_FX32(0.15f);
-        u16 value    = (u32) (s16) (s32) func_01ffbbe0(sp0.x, sp0.z);
+        u16 value    = (u32) (s16) (s32) FX_Atan2Idx(sp0.x, sp0.z);
 
         fx16 sin = SIN(value);
         fx16 cos = COS(value);
@@ -1214,7 +1214,7 @@ void ActorShotArrow_194::vfunc_10(const Actor *actor) {
         return;
     }
 
-    s16 result = func_01ffbbe0(this->mUnk_2C->mVel.x, this->mUnk_2C->mVel.z);
+    s16 result = FX_Atan2Idx(this->mUnk_2C->mVel.x, this->mUnk_2C->mVel.z);
 
     switch (((Actor *) actor)->GetActorId()) {
         case ActorId_WIDR:

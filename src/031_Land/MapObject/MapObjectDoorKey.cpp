@@ -68,7 +68,7 @@ void MapObjectDoorKey::vfunc_14(unk32 param1) {
     VecFx32 local_48;
     VecFx32 temp;
 
-    MtxFx33_InitYRotation(&m, SIN(angle), COS(angle));
+    MTX_RotY33_(&m, SIN(angle), COS(angle));
     temp.x     = this->mPos.x - FX_F32_TO_FX32(1.0f) + this->mUnk_70;
     temp.z     = this->mPos.z;
     temp.y     = this->mPos.y;
@@ -78,7 +78,7 @@ void MapObjectDoorKey::vfunc_14(unk32 param1) {
     this->mUnk_94.vfunc_14(&m, &local_48);
 
     u16 var = (-0x8000 - sVar2);
-    MtxFx33_InitYRotation(&m, SIN(var), COS(var));
+    MTX_RotY33_(&m, SIN(var), COS(var));
     temp.x     = this->mPos.x + FX_F32_TO_FX32(1.0f) - this->mUnk_70;
     temp.z     = this->mPos.z;
     temp.y     = this->mPos.y;

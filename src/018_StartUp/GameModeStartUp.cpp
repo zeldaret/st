@@ -15,6 +15,7 @@
 #include <nitro/os.h>
 #include <nitro/reg.h>
 #include <nitro/tp.h>
+#include <nns/fnd.h>
 
 static u8 data_ov018_020c5bc0;
 
@@ -39,7 +40,7 @@ void Game::func_ov018_020c48a4() {
     OS_EnableIrqMask(1);
     GX_VBlankIntr(1);
     OS_WakeupThreadDirect(&this->mUnk_1C.mUnk_04);
-    func_02031e48((void *) func_020131b0);
+    CARD_SetPulledOutCallback((void *) func_020131b0);
     this->TrySetCreateCallback((GameModeCreateCallback) Game::func_ov018_020c4ba8);
 }
 
@@ -70,12 +71,12 @@ void UnkStruct_02011e10::func_ov018_020c4980() {
         this->mUnk_24[i] = 0;
     }
 
-    this->mUnk_00[HeapIndex_Main] = func_020012e0(arenaLo, arenaHi - arenaLo, 2);
+    this->mUnk_00[HeapIndex_Main] = NNS_FndCreateFrmHeapEx(arenaLo, arenaHi - arenaLo, 2);
     unk32 length                  = func_0202d624(NULL, 0);
     void *ptr                     = ::operator new(length, 0, 4);
     func_0202d624(ptr, length);
     ptr         = ::operator new(0xBE000, 0, 4);
-    void *uVar3 = func_02001fd4(ptr, 0xBE000);
+    void *uVar3 = NNS_SndHeapCreate(ptr, 0xBE000);
 
     this->mUnk_24[0] = (unk32) uVar3;
     this->mUnk_5C    = 0;
@@ -90,22 +91,22 @@ void UnkStruct_02011e10::func_ov018_020c4980() {
 }
 
 void UnkStruct_02011e10::func_ov018_020c4a5c() {
-    UnkStruct_02011e10_Sub1 *temp_r2;
-    uintptr_t temp_r5;
-    u8 *temp_r7;
-    u8 *temp_r0;
+    NNSiFndHeapHead *pHead;
+    uintptr_t allocSize;
+    u8 *pLo;
+    u8 *pHi;
 
     func_020013ac(this->mUnk_00[0]);
-    temp_r2 = this->mUnk_00[0];
+    pHead = this->mUnk_00[HeapIndex_Main];
 
-    temp_r5 = ((uintptr_t) temp_r2->mUnk_1C - (uintptr_t) temp_r2); //! TODO: fake match?
-    temp_r7 = (u8 *) OS_GetArenaLo(0);
-    temp_r7 += temp_r5;
+    allocSize = ((uintptr_t) pHead->region.end - (uintptr_t) pHead);
+    pLo       = (u8 *) OS_GetArenaLo(0);
+    pLo += allocSize;
 
-    temp_r0          = (u8 *) OS_GetMainArenaHi();
-    this->mUnk_00[1] = func_02001098(temp_r7, temp_r0 - temp_r7, 2);
+    pHi              = (u8 *) OS_GetMainArenaHi();
+    this->mUnk_00[1] = NNS_FndCreateExpHeapEx(pLo, pHi - pLo, 2);
     this->mUnk_5C    = func_020011f4(this->mUnk_00[1]);
-    OS_SetMainArenaLo((void *) temp_r0);
+    OS_SetMainArenaLo((void *) pHi);
     this->mUnk_74 = 1;
 }
 
@@ -125,7 +126,7 @@ UnkStruct_02049b18_06::UnkStruct_02049b18_06() {
 
     TP_Init();
 
-    if (OS_func_0065()) {
+    if (OS_IsRunOnEmulator()) {
         TP_SetCalibrateParam(NULL);
     } else if (TP_GetUserInfo(&params)) {
         TP_SetCalibrateParam(&params);

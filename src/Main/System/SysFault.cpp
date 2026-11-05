@@ -121,7 +121,7 @@ void SysFault::func_020127f0(unk32 param1) {
                 struct_aStack_2d8 aStack_2d8;
 
                 GXS_LoadBGPltt(&data_0203e0be, func_ov000_02068504(0) << 1, 6);
-                MI_CpuFill32(0, G2S_func_0001(), 0x800);
+                MI_CpuFill32(0, G2S_GetBG0ScrPtr(), 0x800);
                 aStack_2d8.mUnk_20 = &data_ov000_020b4f84.mUnk_00[FontIndex_DSZ2_msg].mUnk_14;
                 aStack_2d8.func_ov000_020628e4(0, 0, 256, 192, 0, 0, 1, 0, 0);
 
@@ -142,7 +142,7 @@ void SysFault::func_020127f0(unk32 param1) {
                 struct_aStack_2d8 aStack_2d8;
 
                 GXS_LoadBGPltt(&data_0203e0be, func_ov000_02068504(0) << 1, 6);
-                MI_CpuFill32(0, G2S_func_0001(), 0x800);
+                MI_CpuFill32(0, G2S_GetBG0ScrPtr(), 0x800);
                 aStack_2d8.mUnk_20 = &data_ov000_020b4f84.mUnk_00[FontIndex_DSZ2_msg].mUnk_14;
                 aStack_2d8.func_ov000_020628e4(0, 0, 256, 192, 0, 0, 1, 0, 0);
 
@@ -162,8 +162,8 @@ void SysFault::func_020127f0(unk32 param1) {
                 break;
         }
 
-        SetBrightColor((void *) &REG_MASTER_BRIGHT, 0);
-        SetBrightColor((void *) &REG_MASTER_BRIGHT_SUB, 0);
+        GX_SetMasterBrightness(0);
+        GXS_SetMasterBrightness(0);
 
         if (gOverlayManager.mLoadedOverlays[OverlaySlot_4] == OverlayIndex_WirelessCommon) {
             func_ov020_020c86d8(&data_ov020_20e8580);

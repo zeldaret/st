@@ -57,8 +57,8 @@ void Game::Run() {
                 this->mUnk_08 = NULL;
             }
 
-            if (CARD_func_0033()) {
-                CARD_func_0034();
+            if (CARD_IsPulledOut()) {
+                CARD_TerminateForPulledOut();
             }
 
             data_02049bd4.func_02014d98();

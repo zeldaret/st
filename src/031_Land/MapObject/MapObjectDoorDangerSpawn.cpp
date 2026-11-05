@@ -277,7 +277,7 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
             }
 
             this->mUnk_80 = ROUND_FX32(
-                FX_MUL(INT_TO_FX32(this->mUnk_78), func_01ffb428(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f))));
+                FX_MUL(INT_TO_FX32(this->mUnk_78), FX_Div(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f))));
 
             if (this->mUnk_8A) {
                 this->mUnk_82 = 0;
@@ -547,7 +547,7 @@ void MapObjectDoorDangerSpawn::vfunc_18(s8 *param1) {
 
 void MapObjectDoorDangerSpawn::vfunc_14(unk32 param1) {
     MtxFx33 m;
-    MtxFx33_InitYRotation(&m, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
+    MTX_RotY33_(&m, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
 
     VecFx32 pos(this->mPos);
     pos.y += -(this->mUnk_6C * 2);

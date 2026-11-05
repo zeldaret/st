@@ -296,7 +296,7 @@ void ActorBomb::func_ov031_020e1b7c() {
     this->mUnk_0F4.func_01ffc3b4();
 
     if (delta > 0x0) {
-        func_01ff9218(&this->mUnk_1D8, FX_F32_TO_FX32(1.3f), func_01ffb464((u32) delta << 0xC));
+        func_01ff9218(&this->mUnk_1D8, FX_F32_TO_FX32(1.3f), FX_Inv((u32) delta << 0xC));
     }
     if (!this->mUnk_1EA.HasExpired()) {
         return;

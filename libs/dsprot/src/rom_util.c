@@ -22,7 +22,7 @@ void ROMUtil_Read(void *dest, u32 addr, s32 num_bytes) {
     int i;
 
     lock_id = OS_GetLockID();
-    CARD_func_0010(lock_id);
+    CARD_LockRom(lock_id);
 
     // Alias for volatile null pointer
     vnull = NULL;
@@ -122,8 +122,8 @@ void ROMUtil_Read(void *dest, u32 addr, s32 num_bytes) {
     // Write original value back to to external memory control register
     *(vu16 *) (register_base_1 + REG_EXMEM_CNT_OFFSET) = ext_mem_register_val_original;
 
-    CARD_func_0011(lock_id);
-    OS_func_0178(lock_id);
+    CARD_UnlockRom(lock_id);
+    OS_ReleaseLockID(lock_id);
 }
 
 u32 ROMUtil_CRC32(void *buf, u32 size) {
