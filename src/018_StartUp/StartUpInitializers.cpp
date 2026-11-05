@@ -107,7 +107,7 @@ SaveManager::SaveManager() {
     this->mpSaveFile = NULL;
     this->mUnk_244   = NULL;
 
-    func_020327c8(&this->mUnk_004, 0x1021);
+    MATHi_CRC16InitTableRev(&this->mUnk_004, 0x1021);
 
     this->mCardId = OS_GetLockID();
     int uVar8     = 1;
@@ -324,13 +324,13 @@ UnkStruct_ov000_020b5340::UnkStruct_ov000_020b5340() :
     mUnk_08(-1),
     mUnk_28(0),
     mUnk_2C(0) {
-    func_0202ee0c();
+    MIC_Init();
     this->mUnk_00 = &data_ov000_020b5300;
 }
 
 void UnkStruct_ov000_020b5340::func_ov018_020c57fc() {
-    func_0202f910(1);
-    func_0202f958(3);
+    PM_SetAmp(1);
+    PM_SetAmpGain(3);
 }
 
 UnkStruct_ov000_020b5300::UnkStruct_ov000_020b5300() {

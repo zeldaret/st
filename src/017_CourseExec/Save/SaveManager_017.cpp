@@ -87,7 +87,7 @@ void SaveManager::func_ov017_020c2c08(GameSaveSlot *param1) {
                      sizeof(SaveFile_00000_0000_Data_484));
     }
 
-    param1->mInfoData.unk_DFE = func_020328c8(&this->mUnk_004, param1, offsetof(SaveInfoData, unk_DFE));
+    param1->mInfoData.unk_DFE = MATH_CalcCRC16(&this->mUnk_004, param1, offsetof(SaveInfoData, unk_DFE));
 
 #if __MWERKS__
     param1->mTreasureData.unk_00 = gpTreasureManager->mUnk_00;
@@ -97,7 +97,7 @@ void SaveManager::func_ov017_020c2c08(GameSaveSlot *param1) {
     MI_CpuCopy32(&gpTreasureManager->mUnk_3C, &param1->mTreasureData.unk_3C, sizeof(gpTreasureManager->mUnk_3C));
 #endif
     param1->mTreasureData.unk_5C        = gpTreasureManager->mUnk_5C;
-    param1->mTreasureData.unk_5C.unk_22 = func_020328c8(
+    param1->mTreasureData.unk_5C.unk_22 = MATH_CalcCRC16(
         &this->mUnk_004, &param1->mTreasureData, offsetof(SaveTreasureData, unk_5C) + offsetof(TreasureManager_5C, unk_22));
 
     MI_CpuCopyFast(&param1->mTreasureData, &param1->mUnk_2600, sizeof(param1->mTreasureData));
@@ -139,9 +139,9 @@ bool SaveManager::func_ov017_020c3040(GameSaveSlot *param1, unk32 param2) {
         return false;
     }
 
-    param1->mUnk_1D00.unk_0FE = func_020328c8(&this->mUnk_004, param1,
-                                              offsetof(GameSaveSlot, mUnk_1D00) + offsetof(SaveFile_00000_1D00_Data, unk_0FE));
-    this->mUnk_208            = param2;
+    param1->mUnk_1D00.unk_0FE = MATH_CalcCRC16(
+        &this->mUnk_004, param1, offsetof(GameSaveSlot, mUnk_1D00) + offsetof(SaveFile_00000_1D00_Data, unk_0FE));
+    this->mUnk_208 = param2;
     this->func_ov000_020a0b2c(SaveManager::func_ov017_020c2fc4, param1);
     return true;
 }

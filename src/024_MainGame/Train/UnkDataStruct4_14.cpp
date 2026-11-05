@@ -132,7 +132,7 @@ s32 UnkDataStruct4_14::func_ov024_020d1c3c(unk32 *param1, unk32 param2) const {
 
 void UnkDataStruct4_14::func_ov024_020d1c84() {
     for (int i = 0; i < ARRAY_LEN(this->mUnk_0F); i++) {
-        if (func_02032784(this->mUnk_0F[i]) == 1 && func_02032784(this->mUnk_0C[i]) == 2) {
+        if (MATH_CountPopulation(this->mUnk_0F[i]) == 1 && MATH_CountPopulation(this->mUnk_0C[i]) == 2) {
             this->mUnk_0F[i] = this->mUnk_0C[i];
         }
     }
@@ -315,7 +315,7 @@ unk32 UnkDataStruct4_14::func_ov024_020d20c0(unk32 param1, unk32 param2) const {
     var_r6  = func_ov024_020d1a18(param1);
     temp_r8 = this->func_ov024_020d1d78();
 
-    switch (func_02032784(temp_r8)) {
+    switch (MATH_CountPopulation(temp_r8)) {
         case 0:
             return 4;
         case 1:
@@ -379,7 +379,7 @@ bool UnkDataStruct4_14::func_ov024_020d21d8() const {
 }
 
 bool UnkDataStruct4_14::func_ov024_020d223c() const {
-    if (!this->func_ov024_020d21d8() && func_02032784(this->func_ov024_020d1da0()) == 2) {
+    if (!this->func_ov024_020d21d8() && MATH_CountPopulation(this->func_ov024_020d1da0()) == 2) {
         return true;
     }
 
@@ -461,7 +461,7 @@ bool UnkDataStruct4_14::func_ov024_020d23ec() const {
     bool var_r4 = false;
     u8 value    = this->func_ov024_020d1d78();
 
-    if (func_02032784(value) == 3 && (this->func_ov024_020d2464(1) || this->func_ov024_020d2464(0))) {
+    if (MATH_CountPopulation(value) == 3 && (this->func_ov024_020d2464(1) || this->func_ov024_020d2464(0))) {
         var_r4 = true;
     }
 

@@ -261,8 +261,8 @@ void ActorUnkRCFO::func_ov033_02119a58() {
     VecFx32 *vec = data_027e0ce0->func_01fff148(0x1);
 
     Vec2s sp;
-    sp.x = (func_01ffb428(vec->x - this->mUnk_DDC.vec.x, this->mUnk_DE8.vec.x - this->mUnk_DDC.vec.x) << 8) >> 0xC;
-    sp.y = (func_01ffb428(vec->z - this->mUnk_DDC.vec.z, this->mUnk_DE8.vec.z - this->mUnk_DDC.vec.z) * 0xC0) >> 0xC;
+    sp.x = (FX_Div(vec->x - this->mUnk_DDC.vec.x, this->mUnk_DE8.vec.x - this->mUnk_DDC.vec.x) << 8) >> 0xC;
+    sp.y = (FX_Div(vec->z - this->mUnk_DDC.vec.z, this->mUnk_DE8.vec.z - this->mUnk_DDC.vec.z) * 0xC0) >> 0xC;
 
     if (sp.x < 0) {
         sp.x = 0;

@@ -177,7 +177,7 @@ u16 *Actor_Derived1_EC::func_ov024_020d69d8(VecFx32 *pPos, s16 *pAngle, VecFx32 
 
     func_01ffb714(&sp1C, pPos, &sp10);
 
-    temp_r1     = func_01ffbbe0(sp10.x, sp10.z);
+    temp_r1     = FX_Atan2Idx(sp10.x, sp10.z);
     sp0.angle_s = temp_r1;
     func_01ff930c((s16 *) pAngle, temp_r1, param5);
 
@@ -228,7 +228,7 @@ u16 *Actor_Derived1_EC::func_ov024_020d6b7c(VecFx32 *pPos, s16 *pAngle, VecFx32 
     func_01ffb714(&sp28, pPos, &sp1C);
     func_01ffb714(&sp28, &this->mUnk_0C, &sp10);
 
-    temp_r1     = func_01ffbbe0(sp1C.x, sp1C.z);
+    temp_r1     = FX_Atan2Idx(sp1C.x, sp1C.z);
     sp0.angle_s = temp_r1;
     func_01ff930c((s16 *) pAngle, temp_r1, param5);
 

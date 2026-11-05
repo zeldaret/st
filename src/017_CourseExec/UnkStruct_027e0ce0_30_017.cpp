@@ -154,7 +154,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                 var_r2_2 = 0;
 
                 if (temp_r4 != 0x1000) {
-                    var_r2_2 = func_01ffb428(var_r6 - temp_r4, 0x1000 - temp_r4);
+                    var_r2_2 = FX_Div(var_r6 - temp_r4, 0x1000 - temp_r4);
                 }
 
                 if (var_r2_2 <= 0) {
@@ -189,7 +189,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                 VecFx32_SubXZ(&this->mUnk_00, &temp_r10_2->mPos.vec, &sp8);
 
                 PlayerLinkActor_9C *ptr = this->mpPlayer->mUnk_90;
-                s16 value1              = func_01ffbbe0(sp8.x, sp8.z);
+                s16 value1              = FX_Atan2Idx(sp8.x, sp8.z);
                 temp_r8_5               = func_ov000_0208832c(value1, ptr->func_ov000_02084944());
 
                 if (VecFx32_Length(&sp8) <= temp_r8_5) {

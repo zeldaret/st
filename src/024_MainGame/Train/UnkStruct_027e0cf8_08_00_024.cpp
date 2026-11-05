@@ -25,8 +25,8 @@ bool UnkStruct_027e0cf8_08_00::func_ov024_020d3970(Vec2s *param1, fx32 *param2, 
         fx32 temp1 = param4 - param1->x;
         fx32 temp2 = param5 - param1->y;
 
-        fx32 temp_r5 = func_01ffb66c(temp1, 0x0C);
-        fx32 temp_r0 = func_01ffb66c(temp2, 0x0C);
+        fx32 temp_r5 = FX_DivS32(temp1, 0x0C);
+        fx32 temp_r0 = FX_DivS32(temp2, 0x0C);
 
         if (UnkStruct_027e0cf8_08_00::func_ov024_020d3a34(param1, temp_r5, temp_r0)) {
             *param2 = temp_r5;

@@ -77,11 +77,7 @@ u32 CARD_GetBackupTotalSize(void);
 BOOL CARD_ReadWriteBackupAsync(u32 offset, void *buf, u32 size, void *, void *, u32, u32, u32, u32);
 void CARD_WaitBackupAsync(void);
 CARDResult CARD_GetResultCode(void);
-BOOL CARD_func_0033();
-void CARD_func_0034();
-
-void CARD_func_0010(u32);
-void CARD_func_0011(u32);
+void CARD_TerminateForPulledOut();
 
 void CARD_LockRom(u16 lock);
 void CARD_UnlockRom(u16 lock);
@@ -90,6 +86,8 @@ void CARDi_ReadRom(u32 arg0, void *arg1, void *arg2, void (*callback)(void *para
 
 CARD_UnkStruct2 *CARD_func_0058(void);
 CARD_UnkStruct1 *CARD_func_0059(void);
+
+void CARD_SetPulledOutCallback(void *param1);
 
 inline void CARD_ReadEeprom(u32 offset, void *buf, u32 size) {
     // TODO: Implement from GameSpy ReadFromBackup

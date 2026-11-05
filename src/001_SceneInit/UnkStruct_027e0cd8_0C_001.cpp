@@ -120,7 +120,7 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const EntranceInfo *param1)
     wchar_t local_c8[2];
     local_c8[0]                        = L'\0';
     local_c8[sizeof(local_c8) / 2 - 1] = L'\0';
-    snprintf((char *) local_c8, sizeof(local_c8), "M%02d", param1->roomIndex);
+    OS_SNPrintf((char *) local_c8, sizeof(local_c8), "M%02d", param1->roomIndex);
     this->mUnk_084[0] = local_c8[0];
     this->mUnk_084[1] = local_c8[1];
 
@@ -129,21 +129,21 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const EntranceInfo *param1)
     wchar_t local_34[16];
     local_34[0]                        = L'\0';
     local_34[sizeof(local_34) / 2 - 1] = L'\0';
-    snprintf((char *) local_34, sizeof(local_34), "Map/%s/map%02d.bin", pEntry->name, param1->roomIndex);
+    OS_SNPrintf((char *) local_34, sizeof(local_34), "Map/%s/map%02d.bin", pEntry->name, param1->roomIndex);
 
     this->mUnk_004.~UnkSystem3();
     this->mUnk_004.mUnk_00 = local_34;
     this->mUnk_004.func_0201541c((char *) local_c8, 0x10);
     this->LoadSceneModel(param1);
 
-    snprintf((char *) local_34, sizeof(local_34), "%s:zcb/%s_%02d.zcb", local_c8, pEntry->name, param1->roomIndex);
+    OS_SNPrintf((char *) local_34, sizeof(local_34), "%s:zcb/%s_%02d.zcb", local_c8, pEntry->name, param1->roomIndex);
     UnkFileSystem3 local_44((char *) local_34);
     data_027e09c0->func_ov001_020be3dc(&local_44, this);
 
     wchar_t local_64[16];
     local_64[0]                        = L'\0';
     local_64[sizeof(local_64) / 2 - 1] = L'\0';
-    snprintf((char *) local_64, sizeof(local_64), "%s:zmb/%s_%02d.zmb", local_c8, pEntry->name, param1->roomIndex);
+    OS_SNPrintf((char *) local_64, sizeof(local_64), "%s:zmb/%s_%02d.zmb", local_c8, pEntry->name, param1->roomIndex);
     UnkFileSystem3 local_74((char *) local_64);
     local_74.vfunc_08(0x10);
 
@@ -166,25 +166,25 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const EntranceInfo *param1)
     data_027e095c->func_ov000_020592a0();
 
     u32 isCs = this->mIsCS;
-    snprintf((char *) local_34, sizeof(local_34), "%s:zob/motype_%02d_%1d.zob", local_c8, param1->roomIndex, isCs);
+    OS_SNPrintf((char *) local_34, sizeof(local_34), "%s:zob/motype_%02d_%1d.zob", local_c8, param1->roomIndex, isCs);
     UnkFileSystem3 local_94((char *) local_34);
     this->mUnk_0B4 = (ZeldaObjectList *) local_94.vfunc_08(sizeof(ZOBHeader));
     gpMapObjManager->func_ov001_020bae40(this->mUnk_0B4);
     for (int i = 0; i < ARRAY_LEN(this->mUnk_0B8); i++) {
         // i + 2 because 0 is the default one and 1 is the cutscene one
-        snprintf((char *) local_34, sizeof(local_34), "%s:zob/motype_%02d_%1d.zob", local_c8, param1->roomIndex, i + 2);
+        OS_SNPrintf((char *) local_34, sizeof(local_34), "%s:zob/motype_%02d_%1d.zob", local_c8, param1->roomIndex, i + 2);
         UnkFileSystem3 local_a4((char *) local_34);
         this->mUnk_0B8[i] = (ZeldaObjectList *) local_a4.vfunc_08(sizeof(ZOBHeader));
     }
 
     isCs = this->mIsCS;
-    snprintf((char *) local_34, sizeof(local_34), "%s:zob/npctype_%02d_%1d.zob", local_c8, param1->roomIndex, isCs);
+    OS_SNPrintf((char *) local_34, sizeof(local_34), "%s:zob/npctype_%02d_%1d.zob", local_c8, param1->roomIndex, isCs);
     UnkFileSystem3 local_b4((char *) local_34);
     this->mUnk_0D8 = (ZeldaObjectList *) local_b4.vfunc_08(sizeof(ZOBHeader));
     gpActorManager->func_ov001_020bb7b0(this->mUnk_0D8);
     for (int i = 0; i < ARRAY_LEN(this->mUnk_0DC); i++) {
         // i + 2 because 0 is the default one and 1 is the cutscene one
-        snprintf((char *) local_34, sizeof(local_34), "%s:zob/npctype_%02d_%1d.zob", local_c8, param1->roomIndex, i + 2);
+        OS_SNPrintf((char *) local_34, sizeof(local_34), "%s:zob/npctype_%02d_%1d.zob", local_c8, param1->roomIndex, i + 2);
         UnkFileSystem3 local_c4((char *) local_34);
         this->mUnk_0DC[i] = (ZeldaObjectList *) local_c4.vfunc_08(sizeof(ZOBHeader));
     }
@@ -240,14 +240,14 @@ void UnkStruct_027e0cd8_0C_Base::LoadSceneModel(const EntranceInfo *param1) {
     wchar_t local_40[20];
     local_40[0]                        = L'\0';
     local_40[sizeof(local_40) / 2 - 1] = L'\0';
-    snprintf((char *) local_40, sizeof(local_40), "%s:nsbmd/%s_%02d.nsbmd", this->mUnk_084, pName, param1->roomIndex);
+    OS_SNPrintf((char *) local_40, sizeof(local_40), "%s:nsbmd/%s_%02d.nsbmd", this->mUnk_084, pName, param1->roomIndex);
     UnkFileSystem3 local_50((char *) local_40);
 
     wchar_t local_78[20];
     local_78[0]                        = L'\0';
     local_78[sizeof(local_78) / 2 - 1] = L'\0';
     const char *path                   = "Map/%s/map%02d.nsbtx";
-    snprintf((char *) local_78, sizeof(local_78), path, pName, param1->roomIndex);
+    OS_SNPrintf((char *) local_78, sizeof(local_78), path, pName, param1->roomIndex);
 
     this->mUnk_070.vfunc_0C();
     this->mUnk_070.mUnk_04 = (char *) local_78;

@@ -73,7 +73,7 @@ void MapObjectUnkPTFL::vfunc_08() {
             this->mUnk_48--;
 
             if (this->mUnk_48 > 0) {
-                func_01ff9318(&this->mUnk_54, 0, func_01ffb464(this->mUnk_48 << 0xC));
+                func_01ff9318(&this->mUnk_54, 0, FX_Inv(this->mUnk_48 << 0xC));
             }
 
             if (this->mUnk_48 <= 0) {
@@ -249,7 +249,7 @@ void MapObjectUnkPTFL::func_ov102_0218419c() {
     }
 
     temp_r1_3 = (u16) (this->mUnk_54 - 0x8000);
-    MtxFx33_InitZRotation(&sp20, SIN(temp_r1_3), COS(temp_r1_3));
+    MTX_RotZ33_(&sp20, SIN(temp_r1_3), COS(temp_r1_3));
 
     PushGeometryCommand(0x1A, &sp20, 9);
 
@@ -301,7 +301,7 @@ void MapObjectUnkPTFL::func_ov102_021843b4() {
         PushGeometryCommand(0x1B, &sp44, 3);
     }
 
-    MtxFx33_InitZRotation(&sp20, -FX_SinIdx(this->mUnk_54), FX_CosIdx(this->mUnk_54));
+    MTX_RotZ33_(&sp20, -FX_SinIdx(this->mUnk_54), FX_CosIdx(this->mUnk_54));
 
     PushGeometryCommand(0x1A, &sp20, 9);
 

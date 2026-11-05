@@ -500,7 +500,7 @@ void ActorKeese::func_ov032_0211e9ec() {
 
 void ActorKeese::func_ov032_0211eb60() {
     if (this->mUnk_46 & 0x1C) {
-        this->mAngle = func_01ffbbe0(this->mUnk_2AC.mUnk_0C.vec.x, this->mUnk_2AC.mUnk_0C.vec.z);
+        this->mAngle = FX_Atan2Idx(this->mUnk_2AC.mUnk_0C.vec.x, this->mUnk_2AC.mUnk_0C.vec.z);
     }
 
     this->mAngle += this->mUnk_2A8;
@@ -605,7 +605,7 @@ void ActorKeese::func_ov032_0211f0a8() {
         this->SetState(ActorKeeseState_8);
     } else {
         if (this->mTimer.HasExpired() && (this->mUnk_46 & 0x1C)) {
-            this->mAngle = func_01ffbbe0(this->mUnk_2AC.mUnk_0C.vec.x, this->mUnk_2AC.mUnk_0C.vec.z);
+            this->mAngle = FX_Atan2Idx(this->mUnk_2AC.mUnk_0C.vec.x, this->mUnk_2AC.mUnk_0C.vec.z);
             this->SetState(ActorKeeseState_0);
         } else if (func_01ff9258(this->mUnk_5C.mInitialPos.x - this->mPos.x, this->mUnk_5C.mInitialPos.z - this->mPos.z) <
                    FX32_HALF) {
@@ -854,7 +854,7 @@ bool ActorKeese::func_ov032_0211f93c(VecFx32 *param1, unk32 param2) {
     func_01ffb714(param1, &this->mPos, &sp0);
     func_01ff916c(&this->mUnk_2A0, this->mUnk_2A4, 0xA4);
     func_01ff916c(&this->mPos.y, this->mUnk_29C, 0xA4);
-    func_01ff930c(&this->mAngle.angle_s, func_01ffbbe0(sp0.x, sp0.z), param2);
+    func_01ff930c(&this->mAngle.angle_s, FX_Atan2Idx(sp0.x, sp0.z), param2);
 
     if (VecFx32_Dot(&sp0, &this->mVel) < 0) {
         return true;

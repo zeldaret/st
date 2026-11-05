@@ -56,7 +56,7 @@ void ActorUnkEFSB::vfunc_2C(unk32 param1) {
     VecFx32 vec;
 
     VecFx32_Init(FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), &vec);
-    vec.z = func_01ffb428(this->mUnk_1B0, FX_F32_TO_FX32(8.0f));
+    vec.z = FX_Div(this->mUnk_1B0, FX_F32_TO_FX32(8.0f));
 
     VecFx32 sp0 = this->mPos;
     sp0.y += FX_F32_TO_FX32(0.85f);

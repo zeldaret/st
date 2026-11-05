@@ -14,6 +14,7 @@
 #include "types.h"
 
 #include <nitro.h>
+#include <nns/fnd.h>
 #include <nns/g3d/g3d.h>
 #include <vector>
 
@@ -30,7 +31,6 @@ struct RefStruct;
 struct UnkStruct_ov031_Items_00;
 struct UnkStruct_ov031_Items_00_Base;
 struct UnkStruct_027e0ce0;
-struct UnkStruct_02011e10_Sub1;
 struct UnkResourceStruct2;
 struct UnkStruct_027e0cec_18_04;
 struct UnkSystem5;
@@ -88,20 +88,14 @@ void func_01ff97c8(VecFx32 *, int);
 void func_01ff993c(VecFx32 *, VecFx32 *, unk32);
 fx32 func_01ff9a5c(VecFx32 *, VecFx32 *, VecFx32 *);
 void func_01ff9fbc(MtxFx22 *, unk32, MtxFx22 *);
-void func_01ffa60c(const MtxFx33 *, MtxFx33 *, MtxFx33 *);
 void func_01ffa7a0(VecFx32 *, MtxFx33 *, VecFx32 *);
 void func_01ffa9e8(MtxFx43 *, MtxFx43 *);
 void func_01ffad5c(MtxFx43 *, MtxFx43 *, MtxFx43 *);
 void func_01ffaf74(VecFx32 *, MtxFx43 *, VecFx32 *);
-fx32 func_01ffb428(fx32, fx32);
-fx32 func_01ffb464(fx32);
-fx32 func_01ffb66c(unk32, unk32);
-unk32 func_01ffb6a8(unk32, unk32);
 void func_01ffb6e4(unk32, const void *, void *);
 void func_01ffb714(const VecFx32 *, const VecFx32 *, VecFx32 *);
 void func_01ffb974(unk32, VecFx32 *, VecFx32 *, VecFx32 *);
 fx32 func_01ffb9cc(VecFx32 *, VecFx32 *);
-u16 func_01ffbbe0(fx32 x, fx32 z);
 void func_01ffc5a0(ModelRender *, unk32, UnkAngleStruct, void *);
 void func_01ffcb94(unk16, unk16, MtxFx33 *);
 bool func_01ffccf4(Cylinder *, VecFx32 *, VecFx32 *, unk32 *);
@@ -117,17 +111,9 @@ void func_01ffedac(Vec2bCpp *, VecFx32 *);
 void func_01fff05c(u32 *, UnkStruct_027e0cd8_0C_Base *, VecFx32 *);
 void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
 void func_01fff6d0(void *, VecFx32 *param1, s32 *param2, s32 *param3);
-void func_01ffb644(fx32 x, fx32 y);
-unk32 func_01ffb558();
 void func_01ff9984(VecFx32 *, VecFx32 *, unk32, unk32, unk32);
 
 // main
-UnkStruct_02011e10_Sub1 *func_02001098(void *, size_t, unk32);
-void func_020010b8(void *);
-size_t func_020010e0(UnkStruct_02011e10_Sub1 *heapID, void *pFile, unk32 param3);
-UnkStruct_02011e10_Sub1 *func_020012e0(void *, size_t, unk32);
-void func_02001300(void *);
-void *func_02001308(void *, size_t, u32);
 unk32 func_020013ac(void *param1);
 BOOL func_0200169c(void *, int, int, int, int, void *, int);
 void func_0200174c();
@@ -192,9 +178,6 @@ unk16 func_0201a710(unk16);
 void func_0201b180(bool, bool);
 void func_0201b278(bool, bool);
 void *func_02022884(unk32);
-void SetBrightColor(void *, int);
-void func_020241f4();
-void func_02024208();
 void func_02024264();
 void func_02024278();
 void func_0202428c();
@@ -206,10 +189,6 @@ u32 func_02024494();
 void func_02024a84(MtxFx33 *param1);
 void func_02024df0(u16 *);
 void func_02024fc4(fx16 sin, fx16 cos);
-void func_02028450(void *param1);
-void CopySingle288(void *, MtxFx33 *); //! TODO: figure param1's type
-unk32 func_02032784(unk32 param1);
-unk32 func_020328c8(void *, void *, size_t);
 u16 func_02032920(void *param1, size_t param2);
 unk32 func_02039d60(f32, unk32);
 f32 func_02039f04(fx32);
@@ -224,24 +203,17 @@ void func_0201245c();
 void func_02027a28(void *param1, unk32 param2);
 void func_02013184();
 void func_020131b0();
-void func_02031e48(void *param1);
 unk32 func_0202d624(void *param1, unk32 param2);
-void *func_02001fd4(void *param1, size_t param2);
+void *NNS_SndHeapCreate(void *param1, size_t param2);
 unk32 func_020011f4(void *);
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
 unk32 func_0200e234();
 void func_02029058(void *, void *);
 u32 func_0202955c(void *, int, void *, int, void *);
-void *func_02001654(void *);
-void *func_020145b0(UnkId *, s32);
-void *func_020010c0(void *, size_t, uint);
-UnkId *func_02001488(void);
-UnkId *func_02014704();
-UnkId *func_020011c8(UnkId *, void *);
-UnkId *func_02014630(UnkId *, void *);
-UnkId *func_02001684(UnkId *, void *);
-void func_020327c8(void *param1, unk32 param2);
+void *func_020145b0(NNSiFndHeapHead *heap, s32 param2);
+NNSiFndHeapHead *func_02014704();
+NNSiFndHeapHead *func_02014630(NNSiFndHeapHead *heap, void *param2);
 void func_0201bdd0();
 void NNS_SndInit();
 void NNS_SndArcInit(void *param1, const char *soundDataPath, unk32 param2, unk32 param3);
@@ -250,9 +222,6 @@ void func_02004d2c(unk32 param1, unk32 param2);
 void func_02001778(unk32 param1);
 void func_02003f98(unk32 param1, unk32 param2);
 void NNS_SndHeapSaveState(unk32 param1);
-void func_0202ee0c();
-void func_0202f910(unk32 param1);
-void func_0202f958(unk32 param1);
 void func_02005030(void *param1);
 void NNS_SndHandleInit(void *param1);
 void NNS_SndPlayerStopSeq(void *param1, unk32 param2);

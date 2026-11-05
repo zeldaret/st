@@ -263,7 +263,7 @@ void UnkStruct_027e0ce0_40_Base_74::func_ov102_0218323c(UnkStruct_027e0ce0_40_Ba
 
     ptr->y = y;
 
-    this->mUnk_54 = func_01ffb6a8(this->mUnk_54 + 1, 0xE);
+    this->mUnk_54 = FX_ModS32(this->mUnk_54 + 1, 0xE);
 
     var_r2 = 0;
     for (u32 i = 0; i < ARRAY_LEN(this->mUnk_00); i++) {

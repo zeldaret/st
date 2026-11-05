@@ -37,6 +37,7 @@ bool OS_TryLockMutex(OSMutex *mutex);
 
 void OSi_UnlockAllMutex(struct OSThread *param1);
 void OS_UnlockAllQueuedThreadMutex(struct OSThread *thread);
+OSMutex *OSi_RemoveMutexLinkFromQueue(OSMutexQueue *param1);
 
 #ifdef __cplusplus
 } // extern "C"
