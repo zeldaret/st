@@ -144,7 +144,7 @@ void ActorUnkPSWB::func_ov094_021676f4(void) {}
 void ActorUnkPSWB::func_ov094_02167794(void) {}
 
 void ActorUnkPSWB::func_ov094_0216781c(void) {
-    mUnk_170 = func_01ffbbe0(mVel.x, mVel.z);
+    mUnk_170 = FX_Atan2Idx(mVel.x, mVel.z);
 }
 
 unk32 ActorUnkPSWB::vfunc_5C(void) {
