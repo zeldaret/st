@@ -63,12 +63,12 @@ void SaveManager::func_ov001_020ba858(void) {
         this->mResultCode = CARD_GetResultCode();
         CARD_UnlockBackup(this->mCardId);
 
-        if (this->mResultCode != CARD_RESULT_SUCCESS) {
+        if (this->mResultCode != CARD_RESULT_FAILURE) {
             this->mUnk_214 = 1;
         }
 
-        unk32 uVar3 = func_020328c8(&this->mUnk_004, &this->mUnk_244[0], sizeof(SaveManager_244) - 2);
-        unk32 uVar4 = func_020328c8(&this->mUnk_004, &this->mUnk_244[1], sizeof(SaveManager_244) - 2);
+        unk32 uVar3 = MATH_CalcCRC16(&this->mUnk_004, &this->mUnk_244[0], sizeof(SaveManager_244) - 2);
+        unk32 uVar4 = MATH_CalcCRC16(&this->mUnk_004, &this->mUnk_244[1], sizeof(SaveManager_244) - 2);
 
         bool unk_7E_0 = uVar3 == this->mUnk_244[0].mUnk_7E;
         bool unk_7E_1 = uVar4 == this->mUnk_244[1].mUnk_7E;

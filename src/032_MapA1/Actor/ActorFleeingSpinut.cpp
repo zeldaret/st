@@ -16,7 +16,7 @@
 
 extern const unk32 data_ov000_020aecf8;
 
-static const VecFx32Cpp data_ov032_021223a8(0x1B33, 0x800, 0x1B33);
+static const VecFx32Cpp data_ov032_021223a8(FX_F32_TO_FX32(1.7f), FX32_HALF, FX_F32_TO_FX32(1.7f));
 
 static UnkStruct_ov019_020d24c8_28_258_00_Derived1 data_ov032_02122924;
 static UnkStruct_ov019_020d24c8_28_258_00_Derived1 data_ov032_0212290c;
@@ -315,7 +315,7 @@ void ActorFleeingSpinut::func_ov032_0211c108() {
         var = true;
     }
 
-    unk32 temp_r5_2 = func_01ffb428(pGet50Unk10 - pGet50Unk8, FX_F32_TO_FX32(1.0f)) >> 0xC;
+    unk32 temp_r5_2 = FX_Div(pGet50Unk10 - pGet50Unk8, FX_F32_TO_FX32(1.0f)) >> 0xC;
 
     unk16 sp8;
     unk16 *psp8 = (unk16 *) &sp8;
@@ -323,7 +323,7 @@ void ActorFleeingSpinut::func_ov032_0211c108() {
 
     unk16 value = *psp8;
     if (temp_r5_2 > 0) {
-        func_01ff9318(&this->mAngle, value, func_01ffb464(INT_TO_FX32(temp_r5_2)));
+        func_01ff9318(&this->mAngle, value, FX_Inv(INT_TO_FX32(temp_r5_2)));
     }
 
     if (!this->mUnk_110.vfunc_28()->func_01ff8fa8()) {
@@ -553,7 +553,7 @@ void ActorFleeingSpinut::func_ov032_0211cb2c() {
 
     if (value > FX_F32_TO_FX32(1.0f) && value < FX_F32_TO_FX32(16.0f)) {
         value -= FX32_ONE;
-        this->mUnk_21C = FX_Mul(value + -FX_Mul(value, value) / 14, 0x3B4);
+        this->mUnk_21C = FX_MUL(value + -FX_MUL(value, value) / 14, 0x3B4);
     } else {
         this->mUnk_21C = FX_F32_TO_FX32(0.0f);
     }
@@ -638,13 +638,13 @@ u16 *ActorFleeingSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, V
     func_01ffb714(&sp1C, param1, &sp10);
     func_01ffb714(&sp1C, &this->mUnk_1C.vec, &sp4);
 
-    temp_r1 = func_01ffbbe0(sp10.x, sp10.z);
+    temp_r1 = FX_Atan2Idx(sp10.x, sp10.z);
     sp0     = temp_r1;
 
     func_01ff930c(param2, temp_r1, param5);
     temp_r5 = func_01ff9258(sp1C.x - param1->x, sp1C.z - param1->z);
 
-    var_r4 = FX_Mul(param4, func_02017f54(param2, sp0));
+    var_r4 = FX_MUL(param4, func_02017f54(param2, sp0));
     if (var_r4 < param6) {
         var_r4 = param6;
     }
@@ -656,8 +656,8 @@ u16 *ActorFleeingSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, V
         this->mUnk_1C.CopyOut(&sp1C);
         this->func_ov032_0211d7e8(&sp1C);
     } else {
-        param3->x = FX_Mul(SIN(sp0.angle_s), var_r4);
-        param3->z = FX_Mul(COS(sp0.angle_s), var_r4);
+        param3->x = FX_MUL(SIN(sp0.angle_s), var_r4);
+        param3->z = FX_MUL(COS(sp0.angle_s), var_r4);
     }
 
     return &this->mUnk_28;

@@ -110,13 +110,13 @@ unk32 UnkStruct_ov063_02162e88::vfunc_04(RefStruct param1, unk32 param2, unk32 p
         return ret1;
     }
 
-    if (this->mUnk_20->func_ov063_0215a56c((unk16) func_01ffbbe0(param4[0], param4[2])) && param1.common.type != 0) {
+    if (this->mUnk_20->func_ov063_0215a56c((unk16) FX_Atan2Idx(param4[0], param4[2])) && param1.common.type != 0) {
         ActorShotArrow *ret4 = (ActorShotArrow *) gpActorManager->func_01fff3b4(param1);
 
         if (ret4 != NULL && ret4->GetActorId() == ActorId_ShotArrow) {
             u16 angle    = this->mUnk_20->mAngle.angle_s;
-            fx32 sin_val = FX_Mul(SIN(angle), FX_F32_TO_FX32(1.0f));
-            fx32 cos_val = FX_Mul(COS(angle), FX_F32_TO_FX32(1.0f));
+            fx32 sin_val = FX_MUL(SIN(angle), FX_F32_TO_FX32(1.0f));
+            fx32 cos_val = FX_MUL(COS(angle), FX_F32_TO_FX32(1.0f));
 
             VecFx32 vec;
             vec.x = sin_val;
@@ -243,8 +243,8 @@ void ActorLobarrier::Update() {
     }
 
     this->func_ov000_02098b8c(1, &mUnk_23C);
-    unk16 temp_r5  = func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
-    unk32 var_r1_2 = (unk16) ((unk16) func_01ffbbe0(mVel.x, mVel.z) - temp_r5 - 0x8000);
+    unk16 temp_r5  = FX_Atan2Idx(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
+    unk32 var_r1_2 = (unk16) ((unk16) FX_Atan2Idx(mVel.x, mVel.z) - temp_r5 - 0x8000);
 
     if ((mUnk_46 & 1) != 0) {
         mVel.y = 0;
@@ -267,7 +267,7 @@ void ActorLobarrier::Update() {
             if (((mUnk_200.mUnk_08) & 0x3FFFF) != 0) {
                 this->mUnk_234.Set(0, this->func_ov000_02098d7c(&this->mUnk_200));
 
-                var_r5 = this->func_ov063_0215a56c((unk16) func_01ffbbe0(mUnk_200.mUnk_10.x, mUnk_200.mUnk_10.z));
+                var_r5 = this->func_ov063_0215a56c((unk16) FX_Atan2Idx(mUnk_200.mUnk_10.x, mUnk_200.mUnk_10.z));
 
                 switch (mUnk_200.mUnk_1C) {
                     case 12:
@@ -425,7 +425,7 @@ void ActorLobarrier::func_ov063_02158b98() {
     }
 
     if ((mUnk_46 & 0x3C) != 0) {
-        fx16 iVar5 = ((mUnk_276 << 14) + mUnk_26C) - (fx16) func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
+        fx16 iVar5 = ((mUnk_276 << 14) + mUnk_26C) - (fx16) FX_Atan2Idx(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
 
         if (ABS(iVar5) > DEG_TO_ANG(90)) {
             mUnk_276 *= -1;
@@ -435,8 +435,8 @@ void ActorLobarrier::func_ov063_02158b98() {
     func_01ff916c(&mUnk_270, mUnk_276 * 0xCD, 0xCD);
 
     fx16 angle = mUnk_26C + FX_F32_TO_FX32(4.0f);
-    fx32 x     = FX_Mul(SIN(angle), mUnk_270);
-    fx32 z     = FX_Mul(COS(angle), mUnk_270);
+    fx32 x     = FX_MUL(SIN(angle), mUnk_270);
+    fx32 z     = FX_MUL(COS(angle), mUnk_270);
     mVel.x     = x;
     mVel.z     = z;
 
@@ -471,13 +471,13 @@ void ActorLobarrier::func_ov063_02158db0() {
         mUnk_276 *= -1;
     }
 
-    u32 ret1    = func_01ffb428(mUnk_270 + FX_F32_TO_FX32(0.025f), 0xCD);
+    u32 ret1    = FX_Div(mUnk_270 + FX_F32_TO_FX32(0.025f), 0xCD);
     s32 temp_r5 = (mUnk_270 / 2) * ((ret1 * 0x10) >> 0x10) + 0x4CD;
 
     VecFx32 sp4;
     VecFx32_Copy(&this->mPos, &sp4);
-    sp4.x += FX_Mul(SIN(mUnk_26C), FX_F32_TO_FX32(4.0f));
-    sp4.z += FX_Mul(COS(mUnk_26C), FX_F32_TO_FX32(4.0f));
+    sp4.x += FX_MUL(SIN(mUnk_26C), FX_F32_TO_FX32(4.0f));
+    sp4.z += FX_MUL(COS(mUnk_26C), FX_F32_TO_FX32(4.0f));
 
     if (func_01ff9a5c(data_027e0ce0->func_01fff148(0), &mPos, &sp4) < temp_r5) {
         func_01ff916c(&mUnk_270, 0, 0xCD);
@@ -486,8 +486,8 @@ void ActorLobarrier::func_ov063_02158db0() {
     }
 
     fx16 angle = mUnk_26C + 0x4000;
-    fx32 x     = FX_Mul(SIN(angle), mUnk_270);
-    fx32 z     = FX_Mul(COS(angle), mUnk_270);
+    fx32 x     = FX_MUL(SIN(angle), mUnk_270);
+    fx32 z     = FX_MUL(COS(angle), mUnk_270);
     mVel.x     = x;
     mVel.z     = z;
 
@@ -572,8 +572,8 @@ void ActorLobarrier::func_ov063_02159258() {
     fx16 angle   = mUnk_26C + DEG_TO_ANG(90);
     fx32 sin_val = SIN(angle);
     fx32 cos_val = COS(angle);
-    mVel.x       = FX_Mul(sin_val, val);
-    mVel.z       = FX_Mul(cos_val, val);
+    mVel.x       = FX_MUL(sin_val, val);
+    mVel.z       = FX_MUL(cos_val, val);
 
     if (mUnk_270 == FX_F32_TO_FX32(0.0f) && this->func_ov063_0215a514()) {
         this->SetState(ActorLobarrierState_Rotating);
@@ -707,7 +707,7 @@ void ActorLobarrier::func_ov063_021599e4() {
     }
 
     if (mUnk_46 & 0x3C) {
-        unk16 ret1 = func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
+        unk16 ret1 = FX_Atan2Idx(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
 
         if (ABS((unk16) (((mUnk_276 << 14) + mUnk_26C) - ret1)) > DEG_TO_ANG(90)) {
             mUnk_276 *= -1;
@@ -728,11 +728,11 @@ void ActorLobarrier::func_ov063_021599e4() {
     //! TODO: why is this required?
     (void) ((f32) this->mUnk_270);
 
-    this->mVel.x = FX_Mul(FX_SinIdx(temp_r6_2), this->mUnk_270);
-    this->mVel.z = FX_Mul(FX_CosIdx(temp_r6_2), this->mUnk_270);
+    this->mVel.x = FX_MUL(SIN(temp_r6_2), this->mUnk_270);
+    this->mVel.z = FX_MUL(COS(temp_r6_2), this->mUnk_270);
 
-    this->mVel.x += FX_Mul(FX_SinIdx(temp_r1_2), FX_F32_TO_FX32(0.02f));
-    this->mVel.z += FX_Mul(FX_CosIdx(temp_r1_2), FX_F32_TO_FX32(0.02f));
+    this->mVel.x += FX_MUL(SIN(temp_r1_2), FX_F32_TO_FX32(0.02f));
+    this->mVel.z += FX_MUL(COS(temp_r1_2), FX_F32_TO_FX32(0.02f));
 
     if (this->func_ov063_0215a514()) {
         this->SetState(ActorLobarrierState_Rotating);
@@ -836,12 +836,12 @@ bool ActorLobarrier::func_ov063_02159f3c(fx32 param1) const {
     }
 
     sp10 = this->mPos;
-    sp10.x += FX_Mul(SIN((fx16) (this->mUnk_26C - DEG_TO_ANG(90))), FX_F32_TO_FX32(10.0f));
-    sp10.z += FX_Mul(COS((fx16) (this->mUnk_26C - DEG_TO_ANG(90))), FX_F32_TO_FX32(10.0f));
+    sp10.x += FX_MUL(SIN((fx16) (this->mUnk_26C - DEG_TO_ANG(90))), FX_F32_TO_FX32(10.0f));
+    sp10.z += FX_MUL(COS((fx16) (this->mUnk_26C - DEG_TO_ANG(90))), FX_F32_TO_FX32(10.0f));
 
     sp4 = this->mPos;
-    sp4.x += FX_Mul(SIN((fx16) (this->mUnk_26C + DEG_TO_ANG(90))), FX_F32_TO_FX32(10.0f));
-    sp4.z += FX_Mul(COS((fx16) (this->mUnk_26C + DEG_TO_ANG(90))), FX_F32_TO_FX32(10.0f));
+    sp4.x += FX_MUL(SIN((fx16) (this->mUnk_26C + DEG_TO_ANG(90))), FX_F32_TO_FX32(10.0f));
+    sp4.z += FX_MUL(COS((fx16) (this->mUnk_26C + DEG_TO_ANG(90))), FX_F32_TO_FX32(10.0f));
 
     return func_01ff9a5c(data_027e0ce0->func_01fff148(0), &sp10, &sp4) < param1;
 }
@@ -854,7 +854,7 @@ bool ActorLobarrier::func_ov063_0215a0f0() const {
         return false;
     }
 
-    s16 ret1 = func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
+    s16 ret1 = FX_Atan2Idx(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
     s16 var2;
     s16 *pvar2 = (s16 *) &var2;
     func_ov000_020986b4(pvar2, (Actor *) this, 0);
@@ -871,7 +871,7 @@ bool ActorLobarrier::func_ov063_0215a0f0() const {
         func_ov000_020986b4((s16 *) psp0, (Actor *) this, 0);
         s16 value = *psp0;
 
-        unk32 ret2 = func_01ffbbe0(mVel.x, mVel.z);
+        unk32 ret2 = FX_Atan2Idx(mVel.x, mVel.z);
 
         if (ABS((s16) ((s16) ret2 - value)) < DEG_TO_ANG(90)) {
             return false;
@@ -880,8 +880,8 @@ bool ActorLobarrier::func_ov063_0215a0f0() const {
 
     VecFx32 sp4;
     sp4.y = mPos.y;
-    sp4.x = mPos.x + FX_Mul(SIN(mUnk_26C), 0x4000);
-    sp4.z = mPos.z + FX_Mul(COS(mUnk_26C), 0x4000);
+    sp4.x = mPos.x + FX_MUL(SIN(mUnk_26C), 0x4000);
+    sp4.z = mPos.z + FX_MUL(COS(mUnk_26C), 0x4000);
 
     return func_01ff9a5c(data_027e0ce0->func_01fff148(0), (VecFx32 *) &this->mPos, &sp4) < 0x4CD;
 }
@@ -894,7 +894,7 @@ bool ActorLobarrier::func_ov063_0215a2c0() const {
         return false;
     }
 
-    s16 ret1 = func_01ffbbe0(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
+    s16 ret1 = FX_Atan2Idx(mUnk_23C.mUnk_08.x, mUnk_23C.mUnk_08.z);
     s16 var2;
     s16 *pvar2 = (s16 *) &var2;
     func_ov000_020986b4(pvar2, (Actor *) this, 0);
@@ -906,8 +906,8 @@ bool ActorLobarrier::func_ov063_0215a2c0() const {
 
     VecFx32 sp4;
     sp4.y = mPos.y;
-    sp4.x = mPos.x + FX_Mul(SIN(mUnk_26C), 0x4000);
-    sp4.z = mPos.z + FX_Mul(COS(mUnk_26C), 0x4000);
+    sp4.x = mPos.x + FX_MUL(SIN(mUnk_26C), 0x4000);
+    sp4.z = mPos.z + FX_MUL(COS(mUnk_26C), 0x4000);
 
 #if IS_JP
     VecFx32 result = *data_027e0ce0->func_01fff148(0);

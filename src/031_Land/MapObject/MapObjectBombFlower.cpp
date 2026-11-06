@@ -137,7 +137,7 @@ void MapObjectBombFlower::vfunc_08() {
 
             fx32 delta = this->mUnk_B8.GetRemainingTime();
             if (delta > 0x0) {
-                func_01ff9218(&this->mUnk_B4, 0x1000, func_01ffb464((u32) delta << 0xC));
+                func_01ff9218(&this->mUnk_B4, 0x1000, FX_Inv((u32) delta << 0xC));
             }
             this->mUnk_B0 = this->mUnk_B4;
             break;

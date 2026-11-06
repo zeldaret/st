@@ -10,7 +10,7 @@ void func_0203b920(void);
 void func_02011da0(void);
 void CallStaticInitializers(void);
 
-void func_02000a78(void);
+void init_cp15(void);
 void *func_0200093c(unk32, u32 *, unk32);
 void func_020009fc(void);
 void func_02000950(unk32 *);
@@ -57,7 +57,7 @@ extern "C" void Entry(void) {
     do {
     } while (GX_GetVCount() != 0x0);
 
-    func_02000a78();
+    init_cp15();
     func_0200093c(0, (u32 *) data_027e0000, 0x4000);
     func_0200093c(0, (u32 *) HW_PLTT, 0x400);
     func_0200093c(0x200, (u32 *) HW_OAM, 0x400);
@@ -102,7 +102,7 @@ void *func_0200093c(unk32 param1, uint *param2, unk32 param3) {
 
 extern "C" void AutoloadCallback(void) {}
 
-extern "C" void func_02000b60(void) {}
+extern "C" void OSi_ReferSymbol(void) {}
 
 RomBuildInfo BuildInfo = {
     .mUnk_00 = data_0204cde0,

@@ -17,36 +17,45 @@ void G3X_InitMtxStack(void);
 void G3X_Reset(void);
 void G3X_SetClearColor(u32 rgb, u32 a, u32 param3, u32 param4, BOOL param5);
 
-inline void G3_TexImageParam(GXTexFmt fmt, u32 gen, GXTexSizeS sizeS, GXTexSizeT sizeT, u32 repeat, u32 flip,
-                             GXTexPlttColor0 color0, u32 addr) {
+inline void G3_TexImageParam(GXTexFmt texFmt, GXTexGen texGen, GXTexSizeS texSizeS, GXTexSizeT texSizeT,
+                             GXTexRepeat texRepeatST, GXTexFlip texFlip, GXTexPlttColor0 color0, u32 textureAddress) {
     // GGCFFFTT_TSSSffRR_AAAAAAAA_AAAAAAAA (based on gbatek)
-    // G: gen
+    // G: texGen
     // C: color0
-    // F: fmt
-    // T: sizeT
-    // S: sizeS
-    // A: addr
-    // R: repeat (& 1 -> S direction, & 2 -> T direction)
-    // f: flip (& 1 -> S direction, & 2 -> T direction)
-    REG_GFX_FIFO_TEXTURE_PARAM = (fmt << 0x1A) | addr | (gen << 0x1E) | (sizeS << 0x14) | (sizeT << 0x17) | (color0 << 0x1D) |
-                                 (flip << 0x12) | (repeat << 0x10);
+    // F: texFmt
+    // T: texSizeT
+    // S: texSizeS
+    // A: textureAddress
+    // R: texRepeatST (& 1 -> S direction, & 2 -> T direction)
+    // f: texFlip (& 1 -> S direction, & 2 -> T direction)
+    REG_GFX_FIFO_TEXTURE_PARAM =
+        (texFmt << REG_G3_TEXIMAGE_PARAM_TEXFMT_SHIFT) | textureAddress | (texGen << REG_G3_TEXIMAGE_PARAM_TGEN_SHIFT) |
+        (texSizeS << REG_G3_TEXIMAGE_PARAM_V_SIZE_SHIFT) | (texSizeT << REG_G3_TEXIMAGE_PARAM_T_SIZE_SHIFT) |
+        (color0 << REG_G3_TEXIMAGE_PARAM_TR_SHIFT) | (texFlip << REG_G3_TEXIMAGE_PARAM_FS_SHIFT) |
+        (texRepeatST << REG_G3_TEXIMAGE_PARAM_RS_SHIFT);
 }
 
-inline void G3_TexPlttBase(u32 addr, GXTexFmt fmt) {
-    REG_GFX_FIFO_TEXTURE_PALETTE = addr >> (4 - (fmt == 2));
+#define G3_TEXPLTTBASE_ADDR(addr) ((u32) (addr << 0x10) >> 0x0D) //! TODO: figure out the shifts
+#define G3_TEXPLTTBASE_FMT(fmt)                                                           \
+    (GXTexFmt)(((u32) fmt >> REG_G3_TEXIMAGE_PARAM_TEXFMT_SHIFT) &                        \
+               (REG_G3_TEXIMAGE_PARAM_TEXFMT_MASK >> REG_G3_TEXIMAGE_PARAM_TEXFMT_SHIFT))
+
+inline void G3_TexPlttBase(u32 paletteAddress, GXTexFmt fmt) {
+    REG_GFX_FIFO_TEXTURE_PALETTE = paletteAddress >> (4 - (fmt == GX_TEXFMT_PLTT4));
 }
 
-inline void G3_PolygonAttr(u32 lightMask, u32 polygonMode, u32 cull, u32 id, u32 alpha, u32 param6) {
+inline void G3_PolygonAttr(GXLightMask lightMask, GXPolygonMode polygonMode, GXCull cull, u32 id, u32 alpha, u32 misc) {
     // uuIIIIII_uuuAAAAA_uuuFuuuu_CCPPLLLL (based on gbatek)
     // I: id
     // A: alpha
-    // F: param6 (enables fog)
+    // F: misc (enables fog)
     // C: cull
     // P: polygonMode
     // L: lightMask
     // u: unknown
-    REG_GFX_FIFO_POLYGON_ATTR =
-        (id << 0x18) | (param6 << 0x0F) | (cull << 0x06) | (polygonMode << 0x04) | (alpha << 0x10) | lightMask;
+    REG_GFX_FIFO_POLYGON_ATTR = (id << REG_G3_POLYGON_ATTR_ID_SHIFT) | (misc << REG_G3_POLYGON_ATTR_FE_SHIFT) |
+                                (cull << REG_G3_POLYGON_ATTR_BK_SHIFT) | (polygonMode << REG_G3_POLYGON_ATTR_PM_SHIFT) |
+                                (alpha << REG_G3_POLYGON_ATTR_ALPHA_SHIFT) | lightMask;
 }
 
 inline void G3_PushMtx(void) {
@@ -65,10 +74,12 @@ inline void G3_Scale(fx32 x, fx32 y, fx32 z) {
 }
 
 inline void G3_ViewPort(u32 left, u32 top, u32 right, u32 bottom) {
-    // Unclear how to combine the arguments
+    //! TODO: confirm combination
     // left = 0, top = 0, right = 255, bottom = 191 => 0x8000
-    REG_GFX_FIFO_VIEWPORT = 0xbfff0000;
+    REG_GFX_FIFO_VIEWPORT = left | (top << REG_G3_VIEWPORT_INTEGER_Y1_SHIFT) | (right << REG_G3_VIEWPORT_INTEGER_X2_SHIFT) |
+                            (bottom << REG_G3_VIEWPORT_INTEGER_Y2_SHIFT);
 }
+
 void _G3_Ortho(fx32 top, fx32 bottom, fx32 left, fx32 right, fx32 near, fx32 far, fx32 param7, BOOL param8, void *param9);
 inline void G3_Ortho(fx32 top, fx32 bottom, fx32 left, fx32 right, fx32 near, fx32 far, void *param7) {
     _G3_Ortho(top, bottom, left, right, near, far, FX32_ONE, TRUE, param7);
@@ -80,18 +91,18 @@ void _G3_LookAt(VecFx32 *camera, VecFx32 *up, VecFx32 *lookAt, BOOL param4, void
 inline void G3_LookAt(VecFx32 *camera, VecFx32 *up, VecFx32 *lookAt, void *param4) {
     _G3_LookAt(camera, up, lookAt, true, param4);
 }
-inline void G3_MtxMode(u32 mode) {
+inline void G3_MtxMode(GXMtxMode mode) {
     REG_GFX_FIFO_MATRIX_MODE = mode;
 }
 inline void G3_Identity(void) {
     REG_GFX_FIFO_MATRIX_IDENTITY = 0;
 }
-inline void G3_PopMtx(u32 param1) {
-    REG_GFX_FIFO_MATRIX_POP = param1;
+inline void G3_PopMtx(s32 depth) {
+    REG_GFX_FIFO_MATRIX_POP = depth;
 }
 
-inline void G3_Begin(u32 shape) {
-    REG_GFX_FIFO_POLYGONS_BEGIN = shape;
+inline void G3_Begin(GXBegin gxBegin) {
+    REG_GFX_FIFO_POLYGONS_BEGIN = gxBegin;
 }
 inline void G3_Color(u16 color) {
     REG_GFX_FIFO_VERTEX_COLOR = color;
@@ -104,17 +115,18 @@ inline void G3_Direct1(u32 op, GXSt texCoord) {
     }
 }
 
-inline void G3_Vtx(u16 x, u16 y, u16 z) {
-    REG_GFX_FIFO_VERTEX_16 = x | (y << 0x10);
-    REG_GFX_FIFO_VERTEX_16 = z;
+inline void G3_Vtx(const fx16 x, const fx16 y, const fx16 z) {
+    REG_GFX_FIFO_VERTEX_16 = (u16) x | ((u16) y << 16);
+    REG_GFX_FIFO_VERTEX_16 = (u16) z;
 }
 
-inline void G3_Vtx10(const u32 x, const u32 y, const u32 z) {
-    REG_GFX_FIFO_VERTEX_10 = (x & 0x3FF) | ((y & 0x3FF) << 0x0A) | ((z & 0x3FF) << 0x14);
+inline void G3_Vtx10(const fx16 x, const fx16 y, const fx16 z) {
+    REG_GFX_FIFO_VERTEX_10 =
+        ((x >> 6) & 0x3FF) | (((y >> 6) & 0x3FF) << GX_VEC_FX10_Y_SHIFT) | (((z >> 6) & 0x3FF) << GX_VEC_FX10_Z_SHIFT);
 }
 
-inline void G3_VtxXZ(const u32 x, const u32 z) {
-    REG_GFX_FIFO_VERTEX_XZ = x | (z << 0x10);
+inline void G3_VtxXZ(const fx16 x, const fx16 z) {
+    REG_GFX_FIFO_VERTEX_XZ = (u16) x | ((u16) z << 16);
 }
 
 inline void G3_End(void) {
@@ -132,11 +144,11 @@ inline BOOL G3X_IsGeometryBusy(void) {
 }
 
 inline void G3X_AntiAlias(BOOL param1) {
-    REG_DISP3DCNT = REG_DISP3DCNT & ~0x3000 | (param1 << 4);
+    REG_DISP3DCNT = (REG_DISP3DCNT & ~0x3000) | (param1 << 4);
 }
 
 inline void G3X_AlphaBlend(BOOL param1) {
-    REG_DISP3DCNT = REG_DISP3DCNT & ~0x3000 | (param1 << 3);
+    REG_DISP3DCNT = (REG_DISP3DCNT & ~0x3000) | (param1 << 3);
 }
 
 inline void G3X_Unk1(u32 param1) {
@@ -146,6 +158,15 @@ inline void G3X_Unk1(u32 param1) {
 inline void G3X_Unk2(u32 param1) {
     REG_DISP3DCNT &= ~(0x3000 | (param1 << 5));
 }
+
+//! TODO: figure out
+void G3_TexCoord(s32 u, s32 v);
+void G3_MultMtx33(MtxFx33 *pMtx);
+void G3_LoadMtx43(MtxFx43 *pMtx);
+void G3_MultMtx43(MtxFx43 *pMtx);
+void G3_EffectIndex(u16 effectIndex);
+void G3_StartDraw();
+void G3_TargetMask();
 
 #ifdef __cplusplus
 } // extern "C"

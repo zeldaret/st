@@ -4,16 +4,12 @@
 
 #include <nitro/math.h>
 
-// some kind of angle conversion? only used for angle values so far
-#define MUL_FX32_FX64(a, b) (fx32)(((((a) * (b)) + 0x80000000000LL) >> 32))
-#define UNK_FX_OPERATION_1(a) (MUL_FX32_FX64((u64) (a), 0xB60B60B60BLL) >> FX32_SHIFT)
-#define MUL_FX32_U(a, b) (fx32)((((u64) (a)) * ((u64) (b)) + 0x800) >> FX32_SHIFT)
-#define UNK_FX_OPERATION_2(a) MUL_FX32_U((u64) (a), FX_F32_TO_FX32(1.2f))
 #define DEG_TO_ANG(n) ((n) * 0x10000 / 360)
 #define DEG_TO_ANG_ALT(n) DEG_TO_ANG((u64) (n))
 #define GET_DIRECTION(angle) ((u16) ((s16) angle + DEG_TO_ANG(45)) / DEG_TO_ANG(90))
-#define MUL_FXUNK(a, b) (fx32)((((s16) (a)) * ((s16) (b)) + 0x800) >> FX32_SHIFT)
-#define MUL_FXUNK2(a, b) (fx32)((((s32) (a)) * ((s32) (b)) + 0x800) >> FX32_SHIFT)
+
+//! TODO: is a normal multiplication combined with `ROUND_FX32`
+#define MUL_FXUNK(a, b) (fx32)((((s16) (a)) * ((s16) (b)) + FX32_HALF) >> FX32_SHIFT)
 
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 #define ABS2(x) ((x) >= 0 ? (x) : -(x))

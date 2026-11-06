@@ -74,7 +74,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7830(const EntranceInfo *param1) {
     wchar_t sp80[16];
     sp80[0]                   = L'\0';
     sp80[ARRAY_LEN(sp80) - 1] = L'\0';
-    snprintf((char *) sp80, sizeof(sp80), "Map/%s/course.bin", pEntry->name);
+    OS_SNPrintf((char *) sp80, sizeof(sp80), "Map/%s/course.bin", pEntry->name);
 
     UnkStruct2 sp70((char *) sp80, 0x01);
     sp70.func_020154ec("MCS");
@@ -123,7 +123,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7830(const EntranceInfo *param1) {
         sp30[0]                   = L'\0';
         sp30[ARRAY_LEN(sp30) - 1] = L'\0';
 
-        snprintf((char *) sp30, sizeof(sp30), "Map/%s/course.bin", data_027e09a0->GetCourseEntry(pEntry->unk_21)->name);
+        OS_SNPrintf((char *) sp30, sizeof(sp30), "Map/%s/course.bin", data_027e09a0->GetCourseEntry(pEntry->unk_21)->name);
 
         UnkStruct2 sp20((const char *) sp30, 0x01);
         sp20.func_020154ec("MCT");

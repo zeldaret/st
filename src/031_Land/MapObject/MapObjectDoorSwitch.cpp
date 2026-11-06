@@ -113,7 +113,7 @@ void MapObjectDoorSwitch::vfunc_14(unk32 param1) {
     u16 angle = this->mAngle.angle_s;
     MtxFx33 m;
 
-    MtxFx33_InitYRotation(&m, SIN(angle), COS(angle));
+    MTX_RotY33_(&m, SIN(angle), COS(angle));
 
     VecFx32 local_40(this->mPos);
     local_40.y -= this->mUnk_6C * 2;
@@ -218,7 +218,7 @@ void MapObjectDoorSwitch::vfunc_54(void) {
 
     if (!this->IsOrientedVertically()) {
         if (this->mUnk_80 > 0) {
-            func_01ff9218(&this->mUnkPos, -FX_F32_TO_FX32(1.35f), func_01ffb464(INT_TO_FX32(this->mUnk_80)));
+            func_01ff9218(&this->mUnkPos, -FX_F32_TO_FX32(1.35f), FX_Inv(INT_TO_FX32(this->mUnk_80)));
         }
 
         fx32 temp_118            = this->mUnkPos;
@@ -240,7 +240,7 @@ void MapObjectDoorSwitch::vfunc_54(void) {
 
     if (uVar1 == 3) {
         if (this->mUnk_80 > 0) {
-            func_01ff9218(&this->mUnkPos, -FX_F32_TO_FX32(0.35f), func_01ffb464(INT_TO_FX32(this->mUnk_80)));
+            func_01ff9218(&this->mUnkPos, -FX_F32_TO_FX32(0.35f), FX_Inv(INT_TO_FX32(this->mUnk_80)));
         }
 
         this->mUnk_118.mUnk_0C.x = this->mUnkPos;
@@ -252,7 +252,7 @@ void MapObjectDoorSwitch::vfunc_54(void) {
         this->mUnk_118.mUnk_18.z = FX_F32_TO_FX32(1.0f);
     } else {
         if (this->mUnk_80 > 0) {
-            func_01ff9218(&this->mUnkPos, FX_F32_TO_FX32(0.35f), func_01ffb464(INT_TO_FX32(this->mUnk_80)));
+            func_01ff9218(&this->mUnkPos, FX_F32_TO_FX32(0.35f), FX_Inv(INT_TO_FX32(this->mUnk_80)));
         }
 
         this->mUnk_118.mUnk_0C.x = -FX_F32_TO_FX32(0.35f);
@@ -265,7 +265,7 @@ void MapObjectDoorSwitch::vfunc_54(void) {
     }
 #else
     if (this->mUnk_80 > 0) {
-        func_01ff9218(&this->mUnkPos, -FX_F32_TO_FX32(1.35f), func_01ffb464(INT_TO_FX32(this->mUnk_80)));
+        func_01ff9218(&this->mUnkPos, -FX_F32_TO_FX32(1.35f), FX_Inv(INT_TO_FX32(this->mUnk_80)));
     }
 
     fx32 temp_118            = this->mUnkPos;

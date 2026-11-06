@@ -69,7 +69,7 @@ Actor *ActorProfileLobarrierShield::Create() {
 ActorProfileLobarrierShield::ActorProfileLobarrierShield() :
     ActorProfile_Derived1(ActorId_CASE) {
     VecFx32_Init(0, 0x666, 0, &mUnk_04.pos);
-    mUnk_04.size = 0x800;
+    mUnk_04.size = FX32_HALF;
 }
 
 UnkStruct_ov063_021631a0::UnkStruct_ov063_021631a0(G3d_Model *pModel) :
@@ -260,8 +260,8 @@ void ActorLobarrierShield::func_ov063_0215b1bc() {
     VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), &vec);
     func_01ffa7a0(&vec, &mUnk_1A4, &vec);
 
-    s16 angle = func_01ffbbe0(vec.x, vec.z);
-    MtxFx33_InitYRotation(&mUnk_1A4, SIN(angle), COS(angle));
+    s16 angle = FX_Atan2Idx(vec.x, vec.z);
+    MTX_RotY33_(&mUnk_1A4, SIN(angle), COS(angle));
 }
 
 void ActorLobarrierShield::func_ov063_0215b244() {
@@ -327,7 +327,7 @@ void ActorLobarrierShield::Update() {
         (void) ((f32) this->lobarrier->mUnk_25C.z);
         (void) ((f32) var_r0->z);
 
-        fx16 angle = func_01ffbbe0(this->lobarrier->mUnk_25C.x - var_r0->x, this->lobarrier->mUnk_25C.z - var_r0->z);
+        fx16 angle = FX_Atan2Idx(this->lobarrier->mUnk_25C.x - var_r0->x, this->lobarrier->mUnk_25C.z - var_r0->z);
         this->mUnk_150.mUnk_08.x = var_r4_2 + (s16) ((1 - SIN(angle)) >> 1);
         this->mUnk_150.mUnk_08.y = var_r6;
         this->mUnk_150.mUnk_08.z = var_r5 + (s16) ((1 - COS(angle)) >> 1);
@@ -350,7 +350,7 @@ void ActorLobarrierShield::Update() {
         (void) ((f32) this->mUnk_1CC.vec.z);
         (void) ((f32) var_r0->z);
 
-        fx16 angle               = func_01ffbbe0(this->mUnk_1CC.vec.x - var_r0->x, this->mUnk_1CC.vec.z - var_r0->z);
+        fx16 angle               = FX_Atan2Idx(this->mUnk_1CC.vec.x - var_r0->x, this->mUnk_1CC.vec.z - var_r0->z);
         this->mUnk_150.mUnk_08.x = var_r4_2 + (s16) ((1 - SIN(angle)) >> 1);
         this->mUnk_150.mUnk_08.y = var_r6;
         this->mUnk_150.mUnk_08.z = var_r5 + (s16) ((1 - COS(angle)) >> 1);
@@ -411,9 +411,9 @@ void ActorLobarrierShield::vfunc_2C(unk32 param1) {
 
         MtxFx33 mat2;
         MtxFx33 mat1;
-        MtxFx33_InitZRotation(&mat1, sin_val, cos_val);
+        MTX_RotZ33_(&mat1, sin_val, cos_val);
 
-        func_01ffa60c(&mat1, &mUnk_1A4, &mat2);
+        MTX_Concat33(&mat1, &mUnk_1A4, &mat2);
         mUnk_0B0.vfunc_14(&mat2, &mPos);
     }
 }
@@ -446,7 +446,7 @@ void ActorLobarrierShield::vfunc_10(Cylinder *param1) const {
         return;
     }
     VecFx32_Copy(&mPos, &param1->pos);
-    param1->size = 0x800;
+    param1->size = FX32_HALF;
 }
 
 void ActorLobarrierShield::func_ov063_0215b814(RefStruct ref) {

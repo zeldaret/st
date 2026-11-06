@@ -404,7 +404,7 @@ public:
     void func_ov031_020ed4e4(unk32 param1, unk32 param2);
     bool func_ov031_020ed55c(unk32 param1);
     bool func_ov031_020ed6cc(unk32 param1);
-    bool func_ov031_020ed8ac(unk32 param1);
+    bool func_ov031_020ed8ac(fx32 param1);
     void func_ov031_020edc80();
     void func_ov031_020edd14(VecFx32 *param1);
     void func_ov031_020edd54(RefStruct ref);

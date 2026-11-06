@@ -53,7 +53,7 @@ size_t UnkFileSystem5::vfunc_10(unk32 param1) {
     size_t prevFileSize = this->mFileSize;
 
     if (this->mpFile2 != NULL && param1 < this->mFileSize) {
-        if (data_0204999c.mUnk_00[this->mHeapIndex]->mId == UnkId_EXPH) {
+        if (data_0204999c.mUnk_00[this->mHeapIndex]->stamp == NNSFndHeapStamp_EXPH) {
             this->mFileSize = func_020010e0(data_0204999c.mUnk_00[this->mHeapIndex], this->mpFile, param1);
         }
     }

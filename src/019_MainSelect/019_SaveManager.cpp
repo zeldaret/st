@@ -28,7 +28,7 @@ void SaveManager::func_ov019_020d086c(u16 param1) {
     gSaveManager.mResultCode = CARD_GetResultCode();
     CARD_UnlockBackup(gSaveManager.mCardId);
 
-    if (gSaveManager.mResultCode != CARD_RESULT_SUCCESS) {
+    if (gSaveManager.mResultCode != CARD_RESULT_FAILURE) {
         gSaveManager.mUnk_214 = gSaveManager.mUnk_210;
     }
 
@@ -80,7 +80,7 @@ void SaveManager::func_ov019_020d0a2c(u16 saveSlotIndex) {
     gSaveManager.mpSaveFile->func_ov019_020d1634();
     gSaveManager.mResultCode = CARD_GetResultCode();
 
-    if (gSaveManager.mResultCode != CARD_RESULT_SUCCESS) {
+    if (gSaveManager.mResultCode != CARD_RESULT_FAILURE) {
         gSaveManager.mUnk_214 = gSaveManager.mUnk_210;
         return;
     }
@@ -89,7 +89,7 @@ void SaveManager::func_ov019_020d0a2c(u16 saveSlotIndex) {
     gSaveManager.mpSaveFile->func_ov019_020d16d0();
     gSaveManager.mResultCode = CARD_GetResultCode();
 
-    if (gSaveManager.mResultCode != CARD_RESULT_SUCCESS) {
+    if (gSaveManager.mResultCode != CARD_RESULT_FAILURE) {
         gSaveManager.mUnk_214 = gSaveManager.mUnk_210;
     }
 
@@ -240,7 +240,7 @@ void SaveFile::func_ov019_020d13b8() {
 }
 
 void SaveSlot::func_ov019_020d1400(SaveFile_00000_2600_Data *param1) {
-    param1->unk_7E = func_020328c8(&gSaveManager.mUnk_004, param1, sizeof(SaveFile_00000_2600_Data) - sizeof(u16));
+    param1->unk_7E = MATH_CalcCRC16(&gSaveManager.mUnk_004, param1, sizeof(SaveFile_00000_2600_Data) - sizeof(u16));
     MI_CpuCopyFast(param1, (u8 *) param1 + sizeof(SaveFile_00000_2600_Data), sizeof(SaveFile_00000_2600_Data));
 }
 
@@ -263,12 +263,12 @@ void SaveFile::func_ov019_020d1434() {
 }
 
 void SaveSlot::func_ov019_020d14c0(SaveFile_00000_1D00_Data *param1) {
-    param1->unk_3FE = func_020328c8(&gSaveManager.mUnk_004, param1, offsetof(SaveFile_00000_1D00_Data, unk_3FE));
+    param1->unk_3FE = MATH_CalcCRC16(&gSaveManager.mUnk_004, param1, offsetof(SaveFile_00000_1D00_Data, unk_3FE));
     MI_CpuCopyFast(param1, (u8 *) param1 + sizeof(SaveFile_00000_1D00_Data), sizeof(SaveFile_00000_1D00_Data));
 }
 
 void SaveSlot::func_ov019_020d14fc(SaveInfoData *param1) {
-    param1->unk_DFE = func_020328c8(&gSaveManager.mUnk_004, param1, offsetof(SaveInfoData, unk_DFE));
+    param1->unk_DFE = MATH_CalcCRC16(&gSaveManager.mUnk_004, param1, offsetof(SaveInfoData, unk_DFE));
     MI_CpuCopyFast(param1, (u8 *) param1 + sizeof(SaveInfoData), sizeof(SaveInfoData));
 }
 
@@ -291,13 +291,13 @@ void SaveFile::func_ov019_020d1538() {
 }
 
 void SaveSlot::func_ov019_020d15cc(SaveFile_00000_2500_Data *param1) {
-    param1->unk_7E = func_020328c8(&gSaveManager.mUnk_004, param1, offsetof(SaveFile_00000_2500_Data, unk_7E));
+    param1->unk_7E = MATH_CalcCRC16(&gSaveManager.mUnk_004, param1, offsetof(SaveFile_00000_2500_Data, unk_7E));
     MI_CpuCopyFast(param1, (u8 *) param1 + sizeof(SaveFile_00000_2500_Data), sizeof(SaveFile_00000_2500_Data));
 }
 
 void SaveSlot::func_ov019_020d1600(SaveTreasureData *param1) {
-    param1->unk_5C.unk_22 = func_020328c8(&gSaveManager.mUnk_004, param1,
-                                          offsetof(SaveTreasureData, unk_5C) + offsetof(TreasureManager_5C, unk_22));
+    param1->unk_5C.unk_22 = MATH_CalcCRC16(&gSaveManager.mUnk_004, param1,
+                                           offsetof(SaveTreasureData, unk_5C) + offsetof(TreasureManager_5C, unk_22));
     MI_CpuCopyFast(param1, (u8 *) param1 + sizeof(SaveTreasureData), sizeof(SaveTreasureData));
 }
 
@@ -363,24 +363,24 @@ void SaveFile::func_ov019_020d1808(unk32 param1) {
 
     for (int i = 0; i < COUNT_DATA; i++) {
         stack1[SaveDataIndex_SaveInfo].mUnk_00 =
-            func_020328c8(&gSaveManager.mUnk_004, &pSub2->mInfoData[i], sizeof(SaveInfoData) - sizeof(u16));
+            MATH_CalcCRC16(&gSaveManager.mUnk_004, &pSub2->mInfoData[i], sizeof(SaveInfoData) - sizeof(u16));
         stack1[SaveDataIndex_SaveInfo].mUnk_04 = pSub2->mInfoData[i].unk_DFE == stack1[SaveDataIndex_SaveInfo].mUnk_00;
 
         stack1[SaveDataIndex_Treasures].mUnk_00 =
-            func_020328c8(&gSaveManager.mUnk_004, &pSub2->mTreasureData[i], sizeof(SaveTreasureData) - sizeof(u16));
+            MATH_CalcCRC16(&gSaveManager.mUnk_004, &pSub2->mTreasureData[i], sizeof(SaveTreasureData) - sizeof(u16));
         stack1[SaveDataIndex_Treasures].mUnk_04 =
             pSub2->mTreasureData[i].unk_5C.unk_22 == stack1[SaveDataIndex_Treasures].mUnk_00 ? true : false;
 
         stack1[SaveDataIndex_02].mUnk_00 =
-            func_020328c8(&gSaveManager.mUnk_004, &pSub2->mUnk_1D00[i], sizeof(SaveFile_00000_1D00_Data) - sizeof(u16));
+            MATH_CalcCRC16(&gSaveManager.mUnk_004, &pSub2->mUnk_1D00[i], sizeof(SaveFile_00000_1D00_Data) - sizeof(u16));
         stack1[SaveDataIndex_02].mUnk_04 = pSub2->mUnk_1D00[i].unk_3FE == stack1[SaveDataIndex_02].mUnk_00 ? true : false;
 
         stack1[SaveDataIndex_03].mUnk_00 =
-            func_020328c8(&gSaveManager.mUnk_004, &pSub2->mUnk_2500[i], sizeof(SaveFile_00000_2500_Data) - sizeof(u16));
+            MATH_CalcCRC16(&gSaveManager.mUnk_004, &pSub2->mUnk_2500[i], sizeof(SaveFile_00000_2500_Data) - sizeof(u16));
         stack1[SaveDataIndex_03].mUnk_04 = pSub2->mUnk_2500[i].unk_7E == stack1[SaveDataIndex_03].mUnk_00 ? true : false;
 
         stack1[SaveDataIndex_04].mUnk_00 =
-            func_020328c8(&gSaveManager.mUnk_004, &pSub2->mUnk_2600[i], sizeof(SaveFile_00000_2600_Data) - sizeof(u16));
+            MATH_CalcCRC16(&gSaveManager.mUnk_004, &pSub2->mUnk_2600[i], sizeof(SaveFile_00000_2600_Data) - sizeof(u16));
         stack1[SaveDataIndex_04].mUnk_04 = pSub2->mUnk_2600[i].unk_7E == stack1[SaveDataIndex_04].mUnk_00 ? true : false;
     }
 

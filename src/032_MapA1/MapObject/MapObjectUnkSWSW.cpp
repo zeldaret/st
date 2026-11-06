@@ -1,5 +1,6 @@
 #include "MapObject/MapObjectUnkSWSW.hpp"
 #include "CommonFuncs.hpp"
+#include "nitro/fx/consts.h"
 #include "profile.hpp"
 
 #include "Actor/Actor.hpp"
@@ -52,7 +53,7 @@ MapObjectUnkSWSW_40::MapObjectUnkSWSW_40(G3d_Model *pModel) :
 void MapObjectUnkSWSW_40::vfunc_1C(G3d_RenderState *param1) {
     if (param1->currentCmd[1] == this->mUnk_60) {
         param1->mUnk_B4->mUnk_00 &= ~0x2;
-        MtxFx33_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN(this->mUnk_68), COS(this->mUnk_68));
+        MTX_RotX33_(&param1->mUnk_B4->mUnk_28, SIN(this->mUnk_68), COS(this->mUnk_68));
     }
 
     if (param1->currentCmd[1] != this->mUnk_64) {
@@ -60,7 +61,7 @@ void MapObjectUnkSWSW_40::vfunc_1C(G3d_RenderState *param1) {
     }
 
     param1->mUnk_B4->mUnk_00 &= ~0x2;
-    MtxFx33_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN(this->mUnk_6A), COS(this->mUnk_6A));
+    MTX_RotX33_(&param1->mUnk_B4->mUnk_28, SIN(this->mUnk_6A), COS(this->mUnk_6A));
 }
 
 struct UnkStruct_ov032_021210a0 {
@@ -116,7 +117,7 @@ bool MapObjectUnkSWSW::Init() {
     }
 
     if (this->mUnk_20.mParams[2] != 0x0) {
-        this->mPos.y += FX_Mul(this->mUnk_20.mParams[2] << 0xC, 0x1333);
+        this->mPos.y += FX_MUL(this->mUnk_20.mParams[2] << 0xC, 0x1333);
     }
 
     this->mUnk_0AC.mpModel           = this->mUnk_040.mpModel;
@@ -211,7 +212,7 @@ void MapObjectUnkSWSW::vfunc_08() {
 
             bool var_r5 = false;
             if (VecFx32_Dot(&sp48, &sp3C) > FX_F32_TO_FX32(0.4f)) {
-                s16 param = (s16) func_01ffbbe0(sp48.x, sp48.z);
+                s16 param = (s16) FX_Atan2Idx(sp48.x, sp48.z);
                 func_01ff91b8(&this->mUnk_10C, param, 0x333);
 
                 var_r5 = true;
@@ -244,9 +245,9 @@ void MapObjectUnkSWSW::vfunc_08() {
 
                 if (!var_r5) {
                     this->mUnk_10E.Init();
-                    func_01ff9218(&this->mUnk_108, 0x0, 0x800);
+                    func_01ff9218(&this->mUnk_108, 0, FX32_HALF);
                 } else {
-                    func_01ff9218(&this->mUnk_108, 0x1000, 0x800);
+                    func_01ff9218(&this->mUnk_108, FX32_ONE, FX32_HALF);
                 }
             }
             break;

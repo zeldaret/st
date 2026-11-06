@@ -125,7 +125,7 @@ bool MapObject::vfunc_2C(VecFx32 *param1) {
 void MapObject::func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2) {
     VecFx32 local_18;
     func_01ffb714(data_027e0ce0->func_01fff148(param2), &thisx->mPos, &local_18);
-    *param1 = func_01ffbbe0(local_18.x, local_18.z);
+    *param1 = FX_Atan2Idx(local_18.x, local_18.z);
 }
 
 fx32 MapObject::func_ov000_0209d274(unk32 param1) {

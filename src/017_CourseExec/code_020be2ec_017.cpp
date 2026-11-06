@@ -137,22 +137,22 @@ void UnkStruct_027e0ce0_40_Base_14::func_ov017_020be44c(unk32 param1, bool param
         var_r7 = 0x1000;
 
         if (this->mTouchControl.mState.touchPos.x < sp10.x && sp10.x < 0x50) {
-            var_r5 = func_01ffb428(0x50, sp10.x);
+            var_r5 = FX_Div(0x50, sp10.x);
         } else if (sp10.x < this->mTouchControl.mState.touchPos.x && sp10.x >= 0xB0) {
-            var_r5 = func_01ffb428(0x50, 0xFF - sp10.x);
+            var_r5 = FX_Div(0x50, 0xFF - sp10.x);
         }
 
         if (this->mTouchControl.mState.touchPos.y < sp10.y && sp10.y < 0x50) {
-            var_r7 = func_01ffb428(0x50, sp10.y);
+            var_r7 = FX_Div(0x50, sp10.y);
         } else if (sp10.y < this->mTouchControl.mState.touchPos.y && sp10.y >= 0x70) {
-            var_r7 = func_01ffb428(0x50, 0xBF - sp10.y);
+            var_r7 = FX_Div(0x50, 0xBF - sp10.y);
         }
 
         VecFx32_Init(var_r5 * (this->mTouchControl.mState.touchPos.x - sp10.x), 0,
                      var_r7 * (this->mTouchControl.mState.touchPos.y - sp10.y), &sp1C);
 
         this->mUnk_3C = VecFx32_Length(&sp1C);
-        temp_r5       = func_01ffbbe0(sp1C.x, sp1C.z);
+        temp_r5       = FX_Atan2Idx(sp1C.x, sp1C.z);
         this->mUnk_44 = temp_r8_2->func_ov000_02078698() + temp_r5;
     } else {
         this->mUnk_30.x = 0;
@@ -194,8 +194,8 @@ void UnkStruct_027e0ce0_40_Base_14::func_ov017_020be44c(unk32 param1, bool param
         this->mUnk_58 = 0;
     } else {
         if (this->mUnk_50 != 0 && this->mUnk_54 != 0) {
-            sp8           = func_01ffbbe0(diffX, diffY);
-            spA           = func_01ffbbe0(this->mUnk_50, this->mUnk_54);
+            sp8           = FX_Atan2Idx(diffX, diffY);
+            spA           = FX_Atan2Idx(this->mUnk_50, this->mUnk_54);
             this->mUnk_58 = func_01ff9364(&sp8, spA);
         }
 

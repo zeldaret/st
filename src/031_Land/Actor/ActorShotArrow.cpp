@@ -23,6 +23,7 @@
 #include "math.hpp"
 #include "nitro/fx.h"
 #include "nitro/gx.h"
+#include "nitro/gx/enums.h"
 #include "nitro/math.h"
 #include <cstddef>
 
@@ -120,8 +121,8 @@ bool ActorShotArrow::Init(unk32 param1) {
     fx32 cos_value = COS(this->mAngle.angle_s);
 
     this->mUnk_2C  = 0;
-    this->mVel.x   = FX_Mul(sin_value, 1024);
-    this->mVel.z   = FX_Mul(cos_value, 1024);
+    this->mVel.x   = FX_MUL(sin_value, 1024);
+    this->mVel.z   = FX_MUL(cos_value, 1024);
     this->mVel.y   = 0;
     this->mUnk_16C = VecFx32_Length(&this->mVel);
 
@@ -244,8 +245,8 @@ void ActorShotArrow::func_ov031_020f1a64() {
     fx16 sin_value            = SIN(this->mAngle.angle_u);
     fx16 cos_value            = COS(this->mAngle.angle_u);
 
-    this->mVel.x = FX_Mul(sin_value, value_func_020f2270);
-    this->mVel.z = FX_Mul(cos_value, value_func_020f2270);
+    this->mVel.x = FX_MUL(sin_value, value_func_020f2270);
+    this->mVel.z = FX_MUL(cos_value, value_func_020f2270);
     this->mVel.y = FX_F32_TO_FX32(0.0f);
 }
 
@@ -484,7 +485,7 @@ void ActorShotArrow::func_ov031_020f2280() {
 }
 
 void ActorShotArrow::func_ov031_020f229c() {
-    this->mUnk_168 = FX_Mul(this->mUnk_168 + this->mUnk_16C, FX_F32_TO_FX32(0.8f));
+    this->mUnk_168 = FX_MUL(this->mUnk_168 + this->mUnk_16C, FX_F32_TO_FX32(0.8f));
 }
 
 void ActorShotArrow::func_ov031_020f22d4(MtxFx33 *param1, VecFx32 *param2) {
@@ -532,7 +533,7 @@ void ActorShotArrow::vfunc_2C(unk32 param1) {
         func_01ffad5c(this->mUnk_224, &data_027e0964, &spB4);
         func_01ffad5c(&sp84, &this->mUnk_228, &sp84);
         func_01ffad5c(&sp84, &spB4, &spB4);
-        CopySingle288(&spB4, &sp60);
+        MI_Copy36B(&spB4, &sp60);
 
         VecFx32_Copy(&this->mPos, &this->mPrevPos);
 
@@ -552,19 +553,19 @@ void ActorShotArrow::vfunc_2C(unk32 param1) {
         sp54.y = this->mPos.y;
         sp54.z = this->mPos.z;
 
-        MtxFx33_InitYRotation(&sp30, SIN(this->mAngle.angle_u), COS(this->mAngle.angle_u));
+        MTX_RotY33_(&sp30, SIN(this->mAngle.angle_u), COS(this->mAngle.angle_u));
 
         s16 angle = this->mUnk_174 + this->mUnk_176;
         fx16 sin  = SIN(angle);
         fx16 cos  = COS(angle);
 
-        MtxFx33_InitXRotation(&spC, sin, cos);
-        func_01ffa60c(&spC, &sp30, &sp30);
+        MTX_RotX33_(&spC, sin, cos);
+        MTX_Concat33(&spC, &sp30, &sp30);
 
         if (this->mState == 4) {
-            sp54.y -= FX_Mul(sin, 0x333);
+            sp54.y -= FX_MUL(sin, 0x333);
         } else {
-            sp54.y += FX_Mul(sin, 0x333);
+            sp54.y += FX_MUL(sin, 0x333);
         }
 
         this->mUnk_94.vfunc_14(&sp30, &sp54);
@@ -584,15 +585,15 @@ void ActorShotArrow::vfunc_2C(unk32 param1) {
 void ActorShotArrow::func_ov031_020f2654(MtxFx33 *param1) {
     VecFx32 sp0;
 
-    fx32 scaleZ = FX_Mul(this->mUnk_168, FX_F32_TO_FX32(1.0f));
+    fx32 scaleZ = FX_MUL(this->mUnk_168, FX_F32_TO_FX32(1.0f));
 
     FlushGfxQueue();
-    G3_MtxMode(2);
+    G3_MtxMode(GX_MTXMODE_POSITION_VECTOR);
     G3_PushMtx();
 
     sp0 = this->mPos;
-    sp0.x -= MUL_FXUNK2(SIN(this->mAngle.angle_s), FX_F32_TO_FX32(0.5f));
-    sp0.z -= MUL_FXUNK2(COS(this->mAngle.angle_s), FX_F32_TO_FX32(0.5f));
+    sp0.x -= ROUND_FX32(SIN(this->mAngle.angle_s) * FX_F32_TO_FX32(0.5f));
+    sp0.z -= ROUND_FX32(COS(this->mAngle.angle_s) * FX_F32_TO_FX32(0.5f));
 
     G3_Translate(sp0.x, sp0.y, sp0.z);
     func_02024a84(param1);
@@ -600,20 +601,20 @@ void ActorShotArrow::func_ov031_020f2654(MtxFx33 *param1) {
     G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
                      GX_TEXPLTTCOLOR0_USE, 0);
     G3_TexPlttBase(0, GX_TEXFMT_NONE);
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_UNK_00, 3, 1, 7, FALSE);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, GX_CULL_NONE, 1, 7, FALSE);
 
     REG_GFX_FIFO_DIFFUSE_AMBIENT_REFLECT   = 0x4210FFFF;
     REG_GFX_FIFO_SPECULAR_REF_AND_EMISSION = 0;
 
     {
-        G3_Begin(GX_BEGIN_TRIS);
+        G3_Begin(GX_BEGIN_TRIANGLES);
         G3_Vtx(0, 0, 0xF000);
         G3_Vtx(0xFEC0, 0, 0);
         G3_Vtx(0x140, 0, 0);
         G3_End();
     }
 
-    G3_MtxMode(2);
+    G3_MtxMode(GX_MTXMODE_POSITION_VECTOR);
     G3_PopMtx(1);
 }
 
@@ -755,8 +756,8 @@ void ActorShotArrow::func_ov031_020f2c08(unk16 param1) {
     fx16 sin = SIN(this->mAngle.angle_u);
     fx16 cos = COS(this->mAngle.angle_u);
 
-    this->mVel.x = FX_Mul(sin, param1);
-    this->mVel.z = FX_Mul(cos, param1);
+    this->mVel.x = FX_MUL(sin, param1);
+    this->mVel.z = FX_MUL(cos, param1);
     this->mVel.y = FX_F32_TO_FX32(0.0f);
 
     sp0 = this->mVel;
@@ -799,21 +800,21 @@ void ActorShotArrow::func_ov031_020f2cac(const VecFx32 *param1, bool param2) {
 
     if (param2) {
         sp10 = this->mPos;
-        this->mPos.x -= MUL_FXUNK2(SIN(this->mAngle.angle_u), FX_F32_TO_FX32(0.3f));
-        this->mPos.z -= MUL_FXUNK2(COS(this->mAngle.angle_u), FX_F32_TO_FX32(0.3f));
+        this->mPos.x -= ROUND_FX32(SIN(this->mAngle.angle_u) * FX_F32_TO_FX32(0.3f));
+        this->mPos.z -= ROUND_FX32(COS(this->mAngle.angle_u) * FX_F32_TO_FX32(0.3f));
         data_027e09a8->func_ov000_02071eac(&this->mPos);
         data_027e09a8->func_ov000_02071b30(0x8D7B, &sp10, 0x0);
 
         s16 diff = temp_r8 - 0x8000;
-        sp8.x    = MUL_FXUNK2(SIN(diff), FX_F32_TO_FX32(1.0f));
+        sp8.x    = ROUND_FX32(SIN(diff) * FX_F32_TO_FX32(1.0f));
         sp8.y    = FX_F32_TO_FX32(0.0f);
-        sp8.z    = MUL_FXUNK2(COS(diff), FX_F32_TO_FX32(1.0f));
+        sp8.z    = ROUND_FX32(COS(diff) * FX_F32_TO_FX32(1.0f));
 
         data_027e0cec->func_ov000_0209feac(0x804, &sp10, 0x2, 0x0, 0x0);
         data_027e0cec->func_ov000_0209ff24(0x805, &sp10, &sp8, 2);
     }
 
-    this->mAngle = func_01ffbbe0(this->mVel.x, this->mVel.z);
+    this->mAngle = FX_Atan2Idx(this->mVel.x, this->mVel.z);
 }
 
 void ActorShotArrow::func_ov031_020f2ef0() {
@@ -852,14 +853,14 @@ void ActorShotArrow::func_ov031_020f3000() {
     vec.y = FX_F32_TO_FX32(0.0f);
     vec.z = FX_F32_TO_FX32(0.4f);
 
-    MtxFx33_InitYRotation(&m1, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
-    MtxFx33_InitXRotation(&m2, SIN((s16) (this->mUnk_174 + this->mUnk_176)), COS((s16) (this->mUnk_174 + this->mUnk_176)));
+    MTX_RotY33_(&m1, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
+    MTX_RotX33_(&m2, SIN((s16) (this->mUnk_174 + this->mUnk_176)), COS((s16) (this->mUnk_174 + this->mUnk_176)));
 
-    func_01ffa60c(&m2, &m1, &m1);
+    MTX_Concat33(&m2, &m1, &m1);
 
     func_01ffa7a0(&vec, &m1, &vec);
 
-    vec.y = FX_Mul(vec.y, 0x800);
+    vec.y = FX_MUL(vec.y, FX32_HALF);
 
     VecFx32_Add(&vec, &this->mPos, &vec);
     VecFx32_Copy(&vec, &this->mUnk_1DC.mUnk_00);
@@ -1176,13 +1177,13 @@ void ActorShotArrow_194::func_ov031_020f374c(Actor *actor) {
 
     if (temp > spC.size && spC.size > FX_F32_TO_FX32(0.15f)) {
         fx32 temp_r5 = (temp - spC.size) + FX_F32_TO_FX32(0.15f);
-        u16 value    = (u32) (s16) (s32) func_01ffbbe0(sp0.x, sp0.z);
+        u16 value    = (u32) (s16) (s32) FX_Atan2Idx(sp0.x, sp0.z);
 
         fx16 sin = SIN(value);
         fx16 cos = COS(value);
 
-        sp28.x += FX_Mul(sin, temp_r5);
-        sp28.z += FX_Mul(cos, temp_r5);
+        sp28.x += FX_MUL(sin, temp_r5);
+        sp28.z += FX_MUL(cos, temp_r5);
     }
 
     this->mUnk_2C->func_ov031_020f2f5c(&sp28);
@@ -1213,7 +1214,7 @@ void ActorShotArrow_194::vfunc_10(const Actor *actor) {
         return;
     }
 
-    s16 result = func_01ffbbe0(this->mUnk_2C->mVel.x, this->mUnk_2C->mVel.z);
+    s16 result = FX_Atan2Idx(this->mUnk_2C->mVel.x, this->mUnk_2C->mVel.z);
 
     switch (((Actor *) actor)->GetActorId()) {
         case ActorId_WIDR:

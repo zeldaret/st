@@ -56,8 +56,8 @@ bool ActorItemBoomerang::Init(unk32 param1) {
     unk16 sin = SIN(this->mAngle.angle_s);
     unk16 cos = COS(this->mAngle.angle_s);
 
-    this->mVel.x = FX_Mul(sin, FX_F32_TO_FX32(0.5f));
-    this->mVel.z = FX_Mul(cos, FX_F32_TO_FX32(0.5f));
+    this->mVel.x = FX_MUL(sin, FX_F32_TO_FX32(0.5f));
+    this->mVel.z = FX_MUL(cos, FX_F32_TO_FX32(0.5f));
     this->mVel.y = FX_F32_TO_FX32(0.0f);
 
     return true;
@@ -159,7 +159,7 @@ void ActorItemBoomerang::Update() {
 
                 sp18.unk_00 = VecFx32_Length(&this->mVel);
 
-                func_01ff916c(&sp18.unk_00, 0x0, FX_Mul(sp18.unk_00, 0x400));
+                func_01ff916c(&sp18.unk_00, 0x0, FX_MUL(sp18.unk_00, 0x400));
                 func_01ffb714(&sp6C, &this->mPos, &this->mVel);
                 func_01ff97c8(&this->mVel, sp18.unk_00 + 0x200);
             }
@@ -230,9 +230,9 @@ void ActorItemBoomerang::Update() {
             }
 
             sp3C = *data_027e0ce0->func_01fff148(0x0);
-            sp3C.y += 0x800;
+            sp3C.y += FX32_HALF;
 
-            if (func_01ffb9cc(&sp3C, &this->mPos) <= 0x800) {
+            if (func_01ffb9cc(&sp3C, &this->mPos) <= FX32_HALF) {
                 if (this->mUnk_128 == 0x2) {
                     func_01ffedac(&spC, &sp3C);
 

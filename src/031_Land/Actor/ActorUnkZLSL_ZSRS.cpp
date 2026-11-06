@@ -526,7 +526,7 @@ void ActorUnkZLSL::func_ov031_020ead7c() {
     }
 
     VecFx32_Copy(&sp24, &this->mPos);
-    this->mPos.y += 0x800;
+    this->mPos.y += FX32_HALF;
     spC              = this->mPos;
     this->mPos.x     = spC.x;
     this->mPos.y     = spC.y;
@@ -569,7 +569,7 @@ void ActorUnkZLSL::func_ov031_020ead7c() {
 }
 
 void ActorUnkZLSL::func_ov031_020eafb0() {
-    if (this->func_ov031_020ed8ac(0x800)) {
+    if (this->func_ov031_020ed8ac(FX32_HALF)) {
         this->SetState(ActorUnkZLSLState_RotateClosedArms);
     }
 }
@@ -667,7 +667,7 @@ bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
                 this->mUnk_2900 &= ~0x01;
             }
 
-            if (this->mUnk_28A4.vec.z <= 0x800 && temp_r8 > 0x800) {
+            if (this->mUnk_28A4.vec.z <= FX32_HALF && temp_r8 > FX32_HALF) {
                 this->mUnk_2888       = 0x4CD;
                 this->mUnk_2884       = func_01ff9258(this->mPos.x - sp1C.x, this->mPos.z - sp1C.z);
                 this->mUnk_28B0.vec.x = this->mPos.x;
@@ -675,7 +675,7 @@ bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
                 this->mUnk_28B0.vec.z = this->mPos.z;
             }
 
-            if (this->mUnk_28A4.vec.z <= 0x800) {
+            if (this->mUnk_28A4.vec.z <= FX32_HALF) {
                 var_r7 = true;
             }
         }
@@ -711,7 +711,7 @@ bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
 
         func_01ff9638(&sp4, 0x4000);
         VecFx32_TryNormalize(&sp4);
-        func_01ff93c0(&sp4, FX_Mul(this->mUnk_2888, SIN(this->mUnk_286A)));
+        func_01ff93c0(&sp4, FX_MUL(this->mUnk_2888, SIN(this->mUnk_286A)));
         VecFx32_Add(&sp4, &sp10, &sp4);
         this->mUnk_286A += 0x1000;
         this->mPos.x = sp4.x;
@@ -827,7 +827,7 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
                 data_027e0cec->func_ov000_020a0110(&this->mUnk_2828.mUnk_00);
             }
             VecFx32_Copy(&this->mPos, &vec);
-            vec.y += 0x800;
+            vec.y += FX32_HALF;
             VecFx32_Copy(&vec, &this->mUnk_28F4.vec);
 
             this->func_ov031_020ed4e4(0x5, 0x93F);
@@ -896,7 +896,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
         case 0x2:
             this->func_ov031_020edd14(&vec);
             vec.y = this->mPos.y;
-            if (this->func_ov031_020ed8ac(0x800)) {
+            if (this->func_ov031_020ed8ac(FX32_HALF)) {
                 this->mTimer.Set(0, 15);
                 this->mUnk_286E++;
             }
@@ -1057,7 +1057,7 @@ void ActorUnkZLSL::func_ov031_020ec170() {
     this->mUnk_0B0 |= 0x10;
 
     if (this->mUnk_286E == 0x0) {
-        if (this->func_ov031_020ed8ac(0x800)) {
+        if (this->func_ov031_020ed8ac(FX32_HALF)) {
             this->vfunc_98(0x11);
             this->mUnk_286E++;
         }
@@ -1077,11 +1077,11 @@ void ActorUnkZLSL::vfunc_2C(unk32 param1) {
 
     switch (this->mUnk_2874 ? 1 : 0) {
         case false:
-            MtxFx33_InitYRotation(&sp00, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
+            MTX_RotY33_(&sp00, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
             this->mUnk_1620.vfunc_10(&this->mUnk_28A4.vec, &sp00, &this->mPos);
             break;
         case true:
-            MtxFx33_InitYRotation(&sp00, SIN(1), COS(0));
+            MTX_RotY33_(&sp00, SIN(1), COS(0));
             this->mUnk_276C.vfunc_10(&this->mUnk_28A4.vec, &sp00, &this->mPos);
             break;
         default:
@@ -1480,11 +1480,11 @@ void ActorUnkZLSL::func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk3
         func_01ffb714(&sp58, &sp4C, &sp1C);
     }
 
-    s16 angle = func_01ffbbe0(sp1C.x, sp1C.z);
+    s16 angle = FX_Atan2Idx(sp1C.x, sp1C.z);
     sp2       = param1.angle_s + angle;
     func_020169d4(&sp34, &sp40, &sp2, (char *) &param2);
 
-    angle = func_01ffbbe0(sp1C.x, sp1C.z);
+    angle = FX_Atan2Idx(sp1C.x, sp1C.z);
     sp0   = angle - param1.angle_s;
     func_020169d4(&sp28, &sp40, &sp0, (char *) &param2);
 
@@ -1520,24 +1520,24 @@ void ActorUnkZLSL::func_ov031_020ed0b0() {
     sp24.y += FX_F32_TO_FX32(0.5f);
 
     VecFx32_Copy(&sp24, &sp18);
-    sp18.x += FX_Mul(SIN(0x6AAA), 0x1800);
-    sp18.z += FX_Mul(COS(0x6AAA), 0x1800);
+    sp18.x += FX_MUL(SIN(0x6AAA), 0x1800);
+    sp18.z += FX_MUL(COS(0x6AAA), 0x1800);
 
     if (func_02016c68(&sp24, &sp18, this->mRef, 4, 0)) {
         VecFx32_Copy(&sp24, &sp18);
-        sp18.x += FX_Mul(SIN(0x2AAA), 0x1800);
-        sp18.z += FX_Mul(COS(0x2AAA), 0x1800);
+        sp18.x += FX_MUL(SIN(0x2AAA), 0x1800);
+        sp18.z += FX_MUL(COS(0x2AAA), 0x1800);
 
         if (func_02016c68(&sp24, &sp18, this->mRef, 4, 0)) {
             VecFx32_Copy(&sp24, &sp18);
-            sp18.x += FX_Mul(SIN(0xAAAA), 0x1800);
-            sp18.z += FX_Mul(COS(0xAAAA), 0x1800);
+            sp18.x += FX_MUL(SIN(0xAAAA), 0x1800);
+            sp18.z += FX_MUL(COS(0xAAAA), 0x1800);
 
             if (func_02016c68(&sp24, &sp18, this->mRef, 4, 0)) {
 
                 VecFx32_Copy(&sp24, &sp18);
-                sp18.x += FX_Mul(SIN(0xEAAA), 0x1800);
-                sp18.z += FX_Mul(COS(0xEAAA), 0x1800);
+                sp18.x += FX_MUL(SIN(0xEAAA), 0x1800);
+                sp18.z += FX_MUL(COS(0xEAAA), 0x1800);
             }
         }
     }
@@ -1568,7 +1568,7 @@ void ActorUnkZLSL::func_ov031_020ed3c0() {
     VecFx32_Copy(&sp14, &this->mUnk_28B0.vec);
 
     this->func_ov031_020edd14(&sp08);
-    sp08.y += 0x800;
+    sp08.y += FX32_HALF;
     VecFx32_Copy(&sp08, &this->mUnk_28F4.vec);
 
     this->func_ov031_020ed4e4(0x0, 0x93F);
@@ -1685,7 +1685,7 @@ bool ActorUnkZLSL::func_ov031_020ed6cc(unk32 param1) {
     return false;
 }
 
-bool ActorUnkZLSL::func_ov031_020ed8ac(unk32 param1) {
+bool ActorUnkZLSL::func_ov031_020ed8ac(fx32 param1) {
     VecFx32 sp28;
     VecFx32 sp1C;
     VecFx32 sp10;
@@ -1744,7 +1744,7 @@ bool ActorUnkZLSL::func_ov031_020ed8ac(unk32 param1) {
             func_020169d4(&this->mPos, &this->mUnk_28B0.vec, &sp6, &this->mUnk_2888);
             func_01ff9984(&this->mUnk_28B0.vec, &sp28, 0x334, 0, 0x7FFFFFFF);
 
-            if (func_01ffb9cc(&sp28, &this->mPos) < 0x800) {
+            if (func_01ffb9cc(&sp28, &this->mPos) < FX32_HALF) {
                 this->mUnk_2870++;
                 this->mUnk_28A4.vec.x = FX_F32_TO_FX32(0.2f);
                 this->mUnk_28A4.vec.y = FX_F32_TO_FX32(0.2f);
@@ -1890,7 +1890,7 @@ void ActorUnkZLSL::vfunc_A4() {
     func_01ffb714(&sp0C, &sp00, &sp0C);
 
     int angle  = this->mAngle.angle_s;
-    int temp   = func_01ffbbe0(sp0C.x, sp0C.z);
+    int temp   = FX_Atan2Idx(sp0C.x, sp0C.z);
     s16 var_r4 = (angle - (s16) temp);
 
     this->mUnk_0E8.Update();
@@ -1903,7 +1903,7 @@ void ActorUnkZLSL::vfunc_A4() {
     if ((var_r0 <= 0x4000 && func_01ff9258(sp0C.x, sp0C.z) < 0x2000) || this->mUnk_0B0 & 1) {
         int clamped1 = CLAMP3(var_r4, -0x2AAB, 0x2AAB);
 
-        int temp_r0_2 = func_01ffbbe0(sp0C.y, func_01ff9258(sp0C.x, sp0C.z));
+        int temp_r0_2 = FX_Atan2Idx(sp0C.y, func_01ff9258(sp0C.x, sp0C.z));
         int clamped2  = CLAMP3((s16) temp_r0_2, -0x18E4, 0x18E4);
 
         this->mUnk_0CC = clamped1;
@@ -1939,10 +1939,10 @@ void ActorUnkZLSL::func_ov031_020ee1f4(Actor *param1, G3d_RenderState *param2) {
         G3d_RenderState_B4 *temp_r6 = param2->mUnk_B4;
 
         temp_r6->mUnk_00 &= ~0x02;
-        MtxFx33_InitZRotation(&sp24, SIN(thisx->mUnk_28E0), COS(thisx->mUnk_28E0));
-        MtxFx33_InitYRotation(&sp0, SIN(thisx->mUnk_28E2), COS(thisx->mUnk_28E2));
-        func_01ffa60c(&sp24, &sp0, &sp24);
-        func_01ffa60c(&sp24, &temp_r6->mUnk_28, &temp_r6->mUnk_28);
+        MTX_RotZ33_(&sp24, SIN(thisx->mUnk_28E0), COS(thisx->mUnk_28E0));
+        MTX_RotY33_(&sp0, SIN(thisx->mUnk_28E2), COS(thisx->mUnk_28E2));
+        MTX_Concat33(&sp24, &sp0, &sp24);
+        MTX_Concat33(&sp24, &temp_r6->mUnk_28, &temp_r6->mUnk_28);
     }
 }
 
@@ -2009,13 +2009,13 @@ void ActorUnkZLSL::func_ov031_020ee4c4(UnkAngleStruct angle) {
     func_01ff930c(&this->mUnk_28E0, (s16) -diff * 4, 0x300);
 
     VecFx32 sp0;
-    sp0.x = FX_Mul(SIN(this->mAngle.angle_s), 0x1000);
-    sp0.z = FX_Mul(COS(this->mAngle.angle_s), 0x1000);
+    sp0.x = FX_MUL(SIN(this->mAngle.angle_s), 0x1000);
+    sp0.z = FX_MUL(COS(this->mAngle.angle_s), 0x1000);
     sp0.y = 0;
 
     if (!VecFx32_IsCleared(&this->mVel) && VecFx32_Dot(&sp0, &this->mVel) < 0) {
         fx32 temp_ret = VecFx32_Length(&this->mVel);
-        s16 value     = FX_Mul(FX_Mul(temp_ret, 0xA000), 0x2000);
+        s16 value     = FX_MUL(FX_MUL(temp_ret, 0xA000), 0x2000);
         func_01ff930c(&this->mUnk_28E2, -value, 0x1000);
     } else {
         func_01ff930c(&this->mUnk_28E2, 0, 0x200);

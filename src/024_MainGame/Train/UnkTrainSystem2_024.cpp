@@ -73,14 +73,14 @@ void UnkTrainSystem2::func_ov024_020d5afc(const MtxFx33 *param1, const VecFx32 *
         return;
     }
 
-    fx32 scale = FX_Mul(this->mUnk_00, param3);
+    fx32 scale = FX_MUL(this->mUnk_00, param3);
     this->SetModel();
 
     if (gpCargoManager->mUnk_18 > 0) {
         MtxFx33 auStack_40;
         VecFx32 temp;
         func_01ffcb94(this->mUnk_64, this->mUnk_66, &auStack_40);
-        func_01ffa60c(param1, &auStack_40, &auStack_40);
+        MTX_Concat33(param1, &auStack_40, &auStack_40);
         this->SetTransform(&auStack_40, param2, scale);
     } else {
         this->SetTransform(param1, param2, scale);

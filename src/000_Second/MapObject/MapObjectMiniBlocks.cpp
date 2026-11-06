@@ -109,7 +109,7 @@ bool MapObjectMiniBlocks::Init(void) {
 void MapObjectMiniBlocks::vfunc_14(unk32 param1) {
     MtxFx33 m;
     u16 unk_14 = this->mAngle.angle_s;
-    MtxFx33_InitYRotation(&m, SIN(unk_14), COS(unk_14));
+    MTX_RotY33_(&m, SIN(unk_14), COS(unk_14));
     this->mUnk_40.vfunc_14(&m, &this->mPos);
 }
 

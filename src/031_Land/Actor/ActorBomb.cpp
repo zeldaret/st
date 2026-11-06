@@ -296,7 +296,7 @@ void ActorBomb::func_ov031_020e1b7c() {
     this->mUnk_0F4.func_01ffc3b4();
 
     if (delta > 0x0) {
-        func_01ff9218(&this->mUnk_1D8, FX_F32_TO_FX32(1.3f), func_01ffb464((u32) delta << 0xC));
+        func_01ff9218(&this->mUnk_1D8, FX_F32_TO_FX32(1.3f), FX_Inv((u32) delta << 0xC));
     }
     if (!this->mUnk_1EA.HasExpired()) {
         return;
@@ -363,11 +363,11 @@ void ActorBomb::func_ov031_020e1da0() {
                 VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mVel);
                 func_01ffb974(-0x29, &this->mUnk_180.mUnk_0C, &this->mVel, &this->mVel);
             } else {
-                func_01ff9218(&this->mUnk_2C, data_ov000_020aecf8, 0x800);
+                func_01ff9218(&this->mUnk_2C, data_ov000_020aecf8, FX32_HALF);
             }
         }
     } else {
-        func_01ff9218(&this->mUnk_2C, data_ov000_020aecf8, 0x200);
+        func_01ff9218(&this->mUnk_2C, data_ov000_020aecf8, FX_F32_TO_FX32(0.125f));
     }
 
     this->func_ov031_020e238c();
@@ -489,8 +489,8 @@ void ActorBomb::func_ov031_020e2100() {
 }
 
 void ActorBomb::func_ov031_020e2134() {
-    fx32 newZ = FX_Mul(this->mVel.z, FX_F32_TO_FX32(0.3f));
-    fx32 newX = FX_Mul(this->mVel.x, FX_F32_TO_FX32(0.3f));
+    fx32 newZ = FX_MUL(this->mVel.z, FX_F32_TO_FX32(0.3f));
+    fx32 newX = FX_MUL(this->mVel.x, FX_F32_TO_FX32(0.3f));
 
     this->mVel.x = newX;
     this->mVel.y = FX_F32_TO_FX32(-0.0102f);
@@ -656,8 +656,8 @@ void ActorBomb::func_ov031_020e2680(VecFx32 *param1) {
     func_01ff94cc(&sp00, param1, &sp0C);
     VecFx32_TryNormalize(&sp00);
 
-    this->mVel.x = FX_Mul(sp00.x, FX_Mul(velLength, FX_F32_TO_FX32(0.2f)));
-    this->mVel.z = FX_Mul(sp00.z, FX_Mul(velLength, FX_F32_TO_FX32(0.2f)));
+    this->mVel.x = FX_MUL(sp00.x, FX_MUL(velLength, FX_F32_TO_FX32(0.2f)));
+    this->mVel.z = FX_MUL(sp00.z, FX_MUL(velLength, FX_F32_TO_FX32(0.2f)));
 }
 
 void ActorBomb::func_ov031_020e2780(VecFx32 *param1) {
@@ -845,9 +845,9 @@ void ActorBomb::func_ov031_020e2c2c() {
         }
 
         ++this->mUnk_1E8;
-        this->mVel.y = FX_Mul(-this->mVel.y, FX_F32_TO_FX32(0.6f));
-        this->mVel.x = FX_Mul(this->mVel.x, FX_F32_TO_FX32(0.2f));
-        this->mVel.z = FX_Mul(this->mVel.z, FX_F32_TO_FX32(0.2f));
+        this->mVel.y = FX_MUL(-this->mVel.y, FX_F32_TO_FX32(0.6f));
+        this->mVel.x = FX_MUL(this->mVel.x, FX_F32_TO_FX32(0.2f));
+        this->mVel.z = FX_MUL(this->mVel.z, FX_F32_TO_FX32(0.2f));
 
         if (this->mUnk_1E8 <= 0x3) {
             return;
