@@ -68,7 +68,7 @@ ActorProfileKenzo::ActorProfileKenzo() :
 }
 
 ActorKenzo::ActorKenzo() :
-    ActorCharacter_Derived1(&mUnk_24C, data_ov000_020b539c_eur.mUnk_30->vfunc_04()),
+    ActorKenzo_Base(&mUnk_24C, data_ov000_020b539c_eur.mUnk_30->vfunc_04()),
     mUnk_24C(G3d_GetUnkPtr(data_ov000_020b539c_eur.mUnk_30->vfunc_04()->mUnk_50, data_ov058_02153308)),
     mUnk_2BC(G3d_GetUnkPtr(data_ov000_020b539c_eur.mUnk_30->vfunc_04()->mUnk_50, data_ov058_02153318)),
     mUnk_31C(-0x1),

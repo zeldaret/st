@@ -242,42 +242,45 @@ public:
     /* 04 */ virtual void vfunc2_04() override;
 };
 
-class ActorCharacter_Derived1_160 : public UnkStruct_ov000_020b31f0 {
+class ActorKenzo_Base_160 : public UnkStruct_ov000_020b31f0 {
 public:
-    /* 00 */
+    /* 00 (base) */
+    /* 2C */ UnkSystem5 mUnk_2C;
+    /* 4C */ unk32 mUnk_4C;
+    /* 50 */ PAD(0x50, 0x8C);
+    /* 8C */ UnkSystem5 mUnk_8C;
+    /* AC */ unk32 mUnk_AC;
+    /* B0 */ PAD(0xB0, 0xEC);
+    /* EC */
 
-    ActorCharacter_Derived1_160(UnkSystem5 *param1, UnkSystem5 *param2, ModelRender *param3, UnkActorFileSystem2 *param4) :
-        UnkStruct_ov000_020b31f0(param1, param2, param3, param4) {}
-};
+    ActorKenzo_Base_160(ModelRender *param1, UnkActorFileSystem2 *param2) :
+        UnkStruct_ov000_020b31f0(&mUnk_2C, &mUnk_8C, param1, param2),
+        mUnk_2C(&mUnk_4C, NULL),
+        mUnk_8C(&mUnk_AC, NULL) {
 
-class ActorCharacter_Derived1_1AC {
-public:
-    /* 00 */ PAD(0x00, 0x40);
-    /* 3C */
-};
-
-class ActorCharacter_Derived1 : public ActorCharacter {
-public:
-    /* 000 (base) */
-    /* 160 */ ActorCharacter_Derived1_160 mUnk_160;
-    /* 18C */ UnkSystem5 mUnk_18C;
-    /* 1AC */ ActorCharacter_Derived1_1AC mUnk_1AC;
-    /* 1EC */ UnkSystem5 mUnk_1EC;
-    /* 20C */ ActorCharacter_Derived1_1AC mUnk_20C;
-    /* 24C */
-
-    ActorCharacter_Derived1(ModelRender *pMdlRdr, UnkActorFileSystem2 *param2) :
-        ActorCharacter(pMdlRdr, &this->mUnk_160),
-        mUnk_160(&this->mUnk_18C, &this->mUnk_1EC, pMdlRdr, param2),
-        mUnk_18C(&this->mUnk_1AC, NULL),
-        mUnk_1EC(&this->mUnk_20C, NULL) {
         if (param2 != NULL) {
-            this->mUnk_1EC.mpModel = this->mUnk_160.mUnk_10;
-            this->mUnk_18C.mpModel = this->mUnk_160.mUnk_10;
+            this->mUnk_8C.mpModel = this->mUnk_10;
+            this->mUnk_2C.mpModel = this->mUnk_10;
         }
     }
 
-    // data_ov066_0215ecc4
+    /* 00 */ virtual ~ActorKenzo_Base_160() override;
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override; // ActorUnkKOKO::func_ov058_02141d30
+    /* 3C */ virtual void vfunc_3C() override;                           // ActorUnkKOKO::func_ov058_02141d0c
+};
+
+class ActorKenzo_Base : public ActorCharacter {
+public:
+    /* 000 (base) */
+    /* 160 */ ActorKenzo_Base_160 mUnk_160;
+    /* 24C */
+
+    ActorKenzo_Base(ModelRender *param1, UnkActorFileSystem2 *param2) :
+        ActorCharacter(param1, &mUnk_160),
+        mUnk_160(param1, param2) {}
+
+    // should be inlined
+    /* 4C */ virtual ~ActorKenzo_Base() override;
 };
 
 // TODO: move in ov000
@@ -299,7 +302,7 @@ public:
     ActorLokomo_5B0(UnkSystem5 *param1, UnkSystem5 *param2, ModelRender *param3, UnkActorFileSystem2 *param4, unk32 param5);
 };
 
-class ActorLokomo : public ActorCharacter_Derived1 {
+class ActorLokomo : public ActorKenzo_Base {
 public:
     /* 000 (base) */
     /* 24C */ ModelRender_ov000_020b4d64 mUnk_24C;

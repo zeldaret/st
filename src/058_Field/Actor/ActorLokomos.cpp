@@ -387,10 +387,9 @@ inline G3d_Model *GetLokomoModel(ActorId currentActorId, const char *names) {
 }
 
 ActorLokomo::ActorLokomo() :
-    ActorCharacter_Derived1(&this->mUnk_24C,
-                            (UnkActorFileSystem2 *) GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)
-                                ->vfunc_04()
-                                ->func_ov000_02058a24()),
+    ActorKenzo_Base(&this->mUnk_24C, (UnkActorFileSystem2 *) GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)
+                                         ->vfunc_04()
+                                         ->func_ov000_02058a24()),
     mUnk_24C(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100[0])),
     mUnk_2BC(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100[1])),
     mUnk_328(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100[2])),
@@ -1953,3 +1952,6 @@ void ActorLokomo::func_ov058_02147d20() {
 }
 
 void ActorLokomo_874::vfunc2_04() {}
+
+ActorKenzo_Base_160::~ActorKenzo_Base_160() {}
+inline ActorKenzo_Base::~ActorKenzo_Base() {}
