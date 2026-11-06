@@ -242,12 +242,16 @@ public:
     /* 04 */ virtual void vfunc2_04() override;
 };
 
+// TODO : move elsewhere
 class ActorCharacter_Derived1_160 : public UnkStruct_ov000_020b31f0 {
 public:
     /* 00 */
 
     ActorCharacter_Derived1_160(UnkSystem5 *param1, UnkSystem5 *param2, ModelRender *param3, UnkActorFileSystem2 *param4) :
         UnkStruct_ov000_020b31f0(param1, param2, param3, param4) {}
+
+    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override;
+    /* 3C */ virtual void vfunc_3C() override;
 };
 
 class ActorCharacter_Derived1_1AC {
