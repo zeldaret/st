@@ -5,6 +5,7 @@
 #include "Actor/ActorUnkSCCN.hpp"
 #include "CommonFuncs.hpp"
 #include "MapObject/MapObject.hpp"
+#include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
@@ -14,11 +15,23 @@
 #include "nitro/types.h"
 #include "types.h"
 
-class UnkStruct_ov094_02176fb8 : public UnkStruct_ov031_Items_00 {
+//! WARN: Generate an extra vtable that's not in the target
+class UnkStruct_ov094_02176fb8_Base : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (vtable) */
     /* 04 */ PAD(0x4, 0x8);
     /* 08 */ unk32 mUnk_08;
+
+    UnkStruct_ov094_02176fb8_Base() {
+        mUnk_08 = 0;
+        mUnk_08 &= ~0x7000;
+        mUnk_08 |= 0x7000;
+    }
+};
+
+class UnkStruct_ov094_02176fb8 : public UnkStruct_ov094_02176fb8_Base {
+public:
+    /* 00 (vtable) */
     /* 0C */ void *mUnk_0C; // Maybe an Actor
 
     UnkStruct_ov094_02176fb8(void *param1);
@@ -35,10 +48,13 @@ public:
 
 class ActorUnkPSWB_194 : public ActorUnkSCCN_B8 {
 public:
+    /* 00 (vtable) */
+    /* 10 */ Actor *mUnk_10;
+
     ActorUnkPSWB_194() {}
 
     /* 00 */ virtual ~ActorUnkPSWB_194() override;
-    /* 08 */ virtual bool vfunc_08(void) override;
+    /* 08 */ virtual bool vfunc_08(RefStruct param1, unk32 param2, unk32 param3) override;
 };
 
 class ActorUnkPSWB : public UnkStruct_ov048_02137600 {

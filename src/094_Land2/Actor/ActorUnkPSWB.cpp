@@ -1,7 +1,12 @@
 #include "Actor/ActorUnkPSWB.hpp"
 #include "Actor/Actor.hpp"
+#include "Actor/ActorBomb.hpp"
+#include "Actor/ActorId.hpp"
+#include "Actor/ActorManager.hpp"
+#include "Actor/ActorUnkSCCN.hpp"
 #include "CommonFuncs.hpp"
 #include "MapObject/MapObject.hpp"
+#include "RefStruct.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
@@ -18,6 +23,7 @@ struct UnkStruct_data_ov094_021785a4 {
 
 extern UnkStruct_data_ov094_021785a4 data_ov094_021785a4;
 extern MapObject_10 data_ov094_021786b0;
+extern unk32 data_ov094_021785c0;
 
 PTMF<ActorUnkPSWB> data_ov094_0217703c[0x5] = {
     &ActorUnkPSWB::func_ov094_02166bcc, // ActorUnkPSWBState_0
@@ -84,7 +90,28 @@ ActorProfileUnkPSWB::ActorProfileUnkPSWB() :
 }
 
 ActorUnkPSWB_194::~ActorUnkPSWB_194() {}
-bool ActorUnkPSWB_194::vfunc_08() {}
+
+bool ActorUnkPSWB_194::vfunc_08(RefStruct param1, unk32 param2, unk32 param3) {
+    if (param1.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x100)) ||
+        param1.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x101))) {
+        if (param1.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x100)) && param1.acRef.unk_id == 0) {
+            func_ov000_0208bdd4(data_027e0ce0, 0, &mUnk_10->mVel);
+            func_ov000_0207e20c(data_027e09c0, &data_ov094_021785c0, &mUnk_10->mPos);
+        }
+        ((ActorUnkPSWB *) mUnk_10)->func_ov094_02167bf0();
+    } else if (((u32) param1.acRef.type_index) << 0x10 >> 0x1E != 0) {
+        ActorBomb *actorBomb = (ActorBomb *) gpActorManager->func_01fff3b4(param1);
+        if (actorBomb != NULL) {
+            ActorId actorId = actorBomb->GetActorId();
+            if (actorId == ActorId_Bomb) {
+                if (func_01ff9258(mUnk_10->mPos.x - actorBomb->mPos.x, mUnk_10->mPos.z - actorBomb->mPos.z) <= 0x7D7) {
+                    actorBomb->func_ov031_020e1920(&mUnk_10->mVel);
+                }
+            }
+        }
+    }
+    ActorUnkSCCN_B8::vfunc_08(param1, param2, param3);
+}
 
 ActorUnkPSWB::ActorUnkPSWB() :
     mUnk_E0(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkPSWB)->mUnk_3C.mUnk_50)),
@@ -260,12 +287,7 @@ void ActorUnkPSWB::vfunc_58(void) {}
 void ActorUnkPSWB::func_ov094_0216825c(void *param1, VecFx32 *param2, unk32 param3) {}
 
 UnkStruct_ov094_02176fb8::UnkStruct_ov094_02176fb8(void *param1) :
-    // mUnk_08((0x7000 & ~0x7000) | 0x7000),
-    mUnk_0C(param1) {
-    mUnk_08 = 0;
-    mUnk_08 &= ~0x7000;
-    mUnk_08 |= 0x7000;
-}
+    mUnk_0C(param1) {}
 
 UnkStruct_ov094_02176fb8::~UnkStruct_ov094_02176fb8() {
     mUnk_0C = NULL;
