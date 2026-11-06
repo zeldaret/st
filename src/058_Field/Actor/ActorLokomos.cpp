@@ -1953,8 +1953,3 @@ void ActorLokomo::func_ov058_02147d20() {
 }
 
 void ActorLokomo_874::vfunc2_04() {}
-
-// just to match .data temporarly
-void ActorCharacter_Derived1_160::vfunc_38(unk32 param1, unk32 param2) {}
-
-void ActorCharacter_Derived1_160::vfunc_3C() {}

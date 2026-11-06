@@ -67,8 +67,8 @@ _ZN12ActorUnkKOKO19func_ov058_02141c24Ev kind:function(arm,size=0xac) addr:0x021
 _ZN12ActorUnkKOKO19func_ov058_02141cd0Ev kind:function(arm,size=0x24) addr:0x02141cd0
 _ZN12ActorUnkKOKO19func_ov058_02141cf4Ev kind:function(arm,size=0x10) addr:0x02141cf4
 _ZN12ActorUnkKOKO19func_ov058_02141d04Ev kind:function(arm,size=0x8) addr:0x02141d04
-_ZN27ActorCharacter_Derived1_1608vfunc_3CEv kind:function(arm,size=0x24) addr:0x02141d0c
-_ZN27ActorCharacter_Derived1_1608vfunc_38Eii kind:function(arm,size=0x2c) addr:0x02141d30
+_ZN24UnkStruct_ov000_020b31f08vfunc_3CEv kind:function(arm,size=0x24) addr:0x02141d0c
+_ZN24UnkStruct_ov000_020b31f08vfunc_38Eii kind:function(arm,size=0x2c) addr:0x02141d30
 _ZN16ActorUnkKOKO_unkC1Ev kind:function(arm,size=0x14) addr:0x02141d5c
 _ZN12ActorUnkKOKO19func_ov058_02141d70Ev kind:function(arm,size=0x1c) addr:0x02141d70
 _ZN12ActorUnkKOKO19func_ov058_02141d8cEv kind:function(arm,size=0x1c) addr:0x02141d8c
@@ -797,10 +797,10 @@ _ZTV19ActorProfileUnkSYSS kind:data(any) addr:0x021548b0
 _ZTV19ActorProfileUnkSYOS kind:data(any) addr:0x021548d4
 _ZTV19ActorProfileUnkSYDL kind:data(any) addr:0x021548f8
 data_ov058_0215491c kind:data(any) addr:0x0215491c
-_ZTV27ActorCharacter_Derived1_160 kind:data(any) addr:0x02154964
+_ZTV19ActorKenzo_Base_160 kind:data(any) addr:0x02154964
 data_ov058_021549b0 kind:data(any) addr:0x021549b0
 data_ov058_02154a18 kind:data(any) addr:0x02154a18
-_ZTV23ActorCharacter_Derived1 kind:data(any) addr:0x02154a80
+_ZTV15ActorKenzo_Base kind:data(any) addr:0x02154a80
 _ZTV11ActorLokomo kind:data(any) addr:0x02154b9c
 data_ov058_02154cdc kind:data(any) addr:0x02154cdc
 _ZTV17ActorProfileKenzo kind:data(any) addr:0x02154ebc
