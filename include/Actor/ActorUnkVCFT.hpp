@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Actor/Actor.hpp"
-#include "Actor/ActorCharacter.hpp"
+#include "Actor/ActorLokomos.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "Unknown/Common.hpp"
 #include "global.h"

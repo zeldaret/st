@@ -23,7 +23,7 @@ enum ActorKenzoState_ {
     ActorKenzoState_Max
 };
 
-class ActorKenzo : public ActorKenzo_Base {
+class ActorKenzo : public ActorCharacter_Derived1 {
 public:
     /* 000 (base) */
     /* 24C */ ModelRender_ov000_020b4d64 mUnk_24C;
