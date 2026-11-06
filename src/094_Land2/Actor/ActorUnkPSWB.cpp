@@ -7,8 +7,10 @@
 #include "CommonFuncs.hpp"
 #include "MapObject/MapObject.hpp"
 #include "RefStruct.hpp"
+#include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
+#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "flags.h"
 #include "nitro/fx.h"
@@ -23,7 +25,7 @@ struct UnkStruct_data_ov094_021785a4 {
 
 extern UnkStruct_data_ov094_021785a4 data_ov094_021785a4;
 extern MapObject_10 data_ov094_021786b0;
-extern unk32 data_ov094_021785c0;
+extern UnkStruct_027e09c0_04 data_ov094_021785c0; // INFO: not sure about the type
 
 PTMF<ActorUnkPSWB> data_ov094_0217703c[0x5] = {
     &ActorUnkPSWB::func_ov094_02166bcc, // ActorUnkPSWBState_0
@@ -147,7 +149,43 @@ ActorUnkPSWB::~ActorUnkPSWB() {
     data_027e09c0->func_ov000_0207e254(&mUnk_194);
 }
 
-bool ActorUnkPSWB::Init(unk32 param1) {}
+bool ActorUnkPSWB::Init(unk32 param1) {
+#pragma unused(param1)
+    data_ov094_021785c0.func_ov000_0207f4d4();
+    mUnk_44 = 0x1D;
+    mUnk_2C = 0;
+    this->func_ov000_0209862c(3);
+    mUnk_140 = mPos.x;
+    mUnk_144 = mPos.z;
+    mState   = 0;
+    this->func_ov094_02166890();
+    mUnk_94  = 0;
+    mUnk_188 = 0xD0A7;
+    mUnk_18C = 2;
+    if (mUnk_5C.mParams[0] != 0) {
+        VecFx32 vec1;
+        fx32 ret; //! TODO: force onto the stack
+        VecFx32 vec2;
+        if (func_ov000_02070c84(data_027e09a4, &vec1, mUnk_5C.mUnk_24) != 0) {
+            ret = data_027e0cd8->mUnk_0C->vfunc_28(&vec1, 1, 0);
+
+            vec2       = vec1;
+            mPos.x     = vec2.x;
+            mPos.y     = vec2.y;
+            mPos.z     = vec2.z;
+            mPrevPos.x = vec2.x;
+            mPrevPos.y = vec2.y;
+            mPrevPos.z = vec2.z;
+
+            mUnk_44 = 0x1C;
+            this->func_ov000_0209862c(1);
+            this->func_ov094_021668e0(4);
+            mUnk_154 = ret - FX_F32_TO_FX32(0.3f);
+            mUnk_15C = mPos.y;
+        }
+    }
+    return true;
+}
 
 void ActorUnkPSWB::func_ov094_02166890(void) {
     mUnk_194.mUnk_04 = mRef;
@@ -198,7 +236,19 @@ void ActorUnkPSWB::func_ov094_02166c2c(void) {
     mUnk_164 = func_ov000_0208bba4(data_027e0ce0, mUnk_98);
 }
 
-void ActorUnkPSWB::func_ov094_02166c88(void) {}
+void ActorUnkPSWB::func_ov094_02166c88(void) {
+    unk32 ret = this->func_ov094_02167518();
+    if (ret != 0 && func_ov048_021307f8(this, mUnk_160) != 0) {
+        unk32 *var;
+        func_ov048_02130790(this, mUnk_160, var, 0x1000);
+        mUnk_140 = var[0];
+        mUnk_144 = var[2];
+        func_ov048_02130aa4(this, var);
+        this->func_ov094_02167518();
+    }
+    this->func_ov000_02098838();
+    VecFx32_Copy(&mPos, &mPrevPos);
+}
 
 void ActorUnkPSWB::func_ov094_02166e10(void) {
     u16 var;
@@ -210,8 +260,55 @@ void ActorUnkPSWB::func_ov094_02166e10(void) {
     this->func_ov094_0216781c();
 }
 
-void ActorUnkPSWB::func_ov094_02166e60(void) {}
-void ActorUnkPSWB::func_ov094_02166f94(void) {}
+// non-matching (wrong class, reg usage in condition)
+void ActorUnkPSWB::func_ov094_02166e60(void) {
+    this->func_ov000_02098838();
+
+    mPrevPos.x = mPos.x;
+    mPrevPos.y = mPos.y;
+    mPrevPos.z = mPos.z;
+    VecFx32_Add(&mPos, &mVel, &mPos);
+
+    UnkStruct_ov094_02176fb8_Base itemVar; // Not the actual class (the right one comes/inherits from ov048)
+    this->func_ov000_02098910(&itemVar, 0x10);
+
+    if (mUnk_46 == 1) {
+        u32 var;
+        func_01fff05c(&var, data_027e0cd8->mUnk_0C, &mPos);
+        bool cond = true;
+        if ((var & 0x1F) != 8 && (var >> 5 & 3) != 2) {
+            cond = false;
+        }
+        if (cond != false) {
+            this->func_ov094_021668e0(3);
+            return;
+        }
+        this->func_ov094_021668e0(0);
+    }
+
+    if ((((u16 *) itemVar.unk_0x4)[0] & 1) != 0) {
+        this->func_ov000_020984f0();
+        return; // dumb but needed
+    } else {
+        func_01ff930c(&mUnk_16A, -5461, 0x300);
+    }
+}
+
+// non-matching (regalloc)
+void ActorUnkPSWB::func_ov094_02166f94(void) {
+    mUnk_16E = mUnk_16A;
+    mUnk_44  = 0x1C;
+    this->func_ov000_0209862c(1);
+    mUnk_2C  = 0x52;
+    mUnk_15C = mPos.y;
+    mUnk_144 = 0;
+    mUnk_140 = 0;
+    data_027e09a8->func_ov000_02071b30(0x991C, &mPos, 0);
+    RefStruct ref;
+    Actor::func_ov017_020c2438(&ref, 1, &mPos, 1, 1);
+    mTimer.Set(0, 100);
+}
+
 void ActorUnkPSWB::func_ov094_02167024(void) {}
 
 void ActorUnkPSWB::func_ov094_02167224(void) {
@@ -220,7 +317,7 @@ void ActorUnkPSWB::func_ov094_02167224(void) {
 }
 
 void ActorUnkPSWB::func_ov094_0216723c(void) {}
-void ActorUnkPSWB::func_ov094_02167518(void) {}
+unk32 ActorUnkPSWB::func_ov094_02167518(void) {}
 void ActorUnkPSWB::func_ov094_021675ac(void) {}
 void ActorUnkPSWB::func_ov094_02167614(void) {}
 void ActorUnkPSWB::func_ov094_02167688(void) {}
@@ -278,7 +375,28 @@ void ActorUnkPSWB::func_ov094_02167bf0(void) {
     }
 }
 
-void ActorUnkPSWB::func_ov094_02167c54(void) {}
+void ActorUnkPSWB::func_ov094_02167c54(void) {
+    if (mUnk_5C.mParams[0] == 0) {
+        return;
+    }
+
+    VecFx32 vec1, vec2;
+    if (func_ov000_02070c84(data_027e09a4, &vec1, mUnk_5C.mUnk_24) != 0) {
+        if (!VecFx32_IsEqual_Bool(&vec1, &mUnk_5C.mInitialPos)) {
+            vec2       = vec1;
+            mPos.x     = vec2.x;
+            mPos.y     = vec2.y;
+            mPos.z     = vec2.z;
+            mPrevPos.x = vec2.x;
+            mPrevPos.y = vec2.y;
+            mPrevPos.z = vec2.z;
+            this->func_ov094_021668e0(4);
+            mUnk_192 = 0x3B;
+            mUnk_190 = 0;
+        }
+    }
+}
+
 void ActorUnkPSWB::func_ov094_02167d20(void) {}
 void ActorUnkPSWB::func_ov094_02167dbc(void) {}
 void ActorUnkPSWB::func_ov094_02167e58(void) {}

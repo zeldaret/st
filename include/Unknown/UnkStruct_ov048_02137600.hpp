@@ -6,7 +6,8 @@
 class UnkStruct_ov048_02137600 : public Actor {
 public:
     /* 00 (vtable) */
-    /* 94 */ PAD(0x94, 0x98);
+    /* 94 */ unk8 mUnk_94;
+    /* 95 */ PAD(0x95, 0x98);
     /* 98 */ unk32 mUnk_98;
     /* 9C */ PAD(0x9C, 0xD4);
     /* D4 */ UnkStruct_ov031_Items_00 mUnk_D4;

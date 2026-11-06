@@ -9,6 +9,7 @@
 #include "Map/MapObjectId.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "nitro/fx.h"
@@ -267,10 +268,11 @@ void func_ov000_0205f8e8(unk32 *, MtxFx33 *);
 void func_ov000_02062e44(Vec2s *param1, void *param2);
 void *func_ov000_02066294();
 unk32 func_ov000_02068504(int);
+unk32 func_ov000_02070c84(UnkStruct_027e09a4 *, VecFx32 *, unk16);
 void func_ov000_02072344(u16 *, UnkStruct_027e09ac_14 *);
 void func_ov000_02072fd0(UnkStackStruct1 *);
 void func_ov000_02073080(void *);
-void func_ov000_0207e20c(UnkStruct_027e09c0 *, unk32 *, void *);
+void func_ov000_0207e20c(UnkStruct_027e09c0 *, UnkStruct_027e09c0_04 *, void *);
 void func_ov000_0207f4e8(void *);
 void func_ov000_0207f4fc(void *, void *, unk32, unk32);
 unk32 func_ov000_02077480();
@@ -405,6 +407,11 @@ void func_ov034_02121de4(void *);
 
 // overlay 40
 void func_ov040_0212bab4(unk32); // might be in Actor class or one of its subclasses
+
+// overlay 48
+unk32 func_ov048_02130790(Actor *, unk32, unk32 *, unk32);
+unk32 func_ov048_021307f8(Actor *, unk32);
+unk32 func_ov048_02130aa4(Actor *, unk32 *);
 
 // overlay 70
 UnkStruct_ov070_0214dc74 *func_ov070_02143fe4(int index);

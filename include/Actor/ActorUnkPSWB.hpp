@@ -120,7 +120,7 @@ public:
     void func_ov094_02167024(void);
     void func_ov094_02167224(void);
     void func_ov094_0216723c(void);
-    void func_ov094_02167518(void);
+    unk32 func_ov094_02167518(void);
     void func_ov094_021675ac(void);
     void func_ov094_02167614(void);
     void func_ov094_02167688(void);
