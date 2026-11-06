@@ -51,7 +51,9 @@ public:
     /* 00 (vtable) */
     /* 10 */ Actor *mUnk_10;
 
-    ActorUnkPSWB_194() {}
+    ActorUnkPSWB_194(Actor *param1) {
+        mUnk_10 = param1;
+    }
 
     /* 00 */ virtual ~ActorUnkPSWB_194() override;
     /* 08 */ virtual bool vfunc_08(RefStruct param1, unk32 param2, unk32 param3) override;
@@ -90,7 +92,6 @@ public:
     /* 190 */ unk16 mUnk_190;
     /* 192 */ unk16 mUnk_192;
     /* 194 */ ActorUnkPSWB_194 mUnk_194;
-    /* 1A4 */ void *mUnk_1A4;
 
     ActorUnkPSWB();
 

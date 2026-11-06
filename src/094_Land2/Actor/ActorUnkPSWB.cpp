@@ -140,8 +140,7 @@ ActorUnkPSWB::ActorUnkPSWB() :
     mUnk_18C(0),
     mUnk_190(0),
     mUnk_192(0),
-    mUnk_194(),
-    mUnk_1A4(this) {}
+    mUnk_194(this) {}
 
 ActorUnkPSWB::~ActorUnkPSWB() {
     mUnk_184.func_ov000_020a0334();
