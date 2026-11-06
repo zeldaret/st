@@ -283,7 +283,8 @@ static ActorUnkZLSL_AnimationTag data_ov058_02154cdc[] = {
     {0, "wait", 0},        {1, "wait", 0},        {2, "talk", 0},        {3, "wait", 0},        {4, "play", 0},
     {5, "play_body", 0},   {6, "play_arm", 1},    {7, "play_arm", 0},    {8, "play_armLL", 1},  {9, "play_armLC", 1},
     {10, "play_armRR", 1}, {11, "play_armRC", 1}, {12, "play_armLL", 0}, {13, "play_armLC", 0}, {14, "play_armRR", 0},
-    {15, "play_armRC", 0}, {16, "rhythm", 0},     {17, "fear", 0},       {18, "tremble", 0},    {19, "fly", 0}};
+    {15, "play_armRC", 0}, {16, "rhythm", 0},     {17, "fear", 0},       {18, "tremble", 0},    {19, "fly", 0},
+};
 
 UnkActorFileSystem2 *ActorLokomo::func_ov058_02143438(unk32 param1) {
     ActorLokomo_ lokomoId;
