@@ -18,7 +18,6 @@ void ActorUnkKOKO::func_ov058_0213f2f0(void) {}
 void ActorUnkKOKO::func_ov058_0213f540(void) {}
 void ActorUnkKOKO::func_ov058_0213f554(void) {}
 void ActorUnkKOKO::func_ov058_0213f568(void) {}
-ActorUnkKOKO_unk::~ActorUnkKOKO_unk() {}
 void ActorUnkKOKO::func_ov058_0213f590(void) {}
 void ActorUnkKOKO::func_ov058_0213f790(void) {}
 void ActorUnkKOKO::func_ov058_0213f874(void) {}
@@ -69,7 +68,6 @@ void ActorUnkKOKO::func_ov058_02141cf4(void) {}
 void ActorUnkKOKO::func_ov058_02141d04(void) {}
 void ActorUnkKOKO::func_ov058_02141d0c(void) {}
 void ActorUnkKOKO::func_ov058_02141d30(void) {}
-ActorUnkKOKO_unk::ActorUnkKOKO_unk() {}
 void ActorUnkKOKO::func_ov058_02141d70(void) {}
 void ActorUnkKOKO::func_ov058_02141d8c(void) {}
 void ActorUnkKOKO::func_ov058_02141da8(void) {}

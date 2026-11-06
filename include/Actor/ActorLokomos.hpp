@@ -207,7 +207,8 @@ public:
 
 // --- GENERAL ---
 
-enum ActorLokomo_ {
+typedef u32 ActorLokomoId;
+enum ActorLokomoId_ {
     ActorLokomo_Gage    = 0,
     ActorLokomo_Steem   = 1,
     ActorLokomo_Carben  = 2,
@@ -439,7 +440,7 @@ public:
     void func_ov058_02144ba0();
     void func_ov058_02145120();
     unk32 func_ov058_021456a4();
-    ActorLokomo_ func_ov058_021456d8();
+    ActorLokomoId func_ov058_021456d8();
     void func_ov058_021459b8();
     void func_ov058_02145bd4();
     void func_ov058_02145e94(bool param1);

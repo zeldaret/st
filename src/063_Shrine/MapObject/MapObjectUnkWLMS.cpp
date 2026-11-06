@@ -65,7 +65,7 @@ MapObjectProfileUnkWLMS::MapObjectProfileUnkWLMS() :
 }
 
 UnkStruct_ov063_02163910::UnkStruct_ov063_02163910(Actor *param1) {
-    mUnk_04 = (unk32) param1;
+    mUnk_04 = (unk32) param1; // TODO : refactor with type
 }
 
 struct UnkStruct_ov063_02163910_04 {
@@ -96,7 +96,8 @@ MapObjectUnkWLMS::MapObjectUnkWLMS() :
 #if IS_JP || IS_EUR1
     mUnk_31F(false),
 #endif
-    mUnk_320((Actor *) this) {
+    mUnk_320((Actor *) this) // TODO : refactor with type
+{
     mUnk_10         = GET_PROFILE_D4(MapObjectProfileUnkWLMS);
     mUnk_D0.mUnk_1C = 0x2000;
     mUnk_316        = -1;

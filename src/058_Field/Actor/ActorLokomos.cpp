@@ -14,23 +14,31 @@ extern MtxFx43 data_027e0964;
 // in bss ?
 extern VecFx32 data_ov058_02152f10[];
 extern unk32 data_ov058_02152fac[][5];
-extern char data_ov058_02153100[];
-extern u8 data_ov058_02153010[];
-extern unk32 data_ov058_0215616c[];
-extern unk32 data_ov058_02156170[];
-extern unk32 data_ov058_02156174[];
-extern unk32 data_ov058_02156178[];
-extern unk32 data_ov058_0215617c[];
-extern unk32 data_ov058_02156180[];
-extern unk32 data_ov058_02156184[];
-extern unk32 data_ov058_02156188[];
-extern unk32 data_ov058_0215618c[];
-extern unk32 data_ov058_02156190[];
-extern unk32 data_ov058_02156194[];
-extern unk32 data_ov058_02156198[];
-extern unk32 data_ov058_0215619c[];
-extern unk32 data_ov058_021561a0[];
-extern unk32 data_ov058_021561a4[];
+extern const char data_ov058_02153100[16][5];
+extern const u8 data_ov058_02153010[16][16];
+
+class UnkStruct_ov000_020b31a8_vfunc_38_param1 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ PAD(0x04, 0x3C);
+    /* 3C*/
+};
+
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_0215616c[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_02156170[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_02156174[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_02156178[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_0215617c[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_02156180[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_02156184[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_02156188[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_0215618c[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_02156190[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_02156194[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_02156198[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_0215619c[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_021561a0[];
+extern const UnkStruct_ov000_020b31a8_vfunc_38_param1 data_ov058_021561a4[];
 
 extern unk32 data_ov063_021641d0[];
 extern unk32 data_ov063_021642fc[];
@@ -143,7 +151,7 @@ Actor *ActorProfileUnkSYFO::Create() {
 }
 
 inline ActorId GetGageModelId() {
-    return data_027e09a4->IsLastSession() ? ActorId_SYOL : ActorId_SYOS;
+    return data_027e09a4->IsFinalDuet() ? ActorId_SYOL : ActorId_SYOS;
 }
 
 ActorProfileUnkSYFO::ActorProfileUnkSYFO() :
@@ -165,7 +173,7 @@ Actor *ActorProfileUnkSYSN::Create() {
 }
 
 inline ActorId GetSteemModelId() {
-    return data_027e09a4->IsLastSession() ? ActorId_SYSL : ActorId_SYSS;
+    return data_027e09a4->IsFinalDuet() ? ActorId_SYSL : ActorId_SYSS;
 }
 
 ActorProfileUnkSYSN::ActorProfileUnkSYSN() :
@@ -187,7 +195,7 @@ Actor *ActorProfileUnkSYWA::Create() {
 }
 
 inline ActorId GetCarbenModelId() {
-    return data_027e09a4->IsLastSession() ? ActorId_SYWL : ActorId_SYWS;
+    return data_027e09a4->IsFinalDuet() ? ActorId_SYWL : ActorId_SYWS;
 }
 
 ActorProfileUnkSYWA::ActorProfileUnkSYWA() :
@@ -209,7 +217,7 @@ Actor *ActorProfileUnkSYFI::Create() {
 }
 
 inline ActorId GetEmbroseModelId() {
-    return data_027e09a4->IsLastSession() ? ActorId_SYIL : ActorId_SYIS;
+    return data_027e09a4->IsFinalDuet() ? ActorId_SYIL : ActorId_SYIS;
 }
 
 ActorProfileUnkSYFI::ActorProfileUnkSYFI() :
@@ -231,7 +239,7 @@ Actor *ActorProfileUnkSYDE::Create() {
 }
 
 inline ActorId GetRaelModelId() {
-    return data_027e09a4->IsLastSession() ? ActorId_SYDL : ActorId_SYDS;
+    return data_027e09a4->IsFinalDuet() ? ActorId_SYDL : ActorId_SYDS;
 }
 
 ActorProfileUnkSYDE::ActorProfileUnkSYDE() :
@@ -287,7 +295,7 @@ static ActorUnkZLSL_AnimationTag data_ov058_02154cdc[] = {
 };
 
 UnkActorFileSystem2 *ActorLokomo::func_ov058_02143438(unk32 param1) {
-    ActorLokomo_ lokomoId;
+    ActorLokomoId lokomoId;
     if (param1 != 0) {
         ActorId id = data_ov000_020b539c_eur.mUnk_30->mActorId;
         if (id == ActorId_Gage) {
@@ -382,11 +390,11 @@ ActorLokomo::ActorLokomo() :
     ActorKenzo_Base(&this->mUnk_24C, (UnkActorFileSystem2 *) GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)
                                          ->vfunc_04()
                                          ->func_ov000_02058a24()),
-    mUnk_24C(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100)),
-    mUnk_2BC(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100 + 0x10)),
-    mUnk_328(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100 + 0x20)),
-    mUnk_38C(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100 + 0x30)),
-    mUnk_3F0(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100 + 0x40)),
+    mUnk_24C(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100[0])),
+    mUnk_2BC(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100[1])),
+    mUnk_328(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100[2])),
+    mUnk_38C(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100[3])),
+    mUnk_3F0(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100[4])),
     mUnk_458(&mUnk_474, &mUnk_2BC, GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)->vfunc_04()),
     mUnk_474(&mUnk_4A0, NULL),
     mUnk_4C4(&mUnk_4F0, &mUnk_550, &mUnk_2BC, GetLokomoProfile(data_ov000_020b539c_eur.mUnk_30->mActorId)->vfunc_04()),
@@ -417,14 +425,11 @@ ActorLokomo::ActorLokomo() :
     mUnk_9AC(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)),
     mUnk_9B8(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)) {
 
-    bool var = true;
-    if (data_027e09a4->mUnk_00.sceneIndex != SceneIndex_b_last22) {
-        var = false;
-    }
+    bool var       = data_027e09a4->IsFinalDuet();
     this->mUnk_904 = var;
 
     if (!(var & 0xFF)) {
-        this->mUnk_4C4.vfunc_08(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100 + 0x10));
+        this->mUnk_4C4.vfunc_08(GetLokomoModel(data_ov000_020b539c_eur.mUnk_30->mActorId, data_ov058_02153100[1]));
         this->mUnk_4C4.mUnk_0C = this->func_ov058_02143438(0x1);
         this->mUnk_4C4.vfunc_1C(data_ov058_021546e8, 0x1000, 0x19A, 0x0);
     }
@@ -448,164 +453,161 @@ ActorLokomo::ActorLokomo() :
 
 ActorLokomo::~ActorLokomo() {}
 
-// non-matching
 void ActorLokomo::func_ov058_021446b8() {
     unk32 value = this->func_ov058_021456a4();
     switch (this->func_ov058_021456d8()) {
         case ActorLokomo_Gage:
-            this->mUnk_5B0.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156178[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_0215617c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156180[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156184[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156188[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_0215618c[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156190[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156194[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156198[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_021561a0[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_021561a4[(u32) (value * 0x3C) / 4], 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_0215616c[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156170[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156174[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156178[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_0215617c[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156180[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156184[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156188[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_0215618c[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156190[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156194[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156198[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_021561a0[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_021561a4[value].mUnk_00, 0x1);
             break;
 
         case ActorLokomo_Steem:
-            this->mUnk_5B0.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156178[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_0215617c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156180[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156184[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156188[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_0215618c[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156190[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156194[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156198[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_0215619c[(u32) (value * 0x3C) / 4], 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_0215616c[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156170[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156174[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156178[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_0215617c[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156180[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156184[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156188[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_0215618c[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156190[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156194[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156198[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_0215619c[value].mUnk_00, 0x1);
             break;
 
         default:
-            this->mUnk_5B0.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156178[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_0215617c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156180[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156184[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156188[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_5B0.vfunc_38(data_ov058_0215618c[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156190[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156194[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_5B0.vfunc_38(data_ov058_02156198[(u32) (value * 0x3C) / 4], 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_0215616c[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156170[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156174[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156178[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_0215617c[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156180[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156184[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156188[value].mUnk_00, 0x0);
+            this->mUnk_5B0.vfunc_38(data_ov058_0215618c[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156190[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156194[value].mUnk_00, 0x1);
+            this->mUnk_5B0.vfunc_38(data_ov058_02156198[value].mUnk_00, 0x1);
             break;
     }
 }
 
-// non-matching
 void ActorLokomo::func_ov058_02144ba0() {
     unk32 value = this->func_ov058_021456a4();
     switch (this->func_ov058_021456d8()) {
         case ActorLokomo_Gage:
-            this->mUnk_69C.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156178[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_0215617c[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_69C.vfunc_38(data_ov058_02156180[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156184[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156188[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_0215618c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156190[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156194[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156198[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_021561a0[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_021561a4[(u32) (value * 0x3C) / 4], 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_0215616c[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156170[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156174[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156178[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_0215617c[value].mUnk_00, 0x1);
+            this->mUnk_69C.vfunc_38(data_ov058_02156180[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156184[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156188[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_0215618c[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156190[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156194[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156198[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_021561a0[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_021561a4[value].mUnk_00, 0x0);
             break;
 
         case ActorLokomo_Steem:
-            this->mUnk_69C.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_69C.vfunc_38(data_ov058_02156178[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_69C.vfunc_38(data_ov058_0215617c[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_69C.vfunc_38(data_ov058_02156180[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156184[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156188[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_0215618c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156190[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156194[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156198[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_0215619c[(u32) (value * 0x3C) / 4], 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_0215616c[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156170[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156174[value].mUnk_00, 0x1);
+            this->mUnk_69C.vfunc_38(data_ov058_02156178[value].mUnk_00, 0x1);
+            this->mUnk_69C.vfunc_38(data_ov058_0215617c[value].mUnk_00, 0x1);
+            this->mUnk_69C.vfunc_38(data_ov058_02156180[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156184[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156188[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_0215618c[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156190[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156194[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156198[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_0215619c[value].mUnk_00, 0x0);
             break;
 
         default:
-            this->mUnk_69C.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_69C.vfunc_38(data_ov058_02156178[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_69C.vfunc_38(data_ov058_0215617c[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_69C.vfunc_38(data_ov058_02156180[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156184[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156188[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_0215618c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156190[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156194[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_69C.vfunc_38(data_ov058_02156198[(u32) (value * 0x3C) / 4], 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_0215616c[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156170[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156174[value].mUnk_00, 0x1);
+            this->mUnk_69C.vfunc_38(data_ov058_02156178[value].mUnk_00, 0x1);
+            this->mUnk_69C.vfunc_38(data_ov058_0215617c[value].mUnk_00, 0x1);
+            this->mUnk_69C.vfunc_38(data_ov058_02156180[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156184[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156188[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_0215618c[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156190[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156194[value].mUnk_00, 0x0);
+            this->mUnk_69C.vfunc_38(data_ov058_02156198[value].mUnk_00, 0x0);
             break;
     }
 }
 
-// non-matching
 void ActorLokomo::func_ov058_02145120() {
     unk32 value = this->func_ov058_021456a4();
     switch (this->func_ov058_021456d8()) {
         case ActorLokomo_Gage:
-            this->mUnk_788.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156178[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_0215617c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156180[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_788.vfunc_38(data_ov058_02156184[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_788.vfunc_38(data_ov058_02156188[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_788.vfunc_38(data_ov058_0215618c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156190[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156194[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156198[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_021561a0[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_021561a4[(u32) (value * 0x3C) / 4], 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_0215616c[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156170[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156174[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156178[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_0215617c[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156180[value].mUnk_00, 0x1);
+            this->mUnk_788.vfunc_38(data_ov058_02156184[value].mUnk_00, 0x1);
+            this->mUnk_788.vfunc_38(data_ov058_02156188[value].mUnk_00, 0x1);
+            this->mUnk_788.vfunc_38(data_ov058_0215618c[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156190[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156194[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156198[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_021561a0[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_021561a4[value].mUnk_00, 0x0);
             break;
 
         case ActorLokomo_Steem:
-            this->mUnk_788.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156178[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_0215617c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156180[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_788.vfunc_38(data_ov058_02156184[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_788.vfunc_38(data_ov058_02156188[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_788.vfunc_38(data_ov058_0215618c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156190[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156194[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156198[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_0215619c[(u32) (value * 0x3C) / 4], 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_0215616c[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156170[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156174[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156178[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_0215617c[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156180[value].mUnk_00, 0x1);
+            this->mUnk_788.vfunc_38(data_ov058_02156184[value].mUnk_00, 0x1);
+            this->mUnk_788.vfunc_38(data_ov058_02156188[value].mUnk_00, 0x1);
+            this->mUnk_788.vfunc_38(data_ov058_0215618c[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156190[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156194[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156198[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_0215619c[value].mUnk_00, 0x0);
             break;
 
         default:
-            this->mUnk_788.vfunc_38(data_ov058_0215616c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156170[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156174[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156178[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_0215617c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156180[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_788.vfunc_38(data_ov058_02156184[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_788.vfunc_38(data_ov058_02156188[(u32) (value * 0x3C) / 4], 0x1);
-            this->mUnk_788.vfunc_38(data_ov058_0215618c[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156190[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156194[(u32) (value * 0x3C) / 4], 0x0);
-            this->mUnk_788.vfunc_38(data_ov058_02156198[(u32) (value * 0x3C) / 4], 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_0215616c[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156170[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156174[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156178[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_0215617c[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156180[value].mUnk_00, 0x1);
+            this->mUnk_788.vfunc_38(data_ov058_02156184[value].mUnk_00, 0x1);
+            this->mUnk_788.vfunc_38(data_ov058_02156188[value].mUnk_00, 0x1);
+            this->mUnk_788.vfunc_38(data_ov058_0215618c[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156190[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156194[value].mUnk_00, 0x0);
+            this->mUnk_788.vfunc_38(data_ov058_02156198[value].mUnk_00, 0x0);
             break;
     }
 }
@@ -625,7 +627,7 @@ unk32 ActorLokomo::func_ov058_021456a4() {
     return 0x0;
 }
 
-ActorLokomo_ ActorLokomo::func_ov058_021456d8() {
+ActorLokomoId ActorLokomo::func_ov058_021456d8() {
     if (this->GetActorId() == ActorId_Gage) {
         return ActorLokomo_Gage;
     }
@@ -655,7 +657,7 @@ bool ActorLokomo::Init(unk32 param1) {
     for (int i = 0; i < 16; ++i) {
         if (i != 12 || (this->func_ov058_021456d8() == ActorLokomo_Steem && i - 13 > 1) ||
             this->func_ov058_021456d8() == ActorLokomo_Gage) {
-            this->mUnk_24C.func_ov000_02057f18(&data_ov058_02153010[i * 0x10]);
+            this->mUnk_24C.func_ov000_02057f18(&data_ov058_02153010[i]);
         }
     }
 
@@ -798,7 +800,7 @@ unk32 ActorLokomo::vfunc_7C(unk32 param1) {
                 stack_ov000_02073578 stack = stack_ov000_02073578();
                 stack.unk_00               = 1;
                 stack.unk_08               = 9;
-                stack.unk_04               = (unk32) & this->mUnk_874;
+                stack.unk_04               = (unk32) & this->mUnk_874; // TODO : refactor with type
                 data_027e09b8->func_ov000_02073578(&stack, 1);
                 this->mUnk_87C = param1;
                 return 0;
@@ -970,8 +972,8 @@ void ActorLokomo::vfunc_2C(unk32 param1) {
     VecFx32_Add(&sp0C, &sp00, &sp0C);
 
     if (this->mUnk_904) {
-        bool cmpr           = false;
-        ActorLokomo_ lokomo = this->func_ov058_021456d8();
+        bool cmpr            = false;
+        ActorLokomoId lokomo = this->func_ov058_021456d8();
         if (!(lokomo != ActorLokomo_Gage && lokomo != ActorLokomo_Steem)) {
             cmpr = true;
         }
@@ -1224,9 +1226,9 @@ void ActorLokomo::vfunc_124() {
                     var_r5 = func_01ff930c(&this->mAngle.angle_s, func_02016958(&this->mPos, &sp08), this->mUnk_8FC);
                 }
 
-                unk32 var_r6        = 0;
-                this->mUnk_900      = false;
-                ActorLokomo_ lokomo = this->func_ov058_021456d8();
+                unk32 var_r6         = 0;
+                this->mUnk_900       = false;
+                ActorLokomoId lokomo = this->func_ov058_021456d8();
                 if (lokomo == ActorLokomo_Carben || lokomo == ActorLokomo_Rael) {
                     var_r6 = 1;
                 }
@@ -1439,8 +1441,8 @@ void ActorLokomo::func_ov058_02146d74(unk32 param1, unk32 param2) {
 
     switch (param1) {
         case 0x4: {
-            unk32 var4          = 0x0;
-            ActorLokomo_ lokomo = this->func_ov058_021456d8();
+            unk32 var4           = 0x0;
+            ActorLokomoId lokomo = this->func_ov058_021456d8();
 
             if (lokomo == ActorLokomo_Gage || lokomo == ActorLokomo_Steem || lokomo == ActorLokomo_Embrose) {
                 var4 = 0x1000;
@@ -1667,7 +1669,7 @@ void ActorLokomo::func_ov058_021471f4(unk32 param1) {
 }
 
 void ActorLokomo_874::vfunc2_00() {
-    data_ov063_021641d0[((ActorLokomo *) this->mUnk_04)->func_ov058_021456d8()] = (unk32) this->mUnk_04;
+    data_ov063_021641d0[((ActorLokomo *) this->mUnk_04)->func_ov058_021456d8()] = this->mUnk_04;
 }
 
 void ActorLokomo::func_ov058_02147760(Actor *param0, G3d_RenderState_ *param1) {

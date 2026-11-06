@@ -23,9 +23,6 @@ public:
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */
-
-    ActorUnkKOKO_unk();  // func_ov058_02141d5c
-    ~ActorUnkKOKO_unk(); // func_ov058_0213f57c
 };
 
 class ActorUnkKOKO : public Actor {
