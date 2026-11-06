@@ -1,5 +1,7 @@
 #pragma once
 
+#include "types.h"
+
 class UnkStruct_ov059_021641c8 {
 public:
     void func_ov063_0215ca28();
