@@ -644,7 +644,7 @@ void MapObjectDoorDangerSpawn::vfunc_40(void) {
 }
 
 void MapObjectDoorDangerSpawn::vfunc_44(void) {
-    unk32 local_c = *(u32 *) &this->mRef;
+    RefStruct local_c = this->mRef;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x137, &this->mPos, 0);
 }
 
@@ -653,7 +653,7 @@ void MapObjectDoorDangerSpawn::vfunc_48(void) {
 }
 
 void MapObjectDoorDangerSpawn::vfunc_4C(void) {
-    unk32 local_c = *(u32 *) &this->mRef;
+    RefStruct local_c = this->mRef;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x139, &this->mPos, 0);
 }
 
@@ -673,7 +673,7 @@ unk32 MapObjectDoorDangerSpawn::vfunc_8C(void) {
     return 0;
 }
 
-void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param3) {
+void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, UnkAngleStruct *param3) {
     s16 iVar1;
 
     if (!this->mUnk_58) {

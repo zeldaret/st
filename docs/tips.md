@@ -10,6 +10,7 @@ Some miscellaneous information are also reported here, for example about the bui
   - [Fx32](#fx32)
   - [Angles](#Angles)
   - [Random operations](#random)
+  - [TEQ instruction](#TEQ)
 - [Symbols](#symbols)
   - [Updating a vtable symbol](#updating-a-vtable-symbol)
   - [Force Export](#force-export)
@@ -66,6 +67,12 @@ There are two macros `SIN(n)` and `COS(n)` that compute the expected trigonometr
 
 Random operations are handled by the `gRandom` class. The most common operation is `gRandom.Next32(u32 factor)`, with `factor=0` being a very common value. \
 Such calls can be tricky to find because they are usually inlined, but if you see lots of computations involving `gRandom` and it's members, chances are that it's a `Next32` computation (the argument may vary though, but starting by setting `0` may help to spot the actual `factor` used).
+
+## TEQ
+
+In the ARM code, you may found some `teq r1, r2` instructions. According to the [official documentation](https://support.arm.com/documentation/100235/0002/the-cortex-m33-instruction-set/general-data-processing-instructions/tst-and-teq), the "`TEQ` instruction performs a bitwise Exclusive OR operation".
+Currently, the only known matching C instruction is using a XOR operator between `r1` and `r2` (e.g. `r1 ^ r2`).
+A real example is available in `ActorLokomo::vfunc_2C`.
 
 # Symbols
 
