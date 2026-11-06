@@ -1448,7 +1448,7 @@ void ActorLokomo::func_ov058_02146d74(unk32 param1, unk32 param2) {
 
             if (this->mUnk_903) {
                 ActorUnkZLSL_AnimationTag *data = data_ov058_02154cdc;
-                this->mUnk_5B0.vfunc_1C(data[this->func_ov058_02146ccc()], FX_Mul(var4, 0x1000), var, 0x0);
+                this->mUnk_5B0.vfunc_1C(data[this->func_ov058_02146ccc()], FX_MUL(var4, 0x1000), var, 0x0);
                 this->mUnk_69C.vfunc_1C(data[this->func_ov058_02146cec(0x0)], 0x0, var, 0x0);
                 this->mUnk_788.vfunc_1C(data[this->func_ov058_02146d30(0x0)], 0x0, var, 0x0);
             } else {
