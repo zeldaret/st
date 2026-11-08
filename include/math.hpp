@@ -77,6 +77,10 @@ struct VecFx32Cpp {
         VecFx32_Copy(vec, &this->vec);
     }
 
+    void CopyOut(VecFx32Cpp *vec) {
+        VecFx32_Copy(&vec->vec, &this->vec);
+    }
+
     bool TryNormalize() {
         return VecFx32_TryNormalize(&this->vec);
     }
