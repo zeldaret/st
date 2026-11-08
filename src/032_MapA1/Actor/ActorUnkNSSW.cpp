@@ -312,7 +312,7 @@ void ActorUnkNSSW::func_ov032_021203fc() {
     sp84.vec.z = -sp84.vec.z;
 
     if (!sp84.TryNormalize()) {
-        sp84.CopyFrom(&data_027e0108);
+        sp84.CopyOut(&data_027e0108);
         unk16 *ptr = (unk16 *) &spC;
         func_01fff17c(ptr, data_027e0ce0, 0);
         func_01ff9638(&sp84.vec, *ptr);

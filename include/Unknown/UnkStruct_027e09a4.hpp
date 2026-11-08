@@ -291,6 +291,7 @@ public:
     const bool IsHyruleCastle() const { return this->mUnk_00.sceneIndex == SceneIndex_f_hyral; }
     const bool IsCastleTown() const { return this->mUnk_00.sceneIndex == SceneIndex_f_htown; }
     const BOOL IsCastleOrTown() const { return this->IsHyruleCastle() || this->IsCastleTown(); }
+    const bool IsFinalDuet() const { return this->mUnk_00.sceneIndex == SceneIndex_b_last22; }
 
     const bool IsSceneModeAdventure() const { return this->mSceneMode == SceneMode_AdventureMode; }
     const bool IsSceneModeBattle() const { return this->mSceneMode == SceneMode_BattleMode; }
