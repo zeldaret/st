@@ -364,6 +364,7 @@ enum OverlayIndex_ {
 
 typedef u32 OverlaySlot;
 enum OverlaySlot_ {
+    /* -1 */ OverlaySlot_None = -1,
     /* 00 */ OverlaySlot_Second,
     /* 01 */ OverlaySlot_1,
     /* 02 */ OverlaySlot_2,
@@ -423,17 +424,17 @@ public:
     void Load(OverlaySlot slot, OverlayIndex index);
     void LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index);
     void Unload(OverlaySlot slot);
-    void LoadOverlaySetup(s32 index);
-    void UnloadOverlaySetup();
-
-    void LoadEquipItem(ItemFlag equipId);
-
+    OverlaySlot func_02014878(void *addr);
     void func_020148d0(OverlayIndex index);
     void func_02014918(OverlayIndex index);
-    void func_02014994(unk32 param1);
+    void func_02014944(OverlayIndex index);
+    void func_02014994(OverlayIndex index);
+
+    static bool func_020147a8();
+    static bool func_020147c4();
+    static bool func_020147e0(OverlayIndex index);
 };
 
 extern OverlayManager gOverlayManager;
 extern OverlayManager data_02049ba0;
-extern OverlayId data_0203e0e8[OverlayIndex_COUNT];
 extern char *data_02043c88[OverlayIndex_COUNT];

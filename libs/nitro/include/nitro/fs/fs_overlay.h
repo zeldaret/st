@@ -39,6 +39,7 @@ typedef struct FSOverlayInfo {
 
 BOOL FS_LoadOverlay(u32 arg0, u32 id);
 BOOL FS_UnloadOverlay(u32 arg0, u32 id);
+BOOL FS_LoadOverlayInfo(FSOverlayInfo *arg0, u32 arg1, u32 id);
 
 #ifdef __cplusplus
 } // extern "C"
