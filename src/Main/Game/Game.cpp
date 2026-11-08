@@ -119,11 +119,14 @@ void Game::Run() {
             }
         }
 
+        (void) ((f32) REG_FRAME_COUNTER); // fixes regalloc
         if (this->mFrameCounter + data_0204a110.mUnk_004 - (s32) REG_FRAME_COUNTER > 1) {
             func_0201328c();
         }
 
+        (void) ((f32) REG_FRAME_COUNTER);
         while (this->mFrameCounter + data_0204a110.mUnk_004 - (s32) REG_FRAME_COUNTER > 1) {
+            (void) ((f32) REG_FRAME_COUNTER);
             func_020132c8();
         }
 

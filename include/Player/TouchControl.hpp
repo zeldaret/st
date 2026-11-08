@@ -47,6 +47,10 @@ public:
         }
     }
 
+    const u16 GetFlags() const {
+        return this->mFlags;
+    }
+
     void Init();
     void IncreaseSpeed(u16 increase);
     void UpdateFlags(u16 speed);
