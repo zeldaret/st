@@ -176,8 +176,8 @@ void ActorKenzo::Update() {
     this->vfunc_10C();
 }
 
-bool ActorKenzo::vfunc_5C() {
-    bool retValue = this->Actor_Derived1::vfunc_5C();
+bool ActorKenzo::vfunc_5C(unk32 param1, unk32 param2) {
+    bool retValue = this->Actor_Derived1::vfunc_5C(param1, param2);
 
     if (retValue && (this->mUnk_5C.mParams[2] == 0x1 ||
                      (this->mUnk_5C.mParams[2] == 0x0 && this->Actor_Derived1::func_ov000_020a8dd0()))) {
@@ -337,12 +337,11 @@ s16 ActorKenzo::func_ov058_021488d8() {
     return var;
 }
 
-// non-matching
 s16 ActorKenzo::vfunc_80(unk32 param1, unk32 param2, unk32 param3) {
-    u16 value = ((param1 + 1) & 0xFF) | (param2 << 8);
-
-    if (value != 0x301) {
-        if (value == 0x502) {
+#pragma unused(param3)
+    unk32 params = (u16) ((u8) (param1 + 1) | param2 << 8);
+    if (params != 0x301) {
+        if (params == 0x502) {
             if (this->mUnk_354 == 6) {
                 this->mUnk_354 = this->func_ov058_021488d8();
             }
