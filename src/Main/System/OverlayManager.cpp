@@ -1,37 +1,44 @@
 #include "System/OverlayManager.hpp"
-#include "CommonFuncs.hpp"
+#include "Unknown/Common.hpp"
 #include "global.h"
 
 #include <nitro/fs.h>
 
-struct UnkStruct_020ee698 {
-    /* 00 */ unk8 mUnk_00[0x2C];
-    /* 2C */ unk32 mUnk_2C;
-    /* 30 */
-};
-extern UnkStruct_020ee698 data_ov000_020ee698;
+extern OverlayId data_0203e0e8[OverlayIndex_COUNT];
 
-struct OverlaySetup {
-    /* 00 */ unk8 mUnk_00;
-    /* 01 */ unk8 mUnk_01;
-    /* 02 */ unk8 mUnk_02;
-    /* 03 */ unk8 mUnk_03;
-    /* 04 */ OverlayId slot1Overlay;
-    /* 08 */ OverlayId slot2Overlay;
-    /* 0C */ OverlayId slot3Overlay;
-    /* 10 */ OverlayId slot12Overlay;
-    /* 14 */ void *mUnk_14;
-    /* 18 */ void *mUnk_18;
-    /* 1C */
-};
-extern OverlaySetup gOverlaySetups[];
+bool OverlayManager::func_020147a8() {
+    return gOverlayManager.mLoadedOverlays[OverlaySlot_Second] == OverlayIndex_Second;
+}
+
+bool OverlayManager::func_020147c4() {
+    return gOverlayManager.mLoadedOverlays[OverlaySlot_Second] == OverlayIndex_Second;
+}
 
 THUMB_BEGIN
 
-void OverlayManager::LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index) {
-    OverlayIndex loadedIndex = gOverlayManager.mLoadedOverlays[slot];
+bool OverlayManager::func_020147e0(OverlayIndex index) {
+    bool var_r2 = true;
 
-    if (index != loadedIndex) {
+#define UNK(x) (1 << (x - 1))
+
+    u32 unk = 0;
+    unk |= UNK(OverlayIndex_Factory);
+    unk |= UNK(OverlayIndex_SoftKeyboard);
+    unk |= UNK(OverlayIndex_Collect);
+    unk |= UNK(OverlayIndex_SceneInit);
+    // unk == 0x2007
+
+    if (index - 1 <= OverlayIndex_Stamp && UNK(index) & unk) {
+        var_r2 = false;
+    }
+
+#undef UNK
+
+    return var_r2;
+}
+
+void OverlayManager::LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index) {
+    if (index != gOverlayManager.mLoadedOverlays[slot]) {
         this->Unload(slot);
         this->Load(slot, index);
     }
@@ -54,36 +61,83 @@ void OverlayManager::Unload(OverlaySlot slot) {
     }
 }
 
-void OverlayManager::LoadOverlaySetup(s32 index) {
-    OverlayId overlayId;
-    OverlaySetup *pSetup;
+OverlaySlot OverlayManager::func_02014878(void *addr) {
+    for (int var_r4 = OverlaySlot_Second; var_r4 < OverlaySlot_COUNT; var_r4++) {
+        OverlayIndex temp_r2 = gOverlayManager.mLoadedOverlays[var_r4];
+        FSOverlayInfo sp0;
 
-    pSetup = &gOverlaySetups[index];
-
-    this->LoadIfNotLoaded(OverlaySlot_1, pSetup->slot1Overlay);
-    this->LoadIfNotLoaded(OverlaySlot_2, pSetup->slot2Overlay);
-
-    if (index == 5) {
-        func_ov007_02102850(&data_027e0ce0);
-    } else {
-        overlayId = pSetup->slot12Overlay;
-
-        if (index == 6 && data_ov000_020ee698.mUnk_2C == 2) {
-            overlayId = OverlayId_CastleTown;
+        if (temp_r2 != OverlayIndex_None && FS_LoadOverlayInfo(&sp0, 0, data_0203e0e8[temp_r2]) && addr >= sp0.overlay.addr &&
+            (uintptr_t) addr < (uintptr_t) sp0.overlay.addr + (sp0.overlay.textSize + sp0.overlay.bssSize)) {
+            return var_r4;
         }
+    }
 
-        this->Load(OverlaySlot_3, pSetup->slot3Overlay);
-        this->Load(OverlaySlot_12, overlayId);
+    return OverlaySlot_None;
+}
+
+void OverlayManager::func_020148d0(OverlayIndex index) {
+    this->Unload(OverlaySlot_6);
+    this->Unload(OverlaySlot_3);
+
+    if ((s32) index >= OverlayIndex_StartUp && (s32) index < OverlayIndex_BattleGame) {
+        this->Unload(OverlaySlot_5);
+        this->LoadIfNotLoaded(OverlaySlot_4, index);
+    } else {
+        this->LoadIfNotLoaded(OverlaySlot_4, OverlayIndex_WirelessCommon);
+        this->LoadIfNotLoaded(OverlaySlot_5, index);
     }
 }
 
-void OverlayManager::UnloadOverlaySetup() {
-    this->Unload(OverlaySlot_12);
-    this->Unload(OverlaySlot_3);
+void OverlayManager::func_02014918(OverlayIndex index) {
+    this->LoadIfNotLoaded(OverlaySlot_6, index);
 
-    if (this->mLoadedOverlays[2] == OverlayId_RailEdit) {
-        func_ov007_021028a0(&data_027e0ce0);
-        this->Unload(OverlaySlot_2);
+    if (index == OverlayIndex_Land && gOverlayManager.mLoadedOverlays[OverlaySlot_1] == OverlayIndex_SceneInit) {
+        this->LoadIfNotLoaded(OverlaySlot_3, OverlayIndex_SceneInitLand);
+    }
+}
+
+void OverlayManager::func_02014944(OverlayIndex index) {
+    switch (index - OverlayIndex_BossForest) {
+        case DungeonType_BossForest:
+        case DungeonType_DgnForest:
+            this->LoadIfNotLoaded(OverlaySlot_11, OverlayIndex_DgnLv1);
+            break;
+        case DungeonType_BossWater:
+        case DungeonType_DgnWater:
+            this->LoadIfNotLoaded(OverlaySlot_11, OverlayIndex_DgnLv3);
+            break;
+        case DungeonType_BossDesert:
+        case DungeonType_DgnDesert:
+            this->LoadIfNotLoaded(OverlaySlot_11, OverlayIndex_DgnLv5);
+            break;
+        default:
+            break;
+    }
+
+    this->LoadIfNotLoaded(OverlaySlot_8, index);
+}
+
+void OverlayManager::func_02014994(OverlayIndex index) {
+    if (index != gOverlayManager.mLoadedOverlays[OverlaySlot_1]) {
+        this->Unload(OverlaySlot_1);
+
+        if (this->func_020147e0(index)) {
+            this->LoadIfNotLoaded(OverlaySlot_2, OverlayIndex_CourseExec);
+
+            if (gOverlayManager.mLoadedOverlays[OverlaySlot_6] == OverlayIndex_Land && index != OverlayIndex_Paint &&
+                index != OverlayIndex_WorldMap && index != OverlayIndex_Stamp) {
+                this->LoadIfNotLoaded(OverlaySlot_3, OverlayIndex_CourseExecLand);
+            }
+        } else {
+            this->Unload(OverlaySlot_3);
+            this->Unload(OverlaySlot_2);
+        }
+
+        this->LoadIfNotLoaded(OverlaySlot_1, index);
+
+        if (index == OverlayIndex_SceneInit && gOverlayManager.mLoadedOverlays[OverlaySlot_6] == OverlayIndex_Land) {
+            this->LoadIfNotLoaded(OverlaySlot_3, OverlayIndex_SceneInitLand);
+        }
     }
 }
 

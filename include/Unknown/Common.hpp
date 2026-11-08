@@ -1406,3 +1406,18 @@ struct UnkDataStruct5 {
     const char *entries[64];
     u32 numEntries;
 };
+
+enum DungeonType_ {
+    /* 00 */ DungeonType_BossForest,
+    /* 01 */ DungeonType_BossSnow,
+    /* 02 */ DungeonType_BossWater,
+    /* 03 */ DungeonType_BossFlame,
+    /* 04 */ DungeonType_BossDesert,
+    /* 05 */ DungeonType_BossDeago,
+    /* 06 */ DungeonType_BossLast1,
+    /* 07 */ DungeonType_BossLast2,
+    /* 08 */ DungeonType_DgnForest,
+    /* 09 */ DungeonType_DgnSnow,
+    /* 10 */ DungeonType_DgnWater,
+    /* 11 */ DungeonType_DgnDesert,
+};

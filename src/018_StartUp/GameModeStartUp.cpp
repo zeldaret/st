@@ -49,7 +49,7 @@ void Game::func_ov018_020c48f8() {
         data_02049ba0.LoadIfNotLoaded(OverlaySlot_Second, OverlayIndex_Second);
         data_0204999c.func_ov018_020c4a5c();
         data_ov000_020b50c0.func_ov018_020c5718();
-        data_02049ba0.func_02014994(1);
+        data_02049ba0.func_02014994(OverlayIndex_SceneInit);
     }
 }
 
