@@ -3,6 +3,7 @@
 #include "Game/GameMode.hpp"
 #include "Game/GameModeStartUp.hpp"
 #include "Save/SaveManager.hpp"
+#include "Unknown/UnkStruct_0204a110.hpp"
 #include "global.h"
 #include "nitro/os.h"
 #include "types.h"

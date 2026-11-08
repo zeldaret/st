@@ -985,7 +985,7 @@ func_020195bc kind:function(arm,size=0x2c) addr:0x020195bc
 func_020195e8 kind:function(arm,size=0x2c) addr:0x020195e8
 _ZN18UnkStruct_0204a11013func_0201967cEiiiii kind:function(arm,size=0x34) addr:0x02019614
 func_020196b0 kind:function(arm,size=0x4c) addr:0x02019648
-func_02019694 kind:function(arm,size=0x238) addr:0x02019694
+func_020196fc kind:function(arm,size=0x238) addr:0x02019694
 func_020198cc kind:function(arm,size=0x140) addr:0x020198cc
 func_02019a74 kind:function(arm,size=0xc8) addr:0x02019a0c
 func_02019b3c kind:function(arm,size=0x110) addr:0x02019ad4
@@ -2782,7 +2782,7 @@ data_02049b18 kind:bss addr:0x0204b098
 data_0204b0aa kind:bss addr:0x0204b0aa
 data_02049b4c kind:bss addr:0x0204b0cc
 data_0204b0d2 kind:bss addr:0x0204b0d2
-data_0204b0f4 kind:bss addr:0x0204b0f4
+data_02049b74 kind:bss addr:0x0204b0f4
 data_0204b0fc kind:bss addr:0x0204b0fc
 data_02049b80 kind:bss addr:0x0204b100
 data_02049ba0 kind:bss addr:0x0204b120
@@ -2820,7 +2820,7 @@ data_0204fb8c kind:bss addr:0x0204fb8c
 data_0204fbbc kind:bss addr:0x0204fbbc
 data_0204fbc0 kind:bss addr:0x0204fbc0
 data_0204fbc8 kind:bss addr:0x0204fbc8
-data_0204fbcc kind:bss addr:0x0204fbcc
+data_0204e64c kind:bss addr:0x0204fbcc
 data_0204fbe4 kind:bss addr:0x0204fbe4
 data_0204fbe6 kind:bss addr:0x0204fbe6
 data_0204fbe8 kind:bss addr:0x0204fbe8
