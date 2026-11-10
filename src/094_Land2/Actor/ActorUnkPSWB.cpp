@@ -27,6 +27,8 @@ struct UnkStruct_data_ov094_021785a4 {
 
 extern UnkStruct_data_ov094_021785a4 data_ov094_021785a4;
 extern MapObject_10 data_ov094_021786b0;
+
+// Not extern (in sinit)
 extern UnkStruct_027e09c0_04 data_ov094_021785c0; // INFO: not sure about the type
 
 PTMF<ActorUnkPSWB> data_ov094_0217703c[0x5] = {
@@ -479,7 +481,30 @@ void ActorUnkPSWB::func_ov094_02167c54(void) {
 void ActorUnkPSWB::func_ov094_02167d20(void) {}
 void ActorUnkPSWB::func_ov094_02167dbc(void) {}
 void ActorUnkPSWB::func_ov094_02167e58(void) {}
-void ActorUnkPSWB::vfunc_58(void) {}
+
+// return bool?
+unk32 ActorUnkPSWB::vfunc_58(VecFx32 *param1) {
+    if (UnkStruct_ov048_02137600::vfunc_58(param1) != 0) {
+        u32 var1;
+        unk32 ret = 1;
+        func_01fff05c(&var1, data_027e0cd8->mUnk_0C, param1);
+        if ((var1 & 0x1F) != 0xC) {
+            u32 var2; // some kind of ref?
+            func_01fff05c((u32 *) &var2, data_027e0cd8->mUnk_0C, param1);
+            bool cond  = true;
+            u32 tmpCpy = *(volatile u32 *) &var2;
+            if ((var2 & 0x1F) != 8 && (tmpCpy >> 5 & 3) != 2) {
+                cond = false;
+            }
+            if (!cond) {
+                ret = 0;
+            }
+        }
+        return ret;
+    } else {
+        return 0;
+    }
+}
 
 // non-matching (regalloc in the FX_Muls)
 void ActorUnkPSWB::func_ov094_0216825c(VecFx32 *param1, unk32 param2) {

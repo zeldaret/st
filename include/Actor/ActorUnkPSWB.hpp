@@ -101,7 +101,7 @@ public:
     /* 24 */ virtual void vfunc_24() override;
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorUnkPSWB();
-    /* 58 */ virtual void vfunc_58(void) override;
+    /* 58 */ virtual unk32 vfunc_58(VecFx32 *param1) override;
     /* 5C */ virtual unk32 vfunc_5C(void) override;
     /* 60 */ virtual unk32 vfunc_60(void) override;
     /* 6C */ virtual void vfunc_6C(void) override;

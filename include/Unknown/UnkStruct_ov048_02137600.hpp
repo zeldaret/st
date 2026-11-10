@@ -20,7 +20,7 @@ public:
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 4C */ virtual ~UnkStruct_ov048_02137600() override;
     /* 54 */ virtual void vfunc_54(void);
-    /* 58 */ virtual void vfunc_58(void);
+    /* 58 */ virtual unk32 vfunc_58(VecFx32 *param1);
     /* 5C */ virtual unk32 vfunc_5C(void);
     /* 60 */ virtual unk32 vfunc_60(void);
     /* 64 */ virtual void vfunc_64(void);
