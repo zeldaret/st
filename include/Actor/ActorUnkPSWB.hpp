@@ -11,9 +11,12 @@
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "Unknown/UnkStruct_ov048_02137600.hpp"
 #include "global.h"
+#include "math.hpp"
 #include "nitro/fx.h"
 #include "nitro/types.h"
 #include "types.h"
+
+struct ActorUnkPSWB;
 
 //! WARN: Generate an extra vtable that's not in the target
 class UnkStruct_ov094_02176fb8_Base : public UnkStruct_ov031_Items_00 {
@@ -32,9 +35,9 @@ public:
 class UnkStruct_ov094_02176fb8 : public UnkStruct_ov094_02176fb8_Base {
 public:
     /* 00 (vtable) */
-    /* 0C */ void *mUnk_0C; // Maybe an Actor
+    /* 0C */ ActorUnkPSWB *mUnk_0C;
 
-    UnkStruct_ov094_02176fb8(void *param1);
+    UnkStruct_ov094_02176fb8(ActorUnkPSWB *param1);
 
     /* 00 */ virtual ~UnkStruct_ov094_02176fb8() override;
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
@@ -81,9 +84,7 @@ public:
     /* 16E */ unk16 mUnk_16E;
     /* 170 */ unk16 mUnk_170; // Very likely an angle
     /* 172 */ unk16 mUnk_172; // WARN: unused
-    /* 174 */ unk32 mUnk_174;
-    /* 178 */ unk32 mUnk_178;
-    /* 17C */ unk32 mUnk_17C;
+    /* 174 */ VecFx32Cpp mUnk_174;
     /* 180 */ volatile u16 mUnk_180;
     /* 182 */ unk16 mUnk_182; // WARN: unused
     /* 184 */ ActorUnkPSWB_184 mUnk_184;
@@ -125,7 +126,7 @@ public:
     void func_ov094_02167614(void);
     void func_ov094_02167688(void);
     void func_ov094_021676f4(void);
-    void func_ov094_02167794(void);
+    void func_ov094_02167794(unk32 param1, unk32 param2, unk32 param3);
     void func_ov094_0216781c(void);
     void func_ov094_02167ab8(void);
     bool func_ov094_02167b24(unk32 param1);
@@ -135,7 +136,7 @@ public:
     void func_ov094_02167d20(void);
     void func_ov094_02167dbc(void);
     void func_ov094_02167e58(void);
-    static void func_ov094_0216825c(void *param1, VecFx32 *param2, unk32 param3);
+    void func_ov094_0216825c(VecFx32 *param1, unk32 param2);
     void func_ov094_02168310(void);
 };
 

@@ -12,7 +12,9 @@
 #include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "flags.h"
+#include "math.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
 #include "nitro/types.h"
@@ -133,9 +135,7 @@ ActorUnkPSWB::ActorUnkPSWB() :
     mUnk_16C(0),
     mUnk_16E(0),
     mUnk_170(0),
-    mUnk_174(0),
-    mUnk_178(0),
-    mUnk_17C(0),
+    mUnk_174(0, 0, 0),
     mUnk_180(0),
     mUnk_184(0),
     mUnk_188(-1),
@@ -237,17 +237,44 @@ void ActorUnkPSWB::func_ov094_02166c2c(void) {
 }
 
 void ActorUnkPSWB::func_ov094_02166c88(void) {
-    unk32 ret = this->func_ov094_02167518();
-    if (ret != 0 && func_ov048_021307f8(this, mUnk_160) != 0) {
-        unk32 *var;
-        func_ov048_02130790(this, mUnk_160, var, 0x1000);
-        mUnk_140 = var[0];
-        mUnk_144 = var[2];
-        func_ov048_02130aa4(this, var);
+    bool cond = false;
+    if (this->func_ov094_02167518() != 0) {
+        cond = true;
+    }
+
+    if (cond && func_ov048_021307f8(this, mUnk_160) != 0) {
+        VecFx32 vec;
+        func_ov048_02130790(this, mUnk_160, &vec, 0x1000);
+        mUnk_140 = vec.x;
+        mUnk_144 = vec.z;
+        func_ov048_02130aa4(this, &vec);
         this->func_ov094_02167518();
     }
+
     this->func_ov000_02098838();
     VecFx32_Copy(&mPos, &mPrevPos);
+    VecFx32_Add(&mPos, &mVel, &mPos);
+
+    UnkStruct_ov094_02176fb8_Base itemVar; // Not the actual class (should be from ov048 maybe?)
+    this->func_ov000_02098910(&itemVar, 0x10);
+
+    if ((mUnk_46 & ~1) != 0) {
+        func_ov000_0205ad64(&mPos, &mPos);
+        mUnk_140 = mPos.x;
+        mUnk_144 = mPos.z;
+    } else {
+        if (mUnk_140 == mPos.x && mUnk_144 == mPos.z) {
+            this->func_ov094_021668e0(0);
+        }
+    }
+
+    if (!GET_FLAG2(mUnk_46, 0)) {
+        this->func_ov094_021668e0(2);
+    } else {
+        mVel.y = 0;
+    }
+
+    data_027e09a8->func_ov000_02071d34(&mRef, 0x991D, &mPos, 0);
 }
 
 void ActorUnkPSWB::func_ov094_02166e10(void) {
@@ -309,7 +336,59 @@ void ActorUnkPSWB::func_ov094_02166f94(void) {
     mTimer.Set(0, 100);
 }
 
-void ActorUnkPSWB::func_ov094_02167024(void) {}
+void ActorUnkPSWB::func_ov094_02167024(void) {
+    mVel.y += mUnk_2C;
+    VecFx32_Copy(&mPos, &mPrevPos);
+    VecFx32_Add(&mPos, &mVel, &mPos);
+
+    switch (mUnk_166) {
+        case 0: {
+            mTimer.Update();
+            if (mTimer.GetRemainingTime() % 5 == 0) {
+                this->func_ov094_02167dbc();
+            }
+
+            Vec2bCpp vec2b;
+            VecFx32 vec = mPos;
+            vec.y += FX_F32_TO_FX32(1.0f);
+
+            UnkStruct_027e0cd8_0C_Base *tmpVar = data_027e0cd8->mUnk_0C;
+            func_01ffedac(&vec2b, &vec);
+
+            fx32 tmpRet = tmpVar->func_01ffedf4(&vec2b);
+            if (tmpRet - 0x66 <= mPos.y && 0 < mVel.y) {
+                mUnk_154 = mPos.y;
+                mVel.y   = 0;
+                mUnk_2C  = 0;
+                mUnk_166++;
+                mUnk_168 = 0;
+                if (mUnk_5C.mParams[0] != 0) {
+                    VecFx32_Copy(&mPos, &mUnk_174.vec);
+                    if (mUnk_5C.mParams[0] == 0) {
+                        return;
+                    }
+                    func_ov000_0205ad64(&mUnk_174.vec, &mUnk_174.vec);
+                    func_ov000_02070cc0(data_027e09a4, &mUnk_174.vec, mUnk_5C.mUnk_24);
+                }
+            }
+            break;
+        }
+        case 1: {
+            SET_FLAG2(mUnk_180, 0);
+            VecFx32 vec;
+            VecFx32_Init(0, 0, 0, &vec);
+            func_01ff993c(&mVel, &vec, 0x21);
+            this->func_ov094_021676f4();
+            this->func_ov094_02167d20();
+            if (GET_FLAG2(mUnk_180, 1)) {
+                this->func_ov094_021668e0(4);
+            }
+            break;
+        }
+    }
+
+    this->func_ov094_02167794(0x600, 0x80, 0x500);
+}
 
 void ActorUnkPSWB::func_ov094_02167224(void) {
     mUnk_2C = 0;
@@ -326,7 +405,7 @@ void ActorUnkPSWB::func_ov094_02167688(void) {}
 void ActorUnkPSWB::vfunc_6C(void) {}
 
 void ActorUnkPSWB::func_ov094_021676f4(void) {}
-void ActorUnkPSWB::func_ov094_02167794(void) {}
+void ActorUnkPSWB::func_ov094_02167794(unk32 param1, unk32 param2, unk32 param3) {}
 
 void ActorUnkPSWB::func_ov094_0216781c(void) {
     mUnk_170 = FX_Atan2Idx(mVel.x, mVel.z);
@@ -401,9 +480,29 @@ void ActorUnkPSWB::func_ov094_02167d20(void) {}
 void ActorUnkPSWB::func_ov094_02167dbc(void) {}
 void ActorUnkPSWB::func_ov094_02167e58(void) {}
 void ActorUnkPSWB::vfunc_58(void) {}
-void ActorUnkPSWB::func_ov094_0216825c(void *param1, VecFx32 *param2, unk32 param3) {}
 
-UnkStruct_ov094_02176fb8::UnkStruct_ov094_02176fb8(void *param1) :
+// non-matching (regalloc in the FX_Muls)
+void ActorUnkPSWB::func_ov094_0216825c(VecFx32 *param1, unk32 param2) {
+    if (0 < VecFx32_Dot(param1, &mVel)) {
+        return;
+    }
+
+    if (VecFx32_IsCleared(&mVel)) {
+        return;
+    }
+
+    if (param1->x != 0) {
+        mVel.x = FX_MulInline(param1->x, ABS(mVel.x));
+    }
+
+    if (param1->z != 0) {
+        mVel.z = FX_MulInline(param1->z, ABS(mVel.z));
+    }
+
+    func_01ff93c0(&mVel, param2);
+}
+
+UnkStruct_ov094_02176fb8::UnkStruct_ov094_02176fb8(ActorUnkPSWB *param1) :
     mUnk_0C(param1) {}
 
 UnkStruct_ov094_02176fb8::~UnkStruct_ov094_02176fb8() {
@@ -413,7 +512,7 @@ UnkStruct_ov094_02176fb8::~UnkStruct_ov094_02176fb8() {
 bool UnkStruct_ov094_02176fb8::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
     VecFx32 vec;
     VecFx16_Copy2VecFx32(&param1->mUnk_08, &vec);
-    // VecFx16_Copy(param1, &vec);
-    ActorUnkPSWB::func_ov094_0216825c(mUnk_0C, &vec, 0x800);
+
+    mUnk_0C->func_ov094_0216825c(&vec, 0x800);
     return 1;
 }

@@ -238,8 +238,9 @@ UnkStruct_027e0cec_18_04 *func_ov000_02054690(void *, unk32, unk32, unk32, unk32
 void func_ov000_02057cc8(ModelRender *);
 void func_ov000_02058c74(void *, int, int, int, int);
 BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, void *);
-bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
+void func_ov000_0205ad64(VecFx32 *, VecFx32 *);
 void func_ov000_0205ad90(Vec2bCpp param1, VecFx32 *param2);
+bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
 bool func_ov000_0205aeac();
 unk32 func_ov000_0205b090();
 unk32 func_ov000_0205b0ac(s16 param1);
@@ -269,6 +270,7 @@ void func_ov000_02062e44(Vec2s *param1, void *param2);
 void *func_ov000_02066294();
 unk32 func_ov000_02068504(int);
 unk32 func_ov000_02070c84(UnkStruct_027e09a4 *, VecFx32 *, unk16);
+void func_ov000_02070cc0(UnkStruct_027e09a4 *, VecFx32 *, unk16);
 void func_ov000_02072344(u16 *, UnkStruct_027e09ac_14 *);
 void func_ov000_02072fd0(UnkStackStruct1 *);
 void func_ov000_02073080(void *);
@@ -409,9 +411,9 @@ void func_ov034_02121de4(void *);
 void func_ov040_0212bab4(unk32); // might be in Actor class or one of its subclasses
 
 // overlay 48
-unk32 func_ov048_02130790(Actor *, unk32, unk32 *, unk32);
+unk32 func_ov048_02130790(Actor *, unk32, VecFx32 *, unk32);
 unk32 func_ov048_021307f8(Actor *, unk32);
-unk32 func_ov048_02130aa4(Actor *, unk32 *);
+unk32 func_ov048_02130aa4(Actor *, VecFx32 *);
 
 // overlay 70
 UnkStruct_ov070_0214dc74 *func_ov070_02143fe4(int index);
