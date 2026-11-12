@@ -113,6 +113,10 @@ static inline BOOL VecFx32_IsEqual(const VecFx32 *a, const VecFx32 *b) {
     return a->x == b->x && a->y == b->y && a->z == b->z;
 }
 
+static inline bool VecFx32_IsEqual_Bool(const VecFx32 *a, const VecFx32 *b) {
+    return a->x == b->x && a->y == b->y && a->z == b->z;
+}
+
 static inline bool VecFx32_IsCleared(const VecFx32 *a) {
     return a->x == 0 && a->y == 0 && a->z == 0;
 }

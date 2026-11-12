@@ -1953,7 +1953,8 @@ void ActorUnkVCFT::Update(void) {
 
     func_ov000_020986b4(&sp0, this, 0);
 
-    if (((u32) ((sp0 + 0x2000) << 0x10) >> 0x1E) == 2) {
+    if (GET_DIRECTION(sp0) == 2) {
+        // if (((u32) ((sp0 + 0x2000) << 0x10) >> 0x1E) == 2) {
         this->mUnk_4A[0] = 0;
     } else {
         this->mUnk_4A[0] = 5;

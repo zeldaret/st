@@ -1488,13 +1488,13 @@ _ZN18UnkStruct_027e09e819func_ov000_0207e99cEP14ZCBSectionGRDBP26UnkStruct_027e0
 func_ov000_0207eb40 kind:function(arm,size=0x4c) addr:0x0207eb40
 func_ov000_0207eb8c kind:function(arm,size=0x68) addr:0x0207eb8c
 func_ov000_0207ebf4 kind:function(arm,size=0x74) addr:0x0207ebf4
-func_ov000_0207ec68 kind:function(arm,size=0x20) addr:0x0207ec68
+_ZN15ActorUnkSCCN_B8C2Ev kind:function(arm,size=0x20) addr:0x0207ec68
 _ZN15ActorUnkSCCN_B8C1Ev kind:function(arm,size=0x20) addr:0x0207ec88
 _ZN15ActorUnkSCCN_B8D1Ev kind:function(arm,size=0x30) addr:0x0207eca8
 _ZN15ActorUnkSCCN_B8D0Ev kind:function(arm,size=0x38) addr:0x0207ecd8
 _ZN15ActorUnkSCCN_B8D2Ev kind:function(arm,size=0x30) addr:0x0207ed10
 func_ov000_0207ed40 kind:function(arm,size=0x44) addr:0x0207ed40
-_ZN15ActorUnkSCCN_B88vfunc_08Ev kind:function(arm,size=0x8) addr:0x0207ed84
+_ZN15ActorUnkSCCN_B88vfunc_08E9RefStructii kind:function(arm,size=0x8) addr:0x0207ed84
 func_ov000_0207ed8c kind:function(arm,size=0x20) addr:0x0207ed8c
 _ZN17Actor_Derived1_94C1Ev kind:function(arm,size=0x20) addr:0x0207edac
 func_ov000_0207edcc kind:function(arm,size=0x1c) addr:0x0207edcc
