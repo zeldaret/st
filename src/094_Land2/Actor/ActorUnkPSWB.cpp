@@ -10,6 +10,8 @@
 #include "RefStruct.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
+#include "Unknown/UnkStruct_027e09b4.hpp"
+#include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
@@ -144,8 +146,7 @@ ActorUnkPSWB::ActorUnkPSWB() :
     mUnk_184(0),
     mUnk_188(-1),
     mUnk_18C(0),
-    mUnk_190(0),
-    mUnk_192(0),
+    mUnk_190(0, 0),
     mUnk_194(this) {}
 
 ActorUnkPSWB::~ActorUnkPSWB() {
@@ -473,7 +474,48 @@ unk32 ActorUnkPSWB::vfunc_60(void) {
     return 0;
 }
 
-void ActorUnkPSWB::vfunc_2C(unk32 param1) {}
+void ActorUnkPSWB::vfunc_2C(unk32 param1) {
+    mUnk_190.Update();
+
+    if (this->func_01fff5d0(param1, 0) == 0) {
+        return;
+    }
+
+    if (mUnk_190.GetRemainingTime() % 10 > 5) {
+        return;
+    }
+
+    VecFx32 vec1;
+    VecFx32_Init(0x1000, 0x1000, 0x1000, &vec1);
+
+    MtxFx33 m1, m2;
+    u16 angleIdx = mUnk_170;
+    MTX_RotY33_(&m1, SIN(angleIdx), COS(angleIdx));
+
+    angleIdx = mUnk_16A;
+    MTX_RotX33_(&m2, SIN(angleIdx), COS(angleIdx));
+    MTX_Concat33(&m1, &m2, &m1);
+
+    s16 angleIdx2 = -mUnk_170;
+    MTX_RotY33_(&m2, SIN(angleIdx2), COS(angleIdx2));
+    MTX_Concat33(&m1, &m2, &m1);
+
+    MTX_RotY33_(&m2, SIN(mAngle.angle_u), COS(mAngle.angle_u));
+    MTX_Concat33(&m1, &m2, &m1);
+    mUnk_E0.vfunc_10(&vec1, &m1, &mPos);
+
+    if (GET_FLAG2(mUnk_180, 1)) {
+        Actor *actor = func_02016fbc(ActorId_OCTW, &mPos, 0);
+        if (actor != NULL && actor->mState != 3) {
+            func_ov000_020786dc((&data_027e09bc->mUnk_04[2])[param1], // hacky but it works, the mUnk access is weird
+                                &mPos, 1);
+        }
+    }
+
+    VecFx32 vec2;
+    VecFx32_Init(mPos.x, mPos.y + 0x7D7, mPos.z, &vec2);
+    data_027e09b4->func_ov017_020c08c4(&vec2, 0x800, 0x800, 0x1F, 0, 1);
+}
 
 unk32 ActorUnkPSWB::vfunc_70(void) {
     return 0x63d;
@@ -537,8 +579,7 @@ void ActorUnkPSWB::func_ov094_02167c54(void) {
             mPrevPos.y = vec2.y;
             mPrevPos.z = vec2.z;
             this->func_ov094_021668e0(4);
-            mUnk_192 = 0x3B;
-            mUnk_190 = 0;
+            mUnk_190.Set(0, 0x3B);
         }
     }
 }

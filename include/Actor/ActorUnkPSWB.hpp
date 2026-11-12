@@ -14,6 +14,7 @@
 #include "math.hpp"
 #include "nitro/fx.h"
 #include "nitro/types.h"
+#include "timer.hpp"
 #include "types.h"
 
 struct ActorUnkPSWB;
@@ -82,7 +83,7 @@ public:
     /* 16A */ unk16 mUnk_16A;
     /* 16C */ unk16 mUnk_16C;
     /* 16E */ unk16 mUnk_16E;
-    /* 170 */ unk16 mUnk_170; // Very likely an angle
+    /* 170 */ s16 mUnk_170;   // Very likely an angle
     /* 172 */ unk16 mUnk_172; // WARN: unused
     /* 174 */ VecFx32Cpp mUnk_174;
     /* 180 */ volatile u16 mUnk_180;
@@ -90,8 +91,7 @@ public:
     /* 184 */ ActorUnkPSWB_184 mUnk_184;
     /* 188 */ unk32 mUnk_188;
     /* 18C */ unk32 mUnk_18C;
-    /* 190 */ unk16 mUnk_190;
-    /* 192 */ unk16 mUnk_192;
+    /* 190 */ Timer mUnk_190;
     /* 194 */ ActorUnkPSWB_194 mUnk_194;
 
     ActorUnkPSWB();

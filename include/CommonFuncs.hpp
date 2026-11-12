@@ -279,6 +279,7 @@ void func_ov000_0207f4e8(void *);
 void func_ov000_0207f4fc(void *, void *, unk32, unk32);
 unk32 func_ov000_02077480();
 fx32 func_ov000_020775d8(fx32);
+void func_ov000_020786dc(UnkStruct_027e09bc_0C *, VecFx32 *, unk32);
 unk32 func_ov000_02078aec();
 void func_ov000_0207b6c0();
 void func_ov000_0207b70c(ActorLobarrierShield_174 *param1, Actor *param2);
