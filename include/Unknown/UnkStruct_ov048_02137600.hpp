@@ -1,5 +1,7 @@
 #include "Actor/Actor.hpp"
+#include "Physics/Cylinder.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
+#include "nitro/fx.h"
 #include "nitro/types.h"
 #include "types.h"
 
@@ -9,7 +11,8 @@ public:
     /* 94 */ unk8 mUnk_94;
     /* 95 */ PAD(0x95, 0x98);
     /* 98 */ unk32 mUnk_98;
-    /* 9C */ PAD(0x9C, 0xD4);
+    /* 9C */ PAD(0x9C, 0xA8);
+    /* A8 */ UnkStruct_ov031_Items_01 mUnk_A8;
     /* D4 */ UnkStruct_ov031_Items_00 mUnk_D4;
     /* D8 */ PAD(0xD8, 0xDC);
     /* DC */ unk32 mUnk_DC;

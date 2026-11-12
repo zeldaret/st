@@ -5,6 +5,7 @@
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorUnkSCCN.hpp"
 #include "CommonFuncs.hpp"
+#include "Item/ItemManager.hpp"
 #include "MapObject/MapObject.hpp"
 #include "RefStruct.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -207,7 +208,57 @@ void ActorUnkPSWB::func_ov094_021668e0(ActorState param1) {
     CALL_PTMF(data_ov094_0217703c[mState]);
 }
 
-void ActorUnkPSWB::Update(void) {}
+void ActorUnkPSWB::Update(void) {
+    if (GET_FLAG2(mUnk_180, 1)) {
+        mUnk_174.CopyOut(&mPos);
+    }
+
+    CALL_PTMF(data_ov094_02177064[mState]);
+    this->func_ov094_02167614();
+
+    if (data_027e0ce0->mHealth == 0) {
+        if (!data_027e0ce0->mUnk_2C->GetInventory()->HasPurplePotion() && mUnk_5C.mParams[0] != 0) {
+            func_ov000_02070cc0(data_027e09a4, &mUnk_5C.mInitialPos, mUnk_5C.mUnk_24);
+        }
+    }
+
+    if (mState != 3 && mState != 4) {
+        if (mUnk_140 != mPos.x || mUnk_144 != mPos.z) {
+            u16 angle   = FX_Atan2Idx(mUnk_140 - mPos.x, mUnk_144 - mPos.z);
+            s16 sin_val = SIN((s16) angle);
+            s16 cos_val = COS((s16) angle);
+            VecFx32 vec;
+            vec.x = FX_MulInline(sin_val, 0x7D7);
+            vec.z = FX_MulInline(cos_val, 0x7D7);
+            vec.y = 0;
+            VecFx32_Add(&vec, &mPos, &vec);
+
+            UnkStruct_ov000_0207de98 unk;
+            unk.vec.x  = vec.x;
+            unk.vec.y  = vec.y;
+            unk.vec.z  = vec.z;
+            unk.param1 = 0x7D7;
+            unk.param2 = 0x1000;
+            data_027e09c0->func_ov000_0207de98(mRef, &unk, mUnk_38);
+        }
+    }
+    VecFx32 vec;
+    VecFx32_Init(mUnk_140, mPos.y, mUnk_144, &vec);
+    if (func_ov048_021307f8(this, GET_DIRECTION(func_02016958(&mPos, &vec))) != 0) {
+        return;
+    }
+
+    if (0x800 <= func_01ff9258(vec.x - mPos.x, vec.z - mPos.z)) {
+        return;
+    }
+
+    if (!GET_FLAG(mFlags, 0)) {
+        return;
+    }
+
+    mUnk_A8.mUnk_0C.Init(&vec, 0x7D7);
+    data_027e09c0->func_ov000_0207e58c(mRef, 10, 100, &mUnk_A8);
+}
 
 void ActorUnkPSWB::vfunc_24(void) {
     if (mState == 0) {
@@ -365,7 +416,7 @@ void ActorUnkPSWB::func_ov094_02167024(void) {
                 mUnk_166++;
                 mUnk_168 = 0;
                 if (mUnk_5C.mParams[0] != 0) {
-                    VecFx32_Copy(&mPos, &mUnk_174.vec);
+                    mUnk_174.CopyOut(&mPos);
                     if (mUnk_5C.mParams[0] == 0) {
                         return;
                     }
