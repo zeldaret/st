@@ -13,6 +13,7 @@
 #include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "flags.h"
 #include "math.hpp"
@@ -450,7 +451,7 @@ void ActorUnkPSWB::func_ov094_02167224(void) {
 
 void ActorUnkPSWB::func_ov094_0216723c(void) {}
 unk32 ActorUnkPSWB::func_ov094_02167518(void) {}
-void ActorUnkPSWB::func_ov094_021675ac(void) {}
+void ActorUnkPSWB::func_ov094_021675ac(VecFx32 *vec) {}
 void ActorUnkPSWB::func_ov094_02167614(void) {}
 void ActorUnkPSWB::func_ov094_02167688(void) {}
 
@@ -478,7 +479,7 @@ unk32 ActorUnkPSWB::vfunc_70(void) {
     return 0x63d;
 }
 
-void ActorUnkPSWB::func_ov094_02167ab8(void) {}
+unk32 ActorUnkPSWB::func_ov094_02167ab8(void) {}
 
 bool ActorUnkPSWB::func_ov094_02167b24(unk32 param1) {
     if (param1 == 1 && !data_027e0ce0->func_01fff1a4()) {
@@ -487,7 +488,20 @@ bool ActorUnkPSWB::func_ov094_02167b24(unk32 param1) {
     return func_ov000_0208bba4(data_027e0ce0, param1);
 }
 
-void ActorUnkPSWB::func_ov094_02167b64(unk32 param1) {}
+void ActorUnkPSWB::func_ov094_02167b64(unk32 param1) {
+    if (this->func_ov094_02167ab8() != 0) {
+        mUnk_98 = param1;
+
+        if (this->func_ov094_02167b24(param1)) {
+            VecFx32 vec;
+            this->func_ov094_021675ac(&vec);
+            if (this->vfunc_58(&vec) != 0) {
+                func_ov048_02130aa4(this, &vec);
+                this->func_ov094_021668e0(1);
+            }
+        }
+    }
+}
 
 void ActorUnkPSWB::func_ov094_02167bf0(void) {
     if (GET_FLAG2(mUnk_180, 1)) {
@@ -529,8 +543,48 @@ void ActorUnkPSWB::func_ov094_02167c54(void) {
     }
 }
 
-void ActorUnkPSWB::func_ov094_02167d20(void) {}
-void ActorUnkPSWB::func_ov094_02167dbc(void) {}
+void ActorUnkPSWB::func_ov094_02167d20(void) {
+    VecFx32 vec = mPos;
+    vec.y       = mUnk_15C;
+
+    unk32 tmp = mUnk_158;
+    if (mUnk_184.mUnk_00 != NULL) {
+        mUnk_184.mUnk_00->mUnk_58 = tmp;
+    }
+
+    data_027e0cec->func_ov000_020a0140(&mUnk_184, &vec);
+
+    fx32 ret = func_01ff9258(mVel.x, mVel.z);
+    if (ret > 0) {
+        fx32 div = FX_Div(ret, FX_F32_TO_FX32(0.7f));
+        mUnk_158 = CLAMP(div, FX_F32_TO_FX32(0.03f), FX_F32_TO_FX32(1.0f));
+    } else {
+        mUnk_158 = FX_F32_TO_FX32(0.03f);
+    }
+}
+
+typedef struct {
+    /* 000 */ PAD(0x00, 0x1AC);
+    /* 1AC */ unk32 mUnk_1AC;
+} UnkStruck_func_ov094_02167dbc;
+
+void ActorUnkPSWB::func_ov094_02167dbc(void) {
+    ActorParams params;
+    params.mUnk_28.Reset();
+    params.func_ov000_020975f8();
+
+    VecFx32 tmpVec = mPos;
+    tmpVec.y       = mUnk_15C;
+    VecFx32_Copy(&tmpVec, &params.mInitialPos);
+    RefStruct ref;
+    Actor::func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_EFRP, &params, 0);
+
+    UnkStruck_func_ov094_02167dbc *actor = (UnkStruck_func_ov094_02167dbc *) gpActorManager->func_01fff3b4(ref);
+    if (actor != NULL) {
+        actor->mUnk_1AC = 0x666;
+    }
+}
+
 void ActorUnkPSWB::func_ov094_02167e58(void) {}
 
 // return bool?

@@ -73,7 +73,7 @@ public:
     /* 150 */ unk32 mUnk_150;
     /* 154 */ unk32 mUnk_154;
     /* 158 */ unk32 mUnk_158;
-    /* 15C */ unk32 mUnk_15C;
+    /* 15C */ fx32 mUnk_15C;
     /* 160 */ unk32 mUnk_160;
     /* 164 */ unk8 mUnk_164;
     /* 165 */ unk8 mUnk_165; // WARN: unused
@@ -122,13 +122,13 @@ public:
     void func_ov094_02167224(void);
     void func_ov094_0216723c(void);
     unk32 func_ov094_02167518(void);
-    void func_ov094_021675ac(void);
+    void func_ov094_021675ac(VecFx32 *vec);
     void func_ov094_02167614(void);
     void func_ov094_02167688(void);
     void func_ov094_021676f4(void);
     void func_ov094_02167794(unk32 param1, unk32 param2, unk32 param3);
     void func_ov094_0216781c(void);
-    void func_ov094_02167ab8(void);
+    unk32 func_ov094_02167ab8(void);
     bool func_ov094_02167b24(unk32 param1);
     void func_ov094_02167b64(unk32 param1);
     void func_ov094_02167bf0(void);
