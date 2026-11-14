@@ -65,7 +65,7 @@ ActorProfileSpinut::ActorProfileSpinut() :
 }
 
 ActorSpinut::ActorSpinut() :
-    mUnk_0B0(G3d_GetModelPtr(GET_PROFILE(ActorProfileSpinut)->vfunc_04()->mUnk_50)),
+    mUnk_0B0(NNS_G3dGetMdl(GET_PROFILE(ActorProfileSpinut)->vfunc_04()->mUnk_50)),
     mUnk_110(&this->mUnk_0B0, GET_PROFILE(ActorProfileSpinut)->vfunc_04()),
     mUnk_1BC(&this->mUnk_0B0, GET_PROFILE(ActorProfileSpinut)->vfunc_04()),
     mUnk_218(0x0),

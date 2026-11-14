@@ -110,13 +110,13 @@ template <typename T> struct ProfileInstance {
 };
 
 template <typename T> static inline G3d_Model *GetModelFromProfile() {
-    return G3d_GetModelPtr((BMDSectionModel *) GET_PROFILE_20_50(T));
+    return NNS_G3dGetMdl((BMDSectionModel *) GET_PROFILE_20_50(T));
 }
 
 template <typename T> static inline G3d_Model *GetModelFromProfile2(s32 param1, u32 resId) {
     T *pProfile = GET_PROFILE(T);
     pProfile->func_ov000_0209ccd8(param1, resId);
-    return G3d_GetModelPtr((BMDSectionModel *) pProfile->mUnk_20[param1]->mUnk_50);
+    return NNS_G3dGetMdl((BMDSectionModel *) pProfile->mUnk_20[param1]->mUnk_50);
 }
 
 static inline G3d_Model *GetModelFromProfile3(MapObjectProfile_Derived2_20_Base *param1, const char *name) {

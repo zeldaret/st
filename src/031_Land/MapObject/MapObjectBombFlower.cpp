@@ -29,7 +29,7 @@ MapObjectProfileBombFlower::MapObjectProfileBombFlower() :
 
 // non-matching
 MapObjectBombFlower::MapObjectBombFlower() :
-    mUnk_48(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfileBombFlower)), 0x0, 0x0),
+    mUnk_48(NNS_G3dGetMdl(GET_PROFILE_20_50(MapObjectProfileBombFlower)), 0x0, 0x0),
     mUnk_B4(0x1000),
     mUnk_B8(0, 0),
     mUnk_BC(true) {

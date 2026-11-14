@@ -32,7 +32,7 @@ MapObjectProfileUnkSTAT::MapObjectProfileUnkSTAT() :
 }
 
 MapObjectUnkSTAT::MapObjectUnkSTAT() :
-    mUnk_40(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfileUnkSTAT)), true),
+    mUnk_40(NNS_G3dGetMdl(GET_PROFILE_20_50(MapObjectProfileUnkSTAT)), true),
     mUnk_4C(4),
     mUnk_50(-1),
     mUnk_54(0x8000),

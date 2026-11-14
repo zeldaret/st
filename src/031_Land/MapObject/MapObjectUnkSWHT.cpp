@@ -40,7 +40,7 @@ MapObjectUnkSWHT::MapObjectUnkSWHT() :
     mUnk_0F4(NULL),
     mUnk_0F8(-0x1),
     mUnk_0FC(0x0) {
-    this->mUnk_054.vfunc_08(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfileUnkSWHT)));
+    this->mUnk_054.vfunc_08(NNS_G3dGetMdl(GET_PROFILE_20_50(MapObjectProfileUnkSWHT)));
     this->mUnk_0B4.mpModel = this->mUnk_054.mpModel;
 
     unk32 param2                     = data_ov031_021179e8.func_ov000_02058a24();

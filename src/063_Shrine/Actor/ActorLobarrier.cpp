@@ -136,7 +136,7 @@ unk32 UnkStruct_ov063_02162e88::vfunc_04(RefStruct param1, unk32 param2, unk32 p
 }
 
 ActorLobarrier::ActorLobarrier() :
-    mUnk_0B0(G3d_GetModelPtr(GET_PROFILE(ActorProfileLobarrier)->vfunc_04()->mUnk_50)),
+    mUnk_0B0(NNS_G3dGetMdl(GET_PROFILE(ActorProfileLobarrier)->vfunc_04()->mUnk_50)),
     mUnk_128(&mUnk_0B0, GET_PROFILE(ActorProfileLobarrier)->vfunc_04()),
     mUnk_1F4(),
     mUnk_200(this),

@@ -86,7 +86,7 @@ G3d_Model *ActorBomb::func_ov031_020e1540(u16 param1) {
         return data_027e0ce0->mUnk_1C->func_ov000_0208ed30(0x0, 0x1, (char *) data_ov031_02110a40[2]);
     }
 
-    return G3d_GetModelPtr(
+    return NNS_G3dGetMdl(
         ((MapObjectProfileBombFlower *) data_ov000_020b5d34.GetProfileFromId(MapObjectId_BombFlower))->mUnk_20.mUnk_50);
 }
 
@@ -136,7 +136,7 @@ ActorBomb::ActorBomb() :
         this->mUnk_1EF = false;
         this->mUnk_17C = (VecFx32 *) &data_ov031_02110a28;
     } else {
-        func_0200b578(&this->mUnk_094.mRenderObj, ActorBomb::func_ov031_020e1634, 0x0, 0x2, 0x2);
+        NNS_G3dRenderObjSetCallBack(&this->mUnk_094.mRenderObj, ActorBomb::func_ov031_020e1634, 0x0, 0x2, 0x2);
         this->mUnk_17C = (VecFx32 *) &data_ov031_02110a10;
         this->mUnk_1EF = true;
     }

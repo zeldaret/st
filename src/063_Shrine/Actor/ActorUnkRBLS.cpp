@@ -18,7 +18,7 @@ ActorProfileUnkRBLS::ActorProfileUnkRBLS() :
 
 // non-matching
 ActorUnkRBLS::ActorUnkRBLS() :
-    mUnk_94(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkRBLS)->mUnk_3C.mUnk_50)),
+    mUnk_94(NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkRBLS)->mUnk_3C.mUnk_50)),
     mUnk_F4(&mUnk_94, GET_PROFILE(ActorProfileUnkRBLS)->vfunc_04()) {}
 
 bool ActorUnkRBLS::Init(unk32 param1) {

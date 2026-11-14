@@ -16,6 +16,7 @@ void G3X_InitTable(void);
 void G3X_InitMtxStack(void);
 void G3X_Reset(void);
 void G3X_SetClearColor(u32 rgb, u32 a, u32 param3, u32 param4, BOOL param5);
+void G3_RotY(fx16 sin, fx16 cos);
 
 inline void G3_TexImageParam(GXTexFmt texFmt, GXTexGen texGen, GXTexSizeS texSizeS, GXTexSizeT texSizeT,
                              GXTexRepeat texRepeatST, GXTexFlip texFlip, GXTexPlttColor0 color0, u32 textureAddress) {
@@ -151,12 +152,38 @@ inline void G3X_AlphaBlend(BOOL param1) {
     REG_DISP3DCNT = (REG_DISP3DCNT & ~0x3000) | (param1 << 3);
 }
 
+//! TODO: figure out params and if the body is correct
+inline void G3X_AlphaTest() {
+    REG_DISP3DCNT = (REG_DISP3DCNT & ~0x3004);
+}
+
 inline void G3X_Unk1(u32 param1) {
     REG_DISP3DCNT = REG_DISP3DCNT & ~(0x3000 | (param1 << 1));
 }
 
 inline void G3X_Unk2(u32 param1) {
     REG_DISP3DCNT &= ~(0x3000 | (param1 << 5));
+}
+
+//! TODO: figure out params and if the body is correct
+inline void G3_MaterialColorSpecEmi(s32 param1, s32 param2) {
+    // shift assumed based on `G3_MaterialColorDiffAmb`
+    REG_GFX_FIFO_SPECULAR_REF_AND_EMISSION = param1 | (param2 << 0x10);
+}
+
+//! TODO: figure out params and if the body is correct
+inline void G3_MaterialColorDiffAmb(s32 param1, s32 param2) {
+    REG_GFX_FIFO_DIFFUSE_AMBIENT_REFLECT = param1 | (param2 << 0x10);
+}
+
+//! TODO: figure out params and if the body is correct
+inline void G3_LightVector(s32 param1, s32 vecX, s32 vecY, s32 vecZ) {
+    REG_GFX_FIFO_LIGHT_DIRECTION = (vecX | (vecY << 0x0A) | (vecZ << 0x14)) | (param1 << 0x1E);
+}
+
+//! TODO: figure out params and if the body is correct
+inline void G3_LightColor(s32 param1, s32 param2) {
+    REG_GFX_FIFO_LIGHT_COLOR = param1 | (param2 << 0x1E);
 }
 
 //! TODO: figure out

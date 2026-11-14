@@ -30,7 +30,7 @@ void UnkStruct_027e0cec::func_ov017_020c1e9c(unk32 param1, unk32 param2) {
         param2 = 0x100;
     }
 
-    PushGeometryCommand(0x11, NULL, 0);
+    NNS_G3dGePushMtx();
 
     for (s32 var_r6 = 0; var_r6 < ARRAY_LEN(this->mUnk_18); var_r6++) {
         if (this->mUnk_18[var_r6] != NULL &&
@@ -39,8 +39,7 @@ void UnkStruct_027e0cec::func_ov017_020c1e9c(unk32 param1, unk32 param2) {
         }
     }
 
-    unk32 sp0 = 1;
-    PushGeometryCommand(0x12, &sp0, 1);
+    NNS_G3dGePopMtx(0x01);
 
     if (var_r5) {
         this->mUnk_00.mUnk_14 = param1;

@@ -40,7 +40,7 @@ ActorProfilePot::ActorProfilePot() :
 }
 
 ActorPot::ActorPot() :
-    mUnk_110(G3d_GetModelPtr(data_ov000_020b5d34.GetProfileFromId(MapObjectId_Pot)->vfunc_04()->mUnk_50), 0x01) {}
+    mUnk_110(NNS_G3dGetMdl(data_ov000_020b5d34.GetProfileFromId(MapObjectId_Pot)->vfunc_04()->mUnk_50), 0x01) {}
 
 bool ActorPot::Init(unk32 param1) {
     Actor_ov031_02113fd4::Init(param1);

@@ -93,7 +93,7 @@ bool MapObjectUnkSWCR::func_ov063_021615c4(void) {
 void MapObjectUnkSWCR::func_ov063_02161638(void) {}
 
 MapObjectUnkSWCR::MapObjectUnkSWCR() :
-    mUnk_40(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfileUnkSWCR))),
+    mUnk_40(NNS_G3dGetMdl(GET_PROFILE_20_50(MapObjectProfileUnkSWCR))),
     mUnk_A0(&mUnk_C0, NULL),
     mUnk_E0(&mUnk_100, NULL),
     mUnk_120(&mUnk_140, NULL),

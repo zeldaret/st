@@ -782,7 +782,7 @@ void ActorLokomo::func_ov058_02145bd4() {
     VecFx32Cpp vec(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), -0x4CD);
 
     func_01ff9638(&vec.vec, this->mAngle.angle_s);
-    VecFx32_Normalize(&vec.vec, &vec.vec);
+    VEC_Normalize(&vec.vec, &vec.vec);
 
     this->mUnk_888.func_ov000_020a036c(&vec.vec);
 }

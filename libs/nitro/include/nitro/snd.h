@@ -65,6 +65,11 @@ void SND_WaitForCommandProc(u32 tag);
 
 void SND_SetOutputSelector(int, int, int, int);
 
+extern const s16 data_02042bfc[];
+inline s16 SND_CalcDecibel(s32 param1) {
+    return data_02042bfc[param1];
+}
+
 #ifdef __cplusplus
 } // extern "C"
 #endif

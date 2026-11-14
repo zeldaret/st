@@ -5,6 +5,7 @@
 
 #include <nitro/os.h>
 #include <nitro/snd.h>
+#include <nns/snd.h>
 
 UnkStruct_027e0d08::UnkStruct_027e0d08() {
     this->mUnk_00 = NULL;
@@ -82,7 +83,8 @@ void UnkStruct_027e0d08::func_ov024_020d5e20() {
 
     this->ResetBuffers();
 
-    if (func_0200169c(this->mUnk_00, 0x800, 0, 0x3FEC, 0x04, (void *) UnkStruct_027e0d08::func_ov024_020d5fb8, 0)) {
+    if (NNS_SndCaptureStartEffect(this->mUnk_00, 0x800, 0, 0x3FEC, 0x04, (void *) UnkStruct_027e0d08::func_ov024_020d5fb8,
+                                  0)) {
         SND_SetOutputSelector(0, 0, 0, 0);
         MI_CpuClearFast(this->mUnk_04, 0x2000);
         MI_CpuClearFast(this->mUnk_08, 0x2000);
@@ -92,7 +94,7 @@ void UnkStruct_027e0d08::func_ov024_020d5e20() {
 }
 
 void UnkStruct_027e0d08::func_ov024_020d5fac() {
-    func_0200174c();
+    NNS_SndCaptureStopEffect();
 }
 
 void UnkStruct_027e0d08::func_ov024_020d5fb8(s16 *param1, s16 *param2, u32 param3) {

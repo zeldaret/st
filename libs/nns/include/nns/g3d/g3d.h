@@ -92,7 +92,7 @@ static inline G3d_NameList *G3d_GetBoneList(const G3d_Model *mdl) {
     return mdl != NULL ? (G3d_NameList *) &mdl->boneList : NULL;
 }
 
-static inline void *G3d_GetMat(const G3d_Model *mdl) {
+static inline void *NNS_G3dGetMat(const G3d_Model *mdl) {
     return mdl != NULL && mdl->offMat != 0 ? (void *) ((u8 *) mdl + mdl->offMat) : NULL;
 }
 
@@ -200,20 +200,18 @@ typedef struct BMDSectionModel {
 void G3d_0200e6a0(const G3d_Model *pModel, s32 param2, s32 param3);
 u32 *G3d_0200f05c(const G3d_NameList *pNameList, const char *pName);
 
-static inline u32 *G3d_GetModelOffsetPtr(const BMDSectionModel *pSection, u8 modelIndex) {
-    const G3d_NameList *pList = &pSection->modelList;
-
-    if (pList != NULL && modelIndex < pSection->modelList.numElmnts) {
-        G3d_NameList_Header *pHeader = (G3d_NameList_Header *) ((u8 *) pList + pSection->modelList.ofsHeader);
-        return (u32 *) ((u8 *) pHeader + offsetof(G3d_NameList_Header, data) + pHeader->element_size * modelIndex);
+static inline u32 *NNS_G3dGetResDataByIdx(const G3d_NameList *pList, u8 index) {
+    if (pList != NULL && index < pList->numElmnts) {
+        G3d_NameList_Header *pHeader = (G3d_NameList_Header *) ((u8 *) pList + pList->ofsHeader);
+        return (u32 *) ((u8 *) pHeader + offsetof(G3d_NameList_Header, data) + pHeader->element_size * index);
     }
 
     return NULL;
 }
 
-static inline G3d_Model *G3d_GetModelVariantPtr(const BMDSectionModel *pSection, u8 modelIndex) {
+static inline G3d_Model *NNS_G3dGetMdlByIdx(const BMDSectionModel *pSection, u8 modelIndex) {
     if (pSection != NULL) {
-        u32 *pOffset = G3d_GetModelOffsetPtr(pSection, modelIndex);
+        u32 *pOffset = NNS_G3dGetResDataByIdx(&pSection->modelList, modelIndex);
 
         if (pOffset != NULL) {
             return (G3d_Model *) ((u8 *) pSection + *pOffset);
@@ -223,10 +221,12 @@ static inline G3d_Model *G3d_GetModelVariantPtr(const BMDSectionModel *pSection,
     return NULL;
 }
 
-static inline G3d_Model *G3d_GetModelPtr(const BMDSectionModel *pSection) {
-    return G3d_GetModelVariantPtr(pSection, 0);
+//! TODO: fake name/inline? based on `NNS_G3dGetMdlByIdx`
+static inline G3d_Model *NNS_G3dGetMdl(const BMDSectionModel *pSection) {
+    return NNS_G3dGetMdlByIdx(pSection, 0);
 }
 
+//! TODO: determine names
 static inline G3d_Model *G3d_GetUnkPtr(const BMDSectionModel *pSection, const char *name) {
     if (pSection != NULL) {
         u32 *pOffset = G3d_0200f05c(&pSection->modelList, name);
@@ -238,6 +238,36 @@ static inline G3d_Model *G3d_GetUnkPtr(const BMDSectionModel *pSection, const ch
 
     return NULL;
 }
+
+typedef struct UnkG3DStruct1 {
+    /* 00 */ PAD(0x00, 0x34);
+    /* 34 */ u16 unk_34;
+} UnkG3DStruct1;
+
+static inline void *NNS_G3dGetPlttDataByIdx(void *param1, u8 index) {
+    if (param1 != NULL && ((UnkG3DStruct1 *) param1)->unk_34 != 0) {
+        G3d_NameList *pList = (G3d_NameList *) ((u8 *) param1 + ((UnkG3DStruct1 *) param1)->unk_34);
+        return (void *) NNS_G3dGetResDataByIdx(pList, index);
+    }
+
+    return NULL;
+}
+
+typedef struct UnkG3DStruct2 {
+    /* 00 */ PAD(0x00, 0x3C);
+    /* 3C */ G3d_NameList unk_3C;
+} UnkG3DStruct2;
+
+static inline void *NNS_G3dGetTexDataByIdx(void *param1, u8 index) {
+    if (param1 != NULL) {
+        return (void *) NNS_G3dGetResDataByIdx(&((UnkG3DStruct2 *) param1)->unk_3C, index);
+    }
+
+    return NULL;
+}
+
+void NNS_G3dGeFlushBuffer();
+void NNS_G3dRenderObjSetCallBack(G3d_RenderObject *, G3d_CallbackFunction, s32, s32, s32);
 
 #ifdef __cplusplus
 } // extern "C"

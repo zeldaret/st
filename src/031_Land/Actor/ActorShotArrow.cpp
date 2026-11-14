@@ -587,7 +587,7 @@ void ActorShotArrow::func_ov031_020f2654(MtxFx33 *param1) {
 
     fx32 scaleZ = FX_MUL(this->mUnk_168, FX_F32_TO_FX32(1.0f));
 
-    FlushGfxQueue();
+    NNS_G3dGeFlushBuffer();
     G3_MtxMode(GX_MTXMODE_POSITION_VECTOR);
     G3_PushMtx();
 
@@ -603,8 +603,8 @@ void ActorShotArrow::func_ov031_020f2654(MtxFx33 *param1) {
     G3_TexPlttBase(0, GX_TEXFMT_NONE);
     G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, GX_CULL_NONE, 1, 7, FALSE);
 
-    REG_GFX_FIFO_DIFFUSE_AMBIENT_REFLECT   = 0x4210FFFF;
-    REG_GFX_FIFO_SPECULAR_REF_AND_EMISSION = 0;
+    G3_MaterialColorDiffAmb(0xFFFF, 0x4210);
+    G3_MaterialColorSpecEmi(0x00, 0x00);
 
     {
         G3_Begin(GX_BEGIN_TRIANGLES);
