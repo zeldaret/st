@@ -172,10 +172,16 @@ BOOL GX_TrySetBankForBGExtPltt(s32);
 BOOL GX_TrySetBankForSubBGExtPltt(s32);
 BOOL GX_TrySetBankForOBJExtPltt(s32);
 BOOL GX_TrySetBankForSubOBJExtPltt(s32);
+u16 GX_ResetBankForBG(void);
 u16 GX_ResetBankForBGExtPltt(void);
 u16 GX_ResetBankForSubBGExtPltt(void);
+u16 GX_ResetBankForObj(void);
 u16 GX_ResetBankForOBJExtPltt(void);
 u16 GX_ResetBankForSubOBJExtPltt(void);
+u16 GX_ResetBankForTex();
+u16 GX_ResetBankForTexPltt();
+u16 GX_ResetBankForSubBG();
+u16 GX_ResetBankForSubOBJ();
 
 void GX_BeginLoadBGExtPltt(void);
 void GX_LoadBGExtPltt(void *ptr, u32 offset, u32 size);
@@ -307,8 +313,6 @@ void GX_DisableBankForBGExtPltt();
 void GX_DisableBankForOBJExtPltt();
 void GX_LoadVramCommon(void *pData, u32 addr, u32 size, u32 vram);
 void GX_Destory();
-void GX_ResetBankForTex();
-void GX_ResetBankForTexPltt();
 
 #ifdef __cplusplus
 } // extern "C"
