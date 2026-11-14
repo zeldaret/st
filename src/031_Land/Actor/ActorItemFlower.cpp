@@ -41,7 +41,7 @@ ActorProfileItemFlower::ActorProfileItemFlower() :
 }
 
 ActorItemFlower::ActorItemFlower() :
-    mUnk_110(G3d_GetModelPtr(data_ov000_020b5d34.GetProfileFromId(MapObjectId_ITFL)->vfunc_04()->mUnk_50), 0x1, 0x1) {}
+    mUnk_110(NNS_G3dGetMdl(data_ov000_020b5d34.GetProfileFromId(MapObjectId_ITFL)->vfunc_04()->mUnk_50), 0x1, 0x1) {}
 
 bool ActorItemFlower::Init(unk32 param1) {
     this->Actor_ov031_02113fd4::Init(param1);

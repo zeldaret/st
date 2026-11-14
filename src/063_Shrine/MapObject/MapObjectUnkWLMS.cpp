@@ -88,7 +88,7 @@ void UnkStruct_ov063_02163910::vfunc2_04() {
 }
 
 MapObjectUnkWLMS::MapObjectUnkWLMS() :
-    mUnk_70(G3d_GetModelPtr(GET_PROFILE(MapObjectProfileUnkWLMS)->mUnk_20.mUnk_50)),
+    mUnk_70(NNS_G3dGetMdl(GET_PROFILE(MapObjectProfileUnkWLMS)->mUnk_20.mUnk_50)),
     mUnk_D0(&mUnk_F4, 0x80),
     mUnk_2F4(),
     mUnk_31C(0),

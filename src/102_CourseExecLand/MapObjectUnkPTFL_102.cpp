@@ -157,7 +157,7 @@ void MapObjectUnkPTFL::vfunc_14(unk32 param1) {
     s32 var_r5;
     s32 var_r7;
 
-    PushGeometryCommand(0x11, NULL, 0);
+    NNS_G3dGePushMtx();
 
     sp1C = data_027e0208.mUnk_094;
     PushGeometryCommand(0x30, &sp1C, 1);
@@ -206,8 +206,7 @@ void MapObjectUnkPTFL::vfunc_14(unk32 param1) {
     this->func_ov102_0218419c();
     this->func_ov102_021843b4();
 
-    sp0 = 1;
-    PushGeometryCommand(0x12, &sp0, 1);
+    NNS_G3dGePopMtx(0x01);
 }
 
 void MapObjectUnkPTFL::func_ov102_0218419c() {
@@ -222,7 +221,7 @@ void MapObjectUnkPTFL::func_ov102_0218419c() {
     u16 temp_r1_3;
     s32 temp_r7;
 
-    PushGeometryCommand(0x11, NULL, 0);
+    NNS_G3dGePushMtx();
 
     if (this->mState == 1) {
         sp68.x = (this->mUnk_5A << 0xB) + 0x52;
@@ -260,8 +259,7 @@ void MapObjectUnkPTFL::func_ov102_0218419c() {
 
     PushGeometryCommand(0x41, NULL, 0);
 
-    sp18 = 1;
-    PushGeometryCommand(0x12, &sp18, 1);
+    NNS_G3dGePopMtx(0x01);
 }
 
 void MapObjectUnkPTFL::func_ov102_021843b4() {
@@ -275,7 +273,7 @@ void MapObjectUnkPTFL::func_ov102_021843b4() {
     s32 temp_r0_3;
     s32 temp_r7;
 
-    PushGeometryCommand(0x11, NULL, 0);
+    NNS_G3dGePushMtx();
 
     if (this->mState == 1) {
         sp68.x = (-this->mUnk_5A << 0xB) - 0x52;
@@ -312,6 +310,5 @@ void MapObjectUnkPTFL::func_ov102_021843b4() {
 
     PushGeometryCommand(0x41, NULL, 0);
 
-    sp18 = 1;
-    PushGeometryCommand(0x12, &sp18, 1);
+    NNS_G3dGePopMtx(0x01);
 }

@@ -81,7 +81,7 @@ ModelRender_ov032_02122568::ModelRender_ov032_02122568(G3d_Model *pModel) :
     mUnk_6C(this->ModelRenderBase::func_ov000_02057f18(&data_ov032_02121ed0.unk_04)) {}
 
 ActorKeese::ActorKeese() :
-    mUnk_0B0(G3d_GetModelPtr(GET_PROFILE(ActorProfileKeese)->vfunc_04()->mUnk_50)),
+    mUnk_0B0(NNS_G3dGetMdl(GET_PROFILE(ActorProfileKeese)->vfunc_04()->mUnk_50)),
     mUnk_120(&this->mUnk_0B0, GET_PROFILE(ActorProfileKeese)->vfunc_04()),
     mUnk_1CC(&this->mUnk_0B0, GET_PROFILE(ActorProfileKeese)->vfunc_04()),
     mUnk_228(0x0),

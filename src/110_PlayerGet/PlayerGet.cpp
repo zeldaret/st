@@ -590,7 +590,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                     UnkFileSystem2 fs2(modelPath, 0);
                     BMDSectionModel *res = func_ov000_0205abcc((void *) &fs4, (void *) &fs2, 0, 1, this->mUnk_30->mUnk_24);
 
-                    this->mUnk_8C.vfunc_08(G3d_GetModelPtr(res));
+                    this->mUnk_8C.vfunc_08(NNS_G3dGetMdl(res));
                 }
 
                 switch (this->mUnk_54.mItemId) {
@@ -943,7 +943,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                 break;
             }
 
-            if (temp_r5 == data_ov000_020b51c0.func_02002f04()) {
+            if (temp_r5 == NNS_SndPlayerGetSeqNo(&data_ov000_020b51c0)) {
                 break;
             }
 

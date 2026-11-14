@@ -70,7 +70,6 @@ union Vec2s;
 extern "C" {
 
 // itcm
-void FlushGfxQueue();
 bool func_01ff916c(fx32 *, unk32, unk32);
 void func_01ff91b8(unk16 *, fx32, fx32);
 void func_01ff9218(fx32 *, fx32, fx32);
@@ -115,13 +114,8 @@ void func_01ff9984(VecFx32 *, VecFx32 *, unk32, unk32, unk32);
 
 // main
 unk32 func_020013ac(void *param1);
-BOOL func_0200169c(void *, int, int, int, int, void *, int);
-void func_0200174c();
-void func_0200240c(unk32);
-BOOL NNS_SndArcLoadBank(unk32 param1, unk32 param2);
 void func_02006aa8(unk32, unk32);
 void func_02006d8c(u16, unk32);
-void func_0200b578(G3d_RenderObject *, G3d_CallbackFunction, unk32, unk32, unk32);
 void func_0200b58c(G3d_RenderObject *);
 void G3d_GetCurrentMtx(MtxFx43 *mtx1, MtxFx33 *mtx2);
 void func_0200ea38(G3d_Model *, unk32, unk32);
@@ -188,7 +182,6 @@ u32 func_0202447c();
 u32 func_02024494();
 void func_02024a84(MtxFx33 *param1);
 void func_02024df0(u16 *);
-void func_02024fc4(fx16 sin, fx16 cos);
 u16 func_02032920(void *param1, size_t param2);
 unk32 func_02039d60(f32, unk32);
 f32 func_02039f04(fx32);
@@ -204,7 +197,6 @@ void func_02027a28(void *param1, unk32 param2);
 void func_02013184();
 void func_020131b0();
 unk32 func_0202d624(void *param1, unk32 param2);
-void *NNS_SndHeapCreate(void *param1, size_t param2);
 unk32 func_020011f4(void *);
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
@@ -215,16 +207,10 @@ void *func_020145b0(NNSiFndHeapHead *heap, s32 param2);
 NNSiFndHeapHead *func_02014704();
 NNSiFndHeapHead *func_02014630(NNSiFndHeapHead *heap, void *param2);
 void func_0201bdd0();
-void NNS_SndInit();
-void NNS_SndArcInit(void *param1, const char *soundDataPath, unk32 param2, unk32 param3);
-void NNS_SndArcPlayerSetup(unk32 param1);
 void func_02004d2c(unk32 param1, unk32 param2);
 void func_02001778(unk32 param1);
 void func_02003f98(unk32 param1, unk32 param2);
-void NNS_SndHeapSaveState(unk32 param1);
 void func_02005030(void *param1);
-void NNS_SndHandleInit(void *param1);
-void NNS_SndPlayerStopSeq(void *param1, unk32 param2);
 void func_020158e8(unk32 *, unk16 *, unk16 *, const VecFx32 *, const VecFx32 *);
 
 // overlay 0

@@ -59,7 +59,7 @@ ActorProfileTearLight::ActorProfileTearLight() :
 
 // non-matching
 ActorTearLight::ActorTearLight() :
-    mUnk_0A4(G3d_GetModelPtr(GET_PROFILE(ActorProfileTearLight)->mUnk_3C.mUnk_50)),
+    mUnk_0A4(NNS_G3dGetMdl(GET_PROFILE(ActorProfileTearLight)->mUnk_3C.mUnk_50)),
     mUnk_104(&this->mUnk_120, &this->mUnk_0A4, GET_PROFILE(ActorProfileTearLight)->vfunc_04()),
     mUnk_120(&this->mUnk_140, NULL),
     mUnk_160(*(ActorTearLight_UnkStruct *) &data_020431b8),

@@ -34,7 +34,7 @@ void VecFx32_Sub(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 fx32 VecFx32_Dot(VecFx32 *a, VecFx32 *b);
 void VecFx32_Cross(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 fx32 VecFx32_Length(VecFx32 *a);
-void VecFx32_Normalize(VecFx32 *vec, VecFx32 *out);
+void VEC_Normalize(VecFx32 *vec, VecFx32 *out);
 void VecFx32_Axpy(fx32 a, VecFx32 *x, VecFx32 *y, VecFx32 *out);
 fx32 VecFx32_Distance(VecFx32 *a, VecFx32 *b);
 bool VecFx32_TryNormalize(VecFx32 *vec);

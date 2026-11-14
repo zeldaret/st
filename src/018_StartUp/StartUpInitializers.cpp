@@ -24,6 +24,7 @@
 #include <nitro/gx.h>
 #include <nitro/os.h>
 #include <nitro/rtc.h>
+#include <nns/snd.h>
 
 void func_ov018_020c4e8c(void) {
     RTC_Init();

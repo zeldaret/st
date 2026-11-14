@@ -48,7 +48,7 @@ MapObjectProfileUnkLTRW::MapObjectProfileUnkLTRW() :
 }
 
 MapObjectUnkLTRW::MapObjectUnkLTRW() :
-    mUnk_40(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfileUnkLTRW))),
+    mUnk_40(NNS_G3dGetMdl(GET_PROFILE_20_50(MapObjectProfileUnkLTRW))),
     mUnk_A0(1),
     mUnk_A4(0, 0),
     mUnk_A8() {}

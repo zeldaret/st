@@ -37,9 +37,9 @@ ActorProfileUnkTGTZ::ActorProfileUnkTGTZ() :
 
 ActorUnkTGTZ::ActorUnkTGTZ() :
 #if IS_JP
-    mUnk_094(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkTGTZ)->mUnk_3C.mUnk_50), true),
+    mUnk_094(NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkTGTZ)->mUnk_3C.mUnk_50), true),
 #else
-    mUnk_094(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkTGTZ)->mUnk_3C.mUnk_50), 0xC, &this->mUnk_100),
+    mUnk_094(NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkTGTZ)->mUnk_3C.mUnk_50), 0xC, &this->mUnk_100),
 #endif
     mUnk_1B4(NULL),
     mUnk_1B8(0x0),

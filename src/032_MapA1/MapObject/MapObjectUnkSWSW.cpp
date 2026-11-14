@@ -205,7 +205,7 @@ void MapObjectUnkSWSW::vfunc_08() {
             VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
             VecFx32 sp48;
             VecFx32_Init(vec->x - this->mPos.x, vec->y - this->mPos.y, vec->z - this->mPos.z, &sp48);
-            VecFx32_Normalize(&sp48, &sp48);
+            VEC_Normalize(&sp48, &sp48);
 
             VecFx32 sp3C;
             VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), &sp3C);

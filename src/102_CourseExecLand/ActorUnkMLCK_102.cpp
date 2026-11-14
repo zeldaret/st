@@ -51,7 +51,7 @@ void ActorUnkMLCK::Update() {
     }
 
     if (data_ov000_020b51b8.IsUnk08_2()) {
-        data_ov000_020b51c8.func_02002f04();
+        NNS_SndPlayerGetSeqNo(&data_ov000_020b51c8);
     }
 
     if (this->mUnk_F4 != -1) {

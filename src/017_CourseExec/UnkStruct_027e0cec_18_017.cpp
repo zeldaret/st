@@ -42,7 +42,7 @@ void UnkStruct_027e0cec_18::func_ov017_020c297c(unk32 param1, unk32 param2) {
 bool UnkStruct_027e0cec_18::func_ov017_020c2ad8(void *param1, unk32 param2, unk32 param3) {
     bool var_r4 = false;
 
-    FlushGfxQueue();
+    NNS_G3dGeFlushBuffer();
 
     this->mUnk_04->mUnk_40.SetPrev((LinkListNode *) param1);
 

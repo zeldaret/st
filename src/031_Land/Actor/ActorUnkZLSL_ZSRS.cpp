@@ -200,11 +200,11 @@ void ActorUnkZLSL::func_ov031_020ea100() {
 }
 
 static inline G3d_Model *GetModelFromProfile() {
-    return G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkZSRS)->vfunc_04()->mUnk_50);
+    return NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkZSRS)->vfunc_04()->mUnk_50);
 }
 
 static inline G3d_Model *GetModel() {
-    return G3d_GetModelPtr(data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Zelda][0]->mUnk_50);
+    return NNS_G3dGetMdl(data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Zelda][0]->mUnk_50);
 }
 
 extern Actor *data_027e0d3c;

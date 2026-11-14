@@ -36,7 +36,7 @@ ActorProfileFleeingSpinut::ActorProfileFleeingSpinut() :
 }
 
 ActorFleeingSpinut::ActorFleeingSpinut() :
-    mUnk_0B0(G3d_GetModelPtr(GET_PROFILE(ActorProfileFleeingSpinut)->vfunc_04()->mUnk_50)),
+    mUnk_0B0(NNS_G3dGetMdl(GET_PROFILE(ActorProfileFleeingSpinut)->vfunc_04()->mUnk_50)),
     mUnk_110(&this->mUnk_0B0, GET_PROFILE(ActorProfileFleeingSpinut)->vfunc_04()),
     mPrevState(ActorState_None),
     mUnk_1BE(0x0),

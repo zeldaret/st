@@ -76,7 +76,7 @@ bool MapObjectMiniBlocks::Init(void) {
     }
 
     BMDSectionModel *pSectionModel = GET_PROFILE(MapObjectProfileMiniBlocks)->vfunc_1C(this->mUnk_20.mParams[1])->mUnk_50;
-    this->mUnk_40.vfunc_08(G3d_GetModelVariantPtr(pSectionModel, uVar6));
+    this->mUnk_40.vfunc_08(NNS_G3dGetMdlByIdx(pSectionModel, uVar6));
 
     unk32 var_r0_2;
     unk32 var_r0;

@@ -42,7 +42,7 @@ extern UnkStruct_027e037c data_027e0208;
 #define GX_ST(s, t) ((u32) ((u16) (s16) (s >> 8) | ((u16) (s16) (t >> 8) << 16)))
 #define GX_PACK_TEXCOORD_PARAM(s, t) (GX_ST((s), (t)))
 
-extern void FlushGfxQueue();
+extern void NNS_G3dGeFlushBuffer();
 extern s32 func_02024d64(MtxFx44 *matrix);
 extern MtxFx43 *func_0200c198();
 extern MtxFx43 *func_0200c23c();
@@ -82,7 +82,7 @@ void G3d_InitRenderState(G3d_RenderState *renderState, G3d_RenderObject *renderO
 
     renderState->renderObj         = renderObj;
     renderState->boneList          = G3d_GetBoneList(renderObj->model);
-    renderState->materialList      = G3d_GetMat(renderObj->model);
+    renderState->materialList      = NNS_G3dGetMat(renderObj->model);
     renderState->meshList          = G3d_GetMesh(renderObj->model);
     renderState->jntScalingHandler = G3d_gScaleHandlers[renderObj->model->unk_14.scalingHandler];
     renderState->jntSRTHandler     = G3d_gSRTTransformHandlers[renderObj->model->unk_14.scalingHandler];
@@ -134,7 +134,7 @@ void G3d_SetRenderObjAnimationMap(u32 *arr, const G3d_Animation *anim) {
 }
 
 // Renders a model by processing the SBC command list
-void G3d_Render(G3d_RenderObject *renderObj) {
+void NNS_G3dDraw(G3d_RenderObject *renderObj) {
     if ((renderObj->flag & G3D_RENDEROBJ_FLAG_ANIMMAP_OUTDATED) == G3D_RENDEROBJ_FLAG_ANIMMAP_OUTDATED) {
         MI_CpuFill32(0, &renderObj->matAnimBindMap[0], 8);
         MI_CpuFill32(0, &renderObj->jntAnimBindMap[0], 8);
@@ -245,7 +245,7 @@ void G3d_SBCRender_007(G3d_RenderState *renderState, u32 opCode) {
     }
 
     if (!(renderState->flag & G3D_RENDERST_FLAG_SKIP_CMD) && !callbackSkip) {
-        FlushGfxQueue();
+        NNS_G3dGeFlushBuffer();
 
         REG_GFX_FIFO = 0x151110; // MTX_MODE | MTX_PUSH | MTX_IDENTITY
         REG_GFX_FIFO = 0;        // MTX_MODE = Projection
@@ -383,7 +383,7 @@ void G3d_SBCRender_008(G3d_RenderState *renderState, u32 opCode) {
     }
 
     if (!(renderState->flag & G3D_RENDERST_FLAG_SKIP_CMD) && !callbackSkip) {
-        FlushGfxQueue();
+        NNS_G3dGeFlushBuffer();
 
         REG_GFX_FIFO = 0x151110; // MTX_MODE | MTX_PUSH | MTX_IDENTITY
         REG_GFX_FIFO = 0;        // MTX_MODE = Projection
@@ -416,12 +416,12 @@ void G3d_SBCRender_008(G3d_RenderState *renderState, u32 opCode) {
         scaleVec->z = VecFx32_Length((VecFx32 *) &currentMtx._20);
 
         if (currentMtx._11 != 0 || currentMtx._12 != 0) {
-            VecFx32_Normalize((VecFx32 *) &currentMtx._10, (VecFx32 *) &mtx->_10);
+            VEC_Normalize((VecFx32 *) &currentMtx._10, (VecFx32 *) &mtx->_10);
 
             mtx->_21 = -mtx->_12;
             mtx->_22 = mtx->_11;
         } else {
-            VecFx32_Normalize((VecFx32 *) &currentMtx._20, (VecFx32 *) &mtx->_20);
+            VEC_Normalize((VecFx32 *) &currentMtx._20, (VecFx32 *) &mtx->_20);
 
             mtx->_12 = -mtx->_21;
             mtx->_11 = mtx->_22;
@@ -484,7 +484,7 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
     MtxFx33 *mat3x;
 
     MI_CpuClearFast(&mtxStruct, sizeof(mtxStruct));
-    FlushGfxQueue();
+    NNS_G3dGeFlushBuffer();
 
     REG_GFX_FIFO_MATRIX_MODE     = 0; // Projection
     REG_GFX_FIFO_MATRIX_STORE    = 1;
@@ -888,7 +888,7 @@ void G3d_SBCRender_00D(G3d_RenderState *renderState, u32) {
             }
 
             {
-                FlushGfxQueue();
+                NNS_G3dGeFlushBuffer();
 
                 REG_GFX_FIFO_MATRIX_MODE     = 0; // Projection
                 REG_GFX_FIFO_MATRIX_PUSH     = 0;

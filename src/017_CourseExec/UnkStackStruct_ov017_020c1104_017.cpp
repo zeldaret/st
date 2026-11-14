@@ -61,7 +61,7 @@ void UnkStackStruct_ov017_020c1104::func_ov017_020c117c(const VecFx32 *param2, u
 }
 
 void UnkStackStruct_ov017_020c1104::func_ov017_020c12fc(u8 param2, unk16 param3) {
-    FlushGfxQueue();
+    NNS_G3dGeFlushBuffer();
     G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
                      GX_TEXPLTTCOLOR0_USE, 0);
     G3_Color(data_027e09ac->mUnk_014.mUnk_08);

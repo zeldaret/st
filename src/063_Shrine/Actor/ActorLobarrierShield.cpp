@@ -132,7 +132,7 @@ void ActorLobarrierShield::func_ov063_0215acec(RefStruct *ref1, RefStruct ref2) 
 }
 
 ActorLobarrierShield::ActorLobarrierShield() :
-    mUnk_0B0(G3d_GetModelPtr(GET_PROFILE(ActorProfileLobarrierShield)->vfunc_04()->mUnk_50)),
+    mUnk_0B0(NNS_G3dGetMdl(GET_PROFILE(ActorProfileLobarrierShield)->vfunc_04()->mUnk_50)),
     mUnk_120(0),
     mUnk_124(this),
     lobarrier(NULL),

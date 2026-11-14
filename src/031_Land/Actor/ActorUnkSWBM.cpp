@@ -63,8 +63,8 @@ void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2) {
     s16 var_r8;
     s32 var_r9;
 
-    FlushGfxQueue();
-    REG_GFX_FIFO_DIFFUSE_AMBIENT_REFLECT = 0x1084FFFF;
+    NNS_G3dGeFlushBuffer();
+    G3_MaterialColorDiffAmb(0xFFFF, 0x1084);
 
     VecFx32 *textureParam = &data_027e095c->mUnk_000[8];
     G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,

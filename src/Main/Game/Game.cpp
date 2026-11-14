@@ -92,7 +92,7 @@ void Game::Run() {
 
             MtxFx33_InitIdentity(&gGeomMatrix);
             data_027e0208.mUnk_0FC = 0;
-            FlushGfxQueue();
+            NNS_G3dGeFlushBuffer();
             this->mpCurrentGameMode->vfunc_18();
             data_0204a110.func_020194dc();
 
@@ -101,7 +101,7 @@ void Game::Run() {
             }
 
 #if IS_JP
-            FlushGfxQueue();
+            NNS_G3dGeFlushBuffer();
 #endif
 
             if (data_0204e64c.mUnk_00.mUnk_0B == 0) {
@@ -109,7 +109,7 @@ void Game::Run() {
             }
 
             this->mpCurrentGameMode->vfunc_1C();
-            FlushGfxQueue();
+            NNS_G3dGeFlushBuffer();
             data_0204a110.func_02019454();
             this->mpCurrentGameMode->vfunc_20();
 
