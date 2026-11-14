@@ -198,7 +198,7 @@ void ActorUnkSWBM::func_ov031_020e6e84(ActorState state) {
 
 void ActorUnkSWBM::Update() {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     for (VecFx32 *vec = &this->mUnk_0E4[ARRAY_LEN(this->mUnk_0E4) - 1]; vec > &this->mUnk_0E4[0]; --vec) {
         VecFx32_Copy(vec - 1, vec);

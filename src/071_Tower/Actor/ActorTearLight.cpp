@@ -214,7 +214,7 @@ void ActorTearLight::func_ov071_0215f92c() {
         this->func_ov071_0215f80c();
     }
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if ((this->mUnk_44 || this->mVel.y >= 0) || this->mState == ActorUnkSZKUState_4) {
         UnkStruct_ov071_0215f92c sp4;
@@ -424,7 +424,7 @@ void ActorTearLight::func_ov071_0215ffbc() {
         this->func_ov071_0215fca4();
         return;
     }
-    func_01ffb714(&actor->mUnk_E8, &this->mPos, &this->mVel);
+    VEC_Subtract(&actor->mUnk_E8, &this->mPos, &this->mVel);
 }
 
 ActorTearLight_194::ActorTearLight_194(ActorTearLight *param1) :

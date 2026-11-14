@@ -102,7 +102,7 @@ bool MapObjectMiniBlocks::Init(void) {
     }
 
     func_01ff9638(&vec, -this->mAngle.angle_s);
-    VecFx32_Add(&this->mPos, &vec, &this->mPos);
+    VEC_Add(&this->mPos, &vec, &this->mPos);
     return true;
 }
 

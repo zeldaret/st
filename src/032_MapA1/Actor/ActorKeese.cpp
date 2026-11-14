@@ -578,7 +578,7 @@ void ActorKeese::func_ov032_0211ee5c() {
     this->func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->func_ov032_0211f9c4()) {
         this->SetState(ActorKeeseState_8);
@@ -667,7 +667,7 @@ void ActorKeese::func_ov032_0211f310() {
     this->Actor::func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 }
 
 void ActorKeese::func_ov032_0211f3ac() {
@@ -700,7 +700,7 @@ void ActorKeese::func_ov032_0211f404() {
     this->Actor::func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 }
 
 void ActorKeese::func_ov032_0211f4a4() {
@@ -723,7 +723,7 @@ void ActorKeese::func_ov032_0211f50c() {
     this->Actor::func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 }
 
 void ActorKeese::func_ov032_0211f560() {
@@ -746,7 +746,7 @@ void ActorKeese::func_ov032_0211f58c() {
     this->Actor::func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 }
 
 void ActorKeese::func_ov032_0211f604() {
@@ -851,12 +851,12 @@ void ActorKeese::func_ov032_0211f804() {
 bool ActorKeese::func_ov032_0211f93c(VecFx32 *param1, unk32 param2) {
     VecFx32 sp0;
 
-    func_01ffb714(param1, &this->mPos, &sp0);
+    VEC_Subtract(param1, &this->mPos, &sp0);
     func_01ff916c(&this->mUnk_2A0, this->mUnk_2A4, 0xA4);
     func_01ff916c(&this->mPos.y, this->mUnk_29C, 0xA4);
     func_01ff930c(&this->mAngle.angle_s, FX_Atan2Idx(sp0.x, sp0.z), param2);
 
-    if (VecFx32_Dot(&sp0, &this->mVel) < 0) {
+    if (VEC_DotProduct(&sp0, &this->mVel) < 0) {
         return true;
     }
 

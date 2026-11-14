@@ -92,10 +92,10 @@ bool ActorBlast::Init(unk32 param1) {
     this->mPos.y += FX_F32_TO_FX32(0.5f);
 
     this->mUnk_C8 = *this->mUnk_34;
-    VecFx32_Add(&this->mUnk_C8.pos, &this->mPos, &this->mUnk_C8.pos);
+    VEC_Add(&this->mUnk_C8.pos, &this->mPos, &this->mUnk_C8.pos);
 
     this->mUnk_D8 = *this->mUnk_30;
-    VecFx32_Add(&this->mUnk_D8.pos, &this->mPos, &this->mUnk_D8.pos);
+    VEC_Add(&this->mUnk_D8.pos, &this->mPos, &this->mUnk_D8.pos);
 
     data_027e09a8->func_ov000_02071b30(0xF3, &this->mPos, 0x0);
     data_027e09a8->func_ov000_02071eac(&this->mPos);

@@ -172,7 +172,7 @@ void ActorRollingStone::Update() {
 
     this->func_ov000_02098838();
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     this->func_ov031_020f97cc();
 }
@@ -610,7 +610,7 @@ void ActorRollingStone::func_ov031_020f9494() {
     u8 sp00 = this->mUnk_15A;
     this->mUnk_15C.func_ov024_020d6680(&this->mPos, &sp00);
 
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
 }
 
@@ -662,7 +662,7 @@ void ActorRollingStone::func_ov031_020f9554() {
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     this->mUnk_15C.func_ov024_020d69d8(&this->mPos, &this->mAngle.angle_s, &this->mVel, 0x1AE, 0xE39, 0x1AE);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
     this->func_ov031_020f98e4();
 }
 
@@ -790,7 +790,7 @@ bool ActorRollingStone::func_ov031_020f9ba4() {
         sp18.y = temp.y;
         sp18.z = temp.z;
 
-        return VecFx32_Length(&sp18) > FX_F32_TO_FX32(8.0f);
+        return VEC_Mag(&sp18) > FX_F32_TO_FX32(8.0f);
     }
 
     VecFx32 *pVec1 = data_027e0ce0->func_01fff148(0x0);
@@ -818,7 +818,7 @@ bool ActorRollingStone::func_ov031_020f9ba4() {
         VecFx32_Copy(&temp3, &sp0);
     }
 
-    return VecFx32_Length(&sp0) > FX_F32_TO_FX32(8.0f);
+    return VEC_Mag(&sp0) > FX_F32_TO_FX32(8.0f);
 }
 
 void ActorRollingStone::func_ov031_020f9cc0() {

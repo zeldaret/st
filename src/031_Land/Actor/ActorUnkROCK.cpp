@@ -50,7 +50,7 @@ void ActorUnkROCK::Update() {
             break;
         case ActorUnkROCKState_3:
             this->func_ov000_02098838();
-            VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+            VEC_Add(&this->mPos, &this->mVel, &this->mPos);
             if (this->func_ov000_02098910(NULL, 0x10) == 0x0) {
                 break;
             }

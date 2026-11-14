@@ -236,7 +236,7 @@ void ActorLobarrierShield::func_ov063_0215b090() {
 
     mUnk_1C8 += DEG_TO_ANG(45);
     VecFx32_Copy(&mPos, &mPrevPos);
-    VecFx32_Add(&mPos, &mVel, &mPos);
+    VEC_Add(&mPos, &mVel, &mPos);
 
     if (mVel.x == FX_F32_TO_FX32(0.0f) && mVel.z == FX_F32_TO_FX32(0.0f)) {
         mVel.y -= mUnk_2C;
@@ -258,7 +258,7 @@ void ActorLobarrierShield::func_ov063_0215b1bc() {
 
     VecFx32 vec;
     VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), &vec);
-    func_01ffa7a0(&vec, &mUnk_1A4, &vec);
+    MTX_MultVec33(&vec, &mUnk_1A4, &vec);
 
     s16 angle = FX_Atan2Idx(vec.x, vec.z);
     MTX_RotY33_(&mUnk_1A4, SIN(angle), COS(angle));
@@ -267,7 +267,7 @@ void ActorLobarrierShield::func_ov063_0215b1bc() {
 void ActorLobarrierShield::func_ov063_0215b244() {
     mVel.y -= mUnk_2C;
     VecFx32_Copy(&mPos, &mPrevPos);
-    VecFx32_Add(&mPos, &mVel, &mPos);
+    VEC_Add(&mPos, &mVel, &mPos);
 
     this->func_ov000_02098b8c(1, NULL);
 
@@ -310,7 +310,7 @@ void ActorLobarrierShield::Update() {
 
     if (this->lobarrier != NULL) {
         VecFx32 sp14 = this->lobarrier->mUnk_25C;
-        func_01ffb714(&sp14, &this->mPos, &sp14);
+        VEC_Subtract(&sp14, &this->mPos, &sp14);
 
         s16 var_r4_2;
         s16 var_r5 = sp14.z;
@@ -333,7 +333,7 @@ void ActorLobarrierShield::Update() {
         this->mUnk_150.mUnk_08.z = var_r5 + (s16) ((1 - COS(angle)) >> 1);
     } else if (this->mState == 5) {
         VecFx32 sp14 = this->mUnk_1CC.vec;
-        func_01ffb714(&sp14, &this->mPos, &sp14);
+        VEC_Subtract(&sp14, &this->mPos, &sp14);
 
         s16 var_r4_2;
         s16 var_r5 = sp14.z;

@@ -273,9 +273,9 @@ void G3d_SBCRender_007(G3d_RenderState *renderState, u32 opCode) {
         translationVec->y = currentMtx._31;
         translationVec->z = currentMtx._32;
 
-        scaleVec->x = VecFx32_Length((VecFx32 *) &currentMtx._00);
-        scaleVec->y = VecFx32_Length((VecFx32 *) &currentMtx._10);
-        scaleVec->z = VecFx32_Length((VecFx32 *) &currentMtx._20);
+        scaleVec->x = VEC_Mag((VecFx32 *) &currentMtx._00);
+        scaleVec->y = VEC_Mag((VecFx32 *) &currentMtx._10);
+        scaleVec->z = VEC_Mag((VecFx32 *) &currentMtx._20);
 
         if (data_027e0208.flags & 1) {
             REG_GFX_FIFO = 0x171012;                  // MTX_POP | MTX_MODE | MTX_LOAD_4x3
@@ -411,9 +411,9 @@ void G3d_SBCRender_008(G3d_RenderState *renderState, u32 opCode) {
         translationVec->y = currentMtx._31;
         translationVec->z = currentMtx._32;
 
-        scaleVec->x = VecFx32_Length((VecFx32 *) &currentMtx._00);
-        scaleVec->y = VecFx32_Length((VecFx32 *) &currentMtx._10);
-        scaleVec->z = VecFx32_Length((VecFx32 *) &currentMtx._20);
+        scaleVec->x = VEC_Mag((VecFx32 *) &currentMtx._00);
+        scaleVec->y = VEC_Mag((VecFx32 *) &currentMtx._10);
+        scaleVec->z = VEC_Mag((VecFx32 *) &currentMtx._20);
 
         if (currentMtx._11 != 0 || currentMtx._12 != 0) {
             VEC_Normalize((VecFx32 *) &currentMtx._10, (VecFx32 *) &mtx->_10);

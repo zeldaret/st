@@ -746,7 +746,7 @@ void ActorLokomo::Update() {
     this->Actor::func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     this->vfunc_A4();
     this->mUnk_5B0.vfunc_34();
@@ -969,7 +969,7 @@ void ActorLokomo::vfunc_2C(unk32 param1) {
     VecFx32 sp00 = this->mUnk_8E0.vec;
 
     func_01ff9638(&sp00, this->mAngle.angle_s);
-    VecFx32_Add(&sp0C, &sp00, &sp0C);
+    VEC_Add(&sp0C, &sp00, &sp0C);
 
     if (this->mUnk_904) {
         bool cmpr            = false;

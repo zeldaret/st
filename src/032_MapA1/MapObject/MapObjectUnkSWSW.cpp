@@ -211,7 +211,7 @@ void MapObjectUnkSWSW::vfunc_08() {
             VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), &sp3C);
 
             bool var_r5 = false;
-            if (VecFx32_Dot(&sp48, &sp3C) > FX_F32_TO_FX32(0.4f)) {
+            if (VEC_DotProduct(&sp48, &sp3C) > FX_F32_TO_FX32(0.4f)) {
                 s16 param = (s16) FX_Atan2Idx(sp48.x, sp48.z);
                 func_01ff91b8(&this->mUnk_10C, param, 0x333);
 

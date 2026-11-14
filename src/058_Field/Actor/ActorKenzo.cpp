@@ -169,7 +169,7 @@ void ActorKenzo::Update() {
     this->Actor::func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     this->vfunc_A4();
     this->mUnk_094.mUnk_0C->vfunc_34();
@@ -376,7 +376,7 @@ bool ActorKenzo::vfunc_48(unk32 param1) {
     }
 
     VecFx32 vec = *this->Actor::func_ov000_0209853c(param1);
-    func_01ffb714(&vec, &this->mPos, &vec);
+    VEC_Subtract(&vec, &this->mPos, &vec);
 
     fx32 y = vec.y;
     if (y < FX_F32_TO_FX32(0.0f)) {

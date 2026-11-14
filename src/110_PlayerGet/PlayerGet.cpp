@@ -659,7 +659,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 unk32 uStack_f0[4];
                 VecFx32 VStack_fc;
 
-                VecFx32_Add(this->mUnk_34, &data_ov110_021861ec.mUnk_00, &VStack_fc);
+                VEC_Add(this->mUnk_34, &data_ov110_021861ec.mUnk_00, &VStack_fc);
                 data_027e0cec->func_ov000_0209feac(0x874, &VStack_fc, 1, 0, 0);
                 uStack_f0[0] = 0x870;
                 uStack_f0[1] = 0x871;
@@ -964,7 +964,7 @@ void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
             break;
         case 0x3B:
             if (param3 != 0 && this->mUnk_54.mItemId != ItemId_Nothing && this->mUnk_8C.mpModel != NULL) {
-                VecFx32_Add(this->mUnk_34, (VecFx32 *) &data_ov110_021861ec.mUnk_00, &auStack_18);
+                VEC_Add(this->mUnk_34, (VecFx32 *) &data_ov110_021861ec.mUnk_00, &auStack_18);
                 data_027e0958->func_ov000_02058fc4(&this->mUnk_74, &auStack_18);
             }
             break;

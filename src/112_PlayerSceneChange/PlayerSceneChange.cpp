@@ -219,14 +219,14 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
 
                     VecFx32 sp78;
                     unk16 temp_r8_2 = this->mUnk_A8 - 0x8000;
-                    func_01ffb714(this->mUnk_34, (VecFx32 *) &this->mUnk_70, &sp78);
+                    VEC_Subtract(this->mUnk_34, (VecFx32 *) &this->mUnk_70, &sp78);
                     func_01ff9638(&sp78, -temp_r8_2);
                     this->mUnk_9C.x = -sp78.x;
                     this->mUnk_9C.y = 0;
                     this->mUnk_9C.z = 0;
                     func_01ff9638(&this->mUnk_9C, temp_r8_2);
 
-                    fx32 temp_r0_11 = VecFx32_Length(&this->mUnk_9C);
+                    fx32 temp_r0_11 = VEC_Mag(&this->mUnk_9C);
                     if (temp_r0_11 > FX32_HALF) {
                         if ((((temp_r0_11 - FX32_HALF) / 10) + ((temp_r0_11 - FX32_HALF) >> 0x1F)) <= 0) {
                             this->mUnk_9C.x = 0;
@@ -234,7 +234,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                             this->mUnk_9C.z = 0;
                         } else {
                             func_01ff9770(&this->mUnk_9C, temp_r0_11);
-                            VecFx32_Add(this->mUnk_3C, &this->mUnk_9C, this->mUnk_3C);
+                            VEC_Add(this->mUnk_3C, &this->mUnk_9C, this->mUnk_3C);
                         }
                     } else {
                         this->mUnk_9C.x = 0;
@@ -604,7 +604,7 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     case 0x13:
                     case 0x14:
                         if (this->mUnk_30->mUnk_70 < 0x0A) {
-                            VecFx32_Add(this->mUnk_3C, &this->mUnk_9C, this->mUnk_3C);
+                            VEC_Add(this->mUnk_3C, &this->mUnk_9C, this->mUnk_3C);
                         }
                         break;
                     default:

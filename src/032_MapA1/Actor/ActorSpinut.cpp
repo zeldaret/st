@@ -175,7 +175,7 @@ void ActorSpinut::Update() {
     this->func_ov032_0211b298();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     this->Actor::func_ov000_02098b8c(0x1, &this->mUnk_268);
 
@@ -490,13 +490,13 @@ void ActorSpinut::func_ov032_0211a20c() {
         this->mVel.y = FX_F32_TO_FX32(0.0f);
         this->mVel.z += FX_MUL(COS(this->mUnk_224), 0x2800);
 
-        func_01ffb714(&this->mVel, &this->mPos, &this->mVel);
+        VEC_Subtract(&this->mVel, &this->mPos, &this->mVel);
         func_01ff97c8(&this->mVel, ABS(this->mUnk_220));
 
         if (this->mTimer.HasExpired()) {
             this->mTimer.Set(0, 30);
 
-            if (this->mUnk_46 & 0x1C && VecFx32_Dot(&this->mVel, &this->mUnk_268.mUnk_08) < 0) {
+            if (this->mUnk_46 & 0x1C && VEC_DotProduct(&this->mVel, &this->mUnk_268.mUnk_08) < 0) {
                 this->mUnk_21C *= -1;
             } else {
                 if ((gRandom.Next32(0) & 0x80000000) && (gRandom.Next32(0) & 0x80000000)) {
