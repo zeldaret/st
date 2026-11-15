@@ -290,7 +290,7 @@ void ActorUnkSWBM::func_ov031_020e718c(const VecFx32 *param0, MtxFx33 *param1, s
     G3_PushMtx();
     G3_Translate(param0->x, param0->y, param0->z);
 
-    func_02024a84(param1);
+    G3_MultMtx33(param1);
 
     fx16 x = -param3;
     fx16 z = -param5;

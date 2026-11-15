@@ -596,7 +596,7 @@ void ActorShotArrow::func_ov031_020f2654(MtxFx33 *param1) {
     sp0.z -= ROUND_FX32(COS(this->mAngle.angle_s) * FX_F32_TO_FX32(0.5f));
 
     G3_Translate(sp0.x, sp0.y, sp0.z);
-    func_02024a84(param1);
+    G3_MultMtx33(param1);
     G3_Scale(0x1000, 0x1000, scaleZ);
     G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
                      GX_TEXPLTTCOLOR0_USE, 0);

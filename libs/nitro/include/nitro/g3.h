@@ -17,6 +17,8 @@ void G3X_InitMtxStack(void);
 void G3X_Reset(void);
 void G3X_SetClearColor(u32 rgb, u32 a, u32 param3, u32 param4, BOOL param5);
 void G3_RotY(fx16 sin, fx16 cos);
+void G3_MultMtx33(MtxFx33 *param1);
+void G3X_SetToonTable(u16 *param1);
 
 inline void G3_TexImageParam(GXTexFmt texFmt, GXTexGen texGen, GXTexSizeS texSizeS, GXTexSizeT texSizeT,
                              GXTexRepeat texRepeatST, GXTexFlip texFlip, GXTexPlttColor0 color0, u32 textureAddress) {
@@ -134,10 +136,8 @@ inline void G3_End(void) {
     REG_GFX_FIFO_POLYGONS_END = 0;
 }
 
-inline void G3_SwapBuffers(u32 sortMode, u32 bufferMode) {
-    // Unclear what values these macros have and how they are meant to be combined
-    // GX_SORTMODE_MANUAL | GX_BUFFERMODE_Z == 0x1
-    REG_GFX_FIFO_SWAP_BUFFERS = 0x1;
+inline void G3_SwapBuffers(GXSortMode sortMode, GXBufferMode bufferMode) {
+    REG_GFX_FIFO_SWAP_BUFFERS = (bufferMode << REG_G3_SWAP_BUFFERS_DP_SHIFT) | sortMode;
 }
 
 inline BOOL G3X_IsGeometryBusy(void) {
@@ -194,6 +194,9 @@ void G3_MultMtx43(MtxFx43 *pMtx);
 void G3_EffectIndex(u16 effectIndex);
 void G3_StartDraw();
 void G3_TargetMask();
+void G3_Normal();
+void G3_Shininess();
+void G3_VtxDiff();
 
 #ifdef __cplusplus
 } // extern "C"

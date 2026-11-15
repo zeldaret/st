@@ -384,6 +384,39 @@ inline void G2_SetOBJAttr(GXOamAttr *oam, fx32 x, fx32 y, s32 priority, GXOamMod
     oam->attr2 = charName | (priority << GX_OAM_ATTR2_PRIORITY_SHIFT) | (cParam << GX_OAM_ATTR2_CPARAM_SHIFT);
 }
 
+inline void G2_GetOBJAffine(const GXOamAffine *oam, MtxFx22 *mtx) {
+    mtx->_00 = oam->PA << 4;
+    mtx->_01 = oam->PB << 4;
+    mtx->_10 = oam->PC << 4;
+    mtx->_11 = oam->PD << 4;
+}
+
+//! TODO: figure out parameters and how they're used
+inline void G2_SetWnd0InsidePlane(s32 param1, s32 param2) {
+    REG_WININ = (REG_WININ & ~REG_G2_WININ_WIN0IN_MASK) | (0x3F << REG_G2_WININ_WIN0IN_SHIFT);
+}
+
+//! TODO: figure out parameters and how they're used
+inline void G2_SetWnd1InsidePlane(s32 param1, s32 param2) {
+    REG_WININ = (REG_WININ & ~REG_G2_WININ_WIN1IN_MASK) | (0x3F << REG_G2_WININ_WIN1IN_SHIFT);
+}
+
+//! TODO: figure out parameters and how they're used
+inline void G2_SetWndOutsidePlane(s32 param1, s32 param2) {
+    REG_WINOUT = (REG_WINOUT & ~REG_G2_WINOUT_WINOUT_MASK) | (0x30 << REG_G2_WINOUT_WINOUT_SHIFT);
+}
+
+//! TODO: assumed based on the above ones
+inline void G2S_SetWnd0InsidePlane(s32 param1, s32 param2) {
+    REG_WININ_SUB = (REG_WININ_SUB & ~REG_G2_WININ_WIN0IN_MASK) | (0x3F << REG_G2_WININ_WIN0IN_SHIFT);
+}
+inline void G2S_SetWnd1InsidePlane(s32 param1, s32 param2) {
+    REG_WININ_SUB = (REG_WININ_SUB & ~REG_G2_WININ_WIN1IN_MASK) | (0x3F << REG_G2_WININ_WIN1IN_SHIFT);
+}
+inline void G2S_SetWndOutsidePlane(s32 param1, s32 param2) {
+    REG_WINOUT_SUB = (REG_WINOUT_SUB & ~REG_G2_WINOUT_WINOUT_MASK) | (0x30 << REG_G2_WINOUT_WINOUT_SHIFT);
+}
+
 //! TODO: figure out
 void G2_SetOBJEffect(GXOamAttr *oam, GXOamEffect effect, s32 rsParam);
 GXOamEffect G2_GetOBJEffect(const GXOamAttr *oam);
@@ -392,8 +425,9 @@ GXOamShape G2_GetOBJShape(const GXOamAttr *oam);
 void G2_SetOBJColorMode(GXOamAttr *oam, GXOamColorMode color);
 GXOamColorMode G2_GetOBJColorMode(const GXOamAttr *oam);
 void G2_OBJMosaic(GXOamAttr *oam, BOOL enable);
-void G2_SetOBJAffine(GXOamAffine *oam, MtxFx22 mtx);
-void G2_GetOBJAffine(GXOamAffine *oam, MtxFx22 mtx);
+void G2_SetOBJAffine(GXOamAffine *oam, MtxFx22 *mtx);
+void G2_SetWnd0Position(s32 param1, s32 param2, s32 param3, s32 param4);
+void G2_SetWnd1Position(s32 param1, s32 param2, s32 param3, s32 param4);
 
 #ifdef __cplusplus
 } // extern "C"

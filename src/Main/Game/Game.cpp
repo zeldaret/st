@@ -8,6 +8,7 @@
 #include "Unknown/UnkStruct_0204e64c.hpp"
 #include "Unknown/UnkStruct_027e0208.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
+#include "nitro/gx/enums.h"
 #include "versions.h"
 
 #include <nitro/card.h>
@@ -133,7 +134,7 @@ void Game::Run() {
         {
             int enabled = OS_DisableInterrupts();
             this->mUnk_1C.func_02013e18((void *) func_020132dc, 0);
-            REG_GFX_FIFO_SWAP_BUFFERS = 3;
+            G3_SwapBuffers(GX_SORTMODE_MANUAL, GX_BUFFERMODE_1);
             OS_RestoreInterrupts(enabled);
         }
 

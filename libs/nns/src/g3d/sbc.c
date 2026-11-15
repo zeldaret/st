@@ -48,10 +48,10 @@ extern MtxFx43 *func_0200c198();
 extern MtxFx43 *func_0200c23c();
 extern MtxFx43 *func_0200c270();
 extern s32 func_02024d94(MtxFx33 *matrix);
-extern void func_02024a68(void *param1);
+extern void G3_MultMtx43(void *param1);
 extern void G3_LoadMtx43(MtxFx43 *matrix);
 extern void func_01ff8dac(const void *param1, u32 param2);
-extern void func_02024a84(MtxFx33 *param1);
+extern void G3_MultMtx33(MtxFx33 *param1);
 extern MtxFx33 gGeomMatrix;
 extern VecFx32 gGeomTranslation;
 extern void G3d_GetCurrentMtx(MtxFx43 *mtx1, MtxFx33 *mtx2);
@@ -501,7 +501,7 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
 
             REG_GFX_FIFO_MATRIX_RESTORE = (*termPtr);
             REG_GFX_FIFO_MATRIX_MODE    = 1; // Position
-            func_02024a68(&invBMtx[jntIndex].mtx);
+            G3_MultMtx43(&invBMtx[jntIndex].mtx);
         }
 
         if (i != 0) {
@@ -522,7 +522,7 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
             while (func_02024d64(mat4x))
                 ;
             REG_GFX_FIFO_MATRIX_MODE = 2; // Position + Vector
-            func_02024a84(&invBMtx[jntIndex].unkMtx);
+            G3_MultMtx33(&invBMtx[jntIndex].unkMtx);
         }
 
         weight = *(termPtr + 2) << 4;

@@ -38,10 +38,10 @@ extern "C" void func_020196fc() {
     G2S_BlendNone();
     GX_SetVisibleWindows(0);
     GXS_SetVisibleWindows(0);
-    func_020242a0();
+    GX_ResetBankForARM7();
     GX_ResetBankForBG();
     GX_ResetBankForBGExtPltt();
-    func_0202428c();
+    GX_ResetBankForClearImage();
     GX_ResetBankForObj();
     GX_ResetBankForOBJExtPltt();
     GX_ResetBankForSubBG();

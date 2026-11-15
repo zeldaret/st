@@ -109,7 +109,7 @@ void UnkStruct_027e09b4::func_ov017_020c0b24(const VecFx32 *param1, s32 param2, 
     G3_Color(data_027e09ac->mUnk_014.mUnk_08);
     G3_PushMtx();
     G3_Translate(param1->x, param1->y, param1->z);
-    func_02024a84(&sp0);
+    G3_MultMtx33(&sp0);
     G3_Scale(param2, param2, 0x666);
     G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, GX_CULL_FRONT, 0, 1, FALSE);
     UnkStruct_027e09b4::func_ov017_020c0dec();
