@@ -155,7 +155,7 @@ void UnkStruct_027e0ce0_34::func_ov024_020d3e30(unk32 param1, unk32 param2) {
 void *UnkStruct_027e0ce0_34::func_ov024_020d3e68(unk32 param1) {
     unk32 iVar1 = this->func_ov024_020d3e0c(param1);
     unk32 iVar2 = this->func_ov024_020d3dec(param1);
-    return G3d_GetModelPtr(data_027e0d00->mUnk_020[iVar2][iVar1]->mUnk_50);
+    return NNS_G3dGetMdl(data_027e0d00->mUnk_020[iVar2][iVar1]->mUnk_50);
 }
 
 void UnkStruct_027e0ce0_34::SetTrackFlag(s32 flagPos, u16 flagValue, bool doSet) {

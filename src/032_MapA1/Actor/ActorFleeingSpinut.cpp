@@ -36,7 +36,7 @@ ActorProfileFleeingSpinut::ActorProfileFleeingSpinut() :
 }
 
 ActorFleeingSpinut::ActorFleeingSpinut() :
-    mUnk_0B0(G3d_GetModelPtr(GET_PROFILE(ActorProfileFleeingSpinut)->vfunc_04()->mUnk_50)),
+    mUnk_0B0(NNS_G3dGetMdl(GET_PROFILE(ActorProfileFleeingSpinut)->vfunc_04()->mUnk_50)),
     mUnk_110(&this->mUnk_0B0, GET_PROFILE(ActorProfileFleeingSpinut)->vfunc_04()),
     mPrevState(ActorState_None),
     mUnk_1BE(0x0),
@@ -121,7 +121,7 @@ void ActorFleeingSpinut::Update() {
     this->func_ov032_0211cb2c();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     this->Actor::func_ov000_02098b8c(0x0, NULL);
 
@@ -635,8 +635,8 @@ u16 *ActorFleeingSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, V
     }
 
     this->mUnk_04->vfunc_0C(&sp1C);
-    func_01ffb714(&sp1C, param1, &sp10);
-    func_01ffb714(&sp1C, &this->mUnk_1C.vec, &sp4);
+    VEC_Subtract(&sp1C, param1, &sp10);
+    VEC_Subtract(&sp1C, &this->mUnk_1C.vec, &sp4);
 
     temp_r1 = FX_Atan2Idx(sp10.x, sp10.z);
     sp0     = temp_r1;
@@ -650,9 +650,9 @@ u16 *ActorFleeingSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, V
     }
 
     if (temp_r5 < param4) {
-        func_01ffb714(&sp1C, param1, param3);
+        VEC_Subtract(&sp1C, param1, param3);
         this->func_ov032_0211d7e8(&sp1C);
-    } else if (VecFx32_Dot(&sp10, &sp4) < 0) {
+    } else if (VEC_DotProduct(&sp10, &sp4) < 0) {
         this->mUnk_1C.CopyOut(&sp1C);
         this->func_ov032_0211d7e8(&sp1C);
     } else {
@@ -725,25 +725,25 @@ void ActorFleeingSpinut_1EC::func_ov032_0211d08c(VecFx32 *param1) {
     }
 
     sp18 = *temp_r5->func_01fff148(0);
-    func_01ffb714(&sp18, param1, &sp18);
+    VEC_Subtract(&sp18, param1, &sp18);
 
     if (temp_r5->func_01fff1a4()) {
-        func_01ffb714(temp_r5->func_01fff148(1), param1, &spC);
+        VEC_Subtract(temp_r5->func_01fff148(1), param1, &spC);
     }
 
     this->mUnk_04->vfunc_0C(&sp0);
-    func_01ffb714(&sp0, param1, &sp0);
+    VEC_Subtract(&sp0, param1, &sp0);
 
-    if ((VecFx32_Length(&sp18) > 0x3CCD) || (VecFx32_Dot(&sp0, &sp18) <= 0)) {
+    if ((VEC_Mag(&sp18) > 0x3CCD) || (VEC_DotProduct(&sp0, &sp18) <= 0)) {
         if (!temp_r5->func_01fff1a4()) {
             return;
         }
 
-        if (VecFx32_Length(&spC) > 0x3CCD) {
+        if (VEC_Mag(&spC) > 0x3CCD) {
             return;
         }
 
-        if (VecFx32_Dot(&sp0, &spC) <= 0) {
+        if (VEC_DotProduct(&sp0, &spC) <= 0) {
             return;
         }
     }
@@ -866,11 +866,11 @@ bool ActorFleeingSpinut_1EC::func_ov032_0211d6d8(VecFx32 *param1, UnkStruct_027e
 
     temp_r4 = data_027e0ce0->func_01fff148(param3);
     param2->vfunc_0C(&sp18);
-    func_01ffb714(&sp18, param1, &sp0);
-    func_01ffb714(temp_r4, param1, &spC);
+    VEC_Subtract(&sp18, param1, &sp0);
+    VEC_Subtract(temp_r4, param1, &spC);
     var_r4 = false;
 
-    if (VecFx32_Dot(&sp0, &spC) > 0) {
+    if (VEC_DotProduct(&sp0, &spC) > 0) {
         var_r5 = 0;
 
         if (this->mUnk_0C[param3] != 0) {
@@ -988,13 +988,13 @@ bool ActorFleeingSpinut_1EC::func_ov032_0211da0c(unk32 param1, VecFx32 *param2) 
     VecFx32 *temp_r4 = data_027e0ce0->func_01fff148(param1);
     this->mUnk_04->vfunc_0C(&sp18);
 
-    func_01ffb714(&sp18, param2, &sp0);
-    func_01ffb714(temp_r4, param2, &spC);
+    VEC_Subtract(&sp18, param2, &sp0);
+    VEC_Subtract(temp_r4, param2, &spC);
 
     var_r5 = false;
     var_r6 = false;
 
-    if (!(VecFx32_Dot(&sp0, &spC) <= 0 || (func_01ff9258(temp_r4->x - param2->x, temp_r4->z - param2->z) >= 0x2800))) {
+    if (!(VEC_DotProduct(&sp0, &spC) <= 0 || (func_01ff9258(temp_r4->x - param2->x, temp_r4->z - param2->z) >= 0x2800))) {
         var_r6 = true;
     }
 

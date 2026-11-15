@@ -32,7 +32,7 @@ UnkStruct_027e09ac::UnkStruct_027e09ac() {
 
     u16 auStack_50[32];
     func_ov000_02072344(auStack_50, &this->mUnk_014);
-    func_02024df0(auStack_50);
+    G3X_SetToonTable(auStack_50);
 
     if (data_027e09bc != NULL && data_027e09bc != NULL) {
         UnkStruct_027e09a8::Create();

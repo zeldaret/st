@@ -170,7 +170,7 @@ skip:
     }
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mState != ActorHeartState_GrabbedByBoomerang) {
         this->func_ov000_02098910(NULL, 0x10);
@@ -180,7 +180,7 @@ skip:
         this->mVel.y = FX_F32_TO_FX32(0.0);
     }
 
-    VecFx32_Add(&this->mPos, &this->mUnk_EC, &this->mPos);
+    VEC_Add(&this->mPos, &this->mUnk_EC, &this->mPos);
     VecFx32_Reset(&this->mUnk_EC);
 }
 

@@ -43,7 +43,7 @@ UnkStruct_027e0d00_20::UnkStruct_027e0d00_20(unk32 param1, unk32 param2) :
 
 void UnkStruct_027e0d00_20::func_ov024_020d4fa0(void *param1, unk32 param2) {
     u8 unknown[0x90];
-    ModelRender_Derived2 local_120(G3d_GetModelPtr(this->mUnk_50), 0x0C, unknown);
+    ModelRender_Derived2 local_120(NNS_G3dGetMdl(this->mUnk_50), 0x0C, unknown);
     VecFx32 *iVar2;
     VecFx32 *iVar3;
     fx32 temp;

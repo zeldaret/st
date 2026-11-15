@@ -611,7 +611,7 @@ void MapObjectDoorBase::vfunc_84(unk32 param1, VecFx32 *param2, UnkAngleStruct *
         *param3 += -DEG_TO_ANG(180);
     }
 
-    VecFx32_Add(&this->mPos, &local_20, param2);
+    VEC_Add(&this->mPos, &local_20, param2);
 }
 
 void MapObjectDoorBase::func_ov031_020fcf0c(unk32 param1) {

@@ -8,6 +8,7 @@
 #include "Unknown/UnkStruct_0204e64c.hpp"
 #include "Unknown/UnkStruct_027e0208.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
+#include "nitro/gx/enums.h"
 #include "versions.h"
 
 #include <nitro/card.h>
@@ -92,7 +93,7 @@ void Game::Run() {
 
             MtxFx33_InitIdentity(&gGeomMatrix);
             data_027e0208.mUnk_0FC = 0;
-            FlushGfxQueue();
+            NNS_G3dGeFlushBuffer();
             this->mpCurrentGameMode->vfunc_18();
             data_0204a110.func_020194dc();
 
@@ -101,7 +102,7 @@ void Game::Run() {
             }
 
 #if IS_JP
-            FlushGfxQueue();
+            NNS_G3dGeFlushBuffer();
 #endif
 
             if (data_0204e64c.mUnk_00.mUnk_0B == 0) {
@@ -109,7 +110,7 @@ void Game::Run() {
             }
 
             this->mpCurrentGameMode->vfunc_1C();
-            FlushGfxQueue();
+            NNS_G3dGeFlushBuffer();
             data_0204a110.func_02019454();
             this->mpCurrentGameMode->vfunc_20();
 
@@ -133,7 +134,7 @@ void Game::Run() {
         {
             int enabled = OS_DisableInterrupts();
             this->mUnk_1C.func_02013e18((void *) func_020132dc, 0);
-            REG_GFX_FIFO_SWAP_BUFFERS = 3;
+            G3_SwapBuffers(GX_SORTMODE_MANUAL, GX_BUFFERMODE_1);
             OS_RestoreInterrupts(enabled);
         }
 

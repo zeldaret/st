@@ -352,7 +352,7 @@ void ActorRupee::func_ov031_020e9438() {
 void ActorRupee::func_ov031_020e9450() {
     this->func_ov017_020bf9c8(gpActorManager->func_01fff3b4(this->mUnk_BC));
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (!GET_FLAG(this->mFlags, ActorFlag_5)) {
         return;
@@ -643,7 +643,7 @@ void ActorRupee::Update() {
 
 void ActorRupee::func_ov031_020e9b88() {
     this->func_ov000_02098838();
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mUnk_5C.mInitialPos.y < this->mPos.y + this->mVel.y) {
         this->mUnk_44 = 0x9C;
@@ -659,7 +659,7 @@ void ActorRupee::func_ov031_020e9b88() {
 
 void ActorRupee::func_ov031_020e9be8() {
     this->func_ov000_02098838();
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mVel.y < 0) {
         this->mUnk_44 = 3;

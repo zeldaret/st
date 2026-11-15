@@ -106,7 +106,7 @@ void ActorItemBoomerang::Update() {
 
     VecFx32 *temp_r0 = &this->mPos;
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(temp_r0, &this->mVel, temp_r0);
+    VEC_Add(temp_r0, &this->mVel, temp_r0);
 
     if ((func_ov000_0205aeac() && this->mUnk_128 == 0x1) || this->mUnk_128 == 0x2) {
         VecFx32_Copy(&this->mPos, &this->mUnk_140.mUnk_00);
@@ -157,10 +157,10 @@ void ActorItemBoomerang::Update() {
                 this->SetState(ActorItemBoomerangState_ReturningToLink);
             } else {
 
-                sp18.unk_00 = VecFx32_Length(&this->mVel);
+                sp18.unk_00 = VEC_Mag(&this->mVel);
 
                 func_01ff916c(&sp18.unk_00, 0x0, FX_MUL(sp18.unk_00, 0x400));
-                func_01ffb714(&sp6C, &this->mPos, &this->mVel);
+                VEC_Subtract(&sp6C, &this->mPos, &this->mVel);
                 func_01ff97c8(&this->mVel, sp18.unk_00 + 0x200);
             }
 
@@ -248,9 +248,9 @@ void ActorItemBoomerang::Update() {
             }
 
             func_01ff93c0(&this->mVel, 0xC00);
-            func_01ffb714(&sp3C, &this->mPos, &sp48);
+            VEC_Subtract(&sp3C, &this->mPos, &sp48);
             func_01ff97c8(&sp48, 0x200);
-            VecFx32_Add(&this->mVel, &sp48, &this->mVel);
+            VEC_Add(&this->mVel, &sp48, &this->mVel);
             break;
         }
 

@@ -17,7 +17,7 @@ ActorProfileUnkEFSB::ActorProfileUnkEFSB() :
     ActorProfile_Derived1(ActorId_EFSB) {}
 
 ActorUnkEFSB::ActorUnkEFSB() :
-    mUnk_098(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkEFSB)->mUnk_3C.mUnk_50)),
+    mUnk_098(NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkEFSB)->mUnk_3C.mUnk_50)),
     mUnk_0F8(&this->mUnk_098, GET_PROFILE(ActorProfileUnkEFSB)->vfunc_04()),
     mUnk_154(&this->mUnk_098, GET_PROFILE(ActorProfileUnkEFSB)->vfunc_04()) {}
 

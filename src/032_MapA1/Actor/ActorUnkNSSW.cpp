@@ -82,8 +82,8 @@ void ActorUnkNSSW::Update() {
     VecFx32Cpp sp10(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f));
     VecFx32Cpp sp04(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f));
 
-    func_01ffa7a0(&sp10.vec, &this->mUnk_150, &sp10.vec);
-    func_01ffa7a0(&sp04.vec, &this->mUnk_150, &sp04.vec);
+    MTX_MultVec33(&sp10.vec, &this->mUnk_150, &sp10.vec);
+    MTX_MultVec33(&sp04.vec, &this->mUnk_150, &sp04.vec);
 
     fx16 z1 = sp10.vec.z;
     fx16 y1 = sp10.vec.y;
@@ -195,9 +195,9 @@ void ActorUnkNSSW::func_ov032_02120190() {
     VecFx32 vec;
     VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(-1.0002f), &vec);
 
-    func_01ffa7a0(&vec, &this->mUnk_150, &vec);
+    MTX_MultVec33(&vec, &this->mUnk_150, &vec);
 
-    VecFx32_Add(&vec, &actor->mUnk_0E8, &vec);
+    VEC_Add(&vec, &actor->mUnk_0E8, &vec);
 
     VecFx32_Copy(&vec, &this->mPos);
 
@@ -225,7 +225,7 @@ void ActorUnkNSSW::func_ov032_021202d8() {
     this->mUnk_144.vec.y = newY;
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mUnk_144.vec, &this->mPos);
+    VEC_Add(&this->mPos, &this->mUnk_144.vec, &this->mPos);
 
     VecFx32 vec = this->mPos;
     vec.y += FX_F32_TO_FX32(0.2f);
@@ -332,7 +332,7 @@ void ActorUnkNSSW::func_ov032_021203fc() {
     func_ov000_0205f298(&this->mUnk_174, &sp68.pos, 0x333);
     func_ov000_0205f4fc(&this->mUnk_174, &this->mUnk_150);
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mUnk_144.vec, &this->mPos);
+    VEC_Add(&this->mPos, &this->mUnk_144.vec, &this->mPos);
 
     sp40.mUnk_00 = NULL;
 
@@ -391,7 +391,7 @@ void ActorUnkNSSW::vfunc_2C(unk32 param1) {
     VecFx32 sp18;
     VecFx32 sp0C;
 
-    // VecFx32_Add does not match
+    // VEC_Add does not match
     VecFx32_Init(this->mPos.x + this->mUnk_190.vec.x, this->mPos.y + this->mUnk_190.vec.y, this->mPos.z + this->mUnk_190.vec.z,
                  &sp0C);
 
@@ -399,7 +399,7 @@ void ActorUnkNSSW::vfunc_2C(unk32 param1) {
 
     VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), &sp24);
 
-    func_01ffa7a0(&sp24, &this->mUnk_150, &sp24);
+    MTX_MultVec33(&sp24, &this->mUnk_150, &sp24);
     fx16 angle = FX_Atan2Idx(sp24.x, sp24.z);
 
     sp18   = this->mPos;
@@ -481,7 +481,7 @@ void ActorUnkNSSW::func_ov032_02120894(unk32 param1) {
             VecFx32 vec;
             VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), &vec);
 
-            func_01ffa7a0(&vec, &this->mUnk_150, &vec);
+            MTX_MultVec33(&vec, &this->mUnk_150, &vec);
 
             u16 angle = (u16) (s16) FX_Atan2Idx(vec.x, vec.z);
 
@@ -642,7 +642,7 @@ bool ActorUnkNSSW_0E0::vfunc_04() {
 }
 
 void ActorUnkNSSW_0E0::vfunc_0C(VecFx32 *param1) {
-    if (VecFx32_Length(param1) < FX_F32_TO_FX32(0.01f)) {
+    if (VEC_Mag(param1) < FX_F32_TO_FX32(0.01f)) {
         this->GetActorPtr<ActorUnkNSSW>()->func_ov032_02120bc0();
     } else {
         this->GetActorPtr<ActorUnkNSSW>()->func_ov032_02120b7c(param1);

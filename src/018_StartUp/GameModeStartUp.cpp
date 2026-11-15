@@ -16,6 +16,7 @@
 #include <nitro/reg.h>
 #include <nitro/tp.h>
 #include <nns/fnd.h>
+#include <nns/snd.h>
 
 static u8 data_ov018_020c5bc0;
 

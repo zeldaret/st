@@ -616,8 +616,8 @@ void MapObjectDoorDangerSpawn::vfunc_74(void) {
     func_01ffaf74(&local_40, &m, &local_40);
     func_01ffaf74(&local_4c, &m, &local_4c);
 
-    VecFx32_Add(&local_28, &local_40, &local_28);
-    VecFx32_Add(&local_34, &local_4c, &local_34);
+    VEC_Add(&local_28, &local_40, &local_28);
+    VEC_Add(&local_34, &local_4c, &local_34);
 
     data_027e0cec->func_ov000_0209ff8c(&this->mUnk_68.mUnk_00, 0x8CF, &local_28, 4);
     data_027e0cec->func_ov000_0209ff8c(&this->mUnk_A8.mUnk_00, 0x8CF, &local_34, 4);
@@ -695,7 +695,7 @@ void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, UnkAngleS
 
         *param3 += DEG_TO_ANG(180);
     }
-    VecFx32_Add(&this->mPos, &local_24, param2);
+    VEC_Add(&this->mPos, &local_24, param2);
 
     VecFx32 local_30;
     this->mUnk_5A = this->mAngle.angle_s;
@@ -710,7 +710,7 @@ void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, UnkAngleS
         local_30.y = 0;
         this->mUnk_5A += DEG_TO_ANG(180);
     }
-    VecFx32_Add(&this->mPos, &local_30, &this->mUnk_5C);
+    VEC_Add(&this->mPos, &local_30, &this->mUnk_5C);
 }
 
 void MapObjectDoorDangerSpawn::func_ov031_020fe5fc(VecFx32 *param1, MapObjectDoorDangerSpawn *thisx) {

@@ -254,7 +254,7 @@ void UnkStruct_027e0cd8_0C_Base::LoadSceneModel(const EntranceInfo *param1) {
     this->mUnk_070.vfunc_08(0x10);
 
     BMDSectionModel *pBMD = func_ov000_0205abcc(&local_50, &this->mUnk_070, 0x01, 0x00, NULL);
-    G3d_Model *pModel     = G3d_GetModelPtr(pBMD);
+    G3d_Model *pModel     = NNS_G3dGetMdl(pBMD);
     G3d_0200e6a0(pModel, 0x00, 0x40);
     G3d_0200e6a0(pModel, 0x00, 0x80);
     this->mSceneRender.vfunc_08(pModel);

@@ -46,8 +46,8 @@ bool ActorUnkSCCN::Init(unk32 param1) {
         sp0.x = -this->mPos.x;
         sp0.z = -this->mPos.z;
 
-        VecFx32_Add(&spC.unk_00, psp0, &spC.unk_00);
-        VecFx32_Add(&spC.unk_0C, psp0, &spC.unk_0C);
+        VEC_Add(&spC.unk_00, psp0, &spC.unk_00);
+        VEC_Add(&spC.unk_0C, psp0, &spC.unk_0C);
 
         this->mUnk_94.mUnk_0C = spC.unk_00;
         this->mUnk_94.mUnk_18 = spC.unk_0C;

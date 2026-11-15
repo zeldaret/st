@@ -24,6 +24,7 @@
 #include <nitro/gx.h>
 #include <nitro/os.h>
 #include <nitro/rtc.h>
+#include <nns/snd.h>
 
 void func_ov018_020c4e8c(void) {
     RTC_Init();
@@ -202,10 +203,10 @@ UnkStruct_0204e5f8::UnkStruct_0204e5f8() :
     this->mUnk_38                   = 1;
     this->mUnk_39                   = 1;
 
-    REG_WININ      = (REG_WININ & ~0x3F) | 0x3F;
-    REG_WINOUT     = (REG_WINOUT & ~0x3F) | 0x30;
-    REG_WININ_SUB  = (REG_WININ_SUB & ~0x3F) | 0x3F;
-    REG_WINOUT_SUB = (REG_WINOUT_SUB & ~0x3F) | 0x30;
+    G2_SetWnd0InsidePlane(0x00, 0x00);
+    G2_SetWndOutsidePlane(0x00, 0x00);
+    G2S_SetWnd0InsidePlane(0x00, 0x00);
+    G2S_SetWndOutsidePlane(0x00, 0x00);
 }
 
 UnkStruct_0204a110_Sub3::UnkStruct_0204a110_Sub3() {
