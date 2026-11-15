@@ -1,10 +1,10 @@
-func_ov031_020d8720 kind:function(arm,size=0x18) addr:0x020da0c0
+_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8720Ei kind:function(arm,size=0x18) addr:0x020da0c0
 _ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8738Ev kind:function(arm,size=0x188) addr:0x020da0d8
 _ZN21UnkStruct_027e0cd8_0C19func_ov031_020d88c0Ev kind:function(arm,size=0x224) addr:0x020da260
 _ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8ae4Ev kind:function(arm,size=0x6c) addr:0x020da484
-func_ov031_020d8b50 kind:function(arm,size=0x168) addr:0x020da4f0
-func_ov031_020d8cb8 kind:function(arm,size=0x18) addr:0x020da658
-func_ov031_020d8cd0 kind:function(arm,size=0x28) addr:0x020da670
+_ZN21UnkStruct_027e0cd8_0C8vfunc_1CEPK12EntranceInfobb kind:function(arm,size=0x168) addr:0x020da4f0
+_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8cb8EP16G3d_RenderState_ kind:function(arm,size=0x18) addr:0x020da658
+_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8cd0EPvP16G3d_RenderState_ kind:function(arm,size=0x28) addr:0x020da670
 func_ov031_020d8cf8 kind:function(arm,size=0x70) addr:0x020da698
 func_ov031_020d8d68 kind:function(arm,size=0x74) addr:0x020da708
 func_ov031_020d8ddc kind:function(arm,size=0x14) addr:0x020da77c

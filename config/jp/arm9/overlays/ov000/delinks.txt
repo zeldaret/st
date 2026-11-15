@@ -130,3 +130,6 @@ src/000_Second/Actor/Actor_Derived1.cpp:
 
 src/000_Second/Item/TreasureManager.cpp:
     .text       start:0x020ab2bc end:0x020aba00
+
+src/000_Second/data_020aa88c.cpp:
+    .rodata     start:0x020ac08c end:0x020ac294

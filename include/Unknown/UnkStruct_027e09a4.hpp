@@ -149,6 +149,75 @@ public:
     /* 14 */
 };
 
+typedef enum SpawnTransitionType_ {
+    /* 00 */ SpawnTransitionType_None = 0x00,
+    /* 01 */ SpawnTransitionType_1    = 0x01,
+    /* 02 */ SpawnTransitionType_2    = 0x02,
+    /* 03 */ SpawnTransitionType_3    = 0x03,
+    /* 04 */ SpawnTransitionType_4    = 0x04,
+    /* 05 */ SpawnTransitionType_5    = 0x05,
+    /* 06 */ SpawnTransitionType_6    = 0x06,
+    /* 07 */ SpawnTransitionType_7    = 0x07,
+    /* 08 */ SpawnTransitionType_8    = 0x08,
+    /* 09 */ SpawnTransitionType_9    = 0x09,
+    /* 10 */ SpawnTransitionType_10   = 0x0A,
+    /* 11 */ SpawnTransitionType_11   = 0x0B,
+    /* 12 */ SpawnTransitionType_12   = 0x0C,
+    /* 13 */ SpawnTransitionType_13   = 0x0D,
+    /* 14 */ SpawnTransitionType_14   = 0x0E,
+    /* 15 */ SpawnTransitionType_15   = 0x0F,
+    /* 16 */ SpawnTransitionType_16   = 0x10,
+    /* 17 */ SpawnTransitionType_17   = 0x11,
+    /* 18 */ SpawnTransitionType_18   = 0x12,
+    /* 19 */ SpawnTransitionType_19   = 0x13,
+    /* 20 */ SpawnTransitionType_20   = 0x14,
+    /* 21 */ SpawnTransitionType_21   = 0x15,
+    /* 22 */ SpawnTransitionType_22   = 0x16,
+    /* 23 */ SpawnTransitionType_23   = 0x17,
+    /* 24 */ SpawnTransitionType_24   = 0x18,
+    /* 25 */ SpawnTransitionType_25   = 0x19,
+    /* 26 */ SpawnTransitionType_26   = 0x1A,
+    /* 27 */ SpawnTransitionType_27   = 0x1B,
+    /* 28 */ SpawnTransitionType_28   = 0x1C,
+    /* 29 */ SpawnTransitionType_29   = 0x1D,
+    /* 30 */ SpawnTransitionType_30   = 0x1E,
+    /* 31 */ SpawnTransitionType_31   = 0x1F,
+    /* 32 */ SpawnTransitionType_32   = 0x20,
+    /* 33 */ SpawnTransitionType_33   = 0x21,
+    /* 34 */ SpawnTransitionType_34   = 0x22,
+    /* 35 */ SpawnTransitionType_35   = 0x23,
+    /* 36 */ SpawnTransitionType_36   = 0x24,
+    /* 37 */ SpawnTransitionType_37   = 0x25,
+    /* 38 */ SpawnTransitionType_38   = 0x26,
+    /* 39 */ SpawnTransitionType_39   = 0x27,
+    /* 40 */ SpawnTransitionType_40   = 0x28,
+    /* 41 */ SpawnTransitionType_41   = 0x29,
+    /* 42 */ SpawnTransitionType_42   = 0x2A,
+    /* 43 */ SpawnTransitionType_43   = 0x2B,
+    /* 44 */ SpawnTransitionType_44   = 0x2C,
+    /* 45 */ SpawnTransitionType_45   = 0x2D,
+    /* 46 */ SpawnTransitionType_46   = 0x2E,
+    /* 47 */ SpawnTransitionType_47   = 0x2F,
+    /* 48 */ SpawnTransitionType_48   = 0x30,
+    /* 49 */ SpawnTransitionType_49   = 0x31,
+    /* 50 */ SpawnTransitionType_50   = 0x32,
+    /* 51 */ SpawnTransitionType_51   = 0x33,
+    /* 52 */ SpawnTransitionType_52   = 0x34,
+    /* 53 */ SpawnTransitionType_53   = 0x35,
+    /* 54 */ SpawnTransitionType_54   = 0x36,
+    /* 55 */ SpawnTransitionType_55   = 0x37,
+    /* 56 */ SpawnTransitionType_56   = 0x38,
+    /* 57 */ SpawnTransitionType_57   = 0x39,
+    /* 58 */ SpawnTransitionType_58   = 0x3A,
+    /* 59 */ SpawnTransitionType_59   = 0x3B,
+    /* 60 */ SpawnTransitionType_60   = 0x3C,
+    /* 61 */ SpawnTransitionType_61   = 0x3D,
+    /* 62 */ SpawnTransitionType_62   = 0x3E,
+    /* 63 */ SpawnTransitionType_63   = 0x3F,
+    /* 64 */ SpawnTransitionType_64   = 0x40,
+    /* 65 */ SpawnTransitionType_Max,
+} SpawnTransitionType;
+
 class UnkStruct_WarpUnk1 : public UnkStruct_0204a060_Base {
 public:
     /* 00 (base) */
@@ -157,7 +226,7 @@ public:
     /* 78 */ EntranceInfo mCurEntrance;
     /* 8C */ EntranceInfo mNextEntrance;
     /* A0 */ UnkStruct_WarpUnk1_A0 mUnk_A0;
-    /* B4 */ unk32 mSpawnTransitionType; // the behavior of Link when entering a new scene
+    /* B4 */ SpawnTransitionType mSpawnTransitionType; // the behavior of Link when entering a new scene
     /* B8 */
 
     UnkStruct_WarpUnk1();
@@ -349,7 +418,7 @@ public:
     void func_ov000_020708d8(unk32 param1);
     void func_ov000_02070938(unk32 param1);
     void func_ov000_02070a4c(unk32 param1);
-    unk32 func_ov000_02070554();
+    SpawnTransitionType GetSpawnTransitionType(); // func_ov000_02070554
     UnkStruct_WarpUnk1_A0 *func_ov000_02070538();
     bool func_ov000_02070a9c(EntranceInfo *param1);
     bool func_ov000_02072154(EntranceInfo *param1, unk32 param2);

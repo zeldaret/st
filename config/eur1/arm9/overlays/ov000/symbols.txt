@@ -999,7 +999,7 @@ func_ov000_020704c8 kind:function(arm,size=0x2c) addr:0x020704fc
 _ZN18UnkStruct_027e09a4D1Ev kind:function(arm,size=0x44) addr:0x02070528
 _ZN18UnkStruct_027e09a419func_ov000_02070538Ev kind:function(arm,size=0xc) addr:0x0207056c
 func_ov000_02070544 kind:function(arm,size=0x10) addr:0x02070578
-_ZN18UnkStruct_027e09a419func_ov000_02070554Ev kind:function(arm,size=0xc) addr:0x02070588
+_ZN18UnkStruct_027e09a422GetSpawnTransitionTypeEv kind:function(arm,size=0xc) addr:0x02070588
 _ZN18UnkStruct_027e09a419func_ov000_02070560Ev kind:function(arm,size=0xc) addr:0x02070594
 _ZN18UnkStruct_027e09a419func_ov000_0207056cEv kind:function(arm,size=0x14) addr:0x020705a0
 func_ov000_02070580 kind:function(arm,size=0x1c) addr:0x020705b4
@@ -3116,12 +3116,7 @@ data_ov000_020aa5aa kind:data(any) addr:0x020aa5aa
 data_ov000_020aa5ac kind:data(any) addr:0x020aa5ac
 data_ov000_020aa828 kind:data(any) addr:0x020aa828
 data_ov000_020aa888 kind:data(any) addr:0x020aa8dc
-data_ov000_020aa8e0 kind:data(any) addr:0x020aa8e0
-data_ov000_020aa8e1 kind:data(any) addr:0x020aa8e1
-data_ov000_020aa8e2 kind:data(any) addr:0x020aa8e2
-data_ov000_020aa8e3 kind:data(any) addr:0x020aa8e3
-data_ov000_020aa8e4 kind:data(any) addr:0x020aa8e4
-data_ov000_020aa8e6 kind:data(any) addr:0x020aa8e6
+data_ov000_020aa88c kind:data(any) addr:0x020aa8e0
 data_ov000_020aaae8 kind:data(any) addr:0x020aaae8
 data_ov000_020aac74 kind:data(any) addr:0x020aac74
 data_ov000_020aac7c kind:data(any) addr:0x020aac7c

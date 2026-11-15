@@ -4,6 +4,7 @@
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "profile.hpp"
 
 #include <nitro/mi.h>
 
@@ -35,7 +36,7 @@ UnkStruct_027e0cd8_0C::UnkStruct_027e0cd8_0C(UnkStruct_027e0cd8 *param1) :
 UnkStruct_027e0cd8_0C::~UnkStruct_027e0cd8_0C() {
     for (int i = 0; i < this->mUnk_1D4; i++) {
         if (this->mUnk_160[i] != NULL) {
-            this->mUnk_160[i]->~UnkStruct_027e0cd8_0C_160();
+            this->mUnk_160[i]->~UnkSystem3();
             DELETE(this->mUnk_160[i]);
         }
 

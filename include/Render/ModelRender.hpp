@@ -264,3 +264,15 @@ public:
 
     ModelRender_UnkSystem1_Derived1(G3d_Model *pModel, size_t allocSize);
 };
+
+extern "C" size_t func_0200b150(UnkStruct_ov000_02058a84 *param1, G3d_Model *pModel);
+class ModelRender_UnkSystem1_Derived2 : public ModelRender_UnkSystem1 {
+public:
+    /* 00 (base) */
+    /* 20 */
+
+    ModelRender_UnkSystem1_Derived2(UnkStruct_ov000_02058a84 *param2, G3d_Model *pModel) :
+        ModelRender_UnkSystem1(pModel, func_0200b150(param2, pModel)) {
+        this->mUnk_00.func_ov000_020577a4(param2, 0, false);
+    }
+};

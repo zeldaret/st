@@ -31,14 +31,14 @@ void AdventureModeManager_180::vfunc2_08(unk32 param1) {
 
     switch (param1) {
         case 5:
-            this->mUnk_18.mUnk_18 = true;
-            this->mUnk_18.mUnk_19 = true;
+            this->mUnk_18.mDoBottomScreen = true;
+            this->mUnk_18.mDoTopScreen    = true;
             this->mUnk_18.func_0201bb84(0x10, 2, 0x10);
             data_0204e5f8.func_0201b9a8(&this->mUnk_18);
             break;
         case 1:
-            this->mUnk_18.mUnk_18 = false;
-            this->mUnk_18.mUnk_19 = true;
+            this->mUnk_18.mDoBottomScreen = false;
+            this->mUnk_18.mDoTopScreen    = true;
             this->mUnk_18.func_0201bb84(0x14, 2, 0x14);
             data_0204e5f8.func_0201b9a8(&this->mUnk_18);
             break;

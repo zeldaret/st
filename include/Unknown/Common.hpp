@@ -1346,16 +1346,15 @@ public:
 };
 
 struct UnkStruct_ov000_020aa88c {
-    /* 00 */ bool mUnk_00;
-    /* 01 */ bool mUnk_01;
-    /* 02 */ bool mUnk_02;
-    /* 03 */ bool mUnk_03;
-    /* 04 */ bool mUnk_04;
-    /* 05 */ unk8 mUnk_05;
-    /* 06 */ u16 mUnk_06;
+    /* 00 */ bool mDoCircleTransition; // false for full fade-out
+    /* 01 */ bool mDoBottomScreen;     // false will disable the bottom screen ("main")
+    /* 02 */ bool mDoTopScreen;        // false will disable the top screen ("top")
+    /* 03 */ bool mIsWhite;            // true will make the transition use a white color
+    /* 04 */ bool mIsNotImmobile;      // false will make the player stand still
+    /* 06 */ u16 mDuration;            // duration of the fade-out
     /* 08 */
 };
-extern UnkStruct_ov000_020aa88c data_ov000_020aa88c[];
+extern const UnkStruct_ov000_020aa88c data_ov000_020aa88c[65 /* SpawnTransitionType_Max */];
 
 struct UnkStackStruct_ov000_02084344 {
     /* 00 */ s16 mUnk_00;

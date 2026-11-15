@@ -254,6 +254,7 @@ config.libs = [
             Object("000_Second/Item/ItemManager.cpp"),
             Object("000_Second/Actor/Actor_Derived1.cpp"),
             Object("000_Second/Item/TreasureManager.cpp"),
+            Object("000_Second/data_020aa88c.cpp"),
         ]
     ),
     GameLib(

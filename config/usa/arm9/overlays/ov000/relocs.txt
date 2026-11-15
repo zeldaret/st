@@ -2967,12 +2967,12 @@ from:0x02071098 kind:arm_call to:0x0201bba4 module:main
 from:0x020710c0 kind:arm_call to:0x0201b980 module:main
 from:0x02071144 kind:arm_call to:0x02069fa4 module:overlay(0)
 from:0x02071164 kind:arm_call to:0x020cb0a4 module:overlay(24)
-from:0x02071170 kind:load to:0x020aa872 module:overlay(0)
+from:0x02071170 kind:load to:0x020aa86c add:6 module:overlay(0)
 from:0x02071174 kind:load to:0x020aa86c module:overlay(0)
 from:0x02071178 kind:load to:0x0204e5d8 module:main
-from:0x0207117c kind:load to:0x020aa86d module:overlay(0)
-from:0x02071180 kind:load to:0x020aa86e module:overlay(0)
-from:0x02071184 kind:load to:0x020aa86f module:overlay(0)
+from:0x0207117c kind:load to:0x020aa86c add:1 module:overlay(0)
+from:0x02071180 kind:load to:0x020aa86c add:2 module:overlay(0)
+from:0x02071184 kind:load to:0x020aa86c add:3 module:overlay(0)
 from:0x02071188 kind:load to:0x020b50a0 module:overlay(0)
 from:0x0207118c kind:load to:0x027e09a4 module:dtcm
 from:0x02071190 kind:load to:0x020d8674 module:overlay(24)
