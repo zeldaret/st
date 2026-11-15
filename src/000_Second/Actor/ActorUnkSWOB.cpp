@@ -103,7 +103,7 @@ void ActorUnkSWOB::func_ov000_0209aa30(void) {
                     vec.y = 0;
                     vec.z = INT_TO_FX32(gRandom.Next32(11) - 5);
 
-                    VecFx32_Add(&vec, &vec2, &vec);
+                    VEC_Add(&vec, &vec2, &vec);
 
                     if (j < 10) {
                         func_01ffedac(&auStack_80, &vec);

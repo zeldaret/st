@@ -33,7 +33,7 @@ class UnkTrainSystem2 {
     /* 68 */
 
     void SetModel() {
-        this->mModelRender.vfunc_08(G3d_GetModelPtr(data_027e0d00->mUnk_0F4->mUnk_50));
+        this->mModelRender.vfunc_08(NNS_G3dGetMdl(data_027e0d00->mUnk_0F4->mUnk_50));
     }
 
     void SetTransform(const MtxFx33 *param1, const VecFx32 *param2, fx32 param3) {

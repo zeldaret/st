@@ -43,7 +43,7 @@ bool PlayerLinkActor_9C::func_ov017_020bc640(u32 param1, bool param2, bool param
     sp1C = *pPos;
 
     if (!param2) {
-        VecFx32_Add(pVel, &this->mUnk_104, pVel);
+        VEC_Add(pVel, &this->mUnk_104, pVel);
     }
 
     if (param1 <= 1) {

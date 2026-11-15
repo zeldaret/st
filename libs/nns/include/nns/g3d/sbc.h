@@ -84,7 +84,7 @@ typedef void (*G3d_FuncSbc)(G3d_RenderState *, u32);
 extern G3d_FuncSbc G3d_FuncSbcTable[32];
 extern G3d_RenderState *G3d_gRenderState;
 extern UnkStruct_0205ae08 data_0205ae08;
-void G3d_Render(G3d_RenderObject *renderObj);
+void NNS_G3dDraw(G3d_RenderObject *renderObj);
 
 static inline u32 G3d_FindInBitArray(const u32 *arr, u32 idx) {
     return (u32) (arr[idx >> 5] & (1 << (idx & 31)));
@@ -98,20 +98,28 @@ static inline void G3d_SetMtxMode_inline(u32 mode) {
     PushGeometryCommand(0x10, &mode, 1);
 }
 
+static inline void NNS_G3dGePushMtx() {
+    PushGeometryCommand(0x11, NULL, 0);
+}
+
+static inline void NNS_G3dGePopMtx(s32 param1) {
+    PushGeometryCommand(0x12, &param1, 1);
+}
+
 static inline void G3d_RestoreMtx_inline(u32 idx) {
     PushGeometryCommand(0x14, &idx, 1);
 }
 
-static inline void G3d_MtxMult33_inline(const MtxFx33 *m) {
-    PushGeometryCommand(0x1A, (u32 *) m, 9);
+static inline void G3d_MtxMult44_inline(const MtxFx44 *m) {
+    PushGeometryCommand(0x18, (u32 *) m, 0x10);
 }
 
 static inline void G3d_MtxMult43_inline(const MtxFx43 *m) {
     PushGeometryCommand(0x19, (u32 *) m, 12);
 }
 
-static inline void G3d_MtxMult44_inline(const MtxFx44 *m) {
-    PushGeometryCommand(0x18, (u32 *) m, 0x10);
+static inline void G3d_MtxMult33_inline(const MtxFx33 *m) {
+    PushGeometryCommand(0x1A, (u32 *) m, 9);
 }
 
 static inline void G3d_Scale_inline(fx32 x, fx32 y, fx32 z) {

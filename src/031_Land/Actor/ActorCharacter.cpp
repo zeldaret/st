@@ -310,7 +310,7 @@ void ActorCharacter::Update() {
 
     this->Actor::func_ov000_02098838();
 
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     this->vfunc_A4();
     this->mUnk_094.mUnk_0C->vfunc_34();

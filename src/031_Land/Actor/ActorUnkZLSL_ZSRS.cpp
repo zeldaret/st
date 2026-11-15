@@ -200,11 +200,11 @@ void ActorUnkZLSL::func_ov031_020ea100() {
 }
 
 static inline G3d_Model *GetModelFromProfile() {
-    return G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkZSRS)->vfunc_04()->mUnk_50);
+    return NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkZSRS)->vfunc_04()->mUnk_50);
 }
 
 static inline G3d_Model *GetModel() {
-    return G3d_GetModelPtr(data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Zelda][0]->mUnk_50);
+    return NNS_G3dGetMdl(data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Zelda][0]->mUnk_50);
 }
 
 extern Actor *data_027e0d3c;
@@ -361,7 +361,7 @@ void ActorUnkZLSL::Update() {
     this->func_ov031_020ee4c4(angle);
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mState != ActorUnkZLSLState_TakePhantomControl && this->mState != ActorUnkZLSLState_16) {
         this->func_ov031_020edc80();
@@ -437,7 +437,7 @@ void ActorUnkZLSL::func_ov031_020eab40(unk32 param1) {
     VecFx32 *pVec = this->func_ov000_0209853c(0x0);
 
     VecFx32 oVec;
-    func_01ffb714(&this->mPos, pVec, &oVec);
+    VEC_Subtract(&this->mPos, pVec, &oVec);
 
     oVec.y = FX_F32_TO_FX32(0.0f);
     VecFx32_TryNormalize(&oVec);
@@ -445,16 +445,16 @@ void ActorUnkZLSL::func_ov031_020eab40(unk32 param1) {
     func_01ff93c0(&oVec, param1);
 
     oVec.y += FX_F32_TO_FX32(0.5f);
-    VecFx32_Add(&vec, &oVec, &vec);
+    VEC_Add(&vec, &oVec, &vec);
 
-    func_01ffb714(&vec, &this->mPos, &oVec);
+    VEC_Subtract(&vec, &this->mPos, &oVec);
 
     func_01ff93c0(&oVec, FX_F32_TO_FX32(0.05f));
 
-    VecFx32_Add(&this->mVel, &oVec, &this->mVel);
+    VEC_Add(&this->mVel, &oVec, &this->mVel);
     func_01ff93c0(&this->mVel, FX_F32_TO_FX32(0.8f));
 
-    if (VecFx32_Length(&this->mVel) > FX_F32_TO_FX32(0.1001f)) {
+    if (VEC_Mag(&this->mVel) > FX_F32_TO_FX32(0.1001f)) {
         VecFx32_TryNormalize(&this->mVel);
         func_01ff93c0(&this->mVel, FX_F32_TO_FX32(0.1001f));
     }
@@ -684,10 +684,10 @@ bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
     }
 
     if (var_r7) {
-        func_01ffb714(&this->mUnk_28B0.vec, &sp1C, &sp4);
+        VEC_Subtract(&this->mUnk_28B0.vec, &sp1C, &sp4);
         VecFx32_TryNormalize(&sp4);
         func_01ff93c0(&sp4, this->mUnk_2884);
-        VecFx32_Add(&sp4, &sp1C, &sp4);
+        VEC_Add(&sp4, &sp1C, &sp4);
 
         this->mUnk_28B0.vec.x = sp4.x;
         this->mUnk_28B0.vec.y = sp4.y;
@@ -706,13 +706,13 @@ bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
             this->mUnk_2884 = sp0;
         }
 
-        func_01ffb714(&sp1C, &this->mUnk_28B0.vec, &sp4);
+        VEC_Subtract(&sp1C, &this->mUnk_28B0.vec, &sp4);
         sp4.y = 0;
 
         func_01ff9638(&sp4, 0x4000);
         VecFx32_TryNormalize(&sp4);
         func_01ff93c0(&sp4, FX_MUL(this->mUnk_2888, SIN(this->mUnk_286A)));
-        VecFx32_Add(&sp4, &sp10, &sp4);
+        VEC_Add(&sp4, &sp10, &sp4);
         this->mUnk_286A += 0x1000;
         this->mPos.x = sp4.x;
         this->mPos.y = sp4.y;
@@ -1428,14 +1428,14 @@ void ActorUnkZLSL::func_ov031_020ecc68(bool param1) {
     this->mUnk_28C8 = data_027e09b8->func_ov000_02073388(&sp34, 0x0);
 
     unk32 temp_r6 = func_01ffb9cc(&this->mUnk_28F4.vec, &this->mUnk_28E8.vec);
-    func_01ffb714(&this->mUnk_28E8.vec, &this->mUnk_28F4.vec, &sp28);
+    VEC_Subtract(&this->mUnk_28E8.vec, &this->mUnk_28F4.vec, &sp28);
 
     VecFx32_TryNormalize(&sp28);
 
     func_01ff93c0(&sp28, temp_r6 - 0x1000);
 
     VecFx32_Copy(&this->mUnk_28F4.vec, &this->mUnk_28E8.vec);
-    VecFx32_Add(&this->mUnk_28E8.vec, &sp28, &this->mUnk_28E8.vec);
+    VEC_Add(&this->mUnk_28E8.vec, &sp28, &this->mUnk_28E8.vec);
 
     ActorPhantomBase *pPhantom = (ActorPhantomBase *) gpActorManager->func_01fff3b4(this->mUnk_28DC);
     if (pPhantom != NULL) {
@@ -1475,9 +1475,9 @@ void ActorUnkZLSL::func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk3
     }
 
     if (sp4C.z > this->mPos.z) {
-        func_01ffb714(&sp4C, &sp58, &sp1C);
+        VEC_Subtract(&sp4C, &sp58, &sp1C);
     } else {
-        func_01ffb714(&sp58, &sp4C, &sp1C);
+        VEC_Subtract(&sp58, &sp4C, &sp1C);
     }
 
     s16 angle = FX_Atan2Idx(sp1C.x, sp1C.z);
@@ -1542,9 +1542,9 @@ void ActorUnkZLSL::func_ov031_020ed0b0() {
         }
     }
 
-    func_01ffb714(&sp18, &sp24, &this->mUnk_28BC.vec);
+    VEC_Subtract(&sp18, &sp24, &this->mUnk_28BC.vec);
     func_01ff9770(&this->mUnk_28BC.vec, 0xE66);
-    VecFx32_Add(&this->mUnk_28BC.vec, &sp24, &this->mUnk_28BC.vec);
+    VEC_Add(&this->mUnk_28BC.vec, &sp24, &this->mUnk_28BC.vec);
     this->mUnk_28BC.vec.y += FX_F32_TO_FX32(1.0f);
 
     this->func_ov031_020edd14(&spC);
@@ -1887,7 +1887,7 @@ void ActorUnkZLSL::vfunc_A4() {
 
     VecFx32 sp00 = this->mPos;
     sp00.y       = sp00.y + this->mYOffset - FX_F32_TO_FX32(0.5f);
-    func_01ffb714(&sp0C, &sp00, &sp0C);
+    VEC_Subtract(&sp0C, &sp00, &sp0C);
 
     int angle  = this->mAngle.angle_s;
     int temp   = FX_Atan2Idx(sp0C.x, sp0C.z);
@@ -1969,8 +1969,8 @@ unk16 ActorUnkZLSL::func_ov031_020ee2c8() {
     sp8.y = data_027e0208.mUnk_240.y;
     sp8.z = data_027e0208.mUnk_240.z;
 
-    func_01ffb714(&sp20, &sp8, &sp20);
-    func_01ffb714(&sp14, &sp8, &sp14);
+    VEC_Subtract(&sp20, &sp8, &sp20);
+    VEC_Subtract(&sp14, &sp8, &sp14);
     unk32 temp_r4 = func_01ff9258(sp14.x, sp14.z);
 
     if (func_01ff9258(sp20.x, sp20.z) <= temp_r4) {
@@ -2013,8 +2013,8 @@ void ActorUnkZLSL::func_ov031_020ee4c4(UnkAngleStruct angle) {
     sp0.z = FX_MUL(COS(this->mAngle.angle_s), 0x1000);
     sp0.y = 0;
 
-    if (!VecFx32_IsCleared(&this->mVel) && VecFx32_Dot(&sp0, &this->mVel) < 0) {
-        fx32 temp_ret = VecFx32_Length(&this->mVel);
+    if (!VecFx32_IsCleared(&this->mVel) && VEC_DotProduct(&sp0, &this->mVel) < 0) {
+        fx32 temp_ret = VEC_Mag(&this->mVel);
         s16 value     = FX_MUL(FX_MUL(temp_ret, 0xA000), 0x2000);
         func_01ff930c(&this->mUnk_28E2, -value, 0x1000);
     } else {

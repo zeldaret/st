@@ -241,7 +241,7 @@ void ActorItemDrop::func_ov031_020fa260() {
     }
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mState != ActorItemDropState_3) {
         this->func_ov000_02098b8c(0x0, 0x0);
@@ -251,7 +251,7 @@ void ActorItemDrop::func_ov031_020fa260() {
         this->mVel.y = FX_F32_TO_FX32(0.0f);
     }
 
-    VecFx32_Add(&this->mPos, &this->mUnk_10C, &this->mPos);
+    VEC_Add(&this->mPos, &this->mUnk_10C, &this->mPos);
     this->mUnk_10C.x = FX_F32_TO_FX32(0.0f);
     this->mUnk_10C.y = FX_F32_TO_FX32(0.0f);
     this->mUnk_10C.z = FX_F32_TO_FX32(0.0f);

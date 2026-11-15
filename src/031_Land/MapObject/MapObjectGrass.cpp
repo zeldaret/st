@@ -53,7 +53,7 @@ void MapObjectGrass::vfunc_08() {
 void MapObjectGrass::vfunc_14(unk32 param1) {
     VecFx32 vec;
     for (unk32 i = 0; i < ARRAY_LEN(this->mUnk_40); ++i) {
-        VecFx32_Add(&this->mUnk_40[i], &this->mPos, &vec);
+        VEC_Add(&this->mUnk_40[i], &this->mPos, &vec);
         vec.x += this->mUnk_5C;
     }
 }
@@ -77,7 +77,7 @@ bool MapObjectGrass::vfunc_38(MapObjState state, unk32 param2) {
             VecFx32 vec;
             for (unk32 i = 0; i < ARRAY_LEN(this->mUnk_40); ++i) {
                 VecFx32_Init(this->mUnk_40[i].x, this->mUnk_40[i].y + FX_F32_TO_FX32(0.35f), this->mUnk_40[i].z, &vec);
-                VecFx32_Add(&vec, &this->mPos, &vec);
+                VEC_Add(&vec, &this->mPos, &vec);
                 this->vfunc_3C(&vec);
             }
 

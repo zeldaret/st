@@ -199,7 +199,7 @@ void UnkStruct_027e0d00::func_ov024_020d4df8() {
 
 G3d_Model *UnkStruct_027e0d00::func_ov024_020d4e3c(unk32 param1) {
     if (this->mUnk_0B0[param1] != NULL) {
-        return G3d_GetModelPtr(this->mUnk_0B0[param1]->mUnk_50);
+        return NNS_G3dGetMdl(this->mUnk_0B0[param1]->mUnk_50);
     }
 
     return NULL;

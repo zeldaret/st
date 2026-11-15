@@ -201,6 +201,11 @@ typedef enum GXBGScrSizeText_ {
     GX_BG_SCRSIZE_TEXT_512x512 = 0x03,
 } GXBGScrSizeText;
 
+typedef enum GXBufferMode_ {
+    /* 0 */ GX_BUFFERMODE_Z = 0,
+    /* 1 */ GX_BUFFERMODE_1 = 1,
+} GXBufferMode;
+
 typedef enum GXCull_ {
     GX_CULL_ALL   = 0x00,
     GX_CULL_FRONT = 0x01,
@@ -384,6 +389,11 @@ typedef enum GXPower_ {
 
     GX_POWER_ALL = 0x0E,
 } GXPower;
+
+typedef enum GXSortMode_ {
+    /* 0 */ GX_SORTMODE_0      = 0,
+    /* 1 */ GX_SORTMODE_MANUAL = 1,
+} GXSortMode;
 
 typedef enum GXTexFlip_ {
     GX_TEXFLIP_NONE = 0x00,

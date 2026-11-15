@@ -38,7 +38,7 @@ ActorProfileUnkNSTN::ActorProfileUnkNSTN() :
 }
 
 ActorUnkNSTN::ActorUnkNSTN() :
-    mUnk_110(G3d_GetModelPtr(data_ov000_020b5d34.GetProfileFromId(MapObjectId_STNE)->vfunc_04()->mUnk_50), 0x1) {}
+    mUnk_110(NNS_G3dGetMdl(data_ov000_020b5d34.GetProfileFromId(MapObjectId_STNE)->vfunc_04()->mUnk_50), 0x1) {}
 
 // non-matching seems like the dtor of the modelrender
 void ActorUnkNSTN::func_ov058_02142abc() {}

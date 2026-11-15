@@ -124,6 +124,7 @@ fx32 FX_GetDivResult(void);
 fx64c FX_GetDivResultFx64c(void);
 fx32 FX_Inv(fx32 denom);
 void FX_InvAsync(fx32 denom);
+fx32 FX_Sqrt(fx32 x);
 
 s16 FX_Atan2(fx32 y, fx32 x);
 u16 FX_AtanIdx(s32 tan);
@@ -137,9 +138,7 @@ void MTX_Identity43_(MtxFx43 *mtx);
 void MTX_PerspectiveW(fx32 arg0, fx32 arg1, fx32 arg2, fx32 arg3, fx32 arg4, fx32 arg5, MtxFx44 *mtx);
 void MTX_OrthoW(fx32 top, fx32 bottom, fx32 left, fx32 right, fx32 near, fx32 far, fx32 arg6, MtxFx44 *mtx);
 
-inline fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b) {
-    return ((fx64) a->x * (fx64) b->x + (fx64) a->y * (fx64) b->y + (fx64) a->z * (fx64) b->z) >> FX32_SHIFT;
-}
+fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 
 inline fx32 FX_MulInline(fx32 v1, fx32 v2) {
     return (fx32) ((((fx64) v1 * (fx64) v2) + FX32_HALF) >> FX32_SHIFT);
@@ -178,9 +177,8 @@ inline fx16 FX_CosIdx(fx32 n) {
 #define FX_F32_TO_FX16(x)
 
 //! TODO: figure out what is inlined or not
-fx32 FX_Whole(fx32 v);
+fx32 FX_Whole(fx32 v); // { return v >> FX32_SHIFT; } according to castlevania
 fx32 FX_Floor(fx32 v);
-fx32 FX_Sqrt(fx32 x);
 u16 FX_AcosIdx(fx32 x);
 
 //! TODO: find what this is

@@ -141,7 +141,7 @@ void ActorItemTornado::SetState(ActorState state) {
 
 void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mUnk_1D2 != 0x0) {
         --this->mUnk_1D2;

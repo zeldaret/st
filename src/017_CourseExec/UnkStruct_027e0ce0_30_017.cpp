@@ -109,7 +109,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                 return;
             }
 
-            func_01ffb714(&this->mpPlayer->mPos.vec, &this->mpZelda->mPos.vec, &sp14);
+            VEC_Subtract(&this->mpPlayer->mPos.vec, &this->mpZelda->mPos.vec, &sp14);
             sp14.y = 0;
 
             VecFx32_Copy(&this->mpPlayer->mPos.vec, &sp20);
@@ -168,7 +168,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                 func_01ff97c8(&sp14, ROUND_FX32(data_ov000_020afd10 * var_r2_2));
             }
 
-            VecFx32_Add(&this->mUnk_00, &sp14, &this->mUnk_00);
+            VEC_Add(&this->mUnk_00, &sp14, &this->mUnk_00);
             return;
         }
     }
@@ -192,7 +192,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                 s16 value1              = FX_Atan2Idx(sp8.x, sp8.z);
                 temp_r8_5               = func_ov000_0208832c(value1, ptr->func_ov000_02084944());
 
-                if (VecFx32_Length(&sp8) <= temp_r8_5) {
+                if (VEC_Mag(&sp8) <= temp_r8_5) {
                     if (data_027e0ce0->func_ov000_0208bf34(0)) {
                         var_r7 = 0;
                         goto comp;

@@ -99,14 +99,14 @@ void ActorUnkKOTA::func_ov094_0216e5a4(const ActorParams *param1) {
 
     if (ret->vfunc_04() == false) {
         sp68 = ret->mUnk_14.unk_00;
-        VecFx32_Add(&sp68, &ret->mUnk_14.unk_0C, &sp68);
+        VEC_Add(&sp68, &ret->mUnk_14.unk_0C, &sp68);
         func_01ff93c0(&sp68, FX_F32_TO_FX32(0.5f));
         sp68.y = data_027e0cd8->mUnk_0C->vfunc_28(&sp68, 1, 0);
 
         u16 sp16[4] = {0};
         for (Actor **ptr = mUnk_94; ptr != mUnk_D4; ptr++) {
             if (*ptr != NULL) {
-                func_01ffb714(&(*ptr)->mPos, &sp68, &sp5C);
+                VEC_Subtract(&(*ptr)->mPos, &sp68, &sp5C);
 
                 if (sp5C.x <= 0) {
                     if (sp5C.z <= 0) {
@@ -180,9 +180,9 @@ void ActorUnkKOTA::func_ov094_0216e5a4(const ActorParams *param1) {
         sp10.x = sp14.x + gRandom.Next32(sp12.x - sp14.x + 1);
         sp10.y = sp14.y + gRandom.Next32(sp12.y - sp14.y + 1);
         func_ov000_0205ad90(sp10, (VecFx32 *) &param1->mInitialPos);
-        func_01ffb714(&sp68, &param1->mInitialPos, &sp5C);
+        VEC_Subtract(&sp68, &param1->mInitialPos, &sp5C);
         func_01ff9770(&sp5C, 0xC00);
-        VecFx32_Add((VecFx32 *) &param1->mInitialPos, &sp5C, (VecFx32 *) &param1->mInitialPos);
+        VEC_Add((VecFx32 *) &param1->mInitialPos, &sp5C, (VecFx32 *) &param1->mInitialPos);
     } else if (ret->vfunc_04() == true) {
         this->func_ov094_0216e9fc((VecFx32 *) &param1->mInitialPos, &ret->mUnk_14.unk_00, ret->mUnk_14.unk_0C.x);
     } else {
