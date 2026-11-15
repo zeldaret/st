@@ -1354,7 +1354,7 @@ struct UnkStruct_ov000_020aa88c {
     /* 06 */ u16 mDuration;            // duration of the fade-out
     /* 08 */
 };
-extern const UnkStruct_ov000_020aa88c data_ov000_020aa88c[65 /* SpawnTransitionType_Max */];
+extern const UnkStruct_ov000_020aa88c data_ov000_020aa88c[65 /* EntryTransitionType_Max */];
 
 struct UnkStackStruct_ov000_02084344 {
     /* 00 */ s16 mUnk_00;

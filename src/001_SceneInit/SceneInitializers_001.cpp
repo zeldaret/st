@@ -476,7 +476,7 @@ UnkStruct_WarpUnk1_24::UnkStruct_WarpUnk1_24() {
 UnkStruct_WarpUnk1::UnkStruct_WarpUnk1() :
     mCurEntrance(false),
     mNextEntrance(false) {
-    this->mSpawnTransitionType = SpawnTransitionType_None;
+    this->mEntryTransitionType = EntryTransitionType_None;
     this->mUnk_A0.mUnk_04.x    = 0;
     this->mUnk_A0.mUnk_04.y    = 0;
     this->mUnk_A0.mUnk_04.z    = 0;
@@ -489,14 +489,14 @@ UnkStruct_WarpUnk1::UnkStruct_WarpUnk1() :
 // non-matching
 bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
     bool iVar9;
-    u16 spawnTransDuration;
+    u16 entryTransDuration;
     UnkStruct_027e0ce0_38 *pTrainPlayer;
     unk16 local_18;
     unk32 uVar8;
     bool bVar2;
 
     iVar9              = false;
-    spawnTransDuration = data_ov000_020aa88c[this->mSpawnTransitionType].mDuration;
+    entryTransDuration = data_ov000_020aa88c[this->mEntryTransitionType].mDuration;
     pTrainPlayer       = data_027e0ce0->mUnk_38;
 
     if (pTrainPlayer == NULL) {
@@ -514,14 +514,14 @@ bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
     this->mUnk_A0.mSceneIndex = this->mCurEntrance.sceneIndex;
     this->mUnk_A0.mRoomIndex  = this->mCurEntrance.roomIndex;
 
-    switch (this->mSpawnTransitionType) {
-        case SpawnTransitionType_4:
-        case SpawnTransitionType_5:
+    switch (this->mEntryTransitionType) {
+        case EntryTransitionType_4:
+        case EntryTransitionType_5:
             break;
-        case SpawnTransitionType_2:
-        case SpawnTransitionType_29:
+        case EntryTransitionType_2:
+        case EntryTransitionType_29:
 #if IS_JP
-        case SpawnTransitionType_41:
+        case EntryTransitionType_41:
 #endif
             iVar9 = true;
             break;
@@ -539,7 +539,7 @@ bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
     this->mCurEntrance = this->mNextEntrance;
 
     if (iVar9) {
-        data_027e09a4->func_ov001_020b6924(&this->mNextEntrance, this->mSpawnTransitionType == SpawnTransitionType_2);
+        data_027e09a4->func_ov001_020b6924(&this->mNextEntrance, this->mEntryTransitionType == EntryTransitionType_2);
     } else {
         data_027e0cd8->func_ov001_020b7c08(&this->mNextEntrance, &this->mUnk_A0);
     }
@@ -563,35 +563,35 @@ bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
         this->Detach();
         this->mUnk_0C = false;
     } else {
-        if (data_ov000_020aa88c[this->mSpawnTransitionType].mDoCircleTransition) {
+        if (data_ov000_020aa88c[this->mEntryTransitionType].mDoCircleTransition) {
             if (data_027e09a4->GetCurrentCourseEntry()->unk_18 == 1) {
                 this->mUnk_50.mUnk_18 = 0x00130000;
                 this->mUnk_50.mUnk_1C = 0x00050000;
                 this->mUnk_50.mUnk_24 = 0x00004000;
-                this->mUnk_50.func_ov000_02065f68(0x02, 0x00, -0xE0, spawnTransDuration, 0x02);
+                this->mUnk_50.func_ov000_02065f68(0x02, 0x00, -0xE0, entryTransDuration, 0x02);
                 data_0204e5f8.func_0201b9a8(&this->mUnk_50);
                 this->mUnk_1E = 0x02;
                 this->func_0201bba4(0x00, 0x02);
                 data_0204e5f8.func_0201b9a8(this);
                 bVar2 = true;
             } else {
-                this->mUnk_24.func_ov000_02070f58(spawnTransDuration);
+                this->mUnk_24.func_ov000_02070f58(entryTransDuration);
                 data_0204e5f8.func_0201b9a8(&this->mUnk_24);
             }
         }
 
-        if ((data_ov000_020aa88c[this->mSpawnTransitionType].mDoBottomScreen ||
-             data_ov000_020aa88c[this->mSpawnTransitionType].mDoTopScreen) &&
+        if ((data_ov000_020aa88c[this->mEntryTransitionType].mDoBottomScreen ||
+             data_ov000_020aa88c[this->mEntryTransitionType].mDoTopScreen) &&
             !bVar2) {
-            if (data_ov000_020aa88c[this->mSpawnTransitionType].mIsWhite) {
+            if (data_ov000_020aa88c[this->mEntryTransitionType].mIsWhite) {
                 this->mUnk_14 = 0x00010000;
             } else {
                 this->mUnk_14 = 0xFFFF0000;
             }
 
-            this->func_0201bba4(0x02, spawnTransDuration);
-            this->mDoBottomScreen = data_ov000_020aa88c[this->mSpawnTransitionType].mDoBottomScreen;
-            this->mDoTopScreen    = data_ov000_020aa88c[this->mSpawnTransitionType].mDoTopScreen;
+            this->func_0201bba4(0x02, entryTransDuration);
+            this->mDoBottomScreen = data_ov000_020aa88c[this->mEntryTransitionType].mDoBottomScreen;
+            this->mDoTopScreen    = data_ov000_020aa88c[this->mEntryTransitionType].mDoTopScreen;
             data_0204e5f8.func_0201b9a8(this);
         }
     }

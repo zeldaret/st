@@ -194,7 +194,7 @@ void UnkStruct_027e0cd8_0C::vfunc_1C(const EntranceInfo *param1, bool param2, bo
     }
 
     if (param3 || sceneIndex != pAdvModeMgr->mUnk_1C4.sceneIndex || roomIndex != pAdvModeMgr->mUnk_1C4.roomIndex) {
-        if (data_027e09a4->GetSpawnTransitionType() != SpawnTransitionType_4) {
+        if (data_027e09a4->GetEntryTransitionType() != EntryTransitionType_4) {
             gpCurrentGameModeMgr->vfunc_38(sceneIndex, roomIndex, 1, var_r5);
         }
     }

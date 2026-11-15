@@ -83,7 +83,7 @@ public:
     /* 9C */ unk32 mUnk_9C;
     /* A0 */ PAD(0xA0, 0x148);
     /* 148 */ u32 mUnk_148;
-    /* 14C */ SpawnTransitionType mSpawnTransitionType;
+    /* 14C */ EntryTransitionType mEntryTransitionType;
     /* 150 */ RefStruct mUnk_150;
 };
 
