@@ -103,7 +103,6 @@ public:
     /* 1B8 */ u8 mUnk_1B8;
     /* 1B9 */ unk8 mUnk_1B9;
     /* 1BC */ UnkStruct_ov031_Items_02 mUnk_1BC;
-    /* 1C8 */ PAD(0x1C8, 0x204);
     /* 204 */ ActorTearLight_204 mUnk_204[0x2];
 
     ActorTearLight();

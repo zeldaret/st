@@ -1,4 +1,6 @@
 #pragma once
+
+#include "MapObject/MapObject_10_Pot.hpp"
 #include "UnkStruct_027e0ce0.hpp"
 
 class Actor;
@@ -63,11 +65,44 @@ public:
     /* 10 */ virtual void vfunc_10(const Actor *actor);
 };
 
+class ActorUnkSCCN_B8 {
+public:
+    /* 00 (vtable) */
+    /* 04 */ RefStruct mUnk_04;
+    /* 08 */ VecFx32 *mUnk_08;
+    /* 0C */ MapObject_10_Base *mUnk_0C;
+    /* 10 */
+
+    ActorUnkSCCN_B8();
+
+    // data_ov000_020b287c
+    /* 00 */ virtual ~ActorUnkSCCN_B8();
+    /* 08 */ virtual bool vfunc_08(RefStruct ref);
+};
+
+class UnkStruct_ov031_Items_02_38 : public ActorUnkSCCN_B8 {
+public:
+    // data_ov031_02112a5c
+    /* 08 */ virtual bool vfunc_08(RefStruct ref) override;
+};
+
 class UnkStruct_ov031_Items_02 {
 public:
-    /* 00 */ VecFx32 mUnk_00;
-    /* 0C */
+    /* 00 */ VecFx32Cpp mUnk_00;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ RefStruct mUnk_10;
+    /* 14 */ bool mUnk_14;
+    /* 18 */ MapObject_10_Pot mUnk_18;
+    /* 38 */ UnkStruct_ov031_Items_02_38 mUnk_38;
+    /* 48 */
 
-    UnkStruct_ov031_Items_02(unk32 param1, unk32 param2);
+    UnkStruct_ov031_Items_02();
+    UnkStruct_ov031_Items_02(unk32 param1, bool param2);
     ~UnkStruct_ov031_Items_02();
+
+    // overlay 31
+    void func_ov031_020d8e88();
+    void func_ov031_020d8f24();
+    void func_ov031_020d8f58(unk16 param1);
+    void func_ov031_020d8f98();
 };

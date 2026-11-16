@@ -109,7 +109,7 @@ void ActorItemBoomerang::Update() {
     VEC_Add(temp_r0, &this->mVel, temp_r0);
 
     if ((func_ov000_0205aeac() && this->mUnk_128 == 0x1) || this->mUnk_128 == 0x2) {
-        VecFx32_Copy(&this->mPos, &this->mUnk_140.mUnk_00);
+        VecFx32_Copy(&this->mPos, &this->mUnk_140.mUnk_00.vec);
     }
 
     this->mAngle += DEG_TO_ANG(45);
@@ -288,7 +288,7 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
                 this->mUnk_12C[1].mUnk_00->mUnk_A0 = 0;
             }
 
-            data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_140.mUnk_00);
+            data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_140.mUnk_00.vec);
             return;
         case 0x2:
             this->mUnk_13C = 0x8D73;
@@ -309,14 +309,14 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
             if (this->mUnk_12C[2].mUnk_00 != NULL) {
                 this->mUnk_12C[2].mUnk_00->mUnk_A0 = 0;
             }
-            data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_140.mUnk_00);
+            data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_140.mUnk_00.vec);
             return;
         default:
             this->mUnk_13C = 0x8D71;
             if (!func_ov000_0205aeac()) {
                 return;
             }
-            data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_140.mUnk_00);
+            data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_140.mUnk_00.vec);
             break;
     }
 }
@@ -461,7 +461,7 @@ ActorItemBoomerang::~ActorItemBoomerang() {
         data_027e0d2c->func_ov031_020d95b4();
     }
     if (func_ov000_0205aeac()) {
-        data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_140.mUnk_00);
+        data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_140.mUnk_00.vec);
     }
 }
 

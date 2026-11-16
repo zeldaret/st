@@ -98,7 +98,7 @@ void ActorTearLight::Setup() {
     if (this->mUnk_5C.mParams[0] != 0x1) {
         return;
     }
-    data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_1BC.mUnk_00);
+    data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_1BC.mUnk_00.vec);
 }
 
 void ActorTearLight::Update() {
@@ -111,7 +111,7 @@ void ActorTearLight::Update() {
         return;
     }
 
-    VecFx32_Copy(&this->mPos, &this->mUnk_1BC.mUnk_00);
+    VecFx32_Copy(&this->mPos, &this->mUnk_1BC.mUnk_00.vec);
 }
 
 void ActorTearLight::vfunc_24() {

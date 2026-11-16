@@ -36,8 +36,10 @@ union RefCommon {
         /* 02 */ u16 unk : 4;
         /* 04 */
     };
-    /* 00 */ u16 unk_00;
-    /* 02 */ u16 unk_02;
+    struct {
+        /* 00 */ u16 unk_00;
+        /* 02 */ u16 unk_02;
+    };
     /* 04 */
 };
 
@@ -140,6 +142,11 @@ struct RefStruct {
 
     RefStruct(u32 value) {
         this->data = value;
+    }
+
+    RefStruct(u16 param1, u16 param2) {
+        this->common.unk_00 = param1;
+        this->common.unk_02 = param2;
     }
 
     void Reset() {
