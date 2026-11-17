@@ -1648,7 +1648,7 @@ void ActorUnkVCFT_328::func_ov066_0215ac68(UnkDataStruct5 *param1) {
 
 ActorUnkVCFT::ActorUnkVCFT() :
     ActorCharacter_Derived1(&this->mUnk_24C, GET_PROFILE(ActorProfileUnkVCFT)->vfunc_04()),
-    mUnk_24C(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkVCFT)->vfunc_04()->mUnk_50)),
+    mUnk_24C(NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkVCFT)->vfunc_04()->mUnk_50)),
     mUnk_2BC(&this->mUnk_24C, GET_PROFILE(ActorProfileUnkVCFT)->vfunc_04()),
     mUnk_328(this),
     mUnk_36C(this),

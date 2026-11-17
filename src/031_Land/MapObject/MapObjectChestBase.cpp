@@ -103,13 +103,13 @@ void MapObjectChestBase::Setup() {
     sp18.y = FX_F32_TO_FX32(0.0f);
     sp18.z = FX_F32_TO_FX32(0.5f);
 
-    func_01ffb714(&sp48, &sp18, &sp48);
+    VEC_Subtract(&sp48, &sp18, &sp48);
 
     spC.x = FX_F32_TO_FX32(0.5f);
     spC.y = FX_F32_TO_FX32(1.0f);
     spC.z = FX_F32_TO_FX32(0.5f);
 
-    VecFx32_Add((VecFx32 *) &sp3C, &spC, (VecFx32 *) &sp3C);
+    VEC_Add((VecFx32 *) &sp3C, &spC, (VecFx32 *) &sp3C);
 
     local_68.x = this->mRef.moRef.unk_02.x;
     local_68.y = this->mRef.moRef.unk_02.y;

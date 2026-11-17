@@ -16,6 +16,9 @@ void G3X_InitTable(void);
 void G3X_InitMtxStack(void);
 void G3X_Reset(void);
 void G3X_SetClearColor(u32 rgb, u32 a, u32 param3, u32 param4, BOOL param5);
+void G3_RotY(fx16 sin, fx16 cos);
+void G3_MultMtx33(MtxFx33 *param1);
+void G3X_SetToonTable(u16 *param1);
 
 inline void G3_TexImageParam(GXTexFmt texFmt, GXTexGen texGen, GXTexSizeS texSizeS, GXTexSizeT texSizeT,
                              GXTexRepeat texRepeatST, GXTexFlip texFlip, GXTexPlttColor0 color0, u32 textureAddress) {
@@ -133,10 +136,8 @@ inline void G3_End(void) {
     REG_GFX_FIFO_POLYGONS_END = 0;
 }
 
-inline void G3_SwapBuffers(u32 sortMode, u32 bufferMode) {
-    // Unclear what values these macros have and how they are meant to be combined
-    // GX_SORTMODE_MANUAL | GX_BUFFERMODE_Z == 0x1
-    REG_GFX_FIFO_SWAP_BUFFERS = 0x1;
+inline void G3_SwapBuffers(GXSortMode sortMode, GXBufferMode bufferMode) {
+    REG_GFX_FIFO_SWAP_BUFFERS = (bufferMode << REG_G3_SWAP_BUFFERS_DP_SHIFT) | sortMode;
 }
 
 inline BOOL G3X_IsGeometryBusy(void) {
@@ -151,12 +152,38 @@ inline void G3X_AlphaBlend(BOOL param1) {
     REG_DISP3DCNT = (REG_DISP3DCNT & ~0x3000) | (param1 << 3);
 }
 
+//! TODO: figure out params and if the body is correct
+inline void G3X_AlphaTest() {
+    REG_DISP3DCNT = (REG_DISP3DCNT & ~0x3004);
+}
+
 inline void G3X_Unk1(u32 param1) {
     REG_DISP3DCNT = REG_DISP3DCNT & ~(0x3000 | (param1 << 1));
 }
 
 inline void G3X_Unk2(u32 param1) {
     REG_DISP3DCNT &= ~(0x3000 | (param1 << 5));
+}
+
+//! TODO: figure out params and if the body is correct
+inline void G3_MaterialColorSpecEmi(s32 param1, s32 param2) {
+    // shift assumed based on `G3_MaterialColorDiffAmb`
+    REG_GFX_FIFO_SPECULAR_REF_AND_EMISSION = param1 | (param2 << 0x10);
+}
+
+//! TODO: figure out params and if the body is correct
+inline void G3_MaterialColorDiffAmb(s32 param1, s32 param2) {
+    REG_GFX_FIFO_DIFFUSE_AMBIENT_REFLECT = param1 | (param2 << 0x10);
+}
+
+//! TODO: figure out params and if the body is correct
+inline void G3_LightVector(s32 param1, s32 vecX, s32 vecY, s32 vecZ) {
+    REG_GFX_FIFO_LIGHT_DIRECTION = (vecX | (vecY << 0x0A) | (vecZ << 0x14)) | (param1 << 0x1E);
+}
+
+//! TODO: figure out params and if the body is correct
+inline void G3_LightColor(s32 param1, s32 param2) {
+    REG_GFX_FIFO_LIGHT_COLOR = param1 | (param2 << 0x1E);
 }
 
 //! TODO: figure out
@@ -167,6 +194,9 @@ void G3_MultMtx43(MtxFx43 *pMtx);
 void G3_EffectIndex(u16 effectIndex);
 void G3_StartDraw();
 void G3_TargetMask();
+void G3_Normal();
+void G3_Shininess();
+void G3_VtxDiff();
 
 #ifdef __cplusplus
 } // extern "C"

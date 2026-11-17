@@ -53,7 +53,7 @@ void ZCB_ParseVTXB(ZCBFileInfos *pFileInfos, ZCBSectionVTXB *pSection, UnkStruct
     for (u32 i = 0; i < nEntries; i++) {
         VecFx32 *pEntry = &pSection->entries[i];
 
-        VecFx32_Add(pEntry, &sp24, pEntry);
+        VEC_Add(pEntry, &sp24, pEntry);
         func_01ffd1b4(&spC, pEntry);
     }
 

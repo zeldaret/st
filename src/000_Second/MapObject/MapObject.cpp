@@ -116,7 +116,7 @@ unk32 MapObject::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
 bool MapObject::vfunc_2C(VecFx32 *param1) {
     if (this->mUnk_10 != NULL) {
         this->mUnk_10->vfunc_18(param1);
-        VecFx32_Add(param1, &this->mPos, param1);
+        VEC_Add(param1, &this->mPos, param1);
         return true;
     }
 
@@ -125,7 +125,7 @@ bool MapObject::vfunc_2C(VecFx32 *param1) {
 
 void MapObject::func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2) {
     VecFx32 local_18;
-    func_01ffb714(data_027e0ce0->func_01fff148(param2), &thisx->mPos, &local_18);
+    VEC_Subtract(data_027e0ce0->func_01fff148(param2), &thisx->mPos, &local_18);
     *param1 = FX_Atan2Idx(local_18.x, local_18.z);
 }
 
@@ -175,7 +175,7 @@ unk32 MapObject::func_ov000_0209d3b4(unk32 param1, fx32 size) {
         spC.Init(FX_F32_TO_FX32(0.5f));
     }
 
-    VecFx32_Add(&spC.pos, &this->mPos, &spC.pos);
+    VEC_Add(&spC.pos, &this->mPos, &spC.pos);
     spC.size += size;
 
     return func_01ffecdc(param1, &spC);
@@ -291,5 +291,5 @@ void MapObject::func_ov000_0209d6ac(VecFx32 *param1) {
     }
 
     this->mUnk_10->vfunc_1C(param1);
-    VecFx32_Add(param1, &this->mPos, param1);
+    VEC_Add(param1, &this->mPos, param1);
 }

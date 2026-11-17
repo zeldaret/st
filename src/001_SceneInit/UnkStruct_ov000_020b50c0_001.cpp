@@ -9,6 +9,8 @@
 #include "Unknown/UnkStruct_ov000_020b52e8.hpp"
 #include "versions.h"
 
+#include <nns/snd.h>
+
 void UnkStruct_ov000_020b50c0::func_ov001_020bd854(void) {
     data_027e099c->func_ov001_020bde6c();
     data_ov000_020b51b8.func_ov000_0206bbfc(0x01);
@@ -63,7 +65,7 @@ void UnkStruct_ov000_020b50c0::func_ov001_020bd910(void) {
 void UnkStruct_ov000_020b50c0::func_ov001_020bd934(bool param1) {
     if (param1) {
         this->func_ov000_0206a704(0x00);
-        func_0200240c(0);
+        NNS_SndSetMonoFlag(0);
         return;
     }
 
@@ -75,7 +77,7 @@ void UnkStruct_ov000_020b50c0::func_ov001_020bd934(bool param1) {
     this->func_ov000_0206a740();
 
     if (this->mUnk_94 == 3) {
-        func_0200240c(1);
+        NNS_SndSetMonoFlag(1);
     }
 }
 

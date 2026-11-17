@@ -136,7 +136,7 @@ unk32 UnkStruct_ov063_02162e88::vfunc_04(RefStruct param1, unk32 param2, unk32 p
 }
 
 ActorLobarrier::ActorLobarrier() :
-    mUnk_0B0(G3d_GetModelPtr(GET_PROFILE(ActorProfileLobarrier)->vfunc_04()->mUnk_50)),
+    mUnk_0B0(NNS_G3dGetMdl(GET_PROFILE(ActorProfileLobarrier)->vfunc_04()->mUnk_50)),
     mUnk_128(&mUnk_0B0, GET_PROFILE(ActorProfileLobarrier)->vfunc_04()),
     mUnk_1F4(),
     mUnk_200(this),
@@ -236,7 +236,7 @@ void ActorLobarrier::Update() {
     this->func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &mPrevPos);
-    VecFx32_Add(&this->mPos, &mVel, &this->mPos);
+    VEC_Add(&this->mPos, &mVel, &this->mPos);
 
     if (this->shield != NULL) {
         this->shield->func_ov063_0215b6c8(&this->mUnk_250, this->mAngle);
@@ -369,7 +369,7 @@ void ActorLobarrier::Update() {
 
         VecFx32_Init(0x4CD, 0, 0, &sp34);
         func_01ff9638(&sp34, mAngle.angle_s);
-        VecFx32_Add(&sp34, &mPos, &sp34);
+        VEC_Add(&sp34, &mPos, &sp34);
         sp20.unk_00.Init(sp34.x, sp34.y, sp34.z, 0xF33);
         sp20.unk_10 = 0x1000;
         data_027e09c0->func_ov000_0207de98(mRef, &sp20, mUnk_38);
@@ -399,7 +399,7 @@ void ActorLobarrier::vfunc_2C(unk32 param1) {
         VecFx32_Init(0x4CD, 0, 0, &vec);
 
         func_01ff9638(&vec, mAngle.angle_s);
-        VecFx32_Add(&vec, &mPos, &vec);
+        VEC_Add(&vec, &mPos, &vec);
 
         this->func_ov017_020bf5c4(&vec, 0xD9A, 0x930 - 0x1F, 0x1F, mAngle.angle_s);
     } else {
@@ -675,7 +675,7 @@ void ActorLobarrier::func_ov063_02159784() {
             this->func_ov063_0215a5a0(&vec1.pos);
 
             VecFx32 vec2 = *data_027e0ce0->func_01fff148(0);
-            func_01ffb714(&vec2, &mPos, &vec2);
+            VEC_Subtract(&vec2, &mPos, &vec2);
 
             data_027e09c0->func_ov000_0207e458(2, 0, &vec1.pos, 3, &vec2, 0);
         }
@@ -1002,13 +1002,13 @@ void ActorLobarrier::vfunc_10(Cylinder *param1) const {
     Cylinder *temp_r3 = this->mUnk_34;
     param1->pos       = temp_r3->pos;
     param1->size      = temp_r3->size;
-    VecFx32_Add(&param1->pos, &this->mPos, &param1->pos);
+    VEC_Add(&param1->pos, &this->mPos, &param1->pos);
 
     if (this->shield != NULL) {
         VecFx32 sp0;
         VecFx32_Init(FX_F32_TO_FX32(0.25f), 0, 0, &sp0);
         func_01ff9638(&sp0, this->mAngle.angle_s);
-        VecFx32_Add(&param1->pos, &sp0, &param1->pos);
+        VEC_Add(&param1->pos, &sp0, &param1->pos);
     }
 }
 

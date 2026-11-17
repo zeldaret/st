@@ -26,7 +26,7 @@ ActorProfileUnkROCK::ActorProfileUnkROCK() :
 }
 
 ActorUnkROCK::ActorUnkROCK() :
-    mUnk_94(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkROCK)->mUnk_3C.mUnk_50), true) {
+    mUnk_94(NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkROCK)->mUnk_3C.mUnk_50), true) {
     this->mUnk_44    = 0x1F;
     this->mUnk_4A[1] = 0x02;
 }
@@ -50,7 +50,7 @@ void ActorUnkROCK::Update() {
             break;
         case ActorUnkROCKState_3:
             this->func_ov000_02098838();
-            VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+            VEC_Add(&this->mPos, &this->mVel, &this->mPos);
             if (this->func_ov000_02098910(NULL, 0x10) == 0x0) {
                 break;
             }
