@@ -123,10 +123,10 @@ public:
     void func_ov094_0216723c(void);
     unk32 func_ov094_02167518(void);
     void func_ov094_021675ac(VecFx32 *vec);
-    void func_ov094_02167614(void);
+    unk32 func_ov094_02167614(void);
     void func_ov094_02167688(void);
     void func_ov094_021676f4(void);
-    void func_ov094_02167794(unk32 param1, unk32 param2, unk32 param3);
+    void func_ov094_02167794(unk16 param1, unk16 param2, unk16 param3);
     void func_ov094_0216781c(void);
     bool func_ov094_02167ab8(unk32 param1);
     bool func_ov094_02167b24(unk32 param1);

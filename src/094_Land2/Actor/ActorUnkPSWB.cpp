@@ -454,9 +454,49 @@ void ActorUnkPSWB::func_ov094_02167224(void) {
 }
 
 void ActorUnkPSWB::func_ov094_0216723c(void) {}
-unk32 ActorUnkPSWB::func_ov094_02167518(void) {}
-void ActorUnkPSWB::func_ov094_021675ac(VecFx32 *vec) {}
-void ActorUnkPSWB::func_ov094_02167614(void) {}
+
+unk32 ActorUnkPSWB::func_ov094_02167518(void) {
+    mVel.x = 0;
+    mVel.z = 0;
+
+    VecFx32 vec = mPos;
+
+    bool ret = false;
+    if (mUnk_140 != mPos.x) {
+        if (func_01ff916c(&vec.x, mUnk_140, 0x13B)) {
+            ret = true;
+        }
+        mVel.x = vec.x - mPos.x;
+    } else {
+        if (func_01ff916c(&vec.z, mUnk_144, 0x13B)) {
+            ret = true;
+        }
+        mVel.z = vec.z - mPos.z;
+    }
+    return ret;
+}
+
+void ActorUnkPSWB::func_ov094_021675ac(VecFx32 *vec) {
+    unk32 var;
+    unk16 *pvar = (unk16 *) &var;
+    func_01fff17c(pvar, data_027e0ce0, mUnk_98);
+    u16 tmp = *pvar + 0x2000;
+    tmp >>= 0xE;
+    mUnk_160 = tmp;
+    func_ov048_02130790(this, tmp, vec, 0x1000);
+    mUnk_140 = vec->x;
+    mUnk_144 = vec->z;
+}
+
+unk32 ActorUnkPSWB::func_ov094_02167614(void) {
+    if (GET_FLAG2(mUnk_180, 1)) {
+        VecFx32 *vec = data_027e0ce0->func_01fff148(0);
+        if (func_01ff9258(mPos.x - vec->x, mPos.z - vec->z) > FX_F32_TO_FX32(0.54f)) {
+            UNSET_FLAG2(mUnk_180, 1);
+        }
+    }
+    return 1;
+}
 
 void ActorUnkPSWB::func_ov094_02167688(void) {
     Vec2bCpp vec2b;
@@ -472,7 +512,17 @@ void ActorUnkPSWB::func_ov094_02167688(void) {
 void ActorUnkPSWB::vfunc_6C(void) {}
 
 void ActorUnkPSWB::func_ov094_021676f4(void) {}
-void ActorUnkPSWB::func_ov094_02167794(unk32 param1, unk32 param2, unk32 param3) {}
+
+void ActorUnkPSWB::func_ov094_02167794(unk16 param1, unk16 param2, unk16 param3) {
+    if (mUnk_16E != 0) {
+        mUnk_170 += param3;
+    }
+
+    mUnk_16C += param1;
+    unk16 tmp = mUnk_16E;
+    func_01ff930c(&mUnk_16E, 0, param2);
+    mUnk_16A = FX_MulInline(tmp, COS(mUnk_16C));
+}
 
 void ActorUnkPSWB::func_ov094_0216781c(void) {
     mUnk_170 = FX_Atan2Idx(mVel.x, mVel.z);
