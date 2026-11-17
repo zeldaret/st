@@ -24,6 +24,7 @@
 #include "nitro/fx.h"
 #include "nitro/math.h"
 #include "nitro/types.h"
+#include "nns/g3d/g3d.h"
 #include "types.h"
 
 struct UnkStruct_data_ov094_021785a4 {
@@ -126,7 +127,7 @@ bool ActorUnkPSWB_194::vfunc_08(RefStruct param1, unk32 param2, unk32 param3) {
 }
 
 ActorUnkPSWB::ActorUnkPSWB() :
-    mUnk_E0(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkPSWB)->mUnk_3C.mUnk_50)),
+    mUnk_E0(NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkPSWB)->mUnk_3C.mUnk_50)),
     mUnk_140(0),
     mUnk_144(0),
     mUnk_148(0),
@@ -235,7 +236,7 @@ void ActorUnkPSWB::Update(void) {
             vec.x = FX_MulInline(sin_val, 0x7D7);
             vec.z = FX_MulInline(cos_val, 0x7D7);
             vec.y = 0;
-            VecFx32_Add(&vec, &mPos, &vec);
+            VEC_Add(&vec, &mPos, &vec);
 
             UnkStruct_ov000_0207de98 unk;
             unk.vec.x  = vec.x;
@@ -310,7 +311,7 @@ void ActorUnkPSWB::func_ov094_02166c88(void) {
 
     this->func_ov000_02098838();
     VecFx32_Copy(&mPos, &mPrevPos);
-    VecFx32_Add(&mPos, &mVel, &mPos);
+    VEC_Add(&mPos, &mVel, &mPos);
 
     UnkStruct_ov094_02176fb8_Base itemVar; // Not the actual class (should be from ov048 maybe?)
     this->func_ov000_02098910(&itemVar, 0x10);
@@ -351,7 +352,7 @@ void ActorUnkPSWB::func_ov094_02166e60(void) {
     mPrevPos.x = mPos.x;
     mPrevPos.y = mPos.y;
     mPrevPos.z = mPos.z;
-    VecFx32_Add(&mPos, &mVel, &mPos);
+    VEC_Add(&mPos, &mVel, &mPos);
 
     UnkStruct_ov094_02176fb8_Base itemVar; // Not the actual class (the right one comes/inherits from ov048)
     this->func_ov000_02098910(&itemVar, 0x10);
@@ -396,7 +397,7 @@ void ActorUnkPSWB::func_ov094_02166f94(void) {
 void ActorUnkPSWB::func_ov094_02167024(void) {
     mVel.y += mUnk_2C;
     VecFx32_Copy(&mPos, &mPrevPos);
-    VecFx32_Add(&mPos, &mVel, &mPos);
+    VEC_Add(&mPos, &mVel, &mPos);
 
     switch (mUnk_166) {
         case 0: {
@@ -664,7 +665,7 @@ void ActorUnkPSWB::func_ov094_02167e58(void) {
     if ((var1 >> 5 & 3) != 2) {
         VecFx32 vec2, vec3;
         vec2 = *this->func_ov000_0209853c(0);
-        func_01ffb714(&mPos, this->func_ov000_0209853c(0), &vec3);
+        VEC_Subtract(&mPos, this->func_ov000_0209853c(0), &vec3);
         UnkAngleStruct angle;
         angle.angle_u = FX_Atan2Idx(vec3.x, vec3.z);
         func_02017f38(&angle.angle_u);
@@ -677,7 +678,7 @@ void ActorUnkPSWB::func_ov094_02167e58(void) {
             VecFx32_Init(FX_MulInline(SIN(angle.angle_s), FX_F32_TO_FX32(0.5f)), 0,
                          FX_MulInline(COS(angle.angle_s), FX_F32_TO_FX32(0.5f)), &vec3);
             vec2.z = vec1.z;
-            VecFx32_Add(&vec2, &vec3, &vec2);
+            VEC_Add(&vec2, &vec3, &vec2);
 
             angle += DEG_TO_ANG(90);
 
@@ -701,7 +702,7 @@ void ActorUnkPSWB::func_ov094_02167e58(void) {
             return;
         }
 
-        func_01ffb714(&mPos, this->func_ov000_0209853c(0), &vec3);
+        VEC_Subtract(&mPos, this->func_ov000_0209853c(0), &vec3);
         angle.angle_u = FX_Atan2Idx(vec3.x, vec3.z);
         func_02017f38(&angle.angle_u);
 
@@ -711,7 +712,7 @@ void ActorUnkPSWB::func_ov094_02167e58(void) {
             VecFx32_Init(FX_MulInline(SIN(angle.angle_s), FX_F32_TO_FX32(0.5f)), 0,
                          FX_MulInline(COS(angle.angle_s), FX_F32_TO_FX32(0.5f)), &vec3);
             vec2.z = vec1.z;
-            VecFx32_Add(&vec2, &vec3, &vec2);
+            VEC_Add(&vec2, &vec3, &vec2);
 
             angle += DEG_TO_ANG(90);
 
@@ -760,7 +761,7 @@ unk32 ActorUnkPSWB::vfunc_58(VecFx32 *param1) {
 
 // non-matching (regalloc in the FX_Muls)
 void ActorUnkPSWB::func_ov094_0216825c(VecFx32 *param1, unk32 param2) {
-    if (0 < VecFx32_Dot(param1, &mVel)) {
+    if (0 < VEC_DotProduct(param1, &mVel)) {
         return;
     }
 
