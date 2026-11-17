@@ -3,6 +3,7 @@
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
 #include "Physics/Cylinder.hpp"
+#include "RefStruct.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
@@ -102,7 +103,7 @@ bool MapObject::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3) {
     return true;
 }
 
-void MapObject::vfunc_20(unk32 param1) {}
+void MapObject::vfunc_20(RefStruct param1) {}
 
 void MapObject::vfunc_24(MapObject *param1, VecFx32 param2) {
     *(u32 *) this = 0; // ????

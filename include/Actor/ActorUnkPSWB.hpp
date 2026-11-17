@@ -128,7 +128,7 @@ public:
     void func_ov094_021676f4(void);
     void func_ov094_02167794(unk32 param1, unk32 param2, unk32 param3);
     void func_ov094_0216781c(void);
-    unk32 func_ov094_02167ab8(void);
+    bool func_ov094_02167ab8(unk32 param1);
     bool func_ov094_02167b24(unk32 param1);
     void func_ov094_02167b64(unk32 param1);
     void func_ov094_02167bf0(void);

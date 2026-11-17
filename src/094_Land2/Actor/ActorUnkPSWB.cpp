@@ -6,7 +6,9 @@
 #include "Actor/ActorUnkSCCN.hpp"
 #include "CommonFuncs.hpp"
 #include "Item/ItemManager.hpp"
+#include "Map/MapObjectId.hpp"
 #include "MapObject/MapObject.hpp"
+#include "MapObject/MapObjectManager.hpp"
 #include "RefStruct.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -454,7 +456,16 @@ void ActorUnkPSWB::func_ov094_0216723c(void) {}
 unk32 ActorUnkPSWB::func_ov094_02167518(void) {}
 void ActorUnkPSWB::func_ov094_021675ac(VecFx32 *vec) {}
 void ActorUnkPSWB::func_ov094_02167614(void) {}
-void ActorUnkPSWB::func_ov094_02167688(void) {}
+
+void ActorUnkPSWB::func_ov094_02167688(void) {
+    Vec2bCpp vec2b;
+    func_01ffedac(&vec2b, &mPos);
+
+    MapObject *mapObject = gpMapObjManager->func_01fff498(vec2b);
+    if (mapObject != NULL && mapObject->GetMapObjectId() == MapObjectId_SwitchStep) {
+        mapObject->vfunc_20(mRef);
+    }
+}
 
 // matched (empty)
 void ActorUnkPSWB::vfunc_6C(void) {}
@@ -521,7 +532,20 @@ unk32 ActorUnkPSWB::vfunc_70(void) {
     return 0x63d;
 }
 
-unk32 ActorUnkPSWB::func_ov094_02167ab8(void) {}
+// non-matching (regalloc)
+bool ActorUnkPSWB::func_ov094_02167ab8(unk32 param1) {
+    if (param1 == 1 && !data_027e0ce0->func_01fff1a4()) {
+        return false;
+    }
+
+    u32 var[2];
+    u32 ref   = mRef.data;
+    u32 *pvar = &var[1];
+
+    func_ov000_0208bb84((u16 *) pvar, data_027e0ce0, param1);
+
+    return *pvar == ref;
+}
 
 bool ActorUnkPSWB::func_ov094_02167b24(unk32 param1) {
     if (param1 == 1 && !data_027e0ce0->func_01fff1a4()) {
@@ -531,7 +555,7 @@ bool ActorUnkPSWB::func_ov094_02167b24(unk32 param1) {
 }
 
 void ActorUnkPSWB::func_ov094_02167b64(unk32 param1) {
-    if (this->func_ov094_02167ab8() != 0) {
+    if (this->func_ov094_02167ab8(param1) != 0) {
         mUnk_98 = param1;
 
         if (this->func_ov094_02167b24(param1)) {
@@ -626,7 +650,89 @@ void ActorUnkPSWB::func_ov094_02167dbc(void) {
     }
 }
 
-void ActorUnkPSWB::func_ov094_02167e58(void) {}
+void ActorUnkPSWB::func_ov094_02167e58(void) {
+    if (mUnk_5C.mParams[0] == 0) {
+        return;
+    }
+
+    VecFx32 vec1;
+    func_ov000_0205ad64(this->func_ov000_0209853c(0), &vec1);
+    u32 var1;
+
+    func_01fff05c(&var1, data_027e0cd8->mUnk_0C, &vec1);
+
+    if ((var1 >> 5 & 3) != 2) {
+        VecFx32 vec2, vec3;
+        vec2 = *this->func_ov000_0209853c(0);
+        func_01ffb714(&mPos, this->func_ov000_0209853c(0), &vec3);
+        UnkAngleStruct angle;
+        angle.angle_u = FX_Atan2Idx(vec3.x, vec3.z);
+        func_02017f38(&angle.angle_u);
+
+        unk32 var2 = 0;
+        bool stop  = false;
+        for (unk32 var2 = 0; var2 < 4; var2++) {
+            vec2.x = vec1.x;
+            vec2.y = vec1.y;
+            VecFx32_Init(FX_MulInline(SIN(angle.angle_s), FX_F32_TO_FX32(0.5f)), 0,
+                         FX_MulInline(COS(angle.angle_s), FX_F32_TO_FX32(0.5f)), &vec3);
+            vec2.z = vec1.z;
+            VecFx32_Add(&vec2, &vec3, &vec2);
+
+            angle += DEG_TO_ANG(90);
+
+            u32 var3;
+            func_01fff05c(&var3, data_027e0cd8->mUnk_0C, &vec2);
+
+            bool break_loop = true;
+            if ((var3 & 0x1F) != 8 && (var3 >> 5 & 3) != 2) {
+                break_loop = false;
+            }
+
+            if (break_loop) {
+                vec2.y = mPos.y;
+                stop   = true;
+                func_ov000_02070cc0(data_027e09a4, &vec2, mUnk_5C.mUnk_24);
+                break;
+            }
+        }
+
+        if (stop) {
+            return;
+        }
+
+        func_01ffb714(&mPos, this->func_ov000_0209853c(0), &vec3);
+        angle.angle_u = FX_Atan2Idx(vec3.x, vec3.z);
+        func_02017f38(&angle.angle_u);
+
+        for (unk32 var2 = 0; var2 < 4; var2++) {
+            vec2.x = vec1.x;
+            vec2.y = vec1.y;
+            VecFx32_Init(FX_MulInline(SIN(angle.angle_s), FX_F32_TO_FX32(0.5f)), 0,
+                         FX_MulInline(COS(angle.angle_s), FX_F32_TO_FX32(0.5f)), &vec3);
+            vec2.z = vec1.z;
+            VecFx32_Add(&vec2, &vec3, &vec2);
+
+            angle += DEG_TO_ANG(90);
+
+            u32 var4;
+            func_01fff05c(&var4, data_027e0cd8->mUnk_0C, &vec2);
+
+            bool break_loop = true;
+            if ((var4 & 0x1F) != 8 && (var4 >> 5 & 3) != 2) {
+                break_loop = false;
+            }
+
+            if (break_loop) {
+                vec2.y = mPos.y;
+                func_ov000_02070cc0(data_027e09a4, &vec2, mUnk_5C.mUnk_24);
+                break;
+            }
+        }
+    } else {
+        func_ov000_02070cc0(data_027e09a4, &vec1, mUnk_5C.mUnk_24);
+    }
+}
 
 // return bool?
 unk32 ActorUnkPSWB::vfunc_58(VecFx32 *param1) {
@@ -636,7 +742,7 @@ unk32 ActorUnkPSWB::vfunc_58(VecFx32 *param1) {
         func_01fff05c(&var1, data_027e0cd8->mUnk_0C, param1);
         if ((var1 & 0x1F) != 0xC) {
             u32 var2; // some kind of ref?
-            func_01fff05c((u32 *) &var2, data_027e0cd8->mUnk_0C, param1);
+            func_01fff05c(&var2, data_027e0cd8->mUnk_0C, param1);
             bool cond  = true;
             u32 tmpCpy = *(volatile u32 *) &var2;
             if ((var2 & 0x1F) != 8 && (tmpCpy >> 5 & 3) != 2) {

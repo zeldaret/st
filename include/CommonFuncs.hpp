@@ -168,6 +168,7 @@ bool func_02016cf0(VecFx32 *, VecFx32 *, RefStruct, int, int);
 Actor *func_02016fbc(ActorId, VecFx32 *, unk32);
 unk32 func_02017158();
 unk8 func_02017e8c(unk16 *);
+void func_02017f38(u16 *);
 fx32 func_02017f54(s16 *, UnkAngleStruct);
 void func_02018114(unk16 *, unk16);
 s16 func_020196b0(unk32 param1);
