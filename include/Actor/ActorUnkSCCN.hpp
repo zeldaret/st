@@ -3,6 +3,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "MapObject/MapObject.hpp"
+#include "RefStruct.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -18,7 +19,7 @@ public:
 
     // data_ov000_020b287c
     /* 00 */ virtual ~ActorUnkSCCN_B8();
-    /* 08 */ virtual void vfunc_08();
+    /* 08 */ virtual bool vfunc_08(RefStruct param1, unk32 param2, unk32 param3);
 };
 
 class MapObject_10_SCCN : public MapObject_10 {

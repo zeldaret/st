@@ -1012,7 +1012,9 @@ struct UnkSystem7_UnkStruct_00 {
     /* 20 */ UnkSystem7_UnkStruct_00_20 *mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ VecFx32 mUnk_28;
-    /* 34 */ PAD(0x34, 0xA0);
+    /* 34 */ PAD(0x34, 0x58);
+    /* 58 */ unk32 mUnk_58;
+    /* 5C */ PAD(0x5C, 0xA0);
     /* A0 */ unk32 mUnk_A0;
     /* A4 */ unk16 mUnk_A4;
 

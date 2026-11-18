@@ -894,7 +894,7 @@ public:
     UnkStruct_027e0ce0_Base();
 };
 
-extern "C" unk32 func_01ff9258(fx32, fx32);
+extern "C" unk32 func_01ff9258(fx32, fx32); //! TODO: should this be moved to CommonFuncs?
 
 // PlayerManager?
 class UnkStruct_027e0ce0 : public AutoInstance<UnkStruct_027e0ce0>, public UnkStruct_027e0ce0_Base {

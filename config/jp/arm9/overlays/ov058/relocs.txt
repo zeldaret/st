@@ -486,7 +486,7 @@ from:0x02144b14 kind:arm_call to:0x02099084 module:overlay(0)
 from:0x02144b2c kind:load to:0x02156518 add:0x8 module:overlay(58)
 from:0x02144b38 kind:load to:0x02158a58 module:overlay(58)
 from:0x02144b54 kind:arm_call to:0x02099084 module:overlay(0)
-from:0x02144b6c kind:load to:0x021564f4 module:overlay(58) add:0x8
+from:0x02144b6c kind:load to:0x021564f4 add:0x8 module:overlay(58)
 from:0x02144b78 kind:load to:0x02158b30 module:overlay(58)
 from:0x02144b94 kind:arm_call to:0x02099084 module:overlay(0)
 from:0x02144bac kind:load to:0x021565cc add:0x8 module:overlay(58)
