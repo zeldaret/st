@@ -511,7 +511,19 @@ void ActorUnkPSWB::func_ov094_02167688(void) {
 // matched (empty)
 void ActorUnkPSWB::vfunc_6C(void) {}
 
-void ActorUnkPSWB::func_ov094_021676f4(void) {}
+void ActorUnkPSWB::func_ov094_021676f4(void) {
+    mUnk_168 += 0x300;
+
+    unk32 var1 = 0;
+    if (GET_FLAG2(mUnk_180, 1)) {
+        var1 = 0xFFFFFD9A;
+    }
+
+    func_01ff916c(&mUnk_14C, var1, 0x7B);
+    func_01ff916c(&mUnk_148, mUnk_14C, 0xA4);
+
+    mPos.y = mUnk_148 + mUnk_154 + FX_MulInline(SIN(mUnk_168), FX_F32_TO_FX32(0.1f));
+}
 
 void ActorUnkPSWB::func_ov094_02167794(unk16 param1, unk16 param2, unk16 param3) {
     if (mUnk_16E != 0) {
