@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Render/Skybox.hpp"
 #include "files.h"
 #include "math.hpp"
 #include "types.h"
@@ -79,21 +80,6 @@ public:
             return type == elem.mUnk_0E && id == elem.mUnk_14;
         }
     };
-};
-
-class UnkStruct_027e0cd8_0C_Base_88 {
-public:
-    /* 00 */ VecFx32 mUnk_00;
-    /* 0C */ bool mUnk_0C;
-    /* 0D */ unk8 mUnk_0D; // pad?
-    /* 0E */ unk8 mUnk_0E; // pad?
-    /* 0F */ unk8 mUnk_0F; // pad?
-    /* 10 */
-
-    UnkStruct_027e0cd8_0C_Base_88();
-
-    void func_ov000_020823a8(unk32 param1);
-    void func_ov000_0208261c();
 };
 
 class UnkStruct_027e0cd8_0C_Base_98 {
@@ -203,7 +189,7 @@ public:
             /* 086 */ u16 mUnk_084_01;
         };
     };
-    /* 088 */ UnkStruct_027e0cd8_0C_Base_88 mUnk_088;
+    /* 088 */ SkyboxManager mSkyboxMgr;
     /* 098 */ UnkStruct_027e0cd8_0C_Base_98 *mUnk_098;
     /* 09C */ Vec2us mUnk_09C;
     /* 0A0 */ VecFx32 mUnk_0A0;
@@ -224,7 +210,7 @@ public:
     /* 104 */ UnkFlags1 mUnk_104;
     /* 108 */ unk32 mUnk_108;
     /* 10C */ unk32 mUnk_10C;
-    /* 110 */ unk32 mUnk_110;
+    /* 110 */ unk32 mUnk_110; // environment type?
     /* 114 */ unk32 mUnk_114;
     /* 118 */ unk32 mUnk_118;
     /* 11C */ unk32 mUnk_11C;
@@ -293,7 +279,7 @@ public:
     const EntranceInfo *func_ov001_020b8c80(unk32 param1);
     void func_ov001_020b8c90(ZMBSectionCMPT *pCMPT);
     void func_ov001_020b8c98(ZMBSectionCAME *pCAME);
-    void func_ov001_020b8db8();
+    void InitSkybox();
     void func_ov001_020b8e24();
     void func_ov001_020b8e54();
 };

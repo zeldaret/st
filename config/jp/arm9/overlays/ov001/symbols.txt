@@ -90,7 +90,7 @@ _ZN26UnkStruct_027e0cd8_0C_Base13ZMB_ParseROMBEP14ZMBSectionROMB kind:function(t
 _ZN24UnkStruct_ov001_020c40f4D1Ev kind:function(thumb,size=0x2) addr:0x020ba4e8
 _ZN26UnkStruct_027e0cd8_0C_Base8vfunc_40Eh kind:function(thumb,size=0xfc) addr:0x020ba4ec
 _ZN24UnkStruct_ov001_020c40f4C1Ev kind:function(thumb,size=0xe) addr:0x020ba5e8
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b8db8Ev kind:function(thumb,size=0x6c) addr:0x020ba5f8
+_ZN26UnkStruct_027e0cd8_0C_Base10InitSkyboxEv kind:function(thumb,size=0x6c) addr:0x020ba5f8
 _ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b8e24Ev kind:function(thumb,size=0x30) addr:0x020ba664
 _ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b8e54Ev kind:function(thumb,size=0x20) addr:0x020ba694
 _ZNSt13__vec_deleterI12EntranceInfoSaIS0_EE13sub_push_backERKS0_N10Metrowerks8int2typeILi0EEE kind:function(thumb,size=0x18) addr:0x020ba6b4

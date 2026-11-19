@@ -570,7 +570,7 @@ config.libs = [
         [
             Object("031_Land/UnkStruct_027e0cd8_0C_031.cpp"),
             Object("031_Land/UnkStruct_ov031_Items_02_031.cpp"),
-            Object("031_Land/code_020d8fd4_031.cpp"),
+            Object("031_Land/Render/SkyboxLand.cpp"),
             Object("031_Land/code_020d9314_031.cpp"),
             Object("031_Land/code_020d93f0_031.cpp"),
             Object("031_Land/code_020d9598_031.cpp"),

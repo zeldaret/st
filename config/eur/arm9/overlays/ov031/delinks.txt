@@ -16,7 +16,7 @@ src/031_Land/UnkStruct_ov031_Items_02_031.cpp:
     .text       start:0x020d8cf8 end:0x020d8fd4
     .data       start:0x02112a5c end:0x02112a98
 
-src/031_Land/code_020d8fd4_031.cpp:
+src/031_Land/Render/SkyboxLand.cpp:
     .text       start:0x020d8fd4 end:0x020d9314
 
 src/031_Land/code_020d9314_031.cpp:

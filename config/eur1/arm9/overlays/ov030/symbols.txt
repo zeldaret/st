@@ -1,9 +1,9 @@
-func_ov030_021419e0 kind:function(arm,size=0xc8) addr:0x02141b00
+_ZN16SkyboxFireRealmAC1EP16SkyboxManager_00 kind:function(arm,size=0xc8) addr:0x02141b00
 _ZN19func_ov030_02141aa8D1Ev kind:function(arm,size=0x14) addr:0x02141bc8
 _ZN19func_ov030_02141abcD0Ev kind:function(arm,size=0x1c) addr:0x02141bdc
 func_ov030_02141ad8 kind:function(arm,size=0xc) addr:0x02141bf8
 func_ov030_02141ae4 kind:function(arm,size=0x118) addr:0x02141c04
-func_ov030_02141bfc kind:function(arm,size=0x114) addr:0x02141d1c
+_ZN16SkyboxFireRealmBC1EP16SkyboxManager_00 kind:function(arm,size=0x114) addr:0x02141d1c
 _ZN19func_ov030_02141d10D1Ev kind:function(arm,size=0x14) addr:0x02141e30
 _ZN19func_ov030_02141d24D0Ev kind:function(arm,size=0x1c) addr:0x02141e44
 func_ov030_02141d40 kind:function(arm,size=0xc) addr:0x02141e60
