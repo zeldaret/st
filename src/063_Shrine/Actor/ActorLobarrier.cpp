@@ -122,11 +122,7 @@ unk32 UnkStruct_ov063_02162e88::vfunc_04(RefStruct param1, unk32 param2, unk32 p
             vec.x = sin_val;
             vec.z = cos_val;
             vec.y = 0;
-#if !IS_JP
             ret4->func_ov031_020f2cac(&vec, true);
-#else
-            func_ov026_020f46a8(ret4, &vec, true);
-#endif
             return 0;
         }
 

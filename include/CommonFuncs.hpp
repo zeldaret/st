@@ -351,7 +351,6 @@ void func_ov021_020f8818();
 // overlay 26
 void func_ov026_020e9208();
 void func_ov026_020efc40(unk32 param1);
-void func_ov026_020f46a8(Actor *param1, VecFx32 *param2, bool param3);
 bool func_ov026_020f4be0(int, int);
 unk32 func_ov026_020f4c9c(SceneIndex);
 u16 func_ov026_02106564(void *);
