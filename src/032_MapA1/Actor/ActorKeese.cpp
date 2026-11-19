@@ -903,7 +903,7 @@ bool ActorKeese::func_ov032_0211fa4c(unk32 param1) {
 void ActorKeese::func_ov032_0211faf0(Actor *param1, G3d_RenderState *param2) {
     ActorKeese *thisx               = (ActorKeese *) param1;
     G3d_RenderObject *pRenderObject = param2->renderObj;
-    s32 var_r1                      = param2->flag & 0x10 ? param2->currentBoneMtxId : -1;
+    s32 var_r1                      = G3d_GetCurBoneMtxId(param2);
 
     if (var_r1 != thisx->mUnk_0B0.mUnk_6C) {
         return;

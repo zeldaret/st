@@ -427,7 +427,7 @@ void ActorKenzo::func_ov058_02148b04(Actor *param1, G3d_RenderState *param2) {
 
     G3d_RenderObject *renderObj = param2->renderObj;
 
-    s32 val = param2->flag & 0x10 ? param2->currentBoneMtxId : -1;
+    s32 val = G3d_GetCurBoneMtxId(param2);
     if (val != thiz->mUnk_31C) {
         return;
     }

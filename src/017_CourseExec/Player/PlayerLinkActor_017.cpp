@@ -265,7 +265,7 @@ void PlayerLinkActor::func_ov017_020bdd84(void *param1, unk32 param2) {
             this->mUnk_70->func_ov017_020bbcd8(&this->mPos.vec, this->mAngle);
         }
 
-        if (param1 == NULL && data_0204a110.func_02019514() == 0) {
+        if (param1 == NULL && !data_0204a110.func_02019514()) {
             if (this->mUnk_134 != NULL) {
                 this->func_ov000_0208cc20(&sp10);
                 PlayerLinkActor_134 *temp_r1 = this->mUnk_134;

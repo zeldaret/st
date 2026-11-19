@@ -104,7 +104,7 @@ UnkStruct_ov000_02058a84 *ActorBomb::func_ov031_020e15d0(u16 param1) {
 void ActorBomb::func_ov031_020e1634(G3d_RenderState *param1) {
     G3d_NameList *iVar1 = G3d_GetBoneList(param1->renderObj->model);
     uint uVar2          = iVar1 != NULL ? func_0200f218(iVar1, data_ov031_021109fc) : -1;
-    uint uVar3          = param1->flag & 0x04 ? param1->currentBoneId : -1;
+    uint uVar3          = G3d_GetCurBoneId(param1);
 
     if (uVar2 == uVar3) {
         *param1->visibilityPtr = false;

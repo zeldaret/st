@@ -140,10 +140,14 @@ public:
 };
 
 // SkyboxType_Land
+#define SKYBOX_NUM_MAT_LAND 5
 class SkyboxLand : public SkyboxBase {
 public:
     /* 00 (base) */
-    /* 64 */
+    /* 64 */ ModelRender_UnkSystem1_Derived3 mUnk_64;
+    /* 84 */ unk32 mUnk_84[SKYBOX_NUM_MAT_LAND];
+    /* 98 */ unk32 mUnk_98[SKYBOX_NUM_MAT_LAND];
+    /* AC */ bool mUnk_AC;
     /* B0 */
 
     SkyboxLand(SkyboxManager_00 *param1);

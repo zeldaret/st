@@ -1676,7 +1676,7 @@ void ActorLokomo::func_ov058_02147760(Actor *param0, G3d_RenderState_ *param1) {
     ActorLokomo *thiz = (ActorLokomo *) param0;
 
     G3d_RenderObject *renderObj = param1->renderObj;
-    s32 val                     = param1->flag & 0x10 ? param1->currentBoneMtxId : -1;
+    s32 val                     = G3d_GetCurBoneMtxId(param1);
     if (val == thiz->mUnk_908) {
         if (renderObj->mUnk_25 == 0x2) {
             param1->callbackSegment[6] = 0x3;
@@ -1737,7 +1737,7 @@ void ActorLokomo::func_ov058_02147860(Actor *param0, G3d_RenderState_ *param1) {
     ActorLokomo *thiz = (ActorLokomo *) param0;
 
     G3d_RenderObject *renderObj = param1->renderObj;
-    s32 val                     = param1->flag & 0x10 ? param1->currentBoneMtxId : -1;
+    s32 val                     = G3d_GetCurBoneMtxId(param1);
 
     if (val == thiz->mUnk_8D0) {
 

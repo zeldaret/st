@@ -276,3 +276,20 @@ public:
         this->mUnk_00.func_ov000_020577a4(param2, 0, false);
     }
 };
+
+class ModelRender_UnkSystem1_Derived3 {
+public:
+    /* 00 */ ModelRender_UnkSystem1 mUnk_00;
+    /* 20 */
+
+    ModelRender_UnkSystem1_Derived3(UnkStruct_ov000_02058a84 *param2, G3d_Model *pModel) :
+        mUnk_00(pModel, func_0200b150(param2, pModel)) {
+        bool value = false;
+
+        if (!(param2->mUnk_06_b & 2)) {
+            value = true;
+        }
+
+        this->mUnk_00.mUnk_00.func_ov000_020577a4(param2, 0, value);
+    }
+};

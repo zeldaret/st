@@ -1931,7 +1931,7 @@ void ActorUnkZLSL::vfunc_A4() {
 void ActorUnkZLSL::func_ov031_020ee1f4(Actor *param1, G3d_RenderState *param2) {
     ActorUnkZLSL *thisx             = (ActorUnkZLSL *) param1;
     G3d_RenderObject *pRenderObject = param2->renderObj;
-    s32 var_r2                      = param2->flag & 0x10 ? param2->currentBoneMtxId : -1;
+    s32 var_r2                      = G3d_GetCurBoneMtxId(param2);
 
     if (var_r2 == 0x0A && pRenderObject->mUnk_25 == 2) {
         MtxFx33 sp24;

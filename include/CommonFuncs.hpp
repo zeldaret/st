@@ -117,7 +117,6 @@ void func_02006aa8(unk32, unk32);
 void func_02006d8c(u16, unk32);
 void func_0200b58c(G3d_RenderObject *);
 void G3d_GetCurrentMtx(MtxFx43 *mtx1, MtxFx33 *mtx2);
-void func_0200ea38(G3d_Model *, unk32, unk32);
 void func_0200eab0(G3d_Model *, unk32, unk32);
 void func_0200ef5c(G3d_Model *, unk32);
 void func_0200ef9c(G3d_Model *, unk32);

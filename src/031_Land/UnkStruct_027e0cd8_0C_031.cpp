@@ -207,7 +207,7 @@ void UnkStruct_027e0cd8_0C::func_ov031_020d8cb8(G3d_RenderState *param1) {
 void UnkStruct_027e0cd8_0C::func_ov031_020d8cd0(void *modelRender, G3d_RenderState *param1) {
     UnkStruct_027e0cd8_0C *thisx = (UnkStruct_027e0cd8_0C *) modelRender;
 
-    int var_r3 = param1->flag & 0x04 ? param1->currentBoneId : -1;
+    int var_r3 = G3d_GetCurBoneId(param1);
 
     if (var_r3 == thisx->mUnk_1D8) {
         *param1->visibilityPtr = thisx->mUnk_1DC;

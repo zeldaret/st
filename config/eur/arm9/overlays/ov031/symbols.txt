@@ -1954,9 +1954,9 @@ data_ov031_0210fd88 kind:data(any) addr:0x0210fd88 ambiguous
 data_ov031_02110250 kind:data(any) addr:0x02110250 ambiguous
 data_ov031_02110640 kind:data(any) addr:0x02110640 local
 data_ov031_02110650 kind:data(any) addr:0x02110650 local
-data_ov031_0211067c kind:data(any) addr:0x0211067c
-data_ov031_02110684 kind:data(any) addr:0x02110684
-data_ov031_0211069c kind:data(any) addr:0x0211069c
+data_ov031_0211067c kind:data(byte[5]) addr:0x0211067c local
+data_ov031_02110684 kind:data(any) addr:0x02110684 local
+data_ov031_0211069c kind:data(any) addr:0x0211069c local
 data_ov031_021106ec kind:data(any) addr:0x021106ec
 data_ov031_02110700 kind:data(any) addr:0x02110700 ambiguous
 data_ov031_02110704 kind:data(any) addr:0x02110704 ambiguous
@@ -2226,7 +2226,7 @@ _ZTV21UnkStruct_027e0cd8_0C kind:data(any) addr:0x02112a04
 @10070 kind:data(byte[0xa]) addr:0x02112a50 local
 _ZTV27UnkStruct_ov031_Items_02_38 kind:data(any) addr:0x02112a5c
 _ZTV16MapObject_10_Pot kind:data(any) addr:0x02112a70
-_ZTV19data_ov031_02112aa0 kind:data(any) addr:0x02112a98
+_ZTV10SkyboxLand kind:data(any) addr:0x02112a98
 _ZTV24UnkStruct_ov031_02112ad4 kind:data(any) addr:0x02112acc
 data_ov031_02112ae0 kind:data(any) addr:0x02112ae0
 data_ov031_02112afc kind:data(any) addr:0x02112afc
