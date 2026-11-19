@@ -23,6 +23,7 @@ Diagnostics:
     - "template_spec_needs_header"
     - "goto_into_protected_scope"
     - "init_list_bad_dest_type"
+    - "c99-designator"
 Documentation:
   CommentFormat: Doxygen
 ---

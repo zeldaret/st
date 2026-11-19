@@ -204,7 +204,7 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const EntranceInfo *param1)
         }
     }
 
-    this->func_ov001_020b8db8();
+    this->InitSkybox();
     this->func_ov001_020b8e24();
 
     if (param1->isCS == true) {
@@ -222,7 +222,7 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b88c0(unk32 param1) {
 
 void UnkStruct_027e0cd8_0C_Base::func_ov001_020b88ec() {
     this->func_ov001_020b8e54();
-    this->mUnk_088.func_ov000_0208261c();
+    this->mSkyboxMgr.DestroySkybox();
     gpMapObjManager->func_ov001_020bae6c();
     gpActorManager->func_ov001_020bb7f0();
     data_027e095c->func_ov000_020592ec();
@@ -398,42 +398,41 @@ void UnkStruct_027e0cd8_0C_Base::vfunc_40(u8 spawnIndex) {
     }
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8db8() {
-    unk32 uVar1;
+void UnkStruct_027e0cd8_0C_Base::InitSkybox() {
+    SkyboxType skyboxType = SkyboxType_None;
 
-    uVar1 = 0;
     switch (this->mUnk_110) {
         case 0x00:
         case 0x03:
-            uVar1 = 0x0A;
+            skyboxType = SkyboxType_Land;
             break;
         case 0x0E:
-            uVar1 = 0x01;
+            skyboxType = SkyboxType_ForestRealm;
             break;
         case 0x05:
         case 0x09:
-            uVar1 = 0x02;
+            skyboxType = SkyboxType_SnowRealmA;
             break;
         case 0x0A:
-            uVar1 = 0x03;
+            skyboxType = SkyboxType_SnowRealmB;
             break;
         case 0x02:
-            uVar1 = 0x04;
+            skyboxType = SkyboxType_OceanRealm;
             break;
         case 0x0F:
-            uVar1 = 0x05;
+            skyboxType = SkyboxType_FireRealmA;
             break;
         case 0x10:
-            uVar1 = 0x06;
+            skyboxType = SkyboxType_FireRealmB;
             break;
         case 0x08:
-            uVar1 = 0x00;
+            skyboxType = SkyboxType_None;
             break;
         case 0x0C:
-            uVar1 = 0x09;
+            skyboxType = SkyboxType_DarkRealm;
             break;
         case 0x06:
-            uVar1 = 0x07;
+            skyboxType = SkyboxType_BossCyclok;
             break;
         case 0x01:
         case 0x07:
@@ -441,11 +440,11 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8db8() {
         case 0x0B:
             break;
         default:
-            uVar1 = 0x00;
+            skyboxType = SkyboxType_None;
             break;
     }
 
-    this->mUnk_088.func_ov000_020823a8(uVar1);
+    this->mSkyboxMgr.CreateSkybox(skyboxType);
 }
 
 void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8e24() {

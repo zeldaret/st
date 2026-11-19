@@ -16,7 +16,7 @@ public:
     /* 4C */ unk32 mUnk_4C;
     /* 50 */ unk32 mUnk_50;
     /* 54 */ EntranceInfo mUnk_54;
-    /* 68 */ unk32 mUnk_68;
+    /* 68 */ EntryTransitionType mEntryTransitionType;
     /* 6C */ s32 mUnk_6C;
     /* 70 */ volatile VecFx32 mUnk_70;
     /* 7C */ unk32 mUnk_7C;

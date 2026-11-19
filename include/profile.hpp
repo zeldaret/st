@@ -12,6 +12,11 @@ public:
     /* 08 */ unk32 mUnk_08;
     /* 0C */
 
+    void Reset(void *param1) {
+        this->~UnkSystem3();
+        this->mUnk_00 = param1;
+    }
+
     UnkSystem3(const char *path, unk32 param2);
     UnkSystem3(const char *path, unk32 param2, unk32 param3, unk32 param4);
     ~UnkSystem3();

@@ -62,6 +62,8 @@ struct UnkStruct_PlayerGet_50;
 struct MapObjectUnkWLMS;
 struct stack_ov000_02073578;
 struct UnkStruct_ov031_02118fa4;
+struct UnkFileSystem1;
+struct UnkStruct_ov000_02058a84;
 
 union Vec2bCpp;
 union Vec3s;
@@ -211,6 +213,7 @@ UnkStruct_027e0cec_18_04 *func_ov000_02054690(void *, unk32, unk32, unk32, unk32
 void func_ov000_02057cc8(ModelRender *);
 void func_ov000_02058c74(void *, int, int, int, int);
 BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, void *);
+UnkStruct_ov000_02058a84 *func_ov000_0205ac34(UnkFileSystem1 *, unk32);
 bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
 void func_ov000_0205ad90(Vec2bCpp param1, VecFx32 *param2);
 bool func_ov000_0205aeac();
@@ -348,7 +351,6 @@ void func_ov021_020f8818();
 // overlay 26
 void func_ov026_020e9208();
 void func_ov026_020efc40(unk32 param1);
-void func_ov026_020f46a8(Actor *param1, VecFx32 *param2, bool param3);
 bool func_ov026_020f4be0(int, int);
 unk32 func_ov026_020f4c9c(SceneIndex);
 u16 func_ov026_02106564(void *);

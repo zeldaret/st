@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Render/Skybox.hpp"
 #include "files.h"
 #include "math.hpp"
 #include "types.h"
@@ -79,28 +80,6 @@ public:
             return type == elem.mUnk_0E && id == elem.mUnk_14;
         }
     };
-};
-
-class UnkStruct_027e0cd8_0C_160 {
-public:
-    /* 00 */ UnkSystem3 mUnk_00;
-
-    bool func_ov026_02106aa8();
-};
-
-class UnkStruct_027e0cd8_0C_Base_88 {
-public:
-    /* 00 */ VecFx32 mUnk_00;
-    /* 0C */ bool mUnk_0C;
-    /* 0D */ unk8 mUnk_0D; // pad?
-    /* 0E */ unk8 mUnk_0E; // pad?
-    /* 0F */ unk8 mUnk_0F; // pad?
-    /* 10 */
-
-    UnkStruct_027e0cd8_0C_Base_88();
-
-    void func_ov000_020823a8(unk32 param1);
-    void func_ov000_0208261c();
 };
 
 class UnkStruct_027e0cd8_0C_Base_98 {
@@ -210,7 +189,7 @@ public:
             /* 086 */ u16 mUnk_084_01;
         };
     };
-    /* 088 */ UnkStruct_027e0cd8_0C_Base_88 mUnk_088;
+    /* 088 */ SkyboxManager mSkyboxMgr;
     /* 098 */ UnkStruct_027e0cd8_0C_Base_98 *mUnk_098;
     /* 09C */ Vec2us mUnk_09C;
     /* 0A0 */ VecFx32 mUnk_0A0;
@@ -231,7 +210,7 @@ public:
     /* 104 */ UnkFlags1 mUnk_104;
     /* 108 */ unk32 mUnk_108;
     /* 10C */ unk32 mUnk_10C;
-    /* 110 */ unk32 mUnk_110;
+    /* 110 */ unk32 mUnk_110; // environment type?
     /* 114 */ unk32 mUnk_114;
     /* 118 */ unk32 mUnk_118;
     /* 11C */ unk32 mUnk_11C;
@@ -300,7 +279,7 @@ public:
     const EntranceInfo *func_ov001_020b8c80(unk32 param1);
     void func_ov001_020b8c90(ZMBSectionCMPT *pCMPT);
     void func_ov001_020b8c98(ZMBSectionCAME *pCAME);
-    void func_ov001_020b8db8();
+    void InitSkybox();
     void func_ov001_020b8e24();
     void func_ov001_020b8e54();
 };
@@ -321,9 +300,9 @@ public:
 class UnkStruct_027e0cd8_0C : public UnkStruct_027e0cd8_0C_Base {
 public:
     /* 000 (base) */
-    /* 160 */ UnkStruct_027e0cd8_0C_160 *mUnk_160[4];
+    /* 160 */ UnkSystem3 *mUnk_160[4];
     /* 170 */ ModelRender_UnkSystem1 *mUnk_170[4][5];
-    /* 1C0 */ void *mUnk_1C0[4];
+    /* 1C0 */ s32 mUnk_1C0[4];
     /* 1D0 */ UnkStruct_027e0cd8_0C_1D0 *mUnk_1D0;
     /* 1D4 */ unk32 mUnk_1D4;
     /* 1D8 */ unk32 mUnk_1D8;
@@ -334,16 +313,20 @@ public:
     UnkStruct_027e0cd8_0C(UnkStruct_027e0cd8 *param1);
 
     // data_ov031_02112a0c
-    /* 00 */ virtual ~UnkStruct_027e0cd8_0C() override;
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C();
-    /* 1C */ virtual void vfunc_1C(const EntranceInfo *param1, bool param2, bool param3);
-    /* 38 */ virtual void vfunc_38();
+    /* 00 */ WEAK virtual ~UnkStruct_027e0cd8_0C() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C() override;
+    /* 1C */ virtual void vfunc_1C(const EntranceInfo *param1, bool param2, bool param3) override;
+    /* 38 */ virtual void vfunc_38() override;
 
     // overlay 31
+    void func_ov031_020d8720(s32 param1);
     void func_ov031_020d8738();
     void func_ov031_020d88c0();
     void func_ov031_020d8ae4();
+
+    static void func_ov031_020d8cb8(G3d_RenderState *param1);
+    static void func_ov031_020d8cd0(void *modelRender, G3d_RenderState *param1);
 
     // overlay 102
     void func_ov102_02184628();
@@ -365,7 +348,10 @@ public:
 
 class UnkStruct_027e0cd8_04_0C {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ unk8 mUnk_00;
+    /* 01 */ u8 mRoomIndex;
+    /* 02 */ unk8 mUnk_02;
+    /* 03 */ unk8 mUnk_03;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ s16 mUnk_08;
     /* 0C */ volatile u32 mUnk_0C;

@@ -697,7 +697,7 @@ from:0x0216d4e0 kind:thumb_call_arm to:0x02072b3c module:overlay(0)
 from:0x0216d4f0 kind:thumb_call_arm to:0x02072b3c module:overlay(0)
 from:0x0216d504 kind:thumb_call_arm to:0x02171184 module:overlay(93)
 from:0x0216d50c kind:load to:0x027e09a4 module:dtcm
-from:0x0216d510 kind:load to:0x020aa8e4 module:overlay(0)
+from:0x0216d510 kind:load to:0x020aa8e0 add:4 module:overlay(0)
 from:0x0216d514 kind:load to:0x027e09ac module:dtcm
 from:0x0216d560 kind:arm_call to:0x02080af8 module:overlay(0)
 from:0x0216d578 kind:load to:0x027e0cd8 module:dtcm

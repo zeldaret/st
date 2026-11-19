@@ -4,8 +4,13 @@
 #include "math.hpp"
 #include "types.h"
 
+class UnkStruct_ItemManager_20_04;
+
 class UnkStruct_027e0d2c : public AutoInstance<UnkStruct_027e0d2c> {
 public:
+    /* 00 */ UnkStruct_ItemManager_20_04 *mUnk_00;
+    /* 04 */
+
     // overlay 31
     void func_ov031_020d95b4();
     void func_ov031_020d95c8(RefStruct param1);

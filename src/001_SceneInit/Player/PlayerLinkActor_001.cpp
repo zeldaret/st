@@ -30,7 +30,7 @@ PlayerLinkActor::PlayerLinkActor(unk32 param1, ItemManager *pItemMgr, UnkStruct_
     PlayerLinkActor *new_var   = this;
     PlayerLinkActor **new_var3 = &new_var;
     if ((*new_var3)->mUnk_4C == -1) {
-        (*new_var3)->func_ov031_020d96a4(this->mUnk_0A0, this->mUnk_58);
+        UnkStruct_027e0d34::Create(*new_var3, this->mUnk_0A0, this->mUnk_58);
         this->func_ov031_020dccf0();
     } else {
         this->func_ov021_020ebda0();

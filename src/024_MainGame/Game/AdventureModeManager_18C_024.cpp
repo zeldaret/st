@@ -386,8 +386,8 @@ void AdventureModeManager_18C::vfunc_60() {
 
 void AdventureModeManager_18C::func_ov024_020ca034() {
     this->mUnk_14.func_0201bb84(0x14, 2, 0x14);
-    this->mUnk_14.mUnk_18 = false;
-    this->mUnk_14.mUnk_19 = true;
+    this->mUnk_14.mDoBottomScreen = false;
+    this->mUnk_14.mDoTopScreen    = true;
     data_0204e5f8.func_0201b9a8(&this->mUnk_14);
     this->mUnk_54 = true;
 }

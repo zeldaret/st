@@ -223,6 +223,7 @@ public:
     u32 func_ov000_02093718();
     u8 func_ov000_0209378c(); // bool?
     void func_ov000_02093a04();
+    bool func_ov000_02093bc8(unk32 param1);
     void func_ov000_02093fe8();
 
     // overlay 1
@@ -325,8 +326,6 @@ public:
     void func_ov021_020ebda0(unk32 param1);
 
     // overlay 31
-    void func_ov031_020d96a4(PlayerLinkActor_A0 *param1, UnkStruct_027e0ce0_40 *param2);
-    void func_ov031_020d96a4(int, PlayerLinkActor_A0 *param1, UnkStruct_027e0ce0_40 *param2);
     void func_ov031_020dccf0();
     void func_ov031_020dccf0(unk32 param1);
 

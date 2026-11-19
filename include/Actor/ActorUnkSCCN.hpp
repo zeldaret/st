@@ -6,21 +6,6 @@
 #include "global.h"
 #include "types.h"
 
-class ActorUnkSCCN_B8 {
-public:
-    /* 00 (vtable) */
-    /* 04 */ RefStruct mUnk_04;
-    /* 08 */ VecFx32 *mUnk_08;
-    /* 0C */ MapObject_10_Base *mUnk_0C;
-    /* 10 */
-
-    ActorUnkSCCN_B8();
-
-    // data_ov000_020b287c
-    /* 00 */ virtual ~ActorUnkSCCN_B8();
-    /* 08 */ virtual void vfunc_08();
-};
-
 class MapObject_10_SCCN : public MapObject_10 {
 public:
     /* 00 (base) */

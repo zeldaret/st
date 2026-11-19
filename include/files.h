@@ -283,7 +283,7 @@ typedef struct ZMBSectionROMB {
 
 typedef struct ZMBEntryROOM {
     /* 00 */ u8 unk_00;
-    /* 01 */ u8 unk_01;
+    /* 01 */ u8 unk_01; // environment type?
     /* 02 */ u8 unk_02;
     /* 03 */ u8 unk_03;
     /* 04 */ u8 unk_04;

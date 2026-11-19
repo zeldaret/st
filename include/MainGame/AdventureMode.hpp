@@ -994,11 +994,11 @@ public:
     bool func_ov024_020c5f70();
     bool func_ov024_020c60f4();
     bool func_ov024_020c623c();
-    void func_ov024_020c6514(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4);
+    void func_ov024_020c6514(SceneIndex sceneIndex, u8 roomIndex, unk16 param3, unk16 param4);
     u8 GetMapPaintIndex(SceneIndex sceneIndex, u8 param2);
     void func_ov024_020c66c0();
     void func_ov024_020c671c();
-    void func_ov024_020c6770(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4);
+    void func_ov024_020c6770(SceneIndex sceneIndex, u8 roomIndex, unk16 param3, unk16 param4);
     bool func_ov024_020c681c();
     void func_ov024_020c6840(SceneIndex sceneIndex);
     void func_ov024_020c68d4(Vec2s *param1, unk32 param2);
