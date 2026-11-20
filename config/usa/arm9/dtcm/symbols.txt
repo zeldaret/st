@@ -104,7 +104,7 @@ data_027e0cb8 kind:bss addr:0x027e0cb8
 data_027e0cbc kind:bss addr:0x027e0cbc
 data_027e0cc0 kind:bss addr:0x027e0cc0
 data_027e0ccc kind:bss addr:0x027e0ccc
-data_027e0cd8 kind:bss addr:0x027e0cd8
+gpCourseManager kind:bss addr:0x027e0cd8
 data_027e0cdc kind:bss addr:0x027e0cdc
 data_027e0ce0 kind:bss addr:0x027e0ce0
 gpActorManager kind:bss addr:0x027e0ce4

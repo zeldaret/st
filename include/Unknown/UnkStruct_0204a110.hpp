@@ -291,7 +291,7 @@ public:
     void func_020194dc();
     void func_02019408();
     void func_02019454();
-    unk32 func_02019514();
+    bool func_02019514();
     void func_02019528();
     bool func_02019548();
     UnkStruct_func_02019590 *func_02019590(unk16 param1, unk32 param2);

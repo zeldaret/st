@@ -6,10 +6,10 @@
 #include "Actor/ActorLobarrierShield.hpp"
 #include "Actor/ActorUnkRCFO.hpp"
 #include "Course/Course.hpp"
+#include "Course/CourseManager.hpp"
 #include "Map/MapObjectId.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "nitro/fx.h"
 #include "types.h"
 
@@ -20,7 +20,7 @@
 
 struct UnkStruct_ov021_02106c5c;
 struct ZMBFileInfos;
-struct UnkStruct_027e0cd8_0C_Base;
+struct MapManagerBase;
 struct UnkStruct_027e0cd8_0C_Base_148_00_Base;
 struct EntranceInfo;
 struct UnkAngleStruct;
@@ -106,7 +106,7 @@ void func_01ffe6c4(Actor **, RefStruct, VecFx32 *, VecFx32 *, s32, VecFx32 *, Un
 fx32 func_01ffe868(VecFx32 *, unk32, unk32);
 bool func_01ffecdc(unk32 param1, Cylinder *param2);
 void func_01ffedac(Vec2bCpp *, VecFx32 *);
-void func_01fff05c(u32 *, UnkStruct_027e0cd8_0C_Base *, VecFx32 *);
+void func_01fff05c(u32 *, MapManagerBase *, VecFx32 *);
 void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
 void func_01fff6d0(void *, VecFx32 *param1, s32 *param2, s32 *param3);
 void func_01ff9984(VecFx32 *, VecFx32 *, unk32, unk32, unk32);
@@ -117,7 +117,6 @@ void func_02006aa8(unk32, unk32);
 void func_02006d8c(u16, unk32);
 void func_0200b58c(G3d_RenderObject *);
 void G3d_GetCurrentMtx(MtxFx43 *mtx1, MtxFx33 *mtx2);
-void func_0200ea38(G3d_Model *, unk32, unk32);
 void func_0200eab0(G3d_Model *, unk32, unk32);
 void func_0200ef5c(G3d_Model *, unk32);
 void func_0200ef9c(G3d_Model *, unk32);
@@ -180,7 +179,7 @@ f32 func_0203ab58(unk32, f32);
 f32 func_0203ad88(f32, unk32);
 void func_02097bb8(void);
 void func_02098388(void);
-BOOL ZMB_020ba350(ZMBFileInfos *pFileInfos, u8 param2, UnkStruct_027e0cd8_0C_Base *pDst);
+BOOL ZMB_020ba350(ZMBFileInfos *pFileInfos, u8 param2, MapManagerBase *pDst);
 void ZMB_020ba388(CustomVector<EntranceInfo> *pVector, size_t param2);
 void ZMB_020ba408(CustomVector<UnkStruct_027e0cd8_0C_Base_148_00_Base *> *pVector, size_t param2);
 void func_0201245c();
@@ -260,7 +259,6 @@ unk32 func_ov000_02080098(void *, void *, int, int, int, int);
 bool func_ov000_02080998(VecFx32 *);
 void func_ov000_020814ec(void *, void *);
 void func_ov000_02081520(void *, void *, u8);
-unk32 func_ov000_02082164(UnkStruct_027e0cd8 *);
 void func_ov000_020830a4(unk32, unk32, unk32, unk32, unk32, unk32);
 void func_ov000_020830d4(unk32, u16, unk32, unk32, unk32);
 void func_ov000_02085d1c(void *);
@@ -359,7 +357,6 @@ unk32 func_ov026_0212e54c();
 
 // overlay 31
 void func_ov031_020dcea4(void *, UnkStruct_027e0ce0_40_Base_78 *, UnkAngleStruct);
-void func_ov031_020d9314(unk32, unk32, void *);
 void func_ov031_020e0f30(RefStruct);
 unk16 func_ov031_020e3dd0(Actor *param0);
 void func_ov031_020f439c(void *, Vec3s *, unk32);

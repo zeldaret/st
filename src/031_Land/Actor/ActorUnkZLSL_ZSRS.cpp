@@ -11,6 +11,7 @@ THUMB_BEGIN
 #include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "Actor/ActorUnkZSTG.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "RefStruct.hpp"
 #include "System/SysNew.hpp"
@@ -19,7 +20,6 @@ THUMB_BEGIN
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d8c.hpp"
@@ -1119,7 +1119,7 @@ unk32 ActorUnkZLSL::vfunc_7C(unk32 param1) {
         case 0x8:
             return this->func_ov031_020ec3d0();
         case 0x9:
-            data_027e0cd8->mUnk_0C->func_ov000_020809d8(0x28, -1);
+            gpCourseManager->mpMapMgr->func_ov000_020809d8(0x28, -1);
         default:
             break;
     }
@@ -1931,7 +1931,7 @@ void ActorUnkZLSL::vfunc_A4() {
 void ActorUnkZLSL::func_ov031_020ee1f4(Actor *param1, G3d_RenderState *param2) {
     ActorUnkZLSL *thisx             = (ActorUnkZLSL *) param1;
     G3d_RenderObject *pRenderObject = param2->renderObj;
-    s32 var_r2                      = param2->flag & 0x10 ? param2->currentBoneMtxId : -1;
+    s32 var_r2                      = G3d_GetCurBoneMtxId(param2);
 
     if (var_r2 == 0x0A && pRenderObject->mUnk_25 == 2) {
         MtxFx33 sp24;

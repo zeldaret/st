@@ -2,10 +2,10 @@
 #include "Actor/ActorManager.hpp"
 #include "Actor/Actor_Derived1.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "MapObject/MapObjectUnkDRTY.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cdc.hpp"
 #include "Unknown/UnkStruct_ov000_020b3000.hpp"
 
@@ -91,7 +91,8 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
 
     switch (param1->mUnk_04) {
         case 0x3C: {
-            int iVar19 = data_027e0cd8->mUnk_0C->func_ov000_02080658((this->mUnk_2C->mUnk_148 >> 16) & 0x3F, &this->mUnk_54);
+            int iVar19 =
+                gpCourseManager->mpMapMgr->func_ov000_02080658((this->mUnk_2C->mUnk_148 >> 16) & 0x3F, &this->mUnk_54);
             if (iVar19 != 0 && this->mUnk_28->mUnk_94 != 0 && func_ov096_02179c14()) {
                 this->mUnk_54.unk_10 = 1;
             }
@@ -416,7 +417,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 case EntryTransitionType_30:
                 case EntryTransitionType_31:
                 default:
-                    UnkStruct_027e0cd8_0C_Base *ptr = data_027e0cd8->mUnk_0C;
+                    MapManagerBase *ptr = gpCourseManager->mpMapMgr;
 
                     switch (this->mEntryTransitionType) {
                         case EntryTransitionType_15:
@@ -682,9 +683,9 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                 case EntryTransitionType_17:
                 case EntryTransitionType_19:
                 case EntryTransitionType_36: {
-                    UnkStruct_027e0cd8_0C_Base *temp_r0_13 = data_027e0cd8->mUnk_0C;
-                    fx32 temp_r0_14                        = temp_r0_13->vfunc_28(this->mUnk_34, 0, 0);
-                    VecFx32 *temp_r2_9                     = this->mUnk_34;
+                    MapManagerBase *temp_r0_13 = gpCourseManager->mpMapMgr;
+                    fx32 temp_r0_14            = temp_r0_13->vfunc_28(this->mUnk_34, 0, 0);
+                    VecFx32 *temp_r2_9         = this->mUnk_34;
 
                     if (temp_r2_9->y < temp_r0_14) {
                         temp_r2_9->y = temp_r0_14;

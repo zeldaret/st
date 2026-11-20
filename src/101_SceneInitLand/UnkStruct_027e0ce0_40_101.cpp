@@ -1,8 +1,8 @@
+#include "Course/CourseManager.hpp"
 #include "Player/PlayerZelda.hpp"
 #include "System/OverlayManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "math.hpp"
 

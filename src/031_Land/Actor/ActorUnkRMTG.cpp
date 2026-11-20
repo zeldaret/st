@@ -1,8 +1,8 @@
 #include "Actor/ActorUnkRMTG.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 
 extern const char data_ov031_02110ad0;
 
@@ -22,7 +22,7 @@ bool ActorUnkRMTG::Init(unk32 param1) {
     this->mPos.x -= FX_F32_TO_FX32(0.5f);
     this->mPos.z -= FX_F32_TO_FX32(0.5f);
 
-    UnkStruct_027e0cd8_0C_Base *data = data_027e0cd8->mUnk_0C;
+    MapManagerBase *data = gpCourseManager->mpMapMgr;
 
     Vec2bCpp sp0;
     func_01ffedac(&sp0, &this->mPos);

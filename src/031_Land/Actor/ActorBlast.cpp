@@ -2,12 +2,12 @@
 #include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d2c.hpp"
 #include "global.h"
@@ -122,7 +122,7 @@ bool ActorBlast::Init(unk32 param1) {
         data_027e0cec->func_ov000_0209feac(0x80F, &this->mPos, 0x2, 0x0, 0x0);
     }
 
-    UnkStruct_027e0cd8_0C_Base *data = data_027e0cd8->mUnk_0C;
+    MapManagerBase *data = gpCourseManager->mpMapMgr;
     if (data->mUnk_110 == 0x7 && data->func_ov000_0208217c(&this->mPos, 0x1)) {
         ActorParams actorParams;
         RefStruct actorRef;

@@ -1,6 +1,6 @@
 #include "Actor/ActorUnkSWTM.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
 DECL_PROFILE(ActorProfileUnkSWTM);
@@ -122,7 +122,7 @@ void ActorUnkSWTM::SetState(ActorState state) {
 
 bool ActorUnkSWTM::func_ov000_0209afe4(void) {
     for (int i = this->mUnk_9E; i < this->mUnk_A0; i++) {
-        if (data_027e0cd8->func_ov000_02081e30(i, this->mUnk_A2)) {
+        if (gpCourseManager->func_ov000_02081e30(i, this->mUnk_A2)) {
             return true;
         }
     }
@@ -138,15 +138,15 @@ unk32 ActorUnkSWTM::func_ov000_0209b038(void) {
             bool bVar1 = true;
 
             for (i = this->mUnk_9E; i < this->mUnk_A0; i++) {
-                if (i > this->mUnk_9C && data_027e0cd8->func_ov000_02081e30(i, this->mUnk_A2)) {
+                if (i > this->mUnk_9C && gpCourseManager->func_ov000_02081e30(i, this->mUnk_A2)) {
                     this->mUnk_AC = true;
                 }
 
-                if (i == this->mUnk_9C && data_027e0cd8->func_ov000_02081e30(i, this->mUnk_A2)) {
+                if (i == this->mUnk_9C && gpCourseManager->func_ov000_02081e30(i, this->mUnk_A2)) {
                     this->mUnk_9C++;
                 }
 
-                if (!data_027e0cd8->func_ov000_02081e30(i, this->mUnk_A2)) {
+                if (!gpCourseManager->func_ov000_02081e30(i, this->mUnk_A2)) {
                     bVar1 = false;
                 }
             }
@@ -166,7 +166,7 @@ unk32 ActorUnkSWTM::func_ov000_0209b038(void) {
     }
 
     for (int i = 0; i < this->mUnk_5C.mParams[0]; i++) {
-        if (!data_027e0cd8->func_ov000_02081e30(this->mUnk_9E + i, this->mUnk_A2)) {
+        if (!gpCourseManager->func_ov000_02081e30(this->mUnk_9E + i, this->mUnk_A2)) {
             return 0;
         }
     }
@@ -182,7 +182,7 @@ void ActorUnkSWTM::func_ov000_0209b160(void) {
 
 void ActorUnkSWTM::func_ov000_0209b184(void) {
     for (int i = this->mUnk_9E; i < this->mUnk_A0; i++) {
-        data_027e0cd8->func_ov000_02081d7c(i, this->mUnk_A2, false);
+        gpCourseManager->func_ov000_02081d7c(i, this->mUnk_A2, false);
     }
 }
 

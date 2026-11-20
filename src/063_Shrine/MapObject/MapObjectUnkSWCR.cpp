@@ -2,13 +2,13 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "MainGame/MiscAdvManager.hpp"
 #include "MapObject/MapObjectUnkWDST.hpp"
 #include "RefStruct.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "flags.h"
 #include "nitro/fx.h"
@@ -143,9 +143,10 @@ bool MapObjectUnkSWCR::Init(void) {
 }
 
 void MapObjectUnkSWCR::Setup(void) {
-    unk32 ret = func_ov000_02082164(data_027e0cd8);
-    if (ret) {
-        func_ov031_020d9314(ret, 3, &mUnk_160);
+    UnkStruct_027e0cd8_0C_1D0 *ret = gpCourseManager->func_ov000_02082164();
+
+    if (ret != NULL) {
+        ret->func_ov031_020d9314(0x03, &this->mUnk_160);
     }
 }
 

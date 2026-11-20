@@ -1,6 +1,7 @@
 #include "Actor/ActorItemBoomerang.hpp"
 #include "CommonFuncs.hpp"
 
+#include "Course/CourseManager.hpp"
 #include "Item/Item.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "MapObject/MapObjectUnkICEB.hpp"
@@ -8,7 +9,6 @@
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d2c.hpp"
 #include "global.h"
@@ -288,7 +288,7 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
                 this->mUnk_12C[1].mUnk_00->mUnk_A0 = 0;
             }
 
-            data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_140.mUnk_00.vec);
+            gpCourseManager->mpMapMgr->func_ov000_02080a5c(&this->mUnk_140.mUnk_00.vec);
             return;
         case 0x2:
             this->mUnk_13C = 0x8D73;
@@ -309,14 +309,14 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
             if (this->mUnk_12C[2].mUnk_00 != NULL) {
                 this->mUnk_12C[2].mUnk_00->mUnk_A0 = 0;
             }
-            data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_140.mUnk_00.vec);
+            gpCourseManager->mpMapMgr->func_ov000_02080a5c(&this->mUnk_140.mUnk_00.vec);
             return;
         default:
             this->mUnk_13C = 0x8D71;
             if (!func_ov000_0205aeac()) {
                 return;
             }
-            data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_140.mUnk_00.vec);
+            gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_140.mUnk_00.vec);
             break;
     }
 }
@@ -461,7 +461,7 @@ ActorItemBoomerang::~ActorItemBoomerang() {
         data_027e0d2c->func_ov031_020d95b4();
     }
     if (func_ov000_0205aeac()) {
-        data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_140.mUnk_00.vec);
+        gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_140.mUnk_00.vec);
     }
 }
 

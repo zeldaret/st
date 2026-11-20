@@ -5,6 +5,7 @@
 #include "Actor/ActorUnkGYAM.hpp"
 #include "Actor/ActorUnkIWTS.hpp"
 #include "Actor/ActorUnkMRD2.hpp"
+#include "Course/CourseManager.hpp"
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Physics/Cylinder.hpp"
@@ -15,7 +16,6 @@
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d30.hpp"
@@ -109,7 +109,7 @@ ActorShotArrow::~ActorShotArrow() {
     if (func_ov000_0205aeac()) {
         bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
         if (paramIs3Or4) {
-            data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
+            gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
         }
     }
 }
@@ -130,7 +130,7 @@ bool ActorShotArrow::Init(unk32 param1) {
         bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
         if (paramIs3Or4) {
             VecFx32_Copy(&this->mPos, &this->mUnk_1DC.mUnk_00.vec);
-            data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_1DC.mUnk_00.vec);
+            gpCourseManager->mpMapMgr->func_ov000_02080a5c(&this->mUnk_1DC.mUnk_00.vec);
         }
     }
 
@@ -221,7 +221,7 @@ void ActorShotArrow::Update() {
             if (this->mUnk_170 > 0x10) {
                 this->func_ov031_020f3000();
             } else {
-                data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
+                gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
             }
         }
     }
@@ -324,7 +324,7 @@ void ActorShotArrow::func_ov031_020f1c7c() {
     VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (func_ov000_0205aeac() && (this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4) != false) {
-        data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
+        gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
     }
 }
 
@@ -372,7 +372,7 @@ void ActorShotArrow::func_ov031_020f1e3c() {
         return;
     }
 
-    data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
+    gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
 }
 
 void ActorShotArrow::func_ov031_020f1f54() {
@@ -388,7 +388,7 @@ void ActorShotArrow::func_ov031_020f1f54() {
     if (func_ov000_0205aeac()) {
         bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
         if (paramIs3Or4) {
-            data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
+            gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
         }
     }
 

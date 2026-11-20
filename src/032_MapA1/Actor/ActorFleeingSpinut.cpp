@@ -2,13 +2,13 @@
 #include "CommonFuncs.hpp"
 
 #include "Actor/ActorUnkKEYN.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/Random.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
@@ -500,12 +500,12 @@ bool ActorFleeingSpinut::func_ov032_0211c938() {
         return true;
     }
 
-    UnkStruct_027e0cd8_0C_Base *temp_r8 = data_027e0cd8->mUnk_0C;
-    bool var_r8 = temp_r8->func_ov000_020802ec(this->mUnk_5C.mParams[0], data_027e0ce0->func_01fff148(0));
+    MapManagerBase *temp_r8 = gpCourseManager->mpMapMgr;
+    bool var_r8             = temp_r8->func_ov000_020802ec(this->mUnk_5C.mParams[0], data_027e0ce0->func_01fff148(0));
 
     if (data_027e0ce0->func_01fff1a4()) {
         //! @bug or fake match? probably meant to be `var_r8 = var_r8 || temp_r6->func_ov000_020802ec(...)`?
-        UnkStruct_027e0cd8_0C_Base *temp_r6 = data_027e0cd8->mUnk_0C;
+        MapManagerBase *temp_r6 = gpCourseManager->mpMapMgr;
         var_r8 = var_r8 | temp_r6->func_ov000_020802ec(this->mUnk_5C.mParams[0], data_027e0ce0->func_01fff148(1));
     }
 

@@ -79,7 +79,7 @@ void Game::Run() {
             data_0204e64c.func_020201c4(1);
             data_0204a110.func_02019350();
 
-            if (data_0204a110.func_02019514() == 0 && data_0204e64c.mUnk_00.mUnk_0B == 0) {
+            if (!data_0204a110.func_02019514() && data_0204e64c.mUnk_00.mUnk_0B == 0) {
                 this->mpCurrentGameMode->vfunc_0C();
             }
 
@@ -97,7 +97,7 @@ void Game::Run() {
             this->mpCurrentGameMode->vfunc_18();
             data_0204a110.func_020194dc();
 
-            if (data_0204a110.func_02019514() == 0) {
+            if (!data_0204a110.func_02019514()) {
                 this->mpCurrentGameMode->vfunc_10();
             }
 

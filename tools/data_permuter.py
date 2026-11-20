@@ -5,7 +5,7 @@
 # you don't have to put all symbols at the same location
 #
 # usage: python3 data_permuter.py subdir/unit_name
-# example: python3 data_permuter.py 031_Land/UnkStruct_027e0cd8_0C_031
+# example: python3 data_permuter.py 031_Land/Course/MapManagerLand
 
 import itertools
 import json
@@ -19,7 +19,7 @@ OBJDIFF_CLI = Path("objdiff-cli").resolve()
 assert OBJDIFF_CLI.exists()
 
 if DEBUG:
-    O_FNAME = sys.argv[1] if len(sys.argv) > 1 else "031_Land/UnkStruct_027e0cd8_0C_031"
+    O_FNAME = sys.argv[1] if len(sys.argv) > 1 else "031_Land/Course/MapManagerLand"
 else:
     O_FNAME = sys.argv[1]
 

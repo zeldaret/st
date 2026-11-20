@@ -2,10 +2,10 @@
 
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
 DECL_PROFILE(MapObjectProfileUnkSKDI);
@@ -106,7 +106,7 @@ bool MapObjectUnkSKDI::Init() {
 }
 
 void MapObjectUnkSKDI::Setup() {
-    data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_08C.mUnk_00.vec);
+    gpCourseManager->mpMapMgr->func_ov000_02080a5c(&this->mUnk_08C.mUnk_00.vec);
 
     if (this->mUnk_20.mParams[0] == 0x0) {
         if ((!this->func_ov000_0209d29c(0x0) && this->mUnk_20.mUnk_0A[0] != 0x0) ||

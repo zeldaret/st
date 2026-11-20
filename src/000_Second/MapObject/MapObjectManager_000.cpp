@@ -1,5 +1,5 @@
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
 
 MapObject *MapObjectManager::AllocateMapObject(MapObjectId mapObjId, Vec2b param2, u16 param3, unk32 param4, u8 param5) {
@@ -24,7 +24,7 @@ MapObject *MapObjectManager::AllocateMapObject(MapObjectId mapObjId, Vec2b param
         spawnData.pos.x   = param2.x;
         spawnData.pos.y   = param2.y;
 
-        data_027e0cd8->mUnk_0C->func_ov000_020808f4(&sp14, (Vec2bCpp *) &param2, param5);
+        gpCourseManager->mpMapMgr->func_ov000_020808f4(&sp14, (Vec2bCpp *) &param2, param5);
 
         UnkStruct_ov000_020b5d34_00 args;
         args.mUnk_00 = (unk32 *) &spawnData;

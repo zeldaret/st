@@ -5,7 +5,7 @@
     .data       start:0x021128a0 end:0x02116380 kind:data align:32
     .bss        start:0x02116380 end:0x02118fc0 kind:bss align:32
 
-src/031_Land/UnkStruct_027e0cd8_0C_031.cpp:
+src/031_Land/Course/MapManagerLand.cpp:
     complete
     .text       start:0x020d8720 end:0x020d8cf8
     .data       start:0x021128a4 end:0x02112a5c
@@ -17,7 +17,10 @@ src/031_Land/UnkStruct_ov031_Items_02_031.cpp:
     .data       start:0x02112a5c end:0x02112a98
 
 src/031_Land/Render/SkyboxLand.cpp:
+    complete
     .text       start:0x020d8fd4 end:0x020d9314
+    .data       start:0x02112a98 end:0x02112acc
+    .rodata     start:0x0211067c end:0x021106ec
 
 src/031_Land/code_020d9314_031.cpp:
     .text       start:0x020d9314 end:0x020d93f0

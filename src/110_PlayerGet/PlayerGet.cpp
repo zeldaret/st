@@ -4,6 +4,7 @@
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorUnkNSHD.hpp"
+#include "Course/CourseManager.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "MainGame/MiscAdvManager.hpp"
 #include "MapObject/MapObjectChestBase.hpp"
@@ -15,7 +16,6 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
@@ -643,7 +643,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 case ItemId_RestoredOceanGlyph:
                 case ItemId_RestoredFireGlyph:
                 case ItemId_RestoredDesertOceanGlyph:
-                    data_ov000_020b51b8.func_ov000_0206c96c(data_027e0cd8->mUnk_0C->func_ov000_02080a44());
+                    data_ov000_020b51b8.func_ov000_0206c96c(gpCourseManager->mpMapMgr->func_ov000_02080a44());
                     this->mUnk_73 = 1;
                     break;
                 default:
@@ -925,7 +925,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                 break;
             }
 
-            temp_r5 = data_027e0cd8->mUnk_0C->func_ov000_02080a44();
+            temp_r5 = gpCourseManager->mpMapMgr->func_ov000_02080a44();
 
             if (data_ov000_020b51b8.mUnk_08[2] != NULL) {
                 var_r0 = 1;

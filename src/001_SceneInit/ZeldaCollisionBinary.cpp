@@ -1,10 +1,10 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "Unknown/UnkStruct_027e09e8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "files.h"
 
-BOOL ZCB_ParseFile(ZCBFileInfos *pFileInfos, UnkStruct_027e09e8 *pDst, UnkStruct_027e0cd8_0C_Base *param3) {
+BOOL ZCB_ParseFile(ZCBFileInfos *pFileInfos, UnkStruct_027e09e8 *pDst, MapManagerBase *param3) {
     int i;
     ZCBHeader *pHeader;
     ZCBSectionHeader *pSection;
@@ -40,8 +40,7 @@ BOOL ZCB_ParseFile(ZCBFileInfos *pFileInfos, UnkStruct_027e09e8 *pDst, UnkStruct
     return true;
 }
 
-void ZCB_ParseVTXB(ZCBFileInfos *pFileInfos, ZCBSectionVTXB *pSection, UnkStruct_027e09e8 *pDst,
-                   UnkStruct_027e0cd8_0C_Base *param3) {
+void ZCB_ParseVTXB(ZCBFileInfos *pFileInfos, ZCBSectionVTXB *pSection, UnkStruct_027e09e8 *pDst, MapManagerBase *param3) {
     u16 nEntries = pSection->header.nEntries;
     VecFx32 sp24 = param3->mUnk_0A0;
     VecFx32 sp18;
@@ -85,7 +84,6 @@ void ZCB_ParseTRIB(ZCBFileInfos *pFileInfos, ZCBSectionTRIB *pSection, UnkStruct
     pDst->func_ov000_0207bab4(pSection->entries, pSection->header.nEntries);
 }
 
-void ZCB_ParseGRDB(ZCBFileInfos *pFileInfos, ZCBSectionGRDB *pSection, UnkStruct_027e09e8 *pDst,
-                   UnkStruct_027e0cd8_0C_Base *param3) {
+void ZCB_ParseGRDB(ZCBFileInfos *pFileInfos, ZCBSectionGRDB *pSection, UnkStruct_027e09e8 *pDst, MapManagerBase *param3) {
     pDst->func_ov000_0207e99c(pSection, param3);
 }

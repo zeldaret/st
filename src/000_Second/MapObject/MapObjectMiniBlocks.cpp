@@ -1,7 +1,7 @@
 #include "MapObject/MapObjectMiniBlocks.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 
 enum {
     MiniBlocksVariant_BLCM,
@@ -35,7 +35,7 @@ MapObjectMiniBlocks::MapObjectMiniBlocks() {
 bool MapObjectMiniBlocks::Init(void) {
     GET_PROFILE(MapObjectProfileMiniBlocks)
         ->func_ov000_0209ccd8(this->mUnk_20.mParams[1], data_ov000_020af574[this->mUnk_20.mParams[1]]);
-    UnkStruct_027e0cd8_0C_Base *pUnkStruct_027e0cd8_0C = data_027e0cd8->mUnk_0C;
+    MapManagerBase *pUnkStruct_027e0cd8_0C = gpCourseManager->mpMapMgr;
     u8 uVar6;
 
     if (this->mUnk_20.mParams[1] != MiniBlocksVariant_BLKF) {

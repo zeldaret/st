@@ -2,10 +2,10 @@
 #include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 #include "nitro/fx.h"
@@ -163,7 +163,7 @@ ActorItemDrop::ActorItemDrop() :
     Vec2bCpp sp0;
     func_01ffedac(&sp0, &this->mPos);
 
-    if (data_027e0cd8->mUnk_0C->func_ov000_02080180(&sp0) == 0x5) {
+    if (gpCourseManager->mpMapMgr->func_ov000_02080180(&sp0) == 0x5) {
         this->mUnk_34 = (Cylinder *) &data_ov031_02114ba0;
     }
 }
@@ -304,7 +304,7 @@ void ActorItemDrop::func_ov031_020fa4a0() {
         return;
     }
 
-    func_01fff05c(&stack, data_027e0cd8->mUnk_0C, &this->mPos);
+    func_01fff05c(&stack, gpCourseManager->mpMapMgr, &this->mPos);
 
     if (((stack >> 0x5) & 0x3) == 0x2 && this->mItemTypeId != ItemDropType_Arrow && this->mItemTypeId != ItemDropType_Bomb) {
         this->func_ov000_020984d0();

@@ -1,5 +1,6 @@
 #include "Actor/ActorUnkTUTO.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Game/GameModeAdventure.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "System/OverlayManager.hpp"
@@ -13,7 +14,6 @@
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
@@ -929,7 +929,7 @@ void AdventureModeManager::func_ov024_020c6db8(unk32 param1) {
 bool AdventureModeManager::func_ov024_020c6dec() {
     if (this->mUnk_1CC.sceneIndex == data_027e09a4->mUnk_00.sceneIndex) {
         if (this->mUnk_1CC.sceneIndex == data_027e09a4->mUnk_00.sceneIndex) {
-            if (this->mUnk_1CC.roomIndex == data_027e0cd8->func_ov000_02081d5c()) {
+            if (this->mUnk_1CC.roomIndex == gpCourseManager->func_ov000_02081d5c()) {
                 return true;
             }
         }
