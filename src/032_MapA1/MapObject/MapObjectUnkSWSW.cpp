@@ -202,7 +202,7 @@ void MapObjectUnkSWSW::vfunc_08() {
                 return;
             }
 
-            VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
+            VecFx32 *vec = data_027e0ce0->func_01fff148(PlayerType_Link);
             VecFx32 sp48;
             VecFx32_Init(vec->x - this->mPos.x, vec->y - this->mPos.y, vec->z - this->mPos.z, &sp48);
             VEC_Normalize(&sp48, &sp48);
@@ -339,7 +339,7 @@ bool MapObjectUnkSWSW::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3)
 
                 UnkAngleStruct angle;
                 angle.angle_s = actorNSSW->mAngle.angle_s;
-                VecFx32 *vec  = data_027e0ce0->func_01fff148(0x0);
+                VecFx32 *vec  = data_027e0ce0->func_01fff148(PlayerType_Link);
 
                 if (!func_02016ae0(&actorNSSW->mPos, vec, angle, 0x2AAB, 0x1)) {
                     return false;

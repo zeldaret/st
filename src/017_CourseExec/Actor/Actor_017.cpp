@@ -428,7 +428,7 @@ void Actor::func_ov017_020bf9c8(Actor *param1) {
         this->mTimer.value++;
     }
 
-    VEC_Subtract(data_027e0ce0->func_01fff148(0), &this->mPos, &this->mVel);
+    VEC_Subtract(data_027e0ce0->func_01fff148(PlayerType_Link), &this->mPos, &this->mVel);
     func_01ff97c8(&this->mVel, 0x1000);
 }
 
@@ -574,11 +574,11 @@ bool Actor::func_ov017_020bfd9c(Vec2s *param1, unk32 param2, UnkStruct_027e09bc_
     return false;
 }
 
-bool Actor::vfunc_48(unk32 param1) {
+bool Actor::vfunc_48(PlayerType playerType) {
     VecFx32 *temp_r0;
     VecFx32 sp0;
 
-    temp_r0 = this->func_ov000_0209853c(param1);
+    temp_r0 = this->func_ov000_0209853c(playerType);
     sp0     = *temp_r0;
 
     VEC_Subtract(&sp0, &this->mPos, &sp0);

@@ -182,5 +182,5 @@ void MapObjectUnkSTAT::func_ov063_0215fc40(unk32 param1) {
 }
 
 unk32 MapObjectUnkSTAT::func_ov063_0215fce0(void) {
-    return func_02016b8c(&mPos, data_027e0ce0->func_01fff148(0), mUnk_54, mAngle, mUnk_58, 1);
+    return func_02016b8c(&mPos, data_027e0ce0->func_01fff148(PlayerType_Link), mUnk_54, mAngle, mUnk_58, 1);
 }

@@ -28,24 +28,11 @@ public:
     void func_ov031_020e076c();
 };
 
-class PlayerLinkActor_A0_14_14 : public UnkStruct_ov031_Items_01 {
-public:
-    /* 00 (base) */
-    /* 2C */ unk32 mUnk_2C;
-    /* 30 */ unk16 mUnk_30;
-    /* 34 */
-
-    PlayerLinkActor_A0_14_14(unk32 param1);
-
-    // data_ov031_02112ae0
-    /* 0C */ virtual bool vfunc_0C(Actor *param1, VecFx32 *vector);
-};
-
 class PlayerLinkActor_A0_14 {
 public:
     /* 00 (vtable) */
     /* 04 */ PlayerLinkActor_A0_14_04 mUnk_04;
-    /* 14 */ PlayerLinkActor_A0_14_14 mUnk_14;
+    /* 14 */ UnkStruct_ov031_Items_01_Derived1 mUnk_14;
     /* 48 */ bool mUnk_48;
     /* 4C */
 

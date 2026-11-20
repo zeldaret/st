@@ -9,6 +9,7 @@
 #include "MapObject/MapObjectBombFlower.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "MapObject/MapObjectProfile.hpp"
+#include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
@@ -589,14 +590,15 @@ bool ActorBomb::Drop(ActorGrabParams grabParams, const VecFx32 *pVel) {
     this->mUnk_1E0 = 0x0;
 
     if (!(grabParams.mUnk_00.acRef.type_index != 0x100 && grabParams.mUnk_00.acRef.type_index != 0x2 + 0xFF)) {
-        unk32 param1;
+        PlayerType playerType;
+
         if (grabParams.mUnk_00.acRef.type_index == 0x101) {
-            param1 = 0x0;
+            playerType = PlayerType_Link;
         } else {
-            param1 = grabParams.mUnk_00.acRef.unk_id;
+            playerType = (PlayerType) grabParams.mUnk_00.acRef.unk_id;
         }
 
-        VecFx32 sp0C = *this->Actor::func_ov000_0209853c(param1);
+        VecFx32 sp0C = *this->Actor::func_ov000_0209853c(playerType);
 
         this->mUnk_154.pos.y = sp0C.y + FX_F32_TO_FX32(0.4f) - this->mPos.y;
         this->mPrevPos.x     = sp0C.x;

@@ -268,7 +268,7 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
             this->vfunc_7C();
 
             sp4Ptr = (s16 *) &sp4;
-            MapObject::func_ov000_0209d22c(sp4Ptr, this, 0);
+            MapObject::func_ov000_0209d22c(sp4Ptr, this, PlayerType_Link);
 
             if (*sp4Ptr >= 0x4000 || *sp4Ptr <= -0x4000) {
                 this->mUnk_8B = 0;
@@ -394,7 +394,7 @@ bool MapObjectDoorDangerSpawn::vfunc_64(void) {
             }
 
             pUVar4 = gpCourseManager->mpMapMgr;
-            if (!pUVar4->func_ov000_020802ec(this->mUnk_20.mParams[0], data_027e0ce0->func_01fff148(0))) {
+            if (!pUVar4->func_ov000_020802ec(this->mUnk_20.mParams[0], data_027e0ce0->func_01fff148(PlayerType_Link))) {
                 return true;
             }
 
@@ -472,7 +472,7 @@ bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
                 }
             }
 
-            if (pUVar5->func_ov000_020802ec(this->mUnk_20.mParams[0], data_027e0ce0->func_01fff148(0))) {
+            if (pUVar5->func_ov000_020802ec(this->mUnk_20.mParams[0], data_027e0ce0->func_01fff148(PlayerType_Link))) {
                 pUVar5->func_ov000_020803ec(this->mUnk_20.mParams[0]);
                 return true;
             }
@@ -715,8 +715,8 @@ void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, UnkAngleS
 
 void MapObjectDoorDangerSpawn::func_ov031_020fe5fc(VecFx32 *param1, MapObjectDoorDangerSpawn *thisx) {
     if (data_027e0ce0->func_01fff1a4()) {
-        VecFx32 *piVar2 = data_027e0ce0->func_01fff148(1);
-        VecFx32 *piVar3 = data_027e0ce0->func_01fff148(0);
+        VecFx32 *piVar2 = data_027e0ce0->func_01fff148(PlayerType_Zelda);
+        VecFx32 *piVar3 = data_027e0ce0->func_01fff148(PlayerType_Link);
 
         VecFx32 temp;
         VecFx32_Init(piVar3->x, piVar3->y, piVar3->z, &temp);
@@ -727,7 +727,7 @@ void MapObjectDoorDangerSpawn::func_ov031_020fe5fc(VecFx32 *param1, MapObjectDoo
         func_01ff93c0(&pos, FX_F32_TO_FX32(0.5f));
         *param1 = pos;
     } else {
-        VecFx32 *piVar4 = data_027e0ce0->func_01fff148(0);
+        VecFx32 *piVar4 = data_027e0ce0->func_01fff148(PlayerType_Link);
         *param1         = *piVar4;
     }
 }

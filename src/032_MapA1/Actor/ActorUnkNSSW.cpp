@@ -492,7 +492,7 @@ void ActorUnkNSSW::func_ov032_02120894(unk32 param1) {
 #if IS_JP || IS_EUR1
             UnkStruct_ov031_020e5d18_00 spC;
             spC.mUnk_00   = NULL;
-            VecFx32 *vec2 = this->Actor::func_ov000_0209853c(0x0);
+            VecFx32 *vec2 = this->Actor::func_ov000_0209853c(PlayerType_Link);
 
             UnkStruct_ov031_020e5d18_00 *pActor = &spC;
             func_01ffe6c4(&pActor->mUnk_00, this->mRef, &this->mPos, vec2, (s16) this->mUnk_44, &this->mPos, NULL);

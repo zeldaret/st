@@ -121,3 +121,28 @@ public:
     void func_ov031_020d8f58(unk16 param1);
     void func_ov031_020d8f98();
 };
+
+class UnkStruct_ov031_Items_01_Derived1 : public UnkStruct_ov031_Items_01 {
+public:
+    /* 00 (base) */
+    /* 2C */ PlayerType mPlayerType;
+    /* 30 */ unk16 mUnk_30;
+    /* 34 */
+
+    UnkStruct_ov031_Items_01_Derived1(PlayerType playerType);
+
+    // data_ov031_02112ae0
+    /* 0C */ virtual bool vfunc_0C(Actor *param1, VecFx32 *vector) override;
+};
+
+class UnkStruct_ov031_Items_01_Derived2 : public UnkStruct_ov031_Items_01 {
+public:
+    /* 00 (base) */
+    /* 2C */ PlayerType mPlayerType;
+    /* 30 */
+
+    UnkStruct_ov031_Items_01_Derived2(PlayerType playerType);
+
+    // data_ov031_02112afc
+    /* 0C */ virtual bool vfunc_0C(Actor *param1, VecFx32 *vector) override;
+};

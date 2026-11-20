@@ -167,7 +167,7 @@ void ActorUnkMLCK::func_ov031_020faf24() {
     sp0.mUnk_3A = 0;
     sp0.mUnk_3B = 0;
 
-    VecFx32_Copy(data_027e0ce0->func_01fff148(0), &sp0.mUnk_0C);
+    VecFx32_Copy(data_027e0ce0->func_01fff148(PlayerType_Link), &sp0.mUnk_0C);
 
     this->mUnk_F4          = data_027e09b8->func_ov000_02073388(&sp0, 0);
     this->mUnk_D8.mUnk_04b = true;
@@ -180,7 +180,7 @@ void ActorUnkMLCK::func_ov031_020faf24() {
     sp8C.mUnk_14 = 0;
     sp8C.mUnk_32 = 0;
 
-    VecFx32_Copy(data_027e0ce0->func_01fff148(0), &sp8C.mUnk_34);
+    VecFx32_Copy(data_027e0ce0->func_01fff148(PlayerType_Link), &sp8C.mUnk_34);
     sp8C.mUnk_04 = &this->mUnk_D8;
 
     data_027e09b8->func_ov000_02073470(&sp8C, 0);
@@ -194,7 +194,7 @@ void ActorUnkMLCK::func_ov031_020faf24() {
         sp40.mUnk_0C = (u16) (this->mUnk_B8 + 0x88) | 0x10000;
         sp40.mUnk_14 = 0;
         sp40.mUnk_32 = 0;
-        VecFx32_Copy(data_027e0ce0->func_01fff148(0), &sp40.mUnk_34);
+        VecFx32_Copy(data_027e0ce0->func_01fff148(PlayerType_Link), &sp40.mUnk_34);
         sp40.mUnk_04 = &this->mUnk_E4;
         data_027e09b8->func_ov000_02073470(&sp40, 0);
     }

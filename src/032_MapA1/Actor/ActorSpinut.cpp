@@ -484,7 +484,7 @@ void ActorSpinut::func_ov032_0211a20c() {
         s32 var_r2 = this->mUnk_220 > 0 ? 1 : -1;
         this->mUnk_224 += var_r2 * 0x444;
 
-        VecFx32_Copy(data_027e0ce0->func_01fff148(0), &this->mVel);
+        VecFx32_Copy(data_027e0ce0->func_01fff148(PlayerType_Link), &this->mVel);
 
         this->mVel.x += FX_MUL(SIN(this->mUnk_224), 0x2800);
         this->mVel.y = FX_F32_TO_FX32(0.0f);
@@ -771,7 +771,7 @@ bool ActorSpinut::func_ov032_0211b064(unk32 param1) const {
     VecFx32 *temp_r0;
     bool var_r5;
 
-    temp_r0 = data_027e0ce0->func_01fff148(0);
+    temp_r0 = data_027e0ce0->func_01fff148(PlayerType_Link);
     var_r5  = false;
 
     if (func_ov000_0205adfc(temp_r0, (VecFx32 *) &this->mPos) &&
@@ -794,7 +794,7 @@ bool ActorSpinut::func_ov032_0211b114() {
     func_01fff17c(psp0, temp_r6, 0);
 
     s16 temp_r5 = *psp0;
-    s16 var_r0  = temp_r5 - func_02016958(&this->mPos, temp_r6->func_01fff148(0));
+    s16 var_r0  = temp_r5 - func_02016958(&this->mPos, temp_r6->func_01fff148(PlayerType_Link));
 
     if (ABS(var_r0) < 0x2000) {
         return true;

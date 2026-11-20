@@ -365,17 +365,17 @@ s16 ActorKenzo::vfunc_80(unk32 param1, unk32 param2, unk32 param3) {
     return 0x0;
 }
 
-bool ActorKenzo::vfunc_48(unk32 param1) {
+bool ActorKenzo::vfunc_48(PlayerType playerType) {
     bool val = true;
     if (this->func_ov058_02148710() && data_027e09a4->mUnk_00.sceneIndex == SceneIndex_f_bridge2) {
         val = false;
     }
 
     if (val) {
-        return this->Actor::vfunc_48(param1);
+        return this->Actor::vfunc_48(playerType);
     }
 
-    VecFx32 vec = *this->Actor::func_ov000_0209853c(param1);
+    VecFx32 vec = *this->Actor::func_ov000_0209853c(playerType);
     VEC_Subtract(&vec, &this->mPos, &vec);
 
     fx32 y = vec.y;

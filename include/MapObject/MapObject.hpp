@@ -149,7 +149,7 @@ public:
     /* 1C */ virtual bool vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3);
     /* 20 */ virtual void vfunc_20(unk32 param1);
     /* 24 */ virtual void vfunc_24(MapObject *param1, VecFx32 param2);
-    /* 28 */ virtual unk32 vfunc_28(unk32 param1, unk32 param2, unk32 param3);
+    /* 28 */ virtual unk32 vfunc_28(PlayerType playerType, unk32 param2, unk32 param3);
     /* 2C */ virtual bool vfunc_2C(VecFx32 *param1);
     /* 30 */ virtual ~MapObject();
     /* 38 */
@@ -218,7 +218,7 @@ public:
     bool func_ov000_0209d114();
     bool func_ov000_0209d12c();
     bool func_ov000_0209d144(Vec2s *param1, unk32 param2, UnkStruct_027e09bc_0C *param3);
-    fx32 func_ov000_0209d274(unk32 param1);
+    fx32 func_ov000_0209d274(PlayerType playerType);
     bool func_ov000_0209d29c(unk32 param1);
     void func_ov000_0209d2c4(unk32 param1, bool param2);
     void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3);
@@ -231,7 +231,7 @@ public:
     void func_ov000_0209d6ac(VecFx32 *param1);
 
     static void func_ov000_0209d0bc(Vec2bCpp *param1, MapObject *thisx);
-    static void func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2);
+    static void func_ov000_0209d22c(unk16 *param1, MapObject *thisx, PlayerType playerType);
     static void func_ov000_0209d54c(RefStruct *param1, MapObject *thisx, u16 param2, const VecFx32 *pPos, s16 param3,
                                     u16 param4);
 };
