@@ -811,6 +811,7 @@ public:
     UnkStruct_027e0ce0_40_150();
 
     // overlay 96
+    bool func_ov096_02179c14();
     bool func_ov096_02179c54(bool param1, bool param2);
 };
 

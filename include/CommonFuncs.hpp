@@ -39,7 +39,6 @@ struct BMDSectionModel;
 struct UnkStruct_027e09ac_14;
 struct UnkStackStruct1;
 struct ActorUnkCASE_174;
-struct UnkStruct_ov000_0208f820_28;
 struct UnkStruct_027e0ce0_30_00;
 struct Actor_Derived2;
 struct ActorUnkCANS;
@@ -258,8 +257,6 @@ unk32 func_ov000_02080098(void *, void *, int, int, int, int);
 bool func_ov000_02080998(VecFx32 *);
 void func_ov000_020814ec(void *, void *);
 void func_ov000_02081520(void *, void *, u8);
-void func_ov000_020830a4(unk32, unk32, unk32, unk32, unk32, unk32);
-void func_ov000_020830d4(unk32, u16, unk32, unk32, unk32);
 void func_ov000_02085d1c(void *);
 bool func_ov000_020864f8(void *, UnkAngleStruct, void *, void *);
 void func_ov000_02087ee8();
@@ -268,7 +265,6 @@ void func_ov000_02089bbc(void *, unk32);
 void func_ov000_0208a7a4(void *, void *);
 void func_ov000_0208abc4(RefStruct *, void *, Vec2s *);
 void func_ov000_0208ba10(void *, void *, unk32);
-void func_ov000_0208cac8(UnkStruct_ov000_0208f820_28 *, VecFx32 *, unk32);
 unk32 func_ov000_0208dc98(unk32);
 void func_ov000_0208dd60(void *, UnkStruct_027e0ce0_30_00 *);
 const char *func_ov000_0208e830(int);
@@ -393,7 +389,4 @@ void func_ov094_02170fd4(MapObjectUnkWLMS *);
 // overlay 95
 void func_ov095_0217aa88(void *, unk16 *, unk32, UnkAngleStruct);
 void func_ov095_0217aaa8(void *, unk16 *, unk32);
-
-// overlay 96
-bool func_ov096_02179c14();
 }

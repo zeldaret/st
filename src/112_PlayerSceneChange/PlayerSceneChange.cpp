@@ -51,11 +51,11 @@ PlayerSceneChange::PlayerSceneChange() :
 }
 
 PlayerSceneChange::~PlayerSceneChange() {
-    UnkStruct_ov000_0208f820_28 *pUnk_28 = this->mUnk_28;
-    pUnk_28->mUnk_38.mUnk_08 &= 0xFFFD;
+    PlayerLinkActor *pUnk_28 = this->mpLink;
+    pUnk_28->mUnk_38.mUnk_00.mUnk_08 &= 0xFFFD;
 
-    if (pUnk_28->mUnk_38.mUnk_08 == 0) {
-        pUnk_28->mUnk_38.~UnkStruct_PlayerGet_64();
+    if (pUnk_28->mUnk_38.mUnk_00.mUnk_08 == 0) {
+        pUnk_28->mUnk_38.mUnk_00.~UnkStruct_PlayerGet_64();
     }
 
     func_ov000_0205ca74(this->mUnk_98);
@@ -93,7 +93,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
         case 0x3C: {
             int iVar19 =
                 gpCourseManager->mpMapMgr->func_ov000_02080658((this->mUnk_2C->mUnk_148 >> 16) & 0x3F, &this->mUnk_54);
-            if (iVar19 != 0 && this->mUnk_28->mUnk_94 != 0 && func_ov096_02179c14()) {
+            if (iVar19 != 0 && this->mpLink->mUnk_094 != NULL && this->mpLink->mUnk_094->func_ov096_02179c14()) {
                 this->mUnk_54.unk_10 = 1;
             }
 
@@ -268,8 +268,8 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                     break;
             }
 
-            if (this->mUnk_28->mUnk_98 != NULL) {
-                this->mUnk_28->mUnk_98->func_ov093_0216f76c((VecFx32 *) &this->mUnk_70, this->mEntryTransitionType);
+            if (this->mpLink->mpZelda != NULL) {
+                this->mpLink->mpZelda->func_ov093_0216f76c((VecFx32 *) &this->mUnk_70, this->mEntryTransitionType);
             }
 
             break;
@@ -283,7 +283,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
         }
         case 0x3E: {
             if (this->mUnk_44 != NULL) {
-                this->mUnk_28->func_ov000_0208d12c();
+                this->mpLink->func_ov000_0208d12c();
             }
 
             this->mUnk_6C = 0x5F;
@@ -327,7 +327,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 }
             }
 
-            if ((this->mUnk_24->mUnk_104 & 0x10) || this->mUnk_28->pItemManager->GetTearsAmount() == MAX_TEARS_OF_LIGHT) {
+            if ((this->mUnk_24->mUnk_104 & 0x10) || this->mpLink->mUnk_54->GetTearsAmount() == MAX_TEARS_OF_LIGHT) {
                 UnkStruct_ov000_020b3000 local_9c(ActorId_RPMT);
                 Actor **ppAVar12 = gpActorManager->func_01fff350(&local_9c, gpActorManager->mActorTable);
 
@@ -648,7 +648,7 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                 this->mUnk_6C--;
 
                 if (this->mUnk_6C < 0x37) {
-                    this->mUnk_28->mUnk_38.mUnk_08 |= 0x02;
+                    this->mpLink->mUnk_38.mUnk_00.mUnk_08 |= 0x02;
                     break;
                 }
 
