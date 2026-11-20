@@ -4,9 +4,9 @@
 #include "Actor/ActorProfile.hpp"
 #include "Physics/AABB.hpp"
 #include "Physics/Cylinder.hpp"
+#include "Player/PlayerActorBase.hpp"
 #include "RefStruct.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "flags.h"
 #include "global.h"
 #include "math.hpp"
@@ -18,6 +18,7 @@
 class UnkStruct_027e09bc;
 class UnkStruct_027e09bc_0C;
 class Actor_9C;
+class UnkStruct_ov031_Items_00;
 
 class ActorParams {
 public:

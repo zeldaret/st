@@ -337,20 +337,6 @@ public:
     /* 14 */ virtual void vfunc_14(const VecFx32 *param1);
 };
 
-class UnkStruct_027e0ce0_38_Base {
-public:
-    /* 00 (vtable) */
-    /* 04 */
-
-    // data_ov000_020b2838
-    /* 00 */ virtual ~UnkStruct_027e0ce0_38_Base();
-    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2);
-    /* 0C */ virtual bool vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
-                                   const VecFx32 *param4);
-    /* 10 */ virtual bool vfunc_10(RefStruct param1, unk32 param2);
-    /* 14 */
-};
-
 class UnkStruct_027e0ce0_38_10 {
 public:
     /* 00 */ unk32 mUnk_00;

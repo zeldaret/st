@@ -119,7 +119,7 @@ ActorLobarrierShield_174::ActorLobarrierShield_174(Actor *param1) {
 
 void ActorLobarrierShield_174::vfunc_10(const Actor *actor) {
     ((ActorLobarrierShield *) mUnk_2C)->func_ov063_0215b724();
-    func_ov000_0207b70c(this, (Actor *) actor);
+    this->UnkStruct_ov031_Items_01::vfunc_10(actor);
 }
 
 void ActorLobarrierShield::func_ov063_0215acec(RefStruct *ref1, RefStruct ref2) {

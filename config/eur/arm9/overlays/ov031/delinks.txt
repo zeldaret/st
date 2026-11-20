@@ -27,8 +27,13 @@ src/031_Land/Course/UnkStruct_027e0cd8_0C_1D0_031.cpp:
     .text       start:0x020d9314 end:0x020d93f0
     .data       start:0x02112acc end:0x02112ad8
 
+src/031_Land/PlayerLinkActor_A0_14_14.cpp:
+    complete
+    .text       start:0x020d93f0 end:0x020d94d0
+    .data       start:0x02112ad8 end:0x02112af4
+
 src/031_Land/code_020d93f0_031.cpp:
-    .text       start:0x020d93f0 end:0x020d9598
+    .text       start:0x020d94d0 end:0x020d9598
 
 src/031_Land/code_020d9598_031.cpp:
     .text       start:0x020d9598 end:0x020d9658

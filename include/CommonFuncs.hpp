@@ -250,7 +250,6 @@ unk32 func_ov000_02077480();
 fx32 func_ov000_020775d8(fx32);
 unk32 func_ov000_02078aec();
 void func_ov000_0207b6c0();
-void func_ov000_0207b70c(ActorLobarrierShield_174 *param1, Actor *param2);
 unk32 func_ov000_0207df88(unk32 *, Cylinder *, unk32);
 void Unknown_func_ov000_0207fd7c(void *, void *, unk32);
 fx32 func_ov000_02080068(fx32 x);

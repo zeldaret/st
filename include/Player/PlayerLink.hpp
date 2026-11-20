@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Player/PlayerActorBase.hpp"
+#include "Unknown/UnkStruct_ov031_Items.hpp"
 
 class UnkStruct_027e0ce0_40;
 class PlayerActorBase;
@@ -27,11 +28,35 @@ public:
     void func_ov031_020e076c();
 };
 
+class PlayerLinkActor_A0_14_14 : public UnkStruct_ov031_Items_01 {
+public:
+    /* 00 (base) */
+    /* 2C */ unk32 mUnk_2C;
+    /* 30 */ unk16 mUnk_30;
+    /* 34 */
+
+    PlayerLinkActor_A0_14_14(unk32 param1);
+
+    // data_ov031_02112ae0
+    /* 0C */ virtual bool vfunc_0C(Actor *param1, VecFx32 *vector);
+};
+
 class PlayerLinkActor_A0_14 {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 (vtable) */
+    /* 04 */ PlayerLinkActor_A0_14_04 mUnk_04;
+    /* 14 */ PlayerLinkActor_A0_14_14 mUnk_14;
+    /* 48 */ bool mUnk_48;
+    /* 4C */
 
+    PlayerLinkActor_A0_14();
+
+    // data_ov031_02112b78
     /* 00 */ virtual ~PlayerLinkActor_A0_14();
+    /* 08 */ virtual void vfunc_08();
+
+    // overlay 31
+    void func_ov031_020dd124();
 };
 
 class PlayerLinkActor_A0_18 {

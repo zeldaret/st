@@ -5,6 +5,7 @@
 #include "Actor_Derived1.hpp"
 #include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "global.h"
 #include "nitro/types.h"
