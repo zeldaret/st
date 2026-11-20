@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Item/Item.hpp"
+#include "RefStruct.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -84,6 +85,15 @@ public:
     UnkStruct_ItemManager_20_04_08_310(); //! TODO: params
 };
 
+class UnkStruct_ItemManager_20_04_32C {
+public:
+    /* 00 */ unk32 mUnk_00;
+
+    // overlay 31
+    BOOL func_ov031_020d9ccc(RefStruct ref);
+    void func_ov031_020d9f34(RefStruct ref);
+};
+
 class UnkStruct_ItemManager_20_04_08 : public LinkList<UnkStruct_ItemManager_20_04_08> {
 public:
     /* 000 (vtable) */
@@ -96,7 +106,8 @@ public:
     /* 326 */ bool mUnk_326;
     /* 327 */ bool mUnk_327;
     /* 328 */ unk32 mUnk_328;
-    /* 32C */ PAD(0x32C, 0x3CC);
+    /* 32C */ UnkStruct_ItemManager_20_04_32C mUnk_32C;
+    /* 330 */ PAD(0x330, 0x3CC);
     /* 3CC */ void *mUnk_3CC;
     /* 3D0 */ unk32 mUnk_3D0;
     /* 3D4 */
@@ -107,6 +118,10 @@ public:
     // data_ov031_02112b6c
     /* 00 */ virtual void vfunc_00();
     /* 04 */
+
+    // overlay 31
+    void func_ov031_020dc480();
+    bool func_ov031_020dc700(VecFx32 *param1, unk32 param2, VecFx32 *param3, RefStruct *param4);
 };
 
 class UnkStruct_ItemManager_20_04 {
@@ -123,7 +138,6 @@ public:
     ~UnkStruct_ItemManager_20_04();
 
     // overlay 31
-    void func_ov031_020d9598();
     void func_ov031_020db338();
     void func_ov031_020db4f0(bool param1, bool param2);
     void func_ov031_020db528(void *param1);

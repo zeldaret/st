@@ -37,10 +37,11 @@ src/031_Land/UnkStruct_ov031_Items_01_Derived2.cpp:
     .text       start:0x020d94d0 end:0x020d9598
     .data       start:0x02112af4 end:0x02112b10
 
-src/031_Land/code_020d9598_031.cpp:
+src/031_Land/UnkStruct_027e0d2c_031.cpp:
+    complete
     .text       start:0x020d9598 end:0x020d9658
 
-src/031_Land/code_020d9658_031.cpp:
+src/031_Land/UnkStruct_027e0d30_031.cpp:
     .text       start:0x020d9658 end:0x020d96a4
 
 src/031_Land/UnkStruct_027e0d34.cpp:
