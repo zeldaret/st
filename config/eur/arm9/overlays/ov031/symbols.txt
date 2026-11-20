@@ -21,10 +21,10 @@ _ZN10SkyboxLandD0Ev kind:function(arm,size=0x28) addr:0x020d9168
 _ZN10SkyboxLand8vfunc_18EP7VecFx32 kind:function(arm,size=0x40) addr:0x020d9190
 _ZN10SkyboxLand8vfunc_24Ev kind:function(arm,size=0x40) addr:0x020d91d0
 _ZN10SkyboxLand8vfunc_1CEP16G3d_RenderState_ kind:function(arm,size=0x104) addr:0x020d9210
-func_ov031_020d9314 kind:function(arm,size=0x54) addr:0x020d9314
-func_ov031_020d9368 kind:function(arm,size=0x30) addr:0x020d9368
-func_ov031_020d9398 kind:function(arm,size=0x24) addr:0x020d9398
-func_ov031_020d93bc kind:function(arm,size=0x34) addr:0x020d93bc
+_ZN25UnkStruct_027e0cd8_0C_1D019func_ov031_020d9314EiP15ActorUnkMLCK_A0 kind:function(arm,size=0x54) addr:0x020d9314
+_ZN25UnkStruct_027e0cd8_0C_1D019func_ov031_020d9368EP5ActorP14Actor_vfunc_30 kind:function(arm,size=0x30) addr:0x020d9368
+_ZN25UnkStruct_027e0cd8_0C_1D019func_ov031_020d9398EPv kind:function(arm,size=0x24) addr:0x020d9398
+_ZN24UnkStruct_ov031_02112ad48vfunc_00EP5Actor kind:function(arm,size=0x34) addr:0x020d93bc
 func_ov031_020d93f0 kind:function(arm,size=0x5c) addr:0x020d93f0
 func_ov031_020d944c kind:function(arm,size=0x54) addr:0x020d944c
 _ZN19func_ov031_020d94a0D1Ev kind:function(arm,size=0x14) addr:0x020d94a0
@@ -2228,7 +2228,7 @@ _ZTV27UnkStruct_ov031_Items_02_38 kind:data(any) addr:0x02112a5c
 _ZTV16MapObject_10_Pot kind:data(any) addr:0x02112a70
 _ZTV10SkyboxLand kind:data(any) addr:0x02112a98
 _ZTV24UnkStruct_ov031_02112ad4 kind:data(any) addr:0x02112acc
-data_ov031_02112ae0 kind:data(any) addr:0x02112ae0
+_ZTV19data_ov031_02112ae0 kind:data(any) addr:0x02112ad8
 data_ov031_02112afc kind:data(any) addr:0x02112afc
 data_ov031_02112b18 kind:data(any) addr:0x02112b18
 data_ov031_02112b24 kind:data(any) addr:0x02112b24

@@ -22,8 +22,10 @@ src/031_Land/Render/SkyboxLand.cpp:
     .data       start:0x02112a98 end:0x02112acc
     .rodata     start:0x0211067c end:0x021106ec
 
-src/031_Land/code_020d9314_031.cpp:
+src/031_Land/Course/UnkStruct_027e0cd8_0C_1D0_031.cpp:
+    complete
     .text       start:0x020d9314 end:0x020d93f0
+    .data       start:0x02112acc end:0x02112ad8
 
 src/031_Land/code_020d93f0_031.cpp:
     .text       start:0x020d93f0 end:0x020d9598

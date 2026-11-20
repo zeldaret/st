@@ -47,8 +47,8 @@ void MapObjectUnkSWCR_160::vfunc_00(void) {
     ((MapObjectUnkSWCR *) mUnk_04)->func_ov063_0216153c();
 }
 
-void MapObjectUnkSWCR_160::vfunc_04(void) {
-    ((MapObjectUnkSWCR *) mUnk_04)->func_ov063_021615c4();
+bool MapObjectUnkSWCR_160::vfunc_04(void) {
+    return ((MapObjectUnkSWCR *) mUnk_04)->func_ov063_021615c4();
 }
 
 void MapObjectUnkSWCR_160::vfunc_08(void) {
