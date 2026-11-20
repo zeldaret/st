@@ -50,6 +50,7 @@ src/031_Land/UnkStruct_027e0d34.cpp:
     .text       start:0x020d96a4 end:0x020d9bd0
 
 src/031_Land/UnkStruct_027e0d38.cpp:
+    complete
     .text       start:0x020d9bd0 end:0x020d9c64
 
 src/031_Land/code_020d9c64_031.cpp:

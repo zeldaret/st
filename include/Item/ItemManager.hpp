@@ -70,7 +70,11 @@ public:
     // overlay 31
     void func_ov031_020d9bd0();
     void func_ov031_020dba40();
+    bool func_ov031_020dbb38(bool param1, VecFx32 *param2);
+    void func_ov031_020dbc18(unk32 param1);
     void func_ov031_020dbc80(bool param1, bool param2);
+    void func_ov031_020dbd24(unk32 param1, unk32 param2, unk32 param3);
+    void func_ov031_020dbd98(RefStruct ref, VecFx32 *param2, VecFx32 *param3);
 };
 
 class UnkStruct_ItemManager_20_04_08_310 {
