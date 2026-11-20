@@ -1,5 +1,6 @@
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Cutscene/Cutscene.hpp"
 #include "Game/GameModeManager.hpp"
 #include "MainGame/AdventureMode.hpp"
@@ -20,7 +21,6 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
@@ -65,7 +65,7 @@ UnkStruct_027e09a4::UnkStruct_027e09a4(SceneMode mode) :
     UnkStruct_027e09a0::Create();
     UnkStruct_027e09c0::Create();
     UnkStruct_027e09bc::Create();
-    UnkStruct_027e0cd8::Create();
+    CourseManager::Create();
     UnkStruct_027e0ce0::Create();
     ActorManager::Create();
     MapObjectManager::Create();
@@ -123,7 +123,7 @@ void UnkStruct_027e09a4::func_ov001_020b66dc() {
     MapObjectManager::Destroy();
     ActorManager::Destroy();
     UnkStruct_027e0ce0::Destroy();
-    UnkStruct_027e0cd8::Destroy();
+    CourseManager::Destroy();
     UnkStruct_027e09bc::Destroy();
     UnkStruct_027e09c0::Destroy();
     UnkStruct_027e09a0::Destroy();
@@ -387,9 +387,9 @@ void ActorManager::Destroy() {
     }
 }
 
-void UnkStruct_027e0cd8::Destroy() {
-    if (data_027e0cd8 != NULL) {
-        delete data_027e0cd8;
+void CourseManager::Destroy() {
+    if (gpCourseManager != NULL) {
+        delete gpCourseManager;
     }
 }
 
@@ -462,11 +462,11 @@ void UnkStruct_027e09a4_54_Base::func_ov001_020b6fa0(CourseListEntry *pCourseEnt
     strncpy((char *) this->mUnk_0C, pCourseEntry->name, sizeof(this->mUnk_0C) - 1);
     this->mUnk_30 = pCourseEntry->unk_1A;
     this->vfunc_0C();
-    data_027e0cd8->func_ov001_020b7830(&this->mUnk_1C);
+    gpCourseManager->func_ov001_020b7830(&this->mUnk_1C);
 }
 
 void UnkStruct_027e09a4_54_Base::func_ov001_020b7048() {
-    data_027e0cd8->func_ov001_020b7a7c();
+    gpCourseManager->func_ov001_020b7a7c();
 }
 
 UnkStruct_WarpUnk1_24::UnkStruct_WarpUnk1_24() {
@@ -541,13 +541,13 @@ bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
     if (iVar9) {
         data_027e09a4->func_ov001_020b6924(&this->mNextEntrance, this->mEntryTransitionType == EntryTransitionType_2);
     } else {
-        data_027e0cd8->func_ov001_020b7c08(&this->mNextEntrance, &this->mUnk_A0);
+        gpCourseManager->func_ov001_020b7c08(&this->mNextEntrance, &this->mUnk_A0);
     }
 
     uVar8 = 0;
     bVar2 = false;
 
-    data_027e0cd8->mUnk_0C->func_ov001_020b8a5c(this->mNextEntrance.spawnIndex, 0);
+    gpCourseManager->mpMapMgr->func_ov001_020b8a5c(this->mNextEntrance.spawnIndex, 0);
 
     this->Detach();
     this->mUnk_0C = false;

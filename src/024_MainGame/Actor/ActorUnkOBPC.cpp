@@ -1,8 +1,8 @@
 #include "Actor/ActorUnkOBPC.hpp"
 #include "Actor/ActorManager.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b3000.hpp"
 #include "Unknown/UnkStruct_ov000_020b504c.hpp"
@@ -116,8 +116,8 @@ void ActorUnkOBPC::SetState(ActorState state, int param2) {
 }
 
 bool ActorUnkOBPC::func_ov024_020d7154(void) {
-    u8 temp_r4                          = this->mUnk_5C.mParams[0];
-    UnkStruct_027e0cd8_0C_Base *temp_r5 = data_027e0cd8->mUnk_0C;
+    u8 temp_r4              = this->mUnk_5C.mParams[0];
+    MapManagerBase *temp_r5 = gpCourseManager->mpMapMgr;
     ActorManager *pActorMgr;
     VecFx32 sp10;
 

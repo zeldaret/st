@@ -1,5 +1,5 @@
 #include "Actor/Actor.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "Course/CourseManager.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include <nitro/mi.h>
 
@@ -73,7 +73,7 @@ void Actor::func_ov000_020984d0() {
 
 void Actor::func_ov000_020984f0() {
     if (this->mUnk_5C.mUnk_24 >= 0) {
-        data_027e0cd8->func_ov000_02081ecc(this->mUnk_5C.mUnk_24, 1);
+        gpCourseManager->func_ov000_02081ecc(this->mUnk_5C.mUnk_24, 1);
     }
 }
 

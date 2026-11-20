@@ -4,6 +4,7 @@
 #include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
+#include "Course/CourseManager.hpp"
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "MapObject/MapObjectUnkSKDI.hpp"
@@ -12,7 +13,6 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "flags.h"
@@ -476,7 +476,7 @@ void ActorKeese::func_ov032_0211e9ec() {
     u32 *psp0   = (u32 *) &sp0;
     fx32 var_r5 = this->mUnk_5C.mInitialPos.y;
 
-    func_01fff05c(psp0, data_027e0cd8->mUnk_0C, &this->mPos);
+    func_01fff05c(psp0, gpCourseManager->mpMapMgr, &this->mPos);
 
     bool var_r6 = false;
     if ((*psp0 & 0x1F) == 0x0F && ((*psp0 >> 5) & 0x03) == 2) {
@@ -484,7 +484,7 @@ void ActorKeese::func_ov032_0211e9ec() {
     }
 
     if (var_r6) {
-        var_r5 = data_027e0cd8->mUnk_0C->vfunc_28(&this->mPos, 0x1, 0x0);
+        var_r5 = gpCourseManager->mpMapMgr->vfunc_28(&this->mPos, 0x1, 0x0);
     }
 
     this->mUnk_29C = (var_r5 + 0x800) + (gRandom.Next32(0x99B) - 0x4CD);
@@ -541,7 +541,7 @@ void ActorKeese::func_ov032_0211ece8() {
 
     u32 sp0;
     u32 *psp0 = (u32 *) &sp0;
-    func_01fff05c(psp0, data_027e0cd8->mUnk_0C, &this->mPos);
+    func_01fff05c(psp0, gpCourseManager->mpMapMgr, &this->mPos);
 
     bool var_r2 = false;
     if ((*psp0 & 0x1F) == 0x0F && ((*psp0 >> 5) & 0x03) == 2) {
@@ -549,7 +549,7 @@ void ActorKeese::func_ov032_0211ece8() {
     }
 
     if (var_r2) {
-        var_r4 = data_027e0cd8->mUnk_0C->vfunc_28(&this->mPos, 1, 0);
+        var_r4 = gpCourseManager->mpMapMgr->vfunc_28(&this->mPos, 1, 0);
     }
 
     this->mUnk_29C = (var_r4 + 0x800) + (gRandom.Next32(0x99B) - 0x4CD);
@@ -790,7 +790,7 @@ void ActorKeese::func_ov032_0211f6bc() {
     fx32 var_r4 = this->mUnk_5C.mInitialPos.y;
 
     u32 *psp8 = (u32 *) &sp8;
-    func_01fff05c(psp8, data_027e0cd8->mUnk_0C, &this->mPos);
+    func_01fff05c(psp8, gpCourseManager->mpMapMgr, &this->mPos);
 
     bool var_r5_2 = false;
     if ((*psp8 & 0x1F) == 0x0F && ((*psp8 >> 5) & 0x03) == 2) {
@@ -798,7 +798,7 @@ void ActorKeese::func_ov032_0211f6bc() {
     }
 
     if (var_r5_2) {
-        var_r4 = data_027e0cd8->mUnk_0C->vfunc_28(&spC, 1, 0);
+        var_r4 = gpCourseManager->mpMapMgr->vfunc_28(&spC, 1, 0);
     }
 
     spC.y = var_r4;

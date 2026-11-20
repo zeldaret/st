@@ -1,8 +1,8 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Unknown/UnkStruct_02049b18.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
@@ -32,7 +32,7 @@ void UnkStruct_027e0ce0_40_Base_7C::func_ov017_020be2ec(UnkStruct_027e0ce0_40_Ba
         fx32 y         = originalY;
 
         if (func_ov000_02080998(&sp4) == 0) {
-            y = data_027e0cd8->mUnk_0C->vfunc_28(&sp4, 1, 0);
+            y = gpCourseManager->mpMapMgr->vfunc_28(&sp4, 1, 0);
         }
 
         func_01ff916c(&this->mUnk_14, ClampValue(y, originalY, originalY + FX_F32_TO_FX32(3.6f)), 0x1000);

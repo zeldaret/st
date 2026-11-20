@@ -1,8 +1,8 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Game/GameModeManager.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "global.h"
 #include "nitro/types.h"
 #include "nns/g3d/g3d.h"
@@ -53,13 +53,13 @@ static const UnkStruct_ov031_02110650 data_ov031_02110650 = {
 
 static const char data_ov031_02110640[16] = "node_cover";
 
-UnkStruct_027e0cd8_0C::~UnkStruct_027e0cd8_0C() {}
+MapManagerLand::~MapManagerLand() {}
 
-void UnkStruct_027e0cd8_0C::func_ov031_020d8720(s32 param1) {
+void MapManagerLand::func_ov031_020d8720(s32 param1) {
     this->mUnk_1C0[this->mUnk_1D4++] = param1;
 }
 
-void UnkStruct_027e0cd8_0C::func_ov031_020d8738() {
+void MapManagerLand::func_ov031_020d8738() {
     switch ((s32) data_027e09a4->CurrentSceneIndex()) {
         case SceneIndex_d_main:
         case SceneIndex_f_kakushi4:
@@ -106,7 +106,7 @@ void UnkStruct_027e0cd8_0C::func_ov031_020d8738() {
     }
 }
 
-void UnkStruct_027e0cd8_0C::func_ov031_020d88c0() {
+void MapManagerLand::func_ov031_020d88c0() {
     for (int var_r8 = 0; var_r8 < this->mUnk_1D4; var_r8++) {
         s32 sp10    = var_r8;
         s32 temp_r5 = this->mUnk_1C0[var_r8];
@@ -145,18 +145,17 @@ void UnkStruct_027e0cd8_0C::func_ov031_020d88c0() {
     }
 }
 
-void UnkStruct_027e0cd8_0C::func_ov031_020d8ae4() {
+void MapManagerLand::func_ov031_020d8ae4() {
     G3d_NameList *var_r0 = G3d_GetBoneList(this->mSceneRender.mpModel);
     this->mUnk_1D8       = var_r0 != NULL ? func_0200f218(var_r0, data_ov031_02110640) : -1;
 
     if (this->mUnk_1D8 != -1) {
-        NNS_G3dRenderObjSetCallBack(&this->mSceneRender.mRenderObj, UnkStruct_027e0cd8_0C::func_ov031_020d8cb8, 0x00, 0x02,
-                                    0x02);
+        NNS_G3dRenderObjSetCallBack(&this->mSceneRender.mRenderObj, MapManagerLand::func_ov031_020d8cb8, 0x00, 0x02, 0x02);
         this->mSceneRender.mRenderObj.modelRender = this;
     }
 }
 
-void UnkStruct_027e0cd8_0C::vfunc_1C(const EntranceInfo *param1, bool param2, bool param3) {
+void MapManagerLand::vfunc_1C(const EntranceInfo *param1, bool param2, bool param3) {
 #pragma unused(param2)
 
     u8 roomIndex;
@@ -185,7 +184,7 @@ void UnkStruct_027e0cd8_0C::vfunc_1C(const EntranceInfo *param1, bool param2, bo
     }
 
     sceneIndex                        = param1->sceneIndex;
-    roomIndex                         = data_027e0cd8->mUnk_04->mUnk_0C->mRoomIndex;
+    roomIndex                         = gpCourseManager->mUnk_04->mUnk_0C->mRoomIndex;
     AdventureModeManager *pAdvModeMgr = GetAdventureModeManager();
 
     if (sceneIndex == SceneIndex_f_passenger) {
@@ -200,12 +199,12 @@ void UnkStruct_027e0cd8_0C::vfunc_1C(const EntranceInfo *param1, bool param2, bo
     }
 }
 
-void UnkStruct_027e0cd8_0C::func_ov031_020d8cb8(G3d_RenderState *param1) {
-    UnkStruct_027e0cd8_0C::func_ov031_020d8cd0(param1->renderObj->modelRender, param1);
+void MapManagerLand::func_ov031_020d8cb8(G3d_RenderState *param1) {
+    MapManagerLand::func_ov031_020d8cd0(param1->renderObj->modelRender, param1);
 }
 
-void UnkStruct_027e0cd8_0C::func_ov031_020d8cd0(void *modelRender, G3d_RenderState *param1) {
-    UnkStruct_027e0cd8_0C *thisx = (UnkStruct_027e0cd8_0C *) modelRender;
+void MapManagerLand::func_ov031_020d8cd0(void *modelRender, G3d_RenderState *param1) {
+    MapManagerLand *thisx = (MapManagerLand *) modelRender;
 
     int var_r3 = G3d_GetCurBoneId(param1);
 

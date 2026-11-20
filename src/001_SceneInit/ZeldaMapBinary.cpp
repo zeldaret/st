@@ -1,12 +1,12 @@
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Physics/AABB.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_027e0960.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
 #include "files.h"
@@ -17,7 +17,7 @@
 extern AABB data_027e0c90;
 extern int data_ov089_02171540;
 
-BOOL ZMB_ParseFile(ZMBFileInfos *pFileInfos, UnkStruct_027e0cd8_0C_Base *pDst, bool param3) {
+BOOL ZMB_ParseFile(ZMBFileInfos *pFileInfos, MapManagerBase *pDst, bool param3) {
     bool isVersion2;
     ZMBHeader *pHeader;
     ZMBSectionHeader *pSection;
@@ -86,12 +86,12 @@ BOOL ZMB_ParseFile(ZMBFileInfos *pFileInfos, UnkStruct_027e0cd8_0C_Base *pDst, b
     return true;
 }
 
-BOOL ZMB_ParseROMB(ZMBFileInfos *pFileInfos, ZMBSectionROMB *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+BOOL ZMB_ParseROMB(ZMBFileInfos *pFileInfos, ZMBSectionROMB *pSection, MapManagerBase *pDst) {
     pDst->ZMB_ParseROMB(pSection);
     return true;
 }
 
-BOOL ZMB_ParseLDLB(ZMBFileInfos *pFileInfos, ZMBSectionLDLB *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+BOOL ZMB_ParseLDLB(ZMBFileInfos *pFileInfos, ZMBSectionLDLB *pSection, MapManagerBase *pDst) {
     pDst->mUnk_104 = UnkFlags1_None;
     bool isCs      = data_027e09a4->mUnk_00.isCS;
 
@@ -99,7 +99,7 @@ BOOL ZMB_ParseLDLB(ZMBFileInfos *pFileInfos, ZMBSectionLDLB *pSection, UnkStruct
         ZMBEntryLBLB *pEntry = &pSection->entries[i];
 
         if (!(pEntry->unk_01 != 0xFF && isCs != pEntry->unk_01) &&
-            !(pEntry->unk_04 != 0 && !data_027e0cd8->func_ov000_02081e30(pEntry->unk_04, pEntry->unk_03))) {
+            !(pEntry->unk_04 != 0 && !gpCourseManager->func_ov000_02081e30(pEntry->unk_04, pEntry->unk_03))) {
             u8 unk_00 = pEntry->unk_00;
 
             if (pEntry->unk_02 != 0) {
@@ -111,7 +111,7 @@ BOOL ZMB_ParseLDLB(ZMBFileInfos *pFileInfos, ZMBSectionLDLB *pSection, UnkStruct
     }
 
     if (data_027e09a4->CurrentSceneIndex() - SceneIndex_t_area0 <= 1 && GET_FLAG2(pDst->mUnk_104, UnkFlags1_6)) {
-        if (data_027e0cd8->func_ov001_020b80fc(data_027e09a4->CurrentSceneIndex())) {
+        if (gpCourseManager->func_ov001_020b80fc(data_027e09a4->CurrentSceneIndex())) {
             UNSET_FLAG2(pDst->mUnk_104, UnkFlags1_6);
             SET_FLAG2(pDst->mUnk_104, UnkFlags1_7);
         } else {
@@ -129,7 +129,7 @@ BOOL ZMB_ParseLDLB(ZMBFileInfos *pFileInfos, ZMBSectionLDLB *pSection, UnkStruct
     return true;
 }
 
-BOOL ZMB_ParseARAB(ZMBFileInfos *pFileInfos, ZMBSectionARAB *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+BOOL ZMB_ParseARAB(ZMBFileInfos *pFileInfos, ZMBSectionARAB *pSection, MapManagerBase *pDst) {
     size_t capacity = pDst->mUnk_148.capacity();
 
     if (pSection->header.nEntries > capacity) {
@@ -143,7 +143,7 @@ BOOL ZMB_ParseARAB(ZMBFileInfos *pFileInfos, ZMBSectionARAB *pSection, UnkStruct
     return true;
 }
 
-BOOL ZMB_ParseRALB(ZMBFileInfos *pFileInfos, ZMBSectionRALB *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+BOOL ZMB_ParseRALB(ZMBFileInfos *pFileInfos, ZMBSectionRALB *pSection, MapManagerBase *pDst) {
     u32 nEntries = pSection->header.nEntries;
     if (nEntries == 0) {
         return true;
@@ -183,7 +183,7 @@ BOOL ZMB_ParseRALB(ZMBFileInfos *pFileInfos, ZMBSectionRALB *pSection, UnkStruct
     return true;
 }
 
-BOOL ZMB_ParseWARP(ZMBFileInfos *pFileInfos, ZMBSectionWARP *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+BOOL ZMB_ParseWARP(ZMBFileInfos *pFileInfos, ZMBSectionWARP *pSection, MapManagerBase *pDst) {
     if (pSection->header.nEntries + 8 > pDst->mUnk_154.cap()) {
         ZMB_020ba388(&pDst->mUnk_154, pSection->header.nEntries + 8);
     }
@@ -200,7 +200,7 @@ BOOL ZMB_ParseWARP(ZMBFileInfos *pFileInfos, ZMBSectionWARP *pSection, UnkStruct
 }
 
 // https://decomp.me/scratch/DThHL
-BOOL ZMB_ParseMapObjList(ZMBFileInfos *pFileInfos, ZMBSectionMapObjectList *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+BOOL ZMB_ParseMapObjList(ZMBFileInfos *pFileInfos, ZMBSectionMapObjectList *pSection, MapManagerBase *pDst) {
     for (u16 i = 0; i < pSection->header.nEntries; i++) {
         ZMBMapObjEntry *pEntry = &pSection->entries[i];
 
@@ -266,7 +266,7 @@ BOOL ZMB_ParseMapObjList(ZMBFileInfos *pFileInfos, ZMBSectionMapObjectList *pSec
     return true;
 }
 
-BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection, MapManagerBase *pDst) {
     s32 xMod16;
     s32 yMod16;
     Vec2us somePos;
@@ -283,7 +283,7 @@ BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection,
         yMod16 = (u8) (pEntry->pos.y % 16);
 
         if (posX < somePos.x && posY < somePos.y) {
-            bool iVar6 = data_027e0cd8->func_ov000_02081edc(pFileInfos->unk_0E);
+            bool iVar6 = gpCourseManager->func_ov000_02081edc(pFileInfos->unk_0E);
 
             if (ZMB_020ba350(pFileInfos, pEntry->unk_1C, pDst)) {
                 ActorProfile *pProfile = data_ov000_020b539c_eur.GetProfileFromId(pEntry->id);
@@ -356,7 +356,7 @@ BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pSection,
     return true;
 }
 
-BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pSection, MapManagerBase *pDst) {
     for (u16 i = 0; i < pSection->header.nEntries; i++) {
         ZMBEntryROOM *pEntry = &pSection->entries[i];
 
@@ -401,10 +401,10 @@ BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pSection, UnkStruct
 
         switch (pEntry->unk_03) {
             case 1:
-                data_027e0cd8->mUnk_16 = true;
+                gpCourseManager->mUnk_16 = true;
                 break;
             case 2:
-                data_027e0cd8->mUnk_16 = false;
+                gpCourseManager->mUnk_16 = false;
                 break;
             default:
                 break;
@@ -549,7 +549,7 @@ BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pSection, UnkStruct
     return true;
 }
 
-BOOL ZMB_ParsePLYR(ZMBFileInfos *pFileInfos, ZMBSectionPLYR *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+BOOL ZMB_ParsePLYR(ZMBFileInfos *pFileInfos, ZMBSectionPLYR *pSection, MapManagerBase *pDst) {
     for (u16 i = 0; i < pSection->header.nEntries; i++) {
         ZMBEntryPLYR *pEntry = &pSection->entries[i];
 
@@ -611,7 +611,7 @@ BOOL ZMB_ParsePLYR(ZMBFileInfos *pFileInfos, ZMBSectionPLYR *pSection, UnkStruct
     return true;
 }
 
-BOOL ZMB_ParseCAME(ZMBFileInfos *pFileInfos, ZMBSectionCAME *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+BOOL ZMB_ParseCAME(ZMBFileInfos *pFileInfos, ZMBSectionCAME *pSection, MapManagerBase *pDst) {
     for (u16 i = 0; i < pSection->header.nEntries; i++) {
         ZMBEntryCAME *pEntry = &pSection->entries[i];
 
@@ -629,7 +629,7 @@ BOOL ZMB_ParseCAME(ZMBFileInfos *pFileInfos, ZMBSectionCAME *pSection, UnkStruct
     return true;
 }
 
-BOOL ZMB_ParseCMPT(ZMBFileInfos *pFileInfos, ZMBSectionCMPT *pSection, UnkStruct_027e0cd8_0C_Base *pDst) {
+BOOL ZMB_ParseCMPT(ZMBFileInfos *pFileInfos, ZMBSectionCMPT *pSection, MapManagerBase *pDst) {
     for (u16 i = 0; i < pSection->header.nEntries; i++) {
         ZMBEntryCMPT *pEntry = &pSection->entries[i];
 
@@ -644,7 +644,7 @@ BOOL ZMB_ParseCMPT(ZMBFileInfos *pFileInfos, ZMBSectionCMPT *pSection, UnkStruct
     return true;
 }
 
-BOOL ZMB_020ba350(ZMBFileInfos *pFileInfos, u8 param2, UnkStruct_027e0cd8_0C_Base *pDst) {
+BOOL ZMB_020ba350(ZMBFileInfos *pFileInfos, u8 param2, MapManagerBase *pDst) {
     BOOL isCS = pDst->mIsCS;
 
     if (param2 == 0xFF) {

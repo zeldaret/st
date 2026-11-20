@@ -25,7 +25,7 @@ struct EntranceInfo {
     /* 0A */ u8 roomIndex;
     /* 0B */ u8 spawnIndex;
     /* 0C */ bool isCS;
-    /* 0D */ u8 unk_0D;
+    /* 0D */ u8 unk_0D; // entry index?
     /* 0E */ u8 csIndex;
     /* 0F */ u8 unk_0F;
     /* 10 */ u8 unk_10;

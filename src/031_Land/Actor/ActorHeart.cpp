@@ -1,8 +1,8 @@
 #include "Actor/ActorHeart.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/Random.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
@@ -76,7 +76,7 @@ ActorHeart::ActorHeart() :
     Vec2bCpp sp0;
     func_01ffedac(&sp0, &this->mPos);
 
-    if (data_027e0cd8->mUnk_0C->func_ov000_02080180(&sp0) == 0x5) {
+    if (gpCourseManager->mpMapMgr->func_ov000_02080180(&sp0) == 0x5) {
         this->mUnk_34 = (Cylinder *) &data_ov031_02113d64;
     }
 }

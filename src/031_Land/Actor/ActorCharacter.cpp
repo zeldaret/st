@@ -2,9 +2,9 @@
 
 #include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 
 static PTMF<ActorCharacter> data_ov031_02113260[ActorCharacterState_Max] = {
     &ActorCharacter::vfunc_0E0, // ActorCharacterState_0
@@ -338,7 +338,7 @@ void ActorCharacter::vfunc_10C() {
                 VecFx32 sp00 = this->mPos;
                 sp00.y += 0x100;
 
-                this->mPos.y   = data_027e0cd8->mUnk_0C->vfunc_28(&sp00, 0x1, 0x0);
+                this->mPos.y   = gpCourseManager->mpMapMgr->vfunc_28(&sp00, 0x1, 0x0);
                 this->mUnk_158 = 0x0;
                 break;
             }
@@ -382,7 +382,7 @@ void ActorCharacter::vfunc_110() {
         if (this->mUnk_094.mUnk_0C->vfunc_28()->func_02015080(this->mUnk_15C[index]) == 0x0) {
             u32 sp4;
             u32 *sp4Ptr = &sp4;
-            func_01fff05c(sp4Ptr, data_027e0cd8->mUnk_0C, &this->mPos);
+            func_01fff05c(sp4Ptr, gpCourseManager->mpMapMgr, &this->mPos);
             data_027e09a8->func_ov000_02071934(*sp4Ptr & 0x1F, &this->mPos, this->Actor::GetActorId(), index != 0);
             return;
         }

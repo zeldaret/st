@@ -1,9 +1,9 @@
 #include "Actor/Actor.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "profile.hpp"
 
 #include <nitro/mi.h>
@@ -15,8 +15,8 @@ struct UnkStruct_ov070_0214dc74 {
 };
 extern UnkStruct_ov070_0214dc74 data_ov070_0214dc74[18];
 
-UnkStruct_027e0cd8_0C::UnkStruct_027e0cd8_0C(UnkStruct_027e0cd8 *param1) :
-    UnkStruct_027e0cd8_0C_Base(param1) {
+MapManagerLand::MapManagerLand(CourseManager *pCourseMgr) :
+    MapManagerBase(pCourseMgr) {
     this->mUnk_1D0 = 0x00;
     this->mUnk_1D4 = 0x00;
     this->mUnk_1D8 = -1;
@@ -33,7 +33,7 @@ UnkStruct_027e0cd8_0C::UnkStruct_027e0cd8_0C(UnkStruct_027e0cd8 *param1) :
     }
 }
 
-UnkStruct_027e0cd8_0C::~UnkStruct_027e0cd8_0C() {
+MapManagerLand::~MapManagerLand() {
     for (int i = 0; i < this->mUnk_1D4; i++) {
         if (this->mUnk_160[i] != NULL) {
             this->mUnk_160[i]->~UnkSystem3();
@@ -52,8 +52,8 @@ UnkStruct_027e0cd8_0C::~UnkStruct_027e0cd8_0C() {
     }
 }
 
-void UnkStruct_027e0cd8_0C::vfunc_38() {
-    this->UnkStruct_027e0cd8_0C_Base::vfunc_38();
+void MapManagerLand::vfunc_38() {
+    this->MapManagerBase::vfunc_38();
 
     EntranceInfo local_28;
     MI_CpuCopy32((void *) this->func_ov001_020b8c80(0x3F), &local_28, sizeof(EntranceInfo));
@@ -84,7 +84,7 @@ void UnkStruct_027e0cd8_0C::vfunc_38() {
     }
 }
 
-void UnkStruct_027e0cd8_0C::vfunc_08() {
+void MapManagerLand::vfunc_08() {
     if (this->mUnk_1D0 != NULL) {
         this->mUnk_1D0->func_ov101_021837a0();
     }
@@ -136,7 +136,7 @@ void UnkStruct_027e0cd8_0C_1D0::func_ov101_021837a0() {
                     var_r6 = false;
 
                     for (int j = 0; j < ARRAY_LEN(pEntry->unk_04); j++) {
-                        if (pEntry->unk_04[j] == data_027e0cd8->func_ov000_02081d5c()) {
+                        if (pEntry->unk_04[j] == gpCourseManager->func_ov000_02081d5c()) {
                             var_r6 = true;
                         }
                     }
@@ -158,7 +158,7 @@ void UnkStruct_027e0cd8_0C_1D0::func_ov101_021837a0() {
     }
 
     if (var_r6) {
-        data_027e0cd8->mUnk_17 = true;
+        gpCourseManager->mUnk_17 = true;
     }
 }
 

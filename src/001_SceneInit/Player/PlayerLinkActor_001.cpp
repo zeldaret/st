@@ -1,8 +1,8 @@
+#include "Course/CourseManager.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "Player/PlayerLink.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 
@@ -87,7 +87,7 @@ void PlayerLinkActor::func_ov001_020bcbd0(VecFx32 *pVec) {
     this->mUnk_0A0->func_ov001_020bd388(uVar1, this->mUnk_0B6);
     this->mUnk_0B6 = false;
 
-    this->mUnk_0B9 = data_027e0cd8->func_ov000_02082124();
+    this->mUnk_0B9 = gpCourseManager->func_ov000_02082124();
     this->mUnk_0BA = false;
     this->mUnk_0BB = false;
 

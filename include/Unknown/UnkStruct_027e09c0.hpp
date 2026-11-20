@@ -7,7 +7,7 @@
 #include "global.h"
 #include "types.h"
 
-class UnkStruct_027e0cd8_0C_Base;
+class MapManagerBase;
 
 struct UnkStruct_ov000_0207de98 {
     /* 00 */ VecFx32 vec;
@@ -79,7 +79,7 @@ public:
     // overlay 1
     void func_ov001_020be394();
     void func_ov001_020be3c4();
-    void func_ov001_020be3dc(UnkFileSystem3 *param1, UnkStruct_027e0cd8_0C_Base *param2);
+    void func_ov001_020be3dc(UnkFileSystem3 *param1, MapManagerBase *param2);
     void func_ov001_020be400();
 
     static UnkStruct_027e09c0 *Create();

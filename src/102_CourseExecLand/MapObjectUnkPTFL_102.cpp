@@ -1,7 +1,7 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObjectUnkPTFL.hpp"
 #include "Unknown/UnkStruct_027e0208.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "nns/g3d/sbc.h"
 
 static unk32 data_ov102_02184980[] = {

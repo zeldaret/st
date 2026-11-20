@@ -1,10 +1,10 @@
-_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8720Ei kind:function(arm,size=0x18) addr:0x020d8720
-_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8738Ev kind:function(arm,size=0x188) addr:0x020d8738
-_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d88c0Ev kind:function(arm,size=0x224) addr:0x020d88c0
-_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8ae4Ev kind:function(arm,size=0x6c) addr:0x020d8ae4
-_ZN21UnkStruct_027e0cd8_0C8vfunc_1CEPK12EntranceInfobb kind:function(arm,size=0x168) addr:0x020d8b50
-_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8cb8EP16G3d_RenderState_ kind:function(arm,size=0x18) addr:0x020d8cb8
-_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8cd0EPvP16G3d_RenderState_ kind:function(arm,size=0x28) addr:0x020d8cd0
+_ZN14MapManagerLand19func_ov031_020d8720Ei kind:function(arm,size=0x18) addr:0x020d8720
+_ZN14MapManagerLand19func_ov031_020d8738Ev kind:function(arm,size=0x188) addr:0x020d8738
+_ZN14MapManagerLand19func_ov031_020d88c0Ev kind:function(arm,size=0x224) addr:0x020d88c0
+_ZN14MapManagerLand19func_ov031_020d8ae4Ev kind:function(arm,size=0x6c) addr:0x020d8ae4
+_ZN14MapManagerLand8vfunc_1CEPK12EntranceInfobb kind:function(arm,size=0x168) addr:0x020d8b50
+_ZN14MapManagerLand19func_ov031_020d8cb8EP16G3d_RenderState_ kind:function(arm,size=0x18) addr:0x020d8cb8
+_ZN14MapManagerLand19func_ov031_020d8cd0EPvP16G3d_RenderState_ kind:function(arm,size=0x28) addr:0x020d8cd0
 _ZN27UnkStruct_ov031_Items_02_388vfunc_08E9RefStruct kind:function(arm,size=0x70) addr:0x020d8cf8
 _ZN24UnkStruct_ov031_Items_02C1Ev kind:function(arm,size=0x74) addr:0x020d8d68
 _ZN27UnkStruct_ov031_Items_02_38D1Ev kind:function(arm,size=0x14) addr:0x020d8ddc
@@ -2222,7 +2222,7 @@ data_ov031_0211298c kind:data(any) addr:0x0211298c local
 @9689 kind:data(byte[0x16]) addr:0x021129bc local
 @9690 kind:data(byte[0x16]) addr:0x021129d4 local
 @9691 kind:data(byte[0x16]) addr:0x021129ec local
-_ZTV21UnkStruct_027e0cd8_0C kind:data(any) addr:0x02112a04
+_ZTV14MapManagerLand kind:data(any) addr:0x02112a04
 @10070 kind:data(byte[0xa]) addr:0x02112a50 local
 _ZTV27UnkStruct_ov031_Items_02_38 kind:data(any) addr:0x02112a5c
 _ZTV16MapObject_10_Pot kind:data(any) addr:0x02112a70

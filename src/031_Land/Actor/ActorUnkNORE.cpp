@@ -2,7 +2,7 @@
 #include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 
-#include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "Course/CourseManager.hpp"
 
 DECL_PROFILE(ActorProfileUnkNORE);
 
@@ -18,7 +18,7 @@ ActorUnkNORE::ActorUnkNORE() {}
 bool ActorUnkNORE::Init(unk32 param1) {
     Vec2bCpp local_vec;
 
-    UnkStruct_027e0cd8_0C_Base *unk_obj = data_027e0cd8->mUnk_0C;
+    MapManagerBase *unk_obj = gpCourseManager->mpMapMgr;
 
     func_01ffedac(&local_vec, &this->mPos);
 

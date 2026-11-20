@@ -1,10 +1,10 @@
-_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8720Ei kind:function(arm,size=0x18) addr:0x020d8840
-_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8738Ev kind:function(arm,size=0x188) addr:0x020d8858
-_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d88c0Ev kind:function(arm,size=0x224) addr:0x020d89e0
-_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8ae4Ev kind:function(arm,size=0x6c) addr:0x020d8c04
-_ZN21UnkStruct_027e0cd8_0C8vfunc_1CEPK12EntranceInfobb kind:function(arm,size=0x168) addr:0x020d8c70
-_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8cb8EP16G3d_RenderState_ kind:function(arm,size=0x18) addr:0x020d8dd8
-_ZN21UnkStruct_027e0cd8_0C19func_ov031_020d8cd0EPvP16G3d_RenderState_ kind:function(arm,size=0x28) addr:0x020d8df0
+_ZN14MapManagerLand19func_ov031_020d8720Ei kind:function(arm,size=0x18) addr:0x020d8840
+_ZN14MapManagerLand19func_ov031_020d8738Ev kind:function(arm,size=0x188) addr:0x020d8858
+_ZN14MapManagerLand19func_ov031_020d88c0Ev kind:function(arm,size=0x224) addr:0x020d89e0
+_ZN14MapManagerLand19func_ov031_020d8ae4Ev kind:function(arm,size=0x6c) addr:0x020d8c04
+_ZN14MapManagerLand8vfunc_1CEPK12EntranceInfobb kind:function(arm,size=0x168) addr:0x020d8c70
+_ZN14MapManagerLand19func_ov031_020d8cb8EP16G3d_RenderState_ kind:function(arm,size=0x18) addr:0x020d8dd8
+_ZN14MapManagerLand19func_ov031_020d8cd0EPvP16G3d_RenderState_ kind:function(arm,size=0x28) addr:0x020d8df0
 _ZN27UnkStruct_ov031_Items_02_388vfunc_08E9RefStruct kind:function(arm,size=0x70) addr:0x020d8e18
 _ZN24UnkStruct_ov031_Items_02C1Ev kind:function(arm,size=0x74) addr:0x020d8e88
 _ZN27UnkStruct_ov031_Items_02_38D1Ev kind:function(arm,size=0x14) addr:0x020d8efc
@@ -2224,7 +2224,7 @@ data_ov031_02112aec kind:data(any) addr:0x02112aec
 data_ov031_02112afc kind:data(any) addr:0x02112afc
 data_ov031_02112b14 kind:data(any) addr:0x02112b14
 data_ov031_02112b2c kind:data(any) addr:0x02112b2c
-_ZTV21UnkStruct_027e0cd8_0C kind:data(any) addr:0x02112b44 ambiguous
+_ZTV14MapManagerLand kind:data(any) addr:0x02112b44 ambiguous
 data_ov031_02112b90 kind:data(any) addr:0x02112b90
 data_ov031_02112ba4 kind:data(any) addr:0x02112ba4
 data_ov031_02112bb8 kind:data(any) addr:0x02112bb8

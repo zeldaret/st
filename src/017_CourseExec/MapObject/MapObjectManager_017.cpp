@@ -1,11 +1,11 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Physics/AABB.hpp"
 #include "Unknown/UnkStruct_020499e0.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "flags.h"
 #include "math.hpp"
 #include "nitro/fx.h"
@@ -80,7 +80,7 @@ void MapObjectManager::func_ov017_020c01cc(unk32 param1) {
 }
 
 void MapObjectManager::func_ov017_020c023c(s8 *param1) {
-    if (data_027e0cd8->func_ov000_02082124()) {
+    if (gpCourseManager->func_ov000_02082124()) {
         return;
     }
 

@@ -1,5 +1,6 @@
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Cutscene/Cutscene.hpp"
 #include "Game/GameModeManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
@@ -10,7 +11,6 @@
 #include "Unknown/UnkStruct_027e09b0.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 
 #include <nns/g3d/g3d.h>
 #include <printf.h>
@@ -31,14 +31,14 @@ static const EntranceInfo data_ov001_020c2a40[] = {
 };
 
 // https://decomp.me/scratch/JcRNn
-UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param1) :
+MapManagerBase::MapManagerBase(CourseManager *pCourseMgr) :
     mUnk_004(NULL, 0x9B, 0x01, 0x01),
     mSceneRender(NULL),
     mUnk_070(NULL, 0x9B, 0x01, 0x00),
     mUnk_084_00(0),
     mUnk_084_01(0),
     mUnk_098(0),
-    mUnk_09C((Vec2us *) &param1->mUnk_00),
+    mUnk_09C((Vec2us *) &pCourseMgr->mUnk_00),
     mUnk_0AC(false),
     mUnk_0AD(false),
     mUnk_0AE(false),
@@ -99,7 +99,7 @@ UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param
     data_027e095c->func_ov000_020592a0();
 }
 
-UnkStruct_027e0cd8_0C_Base::~UnkStruct_027e0cd8_0C_Base() {
+MapManagerBase::~MapManagerBase() {
     data_027e095c->func_ov000_020592ec();
     gpMapObjManager->func_ov001_020baf28();
     DELETE(this->mUnk_098);
@@ -110,11 +110,11 @@ UnkStruct_027e0cd8_0C_Base::~UnkStruct_027e0cd8_0C_Base() {
     this->func_ov001_020b8aec();
 }
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_38() {}
+void MapManagerBase::vfunc_38() {}
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_08() {}
+void MapManagerBase::vfunc_08() {}
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const EntranceInfo *param1) {
+void MapManagerBase::func_ov001_020b85d0(const EntranceInfo *param1) {
     this->mIsCS = param1->isCS;
 
     wchar_t local_c8[2];
@@ -215,12 +215,12 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const EntranceInfo *param1)
     this->vfunc_38();
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b88c0(unk32 param1) {
+void MapManagerBase::func_ov001_020b88c0(unk32 param1) {
     gpMapObjManager->func_ov001_020bae40(this->mUnk_0B8[param1]);
     gpActorManager->func_ov001_020bb7b0(this->mUnk_0DC[param1]);
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b88ec() {
+void MapManagerBase::func_ov001_020b88ec() {
     this->func_ov001_020b8e54();
     this->mSkyboxMgr.DestroySkybox();
     gpMapObjManager->func_ov001_020bae6c();
@@ -234,7 +234,7 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b88ec() {
     }
 }
 
-void UnkStruct_027e0cd8_0C_Base::LoadSceneModel(const EntranceInfo *param1) {
+void MapManagerBase::LoadSceneModel(const EntranceInfo *param1) {
     const char *pName = data_027e09a0->GetCourseEntry(param1->sceneIndex)->name;
 
     wchar_t local_40[20];
@@ -260,7 +260,7 @@ void UnkStruct_027e0cd8_0C_Base::LoadSceneModel(const EntranceInfo *param1) {
     this->mSceneRender.vfunc_08(pModel);
 }
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_1C(const EntranceInfo *param1, bool param2, bool param3) {
+void MapManagerBase::vfunc_1C(const EntranceInfo *param1, bool param2, bool param3) {
     SceneIndex sceneIndex = param1->sceneIndex;
     u8 roomIndex          = param1->roomIndex;
 
@@ -275,9 +275,9 @@ void UnkStruct_027e0cd8_0C_Base::vfunc_1C(const EntranceInfo *param1, bool param
     gpCurrentGameModeMgr->vfunc_38(sceneIndex, roomIndex, 0x01, 0x00);
 }
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_20() {}
+void MapManagerBase::vfunc_20() {}
 
-const UnkStruct_ov001_020c40f4 *UnkStruct_027e0cd8_0C_Base::func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1) {
+const UnkStruct_ov001_020c40f4 *MapManagerBase::func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1) {
     UnkStruct_ov001_020c40f4 *result =
         std::find_if(this->mUnk_13C.begin(), this->mUnk_13C.end(), UnkStruct_ov001_020c40f4::Predicate(spawnIndex, param1));
 
@@ -304,12 +304,12 @@ const UnkStruct_ov001_020c40f4 *UnkStruct_027e0cd8_0C_Base::func_ov001_020b8a5c(
     }
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8aec() {
+void MapManagerBase::func_ov001_020b8aec() {
     STACK_PAD(0x24);
     this->mUnk_148.unk_action1();
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8b94(ZMBEntryARAB *pARAB) {
+void MapManagerBase::func_ov001_020b8b94(ZMBEntryARAB *pARAB) {
     UnkStruct_027e0cd8_0C_Base_148_00_Base *ptr = NULL;
 
     if (pARAB->unk_0C == 1) {
@@ -323,27 +323,27 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8b94(ZMBEntryARAB *pARAB) {
     this->mUnk_148.push_back(ptr);
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c30(const EntranceInfo &param1) {
+void MapManagerBase::func_ov001_020b8c30(const EntranceInfo &param1) {
     this->mUnk_154.push_back(param1);
 }
 
-const EntranceInfo *UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c80(unk32 param1) {
+const EntranceInfo *MapManagerBase::func_ov001_020b8c80(unk32 param1) {
     return &data_ov001_020c2a40[param1 - 0x3C];
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c90(ZMBSectionCMPT *pCMPT) {
+void MapManagerBase::func_ov001_020b8c90(ZMBSectionCMPT *pCMPT) {
     this->mpCMPT = pCMPT;
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c98(ZMBSectionCAME *pCAME) {
+void MapManagerBase::func_ov001_020b8c98(ZMBSectionCAME *pCAME) {
     this->mpCAME = pCAME;
 }
 
-void UnkStruct_027e0cd8_0C_Base::ZMB_ParseROMB(ZMBSectionROMB *pROMB) {
+void MapManagerBase::ZMB_ParseROMB(ZMBSectionROMB *pROMB) {
     this->mpROMB = pROMB;
 }
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_40(u8 spawnIndex) {
+void MapManagerBase::vfunc_40(u8 spawnIndex) {
     switch (spawnIndex) {
         case 0xFB:
         case 0xFC:
@@ -398,7 +398,7 @@ void UnkStruct_027e0cd8_0C_Base::vfunc_40(u8 spawnIndex) {
     }
 }
 
-void UnkStruct_027e0cd8_0C_Base::InitSkybox() {
+void MapManagerBase::InitSkybox() {
     SkyboxType skyboxType = SkyboxType_None;
 
     switch (this->mUnk_110) {
@@ -447,12 +447,12 @@ void UnkStruct_027e0cd8_0C_Base::InitSkybox() {
     this->mSkyboxMgr.CreateSkybox(skyboxType);
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8e24() {
+void MapManagerBase::func_ov001_020b8e24() {
     if (this->mUnk_110 == 7 && this->mUnk_098 == NULL) {
         this->mUnk_098 = new(HeapIndex_1) UnkStruct_027e0cd8_0C_Base_98();
     }
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8e54() {
+void MapManagerBase::func_ov001_020b8e54() {
     DELETE(this->mUnk_098);
 }

@@ -1,10 +1,10 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorManager.hpp"
+#include "Course/CourseManager.hpp"
 #include "RefStruct.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "math.hpp"
 #include "nitro/fx.h"
@@ -48,7 +48,7 @@ void Actor::func_ov017_020c2038(RefStruct *pRef, unk32 param2, unk32 param3, con
             actorId = ActorId_EFWI;
             break;
         case SceneIndex_f_bridge2:
-            if (data_027e0cd8->func_ov000_02081d5c() == 0x01) {
+            if (gpCourseManager->func_ov000_02081d5c() == 0x01) {
                 actorId = ActorId_EFWI;
             }
             break;
@@ -97,7 +97,7 @@ bool Actor::func_ov017_020c219c(unk32 param1, const VecFx32 *param2, unk32 param
             actorId = ActorId_EFRI;
             break;
         case SceneIndex_f_bridge2:
-            if (data_027e0cd8->func_ov000_02081d5c() == 0x01) {
+            if (gpCourseManager->func_ov000_02081d5c() == 0x01) {
                 actorId = ActorId_EFRI;
             }
             break;
@@ -171,8 +171,8 @@ void Actor::func_ov017_020c2438(RefStruct *pRef, unk32 param2, const VecFx32 *pa
 #pragma unused(param4)
 
     pRef->Reset();
-    UnkStruct_027e0cd8_0C_Base *temp_r5 = data_027e0cd8->mUnk_0C;
-    VecFx32 sp18                        = *param3;
+    MapManagerBase *temp_r5 = gpCourseManager->mpMapMgr;
+    VecFx32 sp18            = *param3;
 
     if (param5) {
         if (sp18.y < -0x1000) {
@@ -227,8 +227,8 @@ void Actor::func_ov017_020c2438(RefStruct *pRef, unk32 param2, const VecFx32 *pa
 void Actor::func_ov017_020c26f8(unk32 param1, const VecFx32 *param2, unk32 param3, bool param4) {
 #pragma unused(param3)
 
-    UnkStruct_027e0cd8_0C_Base *temp_r5 = data_027e0cd8->mUnk_0C;
-    VecFx32 sp8                         = *param2;
+    MapManagerBase *temp_r5 = gpCourseManager->mpMapMgr;
+    VecFx32 sp8             = *param2;
 
     if (param4) {
         sp8.y = temp_r5->vfunc_28(&sp8, 0x00, 0x00);

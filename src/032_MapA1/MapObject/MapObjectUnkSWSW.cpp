@@ -6,10 +6,10 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorUnkNSSW.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/Random.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 
 extern char data_ov032_02121ef4;
 extern char data_ov032_02121f04;
@@ -109,10 +109,10 @@ MapObjectUnkSWSW::MapObjectUnkSWSW() :
 bool MapObjectUnkSWSW::Init() {
     Vec2bCpp sp00;
 
-    UnkStruct_027e0cd8_0C_Base *data_027e0cd8_0C = data_027e0cd8->mUnk_0C;
+    MapManagerBase *pMapMgr = gpCourseManager->mpMapMgr;
 
     func_01ffedac(&sp00, &this->mPos);
-    if (data_027e0cd8_0C->func_ov000_02080180(&sp00) == 0x14) {
+    if (pMapMgr->func_ov000_02080180(&sp00) == 0x14) {
         this->mPos.y = FX_F32_TO_FX32(0.0f);
     }
 

@@ -1,4 +1,5 @@
 #include "Actor/ActorManager.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
@@ -8,7 +9,6 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov016_020b8310.hpp"
 
@@ -21,7 +21,7 @@ void UnkStruct_027e09a4::func_ov017_020bb660(unk32 param1) {
         this->mUnk_64++;
 
         if (this->mUnk_5C == 0) {
-            data_027e0cd8->func_ov000_02081b9c(param1);
+            gpCourseManager->func_ov000_02081b9c(param1);
         }
     }
 
@@ -58,7 +58,7 @@ void UnkStruct_027e09a4::func_ov017_020bb660(unk32 param1) {
 
 void UnkStruct_027e09a4::func_ov017_020bb7f8(void *param1) {
     if (data_0204a088->mUnk_120 & 0x02) {
-        data_027e0cd8->func_ov000_02081bf4();
+        gpCourseManager->func_ov000_02081bf4();
     }
 
     if ((data_0204a088->mUnk_120 & 0x04) && data_027e09b8->mUnk_96) {
@@ -86,14 +86,14 @@ void UnkStruct_027e09a4::func_ov017_020bb7f8(void *param1) {
 }
 
 void UnkStruct_027e09a4::func_ov017_020bb934(void *param1) {
-    data_027e0cd8->func_ov000_02081b84();
+    gpCourseManager->func_ov000_02081b84();
     data_027e0ce0->func_ov017_020bd5c4(param1);
     gpMapObjManager->func_ov017_020c01c8(param1);
     gpActorManager->func_01fff2fc(ActorManager::func_ov017_020bee64, param1);
 }
 
 void UnkStruct_027e09a4::func_ov017_020bb994(s8 *param1) {
-    data_027e0cd8->func_ov000_02081d58();
+    gpCourseManager->func_ov000_02081d58();
     data_027e0ce0->func_ov017_020bd644(param1);
     gpMapObjManager->func_ov017_020c023c(param1);
     gpActorManager->func_01fff2fc(ActorManager::func_ov017_020beecc, param1);
