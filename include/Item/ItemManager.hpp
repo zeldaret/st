@@ -165,6 +165,8 @@ public:
     // overlay 31
     void func_ov031_020d9658();
     void func_ov031_020db5b4();
+    unk16 func_ov031_020db5e8();
+    void func_ov031_020db614(u16 param1, VecFx32 *param2);
     void func_ov031_020db704(bool param1, bool param2);
 };
 

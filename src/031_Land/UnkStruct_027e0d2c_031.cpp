@@ -32,4 +32,4 @@ bool UnkStruct_027e0d2c::func_ov031_020d962c(VecFx32 *param1, unk32 param2, VecF
     return this->mUnk_00->mUnk_008.func_ov031_020dc700(param1, param2, param3, param4);
 }
 
-DECL_INSTANCE_CTOR(UnkStruct_027e0d2c, data_027e0d2c)
+DECL_INSTANCE_CTOR(UnkStruct_027e0d2c, data_027e0d2c);
