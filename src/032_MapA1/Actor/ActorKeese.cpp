@@ -331,12 +331,13 @@ void ActorKeese::func_ov032_0211e468() {
                 break;
             case 14:
                 if (this->mUnk_248.mUnk_0C.acRef.type_index == 0x102) {
-                    if (!this->mUnk_248.mUnk_0C.acRef.UnkCheck2Alt() && !this->mUnk_248.mUnk_0C.acRef.UnkCheck3(0x102)) {
+                    if (!this->mUnk_248.mUnk_0C.acRef.UnkCheck2Alt() &&
+                        this->mUnk_248.mUnk_0C.acRef.UnkCheck4(0x102) == PlayerType_Link) {
                         var_r6 = false;
                     }
 
                     if (!var_r6 && this->func_ov000_020986fc(0)) {
-                        if (this->func_ov032_0211fa4c(0)) {
+                        if (this->func_ov032_0211fa4c(PlayerType_Link)) {
                             var_r5 = false;
                         } else {
                             this->func_ov000_020990c0(&this->mUnk_248, 0, 0);
@@ -526,7 +527,7 @@ void ActorKeese::func_ov032_0211eb60() {
         return;
     }
 
-    VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
+    VecFx32 *vec = data_027e0ce0->func_01fff148(PlayerType_Link);
 
     if (!func_02016b8c(&this->mPos, vec, 0x3000, this->mAngle, 0x1000, 0x1)) {
         return;
@@ -582,7 +583,7 @@ void ActorKeese::func_ov032_0211ee5c() {
 
     if (this->func_ov032_0211f9c4()) {
         this->SetState(ActorKeeseState_8);
-    } else if (func_02016b8c(&this->mPos, data_027e0ce0->func_01fff148(0), 0x3000, this->mAngle, 0x1000, 1)) {
+    } else if (func_02016b8c(&this->mPos, data_027e0ce0->func_01fff148(PlayerType_Link), 0x3000, this->mAngle, 0x1000, 1)) {
         this->SetState(ActorKeeseState_2);
     }
 }
@@ -595,7 +596,7 @@ void ActorKeese::func_ov032_0211f0a8() {
     this->func_ov032_0211f93c(&this->mUnk_5C.mInitialPos, 0x38E);
 
     if (this->mTimer.HasExpired()) {
-        VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
+        VecFx32 *vec = data_027e0ce0->func_01fff148(PlayerType_Link);
         if (func_02016b8c(&this->mPos, vec, 0x3000, this->mAngle, 0x1000, 0x1)) {
             this->SetState(ActorKeeseState_2);
         }
@@ -619,7 +620,7 @@ void ActorKeese::func_ov032_0211f0a8() {
 void ActorKeese::func_ov032_0211f1f0() {}
 
 void ActorKeese::func_ov032_0211f1f4() {
-    bool temp_r4 = this->func_ov032_0211f93c(data_027e0ce0->func_01fff148(0x0), 0xB6);
+    bool temp_r4 = this->func_ov032_0211f93c(data_027e0ce0->func_01fff148(PlayerType_Link), 0xB6);
 
     if (this->mUnk_5C.mParams[1] == 0x1) {
         VecFx32 sp00;
@@ -880,10 +881,10 @@ bool ActorKeese::func_ov032_0211f9c4() {
     return true;
 }
 
-bool ActorKeese::func_ov032_0211fa4c(unk32 param1) {
+bool ActorKeese::func_ov032_0211fa4c(PlayerType playerType) {
     STACK_PAD(0x08);
 
-    if (param1 == 0x01) {
+    if (playerType == PlayerType_Zelda) {
         return false;
     }
 
@@ -892,11 +893,11 @@ bool ActorKeese::func_ov032_0211fa4c(unk32 param1) {
             return false;
         }
 
-        data_027e0ce0->func_ov000_0208bc1c(param1, 0x01, 0x06, 0x00, 0x00, 0x00);
+        data_027e0ce0->func_ov000_0208bc1c(playerType, 0x01, 0x06, 0x00, 0x00, 0x00);
         return true;
     }
 
-    data_027e0ce0->func_ov000_0208bc1c(param1, 0x01, 0x08, 0x00, 0x00, 0x00);
+    data_027e0ce0->func_ov000_0208bc1c(playerType, 0x01, 0x08, 0x00, 0x00, 0x00);
     return true;
 }
 

@@ -5,6 +5,7 @@
 #include "Actor_Derived1.hpp"
 #include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "global.h"
 #include "nitro/types.h"
@@ -397,7 +398,7 @@ public:
     void func_ov031_020ec6d8(bool param1);
     bool func_ov031_020ec8c4();
     void func_ov031_020ecc68(bool param1);
-    void func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk32 param3, unk32 param4);
+    void func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk32 param3, PlayerType playerType);
     void func_ov031_020ed0b0();
     void func_ov031_020ed3c0();
     UnkStackStruct2::Inner func_ov031_020ed47c(unk32 param2);

@@ -126,7 +126,7 @@ void ActorItemBoomerang::Update() {
 
             data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_A0);
 
-            if (data_027e0ce0->func_ov000_0208bc1c(0x1, 0x0, 0x16, &this->mUnk_A0.mUnk_0C, 0x0, 0x0)) {
+            if (data_027e0ce0->func_ov000_0208bc1c(PlayerType_Zelda, 0x0, 0x16, &this->mUnk_A0.mUnk_0C, 0x0, 0x0)) {
                 this->mUnk_138.Set(0, 20);
                 var1 = true;
             }
@@ -220,7 +220,7 @@ void ActorItemBoomerang::Update() {
             ((Actor *) &sp24)->func_ov000_0207df88((Cylinder *) &this->mUnk_CC.mUnk_30.mUnk_00, 0xC);
 
             if (this->mUnk_138.HasExpiredAlt() &&
-                data_027e0ce0->func_ov000_0208bc1c(0x1, 0x0, 0x16, &this->mUnk_A0.mUnk_0C, 0x0, 0x0)) {
+                data_027e0ce0->func_ov000_0208bc1c(PlayerType_Zelda, 0x0, 0x16, &this->mUnk_A0.mUnk_0C, 0x0, 0x0)) {
                 var_r4_2 = true;
             }
 
@@ -229,7 +229,7 @@ void ActorItemBoomerang::Update() {
                 this->func_ov031_020e49b0(0x8D70);
             }
 
-            sp3C = *data_027e0ce0->func_01fff148(0x0);
+            sp3C = *data_027e0ce0->func_01fff148(PlayerType_Link);
             sp3C.y += FX32_HALF;
 
             if (func_01ffb9cc(&sp3C, &this->mPos) <= FX32_HALF) {

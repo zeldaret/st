@@ -87,7 +87,7 @@ void ActorUnkSWOB::func_ov000_0209aa30(void) {
             u32 i;
 
             data_ov000_020b5214.func_ov000_0206db44(0xA3);
-            temp   = *data_027e0ce0->func_01fff148(0);
+            temp   = *data_027e0ce0->func_01fff148(PlayerType_Link);
             vec2.x = temp.x;
             vec2.y = temp.y + FX_F32_TO_FX32(3.0f);
             vec2.z = temp.z;

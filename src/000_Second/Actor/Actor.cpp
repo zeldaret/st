@@ -84,8 +84,8 @@ void Actor::GetOffsetPos(VecFx32 *pPos) const {
     pPos->y += this->mYOffset;
 }
 
-VecFx32 *Actor::func_ov000_0209853c(unk32 param1) {
-    return data_027e0ce0->func_01fff148(param1);
+VecFx32 *Actor::func_ov000_0209853c(PlayerType playerType) {
+    return data_027e0ce0->func_01fff148(playerType);
 }
 
 bool Actor::vfunc_04() {

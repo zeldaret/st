@@ -4,9 +4,9 @@
 #include "Actor/ActorProfile.hpp"
 #include "Physics/AABB.hpp"
 #include "Physics/Cylinder.hpp"
+#include "Player/PlayerActorBase.hpp"
 #include "RefStruct.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "flags.h"
 #include "global.h"
 #include "math.hpp"
@@ -18,6 +18,7 @@
 class UnkStruct_027e09bc;
 class UnkStruct_027e09bc_0C;
 class Actor_9C;
+class UnkStruct_ov031_Items_00;
 
 class ActorParams {
 public:
@@ -215,7 +216,7 @@ public:
     /* 3C */ virtual bool Drop(ActorGrabParams grabParams, const VecFx32 *pVel);
     /* 40 */ virtual void vfunc_40();
     /* 44 */ virtual void vfunc_44();
-    /* 48 */ virtual bool vfunc_48(unk32 param1);
+    /* 48 */ virtual bool vfunc_48(PlayerType playerType);
     /* 4C */ virtual ~Actor();
     /* 54 */
 
@@ -290,12 +291,12 @@ public:
     void func_ov000_020984d0();
     void func_ov000_020984f0();
     unk32 func_ov000_0209867c(unk32 param1);
-    u32 func_ov000_02098800(bool param1);
+    u32 func_ov000_02098800(PlayerType playerType);
     bool func_ov000_02098838();
     unk32 func_ov000_02098910(UnkStruct_ov031_Items_00 *param1, unk32 param2);
     void func_ov000_02098b8c(unk32 param1, UnkStruct_ov031_Items_00 *param2);
     s32 func_ov000_02098518(unk32 *param1);
-    VecFx32 *func_ov000_0209853c(unk32 param1);
+    VecFx32 *func_ov000_0209853c(PlayerType playerType);
     s32 func_ov000_02098554();
     s16 func_ov000_0209856c();
     s8 func_ov000_02098578();

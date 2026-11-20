@@ -16,6 +16,7 @@
 
 class MapObject_20;
 class CourseManager;
+class ActorUnkMLCK_A0;
 
 template <typename T> class FixedVector {
 private:
@@ -284,6 +285,9 @@ public:
     void func_ov001_020b8e54();
 };
 
+class Actor;
+class Actor_vfunc_30;
+
 class UnkStruct_027e0cd8_0C_1D0 {
 public:
     /* 00 (vtable) */
@@ -294,7 +298,10 @@ public:
     /* ?? */ virtual ~UnkStruct_027e0cd8_0C_1D0();
 
     // overlay 31
-    void func_ov031_020d9314(unk32 param1, void *param2);
+    void func_ov031_020d9314(unk32 param1, ActorUnkMLCK_A0 *param2);
+    void func_ov031_020d9398(void *param1);
+
+    static void func_ov031_020d9368(Actor *pActor, Actor_vfunc_30 *param2);
 
     // overlay 101
     void func_ov101_021837a0();

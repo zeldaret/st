@@ -641,8 +641,8 @@ void ActorShotArrow::func_ov031_020f2794(unk16 param1) {
 void ActorShotArrow::func_ov031_020f28ac() {
     VecFx32 sp1C;
     VecFx32 sp10;
-    bool var_r1;
-    bool var_r6;
+    PlayerType var_r1;
+    PlayerType var_r6;
     bool var_r7;
 
     STACK_PAD(4);
@@ -684,7 +684,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
 
                     if (this->func_ov000_02098800(var_r6)) {
                         data_027e0ce0->func_ov000_0208bd30(var_r6, 0xE6, 0, 0);
-                        VEC_Subtract(&this->mPos, this->func_ov000_0209853c(0), &sp1C);
+                        VEC_Subtract(&this->mPos, this->func_ov000_0209853c(PlayerType_Link), &sp1C);
                         this->func_ov031_020f2cac(&sp1C, true);
                     } else {
                         var_r7 = 1;
@@ -694,10 +694,10 @@ void ActorShotArrow::func_ov031_020f28ac() {
                 break;
             case 15:
                 if (this->mUnk_5C.mParams[1] == 0 || this->mUnk_5C.mParams[1] == 3) {
-                    data_027e0ce0->func_ov000_0208bc1c(1, 0, 0x18, NULL, NULL, 0);
+                    data_027e0ce0->func_ov000_0208bc1c(PlayerType_Zelda, 0, 0x18, NULL, NULL, 0);
                 }
 
-                VEC_Subtract(&this->mPos, this->func_ov000_0209853c(1), &sp1C);
+                VEC_Subtract(&this->mPos, this->func_ov000_0209853c(PlayerType_Zelda), &sp1C);
                 this->func_ov031_020f2cac(&sp1C, true);
                 break;
             case 3:

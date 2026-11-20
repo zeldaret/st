@@ -126,7 +126,7 @@ bool ActorUnkOBPC::func_ov024_020d7154(void) {
             if (data_027e09a4->IsTrain()) {
                 VecFx32_Copy(&data_027e0ce0->mUnk_38->mPos, &sp10);
             } else {
-                VecFx32_Copy(data_027e0ce0->func_01fff148(0), &sp10);
+                VecFx32_Copy(data_027e0ce0->func_01fff148(PlayerType_Link), &sp10);
             }
             break;
         case 2: {

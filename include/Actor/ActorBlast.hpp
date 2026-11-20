@@ -3,6 +3,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "RefStruct.hpp"
+#include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
 #include "types.h"
 

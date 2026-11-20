@@ -500,7 +500,7 @@ bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
     pTrainPlayer       = data_027e0ce0->mUnk_38;
 
     if (pTrainPlayer == NULL) {
-        VecFx32 *pPos = data_027e0ce0->func_01fff148(0);
+        VecFx32 *pPos = data_027e0ce0->func_01fff148(PlayerType_Link);
         VecFx32_Copy(pPos, &this->mUnk_A0.mUnk_04);
         func_01fff17c(&local_18, data_027e0ce0, 0);
         this->mUnk_A0.mUnk_10 = local_18;

@@ -230,11 +230,11 @@ void MapObjectBombFlower::vfunc_38() {
     bomb->SetState(ActorBombState_4);
 }
 
-unk32 MapObjectBombFlower::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
+unk32 MapObjectBombFlower::vfunc_28(PlayerType playerType, unk32 param2, unk32 param3) {
     if (this->mState == MapObjBombFlowerState_4) {
         return 0x0;
     }
-    return this->MapObjectPot_Base::vfunc_28(param1, param2, param3);
+    return this->MapObjectPot_Base::vfunc_28(playerType, param2, param3);
 }
 
 // non-matching

@@ -172,13 +172,13 @@ void MapObjectManager::func_ov017_020c033c(unk32 *param1, MapObjectManager *this
 }
 
 // https://decomp.me/scratch/ceRYG
-unk32 MapObjectManager::func_ov017_020c050c(unk32 param1, unk32 param2, unk32 param3, unk32 param4) {
+unk32 MapObjectManager::func_ov017_020c050c(unk32 param1, PlayerType playerType, unk32 param3, unk32 param4) {
     Vec2bCpp sp0 = *(Vec2bCpp *) ((u8 *) &param1 + 2);
 
     MapObject *pMapObj = this->func_01fff498(sp0);
 
     if (pMapObj != NULL) {
-        return pMapObj->vfunc_28(param2, param3, param4);
+        return pMapObj->vfunc_28(playerType, param3, param4);
     }
 
     return -1;

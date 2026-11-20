@@ -1,9 +1,24 @@
 #pragma once
 
 #include "MapObject/MapObject_10_Pot.hpp"
-#include "UnkStruct_027e0ce0.hpp"
 
 class Actor;
+class UnkStruct_ov031_020f3310;
+class UnkStruct_ov031_020e54d4;
+
+class UnkStruct_027e0ce0_38_Base {
+public:
+    /* 00 (vtable) */
+    /* 04 */
+
+    // data_ov000_020b2838
+    /* 00 */ virtual ~UnkStruct_027e0ce0_38_Base();
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2);
+    /* 0C */ virtual bool vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+                                   const VecFx32 *param4);
+    /* 10 */ virtual bool vfunc_10(RefStruct param1, unk32 param2);
+    /* 14 */
+};
 
 class UnkStruct_ov031_Items_00_Base : public UnkStruct_027e0ce0_38_Base {
 public:
@@ -105,4 +120,29 @@ public:
     void func_ov031_020d8f24();
     void func_ov031_020d8f58(unk16 param1);
     void func_ov031_020d8f98();
+};
+
+class UnkStruct_ov031_Items_01_Derived1 : public UnkStruct_ov031_Items_01 {
+public:
+    /* 00 (base) */
+    /* 2C */ PlayerType mPlayerType;
+    /* 30 */ unk16 mUnk_30;
+    /* 34 */
+
+    UnkStruct_ov031_Items_01_Derived1(PlayerType playerType);
+
+    // data_ov031_02112ae0
+    /* 0C */ virtual bool vfunc_0C(Actor *param1, VecFx32 *vector) override;
+};
+
+class UnkStruct_ov031_Items_01_Derived2 : public UnkStruct_ov031_Items_01 {
+public:
+    /* 00 (base) */
+    /* 2C */ PlayerType mPlayerType;
+    /* 30 */
+
+    UnkStruct_ov031_Items_01_Derived2(PlayerType playerType);
+
+    // data_ov031_02112afc
+    /* 0C */ virtual bool vfunc_0C(Actor *param1, VecFx32 *vector) override;
 };

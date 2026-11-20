@@ -321,7 +321,7 @@ unk32 MapObjectUnkWLMS::func_ov063_02160580(MapObjState param1, unk32 param2) {
     return 1;
 }
 
-unk32 MapObjectUnkWLMS::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
+unk32 MapObjectUnkWLMS::vfunc_28(PlayerType playerType, unk32 param2, unk32 param3) {
 #pragma unused(param1, param2, param3)
     if (mState == MapObjectUnkWLMSState_Closed) {
         this->func_ov063_02160580(MapObjectUnkWLMSState_Loading, 0);

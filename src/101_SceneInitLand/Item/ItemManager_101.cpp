@@ -16,9 +16,9 @@ UnkStruct_ItemManager_20::UnkStruct_ItemManager_20() :
     mUnk_08(new(HeapIndex_1) UnkStruct_ItemManager_20_08()),
     mUnk_0C(new(HeapIndex_1) UnkStruct_ItemManager_20_0C()),
     mUnk_10(new(HeapIndex_1) UnkStruct_ItemManager_20_10()) {
-    this->mUnk_00->func_ov031_020d9bd0();
-    this->mUnk_04->func_ov031_020d9598();
-    this->mUnk_08->func_ov031_020d9658();
+    UnkStruct_027e0d38::Create(this->mUnk_00);
+    UnkStruct_027e0d2c::Create(this->mUnk_04);
+    UnkStruct_027e0d30::Create(this->mUnk_08);
 }
 
 UnkStruct_ItemManager_20::~UnkStruct_ItemManager_20() {

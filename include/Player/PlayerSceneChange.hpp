@@ -9,6 +9,8 @@
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
 #include "math.hpp"
 
+class PlayerActorBase_70;
+
 class PlayerSceneChange : public UnkStruct_ov000_0208f820 {
 public:
     /* 00 (base) */
@@ -45,7 +47,7 @@ public:
 class PlayerSceneChange2 : public UnkStruct_ov000_0208f820 {
 public:
     /* 00 (base) */
-    /* 48 */ unk32 mUnk_48;
+    /* 48 */ PlayerActorBase_70 *mUnk_48;
     /* 4C */ unk32 mUnk_4C;
     /* 50 */ unk32 mUnk_50;
     /* 54 */ VecFx32 mUnk_54;

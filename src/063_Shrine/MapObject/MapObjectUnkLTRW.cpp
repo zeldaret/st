@@ -81,12 +81,12 @@ bool MapObjectUnkLTRW::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3)
     return true;
 }
 
-unk32 MapObjectUnkLTRW::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
+unk32 MapObjectUnkLTRW::vfunc_28(PlayerType playerType, unk32 param2, unk32 param3) {
     unk16 *plocal_60;
     unk16 local_60;
     plocal_60 = (unk16 *) &local_60;
 
-    MapObject::func_ov000_0209d22c(plocal_60, this, param1);
+    MapObject::func_ov000_0209d22c(plocal_60, this, playerType);
 
     unk16 angle = plocal_60[0];
 

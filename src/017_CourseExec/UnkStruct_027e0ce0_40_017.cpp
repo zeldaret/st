@@ -1,6 +1,7 @@
 #include "CommonFuncs.hpp"
 #include "Item/Item.hpp"
 #include "Player/PlayerActorBase.hpp"
+#include "RefStruct.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
@@ -113,7 +114,7 @@ bool PlayerLinkActor_9C::func_ov017_020bc640(u32 param1, bool param2, bool param
         temp_r6 = data_027e0ce0->mUnk_24;
 
         if (temp_r6 == NULL) {
-            data_027e0ce0->func_ov000_0208bc1c(0, this->mUnk_13A, this->mUnk_138, 0, &this->mUnk_13C, 0);
+            data_027e0ce0->func_ov000_0208bc1c(PlayerType_Link, this->mUnk_13A, this->mUnk_138, 0, &this->mUnk_13C, 0);
         } else {
             RefStruct sp14 = this->mUnk_008.Get32();
             RefStruct *ptr = &sp14;

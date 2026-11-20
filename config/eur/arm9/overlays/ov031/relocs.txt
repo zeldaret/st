@@ -109,13 +109,13 @@ from:0x020d93b0 kind:load to:0x027e0ce4 module:dtcm
 from:0x020d93b4 kind:load to:0x020d9368 module:overlay(31)
 from:0x020d93b8 kind:load to:0x01fff2fc module:itcm
 from:0x020d93cc kind:arm_call to:0x01fff458 module:itcm
-from:0x020d9444 kind:load to:0x02112ae0 module:overlay(31)
+from:0x020d9444 kind:load to:0x02112ad8 module:overlay(31) add:0x8
 from:0x020d9458 kind:arm_call to:0x0207b754 module:overlay(0)
 from:0x020d949c kind:load to:0x0203e964 module:main
 from:0x020d94a8 kind:arm_call to:0x0207b6c0 module:overlay(0)
 from:0x020d94bc kind:arm_call to:0x0207b6c0 module:overlay(0)
 from:0x020d94c4 kind:arm_call to:0x02011ff4 module:main
-from:0x020d951c kind:load to:0x02112afc module:overlay(31)
+from:0x020d951c kind:load to:0x02112af4 module:overlay(31) add:0x8
 from:0x020d9530 kind:arm_call to:0x0207b754 module:overlay(0)
 from:0x020d9548 kind:arm_call to:0x01fff148 module:itcm
 from:0x020d9558 kind:arm_call to:0x01ffb714 module:itcm
@@ -140,7 +140,7 @@ from:0x020d96c0 kind:thumb_call to:0x020d96c8 module:overlay(31)
 from:0x020d96d2 kind:thumb_call_arm to:0x020d9bc0 module:overlay(31)
 from:0x020d96f0 kind:load to:0x0208d8f0 module:overlay(0)
 from:0x020d9700 kind:load to:0x0208d928 module:overlay(0)
-from:0x020d9710 kind:load to:0x021529c4 module:overlays(30,58,81)
+from:0x020d9710 kind:load to:0x021529c4 module:overlay(58)
 from:0x020d9754 kind:load to:0x020930b8 module:overlay(0)
 from:0x020d97c0 kind:load to:0x020dda94 module:overlay(31)
 from:0x020d97d0 kind:load to:0x0209316c module:overlay(0)
@@ -226,7 +226,7 @@ from:0x020da4a4 kind:arm_call to:0x01ffd218 module:itcm
 from:0x020da4c0 kind:arm_call to:0x020d9d10 module:overlay(31)
 from:0x020da4f4 kind:arm_call to:0x01fff350 module:itcm
 from:0x020da51c kind:load to:0x027e0ce4 module:dtcm
-from:0x020da520 kind:load to:0x02112b18 module:overlay(31)
+from:0x020da520 kind:load to:0x02112b10 module:overlay(31) add:0x8
 from:0x020da55c kind:arm_call to:0x0207bffc module:overlay(0)
 from:0x020da570 kind:arm_call to:0x0207bffc module:overlay(0)
 from:0x020da578 kind:arm_call to:0x02011ff4 module:main

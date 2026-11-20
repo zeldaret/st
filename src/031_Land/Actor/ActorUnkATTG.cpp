@@ -85,7 +85,7 @@ void ActorUnkATTG::func_ov031_020f3eec(ActorState state, unk32 param2) {
 bool ActorUnkATTG::func_ov031_020f4014() {
     unk32 param1        = this->mUnk_5C.mParams[0] & 0xFF;
     MapManagerBase *ptr = gpCourseManager->mpMapMgr;
-    VecFx32 *param2     = data_027e0ce0->func_01fff148(0x0);
+    VecFx32 *param2     = data_027e0ce0->func_01fff148(PlayerType_Link);
 
     return ptr->func_ov000_020802ec(param1, param2);
 }

@@ -68,7 +68,7 @@ bool ActorRollingStone_104::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *pa
 
     bool var_r2 = true;
 
-    if (!ref.acRef.UnkCheck2Alt() && !ref.acRef.UnkCheck3(0x102)) {
+    if (!ref.acRef.UnkCheck2Alt() && ref.acRef.UnkCheck4(0x102) == PlayerType_Link) {
         var_r2 = false;
     }
 
@@ -779,7 +779,7 @@ bool ActorRollingStone::func_ov031_020f9ba4() {
     VecFx32 sp0;
 
     if (!data_027e0ce0->func_01fff1a4()) {
-        VecFx32 *pVec = data_027e0ce0->func_01fff148(0x0);
+        VecFx32 *pVec = data_027e0ce0->func_01fff148(PlayerType_Link);
 
         VecFx32 temp;
         temp.x = this->mPos.x - pVec->x;
@@ -793,8 +793,8 @@ bool ActorRollingStone::func_ov031_020f9ba4() {
         return VEC_Mag(&sp18) > FX_F32_TO_FX32(8.0f);
     }
 
-    VecFx32 *pVec1 = data_027e0ce0->func_01fff148(0x0);
-    VecFx32 *pVec2 = data_027e0ce0->func_01fff148(0x1);
+    VecFx32 *pVec1 = data_027e0ce0->func_01fff148(PlayerType_Link);
+    VecFx32 *pVec2 = data_027e0ce0->func_01fff148(PlayerType_Zelda);
 
     fx32 new_var;
 

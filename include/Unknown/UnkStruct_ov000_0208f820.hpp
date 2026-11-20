@@ -10,6 +10,7 @@
 
 class PlayerLinkActor_A0;
 class UnkStruct_027e0ce0_40;
+class PlayerLinkActor;
 
 class UnkStruct_ov000_0208f820_14 {
 public:
@@ -35,35 +36,6 @@ public:
     ~UnkStruct_PlayerGet_64_2();
 
     void func_ov000_0208a100();
-};
-
-class UnkStruct_ov000_0208f820_28_98 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ u16 mUnk_08;
-    /* 0C */ PAD(0x0C, 0x38);
-    /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
-
-    void func_ov093_0216f76c(VecFx32 *param1, unk32 param2);
-};
-
-class UnkStruct_ov000_0208f820_28 {
-public:
-    /* 00 */ PAD(0x00, 0x38);
-    /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
-    /* 42 */ PAD(0x44, 0x48);
-    /* 48 */ unk32 mUnk_48;
-    /* 48 */ unk32 mUnk_4C;
-    /* 48 */ unk32 mUnk_50;
-    /* 54 */ ItemManager *pItemManager;
-    /* 58 */ PAD(0x58, 0x94);
-    /* 94 */ unk32 mUnk_94;
-    /* 98 */ UnkStruct_ov000_0208f820_28_98 *mUnk_98;
-
-    void func_ov000_0208cf20(unk32 param1, unk32 param2);
-    void func_ov000_0208d12c();
-    void func_ov058_02152a24();
 };
 
 class UnkStruct_ov000_0208f820_2c {
@@ -132,7 +104,7 @@ public:
     /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk32 mUnk_20;
     /* 24 */ UnkStruct_027e0ce0_40 *mUnk_24;
-    /* 28 */ UnkStruct_ov000_0208f820_28 *mUnk_28;
+    /* 28 */ PlayerLinkActor *mpLink;
     /* 2C */ UnkStruct_ov000_0208f820_2c *mUnk_2C;
     /* 30 */ PlayerLinkActor_A0 *mUnk_30;
     /* 34 */ VecFx32 *mUnk_34;

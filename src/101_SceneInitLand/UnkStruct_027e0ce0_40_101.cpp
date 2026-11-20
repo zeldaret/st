@@ -21,8 +21,8 @@ UnkStruct_027e0ce0_40::UnkStruct_027e0ce0_40(bool param1, UnkStruct_027e0ce0_20 
     mIsSceneTowerOutsideStairs(data_027e09a4->IsTowerOutsideStairs()),
     mIsSceneBossByrne(data_027e09a4->IsBossByrne()),
     mUnk_33B(param1) {
-    this->mpPlayer = &this->mPlayer;
-    this->mUnk_330 = this->mpZelda;
+    this->mPlayerActors[PlayerType_Link]  = &this->mPlayer;
+    this->mPlayerActors[PlayerType_Zelda] = this->mpZelda;
     this->mPlayer.func_ov001_020bcb60(this->mpZelda);
 
     if (this->mpZelda != NULL) {
