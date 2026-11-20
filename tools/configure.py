@@ -263,8 +263,8 @@ config.libs = [
             Object("001_SceneInit/SceneInitializers_001.cpp"),
             Object("001_SceneInit/CourseList.cpp"),
             Object("001_SceneInit/UnkStruct_027e09b8_001.cpp"),
-            Object("001_SceneInit/UnkStruct_027e0cd8_001.cpp"),
-            Object("001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp"),
+            Object("001_SceneInit/Course/CourseManager_001.cpp"),
+            Object("001_SceneInit/Course/MapManagerBase_001.cpp"),
             Object("001_SceneInit/ZeldaArrangeBinary.cpp"),
             Object("001_SceneInit/ZeldaMapBinary.cpp"),
             Object("001_SceneInit/UnkStruct_027e095c_001.cpp"),
@@ -568,7 +568,7 @@ config.libs = [
     GameLib(
         "Overlay 31",
         [
-            Object("031_Land/UnkStruct_027e0cd8_0C_031.cpp"),
+            Object("031_Land/Course/MapManagerLand.cpp"),
             Object("031_Land/UnkStruct_ov031_Items_02_031.cpp"),
             Object("031_Land/Render/SkyboxLand.cpp"),
             Object("031_Land/code_020d9314_031.cpp"),
@@ -1558,7 +1558,7 @@ config.libs = [
             Object("101_SceneInitLand/UnkStruct_027e0ce0_40_101.cpp"),
             Object("101_SceneInitLand/Player/PlayerLinkActor_A0_1C_101.cpp"),
             Object("101_SceneInitLand/UnkStruct_027e09a4_54_101.cpp"),
-            Object("101_SceneInitLand/UnkStruct_027e0cd8_0C_101.cpp"),
+            Object("101_SceneInitLand/Course/MapManagerLand_101.cpp"),
             Object("101_SceneInitLand/MapObjectProfile_Derived6_101.cpp"),
         ],
         extra_cflags=["-thumb"],
@@ -1569,7 +1569,7 @@ config.libs = [
             Object("102_CourseExecLand/UnkStruct_027e0ce0_40_102.cpp"),
             Object("102_CourseExecLand/MapObjectUnkSAND_102.cpp"),
             Object("102_CourseExecLand/MapObjectUnkPTFL_102.cpp"),
-            Object("102_CourseExecLand/UnkStruct_027e0cd8_0C_102.cpp"),
+            Object("102_CourseExecLand/Course/MapManagerLand_102.cpp"),
             Object("102_CourseExecLand/ActorUnkMLCK_102.cpp", extra_cflags=["-ipa off"]), # fixes data order
         ]
     ),

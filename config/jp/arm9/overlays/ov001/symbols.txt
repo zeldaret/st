@@ -507,10 +507,10 @@ data_ov001_020c27a8 kind:data(any) addr:0x020c3ffc
 DSProt_Garbage kind:data(any) addr:0x020c4048
 bad_mac_addr kind:data(any) addr:0x020c4060 local
 __sinit_CourseList.cpp kind:function(thumb,size=0x24) addr:0x020c4068 local
-__sinit_UnkStruct_027e0cd8_0C_001.cpp kind:function(thumb,size=0xb8) addr:0x020c408c
+__sinit_Course/MapManagerBase_001.cpp kind:function(thumb,size=0xb8) addr:0x020c408c
 __sinit_code_020c099c.cpp kind:function(thumb,size=0x10) addr:0x020c4144 local
 .p__sinit_CourseList.cpp kind:data(word) addr:0x020c4154 local
-.p__sinit_UnkStruct_027e0cd8_0C_001.cpp kind:data(word) addr:0x020c4158
+.p__sinit_Course/MapManagerBase_001.cpp kind:data(word) addr:0x020c4158
 .p__sinit_code_020c099c.cpp kind:data(word) addr:0x020c415c local
 NitroStaticInit_11 kind:data(word) addr:0x020c4160 local
 NitroStaticInit_8 kind:data(word) addr:0x020c4164 local

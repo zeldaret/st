@@ -21,12 +21,12 @@ src/001_SceneInit/UnkStruct_027e09b8_001.cpp:
     complete
     .text       start:0x020b8d84 end:0x020b8f94
 
-src/001_SceneInit/UnkStruct_027e0cd8_001.cpp:
+src/001_SceneInit/Course/CourseManager_001.cpp:
     complete
     .text       start:0x020b8f94 end:0x020b9a20
     .data       start:0x020c41b0 end:0x020c4234
 
-src/001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp:
+src/001_SceneInit/Course/MapManagerBase_001.cpp:
     .text       start:0x020b9a20 end:0x020baab0
     .init       start:0x020c408c end:0x020c4144
     .ctor       start:0x020c4158 end:0x020c415c
