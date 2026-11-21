@@ -4,6 +4,7 @@
 #include "Actor/ActorProfile.hpp"
 #include "Actor_Derived1.hpp"
 #include "RefStruct.hpp"
+#include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
 #include "nns/g3d/sbc.h"
 #include "types.h"

@@ -33,10 +33,10 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
     s32 temp_r8_5;
     bool var_r9;
 
-    VecFx32_Copy(&this->mUnk_00, &this->mUnk_0C);
+    VecFx32_Copy(&this->mUnk_00[PlayerType_Link], &this->mUnk_00[PlayerType_Zelda]);
     this->mUnk_1C = this->mUnk_18;
 
-    if (this->mpPlayer != NULL) {
+    if (this->mPlayerActors[PlayerType_Link] != NULL) {
         if (this->mUnk_28 == 0) {
             if (data_027e09b8->func_ov000_020732dc(2) == 0 && data_0204a088->mUnk_04 == 1) {
                 if (data_0204a088->mUnk_08 == 2 || data_0204a088->mUnk_08 == 6) {
@@ -50,7 +50,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                     sp2C.s.mUnk_02 = temp_r8->mUnk_0CA;
                     sp2C.s.mUnk_08 = FX_MUL(func_01ffb9cc(&temp_r8->mUnk_040, &temp_r8->mUnk_034), data_ov000_020afd0c);
 
-                    sp4C = this->mpPlayer->mPos.vec;
+                    sp4C = this->mPlayerActors[PlayerType_Link]->mPos.vec;
                     sp4C.y += data_ov000_020afd14;
                     temp_r8->func_ov000_0207834c(&sp4C, &sp2C, data_ov000_020afd08);
 
@@ -78,16 +78,16 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
     }
 
     if (this->mUnk_30 != NULL) {
-        VecFx32_Copy(&this->mUnk_30->mUnk_00, &this->mUnk_00);
-        this->mUnk_00.y += data_ov000_020afd14;
+        VecFx32_Copy(&this->mUnk_30->mUnk_00[PlayerType_Link], &this->mUnk_00[PlayerType_Link]);
+        this->mUnk_00[PlayerType_Link].y += data_ov000_020afd14;
         this->mUnk_18 = 0x01;
         return;
     }
 
     var_r9 = this->mUnk_34->UnkCheck1();
 
-    if (this->mpZelda != NULL) {
-        this->mUnk_18 = this->mpZelda->func_ov093_0216e8e4(this);
+    if (this->mPlayerActors[PlayerType_Zelda] != NULL) {
+        this->mUnk_18 = this->mPlayerActors[PlayerType_Zelda]->func_ov093_0216e8e4(this);
 
         if (this->mUnk_18 != 0) {
             if (this->mUnk_18 == 4 && pItemMgr != NULL) {
@@ -95,11 +95,11 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
             }
 
             if (var_r9 != 0) {
-                this->mUnk_00.y = this->mpZelda->mPos.vec.y + 0x191F;
+                this->mUnk_00[PlayerType_Link].y = this->mPlayerActors[PlayerType_Zelda]->mPos.vec.y + 0x191F;
                 return;
             }
 
-            this->mUnk_00.y += data_ov000_020afd14;
+            this->mUnk_00[PlayerType_Link].y += data_ov000_020afd14;
 
             if (this->mUnk_18 != 3) {
                 return;
@@ -109,10 +109,11 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                 return;
             }
 
-            func_01ffb714(&this->mpPlayer->mPos.vec, &this->mpZelda->mPos.vec, &sp14);
+            VEC_Subtract(&this->mPlayerActors[PlayerType_Link]->mPos.vec, &this->mPlayerActors[PlayerType_Zelda]->mPos.vec,
+                         &sp14);
             sp14.y = 0;
 
-            VecFx32_Copy(&this->mpPlayer->mPos.vec, &sp20);
+            VecFx32_Copy(&this->mPlayerActors[PlayerType_Link]->mPos.vec, &sp20);
             sp20.y += data_ov000_020ab4dc[PlayerCharacter_Link].mUnk_66 / 2;
 
             if (!data_027e09bc->mUnk_04[0]->func_01ffd43c(&sp4, &sp20, 1)) {
@@ -168,7 +169,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                 func_01ff97c8(&sp14, ROUND_FX32(data_ov000_020afd10 * var_r2_2));
             }
 
-            VecFx32_Add(&this->mUnk_00, &sp14, &this->mUnk_00);
+            VEC_Add(&this->mUnk_00[PlayerType_Link], &sp14, &this->mUnk_00[PlayerType_Link]);
             return;
         }
     }
@@ -177,22 +178,22 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
         this->mUnk_18 = pItemMgr->func_ov000_020a8a74(this);
 
         if (this->mUnk_18 != 0) {
-            PlayerLinkActor *temp_r10_2 = this->mpPlayer;
+            PlayerLinkActor *temp_r10_2 = (PlayerLinkActor *) this->mPlayerActors[PlayerType_Link];
 
             if (var_r9 != 0) {
-                this->mUnk_00.y = this->mpZelda->mPos.vec.y + 0x191F;
+                this->mUnk_00[PlayerType_Link].y = this->mPlayerActors[PlayerType_Zelda]->mPos.vec.y + 0x191F;
             } else {
-                this->mUnk_00.y += data_ov000_020afd14;
+                this->mUnk_00[PlayerType_Link].y += data_ov000_020afd14;
             }
 
             if (this->mUnk_18 == 0x0D) {
-                VecFx32_SubXZ(&this->mUnk_00, &temp_r10_2->mPos.vec, &sp8);
+                VecFx32_SubXZ(&this->mUnk_00[PlayerType_Link], &temp_r10_2->mPos.vec, &sp8);
 
-                PlayerLinkActor_9C *ptr = this->mpPlayer->mUnk_90;
+                PlayerLinkActor_9C *ptr = this->mPlayerActors[PlayerType_Link]->mUnk_90;
                 s16 value1              = FX_Atan2Idx(sp8.x, sp8.z);
                 temp_r8_5               = func_ov000_0208832c(value1, ptr->func_ov000_02084944());
 
-                if (VecFx32_Length(&sp8) <= temp_r8_5) {
+                if (VEC_Mag(&sp8) <= temp_r8_5) {
                     if (data_027e0ce0->func_ov000_0208bf34(0)) {
                         var_r7 = 0;
                         goto comp;
@@ -200,8 +201,8 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
 
                     if (!(sp8.x == 0 && sp8.z == 0 ? 1 : 0)) {
                         func_01ff9770(&sp8, temp_r8_5);
-                        this->mUnk_00.x = temp_r10_2->mPos.vec.x + sp8.x;
-                        this->mUnk_00.z = temp_r10_2->mPos.vec.z + sp8.z;
+                        this->mUnk_00[PlayerType_Link].x = temp_r10_2->mPos.vec.x + sp8.x;
+                        this->mUnk_00[PlayerType_Link].z = temp_r10_2->mPos.vec.z + sp8.z;
                     }
                 }
             }
@@ -233,12 +234,12 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
         }
     }
 
-    this->mUnk_18 = this->mpPlayer->func_ov000_0208dd60(this);
+    this->mUnk_18 = this->mPlayerActors[PlayerType_Link]->func_ov000_0208dd60(this);
 
     if (var_r9 != 0) {
-        this->mUnk_00.y = this->mpZelda->mPos.vec.y + 0x191F;
+        this->mUnk_00[PlayerType_Link].y = this->mPlayerActors[PlayerType_Zelda]->mPos.vec.y + 0x191F;
     } else {
-        this->mUnk_00.y += data_ov000_020afd14;
+        this->mUnk_00[PlayerType_Link].y += data_ov000_020afd14;
     }
 }
 

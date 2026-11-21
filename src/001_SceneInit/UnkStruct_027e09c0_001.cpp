@@ -62,7 +62,7 @@ void UnkStruct_027e09c0::func_ov001_020be3c4() {
     data_027e0a48.func_ov000_0207f1f0();
 }
 
-void UnkStruct_027e09c0::func_ov001_020be3dc(UnkFileSystem3 *param1, UnkStruct_027e0cd8_0C_Base *param2) {
+void UnkStruct_027e09c0::func_ov001_020be3dc(UnkFileSystem3 *param1, MapManagerBase *param2) {
     data_027e0a48.func_ov000_0207f280(param2);
     data_027e09e8.func_ov000_0207ba84(param1, param2);
 }

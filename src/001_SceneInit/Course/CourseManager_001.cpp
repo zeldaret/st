@@ -1,5 +1,6 @@
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Save/SaveManager.hpp"
 #include "System/OverlayManager.hpp"
@@ -11,7 +12,6 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_ov000_020b504c.hpp"
@@ -33,14 +33,14 @@ struct UnkStruct7 {
     /* 04 */
 };
 
-UnkStruct_027e0cd8 *UnkStruct_027e0cd8::Create() {
-    return new(HeapIndex_1) UnkStruct_027e0cd8();
+CourseManager *CourseManager::Create() {
+    return new(HeapIndex_1) CourseManager();
 }
 
-UnkStruct_027e0cd8::UnkStruct_027e0cd8() :
+CourseManager::CourseManager() :
     mUnk_04(NULL),
     mUnk_08(NULL),
-    mUnk_0C(NULL),
+    mpMapMgr(NULL),
     mUnk_10(NULL),
     mUnk_16(true),
     mUnk_17(true),
@@ -59,12 +59,12 @@ UnkStruct_027e0cd8::UnkStruct_027e0cd8() :
     }
 }
 
-UnkStruct_027e0cd8::~UnkStruct_027e0cd8() {
+CourseManager::~CourseManager() {
     DELETE(this->mUnk_04);
     DELETE(this->mUnk_08);
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b7830(const EntranceInfo *param1) {
+void CourseManager::func_ov001_020b7830(const EntranceInfo *param1) {
     CourseListEntry *pEntry;
     UnkStruct_func_ov000_020702a8 *pUnk1;
 
@@ -144,7 +144,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7830(const EntranceInfo *param1) {
     this->func_ov001_020b7e68(&sceneChange, 0x01);
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b7a7c() {
+void CourseManager::func_ov001_020b7a7c() {
     this->func_ov001_020b818c();
     this->func_ov001_020b803c();
 
@@ -172,7 +172,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7a7c() {
     gpActorManager->func_ov001_020bb414();
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b7b38(const CourseListEntry *pEntry, const UnkStruct_func_ov000_020702a8 *pUnk1) {
+void CourseManager::func_ov001_020b7b38(const CourseListEntry *pEntry, const UnkStruct_func_ov000_020702a8 *pUnk1) {
     if (pEntry->saveCourseIndex < SaveCourseIndex_Max) {
         SaveManager_00 *ptr = gSaveManager.mUnk_000;
         this->mUnk_04->func_ov000_02081354(pEntry, pUnk1, &ptr->unk_030[pEntry->saveCourseIndex], false);
@@ -200,7 +200,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7b38(const CourseListEntry *pEntry, cons
     }
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b7c08(const EntranceInfo *param1, const UnkStruct_WarpUnk1_A0 *param2) {
+void CourseManager::func_ov001_020b7c08(const EntranceInfo *param1, const UnkStruct_WarpUnk1_A0 *param2) {
     EntranceInfo sceneChange(param1);
     Vec2s sp4;
 
@@ -273,7 +273,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7c08(const EntranceInfo *param1, const U
     }
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b7d64(const EntranceInfo *param1) {
+void CourseManager::func_ov001_020b7d64(const EntranceInfo *param1) {
     UnkStruct_027e0cd8_04_0C *iVar7;
     u32 temp_r1;
     u16 uVar5;
@@ -288,7 +288,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7d64(const EntranceInfo *param1) {
         case 1:
         case 3:
         case 6:
-            this->mUnk_0C = new(HeapIndex_1) UnkStruct_027e0cd8_0C(this);
+            this->mpMapMgr = new(HeapIndex_1) MapManagerLand(this);
 
             uVar3   = iVar7->mUnk_0C & 0x0F;
             temp_r1 = iVar7->mUnk_0C;
@@ -314,28 +314,28 @@ void UnkStruct_027e0cd8::func_ov001_020b7d64(const EntranceInfo *param1) {
             break;
         case 2:
         case 4:
-            this->mUnk_0C = new(HeapIndex_1) UnkStruct_027e0cd8_0C_Derived2(this);
+            this->mpMapMgr = new(HeapIndex_1) MapManagerTrain(this);
             break;
         case 5:
-            this->mUnk_0C = new(HeapIndex_1) UnkStruct_027e0cd8_0C_Derived3(this);
+            this->mpMapMgr = new(HeapIndex_1) MapManagerBattle(this);
             break;
         default:
             break;
     }
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b7e50() {
-    DELETE(this->mUnk_0C);
+void CourseManager::func_ov001_020b7e50() {
+    DELETE(this->mpMapMgr);
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b7e68(const EntranceInfo *param1, bool param2) {
+void CourseManager::func_ov001_020b7e68(const EntranceInfo *param1, bool param2) {
     if (this->mUnk_10 != NULL) {
         this->mUnk_10->func_ov024_020d2520((EntranceInfo *) param1);
     }
 
     data_ov000_020b504c.func_ov001_020be92c(this->mUnk_04->mUnk_0C);
-    this->mUnk_0C->func_ov001_020b85d0(param1);
-    this->mUnk_0C->vfunc_1C(param1, this->mUnk_04->mUnk_01, param2);
+    this->mpMapMgr->func_ov001_020b85d0(param1);
+    this->mpMapMgr->vfunc_1C(param1, this->mUnk_04->mUnk_01, param2);
 
     data_ov000_020b50c0.func_ov001_020bde4c(param1);
     data_027e0ce0->func_ov001_020bc65c();
@@ -354,18 +354,18 @@ void UnkStruct_027e0cd8::func_ov001_020b7e68(const EntranceInfo *param1, bool pa
     if (data_027e09a4->IsSceneModeBattle()) {
         for (int i = 0; i < 4; i++) {
             UnkStruct_027e0ce0 *ptr             = data_027e0ce0;
-            const UnkStruct_ov001_020c40f4 *arg = this->mUnk_0C->func_ov001_020b8a5c(i, 0x00);
+            const UnkStruct_ov001_020c40f4 *arg = this->mpMapMgr->func_ov001_020b8a5c(i, 0x00);
             ptr->func_ov001_020bc6d8(i, arg);
         }
     } else if (unk_10 == 2 || unk_10 == 4) {
         UnkStruct_027e0ce0 *ptr             = data_027e0ce0;
-        const UnkStruct_ov001_020c40f4 *arg = this->mUnk_0C->func_ov001_020b8a5c(param1->spawnIndex, 0x00);
+        const UnkStruct_ov001_020c40f4 *arg = this->mpMapMgr->func_ov001_020b8a5c(param1->spawnIndex, 0x00);
         ptr->func_ov001_020bc6e8(arg);
     } else {
-        UnkStruct_027e0cd8_0C_Base *temp_pUnkC = this->mUnk_0C;
-        u32 temp_unk118                        = temp_pUnkC->mUnk_118;
-        u8 temp_spawn                          = param1->spawnIndex;
-        UnkStruct_027e0ce0 *ptr                = data_027e0ce0;
+        MapManagerBase *temp_pUnkC = this->mpMapMgr;
+        u32 temp_unk118            = temp_pUnkC->mUnk_118;
+        u8 temp_spawn              = param1->spawnIndex;
+        UnkStruct_027e0ce0 *ptr    = data_027e0ce0;
 
         const UnkStruct_ov001_020c40f4 *spC = temp_pUnkC->func_ov001_020b8a5c(param1->spawnIndex, 0);
 
@@ -375,7 +375,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7e68(const EntranceInfo *param1, bool pa
     data_027e09bc->func_ov000_020771c8();
     unk32 iVar7 = data_027e09a0->GetCourseEntry(param1->sceneIndex)->unk_10;
     data_027e09c0->func_ov000_0207da40();
-    this->mUnk_0C->vfunc_08();
+    this->mpMapMgr->vfunc_08();
 
     if (iVar7 == 2 || iVar7 == 4) {
         data_ov026_02138d10->func_ov026_020dca14();
@@ -395,8 +395,8 @@ void UnkStruct_027e0cd8::func_ov001_020b7e68(const EntranceInfo *param1, bool pa
     }
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b803c() {
-    this->mUnk_0C->vfunc_20();
+void CourseManager::func_ov001_020b803c() {
+    this->mpMapMgr->vfunc_20();
 
     if (data_027e09a4->IsSceneModeAdventure() && data_ov024_020d8660 != NULL) {
         data_ov024_020d8660->func_ov024_020c4cc8();
@@ -413,14 +413,14 @@ void UnkStruct_027e0cd8::func_ov001_020b803c() {
     DELETE_ARRAY(gSaveManager.mUnk_244);
     data_ov000_020b50c0.func_ov001_020bde5c();
     data_ov000_020b504c.func_ov001_020be94c();
-    this->mUnk_0C->func_ov001_020b88ec();
+    this->mpMapMgr->func_ov001_020b88ec();
 
     if (this->mUnk_10 != NULL) {
         this->mUnk_10->func_ov024_020d2564();
     }
 }
 
-bool UnkStruct_027e0cd8::func_ov001_020b80fc(SceneIndex sceneIndex) {
+bool CourseManager::func_ov001_020b80fc(SceneIndex sceneIndex) {
     int index;
 
     switch (sceneIndex) {
@@ -442,7 +442,7 @@ bool UnkStruct_027e0cd8::func_ov001_020b80fc(SceneIndex sceneIndex) {
     return this->mUnk_48[index];
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b8120(SceneIndex sceneIndex) {
+void CourseManager::func_ov001_020b8120(SceneIndex sceneIndex) {
     int index;
 
     switch (sceneIndex) {
@@ -466,7 +466,7 @@ void UnkStruct_027e0cd8::func_ov001_020b8120(SceneIndex sceneIndex) {
     }
 }
 
-void UnkStruct_027e0cd8::func_ov001_020b818c() {
+void CourseManager::func_ov001_020b818c() {
     int index;
 
     switch (data_027e09a4->CurrentSceneIndex()) {
@@ -486,4 +486,4 @@ void UnkStruct_027e0cd8::func_ov001_020b818c() {
     }
 }
 
-DECL_INSTANCE(UnkStruct_027e0cd8, data_027e0cd8);
+DECL_INSTANCE(CourseManager, gpCourseManager);

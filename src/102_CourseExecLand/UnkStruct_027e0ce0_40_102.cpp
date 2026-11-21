@@ -1,12 +1,12 @@
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorUnkIWTS.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "Unknown/UnkStruct_027e0954.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
@@ -32,7 +32,7 @@ bool PlayerActorBase_74::UnknownInline1(u32 index, VecFx32 *pVec) {
         return false;
     }
 
-    temp_r0_3 = data_027e0cd8->mUnk_0C->vfunc_28(&this->mUnk_1C[index], 1, 0) + 0xF6;
+    temp_r0_3 = gpCourseManager->mpMapMgr->vfunc_28(&this->mUnk_1C[index], 1, 0) + 0xF6;
 
     if (temp_r0_3 >= this->mUnk_1C[index].y + FX32_HALF) {
         return false;

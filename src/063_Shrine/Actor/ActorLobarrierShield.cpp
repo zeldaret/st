@@ -119,7 +119,7 @@ ActorLobarrierShield_174::ActorLobarrierShield_174(Actor *param1) {
 
 void ActorLobarrierShield_174::vfunc_10(const Actor *actor) {
     ((ActorLobarrierShield *) mUnk_2C)->func_ov063_0215b724();
-    func_ov000_0207b70c(this, (Actor *) actor);
+    this->UnkStruct_ov031_Items_01::vfunc_10(actor);
 }
 
 void ActorLobarrierShield::func_ov063_0215acec(RefStruct *ref1, RefStruct ref2) {
@@ -132,7 +132,7 @@ void ActorLobarrierShield::func_ov063_0215acec(RefStruct *ref1, RefStruct ref2) 
 }
 
 ActorLobarrierShield::ActorLobarrierShield() :
-    mUnk_0B0(G3d_GetModelPtr(GET_PROFILE(ActorProfileLobarrierShield)->vfunc_04()->mUnk_50)),
+    mUnk_0B0(NNS_G3dGetMdl(GET_PROFILE(ActorProfileLobarrierShield)->vfunc_04()->mUnk_50)),
     mUnk_120(0),
     mUnk_124(this),
     lobarrier(NULL),
@@ -236,7 +236,7 @@ void ActorLobarrierShield::func_ov063_0215b090() {
 
     mUnk_1C8 += DEG_TO_ANG(45);
     VecFx32_Copy(&mPos, &mPrevPos);
-    VecFx32_Add(&mPos, &mVel, &mPos);
+    VEC_Add(&mPos, &mVel, &mPos);
 
     if (mVel.x == FX_F32_TO_FX32(0.0f) && mVel.z == FX_F32_TO_FX32(0.0f)) {
         mVel.y -= mUnk_2C;
@@ -258,7 +258,7 @@ void ActorLobarrierShield::func_ov063_0215b1bc() {
 
     VecFx32 vec;
     VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), &vec);
-    func_01ffa7a0(&vec, &mUnk_1A4, &vec);
+    MTX_MultVec33(&vec, &mUnk_1A4, &vec);
 
     s16 angle = FX_Atan2Idx(vec.x, vec.z);
     MTX_RotY33_(&mUnk_1A4, SIN(angle), COS(angle));
@@ -267,7 +267,7 @@ void ActorLobarrierShield::func_ov063_0215b1bc() {
 void ActorLobarrierShield::func_ov063_0215b244() {
     mVel.y -= mUnk_2C;
     VecFx32_Copy(&mPos, &mPrevPos);
-    VecFx32_Add(&mPos, &mVel, &mPos);
+    VEC_Add(&mPos, &mVel, &mPos);
 
     this->func_ov000_02098b8c(1, NULL);
 
@@ -310,7 +310,7 @@ void ActorLobarrierShield::Update() {
 
     if (this->lobarrier != NULL) {
         VecFx32 sp14 = this->lobarrier->mUnk_25C;
-        func_01ffb714(&sp14, &this->mPos, &sp14);
+        VEC_Subtract(&sp14, &this->mPos, &sp14);
 
         s16 var_r4_2;
         s16 var_r5 = sp14.z;
@@ -321,7 +321,7 @@ void ActorLobarrierShield::Update() {
         this->mUnk_150.mUnk_0E.y = var_r6;
         this->mUnk_150.mUnk_0E.z = var_r5;
 
-        VecFx32 *var_r0 = data_027e0ce0->func_01fff148(0);
+        VecFx32 *var_r0 = data_027e0ce0->func_01fff148(PlayerType_Link);
 
         // probably a disabled debug print that still ends up messing the codegen
         (void) ((f32) this->lobarrier->mUnk_25C.z);
@@ -333,7 +333,7 @@ void ActorLobarrierShield::Update() {
         this->mUnk_150.mUnk_08.z = var_r5 + (s16) ((1 - COS(angle)) >> 1);
     } else if (this->mState == 5) {
         VecFx32 sp14 = this->mUnk_1CC.vec;
-        func_01ffb714(&sp14, &this->mPos, &sp14);
+        VEC_Subtract(&sp14, &this->mPos, &sp14);
 
         s16 var_r4_2;
         s16 var_r5 = sp14.z;
@@ -344,7 +344,7 @@ void ActorLobarrierShield::Update() {
         this->mUnk_150.mUnk_0E.y = var_r6;
         this->mUnk_150.mUnk_0E.z = var_r5;
 
-        VecFx32 *var_r0 = data_027e0ce0->func_01fff148(0);
+        VecFx32 *var_r0 = data_027e0ce0->func_01fff148(PlayerType_Link);
 
         // same as above
         (void) ((f32) this->mUnk_1CC.vec.z);

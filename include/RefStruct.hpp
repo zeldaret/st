@@ -28,6 +28,12 @@ enum ActorRefId_ {
     //! TODO: more ids?
 };
 
+typedef enum PlayerType_ {
+    /* 0 */ PlayerType_Link  = 0x00,
+    /* 1 */ PlayerType_Zelda = 0x01,
+    /* 2 */ PlayerType_Max,
+} PlayerType;
+
 union RefCommon {
     struct {
         /* 00 */ u16 index : 14; // for actors this is used as an index to the actor table
@@ -36,8 +42,10 @@ union RefCommon {
         /* 02 */ u16 unk : 4;
         /* 04 */
     };
-    /* 00 */ u16 unk_00;
-    /* 02 */ u16 unk_02;
+    struct {
+        /* 00 */ u16 unk_00;
+        /* 02 */ u16 unk_02;
+    };
     /* 04 */
 };
 
@@ -45,7 +53,7 @@ struct ActorRef {
     union {
         struct {
             /* 00 */ u16 type_index;
-            /* 02 */ u16 unk_id;
+            /* 02 */ u16 unk_id; // related to PlayerType
             /* 04 */
         };
         u32 data;
@@ -96,14 +104,19 @@ struct ActorRef {
         return ret;
     }
 
-    const bool UnkCheck3(u16 value) {
-        BOOL ret = false;
+    const PlayerType UnkCheck4(u16 value) {
+        PlayerType ret = PlayerType_Link;
 
         if (this->HasTypeIndexValue(value) && (this->unk_id == 1 || this->unk_id == 3)) {
-            ret = true;
+            ret = PlayerType_Zelda;
         }
 
         return ret;
+    }
+
+    const PlayerType UnkCheck3(u16 value) {
+        return (PlayerType) (this->UnkCheck4(value) == 0 /* PlayerType_Link */ ? 0 /* PlayerType_Link */
+                                                                               : 1 /* PlayerType_Zelda */);
     }
 };
 
@@ -140,6 +153,11 @@ struct RefStruct {
 
     RefStruct(u32 value) {
         this->data = value;
+    }
+
+    RefStruct(u16 param1, u16 param2) {
+        this->common.unk_00 = param1;
+        this->common.unk_02 = param2;
     }
 
     void Reset() {

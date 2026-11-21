@@ -5,6 +5,7 @@
 #include "Actor/ActorUnkGYAM.hpp"
 #include "Actor/ActorUnkIWTS.hpp"
 #include "Actor/ActorUnkMRD2.hpp"
+#include "Course/CourseManager.hpp"
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Physics/Cylinder.hpp"
@@ -15,7 +16,6 @@
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d30.hpp"
@@ -109,7 +109,7 @@ ActorShotArrow::~ActorShotArrow() {
     if (func_ov000_0205aeac()) {
         bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
         if (paramIs3Or4) {
-            data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00);
+            gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
         }
     }
 }
@@ -124,13 +124,13 @@ bool ActorShotArrow::Init(unk32 param1) {
     this->mVel.x   = FX_MUL(sin_value, 1024);
     this->mVel.z   = FX_MUL(cos_value, 1024);
     this->mVel.y   = 0;
-    this->mUnk_16C = VecFx32_Length(&this->mVel);
+    this->mUnk_16C = VEC_Mag(&this->mVel);
 
     if (func_ov000_0205aeac()) {
         bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
         if (paramIs3Or4) {
-            VecFx32_Copy(&this->mPos, &this->mUnk_1DC.mUnk_00);
-            data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_1DC.mUnk_00);
+            VecFx32_Copy(&this->mPos, &this->mUnk_1DC.mUnk_00.vec);
+            gpCourseManager->mpMapMgr->func_ov000_02080a5c(&this->mUnk_1DC.mUnk_00.vec);
         }
     }
 
@@ -221,7 +221,7 @@ void ActorShotArrow::Update() {
             if (this->mUnk_170 > 0x10) {
                 this->func_ov031_020f3000();
             } else {
-                data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00);
+                gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
             }
         }
     }
@@ -260,9 +260,9 @@ void ActorShotArrow::func_ov031_020f1b04() {
     this->func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
-    this->mUnk_16C = VecFx32_Length(&this->mVel);
+    this->mUnk_16C = VEC_Mag(&this->mVel);
 
     if (this->mUnk_5C.mParams[1] == 0x1 || this->mUnk_5C.mParams[1] == 0x4) {
         data_027e0d30->func_ov031_020d9684(this->mUnk_5C.mParams[2], &this->mPos);
@@ -309,7 +309,7 @@ void ActorShotArrow::func_ov031_020f1c7c() {
         s16 delta        = this->mUnk_1C8.mUnk_00->mAngle.angle_s - this->mUnk_1C8.mUnk_10;
         VecFx32 vec_fx32 = this->mUnk_1C8.mUnk_04;
         func_01ff9638(&vec_fx32, delta);
-        VecFx32_Add(&this->mPos, &vec_fx32, &this->mPos);
+        VEC_Add(&this->mPos, &vec_fx32, &this->mPos);
 
         s16 diff     = this->mUnk_1C8.mUnk_12 - this->mUnk_1C8.mUnk_10;
         this->mAngle = diff + this->mUnk_1C8.mUnk_00->mAngle.angle_s;
@@ -321,10 +321,10 @@ void ActorShotArrow::func_ov031_020f1c7c() {
     this->func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (func_ov000_0205aeac() && (this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4) != false) {
-        data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00);
+        gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
     }
 }
 
@@ -361,7 +361,7 @@ void ActorShotArrow::func_ov031_020f1e3c() {
     this->func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (!func_ov000_0205aeac()) {
         return;
@@ -372,7 +372,7 @@ void ActorShotArrow::func_ov031_020f1e3c() {
         return;
     }
 
-    data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00);
+    gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
 }
 
 void ActorShotArrow::func_ov031_020f1f54() {
@@ -388,7 +388,7 @@ void ActorShotArrow::func_ov031_020f1f54() {
     if (func_ov000_0205aeac()) {
         bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
         if (paramIs3Or4) {
-            data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00);
+            gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
         }
     }
 
@@ -406,7 +406,7 @@ void ActorShotArrow::func_ov031_020f2010() {
     this->func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 }
 
 void ActorShotArrow::func_ov031_020f206c() {
@@ -431,7 +431,7 @@ void ActorShotArrow::func_ov031_020f20bc() {
     this->func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 }
 
 void ActorShotArrow::func_ov031_020f2134() {
@@ -447,9 +447,9 @@ void ActorShotArrow::func_ov031_020f2160() {
     this->func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
-    this->mUnk_16C = VecFx32_Length(&this->mVel);
+    this->mUnk_16C = VEC_Mag(&this->mVel);
     this->func_ov031_020f2f9c();
     this->func_ov031_020f2ef0();
 }
@@ -473,7 +473,7 @@ void ActorShotArrow::func_ov031_020f2214() {
     this->func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 }
 
 unk32 ActorShotArrow::func_ov031_020f2270() {
@@ -587,7 +587,7 @@ void ActorShotArrow::func_ov031_020f2654(MtxFx33 *param1) {
 
     fx32 scaleZ = FX_MUL(this->mUnk_168, FX_F32_TO_FX32(1.0f));
 
-    FlushGfxQueue();
+    NNS_G3dGeFlushBuffer();
     G3_MtxMode(GX_MTXMODE_POSITION_VECTOR);
     G3_PushMtx();
 
@@ -596,15 +596,15 @@ void ActorShotArrow::func_ov031_020f2654(MtxFx33 *param1) {
     sp0.z -= ROUND_FX32(COS(this->mAngle.angle_s) * FX_F32_TO_FX32(0.5f));
 
     G3_Translate(sp0.x, sp0.y, sp0.z);
-    func_02024a84(param1);
+    G3_MultMtx33(param1);
     G3_Scale(0x1000, 0x1000, scaleZ);
     G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
                      GX_TEXPLTTCOLOR0_USE, 0);
     G3_TexPlttBase(0, GX_TEXFMT_NONE);
     G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, GX_CULL_NONE, 1, 7, FALSE);
 
-    REG_GFX_FIFO_DIFFUSE_AMBIENT_REFLECT   = 0x4210FFFF;
-    REG_GFX_FIFO_SPECULAR_REF_AND_EMISSION = 0;
+    G3_MaterialColorDiffAmb(0xFFFF, 0x4210);
+    G3_MaterialColorSpecEmi(0x00, 0x00);
 
     {
         G3_Begin(GX_BEGIN_TRIANGLES);
@@ -641,8 +641,8 @@ void ActorShotArrow::func_ov031_020f2794(unk16 param1) {
 void ActorShotArrow::func_ov031_020f28ac() {
     VecFx32 sp1C;
     VecFx32 sp10;
-    bool var_r1;
-    bool var_r6;
+    PlayerType var_r1;
+    PlayerType var_r6;
     bool var_r7;
 
     STACK_PAD(4);
@@ -657,13 +657,13 @@ void ActorShotArrow::func_ov031_020f28ac() {
             case 8:
                 if (this->mUnk_140.mUnk_0C.acRef.type_index == 0x102) {
                     var_r1 = this->mUnk_140.mUnk_0C.acRef.UnkCheck3(0x102);
-                    func_01ffb714(&this->mPos, this->func_ov000_0209853c(var_r1), &sp1C);
+                    VEC_Subtract(&this->mPos, this->func_ov000_0209853c(var_r1), &sp1C);
                 } else if (!func_ov000_0205cbc4(this->mUnk_140.mUnk_0C.Get32(), &sp10)) {
                     sp1C.x = 0;
                     sp1C.y = 0;
                     sp1C.z = 0;
                 } else {
-                    func_01ffb714(&this->mPos, &sp10, &sp1C);
+                    VEC_Subtract(&this->mPos, &sp10, &sp1C);
                 }
 
                 this->func_ov031_020f2cac(&sp1C, true);
@@ -672,7 +672,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
                 Actor *var_r0_2 = gpActorManager->func_01fff3b4(this->mUnk_140.mUnk_0C);
 
                 if (var_r0_2 != NULL) {
-                    func_01ffb714(&this->mPos, &var_r0_2->mPos, &sp1C);
+                    VEC_Subtract(&this->mPos, &var_r0_2->mPos, &sp1C);
                     this->func_ov031_020f2cac(&sp1C, true);
                 }
 
@@ -684,7 +684,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
 
                     if (this->func_ov000_02098800(var_r6)) {
                         data_027e0ce0->func_ov000_0208bd30(var_r6, 0xE6, 0, 0);
-                        func_01ffb714(&this->mPos, this->func_ov000_0209853c(0), &sp1C);
+                        VEC_Subtract(&this->mPos, this->func_ov000_0209853c(PlayerType_Link), &sp1C);
                         this->func_ov031_020f2cac(&sp1C, true);
                     } else {
                         var_r7 = 1;
@@ -694,10 +694,10 @@ void ActorShotArrow::func_ov031_020f28ac() {
                 break;
             case 15:
                 if (this->mUnk_5C.mParams[1] == 0 || this->mUnk_5C.mParams[1] == 3) {
-                    data_027e0ce0->func_ov000_0208bc1c(1, 0, 0x18, NULL, NULL, 0);
+                    data_027e0ce0->func_ov000_0208bc1c(PlayerType_Zelda, 0, 0x18, NULL, NULL, 0);
                 }
 
-                func_01ffb714(&this->mPos, this->func_ov000_0209853c(1), &sp1C);
+                VEC_Subtract(&this->mPos, this->func_ov000_0209853c(PlayerType_Zelda), &sp1C);
                 this->func_ov031_020f2cac(&sp1C, true);
                 break;
             case 3:
@@ -705,7 +705,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
                     Actor *var_r0_2 = gpActorManager->func_01fff3b4(this->mUnk_140.mUnk_0C);
 
                     if (var_r0_2 != NULL) {
-                        func_01ffb714(&var_r0_2->mPos, &var_r0_2->mPrevPos, &sp1C);
+                        VEC_Subtract(&var_r0_2->mPos, &var_r0_2->mPrevPos, &sp1C);
                         VecFx32_TryNormalize(&sp1C);
                         this->func_ov031_020f2cac(&sp1C, true);
                     }
@@ -833,8 +833,8 @@ void ActorShotArrow::func_ov031_020f2ef0() {
 
 void ActorShotArrow::func_ov031_020f2f5c(VecFx32 *param1) {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, param1, &this->mPos);
-    func_01ffb714(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, param1, &this->mPos);
+    VEC_Subtract(&this->mPos, &this->mVel, &this->mPos);
 }
 
 bool ActorShotArrow::func_ov031_020f2f9c() {
@@ -858,12 +858,12 @@ void ActorShotArrow::func_ov031_020f3000() {
 
     MTX_Concat33(&m2, &m1, &m1);
 
-    func_01ffa7a0(&vec, &m1, &vec);
+    MTX_MultVec33(&vec, &m1, &vec);
 
     vec.y = FX_MUL(vec.y, FX32_HALF);
 
-    VecFx32_Add(&vec, &this->mPos, &vec);
-    VecFx32_Copy(&vec, &this->mUnk_1DC.mUnk_00);
+    VEC_Add(&vec, &this->mPos, &vec);
+    VecFx32_Copy(&vec, &this->mUnk_1DC.mUnk_00.vec);
 }
 
 void ActorShotArrow::func_ov031_020f311c(MtxFx43 *param1) {
@@ -1033,7 +1033,7 @@ bool ActorShotArrow_178::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param
                     func_01ff9638(&jp_sp3C, this->mUnk_08->mUnk_5C.mInitialAngle);
                     func_01ff9638(&jp_sp48, pMapObj->mAngle.angle_s);
 
-                    if (VecFx32_Dot(&jp_sp3C, &jp_sp48) > 0) {
+                    if (VEC_DotProduct(&jp_sp3C, &jp_sp48) > 0) {
                         return false;
                     }
 
@@ -1091,7 +1091,7 @@ bool ActorShotArrow_178::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param
                     sp24.y = temp.y;
                     sp24.z = temp.z;
 
-                    VecFx32_Add(&sp24, &sp30, &sp24);
+                    VEC_Add(&sp24, &sp30, &sp24);
 
                     this->mUnk_08->mPos.x = (this->mUnk_08->mPos.x + sp24.x) >> 1;
                     this->mUnk_08->mPos.z = (this->mUnk_08->mPos.z + sp24.z) >> 1;
@@ -1125,8 +1125,8 @@ bool ActorShotArrow_178::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param
             break;
         case 2:
             param2->vfunc_14(&spC);
-            VecFx32_Add(&spC, param4, &spC);
-            VecFx32_Add(&sp18, param4, &sp18);
+            VEC_Add(&spC, param4, &spC);
+            VEC_Add(&sp18, param4, &sp18);
 
             if (param3->x > spC.x && param3->x < sp18.x) {
                 sp3C.z = this->mUnk_08->mVel.z;
@@ -1165,13 +1165,13 @@ void ActorShotArrow_194::func_ov031_020f374c(Actor *actor) {
     sp28 = this->mUnk_2C->mVel;
     func_01ff93c0(&sp28, this->mUnk_30);
     sp1C = this->mUnk_0C.pos;
-    VecFx32_Add(&sp1C, &sp28, &sp1C);
+    VEC_Add(&sp1C, &sp28, &sp1C);
 
-    func_01ffb714(&sp1C, &actor->mVel, &sp1C);
+    VEC_Subtract(&sp1C, &actor->mVel, &sp1C);
     actor->vfunc_10(&spC);
 
     sp0 = spC.pos;
-    func_01ffb714(&sp0, &sp1C, &sp0);
+    VEC_Subtract(&sp0, &sp1C, &sp0);
 
     unk32 temp = func_01ff9258(sp0.x, sp0.z);
 
@@ -1222,7 +1222,7 @@ void ActorShotArrow_194::vfunc_10(const Actor *actor) {
             this->mUnk_2C->func_ov031_020f2bec();
 
             if (actor != NULL) {
-                func_01ffb714(&this->mUnk_2C->mPos, &actor->mPos, &sp1C);
+                VEC_Subtract(&this->mUnk_2C->mPos, &actor->mPos, &sp1C);
                 VecFx32_Copy(&sp1C, &this->mUnk_2C->mUnk_1C8.mUnk_04);
                 this->mUnk_2C->mUnk_1C8.mUnk_10 = actor->mAngle.angle_s;
                 this->mUnk_2C->mUnk_1C8.mUnk_12 = result;
@@ -1278,7 +1278,7 @@ void ActorShotArrow_194::vfunc_10(const Actor *actor) {
                 this->func_ov031_020f374c((Actor *) actor);
                 this->mUnk_2C->func_ov031_020f2bbc();
                 if (actor) {
-                    func_01ffb714(&this->mUnk_2C->mPos, &actor->mPos, &sp10);
+                    VEC_Subtract(&this->mUnk_2C->mPos, &actor->mPos, &sp10);
                     VecFx32_Copy(&sp10, &this->mUnk_2C->mUnk_1C8.mUnk_04);
                     this->mUnk_2C->mUnk_1C8.mUnk_10 = actor->mAngle.angle_s;
                     this->mUnk_2C->mUnk_1C8.mUnk_12 = result;
@@ -1307,7 +1307,7 @@ bool ActorShotArrow_194::vfunc_0C(Actor *actor, VecFx32 *vector) {
         return false;
     }
 
-    func_01ffb714(&actor->mVel, &this->mUnk_2C->mVel, &sp14);
+    VEC_Subtract(&actor->mVel, &this->mUnk_2C->mVel, &sp14);
     actor->vfunc_10(&sp4);
 
     if (!func_01ffccf4(&this->mUnk_0C, &sp4.pos, &sp14, &this->mUnk_30)) {

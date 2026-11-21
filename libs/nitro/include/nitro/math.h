@@ -29,18 +29,19 @@ u32 CoRemainder(u32 a, u32 b);
 
 extern const VecFx32 gVecFx32_ZERO;
 
-void VecFx32_Add(VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+void VEC_Add(VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 void VecFx32_Sub(VecFx32 *a, VecFx32 *b, VecFx32 *out);
-fx32 VecFx32_Dot(VecFx32 *a, VecFx32 *b);
 void VecFx32_Cross(VecFx32 *a, VecFx32 *b, VecFx32 *out);
-fx32 VecFx32_Length(VecFx32 *a);
-void VecFx32_Normalize(VecFx32 *vec, VecFx32 *out);
+fx32 VEC_Mag(VecFx32 *a);
+void VEC_Normalize(VecFx32 *vec, VecFx32 *out);
 void VecFx32_Axpy(fx32 a, VecFx32 *x, VecFx32 *y, VecFx32 *out);
 fx32 VecFx32_Distance(VecFx32 *a, VecFx32 *b);
 bool VecFx32_TryNormalize(VecFx32 *vec);
 fx32 VecFx32_DistanceSquared(VecFx32 *a, VecFx32 *b);
 void VecFx32_Scale(VecFx32 *vec, fx32 scale);
 bool VecFx32_CalculateNormal(VecFx32 *vec, VecFx32 *a, VecFx32 *b, VecFx32 *c);
+void VEC_Subtract(const VecFx32 *, const VecFx32 *, VecFx32 *);
+void VEC_MultAdd(s32, VecFx32 *, VecFx32 *, VecFx32 *);
 
 static inline void VecFx32_Rotate(VecFx32 *vec, fx32 sin, fx32 cos, VecFx32 *out) {
     out->x += FX_MUL(vec->z, sin);
@@ -132,6 +133,7 @@ void MtxFx33_func_01ff8248(MtxFx33 *m, VecFx32 *v, fx32 scale, fx32 offset);
 void MtxFx33_func_01ff83a0(MtxFx33 *a, MtxFx33 *b);
 void MtxFx33_Multiply(MtxFx33 *a, MtxFx33 *b, MtxFx33 *out);
 void MtxFx33_MultiplyVec(VecFx32 *v, MtxFx33 *m, VecFx32 *out);
+void MTX_MultVec33(VecFx32 *, MtxFx33 *, VecFx32 *);
 
 void MTX_Identity43_(MtxFx43 *m);
 void MtxFx43_CopyToMtxFx44(MtxFx43 *m, MtxFx44 *out);

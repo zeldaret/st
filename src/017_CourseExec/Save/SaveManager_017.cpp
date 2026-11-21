@@ -1,8 +1,8 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Save/SaveFile.hpp"
 #include "Save/SaveManager.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "nitro/card.h"
 #include "nitro/math.h"
@@ -41,7 +41,7 @@ void SaveManager::func_ov017_020c2c08(GameSaveSlot *param1) {
         ((SaveTreasureData *) &param1->mUnk_2600)->unk_3C[var_r7_2] = -1;
     }
 
-    data_027e0cd8->func_ov000_02081ca0();
+    gpCourseManager->func_ov000_02081ca0();
     data_027e0ce0->func_ov000_0208ba40(&param1->mInfoData.inventory.data);
     data_027e0ce0->mUnk_34->func_ov024_020d3c60(&param1->mInfoData.unk_0D8);
 
@@ -52,13 +52,13 @@ void SaveManager::func_ov017_020c2c08(GameSaveSlot *param1) {
     param1->mInfoData.roomIndex  = pInfos->roomIndex;
     param1->mInfoData.spawnIndex = pInfos->spawnIndex;
 
-    if (data_027e0cd8->mUnk_16) {
+    if (gpCourseManager->mUnk_16) {
         param1->mInfoData.unk_014 |= 0x01;
     } else {
         param1->mInfoData.unk_014 &= ~0x01;
     }
 
-    VecFx32_Copy(&data_027e0cd8->mUnk_24, &param1->mInfoData.unk_008);
+    VecFx32_Copy(&gpCourseManager->mUnk_24, &param1->mInfoData.unk_008);
 
     param1->mInfoData.mUnk_02C = data_027e09a4->mUnk_28;
     UnkStruct_027e09a4_2C *ptr = &data_027e09a4->mUnk_40;

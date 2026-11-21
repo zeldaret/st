@@ -1,9 +1,9 @@
 #include "Actor/ActorUnkSWOB.hpp"
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/Random.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
@@ -73,7 +73,7 @@ void ActorUnkSWOB::func_ov000_0209aa30(void) {
 
             s16 unk_78 = this->mUnk_5C.mUnk_1A[1];
             if (unk_78 > 0) {
-                data_027e0cd8->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_5C.mUnk_18[1], true);
+                gpCourseManager->func_ov000_02081d7c((s16) (unk_78 - 1), this->mUnk_5C.mUnk_18[1], true);
             }
             break;
         }
@@ -87,7 +87,7 @@ void ActorUnkSWOB::func_ov000_0209aa30(void) {
             u32 i;
 
             data_ov000_020b5214.func_ov000_0206db44(0xA3);
-            temp   = *data_027e0ce0->func_01fff148(0);
+            temp   = *data_027e0ce0->func_01fff148(PlayerType_Link);
             vec2.x = temp.x;
             vec2.y = temp.y + FX_F32_TO_FX32(3.0f);
             vec2.z = temp.z;
@@ -103,7 +103,7 @@ void ActorUnkSWOB::func_ov000_0209aa30(void) {
                     vec.y = 0;
                     vec.z = INT_TO_FX32(gRandom.Next32(11) - 5);
 
-                    VecFx32_Add(&vec, &vec2, &vec);
+                    VEC_Add(&vec, &vec2, &vec);
 
                     if (j < 10) {
                         func_01ffedac(&auStack_80, &vec);

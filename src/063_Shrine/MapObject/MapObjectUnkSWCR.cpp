@@ -2,13 +2,13 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "MainGame/MiscAdvManager.hpp"
 #include "MapObject/MapObjectUnkWDST.hpp"
 #include "RefStruct.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "flags.h"
 #include "nitro/fx.h"
@@ -47,8 +47,8 @@ void MapObjectUnkSWCR_160::vfunc_00(void) {
     ((MapObjectUnkSWCR *) mUnk_04)->func_ov063_0216153c();
 }
 
-void MapObjectUnkSWCR_160::vfunc_04(void) {
-    ((MapObjectUnkSWCR *) mUnk_04)->func_ov063_021615c4();
+bool MapObjectUnkSWCR_160::vfunc_04(void) {
+    return ((MapObjectUnkSWCR *) mUnk_04)->func_ov063_021615c4();
 }
 
 void MapObjectUnkSWCR_160::vfunc_08(void) {
@@ -61,11 +61,11 @@ void MapObjectUnkSWCR::func_ov063_0216153c(void) {
     }
 
     if (mUnk_168 == MapObjectUnkSWCR_168_0) {
-        if (this->func_ov000_0209d274(0) < FX_F32_TO_FX32(2.5f)) {
+        if (this->func_ov000_0209d274(PlayerType_Link) < FX_F32_TO_FX32(2.5f)) {
             this->func_ov063_02161b08(MapObjectUnkSWCR_168_1);
         }
     } else if (mUnk_168 == MapObjectUnkSWCR_168_5) {
-        if (this->func_ov000_0209d274(0) < FX_F32_TO_FX32(2.5f)) {
+        if (this->func_ov000_0209d274(PlayerType_Link) < FX_F32_TO_FX32(2.5f)) {
             this->func_ov063_02161b08(MapObjectUnkSWCR_168_6);
         }
     }
@@ -78,11 +78,11 @@ bool MapObjectUnkSWCR::func_ov063_021615c4(void) {
     }
 
     if (mUnk_168 == MapObjectUnkSWCR_168_0) {
-        if (this->func_ov000_0209d274(0) < FX_F32_TO_FX32(2.5f)) {
+        if (this->func_ov000_0209d274(PlayerType_Link) < FX_F32_TO_FX32(2.5f)) {
             return true;
         }
     } else if (mUnk_168 == MapObjectUnkSWCR_168_5) {
-        if (this->func_ov000_0209d274(0) < FX_F32_TO_FX32(2.5f)) {
+        if (this->func_ov000_0209d274(PlayerType_Link) < FX_F32_TO_FX32(2.5f)) {
             return true;
         }
     }
@@ -93,7 +93,7 @@ bool MapObjectUnkSWCR::func_ov063_021615c4(void) {
 void MapObjectUnkSWCR::func_ov063_02161638(void) {}
 
 MapObjectUnkSWCR::MapObjectUnkSWCR() :
-    mUnk_40(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfileUnkSWCR))),
+    mUnk_40(NNS_G3dGetMdl(GET_PROFILE_20_50(MapObjectProfileUnkSWCR))),
     mUnk_A0(&mUnk_C0, NULL),
     mUnk_E0(&mUnk_100, NULL),
     mUnk_120(&mUnk_140, NULL),
@@ -143,9 +143,10 @@ bool MapObjectUnkSWCR::Init(void) {
 }
 
 void MapObjectUnkSWCR::Setup(void) {
-    unk32 ret = func_ov000_02082164(data_027e0cd8);
-    if (ret) {
-        func_ov031_020d9314(ret, 3, &mUnk_160);
+    UnkStruct_027e0cd8_0C_1D0 *ret = gpCourseManager->func_ov000_02082164();
+
+    if (ret != NULL) {
+        ret->func_ov031_020d9314(0x03, &this->mUnk_160);
     }
 }
 

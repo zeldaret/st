@@ -611,7 +611,7 @@ void MapObjectDoorBase::vfunc_84(unk32 param1, VecFx32 *param2, UnkAngleStruct *
         *param3 += -DEG_TO_ANG(180);
     }
 
-    VecFx32_Add(&this->mPos, &local_20, param2);
+    VEC_Add(&this->mPos, &local_20, param2);
 }
 
 void MapObjectDoorBase::func_ov031_020fcf0c(unk32 param1) {
@@ -628,7 +628,7 @@ bool MapObjectDoorBase::func_ov031_020fcf30() {
 
     plocal_10 = (unk16 *) &local_10;
 
-    MapObject::func_ov000_0209d22c(plocal_10, this, 0);
+    MapObject::func_ov000_0209d22c(plocal_10, this, PlayerType_Link);
 
     if (*plocal_10 >= 0x4000 || *plocal_10 <= -0x4000) {
         return false;

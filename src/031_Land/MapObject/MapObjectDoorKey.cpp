@@ -121,7 +121,7 @@ bool MapObjectDoorKey::func_ov031_020fea88(void) {
     return false;
 }
 
-unk32 MapObjectDoorKey::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
+unk32 MapObjectDoorKey::vfunc_28(PlayerType playerType, unk32 param2, unk32 param3) {
     if (this->mUnk_A4) {
         return -1;
     }
@@ -209,13 +209,13 @@ void MapObjectDoorKey::vfunc_78(void) {
     func_01ffaf74(&local_90, &m, &local_90);
     func_01ffaf74(&local_84, &m, &local_84);
 
-    VecFx32_Add(&local_24, &local_90, &local_24);
-    VecFx32_Add(&local_24, &local_84, &VStack_3c);
+    VEC_Add(&local_24, &local_90, &local_24);
+    VEC_Add(&local_24, &local_84, &VStack_3c);
 
     local_90.x = -local_90.x;
     local_84.x = -local_84.x;
-    VecFx32_Add(&local_30, &local_90, &local_30);
-    VecFx32_Add(&local_30, &local_84, &VStack_48);
+    VEC_Add(&local_30, &local_90, &local_30);
+    VEC_Add(&local_30, &local_84, &VStack_48);
 
     if (this->mUnk_68.mUnk_00.mUnk_00 != NULL) {
         this->mUnk_68.mUnk_00.mUnk_00->func_ov000_02052c48(&VStack_3c, &local_24);

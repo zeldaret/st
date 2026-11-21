@@ -346,10 +346,10 @@ void PlayerLinkActor_A0::func_ov001_020bd388(bool param1, bool param2) {
 
     bool var_r1;
     if (this->mUnk_68 != 0x3F) {
-        unk32 temp_r0 = data_027e09a4->func_ov000_02070554();
+        unk32 temp_r0 = data_027e09a4->GetEntryTransitionType();
 
-        if (data_ov000_020aa88c[temp_r0].mUnk_04) {
-            if (temp_r0 == 0x33) {
+        if (data_ov000_020aa88c[temp_r0].mIsNotImmobile) {
+            if (temp_r0 == EntryTransitionType_51) {
                 UnkStruct_ov000_020b3000 local_18(ActorId_Beedle);
                 Actor **pBeedle = gpActorManager->func_01fff350(&local_18, gpActorManager->mActorTable);
 

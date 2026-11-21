@@ -27,7 +27,7 @@ AdventureModeManager_160::AdventureModeManager_160(GameModeManagerBase_104 *para
     mUnk_20(0x1000),
     mUnk_24(0, 0) {
     data_0204a088->func_ov000_020611dc(this, 2);
-    this->mUnk_70.mUnk_00.mUnk_18 = 0;
+    this->mUnk_70.mUnk_00.mDoBottomScreen = 0;
 }
 
 AdventureModeManager_160::~AdventureModeManager_160() {}
@@ -400,11 +400,11 @@ void AdventureModeManager_160::func_ov024_020c84c4() {
     this->mUnk_4C.func_0201bb84(0x14, 2, 0x14);
 
     if (this->mUnk_70.mUnk_25) {
-        this->mUnk_4C.mUnk_18 = true;
-        this->mUnk_4C.mUnk_19 = false;
+        this->mUnk_4C.mDoBottomScreen = true;
+        this->mUnk_4C.mDoTopScreen    = false;
     } else {
-        this->mUnk_4C.mUnk_18 = false;
-        this->mUnk_4C.mUnk_19 = true;
+        this->mUnk_4C.mDoBottomScreen = false;
+        this->mUnk_4C.mDoTopScreen    = true;
     }
 
     data_0204e5f8.func_0201b9a8(&this->mUnk_4C);

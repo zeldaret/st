@@ -1,8 +1,8 @@
+#include "Course/CourseManager.hpp"
 #include "MainGame/CargoManager.hpp"
 #include "MainGame/PassengerManager.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UICounterManager.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d00.hpp"
 
@@ -155,13 +155,13 @@ void UnkStruct_027e0ce0_34::func_ov024_020d3e30(unk32 param1, unk32 param2) {
 void *UnkStruct_027e0ce0_34::func_ov024_020d3e68(unk32 param1) {
     unk32 iVar1 = this->func_ov024_020d3e0c(param1);
     unk32 iVar2 = this->func_ov024_020d3dec(param1);
-    return G3d_GetModelPtr(data_027e0d00->mUnk_020[iVar2][iVar1]->mUnk_50);
+    return NNS_G3dGetMdl(data_027e0d00->mUnk_020[iVar2][iVar1]->mUnk_50);
 }
 
 void UnkStruct_027e0ce0_34::SetTrackFlag(s32 flagPos, u16 flagValue, bool doSet) {
     if (flagPos == ARRAY_LEN(this->mTrackFlags)) {
         // glyphs
-        data_027e0cd8->func_ov000_02081d7c(flagValue, 0x03, doSet);
+        gpCourseManager->func_ov000_02081d7c(flagValue, 0x03, doSet);
         return;
     }
 
@@ -175,7 +175,7 @@ void UnkStruct_027e0ce0_34::SetTrackFlag(s32 flagPos, u16 flagValue, bool doSet)
 
 bool UnkStruct_027e0ce0_34::func_ov024_020d3f4c(s8 param1, u16 param2) {
     if (param1 == ARRAY_LEN(this->mTrackFlags)) {
-        return data_027e0cd8->func_ov000_02081e30(param2, 0x03);
+        return gpCourseManager->func_ov000_02081e30(param2, 0x03);
     }
 
     return GET_FLAG_ALT2(this->mTrackFlags, param1, param2);

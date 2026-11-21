@@ -283,7 +283,7 @@ typedef struct ZMBSectionROMB {
 
 typedef struct ZMBEntryROOM {
     /* 00 */ u8 unk_00;
-    /* 01 */ u8 unk_01;
+    /* 01 */ u8 unk_01; // environment type?
     /* 02 */ u8 unk_02;
     /* 03 */ u8 unk_03;
     /* 04 */ u8 unk_04;
@@ -421,7 +421,7 @@ typedef struct ZMBSectionPLYR {
 } ZMBSectionPLYR;
 
 typedef struct ZMBEntryWARP {
-    /* 00 */ u8 unk_00;
+    /* 00 */ u8 unk_00; // entry index?
     /* 01 */ u8 unk_01;
     /* 02 */ u8 roomIndex;
     /* 03 */ u8 spawnIndex;
@@ -462,20 +462,20 @@ typedef struct ZMBSectionCMPT {
     /* 0C */ ZMBEntryCMPT entries[];
 } ZMBSectionCMPT;
 
-struct UnkStruct_027e0cd8_0C_Base;
+struct MapManagerBase;
 
-extern BOOL ZMB_ParseFile(ZMBFileInfos *pFileInfos, UnkStruct_027e0cd8_0C_Base *pDst, bool param3);
-extern BOOL ZMB_ParseROMB(ZMBFileInfos *pFileInfos, ZMBSectionROMB *pROMB, UnkStruct_027e0cd8_0C_Base *pDst);
-extern BOOL ZMB_ParseLDLB(ZMBFileInfos *pFileInfos, ZMBSectionLDLB *pLDLB, UnkStruct_027e0cd8_0C_Base *pDst);
-extern BOOL ZMB_ParseARAB(ZMBFileInfos *pFileInfos, ZMBSectionARAB *pARAB, UnkStruct_027e0cd8_0C_Base *pDst);
-extern BOOL ZMB_ParseRALB(ZMBFileInfos *pFileInfos, ZMBSectionRALB *pRALB, UnkStruct_027e0cd8_0C_Base *pDst);
-extern BOOL ZMB_ParseWARP(ZMBFileInfos *pFileInfos, ZMBSectionWARP *pWARP, UnkStruct_027e0cd8_0C_Base *pDst);
-extern BOOL ZMB_ParseMapObjList(ZMBFileInfos *pFileInfos, ZMBSectionMapObjectList *pMapObjs, UnkStruct_027e0cd8_0C_Base *pDst);
-extern BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pNPCA, UnkStruct_027e0cd8_0C_Base *pDst);
-extern BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pROOM, UnkStruct_027e0cd8_0C_Base *pDst);
-extern BOOL ZMB_ParsePLYR(ZMBFileInfos *pFileInfos, ZMBSectionPLYR *pPLYR, UnkStruct_027e0cd8_0C_Base *pDst);
-extern BOOL ZMB_ParseCAME(ZMBFileInfos *pFileInfos, ZMBSectionCAME *pCAME, UnkStruct_027e0cd8_0C_Base *pDst);
-extern BOOL ZMB_ParseCMPT(ZMBFileInfos *pFileInfos, ZMBSectionCMPT *pCMPT, UnkStruct_027e0cd8_0C_Base *pDst);
+extern BOOL ZMB_ParseFile(ZMBFileInfos *pFileInfos, MapManagerBase *pDst, bool param3);
+extern BOOL ZMB_ParseROMB(ZMBFileInfos *pFileInfos, ZMBSectionROMB *pROMB, MapManagerBase *pDst);
+extern BOOL ZMB_ParseLDLB(ZMBFileInfos *pFileInfos, ZMBSectionLDLB *pLDLB, MapManagerBase *pDst);
+extern BOOL ZMB_ParseARAB(ZMBFileInfos *pFileInfos, ZMBSectionARAB *pARAB, MapManagerBase *pDst);
+extern BOOL ZMB_ParseRALB(ZMBFileInfos *pFileInfos, ZMBSectionRALB *pRALB, MapManagerBase *pDst);
+extern BOOL ZMB_ParseWARP(ZMBFileInfos *pFileInfos, ZMBSectionWARP *pWARP, MapManagerBase *pDst);
+extern BOOL ZMB_ParseMapObjList(ZMBFileInfos *pFileInfos, ZMBSectionMapObjectList *pMapObjs, MapManagerBase *pDst);
+extern BOOL ZMB_ParseActorList(ZMBFileInfos *pFileInfos, ZMBSectionActorList *pNPCA, MapManagerBase *pDst);
+extern BOOL ZMB_ParseROOM(ZMBFileInfos *pFileInfos, ZMBSectionROOM *pROOM, MapManagerBase *pDst);
+extern BOOL ZMB_ParsePLYR(ZMBFileInfos *pFileInfos, ZMBSectionPLYR *pPLYR, MapManagerBase *pDst);
+extern BOOL ZMB_ParseCAME(ZMBFileInfos *pFileInfos, ZMBSectionCAME *pCAME, MapManagerBase *pDst);
+extern BOOL ZMB_ParseCMPT(ZMBFileInfos *pFileInfos, ZMBSectionCMPT *pCMPT, MapManagerBase *pDst);
 
 // .zcb
 struct UnkStruct_027e09e8;
@@ -554,14 +554,14 @@ typedef struct ZCBSectionGRDB {
     /* 0C */
 } ZCBSectionGRDB;
 
-extern BOOL ZCB_ParseFile(ZCBFileInfos *pFileInfos, UnkStruct_027e09e8 *pDst, UnkStruct_027e0cd8_0C_Base *param3);
+extern BOOL ZCB_ParseFile(ZCBFileInfos *pFileInfos, UnkStruct_027e09e8 *pDst, MapManagerBase *param3);
 extern void ZCB_ParseVTXB(ZCBFileInfos *pFileInfos, ZCBSectionVTXB *pSection, UnkStruct_027e09e8 *pDst,
-                          UnkStruct_027e0cd8_0C_Base *param3);
+                          MapManagerBase *param3);
 extern void ZCB_ParseNRMB(ZCBFileInfos *pFileInfos, ZCBSectionNRMB *pSection, UnkStruct_027e09e8 *pDst);
 extern void ZCB_ParsePCLB(ZCBFileInfos *pFileInfos, ZCBSectionPCLB *pSection, UnkStruct_027e09e8 *pDst);
 extern void ZCB_ParseTRIB(ZCBFileInfos *pFileInfos, ZCBSectionTRIB *pSection, UnkStruct_027e09e8 *pDst);
 extern void ZCB_ParseGRDB(ZCBFileInfos *pFileInfos, ZCBSectionGRDB *pSection, UnkStruct_027e09e8 *pDst,
-                          UnkStruct_027e0cd8_0C_Base *param3);
+                          MapManagerBase *param3);
 
 #ifdef __cplusplus
 } // extern "C"

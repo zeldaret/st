@@ -106,7 +106,7 @@ void ActorUnkNFSP::func_ov031_020fb9b4() {
 
     VecFx32 vec = actor->mUnk_E8;
 
-    data_027e0ce0->func_01fff148(0x0);
+    data_027e0ce0->func_01fff148(PlayerType_Link);
     vec.z -= FX_F32_TO_FX32(1.0f);
     VecFx32_Copy(&vec, &this->mPos);
 

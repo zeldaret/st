@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Actor/ActorUnkMLCK.hpp"
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectProfile.hpp"
 #include "MapObject/MapObjectUnkSTAT.hpp"
@@ -8,7 +9,7 @@
 #include "timer.hpp"
 #include "types.h"
 
-class MapObjectUnkSWCR_160 {
+class MapObjectUnkSWCR_160 : public ActorUnkMLCK_A0 {
 public:
     /* 00 (base) */
     /* 04 */ MapObject *mUnk_04;
@@ -17,7 +18,7 @@ public:
     MapObjectUnkSWCR_160(MapObject *param1);
 
     /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
+    /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual void vfunc_08();
 };
 

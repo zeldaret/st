@@ -169,7 +169,7 @@ void ActorKenzo::Update() {
     this->Actor::func_ov000_02098838();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     this->vfunc_A4();
     this->mUnk_094.mUnk_0C->vfunc_34();
@@ -365,18 +365,18 @@ s16 ActorKenzo::vfunc_80(unk32 param1, unk32 param2, unk32 param3) {
     return 0x0;
 }
 
-bool ActorKenzo::vfunc_48(unk32 param1) {
+bool ActorKenzo::vfunc_48(PlayerType playerType) {
     bool val = true;
     if (this->func_ov058_02148710() && data_027e09a4->mUnk_00.sceneIndex == SceneIndex_f_bridge2) {
         val = false;
     }
 
     if (val) {
-        return this->Actor::vfunc_48(param1);
+        return this->Actor::vfunc_48(playerType);
     }
 
-    VecFx32 vec = *this->Actor::func_ov000_0209853c(param1);
-    func_01ffb714(&vec, &this->mPos, &vec);
+    VecFx32 vec = *this->Actor::func_ov000_0209853c(playerType);
+    VEC_Subtract(&vec, &this->mPos, &vec);
 
     fx32 y = vec.y;
     if (y < FX_F32_TO_FX32(0.0f)) {
@@ -427,7 +427,7 @@ void ActorKenzo::func_ov058_02148b04(Actor *param1, G3d_RenderState *param2) {
 
     G3d_RenderObject *renderObj = param2->renderObj;
 
-    s32 val = param2->flag & 0x10 ? param2->currentBoneMtxId : -1;
+    s32 val = G3d_GetCurBoneMtxId(param2);
     if (val != thiz->mUnk_31C) {
         return;
     }

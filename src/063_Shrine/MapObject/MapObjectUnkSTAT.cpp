@@ -32,7 +32,7 @@ MapObjectProfileUnkSTAT::MapObjectProfileUnkSTAT() :
 }
 
 MapObjectUnkSTAT::MapObjectUnkSTAT() :
-    mUnk_40(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfileUnkSTAT)), true),
+    mUnk_40(NNS_G3dGetMdl(GET_PROFILE_20_50(MapObjectProfileUnkSTAT)), true),
     mUnk_4C(4),
     mUnk_50(-1),
     mUnk_54(0x8000),
@@ -182,5 +182,5 @@ void MapObjectUnkSTAT::func_ov063_0215fc40(unk32 param1) {
 }
 
 unk32 MapObjectUnkSTAT::func_ov063_0215fce0(void) {
-    return func_02016b8c(&mPos, data_027e0ce0->func_01fff148(0), mUnk_54, mAngle, mUnk_58, 1);
+    return func_02016b8c(&mPos, data_027e0ce0->func_01fff148(PlayerType_Link), mUnk_54, mAngle, mUnk_58, 1);
 }

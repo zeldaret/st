@@ -1,3 +1,4 @@
+#include "Course/CourseManager.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_02049f8c.hpp"
@@ -6,7 +7,6 @@
 #include "Unknown/UnkStruct_027e095c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09ac.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cdc.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f70.hpp"
 
@@ -93,7 +93,7 @@ void AdventureModeManager_174_Base::func_ov024_020c8b2c() {
     data_027e095c->func_ov000_020592ec();
     data_027e095c->func_ov000_020592a0();
     data_0204a088->func_ov000_02061248();
-    data_027e0cd8->func_ov000_02081c28();
+    gpCourseManager->func_ov000_02081c28();
 
     AdventureModeManager *pAdvMgr = GetAdventureModeManager();
     if (data_027e09a4->IsTrain()) {

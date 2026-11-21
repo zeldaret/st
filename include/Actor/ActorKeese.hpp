@@ -144,7 +144,7 @@ public:
     void func_ov032_0211f804();
     bool func_ov032_0211f93c(VecFx32 *param1, unk32 param2);
     bool func_ov032_0211f9c4();
-    bool func_ov032_0211fa4c(unk32 param1);
+    bool func_ov032_0211fa4c(PlayerType playerType);
     static void func_ov032_0211faf0(Actor *param1, G3d_RenderState *param2);
 };
 

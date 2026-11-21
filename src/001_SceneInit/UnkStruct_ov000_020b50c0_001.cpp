@@ -1,13 +1,15 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0d08.hpp"
 #include "Unknown/UnkStruct_ov000_020b50c0.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b52e8.hpp"
 #include "versions.h"
+
+#include <nns/snd.h>
 
 void UnkStruct_ov000_020b50c0::func_ov001_020bd854(void) {
     data_027e099c->func_ov001_020bde6c();
@@ -63,7 +65,7 @@ void UnkStruct_ov000_020b50c0::func_ov001_020bd910(void) {
 void UnkStruct_ov000_020b50c0::func_ov001_020bd934(bool param1) {
     if (param1) {
         this->func_ov000_0206a704(0x00);
-        func_0200240c(0);
+        NNS_SndSetMonoFlag(0);
         return;
     }
 
@@ -75,7 +77,7 @@ void UnkStruct_ov000_020b50c0::func_ov001_020bd934(bool param1) {
     this->func_ov000_0206a740();
 
     if (this->mUnk_94 == 3) {
-        func_0200240c(1);
+        NNS_SndSetMonoFlag(1);
     }
 }
 
@@ -648,7 +650,7 @@ void UnkStruct_ov018_020c5ac0::func_ov001_020bdfa0(const EntranceInfo *param1) {
 }
 
 void UnkStruct_ov018_020c5ac0::func_ov001_020bdfb8(const EntranceInfo *param1) {
-    if (data_027e0cd8->mUnk_0C != NULL && GET_FLAG2(data_027e0cd8->mUnk_0C->mUnk_128, UnkFlags2_7)) {
+    if (gpCourseManager->mpMapMgr != NULL && GET_FLAG2(gpCourseManager->mpMapMgr->mUnk_128, UnkFlags2_7)) {
         if (param1->isCS == true && param1->csIndex == CutsceneIndex_FirstPhantomPossession) {
             this->func_ov000_0206f61c(0x00);
         } else {

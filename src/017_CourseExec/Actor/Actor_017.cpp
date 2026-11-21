@@ -143,7 +143,7 @@ void Actor::func_ov017_020bf284(VecFx32 *param1, VecFx32 param2) {
 
     sp0 = param2;
 
-    VecFx32_Add(&sp0, param1, &sp0);
+    VEC_Add(&sp0, param1, &sp0);
     func_01ff93c0(&sp0, FX_F32_TO_FX32(0.5f));
     func_ov000_02098244(&sp0);
 }
@@ -411,7 +411,7 @@ void Actor::func_ov017_020bf99c() {
 
 void Actor::func_ov017_020bf9c8(Actor *param1) {
     if (param1 != 0) {
-        func_01ffb714(&param1->mPos, &this->mPos, &this->mVel);
+        VEC_Subtract(&param1->mPos, &this->mPos, &this->mVel);
         func_01ff97c8(&this->mVel, 0x1000);
         return;
     }
@@ -428,7 +428,7 @@ void Actor::func_ov017_020bf9c8(Actor *param1) {
         this->mTimer.value++;
     }
 
-    func_01ffb714(data_027e0ce0->func_01fff148(0), &this->mPos, &this->mVel);
+    VEC_Subtract(data_027e0ce0->func_01fff148(PlayerType_Link), &this->mPos, &this->mVel);
     func_01ff97c8(&this->mVel, 0x1000);
 }
 
@@ -438,7 +438,7 @@ void Actor::func_ov017_020bfa50(VecFx32 *param1, unk32 param2) {
     this->mTimer.Set(0, param2);
 
     VecFx32 sp0;
-    func_01ffb714(param1, &this->mPos, &sp0);
+    VEC_Subtract(param1, &this->mPos, &sp0);
 
     fx32 z = sp0.z / param2;
     fx32 y = sp0.y / param2 + (this->mUnk_2C * param2) / 2;
@@ -574,14 +574,14 @@ bool Actor::func_ov017_020bfd9c(Vec2s *param1, unk32 param2, UnkStruct_027e09bc_
     return false;
 }
 
-bool Actor::vfunc_48(unk32 param1) {
+bool Actor::vfunc_48(PlayerType playerType) {
     VecFx32 *temp_r0;
     VecFx32 sp0;
 
-    temp_r0 = this->func_ov000_0209853c(param1);
+    temp_r0 = this->func_ov000_0209853c(playerType);
     sp0     = *temp_r0;
 
-    func_01ffb714(&sp0, &this->mPos, &sp0);
+    VEC_Subtract(&sp0, &this->mPos, &sp0);
 
     if (ABS(sp0.y) < data_ov000_020aed08 && func_01ff9258(sp0.x, sp0.z) < data_ov000_020aed04) {
         return true;

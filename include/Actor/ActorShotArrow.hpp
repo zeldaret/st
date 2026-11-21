@@ -114,7 +114,6 @@ public:
     /* 194 */ ActorShotArrow_194 mUnk_194;
     /* 1C8 */ ActorShotArrow_1C8 mUnk_1C8;
     /* 1DC */ UnkStruct_ov031_Items_02 mUnk_1DC;
-    /* 1E0 */ PAD(0x1E8, 0x224);
     /* 224 */ MtxFx43 *mUnk_224;
     /* 228 */ MtxFx43 mUnk_228;
     /* 258 */ u16 mUnk_258;

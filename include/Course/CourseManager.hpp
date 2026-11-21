@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Render/Skybox.hpp"
 #include "files.h"
 #include "math.hpp"
 #include "types.h"
@@ -14,7 +15,8 @@
 #include <vector>
 
 class MapObject_20;
-class UnkStruct_027e0cd8;
+class CourseManager;
+class ActorUnkMLCK_A0;
 
 template <typename T> class FixedVector {
 private:
@@ -79,28 +81,6 @@ public:
             return type == elem.mUnk_0E && id == elem.mUnk_14;
         }
     };
-};
-
-class UnkStruct_027e0cd8_0C_160 {
-public:
-    /* 00 */ UnkSystem3 mUnk_00;
-
-    bool func_ov026_02106aa8();
-};
-
-class UnkStruct_027e0cd8_0C_Base_88 {
-public:
-    /* 00 */ VecFx32 mUnk_00;
-    /* 0C */ bool mUnk_0C;
-    /* 0D */ unk8 mUnk_0D; // pad?
-    /* 0E */ unk8 mUnk_0E; // pad?
-    /* 0F */ unk8 mUnk_0F; // pad?
-    /* 10 */
-
-    UnkStruct_027e0cd8_0C_Base_88();
-
-    void func_ov000_020823a8(unk32 param1);
-    void func_ov000_0208261c();
 };
 
 class UnkStruct_027e0cd8_0C_Base_98 {
@@ -197,7 +177,7 @@ public:
     /* 04 */ virtual bool vfunc_04();
 };
 
-class UnkStruct_027e0cd8_0C_Base {
+class MapManagerBase {
 public:
     /* 000 (vtable) */
     /* 004 */ UnkSystem3 mUnk_004;
@@ -210,7 +190,7 @@ public:
             /* 086 */ u16 mUnk_084_01;
         };
     };
-    /* 088 */ UnkStruct_027e0cd8_0C_Base_88 mUnk_088;
+    /* 088 */ SkyboxManager mSkyboxMgr;
     /* 098 */ UnkStruct_027e0cd8_0C_Base_98 *mUnk_098;
     /* 09C */ Vec2us mUnk_09C;
     /* 0A0 */ VecFx32 mUnk_0A0;
@@ -231,7 +211,7 @@ public:
     /* 104 */ UnkFlags1 mUnk_104;
     /* 108 */ unk32 mUnk_108;
     /* 10C */ unk32 mUnk_10C;
-    /* 110 */ unk32 mUnk_110;
+    /* 110 */ unk32 mUnk_110; // environment type?
     /* 114 */ unk32 mUnk_114;
     /* 118 */ unk32 mUnk_118;
     /* 11C */ unk32 mUnk_11C;
@@ -251,9 +231,9 @@ public:
     /* 154 */ CustomVector<EntranceInfo> mUnk_154;                             // exit list?
     /* 160 */
 
-    UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param1);
+    MapManagerBase(CourseManager *pCourseMgr);
 
-    /* 00 */ virtual ~UnkStruct_027e0cd8_0C_Base();
+    /* 00 */ virtual ~MapManagerBase();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
@@ -300,10 +280,13 @@ public:
     const EntranceInfo *func_ov001_020b8c80(unk32 param1);
     void func_ov001_020b8c90(ZMBSectionCMPT *pCMPT);
     void func_ov001_020b8c98(ZMBSectionCAME *pCAME);
-    void func_ov001_020b8db8();
+    void InitSkybox();
     void func_ov001_020b8e24();
     void func_ov001_020b8e54();
 };
+
+class Actor;
+class Actor_vfunc_30;
 
 class UnkStruct_027e0cd8_0C_1D0 {
 public:
@@ -314,16 +297,22 @@ public:
 
     /* ?? */ virtual ~UnkStruct_027e0cd8_0C_1D0();
 
+    // overlay 31
+    void func_ov031_020d9314(unk32 param1, ActorUnkMLCK_A0 *param2);
+    void func_ov031_020d9398(void *param1);
+
+    static void func_ov031_020d9368(Actor *pActor, Actor_vfunc_30 *param2);
+
     // overlay 101
     void func_ov101_021837a0();
 };
 
-class UnkStruct_027e0cd8_0C : public UnkStruct_027e0cd8_0C_Base {
+class MapManagerLand : public MapManagerBase {
 public:
     /* 000 (base) */
-    /* 160 */ UnkStruct_027e0cd8_0C_160 *mUnk_160[4];
+    /* 160 */ UnkSystem3 *mUnk_160[4];
     /* 170 */ ModelRender_UnkSystem1 *mUnk_170[4][5];
-    /* 1C0 */ void *mUnk_1C0[4];
+    /* 1C0 */ s32 mUnk_1C0[4];
     /* 1D0 */ UnkStruct_027e0cd8_0C_1D0 *mUnk_1D0;
     /* 1D4 */ unk32 mUnk_1D4;
     /* 1D8 */ unk32 mUnk_1D8;
@@ -331,41 +320,64 @@ public:
     /* 1DD */ bool mUnk_1DD;
     /* 1E0 */
 
-    UnkStruct_027e0cd8_0C(UnkStruct_027e0cd8 *param1);
+    MapManagerLand(CourseManager *pCourseMgr);
 
     // data_ov031_02112a0c
-    /* 00 */ virtual ~UnkStruct_027e0cd8_0C() override;
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C();
-    /* 1C */ virtual void vfunc_1C(const EntranceInfo *param1, bool param2, bool param3);
-    /* 38 */ virtual void vfunc_38();
+    /* 00 */ WEAK virtual ~MapManagerLand() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C() override;
+    /* 1C */ virtual void vfunc_1C(const EntranceInfo *param1, bool param2, bool param3) override;
+    /* 38 */ virtual void vfunc_38() override;
 
     // overlay 31
+    void func_ov031_020d8720(s32 param1);
     void func_ov031_020d8738();
     void func_ov031_020d88c0();
     void func_ov031_020d8ae4();
+
+    static void func_ov031_020d8cb8(G3d_RenderState *param1);
+    static void func_ov031_020d8cd0(void *modelRender, G3d_RenderState *param1);
 
     // overlay 102
     void func_ov102_02184628();
 };
 
-class UnkStruct_027e0cd8_0C_Derived2 : public UnkStruct_027e0cd8_0C_Base {
+class MapManagerTrain : public MapManagerBase {
 public:
     /* 00 (base) */
     /* 04 */ PAD(0x160, 0x4F8);
-    UnkStruct_027e0cd8_0C_Derived2(UnkStruct_027e0cd8 *param1);
+
+    MapManagerTrain(CourseManager *pCourseMgr);
+
+    // data_ov026_02136598
+    /* 00 */ virtual ~MapManagerTrain() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C() override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 1C */ virtual void vfunc_1C(const EntranceInfo *param1, bool param2, bool param3) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+    /* 28 */ virtual fx32 vfunc_28(VecFx32 *param1, unk32 param2, unk32 param3) override;
+    /* 30 */ virtual void LoadSceneModel(const EntranceInfo *param1) override;
+    /* 38 */ virtual void vfunc_38() override;
+    /* 3C */ virtual void vfunc_3C() override;
+    /* 40 */ virtual void vfunc_40(u8 spawnIndex) override;
 };
 
-class UnkStruct_027e0cd8_0C_Derived3 : public UnkStruct_027e0cd8_0C_Base {
+class MapManagerBattle : public MapManagerBase {
 public:
     /* 00 (base) */
 
-    UnkStruct_027e0cd8_0C_Derived3(UnkStruct_027e0cd8 *param1);
+    MapManagerBattle(CourseManager *pCourseMgr);
 };
 
 class UnkStruct_027e0cd8_04_0C {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ unk8 mUnk_00;
+    /* 01 */ u8 mRoomIndex;
+    /* 02 */ unk8 mUnk_02;
+    /* 03 */ unk8 mUnk_03;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ s16 mUnk_08;
     /* 0C */ volatile u32 mUnk_0C;
@@ -417,12 +429,12 @@ public:
     ~UnkStruct_027e0cd8_10();
 };
 
-class UnkStruct_027e0cd8 : public AutoInstance<UnkStruct_027e0cd8> {
+class CourseManager : public AutoInstance<CourseManager> {
 public:
     /* 00 */ Vec2s mUnk_00;
     /* 04 */ UnkStruct_027e0cd8_04 *mUnk_04; // stage flags
     /* 08 */ UnkStruct_027e0cd8_04 *mUnk_08;
-    /* 0C */ UnkStruct_027e0cd8_0C_Base *mUnk_0C; // related to train?
+    /* 0C */ MapManagerBase *mpMapMgr;
     /* 10 */ UnkStruct_027e0cd8_10 *mUnk_10;
     /* 14 */ unk16 mUnk_14;
     /* 16 */ bool mUnk_16;
@@ -435,28 +447,37 @@ public:
     /* 48 */ bool mUnk_48[2];
     /* 4C */
 
-    UnkStruct_027e0cd8_0C *GetUnk0C() {
-        return (UnkStruct_027e0cd8_0C *) this->mUnk_0C;
+    MapManagerLand *GetMapMgrLand() {
+        return (MapManagerLand *) this->mpMapMgr;
     }
 
-    UnkStruct_027e0cd8();
-    ~UnkStruct_027e0cd8();
+    MapManagerTrain *GetMapMgrTrain() {
+        return (MapManagerTrain *) this->mpMapMgr;
+    }
+
+    MapManagerBattle *GetMapMgrBattle() {
+        return (MapManagerBattle *) this->mpMapMgr;
+    }
+
+    CourseManager();
+    ~CourseManager();
 
     // overlay 0
-    bool func_ov000_02081e30(unk32 param1, unk32 param2);
-    void func_ov000_02081d7c(unk32 flagValue, unk32 param2, bool doSet);
-    void func_ov000_02081ecc(unk16 param1, unk32 param2);
-    void func_ov000_02081eec(unk16 param1, unk32 param2, unk32 param3);
-    bool func_ov000_02081f3c(unk16 param1, unk32 param2);
-    u32 func_ov000_02081d5c(); // returns current room index?
-    bool func_ov000_02082124();
     void func_ov000_02081b84();
     void func_ov000_02081b9c(unk32 param1);
     void func_ov000_02081bf4();
     bool func_ov000_02081c28();
     void func_ov000_02081ca0();
     void func_ov000_02081d58();
+    u32 func_ov000_02081d5c(); // returns current room index?
+    void func_ov000_02081d7c(unk32 flagValue, unk32 param2, bool doSet);
+    bool func_ov000_02081e30(unk32 param1, unk32 param2);
+    void func_ov000_02081ecc(unk16 param1, unk32 param2);
     bool func_ov000_02081edc(u16 param1);
+    void func_ov000_02081eec(unk16 param1, unk32 param2, unk32 param3);
+    bool func_ov000_02081f3c(unk16 param1, unk32 param2);
+    bool func_ov000_02082124();
+    UnkStruct_027e0cd8_0C_1D0 *func_ov000_02082164(); // specifically for land
 
     // overlay 1
     void func_ov001_020b7830(const EntranceInfo *param1);
@@ -471,8 +492,8 @@ public:
     void func_ov001_020b8120(SceneIndex sceneIndex);
     void func_ov001_020b818c();
 
-    static UnkStruct_027e0cd8 *Create();
+    static CourseManager *Create();
     static void Destroy();
 };
 
-extern UnkStruct_027e0cd8 *data_027e0cd8;
+extern CourseManager *gpCourseManager;

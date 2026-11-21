@@ -1,8 +1,8 @@
+#include "Course/CourseManager.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "Player/PlayerLink.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 
@@ -30,7 +30,7 @@ PlayerLinkActor::PlayerLinkActor(unk32 param1, ItemManager *pItemMgr, UnkStruct_
     PlayerLinkActor *new_var   = this;
     PlayerLinkActor **new_var3 = &new_var;
     if ((*new_var3)->mUnk_4C == -1) {
-        (*new_var3)->func_ov031_020d96a4(this->mUnk_0A0, this->mUnk_58);
+        UnkStruct_027e0d34::Create(*new_var3, this->mUnk_0A0, this->mUnk_58);
         this->func_ov031_020dccf0();
     } else {
         this->func_ov021_020ebda0();
@@ -87,7 +87,7 @@ void PlayerLinkActor::func_ov001_020bcbd0(VecFx32 *pVec) {
     this->mUnk_0A0->func_ov001_020bd388(uVar1, this->mUnk_0B6);
     this->mUnk_0B6 = false;
 
-    this->mUnk_0B9 = data_027e0cd8->func_ov000_02082124();
+    this->mUnk_0B9 = gpCourseManager->func_ov000_02082124();
     this->mUnk_0BA = false;
     this->mUnk_0BB = false;
 

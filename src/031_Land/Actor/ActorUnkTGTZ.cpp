@@ -37,9 +37,9 @@ ActorProfileUnkTGTZ::ActorProfileUnkTGTZ() :
 
 ActorUnkTGTZ::ActorUnkTGTZ() :
 #if IS_JP
-    mUnk_094(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkTGTZ)->mUnk_3C.mUnk_50), true),
+    mUnk_094(NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkTGTZ)->mUnk_3C.mUnk_50), true),
 #else
-    mUnk_094(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkTGTZ)->mUnk_3C.mUnk_50), 0xC, &this->mUnk_100),
+    mUnk_094(NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkTGTZ)->mUnk_3C.mUnk_50), 0xC, &this->mUnk_100),
 #endif
     mUnk_1B4(NULL),
     mUnk_1B8(0x0),
@@ -259,11 +259,11 @@ void ActorUnkTGTZ::func_ov031_020f6f20(unk32 param1) {
 
             VecFx32 vec1;
 #if IS_JP
-            func_01ffa7a0((VecFx32 *) &data_ov031_02116344, &this->mUnk_190, &vec1);
+            MTX_MultVec33((VecFx32 *) &data_ov031_02116344, &this->mUnk_190, &vec1);
 #else
             this->mUnk_094.func_ov000_02057d9c();
             VecFx32 *pVec = this->mUnk_094.func_ov000_0205a7a8(this->mUnk_094.func_ov000_0205a778(data_ov031_021145a4));
-            func_01ffa7a0(pVec, &this->mUnk_190, &vec1);
+            MTX_MultVec33(pVec, &this->mUnk_190, &vec1);
 #endif
 
             vec1.y -= FX_F32_TO_FX32(0.5f);
@@ -381,7 +381,7 @@ void ActorUnkTGTZ::vfunc_2C(unk32 param1) {
 
     VecFx32 vec2 = this->mPos;
 
-    VecFx32_Add(&vec2, &vec1, &vec2);
+    VEC_Add(&vec2, &vec1, &vec2);
 
     this->mUnk_094.vfunc_14(&this->mUnk_190, &vec2);
 }

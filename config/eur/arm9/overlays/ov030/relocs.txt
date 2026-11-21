@@ -1090,7 +1090,7 @@ from:0x0214ad34 kind:arm_call to:0x01ffbbe0 module:itcm
 from:0x0214adf0 kind:arm_call to:0x02028c4c module:main
 from:0x0214aea8 kind:arm_call to:0x0201aad0 module:main
 from:0x0214af10 kind:arm_call to:0x0201aa44 module:main
-from:0x0214af1c kind:arm_call to:0x020d9788 module:overlays(26,31)
+from:0x0214af1c kind:arm_call to:0x020d9788 module:overlays(31,26)
 from:0x0214af28 kind:load to:0x027e0d24 module:dtcm
 from:0x0214af2c kind:load to:0x027e0998 module:dtcm
 from:0x0214af30 kind:load to:0x0204af1c module:main

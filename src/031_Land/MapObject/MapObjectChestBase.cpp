@@ -1,9 +1,9 @@
 #include "MapObject/MapObjectChestBase.hpp"
 #include "CommonFuncs.hpp"
 
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
@@ -55,7 +55,7 @@ bool MapObjectChestBase::Init() {
     SET_FLAG(this->mFlags, MapObjFlag_9);
     this->mUnk_18[0] = 0x0D;
 
-    UnkStruct_027e0cd8_0C_Base *pUVar2 = data_027e0cd8->mUnk_0C;
+    MapManagerBase *pUVar2 = gpCourseManager->mpMapMgr;
 
     if (this->mUnk_20.mParams[3] == 1) {
         this->mPos.x += 0x7FC;
@@ -75,7 +75,7 @@ bool MapObjectChestBase::Init() {
 // non-matching
 void MapObjectChestBase::Setup() {
     fx32 iVar2;
-    UnkStruct_027e0cd8_0C_Base *pUVar5;
+    MapManagerBase *pUVar5;
     VecFx32 sp48;
     VecFx32 sp3C;
     VecFx32 local_38;
@@ -89,7 +89,7 @@ void MapObjectChestBase::Setup() {
     Vec2bCpp local_68;
     Vec2us local_6c;
 
-    pUVar5 = data_027e0cd8->mUnk_0C;
+    pUVar5 = gpCourseManager->mpMapMgr;
 
     sp48.x = FX_F32_TO_FX32(0.0f);
     sp48.y = FX_F32_TO_FX32(0.0f);
@@ -103,13 +103,13 @@ void MapObjectChestBase::Setup() {
     sp18.y = FX_F32_TO_FX32(0.0f);
     sp18.z = FX_F32_TO_FX32(0.5f);
 
-    func_01ffb714(&sp48, &sp18, &sp48);
+    VEC_Subtract(&sp48, &sp18, &sp48);
 
     spC.x = FX_F32_TO_FX32(0.5f);
     spC.y = FX_F32_TO_FX32(1.0f);
     spC.z = FX_F32_TO_FX32(0.5f);
 
-    VecFx32_Add((VecFx32 *) &sp3C, &spC, (VecFx32 *) &sp3C);
+    VEC_Add((VecFx32 *) &sp3C, &spC, (VecFx32 *) &sp3C);
 
     local_68.x = this->mRef.moRef.unk_02.x;
     local_68.y = this->mRef.moRef.unk_02.y;
@@ -184,7 +184,7 @@ void MapObjectChestBase::vfunc_0C() {
     this->vfunc_08();
 }
 
-unk32 MapObjectChestBase::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
+unk32 MapObjectChestBase::vfunc_28(PlayerType playerType, unk32 param2, unk32 param3) {
     return this->func_ov031_021037d0();
 }
 

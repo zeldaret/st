@@ -1,7 +1,7 @@
 #include "Actor/ActorEventIcon.hpp"
+#include "Course/CourseManager.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 
 void ActorEventIcon::vfunc_24() {
     this->func_ov017_020c002c();
@@ -11,7 +11,7 @@ void ActorEventIcon::vfunc_30(Actor_vfunc_30 *param1) {
     Vec2s sp4;
     bool var_r1;
 
-    if (data_027e0cd8->func_ov000_02082124() != 0) {
+    if (gpCourseManager->func_ov000_02082124() != 0) {
         return;
     }
 

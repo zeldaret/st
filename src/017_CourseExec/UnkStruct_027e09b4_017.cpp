@@ -1,9 +1,9 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Unknown/UnkStruct_027e095c.hpp"
 #include "Unknown/UnkStruct_027e09ac.hpp"
 #include "Unknown/UnkStruct_027e09b0.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_ov000_020b4ec4.hpp"
 
 #include <nitro/fx.h>
@@ -30,7 +30,7 @@ s32 UnkStruct_027e09b4::func_ov017_020c08a4(void) {
 
 bool UnkStruct_027e09b4::func_ov017_020c08c4(const VecFx32 *param1, unk32 param2, unk32 param3, s32 param4, s16 param5,
                                              u8 param6) {
-    fx32 temp_r0_2 = data_027e0cd8->mUnk_0C->vfunc_28((VecFx32 *) param1, 1, 0);
+    fx32 temp_r0_2 = gpCourseManager->mpMapMgr->vfunc_28((VecFx32 *) param1, 1, 0);
 
     if (param1->y >= temp_r0_2 && temp_r0_2 >= -0x3000) {
         VecFx32 temp;
@@ -50,7 +50,7 @@ bool UnkStruct_027e09b4::func_ov017_020c08c4(const VecFx32 *param1, unk32 param2
 
 void UnkStruct_027e09b4::func_ov017_020c0970(const VecFx32 *param1, unk32 param2, unk32 param3, u16 param4, u16 param5,
                                              u32 param6, fx32 param7) {
-    FlushGfxQueue();
+    NNS_G3dGeFlushBuffer();
     G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
                      GX_TEXPLTTCOLOR0_USE, 0);
     G3_Color(data_027e09ac->mUnk_014.mUnk_08);
@@ -70,7 +70,7 @@ void UnkStruct_027e09b4::func_ov017_020c0a30(const VecFx32 *param1, unk32 param2
 
 void UnkStruct_027e09b4::func_ov017_020c0a6c(const VecFx32 *param1, s32 param2, s32 param3, s32 param4, u16 param5, u16 param6,
                                              s32 param7, u16 param8) {
-    FlushGfxQueue();
+    NNS_G3dGeFlushBuffer();
     G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
                      GX_TEXPLTTCOLOR0_USE, 0);
     G3_Color(param8);
@@ -103,13 +103,13 @@ void UnkStruct_027e09b4::func_ov017_020c0b24(const VecFx32 *param1, s32 param2, 
         return;
     }
 
-    FlushGfxQueue();
+    NNS_G3dGeFlushBuffer();
     G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
                      GX_TEXPLTTCOLOR0_USE, 0);
     G3_Color(data_027e09ac->mUnk_014.mUnk_08);
     G3_PushMtx();
     G3_Translate(param1->x, param1->y, param1->z);
-    func_02024a84(&sp0);
+    G3_MultMtx33(&sp0);
     G3_Scale(param2, param2, 0x666);
     G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_SHADOW, GX_CULL_FRONT, 0, 1, FALSE);
     UnkStruct_027e09b4::func_ov017_020c0dec();
@@ -198,7 +198,7 @@ void UnkStruct_027e09b4::func_ov017_020c0dec(void) {
 void UnkStruct_027e09b4::func_ov017_020c0edc() {
     UnkStruct_027e095c *temp_r4 = data_027e095c;
 
-    FlushGfxQueue();
+    NNS_G3dGeFlushBuffer();
     G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
                      GX_TEXPLTTCOLOR0_USE, temp_r4->mUnk_000[0].z);
     G3_TexPlttBase(G3_TEXPLTTBASE_ADDR(temp_r4->mUnk_000[0].y), G3_TEXPLTTBASE_FMT(temp_r4->mUnk_000[0].z));
@@ -226,7 +226,7 @@ void UnkStruct_027e09b4::func_ov017_020c0edc() {
         G3_Translate(var_r8->trans.x, var_r8->trans.y + var_r3, trans_z);
 
         if (var_r8->unk_16 != 0) {
-            func_02024fc4(SIN(var_r8->unk_16), COS(var_r8->unk_16));
+            G3_RotY(SIN(var_r8->unk_16), COS(var_r8->unk_16));
         }
 
         G3_Scale(var_r8->scale.x, 0x1000, var_r8->scale.z);

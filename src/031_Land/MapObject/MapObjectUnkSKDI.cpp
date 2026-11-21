@@ -2,10 +2,10 @@
 
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
 DECL_PROFILE(MapObjectProfileUnkSKDI);
@@ -78,7 +78,7 @@ bool MapObjectUnkSKDI::Init() {
         var1 = 0x0;
     }
     this->mUnk_07C = var1;
-    VecFx32_Copy(&this->mPos, &this->mUnk_08C.mUnk_00);
+    VecFx32_Copy(&this->mPos, &this->mUnk_08C.mUnk_00.vec);
     if (var1 == 1) {
         var1 = 0x7806;
     } else {
@@ -106,7 +106,7 @@ bool MapObjectUnkSKDI::Init() {
 }
 
 void MapObjectUnkSKDI::Setup() {
-    data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_08C.mUnk_00);
+    gpCourseManager->mpMapMgr->func_ov000_02080a5c(&this->mUnk_08C.mUnk_00.vec);
 
     if (this->mUnk_20.mParams[0] == 0x0) {
         if ((!this->func_ov000_0209d29c(0x0) && this->mUnk_20.mUnk_0A[0] != 0x0) ||
@@ -272,9 +272,9 @@ void MapObjectUnkSKDI::func_ov031_02106678(MapObjState state, unk32 param2) {
             } else {
                 dc = (dc & ~0xE00) | 0x400;
             }
-            this->mUnk_0D4.mUnk_08 = dc;
-            this->mUnk_080         = -1;
-            this->mUnk_0BC         = 0x3000;
+            this->mUnk_0D4.mUnk_08         = dc;
+            this->mUnk_080                 = -1;
+            this->mUnk_08C.mUnk_18.mUnk_18 = 0x3000;
             UNSET_FLAG(this->mFlags, MapObjFlag_10);
             break;
         }
@@ -300,8 +300,8 @@ void MapObjectUnkSKDI::func_ov031_02106678(MapObjState state, unk32 param2) {
                 }
             }
             this->mUnk_0D4.mUnk_08 &= ~0xE00;
-            this->mUnk_080 = -1;
-            this->mUnk_0BC = 0x800;
+            this->mUnk_080                 = -1;
+            this->mUnk_08C.mUnk_18.mUnk_18 = 0x800;
             SET_FLAG(this->mFlags, MapObjFlag_10);
             break;
         default:

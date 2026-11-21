@@ -134,7 +134,7 @@ void MapObjectDoorSwitch::vfunc_74(void) {
 
     MtxFx43_InitYRotation(&m, SIN(angle), COS(angle));
     func_01ffaf74(&local_2c, &m, &local_2c);
-    VecFx32_Add(&local_20, &local_2c, &local_20);
+    VEC_Add(&local_20, &local_2c, &local_20);
 
     data_027e0cec->func_ov000_0209ff8c(&this->mUnk_68.mUnk_00, 0x8CF, &local_20, 4);
 

@@ -25,7 +25,7 @@ struct EntranceInfo {
     /* 0A */ u8 roomIndex;
     /* 0B */ u8 spawnIndex;
     /* 0C */ bool isCS;
-    /* 0D */ u8 unk_0D;
+    /* 0D */ u8 unk_0D; // entry index?
     /* 0E */ u8 csIndex;
     /* 0F */ u8 unk_0F;
     /* 10 */ u8 unk_10;
@@ -149,6 +149,75 @@ public:
     /* 14 */
 };
 
+typedef enum EntryTransitionType_ {
+    /* 00 */ EntryTransitionType_None = 0x00,
+    /* 01 */ EntryTransitionType_1    = 0x01,
+    /* 02 */ EntryTransitionType_2    = 0x02,
+    /* 03 */ EntryTransitionType_3    = 0x03,
+    /* 04 */ EntryTransitionType_4    = 0x04,
+    /* 05 */ EntryTransitionType_5    = 0x05,
+    /* 06 */ EntryTransitionType_6    = 0x06,
+    /* 07 */ EntryTransitionType_7    = 0x07,
+    /* 08 */ EntryTransitionType_8    = 0x08,
+    /* 09 */ EntryTransitionType_9    = 0x09,
+    /* 10 */ EntryTransitionType_10   = 0x0A,
+    /* 11 */ EntryTransitionType_11   = 0x0B,
+    /* 12 */ EntryTransitionType_12   = 0x0C,
+    /* 13 */ EntryTransitionType_13   = 0x0D,
+    /* 14 */ EntryTransitionType_14   = 0x0E,
+    /* 15 */ EntryTransitionType_15   = 0x0F,
+    /* 16 */ EntryTransitionType_16   = 0x10,
+    /* 17 */ EntryTransitionType_17   = 0x11,
+    /* 18 */ EntryTransitionType_18   = 0x12,
+    /* 19 */ EntryTransitionType_19   = 0x13,
+    /* 20 */ EntryTransitionType_20   = 0x14,
+    /* 21 */ EntryTransitionType_21   = 0x15,
+    /* 22 */ EntryTransitionType_22   = 0x16,
+    /* 23 */ EntryTransitionType_23   = 0x17,
+    /* 24 */ EntryTransitionType_24   = 0x18,
+    /* 25 */ EntryTransitionType_25   = 0x19,
+    /* 26 */ EntryTransitionType_26   = 0x1A,
+    /* 27 */ EntryTransitionType_27   = 0x1B,
+    /* 28 */ EntryTransitionType_28   = 0x1C,
+    /* 29 */ EntryTransitionType_29   = 0x1D,
+    /* 30 */ EntryTransitionType_30   = 0x1E,
+    /* 31 */ EntryTransitionType_31   = 0x1F,
+    /* 32 */ EntryTransitionType_32   = 0x20,
+    /* 33 */ EntryTransitionType_33   = 0x21,
+    /* 34 */ EntryTransitionType_34   = 0x22,
+    /* 35 */ EntryTransitionType_35   = 0x23,
+    /* 36 */ EntryTransitionType_36   = 0x24,
+    /* 37 */ EntryTransitionType_37   = 0x25,
+    /* 38 */ EntryTransitionType_38   = 0x26,
+    /* 39 */ EntryTransitionType_39   = 0x27,
+    /* 40 */ EntryTransitionType_40   = 0x28,
+    /* 41 */ EntryTransitionType_41   = 0x29,
+    /* 42 */ EntryTransitionType_42   = 0x2A,
+    /* 43 */ EntryTransitionType_43   = 0x2B,
+    /* 44 */ EntryTransitionType_44   = 0x2C,
+    /* 45 */ EntryTransitionType_45   = 0x2D,
+    /* 46 */ EntryTransitionType_46   = 0x2E,
+    /* 47 */ EntryTransitionType_47   = 0x2F,
+    /* 48 */ EntryTransitionType_48   = 0x30,
+    /* 49 */ EntryTransitionType_49   = 0x31,
+    /* 50 */ EntryTransitionType_50   = 0x32,
+    /* 51 */ EntryTransitionType_51   = 0x33,
+    /* 52 */ EntryTransitionType_52   = 0x34,
+    /* 53 */ EntryTransitionType_53   = 0x35,
+    /* 54 */ EntryTransitionType_54   = 0x36,
+    /* 55 */ EntryTransitionType_55   = 0x37,
+    /* 56 */ EntryTransitionType_56   = 0x38,
+    /* 57 */ EntryTransitionType_57   = 0x39,
+    /* 58 */ EntryTransitionType_58   = 0x3A,
+    /* 59 */ EntryTransitionType_59   = 0x3B,
+    /* 60 */ EntryTransitionType_60   = 0x3C,
+    /* 61 */ EntryTransitionType_61   = 0x3D,
+    /* 62 */ EntryTransitionType_62   = 0x3E,
+    /* 63 */ EntryTransitionType_63   = 0x3F,
+    /* 64 */ EntryTransitionType_64   = 0x40,
+    /* 65 */ EntryTransitionType_Max,
+} EntryTransitionType;
+
 class UnkStruct_WarpUnk1 : public UnkStruct_0204a060_Base {
 public:
     /* 00 (base) */
@@ -157,7 +226,7 @@ public:
     /* 78 */ EntranceInfo mCurEntrance;
     /* 8C */ EntranceInfo mNextEntrance;
     /* A0 */ UnkStruct_WarpUnk1_A0 mUnk_A0;
-    /* B4 */ unk32 mSpawnTransitionType; // the behavior of Link when entering a new scene
+    /* B4 */ EntryTransitionType mEntryTransitionType; // the behavior of Link when entering a new scene
     /* B8 */
 
     UnkStruct_WarpUnk1();
@@ -349,7 +418,7 @@ public:
     void func_ov000_020708d8(unk32 param1);
     void func_ov000_02070938(unk32 param1);
     void func_ov000_02070a4c(unk32 param1);
-    unk32 func_ov000_02070554();
+    EntryTransitionType GetEntryTransitionType(); // func_ov000_02070554
     UnkStruct_WarpUnk1_A0 *func_ov000_02070538();
     bool func_ov000_02070a9c(EntranceInfo *param1);
     bool func_ov000_02072154(EntranceInfo *param1, unk32 param2);

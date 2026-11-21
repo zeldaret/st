@@ -1,8 +1,8 @@
 #include "Actor/ActorUnkATTG.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
 DECL_PROFILE(ActorProfileUnkATTG);
@@ -83,9 +83,9 @@ void ActorUnkATTG::func_ov031_020f3eec(ActorState state, unk32 param2) {
 }
 
 bool ActorUnkATTG::func_ov031_020f4014() {
-    unk32 param1                    = this->mUnk_5C.mParams[0] & 0xFF;
-    UnkStruct_027e0cd8_0C_Base *ptr = data_027e0cd8->mUnk_0C;
-    VecFx32 *param2                 = data_027e0ce0->func_01fff148(0x0);
+    unk32 param1        = this->mUnk_5C.mParams[0] & 0xFF;
+    MapManagerBase *ptr = gpCourseManager->mpMapMgr;
+    VecFx32 *param2     = data_027e0ce0->func_01fff148(PlayerType_Link);
 
     return ptr->func_ov000_020802ec(param1, param2);
 }

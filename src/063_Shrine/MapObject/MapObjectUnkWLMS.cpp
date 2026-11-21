@@ -88,7 +88,7 @@ void UnkStruct_ov063_02163910::vfunc2_04() {
 }
 
 MapObjectUnkWLMS::MapObjectUnkWLMS() :
-    mUnk_70(G3d_GetModelPtr(GET_PROFILE(MapObjectProfileUnkWLMS)->mUnk_20.mUnk_50)),
+    mUnk_70(NNS_G3dGetMdl(GET_PROFILE(MapObjectProfileUnkWLMS)->mUnk_20.mUnk_50)),
     mUnk_D0(&mUnk_F4, 0x80),
     mUnk_2F4(),
     mUnk_31C(0),
@@ -321,7 +321,7 @@ unk32 MapObjectUnkWLMS::func_ov063_02160580(MapObjState param1, unk32 param2) {
     return 1;
 }
 
-unk32 MapObjectUnkWLMS::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
+unk32 MapObjectUnkWLMS::vfunc_28(PlayerType playerType, unk32 param2, unk32 param3) {
 #pragma unused(param1, param2, param3)
     if (mState == MapObjectUnkWLMSState_Closed) {
         this->func_ov063_02160580(MapObjectUnkWLMSState_Loading, 0);
