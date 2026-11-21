@@ -33,14 +33,12 @@ public:
     /* 00 (base) */
     /* 04 */ PAD(0x04, 0x08);
     /* 08 */ ActorUnkWPBD *mUnk_08;
-    /* 0C */ unk16 mUnk_0C;
-    /* 0E */ unk16 mUnk_0E;
+    /* 0C */ Timer mUnk_0C;
     /* 10 */
 
     ActorUnkWPBD_32C(ActorUnkWPBD *param1) :
         mUnk_08(param1),
-        mUnk_0C(0x0),
-        mUnk_0E(0x0) {}
+        mUnk_0C(0, 0) {}
 
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
 };
@@ -69,9 +67,7 @@ public:
     /* 1F2 */ unk16 mUnk_1F2;
     /* 1F4 */ Actor_9C mUnk_1F4;
     /* 214 */ ActorUnkWPBD_214 mUnk_214;
-    /* 238 */ fx32 mUnk_238;
-    /* 23C */ unk32 mUnk_23C;
-    /* 240 */ fx32 mUnk_240;
+    /* 238 */ VecFx32Cpp mUnk_238;
     /* 244 */ unk32 mUnk_244;
     /* 248 */ unk32 mUnk_248;
     /* 24C */ unk32 mUnk_24C;
@@ -83,11 +79,10 @@ public:
     /* 274 */ VecFx32Cpp mUnk_274;
     /* 280 */ fx32 mUnk_280;
     /* 284 */ unk32 mUnk_284;
-    /* 288 */ u16 mUnk_288;
+    /* 288 */ s16 mUnk_288;
     /* 28A */ unk16 mUnk_28A;
     /* 28C */ fx32 mUnk_28C;
-    /* 290 */ unk16 mUnk_290;
-    /* 292 */ unk16 mUnk_292;
+    /* 290 */ Timer mUnk_290;
     /* 294 */ bool mUnk_294;
     /* 295 */ bool mUnk_295;
     /* 296 */ bool mUnk_296;
@@ -107,7 +102,7 @@ public:
     /* 324 */ unk32 mUnk_324;
     /* 328 */ unk32 mUnk_328;
     /* 32C */ ActorUnkWPBD_32C mUnk_32C;
-    /* 330 */
+    /* 33C */
 
     ActorUnkWPBD();
 
@@ -122,7 +117,7 @@ public:
     void func_ov058_0214b620();
     void func_ov058_0214b820();
     void func_ov058_0214b8dc();
-    void func_ov058_0214bbcc(VecFx32 *param1, fx32 param2);
+    void func_ov058_0214bbcc(VecFx32 *param1, fx32 newVelZ);
     void func_ov058_0214bd98();
     void func_ov058_0214bfa4();
     void func_ov058_0214c078();
@@ -143,7 +138,7 @@ public:
     void func_ov058_0214cfa4(unk32 param1);
     static void func_ov058_0214d078(Actor *param1, G3d_RenderState *param2);
     void func_ov058_0214d250();
-    bool func_ov058_0214d2c4();
+    bool func_ov058_0214d2c4(unk32 param1);
 };
 
 class ActorProfileUnkWPBD : public ActorProfile_Derived1 {

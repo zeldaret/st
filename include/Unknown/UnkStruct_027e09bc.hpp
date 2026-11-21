@@ -28,10 +28,20 @@ struct UnkStruct_027e09bc_0C_268 {
     /* 14 */
 };
 
+class UnkStruct_027e09bc_0C_0C {
+public:
+    /* 00 (base) */
+    /* 04 */
+
+    void func_ov000_020786dc(VecFx32 *param1);
+};
+
 class UnkStruct_027e09bc_0C {
 public:
     /* 000 (vtable) */
-    /* 004 */ PAD(0x04, 0x34);
+    /* 004 */ PAD(0x04, 0x0C);
+    /* 00C */ UnkStruct_027e09bc_0C_0C *mUnk_0C;
+    /* 010 */ PAD(0x10, 0x34);
     /* 034 */ VecFx32 mUnk_034;
     /* 040 */ VecFx32 mUnk_040;
     /* 04C */ PAD(0x4C, 0x58);
