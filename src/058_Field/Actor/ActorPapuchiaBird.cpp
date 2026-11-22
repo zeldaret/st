@@ -385,11 +385,7 @@ void ActorPapuchiaBird::func_ov058_0214b8dc() {
 
         fx16 tanValue = (fx16) FX_Atan2Idx(this->mUnk_238.vec.x, this->mUnk_238.vec.z);
         fx32 tanDelta = (fx16) ((fx16) FX_Atan2Idx(sp1C.vec.x, sp1C.vec.z) - tanValue);
-        if (tanDelta < 0) {
-            tanDelta = -tanDelta;
-        }
-
-        if (tanDelta < FX_F32_TO_FX32(1.3333)) {
+        if (ABS(tanDelta) < FX_F32_TO_FX32(1.3333)) {
             this->SetState(ActorPapuchiaBirdState_0);
         }
     }
@@ -579,11 +575,7 @@ void ActorPapuchiaBird::func_ov058_0214c394() {
 
         fx16 tanValue = (fx16) FX_Atan2Idx(this->mUnk_238.vec.x, this->mUnk_238.vec.z);
         fx32 tanDelta = (fx16) ((fx16) FX_Atan2Idx(sp1C.vec.x, sp1C.vec.z) - tanValue);
-        if (tanDelta < 0) {
-            tanDelta = -tanDelta;
-        }
-
-        if (tanDelta < FX_F32_TO_FX32(1.3333)) {
+        if (ABS(tanDelta) < FX_F32_TO_FX32(1.3333)) {
             VecFx32_Copy(&this->mPos, &this->mUnk_2F4.mUnk_0C);
             this->SetState(ActorPapuchiaBirdState_0);
         }
@@ -677,10 +669,7 @@ void ActorPapuchiaBird::func_ov058_0214c92c() {
 
     fx16 tanValue = (fx16) FX_Atan2Idx(sp00.vec.x, sp00.vec.z);
     fx32 tanDelta = (fx16) ((fx16) FX_Atan2Idx(sp24.vec.x, sp24.vec.z) - tanValue);
-    if (tanDelta < 0) {
-        tanDelta = -tanDelta;
-    }
-    if (tanDelta >= 0x2AAB) {
+    if (ABS(tanDelta) >= 0x2AAB) {
         return;
     }
 
