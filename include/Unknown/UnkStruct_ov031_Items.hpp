@@ -92,13 +92,13 @@ public:
 
     // data_ov000_020b287c
     /* 00 */ virtual ~ActorUnkSCCN_B8();
-    /* 08 */ virtual bool vfunc_08(RefStruct ref);
+    /* 08 */ virtual bool vfunc_08(RefStruct ref, unk32 param2, unk32 param3);
 };
 
 class UnkStruct_ov031_Items_02_38 : public ActorUnkSCCN_B8 {
 public:
     // data_ov031_02112a5c
-    /* 08 */ virtual bool vfunc_08(RefStruct ref) override;
+    /* 08 */ virtual bool vfunc_08(RefStruct ref, unk32 param2, unk32 param3) override;
 };
 
 class UnkStruct_ov031_Items_02 {

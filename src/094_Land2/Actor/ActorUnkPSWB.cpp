@@ -3,8 +3,8 @@
 #include "Actor/ActorBomb.hpp"
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorManager.hpp"
-#include "Actor/ActorUnkSCCN.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Item/ItemManager.hpp"
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObject.hpp"
@@ -15,7 +15,6 @@
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
@@ -100,16 +99,16 @@ ActorProfileUnkPSWB::ActorProfileUnkPSWB() :
 
 ActorUnkPSWB_194::~ActorUnkPSWB_194() {}
 
-bool ActorUnkPSWB_194::vfunc_08(RefStruct param1, unk32 param2, unk32 param3) {
-    if (param1.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x100)) ||
-        param1.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x101))) {
-        if (param1.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x100)) && param1.acRef.unk_id == 0) {
+bool ActorUnkPSWB_194::vfunc_08(RefStruct ref, unk32 param2, unk32 param3) {
+    if (ref.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x100)) ||
+        ref.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x101))) {
+        if (ref.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x100)) && ref.acRef.unk_id == 0) {
             func_ov000_0208bdd4(data_027e0ce0, 0, &mUnk_10->mVel);
             func_ov000_0207e20c(data_027e09c0, &data_ov094_021785c0, &mUnk_10->mPos);
         }
         ((ActorUnkPSWB *) mUnk_10)->func_ov094_02167bf0();
-    } else if (((u32) param1.acRef.type_index) << 0x10 >> 0x1E != 0) {
-        ActorBomb *actorBomb = (ActorBomb *) gpActorManager->func_01fff3b4(param1);
+    } else if (((u32) ref.acRef.type_index) << 0x10 >> 0x1E != 0) {
+        ActorBomb *actorBomb = (ActorBomb *) gpActorManager->func_01fff3b4(ref);
         if (actorBomb != NULL) {
             ActorId actorId = actorBomb->GetActorId();
             if (actorId == ActorId_Bomb) {
@@ -119,7 +118,7 @@ bool ActorUnkPSWB_194::vfunc_08(RefStruct param1, unk32 param2, unk32 param3) {
             }
         }
     }
-    ActorUnkSCCN_B8::vfunc_08(param1, param2, param3);
+    ActorUnkSCCN_B8::vfunc_08(ref, param2, param3);
 }
 
 ActorUnkPSWB::ActorUnkPSWB() :
@@ -171,7 +170,7 @@ bool ActorUnkPSWB::Init(unk32 param1) {
         fx32 ret; //! TODO: force onto the stack
         VecFx32 vec2;
         if (func_ov000_02070c84(data_027e09a4, &vec1, mUnk_5C.mUnk_24) != 0) {
-            ret = data_027e0cd8->mUnk_0C->vfunc_28(&vec1, 1, 0);
+            ret = gpCourseManager->mpMapMgr->vfunc_28(&vec1, 1, 0);
 
             vec2       = vec1;
             mPos.x     = vec2.x;
@@ -355,7 +354,7 @@ void ActorUnkPSWB::func_ov094_02166e60(void) {
 
     if (mUnk_46 == 1) {
         u32 var;
-        func_01fff05c(&var, data_027e0cd8->mUnk_0C, &mPos);
+        func_01fff05c(&var, gpCourseManager->mpMapMgr, &mPos);
         bool cond = true;
         if ((var & 0x1F) != 8 && (var >> 5 & 3) != 2) {
             cond = false;
@@ -406,7 +405,7 @@ void ActorUnkPSWB::func_ov094_02167024(void) {
             VecFx32 vec = mPos;
             vec.y += FX_F32_TO_FX32(1.0f);
 
-            UnkStruct_027e0cd8_0C_Base *tmpVar = data_027e0cd8->mUnk_0C;
+            MapManagerBase *tmpVar = gpCourseManager->mpMapMgr;
             func_01ffedac(&vec2b, &vec);
 
             fx32 tmpRet = tmpVar->func_01ffedf4(&vec2b);
@@ -548,7 +547,7 @@ void ActorUnkPSWB::func_ov094_021675ac(VecFx32 *vec) {
 
 unk32 ActorUnkPSWB::func_ov094_02167614(void) {
     if (GET_FLAG2(mUnk_180, 1)) {
-        VecFx32 *vec = data_027e0ce0->func_01fff148(0);
+        VecFx32 *vec = data_027e0ce0->func_01fff148(PlayerType_Link);
         if (func_01ff9258(mPos.x - vec->x, mPos.z - vec->z) > FX_F32_TO_FX32(0.54f)) {
             UNSET_FLAG2(mUnk_180, 1);
         }
@@ -777,15 +776,15 @@ void ActorUnkPSWB::func_ov094_02167e58(void) {
     }
 
     VecFx32 vec1;
-    func_ov000_0205ad64(this->func_ov000_0209853c(0), &vec1);
+    func_ov000_0205ad64(this->func_ov000_0209853c(PlayerType_Link), &vec1);
     u32 var1;
 
-    func_01fff05c(&var1, data_027e0cd8->mUnk_0C, &vec1);
+    func_01fff05c(&var1, gpCourseManager->mpMapMgr, &vec1);
 
     if ((var1 >> 5 & 3) != 2) {
         VecFx32 vec2, vec3;
-        vec2 = *this->func_ov000_0209853c(0);
-        VEC_Subtract(&mPos, this->func_ov000_0209853c(0), &vec3);
+        vec2 = *this->func_ov000_0209853c(PlayerType_Link);
+        VEC_Subtract(&mPos, this->func_ov000_0209853c(PlayerType_Link), &vec3);
         UnkAngleStruct angle;
         angle.angle_u = FX_Atan2Idx(vec3.x, vec3.z);
         func_02017f38(&angle.angle_u);
@@ -803,7 +802,7 @@ void ActorUnkPSWB::func_ov094_02167e58(void) {
             angle += DEG_TO_ANG(90);
 
             u32 var3;
-            func_01fff05c(&var3, data_027e0cd8->mUnk_0C, &vec2);
+            func_01fff05c(&var3, gpCourseManager->mpMapMgr, &vec2);
 
             bool break_loop = true;
             if ((var3 & 0x1F) != 8 && (var3 >> 5 & 3) != 2) {
@@ -822,7 +821,7 @@ void ActorUnkPSWB::func_ov094_02167e58(void) {
             return;
         }
 
-        VEC_Subtract(&mPos, this->func_ov000_0209853c(0), &vec3);
+        VEC_Subtract(&mPos, this->func_ov000_0209853c(PlayerType_Link), &vec3);
         angle.angle_u = FX_Atan2Idx(vec3.x, vec3.z);
         func_02017f38(&angle.angle_u);
 
@@ -837,7 +836,7 @@ void ActorUnkPSWB::func_ov094_02167e58(void) {
             angle += DEG_TO_ANG(90);
 
             u32 var4;
-            func_01fff05c(&var4, data_027e0cd8->mUnk_0C, &vec2);
+            func_01fff05c(&var4, gpCourseManager->mpMapMgr, &vec2);
 
             bool break_loop = true;
             if ((var4 & 0x1F) != 8 && (var4 >> 5 & 3) != 2) {
@@ -860,10 +859,10 @@ unk32 ActorUnkPSWB::vfunc_58(VecFx32 *param1) {
     if (UnkStruct_ov048_02137600::vfunc_58(param1) != 0) {
         u32 var1;
         unk32 ret = 1;
-        func_01fff05c(&var1, data_027e0cd8->mUnk_0C, param1);
+        func_01fff05c(&var1, gpCourseManager->mpMapMgr, param1);
         if ((var1 & 0x1F) != 0xC) {
             u32 var2; // some kind of ref?
-            func_01fff05c(&var2, data_027e0cd8->mUnk_0C, param1);
+            func_01fff05c(&var2, gpCourseManager->mpMapMgr, param1);
             bool cond  = true;
             u32 tmpCpy = *(volatile u32 *) &var2;
             if ((var2 & 0x1F) != 8 && (tmpCpy >> 5 & 3) != 2) {

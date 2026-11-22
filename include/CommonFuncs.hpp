@@ -10,7 +10,6 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "nitro/fx.h"
 #include "types.h"
 
@@ -279,7 +278,6 @@ bool func_ov000_0208bba4(UnkStruct_027e0ce0 *param1, unk32 param2);
 void func_ov000_0208bb84(u16 *param1, UnkStruct_027e0ce0 *param2, unk32 param3);
 void func_ov000_0208bb94(UnkStruct_027e0ce0 *param1, unk32 param2, unk32 param3);
 void func_ov000_0208bdd4(UnkStruct_027e0ce0 *param1, unk32, void *param2);
-void func_ov000_0208cac8(UnkStruct_ov000_0208f820_28 *, VecFx32 *, unk32);
 unk32 func_ov000_0208dc98(unk32);
 void func_ov000_0208dd60(void *, UnkStruct_027e0ce0_30_00 *);
 const char *func_ov000_0208e830(int);
