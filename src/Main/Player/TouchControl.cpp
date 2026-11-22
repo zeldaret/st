@@ -74,7 +74,6 @@ void TouchControl::IncreaseSpeed(u16 increase) {
     this->mSpeed += increase;
 }
 
-// non-matching
 void TouchControl::UpdateFlags(u16 speed) {
     this->mFlags = TouchFlag_None;
 
@@ -92,21 +91,18 @@ void TouchControl::UpdateFlags(u16 speed) {
         this->mSpeed = speed;
     }
 
-    switch (!(this->mFlags & TouchFlag_TouchedNow)) {
-        default:
-            this->mFlags |= TouchFlag_Repeat;
-            this->mRepeatTimer = this->mRepeatStart;
-            break;
-        case 0:
-            if (this->mState.touch != false && this->mRepeatTimer != 0) {
-                if (this->mRepeatTimer - this->mSpeed > 0) {
-                    this->mRepeatTimer -= this->mSpeed;
-                } else {
-                    this->mFlags |= TouchFlag_Repeat;
-                    this->mRepeatTimer = this->mRepeatLoop;
-                }
+    if (this->GetFlags() & TouchFlag_TouchedNow) {
+        this->mFlags |= TouchFlag_Repeat;
+        this->mRepeatTimer = this->mRepeatStart;
+    } else {
+        if (this->mState.touch != false && this->mRepeatTimer != 0) {
+            if (this->mRepeatTimer - this->mSpeed > 0) {
+                this->mRepeatTimer -= this->mSpeed;
+            } else {
+                this->mFlags |= TouchFlag_Repeat;
+                this->mRepeatTimer = this->mRepeatLoop;
             }
-            break;
+        }
     }
 
     if (this->mTimeSinceTouch + this->mSpeed < 0xFFFF) {

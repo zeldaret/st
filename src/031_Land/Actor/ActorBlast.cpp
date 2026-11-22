@@ -2,12 +2,12 @@
 #include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d2c.hpp"
 #include "global.h"
@@ -51,11 +51,7 @@ bool ActorBlast_E8::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, co
         if (temp_r0 != NULL) {
             var_r0 = this->mUnk_04->mPos.y - (sp24.unk_00.y + temp_r0->mPos.y);
 
-            if (var_r0 < 0) {
-                var_r0 = 0 - var_r0;
-            }
-
-            if (var_r0 > 0x800) {
+            if (ABS(var_r0) > FX32_HALF) {
                 return false;
             }
         }
@@ -69,17 +65,13 @@ bool ActorBlast_E8::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, co
                 param2->vfunc_14(&spC.unk_00);
 
                 if (this->mUnk_04->mPos.y < spC.unk_00.y + temp_r0_2->mPos.y &&
-                    temp_r0_2->mPos.y + this->mUnk_04->mPos.y > spC.unk_0C.y + 0x800) {
+                    temp_r0_2->mPos.y + this->mUnk_04->mPos.y > spC.unk_0C.y + FX32_HALF) {
                     return false;
                 }
             } else {
                 var_r0_2 = this->mUnk_04->mPos.y - (sp24.unk_00.y + temp_r0_2->mPos.y);
 
-                if (var_r0_2 < 0) {
-                    var_r0_2 = -var_r0_2;
-                }
-
-                if (var_r0_2 > 0x800) {
+                if (ABS(var_r0_2) > FX32_HALF) {
                     return false;
                 }
             }
@@ -100,10 +92,10 @@ bool ActorBlast::Init(unk32 param1) {
     this->mPos.y += FX_F32_TO_FX32(0.5f);
 
     this->mUnk_C8 = *this->mUnk_34;
-    VecFx32_Add(&this->mUnk_C8.pos, &this->mPos, &this->mUnk_C8.pos);
+    VEC_Add(&this->mUnk_C8.pos, &this->mPos, &this->mUnk_C8.pos);
 
     this->mUnk_D8 = *this->mUnk_30;
-    VecFx32_Add(&this->mUnk_D8.pos, &this->mPos, &this->mUnk_D8.pos);
+    VEC_Add(&this->mUnk_D8.pos, &this->mPos, &this->mUnk_D8.pos);
 
     data_027e09a8->func_ov000_02071b30(0xF3, &this->mPos, 0x0);
     data_027e09a8->func_ov000_02071eac(&this->mPos);
@@ -130,7 +122,7 @@ bool ActorBlast::Init(unk32 param1) {
         data_027e0cec->func_ov000_0209feac(0x80F, &this->mPos, 0x2, 0x0, 0x0);
     }
 
-    UnkStruct_027e0cd8_0C_Base *data = data_027e0cd8->mUnk_0C;
+    MapManagerBase *data = gpCourseManager->mpMapMgr;
     if (data->mUnk_110 == 0x7 && data->func_ov000_0208217c(&this->mPos, 0x1)) {
         ActorParams actorParams;
         RefStruct actorRef;

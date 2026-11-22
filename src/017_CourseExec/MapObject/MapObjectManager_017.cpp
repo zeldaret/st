@@ -1,11 +1,11 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Physics/AABB.hpp"
 #include "Unknown/UnkStruct_020499e0.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "flags.h"
 #include "math.hpp"
 #include "nitro/fx.h"
@@ -80,7 +80,7 @@ void MapObjectManager::func_ov017_020c01cc(unk32 param1) {
 }
 
 void MapObjectManager::func_ov017_020c023c(s8 *param1) {
-    if (data_027e0cd8->func_ov000_02082124()) {
+    if (gpCourseManager->func_ov000_02082124()) {
         return;
     }
 
@@ -172,13 +172,13 @@ void MapObjectManager::func_ov017_020c033c(unk32 *param1, MapObjectManager *this
 }
 
 // https://decomp.me/scratch/ceRYG
-unk32 MapObjectManager::func_ov017_020c050c(unk32 param1, unk32 param2, unk32 param3, unk32 param4) {
+unk32 MapObjectManager::func_ov017_020c050c(unk32 param1, PlayerType playerType, unk32 param3, unk32 param4) {
     Vec2bCpp sp0 = *(Vec2bCpp *) ((u8 *) &param1 + 2);
 
     MapObject *pMapObj = this->func_01fff498(sp0);
 
     if (pMapObj != NULL) {
-        return pMapObj->vfunc_28(param2, param3, param4);
+        return pMapObj->vfunc_28(playerType, param3, param4);
     }
 
     return -1;

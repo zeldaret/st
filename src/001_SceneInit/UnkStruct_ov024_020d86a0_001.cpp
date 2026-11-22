@@ -3,14 +3,14 @@
 #include "Unknown/UnkStruct_ov024_020d86a0.hpp"
 
 UnkStruct_ov024_020d86a0::UnkStruct_ov024_020d86a0() {
-    this->mUnk_00          = new(HeapIndex_1) UnkStruct_ov024_020d86a0_00(this);
-    this->mUnk_0C          = false;
-    this->mUnk_0D          = false;
-    this->mUnk_0E          = false;
-    this->mUnk_0F          = false;
-    this->mUnk_10          = false;
-    this->mUnk_11          = false;
-    this->mUnk_00->mUnk_18 = false;
+    this->mUnk_00                  = new(HeapIndex_1) UnkStruct_ov024_020d86a0_00(this);
+    this->mUnk_0C                  = false;
+    this->mUnk_0D                  = false;
+    this->mUnk_0E                  = false;
+    this->mUnk_0F                  = false;
+    this->mUnk_10                  = false;
+    this->mUnk_11                  = false;
+    this->mUnk_00->mDoBottomScreen = false;
 }
 
 UnkStruct_ov024_020d86a0::~UnkStruct_ov024_020d86a0() {

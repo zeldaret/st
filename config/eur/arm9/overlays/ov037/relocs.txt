@@ -706,8 +706,8 @@ from:0x021210e8 kind:arm_call to:0x020732fc module:overlay(0)
 from:0x02121118 kind:arm_call to:0x01ffd420 module:itcm
 from:0x02121144 kind:arm_call to:0x021217e8 module:overlay(37)
 from:0x02121168 kind:arm_call to:0x0206c9a8 module:overlay(0)
-from:0x02121178 kind:arm_call to:0x0215ccf4 module:overlays(60,66)
-from:0x02121188 kind:arm_call to:0x0215cda8 module:overlays(60,63,66)
+from:0x02121178 kind:arm_call to:0x0215ccf4 module:overlay(60)
+from:0x02121188 kind:arm_call to:0x0215cda8 module:overlays(60,63)
 from:0x02121190 kind:arm_call to:0x02120fbc module:overlay(37)
 from:0x0212119c kind:arm_call to:0x02120d54 module:overlay(37)
 from:0x021211a4 kind:load to:0x027e09b8 module:dtcm

@@ -1,12 +1,12 @@
 #include "MapObject/MapObjectDoorDangerSpawn.hpp"
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
@@ -55,13 +55,13 @@ bool MapObjectDoorDangerSpawn::Init(void) {
 }
 
 void MapObjectDoorDangerSpawn::Setup(void) {
-    UnkStruct_027e0cd8_0C_Base *ptr;
+    MapManagerBase *ptr;
     VecFx32 auStack_20;
 
     if (this->mUnk_20.mParams[1] == 2) {
         this->mUnk_6C = FX_F32_TO_FX32(0.0f);
 
-        ptr = data_027e0cd8->mUnk_0C;
+        ptr = gpCourseManager->mpMapMgr;
         ptr->func_ov000_0208053c(this->mUnk_20.mParams[0]);
         ptr->func_ov000_020803ec(this->mUnk_20.mParams[0]);
         this->vfunc_5C(MapObjDoorDangerSpawnState_2, 1);
@@ -105,13 +105,13 @@ void MapObjectDoorDangerSpawn::Setup(void) {
     }
 
     if (run) {
-        data_027e0cd8->mUnk_0C->func_ov000_0208053c(this->mUnk_20.mParams[0]);
+        gpCourseManager->mpMapMgr->func_ov000_0208053c(this->mUnk_20.mParams[0]);
     }
 #else
-    data_027e0cd8->mUnk_0C->func_ov000_0208053c(this->mUnk_20.mParams[0]);
+    gpCourseManager->mpMapMgr->func_ov000_0208053c(this->mUnk_20.mParams[0]);
 #endif
 
-    ptr = data_027e0cd8->mUnk_0C;
+    ptr = gpCourseManager->mpMapMgr;
 
     if (this->func_ov031_020fdec8()) {
         this->mUnk_A2 = true;
@@ -225,7 +225,7 @@ void MapObjectDoorDangerSpawn::vfunc_08(void) {
                 data_ov000_020b51b8.func_ov000_0206d0bc(0);
                 this->mUnk_A1 = true;
 
-                unk32 temp = data_027e0cd8->mUnk_0C->func_ov000_02080a44();
+                unk32 temp = gpCourseManager->mpMapMgr->func_ov000_02080a44();
                 data_ov000_020b51b8.func_ov000_0206d0ec(temp, 0x78, 0x7F, -1);
                 this->func_ov000_0209d2c4(1, true);
                 return;
@@ -253,7 +253,7 @@ void MapObjectDoorDangerSpawn::vfunc_0C(void) {
 }
 
 void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
-    UnkStruct_027e0cd8 **ptr;
+    CourseManager **ptr;
     s32 var_r6;
     u32 temp_r8;
     UnkStackStruct1 sp8;
@@ -268,7 +268,7 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
             this->vfunc_7C();
 
             sp4Ptr = (s16 *) &sp4;
-            MapObject::func_ov000_0209d22c(sp4Ptr, this, 0);
+            MapObject::func_ov000_0209d22c(sp4Ptr, this, PlayerType_Link);
 
             if (*sp4Ptr >= 0x4000 || *sp4Ptr <= -0x4000) {
                 this->mUnk_8B = 0;
@@ -276,9 +276,8 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
                 this->mUnk_8B = 1;
             }
 
-            u16 result = ROUND_FX32(
-                FX_MUL(func_01ffb428(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f)), INT_TO_FX32(this->mUnk_78)));
-            this->mUnk_80 = result;
+            this->mUnk_80 = ROUND_FX32(
+                FX_MUL(INT_TO_FX32(this->mUnk_78), FX_Div(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f))));
 
             if (this->mUnk_8A) {
                 this->mUnk_82 = 0;
@@ -339,7 +338,7 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
 
             return;
         case MapObjDoorDangerSpawnState_2:
-            ptr = &data_027e0cd8; // whyyy
+            ptr = &gpCourseManager; // whyyy
 
             this->MapObjectDoorBase::vfunc_5C(state, param2);
 
@@ -363,16 +362,16 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
 
             break;
         case MapObjDoorDangerSpawnState_8:
-            ptr = &data_027e0cd8;
+            ptr = &gpCourseManager;
             this->MapObjectDoorBase::vfunc_5C(state, param2);
             this->func_ov000_0209d2c4(0, false);
 
             if (param2 == 0) {
-                (*ptr)->mUnk_0C->func_ov000_0208053c(this->mUnk_20.mParams[0]);
+                (*ptr)->mpMapMgr->func_ov000_0208053c(this->mUnk_20.mParams[0]);
             }
 
             if (param2 == 0) {
-                data_ov000_020b51b8.func_ov000_0206d0ec((*ptr)->mUnk_0C->func_ov000_02080a44(), 0x78, 0x7F, -1);
+                data_ov000_020b51b8.func_ov000_0206d0ec((*ptr)->mpMapMgr->func_ov000_02080a44(), 0x78, 0x7F, -1);
             }
 
             break;
@@ -383,7 +382,7 @@ void MapObjectDoorDangerSpawn::vfunc_5C(MapObjState state, unk32 param2) {
 }
 
 bool MapObjectDoorDangerSpawn::vfunc_64(void) {
-    UnkStruct_027e0cd8_0C_Base *pUVar4;
+    MapManagerBase *pUVar4;
     unk32 var_r0;
     bool var_r5;
 
@@ -394,8 +393,8 @@ bool MapObjectDoorDangerSpawn::vfunc_64(void) {
                 return true;
             }
 
-            pUVar4 = data_027e0cd8->mUnk_0C;
-            if (!pUVar4->func_ov000_020802ec(this->mUnk_20.mParams[0], data_027e0ce0->func_01fff148(0))) {
+            pUVar4 = gpCourseManager->mpMapMgr;
+            if (!pUVar4->func_ov000_020802ec(this->mUnk_20.mParams[0], data_027e0ce0->func_01fff148(PlayerType_Link))) {
                 return true;
             }
 
@@ -421,7 +420,7 @@ bool MapObjectDoorDangerSpawn::vfunc_64(void) {
 }
 
 bool MapObjectDoorDangerSpawn::vfunc_68(void) {
-    UnkStruct_027e0cd8_0C_Base *pUVar2 = data_027e0cd8->mUnk_0C;
+    MapManagerBase *pUVar2 = gpCourseManager->mpMapMgr;
 
     if (this->mUnk_20.mParams[2] == 1) {
         if (func_ov000_0209d29c(1)) {
@@ -446,12 +445,12 @@ bool MapObjectDoorDangerSpawn::vfunc_68(void) {
 }
 
 bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
-    UnkStruct_027e0cd8_0C_Base *pUVar5;
+    MapManagerBase *pUVar5;
 
     switch (this->mUnk_20.mParams[1]) {
         case 1:
         case 4:
-            pUVar5 = data_027e0cd8->mUnk_0C;
+            pUVar5 = gpCourseManager->mpMapMgr;
 
             if (this->mUnk_20.mParams[2] == 1) {
                 if (this->func_ov000_0209d29c(1) != 0) {
@@ -473,7 +472,7 @@ bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
                 }
             }
 
-            if (pUVar5->func_ov000_020802ec(this->mUnk_20.mParams[0], data_027e0ce0->func_01fff148(0))) {
+            if (pUVar5->func_ov000_020802ec(this->mUnk_20.mParams[0], data_027e0ce0->func_01fff148(PlayerType_Link))) {
                 pUVar5->func_ov000_020803ec(this->mUnk_20.mParams[0]);
                 return true;
             }
@@ -488,7 +487,7 @@ bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
             u16 uVar4 = this->mUnk_20.mParams[0];
 
             if (uVar4 != 0 && gpActorManager->func_ov000_020970c8(uVar4, 0) != 0) {
-                data_027e0cd8->mUnk_0C->func_ov000_020803ec(this->mUnk_20.mParams[0]);
+                gpCourseManager->mpMapMgr->func_ov000_020803ec(this->mUnk_20.mParams[0]);
                 return true;
             }
         }
@@ -500,7 +499,7 @@ bool MapObjectDoorDangerSpawn::vfunc_6C(void) {
 }
 
 bool MapObjectDoorDangerSpawn::func_ov031_020fdec8(void) {
-    UnkStruct_027e0cd8_0C_Base *pUVar4;
+    MapManagerBase *pUVar4;
     VecFx32 *uVar3;
     int iVar1;
 
@@ -527,7 +526,7 @@ bool MapObjectDoorDangerSpawn::func_ov031_020fdec8(void) {
                 }
             }
 
-            pUVar4 = data_027e0cd8->mUnk_0C;
+            pUVar4 = gpCourseManager->mpMapMgr;
             uVar3  = (VecFx32 *) &pUVar4->func_ov001_020b8a5c(data_027e09a4->func_ov000_02070560()->spawnIndex, 0)->mUnk_00;
 
             if (pUVar4->func_ov000_020802ec(this->mUnk_20.mParams[0], uVar3)) {
@@ -548,7 +547,7 @@ void MapObjectDoorDangerSpawn::vfunc_18(s8 *param1) {
 
 void MapObjectDoorDangerSpawn::vfunc_14(unk32 param1) {
     MtxFx33 m;
-    MtxFx33_InitYRotation(&m, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
+    MTX_RotY33_(&m, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
 
     VecFx32 pos(this->mPos);
     pos.y += -(this->mUnk_6C * 2);
@@ -617,8 +616,8 @@ void MapObjectDoorDangerSpawn::vfunc_74(void) {
     func_01ffaf74(&local_40, &m, &local_40);
     func_01ffaf74(&local_4c, &m, &local_4c);
 
-    VecFx32_Add(&local_28, &local_40, &local_28);
-    VecFx32_Add(&local_34, &local_4c, &local_34);
+    VEC_Add(&local_28, &local_40, &local_28);
+    VEC_Add(&local_34, &local_4c, &local_34);
 
     data_027e0cec->func_ov000_0209ff8c(&this->mUnk_68.mUnk_00, 0x8CF, &local_28, 4);
     data_027e0cec->func_ov000_0209ff8c(&this->mUnk_A8.mUnk_00, 0x8CF, &local_34, 4);
@@ -645,7 +644,7 @@ void MapObjectDoorDangerSpawn::vfunc_40(void) {
 }
 
 void MapObjectDoorDangerSpawn::vfunc_44(void) {
-    unk32 local_c = *(u32 *) &this->mRef;
+    RefStruct local_c = this->mRef;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x137, &this->mPos, 0);
 }
 
@@ -654,7 +653,7 @@ void MapObjectDoorDangerSpawn::vfunc_48(void) {
 }
 
 void MapObjectDoorDangerSpawn::vfunc_4C(void) {
-    unk32 local_c = *(u32 *) &this->mRef;
+    RefStruct local_c = this->mRef;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x139, &this->mPos, 0);
 }
 
@@ -674,7 +673,7 @@ unk32 MapObjectDoorDangerSpawn::vfunc_8C(void) {
     return 0;
 }
 
-void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param3) {
+void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, UnkAngleStruct *param3) {
     s16 iVar1;
 
     if (!this->mUnk_58) {
@@ -686,38 +685,38 @@ void MapObjectDoorDangerSpawn::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *pa
     *param3 = this->mAngle.angle_s;
     iVar1   = this->mAngle.angle_s + DEG_TO_ANG(30);
     if (param1 != 0) {
-        local_24.x = FX_MUL(SIN((u16) iVar1), 0x1666);
-        local_24.z = FX_MUL(COS((u16) iVar1), 0x1666);
+        local_24.x = FX_MUL(SIN(iVar1), 0x1666);
+        local_24.z = FX_MUL(COS(iVar1), 0x1666);
         local_24.y = 0;
     } else {
-        local_24.x = FX_MUL(SIN((u16) iVar1), 0x10CD);
-        local_24.z = FX_MUL(COS((u16) iVar1), 0x10CD);
+        local_24.x = FX_MUL(SIN(iVar1), 0x10CD);
+        local_24.z = FX_MUL(COS(iVar1), 0x10CD);
         local_24.y = 0;
 
         *param3 += DEG_TO_ANG(180);
     }
-    VecFx32_Add(&this->mPos, &local_24, param2);
+    VEC_Add(&this->mPos, &local_24, param2);
 
     VecFx32 local_30;
     this->mUnk_5A = this->mAngle.angle_s;
     iVar1         = this->mAngle.angle_s - DEG_TO_ANG(30);
     if (param1 != 0) {
-        local_30.x = FX_MUL(SIN((u16) iVar1), 0x1666);
-        local_30.z = FX_MUL(COS((u16) iVar1), 0x1666);
+        local_30.x = FX_MUL(SIN(iVar1), 0x1666);
+        local_30.z = FX_MUL(COS(iVar1), 0x1666);
         local_30.y = 0;
     } else {
-        local_30.x = FX_MUL(SIN((u16) iVar1), 0x10CD);
-        local_30.z = FX_MUL(COS((u16) iVar1), 0x10CD);
+        local_30.x = FX_MUL(SIN(iVar1), 0x10CD);
+        local_30.z = FX_MUL(COS(iVar1), 0x10CD);
         local_30.y = 0;
         this->mUnk_5A += DEG_TO_ANG(180);
     }
-    VecFx32_Add(&this->mPos, &local_30, &this->mUnk_5C);
+    VEC_Add(&this->mPos, &local_30, &this->mUnk_5C);
 }
 
 void MapObjectDoorDangerSpawn::func_ov031_020fe5fc(VecFx32 *param1, MapObjectDoorDangerSpawn *thisx) {
     if (data_027e0ce0->func_01fff1a4()) {
-        VecFx32 *piVar2 = data_027e0ce0->func_01fff148(1);
-        VecFx32 *piVar3 = data_027e0ce0->func_01fff148(0);
+        VecFx32 *piVar2 = data_027e0ce0->func_01fff148(PlayerType_Zelda);
+        VecFx32 *piVar3 = data_027e0ce0->func_01fff148(PlayerType_Link);
 
         VecFx32 temp;
         VecFx32_Init(piVar3->x, piVar3->y, piVar3->z, &temp);
@@ -728,7 +727,7 @@ void MapObjectDoorDangerSpawn::func_ov031_020fe5fc(VecFx32 *param1, MapObjectDoo
         func_01ff93c0(&pos, FX_F32_TO_FX32(0.5f));
         *param1 = pos;
     } else {
-        VecFx32 *piVar4 = data_027e0ce0->func_01fff148(0);
+        VecFx32 *piVar4 = data_027e0ce0->func_01fff148(PlayerType_Link);
         *param1         = *piVar4;
     }
 }

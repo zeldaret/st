@@ -5,59 +5,36 @@
 #include "types.h"
 
 #include <new>
+#include <nns/fnd.h>
 #include <stddef.h>
 
 #define GAME_ASSERT(cond, line, msg, ...)                                                      \
     (!(cond) ? data_02049984.func_020125a4(__FILE__, (line), (msg), __VA_ARGS__) : ((void) 0))
 #define ASSERT(cond, msg, ...) GAME_ASSERT(cond, __LINE__, msg, __VA_ARGS__)
 
-typedef u32 UnkId;
-enum __UnkId {
-    UnkId_EXPH = 'EXPH', // Expanded Heap?
-    UnkId_FRMH = 'FRMH', // Frame Heap?
-    UnkId_UNTH = 'UNTH', // Unit Heap?
-    UnkId_UNSH = 'UNSH', // Unspecified Heap?
-};
-
 typedef u32 HeapIndex;
 typedef s16 HeapIndex16;
 enum HeapIndex_ {
-    HeapIndex_Main = 0, // UnkId_FRMH
-    HeapIndex_1    = 1, // UnkId_EXPH
-    HeapIndex_2    = 2, // UnkId_UNSH
-    HeapIndex_ITCM = 3, // UnkId_UNSH
+    HeapIndex_Main = 0, // NNSFndHeapStamp_FRMH
+    HeapIndex_1    = 1, // NNSFndHeapStamp_EXPH
+    HeapIndex_2    = 2, // NNSFndHeapStamp_UNSH
+    HeapIndex_ITCM = 3, // NNSFndHeapStamp_UNSH
     HeapIndex_DTCM = 4, // ?
     HeapIndex_5    = 5, // ?
-    HeapIndex_6    = 6, // UnkId_FRMH
+    HeapIndex_6    = 6, // NNSFndHeapStamp_FRMH
     HeapIndex_7    = 7, // ?
     HeapIndex_8    = 8, // ?
     HeapIndex_Max  = 9
 };
 
-void *operator new(size_t length, u32 id, u32 idLength = 4);
-inline void *operator new[](size_t length, u32 id, u32 idLength = 4) {
-    return ::operator new(length, id, idLength);
+void *operator new(size_t length, u32 id, u32 alignment = 4);
+inline void *operator new[](size_t length, u32 id, u32 alignment = 4) {
+    return ::operator new(length, id, alignment);
 }
-
-class UnkStruct_02011e10_Sub1 {
-public:
-    /* 00 */ UnkId mId;
-    /* 04 */ unk32 mUnk_04;
-    /* 04 */ unk32 mUnk_08;
-    /* 04 */ unk32 mUnk_0C;
-    /* 04 */ unk32 mUnk_10;
-    /* 04 */ unk32 mUnk_14;
-    /* 04 */ unk32 mUnk_18;
-    /* 04 */ unk32 mUnk_1C;
-    /* 04 */ unk32 mUnk_20;
-    /* 04 */ unk32 mUnk_24;
-    /* 04 */ unk32 mUnk_28;
-    /* 2C */ unk8 mUnk_2C[0x60 - 0x2C];
-};
 
 class UnkStruct_02011e10_2C {
 public:
-    /* 00 */ UnkStruct_02011e10_Sub1 *mUnk_00;
+    /* 00 */ NNSiFndHeapHead *mUnk_00;
     /* 04 */ PAD(0x04, 0x18);
     /* 18 */
 
@@ -70,7 +47,7 @@ public:
 
 class UnkStruct_02011e10 {
 public:
-    /* 00 */ UnkStruct_02011e10_Sub1 *mUnk_00[HeapIndex_Max]; // the pointer seems to match arena lo
+    /* 00 */ NNSiFndHeapHead *mUnk_00[HeapIndex_Max]; // the pointer seems to match arena lo
     /* 24 */ unk32 mUnk_24[2];
     /* 2C */ UnkStruct_02011e10_2C mUnk_2C;
     /* 44 */ UnkStruct_02011e10_2C mUnk_44;
@@ -117,7 +94,7 @@ public:
 
 extern UnkStruct_02011e10 data_0204999c;
 
-void *SysNew(UnkStruct_02011e10_Sub1 *param1, u32 length, u32 idLength);
+void *SysNew(NNSiFndHeapHead *param1, u32 length, u32 alignment);
 void SysDelete(void *ptr);
 void *func_02011f10(s32 length);
 void *func_02011f30(s32 length);

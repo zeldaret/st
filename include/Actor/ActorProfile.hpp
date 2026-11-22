@@ -23,7 +23,7 @@ public:
     /* 1C */ unk16 mUnk_1C;
     /* 1E */ u16 mUnk_1E;
     /* 20 */ ActorId mActorId;
-    /* 24 */ unk32 mUnk_24;
+    /* 24 */ ActorId mUnk_24;
     /* 28 */ unk32 mUnk_28;
     /* 2C */ unk32 mUnk_2C;
     /* 30 */ unk32 mUnk_30;

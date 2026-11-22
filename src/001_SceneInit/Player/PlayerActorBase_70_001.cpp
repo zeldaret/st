@@ -48,7 +48,7 @@ PlayerActorBase_70::PlayerActorBase_70(PlayerCharacter character, unk32 param2) 
     mUnk_15C(0x20000) {
     if (this->mUnk_114 != NULL) {
         for (u32 i = 0; i < PlayerCharacter_Max; i++) {
-            MtxFx43_InitIdentity(&this->mUnk_114[i]);
+            MTX_Identity43_(&this->mUnk_114[i]);
         }
     }
 }

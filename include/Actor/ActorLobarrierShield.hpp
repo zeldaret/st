@@ -12,16 +12,6 @@
 #include "nitro/math.h"
 #include "types.h"
 
-class UnkStruct_ov063_021631a0 : public UnkStruct_ov000_020b3268 {
-public:
-    /* 00 (base) */
-    /* 60 */ PAD(0x60, 0x6C);
-    /* 6C */ unk32 mUnk_6C;
-    /* 70 */
-
-    UnkStruct_ov063_021631a0(G3d_Model *pModel);
-};
-
 class UnkStruct_func_ov063_0215a678 {
 public:
     /* 00 */ PAD(0x00, 0x04);
@@ -57,7 +47,15 @@ public:
 
     /* 10 */ virtual void vfunc_10(const Actor *actor) override;
 };
+class UnkStruct_ov063_021631a0 : public UnkStruct_ov000_020b3268 {
+public:
+    /* 00 (base) */
+    /* 60 */ PAD(0x60, 0x6C);
+    /* 6C */ unk32 mUnk_6C;
+    /* 70 */
 
+    UnkStruct_ov063_021631a0(G3d_Model *pModel);
+};
 enum ActorLobarrierShieldState_ {
     ActorLobarrierShieldState_Held          = 0, // by a Lobarrier
     ActorLobarrierShieldState_Grabbing      = 1, // with whip
@@ -85,17 +83,20 @@ public:
     /* 1C8 */ unk16 mUnk_1C8; // Angle related
     /* 1CA */ PAD(0x1CA, 0x1CC);
     /* 1CC */ VecFx32Cpp mUnk_1CC;
-    /* 1D8 */ unk32 mUnk_1D8;
-    /* 1DC */ unk32 mUnk_1DC;
-    /* 1E0 */ unk32 mUnk_1E0;
+    /* 1D8 */ VecFx32Cpp mUnk_1D8;
     /* 1E4 */ RefStruct mUnk_1E4;
     /* 1E8 */ Actor_Derived1_94 mUnk_1E8;
     /* 1F4 */ u8 mUnk_1F4;
-    /* 1F5 */
+    /* 1F5 */ PAD(0x1F5, 0x208);
+    /* 208 */
+
+    const bool IsGrabbed() {
+        return this->mState == ActorLobarrierShieldState_Grabbing || this->mState == ActorLobarrierShieldState_Grabbed;
+    }
 
     ActorLobarrierShield();
 
-    /* 10 */ virtual void vfunc_10(Cylinder *param1) override;
+    /* 10 */ virtual void vfunc_10(Cylinder *param1) const override;
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 20 */ virtual void Update() override;
     /* 24 */ virtual void vfunc_24() override;
@@ -128,7 +129,7 @@ public:
     void func_ov063_0215b724();
     void func_ov063_0215b814(RefStruct ref);
     void func_ov063_0215b854();
-    void func_ov063_0215b8e8(VecFx32 *param1);
+    void func_ov063_0215b8e8(const VecFx32 *param1);
     static void func_ov063_0215b99c(ActorLobarrierShield *param1, UnkStruct_func_ov063_0215a678 *param2);
     void func_ov063_0215ba64();
 };

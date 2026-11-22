@@ -5,6 +5,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "Actor/Actor_Derived1.hpp"
+#include "ActorUnkZLSL_ZSRS.hpp"
 #include "global.h"
 #include "nns/g3d/sbc.h"
 #include "types.h"
@@ -46,7 +47,7 @@ public:
     ActorUnkRB1T();
 
     /* 4C */ virtual ~ActorUnkRB1T() override;
-    /* 58 */ virtual void vfunc_58(ActorState param1);
+    /* 58 */ virtual void SetState(ActorState param1);
 
     void func_ov026_0211e3cc(void);
     bool func_ov026_0211e3e0(unk32 param1);

@@ -1,11 +1,11 @@
 #include "Actor/ActorUnkRBLS.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Render/ModelRender.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
 
-ActorUnkZLSL_AnimationTag data_ov063_02163740 = {0, "RBLS"};
+static ActorUnkZLSL_AnimationTag data_ov063_02163740 = {0, "RBLS", 0x00};
 
 DECL_PROFILE(ActorProfileUnkRBLS);
 
@@ -18,17 +18,19 @@ ActorProfileUnkRBLS::ActorProfileUnkRBLS() :
 
 // non-matching
 ActorUnkRBLS::ActorUnkRBLS() :
-    mUnk_94(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkRBLS)->mUnk_3C.mUnk_50)),
+    mUnk_94(NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkRBLS)->mUnk_3C.mUnk_50)),
     mUnk_F4(&mUnk_94, GET_PROFILE(ActorProfileUnkRBLS)->vfunc_04()) {}
 
 bool ActorUnkRBLS::Init(unk32 param1) {
+#pragma unused(param1)
+
     this->mPos.x -= FX_F32_TO_FX32(0.5f);
     this->mPos.z -= FX_F32_TO_FX32(0.5f);
     this->mPos.y = 0;
     func_ov000_02099f64(&this->mUnk_F4, data_ov063_02163740, 0x1000);
     this->mUnk_F4.vfunc_3C();
 
-    data_027e0cd8->mUnk_0C->mUnk_12A = 0;
+    gpCourseManager->mpMapMgr->mUnk_12A = 0;
     return true;
 }
 
@@ -41,7 +43,7 @@ void ActorUnkRBLS::vfunc_24(void) {
 }
 
 void ActorUnkRBLS::vfunc_2C(unk32 param1) {
-    ModelRender *var1 = &this->mUnk_94;
-    VecFx32 *var2     = &this->mPos;
-    var1->vfunc_18(var2);
+#pragma unused(param1)
+
+    this->mUnk_94.vfunc_18(&this->mPos);
 }

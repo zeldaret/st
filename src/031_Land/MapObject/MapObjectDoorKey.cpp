@@ -68,7 +68,7 @@ void MapObjectDoorKey::vfunc_14(unk32 param1) {
     VecFx32 local_48;
     VecFx32 temp;
 
-    MtxFx33_InitYRotation(&m, SIN(angle), COS(angle));
+    MTX_RotY33_(&m, SIN(angle), COS(angle));
     temp.x     = this->mPos.x - FX_F32_TO_FX32(1.0f) + this->mUnk_70;
     temp.z     = this->mPos.z;
     temp.y     = this->mPos.y;
@@ -78,7 +78,7 @@ void MapObjectDoorKey::vfunc_14(unk32 param1) {
     this->mUnk_94.vfunc_14(&m, &local_48);
 
     u16 var = (-0x8000 - sVar2);
-    MtxFx33_InitYRotation(&m, SIN(var), COS(var));
+    MTX_RotY33_(&m, SIN(var), COS(var));
     temp.x     = this->mPos.x + FX_F32_TO_FX32(1.0f) - this->mUnk_70;
     temp.z     = this->mPos.z;
     temp.y     = this->mPos.y;
@@ -121,7 +121,7 @@ bool MapObjectDoorKey::func_ov031_020fea88(void) {
     return false;
 }
 
-unk32 MapObjectDoorKey::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
+unk32 MapObjectDoorKey::vfunc_28(PlayerType playerType, unk32 param2, unk32 param3) {
     if (this->mUnk_A4) {
         return -1;
     }
@@ -196,7 +196,7 @@ void MapObjectDoorKey::vfunc_78(void) {
     f32 div   = func_02039f04(this->mUnk_6C) / 4096.0f;
     s16 angle = 16384.0f * div;
 
-    MtxFx43_InitYRotation(&m, SIN((u16) angle), COS((u16) angle));
+    MtxFx43_InitYRotation(&m, SIN(angle), COS(angle));
 
     local_84.x = FX_F32_TO_FX32(1.0f);
     local_84.y = 0;
@@ -209,13 +209,13 @@ void MapObjectDoorKey::vfunc_78(void) {
     func_01ffaf74(&local_90, &m, &local_90);
     func_01ffaf74(&local_84, &m, &local_84);
 
-    VecFx32_Add(&local_24, &local_90, &local_24);
-    VecFx32_Add(&local_24, &local_84, &VStack_3c);
+    VEC_Add(&local_24, &local_90, &local_24);
+    VEC_Add(&local_24, &local_84, &VStack_3c);
 
     local_90.x = -local_90.x;
     local_84.x = -local_84.x;
-    VecFx32_Add(&local_30, &local_90, &local_30);
-    VecFx32_Add(&local_30, &local_84, &VStack_48);
+    VEC_Add(&local_30, &local_90, &local_30);
+    VEC_Add(&local_30, &local_84, &VStack_48);
 
     if (this->mUnk_68.mUnk_00.mUnk_00 != NULL) {
         this->mUnk_68.mUnk_00.mUnk_00->func_ov000_02052c48(&VStack_3c, &local_24);
@@ -231,7 +231,7 @@ void MapObjectDoorKey::vfunc_40(void) {
 }
 
 void MapObjectDoorKey::vfunc_44(void) {
-    unk32 stack = *(u32 *) &this->mRef;
+    RefStruct stack = this->mRef;
     data_027e09a8->func_ov000_02071d34(&stack, 0x135, &this->mPos, 0);
 }
 

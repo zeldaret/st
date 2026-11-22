@@ -1,45 +1,46 @@
 #include "System/SysNew.hpp"
 #include "CommonFuncs.hpp"
+#include "nns/fnd.h"
 
 extern char *data_0204372c[];
 
-void *SysNew(UnkStruct_02011e10_Sub1 *param1, uint length, uint idLength) {
-    void *newPtr = NULL;
+void *SysNew(NNSiFndHeapHead *param1, uint length, uint alignment) {
+    void *ptr = NULL;
 
-    switch (param1->mId) {
-        case UnkId_EXPH:
-            newPtr = func_020010c0(param1, length, idLength);
+    switch ((u32) param1->stamp) {
+        case NNSFndHeapStamp_EXPH:
+            ptr = NNS_FndAllocFromExpHeapEx(param1, length, alignment);
             break;
-        case UnkId_FRMH:
-            newPtr = func_02001308(param1, length, idLength);
+        case NNSFndHeapStamp_FRMH:
+            ptr = NNS_FndAllocFromFrmHeapEx(param1, length, alignment);
             break;
-        case UnkId_UNTH:
-            newPtr = func_02001654(param1);
+        case NNSFndHeapStamp_UNTH:
+            ptr = NNS_FndAllocFromUnitHeap(param1);
             break;
-        case UnkId_UNSH:
-            newPtr = func_020145b0(func_02014704(), length);
+        case NNSFndHeapStamp_UNSH:
+            ptr = func_020145b0(func_02014704(), length);
             break;
         default:
             break;
     }
 
-    return newPtr;
+    return ptr;
 }
 
 void SysDelete(void *ptr) {
-    UnkId *pUnkId;
+    NNSiFndHeapHead *pHead;
 
     if (ptr != NULL) {
-        pUnkId = func_02001488();
+        pHead = func_02001488();
 
-        switch (*pUnkId) {
-            case UnkId_EXPH:
-                func_020011c8(pUnkId, ptr);
+        switch (pHead->stamp) {
+            case NNSFndHeapStamp_EXPH:
+                NNS_FndFreeToExpHeap(pHead, ptr);
                 break;
-            case UnkId_UNTH:
-                func_02001684(pUnkId, ptr);
+            case NNSFndHeapStamp_UNTH:
+                NNS_FndFreeToUnitHeap(pHead, ptr);
                 break;
-            case UnkId_UNSH:
+            case NNSFndHeapStamp_UNSH:
                 func_02014630(func_02014704(), ptr);
                 break;
             default:
@@ -49,33 +50,32 @@ void SysDelete(void *ptr) {
 }
 
 void *func_02011f10(s32 length) {
-    return SysNew(data_0204999c.mUnk_00[1], length, 4);
+    return SysNew(data_0204999c.mUnk_00[HeapIndex_1], length, 4);
 }
 
 void *func_02011f30(s32 length) {
     return func_02011f10(length);
 }
 
-void *operator new(size_t length, uint id, uint idLength) {
-    void *pvVar1;
-    UnkStruct_02011e10_Sub1 *pUVar5;
+void *operator new(size_t length, uint id, uint alignment) {
+    void *ptr;
+    NNSiFndHeapHead *pHead = data_0204999c.mUnk_00[id];
 
-    pUVar5 = data_0204999c.mUnk_00[id];
-    pvVar1 = SysNew(pUVar5, length, idLength);
+    ptr = SysNew(pHead, length, alignment);
 
-    if (pvVar1 == NULL) {
+    if (ptr == NULL) {
         switch (id) {
             case HeapIndex_1:
-                GAME_ASSERT(pvVar1 != NULL, 183, "%sノメモリガタリマセン.\nサイズ=%d\nノコリ =%d", data_0204372c[id], length,
-                            func_020011f4(pUVar5));
+                GAME_ASSERT(ptr != NULL, 183, "%sノメモリガタリマセン.\nサイズ=%d\nノコリ =%d", data_0204372c[id], length,
+                            func_020011f4(pHead));
                 break;
             default:
-                GAME_ASSERT(pvVar1 != NULL, 187, "%sノメモリガタリマセン.\nサイズ=%d", data_0204372c[id], length);
+                GAME_ASSERT(ptr != NULL, 187, "%sノメモリガタリマセン.\nサイズ=%d", data_0204372c[id], length);
                 break;
         }
     }
 
-    return pvVar1;
+    return ptr;
 }
 
 void operator delete(void *ptr) {

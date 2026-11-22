@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "Course/CourseManager.hpp"
 #include "files.h"
 #include "global.h"
 #include "types.h"
@@ -26,10 +26,10 @@ public:
     ~UnkStruct_027e09e8();
 
     // overlay 0
-    void func_ov000_0207ba84(UnkFileSystem1 *param1, UnkStruct_027e0cd8_0C_Base *param2); // calls `ZCB_ParseFile`
+    void func_ov000_0207ba84(UnkFileSystem1 *param1, MapManagerBase *param2); // calls `ZCB_ParseFile`
     void func_ov000_0207baa0();
     void func_ov000_0207bab4(ZCBEntryTRIB *pEntries, u16 nEntries);
-    void func_ov000_0207e99c(ZCBSectionGRDB *pSection, UnkStruct_027e0cd8_0C_Base *param2);
+    void func_ov000_0207e99c(ZCBSectionGRDB *pSection, MapManagerBase *param2);
 };
 
 //! TODO: gCollisionManager? also not a pointer?

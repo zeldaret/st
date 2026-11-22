@@ -4,6 +4,7 @@
 #include "Unknown/UnkStruct_027e0d00.hpp"
 // clang-format on
 
+#include <nitro/os.h>
 #include <printf.h>
 
 extern const char *data_ov000_020aa244; // ".narc"
@@ -25,11 +26,11 @@ DUMMY_BSS();
 
 void UnkStruct_027e0d00_20::func_ov024_020d4e9c(wchar_t *param1, unk32 param2, bool param3) {
     const char *fileExt = param3 ? data_ov000_020aa24c : data_ov000_020aa244;
-    snprintf((char *) param1, 0x40, "%s/anim%s", data_ov024_020d8474[param2], fileExt);
+    OS_SNPrintf((char *) param1, 0x40, "%s/anim%s", data_ov024_020d8474[param2], fileExt);
 }
 
 void UnkStruct_027e0d00_20::func_ov024_020d4edc(wchar_t *param1, wchar_t *param2, unk32 param3) {
-    snprintf((char *) param1, 0x40, "%s:/anm%s", param2, data_ov000_020aa250[param3]);
+    OS_SNPrintf((char *) param1, 0x40, "%s:/anm%s", param2, data_ov000_020aa250[param3]);
 }
 
 UnkStruct_027e0d00_20::UnkStruct_027e0d00_20(unk32 param1, unk32 param2) :
@@ -42,7 +43,7 @@ UnkStruct_027e0d00_20::UnkStruct_027e0d00_20(unk32 param1, unk32 param2) :
 
 void UnkStruct_027e0d00_20::func_ov024_020d4fa0(void *param1, unk32 param2) {
     u8 unknown[0x90];
-    ModelRender_Derived2 local_120(G3d_GetModelPtr(this->mUnk_50), 0x0C, unknown);
+    ModelRender_Derived2 local_120(NNS_G3dGetMdl(this->mUnk_50), 0x0C, unknown);
     VecFx32 *iVar2;
     VecFx32 *iVar3;
     fx32 temp;

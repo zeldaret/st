@@ -455,9 +455,9 @@ from:0x02146b50 kind:arm_call to:0x02146ea8 module:overlay(29)
 from:0x02146b58 kind:arm_call to:0x0214731c module:overlay(29)
 from:0x02146b80 kind:arm_call to:0x0210ddd0 module:overlay(26)
 from:0x02146cf0 kind:load to:0x0203feb0 module:main
-from:0x02146cf4 kind:load to:0x02040eb0 module:main
-from:0x02146cf8 kind:load to:0x02041eb0 module:main
-from:0x02146cfc kind:load to:0x02042eb0 module:main
+from:0x02146cf4 kind:load to:0x0203feb0 add:0x1000 module:main
+from:0x02146cf8 kind:load to:0x0203feb0 add:0x2000 module:main
+from:0x02146cfc kind:load to:0x0203feb0 add:0x3000 module:main
 from:0x02146d1c kind:arm_call to:0x02147380 module:overlay(29)
 from:0x02146d44 kind:arm_call to:0x02146b8c module:overlay(29)
 from:0x02146d58 kind:arm_call to:0x02147380 module:overlay(29)
@@ -1261,7 +1261,7 @@ from:0x0214da60 kind:arm_call to:0x0207fa64 module:overlay(0)
 from:0x0214daa8 kind:arm_call to:0x0214dae4 module:overlay(29)
 from:0x0214dad8 kind:load to:0x02155a90 module:overlay(29)
 from:0x0214dadc kind:load to:0x02155aac module:overlay(29)
-from:0x0214dae0 kind:load to:0x020406b0 module:main
+from:0x0214dae0 kind:load to:0x0203feb0 add:0x800 module:main
 from:0x0214db78 kind:load to:0x02154820 module:overlay(29)
 from:0x0214db7c kind:load to:0x02154810 module:overlay(29)
 from:0x0214db94 kind:arm_call to:0x0214ed94 module:overlay(29)
@@ -1445,7 +1445,7 @@ from:0x0214f5d8 kind:arm_call to:0x0207f94c module:overlay(0)
 from:0x0214f634 kind:arm_call to:0x01ff9638 module:itcm
 from:0x0214f640 kind:arm_call to:0x01ffbbe0 module:itcm
 from:0x0214f668 kind:arm_call to:0x01ff930c module:itcm
-from:0x0214f698 kind:load to:0x020406b0 module:main
+from:0x0214f698 kind:load to:0x0203feb0 add:0x800 module:main
 from:0x0214f6a8 kind:arm_call to:0x02149318 module:overlay(29)
 from:0x0214f6d4 kind:arm_call to:0x02133a9c module:overlay(26)
 from:0x0214f704 kind:arm_call to:0x01ffbbe0 module:itcm
@@ -1485,7 +1485,7 @@ from:0x0214fbc8 kind:arm_call to:0x01ffe6c4 module:itcm
 from:0x0214fbd4 kind:arm_call to:0x0207f94c module:overlay(0)
 from:0x0214fc0c kind:arm_call to:0x0214f890 module:overlay(29)
 from:0x0214fc24 kind:arm_call to:0x020731e8 module:overlay(0)
-from:0x0214fc30 kind:load to:0x020406b0 module:main
+from:0x0214fc30 kind:load to:0x0203feb0 add:0x800 module:main
 from:0x0214fc34 kind:load to:0x027e09a8 module:dtcm
 from:0x0214fc44 kind:arm_call to:0x020990b4 module:overlay(0)
 from:0x0214fc58 kind:load to:0x02155bc4 module:overlay(29)
@@ -1815,7 +1815,7 @@ from:0x02152bb0 kind:arm_call to:0x01ffa60c module:itcm
 from:0x02152bc4 kind:arm_call_thumb to:0x01ffa1bc module:itcm
 from:0x02152bd4 kind:arm_call to:0x01ffa60c module:itcm
 from:0x02152bf8 kind:load to:0x0203feb0 module:main
-from:0x02152bfc kind:load to:0x02042eb0 module:main
+from:0x02152bfc kind:load to:0x0203feb0 add:0x3000 module:main
 from:0x02152c14 kind:load to:0x02112fd4 module:overlay(26)
 from:0x02152c34 kind:arm_call to:0x02133968 module:overlay(26)
 from:0x02152c58 kind:arm_call to:0x021337e4 module:overlay(26)

@@ -529,7 +529,7 @@ from:0x0213cc44 kind:arm_call to:0x01ffa60c module:itcm
 from:0x0213cc84 kind:arm_call to:0x01ffa7a0 module:itcm
 from:0x0213ccdc kind:arm_call to:0x01ffa7a0 module:itcm
 from:0x0213cd04 kind:load to:0x027e0ce4 module:dtcm
-from:0x0213cd08 kind:load to:0x0203f93c module:main
+from:0x0213cd08 kind:load to:0x0203e93c add:0x1000 module:main
 from:0x0213cd0c kind:load to:0x0203e93c module:main
 from:0x0213cd24 kind:arm_call to:0x01fff5d0 module:itcm
 from:0x0213cd54 kind:arm_call to:0x0213cb58 module:overlay(55)

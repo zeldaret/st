@@ -79,16 +79,16 @@ void AdventureModeManager_190::vfunc_58(unk32 param1, unk32 param2) {
 
 void AdventureModeManager_190::func_ov024_020ca21c() {
     this->mUnk_14.func_0201bb84(0x14, 2, 0x14);
-    this->mUnk_14.mUnk_18 = false;
-    this->mUnk_14.mUnk_19 = true;
+    this->mUnk_14.mDoBottomScreen = false;
+    this->mUnk_14.mDoTopScreen    = true;
     data_0204e5f8.func_0201b9a8(&this->mUnk_14);
 }
 
 bool AdventureModeManager_190::func_ov024_020ca24c(unk32 param1) {
     this->mUnk_60 = param1;
     this->mUnk_38.func_0201bb84(0x14, 2, 0x14);
-    this->mUnk_38.mUnk_18 = false;
-    this->mUnk_38.mUnk_19 = true;
+    this->mUnk_38.mDoBottomScreen = false;
+    this->mUnk_38.mDoTopScreen    = true;
     data_0204e5f8.func_0201b9a8(&this->mUnk_38);
 }
 

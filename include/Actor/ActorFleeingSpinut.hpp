@@ -24,10 +24,8 @@ public:
     /* 00 */ u8 mUnk_00;
     /* 04 */ UnkStruct_027e0960_TableEntry_04 *mUnk_04;
     /* 08 */ UnkStruct_027e0960_TableEntry_04 *mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
+    /* 0C */ UnkStruct_027e0960_TableEntry_04 *mUnk_0C[PlayerType_Max];
+    /* 0C */ UnkStruct_027e0960_TableEntry_04 *mUnk_14[PlayerType_Max];
     /* 1C */ VecFx32Cpp mUnk_1C;
     /* 28 */ u16 mUnk_28;
     /* 2C */ unk32 mUnk_2C;
@@ -35,27 +33,27 @@ public:
 
     ActorFleeingSpinut_1EC();
 
-    void func_ov032_0211cc48(VecFx32 *param1);
-    UnkStruct_027e0960_TableEntry_04 *func_ov032_0211cd20(VecFx32 *param1);
-    u16 *func_ov032_0211cd60(VecFx32 *param1, s16 *param2, VecFx32 *param3, unk32 param4, unk32 param5, unk32 param6);
+    void func_ov032_0211cc48(const VecFx32 *param1);
+    UnkStruct_027e0960_TableEntry_04 *func_ov032_0211cd20(const VecFx32 *param1);
+    u16 *func_ov032_0211cd60(VecFx32 *param1, s16 *param2, VecFx32 *param3, unk32 param4, s16 param5, unk32 param6);
     void func_ov032_0211cf74();
-    void func_ov032_0211cfac(unk32 param1);
+    void func_ov032_0211cfac(PlayerType playerType);
     void func_ov032_0211d028();
     bool func_ov032_0211d040(VecFx32 *param1);
     void func_ov032_0211d08c(VecFx32 *param1);
-    bool func_ov032_0211d2e4(UnkStruct_027e0960_TableEntry_04_Base *param1);
+    bool func_ov032_0211d2e4(UnkStruct_027e0960_TableEntry_04_Base *param1, unk32 param2);
     UnkStruct_027e0960_TableEntry_04 *func_ov032_0211d384(VecFx32 *param1);
     unk32 func_ov032_0211d568(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2,
                               UnkStruct_027e0960_TableEntry_04_Base *param3);
     bool func_ov032_0211d674(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2);
-    bool func_ov032_0211d6d8(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2, unk32 param3);
+    bool func_ov032_0211d6d8(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2, PlayerType playerType);
     void func_ov032_0211d7e8(VecFx32 *param1);
     void func_ov032_0211d80c();
     void func_ov032_0211d830(UnkStruct_027e0960_TableEntry_04 *param1);
     void func_ov032_0211d910();
     bool func_ov032_0211d920(VecFx32 *param1);
     bool func_ov032_0211d864(VecFx32 *param1);
-    bool func_ov032_0211da0c(unk32 param1, VecFx32 *param2);
+    bool func_ov032_0211da0c(PlayerType playerType, VecFx32 *param2);
 };
 
 class ActorFleeingSpinut : public Actor_Derived2 {
@@ -102,7 +100,7 @@ public:
     bool func_ov032_0211c9d8();
     bool func_ov032_0211ca20();
     bool func_ov032_0211ca6c();
-    bool func_ov032_0211cab8(unk32 param1, unk32 param2);
+    bool func_ov032_0211cab8(PlayerType playerType, unk32 param2);
     void func_ov032_0211cb2c();
 };
 

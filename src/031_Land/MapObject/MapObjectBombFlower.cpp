@@ -29,7 +29,7 @@ MapObjectProfileBombFlower::MapObjectProfileBombFlower() :
 
 // non-matching
 MapObjectBombFlower::MapObjectBombFlower() :
-    mUnk_48(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfileBombFlower)), 0x0, 0x0),
+    mUnk_48(NNS_G3dGetMdl(GET_PROFILE_20_50(MapObjectProfileBombFlower)), 0x0, 0x0),
     mUnk_B4(0x1000),
     mUnk_B8(0, 0),
     mUnk_BC(true) {
@@ -137,7 +137,7 @@ void MapObjectBombFlower::vfunc_08() {
 
             fx32 delta = this->mUnk_B8.GetRemainingTime();
             if (delta > 0x0) {
-                func_01ff9218(&this->mUnk_B4, 0x1000, func_01ffb464((u32) delta << 0xC));
+                func_01ff9218(&this->mUnk_B4, 0x1000, FX_Inv((u32) delta << 0xC));
             }
             this->mUnk_B0 = this->mUnk_B4;
             break;
@@ -230,11 +230,11 @@ void MapObjectBombFlower::vfunc_38() {
     bomb->SetState(ActorBombState_4);
 }
 
-unk32 MapObjectBombFlower::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
+unk32 MapObjectBombFlower::vfunc_28(PlayerType playerType, unk32 param2, unk32 param3) {
     if (this->mState == MapObjBombFlowerState_4) {
         return 0x0;
     }
-    return this->MapObjectPot_Base::vfunc_28(param1, param2, param3);
+    return this->MapObjectPot_Base::vfunc_28(playerType, param2, param3);
 }
 
 // non-matching

@@ -4,6 +4,7 @@
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorUnkNSHD.hpp"
+#include "Course/CourseManager.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "MainGame/MiscAdvManager.hpp"
 #include "MapObject/MapObjectChestBase.hpp"
@@ -15,7 +16,6 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
@@ -440,13 +440,13 @@ PlayerGet::~PlayerGet() {
         }
     }
 
-    UnkStruct_ov000_0208f820_28_98 *pUnk_28_98 = this->mUnk_28->mUnk_98;
-    if (pUnk_28_98 != 0) {
-        pUnk_28_98->mUnk_38.mUnk_08 &= ~0x10;
+    PlayerActorBase *pUnk_28_98 = this->mpLink->mpZelda;
+    if (pUnk_28_98 != NULL) {
+        pUnk_28_98->mUnk_38.mUnk_00.mUnk_08 &= ~0x10;
 
-        if (pUnk_28_98->mUnk_38.mUnk_08 == 0) {
+        if (pUnk_28_98->mUnk_38.mUnk_00.mUnk_08 == 0) {
             // real?
-            pUnk_28_98->mUnk_38.~UnkStruct_PlayerGet_64();
+            pUnk_28_98->mUnk_38.mUnk_00.~UnkStruct_PlayerGet_64();
         }
     }
 }
@@ -455,12 +455,12 @@ PlayerGet::~PlayerGet() {
 bool PlayerGet::func_ov110_02186b8c() {
     switch (this->mUnk_54.mItemId) {
         case ItemId_NormalShield:
-            if (this->mUnk_28->pItemManager->HasUnk12(2)) {
+            if (this->mpLink->mUnk_54->HasUnk12(2)) {
                 return true;
             }
             break;
         case ItemId_AncientShield:
-            if (!(this->mUnk_28->pItemManager->HasUnk12(2))) {
+            if (!(this->mpLink->mUnk_54->HasUnk12(2))) {
                 return true;
             }
             break;
@@ -490,7 +490,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             this->mUnk_54.mUnk_08      = temp.z;
             this->mUnk_54.mUnk_00.data = temp.x;
             this->mUnk_54.mUnk_04.data = temp.y;
-            pItemManager               = this->mUnk_28->pItemManager;
+            pItemManager               = this->mpLink->mUnk_54;
 
             switch (itemId) {
                 case ItemId_BombBag:
@@ -590,7 +590,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                     UnkFileSystem2 fs2(modelPath, 0);
                     BMDSectionModel *res = func_ov000_0205abcc((void *) &fs4, (void *) &fs2, 0, 1, this->mUnk_30->mUnk_24);
 
-                    this->mUnk_8C.vfunc_08(G3d_GetModelPtr(res));
+                    this->mUnk_8C.vfunc_08(NNS_G3dGetMdl(res));
                 }
 
                 switch (this->mUnk_54.mItemId) {
@@ -625,13 +625,13 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             }
 
             if (!var_r1_4) {
-                UnkStruct_ov000_0208f820_28 *ptr0    = this->mUnk_28;
-                UnkStruct_ov000_0208f820_28_98 *ptr1 = ptr0->mUnk_98;
+                PlayerLinkActor *ptr0 = this->mpLink;
+                PlayerActorBase *ptr1 = ptr0->mpZelda;
 
                 if (ptr1 != NULL) {
                     UnkStruct_PlayerGet_64 *ptr = *(UnkStruct_PlayerGet_64 **) &ptr1->mUnk_38;
                     ptr->mUnk_08 |= 0x10;
-                    ptr1->mUnk_38.func_ov000_0208a100();
+                    ptr1->mUnk_38.mUnk_00.func_ov000_0208a100();
                 }
             }
 
@@ -643,7 +643,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 case ItemId_RestoredOceanGlyph:
                 case ItemId_RestoredFireGlyph:
                 case ItemId_RestoredDesertOceanGlyph:
-                    data_ov000_020b51b8.func_ov000_0206c96c(data_027e0cd8->mUnk_0C->func_ov000_02080a44());
+                    data_ov000_020b51b8.func_ov000_0206c96c(gpCourseManager->mpMapMgr->func_ov000_02080a44());
                     this->mUnk_73 = 1;
                     break;
                 default:
@@ -659,7 +659,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 unk32 uStack_f0[4];
                 VecFx32 VStack_fc;
 
-                VecFx32_Add(this->mUnk_34, &data_ov110_021861ec.mUnk_00, &VStack_fc);
+                VEC_Add(this->mUnk_34, &data_ov110_021861ec.mUnk_00, &VStack_fc);
                 data_027e0cec->func_ov000_0209feac(0x874, &VStack_fc, 1, 0, 0);
                 uStack_f0[0] = 0x870;
                 uStack_f0[1] = 0x871;
@@ -805,7 +805,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
             }
 
             if (this->mUnk_72 == 0 && var_r1_2) {
-                temp_r6 = this->mUnk_28->pItemManager->GetInventory()->func_ov110_02184a40(this->mUnk_54.mItemId);
+                temp_r6 = this->mpLink->mUnk_54->GetInventory()->func_ov110_02184a40(this->mUnk_54.mItemId);
 
                 switch (this->mUnk_54.mItemId) {
                     case ItemId_NormalShield:
@@ -817,7 +817,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
 
                             if ((temp_r0_3 != NULL) && (temp_r0_3->GetActorId() == ActorId_NormalShield)) {
                                 if (this->func_ov110_02186b8c()) {
-                                    this->mUnk_28->pItemManager->FlipUnk12(2);
+                                    this->mpLink->mUnk_54->FlipUnk12(2);
                                 }
 
                                 temp_r0_3->func_ov062_02158ce8();
@@ -825,11 +825,11 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                         } else {
                             if (this->mUnk_54.mItemId == ItemId_AncientShield) {
                                 if (this->func_ov110_02186b8c()) {
-                                    this->mUnk_28->pItemManager->FlipUnk12(2);
+                                    this->mpLink->mUnk_54->FlipUnk12(2);
                                 }
                             } else if (this->mUnk_54.mItemId == ItemId_NormalShield) {
                                 if (this->func_ov110_02186b8c()) {
-                                    this->mUnk_28->pItemManager->FlipUnk12(2);
+                                    this->mpLink->mUnk_54->FlipUnk12(2);
                                 }
                             }
                         }
@@ -844,7 +844,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                     case ItemId_RecruitUniform2:
                     case ItemId_EngineerUniform:
                         if (data_027e09a4->CurrentSceneIndex() == SceneIndex_f_first) {
-                            this->mUnk_28->func_ov058_02152a24();
+                            this->mpLink->func_ov058_02152a24();
                         }
                         break;
                     default:
@@ -925,7 +925,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                 break;
             }
 
-            temp_r5 = data_027e0cd8->mUnk_0C->func_ov000_02080a44();
+            temp_r5 = gpCourseManager->mpMapMgr->func_ov000_02080a44();
 
             if (data_ov000_020b51b8.mUnk_08[2] != NULL) {
                 var_r0 = 1;
@@ -943,7 +943,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                 break;
             }
 
-            if (temp_r5 == data_ov000_020b51c0.func_02002f04()) {
+            if (temp_r5 == NNS_SndPlayerGetSeqNo(&data_ov000_020b51c0)) {
                 break;
             }
 
@@ -964,7 +964,7 @@ void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
             break;
         case 0x3B:
             if (param3 != 0 && this->mUnk_54.mItemId != ItemId_Nothing && this->mUnk_8C.mpModel != NULL) {
-                VecFx32_Add(this->mUnk_34, (VecFx32 *) &data_ov110_021861ec.mUnk_00, &auStack_18);
+                VEC_Add(this->mUnk_34, (VecFx32 *) &data_ov110_021861ec.mUnk_00, &auStack_18);
                 data_027e0958->func_ov000_02058fc4(&this->mUnk_74, &auStack_18);
             }
             break;

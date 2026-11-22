@@ -1,5 +1,5 @@
 #include "Actor/ActorUnkRMSBase.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "Course/CourseManager.hpp"
 #include "Unknown/UnkStruct_ov031_02114870.hpp"
 
 ActorUnkRMSBase::ActorUnkRMSBase() :
@@ -10,14 +10,12 @@ ActorUnkRMSBase::ActorUnkRMSBase() :
 bool ActorUnkRMSBase::Init(unk32 param1) {
     bool res = UnkStruct_ov031_02114870::Init(param1);
     mUnk_F4.vfunc_08(this->vfunc_58());
-    data_027e0cd8->mUnk_0C->mUnk_12A = 1;
+    gpCourseManager->mpMapMgr->mUnk_12A = 1;
     return res;
 }
 
-// Matched
 void ActorUnkRMSBase::Setup() {}
 
-// Matched
 void ActorUnkRMSBase::Update() {}
 
 void ActorUnkRMSBase::vfunc_24() {

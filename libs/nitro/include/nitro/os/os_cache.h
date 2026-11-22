@@ -18,8 +18,6 @@ void DC_FlushRange(void *ptr, u32 size);
 void DC_InvalidateAll(void *ptr, u32 size);
 void DC_InvalidateRange(void *ptr, u32 size);
 
-void DC_func_0002();
-
 void IC_InvalidateAll(void);
 void IC_InvalidateRange(void *ptr, u32 size);
 

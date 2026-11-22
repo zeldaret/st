@@ -4,9 +4,9 @@
 #include "Actor/ActorProfile.hpp"
 #include "Physics/AABB.hpp"
 #include "Physics/Cylinder.hpp"
+#include "Player/PlayerActorBase.hpp"
 #include "RefStruct.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "flags.h"
 #include "global.h"
 #include "math.hpp"
@@ -17,6 +17,8 @@
 
 class UnkStruct_027e09bc;
 class UnkStruct_027e09bc_0C;
+class Actor_9C;
+class UnkStruct_ov031_Items_00;
 
 class ActorParams {
 public:
@@ -138,10 +140,10 @@ public:
     /* 02 */ UnkStruct mUnk_02;
 };
 
-// ActorStateStunned? seems to related to that
+// ActorStateStunned? seems to be related to that
 class UnkStruct_ActorLobarrier_224 {
 public:
-    /* 00 (base) */ UnkStruct_PlayerGet_ec mUnk_00[0x2];
+    /* 00 (base) */ UnkSystem7 mUnk_00[0x2];
     /* 08 */ Timer mUnk_08;
     /* 0C */ u16 mUnk_0C;
     /* 0E */ u16 mUnk_0E;
@@ -154,8 +156,8 @@ public:
     }
 
     void Destroy() {
-        for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_00; ptr != &this->mUnk_00[ARRAY_LEN(this->mUnk_00)]; ++ptr) {
-            ptr->mUnk_00.func_ov000_020a0334();
+        for (UnkSystem7 *ptr = this->mUnk_00; ptr != &this->mUnk_00[ARRAY_LEN(this->mUnk_00)]; ++ptr) {
+            ptr->func_ov000_020a0334();
         }
 
         this->mUnk_08.Init();
@@ -184,7 +186,7 @@ public:
     /* 40 */ Actor_C4 *mUnk_40;
     /* 44 */ u16 mUnk_44;
     /* 46 */ unk16 mUnk_46;
-    /* 48 */ unk16 mUnk_48;
+    /* 48 */ s16 mUnk_48;
     /* 4A */ u8 mUnk_4A[2];
     /* 4C */ ActorState mState;
     /* 4E */ fx16 mYOffset;
@@ -200,7 +202,7 @@ public:
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
     /* 0C */ virtual unk8 vfunc_0C();
-    /* 10 */ virtual void vfunc_10(Cylinder *param1);
+    /* 10 */ virtual void vfunc_10(Cylinder *param1) const;
     /* 14 */ virtual bool vfunc_14(Cylinder *param1);
     /* 18 */ virtual bool Init(unk32 param1);
     /* 1C */ virtual void Setup();
@@ -214,7 +216,7 @@ public:
     /* 3C */ virtual bool Drop(ActorGrabParams grabParams, const VecFx32 *pVel);
     /* 40 */ virtual void vfunc_40();
     /* 44 */ virtual void vfunc_44();
-    /* 48 */ virtual bool vfunc_48(unk32 param1);
+    /* 48 */ virtual bool vfunc_48(PlayerType playerType);
     /* 4C */ virtual ~Actor();
     /* 54 */
 
@@ -289,12 +291,12 @@ public:
     void func_ov000_020984d0();
     void func_ov000_020984f0();
     unk32 func_ov000_0209867c(unk32 param1);
-    u32 func_ov000_02098800(bool param1);
+    u32 func_ov000_02098800(PlayerType playerType);
     bool func_ov000_02098838();
     unk32 func_ov000_02098910(UnkStruct_ov031_Items_00 *param1, unk32 param2);
     void func_ov000_02098b8c(unk32 param1, UnkStruct_ov031_Items_00 *param2);
     s32 func_ov000_02098518(unk32 *param1);
-    VecFx32 *func_ov000_0209853c(unk32 param1);
+    VecFx32 *func_ov000_0209853c(PlayerType playerType);
     s32 func_ov000_02098554();
     s16 func_ov000_0209856c();
     s8 func_ov000_02098578();
@@ -385,7 +387,7 @@ public:
         Actor_C4_Base(&param1->mRef, param2) {}
 };
 
-class Actor_Derived2_A8_PTR {
+class Actor_Derived2_A8 {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
@@ -399,8 +401,8 @@ public:
     /* 00 (base) */
     /* 94 */ unk32 mUnk_94;
     /* 98 */ VecFx32 mUnk_98;
-    /* A4 */ VecFx32 const *mUnk_A4;
-    /* A8 */ Actor_Derived2_A8_PTR *mUnk_A8;
+    /* A4 */ const VecFx32 *mUnk_A4;
+    /* A8 */ const Actor_Derived2_A8 *mUnk_A8;
     /* AC */ unk8 mUnk_AC;
     /* AD */ unk8 mUnk_AD;
     /* AE */
@@ -411,12 +413,13 @@ public:
     /* 4C */ WEAK virtual ~Actor_Derived2() {}
     /* 54 */ virtual void vfunc_54(unk32 param1);
 
+    unk32 func_ov000_02098d7c(Actor_9C *param2);
+    void func_ov000_02098f34(VecFx32 *);
     void func_ov000_020990c0(Actor_9C *param1, unk32 param2, unk32 param3);
     void func_ov000_020992dc();
     unk32 func_ov000_02099450(UnkStruct_ActorLobarrier_224 *param1, VecFx32 *param2, unk32 param3, u16 param4);
     void func_ov000_020994a0();
     void func_ov000_020997c4(unk32 param1);
-    void func_ov000_02098f34(VecFx32 *);
 };
 
 extern UnkStruct_ov000_020b539c data_ov000_020b539c_eur;

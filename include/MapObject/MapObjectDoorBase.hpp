@@ -82,7 +82,7 @@ public:
     /* 78 */ virtual void vfunc_78();
     /* 7C */ virtual void vfunc_7C();
     /* 80 */ virtual void vfunc_80();
-    /* 84 */ virtual void vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param3);
+    /* 84 */ virtual void vfunc_84(unk32 param1, VecFx32 *param2, UnkAngleStruct *param3);
     /* 88 */ virtual bool vfunc_88();
     /* 8C */ virtual unk32 vfunc_8C();
     /* 90 */

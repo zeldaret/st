@@ -11,6 +11,7 @@ THUMB_BEGIN
 #include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "Actor/ActorUnkZSTG.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "RefStruct.hpp"
 #include "System/SysNew.hpp"
@@ -19,7 +20,6 @@ THUMB_BEGIN
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d8c.hpp"
@@ -200,11 +200,11 @@ void ActorUnkZLSL::func_ov031_020ea100() {
 }
 
 static inline G3d_Model *GetModelFromProfile() {
-    return G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkZSRS)->vfunc_04()->mUnk_50);
+    return NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkZSRS)->vfunc_04()->mUnk_50);
 }
 
 static inline G3d_Model *GetModel() {
-    return G3d_GetModelPtr(data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Zelda][0]->mUnk_50);
+    return NNS_G3dGetMdl(data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Zelda][0]->mUnk_50);
 }
 
 extern Actor *data_027e0d3c;
@@ -269,7 +269,7 @@ THUMB_END
 
 void ActorUnkZLSL::func_ov031_020ea674() {
     this->func_ov031_020ecbe0();
-    this->vfunc_58(ActorUnkZLSLState_Idle);
+    this->SetState(ActorUnkZLSLState_Idle);
 }
 
 bool ActorUnkZLSL::Init(unk32 param1) {
@@ -334,13 +334,13 @@ void ActorUnkZLSL::func_ov031_020ea868() {}
 
 void ActorUnkZLSL::func_ov031_020ea86c() {}
 
-void ActorUnkZLSL::vfunc_58(ActorState state) {
+void ActorUnkZLSL::SetState(ActorState state) {
     this->mState    = state;
     this->mUnk_286E = 0x0;
 
     this->func_ov031_020ea7a8();
 
-    CALL_PTMF(PTMF<ActorUnkZLSL>, data_ov031_02113770[this->mState]);
+    CALL_PTMF(data_ov031_02113770[this->mState]);
 }
 
 void ActorUnkZLSL::func_ov031_020ea8c0() {}
@@ -352,7 +352,7 @@ void ActorUnkZLSL::func_ov031_020ea8c8() {}
 void ActorUnkZLSL::Update() {
     UnkAngleStruct angle = this->mAngle.angle_s;
 
-    CALL_PTMF(PTMF<ActorUnkZLSL>, data_ov031_021137f8[this->mState]);
+    CALL_PTMF(data_ov031_021137f8[this->mState]);
 
     if (!GET_FLAG(this->mFlags, ActorFlag_Visible)) {
         return;
@@ -361,7 +361,7 @@ void ActorUnkZLSL::Update() {
     this->func_ov031_020ee4c4(angle);
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mState != ActorUnkZLSLState_TakePhantomControl && this->mState != ActorUnkZLSLState_16) {
         this->func_ov031_020edc80();
@@ -377,7 +377,7 @@ void ActorUnkZLSL::Update() {
 
         VecFx32 vec = this->mPos;
         fx32 val    = this->mUnk_2890;
-        fx32 offset = this->func_ov000_0209853c(0)->y;
+        fx32 offset = this->func_ov000_0209853c(PlayerType_Link)->y;
         vec.y       = val + offset;
 
         UnkStruct_ov000_0207de98 unk;
@@ -432,12 +432,12 @@ void ActorUnkZLSL::func_ov031_020eab0c() {
 
 void ActorUnkZLSL::func_ov031_020eab40(unk32 param1) {
     VecFx32 vec;
-    VecFx32_Copy(this->func_ov000_0209853c(0x0), &vec);
+    VecFx32_Copy(this->func_ov000_0209853c(PlayerType_Link), &vec);
 
-    VecFx32 *pVec = this->func_ov000_0209853c(0x0);
+    VecFx32 *pVec = this->func_ov000_0209853c(PlayerType_Link);
 
     VecFx32 oVec;
-    func_01ffb714(&this->mPos, pVec, &oVec);
+    VEC_Subtract(&this->mPos, pVec, &oVec);
 
     oVec.y = FX_F32_TO_FX32(0.0f);
     VecFx32_TryNormalize(&oVec);
@@ -445,21 +445,21 @@ void ActorUnkZLSL::func_ov031_020eab40(unk32 param1) {
     func_01ff93c0(&oVec, param1);
 
     oVec.y += FX_F32_TO_FX32(0.5f);
-    VecFx32_Add(&vec, &oVec, &vec);
+    VEC_Add(&vec, &oVec, &vec);
 
-    func_01ffb714(&vec, &this->mPos, &oVec);
+    VEC_Subtract(&vec, &this->mPos, &oVec);
 
     func_01ff93c0(&oVec, FX_F32_TO_FX32(0.05f));
 
-    VecFx32_Add(&this->mVel, &oVec, &this->mVel);
+    VEC_Add(&this->mVel, &oVec, &this->mVel);
     func_01ff93c0(&this->mVel, FX_F32_TO_FX32(0.8f));
 
-    if (VecFx32_Length(&this->mVel) > FX_F32_TO_FX32(0.1001f)) {
+    if (VEC_Mag(&this->mVel) > FX_F32_TO_FX32(0.1001f)) {
         VecFx32_TryNormalize(&this->mVel);
         func_01ff93c0(&this->mVel, FX_F32_TO_FX32(0.1001f));
     }
 
-    VecFx32 *pVec2 = this->func_ov000_0209853c(0x0);
+    VecFx32 *pVec2 = this->func_ov000_0209853c(PlayerType_Link);
     func_01ff930c(&this->mAngle.angle_s, func_02016958(&this->mPos, pVec2), 0x71C);
 }
 
@@ -473,7 +473,7 @@ void ActorUnkZLSL::func_ov031_020eac64() {
 
     if ((this->mUnk_0B0 & 0x2) != 0x0) {
         if (this->func_ov000_020a9248(0x2000)) {
-            this->vfunc_58(ActorUnkZLSLState_ClosedArms);
+            this->SetState(ActorUnkZLSLState_ClosedArms);
             return;
         }
     }
@@ -484,7 +484,7 @@ void ActorUnkZLSL::func_ov031_020eace0() {
     if (!this->func_ov031_020ec8c4()) {
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_ClosedArms);
+    this->SetState(ActorUnkZLSLState_ClosedArms);
 }
 
 void ActorUnkZLSL::func_ov031_020ead0c() {
@@ -518,7 +518,7 @@ void ActorUnkZLSL::func_ov031_020ead7c() {
         this->mUnk_0B0 |= 0x8;
     }
 
-    sp24 = *this->func_ov000_0209853c(0x0);
+    sp24 = *this->func_ov000_0209853c(PlayerType_Link);
     if (this->mUnk_0B0 & 0x8) {
         if (data_027e0ce0->func_01fff1a4()) {
             data_027e0ce0->func_ov000_0208ba94(0x1, &sp24);
@@ -526,7 +526,7 @@ void ActorUnkZLSL::func_ov031_020ead7c() {
     }
 
     VecFx32_Copy(&sp24, &this->mPos);
-    this->mPos.y += 0x800;
+    this->mPos.y += FX32_HALF;
     spC              = this->mPos;
     this->mPos.x     = spC.x;
     this->mPos.y     = spC.y;
@@ -569,8 +569,8 @@ void ActorUnkZLSL::func_ov031_020ead7c() {
 }
 
 void ActorUnkZLSL::func_ov031_020eafb0() {
-    if (this->func_ov031_020ed8ac(0x800)) {
-        this->vfunc_58(ActorUnkZLSLState_RotateClosedArms);
+    if (this->func_ov031_020ed8ac(FX32_HALF)) {
+        this->SetState(ActorUnkZLSLState_RotateClosedArms);
     }
 }
 
@@ -581,22 +581,22 @@ void ActorUnkZLSL::func_ov031_020eafe0() {
     unk16 sp6;
     unk16 sp4;
 
-    this->func_ov000_0209853c(0x00);
+    this->func_ov000_0209853c(PlayerType_Link);
     this->mUnk_28E4 = 0x2AAB;
 
     func_01fff17c(&sp8, data_027e0ce0, 0x00);
 
     spA = sp8 + this->mUnk_28E4;
-    func_020169d4(&spC, this->func_ov000_0209853c(0x0), &spA, (void *) &data_ov031_02110acc);
+    func_020169d4(&spC, this->func_ov000_0209853c(PlayerType_Link), &spA, (void *) &data_ov031_02110acc);
 
-    if (func_02016c68(this->func_ov000_0209853c(0x00), &spC, this->mRef, 4, 0) ||
-        func_02016cf0(this->func_ov000_0209853c(0x00), &spC, this->mRef, 8, 0)) {
+    if (func_02016c68(this->func_ov000_0209853c(PlayerType_Link), &spC, this->mRef, 4, 0) ||
+        func_02016cf0(this->func_ov000_0209853c(PlayerType_Link), &spC, this->mRef, 8, 0)) {
         this->mUnk_28E4 = 0xD555;
     }
 
     func_01fff17c(&sp4, data_027e0ce0, 0);
     sp6 = sp4 + this->mUnk_28E4;
-    func_020169d4(&this->mUnk_2878.vec, this->func_ov000_0209853c(0x00), &sp6, (void *) &data_ov031_02110acc);
+    func_020169d4(&this->mUnk_2878.vec, this->func_ov000_0209853c(PlayerType_Link), &sp6, (void *) &data_ov031_02110acc);
 
     this->func_ov031_020ec6d8(true);
     VecFx32_Init(FX_F32_TO_FX32(0.5f), FX_F32_TO_FX32(0.5f), FX_F32_TO_FX32(0.5f), &this->mUnk_28A4.vec);
@@ -609,7 +609,7 @@ void ActorUnkZLSL::func_ov031_020eb158() {
     if (!this->func_ov031_020ed6cc(0x1800)) {
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_FollowLink);
+    this->SetState(ActorUnkZLSLState_FollowLink);
 }
 
 void ActorUnkZLSL::func_ov031_020eb188() {
@@ -632,8 +632,8 @@ void ActorUnkZLSL::func_ov031_020eb218() {
         data_027e09a8->func_ov000_02071c90(0x139, &this->mPos, 0x0);
     }
 
-    if (this->func_ov031_020eb2b0(this->func_ov000_0209853c(0x00), 0xA000)) {
-        this->vfunc_58(ActorUnkZLSLState_Idle);
+    if (this->func_ov031_020eb2b0(this->func_ov000_0209853c(PlayerType_Link), 0xA000)) {
+        this->SetState(ActorUnkZLSLState_Idle);
     }
 }
 
@@ -667,7 +667,7 @@ bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
                 this->mUnk_2900 &= ~0x01;
             }
 
-            if (this->mUnk_28A4.vec.z <= 0x800 && temp_r8 > 0x800) {
+            if (this->mUnk_28A4.vec.z <= FX32_HALF && temp_r8 > FX32_HALF) {
                 this->mUnk_2888       = 0x4CD;
                 this->mUnk_2884       = func_01ff9258(this->mPos.x - sp1C.x, this->mPos.z - sp1C.z);
                 this->mUnk_28B0.vec.x = this->mPos.x;
@@ -675,7 +675,7 @@ bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
                 this->mUnk_28B0.vec.z = this->mPos.z;
             }
 
-            if (this->mUnk_28A4.vec.z <= 0x800) {
+            if (this->mUnk_28A4.vec.z <= FX32_HALF) {
                 var_r7 = true;
             }
         }
@@ -684,10 +684,10 @@ bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
     }
 
     if (var_r7) {
-        func_01ffb714(&this->mUnk_28B0.vec, &sp1C, &sp4);
+        VEC_Subtract(&this->mUnk_28B0.vec, &sp1C, &sp4);
         VecFx32_TryNormalize(&sp4);
         func_01ff93c0(&sp4, this->mUnk_2884);
-        VecFx32_Add(&sp4, &sp1C, &sp4);
+        VEC_Add(&sp4, &sp1C, &sp4);
 
         this->mUnk_28B0.vec.x = sp4.x;
         this->mUnk_28B0.vec.y = sp4.y;
@@ -706,13 +706,13 @@ bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
             this->mUnk_2884 = sp0;
         }
 
-        func_01ffb714(&sp1C, &this->mUnk_28B0.vec, &sp4);
+        VEC_Subtract(&sp1C, &this->mUnk_28B0.vec, &sp4);
         sp4.y = 0;
 
         func_01ff9638(&sp4, 0x4000);
         VecFx32_TryNormalize(&sp4);
-        func_01ff93c0(&sp4, FX_MUL(this->mUnk_2888, SIN((u16) this->mUnk_286A)));
-        VecFx32_Add(&sp4, &sp10, &sp4);
+        func_01ff93c0(&sp4, FX_MUL(this->mUnk_2888, SIN(this->mUnk_286A)));
+        VEC_Add(&sp4, &sp10, &sp4);
         this->mUnk_286A += 0x1000;
         this->mPos.x = sp4.x;
         this->mPos.y = sp4.y;
@@ -827,7 +827,7 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
                 data_027e0cec->func_ov000_020a0110(&this->mUnk_2828.mUnk_00);
             }
             VecFx32_Copy(&this->mPos, &vec);
-            vec.y += 0x800;
+            vec.y += FX32_HALF;
             VecFx32_Copy(&vec, &this->mUnk_28F4.vec);
 
             this->func_ov031_020ed4e4(0x5, 0x93F);
@@ -847,7 +847,7 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
                 this->mUnk_28A4.vec.x = FX_F32_TO_FX32(1.0f);
                 this->mUnk_28A4.vec.y = FX_F32_TO_FX32(1.0f);
                 this->mUnk_28A4.vec.z = FX_F32_TO_FX32(1.0f);
-                this->vfunc_58(ActorUnkZLSLState_Idle);
+                this->SetState(ActorUnkZLSLState_Idle);
             }
             this->func_ov031_020ed4e4(0x5, 0x93F);
         default:
@@ -896,7 +896,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
         case 0x2:
             this->func_ov031_020edd14(&vec);
             vec.y = this->mPos.y;
-            if (this->func_ov031_020ed8ac(0x800)) {
+            if (this->func_ov031_020ed8ac(FX32_HALF)) {
                 this->mTimer.Set(0, 15);
                 this->mUnk_286E++;
             }
@@ -920,7 +920,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             this->func_ov031_020ed4e4(0x5, 0x93F);
             break;
         case 0x4: {
-            VecFx32 *pVec = this->func_ov000_0209853c(0x0);
+            VecFx32 *pVec = this->func_ov000_0209853c(PlayerType_Link);
             if (func_01ff9258(this->mPos.x - pVec->x, this->mPos.z - pVec->z) > 0x3000) {
                 this->func_ov031_020eb2b0(&actor->mPos, 0x666);
             } else {
@@ -936,7 +936,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             }
             this->mUnk_286E++;
 
-            pVec = this->func_ov000_0209853c(0x1);
+            pVec = this->func_ov000_0209853c(PlayerType_Zelda);
             if (func_01ff9258(actor->mPos.x - pVec->x, actor->mPos.z - pVec->z) <= 0x3000) {
                 break;
             }
@@ -983,7 +983,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             this->mUnk_28A4.vec.y = FX_F32_TO_FX32(1.0f);
             this->mUnk_28A4.vec.z = FX_F32_TO_FX32(1.0f);
 
-            this->vfunc_58(ActorUnkZLSLState_Idle);
+            this->SetState(ActorUnkZLSLState_Idle);
             break;
         default:
             break;
@@ -995,7 +995,7 @@ void ActorUnkZLSL::func_ov031_020ebfd8() {
     this->mUnk_28A4.vec.y = FX_F32_TO_FX32(1.0f);
     this->mUnk_28A4.vec.z = FX_F32_TO_FX32(1.0f);
     this->func_ov031_020ec6d8(false);
-    this->mAngle = func_02016958(&this->mPos, this->func_ov000_0209853c(0x0));
+    this->mAngle = func_02016958(&this->mPos, this->func_ov000_0209853c(PlayerType_Link));
     this->func_ov031_020eb188();
 }
 
@@ -1020,14 +1020,14 @@ void ActorUnkZLSL::func_ov031_020ec05c() {
         this->vfunc_98(0x1);
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_OpenArms);
+    this->SetState(ActorUnkZLSLState_OpenArms);
 }
 
 void ActorUnkZLSL::func_ov031_020ec0a8() {
     if (!this->func_ov031_020ec8c4()) {
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_OpenArms);
+    this->SetState(ActorUnkZLSLState_OpenArms);
 }
 
 void ActorUnkZLSL::func_ov031_020ec0d4() {
@@ -1046,7 +1046,7 @@ void ActorUnkZLSL::func_ov031_020ec0d4() {
 void ActorUnkZLSL::func_ov031_020ec12c() {
     this->func_ov031_020ecbe0();
 
-    VecFx32_Copy(this->func_ov000_0209853c(0x0), &this->mUnk_2878.vec);
+    VecFx32_Copy(this->func_ov000_0209853c(PlayerType_Link), &this->mUnk_2878.vec);
 }
 
 void ActorUnkZLSL::func_ov031_020ec164() {
@@ -1057,7 +1057,7 @@ void ActorUnkZLSL::func_ov031_020ec170() {
     this->mUnk_0B0 |= 0x10;
 
     if (this->mUnk_286E == 0x0) {
-        if (this->func_ov031_020ed8ac(0x800)) {
+        if (this->func_ov031_020ed8ac(FX32_HALF)) {
             this->vfunc_98(0x11);
             this->mUnk_286E++;
         }
@@ -1077,11 +1077,11 @@ void ActorUnkZLSL::vfunc_2C(unk32 param1) {
 
     switch (this->mUnk_2874 ? 1 : 0) {
         case false:
-            MtxFx33_InitYRotation(&sp00, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
+            MTX_RotY33_(&sp00, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
             this->mUnk_1620.vfunc_10(&this->mUnk_28A4.vec, &sp00, &this->mPos);
             break;
         case true:
-            MtxFx33_InitYRotation(&sp00, SIN(1), COS(0));
+            MTX_RotY33_(&sp00, SIN(1), COS(0));
             this->mUnk_276C.vfunc_10(&this->mUnk_28A4.vec, &sp00, &this->mPos);
             break;
         default:
@@ -1106,10 +1106,10 @@ unk32 ActorUnkZLSL::vfunc_7C(unk32 param1) {
             ActorUnkRAT0::func_ov053_0213c984();
             break;
         case 0x4:
-            this->vfunc_58(ActorUnkZLSLState_GoOrbShapeAndIdle);
+            this->SetState(ActorUnkZLSLState_GoOrbShapeAndIdle);
             break;
         case 0x5:
-            this->vfunc_58(ActorUnkZLSLState_Idle);
+            this->SetState(ActorUnkZLSLState_Idle);
             break;
         case 0x6:
             return this->func_ov031_020ec49c();
@@ -1119,7 +1119,7 @@ unk32 ActorUnkZLSL::vfunc_7C(unk32 param1) {
         case 0x8:
             return this->func_ov031_020ec3d0();
         case 0x9:
-            data_027e0cd8->mUnk_0C->func_ov000_020809d8(0x28, -1);
+            gpCourseManager->mpMapMgr->func_ov000_020809d8(0x28, -1);
         default:
             break;
     }
@@ -1185,7 +1185,7 @@ unk32 ActorUnkZLSL::func_ov031_020ec54c() {
                 var = true;
                 break;
             }
-            this->vfunc_58(ActorUnkZLSLState_GoOrbShapeAndIdle);
+            this->SetState(ActorUnkZLSLState_GoOrbShapeAndIdle);
             ++this->mUnk_2872;
             break;
         case 0x1:
@@ -1256,26 +1256,26 @@ void ActorUnkZLSL::func_ov031_020ec6d8(bool param1) {
 
 void ActorUnkZLSL::vfunc_6C() {
     if (!this->mUnk_2874 && this->mUnk_28A4.vec.z == FX_F32_TO_FX32(1.0f)) {
-        this->vfunc_58(ActorUnkZLSLState_RotateClosedArms);
+        this->SetState(ActorUnkZLSLState_RotateClosedArms);
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
+    this->SetState(ActorUnkZLSLState_TakeHumanShape);
 }
 
 void ActorUnkZLSL::vfunc_70() {
     if (!this->mUnk_2874 && this->mUnk_28A4.vec.z == FX_F32_TO_FX32(1.0f)) {
-        this->vfunc_58(ActorUnkZLSLState_RotateClosedArms);
+        this->SetState(ActorUnkZLSLState_RotateClosedArms);
         return;
     }
-    this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
+    this->SetState(ActorUnkZLSLState_TakeHumanShape);
 }
 
 void ActorUnkZLSL::vfunc_68() {
     if (this->mState != ActorUnkZLSLState_Idle) {
         if (this->mUnk_2900 & 0x2) {
-            this->vfunc_58(ActorUnkZLSLState_FollowLink);
+            this->SetState(ActorUnkZLSLState_FollowLink);
         } else {
-            this->vfunc_58(ActorUnkZLSLState_GoOrbShapeAndIdle);
+            this->SetState(ActorUnkZLSLState_GoOrbShapeAndIdle);
         }
     }
     this->mUnk_2900 &= 0xFFFD;
@@ -1292,7 +1292,7 @@ bool ActorUnkZLSL::vfunc_88() {
         return true;
     }
     if (this->mState != ActorUnkZLSLState_TakeHumanShape) {
-        this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
+        this->SetState(ActorUnkZLSLState_TakeHumanShape);
     }
     return false;
 }
@@ -1390,7 +1390,7 @@ void ActorUnkZLSL::func_ov031_020ecbe0() {
     func_01fff17c(psp0, data_027e0ce0, 0x0);
 
     sp2 = *psp0 + FX_F32_TO_FX32(2.6668f);
-    func_020169d4(&this->mPos, this->func_ov000_0209853c(0x00), &sp2, data_ov031_021135f4);
+    func_020169d4(&this->mPos, this->func_ov000_0209853c(PlayerType_Link), &sp2, data_ov031_021135f4);
     this->mPos.y += FX_F32_TO_FX32(0.5f);
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
@@ -1403,17 +1403,17 @@ void ActorUnkZLSL::func_ov031_020ecc68(bool param1) {
     UnkStackStruct2 sp8;
 
     if (param1) {
-        VecFx32 *temp_r0 = this->func_ov000_0209853c(0x01);
+        VecFx32 *temp_r0 = this->func_ov000_0209853c(PlayerType_Zelda);
 
         if (func_01ff9258(temp_r7->mPos.x - temp_r0->x, temp_r7->mPos.z - temp_r0->z) > 0x3000) {
             this->func_ov031_020ed0b0();
         } else {
             UnkAngleStruct sp6 = 0x2000;
-            this->func_ov031_020ecea8(sp6, 0x6000, 0x4800, 0x01);
+            this->func_ov031_020ecea8(sp6, 0x6000, 0x4800, PlayerType_Zelda);
         }
     } else {
         UnkAngleStruct sp4 = 0x2000;
-        this->func_ov031_020ecea8(sp4, 0x6000, 0x4800, 0x00);
+        this->func_ov031_020ecea8(sp4, 0x6000, 0x4800, PlayerType_Link);
     }
 
     func_ov000_02072fd0(&sp34);
@@ -1428,14 +1428,14 @@ void ActorUnkZLSL::func_ov031_020ecc68(bool param1) {
     this->mUnk_28C8 = data_027e09b8->func_ov000_02073388(&sp34, 0x0);
 
     unk32 temp_r6 = func_01ffb9cc(&this->mUnk_28F4.vec, &this->mUnk_28E8.vec);
-    func_01ffb714(&this->mUnk_28E8.vec, &this->mUnk_28F4.vec, &sp28);
+    VEC_Subtract(&this->mUnk_28E8.vec, &this->mUnk_28F4.vec, &sp28);
 
     VecFx32_TryNormalize(&sp28);
 
     func_01ff93c0(&sp28, temp_r6 - 0x1000);
 
     VecFx32_Copy(&this->mUnk_28F4.vec, &this->mUnk_28E8.vec);
-    VecFx32_Add(&this->mUnk_28E8.vec, &sp28, &this->mUnk_28E8.vec);
+    VEC_Add(&this->mUnk_28E8.vec, &sp28, &this->mUnk_28E8.vec);
 
     ActorPhantomBase *pPhantom = (ActorPhantomBase *) gpActorManager->func_01fff3b4(this->mUnk_28DC);
     if (pPhantom != NULL) {
@@ -1443,7 +1443,7 @@ void ActorUnkZLSL::func_ov031_020ecc68(bool param1) {
     }
 }
 
-void ActorUnkZLSL::func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk32 param3, unk32 param4) {
+void ActorUnkZLSL::func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk32 param3, PlayerType playerType) {
     VecFx32 sp58;
     VecFx32 sp4C;
     VecFx32 sp40;
@@ -1464,27 +1464,27 @@ void ActorUnkZLSL::func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk3
     VecFx32 *temp_r0_2;
     VecFx32 *temp_r0_3;
 
-    sp58 = *this->func_ov000_0209853c(param4);
+    sp58 = *this->func_ov000_0209853c(playerType);
     this->func_ov031_020edd14(&sp4C);
     temp_r5 = func_02016958(&sp58, &sp4C);
 
-    if (sp4C.z > this->func_ov000_0209853c(0)->z) {
+    if (sp4C.z > this->func_ov000_0209853c(PlayerType_Link)->z) {
         VecFx32_Copy(&sp4C, &sp40);
     } else {
-        VecFx32_Copy(this->func_ov000_0209853c(0), &sp40);
+        VecFx32_Copy(this->func_ov000_0209853c(PlayerType_Link), &sp40);
     }
 
     if (sp4C.z > this->mPos.z) {
-        func_01ffb714(&sp4C, &sp58, &sp1C);
+        VEC_Subtract(&sp4C, &sp58, &sp1C);
     } else {
-        func_01ffb714(&sp58, &sp4C, &sp1C);
+        VEC_Subtract(&sp58, &sp4C, &sp1C);
     }
 
-    s16 angle = func_01ffbbe0(sp1C.x, sp1C.z);
+    s16 angle = FX_Atan2Idx(sp1C.x, sp1C.z);
     sp2       = param1.angle_s + angle;
     func_020169d4(&sp34, &sp40, &sp2, (char *) &param2);
 
-    angle = func_01ffbbe0(sp1C.x, sp1C.z);
+    angle = FX_Atan2Idx(sp1C.x, sp1C.z);
     sp0   = angle - param1.angle_s;
     func_020169d4(&sp28, &sp40, &sp0, (char *) &param2);
 
@@ -1503,7 +1503,7 @@ void ActorUnkZLSL::func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk3
     sp4.unk_10 = 0;
     sp4.unk_14 = 0;
 
-    temp_r0_3    = this->func_ov000_0209853c(0);
+    temp_r0_3    = this->func_ov000_0209853c(PlayerType_Link);
     sp4.unk_00.x = temp_r0_3->x;
     sp4.unk_00.y = temp_r0_3->y;
     sp4.unk_00.z = temp_r0_3->z;
@@ -1516,7 +1516,7 @@ void ActorUnkZLSL::func_ov031_020ed0b0() {
     VecFx32 sp18;
     VecFx32 spC;
 
-    sp24 = *this->func_ov000_0209853c(1);
+    sp24 = *this->func_ov000_0209853c(PlayerType_Zelda);
     sp24.y += FX_F32_TO_FX32(0.5f);
 
     VecFx32_Copy(&sp24, &sp18);
@@ -1542,9 +1542,9 @@ void ActorUnkZLSL::func_ov031_020ed0b0() {
         }
     }
 
-    func_01ffb714(&sp18, &sp24, &this->mUnk_28BC.vec);
+    VEC_Subtract(&sp18, &sp24, &this->mUnk_28BC.vec);
     func_01ff9770(&this->mUnk_28BC.vec, 0xE66);
-    VecFx32_Add(&this->mUnk_28BC.vec, &sp24, &this->mUnk_28BC.vec);
+    VEC_Add(&this->mUnk_28BC.vec, &sp24, &this->mUnk_28BC.vec);
     this->mUnk_28BC.vec.y += FX_F32_TO_FX32(1.0f);
 
     this->func_ov031_020edd14(&spC);
@@ -1563,12 +1563,12 @@ void ActorUnkZLSL::func_ov031_020ed3c0() {
     sp14                = this->mUnk_28B0.vec;
     angleStruct.angle_u = 0xE39;
 
-    this->func_ov031_020ecea8(angleStruct, 0x7000, 0x4800, 0x01);
+    this->func_ov031_020ecea8(angleStruct, 0x7000, 0x4800, PlayerType_Zelda);
 
     VecFx32_Copy(&sp14, &this->mUnk_28B0.vec);
 
     this->func_ov031_020edd14(&sp08);
-    sp08.y += 0x800;
+    sp08.y += FX32_HALF;
     VecFx32_Copy(&sp08, &this->mUnk_28F4.vec);
 
     this->func_ov031_020ed4e4(0x0, 0x93F);
@@ -1607,20 +1607,20 @@ bool ActorUnkZLSL::func_ov031_020ed55c(unk32 param1) {
 
     if (this->mState == ActorUnkZLSLState_Idle) {
         this->mUnk_2904 = param1;
-        this->vfunc_58(ActorUnkZLSLState_TakeHumanShapeTrainStation);
+        this->SetState(ActorUnkZLSLState_TakeHumanShapeTrainStation);
 
         unk16 *psp8 = (unk16 *) &sp8;
         func_01fff17c(psp8, data_027e0ce0, 0);
         spA = *psp8 + 0xE39;
 
-        func_020169d4(&this->mUnk_28B0.vec, this->func_ov000_0209853c(0), &spA, data_ov031_021135f0);
+        func_020169d4(&this->mUnk_28B0.vec, this->func_ov000_0209853c(PlayerType_Link), &spA, data_ov031_021135f0);
 
         if (func_02016c68(&this->mPos, &this->mUnk_28B0.vec, this->mRef, 4, 0)) {
             unk16 *psp4 = (unk16 *) &sp4;
             func_01fff17c(psp4, data_027e0ce0, 0);
             sp6 = *psp4 + 0xFFFF8E39;
 
-            func_020169d4(&this->mUnk_28B0.vec, this->func_ov000_0209853c(0), &sp6, data_ov031_021135f8);
+            func_020169d4(&this->mUnk_28B0.vec, this->func_ov000_0209853c(PlayerType_Link), &sp6, data_ov031_021135f8);
         }
 
         return true;
@@ -1628,7 +1628,7 @@ bool ActorUnkZLSL::func_ov031_020ed55c(unk32 param1) {
 
     if (this->mState == ActorUnkZLSLState_GoOrbShapeAndIdle && this->mUnk_2874 == 1) {
         this->mUnk_2904 = param1;
-        this->vfunc_58(ActorUnkZLSLState_TakeHumanShapeTrainStation);
+        this->SetState(ActorUnkZLSLState_TakeHumanShapeTrainStation);
         return true;
     }
 
@@ -1685,7 +1685,7 @@ bool ActorUnkZLSL::func_ov031_020ed6cc(unk32 param1) {
     return false;
 }
 
-bool ActorUnkZLSL::func_ov031_020ed8ac(unk32 param1) {
+bool ActorUnkZLSL::func_ov031_020ed8ac(fx32 param1) {
     VecFx32 sp28;
     VecFx32 sp1C;
     VecFx32 sp10;
@@ -1702,7 +1702,7 @@ bool ActorUnkZLSL::func_ov031_020ed8ac(unk32 param1) {
 
     func_01fff17c(&spE, data_027e0ce0, 0);
     sp28   = this->mPos;
-    sp10   = *this->func_ov000_0209853c(0);
+    sp10   = *this->func_ov000_0209853c(PlayerType_Link);
     sp1C.x = sp10.x;
     sp1C.y = sp10.y + param1;
     sp1C.z = sp10.z;
@@ -1744,7 +1744,7 @@ bool ActorUnkZLSL::func_ov031_020ed8ac(unk32 param1) {
             func_020169d4(&this->mPos, &this->mUnk_28B0.vec, &sp6, &this->mUnk_2888);
             func_01ff9984(&this->mUnk_28B0.vec, &sp28, 0x334, 0, 0x7FFFFFFF);
 
-            if (func_01ffb9cc(&sp28, &this->mPos) < 0x800) {
+            if (func_01ffb9cc(&sp28, &this->mPos) < FX32_HALF) {
                 this->mUnk_2870++;
                 this->mUnk_28A4.vec.x = FX_F32_TO_FX32(0.2f);
                 this->mUnk_28A4.vec.y = FX_F32_TO_FX32(0.2f);
@@ -1814,9 +1814,9 @@ void ActorUnkZLSL::func_ov031_020edd54(RefStruct ref) {
         this->mUnk_28DC = ref;
 
         if (data_027e0ce0->func_01fff1a4()) {
-            this->vfunc_58(ActorUnkZLSLState_16);
+            this->SetState(ActorUnkZLSLState_16);
         } else {
-            this->vfunc_58(ActorUnkZLSLState_TakePhantomControl);
+            this->SetState(ActorUnkZLSLState_TakePhantomControl);
         }
     }
 }
@@ -1887,10 +1887,10 @@ void ActorUnkZLSL::vfunc_A4() {
 
     VecFx32 sp00 = this->mPos;
     sp00.y       = sp00.y + this->mYOffset - FX_F32_TO_FX32(0.5f);
-    func_01ffb714(&sp0C, &sp00, &sp0C);
+    VEC_Subtract(&sp0C, &sp00, &sp0C);
 
     int angle  = this->mAngle.angle_s;
-    int temp   = func_01ffbbe0(sp0C.x, sp0C.z);
+    int temp   = FX_Atan2Idx(sp0C.x, sp0C.z);
     s16 var_r4 = (angle - (s16) temp);
 
     this->mUnk_0E8.Update();
@@ -1903,7 +1903,7 @@ void ActorUnkZLSL::vfunc_A4() {
     if ((var_r0 <= 0x4000 && func_01ff9258(sp0C.x, sp0C.z) < 0x2000) || this->mUnk_0B0 & 1) {
         int clamped1 = CLAMP3(var_r4, -0x2AAB, 0x2AAB);
 
-        int temp_r0_2 = func_01ffbbe0(sp0C.y, func_01ff9258(sp0C.x, sp0C.z));
+        int temp_r0_2 = FX_Atan2Idx(sp0C.y, func_01ff9258(sp0C.x, sp0C.z));
         int clamped2  = CLAMP3((s16) temp_r0_2, -0x18E4, 0x18E4);
 
         this->mUnk_0CC = clamped1;
@@ -1931,7 +1931,7 @@ void ActorUnkZLSL::vfunc_A4() {
 void ActorUnkZLSL::func_ov031_020ee1f4(Actor *param1, G3d_RenderState *param2) {
     ActorUnkZLSL *thisx             = (ActorUnkZLSL *) param1;
     G3d_RenderObject *pRenderObject = param2->renderObj;
-    s32 var_r2                      = param2->flag & 0x10 ? param2->currentBoneMtxId : -1;
+    s32 var_r2                      = G3d_GetCurBoneMtxId(param2);
 
     if (var_r2 == 0x0A && pRenderObject->mUnk_25 == 2) {
         MtxFx33 sp24;
@@ -1939,10 +1939,10 @@ void ActorUnkZLSL::func_ov031_020ee1f4(Actor *param1, G3d_RenderState *param2) {
         G3d_RenderState_B4 *temp_r6 = param2->mUnk_B4;
 
         temp_r6->mUnk_00 &= ~0x02;
-        MtxFx33_InitZRotation(&sp24, SIN((u16) thisx->mUnk_28E0), COS((u16) thisx->mUnk_28E0));
-        MtxFx33_InitYRotation(&sp0, SIN((u16) thisx->mUnk_28E2), COS((u16) thisx->mUnk_28E2));
-        func_01ffa60c(&sp24, &sp0, &sp24);
-        func_01ffa60c(&sp24, &temp_r6->mUnk_28, &temp_r6->mUnk_28);
+        MTX_RotZ33_(&sp24, SIN(thisx->mUnk_28E0), COS(thisx->mUnk_28E0));
+        MTX_RotY33_(&sp0, SIN(thisx->mUnk_28E2), COS(thisx->mUnk_28E2));
+        MTX_Concat33(&sp24, &sp0, &sp24);
+        MTX_Concat33(&sp24, &temp_r6->mUnk_28, &temp_r6->mUnk_28);
     }
 }
 
@@ -1958,19 +1958,19 @@ unk16 ActorUnkZLSL::func_ov031_020ee2c8() {
 
     func_01fff17c(&sp4, data_027e0ce0, 0);
     sp6 = sp4 + 0x2AAB;
-    func_020169d4(&sp14, this->func_ov000_0209853c(0), &sp6, (void *) &data_ov031_02110acc);
+    func_020169d4(&sp14, this->func_ov000_0209853c(PlayerType_Link), &sp6, (void *) &data_ov031_02110acc);
 
     func_01fff17c(&sp0, data_027e0ce0, 0);
     var_r6 = 0xD555;
     sp2    = sp0 + var_r6;
-    func_020169d4(&sp20, this->func_ov000_0209853c(0), &sp2, (void *) &data_ov031_02110acc);
+    func_020169d4(&sp20, this->func_ov000_0209853c(PlayerType_Link), &sp2, (void *) &data_ov031_02110acc);
 
     sp8.x = data_027e0208.mUnk_240.x;
     sp8.y = data_027e0208.mUnk_240.y;
     sp8.z = data_027e0208.mUnk_240.z;
 
-    func_01ffb714(&sp20, &sp8, &sp20);
-    func_01ffb714(&sp14, &sp8, &sp14);
+    VEC_Subtract(&sp20, &sp8, &sp20);
+    VEC_Subtract(&sp14, &sp8, &sp14);
     unk32 temp_r4 = func_01ff9258(sp14.x, sp14.z);
 
     if (func_01ff9258(sp20.x, sp20.z) <= temp_r4) {
@@ -1982,9 +1982,9 @@ unk16 ActorUnkZLSL::func_ov031_020ee2c8() {
 
 void ActorUnkZLSL::vfunc_B4() {
     if (this->mState == ActorUnkZLSLState_Idle) {
-        this->vfunc_58(ActorUnkZLSLState_TakeHumanShape);
+        this->SetState(ActorUnkZLSLState_TakeHumanShape);
     } else {
-        this->vfunc_58(ActorUnkZLSLState_OpenArms);
+        this->SetState(ActorUnkZLSLState_OpenArms);
     }
 }
 
@@ -2009,12 +2009,12 @@ void ActorUnkZLSL::func_ov031_020ee4c4(UnkAngleStruct angle) {
     func_01ff930c(&this->mUnk_28E0, (s16) -diff * 4, 0x300);
 
     VecFx32 sp0;
-    sp0.x = FX_MUL(SIN((u16) this->mAngle.angle_s), 0x1000);
-    sp0.z = FX_MUL(COS((u16) this->mAngle.angle_s), 0x1000);
+    sp0.x = FX_MUL(SIN(this->mAngle.angle_s), 0x1000);
+    sp0.z = FX_MUL(COS(this->mAngle.angle_s), 0x1000);
     sp0.y = 0;
 
-    if (!VecFx32_IsCleared(&this->mVel) && VecFx32_Dot(&sp0, &this->mVel) < 0) {
-        fx32 temp_ret = VecFx32_Length(&this->mVel);
+    if (!VecFx32_IsCleared(&this->mVel) && VEC_DotProduct(&sp0, &this->mVel) < 0) {
+        fx32 temp_ret = VEC_Mag(&this->mVel);
         s16 value     = FX_MUL(FX_MUL(temp_ret, 0xA000), 0x2000);
         func_01ff930c(&this->mUnk_28E2, -value, 0x1000);
     } else {
@@ -2037,12 +2037,11 @@ void ActorUnkZLSL::func_ov031_020ee654() {
     }
 }
 
-unk32 ActorUnkZLSL::vfunc_80(unk32 param1, unk32 param2) {
+s16 ActorUnkZLSL::vfunc_80(unk32 param1, unk32 param2, unk32 param3) {
     u16 value = ((param1 + 1) & 0xFF) | (param2 << 8);
 
     switch (value) {
         case 0x201: {
-
             ActorUnkRPMT *actor = (ActorUnkRPMT *) func_02016fbc(ActorId_RPMT, &this->mPos, 0x0);
 
             if (actor != NULL) {

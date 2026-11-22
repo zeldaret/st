@@ -1,9 +1,9 @@
 #include "Actor/ActorUnkEFIK.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/Random.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_ov000_020aed1c.hpp"
 
@@ -48,7 +48,7 @@ void ActorUnkEFIK::Update() {
     for (int i = 0; i < length; i++) {
         u8 j;
         u8 k;
-        UnkStruct_027e0cd8_0C_Base *pUVar5 = data_027e0cd8->mUnk_0C;
+        MapManagerBase *pUVar5 = gpCourseManager->mpMapMgr;
 
         u8 bStack_3c[2];
         bStack_3c[0] = 0;

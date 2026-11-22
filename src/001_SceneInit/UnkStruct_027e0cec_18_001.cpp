@@ -10,7 +10,7 @@
 extern unk32 data_027e0154;
 
 void *UnkStruct_027e0cec_18::func_ov001_020bf0a0(size_t length) {
-    return func_02001308(data_0204999c.mUnk_00[HeapIndex_5], length, 4);
+    return NNS_FndAllocFromFrmHeapEx(data_0204999c.mUnk_00[HeapIndex_5], length, 4);
 }
 
 UnkStruct_027e0cec_18::UnkStruct_027e0cec_18(UnkFileSystem1 *param1, bool param2, unk32 param3) :

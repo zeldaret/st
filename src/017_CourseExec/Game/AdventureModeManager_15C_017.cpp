@@ -35,7 +35,7 @@ bool AdventureModeManager_15C::func_ov017_020c39f8() {
 bool AdventureModeManager_15C::func_ov017_020c3a00(Input *pButtons, TouchControl *pTouchControl) {
 #pragma unused(pButtons, pTouchControl)
     bool ptmfResult;
-    CALL_PTMF_RET(PTMFBool<AdventureModeManager_15C>, data_ov017_020c3f40[this->mUnk_00]);
+    CALL_PTMF_RET(data_ov017_020c3f40[this->mUnk_00]);
     return ptmfResult;
 }
 

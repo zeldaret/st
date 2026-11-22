@@ -4,10 +4,10 @@
 #include "profile.hpp"
 #include "types.h"
 
-extern char data_ov063_02162598[0x10]; // = "RMSW_wall";
-extern char data_ov063_021625a8[0x10]; // = "RMSW";
+static const char data_ov063_021625a8[16] = "RMSW";
+static const char data_ov063_02162598[16] = "RMSW_wall";
 
-struct ActorUnkZLSL_AnimationTag data_ov063_02163388 = {0, "RMSW"};
+static ActorUnkZLSL_AnimationTag data_ov063_02163388 = {0, "RMSW", 0x00};
 
 DECL_PROFILE(ActorProfileUnkRMSW);
 

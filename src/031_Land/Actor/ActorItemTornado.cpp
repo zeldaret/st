@@ -141,7 +141,7 @@ void ActorItemTornado::SetState(ActorState state) {
 
 void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mUnk_1D2 != 0x0) {
         --this->mUnk_1D2;
@@ -211,7 +211,7 @@ void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
                     func_01ff993c(&this->mPos, &this->mUnk_1C0.vec, 0x266);
                 }
 
-                this->mUnk_1DC -= func_01ffb66c(0x1000, this->mUnk_1D6);
+                this->mUnk_1DC -= FX_DivS32(0x1000, this->mUnk_1D6);
 
                 if (this->mUnk_1DC <= FX_F32_TO_FX32(0.0f)) {
                     this->Kill();
@@ -292,7 +292,7 @@ void ActorItemTornado::vfunc_2C(unk32 param1) {
         return;
     }
 
-    unk32 var_r1 = this->mUnk_1DC == FX_F32_TO_FX32(1.0f) ? 0x1F : CLAMP(MUL_FXUNK2(this->mUnk_1DC, 0x1F), 0, 0x1F);
+    unk32 var_r1 = this->mUnk_1DC == FX_F32_TO_FX32(1.0f) ? 0x1F : CLAMP(ROUND_FX32(this->mUnk_1DC * 0x1F), 0, 0x1F);
 
     if (var_r1 <= 0) {
         return;
@@ -309,7 +309,7 @@ void ActorItemTornado::vfunc_2C(unk32 param1) {
     VecFx32 vec = this->mPos;
 
     if (this->mState == ActorItemTornadoState_Starting) {
-        vec.y += MUL_FXUNK2(FX_F32_TO_FX32(1.0f) - this->mUnk_1DC, FX_F32_TO_FX32(1.0f));
+        vec.y += ROUND_FX32((fx32) (FX_F32_TO_FX32(1.0f) - this->mUnk_1DC) * FX_F32_TO_FX32(1.0f));
     }
 
     data_027e0958->func_ov000_02058fc4(&this->mUnk_17C, &vec);

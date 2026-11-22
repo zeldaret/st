@@ -1,8 +1,8 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Save/SaveFile.hpp"
 #include "Save/SaveManager.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "nitro/card.h"
 #include "nitro/math.h"
@@ -19,7 +19,7 @@ void SaveManager::func_ov017_020c2b68(u16 param1) {
 
     gSaveManager.mResultCode = CARD_GetResultCode();
 
-    if (gSaveManager.mResultCode != CARD_RESULT_SUCCESS) {
+    if (gSaveManager.mResultCode != CARD_RESULT_FAILURE) {
         gSaveManager.mUnk_214 = 2;
     }
 
@@ -41,7 +41,7 @@ void SaveManager::func_ov017_020c2c08(GameSaveSlot *param1) {
         ((SaveTreasureData *) &param1->mUnk_2600)->unk_3C[var_r7_2] = -1;
     }
 
-    data_027e0cd8->func_ov000_02081ca0();
+    gpCourseManager->func_ov000_02081ca0();
     data_027e0ce0->func_ov000_0208ba40(&param1->mInfoData.inventory.data);
     data_027e0ce0->mUnk_34->func_ov024_020d3c60(&param1->mInfoData.unk_0D8);
 
@@ -52,13 +52,13 @@ void SaveManager::func_ov017_020c2c08(GameSaveSlot *param1) {
     param1->mInfoData.roomIndex  = pInfos->roomIndex;
     param1->mInfoData.spawnIndex = pInfos->spawnIndex;
 
-    if (data_027e0cd8->mUnk_16) {
+    if (gpCourseManager->mUnk_16) {
         param1->mInfoData.unk_014 |= 0x01;
     } else {
         param1->mInfoData.unk_014 &= ~0x01;
     }
 
-    VecFx32_Copy(&data_027e0cd8->mUnk_24, &param1->mInfoData.unk_008);
+    VecFx32_Copy(&gpCourseManager->mUnk_24, &param1->mInfoData.unk_008);
 
     param1->mInfoData.mUnk_02C = data_027e09a4->mUnk_28;
     UnkStruct_027e09a4_2C *ptr = &data_027e09a4->mUnk_40;
@@ -87,7 +87,7 @@ void SaveManager::func_ov017_020c2c08(GameSaveSlot *param1) {
                      sizeof(SaveFile_00000_0000_Data_484));
     }
 
-    param1->mInfoData.unk_DFE = func_020328c8(&this->mUnk_004, param1, offsetof(SaveInfoData, unk_DFE));
+    param1->mInfoData.unk_DFE = MATH_CalcCRC16(&this->mUnk_004, param1, offsetof(SaveInfoData, unk_DFE));
 
 #if __MWERKS__
     param1->mTreasureData.unk_00 = gpTreasureManager->mUnk_00;
@@ -97,7 +97,7 @@ void SaveManager::func_ov017_020c2c08(GameSaveSlot *param1) {
     MI_CpuCopy32(&gpTreasureManager->mUnk_3C, &param1->mTreasureData.unk_3C, sizeof(gpTreasureManager->mUnk_3C));
 #endif
     param1->mTreasureData.unk_5C        = gpTreasureManager->mUnk_5C;
-    param1->mTreasureData.unk_5C.unk_22 = func_020328c8(
+    param1->mTreasureData.unk_5C.unk_22 = MATH_CalcCRC16(
         &this->mUnk_004, &param1->mTreasureData, offsetof(SaveTreasureData, unk_5C) + offsetof(TreasureManager_5C, unk_22));
 
     MI_CpuCopyFast(&param1->mTreasureData, &param1->mUnk_2600, sizeof(param1->mTreasureData));
@@ -123,7 +123,7 @@ void SaveManager::func_ov017_020c2fc4(u16 param1) {
     gSaveManager.mResultCode = CARD_GetResultCode();
     CARD_UnlockBackup(gSaveManager.mCardId);
 
-    if (gSaveManager.mResultCode != CARD_RESULT_SUCCESS) {
+    if (gSaveManager.mResultCode != CARD_RESULT_FAILURE) {
         gSaveManager.mUnk_214 = 2;
     }
 
@@ -139,9 +139,9 @@ bool SaveManager::func_ov017_020c3040(GameSaveSlot *param1, unk32 param2) {
         return false;
     }
 
-    param1->mUnk_1D00.unk_0FE = func_020328c8(&this->mUnk_004, param1,
-                                              offsetof(GameSaveSlot, mUnk_1D00) + offsetof(SaveFile_00000_1D00_Data, unk_0FE));
-    this->mUnk_208            = param2;
+    param1->mUnk_1D00.unk_0FE = MATH_CalcCRC16(
+        &this->mUnk_004, param1, offsetof(GameSaveSlot, mUnk_1D00) + offsetof(SaveFile_00000_1D00_Data, unk_0FE));
+    this->mUnk_208 = param2;
     this->func_ov000_020a0b2c(SaveManager::func_ov017_020c2fc4, param1);
     return true;
 }

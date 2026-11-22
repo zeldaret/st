@@ -18,13 +18,13 @@ void PlayerActorBase_70::func_ov017_020bbaa8(VecFx32 *param1, UnkAngleStruct par
         if (this->mUnk_114 != NULL) {
             VecFx32 sp4;
 
-            func_01ffb714((VecFx32 *) &this->mUnk_114[PlayerCharacter_Link]._30, param1, &sp4);
+            VEC_Subtract((VecFx32 *) &this->mUnk_114[PlayerCharacter_Link]._30, param1, &sp4);
             VecFx32_Copy(&sp4, &this->mUnk_0E4.mUnk_0C[PlayerCharacter_Link]);
 
-            func_01ffb714((VecFx32 *) &this->mUnk_114[PlayerCharacter_Phantom]._30, param1, &sp4);
+            VEC_Subtract((VecFx32 *) &this->mUnk_114[PlayerCharacter_Phantom]._30, param1, &sp4);
             VecFx32_Copy(&sp4, &this->mUnk_0E4.mUnk_0C[PlayerCharacter_Phantom]);
 
-            func_01ffb714((VecFx32 *) &this->mUnk_114[PlayerCharacter_Zelda]._30, param1, &sp4);
+            VEC_Subtract((VecFx32 *) &this->mUnk_114[PlayerCharacter_Zelda]._30, param1, &sp4);
             VecFx32_Copy(&sp4, &this->mUnk_0E4.mUnk_0C[PlayerCharacter_Zelda]);
 
             if (this->mUnk_126 != 0) {
@@ -61,7 +61,7 @@ void PlayerActorBase_70::func_ov017_020bbcd8(VecFx32 *param1, UnkAngleStruct par
     s16 temp_r9;
     u8 var_r7;
 
-    VecFx32_Add(param1, (VecFx32 *) &this->mUnk_118, &sp1C);
+    VEC_Add(param1, (VecFx32 *) &this->mUnk_118, &sp1C);
 
     if (this->mUnk_126 != 0) {
         this->mUnk_01C->func_ov000_0208c7b0(&sp1C, param2);
@@ -69,7 +69,7 @@ void PlayerActorBase_70::func_ov017_020bbcd8(VecFx32 *param1, UnkAngleStruct par
         this->func_ov017_020bbaa8(&sp1C, param2);
     }
 
-    VecFx32_Add(&sp1C, &this->mUnk_0E4.mUnk_00, &sp10);
+    VEC_Add(&sp1C, &this->mUnk_0E4.mUnk_00, &sp10);
     sp10.y = sp1C.y;
 
     var_r7 = Get_ov000_020ab4dc(this->mCharacter)->mUnk_83;
@@ -79,11 +79,11 @@ void PlayerActorBase_70::func_ov017_020bbcd8(VecFx32 *param1, UnkAngleStruct par
             sp28.func_ov017_020c1104(&sp10, data_ov000_020ab31c, 4);
 
             sp28.unk_12 = this->mUnk_132;
-            VecFx32_Add(&sp1C, &this->mUnk_0E4.mUnk_0C[PlayerCharacter_Link], &sp10);
+            VEC_Add(&sp1C, &this->mUnk_0E4.mUnk_0C[PlayerCharacter_Link], &sp10);
             temp_r9 = data_ov000_020ab318;
 
             sp28.func_ov017_020c117c(&sp10, temp_r9);
-            VecFx32_Add(&sp1C, &this->mUnk_0E4.mUnk_0C[PlayerCharacter_Phantom], &sp10);
+            VEC_Add(&sp1C, &this->mUnk_0E4.mUnk_0C[PlayerCharacter_Phantom], &sp10);
 
             sp28.func_ov017_020c117c(&sp10, temp_r9);
             sp28.func_ov017_020c12fc(var_r7, 0x6000);
@@ -107,7 +107,7 @@ void PlayerActorBase_70::func_ov017_020bbef4(VecFx32 *param1, UnkAngleStruct par
     VecFx32 sp0;
     ModelRender_Derived3 *var_r4;
 
-    VecFx32_Add(param1, (VecFx32 *) &this->mUnk_118, &sp0);
+    VEC_Add(param1, (VecFx32 *) &this->mUnk_118, &sp0);
     var_r4 = this->mUnk_00C.GetUnk08OrUnk0C(this->mUnk_126 != 0);
 
     var_r4->mRenderObj.flag |= 0x02;

@@ -1,9 +1,9 @@
+#include "Course/CourseManager.hpp"
 #include "Cutscene/Cutscene.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_ov024_020d86a0.hpp"
 #include "Unknown/UnkStruct_ov026_02138d10.hpp"
 
@@ -70,15 +70,15 @@ bool UnkStruct_027e0998::vfunc_00(VecFx32 *pPos, Vec2s *param2, RefStruct *param
             break;
     }
 
-    if (data_027e0cd8->func_ov000_02082124()) {
+    if (gpCourseManager->func_ov000_02082124()) {
         if (!param3->acRef.UnkCheck1()) {
             return false;
         }
 
         VecFx32 pos;
-        pos.x = data_027e0cd8->mUnk_24.x;
-        pos.y = data_027e0cd8->mUnk_24.y;
-        pos.z = data_027e0cd8->mUnk_24.z;
+        pos.x = gpCourseManager->mUnk_24.x;
+        pos.y = gpCourseManager->mUnk_24.y;
+        pos.z = gpCourseManager->mUnk_24.z;
         return this->UnkStruct_027e0998_Base::vfunc_00(&pos, param2, param3);
     }
 

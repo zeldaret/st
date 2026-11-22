@@ -102,8 +102,6 @@ void OS_CheckStack(OSThread *thread);
 #else
     #define OS_CheckStack(thread)
 #endif
-void OS_func_0044(void);
-OSMutex *OS_func_0039(OSMutexQueue *param1);
 
 void OS_InitMessageQueue(OSMessageQueue *queue, OSMessage *buf, u32 bufLength);
 void OS_ReceiveMessage(OSMessageQueue *queue, OSMessage *message, u32 block);
@@ -139,10 +137,11 @@ void OS_func_0169(u32, void (*)(u32, u32, u32));
 BOOL OS_func_0170(u32, u32);
 s32 OS_func_0171(u32, u32, u32);
 s32 OS_func_0174(void);
-BOOL OS_func_0065(void);
+BOOL OS_IsRunOnEmulator(void);
 
-void OS_func_0176(u8 *);
-void OS_func_0178(u32);
+void OS_GetMacAddress(u8 *);
+void OS_ReleaseLockID(u32);
+void OS_GetLowEntropyData(void *param1);
 
 void OS_func_0149(u32, u32, u32);
 
@@ -180,6 +179,8 @@ inline BOOL OS_IsRunOnTwl(void) {
 inline void OS_SetNdsSlotAccess(u32 processor) {
     REG_EXMEM_CNT = (REG_EXMEM_CNT & ~OS_EXMEM_CNT_NDS_SLOT_ACCESS) | (processor << OS_EXMEM_CNT_NDS_SLOT_ACCESS_SHIFT);
 }
+
+int OS_SNPrintf(char *, size_t, const char *, ...);
 
 #ifdef __cplusplus
 } // extern "C"

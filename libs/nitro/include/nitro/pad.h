@@ -26,16 +26,23 @@ extern "C" {
      PAD_BUTTON_Y)
 
 #define PAD_KEY_ALL (PAD_KEY_RIGHT | PAD_KEY_LEFT | PAD_KEY_UP | PAD_KEY_DOWN)
+#define PAD_ALL_MASK (PAD_BUTTON_ALL | PAD_KEY_ALL)
 
-#define PAD_ALL (PAD_BUTTON_ALL | PAD_KEY_ALL)
-
+#define PAD_DETECT_FOLD_SHIFT 0x0F // based on GX/G2/G3 macros
+#define PAD_DETECT_FOLD_MASK 0x8000
 inline BOOL PAD_DetectFold(void) {
-    return (REG_PAD & 0x8000) >> 0xf;
+    return (REG_PAD & PAD_DETECT_FOLD_MASK) >> PAD_DETECT_FOLD_SHIFT;
 }
 
+#define PAD_PLUS_KEY_MASK 0x00F0
+#define PAD_BUTTON_MASK 0x2F0F
+#define PAD_READ_MASK (PAD_BUTTON_MASK | PAD_PLUS_KEY_MASK) // based on `PAD_DETECT_FOLD_MASK`
 inline u16 PAD_Read(void) {
-    return ((REG_KEYINPUT | REG_PAD) ^ 0x2fff) & 0x2fff;
+    return ((REG_KEYINPUT | REG_PAD) ^ PAD_READ_MASK) & PAD_READ_MASK;
 }
+
+//! TODO: figure out
+void PAD_Write(u32 data);
 
 #ifdef __cplusplus
 } // extern "C"

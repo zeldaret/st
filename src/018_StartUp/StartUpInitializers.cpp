@@ -24,6 +24,7 @@
 #include <nitro/gx.h>
 #include <nitro/os.h>
 #include <nitro/rtc.h>
+#include <nns/snd.h>
 
 void func_ov018_020c4e8c(void) {
     RTC_Init();
@@ -107,7 +108,7 @@ SaveManager::SaveManager() {
     this->mpSaveFile = NULL;
     this->mUnk_244   = NULL;
 
-    func_020327c8(&this->mUnk_004, 0x1021);
+    MATHi_CRC16InitTableRev(&this->mUnk_004, 0x1021);
 
     this->mCardId = OS_GetLockID();
     int uVar8     = 1;
@@ -148,7 +149,7 @@ SaveManager::SaveManager() {
     this->mResultCode = CARD_GetResultCode();
     CARD_UnlockBackup(this->mCardId);
 
-    if (this->mResultCode != CARD_RESULT_SUCCESS) {
+    if (this->mResultCode != CARD_RESULT_FAILURE) {
         this->mUnk_214 = uVar8;
     }
 }
@@ -202,10 +203,10 @@ UnkStruct_0204e5f8::UnkStruct_0204e5f8() :
     this->mUnk_38                   = 1;
     this->mUnk_39                   = 1;
 
-    REG_WININ      = (REG_WININ & ~0x3F) | 0x3F;
-    REG_WINOUT     = (REG_WINOUT & ~0x3F) | 0x30;
-    REG_WININ_SUB  = (REG_WININ_SUB & ~0x3F) | 0x3F;
-    REG_WINOUT_SUB = (REG_WINOUT_SUB & ~0x3F) | 0x30;
+    G2_SetWnd0InsidePlane(0x00, 0x00);
+    G2_SetWndOutsidePlane(0x00, 0x00);
+    G2S_SetWnd0InsidePlane(0x00, 0x00);
+    G2S_SetWndOutsidePlane(0x00, 0x00);
 }
 
 UnkStruct_0204a110_Sub3::UnkStruct_0204a110_Sub3() {
@@ -324,13 +325,13 @@ UnkStruct_ov000_020b5340::UnkStruct_ov000_020b5340() :
     mUnk_08(-1),
     mUnk_28(0),
     mUnk_2C(0) {
-    func_0202ee0c();
+    MIC_Init();
     this->mUnk_00 = &data_ov000_020b5300;
 }
 
 void UnkStruct_ov000_020b5340::func_ov018_020c57fc() {
-    func_0202f910(1);
-    func_0202f958(3);
+    PM_SetAmp(1);
+    PM_SetAmpGain(3);
 }
 
 UnkStruct_ov000_020b5300::UnkStruct_ov000_020b5300() {

@@ -546,21 +546,33 @@ public:
     // overlay 0
     void func_ov000_0208c8f8(VecFx32 *pVec);
     void func_ov000_0208c914();
+    void func_ov000_0208cac8(VecFx32 *, unk32);
     void func_ov000_0208cbf0();
     void func_ov000_0208cc20(VecFx32 *param1);
     bool func_ov000_0208cc90();
+    void func_ov000_0208cf20(unk32 param1, unk32 param2);
+    void func_ov000_0208d12c();
     unk32 func_ov000_0208d3a8();
     void func_ov000_0208d3d0(Vec2s *param1, unk32 param2, void *param3);
     void func_ov000_0208d3fc();
+    void func_ov000_0208d48c(RefStruct ref);
+    void func_ov000_0208d5a0();
     void func_ov000_0208d60c();
     bool func_ov000_0208d754();
     void func_ov000_0208d7f0(bool param1);
+    void func_ov000_0208d8f0(const VecFx32 *param1, VecFx32 *param2);
+    void func_ov000_0208d928();
     bool func_ov000_0208db08();
     unk32 func_ov000_0208dc98();
+    void func_ov000_0208dcf0();
     unk32 func_ov000_0208dd60(UnkStruct_027e0ce0_30_00 *param1);
 
     // overlay 1
     void func_ov001_020bc96c(); // ResetState? or just Reset? idk
+
+    // overlay 58
+    //! TODO: move to PlayerActorLink?
+    void func_ov058_02152a24();
 
     // overlay 93
     //! TODO: move to PlayerZeldaActor?
@@ -573,4 +585,5 @@ public:
     void func_ov093_0216de30(unk32 param1, unk32 param2);
     void func_ov093_0216dec8(void *param1);
     void func_ov093_0216e1a4(void *param1);
+    void func_ov093_0216f76c(VecFx32 *param1, unk32 param2);
 };

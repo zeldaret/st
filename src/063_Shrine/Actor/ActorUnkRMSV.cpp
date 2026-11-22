@@ -6,15 +6,10 @@
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
 
-extern char data_ov063_02162578[0x10]; // = "RMSV";
-extern char data_ov063_02162588[0x10]; // = "RMSV_wall";
+static const char data_ov063_02162578[16] = "RMSV";
+static const char data_ov063_02162588[16] = "RMSV_wall";
 
-// Overlay 0
-
-// Overlay 31
-
-ActorUnkZLSL_AnimationTag data_ov063_021632ac = {0, "RMSV"};
-ActorUnkZLSL_AnimationTag data_ov063_021632c4 = {1, "RMSV"};
+static ActorUnkZLSL_AnimationTag data_ov063_021632ac[] = {{0, "RMSV", 0x00}, {1, "RMSV", 0x00}};
 
 DECL_PROFILE(ActorProfileUnkRMSV);
 
@@ -31,14 +26,10 @@ ActorUnkRMSV::ActorUnkRMSV() :
 
 bool ActorUnkRMSV::Init(unk32 param1) {
     bool res = ActorUnkRMSBase::Init(param1);
-    this->mUnk_158.func_ov000_02099ff8(data_ov063_021632ac, 0x1000);
-    func_ov000_02099e58(&this->mUnk_1D4, data_ov063_021632c4, 0x1000);
+    this->mUnk_158.func_ov000_02099ff8(data_ov063_021632ac[0], 0x1000);
+    func_ov000_02099e58(&this->mUnk_1D4, data_ov063_021632ac[1], 0x1000);
     this->mUnk_1D4.vfunc_3C();
     return res;
-}
-
-void UnkStruct_ov063_021632e4::vfunc_3C() {
-    mUnk_08->func_ov000_02057c98(this->vfunc_10());
 }
 
 void ActorUnkRMSV::Update(void) {
@@ -56,12 +47,4 @@ G3d_Model *ActorUnkRMSV::vfunc_54(void) {
 
 G3d_Model *ActorUnkRMSV::vfunc_58(void) {
     return GetModelFromProfile3(&GET_PROFILE(ActorProfileUnkRMSV)->mUnk_3C, data_ov063_02162588);
-}
-
-void UnkStruct_ov063_021632e4::vfunc_38(unk32 param1, unk32 param2) {
-    mUnk_04->func_ov000_020578a4(param1, param2);
-}
-
-s8 UnkStruct_ov063_021632e4::vfunc_30() {
-    return mUnk_18;
 }

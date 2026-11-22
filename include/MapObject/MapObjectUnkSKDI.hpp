@@ -30,9 +30,6 @@ public:
     /* 089 */ unk8 mUnk_089;
     /* 080 */ PAD(0x08A, 0x08C);
     /* 08C */ UnkStruct_ov031_Items_02 mUnk_08C;
-    /* 0A8 */ PAD(0x098, 0x0BC);
-    /* 0BC */ unk32 mUnk_0BC;
-    /* 0C0 */ PAD(0x0C0, 0x0D4);
     /* 0D4 */ MapObject_10 mUnk_0D4;
     /* 0F8 */ Timer mUnk_0F8;
     /* 0FC */ unk32 mUnk_0FC;

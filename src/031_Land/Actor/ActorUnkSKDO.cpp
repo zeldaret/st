@@ -23,7 +23,7 @@ bool ActorUnkSKDO::Init(unk32 param1) {
 }
 
 void ActorUnkSKDO::Setup() {
-    ActorUnkSKDO_ov031_02115ce8 stack(MapObjectId_SKDI);
+    ActorUnkSKDO_ov031_02115ce8 stack(MapObjectId_Torch);
     stack.mUnk_08 = this->mPos;
     stack.mUnk_14 = FX_F32_TO_FX32(2.0f);
 

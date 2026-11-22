@@ -38,7 +38,7 @@ ActorProfileUnkNSTN::ActorProfileUnkNSTN() :
 }
 
 ActorUnkNSTN::ActorUnkNSTN() :
-    mUnk_110(G3d_GetModelPtr(data_ov000_020b5d34.GetProfileFromId(MapObjectId_STNE)->vfunc_04()->mUnk_50), 0x1) {}
+    mUnk_110(NNS_G3dGetMdl(data_ov000_020b5d34.GetProfileFromId(MapObjectId_STNE)->vfunc_04()->mUnk_50), 0x1) {}
 
 // non-matching seems like the dtor of the modelrender
 void ActorUnkNSTN::func_ov058_02142abc() {}
@@ -59,11 +59,11 @@ void ActorUnkNSTN::vfunc_5C(ActorState state) {
     this->mState  = state;
     this->vfunc_60();
 
-    CALL_PTMF(PTMF<ActorUnkNSTN>, data_ov058_021545e0[this->mState]);
+    CALL_PTMF(data_ov058_021545e0[this->mState]);
 }
 
 void ActorUnkNSTN::Update() {
-    CALL_PTMF(PTMF<ActorUnkNSTN>, data_ov058_02154620[this->mState]);
+    CALL_PTMF(data_ov058_02154620[this->mState]);
 }
 
 void ActorUnkNSTN::vfunc_2C(unk32 param1) {

@@ -1,14 +1,15 @@
 #include "MapObject/MapObjectUnkSWSW.hpp"
 #include "CommonFuncs.hpp"
+#include "nitro/fx/consts.h"
 #include "profile.hpp"
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorUnkNSSW.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/Random.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 
 extern char data_ov032_02121ef4;
 extern char data_ov032_02121f04;
@@ -52,7 +53,7 @@ MapObjectUnkSWSW_40::MapObjectUnkSWSW_40(G3d_Model *pModel) :
 void MapObjectUnkSWSW_40::vfunc_1C(G3d_RenderState *param1) {
     if (param1->currentCmd[1] == this->mUnk_60) {
         param1->mUnk_B4->mUnk_00 &= ~0x2;
-        MtxFx33_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN((u16) this->mUnk_68), COS((u16) this->mUnk_68));
+        MTX_RotX33_(&param1->mUnk_B4->mUnk_28, SIN(this->mUnk_68), COS(this->mUnk_68));
     }
 
     if (param1->currentCmd[1] != this->mUnk_64) {
@@ -60,7 +61,7 @@ void MapObjectUnkSWSW_40::vfunc_1C(G3d_RenderState *param1) {
     }
 
     param1->mUnk_B4->mUnk_00 &= ~0x2;
-    MtxFx33_InitXRotation(&param1->mUnk_B4->mUnk_28, SIN((u16) this->mUnk_6A), COS((u16) this->mUnk_6A));
+    MTX_RotX33_(&param1->mUnk_B4->mUnk_28, SIN(this->mUnk_6A), COS(this->mUnk_6A));
 }
 
 struct UnkStruct_ov032_021210a0 {
@@ -108,10 +109,10 @@ MapObjectUnkSWSW::MapObjectUnkSWSW() :
 bool MapObjectUnkSWSW::Init() {
     Vec2bCpp sp00;
 
-    UnkStruct_027e0cd8_0C_Base *data_027e0cd8_0C = data_027e0cd8->mUnk_0C;
+    MapManagerBase *pMapMgr = gpCourseManager->mpMapMgr;
 
     func_01ffedac(&sp00, &this->mPos);
-    if (data_027e0cd8_0C->func_ov000_02080180(&sp00) == 0x14) {
+    if (pMapMgr->func_ov000_02080180(&sp00) == 0x14) {
         this->mPos.y = FX_F32_TO_FX32(0.0f);
     }
 
@@ -201,17 +202,17 @@ void MapObjectUnkSWSW::vfunc_08() {
                 return;
             }
 
-            VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
+            VecFx32 *vec = data_027e0ce0->func_01fff148(PlayerType_Link);
             VecFx32 sp48;
             VecFx32_Init(vec->x - this->mPos.x, vec->y - this->mPos.y, vec->z - this->mPos.z, &sp48);
-            VecFx32_Normalize(&sp48, &sp48);
+            VEC_Normalize(&sp48, &sp48);
 
             VecFx32 sp3C;
             VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), &sp3C);
 
             bool var_r5 = false;
-            if (VecFx32_Dot(&sp48, &sp3C) > FX_F32_TO_FX32(0.4f)) {
-                s16 param = (s16) func_01ffbbe0(sp48.x, sp48.z);
+            if (VEC_DotProduct(&sp48, &sp3C) > FX_F32_TO_FX32(0.4f)) {
+                s16 param = (s16) FX_Atan2Idx(sp48.x, sp48.z);
                 func_01ff91b8(&this->mUnk_10C, param, 0x333);
 
                 var_r5 = true;
@@ -220,7 +221,7 @@ void MapObjectUnkSWSW::vfunc_08() {
             }
 
             if (var_r5 && this->mUnk_10E.max != 0) {
-                fx16 var_r3 = COS((u16) (this->mUnk_10E.value * 0xFFFF / this->mUnk_10E.max));
+                fx16 var_r3 = COS((this->mUnk_10E.value * 0xFFFF / this->mUnk_10E.max));
 
                 if (var_r3 < 0) {
                     var_r3 = -var_r3;
@@ -244,9 +245,9 @@ void MapObjectUnkSWSW::vfunc_08() {
 
                 if (!var_r5) {
                     this->mUnk_10E.Init();
-                    func_01ff9218(&this->mUnk_108, 0x0, 0x800);
+                    func_01ff9218(&this->mUnk_108, 0, FX32_HALF);
                 } else {
-                    func_01ff9218(&this->mUnk_108, 0x1000, 0x800);
+                    func_01ff9218(&this->mUnk_108, FX32_ONE, FX32_HALF);
                 }
             }
             break;
@@ -338,7 +339,7 @@ bool MapObjectUnkSWSW::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3)
 
                 UnkAngleStruct angle;
                 angle.angle_s = actorNSSW->mAngle.angle_s;
-                VecFx32 *vec  = data_027e0ce0->func_01fff148(0x0);
+                VecFx32 *vec  = data_027e0ce0->func_01fff148(PlayerType_Link);
 
                 if (!func_02016ae0(&actorNSSW->mPos, vec, angle, 0x2AAB, 0x1)) {
                     return false;

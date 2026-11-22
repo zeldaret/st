@@ -9,6 +9,7 @@
 #include "MapObject/MapObjectBombFlower.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "MapObject/MapObjectProfile.hpp"
+#include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
@@ -86,7 +87,7 @@ G3d_Model *ActorBomb::func_ov031_020e1540(u16 param1) {
         return data_027e0ce0->mUnk_1C->func_ov000_0208ed30(0x0, 0x1, (char *) data_ov031_02110a40[2]);
     }
 
-    return G3d_GetModelPtr(
+    return NNS_G3dGetMdl(
         ((MapObjectProfileBombFlower *) data_ov000_020b5d34.GetProfileFromId(MapObjectId_BombFlower))->mUnk_20.mUnk_50);
 }
 
@@ -104,7 +105,7 @@ UnkStruct_ov000_02058a84 *ActorBomb::func_ov031_020e15d0(u16 param1) {
 void ActorBomb::func_ov031_020e1634(G3d_RenderState *param1) {
     G3d_NameList *iVar1 = G3d_GetBoneList(param1->renderObj->model);
     uint uVar2          = iVar1 != NULL ? func_0200f218(iVar1, data_ov031_021109fc) : -1;
-    uint uVar3          = param1->flag & 0x04 ? param1->currentBoneId : -1;
+    uint uVar3          = G3d_GetCurBoneId(param1);
 
     if (uVar2 == uVar3) {
         *param1->visibilityPtr = false;
@@ -136,7 +137,7 @@ ActorBomb::ActorBomb() :
         this->mUnk_1EF = false;
         this->mUnk_17C = (VecFx32 *) &data_ov031_02110a28;
     } else {
-        func_0200b578(&this->mUnk_094.mRenderObj, ActorBomb::func_ov031_020e1634, 0x0, 0x2, 0x2);
+        NNS_G3dRenderObjSetCallBack(&this->mUnk_094.mRenderObj, ActorBomb::func_ov031_020e1634, 0x0, 0x2, 0x2);
         this->mUnk_17C = (VecFx32 *) &data_ov031_02110a10;
         this->mUnk_1EF = true;
     }
@@ -179,7 +180,7 @@ void ActorBomb::SetState(ActorState state) {
     this->mState = state;
     this->func_ov031_020e18a0();
 
-    CALL_PTMF(PTMF<ActorBomb>, data_ov031_02112c38[this->mState]);
+    CALL_PTMF(data_ov031_02112c38[this->mState]);
 }
 
 void ActorBomb::func_ov031_020e1908() {
@@ -194,10 +195,10 @@ void ActorBomb::func_ov031_020e1920(const VecFx32 *param1) {
 void ActorBomb::func_ov031_020e193c() {
     if (this->mUnk_1EF && GET_FLAG(this->mFlags, ActorFlag_Visible)) {
         VecFx32 sp0C;
-        func_01ffb974(this->mUnk_1D8, this->mUnk_17C, &this->mPos, &sp0C);
+        VEC_MultAdd(this->mUnk_1D8, this->mUnk_17C, &this->mPos, &sp0C);
         VecFx32 sp00;
         // weird logic + 1
-        func_01ffb974(this->mUnk_1D8, this->mUnk_17C + 1, &this->mPos, &sp00);
+        VEC_MultAdd(this->mUnk_1D8, this->mUnk_17C + 1, &this->mPos, &sp00);
 
         data_027e0cec->func_ov000_020a0140(&this->mUnk_164[0], &sp0C);
         data_027e0cec->func_ov000_020a0140(&this->mUnk_164[1], &sp00);
@@ -218,7 +219,7 @@ void ActorBomb::func_ov031_020e193c() {
 void ActorBomb::Update() {
     this->mUnk_3C = &this->mUnk_134;
 
-    CALL_PTMF(PTMF<ActorBomb>, data_ov031_02112c00[this->mState]);
+    CALL_PTMF(data_ov031_02112c00[this->mState]);
     this->func_ov031_020e1b7c();
 
     if (!GET_FLAG(this->mFlags, ActorFlag_Alive)) {
@@ -296,7 +297,7 @@ void ActorBomb::func_ov031_020e1b7c() {
     this->mUnk_0F4.func_01ffc3b4();
 
     if (delta > 0x0) {
-        func_01ff9218(&this->mUnk_1D8, FX_F32_TO_FX32(1.3f), func_01ffb464((u32) delta << 0xC));
+        func_01ff9218(&this->mUnk_1D8, FX_F32_TO_FX32(1.3f), FX_Inv((u32) delta << 0xC));
     }
     if (!this->mUnk_1EA.HasExpired()) {
         return;
@@ -318,7 +319,7 @@ void ActorBomb::func_ov031_020e1b7c() {
 
 void ActorBomb::func_ov031_020e1d18() {
     this->func_ov000_02098838();
-    VecFx32_Add(&this->mPos, &this->mUnk_1CC, &this->mPos);
+    VEC_Add(&this->mPos, &this->mUnk_1CC, &this->mPos);
     VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_1CC);
 }
 
@@ -344,7 +345,7 @@ void ActorBomb::func_ov031_020e1da0() {
     this->func_ov031_020e1d18();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     this->func_ov031_020e2a9c();
 
@@ -361,13 +362,13 @@ void ActorBomb::func_ov031_020e1da0() {
             if (this->mUnk_180.mUnk_0C.z >= FX_F32_TO_FX32(-0.1003f)) {
                 this->mUnk_2C = 0x0;
                 VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mVel);
-                func_01ffb974(-0x29, &this->mUnk_180.mUnk_0C, &this->mVel, &this->mVel);
+                VEC_MultAdd(-0x29, &this->mUnk_180.mUnk_0C, &this->mVel, &this->mVel);
             } else {
-                func_01ff9218(&this->mUnk_2C, data_ov000_020aecf8, 0x800);
+                func_01ff9218(&this->mUnk_2C, data_ov000_020aecf8, FX32_HALF);
             }
         }
     } else {
-        func_01ff9218(&this->mUnk_2C, data_ov000_020aecf8, 0x200);
+        func_01ff9218(&this->mUnk_2C, data_ov000_020aecf8, FX_F32_TO_FX32(0.125f));
     }
 
     this->func_ov031_020e238c();
@@ -423,7 +424,7 @@ void ActorBomb::func_ov031_020e1f88() {
     this->func_ov031_020e1d18();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     this->func_ov031_020e2a9c();
     this->func_ov031_020e2c2c();
@@ -436,7 +437,7 @@ void ActorBomb::func_ov031_020e1fe4() {
     this->func_ov031_020e1d18();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     this->func_ov031_020e2a9c();
     this->func_ov031_020e2c2c();
@@ -464,7 +465,7 @@ void ActorBomb::func_ov031_020e2064() {
     this->func_ov031_020e1d18();
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     this->func_ov031_020e2a9c();
 }
@@ -497,7 +498,7 @@ void ActorBomb::func_ov031_020e2134() {
     this->mVel.z = newZ;
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     ActorBomb_ov031_020e2134 sp00 = ActorBomb_ov031_020e2134();
     this->func_ov031_020e295c(&sp00);
@@ -589,14 +590,15 @@ bool ActorBomb::Drop(ActorGrabParams grabParams, const VecFx32 *pVel) {
     this->mUnk_1E0 = 0x0;
 
     if (!(grabParams.mUnk_00.acRef.type_index != 0x100 && grabParams.mUnk_00.acRef.type_index != 0x2 + 0xFF)) {
-        unk32 param1;
+        PlayerType playerType;
+
         if (grabParams.mUnk_00.acRef.type_index == 0x101) {
-            param1 = 0x0;
+            playerType = PlayerType_Link;
         } else {
-            param1 = grabParams.mUnk_00.acRef.unk_id;
+            playerType = (PlayerType) grabParams.mUnk_00.acRef.unk_id;
         }
 
-        VecFx32 sp0C = *this->Actor::func_ov000_0209853c(param1);
+        VecFx32 sp0C = *this->Actor::func_ov000_0209853c(playerType);
 
         this->mUnk_154.pos.y = sp0C.y + FX_F32_TO_FX32(0.4f) - this->mPos.y;
         this->mPrevPos.x     = sp0C.x;
@@ -647,11 +649,11 @@ void ActorBomb::func_ov031_020e2680(VecFx32 *param1) {
     VecFx32 sp0C = this->mVel;
     VecFx32 sp00 = this->mVel;
 
-    if (VecFx32_Dot(param1, &sp00) >= FX_F32_TO_FX32(0.0f)) {
+    if (VEC_DotProduct(param1, &sp00) >= FX_F32_TO_FX32(0.0f)) {
         return;
     }
 
-    fx32 velLength = VecFx32_Length(&this->mVel);
+    fx32 velLength = VEC_Mag(&this->mVel);
 
     func_01ff94cc(&sp00, param1, &sp0C);
     VecFx32_TryNormalize(&sp00);
@@ -667,12 +669,12 @@ void ActorBomb::func_ov031_020e2780(VecFx32 *param1) {
         return;
     }
 
-    fx32 dot = VecFx32_Dot(&sp00, &this->mVel);
+    fx32 dot = VEC_DotProduct(&sp00, &this->mVel);
     if (dot >= FX_F32_TO_FX32(0.0f)) {
         return;
     }
 
-    func_01ffb974(ROUND_FX32(dot * FX_F32_TO_FX32(-1.2002f)), &sp00, &this->mVel, &this->mVel);
+    VEC_MultAdd(ROUND_FX32(dot * FX_F32_TO_FX32(-1.2002f)), &sp00, &this->mVel, &this->mVel);
     this->mVel.x = ROUND_FX32(this->mVel.x * FX_F32_TO_FX32(0.75f));
     this->mVel.z = ROUND_FX32(this->mVel.z * FX_F32_TO_FX32(0.75f));
 }
@@ -695,8 +697,8 @@ fx32 ActorBomb::func_ov031_020e2820(UnkStruct_ov031_Items_00 *param1) {
     sp54 = this->mPos;
     sp48 = this->mPrevPos;
 
-    func_01ffb714(&sp54, &sp48, &sp3C);
-    var_r8 = VecFx32_Length(&sp3C);
+    VEC_Subtract(&sp54, &sp48, &sp3C);
+    var_r8 = VEC_Mag(&sp3C);
 
     sp0C = sp48;
     sp30 = sp0C;
@@ -706,10 +708,10 @@ fx32 ActorBomb::func_ov031_020e2820(UnkStruct_ov031_Items_00 *param1) {
     if (VecFx32_TryNormalize(&sp18) != 0x0) {
         while (var_r8 != FX_F32_TO_FX32(0.0f)) {
             if (var_r8 > FX_F32_TO_FX32(0.5f)) {
-                func_01ffb974(FX_F32_TO_FX32(0.5f), &sp18, &sp24, &sp24);
+                VEC_MultAdd(FX_F32_TO_FX32(0.5f), &sp18, &sp24, &sp24);
                 var_r8 -= FX_F32_TO_FX32(0.5f);
             } else {
-                func_01ffb974(var_r8, &sp18, &sp24, &sp24);
+                VEC_MultAdd(var_r8, &sp18, &sp24, &sp24);
                 var_r8 = FX_F32_TO_FX32(0.0f);
             }
 
@@ -747,8 +749,8 @@ fx32 ActorBomb::func_ov031_020e295c(UnkStruct_ov031_Items_00 *param1) {
     sp54 = this->mPos;
     sp48 = this->mPrevPos;
 
-    func_01ffb714(&sp54, &sp48, &sp3C);
-    var_r8 = VecFx32_Length(&sp3C);
+    VEC_Subtract(&sp54, &sp48, &sp3C);
+    var_r8 = VEC_Mag(&sp3C);
 
     sp0C = sp48;
     sp30 = sp0C;
@@ -758,10 +760,10 @@ fx32 ActorBomb::func_ov031_020e295c(UnkStruct_ov031_Items_00 *param1) {
     if (VecFx32_TryNormalize(&sp18) != 0x0) {
         while (var_r8 != FX_F32_TO_FX32(0.0f)) {
             if (var_r8 > FX_F32_TO_FX32(0.5f)) {
-                func_01ffb974(FX_F32_TO_FX32(0.5f), &sp18, &sp24, &sp24);
+                VEC_MultAdd(FX_F32_TO_FX32(0.5f), &sp18, &sp24, &sp24);
                 var_r8 -= FX_F32_TO_FX32(0.5f);
             } else {
-                func_01ffb974(var_r8, &sp18, &sp24, &sp24);
+                VEC_MultAdd(var_r8, &sp18, &sp24, &sp24);
                 var_r8 = FX_F32_TO_FX32(0.0f);
             }
 
@@ -948,13 +950,13 @@ bool ActorBomb_180::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, co
     switch (param2->vfunc_00()) {
         case 0:
         case 1:
-            func_01ffb714(&this->mUnk_08->mPos, param4, &sp24);
+            VEC_Subtract(&this->mUnk_08->mPos, param4, &sp24);
             sp24.y = 0;
             break;
         case 2:
             param2->vfunc_14(&spC);
-            VecFx32_Add(&spC, param4, &spC);
-            VecFx32_Add(&sp18, param4, &sp18);
+            VEC_Add(&spC, param4, &spC);
+            VEC_Add(&sp18, param4, &sp18);
 
             var_r0 = 0;
             if (param3->x > spC.x && param3->x < sp18.x) {
@@ -981,7 +983,7 @@ bool ActorBomb_180::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, co
                     sp24.z = 0;
                     var_r5 = 1;
                 } else {
-                    func_01ffb714(&this->mUnk_08->mPos, param4, &sp24);
+                    VEC_Subtract(&this->mUnk_08->mPos, param4, &sp24);
 
                     var_r2 = ABS2(sp24.z);
                     var_r3 = ABS2(sp24.x);

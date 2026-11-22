@@ -1,4 +1,5 @@
 #include "CommonFuncs.hpp"
+#include "nitro/math.h"
 #define DOORBASE_DTOR_NOINLINE
 #include "MapObject/MapObjectDoorBase.hpp"
 
@@ -126,7 +127,7 @@ void MapObjectDoorBase::vfunc_08() {
             }
 
             if (this->mUnk_80 > 0) {
-                func_01ff9218(&this->mUnk_6C, 0, func_01ffb464(INT_TO_FX32(this->mUnk_80)));
+                func_01ff9218(&this->mUnk_6C, 0, FX_Inv(INT_TO_FX32(this->mUnk_80)));
             }
 
             if (this->mUnk_80 == 0) {
@@ -206,7 +207,7 @@ void MapObjectDoorBase::vfunc_08() {
             this->mUnk_80--;
 
             if (this->mUnk_80 > 0) {
-                func_01ff9218(&this->mUnk_6C, 0x1000, func_01ffb464(INT_TO_FX32(this->mUnk_80)));
+                func_01ff9218(&this->mUnk_6C, 0x1000, FX_Inv(INT_TO_FX32(this->mUnk_80)));
             }
 
             if (this->mUnk_88) {
@@ -317,9 +318,8 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
 
             this->mUnk_82 = 0;
             this->mUnk_84 = 0x0D;
-            this->mUnk_80 = (FX_MUL(INT_TO_FX32(this->mUnk_7A), func_01ffb428(this->mUnk_6C, FX_F32_TO_FX32(1.0f))) +
-                             FX_F32_TO_FX32(0.5f)) >>
-                            12;
+            this->mUnk_80 =
+                (FX_MUL(INT_TO_FX32(this->mUnk_7A), FX_Div(this->mUnk_6C, FX_F32_TO_FX32(1.0f))) + FX_F32_TO_FX32(0.5f)) >> 12;
 
             this->vfunc_50();
 
@@ -374,10 +374,8 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
         case MapObjDoorBaseState_3:
             this->vfunc_7C();
 
-            this->mUnk_80 = (FX_MUL(INT_TO_FX32(this->mUnk_78),
-                                    func_01ffb428(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f))) +
-                             FX_F32_TO_FX32(0.5f)) >>
-                            12;
+            this->mUnk_80 = ROUND_FX32(
+                FX_MUL(INT_TO_FX32(this->mUnk_78), FX_Div(FX_F32_TO_FX32(1.0f) - this->mUnk_6C, FX_F32_TO_FX32(1.0f))));
 
             if (this->mUnk_8A) {
                 this->mUnk_82 = 0;
@@ -597,23 +595,23 @@ void MapObjectDoorBase::vfunc_44() {}
 
 void MapObjectDoorBase::vfunc_4C() {}
 
-void MapObjectDoorBase::vfunc_84(unk32 param1, VecFx32 *param2, unk16 *param3) {
+void MapObjectDoorBase::vfunc_84(unk32 param1, VecFx32 *param2, UnkAngleStruct *param3) {
     VecFx32 local_20;
     *param3 = this->mAngle.angle_s;
 
     if (param1 != 0) {
-        local_20.x = FX_MUL(SIN((u16) this->mAngle.angle_s), 0x1000);
-        local_20.z = FX_MUL(COS((u16) this->mAngle.angle_s), 0x1000);
+        local_20.x = FX_MUL(SIN(this->mAngle.angle_s), 0x1000);
+        local_20.z = FX_MUL(COS(this->mAngle.angle_s), 0x1000);
         local_20.y = 0;
     } else {
-        local_20.x = FX_MUL(SIN((u16) this->mAngle.angle_s), 0xC00);
-        local_20.z = FX_MUL(COS((u16) this->mAngle.angle_s), 0xC00);
+        local_20.x = FX_MUL(SIN(this->mAngle.angle_s), 0xC00);
+        local_20.z = FX_MUL(COS(this->mAngle.angle_s), 0xC00);
         local_20.y = 0;
 
         *param3 += -DEG_TO_ANG(180);
     }
 
-    VecFx32_Add(&this->mPos, &local_20, param2);
+    VEC_Add(&this->mPos, &local_20, param2);
 }
 
 void MapObjectDoorBase::func_ov031_020fcf0c(unk32 param1) {
@@ -630,7 +628,7 @@ bool MapObjectDoorBase::func_ov031_020fcf30() {
 
     plocal_10 = (unk16 *) &local_10;
 
-    MapObject::func_ov000_0209d22c(plocal_10, this, 0);
+    MapObject::func_ov000_0209d22c(plocal_10, this, PlayerType_Link);
 
     if (*plocal_10 >= 0x4000 || *plocal_10 <= -0x4000) {
         return false;
@@ -656,17 +654,15 @@ void MapObjectDoorBase::vfunc2_08() {
     }
 
     bool result = data_027e0ce0->func_01fff1a4();
-    temp_r0     = this->mPos.x;
-    temp_r1     = this->mPos.y;
     temp_r2     = this->mPos.z - FX_F32_TO_FX32(3.0f);
+    temp_r1     = this->mPos.y;
+    temp_r0     = this->mPos.x;
 
     if (!result) {
         this->mUnk_4C.x = temp_r0;
         this->mUnk_4C.y = temp_r1;
         this->mUnk_4C.z = temp_r2;
 
-        // temp_r3     = sp - 4;
-        // *temp_r3    = this->mUnk_4A;
         data_027e0ce0->func_ov000_0208bbd4(this->mUnk_04, &this->mUnk_4C, this->mUnk_4A);
         return;
     }
@@ -675,17 +671,13 @@ void MapObjectDoorBase::vfunc2_08() {
     this->mUnk_4C.y = temp_r1;
     this->mUnk_4C.z = temp_r2;
 
-    // temp_r3_2   = sp - 4;
-    // *temp_r3_2  = this->mUnk_4A;
     data_027e0ce0->func_ov000_0208bbd4(this->mUnk_04, &this->mUnk_4C, this->mUnk_4A);
 
-    this->mUnk_5C.x = this->mPos.x + FX_F32_TO_FX32(1.0f);
-    this->mUnk_5C.y = this->mPos.y;
-    this->mUnk_5C.z = this->mPos.z - FX_F32_TO_FX32(3.0f);
-    this->mUnk_5A   = this->mUnk_4A;
+    this->mUnk_5C.z       = this->mPos.z - FX_F32_TO_FX32(3.0f);
+    this->mUnk_5C.y       = this->mPos.y;
+    this->mUnk_5C.x       = this->mPos.x + FX_F32_TO_FX32(1.0f);
+    this->mUnk_5A.angle_s = this->mUnk_4A.angle_s;
 
-    // temp_r2_2   = sp - 4;
-    // *temp_r2_2  = this->mUnk_5A;
     data_027e0ce0->func_ov000_0208bbd4(1, &this->mUnk_5C, this->mUnk_5A);
 }
 

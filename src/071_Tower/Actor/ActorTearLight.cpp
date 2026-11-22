@@ -2,12 +2,12 @@
 #include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_020431b8.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
@@ -59,7 +59,7 @@ ActorProfileTearLight::ActorProfileTearLight() :
 
 // non-matching
 ActorTearLight::ActorTearLight() :
-    mUnk_0A4(G3d_GetModelPtr(GET_PROFILE(ActorProfileTearLight)->mUnk_3C.mUnk_50)),
+    mUnk_0A4(NNS_G3dGetMdl(GET_PROFILE(ActorProfileTearLight)->mUnk_3C.mUnk_50)),
     mUnk_104(&this->mUnk_120, &this->mUnk_0A4, GET_PROFILE(ActorProfileTearLight)->vfunc_04()),
     mUnk_120(&this->mUnk_140, NULL),
     mUnk_160(*(ActorTearLight_UnkStruct *) &data_020431b8),
@@ -98,7 +98,7 @@ void ActorTearLight::Setup() {
     if (this->mUnk_5C.mParams[0] != 0x1) {
         return;
     }
-    data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_1BC.mUnk_00);
+    gpCourseManager->mpMapMgr->func_ov000_02080a5c(&this->mUnk_1BC.mUnk_00.vec);
 }
 
 void ActorTearLight::Update() {
@@ -111,7 +111,7 @@ void ActorTearLight::Update() {
         return;
     }
 
-    VecFx32_Copy(&this->mPos, &this->mUnk_1BC.mUnk_00);
+    VecFx32_Copy(&this->mPos, &this->mUnk_1BC.mUnk_00.vec);
 }
 
 void ActorTearLight::vfunc_24() {
@@ -147,7 +147,7 @@ void ActorTearLight::vfunc_2C(unk32 param1) {
         return;
     }
     MtxFx33 matrix;
-    MtxFx33_InitYRotation(&matrix, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
+    MTX_RotY33_(&matrix, SIN(this->mAngle.angle_s), COS(this->mAngle.angle_s));
 
     VecFx32 vecC = this->mPos;
     vecC.y += FX_F32_TO_FX32(0.5f);
@@ -214,7 +214,7 @@ void ActorTearLight::func_ov071_0215f92c() {
         this->func_ov071_0215f80c();
     }
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if ((this->mUnk_44 || this->mVel.y >= 0) || this->mState == ActorUnkSZKUState_4) {
         UnkStruct_ov071_0215f92c sp4;
@@ -224,7 +224,7 @@ void ActorTearLight::func_ov071_0215f92c() {
         } else if (this->mUnk_46 & 1) {
             Vec2bCpp sp0;
 
-            UnkStruct_027e0cd8_0C_Base *temp_r7 = data_027e0cd8->mUnk_0C;
+            MapManagerBase *temp_r7 = gpCourseManager->mpMapMgr;
             func_01ffedac(&sp0, &this->mPos);
             if (!temp_r7->func_ov000_02082008(&sp0)) {
                 this->func_ov071_0215fc54();
@@ -240,7 +240,7 @@ void ActorTearLight::func_ov071_0215f92c() {
                 this->mUnk_1B9 = true;
             }
             fx32 temp_r1 = this->mVel.y;
-            bool temp_gt = temp_r1 > -0x800;
+            bool temp_gt = temp_r1 > -FX32_HALF;
             this->mVel.y = FX_F32_TO_FX32(0.0f);
             if (!temp_gt) {
                 VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.25f), FX_F32_TO_FX32(0.0f), &this->mVel);
@@ -424,7 +424,7 @@ void ActorTearLight::func_ov071_0215ffbc() {
         this->func_ov071_0215fca4();
         return;
     }
-    func_01ffb714(&actor->mUnk_E8, &this->mPos, &this->mVel);
+    VEC_Subtract(&actor->mUnk_E8, &this->mPos, &this->mVel);
 }
 
 ActorTearLight_194::ActorTearLight_194(ActorTearLight *param1) :

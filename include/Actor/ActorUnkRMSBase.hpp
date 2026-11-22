@@ -8,7 +8,7 @@
 class ActorUnkRMSBase : public UnkStruct_ov031_02114870 {
 public:
     /* 00 (base) */
-    /* F4 */ ModelRender mUnk_F4;
+    /* 0F4 */ ModelRender mUnk_F4;
     /* 154 */ u8 mUnk_154;
     /* 155 */ unk8 mUnk_155;
     /* 156 */ PAD(0x156, 0x158);

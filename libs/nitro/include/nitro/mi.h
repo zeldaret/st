@@ -26,10 +26,12 @@ void MI_CpuFill16(u16 value, void *dst, u32 size);
 void MI_CpuFill32(u32 value, void *ptr, u32 size);
 void MI_Swap(u32 *a, u32 *b);
 
+void MI_Copy36B(void *, MtxFx33 *);
+
 void MIi_UncompressBackward(void *addr);
 
-void MI_func_0008(s32 dmaChannel, void *param2, u32 param3, s32 param4);
-void MI_func_0009(void);
+void MIi_CardDmaCopy32(s32 dmaChannel, void *param2, u32 param3, s32 param4);
+void MI_Init(void);
 s32 MI_func_0010(s32 dmaChannel, void *param2, u32 param3, u32 param4, u32 param5);
 
 inline void MI_CpuClearFast(void *ptr, u32 size) {

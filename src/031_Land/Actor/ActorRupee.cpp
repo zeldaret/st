@@ -1,9 +1,9 @@
 #include "Actor/ActorRupee.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/Random.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
@@ -151,7 +151,7 @@ bool ActorRupee::Init(unk32 param1) {
             {
                 VecFx32 vel;
                 vel.x        = 0;
-                vel.y        = 0x800;
+                vel.y        = FX32_HALF;
                 vel.z        = 0;
                 this->mVel.x = vel.x;
                 this->mVel.y = vel.y;
@@ -245,7 +245,7 @@ void ActorRupee::func_ov031_020e91a8() {
         return;
     }
 
-    func_01fff05c(&sp0, data_027e0cd8->mUnk_0C, &this->mPos);
+    func_01fff05c(&sp0, gpCourseManager->mpMapMgr, &this->mPos);
 
     if (((sp0 >> 5) & 0x03) == 2) {
         this->func_ov000_020984d0();
@@ -273,7 +273,7 @@ void ActorRupee::func_ov031_020e9254() {
         return;
     }
 
-    func_01fff05c(&sp0, data_027e0cd8->mUnk_0C, &this->mPos);
+    func_01fff05c(&sp0, gpCourseManager->mpMapMgr, &this->mPos);
 
     if (((sp0 >> 5) & 0x03) == 2) {
         this->func_ov000_020984d0();
@@ -302,7 +302,7 @@ void ActorRupee::func_ov031_020e9310() {
 
     switch (this->mUnk_EC) {
         case 0:
-            if (data_027e0cd8->mUnk_0C->vfunc_28(&this->mPos, 1, 0) < this->mPos.y) {
+            if (gpCourseManager->mpMapMgr->vfunc_28(&this->mPos, 1, 0) < this->mPos.y) {
                 this->mUnk_EC++;
             }
             break;
@@ -313,7 +313,7 @@ void ActorRupee::func_ov031_020e9310() {
                 this->mVel.y = 0;
                 this->mVel.z = 0;
 
-                func_01fff05c(&sp0, data_027e0cd8->mUnk_0C, &this->mPos);
+                func_01fff05c(&sp0, gpCourseManager->mpMapMgr, &this->mPos);
 
                 if (((sp0 >> 5) & 3) != 2) {
                     this->mUnk_EC = 0;
@@ -352,7 +352,7 @@ void ActorRupee::func_ov031_020e9438() {
 void ActorRupee::func_ov031_020e9450() {
     this->func_ov017_020bf9c8(gpActorManager->func_01fff3b4(this->mUnk_BC));
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (!GET_FLAG(this->mFlags, ActorFlag_5)) {
         return;
@@ -488,14 +488,14 @@ void ActorRupee::func_ov031_020e9740() {
     unk32 sp4;
     unk32 *psp4;
     s32 temp_r2;
-    UnkStruct_027e0cd8_0C_Base *temp_r0;
+    MapManagerBase *temp_r0;
 
     func_01ffedac(&sp0, &this->mPos);
     sp4 = 0;
 
     if (func_ov031_0210af50(sp0, &sp4) != 0) {
-        temp_r0 = data_027e0cd8->mUnk_0C;
-        temp_r2 = (sp4 - 0x800) + temp_r0->vfunc_28(&this->mPos, 0, 0);
+        temp_r0 = gpCourseManager->mpMapMgr;
+        temp_r2 = (sp4 - FX32_HALF) + temp_r0->vfunc_28(&this->mPos, 0, 0);
 
         if (this->mPos.y != temp_r2) {
             this->mPos.y = temp_r2;
@@ -504,7 +504,7 @@ void ActorRupee::func_ov031_020e9740() {
             this->SetState(ActorRupeeState_12);
         }
     } else {
-        temp_r0      = data_027e0cd8->mUnk_0C;
+        temp_r0      = gpCourseManager->mpMapMgr;
         this->mPos.y = temp_r0->vfunc_28(&this->mUnk_5C.mInitialPos, 0, 0);
         this->SetState(ActorRupeeState_12);
     }
@@ -536,7 +536,7 @@ void ActorRupee::SetState(ActorState state) {
     this->mState = state;
     this->mTimer.Reset();
     this->mUnk_EC = 0;
-    CALL_PTMF(PTMF<ActorRupee>, data_ov031_02113520[this->mState]);
+    CALL_PTMF(data_ov031_02113520[this->mState]);
 }
 
 // non-matching
@@ -622,7 +622,7 @@ void ActorRupee::Update() {
         }
     }
 
-    CALL_PTMF(PTMF<ActorRupee>, data_ov031_02113588[this->mState]);
+    CALL_PTMF(data_ov031_02113588[this->mState]);
 
     if (this->mUnk_5C.mUnk_24 < 0 && this->mState != ActorRupeeState_5) {
         this->func_ov031_020e9d94();
@@ -643,7 +643,7 @@ void ActorRupee::Update() {
 
 void ActorRupee::func_ov031_020e9b88() {
     this->func_ov000_02098838();
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mUnk_5C.mInitialPos.y < this->mPos.y + this->mVel.y) {
         this->mUnk_44 = 0x9C;
@@ -659,7 +659,7 @@ void ActorRupee::func_ov031_020e9b88() {
 
 void ActorRupee::func_ov031_020e9be8() {
     this->func_ov000_02098838();
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mVel.y < 0) {
         this->mUnk_44 = 3;
@@ -685,7 +685,7 @@ void ActorRupee::vfunc_2C(unk32 param1) {
     iStack_18 = this->mPos;
 
     if (!this->func_ov031_020e9d54()) {
-        iStack_18.y += 0x800;
+        iStack_18.y += FX32_HALF;
         func_ov000_0205c204(auStack_30, &iStack_18, 0xB0A, 0x0A, 0x1F);
         uVar2 = 0x333;
     } else {

@@ -1,8 +1,8 @@
 #include "Actor/ActorUnkSCCN.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "nitro/fx.h"
 
 DECL_PROFILE(ActorProfileUnkSCCN);
@@ -23,7 +23,7 @@ bool ActorUnkSCCN::Init(unk32 param1) {
         return false;
     }
 
-    UnkStruct_027e0cd8_0C_Base *data_0C    = data_027e0cd8->mUnk_0C;
+    MapManagerBase *data_0C                = gpCourseManager->mpMapMgr;
     UnkStruct_027e0cd8_0C_Base_148_00 *ptr = data_0C->func_ov000_02080620(this->mUnk_5C.mParams[1]);
 
     if (ptr == NULL) {
@@ -46,8 +46,8 @@ bool ActorUnkSCCN::Init(unk32 param1) {
         sp0.x = -this->mPos.x;
         sp0.z = -this->mPos.z;
 
-        VecFx32_Add(&spC.unk_00, psp0, &spC.unk_00);
-        VecFx32_Add(&spC.unk_0C, psp0, &spC.unk_0C);
+        VEC_Add(&spC.unk_00, psp0, &spC.unk_00);
+        VEC_Add(&spC.unk_0C, psp0, &spC.unk_0C);
 
         this->mUnk_94.mUnk_0C = spC.unk_00;
         this->mUnk_94.mUnk_18 = spC.unk_0C;

@@ -99,7 +99,7 @@ void ActorUnkTLKT::vfunc_60(ActorState state) {
             switch (this->mUnk_5C.mParams[1]) {
                 case 0x0: {
                     actorUnkSp40.mUnk_32 = 0x5;
-                    VecFx32 *pos         = data_027e0ce0->func_01fff148(0x0);
+                    VecFx32 *pos         = data_027e0ce0->func_01fff148(PlayerType_Link);
                     VecFx32_Copy(pos, &actorUnkSp40.mUnk_34);
                     actorUnkSp40.mUnk_08 |= 0x1;
                     actorUnkSp40.mUnk_08 |= 0x1;

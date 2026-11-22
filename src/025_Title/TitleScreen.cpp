@@ -165,7 +165,7 @@ void TitleScreen::vfunc_08(Input *pButtons, TouchControl *pTouchControl) {
         this->mUnk_2CC.func_ov000_020609c4();
     }
 
-    CALL_PTMF(TitleScreenPTMF<TitleScreen>, data_ov025_020c5aec[this->mState], pButtons, pTouchControl);
+    CALL_PTMF(data_ov025_020c5aec[this->mState], pButtons, pTouchControl);
     data_0204a110.mUnk_D9C.func_0201c4d8(0, 0x0B, 8);
     data_0204a110.mUnk_D9C.func_0201c504(1, 10, 0x10, 8);
 }
@@ -347,12 +347,12 @@ void TitleScreen::func_ov025_020c592c() {
     GX_SetVisibleWindows(4);
 
     REG_WINOUT = (REG_WINOUT & ~0x3F00) | 0x1900;
-    REG_WINOUT = (REG_WINOUT & ~0x3F) | 0x09;
+    REG_WINOUT = (REG_WINOUT & ~0x3F) | 0x09; //! TODO: use G2_SetWndOutsidePlane
 }
 
 void TitleScreen::func_ov025_020c5964() {
     GX_SetVisibleWindows(0);
-    REG_WINOUT = (REG_WINOUT & ~0x3F) | 0x30;
+    G2_SetWndOutsidePlane(0x00, 0x00);
 }
 
 struct stack_struct {

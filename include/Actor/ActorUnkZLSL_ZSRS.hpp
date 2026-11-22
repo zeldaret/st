@@ -5,6 +5,7 @@
 #include "Actor_Derived1.hpp"
 #include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "global.h"
 #include "nitro/types.h"
@@ -44,7 +45,7 @@ public:
     /* 00 (vtable) */
     /* 04 */ UnkSystem5 *mUnk_04;
     /* 08 */ ModelRender *mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
+    /* 0C */ UnkActorFileSystem2 *mUnk_0C;
     /* 10 */ G3d_Model *mUnk_10;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk8 mUnk_18;
@@ -57,14 +58,14 @@ public:
 
     // data_ov000_020b31a8
     /* 00 */ virtual ~UnkStruct_ov000_020b31a8();
-    /* 08 */ virtual void vfunc_08();
+    /* 08 */ virtual void vfunc_08(G3d_Model *param1);
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual UnkSystem5 *vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4);
     /* 20 */ virtual void vfunc_20();
-    /* 24 */ virtual void vfunc_24();
+    /* 24 */ virtual void vfunc_24(unk32 param1);
     /* 28 */ virtual UnkStruct_PlayerGet_50 *vfunc_28();
     /* 2C */ virtual void vfunc_2C();
     /* 30 */ virtual s8 vfunc_30();
@@ -143,10 +144,11 @@ public:
 
     // data_ov000_020b31f0
     /* 00 */ virtual ~UnkStruct_ov000_020b31f0() override; // In thumb
-    /* 08 */ virtual void vfunc_08() override;
+    /* 08 */ virtual void vfunc_08(G3d_Model *param1) override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 10 */ virtual UnkSystem5 *vfunc_10() override;
     /* 14 */ virtual void vfunc_14() override;
+    // TODO : I'm pretty sure that param2 and param3 (at least) are FX32, see ActorLokomo::func_ov058_02146d74
     /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 28 */ virtual UnkStruct_PlayerGet_50 *vfunc_28() override;
@@ -192,20 +194,20 @@ public:
     void func_ov031_020eece8();
 };
 
-class ActorUnkZSRS_120_Base {
+class ActorUnkZSRS_120_Base : public UnkStruct_ov000_020b31f0 {
 public:
     ActorUnkZSRS_120_Base(UnkSystem5 *param1, UnkSystem5 *param2, ModelRender *param3, UnkActorFileSystem2 *ptr, G3d_Model *,
                           unk32 param4);
 
     /* 00 */ virtual ~ActorUnkZSRS_120_Base();
-    /* 08 */ virtual void vfunc_08();
+    /* 08 */ virtual void vfunc_08(G3d_Model *param1);
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual UnkSystem5 *vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4);
     /* 20 */ virtual void vfunc_20();
-    /* 24 */ virtual void vfunc_24();
+    /* 24 */ virtual void vfunc_24(unk32 param1);
     /* 28 */ virtual UnkStruct_PlayerGet_50 *vfunc_28();
     /* 2C */ virtual void vfunc_2C();
     /* 30 */ virtual s8 vfunc_30();
@@ -216,15 +218,8 @@ public:
 
 class ActorUnkZSRS_120 : public ActorUnkZSRS_120_Base {
 public:
-    /* 00 (vtable) */
-    /* 04 */ UnkSystem5 *mUnk_04;
-    /* 08 */ ModelRender *mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ G3d_Model *mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ UnkSystem5 *mUnk_1C;
-    /* 14 */ PAD(0x20, 0x1440);
+    /* 0000 (base) */
+    /* 002C */ PAD(0x002C, 0x1440);
     /* 1440 */ UnkSystem5_Derived3 mUnk_1440;
     /* 14A0 */ UnkSystem5_Derived3 mUnk_14A0;
     /* 1500 */
@@ -239,14 +234,14 @@ public:
     }
 
     /* 00 */ virtual ~ActorUnkZSRS_120() {}
-    /* 08 */ virtual void vfunc_08();
+    /* 08 */ virtual void vfunc_08(G3d_Model *param1);
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual UnkSystem5 *vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4);
     /* 20 */ virtual void vfunc_20();
-    /* 24 */ virtual void vfunc_24();
+    /* 24 */ virtual void vfunc_24(unk32 param1);
     /* 28 */ virtual UnkStruct_PlayerGet_50 *vfunc_28();
     /* 2C */ virtual void vfunc_2C();
     /* 30 */ virtual s8 vfunc_30();
@@ -338,12 +333,12 @@ public:
     /* 20 */ virtual void Update() override;
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorUnkZLSL() override;
-    /* 58 */ virtual void vfunc_58(ActorState state) override;
+    /* 58 */ virtual void SetState(ActorState state) override;
     /* 68 */ virtual void vfunc_68() override;
     /* 6C */ virtual void vfunc_6C() override;
     /* 70 */ virtual void vfunc_70() override;
     /* 7C */ virtual unk32 vfunc_7C(unk32 param1) override;
-    /* 80 */ virtual unk32 vfunc_80(unk32 param1, unk32 param2) override;
+    /* 80 */ virtual s16 vfunc_80(unk32 param1, unk32 param2, unk32 param3) override;
     /* 88 */ virtual bool vfunc_88() override;
     /* 8C */ virtual bool vfunc_8C() override;
     /* 98 */ virtual void vfunc_98(u32 param1) override;
@@ -403,14 +398,14 @@ public:
     void func_ov031_020ec6d8(bool param1);
     bool func_ov031_020ec8c4();
     void func_ov031_020ecc68(bool param1);
-    void func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk32 param3, unk32 param4);
+    void func_ov031_020ecea8(UnkAngleStruct param1, unk32 param2, unk32 param3, PlayerType playerType);
     void func_ov031_020ed0b0();
     void func_ov031_020ed3c0();
     UnkStackStruct2::Inner func_ov031_020ed47c(unk32 param2);
     void func_ov031_020ed4e4(unk32 param1, unk32 param2);
     bool func_ov031_020ed55c(unk32 param1);
     bool func_ov031_020ed6cc(unk32 param1);
-    bool func_ov031_020ed8ac(unk32 param1);
+    bool func_ov031_020ed8ac(fx32 param1);
     void func_ov031_020edc80();
     void func_ov031_020edd14(VecFx32 *param1);
     void func_ov031_020edd54(RefStruct ref);

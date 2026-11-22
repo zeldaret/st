@@ -63,16 +63,16 @@ void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2) {
     s16 var_r8;
     s32 var_r9;
 
-    FlushGfxQueue();
-    REG_GFX_FIFO_DIFFUSE_AMBIENT_REFLECT = 0x1084FFFF;
+    NNS_G3dGeFlushBuffer();
+    G3_MaterialColorDiffAmb(0xFFFF, 0x1084);
 
     VecFx32 *textureParam = &data_027e095c->mUnk_000[8];
     G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
                      GX_TEXPLTTCOLOR0_USE, textureParam->z);
-    G3_TexPlttBase(((u32) textureParam->y << 0x10) >> 0xD, (((u32) textureParam->z >> 0x1A) & 7));
+    G3_TexPlttBase(G3_TEXPLTTBASE_ADDR(textureParam->y), G3_TEXPLTTBASE_FMT(textureParam->z));
 
     MtxFx33 mat;
-    MtxFx33_InitYRotation(&mat, SIN((u16) actor->mAngle.angle_s), COS((u16) actor->mAngle.angle_s));
+    MTX_RotY33_(&mat, SIN(actor->mAngle.angle_s), COS(actor->mAngle.angle_s));
 
     var_r7 = var_r8 = 0xB33;
     var_r9          = 0x1F - ((0xE - actor->mUnk_0E0) * 2);
@@ -130,8 +130,8 @@ bool ActorUnkSWBM::Init(unk32 param1) {
     this->mUnk_098.mUnk_0C.pos.z = posZ;
     this->mUnk_098.mUnk_0C.size  = FX_F32_TO_FX32(0.35f);
 
-    this->mVel.x = FX_MUL(SIN((u16) this->mAngle.angle_s), 0xB33);
-    this->mVel.z = FX_MUL(COS((u16) this->mAngle.angle_s), 0xB33);
+    this->mVel.x = FX_MUL(SIN(this->mAngle.angle_s), 0xB33);
+    this->mVel.z = FX_MUL(COS(this->mAngle.angle_s), 0xB33);
     this->mVel.y = FX_F32_TO_FX32(0.0f);
     return true;
 }
@@ -167,9 +167,9 @@ void ActorUnkSWBM::func_ov031_020e6d80(unk32 param1) {
 
         s16 angle = this->mAngle.angle_s - DEG_TO_ANG(180);
 
-        vecSp08.x = SIN((u16) angle);
+        vecSp08.x = SIN(angle);
         vecSp08.y = FX_F32_TO_FX32(0.0f);
-        vecSp08.z = COS((u16) angle);
+        vecSp08.z = COS(angle);
 
         data_027e0cec->func_ov000_0209ff24(0x8E1, &this->mPos, &vecSp08, 0x1);
     }
@@ -198,7 +198,7 @@ void ActorUnkSWBM::func_ov031_020e6e84(ActorState state) {
 
 void ActorUnkSWBM::Update() {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     for (VecFx32 *vec = &this->mUnk_0E4[ARRAY_LEN(this->mUnk_0E4) - 1]; vec > &this->mUnk_0E4[0]; --vec) {
         VecFx32_Copy(vec - 1, vec);
@@ -285,25 +285,26 @@ void ActorUnkSWBM::func_ov031_020e718c(const VecFx32 *param0, MtxFx33 *param1, s
         return;
     }
 
-    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_UNK_00, 2, data_ov000_020b4ec4.func_01ffc768(0x4), param2, 0);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_MODULATE, GX_CULL_BACK, data_ov000_020b4ec4.func_01ffc768(0x4), param2,
+                   0);
     G3_PushMtx();
     G3_Translate(param0->x, param0->y, param0->z);
 
-    func_02024a84(param1);
+    G3_MultMtx33(param1);
 
-    u16 x = (s16) -param3;
-    u16 z = (s16) -param5;
+    fx16 x = -param3;
+    fx16 z = -param5;
 
     {
         G3_Begin(GX_BEGIN_QUADS);
         G3_Direct1(G3OP_TEXCOORD, 0x02000200);
         G3_Vtx(x, 0, z);
         G3_Direct1(G3OP_TEXCOORD, 0x200);
-        G3_VtxXZ(x, (u16) param4);
+        G3_VtxXZ(x, param4);
         G3_Direct1(G3OP_TEXCOORD, 0x0);
-        G3_VtxXZ((u16) param3, (u16) param4);
+        G3_VtxXZ(param3, param4);
         G3_Direct1(G3OP_TEXCOORD, 0x02000000);
-        G3_VtxXZ((u16) param3, z);
+        G3_VtxXZ(param3, z);
         G3_End();
     }
 

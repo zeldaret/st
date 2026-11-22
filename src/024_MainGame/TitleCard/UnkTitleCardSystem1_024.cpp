@@ -1,4 +1,5 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Game/GameModeManager.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_02049be0.hpp"
@@ -7,7 +8,6 @@
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f84.hpp"
 #include "Unknown/UnkStruct_ov000_020b504c.hpp"
 #include "Unknown/UnkStruct_ov024_020d8694.hpp"
@@ -81,7 +81,7 @@ void UnkTitleCardSystem1::func_ov024_020cb284(unk32 param1, unk32 param2) {
 
     UnkMsgDataStruct1 *ptr = (UnkMsgDataStruct1 *) &sp8; // cast is required
     ptr->func_ov000_02067a60(data_ov000_020b504c.mUnk_000, param1);
-    this->mUnk_00C->vfunc_14(ptr->mUnk_00);
+    this->mUnk_00C->vfunc_14((unk32) ptr->mUnk_00);
     Vec2s sp0;
     sp0.x = temp_r6_2;
     sp0.y = temp_r5_3;
@@ -367,13 +367,13 @@ void UnkTitleCardSystem1_Derived1::func_ov024_020cbeb8() {
     TC_SceneMsgIdx index = TC_SceneMsgIdx_None;
 
     if (data_027e09a4->IsSnowdriftStation()) {
-        if (data_027e0cd8->func_ov000_02081d5c() < 6) {
+        if (gpCourseManager->func_ov000_02081d5c() < 6) {
             index = TC_SceneMsgIdx_SnowdriftStation;
         } else {
             index = TC_SceneMsgIdx_SlipperyStation;
         }
     } else if (data_027e09a4->IsWater3()) {
-        if (data_027e0cd8->func_ov000_02081d5c() >= 10) {
+        if (gpCourseManager->func_ov000_02081d5c() >= 10) {
             index = TC_SceneMsgIdx_LostAtSeaStation;
         }
     } else {
@@ -399,7 +399,7 @@ void UnkTitleCardSystem1_Derived1::func_ov024_020cbf98() {
         return;
     }
 
-    UnkStruct_027e0cd8_04_0C *ptr = data_027e0cd8->mUnk_04->mUnk_0C;
+    UnkStruct_027e0cd8_04_0C *ptr = gpCourseManager->mUnk_04->mUnk_0C;
     s32 unk_08                    = ptr->mUnk_08;
     u32 msgId                     = BMG_ID_NONE;
 
@@ -556,7 +556,7 @@ void UnkStruct_ov024_020d8694_188::vfunc_00() {
 void UnkStruct_ov024_020d8694_188::vfunc_04(unk8 *param1) {
     MtxFx22 local;
     local     = data_027e0120;
-    local._11 = func_01ffb428(FX_F32_TO_FX32(1.0f), this->mUnk_144.func_0201ec30());
+    local._11 = FX_Div(FX_F32_TO_FX32(1.0f), this->mUnk_144.func_0201ec30());
 
     UnkDataStruct1 local_30(&local, 0x40);
     this->func_ov024_020cb654(param1, &local_30);

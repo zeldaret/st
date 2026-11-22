@@ -138,7 +138,7 @@ void ActorUnkRCFO::Update() {
 
             this->func_ov033_02119a58();
 
-            unk32 delta = this->mUnk_910.mUnk_04 - this->mUnk_910.mUnk_00;
+            unk32 delta = (uintptr_t) this->mUnk_910.mUnk_04 - (uintptr_t) this->mUnk_910.mUnk_00;
             if ((u32) (delta / 4) >= 200) {
                 this->func_ov033_02119840(0x0, 0x0);
                 break;
@@ -258,11 +258,11 @@ void ActorUnkRCFO::func_ov033_021199f4() {
 
 // non-matching
 void ActorUnkRCFO::func_ov033_02119a58() {
-    VecFx32 *vec = data_027e0ce0->func_01fff148(0x1);
+    VecFx32 *vec = data_027e0ce0->func_01fff148(PlayerType_Zelda);
 
     Vec2s sp;
-    sp.x = (func_01ffb428(vec->x - this->mUnk_DDC.vec.x, this->mUnk_DE8.vec.x - this->mUnk_DDC.vec.x) << 8) >> 0xC;
-    sp.y = (func_01ffb428(vec->z - this->mUnk_DDC.vec.z, this->mUnk_DE8.vec.z - this->mUnk_DDC.vec.z) * 0xC0) >> 0xC;
+    sp.x = (FX_Div(vec->x - this->mUnk_DDC.vec.x, this->mUnk_DE8.vec.x - this->mUnk_DDC.vec.x) << 8) >> 0xC;
+    sp.y = (FX_Div(vec->z - this->mUnk_DDC.vec.z, this->mUnk_DE8.vec.z - this->mUnk_DDC.vec.z) * 0xC0) >> 0xC;
 
     if (sp.x < 0) {
         sp.x = 0;
@@ -277,8 +277,8 @@ void ActorUnkRCFO::func_ov033_02119a58() {
         sp.y = 0xBF;
     }
 
-    unk32 val   = this->mUnk_910.mUnk_00;
-    unk32 delta = this->mUnk_910.mUnk_04 - val;
+    unk32 *val  = this->mUnk_910.mUnk_00;
+    unk32 delta = (uintptr_t) this->mUnk_910.mUnk_04 - (uintptr_t) val;
     if ((u32) (delta / 4) == 0x0) {
         this->mUnk_910.func_ov000_0205b1d8(&sp);
         return;

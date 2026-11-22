@@ -72,6 +72,11 @@ config.asflags = [
     "-proc arm5TE",         # Target processor
 ]
 
+# add symbols to that list to prevent the linker from killing them
+force_symbols = [
+    "data_ov063_02162524",
+]
+
 config.ldflags = [
     "-proc arm946e",        # Target processor
     "-dead",                # Strip unused code
@@ -79,6 +84,9 @@ config.ldflags = [
     "-interworking",        # Enable ARM/Thumb interworking
     "-map closure,unused",  # Generate map file
     "-msgstyle gcc",        # Use GCC-like messages (some IDEs will make file names clickable)
+
+    # forced active
+    (f"-force_active {','.join(force_symbols)}" if len(force_symbols) > 0 else "")
 ]
 
 
@@ -227,6 +235,7 @@ config.libs = [
             Object("000_Second/code_020657fc.cpp"),
             Object("000_Second/UnkSystem1_Base.cpp"),
             Object("000_Second/UnkSystem1_Derived1.cpp"),
+            Object("000_Second/UnkStruct_ov000_020b1c10.cpp"),
             Object("000_Second/data_ov000_020af58c.cpp"),
             Object("000_Second/Actor/Actor.cpp"),
             Object("000_Second/Actor/ActorManager.cpp"),
@@ -245,6 +254,7 @@ config.libs = [
             Object("000_Second/Item/ItemManager.cpp"),
             Object("000_Second/Actor/Actor_Derived1.cpp"),
             Object("000_Second/Item/TreasureManager.cpp"),
+            Object("000_Second/data_020aa88c.cpp"),
         ]
     ),
     GameLib(
@@ -253,8 +263,8 @@ config.libs = [
             Object("001_SceneInit/SceneInitializers_001.cpp"),
             Object("001_SceneInit/CourseList.cpp"),
             Object("001_SceneInit/UnkStruct_027e09b8_001.cpp"),
-            Object("001_SceneInit/UnkStruct_027e0cd8_001.cpp"),
-            Object("001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp"),
+            Object("001_SceneInit/Course/CourseManager_001.cpp"),
+            Object("001_SceneInit/Course/MapManagerBase_001.cpp"),
             Object("001_SceneInit/ZeldaArrangeBinary.cpp"),
             Object("001_SceneInit/ZeldaMapBinary.cpp"),
             Object("001_SceneInit/UnkStruct_027e095c_001.cpp"),
@@ -558,7 +568,41 @@ config.libs = [
     GameLib(
         "Overlay 31",
         [
+            Object("031_Land/Course/MapManagerLand.cpp"),
+            Object("031_Land/UnkStruct_ov031_Items_02_031.cpp"),
+            Object("031_Land/Render/SkyboxLand.cpp"),
+            Object("031_Land/Course/UnkStruct_027e0cd8_0C_1D0_031.cpp"),
+            Object("031_Land/UnkStruct_ov031_Items_01_Derived1.cpp"),
+            Object("031_Land/UnkStruct_ov031_Items_01_Derived2.cpp"),
+            Object("031_Land/UnkStruct_027e0d2c_031.cpp"),
+            Object("031_Land/UnkStruct_027e0d30_031.cpp"),
             Object("031_Land/UnkStruct_027e0d34.cpp"),
+            Object("031_Land/UnkStruct_027e0d38.cpp"),
+            Object("031_Land/code_020d9c64_031.cpp"),
+            Object("031_Land/code_020da584_031.cpp"),
+            Object("031_Land/code_020dac20_031.cpp"),
+            Object("031_Land/code_020db0fc_031.cpp"),
+            Object("031_Land/UnkStruct_ItemManager_20_10_031.cpp"),
+            Object("031_Land/UnkStruct_ItemManager_20_04_031.cpp"),
+            Object("031_Land/UnkStruct_ItemManager_20_08_031.cpp"),
+            Object("031_Land/UnkStruct_ItemManager_20_14_031.cpp"),
+            Object("031_Land/UnkStruct_ItemManager_20_031.cpp"),
+            Object("031_Land/UnkStruct_ItemManager_20_0C_031.cpp"),
+            Object("031_Land/UnkStruct_ItemManager_20_00_031.cpp"),
+            Object("031_Land/UnkStruct_027e0ce0_40_031.cpp"),
+            Object("031_Land/UnkStruct_ItemManager_20_04_08_031.cpp"),
+            Object("031_Land/UnkStruct_027e0ce0_40_Base_7C_04_031.cpp"),
+            Object("031_Land/Player/PlayerActors_031.cpp"),
+            Object("031_Land/UnkStruct_027e0ce0_40_Base_78_031.cpp"),
+            Object("031_Land/Player/PlayerLinkActor_A0_14_031.cpp"),
+            Object("031_Land/code_020dd384_031.cpp"),
+            Object("031_Land/Player/PlayerLinkActor_A0_031.cpp"),
+            Object("031_Land/code_020de224_031.cpp"),
+            Object("031_Land/code_020e0284_031.cpp"),
+            Object("031_Land/Player/PlayerLinkActor_A0_10_031.cpp"),
+            Object("031_Land/UnkStruct_ItemManager_20_00_20_031.cpp"),
+            Object("031_Land/code_020e0c34_031.cpp"),
+            Object("031_Land/Actor/ActorCharacter.cpp"),
             Object("031_Land/Actor/ActorRupee.cpp"),
             Object("031_Land/Actor/ActorShotArrow.cpp"),
             Object("031_Land/Actor/ActorUnkATTG.cpp"),
@@ -885,14 +929,14 @@ config.libs = [
         "Overlay 58",
         [
             Object("058_Field/Actor/ActorUnkBSTG.cpp"),
-            Object("058_Field/Actor/ActorUnkCRFT.cpp"),
+            Object("058_Field/Actor/ActorKenzo.cpp"),
             Object("058_Field/Actor/ActorUnkFBRD.cpp"),
             Object("058_Field/Actor/ActorUnkFBSC.cpp"),
             Object("058_Field/Actor/ActorUnkKOAT.cpp"),
             Object("058_Field/Actor/ActorUnkKOCH.cpp"),
             Object("058_Field/Actor/ActorUnkKOKO.cpp"),
             Object("058_Field/Actor/ActorUnkNSTN.cpp"),
-            Object("058_Field/Actor/ActorUnkSYDE_SYDL_SYDS_SYFI_SYFO_SYIL_SYIS_SYOL_SYOS_SYSL_SYSN_SYSS_SYWA_SYWL_SYWS.cpp"),
+            Object("058_Field/Actor/ActorLokomos.cpp"),
             Object("058_Field/Actor/ActorUnkTMNA.cpp"),
             Object("058_Field/Actor/ActorUnkTMNC.cpp"),
             Object("058_Field/Actor/ActorUnkWPBD.cpp"),
@@ -1456,6 +1500,7 @@ config.libs = [
             Object("094_Land2/Actor/ActorUnkSYRN.cpp"),
             Object("094_Land2/Actor/ActorUnkVLCR.cpp"),
             Object("094_Land2/Actor/ActorUnkVRGN.cpp"),
+            Object("094_Land2/MapObject/UnkStruct_ov094_02177ff8.cpp"),
             Object("094_Land2/MapObject/MapObjectUnkBRGW.cpp"),
             Object("094_Land2/MapObject/MapObjectUnkCLMN.cpp"),
             Object("094_Land2/MapObject/MapObjectUnkFNCE.cpp"),
@@ -1514,7 +1559,7 @@ config.libs = [
             Object("101_SceneInitLand/UnkStruct_027e0ce0_40_101.cpp"),
             Object("101_SceneInitLand/Player/PlayerLinkActor_A0_1C_101.cpp"),
             Object("101_SceneInitLand/UnkStruct_027e09a4_54_101.cpp"),
-            Object("101_SceneInitLand/UnkStruct_027e0cd8_0C_101.cpp"),
+            Object("101_SceneInitLand/Course/MapManagerLand_101.cpp"),
             Object("101_SceneInitLand/MapObjectProfile_Derived6_101.cpp"),
         ],
         extra_cflags=["-thumb"],
@@ -1525,7 +1570,7 @@ config.libs = [
             Object("102_CourseExecLand/UnkStruct_027e0ce0_40_102.cpp"),
             Object("102_CourseExecLand/MapObjectUnkSAND_102.cpp"),
             Object("102_CourseExecLand/MapObjectUnkPTFL_102.cpp"),
-            Object("102_CourseExecLand/UnkStruct_027e0cd8_0C_102.cpp"),
+            Object("102_CourseExecLand/Course/MapManagerLand_102.cpp"),
             Object("102_CourseExecLand/ActorUnkMLCK_102.cpp", extra_cflags=["-ipa off"]), # fixes data order
         ]
     ),

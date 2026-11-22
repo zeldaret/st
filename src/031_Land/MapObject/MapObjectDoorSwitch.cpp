@@ -113,7 +113,7 @@ void MapObjectDoorSwitch::vfunc_14(unk32 param1) {
     u16 angle = this->mAngle.angle_s;
     MtxFx33 m;
 
-    MtxFx33_InitYRotation(&m, SIN(angle), COS(angle));
+    MTX_RotY33_(&m, SIN(angle), COS(angle));
 
     VecFx32 local_40(this->mPos);
     local_40.y -= this->mUnk_6C * 2;
@@ -134,7 +134,7 @@ void MapObjectDoorSwitch::vfunc_74(void) {
 
     MtxFx43_InitYRotation(&m, SIN(angle), COS(angle));
     func_01ffaf74(&local_2c, &m, &local_2c);
-    VecFx32_Add(&local_20, &local_2c, &local_20);
+    VEC_Add(&local_20, &local_2c, &local_20);
 
     data_027e0cec->func_ov000_0209ff8c(&this->mUnk_68.mUnk_00, 0x8CF, &local_20, 4);
 
@@ -218,7 +218,7 @@ void MapObjectDoorSwitch::vfunc_54(void) {
 
     if (!this->IsOrientedVertically()) {
         if (this->mUnk_80 > 0) {
-            func_01ff9218(&this->mUnkPos, -FX_F32_TO_FX32(1.35f), func_01ffb464(INT_TO_FX32(this->mUnk_80)));
+            func_01ff9218(&this->mUnkPos, -FX_F32_TO_FX32(1.35f), FX_Inv(INT_TO_FX32(this->mUnk_80)));
         }
 
         fx32 temp_118            = this->mUnkPos;
@@ -240,7 +240,7 @@ void MapObjectDoorSwitch::vfunc_54(void) {
 
     if (uVar1 == 3) {
         if (this->mUnk_80 > 0) {
-            func_01ff9218(&this->mUnkPos, -FX_F32_TO_FX32(0.35f), func_01ffb464(INT_TO_FX32(this->mUnk_80)));
+            func_01ff9218(&this->mUnkPos, -FX_F32_TO_FX32(0.35f), FX_Inv(INT_TO_FX32(this->mUnk_80)));
         }
 
         this->mUnk_118.mUnk_0C.x = this->mUnkPos;
@@ -252,7 +252,7 @@ void MapObjectDoorSwitch::vfunc_54(void) {
         this->mUnk_118.mUnk_18.z = FX_F32_TO_FX32(1.0f);
     } else {
         if (this->mUnk_80 > 0) {
-            func_01ff9218(&this->mUnkPos, FX_F32_TO_FX32(0.35f), func_01ffb464(INT_TO_FX32(this->mUnk_80)));
+            func_01ff9218(&this->mUnkPos, FX_F32_TO_FX32(0.35f), FX_Inv(INT_TO_FX32(this->mUnk_80)));
         }
 
         this->mUnk_118.mUnk_0C.x = -FX_F32_TO_FX32(0.35f);
@@ -265,7 +265,7 @@ void MapObjectDoorSwitch::vfunc_54(void) {
     }
 #else
     if (this->mUnk_80 > 0) {
-        func_01ff9218(&this->mUnkPos, -FX_F32_TO_FX32(1.35f), func_01ffb464(INT_TO_FX32(this->mUnk_80)));
+        func_01ff9218(&this->mUnkPos, -FX_F32_TO_FX32(1.35f), FX_Inv(INT_TO_FX32(this->mUnk_80)));
     }
 
     fx32 temp_118            = this->mUnkPos;
@@ -320,7 +320,7 @@ void MapObjectDoorSwitch::vfunc_40(void) {
 }
 
 void MapObjectDoorSwitch::vfunc_44(void) {
-    unk32 local_c = *(u32 *) &this->mRef;
+    RefStruct local_c = this->mRef;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x130, &this->mPos, 0);
 }
 
@@ -329,7 +329,7 @@ void MapObjectDoorSwitch::vfunc_48(void) {
 }
 
 void MapObjectDoorSwitch::vfunc_4C(void) {
-    unk32 local_c = *(u32 *) &this->mRef;
+    RefStruct local_c = this->mRef;
     data_027e09a8->func_ov000_02071d34(&local_c, 0x132, &this->mPos, 0);
 }
 

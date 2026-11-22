@@ -95,7 +95,7 @@ from:0x02154118 kind:load to:0x0203feb0 module:main
 from:0x02154180 kind:arm_call to:0x01ff9638 module:itcm
 from:0x0215418c kind:arm_call to:0x01ffb744 module:itcm
 from:0x021541cc kind:arm_call to:0x020f9680 module:overlay(31)
-from:0x021541e0 kind:load to:0x020403b0 module:main
+from:0x021541e0 kind:load to:0x0203feb0 add:0x500 module:main
 from:0x02154204 kind:arm_call to:0x0203e690 module:main
 from:0x02154254 kind:arm_call to:0x0202a1c0 module:main
 from:0x02154264 kind:load to:0x02154270 module:overlay(84)

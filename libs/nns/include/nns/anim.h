@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _NNS_ANIM_H
+#define _NNS_ANIM_H
 
 #include "global.h"
 #include <nitro/math.h>
@@ -27,7 +28,7 @@ typedef struct AnimController {
     /* 10 */ unk32 unk_10; // animation timer
     /* 14 */ unk32 unk_14; // animation speed (also affects above timer)
     /* 18 */ unk32 unk_18;
-    /* 1C */ void *unk_1C; // pointer to animation bank ("ABNK")
+    /* 1C */ void *unk_1C; // pointer to animation bank ("ABNK")? is it actually a callback??
     /* 20 */ AnimCallbackFunctor callbackFunctor;
 } AnimController; // size = 0x30
 
@@ -58,4 +59,6 @@ typedef struct CellAnim {
 
 #ifdef __cplusplus
 } // extern "C"
+#endif
+
 #endif

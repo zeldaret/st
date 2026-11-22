@@ -56,7 +56,7 @@ void MapObjectUnkWDST::func_ov094_02173514(void) {}
 void MapObjectUnkWDST::func_ov094_02173520(void) {}
 void MapObjectUnkWDST::func_ov094_02173574(void) {}
 void MapObjectUnkWDST::func_ov094_02173578(void) {}
-void MapObjectUnkWDST::func_ov094_02173584(void) {}
+unk32 MapObjectUnkWDST::func_ov094_02173584(unk32 param1) {}
 void MapObjectUnkWDST::func_ov094_02173618(void) {}
 void MapObjectUnkWDST::func_ov094_02173620(void) {}
 void MapObjectUnkWDST::func_ov094_02173680(void) {}

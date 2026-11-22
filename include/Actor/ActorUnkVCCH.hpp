@@ -3,6 +3,7 @@
 #pragma once
 
 #include "Actor/Actor.hpp"
+#include "Actor/ActorCharacter.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "global.h"
 #include "types.h"
@@ -19,8 +20,8 @@ public:
 
 class ActorUnkVCCH : public Actor {
 public:
-    /* 00 (base) */
-    /* 94 */
+    /* 000 (base) */
+    /* 24C */
 
     ActorUnkVCCH();
 

@@ -630,7 +630,7 @@ public:
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10(void *param1);
-    /* 14 */ virtual void vfunc_14(unk32 param1);
+    /* 14 */ virtual void vfunc_14(unk32 param1); //! TODO: fix type (unk32 -> void*)
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C();
     /* 20 */ virtual void vfunc_20();
@@ -886,6 +886,7 @@ struct UnkStruct_StackTitleScreen {
 };
 
 class MapObject;
+class Actor;
 
 class MapObject_UnkStruct1 {
 public:
@@ -900,10 +901,11 @@ public:
             unk16 mUnk_06;
         };
         unk32 mUnk_04;
+        void *mUnk_04p; //! TODO: figure this out
     };
     /* 08 */
 
-    // MapObject_UnkStruct1(); // func_ov000_02073194 & func_ov000_020731c4
+    // MapObject_UnkStruct1(Actor *param1); // func_ov000_02073194 & func_ov000_020731c4
 
     // data_ov000_020b2290
     /* 00 */ virtual void vfunc2_00();
@@ -916,11 +918,11 @@ class MapObject_UnkStruct1_Derived1 : public MapObject_UnkStruct1 {
 public:
     /* 00 (base) */
     /* 08 */ unk16 mUnk_48;
-    /* 0A */ s16 mUnk_4A;
+    /* 0A */ UnkAngleStruct mUnk_4A;
     /* 0C */ VecFx32 mUnk_4C;
     /* 18 */ bool mUnk_58;
     /* 19 */ unk8 mUnk_59;
-    /* 1A */ s16 mUnk_5A;
+    /* 1A */ UnkAngleStruct mUnk_5A;
     /* 1C */ VecFx32 mUnk_5C;
     /* 28 */
 
@@ -1033,6 +1035,7 @@ public:
     ~UnkSystem7();
 
     void func_ov000_020a0334();
+    void func_ov000_020a036c(VecFx32 *param1);
 };
 
 class UnkSystem7_Derived2 : public UnkSystem7 {
@@ -1343,16 +1346,15 @@ public:
 };
 
 struct UnkStruct_ov000_020aa88c {
-    /* 00 */ bool mUnk_00;
-    /* 01 */ bool mUnk_01;
-    /* 02 */ bool mUnk_02;
-    /* 03 */ bool mUnk_03;
-    /* 04 */ bool mUnk_04;
-    /* 05 */ unk8 mUnk_05;
-    /* 06 */ u16 mUnk_06;
+    /* 00 */ bool mDoCircleTransition; // false for full fade-out
+    /* 01 */ bool mDoBottomScreen;     // false will disable the bottom screen ("main")
+    /* 02 */ bool mDoTopScreen;        // false will disable the top screen ("top")
+    /* 03 */ bool mIsWhite;            // true will make the transition use a white color
+    /* 04 */ bool mIsNotImmobile;      // false will make the player stand still
+    /* 06 */ u16 mDuration;            // duration of the fade-out
     /* 08 */
 };
-extern UnkStruct_ov000_020aa88c data_ov000_020aa88c[];
+extern const UnkStruct_ov000_020aa88c data_ov000_020aa88c[65 /* EntryTransitionType_Max */];
 
 struct UnkStackStruct_ov000_02084344 {
     /* 00 */ s16 mUnk_00;
@@ -1397,4 +1399,24 @@ public:
     /* 0C */
 
     ActorBomb_unk();
+};
+
+struct UnkDataStruct5 {
+    const char *entries[64];
+    u32 numEntries;
+};
+
+enum DungeonType_ {
+    /* 00 */ DungeonType_BossForest,
+    /* 01 */ DungeonType_BossSnow,
+    /* 02 */ DungeonType_BossWater,
+    /* 03 */ DungeonType_BossFlame,
+    /* 04 */ DungeonType_BossDesert,
+    /* 05 */ DungeonType_BossDeago,
+    /* 06 */ DungeonType_BossLast1,
+    /* 07 */ DungeonType_BossLast2,
+    /* 08 */ DungeonType_DgnForest,
+    /* 09 */ DungeonType_DgnSnow,
+    /* 10 */ DungeonType_DgnWater,
+    /* 11 */ DungeonType_DgnDesert,
 };

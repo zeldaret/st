@@ -11,7 +11,7 @@ typedef struct Font_UnkStruct1 {
     /* 08 */
 } Font_UnkStruct1;
 
-void func_020090b0(Font_UnkStruct1 *pFont_UnkStruct1, void *pFontFile);
+void NNS_G2dFontInitUTF16(Font_UnkStruct1 *pFont_UnkStruct1, void *pFontFile);
 
 #ifdef __cplusplus
 }

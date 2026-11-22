@@ -63,7 +63,12 @@ void SND_StopTimer(u32 channel, u32, u32 alarm, u32);
 u32 SND_GetCurrentCommandTag(void);
 void SND_WaitForCommandProc(u32 tag);
 
-void SND_func_0013(int, int, int, int);
+void SND_SetOutputSelector(int, int, int, int);
+
+extern const s16 data_02042bfc[];
+inline s16 SND_CalcDecibel(s32 param1) {
+    return data_02042bfc[param1];
+}
 
 #ifdef __cplusplus
 } // extern "C"

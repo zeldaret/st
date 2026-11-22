@@ -90,16 +90,16 @@ void AdventureModeManager_15C_20_00::vfunc_08(Input *pButtons, TouchControl *pTo
                 this->mUnk_0C8.UpdateLogic();
 
 #if IS_JP
-                GX_func_0008(&REG_BLDCNT, 0x2F, this->mUnk_0C8.func_0201edbc());
+                GX_SetBlendBrightness(0x2F, this->mUnk_0C8.func_0201edbc());
 
                 if (data_0204a110.mUnk_008 != 1) {
-                    GX_func_0008(&REG_BLDCNT_SUB, 0x3F, this->mUnk_0C8.func_0201edbc());
+                    GXS_SetBlendBrightness(0x3F, this->mUnk_0C8.func_0201edbc());
                 }
 #else
-                GX_func_0008(&REG_BLDCNT, 0x0F, this->mUnk_0C8.func_0201edbc());
+                GX_SetBlendBrightness(0x0F, this->mUnk_0C8.func_0201edbc());
 
                 if (data_0204a110.mUnk_008 != 1) {
-                    GX_func_0008(&REG_BLDCNT_SUB, 0x1F, this->mUnk_0C8.func_0201edbc());
+                    GXS_SetBlendBrightness(0x1F, this->mUnk_0C8.func_0201edbc());
                 }
 #endif
             }

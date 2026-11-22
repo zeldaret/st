@@ -17,7 +17,7 @@ ActorProfileUnkEFSB::ActorProfileUnkEFSB() :
     ActorProfile_Derived1(ActorId_EFSB) {}
 
 ActorUnkEFSB::ActorUnkEFSB() :
-    mUnk_098(G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkEFSB)->mUnk_3C.mUnk_50)),
+    mUnk_098(NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkEFSB)->mUnk_3C.mUnk_50)),
     mUnk_0F8(&this->mUnk_098, GET_PROFILE(ActorProfileUnkEFSB)->vfunc_04()),
     mUnk_154(&this->mUnk_098, GET_PROFILE(ActorProfileUnkEFSB)->vfunc_04()) {}
 
@@ -56,7 +56,7 @@ void ActorUnkEFSB::vfunc_2C(unk32 param1) {
     VecFx32 vec;
 
     VecFx32_Init(FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), &vec);
-    vec.z = func_01ffb428(this->mUnk_1B0, FX_F32_TO_FX32(8.0f));
+    vec.z = FX_Div(this->mUnk_1B0, FX_F32_TO_FX32(8.0f));
 
     VecFx32 sp0 = this->mPos;
     sp0.y += FX_F32_TO_FX32(0.85f);

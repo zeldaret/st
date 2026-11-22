@@ -15,7 +15,7 @@ struct PassengerInfos {
 
 static const PassengerInfos sPassengerInfos[] = {
     {
-        .actorId   = ActorId_SYWA,
+        .actorId   = ActorId_Carben,
         .flagBoard = AdventureFlag_CarbenBoardsTrain,
         .flagFail  = AdventureFlag_FailedCarbenTrainRide,
     },

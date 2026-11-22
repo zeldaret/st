@@ -2,10 +2,10 @@
 #include "Actor/ActorManager.hpp"
 #include "Actor/Actor_Derived1.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "MapObject/MapObjectUnkDRTY.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cdc.hpp"
 #include "Unknown/UnkStruct_ov000_020b3000.hpp"
 
@@ -16,8 +16,8 @@
 
 PlayerSceneChange::PlayerSceneChange() :
     mUnk_54(false) {
-    this->mUnk_68 = this->mUnk_2C->mUnk_14C;
-    this->mUnk_6C = -1;
+    this->mEntryTransitionType = this->mUnk_2C->mEntryTransitionType;
+    this->mUnk_6C              = -1;
 
 #if __MWERKS__
     this->mUnk_70.values = this->mUnk_34->values;
@@ -51,11 +51,11 @@ PlayerSceneChange::PlayerSceneChange() :
 }
 
 PlayerSceneChange::~PlayerSceneChange() {
-    UnkStruct_ov000_0208f820_28 *pUnk_28 = this->mUnk_28;
-    pUnk_28->mUnk_38.mUnk_08 &= 0xFFFD;
+    PlayerLinkActor *pUnk_28 = this->mpLink;
+    pUnk_28->mUnk_38.mUnk_00.mUnk_08 &= 0xFFFD;
 
-    if (pUnk_28->mUnk_38.mUnk_08 == 0) {
-        pUnk_28->mUnk_38.~UnkStruct_PlayerGet_64();
+    if (pUnk_28->mUnk_38.mUnk_00.mUnk_08 == 0) {
+        pUnk_28->mUnk_38.mUnk_00.~UnkStruct_PlayerGet_64();
     }
 
     func_ov000_0205ca74(this->mUnk_98);
@@ -83,7 +83,7 @@ extern fx16 data_0203feb0[];
 
 // https://decomp.me/scratch/c7PhN
 void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
-    const fx16 *pSinCosTable = gSinCosTable;
+    const fx16 *pSinCosTable = FX_SinCosTable_;
     Vec2bCpp stack4;
     s16 stack3;
     Vec2bCpp stack2;
@@ -91,33 +91,34 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
 
     switch (param1->mUnk_04) {
         case 0x3C: {
-            int iVar19 = data_027e0cd8->mUnk_0C->func_ov000_02080658((this->mUnk_2C->mUnk_148 >> 16) & 0x3F, &this->mUnk_54);
-            if (iVar19 != 0 && this->mUnk_28->mUnk_94 != 0 && func_ov096_02179c14()) {
+            int iVar19 =
+                gpCourseManager->mpMapMgr->func_ov000_02080658((this->mUnk_2C->mUnk_148 >> 16) & 0x3F, &this->mUnk_54);
+            if (iVar19 != 0 && this->mpLink->mUnk_094 != NULL && this->mpLink->mUnk_094->func_ov096_02179c14()) {
                 this->mUnk_54.unk_10 = 1;
             }
 
-            switch (this->mUnk_68) {
-                case 0x08:
-                case 0x09:
-                case 0x22:
-                case 0x23:
+            switch (this->mEntryTransitionType) {
+                case EntryTransitionType_8:
+                case EntryTransitionType_9:
+                case EntryTransitionType_34:
+                case EntryTransitionType_35:
                     this->mUnk_6C = 0x0F;
                     break;
-                case 0x0F:
-                case 0x10:
-                case 0x11:
-                case 0x12:
-                case 0x13:
-                case 0x14:
-                case 0x21:
-                case 0x24:
-                case 0x25:
+                case EntryTransitionType_15:
+                case EntryTransitionType_16:
+                case EntryTransitionType_17:
+                case EntryTransitionType_18:
+                case EntryTransitionType_19:
+                case EntryTransitionType_20:
+                case EntryTransitionType_33:
+                case EntryTransitionType_36:
+                case EntryTransitionType_37:
                     this->mUnk_6C = 0x0A;
                     break;
-                case 0x1C:
+                case EntryTransitionType_28:
                     this->mUnk_6C = 0x05;
                     break;
-                case 0x19:
+                case EntryTransitionType_25:
                     this->mUnk_6C = 0x00;
                     break;
                 default:
@@ -134,20 +135,20 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             this->mUnk_AA = -0x8000;
             this->mUnk_AC = false;
 
-            switch (this->mUnk_68) {
-                case 0x08:
+            switch (this->mEntryTransitionType) {
+                case EntryTransitionType_8:
                     this->mUnk_70.x = temp_r8->x + FX_MUL(data_02040964[0], FX_F32_TO_FX32(2.0f));
                     this->mUnk_70.z = temp_r8->z + FX_MUL(data_02040964[1], FX_F32_TO_FX32(2.0f));
                     break;
-                case 0x09:
+                case EntryTransitionType_9:
                     this->mUnk_70.x = temp_r8->x + FX_MUL(data_0203e964[0], FX_F32_TO_FX32(2.0f));
                     this->mUnk_70.z = temp_r8->z + FX_MUL(data_0203e964[1], FX_F32_TO_FX32(2.0f));
                     break;
-                case 0x22:
+                case EntryTransitionType_34:
                     this->mUnk_70.x = temp_r8->x + FX_MUL(data_02041964[0], FX_F32_TO_FX32(2.0f));
                     this->mUnk_70.z = temp_r8->z + FX_MUL(data_02041964[1], FX_F32_TO_FX32(2.0f));
                     break;
-                case 0x23:
+                case EntryTransitionType_35:
                     this->mUnk_70.x = temp_r8->x + FX_MUL(data_0203f964[0], FX_F32_TO_FX32(2.0f));
                     this->mUnk_70.z = temp_r8->z + FX_MUL(data_0203f964[1], FX_F32_TO_FX32(2.0f));
                     break;
@@ -159,7 +160,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                         if (pDRTY != NULL) {
                             pDRTY->func_ov000_0209d6ac((VecFx32 *) &this->mUnk_70);
 
-                            if (this->mUnk_68 == 0x19) {
+                            if (this->mEntryTransitionType == EntryTransitionType_25) {
                                 pDRTY->func_ov034_02121d84();
                                 this->mUnk_8C = pDRTY->mRef.Get32();
                             } else if (pDRTY->GetMapObjectId() == MapObjectId_DRTY) {
@@ -202,11 +203,11 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             func_ov000_0205d65c(&stack3, this->mUnk_34, (VecFx32 *) &this->mUnk_70, this->mUnk_40->angle_u);
             this->mUnk_40->angle_u = stack3;
 
-            switch (this->mUnk_68) {
-                case 0x11:
-                case 0x12:
-                case 0x13:
-                case 0x14: {
+            switch (this->mEntryTransitionType) {
+                case EntryTransitionType_17:
+                case EntryTransitionType_18:
+                case EntryTransitionType_19:
+                case EntryTransitionType_20: {
                     s32 var_r1_2 = this->mUnk_A8 - this->mUnk_40->angle_u;
 
                     if (var_r1_2 < 0) {
@@ -219,22 +220,22 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
 
                     VecFx32 sp78;
                     unk16 temp_r8_2 = this->mUnk_A8 - 0x8000;
-                    func_01ffb714(this->mUnk_34, (VecFx32 *) &this->mUnk_70, &sp78);
+                    VEC_Subtract(this->mUnk_34, (VecFx32 *) &this->mUnk_70, &sp78);
                     func_01ff9638(&sp78, -temp_r8_2);
                     this->mUnk_9C.x = -sp78.x;
                     this->mUnk_9C.y = 0;
                     this->mUnk_9C.z = 0;
                     func_01ff9638(&this->mUnk_9C, temp_r8_2);
 
-                    fx32 temp_r0_11 = VecFx32_Length(&this->mUnk_9C);
-                    if (temp_r0_11 > 0x800) {
-                        if ((((temp_r0_11 - 0x800) / 10) + ((temp_r0_11 - 0x800) >> 0x1F)) <= 0) {
+                    fx32 temp_r0_11 = VEC_Mag(&this->mUnk_9C);
+                    if (temp_r0_11 > FX32_HALF) {
+                        if ((((temp_r0_11 - FX32_HALF) / 10) + ((temp_r0_11 - FX32_HALF) >> 0x1F)) <= 0) {
                             this->mUnk_9C.x = 0;
                             this->mUnk_9C.y = 0;
                             this->mUnk_9C.z = 0;
                         } else {
                             func_01ff9770(&this->mUnk_9C, temp_r0_11);
-                            VecFx32_Add(this->mUnk_3C, &this->mUnk_9C, this->mUnk_3C);
+                            VEC_Add(this->mUnk_3C, &this->mUnk_9C, this->mUnk_3C);
                         }
                     } else {
                         this->mUnk_9C.x = 0;
@@ -246,20 +247,20 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                     break;
             }
 
-            switch (this->mUnk_68) {
-                case 0x10:
-                case 0x11:
-                case 0x12:
-                case 0x13:
-                case 0x14:
-                case 0x15:
-                case 0x1C:
-                case 0x21:
-                case 0x25:
-                case 0x33:
+            switch (this->mEntryTransitionType) {
+                case EntryTransitionType_16:
+                case EntryTransitionType_17:
+                case EntryTransitionType_18:
+                case EntryTransitionType_19:
+                case EntryTransitionType_20:
+                case EntryTransitionType_21:
+                case EntryTransitionType_28:
+                case EntryTransitionType_33:
+                case EntryTransitionType_37:
+                case EntryTransitionType_51:
                     this->mUnk_7C = FX_F32_TO_FX32(1 / 2);
                     break;
-                case 0x19:
+                case EntryTransitionType_25:
                     this->mUnk_7C = FX_F32_TO_FX32(0.3f);
                     break;
                 default:
@@ -267,8 +268,8 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                     break;
             }
 
-            if (this->mUnk_28->mUnk_98 != NULL) {
-                this->mUnk_28->mUnk_98->func_ov093_0216f76c((VecFx32 *) &this->mUnk_70, this->mUnk_68);
+            if (this->mpLink->mpZelda != NULL) {
+                this->mpLink->mpZelda->func_ov093_0216f76c((VecFx32 *) &this->mUnk_70, this->mEntryTransitionType);
             }
 
             break;
@@ -282,7 +283,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
         }
         case 0x3E: {
             if (this->mUnk_44 != NULL) {
-                this->mUnk_28->func_ov000_0208d12c();
+                this->mpLink->func_ov000_0208d12c();
             }
 
             this->mUnk_6C = 0x5F;
@@ -303,22 +304,22 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
         }
         case 0x3F:
             if (param1->mUnk_00 != 0x3C) {
-                this->mUnk_68 = data_027e09a4->func_ov000_02070554();
+                this->mEntryTransitionType = data_027e09a4->GetEntryTransitionType();
             }
 
             SceneIndex eScene = data_027e09a4->CurrentSceneIndex();
             if (eScene == SceneIndex_tekiya07) {
-                this->mUnk_68 = 0x18;
+                this->mEntryTransitionType = EntryTransitionType_24;
             } else {
                 switch (data_027e09a4->func_ov000_02070538()->mSceneIndex) {
                     case SceneIndex_d_water27:
                         if (eScene == SceneIndex_b_water) {
-                            this->mUnk_68 = 0x18;
+                            this->mEntryTransitionType = EntryTransitionType_24;
                         }
                         break;
                     case SceneIndex_b_water:
                         if (eScene == SceneIndex_d_water27) {
-                            this->mUnk_68 = 0x10;
+                            this->mEntryTransitionType = EntryTransitionType_16;
                         }
                         break;
                     default:
@@ -326,7 +327,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 }
             }
 
-            if ((this->mUnk_24->mUnk_104 & 0x10) || this->mUnk_28->pItemManager->GetTearsAmount() == MAX_TEARS_OF_LIGHT) {
+            if ((this->mUnk_24->mUnk_104 & 0x10) || this->mpLink->mUnk_54->GetTearsAmount() == MAX_TEARS_OF_LIGHT) {
                 UnkStruct_ov000_020b3000 local_9c(ActorId_RPMT);
                 Actor **ppAVar12 = gpActorManager->func_01fff350(&local_9c, gpActorManager->mActorTable);
 
@@ -350,45 +351,45 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             this->mUnk_80.y = pVec->y;
             this->mUnk_80.z = pVec->z;
 
-            switch (this->mUnk_68) {
-                case 0x15:
-                case 0x16:
-                case 0x1C:
+            switch (this->mEntryTransitionType) {
+                case EntryTransitionType_21:
+                case EntryTransitionType_22:
+                case EntryTransitionType_28:
                     pVec = this->mUnk_34;
                     pVec->x += FX_MUL(FX_F32_TO_FX32(-1.1003f), SIN2(pSinCosTable, this->mUnk_40->angle_u));
                     pVec->z += FX_MUL(FX_F32_TO_FX32(-1.1003f), COS2(pSinCosTable, this->mUnk_40->angle_u));
                     break;
-                case 0x08:
-                case 0x09:
-                case 0x0A:
-                case 0x0B:
-                case 0x0C:
-                case 0x0D:
-                case 0x0E:
-                case 0x17:
-                case 0x18:
-                case 0x19:
-                case 0x1A:
-                case 0x1B:
-                case 0x1D:
-                case 0x1E:
-                case 0x1F:
-                case 0x20:
-                case 0x22:
-                case 0x23:
+                case EntryTransitionType_8:
+                case EntryTransitionType_9:
+                case EntryTransitionType_10:
+                case EntryTransitionType_11:
+                case EntryTransitionType_12:
+                case EntryTransitionType_13:
+                case EntryTransitionType_14:
+                case EntryTransitionType_23:
+                case EntryTransitionType_24:
+                case EntryTransitionType_25:
+                case EntryTransitionType_26:
+                case EntryTransitionType_27:
+                case EntryTransitionType_29:
+                case EntryTransitionType_30:
+                case EntryTransitionType_31:
+                case EntryTransitionType_32:
+                case EntryTransitionType_34:
+                case EntryTransitionType_35:
                     pVec = this->mUnk_34;
                     pVec->x += FX_MUL(FX_F32_TO_FX32(-1.9001f), SIN2(pSinCosTable, this->mUnk_40->angle_u));
                     pVec->z += FX_MUL(FX_F32_TO_FX32(-1.9001f), COS2(pSinCosTable, this->mUnk_40->angle_u));
                     break;
-                case 0x0F:
-                case 0x10:
-                case 0x11:
-                case 0x12:
-                case 0x13:
-                case 0x14:
-                case 0x21:
-                case 0x24:
-                case 0x25:
+                case EntryTransitionType_15:
+                case EntryTransitionType_16:
+                case EntryTransitionType_17:
+                case EntryTransitionType_18:
+                case EntryTransitionType_19:
+                case EntryTransitionType_20:
+                case EntryTransitionType_33:
+                case EntryTransitionType_36:
+                case EntryTransitionType_37:
                     pVec = this->mUnk_34;
                     pVec->x += FX_MUL(FX_F32_TO_FX32(-1.0002f), SIN2(pSinCosTable, this->mUnk_40->angle_u));
                     pVec->z += FX_MUL(FX_F32_TO_FX32(-1.0002f), COS2(pSinCosTable, this->mUnk_40->angle_u));
@@ -400,29 +401,29 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                     break;
             }
 
-            switch (this->mUnk_68) {
-                case 0x15:
-                case 0x16:
-                case 0x1C:
-                case 0x33:
-                case 0x3B:
+            switch (this->mEntryTransitionType) {
+                case EntryTransitionType_21:
+                case EntryTransitionType_22:
+                case EntryTransitionType_28:
+                case EntryTransitionType_51:
+                case EntryTransitionType_59:
                     if (func_ov000_02080998(this->mUnk_34)) {
                         break;
                     }
 
-                case 0x1A:
-                case 0x1B:
-                case 0x1D:
-                case 0x1E:
-                case 0x1F:
+                case EntryTransitionType_26:
+                case EntryTransitionType_27:
+                case EntryTransitionType_29:
+                case EntryTransitionType_30:
+                case EntryTransitionType_31:
                 default:
-                    UnkStruct_027e0cd8_0C_Base *ptr = data_027e0cd8->mUnk_0C;
+                    MapManagerBase *ptr = gpCourseManager->mpMapMgr;
 
-                    switch (this->mUnk_68) {
-                        case 0x0F:
-                        case 0x11:
-                        case 0x13:
-                        case 0x24: {
+                    switch (this->mEntryTransitionType) {
+                        case EntryTransitionType_15:
+                        case EntryTransitionType_17:
+                        case EntryTransitionType_19:
+                        case EntryTransitionType_36: {
                             fx32 posY = ptr->vfunc_28(this->mUnk_34, 0, 0);
                             if (this->mUnk_34->y >= posY) {
                                 this->mUnk_34->y = posY;
@@ -440,12 +441,12 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                     break;
             }
 
-            switch (this->mUnk_68) {
-                case 0x15:
-                case 0x16:
-                case 0x1C:
-                case 0x33:
-                case 0x3B:
+            switch (this->mEntryTransitionType) {
+                case EntryTransitionType_21:
+                case EntryTransitionType_22:
+                case EntryTransitionType_28:
+                case EntryTransitionType_51:
+                case EntryTransitionType_59:
                     this->mUnk_7C = FX_F32_TO_FX32(0.5f);
                     break;
                 default:
@@ -461,7 +462,7 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
 void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
     switch (param1) {
         case 0x3C:
-            if (this->mUnk_68 == 0x19) {
+            if (this->mEntryTransitionType == EntryTransitionType_25) {
                 if (this->func_ov000_020914b0(0x3C, (VecFx32 *) &this->mUnk_70, this->mUnk_7C)) {
                     this->mUnk_30->func_ov000_020921e4(0x3D);
                 }
@@ -477,13 +478,13 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     this->mUnk_6C = -1;
                 }
 
-                switch (this->mUnk_68) {
-                    case 0x11:
-                    case 0x13:
+                switch (this->mEntryTransitionType) {
+                    case EntryTransitionType_17:
+                    case EntryTransitionType_19:
                         this->mUnk_AA += 0x200;
                         break;
-                    case 0x12:
-                    case 0x14:
+                    case EntryTransitionType_18:
+                    case EntryTransitionType_20:
                         this->mUnk_AA -= 0x200;
                     default:
                         break;
@@ -493,21 +494,21 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     s16 var_r1_2 = this->mUnk_40->angle_u;
                     bool var_r3  = true;
 
-                    switch (this->mUnk_68) {
-                        case 0x08:
-                        case 0x0F:
-                        case 0x15:
-                        case 0x17:
-                        case 0x1B:
-                        case 0x1F:
-                        case 0x24:
-                        case 0x33:
+                    switch (this->mEntryTransitionType) {
+                        case EntryTransitionType_8:
+                        case EntryTransitionType_15:
+                        case EntryTransitionType_21:
+                        case EntryTransitionType_23:
+                        case EntryTransitionType_27:
+                        case EntryTransitionType_31:
+                        case EntryTransitionType_36:
+                        case EntryTransitionType_51:
                             var_r1_2 = -0x8000;
                             break;
-                        case 0x11:
-                        case 0x12:
-                        case 0x13:
-                        case 0x14:
+                        case EntryTransitionType_17:
+                        case EntryTransitionType_18:
+                        case EntryTransitionType_19:
+                        case EntryTransitionType_20:
                             var_r3 = false;
 
                             if (this->mUnk_AC) {
@@ -517,21 +518,21 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                             }
 
                             break;
-                        case 0x09:
-                        case 0x10:
-                        case 0x16:
-                        case 0x18:
-                        case 0x1C:
-                        case 0x20:
-                        case 0x21:
-                        case 0x25:
-                        case 0x3B:
+                        case EntryTransitionType_9:
+                        case EntryTransitionType_16:
+                        case EntryTransitionType_22:
+                        case EntryTransitionType_24:
+                        case EntryTransitionType_28:
+                        case EntryTransitionType_32:
+                        case EntryTransitionType_33:
+                        case EntryTransitionType_37:
+                        case EntryTransitionType_59:
                             var_r1_2 = 0;
                             break;
-                        case 0x22:
+                        case EntryTransitionType_34:
                             var_r1_2 = -0x4000;
                             break;
-                        case 0x23:
+                        case EntryTransitionType_35:
                             var_r1_2 = 0x4000;
                             break;
                         default:
@@ -543,12 +544,12 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     }
 
                     // s16 iVar3 = var_r1_2 >> 4;
-                    // fx32 uVar6 = gSinCosTable[iVar3 * 2] * 0x2000;
-                    // fx32 uVar5 = gSinCosTable[iVar3 * 2 + 1] * 0x2000;
-                    // fx32 iVar2 = (gSinCosTable[iVar3 * 2 + 1] >> 0x13) + (0xFFFFF7FF < uVar5);
+                    // fx32 uVar6 = FX_SinCosTable_[iVar3 * 2] * 0x2000;
+                    // fx32 uVar5 = FX_SinCosTable_[iVar3 * 2 + 1] * 0x2000;
+                    // fx32 iVar2 = (FX_SinCosTable_[iVar3 * 2 + 1] >> 0x13) + (0xFFFFF7FF < uVar5);
 
                     // this->mUnk_70.x +=
-                    //     (((uVar6 + 0x800) >> 0xC) | (gSinCosTable[iVar3 * 2] >> 0x13) + (0xFFFFF7FF < uVar6)) * 0x100000;
+                    //     (((uVar6 + 0x800) >> 0xC) | (FX_SinCosTable_[iVar3 * 2] >> 0x13) + (0xFFFFF7FF < uVar6)) * 0x100000;
                     // this->mUnk_70.z += (((uVar5 + 0x800) >> 0xC) | iVar2 << 0x14);
 
                     s32 idx   = (((s32) var_r1_2) >> 4) << 1;
@@ -559,9 +560,9 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                     this->mUnk_70.z += (((cos16 << 13) + 0x800) >> 12);
                 }
 
-                switch (this->mUnk_68) {
-                    case 0x21:
-                    case 0x25: {
+                switch (this->mEntryTransitionType) {
+                    case EntryTransitionType_33:
+                    case EntryTransitionType_37: {
                         s16 value = this->func_ov112_02184bbc(0);
                         fx16 sin  = SIN2(data_0203feb0, value);
                         fx16 cos  = COS2(data_0203feb0, value);
@@ -571,11 +572,11 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                         break;
                     }
 
-                    case 0x10:
-                    case 0x11:
-                    case 0x12:
-                    case 0x13:
-                    case 0x14:
+                    case EntryTransitionType_16:
+                    case EntryTransitionType_17:
+                    case EntryTransitionType_18:
+                    case EntryTransitionType_19:
+                    case EntryTransitionType_20:
                         if (this->mUnk_AC && this->mUnk_30->mUnk_70 >= 8) {
                             this->mUnk_AC = false;
                         }
@@ -598,13 +599,13 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                         break;
                 }
 
-                switch (this->mUnk_68) {
-                    case 0x11:
-                    case 0x12:
-                    case 0x13:
-                    case 0x14:
+                switch (this->mEntryTransitionType) {
+                    case EntryTransitionType_17:
+                    case EntryTransitionType_18:
+                    case EntryTransitionType_19:
+                    case EntryTransitionType_20:
                         if (this->mUnk_30->mUnk_70 < 0x0A) {
-                            VecFx32_Add(this->mUnk_3C, &this->mUnk_9C, this->mUnk_3C);
+                            VEC_Add(this->mUnk_3C, &this->mUnk_9C, this->mUnk_3C);
                         }
                         break;
                     default:
@@ -612,14 +613,14 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                 }
             }
 
-            switch (this->mUnk_68) {
-                case 0x08:
-                case 0x09:
-                case 0x10:
-                case 0x12:
-                case 0x14:
-                case 0x21:
-                case 0x25:
+            switch (this->mEntryTransitionType) {
+                case EntryTransitionType_8:
+                case EntryTransitionType_9:
+                case EntryTransitionType_16:
+                case EntryTransitionType_18:
+                case EntryTransitionType_20:
+                case EntryTransitionType_33:
+                case EntryTransitionType_37:
                     this->mUnk_2C->mUnk_9C = this->mUnk_34->y + 0xFFFFFCCD;
                     break;
                 default:
@@ -647,28 +648,28 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
                 this->mUnk_6C--;
 
                 if (this->mUnk_6C < 0x37) {
-                    this->mUnk_28->mUnk_38.mUnk_08 |= 0x02;
+                    this->mpLink->mUnk_38.mUnk_00.mUnk_08 |= 0x02;
                     break;
                 }
 
                 func_01ff930c(&this->mUnk_40->angle_s, 0, 0xE39);
                 this->mUnk_38->y = 0x66;
-            } else if (this->mUnk_6C == 0 && data_027e09a4->func_ov000_02072154(&this->mUnk_54, this->mUnk_68)) {
+            } else if (this->mUnk_6C == 0 && data_027e09a4->func_ov000_02072154(&this->mUnk_54, this->mEntryTransitionType)) {
                 this->mUnk_6C = -1;
             }
 
             break;
         case 0x3F: {
-            switch (this->mUnk_68) {
-                case 0x08:
-                case 0x09:
-                case 0x10:
-                case 0x12:
-                case 0x14:
-                case 0x21:
-                case 0x22:
-                case 0x23:
-                case 0x25:
+            switch (this->mEntryTransitionType) {
+                case EntryTransitionType_8:
+                case EntryTransitionType_9:
+                case EntryTransitionType_16:
+                case EntryTransitionType_18:
+                case EntryTransitionType_20:
+                case EntryTransitionType_33:
+                case EntryTransitionType_34:
+                case EntryTransitionType_35:
+                case EntryTransitionType_37:
                     break;
                 default:
                     this->mUnk_2C->mUnk_9C = this->mUnk_34->y;
@@ -677,14 +678,14 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
 
             bool temp_r5_2 = this->func_ov000_020914b0(0x3F, (VecFx32 *) &this->mUnk_70, this->mUnk_7C);
 
-            switch (this->mUnk_68) {
-                case 0x0F:
-                case 0x11:
-                case 0x13:
-                case 0x24: {
-                    UnkStruct_027e0cd8_0C_Base *temp_r0_13 = data_027e0cd8->mUnk_0C;
-                    fx32 temp_r0_14                        = temp_r0_13->vfunc_28(this->mUnk_34, 0, 0);
-                    VecFx32 *temp_r2_9                     = this->mUnk_34;
+            switch (this->mEntryTransitionType) {
+                case EntryTransitionType_15:
+                case EntryTransitionType_17:
+                case EntryTransitionType_19:
+                case EntryTransitionType_36: {
+                    MapManagerBase *temp_r0_13 = gpCourseManager->mpMapMgr;
+                    fx32 temp_r0_14            = temp_r0_13->vfunc_28(this->mUnk_34, 0, 0);
+                    VecFx32 *temp_r2_9         = this->mUnk_34;
 
                     if (temp_r2_9->y < temp_r0_14) {
                         temp_r2_9->y = temp_r0_14;

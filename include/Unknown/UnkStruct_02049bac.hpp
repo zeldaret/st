@@ -43,6 +43,8 @@ union Date {
 class UnkStruct_02049bac {
 public:
     /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
 
     UnkStruct_02049bac();
     ~UnkStruct_02049bac();

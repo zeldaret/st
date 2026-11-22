@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RefStruct.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "files.h"
 #include "types.h"
@@ -79,7 +80,7 @@ public:
     void func_ov017_020c023c(s8 *param1);
     void func_ov017_020c02ac(volatile unk32 param1, Vec2bCpp param2);
     void func_ov017_020c02f4(volatile unk32 param1, VecFx32 *param2);
-    unk32 func_ov017_020c050c(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
+    unk32 func_ov017_020c050c(unk32 param1, PlayerType playerType, unk32 param3, unk32 param4);
 
     static void func_ov017_020c033c(unk32 *param1, MapObjectManager *thisx, const Vec2s *param2, unk32 param3, unk32 param4);
 };

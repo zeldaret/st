@@ -38,18 +38,18 @@ extern "C" void func_020196fc() {
     G2S_BlendNone();
     GX_SetVisibleWindows(0);
     GXS_SetVisibleWindows(0);
-    func_020242a0();
-    func_020241f4();
+    GX_ResetBankForARM7();
+    GX_ResetBankForBG();
     GX_ResetBankForBGExtPltt();
-    func_0202428c();
-    func_02024208();
+    GX_ResetBankForClearImage();
+    GX_ResetBankForObj();
     GX_ResetBankForOBJExtPltt();
-    func_020242b4();
+    GX_ResetBankForSubBG();
     GX_ResetBankForSubBGExtPltt();
-    func_020242c8();
+    GX_ResetBankForSubOBJ();
     GX_ResetBankForSubOBJExtPltt();
-    func_02024264();
-    func_02024278();
+    GX_ResetBankForTex();
+    GX_ResetBankForTexPltt();
     GX_SetBankForLCDC(0x1FF);
 
     MI_CpuClearFast(HW_LCDC_VRAM, HW_LCDC_VRAM_SIZE);

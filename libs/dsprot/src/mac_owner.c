@@ -19,14 +19,14 @@ static inline u32 testMACOwner(u32 pass_ret, u32 fail_ret) {
     int i;
     u32 ret;
 
-    OS_func_0176(&mac_addr[0]);
+    OS_GetMacAddress(&mac_addr[0]);
     for (i = 0; i < MAC_ADDR_SIZE; i++) {
         if (bad_mac_addr[i] != (mac_addr[i] ^ ENC_MAC_ADDR_BYTE)) {
             break;
         }
     }
 
-    OS_func_0177(&owner_info);
+    OS_GetOwnerInfo(&owner_info);
     if (i == MAC_ADDR_SIZE && owner_info.birthday.month == 1 && owner_info.birthday.day == 1 &&
         owner_info.nickNameLength == 0) {
         ret = fail_ret;

@@ -22,13 +22,16 @@ src/Main/System/SysFault.cpp:
     .text       start:0x020127f0 end:0x02012b00
 
 src/Main/Game/Game.cpp:
+    complete
     .text       start:0x02013370 end:0x0201373c
 
 src/Main/Player/TouchControl.cpp:
+    complete
     .text       start:0x02014124 end:0x020144a0
 
 src/Main/System/OverlayManager.cpp:
-    .text       start:0x020147fc end:0x02014944
+    complete
+    .text       start:0x020147a8 end:0x02014a10
 
 src/Main/UnkFileSystem.cpp:
     .text       start:0x020154f0 end:0x02015760

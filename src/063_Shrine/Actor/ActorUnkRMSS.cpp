@@ -2,8 +2,8 @@
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
 
-extern char data_ov063_021625f8[0x10]; // = "RMSS_wall";
-extern char data_ov063_02162608[0x10]; // = "RMSS";
+static const char data_ov063_02162608[16] = "RMSS";
+static const char data_ov063_021625f8[16] = "RMSS_wall";
 
 DECL_PROFILE(ActorProfileUnkRMSS);
 

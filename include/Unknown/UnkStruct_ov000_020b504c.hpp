@@ -407,7 +407,9 @@ public:
 extern UnkStruct_ov000_020b504c data_ov000_020b504c;
 
 struct UnkMsgDataStruct1 {
-    unk32 mUnk_00;
+    void *mUnk_00;
 
     void func_ov000_02067a60(void *, int);
+
+    static void func_ov066_0215b2f4(UnkMsgDataStruct1 *thisx, s32 param1);
 };

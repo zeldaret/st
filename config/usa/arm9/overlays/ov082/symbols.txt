@@ -119,7 +119,7 @@ func_ov082_0215823c kind:function(arm,size=0x30c) addr:0x0215821c
 _ZN19func_ov082_02158548D1Ev kind:function(arm,size=0x14) addr:0x02158528
 _ZN19func_ov082_0215855cD0Ev kind:function(arm,size=0x1c) addr:0x0215853c
 func_ov082_02158578 kind:function(arm,size=0xdc) addr:0x02158558
-func_ov082_02158654 kind:function(arm,size=0x104) addr:0x02158634
+_ZN18PlayerLinkActor_A019func_ov082_02158654Ev kind:function(arm,size=0x104) addr:0x02158634
 func_ov082_02158758 kind:function(arm,size=0xb8) addr:0x02158738
 func_ov082_02158810 kind:function(arm,size=0x34) addr:0x021587f0
 data_ov082_02158824 kind:data(any) addr:0x02158824

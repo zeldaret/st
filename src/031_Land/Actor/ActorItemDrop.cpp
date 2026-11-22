@@ -2,16 +2,16 @@
 #include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 #include "nitro/fx.h"
 #include "versions.h"
 
-static const Cylinder data_ov031_02114ba0(0x800);
+static const Cylinder data_ov031_02114ba0(FX32_HALF);
 
 static const u32 data_ov031_02110bc8[] = {
     0x1D, // ItemDropType_Arrow
@@ -163,7 +163,7 @@ ActorItemDrop::ActorItemDrop() :
     Vec2bCpp sp0;
     func_01ffedac(&sp0, &this->mPos);
 
-    if (data_027e0cd8->mUnk_0C->func_ov000_02080180(&sp0) == 0x5) {
+    if (gpCourseManager->mpMapMgr->func_ov000_02080180(&sp0) == 0x5) {
         this->mUnk_34 = (Cylinder *) &data_ov031_02114ba0;
     }
 }
@@ -201,7 +201,7 @@ static PTMF<ActorItemDrop> data_ov031_02114bb0[ActorItemDropState_Max] = {
 void ActorItemDrop::func_ov031_020fa260() {
     this->mUnk_3C = &this->mUnk_B4;
 
-    CALL_PTMF(PTMF<ActorItemDrop>, data_ov031_02114bb0[this->mState]);
+    CALL_PTMF(data_ov031_02114bb0[this->mState]);
 
     if (this->mUnk_AE.HasExpired()) {
         this->func_ov000_020989e0();
@@ -241,7 +241,7 @@ void ActorItemDrop::func_ov031_020fa260() {
     }
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
-    VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
+    VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (this->mState != ActorItemDropState_3) {
         this->func_ov000_02098b8c(0x0, 0x0);
@@ -251,7 +251,7 @@ void ActorItemDrop::func_ov031_020fa260() {
         this->mVel.y = FX_F32_TO_FX32(0.0f);
     }
 
-    VecFx32_Add(&this->mPos, &this->mUnk_10C, &this->mPos);
+    VEC_Add(&this->mPos, &this->mUnk_10C, &this->mPos);
     this->mUnk_10C.x = FX_F32_TO_FX32(0.0f);
     this->mUnk_10C.y = FX_F32_TO_FX32(0.0f);
     this->mUnk_10C.z = FX_F32_TO_FX32(0.0f);
@@ -276,7 +276,7 @@ void ActorItemDrop::SetState(ActorState state) {
 
     this->mState  = state;
     this->mUnk_44 = 0x9C;
-    CALL_PTMF(PTMF<ActorItemDrop>, data_ov031_02114be8[this->mState]);
+    CALL_PTMF(data_ov031_02114be8[this->mState]);
 }
 
 void ActorItemDrop::func_ov031_020fa468() {}
@@ -304,7 +304,7 @@ void ActorItemDrop::func_ov031_020fa4a0() {
         return;
     }
 
-    func_01fff05c(&stack, data_027e0cd8->mUnk_0C, &this->mPos);
+    func_01fff05c(&stack, gpCourseManager->mpMapMgr, &this->mPos);
 
     if (((stack >> 0x5) & 0x3) == 0x2 && this->mItemTypeId != ItemDropType_Arrow && this->mItemTypeId != ItemDropType_Bomb) {
         this->func_ov000_020984d0();

@@ -1405,7 +1405,7 @@ from:0x0214c7b4 kind:load to:0x027e09b8 module:dtcm
 from:0x0214c7b8 kind:load to:0x027e09a8 module:dtcm
 from:0x0214c7cc kind:load to:0x0209af30 module:overlay(0)
 from:0x0214c7f0 kind:arm_call_thumb to:0x01ffa1a0 module:itcm
-from:0x0214c860 kind:load to:0x02040eb0 module:main
+from:0x0214c860 kind:load to:0x0203feb0 add:0x1000 module:main
 from:0x0214c8f8 kind:arm_call to:0x02081bf4 module:overlay(0)
 from:0x0214c924 kind:arm_call to:0x0209ea88 module:overlay(0)
 from:0x0214c958 kind:arm_call to:0x02081aa4 module:overlay(0)

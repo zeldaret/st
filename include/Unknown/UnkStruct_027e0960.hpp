@@ -25,17 +25,19 @@ public:
     /* 18 */ virtual UnkStruct_027e0960_TableEntry_04_Base *vfunc_18(unk32 param1) = 0;
     /* 1C */ virtual u32 vfunc_1C()                                                = 0;
     /* 20 */
+
+    // main
+    bool func_02017930(UnkStruct_027e0960_TableEntry_04_Base *param1);
 };
 
 class UnkStruct_027e0960_TableEntry_04 : public UnkStruct_027e0960_TableEntry_04_Base {
 public:
     /* 00 (base) */
-    /* 14 */ UnkStruct_027e0960_TableEntry_04_Base *mUnk_14;
-    /* 18 */ unk32 mUnk_18;
+    /* 14 */ UnkStruct_027e0960_TableEntry_04_Base *mUnk_14[2];
     /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk16 mUnk_20;
-    /* 22 */ unk16 mUnk_22; // pad?
-                            /* 24 */
+    /* 22 */ unk16 mUnk_22;
+    /* 24 */
 
     // data_ov000_020b1bbc
     /* 00 */ virtual ~UnkStruct_027e0960_TableEntry_04() override;
@@ -57,7 +59,7 @@ public:
     ~UnkStruct_027e0960_TableEntry();
 
     bool func_ov000_02059ccc(u8 param1, u8 param2);
-    void func_ov000_02059da4(VecFx32 *param1);
+    u8 func_ov000_02059da4(const VecFx32 *param1);
 };
 
 class UnkStruct_027e0960 : public AutoInstance<UnkStruct_027e0960> {

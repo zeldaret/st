@@ -10,8 +10,10 @@ Some miscellaneous information are also reported here, for example about the bui
   - [Fx32](#fx32)
   - [Angles](#Angles)
   - [Random operations](#random)
+  - [TEQ instruction](#TEQ)
 - [Symbols](#symbols)
   - [Updating a vtable symbol](#updating-a-vtable-symbol)
+  - [Force Export](#force-export)
 - [Ghidra](#ghidra)
   - [Finding a function in Ghidra](#finding-a-function-in-ghidra)
 - [Ninja](#ninja)
@@ -46,15 +48,15 @@ There is a `ABS(x)` macro that computes the absolute value of the given value.
 
 `fx32` (and smaller `fx` types) represent **F**ixed **P**oint floats used in the source code. They appear very often, especially with the `VexFx32` struct (3 `fx32`s components that represent a position or other kind of vectors).
 
-Some macros exists to operate on them, two major ones are `FX_F32_TO_FX32(n)` (takes a C `float` and transforms it into a `fx32`) and `FX_MUL(a, b)` (takes two `fx32` and performs multiplication).
+Some macros and inlines exists to operate on them, two major ones are `FX_F32_TO_FX32(n)` (takes a C `float` and transforms it into a `fx32`) and `FX_MUL(a, b)` (takes two `fx32` and performs multiplication).
 
 ## Angles
 
 There is a `DEG_TO_ANG(n)` macro that converts an angle from degrees to an internal hexadecimal representation.
 
 There are two macros `SIN(n)` and `COS(n)` that compute the expected trigonometric values by doing a table lookup[^sincos]. Note that both macros access the same table, but the kind of operation performed can usually be determined by looking at the lookup pattern:
-- for `SIN`, `gSinCosTable` is accessed at roughly `2 * n`;
-- for `COS`, `gSinCosTable` is accessed at roughly `2 * n + 1`. The `+1` allows for the differentiation.
+- for `SIN`, `FX_SinCosTable_` is accessed at roughly `2 * n`;
+- for `COS`, `FX_SinCosTable_` is accessed at roughly `2 * n + 1`. The `+1` allows for the differentiation.
 
 [^sincos]: You can usually spot these operations by seing a lookup to the table in ghidra.
 
@@ -65,6 +67,12 @@ There are two macros `SIN(n)` and `COS(n)` that compute the expected trigonometr
 
 Random operations are handled by the `gRandom` class. The most common operation is `gRandom.Next32(u32 factor)`, with `factor=0` being a very common value. \
 Such calls can be tricky to find because they are usually inlined, but if you see lots of computations involving `gRandom` and it's members, chances are that it's a `Next32` computation (the argument may vary though, but starting by setting `0` may help to spot the actual `factor` used).
+
+## TEQ
+
+In the ARM code, you may found some `teq r1, r2` instructions. According to the [official documentation](https://support.arm.com/documentation/100235/0002/the-cortex-m33-instruction-set/general-data-processing-instructions/tst-and-teq), the "`TEQ` instruction performs a bitwise Exclusive OR operation".
+Currently, the only known matching C instruction is using a XOR operator between `r1` and `r2` (e.g. `r1 ^ r2`).
+A real example is available in `ActorLokomo::vfunc_2C`.
 
 # Symbols
 
@@ -89,6 +97,10 @@ Once the tool has been applied, update your symbols and you should see that the 
 
 > [!IMPORTANT]
 > Be mindful, [`tools/vtable_sym.py`](../tools/vtable_sym.py) should ONLY be used when a realignment is needed. In other cases (renames), simply edit the `symbols.txt` file manually (see [decompiling.md](decompiling.md#about-symbols)).
+
+## Force Export
+
+For any unused symbols, if the linker deletes them (thus ending in non-matching builds), you can add them to `force_symbols` in `configure.py` and it will force keeping them.
 
 # Ghidra
 

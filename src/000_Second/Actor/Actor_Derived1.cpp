@@ -1,6 +1,6 @@
 #include "Actor/Actor_Derived1.hpp"
+#include "Course/CourseManager.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "flags.h"
 #include "global.h"
 
@@ -14,7 +14,7 @@ void Actor_Derived1::func_ov000_020a8ae0(fx32 param1) {
     this->mVel.y = posY;
 }
 
-Actor_Derived1::Actor_Derived1(ModelRender *param1, ActorUnkZSRS_120 *param2) :
+Actor_Derived1::Actor_Derived1(ModelRender *param1, UnkStruct_ov000_020b31f0 *param2) :
     mUnk_094(param2),
     mUnk_0A4(param1),
     mUnk_0B0(0),
@@ -68,11 +68,11 @@ void Actor_Derived1::Setup() {
 }
 
 bool Actor_Derived1::func_ov000_020a8db0() {
-    return data_027e0cd8->func_ov000_02081e30(this->mUnk_5C.mUnk_1A[0], this->mUnk_5C.mUnk_18[0]);
+    return gpCourseManager->func_ov000_02081e30(this->mUnk_5C.mUnk_1A[0], this->mUnk_5C.mUnk_18[0]);
 }
 
 bool Actor_Derived1::func_ov000_020a8dd0() {
-    return data_027e0cd8->func_ov000_02081e30(this->mUnk_5C.mUnk_1A[1], this->mUnk_5C.mUnk_18[1]);
+    return gpCourseManager->func_ov000_02081e30(this->mUnk_5C.mUnk_1A[1], this->mUnk_5C.mUnk_18[1]);
 }
 
 // non-matching
@@ -94,7 +94,7 @@ void Actor_Derived1::func_ov000_020a8df0(RefStruct param1, unk32 param2) {
 }
 
 void Actor_Derived1::vfunc_B4() {
-    this->vfunc_58(0);
+    this->SetState(0);
 }
 
 // non-matching
@@ -147,7 +147,7 @@ void Actor_Derived1::vfunc_60() {
         if (this->vfunc_64()) {
             this->vfunc_B0();
             this->func_ov000_020a9200();
-            this->vfunc_58(4);
+            this->SetState(4);
         }
     }
 }
@@ -172,7 +172,7 @@ unk32 Actor_Derived1::vfunc_7C(unk32 param1) {
     return 1;
 }
 
-unk32 Actor_Derived1::vfunc_80(unk32 param1, unk32 param2) {
+s16 Actor_Derived1::vfunc_80(unk32 param1, unk32 param2, unk32 param3) {
     return -1;
 }
 
@@ -180,6 +180,7 @@ unk32 Actor_Derived1::vfunc_84() {
     return 1;
 }
 
+// non-matching
 void Actor_Derived1::func_ov000_020a91b8(VecFx32 *param1, unk32 param2) {
     this->func_ov000_020a8e9c(param1);
 
@@ -189,24 +190,24 @@ void Actor_Derived1::func_ov000_020a91b8(VecFx32 *param1, unk32 param2) {
         this->mUnk_0B0 &= ~0x20;
     }
 
-    this->vfunc_58(7);
+    this->SetState(7);
 }
 
 void Actor_Derived1::func_ov000_020a9200() {}
 
 void Actor_Derived1::vfunc_70() {
     if (this->mState != 5) {
-        this->vfunc_58(4);
+        this->SetState(4);
     }
 }
 
 void Actor_Derived1::vfunc_74() {}
 void Actor_Derived1::vfunc_78() {}
 bool Actor_Derived1::func_ov000_020a9248(unk32 param1) {}
-void Actor_Derived1::vfunc_5C() {}
+bool Actor_Derived1::vfunc_5C(unk32 param1, unk32 param2) {}
 void Actor_Derived1::vfunc_98(u32 param1) {}
 void Actor_Derived1::func_ov000_020a94b0() {}
-void Actor_Derived1::vfunc_9C() {}
+bool Actor_Derived1::vfunc_9C() {}
 
 unk32 Actor_Derived1::vfunc_A0() {
     this->GetActorId();
@@ -237,14 +238,13 @@ void Actor_Derived1::vfunc_24() {
     }
 }
 
-// non-matching
 void Actor_Derived1::vfunc_2C(unk32 param1) {
     if (this->func_01fff5d0(param1, 0) == 0) {
         return;
     }
 
     this->vfunc_B8();
-    this->mUnk_0A4.func_01ffc6d4(this->mAngle, &this->mPos);
+    this->mUnk_0A4.mpModelRender->func_01ffc6d4(this->mAngle, &this->mPos);
 }
 
 void Actor_Derived1::vfunc_B8() {

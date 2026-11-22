@@ -19,7 +19,7 @@ typedef struct OSOwnerInfo {
     /* 54 */
 } OSOwnerInfo;
 
-void OS_func_0177(OSOwnerInfo *info);
+void OS_GetOwnerInfo(OSOwnerInfo *info);
 
 #ifdef __cplusplus
 } // extern "C"

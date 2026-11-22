@@ -1,8 +1,8 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Unknown/UnkStruct_02049b18.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
@@ -26,13 +26,13 @@ void UnkStruct_027e0ce0_40_Base_7C::func_ov017_020be2ec(UnkStruct_027e0ce0_40_Ba
     if (!param2 && param1->mTouchControl.mState.touch && this->func_ov000_020968fc()) {
         VecFx32 sp4;
 
-        func_01ffb974((this->mUnk_14 + FX_F32_TO_FX32(0.5999f)) - param1->mUnk_24.y, &param1->mUnk_30, &param1->mUnk_24, &sp4);
+        VEC_MultAdd((this->mUnk_14 + FX_F32_TO_FX32(0.5999f)) - param1->mUnk_24.y, &param1->mUnk_30, &param1->mUnk_24, &sp4);
         data_027e0cec->func_ov000_020a0140(&this->mUnk_08, &sp4);
         fx32 originalY = func_ov000_0205d524(0, this->mUnk_00)->y;
         fx32 y         = originalY;
 
         if (func_ov000_02080998(&sp4) == 0) {
-            y = data_027e0cd8->mUnk_0C->vfunc_28(&sp4, 1, 0);
+            y = gpCourseManager->mpMapMgr->vfunc_28(&sp4, 1, 0);
         }
 
         func_01ff916c(&this->mUnk_14, ClampValue(y, originalY, originalY + FX_F32_TO_FX32(3.6f)), 0x1000);
@@ -117,14 +117,14 @@ void UnkStruct_027e0ce0_40_Base_14::func_ov017_020be44c(unk32 param1, bool param
     temp_r8_2->func_ov000_020767b4(&this->mUnk_24, &spC, temp_r0->y, 0x59, &this->mUnk_30);
 
     if (param1 == -1) {
-        func_01ffb714(&temp_r8_2->mUnk_040, &temp_r8_2->mUnk_034, &sp28);
+        VEC_Subtract(&temp_r8_2->mUnk_040, &temp_r8_2->mUnk_034, &sp28);
 
-        if (VecFx32_Dot(&sp28, &this->mUnk_30) > 0) {
-            func_01ffb714(&temp_r8_2->mUnk_040, &this->mUnk_24, &this->mUnk_24);
+        if (VEC_DotProduct(&sp28, &this->mUnk_30) > 0) {
+            VEC_Subtract(&temp_r8_2->mUnk_040, &this->mUnk_24, &this->mUnk_24);
 
             this->mUnk_24.y = 0;
             func_01ff9770(&this->mUnk_24, 0xBB8000);
-            VecFx32_Add(&this->mUnk_24, &temp_r8_2->mUnk_040, &this->mUnk_24);
+            VEC_Add(&this->mUnk_24, &temp_r8_2->mUnk_040, &this->mUnk_24);
             this->mUnk_24.y = temp_r0->y;
 
             this->mUnk_30.x = 0;
@@ -137,22 +137,22 @@ void UnkStruct_027e0ce0_40_Base_14::func_ov017_020be44c(unk32 param1, bool param
         var_r7 = 0x1000;
 
         if (this->mTouchControl.mState.touchPos.x < sp10.x && sp10.x < 0x50) {
-            var_r5 = func_01ffb428(0x50, sp10.x);
+            var_r5 = FX_Div(0x50, sp10.x);
         } else if (sp10.x < this->mTouchControl.mState.touchPos.x && sp10.x >= 0xB0) {
-            var_r5 = func_01ffb428(0x50, 0xFF - sp10.x);
+            var_r5 = FX_Div(0x50, 0xFF - sp10.x);
         }
 
         if (this->mTouchControl.mState.touchPos.y < sp10.y && sp10.y < 0x50) {
-            var_r7 = func_01ffb428(0x50, sp10.y);
+            var_r7 = FX_Div(0x50, sp10.y);
         } else if (sp10.y < this->mTouchControl.mState.touchPos.y && sp10.y >= 0x70) {
-            var_r7 = func_01ffb428(0x50, 0xBF - sp10.y);
+            var_r7 = FX_Div(0x50, 0xBF - sp10.y);
         }
 
         VecFx32_Init(var_r5 * (this->mTouchControl.mState.touchPos.x - sp10.x), 0,
                      var_r7 * (this->mTouchControl.mState.touchPos.y - sp10.y), &sp1C);
 
-        this->mUnk_3C = VecFx32_Length(&sp1C);
-        temp_r5       = func_01ffbbe0(sp1C.x, sp1C.z);
+        this->mUnk_3C = VEC_Mag(&sp1C);
+        temp_r5       = FX_Atan2Idx(sp1C.x, sp1C.z);
         this->mUnk_44 = temp_r8_2->func_ov000_02078698() + temp_r5;
     } else {
         this->mUnk_30.x = 0;
@@ -194,8 +194,8 @@ void UnkStruct_027e0ce0_40_Base_14::func_ov017_020be44c(unk32 param1, bool param
         this->mUnk_58 = 0;
     } else {
         if (this->mUnk_50 != 0 && this->mUnk_54 != 0) {
-            sp8           = func_01ffbbe0(diffX, diffY);
-            spA           = func_01ffbbe0(this->mUnk_50, this->mUnk_54);
+            sp8           = FX_Atan2Idx(diffX, diffY);
+            spA           = FX_Atan2Idx(this->mUnk_50, this->mUnk_54);
             this->mUnk_58 = func_01ff9364(&sp8, spA);
         }
 

@@ -175,9 +175,9 @@ u16 *Actor_Derived1_EC::func_ov024_020d69d8(VecFx32 *pPos, s16 *pAngle, VecFx32 
     this->mUnk_08 = 0;
     this->mUnk_00->mTable.Get(this->mUnk_04).vfunc_0C(&sp1C);
 
-    func_01ffb714(&sp1C, pPos, &sp10);
+    VEC_Subtract(&sp1C, pPos, &sp10);
 
-    temp_r1     = func_01ffbbe0(sp10.x, sp10.z);
+    temp_r1     = FX_Atan2Idx(sp10.x, sp10.z);
     sp0.angle_s = temp_r1;
     func_01ff930c((s16 *) pAngle, temp_r1, param5);
 
@@ -189,7 +189,7 @@ u16 *Actor_Derived1_EC::func_ov024_020d69d8(VecFx32 *pPos, s16 *pAngle, VecFx32 
     }
 
     if (temp_r4 < param4) {
-        func_01ffb714(&sp1C, pPos, &sp4);
+        VEC_Subtract(&sp1C, pPos, &sp4);
         pVel->x = sp4.x;
         pVel->z = sp4.z;
         this->func_ov024_020d6730();
@@ -225,10 +225,10 @@ u16 *Actor_Derived1_EC::func_ov024_020d6b7c(VecFx32 *pPos, s16 *pAngle, VecFx32 
     this->mUnk_08 = 0;
     this->mUnk_00->mTable.Get(this->mUnk_04).vfunc_0C(&sp28);
 
-    func_01ffb714(&sp28, pPos, &sp1C);
-    func_01ffb714(&sp28, &this->mUnk_0C, &sp10);
+    VEC_Subtract(&sp28, pPos, &sp1C);
+    VEC_Subtract(&sp28, &this->mUnk_0C, &sp10);
 
-    temp_r1     = func_01ffbbe0(sp1C.x, sp1C.z);
+    temp_r1     = FX_Atan2Idx(sp1C.x, sp1C.z);
     sp0.angle_s = temp_r1;
     func_01ff930c((s16 *) pAngle, temp_r1, param5);
 
@@ -240,12 +240,12 @@ u16 *Actor_Derived1_EC::func_ov024_020d6b7c(VecFx32 *pPos, s16 *pAngle, VecFx32 
     }
 
     if (temp_r4 < param4 && this->mUnk_00->func_ov000_02059ccc(this->mUnk_04, this->mUnk_00->pRALB->unk_02)) {
-        func_01ffb714(&sp28, pPos, &sp4);
+        VEC_Subtract(&sp28, pPos, &sp4);
         pVel->x = sp4.x;
         pVel->z = sp4.z;
         VecFx32_Copy(&sp28, &this->mUnk_0C);
         this->func_ov024_020d6730();
-    } else if (VecFx32_Dot(&sp1C, &sp10) < 0 || temp_r4 < param4) {
+    } else if (VEC_DotProduct(&sp1C, &sp10) < 0 || temp_r4 < param4) {
         VecFx32_Copy(&sp28, &this->mUnk_0C);
         this->func_ov024_020d6730();
     } else {
@@ -274,16 +274,16 @@ u16 *Actor_Derived1_EC::func_ov024_020d6d80(VecFx32 *pPos, VecFx32 *pVel) {
     this->mUnk_08 = 0;
     this->mUnk_00->mTable.Get(this->mUnk_04).vfunc_0C(&sp18);
 
-    func_01ffb714(&sp18, &this->mUnk_0C, &spC);
-    func_01ffb714(&sp18, pPos, &sp0);
+    VEC_Subtract(&sp18, &this->mUnk_0C, &spC);
+    VEC_Subtract(&sp18, pPos, &sp0);
 
     temp_r4 = func_01ff9258(sp18.x - pPos->x, sp18.z - pPos->z);
     sp0.y = spC.y = 0;
 
-    if (temp_r4 <= VecFx32_Length(pVel)) {
+    if (temp_r4 <= VEC_Mag(pVel)) {
         VecFx32_Copy(&sp18, &this->mUnk_0C);
         this->func_ov024_020d6730();
-    } else if (VecFx32_Dot(&sp0, &spC) < 0) {
+    } else if (VEC_DotProduct(&sp0, &spC) < 0) {
         VecFx32_Copy(&sp18, &this->mUnk_0C);
         this->func_ov024_020d6730();
     }

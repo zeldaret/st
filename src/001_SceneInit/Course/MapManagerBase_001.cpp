@@ -1,5 +1,6 @@
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Cutscene/Cutscene.hpp"
 #include "Game/GameModeManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
@@ -10,7 +11,6 @@
 #include "Unknown/UnkStruct_027e09b0.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 
 #include <nns/g3d/g3d.h>
 #include <printf.h>
@@ -31,14 +31,14 @@ static const EntranceInfo data_ov001_020c2a40[] = {
 };
 
 // https://decomp.me/scratch/JcRNn
-UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param1) :
+MapManagerBase::MapManagerBase(CourseManager *pCourseMgr) :
     mUnk_004(NULL, 0x9B, 0x01, 0x01),
     mSceneRender(NULL),
     mUnk_070(NULL, 0x9B, 0x01, 0x00),
     mUnk_084_00(0),
     mUnk_084_01(0),
     mUnk_098(0),
-    mUnk_09C((Vec2us *) &param1->mUnk_00),
+    mUnk_09C((Vec2us *) &pCourseMgr->mUnk_00),
     mUnk_0AC(false),
     mUnk_0AD(false),
     mUnk_0AE(false),
@@ -99,7 +99,7 @@ UnkStruct_027e0cd8_0C_Base::UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param
     data_027e095c->func_ov000_020592a0();
 }
 
-UnkStruct_027e0cd8_0C_Base::~UnkStruct_027e0cd8_0C_Base() {
+MapManagerBase::~MapManagerBase() {
     data_027e095c->func_ov000_020592ec();
     gpMapObjManager->func_ov001_020baf28();
     DELETE(this->mUnk_098);
@@ -110,17 +110,17 @@ UnkStruct_027e0cd8_0C_Base::~UnkStruct_027e0cd8_0C_Base() {
     this->func_ov001_020b8aec();
 }
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_38() {}
+void MapManagerBase::vfunc_38() {}
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_08() {}
+void MapManagerBase::vfunc_08() {}
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const EntranceInfo *param1) {
+void MapManagerBase::func_ov001_020b85d0(const EntranceInfo *param1) {
     this->mIsCS = param1->isCS;
 
     wchar_t local_c8[2];
     local_c8[0]                        = L'\0';
     local_c8[sizeof(local_c8) / 2 - 1] = L'\0';
-    snprintf((char *) local_c8, sizeof(local_c8), "M%02d", param1->roomIndex);
+    OS_SNPrintf((char *) local_c8, sizeof(local_c8), "M%02d", param1->roomIndex);
     this->mUnk_084[0] = local_c8[0];
     this->mUnk_084[1] = local_c8[1];
 
@@ -129,21 +129,21 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const EntranceInfo *param1)
     wchar_t local_34[16];
     local_34[0]                        = L'\0';
     local_34[sizeof(local_34) / 2 - 1] = L'\0';
-    snprintf((char *) local_34, sizeof(local_34), "Map/%s/map%02d.bin", pEntry->name, param1->roomIndex);
+    OS_SNPrintf((char *) local_34, sizeof(local_34), "Map/%s/map%02d.bin", pEntry->name, param1->roomIndex);
 
     this->mUnk_004.~UnkSystem3();
     this->mUnk_004.mUnk_00 = local_34;
     this->mUnk_004.func_0201541c((char *) local_c8, 0x10);
     this->LoadSceneModel(param1);
 
-    snprintf((char *) local_34, sizeof(local_34), "%s:zcb/%s_%02d.zcb", local_c8, pEntry->name, param1->roomIndex);
+    OS_SNPrintf((char *) local_34, sizeof(local_34), "%s:zcb/%s_%02d.zcb", local_c8, pEntry->name, param1->roomIndex);
     UnkFileSystem3 local_44((char *) local_34);
     data_027e09c0->func_ov001_020be3dc(&local_44, this);
 
     wchar_t local_64[16];
     local_64[0]                        = L'\0';
     local_64[sizeof(local_64) / 2 - 1] = L'\0';
-    snprintf((char *) local_64, sizeof(local_64), "%s:zmb/%s_%02d.zmb", local_c8, pEntry->name, param1->roomIndex);
+    OS_SNPrintf((char *) local_64, sizeof(local_64), "%s:zmb/%s_%02d.zmb", local_c8, pEntry->name, param1->roomIndex);
     UnkFileSystem3 local_74((char *) local_64);
     local_74.vfunc_08(0x10);
 
@@ -166,25 +166,25 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const EntranceInfo *param1)
     data_027e095c->func_ov000_020592a0();
 
     u32 isCs = this->mIsCS;
-    snprintf((char *) local_34, sizeof(local_34), "%s:zob/motype_%02d_%1d.zob", local_c8, param1->roomIndex, isCs);
+    OS_SNPrintf((char *) local_34, sizeof(local_34), "%s:zob/motype_%02d_%1d.zob", local_c8, param1->roomIndex, isCs);
     UnkFileSystem3 local_94((char *) local_34);
     this->mUnk_0B4 = (ZeldaObjectList *) local_94.vfunc_08(sizeof(ZOBHeader));
     gpMapObjManager->func_ov001_020bae40(this->mUnk_0B4);
     for (int i = 0; i < ARRAY_LEN(this->mUnk_0B8); i++) {
         // i + 2 because 0 is the default one and 1 is the cutscene one
-        snprintf((char *) local_34, sizeof(local_34), "%s:zob/motype_%02d_%1d.zob", local_c8, param1->roomIndex, i + 2);
+        OS_SNPrintf((char *) local_34, sizeof(local_34), "%s:zob/motype_%02d_%1d.zob", local_c8, param1->roomIndex, i + 2);
         UnkFileSystem3 local_a4((char *) local_34);
         this->mUnk_0B8[i] = (ZeldaObjectList *) local_a4.vfunc_08(sizeof(ZOBHeader));
     }
 
     isCs = this->mIsCS;
-    snprintf((char *) local_34, sizeof(local_34), "%s:zob/npctype_%02d_%1d.zob", local_c8, param1->roomIndex, isCs);
+    OS_SNPrintf((char *) local_34, sizeof(local_34), "%s:zob/npctype_%02d_%1d.zob", local_c8, param1->roomIndex, isCs);
     UnkFileSystem3 local_b4((char *) local_34);
     this->mUnk_0D8 = (ZeldaObjectList *) local_b4.vfunc_08(sizeof(ZOBHeader));
     gpActorManager->func_ov001_020bb7b0(this->mUnk_0D8);
     for (int i = 0; i < ARRAY_LEN(this->mUnk_0DC); i++) {
         // i + 2 because 0 is the default one and 1 is the cutscene one
-        snprintf((char *) local_34, sizeof(local_34), "%s:zob/npctype_%02d_%1d.zob", local_c8, param1->roomIndex, i + 2);
+        OS_SNPrintf((char *) local_34, sizeof(local_34), "%s:zob/npctype_%02d_%1d.zob", local_c8, param1->roomIndex, i + 2);
         UnkFileSystem3 local_c4((char *) local_34);
         this->mUnk_0DC[i] = (ZeldaObjectList *) local_c4.vfunc_08(sizeof(ZOBHeader));
     }
@@ -204,7 +204,7 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const EntranceInfo *param1)
         }
     }
 
-    this->func_ov001_020b8db8();
+    this->InitSkybox();
     this->func_ov001_020b8e24();
 
     if (param1->isCS == true) {
@@ -215,14 +215,14 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b85d0(const EntranceInfo *param1)
     this->vfunc_38();
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b88c0(unk32 param1) {
+void MapManagerBase::func_ov001_020b88c0(unk32 param1) {
     gpMapObjManager->func_ov001_020bae40(this->mUnk_0B8[param1]);
     gpActorManager->func_ov001_020bb7b0(this->mUnk_0DC[param1]);
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b88ec() {
+void MapManagerBase::func_ov001_020b88ec() {
     this->func_ov001_020b8e54();
-    this->mUnk_088.func_ov000_0208261c();
+    this->mSkyboxMgr.DestroySkybox();
     gpMapObjManager->func_ov001_020bae6c();
     gpActorManager->func_ov001_020bb7f0();
     data_027e095c->func_ov000_020592ec();
@@ -234,33 +234,33 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b88ec() {
     }
 }
 
-void UnkStruct_027e0cd8_0C_Base::LoadSceneModel(const EntranceInfo *param1) {
+void MapManagerBase::LoadSceneModel(const EntranceInfo *param1) {
     const char *pName = data_027e09a0->GetCourseEntry(param1->sceneIndex)->name;
 
     wchar_t local_40[20];
     local_40[0]                        = L'\0';
     local_40[sizeof(local_40) / 2 - 1] = L'\0';
-    snprintf((char *) local_40, sizeof(local_40), "%s:nsbmd/%s_%02d.nsbmd", this->mUnk_084, pName, param1->roomIndex);
+    OS_SNPrintf((char *) local_40, sizeof(local_40), "%s:nsbmd/%s_%02d.nsbmd", this->mUnk_084, pName, param1->roomIndex);
     UnkFileSystem3 local_50((char *) local_40);
 
     wchar_t local_78[20];
     local_78[0]                        = L'\0';
     local_78[sizeof(local_78) / 2 - 1] = L'\0';
     const char *path                   = "Map/%s/map%02d.nsbtx";
-    snprintf((char *) local_78, sizeof(local_78), path, pName, param1->roomIndex);
+    OS_SNPrintf((char *) local_78, sizeof(local_78), path, pName, param1->roomIndex);
 
     this->mUnk_070.vfunc_0C();
     this->mUnk_070.mUnk_04 = (char *) local_78;
     this->mUnk_070.vfunc_08(0x10);
 
     BMDSectionModel *pBMD = func_ov000_0205abcc(&local_50, &this->mUnk_070, 0x01, 0x00, NULL);
-    G3d_Model *pModel     = G3d_GetModelPtr(pBMD);
+    G3d_Model *pModel     = NNS_G3dGetMdl(pBMD);
     G3d_0200e6a0(pModel, 0x00, 0x40);
     G3d_0200e6a0(pModel, 0x00, 0x80);
     this->mSceneRender.vfunc_08(pModel);
 }
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_1C(const EntranceInfo *param1, bool param2, bool param3) {
+void MapManagerBase::vfunc_1C(const EntranceInfo *param1, bool param2, bool param3) {
     SceneIndex sceneIndex = param1->sceneIndex;
     u8 roomIndex          = param1->roomIndex;
 
@@ -275,9 +275,9 @@ void UnkStruct_027e0cd8_0C_Base::vfunc_1C(const EntranceInfo *param1, bool param
     gpCurrentGameModeMgr->vfunc_38(sceneIndex, roomIndex, 0x01, 0x00);
 }
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_20() {}
+void MapManagerBase::vfunc_20() {}
 
-const UnkStruct_ov001_020c40f4 *UnkStruct_027e0cd8_0C_Base::func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1) {
+const UnkStruct_ov001_020c40f4 *MapManagerBase::func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1) {
     UnkStruct_ov001_020c40f4 *result =
         std::find_if(this->mUnk_13C.begin(), this->mUnk_13C.end(), UnkStruct_ov001_020c40f4::Predicate(spawnIndex, param1));
 
@@ -304,12 +304,12 @@ const UnkStruct_ov001_020c40f4 *UnkStruct_027e0cd8_0C_Base::func_ov001_020b8a5c(
     }
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8aec() {
+void MapManagerBase::func_ov001_020b8aec() {
     STACK_PAD(0x24);
     this->mUnk_148.unk_action1();
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8b94(ZMBEntryARAB *pARAB) {
+void MapManagerBase::func_ov001_020b8b94(ZMBEntryARAB *pARAB) {
     UnkStruct_027e0cd8_0C_Base_148_00_Base *ptr = NULL;
 
     if (pARAB->unk_0C == 1) {
@@ -323,27 +323,27 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8b94(ZMBEntryARAB *pARAB) {
     this->mUnk_148.push_back(ptr);
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c30(const EntranceInfo &param1) {
+void MapManagerBase::func_ov001_020b8c30(const EntranceInfo &param1) {
     this->mUnk_154.push_back(param1);
 }
 
-const EntranceInfo *UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c80(unk32 param1) {
+const EntranceInfo *MapManagerBase::func_ov001_020b8c80(unk32 param1) {
     return &data_ov001_020c2a40[param1 - 0x3C];
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c90(ZMBSectionCMPT *pCMPT) {
+void MapManagerBase::func_ov001_020b8c90(ZMBSectionCMPT *pCMPT) {
     this->mpCMPT = pCMPT;
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8c98(ZMBSectionCAME *pCAME) {
+void MapManagerBase::func_ov001_020b8c98(ZMBSectionCAME *pCAME) {
     this->mpCAME = pCAME;
 }
 
-void UnkStruct_027e0cd8_0C_Base::ZMB_ParseROMB(ZMBSectionROMB *pROMB) {
+void MapManagerBase::ZMB_ParseROMB(ZMBSectionROMB *pROMB) {
     this->mpROMB = pROMB;
 }
 
-void UnkStruct_027e0cd8_0C_Base::vfunc_40(u8 spawnIndex) {
+void MapManagerBase::vfunc_40(u8 spawnIndex) {
     switch (spawnIndex) {
         case 0xFB:
         case 0xFC:
@@ -398,42 +398,41 @@ void UnkStruct_027e0cd8_0C_Base::vfunc_40(u8 spawnIndex) {
     }
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8db8() {
-    unk32 uVar1;
+void MapManagerBase::InitSkybox() {
+    SkyboxType skyboxType = SkyboxType_None;
 
-    uVar1 = 0;
     switch (this->mUnk_110) {
         case 0x00:
         case 0x03:
-            uVar1 = 0x0A;
+            skyboxType = SkyboxType_Land;
             break;
         case 0x0E:
-            uVar1 = 0x01;
+            skyboxType = SkyboxType_ForestRealm;
             break;
         case 0x05:
         case 0x09:
-            uVar1 = 0x02;
+            skyboxType = SkyboxType_SnowRealmA;
             break;
         case 0x0A:
-            uVar1 = 0x03;
+            skyboxType = SkyboxType_SnowRealmB;
             break;
         case 0x02:
-            uVar1 = 0x04;
+            skyboxType = SkyboxType_OceanRealm;
             break;
         case 0x0F:
-            uVar1 = 0x05;
+            skyboxType = SkyboxType_FireRealmA;
             break;
         case 0x10:
-            uVar1 = 0x06;
+            skyboxType = SkyboxType_FireRealmB;
             break;
         case 0x08:
-            uVar1 = 0x00;
+            skyboxType = SkyboxType_None;
             break;
         case 0x0C:
-            uVar1 = 0x09;
+            skyboxType = SkyboxType_DarkRealm;
             break;
         case 0x06:
-            uVar1 = 0x07;
+            skyboxType = SkyboxType_BossCyclok;
             break;
         case 0x01:
         case 0x07:
@@ -441,19 +440,19 @@ void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8db8() {
         case 0x0B:
             break;
         default:
-            uVar1 = 0x00;
+            skyboxType = SkyboxType_None;
             break;
     }
 
-    this->mUnk_088.func_ov000_020823a8(uVar1);
+    this->mSkyboxMgr.CreateSkybox(skyboxType);
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8e24() {
+void MapManagerBase::func_ov001_020b8e24() {
     if (this->mUnk_110 == 7 && this->mUnk_098 == NULL) {
         this->mUnk_098 = new(HeapIndex_1) UnkStruct_027e0cd8_0C_Base_98();
     }
 }
 
-void UnkStruct_027e0cd8_0C_Base::func_ov001_020b8e54() {
+void MapManagerBase::func_ov001_020b8e54() {
     DELETE(this->mUnk_098);
 }

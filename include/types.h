@@ -24,27 +24,10 @@ typedef s32 unk32;
             PTMFCallback callback;                            \
         };
 
-    #define CALL_PTMF(type, data, ...)          \
-        {                                       \
-            type &ptr = (data);                 \
-            (this->*ptr.callback)(__VA_ARGS__); \
-        }
-
-    #define CALL_PTMF_RET(type, data, ...)               \
-        type &ptr  = (data);                             \
-        ptmfResult = (this->*ptr.callback)(__VA_ARGS__);
-
-    #define STATIC_CALL_PTMF(type, data, thisx, ...) \
-        {                                            \
-            type &ptr = (data);                      \
-            ((thisx)->*ptr.callback)(__VA_ARGS__);   \
-        }
-
-    #define STATIC_PTMFCALLBACK(type, data, thisx, ...) \
-        {                                               \
-            type::PTMFCallback &ptr = (data);           \
-            ((thisx)->*ptr)(__VA_ARGS__);               \
-        }
+    #define CALL_PTMF(data, ...) (this->*(data).callback)(__VA_ARGS__)
+    #define CALL_PTMF_RET(data, ...) ptmfResult = (this->*(data).callback)(__VA_ARGS__)
+    #define STATIC_CALL_PTMF(data, thisx, ...) ((thisx)->*(data).callback)(__VA_ARGS__)
+    #define STATIC_PTMFCALLBACK(data, thisx, ...) ((thisx)->*(data))(__VA_ARGS__)
 
 DECL_PTMF(PTMF);
 DECL_PTMF_RET(PTMFBool, bool);
@@ -66,15 +49,15 @@ public:
         template <typename T> Instance<T>::Instance() { \
             gpInstance = (type *) this;                 \
         }                                               \
-        template class Instance<type>;
+        template class Instance<type>
 
     #define DECL_INSTANCE_DTOR(type, gpInstance)  \
         template <> Instance<type>::~Instance() { \
             gpInstance = NULL;                    \
         }
 
-    #define DECL_INSTANCE(type, gpInstance)  \
-        DECL_INSTANCE_CTOR(type, gpInstance) \
+    #define DECL_INSTANCE(type, gpInstance)   \
+        DECL_INSTANCE_CTOR(type, gpInstance); \
         DECL_INSTANCE_DTOR(type, gpInstance)
 
 template <typename T> struct StaticInstance {

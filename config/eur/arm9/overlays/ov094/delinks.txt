@@ -69,6 +69,7 @@ src/094_Land2/Actor/ActorUnkKOTA.cpp:
     .text       start:0x0216e3a4 end:0x0216ee14
     .init       start:0x0217692c end:0x0217697c
     .ctor       start:0x02176ea0 end:0x02176ea4
+    .data       start:0x02177a78 end:0x02177af8
     .bss        start:0x02178dec end:0x02178e38
 
 src/094_Land2/Actor/ActorUnkEFOC.cpp:
@@ -100,6 +101,10 @@ src/094_Land2/MapObject/MapObjectUnkFNCE.cpp:
     .init       start:0x02176acc end:0x02176b1c
     .ctor       start:0x02176eb4 end:0x02176eb8
     .bss        start:0x02179164 end:0x02179248
+
+src/094_Land2/MapObject/UnkStruct_ov094_02177ff8.cpp:
+    .text       start:0x02170e6c end:0x0217107c
+    .data       start:0x02177ff0 end:0x02178064
 
 src/094_Land2/MapObject/MapObjectUnkWLMP.cpp:
     .text       start:0x0217107c end:0x0217176c

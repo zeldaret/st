@@ -24,18 +24,26 @@ public:
         }
     };
 
-    /* 30 */ virtual s8 vfunc_30() override;
-    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override;
-    /* 3C */ virtual void vfunc_3C() override;
+    /* 30 */ WEAK virtual s8 vfunc_30() override {
+        return this->mUnk_18;
+    }
+
+    /* 38 */ WEAK virtual void vfunc_38(unk32 param1, unk32 param2) override {
+        this->mUnk_04->func_ov000_020578a4(param1, param2);
+    }
+
+    /* 3C */ WEAK virtual void vfunc_3C() override {
+        this->mUnk_08->func_ov000_02057c98(this->vfunc_10());
+    }
 };
 
 class ActorUnkRMSV : public ActorUnkRMSBase {
 public:
     /* 00 (base) */
     /* 158 */ UnkStruct_ov063_021632e4 mUnk_158;
-    /* 198 */ PAD(0x198, 0x1D4); //! INFO: Force alignment to match ::Create
+    /* 198 */ PAD(0x198, 0x1D4);
     /* 1D4 */ UnkStruct_ov063_021632e4 mUnk_1D4;
-    /* 214 */ PAD(0x214, 0x250); //! INFO: Force alignment to match ::Create
+    /* 214 */ PAD(0x214, 0x250);
     /* 250 */
 
     ActorUnkRMSV();

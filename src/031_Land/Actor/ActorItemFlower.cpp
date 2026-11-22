@@ -41,7 +41,7 @@ ActorProfileItemFlower::ActorProfileItemFlower() :
 }
 
 ActorItemFlower::ActorItemFlower() :
-    mUnk_110(G3d_GetModelPtr(data_ov000_020b5d34.GetProfileFromId(MapObjectId_ITFL)->vfunc_04()->mUnk_50), 0x1, 0x1) {}
+    mUnk_110(NNS_G3dGetMdl(data_ov000_020b5d34.GetProfileFromId(MapObjectId_ITFL)->vfunc_04()->mUnk_50), 0x1, 0x1) {}
 
 bool ActorItemFlower::Init(unk32 param1) {
     this->Actor_ov031_02113fd4::Init(param1);
@@ -53,11 +53,11 @@ void ActorItemFlower::vfunc_5C(ActorState state) {
     this->mState  = state;
     this->mUnk_EC = 0x0;
 
-    CALL_PTMF(PTMF<ActorItemFlower>, data_ov031_02114174[this->mState]);
+    CALL_PTMF(data_ov031_02114174[this->mState]);
 }
 
 void ActorItemFlower::Update() {
-    CALL_PTMF(PTMF<ActorItemFlower>, data_ov031_021141b4[this->mState]);
+    CALL_PTMF(data_ov031_021141b4[this->mState]);
 }
 
 void ActorItemFlower::vfunc_2C(unk32 param1) {
