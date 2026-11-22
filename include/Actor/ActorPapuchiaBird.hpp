@@ -59,7 +59,6 @@ class ActorPapuchiaBird : public Actor {
 public:
     /* 000 (base) */
     /* 094 */ ActorLokomo_2BC mUnk_094;
-    /* 0F4 */ PAD(0x0F4, 0x100);
     /* 100 */ ActorKenzo_Base_160 mUnk_100;
     /* 1EC */ s16 mUnk_1EC;
     /* 1EE */ s16 mUnk_1EE;
