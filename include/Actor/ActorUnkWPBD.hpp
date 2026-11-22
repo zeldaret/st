@@ -61,19 +61,15 @@ public:
     /* 094 */ ActorLokomo_2BC mUnk_094;
     /* 0F4 */ PAD(0x0F4, 0x100);
     /* 100 */ ActorKenzo_Base_160 mUnk_100;
-    /* 1EC */ unk16 mUnk_1EC;
-    /* 1EE */ unk16 mUnk_1EE;
-    /* 1F0 */ unk16 mUnk_1F0;
+    /* 1EC */ s16 mUnk_1EC;
+    /* 1EE */ s16 mUnk_1EE;
+    /* 1F0 */ s16 mUnk_1F0;
     /* 1F2 */ unk16 mUnk_1F2;
     /* 1F4 */ Actor_9C mUnk_1F4;
     /* 214 */ ActorUnkWPBD_214 mUnk_214;
     /* 238 */ VecFx32Cpp mUnk_238;
-    /* 244 */ unk32 mUnk_244;
-    /* 248 */ unk32 mUnk_248;
-    /* 24C */ unk32 mUnk_24C;
-    /* 250 */ unk32 mUnk_250;
-    /* 254 */ unk32 mUnk_254;
-    /* 258 */ unk32 mUnk_258;
+    /* 244 */ VecFx32Cpp mUnk_244;
+    /* 250 */ VecFx32Cpp mUnk_250;
     /* 25C */ VecFx32Cpp mUnk_25C;
     /* 268 */ VecFx32Cpp mUnk_268;
     /* 274 */ VecFx32Cpp mUnk_274;
@@ -95,12 +91,8 @@ public:
     /* 2F4 */ Actor_Derived1_EC mUnk_2F4;
     /* 30C */ RefStruct mUnk_30C;
     /* 310 */ RefStruct mUnk_310;
-    /* 314 */ unk32 mUnk_314;
-    /* 318 */ unk32 mUnk_318;
-    /* 31C */ unk32 mUnk_31C;
-    /* 320 */ unk32 mUnk_320;
-    /* 324 */ unk32 mUnk_324;
-    /* 328 */ unk32 mUnk_328;
+    /* 314 */ VecFx32Cpp mUnk_314;
+    /* 320 */ VecFx32Cpp mUnk_320;
     /* 32C */ ActorUnkWPBD_32C mUnk_32C;
     /* 33C */
 
@@ -137,7 +129,7 @@ public:
     void func_ov058_0214cd94();
     void func_ov058_0214cfa4(unk32 param1);
     static void func_ov058_0214d078(Actor *param1, G3d_RenderState *param2);
-    void func_ov058_0214d250();
+    UnkStackStruct2::Inner func_ov058_0214d250(unk16 param3);
     bool func_ov058_0214d2c4(unk32 param1);
 };
 

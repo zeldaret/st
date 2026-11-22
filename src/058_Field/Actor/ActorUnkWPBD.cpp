@@ -1,6 +1,7 @@
 #include "Actor/ActorUnkWPBD.hpp"
 
 #include "Actor/ActorManager.hpp"
+#include "Actor/Actor_ov031_02114438.hpp"
 #include "CommonFuncs.hpp"
 #include "System/Random.hpp"
 #include "System/SysNew.hpp"
@@ -9,10 +10,12 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 
+extern MtxFx43 data_027e0964;
 extern VecFx32 data_027e0ca8[][2];
 extern unk32 data_027e0d4c;
 
 static VecFx32 data_ov058_02155300          = {.x = FX_F32_TO_FX32(2.0f), .y = -0x1, .z = FX_F32_TO_FX32(2.0f)};
+static const VecFx32Cpp data_ov058_02155318 = VecFx32Cpp(FX_F32_TO_FX32(18.0f), FX_F32_TO_FX32(4.0f), FX_F32_TO_FX32(15.0f));
 static const VecFx32Cpp data_ov058_0215530c = VecFx32Cpp(FX_F32_TO_FX32(4.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(15.0f));
 
 static PTMF<ActorUnkWPBD> data_ov058_02155324[ActorUnkWPBDState_Max] = {
@@ -40,7 +43,7 @@ public:
 };
 
 DECL_PROFILE(ActorProfileUnkWPBD);
-static UnkStruct_UnkWPBD_bss data_ov058_UnkWPBD_bss;
+static UnkStruct_UnkWPBD_bss data_ov058_02157110;
 
 Actor *ActorProfileUnkWPBD::Create() {
     return new(HeapIndex_2) ActorUnkWPBD();
@@ -87,12 +90,8 @@ ActorUnkWPBD::ActorUnkWPBD() :
     mUnk_1F2(0x0),
     mUnk_214(this),
     mUnk_238(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f)),
-    mUnk_244(0x0),
-    mUnk_248(0x0),
-    mUnk_24C(0x0),
-    mUnk_250(0x0),
-    mUnk_254(0x0),
-    mUnk_258(0x0),
+    mUnk_244(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)),
+    mUnk_250(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)),
     mUnk_25C(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)),
     mUnk_268(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)),
     mUnk_274(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)),
@@ -112,12 +111,8 @@ ActorUnkWPBD::ActorUnkWPBD() :
     mUnk_2CC(this),
     mUnk_30C(0),
     mUnk_310(0),
-    mUnk_314(0x0),
-    mUnk_318(0x0),
-    mUnk_31C(0x0),
-    mUnk_320(0x0),
-    mUnk_324(0x0),
-    mUnk_328(0x0),
+    mUnk_314(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)),
+    mUnk_320(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f)),
     mUnk_32C(this) {
     this->Actor::func_ov000_0209862c(0x0);
 
@@ -282,7 +277,7 @@ void ActorUnkWPBD::vfunc_2C(unk32 param1) {
     }
 
     this->mUnk_295 = true;
-    if (!data_ov058_UnkWPBD_bss.mUnk_00 && !this->mUnk_294) {
+    if (!data_ov058_02157110.mUnk_00 && !this->mUnk_294) {
         if (data_027e0ce0->func_ov000_0208bf34(0x2)) {
             VecFx32 *vec = this->func_ov000_0209853c(PlayerType_Link);
             if (func_01ff9258(vec->x - this->mUnk_268.vec.x, vec->z - this->mUnk_268.vec.z) < 0x5000) {
@@ -359,8 +354,52 @@ void ActorUnkWPBD::func_ov058_0214b820() {
     this->mUnk_288 = FX_Atan2Idx(this->mUnk_238.vec.x, this->mUnk_238.vec.z);
 }
 
-// non-matching
-void ActorUnkWPBD::func_ov058_0214b8dc() {}
+void ActorUnkWPBD::func_ov058_0214b8dc() {
+    VecFx32Cpp sp34;
+    VecFx32Cpp sp28;
+    VecFx32Cpp sp1C;
+
+    this->mUnk_2F4.mUnk_00->mTable.Get(this->mUnk_2F4.mUnk_05).vfunc_0C(&sp34.vec);
+    sp34.vec.y = this->mUnk_268.vec.y;
+
+    this->mUnk_288 += 0x100;
+    unk16 sp18 = this->mUnk_288;
+    func_020169d4(&sp28.vec, &sp34.vec, &sp18, &data_ov058_02155300.z);
+
+    if (!this->mUnk_294) {
+        if (this->mUnk_100.vfunc_30() == 0x0 && func_01ff916c(&this->mUnk_280, this->mUnk_284, 0x1)) {
+            this->mUnk_284 = gRandom.Next32(42) + 0x133;
+            this->mUnk_100.vfunc_1C(data_ov058_02155374[1], 0x1000, 0x19A, 0x0);
+        }
+
+        if (this->mUnk_100.vfunc_30() == 0x1 && func_01ff916c(&this->mUnk_280, this->mUnk_284, 0x4)) {
+            this->mUnk_284 = gRandom.Next32(42) + 0xB8;
+            this->mUnk_100.vfunc_1C(data_ov058_02155374[0], 0x1000, 0x19A, 0x0);
+        }
+    }
+
+    this->func_ov058_0214bbcc(&sp28.vec, this->mUnk_280);
+    if (!this->mUnk_294 && this->mTimer.HasExpired()) {
+        this->mUnk_2F4.mUnk_00->mTable.Get(this->mUnk_2F4.mUnk_04).vfunc_0C(&sp34.vec);
+        VEC_Subtract(&sp34.vec, &this->mPos, &sp1C.vec);
+
+        fx16 tanValue = (fx16) FX_Atan2Idx(this->mUnk_238.vec.x, this->mUnk_238.vec.z);
+        fx32 tanDelta = (fx16) ((fx16) FX_Atan2Idx(sp1C.vec.x, sp1C.vec.z) - tanValue);
+        if (tanDelta < 0) {
+            tanDelta = -tanDelta;
+        }
+
+        if (tanDelta < FX_F32_TO_FX32(1.3333)) {
+            this->SetState(ActorUnkWPBDState_0);
+        }
+    }
+
+    if (!this->mUnk_294) {
+        return;
+    }
+
+    this->SetState(ActorUnkWPBDState_0);
+}
 
 void ActorUnkWPBD::func_ov058_0214bbcc(VecFx32 *param1, fx32 newVelZ) {
     bool expiredTimer = this->mUnk_32C.mUnk_0C.HasExpired();
@@ -372,8 +411,8 @@ void ActorUnkWPBD::func_ov058_0214bbcc(VecFx32 *param1, fx32 newVelZ) {
             if (data_027e0ce0->func_ov000_0208bf34(0x2) || this->mUnk_5C.mParams[0] == 0x1) {
                 this->mUnk_100.vfunc_10()->mUnk_04.mUnk_04 = 0x1333;
             } else {
-                this->mUnk_294                 = false;
-                data_ov058_UnkWPBD_bss.mUnk_00 = false;
+                this->mUnk_294              = false;
+                data_ov058_02157110.mUnk_00 = false;
             }
         } else {
             fx32 unkValue = this->mUnk_100.vfunc_10()->mUnk_04.mUnk_04;
@@ -400,7 +439,38 @@ void ActorUnkWPBD::func_ov058_0214bbcc(VecFx32 *param1, fx32 newVelZ) {
 }
 
 // non-matching
-void ActorUnkWPBD::func_ov058_0214bd98() {}
+void ActorUnkWPBD::func_ov058_0214bd98() {
+    VecFx32Cpp sp6C;
+    UnkStackStruct1 stack;
+    VecFx32Cpp vec = data_ov058_02155318;
+
+    VecFx32_Init(vec.vec.x, vec.vec.y, vec.vec.z, &this->mPos);
+    VecFx32_Init(vec.vec.x, vec.vec.y, vec.vec.z, &this->mPrevPos);
+    VecFx32_Init(vec.vec.x, vec.vec.y, vec.vec.z, &this->mUnk_268.vec);
+    this->mUnk_238.Set(FX_F32_TO_FX32(-1.0002f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f));
+
+    this->func_ov058_0214cfa4(0x1000);
+    unk16 angle = func_02016958((VecFx32 *) &data_ov058_0215530c.vec, &vec.vec);
+    sp6C.Set(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(4.0f), FX_F32_TO_FX32(0.0f));
+    func_01ff9638(&sp6C.vec, angle);
+
+    this->mUnk_320.CopyOut(&sp6C);
+    VEC_Add(&this->mUnk_320.vec, &sp6C.vec, &this->mUnk_320.vec);
+
+    sp6C.CopyOut(&this->mPos);
+    sp6C.CopyIn(&this->mUnk_314);
+
+    func_ov000_02072fd0(&stack);
+    stack.mUnk_08   = 0x3C;
+    stack.mUnk_00   = 0x6C;
+    stack.mUnk_3A   = 0x7;
+    stack.mUnk_18.s = this->func_ov058_0214d250(0xAAB);
+
+    data_ov058_02155300.y = data_027e09b8->func_ov000_02073388(&stack, 0x0);
+    this->mTimer.Set(0, 150);
+    ActorLokomo *lokomo = (ActorLokomo *) func_02016fbc(ActorId_Carben, &this->mPos, 0x0);
+    lokomo->func_ov058_02147d20();
+}
 
 void ActorUnkWPBD::func_ov058_0214bfa4() {
     VecFx32Cpp vec = data_ov058_0215530c;
@@ -587,7 +657,35 @@ void ActorUnkWPBD::func_ov058_0214c824() {
 }
 
 // non-matching
-void ActorUnkWPBD::func_ov058_0214c92c() {}
+void ActorUnkWPBD::func_ov058_0214c92c() {
+    func_01ff930c(&this->mUnk_1F0, this->mUnk_1EC * 2, 0x100);
+
+    if (this->mUnk_294) {
+        func_01ff930c(&this->mUnk_1EC, 0x0, 0x50);
+        return;
+    }
+
+    VecFx32Cpp sp24;
+    VecFx32Cpp sp18;
+    VecFx32Cpp sp0C;
+    VecFx32Cpp sp00;
+    this->mUnk_2F4.mUnk_00->mTable.GetPtr(this->mUnk_2F4.mUnk_05)->vfunc_0C(&sp0C.vec);
+    this->mUnk_2F4.mUnk_00->mTable.GetPtr(this->mUnk_2F4.mUnk_04)->vfunc_0C(&sp18.vec);
+
+    VEC_Subtract(&sp18.vec, &sp0C.vec, &sp24.vec);
+    VEC_Subtract(&sp18.vec, &this->mPos, &sp00.vec);
+
+    fx16 tanValue = (fx16) FX_Atan2Idx(sp00.vec.x, sp00.vec.z);
+    fx32 tanDelta = (fx16) ((fx16) FX_Atan2Idx(sp24.vec.x, sp24.vec.z) - tanValue);
+    if (tanDelta < 0) {
+        tanDelta = -tanDelta;
+    }
+    if (tanDelta >= 0x2AAB) {
+        return;
+    }
+
+    func_01ff930c(&this->mUnk_1EC, (fx16) tanDelta, 0x50);
+}
 
 void ActorUnkWPBD::func_ov058_0214ca40() {
     fx32 div = FX_Div(this->mUnk_280, FX_F32_TO_FX32(0.085f));
@@ -616,8 +714,8 @@ void ActorUnkWPBD::func_ov058_0214cacc() {
 
 void ActorUnkWPBD::func_ov058_0214cb64() {
     this->mUnk_290.Set(0, 0xA);
-    this->mUnk_294                 = true;
-    data_ov058_UnkWPBD_bss.mUnk_00 = true;
+    this->mUnk_294              = true;
+    data_ov058_02157110.mUnk_00 = true;
     this->mUnk_100.vfunc_1C(data_ov058_02155374[1], 0x1000, 0x19A, 0x0);
 }
 
@@ -650,10 +748,80 @@ bool ActorUnkWPBD::func_ov058_0214cc80() {
     return false;
 }
 
+void ActorUnkWPBD::func_ov058_0214ccd0() {
+    ActorLokomo *lokomo = (ActorLokomo *) func_02016fbc(ActorId_Carben, &this->mPos, 0x0);
+    if (lokomo == NULL) {
+        return;
+    }
+
+    SET_FLAG(lokomo->mFlags, ActorFlag_Visible);
+
+    VecFx32Cpp sp18(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f));
+    MTX_MultVec33(&sp18.vec, &this->mUnk_2A8, &sp18.vec);
+
+    VecFx32Cpp sp0C(this->mPos);
+    sp0C.vec.y -= FX_F32_TO_FX32(3.0f);
+    VecFx32Cpp sp00(sp0C);
+
+    VecFx32_Init(sp00.vec.x, sp00.vec.y, sp00.vec.z, &lokomo->mPos);
+    VecFx32_Init(sp00.vec.x, sp00.vec.y, sp00.vec.z, &lokomo->mPrevPos);
+
+    lokomo->mAngle = FX_Atan2Idx(sp18.vec.x, sp18.vec.z);
+}
+
 // non-matching
-void ActorUnkWPBD::func_ov058_0214ccd0() {}
-// non-matching
-void ActorUnkWPBD::func_ov058_0214cd94() {}
+void ActorUnkWPBD::func_ov058_0214cd94() {
+    ActorLokomo *lokomo = (ActorLokomo *) func_02016fbc(ActorId_Carben, &this->mPos, 0x0);
+    if (lokomo == NULL) {
+        return;
+    }
+
+    VecFx32Cpp sp24(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f));
+    VecFx32Cpp sp18;
+    VecFx32Cpp sp0C;
+    VecFx32Cpp sp00;
+    MTX_MultVec33(&sp24.vec, &this->mUnk_2A8, &sp24.vec);
+
+    sp18.Set(0x666, 0x666 + 0x148, 0x0);
+    sp0C.Set(-0x666, 0x666 + 0x148, 0x0);
+    MTX_MultVec33(&sp18.vec, &this->mUnk_2A8, &sp18.vec);
+    MTX_MultVec33(&sp0C.vec, &this->mUnk_2A8, &sp0C.vec);
+
+    if (!this->mUnk_295) {
+        VEC_Add(&sp18.vec, &this->mPos, &sp18.vec);
+        VEC_Add(&sp0C.vec, &this->mPos, &sp0C.vec);
+    } else {
+        VEC_Add(&sp18.vec, &this->mUnk_244.vec, &sp18.vec);
+        VEC_Add(&sp0C.vec, &this->mUnk_244.vec, &sp0C.vec);
+    }
+
+    Actor_ov031_02114438 *actor  = (Actor_ov031_02114438 *) gpActorManager->func_01fff3b4(this->mUnk_30C);
+    Actor_ov031_02114438 *actor2 = (Actor_ov031_02114438 *) gpActorManager->func_01fff3b4(this->mUnk_310);
+
+    if (actor != NULL) {
+        SET_FLAG(actor->mFlags, ActorFlag_Visible);
+        actor->func_ov031_020f57e4(&sp18.vec, 0x1);
+
+        sp00.Set(0x614, 0x19A, 0xCD - 0x19A);
+        func_01ff9638(&sp00.vec, this->mAngle.angle_s);
+
+        VEC_Add(&sp00.vec, &this->mPos, &sp00.vec);
+        sp00.CopyIn(&actor->mUnk_94);
+    }
+
+    if (actor2 == NULL) {
+        return;
+    }
+
+    SET_FLAG(actor2->mFlags, ActorFlag_Visible);
+    actor2->func_ov031_020f57e4(&sp0C.vec, 0x1);
+
+    sp00.Set(-0x614, 0x19A, 0xCD - 0x19A);
+    func_01ff9638(&sp00.vec, this->mAngle.angle_s);
+
+    VEC_Add(&sp00.vec, &this->mPos, &sp00.vec);
+    sp00.CopyIn(&actor2->mUnk_94);
+}
 
 void ActorUnkWPBD::func_ov058_0214cfa4(unk32 param1) {
     Cylinder vec34;
@@ -678,10 +846,66 @@ void ActorUnkWPBD::func_ov058_0214cfa4(unk32 param1) {
     func_ov000_0205f4fc(&this->mUnk_298, &this->mUnk_2A8);
 }
 
-// non-matching
-void ActorUnkWPBD::func_ov058_0214d078(Actor *param1, G3d_RenderState *param2) {}
-// non-matching
-void ActorUnkWPBD::func_ov058_0214d250() {}
+void ActorUnkWPBD::func_ov058_0214d078(Actor *param1, G3d_RenderState *param2) {
+    ActorUnkWPBD *thiz = (ActorUnkWPBD *) param1;
+    MtxFx33 sp6C;
+    MtxFx43 sp3C;
+    MtxFx33 sp18;
+    VecFx32Cpp sp0C;
+    VecFx32Cpp sp00;
+
+    G3d_RenderObject *renderObj = param2->renderObj;
+
+    s32 val = G3d_GetCurBoneMtxId(param2);
+    if (val != 0x1) {
+        return;
+    }
+
+    if (renderObj->mUnk_25 == 0x2) {
+        param2->callbackSegment[6]        = 0x3;
+        renderObj->mUnk_25                = 0x3;
+        G3d_RenderState_B4 *renderStateB4 = param2->mUnk_B4;
+
+        renderStateB4->mUnk_00 &= ~0x2;
+
+        u16 angle = (s16) (u32) (s16) -thiz->mUnk_1F0;
+        MTX_RotX33_(&sp6C, SIN(angle), COS(angle));
+        MTX_Concat33(&sp6C, &renderStateB4->mUnk_28, &renderStateB4->mUnk_28);
+
+        angle = (s16) (u32) thiz->mUnk_1EE;
+        MTX_RotZ33_(&sp6C, SIN(angle), COS(angle));
+        MTX_Concat33(&sp6C, &renderStateB4->mUnk_28, &renderStateB4->mUnk_28);
+        return;
+    }
+
+    if (renderObj->mUnk_25 != 0x3) {
+        return;
+    }
+    param2->callbackSegment[6] = 0x2;
+    renderObj->mUnk_25         = 0x2;
+    G3d_GetCurrentMtx(&sp3C, NULL);
+    func_01ffad5c(&sp3C, &data_027e0964, &sp3C);
+
+    sp0C.CopyOut((VecFx32 *) &sp3C.values[9]);
+    thiz->mUnk_250.CopyOut(&sp0C);
+
+    MI_Copy36B(&sp3C, &sp18);
+
+    sp00.Set(FX_F32_TO_FX32(0.015f), FX_F32_TO_FX32(-0.0951f), FX_F32_TO_FX32(0.0f));
+
+    MTX_MultVec33(&sp00.vec, &sp18, &sp00.vec);
+    VEC_Add(&sp0C.vec, &sp00.vec, &sp0C.vec);
+    sp0C.CopyIn(&thiz->mUnk_244);
+}
+
+UnkStackStruct2::Inner ActorUnkWPBD::func_ov058_0214d250(unk16 param3) {
+    UnkStackStruct2 sp4;
+    sp4.s.mUnk_00 = 0x1000;
+    sp4.s.mUnk_02 = param3;
+    VecFx32_Reset(&sp4.s.mUnk_0C);
+    func_020158e8(&sp4.s.mUnk_08, &sp4.s.mUnk_04, &sp4.s.mUnk_06, &this->mUnk_314.vec, &this->mUnk_320.vec);
+    return sp4.s;
+}
 
 void ActorUnkWPBD_2CC::vfunc_0C() {
     this->mUnk_24->func_ov058_0214c824();

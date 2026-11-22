@@ -401,7 +401,7 @@ _ZN12ActorUnkWPBD19func_ov058_0214ccd0Ev kind:function(arm,size=0xc4) addr:0x021
 _ZN12ActorUnkWPBD19func_ov058_0214cd94Ev kind:function(arm,size=0x210) addr:0x0214cd94
 _ZN12ActorUnkWPBD19func_ov058_0214cfa4Ei kind:function(arm,size=0xd4) addr:0x0214cfa4
 _ZN12ActorUnkWPBD19func_ov058_0214d078EP5ActorP16G3d_RenderState_ kind:function(arm,size=0x1d8) addr:0x0214d078
-_ZN12ActorUnkWPBD19func_ov058_0214d250Ev kind:function(arm,size=0x64) addr:0x0214d250
+_ZN12ActorUnkWPBD19func_ov058_0214d250Es kind:function(arm,size=0x64) addr:0x0214d250
 _ZN16ActorUnkWPBD_2CC8vfunc_0CEv kind:function(arm,size=0x10) addr:0x0214d2b4
 _ZN12ActorUnkWPBD19func_ov058_0214d2c4Ei kind:function(arm,size=0xe0) addr:0x0214d2c4
 _ZN16ActorUnkWPBD_32CD0Ev kind:function(arm,size=0x1c) addr:0x0214d3a4
@@ -968,7 +968,8 @@ data_ov058_02157064 kind:bss addr:0x02157064 ambiguous
 _ZGVN15ProfileInstanceI19ActorProfileUnkFBSCE8sProfileE kind:bss addr:0x021570c4
 @12080 kind:bss addr:0x021570c8
 _ZN15ProfileInstanceI19ActorProfileUnkFBSCE8sProfileE kind:bss addr:0x021570d4
-_ZGVN15ProfileInstanceI19ActorProfileUnkWPBDE8sProfileE kind:bss addr:0x02157110
+data_ov058_02157110 kind:bss(size=1) addr:0x02157110
+_ZGVN15ProfileInstanceI19ActorProfileUnkWPBDE8sProfileE kind:bss addr:0x02157114
 @12086 kind:bss addr:0x02157118
 _ZN15ProfileInstanceI19ActorProfileUnkWPBDE8sProfileE kind:bss addr:0x02157124
 _ZGVN15ProfileInstanceI19ActorProfileUnkWPCHE8sProfileE kind:bss addr:0x021571fc
