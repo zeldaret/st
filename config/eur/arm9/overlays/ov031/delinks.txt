@@ -8,8 +8,8 @@
 src/031_Land/Course/MapManagerLand.cpp:
     complete
     .text       start:0x020d8720 end:0x020d8cf8
-    .data       start:0x021128a4 end:0x02112a5c
     .rodata     start:0x02110640 end:0x0211067c
+    .data       start:0x021128a4 end:0x02112a5c
 
 src/031_Land/UnkStruct_ov031_Items_02_031.cpp:
     complete
@@ -19,8 +19,8 @@ src/031_Land/UnkStruct_ov031_Items_02_031.cpp:
 src/031_Land/Render/SkyboxLand.cpp:
     complete
     .text       start:0x020d8fd4 end:0x020d9314
-    .data       start:0x02112a98 end:0x02112acc
     .rodata     start:0x0211067c end:0x021106ec
+    .data       start:0x02112a98 end:0x02112acc
 
 src/031_Land/Course/UnkStruct_027e0cd8_0C_1D0_031.cpp:
     complete
