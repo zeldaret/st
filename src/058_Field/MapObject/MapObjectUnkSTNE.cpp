@@ -27,7 +27,7 @@ MapObjectProfileUnkSTNE::MapObjectProfileUnkSTNE() :
 }
 
 MapObjectUnkSTNE::MapObjectUnkSTNE() :
-    mUnk_48(G3d_GetModelPtr(GET_PROFILE(MapObjectProfileUnkSTNE)->mUnk_20.mUnk_50), 0x1),
+    mUnk_48(NNS_G3dGetMdl(GET_PROFILE(MapObjectProfileUnkSTNE)->mUnk_20.mUnk_50), 0x1),
     mUnk_58(0x0),
     mUnk_5C(0x0),
     mUnk_60(true),
