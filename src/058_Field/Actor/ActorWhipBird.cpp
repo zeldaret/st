@@ -50,7 +50,7 @@ Actor *ActorProfileWhipBird::Create() {
 }
 
 ActorProfileWhipBird::ActorProfileWhipBird() :
-    ActorProfile_Derived1(ActorId_PapuchiaBird) {
+    ActorProfile_Derived1(ActorId_WhipBird) {
     this->mUnk_04.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(-0.5002f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.5f));
 }
 
