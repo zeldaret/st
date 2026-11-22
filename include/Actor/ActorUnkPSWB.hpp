@@ -41,9 +41,9 @@ public:
 class ActorUnkPSWB_194 : public ActorUnkSCCN_B8 {
 public:
     /* 00 (vtable) */
-    /* 10 */ Actor *mUnk_10;
+    /* 10 */ ActorUnkPSWB *mUnk_10;
 
-    ActorUnkPSWB_194(Actor *param1) {
+    ActorUnkPSWB_194(ActorUnkPSWB *param1) {
         mUnk_10 = param1;
     }
 
@@ -55,27 +55,27 @@ class ActorUnkPSWB : public UnkStruct_ov048_02137600 {
 public:
     /* 000 (base) */
     /* 0E0 */ ModelRender mUnk_E0;
-    /* 140 */ unk32 mUnk_140;
-    /* 144 */ unk32 mUnk_144;
-    /* 148 */ unk32 mUnk_148;
+    /* 140 */ fx32 mUnk_140; // Some x coord
+    /* 144 */ fx32 mUnk_144; // Some z coord
+    /* 148 */ fx32 mUnk_148;
     /* 14C */ unk32 mUnk_14C;
     /* 150 */ unk32 mUnk_150;
-    /* 154 */ unk32 mUnk_154;
+    /* 154 */ fx32 mUnk_154;
     /* 158 */ fx32 mUnk_158;
-    /* 15C */ fx32 mUnk_15C;
+    /* 15C */ fx32 mUnk_15C; // Some y coord
     /* 160 */ unk32 mUnk_160;
     /* 164 */ unk8 mUnk_164;
-    /* 165 */ unk8 mUnk_165; // WARN: unused
+    /* 165 */ PAD(0x164, 0x165);
     /* 166 */ unk16 mUnk_166;
-    /* 168 */ unk16 mUnk_168;
-    /* 16A */ unk16 mUnk_16A;
+    /* 168 */ unk16 mUnk_168; // Likely an angle
+    /* 16A */ unk16 mUnk_16A; // Likely an angle
     /* 16C */ unk16 mUnk_16C; // Likely an angle
-    /* 16E */ unk16 mUnk_16E;
-    /* 170 */ s16 mUnk_170;   // Very likely an angle
-    /* 172 */ unk16 mUnk_172; // WARN: unused
+    /* 16E */ unk16 mUnk_16E; // Likely an angle
+    /* 170 */ s16 mUnk_170;   // Likely an angle
+    /* 172 */ PAD(0x172, 0x174);
     /* 174 */ VecFx32Cpp mUnk_174;
-    /* 180 */ volatile u16 mUnk_180;
-    /* 182 */ unk16 mUnk_182; // WARN: unused
+    /* 180 */ volatile u16 mUnk_180; // Some kind of flag
+    /* 182 */ PAD(0x182, 0x184);
     /* 184 */ ActorUnkPSWB_184 mUnk_184;
     /* 188 */ unk32 mUnk_188;
     /* 18C */ unk32 mUnk_18C;

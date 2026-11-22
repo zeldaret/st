@@ -107,7 +107,7 @@ bool ActorUnkPSWB_194::vfunc_08(RefStruct ref, unk32 param2, unk32 param3) {
             func_ov000_0208bdd4(data_027e0ce0, 0, &mUnk_10->mVel);
             func_ov000_0207e20c(data_027e09c0, &data_ov094_021785c0, &mUnk_10->mPos);
         }
-        ((ActorUnkPSWB *) mUnk_10)->func_ov094_02167bf0();
+        mUnk_10->func_ov094_02167bf0();
     } else if (((u32) ref.acRef.type_index) << 0x10 >> 0x1E != 0) {
         ActorBomb *actorBomb = (ActorBomb *) gpActorManager->func_01fff3b4(ref);
         if (actorBomb != NULL) {
@@ -230,8 +230,8 @@ void ActorUnkPSWB::Update(void) {
             s16 sin_val = SIN((s16) angle);
             s16 cos_val = COS((s16) angle);
             VecFx32 vec;
-            vec.x = FX_MulInline(sin_val, 0x7D7);
-            vec.z = FX_MulInline(cos_val, 0x7D7);
+            vec.x = FX_MulInline(sin_val, FX_F32_TO_FX32(0.49f));
+            vec.z = FX_MulInline(cos_val, FX_F32_TO_FX32(0.49f));
             vec.y = 0;
             VEC_Add(&vec, &mPos, &vec);
 
@@ -239,11 +239,12 @@ void ActorUnkPSWB::Update(void) {
             unk.vec.x  = vec.x;
             unk.vec.y  = vec.y;
             unk.vec.z  = vec.z;
-            unk.param1 = 0x7D7;
+            unk.param1 = FX_F32_TO_FX32(0.49f); // cylinder size?
             unk.param2 = 0x1000;
             data_027e09c0->func_ov000_0207de98(mRef, &unk, mUnk_38);
         }
     }
+
     VecFx32 vec;
     VecFx32_Init(mUnk_140, mPos.y, mUnk_144, &vec);
     if (UnkStruct_ov048_02137600::vfunc_54(GET_DIRECTION(func_02016958(&mPos, &vec))) != 0) {
@@ -258,7 +259,7 @@ void ActorUnkPSWB::Update(void) {
         return;
     }
 
-    mUnk_A8.mUnk_0C.Init(&vec, 0x7D7);
+    mUnk_A8.mUnk_0C.Init(&vec, FX_F32_TO_FX32(0.49f));
     data_027e09c0->func_ov000_0207e58c(mRef, 10, 100, &mUnk_A8);
 }
 
@@ -283,11 +284,13 @@ void ActorUnkPSWB::func_ov094_02166c10(void) {
 
 void ActorUnkPSWB::func_ov094_02166c2c(void) {
     this->func_ov000_0209862c(0);
+
     u16 var;
     func_ov000_0208bb84(&var, data_027e0ce0, mUnk_98);
     if (var != 0) {
         func_ov000_0208bb94(data_027e0ce0, mUnk_98, 1);
     }
+
     mUnk_164 = func_ov000_0208bba4(data_027e0ce0, mUnk_98);
 }
 
@@ -338,6 +341,7 @@ void ActorUnkPSWB::func_ov094_02166e10(void) {
     if (var != 0) {
         func_ov000_0208bb94(data_027e0ce0, mUnk_98, 1);
     }
+
     mUnk_2C = 0x52;
     this->func_ov094_0216781c();
 }
@@ -357,6 +361,7 @@ void ActorUnkPSWB::func_ov094_02166e60(void) {
     if (mUnk_46 == 1) {
         u32 var;
         func_01fff05c(&var, gpCourseManager->mpMapMgr, &mPos);
+
         bool cond = true;
         if ((var & 0x1F) != 8 && (var >> 5 & 3) != 2) {
             cond = false;
@@ -365,12 +370,13 @@ void ActorUnkPSWB::func_ov094_02166e60(void) {
             this->func_ov094_021668e0(3);
             return;
         }
+
         this->func_ov094_021668e0(0);
     }
 
     if ((((u16 *) itemVar.unk_0x4)[0] & 1) != 0) {
         this->func_ov000_020984f0();
-        return; // dumb but needed
+        return; // dumb but required
     } else {
         func_01ff930c(&mUnk_16A, -5461, 0x300);
     }
@@ -380,12 +386,16 @@ void ActorUnkPSWB::func_ov094_02166e60(void) {
 void ActorUnkPSWB::func_ov094_02166f94(void) {
     mUnk_16E = mUnk_16A;
     mUnk_44  = 0x1C;
+
     this->func_ov000_0209862c(1);
+
     mUnk_2C  = 0x52;
     mUnk_15C = mPos.y;
     mUnk_144 = 0;
     mUnk_140 = 0;
+
     data_027e09a8->func_ov000_02071b30(0x991C, &mPos, 0);
+
     RefStruct ref;
     Actor::func_ov017_020c2438(&ref, 1, &mPos, 1, 1);
     mTimer.Set(0, 100);
@@ -411,12 +421,13 @@ void ActorUnkPSWB::func_ov094_02167024(void) {
             func_01ffedac(&vec2b, &vec);
 
             fx32 tmpRet = tmpVar->func_01ffedf4(&vec2b);
-            if (tmpRet - 0x66 <= mPos.y && 0 < mVel.y) {
+            if (tmpRet - FX_F32_TO_FX32(0.025f) <= mPos.y && 0 < mVel.y) {
                 mUnk_154 = mPos.y;
                 mVel.y   = 0;
                 mUnk_2C  = 0;
                 mUnk_166++;
                 mUnk_168 = 0;
+
                 if (mUnk_5C.mParams[0] != 0) {
                     mUnk_174.CopyOut(&mPos);
                     if (mUnk_5C.mParams[0] == 0) {
@@ -430,11 +441,14 @@ void ActorUnkPSWB::func_ov094_02167024(void) {
         }
         case 1: {
             SET_FLAG2(mUnk_180, 0);
+
             VecFx32 vec;
             VecFx32_Init(0, 0, 0, &vec);
             func_01ff993c(&mVel, &vec, 0x21);
+
             this->func_ov094_021676f4();
             this->func_ov094_02167d20();
+
             if (GET_FLAG2(mUnk_180, 1)) {
                 this->func_ov094_021668e0(4);
             }
@@ -450,11 +464,11 @@ void ActorUnkPSWB::func_ov094_02167224(void) {
     VecFx32_Init(0, 0, 0, &mVel);
 }
 
-// non-matching (stack ordering, lsr/asr shift, func call args)
+// non-matching (stack ordering, func call args)
 void ActorUnkPSWB::func_ov094_0216723c(void) {
     func_01ff916c(&mUnk_150, 4, 0);
 
-    VecFx32 vecs[3];
+    VecFx32 vecs[3]; // vec are not placed at the beginning of the stack, although declared first
     VecFx32_Init(0, 0, 0, &vecs[0]);
     func_01ff993c(&mVel, &vecs[0], mUnk_150);
 
@@ -463,12 +477,12 @@ void ActorUnkPSWB::func_ov094_0216723c(void) {
 
     this->func_ov094_021676f4();
 
-    UnkStruct_ov094_02176fb8 unkStructVar(this);
+    UnkStruct_ov094_02176fb8 unkStructVar(this); // goes first in the stack when it should be last
     this->func_ov000_02098910(&unkStructVar, 0x10);
 
     switch (mUnk_166) {
         case 0: {
-            //! FIX: func_ov031_020d9c34 has no visible args in the binary
+            //! FIX: func_ov031_020d9c34 has no visible args in the binary, but some are required (matches without args)
             if (data_027e0d38->func_ov031_020d9c34(0, NULL) != 0 && GET_FLAG2(mUnk_180, 1)) {
                 data_027e09a8->func_ov000_02071b30(0x991F, &mPos, 0);
 
@@ -476,7 +490,7 @@ void ActorUnkPSWB::func_ov094_0216723c(void) {
                 unk16 *pvar1 = (unk16 *) &var1;
                 func_01fff17c(pvar1, data_027e0ce0, 0);
 
-                u16 var1Val  = (s16) (*pvar1 + -0x8000);
+                u16 var1Val  = (s16) (*pvar1 + -DEG_TO_ANG(180));
                 fx32 sin_val = SIN(var1Val);
                 fx32 cos_val = COS(var1Val);
                 vecs[2].x    = FX_MulInline(sin_val, 0xCD);
@@ -485,13 +499,15 @@ void ActorUnkPSWB::func_ov094_0216723c(void) {
                 VEC_Add(&mVel, &vecs[2], &mVel);
 
                 s16 velAngle = FX_Atan2Idx(mVel.x, mVel.z);
-                velAngle += -0x8000;
-                mUnk_160 = (velAngle + 0x2000) << 0x10 >> 0x1E;
+                velAngle += -DEG_TO_ANG(180);
+                u16 tmp = velAngle + DEG_TO_ANG(45);
+                tmp >>= 0xE;
+                mUnk_160 = tmp;
 
                 if (mUnk_16E == 0) {
                     mUnk_16C = 0;
                 }
-                mUnk_16E = 0x38E;
+                mUnk_16E = DEG_TO_ANG(5);
                 mUnk_150 = 1;
                 mUnk_166++;
             } else if (!GET_FLAG2(mUnk_180, 1) && VecFx32_IsCleared(&mVel)) {
@@ -504,7 +520,7 @@ void ActorUnkPSWB::func_ov094_0216723c(void) {
             break;
         }
         case 1:
-            //! FIX: func_ov031_020d9c34 has no visible args in the binary
+            //! FIX: func_ov031_020d9c34 has no visible args in the binary, but some are required
             if (data_027e0d38->func_ov031_020d9c34(0, NULL) == 0) {
                 mUnk_166 = 0;
             }
@@ -541,7 +557,7 @@ void ActorUnkPSWB::func_ov094_021675ac(VecFx32 *vec) {
     unk32 var;
     unk16 *pvar = (unk16 *) &var;
     func_01fff17c(pvar, data_027e0ce0, mUnk_98);
-    u16 tmp = *pvar + 0x2000;
+    u16 tmp = *pvar + DEG_TO_ANG(45);
     tmp >>= 0xE;
     mUnk_160 = tmp;
     func_ov048_02130790(this, tmp, vec, 0x1000);
@@ -622,7 +638,8 @@ void ActorUnkPSWB::vfunc_2C(unk32 param1) {
     }
 
     VecFx32 vec1;
-    VecFx32_Init(0x1000, 0x1000, 0x1000, &vec1);
+
+    VecFx32_Init(FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), &vec1);
 
     MtxFx33 m1, m2;
     u16 angleIdx = mUnk_170;
@@ -705,7 +722,7 @@ void ActorUnkPSWB::func_ov094_02167bf0(void) {
     if (mUnk_16E == 0) {
         mUnk_16C = 0;
     }
-    mUnk_16E = 0x38E;
+    mUnk_16E = DEG_TO_ANG(5);
 
     if (GET_FLAG2(mUnk_180, 0)) {
         this->func_ov094_021668e0(4);
@@ -753,6 +770,7 @@ void ActorUnkPSWB::func_ov094_02167d20(void) {
     }
 }
 
+// This struct is a placeholder for some actor with mUnk_1AC, very likely ActorUnkEFRP since it uses its id, see func below
 typedef struct {
     /* 000 */ PAD(0x00, 0x1AC);
     /* 1AC */ unk32 mUnk_1AC;
@@ -912,6 +930,7 @@ UnkStruct_ov094_02176fb8::~UnkStruct_ov094_02176fb8() {
 }
 
 bool UnkStruct_ov094_02176fb8::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
+#pragma unused(param2)
     VecFx32 vec;
     VecFx16_Copy2VecFx32(&param1->mUnk_08, &vec);
 
