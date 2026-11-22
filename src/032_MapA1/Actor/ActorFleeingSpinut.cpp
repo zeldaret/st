@@ -2,13 +2,14 @@
 #include "CommonFuncs.hpp"
 
 #include "Actor/ActorUnkKEYN.hpp"
+#include "Course/CourseManager.hpp"
+#include "RefStruct.hpp"
 #include "System/Random.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
@@ -500,37 +501,38 @@ bool ActorFleeingSpinut::func_ov032_0211c938() {
         return true;
     }
 
-    UnkStruct_027e0cd8_0C_Base *temp_r8 = data_027e0cd8->mUnk_0C;
-    bool var_r8 = temp_r8->func_ov000_020802ec(this->mUnk_5C.mParams[0], data_027e0ce0->func_01fff148(0));
+    MapManagerBase *temp_r8 = gpCourseManager->mpMapMgr;
+    bool var_r8 = temp_r8->func_ov000_020802ec(this->mUnk_5C.mParams[0], data_027e0ce0->func_01fff148(PlayerType_Link));
 
     if (data_027e0ce0->func_01fff1a4()) {
         //! @bug or fake match? probably meant to be `var_r8 = var_r8 || temp_r6->func_ov000_020802ec(...)`?
-        UnkStruct_027e0cd8_0C_Base *temp_r6 = data_027e0cd8->mUnk_0C;
-        var_r8 = var_r8 | temp_r6->func_ov000_020802ec(this->mUnk_5C.mParams[0], data_027e0ce0->func_01fff148(1));
+        MapManagerBase *temp_r6 = gpCourseManager->mpMapMgr;
+        var_r8 =
+            var_r8 | temp_r6->func_ov000_020802ec(this->mUnk_5C.mParams[0], data_027e0ce0->func_01fff148(PlayerType_Zelda));
     }
 
     return var_r8;
 }
 
 bool ActorFleeingSpinut::func_ov032_0211c9d8() {
-    return !this->func_ov032_0211cab8(0x0, 0x5000) && !this->func_ov032_0211cab8(0x1, 0x5000);
+    return !this->func_ov032_0211cab8(PlayerType_Link, 0x5000) && !this->func_ov032_0211cab8(PlayerType_Zelda, 0x5000);
 }
 
 bool ActorFleeingSpinut::func_ov032_0211ca20() {
-    return this->func_ov032_0211cab8(0x0, 0x3CCD) || this->func_ov032_0211cab8(0x1, 0x3CCD);
+    return this->func_ov032_0211cab8(PlayerType_Link, 0x3CCD) || this->func_ov032_0211cab8(PlayerType_Zelda, 0x3CCD);
 }
 
 bool ActorFleeingSpinut::func_ov032_0211ca6c() {
-    return !this->func_ov032_0211cab8(0x0, 0x3CCD) && !this->func_ov032_0211cab8(0x1, 0x3CCD);
+    return !this->func_ov032_0211cab8(PlayerType_Link, 0x3CCD) && !this->func_ov032_0211cab8(PlayerType_Zelda, 0x3CCD);
 }
 
-bool ActorFleeingSpinut::func_ov032_0211cab8(unk32 param1, unk32 param2) {
-    if (param1 == 0x1 && !data_027e0ce0->func_01fff1a4()) {
+bool ActorFleeingSpinut::func_ov032_0211cab8(PlayerType playerType, unk32 param2) {
+    if (playerType == 0x1 && !data_027e0ce0->func_01fff1a4()) {
         return false;
     }
 
-    if (func_ov000_0205adfc(data_027e0ce0->func_01fff148(param1), &this->mPos) &&
-        this->Actor::func_ov000_0209867c(param1) < param2) {
+    if (func_ov000_0205adfc(data_027e0ce0->func_01fff148(playerType), &this->mPos) &&
+        this->Actor::func_ov000_0209867c(playerType) < param2) {
         return true;
     }
 
@@ -664,27 +666,27 @@ u16 *ActorFleeingSpinut_1EC::func_ov032_0211cd60(VecFx32 *param1, s16 *param2, V
 }
 
 void ActorFleeingSpinut_1EC::func_ov032_0211cf74() {
-    this->func_ov032_0211cfac(0x0);
+    this->func_ov032_0211cfac(PlayerType_Link);
 
     if (!data_027e0ce0->func_01fff1a4()) {
         return;
     }
 
-    this->func_ov032_0211cfac(0x1);
+    this->func_ov032_0211cfac(PlayerType_Zelda);
 }
 
-void ActorFleeingSpinut_1EC::func_ov032_0211cfac(unk32 param1) {
-    UnkStruct_027e0960_TableEntry_04 *entry04 = this->func_ov032_0211cd20(data_027e0ce0->func_01fff148(param1));
+void ActorFleeingSpinut_1EC::func_ov032_0211cfac(PlayerType playerType) {
+    UnkStruct_027e0960_TableEntry_04 *entry04 = this->func_ov032_0211cd20(data_027e0ce0->func_01fff148(playerType));
 
     VecFx32 sp00;
     entry04->vfunc_0C(&sp00);
 
-    if (this->mUnk_0C[param1] != NULL && this->mUnk_0C[param1]->func_02017930(entry04)) {
+    if (this->mUnk_0C[playerType] != NULL && this->mUnk_0C[playerType]->func_02017930(entry04)) {
         return;
     }
 
-    this->mUnk_14[param1] = this->mUnk_0C[param1];
-    this->mUnk_0C[param1] = entry04;
+    this->mUnk_14[playerType] = this->mUnk_0C[playerType];
+    this->mUnk_0C[playerType] = entry04;
 }
 
 void ActorFleeingSpinut_1EC::func_ov032_0211d028() {
@@ -711,7 +713,7 @@ void ActorFleeingSpinut_1EC::func_ov032_0211d08c(VecFx32 *param1) {
     UnkStruct_027e0ce0 *temp_r5 = data_027e0ce0;
 
     if (this->func_ov032_0211d568(param1, this->mUnk_08, this->mUnk_04) > 0) {
-        if (UNK_CHECK1(0, 0x3CCD) && (!temp_r5->func_01fff1a4() || UNK_CHECK1(1, 0x3CCD)) &&
+        if (UNK_CHECK1(PlayerType_Link, 0x3CCD) && (!temp_r5->func_01fff1a4() || UNK_CHECK1(PlayerType_Zelda, 0x3CCD)) &&
             this->func_ov032_0211d568(param1, this->mUnk_04, this->mUnk_08) != 0) {
             return;
         }
@@ -724,11 +726,11 @@ void ActorFleeingSpinut_1EC::func_ov032_0211d08c(VecFx32 *param1) {
         return;
     }
 
-    sp18 = *temp_r5->func_01fff148(0);
+    sp18 = *temp_r5->func_01fff148(PlayerType_Link);
     VEC_Subtract(&sp18, param1, &sp18);
 
     if (temp_r5->func_01fff1a4()) {
-        VEC_Subtract(temp_r5->func_01fff148(1), param1, &spC);
+        VEC_Subtract(temp_r5->func_01fff148(PlayerType_Zelda), param1, &spC);
     }
 
     this->mUnk_04->vfunc_0C(&sp0);
@@ -847,15 +849,15 @@ unk32 ActorFleeingSpinut_1EC::func_ov032_0211d568(VecFx32 *param1, UnkStruct_027
 }
 
 bool ActorFleeingSpinut_1EC::func_ov032_0211d674(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2) {
-    if (this->func_ov032_0211d6d8(param1, param2, 0x0) &&
-        (!data_027e0ce0->func_01fff1a4() || this->func_ov032_0211d6d8(param1, param2, 0x1))) {
+    if (this->func_ov032_0211d6d8(param1, param2, PlayerType_Link) &&
+        (!data_027e0ce0->func_01fff1a4() || this->func_ov032_0211d6d8(param1, param2, PlayerType_Zelda))) {
         return true;
     }
     return false;
 }
 
 bool ActorFleeingSpinut_1EC::func_ov032_0211d6d8(VecFx32 *param1, UnkStruct_027e0960_TableEntry_04_Base *param2,
-                                                 unk32 param3) {
+                                                 PlayerType playerType) {
     VecFx32 sp18;
     VecFx32 spC;
     VecFx32 sp0;
@@ -864,7 +866,7 @@ bool ActorFleeingSpinut_1EC::func_ov032_0211d6d8(VecFx32 *param1, UnkStruct_027e
     VecFx32 *temp_r4;
     void *temp_r1;
 
-    temp_r4 = data_027e0ce0->func_01fff148(param3);
+    temp_r4 = data_027e0ce0->func_01fff148(playerType);
     param2->vfunc_0C(&sp18);
     VEC_Subtract(&sp18, param1, &sp0);
     VEC_Subtract(temp_r4, param1, &spC);
@@ -873,11 +875,11 @@ bool ActorFleeingSpinut_1EC::func_ov032_0211d6d8(VecFx32 *param1, UnkStruct_027e
     if (VEC_DotProduct(&sp0, &spC) > 0) {
         var_r5 = 0;
 
-        if (this->mUnk_0C[param3] != 0) {
-            if (!param2->func_02017930(this->mUnk_0C[param3])) {
-                if (this->mUnk_0C[param3]->func_02017930(this->func_ov032_0211cd20(param1)) != 0 &&
-                    *(void *volatile *) &this->mUnk_14[param3] != NULL) {
-                    if (param2->func_02017930(this->mUnk_14[param3])) {
+        if (this->mUnk_0C[playerType] != 0) {
+            if (!param2->func_02017930(this->mUnk_0C[playerType])) {
+                if (this->mUnk_0C[playerType]->func_02017930(this->func_ov032_0211cd20(param1)) != 0 &&
+                    *(void *volatile *) &this->mUnk_14[playerType] != NULL) {
+                    if (param2->func_02017930(this->mUnk_14[playerType])) {
                         //! TODO: try to remove this by using an inline
                         goto block_8;
                     }
@@ -928,8 +930,8 @@ bool ActorFleeingSpinut_1EC::func_ov032_0211d864(VecFx32 *param1) {
         }
     }
 
-    return this->func_ov032_0211da0c(0x0, param1) ||
-           (data_027e0ce0->func_01fff1a4() && this->func_ov032_0211da0c(0x1, param1));
+    return this->func_ov032_0211da0c(PlayerType_Link, param1) ||
+           (data_027e0ce0->func_01fff1a4() && this->func_ov032_0211da0c(PlayerType_Zelda, param1));
 }
 
 void ActorFleeingSpinut_1EC::func_ov032_0211d910() {
@@ -955,9 +957,9 @@ bool ActorFleeingSpinut_1EC::func_ov032_0211d920(VecFx32 *param1) {
     var_r7 = false;
     var_r8 = false;
 
-    temp_r0 = temp_r5->func_01fff148(0x0);
+    temp_r0 = temp_r5->func_01fff148(PlayerType_Link);
     if (func_01ff9258(param1->x - temp_r0->x, param1->z - temp_r0->z) < 0x3000) {
-        temp_r0 = temp_r5->func_01fff148(0x1);
+        temp_r0 = temp_r5->func_01fff148(PlayerType_Zelda);
 
         if (func_01ff9258(param1->x - temp_r0->x, param1->z - temp_r0->z) < 0x3000) {
             var_r8 = true;
@@ -975,7 +977,7 @@ bool ActorFleeingSpinut_1EC::func_ov032_0211d920(VecFx32 *param1) {
     return var_r6;
 }
 
-bool ActorFleeingSpinut_1EC::func_ov032_0211da0c(unk32 param1, VecFx32 *param2) {
+bool ActorFleeingSpinut_1EC::func_ov032_0211da0c(PlayerType playerType, VecFx32 *param2) {
     VecFx32 sp18;
     VecFx32 spC;
     VecFx32 sp0;
@@ -985,7 +987,7 @@ bool ActorFleeingSpinut_1EC::func_ov032_0211da0c(unk32 param1, VecFx32 *param2) 
     bool var_r6_2;
     bool var_r6_3;
 
-    VecFx32 *temp_r4 = data_027e0ce0->func_01fff148(param1);
+    VecFx32 *temp_r4 = data_027e0ce0->func_01fff148(playerType);
     this->mUnk_04->vfunc_0C(&sp18);
 
     VEC_Subtract(&sp18, param2, &sp0);
@@ -1000,10 +1002,10 @@ bool ActorFleeingSpinut_1EC::func_ov032_0211da0c(unk32 param1, VecFx32 *param2) 
 
     if (var_r6) {
         var_r4   = true;
-        var_r6_2 = this->mUnk_0C[param1] != NULL && this->mUnk_0C[param1]->func_02017930(this->mUnk_04);
+        var_r6_2 = this->mUnk_0C[playerType] != NULL && this->mUnk_0C[playerType]->func_02017930(this->mUnk_04);
 
         if (!var_r6_2) {
-            var_r6_3 = this->mUnk_14[param1] != NULL && this->mUnk_14[param1]->func_02017930(this->mUnk_04);
+            var_r6_3 = this->mUnk_14[playerType] != NULL && this->mUnk_14[playerType]->func_02017930(this->mUnk_04);
 
             if (!var_r6_3) {
                 var_r4 = false;

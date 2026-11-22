@@ -1,8 +1,8 @@
+#include "Course/CourseManager.hpp"
 #include "MainGame/CargoManager.hpp"
 #include "Save/AdventureFlags.hpp"
 #include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0d00.hpp"
 
@@ -171,9 +171,12 @@ void CargoManager::RemoveAmount(unk32 decr) {
     }
 }
 
+//! TODO: figure this out
+extern "C" bool func_ov026_02106aa8(UnkSystem3 *);
+
 bool CargoManager::func_ov017_020bec9c() {
     if (data_027e09a4->IsTrain()) {
-        return data_027e0cd8->GetUnk0C()->mUnk_160[0]->func_ov026_02106aa8();
+        return func_ov026_02106aa8(gpCourseManager->GetMapMgrLand()->mUnk_160[0]);
     }
 
     return false;

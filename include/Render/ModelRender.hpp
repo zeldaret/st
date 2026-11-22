@@ -5,7 +5,6 @@
 #include "nitro/fx.h"
 #include "nns/g3d/sbc.h"
 #include "profile.hpp"
-#include "stdbool.h"
 #include "types.h"
 
 #include <nns/g3d/g3d.h>
@@ -263,4 +262,52 @@ public:
     /* 20 */
 
     ModelRender_UnkSystem1_Derived1(G3d_Model *pModel, size_t allocSize);
+};
+
+extern "C" size_t func_0200b150(UnkStruct_ov000_02058a84 *param1, G3d_Model *pModel);
+class ModelRender_UnkSystem1_Derived2 : public ModelRender_UnkSystem1 {
+public:
+    /* 00 (base) */
+    /* 20 */
+
+    ModelRender_UnkSystem1_Derived2(UnkStruct_ov000_02058a84 *param2, G3d_Model *pModel) :
+        ModelRender_UnkSystem1(pModel, func_0200b150(param2, pModel)) {
+        this->mUnk_00.func_ov000_020577a4(param2, 0, false);
+    }
+};
+
+class ModelRender_UnkSystem1_Derived3 {
+public:
+    /* 00 */ ModelRender_UnkSystem1 mUnk_00;
+    /* 20 */
+
+    ModelRender_UnkSystem1_Derived3(UnkStruct_ov000_02058a84 *param2, G3d_Model *pModel) :
+        mUnk_00(pModel, func_0200b150(param2, pModel)) {
+        bool value = false;
+
+        if (!(param2->mUnk_06_b & 2)) {
+            value = true;
+        }
+
+        this->mUnk_00.mUnk_00.func_ov000_020577a4(param2, 0, value);
+    }
+};
+
+class PlayerLinkActor_A0_14_04 : public ModelRenderBase {
+public:
+    /* 00 (base) */
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */
+
+    PlayerLinkActor_A0_14_04(G3d_Model *pModel);
+
+    // data_ov000_020b1b2c
+    /* 00 */ virtual ~PlayerLinkActor_A0_14_04() override; //! TODO: implicit?
+    /* 08 */ virtual void vfunc_08(G3d_Model *pModel) override;
+    /* 0C */ virtual void vfunc_0C() override;
+    /* 10 */ virtual void vfunc_10(VecFx32 *param1, MtxFx33 *param2, VecFx32 *param3) override;
+    /* 14 */ virtual void vfunc_14(MtxFx33 *param1, VecFx32 *param2) override;
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1) override;
+    /* 1C */
 };

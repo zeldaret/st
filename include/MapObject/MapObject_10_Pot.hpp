@@ -28,5 +28,11 @@ public:
     /* 20 */
 
     MapObject_10_Pot() {}
-    MapObject_10_Pot(int) {}
+
+    MapObject_10_Pot(unk32 param1) {
+        this->mUnk_18   = param1;
+        this->mUnk_0C.x = 0;
+        this->mUnk_0C.y = 0;
+        this->mUnk_0C.z = 0;
+    }
 };

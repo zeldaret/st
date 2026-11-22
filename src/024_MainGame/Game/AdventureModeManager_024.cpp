@@ -1,5 +1,6 @@
 #include "Actor/ActorUnkTUTO.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Game/GameModeAdventure.hpp"
 #include "MainGame/AdventureMode.hpp"
 #include "System/OverlayManager.hpp"
@@ -13,7 +14,6 @@
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
@@ -604,7 +604,7 @@ void AdventureModeManager::vfunc_38(u32 sceneIndex, u8 roomIndex, unk16 param3, 
     this->func_ov024_020c6514(sceneIndex, roomIndex, param3, param4);
 }
 
-void AdventureModeManager::func_ov024_020c6514(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4) {
+void AdventureModeManager::func_ov024_020c6514(SceneIndex sceneIndex, u8 roomIndex, unk16 param3, unk16 param4) {
     if (data_027e09a4->IsDarkRealm()) {
         UnkStruct2 auStack_34("Screen/Bg/Darea.bin", 1);
         auStack_34.func_020154ec("DAR");
@@ -615,10 +615,10 @@ void AdventureModeManager::func_ov024_020c6514(SceneIndex sceneIndex, u8 param2,
 
         data_027e0998->mUnk_44 = param4;
     } else {
-        this->func_ov000_02060fc8(sceneIndex, param2, param3, param4);
+        this->func_ov000_02060fc8(sceneIndex, roomIndex, param3, param4);
     }
 
-    s32 var_r1 = this->GetMapPaintIndex(sceneIndex, param2);
+    s32 var_r1 = this->GetMapPaintIndex(sceneIndex, roomIndex);
     bool var_r2;
     var_r2 = true;
     if (var_r1 != 0xFF) {
@@ -629,12 +629,12 @@ void AdventureModeManager::func_ov024_020c6514(SceneIndex sceneIndex, u8 param2,
     this->mUnk_1B8->func_ov024_020d13cc(var_r1);
     this->mUnk_1B8->func_ov024_020d06d0();
     this->mUnk_1CC.sceneIndex = sceneIndex;
-    this->mUnk_1CC.roomIndex  = param2;
+    this->mUnk_1CC.roomIndex  = roomIndex;
     this->mUnk_1CC.unk_06     = param4;
 
     if (param3 != 0) {
         this->mUnk_1C4.sceneIndex = sceneIndex;
-        this->mUnk_1C4.roomIndex  = param2;
+        this->mUnk_1C4.roomIndex  = roomIndex;
         this->mUnk_1C4.unk_06     = param4;
     }
 }
@@ -666,8 +666,8 @@ void AdventureModeManager::func_ov024_020c671c() {
     }
 }
 
-void AdventureModeManager::func_ov024_020c6770(SceneIndex sceneIndex, u8 param2, unk16 param3, unk16 param4) {
-    this->func_ov024_020c6514(sceneIndex, param2, param3, param4);
+void AdventureModeManager::func_ov024_020c6770(SceneIndex sceneIndex, u8 roomIndex, unk16 param3, unk16 param4) {
+    this->func_ov024_020c6514(sceneIndex, roomIndex, param3, param4);
 
     if (data_027e09a4->IsTrain()) {
         data_027e0cf8->func_ov024_020c77b0(1);
@@ -929,7 +929,7 @@ void AdventureModeManager::func_ov024_020c6db8(unk32 param1) {
 bool AdventureModeManager::func_ov024_020c6dec() {
     if (this->mUnk_1CC.sceneIndex == data_027e09a4->mUnk_00.sceneIndex) {
         if (this->mUnk_1CC.sceneIndex == data_027e09a4->mUnk_00.sceneIndex) {
-            if (this->mUnk_1CC.roomIndex == data_027e0cd8->func_ov000_02081d5c()) {
+            if (this->mUnk_1CC.roomIndex == gpCourseManager->func_ov000_02081d5c()) {
                 return true;
             }
         }

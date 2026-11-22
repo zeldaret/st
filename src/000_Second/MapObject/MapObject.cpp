@@ -2,13 +2,13 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Physics/Cylinder.hpp"
 #include "RefStruct.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
 #include <nitro/mi.h>
@@ -54,7 +54,7 @@ void MapObject::func_ov000_0209d0bc(Vec2bCpp *param1, MapObject *thisx) {
     VecFx32 pos;
     Vec2p out;
 
-    UnkStruct_027e0cd8_10 *ptr = data_027e0cd8->mUnk_10;
+    UnkStruct_027e0cd8_10 *ptr = gpCourseManager->mUnk_10;
     pos                        = thisx->mPos;
     func_01fff6d0(ptr, &pos, (fx32 *) &out.y, (fx32 *) &out.x);
 
@@ -109,7 +109,7 @@ void MapObject::vfunc_24(MapObject *param1, VecFx32 param2) {
     *(u32 *) this = 0; // ????
 }
 
-unk32 MapObject::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
+unk32 MapObject::vfunc_28(PlayerType playerType, unk32 param2, unk32 param3) {
     return 0;
 }
 
@@ -123,26 +123,26 @@ bool MapObject::vfunc_2C(VecFx32 *param1) {
     return false;
 }
 
-void MapObject::func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2) {
+void MapObject::func_ov000_0209d22c(unk16 *param1, MapObject *thisx, PlayerType playerType) {
     VecFx32 local_18;
-    VEC_Subtract(data_027e0ce0->func_01fff148(param2), &thisx->mPos, &local_18);
+    VEC_Subtract(data_027e0ce0->func_01fff148(playerType), &thisx->mPos, &local_18);
     *param1 = FX_Atan2Idx(local_18.x, local_18.z);
 }
 
-fx32 MapObject::func_ov000_0209d274(unk32 param1) {
-    return func_01ffb9cc(&this->mPos, data_027e0ce0->func_01fff148(param1));
+fx32 MapObject::func_ov000_0209d274(PlayerType playerType) {
+    return func_01ffb9cc(&this->mPos, data_027e0ce0->func_01fff148(playerType));
 }
 
 bool MapObject::func_ov000_0209d29c(unk32 param1) {
-    return data_027e0cd8->func_ov000_02081e30(this->mUnk_20.mUnk_0A[param1], this->mUnk_20.mUnk_08[param1]);
+    return gpCourseManager->func_ov000_02081e30(this->mUnk_20.mUnk_0A[param1], this->mUnk_20.mUnk_08[param1]);
 }
 
 void MapObject::func_ov000_0209d2c4(unk32 param1, bool param2) {
-    data_027e0cd8->func_ov000_02081d7c(this->mUnk_20.mUnk_0A[param1], this->mUnk_20.mUnk_08[param1], param2);
+    gpCourseManager->func_ov000_02081d7c(this->mUnk_20.mUnk_0A[param1], this->mUnk_20.mUnk_08[param1], param2);
 }
 
 void MapObject::func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3) {
-    UnkStruct_027e0cd8_0C_Base *temp_r5 = data_027e0cd8->mUnk_0C;
+    MapManagerBase *temp_r5 = gpCourseManager->mpMapMgr;
     Vec2bCpp sp0(0, 0);
 
     sp0.x = this->mRef.moRef.unk_02.x;
@@ -260,8 +260,8 @@ void MapObject::func_ov000_0209d614(unk32 param1) {
         return;
     }
 
-    UnkStruct_027e0cd8 *pUVar1 = data_027e0cd8;
-    unk32 uVar2                = this->mpProfile->func_ov000_0209c8e4(&this->mUnk_20);
+    CourseManager *pUVar1 = gpCourseManager;
+    unk32 uVar2           = this->mpProfile->func_ov000_0209c8e4(&this->mUnk_20);
     pUVar1->func_ov000_02081eec(this->mUnk_20.mUnk_14, uVar2, param1);
 }
 
@@ -270,8 +270,8 @@ bool MapObject::func_ov000_0209d668() {
         return false;
     }
 
-    UnkStruct_027e0cd8 *pUVar1 = data_027e0cd8;
-    unk32 uVar2                = this->mpProfile->func_ov000_0209c8e4(&this->mUnk_20);
+    CourseManager *pUVar1 = gpCourseManager;
+    unk32 uVar2           = this->mpProfile->func_ov000_0209c8e4(&this->mUnk_20);
     return pUVar1->func_ov000_02081f3c(this->mUnk_20.mUnk_14, uVar2);
 }
 

@@ -41,7 +41,7 @@ public:
     /* 01C */ virtual void Setup() override;
     /* 020 */ virtual void Update() override;
     /* 02C */ virtual void vfunc_2C(unk32 param1) override;
-    /* 048 */ virtual bool vfunc_48(unk32 param1) override;
+    /* 048 */ virtual bool vfunc_48(PlayerType playerType) override;
     /* 054 */ virtual void vfunc_54(unk32 param1) override;
     /* 058 */ virtual void SetState(ActorState state) override;
     /* 05C */ virtual bool vfunc_5C(unk32 param1, unk32 param2) override;

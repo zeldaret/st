@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "Course/CourseManager.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -15,7 +15,7 @@ public:
     void func_ov000_0207ef30();
     void func_ov000_0207f048();
     void func_ov000_0207f1f0();
-    void func_ov000_0207f280(UnkStruct_027e0cd8_0C_Base *param1);
+    void func_ov000_0207f280(MapManagerBase *param1);
     void func_ov000_0207f2d8();
 };
 

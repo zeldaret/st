@@ -1,10 +1,10 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObjectUnkSAND.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
 extern unk32 data_ov031_02115fe0;
@@ -99,7 +99,7 @@ void MapObjectUnkSAND_40::func_ov102_021837a8(Vec2bCpp param1, VecFx32 *param2) 
     u16 var_r6;
     fx32 temp_r7;
     s32 var_r8;
-    UnkStruct_027e0cd8_0C_Base *temp_r9;
+    MapManagerBase *temp_r9;
 
     var_r6 = 0;
 
@@ -129,7 +129,7 @@ void MapObjectUnkSAND_40::func_ov102_021837a8(Vec2bCpp param1, VecFx32 *param2) 
     spC[2].y--;
     spC[3].x--;
 
-    temp_r9 = data_027e0cd8->mUnk_0C;
+    temp_r9 = gpCourseManager->mpMapMgr;
     temp_r7 = temp_r9->func_01ffedf4(&param1);
 
     for (var_r8 = 0; var_r8 < ARRAY_LEN(spC); var_r8++) {

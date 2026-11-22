@@ -119,7 +119,7 @@ ActorLobarrierShield_174::ActorLobarrierShield_174(Actor *param1) {
 
 void ActorLobarrierShield_174::vfunc_10(const Actor *actor) {
     ((ActorLobarrierShield *) mUnk_2C)->func_ov063_0215b724();
-    func_ov000_0207b70c(this, (Actor *) actor);
+    this->UnkStruct_ov031_Items_01::vfunc_10(actor);
 }
 
 void ActorLobarrierShield::func_ov063_0215acec(RefStruct *ref1, RefStruct ref2) {
@@ -321,7 +321,7 @@ void ActorLobarrierShield::Update() {
         this->mUnk_150.mUnk_0E.y = var_r6;
         this->mUnk_150.mUnk_0E.z = var_r5;
 
-        VecFx32 *var_r0 = data_027e0ce0->func_01fff148(0);
+        VecFx32 *var_r0 = data_027e0ce0->func_01fff148(PlayerType_Link);
 
         // probably a disabled debug print that still ends up messing the codegen
         (void) ((f32) this->lobarrier->mUnk_25C.z);
@@ -344,7 +344,7 @@ void ActorLobarrierShield::Update() {
         this->mUnk_150.mUnk_0E.y = var_r6;
         this->mUnk_150.mUnk_0E.z = var_r5;
 
-        VecFx32 *var_r0 = data_027e0ce0->func_01fff148(0);
+        VecFx32 *var_r0 = data_027e0ce0->func_01fff148(PlayerType_Link);
 
         // same as above
         (void) ((f32) this->mUnk_1CC.vec.z);

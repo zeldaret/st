@@ -2,12 +2,12 @@
 #include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_020431b8.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d34.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
@@ -98,7 +98,7 @@ void ActorTearLight::Setup() {
     if (this->mUnk_5C.mParams[0] != 0x1) {
         return;
     }
-    data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_1BC.mUnk_00);
+    gpCourseManager->mpMapMgr->func_ov000_02080a5c(&this->mUnk_1BC.mUnk_00.vec);
 }
 
 void ActorTearLight::Update() {
@@ -111,7 +111,7 @@ void ActorTearLight::Update() {
         return;
     }
 
-    VecFx32_Copy(&this->mPos, &this->mUnk_1BC.mUnk_00);
+    VecFx32_Copy(&this->mPos, &this->mUnk_1BC.mUnk_00.vec);
 }
 
 void ActorTearLight::vfunc_24() {
@@ -224,7 +224,7 @@ void ActorTearLight::func_ov071_0215f92c() {
         } else if (this->mUnk_46 & 1) {
             Vec2bCpp sp0;
 
-            UnkStruct_027e0cd8_0C_Base *temp_r7 = data_027e0cd8->mUnk_0C;
+            MapManagerBase *temp_r7 = gpCourseManager->mpMapMgr;
             func_01ffedac(&sp0, &this->mPos);
             if (!temp_r7->func_ov000_02082008(&sp0)) {
                 this->func_ov071_0215fc54();

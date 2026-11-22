@@ -1,6 +1,7 @@
 #include "Actor/ActorItemBoomerang.hpp"
 #include "CommonFuncs.hpp"
 
+#include "Course/CourseManager.hpp"
 #include "Item/Item.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "MapObject/MapObjectUnkICEB.hpp"
@@ -8,7 +9,6 @@
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d2c.hpp"
 #include "global.h"
@@ -109,7 +109,7 @@ void ActorItemBoomerang::Update() {
     VEC_Add(temp_r0, &this->mVel, temp_r0);
 
     if ((func_ov000_0205aeac() && this->mUnk_128 == 0x1) || this->mUnk_128 == 0x2) {
-        VecFx32_Copy(&this->mPos, &this->mUnk_140.mUnk_00);
+        VecFx32_Copy(&this->mPos, &this->mUnk_140.mUnk_00.vec);
     }
 
     this->mAngle += DEG_TO_ANG(45);
@@ -126,7 +126,7 @@ void ActorItemBoomerang::Update() {
 
             data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_A0);
 
-            if (data_027e0ce0->func_ov000_0208bc1c(0x1, 0x0, 0x16, &this->mUnk_A0.mUnk_0C, 0x0, 0x0)) {
+            if (data_027e0ce0->func_ov000_0208bc1c(PlayerType_Zelda, 0x0, 0x16, &this->mUnk_A0.mUnk_0C, 0x0, 0x0)) {
                 this->mUnk_138.Set(0, 20);
                 var1 = true;
             }
@@ -220,7 +220,7 @@ void ActorItemBoomerang::Update() {
             ((Actor *) &sp24)->func_ov000_0207df88((Cylinder *) &this->mUnk_CC.mUnk_30.mUnk_00, 0xC);
 
             if (this->mUnk_138.HasExpiredAlt() &&
-                data_027e0ce0->func_ov000_0208bc1c(0x1, 0x0, 0x16, &this->mUnk_A0.mUnk_0C, 0x0, 0x0)) {
+                data_027e0ce0->func_ov000_0208bc1c(PlayerType_Zelda, 0x0, 0x16, &this->mUnk_A0.mUnk_0C, 0x0, 0x0)) {
                 var_r4_2 = true;
             }
 
@@ -229,7 +229,7 @@ void ActorItemBoomerang::Update() {
                 this->func_ov031_020e49b0(0x8D70);
             }
 
-            sp3C = *data_027e0ce0->func_01fff148(0x0);
+            sp3C = *data_027e0ce0->func_01fff148(PlayerType_Link);
             sp3C.y += FX32_HALF;
 
             if (func_01ffb9cc(&sp3C, &this->mPos) <= FX32_HALF) {
@@ -288,7 +288,7 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
                 this->mUnk_12C[1].mUnk_00->mUnk_A0 = 0;
             }
 
-            data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_140.mUnk_00);
+            gpCourseManager->mpMapMgr->func_ov000_02080a5c(&this->mUnk_140.mUnk_00.vec);
             return;
         case 0x2:
             this->mUnk_13C = 0x8D73;
@@ -309,14 +309,14 @@ void ActorItemBoomerang::func_ov031_020e5034(unk32 param1) {
             if (this->mUnk_12C[2].mUnk_00 != NULL) {
                 this->mUnk_12C[2].mUnk_00->mUnk_A0 = 0;
             }
-            data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_140.mUnk_00);
+            gpCourseManager->mpMapMgr->func_ov000_02080a5c(&this->mUnk_140.mUnk_00.vec);
             return;
         default:
             this->mUnk_13C = 0x8D71;
             if (!func_ov000_0205aeac()) {
                 return;
             }
-            data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_140.mUnk_00);
+            gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_140.mUnk_00.vec);
             break;
     }
 }
@@ -461,7 +461,7 @@ ActorItemBoomerang::~ActorItemBoomerang() {
         data_027e0d2c->func_ov031_020d95b4();
     }
     if (func_ov000_0205aeac()) {
-        data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_140.mUnk_00);
+        gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_140.mUnk_00.vec);
     }
 }
 

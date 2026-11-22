@@ -1,11 +1,11 @@
 #include "MapObject/MapObjectUnkLTRW.hpp"
 #include "Actor/Actor_Derived1.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectProfile.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "flags.h"
 #include "nitro/fx.h"
 #include "nitro/math.h"
@@ -81,12 +81,12 @@ bool MapObjectUnkLTRW::vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3)
     return true;
 }
 
-unk32 MapObjectUnkLTRW::vfunc_28(unk32 param1, unk32 param2, unk32 param3) {
+unk32 MapObjectUnkLTRW::vfunc_28(PlayerType playerType, unk32 param2, unk32 param3) {
     unk16 *plocal_60;
     unk16 local_60;
     plocal_60 = (unk16 *) &local_60;
 
-    MapObject::func_ov000_0209d22c(plocal_60, this, param1);
+    MapObject::func_ov000_0209d22c(plocal_60, this, playerType);
 
     unk16 angle = plocal_60[0];
 
@@ -114,5 +114,5 @@ void MapObjectUnkLTRW::func_ov063_02160d18(unk32 param1) {
 }
 
 void UnkStruct_ov063_021639e4::vfunc2_04() {
-    data_027e0cd8->func_ov000_02081d7c(mUnk_06, mUnk_04h, 1);
+    gpCourseManager->func_ov000_02081d7c(mUnk_06, mUnk_04h, 1);
 }

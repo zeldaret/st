@@ -258,7 +258,7 @@ void ActorUnkRCFO::func_ov033_021199f4() {
 
 // non-matching
 void ActorUnkRCFO::func_ov033_02119a58() {
-    VecFx32 *vec = data_027e0ce0->func_01fff148(0x1);
+    VecFx32 *vec = data_027e0ce0->func_01fff148(PlayerType_Zelda);
 
     Vec2s sp;
     sp.x = (FX_Div(vec->x - this->mUnk_DDC.vec.x, this->mUnk_DE8.vec.x - this->mUnk_DDC.vec.x) << 8) >> 0xC;

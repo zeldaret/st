@@ -49,15 +49,15 @@ public:
         template <typename T> Instance<T>::Instance() { \
             gpInstance = (type *) this;                 \
         }                                               \
-        template class Instance<type>;
+        template class Instance<type>
 
     #define DECL_INSTANCE_DTOR(type, gpInstance)  \
         template <> Instance<type>::~Instance() { \
             gpInstance = NULL;                    \
         }
 
-    #define DECL_INSTANCE(type, gpInstance)  \
-        DECL_INSTANCE_CTOR(type, gpInstance) \
+    #define DECL_INSTANCE(type, gpInstance)   \
+        DECL_INSTANCE_CTOR(type, gpInstance); \
         DECL_INSTANCE_DTOR(type, gpInstance)
 
 template <typename T> struct StaticInstance {

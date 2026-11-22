@@ -12,6 +12,11 @@ public:
     /* 08 */ unk32 mUnk_08;
     /* 0C */
 
+    void Reset(void *param1) {
+        this->~UnkSystem3();
+        this->mUnk_00 = param1;
+    }
+
     UnkSystem3(const char *path, unk32 param2);
     UnkSystem3(const char *path, unk32 param2, unk32 param3, unk32 param4);
     ~UnkSystem3();
@@ -51,7 +56,10 @@ public:
 class UnkStruct_ov000_02058a84 {
 public:
     /* 0 */ PAD(0x0, 0x6);
-    /* 6 */ u16 mUnk_06;
+    /* 6 */ union {
+        u16 mUnk_06;
+        u8 mUnk_06_b;
+    };
     /* 8 */ u32 mUnk_08;
 };
 
@@ -88,7 +96,7 @@ public:
     void func_ov000_02058914(void *param1);
     void func_ov000_020589e4(void);
     unk32 func_ov000_02058a24();
-    void unc_ov000_02058a58(void);
+    UnkStruct_ov000_02058a84 *func_ov000_02058a58(unk32 param1, unk32 param2);
     UnkStruct_ov000_02058a84 *func_ov000_02058a84(unk32 param1, const char *param2);
     void func_ov000_02058ab0(void);
 };

@@ -1,4 +1,5 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Game/GameModeManager.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_02049be0.hpp"
@@ -7,7 +8,6 @@
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f84.hpp"
 #include "Unknown/UnkStruct_ov000_020b504c.hpp"
 #include "Unknown/UnkStruct_ov024_020d8694.hpp"
@@ -367,13 +367,13 @@ void UnkTitleCardSystem1_Derived1::func_ov024_020cbeb8() {
     TC_SceneMsgIdx index = TC_SceneMsgIdx_None;
 
     if (data_027e09a4->IsSnowdriftStation()) {
-        if (data_027e0cd8->func_ov000_02081d5c() < 6) {
+        if (gpCourseManager->func_ov000_02081d5c() < 6) {
             index = TC_SceneMsgIdx_SnowdriftStation;
         } else {
             index = TC_SceneMsgIdx_SlipperyStation;
         }
     } else if (data_027e09a4->IsWater3()) {
-        if (data_027e0cd8->func_ov000_02081d5c() >= 10) {
+        if (gpCourseManager->func_ov000_02081d5c() >= 10) {
             index = TC_SceneMsgIdx_LostAtSeaStation;
         }
     } else {
@@ -399,7 +399,7 @@ void UnkTitleCardSystem1_Derived1::func_ov024_020cbf98() {
         return;
     }
 
-    UnkStruct_027e0cd8_04_0C *ptr = data_027e0cd8->mUnk_04->mUnk_0C;
+    UnkStruct_027e0cd8_04_0C *ptr = gpCourseManager->mUnk_04->mUnk_0C;
     s32 unk_08                    = ptr->mUnk_08;
     u32 msgId                     = BMG_ID_NONE;
 

@@ -1,4 +1,4 @@
-#include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "Course/CourseManager.hpp"
 #include "files.h"
 
 BOOL ZAB_ParseFile(FileInfos *pFileInfos, u32 sceneIndex, UnkStruct_027e0cd8_04 *pDst, const CourseListEntry *pEntry,

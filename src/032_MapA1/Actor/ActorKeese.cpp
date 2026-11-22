@@ -4,6 +4,7 @@
 #include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
+#include "Course/CourseManager.hpp"
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "MapObject/MapObjectUnkSKDI.hpp"
@@ -12,7 +13,6 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
 #include "flags.h"
@@ -331,12 +331,13 @@ void ActorKeese::func_ov032_0211e468() {
                 break;
             case 14:
                 if (this->mUnk_248.mUnk_0C.acRef.type_index == 0x102) {
-                    if (!this->mUnk_248.mUnk_0C.acRef.UnkCheck2Alt() && !this->mUnk_248.mUnk_0C.acRef.UnkCheck3(0x102)) {
+                    if (!this->mUnk_248.mUnk_0C.acRef.UnkCheck2Alt() &&
+                        this->mUnk_248.mUnk_0C.acRef.UnkCheck4(0x102) == PlayerType_Link) {
                         var_r6 = false;
                     }
 
                     if (!var_r6 && this->func_ov000_020986fc(0)) {
-                        if (this->func_ov032_0211fa4c(0)) {
+                        if (this->func_ov032_0211fa4c(PlayerType_Link)) {
                             var_r5 = false;
                         } else {
                             this->func_ov000_020990c0(&this->mUnk_248, 0, 0);
@@ -476,7 +477,7 @@ void ActorKeese::func_ov032_0211e9ec() {
     u32 *psp0   = (u32 *) &sp0;
     fx32 var_r5 = this->mUnk_5C.mInitialPos.y;
 
-    func_01fff05c(psp0, data_027e0cd8->mUnk_0C, &this->mPos);
+    func_01fff05c(psp0, gpCourseManager->mpMapMgr, &this->mPos);
 
     bool var_r6 = false;
     if ((*psp0 & 0x1F) == 0x0F && ((*psp0 >> 5) & 0x03) == 2) {
@@ -484,7 +485,7 @@ void ActorKeese::func_ov032_0211e9ec() {
     }
 
     if (var_r6) {
-        var_r5 = data_027e0cd8->mUnk_0C->vfunc_28(&this->mPos, 0x1, 0x0);
+        var_r5 = gpCourseManager->mpMapMgr->vfunc_28(&this->mPos, 0x1, 0x0);
     }
 
     this->mUnk_29C = (var_r5 + 0x800) + (gRandom.Next32(0x99B) - 0x4CD);
@@ -526,7 +527,7 @@ void ActorKeese::func_ov032_0211eb60() {
         return;
     }
 
-    VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
+    VecFx32 *vec = data_027e0ce0->func_01fff148(PlayerType_Link);
 
     if (!func_02016b8c(&this->mPos, vec, 0x3000, this->mAngle, 0x1000, 0x1)) {
         return;
@@ -541,7 +542,7 @@ void ActorKeese::func_ov032_0211ece8() {
 
     u32 sp0;
     u32 *psp0 = (u32 *) &sp0;
-    func_01fff05c(psp0, data_027e0cd8->mUnk_0C, &this->mPos);
+    func_01fff05c(psp0, gpCourseManager->mpMapMgr, &this->mPos);
 
     bool var_r2 = false;
     if ((*psp0 & 0x1F) == 0x0F && ((*psp0 >> 5) & 0x03) == 2) {
@@ -549,7 +550,7 @@ void ActorKeese::func_ov032_0211ece8() {
     }
 
     if (var_r2) {
-        var_r4 = data_027e0cd8->mUnk_0C->vfunc_28(&this->mPos, 1, 0);
+        var_r4 = gpCourseManager->mpMapMgr->vfunc_28(&this->mPos, 1, 0);
     }
 
     this->mUnk_29C = (var_r4 + 0x800) + (gRandom.Next32(0x99B) - 0x4CD);
@@ -582,7 +583,7 @@ void ActorKeese::func_ov032_0211ee5c() {
 
     if (this->func_ov032_0211f9c4()) {
         this->SetState(ActorKeeseState_8);
-    } else if (func_02016b8c(&this->mPos, data_027e0ce0->func_01fff148(0), 0x3000, this->mAngle, 0x1000, 1)) {
+    } else if (func_02016b8c(&this->mPos, data_027e0ce0->func_01fff148(PlayerType_Link), 0x3000, this->mAngle, 0x1000, 1)) {
         this->SetState(ActorKeeseState_2);
     }
 }
@@ -595,7 +596,7 @@ void ActorKeese::func_ov032_0211f0a8() {
     this->func_ov032_0211f93c(&this->mUnk_5C.mInitialPos, 0x38E);
 
     if (this->mTimer.HasExpired()) {
-        VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
+        VecFx32 *vec = data_027e0ce0->func_01fff148(PlayerType_Link);
         if (func_02016b8c(&this->mPos, vec, 0x3000, this->mAngle, 0x1000, 0x1)) {
             this->SetState(ActorKeeseState_2);
         }
@@ -619,7 +620,7 @@ void ActorKeese::func_ov032_0211f0a8() {
 void ActorKeese::func_ov032_0211f1f0() {}
 
 void ActorKeese::func_ov032_0211f1f4() {
-    bool temp_r4 = this->func_ov032_0211f93c(data_027e0ce0->func_01fff148(0x0), 0xB6);
+    bool temp_r4 = this->func_ov032_0211f93c(data_027e0ce0->func_01fff148(PlayerType_Link), 0xB6);
 
     if (this->mUnk_5C.mParams[1] == 0x1) {
         VecFx32 sp00;
@@ -790,7 +791,7 @@ void ActorKeese::func_ov032_0211f6bc() {
     fx32 var_r4 = this->mUnk_5C.mInitialPos.y;
 
     u32 *psp8 = (u32 *) &sp8;
-    func_01fff05c(psp8, data_027e0cd8->mUnk_0C, &this->mPos);
+    func_01fff05c(psp8, gpCourseManager->mpMapMgr, &this->mPos);
 
     bool var_r5_2 = false;
     if ((*psp8 & 0x1F) == 0x0F && ((*psp8 >> 5) & 0x03) == 2) {
@@ -798,7 +799,7 @@ void ActorKeese::func_ov032_0211f6bc() {
     }
 
     if (var_r5_2) {
-        var_r4 = data_027e0cd8->mUnk_0C->vfunc_28(&spC, 1, 0);
+        var_r4 = gpCourseManager->mpMapMgr->vfunc_28(&spC, 1, 0);
     }
 
     spC.y = var_r4;
@@ -880,10 +881,10 @@ bool ActorKeese::func_ov032_0211f9c4() {
     return true;
 }
 
-bool ActorKeese::func_ov032_0211fa4c(unk32 param1) {
+bool ActorKeese::func_ov032_0211fa4c(PlayerType playerType) {
     STACK_PAD(0x08);
 
-    if (param1 == 0x01) {
+    if (playerType == PlayerType_Zelda) {
         return false;
     }
 
@@ -892,18 +893,18 @@ bool ActorKeese::func_ov032_0211fa4c(unk32 param1) {
             return false;
         }
 
-        data_027e0ce0->func_ov000_0208bc1c(param1, 0x01, 0x06, 0x00, 0x00, 0x00);
+        data_027e0ce0->func_ov000_0208bc1c(playerType, 0x01, 0x06, 0x00, 0x00, 0x00);
         return true;
     }
 
-    data_027e0ce0->func_ov000_0208bc1c(param1, 0x01, 0x08, 0x00, 0x00, 0x00);
+    data_027e0ce0->func_ov000_0208bc1c(playerType, 0x01, 0x08, 0x00, 0x00, 0x00);
     return true;
 }
 
 void ActorKeese::func_ov032_0211faf0(Actor *param1, G3d_RenderState *param2) {
     ActorKeese *thisx               = (ActorKeese *) param1;
     G3d_RenderObject *pRenderObject = param2->renderObj;
-    s32 var_r1                      = param2->flag & 0x10 ? param2->currentBoneMtxId : -1;
+    s32 var_r1                      = G3d_GetCurBoneMtxId(param2);
 
     if (var_r1 != thisx->mUnk_0B0.mUnk_6C) {
         return;

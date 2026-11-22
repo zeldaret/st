@@ -5,6 +5,7 @@
 #include "Actor/ActorUnkGYAM.hpp"
 #include "Actor/ActorUnkIWTS.hpp"
 #include "Actor/ActorUnkMRD2.hpp"
+#include "Course/CourseManager.hpp"
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Physics/Cylinder.hpp"
@@ -15,7 +16,6 @@
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d30.hpp"
@@ -109,7 +109,7 @@ ActorShotArrow::~ActorShotArrow() {
     if (func_ov000_0205aeac()) {
         bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
         if (paramIs3Or4) {
-            data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00);
+            gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
         }
     }
 }
@@ -129,8 +129,8 @@ bool ActorShotArrow::Init(unk32 param1) {
     if (func_ov000_0205aeac()) {
         bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
         if (paramIs3Or4) {
-            VecFx32_Copy(&this->mPos, &this->mUnk_1DC.mUnk_00);
-            data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_1DC.mUnk_00);
+            VecFx32_Copy(&this->mPos, &this->mUnk_1DC.mUnk_00.vec);
+            gpCourseManager->mpMapMgr->func_ov000_02080a5c(&this->mUnk_1DC.mUnk_00.vec);
         }
     }
 
@@ -221,7 +221,7 @@ void ActorShotArrow::Update() {
             if (this->mUnk_170 > 0x10) {
                 this->func_ov031_020f3000();
             } else {
-                data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00);
+                gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
             }
         }
     }
@@ -324,7 +324,7 @@ void ActorShotArrow::func_ov031_020f1c7c() {
     VEC_Add(&this->mPos, &this->mVel, &this->mPos);
 
     if (func_ov000_0205aeac() && (this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4) != false) {
-        data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00);
+        gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
     }
 }
 
@@ -372,7 +372,7 @@ void ActorShotArrow::func_ov031_020f1e3c() {
         return;
     }
 
-    data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00);
+    gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
 }
 
 void ActorShotArrow::func_ov031_020f1f54() {
@@ -388,7 +388,7 @@ void ActorShotArrow::func_ov031_020f1f54() {
     if (func_ov000_0205aeac()) {
         bool paramIs3Or4 = this->mUnk_5C.mParams[1] == 0x3 || this->mUnk_5C.mParams[1] == 0x4;
         if (paramIs3Or4) {
-            data_027e0cd8->mUnk_0C->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00);
+            gpCourseManager->mpMapMgr->func_ov000_02080a78(&this->mUnk_1DC.mUnk_00.vec);
         }
     }
 
@@ -641,8 +641,8 @@ void ActorShotArrow::func_ov031_020f2794(unk16 param1) {
 void ActorShotArrow::func_ov031_020f28ac() {
     VecFx32 sp1C;
     VecFx32 sp10;
-    bool var_r1;
-    bool var_r6;
+    PlayerType var_r1;
+    PlayerType var_r6;
     bool var_r7;
 
     STACK_PAD(4);
@@ -684,7 +684,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
 
                     if (this->func_ov000_02098800(var_r6)) {
                         data_027e0ce0->func_ov000_0208bd30(var_r6, 0xE6, 0, 0);
-                        VEC_Subtract(&this->mPos, this->func_ov000_0209853c(0), &sp1C);
+                        VEC_Subtract(&this->mPos, this->func_ov000_0209853c(PlayerType_Link), &sp1C);
                         this->func_ov031_020f2cac(&sp1C, true);
                     } else {
                         var_r7 = 1;
@@ -694,10 +694,10 @@ void ActorShotArrow::func_ov031_020f28ac() {
                 break;
             case 15:
                 if (this->mUnk_5C.mParams[1] == 0 || this->mUnk_5C.mParams[1] == 3) {
-                    data_027e0ce0->func_ov000_0208bc1c(1, 0, 0x18, NULL, NULL, 0);
+                    data_027e0ce0->func_ov000_0208bc1c(PlayerType_Zelda, 0, 0x18, NULL, NULL, 0);
                 }
 
-                VEC_Subtract(&this->mPos, this->func_ov000_0209853c(1), &sp1C);
+                VEC_Subtract(&this->mPos, this->func_ov000_0209853c(PlayerType_Zelda), &sp1C);
                 this->func_ov031_020f2cac(&sp1C, true);
                 break;
             case 3:
@@ -863,7 +863,7 @@ void ActorShotArrow::func_ov031_020f3000() {
     vec.y = FX_MUL(vec.y, FX32_HALF);
 
     VEC_Add(&vec, &this->mPos, &vec);
-    VecFx32_Copy(&vec, &this->mUnk_1DC.mUnk_00);
+    VecFx32_Copy(&vec, &this->mUnk_1DC.mUnk_00.vec);
 }
 
 void ActorShotArrow::func_ov031_020f311c(MtxFx43 *param1) {

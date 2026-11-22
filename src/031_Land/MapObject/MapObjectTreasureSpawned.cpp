@@ -1,7 +1,7 @@
 #include "MapObject/MapObjectTreasureSpawned.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 
 static const Vec2pCpp data_ov031_021157b0(0x96B, 0x99A);
 
@@ -24,7 +24,7 @@ MapObjectTreasureSpawned::MapObjectTreasureSpawned() :
 }
 
 unk32 MapObjectTreasureSpawned::vfunc_3C() {
-    if (data_027e0cd8->func_ov000_02081f3c(this->mUnk_20.mUnk_14, 1)) {
+    if (gpCourseManager->func_ov000_02081f3c(this->mUnk_20.mUnk_14, 1)) {
         return 8;
     }
 

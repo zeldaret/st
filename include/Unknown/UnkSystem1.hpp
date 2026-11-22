@@ -2,6 +2,7 @@
 
 #include "Message/BMG.hpp"
 #include "RefStruct.hpp"
+#include "Unknown/UnkStruct_ov000_020b504c.hpp"
 #include "global.h"
 #include "types.h"
 

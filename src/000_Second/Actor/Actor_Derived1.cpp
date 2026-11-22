@@ -1,6 +1,6 @@
 #include "Actor/Actor_Derived1.hpp"
+#include "Course/CourseManager.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "flags.h"
 #include "global.h"
 
@@ -68,11 +68,11 @@ void Actor_Derived1::Setup() {
 }
 
 bool Actor_Derived1::func_ov000_020a8db0() {
-    return data_027e0cd8->func_ov000_02081e30(this->mUnk_5C.mUnk_1A[0], this->mUnk_5C.mUnk_18[0]);
+    return gpCourseManager->func_ov000_02081e30(this->mUnk_5C.mUnk_1A[0], this->mUnk_5C.mUnk_18[0]);
 }
 
 bool Actor_Derived1::func_ov000_020a8dd0() {
-    return data_027e0cd8->func_ov000_02081e30(this->mUnk_5C.mUnk_1A[1], this->mUnk_5C.mUnk_18[1]);
+    return gpCourseManager->func_ov000_02081e30(this->mUnk_5C.mUnk_1A[1], this->mUnk_5C.mUnk_18[1]);
 }
 
 // non-matching

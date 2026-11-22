@@ -1,7 +1,7 @@
 #include "Actor/ActorUnkRBLS.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Render/ModelRender.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
 
@@ -30,7 +30,7 @@ bool ActorUnkRBLS::Init(unk32 param1) {
     func_ov000_02099f64(&this->mUnk_F4, data_ov063_02163740, 0x1000);
     this->mUnk_F4.vfunc_3C();
 
-    data_027e0cd8->mUnk_0C->mUnk_12A = 0;
+    gpCourseManager->mpMapMgr->mUnk_12A = 0;
     return true;
 }
 

@@ -4,12 +4,12 @@
 #include "Actor/ActorUnkITWP.hpp"
 #include "Actor/ActorUnkRCHU.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_ov000_020b4ec4.hpp"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
@@ -115,7 +115,7 @@ void ActorUnkNSSW::Update() {
                 break;
             }
 
-            UnkStruct_027e0cd8_0C_Base *data = data_027e0cd8->mUnk_0C;
+            MapManagerBase *data = gpCourseManager->mpMapMgr;
             Vec2bCpp sp0;
             func_01ffedac(&sp0, &this->mPos);
 
@@ -230,10 +230,10 @@ void ActorUnkNSSW::func_ov032_021202d8() {
     VecFx32 vec = this->mPos;
     vec.y += FX_F32_TO_FX32(0.2f);
 
-    fx32 y = data_027e0cd8->mUnk_0C->vfunc_28(&vec, 0x1, 0x0);
+    fx32 y = gpCourseManager->mpMapMgr->vfunc_28(&vec, 0x1, 0x0);
     if (this->mPos.y <= y) {
         Vec2bCpp sp00;
-        UnkStruct_027e0cd8_0C_Base *data_0C = data_027e0cd8->mUnk_0C;
+        MapManagerBase *data_0C = gpCourseManager->mpMapMgr;
         func_01ffedac(&sp00, &vec);
         if (data_0C->func_ov000_02080180(&sp00) == 0x14) {
             this->func_ov032_02120894(0x5);
@@ -492,7 +492,7 @@ void ActorUnkNSSW::func_ov032_02120894(unk32 param1) {
 #if IS_JP || IS_EUR1
             UnkStruct_ov031_020e5d18_00 spC;
             spC.mUnk_00   = NULL;
-            VecFx32 *vec2 = this->Actor::func_ov000_0209853c(0x0);
+            VecFx32 *vec2 = this->Actor::func_ov000_0209853c(PlayerType_Link);
 
             UnkStruct_ov031_020e5d18_00 *pActor = &spC;
             func_01ffe6c4(&pActor->mUnk_00, this->mRef, &this->mPos, vec2, (s16) this->mUnk_44, &this->mPos, NULL);

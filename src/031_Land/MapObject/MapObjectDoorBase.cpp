@@ -628,7 +628,7 @@ bool MapObjectDoorBase::func_ov031_020fcf30() {
 
     plocal_10 = (unk16 *) &local_10;
 
-    MapObject::func_ov000_0209d22c(plocal_10, this, 0);
+    MapObject::func_ov000_0209d22c(plocal_10, this, PlayerType_Link);
 
     if (*plocal_10 >= 0x4000 || *plocal_10 <= -0x4000) {
         return false;

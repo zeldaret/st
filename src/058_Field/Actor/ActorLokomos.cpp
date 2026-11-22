@@ -909,7 +909,7 @@ void ActorLokomo::func_ov058_02145ef0() {
         UnkAngleStruct angle = this->mAngle.angle_s - DEG_TO_ANG(180);
 
         UnkStruct_027e0ce0 *data = data_027e0ce0;
-        sp1C                     = *data->func_01fff148(0x0);
+        sp1C                     = *data->func_01fff148(PlayerType_Link);
 
         data->func_ov000_0208bbd4(0x0, &sp1C, angle);
 
@@ -1178,7 +1178,7 @@ void ActorLokomo::vfunc_124() {
 
                 sp04         = 0;
                 unk32 var    = func_01ff930c(&this->mUnk_8FE.angle_s, 0, this->mUnk_8FC);
-                VecFx32 sp20 = *data->func_01fff148(0x0);
+                VecFx32 sp20 = *data->func_01fff148(PlayerType_Link);
 
                 data->func_ov000_0208bbd4(0x0, &sp20, this->mUnk_8FE);
 
@@ -1191,7 +1191,7 @@ void ActorLokomo::vfunc_124() {
 
             case 0x3: {
                 UnkStruct_027e0ce0 *data = data_027e0ce0;
-                VecFx32 sp14             = *data->func_01fff148(0x0);
+                VecFx32 sp14             = *data->func_01fff148(PlayerType_Link);
                 data->func_ov000_0208bbd4(0x0, &sp14, this->mUnk_8FE);
                 this->func_ov058_02146848(&sp14, 0x0);
                 break;
@@ -1676,7 +1676,7 @@ void ActorLokomo::func_ov058_02147760(Actor *param0, G3d_RenderState_ *param1) {
     ActorLokomo *thiz = (ActorLokomo *) param0;
 
     G3d_RenderObject *renderObj = param1->renderObj;
-    s32 val                     = param1->flag & 0x10 ? param1->currentBoneMtxId : -1;
+    s32 val                     = G3d_GetCurBoneMtxId(param1);
     if (val == thiz->mUnk_908) {
         if (renderObj->mUnk_25 == 0x2) {
             param1->callbackSegment[6] = 0x3;
@@ -1737,7 +1737,7 @@ void ActorLokomo::func_ov058_02147860(Actor *param0, G3d_RenderState_ *param1) {
     ActorLokomo *thiz = (ActorLokomo *) param0;
 
     G3d_RenderObject *renderObj = param1->renderObj;
-    s32 val                     = param1->flag & 0x10 ? param1->currentBoneMtxId : -1;
+    s32 val                     = G3d_GetCurBoneMtxId(param1);
 
     if (val == thiz->mUnk_8D0) {
 

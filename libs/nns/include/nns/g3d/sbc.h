@@ -130,6 +130,18 @@ static inline void G3d_Scale_inline(fx32 x, fx32 y, fx32 z) {
     PushGeometryCommand(0x1B, (u32 *) &vec, 3);
 }
 
+static inline s32 G3d_GetCurBoneId(G3d_RenderState *pRenderState) {
+    return pRenderState->flag & G3D_RENDERST_FLAG_VALID_NODE ? pRenderState->currentBoneId : -1;
+}
+
+static inline s32 G3d_GetCurMatId(G3d_RenderState *pRenderState) {
+    return pRenderState->flag & G3D_RENDERST_FLAG_VALID_MAT ? pRenderState->currentMaterialId : -1;
+}
+
+static inline s32 G3d_GetCurBoneMtxId(G3d_RenderState *pRenderState) {
+    return pRenderState->flag & G3D_RENDERST_FLAG_VALID_BONEMTX ? pRenderState->currentBoneMtxId : -1;
+}
+
 #ifdef __cplusplus
 } // extern "C"
 #endif

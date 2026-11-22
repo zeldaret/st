@@ -1,9 +1,9 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Unknown/UnkStruct_027e095c.hpp"
 #include "Unknown/UnkStruct_027e09ac.hpp"
 #include "Unknown/UnkStruct_027e09b0.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_ov000_020b4ec4.hpp"
 
 #include <nitro/fx.h>
@@ -30,7 +30,7 @@ s32 UnkStruct_027e09b4::func_ov017_020c08a4(void) {
 
 bool UnkStruct_027e09b4::func_ov017_020c08c4(const VecFx32 *param1, unk32 param2, unk32 param3, s32 param4, s16 param5,
                                              u8 param6) {
-    fx32 temp_r0_2 = data_027e0cd8->mUnk_0C->vfunc_28((VecFx32 *) param1, 1, 0);
+    fx32 temp_r0_2 = gpCourseManager->mpMapMgr->vfunc_28((VecFx32 *) param1, 1, 0);
 
     if (param1->y >= temp_r0_2 && temp_r0_2 >= -0x3000) {
         VecFx32 temp;

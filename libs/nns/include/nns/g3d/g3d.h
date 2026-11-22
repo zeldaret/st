@@ -88,18 +88,6 @@ typedef struct G3d_Model_ {
     /* 40 */ G3d_NameList boneList; // bone list
 } G3d_Model;                        // size = 0x4C
 
-static inline G3d_NameList *G3d_GetBoneList(const G3d_Model *mdl) {
-    return mdl != NULL ? (G3d_NameList *) &mdl->boneList : NULL;
-}
-
-static inline void *NNS_G3dGetMat(const G3d_Model *mdl) {
-    return mdl != NULL && mdl->offMat != 0 ? (void *) ((u8 *) mdl + mdl->offMat) : NULL;
-}
-
-static inline G3d_NameList *G3d_GetMesh(const G3d_Model *mdl) {
-    return mdl != NULL && mdl->offMesh != 0 ? (G3d_NameList *) ((u8 *) mdl + mdl->offMesh) : NULL;
-}
-
 typedef enum {
     G3D_RENDEROBJ_FLAG_STORE            = 0x1, // stores results in local cache
     G3D_RENDEROBJ_FLAG_SKIP_CMD         = 0x2, // skips pushing geometry commands to the FIFO
@@ -163,7 +151,9 @@ typedef struct G3d_MaterialAnimation_ {
     /* 0C */ u32 polygon_attr;
     /* 10 */ u32 teximage_params;
     /* 14 */ u32 pltt_base;
-    /* 18 */ u8 mUnk_18[0x14];
+    /* 18 */ PAD(0x18, 0x24);
+    /* 24 */ u32 unk_24;
+    /* 28 */ u32 unk_28;
     /* 2C */ u16 width;
     /* 2E */ u16 height;
     /* 30 */ u8 mUnk_30[0x8];
@@ -199,6 +189,25 @@ typedef struct BMDSectionModel {
 
 void G3d_0200e6a0(const G3d_Model *pModel, s32 param2, s32 param3);
 u32 *G3d_0200f05c(const G3d_NameList *pNameList, const char *pName);
+s32 func_0200f218(G3d_NameList *pNameList, const char *pName);
+void func_0200ea38(const G3d_Model *pModel, s32 matId, s32 param3);
+
+static inline G3d_NameList *G3d_GetBoneList(const G3d_Model *mdl) {
+    return mdl != NULL ? (G3d_NameList *) &mdl->boneList : NULL;
+}
+
+static inline G3d_Material_List *NNS_G3dGetMat(const G3d_Model *mdl) {
+    return mdl != NULL && mdl->offMat != 0 ? (G3d_Material_List *) ((u8 *) mdl + mdl->offMat) : NULL;
+}
+
+//! TODO: find real name
+static inline s32 NNS_G3dGetUnkMatDataByName(G3d_Material_List *pMat, const char *pName) {
+    return pMat != NULL ? func_0200f218(&pMat->materials, pName) : -1;
+}
+
+static inline G3d_NameList *G3d_GetMesh(const G3d_Model *mdl) {
+    return mdl != NULL && mdl->offMesh != 0 ? (G3d_NameList *) ((u8 *) mdl + mdl->offMesh) : NULL;
+}
 
 static inline u32 *NNS_G3dGetResDataByIdx(const G3d_NameList *pList, u8 index) {
     if (pList != NULL && index < pList->numElmnts) {

@@ -19,7 +19,7 @@ _ZN18UnkStruct_027e09bc7DestroyEv kind:function(thumb,size=0x20) addr:0x020b6c58
 _ZN18UnkStruct_027e0ce07DestroyEv kind:function(thumb,size=0x20) addr:0x020b6c78
 _ZN16MapObjectManager7DestroyEv kind:function(thumb,size=0x20) addr:0x020b6c98
 _ZN12ActorManager7DestroyEv kind:function(thumb,size=0x20) addr:0x020b6cb8
-_ZN18UnkStruct_027e0cd87DestroyEv kind:function(thumb,size=0x20) addr:0x020b6cd8
+_ZN13CourseManager7DestroyEv kind:function(thumb,size=0x20) addr:0x020b6cd8
 _ZN8InstanceI18UnkStruct_027e09a4EC2Ev kind:function(thumb,size=0xc) addr:0x020b6cf8
 _ZN21UnkStruct_027e0954_00D1Ev kind:function(thumb,size=0xe) addr:0x020b6d04
 _ZN8InstanceI18UnkStruct_027e095cED2Ev kind:function(thumb,size=0xc) addr:0x020b6d14
@@ -51,48 +51,48 @@ _ZN18UnkStruct_027e09b819func_ov001_020b7700Ev kind:function(thumb,size=0x28) ad
 _ZN18UnkStruct_027e09b819func_ov001_020b7728Ev kind:function(thumb,size=0x2c) addr:0x020b7708
 _ZN8InstanceI18UnkStruct_027e09b8EC2Ev kind:function(thumb,size=0xc) addr:0x020b7734
 _ZN8InstanceI18UnkStruct_027e09b8ED2Ev kind:function(thumb,size=0xc) addr:0x020b7740
-_ZN18UnkStruct_027e0cd86CreateEv kind:function(thumb,size=0x16) addr:0x020b774c
-_ZN18UnkStruct_027e0cd8C1Ev kind:function(thumb,size=0x68) addr:0x020b7764
-_ZN18UnkStruct_027e0cd8D1Ev kind:function(thumb,size=0x42) addr:0x020b77cc
-_ZN18UnkStruct_027e0cd819func_ov001_020b7830EPK12EntranceInfo kind:function(thumb,size=0x24c) addr:0x020b7810
-_ZN18UnkStruct_027e0cd819func_ov001_020b7a7cEv kind:function(thumb,size=0xbc) addr:0x020b7a5c
-_ZN18UnkStruct_027e0cd819func_ov001_020b7b38EPK15CourseListEntryPK29UnkStruct_func_ov000_020702a8 kind:function(thumb,size=0xd0) addr:0x020b7b18
-_ZN18UnkStruct_027e0cd819func_ov001_020b7c08EPK12EntranceInfoPK21UnkStruct_WarpUnk1_A0 kind:function(thumb,size=0x15c) addr:0x020b7be8
-_ZN18UnkStruct_027e0cd819func_ov001_020b7d64EPK12EntranceInfo kind:function(thumb,size=0xec) addr:0x020b7d44
-_ZN18UnkStruct_027e0cd819func_ov001_020b7e50Ev kind:function(thumb,size=0x16) addr:0x020b7e30
-_ZN18UnkStruct_027e0cd819func_ov001_020b7e68EPK12EntranceInfob kind:function(thumb,size=0x1d4) addr:0x020b7e48
-_ZN18UnkStruct_027e0cd819func_ov001_020b803cEv kind:function(thumb,size=0xc0) addr:0x020b801c
-_ZN18UnkStruct_027e0cd819func_ov001_020b80fcEj kind:function(thumb,size=0x24) addr:0x020b80dc
-_ZN18UnkStruct_027e0cd819func_ov001_020b8120Ej kind:function(thumb,size=0x6c) addr:0x020b8100
-_ZN18UnkStruct_027e0cd819func_ov001_020b818cEv kind:function(thumb,size=0x3c) addr:0x020b816c
-_ZN8InstanceI18UnkStruct_027e0cd8EC2Ev kind:function(thumb,size=0xc) addr:0x020b81a8
-_ZN8InstanceI18UnkStruct_027e0cd8ED2Ev kind:function(thumb,size=0xc) addr:0x020b81b4
-_ZN26UnkStruct_027e0cd8_0C_BaseC2EP18UnkStruct_027e0cd8 kind:function(thumb,size=0x218) addr:0x020b81c0
-_ZN26UnkStruct_027e0cd8_0C_BaseD1Ev kind:function(thumb,size=0x98) addr:0x020b83d8
-_ZN26UnkStruct_027e0cd8_0C_BaseD0Ev kind:function(thumb,size=0xa0) addr:0x020b8470
-_ZN26UnkStruct_027e0cd8_0C_BaseD2Ev kind:function(thumb,size=0x98) addr:0x020b8510
-_ZN26UnkStruct_027e0cd8_0C_Base8vfunc_38Ev kind:function(thumb,size=0x2) addr:0x020b85a8
-_ZN26UnkStruct_027e0cd8_0C_Base8vfunc_08Ev kind:function(thumb,size=0x2) addr:0x020b85ac
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b85d0EPK12EntranceInfo kind:function(thumb,size=0x2f0) addr:0x020b85b0
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b88c0Ei kind:function(thumb,size=0x2c) addr:0x020b88a0
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b88ecEv kind:function(thumb,size=0x60) addr:0x020b88cc
-_ZN26UnkStruct_027e0cd8_0C_Base14LoadSceneModelEPK12EntranceInfo kind:function(thumb,size=0xe0) addr:0x020b892c
-_ZN26UnkStruct_027e0cd8_0C_Base8vfunc_1CEPK12EntranceInfobb kind:function(thumb,size=0x2c) addr:0x020b8a0c
-_ZN26UnkStruct_027e0cd8_0C_Base8vfunc_20Ev kind:function(thumb,size=0x2) addr:0x020b8a38
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b8a5cEii kind:function(thumb,size=0x8e) addr:0x020b8a3c
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b8aecEv kind:function(thumb,size=0xa8) addr:0x020b8acc
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b8b94EP12ZMBEntryARAB kind:function(thumb,size=0x9c) addr:0x020b8b74
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b8c30ERK12EntranceInfo kind:function(thumb,size=0x4e) addr:0x020b8c10
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b8c80Ei kind:function(thumb,size=0x10) addr:0x020b8c60
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b8c90EP14ZMBSectionCMPT kind:function(thumb,size=0x8) addr:0x020b8c70
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b8c98EP14ZMBSectionCAME kind:function(thumb,size=0x8) addr:0x020b8c78
-_ZN26UnkStruct_027e0cd8_0C_Base13ZMB_ParseROMBEP14ZMBSectionROMB kind:function(thumb,size=0x8) addr:0x020b8c80
+_ZN13CourseManager6CreateEv kind:function(thumb,size=0x16) addr:0x020b774c
+_ZN13CourseManagerC1Ev kind:function(thumb,size=0x68) addr:0x020b7764
+_ZN13CourseManagerD1Ev kind:function(thumb,size=0x42) addr:0x020b77cc
+_ZN13CourseManager19func_ov001_020b7830EPK12EntranceInfo kind:function(thumb,size=0x24c) addr:0x020b7810
+_ZN13CourseManager19func_ov001_020b7a7cEv kind:function(thumb,size=0xbc) addr:0x020b7a5c
+_ZN13CourseManager19func_ov001_020b7b38EPK15CourseListEntryPK29UnkStruct_func_ov000_020702a8 kind:function(thumb,size=0xd0) addr:0x020b7b18
+_ZN13CourseManager19func_ov001_020b7c08EPK12EntranceInfoPK21UnkStruct_WarpUnk1_A0 kind:function(thumb,size=0x15c) addr:0x020b7be8
+_ZN13CourseManager19func_ov001_020b7d64EPK12EntranceInfo kind:function(thumb,size=0xec) addr:0x020b7d44
+_ZN13CourseManager19func_ov001_020b7e50Ev kind:function(thumb,size=0x16) addr:0x020b7e30
+_ZN13CourseManager19func_ov001_020b7e68EPK12EntranceInfob kind:function(thumb,size=0x1d4) addr:0x020b7e48
+_ZN13CourseManager19func_ov001_020b803cEv kind:function(thumb,size=0xc0) addr:0x020b801c
+_ZN13CourseManager19func_ov001_020b80fcEj kind:function(thumb,size=0x24) addr:0x020b80dc
+_ZN13CourseManager19func_ov001_020b8120Ej kind:function(thumb,size=0x6c) addr:0x020b8100
+_ZN13CourseManager19func_ov001_020b818cEv kind:function(thumb,size=0x3c) addr:0x020b816c
+_ZN8InstanceI13CourseManagerEC2Ev kind:function(thumb,size=0xc) addr:0x020b81a8
+_ZN8InstanceI13CourseManagerED2Ev kind:function(thumb,size=0xc) addr:0x020b81b4
+_ZN14MapManagerBaseC2EP13CourseManager kind:function(thumb,size=0x218) addr:0x020b81c0
+_ZN14MapManagerBaseD1Ev kind:function(thumb,size=0x98) addr:0x020b83d8
+_ZN14MapManagerBaseD0Ev kind:function(thumb,size=0xa0) addr:0x020b8470
+_ZN14MapManagerBaseD2Ev kind:function(thumb,size=0x98) addr:0x020b8510
+_ZN14MapManagerBase8vfunc_38Ev kind:function(thumb,size=0x2) addr:0x020b85a8
+_ZN14MapManagerBase8vfunc_08Ev kind:function(thumb,size=0x2) addr:0x020b85ac
+_ZN14MapManagerBase19func_ov001_020b85d0EPK12EntranceInfo kind:function(thumb,size=0x2f0) addr:0x020b85b0
+_ZN14MapManagerBase19func_ov001_020b88c0Ei kind:function(thumb,size=0x2c) addr:0x020b88a0
+_ZN14MapManagerBase19func_ov001_020b88ecEv kind:function(thumb,size=0x60) addr:0x020b88cc
+_ZN14MapManagerBase14LoadSceneModelEPK12EntranceInfo kind:function(thumb,size=0xe0) addr:0x020b892c
+_ZN14MapManagerBase8vfunc_1CEPK12EntranceInfobb kind:function(thumb,size=0x2c) addr:0x020b8a0c
+_ZN14MapManagerBase8vfunc_20Ev kind:function(thumb,size=0x2) addr:0x020b8a38
+_ZN14MapManagerBase19func_ov001_020b8a5cEii kind:function(thumb,size=0x8e) addr:0x020b8a3c
+_ZN14MapManagerBase19func_ov001_020b8aecEv kind:function(thumb,size=0xa8) addr:0x020b8acc
+_ZN14MapManagerBase19func_ov001_020b8b94EP12ZMBEntryARAB kind:function(thumb,size=0x9c) addr:0x020b8b74
+_ZN14MapManagerBase19func_ov001_020b8c30ERK12EntranceInfo kind:function(thumb,size=0x4e) addr:0x020b8c10
+_ZN14MapManagerBase19func_ov001_020b8c80Ei kind:function(thumb,size=0x10) addr:0x020b8c60
+_ZN14MapManagerBase19func_ov001_020b8c90EP14ZMBSectionCMPT kind:function(thumb,size=0x8) addr:0x020b8c70
+_ZN14MapManagerBase19func_ov001_020b8c98EP14ZMBSectionCAME kind:function(thumb,size=0x8) addr:0x020b8c78
+_ZN14MapManagerBase13ZMB_ParseROMBEP14ZMBSectionROMB kind:function(thumb,size=0x8) addr:0x020b8c80
 _ZN24UnkStruct_ov001_020c40f4D1Ev kind:function(thumb,size=0x2) addr:0x020b8c88
-_ZN26UnkStruct_027e0cd8_0C_Base8vfunc_40Eh kind:function(thumb,size=0xfc) addr:0x020b8c8c
+_ZN14MapManagerBase8vfunc_40Eh kind:function(thumb,size=0xfc) addr:0x020b8c8c
 _ZN24UnkStruct_ov001_020c40f4C1Ev kind:function(thumb,size=0xe) addr:0x020b8d88
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b8db8Ev kind:function(thumb,size=0x6c) addr:0x020b8d98
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b8e24Ev kind:function(thumb,size=0x30) addr:0x020b8e04
-_ZN26UnkStruct_027e0cd8_0C_Base19func_ov001_020b8e54Ev kind:function(thumb,size=0x20) addr:0x020b8e34
+_ZN14MapManagerBase10InitSkyboxEv kind:function(thumb,size=0x6c) addr:0x020b8d98
+_ZN14MapManagerBase19func_ov001_020b8e24Ev kind:function(thumb,size=0x30) addr:0x020b8e04
+_ZN14MapManagerBase19func_ov001_020b8e54Ev kind:function(thumb,size=0x20) addr:0x020b8e34
 _ZNSt13__vec_deleterI12EntranceInfoSaIS0_EE13sub_push_backERKS0_N10Metrowerks8int2typeILi0EEE kind:function(thumb,size=0x18) addr:0x020b8e54
 _ZN12CustomVectorI12EntranceInfoED1Ev kind:function(thumb,size=0x1c) addr:0x020b8e6c
 _ZNSt13__vec_deleterIP38UnkStruct_027e0cd8_0C_Base_148_00_BaseSaIS1_EE5eraseEPS1_S4_13UnkMSLStruct1 kind:function(thumb,size=0x3c) addr:0x020b8e88
@@ -313,7 +313,7 @@ _ZN18UnkStruct_027e09c07DestroyEv kind:function(thumb,size=0x8) addr:0x020be2cc
 _ZN18UnkStruct_027e09c0C1Ev kind:function(thumb,size=0xa0) addr:0x020be2d4
 _ZN18UnkStruct_027e09c019func_ov001_020be394Ev kind:function(thumb,size=0x30) addr:0x020be374
 _ZN18UnkStruct_027e09c019func_ov001_020be3c4Ev kind:function(thumb,size=0x18) addr:0x020be3a4
-_ZN18UnkStruct_027e09c019func_ov001_020be3dcEP14UnkFileSystem3P26UnkStruct_027e0cd8_0C_Base kind:function(thumb,size=0x24) addr:0x020be3bc
+_ZN18UnkStruct_027e09c019func_ov001_020be3dcEP14UnkFileSystem3P14MapManagerBase kind:function(thumb,size=0x24) addr:0x020be3bc
 _ZN18UnkStruct_027e09c019func_ov001_020be400Ev kind:function(thumb,size=0x3c) addr:0x020be3e0
 _ZN18UnkStruct_027e09c011DestroyImplEv kind:function(thumb,size=0x20) addr:0x020be41c
 _ZN8InstanceI18UnkStruct_027e09c0EC2Ev kind:function(thumb,size=0xc) addr:0x020be43c
@@ -507,10 +507,10 @@ data_ov001_020c27a8 kind:data(any) addr:0x020c2788
 DSProt_Garbage kind:data(any) addr:0x020c27d4
 bad_mac_addr kind:data(byte[6]) addr:0x020c27ec local
 __sinit_CourseList.cpp kind:function(thumb,size=0x24) addr:0x020c27f4 local
-__sinit_UnkStruct_027e0cd8_0C_001.cpp kind:function(thumb,size=0xb8) addr:0x020c2818
+__sinit_Course/MapManagerBase_001.cpp kind:function(thumb,size=0xb8) addr:0x020c2818
 __sinit_code_020c099c.cpp kind:function(thumb,size=0x10) addr:0x020c28d0 local
 .p__sinit_CourseList.cpp kind:data(word) addr:0x020c28e0 local
-.p__sinit_UnkStruct_027e0cd8_0C_001.cpp kind:data(word) addr:0x020c28e4
+.p__sinit_Course/MapManagerBase_001.cpp kind:data(word) addr:0x020c28e4
 .p__sinit_code_020c099c.cpp kind:data(word) addr:0x020c28e8 local
 NitroStaticInit_11 kind:data(word) addr:0x020c28ec local
 NitroStaticInit_8 kind:data(word) addr:0x020c28f0 local
@@ -526,7 +526,7 @@ NitroStaticInit_11 kind:data(word) addr:0x020c28fc local
 @3574 kind:data(byte[25]) addr:0x020c299c local
 @3575 kind:data(byte[23]) addr:0x020c29b8 local
 @3576 kind:data(byte[4]) addr:0x020c29d0 local
-_ZTV26UnkStruct_027e0cd8_0C_Base kind:data(any) addr:0x020c29d4
+_ZTV14MapManagerBase kind:data(any) addr:0x020c29d4
 data_ov001_020c2a40 kind:data(any) addr:0x020c2a20
 data_ov001_020c2a34 kind:data(any) addr:0x020c2a34
 data_ov001_020c2a48 kind:data(any) addr:0x020c2a48

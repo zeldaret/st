@@ -1,4 +1,5 @@
 #include "CommonFuncs.hpp"
+#include "RefStruct.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
@@ -7,43 +8,43 @@
 extern fx32 data_ov000_020afd14;
 
 UnkStruct_027e0ce0_30_00::UnkStruct_027e0ce0_30_00(UnkStruct_027e0ce0_38 *param1, UnkStruct_027e0ce0_3C *param2,
-                                                   UnkStruct_027e0ce0_40 *param3, PlayerLinkActor *param4,
-                                                   PlayerActorBase *param5) {
-    this->mUnk_00.x = 0;
-    this->mUnk_00.y = 0;
-    this->mUnk_00.z = 0;
+                                                   UnkStruct_027e0ce0_40 *param3, PlayerLinkActor *pLink,
+                                                   PlayerActorBase *pZelda) {
+    this->mUnk_00[PlayerType_Link].x = 0;
+    this->mUnk_00[PlayerType_Link].y = 0;
+    this->mUnk_00[PlayerType_Link].z = 0;
 
-    this->mUnk_0C.x = 0;
-    this->mUnk_0C.y = 0;
-    this->mUnk_0C.z = 0;
+    this->mUnk_00[PlayerType_Zelda].x = 0;
+    this->mUnk_00[PlayerType_Zelda].y = 0;
+    this->mUnk_00[PlayerType_Zelda].z = 0;
 
-    this->mUnk_18  = 0;
-    this->mUnk_1C  = 0;
-    this->mUnk_20  = 0;
-    this->mUnk_24  = 0;
-    this->mUnk_28  = false;
-    this->mUnk_2C  = param1;
-    this->mUnk_30  = param2;
-    this->mUnk_34  = param3;
-    this->mpPlayer = param4;
-    this->mpZelda  = param5;
+    this->mUnk_18                         = 0;
+    this->mUnk_1C                         = 0;
+    this->mUnk_20                         = 0;
+    this->mUnk_24                         = 0;
+    this->mUnk_28                         = false;
+    this->mUnk_2C                         = param1;
+    this->mUnk_30                         = param2;
+    this->mUnk_34                         = param3;
+    this->mPlayerActors[PlayerType_Link]  = pLink;
+    this->mPlayerActors[PlayerType_Zelda] = pZelda;
 
     if (param1 != NULL) {
         param1->func_ov026_020de908(this);
         this->mUnk_18 = 0x10;
     } else {
         if (param2 != NULL) {
-            VecFx32_Copy(&param2->mUnk_00, &this->mUnk_00);
+            VecFx32_Copy(&param2->mUnk_00[PlayerType_Link], &this->mUnk_00[PlayerType_Link]);
         } else {
             //! TODO: fake match
-            func_ov000_0208dd60(*(unk32 *volatile *) &param4, this);
+            func_ov000_0208dd60(*(unk32 *volatile *) &pLink, this);
         }
 
-        this->mUnk_00.y += data_ov000_020afd14;
+        this->mUnk_00[PlayerType_Link].y += data_ov000_020afd14;
         this->mUnk_18 = 0x01;
     }
 
-    VecFx32_Copy(&this->mUnk_00, &this->mUnk_0C);
+    VecFx32_Copy(&this->mUnk_00[PlayerType_Link], &this->mUnk_00[PlayerType_Zelda]);
     this->mUnk_1C = this->mUnk_18;
 }
 

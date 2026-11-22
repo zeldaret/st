@@ -3,11 +3,11 @@
 #include "Actor/ActorId.hpp"
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "RefStruct.hpp"
 #include "Save/SaveFile.hpp"
 #include "Save/SaveManager.hpp"
 #include "System/Random.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "math.hpp"
 #include "nitro/fx.h"
 #include "nitro/math.h"
@@ -89,7 +89,7 @@ void ActorUnkKOTA::func_ov094_0216e5a4(const ActorParams *param1) {
     UnkStruct_027e0cd8_0C_Base_148_00 *ret = NULL;
 
     if (mUnk_5C.mParams[1] != 0) {
-        ret = data_027e0cd8->mUnk_0C->func_ov000_02080620(mUnk_5C.mParams[1]);
+        ret = gpCourseManager->mpMapMgr->func_ov000_02080620(mUnk_5C.mParams[1]);
     }
 
     if (ret == NULL) {
@@ -101,7 +101,7 @@ void ActorUnkKOTA::func_ov094_0216e5a4(const ActorParams *param1) {
         sp68 = ret->mUnk_14.unk_00;
         VEC_Add(&sp68, &ret->mUnk_14.unk_0C, &sp68);
         func_01ff93c0(&sp68, FX_F32_TO_FX32(0.5f));
-        sp68.y = data_027e0cd8->mUnk_0C->vfunc_28(&sp68, 1, 0);
+        sp68.y = gpCourseManager->mpMapMgr->vfunc_28(&sp68, 1, 0);
 
         u16 sp16[4] = {0};
         for (Actor **ptr = mUnk_94; ptr != mUnk_D4; ptr++) {
@@ -193,7 +193,7 @@ void ActorUnkKOTA::func_ov094_0216e5a4(const ActorParams *param1) {
 void ActorUnkKOTA::func_ov094_0216e9fc(VecFx32 *param1, const VecFx32 *param2, fx32 param3) const {
     VecFx32_Copy(param2, param1);
     u16 below = 0, above = 0;
-    param1->y = data_027e0cd8->mUnk_0C->vfunc_28(param1, 1, 0);
+    param1->y = gpCourseManager->mpMapMgr->vfunc_28(param1, 1, 0);
 
     for (Actor **ptr = (Actor **) mUnk_94; ptr != mUnk_D4; ptr++) {
         if (*ptr != NULL) {

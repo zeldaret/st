@@ -1,5 +1,6 @@
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Cutscene/Cutscene.hpp"
 #include "Game/GameModeManager.hpp"
 #include "MainGame/AdventureMode.hpp"
@@ -20,7 +21,6 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e09c0.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
@@ -65,7 +65,7 @@ UnkStruct_027e09a4::UnkStruct_027e09a4(SceneMode mode) :
     UnkStruct_027e09a0::Create();
     UnkStruct_027e09c0::Create();
     UnkStruct_027e09bc::Create();
-    UnkStruct_027e0cd8::Create();
+    CourseManager::Create();
     UnkStruct_027e0ce0::Create();
     ActorManager::Create();
     MapObjectManager::Create();
@@ -123,7 +123,7 @@ void UnkStruct_027e09a4::func_ov001_020b66dc() {
     MapObjectManager::Destroy();
     ActorManager::Destroy();
     UnkStruct_027e0ce0::Destroy();
-    UnkStruct_027e0cd8::Destroy();
+    CourseManager::Destroy();
     UnkStruct_027e09bc::Destroy();
     UnkStruct_027e09c0::Destroy();
     UnkStruct_027e09a0::Destroy();
@@ -387,9 +387,9 @@ void ActorManager::Destroy() {
     }
 }
 
-void UnkStruct_027e0cd8::Destroy() {
-    if (data_027e0cd8 != NULL) {
-        delete data_027e0cd8;
+void CourseManager::Destroy() {
+    if (gpCourseManager != NULL) {
+        delete gpCourseManager;
     }
 }
 
@@ -462,11 +462,11 @@ void UnkStruct_027e09a4_54_Base::func_ov001_020b6fa0(CourseListEntry *pCourseEnt
     strncpy((char *) this->mUnk_0C, pCourseEntry->name, sizeof(this->mUnk_0C) - 1);
     this->mUnk_30 = pCourseEntry->unk_1A;
     this->vfunc_0C();
-    data_027e0cd8->func_ov001_020b7830(&this->mUnk_1C);
+    gpCourseManager->func_ov001_020b7830(&this->mUnk_1C);
 }
 
 void UnkStruct_027e09a4_54_Base::func_ov001_020b7048() {
-    data_027e0cd8->func_ov001_020b7a7c();
+    gpCourseManager->func_ov001_020b7a7c();
 }
 
 UnkStruct_WarpUnk1_24::UnkStruct_WarpUnk1_24() {
@@ -476,7 +476,7 @@ UnkStruct_WarpUnk1_24::UnkStruct_WarpUnk1_24() {
 UnkStruct_WarpUnk1::UnkStruct_WarpUnk1() :
     mCurEntrance(false),
     mNextEntrance(false) {
-    this->mSpawnTransitionType = 0;
+    this->mEntryTransitionType = EntryTransitionType_None;
     this->mUnk_A0.mUnk_04.x    = 0;
     this->mUnk_A0.mUnk_04.y    = 0;
     this->mUnk_A0.mUnk_04.z    = 0;
@@ -489,18 +489,18 @@ UnkStruct_WarpUnk1::UnkStruct_WarpUnk1() :
 // non-matching
 bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
     bool iVar9;
-    u16 uVar1;
+    u16 entryTransDuration;
     UnkStruct_027e0ce0_38 *pTrainPlayer;
     unk16 local_18;
     unk32 uVar8;
     bool bVar2;
 
-    iVar9        = false;
-    uVar1        = data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_06;
-    pTrainPlayer = data_027e0ce0->mUnk_38;
+    iVar9              = false;
+    entryTransDuration = data_ov000_020aa88c[this->mEntryTransitionType].mDuration;
+    pTrainPlayer       = data_027e0ce0->mUnk_38;
 
     if (pTrainPlayer == NULL) {
-        VecFx32 *pPos = data_027e0ce0->func_01fff148(0);
+        VecFx32 *pPos = data_027e0ce0->func_01fff148(PlayerType_Link);
         VecFx32_Copy(pPos, &this->mUnk_A0.mUnk_04);
         func_01fff17c(&local_18, data_027e0ce0, 0);
         this->mUnk_A0.mUnk_10 = local_18;
@@ -514,14 +514,14 @@ bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
     this->mUnk_A0.mSceneIndex = this->mCurEntrance.sceneIndex;
     this->mUnk_A0.mRoomIndex  = this->mCurEntrance.roomIndex;
 
-    switch (this->mSpawnTransitionType) {
-        case 0x04:
-        case 0x05:
+    switch (this->mEntryTransitionType) {
+        case EntryTransitionType_4:
+        case EntryTransitionType_5:
             break;
-        case 0x02:
-        case 0x1D:
+        case EntryTransitionType_2:
+        case EntryTransitionType_29:
 #if IS_JP
-        case 0x29:
+        case EntryTransitionType_41:
 #endif
             iVar9 = true;
             break;
@@ -539,15 +539,15 @@ bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
     this->mCurEntrance = this->mNextEntrance;
 
     if (iVar9) {
-        data_027e09a4->func_ov001_020b6924(&this->mNextEntrance, this->mSpawnTransitionType == 2);
+        data_027e09a4->func_ov001_020b6924(&this->mNextEntrance, this->mEntryTransitionType == EntryTransitionType_2);
     } else {
-        data_027e0cd8->func_ov001_020b7c08(&this->mNextEntrance, &this->mUnk_A0);
+        gpCourseManager->func_ov001_020b7c08(&this->mNextEntrance, &this->mUnk_A0);
     }
 
     uVar8 = 0;
     bVar2 = false;
 
-    data_027e0cd8->mUnk_0C->func_ov001_020b8a5c(this->mNextEntrance.spawnIndex, 0);
+    gpCourseManager->mpMapMgr->func_ov001_020b8a5c(this->mNextEntrance.spawnIndex, 0);
 
     this->Detach();
     this->mUnk_0C = false;
@@ -563,35 +563,35 @@ bool UnkStruct_WarpUnk1::func_ov001_020b7144() {
         this->Detach();
         this->mUnk_0C = false;
     } else {
-        if (data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_00) {
+        if (data_ov000_020aa88c[this->mEntryTransitionType].mDoCircleTransition) {
             if (data_027e09a4->GetCurrentCourseEntry()->unk_18 == 1) {
                 this->mUnk_50.mUnk_18 = 0x00130000;
                 this->mUnk_50.mUnk_1C = 0x00050000;
                 this->mUnk_50.mUnk_24 = 0x00004000;
-                this->mUnk_50.func_ov000_02065f68(0x02, 0x00, -0xE0, uVar1, 0x02);
+                this->mUnk_50.func_ov000_02065f68(0x02, 0x00, -0xE0, entryTransDuration, 0x02);
                 data_0204e5f8.func_0201b9a8(&this->mUnk_50);
                 this->mUnk_1E = 0x02;
                 this->func_0201bba4(0x00, 0x02);
                 data_0204e5f8.func_0201b9a8(this);
                 bVar2 = true;
             } else {
-                this->mUnk_24.func_ov000_02070f58(uVar1);
+                this->mUnk_24.func_ov000_02070f58(entryTransDuration);
                 data_0204e5f8.func_0201b9a8(&this->mUnk_24);
             }
         }
 
-        if ((data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_01 ||
-             data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_02) &&
+        if ((data_ov000_020aa88c[this->mEntryTransitionType].mDoBottomScreen ||
+             data_ov000_020aa88c[this->mEntryTransitionType].mDoTopScreen) &&
             !bVar2) {
-            if (data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_03) {
+            if (data_ov000_020aa88c[this->mEntryTransitionType].mIsWhite) {
                 this->mUnk_14 = 0x00010000;
             } else {
                 this->mUnk_14 = 0xFFFF0000;
             }
 
-            this->func_0201bba4(0x02, uVar1);
-            this->mUnk_18 = data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_01;
-            this->mUnk_19 = data_ov000_020aa88c[this->mSpawnTransitionType].mUnk_02;
+            this->func_0201bba4(0x02, entryTransDuration);
+            this->mDoBottomScreen = data_ov000_020aa88c[this->mEntryTransitionType].mDoBottomScreen;
+            this->mDoTopScreen    = data_ov000_020aa88c[this->mEntryTransitionType].mDoTopScreen;
             data_0204e5f8.func_0201b9a8(this);
         }
     }

@@ -1,10 +1,10 @@
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "Player/PlayerLink.hpp"
 #include "Unknown/UnkStruct_0204a088.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
-#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "global.h"
@@ -31,7 +31,7 @@ unk32 PlayerLinkActor::func_ov017_020bd6e0(bool param1) {
         return 1;
     }
 
-    if (data_027e0cd8->mUnk_0C->func_ov000_0208217c(&this->mPos.vec, 1)) {
+    if (gpCourseManager->mpMapMgr->func_ov000_0208217c(&this->mPos.vec, 1)) {
         return 2;
     }
 
@@ -265,7 +265,7 @@ void PlayerLinkActor::func_ov017_020bdd84(void *param1, unk32 param2) {
             this->mUnk_70->func_ov017_020bbcd8(&this->mPos.vec, this->mAngle);
         }
 
-        if (param1 == NULL && data_0204a110.func_02019514() == 0) {
+        if (param1 == NULL && !data_0204a110.func_02019514()) {
             if (this->mUnk_134 != NULL) {
                 this->func_ov000_0208cc20(&sp10);
                 PlayerLinkActor_134 *temp_r1 = this->mUnk_134;
