@@ -19,6 +19,7 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0d38.hpp"
+#include "Unknown/UnkStruct_ov000_0207f47c.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "flags.h"
 #include "math.hpp"
@@ -26,18 +27,14 @@
 #include "nitro/math.h"
 #include "nitro/types.h"
 #include "nns/g3d/g3d.h"
+#include "profile.hpp"
 #include "types.h"
 
-struct UnkStruct_data_ov094_021785a4 {
-    /* 00 */ PAD(0x00, 0x1C);
-    /* 1C */ unk32 *mUnk_1C;
-};
-
-extern UnkStruct_data_ov094_021785a4 data_ov094_021785a4;
 extern MapObject_10 data_ov094_021786b0;
 
-// Not extern (in sinit)
-extern UnkStruct_027e09c0_04 data_ov094_021785c0; // INFO: not sure about the type
+UnkStruct_ov000_0207f47c data_ov094_021785c0;
+
+DECL_PROFILE(ActorProfileUnkPSWB);
 
 PTMF<ActorUnkPSWB> data_ov094_0217703c[0x5] = {
     &ActorUnkPSWB::func_ov094_02166bcc, // ActorUnkPSWBState_0
@@ -54,8 +51,6 @@ PTMF<ActorUnkPSWB> data_ov094_02177064[0x5] = {
     &ActorUnkPSWB::func_ov094_02167024, // ActorUnkPSWBState_3
     &ActorUnkPSWB::func_ov094_0216723c, // ActorUnkPSWBState_4
 };
-
-DECL_PROFILE(ActorProfileUnkPSWB);
 
 Actor *ActorProfileUnkPSWB::Create() {
     return new(HeapIndex_2) ActorUnkPSWB();
@@ -98,7 +93,7 @@ ActorProfileUnkPSWB::ActorProfileUnkPSWB() :
 
     func_ov000_0207f4fc(&mUnk_FC, &stack1, ((tmp & ~0x1F) & ~0x7000) | 0x3000, 1);
 
-    data_ov094_021785a4.mUnk_1C = &mUnk_FC;
+    data_ov094_021785c0.mUnk_00 = &mUnk_FC;
     mUnk_18                     = 2;
     mUnk_1A                     = 0x1333;
 }
