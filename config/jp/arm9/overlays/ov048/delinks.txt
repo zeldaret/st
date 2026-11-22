@@ -6,7 +6,7 @@
     .bss        start:0x02139500 end:0x02139900 kind:bss align:32
 
 src/048_MapC2/UnkStruct_ov048_02137600.cpp:
-    .text       start:0x02132174 end:0x021325c8
+    .text       start:0x021320dc end:0x021325c8
     .data       start:0x02139098 end:0x02139118
 
 src/048_MapC2/Actor/ActorUnkPSBK.cpp:
