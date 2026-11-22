@@ -56,7 +56,7 @@ src/058_Field/Actor/ActorUnkFBSC.cpp:
     .ctor       start:0x02155e7c end:0x02155e80
     .bss        start:0x02158e04 end:0x02158e50
 
-src/058_Field/Actor/ActorPapuchiaBird.cpp:
+src/058_Field/Actor/ActorWhipBird.cpp:
     .text       start:0x0214c804 end:0x0214f0ac
     .init       start:0x02155804 end:0x02155884
     .ctor       start:0x02155e80 end:0x02155e84
