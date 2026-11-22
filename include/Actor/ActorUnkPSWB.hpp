@@ -61,7 +61,7 @@ public:
     /* 14C */ unk32 mUnk_14C;
     /* 150 */ unk32 mUnk_150;
     /* 154 */ unk32 mUnk_154;
-    /* 158 */ unk32 mUnk_158;
+    /* 158 */ fx32 mUnk_158;
     /* 15C */ fx32 mUnk_15C;
     /* 160 */ unk32 mUnk_160;
     /* 164 */ unk8 mUnk_164;
@@ -89,7 +89,7 @@ public:
     /* 24 */ virtual void vfunc_24() override;
     /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorUnkPSWB();
-    /* 58 */ virtual unk32 vfunc_58(VecFx32 *param1) override;
+    /* 58 */ virtual bool vfunc_58(VecFx32 *param1) override;
     /* 5C */ virtual unk32 vfunc_5C(void) override;
     /* 60 */ virtual unk32 vfunc_60(void) override;
     /* 6C */ virtual void vfunc_6C(void) override;

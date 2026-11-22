@@ -99,6 +99,7 @@ ActorProfileUnkPSWB::ActorProfileUnkPSWB() :
 
 ActorUnkPSWB_194::~ActorUnkPSWB_194() {}
 
+// non-matching (first if compiles differently than expected, using 0x102 instead of 0x101 compiles with the right structure)
 bool ActorUnkPSWB_194::vfunc_08(RefStruct ref, unk32 param2, unk32 param3) {
     if (ref.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x100)) ||
         ref.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x101))) {
@@ -129,7 +130,7 @@ ActorUnkPSWB::ActorUnkPSWB() :
     mUnk_14C(0),
     mUnk_150(0),
     mUnk_154(0),
-    mUnk_158(0x1000),
+    mUnk_158(FX_F32_TO_FX32(1.0f)),
     mUnk_15C(0),
     mUnk_160(1),
     mUnk_164(0),
@@ -152,6 +153,7 @@ ActorUnkPSWB::~ActorUnkPSWB() {
     data_027e09c0->func_ov000_0207e254(&mUnk_194);
 }
 
+// non-matching (need to force "ret" onto the stack)
 bool ActorUnkPSWB::Init(unk32 param1) {
 #pragma unused(param1)
     data_ov094_021785c0.func_ov000_0207f4d4();
@@ -167,7 +169,7 @@ bool ActorUnkPSWB::Init(unk32 param1) {
     mUnk_18C = 2;
     if (mUnk_5C.mParams[0] != 0) {
         VecFx32 vec1;
-        fx32 ret; //! TODO: force onto the stack
+        u32 ret; //! TODO: force onto the stack
         VecFx32 vec2;
         if (func_ov000_02070c84(data_027e09a4, &vec1, mUnk_5C.mUnk_24) != 0) {
             ret = gpCourseManager->mpMapMgr->vfunc_28(&vec1, 1, 0);
@@ -244,7 +246,7 @@ void ActorUnkPSWB::Update(void) {
     }
     VecFx32 vec;
     VecFx32_Init(mUnk_140, mPos.y, mUnk_144, &vec);
-    if (func_ov048_021307f8(this, GET_DIRECTION(func_02016958(&mPos, &vec))) != 0) {
+    if (UnkStruct_ov048_02137600::vfunc_54(GET_DIRECTION(func_02016958(&mPos, &vec))) != 0) {
         return;
     }
 
@@ -295,7 +297,7 @@ void ActorUnkPSWB::func_ov094_02166c88(void) {
         cond = true;
     }
 
-    if (cond && func_ov048_021307f8(this, mUnk_160) != 0) {
+    if (cond && UnkStruct_ov048_02137600::vfunc_54(mUnk_160) != 0) {
         VecFx32 vec;
         func_ov048_02130790(this, mUnk_160, &vec, 0x1000);
         mUnk_140 = vec.x;
@@ -340,7 +342,7 @@ void ActorUnkPSWB::func_ov094_02166e10(void) {
     this->func_ov094_0216781c();
 }
 
-// non-matching (wrong class, reg usage in condition)
+// non-matching (missing mov in &0x1F condition)
 void ActorUnkPSWB::func_ov094_02166e60(void) {
     this->func_ov000_02098838();
 
@@ -448,7 +450,7 @@ void ActorUnkPSWB::func_ov094_02167224(void) {
     VecFx32_Init(0, 0, 0, &mVel);
 }
 
-// non-matching (stack ordering, lsr/asr shift)
+// non-matching (stack ordering, lsr/asr shift, func call args)
 void ActorUnkPSWB::func_ov094_0216723c(void) {
     func_01ff916c(&mUnk_150, 4, 0);
 
@@ -466,7 +468,8 @@ void ActorUnkPSWB::func_ov094_0216723c(void) {
 
     switch (mUnk_166) {
         case 0: {
-            if (func_ov031_020d9c34(data_027e0d38) != 0 && GET_FLAG2(mUnk_180, 1)) {
+            //! FIX: func_ov031_020d9c34 has no visible args in the binary
+            if (data_027e0d38->func_ov031_020d9c34(0, NULL) != 0 && GET_FLAG2(mUnk_180, 1)) {
                 data_027e09a8->func_ov000_02071b30(0x991F, &mPos, 0);
 
                 unk32 var1;
@@ -501,7 +504,8 @@ void ActorUnkPSWB::func_ov094_0216723c(void) {
             break;
         }
         case 1:
-            if (func_ov031_020d9c34(data_027e0d38) == 0) {
+            //! FIX: func_ov031_020d9c34 has no visible args in the binary
+            if (data_027e0d38->func_ov031_020d9c34(0, NULL) == 0) {
                 mUnk_166 = 0;
             }
             mUnk_16C += 0x300;
@@ -605,6 +609,7 @@ unk32 ActorUnkPSWB::vfunc_60(void) {
     return 0;
 }
 
+// non-matching (regalloc)
 void ActorUnkPSWB::vfunc_2C(unk32 param1) {
     mUnk_190.Update();
 
@@ -681,7 +686,7 @@ void ActorUnkPSWB::func_ov094_02167b64(unk32 param1) {
         if (this->func_ov094_02167b24(param1)) {
             VecFx32 vec;
             this->func_ov094_021675ac(&vec);
-            if (this->vfunc_58(&vec) != 0) {
+            if (this->vfunc_58(&vec)) {
                 func_ov048_02130aa4(this, &vec);
                 this->func_ov094_021668e0(1);
             }
@@ -770,6 +775,7 @@ void ActorUnkPSWB::func_ov094_02167dbc(void) {
     }
 }
 
+// non-matching (stack accesses, shifts, some more)
 void ActorUnkPSWB::func_ov094_02167e58(void) {
     if (mUnk_5C.mParams[0] == 0) {
         return;
@@ -854,11 +860,10 @@ void ActorUnkPSWB::func_ov094_02167e58(void) {
     }
 }
 
-// return bool?
-unk32 ActorUnkPSWB::vfunc_58(VecFx32 *param1) {
-    if (UnkStruct_ov048_02137600::vfunc_58(param1) != 0) {
+bool ActorUnkPSWB::vfunc_58(VecFx32 *param1) {
+    if (UnkStruct_ov048_02137600::vfunc_58(param1)) {
         u32 var1;
-        unk32 ret = 1;
+        bool ret = true;
         func_01fff05c(&var1, gpCourseManager->mpMapMgr, param1);
         if ((var1 & 0x1F) != 0xC) {
             u32 var2; // some kind of ref?
@@ -869,12 +874,12 @@ unk32 ActorUnkPSWB::vfunc_58(VecFx32 *param1) {
                 cond = false;
             }
             if (!cond) {
-                ret = 0;
+                ret = false;
             }
         }
         return ret;
     } else {
-        return 0;
+        return false;
     }
 }
 

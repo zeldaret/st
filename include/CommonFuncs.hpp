@@ -365,8 +365,6 @@ unk32 func_ov026_0212e54c();
 
 // overlay 31
 void func_ov031_020dcea4(void *, UnkStruct_027e0ce0_40_Base_78 *, UnkAngleStruct);
-void func_ov031_020d9314(unk32, unk32, void *);
-unk32 func_ov031_020d9c34(UnkStruct_027e0d38 *);
 void func_ov031_020e0f30(RefStruct);
 unk16 func_ov031_020e3dd0(Actor *param0);
 void func_ov031_020f439c(void *, Vec3s *, unk32);
@@ -384,7 +382,6 @@ void func_ov040_0212bab4(unk32); // might be in Actor class or one of its subcla
 
 // overlay 48
 unk32 func_ov048_02130790(Actor *, unk32, VecFx32 *, unk32);
-unk32 func_ov048_021307f8(Actor *, unk32);
 unk32 func_ov048_02130aa4(Actor *, VecFx32 *);
 
 // overlay 70
