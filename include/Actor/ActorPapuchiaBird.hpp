@@ -7,55 +7,55 @@
 #include "global.h"
 #include "types.h"
 
-class ActorUnkWPBD;
+class ActorPapuchiaBird;
 
-enum ActorUnkWPBDState_ {
-    ActorUnkWPBDState_0 = 0,
-    ActorUnkWPBDState_1 = 1,
-    ActorUnkWPBDState_2 = 2,
-    ActorUnkWPBDState_3 = 3,
-    ActorUnkWPBDState_4 = 4,
-    ActorUnkWPBDState_Max
+enum ActorPapuchiaBirdState_ {
+    ActorPapuchiaBirdState_0 = 0,
+    ActorPapuchiaBirdState_1 = 1,
+    ActorPapuchiaBirdState_2 = 2,
+    ActorPapuchiaBirdState_3 = 3,
+    ActorPapuchiaBirdState_4 = 4,
+    ActorPapuchiaBirdState_Max
 };
 
-class ActorUnkWPBD_214 : public Actor_C4 {
+class ActorPapuchiaBird_214 : public Actor_C4 {
 public:
     /* 00 (base) */
     /* 24 */
 
-    ActorUnkWPBD_214(ActorUnkWPBD *param1);
+    ActorPapuchiaBird_214(ActorPapuchiaBird *param1);
 
     /* 00 */ virtual bool vfunc_00(RefStruct ref, unk32 param2) override;
 };
 
-class ActorUnkWPBD_32C : public UnkStruct_ov031_Items_00 {
+class ActorPapuchiaBird_32C : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (base) */
     /* 04 */ PAD(0x04, 0x08);
-    /* 08 */ ActorUnkWPBD *mUnk_08;
+    /* 08 */ ActorPapuchiaBird *mUnk_08;
     /* 0C */ Timer mUnk_0C;
     /* 10 */
 
-    ActorUnkWPBD_32C(ActorUnkWPBD *param1) :
+    ActorPapuchiaBird_32C(ActorPapuchiaBird *param1) :
         mUnk_08(param1),
         mUnk_0C(0, 0) {}
 
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
 };
 
-class ActorUnkWPBD_2CC : public UnkStruct_0204a060_Base {
+class ActorPapuchiaBird_2CC : public UnkStruct_0204a060_Base {
 public:
     /* 00 (base) */
-    /* 24 */ ActorUnkWPBD *mUnk_24;
+    /* 24 */ ActorPapuchiaBird *mUnk_24;
     /* 28 */
 
-    ActorUnkWPBD_2CC(ActorUnkWPBD *actor) :
+    ActorPapuchiaBird_2CC(ActorPapuchiaBird *actor) :
         mUnk_24(actor) {}
 
     /* 0C */ virtual void vfunc_0C() override;
 };
 
-class ActorUnkWPBD : public Actor {
+class ActorPapuchiaBird : public Actor {
 public:
     /* 000 (base) */
     /* 094 */ ActorLokomo_2BC mUnk_094;
@@ -66,7 +66,7 @@ public:
     /* 1F0 */ s16 mUnk_1F0;
     /* 1F2 */ unk16 mUnk_1F2;
     /* 1F4 */ Actor_9C mUnk_1F4;
-    /* 214 */ ActorUnkWPBD_214 mUnk_214;
+    /* 214 */ ActorPapuchiaBird_214 mUnk_214;
     /* 238 */ VecFx32Cpp mUnk_238;
     /* 244 */ VecFx32Cpp mUnk_244;
     /* 250 */ VecFx32Cpp mUnk_250;
@@ -87,16 +87,16 @@ public:
     /* 2A0 */ unk32 mUnk_2A0;
     /* 2A4 */ unk32 mUnk_2A4;
     /* 2A8 */ MtxFx33 mUnk_2A8;
-    /* 2CC */ ActorUnkWPBD_2CC mUnk_2CC;
+    /* 2CC */ ActorPapuchiaBird_2CC mUnk_2CC;
     /* 2F4 */ Actor_Derived1_EC mUnk_2F4;
     /* 30C */ RefStruct mUnk_30C;
     /* 310 */ RefStruct mUnk_310;
     /* 314 */ VecFx32Cpp mUnk_314;
     /* 320 */ VecFx32Cpp mUnk_320;
-    /* 32C */ ActorUnkWPBD_32C mUnk_32C;
+    /* 32C */ ActorPapuchiaBird_32C mUnk_32C;
     /* 33C */
 
-    ActorUnkWPBD();
+    ActorPapuchiaBird();
 
     /* 1C */ virtual bool Init(unk32 param1) override;
     /* 20 */ virtual void Setup() override;
@@ -133,13 +133,13 @@ public:
     bool func_ov058_0214d2c4(unk32 param1);
 };
 
-class ActorProfileUnkWPBD : public ActorProfile_Derived1 {
+class ActorProfilePapuchiaBird : public ActorProfile_Derived1 {
 public:
     /* 00 (base) */
 
-    ActorProfileUnkWPBD();
+    ActorProfilePapuchiaBird();
 
     /* 0C */ virtual Actor *Create();
 
-    static ActorProfileUnkWPBD *GetProfile();
+    static ActorProfilePapuchiaBird *GetProfile();
 };

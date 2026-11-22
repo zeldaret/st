@@ -1,4 +1,4 @@
-#include "Actor/ActorUnkWPBD.hpp"
+#include "Actor/ActorPapuchiaBird.hpp"
 
 #include "Actor/ActorManager.hpp"
 #include "Actor/Actor_ov031_02114438.hpp"
@@ -18,19 +18,19 @@ static VecFx32 data_ov058_02155300          = {.x = FX_F32_TO_FX32(2.0f), .y = -
 static const VecFx32Cpp data_ov058_02155318 = VecFx32Cpp(FX_F32_TO_FX32(18.0f), FX_F32_TO_FX32(4.0f), FX_F32_TO_FX32(15.0f));
 static const VecFx32Cpp data_ov058_0215530c = VecFx32Cpp(FX_F32_TO_FX32(4.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(15.0f));
 
-static PTMF<ActorUnkWPBD> data_ov058_02155324[ActorUnkWPBDState_Max] = {
-    &ActorUnkWPBD::func_ov058_0214b61c, // ActorUnkWPBDState_0
-    &ActorUnkWPBD::func_ov058_0214b820, // ActorUnkWPBDState_1
-    &ActorUnkWPBD::func_ov058_0214bd98, // ActorUnkWPBDState_2
-    &ActorUnkWPBD::func_ov058_0214c078, // ActorUnkWPBDState_3
-    &ActorUnkWPBD::func_ov058_0214c334, // ActorUnkWPBDState_4
+static PTMF<ActorPapuchiaBird> data_ov058_02155324[ActorPapuchiaBirdState_Max] = {
+    &ActorPapuchiaBird::func_ov058_0214b61c, // ActorPapuchiaBirdState_0
+    &ActorPapuchiaBird::func_ov058_0214b820, // ActorPapuchiaBirdState_1
+    &ActorPapuchiaBird::func_ov058_0214bd98, // ActorPapuchiaBirdState_2
+    &ActorPapuchiaBird::func_ov058_0214c078, // ActorPapuchiaBirdState_3
+    &ActorPapuchiaBird::func_ov058_0214c334, // ActorPapuchiaBirdState_4
 };
-static PTMF<ActorUnkWPBD> data_ov058_0215534c[ActorUnkWPBDState_Max] = {
-    &ActorUnkWPBD::func_ov058_0214b620, // ActorUnkWPBDState_0
-    &ActorUnkWPBD::func_ov058_0214b8dc, // ActorUnkWPBDState_1
-    &ActorUnkWPBD::func_ov058_0214bfa4, // ActorUnkWPBDState_2
-    &ActorUnkWPBD::func_ov058_0214c0b4, // ActorUnkWPBDState_3
-    &ActorUnkWPBD::func_ov058_0214c394, // ActorUnkWPBDState_4
+static PTMF<ActorPapuchiaBird> data_ov058_0215534c[ActorPapuchiaBirdState_Max] = {
+    &ActorPapuchiaBird::func_ov058_0214b620, // ActorPapuchiaBirdState_0
+    &ActorPapuchiaBird::func_ov058_0214b8dc, // ActorPapuchiaBirdState_1
+    &ActorPapuchiaBird::func_ov058_0214bfa4, // ActorPapuchiaBirdState_2
+    &ActorPapuchiaBird::func_ov058_0214c0b4, // ActorPapuchiaBirdState_3
+    &ActorPapuchiaBird::func_ov058_0214c394, // ActorPapuchiaBirdState_4
 };
 static ActorUnkZLSL_AnimationTag data_ov058_02155374[2] = {
     {0, "wpbd_wait1"},
@@ -42,19 +42,19 @@ public:
     /* 00 */ bool mUnk_00;
 };
 
-DECL_PROFILE(ActorProfileUnkWPBD);
+DECL_PROFILE(ActorProfilePapuchiaBird);
 static UnkStruct_UnkWPBD_bss data_ov058_02157110;
 
-Actor *ActorProfileUnkWPBD::Create() {
-    return new(HeapIndex_2) ActorUnkWPBD();
+Actor *ActorProfilePapuchiaBird::Create() {
+    return new(HeapIndex_2) ActorPapuchiaBird();
 }
 
-ActorProfileUnkWPBD::ActorProfileUnkWPBD() :
-    ActorProfile_Derived1(ActorId_WPBD) {
+ActorProfilePapuchiaBird::ActorProfilePapuchiaBird() :
+    ActorProfile_Derived1(ActorId_PapuchiaBird) {
     this->mUnk_04.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(-0.5002f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.5f));
 }
 
-bool ActorUnkWPBD_32C::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
+bool ActorPapuchiaBird_32C::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
     unk32 var = param1->mUnk_04->mUnk_24[param1->mUnk_00->mUnk_06] & 0x1F;
     if (var == 0x2 || var == 0x0) {
         return false;
@@ -70,20 +70,20 @@ bool ActorUnkWPBD_32C::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 pa
     return ret;
 }
 
-ActorUnkWPBD_214::ActorUnkWPBD_214(ActorUnkWPBD *param1) :
+ActorPapuchiaBird_214::ActorPapuchiaBird_214(ActorPapuchiaBird *param1) :
     Actor_C4(param1) {
     this->mUnk_20 = param1;
     this->mUnk_04 = 0x2;
 }
 
-bool ActorUnkWPBD_214::vfunc_00(RefStruct ref, unk32 param2) {
-    this->GetActorPtr<ActorUnkWPBD>()->func_ov058_0214cb64();
+bool ActorPapuchiaBird_214::vfunc_00(RefStruct ref, unk32 param2) {
+    this->GetActorPtr<ActorPapuchiaBird>()->func_ov058_0214cb64();
     return this->Actor_C4::vfunc_00(ref, param2);
 }
 
-ActorUnkWPBD::ActorUnkWPBD() :
-    mUnk_094(NNS_G3dGetMdl(GET_PROFILE(ActorProfileUnkWPBD)->vfunc_04()->mUnk_50)),
-    mUnk_100(&mUnk_094, GET_PROFILE(ActorProfileUnkWPBD)->vfunc_04()),
+ActorPapuchiaBird::ActorPapuchiaBird() :
+    mUnk_094(NNS_G3dGetMdl(GET_PROFILE(ActorProfilePapuchiaBird)->vfunc_04()->mUnk_50)),
+    mUnk_100(&mUnk_094, GET_PROFILE(ActorProfilePapuchiaBird)->vfunc_04()),
     mUnk_1EC(0x0),
     mUnk_1EE(0x0),
     mUnk_1F0(0x0),
@@ -121,16 +121,16 @@ ActorUnkWPBD::ActorUnkWPBD() :
     MtxFx33_InitIdentity(&this->mUnk_2A8);
 }
 
-bool ActorUnkWPBD::Init(unk32 param1) {
+bool ActorPapuchiaBird::Init(unk32 param1) {
 #pragma unused(param1)
     if (this->Actor::func_ov000_02098a60(0x1)) {
         return false;
     }
 
     this->mUnk_094.func_ov000_02057c38(0x6, 0x2);
-    this->mUnk_094.func_ov000_0209a7b8(this, &ActorUnkWPBD::func_ov058_0214d078);
+    this->mUnk_094.func_ov000_0209a7b8(this, &ActorPapuchiaBird::func_ov058_0214d078);
 
-    this->SetState(ActorUnkWPBDState_0);
+    this->SetState(ActorPapuchiaBirdState_0);
 
     this->mUnk_100.vfunc_1C(data_ov058_02155374[0], 0x1000, 0x19A, 0x0);
 
@@ -162,7 +162,7 @@ bool ActorUnkWPBD::Init(unk32 param1) {
     return true;
 }
 
-void ActorUnkWPBD::Setup() {
+void ActorPapuchiaBird::Setup() {
     if (this->func_ov058_0214cab8()) {
         ActorLokomo *carben = (ActorLokomo *) func_02016fbc(ActorId_Carben, &this->mPos, 0x0);
         if (carben != NULL) {
@@ -188,14 +188,14 @@ void ActorUnkWPBD::Setup() {
     Actor::func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_WPCH, &params, 0x0);
 }
 
-void ActorUnkWPBD::SetState(ActorState state) {
+void ActorPapuchiaBird::SetState(ActorState state) {
     this->mUnk_2C  = 0x0;
     this->mUnk_28A = 0x0;
     this->mState   = state;
     CALL_PTMF(data_ov058_02155324[this->mState]);
 }
 
-void ActorUnkWPBD::vfunc_24() {
+void ActorPapuchiaBird::vfunc_24() {
     if (data_ov058_02155300.y >= FX_F32_TO_FX32(0.0f) && data_027e09b8->func_ov000_020732ec(data_ov058_02155300.y)) {
         this->Update();
         return;
@@ -209,7 +209,7 @@ void ActorUnkWPBD::vfunc_24() {
 }
 
 // non-matching
-void ActorUnkWPBD::Update() {
+void ActorPapuchiaBird::Update() {
     this->mUnk_3C = &this->mUnk_1F4;
     this->Actor::func_ov000_020989e0();
 
@@ -239,14 +239,14 @@ void ActorUnkWPBD::Update() {
     this->func_ov058_0214cacc();
 
     if (this->func_ov058_0214cab8() && !this->mUnk_296) {
-        if (this->mState != ActorUnkWPBDState_2) {
+        if (this->mState != ActorPapuchiaBirdState_2) {
             bool hasSong = false;
             if (GET_FLAG2(gpMiscAdvManager->mSongs, 2)) {
                 hasSong = true;
             }
 
             if (hasSong) {
-                this->SetState(ActorUnkWPBDState_2);
+                this->SetState(ActorPapuchiaBirdState_2);
             }
         }
 
@@ -270,7 +270,7 @@ void ActorUnkWPBD::Update() {
 }
 
 // non-matching
-void ActorUnkWPBD::vfunc_2C(unk32 param1) {
+void ActorPapuchiaBird::vfunc_2C(unk32 param1) {
     if (!this->func_ov058_0214d2c4(param1)) {
         this->mUnk_295 = false;
         return;
@@ -300,12 +300,12 @@ void ActorUnkWPBD::vfunc_2C(unk32 param1) {
     this->Actor::func_ov017_020bf5c4(&sp08.vec, 0x4CD, 0x4CD, 0x1F, 0x0);
 }
 
-void ActorUnkWPBD::func_ov058_0214b61c() {}
+void ActorPapuchiaBird::func_ov058_0214b61c() {}
 
-void ActorUnkWPBD::func_ov058_0214b620() {
+void ActorPapuchiaBird::func_ov058_0214b620() {
     this->mUnk_2F4.func_ov024_020d6d80(&this->mUnk_268.vec, &this->mVel);
     if (this->mUnk_2F4.mUnk_08 & 0x2) {
-        this->SetState(ActorUnkWPBDState_1);
+        this->SetState(ActorPapuchiaBirdState_1);
     }
 
     VecFx32 sp18;
@@ -327,9 +327,9 @@ void ActorUnkWPBD::func_ov058_0214b620() {
 }
 
 // non-matching
-void ActorUnkWPBD::func_ov058_0214b820() {
+void ActorPapuchiaBird::func_ov058_0214b820() {
     if (this->mUnk_294) {
-        this->SetState(ActorUnkWPBDState_0);
+        this->SetState(ActorPapuchiaBirdState_0);
         return;
     }
 
@@ -340,7 +340,7 @@ void ActorUnkWPBD::func_ov058_0214b820() {
     if (timer >= 0) {
         this->mTimer.Set(0, timer);
     } else {
-        this->SetState(ActorUnkWPBDState_0);
+        this->SetState(ActorPapuchiaBirdState_0);
     }
 
     VecFx32Cpp sp0C;
@@ -354,7 +354,7 @@ void ActorUnkWPBD::func_ov058_0214b820() {
     this->mUnk_288 = FX_Atan2Idx(this->mUnk_238.vec.x, this->mUnk_238.vec.z);
 }
 
-void ActorUnkWPBD::func_ov058_0214b8dc() {
+void ActorPapuchiaBird::func_ov058_0214b8dc() {
     VecFx32Cpp sp34;
     VecFx32Cpp sp28;
     VecFx32Cpp sp1C;
@@ -390,7 +390,7 @@ void ActorUnkWPBD::func_ov058_0214b8dc() {
         }
 
         if (tanDelta < FX_F32_TO_FX32(1.3333)) {
-            this->SetState(ActorUnkWPBDState_0);
+            this->SetState(ActorPapuchiaBirdState_0);
         }
     }
 
@@ -398,10 +398,10 @@ void ActorUnkWPBD::func_ov058_0214b8dc() {
         return;
     }
 
-    this->SetState(ActorUnkWPBDState_0);
+    this->SetState(ActorPapuchiaBirdState_0);
 }
 
-void ActorUnkWPBD::func_ov058_0214bbcc(VecFx32 *param1, fx32 newVelZ) {
+void ActorPapuchiaBird::func_ov058_0214bbcc(VecFx32 *param1, fx32 newVelZ) {
     bool expiredTimer = this->mUnk_32C.mUnk_0C.HasExpired();
 
     if (this->mUnk_290.HasExpired()) {
@@ -439,7 +439,7 @@ void ActorUnkWPBD::func_ov058_0214bbcc(VecFx32 *param1, fx32 newVelZ) {
 }
 
 // non-matching
-void ActorUnkWPBD::func_ov058_0214bd98() {
+void ActorPapuchiaBird::func_ov058_0214bd98() {
     VecFx32Cpp sp6C;
     UnkStackStruct1 stack;
     VecFx32Cpp vec = data_ov058_02155318;
@@ -472,7 +472,7 @@ void ActorUnkWPBD::func_ov058_0214bd98() {
     lokomo->func_ov058_02147d20();
 }
 
-void ActorUnkWPBD::func_ov058_0214bfa4() {
+void ActorPapuchiaBird::func_ov058_0214bfa4() {
     VecFx32Cpp vec = data_ov058_0215530c;
     vec.vec.y      = this->mPos.y;
 
@@ -489,17 +489,17 @@ void ActorUnkWPBD::func_ov058_0214bfa4() {
     this->func_ov058_0214bbcc(&vec.vec, this->mUnk_280);
 }
 
-void ActorUnkWPBD::func_ov058_0214c078() {
+void ActorPapuchiaBird::func_ov058_0214c078() {
     this->mUnk_25C.CopyOut(this->func_ov000_0209853c(PlayerType_Link));
     this->mTimer.Set(0, 100);
 }
 
 // non-matching
-void ActorUnkWPBD::func_ov058_0214c0b4() {
+void ActorPapuchiaBird::func_ov058_0214c0b4() {
     this->mTimer.Update();
     if (this->mTimer.HasReachedMaxU() ||
         func_01ff9258(this->mPos.x - this->mUnk_25C.vec.x, this->mPos.z - this->mUnk_25C.vec.z) < 0x1000) {
-        this->SetState(ActorUnkWPBDState_4);
+        this->SetState(ActorPapuchiaBirdState_4);
     }
 
     if (!this->mUnk_294) {
@@ -527,13 +527,13 @@ void ActorUnkWPBD::func_ov058_0214c0b4() {
     this->mUnk_2F4.mUnk_04 = this->mUnk_2F4.mUnk_00->func_ov000_02059da4(&this->mUnk_25C.vec);
 
     VecFx32_Copy(&this->mPos, &this->mUnk_2F4.mUnk_0C);
-    this->SetState(ActorUnkWPBDState_0);
+    this->SetState(ActorPapuchiaBirdState_0);
 }
 
-void ActorUnkWPBD::func_ov058_0214c334() {
+void ActorPapuchiaBird::func_ov058_0214c334() {
     if (this->mUnk_294) {
         VecFx32_Copy(&this->mPos, &this->mUnk_2F4.mUnk_0C);
-        this->SetState(ActorUnkWPBDState_0);
+        this->SetState(ActorPapuchiaBirdState_0);
         return;
     }
 
@@ -541,7 +541,7 @@ void ActorUnkWPBD::func_ov058_0214c334() {
     this->mUnk_288 = FX_Atan2Idx(this->mUnk_238.vec.x, this->mUnk_238.vec.z);
 }
 
-void ActorUnkWPBD::func_ov058_0214c394() {
+void ActorPapuchiaBird::func_ov058_0214c394() {
     VecFx32Cpp sp34;
     VecFx32Cpp sp28;
     VecFx32Cpp sp1C;
@@ -585,7 +585,7 @@ void ActorUnkWPBD::func_ov058_0214c394() {
 
         if (tanDelta < FX_F32_TO_FX32(1.3333)) {
             VecFx32_Copy(&this->mPos, &this->mUnk_2F4.mUnk_0C);
-            this->SetState(ActorUnkWPBDState_0);
+            this->SetState(ActorPapuchiaBirdState_0);
         }
     }
 
@@ -596,10 +596,10 @@ void ActorUnkWPBD::func_ov058_0214c394() {
     this->mUnk_2F4.mUnk_04 = this->mUnk_2F4.mUnk_00->func_ov000_02059da4(&this->mUnk_25C.vec);
 
     VecFx32_Copy(&this->mPos, &this->mUnk_2F4.mUnk_0C);
-    this->SetState(ActorUnkWPBDState_0);
+    this->SetState(ActorPapuchiaBirdState_0);
 }
 
-void ActorUnkWPBD::func_ov058_0214c6d8() {
+void ActorPapuchiaBird::func_ov058_0214c6d8() {
     VecFx32 *vec = this->Actor::func_ov000_0209853c(PlayerType_Link);
 
     if (func_01ff9258(vec->x - this->mPos.x, vec->z - this->mPos.z) >= 0x7000) {
@@ -625,11 +625,11 @@ void ActorUnkWPBD::func_ov058_0214c6d8() {
         sp0C.CopyIn(&this->mUnk_268);
     }
 
-    this->SetState(ActorUnkWPBDState_3);
+    this->SetState(ActorPapuchiaBirdState_3);
 }
 
 // non-matching
-void ActorUnkWPBD::func_ov058_0214c824() {
+void ActorPapuchiaBird::func_ov058_0214c824() {
     this->Actor::func_ov000_02098a88(0x1, 0x1);
     ActorLokomo *lokomo = (ActorLokomo *) func_02016fbc(ActorId_Carben, &this->mPos, 0x0);
     VecFx32Cpp vec      = lokomo->mUnk_5C.mInitialPos;
@@ -657,7 +657,7 @@ void ActorUnkWPBD::func_ov058_0214c824() {
 }
 
 // non-matching
-void ActorUnkWPBD::func_ov058_0214c92c() {
+void ActorPapuchiaBird::func_ov058_0214c92c() {
     func_01ff930c(&this->mUnk_1F0, this->mUnk_1EC * 2, 0x100);
 
     if (this->mUnk_294) {
@@ -687,7 +687,7 @@ void ActorUnkWPBD::func_ov058_0214c92c() {
     func_01ff930c(&this->mUnk_1EC, (fx16) tanDelta, 0x50);
 }
 
-void ActorUnkWPBD::func_ov058_0214ca40() {
+void ActorPapuchiaBird::func_ov058_0214ca40() {
     fx32 div = FX_Div(this->mUnk_280, FX_F32_TO_FX32(0.085f));
 
     this->mUnk_1EE = 0x800;
@@ -696,11 +696,11 @@ void ActorUnkWPBD::func_ov058_0214ca40() {
     this->mUnk_1EE = FX_MUL(this->mUnk_1EE, div);
 }
 
-bool ActorUnkWPBD::func_ov058_0214cab8() {
+bool ActorPapuchiaBird::func_ov058_0214cab8() {
     return this->mUnk_5C.mParams[0] == 0x1;
 }
 
-void ActorUnkWPBD::func_ov058_0214cacc() {
+void ActorPapuchiaBird::func_ov058_0214cacc() {
     VecFx32 vec;
 
     VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(-0.8002f), FX_F32_TO_FX32(0.0f), &vec);
@@ -712,14 +712,14 @@ void ActorUnkWPBD::func_ov058_0214cacc() {
     VecFx16_Init(vec.x, vec.y, vec.z, &this->mUnk_214.mUnk_0E);
 }
 
-void ActorUnkWPBD::func_ov058_0214cb64() {
+void ActorPapuchiaBird::func_ov058_0214cb64() {
     this->mUnk_290.Set(0, 0xA);
     this->mUnk_294              = true;
     data_ov058_02157110.mUnk_00 = true;
     this->mUnk_100.vfunc_1C(data_ov058_02155374[1], 0x1000, 0x19A, 0x0);
 }
 
-void ActorUnkWPBD::func_ov058_0214cbe8() {
+void ActorPapuchiaBird::func_ov058_0214cbe8() {
     ActorParams params;
     RefStruct ref1;
     RefStruct ref2;
@@ -737,7 +737,7 @@ void ActorUnkWPBD::func_ov058_0214cbe8() {
     this->mUnk_310 = ref2;
 }
 
-bool ActorUnkWPBD::func_ov058_0214cc80() {
+bool ActorPapuchiaBird::func_ov058_0214cc80() {
     MapManagerBase *data = gpCourseManager->mpMapMgr;
     if (this->mUnk_5C.mParams[1] != 0x0) {
         if (!data->func_ov000_020802ec(this->mUnk_5C.mParams[1], this->Actor::func_ov000_0209853c(PlayerType_Link))) {
@@ -748,7 +748,7 @@ bool ActorUnkWPBD::func_ov058_0214cc80() {
     return false;
 }
 
-void ActorUnkWPBD::func_ov058_0214ccd0() {
+void ActorPapuchiaBird::func_ov058_0214ccd0() {
     ActorLokomo *lokomo = (ActorLokomo *) func_02016fbc(ActorId_Carben, &this->mPos, 0x0);
     if (lokomo == NULL) {
         return;
@@ -770,7 +770,7 @@ void ActorUnkWPBD::func_ov058_0214ccd0() {
 }
 
 // non-matching
-void ActorUnkWPBD::func_ov058_0214cd94() {
+void ActorPapuchiaBird::func_ov058_0214cd94() {
     ActorLokomo *lokomo = (ActorLokomo *) func_02016fbc(ActorId_Carben, &this->mPos, 0x0);
     if (lokomo == NULL) {
         return;
@@ -823,7 +823,7 @@ void ActorUnkWPBD::func_ov058_0214cd94() {
     sp00.CopyIn(&actor2->mUnk_94);
 }
 
-void ActorUnkWPBD::func_ov058_0214cfa4(unk32 param1) {
+void ActorPapuchiaBird::func_ov058_0214cfa4(unk32 param1) {
     Cylinder vec34;
     VecFx32Cpp vec28 = this->mUnk_238;
     vec28.vec.y      = FX_F32_TO_FX32(0.0f);
@@ -846,8 +846,8 @@ void ActorUnkWPBD::func_ov058_0214cfa4(unk32 param1) {
     func_ov000_0205f4fc(&this->mUnk_298, &this->mUnk_2A8);
 }
 
-void ActorUnkWPBD::func_ov058_0214d078(Actor *param1, G3d_RenderState *param2) {
-    ActorUnkWPBD *thiz = (ActorUnkWPBD *) param1;
+void ActorPapuchiaBird::func_ov058_0214d078(Actor *param1, G3d_RenderState *param2) {
+    ActorPapuchiaBird *thiz = (ActorPapuchiaBird *) param1;
     MtxFx33 sp6C;
     MtxFx43 sp3C;
     MtxFx33 sp18;
@@ -898,7 +898,7 @@ void ActorUnkWPBD::func_ov058_0214d078(Actor *param1, G3d_RenderState *param2) {
     sp0C.CopyIn(&thiz->mUnk_244);
 }
 
-UnkStackStruct2::Inner ActorUnkWPBD::func_ov058_0214d250(unk16 param3) {
+UnkStackStruct2::Inner ActorPapuchiaBird::func_ov058_0214d250(unk16 param3) {
     UnkStackStruct2 sp4;
     sp4.s.mUnk_00 = 0x1000;
     sp4.s.mUnk_02 = param3;
@@ -907,12 +907,12 @@ UnkStackStruct2::Inner ActorUnkWPBD::func_ov058_0214d250(unk16 param3) {
     return sp4.s;
 }
 
-void ActorUnkWPBD_2CC::vfunc_0C() {
+void ActorPapuchiaBird_2CC::vfunc_0C() {
     this->mUnk_24->func_ov058_0214c824();
 }
 
 // non-matching
-bool ActorUnkWPBD::func_ov058_0214d2c4(unk32 param1) {
+bool ActorPapuchiaBird::func_ov058_0214d2c4(unk32 param1) {
     if (this->mUnk_30 == NULL) {
         return false;
     }
