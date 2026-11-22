@@ -18,6 +18,7 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
+#include "Unknown/UnkStruct_027e0d38.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "flags.h"
 #include "math.hpp"
@@ -313,7 +314,7 @@ void ActorUnkPSWB::func_ov094_02166c88(void) {
     VecFx32_Copy(&mPos, &mPrevPos);
     VEC_Add(&mPos, &mVel, &mPos);
 
-    UnkStruct_ov094_02176fb8_Base itemVar; // Not the actual class (should be from ov048 maybe?)
+    UnkStruct_ov048_021375e4 itemVar;
     this->func_ov000_02098910(&itemVar, 0x10);
 
     if ((mUnk_46 & ~1) != 0) {
@@ -354,7 +355,7 @@ void ActorUnkPSWB::func_ov094_02166e60(void) {
     mPrevPos.z = mPos.z;
     VEC_Add(&mPos, &mVel, &mPos);
 
-    UnkStruct_ov094_02176fb8_Base itemVar; // Not the actual class (the right one comes/inherits from ov048)
+    UnkStruct_ov048_021375e4 itemVar;
     this->func_ov000_02098910(&itemVar, 0x10);
 
     if (mUnk_46 == 1) {
@@ -453,7 +454,69 @@ void ActorUnkPSWB::func_ov094_02167224(void) {
     VecFx32_Init(0, 0, 0, &mVel);
 }
 
-void ActorUnkPSWB::func_ov094_0216723c(void) {}
+// non-matching (stack ordering, lsr/asr shift)
+void ActorUnkPSWB::func_ov094_0216723c(void) {
+    func_01ff916c(&mUnk_150, 4, 0);
+
+    VecFx32 vecs[3];
+    VecFx32_Init(0, 0, 0, &vecs[0]);
+    func_01ff993c(&mVel, &vecs[0], mUnk_150);
+
+    VecFx32_Copy(&mPos, &mPrevPos);
+    VEC_Add(&mPos, &mVel, &mPos);
+
+    this->func_ov094_021676f4();
+
+    UnkStruct_ov094_02176fb8 unkStructVar(this);
+    this->func_ov000_02098910(&unkStructVar, 0x10);
+
+    switch (mUnk_166) {
+        case 0: {
+            if (func_ov031_020d9c34(data_027e0d38) != 0 && GET_FLAG2(mUnk_180, 1)) {
+                data_027e09a8->func_ov000_02071b30(0x991F, &mPos, 0);
+
+                unk32 var1;
+                unk16 *pvar1 = (unk16 *) &var1;
+                func_01fff17c(pvar1, data_027e0ce0, 0);
+
+                u16 var1Val  = (s16) (*pvar1 + -0x8000);
+                fx32 sin_val = SIN(var1Val);
+                fx32 cos_val = COS(var1Val);
+                vecs[2].x    = FX_MulInline(sin_val, 0xCD);
+                vecs[2].z    = FX_MulInline(cos_val, 0xCD);
+                vecs[2].y    = 0;
+                VEC_Add(&mVel, &vecs[2], &mVel);
+
+                s16 velAngle = FX_Atan2Idx(mVel.x, mVel.z);
+                velAngle += -0x8000;
+                mUnk_160 = (velAngle + 0x2000) << 0x10 >> 0x1E;
+
+                if (mUnk_16E == 0) {
+                    mUnk_16C = 0;
+                }
+                mUnk_16E = 0x38E;
+                mUnk_150 = 1;
+                mUnk_166++;
+            } else if (!GET_FLAG2(mUnk_180, 1) && VecFx32_IsCleared(&mVel)) {
+                if (mUnk_5C.mParams[0] != 0 && data_027e0ce0->mHealth != 0) {
+                    if (func_ov000_02070c84(data_027e09a4, &vecs[1], mUnk_5C.mUnk_24)) {
+                        func_01ff993c(&mPos, &vecs[1], 0x29);
+                    }
+                }
+            }
+            break;
+        }
+        case 1:
+            if (func_ov031_020d9c34(data_027e0d38) == 0) {
+                mUnk_166 = 0;
+            }
+            mUnk_16C += 0x300;
+            break;
+    }
+
+    this->func_ov094_02167d20();
+    this->func_ov094_02167794(0x600, 5, 0x800);
+}
 
 unk32 ActorUnkPSWB::func_ov094_02167518(void) {
     mVel.x = 0;

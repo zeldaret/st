@@ -9,6 +9,7 @@
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
+#include "Unknown/UnkStruct_ov048_021375e4.hpp"
 #include "Unknown/UnkStruct_ov048_02137600.hpp"
 #include "global.h"
 #include "math.hpp"
@@ -19,24 +20,11 @@
 
 struct ActorUnkPSWB;
 
-//! WARN: Generate an extra vtable that's not in the target
-class UnkStruct_ov094_02176fb8_Base : public UnkStruct_ov031_Items_00 {
-public:
-    /* 00 (vtable) */
-    /* 04 */ PAD(0x4, 0x8);
-    /* 08 */ unk32 mUnk_08;
-
-    UnkStruct_ov094_02176fb8_Base() {
-        mUnk_08 = 0;
-        mUnk_08 &= ~0x7000;
-        mUnk_08 |= 0x7000;
-    }
-};
-
-class UnkStruct_ov094_02176fb8 : public UnkStruct_ov094_02176fb8_Base {
+class UnkStruct_ov094_02176fb8 : public UnkStruct_ov048_021375e4 {
 public:
     /* 00 (vtable) */
     /* 0C */ ActorUnkPSWB *mUnk_0C;
+    /* 10 */
 
     UnkStruct_ov094_02176fb8(ActorUnkPSWB *param1);
 
@@ -81,7 +69,7 @@ public:
     /* 166 */ unk16 mUnk_166;
     /* 168 */ unk16 mUnk_168;
     /* 16A */ unk16 mUnk_16A;
-    /* 16C */ unk16 mUnk_16C;
+    /* 16C */ unk16 mUnk_16C; // Likely an angle
     /* 16E */ unk16 mUnk_16E;
     /* 170 */ s16 mUnk_170;   // Very likely an angle
     /* 172 */ unk16 mUnk_172; // WARN: unused
@@ -137,7 +125,6 @@ public:
     void func_ov094_02167dbc(void);
     void func_ov094_02167e58(void);
     void func_ov094_0216825c(VecFx32 *param1, unk32 param2);
-    void func_ov094_02168310(void);
 };
 
 class ActorProfileUnkPSWB_Base_D8 : public MapObject_10 {

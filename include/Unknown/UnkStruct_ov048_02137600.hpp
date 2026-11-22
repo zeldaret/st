@@ -1,5 +1,4 @@
 #include "Actor/Actor.hpp"
-#include "Physics/Cylinder.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "nitro/fx.h"
 #include "nitro/types.h"

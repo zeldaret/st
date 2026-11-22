@@ -808,9 +808,9 @@ config.libs = [
     GameLib(
         "Overlay 48",
         [
+            Object("048_MapC2/UnkStruct_ov048_02137600.cpp"),
             Object("048_MapC2/Actor/ActorUnkPBK2.cpp"),
             Object("048_MapC2/Actor/ActorUnkPSBK.cpp"),
-            Object("048_MapC2/UnkStruct_ov048_02137600.cpp"),
             Object("048_MapC2/MapObject/MapObjectUnkDRTW.cpp"),
         ]
     ),
