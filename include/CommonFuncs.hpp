@@ -235,6 +235,7 @@ void func_ov000_0205d65c(void *, VecFx32 *, VecFx32 *, UnkAngleStruct);
 void func_ov000_0205db44(void *, void *, unk32);
 void func_ov000_0205dbe4(u16);
 void func_ov000_0205f298(unk32 *, VecFx32 *, unk32);
+void func_ov000_0205f478(unk32 *);
 void func_ov000_0205f4fc(unk32 *, MtxFx33 *);
 void func_ov000_0205f6e4(VecFx32 *, VecFx32 *);
 bool func_ov000_0205f7d4(VecFx32 *, VecFx32 *, VecFx32 *);

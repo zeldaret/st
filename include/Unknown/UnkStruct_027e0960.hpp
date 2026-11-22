@@ -49,6 +49,13 @@ public:
     /* 1C */ virtual u32 vfunc_1C() override;
 };
 
+class UnkStruct_027e0960_TableEntry_04_Base_Derived1 : public UnkStruct_027e0960_TableEntry_04_Base {
+public:
+    /* 00 (base) */
+    /* 14 */ s8 mUnk_14;
+    /* 16 */
+};
+
 class UnkStruct_027e0960_TableEntry {
 public:
     /* 00 */ ZMBEntryRALB *pRALB;
