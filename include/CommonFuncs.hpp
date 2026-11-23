@@ -101,7 +101,7 @@ int func_01ffcea0(Cylinder *, Cylinder *);
 void func_01ffcfcc(VecFx32 *, VecFx32 *, VecFx32 *);
 void func_01ffd054(VecFx32 *, VecFx32 *);
 void func_01ffd1b4(VecFx32 *, VecFx32 *);
-void func_01ffe6c4(Actor **, RefStruct, VecFx32 *, VecFx32 *, s32, VecFx32 *, UnkStruct_ov031_Items_00_Base *);
+void func_01ffe6c4(Actor **, RefStruct, const VecFx32 *, const VecFx32 *, s32, VecFx32 *, UnkStruct_ov031_Items_00_Base *);
 fx32 func_01ffe868(VecFx32 *, unk32, unk32);
 bool func_01ffecdc(unk32 param1, Cylinder *param2);
 void func_01ffedac(Vec2bCpp *, VecFx32 *);
@@ -109,6 +109,8 @@ void func_01fff05c(u32 *, MapManagerBase *, VecFx32 *);
 void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
 void func_01fff6d0(void *, VecFx32 *param1, s32 *param2, s32 *param3);
 void func_01ff9984(VecFx32 *, VecFx32 *, unk32, unk32, unk32);
+bool func_01ffccc0(Cylinder *param1, Cylinder *param2);
+bool func_01ffd218(VecFx32 *param1, Cylinder *param2);
 
 // main
 unk32 func_020013ac(void *param1);

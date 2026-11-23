@@ -2,6 +2,7 @@
 
 #include "Physics/Cylinder.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
+#include "Unknown/UnkStruct_027e0d00.hpp"
 #include "flags.h"
 #include "global.h"
 #include "nitro/fx.h"
@@ -67,18 +68,11 @@ public:
 
 class UnkStruct_027e0ce0_1C_D4 {
 public:
-    /* 0000 */ PAD(0x00, 0x6AD8);
+    /* 0000 */ PAD(0x00, 0x6AB0);
+    /* 6AB0 */ UnkStruct_027e0d00_00 mUnk_6AB0;
     /* 6AD8 */
 
     UnkStruct_027e0ce0_1C_D4();
-};
-
-class UnkStruct_027e0ce0_1C_D8 {
-public:
-    /* 0000 */ PAD(0x00, 0x6AB0);
-    /* 6AB0 */
-
-    UnkStruct_027e0ce0_1C_D8();
 };
 
 class UnkStruct_027e0ce0_1C {
@@ -88,8 +82,8 @@ public:
     /* 08 */ UnkStruct_027e0ce0_1C_08 *mUnk_08[PlayerCharacter_Max][7];
     /* 5C */ UnkFileSystem5 *mUnk_5C[PlayerCharacter_Max][9];
     /* C8 */ UnkStruct_027e0ce0_1C_C8 *mUnk_C8[PlayerCharacter_Max];
-    /* D4 */ UnkStruct_027e0ce0_1C_D4 *mUnk_D4;
-    /* D8 */ UnkStruct_027e0ce0_1C_D8 *mUnk_D8;
+    /* D4 */ UnkStruct_027e0ce0_1C_D4 *mUnk_D4; //! TODO: array of 2?
+    /* D8 */ UnkStruct_027e0ce0_1C_D4 *mUnk_D8;
     /* DC */
 
     UnkStruct_027e0ce0_1C();

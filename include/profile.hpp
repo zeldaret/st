@@ -4,6 +4,8 @@
 #include "types.h"
 #include <nns/g3d/g3d.h>
 
+class UnkStruct_027e0d00_00;
+
 //! TODO: doesn't belong here but since we don't know what it is...
 class UnkSystem3 {
 public:
@@ -91,7 +93,7 @@ public:
     /* 08 */
 
     void func_ov000_020586b4(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-    void func_ov000_020588f0(void *param1, unk32 param2, unk32 param3, void *param4);
+    void func_ov000_020588f0(void *param1, unk32 param2, unk32 param3, UnkStruct_027e0d00_00 *param4);
     void func_ov000_02058900(void);
     void func_ov000_02058914(void *param1);
     void func_ov000_020589e4(void);
