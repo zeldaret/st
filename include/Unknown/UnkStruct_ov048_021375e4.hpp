@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "nitro/types.h"
 #include "types.h"

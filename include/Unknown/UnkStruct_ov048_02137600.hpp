@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Actor/Actor.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "nitro/fx.h"

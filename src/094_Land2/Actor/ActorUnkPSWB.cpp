@@ -903,7 +903,7 @@ bool ActorUnkPSWB::vfunc_58(VecFx32 *param1) {
 
 // non-matching (regalloc in the FX_Muls)
 void ActorUnkPSWB::func_ov094_0216825c(VecFx32 *param1, unk32 param2) {
-    if (0 < VEC_DotProduct(param1, &mVel)) {
+    if (VEC_DotProduct(param1, &mVel) > 0) {
         return;
     }
 
@@ -935,5 +935,5 @@ bool UnkStruct_ov094_02176fb8::vfunc_08(const UnkStruct_ov031_020f3310 *param1, 
     VecFx16_Copy2VecFx32(&param1->mUnk_08, &vec);
 
     mUnk_0C->func_ov094_0216825c(&vec, 0x800);
-    return 1;
+    return true;
 }
