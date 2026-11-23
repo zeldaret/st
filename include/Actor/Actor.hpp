@@ -363,7 +363,7 @@ public:
     /* 00 (vtable) */
     /* 04 */ unk32 mUnk_04;
     /* 08 */ VecFx16 mUnk_08;
-    /* 0C */ VecFx16 mUnk_0E;
+    /* 0E */ VecFx16 mUnk_0E;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
     /* 1C */ unk32 mUnk_1C;

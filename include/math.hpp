@@ -56,6 +56,9 @@ struct VecFx32Cpp {
         vec.y = Y;
         vec.z = Z;
     }
+    VecFx32Cpp(VecFx32 vec) {
+        this->vec = vec;
+    }
 
     void Set(fx32 X, fx32 Y, fx32 Z) {
         VecFx32_Init(X, Y, Z, &this->vec);
@@ -75,6 +78,10 @@ struct VecFx32Cpp {
 
     void CopyOut(VecFx32 *vec) {
         VecFx32_Copy(vec, &this->vec);
+    }
+
+    void CopyOut(VecFx32Cpp *vec) {
+        VecFx32_Copy(&vec->vec, &this->vec);
     }
 
     bool TryNormalize() {

@@ -24,6 +24,14 @@ public:
     void func_ov058_0214e3e8(void);
 };
 
+class MapObject_10_ov058 : public MapObject_10 {
+public:
+    /* 00 (base) */
+    /* 24 */
+
+    ~MapObject_10_ov058() {}
+};
+
 class MapObjectProfileUnkTREE : public MapObjectProfile {
 public:
     /* 00 (base) */

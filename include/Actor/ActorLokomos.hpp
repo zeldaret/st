@@ -287,7 +287,8 @@ public:
 class ActorLokomo_2BC : public ModelRender_ov000_020b4d64 {
 public:
     /* 00 (base) */
-    /* 60 */
+    /* 60 */ PAD(0x60, 0x6C);
+    /* 6C */
 
     ActorLokomo_2BC(G3d_Model *param1); // func_ov000_0209a780
 
@@ -308,7 +309,6 @@ public:
     /* 24C */ ModelRender_ov000_020b4d64 mUnk_24C;
     /* 2AC */ PAD(0x2AC, 0x2BC);
     /* 2BC */ ActorLokomo_2BC mUnk_2BC;
-    /* 31C */ PAD(0x31C, 0x328);
     /* 328 */ ModelRender_ov000_020b1a1c mUnk_328;
     /* 388 */ bool mUnk_388;
     /* 389 */ PAD(0x389, 0x38C);

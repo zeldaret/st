@@ -940,7 +940,7 @@ config.libs = [
             Object("058_Field/Actor/ActorLokomos.cpp"),
             Object("058_Field/Actor/ActorUnkTMNA.cpp"),
             Object("058_Field/Actor/ActorUnkTMNC.cpp"),
-            Object("058_Field/Actor/ActorUnkWPBD.cpp"),
+            Object("058_Field/Actor/ActorWhipBird.cpp"),
             Object("058_Field/Actor/ActorUnkWPCH.cpp"),
             Object("058_Field/MapObject/MapObjectUnkBBFL.cpp"),
             Object("058_Field/MapObject/MapObjectUnkDRHS.cpp"),
