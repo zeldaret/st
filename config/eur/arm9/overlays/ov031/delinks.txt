@@ -53,8 +53,12 @@ src/031_Land/UnkStruct_027e0d38.cpp:
     complete
     .text       start:0x020d9bd0 end:0x020d9c64
 
+src/031_Land/UnkStruct_ItemManager_20_04_32C_031.cpp:
+    complete
+    .text       start:0x020d9c64 end:0x020da1c8
+
 src/031_Land/code_020d9c64_031.cpp:
-    .text       start:0x020d9c64 end:0x020da584
+    .text       start:0x020da1c8 end:0x020da584
 
 src/031_Land/code_020da584_031.cpp:
     .text       start:0x020da584 end:0x020dac20

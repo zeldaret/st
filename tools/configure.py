@@ -578,6 +578,7 @@ config.libs = [
             Object("031_Land/UnkStruct_027e0d30_031.cpp"),
             Object("031_Land/UnkStruct_027e0d34.cpp"),
             Object("031_Land/UnkStruct_027e0d38.cpp"),
+            Object("031_Land/UnkStruct_ItemManager_20_04_32C_031.cpp"),
             Object("031_Land/code_020d9c64_031.cpp"),
             Object("031_Land/code_020da584_031.cpp"),
             Object("031_Land/code_020dac20_031.cpp"),

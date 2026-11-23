@@ -46,7 +46,7 @@ void ActorUnkPSBL::func_ov079_021524dc(void) {}
 void ActorUnkPSBL::func_ov079_021524e8(void) {}
 void ActorUnkPSBL::func_ov079_02152554(void) {}
 void ActorUnkPSBL::func_ov079_02152594(void) {}
-void ActorUnkPSBL::func_ov079_02152658(void) {}
+void ActorUnkPSBL::func_ov079_02152658(VecFx32 *param1) {}
 void ActorUnkPSBL::func_ov079_02152684(void) {}
 void ActorUnkPSBL::func_ov079_02152714(void) {}
 void ActorUnkPSBL::func_ov079_021527a8(void) {}

@@ -293,7 +293,7 @@ unk8 func_ov000_02070164(void *); //! TODO: turn to a class
 void func_ov000_0205a950(u8 bgType, bool isTopScreen, bool);
 void func_ov000_0205a944(u8 bgType, bool isTopScreen, bool);
 void *func_ov000_0208ea70(PlayerCharacter, unk32, bool); // returns pointer to .NSBTX
-bool func_ov000_0205cbc4(u32 param1, VecFx32 *param2);
+bool func_ov000_0205cbc4(RefStruct param1, VecFx32 *param2);
 
 // overlay 2
 AdventureModeManager_160_14 *func_ov002_020b6520(void *, void *, int);

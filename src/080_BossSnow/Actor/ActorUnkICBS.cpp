@@ -27,7 +27,7 @@ void ActorUnkICBS::func_ov080_0215140c(void) {}
 void ActorUnkICBS::func_ov080_02151744(void) {}
 void ActorUnkICBS::func_ov080_0215183c(void) {}
 void ActorUnkICBS::func_ov080_021518b4(void) {}
-void ActorUnkICBS::func_ov080_02151970(void) {}
+void ActorUnkICBS::func_ov080_02151970(VecFx32 *param1) {}
 void ActorUnkICBS::func_ov080_02151f58(void) {}
 void ActorUnkICBS::func_ov080_02152078(void) {}
 void ActorUnkICBS::func_ov080_0215219c(void) {}

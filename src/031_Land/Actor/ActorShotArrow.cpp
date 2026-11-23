@@ -658,7 +658,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
                 if (this->mUnk_140.mUnk_0C.acRef.type_index == 0x102) {
                     var_r1 = this->mUnk_140.mUnk_0C.acRef.UnkCheck3(0x102);
                     VEC_Subtract(&this->mPos, this->func_ov000_0209853c(var_r1), &sp1C);
-                } else if (!func_ov000_0205cbc4(this->mUnk_140.mUnk_0C.Get32(), &sp10)) {
+                } else if (!func_ov000_0205cbc4(this->mUnk_140.mUnk_0C, &sp10)) {
                     sp1C.x = 0;
                     sp1C.y = 0;
                     sp1C.z = 0;

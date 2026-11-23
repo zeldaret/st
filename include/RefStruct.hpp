@@ -179,6 +179,10 @@ struct RefStruct {
     const u32 Get32() const {
         return this->data;
     }
+
+    RefStruct Copy() {
+        return *this;
+    }
 };
 
 // for arrays

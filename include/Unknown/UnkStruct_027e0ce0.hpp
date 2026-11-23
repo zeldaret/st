@@ -932,6 +932,7 @@ public:
     bool func_ov000_0208be70();
     bool func_ov000_0208bee8();
     bool func_ov000_0208bf34(unk32 param1);
+    void func_ov000_0208bfd0(unk32 param1, VecFx32 *param2, unk32 param3);
 
     static UnkStruct_027e0ce0_34 *func_ov000_0205c904();
 
