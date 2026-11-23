@@ -920,6 +920,8 @@ public:
     void func_ov000_0208ba40(SaveInventoryData *param1);
     void func_ov000_0208ba94(unk32 param1, VecFx32 *param2);
     void func_ov000_0208bacc(unk32 param1, VecFx32 *param2);
+    void func_ov000_0208bb94(unk32 param2, unk32 param3);
+    bool func_ov000_0208bba4(unk32 param2);
     void func_ov000_0208bbc4(unk32 param1, void *param2);
     void func_ov000_0208bbd4(unk32 param1, VecFx32 *param2, UnkAngleStruct param3);
     void func_ov000_0208bc00(unk16 param1, Cylinder *param2);
@@ -927,6 +929,7 @@ public:
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);
     void func_ov000_0208bd20(PlayerType playerType, unk32 param2, unk32 param3);
     void func_ov000_0208bd30(PlayerType playerType, unk32 param2, unk32 param3, unk32 param4);
+    void func_ov000_0208bdd4(unk32, void *param2);
     void func_ov000_0208bde4(unk32 param1, unk32 param2, VecFx32 *param5, unk32 param3);
     bool func_ov000_0208be0c(RefStruct param1);
     bool func_ov000_0208be70();

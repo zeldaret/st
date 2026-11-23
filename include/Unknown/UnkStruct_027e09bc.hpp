@@ -64,6 +64,7 @@ public:
     void func_ov000_020767b4(VecFx32 *param1, Vec2s *touchPos, fx32 param3, unk32 param4, VecFx32 *param5);
     void func_ov000_02078230(unk32 param1);
     bool func_ov000_0207834c(VecFx32 *param1, UnkStackStruct2 *param2, unk32 param3);
+    void func_ov000_020786dc(VecFx32 *, unk32);
     unk16 func_ov000_0207868c();
     unk16 func_ov000_02078698();
     void func_ov000_02078534(VecFx32 *param1, unk32 param2);

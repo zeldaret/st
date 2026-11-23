@@ -425,6 +425,8 @@ public:
     bool func_ov000_0207056c();
     bool func_ov000_0207059c();
     void func_ov000_020705e8(GameSaveSlot *param1, unk32 param2);
+    unk32 func_ov000_02070c84(VecFx32 *, unk16);
+    void func_ov000_02070cc0(VecFx32 *, unk16);
 
     // overlay 1
     void func_ov001_020b662c();

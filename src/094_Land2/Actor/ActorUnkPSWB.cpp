@@ -105,8 +105,8 @@ bool ActorUnkPSWB_194::vfunc_08(RefStruct ref, unk32 param2, unk32 param3) {
     if (ref.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x100)) ||
         ref.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x101))) {
         if (ref.acRef.HasTypeIndexValue(REF_TYPE_INDEX(ActorRefType_0, 0x100)) && ref.acRef.unk_id == 0) {
-            func_ov000_0208bdd4(data_027e0ce0, 0, &mUnk_10->mVel);
-            func_ov000_0207e20c(data_027e09c0, &data_ov094_021785c0, &mUnk_10->mPos);
+            data_027e0ce0->func_ov000_0208bdd4(0, &mUnk_10->mVel);
+            data_027e09c0->func_ov000_0207e20c(&data_ov094_021785c0, &mUnk_10->mPos);
         }
         mUnk_10->func_ov094_02167bf0();
     } else if (((u32) ref.acRef.type_index) << 0x10 >> 0x1E != 0) {
@@ -172,7 +172,7 @@ bool ActorUnkPSWB::Init(unk32 param1) {
         VecFx32 vec1;
         u32 ret; //! TODO: force onto the stack
         VecFx32 vec2;
-        if (func_ov000_02070c84(data_027e09a4, &vec1, mUnk_5C.mUnk_24) != 0) {
+        if (data_027e09a4->func_ov000_02070c84(&vec1, mUnk_5C.mUnk_24) != 0) {
             ret = gpCourseManager->mpMapMgr->vfunc_28(&vec1, 1, 0);
 
             vec2       = vec1;
@@ -221,7 +221,7 @@ void ActorUnkPSWB::Update(void) {
 
     if (data_027e0ce0->mHealth == 0) {
         if (!data_027e0ce0->mUnk_2C->GetInventory()->HasPurplePotion() && mUnk_5C.mParams[0] != 0) {
-            func_ov000_02070cc0(data_027e09a4, &mUnk_5C.mInitialPos, mUnk_5C.mUnk_24);
+            data_027e09a4->func_ov000_02070cc0(&mUnk_5C.mInitialPos, mUnk_5C.mUnk_24);
         }
     }
 
@@ -289,10 +289,10 @@ void ActorUnkPSWB::func_ov094_02166c2c(void) {
     u16 var;
     func_ov000_0208bb84(&var, data_027e0ce0, mUnk_98);
     if (var != 0) {
-        func_ov000_0208bb94(data_027e0ce0, mUnk_98, 1);
+        data_027e0ce0->func_ov000_0208bb94(mUnk_98, 1);
     }
 
-    mUnk_164 = func_ov000_0208bba4(data_027e0ce0, mUnk_98);
+    mUnk_164 = data_027e0ce0->func_ov000_0208bba4(mUnk_98);
 }
 
 void ActorUnkPSWB::func_ov094_02166c88(void) {
@@ -303,10 +303,10 @@ void ActorUnkPSWB::func_ov094_02166c88(void) {
 
     if (cond && UnkStruct_ov048_02137600::vfunc_54(mUnk_160) != 0) {
         VecFx32 vec;
-        func_ov048_02130790(this, mUnk_160, &vec, 0x1000);
+        this->func_ov048_02130790(mUnk_160, &vec, 0x1000);
         mUnk_140 = vec.x;
         mUnk_144 = vec.z;
-        func_ov048_02130aa4(this, &vec);
+        this->func_ov048_02130aa4(&vec);
         this->func_ov094_02167518();
     }
 
@@ -340,7 +340,7 @@ void ActorUnkPSWB::func_ov094_02166e10(void) {
     u16 var;
     func_ov000_0208bb84(&var, data_027e0ce0, mUnk_98);
     if (var != 0) {
-        func_ov000_0208bb94(data_027e0ce0, mUnk_98, 1);
+        data_027e0ce0->func_ov000_0208bb94(mUnk_98, 1);
     }
 
     mUnk_2C = 0x52;
@@ -435,7 +435,7 @@ void ActorUnkPSWB::func_ov094_02167024(void) {
                         return;
                     }
                     func_ov000_0205ad64(&mUnk_174.vec, &mUnk_174.vec);
-                    func_ov000_02070cc0(data_027e09a4, &mUnk_174.vec, mUnk_5C.mUnk_24);
+                    data_027e09a4->func_ov000_02070cc0(&mUnk_174.vec, mUnk_5C.mUnk_24);
                 }
             }
             break;
@@ -513,7 +513,7 @@ void ActorUnkPSWB::func_ov094_0216723c(void) {
                 mUnk_166++;
             } else if (!GET_FLAG2(mUnk_180, 1) && VecFx32_IsCleared(&mVel)) {
                 if (mUnk_5C.mParams[0] != 0 && data_027e0ce0->mHealth != 0) {
-                    if (func_ov000_02070c84(data_027e09a4, &vecs[1], mUnk_5C.mUnk_24)) {
+                    if (data_027e09a4->func_ov000_02070c84(&vecs[1], mUnk_5C.mUnk_24)) {
                         func_01ff993c(&mPos, &vecs[1], 0x29);
                     }
                 }
@@ -561,7 +561,7 @@ void ActorUnkPSWB::func_ov094_021675ac(VecFx32 *vec) {
     u16 tmp = *pvar + DEG_TO_ANG(45);
     tmp >>= 0xE;
     mUnk_160 = tmp;
-    func_ov048_02130790(this, tmp, vec, 0x1000);
+    this->func_ov048_02130790(tmp, vec, 0x1000);
     mUnk_140 = vec->x;
     mUnk_144 = vec->z;
 }
@@ -661,8 +661,8 @@ void ActorUnkPSWB::vfunc_2C(unk32 param1) {
     if (GET_FLAG2(mUnk_180, 1)) {
         Actor *actor = func_02016fbc(ActorId_OCTW, &mPos, 0);
         if (actor != NULL && actor->mState != 3) {
-            func_ov000_020786dc((&data_027e09bc->mUnk_04[2])[param1], // hacky but it works, the mUnk access is weird
-                                &mPos, 1);
+            // hacky but it works, the mUnk access is weird
+            (&data_027e09bc->mUnk_04[2])[param1]->func_ov000_020786dc(&mPos, 1);
         }
     }
 
@@ -694,7 +694,7 @@ bool ActorUnkPSWB::func_ov094_02167b24(unk32 param1) {
     if (param1 == 1 && !data_027e0ce0->func_01fff1a4()) {
         return false;
     }
-    return func_ov000_0208bba4(data_027e0ce0, param1);
+    return data_027e0ce0->func_ov000_0208bba4(param1);
 }
 
 void ActorUnkPSWB::func_ov094_02167b64(unk32 param1) {
@@ -705,7 +705,7 @@ void ActorUnkPSWB::func_ov094_02167b64(unk32 param1) {
             VecFx32 vec;
             this->func_ov094_021675ac(&vec);
             if (this->vfunc_58(&vec)) {
-                func_ov048_02130aa4(this, &vec);
+                this->func_ov048_02130aa4(&vec);
                 this->func_ov094_021668e0(1);
             }
         }
@@ -736,7 +736,7 @@ void ActorUnkPSWB::func_ov094_02167c54(void) {
     }
 
     VecFx32 vec1, vec2;
-    if (func_ov000_02070c84(data_027e09a4, &vec1, mUnk_5C.mUnk_24) != 0) {
+    if (data_027e09a4->func_ov000_02070c84(&vec1, mUnk_5C.mUnk_24) != 0) {
         if (!VecFx32_IsEqual_Bool(&vec1, &mUnk_5C.mInitialPos)) {
             vec2       = vec1;
             mPos.x     = vec2.x;
@@ -836,7 +836,7 @@ void ActorUnkPSWB::func_ov094_02167e58(void) {
             if (break_loop) {
                 vec2.y = mPos.y;
                 stop   = true;
-                func_ov000_02070cc0(data_027e09a4, &vec2, mUnk_5C.mUnk_24);
+                data_027e09a4->func_ov000_02070cc0(&vec2, mUnk_5C.mUnk_24);
                 break;
             }
         }
@@ -868,12 +868,12 @@ void ActorUnkPSWB::func_ov094_02167e58(void) {
 
             if (break_loop) {
                 vec2.y = mPos.y;
-                func_ov000_02070cc0(data_027e09a4, &vec2, mUnk_5C.mUnk_24);
+                data_027e09a4->func_ov000_02070cc0(&vec2, mUnk_5C.mUnk_24);
                 break;
             }
         }
     } else {
-        func_ov000_02070cc0(data_027e09a4, &vec1, mUnk_5C.mUnk_24);
+        data_027e09a4->func_ov000_02070cc0(&vec1, mUnk_5C.mUnk_24);
     }
 }
 
