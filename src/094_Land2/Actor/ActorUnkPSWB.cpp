@@ -36,7 +36,7 @@ UnkStruct_ov000_0207f47c data_ov094_021785c0;
 
 DECL_PROFILE(ActorProfileUnkPSWB);
 
-PTMF<ActorUnkPSWB> data_ov094_0217703c[0x5] = {
+PTMF<ActorUnkPSWB> data_ov094_0217703c[ActorUnkPSWBState_Max] = {
     &ActorUnkPSWB::func_ov094_02166bcc, // ActorUnkPSWBState_0
     &ActorUnkPSWB::func_ov094_02166c2c, // ActorUnkPSWBState_1
     &ActorUnkPSWB::func_ov094_02166e10, // ActorUnkPSWBState_2
@@ -44,7 +44,7 @@ PTMF<ActorUnkPSWB> data_ov094_0217703c[0x5] = {
     &ActorUnkPSWB::func_ov094_02167224, // ActorUnkPSWBState_4
 };
 
-PTMF<ActorUnkPSWB> data_ov094_02177064[0x5] = {
+PTMF<ActorUnkPSWB> data_ov094_02177064[ActorUnkPSWBState_Max] = {
     &ActorUnkPSWB::func_ov094_02166c10, // ActorUnkPSWBState_0
     &ActorUnkPSWB::func_ov094_02166c88, // ActorUnkPSWBState_1
     &ActorUnkPSWB::func_ov094_02166e60, // ActorUnkPSWBState_2
@@ -163,7 +163,7 @@ bool ActorUnkPSWB::Init(unk32 param1) {
     this->func_ov000_0209862c(3);
     mUnk_140 = mPos.x;
     mUnk_144 = mPos.z;
-    mState   = 0;
+    mState   = ActorUnkPSWBState_0;
     this->func_ov094_02166890();
     mUnk_94  = 0;
     mUnk_188 = 0xD0A7;
@@ -185,7 +185,7 @@ bool ActorUnkPSWB::Init(unk32 param1) {
 
             mUnk_44 = 0x1C;
             this->func_ov000_0209862c(1);
-            this->func_ov094_021668e0(4);
+            this->func_ov094_021668e0(ActorUnkPSWBState_4);
             mUnk_154 = ret - FX_F32_TO_FX32(0.3f);
             mUnk_15C = mPos.y;
         }
@@ -205,7 +205,7 @@ void ActorUnkPSWB::func_ov094_021668cc(void) {
     mUnk_166 = 0;
 }
 
-void ActorUnkPSWB::func_ov094_021668e0(ActorState param1) {
+void ActorUnkPSWB::func_ov094_021668e0(ActorUnkPSWBState_ param1) {
     mState = param1;
     this->func_ov094_021668cc();
     CALL_PTMF(data_ov094_0217703c[mState]);
@@ -225,7 +225,7 @@ void ActorUnkPSWB::Update(void) {
         }
     }
 
-    if (mState != 3 && mState != 4) {
+    if (mState != ActorUnkPSWBState_3 && mState != ActorUnkPSWBState_4) {
         if (mUnk_140 != mPos.x || mUnk_144 != mPos.z) {
             u16 angle   = FX_Atan2Idx(mUnk_140 - mPos.x, mUnk_144 - mPos.z);
             s16 sin_val = SIN((s16) angle);
@@ -265,7 +265,7 @@ void ActorUnkPSWB::Update(void) {
 }
 
 void ActorUnkPSWB::vfunc_24(void) {
-    if (mState == 0) {
+    if (mState == ActorUnkPSWBState_0) {
         this->func_ov094_02166c10();
     }
 }
@@ -323,12 +323,12 @@ void ActorUnkPSWB::func_ov094_02166c88(void) {
         mUnk_144 = mPos.z;
     } else {
         if (mUnk_140 == mPos.x && mUnk_144 == mPos.z) {
-            this->func_ov094_021668e0(0);
+            this->func_ov094_021668e0(ActorUnkPSWBState_0);
         }
     }
 
     if (!GET_FLAG2(mUnk_46, 0)) {
-        this->func_ov094_021668e0(2);
+        this->func_ov094_021668e0(ActorUnkPSWBState_2);
     } else {
         mVel.y = 0;
     }
@@ -368,11 +368,11 @@ void ActorUnkPSWB::func_ov094_02166e60(void) {
             cond = false;
         }
         if (cond != false) {
-            this->func_ov094_021668e0(3);
+            this->func_ov094_021668e0(ActorUnkPSWBState_3);
             return;
         }
 
-        this->func_ov094_021668e0(0);
+        this->func_ov094_021668e0(ActorUnkPSWBState_0);
     }
 
     if ((((u16 *) itemVar.unk_0x4)[0] & 1) != 0) {
@@ -451,7 +451,7 @@ void ActorUnkPSWB::func_ov094_02167024(void) {
             this->func_ov094_02167d20();
 
             if (GET_FLAG2(mUnk_180, 1)) {
-                this->func_ov094_021668e0(4);
+                this->func_ov094_021668e0(ActorUnkPSWBState_4);
             }
             break;
         }
@@ -660,7 +660,7 @@ void ActorUnkPSWB::vfunc_2C(unk32 param1) {
 
     if (GET_FLAG2(mUnk_180, 1)) {
         Actor *actor = func_02016fbc(ActorId_OCTW, &mPos, 0);
-        if (actor != NULL && actor->mState != 3) {
+        if (actor != NULL && actor->mState != ActorUnkPSWBState_3) {
             // hacky but it works, the mUnk access is weird
             (&data_027e09bc->mUnk_04[2])[param1]->func_ov000_020786dc(&mPos, 1);
         }
@@ -706,7 +706,7 @@ void ActorUnkPSWB::func_ov094_02167b64(unk32 param1) {
             this->func_ov094_021675ac(&vec);
             if (this->vfunc_58(&vec)) {
                 this->func_ov048_02130aa4(&vec);
-                this->func_ov094_021668e0(1);
+                this->func_ov094_021668e0(ActorUnkPSWBState_1);
             }
         }
     }
@@ -726,7 +726,7 @@ void ActorUnkPSWB::func_ov094_02167bf0(void) {
     mUnk_16E = DEG_TO_ANG(5);
 
     if (GET_FLAG2(mUnk_180, 0)) {
-        this->func_ov094_021668e0(4);
+        this->func_ov094_021668e0(ActorUnkPSWBState_4);
     }
 }
 
@@ -745,7 +745,7 @@ void ActorUnkPSWB::func_ov094_02167c54(void) {
             mPrevPos.x = vec2.x;
             mPrevPos.y = vec2.y;
             mPrevPos.z = vec2.z;
-            this->func_ov094_021668e0(4);
+            this->func_ov094_021668e0(ActorUnkPSWBState_4);
             mUnk_190.Set(0, 0x3B);
         }
     }

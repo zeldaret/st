@@ -51,6 +51,15 @@ public:
     /* 08 */ virtual bool vfunc_08(RefStruct param1, unk32 param2, unk32 param3) override;
 };
 
+enum ActorUnkPSWBState_ {
+    ActorUnkPSWBState_0   = 0,
+    ActorUnkPSWBState_1   = 1,
+    ActorUnkPSWBState_2   = 2,
+    ActorUnkPSWBState_3   = 3,
+    ActorUnkPSWBState_4   = 4,
+    ActorUnkPSWBState_Max = 5,
+};
+
 class ActorUnkPSWB : public UnkStruct_ov048_02137600 {
 public:
     /* 000 (base) */
@@ -98,7 +107,7 @@ public:
     void func_ov094_02166680(void);
     void func_ov094_02166890(void);
     void func_ov094_021668cc(void);
-    void func_ov094_021668e0(ActorState param1);
+    void func_ov094_021668e0(ActorUnkPSWBState_ param1);
     void func_ov094_02166bcc(void);
     void func_ov094_02166c10(void);
     void func_ov094_02166c2c(void);
