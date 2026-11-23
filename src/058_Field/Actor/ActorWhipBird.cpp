@@ -281,7 +281,7 @@ void ActorWhipBird::vfunc_2C(unk32 param1) {
         if (data_027e0ce0->func_ov000_0208bf34(0x2)) {
             VecFx32 *vec = this->func_ov000_0209853c(PlayerType_Link);
             if (func_01ff9258(vec->x - this->mUnk_268.vec.x, vec->z - this->mUnk_268.vec.z) < 0x5000) {
-                data_027e09bc->mUnk_04[param1]->mUnk_0C->func_ov000_020786dc(&this->mUnk_268.vec);
+                data_027e09bc->mUnk_04[0][param1]->mUnk_0C->func_ov000_020786dc(&this->mUnk_268.vec);
             }
         }
     }

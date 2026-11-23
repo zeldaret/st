@@ -507,7 +507,7 @@ void ActorShotArrow::vfunc_2C(unk32 param1) {
     spE4.unk_00.z = this->mPos.z;
     spE4.unk_0C   = 0x2000;
 
-    if (!data_027e09bc->mUnk_04[param1]->func_01ffd640(&spE4)) {
+    if (!data_027e09bc->mUnk_04[0][param1]->func_01ffd640(&spE4)) {
         return;
     }
 
