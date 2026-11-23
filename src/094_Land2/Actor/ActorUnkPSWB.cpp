@@ -23,6 +23,7 @@
 #include "flags.h"
 #include "math.hpp"
 #include "nitro/fx.h"
+#include "nitro/fx/consts.h"
 #include "nitro/math.h"
 #include "nitro/types.h"
 #include "nns/g3d/g3d.h"
@@ -130,7 +131,7 @@ ActorUnkPSWB::ActorUnkPSWB() :
     mUnk_14C(0),
     mUnk_150(0),
     mUnk_154(0),
-    mUnk_158(FX_F32_TO_FX32(1.0f)),
+    mUnk_158(FX32_ONE),
     mUnk_15C(0),
     mUnk_160(1),
     mUnk_164(0),
@@ -230,8 +231,8 @@ void ActorUnkPSWB::Update(void) {
             s16 sin_val = SIN((s16) angle);
             s16 cos_val = COS((s16) angle);
             VecFx32 vec;
-            vec.x = FX_MulInline(sin_val, FX_F32_TO_FX32(0.49f));
-            vec.z = FX_MulInline(cos_val, FX_F32_TO_FX32(0.49f));
+            vec.x = FX_MUL(sin_val, FX_F32_TO_FX32(0.49f));
+            vec.z = FX_MUL(cos_val, FX_F32_TO_FX32(0.49f));
             vec.y = 0;
             VEC_Add(&vec, &mPos, &vec);
 
@@ -251,7 +252,7 @@ void ActorUnkPSWB::Update(void) {
         return;
     }
 
-    if (0x800 <= func_01ff9258(vec.x - mPos.x, vec.z - mPos.z)) {
+    if (func_01ff9258(vec.x - mPos.x, vec.z - mPos.z) >= FX32_HALF) {
         return;
     }
 
@@ -415,7 +416,7 @@ void ActorUnkPSWB::func_ov094_02167024(void) {
 
             Vec2bCpp vec2b;
             VecFx32 vec = mPos;
-            vec.y += FX_F32_TO_FX32(1.0f);
+            vec.y += FX32_ONE;
 
             MapManagerBase *tmpVar = gpCourseManager->mpMapMgr;
             func_01ffedac(&vec2b, &vec);
@@ -493,8 +494,8 @@ void ActorUnkPSWB::func_ov094_0216723c(void) {
                 u16 var1Val  = (s16) (*pvar1 + -DEG_TO_ANG(180));
                 fx32 sin_val = SIN(var1Val);
                 fx32 cos_val = COS(var1Val);
-                vecs[2].x    = FX_MulInline(sin_val, 0xCD);
-                vecs[2].z    = FX_MulInline(cos_val, 0xCD);
+                vecs[2].x    = FX_MUL(sin_val, FX_F32_TO_FX32(0.05f));
+                vecs[2].z    = FX_MUL(cos_val, FX_F32_TO_FX32(0.05f));
                 vecs[2].y    = 0;
                 VEC_Add(&mVel, &vecs[2], &mVel);
 
@@ -599,7 +600,7 @@ void ActorUnkPSWB::func_ov094_021676f4(void) {
     func_01ff916c(&mUnk_14C, var1, 0x7B);
     func_01ff916c(&mUnk_148, mUnk_14C, 0xA4);
 
-    mPos.y = mUnk_148 + mUnk_154 + FX_MulInline(SIN(mUnk_168), FX_F32_TO_FX32(0.1f));
+    mPos.y = mUnk_148 + mUnk_154 + FX_MUL(SIN(mUnk_168), FX_F32_TO_FX32(0.1f));
 }
 
 void ActorUnkPSWB::func_ov094_02167794(unk16 param1, unk16 param2, unk16 param3) {
@@ -610,7 +611,7 @@ void ActorUnkPSWB::func_ov094_02167794(unk16 param1, unk16 param2, unk16 param3)
     mUnk_16C += param1;
     unk16 tmp = mUnk_16E;
     func_01ff930c(&mUnk_16E, 0, param2);
-    mUnk_16A = FX_MulInline(tmp, COS(mUnk_16C));
+    mUnk_16A = FX_MUL(tmp, COS(mUnk_16C));
 }
 
 void ActorUnkPSWB::func_ov094_0216781c(void) {
@@ -639,7 +640,7 @@ void ActorUnkPSWB::vfunc_2C(unk32 param1) {
 
     VecFx32 vec1;
 
-    VecFx32_Init(FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(1.0f), &vec1);
+    VecFx32_Init(FX32_ONE, FX32_ONE, FX32_ONE, &vec1);
 
     MtxFx33 m1, m2;
     u16 angleIdx = mUnk_170;
@@ -764,7 +765,7 @@ void ActorUnkPSWB::func_ov094_02167d20(void) {
     fx32 ret = func_01ff9258(mVel.x, mVel.z);
     if (ret > 0) {
         fx32 div = FX_Div(ret, FX_F32_TO_FX32(0.7f));
-        mUnk_158 = CLAMP(div, FX_F32_TO_FX32(0.03f), FX_F32_TO_FX32(1.0f));
+        mUnk_158 = CLAMP(div, FX_F32_TO_FX32(0.03f), FX32_ONE);
     } else {
         mUnk_158 = FX_F32_TO_FX32(0.03f);
     }
@@ -818,8 +819,7 @@ void ActorUnkPSWB::func_ov094_02167e58(void) {
         for (unk32 var2 = 0; var2 < 4; var2++) {
             vec2.x = vec1.x;
             vec2.y = vec1.y;
-            VecFx32_Init(FX_MulInline(SIN(angle.angle_s), FX_F32_TO_FX32(0.5f)), 0,
-                         FX_MulInline(COS(angle.angle_s), FX_F32_TO_FX32(0.5f)), &vec3);
+            VecFx32_Init(FX_MUL(SIN(angle.angle_s), FX32_HALF), 0, FX_MUL(COS(angle.angle_s), FX32_HALF), &vec3);
             vec2.z = vec1.z;
             VEC_Add(&vec2, &vec3, &vec2);
 
@@ -852,8 +852,7 @@ void ActorUnkPSWB::func_ov094_02167e58(void) {
         for (unk32 var2 = 0; var2 < 4; var2++) {
             vec2.x = vec1.x;
             vec2.y = vec1.y;
-            VecFx32_Init(FX_MulInline(SIN(angle.angle_s), FX_F32_TO_FX32(0.5f)), 0,
-                         FX_MulInline(COS(angle.angle_s), FX_F32_TO_FX32(0.5f)), &vec3);
+            VecFx32_Init(FX_MUL(SIN(angle.angle_s), FX32_HALF), 0, FX_MUL(COS(angle.angle_s), FX32_HALF), &vec3);
             vec2.z = vec1.z;
             VEC_Add(&vec2, &vec3, &vec2);
 
@@ -912,11 +911,11 @@ void ActorUnkPSWB::func_ov094_0216825c(VecFx32 *param1, unk32 param2) {
     }
 
     if (param1->x != 0) {
-        mVel.x = FX_MulInline(param1->x, ABS(mVel.x));
+        mVel.x = FX_MUL(param1->x, ABS(mVel.x));
     }
 
     if (param1->z != 0) {
-        mVel.z = FX_MulInline(param1->z, ABS(mVel.z));
+        mVel.z = FX_MUL(param1->z, ABS(mVel.z));
     }
 
     func_01ff93c0(&mVel, param2);
