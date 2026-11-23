@@ -78,8 +78,7 @@ void MapObjectChestBase::Setup() {
     MapManagerBase *pUVar5;
     VecFx32 sp48;
     VecFx32 sp3C;
-    VecFx32 local_38;
-    VecFx32 local_44;
+    VecFx32 local_44[2];
     VecFx32 sp18;
     VecFx32 spC;
     Vec2bCpp local_5e;
@@ -164,15 +163,15 @@ void MapObjectChestBase::Setup() {
         }
     }
 
-    func_01ffcfcc(&local_44, &sp48, (VecFx32 *) &sp3C);
+    func_01ffcfcc((fx32 *) local_44, &sp48, (VecFx32 *) &sp3C);
 
-    this->mUnk_050.mUnk_0C.x = local_44.x;
-    this->mUnk_050.mUnk_0C.y = local_44.y;
-    this->mUnk_050.mUnk_0C.z = local_44.z;
+    this->mUnk_050.mUnk_0C.x = local_44[0].x;
+    this->mUnk_050.mUnk_0C.y = local_44[0].y;
+    this->mUnk_050.mUnk_0C.z = local_44[0].z;
 
-    this->mUnk_050.mUnk_18.x = local_38.x;
-    this->mUnk_050.mUnk_18.y = local_38.y;
-    this->mUnk_050.mUnk_18.z = local_38.z;
+    this->mUnk_050.mUnk_18.x = local_44[1].x;
+    this->mUnk_050.mUnk_18.y = local_44[1].y;
+    this->mUnk_050.mUnk_18.z = local_44[1].z;
 
     this->mUnk_050.mUnk_08 = 0x84007006;
     this->mUnk_10          = &this->mUnk_050;

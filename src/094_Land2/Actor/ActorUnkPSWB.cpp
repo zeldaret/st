@@ -61,7 +61,7 @@ ActorProfileUnkPSWB::ActorProfileUnkPSWB() :
     ActorProfileUnkPSWB_Base(ActorId_PSWB) {
 
     VecFx32 vec1, vec2;
-    unk8 stack1[0x24]; // TODO: clean this
+    MtxFx33 mtx;
 
     u32 tmp;
     fx32 tmp2;
@@ -89,9 +89,9 @@ ActorProfileUnkPSWB::ActorProfileUnkPSWB() :
 
     VecFx32_Init(tmp2, FX_F32_TO_FX32(0.90f), tmp2, &vec1);
     VecFx32_Init(FX_F32_TO_FX32(0.49f), FX_F32_TO_FX32(1.90f), FX_F32_TO_FX32(0.49f), &vec2);
-    func_01ffcfcc((VecFx32 *) &stack1[0xC], &vec1, &vec2);
+    func_01ffcfcc(&mtx._10, &vec1, &vec2);
 
-    func_ov000_0207f4fc(&mUnk_FC, &stack1, ((tmp & ~0x1F) & ~0x7000) | 0x3000, 1);
+    func_ov000_0207f4fc(&mUnk_FC, &mtx._10, ((tmp & ~0x1F) & ~0x7000) | 0x3000, 1);
 
     data_ov094_021785c0.mUnk_00 = &mUnk_FC;
     mUnk_18                     = 2;
@@ -109,7 +109,7 @@ bool ActorUnkPSWB_194::vfunc_08(RefStruct ref, unk32 param2, unk32 param3) {
             data_027e09c0->func_ov000_0207e20c(&data_ov094_021785c0, &mUnk_10->mPos);
         }
         mUnk_10->func_ov094_02167bf0();
-    } else if (((u32) ref.acRef.type_index) << 0x10 >> 0x1E != 0) {
+    } else if (ref.common.type != 0) {
         ActorBomb *actorBomb = (ActorBomb *) gpActorManager->func_01fff3b4(ref);
         if (actorBomb != NULL) {
             ActorId actorId = actorBomb->GetActorId();
@@ -501,9 +501,7 @@ void ActorUnkPSWB::func_ov094_0216723c(void) {
 
                 s16 velAngle = FX_Atan2Idx(mVel.x, mVel.z);
                 velAngle += -DEG_TO_ANG(180);
-                u16 tmp = velAngle + DEG_TO_ANG(45);
-                tmp >>= 0xE;
-                mUnk_160 = tmp;
+                mUnk_160 = GET_DIRECTION(velAngle);
 
                 if (mUnk_16E == 0) {
                     mUnk_16C = 0;
@@ -558,10 +556,8 @@ void ActorUnkPSWB::func_ov094_021675ac(VecFx32 *vec) {
     unk32 var;
     unk16 *pvar = (unk16 *) &var;
     func_01fff17c(pvar, data_027e0ce0, mUnk_98);
-    u16 tmp = *pvar + DEG_TO_ANG(45);
-    tmp >>= 0xE;
-    mUnk_160 = tmp;
-    this->func_ov048_02130790(tmp, vec, 0x1000);
+    mUnk_160 = GET_DIRECTION(*pvar);
+    this->func_ov048_02130790(mUnk_160, vec, 0x1000);
     mUnk_140 = vec->x;
     mUnk_144 = vec->z;
 }
