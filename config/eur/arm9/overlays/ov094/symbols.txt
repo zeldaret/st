@@ -40,7 +40,7 @@ _ZN12ActorUnkPSWBD0Ev kind:function(arm,size=0x60) addr:0x021666ec
 _ZN12ActorUnkPSWB4InitEi kind:function(arm,size=0x144) addr:0x0216674c
 _ZN12ActorUnkPSWB19func_ov094_02166890Ev kind:function(arm,size=0x3c) addr:0x02166890
 _ZN12ActorUnkPSWB19func_ov094_021668ccEv kind:function(arm,size=0x14) addr:0x021668cc
-_ZN12ActorUnkPSWB19func_ov094_021668e0Es kind:function(arm,size=0x44) addr:0x021668e0
+_ZN12ActorUnkPSWB19func_ov094_021668e0E18ActorUnkPSWBState_ kind:function(arm,size=0x44) addr:0x021668e0
 _ZN12ActorUnkPSWB6UpdateEv kind:function(arm,size=0x290) addr:0x02166924
 _ZN12ActorUnkPSWB8vfunc_24Ev kind:function(arm,size=0x18) addr:0x02166bb4
 _ZN12ActorUnkPSWB19func_ov094_02166bccEv kind:function(arm,size=0x44) addr:0x02166bcc
@@ -736,7 +736,7 @@ _ZGVN15ProfileInstanceI19ActorProfileUnkLOCKE8sProfileE kind:bss addr:0x02178558
 @14521 kind:bss addr:0x0217855c
 _ZN15ProfileInstanceI19ActorProfileUnkLOCKE8sProfileE kind:bss addr:0x02178568
 _ZGVN15ProfileInstanceI19ActorProfileUnkPSWBE8sProfileE kind:bss addr:0x021785a4
-@9434 kind:bss addr:0x021785a8
+@9607 kind:bss addr:0x021785a8
 @9469 kind:bss addr:0x021785b4
 data_ov094_021785c0 kind:bss addr:0x021785c0
 _ZN15ProfileInstanceI19ActorProfileUnkPSWBE8sProfileE kind:bss addr:0x021785d8

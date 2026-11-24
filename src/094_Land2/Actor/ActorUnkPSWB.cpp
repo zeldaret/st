@@ -114,7 +114,8 @@ bool ActorUnkPSWB_194::vfunc_08(RefStruct ref, unk32 param2, unk32 param3) {
         if (actorBomb != NULL) {
             ActorId actorId = actorBomb->GetActorId();
             if (actorId == ActorId_Bomb) {
-                if (func_01ff9258(mUnk_10->mPos.x - actorBomb->mPos.x, mUnk_10->mPos.z - actorBomb->mPos.z) <= 0x7D7) {
+                if (func_01ff9258(mUnk_10->mPos.x - actorBomb->mPos.x, mUnk_10->mPos.z - actorBomb->mPos.z) <=
+                    FX_F32_TO_FX32(0.49f)) {
                     actorBomb->func_ov031_020e1920(&mUnk_10->mVel);
                 }
             }
@@ -663,7 +664,7 @@ void ActorUnkPSWB::vfunc_2C(unk32 param1) {
     }
 
     VecFx32 vec2;
-    VecFx32_Init(mPos.x, mPos.y + 0x7D7, mPos.z, &vec2);
+    VecFx32_Init(mPos.x, mPos.y + FX_F32_TO_FX32(0.49f), mPos.z, &vec2);
     data_027e09b4->func_ov017_020c08c4(&vec2, 0x800, 0x800, 0x1F, 0, 1);
 }
 
