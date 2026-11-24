@@ -16,7 +16,7 @@ class UnkStruct_ov000_02090850_84_10 : public UnkSystem7 {
 public:
     /* 00 (base) */
     /* 04 */ unk32 mUnk_04;
-    /* 04 */ unk32 mUnk_08;
+    /* 08 */ unk32 mUnk_08;
     /* 0C */
 
     UnkStruct_ov000_02090850_84_10();
@@ -36,6 +36,9 @@ public:
 
     // overlay 31
     void func_ov031_020dac20();
+    void func_ov031_020dac40();
+    bool func_ov031_020dac80();
+    void func_ov031_020dacdc(bool param1);
 };
 
 class UnkStruct_ov000_02090850_AC : public UnkStruct_PlayerGet_74_base {
