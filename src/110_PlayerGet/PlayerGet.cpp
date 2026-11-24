@@ -417,7 +417,8 @@ void UnkStruct_PlayerGet_74::vfunc_00(unk32 param1, unk32 param2) {
     func_01ffc5a0(&unk_14->mUnk_8C, unk_14->mUnk_6C, unk_14->mAngle, &this->mUnk_04);
 }
 
-PlayerGet::PlayerGet() :
+PlayerGet::PlayerGet(PlayerLinkActor_A0_84 *param1) :
+    UnkStruct_ov000_0208f820(param1),
     mUnk_54(0, 0, -1, ItemId_None),
     mUnk_64(mUnk_44, -1),
     mUnk_6C(0x1000),
@@ -608,11 +609,11 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
             UnkStruct_027e09bc_0C *uVar11 = data_027e09bc->mUnk_04[1][0];
             uVar11->func_ov000_0207834c(this->mUnk_34, func_ov000_02077590(4), 0);
 
-            UnkStruct_PlayerGet_48 *pUnk_48 = this->mUnk_48;
-            pUnk_48->mUnk_42                = 0x1000;
-            pUnk_48->mUnk_47                = 0;
-            pUnk_48->mUnk_5E                = 0x1000;
-            pUnk_48->mUnk_63                = 0;
+            PlayerActorBase_70 *pUnk_48 = this->mUnk_48;
+            pUnk_48->mUnk_030.mUnk_12   = 0x1000;
+            pUnk_48->mUnk_030.mUnk_17   = 0;
+            pUnk_48->mUnk_04C.mUnk_12   = 0x1000;
+            pUnk_48->mUnk_04C.mUnk_17   = 0;
 
             if (this->mUnk_44->mUnk_00 != NULL) {
                 this->mUnk_64.func_ov000_0208a100();

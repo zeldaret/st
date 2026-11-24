@@ -14,9 +14,6 @@ class PlayerActorBase_70;
 class PlayerSceneChange : public UnkStruct_ov000_0208f820 {
 public:
     /* 00 (base) */
-    /* 48 */ unk32 mUnk_48;
-    /* 4C */ unk32 mUnk_4C;
-    /* 50 */ unk32 mUnk_50;
     /* 54 */ EntranceInfo mUnk_54;
     /* 68 */ EntryTransitionType mEntryTransitionType;
     /* 6C */ s32 mUnk_6C;
@@ -34,7 +31,7 @@ public:
     /* AD */ bool mUnk_AD;
     /* AE */ s16 mUnk_AE;
 
-    PlayerSceneChange();
+    PlayerSceneChange(PlayerLinkActor_A0_84 *param1);
 
     s16 func_ov112_02184bbc(s16 param1);
 
@@ -47,13 +44,10 @@ public:
 class PlayerSceneChange2 : public UnkStruct_ov000_0208f820 {
 public:
     /* 00 (base) */
-    /* 48 */ PlayerActorBase_70 *mUnk_48;
-    /* 4C */ unk32 mUnk_4C;
-    /* 50 */ unk32 mUnk_50;
     /* 54 */ VecFx32 mUnk_54;
-    /* 54 */ VecFx32 mUnk_60;
+    /* 60 */ VecFx32 mUnk_60;
 
-    PlayerSceneChange2();
+    PlayerSceneChange2(PlayerLinkActor_A0_84 *param1);
 
     /* 04 */ virtual ~PlayerSceneChange2() override;
     /* 0C */ virtual void vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) override;

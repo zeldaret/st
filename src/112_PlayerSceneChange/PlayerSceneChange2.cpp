@@ -2,7 +2,8 @@
 #include "Player/PlayerSceneChange.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
-PlayerSceneChange2::PlayerSceneChange2() {
+PlayerSceneChange2::PlayerSceneChange2(PlayerLinkActor_A0_84 *param1) :
+    UnkStruct_ov000_0208f820(param1) {
     this->mUnk_54 = *this->mUnk_34;
     this->mUnk_60 = *this->mUnk_34;
 }

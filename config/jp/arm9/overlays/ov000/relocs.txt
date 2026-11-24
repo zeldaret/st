@@ -6376,7 +6376,7 @@ from:0x02097060 kind:arm_call to:0x0208e330 module:overlay(0)
 from:0x0209709c kind:arm_call to:0x020ecfbc module:overlay(21)
 from:0x02097100 kind:arm_call to:0x02084314 module:overlay(0)
 from:0x02097114 kind:load to:0x027e0ce4 module:dtcm
-from:0x02097118 kind:load to:0x020b4760 module:overlay(0)
+from:0x02097118 kind:load to:0x020b4758 module:overlay(0) add:0x8
 from:0x0209711c kind:load to:0x027e0ce0 module:dtcm
 from:0x02097140 kind:arm_call to:0x02089468 module:overlay(0)
 from:0x02097188 kind:arm_call to:0x0208580c module:overlay(0)

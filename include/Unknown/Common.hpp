@@ -1429,3 +1429,15 @@ enum DungeonType_ {
     /* 10 */ DungeonType_DgnWater,
     /* 11 */ DungeonType_DgnDesert,
 };
+
+class UnkStruct_027e0ce0_40;
+class PlayerLinkActor;
+class PlayerLinkActor_9C;
+class PlayerLinkActor_A0;
+struct PlayerLinkActor_A0_84 {
+    /* 00 */ UnkStruct_027e0ce0_40 *unk_00;
+    /* 04 */ PlayerLinkActor *mpLink;
+    /* 08 */ PlayerLinkActor_9C *unk_08;
+    /* 0C */ PlayerLinkActor_A0 *unk_0C;
+    /* 10 */
+};

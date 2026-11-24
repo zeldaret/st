@@ -14,7 +14,8 @@
 #define SIN2(table, n) ((table)[2 * ((n) >> 4)])
 #define COS2(table, n) ((table)[2 * ((n) >> 4) + 1])
 
-PlayerSceneChange::PlayerSceneChange() :
+PlayerSceneChange::PlayerSceneChange(PlayerLinkActor_A0_84 *param1) :
+    UnkStruct_ov000_0208f820(param1),
     mUnk_54(false) {
     this->mEntryTransitionType = this->mUnk_2C->mEntryTransitionType;
     this->mUnk_6C              = -1;

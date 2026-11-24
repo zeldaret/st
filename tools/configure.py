@@ -255,6 +255,8 @@ config.libs = [
             Object("000_Second/Actor/Actor_Derived1.cpp"),
             Object("000_Second/Item/TreasureManager.cpp"),
             Object("000_Second/data_020aa88c.cpp"),
+            Object("000_Second/Player/PlayerLinkActor_A0_000.cpp"),
+            Object("000_Second/Player/data_ov000_020b2e60.cpp"),
         ]
     ),
     GameLib(
@@ -581,7 +583,7 @@ config.libs = [
             Object("031_Land/UnkStruct_ItemManager_20_04_32C_031.cpp"),
             Object("031_Land/code_020d9c64_031.cpp"),
             Object("031_Land/UnkStruct_ov031_02112b40_031.cpp"),
-            Object("031_Land/code_020dac20_031.cpp"),
+            Object("031_Land/UnkStruct_ov000_02090850_031.cpp"),
             Object("031_Land/code_020db0fc_031.cpp"),
             Object("031_Land/UnkStruct_ItemManager_20_10_031.cpp"),
             Object("031_Land/UnkStruct_ItemManager_20_04_031.cpp"),

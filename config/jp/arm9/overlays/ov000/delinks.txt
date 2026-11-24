@@ -133,3 +133,13 @@ src/000_Second/Item/TreasureManager.cpp:
 
 src/000_Second/data_020aa88c.cpp:
     .rodata     start:0x020ac08c end:0x020ac294
+
+src/000_Second/Player/PlayerLinkActor_A0_000.cpp:
+    .data       start:0x020b44ec end:0x020b4660
+    .init       start:0x020b1c7c end:0x020b1f70
+    .ctor       start:0x020b3108 end:0x020b310c
+    .text       start:0x02093388 end:0x02095bd8
+
+src/000_Second/Player/data_ov000_020b2e60.cpp:
+    complete
+    .data       start:0x020b4660 end:0x020b4758
