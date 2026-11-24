@@ -605,7 +605,7 @@ void PlayerGet::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
                 }
             }
 
-            UnkStruct_027e09bc_0C *uVar11 = data_027e09bc->mUnk_04[0][2];
+            UnkStruct_027e09bc_0C *uVar11 = data_027e09bc->mUnk_04[1][0];
             uVar11->func_ov000_0207834c(this->mUnk_34, func_ov000_02077590(4), 0);
 
             UnkStruct_PlayerGet_48 *pUnk_48 = this->mUnk_48;
@@ -895,7 +895,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
                 }
 
                 if (!temp_r6) {
-                    data_027e09bc->mUnk_04[0][2]->func_ov000_02078230(0);
+                    data_027e09bc->mUnk_04[1][0]->func_ov000_02078230(0);
                 }
 
                 if (data_027e09b8->func_ov000_020732fc(this->mUnk_54.mUnk_08) != 0) {

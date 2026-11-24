@@ -658,8 +658,7 @@ void ActorUnkPSWB::vfunc_2C(unk32 param1) {
     if (GET_FLAG2(mUnk_180, 1)) {
         Actor *actor = func_02016fbc(ActorId_OCTW, &mPos, 0);
         if (actor != NULL && actor->mState != ActorUnkPSWBState_3) {
-            // hacky but it works, the mUnk access is weird
-            (&data_027e09bc->mUnk_04[2])[param1]->func_ov000_020786dc(&mPos, 1);
+            data_027e09bc->mUnk_04[1][param1]->func_ov000_020786dc(&actor->mPos, 1);
         }
     }
 
