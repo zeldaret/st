@@ -121,30 +121,9 @@ public:
     /* 00 */ UnkStruct_PlayerGet_ec *mUnk_00;
 };
 
-class UnkStruct_PlayerGet_48 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ PAD(0x04, 0x40);
-    /* 40 */ unk16 mUnk_40;
-    /* 42 */ unk16 mUnk_42;
-    /* 44 */ unk8 mUnk_44;
-    /* 45 */ unk8 mUnk_45;
-    /* 46 */ unk8 mUnk_46;
-    /* 47 */ unk8 mUnk_47;
-    /* 48 */ PAD(0x48, 0x5E);
-    /* 5E */ unk16 mUnk_5E;
-    /* 60 */ unk8 mUnk_60;
-    /* 61 */ unk8 mUnk_61;
-    /* 62 */ unk8 mUnk_62;
-    /* 63 */ unk8 mUnk_63;
-};
-
 class PlayerGet : public UnkStruct_ov000_0208f820 {
 public:
     /* 000 (base) */
-    /* 048 */ UnkStruct_PlayerGet_48 *mUnk_48;
-    /* 04C */ unk32 *mUnk_4C;
-    /* 050 */ UnkStruct_PlayerGet_50 *mUnk_50;
     /* 054 */ UnkStruct_ov000_0208f820_04 mUnk_54;
     /* 064 */ UnkStruct_PlayerGet_64_2 mUnk_64;
     /* 068 */ unk32 mUnk_68;
@@ -163,7 +142,7 @@ public:
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3) override;
 
-    PlayerGet();
+    PlayerGet(PlayerLinkActor_A0_84 *param1);
 
 #if IS_JP
     bool func_ov110_02186b8c();

@@ -11,6 +11,7 @@
 class PlayerLinkActor_A0;
 class UnkStruct_027e0ce0_40;
 class PlayerLinkActor;
+struct PlayerLinkActor_A0_84;
 
 class UnkStruct_ov000_0208f820_14 {
 public:
@@ -112,7 +113,10 @@ public:
     /* 3C */ VecFx32 *mUnk_3C;
     /* 40 */ UnkAngleStruct *mUnk_40;
     /* 44 */ UnkStruct_ov000_0208f820_44 *mUnk_44;
-    /* 48 */
+    /* 48 */ PlayerActorBase_70 *mUnk_48;
+    /* 4C */ UnkStruct_PlayerGet_50 *mUnk_4C;
+    /* 50 */ UnkStruct_PlayerGet_50 *mUnk_50;
+    /* 54 */
 
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual ~UnkStruct_ov000_0208f820();
@@ -123,7 +127,7 @@ public:
     /* 1C */ virtual bool vfunc_1C(VecFx32 *param1);
     /* 20 */
 
-    UnkStruct_ov000_0208f820();
+    UnkStruct_ov000_0208f820(PlayerLinkActor_A0_84 *param1);
 
     bool func_ov000_020914b0(unk32 param1, VecFx32 *param2, unk32 param3);
     bool func_ov000_02091e68(unk32 param1);

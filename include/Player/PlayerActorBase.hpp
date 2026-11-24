@@ -272,11 +272,15 @@ public:
 };
 
 class PlayerActorBase_70_30 {
-private:
-    /* 00 */ PAD(0x00, 0x1C);
+public:
+    /* 00 */ PAD(0x00, 0x12);
+    /* 12 */ unk16 mUnk_12;
+    /* 14 */ unk16 mUnk_14;
+    /* 16 */ unk8 mUnk_16;
+    /* 17 */ unk8 mUnk_17;
+    /* 18 */ unk32 mUnk_18;
     /* 1C */
 
-public:
     PlayerActorBase_70_30(PlayerCharacter character, ModelRender_UnkSystem1 *param2, ModelRender_UnkSystem1 *param3);
 };
 

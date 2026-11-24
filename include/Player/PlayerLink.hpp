@@ -10,6 +10,8 @@ class PlayerActorBase;
 class UnkStruct_027e0ce0_40_150;
 class PlayerLinkActor_A0_38;
 class ItemManager;
+class UnkStruct_ov000_0208f820;
+union UnkStruct_027e0478;
 
 class PlayerLinkActor_A0_04 {
 public:
@@ -211,11 +213,8 @@ public:
     /* 79 */ PAD(0x79, 0x7D);
     /* 7D */ bool mUnk_7D;
     /* 7E */ bool mUnk_7E;
-    /* 80 */ void *mUnk_80;
-    /* 84 */ unk32 mUnk_84;
-    /* 88 */ unk32 mUnk_88;
-    /* 8C */ unk32 mUnk_8C;
-    /* 90 */ unk32 mUnk_90;
+    /* 80 */ UnkStruct_ov000_0208f820 *mUnk_80; // see `UnkStruct_ov000_020b2cec`
+    /* 84 */ PlayerLinkActor_A0_84 mUnk_84;
     /* 94 */
 
     PlayerLinkActor_A0(ItemManager *pItemMgr, UnkStruct_027e0ce0_40 *param2, PlayerActorBase *pPlayer,
@@ -251,6 +250,39 @@ public:
     bool func_ov000_02093f74(RefStruct ref);
     void func_ov000_02093fd0();
     void func_ov000_02093fe8();
+
+    // data_ov000_020b2cec
+    void func_ov000_02094014(void);
+    void func_ov000_02094034(void);
+    void func_ov000_02094054(void);
+    void func_ov000_02094084(void);
+    void func_ov000_020940a4(void);
+    void func_ov000_020940c4(void);
+    void func_ov000_020940e4(void);
+    void func_ov000_02094104(void);
+    void func_ov000_02094124(void);
+    void func_ov000_02094154(void);
+    void func_ov000_02094174(void);
+    void func_ov000_02094194(void);
+    void func_ov000_020941b4(void);
+    void func_ov000_020941d4(void);
+    void func_ov000_020941f4(void);
+    void func_ov000_02094214(void);
+    void func_ov000_02094234(void);
+    void func_ov000_02094254(void);
+    void func_ov000_02094274(void);
+    void func_ov000_02094294(void);
+    void func_ov000_020942b4(void);
+    void func_ov000_020942e4(void);
+    void func_ov000_02094304(void);
+    void func_ov000_02094324(void);
+    void func_ov000_02094344(void);
+    void func_ov000_02094364(void);
+    void func_ov000_02094384(void);
+    void func_ov000_020943a4(void);
+    void func_ov000_020943c4(void);
+    void func_ov000_020943e4(void);
+    void func_ov000_02094404(void);
 
     // overlay 1
     void func_ov001_020bd2e0();
