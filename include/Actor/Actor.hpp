@@ -348,6 +348,10 @@ public:
     static void func_ov017_020c26f8(unk32 param1, const VecFx32 *param2, unk32 param3, bool param4);
     static void func_ov017_020c28b4(VecFx32 *param1, UnkAngleStruct param2, unk32 param3);
 
+    // overlay 48
+    unk32 func_ov048_02130790(unk32, VecFx32 *, unk32);
+    unk32 func_ov048_02130aa4(VecFx32 *);
+
     // overlay 71 (might be temporary)
     void func_ov071_021540ac(unk32 param1);
     void func_ov071_0215414c();

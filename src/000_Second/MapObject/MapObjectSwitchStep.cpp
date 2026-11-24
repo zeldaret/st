@@ -1,5 +1,6 @@
 #include "MapObject/MapObjectSwitchStep.hpp"
 #include "CommonFuncs.hpp"
+#include "RefStruct.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
@@ -160,7 +161,7 @@ void MapObjectSwitchStep::func_ov000_0209e11c(MapObjState state, unk32 param2) {
     }
 }
 
-void MapObjectSwitchStep::vfunc_20(unk32 param1) {
+void MapObjectSwitchStep::vfunc_20(RefStruct param1) {
     switch (this->mState) {
         case MapObjSwitchStepState_1:
         case MapObjSwitchStepState_2:

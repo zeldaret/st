@@ -73,7 +73,7 @@ bool MapObjectDoorClick::Init(void) {
     }
     this->mUnk_A8.mUnk_07 = uVar2;
 
-    func_01ffcfcc(local_40, &local_1c, &local_28);
+    func_01ffcfcc((fx32 *) local_40, &local_1c, &local_28);
 
     this->mUnk_A8.mUnk_0C.x = local_40[0].x;
     this->mUnk_A8.mUnk_0C.y = local_40[0].y;

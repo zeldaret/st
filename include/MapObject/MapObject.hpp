@@ -147,7 +147,7 @@ public:
     /* 14 */ virtual void vfunc_14(unk32 param1);
     /* 18 */ virtual void vfunc_18(s8 *param1);
     /* 1C */ virtual bool vfunc_1C(RefStruct param1, unk32 param2, VecFx32 *param3);
-    /* 20 */ virtual void vfunc_20(unk32 param1);
+    /* 20 */ virtual void vfunc_20(RefStruct param1);
     /* 24 */ virtual void vfunc_24(MapObject *param1, VecFx32 param2);
     /* 28 */ virtual unk32 vfunc_28(PlayerType playerType, unk32 param2, unk32 param3);
     /* 2C */ virtual bool vfunc_2C(VecFx32 *param1);

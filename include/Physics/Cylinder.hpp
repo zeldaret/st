@@ -1,5 +1,7 @@
 #pragma once
 
+#include "nitro/fx.h"
+#include "nitro/math.h"
 #include "types.h"
 
 #include "math.hpp"
@@ -29,6 +31,12 @@ struct Cylinder {
         this->pos.x = x;
         this->pos.y = y;
         this->pos.z = z;
+
+        this->size = size;
+    }
+
+    void Init(VecFx32 *vec, fx32 size) {
+        VecFx32_Copy(vec, &this->pos);
 
         this->size = size;
     }

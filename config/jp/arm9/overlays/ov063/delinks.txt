@@ -8,20 +8,20 @@
 src/063_Shrine/Actor/ActorLobarrier.cpp:
     complete
     .text       start:0x02159be0 end:0x0215c894
+    .rodata     start:0x0216433c end:0x02164370
     .init       start:0x02164548 end:0x021645b8
     .ctor       start:0x02164c58 end:0x02164c5c
     .data       start:0x02164ca0 end:0x02164ee8
     .bss        start:0x02165980 end:0x02165a68
-    .rodata     start:0x0216433c end:0x02164370
 
 src/063_Shrine/Actor/ActorLobarrierShield.cpp:
     complete
     .text       start:0x0215c894 end:0x0215d890
+    .rodata     start:0x02164370 end:0x02164390
     .init       start:0x021645b8 end:0x0216464c
     .ctor       start:0x02164c5c end:0x02164c60
     .data       start:0x02164ee8 end:0x02165044
     .bss        start:0x02165a68 end:0x02165b50
-    .rodata     start:0x02164370 end:0x02164390
 
 src/063_Shrine/Actor/ActorUnkRMSBase.cpp:
     complete
@@ -31,47 +31,47 @@ src/063_Shrine/Actor/ActorUnkRMSBase.cpp:
 src/063_Shrine/Actor/ActorUnkRMSV.cpp:
     complete
     .text       start:0x0215d9c0 end:0x0215dd24
+    .rodata     start:0x02164390 end:0x021643b0
     .init       start:0x0216464c end:0x0216469c
     .ctor       start:0x02164c60 end:0x02164c64
     .data       start:0x021650a8 end:0x021651a8
     .bss        start:0x02165b50 end:0x02165c38
-    .rodata     start:0x02164390 end:0x021643b0
 
 src/063_Shrine/Actor/ActorUnkRMSW.cpp:
     complete
     .text       start:0x0215dd24 end:0x0215df6c
+    .rodata     start:0x021643b0 end:0x021643d0
     .init       start:0x0216469c end:0x021646ec
     .ctor       start:0x02164c64 end:0x02164c68
     .data       start:0x021651a8 end:0x02165248
     .bss        start:0x02165c38 end:0x02165d20
-    .rodata     start:0x021643b0 end:0x021643d0
 
 src/063_Shrine/Actor/ActorUnkRMSF.cpp:
     complete
     .text       start:0x0215df6c end:0x0215e0d0
+    .rodata     start:0x021643d0 end:0x021643f0
     .init       start:0x021646ec end:0x0216473c
     .ctor       start:0x02164c68 end:0x02164c6c
     .data       start:0x02165248 end:0x021652d0
     .bss        start:0x02165d20 end:0x02165e08
-    .rodata     start:0x021643d0 end:0x021643f0
 
 src/063_Shrine/Actor/ActorUnkRMSD.cpp:
     complete
     .text       start:0x0215e0d0 end:0x0215e318
+    .rodata     start:0x021643f0 end:0x02164410
     .init       start:0x0216473c end:0x0216478c
     .ctor       start:0x02164c6c end:0x02164c70
     .data       start:0x021652d0 end:0x02165370
     .bss        start:0x02165e08 end:0x02165ef0
-    .rodata     start:0x021643f0 end:0x02164410
 
 src/063_Shrine/Actor/ActorUnkRMSS.cpp:
     complete
     .text       start:0x0215e318 end:0x0215e47c
+    .rodata     start:0x02164410 end:0x02164430
     .init       start:0x0216478c end:0x021647dc
     .ctor       start:0x02164c70 end:0x02164c74
     .data       start:0x02165370 end:0x021653f8
     .bss        start:0x02165ef0 end:0x02165fd8
-    .rodata     start:0x02164410 end:0x02164430
 
 src/063_Shrine/Actor/ActorUnkRBLS.cpp:
     .text       start:0x0216108c end:0x02161318
