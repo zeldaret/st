@@ -5,9 +5,6 @@
     .data       start:0x020b3160 end:0x020b66c0 kind:data align:32
     .bss        start:0x020b66c0 end:0x020b7d40 kind:bss align:32
 
-src/000_Second/data_020aa88c.cpp:
-    .rodata     start:0x020ac08c end:0x020ac294
-
 src/000_Second/UnkStruct_ov000_020b1c10.cpp:
     .text       start:0x0205c8ac end:0x0205c914
     .data       start:0x020b3408 end:0x020b3414
@@ -95,6 +92,9 @@ src/000_Second/MapObject/MapObject.cpp:
 src/000_Second/MapObject/MapObjectPot_Base.cpp:
     .text       start:0x0209eec4 end:0x0209f338
     .data       start:0x020b4dc8 end:0x020b4e28
+
+src/000_Second/data_020aa88c.cpp:
+    .rodata     start:0x020ac08c end:0x020ac294
 
 src/000_Second/MapObject/MapObjectSwitchStep.cpp:
     .text       start:0x0209f4a4 end:0x0209fbbc
