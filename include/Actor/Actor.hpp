@@ -278,8 +278,6 @@ public:
     ActorId GetActorId();
 
     // overlay 0
-    unk32 func_ov000_0207df88(Cylinder *param1, unk32 param2);
-    unk32 func_ov000_0207e294(Cylinder *param1);
     void func_ov000_0209848c(ActorProfile *param1);
     void func_ov000_020984b0();
     void func_ov000_020984b4();
@@ -311,6 +309,8 @@ public:
     void func_ov000_0209a008(unk32 param1, fx16 param2);
     u32 func_ov000_02098ab4(u8 param1, unk32 param2, unk32 param3, VecFx32 *param4);
 
+    static unk32 func_ov000_0207df88(const UnkStruct_ov031_020e5d18_00 *param1, const Cylinder *param2, unk32 param3);
+    static unk32 func_ov000_0207e294(const RefStruct *pRef, Cylinder *param1);
     static void func_ov000_020973f4(RefStruct *pOutRef, UnkStruct_ov000_020b539c *param2, ActorId actorId,
                                     ActorParams *pParams, int param5);
 

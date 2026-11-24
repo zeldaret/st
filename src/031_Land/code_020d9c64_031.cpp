@@ -60,9 +60,9 @@ void UnkStruct_ov031_02112b24::func_ov031_020da274(const VecFx32 *param1, const 
 
     sp24.ref.common.unk_00 = 0x102;
     sp24.ref.common.unk_02 = 0x04;
-    sp7C.mUnk_00           = NULL;
-    func_01ffe6c4(&sp7C.mUnk_00, sp24.ref, param2, param1, 0x1C, 0, this);
-    (((Actor *) &sp7C))->func_ov000_0207df88(&sp94, 0x11);
+    sp7C.mUnk_00.Reset();
+    sp7C.func_01ffe6c4(sp24.ref, param2, param1, 0x1C, NULL, this);
+    Actor::func_ov000_0207df88(&sp7C, &sp94, 0x11);
 
     if (this->mUnk_04->GetCount() >= 8) {
         return;

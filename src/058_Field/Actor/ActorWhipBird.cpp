@@ -208,7 +208,6 @@ void ActorWhipBird::vfunc_24() {
     this->Update();
 }
 
-// non-matching
 void ActorWhipBird::Update() {
     this->mUnk_3C = &this->mUnk_1F4;
     this->Actor::func_ov000_020989e0();
@@ -217,23 +216,22 @@ void ActorWhipBird::Update() {
     this->Actor::func_ov000_02098838();
 
     this->mUnk_274.CopyOut(&this->mUnk_268);
+
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
+
     VEC_Add(&this->mUnk_268.vec, &this->mVel, &this->mUnk_268.vec);
 
-    // VecFx32_Init(this->mUnk_268.vec.x, this->mUnk_268.vec.y - this->mUnk_28C, this->mUnk_268.vec.z, &this->mPos);
-    this->mPos.x = this->mUnk_268.vec.x;
-    this->mPos.z = this->mUnk_268.vec.z;
-    this->mPos.y = this->mUnk_268.vec.y - this->mUnk_28C;
+    VecFx32_Copy(&this->mUnk_268.vec, &this->mPos);
+    this->mPos.y -= this->mUnk_28C;
 
     this->func_ov058_0214c92c();
     this->func_ov058_0214ca40();
 
     UnkStruct_ov031_020e5d18_00 spC;
-    spC.mUnk_00                         = NULL;
-    UnkStruct_ov031_020e5d18_00 *pActor = &spC;
-    func_01ffe6c4(&pActor->mUnk_00, this->mRef, &this->mUnk_268.vec, &this->mUnk_274.vec, (s16) this->mUnk_44,
-                  &this->mUnk_268.vec, &this->mUnk_32C);
-    ((Actor *) pActor)->func_ov000_0207e294(this->mUnk_30);
+    spC.mUnk_00.Reset();
+    spC.func_01ffe6c4(this->mRef, &this->mUnk_268.vec, &this->mUnk_274.vec, this->mUnk_44, &this->mUnk_268.vec,
+                      &this->mUnk_32C);
+    Actor::func_ov000_0207e294(&spC.mUnk_00, this->mUnk_30);
 
     this->mUnk_100.vfunc_34();
     this->func_ov058_0214cacc();

@@ -59,8 +59,7 @@ public:
     /* 094 */ UnkSystem6_Derived2 mUnk_94;
     /* 0A0 */ ActorItemBoomerang_A0 mUnk_A0;
     /* 0CC */ ActorItemBoomerang_CC mUnk_CC;
-    /* 10C */ VecFx32 mUnk_10C;
-    /* 118 */ unk32 mUnk_118;
+    /* 10C */ Cylinder mUnk_10C;
     /* 11C */ ActorItemBoomerang_11C mUnk_11C;
     /* 128 */ u32 mUnk_128;
     /* 12C */ UnkSystem7 mUnk_12C[0x3];

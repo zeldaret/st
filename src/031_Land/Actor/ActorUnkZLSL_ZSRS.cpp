@@ -1782,15 +1782,15 @@ void ActorUnkZLSL::func_ov031_020edc80() {
     unk32 var_r6 = 0;
 
     UnkStruct_ov031_020e5d18_00 spC;
-    spC.mUnk_00 = NULL;
-    func_01ffe6c4(&spC.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos, NULL);
+    spC.mUnk_00.Reset();
+    spC.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, this->mUnk_44, &this->mPos, NULL);
 
     if (this->mUnk_2900 & 0x01) {
-        var_r6 = data_027e09c0->func_ov000_0207dc88(&spC.mUnk_00, this->mUnk_38);
+        var_r6 = data_027e09c0->func_ov000_0207dc88(&spC, this->mUnk_38);
     }
 
-    var_r6 |= ((Actor *) &spC)->func_ov000_0207df88(this->mUnk_30, 0x10);
-    var_r6 |= ((Actor *) &spC)->func_ov000_0207e294(this->mUnk_30);
+    var_r6 |= Actor::func_ov000_0207df88(&spC, this->mUnk_30, 0x10);
+    var_r6 |= Actor::func_ov000_0207e294(&spC.mUnk_00, this->mUnk_30);
     this->mUnk_46 = var_r6;
 }
 
