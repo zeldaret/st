@@ -56,7 +56,6 @@ bool UnkStruct_ov031_02112b40::vfunc_08(const UnkStruct_ov031_020f3310 *param1, 
     return true;
 }
 
-// https://decomp.me/scratch/1C1AM
 bool UnkStruct_ov031_02112b40::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
                                         const VecFx32 *param4) {
     RefStruct sp18[2];
@@ -64,8 +63,6 @@ bool UnkStruct_ov031_02112b40::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 
     MapObjRef sp8;
     Vec2bCpp sp2;
     Vec2bCpp sp0;
-
-    STACK_PAD(8);
 
     if (((param2->mUnk_08 >> 0x16) & 0x01) == 0x01) {
         return false;
@@ -136,13 +133,18 @@ bool UnkStruct_ov031_02112b40::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 
         this->mUnk_08 = func_ov031_020da584(param2->mUnk_08);
         VEC_Subtract(param3, param4, &this->mUnk_0C);
 
-        if (ref.common.unk_00 == 0x1000) {
-            this->mUnk_18 |= 0x02;
+        u32 flags = this->mUnk_18;
+        u32 unk04 = this->mUnk_04.data;
 
-            if (ref == this->mUnk_04) {
+        if (ref.common.unk_00 == 0x1000) {
+            this->mUnk_18 = flags | 0x02;
+
+            if (ref.data == this->mUnk_04.Copy().Get32()) {
+
                 this->mUnk_18 |= 0x10;
             } else {
-                sp14[-2]           = RefStruct(ref.data).moRef;
+                //! TODO: fake match, stack is annoying
+                sp14[-2]           = ref.Copy().moRef;
                 sp0                = sp14[-2].GetUnk02();
                 MapObject *temp_r5 = gpMapObjManager->func_01fff498(sp0);
 
@@ -160,9 +162,10 @@ bool UnkStruct_ov031_02112b40::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 
                 }
             }
         } else {
-            this->mUnk_18 |= 0x04;
+            this->mUnk_18 = flags | 0x04;
 
-            if (ref == this->mUnk_04) {
+            if (ref.data == this->mUnk_04.Copy().Get32()) {
+
                 this->mUnk_18 |= 0x20;
             }
         }

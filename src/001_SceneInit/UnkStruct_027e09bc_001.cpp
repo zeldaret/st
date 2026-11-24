@@ -10,11 +10,13 @@ UnkStruct_027e09bc *UnkStruct_027e09bc::Create() {
 UnkStruct_027e09bc::UnkStruct_027e09bc() {
     this->mUnk_04[0][0] = NULL;
     this->mUnk_04[0][1] = NULL;
+
     this->mUnk_04[1][0] = NULL;
     this->mUnk_04[1][1] = NULL;
 
     this->mUnk_04[2][0] = NULL;
     this->mUnk_04[2][1] = NULL;
+
     this->mUnk_04[3][0] = NULL;
     this->mUnk_04[3][1] = NULL;
 
@@ -26,8 +28,10 @@ UnkStruct_027e09bc::UnkStruct_027e09bc() {
     } else if (data_027e09a4->IsSceneModeBattle()) {
         this->mUnk_04[2][0] = new(HeapIndex_1) UnkStruct_027e09bc_0C(0);
         this->mUnk_04[2][1] = new(HeapIndex_1) UnkStruct_027e09bc_0C(1);
+
         this->mUnk_04[3][0] = new(HeapIndex_1) UnkStruct_027e09bc_0C(2);
         this->mUnk_04[3][1] = new(HeapIndex_1) UnkStruct_027e09bc_0C(3);
+
         this->mUnk_04[0][0] = this->mUnk_04[2][data_ov020_020e8544->vfunc_20()];
     }
 }
@@ -35,15 +39,19 @@ UnkStruct_027e09bc::UnkStruct_027e09bc() {
 UnkStruct_027e09bc::~UnkStruct_027e09bc() {
     delete this->mUnk_04[1][0];
     delete this->mUnk_04[1][1];
+
     delete this->mUnk_04[2][0];
     delete this->mUnk_04[2][1];
+
     delete this->mUnk_04[3][0];
     delete this->mUnk_04[3][1];
 
     this->mUnk_04[1][0] = NULL;
     this->mUnk_04[1][1] = NULL;
+
     this->mUnk_04[2][0] = NULL;
     this->mUnk_04[2][1] = NULL;
+
     this->mUnk_04[3][0] = NULL;
     this->mUnk_04[3][1] = NULL;
 }
