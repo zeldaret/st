@@ -4,7 +4,8 @@
 #include "Unknown/UnkStruct_027e09c0.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 
-bool UnkStruct_ov031_Items_02_38::vfunc_08(RefStruct ref) {
+bool UnkStruct_ov031_Items_02_38::vfunc_08(RefStruct ref, unk32 param2, unk32 param3) {
+#pragma unused(param2, param3)
     if (ref.common.type != 0) {
         Actor *pActor = gpActorManager->func_01fff3b4(ref);
 

@@ -2,14 +2,14 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
-#include "Actor/ActorLobarrier.hpp"
-#include "Actor/ActorLobarrierShield.hpp"
 #include "Actor/ActorUnkRCFO.hpp"
 #include "Course/Course.hpp"
 #include "Course/CourseManager.hpp"
 #include "Map/MapObjectId.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_027e09a4.hpp"
+#include "Unknown/UnkStruct_027e09c0.hpp"
 #include "nitro/fx.h"
 #include "types.h"
 
@@ -61,6 +61,7 @@ struct UnkStruct_PlayerGet_50;
 struct MapObjectUnkWLMS;
 struct stack_ov000_02073578;
 struct UnkStruct_ov031_02118fa4;
+struct UnkStruct_027e0d38;
 struct UnkFileSystem1;
 struct UnkStruct_ov000_02058a84;
 
@@ -98,7 +99,7 @@ void func_01ffcb94(unk16, unk16, MtxFx33 *);
 bool func_01ffccf4(Cylinder *, VecFx32 *, VecFx32 *, unk32 *);
 void func_01ffce1c(Cylinder *, Cylinder *);
 int func_01ffcea0(Cylinder *, Cylinder *);
-void func_01ffcfcc(VecFx32 *, VecFx32 *, VecFx32 *);
+void func_01ffcfcc(fx32 *, VecFx32 *, VecFx32 *);
 void func_01ffd054(VecFx32 *, VecFx32 *);
 void func_01ffd1b4(VecFx32 *, VecFx32 *);
 fx32 func_01ffe868(VecFx32 *, unk32, unk32);
@@ -158,6 +159,7 @@ bool func_02016cf0(VecFx32 *, VecFx32 *, RefStruct, int, int);
 Actor *func_02016fbc(ActorId, VecFx32 *, unk32);
 unk32 func_02017158();
 unk8 func_02017e8c(unk16 *);
+void func_02017f38(u16 *);
 fx32 func_02017f54(s16 *, UnkAngleStruct);
 void func_02018114(unk16 *, unk16);
 s16 func_020196b0(unk32 param1);
@@ -212,9 +214,10 @@ UnkStruct_027e0cec_18_04 *func_ov000_02054690(void *, unk32, unk32, unk32, unk32
 void func_ov000_02057cc8(ModelRender *);
 void func_ov000_02058c74(void *, int, int, int, int);
 BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, void *);
+void func_ov000_0205ad90(Vec2bCpp param1, VecFx32 *param2);
+void func_ov000_0205ad64(VecFx32 *, VecFx32 *);
 UnkStruct_ov000_02058a84 *func_ov000_0205ac34(UnkFileSystem1 *, unk32);
 bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
-void func_ov000_0205ad90(Vec2bCpp param1, VecFx32 *param2);
 bool func_ov000_0205aeac();
 unk32 func_ov000_0205b090();
 unk32 func_ov000_0205b0ac(s16 param1);
@@ -247,6 +250,8 @@ unk32 func_ov000_02068504(int);
 void func_ov000_02072344(u16 *, UnkStruct_027e09ac_14 *);
 void func_ov000_02072fd0(UnkStackStruct1 *);
 void func_ov000_02073080(void *);
+void func_ov000_0207f4e8(void *);
+void func_ov000_0207f4fc(void *, fx32 *, unk32, unk32);
 unk32 func_ov000_02077480();
 fx32 func_ov000_020775d8(fx32);
 unk32 func_ov000_02078aec();
@@ -266,6 +271,7 @@ void func_ov000_02089bbc(void *, unk32);
 void func_ov000_0208a7a4(void *, void *);
 void func_ov000_0208abc4(RefStruct *, void *, Vec2s *);
 void func_ov000_0208ba10(void *, void *, unk32);
+void func_ov000_0208bb84(u16 *param1, UnkStruct_027e0ce0 *param2, unk32 param3);
 unk32 func_ov000_0208dc98(unk32);
 void func_ov000_0208dd60(void *, UnkStruct_027e0ce0_30_00 *);
 const char *func_ov000_0208e830(int);

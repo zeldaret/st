@@ -967,7 +967,7 @@ data_ov058_02157064 kind:bss addr:0x02157064 ambiguous
 _ZGVN15ProfileInstanceI19ActorProfileUnkFBSCE8sProfileE kind:bss addr:0x021570c4
 @12080 kind:bss addr:0x021570c8
 _ZN15ProfileInstanceI19ActorProfileUnkFBSCE8sProfileE kind:bss addr:0x021570d4
-data_ov058_02157110 kind:bss(size=1) addr:0x02157110
+data_ov058_02157110 kind:bss(size=0x1) addr:0x02157110
 _ZGVN15ProfileInstanceI20ActorProfileWhipBirdE8sProfileE kind:bss addr:0x02157114
 @12086 kind:bss addr:0x02157118
 _ZN15ProfileInstanceI20ActorProfileWhipBirdE8sProfileE kind:bss addr:0x02157124
