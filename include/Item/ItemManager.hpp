@@ -89,13 +89,61 @@ public:
     UnkStruct_ItemManager_20_04_08_310(); //! TODO: params
 };
 
+struct UnkStruct_ItemManager_20_04_32C_00 {
+    /* 00 */ RefStruct mRef;
+    /* 04 */ u16 mUnk_04;
+    /* 08 */ VecFx32 mUnk_08;
+    /* 14 */
+
+    UnkStruct_ItemManager_20_04_32C_00() {}
+    UnkStruct_ItemManager_20_04_32C_00(const UnkStruct_ItemManager_20_04_32C_00 *other) {
+        this->mRef    = other->mRef;
+        this->mUnk_04 = other->mUnk_04;
+        this->mUnk_08 = other->mUnk_08;
+    }
+};
+
 class UnkStruct_ItemManager_20_04_32C {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ UnkStruct_ItemManager_20_04_32C_00 mUnk_00[8];
+    /* A0 */ UnkStruct_ItemManager_20_04_32C_00 *mUnk_A0;
+    /* A4 */ RefStruct mUnk_A4;
+    /* A8 */
+
+    UnkStruct_ItemManager_20_04_32C() :
+        mUnk_A0(this->mUnk_00),
+        mUnk_A4(0) {}
+
+    UnkStruct_ItemManager_20_04_32C_00 *GetUnk00() const {
+        return (UnkStruct_ItemManager_20_04_32C_00 *) this->mUnk_00;
+    }
+
+    const UnkStruct_ItemManager_20_04_32C_00 *GetUnkA0() const {
+        return this->mUnk_A0;
+    }
+
+    const u32 GetCount() const {
+        return this->mUnk_A0 - this->mUnk_00;
+    }
+
+    void UnkAction1(UnkStruct_ItemManager_20_04_32C_00 *pEntry) {
+        this->mUnk_A0--;
+
+        while (pEntry != this->mUnk_A0) {
+            pEntry[0] = pEntry[1];
+            pEntry++;
+        }
+    }
 
     // overlay 31
-    BOOL func_ov031_020d9ccc(RefStruct ref);
-    void func_ov031_020d9f34(RefStruct ref);
+    s32 func_ov031_020d9ccc(RefStruct ref);
+    bool func_ov031_020d9d10(RefStruct ref, u16 param2);
+    bool func_ov031_020d9f34(RefStruct ref);
+    bool func_ov031_020d9fd0(u16 param1, VecFx32 *param2);
+    void func_ov031_020da144(unk32 param1);
+
+    static Actor *func_ov031_020d9c64(RefStruct ref);
+    static void func_ov031_020da104(RefStruct *pRef, UnkStruct_ItemManager_20_04_32C *thisx, u16 param3);
 };
 
 class UnkStruct_ItemManager_20_04_08 : public LinkList<UnkStruct_ItemManager_20_04_08> {
@@ -111,9 +159,6 @@ public:
     /* 327 */ bool mUnk_327;
     /* 328 */ unk32 mUnk_328;
     /* 32C */ UnkStruct_ItemManager_20_04_32C mUnk_32C;
-    /* 330 */ PAD(0x330, 0x3CC);
-    /* 3CC */ void *mUnk_3CC;
-    /* 3D0 */ unk32 mUnk_3D0;
     /* 3D4 */
 
     UnkStruct_ItemManager_20_04_08();

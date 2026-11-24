@@ -56,10 +56,11 @@ src/058_Field/Actor/ActorUnkFBSC.cpp:
     .ctor       start:0x0215413c end:0x02154140
     .bss        start:0x021570c4 end:0x02157110
 
-src/058_Field/Actor/ActorUnkWPBD.cpp:
+src/058_Field/Actor/ActorWhipBird.cpp:
     .text       start:0x0214abc0 end:0x0214d468
     .init       start:0x02153ac4 end:0x02153b44
     .ctor       start:0x02154140 end:0x02154144
+    .data       start:0x02155300 end:0x02155474
     .bss        start:0x02157110 end:0x021571fc
 
 src/058_Field/Actor/ActorUnkWPCH.cpp:
@@ -102,6 +103,7 @@ src/058_Field/MapObject/MapObjectUnkSTNE.cpp:
     .text       start:0x0214ea70 end:0x0214f064
     .init       start:0x02153d78 end:0x02153dc8
     .ctor       start:0x0215415c end:0x02154160
+    .data       start:0x02155914 end:0x02155990
     .bss        start:0x02157678 end:0x0215777c
 
 src/058_Field/MapObject/MapObjectUnkHOUS.cpp:

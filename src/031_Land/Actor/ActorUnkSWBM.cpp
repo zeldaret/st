@@ -246,13 +246,12 @@ void ActorUnkSWBM::Update() {
             }
 
             UnkStruct_ov031_020e5d18_00 actorSpC;
-            actorSpC.mUnk_00 = NULL;
 
-            func_01ffe6c4(&actorSpC.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos,
-                          &this->mUnk_094);
+            actorSpC.mUnk_00.Reset();
+            actorSpC.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, this->mUnk_44, &this->mPos, &this->mUnk_094);
 
-            unk32 val = ((Actor *) &actorSpC)->func_ov000_0207df88(this->mUnk_30, 0x07) |
-                        ((Actor *) &actorSpC)->func_ov000_0207e294(this->mUnk_30);
+            unk32 val = Actor::func_ov000_0207df88(&actorSpC, this->mUnk_30, 0x07) |
+                        Actor::func_ov000_0207e294(&actorSpC.mUnk_00, this->mUnk_30);
             this->mUnk_46 = val;
 
             if (val == 0x0) {

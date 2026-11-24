@@ -206,14 +206,12 @@ void ActorUnkNSSW::func_ov032_02120190() {
 
 void ActorUnkNSSW::func_ov032_0212025c() {
     UnkStruct_ov031_020e5d18_00 sp14;
-    sp14.mUnk_00 = NULL;
+    sp14.mUnk_00.Reset();
 
     UnkStruct_ov071_0215f92c sp0C;
+    sp14.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, 0x04, &this->mPos, &sp0C);
 
-    UnkStruct_ov031_020e5d18_00 *pActor = &sp14;
-    func_01ffe6c4(&pActor->mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, 0x4, &this->mPos, &sp0C);
-
-    this->mUnk_46 = ((Actor *) pActor)->func_ov000_0207e294(this->mUnk_30);
+    this->mUnk_46 = Actor::func_ov000_0207e294(&sp14.mUnk_00, this->mUnk_30);
     if (this->mUnk_46 & 0x4) {
         this->func_ov032_02120894(0x5);
     }
@@ -267,14 +265,13 @@ void ActorUnkNSSW::func_ov032_021203fc() {
     if (this->mTimer.value < 0x4) {
         this->func_ov032_02120190();
 
-        sp90.mUnk_00 = NULL;
+        sp90.mUnk_00.Reset();
 #if IS_JP
-        func_01ffe6c4(&sp90.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos,
-                      &this->mUnk_138_jp);
-        ((Actor *) &sp90)->func_ov000_0207df88(this->mUnk_30, 0x0A);
+        sp90.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, this->mUnk_44, &this->mPos, &this->mUnk_138_jp);
+        Actor::func_ov000_0207df88(&sp90, this->mUnk_30, 0x0A);
 #else
-        func_01ffe6c4(&sp90.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos, NULL);
-        ((Actor *) &sp90)->func_ov000_0207df88(this->mUnk_30, 0x10);
+        sp90.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, this->mUnk_44, &this->mPos, NULL);
+        Actor::func_ov000_0207df88(&sp90, this->mUnk_30, 0x10);
 #endif
 
         if (this->mUnk_0BC == 0x0) {
@@ -334,15 +331,14 @@ void ActorUnkNSSW::func_ov032_021203fc() {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VEC_Add(&this->mPos, &this->mUnk_144.vec, &this->mPos);
 
-    sp40.mUnk_00 = NULL;
+    sp40.mUnk_00.Reset();
 
 #if IS_JP
-    func_01ffe6c4(&sp40.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos,
-                  &this->mUnk_138_jp);
-    ((Actor *) &sp40)->func_ov000_0207df88(this->mUnk_30, 0x0A);
+    sp40.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, this->mUnk_44, &this->mPos, &this->mUnk_138_jp);
+    Actor::func_ov000_0207df88(&sp40, this->mUnk_30, 0x0A);
 #else
-    func_01ffe6c4(&sp40.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos, NULL);
-    ((Actor *) &sp40)->func_ov000_0207df88(this->mUnk_30, 0x10);
+    sp40.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, this->mUnk_44, &this->mPos, NULL);
+    Actor::func_ov000_0207df88(&sp40, this->mUnk_30, 0x10);
 #endif
 
     if (this->mUnk_0BC == 0x0) {
@@ -491,15 +487,12 @@ void ActorUnkNSSW::func_ov032_02120894(unk32 param1) {
 
 #if IS_JP || IS_EUR1
             UnkStruct_ov031_020e5d18_00 spC;
-            spC.mUnk_00   = NULL;
+            spC.mUnk_00.Reset();
             VecFx32 *vec2 = this->Actor::func_ov000_0209853c(PlayerType_Link);
 
-            UnkStruct_ov031_020e5d18_00 *pActor = &spC;
-            func_01ffe6c4(&pActor->mUnk_00, this->mRef, &this->mPos, vec2, (s16) this->mUnk_44, &this->mPos, NULL);
-
-            ((Actor *) pActor)->func_ov000_0207df88(this->mUnk_30, 0x10);
-
-            ((Actor *) pActor)->func_ov000_0207e294(this->mUnk_30);
+            spC.func_01ffe6c4(this->mRef, &this->mPos, vec2, this->mUnk_44, &this->mPos, NULL);
+            Actor::func_ov000_0207df88(&spC, this->mUnk_30, 0x10);
+            Actor::func_ov000_0207e294(&spC.mUnk_00, this->mUnk_30);
 #endif
             break;
         }

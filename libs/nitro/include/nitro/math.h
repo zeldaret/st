@@ -29,7 +29,7 @@ u32 CoRemainder(u32 a, u32 b);
 
 extern const VecFx32 gVecFx32_ZERO;
 
-void VEC_Add(VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 void VecFx32_Sub(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 void VecFx32_Cross(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 fx32 VEC_Mag(VecFx32 *a);

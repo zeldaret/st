@@ -40,7 +40,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
         if (this->mUnk_28 == 0) {
             if (data_027e09b8->func_ov000_020732dc(2) == 0 && data_0204a088->mUnk_04 == 1) {
                 if (data_0204a088->mUnk_08 == 2 || data_0204a088->mUnk_08 == 6) {
-                    UnkStruct_027e09bc_0C *temp_r8 = data_027e09bc->mUnk_04[2];
+                    UnkStruct_027e09bc_0C *temp_r8 = data_027e09bc->mUnk_04[0][2];
 
                     UnkStackStruct2 *temp_r0_2 = func_ov000_02077590(0x1B);
                     sp2C                       = *temp_r0_2;
@@ -116,7 +116,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
             VecFx32_Copy(&this->mPlayerActors[PlayerType_Link]->mPos.vec, &sp20);
             sp20.y += data_ov000_020ab4dc[PlayerCharacter_Link].mUnk_66 / 2;
 
-            if (!data_027e09bc->mUnk_04[0]->func_01ffd43c(&sp4, &sp20, 1)) {
+            if (!data_027e09bc->mUnk_04[0][0]->func_01ffd43c(&sp4, &sp20, 1)) {
                 return;
             }
 
@@ -207,7 +207,7 @@ void UnkStruct_027e0ce0_30_00::func_ov017_020bbf7c(ItemManager *pItemMgr) {
                 }
             }
 
-            UnkStruct_027e09bc_0C *temp_r7 = data_027e09bc->mUnk_04[2];
+            UnkStruct_027e09bc_0C *temp_r7 = data_027e09bc->mUnk_04[0][2];
 
             if (this->mUnk_18 != this->mUnk_1C) {
                 temp_r7->func_ov000_02078534(&temp_r7->mUnk_040, 4);

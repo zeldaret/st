@@ -44,13 +44,13 @@ void UnkStruct_027e0ce0_1C::func_ov001_020bccec() {
                 switch (var_r4) {
                     case 3:
                         this->mUnk_D4 = new(HeapIndex_1) UnkStruct_027e0ce0_1C_D4();
-                        this->mUnk_08[var_r5][var_r4]->func_ov000_020588f0(this->mUnk_D4, 0x6AB0, 0,
-                                                                           (void *) ((u32) this->mUnk_D4 + 0x6AB0));
+                        this->mUnk_08[var_r5][var_r4]->func_ov000_020588f0(
+                            this->mUnk_D4, offsetof(UnkStruct_027e0ce0_1C_D4, mUnk_6AB0), 0, &this->mUnk_D4->mUnk_6AB0);
                         break;
                     case 4:
-                        this->mUnk_D8 = new(HeapIndex_1) UnkStruct_027e0ce0_1C_D8();
-                        this->mUnk_08[var_r5][var_r4]->func_ov000_020588f0(this->mUnk_D8, 0x6AB0, 0,
-                                                                           (void *) ((u32) this->mUnk_D8 + 0x6AB0));
+                        this->mUnk_D8 = new(HeapIndex_1) UnkStruct_027e0ce0_1C_D4();
+                        this->mUnk_08[var_r5][var_r4]->func_ov000_020588f0(
+                            this->mUnk_D8, offsetof(UnkStruct_027e0ce0_1C_D4, mUnk_6AB0), 0, &this->mUnk_D8->mUnk_6AB0);
                         break;
                     default:
                         this->mUnk_08[var_r5][var_r4]->func_ov000_020586b4(NULL, 0, 0, NULL);

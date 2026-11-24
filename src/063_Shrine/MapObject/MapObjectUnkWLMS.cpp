@@ -378,7 +378,7 @@ void MapObjectUnkWLMS::vfunc_64(unk32 param1, unk32 param2) {
     if (mState == MapObjectUnkWLMSState_Loading && param2 == 1) {
         UnkStackStruct2 stackVar = data_ov063_021638c8;
         stackVar.s.mUnk_06       = mAngle.angle_s;
-        data_027e09bc->mUnk_04[2]->func_ov000_0207834c(&mPos, &stackVar, 0);
+        data_027e09bc->mUnk_04[0][2]->func_ov000_0207834c(&mPos, &stackVar, 0);
     }
 }
 
@@ -396,7 +396,7 @@ void MapObjectUnkWLMS::vfunc_6C(unk32 param1) {
 
 void MapObjectUnkWLMS::vfunc_70(unk32 param1, unk32 param2) {
     if (param1 == 1 && mState == MapObjectUnkWLMSState_Quitting && param2 == 1) {
-        data_027e09bc->mUnk_04[2]->func_ov000_02078230(0);
+        data_027e09bc->mUnk_04[0][2]->func_ov000_02078230(0);
 
         if (mUnk_31E != 0) {
             this->func_ov000_0209d2c4(0, true);

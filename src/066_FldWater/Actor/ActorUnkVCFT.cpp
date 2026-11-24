@@ -1784,7 +1784,7 @@ unk32 ActorUnkVCFT::vfunc_7C(unk32 param1) {
             this->mAngle  = 0;
             sp0           = data_ov066_0215d830;
             sp0.s.mUnk_06 = this->mAngle.angle_s;
-            data_027e09bc->mUnk_04[2]->func_ov000_0207834c(&this->mPos, &sp0, 0);
+            data_027e09bc->mUnk_04[0][2]->func_ov000_0207834c(&this->mPos, &sp0, 0);
 
             temp_r0                                              = data_ov000_020b504c.func_ov000_02067bc4(0);
             temp_r0->mUnk_08->mUnk_020.mCellAnim.unk_34          = (void *) 0xC;
@@ -1793,7 +1793,7 @@ unk32 ActorUnkVCFT::vfunc_7C(unk32 param1) {
             break;
         case 3:
             GetAdventureModeManager()->func_ov024_020c6a48(4, 1);
-            data_027e09bc->mUnk_04[2]->func_ov000_02078230(0);
+            data_027e09bc->mUnk_04[0][2]->func_ov000_02078230(0);
             this->mUnk_3D0 = -1;
             this->vfunc_98(0);
             break;

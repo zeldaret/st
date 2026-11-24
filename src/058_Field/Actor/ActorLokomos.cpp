@@ -916,7 +916,7 @@ void ActorLokomo::func_ov058_02145ef0() {
         this->GetOffsetPos(&sp10);
         VecFx32_Copy(&sp10, &sp04);
 
-        data_027e09bc->mUnk_04[2]->func_ov000_02078a70(&sp04, 0x0);
+        data_027e09bc->mUnk_04[0][2]->func_ov000_02078a70(&sp04, 0x0);
     } else {
         this->SetState(ActorLokomoState_0);
         this->mUnk_901 = false;

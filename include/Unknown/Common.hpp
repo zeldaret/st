@@ -3,6 +3,7 @@
 #include "Animation/CellAnimObject.hpp"
 #include "Game/GameModeManager.hpp"
 #include "LinkList.hpp"
+#include "RefStruct.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "global.h"
 #include "math.hpp"
@@ -1386,11 +1387,19 @@ struct UnkStruct_ov021_02106c5c {
     /* 13 */ u8 unk_13;
 };
 
-class Actor;
+class UnkStruct_ov031_Items_00_Base;
 struct UnkStruct_ov031_020e5d18_00 {
-    /* 00 */ Actor *mUnk_00;
-    /* 04 */ PAD(0x04, 0x18);
+    /* 00 */ RefStruct mUnk_00;
+    /* 04 */ const VecFx32 *mUnk_04;
+    /* 08 */ const VecFx32 *mUnk_08;
+    /* 0C */ s16 mUnk_0C;
+    /* 10 */ VecFx32 *mUnk_10;
+    /* 14 */ UnkStruct_ov031_Items_00_Base *mUnk_14;
     /* 18 */
+
+    // itcm
+    void func_01ffe6c4(RefStruct ref, const VecFx32 *param2, const VecFx32 *param3, s16 param4, VecFx32 *param5,
+                       UnkStruct_ov031_Items_00_Base *param6);
 };
 
 class ActorBomb_unk : public UnkSystem7 {

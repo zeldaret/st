@@ -39,7 +39,7 @@ public:
     void func_ov080_02151744(void);
     void func_ov080_0215183c(void);
     void func_ov080_021518b4(void);
-    void func_ov080_02151970(void);
+    void func_ov080_02151970(VecFx32 *param1);
     void func_ov080_02151f58(void);
     void func_ov080_02152078(void);
     void func_ov080_0215219c(void);

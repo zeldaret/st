@@ -108,7 +108,7 @@ bool ActorBlast::Init(unk32 param1) {
         this->mUnk_F0 = FX_F32_TO_FX32(1.0f);
     }
 
-    data_027e09bc->mUnk_04[2]->func_ov000_0207a1e0(0x6);
+    data_027e09bc->mUnk_04[0][2]->func_ov000_0207a1e0(0x6);
 
     if (this->mUnk_5C.mParams[0] != 0x0) {
         data_027e0cec->func_ov000_0209feac(0x812, &this->mPos, 0x2, 0x0, 0x0);
@@ -164,12 +164,9 @@ void ActorBlast::Update() {
     data_027e09c0->func_ov000_0207e58c(this->mRef, 0x0, 0xC, &this->mUnk_9C);
 
     UnkStruct_ov031_020e5d18_00 sp14;
-    sp14.mUnk_00 = NULL;
-
-    UnkStruct_ov031_020e5d18_00 *psp14 = (UnkStruct_ov031_020e5d18_00 *) &sp14;
-    func_01ffe6c4(&psp14->mUnk_00, this->mRef, &data_027e07d4, &data_027e07d4, 0x1C, NULL, &this->mUnk_E8);
-
-    ((Actor *) psp14)->func_ov000_0207df88(&this->mUnk_C8, 0x0);
+    sp14.mUnk_00.Reset();
+    sp14.func_01ffe6c4(this->mRef, &data_027e07d4, &data_027e07d4, 0x1C, NULL, &this->mUnk_E8);
+    Actor::func_ov000_0207df88(&sp14, &this->mUnk_C8, 0x0);
 
     if (this->func_ov000_0209867c(0x0) < 0x1000) {
         data_027e09c0->func_ov000_0207e458(0x4, 0x0, &this->mUnk_C8.pos, 0x1, NULL, 0x0);

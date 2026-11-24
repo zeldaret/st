@@ -4,6 +4,7 @@
 
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectProfile.hpp"
+#include "MapObjectUnkTREE.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -23,6 +24,17 @@ public:
     void func_ov058_0214e7a4(void);
     void func_ov058_0214e858(void);
     void func_ov058_0214e890(void);
+};
+
+class MapObjectProfileUnkSTNE_Base : public MapObjectProfile_Derived2 {
+public:
+    /* 00 (base) */
+    /* D4 */ MapObject_10_ov058 mUnk_D4;
+    /* F8 */
+
+    MapObjectProfileUnkSTNE_Base(MapObjectId mapObjId1, MapObjectId mapObjId2) :
+        MapObjectProfile_Derived2(mapObjId1, mapObjId2) {}
+    ~MapObjectProfileUnkSTNE_Base() {}
 };
 
 class MapObjectProfileUnkLEVS : public MapObjectProfile {
