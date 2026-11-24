@@ -10,59 +10,67 @@ UnkStruct_027e09bc *UnkStruct_027e09bc::Create() {
 UnkStruct_027e09bc::UnkStruct_027e09bc() {
     this->mUnk_04[0][0] = NULL;
     this->mUnk_04[0][1] = NULL;
-    this->mUnk_04[0][2] = NULL;
-    this->mUnk_04[0][3] = NULL;
 
     this->mUnk_04[1][0] = NULL;
     this->mUnk_04[1][1] = NULL;
-    this->mUnk_04[1][2] = NULL;
-    this->mUnk_04[1][3] = NULL;
+
+    this->mUnk_04[2][0] = NULL;
+    this->mUnk_04[2][1] = NULL;
+
+    this->mUnk_04[3][0] = NULL;
+    this->mUnk_04[3][1] = NULL;
 
     if (data_027e09a4->IsSceneModeAdventure()) {
-        this->mUnk_04[0][2] = new(HeapIndex_1) UnkStruct_027e09bc_0C(0);
-        this->mUnk_04[0][3] = new(HeapIndex_1) UnkStruct_027e09bc_0C(1);
+        this->mUnk_04[1][0] = new(HeapIndex_1) UnkStruct_027e09bc_0C(0);
+        this->mUnk_04[1][1] = new(HeapIndex_1) UnkStruct_027e09bc_0C(1);
         this->func_ov000_020771b8(0x00);
         this->func_ov000_020771b8(0x01);
     } else if (data_027e09a4->IsSceneModeBattle()) {
-        this->mUnk_04[1][0] = new(HeapIndex_1) UnkStruct_027e09bc_0C(0);
-        this->mUnk_04[1][1] = new(HeapIndex_1) UnkStruct_027e09bc_0C(1);
-        this->mUnk_04[1][2] = new(HeapIndex_1) UnkStruct_027e09bc_0C(2);
-        this->mUnk_04[1][3] = new(HeapIndex_1) UnkStruct_027e09bc_0C(3);
-        this->mUnk_04[0][0] = this->mUnk_04[1][data_ov020_020e8544->vfunc_20()];
+        this->mUnk_04[2][0] = new(HeapIndex_1) UnkStruct_027e09bc_0C(0);
+        this->mUnk_04[2][1] = new(HeapIndex_1) UnkStruct_027e09bc_0C(1);
+
+        this->mUnk_04[3][0] = new(HeapIndex_1) UnkStruct_027e09bc_0C(2);
+        this->mUnk_04[3][1] = new(HeapIndex_1) UnkStruct_027e09bc_0C(3);
+
+        this->mUnk_04[0][0] = this->mUnk_04[2][data_ov020_020e8544->vfunc_20()];
     }
 }
 
 UnkStruct_027e09bc::~UnkStruct_027e09bc() {
-    delete this->mUnk_04[0][2];
-    delete this->mUnk_04[0][3];
     delete this->mUnk_04[1][0];
     delete this->mUnk_04[1][1];
-    delete this->mUnk_04[1][2];
-    delete this->mUnk_04[1][3];
 
-    this->mUnk_04[0][2] = NULL;
-    this->mUnk_04[0][3] = NULL;
+    delete this->mUnk_04[2][0];
+    delete this->mUnk_04[2][1];
+
+    delete this->mUnk_04[3][0];
+    delete this->mUnk_04[3][1];
+
     this->mUnk_04[1][0] = NULL;
     this->mUnk_04[1][1] = NULL;
-    this->mUnk_04[1][2] = NULL;
-    this->mUnk_04[1][3] = NULL;
+
+    this->mUnk_04[2][0] = NULL;
+    this->mUnk_04[2][1] = NULL;
+
+    this->mUnk_04[3][0] = NULL;
+    this->mUnk_04[3][1] = NULL;
 }
 
 void UnkStruct_027e09bc::func_ov001_020bab5c() {
     switch ((s32) data_027e09a4->CurrentSceneIndex()) {
         case SceneIndex_b_sand:
         case SceneIndex_tekiya09:
-            data_027e09bc->mUnk_04[0][3]->mUnk_264 = 0x7B;
+            data_027e09bc->mUnk_04[1][1]->mUnk_264 = 0x7B;
             break;
         case SceneIndex_b_last2:
-            data_027e09bc->mUnk_04[0][3]->mUnk_264 = 0x00;
+            data_027e09bc->mUnk_04[1][1]->mUnk_264 = 0x00;
             break;
         case SceneIndex_b_last22:
-            data_027e09bc->mUnk_04[0][3]->mUnk_264 = 0x00;
+            data_027e09bc->mUnk_04[1][1]->mUnk_264 = 0x00;
             break;
         default:
             if (data_027e09a4->IsSceneModeAdventure()) {
-                data_027e09bc->mUnk_04[0][3]->func_ov000_02078cec();
+                data_027e09bc->mUnk_04[1][1]->func_ov000_02078cec();
             }
             break;
     }
@@ -70,22 +78,22 @@ void UnkStruct_027e09bc::func_ov001_020bab5c() {
 
 void UnkStruct_027e09bc::func_ov001_020babc8() {
     if (data_027e09a4->IsSceneModeAdventure()) {
-        this->mUnk_04[0][2]->func_ov000_02078ba4();
-        this->mUnk_04[0][3]->func_ov000_02078ba4();
+        this->mUnk_04[1][0]->func_ov000_02078ba4();
+        this->mUnk_04[1][1]->func_ov000_02078ba4();
     }
 }
 
 void UnkStruct_027e09bc::func_ov001_020babe8() {
     if (data_027e09a4->IsSceneModeAdventure()) {
-        this->mUnk_04[0][2]->mUnk_280 = 0;
-        this->mUnk_04[0][3]->mUnk_280 = 0;
+        this->mUnk_04[1][0]->mUnk_280 = 0;
+        this->mUnk_04[1][1]->mUnk_280 = 0;
     }
 }
 
 void UnkStruct_027e09bc::func_ov001_020bac08() {
     if (data_027e09a4->IsSceneModeAdventure()) {
-        this->mUnk_04[0][2]->mUnk_280 = 0;
-        this->mUnk_04[0][3]->mUnk_280 = 0;
+        this->mUnk_04[1][0]->mUnk_280 = 0;
+        this->mUnk_04[1][1]->mUnk_280 = 0;
     }
 }
 

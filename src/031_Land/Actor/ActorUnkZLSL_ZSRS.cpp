@@ -1592,7 +1592,7 @@ void ActorUnkZLSL::func_ov031_020ed4e4(unk32 param1, unk32 param2) {
         return;
     }
 
-    data_027e09bc->mUnk_04[0][2]->func_ov000_02078834(&this->mUnk_28F4.vec, &this->mUnk_28E8.vec, param2, param1);
+    data_027e09bc->mUnk_04[1][0]->func_ov000_02078834(&this->mUnk_28F4.vec, &this->mUnk_28E8.vec, param2, param1);
 }
 
 bool ActorUnkZLSL::func_ov031_020ed55c(unk32 param1) {
