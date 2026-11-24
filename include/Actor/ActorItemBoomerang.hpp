@@ -16,15 +16,6 @@ enum ActorItemBoomerangState_ {
 
 class ActorItemBoomerang;
 
-class ActorItemBoomerang_Unknown { // inherits from UnkStruct_PlayerGet_ec ?
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ VecFx32 mUnk_04;
-    /* 10 */
-
-    void func_ov031_020e45fc();
-};
-
 class ActorItemBoomerang_11C : public UnkStruct_ov031_Items_00 {
 public:
     /* 00 (vtable) */
@@ -52,7 +43,7 @@ class ActorItemBoomerang_CC : public UnkStruct_ov031_Items_01 {
 public:
     /* 00 (vtable) */
     /* 2C */ RefStruct mUnk_2C;
-    /* 30 */ ActorItemBoomerang_Unknown mUnk_30;
+    /* 30 */ Cylinder mUnk_30;
     /* 40 */
 
     ActorItemBoomerang_CC() :
@@ -68,8 +59,7 @@ public:
     /* 094 */ UnkSystem6_Derived2 mUnk_94;
     /* 0A0 */ ActorItemBoomerang_A0 mUnk_A0;
     /* 0CC */ ActorItemBoomerang_CC mUnk_CC;
-    /* 10C */ VecFx32 mUnk_10C;
-    /* 118 */ unk32 mUnk_118;
+    /* 10C */ Cylinder mUnk_10C;
     /* 11C */ ActorItemBoomerang_11C mUnk_11C;
     /* 128 */ u32 mUnk_128;
     /* 12C */ UnkSystem7 mUnk_12C[0x3];

@@ -88,7 +88,7 @@ void PlayerActorBase_74::func_ov102_02182c84(bool param1, unk32 param2, UnkAngle
 void UnkStruct_027e0ce0_40_108::func_ov102_02182e54(unk32 param1, VecFx32 *param2, unk32 param3) {
     Vec2s sp6;
 
-    if (!data_027e09bc->mUnk_04[param1]->func_01ffd43c(&sp6, param2, 1)) {
+    if (!data_027e09bc->mUnk_04[0][param1]->func_01ffd43c(&sp6, param2, 1)) {
         return;
     }
 

@@ -179,6 +179,15 @@ struct RefStruct {
     const u32 Get32() const {
         return this->data;
     }
+
+    RefStruct Copy() {
+        return *this;
+    }
+
+    const bool IsEmpty() const {
+        u32 zero = 0; //! TODO: why????? I hate this...
+        return this->data == *(u32 *) &zero;
+    }
 };
 
 // for arrays

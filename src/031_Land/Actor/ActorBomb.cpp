@@ -691,8 +691,8 @@ fx32 ActorBomb::func_ov031_020e2820(UnkStruct_ov031_Items_00 *param1) {
     fx32 var_r11;
     fx32 var_r8;
 
-    var_r11      = 0;
-    sp60.mUnk_00 = NULL;
+    var_r11 = 0;
+    sp60.mUnk_00.Reset();
 
     sp54 = this->mPos;
     sp48 = this->mPrevPos;
@@ -715,10 +715,8 @@ fx32 ActorBomb::func_ov031_020e2820(UnkStruct_ov031_Items_00 *param1) {
                 var_r8 = FX_F32_TO_FX32(0.0f);
             }
 
-            func_01ffe6c4(&sp60.mUnk_00, this->mRef, &sp24, &sp30, (s16) this->mUnk_44, &this->mPos, param1);
-
-            //! TODO: fake match?
-            var_r11 = ((Actor *) &sp60)->func_ov000_0207e294(this->mUnk_30);
+            sp60.func_01ffe6c4(this->mRef, &sp24, &sp30, this->mUnk_44, &this->mPos, param1);
+            var_r11 = Actor::func_ov000_0207e294(&sp60.mUnk_00, this->mUnk_30);
 
             if (var_r11 != 0) {
                 break;
@@ -743,8 +741,8 @@ fx32 ActorBomb::func_ov031_020e295c(UnkStruct_ov031_Items_00 *param1) {
     fx32 var_r11;
     fx32 var_r8;
 
-    var_r11      = 0;
-    sp60.mUnk_00 = NULL;
+    var_r11 = 0;
+    sp60.mUnk_00.Reset();
 
     sp54 = this->mPos;
     sp48 = this->mPrevPos;
@@ -767,10 +765,8 @@ fx32 ActorBomb::func_ov031_020e295c(UnkStruct_ov031_Items_00 *param1) {
                 var_r8 = FX_F32_TO_FX32(0.0f);
             }
 
-            func_01ffe6c4(&sp60.mUnk_00, this->mRef, &sp24, &sp30, (s16) this->mUnk_44, &this->mPos, param1);
-
-            //! TODO: fake match?
-            var_r11 = ((Actor *) &sp60)->func_ov000_0207df88(this->mUnk_30, 0x10);
+            sp60.func_01ffe6c4(this->mRef, &sp24, &sp30, this->mUnk_44, &this->mPos, param1);
+            var_r11 = Actor::func_ov000_0207df88(&sp60, this->mUnk_30, 0x10);
 
             if (var_r11 != 0) {
                 break;
@@ -785,11 +781,11 @@ fx32 ActorBomb::func_ov031_020e295c(UnkStruct_ov031_Items_00 *param1) {
 
 void ActorBomb::func_ov031_020e2a9c() {
     UnkStruct_ov031_020e5d18_00 s0C;
-    s0C.mUnk_00 = NULL;
+    s0C.mUnk_00.Reset();
 
     VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_180.mUnk_0C);
 
-    func_01ffe6c4(&s0C.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos, &this->mUnk_180);
+    s0C.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, this->mUnk_44, &this->mPos, &this->mUnk_180);
 
     unk32 value = this->func_ov031_020e295c(&this->mUnk_180) | this->func_ov031_020e2820(&this->mUnk_180);
     if (this->mUnk_1E0.acRef.type_index != 0x0) {

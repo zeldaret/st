@@ -32,6 +32,15 @@ public:
     /* 00 */ virtual bool vfunc_00(Actor *pActor) override;
 };
 
+class UnkStruct_ov031_02112b18 : public UnkStruct_ov000_020b3000_Base {
+public:
+    /* 00 (base) */
+    /* 04 */
+
+    // data_ov031_02112b18
+    /* 00 */ virtual bool vfunc_00(Actor *pActor) override;
+};
+
 class UnkStruct_ov031_0211361c : public UnkStruct_ov000_020b3000_Base {
 public:
     /* 00 */ virtual bool vfunc_00(Actor *pActor) override;

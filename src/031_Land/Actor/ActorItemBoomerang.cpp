@@ -46,10 +46,10 @@ bool ActorItemBoomerang::Init(unk32 param1) {
 
     this->mUnk_A0.mUnk_0C.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(-0.1003f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.4f));
 
-    this->mUnk_10C.x = FX_F32_TO_FX32(0.0f);
-    this->mUnk_10C.y = FX_F32_TO_FX32(-0.1003f);
-    this->mUnk_10C.z = FX_F32_TO_FX32(0.0f);
-    this->mUnk_118   = FX_F32_TO_FX32(0.0f);
+    this->mUnk_10C.pos.x = FX_F32_TO_FX32(0.0f);
+    this->mUnk_10C.pos.y = FX_F32_TO_FX32(-0.1003f);
+    this->mUnk_10C.pos.z = FX_F32_TO_FX32(0.0f);
+    this->mUnk_10C.size  = FX_F32_TO_FX32(0.0f);
 
     this->func_ov031_020e5034(0x0);
 
@@ -131,15 +131,13 @@ void ActorItemBoomerang::Update() {
                 var1 = true;
             }
 
-            sp54.mUnk_00 = NULL;
+            sp54.mUnk_00.Reset();
 
-            func_01ffe6c4(&sp54.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, 0x1C, NULL, &this->mUnk_11C);
+            sp54.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, 0x1C, NULL, &this->mUnk_11C);
+            flags |= Actor::func_ov000_0207df88(&sp54, &this->mUnk_CC.mUnk_30, 0xC);
 
-            flags |= ((Actor *) &sp54)->func_ov000_0207df88((Cylinder *) &this->mUnk_CC.mUnk_30.mUnk_00, 0xC);
-
-            func_01ffe6c4(&sp54.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, 0x1F, NULL, &this->mUnk_11C);
-
-            flags |= ((Actor *) &sp54)->func_ov000_0207e294((Cylinder *) &this->mUnk_10C);
+            sp54.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, 0x1F, NULL, &this->mUnk_11C);
+            flags |= Actor::func_ov000_0207e294(&sp54.mUnk_00, &this->mUnk_10C);
 
             if (flags != 0 || var1) {
                 this->func_ov031_020e49b0(0x8D70);
@@ -215,9 +213,9 @@ void ActorItemBoomerang::Update() {
 
             data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_A0);
 
-            sp24.mUnk_00 = NULL;
-            func_01ffe6c4(&sp24.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, 0x1C, NULL, &this->mUnk_11C);
-            ((Actor *) &sp24)->func_ov000_0207df88((Cylinder *) &this->mUnk_CC.mUnk_30.mUnk_00, 0xC);
+            sp24.mUnk_00.Reset();
+            sp24.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, 0x1C, NULL, &this->mUnk_11C);
+            Actor::func_ov000_0207df88(&sp24, &this->mUnk_CC.mUnk_30, 0xC);
 
             if (this->mUnk_138.HasExpiredAlt() &&
                 data_027e0ce0->func_ov000_0208bc1c(PlayerType_Zelda, 0x0, 0x16, &this->mUnk_A0.mUnk_0C, 0x0, 0x0)) {
@@ -374,11 +372,11 @@ bool ActorItemBoomerang_CC::vfunc_0C(Actor *actor, VecFx32 *param2) {
     return false;
 }
 
-void ActorItemBoomerang_Unknown::func_ov031_020e45fc() {
-    this->mUnk_00   = 0x0;
-    this->mUnk_04.x = FX_F32_TO_FX32(-0.1003f);
-    this->mUnk_04.y = FX_F32_TO_FX32(0.0f);
-    this->mUnk_04.z = FX_F32_TO_FX32(0.3f);
+void Cylinder::func_ov031_020e45fc() {
+    this->pos.x = 0x0;
+    this->pos.y = FX_F32_TO_FX32(-0.1003f);
+    this->pos.z = FX_F32_TO_FX32(0.0f);
+    this->size  = FX_F32_TO_FX32(0.3f);
 }
 
 ActorItemBoomerang_11C::ActorItemBoomerang_11C(ActorItemBoomerang *param1) :

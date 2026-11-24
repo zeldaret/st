@@ -34,7 +34,7 @@ void UnkStruct_027e0cec::func_ov017_020c1e9c(unk32 param1, unk32 param2) {
 
     for (s32 var_r6 = 0; var_r6 < ARRAY_LEN(this->mUnk_18); var_r6++) {
         if (this->mUnk_18[var_r6] != NULL &&
-            this->mUnk_18[var_r6]->func_ov017_020c2ad8(&data_027e09bc->mUnk_04[param1]->mUnk_058, param2, var_r7)) {
+            this->mUnk_18[var_r6]->func_ov017_020c2ad8(&data_027e09bc->mUnk_04[0][param1]->mUnk_058, param2, var_r7)) {
             var_r5 = true;
         }
     }

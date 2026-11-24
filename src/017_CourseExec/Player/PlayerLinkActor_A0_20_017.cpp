@@ -23,7 +23,7 @@ void PlayerLinkActor_A0_38::func_ov017_020be0e0(s32 param1, VecFx32 *param2, boo
             this->mUnk_2C.x = this->mUnk_00.x;
             this->mUnk_34 |= 0x03;
             var_r6 = true;
-        } else if (data_027e09bc->mUnk_04[param1]->func_01ffd43c(&this->mUnk_2C, param2, 0x01)) {
+        } else if (data_027e09bc->mUnk_04[0][param1]->func_01ffd43c(&this->mUnk_2C, param2, 0x01)) {
             var_r6 = true;
 
             if (this->mUnk_37 == 0 || UnknownCheck1(0x01, this->mUnk_2C.x, 170, 92) ||

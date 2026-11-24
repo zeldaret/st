@@ -250,12 +250,11 @@ void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
         var_r0 = 0x0;
     } else {
         UnkStruct_ov031_020e5d18_00 var_sp0C;
-        var_sp0C.mUnk_00 = NULL;
-        func_01ffe6c4(&var_sp0C.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s32) (s16) this->mUnk_44, &this->mPos,
-                      &this->mUnk_174);
+        var_sp0C.mUnk_00.Reset();
+        var_sp0C.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, this->mUnk_44, &this->mPos, &this->mUnk_174);
 
-        unk32 temp_r5 = ((Actor *) &var_sp0C)->func_ov000_0207df88(this->mUnk_30, 4);
-        var_r0        = temp_r5 | ((Actor *) &var_sp0C)->func_ov000_0207e294(this->mUnk_30);
+        unk32 temp_r5 = Actor::func_ov000_0207df88(&var_sp0C, this->mUnk_30, 4);
+        var_r0        = temp_r5 | Actor::func_ov000_0207e294(&var_sp0C.mUnk_00, this->mUnk_30);
         this->mUnk_46 = var_r0;
     }
 

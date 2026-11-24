@@ -37,4 +37,7 @@ struct Cylinder {
         pos  = gVecFx32_ZERO;
         size = -1;
     }
+
+    // overlay 31
+    void func_ov031_020e45fc();
 };

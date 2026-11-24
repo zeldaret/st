@@ -270,11 +270,10 @@ void ActorShotArrow::func_ov031_020f1b04() {
 
     if (!this->func_ov017_020beeec(0x0)) {
         UnkStruct_ov031_020e5d18_00 spC;
-        spC.mUnk_00 = NULL;
+        spC.mUnk_00.Reset();
+        spC.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, this->mUnk_44, &this->mPos, NULL);
 
-        func_01ffe6c4(&spC.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos, 0);
-
-        if (((Actor *) &spC)->func_ov000_0207e294(this->mUnk_30)) {
+        if (Actor::func_ov000_0207e294(&spC.mUnk_00, this->mUnk_30)) {
             this->Kill();
         }
 
@@ -507,7 +506,7 @@ void ActorShotArrow::vfunc_2C(unk32 param1) {
     spE4.unk_00.z = this->mPos.z;
     spE4.unk_0C   = 0x2000;
 
-    if (!data_027e09bc->mUnk_04[param1]->func_01ffd640(&spE4)) {
+    if (!data_027e09bc->mUnk_04[0][param1]->func_01ffd640(&spE4)) {
         return;
     }
 
@@ -658,7 +657,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
                 if (this->mUnk_140.mUnk_0C.acRef.type_index == 0x102) {
                     var_r1 = this->mUnk_140.mUnk_0C.acRef.UnkCheck3(0x102);
                     VEC_Subtract(&this->mPos, this->func_ov000_0209853c(var_r1), &sp1C);
-                } else if (!func_ov000_0205cbc4(this->mUnk_140.mUnk_0C.Get32(), &sp10)) {
+                } else if (!func_ov000_0205cbc4(this->mUnk_140.mUnk_0C, &sp10)) {
                     sp1C.x = 0;
                     sp1C.y = 0;
                     sp1C.z = 0;
@@ -821,13 +820,13 @@ void ActorShotArrow::func_ov031_020f2ef0() {
     ActorShotArrow_178 *unk_178;
 
     UnkStruct_ov031_020e5d18_00 spC;
-    spC.mUnk_00 = NULL;
-
-    func_01ffe6c4(&spC.mUnk_00, this->mRef, &this->mPos, &this->mPrevPos, (s16) this->mUnk_44, &this->mPos, &this->mUnk_178);
+    spC.mUnk_00.Reset();
+    spC.func_01ffe6c4(this->mRef, &this->mPos, &this->mPrevPos, this->mUnk_44, &this->mPos, &this->mUnk_178);
 
     s32 temp_r5 = 0;
-    temp_r5 |= ((Actor *) &spC)->func_ov000_0207df88(this->mUnk_30, 0x3);
-    temp_r5 |= ((Actor *) &spC)->func_ov000_0207e294(this->mUnk_30);
+    temp_r5 |= Actor::func_ov000_0207df88(&spC, this->mUnk_30, 0x03);
+    temp_r5 |= Actor::func_ov000_0207e294(&spC.mUnk_00, this->mUnk_30);
+
     this->mUnk_46 = temp_r5;
 }
 

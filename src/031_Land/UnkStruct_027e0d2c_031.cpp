@@ -21,7 +21,7 @@ void UnkStruct_027e0d2c::func_ov031_020d95c8(RefStruct ref) {
 }
 
 bool UnkStruct_027e0d2c::func_ov031_020d95ec(RefStruct ref) {
-    return this->mUnk_00->mUnk_008.mUnk_32C.func_ov031_020d9ccc(ref);
+    return this->mUnk_00->mUnk_008.mUnk_32C.func_ov031_020d9ccc(ref) != 0;
 }
 
 void UnkStruct_027e0d2c::func_ov031_020d961c(unk32 *param1, UnkStruct_027e0d2c *thisx) {

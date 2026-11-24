@@ -146,3 +146,44 @@ public:
     // data_ov031_02112afc
     /* 0C */ virtual bool vfunc_0C(Actor *param1, VecFx32 *vector) override;
 };
+
+class UnkStruct_ItemManager_20_04_32C;
+
+class UnkStruct_ov031_02112b24 : public UnkStruct_ov031_Items_00_Base {
+public:
+    /* 00 (base) */
+    /* 04 */ UnkStruct_ItemManager_20_04_32C *mUnk_04;
+    /* 08 */ u16 mUnk_08;
+    /* 0C */
+
+    // data_ov031_02112b24
+    /* 0C */ virtual bool vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+                                   const VecFx32 *param4) override;
+
+    // overlay 31
+    void func_ov031_020da274(const VecFx32 *param1, const VecFx32 *param2, u16 param3);
+    void func_ov031_020da274(VecFx32 *param1, const VecFx32 *param2, u16 param3);
+    void func_ov031_020da274(const VecFx32 *param1, VecFx32 *param2, u16 param3);
+    void func_ov031_020da274(VecFx32 *param1, VecFx32 *param2, u16 param3);
+};
+
+class UnkStruct_ov031_02112b40 : public UnkStruct_ov031_Items_00_Base {
+public:
+    /* 00 (base) */
+    /* 04 */ RefStruct mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ VecFx32 mUnk_0C;
+    /* 18 */ u16 mUnk_18;
+    /* 1A */ bool mUnk_1A;
+
+    // data_ov031_02112b40
+    /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
+    /* 0C */ virtual bool vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+                                   const VecFx32 *param4) override;
+
+    // overlay 31
+    void func_ov031_020da5ec();
+    bool func_ov031_020daaec(const UnkStruct_ov031_020e5d18_00 *param1, Cylinder *pCylinder);
+
+    static unk32 func_ov031_020da584(vu32 param1);
+};
