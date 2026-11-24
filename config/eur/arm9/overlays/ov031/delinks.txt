@@ -63,7 +63,9 @@ src/031_Land/code_020d9c64_031.cpp:
     .data       start:0x02112b10 end:0x02112b38
 
 src/031_Land/UnkStruct_ov031_02112b40_031.cpp:
+    complete
     .text       start:0x020da584 end:0x020dac20
+    .data       start:0x02112b38 end:0x02112b54
 
 src/031_Land/code_020dac20_031.cpp:
     .text       start:0x020dac20 end:0x020db0fc
