@@ -255,16 +255,15 @@ public:
 };
 
 class PlayerActorBase_70_1C : public UnkStruct_PlayerGet_74_base {
-private:
+public:
     /* 00 (base) */
-    /* 04 */ PAD(0x04, 0x2C);
+    /* 14 */ PAD(0x14, 0x2C);
     /* 2C */
 
-public:
     PlayerActorBase_70_1C(PlayerActorBase_70 *pParent);
 
     // data_ov000_020b2b9c
-    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3) override;
+    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2) override;
 
     // overlay 0
     void func_ov000_0208c7f0();

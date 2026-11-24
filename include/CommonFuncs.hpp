@@ -267,6 +267,8 @@ void func_ov000_02085d1c(void *);
 bool func_ov000_020864f8(void *, UnkAngleStruct, void *, void *);
 void func_ov000_02087ee8();
 unk32 func_ov000_0208832c(s16, unk32);
+bool func_ov000_02088854(unk32);
+void func_ov000_02088d10(unk32, VecFx32 *);
 void func_ov000_02089bbc(void *, unk32);
 void func_ov000_0208a7a4(void *, void *);
 void func_ov000_0208abc4(RefStruct *, void *, Vec2s *);

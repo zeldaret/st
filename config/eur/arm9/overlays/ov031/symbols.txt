@@ -130,12 +130,12 @@ _ZN27UnkStruct_ov000_02090850_8419func_ov031_020dac20Ev kind:function(arm,size=0
 _ZN27UnkStruct_ov000_02090850_8419func_ov031_020dac40Ev kind:function(arm,size=0x40) addr:0x020dac40
 _ZN27UnkStruct_ov000_02090850_8419func_ov031_020dac80Ev kind:function(arm,size=0x5c) addr:0x020dac80
 _ZN27UnkStruct_ov000_02090850_8419func_ov031_020dacdcEb kind:function(arm,size=0xa4) addr:0x020dacdc
-func_ov031_020dad80 kind:function(arm,size=0x18) addr:0x020dad80
-func_ov031_020dad98 kind:function(arm,size=0xa4) addr:0x020dad98
-func_ov031_020dae3c kind:function(arm,size=0x50) addr:0x020dae3c
-func_ov031_020dae8c kind:function(arm,size=0x15c) addr:0x020dae8c
-func_ov031_020dafe8 kind:function(arm,size=0x40) addr:0x020dafe8
-func_ov031_020db028 kind:function(arm,size=0xd4) addr:0x020db028
+_ZN27UnkStruct_ov000_02090850_AC19func_ov031_020dad80Ev kind:function(arm,size=0x18) addr:0x020dad80
+_ZN27UnkStruct_ov000_02090850_AC19func_ov031_020dad98Ev kind:function(arm,size=0xa4) addr:0x020dad98
+_ZN27UnkStruct_ov000_02090850_AC19func_ov031_020dae3cEv kind:function(arm,size=0x50) addr:0x020dae3c
+_ZN27UnkStruct_ov000_02090850_AC19func_ov031_020dae8cEi kind:function(arm,size=0x15c) addr:0x020dae8c
+_ZN27UnkStruct_ov000_02090850_AC19func_ov031_020dafe8Eb kind:function(arm,size=0x40) addr:0x020dafe8
+_ZN27UnkStruct_ov000_02090850_AC19func_ov031_020db028Ev kind:function(arm,size=0xd4) addr:0x020db028
 _ZN19PlayerLinkActor_13419func_ov031_020db0fcEv kind:function(arm,size=0x24) addr:0x020db0fc
 func_ov031_020db120 kind:function(arm,size=0x40) addr:0x020db120
 _ZN19PlayerLinkActor_13419func_ov031_020db160Eb kind:function(arm,size=0x30) addr:0x020db160
@@ -1957,9 +1957,10 @@ data_ov031_02110650 kind:data(any) addr:0x02110650 local
 data_ov031_0211067c kind:data(byte[5]) addr:0x0211067c local
 data_ov031_02110684 kind:data(any) addr:0x02110684 local
 data_ov031_0211069c kind:data(any) addr:0x0211069c local
-data_ov031_021106ec kind:data(any) addr:0x021106ec
-data_ov031_02110700 kind:data(any) addr:0x02110700 ambiguous
-data_ov031_02110704 kind:data(any) addr:0x02110704 ambiguous
+data_ov031_021106ec kind:data(any) addr:0x021106ec local
+data_ov031_021106fc kind:data(any) addr:0x021106fc
+data_ov031_02110700 kind:data(any) addr:0x02110700
+data_ov031_02110704 kind:data(any) addr:0x02110704
 data_ov031_02110708 kind:data(any) addr:0x02110708 ambiguous
 data_ov031_0211070c kind:data(any) addr:0x0211070c ambiguous
 data_ov031_02110710 kind:data(any) addr:0x02110710 ambiguous

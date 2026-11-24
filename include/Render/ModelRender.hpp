@@ -163,9 +163,10 @@ class UnkSystem5 {
 public:
     /* 00 */ G3d_Model *mpModel;
     /* 04 */ UnkStruct_PlayerGet_50 mUnk_04;
-    /* 1C */ void *mUnk_1C; // this is param1
+    /* 1C */ G3d_Animation *mUnk_1C; // this is param1
     /* 20 */
 
+    //! TODO: change type of param1
     UnkSystem5(void *param1, G3d_Model *pModel);
 
     void func_01ffc3b4();

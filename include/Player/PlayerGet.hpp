@@ -103,10 +103,6 @@ public:
 class UnkStruct_PlayerGet_74 : public UnkStruct_PlayerGet_74_base {
 public:
     /* 00 (base) */
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk32 mUnk_10;
     /* 14 */ UnkStruct_ov000_0208f820 *mUnk_14;
 
     /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2) override;
