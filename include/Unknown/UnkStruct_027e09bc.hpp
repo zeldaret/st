@@ -101,7 +101,7 @@ public:
 class UnkStruct_027e09bc : public AutoInstance<UnkStruct_027e09bc> {
 public:
     /* 00 (vtable) */
-    /* 04 */ UnkStruct_027e09bc_0C *mUnk_04[2][4];
+    /* 04 */ UnkStruct_027e09bc_0C *mUnk_04[4][2];
     /* 24 */ UnkStruct_027e09bc_24 mUnk_24;
     /* 48 */ UnkSystem9 mUnk_48;
 
