@@ -623,7 +623,6 @@ unk32 ActorUnkPSWB::vfunc_60(void) {
     return 0;
 }
 
-// non-matching (regalloc)
 void ActorUnkPSWB::vfunc_2C(unk32 param1) {
     mUnk_190.Update();
 
