@@ -28,7 +28,7 @@ UnkStruct_027e09bc::UnkStruct_027e09bc() {
         this->mUnk_04[2][1] = new(HeapIndex_1) UnkStruct_027e09bc_0C(1);
         this->mUnk_04[3][0] = new(HeapIndex_1) UnkStruct_027e09bc_0C(2);
         this->mUnk_04[3][1] = new(HeapIndex_1) UnkStruct_027e09bc_0C(3);
-        this->mUnk_04[0][0] = this->mUnk_04[1][data_ov020_020e8544->vfunc_20()];
+        this->mUnk_04[0][0] = this->mUnk_04[2][data_ov020_020e8544->vfunc_20()];
     }
 }
 
@@ -52,17 +52,17 @@ void UnkStruct_027e09bc::func_ov001_020bab5c() {
     switch ((s32) data_027e09a4->CurrentSceneIndex()) {
         case SceneIndex_b_sand:
         case SceneIndex_tekiya09:
-            data_027e09bc->mUnk_04[0][3]->mUnk_264 = 0x7B;
+            data_027e09bc->mUnk_04[1][1]->mUnk_264 = 0x7B;
             break;
         case SceneIndex_b_last2:
-            data_027e09bc->mUnk_04[0][3]->mUnk_264 = 0x00;
+            data_027e09bc->mUnk_04[1][1]->mUnk_264 = 0x00;
             break;
         case SceneIndex_b_last22:
-            data_027e09bc->mUnk_04[0][3]->mUnk_264 = 0x00;
+            data_027e09bc->mUnk_04[1][1]->mUnk_264 = 0x00;
             break;
         default:
             if (data_027e09a4->IsSceneModeAdventure()) {
-                data_027e09bc->mUnk_04[0][3]->func_ov000_02078cec();
+                data_027e09bc->mUnk_04[1][1]->func_ov000_02078cec();
             }
             break;
     }
