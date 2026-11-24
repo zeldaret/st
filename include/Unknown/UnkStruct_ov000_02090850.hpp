@@ -15,7 +15,8 @@ public:
 class UnkStruct_ov000_02090850_84_10 : public UnkSystem7 {
 public:
     /* 00 (base) */
-    /* 04 */ PAD(0x04, 0x0C);
+    /* 04 */ unk32 mUnk_04;
+    /* 04 */ unk32 mUnk_08;
     /* 0C */
 
     UnkStruct_ov000_02090850_84_10();
