@@ -30,7 +30,7 @@ void PlayerLinkActor_134::func_ov031_020db160(bool param1) {
     }
 }
 
-void PlayerActorBase_74::func_ov001_020db190() {
+void PlayerActorBase_74::func_ov031_020db190() {
     MI_CpuFill32(0, this, sizeof(PlayerActorBase_74));
     this->mUnk_00 = 0x03;
 }

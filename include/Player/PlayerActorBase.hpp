@@ -416,13 +416,13 @@ private:
 
 public:
     PlayerActorBase_74() {
-        this->func_ov001_020db190();
+        this->func_ov031_020db190();
     }
 
     inline bool UnknownInline1(u32 index, VecFx32 *pVec);
 
-    // overlay 1
-    void func_ov001_020db190();
+    // overlay 31
+    void func_ov031_020db190();
 
     // overlay 102
     void func_ov102_02182c20(unk32 param1, MtxFx43 *param2);
