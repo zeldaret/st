@@ -11,8 +11,6 @@
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
-extern Vec2s data_ov031_02112b54;
-
 void PlayerActorBase_74::func_ov102_02182c20(unk32 param1, MtxFx43 *param2) {
     this->mUnk_04[param1].x = this->mUnk_1C[param1].x;
     this->mUnk_04[param1].y = this->mUnk_1C[param1].y;
@@ -103,7 +101,7 @@ void UnkStruct_027e0ce0_40_108::func_ov102_02182e54(unk32 param1, VecFx32 *param
     sp6.x -= data_ov031_02112b54.x / 2;
     sp6.y -= data_ov031_02112b54.y / 2;
 
-    if (this->mUnk_40 == &this->mUnk_10) {
+    if (this->mUnk_40 == this->mUnk_10) {
         data_027e0954->mUnk_00[1].mUnk_04.Prepend(this);
     }
 

@@ -420,7 +420,7 @@ from:0x020dc3d4 kind:arm_call to:0x0208a100 module:overlay(0)
 from:0x020dc3f0 kind:arm_call to:0x0216e6c0 module:overlay(93)
 from:0x020dc41a kind:thumb_call_arm to:0x0201667c module:main
 from:0x020dc434 kind:thumb_call_arm to:0x0205b38c module:overlay(0)
-from:0x020dc46c kind:load to:0x02112b6c module:overlay(31)
+from:0x020dc46c kind:load to:0x02112b64 module:overlay(31) add:0x8
 from:0x020dc476 kind:thumb_call_arm to:0x02016694 module:main
 from:0x020dc514 kind:arm_call to:0x0205b39c module:overlay(0)
 from:0x020dc550 kind:arm_call to:0x020da274 module:overlay(31)

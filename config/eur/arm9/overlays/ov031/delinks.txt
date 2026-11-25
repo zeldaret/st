@@ -73,7 +73,11 @@ src/031_Land/UnkStruct_ov000_02090850_031.cpp:
     .rodata     start:0x021106ec end:0x021106fc
 
 src/031_Land/code_020db0fc_031.cpp:
+    complete
     .text       start:0x020db0fc end:0x020db2b0
+    .ctor       start:0x02112794 end:0x02112798
+    .init       start:0x02110fd0 end:0x02110fe8
+    .data       start:0x02112b54 end:0x02112b64
 
 src/031_Land/UnkStruct_ItemManager_20_10_031.cpp:
     .text       start:0x020db2b0 end:0x020db338

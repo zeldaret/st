@@ -757,19 +757,24 @@ public:
     /* 06 */
 };
 
+extern const Vec2s data_ov031_02112b54;
+
 class UnkStruct_027e0ce0_40_108 : public UnkStruct_027e0ce0_40_108_Base {
 public:
     /* 00 (base) */
-    /* 10 */ UnkStruct_027e0ce0_40_108_10 mUnk_10;
-    /* 18 */ PAD(0x16, 0x40);
+    /* 10 */ UnkStruct_027e0ce0_40_108_10 mUnk_10[8];
     /* 40 */ UnkStruct_027e0ce0_40_108_10 *mUnk_40;
     /* 44 */
 
     UnkStruct_027e0ce0_40_108() :
-        mUnk_40(&this->mUnk_10) {}
+        mUnk_40(this->mUnk_10) {}
+
+    const uintptr_t GetCount() const {
+        return (uintptr_t) (this->mUnk_40 - this->mUnk_10);
+    }
 
     const bool UnknownInline1() const {
-        return (uintptr_t) (this->mUnk_40 - &this->mUnk_10) >= 8;
+        return this->GetCount() >= 8;
     }
 
     // data_ov031_02112b60

@@ -137,10 +137,10 @@ _ZN27UnkStruct_ov000_02090850_AC19func_ov031_020dae8cEi kind:function(arm,size=0
 _ZN27UnkStruct_ov000_02090850_AC19func_ov031_020dafe8Eb kind:function(arm,size=0x40) addr:0x020dafe8
 _ZN27UnkStruct_ov000_02090850_AC19func_ov031_020db028Ev kind:function(arm,size=0xd4) addr:0x020db028
 _ZN19PlayerLinkActor_13419func_ov031_020db0fcEv kind:function(arm,size=0x24) addr:0x020db0fc
-func_ov031_020db120 kind:function(arm,size=0x40) addr:0x020db120
+_ZN19PlayerLinkActor_13419func_ov031_020db120EP7VecFx32 kind:function(arm,size=0x40) addr:0x020db120
 _ZN19PlayerLinkActor_13419func_ov031_020db160Eb kind:function(arm,size=0x30) addr:0x020db160
 _ZN18PlayerActorBase_7419func_ov001_020db190Ev kind:function(arm,size=0x24) addr:0x020db190
-func_ov031_020db1b4 kind:function(arm,size=0xfc) addr:0x020db1b4
+_ZN25UnkStruct_027e0ce0_40_1088vfunc_00Ev kind:function(arm,size=0xfc) addr:0x020db1b4
 _ZN27UnkStruct_ItemManager_20_1019func_ov031_020db2b0Ev kind:function(arm,size=0x2c) addr:0x020db2b0
 func_ov031_020db2dc kind:function(arm,size=0x5c) addr:0x020db2dc
 _ZN27UnkStruct_ItemManager_20_0419func_ov031_020db338Ev kind:function(arm,size=0x18) addr:0x020db338
@@ -2067,7 +2067,7 @@ data_ov031_02110f4c kind:data(any) addr:0x02110f4c
 data_ov031_02110f60 kind:data(any) addr:0x02110f60
 data_ov031_02110f74 kind:data(any) addr:0x02110f74
 data_ov031_02110f88 kind:data(any) addr:0x02110f88
-__sinit_ov031_02110fd0 kind:function(arm,size=0x18) addr:0x02110fd0
+__sinit_code_020db0fc_031.cpp kind:function(arm,size=0x18) addr:0x02110fd0 local
 __sinit_ov031_02110fe8 kind:function(arm,size=0x10) addr:0x02110fe8
 __sinit_ActorBomb.cpp kind:function(arm,size=0x50) addr:0x02110ff8 local
 __sinit_ActorBlast.cpp kind:function(arm,size=0x50) addr:0x02111048 local
@@ -2131,7 +2131,7 @@ __sinit_MapObjectUnkSAND.cpp kind:function(arm,size=0xe0) addr:0x02112580 local
 __sinit_MapObjectUnkSPTB.cpp kind:function(arm,size=0x74) addr:0x02112660 local
 __sinit_MapObjectUnkGSST.cpp kind:function(arm,size=0x50) addr:0x021126d4 local
 __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x02112724 local
-.p__sinit_ov031_02110fd0 kind:data(word) addr:0x02112794
+.p__sinit_code_020db0fc_031.cpp kind:data(word) addr:0x02112794 local
 .p__sinit_ov031_02110fe8 kind:data(word) addr:0x02112798
 .p__sinit_ActorBomb.cpp kind:data(word) addr:0x0211279c local
 .p__sinit_ActorBlast.cpp kind:data(word) addr:0x021127a0 local
@@ -2235,8 +2235,8 @@ _ZTV24UnkStruct_ov031_02112b18 kind:data(any) addr:0x02112b10
 _ZTV24UnkStruct_ov031_02112b24 kind:data(any) addr:0x02112b1c
 _ZTV24UnkStruct_ov031_02112b40 kind:data(any) addr:0x02112b38
 data_ov031_02112b54 kind:data(any) addr:0x02112b54
-_ZTV25UnkStruct_027e0ce0_40_108 kind:data(any) addr:0x02112b58 ambiguous
-data_ov031_02112b6c kind:data(any) addr:0x02112b6c
+_ZTV25UnkStruct_027e0ce0_40_108 kind:data(any) addr:0x02112b58
+_ZTV19data_ov031_02112b6c kind:data(any) addr:0x02112b64
 data_ov031_02112b78 kind:data(any) addr:0x02112b78
 _ZTV19data_ov031_02112b84 kind:data(any) addr:0x02112b84
 _ZTV19data_ov031_02112bac kind:data(any) addr:0x02112bac

@@ -342,6 +342,7 @@ public:
 
     // overlay 31
     void func_ov031_020db0fc();
+    void func_ov031_020db120(VecFx32 *param1);
     void func_ov031_020db160(bool param1);
 };
 
