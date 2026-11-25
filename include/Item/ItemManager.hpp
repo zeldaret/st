@@ -239,17 +239,9 @@ public:
     void func_ov031_020dba3c(void *param1);
 };
 
-struct UnkStruct_ItemManager_20_10_00 {
-    /* 00 */ unk32 unk_00;
-    /* 04 */
-
-    UnkStruct_ItemManager_20_10_00() :
-        unk_00(0) {}
-};
-
 class UnkStruct_ItemManager_20_10 {
 public:
-    /* 00 */ UnkStruct_ItemManager_20_10_00 mUnk_00[3];
+    /* 00 */ RefElem mUnk_00[3];
 
     UnkStruct_ItemManager_20_10() {
         this->func_ov031_020db2b0();
@@ -257,6 +249,7 @@ public:
 
     // overlay 31
     void func_ov031_020db2b0();
+    s32 func_ov031_020db2dc();
 };
 
 class UnkStruct_ItemManager_20_14 {
