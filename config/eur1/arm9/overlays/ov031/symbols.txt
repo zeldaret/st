@@ -152,10 +152,10 @@ _ZN27UnkStruct_ItemManager_20_0419func_ov031_020db498EP7VecFx32 kind:function(ar
 _ZN27UnkStruct_ItemManager_20_0419func_ov031_020db4f0Ebb kind:function(arm,size=0x38) addr:0x020db610
 _ZN27UnkStruct_ItemManager_20_0419func_ov031_020db528EPv kind:function(arm,size=0x8c) addr:0x020db648
 _ZN27UnkStruct_ItemManager_20_0819func_ov031_020db5b4Ev kind:function(arm,size=0x20) addr:0x020db6d4
-func_ov031_020db5d4 kind:function(arm,size=0x14) addr:0x020db6f4
+_ZN27UnkStruct_ItemManager_20_0819func_ov031_020db5d4Ei kind:function(arm,size=0x14) addr:0x020db6f4
 _ZN27UnkStruct_ItemManager_20_0819func_ov031_020db5e8Ev kind:function(arm,size=0x2c) addr:0x020db708
-_ZN27UnkStruct_ItemManager_20_0819func_ov031_020db614EtP7VecFx32 kind:function(arm,size=0x90) addr:0x020db734
-func_ov031_020db6a4 kind:function(arm,size=0x60) addr:0x020db7c4
+_ZN27UnkStruct_ItemManager_20_0819func_ov031_020db614EtPK7VecFx32 kind:function(arm,size=0x90) addr:0x020db734
+_ZN27UnkStruct_ItemManager_20_0819func_ov031_020db6a4EP7VecFx32 kind:function(arm,size=0x60) addr:0x020db7c4
 _ZN27UnkStruct_ItemManager_20_0819func_ov031_020db704Ebb kind:function(arm,size=0xbc) addr:0x020db824
 _ZN27UnkStruct_ItemManager_20_14C1Ev kind:function(thumb,size=0x16) addr:0x020db8e0
 _ZN27UnkStruct_ItemManager_20_1419func_ov031_020db7d8Ev kind:function(thumb,size=0x1a) addr:0x020db8f8

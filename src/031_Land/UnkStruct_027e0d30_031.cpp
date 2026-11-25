@@ -9,7 +9,7 @@ void UnkStruct_027e0d30::Create(UnkStruct_ItemManager_20_08 *param1) {
 
 THUMB_END
 
-unk16 UnkStruct_027e0d30::func_ov031_020d9674() {
+u16 UnkStruct_027e0d30::func_ov031_020d9674() {
     return this->mUnk_00->func_ov031_020db5e8();
 }
 

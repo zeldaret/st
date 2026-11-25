@@ -200,14 +200,12 @@ public:
 
 class UnkStruct_ItemManager_20_08 {
 public:
-    /* 00 */ unk16 mUnk_00;
-    /* 02 */ unk16 mUnk_02;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk16 mUnk_10;
-    /* 12 */ bool mUnk_12;
-    /* 13 */ bool mUnk_13;
+    /* 00 */ u16 mUnk_00;
+    /* 02 */ u16 mUnk_02;
+    /* 04 */ VecFx32 mUnk_04;
+    /* 10 */ u16 mUnk_10;
+    /* 12 */ u8 mUnk_12;
+    /* 13 */ u8 mUnk_13;
     /* 14 */
 
     UnkStruct_ItemManager_20_08() {
@@ -220,8 +218,10 @@ public:
     // overlay 31
     void func_ov031_020d9658();
     void func_ov031_020db5b4();
-    unk16 func_ov031_020db5e8();
-    void func_ov031_020db614(u16 param1, VecFx32 *param2);
+    void func_ov031_020db5d4(unk32 param1);
+    u16 func_ov031_020db5e8();
+    void func_ov031_020db614(u16 param1, const VecFx32 *param2);
+    unk32 func_ov031_020db6a4(VecFx32 *param1);
     void func_ov031_020db704(bool param1, bool param2);
 };
 
