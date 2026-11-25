@@ -12,7 +12,7 @@ public:
     UnkStruct_027e0cdc();
 
     // overlay 0
-    unk32 func_ov000_02082a28(unk32 param1);
+    bool func_ov000_02082a28(unk32 param1);
     unk32 func_ov000_02082a48(unk32 param1);
 
     static UnkStruct_027e0cdc *Create(UnkStruct_027e0ce0_30 *param1);

@@ -84,6 +84,7 @@ src/031_Land/UnkStruct_ItemManager_20_10_031.cpp:
     .text       start:0x020db2b0 end:0x020db338
 
 src/031_Land/UnkStruct_ItemManager_20_04_031.cpp:
+    complete
     .text       start:0x020db338 end:0x020db5b4
 
 src/031_Land/UnkStruct_ItemManager_20_08_031.cpp:

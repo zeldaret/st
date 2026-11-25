@@ -726,7 +726,7 @@ void PlayerSceneChange::vfunc_10(unk32 param1, unk32 param2) {
 }
 
 bool PlayerSceneChange::vfunc_1C(VecFx32 *param1) {
-    if (data_027e0cdc->func_ov000_02082a28(1) == 0) {
+    if (!data_027e0cdc->func_ov000_02082a28(1)) {
         switch (this->mUnk_30->mUnk_68) {
             case 0x3C:
             case 0x3D:

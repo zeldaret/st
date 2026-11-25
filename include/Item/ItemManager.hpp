@@ -171,12 +171,13 @@ public:
     // overlay 31
     void func_ov031_020dc480();
     bool func_ov031_020dc700(VecFx32 *param1, unk32 param2, VecFx32 *param3, RefStruct *param4);
+    void func_ov031_020dc8a0(void *param1, bool param2, u32 param3);
 };
 
 class UnkStruct_ItemManager_20_04 {
 public:
-    /* 000 */ unk32 mUnk_000;
-    /* 004 */ bool mUnk_004;
+    /* 000 */ RefStruct mRef;
+    /* 004 */ bool mUnk_004; // mIsBoomerangAlive?
     /* 005 */ unk8 mUnk_005; // pad?
     /* 006 */ unk8 mUnk_006; // pad?
     /* 007 */ unk8 mUnk_007; // pad?
@@ -188,6 +189,11 @@ public:
 
     // overlay 31
     void func_ov031_020db338();
+    void func_ov031_020db350(bool param1);
+    bool func_ov031_020db374(VecFx32 *param1);
+    bool func_ov031_020db3e8();
+    bool func_ov031_020db400(const VecFx32 *pInitialPos, UnkAngleStruct initialAngle, RefStruct ref);
+    unk32 func_ov031_020db498(VecFx32 *param1);
     void func_ov031_020db4f0(bool param1, bool param2);
     void func_ov031_020db528(void *param1);
 };

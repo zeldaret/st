@@ -23,7 +23,7 @@ Actor *ActorProfileItemBoomerang::Create() {
 }
 
 ActorProfileItemBoomerang::ActorProfileItemBoomerang() :
-    ActorProfile(ActorId_ITBM) {}
+    ActorProfile(ActorId_ItemBoomerang) {}
 
 static inline G3d_Model *GetModel() {
     UnkStruct_027e0ce0_1C *ptr = data_027e0ce0->mUnk_1C;

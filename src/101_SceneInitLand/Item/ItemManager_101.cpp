@@ -5,7 +5,7 @@
 #include "Unknown/UnkStruct_027e0d38.hpp"
 
 UnkStruct_ItemManager_20_04::UnkStruct_ItemManager_20_04() :
-    mUnk_000(0),
+    mRef(0),
     mUnk_004(false) {}
 
 UnkStruct_ItemManager_20_04::~UnkStruct_ItemManager_20_04() {}
