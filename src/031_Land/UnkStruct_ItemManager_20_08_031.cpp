@@ -12,8 +12,8 @@ void UnkStruct_ItemManager_20_08::func_ov031_020db5b4() {
     this->mUnk_13   = 0;
 }
 
-void UnkStruct_ItemManager_20_08::func_ov031_020db5d4(unk32 param1) {
-    if (param1 != 0x03) {
+void UnkStruct_ItemManager_20_08::func_ov031_020db5d4(ItemFlag itemFlag) {
+    if (itemFlag != ItemFlag_Bow) {
         this->func_ov031_020db5b4();
     }
 }

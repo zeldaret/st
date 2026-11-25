@@ -132,7 +132,7 @@ public:
 };
 
 class UnkStruct_027e0ce0_30_00 {
-private:
+public:
     /* 00 */ VecFx32 mUnk_00[PlayerType_Max];
     /* 18 */ unk32 mUnk_18;
     /* 1C */ unk32 mUnk_1C;
@@ -145,7 +145,6 @@ private:
     /* 38 */ PlayerActorBase *mPlayerActors[PlayerType_Max];
     /* 40 */
 
-public:
     UnkStruct_027e0ce0_30_00(UnkStruct_027e0ce0_38 *param1, UnkStruct_027e0ce0_3C *param2, UnkStruct_027e0ce0_40 *param3,
                              PlayerLinkActor *pLink, PlayerActorBase *pZelda);
     ~UnkStruct_027e0ce0_30_00();

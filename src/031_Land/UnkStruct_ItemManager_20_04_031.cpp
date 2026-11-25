@@ -19,10 +19,10 @@ void UnkStruct_ItemManager_20_04::func_ov031_020db338() {
     }
 }
 
-void UnkStruct_ItemManager_20_04::func_ov031_020db350(bool param1) {
+void UnkStruct_ItemManager_20_04::func_ov031_020db350(ItemFlag itemFlag) {
     this->mUnk_008.func_ov031_020dc480();
 
-    if (param1 != true) {
+    if (itemFlag != ItemFlag_Boomerang) {
         this->mUnk_004 = false;
     }
 }

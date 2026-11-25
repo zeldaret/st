@@ -45,6 +45,7 @@ public:
 
     // overlay 31
     void func_ov031_020e096c();
+    unk32 func_ov031_020e098c(VecFx32 *param1);
 };
 
 class UnkStruct_ItemManager_20_00 {
@@ -70,6 +71,7 @@ public:
     // overlay 31
     void func_ov031_020d9bd0();
     void func_ov031_020dba40();
+    void func_ov031_020dba74(ItemFlag itemFlag);
     bool func_ov031_020dbb38(bool param1, VecFx32 *param2);
     void func_ov031_020dbc18(unk32 param1);
     void func_ov031_020dbc80(bool param1, bool param2);
@@ -189,7 +191,7 @@ public:
 
     // overlay 31
     void func_ov031_020db338();
-    void func_ov031_020db350(bool param1);
+    void func_ov031_020db350(ItemFlag itemFlag);
     bool func_ov031_020db374(VecFx32 *param1);
     bool func_ov031_020db3e8();
     bool func_ov031_020db400(const VecFx32 *pInitialPos, UnkAngleStruct initialAngle, RefStruct ref);
@@ -218,7 +220,7 @@ public:
     // overlay 31
     void func_ov031_020d9658();
     void func_ov031_020db5b4();
-    void func_ov031_020db5d4(unk32 param1);
+    void func_ov031_020db5d4(ItemFlag itemFlag);
     u16 func_ov031_020db5e8();
     void func_ov031_020db614(u16 param1, const VecFx32 *param2);
     unk32 func_ov031_020db6a4(VecFx32 *param1);
@@ -292,10 +294,10 @@ public:
     ~UnkStruct_ItemManager_20();
 
     // overlay 31
+    void func_ov031_020db844(ItemFlag itemFlag);
     bool func_ov031_020db874(ItemFlag itemFlag);
     void func_ov031_020db8cc();
     bool func_ov031_020db8f8(UnkStruct_027e0ce0_30_00 *param1);
-    void func_ov031_020db844(ItemFlag item);
 
     // overlay 101
     void func_ov101_02182d5c();
