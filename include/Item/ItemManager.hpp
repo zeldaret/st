@@ -7,6 +7,7 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkSystem1.hpp"
 #include "global.h"
+#include "math.hpp"
 #include "types.h"
 
 class UnkStruct_027e0ce0_30_00;
@@ -227,15 +228,28 @@ public:
     void func_ov031_020db704(bool param1, bool param2);
 };
 
+#define MAX_SAND_PLATFORMS 64
+
+struct UnkStruct_ov031_02116380 {
+    /* 00 */ Vec2bCpp unk_00[MAX_SAND_PLATFORMS];
+    /* 80 */ Vec2bCpp *unk_80;
+    /* 84 */
+
+    UnkStruct_ov031_02116380() :
+        unk_80(unk_00) {}
+};
+
+extern UnkStruct_ov031_02116380 data_ov031_02116380;
+
 class UnkStruct_ItemManager_20_0C {
 public:
     /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk8 mUnk_04;
-    /* 05 */ unk8 mUnk_05;
-    /* 06 */ unk8 mUnk_06;
-    /* 07 */ unk8 mUnk_07;
+    /* 04 */ u8 mUnk_04;
+    /* 05 */ u8 mUnk_05;
+    /* 06 */ u8 mUnk_06;
+    /* 07 */ u8 mUnk_07;
     /* 08 */ unk16 mUnk_08;
-    /* 0A */ unk16 mUnk_0A; // pad?
+    /* 0A */ s16 mUnk_0A;
     /* 0C */
 
     UnkStruct_ItemManager_20_0C();
@@ -245,6 +259,9 @@ public:
     void func_ov031_020db954();
     void func_ov031_020db958(bool param1, bool param2);
     void func_ov031_020dba3c(void *param1);
+
+    // overlay 107
+    void func_ov107_02184fb8();
 };
 
 class UnkStruct_ItemManager_20_10 {

@@ -100,7 +100,11 @@ src/031_Land/UnkStruct_ItemManager_20_031.cpp:
     .text       start:0x020db844 end:0x020db93c
 
 src/031_Land/UnkStruct_ItemManager_20_0C_031.cpp:
+    complete
     .text       start:0x020db93c end:0x020dba40
+    .ctor       start:0x02112798 end:0x0211279c
+    .init       start:0x02110fe8 end:0x02110ff8
+    .bss        start:0x02116380 end:0x02116404
 
 src/031_Land/UnkStruct_ItemManager_20_00_031.cpp:
     .text       start:0x020dba40 end:0x020dbe5c

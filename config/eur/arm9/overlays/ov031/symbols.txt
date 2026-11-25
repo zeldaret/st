@@ -2068,7 +2068,7 @@ data_ov031_02110f60 kind:data(any) addr:0x02110f60
 data_ov031_02110f74 kind:data(any) addr:0x02110f74
 data_ov031_02110f88 kind:data(any) addr:0x02110f88
 __sinit_code_020db0fc_031.cpp kind:function(arm,size=0x18) addr:0x02110fd0 local
-__sinit_ov031_02110fe8 kind:function(arm,size=0x10) addr:0x02110fe8
+__sinit_UnkStruct_ItemManager_20_0C_031.cpp kind:function(arm,size=0x10) addr:0x02110fe8 local
 __sinit_ActorBomb.cpp kind:function(arm,size=0x50) addr:0x02110ff8 local
 __sinit_ActorBlast.cpp kind:function(arm,size=0x50) addr:0x02111048 local
 __sinit_ActorUnkTLKT.cpp kind:function(arm,size=0x50) addr:0x02111098 local
@@ -2132,7 +2132,7 @@ __sinit_MapObjectUnkSPTB.cpp kind:function(arm,size=0x74) addr:0x02112660 local
 __sinit_MapObjectUnkGSST.cpp kind:function(arm,size=0x50) addr:0x021126d4 local
 __sinit_MapObjectUnkSWFS.cpp kind:function(arm,size=0x70) addr:0x02112724 local
 .p__sinit_code_020db0fc_031.cpp kind:data(word) addr:0x02112794 local
-.p__sinit_ov031_02110fe8 kind:data(word) addr:0x02112798
+.p__sinit_UnkStruct_ItemManager_20_0C_031.cpp kind:data(word) addr:0x02112798 local
 .p__sinit_ActorBomb.cpp kind:data(word) addr:0x0211279c local
 .p__sinit_ActorBlast.cpp kind:data(word) addr:0x021127a0 local
 .p__sinit_ActorUnkTLKT.cpp kind:data(word) addr:0x021127a4 local
