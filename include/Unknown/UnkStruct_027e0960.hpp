@@ -88,7 +88,7 @@ public:
     void func_ov000_0205a2a4(volatile unk32 index, ZMBRALBPoint *pPoint);
     void func_ov000_0205a2c8();
     UnkStruct_027e0960_TableEntry *func_ov000_0205a390(u8 param1);
-    UnkStruct_027e0960_TableEntry *func_ov000_0205a3fc(VecFx32 param1, unk32 param4);
+    UnkStruct_027e0960_TableEntry *func_ov000_0205a3fc(VecFx32 param1, unk32 param2);
 
     static UnkStruct_027e0960 *Create();
 

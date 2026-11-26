@@ -1,6 +1,7 @@
 #include "Actor/ActorLokomos.hpp"
 
 #include "CommonFuncs.hpp"
+#include "RefStruct.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
@@ -911,7 +912,7 @@ void ActorLokomo::func_ov058_02145ef0() {
         UnkStruct_027e0ce0 *data = data_027e0ce0;
         sp1C                     = *data->func_01fff148(PlayerType_Link);
 
-        data->func_ov000_0208bbd4(0x0, &sp1C, angle);
+        data->func_ov000_0208bbd4(PlayerType_Link, &sp1C, angle);
 
         this->GetOffsetPos(&sp10);
         VecFx32_Copy(&sp10, &sp04);
@@ -946,7 +947,7 @@ void ActorLokomo::func_ov058_02146070() {
     this->mAngle = 0x0;
 
     tableEntry->mTable.GetPtr(1)->vfunc_0C(&sp04.vec);
-    data_027e0ce0->func_ov000_0208bbd4(0x0, &sp04.vec, 0x0);
+    data_027e0ce0->func_ov000_0208bbd4(PlayerType_Link, &sp04.vec, 0x0);
     data_027e0cec->func_ov000_020a0110(&this->mUnk_888);
 
     this->func_ov058_02145bd4();
@@ -1180,7 +1181,7 @@ void ActorLokomo::vfunc_124() {
                 unk32 var    = func_01ff930c(&this->mUnk_8FE.angle_s, 0, this->mUnk_8FC);
                 VecFx32 sp20 = *data->func_01fff148(PlayerType_Link);
 
-                data->func_ov000_0208bbd4(0x0, &sp20, this->mUnk_8FE);
+                data->func_ov000_0208bbd4(PlayerType_Link, &sp20, this->mUnk_8FE);
 
                 this->func_ov058_02146848(&sp20, sp04);
                 if (var != 0x0) {
@@ -1192,7 +1193,7 @@ void ActorLokomo::vfunc_124() {
             case 0x3: {
                 UnkStruct_027e0ce0 *data = data_027e0ce0;
                 VecFx32 sp14             = *data->func_01fff148(PlayerType_Link);
-                data->func_ov000_0208bbd4(0x0, &sp14, this->mUnk_8FE);
+                data->func_ov000_0208bbd4(PlayerType_Link, &sp14, this->mUnk_8FE);
                 this->func_ov058_02146848(&sp14, 0x0);
                 break;
             }
@@ -1669,7 +1670,7 @@ void ActorLokomo::func_ov058_021471f4(unk32 param1) {
 }
 
 void ActorLokomo_874::vfunc2_00() {
-    data_ov063_021641d0[((ActorLokomo *) this->mUnk_04)->func_ov058_021456d8()] = this->mUnk_04;
+    data_ov063_021641d0[((ActorLokomo *) this->mUnk_04p)->func_ov058_021456d8()] = this->mUnk_04;
 }
 
 void ActorLokomo::func_ov058_02147760(Actor *param0, G3d_RenderState_ *param1) {

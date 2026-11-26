@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Physics/Cylinder.hpp"
 #include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
@@ -178,8 +179,12 @@ public:
         this->mUnk_00.mUnk_08 = 0;
     }
 
-    void Reset() {
+    void Destroy() {
         this->mUnk_00.~UnkStruct_PlayerGet_64();
+    }
+
+    void Reset() {
+        this->Destroy();
         this->mUnk_00.mUnk_08 = 0;
     }
 };
@@ -194,6 +199,7 @@ public:
     /* 14 */
 
     void func_ov000_02089dc4();
+    void func_ov000_02089dec(RefStruct ref, unk32 param2);
     void func_ov000_02089f0c(bool param1);
 };
 
@@ -391,6 +397,7 @@ public:
     ~PlayerActorBase_70();
 
     // overlay 0
+    void func_ov000_02082c58(unk32 param1, UnkAngleStruct param2, unk32 param3, unk32 param4);
     void func_ov000_02082e54();
     void func_ov000_02082e78(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
     void func_ov000_020830d4(UnkAngleStruct param1, u32 param2, u8 param3, PlayerLinkActor_A0_28 *param4);
@@ -447,13 +454,12 @@ public:
 };
 
 class PlayerLinkActor_9C_34 {
-private:
+public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ VecFx32 mUnk_04;
     /* 10 */ VecFx32 mUnk_10;
     /* 1C */
 
-public:
     void func_ov000_0208efd0(VecFx32 *pVec);
 };
 
@@ -470,10 +476,13 @@ public:
     /* 06C */ VecFx32 mUnk_06C;
     /* 078 */ PAD(0x78, 0x90);
     /* 090 */ s16 mUnk_090;
-    /* 090 */ unk16 mUnk_092;
+    /* 092 */ unk8 mUnk_092;
+    /* 093 */ bool mUnk_093;
     /* 094 */ unk32 mUnk_094;
     /* 098 */ unk16 mUnk_098;
-    /* 094 */ PAD(0x9A, 0xDC);
+    /* 094 */ PAD(0x9A, 0xA4);
+    /* 0A4 */ VecFx32 mUnk_0A4;
+    /* 0B0 */ PAD(0xB0, 0xDC);
     /* 0DC */ u16 mUnk_0DC;
     /* 0DE */ unk16 mUnk_0DE;
     /* 0E0 */ unk32 mUnk_0E0;
@@ -549,7 +558,9 @@ public:
     // overlay 0
     void func_ov000_0208c8f8(VecFx32 *pVec);
     void func_ov000_0208c914();
+    void func_ov000_0208c99c(VecFx32 *param1, UnkAngleStruct param2);
     void func_ov000_0208cac8(VecFx32 *, unk32);
+    void func_ov000_0208cb08(VecFx32 *param1, bool param2);
     void func_ov000_0208cbf0();
     void func_ov000_0208cc20(VecFx32 *param1);
     bool func_ov000_0208cc90();
@@ -565,13 +576,29 @@ public:
     void func_ov000_0208d7f0(bool param1);
     void func_ov000_0208d8f0(const VecFx32 *param1, VecFx32 *param2);
     void func_ov000_0208d928();
+    void func_ov000_0208d940(VecFx32 *param1);
     bool func_ov000_0208db08();
+    bool func_ov000_0208dc04();
+    bool func_ov000_0208dc48();
+    void func_ov000_0208dc68(bool param1);
+    bool func_ov000_0208dc78();
+    void func_ov000_0208dc88();
     unk32 func_ov000_0208dc98();
     void func_ov000_0208dcf0();
     unk32 func_ov000_0208dd60(UnkStruct_027e0ce0_30_00 *param1);
+    bool func_ov000_0208dd70(unk32 param2, unk32 param3, Cylinder *param4, void *param5, unk32 param6);
+    bool func_ov000_0208e538();
+    bool func_ov000_0208e548(VecFx32 *param1, BOOL param2, BOOL param3);
+    bool func_ov000_0208e558(unk32 param1, fx32 param2);
+    bool func_ov000_0208e568(unk32 param1, unk32 param2, VecFx32 *param3);
+
+    static void func_ov000_0208dc58(unk32 *param1, PlayerActorBase *pPlayer);
 
     // overlay 1
     void func_ov001_020bc96c(); // ResetState? or just Reset? idk
+
+    // overlay 39
+    void func_ov039_0211c9ac();
 
     // overlay 58
     //! TODO: move to PlayerActorLink?
@@ -588,5 +615,17 @@ public:
     void func_ov093_0216de30(unk32 param1, unk32 param2);
     void func_ov093_0216dec8(void *param1);
     void func_ov093_0216e1a4(void *param1);
+    bool func_ov093_0216e31c();
+    bool func_ov093_0216e334();
+    bool func_ov093_0216e6c0(RefStruct ref);
+    void func_ov093_0216e768(bool param1);
+    bool func_ov093_0216e778();
+    void func_ov093_0216e788();
+    bool func_ov093_0216eac4(unk32 param2, unk32 param3, Cylinder *param4, void *param5, unk32 param6);
     void func_ov093_0216f76c(VecFx32 *param1, unk32 param2);
+    void func_ov093_0216f86c(VecFx32 *param1);
+    bool func_ov093_0216f2a4();
+    bool func_ov093_0216f548(unk32 param1, fx32 param2);
+
+    static void func_ov093_0216e758(unk32 *param1, PlayerActorBase *pPlayer);
 };

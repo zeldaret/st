@@ -901,8 +901,11 @@ public:
             unk16 mUnk_04h;
             unk16 mUnk_06;
         };
+
+        //! TODO: figure these out
+        PlayerType mPlayerType;
         unk32 mUnk_04;
-        void *mUnk_04p; //! TODO: figure this out
+        void *mUnk_04p;
     };
     /* 08 */
 

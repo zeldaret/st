@@ -785,7 +785,9 @@ public:
 
 class UnkStruct_027e0ce0_40_14C {
 public:
-    /* 00 */ PAD(0x00, 0x94);
+    /* 00 */ PAD(0x00, 0x06);
+    /* 06 */ bool mUnk_06;
+    /* 07 */ PAD(0x07, 0x94);
     /* 94 */
 
     UnkStruct_027e0ce0_40_14C();
@@ -834,12 +836,40 @@ public:
     ~UnkStruct_027e0ce0_40();
 
     // overlay 0
+    void func_ov000_02087ee8();
     void func_ov000_02088060(bool param1);
 
     // overlay 17
     bool func_ov017_020bc95c(bool param1);
     void func_ov017_020bca40(bool param1, unk32 param2);
     bool func_ov017_020bcde8(bool param1);
+
+    // overlay 31
+    void func_ov031_020dbe5c(PlayerType playerType, VecFx32 *param2);
+    VecFx32 *func_ov031_020dbe88(PlayerType playerType);
+    bool func_ov031_020dbe9c(PlayerType playerType);
+    bool func_ov031_020dbebc(PlayerType playerType);
+    s16 func_ov031_020dbed0(PlayerType playerType);
+    bool func_ov031_020dbee4(PlayerType playerType);
+    void func_ov031_020dbf2c(PlayerType playerType, bool param1);
+    bool func_ov031_020dbf58(PlayerType playerType);
+    void func_ov031_020dbf7c(PlayerType playerType);
+    void func_ov031_020dbfa0(PlayerType playerType, VecFx32 *param2);
+    void func_ov031_020dc058(PlayerType playerType, VecFx32 *param2, UnkAngleStruct param3);
+    bool func_ov031_020dc12c(PlayerType playerType, unk32 param2, unk32 param3, Cylinder *param4, void *param5, unk32 param6);
+    bool func_ov031_020dc1bc(PlayerType playerType, unk32 param2, fx32 param3);
+    bool func_ov031_020dc1f0(PlayerType playerType, unk32 param2, unk32 param3, VecFx32 *param4);
+    void func_ov031_020dc218(RefStruct ref, unk32 param2);
+    bool func_ov031_020dc258(PlayerType playerType);
+    bool func_ov031_020dc288(PlayerType playerType, bool param2);
+    bool func_ov031_020dc2a0(PlayerType playerType, VecFx32 *param2, BOOL param3, BOOL param4);
+    void func_ov031_020dc2d4(PlayerType playerType, const VecFx32 *param2);
+    void func_ov031_020dc2fc(PlayerType playerType, unk32 param2, unk32 param3, unk32 param4);
+    void func_ov031_020dc384(PlayerType playerType, bool param2);
+    bool func_ov031_020dc3e0(RefStruct ref);
+    bool func_ov031_020dc400();
+
+    static void func_ov031_020dbf08(unk32 *param1, UnkStruct_027e0ce0_40 *thisx, PlayerType playerType);
 
     // overlay 93
     void func_ov093_02168020(unk32 param1);
@@ -921,7 +951,7 @@ public:
     void func_ov000_0208bb94(unk32 param2, unk32 param3);
     bool func_ov000_0208bba4(unk32 param2);
     void func_ov000_0208bbc4(unk32 param1, void *param2);
-    void func_ov000_0208bbd4(unk32 param1, VecFx32 *param2, UnkAngleStruct param3);
+    void func_ov000_0208bbd4(PlayerType playerType, VecFx32 *param2, UnkAngleStruct param3);
     void func_ov000_0208bc00(unk16 param1, Cylinder *param2);
     bool func_ov000_0208bc1c(PlayerType playerType, unk32 param2, unk32 param3, Cylinder *param4, void *param5, unk32 param6);
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);

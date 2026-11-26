@@ -111,6 +111,7 @@ src/031_Land/UnkStruct_ItemManager_20_00_031.cpp:
     .text       start:0x020dba40 end:0x020dbe5c
 
 src/031_Land/UnkStruct_027e0ce0_40_031.cpp:
+    complete
     .text       start:0x020dbe5c end:0x020dc414
 
 src/031_Land/UnkStruct_ItemManager_20_04_08_031.cpp:

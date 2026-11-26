@@ -14,6 +14,8 @@ class UnkStruct_027e0ce0_30_00;
 class Inventory;
 
 #define IS_ITEM_RESTRICTED(restrictions, itemFlag) (((restrictions) & (1 << (itemFlag))) != 0)
+#define MAX_SAND_PLATFORMS 64
+#define MAX_SPAWNED_BOMBS 3
 
 struct UnkStruct_ov000_020afc48 {
     /* 00 */ ItemId_s16 mItemId;
@@ -242,8 +244,6 @@ public:
     void func_ov031_020db704(bool param1, bool param2);
 };
 
-#define MAX_SAND_PLATFORMS 64
-
 struct UnkStruct_ov031_02116380 {
     /* 00 */ Vec2bCpp unk_00[MAX_SAND_PLATFORMS];
     /* 80 */ Vec2bCpp *unk_80;
@@ -280,7 +280,7 @@ public:
 
 class UnkStruct_ItemManager_20_10 {
 public:
-    /* 00 */ RefElem mUnk_00[3];
+    /* 00 */ RefElem mUnk_00[MAX_SPAWNED_BOMBS];
 
     UnkStruct_ItemManager_20_10() {
         this->func_ov031_020db2b0();
@@ -317,7 +317,7 @@ public:
     /* 04 */ UnkStruct_ItemManager_20_04 *mUnk_04; // boomerang manager?
     /* 08 */ UnkStruct_ItemManager_20_08 *mUnk_08; // bow manager?
     /* 0C */ UnkStruct_ItemManager_20_0C *mUnk_0C; // sandrod manager?
-    /* 10 */ UnkStruct_ItemManager_20_10 *mUnk_10;
+    /* 10 */ UnkStruct_ItemManager_20_10 *mUnk_10; // bomb manager?
     /* 14 */ UnkStruct_ItemManager_20_14 mUnk_14;
     /* 2C */
 

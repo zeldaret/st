@@ -29,9 +29,10 @@ enum ActorRefId_ {
 };
 
 typedef enum PlayerType_ {
-    /* 0 */ PlayerType_Link  = 0x00,
-    /* 1 */ PlayerType_Zelda = 0x01,
-    /* 2 */ PlayerType_Max,
+    /* -1 */ PlayerType_None  = -1,
+    /*  0 */ PlayerType_Link  = 0x00,
+    /*  1 */ PlayerType_Zelda = 0x01,
+    /*  2 */ PlayerType_Max,
 } PlayerType;
 
 union RefCommon {

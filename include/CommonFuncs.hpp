@@ -265,7 +265,6 @@ void func_ov000_020814ec(void *, void *);
 void func_ov000_02081520(void *, void *, u8);
 void func_ov000_02085d1c(void *);
 bool func_ov000_020864f8(void *, UnkAngleStruct, void *, void *);
-void func_ov000_02087ee8();
 unk32 func_ov000_0208832c(s16, unk32);
 bool func_ov000_02088854(unk32);
 void func_ov000_02088d10(unk32, VecFx32 *);
@@ -364,8 +363,6 @@ void func_ov031_020dcea4(void *, UnkStruct_027e0ce0_40_Base_78 *, UnkAngleStruct
 void func_ov031_020e0f30(RefStruct);
 unk16 func_ov031_020e3dd0(Actor *param0);
 void func_ov031_020f439c(void *, Vec3s *, unk32);
-bool func_ov031_020f7538(Actor *param1, unk32 param2);
-void func_ov031_020f7574(Actor *param1, unk32 param2);
 void func_ov031_0210acd4(Vec2bCpp);
 unk32 func_ov031_0210af50(Vec2bCpp, unk32 *);
 void func_ov031_0210b0e4(Vec2bCpp, unk32);

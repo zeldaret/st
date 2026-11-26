@@ -146,7 +146,7 @@ _ZN16MapObjectUnkGTAT19func_ov039_0211c964Ev kind:function(arm,size=0x4) addr:0x
 _ZN16MapObjectUnkGTATD1Ev kind:function(arm,size=0x14) addr:0x0211c968
 _ZN16MapObjectUnkGTATD0Ev kind:function(arm,size=0x1c) addr:0x0211c97c
 _ZN23MapObjectProfileUnkGTATD1Ev kind:function(arm,size=0x14) addr:0x0211c998
-func_ov039_0211c9ac kind:function(arm,size=0x20) addr:0x0211c9ac
+_ZN15PlayerActorBase19func_ov039_0211c9acEv kind:function(arm,size=0x20) addr:0x0211c9ac
 func_ov039_0211c9cc kind:function(arm,size=0xe0) addr:0x0211c9cc
 data_ov039_0211cab4 kind:data(any) addr:0x0211cab4
 data_ov039_0211cabc kind:data(any) addr:0x0211cabc
