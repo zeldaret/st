@@ -37,7 +37,15 @@ public:
     /* 12 */ unk16 mUnk_12;
     /* 14 */
 
-    UnkStruct_ItemManager_20_00_08();
+    UnkStruct_ItemManager_20_00_08() {
+        this->func_ov031_020e0fa8();
+    }
+
+    // overlay 31
+    void func_ov031_020e0fa8();
+    bool func_ov031_020e10ac(RefStruct param1, unk32 param2, unk32 param3);
+    unk32 func_ov031_020e1154(RefStruct param1);
+    void func_ov031_020e14a8();
 };
 
 class UnkStruct_ItemManager_20_00_20 {
@@ -47,14 +55,18 @@ public:
     // overlay 31
     void func_ov031_020e096c();
     unk32 func_ov031_020e098c(VecFx32 *param1);
+    void func_ov031_020e09ec(bool param1, bool param2);
+    void func_ov031_020e0ad4(VecFx32 *param1);
+    void func_ov031_020e0b08(VecFx32 *param1);
+    void func_ov031_020e0b38(RefStruct ref, unk32 param1);
 };
 
 class UnkStruct_ItemManager_20_00 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
+    /* 00 */ RefStruct mUnk_00;
+    /* 04 */ RefStruct mUnk_04;
     /* 08 */ UnkStruct_ItemManager_20_00_08 mUnk_08;
-    /* 1C */ unk32 mUnk_1C;
+    /* 1C */ u32 mUnk_1C;
     /* 20 */ UnkStruct_ItemManager_20_00_20 mUnk_20;
     /* 24 */ PAD(0x24, 0x2C);
     /* 2C */ unk16 mUnk_2C;
@@ -73,11 +85,13 @@ public:
     void func_ov031_020d9bd0();
     void func_ov031_020dba40();
     void func_ov031_020dba74(ItemFlag itemFlag);
+    bool func_ov031_020dba8c(bool param1, VecFx32 *param2);
     bool func_ov031_020dbb38(bool param1, VecFx32 *param2);
-    void func_ov031_020dbc18(unk32 param1);
+    bool func_ov031_020dbb54(const VecFx32 *pInitialPos, UnkAngleStruct initialAngle, RefStruct ref);
+    bool func_ov031_020dbc18(u16 param1);
     void func_ov031_020dbc80(bool param1, bool param2);
-    void func_ov031_020dbd24(unk32 param1, unk32 param2, unk32 param3);
-    void func_ov031_020dbd98(RefStruct ref, VecFx32 *param2, VecFx32 *param3);
+    bool func_ov031_020dbd24(unk32 param1, unk32 param2, bool param3);
+    bool func_ov031_020dbd98(RefStruct ref, VecFx32 *param2, VecFx32 *param3);
 };
 
 class UnkStruct_ItemManager_20_04_08_310 {
@@ -299,10 +313,10 @@ public:
 
 class UnkStruct_ItemManager_20 {
 public:
-    /* 00 */ UnkStruct_ItemManager_20_00 *mUnk_00;
-    /* 04 */ UnkStruct_ItemManager_20_04 *mUnk_04;
-    /* 08 */ UnkStruct_ItemManager_20_08 *mUnk_08;
-    /* 0C */ UnkStruct_ItemManager_20_0C *mUnk_0C;
+    /* 00 */ UnkStruct_ItemManager_20_00 *mUnk_00; // whirlwind manager?
+    /* 04 */ UnkStruct_ItemManager_20_04 *mUnk_04; // boomerang manager?
+    /* 08 */ UnkStruct_ItemManager_20_08 *mUnk_08; // bow manager?
+    /* 0C */ UnkStruct_ItemManager_20_0C *mUnk_0C; // sandrod manager?
     /* 10 */ UnkStruct_ItemManager_20_10 *mUnk_10;
     /* 14 */ UnkStruct_ItemManager_20_14 mUnk_14;
     /* 2C */
