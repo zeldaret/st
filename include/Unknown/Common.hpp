@@ -1341,11 +1341,16 @@ public:
 class UnkStruct_PlayerGet_74_base {
 public:
     /* 00 (vtable) */
-    /* 04 */
-
-    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2);
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */
 
     UnkStruct_PlayerGet_74_base();
+
+    // data_ov000_020b1b68
+    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2) = 0;
 };
 
 struct UnkStruct_ov000_020aa88c {

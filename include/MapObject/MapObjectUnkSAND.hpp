@@ -55,7 +55,7 @@ public:
     void func_ov031_0210b32c(void);
     void func_ov031_0210b34c(void);
 
-    static unk32 func_ov031_0210ae00(Vec2bCpp param1, void *param2);
+    static bool func_ov031_0210ae00(Vec2bCpp param1, void *param2);
     static void func_ov031_0210b17c(MapObjectUnkSAND_40 *param1, unk32 param2);
 };
 

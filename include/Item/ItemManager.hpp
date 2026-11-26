@@ -7,6 +7,7 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkSystem1.hpp"
 #include "global.h"
+#include "math.hpp"
 #include "types.h"
 
 class UnkStruct_027e0ce0_30_00;
@@ -36,7 +37,15 @@ public:
     /* 12 */ unk16 mUnk_12;
     /* 14 */
 
-    UnkStruct_ItemManager_20_00_08();
+    UnkStruct_ItemManager_20_00_08() {
+        this->func_ov031_020e0fa8();
+    }
+
+    // overlay 31
+    void func_ov031_020e0fa8();
+    bool func_ov031_020e10ac(RefStruct param1, unk32 param2, unk32 param3);
+    unk32 func_ov031_020e1154(RefStruct param1);
+    void func_ov031_020e14a8();
 };
 
 class UnkStruct_ItemManager_20_00_20 {
@@ -45,14 +54,19 @@ public:
 
     // overlay 31
     void func_ov031_020e096c();
+    unk32 func_ov031_020e098c(VecFx32 *param1);
+    void func_ov031_020e09ec(bool param1, bool param2);
+    void func_ov031_020e0ad4(VecFx32 *param1);
+    void func_ov031_020e0b08(VecFx32 *param1);
+    void func_ov031_020e0b38(RefStruct ref, unk32 param1);
 };
 
 class UnkStruct_ItemManager_20_00 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
+    /* 00 */ RefStruct mUnk_00;
+    /* 04 */ RefStruct mUnk_04;
     /* 08 */ UnkStruct_ItemManager_20_00_08 mUnk_08;
-    /* 1C */ unk32 mUnk_1C;
+    /* 1C */ u32 mUnk_1C;
     /* 20 */ UnkStruct_ItemManager_20_00_20 mUnk_20;
     /* 24 */ PAD(0x24, 0x2C);
     /* 2C */ unk16 mUnk_2C;
@@ -70,11 +84,14 @@ public:
     // overlay 31
     void func_ov031_020d9bd0();
     void func_ov031_020dba40();
+    void func_ov031_020dba74(ItemFlag itemFlag);
+    bool func_ov031_020dba8c(bool param1, VecFx32 *param2);
     bool func_ov031_020dbb38(bool param1, VecFx32 *param2);
-    void func_ov031_020dbc18(unk32 param1);
+    bool func_ov031_020dbb54(const VecFx32 *pInitialPos, UnkAngleStruct initialAngle, RefStruct ref);
+    bool func_ov031_020dbc18(u16 param1);
     void func_ov031_020dbc80(bool param1, bool param2);
-    void func_ov031_020dbd24(unk32 param1, unk32 param2, unk32 param3);
-    void func_ov031_020dbd98(RefStruct ref, VecFx32 *param2, VecFx32 *param3);
+    bool func_ov031_020dbd24(unk32 param1, unk32 param2, bool param3);
+    bool func_ov031_020dbd98(RefStruct ref, VecFx32 *param2, VecFx32 *param3);
 };
 
 class UnkStruct_ItemManager_20_04_08_310 {
@@ -171,12 +188,13 @@ public:
     // overlay 31
     void func_ov031_020dc480();
     bool func_ov031_020dc700(VecFx32 *param1, unk32 param2, VecFx32 *param3, RefStruct *param4);
+    void func_ov031_020dc8a0(void *param1, bool param2, u32 param3);
 };
 
 class UnkStruct_ItemManager_20_04 {
 public:
-    /* 000 */ unk32 mUnk_000;
-    /* 004 */ bool mUnk_004;
+    /* 000 */ RefStruct mRef;
+    /* 004 */ bool mUnk_004; // mIsBoomerangAlive?
     /* 005 */ unk8 mUnk_005; // pad?
     /* 006 */ unk8 mUnk_006; // pad?
     /* 007 */ unk8 mUnk_007; // pad?
@@ -188,20 +206,23 @@ public:
 
     // overlay 31
     void func_ov031_020db338();
+    void func_ov031_020db350(ItemFlag itemFlag);
+    bool func_ov031_020db374(VecFx32 *param1);
+    bool func_ov031_020db3e8();
+    bool func_ov031_020db400(const VecFx32 *pInitialPos, UnkAngleStruct initialAngle, RefStruct ref);
+    unk32 func_ov031_020db498(VecFx32 *param1);
     void func_ov031_020db4f0(bool param1, bool param2);
     void func_ov031_020db528(void *param1);
 };
 
 class UnkStruct_ItemManager_20_08 {
 public:
-    /* 00 */ unk16 mUnk_00;
-    /* 02 */ unk16 mUnk_02;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
-    /* 10 */ unk16 mUnk_10;
-    /* 12 */ bool mUnk_12;
-    /* 13 */ bool mUnk_13;
+    /* 00 */ u16 mUnk_00;
+    /* 02 */ u16 mUnk_02;
+    /* 04 */ VecFx32 mUnk_04;
+    /* 10 */ u16 mUnk_10;
+    /* 12 */ u8 mUnk_12;
+    /* 13 */ u8 mUnk_13;
     /* 14 */
 
     UnkStruct_ItemManager_20_08() {
@@ -214,20 +235,35 @@ public:
     // overlay 31
     void func_ov031_020d9658();
     void func_ov031_020db5b4();
-    unk16 func_ov031_020db5e8();
-    void func_ov031_020db614(u16 param1, VecFx32 *param2);
+    void func_ov031_020db5d4(ItemFlag itemFlag);
+    u16 func_ov031_020db5e8();
+    void func_ov031_020db614(u16 param1, const VecFx32 *param2);
+    unk32 func_ov031_020db6a4(VecFx32 *param1);
     void func_ov031_020db704(bool param1, bool param2);
 };
+
+#define MAX_SAND_PLATFORMS 64
+
+struct UnkStruct_ov031_02116380 {
+    /* 00 */ Vec2bCpp unk_00[MAX_SAND_PLATFORMS];
+    /* 80 */ Vec2bCpp *unk_80;
+    /* 84 */
+
+    UnkStruct_ov031_02116380() :
+        unk_80(unk_00) {}
+};
+
+extern UnkStruct_ov031_02116380 data_ov031_02116380;
 
 class UnkStruct_ItemManager_20_0C {
 public:
     /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk8 mUnk_04;
-    /* 05 */ unk8 mUnk_05;
-    /* 06 */ unk8 mUnk_06;
-    /* 07 */ unk8 mUnk_07;
+    /* 04 */ u8 mUnk_04;
+    /* 05 */ u8 mUnk_05;
+    /* 06 */ u8 mUnk_06;
+    /* 07 */ u8 mUnk_07;
     /* 08 */ unk16 mUnk_08;
-    /* 0A */ unk16 mUnk_0A; // pad?
+    /* 0A */ s16 mUnk_0A;
     /* 0C */
 
     UnkStruct_ItemManager_20_0C();
@@ -237,19 +273,14 @@ public:
     void func_ov031_020db954();
     void func_ov031_020db958(bool param1, bool param2);
     void func_ov031_020dba3c(void *param1);
-};
 
-struct UnkStruct_ItemManager_20_10_00 {
-    /* 00 */ unk32 unk_00;
-    /* 04 */
-
-    UnkStruct_ItemManager_20_10_00() :
-        unk_00(0) {}
+    // overlay 107
+    void func_ov107_02184fb8();
 };
 
 class UnkStruct_ItemManager_20_10 {
 public:
-    /* 00 */ UnkStruct_ItemManager_20_10_00 mUnk_00[3];
+    /* 00 */ RefElem mUnk_00[3];
 
     UnkStruct_ItemManager_20_10() {
         this->func_ov031_020db2b0();
@@ -257,6 +288,7 @@ public:
 
     // overlay 31
     void func_ov031_020db2b0();
+    s32 func_ov031_020db2dc();
 };
 
 class UnkStruct_ItemManager_20_14 {
@@ -281,10 +313,10 @@ public:
 
 class UnkStruct_ItemManager_20 {
 public:
-    /* 00 */ UnkStruct_ItemManager_20_00 *mUnk_00;
-    /* 04 */ UnkStruct_ItemManager_20_04 *mUnk_04;
-    /* 08 */ UnkStruct_ItemManager_20_08 *mUnk_08;
-    /* 0C */ UnkStruct_ItemManager_20_0C *mUnk_0C;
+    /* 00 */ UnkStruct_ItemManager_20_00 *mUnk_00; // whirlwind manager?
+    /* 04 */ UnkStruct_ItemManager_20_04 *mUnk_04; // boomerang manager?
+    /* 08 */ UnkStruct_ItemManager_20_08 *mUnk_08; // bow manager?
+    /* 0C */ UnkStruct_ItemManager_20_0C *mUnk_0C; // sandrod manager?
     /* 10 */ UnkStruct_ItemManager_20_10 *mUnk_10;
     /* 14 */ UnkStruct_ItemManager_20_14 mUnk_14;
     /* 2C */
@@ -293,10 +325,10 @@ public:
     ~UnkStruct_ItemManager_20();
 
     // overlay 31
+    void func_ov031_020db844(ItemFlag itemFlag);
     bool func_ov031_020db874(ItemFlag itemFlag);
     void func_ov031_020db8cc();
     bool func_ov031_020db8f8(UnkStruct_027e0ce0_30_00 *param1);
-    void func_ov031_020db844(ItemFlag item);
 
     // overlay 101
     void func_ov101_02182d5c();

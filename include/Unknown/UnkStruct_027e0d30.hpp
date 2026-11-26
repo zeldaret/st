@@ -14,7 +14,7 @@ public:
         mUnk_00(param1) {}
 
     // overlay 31
-    unk16 func_ov031_020d9674();
+    u16 func_ov031_020d9674();
     void func_ov031_020d9684(u16 param1, VecFx32 *param2);
 
     static void Create(UnkStruct_ItemManager_20_08 *param1);

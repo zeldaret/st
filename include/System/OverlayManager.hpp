@@ -419,6 +419,8 @@ public:
     const bool IsMapB3() const { return this->mLoadedOverlays[OverlaySlot_14] == OverlayIndex_MapB3; }
 
     const bool IsMapC1() const { return this->mLoadedOverlays[OverlaySlot_15] == OverlayIndex_MapC1; }
+
+    const bool IsPlayerSandrock() const { return this->mLoadedOverlays[OverlaySlot_17] == OverlayIndex_PlayerSandrock; }
     // clang-format on
 
     void Load(OverlaySlot slot, OverlayIndex index);

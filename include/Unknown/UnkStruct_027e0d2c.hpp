@@ -21,7 +21,7 @@ public:
     bool func_ov031_020d962c(VecFx32 *param1, unk32 param2, VecFx32 *param3, RefStruct *param4);
 
     static void Create(UnkStruct_ItemManager_20_04 *param1);
-    static void func_ov031_020d961c(unk32 *param1, UnkStruct_027e0d2c *thisx);
+    static void func_ov031_020d961c(RefStruct *pRef, UnkStruct_027e0d2c *thisx);
 
     // overlay 101
     static void Destroy();

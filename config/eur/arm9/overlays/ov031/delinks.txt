@@ -68,30 +68,46 @@ src/031_Land/UnkStruct_ov031_02112b40_031.cpp:
     .data       start:0x02112b38 end:0x02112b54
 
 src/031_Land/UnkStruct_ov000_02090850_031.cpp:
+    complete
     .text       start:0x020dac20 end:0x020db0fc
+    .rodata     start:0x021106ec end:0x021106fc
 
 src/031_Land/code_020db0fc_031.cpp:
+    complete
     .text       start:0x020db0fc end:0x020db2b0
+    .ctor       start:0x02112794 end:0x02112798
+    .init       start:0x02110fd0 end:0x02110fe8
+    .data       start:0x02112b54 end:0x02112b64
 
 src/031_Land/UnkStruct_ItemManager_20_10_031.cpp:
+    complete
     .text       start:0x020db2b0 end:0x020db338
 
 src/031_Land/UnkStruct_ItemManager_20_04_031.cpp:
+    complete
     .text       start:0x020db338 end:0x020db5b4
 
 src/031_Land/UnkStruct_ItemManager_20_08_031.cpp:
+    complete
     .text       start:0x020db5b4 end:0x020db7c0
 
 src/031_Land/UnkStruct_ItemManager_20_14_031.cpp:
+    complete
     .text       start:0x020db7c0 end:0x020db844
 
 src/031_Land/UnkStruct_ItemManager_20_031.cpp:
+    complete
     .text       start:0x020db844 end:0x020db93c
 
 src/031_Land/UnkStruct_ItemManager_20_0C_031.cpp:
+    complete
     .text       start:0x020db93c end:0x020dba40
+    .ctor       start:0x02112798 end:0x0211279c
+    .init       start:0x02110fe8 end:0x02110ff8
+    .bss        start:0x02116380 end:0x02116404
 
 src/031_Land/UnkStruct_ItemManager_20_00_031.cpp:
+    complete
     .text       start:0x020dba40 end:0x020dbe5c
 
 src/031_Land/UnkStruct_027e0ce0_40_031.cpp:

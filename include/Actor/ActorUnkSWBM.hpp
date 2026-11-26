@@ -43,7 +43,6 @@ public:
 class ActorUnkSWBM_C8 : public UnkStruct_PlayerGet_74_base {
 public:
     /* 00 (base) */
-    /* 04 */ PAD(0x04, 0x14);
     /* 14 */ ActorUnkSWBM *mUnk_14;
     /* 18 */
 

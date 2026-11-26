@@ -19,10 +19,10 @@ public:
 
     // overlay 31
     bool func_ov031_020d9bec();
-    bool func_ov031_020d9c04(unk32 param1, unk32 param2, unk32 param3);
+    bool func_ov031_020d9c04(unk32 param1, unk32 param2, bool param3);
     void func_ov031_020d9c14(RefStruct ref, VecFx32 *param2, VecFx32 *param3);
     bool func_ov031_020d9c34(bool param1, VecFx32 *param2);
-    void func_ov031_020d9c44(unk32 param1);
+    void func_ov031_020d9c44(u16 param1);
 
     static void Create(UnkStruct_ItemManager_20_00 *param1);
 

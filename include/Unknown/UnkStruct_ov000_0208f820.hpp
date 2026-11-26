@@ -54,7 +54,10 @@ public:
     /* 58 */ unk16 mUnk_58;
     /* 5A */ PAD(0x5A, 0x9C);
     /* 9C */ unk32 mUnk_9C;
-    /* A0 */ PAD(0xA0, 0x148);
+    /* A0 */ PAD(0xA0, 0xB1);
+    /* B1 */ unk8 mUnk_B1;
+    /* B2 */ unk8 mUnk_B2;
+    /* B3 */ PAD(0xB3, 0x148);
     /* 148 */ u32 mUnk_148;
     /* 14C */ EntryTransitionType mEntryTransitionType;
     /* 150 */ RefStruct mUnk_150;

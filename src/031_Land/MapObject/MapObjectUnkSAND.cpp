@@ -14,7 +14,7 @@ MapObjectProfileUnkSAND::MapObjectProfileUnkSAND() :
 
 void MapObjectUnkSAND::func_ov031_0210acd4(void) {}
 void MapObjectUnkSAND::func_ov031_0210ad64(void) {}
-unk32 MapObjectUnkSAND::func_ov031_0210ae00(Vec2bCpp param1, void *param2) {}
+bool MapObjectUnkSAND::func_ov031_0210ae00(Vec2bCpp param1, void *param2) {}
 void MapObjectUnkSAND::func_ov031_0210ae90(void) {}
 void MapObjectUnkSAND::func_ov031_0210af50(void) {}
 void MapObjectUnkSAND::func_ov031_0210b018(void) {}
