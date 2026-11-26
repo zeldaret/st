@@ -532,7 +532,7 @@ void ActorBomb::vfunc_2C(unk32 param1) {
         }
     }
 
-    func_01ffc5a0(&this->mUnk_094, this->mUnk_1D8, this->mAngle, &this->mPos);
+    this->mUnk_094.func_01ffc5a0(this->mUnk_1D8, this->mAngle, &this->mPos);
 
     VecFx32 sp0C;
     VecFx32_Init(this->mPos.x, this->mPos.y + FX_F32_TO_FX32(0.4f), this->mPos.z, &sp0C);

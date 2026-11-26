@@ -111,5 +111,5 @@ void UnkStruct_027e0ce0_40_Base_7C_04_Base::func_ov031_020dcc1c(unk32 param1) {
     }
 
     spC.y += sp2.angle_s;
-    func_01ffc5a0(&this->mUnk_04, param1, UnkAngleStruct(0), &spC);
+    this->mUnk_04.func_01ffc5a0(param1, UnkAngleStruct(0), &spC);
 }

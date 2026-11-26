@@ -88,7 +88,6 @@ void func_01ffad5c(MtxFx43 *, MtxFx43 *, MtxFx43 *);
 void func_01ffaf74(VecFx32 *, MtxFx43 *, VecFx32 *);
 void func_01ffb6e4(unk32, const void *, void *);
 fx32 func_01ffb9cc(const VecFx32 *, const VecFx32 *);
-void func_01ffc5a0(ModelRender *, unk32, UnkAngleStruct, void *);
 void func_01ffcb94(unk16, unk16, MtxFx33 *);
 bool func_01ffccf4(Cylinder *, VecFx32 *, VecFx32 *, unk32 *);
 void func_01ffce1c(Cylinder *, Cylinder *);
