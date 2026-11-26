@@ -1,5 +1,6 @@
 #include "MapObject/MapObjectUnkSWSW.hpp"
 #include "CommonFuncs.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "nitro/fx/consts.h"
 #include "profile.hpp"
 

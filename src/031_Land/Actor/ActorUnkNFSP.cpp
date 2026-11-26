@@ -4,6 +4,7 @@
 #include "Actor/ActorManager.hpp"
 #include "MapObject/MapObjectUnkSWFS.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "nitro/fx.h"
 
 class ActorUnkNFSP_vfunc_54 : public Actor {

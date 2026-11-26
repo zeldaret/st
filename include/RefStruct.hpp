@@ -165,6 +165,11 @@ struct RefStruct {
         this->data = 0;
     }
 
+    void Init() {
+        u32 zero   = 0;
+        this->data = *(u32 *) &zero;
+    }
+
     const bool operator==(const RefStruct &other) const {
         return other.data == this->data;
     }

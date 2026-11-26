@@ -6,6 +6,7 @@
 #include "MapObject/MapObjectUnkRCFL.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5214.hpp"
 
 DECL_PROFILE(ActorProfileUnkRCFO);

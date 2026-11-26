@@ -1,16 +1,9 @@
 #pragma once
 
-#include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
-#include "Actor/ActorUnkRCFO.hpp"
 #include "Course/Course.hpp"
-#include "Course/CourseManager.hpp"
 #include "Map/MapObjectId.hpp"
-#include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkStruct_027e09a4.hpp"
-#include "Unknown/UnkStruct_027e09c0.hpp"
-#include "nitro/fx.h"
 #include "types.h"
 
 #include <nitro.h>
@@ -64,6 +57,7 @@ struct UnkStruct_ov031_02118fa4;
 struct UnkStruct_027e0d38;
 struct UnkFileSystem1;
 struct UnkStruct_ov000_02058a84;
+struct ActorUnkRCFO_910;
 
 union Vec2bCpp;
 union Vec3s;
@@ -93,7 +87,7 @@ void func_01ffa9e8(MtxFx43 *, MtxFx43 *);
 void func_01ffad5c(MtxFx43 *, MtxFx43 *, MtxFx43 *);
 void func_01ffaf74(VecFx32 *, MtxFx43 *, VecFx32 *);
 void func_01ffb6e4(unk32, const void *, void *);
-fx32 func_01ffb9cc(VecFx32 *, VecFx32 *);
+fx32 func_01ffb9cc(const VecFx32 *, const VecFx32 *);
 void func_01ffc5a0(ModelRender *, unk32, UnkAngleStruct, void *);
 void func_01ffcb94(unk16, unk16, MtxFx33 *);
 bool func_01ffccf4(Cylinder *, VecFx32 *, VecFx32 *, unk32 *);
@@ -300,7 +294,7 @@ void func_ov000_020623d8(void *param1, unk32 param2);
 unk8 func_ov000_02070164(void *); //! TODO: turn to a class
 void func_ov000_0205a950(u8 bgType, bool isTopScreen, bool);
 void func_ov000_0205a944(u8 bgType, bool isTopScreen, bool);
-void *func_ov000_0208ea70(PlayerCharacter, unk32, bool); // returns pointer to .NSBTX
+void *func_ov000_0208ea70(s32 /* PlayerCharacter */, unk32, bool); // returns pointer to .NSBTX
 bool func_ov000_0205cbc4(RefStruct param1, VecFx32 *param2);
 
 // overlay 2
