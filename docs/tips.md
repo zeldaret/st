@@ -55,13 +55,11 @@ Some macros and inlines exists to operate on them, two major ones are `FX_F32_TO
 There is a `DEG_TO_ANG(n)` macro that converts an angle from degrees to an internal hexadecimal representation.
 
 There are two macros `SIN(n)` and `COS(n)` that compute the expected trigonometric values by doing a table lookup[^sincos]. Note that both macros access the same table, but the kind of operation performed can usually be determined by looking at the lookup pattern:
+
 - for `SIN`, `FX_SinCosTable_` is accessed at roughly `2 * n`;
 - for `COS`, `FX_SinCosTable_` is accessed at roughly `2 * n + 1`. The `+1` allows for the differentiation.
 
 [^sincos]: You can usually spot these operations by seing a lookup to the table in ghidra.
-
-`Actor.mAngle` sometime is unexpectedly saved onto the stack when used in function calls. It's default type is `fx16`, but this type usually doesn't lead to the stack save. The member's type is actually an union, also including `mAngleStruct` of type `UnkAngleStruct`, using this type usually solves the stack save pattern.
-
 
 ## Random
 
@@ -124,17 +122,28 @@ From there, you can get the address of the symbol. Use it to search Ghidra inste
 
 The default `ninja` commands run many checks and ensures that compilation gives the same output as the original file.
 During development, you may want to run checks with re-compiling the whole project. The following section give details about targets that may help you with that.
+Some targets can be executed for specific versions of the game, this is denoted using `<version>` below. You can replace this tag with any valid version (`eur`, `eur1`, `jp`, `usa`).
 
 - [`objdiff`](#objdiff)
+- [`delink`](#delink)
 - [`report_<version>`](#report_version)
 - [`rom_<version>`](#rom_version)
 - [`check_<version>`](#check_version)
 - [`sha1_<version>`](#sha1_version)
 - [Github CI/CD's rules](#github-cicds-rules)
+- [`<version>`](#version)
+- [Report Summary](#report_summary)
+
+> [!NOTE]
+> It is recommended to get familiar with all of these targets. But the most important and useful ones for everyday tasks are `objdiff`, `delink` and `<version>`.
 
 ### `objdiff`
 
-`ninja objdiff` re-generated `objdiff.json` and will warn you about illegal name access, a wrong renaming or broken addresses.
+`ninja objdiff` re-generates `objdiff.json` and will warn you about illegal name access, a wrong renaming or broken addresses.
+
+### `delink`
+
+`ninja delink` delinks and updates symbols. This usually is enough to reload already existing symbols in `objdiff`, although it doesn't update its configuration like `ninja objdiff` does to show newly delinked files.
 
 ### `report_<version>`
 
@@ -154,8 +163,28 @@ During development, you may want to run checks with re-compiling the whole proje
 
 ### Github CI/CD's rules
 
-For each supported version (as of now, EUR and JP), the CI/CD runs the following command: `ninja arm9_<ver> report_<ver> check_<ver>`. \
+For each supported version (as of now, EUR and JP), the CI/CD runs the following command: `ninja arm9_<ver> report_<ver> check_<ver>`, available in short with `ninja <ver>`. \
 You may run that command locally before pushing to your branch to see if CI/CD should pass or not. (Note that differences in the command result may still be observed because of non-committed changes or changes to the local configuration.)
+
+### `<version>`
+
+`ninja eur` runs the same command as Github's CI/CD described above. It is very useful to check that your code compiles and links normally, as will be done in Github's PR.
+
+### Report Summary
+
+As explained in [CONTRIBUTING.md](../CONTRIBUTING.md), you can generate a report of changes locally instead of waiting for the decomp-dev bot to update its comment in your PR. \
+If your PR accumulates many changes, the bot will also truncate results after 50 entries per category.
+The report generated with `ninja` will not, enabling more precise comparison of the changes made.
+
+Here are the steps to generate a report highlighting the changes:
+
+1. Run `ninja baseline_<version>` from the upstream/main branch.
+1. Checkout your branch and run `ninja changes_<version>`. This will show all regressions and broken matches.
+1. Alternatively, you can run `ninja changes_all_<version>`. This will show all changes, also including improvements and new matches.
+
+> [!TIP]
+> When syncing versions, running `diff -y <(ninja changes_all_eur) <(ninja change_all_<version>)` will show you differences between the changes for both versions (`-y` shows outputs side by side in two columns).
+> This way, you can see what is still missing or doesn't have the same match percentage in the version you're syncing.
 
 # Github
 
