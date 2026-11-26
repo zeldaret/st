@@ -132,7 +132,7 @@ Some targets can be executed for specific versions of the game, this is denoted 
 - [`sha1_<version>`](#sha1_version)
 - [Github CI/CD's rules](#github-cicds-rules)
 - [`<version>`](#version)
-- [Report Summary](#report_summary)
+- [Report Summary](#report-summary)
 
 > [!NOTE]
 > It is recommended to get familiar with all of these targets. But the most important and useful ones for everyday tasks are `objdiff`, `delink` and `<version>`.
@@ -173,7 +173,7 @@ You may run that command locally before pushing to your branch to see if CI/CD s
 ### Report Summary
 
 As explained in [CONTRIBUTING.md](../CONTRIBUTING.md), you can generate a report of changes locally instead of waiting for the decomp-dev bot to update its comment in your PR. \
-If your PR accumulates many changes, the bot will also truncate results after 50 entries per category.
+If your PR accumulates many changes, the bot will also truncate results after 30 entries per category.
 The report generated with `ninja` will not, enabling more precise comparison of the changes made.
 
 Here are the steps to generate a report highlighting the changes:
