@@ -1670,7 +1670,7 @@ void ActorLokomo::func_ov058_021471f4(unk32 param1) {
 }
 
 void ActorLokomo_874::vfunc2_00() {
-    data_ov063_021641d0[((ActorLokomo *) this->mUnk_04p)->func_ov058_021456d8()] = this->mUnk_04;
+    data_ov063_021641d0[((ActorLokomo *) this->mUnk_04)->func_ov058_021456d8()] = this->mUnk_04;
 }
 
 void ActorLokomo::func_ov058_02147760(Actor *param0, G3d_RenderState_ *param1) {
