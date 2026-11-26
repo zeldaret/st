@@ -67,7 +67,7 @@ func_ov000_02057750 kind:function(thumb,size=0xc) addr:0x02057750
 _ZN31ModelRender_UnkSystem1_Derived1C1EP10G3d_Model_m kind:function(thumb,size=0x20) addr:0x0205775c
 _ZN22ModelRender_UnkSystem1D1Ev kind:function(thumb,size=0xe) addr:0x0205777c
 _ZN10UnkSystem5C1EPvP10G3d_Model_ kind:function(thumb,size=0x18) addr:0x0205778c
-_ZN10UnkSystem519func_ov000_020577a4EP24UnkStruct_ov000_02058a84ib kind:function(arm,size=0x54) addr:0x020577a4
+_ZN10UnkSystem519func_ov000_020577a4EP24UnkStruct_ov000_02058a84ii kind:function(arm,size=0x54) addr:0x020577a4
 _ZN10UnkSystem519func_ov000_020577f8Ei kind:function(arm,size=0x38) addr:0x020577f8
 func_ov000_02057830 kind:function(arm,size=0x3c) addr:0x02057830
 func_ov000_0205786c kind:function(arm,size=0x38) addr:0x0205786c
@@ -3187,7 +3187,7 @@ data_ov000_020ab3b8 kind:data(any) addr:0x020ab40c
 data_ov000_020ab3bc kind:data(any) addr:0x020ab410
 data_ov000_020ab3c0 kind:data(any) addr:0x020ab414
 data_ov000_020ab418 kind:data(any) addr:0x020ab418
-data_ov000_020ab41c kind:data(any) addr:0x020ab41c
+data_ov000_020ab3c8 kind:data(any) addr:0x020ab41c
 data_ov000_020ab420 kind:data(any) addr:0x020ab420
 data_ov000_020ab424 kind:data(any) addr:0x020ab424
 data_ov000_020ab428 kind:data(any) addr:0x020ab428

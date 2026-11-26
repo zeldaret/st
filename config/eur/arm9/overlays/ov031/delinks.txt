@@ -119,7 +119,9 @@ src/031_Land/UnkStruct_ItemManager_20_04_08_031.cpp:
     .text       start:0x020dc414 end:0x020dca20
 
 src/031_Land/UnkStruct_027e0ce0_40_Base_7C_04_031.cpp:
+    complete
     .text       start:0x020dca20 end:0x020dccbc
+    .rodata     start:0x02110724 end:0x02110770
 
 src/031_Land/Player/PlayerActors_031.cpp:
     .text       start:0x020dccbc end:0x020dcd90

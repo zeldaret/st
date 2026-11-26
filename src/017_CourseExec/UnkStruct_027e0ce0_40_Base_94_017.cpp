@@ -5,8 +5,8 @@
 
 extern unk16 data_ov000_020ab3c8;
 
-// https://decomp.me/scratch/6j77v
-void UnkStruct_027e0ce0_40_Base_94::func_ov017_020bd300(UnkStruct_027e0ce0_40_Base_14 *param1, unk32 param2, bool param3) {
+void UnkStruct_027e0ce0_40_Base_94::func_ov017_020bd300(const UnkStruct_027e0ce0_40_Base_14 *param1, unk32 param2,
+                                                        bool param3) {
     RefStruct sp0;
     s16 temp_r0_2;
     s16 temp_r2;
@@ -67,11 +67,11 @@ void UnkStruct_027e0ce0_40_Base_94::func_ov017_020bd300(UnkStruct_027e0ce0_40_Ba
         return;
     }
 
-    this->mTouchPosLast.x = param1->mTouchControl.mTouchPosLast.x;
-    this->mTouchPosLast.y = param1->mTouchControl.mTouchPosLast.y;
     this->mUnk_4C |= 0x01;
+    this->mTouchPosLast = param1->mTouchControl.GetTouchPosLast();
+
     func_ov000_0208abc4(&sp0, this, &this->mTouchPosLast);
-    this->mUnk_1C.data = this->mUnk_18.data = sp0.data;
+    this->mUnk_1C = this->mUnk_18 = sp0;
 }
 
 void UnkStruct_027e0ce0_40_Base_94::func_ov017_020bd478() {

@@ -212,11 +212,11 @@ _ZN30UnkStruct_ItemManager_20_04_0819func_ov031_020dc90cEv kind:function(arm,siz
 _ZN32UnkStruct_027e0ce0_40_Base_7C_04C1Ev kind:function(thumb,size=0xc) addr:0x020dca00
 _ZN32UnkStruct_027e0ce0_40_Base_7C_04D1Ev kind:function(thumb,size=0xe) addr:0x020dca0c
 _ZN32UnkStruct_027e0ce0_40_Base_7C_0419func_ov031_020dca3cEv kind:function(arm,size=0x10) addr:0x020dca1c
-func_ov031_020dca4c kind:function(thumb,size=0x84) addr:0x020dca2c
-func_ov031_020dcad0 kind:function(arm,size=0x3c) addr:0x020dcab0
-func_ov031_020dcb0c kind:function(arm,size=0x54) addr:0x020dcaec
-_ZN32UnkStruct_027e0ce0_40_Base_7C_0419func_ov031_020dcb60E15UnkParamStruct1 kind:function(arm,size=0xbc) addr:0x020dcb40
-func_ov031_020dcc1c kind:function(arm,size=0xa0) addr:0x020dcbfc
+_ZN37UnkStruct_027e0ce0_40_Base_7C_04_BaseC2Ev kind:function(thumb,size=0x84) addr:0x020dca2c
+_ZN37UnkStruct_027e0ce0_40_Base_7C_04_Base19func_ov031_020dcad0Ei kind:function(arm,size=0x3c) addr:0x020dcab0
+_ZN37UnkStruct_027e0ce0_40_Base_7C_04_Base19func_ov031_020dcb0cE9RefStruct kind:function(arm,size=0x54) addr:0x020dcaec
+_ZN37UnkStruct_027e0ce0_40_Base_7C_04_Base19func_ov031_020dcb60E9RefStruct kind:function(arm,size=0xbc) addr:0x020dcb40
+_ZN37UnkStruct_027e0ce0_40_Base_7C_04_Base19func_ov031_020dcc1cEi kind:function(arm,size=0xa0) addr:0x020dcbfc
 func_ov031_020dccbc kind:function(thumb,size=0x32) addr:0x020dcc9c
 _ZN15PlayerLinkActor19func_ov031_020dccf0Ev kind:function(thumb,size=0x30) addr:0x020dccd0
 func_ov031_020dcd20 kind:function(arm,size=0x3c) addr:0x020dcd00

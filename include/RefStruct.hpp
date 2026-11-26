@@ -178,8 +178,9 @@ struct RefStruct {
         return !(*this == other);
     }
 
-    void operator=(const RefStruct &other) {
+    RefStruct &operator=(const RefStruct &other) {
         this->data = other.data;
+        return *this;
     }
 
     const u32 Get32() const {

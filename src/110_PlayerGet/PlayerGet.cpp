@@ -705,7 +705,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
             this->mUnk_30->func_ov000_020921e4(0x3A);
             break;
         case 0x3A:
-            if (this->mUnk_50->func_01ff8fa8() != 0) {
+            if (this->mUnk_50->func_01ff8fa8()) {
                 this->mUnk_30->func_ov000_020921e4(0x3B);
                 break;
             }

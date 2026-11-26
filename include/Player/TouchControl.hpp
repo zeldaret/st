@@ -51,6 +51,10 @@ public:
         return this->mFlags;
     }
 
+    const Vec2s &GetTouchPosLast() const {
+        return this->mTouchPosLast;
+    }
+
     void Init();
     void IncreaseSpeed(u16 increase);
     void UpdateFlags(u16 speed);

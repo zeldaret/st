@@ -48,7 +48,9 @@ typedef enum {
 } G3d_AnimationBinds;
 
 typedef struct G3d_Animation_ {
-    /* 00 */ u8 mUnk_00[0x10];
+    /* 00 */ PAD(0x00, 0x04);
+    /* 04 */ s32 mUnk_04;
+    /* 08 */ PAD(0x08, 0x10);
     /* 10 */ struct G3d_Animation_ *next; // next animation in the list
     /* 14 */ u8 mUnk_14[0x5];
     /* 19 */ u8 numElmnts;        // number of elements in the elementBinds array

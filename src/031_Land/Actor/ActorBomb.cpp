@@ -257,7 +257,7 @@ void ActorBomb::vfunc_24() {
 
 void ActorBomb::func_ov031_020e1b1c() {
     UnkStruct_ov000_02058a84 *param1 = this->func_ov031_020e15d0(this->mUnk_5C.mParams[0]);
-    bool var_r3;
+    BOOL var_r3;
 
     // weird but less weird than `func_ov019_020d0c90`
     switch (param1->mUnk_06 & 2) {

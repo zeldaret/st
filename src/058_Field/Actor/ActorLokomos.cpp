@@ -1585,7 +1585,7 @@ void ActorLokomo::func_ov058_021471f4(unk32 param1) {
 
         case ActorLokomo_Steem: {
             UnkStruct_PlayerGet_50 *pGet50_69C = this->mUnk_69C.vfunc_28();
-            if (pGet50_69C->func_01ff8fa8() == 0x0 && pGet50_69C->mUnk_08 != pGet50_69C->mUnk_0C) {
+            if (!pGet50_69C->func_01ff8fa8() && pGet50_69C->mUnk_08 != pGet50_69C->mUnk_0C) {
                 break;
             }
 
@@ -1612,7 +1612,7 @@ void ActorLokomo::func_ov058_021471f4(unk32 param1) {
             UnkStruct_PlayerGet_50 *pGet50_69C = this->mUnk_69C.vfunc_28();
             UnkStruct_PlayerGet_50 *pGet50_788 = this->mUnk_788.vfunc_28();
 
-            if (pGet50_69C->func_01ff8fa8() != 0x0 || pGet50_69C->mUnk_08 == pGet50_69C->mUnk_0C) {
+            if (pGet50_69C->func_01ff8fa8() || pGet50_69C->mUnk_08 == pGet50_69C->mUnk_0C) {
                 switch (arg1) {
                     case 0x1:
                         this->mUnk_69C.vfunc_1C(data_ov058_02154cdc[this->func_ov058_02146cec(0x0)], 0x199A, 0x1000, 0x0);
@@ -1634,7 +1634,7 @@ void ActorLokomo::func_ov058_021471f4(unk32 param1) {
                 *(u16 *) &pGet50_69C->mUnk_02 &= 0xFFF7;
             }
 
-            if (pGet50_788->func_01ff8fa8() != 0x0 || pGet50_788->mUnk_08 == pGet50_788->mUnk_0C) {
+            if (pGet50_788->func_01ff8fa8() || pGet50_788->mUnk_08 == pGet50_788->mUnk_0C) {
                 switch (arg1) {
                     case 0x1:
                         this->mUnk_788.vfunc_1C(data_ov058_02154cdc[this->func_ov058_02146d30(0x0)], 0x199A, 0x1000, 0x0);

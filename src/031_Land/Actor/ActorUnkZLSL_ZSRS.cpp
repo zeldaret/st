@@ -965,7 +965,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             data_027e0cec->func_ov000_020a0110(&this->mUnk_2828.mUnk_00);
             break;
         case 0x6:
-            if (actor->mUnk_16C.vfunc_10()->mUnk_04.func_01ff8fa8() == 0x0) {
+            if (!actor->mUnk_16C.vfunc_10()->mUnk_04.func_01ff8fa8()) {
                 return;
             }
             this->mUnk_286E++;
@@ -1674,7 +1674,7 @@ bool ActorUnkZLSL::func_ov031_020ed6cc(unk32 param1) {
             func_01ff916c(&this->mUnk_28A4.vec.z, 0x1000, 0x19A);
             func_01ff916c(&this->mUnk_28A4.vec.y, 0x1000, 0x19A);
 
-            if (this->mUnk_094.mUnk_0C->vfunc_10()->mUnk_04.func_01ff8fa8() != 0) {
+            if (this->mUnk_094.mUnk_0C->vfunc_10()->mUnk_04.func_01ff8fa8()) {
                 this->vfunc_98(0x00);
                 return true;
             }
@@ -1765,7 +1765,7 @@ bool ActorUnkZLSL::func_ov031_020ed8ac(fx32 param1) {
             func_020169d4(&this->mPos, &this->mUnk_28B0.vec, &sp4, &this->mUnk_2888);
             func_01ff9984(&this->mUnk_28B0.vec, &sp28, 0x334, 0, 0x7FFFFFFF);
 
-            if (this->mUnk_094.mUnk_0C->vfunc_10()->mUnk_04.func_01ff8fa8() != 0) {
+            if (this->mUnk_094.mUnk_0C->vfunc_10()->mUnk_04.func_01ff8fa8()) {
                 this->vfunc_98(0x00);
                 return true;
             }

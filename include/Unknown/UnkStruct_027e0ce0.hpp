@@ -550,14 +550,44 @@ public:
     u8 func_ov031_020dcfb4(void *param1);
 };
 
-struct UnkParamStruct1 {
-    u32 unk_00;
+class UnkStruct_027e0ce0_40_Base_7C_04_Base_64 {
+public:
+    /* 00 */ UnkSystem5 mUnk_00;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */
+
+    UnkStruct_027e0ce0_40_Base_7C_04_Base_64(G3d_Model *pModel) :
+        mUnk_00(&this->mUnk_20, pModel) {}
 };
 
-class UnkStruct_027e0ce0_40_Base_7C_04 {
+class UnkStruct_027e0ce0_40_Base_7C_04_Base {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ PAD(0x04, 0xB4);
+    /* 00 */ RefStruct mUnk_00;
+    /* 04 */ ModelRender mUnk_04;
+    /* 64 */ UnkStruct_027e0ce0_40_Base_7C_04_Base_64 mUnk_64;
+    /* 84 */ PAD(0x88, 0xA4);
+    /* A4 */ unk32 mUnk_A4;
+    /* A8 */ UnkStruct_ov000_02058a84 *mUnk_A8[3];
+    /* B4 */
+
+    const u32 GetRef() const {
+        //! TODO: better solution
+        u32 ref = *(u32 *) &this->mUnk_00;
+        return *(u32 *) &ref;
+    }
+
+    UnkStruct_027e0ce0_40_Base_7C_04_Base();
+
+    // overlay 31
+    void func_ov031_020dcad0(s32 index);
+    void func_ov031_020dcb0c(RefStruct param1);
+    void func_ov031_020dcb60(RefStruct param1);
+    void func_ov031_020dcc1c(unk32 param1);
+};
+
+class UnkStruct_027e0ce0_40_Base_7C_04 : public UnkStruct_027e0ce0_40_Base_7C_04_Base {
+public:
+    /* 00 (base) */
     /* B4 */
 
     UnkStruct_027e0ce0_40_Base_7C_04();
@@ -565,7 +595,6 @@ public:
 
     // overlay 31
     void func_ov031_020dca3c();
-    void func_ov031_020dcb60(UnkParamStruct1 param1);
 };
 
 class UnkStruct_027e0ce0_40_Base_7C {
@@ -585,7 +614,7 @@ public:
     bool func_ov000_020968fc();
 
     // overlay 17
-    void func_ov017_020be2ec(UnkStruct_027e0ce0_40_Base_14 *param1, bool param2, UnkParamStruct1 param3);
+    void func_ov017_020be2ec(UnkStruct_027e0ce0_40_Base_14 *param1, bool param2, RefStruct param3);
     void func_ov017_020be434();
 };
 
@@ -658,7 +687,7 @@ public:
 
     // overlay 17
     void func_ov017_020bd478();
-    void func_ov017_020bd300(UnkStruct_027e0ce0_40_Base_14 *param1, unk32 param2, bool param3);
+    void func_ov017_020bd300(const UnkStruct_027e0ce0_40_Base_14 *param1, unk32 param2, bool param3);
 };
 
 typedef u16 UnkFlags3;

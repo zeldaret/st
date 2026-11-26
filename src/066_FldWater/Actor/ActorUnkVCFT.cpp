@@ -1806,7 +1806,7 @@ unk32 ActorUnkVCFT::vfunc_7C(unk32 param1) {
                             this->func_ov066_0215b938();
                             return 0;
                         case 4:
-                            if (this->mUnk_094.mUnk_0C->vfunc_28()->func_01ff8fa8() == 0) {
+                            if (!this->mUnk_094.mUnk_0C->vfunc_28()->func_01ff8fa8()) {
                                 return 0;
                             }
 
