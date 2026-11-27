@@ -109,7 +109,7 @@ ActorUnkSWBM::ActorUnkSWBM() :
     mUnk_0E0(0xE),
     mUnk_108(0x0),
     mUnk_10A(0x0) {
-    MI_CpuFill32(0x0, this->mUnk_0E4, ARRAY_LEN(this->mUnk_0E4) * sizeof *this->mUnk_0E4);
+    MI_CpuFill32(0, this->mUnk_0E4, sizeof(this->mUnk_0E4));
     this->mState = ActorUnkSWBMState_0;
     this->mTimer.Reset();
 }
