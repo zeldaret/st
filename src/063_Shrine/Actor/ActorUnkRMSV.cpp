@@ -9,7 +9,7 @@
 static const char data_ov063_02162578[16] = "RMSV";
 static const char data_ov063_02162588[16] = "RMSV_wall";
 
-static ActorUnkZLSL_AnimationTag data_ov063_021632ac[] = {{0, "RMSV", 0x00}, {1, "RMSV", 0x00}};
+static G3d_AnimTag data_ov063_021632ac[] = {{0, "RMSV", 0x00}, {1, "RMSV", 0x00}};
 
 DECL_PROFILE(ActorProfileUnkRMSV);
 

@@ -49,7 +49,7 @@ static const char data_ov031_02110a40[][16] = {
     "bomb_clanim",
 };
 
-static ActorUnkZLSL_AnimationTag data_ov031_02112be8 = {.index = 0, .name = "bomb_clanim", .unknown = 0};
+static G3d_AnimTag data_ov031_02112be8 = {.index = 0, .name = "bomb_clanim", .unknown = 0};
 
 static PTMF<ActorBomb> data_ov031_02112c00[ActorBombState_Max] = {
     &ActorBomb::func_ov031_020e1da0, // ActorUnkBOMBState_0

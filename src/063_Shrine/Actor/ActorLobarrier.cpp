@@ -38,7 +38,7 @@ extern const unk32 data_ov000_020aecfc[];
 extern VecFx32 data_027e07d4;
 extern MtxFx43 data_027e0964;
 
-static ActorUnkZLSL_AnimationTag data_ov063_02163068[] = {
+static G3d_AnimTag data_ov063_02163068[] = {
     {0x00, "walkA", 0x00},
     {0x01, "walkB", 0x00},
     {0x02, "attack", 0x01},

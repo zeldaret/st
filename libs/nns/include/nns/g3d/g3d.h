@@ -58,6 +58,13 @@ typedef struct G3d_Animation_ {
     /* 1C */
 } G3d_Animation;
 
+//! TODO: confirm if it really belongs to there
+typedef struct G3d_AnimTag {
+    /* 00 */ s32 index;
+    /* 04 */ char name[16];
+    /* 14 */ u32 unknown;
+} G3d_AnimTag; // size = 0x18
+
 typedef struct G3d_Model_14_ {
     /* 00 */ u8 unk_14;
     /* 01 */ u8 scalingHandler; // Determines which of the G3d_gScaleHandlers to use for this model

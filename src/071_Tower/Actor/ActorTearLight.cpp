@@ -35,7 +35,7 @@ extern VecFx32 data_ov071_02164bd4;
 
 extern UnkStruct_ov019_020d24c8_28_258_00 data_ov071_02165150;
 
-static ActorUnkZLSL_AnimationTag data_ov071_02164be0      = {0x0, "szku"};
+static G3d_AnimTag data_ov071_02164be0                    = {0x0, "szku"};
 static const ActorTearLight_UnkStruct data_ov071_02164cd8 = {.fct = NULL};
 static ActorTearLight_UnkStruct data_ov071_02164ce0       = {.fct = &ActorTearLight::func_ov071_0215fed4};
 static ActorTearLight_UnkStruct data_ov071_02164ce8       = {.fct = &ActorTearLight::func_ov071_0215ff08};

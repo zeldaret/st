@@ -53,7 +53,7 @@ static char data_ov031_021135f0[0x4] = "\x00 ";
 static char data_ov031_021135f4[0x4] = "3\x03";
 static char data_ov031_021135f8[0x4] = "\x00\x10";
 
-static ActorUnkZLSL_AnimationTag data_ov031_021135fc = {0, "wait"};
+static G3d_AnimTag data_ov031_021135fc = {0, "wait"};
 
 static PTMF<ActorUnkZLSL> data_ov031_02113770[ActorUnkZLSLState_Max] = {
     &ActorUnkZLSL::func_ov031_020eaa68, // ActorUnkZLSLState_OpenArms
@@ -96,7 +96,7 @@ static PTMF<ActorUnkZLSL> data_ov031_021137f8[ActorUnkZLSLState_Max] = {
 };
 
 // clang-format off
-static ActorUnkZLSL_AnimationTag data_ov031_02113a08[] = {
+static G3d_AnimTag data_ov031_02113a08[] = {
     {0x00, "blink", 0x00},
     {0x01, "happy", 0x00},
     {0x02, "levitate_s", 0x00},
@@ -113,7 +113,7 @@ static ActorUnkZLSL_AnimationTag data_ov031_02113a08[] = {
     {0x0D, "sing", 0x00},
 };
 
-static ActorUnkZLSL_AnimationTag data_ov031_02113b58[] = {
+static G3d_AnimTag data_ov031_02113b58[] = {
     {0x00, "levitate_s", 0x00},
     {0x01, "move_s", 0x00},
     {0x02, "talk_s", 0x00},

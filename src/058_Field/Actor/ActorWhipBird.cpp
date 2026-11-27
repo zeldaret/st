@@ -33,7 +33,7 @@ static PTMF<ActorWhipBird> data_ov058_0215534c[ActorWhipBirdState_Max] = {
     &ActorWhipBird::func_ov058_0214c0b4, // ActorWhipBirdState_3
     &ActorWhipBird::func_ov058_0214c394, // ActorWhipBirdState_4
 };
-static ActorUnkZLSL_AnimationTag data_ov058_02155374[2] = {
+static G3d_AnimTag data_ov058_02155374[2] = {
     {0, "wpbd_wait1"},
     {1, "wpbd_wait2"},
 };

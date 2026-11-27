@@ -120,7 +120,7 @@ public:
     /* 0A4 */ Actor_Derived1_a4 mUnk_0A4;
     /* 0B0 */ u16 mUnk_0B0;
     /* 0B4 */ unk32 mUnk_0B4;
-    /* 0B8 */ ActorUnkZLSL_AnimationTag *mUnk_0B8;
+    /* 0B8 */ G3d_AnimTag *mUnk_0B8;
     /* 0BC */ RefStruct mUnk_0BC;
     /* 0C0 */ VecFx32Cpp mUnk_0C0;
     /* 0CC */ unk16 mUnk_0CC;
