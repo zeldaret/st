@@ -143,7 +143,8 @@ Some targets can be executed for specific versions of the game, this is denoted 
 
 ### `delink`
 
-`ninja delink` delinks and updates symbols. This usually is enough to reload already existing symbols in `objdiff`, although it doesn't update its configuration like `ninja objdiff` does to show newly delinked files.
+`ninja delink` delinks and updates symbols for all supported versions. This usually is enough to reload already existing symbols in `objdiff`, although it doesn't update its configuration like `ninja objdiff` does to show newly delinked files.
+A version-specific variation of the command exists: `ninja delink_<version>`.
 
 ### `report_<version>`
 
