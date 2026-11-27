@@ -33,7 +33,7 @@ Actor_Derived1::Actor_Derived1(ModelRender *param1, UnkStruct_ov000_020b31f0 *pa
     mUnk_0E0(0x1555),
     mUnk_0E4(NULL),
     mUnk_0E8(0, 0),
-    mUnk_104(this->mUnk_34->size),
+    mUnk_104(this->mUnk_34->radius),
     mUnk_114(-1),
     mUnk_118(0x1000),
     mUnk_11C(0x019A) {

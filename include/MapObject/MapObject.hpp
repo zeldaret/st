@@ -2,7 +2,7 @@
 
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectProfile.hpp"
-#include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
 #include "System/SysNew.hpp"
@@ -64,14 +64,14 @@ public:
     MapObject_10_Base(); // func_ov000_0207c018
 
     // data_ov000_020b2854
-    /* 00 */ virtual void vfunc_00()                 = 0;
-    /* 04 */ virtual void vfunc_04()                 = 0;
-    /* 08 */ virtual void vfunc_08()                 = 0;
-    /* 0C */ virtual void vfunc_0C()                 = 0;
-    /* 10 */ virtual void vfunc_10(Cylinder *param1) = 0;
-    /* 14 */ virtual void vfunc_14()                 = 0;
-    /* 18 */ virtual void vfunc_18(VecFx32 *param1)  = 0;
-    /* 1C */ virtual void vfunc_1C(VecFx32 *param1)  = 0;
+    /* 00 */ virtual void vfunc_00()                = 0;
+    /* 04 */ virtual void vfunc_04()                = 0;
+    /* 08 */ virtual void vfunc_08()                = 0;
+    /* 0C */ virtual void vfunc_0C()                = 0;
+    /* 10 */ virtual void vfunc_10(Sphere *param1)  = 0;
+    /* 14 */ virtual void vfunc_14()                = 0;
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1) = 0;
+    /* 1C */ virtual void vfunc_1C(VecFx32 *param1) = 0;
     /* 20 */
 };
 
@@ -88,7 +88,7 @@ public:
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10(Cylinder *param1);
+    /* 10 */ virtual void vfunc_10(Sphere *param1);
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18(VecFx32 *param1);
     /* 1C */ virtual void vfunc_1C(VecFx32 *param1);

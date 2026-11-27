@@ -1,6 +1,7 @@
 #include "Actor/ActorHeart.hpp"
 #include "CommonFuncs.hpp"
 #include "Course/CourseManager.hpp"
+#include "Physics/Cylinder.hpp"
 #include "System/Random.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
@@ -9,7 +10,7 @@
 
 extern unk32 data_ov000_020aecf8;
 
-const Cylinder data_ov031_02113d64(FX32_HALF);
+const Sphere data_ov031_02113d64(FX32_HALF);
 
 static PTMF<ActorHeart> data_ov031_02113da4[ActorHeartState_Max] = {
     &ActorHeart::func_ov031_020ef2ec, // ActorHeartState_InitFallDown
@@ -77,7 +78,7 @@ ActorHeart::ActorHeart() :
     func_01ffedac(&sp0, &this->mPos);
 
     if (gpCourseManager->mpMapMgr->func_ov000_02080180(&sp0) == 0x5) {
-        this->mUnk_34 = (Cylinder *) &data_ov031_02113d64;
+        this->mUnk_34 = (Sphere *) &data_ov031_02113d64;
     }
 }
 
@@ -88,12 +89,9 @@ bool ActorHeart::Init(unk32 param1) {
 }
 
 void ActorHeart::Update() {
-    Cylinder sp2C;
-    struct {
-        Cylinder unk_00;
-        fx32 unk_10;
-    } sp18;
-    Cylinder sp8;
+    Sphere sp2C;
+    Cylinder sp18;
+    Sphere sp8;
     VecFx16 sp2;
     unk16 sp0;
 
@@ -126,21 +124,21 @@ void ActorHeart::Update() {
 
         if (this->mState == ActorHeartState_FallingDown) {
             data_027e0ce0->func_ov000_0208bc00(0, &sp8);
-            func_01ffce1c(&sp18.unk_00, &sp8);
-            sp18.unk_00.pos.y -= sp8.size;
-            sp18.unk_10 += sp8.size * 3;
+            func_01ffce1c(&sp18, &sp8);
+            sp18.center.y -= sp8.radius;
+            sp18.height += sp8.radius * 3;
             this->vfunc_10(&sp2C);
 
-            if (func_01ffcea0(&sp18.unk_00, &sp2C) != 0) {
+            if (func_01ffcea0(&sp18, &sp2C) != 0) {
                 this->func_ov031_020ef528();
                 goto skip;
             } else if (data_027e0ce0->func_01fff1a4() != 0) {
                 data_027e0ce0->func_ov000_0208bc00(1, &sp8);
-                func_01ffce1c(&sp18.unk_00, &sp8);
-                sp18.unk_00.pos.y -= sp8.size;
-                sp18.unk_10 += sp8.size * 3;
+                func_01ffce1c(&sp18, &sp8);
+                sp18.center.y -= sp8.radius;
+                sp18.height += sp8.radius * 3;
 
-                if (func_01ffcea0(&sp18.unk_00, &sp2C) != 0) {
+                if (func_01ffcea0(&sp18, &sp2C) != 0) {
                     this->func_ov031_020ef528();
                     goto skip;
                 }

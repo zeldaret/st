@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
@@ -586,7 +586,7 @@ public:
     unk32 func_ov000_0208dc98();
     void func_ov000_0208dcf0();
     unk32 func_ov000_0208dd60(UnkStruct_027e0ce0_30_00 *param1);
-    bool func_ov000_0208dd70(unk32 param2, unk32 param3, Cylinder *param4, void *param5, unk32 param6);
+    bool func_ov000_0208dd70(unk32 param2, unk32 param3, Sphere *param4, void *param5, unk32 param6);
     bool func_ov000_0208e538();
     bool func_ov000_0208e548(VecFx32 *param1, BOOL param2, BOOL param3);
     bool func_ov000_0208e558(unk32 param1, fx32 param2);
@@ -621,7 +621,7 @@ public:
     void func_ov093_0216e768(bool param1);
     bool func_ov093_0216e778();
     void func_ov093_0216e788();
-    bool func_ov093_0216eac4(unk32 param2, unk32 param3, Cylinder *param4, void *param5, unk32 param6);
+    bool func_ov093_0216eac4(unk32 param2, unk32 param3, Sphere *param4, void *param5, unk32 param6);
     void func_ov093_0216f76c(VecFx32 *param1, unk32 param2);
     void func_ov093_0216f86c(VecFx32 *param1);
     bool func_ov093_0216f2a4();

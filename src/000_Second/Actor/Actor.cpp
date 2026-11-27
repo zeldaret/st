@@ -34,8 +34,8 @@ Actor::Actor() {
 Actor::~Actor() {}
 
 void Actor::func_ov000_0209848c(ActorProfile *param1) {
-    Cylinder *temp_r3 = &param1->mUnk_04;
-    unk32 temp_r2     = param1->mUnk_1C;
+    Sphere *temp_r3 = &param1->mUnk_04;
+    unk32 temp_r2   = param1->mUnk_1C;
 
     this->mpProfile = param1;
     this->mUnk_34   = temp_r3;

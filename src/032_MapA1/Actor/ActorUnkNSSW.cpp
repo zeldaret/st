@@ -253,8 +253,8 @@ void ActorUnkNSSW::func_ov032_021203fc() {
     UnkStruct_ov031_020e5d18_00 sp90;
     VecFx32Cpp sp84;
     VecFx32Cpp sp78;
-    Cylinder sp68;
-    Cylinder sp58;
+    Sphere sp68;
+    Sphere sp58;
     UnkStruct_ov031_020e5d18_00 sp40;
     VecFx32Cpp sp34;
     VecFx32Cpp sp28;
@@ -318,15 +318,15 @@ void ActorUnkNSSW::func_ov032_021203fc() {
     sp78.vec.x = sp84.vec.x;
     sp78.vec.y = FX_F32_TO_FX32(0.0f);
     sp78.vec.z = sp84.vec.z;
-    if (!func_ov000_0205f7d4(&sp58.pos, &data_027e0108, &sp78.vec)) {
+    if (!func_ov000_0205f7d4(&sp58.center, &data_027e0108, &sp78.vec)) {
         sp58.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f));
     }
-    if (!func_ov000_0205f7d4(&sp68.pos, &sp78.vec, &sp84.vec)) {
+    if (!func_ov000_0205f7d4(&sp68.center, &sp78.vec, &sp84.vec)) {
         sp68.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f));
     }
 
-    func_ov000_0205f6e4(&sp68.pos, &sp58.pos);
-    func_ov000_0205f298(&this->mUnk_174, &sp68.pos, 0x333);
+    func_ov000_0205f6e4(&sp68.center, &sp58.center);
+    func_ov000_0205f298(&this->mUnk_174, &sp68.center, 0x333);
     func_ov000_0205f4fc(&this->mUnk_174, &this->mUnk_150);
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VEC_Add(&this->mPos, &this->mUnk_144.vec, &this->mPos);
@@ -366,8 +366,8 @@ void ActorUnkNSSW::func_ov032_021203fc() {
         return;
     }
 
-    VecFx32_Copy(&this->mPos, &this->mUnk_104.mUnk_0C.pos);
-    this->mUnk_104.mUnk_0C.size = FX_F32_TO_FX32(0.3f);
+    VecFx32_Copy(&this->mPos, &this->mUnk_104.mUnk_0C.center);
+    this->mUnk_104.mUnk_0C.radius = FX_F32_TO_FX32(0.3f);
 
     data_027e09c0->func_ov000_0207e58c(this->mRef, 0x8, 0x4, &this->mUnk_104);
 

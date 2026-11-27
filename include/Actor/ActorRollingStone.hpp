@@ -67,7 +67,7 @@ public:
     /* 10C */ MtxFx33 mUnk_10C;
     /* 130 */ UnkSystem7 mUnk_130[0x2];
     /* 138 */ unk16 mUnk_138;
-    /* 13C */ Cylinder mUnk_13C;
+    /* 13C */ Sphere mUnk_13C;
     /* 14C */ unk32 mUnk_14C;
     /* 150 */ Timer mUnk_150;
     /* 154 */ Timer mUnk_154;

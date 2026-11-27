@@ -34,7 +34,7 @@ Actor *ActorProfileUnkNSTN::Create() {
 
 ActorProfileUnkNSTN::ActorProfileUnkNSTN() :
     ActorProfile(ActorId_NSTN) {
-    this->mUnk_04.size = FX_F32_TO_FX32(0.25f);
+    this->mUnk_04.radius = FX_F32_TO_FX32(0.25f);
 }
 
 ActorUnkNSTN::ActorUnkNSTN() :

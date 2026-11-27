@@ -176,10 +176,10 @@ void ActorFleeingSpinut::Update() {
 
     VecFx32 vec = this->mPos;
 
-    UnkStruct_ov000_0207de98 sp04;
-    VecFx32_Copy(&vec, &sp04.vec);
-    sp04.param1 = 0x548;
-    sp04.param2 = 0x1000;
+    Cylinder sp04;
+    VecFx32_Copy(&vec, &sp04.center);
+    sp04.radius = 0x548;
+    sp04.height = 0x1000;
 
     data_027e09c0->func_ov000_0207de98(this->mRef, &sp04, this->mUnk_38);
 }

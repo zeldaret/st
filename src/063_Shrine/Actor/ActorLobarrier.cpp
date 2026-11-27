@@ -9,6 +9,7 @@
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectManager.hpp"
 #include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
 #include "Save/AdventureFlags.hpp"
@@ -21,6 +22,7 @@
 #include "flags.h"
 #include "math.hpp"
 #include "nitro/fx.h"
+#include "nitro/fx/consts.h"
 #include "nitro/math.h"
 #include "nitro/types.h"
 #include "nns/g3d/g3d.h"
@@ -48,7 +50,7 @@ static const char data_ov063_02162538[16] = "Rarm1";
 static const char data_ov063_02162548[16] = "locator1";
 extern const int data_ov063_02162524      = 0xA000;
 
-static const Cylinder data_ov063_02162e90(0, 0x99A, 0, 0x99A);
+static const Sphere data_ov063_02162e90(0, 0x99A, 0, 0x99A);
 
 DECL_PROFILE(ActorProfileLobarrier);
 
@@ -358,27 +360,27 @@ void ActorLobarrier::Update() {
 
     if (this->shield != NULL) {
         VecFx32 sp34;
-        struct {
-            Cylinder unk_00;
-            fx32 unk_10;
-        } sp20;
+        Cylinder sp20;
 
         VecFx32_Init(0x4CD, 0, 0, &sp34);
         func_01ff9638(&sp34, mAngle.angle_s);
         VEC_Add(&sp34, &mPos, &sp34);
-        sp20.unk_00.Init(sp34.x, sp34.y, sp34.z, 0xF33);
-        sp20.unk_10 = 0x1000;
+        sp20.center.x = sp34.x;
+        sp20.center.y = sp34.y;
+        sp20.center.z = sp34.z;
+        sp20.radius   = 0xF33;
+        sp20.height   = FX32_ONE;
         data_027e09c0->func_ov000_0207de98(mRef, &sp20, mUnk_38);
     } else {
         VecFx32 sp14;
-        struct {
-            Cylinder unk_00;
-            fx32 unk_10;
-        } sp0;
+        Cylinder sp0;
 
-        sp14 = this->mPos;
-        sp0.unk_00.Init(sp14.x, sp14.y, sp14.z, 0xA66);
-        sp0.unk_10 = 0x1000;
+        sp14         = this->mPos;
+        sp0.center.x = sp14.x;
+        sp0.center.y = sp14.y;
+        sp0.center.z = sp14.z;
+        sp0.radius   = 0xA66;
+        sp0.height   = FX32_ONE;
         data_027e09c0->func_ov000_0207de98(mRef, &sp0, mUnk_38);
     }
 }
@@ -406,8 +408,8 @@ void ActorLobarrier::vfunc_2C(unk32 param1) {
 void ActorLobarrier::func_ov063_02158b0c() {
     this->shield     = NULL;
     mUnk_38->mUnk_08 = 1;
-    mUnk_34          = (Cylinder *) &data_ov063_02162e90;
-    mUnk_30          = (Cylinder *) &data_ov063_02162e90;
+    mUnk_34          = (Sphere *) &data_ov063_02162e90;
+    mUnk_30          = (Sphere *) &data_ov063_02162e90;
 }
 
 void ActorLobarrier::func_ov063_02158b34() {
@@ -665,15 +667,15 @@ void ActorLobarrier::func_ov063_02159784() {
 #endif
         {
 
-            Cylinder vec1;
+            Sphere vec1;
             vec1.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.2f));
 
-            this->func_ov063_0215a5a0(&vec1.pos);
+            this->func_ov063_0215a5a0(&vec1.center);
 
             VecFx32 vec2 = *data_027e0ce0->func_01fff148(PlayerType_Link);
             VEC_Subtract(&vec2, &mPos, &vec2);
 
-            data_027e09c0->func_ov000_0207e458(2, 0, &vec1.pos, 3, &vec2, 0);
+            data_027e09c0->func_ov000_0207e458(2, 0, &vec1.center, 3, &vec2, 0);
         }
     }
 
@@ -994,17 +996,17 @@ unk32 ActorLobarrier::func_ov063_0215a5d8() {
     return data_ov000_020aecfc[0];
 }
 
-void ActorLobarrier::vfunc_10(Cylinder *param1) const {
-    Cylinder *temp_r3 = this->mUnk_34;
-    param1->pos       = temp_r3->pos;
-    param1->size      = temp_r3->size;
-    VEC_Add(&param1->pos, &this->mPos, &param1->pos);
+void ActorLobarrier::vfunc_10(Sphere *param1) const {
+    Sphere *temp_r3 = this->mUnk_34;
+    param1->center  = temp_r3->center;
+    param1->radius  = temp_r3->radius;
+    VEC_Add(&param1->center, &this->mPos, &param1->center);
 
     if (this->shield != NULL) {
         VecFx32 sp0;
         VecFx32_Init(FX_F32_TO_FX32(0.25f), 0, 0, &sp0);
         func_01ff9638(&sp0, this->mAngle.angle_s);
-        VEC_Add(&param1->pos, &sp0, &param1->pos);
+        VEC_Add(&param1->center, &sp0, &param1->center);
     }
 }
 

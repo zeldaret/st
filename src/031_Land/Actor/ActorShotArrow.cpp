@@ -8,7 +8,7 @@
 #include "Course/CourseManager.hpp"
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectManager.hpp"
-#include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "RefStruct.hpp"
 #include "System/OverlayManager.hpp"
 #include "System/SysNew.hpp"
@@ -137,9 +137,9 @@ bool ActorShotArrow::Init(unk32 param1) {
     this->SetState(ActorShotArrowState_0);
 
     this->mUnk_194.mUnk_04 = this->mRef.Get32();
-    VecFx32_Copy(&this->mPos, &this->mUnk_194.mUnk_0C.pos);
-    this->mUnk_194.mUnk_0C.size = FX_F32_TO_FX32(0.20f);
-    this->mUnk_44               = 0x1F;
+    VecFx32_Copy(&this->mPos, &this->mUnk_194.mUnk_0C.center);
+    this->mUnk_194.mUnk_0C.radius = FX_F32_TO_FX32(0.20f);
+    this->mUnk_44                 = 0x1F;
     return true;
 }
 
@@ -837,8 +837,8 @@ void ActorShotArrow::func_ov031_020f2f5c(VecFx32 *param1) {
 }
 
 bool ActorShotArrow::func_ov031_020f2f9c() {
-    VecFx32_Copy(&this->mPos, &this->mUnk_194.mUnk_0C.pos);
-    this->mUnk_194.mUnk_0C.size = FX_F32_TO_FX32(0.2f);
+    VecFx32_Copy(&this->mPos, &this->mUnk_194.mUnk_0C.center);
+    this->mUnk_194.mUnk_0C.radius = FX_F32_TO_FX32(0.2f);
     data_027e09c0->func_ov000_0207e58c(this->mRef, 0x3, data_ov031_02110b00.unk_01[this->mUnk_5C.mParams[1]], &this->mUnk_194);
     return true;
 }
@@ -1158,24 +1158,24 @@ ActorShotArrow_194::ActorShotArrow_194(ActorShotArrow *param1) {
 void ActorShotArrow_194::func_ov031_020f374c(Actor *actor) {
     VecFx32 sp28;
     VecFx32 sp1C;
-    Cylinder spC;
+    Sphere spC;
     VecFx32 sp0;
 
     sp28 = this->mUnk_2C->mVel;
     func_01ff93c0(&sp28, this->mUnk_30);
-    sp1C = this->mUnk_0C.pos;
+    sp1C = this->mUnk_0C.center;
     VEC_Add(&sp1C, &sp28, &sp1C);
 
     VEC_Subtract(&sp1C, &actor->mVel, &sp1C);
     actor->vfunc_10(&spC);
 
-    sp0 = spC.pos;
+    sp0 = spC.center;
     VEC_Subtract(&sp0, &sp1C, &sp0);
 
     unk32 temp = func_01ff9258(sp0.x, sp0.z);
 
-    if (temp > spC.size && spC.size > FX_F32_TO_FX32(0.15f)) {
-        fx32 temp_r5 = (temp - spC.size) + FX_F32_TO_FX32(0.15f);
+    if (temp > spC.radius && spC.radius > FX_F32_TO_FX32(0.15f)) {
+        fx32 temp_r5 = (temp - spC.radius) + FX_F32_TO_FX32(0.15f);
         u16 value    = (u32) (s16) (s32) FX_Atan2Idx(sp0.x, sp0.z);
 
         fx16 sin = SIN(value);
@@ -1294,7 +1294,7 @@ void ActorShotArrow_194::vfunc_10(const Actor *actor) {
 
 bool ActorShotArrow_194::vfunc_0C(Actor *actor, VecFx32 *vector) {
     VecFx32 sp14;
-    Cylinder sp4;
+    Sphere sp4;
 
     STACK_PAD(4);
 
@@ -1309,7 +1309,7 @@ bool ActorShotArrow_194::vfunc_0C(Actor *actor, VecFx32 *vector) {
     VEC_Subtract(&actor->mVel, &this->mUnk_2C->mVel, &sp14);
     actor->vfunc_10(&sp4);
 
-    if (!func_01ffccf4(&this->mUnk_0C, &sp4.pos, &sp14, &this->mUnk_30)) {
+    if (!func_01ffccf4(&this->mUnk_0C, &sp4.center, &sp14, &this->mUnk_30)) {
         return false;
     }
 

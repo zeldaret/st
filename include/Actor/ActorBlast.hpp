@@ -29,8 +29,8 @@ public:
     /* 94 */ fx32 mUnk_94;
     /* 98 */ Timer mUnk_98;
     /* 9C */ UnkStruct_ov031_Items_01 mUnk_9C;
-    /* C8 */ Cylinder mUnk_C8;
-    /* D8 */ Cylinder mUnk_D8;
+    /* C8 */ Sphere mUnk_C8;
+    /* D8 */ Sphere mUnk_D8;
     /* E8 */ ActorBlast_E8 mUnk_E8;
     /* F0 */ fx32 mUnk_F0;
     /* F4 */ fx32 mUnk_F4;

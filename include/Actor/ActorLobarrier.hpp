@@ -5,7 +5,7 @@
 #include "Actor/ActorProfile.hpp"
 #include "Actor/ActorUnkZLSL_ZSRS.hpp"
 #include "Actor/Actor_Derived1.hpp"
-#include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_ov031_Items.hpp"
 #include "global.h"
@@ -134,7 +134,7 @@ public:
 
     ActorLobarrier();
 
-    /* 10 */ virtual void vfunc_10(Cylinder *param1) const override;
+    /* 10 */ virtual void vfunc_10(Sphere *param1) const override;
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 1C */ virtual void Setup() override;
     /* 20 */ virtual void Update() override;

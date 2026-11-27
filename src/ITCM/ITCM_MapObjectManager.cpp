@@ -44,7 +44,7 @@ MapObjectId MapObject::GetMapObjectId() {
 }
 
 unk32 MapObject::func_01fff590(unk32 param2) {
-    Cylinder stack;
+    Sphere stack;
     unk32 x;
     unk32 y;
     unk32 z;
@@ -55,9 +55,9 @@ unk32 MapObject::func_01fff590(unk32 param2) {
     y    = this->mPos.y;
     z    = this->mPos.z;
 
-    stack.pos.x = x;
-    stack.pos.y = y;
-    stack.pos.z = z;
-    stack.size  = size;
+    stack.center.x = x;
+    stack.center.y = y;
+    stack.center.z = z;
+    stack.radius   = size;
     return func_01ffecdc(param2, &stack);
 }

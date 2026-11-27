@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "Unknown/UnkStruct_027e0d00.hpp"
 #include "flags.h"
@@ -885,7 +885,7 @@ public:
     void func_ov031_020dbf7c(PlayerType playerType);
     void func_ov031_020dbfa0(PlayerType playerType, VecFx32 *param2);
     void func_ov031_020dc058(PlayerType playerType, VecFx32 *param2, UnkAngleStruct param3);
-    bool func_ov031_020dc12c(PlayerType playerType, unk32 param2, unk32 param3, Cylinder *param4, void *param5, unk32 param6);
+    bool func_ov031_020dc12c(PlayerType playerType, unk32 param2, unk32 param3, Sphere *param4, void *param5, unk32 param6);
     bool func_ov031_020dc1bc(PlayerType playerType, unk32 param2, fx32 param3);
     bool func_ov031_020dc1f0(PlayerType playerType, unk32 param2, unk32 param3, VecFx32 *param4);
     void func_ov031_020dc218(RefStruct ref, unk32 param2);
@@ -981,8 +981,8 @@ public:
     bool func_ov000_0208bba4(unk32 param2);
     void func_ov000_0208bbc4(unk32 param1, void *param2);
     void func_ov000_0208bbd4(PlayerType playerType, VecFx32 *param2, UnkAngleStruct param3);
-    void func_ov000_0208bc00(unk16 param1, Cylinder *param2);
-    bool func_ov000_0208bc1c(PlayerType playerType, unk32 param2, unk32 param3, Cylinder *param4, void *param5, unk32 param6);
+    void func_ov000_0208bc00(unk16 param1, Sphere *param2);
+    bool func_ov000_0208bc1c(PlayerType playerType, unk32 param2, unk32 param3, Sphere *param4, void *param5, unk32 param6);
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);
     void func_ov000_0208bd20(PlayerType playerType, unk32 param2, unk32 param3);
     void func_ov000_0208bd30(PlayerType playerType, unk32 param2, unk32 param3, unk32 param4);

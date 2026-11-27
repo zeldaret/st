@@ -2,7 +2,7 @@
 
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectProfile_Derived2_20.hpp"
-#include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_ov000_020b4f84.hpp"

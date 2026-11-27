@@ -8,6 +8,7 @@
 #include "Actor/ActorUnkSWBM.hpp"
 #include "CommonFuncs.hpp"
 #include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "RefStruct.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
@@ -35,10 +36,10 @@ struct UnkStruct_ov000_020aa888 {
 extern UnkStruct_ov000_020aa888 data_ov000_020aa888;
 
 bool Actor::func_ov017_020beeec(unk32 param1) {
-    Cylinder sp0;
+    Sphere sp0;
 
     this->func_ov000_02098a18(&sp0);
-    sp0.size += param1;
+    sp0.radius += param1;
 
     return func_01ffecdc(0, &sp0) || func_01ffecdc(1, &sp0);
 }
@@ -71,21 +72,21 @@ void Actor::func_ov017_020bf024(Actor_vfunc_30 *param1) {
 }
 
 void Actor::func_ov017_020bf050(Actor_9C *param1, unk32 param2) {
-    Cylinder sp0;
+    Sphere sp0;
     s16 temp_r2;
     s32 var_r1;
 
     this->vfunc_10(&sp0);
 
-    fx32 size = -sp0.size;
+    fx32 radius = -sp0.radius;
 
     temp_r2 = FX_Atan2Idx(param1->mUnk_10.x, param1->mUnk_10.z);
 
     fx16 sin = SIN((s16) temp_r2);
     fx16 cos = COS((s16) temp_r2);
 
-    sp0.pos.x += FX_MUL(sin, size);
-    sp0.pos.z += FX_MUL(cos, size);
+    sp0.center.x += FX_MUL(sin, radius);
+    sp0.center.z += FX_MUL(cos, radius);
 
     func_ov000_0209807c(&sp0);
 
@@ -100,7 +101,7 @@ void Actor::func_ov017_020bf050(Actor_9C *param1, unk32 param2) {
     }
 
     if (var_r1 != 0) {
-        data_027e09a8->func_ov000_02071b30(var_r1, &sp0.pos, 0);
+        data_027e09a8->func_ov000_02071b30(var_r1, &sp0.center, 0);
     }
 
     if (this->mUnk_48 <= 0) {
@@ -109,28 +110,28 @@ void Actor::func_ov017_020bf050(Actor_9C *param1, unk32 param2) {
 }
 
 void Actor::func_ov017_020bf178(Actor_9C *param1, unk32 param2) {
-    Cylinder sp0;
+    Sphere sp0;
     s32 temp_r2;
     s32 var_r1;
 
     this->vfunc_10(&sp0);
 
-    fx32 size = -sp0.size;
+    fx32 radius = -sp0.radius;
 
     temp_r2 = FX_Atan2Idx(param1->mUnk_10.x, param1->mUnk_10.z);
 
     fx16 sin = SIN((s16) temp_r2);
     fx16 cos = COS((s16) temp_r2);
 
-    sp0.pos.x += FX_MUL(sin, size);
-    sp0.pos.z += FX_MUL(cos, size);
+    sp0.center.x += FX_MUL(sin, radius);
+    sp0.center.z += FX_MUL(cos, radius);
 
     func_ov000_020980e0(&this->mPos);
 
     var_r1 = this->mUnk_48 > 0 ? 0xE4 : 0xE5;
 
     if (var_r1 != 0) {
-        data_027e09a8->func_ov000_02071b30(var_r1, &sp0.pos, 0);
+        data_027e09a8->func_ov000_02071b30(var_r1, &sp0.center, 0);
     }
 
     if (this->mUnk_48 <= 0) {
@@ -478,7 +479,7 @@ void Actor::func_ov017_020bfb18(Actor_9C *param1) {
             break;
         }
         case 13: {
-            Cylinder sp14;
+            Sphere sp14;
 
             this->vfunc_10(&sp14);
 
@@ -489,15 +490,15 @@ void Actor::func_ov017_020bfb18(Actor_9C *param1) {
             sp8.y = -sp8.y;
             sp8.z = -sp8.z;
 
-            fx32 size = sp14.size;
+            fx32 radius = sp14.radius;
 
             s16 temp_r2 = FX_Atan2Idx(sp8.x, sp8.z);
 
             fx16 sin = SIN((s16) temp_r2);
             fx16 cos = COS((s16) temp_r2);
 
-            sp14.pos.x += FX_MUL(sin, size);
-            sp14.pos.z += FX_MUL(cos, size);
+            sp14.center.x += FX_MUL(sin, radius);
+            sp14.center.z += FX_MUL(cos, radius);
 
             Vec3s sp0;
             sp0.x = sp8.x;
@@ -522,7 +523,7 @@ void Actor::func_ov017_020bfb18(Actor_9C *param1) {
 }
 
 bool Actor::vfunc_14(Cylinder *param1) {
-    Cylinder sp0;
+    Sphere sp0;
 
     if (this->mUnk_34 == 0) {
         return false;
@@ -534,17 +535,14 @@ bool Actor::vfunc_14(Cylinder *param1) {
 }
 
 bool Actor::func_ov017_020bfd9c(Vec2s *param1, unk32 param2, UnkStruct_027e09bc_0C *param3, AABB *param4) {
-    struct {
-        Cylinder unk_00;
-        fx32 unk_10;
-    } sp4;
+    Cylinder sp4;
 
-    sp4.unk_00.size  = 0;
-    sp4.unk_00.pos.x = 0;
-    sp4.unk_00.pos.y = 0;
-    sp4.unk_00.pos.z = 0;
+    sp4.radius   = 0;
+    sp4.center.x = 0;
+    sp4.center.y = 0;
+    sp4.center.z = 0;
 
-    if (this->vfunc_14(&sp4.unk_00)) {
+    if (this->vfunc_14(&sp4)) {
         if (param4 != NULL) {
             bool var_r9 = false;
 
@@ -556,9 +554,9 @@ bool Actor::func_ov017_020bfd9c(Vec2s *param1, unk32 param2, UnkStruct_027e09bc_
             }
 
             if (var_r9) {
-                if (sp4.unk_00.pos.x < param4->min.x - sp4.unk_00.size || param4->max.x + sp4.unk_00.size < sp4.unk_00.pos.x ||
-                    sp4.unk_00.pos.y < param4->min.y - sp4.unk_10 || param4->max.y < sp4.unk_00.pos.y ||
-                    sp4.unk_00.pos.z < param4->min.z - sp4.unk_00.size || param4->max.z + sp4.unk_00.size < sp4.unk_00.pos.z) {
+                if (sp4.center.x < param4->min.x - sp4.radius || param4->max.x + sp4.radius < sp4.center.x ||
+                    sp4.center.y < param4->min.y - sp4.height || param4->max.y < sp4.center.y ||
+                    sp4.center.z < param4->min.z - sp4.radius || param4->max.z + sp4.radius < sp4.center.z) {
                     return false;
                 }
             }

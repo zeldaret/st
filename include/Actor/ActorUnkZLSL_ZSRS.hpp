@@ -307,7 +307,7 @@ public:
     /* 2888 */ fx32 mUnk_2888;
     /* 288C */ unk32 mUnk_288C;
     /* 2890 */ fx32 mUnk_2890;
-    /* 2894 */ Cylinder mUnk_2894;
+    /* 2894 */ Sphere mUnk_2894;
     /* 28A4 */ VecFx32Cpp mUnk_28A4;
     /* 28B0 */ VecFx32Cpp mUnk_28B0;
     /* 28BC */ VecFx32Cpp mUnk_28BC;

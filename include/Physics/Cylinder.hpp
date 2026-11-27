@@ -1,51 +1,12 @@
 #pragma once
 
 #include "nitro/fx.h"
-#include "nitro/math.h"
-#include "types.h"
-
-#include "math.hpp"
 
 struct Cylinder {
-    /* 00 */ VecFx32 pos;
-    /* 0C */ fx32 size; // height and radius
-    /* 10 */
+    /* 00 */ VecFx32 center;
+    /* 0C */ fx32 radius;
+    /* 10 */ fx32 height;
+    /* 14 */
 
     Cylinder() {}
-    Cylinder(fx32 size) {
-        this->Init(size);
-    }
-    Cylinder(fx32 x, fx32 y, fx32 z, fx32 size) {
-        this->Init(x, y, z, size);
-    }
-
-    void Init(fx32 size) {
-        pos.x = 0;
-        pos.y = size;
-        pos.z = 0;
-
-        this->size = size;
-    }
-
-    void Init(fx32 x, fx32 y, fx32 z, fx32 size) {
-        this->pos.x = x;
-        this->pos.y = y;
-        this->pos.z = z;
-
-        this->size = size;
-    }
-
-    void Init(VecFx32 *vec, fx32 size) {
-        VecFx32_Copy(vec, &this->pos);
-
-        this->size = size;
-    }
-
-    void MakeEmpty() {
-        pos  = gVecFx32_ZERO;
-        size = -1;
-    }
-
-    // overlay 31
-    void func_ov031_020e45fc();
 };

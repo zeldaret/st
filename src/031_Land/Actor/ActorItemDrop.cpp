@@ -11,7 +11,7 @@
 #include "nitro/fx.h"
 #include "versions.h"
 
-static const Cylinder data_ov031_02114ba0(FX32_HALF);
+static const Sphere data_ov031_02114ba0(FX32_HALF);
 
 static const u32 data_ov031_02110bc8[] = {
     0x1D, // ItemDropType_Arrow
@@ -164,7 +164,7 @@ ActorItemDrop::ActorItemDrop() :
     func_01ffedac(&sp0, &this->mPos);
 
     if (gpCourseManager->mpMapMgr->func_ov000_02080180(&sp0) == 0x5) {
-        this->mUnk_34 = (Cylinder *) &data_ov031_02114ba0;
+        this->mUnk_34 = (Sphere *) &data_ov031_02114ba0;
     }
 }
 

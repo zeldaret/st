@@ -11,8 +11,8 @@
 #include "nitro/g3.h"
 #include "nitro/gx.h"
 
-static const Cylinder data_ov031_02113114(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f),
-                                          FX_F32_TO_FX32(0.35f));
+static const Sphere data_ov031_02113114(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f),
+                                        FX_F32_TO_FX32(0.35f));
 
 bool ActorUnkSWBM_94::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
 #pragma unused(param2)
@@ -99,8 +99,8 @@ Actor *ActorProfileUnkSWBM::Create() {
 
 ActorProfileUnkSWBM::ActorProfileUnkSWBM() :
     ActorProfile(ActorId_SWBM) {
-    VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_04.pos);
-    this->mUnk_04.size = FX_F32_TO_FX32(0.35f);
+    VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_04.center);
+    this->mUnk_04.radius = FX_F32_TO_FX32(0.35f);
 }
 
 ActorUnkSWBM::ActorUnkSWBM() :
@@ -118,17 +118,17 @@ bool ActorUnkSWBM::Init(unk32 param1) {
 #pragma unused(param1)
 
     this->mUnk_44          = 0x1F;
-    this->mUnk_34          = (Cylinder *) &data_ov031_02113114;
+    this->mUnk_34          = (Sphere *) &data_ov031_02113114;
     this->mUnk_098.mUnk_04 = this->mRef;
 
     fx32 posX = this->mPos.x;
     fx32 posZ = this->mPos.z;
     fx32 posY = this->mPos.y;
 
-    this->mUnk_098.mUnk_0C.pos.x = posX;
-    this->mUnk_098.mUnk_0C.pos.y = posY;
-    this->mUnk_098.mUnk_0C.pos.z = posZ;
-    this->mUnk_098.mUnk_0C.size  = FX_F32_TO_FX32(0.35f);
+    this->mUnk_098.mUnk_0C.center.x = posX;
+    this->mUnk_098.mUnk_0C.center.y = posY;
+    this->mUnk_098.mUnk_0C.center.z = posZ;
+    this->mUnk_098.mUnk_0C.radius   = FX_F32_TO_FX32(0.35f);
 
     this->mVel.x = FX_MUL(SIN(this->mAngle.angle_s), 0xB33);
     this->mVel.z = FX_MUL(COS(this->mAngle.angle_s), 0xB33);
@@ -241,7 +241,7 @@ void ActorUnkSWBM::Update() {
             if (this->func_ov000_02098ab4(0x4, 0x19, 0x2, &this->mVel)) {
                 this->func_ov031_020e6d80(-0x01);
             } else {
-                VecFx32_Copy(&this->mPos, &this->mUnk_098.mUnk_0C.pos);
+                VecFx32_Copy(&this->mPos, &this->mUnk_098.mUnk_0C.center);
                 data_027e09c0->func_ov000_0207e58c(this->mRef, 0x7, 0x4, &this->mUnk_098);
             }
 

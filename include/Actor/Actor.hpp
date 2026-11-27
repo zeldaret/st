@@ -4,6 +4,7 @@
 #include "Actor/ActorProfile.hpp"
 #include "Physics/AABB.hpp"
 #include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "RefStruct.hpp"
 #include "System/SysNew.hpp"
@@ -179,8 +180,8 @@ public:
     /* 28 */ UnkAngleStruct mAngle;
     /* 2A */ unk16 mUnk_2A;
     /* 2C */ unk32 mUnk_2C; // gravity?
-    /* 30 */ Cylinder *mUnk_30;
-    /* 34 */ Cylinder *mUnk_34;
+    /* 30 */ Sphere *mUnk_30;
+    /* 34 */ Sphere *mUnk_34;
     /* 38 */ Actor_38 *mUnk_38; // wrong type, points to Actor_Derived1_94
     /* 3C */ Actor_9C *mUnk_3C;
     /* 40 */ Actor_C4 *mUnk_40;
@@ -202,7 +203,7 @@ public:
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
     /* 0C */ virtual unk8 vfunc_0C();
-    /* 10 */ virtual void vfunc_10(Cylinder *param1) const;
+    /* 10 */ virtual void vfunc_10(Sphere *param1) const;
     /* 14 */ virtual bool vfunc_14(Cylinder *param1);
     /* 18 */ virtual bool Init(unk32 param1);
     /* 1C */ virtual void Setup();
@@ -303,14 +304,14 @@ public:
     void func_ov000_0209862c(unk32 param1);
     bool func_ov000_020986fc(unk32 param1);
     void func_ov000_020989e0();
-    void func_ov000_02098a18(Cylinder *param1);
+    void func_ov000_02098a18(Sphere *param1);
     bool func_ov000_02098a60(unk32 param1);
     void func_ov000_02098a88(unk32 param1, unk32 param2);
     void func_ov000_0209a008(unk32 param1, fx16 param2);
     u32 func_ov000_02098ab4(u8 param1, unk32 param2, unk32 param3, VecFx32 *param4);
 
-    static unk32 func_ov000_0207df88(const UnkStruct_ov031_020e5d18_00 *param1, const Cylinder *param2, unk32 param3);
-    static unk32 func_ov000_0207e294(const RefStruct *pRef, Cylinder *param1);
+    static unk32 func_ov000_0207df88(const UnkStruct_ov031_020e5d18_00 *param1, const Sphere *param2, unk32 param3);
+    static unk32 func_ov000_0207e294(const RefStruct *pRef, Sphere *param1);
     static void func_ov000_020973f4(RefStruct *pOutRef, UnkStruct_ov000_020b539c *param2, ActorId actorId,
                                     ActorParams *pParams, int param5);
 

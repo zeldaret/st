@@ -242,12 +242,12 @@ void ActorSpinut::Update() {
 
     VecFx32 vec = this->mPos;
 
-    UnkStruct_ov000_0207de98 stack;
-    VecFx32_Copy(&vec, &stack.vec);
-    stack.param1 = 0x548;
-    stack.param2 = 0x1000;
+    Cylinder cyl;
+    VecFx32_Copy(&vec, &cyl.center);
+    cyl.radius = 0x548;
+    cyl.height = 0x1000;
 
-    data_027e09c0->func_ov000_0207de98(this->mRef, &stack, this->mUnk_38);
+    data_027e09c0->func_ov000_0207de98(this->mRef, &cyl, this->mUnk_38);
 }
 
 void ActorSpinut::vfunc_2C(unk32 param1) {

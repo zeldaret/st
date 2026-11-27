@@ -812,24 +812,24 @@ void ActorWhipBird::func_ov058_0214cd94() {
 }
 
 void ActorWhipBird::func_ov058_0214cfa4(unk32 param1) {
-    Cylinder vec34;
+    Sphere vec34;
     VecFx32Cpp vec28 = this->mUnk_238;
     vec28.vec.y      = FX_F32_TO_FX32(0.0f);
 
     VecFx32Cpp vec1C = this->mUnk_238;
     VecFx32Cpp vec10(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f));
 
-    Cylinder vec00;
-    if (!func_ov000_0205f7d4(&vec00.pos, &vec10.vec, &vec28.vec)) {
+    Sphere vec00;
+    if (!func_ov000_0205f7d4(&vec00.center, &vec10.vec, &vec28.vec)) {
         vec00.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f));
     }
 
-    if (!func_ov000_0205f7d4(&vec34.pos, &vec28.vec, &vec1C.vec)) {
+    if (!func_ov000_0205f7d4(&vec34.center, &vec28.vec, &vec1C.vec)) {
         vec34.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(1.0f));
     }
 
-    func_ov000_0205f6e4(&vec34.pos, &vec00.pos);
-    func_ov000_0205f298(&this->mUnk_298, &vec34.pos, param1);
+    func_ov000_0205f6e4(&vec34.center, &vec00.center);
+    func_ov000_0205f298(&this->mUnk_298, &vec34.center, param1);
     func_ov000_0205f478(&this->mUnk_298);
     func_ov000_0205f4fc(&this->mUnk_298, &this->mUnk_2A8);
 }
@@ -906,11 +906,11 @@ bool ActorWhipBird::func_ov058_0214d2c4(unk32 param1) {
     }
 
     fx32 sp24;
-    VecFx32 sp18 = this->mUnk_30->pos;
+    VecFx32 sp18 = this->mUnk_30->center;
     VecFx32 sp0C;
     VecFx32 sp00;
 
-    sp24 = this->mUnk_30->pos.z;
+    sp24 = this->mUnk_30->center.z;
     VEC_Add(&this->mPos, &sp18, &this->mPos);
     sp00 = data_027e0ca8[param1][0];
     sp0C = data_027e0ca8[param1][1];

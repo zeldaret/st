@@ -96,7 +96,7 @@ public:
 
     ActorLobarrierShield();
 
-    /* 10 */ virtual void vfunc_10(Cylinder *param1) const override;
+    /* 10 */ virtual void vfunc_10(Sphere *param1) const override;
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 20 */ virtual void Update() override;
     /* 24 */ virtual void vfunc_24() override;

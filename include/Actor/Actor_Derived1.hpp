@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Actor.hpp"
-#include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e0960.hpp"
@@ -136,7 +136,7 @@ public:
     /* 0E4 */ UnkSystem4_UnkCallback mUnk_0E4;
     /* 0E8 */ Timer mUnk_0E8;
     /* 0EC */ Actor_Derived1_EC mUnk_0EC;
-    /* 104 */ Cylinder mUnk_104;
+    /* 104 */ Sphere mUnk_104;
     /* 114 */ unk32 mUnk_114;
     /* 118 */ fx32 mUnk_118;
     /* 11C */ unk32 mUnk_11C;
