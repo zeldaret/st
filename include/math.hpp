@@ -59,6 +59,9 @@ struct VecFx32Cpp {
     VecFx32Cpp(VecFx32 vec) {
         this->vec = vec;
     }
+    VecFx32Cpp(VecFx32 *vec) {
+        VecFx32_Copy(vec, &this->vec);
+    }
 
     void Set(fx32 X, fx32 Y, fx32 Z) {
         VecFx32_Init(X, Y, Z, &this->vec);

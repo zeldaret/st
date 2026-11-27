@@ -592,8 +592,8 @@ from:0x0216c648 kind:arm_call to:0x0209932c module:overlay(0)
 from:0x0216c6c0 kind:arm_call to:0x02099dd4 module:overlay(0)
 from:0x0216c6dc kind:arm_call to:0x0202a17c module:main
 from:0x0216c708 kind:load to:0x02179954 add:0x8 module:overlay(94)
-from:0x0216c70c kind:load to:0x02179930 module:overlay(94)
-from:0x0216c710 kind:load to:0x021798c0 module:overlay(94)
+from:0x0216c70c kind:load to:0x02179928 module:overlay(94) add:0x8
+from:0x0216c710 kind:load to:0x021798b8 module:overlay(94) add:0x8
 from:0x0216c714 kind:load to:0x027e07d4 module:dtcm
 from:0x0216c720 kind:arm_call_thumb to:0x02059154 module:overlay(0)
 from:0x0216c738 kind:arm_call_thumb to:0x02059154 module:overlay(0)

@@ -15,6 +15,9 @@ struct Sphere {
     Sphere(fx32 x, fx32 y, fx32 z, fx32 size) {
         this->Init(x, y, z, size);
     }
+    Sphere(VecFx32 *pos, fx32 size) {
+        this->Init(pos, size);
+    }
 
     void Init(fx32 size) {
         center.x = 0;
