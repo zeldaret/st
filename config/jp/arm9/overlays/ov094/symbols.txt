@@ -637,12 +637,12 @@ data_ov094_02179620 kind:data(any) addr:0x02179620
 data_ov094_02179668 kind:data(any) addr:0x02179668
 _ZTV19data_ov094_02179680 kind:data(any) addr:0x02179680
 _ZTV19data_ov094_0217979c kind:data(any) addr:0x0217979c
-data_ov094_021798c0 kind:data(any) addr:0x021798c0
+_ZTV24UnkStruct_ov094_02177600 kind:data(any) addr:0x021798b8
 data_ov094_021798d0 kind:data(any) addr:0x021798d0
 data_ov094_021798e4 kind:data(any) addr:0x021798e4
-_ZTV19data_ov094_02179904 kind:data(any) addr:0x02179904
-data_ov094_02179930 kind:data(any) addr:0x02179930
-_ZTV19data_ov094_02179954 kind:data(any) addr:0x02179954
+_ZTV19ActorProfileUnkSTTG kind:data(any) addr:0x02179904
+_ZTV24UnkStruct_ov094_02177670 kind:data(any) addr:0x02179928
+_ZTV12ActorUnkSTTG kind:data(any) addr:0x02179954
 data_ov094_021799b8 kind:data(any) addr:0x021799b8
 data_ov094_021799c4 kind:data(any) addr:0x021799c4
 data_ov094_021799cc kind:data(any) addr:0x021799cc
