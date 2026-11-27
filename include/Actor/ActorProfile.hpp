@@ -15,8 +15,7 @@ public:
     /* 04 */ Sphere mUnk_04;
     /* 14 */ unk8 mUnk_14;
     /* 15 */ bool mUnk_15;
-    /* 16 */ unk8 mUnk_16[1]; //! TODO: at least one element
-    /* 17 */ unk8 mUnk_17;
+    /* 16 */ unk8 mUnk_16[2]; //! TODO: at least two element
     /* 18 */ unk8 mUnk_18;
     /* 19 */ unk8 mUnk_19;
     /* 1A */ unk16 mUnk_1A;
