@@ -163,7 +163,7 @@ Some targets can be executed for specific versions of the game, this is denoted 
 
 ### Github CI/CD's rules
 
-For each supported version (as of now, EUR and JP), the CI/CD runs the following command: `ninja arm9_<ver> report_<ver> check_<ver>`, available in short with `ninja <ver>`. \
+For each supported version (as of now: `eur`, `eur1`, `jp` and `usa`), the CI/CD runs the following command: `ninja arm9_<ver> report_<ver> check_<ver>`, available in short with `ninja <ver>`. \
 You may run that command locally before pushing to your branch to see if CI/CD should pass or not. (Note that differences in the command result may still be observed because of non-committed changes or changes to the local configuration.)
 
 ### `<version>`
