@@ -165,13 +165,13 @@ public:
     bool func_01ffd420();
 
     // overlay 0
-    unk32 func_ov000_020732ec(unk32 param1);
-    unk32 func_ov000_020732fc(unk32 param1);
+    unk32 func_ov000_020732ec(unk32 param1); //! TODO: is param1 `PlayerType`?
+    unk32 func_ov000_020732fc(unk32 param1); //! TODO: is param1 `PlayerType`?
     bool func_ov000_020732dc(unk32 param1);
     unk32 func_ov000_0207330c();
     void func_ov000_0207332c();
-    unk32 func_ov000_02073388(void *param1, unk32 param2);
-    unk32 func_ov000_02073470(void *param1, unk32 param2);
+    PlayerType func_ov000_02073388(void *param1, unk32 param2); //! TODO: real return type?
+    PlayerType func_ov000_02073470(void *param1, unk32 param2); //! TODO: real return type?
     void func_ov000_02073578(void *param1, unk32 param2);
     void func_ov000_02073610(void *param1, unk32 param2);
 

@@ -162,9 +162,6 @@ public:
 
     // overlay 31
     void func_ov031_020da274(const VecFx32 *param1, const VecFx32 *param2, u16 param3);
-    void func_ov031_020da274(VecFx32 *param1, const VecFx32 *param2, u16 param3);
-    void func_ov031_020da274(const VecFx32 *param1, VecFx32 *param2, u16 param3);
-    void func_ov031_020da274(VecFx32 *param1, VecFx32 *param2, u16 param3);
 };
 
 class UnkStruct_ov031_02112b40 : public UnkStruct_ov031_Items_00_Base {

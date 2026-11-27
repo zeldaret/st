@@ -29,9 +29,10 @@ enum ActorRefId_ {
 };
 
 typedef enum PlayerType_ {
-    /* 0 */ PlayerType_Link  = 0x00,
-    /* 1 */ PlayerType_Zelda = 0x01,
-    /* 2 */ PlayerType_Max,
+    /* -1 */ PlayerType_None  = -1,
+    /*  0 */ PlayerType_Link  = 0x00,
+    /*  1 */ PlayerType_Zelda = 0x01,
+    /*  2 */ PlayerType_Max,
 } PlayerType;
 
 union RefCommon {
@@ -164,6 +165,11 @@ struct RefStruct {
         this->data = 0;
     }
 
+    void Init() {
+        u32 zero   = 0;
+        this->data = *(u32 *) &zero;
+    }
+
     const bool operator==(const RefStruct &other) const {
         return other.data == this->data;
     }
@@ -172,8 +178,9 @@ struct RefStruct {
         return !(*this == other);
     }
 
-    void operator=(const RefStruct &other) {
+    RefStruct &operator=(const RefStruct &other) {
         this->data = other.data;
+        return *this;
     }
 
     const u32 Get32() const {

@@ -1,5 +1,6 @@
 #include "MapObject/MapObjectUnkSWSW.hpp"
 #include "CommonFuncs.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "nitro/fx/consts.h"
 #include "profile.hpp"
 
@@ -124,7 +125,7 @@ bool MapObjectUnkSWSW::Init() {
     unk32 param2                     = data_ov032_02122ad8.func_ov000_02058a24();
     UnkStruct_ov000_02058a84 *param1 = data_ov032_02122ad8.func_ov000_02058a84(0x3, &data_ov032_02121f04);
 
-    this->mUnk_0AC.func_ov000_020577a4(param1, param2, 0x1);
+    this->mUnk_0AC.func_ov000_020577a4(param1, param2, true);
 
     this->mUnk_040.func_ov000_02057cb0();
     this->mUnk_040.func_ov000_02057c98(&this->mUnk_0AC);

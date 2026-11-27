@@ -58,7 +58,7 @@ bool UnkStruct_ov031_02112ff4::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 
 void ActorItemTornado_17C::vfunc_00(unk32 param1, unk32 param2) {
 #pragma unused(param1, param2)
     ActorItemTornado *pActor = (ActorItemTornado *) this->mUnk_14; //! TODO: conflicting types
-    func_01ffc5a0(&pActor->mUnk_94, pActor->mUnk_1DC, pActor->mAngle, &this->mUnk_04);
+    pActor->mUnk_94.func_01ffc5a0(pActor->mUnk_1DC, pActor->mAngle, &this->mUnk_04);
 }
 
 DECL_PROFILE(ActorProfileItemTornado);

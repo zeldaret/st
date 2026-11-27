@@ -46,7 +46,7 @@ MapObjectUnkSWHT::MapObjectUnkSWHT() :
     unk32 param2                     = data_ov031_021179e8.func_ov000_02058a24();
     UnkStruct_ov000_02058a84 *param1 = data_ov031_021179e8.func_ov000_02058a84(0x3, &data_ov031_02110ce0);
 
-    this->mUnk_0B4.func_ov000_020577a4(param1, param2, 0x1);
+    this->mUnk_0B4.func_ov000_020577a4(param1, param2, true);
 
     this->mUnk_054.func_ov000_02057c98(&this->mUnk_0B4);
 

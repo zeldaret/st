@@ -1,16 +1,9 @@
 #pragma once
 
-#include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
-#include "Actor/ActorUnkRCFO.hpp"
 #include "Course/Course.hpp"
-#include "Course/CourseManager.hpp"
 #include "Map/MapObjectId.hpp"
-#include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
-#include "Unknown/UnkStruct_027e09a4.hpp"
-#include "Unknown/UnkStruct_027e09c0.hpp"
-#include "nitro/fx.h"
 #include "types.h"
 
 #include <nitro.h>
@@ -64,6 +57,7 @@ struct UnkStruct_ov031_02118fa4;
 struct UnkStruct_027e0d38;
 struct UnkFileSystem1;
 struct UnkStruct_ov000_02058a84;
+struct ActorUnkRCFO_910;
 
 union Vec2bCpp;
 union Vec3s;
@@ -93,8 +87,7 @@ void func_01ffa9e8(MtxFx43 *, MtxFx43 *);
 void func_01ffad5c(MtxFx43 *, MtxFx43 *, MtxFx43 *);
 void func_01ffaf74(VecFx32 *, MtxFx43 *, VecFx32 *);
 void func_01ffb6e4(unk32, const void *, void *);
-fx32 func_01ffb9cc(VecFx32 *, VecFx32 *);
-void func_01ffc5a0(ModelRender *, unk32, UnkAngleStruct, void *);
+fx32 func_01ffb9cc(const VecFx32 *, const VecFx32 *);
 void func_01ffcb94(unk16, unk16, MtxFx33 *);
 bool func_01ffccf4(Cylinder *, VecFx32 *, VecFx32 *, unk32 *);
 void func_01ffce1c(Cylinder *, Cylinder *);
@@ -265,7 +258,6 @@ void func_ov000_020814ec(void *, void *);
 void func_ov000_02081520(void *, void *, u8);
 void func_ov000_02085d1c(void *);
 bool func_ov000_020864f8(void *, UnkAngleStruct, void *, void *);
-void func_ov000_02087ee8();
 unk32 func_ov000_0208832c(s16, unk32);
 bool func_ov000_02088854(unk32);
 void func_ov000_02088d10(unk32, VecFx32 *);
@@ -301,8 +293,9 @@ void func_ov000_020623d8(void *param1, unk32 param2);
 unk8 func_ov000_02070164(void *); //! TODO: turn to a class
 void func_ov000_0205a950(u8 bgType, bool isTopScreen, bool);
 void func_ov000_0205a944(u8 bgType, bool isTopScreen, bool);
-void *func_ov000_0208ea70(PlayerCharacter, unk32, bool); // returns pointer to .NSBTX
+void *func_ov000_0208ea70(s32 /* PlayerCharacter */, unk32, bool); // returns pointer to .NSBTX
 bool func_ov000_0205cbc4(RefStruct param1, VecFx32 *param2);
+bool func_ov000_0205cf84(RefStruct param1, s16 *param2);
 
 // overlay 2
 AdventureModeManager_160_14 *func_ov002_020b6520(void *, void *, int);
@@ -364,8 +357,6 @@ void func_ov031_020dcea4(void *, UnkStruct_027e0ce0_40_Base_78 *, UnkAngleStruct
 void func_ov031_020e0f30(RefStruct);
 unk16 func_ov031_020e3dd0(Actor *param0);
 void func_ov031_020f439c(void *, Vec3s *, unk32);
-bool func_ov031_020f7538(Actor *param1, unk32 param2);
-void func_ov031_020f7574(Actor *param1, unk32 param2);
 void func_ov031_0210acd4(Vec2bCpp);
 unk32 func_ov031_0210af50(Vec2bCpp, unk32 *);
 void func_ov031_0210b0e4(Vec2bCpp, unk32);

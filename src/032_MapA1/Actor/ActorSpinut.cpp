@@ -331,7 +331,7 @@ void ActorSpinut::func_ov032_02119c80() {
         func_01ff9318(&this->mAngle, value, param2);
     }
 
-    if (this->mUnk_110.vfunc_28()->func_01ff8fa8() == 0x0) {
+    if (!this->mUnk_110.vfunc_28()->func_01ff8fa8()) {
         return;
     }
 
@@ -737,7 +737,7 @@ void ActorSpinut::func_ov032_0211adf4() {
             break;
 
         case 0x1: {
-            if (this->mUnk_110.vfunc_28()->func_01ff8fa8() == 0x0) {
+            if (!this->mUnk_110.vfunc_28()->func_01ff8fa8()) {
                 break;
             }
 

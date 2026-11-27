@@ -3,6 +3,7 @@
 #include "Actor/ActorManager.hpp"
 #include "Actor/Actor_ov031_02114438.hpp"
 #include "CommonFuncs.hpp"
+#include "Course/CourseManager.hpp"
 #include "System/Random.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_0204e5f8.hpp"

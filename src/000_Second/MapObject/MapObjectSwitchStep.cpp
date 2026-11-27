@@ -81,7 +81,7 @@ MapObjectSwitchStep::MapObjectSwitchStep() :
 
     MapObjectProfile_Derived2_20 *temp_r6 = GET_PROFILE_20(MapObjectProfileSwitchStep);
     unk32 temp_r5                         = temp_r6->func_ov000_02058a24();
-    this->mUnk_A4.func_ov000_020577a4(temp_r6->func_ov000_02058a84(3, data_ov000_020af550), temp_r5, 1);
+    this->mUnk_A4.func_ov000_020577a4(temp_r6->func_ov000_02058a84(3, data_ov000_020af550), temp_r5, true);
 
     this->mUnk_10 = GET_PROFILE_D4(MapObjectProfileSwitchStep);
 }
@@ -192,10 +192,7 @@ void MapObjectSwitchStep::vfunc_18(s8 *param1) {
     if (data_027e09a4->mUnk_00.sceneIndex >= SceneIndex_battle01 && data_027e09a4->mUnk_00.sceneIndex < SceneIndex_Max) {
         Vec2s sp10;
         stack_struct sp8;
-        RefStruct sp4;
-
-        //! TODO: fake match?
-        sp4 = *(RefStruct *) &this->mRef;
+        RefStruct sp4 = this->mRef;
 
         if (data_027e0998->vfunc_00(&this->mPos, &sp10, &sp4)) {
             sp8.mUnk_06 = 0x00;

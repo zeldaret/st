@@ -663,7 +663,7 @@ void MapObjectDoorBase::vfunc2_08() {
         this->mUnk_4C.y = temp_r1;
         this->mUnk_4C.z = temp_r2;
 
-        data_027e0ce0->func_ov000_0208bbd4(this->mUnk_04, &this->mUnk_4C, this->mUnk_4A);
+        data_027e0ce0->func_ov000_0208bbd4(this->mPlayerType, &this->mUnk_4C, this->mUnk_4A);
         return;
     }
 
@@ -671,14 +671,14 @@ void MapObjectDoorBase::vfunc2_08() {
     this->mUnk_4C.y = temp_r1;
     this->mUnk_4C.z = temp_r2;
 
-    data_027e0ce0->func_ov000_0208bbd4(this->mUnk_04, &this->mUnk_4C, this->mUnk_4A);
+    data_027e0ce0->func_ov000_0208bbd4(this->mPlayerType, &this->mUnk_4C, this->mUnk_4A);
 
     this->mUnk_5C.z       = this->mPos.z - FX_F32_TO_FX32(3.0f);
     this->mUnk_5C.y       = this->mPos.y;
     this->mUnk_5C.x       = this->mPos.x + FX_F32_TO_FX32(1.0f);
     this->mUnk_5A.angle_s = this->mUnk_4A.angle_s;
 
-    data_027e0ce0->func_ov000_0208bbd4(1, &this->mUnk_5C, this->mUnk_5A);
+    data_027e0ce0->func_ov000_0208bbd4(PlayerType_Zelda, &this->mUnk_5C, this->mUnk_5A);
 }
 
 bool MapObjectDoorBase::vfunc_88() {

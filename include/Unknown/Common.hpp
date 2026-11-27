@@ -901,8 +901,11 @@ public:
             unk16 mUnk_04h;
             unk16 mUnk_06;
         };
+
+        //! TODO: figure these out
+        PlayerType mPlayerType;
         unk32 mUnk_04;
-        void *mUnk_04p; //! TODO: figure this out
+        void *mUnk_04p;
     };
     /* 08 */
 
@@ -1341,9 +1344,7 @@ public:
 class UnkStruct_PlayerGet_74_base {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
+    /* 04 */ VecFx32 mUnk_04;
     /* 10 */ unk32 mUnk_10;
     /* 14 */
 

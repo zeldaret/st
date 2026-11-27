@@ -24,6 +24,7 @@ Diagnostics:
     - "goto_into_protected_scope"
     - "init_list_bad_dest_type"
     - "c99-designator"
+    - "initializer_string_for_char_array_too_long"
 Documentation:
   CommentFormat: Doxygen
 ---

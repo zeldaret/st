@@ -27,7 +27,7 @@ void PlayerSceneChange2::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
     }
 
     if (this->mUnk_24->mUnk_078 != NULL && this->mUnk_24->mUnk_078->HasValue() ? 1 : 0) {
-        func_ov000_02087ee8();
+        this->mUnk_24->func_ov000_02087ee8();
     }
 
     switch (param1->mUnk_04) {

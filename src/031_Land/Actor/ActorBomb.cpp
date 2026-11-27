@@ -257,7 +257,7 @@ void ActorBomb::vfunc_24() {
 
 void ActorBomb::func_ov031_020e1b1c() {
     UnkStruct_ov000_02058a84 *param1 = this->func_ov031_020e15d0(this->mUnk_5C.mParams[0]);
-    bool var_r3;
+    BOOL var_r3;
 
     // weird but less weird than `func_ov019_020d0c90`
     switch (param1->mUnk_06 & 2) {
@@ -532,7 +532,7 @@ void ActorBomb::vfunc_2C(unk32 param1) {
         }
     }
 
-    func_01ffc5a0(&this->mUnk_094, this->mUnk_1D8, this->mAngle, &this->mPos);
+    this->mUnk_094.func_01ffc5a0(this->mUnk_1D8, this->mAngle, &this->mPos);
 
     VecFx32 sp0C;
     VecFx32_Init(this->mPos.x, this->mPos.y + FX_F32_TO_FX32(0.4f), this->mPos.z, &sp0C);

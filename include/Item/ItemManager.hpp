@@ -1,5 +1,6 @@
 #pragma once
 
+#include "CommonFuncs.hpp"
 #include "Item/Item.hpp"
 #include "RefStruct.hpp"
 #include "Save/AdventureFlags.hpp"
@@ -14,6 +15,8 @@ class UnkStruct_027e0ce0_30_00;
 class Inventory;
 
 #define IS_ITEM_RESTRICTED(restrictions, itemFlag) (((restrictions) & (1 << (itemFlag))) != 0)
+#define MAX_SAND_PLATFORMS 64
+#define MAX_SPAWNED_BOMBS 3
 
 struct UnkStruct_ov000_020afc48 {
     /* 00 */ ItemId_s16 mItemId;
@@ -96,14 +99,47 @@ public:
 
 class UnkStruct_ItemManager_20_04_08_310 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
+    /* 00 */ VecFx32 *mUnk_00;
+    /* 04 */ VecFx32 *mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ bool mUnk_0C;
     /* 0D */ PAD(0x0D, 0x10);
     /* 10 */
 
-    UnkStruct_ItemManager_20_04_08_310(); //! TODO: params
+    const uintptr_t GetCount() const {
+        return (uintptr_t) (this->mUnk_04 - this->mUnk_00);
+    }
+
+    const int GetSecondToLastIndex() const {
+        return this->GetCount() - 1;
+    }
+
+    VecFx32 *GetLast() const {
+        return &this->mUnk_00[this->GetSecondToLastIndex()];
+    }
+
+    const fx32 GetMax(const VecFx32 *param1, VecFx32 *param2) const {
+        if (func_01ffb9cc(this->GetLast(), param1) >= FX32_HALF) {
+            VEC_Subtract(param1, this->GetLast(), param2);
+            fx32 max = VEC_Mag(param2) / FX32_HALF;
+
+            if (max != 0) {
+                func_01ff9770(param2, FX32_HALF);
+                return max;
+            }
+        }
+
+        param2->x = 0;
+        param2->y = 0;
+        param2->z = 0;
+        return 0;
+    }
+
+    UnkStruct_ItemManager_20_04_08_310(void *param1, unk32 param2, bool param3);
+
+    // overlay 0
+    void func_ov000_0205b39c(const VecFx32 *param1);
+    void func_ov000_0205b3f4(void *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, u16 param6);
 };
 
 struct UnkStruct_ItemManager_20_04_32C_00 {
@@ -152,12 +188,17 @@ public:
         }
     }
 
+    void Reset() {
+        this->mUnk_A0 = this->mUnk_00;
+        this->mUnk_A4.Init();
+    }
+
     // overlay 31
     s32 func_ov031_020d9ccc(RefStruct ref);
     bool func_ov031_020d9d10(RefStruct ref, u16 param2);
     bool func_ov031_020d9f34(RefStruct ref);
-    bool func_ov031_020d9fd0(u16 param1, VecFx32 *param2);
-    void func_ov031_020da144(unk32 param1);
+    bool func_ov031_020d9fd0(u16 param1, const VecFx32 *param2);
+    void func_ov031_020da144(void *param1);
 
     static Actor *func_ov031_020d9c64(RefStruct ref);
     static void func_ov031_020da104(RefStruct *pRef, UnkStruct_ItemManager_20_04_32C *thisx, u16 param3);
@@ -168,15 +209,21 @@ public:
     /* 000 (vtable) */
     /* 004 (base) */
     /* 00C */ unk32 mUnk_00C;
-    /* 010 */ PAD(0x10, 0x310);
+    /* 010 */ unk32 mUnk_010;
+    /* 014 */ PAD(0x14, 0x310);
     /* 310 */ UnkStruct_ItemManager_20_04_08_310 mUnk_310;
-    /* 320 */ unk32 mUnk_320;
-    /* 324 */ unk16 mUnk_324;
+    /* 320 */ void *mUnk_320;
+    /* 324 */ u16 mUnk_324;
     /* 326 */ bool mUnk_326;
     /* 327 */ bool mUnk_327;
     /* 328 */ unk32 mUnk_328;
     /* 32C */ UnkStruct_ItemManager_20_04_32C mUnk_32C;
     /* 3D4 */
+
+    //! TODO: volatile required to match `func_ov031_020dc700`
+    const volatile UnkStruct_ItemManager_20_04_08_310 *GetUnk310() const {
+        return &this->mUnk_310;
+    }
 
     UnkStruct_ItemManager_20_04_08();
     ~UnkStruct_ItemManager_20_04_08();
@@ -187,8 +234,11 @@ public:
 
     // overlay 31
     void func_ov031_020dc480();
-    bool func_ov031_020dc700(VecFx32 *param1, unk32 param2, VecFx32 *param3, RefStruct *param4);
+    void func_ov031_020dc480(const VecFx32 *param1, fx32 param2, int param3);
+    void func_ov031_020dc4b8(const VecFx32 *param1);
+    bool func_ov031_020dc700(const VecFx32 *param1, fx32 param2, VecFx32 *param3, RefStruct *param4);
     void func_ov031_020dc8a0(void *param1, bool param2, u32 param3);
+    void func_ov031_020dc90c();
 };
 
 class UnkStruct_ItemManager_20_04 {
@@ -242,8 +292,6 @@ public:
     void func_ov031_020db704(bool param1, bool param2);
 };
 
-#define MAX_SAND_PLATFORMS 64
-
 struct UnkStruct_ov031_02116380 {
     /* 00 */ Vec2bCpp unk_00[MAX_SAND_PLATFORMS];
     /* 80 */ Vec2bCpp *unk_80;
@@ -280,7 +328,7 @@ public:
 
 class UnkStruct_ItemManager_20_10 {
 public:
-    /* 00 */ RefElem mUnk_00[3];
+    /* 00 */ RefElem mUnk_00[MAX_SPAWNED_BOMBS];
 
     UnkStruct_ItemManager_20_10() {
         this->func_ov031_020db2b0();
@@ -317,7 +365,7 @@ public:
     /* 04 */ UnkStruct_ItemManager_20_04 *mUnk_04; // boomerang manager?
     /* 08 */ UnkStruct_ItemManager_20_08 *mUnk_08; // bow manager?
     /* 0C */ UnkStruct_ItemManager_20_0C *mUnk_0C; // sandrod manager?
-    /* 10 */ UnkStruct_ItemManager_20_10 *mUnk_10;
+    /* 10 */ UnkStruct_ItemManager_20_10 *mUnk_10; // bomb manager?
     /* 14 */ UnkStruct_ItemManager_20_14 mUnk_14;
     /* 2C */
 

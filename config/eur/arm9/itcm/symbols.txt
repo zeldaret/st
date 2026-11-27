@@ -126,7 +126,7 @@ _ZN24PlayerLinkActor_A0_14_048vfunc_14EP7MtxFx33P7VecFx32 kind:function(arm,size
 _ZN24PlayerLinkActor_A0_14_048vfunc_18EP7VecFx32 kind:function(arm,size=0x54) addr:0x01ffc4cc
 func_01ffc520 kind:function(arm,size=0x5c) addr:0x01ffc520
 _ZN11ModelRender8vfunc_0CEv kind:function(arm,size=0x24) addr:0x01ffc57c
-func_01ffc5a0 kind:function(arm,size=0x94) addr:0x01ffc5a0
+_ZN15ModelRenderBase13func_01ffc5a0Ei14UnkAngleStructP7VecFx32 kind:function(arm,size=0x94) addr:0x01ffc5a0
 _ZN15ModelRenderBase13func_01ffc634EP7VecFx3214UnkAngleStructS1_ kind:function(arm,size=0xa0) addr:0x01ffc634
 _ZN15ModelRenderBase13func_01ffc6d4E14UnkAngleStructP7VecFx32 kind:function(arm,size=0x70) addr:0x01ffc6d4
 func_01ffc744 kind:function(arm,size=0x24) addr:0x01ffc744

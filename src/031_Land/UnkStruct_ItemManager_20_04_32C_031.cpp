@@ -101,7 +101,7 @@ bool UnkStruct_ItemManager_20_04_32C::func_ov031_020d9f34(RefStruct ref) {
     return false;
 }
 
-bool UnkStruct_ItemManager_20_04_32C::func_ov031_020d9fd0(u16 param1, VecFx32 *param2) {
+bool UnkStruct_ItemManager_20_04_32C::func_ov031_020d9fd0(u16 param1, const VecFx32 *param2) {
     for (UnkStruct_ItemManager_20_04_32C_00 *var_r4 = this->mUnk_00; var_r4 != this->mUnk_A0; var_r4++) {
         if (var_r4->mUnk_04 != param1) {
             continue;
@@ -122,10 +122,10 @@ bool UnkStruct_ItemManager_20_04_32C::func_ov031_020d9fd0(u16 param1, VecFx32 *p
             if (temp_r0_2 != NULL) {
                 switch (temp_r0_2->GetActorId()) {
                     case ActorId_PSBL:
-                        ((ActorUnkPSBL *) temp_r0_2)->func_ov079_02152658(param2);
+                        ((ActorUnkPSBL *) temp_r0_2)->func_ov079_02152658((VecFx32 *) param2);
                         break;
                     case ActorId_ICBS:
-                        ((ActorUnkICBS *) temp_r0_2)->func_ov080_02151970(param2);
+                        ((ActorUnkICBS *) temp_r0_2)->func_ov080_02151970((VecFx32 *) param2);
                         break;
                     default:
                         break;
@@ -155,7 +155,7 @@ void UnkStruct_ItemManager_20_04_32C::func_ov031_020da104(RefStruct *pRef, UnkSt
     pRef->Reset();
 }
 
-void UnkStruct_ItemManager_20_04_32C::func_ov031_020da144(unk32 param1) {
+void UnkStruct_ItemManager_20_04_32C::func_ov031_020da144(void *param1) {
     for (UnkStruct_ItemManager_20_04_32C_00 *var_r4 = this->mUnk_00; var_r4 != this->mUnk_A0; var_r4++) {
         VecFx32 sp0;
 

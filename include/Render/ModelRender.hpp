@@ -41,9 +41,12 @@ public:
     /* 18 */ virtual void vfunc_18(VecFx32 *param1)                                   = 0;
     /* 1C */
 
+    // itcm
+    void func_01ffc5a0(unk32 param1, UnkAngleStruct param2, VecFx32 *param3);
     void func_01ffc634(VecFx32 *param1, UnkAngleStruct param2, VecFx32 *param3);
     void func_01ffc6d4(UnkAngleStruct angleStruct, VecFx32 *pos);
 
+    // overlay 0
     void func_ov000_02057cb0();
     unk32 func_ov000_02057f18(const void *param1);
     unk32 func_ov000_02057f40(const void *param1);
@@ -153,7 +156,7 @@ public:
     /* 14 */ unk32 mUnk_14;
     /* 18 */
 
-    unk32 func_01ff8fa8();
+    bool func_01ff8fa8();
     unk32 func_02015054(unk32 param1, unk32 param2);
     unk32 func_02015080(unk32 param1);
     unk32 func_02015244();
@@ -171,7 +174,7 @@ public:
 
     void func_01ffc3b4();
 
-    void func_ov000_020577a4(UnkStruct_ov000_02058a84 *param1, unk32 param2, bool param3);
+    void func_ov000_020577a4(UnkStruct_ov000_02058a84 *param1, unk32 param2, BOOL param3);
     void func_ov000_020577f8(unk32 param1);
     void func_ov000_020578a4(unk32 param1, unk32 param2);
 };
@@ -182,7 +185,7 @@ public:
 
     UnkSystem5_Derived1(void *param1, G3d_Model *param2, UnkStruct_ov000_02058a84 *param3) :
         mUnk_00(param1, param2) {
-        bool value = false;
+        BOOL value = false;
 
         if (!(param3->mUnk_08 & 2)) {
             value = true;

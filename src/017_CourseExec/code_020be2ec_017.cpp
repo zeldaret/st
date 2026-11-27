@@ -11,8 +11,7 @@
 #include "nitro/fx.h"
 #include "nitro/math.h"
 
-void UnkStruct_027e0ce0_40_Base_7C::func_ov017_020be2ec(UnkStruct_027e0ce0_40_Base_14 *param1, bool param2,
-                                                        UnkParamStruct1 param3) {
+void UnkStruct_027e0ce0_40_Base_7C::func_ov017_020be2ec(UnkStruct_027e0ce0_40_Base_14 *param1, bool param2, RefStruct param3) {
     STACK_PAD(0x04);
 
     if (this->mUnk_04 != NULL) {

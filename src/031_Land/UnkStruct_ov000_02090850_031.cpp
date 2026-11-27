@@ -31,7 +31,7 @@ void UnkStruct_ov000_02090850_84::func_ov031_020dac40() {
 }
 
 bool UnkStruct_ov000_02090850_84::func_ov031_020dac80() {
-    if (this->mUnk_08->func_01ff8fa8() != 0x00) {
+    if (this->mUnk_08->func_01ff8fa8()) {
         this->mUnk_0C--;
 
         if (this->mUnk_0C <= 0) {

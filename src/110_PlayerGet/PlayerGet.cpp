@@ -16,6 +16,7 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
@@ -414,7 +415,7 @@ static const AdventureFlag sAdvFlagItemMap[] = {
 void UnkStruct_PlayerGet_74::vfunc_00(unk32 param1, unk32 param2) {
     PlayerGet *unk_14 = (PlayerGet *) this->mUnk_14;
 
-    func_01ffc5a0(&unk_14->mUnk_8C, unk_14->mUnk_6C, unk_14->mAngle, &this->mUnk_04);
+    unk_14->mUnk_8C.func_01ffc5a0(unk_14->mUnk_6C, unk_14->mAngle, &this->mUnk_04);
 }
 
 PlayerGet::PlayerGet(PlayerLinkActor_A0_84 *param1) :
@@ -704,7 +705,7 @@ void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
             this->mUnk_30->func_ov000_020921e4(0x3A);
             break;
         case 0x3A:
-            if (this->mUnk_50->func_01ff8fa8() != 0) {
+            if (this->mUnk_50->func_01ff8fa8()) {
                 this->mUnk_30->func_ov000_020921e4(0x3B);
                 break;
             }

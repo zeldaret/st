@@ -14,6 +14,7 @@ void UnkStruct_ItemManager_20_08::func_ov031_020db5b4() {
 
 void UnkStruct_ItemManager_20_08::func_ov031_020db5d4(ItemFlag itemFlag) {
     if (itemFlag != ItemFlag_Bow) {
+        // bow of light
         this->func_ov031_020db5b4();
     }
 }
