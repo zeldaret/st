@@ -46,7 +46,7 @@ public:
     /* 128 */ unk32 mUnk_128;
     /* 12C */ ActorCharacter_12C mUnk_12C;
     /* 140 */ unk32 mUnk_140;
-    /* 14C */ UnkStruct_ov000_0207de98 mUnk_144;
+    /* 14C */ Cylinder mUnk_144;
     /* 158 */ u8 mUnk_158;
     /* 15C */ unk32 *mUnk_15C;
     /* 160 */

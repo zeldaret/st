@@ -20,7 +20,7 @@ extern char data_ov058_02153318[]; // = "hammer"
 extern Vec2p data_ov058_02153328;  // this is not a Vec2p
 extern UnkStruct_ov058_0215330 data_ov058_02153330;
 
-static ActorUnkZLSL_AnimationTag data_ov058_02154f90[] = {
+static G3d_AnimTag data_ov058_02154f90[] = {
     {0x0, "wait"}, {0x1, "walk"}, {0x2, "talk"}, {0x3, "action"}, {0x4, "action_wait"},
 };
 

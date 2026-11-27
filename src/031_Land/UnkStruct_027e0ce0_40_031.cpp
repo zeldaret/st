@@ -131,7 +131,7 @@ end:
     this->mPlayerActors[playerType]->func_ov000_0208c99c(param2, param3);
 }
 
-bool UnkStruct_027e0ce0_40::func_ov031_020dc12c(PlayerType playerType, unk32 param2, unk32 param3, Cylinder *param4,
+bool UnkStruct_027e0ce0_40::func_ov031_020dc12c(PlayerType playerType, unk32 param2, unk32 param3, Sphere *param4,
                                                 void *param5, unk32 param6) {
     if (playerType == PlayerType_Link) {
         return this->mPlayer.func_ov000_0208dd70(param2, param3, param4, param5, param6);

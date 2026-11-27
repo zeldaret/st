@@ -42,9 +42,9 @@ ActorCharacter::ActorCharacter(ModelRender *param1, UnkStruct_ov000_020b31f0 *pa
     mUnk_158(0x0),
     mUnk_15C(NULL) {
     this->mUnk_2C = 0x0;
-    VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_144.vec);
-    this->mUnk_144.param1 = 0x0;
-    this->mUnk_144.param2 = 0x0;
+    VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_144.center);
+    this->mUnk_144.radius = 0x0;
+    this->mUnk_144.height = 0x0;
 }
 
 ActorCharacter::~ActorCharacter() {}
@@ -353,9 +353,9 @@ void ActorCharacter::vfunc_10C() {
         }
     }
 
-    VecFx32_Copy(&this->mPos, &this->mUnk_144.vec);
-    this->mUnk_144.param1 = this->mpProfile->mUnk_04.size;
-    this->mUnk_144.param2 = this->mpProfile->mUnk_04.size;
+    VecFx32_Copy(&this->mPos, &this->mUnk_144.center);
+    this->mUnk_144.radius = this->mpProfile->mUnk_04.radius;
+    this->mUnk_144.height = this->mpProfile->mUnk_04.radius;
 
     if (GET_FLAG(this->mFlags, ActorFlag_Alive)) {
         return;

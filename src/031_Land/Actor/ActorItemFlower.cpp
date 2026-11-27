@@ -37,7 +37,7 @@ Actor *ActorProfileItemFlower::Create() {
 
 ActorProfileItemFlower::ActorProfileItemFlower() :
     ActorProfile(ActorId_ItemFlower) {
-    this->mUnk_04.size = FX_F32_TO_FX32(0.25f);
+    this->mUnk_04.radius = FX_F32_TO_FX32(0.25f);
 }
 
 ActorItemFlower::ActorItemFlower() :

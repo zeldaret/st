@@ -6,7 +6,7 @@
 #include "Actor/ActorShotArrow.hpp"
 #include "Actor/ActorUnkITWP.hpp"
 #include "CommonFuncs.hpp"
-#include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "RefStruct.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
@@ -68,8 +68,8 @@ Actor *ActorProfileLobarrierShield::Create() {
 
 ActorProfileLobarrierShield::ActorProfileLobarrierShield() :
     ActorProfile_Derived1(ActorId_CASE) {
-    VecFx32_Init(0, 0x666, 0, &mUnk_04.pos);
-    mUnk_04.size = FX32_HALF;
+    VecFx32_Init(0, 0x666, 0, &mUnk_04.center);
+    mUnk_04.radius = FX32_HALF;
 }
 
 UnkStruct_ov063_021631a0::UnkStruct_ov063_021631a0(G3d_Model *pModel) :
@@ -387,16 +387,12 @@ void ActorLobarrierShield::Update() {
         return;
     }
 
-    struct {
-        Cylinder unk_00;
-        fx32 unk_10;
-    } sp0;
-
-    sp0.unk_00.pos.x = this->mPos.x;
-    sp0.unk_00.pos.y = this->mPos.y;
-    sp0.unk_00.pos.z = this->mPos.z;
-    sp0.unk_00.size  = 0x548;
-    sp0.unk_10       = 0x1000;
+    Cylinder sp0;
+    sp0.center.x = this->mPos.x;
+    sp0.center.y = this->mPos.y;
+    sp0.center.z = this->mPos.z;
+    sp0.radius   = 0x548;
+    sp0.height   = 0x1000;
     data_027e09c0->func_ov000_0207de98(this->mRef, &sp0, this->mUnk_38);
 }
 
@@ -440,13 +436,13 @@ void ActorLobarrierShield::func_ov063_0215b724() {
     data_027e09a8->func_ov000_02071b30(0x9865, &mPos, 0);
 }
 
-void ActorLobarrierShield::vfunc_10(Cylinder *param1) const {
+void ActorLobarrierShield::vfunc_10(Sphere *param1) const {
     if (this->lobarrier != NULL) {
         this->lobarrier->vfunc_10(param1);
         return;
     }
-    VecFx32_Copy(&mPos, &param1->pos);
-    param1->size = FX32_HALF;
+    VecFx32_Copy(&mPos, &param1->center);
+    param1->radius = FX32_HALF;
 }
 
 void ActorLobarrierShield::func_ov063_0215b814(RefStruct ref) {

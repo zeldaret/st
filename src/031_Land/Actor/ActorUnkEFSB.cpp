@@ -2,7 +2,7 @@
 #include "CommonFuncs.hpp"
 #include "System/SysNew.hpp"
 
-static ActorUnkZLSL_AnimationTag data_ov031_02114ed0[0x2] = {
+static G3d_AnimTag data_ov031_02114ed0[0x2] = {
     {.index = 0x0, .name = "statue_beam"},
     {.index = 0x1, .name = "statue_beam"},
 };

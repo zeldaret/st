@@ -176,7 +176,7 @@ bool UnkStruct_ov031_02112b40::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 
     return false;
 }
 
-bool UnkStruct_ov031_02112b40::func_ov031_020daaec(const UnkStruct_ov031_020e5d18_00 *param1, Cylinder *pCylinder) {
+bool UnkStruct_ov031_02112b40::func_ov031_020daaec(const UnkStruct_ov031_020e5d18_00 *param1, Sphere *pSphere) {
     VecFx32 sp24;
     UnkStruct_ov031_020e5d18_00 spC;
     bool var_r0;
@@ -186,7 +186,7 @@ bool UnkStruct_ov031_02112b40::func_ov031_020daaec(const UnkStruct_ov031_020e5d1
     var_r6        = true;
     this->mUnk_1A = true;
 
-    if (Actor::func_ov000_0207e294(&param1->mUnk_00, pCylinder) == 0) {
+    if (Actor::func_ov000_0207e294(&param1->mUnk_00, pSphere) == 0) {
         var_r6 = false;
     }
 
@@ -204,7 +204,7 @@ bool UnkStruct_ov031_02112b40::func_ov031_020daaec(const UnkStruct_ov031_020e5d1
         spC.mUnk_00.Reset();
         spC.func_01ffe6c4(param1->mUnk_00, &sp24, temp_r5, param1->mUnk_0C, param1->mUnk_10, param1->mUnk_14);
 
-        if (Actor::func_ov000_0207df88(&spC, pCylinder, 0x11) != 0) {
+        if (Actor::func_ov000_0207df88(&spC, pSphere, 0x11) != 0) {
             var_r6 = true;
         }
     }

@@ -23,7 +23,7 @@ Actor *ActorProfileBlast::Create() {
 
 ActorProfileBlast::ActorProfileBlast() :
     ActorProfile(ActorId_Blast) {
-    VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_04.pos);
+    VecFx32_Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.0f), &this->mUnk_04.center);
 }
 
 bool ActorBlast_E8::vfunc_0C(RefStruct ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3, const VecFx32 *param4) {
@@ -92,10 +92,10 @@ bool ActorBlast::Init(unk32 param1) {
     this->mPos.y += FX_F32_TO_FX32(0.5f);
 
     this->mUnk_C8 = *this->mUnk_34;
-    VEC_Add(&this->mUnk_C8.pos, &this->mPos, &this->mUnk_C8.pos);
+    VEC_Add(&this->mUnk_C8.center, &this->mPos, &this->mUnk_C8.center);
 
     this->mUnk_D8 = *this->mUnk_30;
-    VEC_Add(&this->mUnk_D8.pos, &this->mPos, &this->mUnk_D8.pos);
+    VEC_Add(&this->mUnk_D8.center, &this->mPos, &this->mUnk_D8.center);
 
     data_027e09a8->func_ov000_02071b30(0xF3, &this->mPos, 0x0);
     data_027e09a8->func_ov000_02071eac(&this->mPos);
@@ -143,11 +143,11 @@ void ActorBlast::Update() {
     this->mUnk_94 += this->mUnk_F4;
 
     if (this->mUnk_94 <= this->mUnk_F0) {
-        this->mUnk_C8.size = this->mUnk_94;
-        this->mUnk_D8.size = this->mUnk_94;
+        this->mUnk_C8.radius = this->mUnk_94;
+        this->mUnk_D8.radius = this->mUnk_94;
     } else {
-        this->mUnk_94      = this->mUnk_F0;
-        this->mUnk_C8.size = -1;
+        this->mUnk_94        = this->mUnk_F0;
+        this->mUnk_C8.radius = -1;
     }
 
     if (this->mUnk_98.HasExpired()) {
@@ -155,7 +155,7 @@ void ActorBlast::Update() {
         return;
     }
 
-    if (this->mUnk_C8.size <= FX_F32_TO_FX32(0.0f)) {
+    if (this->mUnk_C8.radius <= FX_F32_TO_FX32(0.0f)) {
         return;
     }
 
@@ -169,11 +169,11 @@ void ActorBlast::Update() {
     Actor::func_ov000_0207df88(&sp14, &this->mUnk_C8, 0x0);
 
     if (this->func_ov000_0209867c(0x0) < 0x1000) {
-        data_027e09c0->func_ov000_0207e458(0x4, 0x0, &this->mUnk_C8.pos, 0x1, NULL, 0x0);
+        data_027e09c0->func_ov000_0207e458(0x4, 0x0, &this->mUnk_C8.center, 0x1, NULL, 0x0);
     }
 
     if (data_027e0ce0->func_01fff1a4()) {
-        data_027e09c0->func_ov000_0207e458(0x2, 0x1A, &this->mUnk_C8.pos, 0x2, NULL, 0x0);
+        data_027e09c0->func_ov000_0207e458(0x2, 0x1A, &this->mUnk_C8.center, 0x2, NULL, 0x0);
     }
 }
 

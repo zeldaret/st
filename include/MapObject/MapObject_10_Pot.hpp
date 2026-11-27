@@ -14,7 +14,7 @@ public:
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10(Cylinder *param1);
+    /* 10 */ virtual void vfunc_10(Sphere *param1);
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18(VecFx32 *param1);
     /* 1C */ virtual void vfunc_1C(VecFx32 *param1);

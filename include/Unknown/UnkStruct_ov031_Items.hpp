@@ -59,7 +59,7 @@ class UnkStruct_ov031_Items_01 : public UnkStruct_ov031_Items_01_Base {
 public:
     /* 00 (vtable) */
     /* 08 */ unk16 mUnk_0A;
-    /* 0C */ Cylinder mUnk_0C;
+    /* 0C */ Sphere mUnk_0C;
     /* 1C */ unk32 mUnk_1C;
     /* 20 */ unk32 mUnk_20;
     /* 24 */ unk32 mUnk_24;
@@ -180,7 +180,7 @@ public:
 
     // overlay 31
     void func_ov031_020da5ec();
-    bool func_ov031_020daaec(const UnkStruct_ov031_020e5d18_00 *param1, Cylinder *pCylinder);
+    bool func_ov031_020daaec(const UnkStruct_ov031_020e5d18_00 *param1, Sphere *pSphere);
 
     static unk32 func_ov031_020da584(vu32 param1);
 };

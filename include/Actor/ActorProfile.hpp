@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Actor/ActorId.hpp"
-#include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "profile.hpp"
@@ -12,7 +12,7 @@ class Actor;
 class ActorProfile {
 public:
     /* 00 (vtable) */
-    /* 04 */ Cylinder mUnk_04;
+    /* 04 */ Sphere mUnk_04;
     /* 14 */ unk8 mUnk_14;
     /* 15 */ bool mUnk_15;
     /* 16 */ unk8 mUnk_16[1]; //! TODO: at least one element

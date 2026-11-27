@@ -43,7 +43,7 @@ class ActorItemBoomerang_CC : public UnkStruct_ov031_Items_01 {
 public:
     /* 00 (vtable) */
     /* 2C */ RefStruct mUnk_2C;
-    /* 30 */ Cylinder mUnk_30;
+    /* 30 */ Sphere mUnk_30;
     /* 40 */
 
     ActorItemBoomerang_CC() :
@@ -59,7 +59,7 @@ public:
     /* 094 */ UnkSystem6_Derived2 mUnk_94;
     /* 0A0 */ ActorItemBoomerang_A0 mUnk_A0;
     /* 0CC */ ActorItemBoomerang_CC mUnk_CC;
-    /* 10C */ Cylinder mUnk_10C;
+    /* 10C */ Sphere mUnk_10C;
     /* 11C */ ActorItemBoomerang_11C mUnk_11C;
     /* 128 */ u32 mUnk_128;
     /* 12C */ UnkSystem7 mUnk_12C[0x3];

@@ -22,8 +22,8 @@ static const VecFx32Cpp data_ov032_021223a8(FX_F32_TO_FX32(1.7f), FX32_HALF, FX_
 static UnkStruct_ov019_020d24c8_28_258_00_Derived1 data_ov032_02122924;
 static UnkStruct_ov019_020d24c8_28_258_00_Derived1 data_ov032_0212290c;
 
-static ActorUnkZLSL_AnimationTag data_ov032_021223b4 = {.index = 0, .name = "walk", .unknown = 0x0};
-static ActorUnkZLSL_AnimationTag data_ov032_021223cc = {.index = 1, .name = "discover", .unknown = 0x1};
+static G3d_AnimTag data_ov032_021223b4 = {.index = 0, .name = "walk", .unknown = 0x0};
+static G3d_AnimTag data_ov032_021223cc = {.index = 1, .name = "discover", .unknown = 0x1};
 
 DECL_PROFILE(ActorProfileFleeingSpinut);
 
@@ -176,10 +176,10 @@ void ActorFleeingSpinut::Update() {
 
     VecFx32 vec = this->mPos;
 
-    UnkStruct_ov000_0207de98 sp04;
-    VecFx32_Copy(&vec, &sp04.vec);
-    sp04.param1 = 0x548;
-    sp04.param2 = 0x1000;
+    Cylinder sp04;
+    VecFx32_Copy(&vec, &sp04.center);
+    sp04.radius = 0x548;
+    sp04.height = 0x1000;
 
     data_027e09c0->func_ov000_0207de98(this->mRef, &sp04, this->mUnk_38);
 }

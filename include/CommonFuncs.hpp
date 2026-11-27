@@ -3,6 +3,8 @@
 #include "Actor/ActorId.hpp"
 #include "Course/Course.hpp"
 #include "Map/MapObjectId.hpp"
+#include "Physics/Capsule.hpp"
+#include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
 #include "types.h"
 
@@ -18,7 +20,7 @@ struct UnkStruct_027e0cd8_0C_Base_148_00_Base;
 struct EntranceInfo;
 struct UnkAngleStruct;
 struct ModelRender;
-struct Cylinder;
+struct Sphere;
 struct Actor;
 struct RefStruct;
 struct UnkStruct_ov031_Items_00;
@@ -37,7 +39,7 @@ struct Actor_Derived2;
 struct ActorUnkCANS;
 struct UnkStruct_ov063_02162e88;
 struct UnkStruct_ActorLobarrier_224;
-struct ActorUnkZLSL_AnimationTag;
+struct G3d_AnimTag;
 struct UnkStruct_ov000_020b31a8;
 struct AdventureModeManager_160_14;
 struct GameModeManagerBase_104;
@@ -89,21 +91,21 @@ void func_01ffaf74(VecFx32 *, MtxFx43 *, VecFx32 *);
 void func_01ffb6e4(unk32, const void *, void *);
 fx32 func_01ffb9cc(const VecFx32 *, const VecFx32 *);
 void func_01ffcb94(unk16, unk16, MtxFx33 *);
-bool func_01ffccf4(Cylinder *, VecFx32 *, VecFx32 *, unk32 *);
-void func_01ffce1c(Cylinder *, Cylinder *);
-int func_01ffcea0(Cylinder *, Cylinder *);
+bool func_01ffccf4(Sphere *, VecFx32 *, VecFx32 *, unk32 *);
+void func_01ffce1c(Cylinder *, Sphere *);
+int func_01ffcea0(Cylinder *, Sphere *);
 void func_01ffcfcc(fx32 *, VecFx32 *, VecFx32 *);
 void func_01ffd054(VecFx32 *, VecFx32 *);
 void func_01ffd1b4(VecFx32 *, VecFx32 *);
 fx32 func_01ffe868(VecFx32 *, unk32, unk32);
-bool func_01ffecdc(unk32 param1, Cylinder *param2);
+bool func_01ffecdc(unk32 param1, Sphere *param2);
 void func_01ffedac(Vec2bCpp *, VecFx32 *);
 void func_01fff05c(u32 *, MapManagerBase *, VecFx32 *);
 void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
 void func_01fff6d0(void *, VecFx32 *param1, s32 *param2, s32 *param3);
 void func_01ff9984(VecFx32 *, VecFx32 *, unk32, unk32, unk32);
-bool func_01ffccc0(Cylinder *param1, Cylinder *param2);
-bool func_01ffd218(VecFx32 *param1, Cylinder *param2);
+bool func_01ffccc0(Sphere *param1, Sphere *param2);
+bool func_01ffd218(Capsule *param1, Sphere *param2);
 
 // main
 unk32 func_020013ac(void *param1);
@@ -282,8 +284,8 @@ void func_ov000_020980e0(void *);
 void func_ov000_02098244(VecFx32 *);
 void func_ov000_020986b4(s16 *param1, Actor *param2, unk32 param3);
 void func_ov000_02099870(UnkStruct_ActorLobarrier_224 *, VecFx32 *, u16);
-void func_ov000_02099e58(UnkStruct_ov000_020b31a8 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);
-void func_ov000_02099f64(UnkStruct_ov000_020b31a8 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param3);
+void func_ov000_02099e58(UnkStruct_ov000_020b31a8 *param1, G3d_AnimTag param2, unk32 param8);
+void func_ov000_02099f64(UnkStruct_ov000_020b31a8 *param1, G3d_AnimTag param2, unk32 param3);
 bool func_ov000_020a0a90(size_t, unk32, size_t);
 void func_ov000_020a1330(u16, RefStruct, VecFx32, UnkAngleStruct, unk32, unk32);
 void func_ov000_020a14e4(unk8, VecFx32 *);

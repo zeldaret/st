@@ -49,7 +49,7 @@ static const char data_ov031_02110a40[][16] = {
     "bomb_clanim",
 };
 
-static ActorUnkZLSL_AnimationTag data_ov031_02112be8 = {.index = 0, .name = "bomb_clanim", .unknown = 0};
+static G3d_AnimTag data_ov031_02112be8 = {.index = 0, .name = "bomb_clanim", .unknown = 0};
 
 static PTMF<ActorBomb> data_ov031_02112c00[ActorBombState_Max] = {
     &ActorBomb::func_ov031_020e1da0, // ActorUnkBOMBState_0
@@ -154,17 +154,17 @@ ActorBomb::ActorBomb() :
 void ActorBomb::func_ov031_020e17f4() {}
 
 bool ActorBomb::Init(unk32 param1) {
-    Cylinder *profileCylinder = &this->mpProfile->mUnk_04;
+    Sphere *pSphere = &this->mpProfile->mUnk_04;
 
-    this->mUnk_154.pos  = profileCylinder->pos;
-    this->mUnk_154.size = profileCylinder->size;
-    this->mUnk_30       = &this->mUnk_154;
+    this->mUnk_154.center = pSphere->center;
+    this->mUnk_154.radius = pSphere->radius;
+    this->mUnk_30         = &this->mUnk_154;
 
     this->SetState(ActorBombState_0);
 
     this->mUnk_19C.mUnk_04 = this->mRef;
-    VecFx32_Copy(&this->mPos, &this->mUnk_19C.mUnk_0C.pos);
-    this->mUnk_19C.mUnk_0C.size = 0x666;
+    VecFx32_Copy(&this->mPos, &this->mUnk_19C.mUnk_0C.center);
+    this->mUnk_19C.mUnk_0C.radius = 0x666;
 
     this->mUnk_1EA.Set(0, 120);
     this->Actor::func_ov000_0209862c(0x2);
@@ -329,7 +329,7 @@ void ActorBomb::func_ov031_020e1d48() {
 }
 
 bool ActorBomb::func_ov031_020e1d58() {
-    return this->mUnk_154.pos.y >= FX_F32_TO_FX32(0.2999f);
+    return this->mUnk_154.center.y >= FX_F32_TO_FX32(0.2999f);
 }
 
 bool ActorBomb::func_ov031_020e1d74() {
@@ -600,17 +600,17 @@ bool ActorBomb::Drop(ActorGrabParams grabParams, const VecFx32 *pVel) {
 
         VecFx32 sp0C = *this->Actor::func_ov000_0209853c(playerType);
 
-        this->mUnk_154.pos.y = sp0C.y + FX_F32_TO_FX32(0.4f) - this->mPos.y;
-        this->mPrevPos.x     = sp0C.x;
-        this->mPrevPos.z     = sp0C.z;
+        this->mUnk_154.center.y = sp0C.y + FX_F32_TO_FX32(0.4f) - this->mPos.y;
+        this->mPrevPos.x        = sp0C.x;
+        this->mPrevPos.z        = sp0C.z;
     } else {
         Actor *actor = gpActorManager->func_01fff3b4(grabParams.mUnk_00);
 
         if (actor != NULL) {
-            VecFx32 sp00         = actor->mPos;
-            this->mUnk_154.pos.y = sp00.y + FX_F32_TO_FX32(0.4f) - this->mPos.y;
-            this->mPrevPos.x     = sp00.x;
-            this->mPrevPos.z     = sp00.z;
+            VecFx32 sp00            = actor->mPos;
+            this->mUnk_154.center.y = sp00.y + FX_F32_TO_FX32(0.4f) - this->mPos.y;
+            this->mPrevPos.x        = sp00.x;
+            this->mPrevPos.z        = sp00.z;
         }
     }
 
@@ -619,19 +619,19 @@ bool ActorBomb::Drop(ActorGrabParams grabParams, const VecFx32 *pVel) {
 
 bool ActorBomb::func_ov031_020e25bc() {
     bool ret = true;
-    Cylinder cylinder;
-    VecFx32_Copy(&this->mPos, &cylinder.pos);
-    cylinder.size = 0x666;
+    Sphere sph;
+    VecFx32_Copy(&this->mPos, &sph.center);
+    sph.radius = 0x666;
 
-    if (!data_027e09c0->func_ov000_0207e458(0x4, 0x0, &cylinder.pos, 0x1, NULL, 0x0)) {
+    if (!data_027e09c0->func_ov000_0207e458(0x4, 0x0, &sph.center, 0x1, NULL, 0x0)) {
         ret = false;
     }
     return ret;
 }
 
 bool ActorBomb::func_ov031_020e262c() {
-    VecFx32_Copy(&this->mPos, &this->mUnk_19C.mUnk_0C.pos);
-    this->mUnk_19C.mUnk_0C.size = FX_F32_TO_FX32(0.4f);
+    VecFx32_Copy(&this->mPos, &this->mUnk_19C.mUnk_0C.center);
+    this->mUnk_19C.mUnk_0C.radius = FX_F32_TO_FX32(0.4f);
 
     data_027e09c0->func_ov000_0207e58c(this->mRef, 0x0, 0xC, &this->mUnk_19C);
     return true;
@@ -789,9 +789,9 @@ void ActorBomb::func_ov031_020e2a9c() {
 
     unk32 value = this->func_ov031_020e295c(&this->mUnk_180) | this->func_ov031_020e2820(&this->mUnk_180);
     if (this->mUnk_1E0.acRef.type_index != 0x0) {
-        this->mUnk_154.pos.y = 0x4CC;
+        this->mUnk_154.center.y = 0x4CC;
     } else {
-        func_01ff916c(&this->mUnk_154.pos.y, 0x4CC, 0x333);
+        func_01ff916c(&this->mUnk_154.center.y, 0x4CC, 0x333);
     }
     this->mUnk_46 = value;
 }

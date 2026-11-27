@@ -926,12 +926,12 @@ static UnkDataStruct5 data_ov066_02161a54[] = {
 
 static const UnkStackStruct2 data_ov066_0215d830 = {.data = {0x11C71000, 0xFC72, 0x1800, 0x00, 0x0B33}};
 
-static ActorUnkZLSL_AnimationTag data_ov066_0215ffe8[] = {
+static G3d_AnimTag data_ov066_0215ffe8[] = {
     {0x00, "action_end", 0x00},
     {0x01, "close", 0x00},
 };
 
-static ActorUnkZLSL_AnimationTag data_ov066_02160018[] = {
+static G3d_AnimTag data_ov066_02160018[] = {
     {0x00, "wait", 0x00},       {0x01, "wait", 0x00}, {0x02, "talk", 0x00},     {0x03, "action", 0x00},
     {0x04, "action_end", 0x01}, {0x05, "nod", 0x00},  {0x06, "question", 0x00}, {0x07, "hear", 0x00},
 };

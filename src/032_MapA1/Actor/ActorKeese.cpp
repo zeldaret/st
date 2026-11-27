@@ -28,14 +28,14 @@ extern unk32 data_ov000_020aecfc[];
 extern MtxFx43 data_027e0964;
 
 static const VecFx32Cpp data_ov032_021224d8(FX_F32_TO_FX32(1.7f), FX_F32_TO_FX32(0.5f), FX_F32_TO_FX32(1.7f));
-static ActorUnkZLSL_AnimationTag data_ov032_021224e4 = {.index = 0, .name = "fly"};
+static G3d_AnimTag data_ov032_021224e4 = {.index = 0, .name = "fly"};
 
 static const struct {
     int unk_00;
     char unk_04[16];
 } data_ov032_02121ed0 = {0x1333, "base"};
 
-static ActorUnkZLSL_AnimationTag data_ov032_021224fc = {.index = 0, .name = "keeth", .unknown = 1};
+static G3d_AnimTag data_ov032_021224fc = {.index = 0, .name = "keeth", .unknown = 1};
 
 static PTMF<ActorKeese> data_ov032_0212258c[ActorKeeseState_Max] = {
     &ActorKeese::func_ov032_0211e9ec, // ActorKeeseState_0

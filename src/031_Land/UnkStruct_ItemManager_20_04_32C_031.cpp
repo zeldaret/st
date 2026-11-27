@@ -55,12 +55,12 @@ bool UnkStruct_ItemManager_20_04_32C::func_ov031_020d9d10(RefStruct ref, u16 par
 
             if (pActor != NULL) {
                 if (var_r6 > 1) {
-                    Cylinder *temp_r0_4 = pActor->mUnk_34;
+                    Sphere *temp_r0_4 = pActor->mUnk_34;
 
-                    if (temp_r0_4 != NULL && temp_r0_4->size > 0) {
+                    if (temp_r0_4 != NULL && temp_r0_4->radius > 0) {
                         u16 angle = (0xFFFF / var_r6) * var_r7;
-                        sp38.x    = ROUND_FX32(temp_r0_4->size * SIN(angle));
-                        sp38.z    = ROUND_FX32(temp_r0_4->size * COS(angle));
+                        sp38.x    = ROUND_FX32(temp_r0_4->radius * SIN(angle));
+                        sp38.z    = ROUND_FX32(temp_r0_4->radius * COS(angle));
                     }
                 }
 

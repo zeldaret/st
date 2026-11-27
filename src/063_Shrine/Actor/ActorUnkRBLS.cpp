@@ -5,7 +5,7 @@
 #include "nitro/fx.h"
 #include "nitro/math.h"
 
-static ActorUnkZLSL_AnimationTag data_ov063_02163740 = {0, "RBLS", 0x00};
+static G3d_AnimTag data_ov063_02163740 = {0, "RBLS", 0x00};
 
 DECL_PROFILE(ActorProfileUnkRBLS);
 

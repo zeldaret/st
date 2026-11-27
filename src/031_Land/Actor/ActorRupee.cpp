@@ -41,7 +41,7 @@ static PTMF<ActorRupee> data_ov031_02113520[0xD] = {
     &ActorRupee::func_ov031_020e9838, // ActorRupeeState_12
 };
 
-extern Cylinder data_ov031_02113478;
+extern Sphere data_ov031_02113478;
 
 DECL_PROFILE(ActorProfileRupee);
 
@@ -51,10 +51,10 @@ Actor *ActorProfileRupee::Create() {
 
 ActorProfileRupee::ActorProfileRupee() :
     ActorProfile(ActorId_Rupee) {
-    this->mUnk_04.pos.x = 0;
-    this->mUnk_04.pos.y = 0x556;
-    this->mUnk_04.pos.z = 0;
-    this->mUnk_04.size  = 0x556;
+    this->mUnk_04.center.x = 0;
+    this->mUnk_04.center.y = 0x556;
+    this->mUnk_04.center.z = 0;
+    this->mUnk_04.radius   = 0x556;
 }
 
 void ActorRupee::func_ov031_020e8d2c(RefStruct *pOutRef, const VecFx32 *pPos, u32 params, u32 unk_2C, RefStruct ref) {

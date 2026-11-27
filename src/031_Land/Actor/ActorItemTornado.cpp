@@ -2,7 +2,7 @@
 #include "CommonFuncs.hpp"
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectManager.hpp"
-#include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "RefStruct.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e0958.hpp"
@@ -18,7 +18,7 @@
 
 static const char data_ov031_02110a88[16] = "ef_tsumuji";
 
-static const Cylinder data_ov031_02112fdc(0, FX_F32_TO_FX32(0.85f), 0, FX_F32_TO_FX32(0.8f));
+static const Sphere data_ov031_02112fdc(0, FX_F32_TO_FX32(0.85f), 0, FX_F32_TO_FX32(0.8f));
 
 bool UnkStruct_ov031_02112ff4::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) {
 #pragma unused(param2)
@@ -103,7 +103,7 @@ bool ActorItemTornado::Init(unk32 param1) {
 
     this->mUnk_44 = 0x1F;
 
-    this->mUnk_34          = (Cylinder *) &data_ov031_02112fdc;
+    this->mUnk_34          = (Sphere *) &data_ov031_02112fdc;
     this->mUnk_194.mUnk_04 = this->mRef;
 
     this->mUnk_194.mUnk_0C.Init(this->mPos.x, this->mPos.y + FX_F32_TO_FX32(0.85f), this->mPos.z, FX_F32_TO_FX32(0.8f));
@@ -239,7 +239,7 @@ void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
             var_r3 |= 1;
         }
         if (this->func_ov000_02098ab4(0x0, 0xA, var_r3, &this->mVel) == 0x0) {
-            VecFx32_Init(this->mPos.x, this->mPos.y + FX_F32_TO_FX32(0.85f), this->mPos.z, &this->mUnk_194.mUnk_0C.pos);
+            VecFx32_Init(this->mPos.x, this->mPos.y + FX_F32_TO_FX32(0.85f), this->mPos.z, &this->mUnk_194.mUnk_0C.center);
             data_027e09c0->func_ov000_0207e58c(this->mRef, 0x4, 0x0, &this->mUnk_194);
         }
     }

@@ -71,7 +71,7 @@ public:
     /* 114 */ unk32 mUnk_114;
     /* 118 */ PAD(0x118, 0x134);
     /* 134 */ Actor_9C mUnk_134;
-    /* 154 */ Cylinder mUnk_154;
+    /* 154 */ Sphere mUnk_154;
     /* 164 */ ActorBomb_unk mUnk_164[0x2];
     /* 17C */ VecFx32 *mUnk_17C;
     /* 180 */ ActorBomb_180 mUnk_180;

@@ -3,7 +3,7 @@
 #include "Actor/ActorManager.hpp"
 #include "CommonFuncs.hpp"
 #include "Course/CourseManager.hpp"
-#include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "RefStruct.hpp"
 #include "Unknown/UnkStruct_0204af1c.hpp"
 #include "Unknown/UnkStruct_027e0998.hpp"
@@ -167,7 +167,7 @@ void MapObject::func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2bCpp *param3
 }
 
 unk32 MapObject::func_ov000_0209d3b4(unk32 param1, fx32 size) {
-    Cylinder spC;
+    Sphere spC;
 
     if (this->mUnk_10 != NULL) {
         this->mUnk_10->vfunc_10(&spC);
@@ -175,8 +175,8 @@ unk32 MapObject::func_ov000_0209d3b4(unk32 param1, fx32 size) {
         spC.Init(FX_F32_TO_FX32(0.5f));
     }
 
-    VEC_Add(&spC.pos, &this->mPos, &spC.pos);
-    spC.size += size;
+    VEC_Add(&spC.center, &this->mPos, &spC.center);
+    spC.radius += size;
 
     return func_01ffecdc(param1, &spC);
 }

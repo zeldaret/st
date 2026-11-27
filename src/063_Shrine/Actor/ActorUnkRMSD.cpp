@@ -7,7 +7,7 @@
 static const char data_ov063_021625e8[16] = "RMSD";
 static const char data_ov063_021625d8[16] = "RMSD_wall";
 
-static ActorUnkZLSL_AnimationTag data_ov063_021634b0 = {0, "RMSD", 0x00};
+static G3d_AnimTag data_ov063_021634b0 = {0, "RMSD", 0x00};
 
 DECL_PROFILE(ActorProfileUnkRMSD);
 

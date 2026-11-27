@@ -70,17 +70,17 @@ ActorProfileUnkPSWB::ActorProfileUnkPSWB() :
     tmp &= ~0x7000;
     tmp |= 0x7000;
 
-    mUnk_04.pos.x     = 0;
-    mUnk_04.pos.z     = 0;
+    mUnk_04.center.x  = 0;
+    mUnk_04.center.z  = 0;
     mUnk_D8.mUnk_0C.y = 0;
     mUnk_D8.mUnk_08   = tmp;
 
-    mUnk_04.pos.y = FX_F32_TO_FX32(0.49f);
+    mUnk_04.center.y = FX_F32_TO_FX32(0.49f);
     mUnk_D8.mUnk_04 |= 1;
 
     tmp2 = -FX_F32_TO_FX32(0.49f);
 
-    mUnk_04.size      = FX_F32_TO_FX32(0.49f);
+    mUnk_04.radius    = FX_F32_TO_FX32(0.49f);
     mUnk_D8.mUnk_18.x = FX_F32_TO_FX32(0.49f);
     mUnk_D8.mUnk_18.z = FX_F32_TO_FX32(0.49f);
     mUnk_D8.mUnk_0C.x = tmp2;
@@ -237,13 +237,13 @@ void ActorUnkPSWB::Update(void) {
             vec.y = 0;
             VEC_Add(&vec, &mPos, &vec);
 
-            UnkStruct_ov000_0207de98 unk;
-            unk.vec.x  = vec.x;
-            unk.vec.y  = vec.y;
-            unk.vec.z  = vec.z;
-            unk.param1 = FX_F32_TO_FX32(0.49f); // cylinder size?
-            unk.param2 = 0x1000;
-            data_027e09c0->func_ov000_0207de98(mRef, &unk, mUnk_38);
+            Cylinder cyl;
+            cyl.center.x = vec.x;
+            cyl.center.y = vec.y;
+            cyl.center.z = vec.z;
+            cyl.radius   = FX_F32_TO_FX32(0.49f);
+            cyl.height   = FX32_ONE;
+            data_027e09c0->func_ov000_0207de98(mRef, &cyl, mUnk_38);
         }
     }
 

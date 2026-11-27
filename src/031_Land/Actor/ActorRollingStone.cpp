@@ -2,7 +2,7 @@
 #include "CommonFuncs.hpp"
 
 #include "Actor/ActorManager.hpp"
-#include "Physics/Cylinder.hpp"
+#include "Physics/Sphere.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b4.hpp"
@@ -255,11 +255,11 @@ void ActorRollingStone::func_ov031_020f8a58() {
 
     this->func_ov000_02098ab4(0x2, 0x5, 0x1, &this->mVel);
 
-    UnkStruct_ov000_0207de98 param;
-    VecFx32_Copy(&this->mPos, &param.vec);
-    param.param1 = 0xB33;
-    param.param2 = 0x1000;
-    data_027e09c0->func_ov000_0207de98(this->mRef, &param, this->mUnk_38);
+    Cylinder cyl;
+    VecFx32_Copy(&this->mPos, &cyl.center);
+    cyl.radius = 0xB33;
+    cyl.height = 0x1000;
+    data_027e09c0->func_ov000_0207de98(this->mRef, &cyl, this->mUnk_38);
 }
 
 void ActorRollingStone::func_ov031_020f8b58() {
@@ -287,8 +287,8 @@ void ActorRollingStone::func_ov031_020f8b58() {
 
 void ActorRollingStone::func_ov031_020f8bc4() {
     VecFx32 sp38;
-    Cylinder sp28;
-    UnkStruct_ov000_0207de98 sp14;
+    Sphere sp28;
+    Cylinder sp14;
 
     STACK_PAD(4);
 
@@ -315,9 +315,9 @@ void ActorRollingStone::func_ov031_020f8bc4() {
     sp38.y = FX_F32_TO_FX32(0.0f);
 
     this->vfunc_10(&sp28);
-    sp28.size += FX_F32_TO_FX32(0.05f);
+    sp28.radius += FX_F32_TO_FX32(0.05f);
 
-    if (data_027e09c0->func_ov000_0207e458(0x2, 0x1B, &sp28.pos, 0x2, &sp38, this->mRef)) {
+    if (data_027e09c0->func_ov000_0207e458(0x2, 0x1B, &sp28.center, 0x2, &sp38, this->mRef)) {
         return;
     }
 
@@ -326,9 +326,9 @@ void ActorRollingStone::func_ov031_020f8bc4() {
 
     data_027e09c0->func_ov000_0207e58c(this->mRef, 0xB, 0x4, &this->mUnk_D4);
 
-    VecFx32_Copy(&this->mPos, &sp14.vec);
-    sp14.param1 = 0xB33;
-    sp14.param2 = 0x1000;
+    VecFx32_Copy(&this->mPos, &sp14.center);
+    sp14.radius = 0xB33;
+    sp14.height = 0x1000;
     data_027e09c0->func_ov000_0207de98(this->mRef, &sp14, this->mUnk_38);
 }
 
@@ -441,12 +441,12 @@ void ActorRollingStone::func_ov031_020f9050() {
 
     this->func_ov000_02098910(NULL, 0x10);
 
-    UnkStruct_ov000_0207de98 unk;
-    VecFx32_Copy(&this->mPos, &unk.vec);
-    unk.param1 = 0xB33;
-    unk.param2 = 0x1000;
+    Cylinder cyl;
+    VecFx32_Copy(&this->mPos, &cyl.center);
+    cyl.radius = 0xB33;
+    cyl.height = 0x1000;
 
-    data_027e09c0->func_ov000_0207de98(this->mRef, &unk, this->mUnk_38);
+    data_027e09c0->func_ov000_0207de98(this->mRef, &cyl, this->mUnk_38);
 
     direction = this->GetDirection();
     if (direction == 0x1 || direction == 0x3) {
@@ -481,12 +481,12 @@ void ActorRollingStone::func_ov031_020f91ac() {
     this->func_ov031_020f8de8();
 
     this->func_ov000_02098910(NULL, 0x10);
-    UnkStruct_ov000_0207de98 unk;
-    VecFx32_Copy(&this->mPos, &unk.vec);
-    unk.param1 = 0xB33;
-    unk.param2 = 0x1000;
+    Cylinder cyl;
+    VecFx32_Copy(&this->mPos, &cyl.center);
+    cyl.radius = 0xB33;
+    cyl.height = 0x1000;
 
-    data_027e09c0->func_ov000_0207de98(this->mRef, &unk, this->mUnk_38);
+    data_027e09c0->func_ov000_0207de98(this->mRef, &cyl, this->mUnk_38);
 
     if (!this->mUnk_159) {
         return;
@@ -510,10 +510,10 @@ void ActorRollingStone::func_ov031_020f9250() {
     this->mVel.y = FX_F32_TO_FX32(0.0f);
     this->mVel.z = FX_F32_TO_FX32(0.0f);
 
-    this->mUnk_13C.pos.x = FX_F32_TO_FX32(0.0f);
-    this->mUnk_13C.pos.y = FX_F32_TO_FX32(0.5f);
-    this->mUnk_13C.pos.z = FX_F32_TO_FX32(0.0f);
-    this->mUnk_13C.size  = FX_F32_TO_FX32(0.5f);
+    this->mUnk_13C.center.x = FX_F32_TO_FX32(0.0f);
+    this->mUnk_13C.center.y = FX_F32_TO_FX32(0.5f);
+    this->mUnk_13C.center.z = FX_F32_TO_FX32(0.0f);
+    this->mUnk_13C.radius   = FX_F32_TO_FX32(0.5f);
 
     this->mUnk_44 = (s16) this->mUnk_44 & ~0x20;
 }
@@ -616,8 +616,8 @@ void ActorRollingStone::func_ov031_020f9494() {
 
 void ActorRollingStone::func_ov031_020f9554() {
     VecFx32 sp38;
-    Cylinder sp28;
-    UnkStruct_ov000_0207de98 unk;
+    Sphere sp28;
+    Cylinder cyl;
 
     STACK_PAD(4);
 
@@ -644,9 +644,9 @@ void ActorRollingStone::func_ov031_020f9554() {
     sp38.y = FX_F32_TO_FX32(0.0f);
 
     this->vfunc_10(&sp28);
-    sp28.size += FX_F32_TO_FX32(0.05f);
+    sp28.radius += FX_F32_TO_FX32(0.05f);
 
-    if (data_027e09c0->func_ov000_0207e458(0x2, 0x1B, &sp28.pos, 0x2, &sp38, this->mRef)) {
+    if (data_027e09c0->func_ov000_0207e458(0x2, 0x1B, &sp28.center, 0x2, &sp38, this->mRef)) {
         return;
     }
 
@@ -655,10 +655,10 @@ void ActorRollingStone::func_ov031_020f9554() {
 
     data_027e09c0->func_ov000_0207e58c(this->mRef, 0xB, 0x4, &this->mUnk_D4);
 
-    VecFx32_Copy(&this->mPos, &unk.vec);
-    unk.param1 = 0xB33;
-    unk.param2 = 0x1000;
-    data_027e09c0->func_ov000_0207de98(this->mRef, &unk, this->mUnk_38);
+    VecFx32_Copy(&this->mPos, &cyl.center);
+    cyl.radius = 0xB33;
+    cyl.height = 0x1000;
+    data_027e09c0->func_ov000_0207de98(this->mRef, &cyl, this->mUnk_38);
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     this->mUnk_15C.func_ov024_020d69d8(&this->mPos, &this->mAngle.angle_s, &this->mVel, 0x1AE, 0xE39, 0x1AE);

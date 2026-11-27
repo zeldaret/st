@@ -256,8 +256,8 @@ ActorProfileUnkSYDE::ActorProfileUnkSYDE() :
 
 // --- GENERAL ---
 
-static ActorUnkZLSL_AnimationTag data_ov058_021546e8               = {0, "car_move", 0};
-static ActorUnkZLSL_AnimationTag data_ov058_0215491c[]             = {{0, "blink", 0}, {1, "close", 1}, {2, "turn", 1}};
+static G3d_AnimTag data_ov058_021546e8                             = {0, "car_move", 0};
+static G3d_AnimTag data_ov058_0215491c[]                           = {{0, "blink", 0}, {1, "close", 1}, {2, "turn", 1}};
 static PTMF<ActorLokomo> data_ov058_021549b0[ActorLokomoState_Max] = {
     &ActorLokomo::vfunc_0BC, // ActorLokomoState_0
     &ActorLokomo::vfunc_0C0, // ActorLokomoState_1
@@ -288,7 +288,7 @@ static PTMF<ActorLokomo> data_ov058_02154a18[ActorLokomoState_Max] = {
     &ActorLokomo::vfunc_12C, // ActorLokomoState_11
     &ActorLokomo::vfunc_130, // ActorLokomoState_12
 };
-static ActorUnkZLSL_AnimationTag data_ov058_02154cdc[] = {
+static G3d_AnimTag data_ov058_02154cdc[] = {
     {0, "wait", 0},        {1, "wait", 0},        {2, "talk", 0},        {3, "wait", 0},        {4, "play", 0},
     {5, "play_body", 0},   {6, "play_arm", 1},    {7, "play_arm", 0},    {8, "play_armLL", 1},  {9, "play_armLC", 1},
     {10, "play_armRR", 1}, {11, "play_armRC", 1}, {12, "play_armLL", 0}, {13, "play_armLC", 0}, {14, "play_armRR", 0},
@@ -1450,12 +1450,12 @@ void ActorLokomo::func_ov058_02146d74(unk32 param1, unk32 param2) {
             }
 
             if (this->mUnk_903) {
-                ActorUnkZLSL_AnimationTag *data = data_ov058_02154cdc;
+                G3d_AnimTag *data = data_ov058_02154cdc;
                 this->mUnk_5B0.vfunc_1C(data[this->func_ov058_02146ccc()], FX_MUL(var4, 0x1000), var, 0x0);
                 this->mUnk_69C.vfunc_1C(data[this->func_ov058_02146cec(0x0)], 0x0, var, 0x0);
                 this->mUnk_788.vfunc_1C(data[this->func_ov058_02146d30(0x0)], 0x0, var, 0x0);
             } else {
-                ActorUnkZLSL_AnimationTag *data = data_ov058_02154cdc;
+                G3d_AnimTag *data = data_ov058_02154cdc;
                 this->mUnk_5B0.vfunc_1C(data[this->func_ov058_02146ccc()], 0x1000, var, 0x0);
                 this->mUnk_69C.vfunc_1C(data[this->func_ov058_02146cec(0x0)], 0x1000, var, 0x0);
                 this->mUnk_788.vfunc_1C(data[this->func_ov058_02146d30(0x0)], 0x1000, var, 0x0);

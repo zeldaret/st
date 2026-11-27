@@ -18,9 +18,9 @@ extern u16 data_ov000_020aecf4[];
 extern unk32 data_ov000_020aecf8;
 
 static const VecFx32Cpp data_ov032_02122160(FX_F32_TO_FX32(1.7f), FX_F32_TO_FX32(0.5f), FX_F32_TO_FX32(1.7f));
-static ActorUnkZLSL_AnimationTag data_ov032_02122184 = {.index = 0, .name = "walk", .unknown = 0x0};
-static ActorUnkZLSL_AnimationTag data_ov032_0212219c = {.index = 1, .name = "discover", .unknown = 0x1};
-static ActorUnkZLSL_AnimationTag data_ov032_0212216c = {.index = 0, .name = "KURI", .unknown = 0x1};
+static G3d_AnimTag data_ov032_02122184 = {.index = 0, .name = "walk", .unknown = 0x0};
+static G3d_AnimTag data_ov032_0212219c = {.index = 1, .name = "discover", .unknown = 0x1};
+static G3d_AnimTag data_ov032_0212216c = {.index = 0, .name = "KURI", .unknown = 0x1};
 
 static PTMF<ActorSpinut> data_ov032_02122288[ActorSpinutState_Max] = {
     &ActorSpinut::func_ov032_02119a0c, // ActorSpinutState_0
@@ -242,12 +242,12 @@ void ActorSpinut::Update() {
 
     VecFx32 vec = this->mPos;
 
-    UnkStruct_ov000_0207de98 stack;
-    VecFx32_Copy(&vec, &stack.vec);
-    stack.param1 = 0x548;
-    stack.param2 = 0x1000;
+    Cylinder cyl;
+    VecFx32_Copy(&vec, &cyl.center);
+    cyl.radius = 0x548;
+    cyl.height = 0x1000;
 
-    data_027e09c0->func_ov000_0207de98(this->mRef, &stack, this->mUnk_38);
+    data_027e09c0->func_ov000_0207de98(this->mRef, &cyl, this->mUnk_38);
 }
 
 void ActorSpinut::vfunc_2C(unk32 param1) {

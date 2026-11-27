@@ -53,7 +53,7 @@ static char data_ov031_021135f0[0x4] = "\x00 ";
 static char data_ov031_021135f4[0x4] = "3\x03";
 static char data_ov031_021135f8[0x4] = "\x00\x10";
 
-static ActorUnkZLSL_AnimationTag data_ov031_021135fc = {0, "wait"};
+static G3d_AnimTag data_ov031_021135fc = {0, "wait"};
 
 static PTMF<ActorUnkZLSL> data_ov031_02113770[ActorUnkZLSLState_Max] = {
     &ActorUnkZLSL::func_ov031_020eaa68, // ActorUnkZLSLState_OpenArms
@@ -96,7 +96,7 @@ static PTMF<ActorUnkZLSL> data_ov031_021137f8[ActorUnkZLSLState_Max] = {
 };
 
 // clang-format off
-static ActorUnkZLSL_AnimationTag data_ov031_02113a08[] = {
+static G3d_AnimTag data_ov031_02113a08[] = {
     {0x00, "blink", 0x00},
     {0x01, "happy", 0x00},
     {0x02, "levitate_s", 0x00},
@@ -113,7 +113,7 @@ static ActorUnkZLSL_AnimationTag data_ov031_02113a08[] = {
     {0x0D, "sing", 0x00},
 };
 
-static ActorUnkZLSL_AnimationTag data_ov031_02113b58[] = {
+static G3d_AnimTag data_ov031_02113b58[] = {
     {0x00, "levitate_s", 0x00},
     {0x01, "move_s", 0x00},
     {0x02, "talk_s", 0x00},
@@ -161,13 +161,13 @@ Actor *ActorProfileUnkZLSL::Create() {
 
 ActorProfileUnkZLSL::ActorProfileUnkZLSL() :
     ActorProfile(ActorId_ZLSL) {
-    this->mUnk_04.pos.x = FX_F32_TO_FX32(0.0f);
-    this->mUnk_04.pos.y = FX_F32_TO_FX32(0.5f);
-    this->mUnk_04.pos.z = FX_F32_TO_FX32(0.0f);
-    this->mUnk_04.size  = FX_F32_TO_FX32(0.4f);
-    this->mUnk_1C       = 0x1000;
-    this->mUnk_1A       = 0x1800;
-    this->mUnk_18       = 0x0;
+    this->mUnk_04.center.x = FX_F32_TO_FX32(0.0f);
+    this->mUnk_04.center.y = FX_F32_TO_FX32(0.5f);
+    this->mUnk_04.center.z = FX_F32_TO_FX32(0.0f);
+    this->mUnk_04.radius   = FX_F32_TO_FX32(0.4f);
+    this->mUnk_1C          = 0x1000;
+    this->mUnk_1A          = 0x1800;
+    this->mUnk_18          = 0x0;
 }
 
 bool UnkStruct_ov031_0211361c::vfunc_00(Actor *pActor) {
@@ -380,15 +380,15 @@ void ActorUnkZLSL::Update() {
         fx32 offset = this->func_ov000_0209853c(PlayerType_Link)->y;
         vec.y       = val + offset;
 
-        UnkStruct_ov000_0207de98 unk;
+        Cylinder cyl;
 
-        unk.vec.x  = vec.x;
-        unk.vec.y  = vec.y;
-        unk.vec.z  = vec.z;
-        unk.param1 = val;
-        unk.param2 = 0x1000;
+        cyl.center.x = vec.x;
+        cyl.center.y = vec.y;
+        cyl.center.z = vec.z;
+        cyl.radius   = val;
+        cyl.height   = 0x1000;
 
-        data_027e09c0->func_ov000_0207de98(this->mRef, &unk, this->mUnk_38);
+        data_027e09c0->func_ov000_0207de98(this->mRef, &cyl, this->mUnk_38);
     }
 
     this->mUnk_2894.Init(this->mUnk_2890);

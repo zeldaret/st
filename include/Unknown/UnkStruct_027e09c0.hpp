@@ -9,13 +9,6 @@
 
 class MapManagerBase;
 
-struct UnkStruct_ov000_0207de98 {
-    /* 00 */ VecFx32 vec;
-    /* 0C */ unk32 param1;
-    /* 10 */ unk32 param2;
-    /* 14 */
-};
-
 class UnkStruct_027e09c0_60 {
 public:
     /* 00 */ unk32 mUnk_00;
@@ -70,7 +63,7 @@ public:
     // overlay 0
     void func_ov000_0207da40();
     s16 func_ov000_0207dc88(const UnkStruct_ov031_020e5d18_00 *param1, Actor_38 *param2);
-    void func_ov000_0207de98(RefStruct param1, void *param2, Actor_38 *param3);
+    void func_ov000_0207de98(RefStruct param1, Cylinder *param2, Actor_38 *param3);
     void func_ov000_0207e20c(UnkStruct_027e09c0_04 *, void *);
     void func_ov000_0207e240(ActorUnkSCCN_B8 *param1);
     void func_ov000_0207e254(ActorUnkSCCN_B8 *param1);

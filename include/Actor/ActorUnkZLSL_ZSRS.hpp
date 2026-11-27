@@ -63,7 +63,7 @@ public:
     /* 10 */ virtual UnkSystem5 *vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
-    /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4);
+    /* 1C */ virtual void vfunc_1C(G3d_AnimTag param1, unk32 param2, unk32 param3, unk32 param4);
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24(unk32 param1);
     /* 28 */ virtual UnkStruct_PlayerGet_50 *vfunc_28();
@@ -73,8 +73,8 @@ public:
     /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2);
     /* 3C */ virtual void vfunc_3C();
 
-    void func_ov000_02099ddc(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3);
-    void func_ov000_02099ff8(ActorUnkZLSL_AnimationTag param1, unk32 param2);
+    void func_ov000_02099ddc(G3d_AnimTag param1, unk32 param2, unk32 param3);
+    void func_ov000_02099ff8(G3d_AnimTag param1, unk32 param2);
 };
 
 class ActorUnkZLSL_2700_1C {
@@ -149,7 +149,7 @@ public:
     /* 10 */ virtual UnkSystem5 *vfunc_10() override;
     /* 14 */ virtual void vfunc_14() override;
     // TODO : I'm pretty sure that param2 and param3 (at least) are FX32, see ActorLokomo::func_ov058_02146d74
-    /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4) override;
+    /* 1C */ virtual void vfunc_1C(G3d_AnimTag param1, unk32 param2, unk32 param3, unk32 param4) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 28 */ virtual UnkStruct_PlayerGet_50 *vfunc_28() override;
     /* 2C */ virtual void vfunc_2C() override;
@@ -205,7 +205,7 @@ public:
     /* 10 */ virtual UnkSystem5 *vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
-    /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4);
+    /* 1C */ virtual void vfunc_1C(G3d_AnimTag param1, unk32 param2, unk32 param3, unk32 param4);
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24(unk32 param1);
     /* 28 */ virtual UnkStruct_PlayerGet_50 *vfunc_28();
@@ -239,7 +239,7 @@ public:
     /* 10 */ virtual UnkSystem5 *vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
-    /* 1C */ virtual void vfunc_1C(ActorUnkZLSL_AnimationTag param1, unk32 param2, unk32 param3, unk32 param4);
+    /* 1C */ virtual void vfunc_1C(G3d_AnimTag param1, unk32 param2, unk32 param3, unk32 param4);
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24(unk32 param1);
     /* 28 */ virtual UnkStruct_PlayerGet_50 *vfunc_28();
@@ -307,7 +307,7 @@ public:
     /* 2888 */ fx32 mUnk_2888;
     /* 288C */ unk32 mUnk_288C;
     /* 2890 */ fx32 mUnk_2890;
-    /* 2894 */ Cylinder mUnk_2894;
+    /* 2894 */ Sphere mUnk_2894;
     /* 28A4 */ VecFx32Cpp mUnk_28A4;
     /* 28B0 */ VecFx32Cpp mUnk_28B0;
     /* 28BC */ VecFx32Cpp mUnk_28BC;

@@ -46,10 +46,10 @@ bool ActorItemBoomerang::Init(unk32 param1) {
 
     this->mUnk_A0.mUnk_0C.Init(FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(-0.1003f), FX_F32_TO_FX32(0.0f), FX_F32_TO_FX32(0.4f));
 
-    this->mUnk_10C.pos.x = FX_F32_TO_FX32(0.0f);
-    this->mUnk_10C.pos.y = FX_F32_TO_FX32(-0.1003f);
-    this->mUnk_10C.pos.z = FX_F32_TO_FX32(0.0f);
-    this->mUnk_10C.size  = FX_F32_TO_FX32(0.0f);
+    this->mUnk_10C.center.x = FX_F32_TO_FX32(0.0f);
+    this->mUnk_10C.center.y = FX_F32_TO_FX32(-0.1003f);
+    this->mUnk_10C.center.z = FX_F32_TO_FX32(0.0f);
+    this->mUnk_10C.radius   = FX_F32_TO_FX32(0.0f);
 
     this->func_ov031_020e5034(0x0);
 
@@ -163,10 +163,10 @@ void ActorItemBoomerang::Update() {
             }
 
             if (sp14.common.type != 0) {
-                this->mUnk_CC.mUnk_0C.pos.z = this->mPos.z;
-                this->mUnk_CC.mUnk_0C.pos.y = this->mPos.y + FX_F32_TO_FX32(-0.1003f);
-                this->mUnk_CC.mUnk_0C.size  = FX_F32_TO_FX32(10.0f);
-                this->mUnk_CC.mUnk_0C.pos.x = this->mPos.x;
+                this->mUnk_CC.mUnk_0C.center.z = this->mPos.z;
+                this->mUnk_CC.mUnk_0C.center.y = this->mPos.y + FX_F32_TO_FX32(-0.1003f);
+                this->mUnk_CC.mUnk_0C.radius   = FX_F32_TO_FX32(10.0f);
+                this->mUnk_CC.mUnk_0C.center.x = this->mPos.x;
                 data_027e09c0->func_ov000_0207e58c(this->mRef, 0xC, 0x8, &this->mUnk_CC);
                 return;
             }
@@ -372,11 +372,11 @@ bool ActorItemBoomerang_CC::vfunc_0C(Actor *actor, VecFx32 *param2) {
     return false;
 }
 
-void Cylinder::func_ov031_020e45fc() {
-    this->pos.x = 0x0;
-    this->pos.y = FX_F32_TO_FX32(-0.1003f);
-    this->pos.z = FX_F32_TO_FX32(0.0f);
-    this->size  = FX_F32_TO_FX32(0.3f);
+void Sphere::func_ov031_020e45fc() {
+    this->center.x = 0x0;
+    this->center.y = FX_F32_TO_FX32(-0.1003f);
+    this->center.z = FX_F32_TO_FX32(0.0f);
+    this->radius   = FX_F32_TO_FX32(0.3f);
 }
 
 ActorItemBoomerang_11C::ActorItemBoomerang_11C(ActorItemBoomerang *param1) :
