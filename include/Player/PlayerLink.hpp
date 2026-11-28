@@ -404,8 +404,9 @@ public:
     void func_ov021_020ebda0(unk32 param1);
 
     // overlay 31
+    void func_ov031_020dccbc();
     void func_ov031_020dccf0();
-    void func_ov031_020dccf0(unk32 param1);
+    void func_ov031_020dcd20();
 
     // overlay 34
     void func_ov034_021223f0(bool param1);
@@ -415,5 +416,5 @@ public:
     void func_ov058_021529c4();
 
     // overlay 93
-    void func_ov093_0216ce24(unk32 *param1);
+    void func_ov093_0216ce24(const VecFx32 *param1);
 };

@@ -124,6 +124,7 @@ src/031_Land/UnkStruct_027e0ce0_40_Base_7C_04_031.cpp:
     .rodata     start:0x02110724 end:0x02110770
 
 src/031_Land/Player/PlayerActors_031.cpp:
+    complete
     .text       start:0x020dccbc end:0x020dcd90
 
 src/031_Land/UnkStruct_027e0ce0_40_Base_78_031.cpp:
