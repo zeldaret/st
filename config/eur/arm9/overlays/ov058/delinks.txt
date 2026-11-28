@@ -48,6 +48,7 @@ src/058_Field/Actor/ActorUnkFBRD.cpp:
     .text       start:0x02148bec end:0x0214a988
     .init       start:0x021539f8 end:0x02153a74
     .ctor       start:0x02154138 end:0x0215413c
+    .data       start:0x0215513c end:0x02155264
     .bss        start:0x02156fbc end:0x021570c4
 
 src/058_Field/Actor/ActorUnkFBSC.cpp:
