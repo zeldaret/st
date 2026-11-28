@@ -4,9 +4,15 @@
 #include "global.h"
 #include "types.h"
 
+class PlayerActorBase;
+
 class UnkStruct_027e0d8c {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ PlayerActorBase *mpZelda;
+    /* 04 */ void *mUnk_04; // pointer to `PlayerZeldaActor::mUnk_0BC`?
+    /* 08 */ void *mUnk_08; // pointer to `PlayerZeldaActor::mUnk_0B8`
+    /* 0C */ unk32 mUnk_0C; // pointer?
+    /* 10 */
 
     UnkStruct_027e0d8c();
     ~UnkStruct_027e0d8c();

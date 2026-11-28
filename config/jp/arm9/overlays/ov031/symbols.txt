@@ -217,11 +217,11 @@ _ZN37UnkStruct_027e0ce0_40_Base_7C_04_Base19func_ov031_020dcad0Ei kind:function(
 _ZN37UnkStruct_027e0ce0_40_Base_7C_04_Base19func_ov031_020dcb0cE9RefStruct kind:function(arm,size=0x54) addr:0x020de4ac
 _ZN37UnkStruct_027e0ce0_40_Base_7C_04_Base19func_ov031_020dcb60E9RefStruct kind:function(arm,size=0xbc) addr:0x020de500
 _ZN37UnkStruct_027e0ce0_40_Base_7C_04_Base19func_ov031_020dcc1cEi kind:function(arm,size=0xa0) addr:0x020de5bc
-func_ov031_020dccbc kind:function(thumb,size=0x32) addr:0x020de65c
+_ZN15PlayerLinkActor19func_ov031_020dccbcEv kind:function(thumb,size=0x32) addr:0x020de65c
 _ZN15PlayerLinkActor19func_ov031_020dccf0Ev kind:function(thumb,size=0x30) addr:0x020de690
-func_ov031_020dcd20 kind:function(arm,size=0x3c) addr:0x020de6c0
-func_ov031_020dcd5c kind:function(thumb,size=0x12) addr:0x020de6fc
-func_ov031_020dcd70 kind:function(thumb,size=0x1e) addr:0x020de710
+_ZN15PlayerLinkActor19func_ov031_020dcd20Ev kind:function(arm,size=0x3c) addr:0x020de6c0
+_ZN19PlayerZeldaActor_CCC1Ev kind:function(thumb,size=0x12) addr:0x020de6fc
+_ZN19PlayerZeldaActor_CC19func_ov031_020dcd70EPK7VecFx32S2_ kind:function(thumb,size=0x1e) addr:0x020de710
 _ZN29UnkStruct_027e0ce0_40_Base_78C1Ev kind:function(thumb,size=0x6) addr:0x020de730
 _ZN29UnkStruct_027e0ce0_40_Base_78D1Ev kind:function(thumb,size=0x2) addr:0x020de738
 func_ov031_020dcd9c kind:function(arm,size=0x108) addr:0x020de73c

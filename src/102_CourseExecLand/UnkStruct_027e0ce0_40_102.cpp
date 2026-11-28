@@ -162,11 +162,11 @@ void UnkStruct_027e0ce0_40::func_ov102_0218303c(bool param1, ItemManager *pItemM
         this->mpZelda->func_ov093_0216d5b8(param1);
 
         PlayerZeldaActor *ptr = this->mpZelda;
-        if (ptr->mUnk_0CC) {
+        if (ptr->mUnk_CC.mUnk_00) {
             this->func_ov093_02168220();
-            this->mPlayer.func_ov093_0216ce24(&ptr->mUnk_0D0);
-            this->mpZelda->func_ov093_0216f71c(&ptr->mUnk_0DC);
-            ptr->mUnk_0CC = false;
+            this->mPlayer.func_ov093_0216ce24(&ptr->mUnk_CC.mPosLink);
+            this->mpZelda->func_ov093_0216f71c(&ptr->mUnk_CC.mPosZelda);
+            ptr->mUnk_CC.mUnk_00 = false;
         }
     }
 
